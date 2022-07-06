@@ -27,9 +27,9 @@ public class DescribeUserMetricsResponse extends AcsResponse {
 
 	private String code;
 
-	private String message;
-
 	private String requestId;
+
+	private String message;
 
 	private List<ResultItem> result;
 
@@ -41,20 +41,20 @@ public class DescribeUserMetricsResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public List<ResultItem> getResult() {
@@ -89,18 +89,18 @@ public class DescribeUserMetricsResponse extends AcsResponse {
 
 		public static class DataPointsItem {
 
-			private Long endTime;
+			private Float val;
 
 			private Long startTime;
 
-			private Float val;
+			private Long endTime;
 
-			public Long getEndTime() {
-				return this.endTime;
+			public Float getVal() {
+				return this.val;
 			}
 
-			public void setEndTime(Long endTime) {
-				this.endTime = endTime;
+			public void setVal(Float val) {
+				this.val = val;
 			}
 
 			public Long getStartTime() {
@@ -111,12 +111,12 @@ public class DescribeUserMetricsResponse extends AcsResponse {
 				this.startTime = startTime;
 			}
 
-			public Float getVal() {
-				return this.val;
+			public Long getEndTime() {
+				return this.endTime;
 			}
 
-			public void setVal(Float val) {
-				this.val = val;
+			public void setEndTime(Long endTime) {
+				this.endTime = endTime;
 			}
 		}
 	}

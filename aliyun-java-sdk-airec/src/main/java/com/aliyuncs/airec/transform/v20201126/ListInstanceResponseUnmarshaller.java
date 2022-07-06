@@ -27,25 +27,25 @@ public class ListInstanceResponseUnmarshaller {
 	public static ListInstanceResponse unmarshall(ListInstanceResponse listInstanceResponse, UnmarshallerContext _ctx) {
 		
 		listInstanceResponse.setCode(_ctx.stringValue("ListInstanceResponse.code"));
-		listInstanceResponse.setMessage(_ctx.stringValue("ListInstanceResponse.message"));
 		listInstanceResponse.setRequestId(_ctx.stringValue("ListInstanceResponse.requestId"));
+		listInstanceResponse.setMessage(_ctx.stringValue("ListInstanceResponse.message"));
 
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListInstanceResponse.result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setChargeType(_ctx.stringValue("ListInstanceResponse.result["+ i +"].chargeType"));
-			resultItem.setCommodityCode(_ctx.stringValue("ListInstanceResponse.result["+ i +"].commodityCode"));
-			resultItem.setDataSetVersion(_ctx.stringValue("ListInstanceResponse.result["+ i +"].dataSetVersion"));
-			resultItem.setExpiredTime(_ctx.stringValue("ListInstanceResponse.result["+ i +"].expiredTime"));
-			resultItem.setGmtCreate(_ctx.stringValue("ListInstanceResponse.result["+ i +"].gmtCreate"));
-			resultItem.setGmtModified(_ctx.stringValue("ListInstanceResponse.result["+ i +"].gmtModified"));
-			resultItem.setIndustry(_ctx.stringValue("ListInstanceResponse.result["+ i +"].industry"));
-			resultItem.setInstanceId(_ctx.stringValue("ListInstanceResponse.result["+ i +"].instanceId"));
-			resultItem.setLockMode(_ctx.stringValue("ListInstanceResponse.result["+ i +"].lockMode"));
-			resultItem.setName(_ctx.stringValue("ListInstanceResponse.result["+ i +"].name"));
 			resultItem.setRegionId(_ctx.stringValue("ListInstanceResponse.result["+ i +"].regionId"));
-			resultItem.setStatus(_ctx.stringValue("ListInstanceResponse.result["+ i +"].status"));
 			resultItem.setType(_ctx.stringValue("ListInstanceResponse.result["+ i +"].type"));
+			resultItem.setLockMode(_ctx.stringValue("ListInstanceResponse.result["+ i +"].lockMode"));
+			resultItem.setExpiredTime(_ctx.stringValue("ListInstanceResponse.result["+ i +"].expiredTime"));
+			resultItem.setStatus(_ctx.stringValue("ListInstanceResponse.result["+ i +"].status"));
+			resultItem.setGmtCreate(_ctx.stringValue("ListInstanceResponse.result["+ i +"].gmtCreate"));
+			resultItem.setChargeType(_ctx.stringValue("ListInstanceResponse.result["+ i +"].chargeType"));
+			resultItem.setIndustry(_ctx.stringValue("ListInstanceResponse.result["+ i +"].industry"));
+			resultItem.setCommodityCode(_ctx.stringValue("ListInstanceResponse.result["+ i +"].commodityCode"));
+			resultItem.setGmtModified(_ctx.stringValue("ListInstanceResponse.result["+ i +"].gmtModified"));
+			resultItem.setDataSetVersion(_ctx.stringValue("ListInstanceResponse.result["+ i +"].dataSetVersion"));
+			resultItem.setName(_ctx.stringValue("ListInstanceResponse.result["+ i +"].name"));
+			resultItem.setInstanceId(_ctx.stringValue("ListInstanceResponse.result["+ i +"].instanceId"));
 
 			result.add(resultItem);
 		}

@@ -27,9 +27,9 @@ public class ListMixCategoriesResponse extends AcsResponse {
 
 	private String code;
 
-	private String message;
-
 	private String requestId;
+
+	private String message;
 
 	private List<ResultItem> result;
 
@@ -41,20 +41,20 @@ public class ListMixCategoriesResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public List<ResultItem> getResult() {

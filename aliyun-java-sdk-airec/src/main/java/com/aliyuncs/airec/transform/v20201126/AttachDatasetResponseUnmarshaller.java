@@ -24,15 +24,15 @@ public class AttachDatasetResponseUnmarshaller {
 	public static AttachDatasetResponse unmarshall(AttachDatasetResponse attachDatasetResponse, UnmarshallerContext _ctx) {
 		
 		attachDatasetResponse.setCode(_ctx.stringValue("AttachDatasetResponse.code"));
-		attachDatasetResponse.setMessage(_ctx.stringValue("AttachDatasetResponse.message"));
 		attachDatasetResponse.setRequestId(_ctx.stringValue("AttachDatasetResponse.requestId"));
+		attachDatasetResponse.setMessage(_ctx.stringValue("AttachDatasetResponse.message"));
 
 		Result result = new Result();
-		result.setGmtCreate(_ctx.longValue("AttachDatasetResponse.result.gmtCreate"));
-		result.setGmtModified(_ctx.longValue("AttachDatasetResponse.result.gmtModified"));
-		result.setInstanceId(_ctx.stringValue("AttachDatasetResponse.result.instanceId"));
-		result.setState(_ctx.stringValue("AttachDatasetResponse.result.state"));
 		result.setVersionId(_ctx.stringValue("AttachDatasetResponse.result.versionId"));
+		result.setState(_ctx.stringValue("AttachDatasetResponse.result.state"));
+		result.setGmtModified(_ctx.longValue("AttachDatasetResponse.result.gmtModified"));
+		result.setGmtCreate(_ctx.longValue("AttachDatasetResponse.result.gmtCreate"));
+		result.setInstanceId(_ctx.stringValue("AttachDatasetResponse.result.instanceId"));
 		attachDatasetResponse.setResult(result);
 	 
 	 	return attachDatasetResponse;

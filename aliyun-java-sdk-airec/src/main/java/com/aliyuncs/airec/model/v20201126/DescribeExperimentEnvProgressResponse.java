@@ -46,17 +46,9 @@ public class DescribeExperimentEnvProgressResponse extends AcsResponse {
 
 	public static class Result {
 
-		private Integer progress;
-
 		private String status;
 
-		public Integer getProgress() {
-			return this.progress;
-		}
-
-		public void setProgress(Integer progress) {
-			this.progress = progress;
-		}
+		private Integer progress;
 
 		public String getStatus() {
 			return this.status;
@@ -64,6 +56,14 @@ public class DescribeExperimentEnvProgressResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public Integer getProgress() {
+			return this.progress;
+		}
+
+		public void setProgress(Integer progress) {
+			this.progress = progress;
 		}
 	}
 

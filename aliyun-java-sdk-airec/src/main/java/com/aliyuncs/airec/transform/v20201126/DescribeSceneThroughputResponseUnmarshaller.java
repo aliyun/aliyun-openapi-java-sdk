@@ -23,8 +23,8 @@ public class DescribeSceneThroughputResponseUnmarshaller {
 
 	public static DescribeSceneThroughputResponse unmarshall(DescribeSceneThroughputResponse describeSceneThroughputResponse, UnmarshallerContext _ctx) {
 		
-		describeSceneThroughputResponse.setRequestId(_ctx.stringValue("DescribeSceneThroughputResponse.requestId"));
 		describeSceneThroughputResponse.setCode(_ctx.stringValue("DescribeSceneThroughputResponse.code"));
+		describeSceneThroughputResponse.setRequestId(_ctx.stringValue("DescribeSceneThroughputResponse.requestId"));
 		describeSceneThroughputResponse.setMessage(_ctx.stringValue("DescribeSceneThroughputResponse.message"));
 
 		Result result = new Result();

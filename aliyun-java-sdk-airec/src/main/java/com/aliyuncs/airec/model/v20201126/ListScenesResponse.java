@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListScenesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String code;
+
+	private String requestId;
 
 	private String message;
 
 	private List<ResultItem> result;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -47,6 +39,14 @@ public class ListScenesResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -67,20 +67,20 @@ public class ListScenesResponse extends AcsResponse {
 
 	public static class ResultItem {
 
-		private String gmtCreate;
+		private String sceneId;
 
 		private String gmtModified;
 
-		private String sceneId;
-
 		private String status;
 
-		public String getGmtCreate() {
-			return this.gmtCreate;
+		private String gmtCreate;
+
+		public String getSceneId() {
+			return this.sceneId;
 		}
 
-		public void setGmtCreate(String gmtCreate) {
-			this.gmtCreate = gmtCreate;
+		public void setSceneId(String sceneId) {
+			this.sceneId = sceneId;
 		}
 
 		public String getGmtModified() {
@@ -91,20 +91,20 @@ public class ListScenesResponse extends AcsResponse {
 			this.gmtModified = gmtModified;
 		}
 
-		public String getSceneId() {
-			return this.sceneId;
-		}
-
-		public void setSceneId(String sceneId) {
-			this.sceneId = sceneId;
-		}
-
 		public String getStatus() {
 			return this.status;
 		}
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public String getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(String gmtCreate) {
+			this.gmtCreate = gmtCreate;
 		}
 	}
 

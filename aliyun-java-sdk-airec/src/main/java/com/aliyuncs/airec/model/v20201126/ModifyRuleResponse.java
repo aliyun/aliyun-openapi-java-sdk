@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ModifyRuleResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String code;
+
+	private String requestId;
 
 	private String message;
 
 	private Result result;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -47,6 +39,14 @@ public class ModifyRuleResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -67,31 +67,15 @@ public class ModifyRuleResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String gmtCreate;
-
-		private String gmtModified;
-
 		private String ruleId;
 
 		private Map<Object,Object> ruleMeta;
 
+		private String gmtModified;
+
 		private String status;
 
-		public String getGmtCreate() {
-			return this.gmtCreate;
-		}
-
-		public void setGmtCreate(String gmtCreate) {
-			this.gmtCreate = gmtCreate;
-		}
-
-		public String getGmtModified() {
-			return this.gmtModified;
-		}
-
-		public void setGmtModified(String gmtModified) {
-			this.gmtModified = gmtModified;
-		}
+		private String gmtCreate;
 
 		public String getRuleId() {
 			return this.ruleId;
@@ -109,12 +93,28 @@ public class ModifyRuleResponse extends AcsResponse {
 			this.ruleMeta = ruleMeta;
 		}
 
+		public String getGmtModified() {
+			return this.gmtModified;
+		}
+
+		public void setGmtModified(String gmtModified) {
+			this.gmtModified = gmtModified;
+		}
+
 		public String getStatus() {
 			return this.status;
 		}
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public String getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(String gmtCreate) {
+			this.gmtCreate = gmtCreate;
 		}
 	}
 

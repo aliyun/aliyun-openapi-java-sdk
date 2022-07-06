@@ -23,15 +23,15 @@ public class DescribeSceneResponseUnmarshaller {
 
 	public static DescribeSceneResponse unmarshall(DescribeSceneResponse describeSceneResponse, UnmarshallerContext _ctx) {
 		
-		describeSceneResponse.setRequestId(_ctx.stringValue("DescribeSceneResponse.requestId"));
 		describeSceneResponse.setCode(_ctx.stringValue("DescribeSceneResponse.code"));
+		describeSceneResponse.setRequestId(_ctx.stringValue("DescribeSceneResponse.requestId"));
 		describeSceneResponse.setMessage(_ctx.stringValue("DescribeSceneResponse.message"));
 
 		Result result = new Result();
-		result.setGmtCreate(_ctx.stringValue("DescribeSceneResponse.result.gmtCreate"));
-		result.setGmtModified(_ctx.stringValue("DescribeSceneResponse.result.gmtModified"));
 		result.setSceneId(_ctx.stringValue("DescribeSceneResponse.result.sceneId"));
+		result.setGmtModified(_ctx.stringValue("DescribeSceneResponse.result.gmtModified"));
 		result.setStatus(_ctx.stringValue("DescribeSceneResponse.result.status"));
+		result.setGmtCreate(_ctx.stringValue("DescribeSceneResponse.result.gmtCreate"));
 		describeSceneResponse.setResult(result);
 	 
 	 	return describeSceneResponse;

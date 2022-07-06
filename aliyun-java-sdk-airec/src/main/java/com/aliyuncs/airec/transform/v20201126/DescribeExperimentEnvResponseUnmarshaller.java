@@ -26,8 +26,8 @@ public class DescribeExperimentEnvResponseUnmarshaller {
 		describeExperimentEnvResponse.setRequestId(_ctx.stringValue("DescribeExperimentEnvResponse.requestId"));
 
 		Result result = new Result();
-		result.setDivideType(_ctx.stringValue("DescribeExperimentEnvResponse.result.divideType"));
 		result.setBucketCount(_ctx.integerValue("DescribeExperimentEnvResponse.result.bucketCount"));
+		result.setDivideType(_ctx.stringValue("DescribeExperimentEnvResponse.result.divideType"));
 		describeExperimentEnvResponse.setResult(result);
 	 
 	 	return describeExperimentEnvResponse;

@@ -25,23 +25,23 @@ public class ModifyDataSourceResponseUnmarshaller {
 	public static ModifyDataSourceResponse unmarshall(ModifyDataSourceResponse modifyDataSourceResponse, UnmarshallerContext _ctx) {
 		
 		modifyDataSourceResponse.setCode(_ctx.stringValue("ModifyDataSourceResponse.code"));
-		modifyDataSourceResponse.setMessage(_ctx.stringValue("ModifyDataSourceResponse.message"));
 		modifyDataSourceResponse.setRequestId(_ctx.stringValue("ModifyDataSourceResponse.requestId"));
+		modifyDataSourceResponse.setMessage(_ctx.stringValue("ModifyDataSourceResponse.message"));
 
 		Result result = new Result();
-		result.setGmtCreate(_ctx.stringValue("ModifyDataSourceResponse.result.gmtCreate"));
 		result.setGmtModified(_ctx.stringValue("ModifyDataSourceResponse.result.gmtModified"));
+		result.setGmtCreate(_ctx.stringValue("ModifyDataSourceResponse.result.gmtCreate"));
 		result.setTableName(_ctx.stringValue("ModifyDataSourceResponse.result.tableName"));
 
 		Meta meta = new Meta();
-		meta.setAccessKeyId(_ctx.stringValue("ModifyDataSourceResponse.result.meta.accessKeyId"));
 		meta.setBucketName(_ctx.stringValue("ModifyDataSourceResponse.result.meta.bucketName"));
-		meta.setPartition(_ctx.stringValue("ModifyDataSourceResponse.result.meta.partition"));
-		meta.setPath(_ctx.stringValue("ModifyDataSourceResponse.result.meta.path"));
-		meta.setProjectName(_ctx.stringValue("ModifyDataSourceResponse.result.meta.projectName"));
-		meta.setTableName(_ctx.stringValue("ModifyDataSourceResponse.result.meta.tableName"));
-		meta.setTimestamp(_ctx.longValue("ModifyDataSourceResponse.result.meta.timestamp"));
+		meta.setAccessKeyId(_ctx.stringValue("ModifyDataSourceResponse.result.meta.accessKeyId"));
 		meta.setType(_ctx.stringValue("ModifyDataSourceResponse.result.meta.type"));
+		meta.setPartition(_ctx.stringValue("ModifyDataSourceResponse.result.meta.partition"));
+		meta.setTimestamp(_ctx.longValue("ModifyDataSourceResponse.result.meta.timestamp"));
+		meta.setPath(_ctx.stringValue("ModifyDataSourceResponse.result.meta.path"));
+		meta.setTableName(_ctx.stringValue("ModifyDataSourceResponse.result.meta.tableName"));
+		meta.setProjectName(_ctx.stringValue("ModifyDataSourceResponse.result.meta.projectName"));
 		result.setMeta(meta);
 		modifyDataSourceResponse.setResult(result);
 	 

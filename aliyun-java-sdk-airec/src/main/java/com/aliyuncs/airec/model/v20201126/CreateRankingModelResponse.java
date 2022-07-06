@@ -71,9 +71,9 @@ public class CreateRankingModelResponse extends AcsResponse {
 
 		private String gmtModified;
 
-		private Map<Object,Object> meta;
-
 		private String gmtCreate;
+
+		private Map<Object,Object> meta;
 
 		public String getRankingModelId() {
 			return this.rankingModelId;
@@ -91,20 +91,20 @@ public class CreateRankingModelResponse extends AcsResponse {
 			this.gmtModified = gmtModified;
 		}
 
-		public Map<Object,Object> getMeta() {
-			return this.meta;
-		}
-
-		public void setMeta(Map<Object,Object> meta) {
-			this.meta = meta;
-		}
-
 		public String getGmtCreate() {
 			return this.gmtCreate;
 		}
 
 		public void setGmtCreate(String gmtCreate) {
 			this.gmtCreate = gmtCreate;
+		}
+
+		public Map<Object,Object> getMeta() {
+			return this.meta;
+		}
+
+		public void setMeta(Map<Object,Object> meta) {
+			this.meta = meta;
 		}
 	}
 

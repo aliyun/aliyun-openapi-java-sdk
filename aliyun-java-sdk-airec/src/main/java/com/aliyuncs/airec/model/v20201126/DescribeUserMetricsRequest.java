@@ -29,9 +29,9 @@ public class DescribeUserMetricsRequest extends RoaAcsRequest<DescribeUserMetric
 
 	private String instanceId;
 
-	private Long endTime;
+	private Integer endTime;
 
-	private Long startTime;
+	private Integer startTime;
 	public DescribeUserMetricsRequest() {
 		super("Airec", "2020-11-26", "DescribeUserMetrics", "airec");
 		setUriPattern("/v2/openapi/instances/[instanceId]/metrics");
@@ -64,22 +64,22 @@ public class DescribeUserMetricsRequest extends RoaAcsRequest<DescribeUserMetric
 		}
 	}
 
-	public Long getEndTime() {
+	public Integer getEndTime() {
 		return this.endTime;
 	}
 
-	public void setEndTime(Long endTime) {
+	public void setEndTime(Integer endTime) {
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("endTime", endTime.toString());
 		}
 	}
 
-	public Long getStartTime() {
+	public Integer getStartTime() {
 		return this.startTime;
 	}
 
-	public void setStartTime(Long startTime) {
+	public void setStartTime(Integer startTime) {
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("startTime", startTime.toString());

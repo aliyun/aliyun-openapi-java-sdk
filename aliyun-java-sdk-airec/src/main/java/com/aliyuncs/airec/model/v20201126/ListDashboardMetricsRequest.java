@@ -29,9 +29,13 @@ public class ListDashboardMetricsRequest extends RoaAcsRequest<ListDashboardMetr
 
 	private String instanceId;
 
-	private Long endTime;
+	private String metricQuery;
 
-	private Long startTime;
+	private Integer endTime;
+
+	private Integer startTime;
+
+	private String metricView;
 	public ListDashboardMetricsRequest() {
 		super("Airec", "2020-11-26", "ListDashboardMetrics", "airec");
 		setUriPattern("/v2/openapi/instances/[instanceId]/dashboard/metrics");
@@ -64,25 +68,47 @@ public class ListDashboardMetricsRequest extends RoaAcsRequest<ListDashboardMetr
 		}
 	}
 
-	public Long getEndTime() {
+	public String getMetricQuery() {
+		return this.metricQuery;
+	}
+
+	public void setMetricQuery(String metricQuery) {
+		this.metricQuery = metricQuery;
+		if(metricQuery != null){
+			putQueryParameter("metricQuery", metricQuery);
+		}
+	}
+
+	public Integer getEndTime() {
 		return this.endTime;
 	}
 
-	public void setEndTime(Long endTime) {
+	public void setEndTime(Integer endTime) {
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("endTime", endTime.toString());
 		}
 	}
 
-	public Long getStartTime() {
+	public Integer getStartTime() {
 		return this.startTime;
 	}
 
-	public void setStartTime(Long startTime) {
+	public void setStartTime(Integer startTime) {
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("startTime", startTime.toString());
+		}
+	}
+
+	public String getMetricView() {
+		return this.metricView;
+	}
+
+	public void setMetricView(String metricView) {
+		this.metricView = metricView;
+		if(metricView != null){
+			putQueryParameter("metricView", metricView);
 		}
 	}
 

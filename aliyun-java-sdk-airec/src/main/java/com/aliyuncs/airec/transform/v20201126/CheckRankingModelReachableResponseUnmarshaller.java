@@ -22,10 +22,10 @@ public class CheckRankingModelReachableResponseUnmarshaller {
 
 	public static CheckRankingModelReachableResponse unmarshall(CheckRankingModelReachableResponse checkRankingModelReachableResponse, UnmarshallerContext _ctx) {
 		
-		checkRankingModelReachableResponse.setCode(_ctx.stringValue("CheckRankingModelReachableResponse.code"));
-		checkRankingModelReachableResponse.setMessage(_ctx.stringValue("CheckRankingModelReachableResponse.message"));
-		checkRankingModelReachableResponse.setRequestId(_ctx.stringValue("CheckRankingModelReachableResponse.requestId"));
 		checkRankingModelReachableResponse.setResult(_ctx.booleanValue("CheckRankingModelReachableResponse.result"));
+		checkRankingModelReachableResponse.setCode(_ctx.stringValue("CheckRankingModelReachableResponse.code"));
+		checkRankingModelReachableResponse.setRequestId(_ctx.stringValue("CheckRankingModelReachableResponse.requestId"));
+		checkRankingModelReachableResponse.setMessage(_ctx.stringValue("CheckRankingModelReachableResponse.message"));
 	 
 	 	return checkRankingModelReachableResponse;
 	}

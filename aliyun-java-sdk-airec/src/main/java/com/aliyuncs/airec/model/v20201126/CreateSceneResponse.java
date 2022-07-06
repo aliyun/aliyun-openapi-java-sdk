@@ -66,21 +66,13 @@ public class CreateSceneResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String gmtModified;
-
 		private String sceneId;
 
-		private String gmtCreate;
+		private String gmtModified;
 
 		private String status;
 
-		public String getGmtModified() {
-			return this.gmtModified;
-		}
-
-		public void setGmtModified(String gmtModified) {
-			this.gmtModified = gmtModified;
-		}
+		private String gmtCreate;
 
 		public String getSceneId() {
 			return this.sceneId;
@@ -90,12 +82,12 @@ public class CreateSceneResponse extends AcsResponse {
 			this.sceneId = sceneId;
 		}
 
-		public String getGmtCreate() {
-			return this.gmtCreate;
+		public String getGmtModified() {
+			return this.gmtModified;
 		}
 
-		public void setGmtCreate(String gmtCreate) {
-			this.gmtCreate = gmtCreate;
+		public void setGmtModified(String gmtModified) {
+			this.gmtModified = gmtModified;
 		}
 
 		public String getStatus() {
@@ -104,6 +96,14 @@ public class CreateSceneResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public String getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(String gmtCreate) {
+			this.gmtCreate = gmtCreate;
 		}
 	}
 

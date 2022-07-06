@@ -28,10 +28,10 @@ public class CreateRuleResponseUnmarshaller {
 		createRuleResponse.setMessage(_ctx.stringValue("CreateRuleResponse.message"));
 
 		Result result = new Result();
-		result.setGmtModified(_ctx.stringValue("CreateRuleResponse.result.gmtModified"));
-		result.setGmtCreate(_ctx.stringValue("CreateRuleResponse.result.gmtCreate"));
 		result.setRuleId(_ctx.stringValue("CreateRuleResponse.result.ruleId"));
+		result.setGmtModified(_ctx.stringValue("CreateRuleResponse.result.gmtModified"));
 		result.setStatus(_ctx.stringValue("CreateRuleResponse.result.status"));
+		result.setGmtCreate(_ctx.stringValue("CreateRuleResponse.result.gmtCreate"));
 		createRuleResponse.setResult(result);
 	 
 	 	return createRuleResponse;

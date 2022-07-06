@@ -26,21 +26,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListDashboardDetailsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String code;
+
+	private String requestId;
 
 	private String message;
 
 	private List<ResultItem> result;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -48,6 +40,14 @@ public class ListDashboardDetailsResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -68,19 +68,11 @@ public class ListDashboardDetailsResponse extends AcsResponse {
 
 	public static class ResultItem {
 
-		private String sceneId;
-
 		private String traceId;
 
+		private String sceneId;
+
 		private MetricRes metricRes;
-
-		public String getSceneId() {
-			return this.sceneId;
-		}
-
-		public void setSceneId(String sceneId) {
-			this.sceneId = sceneId;
-		}
 
 		public String getTraceId() {
 			return this.traceId;
@@ -88,6 +80,14 @@ public class ListDashboardDetailsResponse extends AcsResponse {
 
 		public void setTraceId(String traceId) {
 			this.traceId = traceId;
+		}
+
+		public String getSceneId() {
+			return this.sceneId;
+		}
+
+		public void setSceneId(String sceneId) {
+			this.sceneId = sceneId;
 		}
 
 		public MetricRes getMetricRes() {
@@ -100,17 +100,9 @@ public class ListDashboardDetailsResponse extends AcsResponse {
 
 		public static class MetricRes {
 
-			private Map<Object,Object> detail;
-
 			private Map<Object,Object> total;
 
-			public Map<Object,Object> getDetail() {
-				return this.detail;
-			}
-
-			public void setDetail(Map<Object,Object> detail) {
-				this.detail = detail;
-			}
+			private Map<Object,Object> detail;
 
 			public Map<Object,Object> getTotal() {
 				return this.total;
@@ -118,6 +110,14 @@ public class ListDashboardDetailsResponse extends AcsResponse {
 
 			public void setTotal(Map<Object,Object> total) {
 				this.total = total;
+			}
+
+			public Map<Object,Object> getDetail() {
+				return this.detail;
+			}
+
+			public void setDetail(Map<Object,Object> detail) {
+				this.detail = detail;
 			}
 		}
 	}

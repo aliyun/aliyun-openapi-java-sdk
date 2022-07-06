@@ -24,23 +24,23 @@ public class ModifyInstanceResponseUnmarshaller {
 	public static ModifyInstanceResponse unmarshall(ModifyInstanceResponse modifyInstanceResponse, UnmarshallerContext _ctx) {
 		
 		modifyInstanceResponse.setCode(_ctx.stringValue("ModifyInstanceResponse.code"));
-		modifyInstanceResponse.setMessage(_ctx.stringValue("ModifyInstanceResponse.message"));
 		modifyInstanceResponse.setRequestId(_ctx.stringValue("ModifyInstanceResponse.requestId"));
+		modifyInstanceResponse.setMessage(_ctx.stringValue("ModifyInstanceResponse.message"));
 
 		Result result = new Result();
-		result.setChargeType(_ctx.stringValue("ModifyInstanceResponse.result.chargeType"));
-		result.setCommodityCode(_ctx.stringValue("ModifyInstanceResponse.result.commodityCode"));
-		result.setDataSetVersion(_ctx.stringValue("ModifyInstanceResponse.result.dataSetVersion"));
-		result.setExpiredTime(_ctx.stringValue("ModifyInstanceResponse.result.expiredTime"));
-		result.setGmtCreate(_ctx.stringValue("ModifyInstanceResponse.result.gmtCreate"));
-		result.setGmtModified(_ctx.stringValue("ModifyInstanceResponse.result.gmtModified"));
-		result.setIndustry(_ctx.stringValue("ModifyInstanceResponse.result.industry"));
-		result.setInstanceId(_ctx.stringValue("ModifyInstanceResponse.result.instanceId"));
-		result.setLockMode(_ctx.stringValue("ModifyInstanceResponse.result.lockMode"));
-		result.setName(_ctx.stringValue("ModifyInstanceResponse.result.name"));
 		result.setRegionId(_ctx.stringValue("ModifyInstanceResponse.result.regionId"));
-		result.setStatus(_ctx.stringValue("ModifyInstanceResponse.result.status"));
 		result.setType(_ctx.stringValue("ModifyInstanceResponse.result.type"));
+		result.setLockMode(_ctx.stringValue("ModifyInstanceResponse.result.lockMode"));
+		result.setExpiredTime(_ctx.stringValue("ModifyInstanceResponse.result.expiredTime"));
+		result.setStatus(_ctx.stringValue("ModifyInstanceResponse.result.status"));
+		result.setGmtCreate(_ctx.stringValue("ModifyInstanceResponse.result.gmtCreate"));
+		result.setChargeType(_ctx.stringValue("ModifyInstanceResponse.result.chargeType"));
+		result.setIndustry(_ctx.stringValue("ModifyInstanceResponse.result.industry"));
+		result.setCommodityCode(_ctx.stringValue("ModifyInstanceResponse.result.commodityCode"));
+		result.setGmtModified(_ctx.stringValue("ModifyInstanceResponse.result.gmtModified"));
+		result.setDataSetVersion(_ctx.stringValue("ModifyInstanceResponse.result.dataSetVersion"));
+		result.setName(_ctx.stringValue("ModifyInstanceResponse.result.name"));
+		result.setInstanceId(_ctx.stringValue("ModifyInstanceResponse.result.instanceId"));
 		modifyInstanceResponse.setResult(result);
 	 
 	 	return modifyInstanceResponse;

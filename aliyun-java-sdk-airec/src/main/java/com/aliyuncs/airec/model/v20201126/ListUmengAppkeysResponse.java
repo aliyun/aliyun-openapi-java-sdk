@@ -27,9 +27,9 @@ public class ListUmengAppkeysResponse extends AcsResponse {
 
 	private String code;
 
-	private String message;
-
 	private String requestId;
+
+	private String message;
 
 	private List<ResultItem> result;
 
@@ -41,20 +41,20 @@ public class ListUmengAppkeysResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public List<ResultItem> getResult() {
@@ -69,9 +69,9 @@ public class ListUmengAppkeysResponse extends AcsResponse {
 
 		private String appkey;
 
-		private String name;
-
 		private String platform;
+
+		private String name;
 
 		public String getAppkey() {
 			return this.appkey;
@@ -81,20 +81,20 @@ public class ListUmengAppkeysResponse extends AcsResponse {
 			this.appkey = appkey;
 		}
 
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
 		public String getPlatform() {
 			return this.platform;
 		}
 
 		public void setPlatform(String platform) {
 			this.platform = platform;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 	}
 

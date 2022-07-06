@@ -27,9 +27,9 @@ public class DeleteRankingModelResponse extends AcsResponse {
 
 	private String code;
 
-	private String message;
-
 	private String requestId;
+
+	private String message;
 
 	private Result result;
 
@@ -41,20 +41,20 @@ public class DeleteRankingModelResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Result getResult() {
@@ -67,17 +67,9 @@ public class DeleteRankingModelResponse extends AcsResponse {
 
 	public static class Result {
 
-		private Map<Object,Object> meta;
-
 		private String rankingModelId;
 
-		public Map<Object,Object> getMeta() {
-			return this.meta;
-		}
-
-		public void setMeta(Map<Object,Object> meta) {
-			this.meta = meta;
-		}
+		private Map<Object,Object> meta;
 
 		public String getRankingModelId() {
 			return this.rankingModelId;
@@ -85,6 +77,14 @@ public class DeleteRankingModelResponse extends AcsResponse {
 
 		public void setRankingModelId(String rankingModelId) {
 			this.rankingModelId = rankingModelId;
+		}
+
+		public Map<Object,Object> getMeta() {
+			return this.meta;
+		}
+
+		public void setMeta(Map<Object,Object> meta) {
+			this.meta = meta;
 		}
 	}
 

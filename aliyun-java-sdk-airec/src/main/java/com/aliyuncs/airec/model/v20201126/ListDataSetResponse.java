@@ -27,9 +27,9 @@ public class ListDataSetResponse extends AcsResponse {
 
 	private String code;
 
-	private String message;
-
 	private String requestId;
+
+	private String message;
 
 	private List<ResultItem> result;
 
@@ -41,20 +41,20 @@ public class ListDataSetResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public List<ResultItem> getResult() {
@@ -67,38 +67,22 @@ public class ListDataSetResponse extends AcsResponse {
 
 	public static class ResultItem {
 
-		private Long gmtCreate;
-
-		private Long gmtModified;
-
-		private String instanceId;
+		private String versionId;
 
 		private String state;
 
-		private String versionId;
+		private Long gmtModified;
 
-		public Long getGmtCreate() {
-			return this.gmtCreate;
+		private Long gmtCreate;
+
+		private String instanceId;
+
+		public String getVersionId() {
+			return this.versionId;
 		}
 
-		public void setGmtCreate(Long gmtCreate) {
-			this.gmtCreate = gmtCreate;
-		}
-
-		public Long getGmtModified() {
-			return this.gmtModified;
-		}
-
-		public void setGmtModified(Long gmtModified) {
-			this.gmtModified = gmtModified;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
+		public void setVersionId(String versionId) {
+			this.versionId = versionId;
 		}
 
 		public String getState() {
@@ -109,12 +93,28 @@ public class ListDataSetResponse extends AcsResponse {
 			this.state = state;
 		}
 
-		public String getVersionId() {
-			return this.versionId;
+		public Long getGmtModified() {
+			return this.gmtModified;
 		}
 
-		public void setVersionId(String versionId) {
-			this.versionId = versionId;
+		public void setGmtModified(Long gmtModified) {
+			this.gmtModified = gmtModified;
+		}
+
+		public Long getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(Long gmtCreate) {
+			this.gmtCreate = gmtCreate;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 	}
 

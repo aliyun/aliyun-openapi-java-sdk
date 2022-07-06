@@ -23,10 +23,10 @@ public class QueryDataMessageResponseUnmarshaller {
 
 	public static QueryDataMessageResponse unmarshall(QueryDataMessageResponse queryDataMessageResponse, UnmarshallerContext _ctx) {
 		
-		queryDataMessageResponse.setCode(_ctx.stringValue("QueryDataMessageResponse.code"));
-		queryDataMessageResponse.setMessage(_ctx.stringValue("QueryDataMessageResponse.message"));
-		queryDataMessageResponse.setRequestId(_ctx.stringValue("QueryDataMessageResponse.requestId"));
 		queryDataMessageResponse.setResult(_ctx.mapValue("QueryDataMessageResponse.result"));
+		queryDataMessageResponse.setCode(_ctx.stringValue("QueryDataMessageResponse.code"));
+		queryDataMessageResponse.setRequestId(_ctx.stringValue("QueryDataMessageResponse.requestId"));
+		queryDataMessageResponse.setMessage(_ctx.stringValue("QueryDataMessageResponse.message"));
 	 
 	 	return queryDataMessageResponse;
 	}

@@ -31,17 +31,17 @@ public class ListIndexVersionsResponseUnmarshaller {
 		List<IndeVersion> result = new ArrayList<IndeVersion>();
 		for (int i = 0; i < _ctx.lengthValue("ListIndexVersionsResponse.result.Length"); i++) {
 			IndeVersion indeVersion = new IndeVersion();
-			indeVersion.setVersionId(_ctx.stringValue("ListIndexVersionsResponse.result["+ i +"].versionId"));
-			indeVersion.setStatus(_ctx.stringValue("ListIndexVersionsResponse.result["+ i +"].status"));
-			indeVersion.setBuiltTime(_ctx.stringValue("ListIndexVersionsResponse.result["+ i +"].builtTime"));
+			indeVersion.setCode(_ctx.stringValue("ListIndexVersionsResponse.result["+ i +"].code"));
 			indeVersion.setSwitchedTime(_ctx.stringValue("ListIndexVersionsResponse.result["+ i +"].switchedTime"));
 			indeVersion.setRollbackEnabled(_ctx.booleanValue("ListIndexVersionsResponse.result["+ i +"].rollbackEnabled"));
-			indeVersion.setCostSeconds(_ctx.integerValue("ListIndexVersionsResponse.result["+ i +"].costSeconds"));
-			indeVersion.setSize(_ctx.longValue("ListIndexVersionsResponse.result["+ i +"].size"));
-			indeVersion.setProgress(_ctx.integerValue("ListIndexVersionsResponse.result["+ i +"].progress"));
-			indeVersion.setFlowType(_ctx.stringValue("ListIndexVersionsResponse.result["+ i +"].flowType"));
-			indeVersion.setCode(_ctx.stringValue("ListIndexVersionsResponse.result["+ i +"].code"));
 			indeVersion.setMessage(_ctx.stringValue("ListIndexVersionsResponse.result["+ i +"].message"));
+			indeVersion.setFlowType(_ctx.stringValue("ListIndexVersionsResponse.result["+ i +"].flowType"));
+			indeVersion.setCostSeconds(_ctx.integerValue("ListIndexVersionsResponse.result["+ i +"].costSeconds"));
+			indeVersion.setBuiltTime(_ctx.stringValue("ListIndexVersionsResponse.result["+ i +"].builtTime"));
+			indeVersion.setVersionId(_ctx.stringValue("ListIndexVersionsResponse.result["+ i +"].versionId"));
+			indeVersion.setSize(_ctx.longValue("ListIndexVersionsResponse.result["+ i +"].size"));
+			indeVersion.setStatus(_ctx.stringValue("ListIndexVersionsResponse.result["+ i +"].status"));
+			indeVersion.setProgress(_ctx.integerValue("ListIndexVersionsResponse.result["+ i +"].progress"));
 
 			result.add(indeVersion);
 		}

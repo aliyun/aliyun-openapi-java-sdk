@@ -57,22 +57,22 @@ public class ListUserClustersResponse extends AcsResponse {
 
 	public static class UserCluster {
 
-		private String name;
+		private String gmtModified;
 
 		private String status;
 
 		private String gmtCreate;
 
-		private String gmtModified;
+		private String name;
 
 		private Meta meta;
 
-		public String getName() {
-			return this.name;
+		public String getGmtModified() {
+			return this.gmtModified;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+		public void setGmtModified(String gmtModified) {
+			this.gmtModified = gmtModified;
 		}
 
 		public String getStatus() {
@@ -91,12 +91,12 @@ public class ListUserClustersResponse extends AcsResponse {
 			this.gmtCreate = gmtCreate;
 		}
 
-		public String getGmtModified() {
-			return this.gmtModified;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setGmtModified(String gmtModified) {
-			this.gmtModified = gmtModified;
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public Meta getMeta() {

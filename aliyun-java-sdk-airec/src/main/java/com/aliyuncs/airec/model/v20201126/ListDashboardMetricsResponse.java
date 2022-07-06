@@ -26,21 +26,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListDashboardMetricsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String code;
+
+	private String requestId;
 
 	private String message;
 
 	private List<ResultItem> result;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -48,6 +40,14 @@ public class ListDashboardMetricsResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -90,18 +90,18 @@ public class ListDashboardMetricsResponse extends AcsResponse {
 
 		public static class DetailItem {
 
-			private String endTime;
+			private String val;
 
 			private String startTime;
 
-			private String val;
+			private String endTime;
 
-			public String getEndTime() {
-				return this.endTime;
+			public String getVal() {
+				return this.val;
 			}
 
-			public void setEndTime(String endTime) {
-				this.endTime = endTime;
+			public void setVal(String val) {
+				this.val = val;
 			}
 
 			public String getStartTime() {
@@ -112,12 +112,12 @@ public class ListDashboardMetricsResponse extends AcsResponse {
 				this.startTime = startTime;
 			}
 
-			public String getVal() {
-				return this.val;
+			public String getEndTime() {
+				return this.endTime;
 			}
 
-			public void setVal(String val) {
-				this.val = val;
+			public void setEndTime(String endTime) {
+				this.endTime = endTime;
 			}
 		}
 	}

@@ -26,9 +26,9 @@ public class ModifyDataSourceResponse extends AcsResponse {
 
 	private String code;
 
-	private String message;
-
 	private String requestId;
+
+	private String message;
 
 	private Result result;
 
@@ -40,20 +40,20 @@ public class ModifyDataSourceResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Result getResult() {
@@ -66,21 +66,13 @@ public class ModifyDataSourceResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String gmtCreate;
-
 		private String gmtModified;
+
+		private String gmtCreate;
 
 		private String tableName;
 
 		private Meta meta;
-
-		public String getGmtCreate() {
-			return this.gmtCreate;
-		}
-
-		public void setGmtCreate(String gmtCreate) {
-			this.gmtCreate = gmtCreate;
-		}
 
 		public String getGmtModified() {
 			return this.gmtModified;
@@ -88,6 +80,14 @@ public class ModifyDataSourceResponse extends AcsResponse {
 
 		public void setGmtModified(String gmtModified) {
 			this.gmtModified = gmtModified;
+		}
+
+		public String getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(String gmtCreate) {
+			this.gmtCreate = gmtCreate;
 		}
 
 		public String getTableName() {
@@ -108,21 +108,29 @@ public class ModifyDataSourceResponse extends AcsResponse {
 
 		public static class Meta {
 
+			private String bucketName;
+
 			private String accessKeyId;
 
-			private String bucketName;
+			private String type;
 
 			private String partition;
 
-			private String path;
+			private Long timestamp;
 
-			private String projectName;
+			private String path;
 
 			private String tableName;
 
-			private Long timestamp;
+			private String projectName;
 
-			private String type;
+			public String getBucketName() {
+				return this.bucketName;
+			}
+
+			public void setBucketName(String bucketName) {
+				this.bucketName = bucketName;
+			}
 
 			public String getAccessKeyId() {
 				return this.accessKeyId;
@@ -132,12 +140,12 @@ public class ModifyDataSourceResponse extends AcsResponse {
 				this.accessKeyId = accessKeyId;
 			}
 
-			public String getBucketName() {
-				return this.bucketName;
+			public String getType() {
+				return this.type;
 			}
 
-			public void setBucketName(String bucketName) {
-				this.bucketName = bucketName;
+			public void setType(String type) {
+				this.type = type;
 			}
 
 			public String getPartition() {
@@ -148,20 +156,20 @@ public class ModifyDataSourceResponse extends AcsResponse {
 				this.partition = partition;
 			}
 
+			public Long getTimestamp() {
+				return this.timestamp;
+			}
+
+			public void setTimestamp(Long timestamp) {
+				this.timestamp = timestamp;
+			}
+
 			public String getPath() {
 				return this.path;
 			}
 
 			public void setPath(String path) {
 				this.path = path;
-			}
-
-			public String getProjectName() {
-				return this.projectName;
-			}
-
-			public void setProjectName(String projectName) {
-				this.projectName = projectName;
 			}
 
 			public String getTableName() {
@@ -172,20 +180,12 @@ public class ModifyDataSourceResponse extends AcsResponse {
 				this.tableName = tableName;
 			}
 
-			public Long getTimestamp() {
-				return this.timestamp;
+			public String getProjectName() {
+				return this.projectName;
 			}
 
-			public void setTimestamp(Long timestamp) {
-				this.timestamp = timestamp;
-			}
-
-			public String getType() {
-				return this.type;
-			}
-
-			public void setType(String type) {
-				this.type = type;
+			public void setProjectName(String projectName) {
+				this.projectName = projectName;
 			}
 		}
 	}

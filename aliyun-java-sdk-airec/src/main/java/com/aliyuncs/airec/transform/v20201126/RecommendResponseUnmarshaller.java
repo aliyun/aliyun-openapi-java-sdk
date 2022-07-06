@@ -27,17 +27,17 @@ public class RecommendResponseUnmarshaller {
 	public static RecommendResponse unmarshall(RecommendResponse recommendResponse, UnmarshallerContext _ctx) {
 		
 		recommendResponse.setCode(_ctx.stringValue("RecommendResponse.code"));
-		recommendResponse.setMessage(_ctx.stringValue("RecommendResponse.message"));
 		recommendResponse.setRequestId(_ctx.stringValue("RecommendResponse.requestId"));
+		recommendResponse.setMessage(_ctx.stringValue("RecommendResponse.message"));
 
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("RecommendResponse.result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
+			resultItem.setMatchInfo(_ctx.stringValue("RecommendResponse.result["+ i +"].matchInfo"));
+			resultItem.setTraceId(_ctx.stringValue("RecommendResponse.result["+ i +"].traceId"));
+			resultItem.setPosition(_ctx.integerValue("RecommendResponse.result["+ i +"].position"));
 			resultItem.setItemId(_ctx.stringValue("RecommendResponse.result["+ i +"].itemId"));
 			resultItem.setItemType(_ctx.stringValue("RecommendResponse.result["+ i +"].itemType"));
-			resultItem.setMatchInfo(_ctx.stringValue("RecommendResponse.result["+ i +"].matchInfo"));
-			resultItem.setPosition(_ctx.integerValue("RecommendResponse.result["+ i +"].position"));
-			resultItem.setTraceId(_ctx.stringValue("RecommendResponse.result["+ i +"].traceId"));
 			resultItem.setTraceInfo(_ctx.stringValue("RecommendResponse.result["+ i +"].traceInfo"));
 			resultItem.setWeight(_ctx.floatValue("RecommendResponse.result["+ i +"].weight"));
 

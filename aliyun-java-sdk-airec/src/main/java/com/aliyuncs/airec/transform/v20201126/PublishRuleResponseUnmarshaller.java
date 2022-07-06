@@ -23,8 +23,8 @@ public class PublishRuleResponseUnmarshaller {
 
 	public static PublishRuleResponse unmarshall(PublishRuleResponse publishRuleResponse, UnmarshallerContext _ctx) {
 		
-		publishRuleResponse.setRequestId(_ctx.stringValue("PublishRuleResponse.requestId"));
 		publishRuleResponse.setCode(_ctx.stringValue("PublishRuleResponse.code"));
+		publishRuleResponse.setRequestId(_ctx.stringValue("PublishRuleResponse.requestId"));
 		publishRuleResponse.setMessage(_ctx.stringValue("PublishRuleResponse.message"));
 
 		Result result = new Result();

@@ -28,23 +28,23 @@ public class ListInstanceTaskResponseUnmarshaller {
 	public static ListInstanceTaskResponse unmarshall(ListInstanceTaskResponse listInstanceTaskResponse, UnmarshallerContext _ctx) {
 		
 		listInstanceTaskResponse.setCode(_ctx.stringValue("ListInstanceTaskResponse.code"));
-		listInstanceTaskResponse.setMessage(_ctx.stringValue("ListInstanceTaskResponse.message"));
 		listInstanceTaskResponse.setRequestId(_ctx.stringValue("ListInstanceTaskResponse.requestId"));
+		listInstanceTaskResponse.setMessage(_ctx.stringValue("ListInstanceTaskResponse.message"));
 
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListInstanceTaskResponse.result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setName(_ctx.stringValue("ListInstanceTaskResponse.result["+ i +"].name"));
 			resultItem.setTotalProgress(_ctx.integerValue("ListInstanceTaskResponse.result["+ i +"].totalProgress"));
+			resultItem.setName(_ctx.stringValue("ListInstanceTaskResponse.result["+ i +"].name"));
 
 			List<SubProgressInfosItem> subProgressInfos = new ArrayList<SubProgressInfosItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListInstanceTaskResponse.result["+ i +"].subProgressInfos.Length"); j++) {
 				SubProgressInfosItem subProgressInfosItem = new SubProgressInfosItem();
+				subProgressInfosItem.setType(_ctx.stringValue("ListInstanceTaskResponse.result["+ i +"].subProgressInfos["+ j +"].type"));
 				subProgressInfosItem.setDetail(_ctx.stringValue("ListInstanceTaskResponse.result["+ i +"].subProgressInfos["+ j +"].detail"));
+				subProgressInfosItem.setTotalNum(_ctx.integerValue("ListInstanceTaskResponse.result["+ i +"].subProgressInfos["+ j +"].totalNum"));
 				subProgressInfosItem.setFinishedNum(_ctx.integerValue("ListInstanceTaskResponse.result["+ i +"].subProgressInfos["+ j +"].finishedNum"));
 				subProgressInfosItem.setProgress(_ctx.integerValue("ListInstanceTaskResponse.result["+ i +"].subProgressInfos["+ j +"].progress"));
-				subProgressInfosItem.setTotalNum(_ctx.integerValue("ListInstanceTaskResponse.result["+ i +"].subProgressInfos["+ j +"].totalNum"));
-				subProgressInfosItem.setType(_ctx.stringValue("ListInstanceTaskResponse.result["+ i +"].subProgressInfos["+ j +"].type"));
 
 				subProgressInfos.add(subProgressInfosItem);
 			}

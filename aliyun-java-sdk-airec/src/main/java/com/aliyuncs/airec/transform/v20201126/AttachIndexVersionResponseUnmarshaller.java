@@ -22,8 +22,8 @@ public class AttachIndexVersionResponseUnmarshaller {
 
 	public static AttachIndexVersionResponse unmarshall(AttachIndexVersionResponse attachIndexVersionResponse, UnmarshallerContext _ctx) {
 		
-		attachIndexVersionResponse.setRequestId(_ctx.stringValue("AttachIndexVersionResponse.requestId"));
 		attachIndexVersionResponse.setResult(_ctx.booleanValue("AttachIndexVersionResponse.result"));
+		attachIndexVersionResponse.setRequestId(_ctx.stringValue("AttachIndexVersionResponse.requestId"));
 	 
 	 	return attachIndexVersionResponse;
 	}

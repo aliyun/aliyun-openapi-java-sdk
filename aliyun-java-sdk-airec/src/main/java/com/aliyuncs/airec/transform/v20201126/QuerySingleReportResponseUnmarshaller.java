@@ -23,10 +23,10 @@ public class QuerySingleReportResponseUnmarshaller {
 
 	public static QuerySingleReportResponse unmarshall(QuerySingleReportResponse querySingleReportResponse, UnmarshallerContext _ctx) {
 		
-		querySingleReportResponse.setCode(_ctx.stringValue("QuerySingleReportResponse.code"));
-		querySingleReportResponse.setMessage(_ctx.stringValue("QuerySingleReportResponse.message"));
-		querySingleReportResponse.setRequestId(_ctx.stringValue("QuerySingleReportResponse.requestId"));
 		querySingleReportResponse.setResult(_ctx.mapValue("QuerySingleReportResponse.result"));
+		querySingleReportResponse.setCode(_ctx.stringValue("QuerySingleReportResponse.code"));
+		querySingleReportResponse.setRequestId(_ctx.stringValue("QuerySingleReportResponse.requestId"));
+		querySingleReportResponse.setMessage(_ctx.stringValue("QuerySingleReportResponse.message"));
 	 
 	 	return querySingleReportResponse;
 	}

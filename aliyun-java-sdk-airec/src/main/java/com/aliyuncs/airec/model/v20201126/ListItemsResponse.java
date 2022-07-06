@@ -69,44 +69,36 @@ public class ListItemsResponse extends AcsResponse {
 
 		public static class DetailItem {
 
-			private String author;
-
-			private String brandId;
+			private String title;
 
 			private String categoryPath;
-
-			private String channel;
-
-			private String duration;
-
-			private String expireTime;
 
 			private String itemId;
 
 			private String itemType;
 
-			private String pubTime;
+			private String status;
+
+			private String brandId;
 
 			private String shopId;
 
-			private String status;
+			private String pubTime;
 
-			private String title;
+			private String channel;
 
-			public String getAuthor() {
-				return this.author;
+			private String duration;
+
+			private String author;
+
+			private String expireTime;
+
+			public String getTitle() {
+				return this.title;
 			}
 
-			public void setAuthor(String author) {
-				this.author = author;
-			}
-
-			public String getBrandId() {
-				return this.brandId;
-			}
-
-			public void setBrandId(String brandId) {
-				this.brandId = brandId;
+			public void setTitle(String title) {
+				this.title = title;
 			}
 
 			public String getCategoryPath() {
@@ -115,30 +107,6 @@ public class ListItemsResponse extends AcsResponse {
 
 			public void setCategoryPath(String categoryPath) {
 				this.categoryPath = categoryPath;
-			}
-
-			public String getChannel() {
-				return this.channel;
-			}
-
-			public void setChannel(String channel) {
-				this.channel = channel;
-			}
-
-			public String getDuration() {
-				return this.duration;
-			}
-
-			public void setDuration(String duration) {
-				this.duration = duration;
-			}
-
-			public String getExpireTime() {
-				return this.expireTime;
-			}
-
-			public void setExpireTime(String expireTime) {
-				this.expireTime = expireTime;
 			}
 
 			public String getItemId() {
@@ -157,12 +125,20 @@ public class ListItemsResponse extends AcsResponse {
 				this.itemType = itemType;
 			}
 
-			public String getPubTime() {
-				return this.pubTime;
+			public String getStatus() {
+				return this.status;
 			}
 
-			public void setPubTime(String pubTime) {
-				this.pubTime = pubTime;
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public String getBrandId() {
+				return this.brandId;
+			}
+
+			public void setBrandId(String brandId) {
+				this.brandId = brandId;
 			}
 
 			public String getShopId() {
@@ -173,43 +149,75 @@ public class ListItemsResponse extends AcsResponse {
 				this.shopId = shopId;
 			}
 
-			public String getStatus() {
-				return this.status;
+			public String getPubTime() {
+				return this.pubTime;
 			}
 
-			public void setStatus(String status) {
-				this.status = status;
+			public void setPubTime(String pubTime) {
+				this.pubTime = pubTime;
 			}
 
-			public String getTitle() {
-				return this.title;
+			public String getChannel() {
+				return this.channel;
 			}
 
-			public void setTitle(String title) {
-				this.title = title;
+			public void setChannel(String channel) {
+				this.channel = channel;
+			}
+
+			public String getDuration() {
+				return this.duration;
+			}
+
+			public void setDuration(String duration) {
+				this.duration = duration;
+			}
+
+			public String getAuthor() {
+				return this.author;
+			}
+
+			public void setAuthor(String author) {
+				this.author = author;
+			}
+
+			public String getExpireTime() {
+				return this.expireTime;
+			}
+
+			public void setExpireTime(String expireTime) {
+				this.expireTime = expireTime;
 			}
 		}
 
 		public static class Total {
 
-			private Long instanceRecommendItem;
+			private Long sceneWeightItem;
+
+			private Long totalCount;
 
 			private Long queryCount;
 
 			private Long sceneRecommendItem;
 
-			private Long sceneWeightItem;
-
-			private Long totalCount;
-
 			private Long weightItem;
 
-			public Long getInstanceRecommendItem() {
-				return this.instanceRecommendItem;
+			private Long instanceRecommendItem;
+
+			public Long getSceneWeightItem() {
+				return this.sceneWeightItem;
 			}
 
-			public void setInstanceRecommendItem(Long instanceRecommendItem) {
-				this.instanceRecommendItem = instanceRecommendItem;
+			public void setSceneWeightItem(Long sceneWeightItem) {
+				this.sceneWeightItem = sceneWeightItem;
+			}
+
+			public Long getTotalCount() {
+				return this.totalCount;
+			}
+
+			public void setTotalCount(Long totalCount) {
+				this.totalCount = totalCount;
 			}
 
 			public Long getQueryCount() {
@@ -228,28 +236,20 @@ public class ListItemsResponse extends AcsResponse {
 				this.sceneRecommendItem = sceneRecommendItem;
 			}
 
-			public Long getSceneWeightItem() {
-				return this.sceneWeightItem;
-			}
-
-			public void setSceneWeightItem(Long sceneWeightItem) {
-				this.sceneWeightItem = sceneWeightItem;
-			}
-
-			public Long getTotalCount() {
-				return this.totalCount;
-			}
-
-			public void setTotalCount(Long totalCount) {
-				this.totalCount = totalCount;
-			}
-
 			public Long getWeightItem() {
 				return this.weightItem;
 			}
 
 			public void setWeightItem(Long weightItem) {
 				this.weightItem = weightItem;
+			}
+
+			public Long getInstanceRecommendItem() {
+				return this.instanceRecommendItem;
+			}
+
+			public void setInstanceRecommendItem(Long instanceRecommendItem) {
+				this.instanceRecommendItem = instanceRecommendItem;
 			}
 		}
 	}

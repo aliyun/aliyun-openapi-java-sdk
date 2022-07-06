@@ -25,14 +25,14 @@ public class DecribeRankingModelResponseUnmarshaller {
 	public static DecribeRankingModelResponse unmarshall(DecribeRankingModelResponse decribeRankingModelResponse, UnmarshallerContext _ctx) {
 		
 		decribeRankingModelResponse.setCode(_ctx.stringValue("DecribeRankingModelResponse.code"));
-		decribeRankingModelResponse.setMessage(_ctx.stringValue("DecribeRankingModelResponse.message"));
 		decribeRankingModelResponse.setRequestId(_ctx.stringValue("DecribeRankingModelResponse.requestId"));
+		decribeRankingModelResponse.setMessage(_ctx.stringValue("DecribeRankingModelResponse.message"));
 
 		Result result = new Result();
-		result.setGmtCreate(_ctx.stringValue("DecribeRankingModelResponse.result.gmtCreate"));
-		result.setGmtModified(_ctx.stringValue("DecribeRankingModelResponse.result.gmtModified"));
-		result.setMeta(_ctx.mapValue("DecribeRankingModelResponse.result.meta"));
 		result.setRankingModelId(_ctx.stringValue("DecribeRankingModelResponse.result.rankingModelId"));
+		result.setGmtModified(_ctx.stringValue("DecribeRankingModelResponse.result.gmtModified"));
+		result.setGmtCreate(_ctx.stringValue("DecribeRankingModelResponse.result.gmtCreate"));
+		result.setMeta(_ctx.mapValue("DecribeRankingModelResponse.result.meta"));
 		decribeRankingModelResponse.setResult(result);
 	 
 	 	return decribeRankingModelResponse;

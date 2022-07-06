@@ -31,17 +31,17 @@ public class DescribeLatestTaskResponseUnmarshaller {
 		List<IndexVersion> result = new ArrayList<IndexVersion>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLatestTaskResponse.result.Length"); i++) {
 			IndexVersion indexVersion = new IndexVersion();
-			indexVersion.setVersionId(_ctx.stringValue("DescribeLatestTaskResponse.result["+ i +"].versionId"));
-			indexVersion.setStatus(_ctx.stringValue("DescribeLatestTaskResponse.result["+ i +"].status"));
-			indexVersion.setBuiltTime(_ctx.stringValue("DescribeLatestTaskResponse.result["+ i +"].builtTime"));
+			indexVersion.setCode(_ctx.stringValue("DescribeLatestTaskResponse.result["+ i +"].code"));
 			indexVersion.setSwitchedTime(_ctx.stringValue("DescribeLatestTaskResponse.result["+ i +"].switchedTime"));
 			indexVersion.setRollbackEnabled(_ctx.booleanValue("DescribeLatestTaskResponse.result["+ i +"].rollbackEnabled"));
-			indexVersion.setCostSeconds(_ctx.integerValue("DescribeLatestTaskResponse.result["+ i +"].costSeconds"));
-			indexVersion.setSize(_ctx.longValue("DescribeLatestTaskResponse.result["+ i +"].size"));
-			indexVersion.setProgress(_ctx.integerValue("DescribeLatestTaskResponse.result["+ i +"].progress"));
-			indexVersion.setFlowType(_ctx.stringValue("DescribeLatestTaskResponse.result["+ i +"].flowType"));
-			indexVersion.setCode(_ctx.stringValue("DescribeLatestTaskResponse.result["+ i +"].code"));
 			indexVersion.setMessage(_ctx.stringValue("DescribeLatestTaskResponse.result["+ i +"].message"));
+			indexVersion.setFlowType(_ctx.stringValue("DescribeLatestTaskResponse.result["+ i +"].flowType"));
+			indexVersion.setCostSeconds(_ctx.integerValue("DescribeLatestTaskResponse.result["+ i +"].costSeconds"));
+			indexVersion.setBuiltTime(_ctx.stringValue("DescribeLatestTaskResponse.result["+ i +"].builtTime"));
+			indexVersion.setVersionId(_ctx.stringValue("DescribeLatestTaskResponse.result["+ i +"].versionId"));
+			indexVersion.setSize(_ctx.longValue("DescribeLatestTaskResponse.result["+ i +"].size"));
+			indexVersion.setStatus(_ctx.stringValue("DescribeLatestTaskResponse.result["+ i +"].status"));
+			indexVersion.setProgress(_ctx.integerValue("DescribeLatestTaskResponse.result["+ i +"].progress"));
 
 			result.add(indexVersion);
 		}

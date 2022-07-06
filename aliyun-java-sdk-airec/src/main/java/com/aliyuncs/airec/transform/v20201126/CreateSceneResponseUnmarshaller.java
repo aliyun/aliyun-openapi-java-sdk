@@ -28,10 +28,10 @@ public class CreateSceneResponseUnmarshaller {
 		createSceneResponse.setMessage(_ctx.stringValue("CreateSceneResponse.message"));
 
 		Result result = new Result();
-		result.setGmtModified(_ctx.stringValue("CreateSceneResponse.result.gmtModified"));
 		result.setSceneId(_ctx.stringValue("CreateSceneResponse.result.sceneId"));
-		result.setGmtCreate(_ctx.stringValue("CreateSceneResponse.result.gmtCreate"));
+		result.setGmtModified(_ctx.stringValue("CreateSceneResponse.result.gmtModified"));
 		result.setStatus(_ctx.stringValue("CreateSceneResponse.result.status"));
+		result.setGmtCreate(_ctx.stringValue("CreateSceneResponse.result.gmtCreate"));
 		createSceneResponse.setResult(result);
 	 
 	 	return createSceneResponse;

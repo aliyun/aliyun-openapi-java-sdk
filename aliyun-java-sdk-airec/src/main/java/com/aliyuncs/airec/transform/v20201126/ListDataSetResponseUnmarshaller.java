@@ -27,17 +27,17 @@ public class ListDataSetResponseUnmarshaller {
 	public static ListDataSetResponse unmarshall(ListDataSetResponse listDataSetResponse, UnmarshallerContext _ctx) {
 		
 		listDataSetResponse.setCode(_ctx.stringValue("ListDataSetResponse.code"));
-		listDataSetResponse.setMessage(_ctx.stringValue("ListDataSetResponse.message"));
 		listDataSetResponse.setRequestId(_ctx.stringValue("ListDataSetResponse.requestId"));
+		listDataSetResponse.setMessage(_ctx.stringValue("ListDataSetResponse.message"));
 
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListDataSetResponse.result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setGmtCreate(_ctx.longValue("ListDataSetResponse.result["+ i +"].gmtCreate"));
-			resultItem.setGmtModified(_ctx.longValue("ListDataSetResponse.result["+ i +"].gmtModified"));
-			resultItem.setInstanceId(_ctx.stringValue("ListDataSetResponse.result["+ i +"].instanceId"));
-			resultItem.setState(_ctx.stringValue("ListDataSetResponse.result["+ i +"].state"));
 			resultItem.setVersionId(_ctx.stringValue("ListDataSetResponse.result["+ i +"].versionId"));
+			resultItem.setState(_ctx.stringValue("ListDataSetResponse.result["+ i +"].state"));
+			resultItem.setGmtModified(_ctx.longValue("ListDataSetResponse.result["+ i +"].gmtModified"));
+			resultItem.setGmtCreate(_ctx.longValue("ListDataSetResponse.result["+ i +"].gmtCreate"));
+			resultItem.setInstanceId(_ctx.stringValue("ListDataSetResponse.result["+ i +"].instanceId"));
 
 			result.add(resultItem);
 		}

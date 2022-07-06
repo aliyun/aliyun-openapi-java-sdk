@@ -27,22 +27,22 @@ public class ListSceneParametersResponseUnmarshaller {
 	public static ListSceneParametersResponse unmarshall(ListSceneParametersResponse listSceneParametersResponse, UnmarshallerContext _ctx) {
 		
 		listSceneParametersResponse.setCode(_ctx.stringValue("ListSceneParametersResponse.code"));
-		listSceneParametersResponse.setMessage(_ctx.stringValue("ListSceneParametersResponse.message"));
 		listSceneParametersResponse.setRequestId(_ctx.stringValue("ListSceneParametersResponse.requestId"));
+		listSceneParametersResponse.setMessage(_ctx.stringValue("ListSceneParametersResponse.message"));
 
 		Result result = new Result();
-
-		List<String> sceneId = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("ListSceneParametersResponse.result.sceneId.Length"); i++) {
-			sceneId.add(_ctx.stringValue("ListSceneParametersResponse.result.sceneId["+ i +"]"));
-		}
-		result.setSceneId(sceneId);
 
 		List<String> traceId = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("ListSceneParametersResponse.result.traceId.Length"); i++) {
 			traceId.add(_ctx.stringValue("ListSceneParametersResponse.result.traceId["+ i +"]"));
 		}
 		result.setTraceId(traceId);
+
+		List<String> sceneId = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("ListSceneParametersResponse.result.sceneId.Length"); i++) {
+			sceneId.add(_ctx.stringValue("ListSceneParametersResponse.result.sceneId["+ i +"]"));
+		}
+		result.setSceneId(sceneId);
 		listSceneParametersResponse.setResult(result);
 	 
 	 	return listSceneParametersResponse;

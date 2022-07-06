@@ -27,9 +27,9 @@ public class ListInstanceTaskResponse extends AcsResponse {
 
 	private String code;
 
-	private String message;
-
 	private String requestId;
+
+	private String message;
 
 	private List<ResultItem> result;
 
@@ -41,20 +41,20 @@ public class ListInstanceTaskResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public List<ResultItem> getResult() {
@@ -67,19 +67,11 @@ public class ListInstanceTaskResponse extends AcsResponse {
 
 	public static class ResultItem {
 
-		private String name;
-
 		private Integer totalProgress;
 
+		private String name;
+
 		private List<SubProgressInfosItem> subProgressInfos;
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
 
 		public Integer getTotalProgress() {
 			return this.totalProgress;
@@ -87,6 +79,14 @@ public class ListInstanceTaskResponse extends AcsResponse {
 
 		public void setTotalProgress(Integer totalProgress) {
 			this.totalProgress = totalProgress;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public List<SubProgressInfosItem> getSubProgressInfos() {
@@ -99,15 +99,23 @@ public class ListInstanceTaskResponse extends AcsResponse {
 
 		public static class SubProgressInfosItem {
 
+			private String type;
+
 			private String detail;
+
+			private Integer totalNum;
 
 			private Integer finishedNum;
 
 			private Integer progress;
 
-			private Integer totalNum;
+			public String getType() {
+				return this.type;
+			}
 
-			private String type;
+			public void setType(String type) {
+				this.type = type;
+			}
 
 			public String getDetail() {
 				return this.detail;
@@ -115,6 +123,14 @@ public class ListInstanceTaskResponse extends AcsResponse {
 
 			public void setDetail(String detail) {
 				this.detail = detail;
+			}
+
+			public Integer getTotalNum() {
+				return this.totalNum;
+			}
+
+			public void setTotalNum(Integer totalNum) {
+				this.totalNum = totalNum;
 			}
 
 			public Integer getFinishedNum() {
@@ -131,22 +147,6 @@ public class ListInstanceTaskResponse extends AcsResponse {
 
 			public void setProgress(Integer progress) {
 				this.progress = progress;
-			}
-
-			public Integer getTotalNum() {
-				return this.totalNum;
-			}
-
-			public void setTotalNum(Integer totalNum) {
-				this.totalNum = totalNum;
-			}
-
-			public String getType() {
-				return this.type;
-			}
-
-			public void setType(String type) {
-				this.type = type;
 			}
 		}
 	}

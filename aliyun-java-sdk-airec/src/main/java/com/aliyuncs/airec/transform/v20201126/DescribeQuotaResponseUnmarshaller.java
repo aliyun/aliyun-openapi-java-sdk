@@ -24,16 +24,16 @@ public class DescribeQuotaResponseUnmarshaller {
 	public static DescribeQuotaResponse unmarshall(DescribeQuotaResponse describeQuotaResponse, UnmarshallerContext _ctx) {
 		
 		describeQuotaResponse.setCode(_ctx.stringValue("DescribeQuotaResponse.code"));
-		describeQuotaResponse.setMessage(_ctx.stringValue("DescribeQuotaResponse.message"));
 		describeQuotaResponse.setRequestId(_ctx.stringValue("DescribeQuotaResponse.requestId"));
+		describeQuotaResponse.setMessage(_ctx.stringValue("DescribeQuotaResponse.message"));
 
 		Result result = new Result();
-		result.setCurrentQps(_ctx.integerValue("DescribeQuotaResponse.result.currentQps"));
-		result.setItemCount(_ctx.longValue("DescribeQuotaResponse.result.itemCount"));
 		result.setItemCountUsed(_ctx.longValue("DescribeQuotaResponse.result.itemCountUsed"));
-		result.setQps(_ctx.integerValue("DescribeQuotaResponse.result.qps"));
+		result.setItemCount(_ctx.longValue("DescribeQuotaResponse.result.itemCount"));
 		result.setUserCount(_ctx.longValue("DescribeQuotaResponse.result.userCount"));
 		result.setUserCountUsed(_ctx.longValue("DescribeQuotaResponse.result.userCountUsed"));
+		result.setQps(_ctx.integerValue("DescribeQuotaResponse.result.qps"));
+		result.setCurrentQps(_ctx.integerValue("DescribeQuotaResponse.result.currentQps"));
 		describeQuotaResponse.setResult(result);
 	 
 	 	return describeQuotaResponse;

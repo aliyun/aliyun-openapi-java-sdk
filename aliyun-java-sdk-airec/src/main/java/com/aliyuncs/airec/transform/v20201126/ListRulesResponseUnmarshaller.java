@@ -26,17 +26,17 @@ public class ListRulesResponseUnmarshaller {
 
 	public static ListRulesResponse unmarshall(ListRulesResponse listRulesResponse, UnmarshallerContext _ctx) {
 		
-		listRulesResponse.setRequestId(_ctx.stringValue("ListRulesResponse.requestId"));
 		listRulesResponse.setCode(_ctx.stringValue("ListRulesResponse.code"));
+		listRulesResponse.setRequestId(_ctx.stringValue("ListRulesResponse.requestId"));
 		listRulesResponse.setMessage(_ctx.stringValue("ListRulesResponse.message"));
 
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListRulesResponse.result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setGmtCreate(_ctx.stringValue("ListRulesResponse.result["+ i +"].gmtCreate"));
-			resultItem.setGmtModified(_ctx.stringValue("ListRulesResponse.result["+ i +"].gmtModified"));
 			resultItem.setRuleId(_ctx.stringValue("ListRulesResponse.result["+ i +"].ruleId"));
+			resultItem.setGmtModified(_ctx.stringValue("ListRulesResponse.result["+ i +"].gmtModified"));
 			resultItem.setStatus(_ctx.stringValue("ListRulesResponse.result["+ i +"].status"));
+			resultItem.setGmtCreate(_ctx.stringValue("ListRulesResponse.result["+ i +"].gmtCreate"));
 
 			result.add(resultItem);
 		}

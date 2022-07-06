@@ -24,8 +24,8 @@ public class DowngradeInstanceResponseUnmarshaller {
 	public static DowngradeInstanceResponse unmarshall(DowngradeInstanceResponse downgradeInstanceResponse, UnmarshallerContext _ctx) {
 		
 		downgradeInstanceResponse.setCode(_ctx.stringValue("DowngradeInstanceResponse.code"));
-		downgradeInstanceResponse.setMessage(_ctx.stringValue("DowngradeInstanceResponse.message"));
 		downgradeInstanceResponse.setRequestId(_ctx.stringValue("DowngradeInstanceResponse.requestId"));
+		downgradeInstanceResponse.setMessage(_ctx.stringValue("DowngradeInstanceResponse.message"));
 
 		Result result = new Result();
 		result.setInstanceId(_ctx.stringValue("DowngradeInstanceResponse.result.instanceId"));

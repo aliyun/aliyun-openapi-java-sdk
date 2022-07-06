@@ -28,19 +28,19 @@ public class ListDashboardDetailsResponseUnmarshaller {
 
 	public static ListDashboardDetailsResponse unmarshall(ListDashboardDetailsResponse listDashboardDetailsResponse, UnmarshallerContext _ctx) {
 		
-		listDashboardDetailsResponse.setRequestId(_ctx.stringValue("ListDashboardDetailsResponse.requestId"));
 		listDashboardDetailsResponse.setCode(_ctx.stringValue("ListDashboardDetailsResponse.code"));
+		listDashboardDetailsResponse.setRequestId(_ctx.stringValue("ListDashboardDetailsResponse.requestId"));
 		listDashboardDetailsResponse.setMessage(_ctx.stringValue("ListDashboardDetailsResponse.message"));
 
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListDashboardDetailsResponse.result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setSceneId(_ctx.stringValue("ListDashboardDetailsResponse.result["+ i +"].sceneId"));
 			resultItem.setTraceId(_ctx.stringValue("ListDashboardDetailsResponse.result["+ i +"].traceId"));
+			resultItem.setSceneId(_ctx.stringValue("ListDashboardDetailsResponse.result["+ i +"].sceneId"));
 
 			MetricRes metricRes = new MetricRes();
-			metricRes.setDetail(_ctx.mapValue("ListDashboardDetailsResponse.result["+ i +"].metricRes.detail"));
 			metricRes.setTotal(_ctx.mapValue("ListDashboardDetailsResponse.result["+ i +"].metricRes.total"));
+			metricRes.setDetail(_ctx.mapValue("ListDashboardDetailsResponse.result["+ i +"].metricRes.detail"));
 			resultItem.setMetricRes(metricRes);
 
 			result.add(resultItem);

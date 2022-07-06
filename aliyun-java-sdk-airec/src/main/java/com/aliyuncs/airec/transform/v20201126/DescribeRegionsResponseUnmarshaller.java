@@ -27,17 +27,17 @@ public class DescribeRegionsResponseUnmarshaller {
 	public static DescribeRegionsResponse unmarshall(DescribeRegionsResponse describeRegionsResponse, UnmarshallerContext _ctx) {
 		
 		describeRegionsResponse.setCode(_ctx.stringValue("DescribeRegionsResponse.code"));
-		describeRegionsResponse.setMessage(_ctx.stringValue("DescribeRegionsResponse.message"));
 		describeRegionsResponse.setRequestId(_ctx.stringValue("DescribeRegionsResponse.requestId"));
+		describeRegionsResponse.setMessage(_ctx.stringValue("DescribeRegionsResponse.message"));
 
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeRegionsResponse.result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setConsoleUrl(_ctx.stringValue("DescribeRegionsResponse.result["+ i +"].consoleUrl"));
-			resultItem.setEndpoint(_ctx.stringValue("DescribeRegionsResponse.result["+ i +"].endpoint"));
-			resultItem.setLocalName(_ctx.stringValue("DescribeRegionsResponse.result["+ i +"].localName"));
 			resultItem.setRegionId(_ctx.stringValue("DescribeRegionsResponse.result["+ i +"].regionId"));
+			resultItem.setEndpoint(_ctx.stringValue("DescribeRegionsResponse.result["+ i +"].endpoint"));
 			resultItem.setStatus(_ctx.stringValue("DescribeRegionsResponse.result["+ i +"].status"));
+			resultItem.setLocalName(_ctx.stringValue("DescribeRegionsResponse.result["+ i +"].localName"));
+			resultItem.setConsoleUrl(_ctx.stringValue("DescribeRegionsResponse.result["+ i +"].consoleUrl"));
 
 			result.add(resultItem);
 		}

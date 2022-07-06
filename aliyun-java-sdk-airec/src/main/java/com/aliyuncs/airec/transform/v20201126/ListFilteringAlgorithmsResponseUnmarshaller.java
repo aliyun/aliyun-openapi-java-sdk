@@ -39,34 +39,34 @@ public class ListFilteringAlgorithmsResponseUnmarshaller {
 		List<FilteringAlgorithm> result = new ArrayList<FilteringAlgorithm>();
 		for (int i = 0; i < _ctx.lengthValue("ListFilteringAlgorithmsResponse.result.Length"); i++) {
 			FilteringAlgorithm filteringAlgorithm = new FilteringAlgorithm();
+			filteringAlgorithm.setGmtModified(_ctx.stringValue("ListFilteringAlgorithmsResponse.result["+ i +"].gmtModified"));
 			filteringAlgorithm.setStatus(_ctx.stringValue("ListFilteringAlgorithmsResponse.result["+ i +"].status"));
 			filteringAlgorithm.setGmtCreate(_ctx.stringValue("ListFilteringAlgorithmsResponse.result["+ i +"].gmtCreate"));
-			filteringAlgorithm.setGmtModified(_ctx.stringValue("ListFilteringAlgorithmsResponse.result["+ i +"].gmtModified"));
 			filteringAlgorithm.setAlgorithmId(_ctx.stringValue("ListFilteringAlgorithmsResponse.result["+ i +"].algorithmId"));
 
 			Meta meta = new Meta();
-			meta.setMetaType(_ctx.stringValue("ListFilteringAlgorithmsResponse.result["+ i +"].meta.metaType"));
-			meta.setAlgorithmName(_ctx.stringValue("ListFilteringAlgorithmsResponse.result["+ i +"].meta.algorithmName"));
-			meta.setCron(_ctx.stringValue("ListFilteringAlgorithmsResponse.result["+ i +"].meta.cron"));
-			meta.setCronEnabled(_ctx.booleanValue("ListFilteringAlgorithmsResponse.result["+ i +"].meta.cronEnabled"));
 			meta.setTaskId(_ctx.stringValue("ListFilteringAlgorithmsResponse.result["+ i +"].meta.taskId"));
-			meta.setProjectName(_ctx.stringValue("ListFilteringAlgorithmsResponse.result["+ i +"].meta.projectName"));
-			meta.setTableName(_ctx.stringValue("ListFilteringAlgorithmsResponse.result["+ i +"].meta.tableName"));
+			meta.setMetaType(_ctx.stringValue("ListFilteringAlgorithmsResponse.result["+ i +"].meta.metaType"));
 			meta.setType(_ctx.stringValue("ListFilteringAlgorithmsResponse.result["+ i +"].meta.type"));
 			meta.setCategory(_ctx.stringValue("ListFilteringAlgorithmsResponse.result["+ i +"].meta.category"));
+			meta.setTableName(_ctx.stringValue("ListFilteringAlgorithmsResponse.result["+ i +"].meta.tableName"));
 			meta.setClusterId(_ctx.stringValue("ListFilteringAlgorithmsResponse.result["+ i +"].meta.clusterId"));
+			meta.setCron(_ctx.stringValue("ListFilteringAlgorithmsResponse.result["+ i +"].meta.cron"));
 			meta.setDescription(_ctx.stringValue("ListFilteringAlgorithmsResponse.result["+ i +"].meta.description"));
+			meta.setProjectName(_ctx.stringValue("ListFilteringAlgorithmsResponse.result["+ i +"].meta.projectName"));
+			meta.setAlgorithmName(_ctx.stringValue("ListFilteringAlgorithmsResponse.result["+ i +"].meta.algorithmName"));
+			meta.setCronEnabled(_ctx.booleanValue("ListFilteringAlgorithmsResponse.result["+ i +"].meta.cronEnabled"));
 
 			ExtInfo extInfo = new ExtInfo();
-			extInfo.setItemSeparator(_ctx.stringValue("ListFilteringAlgorithmsResponse.result["+ i +"].meta.extInfo.itemSeparator"));
 			extInfo.setKvSeparator(_ctx.stringValue("ListFilteringAlgorithmsResponse.result["+ i +"].meta.extInfo.kvSeparator"));
+			extInfo.setItemSeparator(_ctx.stringValue("ListFilteringAlgorithmsResponse.result["+ i +"].meta.extInfo.itemSeparator"));
 			meta.setExtInfo(extInfo);
 
 			Threshold threshold = new Threshold();
-			threshold.setIndexLossThreshold(_ctx.integerValue("ListFilteringAlgorithmsResponse.result["+ i +"].meta.threshold.indexLossThreshold"));
-			threshold.setIndexSizeThreshold(_ctx.integerValue("ListFilteringAlgorithmsResponse.result["+ i +"].meta.threshold.indexSizeThreshold"));
 			threshold.setSourceDataSizeThreshold(_ctx.integerValue("ListFilteringAlgorithmsResponse.result["+ i +"].meta.threshold.sourceDataSizeThreshold"));
 			threshold.setSourceDataRecordThreshold(_ctx.integerValue("ListFilteringAlgorithmsResponse.result["+ i +"].meta.threshold.sourceDataRecordThreshold"));
+			threshold.setIndexSizeThreshold(_ctx.integerValue("ListFilteringAlgorithmsResponse.result["+ i +"].meta.threshold.indexSizeThreshold"));
+			threshold.setIndexLossThreshold(_ctx.integerValue("ListFilteringAlgorithmsResponse.result["+ i +"].meta.threshold.indexLossThreshold"));
 			meta.setThreshold(threshold);
 			filteringAlgorithm.setMeta(meta);
 

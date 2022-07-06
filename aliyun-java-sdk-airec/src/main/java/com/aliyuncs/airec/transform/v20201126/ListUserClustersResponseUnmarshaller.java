@@ -37,10 +37,10 @@ public class ListUserClustersResponseUnmarshaller {
 		List<UserCluster> result = new ArrayList<UserCluster>();
 		for (int i = 0; i < _ctx.lengthValue("ListUserClustersResponse.result.Length"); i++) {
 			UserCluster userCluster = new UserCluster();
-			userCluster.setName(_ctx.stringValue("ListUserClustersResponse.result["+ i +"].name"));
+			userCluster.setGmtModified(_ctx.stringValue("ListUserClustersResponse.result["+ i +"].gmtModified"));
 			userCluster.setStatus(_ctx.stringValue("ListUserClustersResponse.result["+ i +"].status"));
 			userCluster.setGmtCreate(_ctx.stringValue("ListUserClustersResponse.result["+ i +"].gmtCreate"));
-			userCluster.setGmtModified(_ctx.stringValue("ListUserClustersResponse.result["+ i +"].gmtModified"));
+			userCluster.setName(_ctx.stringValue("ListUserClustersResponse.result["+ i +"].name"));
 
 			Meta meta = new Meta();
 			meta.setMetaType(_ctx.stringValue("ListUserClustersResponse.result["+ i +"].meta.metaType"));

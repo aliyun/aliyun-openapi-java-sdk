@@ -31,13 +31,13 @@ public class UpdateExperimentConfigResponseUnmarshaller {
 		updateExperimentConfigResponse.setRequestId(_ctx.stringValue("UpdateExperimentConfigResponse.requestId"));
 
 		Result result = new Result();
-		result.setExperimentId(_ctx.stringValue("UpdateExperimentConfigResponse.result.experimentId"));
-		result.setName(_ctx.stringValue("UpdateExperimentConfigResponse.result.name"));
-		result.setDescription(_ctx.stringValue("UpdateExperimentConfigResponse.result.description"));
-		result.setStatus(_ctx.stringValue("UpdateExperimentConfigResponse.result.status"));
 		result.setBase(_ctx.booleanValue("UpdateExperimentConfigResponse.result.base"));
 		result.setOnlineTime(_ctx.stringValue("UpdateExperimentConfigResponse.result.onlineTime"));
 		result.setOfflineTime(_ctx.stringValue("UpdateExperimentConfigResponse.result.offlineTime"));
+		result.setDescription(_ctx.stringValue("UpdateExperimentConfigResponse.result.description"));
+		result.setStatus(_ctx.stringValue("UpdateExperimentConfigResponse.result.status"));
+		result.setName(_ctx.stringValue("UpdateExperimentConfigResponse.result.name"));
+		result.setExperimentId(_ctx.stringValue("UpdateExperimentConfigResponse.result.experimentId"));
 
 		List<String> buckets = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("UpdateExperimentConfigResponse.result.buckets.Length"); i++) {
@@ -49,20 +49,20 @@ public class UpdateExperimentConfigResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("UpdateExperimentConfigResponse.result.algorithms.Length"); i++) {
 			Algorithm algorithm = new Algorithm();
 			algorithm.setKey(_ctx.stringValue("UpdateExperimentConfigResponse.result.algorithms["+ i +"].key"));
-			algorithm.setName(_ctx.stringValue("UpdateExperimentConfigResponse.result.algorithms["+ i +"].name"));
-			algorithm.setCategory(_ctx.stringValue("UpdateExperimentConfigResponse.result.algorithms["+ i +"].category"));
-			algorithm.setType(_ctx.stringValue("UpdateExperimentConfigResponse.result.algorithms["+ i +"].type"));
 			algorithm.setDefaultValue(_ctx.stringValue("UpdateExperimentConfigResponse.result.algorithms["+ i +"].defaultValue"));
+			algorithm.setType(_ctx.stringValue("UpdateExperimentConfigResponse.result.algorithms["+ i +"].type"));
 			algorithm.setExperimentValue(_ctx.stringValue("UpdateExperimentConfigResponse.result.algorithms["+ i +"].experimentValue"));
 			algorithm.setHasConfig(_ctx.booleanValue("UpdateExperimentConfigResponse.result.algorithms["+ i +"].hasConfig"));
+			algorithm.setCategory(_ctx.stringValue("UpdateExperimentConfigResponse.result.algorithms["+ i +"].category"));
+			algorithm.setName(_ctx.stringValue("UpdateExperimentConfigResponse.result.algorithms["+ i +"].name"));
 
 			List<ConfigItem> config = new ArrayList<ConfigItem>();
 			for (int j = 0; j < _ctx.lengthValue("UpdateExperimentConfigResponse.result.algorithms["+ i +"].config.Length"); j++) {
 				ConfigItem configItem = new ConfigItem();
 				configItem.setKey(_ctx.stringValue("UpdateExperimentConfigResponse.result.algorithms["+ i +"].config["+ j +"].key"));
-				configItem.setName(_ctx.stringValue("UpdateExperimentConfigResponse.result.algorithms["+ i +"].config["+ j +"].name"));
 				configItem.setDefaultValue(_ctx.stringValue("UpdateExperimentConfigResponse.result.algorithms["+ i +"].config["+ j +"].defaultValue"));
 				configItem.setExperimentValue(_ctx.stringValue("UpdateExperimentConfigResponse.result.algorithms["+ i +"].config["+ j +"].experimentValue"));
+				configItem.setName(_ctx.stringValue("UpdateExperimentConfigResponse.result.algorithms["+ i +"].config["+ j +"].name"));
 
 				config.add(configItem);
 			}

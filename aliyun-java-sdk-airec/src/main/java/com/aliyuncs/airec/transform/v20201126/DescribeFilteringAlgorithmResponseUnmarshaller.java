@@ -29,34 +29,34 @@ public class DescribeFilteringAlgorithmResponseUnmarshaller {
 		describeFilteringAlgorithmResponse.setRequestId(_ctx.stringValue("DescribeFilteringAlgorithmResponse.requestId"));
 
 		Result result = new Result();
+		result.setGmtModified(_ctx.stringValue("DescribeFilteringAlgorithmResponse.result.gmtModified"));
 		result.setStatus(_ctx.stringValue("DescribeFilteringAlgorithmResponse.result.status"));
 		result.setGmtCreate(_ctx.stringValue("DescribeFilteringAlgorithmResponse.result.gmtCreate"));
-		result.setGmtModified(_ctx.stringValue("DescribeFilteringAlgorithmResponse.result.gmtModified"));
 		result.setAlgorithmId(_ctx.stringValue("DescribeFilteringAlgorithmResponse.result.algorithmId"));
 
 		Meta meta = new Meta();
-		meta.setMetaType(_ctx.stringValue("DescribeFilteringAlgorithmResponse.result.meta.metaType"));
-		meta.setAlgorithmName(_ctx.stringValue("DescribeFilteringAlgorithmResponse.result.meta.algorithmName"));
-		meta.setCron(_ctx.stringValue("DescribeFilteringAlgorithmResponse.result.meta.cron"));
-		meta.setCronEnabled(_ctx.booleanValue("DescribeFilteringAlgorithmResponse.result.meta.cronEnabled"));
 		meta.setTaskId(_ctx.stringValue("DescribeFilteringAlgorithmResponse.result.meta.taskId"));
-		meta.setProjectName(_ctx.stringValue("DescribeFilteringAlgorithmResponse.result.meta.projectName"));
-		meta.setTableName(_ctx.stringValue("DescribeFilteringAlgorithmResponse.result.meta.tableName"));
+		meta.setMetaType(_ctx.stringValue("DescribeFilteringAlgorithmResponse.result.meta.metaType"));
 		meta.setType(_ctx.stringValue("DescribeFilteringAlgorithmResponse.result.meta.type"));
 		meta.setCategory(_ctx.stringValue("DescribeFilteringAlgorithmResponse.result.meta.category"));
+		meta.setTableName(_ctx.stringValue("DescribeFilteringAlgorithmResponse.result.meta.tableName"));
 		meta.setClusterId(_ctx.stringValue("DescribeFilteringAlgorithmResponse.result.meta.clusterId"));
+		meta.setCron(_ctx.stringValue("DescribeFilteringAlgorithmResponse.result.meta.cron"));
 		meta.setDescription(_ctx.stringValue("DescribeFilteringAlgorithmResponse.result.meta.description"));
+		meta.setProjectName(_ctx.stringValue("DescribeFilteringAlgorithmResponse.result.meta.projectName"));
+		meta.setAlgorithmName(_ctx.stringValue("DescribeFilteringAlgorithmResponse.result.meta.algorithmName"));
+		meta.setCronEnabled(_ctx.booleanValue("DescribeFilteringAlgorithmResponse.result.meta.cronEnabled"));
 
 		ExtInfo extInfo = new ExtInfo();
-		extInfo.setItemSeparator(_ctx.stringValue("DescribeFilteringAlgorithmResponse.result.meta.extInfo.itemSeparator"));
 		extInfo.setKvSeparator(_ctx.stringValue("DescribeFilteringAlgorithmResponse.result.meta.extInfo.kvSeparator"));
+		extInfo.setItemSeparator(_ctx.stringValue("DescribeFilteringAlgorithmResponse.result.meta.extInfo.itemSeparator"));
 		meta.setExtInfo(extInfo);
 
 		Threshold threshold = new Threshold();
-		threshold.setIndexLossThreshold(_ctx.integerValue("DescribeFilteringAlgorithmResponse.result.meta.threshold.indexLossThreshold"));
-		threshold.setIndexSizeThreshold(_ctx.integerValue("DescribeFilteringAlgorithmResponse.result.meta.threshold.indexSizeThreshold"));
 		threshold.setSourceDataSizeThreshold(_ctx.integerValue("DescribeFilteringAlgorithmResponse.result.meta.threshold.sourceDataSizeThreshold"));
 		threshold.setSourceDataRecordThreshold(_ctx.integerValue("DescribeFilteringAlgorithmResponse.result.meta.threshold.sourceDataRecordThreshold"));
+		threshold.setIndexSizeThreshold(_ctx.integerValue("DescribeFilteringAlgorithmResponse.result.meta.threshold.indexSizeThreshold"));
+		threshold.setIndexLossThreshold(_ctx.integerValue("DescribeFilteringAlgorithmResponse.result.meta.threshold.indexLossThreshold"));
 		meta.setThreshold(threshold);
 		result.setMeta(meta);
 		describeFilteringAlgorithmResponse.setResult(result);

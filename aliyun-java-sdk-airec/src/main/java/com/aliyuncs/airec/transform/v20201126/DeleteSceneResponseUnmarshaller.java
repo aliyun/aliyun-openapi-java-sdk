@@ -23,8 +23,8 @@ public class DeleteSceneResponseUnmarshaller {
 
 	public static DeleteSceneResponse unmarshall(DeleteSceneResponse deleteSceneResponse, UnmarshallerContext _ctx) {
 		
-		deleteSceneResponse.setRequestId(_ctx.stringValue("DeleteSceneResponse.requestId"));
 		deleteSceneResponse.setCode(_ctx.stringValue("DeleteSceneResponse.code"));
+		deleteSceneResponse.setRequestId(_ctx.stringValue("DeleteSceneResponse.requestId"));
 		deleteSceneResponse.setMessage(_ctx.stringValue("DeleteSceneResponse.message"));
 
 		Result result = new Result();

@@ -25,12 +25,12 @@ public class DeleteRankingModelResponseUnmarshaller {
 	public static DeleteRankingModelResponse unmarshall(DeleteRankingModelResponse deleteRankingModelResponse, UnmarshallerContext _ctx) {
 		
 		deleteRankingModelResponse.setCode(_ctx.stringValue("DeleteRankingModelResponse.code"));
-		deleteRankingModelResponse.setMessage(_ctx.stringValue("DeleteRankingModelResponse.message"));
 		deleteRankingModelResponse.setRequestId(_ctx.stringValue("DeleteRankingModelResponse.requestId"));
+		deleteRankingModelResponse.setMessage(_ctx.stringValue("DeleteRankingModelResponse.message"));
 
 		Result result = new Result();
-		result.setMeta(_ctx.mapValue("DeleteRankingModelResponse.result.meta"));
 		result.setRankingModelId(_ctx.stringValue("DeleteRankingModelResponse.result.rankingModelId"));
+		result.setMeta(_ctx.mapValue("DeleteRankingModelResponse.result.meta"));
 		deleteRankingModelResponse.setResult(result);
 	 
 	 	return deleteRankingModelResponse;

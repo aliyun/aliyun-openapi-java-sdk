@@ -22,8 +22,8 @@ public class UnLockIndexVersionResponseUnmarshaller {
 
 	public static UnLockIndexVersionResponse unmarshall(UnLockIndexVersionResponse unLockIndexVersionResponse, UnmarshallerContext _ctx) {
 		
-		unLockIndexVersionResponse.setRequestId(_ctx.stringValue("UnLockIndexVersionResponse.requestId"));
 		unLockIndexVersionResponse.setResult(_ctx.booleanValue("UnLockIndexVersionResponse.result"));
+		unLockIndexVersionResponse.setRequestId(_ctx.stringValue("UnLockIndexVersionResponse.requestId"));
 	 
 	 	return unLockIndexVersionResponse;
 	}

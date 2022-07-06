@@ -27,8 +27,8 @@ public class ListLogsResponseUnmarshaller {
 
 	public static ListLogsResponse unmarshall(ListLogsResponse listLogsResponse, UnmarshallerContext _ctx) {
 		
-		listLogsResponse.setRequestId(_ctx.stringValue("ListLogsResponse.requestId"));
 		listLogsResponse.setCode(_ctx.stringValue("ListLogsResponse.code"));
+		listLogsResponse.setRequestId(_ctx.stringValue("ListLogsResponse.requestId"));
 		listLogsResponse.setMessage(_ctx.stringValue("ListLogsResponse.message"));
 
 		List<Map<Object, Object>> result = _ctx.listMapValue("ListLogsResponse.result");

@@ -23,10 +23,10 @@ public class QueryExceptionHistoryResponseUnmarshaller {
 
 	public static QueryExceptionHistoryResponse unmarshall(QueryExceptionHistoryResponse queryExceptionHistoryResponse, UnmarshallerContext _ctx) {
 		
-		queryExceptionHistoryResponse.setCode(_ctx.stringValue("QueryExceptionHistoryResponse.code"));
-		queryExceptionHistoryResponse.setMessage(_ctx.stringValue("QueryExceptionHistoryResponse.message"));
-		queryExceptionHistoryResponse.setRequestId(_ctx.stringValue("QueryExceptionHistoryResponse.requestId"));
 		queryExceptionHistoryResponse.setResult(_ctx.mapValue("QueryExceptionHistoryResponse.result"));
+		queryExceptionHistoryResponse.setCode(_ctx.stringValue("QueryExceptionHistoryResponse.code"));
+		queryExceptionHistoryResponse.setRequestId(_ctx.stringValue("QueryExceptionHistoryResponse.requestId"));
+		queryExceptionHistoryResponse.setMessage(_ctx.stringValue("QueryExceptionHistoryResponse.message"));
 	 
 	 	return queryExceptionHistoryResponse;
 	}

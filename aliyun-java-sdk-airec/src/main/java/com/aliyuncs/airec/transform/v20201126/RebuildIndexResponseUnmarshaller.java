@@ -22,8 +22,8 @@ public class RebuildIndexResponseUnmarshaller {
 
 	public static RebuildIndexResponse unmarshall(RebuildIndexResponse rebuildIndexResponse, UnmarshallerContext _ctx) {
 		
-		rebuildIndexResponse.setRequestId(_ctx.stringValue("RebuildIndexResponse.requestId"));
 		rebuildIndexResponse.setResult(_ctx.stringValue("RebuildIndexResponse.result"));
+		rebuildIndexResponse.setRequestId(_ctx.stringValue("RebuildIndexResponse.requestId"));
 	 
 	 	return rebuildIndexResponse;
 	}

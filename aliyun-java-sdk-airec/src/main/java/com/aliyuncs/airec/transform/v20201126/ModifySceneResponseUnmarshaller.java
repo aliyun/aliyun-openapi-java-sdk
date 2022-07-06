@@ -23,15 +23,15 @@ public class ModifySceneResponseUnmarshaller {
 
 	public static ModifySceneResponse unmarshall(ModifySceneResponse modifySceneResponse, UnmarshallerContext _ctx) {
 		
-		modifySceneResponse.setRequestId(_ctx.stringValue("ModifySceneResponse.requestId"));
 		modifySceneResponse.setCode(_ctx.stringValue("ModifySceneResponse.code"));
+		modifySceneResponse.setRequestId(_ctx.stringValue("ModifySceneResponse.requestId"));
 		modifySceneResponse.setMessage(_ctx.stringValue("ModifySceneResponse.message"));
 
 		Result result = new Result();
-		result.setGmtCreate(_ctx.stringValue("ModifySceneResponse.result.gmtCreate"));
-		result.setGmtModified(_ctx.stringValue("ModifySceneResponse.result.gmtModified"));
 		result.setSceneId(_ctx.stringValue("ModifySceneResponse.result.sceneId"));
+		result.setGmtModified(_ctx.stringValue("ModifySceneResponse.result.gmtModified"));
 		result.setStatus(_ctx.stringValue("ModifySceneResponse.result.status"));
+		result.setGmtCreate(_ctx.stringValue("ModifySceneResponse.result.gmtCreate"));
 		modifySceneResponse.setResult(result);
 	 
 	 	return modifySceneResponse;

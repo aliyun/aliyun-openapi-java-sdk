@@ -47,22 +47,22 @@ public class CreateFilteringAlgorithmResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String algorithmId;
+		private String gmtModified;
 
 		private String status;
 
 		private String gmtCreate;
 
-		private String gmtModified;
+		private String algorithmId;
 
 		private Meta meta;
 
-		public String getAlgorithmId() {
-			return this.algorithmId;
+		public String getGmtModified() {
+			return this.gmtModified;
 		}
 
-		public void setAlgorithmId(String algorithmId) {
-			this.algorithmId = algorithmId;
+		public void setGmtModified(String gmtModified) {
+			this.gmtModified = gmtModified;
 		}
 
 		public String getStatus() {
@@ -81,12 +81,12 @@ public class CreateFilteringAlgorithmResponse extends AcsResponse {
 			this.gmtCreate = gmtCreate;
 		}
 
-		public String getGmtModified() {
-			return this.gmtModified;
+		public String getAlgorithmId() {
+			return this.algorithmId;
 		}
 
-		public void setGmtModified(String gmtModified) {
-			this.gmtModified = gmtModified;
+		public void setAlgorithmId(String algorithmId) {
+			this.algorithmId = algorithmId;
 		}
 
 		public Meta getMeta() {
@@ -99,39 +99,31 @@ public class CreateFilteringAlgorithmResponse extends AcsResponse {
 
 		public static class Meta {
 
-			private String algorithmName;
-
 			private String type;
-
-			private String projectName;
-
-			private String tableName;
-
-			private String category;
 
 			private Map<Object,Object> extInfo;
 
-			private String cron;
-
-			private Boolean cronEnabled;
-
-			private String gmtModified;
-
-			private String gmtCreate;
+			private String category;
 
 			private String status;
 
+			private String gmtCreate;
+
+			private String tableName;
+
+			private String cron;
+
 			private String description;
 
+			private String gmtModified;
+
+			private String projectName;
+
+			private String algorithmName;
+
+			private Boolean cronEnabled;
+
 			private Threshold threshold;
-
-			public String getAlgorithmName() {
-				return this.algorithmName;
-			}
-
-			public void setAlgorithmName(String algorithmName) {
-				this.algorithmName = algorithmName;
-			}
 
 			public String getType() {
 				return this.type;
@@ -139,30 +131,6 @@ public class CreateFilteringAlgorithmResponse extends AcsResponse {
 
 			public void setType(String type) {
 				this.type = type;
-			}
-
-			public String getProjectName() {
-				return this.projectName;
-			}
-
-			public void setProjectName(String projectName) {
-				this.projectName = projectName;
-			}
-
-			public String getTableName() {
-				return this.tableName;
-			}
-
-			public void setTableName(String tableName) {
-				this.tableName = tableName;
-			}
-
-			public String getCategory() {
-				return this.category;
-			}
-
-			public void setCategory(String category) {
-				this.category = category;
 			}
 
 			public Map<Object,Object> getExtInfo() {
@@ -173,36 +141,12 @@ public class CreateFilteringAlgorithmResponse extends AcsResponse {
 				this.extInfo = extInfo;
 			}
 
-			public String getCron() {
-				return this.cron;
+			public String getCategory() {
+				return this.category;
 			}
 
-			public void setCron(String cron) {
-				this.cron = cron;
-			}
-
-			public Boolean getCronEnabled() {
-				return this.cronEnabled;
-			}
-
-			public void setCronEnabled(Boolean cronEnabled) {
-				this.cronEnabled = cronEnabled;
-			}
-
-			public String getGmtModified() {
-				return this.gmtModified;
-			}
-
-			public void setGmtModified(String gmtModified) {
-				this.gmtModified = gmtModified;
-			}
-
-			public String getGmtCreate() {
-				return this.gmtCreate;
-			}
-
-			public void setGmtCreate(String gmtCreate) {
-				this.gmtCreate = gmtCreate;
+			public void setCategory(String category) {
+				this.category = category;
 			}
 
 			public String getStatus() {
@@ -213,12 +157,68 @@ public class CreateFilteringAlgorithmResponse extends AcsResponse {
 				this.status = status;
 			}
 
+			public String getGmtCreate() {
+				return this.gmtCreate;
+			}
+
+			public void setGmtCreate(String gmtCreate) {
+				this.gmtCreate = gmtCreate;
+			}
+
+			public String getTableName() {
+				return this.tableName;
+			}
+
+			public void setTableName(String tableName) {
+				this.tableName = tableName;
+			}
+
+			public String getCron() {
+				return this.cron;
+			}
+
+			public void setCron(String cron) {
+				this.cron = cron;
+			}
+
 			public String getDescription() {
 				return this.description;
 			}
 
 			public void setDescription(String description) {
 				this.description = description;
+			}
+
+			public String getGmtModified() {
+				return this.gmtModified;
+			}
+
+			public void setGmtModified(String gmtModified) {
+				this.gmtModified = gmtModified;
+			}
+
+			public String getProjectName() {
+				return this.projectName;
+			}
+
+			public void setProjectName(String projectName) {
+				this.projectName = projectName;
+			}
+
+			public String getAlgorithmName() {
+				return this.algorithmName;
+			}
+
+			public void setAlgorithmName(String algorithmName) {
+				this.algorithmName = algorithmName;
+			}
+
+			public Boolean getCronEnabled() {
+				return this.cronEnabled;
+			}
+
+			public void setCronEnabled(Boolean cronEnabled) {
+				this.cronEnabled = cronEnabled;
 			}
 
 			public Threshold getThreshold() {
@@ -231,29 +231,13 @@ public class CreateFilteringAlgorithmResponse extends AcsResponse {
 
 			public static class Threshold {
 
-				private Integer indexLossThreshold;
-
-				private Integer indexSizeThreshold;
-
 				private Integer sourceDataSizeThreshold;
 
 				private Integer sourceDataRecordThreshold;
 
-				public Integer getIndexLossThreshold() {
-					return this.indexLossThreshold;
-				}
+				private Integer indexSizeThreshold;
 
-				public void setIndexLossThreshold(Integer indexLossThreshold) {
-					this.indexLossThreshold = indexLossThreshold;
-				}
-
-				public Integer getIndexSizeThreshold() {
-					return this.indexSizeThreshold;
-				}
-
-				public void setIndexSizeThreshold(Integer indexSizeThreshold) {
-					this.indexSizeThreshold = indexSizeThreshold;
-				}
+				private Integer indexLossThreshold;
 
 				public Integer getSourceDataSizeThreshold() {
 					return this.sourceDataSizeThreshold;
@@ -269,6 +253,22 @@ public class CreateFilteringAlgorithmResponse extends AcsResponse {
 
 				public void setSourceDataRecordThreshold(Integer sourceDataRecordThreshold) {
 					this.sourceDataRecordThreshold = sourceDataRecordThreshold;
+				}
+
+				public Integer getIndexSizeThreshold() {
+					return this.indexSizeThreshold;
+				}
+
+				public void setIndexSizeThreshold(Integer indexSizeThreshold) {
+					this.indexSizeThreshold = indexSizeThreshold;
+				}
+
+				public Integer getIndexLossThreshold() {
+					return this.indexLossThreshold;
+				}
+
+				public void setIndexLossThreshold(Integer indexLossThreshold) {
+					this.indexLossThreshold = indexLossThreshold;
 				}
 			}
 		}

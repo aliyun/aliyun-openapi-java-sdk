@@ -31,8 +31,8 @@ public class CreateRankingModelResponseUnmarshaller {
 		Result result = new Result();
 		result.setRankingModelId(_ctx.stringValue("CreateRankingModelResponse.result.rankingModelId"));
 		result.setGmtModified(_ctx.stringValue("CreateRankingModelResponse.result.gmtModified"));
-		result.setMeta(_ctx.mapValue("CreateRankingModelResponse.result.meta"));
 		result.setGmtCreate(_ctx.stringValue("CreateRankingModelResponse.result.gmtCreate"));
+		result.setMeta(_ctx.mapValue("CreateRankingModelResponse.result.meta"));
 		createRankingModelResponse.setResult(result);
 	 
 	 	return createRankingModelResponse;

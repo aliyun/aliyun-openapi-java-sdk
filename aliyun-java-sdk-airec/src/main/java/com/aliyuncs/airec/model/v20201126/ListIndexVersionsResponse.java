@@ -47,50 +47,34 @@ public class ListIndexVersionsResponse extends AcsResponse {
 
 	public static class IndeVersion {
 
-		private String versionId;
-
-		private String status;
-
-		private String builtTime;
+		private String code;
 
 		private String switchedTime;
 
 		private Boolean rollbackEnabled;
 
-		private Integer costSeconds;
-
-		private Long size;
-
-		private Integer progress;
+		private String message;
 
 		private String flowType;
 
-		private String code;
+		private Integer costSeconds;
 
-		private String message;
+		private String builtTime;
 
-		public String getVersionId() {
-			return this.versionId;
+		private String versionId;
+
+		private Long size;
+
+		private String status;
+
+		private Integer progress;
+
+		public String getCode() {
+			return this.code;
 		}
 
-		public void setVersionId(String versionId) {
-			this.versionId = versionId;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getBuiltTime() {
-			return this.builtTime;
-		}
-
-		public void setBuiltTime(String builtTime) {
-			this.builtTime = builtTime;
+		public void setCode(String code) {
+			this.code = code;
 		}
 
 		public String getSwitchedTime() {
@@ -109,28 +93,12 @@ public class ListIndexVersionsResponse extends AcsResponse {
 			this.rollbackEnabled = rollbackEnabled;
 		}
 
-		public Integer getCostSeconds() {
-			return this.costSeconds;
+		public String getMessage() {
+			return this.message;
 		}
 
-		public void setCostSeconds(Integer costSeconds) {
-			this.costSeconds = costSeconds;
-		}
-
-		public Long getSize() {
-			return this.size;
-		}
-
-		public void setSize(Long size) {
-			this.size = size;
-		}
-
-		public Integer getProgress() {
-			return this.progress;
-		}
-
-		public void setProgress(Integer progress) {
-			this.progress = progress;
+		public void setMessage(String message) {
+			this.message = message;
 		}
 
 		public String getFlowType() {
@@ -141,20 +109,52 @@ public class ListIndexVersionsResponse extends AcsResponse {
 			this.flowType = flowType;
 		}
 
-		public String getCode() {
-			return this.code;
+		public Integer getCostSeconds() {
+			return this.costSeconds;
 		}
 
-		public void setCode(String code) {
-			this.code = code;
+		public void setCostSeconds(Integer costSeconds) {
+			this.costSeconds = costSeconds;
 		}
 
-		public String getMessage() {
-			return this.message;
+		public String getBuiltTime() {
+			return this.builtTime;
 		}
 
-		public void setMessage(String message) {
-			this.message = message;
+		public void setBuiltTime(String builtTime) {
+			this.builtTime = builtTime;
+		}
+
+		public String getVersionId() {
+			return this.versionId;
+		}
+
+		public void setVersionId(String versionId) {
+			this.versionId = versionId;
+		}
+
+		public Long getSize() {
+			return this.size;
+		}
+
+		public void setSize(Long size) {
+			this.size = size;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public Integer getProgress() {
+			return this.progress;
+		}
+
+		public void setProgress(Integer progress) {
+			this.progress = progress;
 		}
 	}
 

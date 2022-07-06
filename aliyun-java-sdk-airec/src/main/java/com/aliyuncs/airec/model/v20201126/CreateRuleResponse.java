@@ -66,29 +66,13 @@ public class CreateRuleResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String gmtModified;
-
-		private String gmtCreate;
-
 		private String ruleId;
+
+		private String gmtModified;
 
 		private String status;
 
-		public String getGmtModified() {
-			return this.gmtModified;
-		}
-
-		public void setGmtModified(String gmtModified) {
-			this.gmtModified = gmtModified;
-		}
-
-		public String getGmtCreate() {
-			return this.gmtCreate;
-		}
-
-		public void setGmtCreate(String gmtCreate) {
-			this.gmtCreate = gmtCreate;
-		}
+		private String gmtCreate;
 
 		public String getRuleId() {
 			return this.ruleId;
@@ -98,12 +82,28 @@ public class CreateRuleResponse extends AcsResponse {
 			this.ruleId = ruleId;
 		}
 
+		public String getGmtModified() {
+			return this.gmtModified;
+		}
+
+		public void setGmtModified(String gmtModified) {
+			this.gmtModified = gmtModified;
+		}
+
 		public String getStatus() {
 			return this.status;
 		}
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public String getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(String gmtCreate) {
+			this.gmtCreate = gmtCreate;
 		}
 	}
 

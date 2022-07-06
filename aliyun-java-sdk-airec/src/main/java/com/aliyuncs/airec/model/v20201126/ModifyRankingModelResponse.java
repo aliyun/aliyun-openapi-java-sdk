@@ -27,9 +27,9 @@ public class ModifyRankingModelResponse extends AcsResponse {
 
 	private String code;
 
-	private String message;
-
 	private String requestId;
+
+	private String message;
 
 	private Result result;
 
@@ -41,20 +41,20 @@ public class ModifyRankingModelResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Result getResult() {
@@ -67,20 +67,20 @@ public class ModifyRankingModelResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String gmtCreate;
+		private String rankingModelId;
 
 		private String gmtModified;
 
+		private String gmtCreate;
+
 		private Map<Object,Object> meta;
 
-		private String rankingModelId;
-
-		public String getGmtCreate() {
-			return this.gmtCreate;
+		public String getRankingModelId() {
+			return this.rankingModelId;
 		}
 
-		public void setGmtCreate(String gmtCreate) {
-			this.gmtCreate = gmtCreate;
+		public void setRankingModelId(String rankingModelId) {
+			this.rankingModelId = rankingModelId;
 		}
 
 		public String getGmtModified() {
@@ -91,20 +91,20 @@ public class ModifyRankingModelResponse extends AcsResponse {
 			this.gmtModified = gmtModified;
 		}
 
+		public String getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(String gmtCreate) {
+			this.gmtCreate = gmtCreate;
+		}
+
 		public Map<Object,Object> getMeta() {
 			return this.meta;
 		}
 
 		public void setMeta(Map<Object,Object> meta) {
 			this.meta = meta;
-		}
-
-		public String getRankingModelId() {
-			return this.rankingModelId;
-		}
-
-		public void setRankingModelId(String rankingModelId) {
-			this.rankingModelId = rankingModelId;
 		}
 	}
 

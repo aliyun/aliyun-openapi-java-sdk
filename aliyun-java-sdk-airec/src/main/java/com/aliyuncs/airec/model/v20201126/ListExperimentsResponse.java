@@ -47,53 +47,21 @@ public class ListExperimentsResponse extends AcsResponse {
 
 	public static class ResultItem {
 
-		private String experimentId;
-
-		private String name;
-
-		private String description;
-
-		private String status;
-
 		private Boolean base;
 
 		private String onlineTime;
 
 		private String offlineTime;
 
+		private String description;
+
+		private String status;
+
+		private String name;
+
+		private String experimentId;
+
 		private List<String> buckets;
-
-		public String getExperimentId() {
-			return this.experimentId;
-		}
-
-		public void setExperimentId(String experimentId) {
-			this.experimentId = experimentId;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
 
 		public Boolean getBase() {
 			return this.base;
@@ -117,6 +85,38 @@ public class ListExperimentsResponse extends AcsResponse {
 
 		public void setOfflineTime(String offlineTime) {
 			this.offlineTime = offlineTime;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getExperimentId() {
+			return this.experimentId;
+		}
+
+		public void setExperimentId(String experimentId) {
+			this.experimentId = experimentId;
 		}
 
 		public List<String> getBuckets() {

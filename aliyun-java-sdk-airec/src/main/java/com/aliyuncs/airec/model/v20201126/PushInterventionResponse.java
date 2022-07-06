@@ -24,13 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class PushInterventionResponse extends AcsResponse {
 
-	private String code;
+	private Boolean result;
 
-	private String message;
+	private String code;
 
 	private String requestId;
 
-	private Boolean result;
+	private String message;
+
+	public Boolean getResult() {
+		return this.result;
+	}
+
+	public void setResult(Boolean result) {
+		this.result = result;
+	}
 
 	public String getCode() {
 		return this.code;
@@ -38,14 +46,6 @@ public class PushInterventionResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
 	}
 
 	public String getRequestId() {
@@ -56,12 +56,12 @@ public class PushInterventionResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getResult() {
-		return this.result;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setResult(Boolean result) {
-		this.result = result;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	@Override

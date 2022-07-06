@@ -22,10 +22,10 @@ public class RunInstanceResponseUnmarshaller {
 
 	public static RunInstanceResponse unmarshall(RunInstanceResponse runInstanceResponse, UnmarshallerContext _ctx) {
 		
-		runInstanceResponse.setCode(_ctx.stringValue("RunInstanceResponse.code"));
-		runInstanceResponse.setMessage(_ctx.stringValue("RunInstanceResponse.message"));
-		runInstanceResponse.setRequestId(_ctx.stringValue("RunInstanceResponse.requestId"));
 		runInstanceResponse.setResult(_ctx.booleanValue("RunInstanceResponse.result"));
+		runInstanceResponse.setCode(_ctx.stringValue("RunInstanceResponse.code"));
+		runInstanceResponse.setRequestId(_ctx.stringValue("RunInstanceResponse.requestId"));
+		runInstanceResponse.setMessage(_ctx.stringValue("RunInstanceResponse.message"));
 	 
 	 	return runInstanceResponse;
 	}

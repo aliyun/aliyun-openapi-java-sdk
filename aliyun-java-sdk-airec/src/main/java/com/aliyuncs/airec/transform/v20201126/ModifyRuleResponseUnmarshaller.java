@@ -24,16 +24,16 @@ public class ModifyRuleResponseUnmarshaller {
 
 	public static ModifyRuleResponse unmarshall(ModifyRuleResponse modifyRuleResponse, UnmarshallerContext _ctx) {
 		
-		modifyRuleResponse.setRequestId(_ctx.stringValue("ModifyRuleResponse.requestId"));
 		modifyRuleResponse.setCode(_ctx.stringValue("ModifyRuleResponse.code"));
+		modifyRuleResponse.setRequestId(_ctx.stringValue("ModifyRuleResponse.requestId"));
 		modifyRuleResponse.setMessage(_ctx.stringValue("ModifyRuleResponse.message"));
 
 		Result result = new Result();
-		result.setGmtCreate(_ctx.stringValue("ModifyRuleResponse.result.gmtCreate"));
-		result.setGmtModified(_ctx.stringValue("ModifyRuleResponse.result.gmtModified"));
 		result.setRuleId(_ctx.stringValue("ModifyRuleResponse.result.ruleId"));
 		result.setRuleMeta(_ctx.mapValue("ModifyRuleResponse.result.ruleMeta"));
+		result.setGmtModified(_ctx.stringValue("ModifyRuleResponse.result.gmtModified"));
 		result.setStatus(_ctx.stringValue("ModifyRuleResponse.result.status"));
+		result.setGmtCreate(_ctx.stringValue("ModifyRuleResponse.result.gmtCreate"));
 		modifyRuleResponse.setResult(result);
 	 
 	 	return modifyRuleResponse;

@@ -26,9 +26,9 @@ public class DescribeQuotaResponse extends AcsResponse {
 
 	private String code;
 
-	private String message;
-
 	private String requestId;
+
+	private String message;
 
 	private Result result;
 
@@ -40,20 +40,20 @@ public class DescribeQuotaResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Result getResult() {
@@ -66,33 +66,17 @@ public class DescribeQuotaResponse extends AcsResponse {
 
 	public static class Result {
 
-		private Integer currentQps;
-
-		private Long itemCount;
-
 		private Long itemCountUsed;
 
-		private Integer qps;
+		private Long itemCount;
 
 		private Long userCount;
 
 		private Long userCountUsed;
 
-		public Integer getCurrentQps() {
-			return this.currentQps;
-		}
+		private Integer qps;
 
-		public void setCurrentQps(Integer currentQps) {
-			this.currentQps = currentQps;
-		}
-
-		public Long getItemCount() {
-			return this.itemCount;
-		}
-
-		public void setItemCount(Long itemCount) {
-			this.itemCount = itemCount;
-		}
+		private Integer currentQps;
 
 		public Long getItemCountUsed() {
 			return this.itemCountUsed;
@@ -102,12 +86,12 @@ public class DescribeQuotaResponse extends AcsResponse {
 			this.itemCountUsed = itemCountUsed;
 		}
 
-		public Integer getQps() {
-			return this.qps;
+		public Long getItemCount() {
+			return this.itemCount;
 		}
 
-		public void setQps(Integer qps) {
-			this.qps = qps;
+		public void setItemCount(Long itemCount) {
+			this.itemCount = itemCount;
 		}
 
 		public Long getUserCount() {
@@ -124,6 +108,22 @@ public class DescribeQuotaResponse extends AcsResponse {
 
 		public void setUserCountUsed(Long userCountUsed) {
 			this.userCountUsed = userCountUsed;
+		}
+
+		public Integer getQps() {
+			return this.qps;
+		}
+
+		public void setQps(Integer qps) {
+			this.qps = qps;
+		}
+
+		public Integer getCurrentQps() {
+			return this.currentQps;
+		}
+
+		public void setCurrentQps(Integer currentQps) {
+			this.currentQps = currentQps;
 		}
 	}
 

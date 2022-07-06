@@ -28,16 +28,16 @@ public class ListRankingModelsResponseUnmarshaller {
 	public static ListRankingModelsResponse unmarshall(ListRankingModelsResponse listRankingModelsResponse, UnmarshallerContext _ctx) {
 		
 		listRankingModelsResponse.setCode(_ctx.stringValue("ListRankingModelsResponse.code"));
-		listRankingModelsResponse.setMessage(_ctx.stringValue("ListRankingModelsResponse.message"));
 		listRankingModelsResponse.setRequestId(_ctx.stringValue("ListRankingModelsResponse.requestId"));
+		listRankingModelsResponse.setMessage(_ctx.stringValue("ListRankingModelsResponse.message"));
 
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListRankingModelsResponse.result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setGmtCreate(_ctx.stringValue("ListRankingModelsResponse.result["+ i +"].gmtCreate"));
-			resultItem.setGmtModified(_ctx.stringValue("ListRankingModelsResponse.result["+ i +"].gmtModified"));
-			resultItem.setMeta(_ctx.mapValue("ListRankingModelsResponse.result["+ i +"].meta"));
 			resultItem.setRankingModelId(_ctx.stringValue("ListRankingModelsResponse.result["+ i +"].rankingModelId"));
+			resultItem.setGmtModified(_ctx.stringValue("ListRankingModelsResponse.result["+ i +"].gmtModified"));
+			resultItem.setGmtCreate(_ctx.stringValue("ListRankingModelsResponse.result["+ i +"].gmtCreate"));
+			resultItem.setMeta(_ctx.mapValue("ListRankingModelsResponse.result["+ i +"].meta"));
 
 			result.add(resultItem);
 		}

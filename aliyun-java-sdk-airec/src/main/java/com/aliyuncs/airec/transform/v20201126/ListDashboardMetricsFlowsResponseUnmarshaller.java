@@ -27,15 +27,15 @@ public class ListDashboardMetricsFlowsResponseUnmarshaller {
 
 	public static ListDashboardMetricsFlowsResponse unmarshall(ListDashboardMetricsFlowsResponse listDashboardMetricsFlowsResponse, UnmarshallerContext _ctx) {
 		
-		listDashboardMetricsFlowsResponse.setRequestId(_ctx.stringValue("ListDashboardMetricsFlowsResponse.requestId"));
 		listDashboardMetricsFlowsResponse.setCode(_ctx.stringValue("ListDashboardMetricsFlowsResponse.code"));
+		listDashboardMetricsFlowsResponse.setRequestId(_ctx.stringValue("ListDashboardMetricsFlowsResponse.requestId"));
 		listDashboardMetricsFlowsResponse.setMessage(_ctx.stringValue("ListDashboardMetricsFlowsResponse.message"));
 
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListDashboardMetricsFlowsResponse.result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setMetricData(_ctx.mapValue("ListDashboardMetricsFlowsResponse.result["+ i +"].metricData"));
 			resultItem.setMetricType(_ctx.stringValue("ListDashboardMetricsFlowsResponse.result["+ i +"].metricType"));
+			resultItem.setMetricData(_ctx.mapValue("ListDashboardMetricsFlowsResponse.result["+ i +"].metricData"));
 
 			result.add(resultItem);
 		}

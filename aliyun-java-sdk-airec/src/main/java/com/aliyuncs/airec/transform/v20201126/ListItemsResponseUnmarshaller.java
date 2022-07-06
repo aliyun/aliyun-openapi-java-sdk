@@ -33,29 +33,29 @@ public class ListItemsResponseUnmarshaller {
 		Result result = new Result();
 
 		Total total = new Total();
-		total.setInstanceRecommendItem(_ctx.longValue("ListItemsResponse.result.total.instanceRecommendItem"));
-		total.setQueryCount(_ctx.longValue("ListItemsResponse.result.total.queryCount"));
-		total.setSceneRecommendItem(_ctx.longValue("ListItemsResponse.result.total.sceneRecommendItem"));
 		total.setSceneWeightItem(_ctx.longValue("ListItemsResponse.result.total.sceneWeightItem"));
 		total.setTotalCount(_ctx.longValue("ListItemsResponse.result.total.totalCount"));
+		total.setQueryCount(_ctx.longValue("ListItemsResponse.result.total.queryCount"));
+		total.setSceneRecommendItem(_ctx.longValue("ListItemsResponse.result.total.sceneRecommendItem"));
 		total.setWeightItem(_ctx.longValue("ListItemsResponse.result.total.weightItem"));
+		total.setInstanceRecommendItem(_ctx.longValue("ListItemsResponse.result.total.instanceRecommendItem"));
 		result.setTotal(total);
 
 		List<DetailItem> detail = new ArrayList<DetailItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListItemsResponse.result.detail.Length"); i++) {
 			DetailItem detailItem = new DetailItem();
-			detailItem.setAuthor(_ctx.stringValue("ListItemsResponse.result.detail["+ i +"].author"));
-			detailItem.setBrandId(_ctx.stringValue("ListItemsResponse.result.detail["+ i +"].brandId"));
+			detailItem.setTitle(_ctx.stringValue("ListItemsResponse.result.detail["+ i +"].title"));
 			detailItem.setCategoryPath(_ctx.stringValue("ListItemsResponse.result.detail["+ i +"].categoryPath"));
-			detailItem.setChannel(_ctx.stringValue("ListItemsResponse.result.detail["+ i +"].channel"));
-			detailItem.setDuration(_ctx.stringValue("ListItemsResponse.result.detail["+ i +"].duration"));
-			detailItem.setExpireTime(_ctx.stringValue("ListItemsResponse.result.detail["+ i +"].expireTime"));
 			detailItem.setItemId(_ctx.stringValue("ListItemsResponse.result.detail["+ i +"].itemId"));
 			detailItem.setItemType(_ctx.stringValue("ListItemsResponse.result.detail["+ i +"].itemType"));
-			detailItem.setPubTime(_ctx.stringValue("ListItemsResponse.result.detail["+ i +"].pubTime"));
-			detailItem.setShopId(_ctx.stringValue("ListItemsResponse.result.detail["+ i +"].shopId"));
 			detailItem.setStatus(_ctx.stringValue("ListItemsResponse.result.detail["+ i +"].status"));
-			detailItem.setTitle(_ctx.stringValue("ListItemsResponse.result.detail["+ i +"].title"));
+			detailItem.setBrandId(_ctx.stringValue("ListItemsResponse.result.detail["+ i +"].brandId"));
+			detailItem.setShopId(_ctx.stringValue("ListItemsResponse.result.detail["+ i +"].shopId"));
+			detailItem.setPubTime(_ctx.stringValue("ListItemsResponse.result.detail["+ i +"].pubTime"));
+			detailItem.setChannel(_ctx.stringValue("ListItemsResponse.result.detail["+ i +"].channel"));
+			detailItem.setDuration(_ctx.stringValue("ListItemsResponse.result.detail["+ i +"].duration"));
+			detailItem.setAuthor(_ctx.stringValue("ListItemsResponse.result.detail["+ i +"].author"));
+			detailItem.setExpireTime(_ctx.stringValue("ListItemsResponse.result.detail["+ i +"].expireTime"));
 
 			detail.add(detailItem);
 		}

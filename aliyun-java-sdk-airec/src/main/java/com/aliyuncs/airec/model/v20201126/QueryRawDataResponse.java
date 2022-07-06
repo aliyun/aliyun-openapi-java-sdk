@@ -25,13 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryRawDataResponse extends AcsResponse {
 
+	private Map<Object,Object> result;
+
 	private String code;
 
 	private String message;
 
 	private String requestId;
 
-	private Map<Object,Object> result;
+	public Map<Object,Object> getResult() {
+		return this.result;
+	}
+
+	public void setResult(Map<Object,Object> result) {
+		this.result = result;
+	}
 
 	public String getCode() {
 		return this.code;
@@ -55,14 +63,6 @@ public class QueryRawDataResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Map<Object,Object> getResult() {
-		return this.result;
-	}
-
-	public void setResult(Map<Object,Object> result) {
-		this.result = result;
 	}
 
 	@Override

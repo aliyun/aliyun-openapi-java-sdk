@@ -23,13 +23,13 @@ public class ListRuleTasksResponseUnmarshaller {
 
 	public static ListRuleTasksResponse unmarshall(ListRuleTasksResponse listRuleTasksResponse, UnmarshallerContext _ctx) {
 		
-		listRuleTasksResponse.setRequestId(_ctx.stringValue("ListRuleTasksResponse.requestId"));
 		listRuleTasksResponse.setCode(_ctx.stringValue("ListRuleTasksResponse.code"));
+		listRuleTasksResponse.setRequestId(_ctx.stringValue("ListRuleTasksResponse.requestId"));
 		listRuleTasksResponse.setMessage(_ctx.stringValue("ListRuleTasksResponse.message"));
 
 		Result result = new Result();
-		result.setFinishRate(_ctx.integerValue("ListRuleTasksResponse.result.finishRate"));
 		result.setFinishTime(_ctx.integerValue("ListRuleTasksResponse.result.finishTime"));
+		result.setFinishRate(_ctx.integerValue("ListRuleTasksResponse.result.finishRate"));
 		listRuleTasksResponse.setResult(result);
 	 
 	 	return listRuleTasksResponse;

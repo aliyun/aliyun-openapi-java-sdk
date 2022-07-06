@@ -27,9 +27,9 @@ public class ListInstanceResponse extends AcsResponse {
 
 	private String code;
 
-	private String message;
-
 	private String requestId;
+
+	private String message;
 
 	private List<ResultItem> result;
 
@@ -41,20 +41,20 @@ public class ListInstanceResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public List<ResultItem> getResult() {
@@ -67,94 +67,46 @@ public class ListInstanceResponse extends AcsResponse {
 
 	public static class ResultItem {
 
-		private String chargeType;
-
-		private String commodityCode;
-
-		private String dataSetVersion;
-
-		private String expiredTime;
-
-		private String gmtCreate;
-
-		private String gmtModified;
-
-		private String industry;
-
-		private String instanceId;
-
-		private String lockMode;
-
-		private String name;
-
 		private String regionId;
-
-		private String status;
 
 		private String type;
 
-		public String getChargeType() {
-			return this.chargeType;
+		private String lockMode;
+
+		private String expiredTime;
+
+		private String status;
+
+		private String gmtCreate;
+
+		private String chargeType;
+
+		private String industry;
+
+		private String commodityCode;
+
+		private String gmtModified;
+
+		private String dataSetVersion;
+
+		private String name;
+
+		private String instanceId;
+
+		public String getRegionId() {
+			return this.regionId;
 		}
 
-		public void setChargeType(String chargeType) {
-			this.chargeType = chargeType;
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
-		public String getCommodityCode() {
-			return this.commodityCode;
+		public String getType() {
+			return this.type;
 		}
 
-		public void setCommodityCode(String commodityCode) {
-			this.commodityCode = commodityCode;
-		}
-
-		public String getDataSetVersion() {
-			return this.dataSetVersion;
-		}
-
-		public void setDataSetVersion(String dataSetVersion) {
-			this.dataSetVersion = dataSetVersion;
-		}
-
-		public String getExpiredTime() {
-			return this.expiredTime;
-		}
-
-		public void setExpiredTime(String expiredTime) {
-			this.expiredTime = expiredTime;
-		}
-
-		public String getGmtCreate() {
-			return this.gmtCreate;
-		}
-
-		public void setGmtCreate(String gmtCreate) {
-			this.gmtCreate = gmtCreate;
-		}
-
-		public String getGmtModified() {
-			return this.gmtModified;
-		}
-
-		public void setGmtModified(String gmtModified) {
-			this.gmtModified = gmtModified;
-		}
-
-		public String getIndustry() {
-			return this.industry;
-		}
-
-		public void setIndustry(String industry) {
-			this.industry = industry;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public String getLockMode() {
@@ -165,20 +117,12 @@ public class ListInstanceResponse extends AcsResponse {
 			this.lockMode = lockMode;
 		}
 
-		public String getName() {
-			return this.name;
+		public String getExpiredTime() {
+			return this.expiredTime;
 		}
 
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setExpiredTime(String expiredTime) {
+			this.expiredTime = expiredTime;
 		}
 
 		public String getStatus() {
@@ -189,12 +133,68 @@ public class ListInstanceResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getType() {
-			return this.type;
+		public String getGmtCreate() {
+			return this.gmtCreate;
 		}
 
-		public void setType(String type) {
-			this.type = type;
+		public void setGmtCreate(String gmtCreate) {
+			this.gmtCreate = gmtCreate;
+		}
+
+		public String getChargeType() {
+			return this.chargeType;
+		}
+
+		public void setChargeType(String chargeType) {
+			this.chargeType = chargeType;
+		}
+
+		public String getIndustry() {
+			return this.industry;
+		}
+
+		public void setIndustry(String industry) {
+			this.industry = industry;
+		}
+
+		public String getCommodityCode() {
+			return this.commodityCode;
+		}
+
+		public void setCommodityCode(String commodityCode) {
+			this.commodityCode = commodityCode;
+		}
+
+		public String getGmtModified() {
+			return this.gmtModified;
+		}
+
+		public void setGmtModified(String gmtModified) {
+			this.gmtModified = gmtModified;
+		}
+
+		public String getDataSetVersion() {
+			return this.dataSetVersion;
+		}
+
+		public void setDataSetVersion(String dataSetVersion) {
+			this.dataSetVersion = dataSetVersion;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 	}
 

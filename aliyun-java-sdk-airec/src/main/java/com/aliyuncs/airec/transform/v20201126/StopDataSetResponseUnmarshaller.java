@@ -24,15 +24,15 @@ public class StopDataSetResponseUnmarshaller {
 	public static StopDataSetResponse unmarshall(StopDataSetResponse stopDataSetResponse, UnmarshallerContext _ctx) {
 		
 		stopDataSetResponse.setCode(_ctx.stringValue("StopDataSetResponse.code"));
-		stopDataSetResponse.setMessage(_ctx.stringValue("StopDataSetResponse.message"));
 		stopDataSetResponse.setRequestId(_ctx.stringValue("StopDataSetResponse.requestId"));
+		stopDataSetResponse.setMessage(_ctx.stringValue("StopDataSetResponse.message"));
 
 		Result result = new Result();
-		result.setGmtCreate(_ctx.longValue("StopDataSetResponse.result.gmtCreate"));
-		result.setGmtModified(_ctx.longValue("StopDataSetResponse.result.gmtModified"));
-		result.setInstanceId(_ctx.stringValue("StopDataSetResponse.result.instanceId"));
-		result.setState(_ctx.stringValue("StopDataSetResponse.result.state"));
 		result.setVersionId(_ctx.stringValue("StopDataSetResponse.result.versionId"));
+		result.setState(_ctx.stringValue("StopDataSetResponse.result.state"));
+		result.setGmtModified(_ctx.longValue("StopDataSetResponse.result.gmtModified"));
+		result.setGmtCreate(_ctx.longValue("StopDataSetResponse.result.gmtCreate"));
+		result.setInstanceId(_ctx.stringValue("StopDataSetResponse.result.instanceId"));
 		stopDataSetResponse.setResult(result);
 	 
 	 	return stopDataSetResponse;

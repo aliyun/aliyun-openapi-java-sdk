@@ -31,13 +31,13 @@ public class CloneExperimentResponseUnmarshaller {
 		cloneExperimentResponse.setRequestId(_ctx.stringValue("CloneExperimentResponse.requestId"));
 
 		Result result = new Result();
-		result.setExperimentId(_ctx.stringValue("CloneExperimentResponse.result.experimentId"));
-		result.setName(_ctx.stringValue("CloneExperimentResponse.result.name"));
-		result.setDescription(_ctx.stringValue("CloneExperimentResponse.result.description"));
-		result.setStatus(_ctx.stringValue("CloneExperimentResponse.result.status"));
 		result.setBase(_ctx.booleanValue("CloneExperimentResponse.result.base"));
 		result.setOnlineTime(_ctx.stringValue("CloneExperimentResponse.result.onlineTime"));
 		result.setOfflineTime(_ctx.stringValue("CloneExperimentResponse.result.offlineTime"));
+		result.setDescription(_ctx.stringValue("CloneExperimentResponse.result.description"));
+		result.setStatus(_ctx.stringValue("CloneExperimentResponse.result.status"));
+		result.setName(_ctx.stringValue("CloneExperimentResponse.result.name"));
+		result.setExperimentId(_ctx.stringValue("CloneExperimentResponse.result.experimentId"));
 
 		List<String> buckets = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("CloneExperimentResponse.result.buckets.Length"); i++) {
@@ -49,20 +49,20 @@ public class CloneExperimentResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("CloneExperimentResponse.result.algorithms.Length"); i++) {
 			Algorithm algorithm = new Algorithm();
 			algorithm.setKey(_ctx.stringValue("CloneExperimentResponse.result.algorithms["+ i +"].key"));
-			algorithm.setName(_ctx.stringValue("CloneExperimentResponse.result.algorithms["+ i +"].name"));
-			algorithm.setCategory(_ctx.stringValue("CloneExperimentResponse.result.algorithms["+ i +"].category"));
-			algorithm.setType(_ctx.stringValue("CloneExperimentResponse.result.algorithms["+ i +"].type"));
 			algorithm.setDefaultValue(_ctx.stringValue("CloneExperimentResponse.result.algorithms["+ i +"].defaultValue"));
+			algorithm.setType(_ctx.stringValue("CloneExperimentResponse.result.algorithms["+ i +"].type"));
 			algorithm.setExperimentValue(_ctx.stringValue("CloneExperimentResponse.result.algorithms["+ i +"].experimentValue"));
 			algorithm.setHasConfig(_ctx.booleanValue("CloneExperimentResponse.result.algorithms["+ i +"].hasConfig"));
+			algorithm.setCategory(_ctx.stringValue("CloneExperimentResponse.result.algorithms["+ i +"].category"));
+			algorithm.setName(_ctx.stringValue("CloneExperimentResponse.result.algorithms["+ i +"].name"));
 
 			List<ConfigItem> config = new ArrayList<ConfigItem>();
 			for (int j = 0; j < _ctx.lengthValue("CloneExperimentResponse.result.algorithms["+ i +"].config.Length"); j++) {
 				ConfigItem configItem = new ConfigItem();
 				configItem.setKey(_ctx.stringValue("CloneExperimentResponse.result.algorithms["+ i +"].config["+ j +"].key"));
-				configItem.setName(_ctx.stringValue("CloneExperimentResponse.result.algorithms["+ i +"].config["+ j +"].name"));
 				configItem.setDefaultValue(_ctx.stringValue("CloneExperimentResponse.result.algorithms["+ i +"].config["+ j +"].defaultValue"));
 				configItem.setExperimentValue(_ctx.stringValue("CloneExperimentResponse.result.algorithms["+ i +"].config["+ j +"].experimentValue"));
+				configItem.setName(_ctx.stringValue("CloneExperimentResponse.result.algorithms["+ i +"].config["+ j +"].name"));
 
 				config.add(configItem);
 			}

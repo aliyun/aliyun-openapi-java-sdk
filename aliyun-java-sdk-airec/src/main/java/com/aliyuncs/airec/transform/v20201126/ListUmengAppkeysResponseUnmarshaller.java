@@ -27,15 +27,15 @@ public class ListUmengAppkeysResponseUnmarshaller {
 	public static ListUmengAppkeysResponse unmarshall(ListUmengAppkeysResponse listUmengAppkeysResponse, UnmarshallerContext _ctx) {
 		
 		listUmengAppkeysResponse.setCode(_ctx.stringValue("ListUmengAppkeysResponse.code"));
-		listUmengAppkeysResponse.setMessage(_ctx.stringValue("ListUmengAppkeysResponse.message"));
 		listUmengAppkeysResponse.setRequestId(_ctx.stringValue("ListUmengAppkeysResponse.requestId"));
+		listUmengAppkeysResponse.setMessage(_ctx.stringValue("ListUmengAppkeysResponse.message"));
 
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListUmengAppkeysResponse.result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
 			resultItem.setAppkey(_ctx.stringValue("ListUmengAppkeysResponse.result["+ i +"].appkey"));
-			resultItem.setName(_ctx.stringValue("ListUmengAppkeysResponse.result["+ i +"].name"));
 			resultItem.setPlatform(_ctx.stringValue("ListUmengAppkeysResponse.result["+ i +"].platform"));
+			resultItem.setName(_ctx.stringValue("ListUmengAppkeysResponse.result["+ i +"].name"));
 
 			result.add(resultItem);
 		}

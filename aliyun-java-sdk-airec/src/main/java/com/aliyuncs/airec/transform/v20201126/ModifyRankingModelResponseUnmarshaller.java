@@ -25,14 +25,14 @@ public class ModifyRankingModelResponseUnmarshaller {
 	public static ModifyRankingModelResponse unmarshall(ModifyRankingModelResponse modifyRankingModelResponse, UnmarshallerContext _ctx) {
 		
 		modifyRankingModelResponse.setCode(_ctx.stringValue("ModifyRankingModelResponse.code"));
-		modifyRankingModelResponse.setMessage(_ctx.stringValue("ModifyRankingModelResponse.message"));
 		modifyRankingModelResponse.setRequestId(_ctx.stringValue("ModifyRankingModelResponse.requestId"));
+		modifyRankingModelResponse.setMessage(_ctx.stringValue("ModifyRankingModelResponse.message"));
 
 		Result result = new Result();
-		result.setGmtCreate(_ctx.stringValue("ModifyRankingModelResponse.result.gmtCreate"));
-		result.setGmtModified(_ctx.stringValue("ModifyRankingModelResponse.result.gmtModified"));
-		result.setMeta(_ctx.mapValue("ModifyRankingModelResponse.result.meta"));
 		result.setRankingModelId(_ctx.stringValue("ModifyRankingModelResponse.result.rankingModelId"));
+		result.setGmtModified(_ctx.stringValue("ModifyRankingModelResponse.result.gmtModified"));
+		result.setGmtCreate(_ctx.stringValue("ModifyRankingModelResponse.result.gmtCreate"));
+		result.setMeta(_ctx.mapValue("ModifyRankingModelResponse.result.meta"));
 		modifyRankingModelResponse.setResult(result);
 	 
 	 	return modifyRankingModelResponse;

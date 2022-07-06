@@ -27,9 +27,9 @@ public class QuerySyncReportAggregationRequest extends RoaAcsRequest<QuerySyncRe
 
 	private String instanceId;
 
-	private Long endTime;
+	private Integer endTime;
 
-	private Long startTime;
+	private Integer startTime;
 	public QuerySyncReportAggregationRequest() {
 		super("Airec", "2020-11-26", "QuerySyncReportAggregation", "airec");
 		setUriPattern("/v2/openapi/instances/[instanceId]/sync-reports/aggregation");
@@ -51,22 +51,22 @@ public class QuerySyncReportAggregationRequest extends RoaAcsRequest<QuerySyncRe
 		}
 	}
 
-	public Long getEndTime() {
+	public Integer getEndTime() {
 		return this.endTime;
 	}
 
-	public void setEndTime(Long endTime) {
+	public void setEndTime(Integer endTime) {
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("endTime", endTime.toString());
 		}
 	}
 
-	public Long getStartTime() {
+	public Integer getStartTime() {
 		return this.startTime;
 	}
 
-	public void setStartTime(Long startTime) {
+	public void setStartTime(Integer startTime) {
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("startTime", startTime.toString());

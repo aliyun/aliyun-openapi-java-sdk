@@ -31,13 +31,13 @@ public class ListExperimentsResponseUnmarshaller {
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListExperimentsResponse.result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setExperimentId(_ctx.stringValue("ListExperimentsResponse.result["+ i +"].experimentId"));
-			resultItem.setName(_ctx.stringValue("ListExperimentsResponse.result["+ i +"].name"));
-			resultItem.setDescription(_ctx.stringValue("ListExperimentsResponse.result["+ i +"].description"));
-			resultItem.setStatus(_ctx.stringValue("ListExperimentsResponse.result["+ i +"].status"));
 			resultItem.setBase(_ctx.booleanValue("ListExperimentsResponse.result["+ i +"].base"));
 			resultItem.setOnlineTime(_ctx.stringValue("ListExperimentsResponse.result["+ i +"].onlineTime"));
 			resultItem.setOfflineTime(_ctx.stringValue("ListExperimentsResponse.result["+ i +"].offlineTime"));
+			resultItem.setDescription(_ctx.stringValue("ListExperimentsResponse.result["+ i +"].description"));
+			resultItem.setStatus(_ctx.stringValue("ListExperimentsResponse.result["+ i +"].status"));
+			resultItem.setName(_ctx.stringValue("ListExperimentsResponse.result["+ i +"].name"));
+			resultItem.setExperimentId(_ctx.stringValue("ListExperimentsResponse.result["+ i +"].experimentId"));
 
 			List<String> buckets = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListExperimentsResponse.result["+ i +"].buckets.Length"); j++) {

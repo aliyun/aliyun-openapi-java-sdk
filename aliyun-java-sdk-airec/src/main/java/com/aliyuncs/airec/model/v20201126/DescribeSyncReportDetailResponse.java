@@ -27,9 +27,9 @@ public class DescribeSyncReportDetailResponse extends AcsResponse {
 
 	private String code;
 
-	private String message;
-
 	private String requestId;
+
+	private String message;
 
 	private List<ResultItem> result;
 
@@ -41,20 +41,20 @@ public class DescribeSyncReportDetailResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public List<ResultItem> getResult() {
@@ -67,24 +67,32 @@ public class DescribeSyncReportDetailResponse extends AcsResponse {
 
 	public static class ResultItem {
 
-		private Boolean defaultDisplay;
+		private Boolean sampleDisplay;
+
+		private String type;
 
 		private Integer errorCount;
 
 		private Float errorPercent;
 
-		private Boolean sampleDisplay;
-
-		private String type;
+		private Boolean defaultDisplay;
 
 		private List<HistoryDataItem> historyData;
 
-		public Boolean getDefaultDisplay() {
-			return this.defaultDisplay;
+		public Boolean getSampleDisplay() {
+			return this.sampleDisplay;
 		}
 
-		public void setDefaultDisplay(Boolean defaultDisplay) {
-			this.defaultDisplay = defaultDisplay;
+		public void setSampleDisplay(Boolean sampleDisplay) {
+			this.sampleDisplay = sampleDisplay;
+		}
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public Integer getErrorCount() {
@@ -103,20 +111,12 @@ public class DescribeSyncReportDetailResponse extends AcsResponse {
 			this.errorPercent = errorPercent;
 		}
 
-		public Boolean getSampleDisplay() {
-			return this.sampleDisplay;
+		public Boolean getDefaultDisplay() {
+			return this.defaultDisplay;
 		}
 
-		public void setSampleDisplay(Boolean sampleDisplay) {
-			this.sampleDisplay = sampleDisplay;
-		}
-
-		public String getType() {
-			return this.type;
-		}
-
-		public void setType(String type) {
-			this.type = type;
+		public void setDefaultDisplay(Boolean defaultDisplay) {
+			this.defaultDisplay = defaultDisplay;
 		}
 
 		public List<HistoryDataItem> getHistoryData() {
@@ -129,19 +129,11 @@ public class DescribeSyncReportDetailResponse extends AcsResponse {
 
 		public static class HistoryDataItem {
 
-			private Long endTime;
-
 			private Float errorPercent;
 
 			private Long startTime;
 
-			public Long getEndTime() {
-				return this.endTime;
-			}
-
-			public void setEndTime(Long endTime) {
-				this.endTime = endTime;
-			}
+			private Long endTime;
 
 			public Float getErrorPercent() {
 				return this.errorPercent;
@@ -157,6 +149,14 @@ public class DescribeSyncReportDetailResponse extends AcsResponse {
 
 			public void setStartTime(Long startTime) {
 				this.startTime = startTime;
+			}
+
+			public Long getEndTime() {
+				return this.endTime;
+			}
+
+			public void setEndTime(Long endTime) {
+				this.endTime = endTime;
 			}
 		}
 	}

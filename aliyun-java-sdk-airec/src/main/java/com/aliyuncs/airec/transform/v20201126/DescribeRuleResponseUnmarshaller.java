@@ -23,15 +23,15 @@ public class DescribeRuleResponseUnmarshaller {
 
 	public static DescribeRuleResponse unmarshall(DescribeRuleResponse describeRuleResponse, UnmarshallerContext _ctx) {
 		
-		describeRuleResponse.setRequestId(_ctx.stringValue("DescribeRuleResponse.requestId"));
 		describeRuleResponse.setCode(_ctx.stringValue("DescribeRuleResponse.code"));
+		describeRuleResponse.setRequestId(_ctx.stringValue("DescribeRuleResponse.requestId"));
 		describeRuleResponse.setMessage(_ctx.stringValue("DescribeRuleResponse.message"));
 
 		Result result = new Result();
-		result.setGmtCreate(_ctx.stringValue("DescribeRuleResponse.result.gmtCreate"));
-		result.setGmtModified(_ctx.stringValue("DescribeRuleResponse.result.gmtModified"));
 		result.setRuleId(_ctx.stringValue("DescribeRuleResponse.result.ruleId"));
+		result.setGmtModified(_ctx.stringValue("DescribeRuleResponse.result.gmtModified"));
 		result.setStatus(_ctx.stringValue("DescribeRuleResponse.result.status"));
+		result.setGmtCreate(_ctx.stringValue("DescribeRuleResponse.result.gmtCreate"));
 		describeRuleResponse.setResult(result);
 	 
 	 	return describeRuleResponse;

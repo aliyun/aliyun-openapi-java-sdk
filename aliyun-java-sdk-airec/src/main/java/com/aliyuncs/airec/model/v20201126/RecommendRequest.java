@@ -27,17 +27,21 @@ public class RecommendRequest extends RoaAcsRequest<RecommendResponse> {
 
 	private Integer returnCount;
 
+	private String recType;
+
+	private String ip;
+
+	private String userId;
+
 	private String serviceType;
 
 	private String instanceId;
-
-	private String ip;
 
 	private String sceneId;
 
 	private String imei;
 
-	private String userId;
+	private Boolean rankOpen;
 
 	private String items;
 
@@ -63,6 +67,39 @@ public class RecommendRequest extends RoaAcsRequest<RecommendResponse> {
 		}
 	}
 
+	public String getRecType() {
+		return this.recType;
+	}
+
+	public void setRecType(String recType) {
+		this.recType = recType;
+		if(recType != null){
+			putQueryParameter("recType", recType);
+		}
+	}
+
+	public String getIp() {
+		return this.ip;
+	}
+
+	public void setIp(String ip) {
+		this.ip = ip;
+		if(ip != null){
+			putQueryParameter("ip", ip);
+		}
+	}
+
+	public String getUserId() {
+		return this.userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+		if(userId != null){
+			putQueryParameter("userId", userId);
+		}
+	}
+
 	public String getServiceType() {
 		return this.serviceType;
 	}
@@ -82,17 +119,6 @@ public class RecommendRequest extends RoaAcsRequest<RecommendResponse> {
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putPathParameter("instanceId", instanceId);
-		}
-	}
-
-	public String getIp() {
-		return this.ip;
-	}
-
-	public void setIp(String ip) {
-		this.ip = ip;
-		if(ip != null){
-			putQueryParameter("ip", ip);
 		}
 	}
 
@@ -118,14 +144,14 @@ public class RecommendRequest extends RoaAcsRequest<RecommendResponse> {
 		}
 	}
 
-	public String getUserId() {
-		return this.userId;
+	public Boolean getRankOpen() {
+		return this.rankOpen;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("userId", userId);
+	public void setRankOpen(Boolean rankOpen) {
+		this.rankOpen = rankOpen;
+		if(rankOpen != null){
+			putQueryParameter("rankOpen", rankOpen.toString());
 		}
 	}
 

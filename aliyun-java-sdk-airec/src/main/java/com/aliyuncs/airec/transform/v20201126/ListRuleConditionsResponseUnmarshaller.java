@@ -26,8 +26,8 @@ public class ListRuleConditionsResponseUnmarshaller {
 
 	public static ListRuleConditionsResponse unmarshall(ListRuleConditionsResponse listRuleConditionsResponse, UnmarshallerContext _ctx) {
 		
-		listRuleConditionsResponse.setRequestId(_ctx.stringValue("ListRuleConditionsResponse.requestId"));
 		listRuleConditionsResponse.setCode(_ctx.stringValue("ListRuleConditionsResponse.code"));
+		listRuleConditionsResponse.setRequestId(_ctx.stringValue("ListRuleConditionsResponse.requestId"));
 		listRuleConditionsResponse.setMessage(_ctx.stringValue("ListRuleConditionsResponse.message"));
 
 		List<ResultItem> result = new ArrayList<ResultItem>();

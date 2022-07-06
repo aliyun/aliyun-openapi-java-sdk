@@ -23,10 +23,10 @@ public class QuerySyncReportAggregationResponseUnmarshaller {
 
 	public static QuerySyncReportAggregationResponse unmarshall(QuerySyncReportAggregationResponse querySyncReportAggregationResponse, UnmarshallerContext _ctx) {
 		
-		querySyncReportAggregationResponse.setCode(_ctx.stringValue("QuerySyncReportAggregationResponse.code"));
-		querySyncReportAggregationResponse.setMessage(_ctx.stringValue("QuerySyncReportAggregationResponse.message"));
-		querySyncReportAggregationResponse.setRequestId(_ctx.stringValue("QuerySyncReportAggregationResponse.requestId"));
 		querySyncReportAggregationResponse.setResult(_ctx.mapValue("QuerySyncReportAggregationResponse.result"));
+		querySyncReportAggregationResponse.setCode(_ctx.stringValue("QuerySyncReportAggregationResponse.code"));
+		querySyncReportAggregationResponse.setRequestId(_ctx.stringValue("QuerySyncReportAggregationResponse.requestId"));
+		querySyncReportAggregationResponse.setMessage(_ctx.stringValue("QuerySyncReportAggregationResponse.message"));
 	 
 	 	return querySyncReportAggregationResponse;
 	}

@@ -28,8 +28,8 @@ public class ListDashboardMetricsResponseUnmarshaller {
 
 	public static ListDashboardMetricsResponse unmarshall(ListDashboardMetricsResponse listDashboardMetricsResponse, UnmarshallerContext _ctx) {
 		
-		listDashboardMetricsResponse.setRequestId(_ctx.stringValue("ListDashboardMetricsResponse.requestId"));
 		listDashboardMetricsResponse.setCode(_ctx.stringValue("ListDashboardMetricsResponse.code"));
+		listDashboardMetricsResponse.setRequestId(_ctx.stringValue("ListDashboardMetricsResponse.requestId"));
 		listDashboardMetricsResponse.setMessage(_ctx.stringValue("ListDashboardMetricsResponse.message"));
 
 		List<ResultItem> result = new ArrayList<ResultItem>();
@@ -40,9 +40,9 @@ public class ListDashboardMetricsResponseUnmarshaller {
 			List<DetailItem> detail = new ArrayList<DetailItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListDashboardMetricsResponse.result["+ i +"].detail.Length"); j++) {
 				DetailItem detailItem = new DetailItem();
-				detailItem.setEndTime(_ctx.stringValue("ListDashboardMetricsResponse.result["+ i +"].detail["+ j +"].endTime"));
-				detailItem.setStartTime(_ctx.stringValue("ListDashboardMetricsResponse.result["+ i +"].detail["+ j +"].startTime"));
 				detailItem.setVal(_ctx.stringValue("ListDashboardMetricsResponse.result["+ i +"].detail["+ j +"].val"));
+				detailItem.setStartTime(_ctx.stringValue("ListDashboardMetricsResponse.result["+ i +"].detail["+ j +"].startTime"));
+				detailItem.setEndTime(_ctx.stringValue("ListDashboardMetricsResponse.result["+ i +"].detail["+ j +"].endTime"));
 
 				detail.add(detailItem);
 			}

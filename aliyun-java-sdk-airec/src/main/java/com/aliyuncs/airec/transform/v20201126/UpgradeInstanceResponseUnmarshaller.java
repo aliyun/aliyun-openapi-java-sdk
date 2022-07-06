@@ -24,8 +24,8 @@ public class UpgradeInstanceResponseUnmarshaller {
 	public static UpgradeInstanceResponse unmarshall(UpgradeInstanceResponse upgradeInstanceResponse, UnmarshallerContext _ctx) {
 		
 		upgradeInstanceResponse.setCode(_ctx.stringValue("UpgradeInstanceResponse.code"));
-		upgradeInstanceResponse.setMessage(_ctx.stringValue("UpgradeInstanceResponse.message"));
 		upgradeInstanceResponse.setRequestId(_ctx.stringValue("UpgradeInstanceResponse.requestId"));
+		upgradeInstanceResponse.setMessage(_ctx.stringValue("UpgradeInstanceResponse.message"));
 
 		Result result = new Result();
 		result.setInstanceId(_ctx.stringValue("UpgradeInstanceResponse.result.instanceId"));

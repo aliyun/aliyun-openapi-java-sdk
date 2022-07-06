@@ -27,9 +27,9 @@ public class DescribeDataSetMessageResponse extends AcsResponse {
 
 	private String code;
 
-	private String message;
-
 	private String requestId;
+
+	private String message;
 
 	private List<ResultItem> result;
 
@@ -41,20 +41,20 @@ public class DescribeDataSetMessageResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public List<ResultItem> getResult() {
@@ -67,29 +67,13 @@ public class DescribeDataSetMessageResponse extends AcsResponse {
 
 	public static class ResultItem {
 
-		private String errorLevel;
-
-		private String errorType;
-
 		private String message;
 
 		private String timestamp;
 
-		public String getErrorLevel() {
-			return this.errorLevel;
-		}
+		private String errorLevel;
 
-		public void setErrorLevel(String errorLevel) {
-			this.errorLevel = errorLevel;
-		}
-
-		public String getErrorType() {
-			return this.errorType;
-		}
-
-		public void setErrorType(String errorType) {
-			this.errorType = errorType;
-		}
+		private String errorType;
 
 		public String getMessage() {
 			return this.message;
@@ -105,6 +89,22 @@ public class DescribeDataSetMessageResponse extends AcsResponse {
 
 		public void setTimestamp(String timestamp) {
 			this.timestamp = timestamp;
+		}
+
+		public String getErrorLevel() {
+			return this.errorLevel;
+		}
+
+		public void setErrorLevel(String errorLevel) {
+			this.errorLevel = errorLevel;
+		}
+
+		public String getErrorType() {
+			return this.errorType;
+		}
+
+		public void setErrorType(String errorType) {
+			this.errorType = errorType;
 		}
 	}
 

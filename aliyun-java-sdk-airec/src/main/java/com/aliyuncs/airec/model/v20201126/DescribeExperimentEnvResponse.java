@@ -46,17 +46,9 @@ public class DescribeExperimentEnvResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String divideType;
-
 		private Integer bucketCount;
 
-		public String getDivideType() {
-			return this.divideType;
-		}
-
-		public void setDivideType(String divideType) {
-			this.divideType = divideType;
-		}
+		private String divideType;
 
 		public Integer getBucketCount() {
 			return this.bucketCount;
@@ -64,6 +56,14 @@ public class DescribeExperimentEnvResponse extends AcsResponse {
 
 		public void setBucketCount(Integer bucketCount) {
 			this.bucketCount = bucketCount;
+		}
+
+		public String getDivideType() {
+			return this.divideType;
+		}
+
+		public void setDivideType(String divideType) {
+			this.divideType = divideType;
 		}
 	}
 

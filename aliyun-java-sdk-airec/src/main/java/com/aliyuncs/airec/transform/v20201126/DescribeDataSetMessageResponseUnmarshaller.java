@@ -27,16 +27,16 @@ public class DescribeDataSetMessageResponseUnmarshaller {
 	public static DescribeDataSetMessageResponse unmarshall(DescribeDataSetMessageResponse describeDataSetMessageResponse, UnmarshallerContext _ctx) {
 		
 		describeDataSetMessageResponse.setCode(_ctx.stringValue("DescribeDataSetMessageResponse.code"));
-		describeDataSetMessageResponse.setMessage(_ctx.stringValue("DescribeDataSetMessageResponse.message"));
 		describeDataSetMessageResponse.setRequestId(_ctx.stringValue("DescribeDataSetMessageResponse.requestId"));
+		describeDataSetMessageResponse.setMessage(_ctx.stringValue("DescribeDataSetMessageResponse.message"));
 
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDataSetMessageResponse.result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setErrorLevel(_ctx.stringValue("DescribeDataSetMessageResponse.result["+ i +"].errorLevel"));
-			resultItem.setErrorType(_ctx.stringValue("DescribeDataSetMessageResponse.result["+ i +"].errorType"));
 			resultItem.setMessage(_ctx.stringValue("DescribeDataSetMessageResponse.result["+ i +"].message"));
 			resultItem.setTimestamp(_ctx.stringValue("DescribeDataSetMessageResponse.result["+ i +"].timestamp"));
+			resultItem.setErrorLevel(_ctx.stringValue("DescribeDataSetMessageResponse.result["+ i +"].errorLevel"));
+			resultItem.setErrorType(_ctx.stringValue("DescribeDataSetMessageResponse.result["+ i +"].errorType"));
 
 			result.add(resultItem);
 		}

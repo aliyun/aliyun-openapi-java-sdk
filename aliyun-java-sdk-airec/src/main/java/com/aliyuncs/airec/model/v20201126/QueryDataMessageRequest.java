@@ -29,11 +29,11 @@ public class QueryDataMessageRequest extends RoaAcsRequest<QueryDataMessageRespo
 
 	private String messageSource;
 
-	private Long endTime;
+	private Integer endTime;
 
 	private String userType;
 
-	private Long startTime;
+	private Integer startTime;
 
 	private String userId;
 
@@ -48,6 +48,8 @@ public class QueryDataMessageRequest extends RoaAcsRequest<QueryDataMessageRespo
 	private Integer size;
 
 	private String sceneId;
+
+	private String imei;
 
 	private String bhvType;
 
@@ -86,11 +88,11 @@ public class QueryDataMessageRequest extends RoaAcsRequest<QueryDataMessageRespo
 		}
 	}
 
-	public Long getEndTime() {
+	public Integer getEndTime() {
 		return this.endTime;
 	}
 
-	public void setEndTime(Long endTime) {
+	public void setEndTime(Integer endTime) {
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("endTime", endTime.toString());
@@ -108,11 +110,11 @@ public class QueryDataMessageRequest extends RoaAcsRequest<QueryDataMessageRespo
 		}
 	}
 
-	public Long getStartTime() {
+	public Integer getStartTime() {
 		return this.startTime;
 	}
 
-	public void setStartTime(Long startTime) {
+	public void setStartTime(Integer startTime) {
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("startTime", startTime.toString());
@@ -193,6 +195,17 @@ public class QueryDataMessageRequest extends RoaAcsRequest<QueryDataMessageRespo
 		this.sceneId = sceneId;
 		if(sceneId != null){
 			putQueryParameter("sceneId", sceneId);
+		}
+	}
+
+	public String getImei() {
+		return this.imei;
+	}
+
+	public void setImei(String imei) {
+		this.imei = imei;
+		if(imei != null){
+			putQueryParameter("imei", imei);
 		}
 	}
 

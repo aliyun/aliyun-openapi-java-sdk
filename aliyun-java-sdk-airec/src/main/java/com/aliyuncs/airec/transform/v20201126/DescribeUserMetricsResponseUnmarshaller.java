@@ -28,8 +28,8 @@ public class DescribeUserMetricsResponseUnmarshaller {
 	public static DescribeUserMetricsResponse unmarshall(DescribeUserMetricsResponse describeUserMetricsResponse, UnmarshallerContext _ctx) {
 		
 		describeUserMetricsResponse.setCode(_ctx.stringValue("DescribeUserMetricsResponse.code"));
-		describeUserMetricsResponse.setMessage(_ctx.stringValue("DescribeUserMetricsResponse.message"));
 		describeUserMetricsResponse.setRequestId(_ctx.stringValue("DescribeUserMetricsResponse.requestId"));
+		describeUserMetricsResponse.setMessage(_ctx.stringValue("DescribeUserMetricsResponse.message"));
 
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeUserMetricsResponse.result.Length"); i++) {
@@ -39,9 +39,9 @@ public class DescribeUserMetricsResponseUnmarshaller {
 			List<DataPointsItem> dataPoints = new ArrayList<DataPointsItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeUserMetricsResponse.result["+ i +"].dataPoints.Length"); j++) {
 				DataPointsItem dataPointsItem = new DataPointsItem();
-				dataPointsItem.setEndTime(_ctx.longValue("DescribeUserMetricsResponse.result["+ i +"].dataPoints["+ j +"].endTime"));
-				dataPointsItem.setStartTime(_ctx.longValue("DescribeUserMetricsResponse.result["+ i +"].dataPoints["+ j +"].startTime"));
 				dataPointsItem.setVal(_ctx.floatValue("DescribeUserMetricsResponse.result["+ i +"].dataPoints["+ j +"].val"));
+				dataPointsItem.setStartTime(_ctx.longValue("DescribeUserMetricsResponse.result["+ i +"].dataPoints["+ j +"].startTime"));
+				dataPointsItem.setEndTime(_ctx.longValue("DescribeUserMetricsResponse.result["+ i +"].dataPoints["+ j +"].endTime"));
 
 				dataPoints.add(dataPointsItem);
 			}

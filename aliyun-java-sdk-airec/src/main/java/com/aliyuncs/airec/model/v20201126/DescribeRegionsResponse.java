@@ -27,9 +27,9 @@ public class DescribeRegionsResponse extends AcsResponse {
 
 	private String code;
 
-	private String message;
-
 	private String requestId;
+
+	private String message;
 
 	private List<ResultItem> result;
 
@@ -41,20 +41,20 @@ public class DescribeRegionsResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public List<ResultItem> getResult() {
@@ -67,22 +67,22 @@ public class DescribeRegionsResponse extends AcsResponse {
 
 	public static class ResultItem {
 
-		private String consoleUrl;
+		private String regionId;
 
 		private String endpoint;
 
-		private String localName;
-
-		private String regionId;
-
 		private String status;
 
-		public String getConsoleUrl() {
-			return this.consoleUrl;
+		private String localName;
+
+		private String consoleUrl;
+
+		public String getRegionId() {
+			return this.regionId;
 		}
 
-		public void setConsoleUrl(String consoleUrl) {
-			this.consoleUrl = consoleUrl;
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
 		public String getEndpoint() {
@@ -93,6 +93,14 @@ public class DescribeRegionsResponse extends AcsResponse {
 			this.endpoint = endpoint;
 		}
 
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
 		public String getLocalName() {
 			return this.localName;
 		}
@@ -101,20 +109,12 @@ public class DescribeRegionsResponse extends AcsResponse {
 			this.localName = localName;
 		}
 
-		public String getRegionId() {
-			return this.regionId;
+		public String getConsoleUrl() {
+			return this.consoleUrl;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
+		public void setConsoleUrl(String consoleUrl) {
+			this.consoleUrl = consoleUrl;
 		}
 	}
 

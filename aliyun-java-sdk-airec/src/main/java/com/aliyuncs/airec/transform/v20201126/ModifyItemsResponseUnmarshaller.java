@@ -22,8 +22,8 @@ public class ModifyItemsResponseUnmarshaller {
 
 	public static ModifyItemsResponse unmarshall(ModifyItemsResponse modifyItemsResponse, UnmarshallerContext _ctx) {
 		
-		modifyItemsResponse.setRequestId(_ctx.stringValue("ModifyItemsResponse.requestId"));
 		modifyItemsResponse.setResult(_ctx.booleanValue("ModifyItemsResponse.result"));
+		modifyItemsResponse.setRequestId(_ctx.stringValue("ModifyItemsResponse.requestId"));
 	 
 	 	return modifyItemsResponse;
 	}

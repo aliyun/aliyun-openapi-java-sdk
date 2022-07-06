@@ -26,17 +26,17 @@ public class ListScenesResponseUnmarshaller {
 
 	public static ListScenesResponse unmarshall(ListScenesResponse listScenesResponse, UnmarshallerContext _ctx) {
 		
-		listScenesResponse.setRequestId(_ctx.stringValue("ListScenesResponse.requestId"));
 		listScenesResponse.setCode(_ctx.stringValue("ListScenesResponse.code"));
+		listScenesResponse.setRequestId(_ctx.stringValue("ListScenesResponse.requestId"));
 		listScenesResponse.setMessage(_ctx.stringValue("ListScenesResponse.message"));
 
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListScenesResponse.result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setGmtCreate(_ctx.stringValue("ListScenesResponse.result["+ i +"].gmtCreate"));
-			resultItem.setGmtModified(_ctx.stringValue("ListScenesResponse.result["+ i +"].gmtModified"));
 			resultItem.setSceneId(_ctx.stringValue("ListScenesResponse.result["+ i +"].sceneId"));
+			resultItem.setGmtModified(_ctx.stringValue("ListScenesResponse.result["+ i +"].gmtModified"));
 			resultItem.setStatus(_ctx.stringValue("ListScenesResponse.result["+ i +"].status"));
+			resultItem.setGmtCreate(_ctx.stringValue("ListScenesResponse.result["+ i +"].gmtCreate"));
 
 			result.add(resultItem);
 		}

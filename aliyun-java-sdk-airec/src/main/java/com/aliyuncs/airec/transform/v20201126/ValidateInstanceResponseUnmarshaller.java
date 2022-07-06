@@ -22,10 +22,10 @@ public class ValidateInstanceResponseUnmarshaller {
 
 	public static ValidateInstanceResponse unmarshall(ValidateInstanceResponse validateInstanceResponse, UnmarshallerContext _ctx) {
 		
-		validateInstanceResponse.setCode(_ctx.stringValue("ValidateInstanceResponse.code"));
-		validateInstanceResponse.setMessage(_ctx.stringValue("ValidateInstanceResponse.message"));
-		validateInstanceResponse.setRequestId(_ctx.stringValue("ValidateInstanceResponse.requestId"));
 		validateInstanceResponse.setResult(_ctx.booleanValue("ValidateInstanceResponse.result"));
+		validateInstanceResponse.setCode(_ctx.stringValue("ValidateInstanceResponse.code"));
+		validateInstanceResponse.setRequestId(_ctx.stringValue("ValidateInstanceResponse.requestId"));
+		validateInstanceResponse.setMessage(_ctx.stringValue("ValidateInstanceResponse.message"));
 	 
 	 	return validateInstanceResponse;
 	}

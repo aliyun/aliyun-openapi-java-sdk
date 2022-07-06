@@ -47,55 +47,23 @@ public class DescribeExperimentResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String experimentId;
-
-		private String name;
-
-		private String description;
-
-		private String status;
-
 		private Boolean base;
 
 		private String onlineTime;
 
 		private String offlineTime;
 
+		private String description;
+
+		private String status;
+
+		private String name;
+
+		private String experimentId;
+
 		private List<Algorithm> algorithms;
 
 		private List<String> buckets;
-
-		public String getExperimentId() {
-			return this.experimentId;
-		}
-
-		public void setExperimentId(String experimentId) {
-			this.experimentId = experimentId;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
 
 		public Boolean getBase() {
 			return this.base;
@@ -121,6 +89,38 @@ public class DescribeExperimentResponse extends AcsResponse {
 			this.offlineTime = offlineTime;
 		}
 
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getExperimentId() {
+			return this.experimentId;
+		}
+
+		public void setExperimentId(String experimentId) {
+			this.experimentId = experimentId;
+		}
+
 		public List<Algorithm> getAlgorithms() {
 			return this.algorithms;
 		}
@@ -141,17 +141,17 @@ public class DescribeExperimentResponse extends AcsResponse {
 
 			private String key;
 
-			private String name;
-
-			private String category;
+			private String defaultValue;
 
 			private String type;
-
-			private String defaultValue;
 
 			private String experimentValue;
 
 			private Boolean hasConfig;
+
+			private String category;
+
+			private String name;
 
 			private List<ConfigItem> config;
 
@@ -163,20 +163,12 @@ public class DescribeExperimentResponse extends AcsResponse {
 				this.key = key;
 			}
 
-			public String getName() {
-				return this.name;
+			public String getDefaultValue() {
+				return this.defaultValue;
 			}
 
-			public void setName(String name) {
-				this.name = name;
-			}
-
-			public String getCategory() {
-				return this.category;
-			}
-
-			public void setCategory(String category) {
-				this.category = category;
+			public void setDefaultValue(String defaultValue) {
+				this.defaultValue = defaultValue;
 			}
 
 			public String getType() {
@@ -185,14 +177,6 @@ public class DescribeExperimentResponse extends AcsResponse {
 
 			public void setType(String type) {
 				this.type = type;
-			}
-
-			public String getDefaultValue() {
-				return this.defaultValue;
-			}
-
-			public void setDefaultValue(String defaultValue) {
-				this.defaultValue = defaultValue;
 			}
 
 			public String getExperimentValue() {
@@ -211,6 +195,22 @@ public class DescribeExperimentResponse extends AcsResponse {
 				this.hasConfig = hasConfig;
 			}
 
+			public String getCategory() {
+				return this.category;
+			}
+
+			public void setCategory(String category) {
+				this.category = category;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
 			public List<ConfigItem> getConfig() {
 				return this.config;
 			}
@@ -223,11 +223,11 @@ public class DescribeExperimentResponse extends AcsResponse {
 
 				private String key;
 
-				private String name;
-
 				private String defaultValue;
 
 				private String experimentValue;
+
+				private String name;
 
 				public String getKey() {
 					return this.key;
@@ -235,14 +235,6 @@ public class DescribeExperimentResponse extends AcsResponse {
 
 				public void setKey(String key) {
 					this.key = key;
-				}
-
-				public String getName() {
-					return this.name;
-				}
-
-				public void setName(String name) {
-					this.name = name;
 				}
 
 				public String getDefaultValue() {
@@ -259,6 +251,14 @@ public class DescribeExperimentResponse extends AcsResponse {
 
 				public void setExperimentValue(String experimentValue) {
 					this.experimentValue = experimentValue;
+				}
+
+				public String getName() {
+					return this.name;
+				}
+
+				public void setName(String name) {
+					this.name = name;
 				}
 			}
 		}

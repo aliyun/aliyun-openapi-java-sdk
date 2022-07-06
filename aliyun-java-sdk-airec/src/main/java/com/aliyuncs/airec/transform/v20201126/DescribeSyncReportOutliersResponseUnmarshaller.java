@@ -23,10 +23,10 @@ public class DescribeSyncReportOutliersResponseUnmarshaller {
 
 	public static DescribeSyncReportOutliersResponse unmarshall(DescribeSyncReportOutliersResponse describeSyncReportOutliersResponse, UnmarshallerContext _ctx) {
 		
-		describeSyncReportOutliersResponse.setCode(_ctx.stringValue("DescribeSyncReportOutliersResponse.code"));
-		describeSyncReportOutliersResponse.setMessage(_ctx.stringValue("DescribeSyncReportOutliersResponse.message"));
-		describeSyncReportOutliersResponse.setRequestId(_ctx.stringValue("DescribeSyncReportOutliersResponse.requestId"));
 		describeSyncReportOutliersResponse.setResult(_ctx.mapValue("DescribeSyncReportOutliersResponse.result"));
+		describeSyncReportOutliersResponse.setCode(_ctx.stringValue("DescribeSyncReportOutliersResponse.code"));
+		describeSyncReportOutliersResponse.setRequestId(_ctx.stringValue("DescribeSyncReportOutliersResponse.requestId"));
+		describeSyncReportOutliersResponse.setMessage(_ctx.stringValue("DescribeSyncReportOutliersResponse.message"));
 	 
 	 	return describeSyncReportOutliersResponse;
 	}

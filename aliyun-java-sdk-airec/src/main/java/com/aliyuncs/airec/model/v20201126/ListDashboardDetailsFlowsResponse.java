@@ -26,21 +26,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListDashboardDetailsFlowsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String code;
+
+	private String requestId;
 
 	private String message;
 
 	private Result result;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -48,6 +40,14 @@ public class ListDashboardDetailsFlowsResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -90,18 +90,18 @@ public class ListDashboardDetailsFlowsResponse extends AcsResponse {
 
 		public static class MetricDataItem {
 
-			private Map<Object,Object> metricRes;
+			private String traceId;
 
 			private String sceneId;
 
-			private String traceId;
+			private Map<Object,Object> metricRes;
 
-			public Map<Object,Object> getMetricRes() {
-				return this.metricRes;
+			public String getTraceId() {
+				return this.traceId;
 			}
 
-			public void setMetricRes(Map<Object,Object> metricRes) {
-				this.metricRes = metricRes;
+			public void setTraceId(String traceId) {
+				this.traceId = traceId;
 			}
 
 			public String getSceneId() {
@@ -112,12 +112,12 @@ public class ListDashboardDetailsFlowsResponse extends AcsResponse {
 				this.sceneId = sceneId;
 			}
 
-			public String getTraceId() {
-				return this.traceId;
+			public Map<Object,Object> getMetricRes() {
+				return this.metricRes;
 			}
 
-			public void setTraceId(String traceId) {
-				this.traceId = traceId;
+			public void setMetricRes(Map<Object,Object> metricRes) {
+				this.metricRes = metricRes;
 			}
 		}
 	}

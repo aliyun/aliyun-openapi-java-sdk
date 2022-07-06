@@ -25,13 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryDataMessageResponse extends AcsResponse {
 
-	private String code;
+	private Map<Object,Object> result;
 
-	private String message;
+	private String code;
 
 	private String requestId;
 
-	private Map<Object,Object> result;
+	private String message;
+
+	public Map<Object,Object> getResult() {
+		return this.result;
+	}
+
+	public void setResult(Map<Object,Object> result) {
+		this.result = result;
+	}
 
 	public String getCode() {
 		return this.code;
@@ -39,14 +47,6 @@ public class QueryDataMessageResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
 	}
 
 	public String getRequestId() {
@@ -57,12 +57,12 @@ public class QueryDataMessageResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Map<Object,Object> getResult() {
-		return this.result;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setResult(Map<Object,Object> result) {
-		this.result = result;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	@Override

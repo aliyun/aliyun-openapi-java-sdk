@@ -24,15 +24,15 @@ public class DeleteDataSetResponseUnmarshaller {
 	public static DeleteDataSetResponse unmarshall(DeleteDataSetResponse deleteDataSetResponse, UnmarshallerContext _ctx) {
 		
 		deleteDataSetResponse.setCode(_ctx.stringValue("DeleteDataSetResponse.code"));
-		deleteDataSetResponse.setMessage(_ctx.stringValue("DeleteDataSetResponse.message"));
 		deleteDataSetResponse.setRequestId(_ctx.stringValue("DeleteDataSetResponse.requestId"));
+		deleteDataSetResponse.setMessage(_ctx.stringValue("DeleteDataSetResponse.message"));
 
 		Result result = new Result();
-		result.setGmtCreate(_ctx.longValue("DeleteDataSetResponse.result.gmtCreate"));
-		result.setGmtModified(_ctx.longValue("DeleteDataSetResponse.result.gmtModified"));
-		result.setInstanceId(_ctx.stringValue("DeleteDataSetResponse.result.instanceId"));
-		result.setState(_ctx.stringValue("DeleteDataSetResponse.result.state"));
 		result.setVersionId(_ctx.stringValue("DeleteDataSetResponse.result.versionId"));
+		result.setState(_ctx.stringValue("DeleteDataSetResponse.result.state"));
+		result.setGmtModified(_ctx.longValue("DeleteDataSetResponse.result.gmtModified"));
+		result.setGmtCreate(_ctx.longValue("DeleteDataSetResponse.result.gmtCreate"));
+		result.setInstanceId(_ctx.stringValue("DeleteDataSetResponse.result.instanceId"));
 		deleteDataSetResponse.setResult(result);
 	 
 	 	return deleteDataSetResponse;

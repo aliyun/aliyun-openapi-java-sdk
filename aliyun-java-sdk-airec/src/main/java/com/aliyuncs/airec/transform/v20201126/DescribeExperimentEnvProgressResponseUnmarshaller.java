@@ -26,8 +26,8 @@ public class DescribeExperimentEnvProgressResponseUnmarshaller {
 		describeExperimentEnvProgressResponse.setRequestId(_ctx.stringValue("DescribeExperimentEnvProgressResponse.requestId"));
 
 		Result result = new Result();
-		result.setProgress(_ctx.integerValue("DescribeExperimentEnvProgressResponse.result.progress"));
 		result.setStatus(_ctx.stringValue("DescribeExperimentEnvProgressResponse.result.status"));
+		result.setProgress(_ctx.integerValue("DescribeExperimentEnvProgressResponse.result.progress"));
 		describeExperimentEnvProgressResponse.setResult(result);
 	 
 	 	return describeExperimentEnvProgressResponse;

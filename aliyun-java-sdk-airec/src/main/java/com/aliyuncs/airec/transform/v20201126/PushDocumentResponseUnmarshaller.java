@@ -22,10 +22,10 @@ public class PushDocumentResponseUnmarshaller {
 
 	public static PushDocumentResponse unmarshall(PushDocumentResponse pushDocumentResponse, UnmarshallerContext _ctx) {
 		
-		pushDocumentResponse.setCode(_ctx.stringValue("PushDocumentResponse.code"));
-		pushDocumentResponse.setMessage(_ctx.stringValue("PushDocumentResponse.message"));
-		pushDocumentResponse.setRequestId(_ctx.stringValue("PushDocumentResponse.requestId"));
 		pushDocumentResponse.setResult(_ctx.booleanValue("PushDocumentResponse.result"));
+		pushDocumentResponse.setCode(_ctx.stringValue("PushDocumentResponse.code"));
+		pushDocumentResponse.setRequestId(_ctx.stringValue("PushDocumentResponse.requestId"));
+		pushDocumentResponse.setMessage(_ctx.stringValue("PushDocumentResponse.message"));
 	 
 	 	return pushDocumentResponse;
 	}

@@ -28,24 +28,24 @@ public class DescribeSyncReportDetailResponseUnmarshaller {
 	public static DescribeSyncReportDetailResponse unmarshall(DescribeSyncReportDetailResponse describeSyncReportDetailResponse, UnmarshallerContext _ctx) {
 		
 		describeSyncReportDetailResponse.setCode(_ctx.stringValue("DescribeSyncReportDetailResponse.code"));
-		describeSyncReportDetailResponse.setMessage(_ctx.stringValue("DescribeSyncReportDetailResponse.message"));
 		describeSyncReportDetailResponse.setRequestId(_ctx.stringValue("DescribeSyncReportDetailResponse.requestId"));
+		describeSyncReportDetailResponse.setMessage(_ctx.stringValue("DescribeSyncReportDetailResponse.message"));
 
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSyncReportDetailResponse.result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setDefaultDisplay(_ctx.booleanValue("DescribeSyncReportDetailResponse.result["+ i +"].defaultDisplay"));
-			resultItem.setErrorCount(_ctx.integerValue("DescribeSyncReportDetailResponse.result["+ i +"].errorCount"));
-			resultItem.setErrorPercent(_ctx.floatValue("DescribeSyncReportDetailResponse.result["+ i +"].errorPercent"));
 			resultItem.setSampleDisplay(_ctx.booleanValue("DescribeSyncReportDetailResponse.result["+ i +"].sampleDisplay"));
 			resultItem.setType(_ctx.stringValue("DescribeSyncReportDetailResponse.result["+ i +"].type"));
+			resultItem.setErrorCount(_ctx.integerValue("DescribeSyncReportDetailResponse.result["+ i +"].errorCount"));
+			resultItem.setErrorPercent(_ctx.floatValue("DescribeSyncReportDetailResponse.result["+ i +"].errorPercent"));
+			resultItem.setDefaultDisplay(_ctx.booleanValue("DescribeSyncReportDetailResponse.result["+ i +"].defaultDisplay"));
 
 			List<HistoryDataItem> historyData = new ArrayList<HistoryDataItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeSyncReportDetailResponse.result["+ i +"].historyData.Length"); j++) {
 				HistoryDataItem historyDataItem = new HistoryDataItem();
-				historyDataItem.setEndTime(_ctx.longValue("DescribeSyncReportDetailResponse.result["+ i +"].historyData["+ j +"].endTime"));
 				historyDataItem.setErrorPercent(_ctx.floatValue("DescribeSyncReportDetailResponse.result["+ i +"].historyData["+ j +"].errorPercent"));
 				historyDataItem.setStartTime(_ctx.longValue("DescribeSyncReportDetailResponse.result["+ i +"].historyData["+ j +"].startTime"));
+				historyDataItem.setEndTime(_ctx.longValue("DescribeSyncReportDetailResponse.result["+ i +"].historyData["+ j +"].endTime"));
 
 				historyData.add(historyDataItem);
 			}

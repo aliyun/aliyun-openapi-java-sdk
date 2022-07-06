@@ -22,10 +22,10 @@ public class PushInterventionResponseUnmarshaller {
 
 	public static PushInterventionResponse unmarshall(PushInterventionResponse pushInterventionResponse, UnmarshallerContext _ctx) {
 		
-		pushInterventionResponse.setCode(_ctx.stringValue("PushInterventionResponse.code"));
-		pushInterventionResponse.setMessage(_ctx.stringValue("PushInterventionResponse.message"));
-		pushInterventionResponse.setRequestId(_ctx.stringValue("PushInterventionResponse.requestId"));
 		pushInterventionResponse.setResult(_ctx.booleanValue("PushInterventionResponse.result"));
+		pushInterventionResponse.setCode(_ctx.stringValue("PushInterventionResponse.code"));
+		pushInterventionResponse.setRequestId(_ctx.stringValue("PushInterventionResponse.requestId"));
+		pushInterventionResponse.setMessage(_ctx.stringValue("PushInterventionResponse.message"));
 	 
 	 	return pushInterventionResponse;
 	}

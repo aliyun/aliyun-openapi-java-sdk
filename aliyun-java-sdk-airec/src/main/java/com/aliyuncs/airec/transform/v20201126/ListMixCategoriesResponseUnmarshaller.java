@@ -27,8 +27,8 @@ public class ListMixCategoriesResponseUnmarshaller {
 	public static ListMixCategoriesResponse unmarshall(ListMixCategoriesResponse listMixCategoriesResponse, UnmarshallerContext _ctx) {
 		
 		listMixCategoriesResponse.setCode(_ctx.stringValue("ListMixCategoriesResponse.code"));
-		listMixCategoriesResponse.setMessage(_ctx.stringValue("ListMixCategoriesResponse.message"));
 		listMixCategoriesResponse.setRequestId(_ctx.stringValue("ListMixCategoriesResponse.requestId"));
+		listMixCategoriesResponse.setMessage(_ctx.stringValue("ListMixCategoriesResponse.message"));
 
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListMixCategoriesResponse.result.Length"); i++) {

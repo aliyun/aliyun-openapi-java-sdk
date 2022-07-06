@@ -33,20 +33,20 @@ public class DescribeDefaultAlgorithmsResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeDefaultAlgorithmsResponse.result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
 			resultItem.setKey(_ctx.stringValue("DescribeDefaultAlgorithmsResponse.result["+ i +"].key"));
-			resultItem.setName(_ctx.stringValue("DescribeDefaultAlgorithmsResponse.result["+ i +"].name"));
-			resultItem.setCategory(_ctx.stringValue("DescribeDefaultAlgorithmsResponse.result["+ i +"].category"));
-			resultItem.setType(_ctx.stringValue("DescribeDefaultAlgorithmsResponse.result["+ i +"].type"));
 			resultItem.setDefaultValue(_ctx.stringValue("DescribeDefaultAlgorithmsResponse.result["+ i +"].defaultValue"));
+			resultItem.setType(_ctx.stringValue("DescribeDefaultAlgorithmsResponse.result["+ i +"].type"));
 			resultItem.setExperimentValue(_ctx.stringValue("DescribeDefaultAlgorithmsResponse.result["+ i +"].experimentValue"));
 			resultItem.setHasConfig(_ctx.booleanValue("DescribeDefaultAlgorithmsResponse.result["+ i +"].hasConfig"));
+			resultItem.setCategory(_ctx.stringValue("DescribeDefaultAlgorithmsResponse.result["+ i +"].category"));
+			resultItem.setName(_ctx.stringValue("DescribeDefaultAlgorithmsResponse.result["+ i +"].name"));
 
 			List<ConfigItem> config = new ArrayList<ConfigItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDefaultAlgorithmsResponse.result["+ i +"].config.Length"); j++) {
 				ConfigItem configItem = new ConfigItem();
 				configItem.setKey(_ctx.stringValue("DescribeDefaultAlgorithmsResponse.result["+ i +"].config["+ j +"].key"));
-				configItem.setName(_ctx.stringValue("DescribeDefaultAlgorithmsResponse.result["+ i +"].config["+ j +"].name"));
 				configItem.setDefaultValue(_ctx.stringValue("DescribeDefaultAlgorithmsResponse.result["+ i +"].config["+ j +"].defaultValue"));
 				configItem.setExperimentValue(_ctx.stringValue("DescribeDefaultAlgorithmsResponse.result["+ i +"].config["+ j +"].experimentValue"));
+				configItem.setName(_ctx.stringValue("DescribeDefaultAlgorithmsResponse.result["+ i +"].config["+ j +"].name"));
 
 				config.add(configItem);
 			}

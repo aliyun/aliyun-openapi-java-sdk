@@ -27,9 +27,9 @@ public class ListSceneParametersResponse extends AcsResponse {
 
 	private String code;
 
-	private String message;
-
 	private String requestId;
+
+	private String message;
 
 	private Result result;
 
@@ -41,20 +41,20 @@ public class ListSceneParametersResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Result getResult() {
@@ -67,17 +67,9 @@ public class ListSceneParametersResponse extends AcsResponse {
 
 	public static class Result {
 
-		private List<String> sceneId;
-
 		private List<String> traceId;
 
-		public List<String> getSceneId() {
-			return this.sceneId;
-		}
-
-		public void setSceneId(List<String> sceneId) {
-			this.sceneId = sceneId;
-		}
+		private List<String> sceneId;
 
 		public List<String> getTraceId() {
 			return this.traceId;
@@ -85,6 +77,14 @@ public class ListSceneParametersResponse extends AcsResponse {
 
 		public void setTraceId(List<String> traceId) {
 			this.traceId = traceId;
+		}
+
+		public List<String> getSceneId() {
+			return this.sceneId;
+		}
+
+		public void setSceneId(List<String> sceneId) {
+			this.sceneId = sceneId;
 		}
 	}
 

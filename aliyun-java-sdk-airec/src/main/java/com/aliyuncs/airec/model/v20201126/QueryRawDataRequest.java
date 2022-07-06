@@ -33,6 +33,8 @@ public class QueryRawDataRequest extends RoaAcsRequest<QueryRawDataResponse> {
 
 	private String userType;
 
+	private String imei;
+
 	private String userId;
 
 	private String table;
@@ -87,6 +89,17 @@ public class QueryRawDataRequest extends RoaAcsRequest<QueryRawDataResponse> {
 		this.userType = userType;
 		if(userType != null){
 			putQueryParameter("userType", userType);
+		}
+	}
+
+	public String getImei() {
+		return this.imei;
+	}
+
+	public void setImei(String imei) {
+		this.imei = imei;
+		if(imei != null){
+			putQueryParameter("imei", imei);
 		}
 	}
 

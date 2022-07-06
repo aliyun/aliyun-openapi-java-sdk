@@ -1,3 +1,6 @@
+2022-07-06 Version: 2.1.0
+- Support Data Diagnose and personalized recommendation switch.
+
 2021-03-30 Version: 2.0.1
 - Generated 2020-11-26 for `Airec`.
 

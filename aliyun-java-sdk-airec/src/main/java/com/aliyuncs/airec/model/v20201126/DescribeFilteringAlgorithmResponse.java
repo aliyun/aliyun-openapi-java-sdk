@@ -46,15 +46,23 @@ public class DescribeFilteringAlgorithmResponse extends AcsResponse {
 
 	public static class Result {
 
+		private String gmtModified;
+
 		private String status;
 
 		private String gmtCreate;
 
-		private String gmtModified;
-
 		private String algorithmId;
 
 		private Meta meta;
+
+		public String getGmtModified() {
+			return this.gmtModified;
+		}
+
+		public void setGmtModified(String gmtModified) {
+			this.gmtModified = gmtModified;
+		}
 
 		public String getStatus() {
 			return this.status;
@@ -70,14 +78,6 @@ public class DescribeFilteringAlgorithmResponse extends AcsResponse {
 
 		public void setGmtCreate(String gmtCreate) {
 			this.gmtCreate = gmtCreate;
-		}
-
-		public String getGmtModified() {
-			return this.gmtModified;
-		}
-
-		public void setGmtModified(String gmtModified) {
-			this.gmtModified = gmtModified;
 		}
 
 		public String getAlgorithmId() {
@@ -98,63 +98,31 @@ public class DescribeFilteringAlgorithmResponse extends AcsResponse {
 
 		public static class Meta {
 
-			private String metaType;
-
-			private String algorithmName;
-
-			private String cron;
-
-			private Boolean cronEnabled;
-
 			private String taskId;
 
-			private String projectName;
-
-			private String tableName;
+			private String metaType;
 
 			private String type;
 
 			private String category;
 
+			private String tableName;
+
 			private String clusterId;
 
+			private String cron;
+
 			private String description;
+
+			private String projectName;
+
+			private String algorithmName;
+
+			private Boolean cronEnabled;
 
 			private ExtInfo extInfo;
 
 			private Threshold threshold;
-
-			public String getMetaType() {
-				return this.metaType;
-			}
-
-			public void setMetaType(String metaType) {
-				this.metaType = metaType;
-			}
-
-			public String getAlgorithmName() {
-				return this.algorithmName;
-			}
-
-			public void setAlgorithmName(String algorithmName) {
-				this.algorithmName = algorithmName;
-			}
-
-			public String getCron() {
-				return this.cron;
-			}
-
-			public void setCron(String cron) {
-				this.cron = cron;
-			}
-
-			public Boolean getCronEnabled() {
-				return this.cronEnabled;
-			}
-
-			public void setCronEnabled(Boolean cronEnabled) {
-				this.cronEnabled = cronEnabled;
-			}
 
 			public String getTaskId() {
 				return this.taskId;
@@ -164,20 +132,12 @@ public class DescribeFilteringAlgorithmResponse extends AcsResponse {
 				this.taskId = taskId;
 			}
 
-			public String getProjectName() {
-				return this.projectName;
+			public String getMetaType() {
+				return this.metaType;
 			}
 
-			public void setProjectName(String projectName) {
-				this.projectName = projectName;
-			}
-
-			public String getTableName() {
-				return this.tableName;
-			}
-
-			public void setTableName(String tableName) {
-				this.tableName = tableName;
+			public void setMetaType(String metaType) {
+				this.metaType = metaType;
 			}
 
 			public String getType() {
@@ -196,6 +156,14 @@ public class DescribeFilteringAlgorithmResponse extends AcsResponse {
 				this.category = category;
 			}
 
+			public String getTableName() {
+				return this.tableName;
+			}
+
+			public void setTableName(String tableName) {
+				this.tableName = tableName;
+			}
+
 			public String getClusterId() {
 				return this.clusterId;
 			}
@@ -204,12 +172,44 @@ public class DescribeFilteringAlgorithmResponse extends AcsResponse {
 				this.clusterId = clusterId;
 			}
 
+			public String getCron() {
+				return this.cron;
+			}
+
+			public void setCron(String cron) {
+				this.cron = cron;
+			}
+
 			public String getDescription() {
 				return this.description;
 			}
 
 			public void setDescription(String description) {
 				this.description = description;
+			}
+
+			public String getProjectName() {
+				return this.projectName;
+			}
+
+			public void setProjectName(String projectName) {
+				this.projectName = projectName;
+			}
+
+			public String getAlgorithmName() {
+				return this.algorithmName;
+			}
+
+			public void setAlgorithmName(String algorithmName) {
+				this.algorithmName = algorithmName;
+			}
+
+			public Boolean getCronEnabled() {
+				return this.cronEnabled;
+			}
+
+			public void setCronEnabled(Boolean cronEnabled) {
+				this.cronEnabled = cronEnabled;
 			}
 
 			public ExtInfo getExtInfo() {
@@ -230,17 +230,9 @@ public class DescribeFilteringAlgorithmResponse extends AcsResponse {
 
 			public static class ExtInfo {
 
-				private String itemSeparator;
-
 				private String kvSeparator;
 
-				public String getItemSeparator() {
-					return this.itemSeparator;
-				}
-
-				public void setItemSeparator(String itemSeparator) {
-					this.itemSeparator = itemSeparator;
-				}
+				private String itemSeparator;
 
 				public String getKvSeparator() {
 					return this.kvSeparator;
@@ -249,33 +241,25 @@ public class DescribeFilteringAlgorithmResponse extends AcsResponse {
 				public void setKvSeparator(String kvSeparator) {
 					this.kvSeparator = kvSeparator;
 				}
+
+				public String getItemSeparator() {
+					return this.itemSeparator;
+				}
+
+				public void setItemSeparator(String itemSeparator) {
+					this.itemSeparator = itemSeparator;
+				}
 			}
 
 			public static class Threshold {
-
-				private Integer indexLossThreshold;
-
-				private Integer indexSizeThreshold;
 
 				private Integer sourceDataSizeThreshold;
 
 				private Integer sourceDataRecordThreshold;
 
-				public Integer getIndexLossThreshold() {
-					return this.indexLossThreshold;
-				}
+				private Integer indexSizeThreshold;
 
-				public void setIndexLossThreshold(Integer indexLossThreshold) {
-					this.indexLossThreshold = indexLossThreshold;
-				}
-
-				public Integer getIndexSizeThreshold() {
-					return this.indexSizeThreshold;
-				}
-
-				public void setIndexSizeThreshold(Integer indexSizeThreshold) {
-					this.indexSizeThreshold = indexSizeThreshold;
-				}
+				private Integer indexLossThreshold;
 
 				public Integer getSourceDataSizeThreshold() {
 					return this.sourceDataSizeThreshold;
@@ -291,6 +275,22 @@ public class DescribeFilteringAlgorithmResponse extends AcsResponse {
 
 				public void setSourceDataRecordThreshold(Integer sourceDataRecordThreshold) {
 					this.sourceDataRecordThreshold = sourceDataRecordThreshold;
+				}
+
+				public Integer getIndexSizeThreshold() {
+					return this.indexSizeThreshold;
+				}
+
+				public void setIndexSizeThreshold(Integer indexSizeThreshold) {
+					this.indexSizeThreshold = indexSizeThreshold;
+				}
+
+				public Integer getIndexLossThreshold() {
+					return this.indexLossThreshold;
+				}
+
+				public void setIndexLossThreshold(Integer indexLossThreshold) {
+					this.indexLossThreshold = indexLossThreshold;
 				}
 			}
 		}
