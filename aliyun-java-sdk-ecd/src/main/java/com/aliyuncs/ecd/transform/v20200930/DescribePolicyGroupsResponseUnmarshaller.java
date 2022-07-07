@@ -60,6 +60,7 @@ public class DescribePolicyGroupsResponseUnmarshaller {
 			describePolicyGroup.setRecordingEndTime(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].RecordingEndTime"));
 			describePolicyGroup.setRecordingFps(_ctx.longValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].RecordingFps"));
 			describePolicyGroup.setCameraRedirect(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].CameraRedirect"));
+			describePolicyGroup.setNetRedirect(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].NetRedirect"));
 
 			List<String> preemptLoginUsers = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].PreemptLoginUsers.Length"); j++) {

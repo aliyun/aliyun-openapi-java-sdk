@@ -91,6 +91,8 @@ public class DescribeImagesResponse extends AcsResponse {
 
 		private Integer sharedCount;
 
+		private String sessionType;
+
 		private List<String> supportedLanguages;
 
 		public String getCreationTime() {
@@ -227,6 +229,14 @@ public class DescribeImagesResponse extends AcsResponse {
 
 		public void setSharedCount(Integer sharedCount) {
 			this.sharedCount = sharedCount;
+		}
+
+		public String getSessionType() {
+			return this.sessionType;
+		}
+
+		public void setSessionType(String sessionType) {
+			this.sessionType = sessionType;
 		}
 
 		public List<String> getSupportedLanguages() {

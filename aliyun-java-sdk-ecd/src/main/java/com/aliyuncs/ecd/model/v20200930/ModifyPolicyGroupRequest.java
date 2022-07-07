@@ -40,6 +40,8 @@ public class ModifyPolicyGroupRequest extends RpcAcsRequest<ModifyPolicyGroupRes
 
 	private String domainList;
 
+	private String netRedirect;
+
 	private String localDrive;
 
 	private List<AuthorizeSecurityPolicyRule> authorizeSecurityPolicyRules;
@@ -183,6 +185,17 @@ public class ModifyPolicyGroupRequest extends RpcAcsRequest<ModifyPolicyGroupRes
 		this.domainList = domainList;
 		if(domainList != null){
 			putQueryParameter("DomainList", domainList);
+		}
+	}
+
+	public String getNetRedirect() {
+		return this.netRedirect;
+	}
+
+	public void setNetRedirect(String netRedirect) {
+		this.netRedirect = netRedirect;
+		if(netRedirect != null){
+			putQueryParameter("NetRedirect", netRedirect);
 		}
 	}
 

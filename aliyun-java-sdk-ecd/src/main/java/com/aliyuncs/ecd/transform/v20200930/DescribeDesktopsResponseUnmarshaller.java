@@ -81,6 +81,7 @@ public class DescribeDesktopsResponseUnmarshaller {
 			desktop.setVolumeEncryptionKey(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].VolumeEncryptionKey"));
 			desktop.setOfficeSiteVpcType(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].OfficeSiteVpcType"));
 			desktop.setPlatform(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].Platform"));
+			desktop.setSessionType(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].SessionType"));
 
 			List<String> endUserIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDesktopsResponse.Desktops["+ i +"].EndUserIds.Length"); j++) {

@@ -105,6 +105,8 @@ public class DescribePolicyGroupsResponse extends AcsResponse {
 
 		private String cameraRedirect;
 
+		private String netRedirect;
+
 		private List<AuthorizeSecurityPolicyRule> authorizeSecurityPolicyRules;
 
 		private List<AuthorizeAccessPolicyRule> authorizeAccessPolicyRules;
@@ -305,6 +307,14 @@ public class DescribePolicyGroupsResponse extends AcsResponse {
 
 		public void setCameraRedirect(String cameraRedirect) {
 			this.cameraRedirect = cameraRedirect;
+		}
+
+		public String getNetRedirect() {
+			return this.netRedirect;
+		}
+
+		public void setNetRedirect(String netRedirect) {
+			this.netRedirect = netRedirect;
 		}
 
 		public List<AuthorizeSecurityPolicyRule> getAuthorizeSecurityPolicyRules() {

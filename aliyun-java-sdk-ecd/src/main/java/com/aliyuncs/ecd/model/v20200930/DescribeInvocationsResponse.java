@@ -57,33 +57,19 @@ public class DescribeInvocationsResponse extends AcsResponse {
 
 	public static class Invocation {
 
-		private String creationTime;
-
-		private String invocationStatus;
-
 		private String invokeId;
-
-		private String commandType;
 
 		private String commandContent;
 
+		private String commandType;
+
+		private String invocationStatus;
+
+		private String creationTime;
+
+		private String endUserId;
+
 		private List<InvokeDesktop> invokeDesktops;
-
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
-		public String getInvocationStatus() {
-			return this.invocationStatus;
-		}
-
-		public void setInvocationStatus(String invocationStatus) {
-			this.invocationStatus = invocationStatus;
-		}
 
 		public String getInvokeId() {
 			return this.invokeId;
@@ -91,6 +77,14 @@ public class DescribeInvocationsResponse extends AcsResponse {
 
 		public void setInvokeId(String invokeId) {
 			this.invokeId = invokeId;
+		}
+
+		public String getCommandContent() {
+			return this.commandContent;
+		}
+
+		public void setCommandContent(String commandContent) {
+			this.commandContent = commandContent;
 		}
 
 		public String getCommandType() {
@@ -101,12 +95,28 @@ public class DescribeInvocationsResponse extends AcsResponse {
 			this.commandType = commandType;
 		}
 
-		public String getCommandContent() {
-			return this.commandContent;
+		public String getInvocationStatus() {
+			return this.invocationStatus;
 		}
 
-		public void setCommandContent(String commandContent) {
-			this.commandContent = commandContent;
+		public void setInvocationStatus(String invocationStatus) {
+			this.invocationStatus = invocationStatus;
+		}
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
+
+		public String getEndUserId() {
+			return this.endUserId;
+		}
+
+		public void setEndUserId(String endUserId) {
+			this.endUserId = endUserId;
 		}
 
 		public List<InvokeDesktop> getInvokeDesktops() {
@@ -119,11 +129,11 @@ public class DescribeInvocationsResponse extends AcsResponse {
 
 		public static class InvokeDesktop {
 
-			private String creationTime;
-
 			private String invocationStatus;
 
-			private String finishTime;
+			private String output;
+
+			private String creationTime;
 
 			private String updateTime;
 
@@ -131,27 +141,19 @@ public class DescribeInvocationsResponse extends AcsResponse {
 
 			private String desktopId;
 
-			private String output;
-
 			private Integer dropped;
-
-			private String stopTime;
-
-			private Long exitCode;
 
 			private String startTime;
 
-			private String errorInfo;
+			private String stopTime;
+
+			private String finishTime;
+
+			private Long exitCode;
 
 			private String errorCode;
 
-			public String getCreationTime() {
-				return this.creationTime;
-			}
-
-			public void setCreationTime(String creationTime) {
-				this.creationTime = creationTime;
-			}
+			private String errorInfo;
 
 			public String getInvocationStatus() {
 				return this.invocationStatus;
@@ -161,12 +163,20 @@ public class DescribeInvocationsResponse extends AcsResponse {
 				this.invocationStatus = invocationStatus;
 			}
 
-			public String getFinishTime() {
-				return this.finishTime;
+			public String getOutput() {
+				return this.output;
 			}
 
-			public void setFinishTime(String finishTime) {
-				this.finishTime = finishTime;
+			public void setOutput(String output) {
+				this.output = output;
+			}
+
+			public String getCreationTime() {
+				return this.creationTime;
+			}
+
+			public void setCreationTime(String creationTime) {
+				this.creationTime = creationTime;
 			}
 
 			public String getUpdateTime() {
@@ -193,36 +203,12 @@ public class DescribeInvocationsResponse extends AcsResponse {
 				this.desktopId = desktopId;
 			}
 
-			public String getOutput() {
-				return this.output;
-			}
-
-			public void setOutput(String output) {
-				this.output = output;
-			}
-
 			public Integer getDropped() {
 				return this.dropped;
 			}
 
 			public void setDropped(Integer dropped) {
 				this.dropped = dropped;
-			}
-
-			public String getStopTime() {
-				return this.stopTime;
-			}
-
-			public void setStopTime(String stopTime) {
-				this.stopTime = stopTime;
-			}
-
-			public Long getExitCode() {
-				return this.exitCode;
-			}
-
-			public void setExitCode(Long exitCode) {
-				this.exitCode = exitCode;
 			}
 
 			public String getStartTime() {
@@ -233,12 +219,28 @@ public class DescribeInvocationsResponse extends AcsResponse {
 				this.startTime = startTime;
 			}
 
-			public String getErrorInfo() {
-				return this.errorInfo;
+			public String getStopTime() {
+				return this.stopTime;
 			}
 
-			public void setErrorInfo(String errorInfo) {
-				this.errorInfo = errorInfo;
+			public void setStopTime(String stopTime) {
+				this.stopTime = stopTime;
+			}
+
+			public String getFinishTime() {
+				return this.finishTime;
+			}
+
+			public void setFinishTime(String finishTime) {
+				this.finishTime = finishTime;
+			}
+
+			public Long getExitCode() {
+				return this.exitCode;
+			}
+
+			public void setExitCode(Long exitCode) {
+				this.exitCode = exitCode;
 			}
 
 			public String getErrorCode() {
@@ -247,6 +249,14 @@ public class DescribeInvocationsResponse extends AcsResponse {
 
 			public void setErrorCode(String errorCode) {
 				this.errorCode = errorCode;
+			}
+
+			public String getErrorInfo() {
+				return this.errorInfo;
+			}
+
+			public void setErrorInfo(String errorInfo) {
+				this.errorInfo = errorInfo;
 			}
 		}
 	}

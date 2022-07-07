@@ -32,7 +32,11 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 
 	private String description;
 
+	private String diskType;
+
 	private String imageName;
+
+	private Boolean autoCleanUserdata;
 
 	private String desktopId;
 
@@ -81,6 +85,17 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 		}
 	}
 
+	public String getDiskType() {
+		return this.diskType;
+	}
+
+	public void setDiskType(String diskType) {
+		this.diskType = diskType;
+		if(diskType != null){
+			putQueryParameter("DiskType", diskType);
+		}
+	}
+
 	public String getImageName() {
 		return this.imageName;
 	}
@@ -89,6 +104,17 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 		this.imageName = imageName;
 		if(imageName != null){
 			putQueryParameter("ImageName", imageName);
+		}
+	}
+
+	public Boolean getAutoCleanUserdata() {
+		return this.autoCleanUserdata;
+	}
+
+	public void setAutoCleanUserdata(Boolean autoCleanUserdata) {
+		this.autoCleanUserdata = autoCleanUserdata;
+		if(autoCleanUserdata != null){
+			putQueryParameter("AutoCleanUserdata", autoCleanUserdata.toString());
 		}
 	}
 

@@ -27,6 +27,8 @@ public class GetConnectionTicketRequest extends RpcAcsRequest<GetConnectionTicke
 
 	private Long resourceOwnerId;
 
+	private String uuid;
+
 	private String password;
 
 	private String endUserId;
@@ -55,6 +57,17 @@ public class GetConnectionTicketRequest extends RpcAcsRequest<GetConnectionTicke
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getUuid() {
+		return this.uuid;
+	}
+
+	public void setUuid(String uuid) {
+		this.uuid = uuid;
+		if(uuid != null){
+			putQueryParameter("Uuid", uuid);
 		}
 	}
 

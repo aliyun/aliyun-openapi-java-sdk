@@ -1,3 +1,6 @@
+2022-07-07 Version: 2.0.5
+- Support asp remote coordinate
+
 2022-06-14 Version: 2.0.4
 - Support ResetDesktops.
 

@@ -25,21 +25,21 @@ import com.aliyuncs.ecd.Endpoint;
 public class DescribeInvocationsRequest extends RpcAcsRequest<DescribeInvocationsResponse> {
 	   
 
-	private String invokeId;
-
 	private String invokeStatus;
 
 	private Boolean includeOutput;
-
-	private String commandType;
 
 	private String nextToken;
 
 	private String contentEncoding;
 
-	private Integer maxResults;
-
 	private String desktopId;
+
+	private String invokeId;
+
+	private String commandType;
+
+	private Integer maxResults;
 	public DescribeInvocationsRequest() {
 		super("ecd", "2020-09-30", "DescribeInvocations");
 		setMethod(MethodType.POST);
@@ -47,17 +47,6 @@ public class DescribeInvocationsRequest extends RpcAcsRequest<DescribeInvocation
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getInvokeId() {
-		return this.invokeId;
-	}
-
-	public void setInvokeId(String invokeId) {
-		this.invokeId = invokeId;
-		if(invokeId != null){
-			putQueryParameter("InvokeId", invokeId);
-		}
 	}
 
 	public String getInvokeStatus() {
@@ -79,17 +68,6 @@ public class DescribeInvocationsRequest extends RpcAcsRequest<DescribeInvocation
 		this.includeOutput = includeOutput;
 		if(includeOutput != null){
 			putQueryParameter("IncludeOutput", includeOutput.toString());
-		}
-	}
-
-	public String getCommandType() {
-		return this.commandType;
-	}
-
-	public void setCommandType(String commandType) {
-		this.commandType = commandType;
-		if(commandType != null){
-			putQueryParameter("CommandType", commandType);
 		}
 	}
 
@@ -115,17 +93,6 @@ public class DescribeInvocationsRequest extends RpcAcsRequest<DescribeInvocation
 		}
 	}
 
-	public Integer getMaxResults() {
-		return this.maxResults;
-	}
-
-	public void setMaxResults(Integer maxResults) {
-		this.maxResults = maxResults;
-		if(maxResults != null){
-			putQueryParameter("MaxResults", maxResults.toString());
-		}
-	}
-
 	public String getDesktopId() {
 		return this.desktopId;
 	}
@@ -134,6 +101,39 @@ public class DescribeInvocationsRequest extends RpcAcsRequest<DescribeInvocation
 		this.desktopId = desktopId;
 		if(desktopId != null){
 			putQueryParameter("DesktopId", desktopId);
+		}
+	}
+
+	public String getInvokeId() {
+		return this.invokeId;
+	}
+
+	public void setInvokeId(String invokeId) {
+		this.invokeId = invokeId;
+		if(invokeId != null){
+			putQueryParameter("InvokeId", invokeId);
+		}
+	}
+
+	public String getCommandType() {
+		return this.commandType;
+	}
+
+	public void setCommandType(String commandType) {
+		this.commandType = commandType;
+		if(commandType != null){
+			putQueryParameter("CommandType", commandType);
+		}
+	}
+
+	public Integer getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
+		if(maxResults != null){
+			putQueryParameter("MaxResults", maxResults.toString());
 		}
 	}
 

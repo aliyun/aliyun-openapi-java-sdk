@@ -155,6 +155,8 @@ public class DescribeDesktopsResponse extends AcsResponse {
 
 		private String platform;
 
+		private String sessionType;
+
 		private List<Disk> disks;
 
 		private List<Tag> tags;
@@ -515,6 +517,14 @@ public class DescribeDesktopsResponse extends AcsResponse {
 
 		public void setPlatform(String platform) {
 			this.platform = platform;
+		}
+
+		public String getSessionType() {
+			return this.sessionType;
+		}
+
+		public void setSessionType(String sessionType) {
+			this.sessionType = sessionType;
 		}
 
 		public List<Disk> getDisks() {

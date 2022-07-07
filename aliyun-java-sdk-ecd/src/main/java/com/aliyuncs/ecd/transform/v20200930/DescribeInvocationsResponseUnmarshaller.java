@@ -33,28 +33,29 @@ public class DescribeInvocationsResponseUnmarshaller {
 		List<Invocation> invocations = new ArrayList<Invocation>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInvocationsResponse.Invocations.Length"); i++) {
 			Invocation invocation = new Invocation();
-			invocation.setCreationTime(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].CreationTime"));
-			invocation.setInvocationStatus(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].InvocationStatus"));
 			invocation.setInvokeId(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeId"));
-			invocation.setCommandType(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].CommandType"));
 			invocation.setCommandContent(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].CommandContent"));
+			invocation.setCommandType(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].CommandType"));
+			invocation.setInvocationStatus(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].InvocationStatus"));
+			invocation.setCreationTime(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].CreationTime"));
+			invocation.setEndUserId(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].EndUserId"));
 
 			List<InvokeDesktop> invokeDesktops = new ArrayList<InvokeDesktop>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeDesktops.Length"); j++) {
 				InvokeDesktop invokeDesktop = new InvokeDesktop();
-				invokeDesktop.setCreationTime(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeDesktops["+ j +"].CreationTime"));
 				invokeDesktop.setInvocationStatus(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeDesktops["+ j +"].InvocationStatus"));
-				invokeDesktop.setFinishTime(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeDesktops["+ j +"].FinishTime"));
+				invokeDesktop.setOutput(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeDesktops["+ j +"].Output"));
+				invokeDesktop.setCreationTime(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeDesktops["+ j +"].CreationTime"));
 				invokeDesktop.setUpdateTime(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeDesktops["+ j +"].UpdateTime"));
 				invokeDesktop.setRepeats(_ctx.integerValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeDesktops["+ j +"].Repeats"));
 				invokeDesktop.setDesktopId(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeDesktops["+ j +"].DesktopId"));
-				invokeDesktop.setOutput(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeDesktops["+ j +"].Output"));
 				invokeDesktop.setDropped(_ctx.integerValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeDesktops["+ j +"].Dropped"));
-				invokeDesktop.setStopTime(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeDesktops["+ j +"].StopTime"));
-				invokeDesktop.setExitCode(_ctx.longValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeDesktops["+ j +"].ExitCode"));
 				invokeDesktop.setStartTime(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeDesktops["+ j +"].StartTime"));
-				invokeDesktop.setErrorInfo(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeDesktops["+ j +"].ErrorInfo"));
+				invokeDesktop.setStopTime(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeDesktops["+ j +"].StopTime"));
+				invokeDesktop.setFinishTime(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeDesktops["+ j +"].FinishTime"));
+				invokeDesktop.setExitCode(_ctx.longValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeDesktops["+ j +"].ExitCode"));
 				invokeDesktop.setErrorCode(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeDesktops["+ j +"].ErrorCode"));
+				invokeDesktop.setErrorInfo(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeDesktops["+ j +"].ErrorInfo"));
 
 				invokeDesktops.add(invokeDesktop);
 			}
