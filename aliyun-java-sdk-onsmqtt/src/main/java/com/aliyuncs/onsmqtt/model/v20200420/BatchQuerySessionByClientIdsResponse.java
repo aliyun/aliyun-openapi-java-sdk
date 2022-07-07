@@ -47,17 +47,9 @@ public class BatchQuerySessionByClientIdsResponse extends AcsResponse {
 
 	public static class OnlineStatusListItem {
 
-		private String clientId;
-
 		private Boolean onlineStatus;
 
-		public String getClientId() {
-			return this.clientId;
-		}
-
-		public void setClientId(String clientId) {
-			this.clientId = clientId;
-		}
+		private String clientId;
 
 		public Boolean getOnlineStatus() {
 			return this.onlineStatus;
@@ -65,6 +57,14 @@ public class BatchQuerySessionByClientIdsResponse extends AcsResponse {
 
 		public void setOnlineStatus(Boolean onlineStatus) {
 			this.onlineStatus = onlineStatus;
+		}
+
+		public String getClientId() {
+			return this.clientId;
+		}
+
+		public void setClientId(String clientId) {
+			this.clientId = clientId;
 		}
 	}
 

@@ -46,24 +46,24 @@ public class RefreshDeviceCredentialResponse extends AcsResponse {
 
 	public static class DeviceCredential {
 
-		private String clientId;
+		private Long updateTime;
 
 		private String deviceAccessKeyId;
 
-		private String deviceAccessKeySecret;
+		private Long createTime;
 
 		private String instanceId;
 
-		private Long createTime;
+		private String deviceAccessKeySecret;
 
-		private Long updateTime;
+		private String clientId;
 
-		public String getClientId() {
-			return this.clientId;
+		public Long getUpdateTime() {
+			return this.updateTime;
 		}
 
-		public void setClientId(String clientId) {
-			this.clientId = clientId;
+		public void setUpdateTime(Long updateTime) {
+			this.updateTime = updateTime;
 		}
 
 		public String getDeviceAccessKeyId() {
@@ -74,12 +74,12 @@ public class RefreshDeviceCredentialResponse extends AcsResponse {
 			this.deviceAccessKeyId = deviceAccessKeyId;
 		}
 
-		public String getDeviceAccessKeySecret() {
-			return this.deviceAccessKeySecret;
+		public Long getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setDeviceAccessKeySecret(String deviceAccessKeySecret) {
-			this.deviceAccessKeySecret = deviceAccessKeySecret;
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
 		}
 
 		public String getInstanceId() {
@@ -90,20 +90,20 @@ public class RefreshDeviceCredentialResponse extends AcsResponse {
 			this.instanceId = instanceId;
 		}
 
-		public Long getCreateTime() {
-			return this.createTime;
+		public String getDeviceAccessKeySecret() {
+			return this.deviceAccessKeySecret;
 		}
 
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
+		public void setDeviceAccessKeySecret(String deviceAccessKeySecret) {
+			this.deviceAccessKeySecret = deviceAccessKeySecret;
 		}
 
-		public Long getUpdateTime() {
-			return this.updateTime;
+		public String getClientId() {
+			return this.clientId;
 		}
 
-		public void setUpdateTime(Long updateTime) {
-			this.updateTime = updateTime;
+		public void setClientId(String clientId) {
+			this.clientId = clientId;
 		}
 	}
 

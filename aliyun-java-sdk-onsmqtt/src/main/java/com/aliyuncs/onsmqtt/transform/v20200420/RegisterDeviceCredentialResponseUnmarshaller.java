@@ -26,12 +26,12 @@ public class RegisterDeviceCredentialResponseUnmarshaller {
 		registerDeviceCredentialResponse.setRequestId(_ctx.stringValue("RegisterDeviceCredentialResponse.RequestId"));
 
 		DeviceCredential deviceCredential = new DeviceCredential();
-		deviceCredential.setClientId(_ctx.stringValue("RegisterDeviceCredentialResponse.DeviceCredential.ClientId"));
-		deviceCredential.setDeviceAccessKeyId(_ctx.stringValue("RegisterDeviceCredentialResponse.DeviceCredential.DeviceAccessKeyId"));
-		deviceCredential.setDeviceAccessKeySecret(_ctx.stringValue("RegisterDeviceCredentialResponse.DeviceCredential.DeviceAccessKeySecret"));
-		deviceCredential.setInstanceId(_ctx.stringValue("RegisterDeviceCredentialResponse.DeviceCredential.InstanceId"));
-		deviceCredential.setCreateTime(_ctx.longValue("RegisterDeviceCredentialResponse.DeviceCredential.CreateTime"));
 		deviceCredential.setUpdateTime(_ctx.longValue("RegisterDeviceCredentialResponse.DeviceCredential.UpdateTime"));
+		deviceCredential.setDeviceAccessKeyId(_ctx.stringValue("RegisterDeviceCredentialResponse.DeviceCredential.DeviceAccessKeyId"));
+		deviceCredential.setCreateTime(_ctx.longValue("RegisterDeviceCredentialResponse.DeviceCredential.CreateTime"));
+		deviceCredential.setInstanceId(_ctx.stringValue("RegisterDeviceCredentialResponse.DeviceCredential.InstanceId"));
+		deviceCredential.setDeviceAccessKeySecret(_ctx.stringValue("RegisterDeviceCredentialResponse.DeviceCredential.DeviceAccessKeySecret"));
+		deviceCredential.setClientId(_ctx.stringValue("RegisterDeviceCredentialResponse.DeviceCredential.ClientId"));
 		registerDeviceCredentialResponse.setDeviceCredential(deviceCredential);
 	 
 	 	return registerDeviceCredentialResponse;

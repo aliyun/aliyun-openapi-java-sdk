@@ -31,8 +31,8 @@ public class BatchQuerySessionByClientIdsResponseUnmarshaller {
 		List<OnlineStatusListItem> onlineStatusList = new ArrayList<OnlineStatusListItem>();
 		for (int i = 0; i < _ctx.lengthValue("BatchQuerySessionByClientIdsResponse.OnlineStatusList.Length"); i++) {
 			OnlineStatusListItem onlineStatusListItem = new OnlineStatusListItem();
-			onlineStatusListItem.setClientId(_ctx.stringValue("BatchQuerySessionByClientIdsResponse.OnlineStatusList["+ i +"].ClientId"));
 			onlineStatusListItem.setOnlineStatus(_ctx.booleanValue("BatchQuerySessionByClientIdsResponse.OnlineStatusList["+ i +"].OnlineStatus"));
+			onlineStatusListItem.setClientId(_ctx.stringValue("BatchQuerySessionByClientIdsResponse.OnlineStatusList["+ i +"].ClientId"));
 
 			onlineStatusList.add(onlineStatusListItem);
 		}

@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QuerySessionByClientIdResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean onlineStatus;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public Boolean getOnlineStatus() {
 		return this.onlineStatus;
@@ -42,6 +34,14 @@ public class QuerySessionByClientIdResponse extends AcsResponse {
 
 	public void setOnlineStatus(Boolean onlineStatus) {
 		this.onlineStatus = onlineStatus;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

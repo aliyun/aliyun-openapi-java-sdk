@@ -31,11 +31,11 @@ public class ListGroupIdResponseUnmarshaller {
 		List<MqttGroupIdDo> data = new ArrayList<MqttGroupIdDo>();
 		for (int i = 0; i < _ctx.lengthValue("ListGroupIdResponse.Data.Length"); i++) {
 			MqttGroupIdDo mqttGroupIdDo = new MqttGroupIdDo();
-			mqttGroupIdDo.setCreateTime(_ctx.longValue("ListGroupIdResponse.Data["+ i +"].CreateTime"));
-			mqttGroupIdDo.setGroupId(_ctx.stringValue("ListGroupIdResponse.Data["+ i +"].GroupId"));
-			mqttGroupIdDo.setIndependentNaming(_ctx.booleanValue("ListGroupIdResponse.Data["+ i +"].IndependentNaming"));
-			mqttGroupIdDo.setInstanceId(_ctx.stringValue("ListGroupIdResponse.Data["+ i +"].InstanceId"));
 			mqttGroupIdDo.setUpdateTime(_ctx.longValue("ListGroupIdResponse.Data["+ i +"].UpdateTime"));
+			mqttGroupIdDo.setInstanceId(_ctx.stringValue("ListGroupIdResponse.Data["+ i +"].InstanceId"));
+			mqttGroupIdDo.setIndependentNaming(_ctx.booleanValue("ListGroupIdResponse.Data["+ i +"].IndependentNaming"));
+			mqttGroupIdDo.setGroupId(_ctx.stringValue("ListGroupIdResponse.Data["+ i +"].GroupId"));
+			mqttGroupIdDo.setCreateTime(_ctx.longValue("ListGroupIdResponse.Data["+ i +"].CreateTime"));
 
 			data.add(mqttGroupIdDo);
 		}

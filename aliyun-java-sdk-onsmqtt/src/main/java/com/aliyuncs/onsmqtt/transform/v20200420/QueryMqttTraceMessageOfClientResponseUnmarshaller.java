@@ -27,22 +27,22 @@ public class QueryMqttTraceMessageOfClientResponseUnmarshaller {
 	public static QueryMqttTraceMessageOfClientResponse unmarshall(QueryMqttTraceMessageOfClientResponse queryMqttTraceMessageOfClientResponse, UnmarshallerContext _ctx) {
 		
 		queryMqttTraceMessageOfClientResponse.setRequestId(_ctx.stringValue("QueryMqttTraceMessageOfClientResponse.RequestId"));
+		queryMqttTraceMessageOfClientResponse.setCurrentPage(_ctx.integerValue("QueryMqttTraceMessageOfClientResponse.CurrentPage"));
 		queryMqttTraceMessageOfClientResponse.setSuccess(_ctx.booleanValue("QueryMqttTraceMessageOfClientResponse.Success"));
 		queryMqttTraceMessageOfClientResponse.setCode(_ctx.integerValue("QueryMqttTraceMessageOfClientResponse.Code"));
 		queryMqttTraceMessageOfClientResponse.setMessage(_ctx.stringValue("QueryMqttTraceMessageOfClientResponse.Message"));
-		queryMqttTraceMessageOfClientResponse.setTotal(_ctx.longValue("QueryMqttTraceMessageOfClientResponse.Total"));
 		queryMqttTraceMessageOfClientResponse.setPageSize(_ctx.integerValue("QueryMqttTraceMessageOfClientResponse.PageSize"));
-		queryMqttTraceMessageOfClientResponse.setCurrentPage(_ctx.integerValue("QueryMqttTraceMessageOfClientResponse.CurrentPage"));
+		queryMqttTraceMessageOfClientResponse.setTotal(_ctx.longValue("QueryMqttTraceMessageOfClientResponse.Total"));
 
 		List<MessageOfClientListItem> messageOfClientList = new ArrayList<MessageOfClientListItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryMqttTraceMessageOfClientResponse.MessageOfClientList.Length"); i++) {
 			MessageOfClientListItem messageOfClientListItem = new MessageOfClientListItem();
-			messageOfClientListItem.setClientId(_ctx.stringValue("QueryMqttTraceMessageOfClientResponse.MessageOfClientList["+ i +"].ClientId"));
-			messageOfClientListItem.setActionInfo(_ctx.stringValue("QueryMqttTraceMessageOfClientResponse.MessageOfClientList["+ i +"].ActionInfo"));
-			messageOfClientListItem.setAction(_ctx.stringValue("QueryMqttTraceMessageOfClientResponse.MessageOfClientList["+ i +"].Action"));
-			messageOfClientListItem.setMsgId(_ctx.stringValue("QueryMqttTraceMessageOfClientResponse.MessageOfClientList["+ i +"].MsgId"));
-			messageOfClientListItem.setActionCode(_ctx.stringValue("QueryMqttTraceMessageOfClientResponse.MessageOfClientList["+ i +"].ActionCode"));
 			messageOfClientListItem.setTime(_ctx.stringValue("QueryMqttTraceMessageOfClientResponse.MessageOfClientList["+ i +"].Time"));
+			messageOfClientListItem.setAction(_ctx.stringValue("QueryMqttTraceMessageOfClientResponse.MessageOfClientList["+ i +"].Action"));
+			messageOfClientListItem.setActionCode(_ctx.stringValue("QueryMqttTraceMessageOfClientResponse.MessageOfClientList["+ i +"].ActionCode"));
+			messageOfClientListItem.setActionInfo(_ctx.stringValue("QueryMqttTraceMessageOfClientResponse.MessageOfClientList["+ i +"].ActionInfo"));
+			messageOfClientListItem.setMsgId(_ctx.stringValue("QueryMqttTraceMessageOfClientResponse.MessageOfClientList["+ i +"].MsgId"));
+			messageOfClientListItem.setClientId(_ctx.stringValue("QueryMqttTraceMessageOfClientResponse.MessageOfClientList["+ i +"].ClientId"));
 
 			messageOfClientList.add(messageOfClientListItem);
 		}

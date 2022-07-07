@@ -25,6 +25,8 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryMqttTraceMessageOfClientResponse extends AcsResponse {
 
+	private Integer currentPage;
+
 	private String requestId;
 
 	private Boolean success;
@@ -33,13 +35,19 @@ public class QueryMqttTraceMessageOfClientResponse extends AcsResponse {
 
 	private String message;
 
-	private Long total;
-
 	private Integer pageSize;
 
-	private Integer currentPage;
+	private Long total;
 
 	private List<MessageOfClientListItem> messageOfClientList;
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -73,14 +81,6 @@ public class QueryMqttTraceMessageOfClientResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Long getTotal() {
-		return this.total;
-	}
-
-	public void setTotal(Long total) {
-		this.total = total;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -89,12 +89,12 @@ public class QueryMqttTraceMessageOfClientResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getCurrentPage() {
-		return this.currentPage;
+	public Long getTotal() {
+		return this.total;
 	}
 
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
+	public void setTotal(Long total) {
+		this.total = total;
 	}
 
 	public List<MessageOfClientListItem> getMessageOfClientList() {
@@ -107,32 +107,24 @@ public class QueryMqttTraceMessageOfClientResponse extends AcsResponse {
 
 	public static class MessageOfClientListItem {
 
-		private String clientId;
-
-		private String actionInfo;
+		private String time;
 
 		private String action;
 
-		private String msgId;
-
 		private String actionCode;
 
-		private String time;
+		private String actionInfo;
 
-		public String getClientId() {
-			return this.clientId;
+		private String msgId;
+
+		private String clientId;
+
+		public String getTime() {
+			return this.time;
 		}
 
-		public void setClientId(String clientId) {
-			this.clientId = clientId;
-		}
-
-		public String getActionInfo() {
-			return this.actionInfo;
-		}
-
-		public void setActionInfo(String actionInfo) {
-			this.actionInfo = actionInfo;
+		public void setTime(String time) {
+			this.time = time;
 		}
 
 		public String getAction() {
@@ -143,14 +135,6 @@ public class QueryMqttTraceMessageOfClientResponse extends AcsResponse {
 			this.action = action;
 		}
 
-		public String getMsgId() {
-			return this.msgId;
-		}
-
-		public void setMsgId(String msgId) {
-			this.msgId = msgId;
-		}
-
 		public String getActionCode() {
 			return this.actionCode;
 		}
@@ -159,12 +143,28 @@ public class QueryMqttTraceMessageOfClientResponse extends AcsResponse {
 			this.actionCode = actionCode;
 		}
 
-		public String getTime() {
-			return this.time;
+		public String getActionInfo() {
+			return this.actionInfo;
 		}
 
-		public void setTime(String time) {
-			this.time = time;
+		public void setActionInfo(String actionInfo) {
+			this.actionInfo = actionInfo;
+		}
+
+		public String getMsgId() {
+			return this.msgId;
+		}
+
+		public void setMsgId(String msgId) {
+			this.msgId = msgId;
+		}
+
+		public String getClientId() {
+			return this.clientId;
+		}
+
+		public void setClientId(String clientId) {
+			this.clientId = clientId;
 		}
 	}
 

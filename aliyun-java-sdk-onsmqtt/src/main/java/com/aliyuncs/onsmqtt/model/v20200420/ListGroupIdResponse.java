@@ -47,38 +47,22 @@ public class ListGroupIdResponse extends AcsResponse {
 
 	public static class MqttGroupIdDo {
 
-		private Long createTime;
-
-		private String groupId;
-
-		private Boolean independentNaming;
+		private Long updateTime;
 
 		private String instanceId;
 
-		private Long updateTime;
+		private Boolean independentNaming;
 
-		public Long getCreateTime() {
-			return this.createTime;
+		private String groupId;
+
+		private Long createTime;
+
+		public Long getUpdateTime() {
+			return this.updateTime;
 		}
 
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getGroupId() {
-			return this.groupId;
-		}
-
-		public void setGroupId(String groupId) {
-			this.groupId = groupId;
-		}
-
-		public Boolean getIndependentNaming() {
-			return this.independentNaming;
-		}
-
-		public void setIndependentNaming(Boolean independentNaming) {
-			this.independentNaming = independentNaming;
+		public void setUpdateTime(Long updateTime) {
+			this.updateTime = updateTime;
 		}
 
 		public String getInstanceId() {
@@ -89,12 +73,28 @@ public class ListGroupIdResponse extends AcsResponse {
 			this.instanceId = instanceId;
 		}
 
-		public Long getUpdateTime() {
-			return this.updateTime;
+		public Boolean getIndependentNaming() {
+			return this.independentNaming;
 		}
 
-		public void setUpdateTime(Long updateTime) {
-			this.updateTime = updateTime;
+		public void setIndependentNaming(Boolean independentNaming) {
+			this.independentNaming = independentNaming;
+		}
+
+		public String getGroupId() {
+			return this.groupId;
+		}
+
+		public void setGroupId(String groupId) {
+			this.groupId = groupId;
+		}
+
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
 		}
 	}
 

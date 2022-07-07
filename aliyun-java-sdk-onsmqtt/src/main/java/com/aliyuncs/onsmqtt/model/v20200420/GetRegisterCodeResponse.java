@@ -15,26 +15,18 @@
 package com.aliyuncs.onsmqtt.model.v20200420;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.onsmqtt.transform.v20200420.ApplyTokenResponseUnmarshaller;
+import com.aliyuncs.onsmqtt.transform.v20200420.GetRegisterCodeResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ApplyTokenResponse extends AcsResponse {
-
-	private String token;
+public class GetRegisterCodeResponse extends AcsResponse {
 
 	private String requestId;
 
-	public String getToken() {
-		return this.token;
-	}
-
-	public void setToken(String token) {
-		this.token = token;
-	}
+	private String registerCode;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,9 +36,17 @@ public class ApplyTokenResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getRegisterCode() {
+		return this.registerCode;
+	}
+
+	public void setRegisterCode(String registerCode) {
+		this.registerCode = registerCode;
+	}
+
 	@Override
-	public ApplyTokenResponse getInstance(UnmarshallerContext context) {
-		return	ApplyTokenResponseUnmarshaller.unmarshall(this, context);
+	public GetRegisterCodeResponse getInstance(UnmarshallerContext context) {
+		return	GetRegisterCodeResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

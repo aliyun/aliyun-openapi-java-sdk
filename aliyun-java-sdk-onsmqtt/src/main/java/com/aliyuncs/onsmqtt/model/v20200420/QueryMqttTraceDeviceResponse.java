@@ -25,6 +25,8 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryMqttTraceDeviceResponse extends AcsResponse {
 
+	private Integer currentPage;
+
 	private String requestId;
 
 	private Boolean success;
@@ -33,13 +35,19 @@ public class QueryMqttTraceDeviceResponse extends AcsResponse {
 
 	private String message;
 
-	private Long total;
-
-	private Integer currentPage;
-
 	private Integer pageSize;
 
+	private Long total;
+
 	private List<DeviceInfoListItem> deviceInfoList;
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -73,28 +81,20 @@ public class QueryMqttTraceDeviceResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Long getTotal() {
-		return this.total;
-	}
-
-	public void setTotal(Long total) {
-		this.total = total;
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public Long getTotal() {
+		return this.total;
+	}
+
+	public void setTotal(Long total) {
+		this.total = total;
 	}
 
 	public List<DeviceInfoListItem> getDeviceInfoList() {
@@ -107,38 +107,22 @@ public class QueryMqttTraceDeviceResponse extends AcsResponse {
 
 	public static class DeviceInfoListItem {
 
-		private String actionInfo;
-
-		private String action;
-
-		private String actionCode;
+		private String channelId;
 
 		private String time;
 
-		private String channelId;
+		private String actionCode;
 
-		public String getActionInfo() {
-			return this.actionInfo;
+		private String action;
+
+		private String actionInfo;
+
+		public String getChannelId() {
+			return this.channelId;
 		}
 
-		public void setActionInfo(String actionInfo) {
-			this.actionInfo = actionInfo;
-		}
-
-		public String getAction() {
-			return this.action;
-		}
-
-		public void setAction(String action) {
-			this.action = action;
-		}
-
-		public String getActionCode() {
-			return this.actionCode;
-		}
-
-		public void setActionCode(String actionCode) {
-			this.actionCode = actionCode;
+		public void setChannelId(String channelId) {
+			this.channelId = channelId;
 		}
 
 		public String getTime() {
@@ -149,12 +133,28 @@ public class QueryMqttTraceDeviceResponse extends AcsResponse {
 			this.time = time;
 		}
 
-		public String getChannelId() {
-			return this.channelId;
+		public String getActionCode() {
+			return this.actionCode;
 		}
 
-		public void setChannelId(String channelId) {
-			this.channelId = channelId;
+		public void setActionCode(String actionCode) {
+			this.actionCode = actionCode;
+		}
+
+		public String getAction() {
+			return this.action;
+		}
+
+		public void setAction(String action) {
+			this.action = action;
+		}
+
+		public String getActionInfo() {
+			return this.actionInfo;
+		}
+
+		public void setActionInfo(String actionInfo) {
+			this.actionInfo = actionInfo;
 		}
 	}
 
