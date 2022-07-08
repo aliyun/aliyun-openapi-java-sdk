@@ -57,6 +57,8 @@ public class GetApplicationResponseUnmarshaller {
 		applcation.setCpu(_ctx.integerValue("GetApplicationResponse.Applcation.Cpu"));
 		applcation.setClusterType(_ctx.integerValue("GetApplicationResponse.Applcation.ClusterType"));
 		applcation.setSlbName(_ctx.stringValue("GetApplicationResponse.Applcation.SlbName"));
+		applcation.setEnableUrlCheck(_ctx.booleanValue("GetApplicationResponse.Applcation.EnableUrlCheck"));
+		applcation.setEnablePortCheck(_ctx.booleanValue("GetApplicationResponse.Applcation.EnablePortCheck"));
 		getApplicationResponse.setApplcation(applcation);
 
 		Application application = new Application();
@@ -88,6 +90,8 @@ public class GetApplicationResponseUnmarshaller {
 		application.setCpu(_ctx.integerValue("GetApplicationResponse.Application.Cpu"));
 		application.setClusterType(_ctx.stringValue("GetApplicationResponse.Application.ClusterType"));
 		application.setSlbName(_ctx.stringValue("GetApplicationResponse.Application.SlbName"));
+		application.setEnableUrlCheck(_ctx.booleanValue("GetApplicationResponse.Application.EnableUrlCheck"));
+		application.setEnablePortCheck(_ctx.booleanValue("GetApplicationResponse.Application.EnablePortCheck"));
 		getApplicationResponse.setApplication(application);
 	 
 	 	return getApplicationResponse;

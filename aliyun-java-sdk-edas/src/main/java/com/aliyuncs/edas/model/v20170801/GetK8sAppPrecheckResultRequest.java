@@ -22,15 +22,17 @@ import com.aliyuncs.edas.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListRootStacksRequest extends RoaAcsRequest<ListRootStacksResponse> {
+public class GetK8sAppPrecheckResultRequest extends RoaAcsRequest<GetK8sAppPrecheckResultResponse> {
 	   
 
-	private Integer pageSize;
+	private String appName;
 
-	private Integer currentPage;
-	public ListRootStacksRequest() {
-		super("Edas", "2017-08-01", "ListRootStacks", "Edas");
-		setUriPattern("/pop/v5/s2i/list_root_stack");
+	private String namespace;
+
+	private String clusterId;
+	public GetK8sAppPrecheckResultRequest() {
+		super("Edas", "2017-08-01", "GetK8sAppPrecheckResult", "Edas");
+		setUriPattern("/pop/v5/k8s/app_precheck");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -38,31 +40,42 @@ public class ListRootStacksRequest extends RoaAcsRequest<ListRootStacksResponse>
 		} catch (Exception e) {}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getAppName() {
+		return this.appName;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putQueryParameter("AppName", appName);
 		}
 	}
 
-	public Integer getCurrentPage() {
-		return this.currentPage;
+	public String getNamespace() {
+		return this.namespace;
 	}
 
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+		if(namespace != null){
+			putQueryParameter("Namespace", namespace);
+		}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 
 	@Override
-	public Class<ListRootStacksResponse> getResponseClass() {
-		return ListRootStacksResponse.class;
+	public Class<GetK8sAppPrecheckResultResponse> getResponseClass() {
+		return GetK8sAppPrecheckResultResponse.class;
 	}
 
 }

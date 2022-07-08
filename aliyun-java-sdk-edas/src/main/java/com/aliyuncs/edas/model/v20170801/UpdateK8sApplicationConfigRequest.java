@@ -29,6 +29,8 @@ public class UpdateK8sApplicationConfigRequest extends RoaAcsRequest<UpdateK8sAp
 
 	private String appId;
 
+	private String ephemeralStorageRequest;
+
 	private String cpuRequest;
 
 	private String memoryLimit;
@@ -42,6 +44,8 @@ public class UpdateK8sApplicationConfigRequest extends RoaAcsRequest<UpdateK8sAp
 	private String mcpuRequest;
 
 	private Integer timeout;
+
+	private String ephemeralStorageLimit;
 	public UpdateK8sApplicationConfigRequest() {
 		super("Edas", "2017-08-01", "UpdateK8sApplicationConfig", "Edas");
 		setUriPattern("/pop/v5/k8s/acs/k8s_app_configuration");
@@ -71,6 +75,17 @@ public class UpdateK8sApplicationConfigRequest extends RoaAcsRequest<UpdateK8sAp
 		this.appId = appId;
 		if(appId != null){
 			putQueryParameter("AppId", appId);
+		}
+	}
+
+	public String getEphemeralStorageRequest() {
+		return this.ephemeralStorageRequest;
+	}
+
+	public void setEphemeralStorageRequest(String ephemeralStorageRequest) {
+		this.ephemeralStorageRequest = ephemeralStorageRequest;
+		if(ephemeralStorageRequest != null){
+			putQueryParameter("EphemeralStorageRequest", ephemeralStorageRequest);
 		}
 	}
 
@@ -148,6 +163,17 @@ public class UpdateK8sApplicationConfigRequest extends RoaAcsRequest<UpdateK8sAp
 		this.timeout = timeout;
 		if(timeout != null){
 			putQueryParameter("Timeout", timeout.toString());
+		}
+	}
+
+	public String getEphemeralStorageLimit() {
+		return this.ephemeralStorageLimit;
+	}
+
+	public void setEphemeralStorageLimit(String ephemeralStorageLimit) {
+		this.ephemeralStorageLimit = ephemeralStorageLimit;
+		if(ephemeralStorageLimit != null){
+			putQueryParameter("EphemeralStorageLimit", ephemeralStorageLimit);
 		}
 	}
 

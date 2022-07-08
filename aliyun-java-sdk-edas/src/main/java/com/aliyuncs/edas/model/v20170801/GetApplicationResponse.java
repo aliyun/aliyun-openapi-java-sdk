@@ -132,6 +132,10 @@ public class GetApplicationResponse extends AcsResponse {
 
 		private String slbName;
 
+		private Boolean enableUrlCheck;
+
+		private Boolean enablePortCheck;
+
 		public String getExtSlbIp() {
 			return this.extSlbIp;
 		}
@@ -355,6 +359,22 @@ public class GetApplicationResponse extends AcsResponse {
 		public void setSlbName(String slbName) {
 			this.slbName = slbName;
 		}
+
+		public Boolean getEnableUrlCheck() {
+			return this.enableUrlCheck;
+		}
+
+		public void setEnableUrlCheck(Boolean enableUrlCheck) {
+			this.enableUrlCheck = enableUrlCheck;
+		}
+
+		public Boolean getEnablePortCheck() {
+			return this.enablePortCheck;
+		}
+
+		public void setEnablePortCheck(Boolean enablePortCheck) {
+			this.enablePortCheck = enablePortCheck;
+		}
 	}
 
 	public static class Application {
@@ -414,6 +434,10 @@ public class GetApplicationResponse extends AcsResponse {
 		private String clusterType;
 
 		private String slbName;
+
+		private Boolean enableUrlCheck;
+
+		private Boolean enablePortCheck;
 
 		public String getExtSlbIp() {
 			return this.extSlbIp;
@@ -637,6 +661,22 @@ public class GetApplicationResponse extends AcsResponse {
 
 		public void setSlbName(String slbName) {
 			this.slbName = slbName;
+		}
+
+		public Boolean getEnableUrlCheck() {
+			return this.enableUrlCheck;
+		}
+
+		public void setEnableUrlCheck(Boolean enableUrlCheck) {
+			this.enableUrlCheck = enableUrlCheck;
+		}
+
+		public Boolean getEnablePortCheck() {
+			return this.enablePortCheck;
+		}
+
+		public void setEnablePortCheck(Boolean enablePortCheck) {
+			this.enablePortCheck = enablePortCheck;
 		}
 	}
 

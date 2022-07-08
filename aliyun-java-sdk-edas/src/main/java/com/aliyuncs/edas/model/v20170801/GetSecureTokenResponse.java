@@ -88,6 +88,14 @@ public class GetSecureTokenResponse extends AcsResponse {
 
 		private String regionId;
 
+		private String mseRegistryType;
+
+		private String mseInstanceId;
+
+		private String mseInternetAddress;
+
+		private String mseIntranetAddress;
+
 		public String getSecretKey() {
 			return this.secretKey;
 		}
@@ -174,6 +182,38 @@ public class GetSecureTokenResponse extends AcsResponse {
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
+		}
+
+		public String getMseRegistryType() {
+			return this.mseRegistryType;
+		}
+
+		public void setMseRegistryType(String mseRegistryType) {
+			this.mseRegistryType = mseRegistryType;
+		}
+
+		public String getMseInstanceId() {
+			return this.mseInstanceId;
+		}
+
+		public void setMseInstanceId(String mseInstanceId) {
+			this.mseInstanceId = mseInstanceId;
+		}
+
+		public String getMseInternetAddress() {
+			return this.mseInternetAddress;
+		}
+
+		public void setMseInternetAddress(String mseInternetAddress) {
+			this.mseInternetAddress = mseInternetAddress;
+		}
+
+		public String getMseIntranetAddress() {
+			return this.mseIntranetAddress;
+		}
+
+		public void setMseIntranetAddress(String mseIntranetAddress) {
+			this.mseIntranetAddress = mseIntranetAddress;
 		}
 	}
 

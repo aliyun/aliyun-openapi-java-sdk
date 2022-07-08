@@ -101,6 +101,8 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 
 	private String csClusterId;
 
+	private String appConfig;
+
 	private Integer internetSlbPort;
 
 	private String packageVersion;
@@ -139,6 +141,8 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 
 	private String clusterId;
 
+	private String serviceConfigs;
+
 	private Integer intranetTargetPort;
 
 	private String command;
@@ -154,6 +158,8 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 	private String pvcMountDescs;
 
 	private String namespace;
+
+	private String appTemplateName;
 
 	private String applicationDescription;
 
@@ -590,6 +596,17 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 		}
 	}
 
+	public String getAppConfig() {
+		return this.appConfig;
+	}
+
+	public void setAppConfig(String appConfig) {
+		this.appConfig = appConfig;
+		if(appConfig != null){
+			putQueryParameter("AppConfig", appConfig);
+		}
+	}
+
 	public Integer getInternetSlbPort() {
 		return this.internetSlbPort;
 	}
@@ -799,6 +816,17 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 		}
 	}
 
+	public String getServiceConfigs() {
+		return this.serviceConfigs;
+	}
+
+	public void setServiceConfigs(String serviceConfigs) {
+		this.serviceConfigs = serviceConfigs;
+		if(serviceConfigs != null){
+			putQueryParameter("ServiceConfigs", serviceConfigs);
+		}
+	}
+
 	public Integer getIntranetTargetPort() {
 		return this.intranetTargetPort;
 	}
@@ -884,6 +912,17 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 		this.namespace = namespace;
 		if(namespace != null){
 			putQueryParameter("Namespace", namespace);
+		}
+	}
+
+	public String getAppTemplateName() {
+		return this.appTemplateName;
+	}
+
+	public void setAppTemplateName(String appTemplateName) {
+		this.appTemplateName = appTemplateName;
+		if(appTemplateName != null){
+			putQueryParameter("AppTemplateName", appTemplateName);
 		}
 	}
 

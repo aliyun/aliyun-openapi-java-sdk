@@ -39,6 +39,10 @@ public class GetSecureTokenResponseUnmarshaller {
 		secureToken.setId(_ctx.longValue("GetSecureTokenResponse.SecureToken.Id"));
 		secureToken.setTenantId(_ctx.stringValue("GetSecureTokenResponse.SecureToken.TenantId"));
 		secureToken.setRegionId(_ctx.stringValue("GetSecureTokenResponse.SecureToken.RegionId"));
+		secureToken.setMseRegistryType(_ctx.stringValue("GetSecureTokenResponse.SecureToken.MseRegistryType"));
+		secureToken.setMseInstanceId(_ctx.stringValue("GetSecureTokenResponse.SecureToken.MseInstanceId"));
+		secureToken.setMseInternetAddress(_ctx.stringValue("GetSecureTokenResponse.SecureToken.MseInternetAddress"));
+		secureToken.setMseIntranetAddress(_ctx.stringValue("GetSecureTokenResponse.SecureToken.MseIntranetAddress"));
 		getSecureTokenResponse.setSecureToken(secureToken);
 	 
 	 	return getSecureTokenResponse;
