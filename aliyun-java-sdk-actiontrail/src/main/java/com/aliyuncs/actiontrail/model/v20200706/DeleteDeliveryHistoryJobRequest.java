@@ -27,7 +27,7 @@ public class DeleteDeliveryHistoryJobRequest extends RpcAcsRequest<DeleteDeliver
 
 	private Integer jobId;
 	public DeleteDeliveryHistoryJobRequest() {
-		super("Actiontrail", "2020-07-06", "DeleteDeliveryHistoryJob", "actiontrail");
+		super("Actiontrail", "2020-07-06", "DeleteDeliveryHistoryJob");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -1,3 +1,6 @@
+2022-07-08 Version: 1.1.0
+- Support AK Audit API.
+
 2021-06-15 Version: 1.0.6
 - Support API for Trail.
 

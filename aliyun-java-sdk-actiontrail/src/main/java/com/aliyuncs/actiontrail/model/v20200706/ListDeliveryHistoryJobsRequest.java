@@ -29,7 +29,7 @@ public class ListDeliveryHistoryJobsRequest extends RpcAcsRequest<ListDeliveryHi
 
 	private Integer pageSize;
 	public ListDeliveryHistoryJobsRequest() {
-		super("Actiontrail", "2020-07-06", "ListDeliveryHistoryJobs", "actiontrail");
+		super("Actiontrail", "2020-07-06", "ListDeliveryHistoryJobs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

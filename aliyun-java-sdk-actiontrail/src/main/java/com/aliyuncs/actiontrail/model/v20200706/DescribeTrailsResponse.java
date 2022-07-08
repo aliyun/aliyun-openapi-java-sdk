@@ -47,107 +47,45 @@ public class DescribeTrailsResponse extends AcsResponse {
 
 	public static class Trail {
 
-		private String status;
-
-		private String homeRegion;
-
-		private String startLoggingTime;
-
-		private String createTime;
-
-		private String stopLoggingTime;
-
-		private String organizationId;
-
-		private String slsWriteRoleArn;
-
-		private String ossBucketLocation;
-
 		private String trailRegion;
 
-		private String name;
-
-		private Boolean isOrganizationTrail;
-
-		private String slsProjectArn;
-
-		private String eventRW;
-
-		private String ossKeyPrefix;
+		private String status;
 
 		private String updateTime;
 
-		private String region;
+		private String homeRegion;
 
-		private String ossBucketName;
+		private String createTime;
+
+		private String ossKeyPrefix;
+
+		private String eventRW;
+
+		private String startLoggingTime;
 
 		private String ossWriteRoleArn;
 
+		private String slsProjectArn;
+
+		private Boolean isOrganizationTrail;
+
+		private String slsWriteRoleArn;
+
+		private String stopLoggingTime;
+
+		private String name;
+
+		private String ossBucketName;
+
+		private String region;
+
+		private String organizationId;
+
+		private String ossBucketLocation;
+
 		private Long isShadowTrail;
 
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getHomeRegion() {
-			return this.homeRegion;
-		}
-
-		public void setHomeRegion(String homeRegion) {
-			this.homeRegion = homeRegion;
-		}
-
-		public String getStartLoggingTime() {
-			return this.startLoggingTime;
-		}
-
-		public void setStartLoggingTime(String startLoggingTime) {
-			this.startLoggingTime = startLoggingTime;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getStopLoggingTime() {
-			return this.stopLoggingTime;
-		}
-
-		public void setStopLoggingTime(String stopLoggingTime) {
-			this.stopLoggingTime = stopLoggingTime;
-		}
-
-		public String getOrganizationId() {
-			return this.organizationId;
-		}
-
-		public void setOrganizationId(String organizationId) {
-			this.organizationId = organizationId;
-		}
-
-		public String getSlsWriteRoleArn() {
-			return this.slsWriteRoleArn;
-		}
-
-		public void setSlsWriteRoleArn(String slsWriteRoleArn) {
-			this.slsWriteRoleArn = slsWriteRoleArn;
-		}
-
-		public String getOssBucketLocation() {
-			return this.ossBucketLocation;
-		}
-
-		public void setOssBucketLocation(String ossBucketLocation) {
-			this.ossBucketLocation = ossBucketLocation;
-		}
+		private String trailArn;
 
 		public String getTrailRegion() {
 			return this.trailRegion;
@@ -157,44 +95,12 @@ public class DescribeTrailsResponse extends AcsResponse {
 			this.trailRegion = trailRegion;
 		}
 
-		public String getName() {
-			return this.name;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public Boolean getIsOrganizationTrail() {
-			return this.isOrganizationTrail;
-		}
-
-		public void setIsOrganizationTrail(Boolean isOrganizationTrail) {
-			this.isOrganizationTrail = isOrganizationTrail;
-		}
-
-		public String getSlsProjectArn() {
-			return this.slsProjectArn;
-		}
-
-		public void setSlsProjectArn(String slsProjectArn) {
-			this.slsProjectArn = slsProjectArn;
-		}
-
-		public String getEventRW() {
-			return this.eventRW;
-		}
-
-		public void setEventRW(String eventRW) {
-			this.eventRW = eventRW;
-		}
-
-		public String getOssKeyPrefix() {
-			return this.ossKeyPrefix;
-		}
-
-		public void setOssKeyPrefix(String ossKeyPrefix) {
-			this.ossKeyPrefix = ossKeyPrefix;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getUpdateTime() {
@@ -205,20 +111,44 @@ public class DescribeTrailsResponse extends AcsResponse {
 			this.updateTime = updateTime;
 		}
 
-		public String getRegion() {
-			return this.region;
+		public String getHomeRegion() {
+			return this.homeRegion;
 		}
 
-		public void setRegion(String region) {
-			this.region = region;
+		public void setHomeRegion(String homeRegion) {
+			this.homeRegion = homeRegion;
 		}
 
-		public String getOssBucketName() {
-			return this.ossBucketName;
+		public String getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setOssBucketName(String ossBucketName) {
-			this.ossBucketName = ossBucketName;
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getOssKeyPrefix() {
+			return this.ossKeyPrefix;
+		}
+
+		public void setOssKeyPrefix(String ossKeyPrefix) {
+			this.ossKeyPrefix = ossKeyPrefix;
+		}
+
+		public String getEventRW() {
+			return this.eventRW;
+		}
+
+		public void setEventRW(String eventRW) {
+			this.eventRW = eventRW;
+		}
+
+		public String getStartLoggingTime() {
+			return this.startLoggingTime;
+		}
+
+		public void setStartLoggingTime(String startLoggingTime) {
+			this.startLoggingTime = startLoggingTime;
 		}
 
 		public String getOssWriteRoleArn() {
@@ -229,12 +159,92 @@ public class DescribeTrailsResponse extends AcsResponse {
 			this.ossWriteRoleArn = ossWriteRoleArn;
 		}
 
+		public String getSlsProjectArn() {
+			return this.slsProjectArn;
+		}
+
+		public void setSlsProjectArn(String slsProjectArn) {
+			this.slsProjectArn = slsProjectArn;
+		}
+
+		public Boolean getIsOrganizationTrail() {
+			return this.isOrganizationTrail;
+		}
+
+		public void setIsOrganizationTrail(Boolean isOrganizationTrail) {
+			this.isOrganizationTrail = isOrganizationTrail;
+		}
+
+		public String getSlsWriteRoleArn() {
+			return this.slsWriteRoleArn;
+		}
+
+		public void setSlsWriteRoleArn(String slsWriteRoleArn) {
+			this.slsWriteRoleArn = slsWriteRoleArn;
+		}
+
+		public String getStopLoggingTime() {
+			return this.stopLoggingTime;
+		}
+
+		public void setStopLoggingTime(String stopLoggingTime) {
+			this.stopLoggingTime = stopLoggingTime;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getOssBucketName() {
+			return this.ossBucketName;
+		}
+
+		public void setOssBucketName(String ossBucketName) {
+			this.ossBucketName = ossBucketName;
+		}
+
+		public String getRegion() {
+			return this.region;
+		}
+
+		public void setRegion(String region) {
+			this.region = region;
+		}
+
+		public String getOrganizationId() {
+			return this.organizationId;
+		}
+
+		public void setOrganizationId(String organizationId) {
+			this.organizationId = organizationId;
+		}
+
+		public String getOssBucketLocation() {
+			return this.ossBucketLocation;
+		}
+
+		public void setOssBucketLocation(String ossBucketLocation) {
+			this.ossBucketLocation = ossBucketLocation;
+		}
+
 		public Long getIsShadowTrail() {
 			return this.isShadowTrail;
 		}
 
 		public void setIsShadowTrail(Long isShadowTrail) {
 			this.isShadowTrail = isShadowTrail;
+		}
+
+		public String getTrailArn() {
+			return this.trailArn;
+		}
+
+		public void setTrailArn(String trailArn) {
+			this.trailArn = trailArn;
 		}
 	}
 

@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListDeliveryHistoryJobsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
-
-	private Integer pageNumber;
 
 	private Integer pageSize;
 
+	private String requestId;
+
+	private Integer pageNumber;
+
 	private List<DeliveryHistoryJob> deliveryHistoryJobs;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class ListDeliveryHistoryJobsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<DeliveryHistoryJob> getDeliveryHistoryJobs() {
@@ -79,19 +79,19 @@ public class ListDeliveryHistoryJobsResponse extends AcsResponse {
 
 		private String trailName;
 
-		private String createdTime;
-
-		private String updatedTime;
-
-		private String homeRegion;
+		private String endTime;
 
 		private String startTime;
 
-		private String endTime;
+		private Integer jobStatus;
+
+		private String homeRegion;
+
+		private String updatedTime;
 
 		private Long jobId;
 
-		private Integer jobStatus;
+		private String createdTime;
 
 		public String getTrailName() {
 			return this.trailName;
@@ -99,38 +99,6 @@ public class ListDeliveryHistoryJobsResponse extends AcsResponse {
 
 		public void setTrailName(String trailName) {
 			this.trailName = trailName;
-		}
-
-		public String getCreatedTime() {
-			return this.createdTime;
-		}
-
-		public void setCreatedTime(String createdTime) {
-			this.createdTime = createdTime;
-		}
-
-		public String getUpdatedTime() {
-			return this.updatedTime;
-		}
-
-		public void setUpdatedTime(String updatedTime) {
-			this.updatedTime = updatedTime;
-		}
-
-		public String getHomeRegion() {
-			return this.homeRegion;
-		}
-
-		public void setHomeRegion(String homeRegion) {
-			this.homeRegion = homeRegion;
-		}
-
-		public String getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
 		}
 
 		public String getEndTime() {
@@ -141,12 +109,12 @@ public class ListDeliveryHistoryJobsResponse extends AcsResponse {
 			this.endTime = endTime;
 		}
 
-		public Long getJobId() {
-			return this.jobId;
+		public String getStartTime() {
+			return this.startTime;
 		}
 
-		public void setJobId(Long jobId) {
-			this.jobId = jobId;
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
 		}
 
 		public Integer getJobStatus() {
@@ -155,6 +123,38 @@ public class ListDeliveryHistoryJobsResponse extends AcsResponse {
 
 		public void setJobStatus(Integer jobStatus) {
 			this.jobStatus = jobStatus;
+		}
+
+		public String getHomeRegion() {
+			return this.homeRegion;
+		}
+
+		public void setHomeRegion(String homeRegion) {
+			this.homeRegion = homeRegion;
+		}
+
+		public String getUpdatedTime() {
+			return this.updatedTime;
+		}
+
+		public void setUpdatedTime(String updatedTime) {
+			this.updatedTime = updatedTime;
+		}
+
+		public Long getJobId() {
+			return this.jobId;
+		}
+
+		public void setJobId(Long jobId) {
+			this.jobId = jobId;
+		}
+
+		public String getCreatedTime() {
+			return this.createdTime;
+		}
+
+		public void setCreatedTime(String createdTime) {
+			this.createdTime = createdTime;
 		}
 	}
 

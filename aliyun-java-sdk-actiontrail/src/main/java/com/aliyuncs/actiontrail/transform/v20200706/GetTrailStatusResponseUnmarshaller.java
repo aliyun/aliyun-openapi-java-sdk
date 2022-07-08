@@ -23,15 +23,15 @@ public class GetTrailStatusResponseUnmarshaller {
 	public static GetTrailStatusResponse unmarshall(GetTrailStatusResponse getTrailStatusResponse, UnmarshallerContext _ctx) {
 		
 		getTrailStatusResponse.setRequestId(_ctx.stringValue("GetTrailStatusResponse.RequestId"));
-		getTrailStatusResponse.setLatestDeliveryLogServiceTime(_ctx.stringValue("GetTrailStatusResponse.LatestDeliveryLogServiceTime"));
-		getTrailStatusResponse.setLatestDeliveryLogServiceError(_ctx.stringValue("GetTrailStatusResponse.LatestDeliveryLogServiceError"));
 		getTrailStatusResponse.setStartLoggingTime(_ctx.stringValue("GetTrailStatusResponse.StartLoggingTime"));
-		getTrailStatusResponse.setOssBucketStatus(_ctx.booleanValue("GetTrailStatusResponse.OssBucketStatus"));
 		getTrailStatusResponse.setLatestDeliveryError(_ctx.stringValue("GetTrailStatusResponse.LatestDeliveryError"));
 		getTrailStatusResponse.setStopLoggingTime(_ctx.stringValue("GetTrailStatusResponse.StopLoggingTime"));
-		getTrailStatusResponse.setSlsLogStoreStatus(_ctx.booleanValue("GetTrailStatusResponse.SlsLogStoreStatus"));
-		getTrailStatusResponse.setLatestDeliveryTime(_ctx.stringValue("GetTrailStatusResponse.LatestDeliveryTime"));
 		getTrailStatusResponse.setIsLogging(_ctx.booleanValue("GetTrailStatusResponse.IsLogging"));
+		getTrailStatusResponse.setLatestDeliveryTime(_ctx.stringValue("GetTrailStatusResponse.LatestDeliveryTime"));
+		getTrailStatusResponse.setLatestDeliveryLogServiceError(_ctx.stringValue("GetTrailStatusResponse.LatestDeliveryLogServiceError"));
+		getTrailStatusResponse.setLatestDeliveryLogServiceTime(_ctx.stringValue("GetTrailStatusResponse.LatestDeliveryLogServiceTime"));
+		getTrailStatusResponse.setOssBucketStatus(_ctx.booleanValue("GetTrailStatusResponse.OssBucketStatus"));
+		getTrailStatusResponse.setSlsLogStoreStatus(_ctx.booleanValue("GetTrailStatusResponse.SlsLogStoreStatus"));
 	 
 	 	return getTrailStatusResponse;
 	}

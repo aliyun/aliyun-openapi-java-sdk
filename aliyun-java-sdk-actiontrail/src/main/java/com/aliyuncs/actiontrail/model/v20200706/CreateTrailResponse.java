@@ -26,6 +26,8 @@ public class CreateTrailResponse extends AcsResponse {
 
 	private String slsProjectArn;
 
+	private String ossWriteRoleArn;
+
 	private String eventRW;
 
 	private String requestId;
@@ -38,8 +40,6 @@ public class CreateTrailResponse extends AcsResponse {
 
 	private String slsWriteRoleArn;
 
-	private String ossWriteRoleArn;
-
 	private String trailRegion;
 
 	private String name;
@@ -50,6 +50,14 @@ public class CreateTrailResponse extends AcsResponse {
 
 	public void setSlsProjectArn(String slsProjectArn) {
 		this.slsProjectArn = slsProjectArn;
+	}
+
+	public String getOssWriteRoleArn() {
+		return this.ossWriteRoleArn;
+	}
+
+	public void setOssWriteRoleArn(String ossWriteRoleArn) {
+		this.ossWriteRoleArn = ossWriteRoleArn;
 	}
 
 	public String getEventRW() {
@@ -98,14 +106,6 @@ public class CreateTrailResponse extends AcsResponse {
 
 	public void setSlsWriteRoleArn(String slsWriteRoleArn) {
 		this.slsWriteRoleArn = slsWriteRoleArn;
-	}
-
-	public String getOssWriteRoleArn() {
-		return this.ossWriteRoleArn;
-	}
-
-	public void setOssWriteRoleArn(String ossWriteRoleArn) {
-		this.ossWriteRoleArn = ossWriteRoleArn;
 	}
 
 	public String getTrailRegion() {

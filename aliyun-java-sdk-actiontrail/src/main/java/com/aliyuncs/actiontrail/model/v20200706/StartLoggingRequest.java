@@ -27,7 +27,7 @@ public class StartLoggingRequest extends RpcAcsRequest<StartLoggingResponse> {
 
 	private String name;
 	public StartLoggingRequest() {
-		super("Actiontrail", "2020-07-06", "StartLogging", "actiontrail");
+		super("Actiontrail", "2020-07-06", "StartLogging");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

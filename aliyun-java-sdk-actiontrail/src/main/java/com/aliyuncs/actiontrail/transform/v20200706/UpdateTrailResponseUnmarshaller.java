@@ -24,12 +24,12 @@ public class UpdateTrailResponseUnmarshaller {
 		
 		updateTrailResponse.setRequestId(_ctx.stringValue("UpdateTrailResponse.RequestId"));
 		updateTrailResponse.setSlsProjectArn(_ctx.stringValue("UpdateTrailResponse.SlsProjectArn"));
+		updateTrailResponse.setOssWriteRoleArn(_ctx.stringValue("UpdateTrailResponse.OssWriteRoleArn"));
 		updateTrailResponse.setEventRW(_ctx.stringValue("UpdateTrailResponse.EventRW"));
 		updateTrailResponse.setHomeRegion(_ctx.stringValue("UpdateTrailResponse.HomeRegion"));
 		updateTrailResponse.setOssKeyPrefix(_ctx.stringValue("UpdateTrailResponse.OssKeyPrefix"));
 		updateTrailResponse.setOssBucketName(_ctx.stringValue("UpdateTrailResponse.OssBucketName"));
 		updateTrailResponse.setSlsWriteRoleArn(_ctx.stringValue("UpdateTrailResponse.SlsWriteRoleArn"));
-		updateTrailResponse.setOssWriteRoleArn(_ctx.stringValue("UpdateTrailResponse.OssWriteRoleArn"));
 		updateTrailResponse.setTrailRegion(_ctx.stringValue("UpdateTrailResponse.TrailRegion"));
 		updateTrailResponse.setName(_ctx.stringValue("UpdateTrailResponse.Name"));
 	 

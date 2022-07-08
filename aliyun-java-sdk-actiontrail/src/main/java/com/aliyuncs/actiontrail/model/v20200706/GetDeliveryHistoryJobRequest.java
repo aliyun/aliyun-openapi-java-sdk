@@ -22,14 +22,12 @@ import com.aliyuncs.actiontrail.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetTrailStatusRequest extends RpcAcsRequest<GetTrailStatusResponse> {
+public class GetDeliveryHistoryJobRequest extends RpcAcsRequest<GetDeliveryHistoryJobResponse> {
 	   
 
-	private String name;
-
-	private Boolean isOrganizationTrail;
-	public GetTrailStatusRequest() {
-		super("Actiontrail", "2020-07-06", "GetTrailStatus");
+	private Long jobId;
+	public GetDeliveryHistoryJobRequest() {
+		super("Actiontrail", "2020-07-06", "GetDeliveryHistoryJob");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +35,20 @@ public class GetTrailStatusRequest extends RpcAcsRequest<GetTrailStatusResponse>
 		} catch (Exception e) {}
 	}
 
-	public String getName() {
-		return this.name;
+	public Long getJobId() {
+		return this.jobId;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
-	public Boolean getIsOrganizationTrail() {
-		return this.isOrganizationTrail;
-	}
-
-	public void setIsOrganizationTrail(Boolean isOrganizationTrail) {
-		this.isOrganizationTrail = isOrganizationTrail;
-		if(isOrganizationTrail != null){
-			putQueryParameter("IsOrganizationTrail", isOrganizationTrail.toString());
+	public void setJobId(Long jobId) {
+		this.jobId = jobId;
+		if(jobId != null){
+			putQueryParameter("JobId", jobId.toString());
 		}
 	}
 
 	@Override
-	public Class<GetTrailStatusResponse> getResponseClass() {
-		return GetTrailStatusResponse.class;
+	public Class<GetDeliveryHistoryJobResponse> getResponseClass() {
+		return GetDeliveryHistoryJobResponse.class;
 	}
 
 }

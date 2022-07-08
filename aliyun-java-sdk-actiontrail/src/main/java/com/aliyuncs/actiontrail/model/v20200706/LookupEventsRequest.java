@@ -38,7 +38,7 @@ public class LookupEventsRequest extends RpcAcsRequest<LookupEventsResponse> {
 
 	private String direction;
 	public LookupEventsRequest() {
-		super("Actiontrail", "2020-07-06", "LookupEvents", "actiontrail");
+		super("Actiontrail", "2020-07-06", "LookupEvents");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

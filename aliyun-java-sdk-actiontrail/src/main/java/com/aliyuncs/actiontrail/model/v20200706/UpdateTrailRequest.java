@@ -41,7 +41,7 @@ public class UpdateTrailRequest extends RpcAcsRequest<UpdateTrailResponse> {
 
 	private String trailRegion;
 	public UpdateTrailRequest() {
-		super("Actiontrail", "2020-07-06", "UpdateTrail", "actiontrail");
+		super("Actiontrail", "2020-07-06", "UpdateTrail");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

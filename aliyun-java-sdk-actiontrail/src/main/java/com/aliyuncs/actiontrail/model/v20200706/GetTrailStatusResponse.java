@@ -24,33 +24,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetTrailStatusResponse extends AcsResponse {
 
-	private String latestDeliveryLogServiceTime;
-
 	private String requestId;
 
-	private String latestDeliveryLogServiceError;
-
 	private String startLoggingTime;
-
-	private Boolean ossBucketStatus;
 
 	private String latestDeliveryError;
 
 	private String stopLoggingTime;
 
-	private Boolean slsLogStoreStatus;
+	private Boolean isLogging;
 
 	private String latestDeliveryTime;
 
-	private Boolean isLogging;
+	private String latestDeliveryLogServiceError;
 
-	public String getLatestDeliveryLogServiceTime() {
-		return this.latestDeliveryLogServiceTime;
-	}
+	private String latestDeliveryLogServiceTime;
 
-	public void setLatestDeliveryLogServiceTime(String latestDeliveryLogServiceTime) {
-		this.latestDeliveryLogServiceTime = latestDeliveryLogServiceTime;
-	}
+	private Boolean ossBucketStatus;
+
+	private Boolean slsLogStoreStatus;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -60,28 +52,12 @@ public class GetTrailStatusResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getLatestDeliveryLogServiceError() {
-		return this.latestDeliveryLogServiceError;
-	}
-
-	public void setLatestDeliveryLogServiceError(String latestDeliveryLogServiceError) {
-		this.latestDeliveryLogServiceError = latestDeliveryLogServiceError;
-	}
-
 	public String getStartLoggingTime() {
 		return this.startLoggingTime;
 	}
 
 	public void setStartLoggingTime(String startLoggingTime) {
 		this.startLoggingTime = startLoggingTime;
-	}
-
-	public Boolean getOssBucketStatus() {
-		return this.ossBucketStatus;
-	}
-
-	public void setOssBucketStatus(Boolean ossBucketStatus) {
-		this.ossBucketStatus = ossBucketStatus;
 	}
 
 	public String getLatestDeliveryError() {
@@ -100,12 +76,12 @@ public class GetTrailStatusResponse extends AcsResponse {
 		this.stopLoggingTime = stopLoggingTime;
 	}
 
-	public Boolean getSlsLogStoreStatus() {
-		return this.slsLogStoreStatus;
+	public Boolean getIsLogging() {
+		return this.isLogging;
 	}
 
-	public void setSlsLogStoreStatus(Boolean slsLogStoreStatus) {
-		this.slsLogStoreStatus = slsLogStoreStatus;
+	public void setIsLogging(Boolean isLogging) {
+		this.isLogging = isLogging;
 	}
 
 	public String getLatestDeliveryTime() {
@@ -116,12 +92,36 @@ public class GetTrailStatusResponse extends AcsResponse {
 		this.latestDeliveryTime = latestDeliveryTime;
 	}
 
-	public Boolean getIsLogging() {
-		return this.isLogging;
+	public String getLatestDeliveryLogServiceError() {
+		return this.latestDeliveryLogServiceError;
 	}
 
-	public void setIsLogging(Boolean isLogging) {
-		this.isLogging = isLogging;
+	public void setLatestDeliveryLogServiceError(String latestDeliveryLogServiceError) {
+		this.latestDeliveryLogServiceError = latestDeliveryLogServiceError;
+	}
+
+	public String getLatestDeliveryLogServiceTime() {
+		return this.latestDeliveryLogServiceTime;
+	}
+
+	public void setLatestDeliveryLogServiceTime(String latestDeliveryLogServiceTime) {
+		this.latestDeliveryLogServiceTime = latestDeliveryLogServiceTime;
+	}
+
+	public Boolean getOssBucketStatus() {
+		return this.ossBucketStatus;
+	}
+
+	public void setOssBucketStatus(Boolean ossBucketStatus) {
+		this.ossBucketStatus = ossBucketStatus;
+	}
+
+	public Boolean getSlsLogStoreStatus() {
+		return this.slsLogStoreStatus;
+	}
+
+	public void setSlsLogStoreStatus(Boolean slsLogStoreStatus) {
+		this.slsLogStoreStatus = slsLogStoreStatus;
 	}
 
 	@Override

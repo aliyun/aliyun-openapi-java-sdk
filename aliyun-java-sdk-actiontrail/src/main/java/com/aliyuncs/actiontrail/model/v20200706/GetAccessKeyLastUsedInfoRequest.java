@@ -22,14 +22,12 @@ import com.aliyuncs.actiontrail.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetTrailStatusRequest extends RpcAcsRequest<GetTrailStatusResponse> {
+public class GetAccessKeyLastUsedInfoRequest extends RpcAcsRequest<GetAccessKeyLastUsedInfoResponse> {
 	   
 
-	private String name;
-
-	private Boolean isOrganizationTrail;
-	public GetTrailStatusRequest() {
-		super("Actiontrail", "2020-07-06", "GetTrailStatus");
+	private String accessKey;
+	public GetAccessKeyLastUsedInfoRequest() {
+		super("Actiontrail", "2020-07-06", "GetAccessKeyLastUsedInfo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +35,20 @@ public class GetTrailStatusRequest extends RpcAcsRequest<GetTrailStatusResponse>
 		} catch (Exception e) {}
 	}
 
-	public String getName() {
-		return this.name;
+	public String getAccessKey() {
+		return this.accessKey;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
-	public Boolean getIsOrganizationTrail() {
-		return this.isOrganizationTrail;
-	}
-
-	public void setIsOrganizationTrail(Boolean isOrganizationTrail) {
-		this.isOrganizationTrail = isOrganizationTrail;
-		if(isOrganizationTrail != null){
-			putQueryParameter("IsOrganizationTrail", isOrganizationTrail.toString());
+	public void setAccessKey(String accessKey) {
+		this.accessKey = accessKey;
+		if(accessKey != null){
+			putQueryParameter("AccessKey", accessKey);
 		}
 	}
 
 	@Override
-	public Class<GetTrailStatusResponse> getResponseClass() {
-		return GetTrailStatusResponse.class;
+	public Class<GetAccessKeyLastUsedInfoResponse> getResponseClass() {
+		return GetAccessKeyLastUsedInfoResponse.class;
 	}
 
 }

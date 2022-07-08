@@ -31,25 +31,26 @@ public class DescribeTrailsResponseUnmarshaller {
 		List<Trail> trailList = new ArrayList<Trail>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeTrailsResponse.TrailList.Length"); i++) {
 			Trail trail = new Trail();
-			trail.setStatus(_ctx.stringValue("DescribeTrailsResponse.TrailList["+ i +"].Status"));
-			trail.setHomeRegion(_ctx.stringValue("DescribeTrailsResponse.TrailList["+ i +"].HomeRegion"));
-			trail.setStartLoggingTime(_ctx.stringValue("DescribeTrailsResponse.TrailList["+ i +"].StartLoggingTime"));
-			trail.setCreateTime(_ctx.stringValue("DescribeTrailsResponse.TrailList["+ i +"].CreateTime"));
-			trail.setStopLoggingTime(_ctx.stringValue("DescribeTrailsResponse.TrailList["+ i +"].StopLoggingTime"));
-			trail.setOrganizationId(_ctx.stringValue("DescribeTrailsResponse.TrailList["+ i +"].OrganizationId"));
-			trail.setSlsWriteRoleArn(_ctx.stringValue("DescribeTrailsResponse.TrailList["+ i +"].SlsWriteRoleArn"));
-			trail.setOssBucketLocation(_ctx.stringValue("DescribeTrailsResponse.TrailList["+ i +"].OssBucketLocation"));
 			trail.setTrailRegion(_ctx.stringValue("DescribeTrailsResponse.TrailList["+ i +"].TrailRegion"));
-			trail.setName(_ctx.stringValue("DescribeTrailsResponse.TrailList["+ i +"].Name"));
-			trail.setIsOrganizationTrail(_ctx.booleanValue("DescribeTrailsResponse.TrailList["+ i +"].IsOrganizationTrail"));
-			trail.setSlsProjectArn(_ctx.stringValue("DescribeTrailsResponse.TrailList["+ i +"].SlsProjectArn"));
-			trail.setEventRW(_ctx.stringValue("DescribeTrailsResponse.TrailList["+ i +"].EventRW"));
-			trail.setOssKeyPrefix(_ctx.stringValue("DescribeTrailsResponse.TrailList["+ i +"].OssKeyPrefix"));
+			trail.setStatus(_ctx.stringValue("DescribeTrailsResponse.TrailList["+ i +"].Status"));
 			trail.setUpdateTime(_ctx.stringValue("DescribeTrailsResponse.TrailList["+ i +"].UpdateTime"));
-			trail.setRegion(_ctx.stringValue("DescribeTrailsResponse.TrailList["+ i +"].Region"));
-			trail.setOssBucketName(_ctx.stringValue("DescribeTrailsResponse.TrailList["+ i +"].OssBucketName"));
+			trail.setHomeRegion(_ctx.stringValue("DescribeTrailsResponse.TrailList["+ i +"].HomeRegion"));
+			trail.setCreateTime(_ctx.stringValue("DescribeTrailsResponse.TrailList["+ i +"].CreateTime"));
+			trail.setOssKeyPrefix(_ctx.stringValue("DescribeTrailsResponse.TrailList["+ i +"].OssKeyPrefix"));
+			trail.setEventRW(_ctx.stringValue("DescribeTrailsResponse.TrailList["+ i +"].EventRW"));
+			trail.setStartLoggingTime(_ctx.stringValue("DescribeTrailsResponse.TrailList["+ i +"].StartLoggingTime"));
 			trail.setOssWriteRoleArn(_ctx.stringValue("DescribeTrailsResponse.TrailList["+ i +"].OssWriteRoleArn"));
+			trail.setSlsProjectArn(_ctx.stringValue("DescribeTrailsResponse.TrailList["+ i +"].SlsProjectArn"));
+			trail.setIsOrganizationTrail(_ctx.booleanValue("DescribeTrailsResponse.TrailList["+ i +"].IsOrganizationTrail"));
+			trail.setSlsWriteRoleArn(_ctx.stringValue("DescribeTrailsResponse.TrailList["+ i +"].SlsWriteRoleArn"));
+			trail.setStopLoggingTime(_ctx.stringValue("DescribeTrailsResponse.TrailList["+ i +"].StopLoggingTime"));
+			trail.setName(_ctx.stringValue("DescribeTrailsResponse.TrailList["+ i +"].Name"));
+			trail.setOssBucketName(_ctx.stringValue("DescribeTrailsResponse.TrailList["+ i +"].OssBucketName"));
+			trail.setRegion(_ctx.stringValue("DescribeTrailsResponse.TrailList["+ i +"].Region"));
+			trail.setOrganizationId(_ctx.stringValue("DescribeTrailsResponse.TrailList["+ i +"].OrganizationId"));
+			trail.setOssBucketLocation(_ctx.stringValue("DescribeTrailsResponse.TrailList["+ i +"].OssBucketLocation"));
 			trail.setIsShadowTrail(_ctx.longValue("DescribeTrailsResponse.TrailList["+ i +"].IsShadowTrail"));
+			trail.setTrailArn(_ctx.stringValue("DescribeTrailsResponse.TrailList["+ i +"].TrailArn"));
 
 			trailList.add(trail);
 		}

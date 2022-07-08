@@ -27,7 +27,7 @@ public class DeleteTrailRequest extends RpcAcsRequest<DeleteTrailResponse> {
 
 	private String name;
 	public DeleteTrailRequest() {
-		super("Actiontrail", "2020-07-06", "DeleteTrail", "actiontrail");
+		super("Actiontrail", "2020-07-06", "DeleteTrail");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

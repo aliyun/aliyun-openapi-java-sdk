@@ -28,20 +28,20 @@ public class ListDeliveryHistoryJobsResponseUnmarshaller {
 		
 		listDeliveryHistoryJobsResponse.setRequestId(_ctx.stringValue("ListDeliveryHistoryJobsResponse.RequestId"));
 		listDeliveryHistoryJobsResponse.setTotalCount(_ctx.integerValue("ListDeliveryHistoryJobsResponse.TotalCount"));
-		listDeliveryHistoryJobsResponse.setPageNumber(_ctx.integerValue("ListDeliveryHistoryJobsResponse.PageNumber"));
 		listDeliveryHistoryJobsResponse.setPageSize(_ctx.integerValue("ListDeliveryHistoryJobsResponse.PageSize"));
+		listDeliveryHistoryJobsResponse.setPageNumber(_ctx.integerValue("ListDeliveryHistoryJobsResponse.PageNumber"));
 
 		List<DeliveryHistoryJob> deliveryHistoryJobs = new ArrayList<DeliveryHistoryJob>();
 		for (int i = 0; i < _ctx.lengthValue("ListDeliveryHistoryJobsResponse.DeliveryHistoryJobs.Length"); i++) {
 			DeliveryHistoryJob deliveryHistoryJob = new DeliveryHistoryJob();
 			deliveryHistoryJob.setTrailName(_ctx.stringValue("ListDeliveryHistoryJobsResponse.DeliveryHistoryJobs["+ i +"].TrailName"));
-			deliveryHistoryJob.setCreatedTime(_ctx.stringValue("ListDeliveryHistoryJobsResponse.DeliveryHistoryJobs["+ i +"].CreatedTime"));
-			deliveryHistoryJob.setUpdatedTime(_ctx.stringValue("ListDeliveryHistoryJobsResponse.DeliveryHistoryJobs["+ i +"].UpdatedTime"));
-			deliveryHistoryJob.setHomeRegion(_ctx.stringValue("ListDeliveryHistoryJobsResponse.DeliveryHistoryJobs["+ i +"].HomeRegion"));
-			deliveryHistoryJob.setStartTime(_ctx.stringValue("ListDeliveryHistoryJobsResponse.DeliveryHistoryJobs["+ i +"].StartTime"));
 			deliveryHistoryJob.setEndTime(_ctx.stringValue("ListDeliveryHistoryJobsResponse.DeliveryHistoryJobs["+ i +"].EndTime"));
-			deliveryHistoryJob.setJobId(_ctx.longValue("ListDeliveryHistoryJobsResponse.DeliveryHistoryJobs["+ i +"].JobId"));
+			deliveryHistoryJob.setStartTime(_ctx.stringValue("ListDeliveryHistoryJobsResponse.DeliveryHistoryJobs["+ i +"].StartTime"));
 			deliveryHistoryJob.setJobStatus(_ctx.integerValue("ListDeliveryHistoryJobsResponse.DeliveryHistoryJobs["+ i +"].JobStatus"));
+			deliveryHistoryJob.setHomeRegion(_ctx.stringValue("ListDeliveryHistoryJobsResponse.DeliveryHistoryJobs["+ i +"].HomeRegion"));
+			deliveryHistoryJob.setUpdatedTime(_ctx.stringValue("ListDeliveryHistoryJobsResponse.DeliveryHistoryJobs["+ i +"].UpdatedTime"));
+			deliveryHistoryJob.setJobId(_ctx.longValue("ListDeliveryHistoryJobsResponse.DeliveryHistoryJobs["+ i +"].JobId"));
+			deliveryHistoryJob.setCreatedTime(_ctx.stringValue("ListDeliveryHistoryJobsResponse.DeliveryHistoryJobs["+ i +"].CreatedTime"));
 
 			deliveryHistoryJobs.add(deliveryHistoryJob);
 		}
