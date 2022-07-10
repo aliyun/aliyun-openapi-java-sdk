@@ -30,6 +30,7 @@ public class ListMessagesResponseUnmarshaller {
 		listMessagesResponse.setCode(_ctx.stringValue("ListMessagesResponse.Code"));
 		listMessagesResponse.setMessage(_ctx.stringValue("ListMessagesResponse.Message"));
 		listMessagesResponse.setSuccess(_ctx.booleanValue("ListMessagesResponse.Success"));
+		listMessagesResponse.setTotal(_ctx.integerValue("ListMessagesResponse.Total"));
 
 		List<Message> data = new ArrayList<Message>();
 		for (int i = 0; i < _ctx.lengthValue("ListMessagesResponse.Data.Length"); i++) {

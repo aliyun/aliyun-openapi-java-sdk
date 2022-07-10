@@ -30,7 +30,11 @@ public class ListMessagesRequest extends RpcAcsRequest<ListMessagesResponse> {
 
 	private Long endTimestamp;
 
+	private Integer pageNo;
+
 	private String channelType;
+
+	private Integer pageSize;
 	public ListMessagesRequest() {
 		super("MscCommonQuery", "2021-04-07", "ListMessages");
 		setMethod(MethodType.POST);
@@ -69,6 +73,17 @@ public class ListMessagesRequest extends RpcAcsRequest<ListMessagesResponse> {
 		}
 	}
 
+	public Integer getPageNo() {
+		return this.pageNo;
+	}
+
+	public void setPageNo(Integer pageNo) {
+		this.pageNo = pageNo;
+		if(pageNo != null){
+			putBodyParameter("PageNo", pageNo.toString());
+		}
+	}
+
 	public String getChannelType() {
 		return this.channelType;
 	}
@@ -77,6 +92,17 @@ public class ListMessagesRequest extends RpcAcsRequest<ListMessagesResponse> {
 		this.channelType = channelType;
 		if(channelType != null){
 			putBodyParameter("ChannelType", channelType);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putBodyParameter("PageSize", pageSize.toString());
 		}
 	}
 

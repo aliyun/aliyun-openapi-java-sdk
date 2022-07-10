@@ -1,3 +1,6 @@
+2022-07-10 Version: 0.0.2
+- Support Msc Common Query.
+
 2021-07-30 Version: 0.0.1
 - Support Msc Common Query.
 

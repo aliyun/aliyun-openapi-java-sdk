@@ -33,6 +33,8 @@ public class ListMessagesResponse extends AcsResponse {
 
 	private Boolean success;
 
+	private Integer total;
+
 	private List<Message> data;
 
 	public String getRequestId() {
@@ -65,6 +67,14 @@ public class ListMessagesResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public Integer getTotal() {
+		return this.total;
+	}
+
+	public void setTotal(Integer total) {
+		this.total = total;
 	}
 
 	public List<Message> getData() {
