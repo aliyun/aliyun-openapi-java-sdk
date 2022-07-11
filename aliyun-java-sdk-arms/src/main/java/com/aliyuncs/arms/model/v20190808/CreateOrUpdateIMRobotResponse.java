@@ -58,6 +58,10 @@ public class CreateOrUpdateIMRobotResponse extends AcsResponse {
 
 		private String dailyNocTime;
 
+		private String token;
+
+		private Boolean enableOutgoing;
+
 		public Float getRobotId() {
 			return this.robotId;
 		}
@@ -104,6 +108,22 @@ public class CreateOrUpdateIMRobotResponse extends AcsResponse {
 
 		public void setDailyNocTime(String dailyNocTime) {
 			this.dailyNocTime = dailyNocTime;
+		}
+
+		public String getToken() {
+			return this.token;
+		}
+
+		public void setToken(String token) {
+			this.token = token;
+		}
+
+		public Boolean getEnableOutgoing() {
+			return this.enableOutgoing;
+		}
+
+		public void setEnableOutgoing(Boolean enableOutgoing) {
+			this.enableOutgoing = enableOutgoing;
 		}
 	}
 

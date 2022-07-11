@@ -36,6 +36,10 @@ public class CreateOrUpdateIMRobotRequest extends RpcAcsRequest<CreateOrUpdateIM
 	private String type;
 
 	private String dailyNocTime;
+
+	private String token;
+
+	private Boolean enableOutgoing;
 	public CreateOrUpdateIMRobotRequest() {
 		super("ARMS", "2019-08-08", "CreateOrUpdateIMRobot", "arms");
 		setMethod(MethodType.POST);
@@ -108,6 +112,28 @@ public class CreateOrUpdateIMRobotRequest extends RpcAcsRequest<CreateOrUpdateIM
 		this.dailyNocTime = dailyNocTime;
 		if(dailyNocTime != null){
 			putBodyParameter("DailyNocTime", dailyNocTime);
+		}
+	}
+
+	public String getToken() {
+		return this.token;
+	}
+
+	public void setToken(String token) {
+		this.token = token;
+		if(token != null){
+			putBodyParameter("Token", token);
+		}
+	}
+
+	public Boolean getEnableOutgoing() {
+		return this.enableOutgoing;
+	}
+
+	public void setEnableOutgoing(Boolean enableOutgoing) {
+		this.enableOutgoing = enableOutgoing;
+		if(enableOutgoing != null){
+			putBodyParameter("EnableOutgoing", enableOutgoing.toString());
 		}
 	}
 
