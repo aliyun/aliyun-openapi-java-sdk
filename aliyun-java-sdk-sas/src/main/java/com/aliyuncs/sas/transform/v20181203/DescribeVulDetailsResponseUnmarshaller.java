@@ -50,6 +50,7 @@ public class DescribeVulDetailsResponseUnmarshaller {
 			cve.setSolution(_ctx.stringValue("DescribeVulDetailsResponse.Cves["+ i +"].Solution"));
 			cve.setContent(_ctx.stringValue("DescribeVulDetailsResponse.Cves["+ i +"].Content"));
 			cve.setPoc(_ctx.stringValue("DescribeVulDetailsResponse.Cves["+ i +"].Poc"));
+			cve.setOtherId(_ctx.stringValue("DescribeVulDetailsResponse.Cves["+ i +"].OtherId"));
 
 			List<Classify> classifys = new ArrayList<Classify>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeVulDetailsResponse.Cves["+ i +"].Classifys.Length"); j++) {

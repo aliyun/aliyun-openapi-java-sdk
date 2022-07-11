@@ -26,6 +26,8 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribeAlarmEventListRequest extends RpcAcsRequest<DescribeAlarmEventListResponse> {
 	   
 
+	private String timeEnd;
+
 	private String alarmEventType;
 
 	private String remark;
@@ -52,9 +54,17 @@ public class DescribeAlarmEventListRequest extends RpcAcsRequest<DescribeAlarmEv
 
 	private Integer currentPage;
 
+	private String operateTimeEnd;
+
 	private List<String> operateErrorCodeLists;
 
+	private String operateTimeStart;
+
+	private String timeStart;
+
 	private String levels;
+
+	private String uuids;
 	public DescribeAlarmEventListRequest() {
 		super("Sas", "2018-12-03", "DescribeAlarmEventList");
 		setMethod(MethodType.POST);
@@ -62,6 +72,17 @@ public class DescribeAlarmEventListRequest extends RpcAcsRequest<DescribeAlarmEv
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getTimeEnd() {
+		return this.timeEnd;
+	}
+
+	public void setTimeEnd(String timeEnd) {
+		this.timeEnd = timeEnd;
+		if(timeEnd != null){
+			putQueryParameter("TimeEnd", timeEnd);
+		}
 	}
 
 	public String getAlarmEventType() {
@@ -207,6 +228,17 @@ public class DescribeAlarmEventListRequest extends RpcAcsRequest<DescribeAlarmEv
 		}
 	}
 
+	public String getOperateTimeEnd() {
+		return this.operateTimeEnd;
+	}
+
+	public void setOperateTimeEnd(String operateTimeEnd) {
+		this.operateTimeEnd = operateTimeEnd;
+		if(operateTimeEnd != null){
+			putQueryParameter("OperateTimeEnd", operateTimeEnd);
+		}
+	}
+
 	public List<String> getOperateErrorCodeLists() {
 		return this.operateErrorCodeLists;
 	}
@@ -220,6 +252,28 @@ public class DescribeAlarmEventListRequest extends RpcAcsRequest<DescribeAlarmEv
 		}	
 	}
 
+	public String getOperateTimeStart() {
+		return this.operateTimeStart;
+	}
+
+	public void setOperateTimeStart(String operateTimeStart) {
+		this.operateTimeStart = operateTimeStart;
+		if(operateTimeStart != null){
+			putQueryParameter("OperateTimeStart", operateTimeStart);
+		}
+	}
+
+	public String getTimeStart() {
+		return this.timeStart;
+	}
+
+	public void setTimeStart(String timeStart) {
+		this.timeStart = timeStart;
+		if(timeStart != null){
+			putQueryParameter("TimeStart", timeStart);
+		}
+	}
+
 	public String getLevels() {
 		return this.levels;
 	}
@@ -228,6 +282,17 @@ public class DescribeAlarmEventListRequest extends RpcAcsRequest<DescribeAlarmEv
 		this.levels = levels;
 		if(levels != null){
 			putQueryParameter("Levels", levels);
+		}
+	}
+
+	public String getUuids() {
+		return this.uuids;
+	}
+
+	public void setUuids(String uuids) {
+		this.uuids = uuids;
+		if(uuids != null){
+			putQueryParameter("Uuids", uuids);
 		}
 	}
 

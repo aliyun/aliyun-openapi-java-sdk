@@ -54,6 +54,8 @@ public class DescribeVersionConfigResponseUnmarshaller {
 		describeVersionConfigResponse.setImageScanCapacity(_ctx.longValue("DescribeVersionConfigResponse.ImageScanCapacity"));
 		describeVersionConfigResponse.setIsTrialVersion(_ctx.integerValue("DescribeVersionConfigResponse.IsTrialVersion"));
 		describeVersionConfigResponse.setUserDefinedAlarms(_ctx.integerValue("DescribeVersionConfigResponse.UserDefinedAlarms"));
+		describeVersionConfigResponse.setOpenTime(_ctx.longValue("DescribeVersionConfigResponse.OpenTime"));
+		describeVersionConfigResponse.setIsNewContainerVersion(_ctx.booleanValue("DescribeVersionConfigResponse.IsNewContainerVersion"));
 	 
 	 	return describeVersionConfigResponse;
 	}

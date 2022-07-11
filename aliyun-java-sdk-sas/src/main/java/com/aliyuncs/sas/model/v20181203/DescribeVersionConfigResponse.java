@@ -88,6 +88,10 @@ public class DescribeVersionConfigResponse extends AcsResponse {
 
 	private Integer userDefinedAlarms;
 
+	private Long openTime;
+
+	private Boolean isNewContainerVersion;
+
 	public Integer getMVAuthCount() {
 		return this.mVAuthCount;
 	}
@@ -342,6 +346,22 @@ public class DescribeVersionConfigResponse extends AcsResponse {
 
 	public void setUserDefinedAlarms(Integer userDefinedAlarms) {
 		this.userDefinedAlarms = userDefinedAlarms;
+	}
+
+	public Long getOpenTime() {
+		return this.openTime;
+	}
+
+	public void setOpenTime(Long openTime) {
+		this.openTime = openTime;
+	}
+
+	public Boolean getIsNewContainerVersion() {
+		return this.isNewContainerVersion;
+	}
+
+	public void setIsNewContainerVersion(Boolean isNewContainerVersion) {
+		this.isNewContainerVersion = isNewContainerVersion;
 	}
 
 	@Override

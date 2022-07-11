@@ -27,6 +27,8 @@ public class DescribeAssetSummaryResponseUnmarshaller {
 
 		AssetsSummary assetsSummary = new AssetsSummary();
 		assetsSummary.setTotalCoreNum(_ctx.integerValue("DescribeAssetSummaryResponse.AssetsSummary.TotalCoreNum"));
+		assetsSummary.setTotalAssetAllRegion(_ctx.integerValue("DescribeAssetSummaryResponse.AssetsSummary.TotalAssetAllRegion"));
+		assetsSummary.setTotalCoreAllRegion(_ctx.integerValue("DescribeAssetSummaryResponse.AssetsSummary.TotalCoreAllRegion"));
 		describeAssetSummaryResponse.setAssetsSummary(assetsSummary);
 	 
 	 	return describeAssetSummaryResponse;

@@ -83,6 +83,8 @@ public class DescribeVulDetailsResponse extends AcsResponse {
 
 		private String poc;
 
+		private String otherId;
+
 		private List<Classify> classifys;
 
 		public String getSummary() {
@@ -227,6 +229,14 @@ public class DescribeVulDetailsResponse extends AcsResponse {
 
 		public void setPoc(String poc) {
 			this.poc = poc;
+		}
+
+		public String getOtherId() {
+			return this.otherId;
+		}
+
+		public void setOtherId(String otherId) {
+			this.otherId = otherId;
 		}
 
 		public List<Classify> getClassifys() {

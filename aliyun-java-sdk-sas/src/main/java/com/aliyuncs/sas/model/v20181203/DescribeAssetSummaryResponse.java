@@ -48,12 +48,32 @@ public class DescribeAssetSummaryResponse extends AcsResponse {
 
 		private Integer totalCoreNum;
 
+		private Integer totalAssetAllRegion;
+
+		private Integer totalCoreAllRegion;
+
 		public Integer getTotalCoreNum() {
 			return this.totalCoreNum;
 		}
 
 		public void setTotalCoreNum(Integer totalCoreNum) {
 			this.totalCoreNum = totalCoreNum;
+		}
+
+		public Integer getTotalAssetAllRegion() {
+			return this.totalAssetAllRegion;
+		}
+
+		public void setTotalAssetAllRegion(Integer totalAssetAllRegion) {
+			this.totalAssetAllRegion = totalAssetAllRegion;
+		}
+
+		public Integer getTotalCoreAllRegion() {
+			return this.totalCoreAllRegion;
+		}
+
+		public void setTotalCoreAllRegion(Integer totalCoreAllRegion) {
+			this.totalCoreAllRegion = totalCoreAllRegion;
 		}
 	}
 
