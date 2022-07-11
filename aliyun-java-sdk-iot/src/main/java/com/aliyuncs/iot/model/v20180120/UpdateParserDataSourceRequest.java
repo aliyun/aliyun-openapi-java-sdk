@@ -22,22 +22,18 @@ import com.aliyuncs.iot.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateDataSourceItemRequest extends RpcAcsRequest<CreateDataSourceItemResponse> {
+public class UpdateParserDataSourceRequest extends RpcAcsRequest<UpdateParserDataSourceResponse> {
 	   
 
-	private String scopeType;
+	private String description;
 
 	private String iotInstanceId;
 
-	private String productKey;
-
 	private Long dataSourceId;
 
-	private String topic;
-
-	private String deviceName;
-	public CreateDataSourceItemRequest() {
-		super("Iot", "2018-01-20", "CreateDataSourceItem");
+	private String name;
+	public UpdateParserDataSourceRequest() {
+		super("Iot", "2018-01-20", "UpdateParserDataSource");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -45,14 +41,14 @@ public class CreateDataSourceItemRequest extends RpcAcsRequest<CreateDataSourceI
 		} catch (Exception e) {}
 	}
 
-	public String getScopeType() {
-		return this.scopeType;
+	public String getDescription() {
+		return this.description;
 	}
 
-	public void setScopeType(String scopeType) {
-		this.scopeType = scopeType;
-		if(scopeType != null){
-			putQueryParameter("ScopeType", scopeType);
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
 		}
 	}
 
@@ -67,17 +63,6 @@ public class CreateDataSourceItemRequest extends RpcAcsRequest<CreateDataSourceI
 		}
 	}
 
-	public String getProductKey() {
-		return this.productKey;
-	}
-
-	public void setProductKey(String productKey) {
-		this.productKey = productKey;
-		if(productKey != null){
-			putQueryParameter("ProductKey", productKey);
-		}
-	}
-
 	public Long getDataSourceId() {
 		return this.dataSourceId;
 	}
@@ -89,31 +74,20 @@ public class CreateDataSourceItemRequest extends RpcAcsRequest<CreateDataSourceI
 		}
 	}
 
-	public String getTopic() {
-		return this.topic;
+	public String getName() {
+		return this.name;
 	}
 
-	public void setTopic(String topic) {
-		this.topic = topic;
-		if(topic != null){
-			putQueryParameter("Topic", topic);
-		}
-	}
-
-	public String getDeviceName() {
-		return this.deviceName;
-	}
-
-	public void setDeviceName(String deviceName) {
-		this.deviceName = deviceName;
-		if(deviceName != null){
-			putQueryParameter("DeviceName", deviceName);
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 
 	@Override
-	public Class<CreateDataSourceItemResponse> getResponseClass() {
-		return CreateDataSourceItemResponse.class;
+	public Class<UpdateParserDataSourceResponse> getResponseClass() {
+		return UpdateParserDataSourceResponse.class;
 	}
 
 }

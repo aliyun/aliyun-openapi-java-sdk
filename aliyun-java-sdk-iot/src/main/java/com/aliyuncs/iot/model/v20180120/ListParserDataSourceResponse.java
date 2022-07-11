@@ -16,14 +16,14 @@ package com.aliyuncs.iot.model.v20180120;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.iot.transform.v20180120.ListDataSourceItemResponseUnmarshaller;
+import com.aliyuncs.iot.transform.v20180120.ListParserDataSourceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListDataSourceItemResponse extends AcsResponse {
+public class ListParserDataSourceResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -39,7 +39,7 @@ public class ListDataSourceItemResponse extends AcsResponse {
 
 	private Integer total;
 
-	private List<DataSourceItem> dataSourceItems;
+	private List<DataSource> data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -97,69 +97,59 @@ public class ListDataSourceItemResponse extends AcsResponse {
 		this.total = total;
 	}
 
-	public List<DataSourceItem> getDataSourceItems() {
-		return this.dataSourceItems;
+	public List<DataSource> getData() {
+		return this.data;
 	}
 
-	public void setDataSourceItems(List<DataSourceItem> dataSourceItems) {
-		this.dataSourceItems = dataSourceItems;
+	public void setData(List<DataSource> data) {
+		this.data = data;
 	}
 
-	public static class DataSourceItem {
+	public static class DataSource {
 
-		private Long dataSourceItemId;
+		private String name;
 
-		private String topic;
+		private String description;
 
-		private String scopeType;
+		private Long dataSourceId;
 
-		private String productKey;
+		private String utcCreated;
 
-		private String deviceName;
-
-		public Long getDataSourceItemId() {
-			return this.dataSourceItemId;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setDataSourceItemId(Long dataSourceItemId) {
-			this.dataSourceItemId = dataSourceItemId;
+		public void setName(String name) {
+			this.name = name;
 		}
 
-		public String getTopic() {
-			return this.topic;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setTopic(String topic) {
-			this.topic = topic;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
-		public String getScopeType() {
-			return this.scopeType;
+		public Long getDataSourceId() {
+			return this.dataSourceId;
 		}
 
-		public void setScopeType(String scopeType) {
-			this.scopeType = scopeType;
+		public void setDataSourceId(Long dataSourceId) {
+			this.dataSourceId = dataSourceId;
 		}
 
-		public String getProductKey() {
-			return this.productKey;
+		public String getUtcCreated() {
+			return this.utcCreated;
 		}
 
-		public void setProductKey(String productKey) {
-			this.productKey = productKey;
-		}
-
-		public String getDeviceName() {
-			return this.deviceName;
-		}
-
-		public void setDeviceName(String deviceName) {
-			this.deviceName = deviceName;
+		public void setUtcCreated(String utcCreated) {
+			this.utcCreated = utcCreated;
 		}
 	}
 
 	@Override
-	public ListDataSourceItemResponse getInstance(UnmarshallerContext context) {
-		return	ListDataSourceItemResponseUnmarshaller.unmarshall(this, context);
+	public ListParserDataSourceResponse getInstance(UnmarshallerContext context) {
+		return	ListParserDataSourceResponseUnmarshaller.unmarshall(this, context);
 	}
 }

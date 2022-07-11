@@ -22,38 +22,21 @@ import com.aliyuncs.iot.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateDataSourceItemRequest extends RpcAcsRequest<CreateDataSourceItemResponse> {
+public class DeleteDataSourceItemRequest extends RpcAcsRequest<DeleteDataSourceItemResponse> {
 	   
-
-	private String scopeType;
 
 	private String iotInstanceId;
 
-	private String productKey;
+	private Long dataSourceItemId;
 
 	private Long dataSourceId;
-
-	private String topic;
-
-	private String deviceName;
-	public CreateDataSourceItemRequest() {
-		super("Iot", "2018-01-20", "CreateDataSourceItem");
+	public DeleteDataSourceItemRequest() {
+		super("Iot", "2018-01-20", "DeleteDataSourceItem");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getScopeType() {
-		return this.scopeType;
-	}
-
-	public void setScopeType(String scopeType) {
-		this.scopeType = scopeType;
-		if(scopeType != null){
-			putQueryParameter("ScopeType", scopeType);
-		}
 	}
 
 	public String getIotInstanceId() {
@@ -67,14 +50,14 @@ public class CreateDataSourceItemRequest extends RpcAcsRequest<CreateDataSourceI
 		}
 	}
 
-	public String getProductKey() {
-		return this.productKey;
+	public Long getDataSourceItemId() {
+		return this.dataSourceItemId;
 	}
 
-	public void setProductKey(String productKey) {
-		this.productKey = productKey;
-		if(productKey != null){
-			putQueryParameter("ProductKey", productKey);
+	public void setDataSourceItemId(Long dataSourceItemId) {
+		this.dataSourceItemId = dataSourceItemId;
+		if(dataSourceItemId != null){
+			putQueryParameter("DataSourceItemId", dataSourceItemId.toString());
 		}
 	}
 
@@ -89,31 +72,9 @@ public class CreateDataSourceItemRequest extends RpcAcsRequest<CreateDataSourceI
 		}
 	}
 
-	public String getTopic() {
-		return this.topic;
-	}
-
-	public void setTopic(String topic) {
-		this.topic = topic;
-		if(topic != null){
-			putQueryParameter("Topic", topic);
-		}
-	}
-
-	public String getDeviceName() {
-		return this.deviceName;
-	}
-
-	public void setDeviceName(String deviceName) {
-		this.deviceName = deviceName;
-		if(deviceName != null){
-			putQueryParameter("DeviceName", deviceName);
-		}
-	}
-
 	@Override
-	public Class<CreateDataSourceItemResponse> getResponseClass() {
-		return CreateDataSourceItemResponse.class;
+	public Class<DeleteDataSourceItemResponse> getResponseClass() {
+		return DeleteDataSourceItemResponse.class;
 	}
 
 }

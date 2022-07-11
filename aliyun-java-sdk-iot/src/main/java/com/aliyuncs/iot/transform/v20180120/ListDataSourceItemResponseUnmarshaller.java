@@ -39,6 +39,9 @@ public class ListDataSourceItemResponseUnmarshaller {
 			DataSourceItem dataSourceItem = new DataSourceItem();
 			dataSourceItem.setDataSourceItemId(_ctx.longValue("ListDataSourceItemResponse.DataSourceItems["+ i +"].DataSourceItemId"));
 			dataSourceItem.setTopic(_ctx.stringValue("ListDataSourceItemResponse.DataSourceItems["+ i +"].Topic"));
+			dataSourceItem.setScopeType(_ctx.stringValue("ListDataSourceItemResponse.DataSourceItems["+ i +"].ScopeType"));
+			dataSourceItem.setProductKey(_ctx.stringValue("ListDataSourceItemResponse.DataSourceItems["+ i +"].ProductKey"));
+			dataSourceItem.setDeviceName(_ctx.stringValue("ListDataSourceItemResponse.DataSourceItems["+ i +"].DeviceName"));
 
 			dataSourceItems.add(dataSourceItem);
 		}

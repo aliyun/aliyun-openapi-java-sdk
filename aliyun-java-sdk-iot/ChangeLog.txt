@@ -1,3 +1,6 @@
+2022-07-11 Version: 7.41.0
+- Add new api for rule.
+
 2022-06-20 Version: 7.40.0
 - Support Easy Connect New API.
 

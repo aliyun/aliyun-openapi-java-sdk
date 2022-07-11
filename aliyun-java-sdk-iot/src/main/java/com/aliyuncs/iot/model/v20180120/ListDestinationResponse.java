@@ -16,14 +16,14 @@ package com.aliyuncs.iot.model.v20180120;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.iot.transform.v20180120.ListDataSourceItemResponseUnmarshaller;
+import com.aliyuncs.iot.transform.v20180120.ListDestinationResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListDataSourceItemResponse extends AcsResponse {
+public class ListDestinationResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -39,7 +39,7 @@ public class ListDataSourceItemResponse extends AcsResponse {
 
 	private Integer total;
 
-	private List<DataSourceItem> dataSourceItems;
+	private List<DestinationsItem> destinations;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -97,69 +97,89 @@ public class ListDataSourceItemResponse extends AcsResponse {
 		this.total = total;
 	}
 
-	public List<DataSourceItem> getDataSourceItems() {
-		return this.dataSourceItems;
+	public List<DestinationsItem> getDestinations() {
+		return this.destinations;
 	}
 
-	public void setDataSourceItems(List<DataSourceItem> dataSourceItems) {
-		this.dataSourceItems = dataSourceItems;
+	public void setDestinations(List<DestinationsItem> destinations) {
+		this.destinations = destinations;
 	}
 
-	public static class DataSourceItem {
+	public static class DestinationsItem {
 
-		private Long dataSourceItemId;
+		private Long destinationId;
 
-		private String topic;
+		private String name;
 
-		private String scopeType;
+		private String type;
 
-		private String productKey;
+		private String configuration;
 
-		private String deviceName;
+		private Boolean isFailover;
 
-		public Long getDataSourceItemId() {
-			return this.dataSourceItemId;
+		private String utcCreated;
+
+		private String description;
+
+		public Long getDestinationId() {
+			return this.destinationId;
 		}
 
-		public void setDataSourceItemId(Long dataSourceItemId) {
-			this.dataSourceItemId = dataSourceItemId;
+		public void setDestinationId(Long destinationId) {
+			this.destinationId = destinationId;
 		}
 
-		public String getTopic() {
-			return this.topic;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setTopic(String topic) {
-			this.topic = topic;
+		public void setName(String name) {
+			this.name = name;
 		}
 
-		public String getScopeType() {
-			return this.scopeType;
+		public String getType() {
+			return this.type;
 		}
 
-		public void setScopeType(String scopeType) {
-			this.scopeType = scopeType;
+		public void setType(String type) {
+			this.type = type;
 		}
 
-		public String getProductKey() {
-			return this.productKey;
+		public String getConfiguration() {
+			return this.configuration;
 		}
 
-		public void setProductKey(String productKey) {
-			this.productKey = productKey;
+		public void setConfiguration(String configuration) {
+			this.configuration = configuration;
 		}
 
-		public String getDeviceName() {
-			return this.deviceName;
+		public Boolean getIsFailover() {
+			return this.isFailover;
 		}
 
-		public void setDeviceName(String deviceName) {
-			this.deviceName = deviceName;
+		public void setIsFailover(Boolean isFailover) {
+			this.isFailover = isFailover;
+		}
+
+		public String getUtcCreated() {
+			return this.utcCreated;
+		}
+
+		public void setUtcCreated(String utcCreated) {
+			this.utcCreated = utcCreated;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
 		}
 	}
 
 	@Override
-	public ListDataSourceItemResponse getInstance(UnmarshallerContext context) {
-		return	ListDataSourceItemResponseUnmarshaller.unmarshall(this, context);
+	public ListDestinationResponse getInstance(UnmarshallerContext context) {
+		return	ListDestinationResponseUnmarshaller.unmarshall(this, context);
 	}
 }
