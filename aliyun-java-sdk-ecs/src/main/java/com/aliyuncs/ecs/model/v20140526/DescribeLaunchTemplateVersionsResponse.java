@@ -221,6 +221,8 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 
 			private Integer systemDiskIops;
 
+			private String systemDiskAutoSnapshotPolicyId;
+
 			private Integer internetMaxBandwidthOut;
 
 			private Integer internetMaxBandwidthIn;
@@ -244,6 +246,10 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 			private String zoneId;
 
 			private Integer ipv6AddressCount;
+
+			private Long systemDiskProvisionedIops;
+
+			private Boolean systemDiskBurstingEnabled;
 
 			private List<DataDisk> dataDisks;
 
@@ -461,6 +467,14 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 				this.systemDiskIops = systemDiskIops;
 			}
 
+			public String getSystemDiskAutoSnapshotPolicyId() {
+				return this.systemDiskAutoSnapshotPolicyId;
+			}
+
+			public void setSystemDiskAutoSnapshotPolicyId(String systemDiskAutoSnapshotPolicyId) {
+				this.systemDiskAutoSnapshotPolicyId = systemDiskAutoSnapshotPolicyId;
+			}
+
 			public Integer getInternetMaxBandwidthOut() {
 				return this.internetMaxBandwidthOut;
 			}
@@ -557,6 +571,22 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 				this.ipv6AddressCount = ipv6AddressCount;
 			}
 
+			public Long getSystemDiskProvisionedIops() {
+				return this.systemDiskProvisionedIops;
+			}
+
+			public void setSystemDiskProvisionedIops(Long systemDiskProvisionedIops) {
+				this.systemDiskProvisionedIops = systemDiskProvisionedIops;
+			}
+
+			public Boolean getSystemDiskBurstingEnabled() {
+				return this.systemDiskBurstingEnabled;
+			}
+
+			public void setSystemDiskBurstingEnabled(Boolean systemDiskBurstingEnabled) {
+				this.systemDiskBurstingEnabled = systemDiskBurstingEnabled;
+			}
+
 			public List<DataDisk> getDataDisks() {
 				return this.dataDisks;
 			}
@@ -608,6 +638,12 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 				private Boolean deleteWithInstance;
 
 				private String encrypted;
+
+				private Long provisionedIops;
+
+				private Boolean burstingEnabled;
+
+				private String autoSnapshotPolicyId;
 
 				public String getPerformanceLevel() {
 					return this.performanceLevel;
@@ -680,6 +716,30 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 				public void setEncrypted(String encrypted) {
 					this.encrypted = encrypted;
 				}
+
+				public Long getProvisionedIops() {
+					return this.provisionedIops;
+				}
+
+				public void setProvisionedIops(Long provisionedIops) {
+					this.provisionedIops = provisionedIops;
+				}
+
+				public Boolean getBurstingEnabled() {
+					return this.burstingEnabled;
+				}
+
+				public void setBurstingEnabled(Boolean burstingEnabled) {
+					this.burstingEnabled = burstingEnabled;
+				}
+
+				public String getAutoSnapshotPolicyId() {
+					return this.autoSnapshotPolicyId;
+				}
+
+				public void setAutoSnapshotPolicyId(String autoSnapshotPolicyId) {
+					this.autoSnapshotPolicyId = autoSnapshotPolicyId;
+				}
 			}
 
 			public static class NetworkInterface {
@@ -693,6 +753,10 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 				private String primaryIpAddress;
 
 				private String securityGroupId;
+
+				private String instanceType;
+
+				private String networkInterfaceTrafficMode;
 
 				private List<String> securityGroupIds1;
 
@@ -734,6 +798,22 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 
 				public void setSecurityGroupId(String securityGroupId) {
 					this.securityGroupId = securityGroupId;
+				}
+
+				public String getInstanceType() {
+					return this.instanceType;
+				}
+
+				public void setInstanceType(String instanceType) {
+					this.instanceType = instanceType;
+				}
+
+				public String getNetworkInterfaceTrafficMode() {
+					return this.networkInterfaceTrafficMode;
+				}
+
+				public void setNetworkInterfaceTrafficMode(String networkInterfaceTrafficMode) {
+					this.networkInterfaceTrafficMode = networkInterfaceTrafficMode;
 				}
 
 				public List<String> getSecurityGroupIds1() {

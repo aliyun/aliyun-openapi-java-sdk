@@ -41,6 +41,8 @@ public class DescribeCommandsRequest extends RpcAcsRequest<DescribeCommandsRespo
 
 	private Long pageSize;
 
+	private Boolean latest;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -142,6 +144,17 @@ public class DescribeCommandsRequest extends RpcAcsRequest<DescribeCommandsRespo
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Boolean getLatest() {
+		return this.latest;
+	}
+
+	public void setLatest(Boolean latest) {
+		this.latest = latest;
+		if(latest != null){
+			putQueryParameter("Latest", latest.toString());
 		}
 	}
 

@@ -1,3 +1,6 @@
+2022-07-11 Version: 4.24.21
+- Support Storage And Network Features For LaunchTemplate.
+
 2022-06-10 Version: 4.24.20
 - Support removing a instance from a deployment set
 

@@ -50,6 +50,8 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 
 	private List<Tag> tags;
 
+	private String systemDiskAutoSnapshotPolicyId;
+
 	private Integer period;
 
 	private Integer ipv6AddressCount;
@@ -63,6 +65,8 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 	private String spotStrategy;
 
 	private String privateIpAddress;
+
+	private Boolean systemDiskBurstingEnabled;
 
 	private String instanceName;
 
@@ -119,6 +123,8 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 	private List<String> securityGroupIdss;
 
 	private List<DataDisk> dataDisks;
+
+	private Long systemDiskProvisionedIops;
 
 	private Integer systemDiskSize;
 
@@ -272,6 +278,17 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 		}	
 	}
 
+	public String getSystemDiskAutoSnapshotPolicyId() {
+		return this.systemDiskAutoSnapshotPolicyId;
+	}
+
+	public void setSystemDiskAutoSnapshotPolicyId(String systemDiskAutoSnapshotPolicyId) {
+		this.systemDiskAutoSnapshotPolicyId = systemDiskAutoSnapshotPolicyId;
+		if(systemDiskAutoSnapshotPolicyId != null){
+			putQueryParameter("SystemDisk.AutoSnapshotPolicyId", systemDiskAutoSnapshotPolicyId);
+		}
+	}
+
 	public Integer getPeriod() {
 		return this.period;
 	}
@@ -346,6 +363,17 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 		this.privateIpAddress = privateIpAddress;
 		if(privateIpAddress != null){
 			putQueryParameter("PrivateIpAddress", privateIpAddress);
+		}
+	}
+
+	public Boolean getSystemDiskBurstingEnabled() {
+		return this.systemDiskBurstingEnabled;
+	}
+
+	public void setSystemDiskBurstingEnabled(Boolean systemDiskBurstingEnabled) {
+		this.systemDiskBurstingEnabled = systemDiskBurstingEnabled;
+		if(systemDiskBurstingEnabled != null){
+			putQueryParameter("SystemDisk.BurstingEnabled", systemDiskBurstingEnabled.toString());
 		}
 	}
 
@@ -576,6 +604,8 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 						putQueryParameter("NetworkInterface." + (depth1 + 1) + ".SecurityGroupIds." + (i + 1) , networkInterfaces.get(depth1).getSecurityGroupIdss().get(i));
 					}
 				}
+				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".InstanceType" , networkInterfaces.get(depth1).getInstanceType());
+				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".NetworkInterfaceTrafficMode" , networkInterfaces.get(depth1).getNetworkInterfaceTrafficMode());
 			}
 		}	
 	}
@@ -676,8 +706,22 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".Category" , dataDisks.get(depth1).getCategory());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".DeleteWithInstance" , dataDisks.get(depth1).getDeleteWithInstance());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".Encrypted" , dataDisks.get(depth1).getEncrypted());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".AutoSnapshotPolicyId" , dataDisks.get(depth1).getAutoSnapshotPolicyId());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".ProvisionedIops" , dataDisks.get(depth1).getProvisionedIops());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".BurstingEnabled" , dataDisks.get(depth1).getBurstingEnabled());
 			}
 		}	
+	}
+
+	public Long getSystemDiskProvisionedIops() {
+		return this.systemDiskProvisionedIops;
+	}
+
+	public void setSystemDiskProvisionedIops(Long systemDiskProvisionedIops) {
+		this.systemDiskProvisionedIops = systemDiskProvisionedIops;
+		if(systemDiskProvisionedIops != null){
+			putQueryParameter("SystemDisk.ProvisionedIops", systemDiskProvisionedIops.toString());
+		}
 	}
 
 	public Integer getSystemDiskSize() {
@@ -773,6 +817,10 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 
 		private List<String> securityGroupIdss;
 
+		private String instanceType;
+
+		private String networkInterfaceTrafficMode;
+
 		public String getVSwitchId() {
 			return this.vSwitchId;
 		}
@@ -820,6 +868,22 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 		public void setSecurityGroupIdss(List<String> securityGroupIdss) {
 			this.securityGroupIdss = securityGroupIdss;
 		}
+
+		public String getInstanceType() {
+			return this.instanceType;
+		}
+
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
+		}
+
+		public String getNetworkInterfaceTrafficMode() {
+			return this.networkInterfaceTrafficMode;
+		}
+
+		public void setNetworkInterfaceTrafficMode(String networkInterfaceTrafficMode) {
+			this.networkInterfaceTrafficMode = networkInterfaceTrafficMode;
+		}
 	}
 
 	public static class DataDisk {
@@ -841,6 +905,12 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 		private Boolean deleteWithInstance;
 
 		private String encrypted;
+
+		private String autoSnapshotPolicyId;
+
+		private Long provisionedIops;
+
+		private Boolean burstingEnabled;
 
 		public String getPerformanceLevel() {
 			return this.performanceLevel;
@@ -912,6 +982,30 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 
 		public void setEncrypted(String encrypted) {
 			this.encrypted = encrypted;
+		}
+
+		public String getAutoSnapshotPolicyId() {
+			return this.autoSnapshotPolicyId;
+		}
+
+		public void setAutoSnapshotPolicyId(String autoSnapshotPolicyId) {
+			this.autoSnapshotPolicyId = autoSnapshotPolicyId;
+		}
+
+		public Long getProvisionedIops() {
+			return this.provisionedIops;
+		}
+
+		public void setProvisionedIops(Long provisionedIops) {
+			this.provisionedIops = provisionedIops;
+		}
+
+		public Boolean getBurstingEnabled() {
+			return this.burstingEnabled;
+		}
+
+		public void setBurstingEnabled(Boolean burstingEnabled) {
+			this.burstingEnabled = burstingEnabled;
 		}
 	}
 

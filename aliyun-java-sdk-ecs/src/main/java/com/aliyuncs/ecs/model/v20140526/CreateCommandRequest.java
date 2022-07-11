@@ -37,6 +37,8 @@ public class CreateCommandRequest extends RpcAcsRequest<CreateCommandResponse> {
 
 	private Long timeout;
 
+	private String contentEncoding;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -118,6 +120,17 @@ public class CreateCommandRequest extends RpcAcsRequest<CreateCommandResponse> {
 		this.timeout = timeout;
 		if(timeout != null){
 			putQueryParameter("Timeout", timeout.toString());
+		}
+	}
+
+	public String getContentEncoding() {
+		return this.contentEncoding;
+	}
+
+	public void setContentEncoding(String contentEncoding) {
+		this.contentEncoding = contentEncoding;
+		if(contentEncoding != null){
+			putQueryParameter("ContentEncoding", contentEncoding);
 		}
 	}
 

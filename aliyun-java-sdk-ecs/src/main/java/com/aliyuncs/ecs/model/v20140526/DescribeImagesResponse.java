@@ -145,6 +145,10 @@ public class DescribeImagesResponse extends AcsResponse {
 
 		private List<Tag> tags;
 
+		private DetectionOptions detectionOptions;
+
+		private Features features;
+
 		public String getCreationTime() {
 			return this.creationTime;
 		}
@@ -377,6 +381,22 @@ public class DescribeImagesResponse extends AcsResponse {
 			this.tags = tags;
 		}
 
+		public DetectionOptions getDetectionOptions() {
+			return this.detectionOptions;
+		}
+
+		public void setDetectionOptions(DetectionOptions detectionOptions) {
+			this.detectionOptions = detectionOptions;
+		}
+
+		public Features getFeatures() {
+			return this.features;
+		}
+
+		public void setFeatures(Features features) {
+			this.features = features;
+		}
+
 		public static class DiskDeviceMapping {
 
 			private String type;
@@ -490,6 +510,85 @@ public class DescribeImagesResponse extends AcsResponse {
 
 			public void setTagKey(String tagKey) {
 				this.tagKey = tagKey;
+			}
+		}
+
+		public static class DetectionOptions {
+
+			private String status;
+
+			private List<Item> items;
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public List<Item> getItems() {
+				return this.items;
+			}
+
+			public void setItems(List<Item> items) {
+				this.items = items;
+			}
+
+			public static class Item {
+
+				private String name;
+
+				private String value;
+
+				private String riskLevel;
+
+				private String riskCode;
+
+				public String getName() {
+					return this.name;
+				}
+
+				public void setName(String name) {
+					this.name = name;
+				}
+
+				public String getValue() {
+					return this.value;
+				}
+
+				public void setValue(String value) {
+					this.value = value;
+				}
+
+				public String getRiskLevel() {
+					return this.riskLevel;
+				}
+
+				public void setRiskLevel(String riskLevel) {
+					this.riskLevel = riskLevel;
+				}
+
+				public String getRiskCode() {
+					return this.riskCode;
+				}
+
+				public void setRiskCode(String riskCode) {
+					this.riskCode = riskCode;
+				}
+			}
+		}
+
+		public static class Features {
+
+			private String nvmeSupport;
+
+			public String getNvmeSupport() {
+				return this.nvmeSupport;
+			}
+
+			public void setNvmeSupport(String nvmeSupport) {
+				this.nvmeSupport = nvmeSupport;
 			}
 		}
 	}

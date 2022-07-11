@@ -105,6 +105,8 @@ public class DescribeCommandsResponse extends AcsResponse {
 
 		private Boolean enableParameter;
 
+		private List<ParameterDefinition> parameterDefinitions;
+
 		private List<String> parameterNames;
 
 		public String getCreationTime() {
@@ -219,12 +221,73 @@ public class DescribeCommandsResponse extends AcsResponse {
 			this.enableParameter = enableParameter;
 		}
 
+		public List<ParameterDefinition> getParameterDefinitions() {
+			return this.parameterDefinitions;
+		}
+
+		public void setParameterDefinitions(List<ParameterDefinition> parameterDefinitions) {
+			this.parameterDefinitions = parameterDefinitions;
+		}
+
 		public List<String> getParameterNames() {
 			return this.parameterNames;
 		}
 
 		public void setParameterNames(List<String> parameterNames) {
 			this.parameterNames = parameterNames;
+		}
+
+		public static class ParameterDefinition {
+
+			private Boolean required;
+
+			private String description;
+
+			private String defaultValue;
+
+			private String parameterName;
+
+			private List<String> possibleValues;
+
+			public Boolean getRequired() {
+				return this.required;
+			}
+
+			public void setRequired(Boolean required) {
+				this.required = required;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
+			}
+
+			public String getDefaultValue() {
+				return this.defaultValue;
+			}
+
+			public void setDefaultValue(String defaultValue) {
+				this.defaultValue = defaultValue;
+			}
+
+			public String getParameterName() {
+				return this.parameterName;
+			}
+
+			public void setParameterName(String parameterName) {
+				this.parameterName = parameterName;
+			}
+
+			public List<String> getPossibleValues() {
+				return this.possibleValues;
+			}
+
+			public void setPossibleValues(List<String> possibleValues) {
+				this.possibleValues = possibleValues;
+			}
 		}
 	}
 

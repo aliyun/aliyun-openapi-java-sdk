@@ -99,9 +99,15 @@ public class DescribeInvocationsResponse extends AcsResponse {
 
 		private String commandName;
 
+		private String commandDescription;
+
 		private String invokeId;
 
 		private String username;
+
+		private String workingDir;
+
+		private Long timeout;
 
 		private List<InvokeInstance> invokeInstances;
 
@@ -193,6 +199,14 @@ public class DescribeInvocationsResponse extends AcsResponse {
 			this.commandName = commandName;
 		}
 
+		public String getCommandDescription() {
+			return this.commandDescription;
+		}
+
+		public void setCommandDescription(String commandDescription) {
+			this.commandDescription = commandDescription;
+		}
+
 		public String getInvokeId() {
 			return this.invokeId;
 		}
@@ -207,6 +221,22 @@ public class DescribeInvocationsResponse extends AcsResponse {
 
 		public void setUsername(String username) {
 			this.username = username;
+		}
+
+		public String getWorkingDir() {
+			return this.workingDir;
+		}
+
+		public void setWorkingDir(String workingDir) {
+			this.workingDir = workingDir;
+		}
+
+		public Long getTimeout() {
+			return this.timeout;
+		}
+
+		public void setTimeout(Long timeout) {
+			this.timeout = timeout;
 		}
 
 		public List<InvokeInstance> getInvokeInstances() {

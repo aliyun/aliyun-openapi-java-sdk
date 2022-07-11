@@ -19,7 +19,10 @@ import java.util.List;
 
 import com.aliyuncs.ecs.model.v20140526.DescribeImagesResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeImagesResponse.Image;
+import com.aliyuncs.ecs.model.v20140526.DescribeImagesResponse.Image.DetectionOptions;
+import com.aliyuncs.ecs.model.v20140526.DescribeImagesResponse.Image.DetectionOptions.Item;
 import com.aliyuncs.ecs.model.v20140526.DescribeImagesResponse.Image.DiskDeviceMapping;
+import com.aliyuncs.ecs.model.v20140526.DescribeImagesResponse.Image.Features;
 import com.aliyuncs.ecs.model.v20140526.DescribeImagesResponse.Image.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -64,6 +67,26 @@ public class DescribeImagesResponseUnmarshaller {
 			image.setImageOwnerId(_ctx.longValue("DescribeImagesResponse.Images["+ i +"].ImageOwnerId"));
 			image.setLoginAsNonRootSupported(_ctx.booleanValue("DescribeImagesResponse.Images["+ i +"].LoginAsNonRootSupported"));
 			image.setSupplierName(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].SupplierName"));
+
+			DetectionOptions detectionOptions = new DetectionOptions();
+			detectionOptions.setStatus(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].DetectionOptions.Status"));
+
+			List<Item> items = new ArrayList<Item>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeImagesResponse.Images["+ i +"].DetectionOptions.Items.Length"); j++) {
+				Item item = new Item();
+				item.setName(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].DetectionOptions.Items["+ j +"].Name"));
+				item.setValue(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].DetectionOptions.Items["+ j +"].Value"));
+				item.setRiskLevel(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].DetectionOptions.Items["+ j +"].RiskLevel"));
+				item.setRiskCode(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].DetectionOptions.Items["+ j +"].RiskCode"));
+
+				items.add(item);
+			}
+			detectionOptions.setItems(items);
+			image.setDetectionOptions(detectionOptions);
+
+			Features features = new Features();
+			features.setNvmeSupport(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].Features.NvmeSupport"));
+			image.setFeatures(features);
 
 			List<DiskDeviceMapping> diskDeviceMappings = new ArrayList<DiskDeviceMapping>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeImagesResponse.Images["+ i +"].DiskDeviceMappings.Length"); j++) {

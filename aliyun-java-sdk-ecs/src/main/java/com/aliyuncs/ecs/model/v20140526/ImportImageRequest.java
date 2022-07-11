@@ -46,6 +46,8 @@ public class ImportImageRequest extends RpcAcsRequest<ImportImageResponse> {
 
 	private String licenseType;
 
+	private String detectionStrategy;
+
 	private String resourceOwnerAccount;
 
 	private String roleName;
@@ -179,6 +181,17 @@ public class ImportImageRequest extends RpcAcsRequest<ImportImageResponse> {
 		this.licenseType = licenseType;
 		if(licenseType != null){
 			putQueryParameter("LicenseType", licenseType);
+		}
+	}
+
+	public String getDetectionStrategy() {
+		return this.detectionStrategy;
+	}
+
+	public void setDetectionStrategy(String detectionStrategy) {
+		this.detectionStrategy = detectionStrategy;
+		if(detectionStrategy != null){
+			putQueryParameter("DetectionStrategy", detectionStrategy);
 		}
 	}
 
