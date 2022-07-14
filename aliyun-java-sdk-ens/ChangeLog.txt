@@ -1,3 +1,6 @@
+2022-07-14 Version: 3.0.4
+- Support API ARMInstance.
+
 2022-06-21 Version: 3.0.3
 - Support API NetWork.
 
