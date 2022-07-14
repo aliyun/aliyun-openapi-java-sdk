@@ -72,6 +72,10 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 
 	private Integer ipv6AddressCount;
 
+	private Boolean ipv6GatewayBandwidthEnable;
+
+	private String ipv6GatewayBandwidth;
+
 	private Integer activeDeadlineSeconds;
 
 	private String spotStrategy;
@@ -887,6 +891,28 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 		this.ipv6AddressCount = ipv6AddressCount;
 		if (null != ipv6AddressCount) {
 			putQueryParameter("Ipv6AddressCount", ipv6AddressCount);
+		}
+	}
+
+	public Boolean getIpv6GatewayBandwidthEnable() {
+		return this.ipv6GatewayBandwidthEnable;
+	}
+
+	public void setIpv6GatewayBandwidthEnable(Boolean ipv6GatewayBandwidthEnable) {
+		this.ipv6GatewayBandwidthEnable = ipv6GatewayBandwidthEnable;
+		if (null != ipv6GatewayBandwidthEnable) {
+			putQueryParameter("Ipv6GatewayBandwidthEnable", ipv6GatewayBandwidthEnable);
+		}
+	}
+
+	public String getIpv6GatewayBandwidth() {
+		return this.ipv6GatewayBandwidth;
+	}
+
+	public void setIpv6GatewayBandwidth(String ipv6GatewayBandwidth) {
+		this.ipv6GatewayBandwidth = ipv6GatewayBandwidth;
+		if (null != ipv6GatewayBandwidth) {
+			putQueryParameter("Ipv6GatewayBandwidth", ipv6GatewayBandwidth);
 		}
 	}
 
