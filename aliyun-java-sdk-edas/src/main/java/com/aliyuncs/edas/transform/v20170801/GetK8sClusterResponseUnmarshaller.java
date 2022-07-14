@@ -50,11 +50,12 @@ public class GetK8sClusterResponseUnmarshaller {
 			cluster.setCsClusterId(_ctx.stringValue("GetK8sClusterResponse.ClusterPage.ClusterList["+ i +"].CsClusterId"));
 			cluster.setDescription(_ctx.stringValue("GetK8sClusterResponse.ClusterPage.ClusterList["+ i +"].Description"));
 			cluster.setClusterType(_ctx.integerValue("GetK8sClusterResponse.ClusterPage.ClusterList["+ i +"].ClusterType"));
-			cluster.setClusterStatus(_ctx.integerValue("GetK8sClusterResponse.ClusterPage.ClusterList["+ i +"].ClusterStatus"));
 			cluster.setClusterName(_ctx.stringValue("GetK8sClusterResponse.ClusterPage.ClusterList["+ i +"].ClusterName"));
 			cluster.setNodeNum(_ctx.integerValue("GetK8sClusterResponse.ClusterPage.ClusterList["+ i +"].NodeNum"));
 			cluster.setClusterId(_ctx.stringValue("GetK8sClusterResponse.ClusterPage.ClusterList["+ i +"].ClusterId"));
 			cluster.setClusterImportStatus(_ctx.integerValue("GetK8sClusterResponse.ClusterPage.ClusterList["+ i +"].ClusterImportStatus"));
+			cluster.setSubClusterType(_ctx.stringValue("GetK8sClusterResponse.ClusterPage.ClusterList["+ i +"].SubClusterType"));
+			cluster.setClusterStatus(_ctx.integerValue("GetK8sClusterResponse.ClusterPage.ClusterList["+ i +"].ClusterStatus"));
 
 			clusterList.add(cluster);
 		}

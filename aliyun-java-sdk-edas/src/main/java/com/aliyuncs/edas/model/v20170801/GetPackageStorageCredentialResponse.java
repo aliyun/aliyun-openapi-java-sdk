@@ -80,6 +80,12 @@ public class GetPackageStorageCredentialResponse extends AcsResponse {
 
 		private String regionId;
 
+		private String ossPublicEndpoint;
+
+		private String ossInternalEndpoint;
+
+		private String ossVpcEndpoint;
+
 		public String getKeyPrefix() {
 			return this.keyPrefix;
 		}
@@ -134,6 +140,30 @@ public class GetPackageStorageCredentialResponse extends AcsResponse {
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
+		}
+
+		public String getOssPublicEndpoint() {
+			return this.ossPublicEndpoint;
+		}
+
+		public void setOssPublicEndpoint(String ossPublicEndpoint) {
+			this.ossPublicEndpoint = ossPublicEndpoint;
+		}
+
+		public String getOssInternalEndpoint() {
+			return this.ossInternalEndpoint;
+		}
+
+		public void setOssInternalEndpoint(String ossInternalEndpoint) {
+			this.ossInternalEndpoint = ossInternalEndpoint;
+		}
+
+		public String getOssVpcEndpoint() {
+			return this.ossVpcEndpoint;
+		}
+
+		public void setOssVpcEndpoint(String ossVpcEndpoint) {
+			this.ossVpcEndpoint = ossVpcEndpoint;
 		}
 	}
 

@@ -35,6 +35,9 @@ public class GetPackageStorageCredentialResponseUnmarshaller {
 		credential.setAccessKeyId(_ctx.stringValue("GetPackageStorageCredentialResponse.Credential.AccessKeyId"));
 		credential.setBucket(_ctx.stringValue("GetPackageStorageCredentialResponse.Credential.Bucket"));
 		credential.setRegionId(_ctx.stringValue("GetPackageStorageCredentialResponse.Credential.RegionId"));
+		credential.setOssPublicEndpoint(_ctx.stringValue("GetPackageStorageCredentialResponse.Credential.OssPublicEndpoint"));
+		credential.setOssInternalEndpoint(_ctx.stringValue("GetPackageStorageCredentialResponse.Credential.OssInternalEndpoint"));
+		credential.setOssVpcEndpoint(_ctx.stringValue("GetPackageStorageCredentialResponse.Credential.OssVpcEndpoint"));
 		getPackageStorageCredentialResponse.setCredential(credential);
 	 
 	 	return getPackageStorageCredentialResponse;

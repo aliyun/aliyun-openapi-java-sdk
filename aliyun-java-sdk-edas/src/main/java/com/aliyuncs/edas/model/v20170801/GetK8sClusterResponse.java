@@ -131,8 +131,6 @@ public class GetK8sClusterResponse extends AcsResponse {
 
 			private Integer clusterType;
 
-			private Integer clusterStatus;
-
 			private String clusterName;
 
 			private Integer nodeNum;
@@ -140,6 +138,10 @@ public class GetK8sClusterResponse extends AcsResponse {
 			private String clusterId;
 
 			private Integer clusterImportStatus;
+
+			private String subClusterType;
+
+			private Integer clusterStatus;
 
 			public String getVpcId() {
 				return this.vpcId;
@@ -229,14 +231,6 @@ public class GetK8sClusterResponse extends AcsResponse {
 				this.clusterType = clusterType;
 			}
 
-			public Integer getClusterStatus() {
-				return this.clusterStatus;
-			}
-
-			public void setClusterStatus(Integer clusterStatus) {
-				this.clusterStatus = clusterStatus;
-			}
-
 			public String getClusterName() {
 				return this.clusterName;
 			}
@@ -267,6 +261,22 @@ public class GetK8sClusterResponse extends AcsResponse {
 
 			public void setClusterImportStatus(Integer clusterImportStatus) {
 				this.clusterImportStatus = clusterImportStatus;
+			}
+
+			public String getSubClusterType() {
+				return this.subClusterType;
+			}
+
+			public void setSubClusterType(String subClusterType) {
+				this.subClusterType = subClusterType;
+			}
+
+			public Integer getClusterStatus() {
+				return this.clusterStatus;
+			}
+
+			public void setClusterStatus(Integer clusterStatus) {
+				this.clusterStatus = clusterStatus;
 			}
 		}
 	}
