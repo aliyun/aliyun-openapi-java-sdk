@@ -31,8 +31,8 @@ public class DescribeConnectableClustersResponseUnmarshaller {
 		List<ConnectableClustersInfo> result = new ArrayList<ConnectableClustersInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeConnectableClustersResponse.Result.Length"); i++) {
 			ConnectableClustersInfo connectableClustersInfo = new ConnectableClustersInfo();
-			connectableClustersInfo.setInstances(_ctx.stringValue("DescribeConnectableClustersResponse.Result["+ i +"].instances"));
 			connectableClustersInfo.setNetworkType(_ctx.stringValue("DescribeConnectableClustersResponse.Result["+ i +"].networkType"));
+			connectableClustersInfo.setInstances(_ctx.stringValue("DescribeConnectableClustersResponse.Result["+ i +"].instances"));
 
 			result.add(connectableClustersInfo);
 		}

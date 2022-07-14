@@ -28,6 +28,8 @@ public class InstallAckOperatorRequest extends RoaAcsRequest<InstallAckOperatorR
 	private String clientToken;
 
 	private String clusterId;
+
+	private String body;
 	public InstallAckOperatorRequest() {
 		super("elasticsearch", "2017-06-13", "InstallAckOperator", "elasticsearch");
 		setUriPattern("/openapi/ack-clusters/[ClusterId]/operator");
@@ -57,6 +59,17 @@ public class InstallAckOperatorRequest extends RoaAcsRequest<InstallAckOperatorR
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putPathParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

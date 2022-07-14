@@ -28,6 +28,8 @@ public class ActivateZonesRequest extends RoaAcsRequest<ActivateZonesResponse> {
 	private String instanceId;
 
 	private String clientToken;
+
+	private String body;
 	public ActivateZonesRequest() {
 		super("elasticsearch", "2017-06-13", "ActivateZones", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/actions/recover-zones");
@@ -57,6 +59,17 @@ public class ActivateZonesRequest extends RoaAcsRequest<ActivateZonesResponse> {
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("clientToken", clientToken);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

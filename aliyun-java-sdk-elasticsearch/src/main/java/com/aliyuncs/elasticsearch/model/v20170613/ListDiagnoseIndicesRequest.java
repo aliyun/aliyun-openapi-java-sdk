@@ -28,6 +28,8 @@ public class ListDiagnoseIndicesRequest extends RoaAcsRequest<ListDiagnoseIndice
 	private String instanceId;
 
 	private String lang;
+
+	private String body;
 	public ListDiagnoseIndicesRequest() {
 		super("elasticsearch", "2017-06-13", "ListDiagnoseIndices", "elasticsearch");
 		setUriPattern("/openapi/diagnosis/instances/[InstanceId]/indices");
@@ -57,6 +59,17 @@ public class ListDiagnoseIndicesRequest extends RoaAcsRequest<ListDiagnoseIndice
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("lang", lang);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

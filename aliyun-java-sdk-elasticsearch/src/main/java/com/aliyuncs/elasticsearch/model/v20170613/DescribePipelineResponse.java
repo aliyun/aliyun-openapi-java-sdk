@@ -48,27 +48,27 @@ public class DescribePipelineResponse extends AcsResponse {
 
 		private String pipelineId;
 
-		private String config;
-
-		private String pipelineStatus;
-
-		private String gmtCreatedTime;
-
 		private String gmtUpdateTime;
-
-		private Integer workers;
-
-		private Integer batchSize;
-
-		private Integer batchDelay;
-
-		private String description;
 
 		private String queueType;
 
+		private Integer queueCheckPointWrites;
+
 		private Integer queueMaxBytes;
 
-		private Integer queueCheckPointWrites;
+		private String config;
+
+		private Integer batchDelay;
+
+		private Integer workers;
+
+		private String description;
+
+		private String gmtCreatedTime;
+
+		private Integer batchSize;
+
+		private String pipelineStatus;
 
 		public String getPipelineId() {
 			return this.pipelineId;
@@ -76,30 +76,6 @@ public class DescribePipelineResponse extends AcsResponse {
 
 		public void setPipelineId(String pipelineId) {
 			this.pipelineId = pipelineId;
-		}
-
-		public String getConfig() {
-			return this.config;
-		}
-
-		public void setConfig(String config) {
-			this.config = config;
-		}
-
-		public String getPipelineStatus() {
-			return this.pipelineStatus;
-		}
-
-		public void setPipelineStatus(String pipelineStatus) {
-			this.pipelineStatus = pipelineStatus;
-		}
-
-		public String getGmtCreatedTime() {
-			return this.gmtCreatedTime;
-		}
-
-		public void setGmtCreatedTime(String gmtCreatedTime) {
-			this.gmtCreatedTime = gmtCreatedTime;
 		}
 
 		public String getGmtUpdateTime() {
@@ -110,44 +86,20 @@ public class DescribePipelineResponse extends AcsResponse {
 			this.gmtUpdateTime = gmtUpdateTime;
 		}
 
-		public Integer getWorkers() {
-			return this.workers;
-		}
-
-		public void setWorkers(Integer workers) {
-			this.workers = workers;
-		}
-
-		public Integer getBatchSize() {
-			return this.batchSize;
-		}
-
-		public void setBatchSize(Integer batchSize) {
-			this.batchSize = batchSize;
-		}
-
-		public Integer getBatchDelay() {
-			return this.batchDelay;
-		}
-
-		public void setBatchDelay(Integer batchDelay) {
-			this.batchDelay = batchDelay;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
 		public String getQueueType() {
 			return this.queueType;
 		}
 
 		public void setQueueType(String queueType) {
 			this.queueType = queueType;
+		}
+
+		public Integer getQueueCheckPointWrites() {
+			return this.queueCheckPointWrites;
+		}
+
+		public void setQueueCheckPointWrites(Integer queueCheckPointWrites) {
+			this.queueCheckPointWrites = queueCheckPointWrites;
 		}
 
 		public Integer getQueueMaxBytes() {
@@ -158,12 +110,60 @@ public class DescribePipelineResponse extends AcsResponse {
 			this.queueMaxBytes = queueMaxBytes;
 		}
 
-		public Integer getQueueCheckPointWrites() {
-			return this.queueCheckPointWrites;
+		public String getConfig() {
+			return this.config;
 		}
 
-		public void setQueueCheckPointWrites(Integer queueCheckPointWrites) {
-			this.queueCheckPointWrites = queueCheckPointWrites;
+		public void setConfig(String config) {
+			this.config = config;
+		}
+
+		public Integer getBatchDelay() {
+			return this.batchDelay;
+		}
+
+		public void setBatchDelay(Integer batchDelay) {
+			this.batchDelay = batchDelay;
+		}
+
+		public Integer getWorkers() {
+			return this.workers;
+		}
+
+		public void setWorkers(Integer workers) {
+			this.workers = workers;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getGmtCreatedTime() {
+			return this.gmtCreatedTime;
+		}
+
+		public void setGmtCreatedTime(String gmtCreatedTime) {
+			this.gmtCreatedTime = gmtCreatedTime;
+		}
+
+		public Integer getBatchSize() {
+			return this.batchSize;
+		}
+
+		public void setBatchSize(Integer batchSize) {
+			this.batchSize = batchSize;
+		}
+
+		public String getPipelineStatus() {
+			return this.pipelineStatus;
+		}
+
+		public void setPipelineStatus(String pipelineStatus) {
+			this.pipelineStatus = pipelineStatus;
 		}
 	}
 

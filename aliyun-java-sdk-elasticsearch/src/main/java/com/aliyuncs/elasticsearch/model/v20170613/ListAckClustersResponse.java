@@ -47,29 +47,13 @@ public class ListAckClustersResponse extends AcsResponse {
 
 	public static class ResultItem {
 
-		private String clusterId;
-
-		private String name;
-
 		private String clusterType;
 
 		private String vpcId;
 
-		public String getClusterId() {
-			return this.clusterId;
-		}
+		private String name;
 
-		public void setClusterId(String clusterId) {
-			this.clusterId = clusterId;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
+		private String clusterId;
 
 		public String getClusterType() {
 			return this.clusterType;
@@ -85,6 +69,22 @@ public class ListAckClustersResponse extends AcsResponse {
 
 		public void setVpcId(String vpcId) {
 			this.vpcId = vpcId;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getClusterId() {
+			return this.clusterId;
+		}
+
+		public void setClusterId(String clusterId) {
+			this.clusterId = clusterId;
 		}
 	}
 

@@ -30,6 +30,8 @@ public class DiagnoseInstanceRequest extends RoaAcsRequest<DiagnoseInstanceRespo
 	private String clientToken;
 
 	private String lang;
+
+	private String body;
 	public DiagnoseInstanceRequest() {
 		super("elasticsearch", "2017-06-13", "DiagnoseInstance", "elasticsearch");
 		setUriPattern("/openapi/diagnosis/instances/[InstanceId]/actions/diagnose");
@@ -70,6 +72,17 @@ public class DiagnoseInstanceRequest extends RoaAcsRequest<DiagnoseInstanceRespo
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("lang", lang);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

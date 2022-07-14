@@ -47,25 +47,17 @@ public class DescribeIndexTemplateResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String indexTemplate;
-
 		private Boolean dataStream;
 
-		private Integer priority;
+		private String indexTemplate;
 
 		private String ilmPolicy;
+
+		private Integer priority;
 
 		private List<String> indexPatterns;
 
 		private Template template;
-
-		public String getIndexTemplate() {
-			return this.indexTemplate;
-		}
-
-		public void setIndexTemplate(String indexTemplate) {
-			this.indexTemplate = indexTemplate;
-		}
 
 		public Boolean getDataStream() {
 			return this.dataStream;
@@ -75,12 +67,12 @@ public class DescribeIndexTemplateResponse extends AcsResponse {
 			this.dataStream = dataStream;
 		}
 
-		public Integer getPriority() {
-			return this.priority;
+		public String getIndexTemplate() {
+			return this.indexTemplate;
 		}
 
-		public void setPriority(Integer priority) {
-			this.priority = priority;
+		public void setIndexTemplate(String indexTemplate) {
+			this.indexTemplate = indexTemplate;
 		}
 
 		public String getIlmPolicy() {
@@ -89,6 +81,14 @@ public class DescribeIndexTemplateResponse extends AcsResponse {
 
 		public void setIlmPolicy(String ilmPolicy) {
 			this.ilmPolicy = ilmPolicy;
+		}
+
+		public Integer getPriority() {
+			return this.priority;
+		}
+
+		public void setPriority(Integer priority) {
+			this.priority = priority;
 		}
 
 		public List<String> getIndexPatterns() {

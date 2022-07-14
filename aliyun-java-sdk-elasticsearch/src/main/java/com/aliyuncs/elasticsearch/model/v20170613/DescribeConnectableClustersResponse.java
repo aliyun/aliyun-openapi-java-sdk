@@ -47,17 +47,9 @@ public class DescribeConnectableClustersResponse extends AcsResponse {
 
 	public static class ConnectableClustersInfo {
 
-		private String instances;
-
 		private String networkType;
 
-		public String getInstances() {
-			return this.instances;
-		}
-
-		public void setInstances(String instances) {
-			this.instances = instances;
-		}
+		private String instances;
 
 		public String getNetworkType() {
 			return this.networkType;
@@ -65,6 +57,14 @@ public class DescribeConnectableClustersResponse extends AcsResponse {
 
 		public void setNetworkType(String networkType) {
 			this.networkType = networkType;
+		}
+
+		public String getInstances() {
+			return this.instances;
+		}
+
+		public void setInstances(String instances) {
+			this.instances = instances;
 		}
 	}
 

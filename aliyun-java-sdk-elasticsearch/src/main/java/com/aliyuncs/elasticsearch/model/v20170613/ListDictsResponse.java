@@ -57,23 +57,15 @@ public class ListDictsResponse extends AcsResponse {
 
 	public static class ResultItem {
 
-		private String name;
-
 		private Long fileSize;
-
-		private String type;
-
-		private String sourceType;
 
 		private String downloadUrl;
 
-		public String getName() {
-			return this.name;
-		}
+		private String sourceType;
 
-		public void setName(String name) {
-			this.name = name;
-		}
+		private String type;
+
+		private String name;
 
 		public Long getFileSize() {
 			return this.fileSize;
@@ -83,12 +75,12 @@ public class ListDictsResponse extends AcsResponse {
 			this.fileSize = fileSize;
 		}
 
-		public String getType() {
-			return this.type;
+		public String getDownloadUrl() {
+			return this.downloadUrl;
 		}
 
-		public void setType(String type) {
-			this.type = type;
+		public void setDownloadUrl(String downloadUrl) {
+			this.downloadUrl = downloadUrl;
 		}
 
 		public String getSourceType() {
@@ -99,12 +91,20 @@ public class ListDictsResponse extends AcsResponse {
 			this.sourceType = sourceType;
 		}
 
-		public String getDownloadUrl() {
-			return this.downloadUrl;
+		public String getType() {
+			return this.type;
 		}
 
-		public void setDownloadUrl(String downloadUrl) {
-			this.downloadUrl = downloadUrl;
+		public void setType(String type) {
+			this.type = type;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 	}
 

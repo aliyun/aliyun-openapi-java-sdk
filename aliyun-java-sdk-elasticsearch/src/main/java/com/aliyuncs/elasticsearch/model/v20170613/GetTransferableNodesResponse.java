@@ -47,17 +47,9 @@ public class GetTransferableNodesResponse extends AcsResponse {
 
 	public static class ResultItem {
 
-		private String host;
-
 		private Integer port;
 
-		public String getHost() {
-			return this.host;
-		}
-
-		public void setHost(String host) {
-			this.host = host;
-		}
+		private String host;
 
 		public Integer getPort() {
 			return this.port;
@@ -65,6 +57,14 @@ public class GetTransferableNodesResponse extends AcsResponse {
 
 		public void setPort(Integer port) {
 			this.port = port;
+		}
+
+		public String getHost() {
+			return this.host;
+		}
+
+		public void setHost(String host) {
+			this.host = host;
 		}
 	}
 

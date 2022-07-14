@@ -31,8 +31,8 @@ public class UpdateExtendfilesResponseUnmarshaller {
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("UpdateExtendfilesResponse.Result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setName(_ctx.stringValue("UpdateExtendfilesResponse.Result["+ i +"].name"));
 			resultItem.setFileSize(_ctx.longValue("UpdateExtendfilesResponse.Result["+ i +"].fileSize"));
+			resultItem.setName(_ctx.stringValue("UpdateExtendfilesResponse.Result["+ i +"].name"));
 			resultItem.setSourceType(_ctx.stringValue("UpdateExtendfilesResponse.Result["+ i +"].sourceType"));
 
 			result.add(resultItem);

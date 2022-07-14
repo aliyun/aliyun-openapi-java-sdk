@@ -26,8 +26,8 @@ public class EstimatedLogstashRestartTimeResponseUnmarshaller {
 		estimatedLogstashRestartTimeResponse.setRequestId(_ctx.stringValue("EstimatedLogstashRestartTimeResponse.RequestId"));
 
 		Result result = new Result();
-		result.setValue(_ctx.longValue("EstimatedLogstashRestartTimeResponse.Result.value"));
 		result.setUnit(_ctx.stringValue("EstimatedLogstashRestartTimeResponse.Result.unit"));
+		result.setValue(_ctx.longValue("EstimatedLogstashRestartTimeResponse.Result.value"));
 		estimatedLogstashRestartTimeResponse.setResult(result);
 	 
 	 	return estimatedLogstashRestartTimeResponse;

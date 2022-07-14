@@ -47,20 +47,20 @@ public class ListExtendfilesResponse extends AcsResponse {
 
 	public static class ResultItem {
 
-		private String name;
+		private String filePath;
 
 		private Long fileSize;
 
+		private String name;
+
 		private String sourceType;
 
-		private String filePath;
-
-		public String getName() {
-			return this.name;
+		public String getFilePath() {
+			return this.filePath;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+		public void setFilePath(String filePath) {
+			this.filePath = filePath;
 		}
 
 		public Long getFileSize() {
@@ -71,20 +71,20 @@ public class ListExtendfilesResponse extends AcsResponse {
 			this.fileSize = fileSize;
 		}
 
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
 		public String getSourceType() {
 			return this.sourceType;
 		}
 
 		public void setSourceType(String sourceType) {
 			this.sourceType = sourceType;
-		}
-
-		public String getFilePath() {
-			return this.filePath;
-		}
-
-		public void setFilePath(String filePath) {
-			this.filePath = filePath;
 		}
 	}
 

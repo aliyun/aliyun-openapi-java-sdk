@@ -26,6 +26,8 @@ public class CreateCollectorRequest extends RoaAcsRequest<CreateCollectorRespons
 	   
 
 	private String clientToken;
+
+	private String body;
 	public CreateCollectorRequest() {
 		super("elasticsearch", "2017-06-13", "CreateCollector", "elasticsearch");
 		setUriPattern("/openapi/collectors");
@@ -44,6 +46,17 @@ public class CreateCollectorRequest extends RoaAcsRequest<CreateCollectorRespons
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("clientToken", clientToken);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

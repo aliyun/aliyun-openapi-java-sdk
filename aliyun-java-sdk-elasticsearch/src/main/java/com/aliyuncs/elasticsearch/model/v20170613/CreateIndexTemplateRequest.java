@@ -28,6 +28,8 @@ public class CreateIndexTemplateRequest extends RoaAcsRequest<CreateIndexTemplat
 	private String instanceId;
 
 	private String clientToken;
+
+	private String body;
 	public CreateIndexTemplateRequest() {
 		super("elasticsearch", "2017-06-13", "CreateIndexTemplate", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/index-templates");
@@ -57,6 +59,17 @@ public class CreateIndexTemplateRequest extends RoaAcsRequest<CreateIndexTemplat
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

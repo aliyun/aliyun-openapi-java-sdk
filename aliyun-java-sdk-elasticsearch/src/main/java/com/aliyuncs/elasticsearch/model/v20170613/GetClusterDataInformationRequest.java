@@ -24,6 +24,8 @@ import com.aliyuncs.elasticsearch.Endpoint;
  */
 public class GetClusterDataInformationRequest extends RoaAcsRequest<GetClusterDataInformationResponse> {
 	   
+
+	private String body;
 	public GetClusterDataInformationRequest() {
 		super("elasticsearch", "2017-06-13", "GetClusterDataInformation", "elasticsearch");
 		setUriPattern("/openapi/cluster/data-information");
@@ -32,6 +34,17 @@ public class GetClusterDataInformationRequest extends RoaAcsRequest<GetClusterDa
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
+		}
 	}
 
 	@Override

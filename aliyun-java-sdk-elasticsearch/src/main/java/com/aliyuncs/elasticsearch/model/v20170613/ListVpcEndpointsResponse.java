@@ -47,39 +47,23 @@ public class ListVpcEndpointsResponse extends AcsResponse {
 
 	public static class ResultItem {
 
-		private String connectionStatus;
-
-		private String createTime;
-
 		private String endpointBusinessStatus;
-
-		private String endpointId;
-
-		private String endpointName;
-
-		private String endpointStatus;
 
 		private String serviceId;
 
+		private String endpointName;
+
+		private String endpointId;
+
 		private String serviceName;
+
+		private String createTime;
+
+		private String connectionStatus;
 
 		private String endpointDomain;
 
-		public String getConnectionStatus() {
-			return this.connectionStatus;
-		}
-
-		public void setConnectionStatus(String connectionStatus) {
-			this.connectionStatus = connectionStatus;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
+		private String endpointStatus;
 
 		public String getEndpointBusinessStatus() {
 			return this.endpointBusinessStatus;
@@ -87,30 +71,6 @@ public class ListVpcEndpointsResponse extends AcsResponse {
 
 		public void setEndpointBusinessStatus(String endpointBusinessStatus) {
 			this.endpointBusinessStatus = endpointBusinessStatus;
-		}
-
-		public String getEndpointId() {
-			return this.endpointId;
-		}
-
-		public void setEndpointId(String endpointId) {
-			this.endpointId = endpointId;
-		}
-
-		public String getEndpointName() {
-			return this.endpointName;
-		}
-
-		public void setEndpointName(String endpointName) {
-			this.endpointName = endpointName;
-		}
-
-		public String getEndpointStatus() {
-			return this.endpointStatus;
-		}
-
-		public void setEndpointStatus(String endpointStatus) {
-			this.endpointStatus = endpointStatus;
 		}
 
 		public String getServiceId() {
@@ -121,6 +81,22 @@ public class ListVpcEndpointsResponse extends AcsResponse {
 			this.serviceId = serviceId;
 		}
 
+		public String getEndpointName() {
+			return this.endpointName;
+		}
+
+		public void setEndpointName(String endpointName) {
+			this.endpointName = endpointName;
+		}
+
+		public String getEndpointId() {
+			return this.endpointId;
+		}
+
+		public void setEndpointId(String endpointId) {
+			this.endpointId = endpointId;
+		}
+
 		public String getServiceName() {
 			return this.serviceName;
 		}
@@ -129,12 +105,36 @@ public class ListVpcEndpointsResponse extends AcsResponse {
 			this.serviceName = serviceName;
 		}
 
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getConnectionStatus() {
+			return this.connectionStatus;
+		}
+
+		public void setConnectionStatus(String connectionStatus) {
+			this.connectionStatus = connectionStatus;
+		}
+
 		public String getEndpointDomain() {
 			return this.endpointDomain;
 		}
 
 		public void setEndpointDomain(String endpointDomain) {
 			this.endpointDomain = endpointDomain;
+		}
+
+		public String getEndpointStatus() {
+			return this.endpointStatus;
+		}
+
+		public void setEndpointStatus(String endpointStatus) {
+			this.endpointStatus = endpointStatus;
 		}
 	}
 

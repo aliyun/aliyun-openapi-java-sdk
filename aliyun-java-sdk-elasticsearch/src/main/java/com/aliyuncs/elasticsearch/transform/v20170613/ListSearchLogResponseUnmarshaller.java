@@ -37,12 +37,12 @@ public class ListSearchLogResponseUnmarshaller {
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListSearchLogResponse.Result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setTimestamp(_ctx.longValue("ListSearchLogResponse.Result["+ i +"].timestamp"));
-			resultItem.setHost(_ctx.stringValue("ListSearchLogResponse.Result["+ i +"].host"));
-			resultItem.setInstanceId(_ctx.stringValue("ListSearchLogResponse.Result["+ i +"].instanceId"));
-			resultItem.setContentCollection(_ctx.mapValue("ListSearchLogResponse.Result["+ i +"].contentCollection"));
 			resultItem.setLevel(_ctx.stringValue("ListSearchLogResponse.Result["+ i +"].level"));
+			resultItem.setHost(_ctx.stringValue("ListSearchLogResponse.Result["+ i +"].host"));
 			resultItem.setContent(_ctx.stringValue("ListSearchLogResponse.Result["+ i +"].content"));
+			resultItem.setTimestamp(_ctx.longValue("ListSearchLogResponse.Result["+ i +"].timestamp"));
+			resultItem.setContentCollection(_ctx.mapValue("ListSearchLogResponse.Result["+ i +"].contentCollection"));
+			resultItem.setInstanceId(_ctx.stringValue("ListSearchLogResponse.Result["+ i +"].instanceId"));
 
 			result.add(resultItem);
 		}

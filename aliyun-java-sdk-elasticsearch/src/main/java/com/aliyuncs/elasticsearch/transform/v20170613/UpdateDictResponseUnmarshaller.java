@@ -31,10 +31,10 @@ public class UpdateDictResponseUnmarshaller {
 		List<DictList> result = new ArrayList<DictList>();
 		for (int i = 0; i < _ctx.lengthValue("UpdateDictResponse.Result.Length"); i++) {
 			DictList dictList = new DictList();
-			dictList.setName(_ctx.stringValue("UpdateDictResponse.Result["+ i +"].name"));
 			dictList.setFileSize(_ctx.longValue("UpdateDictResponse.Result["+ i +"].fileSize"));
-			dictList.setType(_ctx.stringValue("UpdateDictResponse.Result["+ i +"].type"));
 			dictList.setSourceType(_ctx.stringValue("UpdateDictResponse.Result["+ i +"].sourceType"));
+			dictList.setName(_ctx.stringValue("UpdateDictResponse.Result["+ i +"].name"));
+			dictList.setType(_ctx.stringValue("UpdateDictResponse.Result["+ i +"].type"));
 
 			result.add(dictList);
 		}

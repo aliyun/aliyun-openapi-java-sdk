@@ -28,6 +28,8 @@ public class RecommendTemplatesRequest extends RoaAcsRequest<RecommendTemplatesR
 	private String instanceId;
 
 	private String usageScenario;
+
+	private String body;
 	public RecommendTemplatesRequest() {
 		super("elasticsearch", "2017-06-13", "RecommendTemplates", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/recommended-templates");
@@ -57,6 +59,17 @@ public class RecommendTemplatesRequest extends RoaAcsRequest<RecommendTemplatesR
 		this.usageScenario = usageScenario;
 		if(usageScenario != null){
 			putQueryParameter("usageScenario", usageScenario);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

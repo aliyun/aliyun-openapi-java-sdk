@@ -49,12 +49,68 @@ public class UpdateWhiteIpsResponse extends AcsResponse {
 
 		private List<String> esIPWhitelist;
 
+		private NetworkConfig networkConfig;
+
 		public List<String> getEsIPWhitelist() {
 			return this.esIPWhitelist;
 		}
 
 		public void setEsIPWhitelist(List<String> esIPWhitelist) {
 			this.esIPWhitelist = esIPWhitelist;
+		}
+
+		public NetworkConfig getNetworkConfig() {
+			return this.networkConfig;
+		}
+
+		public void setNetworkConfig(NetworkConfig networkConfig) {
+			this.networkConfig = networkConfig;
+		}
+
+		public static class NetworkConfig {
+
+			private List<WhiteIpGroupListItem> whiteIpGroupList;
+
+			public List<WhiteIpGroupListItem> getWhiteIpGroupList() {
+				return this.whiteIpGroupList;
+			}
+
+			public void setWhiteIpGroupList(List<WhiteIpGroupListItem> whiteIpGroupList) {
+				this.whiteIpGroupList = whiteIpGroupList;
+			}
+
+			public static class WhiteIpGroupListItem {
+
+				private String groupName;
+
+				private String whiteIpType;
+
+				private List<String> ips;
+
+				public String getGroupName() {
+					return this.groupName;
+				}
+
+				public void setGroupName(String groupName) {
+					this.groupName = groupName;
+				}
+
+				public String getWhiteIpType() {
+					return this.whiteIpType;
+				}
+
+				public void setWhiteIpType(String whiteIpType) {
+					this.whiteIpType = whiteIpType;
+				}
+
+				public List<String> getIps() {
+					return this.ips;
+				}
+
+				public void setIps(List<String> ips) {
+					this.ips = ips;
+				}
+			}
 		}
 	}
 

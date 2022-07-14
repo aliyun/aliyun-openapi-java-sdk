@@ -46,17 +46,9 @@ public class DescribeDiagnosisSettingsResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String scene;
-
 		private Long updateTime;
 
-		public String getScene() {
-			return this.scene;
-		}
-
-		public void setScene(String scene) {
-			this.scene = scene;
-		}
+		private String scene;
 
 		public Long getUpdateTime() {
 			return this.updateTime;
@@ -64,6 +56,14 @@ public class DescribeDiagnosisSettingsResponse extends AcsResponse {
 
 		public void setUpdateTime(Long updateTime) {
 			this.updateTime = updateTime;
+		}
+
+		public String getScene() {
+			return this.scene;
+		}
+
+		public void setScene(String scene) {
+			this.scene = scene;
 		}
 	}
 

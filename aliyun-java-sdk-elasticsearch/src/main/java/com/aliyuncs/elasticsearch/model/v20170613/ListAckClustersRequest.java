@@ -30,6 +30,8 @@ public class ListAckClustersRequest extends RoaAcsRequest<ListAckClustersRespons
 	private String vpcId;
 
 	private Integer page;
+
+	private String body;
 	public ListAckClustersRequest() {
 		super("elasticsearch", "2017-06-13", "ListAckClusters", "elasticsearch");
 		setUriPattern("/openapi/ack-clusters");
@@ -70,6 +72,17 @@ public class ListAckClustersRequest extends RoaAcsRequest<ListAckClustersRespons
 		this.page = page;
 		if(page != null){
 			putQueryParameter("page", page.toString());
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

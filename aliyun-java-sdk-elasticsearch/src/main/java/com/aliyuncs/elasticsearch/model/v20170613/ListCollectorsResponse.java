@@ -57,25 +57,25 @@ public class ListCollectorsResponse extends AcsResponse {
 
 	public static class ResultItem {
 
-		private String gmtCreatedTime;
+		private String resId;
 
 		private String gmtUpdateTime;
 
-		private String name;
+		private Boolean dryRun;
 
-		private String resId;
-
-		private String resVersion;
+		private String ownerId;
 
 		private String vpcId;
 
 		private String resType;
 
-		private String ownerId;
+		private String resVersion;
+
+		private String gmtCreatedTime;
 
 		private String status;
 
-		private Boolean dryRun;
+		private String name;
 
 		private List<ConfigsItem> configs;
 
@@ -83,12 +83,12 @@ public class ListCollectorsResponse extends AcsResponse {
 
 		private List<String> collectorPaths;
 
-		public String getGmtCreatedTime() {
-			return this.gmtCreatedTime;
+		public String getResId() {
+			return this.resId;
 		}
 
-		public void setGmtCreatedTime(String gmtCreatedTime) {
-			this.gmtCreatedTime = gmtCreatedTime;
+		public void setResId(String resId) {
+			this.resId = resId;
 		}
 
 		public String getGmtUpdateTime() {
@@ -99,28 +99,20 @@ public class ListCollectorsResponse extends AcsResponse {
 			this.gmtUpdateTime = gmtUpdateTime;
 		}
 
-		public String getName() {
-			return this.name;
+		public Boolean getDryRun() {
+			return this.dryRun;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+		public void setDryRun(Boolean dryRun) {
+			this.dryRun = dryRun;
 		}
 
-		public String getResId() {
-			return this.resId;
+		public String getOwnerId() {
+			return this.ownerId;
 		}
 
-		public void setResId(String resId) {
-			this.resId = resId;
-		}
-
-		public String getResVersion() {
-			return this.resVersion;
-		}
-
-		public void setResVersion(String resVersion) {
-			this.resVersion = resVersion;
+		public void setOwnerId(String ownerId) {
+			this.ownerId = ownerId;
 		}
 
 		public String getVpcId() {
@@ -139,12 +131,20 @@ public class ListCollectorsResponse extends AcsResponse {
 			this.resType = resType;
 		}
 
-		public String getOwnerId() {
-			return this.ownerId;
+		public String getResVersion() {
+			return this.resVersion;
 		}
 
-		public void setOwnerId(String ownerId) {
-			this.ownerId = ownerId;
+		public void setResVersion(String resVersion) {
+			this.resVersion = resVersion;
+		}
+
+		public String getGmtCreatedTime() {
+			return this.gmtCreatedTime;
+		}
+
+		public void setGmtCreatedTime(String gmtCreatedTime) {
+			this.gmtCreatedTime = gmtCreatedTime;
 		}
 
 		public String getStatus() {
@@ -155,12 +155,12 @@ public class ListCollectorsResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public Boolean getDryRun() {
-			return this.dryRun;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setDryRun(Boolean dryRun) {
-			this.dryRun = dryRun;
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public List<ConfigsItem> getConfigs() {
@@ -189,17 +189,9 @@ public class ListCollectorsResponse extends AcsResponse {
 
 		public static class ConfigsItem {
 
-			private String fileName;
-
 			private String content;
 
-			public String getFileName() {
-				return this.fileName;
-			}
-
-			public void setFileName(String fileName) {
-				this.fileName = fileName;
-			}
+			private String fileName;
 
 			public String getContent() {
 				return this.content;
@@ -208,60 +200,52 @@ public class ListCollectorsResponse extends AcsResponse {
 			public void setContent(String content) {
 				this.content = content;
 			}
+
+			public String getFileName() {
+				return this.fileName;
+			}
+
+			public void setFileName(String fileName) {
+				this.fileName = fileName;
+			}
 		}
 
 		public static class ExtendConfigsItem {
 
-			private String configType;
-
-			private String instanceId;
-
-			private String instanceType;
+			private String successPodsCount;
 
 			private String protocol;
 
 			private String userName;
 
-			private Boolean enableMonitoring;
+			private String totalPodsCount;
 
 			private String type;
+
+			private String kibanaHost;
+
+			private Boolean enableMonitoring;
+
+			private String configType;
+
+			private String instanceType;
 
 			private String groupId;
 
 			private String host;
 
-			private String kibanaHost;
-
-			private String totalPodsCount;
-
-			private String successPodsCount;
+			private String instanceId;
 
 			private List<MachinesItem> machines;
 
 			private List<String> hosts;
 
-			public String getConfigType() {
-				return this.configType;
+			public String getSuccessPodsCount() {
+				return this.successPodsCount;
 			}
 
-			public void setConfigType(String configType) {
-				this.configType = configType;
-			}
-
-			public String getInstanceId() {
-				return this.instanceId;
-			}
-
-			public void setInstanceId(String instanceId) {
-				this.instanceId = instanceId;
-			}
-
-			public String getInstanceType() {
-				return this.instanceType;
-			}
-
-			public void setInstanceType(String instanceType) {
-				this.instanceType = instanceType;
+			public void setSuccessPodsCount(String successPodsCount) {
+				this.successPodsCount = successPodsCount;
 			}
 
 			public String getBizProtocol() {
@@ -280,12 +264,12 @@ public class ListCollectorsResponse extends AcsResponse {
 				this.userName = userName;
 			}
 
-			public Boolean getEnableMonitoring() {
-				return this.enableMonitoring;
+			public String getTotalPodsCount() {
+				return this.totalPodsCount;
 			}
 
-			public void setEnableMonitoring(Boolean enableMonitoring) {
-				this.enableMonitoring = enableMonitoring;
+			public void setTotalPodsCount(String totalPodsCount) {
+				this.totalPodsCount = totalPodsCount;
 			}
 
 			public String getType() {
@@ -294,6 +278,38 @@ public class ListCollectorsResponse extends AcsResponse {
 
 			public void setType(String type) {
 				this.type = type;
+			}
+
+			public String getKibanaHost() {
+				return this.kibanaHost;
+			}
+
+			public void setKibanaHost(String kibanaHost) {
+				this.kibanaHost = kibanaHost;
+			}
+
+			public Boolean getEnableMonitoring() {
+				return this.enableMonitoring;
+			}
+
+			public void setEnableMonitoring(Boolean enableMonitoring) {
+				this.enableMonitoring = enableMonitoring;
+			}
+
+			public String getConfigType() {
+				return this.configType;
+			}
+
+			public void setConfigType(String configType) {
+				this.configType = configType;
+			}
+
+			public String getInstanceType() {
+				return this.instanceType;
+			}
+
+			public void setInstanceType(String instanceType) {
+				this.instanceType = instanceType;
 			}
 
 			public String getGroupId() {
@@ -312,28 +328,12 @@ public class ListCollectorsResponse extends AcsResponse {
 				this.host = host;
 			}
 
-			public String getKibanaHost() {
-				return this.kibanaHost;
+			public String getInstanceId() {
+				return this.instanceId;
 			}
 
-			public void setKibanaHost(String kibanaHost) {
-				this.kibanaHost = kibanaHost;
-			}
-
-			public String getTotalPodsCount() {
-				return this.totalPodsCount;
-			}
-
-			public void setTotalPodsCount(String totalPodsCount) {
-				this.totalPodsCount = totalPodsCount;
-			}
-
-			public String getSuccessPodsCount() {
-				return this.successPodsCount;
-			}
-
-			public void setSuccessPodsCount(String successPodsCount) {
-				this.successPodsCount = successPodsCount;
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
 			}
 
 			public List<MachinesItem> getMachines() {
@@ -354,17 +354,9 @@ public class ListCollectorsResponse extends AcsResponse {
 
 			public static class MachinesItem {
 
-				private String instanceId;
-
 				private String agentStatus;
 
-				public String getInstanceId() {
-					return this.instanceId;
-				}
-
-				public void setInstanceId(String instanceId) {
-					this.instanceId = instanceId;
-				}
+				private String instanceId;
 
 				public String getAgentStatus() {
 					return this.agentStatus;
@@ -372,6 +364,14 @@ public class ListCollectorsResponse extends AcsResponse {
 
 				public void setAgentStatus(String agentStatus) {
 					this.agentStatus = agentStatus;
+				}
+
+				public String getInstanceId() {
+					return this.instanceId;
+				}
+
+				public void setInstanceId(String instanceId) {
+					this.instanceId = instanceId;
 				}
 			}
 		}

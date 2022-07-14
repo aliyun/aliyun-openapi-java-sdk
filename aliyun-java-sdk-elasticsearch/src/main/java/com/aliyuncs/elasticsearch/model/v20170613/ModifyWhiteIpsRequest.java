@@ -25,15 +25,11 @@ import com.aliyuncs.elasticsearch.Endpoint;
 public class ModifyWhiteIpsRequest extends RoaAcsRequest<ModifyWhiteIpsResponse> {
 	   
 
-	private String modifyMode;
-
 	private String instanceId;
-
-	private String nodeType;
 
 	private String clientToken;
 
-	private String networkType;
+	private String body;
 	public ModifyWhiteIpsRequest() {
 		super("elasticsearch", "2017-06-13", "ModifyWhiteIps", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/actions/modify-white-ips");
@@ -44,17 +40,6 @@ public class ModifyWhiteIpsRequest extends RoaAcsRequest<ModifyWhiteIpsResponse>
 		} catch (Exception e) {}
 	}
 
-	public String getModifyMode() {
-		return this.modifyMode;
-	}
-
-	public void setModifyMode(String modifyMode) {
-		this.modifyMode = modifyMode;
-		if(modifyMode != null){
-			putBodyParameter("modifyMode", modifyMode);
-		}
-	}
-
 	public String getInstanceId() {
 		return this.instanceId;
 	}
@@ -63,17 +48,6 @@ public class ModifyWhiteIpsRequest extends RoaAcsRequest<ModifyWhiteIpsResponse>
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putPathParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getNodeType() {
-		return this.nodeType;
-	}
-
-	public void setNodeType(String nodeType) {
-		this.nodeType = nodeType;
-		if(nodeType != null){
-			putBodyParameter("nodeType", nodeType);
 		}
 	}
 
@@ -88,14 +62,14 @@ public class ModifyWhiteIpsRequest extends RoaAcsRequest<ModifyWhiteIpsResponse>
 		}
 	}
 
-	public String getNetworkType() {
-		return this.networkType;
+	public String getBody() {
+		return this.body;
 	}
 
-	public void setNetworkType(String networkType) {
-		this.networkType = networkType;
-		if(networkType != null){
-			putBodyParameter("networkType", networkType);
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

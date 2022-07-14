@@ -31,8 +31,8 @@ public class ListDefaultCollectorConfigurationsResponseUnmarshaller {
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListDefaultCollectorConfigurationsResponse.Result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setFileName(_ctx.stringValue("ListDefaultCollectorConfigurationsResponse.Result["+ i +"].fileName"));
 			resultItem.setContent(_ctx.stringValue("ListDefaultCollectorConfigurationsResponse.Result["+ i +"].content"));
+			resultItem.setFileName(_ctx.stringValue("ListDefaultCollectorConfigurationsResponse.Result["+ i +"].fileName"));
 
 			result.add(resultItem);
 		}

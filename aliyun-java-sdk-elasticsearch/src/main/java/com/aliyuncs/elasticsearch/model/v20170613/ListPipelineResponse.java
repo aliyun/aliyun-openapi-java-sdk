@@ -59,11 +59,11 @@ public class ListPipelineResponse extends AcsResponse {
 
 		private String pipelineId;
 
-		private String pipelineStatus;
+		private String gmtUpdateTime;
 
 		private String gmtCreatedTime;
 
-		private String gmtUpdateTime;
+		private String pipelineStatus;
 
 		public String getPipelineId() {
 			return this.pipelineId;
@@ -73,12 +73,12 @@ public class ListPipelineResponse extends AcsResponse {
 			this.pipelineId = pipelineId;
 		}
 
-		public String getPipelineStatus() {
-			return this.pipelineStatus;
+		public String getGmtUpdateTime() {
+			return this.gmtUpdateTime;
 		}
 
-		public void setPipelineStatus(String pipelineStatus) {
-			this.pipelineStatus = pipelineStatus;
+		public void setGmtUpdateTime(String gmtUpdateTime) {
+			this.gmtUpdateTime = gmtUpdateTime;
 		}
 
 		public String getGmtCreatedTime() {
@@ -89,12 +89,12 @@ public class ListPipelineResponse extends AcsResponse {
 			this.gmtCreatedTime = gmtCreatedTime;
 		}
 
-		public String getGmtUpdateTime() {
-			return this.gmtUpdateTime;
+		public String getPipelineStatus() {
+			return this.pipelineStatus;
 		}
 
-		public void setGmtUpdateTime(String gmtUpdateTime) {
-			this.gmtUpdateTime = gmtUpdateTime;
+		public void setPipelineStatus(String pipelineStatus) {
+			this.pipelineStatus = pipelineStatus;
 		}
 	}
 

@@ -28,6 +28,8 @@ public class MigrateToOtherZoneRequest extends RoaAcsRequest<MigrateToOtherZoneR
 	private String instanceId;
 
 	private Boolean dryRun;
+
+	private String body;
 	public MigrateToOtherZoneRequest() {
 		super("elasticsearch", "2017-06-13", "MigrateToOtherZone", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/actions/migrate-zones");
@@ -57,6 +59,17 @@ public class MigrateToOtherZoneRequest extends RoaAcsRequest<MigrateToOtherZoneR
 		this.dryRun = dryRun;
 		if(dryRun != null){
 			putQueryParameter("dryRun", dryRun.toString());
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

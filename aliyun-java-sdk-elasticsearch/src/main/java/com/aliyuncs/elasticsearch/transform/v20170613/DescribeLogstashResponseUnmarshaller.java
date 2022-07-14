@@ -35,17 +35,17 @@ public class DescribeLogstashResponseUnmarshaller {
 		describeLogstashResponse.setRequestId(_ctx.stringValue("DescribeLogstashResponse.RequestId"));
 
 		Result result = new Result();
-		result.setInstanceId(_ctx.stringValue("DescribeLogstashResponse.Result.instanceId"));
-		result.setDescription(_ctx.stringValue("DescribeLogstashResponse.Result.description"));
-		result.setNodeAmount(_ctx.integerValue("DescribeLogstashResponse.Result.nodeAmount"));
-		result.setPaymentType(_ctx.stringValue("DescribeLogstashResponse.Result.paymentType"));
-		result.setStatus(_ctx.stringValue("DescribeLogstashResponse.Result.status"));
-		result.setVersion(_ctx.stringValue("DescribeLogstashResponse.Result.version"));
-		result.setCreatedAt(_ctx.stringValue("DescribeLogstashResponse.Result.createdAt"));
-		result.setUpdatedAt(_ctx.stringValue("DescribeLogstashResponse.Result.updatedAt"));
-		result.setVpcInstanceId(_ctx.stringValue("DescribeLogstashResponse.Result.vpcInstanceId"));
 		result.setConfig(_ctx.mapValue("DescribeLogstashResponse.Result.config"));
+		result.setPaymentType(_ctx.stringValue("DescribeLogstashResponse.Result.paymentType"));
 		result.setResourceGroupId(_ctx.stringValue("DescribeLogstashResponse.Result.ResourceGroupId"));
+		result.setNodeAmount(_ctx.integerValue("DescribeLogstashResponse.Result.nodeAmount"));
+		result.setDescription(_ctx.stringValue("DescribeLogstashResponse.Result.description"));
+		result.setCreatedAt(_ctx.stringValue("DescribeLogstashResponse.Result.createdAt"));
+		result.setStatus(_ctx.stringValue("DescribeLogstashResponse.Result.status"));
+		result.setVpcInstanceId(_ctx.stringValue("DescribeLogstashResponse.Result.vpcInstanceId"));
+		result.setUpdatedAt(_ctx.stringValue("DescribeLogstashResponse.Result.updatedAt"));
+		result.setVersion(_ctx.stringValue("DescribeLogstashResponse.Result.version"));
+		result.setInstanceId(_ctx.stringValue("DescribeLogstashResponse.Result.instanceId"));
 
 		List<Map<Object, Object>> extendConfigs = _ctx.listMapValue("DescribeLogstashResponse.Result.ExtendConfigs");
 		result.setExtendConfigs(extendConfigs);
@@ -53,23 +53,23 @@ public class DescribeLogstashResponseUnmarshaller {
 		NodeSpec nodeSpec = new NodeSpec();
 		nodeSpec.setSpec(_ctx.stringValue("DescribeLogstashResponse.Result.nodeSpec.spec"));
 		nodeSpec.setDisk(_ctx.integerValue("DescribeLogstashResponse.Result.nodeSpec.disk"));
-		nodeSpec.setDiskType(_ctx.stringValue("DescribeLogstashResponse.Result.nodeSpec.diskType"));
 		nodeSpec.setDiskEncryption(_ctx.booleanValue("DescribeLogstashResponse.Result.nodeSpec.diskEncryption"));
+		nodeSpec.setDiskType(_ctx.stringValue("DescribeLogstashResponse.Result.nodeSpec.diskType"));
 		result.setNodeSpec(nodeSpec);
 
 		NetworkConfig networkConfig = new NetworkConfig();
-		networkConfig.setType(_ctx.stringValue("DescribeLogstashResponse.Result.networkConfig.type"));
 		networkConfig.setVpcId(_ctx.stringValue("DescribeLogstashResponse.Result.networkConfig.vpcId"));
-		networkConfig.setVswitchId(_ctx.stringValue("DescribeLogstashResponse.Result.networkConfig.vswitchId"));
 		networkConfig.setVsArea(_ctx.stringValue("DescribeLogstashResponse.Result.networkConfig.vsArea"));
+		networkConfig.setType(_ctx.stringValue("DescribeLogstashResponse.Result.networkConfig.type"));
+		networkConfig.setVswitchId(_ctx.stringValue("DescribeLogstashResponse.Result.networkConfig.vswitchId"));
 		result.setNetworkConfig(networkConfig);
 
 		List<Endpoint> endpointList = new ArrayList<Endpoint>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLogstashResponse.Result.endpointList.Length"); i++) {
 			Endpoint endpoint = new Endpoint();
-			endpoint.setHost(_ctx.stringValue("DescribeLogstashResponse.Result.endpointList["+ i +"].host"));
-			endpoint.setPort(_ctx.stringValue("DescribeLogstashResponse.Result.endpointList["+ i +"].port"));
 			endpoint.setZoneId(_ctx.stringValue("DescribeLogstashResponse.Result.endpointList["+ i +"].zoneId"));
+			endpoint.setPort(_ctx.stringValue("DescribeLogstashResponse.Result.endpointList["+ i +"].port"));
+			endpoint.setHost(_ctx.stringValue("DescribeLogstashResponse.Result.endpointList["+ i +"].host"));
 
 			endpointList.add(endpoint);
 		}
@@ -88,8 +88,8 @@ public class DescribeLogstashResponseUnmarshaller {
 		List<ZoneInfosItem> zoneInfos = new ArrayList<ZoneInfosItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLogstashResponse.Result.ZoneInfos.Length"); i++) {
 			ZoneInfosItem zoneInfosItem = new ZoneInfosItem();
-			zoneInfosItem.setZoneId(_ctx.stringValue("DescribeLogstashResponse.Result.ZoneInfos["+ i +"].zoneId"));
 			zoneInfosItem.setStatus(_ctx.stringValue("DescribeLogstashResponse.Result.ZoneInfos["+ i +"].status"));
+			zoneInfosItem.setZoneId(_ctx.stringValue("DescribeLogstashResponse.Result.ZoneInfos["+ i +"].zoneId"));
 
 			zoneInfos.add(zoneInfosItem);
 		}

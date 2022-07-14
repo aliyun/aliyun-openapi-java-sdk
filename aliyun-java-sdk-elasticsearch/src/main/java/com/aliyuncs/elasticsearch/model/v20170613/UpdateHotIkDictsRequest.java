@@ -28,6 +28,8 @@ public class UpdateHotIkDictsRequest extends RoaAcsRequest<UpdateHotIkDictsRespo
 	private String instanceId;
 
 	private String clientToken;
+
+	private String body;
 	public UpdateHotIkDictsRequest() {
 		super("elasticsearch", "2017-06-13", "UpdateHotIkDicts", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/ik-hot-dict");
@@ -57,6 +59,17 @@ public class UpdateHotIkDictsRequest extends RoaAcsRequest<UpdateHotIkDictsRespo
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("clientToken", clientToken);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

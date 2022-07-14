@@ -25,6 +25,8 @@ import com.aliyuncs.elasticsearch.Endpoint;
 public class GetEmonMonitorDataRequest extends RoaAcsRequest<GetEmonMonitorDataResponse> {
 	   
 
+	private String body;
+
 	private String projectId;
 	public GetEmonMonitorDataRequest() {
 		super("elasticsearch", "2017-06-13", "GetEmonMonitorData", "elasticsearch");
@@ -34,6 +36,17 @@ public class GetEmonMonitorDataRequest extends RoaAcsRequest<GetEmonMonitorDataR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
+		}
 	}
 
 	public String getProjectId() {

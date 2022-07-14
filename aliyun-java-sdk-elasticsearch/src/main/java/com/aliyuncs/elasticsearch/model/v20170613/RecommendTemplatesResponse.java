@@ -47,17 +47,9 @@ public class RecommendTemplatesResponse extends AcsResponse {
 
 	public static class TemplateConfig {
 
-		private String templateName;
-
 		private String content;
 
-		public String getTemplateName() {
-			return this.templateName;
-		}
-
-		public void setTemplateName(String templateName) {
-			this.templateName = templateName;
-		}
+		private String templateName;
 
 		public String getContent() {
 			return this.content;
@@ -65,6 +57,14 @@ public class RecommendTemplatesResponse extends AcsResponse {
 
 		public void setContent(String content) {
 			this.content = content;
+		}
+
+		public String getTemplateName() {
+			return this.templateName;
+		}
+
+		public void setTemplateName(String templateName) {
+			this.templateName = templateName;
 		}
 	}
 

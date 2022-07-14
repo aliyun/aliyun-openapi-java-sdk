@@ -46,19 +46,11 @@ public class ListDictInformationResponse extends AcsResponse {
 
 	public static class Result {
 
-		private Long fileSize;
-
 		private String type;
 
+		private Long fileSize;
+
 		private OssObject ossObject;
-
-		public Long getFileSize() {
-			return this.fileSize;
-		}
-
-		public void setFileSize(Long fileSize) {
-			this.fileSize = fileSize;
-		}
 
 		public String getType() {
 			return this.type;
@@ -66,6 +58,14 @@ public class ListDictInformationResponse extends AcsResponse {
 
 		public void setType(String type) {
 			this.type = type;
+		}
+
+		public Long getFileSize() {
+			return this.fileSize;
+		}
+
+		public void setFileSize(Long fileSize) {
+			this.fileSize = fileSize;
 		}
 
 		public OssObject getOssObject() {
@@ -78,19 +78,11 @@ public class ListDictInformationResponse extends AcsResponse {
 
 		public static class OssObject {
 
-			private String bucketName;
-
 			private String key;
 
+			private String bucketName;
+
 			private String etag;
-
-			public String getBucketName() {
-				return this.bucketName;
-			}
-
-			public void setBucketName(String bucketName) {
-				this.bucketName = bucketName;
-			}
 
 			public String getKey() {
 				return this.key;
@@ -98,6 +90,14 @@ public class ListDictInformationResponse extends AcsResponse {
 
 			public void setKey(String key) {
 				this.key = key;
+			}
+
+			public String getBucketName() {
+				return this.bucketName;
+			}
+
+			public void setBucketName(String bucketName) {
+				this.bucketName = bucketName;
 			}
 
 			public String getEtag() {

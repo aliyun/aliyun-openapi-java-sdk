@@ -28,6 +28,8 @@ public class UpdateInstanceSettingsRequest extends RoaAcsRequest<UpdateInstanceS
 	private String instanceId;
 
 	private String clientToken;
+
+	private String body;
 	public UpdateInstanceSettingsRequest() {
 		super("elasticsearch", "2017-06-13", "UpdateInstanceSettings", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/instance-settings");
@@ -57,6 +59,17 @@ public class UpdateInstanceSettingsRequest extends RoaAcsRequest<UpdateInstanceS
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("clientToken", clientToken);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

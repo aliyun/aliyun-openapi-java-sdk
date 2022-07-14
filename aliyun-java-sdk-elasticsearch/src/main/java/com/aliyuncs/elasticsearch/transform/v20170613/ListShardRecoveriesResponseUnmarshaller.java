@@ -33,16 +33,16 @@ public class ListShardRecoveriesResponseUnmarshaller {
 			ResultItem resultItem = new ResultItem();
 			resultItem.setIndex(_ctx.stringValue("ListShardRecoveriesResponse.Result["+ i +"].index"));
 			resultItem.setSourceHost(_ctx.stringValue("ListShardRecoveriesResponse.Result["+ i +"].sourceHost"));
-			resultItem.setTargetNode(_ctx.stringValue("ListShardRecoveriesResponse.Result["+ i +"].targetNode"));
-			resultItem.setStage(_ctx.stringValue("ListShardRecoveriesResponse.Result["+ i +"].stage"));
+			resultItem.setSourceNode(_ctx.stringValue("ListShardRecoveriesResponse.Result["+ i +"].sourceNode"));
 			resultItem.setFilesTotal(_ctx.longValue("ListShardRecoveriesResponse.Result["+ i +"].filesTotal"));
-			resultItem.setFilesPercent(_ctx.stringValue("ListShardRecoveriesResponse.Result["+ i +"].filesPercent"));
-			resultItem.setBytesTotal(_ctx.longValue("ListShardRecoveriesResponse.Result["+ i +"].bytesTotal"));
 			resultItem.setBytesPercent(_ctx.stringValue("ListShardRecoveriesResponse.Result["+ i +"].bytesPercent"));
 			resultItem.setTranslogOps(_ctx.longValue("ListShardRecoveriesResponse.Result["+ i +"].translogOps"));
 			resultItem.setTranslogOpsPercent(_ctx.stringValue("ListShardRecoveriesResponse.Result["+ i +"].translogOpsPercent"));
-			resultItem.setSourceNode(_ctx.stringValue("ListShardRecoveriesResponse.Result["+ i +"].sourceNode"));
+			resultItem.setBytesTotal(_ctx.longValue("ListShardRecoveriesResponse.Result["+ i +"].bytesTotal"));
 			resultItem.setTargetHost(_ctx.stringValue("ListShardRecoveriesResponse.Result["+ i +"].targetHost"));
+			resultItem.setTargetNode(_ctx.stringValue("ListShardRecoveriesResponse.Result["+ i +"].targetNode"));
+			resultItem.setFilesPercent(_ctx.stringValue("ListShardRecoveriesResponse.Result["+ i +"].filesPercent"));
+			resultItem.setStage(_ctx.stringValue("ListShardRecoveriesResponse.Result["+ i +"].stage"));
 
 			result.add(resultItem);
 		}

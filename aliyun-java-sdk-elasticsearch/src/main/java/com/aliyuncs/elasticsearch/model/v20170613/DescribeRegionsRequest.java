@@ -24,6 +24,8 @@ import com.aliyuncs.elasticsearch.Endpoint;
  */
 public class DescribeRegionsRequest extends RoaAcsRequest<DescribeRegionsResponse> {
 	   
+
+	private String body;
 	public DescribeRegionsRequest() {
 		super("elasticsearch", "2017-06-13", "DescribeRegions", "elasticsearch");
 		setUriPattern("/openapi/regions");
@@ -32,6 +34,17 @@ public class DescribeRegionsRequest extends RoaAcsRequest<DescribeRegionsRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
+		}
 	}
 
 	@Override

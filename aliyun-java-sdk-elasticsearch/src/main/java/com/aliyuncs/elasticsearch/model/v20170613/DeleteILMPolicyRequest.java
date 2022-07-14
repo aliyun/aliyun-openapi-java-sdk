@@ -28,6 +28,8 @@ public class DeleteILMPolicyRequest extends RoaAcsRequest<DeleteILMPolicyRespons
 	private String instanceId;
 
 	private String policyName;
+
+	private String body;
 	public DeleteILMPolicyRequest() {
 		super("elasticsearch", "2017-06-13", "DeleteILMPolicy", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/ilm-policies/[PolicyName]");
@@ -57,6 +59,17 @@ public class DeleteILMPolicyRequest extends RoaAcsRequest<DeleteILMPolicyRespons
 		this.policyName = policyName;
 		if(policyName != null){
 			putPathParameter("PolicyName", policyName);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

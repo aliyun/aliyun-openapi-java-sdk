@@ -28,6 +28,8 @@ public class DeactivateZonesRequest extends RoaAcsRequest<DeactivateZonesRespons
 	private String instanceId;
 
 	private String clientToken;
+
+	private String body;
 	public DeactivateZonesRequest() {
 		super("elasticsearch", "2017-06-13", "DeactivateZones", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/actions/down-zones");
@@ -57,6 +59,17 @@ public class DeactivateZonesRequest extends RoaAcsRequest<DeactivateZonesRespons
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("clientToken", clientToken);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

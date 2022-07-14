@@ -46,17 +46,9 @@ public class EstimatedRestartTimeResponse extends AcsResponse {
 
 	public static class Result {
 
-		private Long value;
-
 		private String unit;
 
-		public Long getValue() {
-			return this.value;
-		}
-
-		public void setValue(Long value) {
-			this.value = value;
-		}
+		private Long value;
 
 		public String getUnit() {
 			return this.unit;
@@ -64,6 +56,14 @@ public class EstimatedRestartTimeResponse extends AcsResponse {
 
 		public void setUnit(String unit) {
 			this.unit = unit;
+		}
+
+		public Long getValue() {
+			return this.value;
+		}
+
+		public void setValue(Long value) {
+			this.value = value;
 		}
 	}
 

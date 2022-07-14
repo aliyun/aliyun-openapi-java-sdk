@@ -26,6 +26,8 @@ public class GetRegionConfigurationRequest extends RoaAcsRequest<GetRegionConfig
 	   
 
 	private String zoneId;
+
+	private String body;
 	public GetRegionConfigurationRequest() {
 		super("elasticsearch", "2017-06-13", "GetRegionConfiguration", "elasticsearch");
 		setUriPattern("/openapi/region");
@@ -44,6 +46,17 @@ public class GetRegionConfigurationRequest extends RoaAcsRequest<GetRegionConfig
 		this.zoneId = zoneId;
 		if(zoneId != null){
 			putQueryParameter("zoneId", zoneId);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

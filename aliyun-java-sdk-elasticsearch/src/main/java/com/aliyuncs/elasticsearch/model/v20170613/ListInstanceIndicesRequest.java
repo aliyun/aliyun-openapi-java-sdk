@@ -37,6 +37,8 @@ public class ListInstanceIndicesRequest extends RoaAcsRequest<ListInstanceIndice
 
 	private Integer page;
 
+	private String body;
+
 	private Boolean isOpenstore;
 	public ListInstanceIndicesRequest() {
 		super("elasticsearch", "2017-06-13", "ListInstanceIndices", "elasticsearch");
@@ -111,6 +113,17 @@ public class ListInstanceIndicesRequest extends RoaAcsRequest<ListInstanceIndice
 		this.page = page;
 		if(page != null){
 			putQueryParameter("page", page.toString());
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

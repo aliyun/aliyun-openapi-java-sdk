@@ -35,12 +35,12 @@ public class GetEmonMonitorDataResponseUnmarshaller {
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetEmonMonitorDataResponse.Result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setDps(_ctx.mapValue("GetEmonMonitorDataResponse.Result["+ i +"].dps"));
 			resultItem.setIntegrity(_ctx.floatValue("GetEmonMonitorDataResponse.Result["+ i +"].integrity"));
-			resultItem.setMessageWatermark(_ctx.longValue("GetEmonMonitorDataResponse.Result["+ i +"].messageWatermark"));
-			resultItem.setMetric(_ctx.stringValue("GetEmonMonitorDataResponse.Result["+ i +"].metric"));
 			resultItem.setSummary(_ctx.floatValue("GetEmonMonitorDataResponse.Result["+ i +"].summary"));
+			resultItem.setMessageWatermark(_ctx.longValue("GetEmonMonitorDataResponse.Result["+ i +"].messageWatermark"));
+			resultItem.setDps(_ctx.mapValue("GetEmonMonitorDataResponse.Result["+ i +"].dps"));
 			resultItem.setTags(_ctx.mapValue("GetEmonMonitorDataResponse.Result["+ i +"].tags"));
+			resultItem.setMetric(_ctx.stringValue("GetEmonMonitorDataResponse.Result["+ i +"].metric"));
 
 			result.add(resultItem);
 		}

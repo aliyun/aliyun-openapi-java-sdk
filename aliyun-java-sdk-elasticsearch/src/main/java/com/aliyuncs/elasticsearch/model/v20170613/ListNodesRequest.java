@@ -33,6 +33,8 @@ public class ListNodesRequest extends RoaAcsRequest<ListNodesResponse> {
 
 	private Integer page;
 
+	private String body;
+
 	private String resId;
 
 	private String tags;
@@ -87,6 +89,17 @@ public class ListNodesRequest extends RoaAcsRequest<ListNodesResponse> {
 		this.page = page;
 		if(page != null){
 			putQueryParameter("page", page.toString());
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

@@ -49,13 +49,13 @@ public class DescribeRegionsResponse extends AcsResponse {
 
 		private String regionId;
 
+		private String status;
+
 		private String regionEndpoint;
 
 		private String localName;
 
 		private String consoleEndpoint;
-
-		private String status;
 
 		public String getRegionId() {
 			return this.regionId;
@@ -63,6 +63,14 @@ public class DescribeRegionsResponse extends AcsResponse {
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getRegionEndpoint() {
@@ -87,14 +95,6 @@ public class DescribeRegionsResponse extends AcsResponse {
 
 		public void setConsoleEndpoint(String consoleEndpoint) {
 			this.consoleEndpoint = consoleEndpoint;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
 		}
 	}
 

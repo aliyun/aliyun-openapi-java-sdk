@@ -48,65 +48,65 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String instanceId;
-
-		private String domain;
-
-		private String description;
-
-		private Integer nodeAmount;
-
-		private String paymentType;
-
-		private String status;
-
-		private String esVersion;
-
-		private String createdAt;
-
-		private String updatedAt;
-
-		private String kibanaDomain;
-
-		private Boolean enablePublic;
-
-		private Boolean dedicateMaster;
-
 		private Boolean advancedDedicateMaster;
-
-		private Integer publicPort;
-
-		private Integer kibanaPort;
-
-		private String publicDomain;
-
-		private String vpcInstanceId;
-
-		private Integer port;
-
-		private Map<Object,Object> esConfig;
-
-		private Integer zoneCount;
-
-		private Boolean haveClientNode;
-
-		private Boolean warmNode;
 
 		private String protocol;
 
 		private Boolean enableKibanaPublicNetwork;
 
-		private Boolean haveKibana;
+		private Integer nodeAmount;
 
-		private String resourceGroupId;
+		private String createdAt;
 
 		private Boolean enableKibanaPrivateNetwork;
 
-		private Boolean isNewDeployment;
+		private String vpcInstanceId;
+
+		private Integer port;
+
+		private Boolean enablePublic;
+
+		private Boolean dedicateMaster;
+
+		private Integer kibanaPort;
+
+		private Map<Object,Object> esConfig;
+
+		private String resourceGroupId;
+
+		private String paymentType;
 
 		private String postpaidServiceStatus;
 
+		private String esVersion;
+
+		private Boolean haveKibana;
+
+		private Boolean isNewDeployment;
+
+		private Boolean warmNode;
+
+		private String updatedAt;
+
+		private String instanceId;
+
+		private Integer zoneCount;
+
+		private String publicDomain;
+
+		private String status;
+
 		private Boolean serviceVpc;
+
+		private Integer publicPort;
+
+		private Boolean haveClientNode;
+
+		private String domain;
+
+		private String description;
+
+		private String kibanaDomain;
 
 		private List<DictListItem> dictList;
 
@@ -120,17 +120,17 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 		private List<String> esIPWhitelist;
 
-		private List<String> esIPBlacklist;
-
-		private List<String> kibanaIPWhitelist;
-
-		private List<String> publicIpWhitelist;
+		private List<Map<Object,Object>> extendConfigs;
 
 		private List<String> privateNetworkIpWhiteList;
 
+		private List<String> publicIpWhitelist;
+
 		private List<String> kibanaPrivateIPWhitelist;
 
-		private List<Map<Object,Object>> extendConfigs;
+		private List<String> esIPBlacklist;
+
+		private List<String> kibanaIPWhitelist;
 
 		private NodeSpec nodeSpec;
 
@@ -148,180 +148,12 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 		private ElasticDataNodeConfiguration elasticDataNodeConfiguration;
 
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getDomain() {
-			return this.domain;
-		}
-
-		public void setDomain(String domain) {
-			this.domain = domain;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public Integer getNodeAmount() {
-			return this.nodeAmount;
-		}
-
-		public void setNodeAmount(Integer nodeAmount) {
-			this.nodeAmount = nodeAmount;
-		}
-
-		public String getPaymentType() {
-			return this.paymentType;
-		}
-
-		public void setPaymentType(String paymentType) {
-			this.paymentType = paymentType;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getEsVersion() {
-			return this.esVersion;
-		}
-
-		public void setEsVersion(String esVersion) {
-			this.esVersion = esVersion;
-		}
-
-		public String getCreatedAt() {
-			return this.createdAt;
-		}
-
-		public void setCreatedAt(String createdAt) {
-			this.createdAt = createdAt;
-		}
-
-		public String getUpdatedAt() {
-			return this.updatedAt;
-		}
-
-		public void setUpdatedAt(String updatedAt) {
-			this.updatedAt = updatedAt;
-		}
-
-		public String getKibanaDomain() {
-			return this.kibanaDomain;
-		}
-
-		public void setKibanaDomain(String kibanaDomain) {
-			this.kibanaDomain = kibanaDomain;
-		}
-
-		public Boolean getEnablePublic() {
-			return this.enablePublic;
-		}
-
-		public void setEnablePublic(Boolean enablePublic) {
-			this.enablePublic = enablePublic;
-		}
-
-		public Boolean getDedicateMaster() {
-			return this.dedicateMaster;
-		}
-
-		public void setDedicateMaster(Boolean dedicateMaster) {
-			this.dedicateMaster = dedicateMaster;
-		}
-
 		public Boolean getAdvancedDedicateMaster() {
 			return this.advancedDedicateMaster;
 		}
 
 		public void setAdvancedDedicateMaster(Boolean advancedDedicateMaster) {
 			this.advancedDedicateMaster = advancedDedicateMaster;
-		}
-
-		public Integer getPublicPort() {
-			return this.publicPort;
-		}
-
-		public void setPublicPort(Integer publicPort) {
-			this.publicPort = publicPort;
-		}
-
-		public Integer getKibanaPort() {
-			return this.kibanaPort;
-		}
-
-		public void setKibanaPort(Integer kibanaPort) {
-			this.kibanaPort = kibanaPort;
-		}
-
-		public String getPublicDomain() {
-			return this.publicDomain;
-		}
-
-		public void setPublicDomain(String publicDomain) {
-			this.publicDomain = publicDomain;
-		}
-
-		public String getVpcInstanceId() {
-			return this.vpcInstanceId;
-		}
-
-		public void setVpcInstanceId(String vpcInstanceId) {
-			this.vpcInstanceId = vpcInstanceId;
-		}
-
-		public Integer getPort() {
-			return this.port;
-		}
-
-		public void setPort(Integer port) {
-			this.port = port;
-		}
-
-		public Map<Object,Object> getEsConfig() {
-			return this.esConfig;
-		}
-
-		public void setEsConfig(Map<Object,Object> esConfig) {
-			this.esConfig = esConfig;
-		}
-
-		public Integer getZoneCount() {
-			return this.zoneCount;
-		}
-
-		public void setZoneCount(Integer zoneCount) {
-			this.zoneCount = zoneCount;
-		}
-
-		public Boolean getHaveClientNode() {
-			return this.haveClientNode;
-		}
-
-		public void setHaveClientNode(Boolean haveClientNode) {
-			this.haveClientNode = haveClientNode;
-		}
-
-		public Boolean getWarmNode() {
-			return this.warmNode;
-		}
-
-		public void setWarmNode(Boolean warmNode) {
-			this.warmNode = warmNode;
 		}
 
 		public String getBizProtocol() {
@@ -340,20 +172,20 @@ public class DescribeInstanceResponse extends AcsResponse {
 			this.enableKibanaPublicNetwork = enableKibanaPublicNetwork;
 		}
 
-		public Boolean getHaveKibana() {
-			return this.haveKibana;
+		public Integer getNodeAmount() {
+			return this.nodeAmount;
 		}
 
-		public void setHaveKibana(Boolean haveKibana) {
-			this.haveKibana = haveKibana;
+		public void setNodeAmount(Integer nodeAmount) {
+			this.nodeAmount = nodeAmount;
 		}
 
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
+		public String getCreatedAt() {
+			return this.createdAt;
 		}
 
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
+		public void setCreatedAt(String createdAt) {
+			this.createdAt = createdAt;
 		}
 
 		public Boolean getEnableKibanaPrivateNetwork() {
@@ -364,12 +196,68 @@ public class DescribeInstanceResponse extends AcsResponse {
 			this.enableKibanaPrivateNetwork = enableKibanaPrivateNetwork;
 		}
 
-		public Boolean getIsNewDeployment() {
-			return this.isNewDeployment;
+		public String getVpcInstanceId() {
+			return this.vpcInstanceId;
 		}
 
-		public void setIsNewDeployment(Boolean isNewDeployment) {
-			this.isNewDeployment = isNewDeployment;
+		public void setVpcInstanceId(String vpcInstanceId) {
+			this.vpcInstanceId = vpcInstanceId;
+		}
+
+		public Integer getPort() {
+			return this.port;
+		}
+
+		public void setPort(Integer port) {
+			this.port = port;
+		}
+
+		public Boolean getEnablePublic() {
+			return this.enablePublic;
+		}
+
+		public void setEnablePublic(Boolean enablePublic) {
+			this.enablePublic = enablePublic;
+		}
+
+		public Boolean getDedicateMaster() {
+			return this.dedicateMaster;
+		}
+
+		public void setDedicateMaster(Boolean dedicateMaster) {
+			this.dedicateMaster = dedicateMaster;
+		}
+
+		public Integer getKibanaPort() {
+			return this.kibanaPort;
+		}
+
+		public void setKibanaPort(Integer kibanaPort) {
+			this.kibanaPort = kibanaPort;
+		}
+
+		public Map<Object,Object> getEsConfig() {
+			return this.esConfig;
+		}
+
+		public void setEsConfig(Map<Object,Object> esConfig) {
+			this.esConfig = esConfig;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getPaymentType() {
+			return this.paymentType;
+		}
+
+		public void setPaymentType(String paymentType) {
+			this.paymentType = paymentType;
 		}
 
 		public String getPostpaidServiceStatus() {
@@ -380,12 +268,124 @@ public class DescribeInstanceResponse extends AcsResponse {
 			this.postpaidServiceStatus = postpaidServiceStatus;
 		}
 
+		public String getEsVersion() {
+			return this.esVersion;
+		}
+
+		public void setEsVersion(String esVersion) {
+			this.esVersion = esVersion;
+		}
+
+		public Boolean getHaveKibana() {
+			return this.haveKibana;
+		}
+
+		public void setHaveKibana(Boolean haveKibana) {
+			this.haveKibana = haveKibana;
+		}
+
+		public Boolean getIsNewDeployment() {
+			return this.isNewDeployment;
+		}
+
+		public void setIsNewDeployment(Boolean isNewDeployment) {
+			this.isNewDeployment = isNewDeployment;
+		}
+
+		public Boolean getWarmNode() {
+			return this.warmNode;
+		}
+
+		public void setWarmNode(Boolean warmNode) {
+			this.warmNode = warmNode;
+		}
+
+		public String getUpdatedAt() {
+			return this.updatedAt;
+		}
+
+		public void setUpdatedAt(String updatedAt) {
+			this.updatedAt = updatedAt;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public Integer getZoneCount() {
+			return this.zoneCount;
+		}
+
+		public void setZoneCount(Integer zoneCount) {
+			this.zoneCount = zoneCount;
+		}
+
+		public String getPublicDomain() {
+			return this.publicDomain;
+		}
+
+		public void setPublicDomain(String publicDomain) {
+			this.publicDomain = publicDomain;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
 		public Boolean getServiceVpc() {
 			return this.serviceVpc;
 		}
 
 		public void setServiceVpc(Boolean serviceVpc) {
 			this.serviceVpc = serviceVpc;
+		}
+
+		public Integer getPublicPort() {
+			return this.publicPort;
+		}
+
+		public void setPublicPort(Integer publicPort) {
+			this.publicPort = publicPort;
+		}
+
+		public Boolean getHaveClientNode() {
+			return this.haveClientNode;
+		}
+
+		public void setHaveClientNode(Boolean haveClientNode) {
+			this.haveClientNode = haveClientNode;
+		}
+
+		public String getDomain() {
+			return this.domain;
+		}
+
+		public void setDomain(String domain) {
+			this.domain = domain;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getKibanaDomain() {
+			return this.kibanaDomain;
+		}
+
+		public void setKibanaDomain(String kibanaDomain) {
+			this.kibanaDomain = kibanaDomain;
 		}
 
 		public List<DictListItem> getDictList() {
@@ -436,6 +436,38 @@ public class DescribeInstanceResponse extends AcsResponse {
 			this.esIPWhitelist = esIPWhitelist;
 		}
 
+		public List<Map<Object,Object>> getExtendConfigs() {
+			return this.extendConfigs;
+		}
+
+		public void setExtendConfigs(List<Map<Object,Object>> extendConfigs) {
+			this.extendConfigs = extendConfigs;
+		}
+
+		public List<String> getPrivateNetworkIpWhiteList() {
+			return this.privateNetworkIpWhiteList;
+		}
+
+		public void setPrivateNetworkIpWhiteList(List<String> privateNetworkIpWhiteList) {
+			this.privateNetworkIpWhiteList = privateNetworkIpWhiteList;
+		}
+
+		public List<String> getPublicIpWhitelist() {
+			return this.publicIpWhitelist;
+		}
+
+		public void setPublicIpWhitelist(List<String> publicIpWhitelist) {
+			this.publicIpWhitelist = publicIpWhitelist;
+		}
+
+		public List<String> getKibanaPrivateIPWhitelist() {
+			return this.kibanaPrivateIPWhitelist;
+		}
+
+		public void setKibanaPrivateIPWhitelist(List<String> kibanaPrivateIPWhitelist) {
+			this.kibanaPrivateIPWhitelist = kibanaPrivateIPWhitelist;
+		}
+
 		public List<String> getEsIPBlacklist() {
 			return this.esIPBlacklist;
 		}
@@ -450,38 +482,6 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 		public void setKibanaIPWhitelist(List<String> kibanaIPWhitelist) {
 			this.kibanaIPWhitelist = kibanaIPWhitelist;
-		}
-
-		public List<String> getPublicIpWhitelist() {
-			return this.publicIpWhitelist;
-		}
-
-		public void setPublicIpWhitelist(List<String> publicIpWhitelist) {
-			this.publicIpWhitelist = publicIpWhitelist;
-		}
-
-		public List<String> getPrivateNetworkIpWhiteList() {
-			return this.privateNetworkIpWhiteList;
-		}
-
-		public void setPrivateNetworkIpWhiteList(List<String> privateNetworkIpWhiteList) {
-			this.privateNetworkIpWhiteList = privateNetworkIpWhiteList;
-		}
-
-		public List<String> getKibanaPrivateIPWhitelist() {
-			return this.kibanaPrivateIPWhitelist;
-		}
-
-		public void setKibanaPrivateIPWhitelist(List<String> kibanaPrivateIPWhitelist) {
-			this.kibanaPrivateIPWhitelist = kibanaPrivateIPWhitelist;
-		}
-
-		public List<Map<Object,Object>> getExtendConfigs() {
-			return this.extendConfigs;
-		}
-
-		public void setExtendConfigs(List<Map<Object,Object>> extendConfigs) {
-			this.extendConfigs = extendConfigs;
 		}
 
 		public NodeSpec getNodeSpec() {
@@ -550,21 +550,13 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 		public static class DictListItem {
 
-			private String name;
-
 			private Long fileSize;
-
-			private String type;
 
 			private String sourceType;
 
-			public String getName() {
-				return this.name;
-			}
+			private String name;
 
-			public void setName(String name) {
-				this.name = name;
-			}
+			private String type;
 
 			public Long getFileSize() {
 				return this.fileSize;
@@ -574,40 +566,40 @@ public class DescribeInstanceResponse extends AcsResponse {
 				this.fileSize = fileSize;
 			}
 
-			public String getType() {
-				return this.type;
-			}
-
-			public void setType(String type) {
-				this.type = type;
-			}
-
 			public String getSourceType() {
 				return this.sourceType;
 			}
 
 			public void setSourceType(String sourceType) {
 				this.sourceType = sourceType;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
 			}
 		}
 
 		public static class SynonymsDictsItem {
 
-			private String name;
-
 			private Long fileSize;
-
-			private String type;
 
 			private String sourceType;
 
-			public String getName() {
-				return this.name;
-			}
+			private String name;
 
-			public void setName(String name) {
-				this.name = name;
-			}
+			private String type;
 
 			public Long getFileSize() {
 				return this.fileSize;
@@ -617,14 +609,6 @@ public class DescribeInstanceResponse extends AcsResponse {
 				this.fileSize = fileSize;
 			}
 
-			public String getType() {
-				return this.type;
-			}
-
-			public void setType(String type) {
-				this.type = type;
-			}
-
 			public String getSourceType() {
 				return this.sourceType;
 			}
@@ -632,21 +616,29 @@ public class DescribeInstanceResponse extends AcsResponse {
 			public void setSourceType(String sourceType) {
 				this.sourceType = sourceType;
 			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
 		}
 
 		public static class ZoneInfo {
 
-			private String zoneId;
-
 			private String status;
 
-			public String getZoneId() {
-				return this.zoneId;
-			}
-
-			public void setZoneId(String zoneId) {
-				this.zoneId = zoneId;
-			}
+			private String zoneId;
 
 			public String getStatus() {
 				return this.status;
@@ -655,25 +647,25 @@ public class DescribeInstanceResponse extends AcsResponse {
 			public void setStatus(String status) {
 				this.status = status;
 			}
+
+			public String getZoneId() {
+				return this.zoneId;
+			}
+
+			public void setZoneId(String zoneId) {
+				this.zoneId = zoneId;
+			}
 		}
 
 		public static class Dict {
 
-			private String name;
-
 			private Long fileSize;
-
-			private String type;
 
 			private String sourceType;
 
-			public String getName() {
-				return this.name;
-			}
+			private String name;
 
-			public void setName(String name) {
-				this.name = name;
-			}
+			private String type;
 
 			public Long getFileSize() {
 				return this.fileSize;
@@ -683,20 +675,28 @@ public class DescribeInstanceResponse extends AcsResponse {
 				this.fileSize = fileSize;
 			}
 
-			public String getType() {
-				return this.type;
-			}
-
-			public void setType(String type) {
-				this.type = type;
-			}
-
 			public String getSourceType() {
 				return this.sourceType;
 			}
 
 			public void setSourceType(String sourceType) {
 				this.sourceType = sourceType;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
 			}
 		}
 
@@ -729,9 +729,9 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 			private Integer disk;
 
-			private String diskType;
-
 			private Boolean diskEncryption;
+
+			private String diskType;
 
 			public String getSpec() {
 				return this.spec;
@@ -749,14 +749,6 @@ public class DescribeInstanceResponse extends AcsResponse {
 				this.disk = disk;
 			}
 
-			public String getDiskType() {
-				return this.diskType;
-			}
-
-			public void setDiskType(String diskType) {
-				this.diskType = diskType;
-			}
-
 			public Boolean getDiskEncryption() {
 				return this.diskEncryption;
 			}
@@ -764,27 +756,27 @@ public class DescribeInstanceResponse extends AcsResponse {
 			public void setDiskEncryption(Boolean diskEncryption) {
 				this.diskEncryption = diskEncryption;
 			}
+
+			public String getDiskType() {
+				return this.diskType;
+			}
+
+			public void setDiskType(String diskType) {
+				this.diskType = diskType;
+			}
 		}
 
 		public static class NetworkConfig {
 
-			private String type;
-
 			private String vpcId;
-
-			private String vswitchId;
 
 			private String vsArea;
 
+			private String type;
+
+			private String vswitchId;
+
 			private List<WhiteIpGroupListItem> whiteIpGroupList;
-
-			public String getType() {
-				return this.type;
-			}
-
-			public void setType(String type) {
-				this.type = type;
-			}
 
 			public String getVpcId() {
 				return this.vpcId;
@@ -794,20 +786,28 @@ public class DescribeInstanceResponse extends AcsResponse {
 				this.vpcId = vpcId;
 			}
 
-			public String getVswitchId() {
-				return this.vswitchId;
-			}
-
-			public void setVswitchId(String vswitchId) {
-				this.vswitchId = vswitchId;
-			}
-
 			public String getVsArea() {
 				return this.vsArea;
 			}
 
 			public void setVsArea(String vsArea) {
 				this.vsArea = vsArea;
+			}
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public String getVswitchId() {
+				return this.vswitchId;
+			}
+
+			public void setVswitchId(String vswitchId) {
+				this.vswitchId = vswitchId;
 			}
 
 			public List<WhiteIpGroupListItem> getWhiteIpGroupList() {
@@ -820,19 +820,11 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 			public static class WhiteIpGroupListItem {
 
-				private String groupName;
-
 				private String whiteIpType;
 
+				private String groupName;
+
 				private List<String> ips;
-
-				public String getGroupName() {
-					return this.groupName;
-				}
-
-				public void setGroupName(String groupName) {
-					this.groupName = groupName;
-				}
 
 				public String getWhiteIpType() {
 					return this.whiteIpType;
@@ -840,6 +832,14 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 				public void setWhiteIpType(String whiteIpType) {
 					this.whiteIpType = whiteIpType;
+				}
+
+				public String getGroupName() {
+					return this.groupName;
+				}
+
+				public void setGroupName(String groupName) {
+					this.groupName = groupName;
 				}
 
 				public List<String> getIps() {
@@ -854,17 +854,9 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 		public static class KibanaConfiguration {
 
-			private String spec;
-
 			private Integer amount;
 
-			public String getSpec() {
-				return this.spec;
-			}
-
-			public void setSpec(String spec) {
-				this.spec = spec;
-			}
+			private String spec;
 
 			public Integer getAmount() {
 				return this.amount;
@@ -872,6 +864,14 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 			public void setAmount(Integer amount) {
 				this.amount = amount;
+			}
+
+			public String getSpec() {
+				return this.spec;
+			}
+
+			public void setSpec(String spec) {
+				this.spec = spec;
 			}
 		}
 
@@ -881,9 +881,9 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 			private Integer amount;
 
-			private String diskType;
-
 			private Integer disk;
+
+			private String diskType;
 
 			public String getSpec() {
 				return this.spec;
@@ -901,20 +901,20 @@ public class DescribeInstanceResponse extends AcsResponse {
 				this.amount = amount;
 			}
 
-			public String getDiskType() {
-				return this.diskType;
-			}
-
-			public void setDiskType(String diskType) {
-				this.diskType = diskType;
-			}
-
 			public Integer getDisk() {
 				return this.disk;
 			}
 
 			public void setDisk(Integer disk) {
 				this.disk = disk;
+			}
+
+			public String getDiskType() {
+				return this.diskType;
+			}
+
+			public void setDiskType(String diskType) {
+				this.diskType = diskType;
 			}
 		}
 
@@ -924,9 +924,9 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 			private Integer amount;
 
-			private String diskType;
-
 			private Integer disk;
+
+			private String diskType;
 
 			public String getSpec() {
 				return this.spec;
@@ -942,14 +942,6 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 			public void setAmount(Integer amount) {
 				this.amount = amount;
-			}
-
-			public String getDiskType() {
-				return this.diskType;
-			}
-
-			public void setDiskType(String diskType) {
-				this.diskType = diskType;
 			}
 
 			public Integer getDisk() {
@@ -959,27 +951,27 @@ public class DescribeInstanceResponse extends AcsResponse {
 			public void setDisk(Integer disk) {
 				this.disk = disk;
 			}
+
+			public String getDiskType() {
+				return this.diskType;
+			}
+
+			public void setDiskType(String diskType) {
+				this.diskType = diskType;
+			}
 		}
 
 		public static class WarmNodeConfiguration {
 
-			private String spec;
-
 			private Integer amount;
 
-			private String diskType;
+			private String spec;
 
 			private Integer disk;
 
 			private Boolean diskEncryption;
 
-			public String getSpec() {
-				return this.spec;
-			}
-
-			public void setSpec(String spec) {
-				this.spec = spec;
-			}
+			private String diskType;
 
 			public Integer getAmount() {
 				return this.amount;
@@ -989,12 +981,12 @@ public class DescribeInstanceResponse extends AcsResponse {
 				this.amount = amount;
 			}
 
-			public String getDiskType() {
-				return this.diskType;
+			public String getSpec() {
+				return this.spec;
 			}
 
-			public void setDiskType(String diskType) {
-				this.diskType = diskType;
+			public void setSpec(String spec) {
+				this.spec = spec;
 			}
 
 			public Integer getDisk() {
@@ -1011,6 +1003,14 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 			public void setDiskEncryption(Boolean diskEncryption) {
 				this.diskEncryption = diskEncryption;
+			}
+
+			public String getDiskType() {
+				return this.diskType;
+			}
+
+			public void setDiskType(String diskType) {
+				this.diskType = diskType;
 			}
 		}
 
@@ -1029,23 +1029,15 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 		public static class ElasticDataNodeConfiguration {
 
-			private String spec;
-
 			private Integer amount;
 
-			private String diskType;
+			private String spec;
 
 			private Integer disk;
 
 			private Boolean diskEncryption;
 
-			public String getSpec() {
-				return this.spec;
-			}
-
-			public void setSpec(String spec) {
-				this.spec = spec;
-			}
+			private String diskType;
 
 			public Integer getAmount() {
 				return this.amount;
@@ -1055,12 +1047,12 @@ public class DescribeInstanceResponse extends AcsResponse {
 				this.amount = amount;
 			}
 
-			public String getDiskType() {
-				return this.diskType;
+			public String getSpec() {
+				return this.spec;
 			}
 
-			public void setDiskType(String diskType) {
-				this.diskType = diskType;
+			public void setSpec(String spec) {
+				this.spec = spec;
 			}
 
 			public Integer getDisk() {
@@ -1077,6 +1069,14 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 			public void setDiskEncryption(Boolean diskEncryption) {
 				this.diskEncryption = diskEncryption;
+			}
+
+			public String getDiskType() {
+				return this.diskType;
+			}
+
+			public void setDiskType(String diskType) {
+				this.diskType = diskType;
 			}
 		}
 	}

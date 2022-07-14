@@ -47,21 +47,13 @@ public class ListSnapshotReposByInstanceIdResponse extends AcsResponse {
 
 	public static class Repo {
 
-		private String instanceId;
-
 		private String snapWarehouse;
 
 		private String repoPath;
 
 		private String status;
 
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
+		private String instanceId;
 
 		public String getSnapWarehouse() {
 			return this.snapWarehouse;
@@ -85,6 +77,14 @@ public class ListSnapshotReposByInstanceIdResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 	}
 

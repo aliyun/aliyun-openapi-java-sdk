@@ -31,10 +31,10 @@ public class DiagnoseInstanceResponseUnmarshaller {
 		diagnoseInstanceResponse.setRequestId(_ctx.stringValue("DiagnoseInstanceResponse.RequestId"));
 
 		Result result = new Result();
-		result.setReportId(_ctx.stringValue("DiagnoseInstanceResponse.Result.reportId"));
-		result.setInstanceId(_ctx.stringValue("DiagnoseInstanceResponse.Result.instanceId"));
-		result.setState(_ctx.stringValue("DiagnoseInstanceResponse.Result.state"));
 		result.setCreateTime(_ctx.longValue("DiagnoseInstanceResponse.Result.createTime"));
+		result.setReportId(_ctx.stringValue("DiagnoseInstanceResponse.Result.reportId"));
+		result.setState(_ctx.stringValue("DiagnoseInstanceResponse.Result.state"));
+		result.setInstanceId(_ctx.stringValue("DiagnoseInstanceResponse.Result.instanceId"));
 
 		List<DiagnoseItemsItem> diagnoseItems = new ArrayList<DiagnoseItemsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DiagnoseInstanceResponse.Result.diagnoseItems.Length"); i++) {
@@ -43,11 +43,11 @@ public class DiagnoseInstanceResponseUnmarshaller {
 			diagnoseItemsItem.setHealth(_ctx.stringValue("DiagnoseInstanceResponse.Result.diagnoseItems["+ i +"].health"));
 
 			Detail detail = new Detail();
+			detail.setType(_ctx.stringValue("DiagnoseInstanceResponse.Result.diagnoseItems["+ i +"].detail.type"));
 			detail.setName(_ctx.stringValue("DiagnoseInstanceResponse.Result.diagnoseItems["+ i +"].detail.name"));
 			detail.setDesc(_ctx.stringValue("DiagnoseInstanceResponse.Result.diagnoseItems["+ i +"].detail.desc"));
-			detail.setType(_ctx.stringValue("DiagnoseInstanceResponse.Result.diagnoseItems["+ i +"].detail.type"));
-			detail.setSuggest(_ctx.stringValue("DiagnoseInstanceResponse.Result.diagnoseItems["+ i +"].detail.suggest"));
 			detail.setResult(_ctx.stringValue("DiagnoseInstanceResponse.Result.diagnoseItems["+ i +"].detail.result"));
+			detail.setSuggest(_ctx.stringValue("DiagnoseInstanceResponse.Result.diagnoseItems["+ i +"].detail.suggest"));
 			diagnoseItemsItem.setDetail(detail);
 
 			diagnoseItems.add(diagnoseItemsItem);

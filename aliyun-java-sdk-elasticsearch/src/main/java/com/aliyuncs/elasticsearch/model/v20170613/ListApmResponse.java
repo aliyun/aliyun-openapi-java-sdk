@@ -27,7 +27,7 @@ public class ListApmResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<返回结果> result;
+	private List<Object> result;
 
 	private Headers headers;
 
@@ -39,11 +39,11 @@ public class ListApmResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<返回结果> getResult() {
+	public List<Object> getResult() {
 		return this.result;
 	}
 
-	public void setResult(List<返回结果> result) {
+	public void setResult(List<Object> result) {
 		this.result = result;
 	}
 
@@ -55,7 +55,7 @@ public class ListApmResponse extends AcsResponse {
 		this.headers = headers;
 	}
 
-	public static class 返回结果 {
+	public static class Object {
 
 		private String createdAt;
 

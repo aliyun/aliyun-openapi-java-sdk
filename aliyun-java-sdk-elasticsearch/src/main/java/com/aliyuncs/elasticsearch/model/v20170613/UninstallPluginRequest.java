@@ -28,6 +28,8 @@ public class UninstallPluginRequest extends RoaAcsRequest<UninstallPluginRespons
 	private String instanceId;
 
 	private String clientToken;
+
+	private String body;
 	public UninstallPluginRequest() {
 		super("elasticsearch", "2017-06-13", "UninstallPlugin", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/plugins/actions/uninstall");
@@ -57,6 +59,17 @@ public class UninstallPluginRequest extends RoaAcsRequest<UninstallPluginRespons
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("clientToken", clientToken);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

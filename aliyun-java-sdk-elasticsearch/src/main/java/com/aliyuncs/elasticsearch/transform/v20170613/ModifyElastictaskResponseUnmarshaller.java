@@ -34,9 +34,9 @@ public class ModifyElastictaskResponseUnmarshaller {
 
 		ElasticExpansionTask elasticExpansionTask = new ElasticExpansionTask();
 		elasticExpansionTask.setTriggerType(_ctx.stringValue("ModifyElastictaskResponse.Result.elasticExpansionTask.triggerType"));
-		elasticExpansionTask.setCronExpression(_ctx.stringValue("ModifyElastictaskResponse.Result.elasticExpansionTask.cronExpression"));
-		elasticExpansionTask.setElasticNodeCount(_ctx.integerValue("ModifyElastictaskResponse.Result.elasticExpansionTask.elasticNodeCount"));
 		elasticExpansionTask.setReplicaCount(_ctx.integerValue("ModifyElastictaskResponse.Result.elasticExpansionTask.replicaCount"));
+		elasticExpansionTask.setElasticNodeCount(_ctx.integerValue("ModifyElastictaskResponse.Result.elasticExpansionTask.elasticNodeCount"));
+		elasticExpansionTask.setCronExpression(_ctx.stringValue("ModifyElastictaskResponse.Result.elasticExpansionTask.cronExpression"));
 
 		List<String> targetIndices = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("ModifyElastictaskResponse.Result.elasticExpansionTask.targetIndices.Length"); i++) {
@@ -47,9 +47,9 @@ public class ModifyElastictaskResponseUnmarshaller {
 
 		ElasticShrinkTask elasticShrinkTask = new ElasticShrinkTask();
 		elasticShrinkTask.setTriggerType(_ctx.stringValue("ModifyElastictaskResponse.Result.elasticShrinkTask.triggerType"));
-		elasticShrinkTask.setCronExpression(_ctx.stringValue("ModifyElastictaskResponse.Result.elasticShrinkTask.cronExpression"));
-		elasticShrinkTask.setElasticNodeCount(_ctx.integerValue("ModifyElastictaskResponse.Result.elasticShrinkTask.elasticNodeCount"));
 		elasticShrinkTask.setReplicaCount(_ctx.integerValue("ModifyElastictaskResponse.Result.elasticShrinkTask.replicaCount"));
+		elasticShrinkTask.setElasticNodeCount(_ctx.integerValue("ModifyElastictaskResponse.Result.elasticShrinkTask.elasticNodeCount"));
+		elasticShrinkTask.setCronExpression(_ctx.stringValue("ModifyElastictaskResponse.Result.elasticShrinkTask.cronExpression"));
 
 		List<String> targetIndices1 = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("ModifyElastictaskResponse.Result.elasticShrinkTask.targetIndices.Length"); i++) {

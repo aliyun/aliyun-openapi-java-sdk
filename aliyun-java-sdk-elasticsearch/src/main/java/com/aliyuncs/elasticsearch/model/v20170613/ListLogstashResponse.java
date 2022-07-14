@@ -57,21 +57,21 @@ public class ListLogstashResponse extends AcsResponse {
 
 	public static class Instance {
 
-		private String instanceId;
-
-		private String description;
+		private String paymentType;
 
 		private Integer nodeAmount;
 
-		private String paymentType;
-
-		private String status;
-
-		private String version;
+		private String description;
 
 		private String createdAt;
 
+		private String status;
+
 		private String updatedAt;
+
+		private String instanceId;
+
+		private String version;
 
 		private List<TagsItem> tags;
 
@@ -79,20 +79,12 @@ public class ListLogstashResponse extends AcsResponse {
 
 		private NetworkConfig networkConfig;
 
-		public String getInstanceId() {
-			return this.instanceId;
+		public String getPaymentType() {
+			return this.paymentType;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
+		public void setPaymentType(String paymentType) {
+			this.paymentType = paymentType;
 		}
 
 		public Integer getNodeAmount() {
@@ -103,28 +95,12 @@ public class ListLogstashResponse extends AcsResponse {
 			this.nodeAmount = nodeAmount;
 		}
 
-		public String getPaymentType() {
-			return this.paymentType;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setPaymentType(String paymentType) {
-			this.paymentType = paymentType;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getVersion() {
-			return this.version;
-		}
-
-		public void setVersion(String version) {
-			this.version = version;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getCreatedAt() {
@@ -135,12 +111,36 @@ public class ListLogstashResponse extends AcsResponse {
 			this.createdAt = createdAt;
 		}
 
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
 		public String getUpdatedAt() {
 			return this.updatedAt;
 		}
 
 		public void setUpdatedAt(String updatedAt) {
 			this.updatedAt = updatedAt;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(String version) {
+			this.version = version;
 		}
 
 		public List<TagsItem> getTags() {
@@ -169,17 +169,9 @@ public class ListLogstashResponse extends AcsResponse {
 
 		public static class TagsItem {
 
-			private String tagKey;
-
 			private String tagValue;
 
-			public String getTagKey() {
-				return this.tagKey;
-			}
-
-			public void setTagKey(String tagKey) {
-				this.tagKey = tagKey;
-			}
+			private String tagKey;
 
 			public String getTagValue() {
 				return this.tagValue;
@@ -187,6 +179,14 @@ public class ListLogstashResponse extends AcsResponse {
 
 			public void setTagValue(String tagValue) {
 				this.tagValue = tagValue;
+			}
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
 			}
 		}
 
@@ -196,9 +196,9 @@ public class ListLogstashResponse extends AcsResponse {
 
 			private Integer disk;
 
-			private String diskType;
-
 			private Boolean diskEncryption;
+
+			private String diskType;
 
 			public String getSpec() {
 				return this.spec;
@@ -216,14 +216,6 @@ public class ListLogstashResponse extends AcsResponse {
 				this.disk = disk;
 			}
 
-			public String getDiskType() {
-				return this.diskType;
-			}
-
-			public void setDiskType(String diskType) {
-				this.diskType = diskType;
-			}
-
 			public Boolean getDiskEncryption() {
 				return this.diskEncryption;
 			}
@@ -231,25 +223,25 @@ public class ListLogstashResponse extends AcsResponse {
 			public void setDiskEncryption(Boolean diskEncryption) {
 				this.diskEncryption = diskEncryption;
 			}
+
+			public String getDiskType() {
+				return this.diskType;
+			}
+
+			public void setDiskType(String diskType) {
+				this.diskType = diskType;
+			}
 		}
 
 		public static class NetworkConfig {
 
-			private String type;
-
 			private String vpcId;
-
-			private String vswitchId;
 
 			private String vsArea;
 
-			public String getType() {
-				return this.type;
-			}
+			private String type;
 
-			public void setType(String type) {
-				this.type = type;
-			}
+			private String vswitchId;
 
 			public String getVpcId() {
 				return this.vpcId;
@@ -259,20 +251,28 @@ public class ListLogstashResponse extends AcsResponse {
 				this.vpcId = vpcId;
 			}
 
-			public String getVswitchId() {
-				return this.vswitchId;
-			}
-
-			public void setVswitchId(String vswitchId) {
-				this.vswitchId = vswitchId;
-			}
-
 			public String getVsArea() {
 				return this.vsArea;
 			}
 
 			public void setVsArea(String vsArea) {
 				this.vsArea = vsArea;
+			}
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public String getVswitchId() {
+				return this.vswitchId;
+			}
+
+			public void setVswitchId(String vswitchId) {
+				this.vswitchId = vswitchId;
 			}
 		}
 	}

@@ -46,29 +46,13 @@ public class CreateVpcEndpointResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String endpointId;
-
-		private String endpointName;
-
 		private String serviceId;
 
 		private String endpointDomain;
 
-		public String getEndpointId() {
-			return this.endpointId;
-		}
+		private String endpointId;
 
-		public void setEndpointId(String endpointId) {
-			this.endpointId = endpointId;
-		}
-
-		public String getEndpointName() {
-			return this.endpointName;
-		}
-
-		public void setEndpointName(String endpointName) {
-			this.endpointName = endpointName;
-		}
+		private String endpointName;
 
 		public String getServiceId() {
 			return this.serviceId;
@@ -84,6 +68,22 @@ public class CreateVpcEndpointResponse extends AcsResponse {
 
 		public void setEndpointDomain(String endpointDomain) {
 			this.endpointDomain = endpointDomain;
+		}
+
+		public String getEndpointId() {
+			return this.endpointId;
+		}
+
+		public void setEndpointId(String endpointId) {
+			this.endpointId = endpointId;
+		}
+
+		public String getEndpointName() {
+			return this.endpointName;
+		}
+
+		public void setEndpointName(String endpointName) {
+			this.endpointName = endpointName;
 		}
 	}
 

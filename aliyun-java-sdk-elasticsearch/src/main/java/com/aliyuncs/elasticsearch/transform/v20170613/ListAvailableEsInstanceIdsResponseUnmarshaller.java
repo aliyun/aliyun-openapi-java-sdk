@@ -31,10 +31,10 @@ public class ListAvailableEsInstanceIdsResponseUnmarshaller {
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListAvailableEsInstanceIdsResponse.Result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setEsInstanceId(_ctx.stringValue("ListAvailableEsInstanceIdsResponse.Result["+ i +"].esInstanceId"));
 			resultItem.setEndpoint(_ctx.stringValue("ListAvailableEsInstanceIdsResponse.Result["+ i +"].endpoint"));
 			resultItem.setDescription(_ctx.stringValue("ListAvailableEsInstanceIdsResponse.Result["+ i +"].description"));
 			resultItem.setKibanaEndpoint(_ctx.stringValue("ListAvailableEsInstanceIdsResponse.Result["+ i +"].kibanaEndpoint"));
+			resultItem.setEsInstanceId(_ctx.stringValue("ListAvailableEsInstanceIdsResponse.Result["+ i +"].esInstanceId"));
 
 			result.add(resultItem);
 		}

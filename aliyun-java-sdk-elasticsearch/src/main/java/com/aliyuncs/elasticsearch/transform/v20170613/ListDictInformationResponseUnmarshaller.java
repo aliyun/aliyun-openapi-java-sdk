@@ -27,12 +27,12 @@ public class ListDictInformationResponseUnmarshaller {
 		listDictInformationResponse.setRequestId(_ctx.stringValue("ListDictInformationResponse.RequestId"));
 
 		Result result = new Result();
-		result.setFileSize(_ctx.longValue("ListDictInformationResponse.Result.fileSize"));
 		result.setType(_ctx.stringValue("ListDictInformationResponse.Result.type"));
+		result.setFileSize(_ctx.longValue("ListDictInformationResponse.Result.fileSize"));
 
 		OssObject ossObject = new OssObject();
-		ossObject.setBucketName(_ctx.stringValue("ListDictInformationResponse.Result.ossObject.bucketName"));
 		ossObject.setKey(_ctx.stringValue("ListDictInformationResponse.Result.ossObject.key"));
+		ossObject.setBucketName(_ctx.stringValue("ListDictInformationResponse.Result.ossObject.bucketName"));
 		ossObject.setEtag(_ctx.stringValue("ListDictInformationResponse.Result.ossObject.etag"));
 		result.setOssObject(ossObject);
 		listDictInformationResponse.setResult(result);

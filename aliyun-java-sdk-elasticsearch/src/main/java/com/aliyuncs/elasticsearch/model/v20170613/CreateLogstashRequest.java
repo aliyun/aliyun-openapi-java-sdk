@@ -26,6 +26,8 @@ public class CreateLogstashRequest extends RoaAcsRequest<CreateLogstashResponse>
 	   
 
 	private String clientToken;
+
+	private String body;
 	public CreateLogstashRequest() {
 		super("elasticsearch", "2017-06-13", "CreateLogstash", "elasticsearch");
 		setUriPattern("/openapi/logstashes");
@@ -44,6 +46,17 @@ public class CreateLogstashRequest extends RoaAcsRequest<CreateLogstashResponse>
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("clientToken", clientToken);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

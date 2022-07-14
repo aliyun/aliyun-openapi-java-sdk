@@ -31,6 +31,8 @@ public class ListDictInformationRequest extends RoaAcsRequest<ListDictInformatio
 
 	private String bucketName;
 
+	private String body;
+
 	private String key;
 	public ListDictInformationRequest() {
 		super("elasticsearch", "2017-06-13", "ListDictInformation", "elasticsearch");
@@ -72,6 +74,17 @@ public class ListDictInformationRequest extends RoaAcsRequest<ListDictInformatio
 		this.bucketName = bucketName;
 		if(bucketName != null){
 			putQueryParameter("bucketName", bucketName);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

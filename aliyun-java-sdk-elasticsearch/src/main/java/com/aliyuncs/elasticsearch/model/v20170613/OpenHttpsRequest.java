@@ -28,6 +28,8 @@ public class OpenHttpsRequest extends RoaAcsRequest<OpenHttpsResponse> {
 	private String instanceId;
 
 	private String clientToken;
+
+	private String body;
 	public OpenHttpsRequest() {
 		super("elasticsearch", "2017-06-13", "OpenHttps", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/actions/open-https");
@@ -57,6 +59,17 @@ public class OpenHttpsRequest extends RoaAcsRequest<OpenHttpsResponse> {
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("clientToken", clientToken);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

@@ -30,6 +30,8 @@ public class RestartInstanceRequest extends RoaAcsRequest<RestartInstanceRespons
 	private String clientToken;
 
 	private Boolean force;
+
+	private String body;
 	public RestartInstanceRequest() {
 		super("elasticsearch", "2017-06-13", "RestartInstance", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/actions/restart");
@@ -70,6 +72,17 @@ public class RestartInstanceRequest extends RoaAcsRequest<RestartInstanceRespons
 		this.force = force;
 		if(force != null){
 			putQueryParameter("force", force.toString());
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

@@ -32,16 +32,16 @@ public class DescribeCollectorResponseUnmarshaller {
 		describeCollectorResponse.setRequestId(_ctx.stringValue("DescribeCollectorResponse.RequestId"));
 
 		Result result = new Result();
-		result.setGmtCreatedTime(_ctx.stringValue("DescribeCollectorResponse.Result.gmtCreatedTime"));
-		result.setGmtUpdateTime(_ctx.stringValue("DescribeCollectorResponse.Result.gmtUpdateTime"));
-		result.setName(_ctx.stringValue("DescribeCollectorResponse.Result.name"));
 		result.setResId(_ctx.stringValue("DescribeCollectorResponse.Result.resId"));
-		result.setResVersion(_ctx.stringValue("DescribeCollectorResponse.Result.resVersion"));
+		result.setGmtUpdateTime(_ctx.stringValue("DescribeCollectorResponse.Result.gmtUpdateTime"));
+		result.setDryRun(_ctx.booleanValue("DescribeCollectorResponse.Result.dryRun"));
+		result.setOwnerId(_ctx.stringValue("DescribeCollectorResponse.Result.ownerId"));
 		result.setVpcId(_ctx.stringValue("DescribeCollectorResponse.Result.vpcId"));
 		result.setResType(_ctx.stringValue("DescribeCollectorResponse.Result.resType"));
-		result.setOwnerId(_ctx.stringValue("DescribeCollectorResponse.Result.ownerId"));
+		result.setResVersion(_ctx.stringValue("DescribeCollectorResponse.Result.resVersion"));
+		result.setGmtCreatedTime(_ctx.stringValue("DescribeCollectorResponse.Result.gmtCreatedTime"));
 		result.setStatus(_ctx.stringValue("DescribeCollectorResponse.Result.status"));
-		result.setDryRun(_ctx.booleanValue("DescribeCollectorResponse.Result.dryRun"));
+		result.setName(_ctx.stringValue("DescribeCollectorResponse.Result.name"));
 
 		List<String> collectorPaths = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCollectorResponse.Result.collectorPaths.Length"); i++) {
@@ -52,8 +52,8 @@ public class DescribeCollectorResponseUnmarshaller {
 		List<ConfigsItem> configs = new ArrayList<ConfigsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCollectorResponse.Result.configs.Length"); i++) {
 			ConfigsItem configsItem = new ConfigsItem();
-			configsItem.setFileName(_ctx.stringValue("DescribeCollectorResponse.Result.configs["+ i +"].fileName"));
 			configsItem.setContent(_ctx.stringValue("DescribeCollectorResponse.Result.configs["+ i +"].content"));
+			configsItem.setFileName(_ctx.stringValue("DescribeCollectorResponse.Result.configs["+ i +"].fileName"));
 
 			configs.add(configsItem);
 		}
@@ -62,18 +62,18 @@ public class DescribeCollectorResponseUnmarshaller {
 		List<ExtendConfigsItem> extendConfigs = new ArrayList<ExtendConfigsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCollectorResponse.Result.extendConfigs.Length"); i++) {
 			ExtendConfigsItem extendConfigsItem = new ExtendConfigsItem();
-			extendConfigsItem.setConfigType(_ctx.stringValue("DescribeCollectorResponse.Result.extendConfigs["+ i +"].configType"));
-			extendConfigsItem.setInstanceId(_ctx.stringValue("DescribeCollectorResponse.Result.extendConfigs["+ i +"].instanceId"));
-			extendConfigsItem.setInstanceType(_ctx.stringValue("DescribeCollectorResponse.Result.extendConfigs["+ i +"].instanceType"));
+			extendConfigsItem.setSuccessPodsCount(_ctx.stringValue("DescribeCollectorResponse.Result.extendConfigs["+ i +"].successPodsCount"));
 			extendConfigsItem.setBizProtocol(_ctx.stringValue("DescribeCollectorResponse.Result.extendConfigs["+ i +"].protocol"));
 			extendConfigsItem.setUserName(_ctx.stringValue("DescribeCollectorResponse.Result.extendConfigs["+ i +"].userName"));
-			extendConfigsItem.setEnableMonitoring(_ctx.booleanValue("DescribeCollectorResponse.Result.extendConfigs["+ i +"].enableMonitoring"));
+			extendConfigsItem.setTotalPodsCount(_ctx.stringValue("DescribeCollectorResponse.Result.extendConfigs["+ i +"].totalPodsCount"));
 			extendConfigsItem.setType(_ctx.stringValue("DescribeCollectorResponse.Result.extendConfigs["+ i +"].type"));
+			extendConfigsItem.setKibanaHost(_ctx.stringValue("DescribeCollectorResponse.Result.extendConfigs["+ i +"].kibanaHost"));
+			extendConfigsItem.setEnableMonitoring(_ctx.booleanValue("DescribeCollectorResponse.Result.extendConfigs["+ i +"].enableMonitoring"));
+			extendConfigsItem.setConfigType(_ctx.stringValue("DescribeCollectorResponse.Result.extendConfigs["+ i +"].configType"));
+			extendConfigsItem.setInstanceType(_ctx.stringValue("DescribeCollectorResponse.Result.extendConfigs["+ i +"].instanceType"));
 			extendConfigsItem.setGroupId(_ctx.stringValue("DescribeCollectorResponse.Result.extendConfigs["+ i +"].groupId"));
 			extendConfigsItem.setHost(_ctx.stringValue("DescribeCollectorResponse.Result.extendConfigs["+ i +"].host"));
-			extendConfigsItem.setKibanaHost(_ctx.stringValue("DescribeCollectorResponse.Result.extendConfigs["+ i +"].kibanaHost"));
-			extendConfigsItem.setTotalPodsCount(_ctx.stringValue("DescribeCollectorResponse.Result.extendConfigs["+ i +"].totalPodsCount"));
-			extendConfigsItem.setSuccessPodsCount(_ctx.stringValue("DescribeCollectorResponse.Result.extendConfigs["+ i +"].successPodsCount"));
+			extendConfigsItem.setInstanceId(_ctx.stringValue("DescribeCollectorResponse.Result.extendConfigs["+ i +"].instanceId"));
 
 			List<String> hosts = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeCollectorResponse.Result.extendConfigs["+ i +"].hosts.Length"); j++) {
@@ -84,8 +84,8 @@ public class DescribeCollectorResponseUnmarshaller {
 			List<MachinesItem> machines = new ArrayList<MachinesItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeCollectorResponse.Result.extendConfigs["+ i +"].machines.Length"); j++) {
 				MachinesItem machinesItem = new MachinesItem();
-				machinesItem.setInstanceId(_ctx.stringValue("DescribeCollectorResponse.Result.extendConfigs["+ i +"].machines["+ j +"].instanceId"));
 				machinesItem.setAgentStatus(_ctx.stringValue("DescribeCollectorResponse.Result.extendConfigs["+ i +"].machines["+ j +"].agentStatus"));
+				machinesItem.setInstanceId(_ctx.stringValue("DescribeCollectorResponse.Result.extendConfigs["+ i +"].machines["+ j +"].instanceId"));
 
 				machines.add(machinesItem);
 			}

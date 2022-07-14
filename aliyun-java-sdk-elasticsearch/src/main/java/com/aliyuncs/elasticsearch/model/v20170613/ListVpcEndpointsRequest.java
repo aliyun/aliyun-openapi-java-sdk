@@ -30,6 +30,8 @@ public class ListVpcEndpointsRequest extends RoaAcsRequest<ListVpcEndpointsRespo
 	private Integer size;
 
 	private Integer page;
+
+	private String body;
 	public ListVpcEndpointsRequest() {
 		super("elasticsearch", "2017-06-13", "ListVpcEndpoints", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/vpc-endpoints");
@@ -70,6 +72,17 @@ public class ListVpcEndpointsRequest extends RoaAcsRequest<ListVpcEndpointsRespo
 		this.page = page;
 		if(page != null){
 			putQueryParameter("page", page.toString());
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

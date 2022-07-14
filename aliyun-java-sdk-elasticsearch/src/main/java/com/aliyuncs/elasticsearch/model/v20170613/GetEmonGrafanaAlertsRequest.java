@@ -25,6 +25,8 @@ import com.aliyuncs.elasticsearch.Endpoint;
 public class GetEmonGrafanaAlertsRequest extends RoaAcsRequest<GetEmonGrafanaAlertsResponse> {
 	   
 
+	private String body;
+
 	private String projectId;
 	public GetEmonGrafanaAlertsRequest() {
 		super("elasticsearch", "2017-06-13", "GetEmonGrafanaAlerts", "elasticsearch");
@@ -34,6 +36,17 @@ public class GetEmonGrafanaAlertsRequest extends RoaAcsRequest<GetEmonGrafanaAle
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
+		}
 	}
 
 	public String getProjectId() {

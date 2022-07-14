@@ -30,6 +30,8 @@ public class UpdatePrivateNetworkWhiteIpsRequest extends RoaAcsRequest<UpdatePri
 	private String instanceId;
 
 	private String clientToken;
+
+	private String body;
 	public UpdatePrivateNetworkWhiteIpsRequest() {
 		super("elasticsearch", "2017-06-13", "UpdatePrivateNetworkWhiteIps", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/private-network-white-ips");
@@ -70,6 +72,17 @@ public class UpdatePrivateNetworkWhiteIpsRequest extends RoaAcsRequest<UpdatePri
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("clientToken", clientToken);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

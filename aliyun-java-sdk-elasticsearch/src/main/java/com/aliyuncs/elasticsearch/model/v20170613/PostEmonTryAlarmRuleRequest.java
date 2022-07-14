@@ -27,6 +27,8 @@ public class PostEmonTryAlarmRuleRequest extends RoaAcsRequest<PostEmonTryAlarmR
 
 	private String alarmGroupId;
 
+	private String body;
+
 	private String projectId;
 	public PostEmonTryAlarmRuleRequest() {
 		super("elasticsearch", "2017-06-13", "PostEmonTryAlarmRule", "elasticsearch");
@@ -46,6 +48,17 @@ public class PostEmonTryAlarmRuleRequest extends RoaAcsRequest<PostEmonTryAlarmR
 		this.alarmGroupId = alarmGroupId;
 		if(alarmGroupId != null){
 			putPathParameter("AlarmGroupId", alarmGroupId);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

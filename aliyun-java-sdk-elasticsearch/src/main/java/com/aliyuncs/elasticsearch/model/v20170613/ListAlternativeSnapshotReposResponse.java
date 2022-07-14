@@ -47,17 +47,9 @@ public class ListAlternativeSnapshotReposResponse extends AcsResponse {
 
 	public static class Repo {
 
-		private String instanceId;
-
 		private String repoPath;
 
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
+		private String instanceId;
 
 		public String getRepoPath() {
 			return this.repoPath;
@@ -65,6 +57,14 @@ public class ListAlternativeSnapshotReposResponse extends AcsResponse {
 
 		public void setRepoPath(String repoPath) {
 			this.repoPath = repoPath;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 	}
 

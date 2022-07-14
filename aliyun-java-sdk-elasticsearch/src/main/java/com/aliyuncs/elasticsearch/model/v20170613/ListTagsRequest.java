@@ -27,6 +27,8 @@ public class ListTagsRequest extends RoaAcsRequest<ListTagsResponse> {
 
 	private Integer pageSize;
 
+	private String body;
+
 	private String resourceType;
 	public ListTagsRequest() {
 		super("elasticsearch", "2017-06-13", "ListTags", "elasticsearch");
@@ -46,6 +48,17 @@ public class ListTagsRequest extends RoaAcsRequest<ListTagsResponse> {
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("pageSize", pageSize.toString());
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

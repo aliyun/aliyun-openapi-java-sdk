@@ -27,6 +27,8 @@ public class DeleteCollectorRequest extends RoaAcsRequest<DeleteCollectorRespons
 
 	private String clientToken;
 
+	private String body;
+
 	private String resId;
 	public DeleteCollectorRequest() {
 		super("elasticsearch", "2017-06-13", "DeleteCollector", "elasticsearch");
@@ -46,6 +48,17 @@ public class DeleteCollectorRequest extends RoaAcsRequest<DeleteCollectorRespons
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

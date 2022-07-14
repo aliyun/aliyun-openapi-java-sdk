@@ -57,19 +57,35 @@ public class ListDiagnoseReportResponse extends AcsResponse {
 
 	public static class ResultItem {
 
-		private String reportId;
-
-		private String instanceId;
-
-		private String state;
-
 		private String trigger;
-
-		private String health;
 
 		private Long createTime;
 
+		private String reportId;
+
+		private String state;
+
+		private String instanceId;
+
+		private String health;
+
 		private List<DiagnoseItemsItem> diagnoseItems;
+
+		public String getTrigger() {
+			return this.trigger;
+		}
+
+		public void setTrigger(String trigger) {
+			this.trigger = trigger;
+		}
+
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
+		}
 
 		public String getReportId() {
 			return this.reportId;
@@ -77,14 +93,6 @@ public class ListDiagnoseReportResponse extends AcsResponse {
 
 		public void setReportId(String reportId) {
 			this.reportId = reportId;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
 		}
 
 		public String getState() {
@@ -95,12 +103,12 @@ public class ListDiagnoseReportResponse extends AcsResponse {
 			this.state = state;
 		}
 
-		public String getTrigger() {
-			return this.trigger;
+		public String getInstanceId() {
+			return this.instanceId;
 		}
 
-		public void setTrigger(String trigger) {
-			this.trigger = trigger;
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public String getHealth() {
@@ -109,14 +117,6 @@ public class ListDiagnoseReportResponse extends AcsResponse {
 
 		public void setHealth(String health) {
 			this.health = health;
-		}
-
-		public Long getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
 		}
 
 		public List<DiagnoseItemsItem> getDiagnoseItems() {
@@ -161,15 +161,23 @@ public class ListDiagnoseReportResponse extends AcsResponse {
 
 			public static class Detail {
 
+				private String type;
+
 				private String name;
 
 				private String desc;
 
-				private String type;
+				private String result;
 
 				private String suggest;
 
-				private String result;
+				public String getType() {
+					return this.type;
+				}
+
+				public void setType(String type) {
+					this.type = type;
+				}
 
 				public String getName() {
 					return this.name;
@@ -187,12 +195,12 @@ public class ListDiagnoseReportResponse extends AcsResponse {
 					this.desc = desc;
 				}
 
-				public String getType() {
-					return this.type;
+				public String getResult() {
+					return this.result;
 				}
 
-				public void setType(String type) {
-					this.type = type;
+				public void setResult(String result) {
+					this.result = result;
 				}
 
 				public String getSuggest() {
@@ -201,14 +209,6 @@ public class ListDiagnoseReportResponse extends AcsResponse {
 
 				public void setSuggest(String suggest) {
 					this.suggest = suggest;
-				}
-
-				public String getResult() {
-					return this.result;
-				}
-
-				public void setResult(String result) {
-					this.result = result;
 				}
 			}
 		}

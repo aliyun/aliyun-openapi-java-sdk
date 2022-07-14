@@ -26,6 +26,8 @@ public class StopApmRequest extends RoaAcsRequest<StopApmResponse> {
 	   
 
 	private String instanceId;
+
+	private String body;
 	public StopApmRequest() {
 		super("elasticsearch", "2017-06-13", "StopApm", "elasticsearch");
 		setUriPattern("/openapi/apm/[instanceId]/actions/stop");
@@ -44,6 +46,17 @@ public class StopApmRequest extends RoaAcsRequest<StopApmResponse> {
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putPathParameter("instanceId", instanceId);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

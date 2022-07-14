@@ -31,10 +31,10 @@ public class ListSnapshotReposByInstanceIdResponseUnmarshaller {
 		List<Repo> result = new ArrayList<Repo>();
 		for (int i = 0; i < _ctx.lengthValue("ListSnapshotReposByInstanceIdResponse.Result.Length"); i++) {
 			Repo repo = new Repo();
-			repo.setInstanceId(_ctx.stringValue("ListSnapshotReposByInstanceIdResponse.Result["+ i +"].instanceId"));
 			repo.setSnapWarehouse(_ctx.stringValue("ListSnapshotReposByInstanceIdResponse.Result["+ i +"].snapWarehouse"));
 			repo.setRepoPath(_ctx.stringValue("ListSnapshotReposByInstanceIdResponse.Result["+ i +"].repoPath"));
 			repo.setStatus(_ctx.stringValue("ListSnapshotReposByInstanceIdResponse.Result["+ i +"].status"));
+			repo.setInstanceId(_ctx.stringValue("ListSnapshotReposByInstanceIdResponse.Result["+ i +"].instanceId"));
 
 			result.add(repo);
 		}

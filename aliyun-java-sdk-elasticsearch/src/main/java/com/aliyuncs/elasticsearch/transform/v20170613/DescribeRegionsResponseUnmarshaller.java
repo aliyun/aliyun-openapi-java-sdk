@@ -32,10 +32,10 @@ public class DescribeRegionsResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeRegionsResponse.Result.Length"); i++) {
 			RegionInfo regionInfo = new RegionInfo();
 			regionInfo.setRegionId(_ctx.stringValue("DescribeRegionsResponse.Result["+ i +"].regionId"));
+			regionInfo.setStatus(_ctx.stringValue("DescribeRegionsResponse.Result["+ i +"].status"));
 			regionInfo.setRegionEndpoint(_ctx.stringValue("DescribeRegionsResponse.Result["+ i +"].regionEndpoint"));
 			regionInfo.setLocalName(_ctx.stringValue("DescribeRegionsResponse.Result["+ i +"].localName"));
 			regionInfo.setConsoleEndpoint(_ctx.stringValue("DescribeRegionsResponse.Result["+ i +"].consoleEndpoint"));
-			regionInfo.setStatus(_ctx.stringValue("DescribeRegionsResponse.Result["+ i +"].status"));
 
 			result.add(regionInfo);
 		}

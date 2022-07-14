@@ -51,15 +51,9 @@ public class ListShardRecoveriesResponse extends AcsResponse {
 
 		private String sourceHost;
 
-		private String targetNode;
-
-		private String stage;
+		private String sourceNode;
 
 		private Long filesTotal;
-
-		private String filesPercent;
-
-		private Long bytesTotal;
 
 		private String bytesPercent;
 
@@ -67,9 +61,15 @@ public class ListShardRecoveriesResponse extends AcsResponse {
 
 		private String translogOpsPercent;
 
-		private String sourceNode;
+		private Long bytesTotal;
 
 		private String targetHost;
+
+		private String targetNode;
+
+		private String filesPercent;
+
+		private String stage;
 
 		public String getIndex() {
 			return this.index;
@@ -87,20 +87,12 @@ public class ListShardRecoveriesResponse extends AcsResponse {
 			this.sourceHost = sourceHost;
 		}
 
-		public String getTargetNode() {
-			return this.targetNode;
+		public String getSourceNode() {
+			return this.sourceNode;
 		}
 
-		public void setTargetNode(String targetNode) {
-			this.targetNode = targetNode;
-		}
-
-		public String getStage() {
-			return this.stage;
-		}
-
-		public void setStage(String stage) {
-			this.stage = stage;
+		public void setSourceNode(String sourceNode) {
+			this.sourceNode = sourceNode;
 		}
 
 		public Long getFilesTotal() {
@@ -109,22 +101,6 @@ public class ListShardRecoveriesResponse extends AcsResponse {
 
 		public void setFilesTotal(Long filesTotal) {
 			this.filesTotal = filesTotal;
-		}
-
-		public String getFilesPercent() {
-			return this.filesPercent;
-		}
-
-		public void setFilesPercent(String filesPercent) {
-			this.filesPercent = filesPercent;
-		}
-
-		public Long getBytesTotal() {
-			return this.bytesTotal;
-		}
-
-		public void setBytesTotal(Long bytesTotal) {
-			this.bytesTotal = bytesTotal;
 		}
 
 		public String getBytesPercent() {
@@ -151,12 +127,12 @@ public class ListShardRecoveriesResponse extends AcsResponse {
 			this.translogOpsPercent = translogOpsPercent;
 		}
 
-		public String getSourceNode() {
-			return this.sourceNode;
+		public Long getBytesTotal() {
+			return this.bytesTotal;
 		}
 
-		public void setSourceNode(String sourceNode) {
-			this.sourceNode = sourceNode;
+		public void setBytesTotal(Long bytesTotal) {
+			this.bytesTotal = bytesTotal;
 		}
 
 		public String getTargetHost() {
@@ -165,6 +141,30 @@ public class ListShardRecoveriesResponse extends AcsResponse {
 
 		public void setTargetHost(String targetHost) {
 			this.targetHost = targetHost;
+		}
+
+		public String getTargetNode() {
+			return this.targetNode;
+		}
+
+		public void setTargetNode(String targetNode) {
+			this.targetNode = targetNode;
+		}
+
+		public String getFilesPercent() {
+			return this.filesPercent;
+		}
+
+		public void setFilesPercent(String filesPercent) {
+			this.filesPercent = filesPercent;
+		}
+
+		public String getStage() {
+			return this.stage;
+		}
+
+		public void setStage(String stage) {
+			this.stage = stage;
 		}
 	}
 

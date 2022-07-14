@@ -45,64 +45,64 @@ public class ListInstanceResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("ListInstanceResponse.Result.Length"); i++) {
 			Instance instance = new Instance();
 			instance.setAdvancedDedicateMaster(_ctx.booleanValue("ListInstanceResponse.Result["+ i +"].advancedDedicateMaster"));
-			instance.setCreatedAt(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].createdAt"));
-			instance.setDedicateMaster(_ctx.booleanValue("ListInstanceResponse.Result["+ i +"].dedicateMaster"));
-			instance.setDescription(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].description"));
-			instance.setEsVersion(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].esVersion"));
-			instance.setInstanceId(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].instanceId"));
 			instance.setNodeAmount(_ctx.integerValue("ListInstanceResponse.Result["+ i +"].nodeAmount"));
+			instance.setCreatedAt(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].createdAt"));
+			instance.setStatus(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].status"));
+			instance.setDedicateMaster(_ctx.booleanValue("ListInstanceResponse.Result["+ i +"].dedicateMaster"));
+			instance.setServiceVpc(_ctx.booleanValue("ListInstanceResponse.Result["+ i +"].serviceVpc"));
 			instance.setPaymentType(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].paymentType"));
 			instance.setResourceGroupId(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].resourceGroupId"));
-			instance.setStatus(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].status"));
-			instance.setUpdatedAt(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].updatedAt"));
 			instance.setPostpaidServiceStatus(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].postpaidServiceStatus"));
+			instance.setDescription(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].description"));
+			instance.setEsVersion(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].esVersion"));
 			instance.setIsNewDeployment(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].isNewDeployment"));
-			instance.setServiceVpc(_ctx.booleanValue("ListInstanceResponse.Result["+ i +"].serviceVpc"));
+			instance.setUpdatedAt(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].updatedAt"));
+			instance.setInstanceId(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].instanceId"));
 
 			List<Map<Object, Object>> extendConfigs = _ctx.listMapValue("ListInstanceResponse.Result["+ i +"].extendConfigs");
 			instance.setExtendConfigs(extendConfigs);
 
 			ClientNodeConfiguration clientNodeConfiguration = new ClientNodeConfiguration();
+			clientNodeConfiguration.setSpec(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].clientNodeConfiguration.spec"));
 			clientNodeConfiguration.setAmount(_ctx.integerValue("ListInstanceResponse.Result["+ i +"].clientNodeConfiguration.amount"));
 			clientNodeConfiguration.setDisk(_ctx.integerValue("ListInstanceResponse.Result["+ i +"].clientNodeConfiguration.disk"));
 			clientNodeConfiguration.setDiskType(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].clientNodeConfiguration.diskType"));
-			clientNodeConfiguration.setSpec(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].clientNodeConfiguration.spec"));
 			instance.setClientNodeConfiguration(clientNodeConfiguration);
 
 			ElasticDataNodeConfiguration elasticDataNodeConfiguration = new ElasticDataNodeConfiguration();
+			elasticDataNodeConfiguration.setSpec(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].elasticDataNodeConfiguration.spec"));
 			elasticDataNodeConfiguration.setAmount(_ctx.integerValue("ListInstanceResponse.Result["+ i +"].elasticDataNodeConfiguration.amount"));
 			elasticDataNodeConfiguration.setDisk(_ctx.integerValue("ListInstanceResponse.Result["+ i +"].elasticDataNodeConfiguration.disk"));
 			elasticDataNodeConfiguration.setDiskEncryption(_ctx.booleanValue("ListInstanceResponse.Result["+ i +"].elasticDataNodeConfiguration.diskEncryption"));
 			elasticDataNodeConfiguration.setDiskType(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].elasticDataNodeConfiguration.diskType"));
-			elasticDataNodeConfiguration.setSpec(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].elasticDataNodeConfiguration.spec"));
 			instance.setElasticDataNodeConfiguration(elasticDataNodeConfiguration);
 
 			KibanaConfiguration kibanaConfiguration = new KibanaConfiguration();
+			kibanaConfiguration.setSpec(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].kibanaConfiguration.spec"));
 			kibanaConfiguration.setAmount(_ctx.integerValue("ListInstanceResponse.Result["+ i +"].kibanaConfiguration.amount"));
 			kibanaConfiguration.setDisk(_ctx.integerValue("ListInstanceResponse.Result["+ i +"].kibanaConfiguration.disk"));
 			kibanaConfiguration.setDiskType(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].kibanaConfiguration.diskType"));
-			kibanaConfiguration.setSpec(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].kibanaConfiguration.spec"));
 			instance.setKibanaConfiguration(kibanaConfiguration);
 
 			MasterConfiguration masterConfiguration = new MasterConfiguration();
+			masterConfiguration.setSpec(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].masterConfiguration.spec"));
 			masterConfiguration.setAmount(_ctx.integerValue("ListInstanceResponse.Result["+ i +"].masterConfiguration.amount"));
 			masterConfiguration.setDisk(_ctx.integerValue("ListInstanceResponse.Result["+ i +"].masterConfiguration.disk"));
 			masterConfiguration.setDiskType(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].masterConfiguration.diskType"));
-			masterConfiguration.setSpec(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].masterConfiguration.spec"));
 			instance.setMasterConfiguration(masterConfiguration);
 
 			NetworkConfig networkConfig = new NetworkConfig();
-			networkConfig.setType(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].networkConfig.type"));
 			networkConfig.setVpcId(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].networkConfig.vpcId"));
 			networkConfig.setVsArea(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].networkConfig.vsArea"));
+			networkConfig.setType(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].networkConfig.type"));
 			networkConfig.setVswitchId(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].networkConfig.vswitchId"));
 			instance.setNetworkConfig(networkConfig);
 
 			NodeSpec nodeSpec = new NodeSpec();
+			nodeSpec.setSpec(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].nodeSpec.spec"));
 			nodeSpec.setDisk(_ctx.integerValue("ListInstanceResponse.Result["+ i +"].nodeSpec.disk"));
 			nodeSpec.setDiskEncryption(_ctx.booleanValue("ListInstanceResponse.Result["+ i +"].nodeSpec.diskEncryption"));
 			nodeSpec.setDiskType(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].nodeSpec.diskType"));
-			nodeSpec.setSpec(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].nodeSpec.spec"));
 			instance.setNodeSpec(nodeSpec);
 
 			List<Tag> tags = new ArrayList<Tag>();

@@ -32,10 +32,10 @@ public class ListIndexTemplatesResponseUnmarshaller {
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListIndexTemplatesResponse.Result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setIndexTemplate(_ctx.stringValue("ListIndexTemplatesResponse.Result["+ i +"].indexTemplate"));
 			resultItem.setDataStream(_ctx.booleanValue("ListIndexTemplatesResponse.Result["+ i +"].dataStream"));
-			resultItem.setPriority(_ctx.integerValue("ListIndexTemplatesResponse.Result["+ i +"].priority"));
+			resultItem.setIndexTemplate(_ctx.stringValue("ListIndexTemplatesResponse.Result["+ i +"].indexTemplate"));
 			resultItem.setIlmPolicy(_ctx.stringValue("ListIndexTemplatesResponse.Result["+ i +"].ilmPolicy"));
+			resultItem.setPriority(_ctx.integerValue("ListIndexTemplatesResponse.Result["+ i +"].priority"));
 
 			List<String> indexPatterns = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListIndexTemplatesResponse.Result["+ i +"].indexPatterns.Length"); j++) {

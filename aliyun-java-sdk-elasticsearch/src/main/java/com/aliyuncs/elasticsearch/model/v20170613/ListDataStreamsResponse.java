@@ -57,27 +57,19 @@ public class ListDataStreamsResponse extends AcsResponse {
 
 	public static class ResultItem {
 
-		private String health;
-
 		private Long totalStorageSize;
-
-		private String name;
-
-		private Long managedStorageSize;
 
 		private String indexTemplateName;
 
 		private String ilmPolicyName;
 
+		private String name;
+
+		private String health;
+
+		private Long managedStorageSize;
+
 		private List<IndicesItem> indices;
-
-		public String getHealth() {
-			return this.health;
-		}
-
-		public void setHealth(String health) {
-			this.health = health;
-		}
 
 		public Long getTotalStorageSize() {
 			return this.totalStorageSize;
@@ -85,22 +77,6 @@ public class ListDataStreamsResponse extends AcsResponse {
 
 		public void setTotalStorageSize(Long totalStorageSize) {
 			this.totalStorageSize = totalStorageSize;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public Long getManagedStorageSize() {
-			return this.managedStorageSize;
-		}
-
-		public void setManagedStorageSize(Long managedStorageSize) {
-			this.managedStorageSize = managedStorageSize;
 		}
 
 		public String getIndexTemplateName() {
@@ -119,6 +95,30 @@ public class ListDataStreamsResponse extends AcsResponse {
 			this.ilmPolicyName = ilmPolicyName;
 		}
 
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getHealth() {
+			return this.health;
+		}
+
+		public void setHealth(String health) {
+			this.health = health;
+		}
+
+		public Long getManagedStorageSize() {
+			return this.managedStorageSize;
+		}
+
+		public void setManagedStorageSize(Long managedStorageSize) {
+			this.managedStorageSize = managedStorageSize;
+		}
+
 		public List<IndicesItem> getIndices() {
 			return this.indices;
 		}
@@ -129,17 +129,49 @@ public class ListDataStreamsResponse extends AcsResponse {
 
 		public static class IndicesItem {
 
+			private Boolean isManaged;
+
+			private String createTime;
+
+			private Long size;
+
+			private String managedStatus;
+
 			private String name;
 
 			private String health;
 
-			private Long size;
+			public Boolean getIsManaged() {
+				return this.isManaged;
+			}
 
-			private String createTime;
+			public void setIsManaged(Boolean isManaged) {
+				this.isManaged = isManaged;
+			}
 
-			private Boolean isManaged;
+			public String getCreateTime() {
+				return this.createTime;
+			}
 
-			private String managedStatus;
+			public void setCreateTime(String createTime) {
+				this.createTime = createTime;
+			}
+
+			public Long getSize() {
+				return this.size;
+			}
+
+			public void setSize(Long size) {
+				this.size = size;
+			}
+
+			public String getManagedStatus() {
+				return this.managedStatus;
+			}
+
+			public void setManagedStatus(String managedStatus) {
+				this.managedStatus = managedStatus;
+			}
 
 			public String getName() {
 				return this.name;
@@ -156,54 +188,14 @@ public class ListDataStreamsResponse extends AcsResponse {
 			public void setHealth(String health) {
 				this.health = health;
 			}
-
-			public Long getSize() {
-				return this.size;
-			}
-
-			public void setSize(Long size) {
-				this.size = size;
-			}
-
-			public String getCreateTime() {
-				return this.createTime;
-			}
-
-			public void setCreateTime(String createTime) {
-				this.createTime = createTime;
-			}
-
-			public Boolean getIsManaged() {
-				return this.isManaged;
-			}
-
-			public void setIsManaged(Boolean isManaged) {
-				this.isManaged = isManaged;
-			}
-
-			public String getManagedStatus() {
-				return this.managedStatus;
-			}
-
-			public void setManagedStatus(String managedStatus) {
-				this.managedStatus = managedStatus;
-			}
 		}
 	}
 
 	public static class Headers {
 
-		private Integer xManagedCount;
-
 		private Long xManagedStorageSize;
 
-		public Integer getXManagedCount() {
-			return this.xManagedCount;
-		}
-
-		public void setXManagedCount(Integer xManagedCount) {
-			this.xManagedCount = xManagedCount;
-		}
+		private Integer xManagedCount;
 
 		public Long getXManagedStorageSize() {
 			return this.xManagedStorageSize;
@@ -211,6 +203,14 @@ public class ListDataStreamsResponse extends AcsResponse {
 
 		public void setXManagedStorageSize(Long xManagedStorageSize) {
 			this.xManagedStorageSize = xManagedStorageSize;
+		}
+
+		public Integer getXManagedCount() {
+			return this.xManagedCount;
+		}
+
+		public void setXManagedCount(Integer xManagedCount) {
+			this.xManagedCount = xManagedCount;
 		}
 	}
 

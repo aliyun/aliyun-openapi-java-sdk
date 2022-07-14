@@ -28,6 +28,8 @@ public class UninstallLogstashPluginRequest extends RoaAcsRequest<UninstallLogst
 	private String instanceId;
 
 	private String clientToken;
+
+	private String body;
 	public UninstallLogstashPluginRequest() {
 		super("elasticsearch", "2017-06-13", "UninstallLogstashPlugin", "elasticsearch");
 		setUriPattern("/openapi/logstashes/[InstanceId]/plugins/actions/uninstall");
@@ -57,6 +59,17 @@ public class UninstallLogstashPluginRequest extends RoaAcsRequest<UninstallLogst
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("clientToken", clientToken);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

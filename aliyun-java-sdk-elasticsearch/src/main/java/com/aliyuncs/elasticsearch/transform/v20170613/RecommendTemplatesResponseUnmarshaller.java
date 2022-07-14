@@ -31,8 +31,8 @@ public class RecommendTemplatesResponseUnmarshaller {
 		List<TemplateConfig> result = new ArrayList<TemplateConfig>();
 		for (int i = 0; i < _ctx.lengthValue("RecommendTemplatesResponse.Result.Length"); i++) {
 			TemplateConfig templateConfig = new TemplateConfig();
-			templateConfig.setTemplateName(_ctx.stringValue("RecommendTemplatesResponse.Result["+ i +"].templateName"));
 			templateConfig.setContent(_ctx.stringValue("RecommendTemplatesResponse.Result["+ i +"].content"));
+			templateConfig.setTemplateName(_ctx.stringValue("RecommendTemplatesResponse.Result["+ i +"].templateName"));
 
 			result.add(templateConfig);
 		}

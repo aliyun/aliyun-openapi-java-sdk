@@ -26,6 +26,8 @@ public class GetOpenStoreUsageRequest extends RoaAcsRequest<GetOpenStoreUsageRes
 	   
 
 	private String instanceId;
+
+	private String body;
 	public GetOpenStoreUsageRequest() {
 		super("elasticsearch", "2017-06-13", "GetOpenStoreUsage", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/openstore/usage");
@@ -44,6 +46,17 @@ public class GetOpenStoreUsageRequest extends RoaAcsRequest<GetOpenStoreUsageRes
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putPathParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

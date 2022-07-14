@@ -27,17 +27,17 @@ public class DescribePipelineResponseUnmarshaller {
 
 		Result result = new Result();
 		result.setPipelineId(_ctx.stringValue("DescribePipelineResponse.Result.pipelineId"));
-		result.setConfig(_ctx.stringValue("DescribePipelineResponse.Result.config"));
-		result.setPipelineStatus(_ctx.stringValue("DescribePipelineResponse.Result.pipelineStatus"));
-		result.setGmtCreatedTime(_ctx.stringValue("DescribePipelineResponse.Result.gmtCreatedTime"));
 		result.setGmtUpdateTime(_ctx.stringValue("DescribePipelineResponse.Result.gmtUpdateTime"));
-		result.setWorkers(_ctx.integerValue("DescribePipelineResponse.Result.workers"));
-		result.setBatchSize(_ctx.integerValue("DescribePipelineResponse.Result.batchSize"));
-		result.setBatchDelay(_ctx.integerValue("DescribePipelineResponse.Result.batchDelay"));
-		result.setDescription(_ctx.stringValue("DescribePipelineResponse.Result.description"));
 		result.setQueueType(_ctx.stringValue("DescribePipelineResponse.Result.queueType"));
-		result.setQueueMaxBytes(_ctx.integerValue("DescribePipelineResponse.Result.queueMaxBytes"));
 		result.setQueueCheckPointWrites(_ctx.integerValue("DescribePipelineResponse.Result.queueCheckPointWrites"));
+		result.setQueueMaxBytes(_ctx.integerValue("DescribePipelineResponse.Result.queueMaxBytes"));
+		result.setConfig(_ctx.stringValue("DescribePipelineResponse.Result.config"));
+		result.setBatchDelay(_ctx.integerValue("DescribePipelineResponse.Result.batchDelay"));
+		result.setWorkers(_ctx.integerValue("DescribePipelineResponse.Result.workers"));
+		result.setDescription(_ctx.stringValue("DescribePipelineResponse.Result.description"));
+		result.setGmtCreatedTime(_ctx.stringValue("DescribePipelineResponse.Result.gmtCreatedTime"));
+		result.setBatchSize(_ctx.integerValue("DescribePipelineResponse.Result.batchSize"));
+		result.setPipelineStatus(_ctx.stringValue("DescribePipelineResponse.Result.pipelineStatus"));
 		describePipelineResponse.setResult(result);
 	 
 	 	return describePipelineResponse;

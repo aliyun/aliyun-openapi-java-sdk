@@ -35,19 +35,19 @@ public class UpdateInstanceResponseUnmarshaller {
 		updateInstanceResponse.setRequestId(_ctx.stringValue("UpdateInstanceResponse.RequestId"));
 
 		Result result = new Result();
-		result.setInstanceId(_ctx.stringValue("UpdateInstanceResponse.Result.instanceId"));
+		result.setNodeAmount(_ctx.integerValue("UpdateInstanceResponse.Result.nodeAmount"));
+		result.setPublicDomain(_ctx.stringValue("UpdateInstanceResponse.Result.publicDomain"));
+		result.setCreatedAt(_ctx.stringValue("UpdateInstanceResponse.Result.createdAt"));
+		result.setStatus(_ctx.stringValue("UpdateInstanceResponse.Result.status"));
+		result.setPublicPort(_ctx.integerValue("UpdateInstanceResponse.Result.publicPort"));
+		result.setKibanaPort(_ctx.integerValue("UpdateInstanceResponse.Result.kibanaPort"));
+		result.setPaymentType(_ctx.stringValue("UpdateInstanceResponse.Result.paymentType"));
 		result.setDomain(_ctx.stringValue("UpdateInstanceResponse.Result.domain"));
 		result.setDescription(_ctx.stringValue("UpdateInstanceResponse.Result.description"));
-		result.setNodeAmount(_ctx.integerValue("UpdateInstanceResponse.Result.nodeAmount"));
-		result.setPaymentType(_ctx.stringValue("UpdateInstanceResponse.Result.paymentType"));
-		result.setStatus(_ctx.stringValue("UpdateInstanceResponse.Result.status"));
 		result.setEsVersion(_ctx.stringValue("UpdateInstanceResponse.Result.esVersion"));
-		result.setCreatedAt(_ctx.stringValue("UpdateInstanceResponse.Result.createdAt"));
-		result.setUpdatedAt(_ctx.stringValue("UpdateInstanceResponse.Result.updatedAt"));
 		result.setKibanaDomain(_ctx.stringValue("UpdateInstanceResponse.Result.kibanaDomain"));
-		result.setKibanaPort(_ctx.integerValue("UpdateInstanceResponse.Result.kibanaPort"));
-		result.setPublicDomain(_ctx.stringValue("UpdateInstanceResponse.Result.publicDomain"));
-		result.setPublicPort(_ctx.integerValue("UpdateInstanceResponse.Result.publicPort"));
+		result.setUpdatedAt(_ctx.stringValue("UpdateInstanceResponse.Result.updatedAt"));
+		result.setInstanceId(_ctx.stringValue("UpdateInstanceResponse.Result.instanceId"));
 
 		NodeSpec nodeSpec = new NodeSpec();
 		nodeSpec.setSpec(_ctx.stringValue("UpdateInstanceResponse.Result.nodeSpec.spec"));
@@ -56,33 +56,33 @@ public class UpdateInstanceResponseUnmarshaller {
 		result.setNodeSpec(nodeSpec);
 
 		NetworkConfig networkConfig = new NetworkConfig();
-		networkConfig.setType(_ctx.stringValue("UpdateInstanceResponse.Result.networkConfig.type"));
 		networkConfig.setVpcId(_ctx.stringValue("UpdateInstanceResponse.Result.networkConfig.vpcId"));
-		networkConfig.setVswitchId(_ctx.stringValue("UpdateInstanceResponse.Result.networkConfig.vswitchId"));
 		networkConfig.setVsArea(_ctx.stringValue("UpdateInstanceResponse.Result.networkConfig.vsArea"));
+		networkConfig.setType(_ctx.stringValue("UpdateInstanceResponse.Result.networkConfig.type"));
+		networkConfig.setVswitchId(_ctx.stringValue("UpdateInstanceResponse.Result.networkConfig.vswitchId"));
 		result.setNetworkConfig(networkConfig);
 
 		KibanaConfiguration kibanaConfiguration = new KibanaConfiguration();
 		kibanaConfiguration.setSpec(_ctx.stringValue("UpdateInstanceResponse.Result.kibanaConfiguration.spec"));
 		kibanaConfiguration.setAmount(_ctx.integerValue("UpdateInstanceResponse.Result.kibanaConfiguration.amount"));
-		kibanaConfiguration.setDiskType(_ctx.stringValue("UpdateInstanceResponse.Result.kibanaConfiguration.diskType"));
 		kibanaConfiguration.setDisk(_ctx.integerValue("UpdateInstanceResponse.Result.kibanaConfiguration.disk"));
+		kibanaConfiguration.setDiskType(_ctx.stringValue("UpdateInstanceResponse.Result.kibanaConfiguration.diskType"));
 		result.setKibanaConfiguration(kibanaConfiguration);
 
 		MasterConfiguration masterConfiguration = new MasterConfiguration();
 		masterConfiguration.setSpec(_ctx.stringValue("UpdateInstanceResponse.Result.masterConfiguration.spec"));
 		masterConfiguration.setAmount(_ctx.integerValue("UpdateInstanceResponse.Result.masterConfiguration.amount"));
-		masterConfiguration.setDiskType(_ctx.stringValue("UpdateInstanceResponse.Result.masterConfiguration.diskType"));
 		masterConfiguration.setDisk(_ctx.integerValue("UpdateInstanceResponse.Result.masterConfiguration.disk"));
+		masterConfiguration.setDiskType(_ctx.stringValue("UpdateInstanceResponse.Result.masterConfiguration.diskType"));
 		result.setMasterConfiguration(masterConfiguration);
 
 		List<DictListItem> dictList = new ArrayList<DictListItem>();
 		for (int i = 0; i < _ctx.lengthValue("UpdateInstanceResponse.Result.dictList.Length"); i++) {
 			DictListItem dictListItem = new DictListItem();
-			dictListItem.setName(_ctx.stringValue("UpdateInstanceResponse.Result.dictList["+ i +"].name"));
 			dictListItem.setFileSize(_ctx.longValue("UpdateInstanceResponse.Result.dictList["+ i +"].fileSize"));
-			dictListItem.setType(_ctx.stringValue("UpdateInstanceResponse.Result.dictList["+ i +"].type"));
 			dictListItem.setSourceType(_ctx.stringValue("UpdateInstanceResponse.Result.dictList["+ i +"].sourceType"));
+			dictListItem.setName(_ctx.stringValue("UpdateInstanceResponse.Result.dictList["+ i +"].name"));
+			dictListItem.setType(_ctx.stringValue("UpdateInstanceResponse.Result.dictList["+ i +"].type"));
 
 			dictList.add(dictListItem);
 		}
@@ -91,10 +91,10 @@ public class UpdateInstanceResponseUnmarshaller {
 		List<SynonymsDictsItem> synonymsDicts = new ArrayList<SynonymsDictsItem>();
 		for (int i = 0; i < _ctx.lengthValue("UpdateInstanceResponse.Result.synonymsDicts.Length"); i++) {
 			SynonymsDictsItem synonymsDictsItem = new SynonymsDictsItem();
-			synonymsDictsItem.setName(_ctx.stringValue("UpdateInstanceResponse.Result.synonymsDicts["+ i +"].name"));
 			synonymsDictsItem.setFileSize(_ctx.longValue("UpdateInstanceResponse.Result.synonymsDicts["+ i +"].fileSize"));
-			synonymsDictsItem.setType(_ctx.stringValue("UpdateInstanceResponse.Result.synonymsDicts["+ i +"].type"));
 			synonymsDictsItem.setSourceType(_ctx.stringValue("UpdateInstanceResponse.Result.synonymsDicts["+ i +"].sourceType"));
+			synonymsDictsItem.setName(_ctx.stringValue("UpdateInstanceResponse.Result.synonymsDicts["+ i +"].name"));
+			synonymsDictsItem.setType(_ctx.stringValue("UpdateInstanceResponse.Result.synonymsDicts["+ i +"].type"));
 
 			synonymsDicts.add(synonymsDictsItem);
 		}

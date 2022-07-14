@@ -47,19 +47,11 @@ public class UpdateExtendfilesResponse extends AcsResponse {
 
 	public static class ResultItem {
 
-		private String name;
-
 		private Long fileSize;
 
+		private String name;
+
 		private String sourceType;
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
 
 		public Long getFileSize() {
 			return this.fileSize;
@@ -67,6 +59,14 @@ public class UpdateExtendfilesResponse extends AcsResponse {
 
 		public void setFileSize(Long fileSize) {
 			this.fileSize = fileSize;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public String getSourceType() {

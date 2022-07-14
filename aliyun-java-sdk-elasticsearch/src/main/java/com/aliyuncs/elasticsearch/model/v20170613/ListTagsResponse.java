@@ -47,17 +47,9 @@ public class ListTagsResponse extends AcsResponse {
 
 	public static class ResultItem {
 
-		private String tagKey;
-
 		private String tagValue;
 
-		public String getTagKey() {
-			return this.tagKey;
-		}
-
-		public void setTagKey(String tagKey) {
-			this.tagKey = tagKey;
-		}
+		private String tagKey;
 
 		public String getTagValue() {
 			return this.tagValue;
@@ -65,6 +57,14 @@ public class ListTagsResponse extends AcsResponse {
 
 		public void setTagValue(String tagValue) {
 			this.tagValue = tagValue;
+		}
+
+		public String getTagKey() {
+			return this.tagKey;
+		}
+
+		public void setTagKey(String tagKey) {
+			this.tagKey = tagKey;
 		}
 	}
 

@@ -27,6 +27,8 @@ public class UpdateCollectorNameRequest extends RoaAcsRequest<UpdateCollectorNam
 
 	private String clientToken;
 
+	private String body;
+
 	private String resId;
 	public UpdateCollectorNameRequest() {
 		super("elasticsearch", "2017-06-13", "UpdateCollectorName", "elasticsearch");
@@ -46,6 +48,17 @@ public class UpdateCollectorNameRequest extends RoaAcsRequest<UpdateCollectorNam
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

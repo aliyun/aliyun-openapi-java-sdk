@@ -47,31 +47,31 @@ public class RestartInstanceResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String createdAt;
-
-		private String description;
-
-		private String domain;
-
-		private String esVersion;
-
-		private String instanceId;
-
-		private String kibanaDomain;
-
-		private Integer kibanaPort;
-
 		private Integer nodeAmount;
-
-		private String paymentType;
 
 		private String publicDomain;
 
-		private Integer publicPort;
+		private String createdAt;
 
 		private String status;
 
+		private Integer kibanaPort;
+
+		private Integer publicPort;
+
+		private String paymentType;
+
+		private String domain;
+
+		private String description;
+
+		private String esVersion;
+
+		private String kibanaDomain;
+
 		private String updatedAt;
+
+		private String instanceId;
 
 		private List<DictListItem> dictList;
 
@@ -85,76 +85,12 @@ public class RestartInstanceResponse extends AcsResponse {
 
 		private NodeSpec nodeSpec;
 
-		public String getCreatedAt() {
-			return this.createdAt;
-		}
-
-		public void setCreatedAt(String createdAt) {
-			this.createdAt = createdAt;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getDomain() {
-			return this.domain;
-		}
-
-		public void setDomain(String domain) {
-			this.domain = domain;
-		}
-
-		public String getEsVersion() {
-			return this.esVersion;
-		}
-
-		public void setEsVersion(String esVersion) {
-			this.esVersion = esVersion;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getKibanaDomain() {
-			return this.kibanaDomain;
-		}
-
-		public void setKibanaDomain(String kibanaDomain) {
-			this.kibanaDomain = kibanaDomain;
-		}
-
-		public Integer getKibanaPort() {
-			return this.kibanaPort;
-		}
-
-		public void setKibanaPort(Integer kibanaPort) {
-			this.kibanaPort = kibanaPort;
-		}
-
 		public Integer getNodeAmount() {
 			return this.nodeAmount;
 		}
 
 		public void setNodeAmount(Integer nodeAmount) {
 			this.nodeAmount = nodeAmount;
-		}
-
-		public String getPaymentType() {
-			return this.paymentType;
-		}
-
-		public void setPaymentType(String paymentType) {
-			this.paymentType = paymentType;
 		}
 
 		public String getPublicDomain() {
@@ -165,12 +101,12 @@ public class RestartInstanceResponse extends AcsResponse {
 			this.publicDomain = publicDomain;
 		}
 
-		public Integer getPublicPort() {
-			return this.publicPort;
+		public String getCreatedAt() {
+			return this.createdAt;
 		}
 
-		public void setPublicPort(Integer publicPort) {
-			this.publicPort = publicPort;
+		public void setCreatedAt(String createdAt) {
+			this.createdAt = createdAt;
 		}
 
 		public String getStatus() {
@@ -181,12 +117,76 @@ public class RestartInstanceResponse extends AcsResponse {
 			this.status = status;
 		}
 
+		public Integer getKibanaPort() {
+			return this.kibanaPort;
+		}
+
+		public void setKibanaPort(Integer kibanaPort) {
+			this.kibanaPort = kibanaPort;
+		}
+
+		public Integer getPublicPort() {
+			return this.publicPort;
+		}
+
+		public void setPublicPort(Integer publicPort) {
+			this.publicPort = publicPort;
+		}
+
+		public String getPaymentType() {
+			return this.paymentType;
+		}
+
+		public void setPaymentType(String paymentType) {
+			this.paymentType = paymentType;
+		}
+
+		public String getDomain() {
+			return this.domain;
+		}
+
+		public void setDomain(String domain) {
+			this.domain = domain;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getEsVersion() {
+			return this.esVersion;
+		}
+
+		public void setEsVersion(String esVersion) {
+			this.esVersion = esVersion;
+		}
+
+		public String getKibanaDomain() {
+			return this.kibanaDomain;
+		}
+
+		public void setKibanaDomain(String kibanaDomain) {
+			this.kibanaDomain = kibanaDomain;
+		}
+
 		public String getUpdatedAt() {
 			return this.updatedAt;
 		}
 
 		public void setUpdatedAt(String updatedAt) {
 			this.updatedAt = updatedAt;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public List<DictListItem> getDictList() {
@@ -241,11 +241,11 @@ public class RestartInstanceResponse extends AcsResponse {
 
 			private Long fileSize;
 
+			private String type;
+
 			private String name;
 
 			private String sourceType;
-
-			private String type;
 
 			public Long getFileSize() {
 				return this.fileSize;
@@ -253,6 +253,14 @@ public class RestartInstanceResponse extends AcsResponse {
 
 			public void setFileSize(Long fileSize) {
 				this.fileSize = fileSize;
+			}
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
 			}
 
 			public String getName() {
@@ -269,14 +277,6 @@ public class RestartInstanceResponse extends AcsResponse {
 
 			public void setSourceType(String sourceType) {
 				this.sourceType = sourceType;
-			}
-
-			public String getType() {
-				return this.type;
-			}
-
-			public void setType(String type) {
-				this.type = type;
 			}
 		}
 
@@ -284,11 +284,11 @@ public class RestartInstanceResponse extends AcsResponse {
 
 			private Long fileSize;
 
+			private String type;
+
 			private String name;
 
 			private String sourceType;
-
-			private String type;
 
 			public Long getFileSize() {
 				return this.fileSize;
@@ -296,6 +296,14 @@ public class RestartInstanceResponse extends AcsResponse {
 
 			public void setFileSize(Long fileSize) {
 				this.fileSize = fileSize;
+			}
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
 			}
 
 			public String getName() {
@@ -313,17 +321,11 @@ public class RestartInstanceResponse extends AcsResponse {
 			public void setSourceType(String sourceType) {
 				this.sourceType = sourceType;
 			}
-
-			public String getType() {
-				return this.type;
-			}
-
-			public void setType(String type) {
-				this.type = type;
-			}
 		}
 
 		public static class KibanaConfiguration {
+
+			private String spec;
 
 			private Integer amount;
 
@@ -331,7 +333,13 @@ public class RestartInstanceResponse extends AcsResponse {
 
 			private String diskType;
 
-			private String spec;
+			public String getSpec() {
+				return this.spec;
+			}
+
+			public void setSpec(String spec) {
+				this.spec = spec;
+			}
 
 			public Integer getAmount() {
 				return this.amount;
@@ -355,26 +363,26 @@ public class RestartInstanceResponse extends AcsResponse {
 
 			public void setDiskType(String diskType) {
 				this.diskType = diskType;
-			}
-
-			public String getSpec() {
-				return this.spec;
-			}
-
-			public void setSpec(String spec) {
-				this.spec = spec;
 			}
 		}
 
 		public static class MasterConfiguration {
 
+			private String spec;
+
 			private Integer amount;
 
 			private Integer disk;
 
 			private String diskType;
 
-			private String spec;
+			public String getSpec() {
+				return this.spec;
+			}
+
+			public void setSpec(String spec) {
+				this.spec = spec;
+			}
 
 			public Integer getAmount() {
 				return this.amount;
@@ -399,33 +407,17 @@ public class RestartInstanceResponse extends AcsResponse {
 			public void setDiskType(String diskType) {
 				this.diskType = diskType;
 			}
-
-			public String getSpec() {
-				return this.spec;
-			}
-
-			public void setSpec(String spec) {
-				this.spec = spec;
-			}
 		}
 
 		public static class NetworkConfig {
-
-			private String type;
 
 			private String vpcId;
 
 			private String vsArea;
 
+			private String type;
+
 			private String vswitchId;
-
-			public String getType() {
-				return this.type;
-			}
-
-			public void setType(String type) {
-				this.type = type;
-			}
 
 			public String getVpcId() {
 				return this.vpcId;
@@ -443,6 +435,14 @@ public class RestartInstanceResponse extends AcsResponse {
 				this.vsArea = vsArea;
 			}
 
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
 			public String getVswitchId() {
 				return this.vswitchId;
 			}
@@ -454,11 +454,19 @@ public class RestartInstanceResponse extends AcsResponse {
 
 		public static class NodeSpec {
 
+			private String spec;
+
 			private Integer disk;
 
 			private String diskType;
 
-			private String spec;
+			public String getSpec() {
+				return this.spec;
+			}
+
+			public void setSpec(String spec) {
+				this.spec = spec;
+			}
 
 			public Integer getDisk() {
 				return this.disk;
@@ -474,14 +482,6 @@ public class RestartInstanceResponse extends AcsResponse {
 
 			public void setDiskType(String diskType) {
 				this.diskType = diskType;
-			}
-
-			public String getSpec() {
-				return this.spec;
-			}
-
-			public void setSpec(String spec) {
-				this.spec = spec;
 			}
 		}
 	}

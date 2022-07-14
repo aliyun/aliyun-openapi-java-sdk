@@ -31,8 +31,8 @@ public class GetSuggestShrinkableNodesResponseUnmarshaller {
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetSuggestShrinkableNodesResponse.Result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setHost(_ctx.stringValue("GetSuggestShrinkableNodesResponse.Result["+ i +"].host"));
 			resultItem.setPort(_ctx.integerValue("GetSuggestShrinkableNodesResponse.Result["+ i +"].port"));
+			resultItem.setHost(_ctx.stringValue("GetSuggestShrinkableNodesResponse.Result["+ i +"].host"));
 
 			result.add(resultItem);
 		}

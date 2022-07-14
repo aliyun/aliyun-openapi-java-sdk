@@ -28,6 +28,8 @@ public class UpdateXpackMonitorConfigRequest extends RoaAcsRequest<UpdateXpackMo
 	private String instanceId;
 
 	private String clientToken;
+
+	private String body;
 	public UpdateXpackMonitorConfigRequest() {
 		super("elasticsearch", "2017-06-13", "UpdateXpackMonitorConfig", "elasticsearch");
 		setUriPattern("/openapi/logstashes/[InstanceId]/xpack-monitor-config");
@@ -57,6 +59,17 @@ public class UpdateXpackMonitorConfigRequest extends RoaAcsRequest<UpdateXpackMo
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

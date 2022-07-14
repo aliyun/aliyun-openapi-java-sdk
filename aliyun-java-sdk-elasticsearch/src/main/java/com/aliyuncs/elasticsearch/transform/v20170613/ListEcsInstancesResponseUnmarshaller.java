@@ -41,18 +41,18 @@ public class ListEcsInstancesResponseUnmarshaller {
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListEcsInstancesResponse.Result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setEcsInstanceId(_ctx.stringValue("ListEcsInstancesResponse.Result["+ i +"].ecsInstanceId"));
+			resultItem.setCloudAssistantStatus(_ctx.stringValue("ListEcsInstancesResponse.Result["+ i +"].cloudAssistantStatus"));
 			resultItem.setEcsInstanceName(_ctx.stringValue("ListEcsInstancesResponse.Result["+ i +"].ecsInstanceName"));
-			resultItem.setStatus(_ctx.stringValue("ListEcsInstancesResponse.Result["+ i +"].status"));
+			resultItem.setEcsInstanceId(_ctx.stringValue("ListEcsInstancesResponse.Result["+ i +"].ecsInstanceId"));
 			resultItem.setTags(_ctx.stringValue("ListEcsInstancesResponse.Result["+ i +"].tags"));
 			resultItem.setOsType(_ctx.stringValue("ListEcsInstancesResponse.Result["+ i +"].osType"));
-			resultItem.setCloudAssistantStatus(_ctx.stringValue("ListEcsInstancesResponse.Result["+ i +"].cloudAssistantStatus"));
+			resultItem.setStatus(_ctx.stringValue("ListEcsInstancesResponse.Result["+ i +"].status"));
 
 			List<IpAddressItem> ipAddress = new ArrayList<IpAddressItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListEcsInstancesResponse.Result["+ i +"].ipAddress.Length"); j++) {
 				IpAddressItem ipAddressItem = new IpAddressItem();
-				ipAddressItem.setHost(_ctx.stringValue("ListEcsInstancesResponse.Result["+ i +"].ipAddress["+ j +"].host"));
 				ipAddressItem.setIpType(_ctx.stringValue("ListEcsInstancesResponse.Result["+ i +"].ipAddress["+ j +"].ipType"));
+				ipAddressItem.setHost(_ctx.stringValue("ListEcsInstancesResponse.Result["+ i +"].ipAddress["+ j +"].host"));
 
 				ipAddress.add(ipAddressItem);
 			}
@@ -61,16 +61,16 @@ public class ListEcsInstancesResponseUnmarshaller {
 			List<CollectorsItem> collectors = new ArrayList<CollectorsItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListEcsInstancesResponse.Result["+ i +"].collectors.Length"); j++) {
 				CollectorsItem collectorsItem = new CollectorsItem();
-				collectorsItem.setGmtCreatedTime(_ctx.stringValue("ListEcsInstancesResponse.Result["+ i +"].collectors["+ j +"].gmtCreatedTime"));
-				collectorsItem.setGmtUpdateTime(_ctx.stringValue("ListEcsInstancesResponse.Result["+ i +"].collectors["+ j +"].gmtUpdateTime"));
-				collectorsItem.setName(_ctx.stringValue("ListEcsInstancesResponse.Result["+ i +"].collectors["+ j +"].name"));
 				collectorsItem.setResId(_ctx.stringValue("ListEcsInstancesResponse.Result["+ i +"].collectors["+ j +"].resId"));
-				collectorsItem.setResVersion(_ctx.stringValue("ListEcsInstancesResponse.Result["+ i +"].collectors["+ j +"].resVersion"));
+				collectorsItem.setGmtUpdateTime(_ctx.stringValue("ListEcsInstancesResponse.Result["+ i +"].collectors["+ j +"].gmtUpdateTime"));
+				collectorsItem.setDryRun(_ctx.booleanValue("ListEcsInstancesResponse.Result["+ i +"].collectors["+ j +"].dryRun"));
+				collectorsItem.setOwnerId(_ctx.stringValue("ListEcsInstancesResponse.Result["+ i +"].collectors["+ j +"].ownerId"));
 				collectorsItem.setVpcId(_ctx.stringValue("ListEcsInstancesResponse.Result["+ i +"].collectors["+ j +"].vpcId"));
 				collectorsItem.setResType(_ctx.stringValue("ListEcsInstancesResponse.Result["+ i +"].collectors["+ j +"].resType"));
-				collectorsItem.setOwnerId(_ctx.stringValue("ListEcsInstancesResponse.Result["+ i +"].collectors["+ j +"].ownerId"));
+				collectorsItem.setResVersion(_ctx.stringValue("ListEcsInstancesResponse.Result["+ i +"].collectors["+ j +"].resVersion"));
+				collectorsItem.setGmtCreatedTime(_ctx.stringValue("ListEcsInstancesResponse.Result["+ i +"].collectors["+ j +"].gmtCreatedTime"));
 				collectorsItem.setStatus(_ctx.stringValue("ListEcsInstancesResponse.Result["+ i +"].collectors["+ j +"].status"));
-				collectorsItem.setDryRun(_ctx.booleanValue("ListEcsInstancesResponse.Result["+ i +"].collectors["+ j +"].dryRun"));
+				collectorsItem.setName(_ctx.stringValue("ListEcsInstancesResponse.Result["+ i +"].collectors["+ j +"].name"));
 
 				List<String> collectorPaths = new ArrayList<String>();
 				for (int k = 0; k < _ctx.lengthValue("ListEcsInstancesResponse.Result["+ i +"].collectors["+ j +"].collectorPaths.Length"); k++) {
@@ -81,8 +81,8 @@ public class ListEcsInstancesResponseUnmarshaller {
 				List<ConfigsItem> configs = new ArrayList<ConfigsItem>();
 				for (int k = 0; k < _ctx.lengthValue("ListEcsInstancesResponse.Result["+ i +"].collectors["+ j +"].configs.Length"); k++) {
 					ConfigsItem configsItem = new ConfigsItem();
-					configsItem.setFileName(_ctx.stringValue("ListEcsInstancesResponse.Result["+ i +"].collectors["+ j +"].configs["+ k +"].fileName"));
 					configsItem.setContent(_ctx.stringValue("ListEcsInstancesResponse.Result["+ i +"].collectors["+ j +"].configs["+ k +"].content"));
+					configsItem.setFileName(_ctx.stringValue("ListEcsInstancesResponse.Result["+ i +"].collectors["+ j +"].configs["+ k +"].fileName"));
 
 					configs.add(configsItem);
 				}
@@ -91,14 +91,14 @@ public class ListEcsInstancesResponseUnmarshaller {
 				List<ExtendConfigsItem> extendConfigs = new ArrayList<ExtendConfigsItem>();
 				for (int k = 0; k < _ctx.lengthValue("ListEcsInstancesResponse.Result["+ i +"].collectors["+ j +"].extendConfigs.Length"); k++) {
 					ExtendConfigsItem extendConfigsItem = new ExtendConfigsItem();
+					extendConfigsItem.setEnableMonitoring(_ctx.booleanValue("ListEcsInstancesResponse.Result["+ i +"].collectors["+ j +"].extendConfigs["+ k +"].enableMonitoring"));
+					extendConfigsItem.setGroupId(_ctx.stringValue("ListEcsInstancesResponse.Result["+ i +"].collectors["+ j +"].extendConfigs["+ k +"].groupId"));
 					extendConfigsItem.setConfigType(_ctx.stringValue("ListEcsInstancesResponse.Result["+ i +"].collectors["+ j +"].extendConfigs["+ k +"].configType"));
-					extendConfigsItem.setInstanceId(_ctx.stringValue("ListEcsInstancesResponse.Result["+ i +"].collectors["+ j +"].extendConfigs["+ k +"].instanceId"));
 					extendConfigsItem.setInstanceType(_ctx.stringValue("ListEcsInstancesResponse.Result["+ i +"].collectors["+ j +"].extendConfigs["+ k +"].instanceType"));
 					extendConfigsItem.setBizProtocol(_ctx.stringValue("ListEcsInstancesResponse.Result["+ i +"].collectors["+ j +"].extendConfigs["+ k +"].protocol"));
 					extendConfigsItem.setUserName(_ctx.stringValue("ListEcsInstancesResponse.Result["+ i +"].collectors["+ j +"].extendConfigs["+ k +"].userName"));
-					extendConfigsItem.setEnableMonitoring(_ctx.booleanValue("ListEcsInstancesResponse.Result["+ i +"].collectors["+ j +"].extendConfigs["+ k +"].enableMonitoring"));
 					extendConfigsItem.setType(_ctx.stringValue("ListEcsInstancesResponse.Result["+ i +"].collectors["+ j +"].extendConfigs["+ k +"].type"));
-					extendConfigsItem.setGroupId(_ctx.stringValue("ListEcsInstancesResponse.Result["+ i +"].collectors["+ j +"].extendConfigs["+ k +"].groupId"));
+					extendConfigsItem.setInstanceId(_ctx.stringValue("ListEcsInstancesResponse.Result["+ i +"].collectors["+ j +"].extendConfigs["+ k +"].instanceId"));
 
 					List<String> hosts = new ArrayList<String>();
 					for (int l = 0; l < _ctx.lengthValue("ListEcsInstancesResponse.Result["+ i +"].collectors["+ j +"].extendConfigs["+ k +"].hosts.Length"); l++) {
@@ -109,8 +109,8 @@ public class ListEcsInstancesResponseUnmarshaller {
 					List<MachinesItem> machines = new ArrayList<MachinesItem>();
 					for (int l = 0; l < _ctx.lengthValue("ListEcsInstancesResponse.Result["+ i +"].collectors["+ j +"].extendConfigs["+ k +"].machines.Length"); l++) {
 						MachinesItem machinesItem = new MachinesItem();
-						machinesItem.setInstanceId(_ctx.stringValue("ListEcsInstancesResponse.Result["+ i +"].collectors["+ j +"].extendConfigs["+ k +"].machines["+ l +"].instanceId"));
 						machinesItem.setAgentStatus(_ctx.stringValue("ListEcsInstancesResponse.Result["+ i +"].collectors["+ j +"].extendConfigs["+ k +"].machines["+ l +"].agentStatus"));
+						machinesItem.setInstanceId(_ctx.stringValue("ListEcsInstancesResponse.Result["+ i +"].collectors["+ j +"].extendConfigs["+ k +"].machines["+ l +"].instanceId"));
 
 						machines.add(machinesItem);
 					}

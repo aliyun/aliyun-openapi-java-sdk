@@ -27,6 +27,8 @@ public class DescribePipelineRequest extends RoaAcsRequest<DescribePipelineRespo
 
 	private String instanceId;
 
+	private String body;
+
 	private String pipelineId;
 	public DescribePipelineRequest() {
 		super("elasticsearch", "2017-06-13", "DescribePipeline", "elasticsearch");
@@ -46,6 +48,17 @@ public class DescribePipelineRequest extends RoaAcsRequest<DescribePipelineRespo
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putPathParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

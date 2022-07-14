@@ -48,27 +48,27 @@ public class DescribeLogstashResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String instanceId;
-
-		private String description;
-
-		private Integer nodeAmount;
+		private Map<Object,Object> config;
 
 		private String paymentType;
 
-		private String status;
+		private String resourceGroupId;
 
-		private String version;
+		private Integer nodeAmount;
+
+		private String description;
 
 		private String createdAt;
 
-		private String updatedAt;
+		private String status;
 
 		private String vpcInstanceId;
 
-		private Map<Object,Object> config;
+		private String updatedAt;
 
-		private String resourceGroupId;
+		private String version;
+
+		private String instanceId;
 
 		private List<Endpoint> endpointList;
 
@@ -82,28 +82,12 @@ public class DescribeLogstashResponse extends AcsResponse {
 
 		private NetworkConfig networkConfig;
 
-		public String getInstanceId() {
-			return this.instanceId;
+		public Map<Object,Object> getConfig() {
+			return this.config;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public Integer getNodeAmount() {
-			return this.nodeAmount;
-		}
-
-		public void setNodeAmount(Integer nodeAmount) {
-			this.nodeAmount = nodeAmount;
+		public void setConfig(Map<Object,Object> config) {
+			this.config = config;
 		}
 
 		public String getPaymentType() {
@@ -114,20 +98,28 @@ public class DescribeLogstashResponse extends AcsResponse {
 			this.paymentType = paymentType;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
-		public String getVersion() {
-			return this.version;
+		public Integer getNodeAmount() {
+			return this.nodeAmount;
 		}
 
-		public void setVersion(String version) {
-			this.version = version;
+		public void setNodeAmount(Integer nodeAmount) {
+			this.nodeAmount = nodeAmount;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getCreatedAt() {
@@ -138,12 +130,12 @@ public class DescribeLogstashResponse extends AcsResponse {
 			this.createdAt = createdAt;
 		}
 
-		public String getUpdatedAt() {
-			return this.updatedAt;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setUpdatedAt(String updatedAt) {
-			this.updatedAt = updatedAt;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getVpcInstanceId() {
@@ -154,20 +146,28 @@ public class DescribeLogstashResponse extends AcsResponse {
 			this.vpcInstanceId = vpcInstanceId;
 		}
 
-		public Map<Object,Object> getConfig() {
-			return this.config;
+		public String getUpdatedAt() {
+			return this.updatedAt;
 		}
 
-		public void setConfig(Map<Object,Object> config) {
-			this.config = config;
+		public void setUpdatedAt(String updatedAt) {
+			this.updatedAt = updatedAt;
 		}
 
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
+		public String getVersion() {
+			return this.version;
 		}
 
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
+		public void setVersion(String version) {
+			this.version = version;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public List<Endpoint> getEndpointList() {
@@ -220,18 +220,18 @@ public class DescribeLogstashResponse extends AcsResponse {
 
 		public static class Endpoint {
 
-			private String host;
+			private String zoneId;
 
 			private String port;
 
-			private String zoneId;
+			private String host;
 
-			public String getHost() {
-				return this.host;
+			public String getZoneId() {
+				return this.zoneId;
 			}
 
-			public void setHost(String host) {
-				this.host = host;
+			public void setZoneId(String zoneId) {
+				this.zoneId = zoneId;
 			}
 
 			public String getPort() {
@@ -242,12 +242,12 @@ public class DescribeLogstashResponse extends AcsResponse {
 				this.port = port;
 			}
 
-			public String getZoneId() {
-				return this.zoneId;
+			public String getHost() {
+				return this.host;
 			}
 
-			public void setZoneId(String zoneId) {
-				this.zoneId = zoneId;
+			public void setHost(String host) {
+				this.host = host;
 			}
 		}
 
@@ -276,17 +276,9 @@ public class DescribeLogstashResponse extends AcsResponse {
 
 		public static class ZoneInfosItem {
 
-			private String zoneId;
-
 			private String status;
 
-			public String getZoneId() {
-				return this.zoneId;
-			}
-
-			public void setZoneId(String zoneId) {
-				this.zoneId = zoneId;
-			}
+			private String zoneId;
 
 			public String getStatus() {
 				return this.status;
@@ -294,6 +286,14 @@ public class DescribeLogstashResponse extends AcsResponse {
 
 			public void setStatus(String status) {
 				this.status = status;
+			}
+
+			public String getZoneId() {
+				return this.zoneId;
+			}
+
+			public void setZoneId(String zoneId) {
+				this.zoneId = zoneId;
 			}
 		}
 
@@ -303,9 +303,9 @@ public class DescribeLogstashResponse extends AcsResponse {
 
 			private Integer disk;
 
-			private String diskType;
-
 			private Boolean diskEncryption;
+
+			private String diskType;
 
 			public String getSpec() {
 				return this.spec;
@@ -323,14 +323,6 @@ public class DescribeLogstashResponse extends AcsResponse {
 				this.disk = disk;
 			}
 
-			public String getDiskType() {
-				return this.diskType;
-			}
-
-			public void setDiskType(String diskType) {
-				this.diskType = diskType;
-			}
-
 			public Boolean getDiskEncryption() {
 				return this.diskEncryption;
 			}
@@ -338,25 +330,25 @@ public class DescribeLogstashResponse extends AcsResponse {
 			public void setDiskEncryption(Boolean diskEncryption) {
 				this.diskEncryption = diskEncryption;
 			}
+
+			public String getDiskType() {
+				return this.diskType;
+			}
+
+			public void setDiskType(String diskType) {
+				this.diskType = diskType;
+			}
 		}
 
 		public static class NetworkConfig {
 
-			private String type;
-
 			private String vpcId;
-
-			private String vswitchId;
 
 			private String vsArea;
 
-			public String getType() {
-				return this.type;
-			}
+			private String type;
 
-			public void setType(String type) {
-				this.type = type;
-			}
+			private String vswitchId;
 
 			public String getVpcId() {
 				return this.vpcId;
@@ -366,20 +358,28 @@ public class DescribeLogstashResponse extends AcsResponse {
 				this.vpcId = vpcId;
 			}
 
-			public String getVswitchId() {
-				return this.vswitchId;
-			}
-
-			public void setVswitchId(String vswitchId) {
-				this.vswitchId = vswitchId;
-			}
-
 			public String getVsArea() {
 				return this.vsArea;
 			}
 
 			public void setVsArea(String vsArea) {
 				this.vsArea = vsArea;
+			}
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public String getVswitchId() {
+				return this.vswitchId;
+			}
+
+			public void setVswitchId(String vswitchId) {
+				this.vswitchId = vswitchId;
 			}
 		}
 	}

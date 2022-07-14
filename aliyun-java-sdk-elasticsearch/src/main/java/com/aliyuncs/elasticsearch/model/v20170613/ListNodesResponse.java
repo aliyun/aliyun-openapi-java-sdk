@@ -57,15 +57,15 @@ public class ListNodesResponse extends AcsResponse {
 
 	public static class ResultItem {
 
-		private String ecsInstanceId;
+		private String cloudAssistantStatus;
 
 		private String ecsInstanceName;
 
-		private String status;
+		private String ecsInstanceId;
 
 		private String osType;
 
-		private String cloudAssistantStatus;
+		private String status;
 
 		private String agentStatus;
 
@@ -73,12 +73,12 @@ public class ListNodesResponse extends AcsResponse {
 
 		private List<IpAddressItem> ipAddress;
 
-		public String getEcsInstanceId() {
-			return this.ecsInstanceId;
+		public String getCloudAssistantStatus() {
+			return this.cloudAssistantStatus;
 		}
 
-		public void setEcsInstanceId(String ecsInstanceId) {
-			this.ecsInstanceId = ecsInstanceId;
+		public void setCloudAssistantStatus(String cloudAssistantStatus) {
+			this.cloudAssistantStatus = cloudAssistantStatus;
 		}
 
 		public String getEcsInstanceName() {
@@ -89,12 +89,12 @@ public class ListNodesResponse extends AcsResponse {
 			this.ecsInstanceName = ecsInstanceName;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getEcsInstanceId() {
+			return this.ecsInstanceId;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setEcsInstanceId(String ecsInstanceId) {
+			this.ecsInstanceId = ecsInstanceId;
 		}
 
 		public String getOsType() {
@@ -105,12 +105,12 @@ public class ListNodesResponse extends AcsResponse {
 			this.osType = osType;
 		}
 
-		public String getCloudAssistantStatus() {
-			return this.cloudAssistantStatus;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setCloudAssistantStatus(String cloudAssistantStatus) {
-			this.cloudAssistantStatus = cloudAssistantStatus;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getAgentStatus() {
@@ -162,17 +162,9 @@ public class ListNodesResponse extends AcsResponse {
 
 		public static class IpAddressItem {
 
-			private String host;
-
 			private String ipType;
 
-			public String getHost() {
-				return this.host;
-			}
-
-			public void setHost(String host) {
-				this.host = host;
-			}
+			private String host;
 
 			public String getIpType() {
 				return this.ipType;
@@ -180,6 +172,14 @@ public class ListNodesResponse extends AcsResponse {
 
 			public void setIpType(String ipType) {
 				this.ipType = ipType;
+			}
+
+			public String getHost() {
+				return this.host;
+			}
+
+			public void setHost(String host) {
+				this.host = host;
 			}
 		}
 	}

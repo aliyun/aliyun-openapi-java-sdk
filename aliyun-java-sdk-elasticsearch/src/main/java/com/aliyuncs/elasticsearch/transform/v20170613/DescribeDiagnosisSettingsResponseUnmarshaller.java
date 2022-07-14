@@ -26,8 +26,8 @@ public class DescribeDiagnosisSettingsResponseUnmarshaller {
 		describeDiagnosisSettingsResponse.setRequestId(_ctx.stringValue("DescribeDiagnosisSettingsResponse.RequestId"));
 
 		Result result = new Result();
-		result.setScene(_ctx.stringValue("DescribeDiagnosisSettingsResponse.Result.scene"));
 		result.setUpdateTime(_ctx.longValue("DescribeDiagnosisSettingsResponse.Result.updateTime"));
+		result.setScene(_ctx.stringValue("DescribeDiagnosisSettingsResponse.Result.scene"));
 		describeDiagnosisSettingsResponse.setResult(result);
 	 
 	 	return describeDiagnosisSettingsResponse;

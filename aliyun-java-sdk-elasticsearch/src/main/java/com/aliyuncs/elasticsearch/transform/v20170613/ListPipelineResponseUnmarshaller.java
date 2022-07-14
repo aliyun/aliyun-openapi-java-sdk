@@ -37,9 +37,9 @@ public class ListPipelineResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("ListPipelineResponse.Result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
 			resultItem.setPipelineId(_ctx.stringValue("ListPipelineResponse.Result["+ i +"].pipelineId"));
-			resultItem.setPipelineStatus(_ctx.stringValue("ListPipelineResponse.Result["+ i +"].pipelineStatus"));
-			resultItem.setGmtCreatedTime(_ctx.stringValue("ListPipelineResponse.Result["+ i +"].gmtCreatedTime"));
 			resultItem.setGmtUpdateTime(_ctx.stringValue("ListPipelineResponse.Result["+ i +"].gmtUpdateTime"));
+			resultItem.setGmtCreatedTime(_ctx.stringValue("ListPipelineResponse.Result["+ i +"].gmtCreatedTime"));
+			resultItem.setPipelineStatus(_ctx.stringValue("ListPipelineResponse.Result["+ i +"].pipelineStatus"));
 
 			result.add(resultItem);
 		}

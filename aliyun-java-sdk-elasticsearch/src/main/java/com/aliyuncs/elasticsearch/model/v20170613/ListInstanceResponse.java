@@ -60,31 +60,31 @@ public class ListInstanceResponse extends AcsResponse {
 
 		private Boolean advancedDedicateMaster;
 
+		private Integer nodeAmount;
+
 		private String createdAt;
+
+		private String status;
 
 		private Boolean dedicateMaster;
 
-		private String description;
-
-		private String esVersion;
-
-		private String instanceId;
-
-		private Integer nodeAmount;
+		private Boolean serviceVpc;
 
 		private String paymentType;
 
 		private String resourceGroupId;
 
-		private String status;
-
-		private String updatedAt;
-
 		private String postpaidServiceStatus;
+
+		private String description;
+
+		private String esVersion;
 
 		private String isNewDeployment;
 
-		private Boolean serviceVpc;
+		private String updatedAt;
+
+		private String instanceId;
 
 		private List<Tag> tags;
 
@@ -110,12 +110,28 @@ public class ListInstanceResponse extends AcsResponse {
 			this.advancedDedicateMaster = advancedDedicateMaster;
 		}
 
+		public Integer getNodeAmount() {
+			return this.nodeAmount;
+		}
+
+		public void setNodeAmount(Integer nodeAmount) {
+			this.nodeAmount = nodeAmount;
+		}
+
 		public String getCreatedAt() {
 			return this.createdAt;
 		}
 
 		public void setCreatedAt(String createdAt) {
 			this.createdAt = createdAt;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public Boolean getDedicateMaster() {
@@ -126,36 +142,12 @@ public class ListInstanceResponse extends AcsResponse {
 			this.dedicateMaster = dedicateMaster;
 		}
 
-		public String getDescription() {
-			return this.description;
+		public Boolean getServiceVpc() {
+			return this.serviceVpc;
 		}
 
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getEsVersion() {
-			return this.esVersion;
-		}
-
-		public void setEsVersion(String esVersion) {
-			this.esVersion = esVersion;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public Integer getNodeAmount() {
-			return this.nodeAmount;
-		}
-
-		public void setNodeAmount(Integer nodeAmount) {
-			this.nodeAmount = nodeAmount;
+		public void setServiceVpc(Boolean serviceVpc) {
+			this.serviceVpc = serviceVpc;
 		}
 
 		public String getPaymentType() {
@@ -174,28 +166,28 @@ public class ListInstanceResponse extends AcsResponse {
 			this.resourceGroupId = resourceGroupId;
 		}
 
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getUpdatedAt() {
-			return this.updatedAt;
-		}
-
-		public void setUpdatedAt(String updatedAt) {
-			this.updatedAt = updatedAt;
-		}
-
 		public String getPostpaidServiceStatus() {
 			return this.postpaidServiceStatus;
 		}
 
 		public void setPostpaidServiceStatus(String postpaidServiceStatus) {
 			this.postpaidServiceStatus = postpaidServiceStatus;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getEsVersion() {
+			return this.esVersion;
+		}
+
+		public void setEsVersion(String esVersion) {
+			this.esVersion = esVersion;
 		}
 
 		public String getIsNewDeployment() {
@@ -206,12 +198,20 @@ public class ListInstanceResponse extends AcsResponse {
 			this.isNewDeployment = isNewDeployment;
 		}
 
-		public Boolean getServiceVpc() {
-			return this.serviceVpc;
+		public String getUpdatedAt() {
+			return this.updatedAt;
 		}
 
-		public void setServiceVpc(Boolean serviceVpc) {
-			this.serviceVpc = serviceVpc;
+		public void setUpdatedAt(String updatedAt) {
+			this.updatedAt = updatedAt;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public List<Tag> getTags() {
@@ -303,13 +303,21 @@ public class ListInstanceResponse extends AcsResponse {
 
 		public static class ClientNodeConfiguration {
 
+			private String spec;
+
 			private Integer amount;
 
 			private Integer disk;
 
 			private String diskType;
 
-			private String spec;
+			public String getSpec() {
+				return this.spec;
+			}
+
+			public void setSpec(String spec) {
+				this.spec = spec;
+			}
 
 			public Integer getAmount() {
 				return this.amount;
@@ -334,17 +342,11 @@ public class ListInstanceResponse extends AcsResponse {
 			public void setDiskType(String diskType) {
 				this.diskType = diskType;
 			}
-
-			public String getSpec() {
-				return this.spec;
-			}
-
-			public void setSpec(String spec) {
-				this.spec = spec;
-			}
 		}
 
 		public static class ElasticDataNodeConfiguration {
+
+			private String spec;
 
 			private Integer amount;
 
@@ -354,7 +356,13 @@ public class ListInstanceResponse extends AcsResponse {
 
 			private String diskType;
 
-			private String spec;
+			public String getSpec() {
+				return this.spec;
+			}
+
+			public void setSpec(String spec) {
+				this.spec = spec;
+			}
 
 			public Integer getAmount() {
 				return this.amount;
@@ -387,6 +395,17 @@ public class ListInstanceResponse extends AcsResponse {
 			public void setDiskType(String diskType) {
 				this.diskType = diskType;
 			}
+		}
+
+		public static class KibanaConfiguration {
+
+			private String spec;
+
+			private Integer amount;
+
+			private Integer disk;
+
+			private String diskType;
 
 			public String getSpec() {
 				return this.spec;
@@ -395,17 +414,6 @@ public class ListInstanceResponse extends AcsResponse {
 			public void setSpec(String spec) {
 				this.spec = spec;
 			}
-		}
-
-		public static class KibanaConfiguration {
-
-			private Integer amount;
-
-			private Integer disk;
-
-			private String diskType;
-
-			private String spec;
 
 			public Integer getAmount() {
 				return this.amount;
@@ -429,26 +437,26 @@ public class ListInstanceResponse extends AcsResponse {
 
 			public void setDiskType(String diskType) {
 				this.diskType = diskType;
-			}
-
-			public String getSpec() {
-				return this.spec;
-			}
-
-			public void setSpec(String spec) {
-				this.spec = spec;
 			}
 		}
 
 		public static class MasterConfiguration {
 
+			private String spec;
+
 			private Integer amount;
 
 			private Integer disk;
 
 			private String diskType;
 
-			private String spec;
+			public String getSpec() {
+				return this.spec;
+			}
+
+			public void setSpec(String spec) {
+				this.spec = spec;
+			}
 
 			public Integer getAmount() {
 				return this.amount;
@@ -473,33 +481,17 @@ public class ListInstanceResponse extends AcsResponse {
 			public void setDiskType(String diskType) {
 				this.diskType = diskType;
 			}
-
-			public String getSpec() {
-				return this.spec;
-			}
-
-			public void setSpec(String spec) {
-				this.spec = spec;
-			}
 		}
 
 		public static class NetworkConfig {
-
-			private String type;
 
 			private String vpcId;
 
 			private String vsArea;
 
+			private String type;
+
 			private String vswitchId;
-
-			public String getType() {
-				return this.type;
-			}
-
-			public void setType(String type) {
-				this.type = type;
-			}
 
 			public String getVpcId() {
 				return this.vpcId;
@@ -517,6 +509,14 @@ public class ListInstanceResponse extends AcsResponse {
 				this.vsArea = vsArea;
 			}
 
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
 			public String getVswitchId() {
 				return this.vswitchId;
 			}
@@ -528,13 +528,21 @@ public class ListInstanceResponse extends AcsResponse {
 
 		public static class NodeSpec {
 
+			private String spec;
+
 			private Integer disk;
 
 			private Boolean diskEncryption;
 
 			private String diskType;
 
-			private String spec;
+			public String getSpec() {
+				return this.spec;
+			}
+
+			public void setSpec(String spec) {
+				this.spec = spec;
+			}
 
 			public Integer getDisk() {
 				return this.disk;
@@ -558,14 +566,6 @@ public class ListInstanceResponse extends AcsResponse {
 
 			public void setDiskType(String diskType) {
 				this.diskType = diskType;
-			}
-
-			public String getSpec() {
-				return this.spec;
-			}
-
-			public void setSpec(String spec) {
-				this.spec = spec;
 			}
 		}
 	}

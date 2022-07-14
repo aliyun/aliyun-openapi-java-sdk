@@ -69,23 +69,15 @@ public class GetClusterDataInformationResponse extends AcsResponse {
 
 		public static class MetaInfo {
 
-			private String settings;
-
 			private String mapping;
 
-			private List<String> indices;
-
-			private List<String> fields;
+			private String settings;
 
 			private List<String> typeName;
 
-			public String getSettings() {
-				return this.settings;
-			}
+			private List<String> fields;
 
-			public void setSettings(String settings) {
-				this.settings = settings;
-			}
+			private List<String> indices;
 
 			public String getMapping() {
 				return this.mapping;
@@ -95,12 +87,20 @@ public class GetClusterDataInformationResponse extends AcsResponse {
 				this.mapping = mapping;
 			}
 
-			public List<String> getIndices() {
-				return this.indices;
+			public String getSettings() {
+				return this.settings;
 			}
 
-			public void setIndices(List<String> indices) {
-				this.indices = indices;
+			public void setSettings(String settings) {
+				this.settings = settings;
+			}
+
+			public List<String> getTypeName() {
+				return this.typeName;
+			}
+
+			public void setTypeName(List<String> typeName) {
+				this.typeName = typeName;
 			}
 
 			public List<String> getFields() {
@@ -111,12 +111,12 @@ public class GetClusterDataInformationResponse extends AcsResponse {
 				this.fields = fields;
 			}
 
-			public List<String> getTypeName() {
-				return this.typeName;
+			public List<String> getIndices() {
+				return this.indices;
 			}
 
-			public void setTypeName(List<String> typeName) {
-				this.typeName = typeName;
+			public void setIndices(List<String> indices) {
+				this.indices = indices;
 			}
 		}
 	}

@@ -31,10 +31,10 @@ public class ListAckClustersResponseUnmarshaller {
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListAckClustersResponse.Result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setClusterId(_ctx.stringValue("ListAckClustersResponse.Result["+ i +"].clusterId"));
-			resultItem.setName(_ctx.stringValue("ListAckClustersResponse.Result["+ i +"].name"));
 			resultItem.setClusterType(_ctx.stringValue("ListAckClustersResponse.Result["+ i +"].clusterType"));
 			resultItem.setVpcId(_ctx.stringValue("ListAckClustersResponse.Result["+ i +"].vpcId"));
+			resultItem.setName(_ctx.stringValue("ListAckClustersResponse.Result["+ i +"].name"));
+			resultItem.setClusterId(_ctx.stringValue("ListAckClustersResponse.Result["+ i +"].clusterId"));
 
 			result.add(resultItem);
 		}

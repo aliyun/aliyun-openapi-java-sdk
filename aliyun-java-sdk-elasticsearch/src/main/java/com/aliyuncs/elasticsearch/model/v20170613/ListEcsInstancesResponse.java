@@ -57,28 +57,28 @@ public class ListEcsInstancesResponse extends AcsResponse {
 
 	public static class ResultItem {
 
-		private String ecsInstanceId;
+		private String cloudAssistantStatus;
 
 		private String ecsInstanceName;
 
-		private String status;
+		private String ecsInstanceId;
 
 		private String tags;
 
 		private String osType;
 
-		private String cloudAssistantStatus;
+		private String status;
 
 		private List<IpAddressItem> ipAddress;
 
 		private List<CollectorsItem> collectors;
 
-		public String getEcsInstanceId() {
-			return this.ecsInstanceId;
+		public String getCloudAssistantStatus() {
+			return this.cloudAssistantStatus;
 		}
 
-		public void setEcsInstanceId(String ecsInstanceId) {
-			this.ecsInstanceId = ecsInstanceId;
+		public void setCloudAssistantStatus(String cloudAssistantStatus) {
+			this.cloudAssistantStatus = cloudAssistantStatus;
 		}
 
 		public String getEcsInstanceName() {
@@ -89,12 +89,12 @@ public class ListEcsInstancesResponse extends AcsResponse {
 			this.ecsInstanceName = ecsInstanceName;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getEcsInstanceId() {
+			return this.ecsInstanceId;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setEcsInstanceId(String ecsInstanceId) {
+			this.ecsInstanceId = ecsInstanceId;
 		}
 
 		public String getTags() {
@@ -113,12 +113,12 @@ public class ListEcsInstancesResponse extends AcsResponse {
 			this.osType = osType;
 		}
 
-		public String getCloudAssistantStatus() {
-			return this.cloudAssistantStatus;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setCloudAssistantStatus(String cloudAssistantStatus) {
-			this.cloudAssistantStatus = cloudAssistantStatus;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public List<IpAddressItem> getIpAddress() {
@@ -139,17 +139,9 @@ public class ListEcsInstancesResponse extends AcsResponse {
 
 		public static class IpAddressItem {
 
-			private String host;
-
 			private String ipType;
 
-			public String getHost() {
-				return this.host;
-			}
-
-			public void setHost(String host) {
-				this.host = host;
-			}
+			private String host;
 
 			public String getIpType() {
 				return this.ipType;
@@ -158,29 +150,37 @@ public class ListEcsInstancesResponse extends AcsResponse {
 			public void setIpType(String ipType) {
 				this.ipType = ipType;
 			}
+
+			public String getHost() {
+				return this.host;
+			}
+
+			public void setHost(String host) {
+				this.host = host;
+			}
 		}
 
 		public static class CollectorsItem {
 
-			private String gmtCreatedTime;
+			private String resId;
 
 			private String gmtUpdateTime;
 
-			private String name;
+			private Boolean dryRun;
 
-			private String resId;
-
-			private String resVersion;
+			private String ownerId;
 
 			private String vpcId;
 
 			private String resType;
 
-			private String ownerId;
+			private String resVersion;
+
+			private String gmtCreatedTime;
 
 			private String status;
 
-			private Boolean dryRun;
+			private String name;
 
 			private List<ConfigsItem> configs;
 
@@ -188,12 +188,12 @@ public class ListEcsInstancesResponse extends AcsResponse {
 
 			private List<String> collectorPaths;
 
-			public String getGmtCreatedTime() {
-				return this.gmtCreatedTime;
+			public String getResId() {
+				return this.resId;
 			}
 
-			public void setGmtCreatedTime(String gmtCreatedTime) {
-				this.gmtCreatedTime = gmtCreatedTime;
+			public void setResId(String resId) {
+				this.resId = resId;
 			}
 
 			public String getGmtUpdateTime() {
@@ -204,28 +204,20 @@ public class ListEcsInstancesResponse extends AcsResponse {
 				this.gmtUpdateTime = gmtUpdateTime;
 			}
 
-			public String getName() {
-				return this.name;
+			public Boolean getDryRun() {
+				return this.dryRun;
 			}
 
-			public void setName(String name) {
-				this.name = name;
+			public void setDryRun(Boolean dryRun) {
+				this.dryRun = dryRun;
 			}
 
-			public String getResId() {
-				return this.resId;
+			public String getOwnerId() {
+				return this.ownerId;
 			}
 
-			public void setResId(String resId) {
-				this.resId = resId;
-			}
-
-			public String getResVersion() {
-				return this.resVersion;
-			}
-
-			public void setResVersion(String resVersion) {
-				this.resVersion = resVersion;
+			public void setOwnerId(String ownerId) {
+				this.ownerId = ownerId;
 			}
 
 			public String getVpcId() {
@@ -244,12 +236,20 @@ public class ListEcsInstancesResponse extends AcsResponse {
 				this.resType = resType;
 			}
 
-			public String getOwnerId() {
-				return this.ownerId;
+			public String getResVersion() {
+				return this.resVersion;
 			}
 
-			public void setOwnerId(String ownerId) {
-				this.ownerId = ownerId;
+			public void setResVersion(String resVersion) {
+				this.resVersion = resVersion;
+			}
+
+			public String getGmtCreatedTime() {
+				return this.gmtCreatedTime;
+			}
+
+			public void setGmtCreatedTime(String gmtCreatedTime) {
+				this.gmtCreatedTime = gmtCreatedTime;
 			}
 
 			public String getStatus() {
@@ -260,12 +260,12 @@ public class ListEcsInstancesResponse extends AcsResponse {
 				this.status = status;
 			}
 
-			public Boolean getDryRun() {
-				return this.dryRun;
+			public String getName() {
+				return this.name;
 			}
 
-			public void setDryRun(Boolean dryRun) {
-				this.dryRun = dryRun;
+			public void setName(String name) {
+				this.name = name;
 			}
 
 			public List<ConfigsItem> getConfigs() {
@@ -294,17 +294,9 @@ public class ListEcsInstancesResponse extends AcsResponse {
 
 			public static class ConfigsItem {
 
-				private String fileName;
-
 				private String content;
 
-				public String getFileName() {
-					return this.fileName;
-				}
-
-				public void setFileName(String fileName) {
-					this.fileName = fileName;
-				}
+				private String fileName;
 
 				public String getContent() {
 					return this.content;
@@ -313,13 +305,23 @@ public class ListEcsInstancesResponse extends AcsResponse {
 				public void setContent(String content) {
 					this.content = content;
 				}
+
+				public String getFileName() {
+					return this.fileName;
+				}
+
+				public void setFileName(String fileName) {
+					this.fileName = fileName;
+				}
 			}
 
 			public static class ExtendConfigsItem {
 
-				private String configType;
+				private Boolean enableMonitoring;
 
-				private String instanceId;
+				private String groupId;
+
+				private String configType;
 
 				private String instanceType;
 
@@ -327,15 +329,29 @@ public class ListEcsInstancesResponse extends AcsResponse {
 
 				private String userName;
 
-				private Boolean enableMonitoring;
-
 				private String type;
 
-				private String groupId;
+				private String instanceId;
 
 				private List<MachinesItem> machines;
 
 				private List<String> hosts;
+
+				public Boolean getEnableMonitoring() {
+					return this.enableMonitoring;
+				}
+
+				public void setEnableMonitoring(Boolean enableMonitoring) {
+					this.enableMonitoring = enableMonitoring;
+				}
+
+				public String getGroupId() {
+					return this.groupId;
+				}
+
+				public void setGroupId(String groupId) {
+					this.groupId = groupId;
+				}
 
 				public String getConfigType() {
 					return this.configType;
@@ -343,14 +359,6 @@ public class ListEcsInstancesResponse extends AcsResponse {
 
 				public void setConfigType(String configType) {
 					this.configType = configType;
-				}
-
-				public String getInstanceId() {
-					return this.instanceId;
-				}
-
-				public void setInstanceId(String instanceId) {
-					this.instanceId = instanceId;
 				}
 
 				public String getInstanceType() {
@@ -377,14 +385,6 @@ public class ListEcsInstancesResponse extends AcsResponse {
 					this.userName = userName;
 				}
 
-				public Boolean getEnableMonitoring() {
-					return this.enableMonitoring;
-				}
-
-				public void setEnableMonitoring(Boolean enableMonitoring) {
-					this.enableMonitoring = enableMonitoring;
-				}
-
 				public String getType() {
 					return this.type;
 				}
@@ -393,12 +393,12 @@ public class ListEcsInstancesResponse extends AcsResponse {
 					this.type = type;
 				}
 
-				public String getGroupId() {
-					return this.groupId;
+				public String getInstanceId() {
+					return this.instanceId;
 				}
 
-				public void setGroupId(String groupId) {
-					this.groupId = groupId;
+				public void setInstanceId(String instanceId) {
+					this.instanceId = instanceId;
 				}
 
 				public List<MachinesItem> getMachines() {
@@ -419,17 +419,9 @@ public class ListEcsInstancesResponse extends AcsResponse {
 
 				public static class MachinesItem {
 
-					private String instanceId;
-
 					private String agentStatus;
 
-					public String getInstanceId() {
-						return this.instanceId;
-					}
-
-					public void setInstanceId(String instanceId) {
-						this.instanceId = instanceId;
-					}
+					private String instanceId;
 
 					public String getAgentStatus() {
 						return this.agentStatus;
@@ -437,6 +429,14 @@ public class ListEcsInstancesResponse extends AcsResponse {
 
 					public void setAgentStatus(String agentStatus) {
 						this.agentStatus = agentStatus;
+					}
+
+					public String getInstanceId() {
+						return this.instanceId;
+					}
+
+					public void setInstanceId(String instanceId) {
+						this.instanceId = instanceId;
 					}
 				}
 			}

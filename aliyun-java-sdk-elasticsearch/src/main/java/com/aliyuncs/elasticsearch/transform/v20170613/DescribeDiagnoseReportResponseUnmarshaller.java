@@ -31,12 +31,12 @@ public class DescribeDiagnoseReportResponseUnmarshaller {
 		describeDiagnoseReportResponse.setRequestId(_ctx.stringValue("DescribeDiagnoseReportResponse.RequestId"));
 
 		Result result = new Result();
-		result.setReportId(_ctx.stringValue("DescribeDiagnoseReportResponse.Result.reportId"));
-		result.setInstanceId(_ctx.stringValue("DescribeDiagnoseReportResponse.Result.instanceId"));
-		result.setState(_ctx.stringValue("DescribeDiagnoseReportResponse.Result.state"));
-		result.setCreateTime(_ctx.longValue("DescribeDiagnoseReportResponse.Result.createTime"));
-		result.setHealth(_ctx.stringValue("DescribeDiagnoseReportResponse.Result.health"));
 		result.setTrigger(_ctx.stringValue("DescribeDiagnoseReportResponse.Result.trigger"));
+		result.setCreateTime(_ctx.longValue("DescribeDiagnoseReportResponse.Result.createTime"));
+		result.setReportId(_ctx.stringValue("DescribeDiagnoseReportResponse.Result.reportId"));
+		result.setState(_ctx.stringValue("DescribeDiagnoseReportResponse.Result.state"));
+		result.setInstanceId(_ctx.stringValue("DescribeDiagnoseReportResponse.Result.instanceId"));
+		result.setHealth(_ctx.stringValue("DescribeDiagnoseReportResponse.Result.health"));
 
 		List<DiagnoseItemsItem> diagnoseItems = new ArrayList<DiagnoseItemsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDiagnoseReportResponse.Result.diagnoseItems.Length"); i++) {
@@ -45,11 +45,11 @@ public class DescribeDiagnoseReportResponseUnmarshaller {
 			diagnoseItemsItem.setHealth(_ctx.stringValue("DescribeDiagnoseReportResponse.Result.diagnoseItems["+ i +"].health"));
 
 			Detail detail = new Detail();
+			detail.setType(_ctx.stringValue("DescribeDiagnoseReportResponse.Result.diagnoseItems["+ i +"].detail.type"));
 			detail.setName(_ctx.stringValue("DescribeDiagnoseReportResponse.Result.diagnoseItems["+ i +"].detail.name"));
 			detail.setDesc(_ctx.stringValue("DescribeDiagnoseReportResponse.Result.diagnoseItems["+ i +"].detail.desc"));
-			detail.setType(_ctx.stringValue("DescribeDiagnoseReportResponse.Result.diagnoseItems["+ i +"].detail.type"));
-			detail.setSuggest(_ctx.stringValue("DescribeDiagnoseReportResponse.Result.diagnoseItems["+ i +"].detail.suggest"));
 			detail.setResult(_ctx.stringValue("DescribeDiagnoseReportResponse.Result.diagnoseItems["+ i +"].detail.result"));
+			detail.setSuggest(_ctx.stringValue("DescribeDiagnoseReportResponse.Result.diagnoseItems["+ i +"].detail.suggest"));
 			diagnoseItemsItem.setDetail(detail);
 
 			diagnoseItems.add(diagnoseItemsItem);

@@ -24,6 +24,8 @@ import com.aliyuncs.elasticsearch.Endpoint;
  */
 public class TagResourcesRequest extends RoaAcsRequest<TagResourcesResponse> {
 	   
+
+	private String body;
 	public TagResourcesRequest() {
 		super("elasticsearch", "2017-06-13", "TagResources", "elasticsearch");
 		setUriPattern("/openapi/tags");
@@ -32,6 +34,17 @@ public class TagResourcesRequest extends RoaAcsRequest<TagResourcesResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
+		}
 	}
 
 	@Override

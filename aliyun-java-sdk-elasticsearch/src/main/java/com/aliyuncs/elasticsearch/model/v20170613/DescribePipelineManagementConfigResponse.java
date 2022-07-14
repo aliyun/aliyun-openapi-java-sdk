@@ -47,23 +47,15 @@ public class DescribePipelineManagementConfigResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String pipelineManagementType;
-
 		private String endpoints;
 
 		private String userName;
 
+		private String pipelineManagementType;
+
 		private String esInstanceId;
 
 		private List<String> pipelineIds;
-
-		public String getPipelineManagementType() {
-			return this.pipelineManagementType;
-		}
-
-		public void setPipelineManagementType(String pipelineManagementType) {
-			this.pipelineManagementType = pipelineManagementType;
-		}
 
 		public String getEndpoints() {
 			return this.endpoints;
@@ -79,6 +71,14 @@ public class DescribePipelineManagementConfigResponse extends AcsResponse {
 
 		public void setUserName(String userName) {
 			this.userName = userName;
+		}
+
+		public String getPipelineManagementType() {
+			return this.pipelineManagementType;
+		}
+
+		public void setPipelineManagementType(String pipelineManagementType) {
+			this.pipelineManagementType = pipelineManagementType;
 		}
 
 		public String getEsInstanceId() {

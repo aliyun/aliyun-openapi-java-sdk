@@ -47,15 +47,23 @@ public class DiagnoseInstanceResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String reportId;
+		private Long createTime;
 
-		private String instanceId;
+		private String reportId;
 
 		private String state;
 
-		private Long createTime;
+		private String instanceId;
 
 		private List<DiagnoseItemsItem> diagnoseItems;
+
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
+		}
 
 		public String getReportId() {
 			return this.reportId;
@@ -63,14 +71,6 @@ public class DiagnoseInstanceResponse extends AcsResponse {
 
 		public void setReportId(String reportId) {
 			this.reportId = reportId;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
 		}
 
 		public String getState() {
@@ -81,12 +81,12 @@ public class DiagnoseInstanceResponse extends AcsResponse {
 			this.state = state;
 		}
 
-		public Long getCreateTime() {
-			return this.createTime;
+		public String getInstanceId() {
+			return this.instanceId;
 		}
 
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public List<DiagnoseItemsItem> getDiagnoseItems() {
@@ -131,15 +131,23 @@ public class DiagnoseInstanceResponse extends AcsResponse {
 
 			public static class Detail {
 
+				private String type;
+
 				private String name;
 
 				private String desc;
 
-				private String type;
+				private String result;
 
 				private String suggest;
 
-				private String result;
+				public String getType() {
+					return this.type;
+				}
+
+				public void setType(String type) {
+					this.type = type;
+				}
 
 				public String getName() {
 					return this.name;
@@ -157,12 +165,12 @@ public class DiagnoseInstanceResponse extends AcsResponse {
 					this.desc = desc;
 				}
 
-				public String getType() {
-					return this.type;
+				public String getResult() {
+					return this.result;
 				}
 
-				public void setType(String type) {
-					this.type = type;
+				public void setResult(String result) {
+					this.result = result;
 				}
 
 				public String getSuggest() {
@@ -171,14 +179,6 @@ public class DiagnoseInstanceResponse extends AcsResponse {
 
 				public void setSuggest(String suggest) {
 					this.suggest = suggest;
-				}
-
-				public String getResult() {
-					return this.result;
-				}
-
-				public void setResult(String result) {
-					this.result = result;
 				}
 			}
 		}

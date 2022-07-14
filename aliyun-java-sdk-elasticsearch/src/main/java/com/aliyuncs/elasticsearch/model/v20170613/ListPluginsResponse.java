@@ -57,22 +57,30 @@ public class ListPluginsResponse extends AcsResponse {
 
 	public static class ResultItem {
 
-		private String name;
+		private String description;
+
+		private String specificationUrl;
 
 		private String state;
 
 		private String source;
 
-		private String description;
+		private String name;
 
-		private String specificationUrl;
-
-		public String getName() {
-			return this.name;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getSpecificationUrl() {
+			return this.specificationUrl;
+		}
+
+		public void setSpecificationUrl(String specificationUrl) {
+			this.specificationUrl = specificationUrl;
 		}
 
 		public String getState() {
@@ -91,20 +99,12 @@ public class ListPluginsResponse extends AcsResponse {
 			this.source = source;
 		}
 
-		public String getDescription() {
-			return this.description;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getSpecificationUrl() {
-			return this.specificationUrl;
-		}
-
-		public void setSpecificationUrl(String specificationUrl) {
-			this.specificationUrl = specificationUrl;
+		public void setName(String name) {
+			this.name = name;
 		}
 	}
 

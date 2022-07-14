@@ -28,6 +28,8 @@ public class ValidateConnectionRequest extends RoaAcsRequest<ValidateConnectionR
 	private String instanceId;
 
 	private String clientToken;
+
+	private String body;
 	public ValidateConnectionRequest() {
 		super("elasticsearch", "2017-06-13", "ValidateConnection", "elasticsearch");
 		setUriPattern("/openapi/logstashes/[InstanceId]/validate-connection");
@@ -57,6 +59,17 @@ public class ValidateConnectionRequest extends RoaAcsRequest<ValidateConnectionR
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

@@ -28,6 +28,8 @@ public class EstimatedRestartTimeRequest extends RoaAcsRequest<EstimatedRestartT
 	private String instanceId;
 
 	private Boolean force;
+
+	private String body;
 	public EstimatedRestartTimeRequest() {
 		super("elasticsearch", "2017-06-13", "EstimatedRestartTime", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/estimated-time/restart-time");
@@ -57,6 +59,17 @@ public class EstimatedRestartTimeRequest extends RoaAcsRequest<EstimatedRestartT
 		this.force = force;
 		if(force != null){
 			putQueryParameter("force", force.toString());
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

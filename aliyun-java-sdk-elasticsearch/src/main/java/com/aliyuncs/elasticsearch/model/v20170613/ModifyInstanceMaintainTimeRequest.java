@@ -28,6 +28,8 @@ public class ModifyInstanceMaintainTimeRequest extends RoaAcsRequest<ModifyInsta
 	private String instanceId;
 
 	private String clientToken;
+
+	private String body;
 	public ModifyInstanceMaintainTimeRequest() {
 		super("elasticsearch", "2017-06-13", "ModifyInstanceMaintainTime", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/actions/modify-maintaintime");
@@ -57,6 +59,17 @@ public class ModifyInstanceMaintainTimeRequest extends RoaAcsRequest<ModifyInsta
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

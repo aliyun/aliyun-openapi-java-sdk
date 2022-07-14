@@ -29,8 +29,8 @@ public class DescribeXpackMonitorConfigResponseUnmarshaller {
 		describeXpackMonitorConfigResponse.setRequestId(_ctx.stringValue("DescribeXpackMonitorConfigResponse.RequestId"));
 
 		Result result = new Result();
-		result.setEsInstanceId(_ctx.stringValue("DescribeXpackMonitorConfigResponse.Result.esInstanceId"));
 		result.setUserName(_ctx.stringValue("DescribeXpackMonitorConfigResponse.Result.userName"));
+		result.setEsInstanceId(_ctx.stringValue("DescribeXpackMonitorConfigResponse.Result.esInstanceId"));
 		result.setEnable(_ctx.booleanValue("DescribeXpackMonitorConfigResponse.Result.enable"));
 
 		List<String> endpoints = new ArrayList<String>();

@@ -58,24 +58,24 @@ public class ListSearchLogResponse extends AcsResponse {
 
 	public static class ResultItem {
 
-		private Long timestamp;
+		private String level;
 
 		private String host;
 
-		private String instanceId;
+		private String content;
+
+		private Long timestamp;
 
 		private Map<Object,Object> contentCollection;
 
-		private String level;
+		private String instanceId;
 
-		private String content;
-
-		public Long getTimestamp() {
-			return this.timestamp;
+		public String getLevel() {
+			return this.level;
 		}
 
-		public void setTimestamp(Long timestamp) {
-			this.timestamp = timestamp;
+		public void setLevel(String level) {
+			this.level = level;
 		}
 
 		public String getHost() {
@@ -86,12 +86,20 @@ public class ListSearchLogResponse extends AcsResponse {
 			this.host = host;
 		}
 
-		public String getInstanceId() {
-			return this.instanceId;
+		public String getContent() {
+			return this.content;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
+		public void setContent(String content) {
+			this.content = content;
+		}
+
+		public Long getTimestamp() {
+			return this.timestamp;
+		}
+
+		public void setTimestamp(Long timestamp) {
+			this.timestamp = timestamp;
 		}
 
 		public Map<Object,Object> getContentCollection() {
@@ -102,20 +110,12 @@ public class ListSearchLogResponse extends AcsResponse {
 			this.contentCollection = contentCollection;
 		}
 
-		public String getLevel() {
-			return this.level;
+		public String getInstanceId() {
+			return this.instanceId;
 		}
 
-		public void setLevel(String level) {
-			this.level = level;
-		}
-
-		public String getContent() {
-			return this.content;
-		}
-
-		public void setContent(String content) {
-			this.content = content;
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 	}
 

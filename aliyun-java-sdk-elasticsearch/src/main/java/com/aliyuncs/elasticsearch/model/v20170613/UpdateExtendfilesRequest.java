@@ -28,6 +28,8 @@ public class UpdateExtendfilesRequest extends RoaAcsRequest<UpdateExtendfilesRes
 	private String instanceId;
 
 	private String clientToken;
+
+	private String body;
 	public UpdateExtendfilesRequest() {
 		super("elasticsearch", "2017-06-13", "UpdateExtendfiles", "elasticsearch");
 		setUriPattern("/openapi/logstashes/[InstanceId]/extendfiles");
@@ -57,6 +59,17 @@ public class UpdateExtendfilesRequest extends RoaAcsRequest<UpdateExtendfilesRes
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

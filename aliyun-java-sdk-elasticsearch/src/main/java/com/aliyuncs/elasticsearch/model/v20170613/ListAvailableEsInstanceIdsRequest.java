@@ -26,6 +26,8 @@ public class ListAvailableEsInstanceIdsRequest extends RoaAcsRequest<ListAvailab
 	   
 
 	private String instanceId;
+
+	private String body;
 	public ListAvailableEsInstanceIdsRequest() {
 		super("elasticsearch", "2017-06-13", "ListAvailableEsInstanceIds", "elasticsearch");
 		setUriPattern("/openapi/logstashes/[InstanceId]/available-elasticsearch-for-centralized-management");
@@ -44,6 +46,17 @@ public class ListAvailableEsInstanceIdsRequest extends RoaAcsRequest<ListAvailab
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putPathParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

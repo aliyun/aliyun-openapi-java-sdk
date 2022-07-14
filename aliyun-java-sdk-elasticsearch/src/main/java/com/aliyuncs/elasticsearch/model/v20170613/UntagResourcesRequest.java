@@ -29,6 +29,8 @@ public class UntagResourcesRequest extends RoaAcsRequest<UntagResourcesResponse>
 
 	private String tagKeys;
 
+	private String body;
+
 	private String resourceType;
 
 	private String resourceIds;
@@ -61,6 +63,17 @@ public class UntagResourcesRequest extends RoaAcsRequest<UntagResourcesResponse>
 		this.tagKeys = tagKeys;
 		if(tagKeys != null){
 			putQueryParameter("TagKeys", tagKeys);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

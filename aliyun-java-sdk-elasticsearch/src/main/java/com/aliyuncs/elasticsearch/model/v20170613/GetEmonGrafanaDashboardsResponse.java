@@ -24,21 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetEmonGrafanaDashboardsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
 	private Boolean success;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -54,6 +46,14 @@ public class GetEmonGrafanaDashboardsResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Boolean getSuccess() {

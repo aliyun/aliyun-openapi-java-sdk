@@ -28,6 +28,8 @@ public class UninstallKibanaPluginRequest extends RoaAcsRequest<UninstallKibanaP
 	private String instanceId;
 
 	private String clientToken;
+
+	private String body;
 	public UninstallKibanaPluginRequest() {
 		super("elasticsearch", "2017-06-13", "UninstallKibanaPlugin", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/kibana-plugins/actions/uninstall");
@@ -57,6 +59,17 @@ public class UninstallKibanaPluginRequest extends RoaAcsRequest<UninstallKibanaP
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("clientToken", clientToken);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

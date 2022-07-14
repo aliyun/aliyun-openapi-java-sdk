@@ -30,6 +30,8 @@ public class ListDataStreamsRequest extends RoaAcsRequest<ListDataStreamsRespons
 	private Boolean isManaged;
 
 	private String name;
+
+	private String body;
 	public ListDataStreamsRequest() {
 		super("elasticsearch", "2017-06-13", "ListDataStreams", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/data-streams");
@@ -70,6 +72,17 @@ public class ListDataStreamsRequest extends RoaAcsRequest<ListDataStreamsRespons
 		this.name = name;
 		if(name != null){
 			putQueryParameter("name", name);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

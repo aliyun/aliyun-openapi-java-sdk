@@ -30,6 +30,8 @@ public class UpdateDiagnosisSettingsRequest extends RoaAcsRequest<UpdateDiagnosi
 	private String clientToken;
 
 	private String lang;
+
+	private String body;
 	public UpdateDiagnosisSettingsRequest() {
 		super("elasticsearch", "2017-06-13", "UpdateDiagnosisSettings", "elasticsearch");
 		setUriPattern("/openapi/diagnosis/instances/[InstanceId]/settings");
@@ -70,6 +72,17 @@ public class UpdateDiagnosisSettingsRequest extends RoaAcsRequest<UpdateDiagnosi
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("lang", lang);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

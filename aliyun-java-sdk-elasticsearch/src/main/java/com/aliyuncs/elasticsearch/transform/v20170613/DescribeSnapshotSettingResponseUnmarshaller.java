@@ -26,8 +26,8 @@ public class DescribeSnapshotSettingResponseUnmarshaller {
 		describeSnapshotSettingResponse.setRequestId(_ctx.stringValue("DescribeSnapshotSettingResponse.RequestId"));
 
 		Result result = new Result();
-		result.setQuartzRegex(_ctx.stringValue("DescribeSnapshotSettingResponse.Result.QuartzRegex"));
 		result.setEnable(_ctx.booleanValue("DescribeSnapshotSettingResponse.Result.Enable"));
+		result.setQuartzRegex(_ctx.stringValue("DescribeSnapshotSettingResponse.Result.QuartzRegex"));
 		describeSnapshotSettingResponse.setResult(result);
 	 
 	 	return describeSnapshotSettingResponse;

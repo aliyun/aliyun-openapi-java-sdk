@@ -47,31 +47,31 @@ public class MoveResourceGroupResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String instanceId;
+		private Integer nodeAmount;
+
+		private String publicDomain;
+
+		private String createdAt;
+
+		private String status;
+
+		private Integer publicPort;
+
+		private Integer kibanaPort;
+
+		private String paymentType;
 
 		private String domain;
 
 		private String description;
 
-		private Integer nodeAmount;
-
-		private String paymentType;
-
-		private String status;
-
 		private String esVersion;
-
-		private String createdAt;
-
-		private String updatedAt;
 
 		private String kibanaDomain;
 
-		private Integer kibanaPort;
+		private String updatedAt;
 
-		private String publicDomain;
-
-		private Integer publicPort;
+		private String instanceId;
 
 		private List<DictListItem> dictList;
 
@@ -85,12 +85,60 @@ public class MoveResourceGroupResponse extends AcsResponse {
 
 		private MasterConfiguration masterConfiguration;
 
-		public String getInstanceId() {
-			return this.instanceId;
+		public Integer getNodeAmount() {
+			return this.nodeAmount;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
+		public void setNodeAmount(Integer nodeAmount) {
+			this.nodeAmount = nodeAmount;
+		}
+
+		public String getPublicDomain() {
+			return this.publicDomain;
+		}
+
+		public void setPublicDomain(String publicDomain) {
+			this.publicDomain = publicDomain;
+		}
+
+		public String getCreatedAt() {
+			return this.createdAt;
+		}
+
+		public void setCreatedAt(String createdAt) {
+			this.createdAt = createdAt;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public Integer getPublicPort() {
+			return this.publicPort;
+		}
+
+		public void setPublicPort(Integer publicPort) {
+			this.publicPort = publicPort;
+		}
+
+		public Integer getKibanaPort() {
+			return this.kibanaPort;
+		}
+
+		public void setKibanaPort(Integer kibanaPort) {
+			this.kibanaPort = kibanaPort;
+		}
+
+		public String getPaymentType() {
+			return this.paymentType;
+		}
+
+		public void setPaymentType(String paymentType) {
+			this.paymentType = paymentType;
 		}
 
 		public String getDomain() {
@@ -109,52 +157,12 @@ public class MoveResourceGroupResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public Integer getNodeAmount() {
-			return this.nodeAmount;
-		}
-
-		public void setNodeAmount(Integer nodeAmount) {
-			this.nodeAmount = nodeAmount;
-		}
-
-		public String getPaymentType() {
-			return this.paymentType;
-		}
-
-		public void setPaymentType(String paymentType) {
-			this.paymentType = paymentType;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
 		public String getEsVersion() {
 			return this.esVersion;
 		}
 
 		public void setEsVersion(String esVersion) {
 			this.esVersion = esVersion;
-		}
-
-		public String getCreatedAt() {
-			return this.createdAt;
-		}
-
-		public void setCreatedAt(String createdAt) {
-			this.createdAt = createdAt;
-		}
-
-		public String getUpdatedAt() {
-			return this.updatedAt;
-		}
-
-		public void setUpdatedAt(String updatedAt) {
-			this.updatedAt = updatedAt;
 		}
 
 		public String getKibanaDomain() {
@@ -165,28 +173,20 @@ public class MoveResourceGroupResponse extends AcsResponse {
 			this.kibanaDomain = kibanaDomain;
 		}
 
-		public Integer getKibanaPort() {
-			return this.kibanaPort;
+		public String getUpdatedAt() {
+			return this.updatedAt;
 		}
 
-		public void setKibanaPort(Integer kibanaPort) {
-			this.kibanaPort = kibanaPort;
+		public void setUpdatedAt(String updatedAt) {
+			this.updatedAt = updatedAt;
 		}
 
-		public String getPublicDomain() {
-			return this.publicDomain;
+		public String getInstanceId() {
+			return this.instanceId;
 		}
 
-		public void setPublicDomain(String publicDomain) {
-			this.publicDomain = publicDomain;
-		}
-
-		public Integer getPublicPort() {
-			return this.publicPort;
-		}
-
-		public void setPublicPort(Integer publicPort) {
-			this.publicPort = publicPort;
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public List<DictListItem> getDictList() {
@@ -239,21 +239,13 @@ public class MoveResourceGroupResponse extends AcsResponse {
 
 		public static class DictListItem {
 
-			private String name;
-
 			private Long fileSize;
-
-			private String type;
 
 			private String sourceType;
 
-			public String getName() {
-				return this.name;
-			}
+			private String name;
 
-			public void setName(String name) {
-				this.name = name;
-			}
+			private String type;
 
 			public Long getFileSize() {
 				return this.fileSize;
@@ -263,40 +255,40 @@ public class MoveResourceGroupResponse extends AcsResponse {
 				this.fileSize = fileSize;
 			}
 
-			public String getType() {
-				return this.type;
-			}
-
-			public void setType(String type) {
-				this.type = type;
-			}
-
 			public String getSourceType() {
 				return this.sourceType;
 			}
 
 			public void setSourceType(String sourceType) {
 				this.sourceType = sourceType;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
 			}
 		}
 
 		public static class SynonymsDictsItem {
 
-			private String name;
-
 			private Long fileSize;
-
-			private String type;
 
 			private String sourceType;
 
-			public String getName() {
-				return this.name;
-			}
+			private String name;
 
-			public void setName(String name) {
-				this.name = name;
-			}
+			private String type;
 
 			public Long getFileSize() {
 				return this.fileSize;
@@ -306,20 +298,28 @@ public class MoveResourceGroupResponse extends AcsResponse {
 				this.fileSize = fileSize;
 			}
 
-			public String getType() {
-				return this.type;
-			}
-
-			public void setType(String type) {
-				this.type = type;
-			}
-
 			public String getSourceType() {
 				return this.sourceType;
 			}
 
 			public void setSourceType(String sourceType) {
 				this.sourceType = sourceType;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
 			}
 		}
 
@@ -358,21 +358,13 @@ public class MoveResourceGroupResponse extends AcsResponse {
 
 		public static class NetworkConfig {
 
-			private String type;
-
 			private String vpcId;
-
-			private String vswitchId;
 
 			private String vsArea;
 
-			public String getType() {
-				return this.type;
-			}
+			private String type;
 
-			public void setType(String type) {
-				this.type = type;
-			}
+			private String vswitchId;
 
 			public String getVpcId() {
 				return this.vpcId;
@@ -382,20 +374,28 @@ public class MoveResourceGroupResponse extends AcsResponse {
 				this.vpcId = vpcId;
 			}
 
-			public String getVswitchId() {
-				return this.vswitchId;
-			}
-
-			public void setVswitchId(String vswitchId) {
-				this.vswitchId = vswitchId;
-			}
-
 			public String getVsArea() {
 				return this.vsArea;
 			}
 
 			public void setVsArea(String vsArea) {
 				this.vsArea = vsArea;
+			}
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public String getVswitchId() {
+				return this.vswitchId;
+			}
+
+			public void setVswitchId(String vswitchId) {
+				this.vswitchId = vswitchId;
 			}
 		}
 
@@ -405,9 +405,9 @@ public class MoveResourceGroupResponse extends AcsResponse {
 
 			private Integer amount;
 
-			private String diskType;
-
 			private Integer disk;
+
+			private String diskType;
 
 			public String getSpec() {
 				return this.spec;
@@ -425,20 +425,20 @@ public class MoveResourceGroupResponse extends AcsResponse {
 				this.amount = amount;
 			}
 
-			public String getDiskType() {
-				return this.diskType;
-			}
-
-			public void setDiskType(String diskType) {
-				this.diskType = diskType;
-			}
-
 			public Integer getDisk() {
 				return this.disk;
 			}
 
 			public void setDisk(Integer disk) {
 				this.disk = disk;
+			}
+
+			public String getDiskType() {
+				return this.diskType;
+			}
+
+			public void setDiskType(String diskType) {
+				this.diskType = diskType;
 			}
 		}
 
@@ -448,9 +448,9 @@ public class MoveResourceGroupResponse extends AcsResponse {
 
 			private Integer amount;
 
-			private String diskType;
-
 			private Integer disk;
+
+			private String diskType;
 
 			public String getSpec() {
 				return this.spec;
@@ -468,20 +468,20 @@ public class MoveResourceGroupResponse extends AcsResponse {
 				this.amount = amount;
 			}
 
-			public String getDiskType() {
-				return this.diskType;
-			}
-
-			public void setDiskType(String diskType) {
-				this.diskType = diskType;
-			}
-
 			public Integer getDisk() {
 				return this.disk;
 			}
 
 			public void setDisk(Integer disk) {
 				this.disk = disk;
+			}
+
+			public String getDiskType() {
+				return this.diskType;
+			}
+
+			public void setDiskType(String diskType) {
+				this.diskType = diskType;
 			}
 		}
 	}

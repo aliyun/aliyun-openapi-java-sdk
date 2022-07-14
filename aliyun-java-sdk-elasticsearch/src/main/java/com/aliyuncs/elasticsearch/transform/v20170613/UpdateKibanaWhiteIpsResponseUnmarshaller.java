@@ -30,17 +30,17 @@ public class UpdateKibanaWhiteIpsResponseUnmarshaller {
 
 		Result result = new Result();
 
-		List<String> kibanaIPWhitelist = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("UpdateKibanaWhiteIpsResponse.Result.kibanaIPWhitelist.Length"); i++) {
-			kibanaIPWhitelist.add(_ctx.stringValue("UpdateKibanaWhiteIpsResponse.Result.kibanaIPWhitelist["+ i +"]"));
-		}
-		result.setKibanaIPWhitelist(kibanaIPWhitelist);
-
 		List<String> kibanaPrivateIPWhitelist = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("UpdateKibanaWhiteIpsResponse.Result.kibanaPrivateIPWhitelist.Length"); i++) {
 			kibanaPrivateIPWhitelist.add(_ctx.stringValue("UpdateKibanaWhiteIpsResponse.Result.kibanaPrivateIPWhitelist["+ i +"]"));
 		}
 		result.setKibanaPrivateIPWhitelist(kibanaPrivateIPWhitelist);
+
+		List<String> kibanaIPWhitelist = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("UpdateKibanaWhiteIpsResponse.Result.kibanaIPWhitelist.Length"); i++) {
+			kibanaIPWhitelist.add(_ctx.stringValue("UpdateKibanaWhiteIpsResponse.Result.kibanaIPWhitelist["+ i +"]"));
+		}
+		result.setKibanaIPWhitelist(kibanaIPWhitelist);
 		updateKibanaWhiteIpsResponse.setResult(result);
 	 
 	 	return updateKibanaWhiteIpsResponse;

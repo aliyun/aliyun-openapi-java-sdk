@@ -28,6 +28,8 @@ public class DescribeConnectableClustersRequest extends RoaAcsRequest<DescribeCo
 	private String instanceId;
 
 	private Boolean alreadySetItems;
+
+	private String body;
 	public DescribeConnectableClustersRequest() {
 		super("elasticsearch", "2017-06-13", "DescribeConnectableClusters", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/connectable-clusters");
@@ -57,6 +59,17 @@ public class DescribeConnectableClustersRequest extends RoaAcsRequest<DescribeCo
 		this.alreadySetItems = alreadySetItems;
 		if(alreadySetItems != null){
 			putQueryParameter("alreadySetItems", alreadySetItems.toString());
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

@@ -30,6 +30,8 @@ public class RestartLogstashRequest extends RoaAcsRequest<RestartLogstashRespons
 	private String clientToken;
 
 	private Boolean force;
+
+	private String body;
 	public RestartLogstashRequest() {
 		super("elasticsearch", "2017-06-13", "RestartLogstash", "elasticsearch");
 		setUriPattern("/openapi/logstashes/[InstanceId]/actions/restart");
@@ -70,6 +72,17 @@ public class RestartLogstashRequest extends RoaAcsRequest<RestartLogstashRespons
 		this.force = force;
 		if(force != null){
 			putQueryParameter("force", force.toString());
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

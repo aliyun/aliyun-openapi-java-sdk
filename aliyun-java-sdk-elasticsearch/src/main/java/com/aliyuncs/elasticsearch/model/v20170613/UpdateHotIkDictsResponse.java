@@ -47,21 +47,13 @@ public class UpdateHotIkDictsResponse extends AcsResponse {
 
 	public static class DictList {
 
-		private String name;
-
 		private Long fileSize;
-
-		private String type;
 
 		private String sourceType;
 
-		public String getName() {
-			return this.name;
-		}
+		private String name;
 
-		public void setName(String name) {
-			this.name = name;
-		}
+		private String type;
 
 		public Long getFileSize() {
 			return this.fileSize;
@@ -71,20 +63,28 @@ public class UpdateHotIkDictsResponse extends AcsResponse {
 			this.fileSize = fileSize;
 		}
 
-		public String getType() {
-			return this.type;
-		}
-
-		public void setType(String type) {
-			this.type = type;
-		}
-
 		public String getSourceType() {
 			return this.sourceType;
 		}
 
 		public void setSourceType(String sourceType) {
 			this.sourceType = sourceType;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
 		}
 	}
 

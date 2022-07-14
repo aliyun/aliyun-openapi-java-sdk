@@ -30,6 +30,8 @@ public class ListDictsRequest extends RoaAcsRequest<ListDictsResponse> {
 	private String analyzerType;
 
 	private String name;
+
+	private String body;
 	public ListDictsRequest() {
 		super("elasticsearch", "2017-06-13", "ListDicts", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/dicts");
@@ -70,6 +72,17 @@ public class ListDictsRequest extends RoaAcsRequest<ListDictsResponse> {
 		this.name = name;
 		if(name != null){
 			putQueryParameter("name", name);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

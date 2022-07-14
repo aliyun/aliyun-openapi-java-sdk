@@ -1,3 +1,6 @@
+2022-07-14 Version: 3.1.0
+- Supported next-api-aliyun-com.
+
 2021-11-17 Version: 3.0.29
 - Update apm interface parameter.
 

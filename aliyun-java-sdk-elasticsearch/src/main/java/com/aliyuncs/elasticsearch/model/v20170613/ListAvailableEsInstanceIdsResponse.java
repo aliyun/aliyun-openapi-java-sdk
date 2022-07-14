@@ -47,21 +47,13 @@ public class ListAvailableEsInstanceIdsResponse extends AcsResponse {
 
 	public static class ResultItem {
 
-		private String esInstanceId;
-
 		private String endpoint;
 
 		private String description;
 
 		private String kibanaEndpoint;
 
-		public String getEsInstanceId() {
-			return this.esInstanceId;
-		}
-
-		public void setEsInstanceId(String esInstanceId) {
-			this.esInstanceId = esInstanceId;
-		}
+		private String esInstanceId;
 
 		public String getEndpoint() {
 			return this.endpoint;
@@ -85,6 +77,14 @@ public class ListAvailableEsInstanceIdsResponse extends AcsResponse {
 
 		public void setKibanaEndpoint(String kibanaEndpoint) {
 			this.kibanaEndpoint = kibanaEndpoint;
+		}
+
+		public String getEsInstanceId() {
+			return this.esInstanceId;
+		}
+
+		public void setEsInstanceId(String esInstanceId) {
+			this.esInstanceId = esInstanceId;
 		}
 	}
 

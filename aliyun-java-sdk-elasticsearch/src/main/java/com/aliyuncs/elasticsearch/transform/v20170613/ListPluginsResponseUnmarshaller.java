@@ -36,11 +36,11 @@ public class ListPluginsResponseUnmarshaller {
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListPluginsResponse.Result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setName(_ctx.stringValue("ListPluginsResponse.Result["+ i +"].name"));
-			resultItem.setState(_ctx.stringValue("ListPluginsResponse.Result["+ i +"].state"));
-			resultItem.setSource(_ctx.stringValue("ListPluginsResponse.Result["+ i +"].source"));
 			resultItem.setDescription(_ctx.stringValue("ListPluginsResponse.Result["+ i +"].description"));
 			resultItem.setSpecificationUrl(_ctx.stringValue("ListPluginsResponse.Result["+ i +"].specificationUrl"));
+			resultItem.setState(_ctx.stringValue("ListPluginsResponse.Result["+ i +"].state"));
+			resultItem.setSource(_ctx.stringValue("ListPluginsResponse.Result["+ i +"].source"));
+			resultItem.setName(_ctx.stringValue("ListPluginsResponse.Result["+ i +"].name"));
 
 			result.add(resultItem);
 		}

@@ -46,17 +46,9 @@ public class DescribeSnapshotSettingResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String quartzRegex;
-
 		private Boolean enable;
 
-		public String getQuartzRegex() {
-			return this.quartzRegex;
-		}
-
-		public void setQuartzRegex(String quartzRegex) {
-			this.quartzRegex = quartzRegex;
-		}
+		private String quartzRegex;
 
 		public Boolean getEnable() {
 			return this.enable;
@@ -64,6 +56,14 @@ public class DescribeSnapshotSettingResponse extends AcsResponse {
 
 		public void setEnable(Boolean enable) {
 			this.enable = enable;
+		}
+
+		public String getQuartzRegex() {
+			return this.quartzRegex;
+		}
+
+		public void setQuartzRegex(String quartzRegex) {
+			this.quartzRegex = quartzRegex;
 		}
 	}
 

@@ -26,8 +26,8 @@ public class EstimatedRestartTimeResponseUnmarshaller {
 		estimatedRestartTimeResponse.setRequestId(_ctx.stringValue("EstimatedRestartTimeResponse.RequestId"));
 
 		Result result = new Result();
-		result.setValue(_ctx.longValue("EstimatedRestartTimeResponse.Result.value"));
 		result.setUnit(_ctx.stringValue("EstimatedRestartTimeResponse.Result.unit"));
+		result.setValue(_ctx.longValue("EstimatedRestartTimeResponse.Result.value"));
 		estimatedRestartTimeResponse.setResult(result);
 	 
 	 	return estimatedRestartTimeResponse;

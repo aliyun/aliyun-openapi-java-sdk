@@ -28,6 +28,8 @@ public class UpdateAdvancedSettingRequest extends RoaAcsRequest<UpdateAdvancedSe
 	private String instanceId;
 
 	private String clientToken;
+
+	private String body;
 	public UpdateAdvancedSettingRequest() {
 		super("elasticsearch", "2017-06-13", "UpdateAdvancedSetting", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/actions/update-advanced-setting");
@@ -57,6 +59,17 @@ public class UpdateAdvancedSettingRequest extends RoaAcsRequest<UpdateAdvancedSe
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("clientToken", clientToken);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

@@ -46,17 +46,9 @@ public class DescribeAckOperatorResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String status;
-
 		private String version;
 
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
+		private String status;
 
 		public String getVersion() {
 			return this.version;
@@ -64,6 +56,14 @@ public class DescribeAckOperatorResponse extends AcsResponse {
 
 		public void setVersion(String version) {
 			this.version = version;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
 		}
 	}
 

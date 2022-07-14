@@ -47,9 +47,9 @@ public class DescribeXpackMonitorConfigResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String esInstanceId;
-
 		private String userName;
+
+		private String esInstanceId;
 
 		private Boolean enable;
 
@@ -57,20 +57,20 @@ public class DescribeXpackMonitorConfigResponse extends AcsResponse {
 
 		private List<String> pipelineIds;
 
-		public String getEsInstanceId() {
-			return this.esInstanceId;
-		}
-
-		public void setEsInstanceId(String esInstanceId) {
-			this.esInstanceId = esInstanceId;
-		}
-
 		public String getUserName() {
 			return this.userName;
 		}
 
 		public void setUserName(String userName) {
 			this.userName = userName;
+		}
+
+		public String getEsInstanceId() {
+			return this.esInstanceId;
+		}
+
+		public void setEsInstanceId(String esInstanceId) {
+			this.esInstanceId = esInstanceId;
 		}
 
 		public Boolean getEnable() {

@@ -69,13 +69,7 @@ public class CreateDataTasksResponse extends AcsResponse {
 
 		public static class SourceCluster {
 
-			private String dataSourceType;
-
-			private Integer vpcInstancePort;
-
-			private String vpcId;
-
-			private String vpcInstanceId;
+			private String password;
 
 			private String index;
 
@@ -85,38 +79,20 @@ public class CreateDataTasksResponse extends AcsResponse {
 
 			private String username;
 
-			private String password;
+			private String vpcId;
 
-			public String getDataSourceType() {
-				return this.dataSourceType;
+			private String vpcInstanceId;
+
+			private Integer vpcInstancePort;
+
+			private String dataSourceType;
+
+			public String getPassword() {
+				return this.password;
 			}
 
-			public void setDataSourceType(String dataSourceType) {
-				this.dataSourceType = dataSourceType;
-			}
-
-			public Integer getVpcInstancePort() {
-				return this.vpcInstancePort;
-			}
-
-			public void setVpcInstancePort(Integer vpcInstancePort) {
-				this.vpcInstancePort = vpcInstancePort;
-			}
-
-			public String getVpcId() {
-				return this.vpcId;
-			}
-
-			public void setVpcId(String vpcId) {
-				this.vpcId = vpcId;
-			}
-
-			public String getVpcInstanceId() {
-				return this.vpcInstanceId;
-			}
-
-			public void setVpcInstanceId(String vpcInstanceId) {
-				this.vpcInstanceId = vpcInstanceId;
+			public void setPassword(String password) {
+				this.password = password;
 			}
 
 			public String getIndex() {
@@ -151,38 +127,29 @@ public class CreateDataTasksResponse extends AcsResponse {
 				this.username = username;
 			}
 
-			public String getPassword() {
-				return this.password;
+			public String getVpcId() {
+				return this.vpcId;
 			}
 
-			public void setPassword(String password) {
-				this.password = password;
+			public void setVpcId(String vpcId) {
+				this.vpcId = vpcId;
 			}
-		}
 
-		public static class SinkCluster {
+			public String getVpcInstanceId() {
+				return this.vpcInstanceId;
+			}
 
-			private String dataSourceType;
+			public void setVpcInstanceId(String vpcInstanceId) {
+				this.vpcInstanceId = vpcInstanceId;
+			}
 
-			private String index;
+			public Integer getVpcInstancePort() {
+				return this.vpcInstancePort;
+			}
 
-			private String type;
-
-			private String settings;
-
-			private String mapping;
-
-			private String routing;
-
-			private String vpcId;
-
-			private String vpcInstanceId;
-
-			private String vpcInstancePort;
-
-			private String username;
-
-			private String password;
+			public void setVpcInstancePort(Integer vpcInstancePort) {
+				this.vpcInstancePort = vpcInstancePort;
+			}
 
 			public String getDataSourceType() {
 				return this.dataSourceType;
@@ -191,6 +158,39 @@ public class CreateDataTasksResponse extends AcsResponse {
 			public void setDataSourceType(String dataSourceType) {
 				this.dataSourceType = dataSourceType;
 			}
+		}
+
+		public static class SinkCluster {
+
+			private String password;
+
+			private String index;
+
+			private String settings;
+
+			private String mapping;
+
+			private String type;
+
+			private String routing;
+
+			private String username;
+
+			private String vpcId;
+
+			private String vpcInstancePort;
+
+			private String vpcInstanceId;
+
+			private String dataSourceType;
+
+			public String getPassword() {
+				return this.password;
+			}
+
+			public void setPassword(String password) {
+				this.password = password;
+			}
 
 			public String getIndex() {
 				return this.index;
@@ -198,14 +198,6 @@ public class CreateDataTasksResponse extends AcsResponse {
 
 			public void setIndex(String index) {
 				this.index = index;
-			}
-
-			public String getType() {
-				return this.type;
-			}
-
-			public void setType(String type) {
-				this.type = type;
 			}
 
 			public String getSettings() {
@@ -224,36 +216,20 @@ public class CreateDataTasksResponse extends AcsResponse {
 				this.mapping = mapping;
 			}
 
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
 			public String getRouting() {
 				return this.routing;
 			}
 
 			public void setRouting(String routing) {
 				this.routing = routing;
-			}
-
-			public String getVpcId() {
-				return this.vpcId;
-			}
-
-			public void setVpcId(String vpcId) {
-				this.vpcId = vpcId;
-			}
-
-			public String getVpcInstanceId() {
-				return this.vpcInstanceId;
-			}
-
-			public void setVpcInstanceId(String vpcInstanceId) {
-				this.vpcInstanceId = vpcInstanceId;
-			}
-
-			public String getVpcInstancePort() {
-				return this.vpcInstancePort;
-			}
-
-			public void setVpcInstancePort(String vpcInstancePort) {
-				this.vpcInstancePort = vpcInstancePort;
 			}
 
 			public String getUsername() {
@@ -264,12 +240,36 @@ public class CreateDataTasksResponse extends AcsResponse {
 				this.username = username;
 			}
 
-			public String getPassword() {
-				return this.password;
+			public String getVpcId() {
+				return this.vpcId;
 			}
 
-			public void setPassword(String password) {
-				this.password = password;
+			public void setVpcId(String vpcId) {
+				this.vpcId = vpcId;
+			}
+
+			public String getVpcInstancePort() {
+				return this.vpcInstancePort;
+			}
+
+			public void setVpcInstancePort(String vpcInstancePort) {
+				this.vpcInstancePort = vpcInstancePort;
+			}
+
+			public String getVpcInstanceId() {
+				return this.vpcInstanceId;
+			}
+
+			public void setVpcInstanceId(String vpcInstanceId) {
+				this.vpcInstanceId = vpcInstanceId;
+			}
+
+			public String getDataSourceType() {
+				return this.dataSourceType;
+			}
+
+			public void setDataSourceType(String dataSourceType) {
+				this.dataSourceType = dataSourceType;
 			}
 		}
 	}

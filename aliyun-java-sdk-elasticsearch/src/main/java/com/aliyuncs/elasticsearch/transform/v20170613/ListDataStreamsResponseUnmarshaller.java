@@ -31,29 +31,29 @@ public class ListDataStreamsResponseUnmarshaller {
 		listDataStreamsResponse.setRequestId(_ctx.stringValue("ListDataStreamsResponse.RequestId"));
 
 		Headers headers = new Headers();
-		headers.setXManagedCount(_ctx.integerValue("ListDataStreamsResponse.Headers.X-Managed-Count"));
 		headers.setXManagedStorageSize(_ctx.longValue("ListDataStreamsResponse.Headers.X-Managed-StorageSize"));
+		headers.setXManagedCount(_ctx.integerValue("ListDataStreamsResponse.Headers.X-Managed-Count"));
 		listDataStreamsResponse.setHeaders(headers);
 
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListDataStreamsResponse.Result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setHealth(_ctx.stringValue("ListDataStreamsResponse.Result["+ i +"].health"));
 			resultItem.setTotalStorageSize(_ctx.longValue("ListDataStreamsResponse.Result["+ i +"].totalStorageSize"));
-			resultItem.setName(_ctx.stringValue("ListDataStreamsResponse.Result["+ i +"].name"));
-			resultItem.setManagedStorageSize(_ctx.longValue("ListDataStreamsResponse.Result["+ i +"].managedStorageSize"));
 			resultItem.setIndexTemplateName(_ctx.stringValue("ListDataStreamsResponse.Result["+ i +"].indexTemplateName"));
 			resultItem.setIlmPolicyName(_ctx.stringValue("ListDataStreamsResponse.Result["+ i +"].ilmPolicyName"));
+			resultItem.setName(_ctx.stringValue("ListDataStreamsResponse.Result["+ i +"].name"));
+			resultItem.setHealth(_ctx.stringValue("ListDataStreamsResponse.Result["+ i +"].health"));
+			resultItem.setManagedStorageSize(_ctx.longValue("ListDataStreamsResponse.Result["+ i +"].managedStorageSize"));
 
 			List<IndicesItem> indices = new ArrayList<IndicesItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListDataStreamsResponse.Result["+ i +"].indices.Length"); j++) {
 				IndicesItem indicesItem = new IndicesItem();
+				indicesItem.setIsManaged(_ctx.booleanValue("ListDataStreamsResponse.Result["+ i +"].indices["+ j +"].isManaged"));
+				indicesItem.setCreateTime(_ctx.stringValue("ListDataStreamsResponse.Result["+ i +"].indices["+ j +"].createTime"));
+				indicesItem.setSize(_ctx.longValue("ListDataStreamsResponse.Result["+ i +"].indices["+ j +"].size"));
+				indicesItem.setManagedStatus(_ctx.stringValue("ListDataStreamsResponse.Result["+ i +"].indices["+ j +"].managedStatus"));
 				indicesItem.setName(_ctx.stringValue("ListDataStreamsResponse.Result["+ i +"].indices["+ j +"].name"));
 				indicesItem.setHealth(_ctx.stringValue("ListDataStreamsResponse.Result["+ i +"].indices["+ j +"].health"));
-				indicesItem.setSize(_ctx.longValue("ListDataStreamsResponse.Result["+ i +"].indices["+ j +"].size"));
-				indicesItem.setCreateTime(_ctx.stringValue("ListDataStreamsResponse.Result["+ i +"].indices["+ j +"].createTime"));
-				indicesItem.setIsManaged(_ctx.booleanValue("ListDataStreamsResponse.Result["+ i +"].indices["+ j +"].isManaged"));
-				indicesItem.setManagedStatus(_ctx.stringValue("ListDataStreamsResponse.Result["+ i +"].indices["+ j +"].managedStatus"));
 
 				indices.add(indicesItem);
 			}

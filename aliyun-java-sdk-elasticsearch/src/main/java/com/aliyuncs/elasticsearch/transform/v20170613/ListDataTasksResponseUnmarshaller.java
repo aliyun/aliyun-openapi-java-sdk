@@ -34,26 +34,26 @@ public class ListDataTasksResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("ListDataTasksResponse.Result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
 			resultItem.setCreateTime(_ctx.stringValue("ListDataTasksResponse.Result["+ i +"].createTime"));
-			resultItem.setStatus(_ctx.stringValue("ListDataTasksResponse.Result["+ i +"].status"));
 			resultItem.setTaskId(_ctx.stringValue("ListDataTasksResponse.Result["+ i +"].taskId"));
+			resultItem.setStatus(_ctx.stringValue("ListDataTasksResponse.Result["+ i +"].status"));
 
 			SinkCluster sinkCluster = new SinkCluster();
-			sinkCluster.setDataSourceType(_ctx.stringValue("ListDataTasksResponse.Result["+ i +"].sinkCluster.dataSourceType"));
-			sinkCluster.setEndpoint(_ctx.stringValue("ListDataTasksResponse.Result["+ i +"].sinkCluster.endpoint"));
 			sinkCluster.setIndex(_ctx.stringValue("ListDataTasksResponse.Result["+ i +"].sinkCluster.index"));
 			sinkCluster.setType(_ctx.stringValue("ListDataTasksResponse.Result["+ i +"].sinkCluster.type"));
+			sinkCluster.setEndpoint(_ctx.stringValue("ListDataTasksResponse.Result["+ i +"].sinkCluster.endpoint"));
 			sinkCluster.setVpcId(_ctx.stringValue("ListDataTasksResponse.Result["+ i +"].sinkCluster.vpcId"));
-			sinkCluster.setVpcInstanceId(_ctx.stringValue("ListDataTasksResponse.Result["+ i +"].sinkCluster.vpcInstanceId"));
 			sinkCluster.setVpcInstancePort(_ctx.stringValue("ListDataTasksResponse.Result["+ i +"].sinkCluster.vpcInstancePort"));
+			sinkCluster.setVpcInstanceId(_ctx.stringValue("ListDataTasksResponse.Result["+ i +"].sinkCluster.vpcInstanceId"));
+			sinkCluster.setDataSourceType(_ctx.stringValue("ListDataTasksResponse.Result["+ i +"].sinkCluster.dataSourceType"));
 			resultItem.setSinkCluster(sinkCluster);
 
 			SourceCluster sourceCluster = new SourceCluster();
-			sourceCluster.setDataSourceType(_ctx.stringValue("ListDataTasksResponse.Result["+ i +"].sourceCluster.dataSourceType"));
 			sourceCluster.setIndex(_ctx.stringValue("ListDataTasksResponse.Result["+ i +"].sourceCluster.index"));
-			sourceCluster.setMapping(_ctx.stringValue("ListDataTasksResponse.Result["+ i +"].sourceCluster.mapping"));
-			sourceCluster.setRouting(_ctx.stringValue("ListDataTasksResponse.Result["+ i +"].sourceCluster.routing"));
 			sourceCluster.setSettings(_ctx.stringValue("ListDataTasksResponse.Result["+ i +"].sourceCluster.settings"));
+			sourceCluster.setMapping(_ctx.stringValue("ListDataTasksResponse.Result["+ i +"].sourceCluster.mapping"));
 			sourceCluster.setType(_ctx.stringValue("ListDataTasksResponse.Result["+ i +"].sourceCluster.type"));
+			sourceCluster.setRouting(_ctx.stringValue("ListDataTasksResponse.Result["+ i +"].sourceCluster.routing"));
+			sourceCluster.setDataSourceType(_ctx.stringValue("ListDataTasksResponse.Result["+ i +"].sourceCluster.dataSourceType"));
 			resultItem.setSourceCluster(sourceCluster);
 
 			result.add(resultItem);

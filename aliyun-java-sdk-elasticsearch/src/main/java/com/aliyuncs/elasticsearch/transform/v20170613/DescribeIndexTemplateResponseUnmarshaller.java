@@ -30,10 +30,10 @@ public class DescribeIndexTemplateResponseUnmarshaller {
 		describeIndexTemplateResponse.setRequestId(_ctx.stringValue("DescribeIndexTemplateResponse.RequestId"));
 
 		Result result = new Result();
-		result.setIndexTemplate(_ctx.stringValue("DescribeIndexTemplateResponse.Result.indexTemplate"));
 		result.setDataStream(_ctx.booleanValue("DescribeIndexTemplateResponse.Result.dataStream"));
-		result.setPriority(_ctx.integerValue("DescribeIndexTemplateResponse.Result.priority"));
+		result.setIndexTemplate(_ctx.stringValue("DescribeIndexTemplateResponse.Result.indexTemplate"));
 		result.setIlmPolicy(_ctx.stringValue("DescribeIndexTemplateResponse.Result.ilmPolicy"));
+		result.setPriority(_ctx.integerValue("DescribeIndexTemplateResponse.Result.priority"));
 
 		List<String> indexPatterns = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeIndexTemplateResponse.Result.indexPatterns.Length"); i++) {

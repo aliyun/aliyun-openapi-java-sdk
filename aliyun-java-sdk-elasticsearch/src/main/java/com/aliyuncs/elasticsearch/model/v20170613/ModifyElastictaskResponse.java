@@ -71,11 +71,11 @@ public class ModifyElastictaskResponse extends AcsResponse {
 
 			private String triggerType;
 
-			private String cronExpression;
+			private Integer replicaCount;
 
 			private Integer elasticNodeCount;
 
-			private Integer replicaCount;
+			private String cronExpression;
 
 			private List<String> targetIndices;
 
@@ -87,12 +87,12 @@ public class ModifyElastictaskResponse extends AcsResponse {
 				this.triggerType = triggerType;
 			}
 
-			public String getCronExpression() {
-				return this.cronExpression;
+			public Integer getReplicaCount() {
+				return this.replicaCount;
 			}
 
-			public void setCronExpression(String cronExpression) {
-				this.cronExpression = cronExpression;
+			public void setReplicaCount(Integer replicaCount) {
+				this.replicaCount = replicaCount;
 			}
 
 			public Integer getElasticNodeCount() {
@@ -103,12 +103,12 @@ public class ModifyElastictaskResponse extends AcsResponse {
 				this.elasticNodeCount = elasticNodeCount;
 			}
 
-			public Integer getReplicaCount() {
-				return this.replicaCount;
+			public String getCronExpression() {
+				return this.cronExpression;
 			}
 
-			public void setReplicaCount(Integer replicaCount) {
-				this.replicaCount = replicaCount;
+			public void setCronExpression(String cronExpression) {
+				this.cronExpression = cronExpression;
 			}
 
 			public List<String> getTargetIndices() {
@@ -124,11 +124,11 @@ public class ModifyElastictaskResponse extends AcsResponse {
 
 			private String triggerType;
 
-			private String cronExpression;
+			private Integer replicaCount;
 
 			private Integer elasticNodeCount;
 
-			private Integer replicaCount;
+			private String cronExpression;
 
 			private List<String> targetIndices1;
 
@@ -140,12 +140,12 @@ public class ModifyElastictaskResponse extends AcsResponse {
 				this.triggerType = triggerType;
 			}
 
-			public String getCronExpression() {
-				return this.cronExpression;
+			public Integer getReplicaCount() {
+				return this.replicaCount;
 			}
 
-			public void setCronExpression(String cronExpression) {
-				this.cronExpression = cronExpression;
+			public void setReplicaCount(Integer replicaCount) {
+				this.replicaCount = replicaCount;
 			}
 
 			public Integer getElasticNodeCount() {
@@ -156,12 +156,12 @@ public class ModifyElastictaskResponse extends AcsResponse {
 				this.elasticNodeCount = elasticNodeCount;
 			}
 
-			public Integer getReplicaCount() {
-				return this.replicaCount;
+			public String getCronExpression() {
+				return this.cronExpression;
 			}
 
-			public void setReplicaCount(Integer replicaCount) {
-				this.replicaCount = replicaCount;
+			public void setCronExpression(String cronExpression) {
+				this.cronExpression = cronExpression;
 			}
 
 			public List<String> getTargetIndices1() {

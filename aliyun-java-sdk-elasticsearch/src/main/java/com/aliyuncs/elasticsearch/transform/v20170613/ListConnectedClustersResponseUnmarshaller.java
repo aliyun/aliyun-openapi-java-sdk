@@ -31,8 +31,8 @@ public class ListConnectedClustersResponseUnmarshaller {
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListConnectedClustersResponse.Result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setInstances(_ctx.stringValue("ListConnectedClustersResponse.Result["+ i +"].instances"));
 			resultItem.setNetworkType(_ctx.stringValue("ListConnectedClustersResponse.Result["+ i +"].networkType"));
+			resultItem.setInstances(_ctx.stringValue("ListConnectedClustersResponse.Result["+ i +"].instances"));
 
 			result.add(resultItem);
 		}

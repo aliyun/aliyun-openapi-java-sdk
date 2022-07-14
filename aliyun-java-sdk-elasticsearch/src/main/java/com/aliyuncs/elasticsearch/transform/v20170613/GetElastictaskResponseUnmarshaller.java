@@ -34,9 +34,9 @@ public class GetElastictaskResponseUnmarshaller {
 
 		ElasticExpansionTask elasticExpansionTask = new ElasticExpansionTask();
 		elasticExpansionTask.setTriggerType(_ctx.stringValue("GetElastictaskResponse.Result.elasticExpansionTask.triggerType"));
-		elasticExpansionTask.setCronExpression(_ctx.stringValue("GetElastictaskResponse.Result.elasticExpansionTask.cronExpression"));
-		elasticExpansionTask.setElasticNodeCount(_ctx.integerValue("GetElastictaskResponse.Result.elasticExpansionTask.elasticNodeCount"));
 		elasticExpansionTask.setReplicaCount(_ctx.integerValue("GetElastictaskResponse.Result.elasticExpansionTask.replicaCount"));
+		elasticExpansionTask.setElasticNodeCount(_ctx.integerValue("GetElastictaskResponse.Result.elasticExpansionTask.elasticNodeCount"));
+		elasticExpansionTask.setCronExpression(_ctx.stringValue("GetElastictaskResponse.Result.elasticExpansionTask.cronExpression"));
 
 		List<String> targetIndices = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetElastictaskResponse.Result.elasticExpansionTask.targetIndices.Length"); i++) {
@@ -47,9 +47,9 @@ public class GetElastictaskResponseUnmarshaller {
 
 		ElasticShrinkTask elasticShrinkTask = new ElasticShrinkTask();
 		elasticShrinkTask.setTriggerType(_ctx.stringValue("GetElastictaskResponse.Result.elasticShrinkTask.triggerType"));
-		elasticShrinkTask.setCronExpression(_ctx.stringValue("GetElastictaskResponse.Result.elasticShrinkTask.cronExpression"));
-		elasticShrinkTask.setElasticNodeCount(_ctx.integerValue("GetElastictaskResponse.Result.elasticShrinkTask.elasticNodeCount"));
 		elasticShrinkTask.setReplicaCount(_ctx.integerValue("GetElastictaskResponse.Result.elasticShrinkTask.replicaCount"));
+		elasticShrinkTask.setElasticNodeCount(_ctx.integerValue("GetElastictaskResponse.Result.elasticShrinkTask.elasticNodeCount"));
+		elasticShrinkTask.setCronExpression(_ctx.stringValue("GetElastictaskResponse.Result.elasticShrinkTask.cronExpression"));
 
 		List<String> targetIndices1 = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetElastictaskResponse.Result.elasticShrinkTask.targetIndices.Length"); i++) {

@@ -36,11 +36,11 @@ public class ListDictsResponseUnmarshaller {
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListDictsResponse.Result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setName(_ctx.stringValue("ListDictsResponse.Result["+ i +"].name"));
 			resultItem.setFileSize(_ctx.longValue("ListDictsResponse.Result["+ i +"].fileSize"));
-			resultItem.setType(_ctx.stringValue("ListDictsResponse.Result["+ i +"].type"));
-			resultItem.setSourceType(_ctx.stringValue("ListDictsResponse.Result["+ i +"].sourceType"));
 			resultItem.setDownloadUrl(_ctx.stringValue("ListDictsResponse.Result["+ i +"].downloadUrl"));
+			resultItem.setSourceType(_ctx.stringValue("ListDictsResponse.Result["+ i +"].sourceType"));
+			resultItem.setType(_ctx.stringValue("ListDictsResponse.Result["+ i +"].type"));
+			resultItem.setName(_ctx.stringValue("ListDictsResponse.Result["+ i +"].name"));
 
 			result.add(resultItem);
 		}

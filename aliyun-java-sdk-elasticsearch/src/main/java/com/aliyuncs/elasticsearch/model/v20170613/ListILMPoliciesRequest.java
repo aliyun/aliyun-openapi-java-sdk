@@ -28,6 +28,8 @@ public class ListILMPoliciesRequest extends RoaAcsRequest<ListILMPoliciesRespons
 	private String instanceId;
 
 	private String policyName;
+
+	private String body;
 	public ListILMPoliciesRequest() {
 		super("elasticsearch", "2017-06-13", "ListILMPolicies", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/ilm-policies");
@@ -57,6 +59,17 @@ public class ListILMPoliciesRequest extends RoaAcsRequest<ListILMPoliciesRespons
 		this.policyName = policyName;
 		if(policyName != null){
 			putQueryParameter("policyName", policyName);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

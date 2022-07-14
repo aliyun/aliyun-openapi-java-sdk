@@ -30,6 +30,8 @@ public class ListKibanaPluginsRequest extends RoaAcsRequest<ListKibanaPluginsRes
 	private Integer size;
 
 	private String page;
+
+	private String body;
 	public ListKibanaPluginsRequest() {
 		super("elasticsearch", "2017-06-13", "ListKibanaPlugins", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/kibana-plugins");
@@ -70,6 +72,17 @@ public class ListKibanaPluginsRequest extends RoaAcsRequest<ListKibanaPluginsRes
 		this.page = page;
 		if(page != null){
 			putQueryParameter("page", page);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

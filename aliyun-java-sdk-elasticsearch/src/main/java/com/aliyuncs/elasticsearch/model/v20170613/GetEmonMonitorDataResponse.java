@@ -26,23 +26,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetEmonMonitorDataResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
 	private Boolean success;
 
 	private List<ResultItem> result;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -58,6 +50,14 @@ public class GetEmonMonitorDataResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Boolean getSuccess() {
@@ -78,25 +78,17 @@ public class GetEmonMonitorDataResponse extends AcsResponse {
 
 	public static class ResultItem {
 
-		private Map<Object,Object> dps;
-
 		private Float integrity;
-
-		private Long messageWatermark;
-
-		private String metric;
 
 		private Float summary;
 
+		private Long messageWatermark;
+
+		private Map<Object,Object> dps;
+
 		private Map<Object,Object> tags;
 
-		public Map<Object,Object> getDps() {
-			return this.dps;
-		}
-
-		public void setDps(Map<Object,Object> dps) {
-			this.dps = dps;
-		}
+		private String metric;
 
 		public Float getIntegrity() {
 			return this.integrity;
@@ -104,22 +96,6 @@ public class GetEmonMonitorDataResponse extends AcsResponse {
 
 		public void setIntegrity(Float integrity) {
 			this.integrity = integrity;
-		}
-
-		public Long getMessageWatermark() {
-			return this.messageWatermark;
-		}
-
-		public void setMessageWatermark(Long messageWatermark) {
-			this.messageWatermark = messageWatermark;
-		}
-
-		public String getMetric() {
-			return this.metric;
-		}
-
-		public void setMetric(String metric) {
-			this.metric = metric;
 		}
 
 		public Float getSummary() {
@@ -130,12 +106,36 @@ public class GetEmonMonitorDataResponse extends AcsResponse {
 			this.summary = summary;
 		}
 
+		public Long getMessageWatermark() {
+			return this.messageWatermark;
+		}
+
+		public void setMessageWatermark(Long messageWatermark) {
+			this.messageWatermark = messageWatermark;
+		}
+
+		public Map<Object,Object> getDps() {
+			return this.dps;
+		}
+
+		public void setDps(Map<Object,Object> dps) {
+			this.dps = dps;
+		}
+
 		public Map<Object,Object> getTags() {
 			return this.tags;
 		}
 
 		public void setTags(Map<Object,Object> tags) {
 			this.tags = tags;
+		}
+
+		public String getMetric() {
+			return this.metric;
+		}
+
+		public void setMetric(String metric) {
+			this.metric = metric;
 		}
 	}
 

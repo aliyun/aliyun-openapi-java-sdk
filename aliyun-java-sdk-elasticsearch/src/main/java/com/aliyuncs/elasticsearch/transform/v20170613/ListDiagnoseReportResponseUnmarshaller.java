@@ -38,12 +38,12 @@ public class ListDiagnoseReportResponseUnmarshaller {
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListDiagnoseReportResponse.Result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setReportId(_ctx.stringValue("ListDiagnoseReportResponse.Result["+ i +"].reportId"));
-			resultItem.setInstanceId(_ctx.stringValue("ListDiagnoseReportResponse.Result["+ i +"].instanceId"));
-			resultItem.setState(_ctx.stringValue("ListDiagnoseReportResponse.Result["+ i +"].state"));
 			resultItem.setTrigger(_ctx.stringValue("ListDiagnoseReportResponse.Result["+ i +"].trigger"));
-			resultItem.setHealth(_ctx.stringValue("ListDiagnoseReportResponse.Result["+ i +"].health"));
 			resultItem.setCreateTime(_ctx.longValue("ListDiagnoseReportResponse.Result["+ i +"].createTime"));
+			resultItem.setReportId(_ctx.stringValue("ListDiagnoseReportResponse.Result["+ i +"].reportId"));
+			resultItem.setState(_ctx.stringValue("ListDiagnoseReportResponse.Result["+ i +"].state"));
+			resultItem.setInstanceId(_ctx.stringValue("ListDiagnoseReportResponse.Result["+ i +"].instanceId"));
+			resultItem.setHealth(_ctx.stringValue("ListDiagnoseReportResponse.Result["+ i +"].health"));
 
 			List<DiagnoseItemsItem> diagnoseItems = new ArrayList<DiagnoseItemsItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListDiagnoseReportResponse.Result["+ i +"].diagnoseItems.Length"); j++) {
@@ -52,11 +52,11 @@ public class ListDiagnoseReportResponseUnmarshaller {
 				diagnoseItemsItem.setHealth(_ctx.stringValue("ListDiagnoseReportResponse.Result["+ i +"].diagnoseItems["+ j +"].health"));
 
 				Detail detail = new Detail();
+				detail.setType(_ctx.stringValue("ListDiagnoseReportResponse.Result["+ i +"].diagnoseItems["+ j +"].detail.type"));
 				detail.setName(_ctx.stringValue("ListDiagnoseReportResponse.Result["+ i +"].diagnoseItems["+ j +"].detail.name"));
 				detail.setDesc(_ctx.stringValue("ListDiagnoseReportResponse.Result["+ i +"].diagnoseItems["+ j +"].detail.desc"));
-				detail.setType(_ctx.stringValue("ListDiagnoseReportResponse.Result["+ i +"].diagnoseItems["+ j +"].detail.type"));
-				detail.setSuggest(_ctx.stringValue("ListDiagnoseReportResponse.Result["+ i +"].diagnoseItems["+ j +"].detail.suggest"));
 				detail.setResult(_ctx.stringValue("ListDiagnoseReportResponse.Result["+ i +"].diagnoseItems["+ j +"].detail.result"));
+				detail.setSuggest(_ctx.stringValue("ListDiagnoseReportResponse.Result["+ i +"].diagnoseItems["+ j +"].detail.suggest"));
 				diagnoseItemsItem.setDetail(detail);
 
 				diagnoseItems.add(diagnoseItemsItem);

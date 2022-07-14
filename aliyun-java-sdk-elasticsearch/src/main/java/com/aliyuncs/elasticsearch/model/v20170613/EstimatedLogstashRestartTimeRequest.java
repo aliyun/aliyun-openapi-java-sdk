@@ -28,6 +28,8 @@ public class EstimatedLogstashRestartTimeRequest extends RoaAcsRequest<Estimated
 	private String instanceId;
 
 	private Boolean force;
+
+	private String body;
 	public EstimatedLogstashRestartTimeRequest() {
 		super("elasticsearch", "2017-06-13", "EstimatedLogstashRestartTime", "elasticsearch");
 		setUriPattern("/openapi/logstashes/[InstanceId]/estimated-time/restart-time");
@@ -57,6 +59,17 @@ public class EstimatedLogstashRestartTimeRequest extends RoaAcsRequest<Estimated
 		this.force = force;
 		if(force != null){
 			putQueryParameter("force", force.toString());
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

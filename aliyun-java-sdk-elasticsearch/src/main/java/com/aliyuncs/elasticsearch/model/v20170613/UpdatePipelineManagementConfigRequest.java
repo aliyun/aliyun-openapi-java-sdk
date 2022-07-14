@@ -28,6 +28,8 @@ public class UpdatePipelineManagementConfigRequest extends RoaAcsRequest<UpdateP
 	private String instanceId;
 
 	private String clientToken;
+
+	private String body;
 	public UpdatePipelineManagementConfigRequest() {
 		super("elasticsearch", "2017-06-13", "UpdatePipelineManagementConfig", "elasticsearch");
 		setUriPattern("/openapi/logstashes/[InstanceId]/pipeline-management-config");
@@ -57,6 +59,17 @@ public class UpdatePipelineManagementConfigRequest extends RoaAcsRequest<UpdateP
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("clientToken", clientToken);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

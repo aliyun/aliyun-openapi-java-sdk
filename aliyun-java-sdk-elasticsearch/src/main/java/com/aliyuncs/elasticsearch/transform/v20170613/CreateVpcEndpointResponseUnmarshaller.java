@@ -26,10 +26,10 @@ public class CreateVpcEndpointResponseUnmarshaller {
 		createVpcEndpointResponse.setRequestId(_ctx.stringValue("CreateVpcEndpointResponse.RequestId"));
 
 		Result result = new Result();
-		result.setEndpointId(_ctx.stringValue("CreateVpcEndpointResponse.Result.endpointId"));
-		result.setEndpointName(_ctx.stringValue("CreateVpcEndpointResponse.Result.endpointName"));
 		result.setServiceId(_ctx.stringValue("CreateVpcEndpointResponse.Result.serviceId"));
 		result.setEndpointDomain(_ctx.stringValue("CreateVpcEndpointResponse.Result.endpointDomain"));
+		result.setEndpointId(_ctx.stringValue("CreateVpcEndpointResponse.Result.endpointId"));
+		result.setEndpointName(_ctx.stringValue("CreateVpcEndpointResponse.Result.endpointName"));
 		createVpcEndpointResponse.setResult(result);
 	 
 	 	return createVpcEndpointResponse;

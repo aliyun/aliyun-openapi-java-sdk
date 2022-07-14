@@ -37,7 +37,11 @@ public class ListLogstashRequest extends RoaAcsRequest<ListLogstashResponse> {
 
 	private String ownerId;
 
+	private String body;
+
 	private String version;
+
+	private String tags;
 	public ListLogstashRequest() {
 		super("elasticsearch", "2017-06-13", "ListLogstash", "elasticsearch");
 		setUriPattern("/openapi/logstashes");
@@ -114,6 +118,17 @@ public class ListLogstashRequest extends RoaAcsRequest<ListLogstashResponse> {
 		}
 	}
 
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
+		}
+	}
+
 	public String getVersion() {
 		return this.version;
 	}
@@ -122,6 +137,17 @@ public class ListLogstashRequest extends RoaAcsRequest<ListLogstashResponse> {
 		this.version = version;
 		if(version != null){
 			putQueryParameter("version", version);
+		}
+	}
+
+	public String getTags() {
+		return this.tags;
+	}
+
+	public void setTags(String tags) {
+		this.tags = tags;
+		if(tags != null){
+			putQueryParameter("tags", tags);
 		}
 	}
 

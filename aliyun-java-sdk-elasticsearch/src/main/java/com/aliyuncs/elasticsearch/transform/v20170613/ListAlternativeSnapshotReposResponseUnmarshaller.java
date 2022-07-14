@@ -31,8 +31,8 @@ public class ListAlternativeSnapshotReposResponseUnmarshaller {
 		List<Repo> result = new ArrayList<Repo>();
 		for (int i = 0; i < _ctx.lengthValue("ListAlternativeSnapshotReposResponse.Result.Length"); i++) {
 			Repo repo = new Repo();
-			repo.setInstanceId(_ctx.stringValue("ListAlternativeSnapshotReposResponse.Result["+ i +"].instanceId"));
 			repo.setRepoPath(_ctx.stringValue("ListAlternativeSnapshotReposResponse.Result["+ i +"].repoPath"));
+			repo.setInstanceId(_ctx.stringValue("ListAlternativeSnapshotReposResponse.Result["+ i +"].instanceId"));
 
 			result.add(repo);
 		}

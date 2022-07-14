@@ -35,29 +35,29 @@ public class CreateDataTasksResponseUnmarshaller {
 			ResultItem resultItem = new ResultItem();
 
 			SourceCluster sourceCluster = new SourceCluster();
-			sourceCluster.setDataSourceType(_ctx.stringValue("CreateDataTasksResponse.Result["+ i +"].sourceCluster.dataSourceType"));
-			sourceCluster.setVpcInstancePort(_ctx.integerValue("CreateDataTasksResponse.Result["+ i +"].sourceCluster.vpcInstancePort"));
-			sourceCluster.setVpcId(_ctx.stringValue("CreateDataTasksResponse.Result["+ i +"].sourceCluster.vpcId"));
-			sourceCluster.setVpcInstanceId(_ctx.stringValue("CreateDataTasksResponse.Result["+ i +"].sourceCluster.vpcInstanceId"));
+			sourceCluster.setPassword(_ctx.stringValue("CreateDataTasksResponse.Result["+ i +"].sourceCluster.password"));
 			sourceCluster.setIndex(_ctx.stringValue("CreateDataTasksResponse.Result["+ i +"].sourceCluster.index"));
 			sourceCluster.setType(_ctx.stringValue("CreateDataTasksResponse.Result["+ i +"].sourceCluster.type"));
 			sourceCluster.setEndpoint(_ctx.stringValue("CreateDataTasksResponse.Result["+ i +"].sourceCluster.endpoint"));
 			sourceCluster.setUsername(_ctx.stringValue("CreateDataTasksResponse.Result["+ i +"].sourceCluster.username"));
-			sourceCluster.setPassword(_ctx.stringValue("CreateDataTasksResponse.Result["+ i +"].sourceCluster.password"));
+			sourceCluster.setVpcId(_ctx.stringValue("CreateDataTasksResponse.Result["+ i +"].sourceCluster.vpcId"));
+			sourceCluster.setVpcInstanceId(_ctx.stringValue("CreateDataTasksResponse.Result["+ i +"].sourceCluster.vpcInstanceId"));
+			sourceCluster.setVpcInstancePort(_ctx.integerValue("CreateDataTasksResponse.Result["+ i +"].sourceCluster.vpcInstancePort"));
+			sourceCluster.setDataSourceType(_ctx.stringValue("CreateDataTasksResponse.Result["+ i +"].sourceCluster.dataSourceType"));
 			resultItem.setSourceCluster(sourceCluster);
 
 			SinkCluster sinkCluster = new SinkCluster();
-			sinkCluster.setDataSourceType(_ctx.stringValue("CreateDataTasksResponse.Result["+ i +"].sinkCluster.dataSourceType"));
+			sinkCluster.setPassword(_ctx.stringValue("CreateDataTasksResponse.Result["+ i +"].sinkCluster.password"));
 			sinkCluster.setIndex(_ctx.stringValue("CreateDataTasksResponse.Result["+ i +"].sinkCluster.index"));
-			sinkCluster.setType(_ctx.stringValue("CreateDataTasksResponse.Result["+ i +"].sinkCluster.type"));
 			sinkCluster.setSettings(_ctx.stringValue("CreateDataTasksResponse.Result["+ i +"].sinkCluster.settings"));
 			sinkCluster.setMapping(_ctx.stringValue("CreateDataTasksResponse.Result["+ i +"].sinkCluster.mapping"));
+			sinkCluster.setType(_ctx.stringValue("CreateDataTasksResponse.Result["+ i +"].sinkCluster.type"));
 			sinkCluster.setRouting(_ctx.stringValue("CreateDataTasksResponse.Result["+ i +"].sinkCluster.routing"));
-			sinkCluster.setVpcId(_ctx.stringValue("CreateDataTasksResponse.Result["+ i +"].sinkCluster.vpcId"));
-			sinkCluster.setVpcInstanceId(_ctx.stringValue("CreateDataTasksResponse.Result["+ i +"].sinkCluster.vpcInstanceId"));
-			sinkCluster.setVpcInstancePort(_ctx.stringValue("CreateDataTasksResponse.Result["+ i +"].sinkCluster.vpcInstancePort"));
 			sinkCluster.setUsername(_ctx.stringValue("CreateDataTasksResponse.Result["+ i +"].sinkCluster.username"));
-			sinkCluster.setPassword(_ctx.stringValue("CreateDataTasksResponse.Result["+ i +"].sinkCluster.password"));
+			sinkCluster.setVpcId(_ctx.stringValue("CreateDataTasksResponse.Result["+ i +"].sinkCluster.vpcId"));
+			sinkCluster.setVpcInstancePort(_ctx.stringValue("CreateDataTasksResponse.Result["+ i +"].sinkCluster.vpcInstancePort"));
+			sinkCluster.setVpcInstanceId(_ctx.stringValue("CreateDataTasksResponse.Result["+ i +"].sinkCluster.vpcInstanceId"));
+			sinkCluster.setDataSourceType(_ctx.stringValue("CreateDataTasksResponse.Result["+ i +"].sinkCluster.dataSourceType"));
 			resultItem.setSinkCluster(sinkCluster);
 
 			result.add(resultItem);

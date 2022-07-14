@@ -30,6 +30,8 @@ public class UpdateTemplateRequest extends RoaAcsRequest<UpdateTemplateResponse>
 	private String clientToken;
 
 	private String templateName;
+
+	private String body;
 	public UpdateTemplateRequest() {
 		super("elasticsearch", "2017-06-13", "UpdateTemplate", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/templates/[TemplateName]");
@@ -70,6 +72,17 @@ public class UpdateTemplateRequest extends RoaAcsRequest<UpdateTemplateResponse>
 		this.templateName = templateName;
 		if(templateName != null){
 			putPathParameter("TemplateName", templateName);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

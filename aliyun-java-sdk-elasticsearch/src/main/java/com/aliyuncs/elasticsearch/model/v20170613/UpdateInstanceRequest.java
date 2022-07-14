@@ -25,11 +25,11 @@ import com.aliyuncs.elasticsearch.Endpoint;
 public class UpdateInstanceRequest extends RoaAcsRequest<UpdateInstanceResponse> {
 	   
 
-	private Boolean ignoreStatus;
-
 	private String instanceId;
 
 	private String clientToken;
+
+	private String body;
 
 	private String orderActionType;
 	public UpdateInstanceRequest() {
@@ -40,17 +40,6 @@ public class UpdateInstanceRequest extends RoaAcsRequest<UpdateInstanceResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Boolean getIgnoreStatus() {
-		return this.ignoreStatus;
-	}
-
-	public void setIgnoreStatus(Boolean ignoreStatus) {
-		this.ignoreStatus = ignoreStatus;
-		if(ignoreStatus != null){
-			putQueryParameter("ignoreStatus", ignoreStatus.toString());
-		}
 	}
 
 	public String getInstanceId() {
@@ -72,6 +61,17 @@ public class UpdateInstanceRequest extends RoaAcsRequest<UpdateInstanceResponse>
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("clientToken", clientToken);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

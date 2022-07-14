@@ -26,8 +26,8 @@ public class DescribeAckOperatorResponseUnmarshaller {
 		describeAckOperatorResponse.setRequestId(_ctx.stringValue("DescribeAckOperatorResponse.RequestId"));
 
 		Result result = new Result();
-		result.setStatus(_ctx.stringValue("DescribeAckOperatorResponse.Result.status"));
 		result.setVersion(_ctx.stringValue("DescribeAckOperatorResponse.Result.version"));
+		result.setStatus(_ctx.stringValue("DescribeAckOperatorResponse.Result.status"));
 		describeAckOperatorResponse.setResult(result);
 	 
 	 	return describeAckOperatorResponse;

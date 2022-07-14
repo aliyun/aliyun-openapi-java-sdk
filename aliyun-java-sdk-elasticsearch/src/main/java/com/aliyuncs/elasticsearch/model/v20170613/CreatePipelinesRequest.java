@@ -30,6 +30,8 @@ public class CreatePipelinesRequest extends RoaAcsRequest<CreatePipelinesRespons
 	private String clientToken;
 
 	private Boolean trigger;
+
+	private String body;
 	public CreatePipelinesRequest() {
 		super("elasticsearch", "2017-06-13", "CreatePipelines", "elasticsearch");
 		setUriPattern("/openapi/logstashes/[InstanceId]/pipelines");
@@ -70,6 +72,17 @@ public class CreatePipelinesRequest extends RoaAcsRequest<CreatePipelinesRespons
 		this.trigger = trigger;
 		if(trigger != null){
 			putQueryParameter("trigger", trigger.toString());
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

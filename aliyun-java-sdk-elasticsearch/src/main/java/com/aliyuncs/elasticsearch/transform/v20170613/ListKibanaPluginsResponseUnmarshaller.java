@@ -36,11 +36,11 @@ public class ListKibanaPluginsResponseUnmarshaller {
 		List<PluginItem> result = new ArrayList<PluginItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListKibanaPluginsResponse.Result.Length"); i++) {
 			PluginItem pluginItem = new PluginItem();
-			pluginItem.setName(_ctx.stringValue("ListKibanaPluginsResponse.Result["+ i +"].name"));
-			pluginItem.setState(_ctx.stringValue("ListKibanaPluginsResponse.Result["+ i +"].state"));
-			pluginItem.setSource(_ctx.stringValue("ListKibanaPluginsResponse.Result["+ i +"].source"));
 			pluginItem.setDescription(_ctx.stringValue("ListKibanaPluginsResponse.Result["+ i +"].description"));
 			pluginItem.setSpecificationUrl(_ctx.stringValue("ListKibanaPluginsResponse.Result["+ i +"].specificationUrl"));
+			pluginItem.setState(_ctx.stringValue("ListKibanaPluginsResponse.Result["+ i +"].state"));
+			pluginItem.setSource(_ctx.stringValue("ListKibanaPluginsResponse.Result["+ i +"].source"));
+			pluginItem.setName(_ctx.stringValue("ListKibanaPluginsResponse.Result["+ i +"].name"));
 
 			result.add(pluginItem);
 		}

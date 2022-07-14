@@ -31,8 +31,8 @@ public class GetTransferableNodesResponseUnmarshaller {
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetTransferableNodesResponse.Result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setHost(_ctx.stringValue("GetTransferableNodesResponse.Result["+ i +"].host"));
 			resultItem.setPort(_ctx.integerValue("GetTransferableNodesResponse.Result["+ i +"].port"));
+			resultItem.setHost(_ctx.stringValue("GetTransferableNodesResponse.Result["+ i +"].host"));
 
 			result.add(resultItem);
 		}

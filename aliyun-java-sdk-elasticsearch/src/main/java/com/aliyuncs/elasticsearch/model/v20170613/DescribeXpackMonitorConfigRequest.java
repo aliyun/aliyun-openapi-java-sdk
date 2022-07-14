@@ -26,6 +26,8 @@ public class DescribeXpackMonitorConfigRequest extends RoaAcsRequest<DescribeXpa
 	   
 
 	private String instanceId;
+
+	private String body;
 	public DescribeXpackMonitorConfigRequest() {
 		super("elasticsearch", "2017-06-13", "DescribeXpackMonitorConfig", "elasticsearch");
 		setUriPattern("/openapi/logstashes/[InstanceId]/xpack-monitor-config");
@@ -44,6 +46,17 @@ public class DescribeXpackMonitorConfigRequest extends RoaAcsRequest<DescribeXpa
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putPathParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

@@ -49,9 +49,9 @@ public class ListDataTasksResponse extends AcsResponse {
 
 		private String createTime;
 
-		private String status;
-
 		private String taskId;
+
+		private String status;
 
 		private SinkCluster sinkCluster;
 
@@ -65,20 +65,20 @@ public class ListDataTasksResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
 		public String getTaskId() {
 			return this.taskId;
 		}
 
 		public void setTaskId(String taskId) {
 			this.taskId = taskId;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public SinkCluster getSinkCluster() {
@@ -99,26 +99,34 @@ public class ListDataTasksResponse extends AcsResponse {
 
 		public static class SinkCluster {
 
-			private String dataSourceType;
-
-			private String endpoint;
-
 			private String index;
 
 			private String type;
 
-			private String vpcId;
+			private String endpoint;
 
-			private String vpcInstanceId;
+			private String vpcId;
 
 			private String vpcInstancePort;
 
-			public String getDataSourceType() {
-				return this.dataSourceType;
+			private String vpcInstanceId;
+
+			private String dataSourceType;
+
+			public String getIndex() {
+				return this.index;
 			}
 
-			public void setDataSourceType(String dataSourceType) {
-				this.dataSourceType = dataSourceType;
+			public void setIndex(String index) {
+				this.index = index;
+			}
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
 			}
 
 			public String getEndpoint() {
@@ -129,28 +137,20 @@ public class ListDataTasksResponse extends AcsResponse {
 				this.endpoint = endpoint;
 			}
 
-			public String getIndex() {
-				return this.index;
-			}
-
-			public void setIndex(String index) {
-				this.index = index;
-			}
-
-			public String getType() {
-				return this.type;
-			}
-
-			public void setType(String type) {
-				this.type = type;
-			}
-
 			public String getVpcId() {
 				return this.vpcId;
 			}
 
 			public void setVpcId(String vpcId) {
 				this.vpcId = vpcId;
+			}
+
+			public String getVpcInstancePort() {
+				return this.vpcInstancePort;
+			}
+
+			public void setVpcInstancePort(String vpcInstancePort) {
+				this.vpcInstancePort = vpcInstancePort;
 			}
 
 			public String getVpcInstanceId() {
@@ -161,29 +161,6 @@ public class ListDataTasksResponse extends AcsResponse {
 				this.vpcInstanceId = vpcInstanceId;
 			}
 
-			public String getVpcInstancePort() {
-				return this.vpcInstancePort;
-			}
-
-			public void setVpcInstancePort(String vpcInstancePort) {
-				this.vpcInstancePort = vpcInstancePort;
-			}
-		}
-
-		public static class SourceCluster {
-
-			private String dataSourceType;
-
-			private String index;
-
-			private String mapping;
-
-			private String routing;
-
-			private String settings;
-
-			private String type;
-
 			public String getDataSourceType() {
 				return this.dataSourceType;
 			}
@@ -191,6 +168,21 @@ public class ListDataTasksResponse extends AcsResponse {
 			public void setDataSourceType(String dataSourceType) {
 				this.dataSourceType = dataSourceType;
 			}
+		}
+
+		public static class SourceCluster {
+
+			private String index;
+
+			private String settings;
+
+			private String mapping;
+
+			private String type;
+
+			private String routing;
+
+			private String dataSourceType;
 
 			public String getIndex() {
 				return this.index;
@@ -198,22 +190,6 @@ public class ListDataTasksResponse extends AcsResponse {
 
 			public void setIndex(String index) {
 				this.index = index;
-			}
-
-			public String getMapping() {
-				return this.mapping;
-			}
-
-			public void setMapping(String mapping) {
-				this.mapping = mapping;
-			}
-
-			public String getRouting() {
-				return this.routing;
-			}
-
-			public void setRouting(String routing) {
-				this.routing = routing;
 			}
 
 			public String getSettings() {
@@ -224,12 +200,36 @@ public class ListDataTasksResponse extends AcsResponse {
 				this.settings = settings;
 			}
 
+			public String getMapping() {
+				return this.mapping;
+			}
+
+			public void setMapping(String mapping) {
+				this.mapping = mapping;
+			}
+
 			public String getType() {
 				return this.type;
 			}
 
 			public void setType(String type) {
 				this.type = type;
+			}
+
+			public String getRouting() {
+				return this.routing;
+			}
+
+			public void setRouting(String routing) {
+				this.routing = routing;
+			}
+
+			public String getDataSourceType() {
+				return this.dataSourceType;
+			}
+
+			public void setDataSourceType(String dataSourceType) {
+				this.dataSourceType = dataSourceType;
 			}
 		}
 	}

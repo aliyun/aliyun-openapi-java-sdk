@@ -28,6 +28,8 @@ public class UpdateLogstashRequest extends RoaAcsRequest<UpdateLogstashResponse>
 	private String instanceId;
 
 	private String clientToken;
+
+	private String body;
 	public UpdateLogstashRequest() {
 		super("elasticsearch", "2017-06-13", "UpdateLogstash", "elasticsearch");
 		setUriPattern("/openapi/logstashes/[InstanceId]");
@@ -57,6 +59,17 @@ public class UpdateLogstashRequest extends RoaAcsRequest<UpdateLogstashResponse>
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("clientToken", clientToken);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

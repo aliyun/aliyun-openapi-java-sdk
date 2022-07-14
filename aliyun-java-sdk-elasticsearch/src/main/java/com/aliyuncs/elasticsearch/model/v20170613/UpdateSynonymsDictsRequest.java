@@ -28,6 +28,8 @@ public class UpdateSynonymsDictsRequest extends RoaAcsRequest<UpdateSynonymsDict
 	private String instanceId;
 
 	private String clientToken;
+
+	private String body;
 	public UpdateSynonymsDictsRequest() {
 		super("elasticsearch", "2017-06-13", "UpdateSynonymsDicts", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/synonymsDict");
@@ -57,6 +59,17 @@ public class UpdateSynonymsDictsRequest extends RoaAcsRequest<UpdateSynonymsDict
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("clientToken", clientToken);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

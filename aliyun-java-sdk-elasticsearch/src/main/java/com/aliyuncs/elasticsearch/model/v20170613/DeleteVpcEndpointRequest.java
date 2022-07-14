@@ -30,6 +30,8 @@ public class DeleteVpcEndpointRequest extends RoaAcsRequest<DeleteVpcEndpointRes
 	private String clientToken;
 
 	private String endpointId;
+
+	private String body;
 	public DeleteVpcEndpointRequest() {
 		super("elasticsearch", "2017-06-13", "DeleteVpcEndpoint", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/vpc-endpoints/[EndpointId]");
@@ -70,6 +72,17 @@ public class DeleteVpcEndpointRequest extends RoaAcsRequest<DeleteVpcEndpointRes
 		this.endpointId = endpointId;
 		if(endpointId != null){
 			putPathParameter("EndpointId", endpointId);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

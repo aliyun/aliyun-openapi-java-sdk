@@ -33,14 +33,14 @@ public class GetClusterDataInformationResponseUnmarshaller {
 		result.setConnectable(_ctx.booleanValue("GetClusterDataInformationResponse.Result.connectable"));
 
 		MetaInfo metaInfo = new MetaInfo();
-		metaInfo.setSettings(_ctx.stringValue("GetClusterDataInformationResponse.Result.metaInfo.settings"));
 		metaInfo.setMapping(_ctx.stringValue("GetClusterDataInformationResponse.Result.metaInfo.mapping"));
+		metaInfo.setSettings(_ctx.stringValue("GetClusterDataInformationResponse.Result.metaInfo.settings"));
 
-		List<String> indices = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("GetClusterDataInformationResponse.Result.metaInfo.indices.Length"); i++) {
-			indices.add(_ctx.stringValue("GetClusterDataInformationResponse.Result.metaInfo.indices["+ i +"]"));
+		List<String> typeName = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("GetClusterDataInformationResponse.Result.metaInfo.typeName.Length"); i++) {
+			typeName.add(_ctx.stringValue("GetClusterDataInformationResponse.Result.metaInfo.typeName["+ i +"]"));
 		}
-		metaInfo.setIndices(indices);
+		metaInfo.setTypeName(typeName);
 
 		List<String> fields = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetClusterDataInformationResponse.Result.metaInfo.fields.Length"); i++) {
@@ -48,11 +48,11 @@ public class GetClusterDataInformationResponseUnmarshaller {
 		}
 		metaInfo.setFields(fields);
 
-		List<String> typeName = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("GetClusterDataInformationResponse.Result.metaInfo.typeName.Length"); i++) {
-			typeName.add(_ctx.stringValue("GetClusterDataInformationResponse.Result.metaInfo.typeName["+ i +"]"));
+		List<String> indices = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("GetClusterDataInformationResponse.Result.metaInfo.indices.Length"); i++) {
+			indices.add(_ctx.stringValue("GetClusterDataInformationResponse.Result.metaInfo.indices["+ i +"]"));
 		}
-		metaInfo.setTypeName(typeName);
+		metaInfo.setIndices(indices);
 		result.setMetaInfo(metaInfo);
 		getClusterDataInformationResponse.setResult(result);
 	 

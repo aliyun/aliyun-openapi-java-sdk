@@ -26,6 +26,8 @@ public class InstallUserPluginsRequest extends RoaAcsRequest<InstallUserPluginsR
 	   
 
 	private String instanceId;
+
+	private String body;
 	public InstallUserPluginsRequest() {
 		super("elasticsearch", "2017-06-13", "InstallUserPlugins", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/plugins/user/actions/install");
@@ -44,6 +46,17 @@ public class InstallUserPluginsRequest extends RoaAcsRequest<InstallUserPluginsR
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putPathParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

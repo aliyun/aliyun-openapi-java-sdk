@@ -28,6 +28,8 @@ public class UpdateInstanceChargeTypeRequest extends RoaAcsRequest<UpdateInstanc
 	private String instanceId;
 
 	private String clientToken;
+
+	private String body;
 	public UpdateInstanceChargeTypeRequest() {
 		super("elasticsearch", "2017-06-13", "UpdateInstanceChargeType", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/actions/convert-pay-type");
@@ -57,6 +59,17 @@ public class UpdateInstanceChargeTypeRequest extends RoaAcsRequest<UpdateInstanc
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("clientToken", clientToken);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

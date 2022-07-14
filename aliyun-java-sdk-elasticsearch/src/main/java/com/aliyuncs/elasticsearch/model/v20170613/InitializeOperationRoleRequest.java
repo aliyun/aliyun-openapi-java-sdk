@@ -26,6 +26,8 @@ public class InitializeOperationRoleRequest extends RoaAcsRequest<InitializeOper
 	   
 
 	private String clientToken;
+
+	private String body;
 	public InitializeOperationRoleRequest() {
 		super("elasticsearch", "2017-06-13", "InitializeOperationRole", "elasticsearch");
 		setUriPattern("/openapi/user/slr");
@@ -44,6 +46,17 @@ public class InitializeOperationRoleRequest extends RoaAcsRequest<InitializeOper
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

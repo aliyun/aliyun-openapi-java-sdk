@@ -47,31 +47,15 @@ public class ListLogstashLogResponse extends AcsResponse {
 
 	public static class ResultItem {
 
-		private Long timestamp;
-
-		private String host;
-
 		private String level;
 
 		private String content;
 
+		private Long timestamp;
+
 		private String instanceId;
 
-		public Long getTimestamp() {
-			return this.timestamp;
-		}
-
-		public void setTimestamp(Long timestamp) {
-			this.timestamp = timestamp;
-		}
-
-		public String getHost() {
-			return this.host;
-		}
-
-		public void setHost(String host) {
-			this.host = host;
-		}
+		private String host;
 
 		public String getLevel() {
 			return this.level;
@@ -89,12 +73,28 @@ public class ListLogstashLogResponse extends AcsResponse {
 			this.content = content;
 		}
 
+		public Long getTimestamp() {
+			return this.timestamp;
+		}
+
+		public void setTimestamp(Long timestamp) {
+			this.timestamp = timestamp;
+		}
+
 		public String getInstanceId() {
 			return this.instanceId;
 		}
 
 		public void setInstanceId(String instanceId) {
 			this.instanceId = instanceId;
+		}
+
+		public String getHost() {
+			return this.host;
+		}
+
+		public void setHost(String host) {
+			this.host = host;
 		}
 	}
 

@@ -40,10 +40,10 @@ public class ListTagResourcesResponseUnmarshaller {
 		List<TagResourceItem> tagResource = new ArrayList<TagResourceItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListTagResourcesResponse.TagResources.TagResource.Length"); i++) {
 			TagResourceItem tagResourceItem = new TagResourceItem();
-			tagResourceItem.setResourceId(_ctx.stringValue("ListTagResourcesResponse.TagResources.TagResource["+ i +"].ResourceId"));
-			tagResourceItem.setResourceType(_ctx.stringValue("ListTagResourcesResponse.TagResources.TagResource["+ i +"].ResourceType"));
-			tagResourceItem.setTagKey(_ctx.stringValue("ListTagResourcesResponse.TagResources.TagResource["+ i +"].TagKey"));
 			tagResourceItem.setTagValue(_ctx.stringValue("ListTagResourcesResponse.TagResources.TagResource["+ i +"].TagValue"));
+			tagResourceItem.setResourceType(_ctx.stringValue("ListTagResourcesResponse.TagResources.TagResource["+ i +"].ResourceType"));
+			tagResourceItem.setResourceId(_ctx.stringValue("ListTagResourcesResponse.TagResources.TagResource["+ i +"].ResourceId"));
+			tagResourceItem.setTagKey(_ctx.stringValue("ListTagResourcesResponse.TagResources.TagResource["+ i +"].TagKey"));
 
 			tagResource.add(tagResourceItem);
 		}

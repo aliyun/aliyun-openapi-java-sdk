@@ -19,6 +19,8 @@ import java.util.List;
 
 import com.aliyuncs.elasticsearch.model.v20170613.UpdateWhiteIpsResponse;
 import com.aliyuncs.elasticsearch.model.v20170613.UpdateWhiteIpsResponse.Result;
+import com.aliyuncs.elasticsearch.model.v20170613.UpdateWhiteIpsResponse.Result.NetworkConfig;
+import com.aliyuncs.elasticsearch.model.v20170613.UpdateWhiteIpsResponse.Result.NetworkConfig.WhiteIpGroupListItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -35,6 +37,25 @@ public class UpdateWhiteIpsResponseUnmarshaller {
 			esIPWhitelist.add(_ctx.stringValue("UpdateWhiteIpsResponse.Result.esIPWhitelist["+ i +"]"));
 		}
 		result.setEsIPWhitelist(esIPWhitelist);
+
+		NetworkConfig networkConfig = new NetworkConfig();
+
+		List<WhiteIpGroupListItem> whiteIpGroupList = new ArrayList<WhiteIpGroupListItem>();
+		for (int i = 0; i < _ctx.lengthValue("UpdateWhiteIpsResponse.Result.networkConfig.whiteIpGroupList.Length"); i++) {
+			WhiteIpGroupListItem whiteIpGroupListItem = new WhiteIpGroupListItem();
+			whiteIpGroupListItem.setGroupName(_ctx.stringValue("UpdateWhiteIpsResponse.Result.networkConfig.whiteIpGroupList["+ i +"].groupName"));
+			whiteIpGroupListItem.setWhiteIpType(_ctx.stringValue("UpdateWhiteIpsResponse.Result.networkConfig.whiteIpGroupList["+ i +"].whiteIpType"));
+
+			List<String> ips = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("UpdateWhiteIpsResponse.Result.networkConfig.whiteIpGroupList["+ i +"].ips.Length"); j++) {
+				ips.add(_ctx.stringValue("UpdateWhiteIpsResponse.Result.networkConfig.whiteIpGroupList["+ i +"].ips["+ j +"]"));
+			}
+			whiteIpGroupListItem.setIps(ips);
+
+			whiteIpGroupList.add(whiteIpGroupListItem);
+		}
+		networkConfig.setWhiteIpGroupList(whiteIpGroupList);
+		result.setNetworkConfig(networkConfig);
 		updateWhiteIpsResponse.setResult(result);
 	 
 	 	return updateWhiteIpsResponse;

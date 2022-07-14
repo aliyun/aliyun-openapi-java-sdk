@@ -31,15 +31,15 @@ public class ListVpcEndpointsResponseUnmarshaller {
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListVpcEndpointsResponse.Result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setConnectionStatus(_ctx.stringValue("ListVpcEndpointsResponse.Result["+ i +"].connectionStatus"));
-			resultItem.setCreateTime(_ctx.stringValue("ListVpcEndpointsResponse.Result["+ i +"].createTime"));
 			resultItem.setEndpointBusinessStatus(_ctx.stringValue("ListVpcEndpointsResponse.Result["+ i +"].endpointBusinessStatus"));
-			resultItem.setEndpointId(_ctx.stringValue("ListVpcEndpointsResponse.Result["+ i +"].endpointId"));
-			resultItem.setEndpointName(_ctx.stringValue("ListVpcEndpointsResponse.Result["+ i +"].endpointName"));
-			resultItem.setEndpointStatus(_ctx.stringValue("ListVpcEndpointsResponse.Result["+ i +"].endpointStatus"));
 			resultItem.setServiceId(_ctx.stringValue("ListVpcEndpointsResponse.Result["+ i +"].serviceId"));
+			resultItem.setEndpointName(_ctx.stringValue("ListVpcEndpointsResponse.Result["+ i +"].endpointName"));
+			resultItem.setEndpointId(_ctx.stringValue("ListVpcEndpointsResponse.Result["+ i +"].endpointId"));
 			resultItem.setServiceName(_ctx.stringValue("ListVpcEndpointsResponse.Result["+ i +"].serviceName"));
+			resultItem.setCreateTime(_ctx.stringValue("ListVpcEndpointsResponse.Result["+ i +"].createTime"));
+			resultItem.setConnectionStatus(_ctx.stringValue("ListVpcEndpointsResponse.Result["+ i +"].connectionStatus"));
 			resultItem.setEndpointDomain(_ctx.stringValue("ListVpcEndpointsResponse.Result["+ i +"].endpointDomain"));
+			resultItem.setEndpointStatus(_ctx.stringValue("ListVpcEndpointsResponse.Result["+ i +"].endpointStatus"));
 
 			result.add(resultItem);
 		}

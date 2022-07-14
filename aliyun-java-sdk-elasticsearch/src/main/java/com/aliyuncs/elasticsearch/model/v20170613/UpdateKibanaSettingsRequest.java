@@ -28,6 +28,8 @@ public class UpdateKibanaSettingsRequest extends RoaAcsRequest<UpdateKibanaSetti
 	private String instanceId;
 
 	private String clientToken;
+
+	private String body;
 	public UpdateKibanaSettingsRequest() {
 		super("elasticsearch", "2017-06-13", "UpdateKibanaSettings", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/actions/update-kibana-settings");
@@ -57,6 +59,17 @@ public class UpdateKibanaSettingsRequest extends RoaAcsRequest<UpdateKibanaSetti
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("clientToken", clientToken);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

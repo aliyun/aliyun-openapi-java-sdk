@@ -38,11 +38,11 @@ public class ListNodesResponseUnmarshaller {
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListNodesResponse.Result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setEcsInstanceId(_ctx.stringValue("ListNodesResponse.Result["+ i +"].ecsInstanceId"));
-			resultItem.setEcsInstanceName(_ctx.stringValue("ListNodesResponse.Result["+ i +"].ecsInstanceName"));
-			resultItem.setStatus(_ctx.stringValue("ListNodesResponse.Result["+ i +"].status"));
-			resultItem.setOsType(_ctx.stringValue("ListNodesResponse.Result["+ i +"].osType"));
 			resultItem.setCloudAssistantStatus(_ctx.stringValue("ListNodesResponse.Result["+ i +"].cloudAssistantStatus"));
+			resultItem.setEcsInstanceName(_ctx.stringValue("ListNodesResponse.Result["+ i +"].ecsInstanceName"));
+			resultItem.setEcsInstanceId(_ctx.stringValue("ListNodesResponse.Result["+ i +"].ecsInstanceId"));
+			resultItem.setOsType(_ctx.stringValue("ListNodesResponse.Result["+ i +"].osType"));
+			resultItem.setStatus(_ctx.stringValue("ListNodesResponse.Result["+ i +"].status"));
 			resultItem.setAgentStatus(_ctx.stringValue("ListNodesResponse.Result["+ i +"].agentStatus"));
 
 			List<TagsItem> tags = new ArrayList<TagsItem>();
@@ -58,8 +58,8 @@ public class ListNodesResponseUnmarshaller {
 			List<IpAddressItem> ipAddress = new ArrayList<IpAddressItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListNodesResponse.Result["+ i +"].ipAddress.Length"); j++) {
 				IpAddressItem ipAddressItem = new IpAddressItem();
-				ipAddressItem.setHost(_ctx.stringValue("ListNodesResponse.Result["+ i +"].ipAddress["+ j +"].host"));
 				ipAddressItem.setIpType(_ctx.stringValue("ListNodesResponse.Result["+ i +"].ipAddress["+ j +"].ipType"));
+				ipAddressItem.setHost(_ctx.stringValue("ListNodesResponse.Result["+ i +"].ipAddress["+ j +"].host"));
 
 				ipAddress.add(ipAddressItem);
 			}
