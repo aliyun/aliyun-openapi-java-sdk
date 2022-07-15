@@ -46,6 +46,8 @@ public class DescribeCheckWarningSummaryResponseUnmarshaller {
 			warningSummary.setTypeAlias(_ctx.stringValue("DescribeCheckWarningSummaryResponse.WarningSummarys["+ i +"].TypeAlias"));
 			warningSummary.setRiskName(_ctx.stringValue("DescribeCheckWarningSummaryResponse.WarningSummarys["+ i +"].RiskName"));
 			warningSummary.setLevel(_ctx.stringValue("DescribeCheckWarningSummaryResponse.WarningSummarys["+ i +"].Level"));
+			warningSummary.setCheckExploit(_ctx.booleanValue("DescribeCheckWarningSummaryResponse.WarningSummarys["+ i +"].CheckExploit"));
+			warningSummary.setDatabaseRisk(_ctx.booleanValue("DescribeCheckWarningSummaryResponse.WarningSummarys["+ i +"].DatabaseRisk"));
 
 			warningSummarys.add(warningSummary);
 		}

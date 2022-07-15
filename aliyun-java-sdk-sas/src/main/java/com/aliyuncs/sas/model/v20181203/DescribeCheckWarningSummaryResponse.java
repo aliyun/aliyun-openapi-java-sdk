@@ -109,6 +109,10 @@ public class DescribeCheckWarningSummaryResponse extends AcsResponse {
 
 		private String level;
 
+		private Boolean checkExploit;
+
+		private Boolean databaseRisk;
+
 		public Integer getLowWarningCount() {
 			return this.lowWarningCount;
 		}
@@ -195,6 +199,22 @@ public class DescribeCheckWarningSummaryResponse extends AcsResponse {
 
 		public void setLevel(String level) {
 			this.level = level;
+		}
+
+		public Boolean getCheckExploit() {
+			return this.checkExploit;
+		}
+
+		public void setCheckExploit(Boolean checkExploit) {
+			this.checkExploit = checkExploit;
+		}
+
+		public Boolean getDatabaseRisk() {
+			return this.databaseRisk;
+		}
+
+		public void setDatabaseRisk(Boolean databaseRisk) {
+			this.databaseRisk = databaseRisk;
 		}
 	}
 

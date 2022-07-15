@@ -47,6 +47,8 @@ public class DescribeWarningMachinesResponseUnmarshaller {
 			warningMachine.setMediumWarningCount(_ctx.integerValue("DescribeWarningMachinesResponse.WarningMachines["+ i +"].MediumWarningCount"));
 			warningMachine.setPassCount(_ctx.integerValue("DescribeWarningMachinesResponse.WarningMachines["+ i +"].PassCount"));
 			warningMachine.setInstanceName(_ctx.stringValue("DescribeWarningMachinesResponse.WarningMachines["+ i +"].InstanceName"));
+			warningMachine.setBind(_ctx.booleanValue("DescribeWarningMachinesResponse.WarningMachines["+ i +"].Bind"));
+			warningMachine.setAuthVersion(_ctx.integerValue("DescribeWarningMachinesResponse.WarningMachines["+ i +"].AuthVersion"));
 
 			warningMachines.add(warningMachine);
 		}

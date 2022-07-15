@@ -27,6 +27,8 @@ public class DescribeCheckWarningsRequest extends RpcAcsRequest<DescribeCheckWar
 
 	private String uuid;
 
+	private String checkType;
+
 	private String sourceIp;
 
 	private Integer pageSize;
@@ -55,6 +57,17 @@ public class DescribeCheckWarningsRequest extends RpcAcsRequest<DescribeCheckWar
 		this.uuid = uuid;
 		if(uuid != null){
 			putQueryParameter("Uuid", uuid);
+		}
+	}
+
+	public String getCheckType() {
+		return this.checkType;
+	}
+
+	public void setCheckType(String checkType) {
+		this.checkType = checkType;
+		if(checkType != null){
+			putQueryParameter("CheckType", checkType);
 		}
 	}
 

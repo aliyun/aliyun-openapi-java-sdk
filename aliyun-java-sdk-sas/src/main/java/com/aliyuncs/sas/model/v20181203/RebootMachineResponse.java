@@ -15,18 +15,28 @@
 package com.aliyuncs.sas.model.v20181203;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.sas.transform.v20181203.DescribeRiskCheckItemResultResponseUnmarshaller;
+import com.aliyuncs.sas.transform.v20181203.RebootMachineResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeRiskCheckItemResultResponse extends AcsResponse {
+public class RebootMachineResponse extends AcsResponse {
+
+	private String requestId;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	@Override
-	public DescribeRiskCheckItemResultResponse getInstance(UnmarshallerContext context) {
-		return	DescribeRiskCheckItemResultResponseUnmarshaller.unmarshall(this, context);
+	public RebootMachineResponse getInstance(UnmarshallerContext context) {
+		return	RebootMachineResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

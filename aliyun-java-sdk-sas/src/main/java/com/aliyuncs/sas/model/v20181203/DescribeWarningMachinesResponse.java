@@ -111,6 +111,10 @@ public class DescribeWarningMachinesResponse extends AcsResponse {
 
 		private String instanceName;
 
+		private Boolean bind;
+
+		private Integer authVersion;
+
 		public Integer getStatus() {
 			return this.status;
 		}
@@ -205,6 +209,22 @@ public class DescribeWarningMachinesResponse extends AcsResponse {
 
 		public void setInstanceName(String instanceName) {
 			this.instanceName = instanceName;
+		}
+
+		public Boolean getBind() {
+			return this.bind;
+		}
+
+		public void setBind(Boolean bind) {
+			this.bind = bind;
+		}
+
+		public Integer getAuthVersion() {
+			return this.authVersion;
+		}
+
+		public void setAuthVersion(Integer authVersion) {
+			this.authVersion = authVersion;
 		}
 	}
 

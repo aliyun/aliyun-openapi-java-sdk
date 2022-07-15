@@ -53,6 +53,8 @@ public class DescribeCriteriaResponse extends AcsResponse {
 
 		private String values;
 
+		private String multiValues;
+
 		public String getType() {
 			return this.type;
 		}
@@ -75,6 +77,14 @@ public class DescribeCriteriaResponse extends AcsResponse {
 
 		public void setValues(String values) {
 			this.values = values;
+		}
+
+		public String getMultiValues() {
+			return this.multiValues;
+		}
+
+		public void setMultiValues(String multiValues) {
+			this.multiValues = multiValues;
 		}
 	}
 

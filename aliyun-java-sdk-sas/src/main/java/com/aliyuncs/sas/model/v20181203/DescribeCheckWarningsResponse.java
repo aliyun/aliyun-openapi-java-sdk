@@ -101,6 +101,10 @@ public class DescribeCheckWarningsResponse extends AcsResponse {
 
 		private String level;
 
+		private String reason;
+
+		private Integer fixStatus;
+
 		public Integer getStatus() {
 			return this.status;
 		}
@@ -155,6 +159,22 @@ public class DescribeCheckWarningsResponse extends AcsResponse {
 
 		public void setLevel(String level) {
 			this.level = level;
+		}
+
+		public String getReason() {
+			return this.reason;
+		}
+
+		public void setReason(String reason) {
+			this.reason = reason;
+		}
+
+		public Integer getFixStatus() {
+			return this.fixStatus;
+		}
+
+		public void setFixStatus(Integer fixStatus) {
+			this.fixStatus = fixStatus;
 		}
 	}
 

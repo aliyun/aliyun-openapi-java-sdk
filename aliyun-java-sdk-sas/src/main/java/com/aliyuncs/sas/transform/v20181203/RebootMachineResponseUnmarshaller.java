@@ -14,15 +14,16 @@
 
 package com.aliyuncs.sas.transform.v20181203;
 
-import com.aliyuncs.sas.model.v20181203.DescribeRiskCheckItemResultResponse;
+import com.aliyuncs.sas.model.v20181203.RebootMachineResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class DescribeRiskCheckItemResultResponseUnmarshaller {
+public class RebootMachineResponseUnmarshaller {
 
-	public static DescribeRiskCheckItemResultResponse unmarshall(DescribeRiskCheckItemResultResponse describeRiskCheckItemResultResponse, UnmarshallerContext _ctx) {
+	public static RebootMachineResponse unmarshall(RebootMachineResponse rebootMachineResponse, UnmarshallerContext _ctx) {
 		
+		rebootMachineResponse.setRequestId(_ctx.stringValue("RebootMachineResponse.RequestId"));
 	 
-	 	return describeRiskCheckItemResultResponse;
+	 	return rebootMachineResponse;
 	}
 }

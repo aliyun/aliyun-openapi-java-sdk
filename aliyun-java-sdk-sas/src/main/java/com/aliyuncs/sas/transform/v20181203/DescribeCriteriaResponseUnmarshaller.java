@@ -34,6 +34,7 @@ public class DescribeCriteriaResponseUnmarshaller {
 			criteria.setType(_ctx.stringValue("DescribeCriteriaResponse.CriteriaList["+ i +"].Type"));
 			criteria.setName(_ctx.stringValue("DescribeCriteriaResponse.CriteriaList["+ i +"].Name"));
 			criteria.setValues(_ctx.stringValue("DescribeCriteriaResponse.CriteriaList["+ i +"].Values"));
+			criteria.setMultiValues(_ctx.stringValue("DescribeCriteriaResponse.CriteriaList["+ i +"].MultiValues"));
 
 			criteriaList.add(criteria);
 		}
