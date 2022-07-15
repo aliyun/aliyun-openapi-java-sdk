@@ -15,6 +15,7 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecs.Endpoint;
 
@@ -43,11 +44,13 @@ public class AuthorizeSecurityGroupRequest extends RpcAcsRequest<AuthorizeSecuri
 
 	private String sourceGroupOwnerAccount;
 
+	private List<Permissions> permissions;
+
+	private String policy;
+
 	private String ipv6SourceCidrIp;
 
 	private String ipv6DestCidrIp;
-
-	private String policy;
 
 	private String portRange;
 
@@ -174,6 +177,47 @@ public class AuthorizeSecurityGroupRequest extends RpcAcsRequest<AuthorizeSecuri
 		}
 	}
 
+	public List<Permissions> getPermissions() {
+		return this.permissions;
+	}
+
+	public void setPermissions(List<Permissions> permissions) {
+		this.permissions = permissions;	
+		if (permissions != null) {
+			for (int depth1 = 0; depth1 < permissions.size(); depth1++) {
+				if (permissions.get(depth1) != null) {
+					
+						putQueryParameter("Permissions." + (depth1 + 1) + ".Policy" , permissions.get(depth1).getPolicy());
+						putQueryParameter("Permissions." + (depth1 + 1) + ".Priority" , permissions.get(depth1).getPriority());
+						putQueryParameter("Permissions." + (depth1 + 1) + ".IpProtocol" , permissions.get(depth1).getIpProtocol());
+						putQueryParameter("Permissions." + (depth1 + 1) + ".SourceCidrIp" , permissions.get(depth1).getSourceCidrIp());
+						putQueryParameter("Permissions." + (depth1 + 1) + ".Ipv6SourceCidrIp" , permissions.get(depth1).getIpv6SourceCidrIp());
+						putQueryParameter("Permissions." + (depth1 + 1) + ".SourceGroupId" , permissions.get(depth1).getSourceGroupId());
+						putQueryParameter("Permissions." + (depth1 + 1) + ".SourcePrefixListId" , permissions.get(depth1).getSourcePrefixListId());
+						putQueryParameter("Permissions." + (depth1 + 1) + ".PortRange" , permissions.get(depth1).getPortRange());
+						putQueryParameter("Permissions." + (depth1 + 1) + ".DestCidrIp" , permissions.get(depth1).getDestCidrIp());
+						putQueryParameter("Permissions." + (depth1 + 1) + ".Ipv6DestCidrIp" , permissions.get(depth1).getIpv6DestCidrIp());
+						putQueryParameter("Permissions." + (depth1 + 1) + ".SourcePortRange" , permissions.get(depth1).getSourcePortRange());
+						putQueryParameter("Permissions." + (depth1 + 1) + ".SourceGroupOwnerAccount" , permissions.get(depth1).getSourceGroupOwnerAccount());
+						putQueryParameter("Permissions." + (depth1 + 1) + ".SourceGroupOwnerId" , permissions.get(depth1).getSourceGroupOwnerId());
+						putQueryParameter("Permissions." + (depth1 + 1) + ".NicType" , permissions.get(depth1).getNicType());
+						putQueryParameter("Permissions." + (depth1 + 1) + ".Description" , permissions.get(depth1).getDescription());
+				}
+			}
+		}	
+	}
+
+	public String getPolicy() {
+		return this.policy;
+	}
+
+	public void setPolicy(String policy) {
+		this.policy = policy;
+		if(policy != null){
+			putQueryParameter("Policy", policy);
+		}
+	}
+
 	public String getIpv6SourceCidrIp() {
 		return this.ipv6SourceCidrIp;
 	}
@@ -193,17 +237,6 @@ public class AuthorizeSecurityGroupRequest extends RpcAcsRequest<AuthorizeSecuri
 		this.ipv6DestCidrIp = ipv6DestCidrIp;
 		if(ipv6DestCidrIp != null){
 			putQueryParameter("Ipv6DestCidrIp", ipv6DestCidrIp);
-		}
-	}
-
-	public String getPolicy() {
-		return this.policy;
-	}
-
-	public void setPolicy(String policy) {
-		this.policy = policy;
-		if(policy != null){
-			putQueryParameter("Policy", policy);
 		}
 	}
 
@@ -303,6 +336,159 @@ public class AuthorizeSecurityGroupRequest extends RpcAcsRequest<AuthorizeSecuri
 		this.sourceGroupId = sourceGroupId;
 		if(sourceGroupId != null){
 			putQueryParameter("SourceGroupId", sourceGroupId);
+		}
+	}
+
+	public static class Permissions {
+
+		private String policy;
+
+		private String priority;
+
+		private String ipProtocol;
+
+		private String sourceCidrIp;
+
+		private String ipv6SourceCidrIp;
+
+		private String sourceGroupId;
+
+		private String sourcePrefixListId;
+
+		private String portRange;
+
+		private String destCidrIp;
+
+		private String ipv6DestCidrIp;
+
+		private String sourcePortRange;
+
+		private String sourceGroupOwnerAccount;
+
+		private Long sourceGroupOwnerId;
+
+		private String nicType;
+
+		private String description;
+
+		public String getPolicy() {
+			return this.policy;
+		}
+
+		public void setPolicy(String policy) {
+			this.policy = policy;
+		}
+
+		public String getPriority() {
+			return this.priority;
+		}
+
+		public void setPriority(String priority) {
+			this.priority = priority;
+		}
+
+		public String getIpProtocol() {
+			return this.ipProtocol;
+		}
+
+		public void setIpProtocol(String ipProtocol) {
+			this.ipProtocol = ipProtocol;
+		}
+
+		public String getSourceCidrIp() {
+			return this.sourceCidrIp;
+		}
+
+		public void setSourceCidrIp(String sourceCidrIp) {
+			this.sourceCidrIp = sourceCidrIp;
+		}
+
+		public String getIpv6SourceCidrIp() {
+			return this.ipv6SourceCidrIp;
+		}
+
+		public void setIpv6SourceCidrIp(String ipv6SourceCidrIp) {
+			this.ipv6SourceCidrIp = ipv6SourceCidrIp;
+		}
+
+		public String getSourceGroupId() {
+			return this.sourceGroupId;
+		}
+
+		public void setSourceGroupId(String sourceGroupId) {
+			this.sourceGroupId = sourceGroupId;
+		}
+
+		public String getSourcePrefixListId() {
+			return this.sourcePrefixListId;
+		}
+
+		public void setSourcePrefixListId(String sourcePrefixListId) {
+			this.sourcePrefixListId = sourcePrefixListId;
+		}
+
+		public String getPortRange() {
+			return this.portRange;
+		}
+
+		public void setPortRange(String portRange) {
+			this.portRange = portRange;
+		}
+
+		public String getDestCidrIp() {
+			return this.destCidrIp;
+		}
+
+		public void setDestCidrIp(String destCidrIp) {
+			this.destCidrIp = destCidrIp;
+		}
+
+		public String getIpv6DestCidrIp() {
+			return this.ipv6DestCidrIp;
+		}
+
+		public void setIpv6DestCidrIp(String ipv6DestCidrIp) {
+			this.ipv6DestCidrIp = ipv6DestCidrIp;
+		}
+
+		public String getSourcePortRange() {
+			return this.sourcePortRange;
+		}
+
+		public void setSourcePortRange(String sourcePortRange) {
+			this.sourcePortRange = sourcePortRange;
+		}
+
+		public String getSourceGroupOwnerAccount() {
+			return this.sourceGroupOwnerAccount;
+		}
+
+		public void setSourceGroupOwnerAccount(String sourceGroupOwnerAccount) {
+			this.sourceGroupOwnerAccount = sourceGroupOwnerAccount;
+		}
+
+		public Long getSourceGroupOwnerId() {
+			return this.sourceGroupOwnerId;
+		}
+
+		public void setSourceGroupOwnerId(Long sourceGroupOwnerId) {
+			this.sourceGroupOwnerId = sourceGroupOwnerId;
+		}
+
+		public String getNicType() {
+			return this.nicType;
+		}
+
+		public void setNicType(String nicType) {
+			this.nicType = nicType;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
 		}
 	}
 
