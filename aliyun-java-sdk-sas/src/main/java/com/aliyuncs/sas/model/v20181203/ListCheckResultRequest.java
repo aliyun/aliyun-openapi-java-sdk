@@ -26,8 +26,6 @@ import com.aliyuncs.sas.Endpoint;
 public class ListCheckResultRequest extends RpcAcsRequest<ListCheckResultResponse> {
 	   
 
-	private List<String> instanceSubTypess;
-
 	private List<Long> standardIdss;
 
 	private List<String> riskLevelss;
@@ -58,19 +56,6 @@ public class ListCheckResultRequest extends RpcAcsRequest<ListCheckResultRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public List<String> getInstanceSubTypess() {
-		return this.instanceSubTypess;
-	}
-
-	public void setInstanceSubTypess(List<String> instanceSubTypess) {
-		this.instanceSubTypess = instanceSubTypess;	
-		if (instanceSubTypess != null) {
-			for (int i = 0; i < instanceSubTypess.size(); i++) {
-				putQueryParameter("InstanceSubTypes." + (i + 1) , instanceSubTypess.get(i));
-			}
-		}	
 	}
 
 	public List<Long> getStandardIdss() {
