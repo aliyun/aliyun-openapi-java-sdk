@@ -53,6 +53,8 @@ public class DescribeEslDevicesResponseUnmarshaller {
 			eslDeviceInfo.setEslStatus(_ctx.stringValue("DescribeEslDevicesResponse.EslDevices["+ i +"].EslStatus"));
 			eslDeviceInfo.setMac(_ctx.stringValue("DescribeEslDevicesResponse.EslDevices["+ i +"].Mac"));
 			eslDeviceInfo.setTypeEncode(_ctx.stringValue("DescribeEslDevicesResponse.EslDevices["+ i +"].TypeEncode"));
+			eslDeviceInfo.setLayoutId(_ctx.stringValue("DescribeEslDevicesResponse.EslDevices["+ i +"].LayoutId"));
+			eslDeviceInfo.setLayoutName(_ctx.stringValue("DescribeEslDevicesResponse.EslDevices["+ i +"].LayoutName"));
 
 			eslDevices.add(eslDeviceInfo);
 		}

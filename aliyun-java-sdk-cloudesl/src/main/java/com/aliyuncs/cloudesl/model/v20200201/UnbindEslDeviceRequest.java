@@ -27,6 +27,8 @@ public class UnbindEslDeviceRequest extends RpcAcsRequest<UnbindEslDeviceRespons
 
 	private String extraParams;
 
+	private String containerName;
+
 	private String storeId;
 
 	private Integer layer;
@@ -55,6 +57,17 @@ public class UnbindEslDeviceRequest extends RpcAcsRequest<UnbindEslDeviceRespons
 		this.extraParams = extraParams;
 		if(extraParams != null){
 			putBodyParameter("ExtraParams", extraParams);
+		}
+	}
+
+	public String getContainerName() {
+		return this.containerName;
+	}
+
+	public void setContainerName(String containerName) {
+		this.containerName = containerName;
+		if(containerName != null){
+			putBodyParameter("ContainerName", containerName);
 		}
 	}
 

@@ -287,6 +287,8 @@ public class DescribeItemsResponse extends AcsResponse {
 
 		private String itemBarCode;
 
+		private Boolean beClearance;
+
 		public Integer getActionPrice() {
 			return this.actionPrice;
 		}
@@ -805,6 +807,14 @@ public class DescribeItemsResponse extends AcsResponse {
 
 		public void setItemBarCode(String itemBarCode) {
 			this.itemBarCode = itemBarCode;
+		}
+
+		public Boolean getBeClearance() {
+			return this.beClearance;
+		}
+
+		public void setBeClearance(Boolean beClearance) {
+			this.beClearance = beClearance;
 		}
 	}
 

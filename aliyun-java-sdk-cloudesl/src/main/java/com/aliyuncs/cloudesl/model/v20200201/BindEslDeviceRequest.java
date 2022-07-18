@@ -27,17 +27,25 @@ public class BindEslDeviceRequest extends RpcAcsRequest<BindEslDeviceResponse> {
 
 	private String extraParams;
 
+	private String containerName;
+
 	private String storeId;
+
+	private String layoutId;
 
 	private Integer layer;
 
 	private String eslBarCode;
+
+	private String layoutName;
 
 	private String itemBarCode;
 
 	private String column;
 
 	private String shelf;
+
+	private String containerId;
 	public BindEslDeviceRequest() {
 		super("cloudesl", "2020-02-01", "BindEslDevice");
 		setMethod(MethodType.POST);
@@ -58,6 +66,17 @@ public class BindEslDeviceRequest extends RpcAcsRequest<BindEslDeviceResponse> {
 		}
 	}
 
+	public String getContainerName() {
+		return this.containerName;
+	}
+
+	public void setContainerName(String containerName) {
+		this.containerName = containerName;
+		if(containerName != null){
+			putBodyParameter("ContainerName", containerName);
+		}
+	}
+
 	public String getStoreId() {
 		return this.storeId;
 	}
@@ -66,6 +85,17 @@ public class BindEslDeviceRequest extends RpcAcsRequest<BindEslDeviceResponse> {
 		this.storeId = storeId;
 		if(storeId != null){
 			putBodyParameter("StoreId", storeId);
+		}
+	}
+
+	public String getLayoutId() {
+		return this.layoutId;
+	}
+
+	public void setLayoutId(String layoutId) {
+		this.layoutId = layoutId;
+		if(layoutId != null){
+			putBodyParameter("LayoutId", layoutId);
 		}
 	}
 
@@ -88,6 +118,17 @@ public class BindEslDeviceRequest extends RpcAcsRequest<BindEslDeviceResponse> {
 		this.eslBarCode = eslBarCode;
 		if(eslBarCode != null){
 			putBodyParameter("EslBarCode", eslBarCode);
+		}
+	}
+
+	public String getLayoutName() {
+		return this.layoutName;
+	}
+
+	public void setLayoutName(String layoutName) {
+		this.layoutName = layoutName;
+		if(layoutName != null){
+			putBodyParameter("LayoutName", layoutName);
 		}
 	}
 
@@ -121,6 +162,17 @@ public class BindEslDeviceRequest extends RpcAcsRequest<BindEslDeviceResponse> {
 		this.shelf = shelf;
 		if(shelf != null){
 			putBodyParameter("Shelf", shelf);
+		}
+	}
+
+	public String getContainerId() {
+		return this.containerId;
+	}
+
+	public void setContainerId(String containerId) {
+		this.containerId = containerId;
+		if(containerId != null){
+			putBodyParameter("ContainerId", containerId);
 		}
 	}
 

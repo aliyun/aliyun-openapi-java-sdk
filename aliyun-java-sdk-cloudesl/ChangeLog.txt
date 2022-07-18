@@ -1,3 +1,6 @@
+2022-07-18 Version: 2.1.1
+- Add Mutimedia Screen API Support.
+
 2022-05-31 Version: 2.1.0
 - Add Template API Support.
 

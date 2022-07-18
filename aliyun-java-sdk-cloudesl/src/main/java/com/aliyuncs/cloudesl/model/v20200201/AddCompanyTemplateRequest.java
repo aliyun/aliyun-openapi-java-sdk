@@ -45,7 +45,11 @@ public class AddCompanyTemplateRequest extends RpcAcsRequest<AddCompanyTemplateR
 
 	private String templateName;
 
+	private String templateSceneId;
+
 	private Boolean ifSourceCode;
+
+	private String groupId;
 
 	private Boolean ifMember;
 
@@ -171,6 +175,17 @@ public class AddCompanyTemplateRequest extends RpcAcsRequest<AddCompanyTemplateR
 		}
 	}
 
+	public String getTemplateSceneId() {
+		return this.templateSceneId;
+	}
+
+	public void setTemplateSceneId(String templateSceneId) {
+		this.templateSceneId = templateSceneId;
+		if(templateSceneId != null){
+			putBodyParameter("TemplateSceneId", templateSceneId);
+		}
+	}
+
 	public Boolean getIfSourceCode() {
 		return this.ifSourceCode;
 	}
@@ -179,6 +194,17 @@ public class AddCompanyTemplateRequest extends RpcAcsRequest<AddCompanyTemplateR
 		this.ifSourceCode = ifSourceCode;
 		if(ifSourceCode != null){
 			putBodyParameter("IfSourceCode", ifSourceCode.toString());
+		}
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putBodyParameter("GroupId", groupId);
 		}
 	}
 

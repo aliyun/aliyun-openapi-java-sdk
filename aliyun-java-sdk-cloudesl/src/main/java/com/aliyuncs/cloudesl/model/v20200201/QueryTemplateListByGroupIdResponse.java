@@ -16,14 +16,14 @@ package com.aliyuncs.cloudesl.model.v20200201;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cloudesl.transform.v20200201.DescribeTemplateByModelResponseUnmarshaller;
+import com.aliyuncs.cloudesl.transform.v20200201.QueryTemplateListByGroupIdResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeTemplateByModelResponse extends AcsResponse {
+public class QueryTemplateListByGroupIdResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -47,7 +47,7 @@ public class DescribeTemplateByModelResponse extends AcsResponse {
 
 	private Integer pageNumber;
 
-	private List<SelectItemInfo> items;
+	private List<Template> templateList;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -137,15 +137,15 @@ public class DescribeTemplateByModelResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public List<SelectItemInfo> getItems() {
-		return this.items;
+	public List<Template> getTemplateList() {
+		return this.templateList;
 	}
 
-	public void setItems(List<SelectItemInfo> items) {
-		this.items = items;
+	public void setTemplateList(List<Template> templateList) {
+		this.templateList = templateList;
 	}
 
-	public static class SelectItemInfo {
+	public static class Template {
 
 		private String basePicture;
 
@@ -169,7 +169,11 @@ public class DescribeTemplateByModelResponse extends AcsResponse {
 
 		private String brand;
 
+		private String groupId;
+
 		private String templateSceneId;
+
+		private Boolean relation;
 
 		public String getBasePicture() {
 			return this.basePicture;
@@ -259,6 +263,14 @@ public class DescribeTemplateByModelResponse extends AcsResponse {
 			this.brand = brand;
 		}
 
+		public String getGroupId() {
+			return this.groupId;
+		}
+
+		public void setGroupId(String groupId) {
+			this.groupId = groupId;
+		}
+
 		public String getTemplateSceneId() {
 			return this.templateSceneId;
 		}
@@ -266,11 +278,19 @@ public class DescribeTemplateByModelResponse extends AcsResponse {
 		public void setTemplateSceneId(String templateSceneId) {
 			this.templateSceneId = templateSceneId;
 		}
+
+		public Boolean getRelation() {
+			return this.relation;
+		}
+
+		public void setRelation(Boolean relation) {
+			this.relation = relation;
+		}
 	}
 
 	@Override
-	public DescribeTemplateByModelResponse getInstance(UnmarshallerContext context) {
-		return	DescribeTemplateByModelResponseUnmarshaller.unmarshall(this, context);
+	public QueryTemplateListByGroupIdResponse getInstance(UnmarshallerContext context) {
+		return	QueryTemplateListByGroupIdResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

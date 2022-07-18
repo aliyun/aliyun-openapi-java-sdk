@@ -107,6 +107,7 @@ public class DescribeItemsResponseUnmarshaller {
 			itemInfo.setItemInfoIndex(_ctx.integerValue("DescribeItemsResponse.Items["+ i +"].ItemInfoIndex"));
 			itemInfo.setPromotionEnd(_ctx.stringValue("DescribeItemsResponse.Items["+ i +"].PromotionEnd"));
 			itemInfo.setItemBarCode(_ctx.stringValue("DescribeItemsResponse.Items["+ i +"].ItemBarCode"));
+			itemInfo.setBeClearance(_ctx.booleanValue("DescribeItemsResponse.Items["+ i +"].BeClearance"));
 
 			items.add(itemInfo);
 		}

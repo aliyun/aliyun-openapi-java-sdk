@@ -15,14 +15,14 @@
 package com.aliyuncs.cloudesl.model.v20200201;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cloudesl.transform.v20200201.UnbindEslDeviceResponseUnmarshaller;
+import com.aliyuncs.cloudesl.transform.v20200201.UpdateCompanyTemplateResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UnbindEslDeviceResponse extends AcsResponse {
+public class UpdateCompanyTemplateResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -105,12 +105,7 @@ public class UnbindEslDeviceResponse extends AcsResponse {
 	}
 
 	@Override
-	public UnbindEslDeviceResponse getInstance(UnmarshallerContext context) {
-		return	UnbindEslDeviceResponseUnmarshaller.unmarshall(this, context);
-	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
+	public UpdateCompanyTemplateResponse getInstance(UnmarshallerContext context) {
+		return	UpdateCompanyTemplateResponseUnmarshaller.unmarshall(this, context);
 	}
 }

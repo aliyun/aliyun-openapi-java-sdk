@@ -15,30 +15,34 @@
 package com.aliyuncs.cloudesl.model.v20200201;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cloudesl.transform.v20200201.UnbindEslDeviceResponseUnmarshaller;
+import com.aliyuncs.cloudesl.transform.v20200201.GetEslDevicesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UnbindEslDeviceResponse extends AcsResponse {
+public class GetEslDevicesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String errorMessage;
-
 	private Boolean success;
-
-	private String errorCode;
-
-	private String code;
 
 	private String message;
 
-	private String dynamicMessage;
+	private String errorCode;
+
+	private String errorMessage;
+
+	private String code;
 
 	private String dynamicCode;
+
+	private String dynamicMessage;
+
+	private String eslBarCode;
+
+	private String type;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -46,14 +50,6 @@ public class UnbindEslDeviceResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
 	}
 
 	public Boolean getSuccess() {
@@ -64,12 +60,28 @@ public class UnbindEslDeviceResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
 	public String getErrorCode() {
 		return this.errorCode;
 	}
 
 	public void setErrorCode(String errorCode) {
 		this.errorCode = errorCode;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
 	public String getCode() {
@@ -80,12 +92,12 @@ public class UnbindEslDeviceResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public String getDynamicCode() {
+		return this.dynamicCode;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setDynamicCode(String dynamicCode) {
+		this.dynamicCode = dynamicCode;
 	}
 
 	public String getDynamicMessage() {
@@ -96,17 +108,25 @@ public class UnbindEslDeviceResponse extends AcsResponse {
 		this.dynamicMessage = dynamicMessage;
 	}
 
-	public String getDynamicCode() {
-		return this.dynamicCode;
+	public String getEslBarCode() {
+		return this.eslBarCode;
 	}
 
-	public void setDynamicCode(String dynamicCode) {
-		this.dynamicCode = dynamicCode;
+	public void setEslBarCode(String eslBarCode) {
+		this.eslBarCode = eslBarCode;
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
 	}
 
 	@Override
-	public UnbindEslDeviceResponse getInstance(UnmarshallerContext context) {
-		return	UnbindEslDeviceResponseUnmarshaller.unmarshall(this, context);
+	public GetEslDevicesResponse getInstance(UnmarshallerContext context) {
+		return	GetEslDevicesResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

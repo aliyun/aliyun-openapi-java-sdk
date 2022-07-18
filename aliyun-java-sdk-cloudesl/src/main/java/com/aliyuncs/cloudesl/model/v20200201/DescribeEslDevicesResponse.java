@@ -171,6 +171,10 @@ public class DescribeEslDevicesResponse extends AcsResponse {
 
 		private String typeEncode;
 
+		private String layoutId;
+
+		private String layoutName;
+
 		public String getType() {
 			return this.type;
 		}
@@ -265,6 +269,22 @@ public class DescribeEslDevicesResponse extends AcsResponse {
 
 		public void setTypeEncode(String typeEncode) {
 			this.typeEncode = typeEncode;
+		}
+
+		public String getLayoutId() {
+			return this.layoutId;
+		}
+
+		public void setLayoutId(String layoutId) {
+			this.layoutId = layoutId;
+		}
+
+		public String getLayoutName() {
+			return this.layoutName;
+		}
+
+		public void setLayoutName(String layoutName) {
+			this.layoutName = layoutName;
 		}
 	}
 

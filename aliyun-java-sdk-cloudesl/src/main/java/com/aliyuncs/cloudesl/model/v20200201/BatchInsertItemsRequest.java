@@ -138,6 +138,7 @@ public class BatchInsertItemsRequest extends RpcAcsRequest<BatchInsertItemsRespo
 				putBodyParameter("ItemInfo." + (depth1 + 1) + ".ItemPicUrl" , itemInfos.get(depth1).getItemPicUrl());
 				putBodyParameter("ItemInfo." + (depth1 + 1) + ".ForestSecondId" , itemInfos.get(depth1).getForestSecondId());
 				putBodyParameter("ItemInfo." + (depth1 + 1) + ".SupplierName" , itemInfos.get(depth1).getSupplierName());
+				putBodyParameter("ItemInfo." + (depth1 + 1) + ".BeClearance" , itemInfos.get(depth1).getBeClearance());
 				putBodyParameter("ItemInfo." + (depth1 + 1) + ".Material" , itemInfos.get(depth1).getMaterial());
 				putBodyParameter("ItemInfo." + (depth1 + 1) + ".ModelNumber" , itemInfos.get(depth1).getModelNumber());
 				putBodyParameter("ItemInfo." + (depth1 + 1) + ".SaleSpec" , itemInfos.get(depth1).getSaleSpec());
@@ -261,6 +262,8 @@ public class BatchInsertItemsRequest extends RpcAcsRequest<BatchInsertItemsRespo
 		private String forestSecondId;
 
 		private String supplierName;
+
+		private Boolean beClearance;
 
 		private String material;
 
@@ -716,6 +719,14 @@ public class BatchInsertItemsRequest extends RpcAcsRequest<BatchInsertItemsRespo
 
 		public void setSupplierName(String supplierName) {
 			this.supplierName = supplierName;
+		}
+
+		public Boolean getBeClearance() {
+			return this.beClearance;
+		}
+
+		public void setBeClearance(Boolean beClearance) {
+			this.beClearance = beClearance;
 		}
 
 		public String getMaterial() {

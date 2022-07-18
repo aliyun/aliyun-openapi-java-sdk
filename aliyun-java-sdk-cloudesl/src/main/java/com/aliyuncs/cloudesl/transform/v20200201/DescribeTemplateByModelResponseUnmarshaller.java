@@ -52,6 +52,7 @@ public class DescribeTemplateByModelResponseUnmarshaller {
 			selectItemInfo.setLayout(_ctx.stringValue("DescribeTemplateByModelResponse.Items["+ i +"].Layout"));
 			selectItemInfo.setScene(_ctx.stringValue("DescribeTemplateByModelResponse.Items["+ i +"].Scene"));
 			selectItemInfo.setBrand(_ctx.stringValue("DescribeTemplateByModelResponse.Items["+ i +"].Brand"));
+			selectItemInfo.setTemplateSceneId(_ctx.stringValue("DescribeTemplateByModelResponse.Items["+ i +"].TemplateSceneId"));
 
 			items.add(selectItemInfo);
 		}

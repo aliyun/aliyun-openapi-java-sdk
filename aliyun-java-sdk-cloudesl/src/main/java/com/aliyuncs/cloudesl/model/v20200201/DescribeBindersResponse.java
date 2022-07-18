@@ -25,29 +25,37 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeBindersResponse extends AcsResponse {
 
+	private String requestId;
+
 	private String errorMessage;
+
+	private Boolean success;
 
 	private String errorCode;
 
-	private Integer totalCount;
+	private String code;
 
 	private String message;
-
-	private Integer pageSize;
-
-	private String dynamicCode;
-
-	private String code;
 
 	private String dynamicMessage;
 
 	private Integer pageNumber;
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Boolean success;
+	private Integer totalCount;
+
+	private String dynamicCode;
 
 	private List<EslItemBindInfo> eslItemBindInfos;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public String getErrorMessage() {
 		return this.errorMessage;
@@ -55,6 +63,14 @@ public class DescribeBindersResponse extends AcsResponse {
 
 	public void setErrorMessage(String errorMessage) {
 		this.errorMessage = errorMessage;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public String getErrorCode() {
@@ -65,12 +81,12 @@ public class DescribeBindersResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getMessage() {
@@ -79,30 +95,6 @@ public class DescribeBindersResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
-	public String getDynamicCode() {
-		return this.dynamicCode;
-	}
-
-	public void setDynamicCode(String dynamicCode) {
-		this.dynamicCode = dynamicCode;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
 	}
 
 	public String getDynamicMessage() {
@@ -121,20 +113,28 @@ public class DescribeBindersResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
+
+	public String getDynamicCode() {
+		return this.dynamicCode;
+	}
+
+	public void setDynamicCode(String dynamicCode) {
+		this.dynamicCode = dynamicCode;
 	}
 
 	public List<EslItemBindInfo> getEslItemBindInfos() {
@@ -147,112 +147,58 @@ public class DescribeBindersResponse extends AcsResponse {
 
 	public static class EslItemBindInfo {
 
-		private String promotionText;
-
-		private String bindId;
-
-		private String storeId;
-
-		private String templateId;
-
-		private String eslPic;
-
-		private String eslStatus;
-
-		private String itemTitle;
-
-		private String originalPrice;
+		private String eslBarCode;
 
 		private String templateSceneId;
 
-		private String gmtModified;
-
 		private String actionPrice;
 
-		private String priceUnit;
-
-		private String eslConnectAp;
-
-		private String skuId;
-
-		private String eslBarCode;
-
-		private String itemShortTitle;
-
-		private Boolean bePromotion;
-
-		private String eslModel;
-
-		private String itemBarCode;
-
-		private String itemId;
+		private String itemTitle;
 
 		private String promotionStart;
 
+		private String priceUnit;
+
+		private String originalPrice;
+
+		private String itemId;
+
+		private String gmtModified;
+
+		private String eslPic;
+
+		private String storeId;
+
+		private String itemShortTitle;
+
+		private String bindId;
+
+		private String promotionText;
+
+		private String eslModel;
+
+		private Boolean bePromotion;
+
+		private String skuId;
+
+		private String eslConnectAp;
+
+		private String eslStatus;
+
+		private String templateId;
+
 		private String promotionEnd;
 
-		public String getPromotionText() {
-			return this.promotionText;
+		private String itemBarCode;
+
+		private String containerName;
+
+		public String getEslBarCode() {
+			return this.eslBarCode;
 		}
 
-		public void setPromotionText(String promotionText) {
-			this.promotionText = promotionText;
-		}
-
-		public String getBindId() {
-			return this.bindId;
-		}
-
-		public void setBindId(String bindId) {
-			this.bindId = bindId;
-		}
-
-		public String getStoreId() {
-			return this.storeId;
-		}
-
-		public void setStoreId(String storeId) {
-			this.storeId = storeId;
-		}
-
-		public String getTemplateId() {
-			return this.templateId;
-		}
-
-		public void setTemplateId(String templateId) {
-			this.templateId = templateId;
-		}
-
-		public String getEslPic() {
-			return this.eslPic;
-		}
-
-		public void setEslPic(String eslPic) {
-			this.eslPic = eslPic;
-		}
-
-		public String getEslStatus() {
-			return this.eslStatus;
-		}
-
-		public void setEslStatus(String eslStatus) {
-			this.eslStatus = eslStatus;
-		}
-
-		public String getItemTitle() {
-			return this.itemTitle;
-		}
-
-		public void setItemTitle(String itemTitle) {
-			this.itemTitle = itemTitle;
-		}
-
-		public String getOriginalPrice() {
-			return this.originalPrice;
-		}
-
-		public void setOriginalPrice(String originalPrice) {
-			this.originalPrice = originalPrice;
+		public void setEslBarCode(String eslBarCode) {
+			this.eslBarCode = eslBarCode;
 		}
 
 		public String getTemplateSceneId() {
@@ -263,14 +209,6 @@ public class DescribeBindersResponse extends AcsResponse {
 			this.templateSceneId = templateSceneId;
 		}
 
-		public String getGmtModified() {
-			return this.gmtModified;
-		}
-
-		public void setGmtModified(String gmtModified) {
-			this.gmtModified = gmtModified;
-		}
-
 		public String getActionPrice() {
 			return this.actionPrice;
 		}
@@ -279,76 +217,12 @@ public class DescribeBindersResponse extends AcsResponse {
 			this.actionPrice = actionPrice;
 		}
 
-		public String getPriceUnit() {
-			return this.priceUnit;
+		public String getItemTitle() {
+			return this.itemTitle;
 		}
 
-		public void setPriceUnit(String priceUnit) {
-			this.priceUnit = priceUnit;
-		}
-
-		public String getEslConnectAp() {
-			return this.eslConnectAp;
-		}
-
-		public void setEslConnectAp(String eslConnectAp) {
-			this.eslConnectAp = eslConnectAp;
-		}
-
-		public String getSkuId() {
-			return this.skuId;
-		}
-
-		public void setSkuId(String skuId) {
-			this.skuId = skuId;
-		}
-
-		public String getEslBarCode() {
-			return this.eslBarCode;
-		}
-
-		public void setEslBarCode(String eslBarCode) {
-			this.eslBarCode = eslBarCode;
-		}
-
-		public String getItemShortTitle() {
-			return this.itemShortTitle;
-		}
-
-		public void setItemShortTitle(String itemShortTitle) {
-			this.itemShortTitle = itemShortTitle;
-		}
-
-		public Boolean getBePromotion() {
-			return this.bePromotion;
-		}
-
-		public void setBePromotion(Boolean bePromotion) {
-			this.bePromotion = bePromotion;
-		}
-
-		public String getEslModel() {
-			return this.eslModel;
-		}
-
-		public void setEslModel(String eslModel) {
-			this.eslModel = eslModel;
-		}
-
-		public String getItemBarCode() {
-			return this.itemBarCode;
-		}
-
-		public void setItemBarCode(String itemBarCode) {
-			this.itemBarCode = itemBarCode;
-		}
-
-		public String getItemId() {
-			return this.itemId;
-		}
-
-		public void setItemId(String itemId) {
-			this.itemId = itemId;
+		public void setItemTitle(String itemTitle) {
+			this.itemTitle = itemTitle;
 		}
 
 		public String getPromotionStart() {
@@ -359,12 +233,148 @@ public class DescribeBindersResponse extends AcsResponse {
 			this.promotionStart = promotionStart;
 		}
 
+		public String getPriceUnit() {
+			return this.priceUnit;
+		}
+
+		public void setPriceUnit(String priceUnit) {
+			this.priceUnit = priceUnit;
+		}
+
+		public String getOriginalPrice() {
+			return this.originalPrice;
+		}
+
+		public void setOriginalPrice(String originalPrice) {
+			this.originalPrice = originalPrice;
+		}
+
+		public String getItemId() {
+			return this.itemId;
+		}
+
+		public void setItemId(String itemId) {
+			this.itemId = itemId;
+		}
+
+		public String getGmtModified() {
+			return this.gmtModified;
+		}
+
+		public void setGmtModified(String gmtModified) {
+			this.gmtModified = gmtModified;
+		}
+
+		public String getEslPic() {
+			return this.eslPic;
+		}
+
+		public void setEslPic(String eslPic) {
+			this.eslPic = eslPic;
+		}
+
+		public String getStoreId() {
+			return this.storeId;
+		}
+
+		public void setStoreId(String storeId) {
+			this.storeId = storeId;
+		}
+
+		public String getItemShortTitle() {
+			return this.itemShortTitle;
+		}
+
+		public void setItemShortTitle(String itemShortTitle) {
+			this.itemShortTitle = itemShortTitle;
+		}
+
+		public String getBindId() {
+			return this.bindId;
+		}
+
+		public void setBindId(String bindId) {
+			this.bindId = bindId;
+		}
+
+		public String getPromotionText() {
+			return this.promotionText;
+		}
+
+		public void setPromotionText(String promotionText) {
+			this.promotionText = promotionText;
+		}
+
+		public String getEslModel() {
+			return this.eslModel;
+		}
+
+		public void setEslModel(String eslModel) {
+			this.eslModel = eslModel;
+		}
+
+		public Boolean getBePromotion() {
+			return this.bePromotion;
+		}
+
+		public void setBePromotion(Boolean bePromotion) {
+			this.bePromotion = bePromotion;
+		}
+
+		public String getSkuId() {
+			return this.skuId;
+		}
+
+		public void setSkuId(String skuId) {
+			this.skuId = skuId;
+		}
+
+		public String getEslConnectAp() {
+			return this.eslConnectAp;
+		}
+
+		public void setEslConnectAp(String eslConnectAp) {
+			this.eslConnectAp = eslConnectAp;
+		}
+
+		public String getEslStatus() {
+			return this.eslStatus;
+		}
+
+		public void setEslStatus(String eslStatus) {
+			this.eslStatus = eslStatus;
+		}
+
+		public String getTemplateId() {
+			return this.templateId;
+		}
+
+		public void setTemplateId(String templateId) {
+			this.templateId = templateId;
+		}
+
 		public String getPromotionEnd() {
 			return this.promotionEnd;
 		}
 
 		public void setPromotionEnd(String promotionEnd) {
 			this.promotionEnd = promotionEnd;
+		}
+
+		public String getItemBarCode() {
+			return this.itemBarCode;
+		}
+
+		public void setItemBarCode(String itemBarCode) {
+			this.itemBarCode = itemBarCode;
+		}
+
+		public String getContainerName() {
+			return this.containerName;
+		}
+
+		public void setContainerName(String containerName) {
+			this.containerName = containerName;
 		}
 	}
 
