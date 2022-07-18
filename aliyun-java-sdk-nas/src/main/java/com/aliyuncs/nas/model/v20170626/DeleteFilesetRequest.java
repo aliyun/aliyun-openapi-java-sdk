@@ -33,7 +33,7 @@ public class DeleteFilesetRequest extends RpcAcsRequest<DeleteFilesetResponse> {
 
 	private Boolean dryRun;
 	public DeleteFilesetRequest() {
-		super("NAS", "2017-06-26", "DeleteFileset", "nas");
+		super("NAS", "2017-06-26", "DeleteFileset", "NAS");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

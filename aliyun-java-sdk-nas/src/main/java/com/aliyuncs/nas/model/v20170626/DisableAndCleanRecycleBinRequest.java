@@ -27,7 +27,7 @@ public class DisableAndCleanRecycleBinRequest extends RpcAcsRequest<DisableAndCl
 
 	private String fileSystemId;
 	public DisableAndCleanRecycleBinRequest() {
-		super("NAS", "2017-06-26", "DisableAndCleanRecycleBin", "nas");
+		super("NAS", "2017-06-26", "DisableAndCleanRecycleBin", "NAS");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

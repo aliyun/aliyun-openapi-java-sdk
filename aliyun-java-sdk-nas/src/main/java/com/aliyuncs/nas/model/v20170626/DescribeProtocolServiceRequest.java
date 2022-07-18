@@ -39,7 +39,7 @@ public class DescribeProtocolServiceRequest extends RpcAcsRequest<DescribeProtoc
 
 	private String status;
 	public DescribeProtocolServiceRequest() {
-		super("NAS", "2017-06-26", "DescribeProtocolService", "nas");
+		super("NAS", "2017-06-26", "DescribeProtocolService", "NAS");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

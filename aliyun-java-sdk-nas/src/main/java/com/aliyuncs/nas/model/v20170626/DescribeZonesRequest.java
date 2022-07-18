@@ -27,7 +27,7 @@ public class DescribeZonesRequest extends RpcAcsRequest<DescribeZonesResponse> {
 
 	private String fileSystemType;
 	public DescribeZonesRequest() {
-		super("NAS", "2017-06-26", "DescribeZones", "nas");
+		super("NAS", "2017-06-26", "DescribeZones", "NAS");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

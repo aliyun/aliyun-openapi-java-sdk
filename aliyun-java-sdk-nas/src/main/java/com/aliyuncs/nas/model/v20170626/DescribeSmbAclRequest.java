@@ -27,7 +27,7 @@ public class DescribeSmbAclRequest extends RpcAcsRequest<DescribeSmbAclResponse>
 
 	private String fileSystemId;
 	public DescribeSmbAclRequest() {
-		super("NAS", "2017-06-26", "DescribeSmbAcl", "nas");
+		super("NAS", "2017-06-26", "DescribeSmbAcl", "NAS");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

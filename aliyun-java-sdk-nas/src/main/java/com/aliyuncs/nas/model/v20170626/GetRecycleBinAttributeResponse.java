@@ -48,6 +48,8 @@ public class GetRecycleBinAttributeResponse extends AcsResponse {
 
 		private Long size;
 
+		private Long secondarySize;
+
 		private String status;
 
 		private Long reservedDays;
@@ -60,6 +62,14 @@ public class GetRecycleBinAttributeResponse extends AcsResponse {
 
 		public void setSize(Long size) {
 			this.size = size;
+		}
+
+		public Long getSecondarySize() {
+			return this.secondarySize;
+		}
+
+		public void setSecondarySize(Long secondarySize) {
+			this.secondarySize = secondarySize;
 		}
 
 		public String getStatus() {

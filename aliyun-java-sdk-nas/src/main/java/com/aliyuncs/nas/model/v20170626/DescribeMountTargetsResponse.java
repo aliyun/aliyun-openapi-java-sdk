@@ -91,6 +91,8 @@ public class DescribeMountTargetsResponse extends AcsResponse {
 
 		private String networkType;
 
+		private String iPVersion;
+
 		private List<ClientMasterNode> clientMasterNodes;
 
 		private List<Tag> tags;
@@ -149,6 +151,14 @@ public class DescribeMountTargetsResponse extends AcsResponse {
 
 		public void setNetworkType(String networkType) {
 			this.networkType = networkType;
+		}
+
+		public String getIPVersion() {
+			return this.iPVersion;
+		}
+
+		public void setIPVersion(String iPVersion) {
+			this.iPVersion = iPVersion;
 		}
 
 		public List<ClientMasterNode> getClientMasterNodes() {

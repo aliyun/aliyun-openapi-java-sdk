@@ -33,7 +33,7 @@ public class StopDataFlowRequest extends RpcAcsRequest<StopDataFlowResponse> {
 
 	private String dataFlowId;
 	public StopDataFlowRequest() {
-		super("NAS", "2017-06-26", "StopDataFlow", "nas");
+		super("NAS", "2017-06-26", "StopDataFlow", "NAS");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

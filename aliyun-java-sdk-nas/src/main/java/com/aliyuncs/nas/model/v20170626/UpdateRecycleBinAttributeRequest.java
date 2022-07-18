@@ -29,7 +29,7 @@ public class UpdateRecycleBinAttributeRequest extends RpcAcsRequest<UpdateRecycl
 
 	private Long reservedDays;
 	public UpdateRecycleBinAttributeRequest() {
-		super("NAS", "2017-06-26", "UpdateRecycleBinAttribute", "nas");
+		super("NAS", "2017-06-26", "UpdateRecycleBinAttribute", "NAS");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,6 +27,7 @@ public class GetRecycleBinAttributeResponseUnmarshaller {
 
 		RecycleBinAttribute recycleBinAttribute = new RecycleBinAttribute();
 		recycleBinAttribute.setSize(_ctx.longValue("GetRecycleBinAttributeResponse.RecycleBinAttribute.Size"));
+		recycleBinAttribute.setSecondarySize(_ctx.longValue("GetRecycleBinAttributeResponse.RecycleBinAttribute.SecondarySize"));
 		recycleBinAttribute.setStatus(_ctx.stringValue("GetRecycleBinAttributeResponse.RecycleBinAttribute.Status"));
 		recycleBinAttribute.setReservedDays(_ctx.longValue("GetRecycleBinAttributeResponse.RecycleBinAttribute.ReservedDays"));
 		recycleBinAttribute.setEnableTime(_ctx.stringValue("GetRecycleBinAttributeResponse.RecycleBinAttribute.EnableTime"));

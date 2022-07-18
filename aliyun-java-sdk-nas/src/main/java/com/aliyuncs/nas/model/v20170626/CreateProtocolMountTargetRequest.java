@@ -45,7 +45,7 @@ public class CreateProtocolMountTargetRequest extends RpcAcsRequest<CreateProtoc
 
 	private String vpcId;
 	public CreateProtocolMountTargetRequest() {
-		super("NAS", "2017-06-26", "CreateProtocolMountTarget", "nas");
+		super("NAS", "2017-06-26", "CreateProtocolMountTarget", "NAS");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

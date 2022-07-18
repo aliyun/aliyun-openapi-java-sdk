@@ -27,7 +27,7 @@ public class RetryLifecycleRetrieveJobRequest extends RpcAcsRequest<RetryLifecyc
 
 	private String jobId;
 	public RetryLifecycleRetrieveJobRequest() {
-		super("NAS", "2017-06-26", "RetryLifecycleRetrieveJob", "nas");
+		super("NAS", "2017-06-26", "RetryLifecycleRetrieveJob", "NAS");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

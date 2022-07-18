@@ -22,17 +22,58 @@ import com.aliyuncs.nas.Endpoint;
  * @author auto create
  * @version 
  */
-public class DisableSmbAclRequest extends RpcAcsRequest<DisableSmbAclResponse> {
+public class CreateFileRequest extends RpcAcsRequest<CreateFileResponse> {
 	   
 
+	private Boolean ownerAccessInheritable;
+
+	private String type;
+
+	private String path;
+
 	private String fileSystemId;
-	public DisableSmbAclRequest() {
-		super("NAS", "2017-06-26", "DisableSmbAcl", "NAS");
+
+	private String owner;
+	public CreateFileRequest() {
+		super("NAS", "2017-06-26", "CreateFile", "NAS");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Boolean getOwnerAccessInheritable() {
+		return this.ownerAccessInheritable;
+	}
+
+	public void setOwnerAccessInheritable(Boolean ownerAccessInheritable) {
+		this.ownerAccessInheritable = ownerAccessInheritable;
+		if(ownerAccessInheritable != null){
+			putQueryParameter("OwnerAccessInheritable", ownerAccessInheritable.toString());
+		}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
+		}
+	}
+
+	public String getPath() {
+		return this.path;
+	}
+
+	public void setPath(String path) {
+		this.path = path;
+		if(path != null){
+			putQueryParameter("Path", path);
+		}
 	}
 
 	public String getFileSystemId() {
@@ -46,9 +87,20 @@ public class DisableSmbAclRequest extends RpcAcsRequest<DisableSmbAclResponse> {
 		}
 	}
 
+	public String getOwner() {
+		return this.owner;
+	}
+
+	public void setOwner(String owner) {
+		this.owner = owner;
+		if(owner != null){
+			putQueryParameter("Owner", owner);
+		}
+	}
+
 	@Override
-	public Class<DisableSmbAclResponse> getResponseClass() {
-		return DisableSmbAclResponse.class;
+	public Class<CreateFileResponse> getResponseClass() {
+		return CreateFileResponse.class;
 	}
 
 }

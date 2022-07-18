@@ -29,7 +29,7 @@ public class EnableRecycleBinRequest extends RpcAcsRequest<EnableRecycleBinRespo
 
 	private Long reservedDays;
 	public EnableRecycleBinRequest() {
-		super("NAS", "2017-06-26", "EnableRecycleBin", "nas");
+		super("NAS", "2017-06-26", "EnableRecycleBin", "NAS");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

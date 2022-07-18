@@ -31,7 +31,7 @@ public class ListRecentlyRecycledDirectoriesRequest extends RpcAcsRequest<ListRe
 
 	private Long maxResults;
 	public ListRecentlyRecycledDirectoriesRequest() {
-		super("NAS", "2017-06-26", "ListRecentlyRecycledDirectories", "nas");
+		super("NAS", "2017-06-26", "ListRecentlyRecycledDirectories", "NAS");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class StartDataFlowRequest extends RpcAcsRequest<StartDataFlowResponse> {
 
 	private String dataFlowId;
 	public StartDataFlowRequest() {
-		super("NAS", "2017-06-26", "StartDataFlow", "nas");
+		super("NAS", "2017-06-26", "StartDataFlow", "NAS");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

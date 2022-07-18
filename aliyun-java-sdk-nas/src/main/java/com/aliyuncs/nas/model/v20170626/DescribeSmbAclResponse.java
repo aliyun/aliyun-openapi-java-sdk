@@ -48,6 +48,8 @@ public class DescribeSmbAclResponse extends AcsResponse {
 
 		private String authMethod;
 
+		private String authCenter;
+
 		private Boolean enableAnonymousAccess;
 
 		private Boolean enabled;
@@ -66,6 +68,14 @@ public class DescribeSmbAclResponse extends AcsResponse {
 
 		public void setAuthMethod(String authMethod) {
 			this.authMethod = authMethod;
+		}
+
+		public String getAuthCenter() {
+			return this.authCenter;
+		}
+
+		public void setAuthCenter(String authCenter) {
+			this.authCenter = authCenter;
 		}
 
 		public Boolean getEnableAnonymousAccess() {

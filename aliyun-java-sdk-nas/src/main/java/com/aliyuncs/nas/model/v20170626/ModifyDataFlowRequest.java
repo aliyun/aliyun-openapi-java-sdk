@@ -37,7 +37,7 @@ public class ModifyDataFlowRequest extends RpcAcsRequest<ModifyDataFlowResponse>
 
 	private String dataFlowId;
 	public ModifyDataFlowRequest() {
-		super("NAS", "2017-06-26", "ModifyDataFlow", "nas");
+		super("NAS", "2017-06-26", "ModifyDataFlow", "NAS");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

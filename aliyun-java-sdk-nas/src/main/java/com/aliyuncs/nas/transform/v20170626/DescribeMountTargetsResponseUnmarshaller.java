@@ -43,6 +43,7 @@ public class DescribeMountTargetsResponseUnmarshaller {
 			mountTarget.setDualStackMountTargetDomain(_ctx.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].DualStackMountTargetDomain"));
 			mountTarget.setVswId(_ctx.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].VswId"));
 			mountTarget.setNetworkType(_ctx.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].NetworkType"));
+			mountTarget.setIPVersion(_ctx.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].IPVersion"));
 
 			List<ClientMasterNode> clientMasterNodes = new ArrayList<ClientMasterNode>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeMountTargetsResponse.MountTargets["+ i +"].ClientMasterNodes.Length"); j++) {

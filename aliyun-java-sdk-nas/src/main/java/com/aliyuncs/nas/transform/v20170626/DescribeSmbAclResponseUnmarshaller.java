@@ -27,6 +27,7 @@ public class DescribeSmbAclResponseUnmarshaller {
 
 		Acl acl = new Acl();
 		acl.setAuthMethod(_ctx.stringValue("DescribeSmbAclResponse.Acl.AuthMethod"));
+		acl.setAuthCenter(_ctx.stringValue("DescribeSmbAclResponse.Acl.AuthCenter"));
 		acl.setEnableAnonymousAccess(_ctx.booleanValue("DescribeSmbAclResponse.Acl.EnableAnonymousAccess"));
 		acl.setEnabled(_ctx.booleanValue("DescribeSmbAclResponse.Acl.Enabled"));
 		acl.setEncryptData(_ctx.booleanValue("DescribeSmbAclResponse.Acl.EncryptData"));

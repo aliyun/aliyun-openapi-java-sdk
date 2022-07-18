@@ -43,7 +43,7 @@ public class CreateDataFlowTaskRequest extends RpcAcsRequest<CreateDataFlowTaskR
 
 	private String taskAction;
 	public CreateDataFlowTaskRequest() {
-		super("NAS", "2017-06-26", "CreateDataFlowTask", "nas");
+		super("NAS", "2017-06-26", "CreateDataFlowTask", "NAS");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

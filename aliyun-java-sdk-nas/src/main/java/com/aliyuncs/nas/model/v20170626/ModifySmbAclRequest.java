@@ -37,11 +37,15 @@ public class ModifySmbAclRequest extends RpcAcsRequest<ModifySmbAclResponse> {
 
 	private String fileSystemId;
 
+	private String authCenter;
+
 	private String homeDirPath;
 
 	private Boolean enableAnonymousAccess;
+
+	private String authMethod;
 	public ModifySmbAclRequest() {
-		super("NAS", "2017-06-26", "ModifySmbAcl", "nas");
+		super("NAS", "2017-06-26", "ModifySmbAcl", "NAS");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -115,6 +119,17 @@ public class ModifySmbAclRequest extends RpcAcsRequest<ModifySmbAclResponse> {
 		}
 	}
 
+	public String getAuthCenter() {
+		return this.authCenter;
+	}
+
+	public void setAuthCenter(String authCenter) {
+		this.authCenter = authCenter;
+		if(authCenter != null){
+			putQueryParameter("AuthCenter", authCenter);
+		}
+	}
+
 	public String getHomeDirPath() {
 		return this.homeDirPath;
 	}
@@ -134,6 +149,17 @@ public class ModifySmbAclRequest extends RpcAcsRequest<ModifySmbAclResponse> {
 		this.enableAnonymousAccess = enableAnonymousAccess;
 		if(enableAnonymousAccess != null){
 			putQueryParameter("EnableAnonymousAccess", enableAnonymousAccess.toString());
+		}
+	}
+
+	public String getAuthMethod() {
+		return this.authMethod;
+	}
+
+	public void setAuthMethod(String authMethod) {
+		this.authMethod = authMethod;
+		if(authMethod != null){
+			putQueryParameter("AuthMethod", authMethod);
 		}
 	}
 

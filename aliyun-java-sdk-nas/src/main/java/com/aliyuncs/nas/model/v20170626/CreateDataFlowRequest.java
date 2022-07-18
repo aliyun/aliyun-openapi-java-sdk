@@ -48,7 +48,7 @@ public class CreateDataFlowRequest extends RpcAcsRequest<CreateDataFlowResponse>
 
 	private Long autoRefreshInterval;
 	public CreateDataFlowRequest() {
-		super("NAS", "2017-06-26", "CreateDataFlow", "nas");
+		super("NAS", "2017-06-26", "CreateDataFlow", "NAS");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

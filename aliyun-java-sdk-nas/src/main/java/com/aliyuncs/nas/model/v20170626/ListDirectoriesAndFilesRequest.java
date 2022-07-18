@@ -37,7 +37,7 @@ public class ListDirectoriesAndFilesRequest extends RpcAcsRequest<ListDirectorie
 
 	private Long maxResults;
 	public ListDirectoriesAndFilesRequest() {
-		super("NAS", "2017-06-26", "ListDirectoriesAndFiles", "nas");
+		super("NAS", "2017-06-26", "ListDirectoriesAndFiles", "NAS");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

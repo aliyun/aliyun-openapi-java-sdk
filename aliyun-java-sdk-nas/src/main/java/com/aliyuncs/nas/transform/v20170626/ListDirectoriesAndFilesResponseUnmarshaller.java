@@ -43,6 +43,7 @@ public class ListDirectoriesAndFilesResponseUnmarshaller {
 			entry.setRetrieveTime(_ctx.stringValue("ListDirectoriesAndFilesResponse.Entries["+ i +"].RetrieveTime"));
 			entry.setInode(_ctx.stringValue("ListDirectoriesAndFilesResponse.Entries["+ i +"].Inode"));
 			entry.setFileId(_ctx.stringValue("ListDirectoriesAndFilesResponse.Entries["+ i +"].FileId"));
+			entry.setOwner(_ctx.stringValue("ListDirectoriesAndFilesResponse.Entries["+ i +"].Owner"));
 
 			entries.add(entry);
 		}

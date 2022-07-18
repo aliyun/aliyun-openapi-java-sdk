@@ -30,8 +30,12 @@ public class EnableSmbAclRequest extends RpcAcsRequest<EnableSmbAclResponse> {
 	private String keytabMd5;
 
 	private String fileSystemId;
+
+	private String authCenter;
+
+	private String authMethod;
 	public EnableSmbAclRequest() {
-		super("NAS", "2017-06-26", "EnableSmbAcl", "nas");
+		super("NAS", "2017-06-26", "EnableSmbAcl", "NAS");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -69,6 +73,28 @@ public class EnableSmbAclRequest extends RpcAcsRequest<EnableSmbAclResponse> {
 		this.fileSystemId = fileSystemId;
 		if(fileSystemId != null){
 			putQueryParameter("FileSystemId", fileSystemId);
+		}
+	}
+
+	public String getAuthCenter() {
+		return this.authCenter;
+	}
+
+	public void setAuthCenter(String authCenter) {
+		this.authCenter = authCenter;
+		if(authCenter != null){
+			putQueryParameter("AuthCenter", authCenter);
+		}
+	}
+
+	public String getAuthMethod() {
+		return this.authMethod;
+	}
+
+	public void setAuthMethod(String authMethod) {
+		this.authMethod = authMethod;
+		if(authMethod != null){
+			putQueryParameter("AuthMethod", authMethod);
 		}
 	}
 

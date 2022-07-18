@@ -35,7 +35,7 @@ public class ModifyFilesetRequest extends RpcAcsRequest<ModifyFilesetResponse> {
 
 	private Boolean dryRun;
 	public ModifyFilesetRequest() {
-		super("NAS", "2017-06-26", "ModifyFileset", "nas");
+		super("NAS", "2017-06-26", "ModifyFileset", "NAS");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

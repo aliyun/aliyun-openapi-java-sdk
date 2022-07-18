@@ -35,7 +35,7 @@ public class CreateFilesetRequest extends RpcAcsRequest<CreateFilesetResponse> {
 
 	private String fileSystemPath;
 	public CreateFilesetRequest() {
-		super("NAS", "2017-06-26", "CreateFileset", "nas");
+		super("NAS", "2017-06-26", "CreateFileset", "NAS");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
