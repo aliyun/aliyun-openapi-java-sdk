@@ -1,3 +1,6 @@
+2022-07-19 Version: 1.0.21
+- Support MatchAddressType in RouteMap API.
+
 2022-07-04 Version: 1.0.20
 - Support autoPulibshRoute for UpdateTransitRouterVpnAttachment.
 - Support Vpn-Attachment.

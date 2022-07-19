@@ -60,6 +60,8 @@ public class ModifyCenRouteMapRequest extends RpcAcsRequest<ModifyCenRouteMapRes
 
 	private List<String> routeTypess;
 
+	private String matchAddressType;
+
 	private String cidrMatchMode;
 
 	private String cenId;
@@ -299,6 +301,17 @@ public class ModifyCenRouteMapRequest extends RpcAcsRequest<ModifyCenRouteMapRes
 				putQueryParameter("RouteTypes." + (i + 1) , routeTypess.get(i));
 			}
 		}	
+	}
+
+	public String getMatchAddressType() {
+		return this.matchAddressType;
+	}
+
+	public void setMatchAddressType(String matchAddressType) {
+		this.matchAddressType = matchAddressType;
+		if(matchAddressType != null){
+			putQueryParameter("MatchAddressType", matchAddressType);
+		}
 	}
 
 	public String getCidrMatchMode() {
