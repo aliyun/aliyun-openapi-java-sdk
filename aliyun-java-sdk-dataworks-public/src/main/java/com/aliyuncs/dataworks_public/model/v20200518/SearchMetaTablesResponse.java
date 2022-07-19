@@ -149,6 +149,8 @@ public class SearchMetaTablesResponse extends AcsResponse {
 
 			private Long tenantId;
 
+			private String schema;
+
 			public String getTableName() {
 				return this.tableName;
 			}
@@ -227,6 +229,14 @@ public class SearchMetaTablesResponse extends AcsResponse {
 
 			public void setTenantId(Long tenantId) {
 				this.tenantId = tenantId;
+			}
+
+			public String getSchema() {
+				return this.schema;
+			}
+
+			public void setSchema(String schema) {
+				this.schema = schema;
 			}
 		}
 	}

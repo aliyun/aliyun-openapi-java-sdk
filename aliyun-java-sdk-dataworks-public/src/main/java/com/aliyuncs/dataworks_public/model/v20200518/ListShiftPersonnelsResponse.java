@@ -16,14 +16,14 @@ package com.aliyuncs.dataworks_public.model.v20200518;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.dataworks_public.transform.v20200518.ListDutyRostersResponseUnmarshaller;
+import com.aliyuncs.dataworks_public.transform.v20200518.ListShiftPersonnelsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListDutyRostersResponse extends AcsResponse {
+public class ListShiftPersonnelsResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -53,7 +53,7 @@ public class ListDutyRostersResponse extends AcsResponse {
 
 		private Integer totalCount;
 
-		private List<DutyRostersItem> dutyRosters;
+		private List<ShiftPersonsItem> shiftPersons;
 
 		public Integer getPageNumber() {
 			return this.pageNumber;
@@ -79,41 +79,61 @@ public class ListDutyRostersResponse extends AcsResponse {
 			this.totalCount = totalCount;
 		}
 
-		public List<DutyRostersItem> getDutyRosters() {
-			return this.dutyRosters;
+		public List<ShiftPersonsItem> getShiftPersons() {
+			return this.shiftPersons;
 		}
 
-		public void setDutyRosters(List<DutyRostersItem> dutyRosters) {
-			this.dutyRosters = dutyRosters;
+		public void setShiftPersons(List<ShiftPersonsItem> shiftPersons) {
+			this.shiftPersons = shiftPersons;
 		}
 
-		public static class DutyRostersItem {
+		public static class ShiftPersonsItem {
 
-			private String dutyRosterIdentifier;
+			private String shiftPersonUID;
 
-			private String dutyRosterName;
+			private String shiftPersonName;
 
-			public String getDutyRosterIdentifier() {
-				return this.dutyRosterIdentifier;
+			private Long beginTime;
+
+			private Long endTime;
+
+			public String getShiftPersonUID() {
+				return this.shiftPersonUID;
 			}
 
-			public void setDutyRosterIdentifier(String dutyRosterIdentifier) {
-				this.dutyRosterIdentifier = dutyRosterIdentifier;
+			public void setShiftPersonUID(String shiftPersonUID) {
+				this.shiftPersonUID = shiftPersonUID;
 			}
 
-			public String getDutyRosterName() {
-				return this.dutyRosterName;
+			public String getShiftPersonName() {
+				return this.shiftPersonName;
 			}
 
-			public void setDutyRosterName(String dutyRosterName) {
-				this.dutyRosterName = dutyRosterName;
+			public void setShiftPersonName(String shiftPersonName) {
+				this.shiftPersonName = shiftPersonName;
+			}
+
+			public Long getBeginTime() {
+				return this.beginTime;
+			}
+
+			public void setBeginTime(Long beginTime) {
+				this.beginTime = beginTime;
+			}
+
+			public Long getEndTime() {
+				return this.endTime;
+			}
+
+			public void setEndTime(Long endTime) {
+				this.endTime = endTime;
 			}
 		}
 	}
 
 	@Override
-	public ListDutyRostersResponse getInstance(UnmarshallerContext context) {
-		return	ListDutyRostersResponseUnmarshaller.unmarshall(this, context);
+	public ListShiftPersonnelsResponse getInstance(UnmarshallerContext context) {
+		return	ListShiftPersonnelsResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

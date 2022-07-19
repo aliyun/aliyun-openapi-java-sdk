@@ -26,6 +26,8 @@ import com.aliyuncs.dataworks_public.Endpoint;
 public class UpdateTableRequest extends RpcAcsRequest<UpdateTableResponse> {
 	   
 
+	private String schema;
+
 	private List<Columns> columnss;
 
 	private Integer lifeCycle;
@@ -70,6 +72,17 @@ public class UpdateTableRequest extends RpcAcsRequest<UpdateTableResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getSchema() {
+		return this.schema;
+	}
+
+	public void setSchema(String schema) {
+		this.schema = schema;
+		if(schema != null){
+			putQueryParameter("Schema", schema);
+		}
 	}
 
 	public List<Columns> getColumnss() {

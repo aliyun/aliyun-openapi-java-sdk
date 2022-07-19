@@ -56,6 +56,7 @@ public class GetMetaTableBasicInfoResponseUnmarshaller {
 		data.setLocation(_ctx.stringValue("GetMetaTableBasicInfoResponse.Data.Location"));
 		data.setCaption(_ctx.stringValue("GetMetaTableBasicInfoResponse.Data.Caption"));
 		data.setTenantId(_ctx.longValue("GetMetaTableBasicInfoResponse.Data.TenantId"));
+		data.setSchema(_ctx.stringValue("GetMetaTableBasicInfoResponse.Data.Schema"));
 		getMetaTableBasicInfoResponse.setData(data);
 	 
 	 	return getMetaTableBasicInfoResponse;

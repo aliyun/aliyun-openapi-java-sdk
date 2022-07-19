@@ -54,6 +54,7 @@ public class GetMetaTableFullInfoResponseUnmarshaller {
 		data.setLocation(_ctx.stringValue("GetMetaTableFullInfoResponse.Data.Location"));
 		data.setClusterId(_ctx.stringValue("GetMetaTableFullInfoResponse.Data.ClusterId"));
 		data.setTenantId(_ctx.longValue("GetMetaTableFullInfoResponse.Data.TenantId"));
+		data.setSchema(_ctx.stringValue("GetMetaTableFullInfoResponse.Data.Schema"));
 
 		List<ColumnListItem> columnList = new ArrayList<ColumnListItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetMetaTableFullInfoResponse.Data.ColumnList.Length"); i++) {

@@ -127,6 +127,8 @@ public class GetMetaTableFullInfoResponse extends AcsResponse {
 
 		private Long tenantId;
 
+		private String schema;
+
 		private List<ColumnListItem> columnList;
 
 		public String getTableName() {
@@ -287,6 +289,14 @@ public class GetMetaTableFullInfoResponse extends AcsResponse {
 
 		public void setTenantId(Long tenantId) {
 			this.tenantId = tenantId;
+		}
+
+		public String getSchema() {
+			return this.schema;
+		}
+
+		public void setSchema(String schema) {
+			this.schema = schema;
 		}
 
 		public List<ColumnListItem> getColumnList() {

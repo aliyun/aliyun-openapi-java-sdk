@@ -26,6 +26,8 @@ import com.aliyuncs.dataworks_public.Endpoint;
 public class CreateTableRequest extends RpcAcsRequest<CreateTableResponse> {
 	   
 
+	private String schema;
+
 	private String clientToken;
 
 	private List<Columns> columnss;
@@ -70,6 +72,17 @@ public class CreateTableRequest extends RpcAcsRequest<CreateTableResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getSchema() {
+		return this.schema;
+	}
+
+	public void setSchema(String schema) {
+		this.schema = schema;
+		if(schema != null){
+			putQueryParameter("Schema", schema);
+		}
 	}
 
 	public String getClientToken() {

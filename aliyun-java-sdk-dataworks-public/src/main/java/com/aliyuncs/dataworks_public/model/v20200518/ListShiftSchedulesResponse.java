@@ -16,14 +16,14 @@ package com.aliyuncs.dataworks_public.model.v20200518;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.dataworks_public.transform.v20200518.GetDutyRosterResponseUnmarshaller;
+import com.aliyuncs.dataworks_public.transform.v20200518.ListShiftSchedulesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetDutyRosterResponse extends AcsResponse {
+public class ListShiftSchedulesResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -53,7 +53,7 @@ public class GetDutyRosterResponse extends AcsResponse {
 
 		private Integer totalCount;
 
-		private List<DutyRosterItem> dutyRoster;
+		private List<ShiftSchedulesItem> shiftSchedules;
 
 		public Integer getPageNumber() {
 			return this.pageNumber;
@@ -79,61 +79,41 @@ public class GetDutyRosterResponse extends AcsResponse {
 			this.totalCount = totalCount;
 		}
 
-		public List<DutyRosterItem> getDutyRoster() {
-			return this.dutyRoster;
+		public List<ShiftSchedulesItem> getShiftSchedules() {
+			return this.shiftSchedules;
 		}
 
-		public void setDutyRoster(List<DutyRosterItem> dutyRoster) {
-			this.dutyRoster = dutyRoster;
+		public void setShiftSchedules(List<ShiftSchedulesItem> shiftSchedules) {
+			this.shiftSchedules = shiftSchedules;
 		}
 
-		public static class DutyRosterItem {
+		public static class ShiftSchedulesItem {
 
-			private String watchkeeper;
+			private String shiftScheduleIdentifier;
 
-			private String watchkeeperName;
+			private String shiftScheduleName;
 
-			private Long startLong;
-
-			private Long endLong;
-
-			public String getWatchkeeper() {
-				return this.watchkeeper;
+			public String getShiftScheduleIdentifier() {
+				return this.shiftScheduleIdentifier;
 			}
 
-			public void setWatchkeeper(String watchkeeper) {
-				this.watchkeeper = watchkeeper;
+			public void setShiftScheduleIdentifier(String shiftScheduleIdentifier) {
+				this.shiftScheduleIdentifier = shiftScheduleIdentifier;
 			}
 
-			public String getWatchkeeperName() {
-				return this.watchkeeperName;
+			public String getShiftScheduleName() {
+				return this.shiftScheduleName;
 			}
 
-			public void setWatchkeeperName(String watchkeeperName) {
-				this.watchkeeperName = watchkeeperName;
-			}
-
-			public Long getStartLong() {
-				return this.startLong;
-			}
-
-			public void setStartLong(Long startLong) {
-				this.startLong = startLong;
-			}
-
-			public Long getEndLong() {
-				return this.endLong;
-			}
-
-			public void setEndLong(Long endLong) {
-				this.endLong = endLong;
+			public void setShiftScheduleName(String shiftScheduleName) {
+				this.shiftScheduleName = shiftScheduleName;
 			}
 		}
 	}
 
 	@Override
-	public GetDutyRosterResponse getInstance(UnmarshallerContext context) {
-		return	GetDutyRosterResponseUnmarshaller.unmarshall(this, context);
+	public ListShiftSchedulesResponse getInstance(UnmarshallerContext context) {
+		return	ListShiftSchedulesResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

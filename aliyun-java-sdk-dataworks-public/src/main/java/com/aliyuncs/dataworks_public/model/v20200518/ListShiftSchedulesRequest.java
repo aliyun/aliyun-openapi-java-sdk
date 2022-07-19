@@ -22,18 +22,18 @@ import com.aliyuncs.dataworks_public.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListDutyRostersRequest extends RpcAcsRequest<ListDutyRostersResponse> {
+public class ListShiftSchedulesRequest extends RpcAcsRequest<ListShiftSchedulesResponse> {
 	   
 
-	private String dutyRosterOwner;
-
-	private String dutyRosterName;
+	private String owner;
 
 	private Integer pageSize;
 
+	private String shiftScheduleName;
+
 	private Integer pageNumber;
-	public ListDutyRostersRequest() {
-		super("dataworks-public", "2020-05-18", "ListDutyRosters");
+	public ListShiftSchedulesRequest() {
+		super("dataworks-public", "2020-05-18", "ListShiftSchedules");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,25 +41,14 @@ public class ListDutyRostersRequest extends RpcAcsRequest<ListDutyRostersRespons
 		} catch (Exception e) {}
 	}
 
-	public String getDutyRosterOwner() {
-		return this.dutyRosterOwner;
+	public String getOwner() {
+		return this.owner;
 	}
 
-	public void setDutyRosterOwner(String dutyRosterOwner) {
-		this.dutyRosterOwner = dutyRosterOwner;
-		if(dutyRosterOwner != null){
-			putBodyParameter("DutyRosterOwner", dutyRosterOwner);
-		}
-	}
-
-	public String getDutyRosterName() {
-		return this.dutyRosterName;
-	}
-
-	public void setDutyRosterName(String dutyRosterName) {
-		this.dutyRosterName = dutyRosterName;
-		if(dutyRosterName != null){
-			putBodyParameter("DutyRosterName", dutyRosterName);
+	public void setOwner(String owner) {
+		this.owner = owner;
+		if(owner != null){
+			putBodyParameter("Owner", owner);
 		}
 	}
 
@@ -71,6 +60,17 @@ public class ListDutyRostersRequest extends RpcAcsRequest<ListDutyRostersRespons
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putBodyParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getShiftScheduleName() {
+		return this.shiftScheduleName;
+	}
+
+	public void setShiftScheduleName(String shiftScheduleName) {
+		this.shiftScheduleName = shiftScheduleName;
+		if(shiftScheduleName != null){
+			putBodyParameter("ShiftScheduleName", shiftScheduleName);
 		}
 	}
 
@@ -86,8 +86,8 @@ public class ListDutyRostersRequest extends RpcAcsRequest<ListDutyRostersRespons
 	}
 
 	@Override
-	public Class<ListDutyRostersResponse> getResponseClass() {
-		return ListDutyRostersResponse.class;
+	public Class<ListShiftSchedulesResponse> getResponseClass() {
+		return ListShiftSchedulesResponse.class;
 	}
 
 }

@@ -22,20 +22,20 @@ import com.aliyuncs.dataworks_public.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetDutyRosterRequest extends RpcAcsRequest<GetDutyRosterResponse> {
+public class ListShiftPersonnelsRequest extends RpcAcsRequest<ListShiftPersonnelsResponse> {
 	   
 
-	private String dutyRosterIdentifier;
-
-	private String watchkeeper;
+	private String shiftPersonUID;
 
 	private String userType;
 
 	private Long endTime;
 
 	private Long beginTime;
-	public GetDutyRosterRequest() {
-		super("dataworks-public", "2020-05-18", "GetDutyRoster");
+
+	private String shiftScheduleIdentifier;
+	public ListShiftPersonnelsRequest() {
+		super("dataworks-public", "2020-05-18", "ListShiftPersonnels");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -43,25 +43,14 @@ public class GetDutyRosterRequest extends RpcAcsRequest<GetDutyRosterResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getDutyRosterIdentifier() {
-		return this.dutyRosterIdentifier;
+	public String getShiftPersonUID() {
+		return this.shiftPersonUID;
 	}
 
-	public void setDutyRosterIdentifier(String dutyRosterIdentifier) {
-		this.dutyRosterIdentifier = dutyRosterIdentifier;
-		if(dutyRosterIdentifier != null){
-			putBodyParameter("DutyRosterIdentifier", dutyRosterIdentifier);
-		}
-	}
-
-	public String getWatchkeeper() {
-		return this.watchkeeper;
-	}
-
-	public void setWatchkeeper(String watchkeeper) {
-		this.watchkeeper = watchkeeper;
-		if(watchkeeper != null){
-			putBodyParameter("Watchkeeper", watchkeeper);
+	public void setShiftPersonUID(String shiftPersonUID) {
+		this.shiftPersonUID = shiftPersonUID;
+		if(shiftPersonUID != null){
+			putBodyParameter("ShiftPersonUID", shiftPersonUID);
 		}
 	}
 
@@ -98,9 +87,20 @@ public class GetDutyRosterRequest extends RpcAcsRequest<GetDutyRosterResponse> {
 		}
 	}
 
+	public String getShiftScheduleIdentifier() {
+		return this.shiftScheduleIdentifier;
+	}
+
+	public void setShiftScheduleIdentifier(String shiftScheduleIdentifier) {
+		this.shiftScheduleIdentifier = shiftScheduleIdentifier;
+		if(shiftScheduleIdentifier != null){
+			putBodyParameter("ShiftScheduleIdentifier", shiftScheduleIdentifier);
+		}
+	}
+
 	@Override
-	public Class<GetDutyRosterResponse> getResponseClass() {
-		return GetDutyRosterResponse.class;
+	public Class<ListShiftPersonnelsResponse> getResponseClass() {
+		return ListShiftPersonnelsResponse.class;
 	}
 
 }

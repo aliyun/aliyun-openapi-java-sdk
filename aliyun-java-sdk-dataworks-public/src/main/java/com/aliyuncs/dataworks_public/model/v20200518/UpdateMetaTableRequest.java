@@ -25,6 +25,8 @@ import com.aliyuncs.dataworks_public.Endpoint;
 public class UpdateMetaTableRequest extends RpcAcsRequest<UpdateMetaTableResponse> {
 	   
 
+	private String schema;
+
 	private Integer visibility;
 
 	private String caption;
@@ -51,6 +53,17 @@ public class UpdateMetaTableRequest extends RpcAcsRequest<UpdateMetaTableRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getSchema() {
+		return this.schema;
+	}
+
+	public void setSchema(String schema) {
+		this.schema = schema;
+		if(schema != null){
+			putQueryParameter("Schema", schema);
+		}
 	}
 
 	public Integer getVisibility() {

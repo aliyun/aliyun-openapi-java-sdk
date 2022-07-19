@@ -33,11 +33,11 @@ public class CreateDataSourceRequest extends RpcAcsRequest<CreateDataSourceRespo
 
 	private String subType;
 
-	private String name;
-
 	private Integer envType;
 
 	private Long projectId;
+
+	private String name;
 	public CreateDataSourceRequest() {
 		super("dataworks-public", "2020-05-18", "CreateDataSource");
 		setMethod(MethodType.POST);
@@ -91,17 +91,6 @@ public class CreateDataSourceRequest extends RpcAcsRequest<CreateDataSourceRespo
 		}
 	}
 
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
 	public Integer getEnvType() {
 		return this.envType;
 	}
@@ -121,6 +110,17 @@ public class CreateDataSourceRequest extends RpcAcsRequest<CreateDataSourceRespo
 		this.projectId = projectId;
 		if(projectId != null){
 			putQueryParameter("ProjectId", projectId.toString());
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

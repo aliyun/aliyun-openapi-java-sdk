@@ -51,6 +51,7 @@ public class SearchMetaTablesResponseUnmarshaller {
 			dataEntityListItem.setClusterId(_ctx.stringValue("SearchMetaTablesResponse.Data.DataEntityList["+ i +"].ClusterId"));
 			dataEntityListItem.setEnvType(_ctx.integerValue("SearchMetaTablesResponse.Data.DataEntityList["+ i +"].EnvType"));
 			dataEntityListItem.setTenantId(_ctx.longValue("SearchMetaTablesResponse.Data.DataEntityList["+ i +"].TenantId"));
+			dataEntityListItem.setSchema(_ctx.stringValue("SearchMetaTablesResponse.Data.DataEntityList["+ i +"].Schema"));
 
 			dataEntityList.add(dataEntityListItem);
 		}

@@ -25,6 +25,8 @@ import com.aliyuncs.dataworks_public.Endpoint;
 public class SearchMetaTablesRequest extends RpcAcsRequest<SearchMetaTablesResponse> {
 	   
 
+	private String schema;
+
 	private String dataSourceType;
 
 	private String clusterId;
@@ -45,6 +47,17 @@ public class SearchMetaTablesRequest extends RpcAcsRequest<SearchMetaTablesRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getSchema() {
+		return this.schema;
+	}
+
+	public void setSchema(String schema) {
+		this.schema = schema;
+		if(schema != null){
+			putQueryParameter("Schema", schema);
+		}
 	}
 
 	public String getDataSourceType() {
