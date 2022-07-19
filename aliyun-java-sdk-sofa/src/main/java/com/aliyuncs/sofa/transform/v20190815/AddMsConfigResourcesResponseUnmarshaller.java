@@ -28,24 +28,24 @@ public class AddMsConfigResourcesResponseUnmarshaller {
 	public static AddMsConfigResourcesResponse unmarshall(AddMsConfigResourcesResponse addMsConfigResourcesResponse, UnmarshallerContext _ctx) {
 		
 		addMsConfigResourcesResponse.setRequestId(_ctx.stringValue("AddMsConfigResourcesResponse.RequestId"));
-		addMsConfigResourcesResponse.setResultCode(_ctx.stringValue("AddMsConfigResourcesResponse.ResultCode"));
 		addMsConfigResourcesResponse.setResultMessage(_ctx.stringValue("AddMsConfigResourcesResponse.ResultMessage"));
+		addMsConfigResourcesResponse.setResultCode(_ctx.stringValue("AddMsConfigResourcesResponse.ResultCode"));
 
 		Resource resource = new Resource();
 		resource.setAppName(_ctx.stringValue("AddMsConfigResourcesResponse.Resource.AppName"));
-		resource.setDesc(_ctx.stringValue("AddMsConfigResourcesResponse.Resource.Desc"));
-		resource.setId(_ctx.longValue("AddMsConfigResourcesResponse.Resource.Id"));
-		resource.setInstanceId(_ctx.stringValue("AddMsConfigResourcesResponse.Resource.InstanceId"));
 		resource.setRegion(_ctx.stringValue("AddMsConfigResourcesResponse.Resource.Region"));
+		resource.setInstanceId(_ctx.stringValue("AddMsConfigResourcesResponse.Resource.InstanceId"));
 		resource.setResourceId(_ctx.stringValue("AddMsConfigResourcesResponse.Resource.ResourceId"));
+		resource.setId(_ctx.longValue("AddMsConfigResourcesResponse.Resource.Id"));
+		resource.setDesc(_ctx.stringValue("AddMsConfigResourcesResponse.Resource.Desc"));
 
 		List<AttributesItem> attributes = new ArrayList<AttributesItem>();
 		for (int i = 0; i < _ctx.lengthValue("AddMsConfigResourcesResponse.Resource.Attributes.Length"); i++) {
 			AttributesItem attributesItem = new AttributesItem();
-			attributesItem.setAttributeName(_ctx.stringValue("AddMsConfigResourcesResponse.Resource.Attributes["+ i +"].AttributeName"));
-			attributesItem.setDesc(_ctx.stringValue("AddMsConfigResourcesResponse.Resource.Attributes["+ i +"].Desc"));
-			attributesItem.setId(_ctx.longValue("AddMsConfigResourcesResponse.Resource.Attributes["+ i +"].Id"));
 			attributesItem.setInstanceId(_ctx.stringValue("AddMsConfigResourcesResponse.Resource.Attributes["+ i +"].InstanceId"));
+			attributesItem.setAttributeName(_ctx.stringValue("AddMsConfigResourcesResponse.Resource.Attributes["+ i +"].AttributeName"));
+			attributesItem.setId(_ctx.longValue("AddMsConfigResourcesResponse.Resource.Attributes["+ i +"].Id"));
+			attributesItem.setDesc(_ctx.stringValue("AddMsConfigResourcesResponse.Resource.Attributes["+ i +"].Desc"));
 
 			attributes.add(attributesItem);
 		}

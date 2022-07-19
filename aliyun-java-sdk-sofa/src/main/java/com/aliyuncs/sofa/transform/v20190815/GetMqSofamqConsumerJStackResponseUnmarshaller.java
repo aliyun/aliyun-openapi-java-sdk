@@ -28,8 +28,8 @@ public class GetMqSofamqConsumerJStackResponseUnmarshaller {
 	public static GetMqSofamqConsumerJStackResponse unmarshall(GetMqSofamqConsumerJStackResponse getMqSofamqConsumerJStackResponse, UnmarshallerContext _ctx) {
 		
 		getMqSofamqConsumerJStackResponse.setRequestId(_ctx.stringValue("GetMqSofamqConsumerJStackResponse.RequestId"));
-		getMqSofamqConsumerJStackResponse.setResultCode(_ctx.stringValue("GetMqSofamqConsumerJStackResponse.ResultCode"));
 		getMqSofamqConsumerJStackResponse.setResultMessage(_ctx.stringValue("GetMqSofamqConsumerJStackResponse.ResultMessage"));
+		getMqSofamqConsumerJStackResponse.setResultCode(_ctx.stringValue("GetMqSofamqConsumerJStackResponse.ResultCode"));
 
 		Data data = new Data();
 		data.setClientId(_ctx.stringValue("GetMqSofamqConsumerJStackResponse.Data.ClientId"));

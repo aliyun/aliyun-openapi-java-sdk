@@ -33,28 +33,28 @@ public class GetMqSofamqConsumerStatusResponseUnmarshaller {
 	public static GetMqSofamqConsumerStatusResponse unmarshall(GetMqSofamqConsumerStatusResponse getMqSofamqConsumerStatusResponse, UnmarshallerContext _ctx) {
 		
 		getMqSofamqConsumerStatusResponse.setRequestId(_ctx.stringValue("GetMqSofamqConsumerStatusResponse.RequestId"));
-		getMqSofamqConsumerStatusResponse.setResultCode(_ctx.stringValue("GetMqSofamqConsumerStatusResponse.ResultCode"));
 		getMqSofamqConsumerStatusResponse.setResultMessage(_ctx.stringValue("GetMqSofamqConsumerStatusResponse.ResultMessage"));
+		getMqSofamqConsumerStatusResponse.setResultCode(_ctx.stringValue("GetMqSofamqConsumerStatusResponse.ResultCode"));
 
 		Data data = new Data();
-		data.setConsumeModel(_ctx.stringValue("GetMqSofamqConsumerStatusResponse.Data.ConsumeModel"));
 		data.setConsumeTps(_ctx.stringValue("GetMqSofamqConsumerStatusResponse.Data.ConsumeTps"));
-		data.setDelayTime(_ctx.longValue("GetMqSofamqConsumerStatusResponse.Data.DelayTime"));
-		data.setInstanceId(_ctx.stringValue("GetMqSofamqConsumerStatusResponse.Data.InstanceId"));
-		data.setLastTimestamp(_ctx.longValue("GetMqSofamqConsumerStatusResponse.Data.LastTimestamp"));
-		data.setOnline(_ctx.booleanValue("GetMqSofamqConsumerStatusResponse.Data.Online"));
-		data.setRebalanceOk(_ctx.booleanValue("GetMqSofamqConsumerStatusResponse.Data.RebalanceOk"));
 		data.setSubscriptionSame(_ctx.booleanValue("GetMqSofamqConsumerStatusResponse.Data.SubscriptionSame"));
+		data.setConsumeModel(_ctx.stringValue("GetMqSofamqConsumerStatusResponse.Data.ConsumeModel"));
 		data.setTotalDiff(_ctx.longValue("GetMqSofamqConsumerStatusResponse.Data.TotalDiff"));
+		data.setLastTimestamp(_ctx.longValue("GetMqSofamqConsumerStatusResponse.Data.LastTimestamp"));
+		data.setDelayTime(_ctx.longValue("GetMqSofamqConsumerStatusResponse.Data.DelayTime"));
+		data.setOnline(_ctx.booleanValue("GetMqSofamqConsumerStatusResponse.Data.Online"));
+		data.setInstanceId(_ctx.stringValue("GetMqSofamqConsumerStatusResponse.Data.InstanceId"));
+		data.setRebalanceOk(_ctx.booleanValue("GetMqSofamqConsumerStatusResponse.Data.RebalanceOk"));
 
 		List<ConnectionSetItem> connectionSet = new ArrayList<ConnectionSetItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetMqSofamqConsumerStatusResponse.Data.ConnectionSet.Length"); i++) {
 			ConnectionSetItem connectionSetItem = new ConnectionSetItem();
-			connectionSetItem.setClientAddr(_ctx.stringValue("GetMqSofamqConsumerStatusResponse.Data.ConnectionSet["+ i +"].ClientAddr"));
-			connectionSetItem.setClientId(_ctx.stringValue("GetMqSofamqConsumerStatusResponse.Data.ConnectionSet["+ i +"].ClientId"));
-			connectionSetItem.setLanguage(_ctx.stringValue("GetMqSofamqConsumerStatusResponse.Data.ConnectionSet["+ i +"].Language"));
 			connectionSetItem.setRemoteIp(_ctx.stringValue("GetMqSofamqConsumerStatusResponse.Data.ConnectionSet["+ i +"].RemoteIp"));
+			connectionSetItem.setClientAddr(_ctx.stringValue("GetMqSofamqConsumerStatusResponse.Data.ConnectionSet["+ i +"].ClientAddr"));
 			connectionSetItem.setVersion(_ctx.stringValue("GetMqSofamqConsumerStatusResponse.Data.ConnectionSet["+ i +"].Version"));
+			connectionSetItem.setLanguage(_ctx.stringValue("GetMqSofamqConsumerStatusResponse.Data.ConnectionSet["+ i +"].Language"));
+			connectionSetItem.setClientId(_ctx.stringValue("GetMqSofamqConsumerStatusResponse.Data.ConnectionSet["+ i +"].ClientId"));
 
 			connectionSet.add(connectionSetItem);
 		}
@@ -63,15 +63,15 @@ public class GetMqSofamqConsumerStatusResponseUnmarshaller {
 		List<ConsumerConnectionInfoListItem> consumerConnectionInfoList = new ArrayList<ConsumerConnectionInfoListItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetMqSofamqConsumerStatusResponse.Data.ConsumerConnectionInfoList.Length"); i++) {
 			ConsumerConnectionInfoListItem consumerConnectionInfoListItem = new ConsumerConnectionInfoListItem();
-			consumerConnectionInfoListItem.setClientId(_ctx.stringValue("GetMqSofamqConsumerStatusResponse.Data.ConsumerConnectionInfoList["+ i +"].ClientId"));
 			consumerConnectionInfoListItem.setConnection(_ctx.stringValue("GetMqSofamqConsumerStatusResponse.Data.ConsumerConnectionInfoList["+ i +"].Connection"));
-			consumerConnectionInfoListItem.setConsumeType(_ctx.stringValue("GetMqSofamqConsumerStatusResponse.Data.ConsumerConnectionInfoList["+ i +"].ConsumeType"));
-			consumerConnectionInfoListItem.setLanguage(_ctx.stringValue("GetMqSofamqConsumerStatusResponse.Data.ConsumerConnectionInfoList["+ i +"].Language"));
-			consumerConnectionInfoListItem.setLastTimestamp(_ctx.longValue("GetMqSofamqConsumerStatusResponse.Data.ConsumerConnectionInfoList["+ i +"].LastTimestamp"));
 			consumerConnectionInfoListItem.setMessageModel(_ctx.stringValue("GetMqSofamqConsumerStatusResponse.Data.ConsumerConnectionInfoList["+ i +"].MessageModel"));
-			consumerConnectionInfoListItem.setStartTimestamp(_ctx.longValue("GetMqSofamqConsumerStatusResponse.Data.ConsumerConnectionInfoList["+ i +"].StartTimestamp"));
-			consumerConnectionInfoListItem.setThreadCount(_ctx.longValue("GetMqSofamqConsumerStatusResponse.Data.ConsumerConnectionInfoList["+ i +"].ThreadCount"));
 			consumerConnectionInfoListItem.setVersion(_ctx.stringValue("GetMqSofamqConsumerStatusResponse.Data.ConsumerConnectionInfoList["+ i +"].Version"));
+			consumerConnectionInfoListItem.setStartTimestamp(_ctx.longValue("GetMqSofamqConsumerStatusResponse.Data.ConsumerConnectionInfoList["+ i +"].StartTimestamp"));
+			consumerConnectionInfoListItem.setLastTimestamp(_ctx.longValue("GetMqSofamqConsumerStatusResponse.Data.ConsumerConnectionInfoList["+ i +"].LastTimestamp"));
+			consumerConnectionInfoListItem.setConsumeType(_ctx.stringValue("GetMqSofamqConsumerStatusResponse.Data.ConsumerConnectionInfoList["+ i +"].ConsumeType"));
+			consumerConnectionInfoListItem.setThreadCount(_ctx.longValue("GetMqSofamqConsumerStatusResponse.Data.ConsumerConnectionInfoList["+ i +"].ThreadCount"));
+			consumerConnectionInfoListItem.setLanguage(_ctx.stringValue("GetMqSofamqConsumerStatusResponse.Data.ConsumerConnectionInfoList["+ i +"].Language"));
+			consumerConnectionInfoListItem.setClientId(_ctx.stringValue("GetMqSofamqConsumerStatusResponse.Data.ConsumerConnectionInfoList["+ i +"].ClientId"));
 
 			List<JstackItem> jstack = new ArrayList<JstackItem>();
 			for (int j = 0; j < _ctx.lengthValue("GetMqSofamqConsumerStatusResponse.Data.ConsumerConnectionInfoList["+ i +"].Jstack.Length"); j++) {
@@ -91,13 +91,13 @@ public class GetMqSofamqConsumerStatusResponseUnmarshaller {
 			List<RunningDataListItem> runningDataList = new ArrayList<RunningDataListItem>();
 			for (int j = 0; j < _ctx.lengthValue("GetMqSofamqConsumerStatusResponse.Data.ConsumerConnectionInfoList["+ i +"].RunningDataList.Length"); j++) {
 				RunningDataListItem runningDataListItem = new RunningDataListItem();
-				runningDataListItem.setDiff(_ctx.longValue("GetMqSofamqConsumerStatusResponse.Data.ConsumerConnectionInfoList["+ i +"].RunningDataList["+ j +"].Diff"));
-				runningDataListItem.setFailedCountPerHour(_ctx.longValue("GetMqSofamqConsumerStatusResponse.Data.ConsumerConnectionInfoList["+ i +"].RunningDataList["+ j +"].FailedCountPerHour"));
-				runningDataListItem.setFailedTps(_ctx.stringValue("GetMqSofamqConsumerStatusResponse.Data.ConsumerConnectionInfoList["+ i +"].RunningDataList["+ j +"].FailedTps"));
 				runningDataListItem.setGroupId(_ctx.stringValue("GetMqSofamqConsumerStatusResponse.Data.ConsumerConnectionInfoList["+ i +"].RunningDataList["+ j +"].GroupId"));
-				runningDataListItem.setOkTps(_ctx.stringValue("GetMqSofamqConsumerStatusResponse.Data.ConsumerConnectionInfoList["+ i +"].RunningDataList["+ j +"].OkTps"));
+				runningDataListItem.setDiff(_ctx.longValue("GetMqSofamqConsumerStatusResponse.Data.ConsumerConnectionInfoList["+ i +"].RunningDataList["+ j +"].Diff"));
 				runningDataListItem.setRt(_ctx.stringValue("GetMqSofamqConsumerStatusResponse.Data.ConsumerConnectionInfoList["+ i +"].RunningDataList["+ j +"].Rt"));
 				runningDataListItem.setTopic(_ctx.stringValue("GetMqSofamqConsumerStatusResponse.Data.ConsumerConnectionInfoList["+ i +"].RunningDataList["+ j +"].Topic"));
+				runningDataListItem.setFailedCountPerHour(_ctx.longValue("GetMqSofamqConsumerStatusResponse.Data.ConsumerConnectionInfoList["+ i +"].RunningDataList["+ j +"].FailedCountPerHour"));
+				runningDataListItem.setOkTps(_ctx.stringValue("GetMqSofamqConsumerStatusResponse.Data.ConsumerConnectionInfoList["+ i +"].RunningDataList["+ j +"].OkTps"));
+				runningDataListItem.setFailedTps(_ctx.stringValue("GetMqSofamqConsumerStatusResponse.Data.ConsumerConnectionInfoList["+ i +"].RunningDataList["+ j +"].FailedTps"));
 
 				runningDataList.add(runningDataListItem);
 			}
@@ -127,10 +127,10 @@ public class GetMqSofamqConsumerStatusResponseUnmarshaller {
 		List<DetailInTopicListItem> detailInTopicList = new ArrayList<DetailInTopicListItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetMqSofamqConsumerStatusResponse.Data.DetailInTopicList.Length"); i++) {
 			DetailInTopicListItem detailInTopicListItem = new DetailInTopicListItem();
+			detailInTopicListItem.setTotalDiff(_ctx.longValue("GetMqSofamqConsumerStatusResponse.Data.DetailInTopicList["+ i +"].TotalDiff"));
 			detailInTopicListItem.setDelayTime(_ctx.longValue("GetMqSofamqConsumerStatusResponse.Data.DetailInTopicList["+ i +"].DelayTime"));
 			detailInTopicListItem.setLastTimestamp(_ctx.longValue("GetMqSofamqConsumerStatusResponse.Data.DetailInTopicList["+ i +"].LastTimestamp"));
 			detailInTopicListItem.setTopic(_ctx.stringValue("GetMqSofamqConsumerStatusResponse.Data.DetailInTopicList["+ i +"].Topic"));
-			detailInTopicListItem.setTotalDiff(_ctx.longValue("GetMqSofamqConsumerStatusResponse.Data.DetailInTopicList["+ i +"].TotalDiff"));
 
 			detailInTopicList.add(detailInTopicListItem);
 		}

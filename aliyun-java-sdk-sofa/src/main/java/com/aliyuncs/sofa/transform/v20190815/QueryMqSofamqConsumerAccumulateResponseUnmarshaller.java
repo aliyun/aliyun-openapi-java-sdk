@@ -28,23 +28,23 @@ public class QueryMqSofamqConsumerAccumulateResponseUnmarshaller {
 	public static QueryMqSofamqConsumerAccumulateResponse unmarshall(QueryMqSofamqConsumerAccumulateResponse queryMqSofamqConsumerAccumulateResponse, UnmarshallerContext _ctx) {
 		
 		queryMqSofamqConsumerAccumulateResponse.setRequestId(_ctx.stringValue("QueryMqSofamqConsumerAccumulateResponse.RequestId"));
-		queryMqSofamqConsumerAccumulateResponse.setResultCode(_ctx.stringValue("QueryMqSofamqConsumerAccumulateResponse.ResultCode"));
 		queryMqSofamqConsumerAccumulateResponse.setResultMessage(_ctx.stringValue("QueryMqSofamqConsumerAccumulateResponse.ResultMessage"));
+		queryMqSofamqConsumerAccumulateResponse.setResultCode(_ctx.stringValue("QueryMqSofamqConsumerAccumulateResponse.ResultCode"));
 
 		Data data = new Data();
 		data.setConsumeTps(_ctx.stringValue("QueryMqSofamqConsumerAccumulateResponse.Data.ConsumeTps"));
-		data.setDelayTime(_ctx.longValue("QueryMqSofamqConsumerAccumulateResponse.Data.DelayTime"));
-		data.setLastTimestamp(_ctx.longValue("QueryMqSofamqConsumerAccumulateResponse.Data.LastTimestamp"));
-		data.setOnline(_ctx.booleanValue("QueryMqSofamqConsumerAccumulateResponse.Data.Online"));
 		data.setTotalDiff(_ctx.longValue("QueryMqSofamqConsumerAccumulateResponse.Data.TotalDiff"));
+		data.setLastTimestamp(_ctx.longValue("QueryMqSofamqConsumerAccumulateResponse.Data.LastTimestamp"));
+		data.setDelayTime(_ctx.longValue("QueryMqSofamqConsumerAccumulateResponse.Data.DelayTime"));
+		data.setOnline(_ctx.booleanValue("QueryMqSofamqConsumerAccumulateResponse.Data.Online"));
 
 		List<DetailInTopicListItem> detailInTopicList = new ArrayList<DetailInTopicListItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryMqSofamqConsumerAccumulateResponse.Data.DetailInTopicList.Length"); i++) {
 			DetailInTopicListItem detailInTopicListItem = new DetailInTopicListItem();
+			detailInTopicListItem.setTotalDiff(_ctx.longValue("QueryMqSofamqConsumerAccumulateResponse.Data.DetailInTopicList["+ i +"].TotalDiff"));
 			detailInTopicListItem.setDelayTime(_ctx.longValue("QueryMqSofamqConsumerAccumulateResponse.Data.DetailInTopicList["+ i +"].DelayTime"));
 			detailInTopicListItem.setLastTimestamp(_ctx.longValue("QueryMqSofamqConsumerAccumulateResponse.Data.DetailInTopicList["+ i +"].LastTimestamp"));
 			detailInTopicListItem.setTopic(_ctx.stringValue("QueryMqSofamqConsumerAccumulateResponse.Data.DetailInTopicList["+ i +"].Topic"));
-			detailInTopicListItem.setTotalDiff(_ctx.longValue("QueryMqSofamqConsumerAccumulateResponse.Data.DetailInTopicList["+ i +"].TotalDiff"));
 
 			detailInTopicList.add(detailInTopicListItem);
 		}

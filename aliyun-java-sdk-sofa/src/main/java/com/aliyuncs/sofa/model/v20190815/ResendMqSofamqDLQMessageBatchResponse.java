@@ -24,29 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ResendMqSofamqDLQMessageBatchResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String resultCode;
-
 	private String resultMessage;
 
 	private String data;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private String resultCode;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getResultCode() {
-		return this.resultCode;
-	}
-
-	public void setResultCode(String resultCode) {
-		this.resultCode = resultCode;
-	}
+	private String requestId;
 
 	public String getResultMessage() {
 		return this.resultMessage;
@@ -62,6 +46,22 @@ public class ResendMqSofamqDLQMessageBatchResponse extends AcsResponse {
 
 	public void setData(String data) {
 		this.data = data;
+	}
+
+	public String getResultCode() {
+		return this.resultCode;
+	}
+
+	public void setResultCode(String resultCode) {
+		this.resultCode = resultCode;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

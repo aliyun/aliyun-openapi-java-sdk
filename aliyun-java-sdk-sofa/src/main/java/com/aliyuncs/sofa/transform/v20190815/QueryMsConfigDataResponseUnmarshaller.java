@@ -27,14 +27,14 @@ public class QueryMsConfigDataResponseUnmarshaller {
 	public static QueryMsConfigDataResponse unmarshall(QueryMsConfigDataResponse queryMsConfigDataResponse, UnmarshallerContext _ctx) {
 		
 		queryMsConfigDataResponse.setRequestId(_ctx.stringValue("QueryMsConfigDataResponse.RequestId"));
-		queryMsConfigDataResponse.setResultCode(_ctx.stringValue("QueryMsConfigDataResponse.ResultCode"));
 		queryMsConfigDataResponse.setResultMessage(_ctx.stringValue("QueryMsConfigDataResponse.ResultMessage"));
+		queryMsConfigDataResponse.setResultCode(_ctx.stringValue("QueryMsConfigDataResponse.ResultCode"));
 
 		List<QueryResultItem> queryResult = new ArrayList<QueryResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryMsConfigDataResponse.QueryResult.Length"); i++) {
 			QueryResultItem queryResultItem = new QueryResultItem();
-			queryResultItem.setCell(_ctx.stringValue("QueryMsConfigDataResponse.QueryResult["+ i +"].Cell"));
 			queryResultItem.setData(_ctx.stringValue("QueryMsConfigDataResponse.QueryResult["+ i +"].Data"));
+			queryResultItem.setCell(_ctx.stringValue("QueryMsConfigDataResponse.QueryResult["+ i +"].Cell"));
 
 			queryResult.add(queryResultItem);
 		}

@@ -24,14 +24,14 @@ public class QueryMqSofamqConsumerTimespanResponseUnmarshaller {
 	public static QueryMqSofamqConsumerTimespanResponse unmarshall(QueryMqSofamqConsumerTimespanResponse queryMqSofamqConsumerTimespanResponse, UnmarshallerContext _ctx) {
 		
 		queryMqSofamqConsumerTimespanResponse.setRequestId(_ctx.stringValue("QueryMqSofamqConsumerTimespanResponse.RequestId"));
-		queryMqSofamqConsumerTimespanResponse.setResultCode(_ctx.stringValue("QueryMqSofamqConsumerTimespanResponse.ResultCode"));
 		queryMqSofamqConsumerTimespanResponse.setResultMessage(_ctx.stringValue("QueryMqSofamqConsumerTimespanResponse.ResultMessage"));
+		queryMqSofamqConsumerTimespanResponse.setResultCode(_ctx.stringValue("QueryMqSofamqConsumerTimespanResponse.ResultCode"));
 
 		Data data = new Data();
-		data.setConsumeTimestamp(_ctx.longValue("QueryMqSofamqConsumerTimespanResponse.Data.ConsumeTimestamp"));
-		data.setInstanceId(_ctx.stringValue("QueryMqSofamqConsumerTimespanResponse.Data.InstanceId"));
 		data.setMaxTimestamp(_ctx.longValue("QueryMqSofamqConsumerTimespanResponse.Data.MaxTimestamp"));
 		data.setMinTimestamp(_ctx.longValue("QueryMqSofamqConsumerTimespanResponse.Data.MinTimestamp"));
+		data.setInstanceId(_ctx.stringValue("QueryMqSofamqConsumerTimespanResponse.Data.InstanceId"));
+		data.setConsumeTimestamp(_ctx.longValue("QueryMqSofamqConsumerTimespanResponse.Data.ConsumeTimestamp"));
 		data.setTopic(_ctx.stringValue("QueryMqSofamqConsumerTimespanResponse.Data.Topic"));
 		queryMqSofamqConsumerTimespanResponse.setData(data);
 	 

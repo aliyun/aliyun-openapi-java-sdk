@@ -23,9 +23,9 @@ public class ResendMqSofamqDLQMessageBatchResponseUnmarshaller {
 	public static ResendMqSofamqDLQMessageBatchResponse unmarshall(ResendMqSofamqDLQMessageBatchResponse resendMqSofamqDLQMessageBatchResponse, UnmarshallerContext _ctx) {
 		
 		resendMqSofamqDLQMessageBatchResponse.setRequestId(_ctx.stringValue("ResendMqSofamqDLQMessageBatchResponse.RequestId"));
-		resendMqSofamqDLQMessageBatchResponse.setResultCode(_ctx.stringValue("ResendMqSofamqDLQMessageBatchResponse.ResultCode"));
 		resendMqSofamqDLQMessageBatchResponse.setResultMessage(_ctx.stringValue("ResendMqSofamqDLQMessageBatchResponse.ResultMessage"));
 		resendMqSofamqDLQMessageBatchResponse.setData(_ctx.stringValue("ResendMqSofamqDLQMessageBatchResponse.Data"));
+		resendMqSofamqDLQMessageBatchResponse.setResultCode(_ctx.stringValue("ResendMqSofamqDLQMessageBatchResponse.ResultCode"));
 	 
 	 	return resendMqSofamqDLQMessageBatchResponse;
 	}

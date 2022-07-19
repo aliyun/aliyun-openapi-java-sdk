@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetMqSofamqTraceResultResponse extends AcsResponse {
 
-	private String requestId;
+	private String resultMessage;
 
 	private String resultCode;
 
-	private String resultMessage;
+	private String requestId;
 
 	private Data data;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getResultMessage() {
+		return this.resultMessage;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setResultMessage(String resultMessage) {
+		this.resultMessage = resultMessage;
 	}
 
 	public String getResultCode() {
@@ -49,12 +49,12 @@ public class GetMqSofamqTraceResultResponse extends AcsResponse {
 		this.resultCode = resultCode;
 	}
 
-	public String getResultMessage() {
-		return this.resultMessage;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setResultMessage(String resultMessage) {
-		this.resultMessage = resultMessage;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Data getData() {
@@ -67,25 +67,49 @@ public class GetMqSofamqTraceResultResponse extends AcsResponse {
 
 	public static class Data {
 
+		private String status;
+
+		private String msgKey;
+
+		private Long updateTime;
+
 		private Long createTime;
+
+		private String userId;
+
+		private String topic;
 
 		private String instanceId;
 
 		private String msgId;
 
-		private String msgKey;
-
 		private String queryId;
 
-		private String status;
-
-		private String topic;
-
-		private Long updateTime;
-
-		private String userId;
-
 		private List<TraceListItem> traceList;
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getMsgKey() {
+			return this.msgKey;
+		}
+
+		public void setMsgKey(String msgKey) {
+			this.msgKey = msgKey;
+		}
+
+		public Long getUpdateTime() {
+			return this.updateTime;
+		}
+
+		public void setUpdateTime(Long updateTime) {
+			this.updateTime = updateTime;
+		}
 
 		public Long getCreateTime() {
 			return this.createTime;
@@ -93,6 +117,22 @@ public class GetMqSofamqTraceResultResponse extends AcsResponse {
 
 		public void setCreateTime(Long createTime) {
 			this.createTime = createTime;
+		}
+
+		public String getUserId() {
+			return this.userId;
+		}
+
+		public void setUserId(String userId) {
+			this.userId = userId;
+		}
+
+		public String getTopic() {
+			return this.topic;
+		}
+
+		public void setTopic(String topic) {
+			this.topic = topic;
 		}
 
 		public String getInstanceId() {
@@ -111,52 +151,12 @@ public class GetMqSofamqTraceResultResponse extends AcsResponse {
 			this.msgId = msgId;
 		}
 
-		public String getMsgKey() {
-			return this.msgKey;
-		}
-
-		public void setMsgKey(String msgKey) {
-			this.msgKey = msgKey;
-		}
-
 		public String getQueryId() {
 			return this.queryId;
 		}
 
 		public void setQueryId(String queryId) {
 			this.queryId = queryId;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getTopic() {
-			return this.topic;
-		}
-
-		public void setTopic(String topic) {
-			this.topic = topic;
-		}
-
-		public Long getUpdateTime() {
-			return this.updateTime;
-		}
-
-		public void setUpdateTime(Long updateTime) {
-			this.updateTime = updateTime;
-		}
-
-		public String getUserId() {
-			return this.userId;
-		}
-
-		public void setUserId(String userId) {
-			this.userId = userId;
 		}
 
 		public List<TraceListItem> getTraceList() {
@@ -169,58 +169,34 @@ public class GetMqSofamqTraceResultResponse extends AcsResponse {
 
 		public static class TraceListItem {
 
-			private String bornHost;
-
-			private String cell;
-
-			private Long costTime;
-
-			private String msgId;
+			private String status;
 
 			private String msgKey;
 
-			private String pubGroupName;
-
 			private Long pubTime;
-
-			private String status;
-
-			private String tag;
 
 			private String topic;
 
+			private Long costTime;
+
+			private String tag;
+
+			private String msgId;
+
+			private String pubGroupName;
+
+			private String cell;
+
+			private String bornHost;
+
 			private List<SubListItem> subList;
 
-			public String getBornHost() {
-				return this.bornHost;
+			public String getStatus() {
+				return this.status;
 			}
 
-			public void setBornHost(String bornHost) {
-				this.bornHost = bornHost;
-			}
-
-			public String getCell() {
-				return this.cell;
-			}
-
-			public void setCell(String cell) {
-				this.cell = cell;
-			}
-
-			public Long getCostTime() {
-				return this.costTime;
-			}
-
-			public void setCostTime(Long costTime) {
-				this.costTime = costTime;
-			}
-
-			public String getMsgId() {
-				return this.msgId;
-			}
-
-			public void setMsgId(String msgId) {
-				this.msgId = msgId;
+			public void setStatus(String status) {
+				this.status = status;
 			}
 
 			public String getMsgKey() {
@@ -231,14 +207,6 @@ public class GetMqSofamqTraceResultResponse extends AcsResponse {
 				this.msgKey = msgKey;
 			}
 
-			public String getPubGroupName() {
-				return this.pubGroupName;
-			}
-
-			public void setPubGroupName(String pubGroupName) {
-				this.pubGroupName = pubGroupName;
-			}
-
 			public Long getPubTime() {
 				return this.pubTime;
 			}
@@ -247,12 +215,20 @@ public class GetMqSofamqTraceResultResponse extends AcsResponse {
 				this.pubTime = pubTime;
 			}
 
-			public String getStatus() {
-				return this.status;
+			public String getTopic() {
+				return this.topic;
 			}
 
-			public void setStatus(String status) {
-				this.status = status;
+			public void setTopic(String topic) {
+				this.topic = topic;
+			}
+
+			public Long getCostTime() {
+				return this.costTime;
+			}
+
+			public void setCostTime(Long costTime) {
+				this.costTime = costTime;
 			}
 
 			public String getTag() {
@@ -263,12 +239,36 @@ public class GetMqSofamqTraceResultResponse extends AcsResponse {
 				this.tag = tag;
 			}
 
-			public String getTopic() {
-				return this.topic;
+			public String getMsgId() {
+				return this.msgId;
 			}
 
-			public void setTopic(String topic) {
-				this.topic = topic;
+			public void setMsgId(String msgId) {
+				this.msgId = msgId;
+			}
+
+			public String getPubGroupName() {
+				return this.pubGroupName;
+			}
+
+			public void setPubGroupName(String pubGroupName) {
+				this.pubGroupName = pubGroupName;
+			}
+
+			public String getCell() {
+				return this.cell;
+			}
+
+			public void setCell(String cell) {
+				this.cell = cell;
+			}
+
+			public String getBornHost() {
+				return this.bornHost;
+			}
+
+			public void setBornHost(String bornHost) {
+				this.bornHost = bornHost;
 			}
 
 			public List<SubListItem> getSubList() {
@@ -281,31 +281,15 @@ public class GetMqSofamqTraceResultResponse extends AcsResponse {
 
 			public static class SubListItem {
 
-				private String cell;
-
-				private Long failCount;
-
 				private String subGroupName;
 
 				private Long successCount;
 
+				private Long failCount;
+
+				private String cell;
+
 				private List<ClientListItem> clientList;
-
-				public String getCell() {
-					return this.cell;
-				}
-
-				public void setCell(String cell) {
-					this.cell = cell;
-				}
-
-				public Long getFailCount() {
-					return this.failCount;
-				}
-
-				public void setFailCount(Long failCount) {
-					this.failCount = failCount;
-				}
 
 				public String getSubGroupName() {
 					return this.subGroupName;
@@ -323,6 +307,22 @@ public class GetMqSofamqTraceResultResponse extends AcsResponse {
 					this.successCount = successCount;
 				}
 
+				public Long getFailCount() {
+					return this.failCount;
+				}
+
+				public void setFailCount(Long failCount) {
+					this.failCount = failCount;
+				}
+
+				public String getCell() {
+					return this.cell;
+				}
+
+				public void setCell(String cell) {
+					this.cell = cell;
+				}
+
 				public List<ClientListItem> getClientList() {
 					return this.clientList;
 				}
@@ -333,32 +333,32 @@ public class GetMqSofamqTraceResultResponse extends AcsResponse {
 
 				public static class ClientListItem {
 
-					private String clientHost;
-
-					private Long costTime;
-
-					private Long reconsumeTimes;
-
 					private String status;
-
-					private String subGroupName;
 
 					private Long subTime;
 
-					public String getClientHost() {
-						return this.clientHost;
+					private Long reconsumeTimes;
+
+					private String clientHost;
+
+					private String subGroupName;
+
+					private Long costTime;
+
+					public String getStatus() {
+						return this.status;
 					}
 
-					public void setClientHost(String clientHost) {
-						this.clientHost = clientHost;
+					public void setStatus(String status) {
+						this.status = status;
 					}
 
-					public Long getCostTime() {
-						return this.costTime;
+					public Long getSubTime() {
+						return this.subTime;
 					}
 
-					public void setCostTime(Long costTime) {
-						this.costTime = costTime;
+					public void setSubTime(Long subTime) {
+						this.subTime = subTime;
 					}
 
 					public Long getReconsumeTimes() {
@@ -369,12 +369,12 @@ public class GetMqSofamqTraceResultResponse extends AcsResponse {
 						this.reconsumeTimes = reconsumeTimes;
 					}
 
-					public String getStatus() {
-						return this.status;
+					public String getClientHost() {
+						return this.clientHost;
 					}
 
-					public void setStatus(String status) {
-						this.status = status;
+					public void setClientHost(String clientHost) {
+						this.clientHost = clientHost;
 					}
 
 					public String getSubGroupName() {
@@ -385,12 +385,12 @@ public class GetMqSofamqTraceResultResponse extends AcsResponse {
 						this.subGroupName = subGroupName;
 					}
 
-					public Long getSubTime() {
-						return this.subTime;
+					public Long getCostTime() {
+						return this.costTime;
 					}
 
-					public void setSubTime(Long subTime) {
-						this.subTime = subTime;
+					public void setCostTime(Long costTime) {
+						this.costTime = costTime;
 					}
 				}
 			}

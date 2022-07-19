@@ -37,7 +37,7 @@ public class ResetMqSofamqConsumerOffsetRequest extends RpcAcsRequest<ResetMqSof
 
 	private String topic;
 	public ResetMqSofamqConsumerOffsetRequest() {
-		super("SOFA", "2019-08-15", "ResetMqSofamqConsumerOffset", "sofacaferms");
+		super("SOFA", "2019-08-15", "ResetMqSofamqConsumerOffset");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

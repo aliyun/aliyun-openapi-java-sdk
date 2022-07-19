@@ -23,8 +23,8 @@ public class UpdateMqSofamqWarnResponseUnmarshaller {
 	public static UpdateMqSofamqWarnResponse unmarshall(UpdateMqSofamqWarnResponse updateMqSofamqWarnResponse, UnmarshallerContext _ctx) {
 		
 		updateMqSofamqWarnResponse.setRequestId(_ctx.stringValue("UpdateMqSofamqWarnResponse.RequestId"));
-		updateMqSofamqWarnResponse.setResultCode(_ctx.stringValue("UpdateMqSofamqWarnResponse.ResultCode"));
 		updateMqSofamqWarnResponse.setResultMessage(_ctx.stringValue("UpdateMqSofamqWarnResponse.ResultMessage"));
+		updateMqSofamqWarnResponse.setResultCode(_ctx.stringValue("UpdateMqSofamqWarnResponse.ResultCode"));
 	 
 	 	return updateMqSofamqWarnResponse;
 	}

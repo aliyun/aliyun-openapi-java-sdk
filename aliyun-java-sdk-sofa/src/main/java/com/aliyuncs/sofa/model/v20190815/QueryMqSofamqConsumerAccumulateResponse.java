@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryMqSofamqConsumerAccumulateResponse extends AcsResponse {
 
-	private String requestId;
+	private String resultMessage;
 
 	private String resultCode;
 
-	private String resultMessage;
+	private String requestId;
 
 	private Data data;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getResultMessage() {
+		return this.resultMessage;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setResultMessage(String resultMessage) {
+		this.resultMessage = resultMessage;
 	}
 
 	public String getResultCode() {
@@ -49,12 +49,12 @@ public class QueryMqSofamqConsumerAccumulateResponse extends AcsResponse {
 		this.resultCode = resultCode;
 	}
 
-	public String getResultMessage() {
-		return this.resultMessage;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setResultMessage(String resultMessage) {
-		this.resultMessage = resultMessage;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Data getData() {
@@ -69,13 +69,13 @@ public class QueryMqSofamqConsumerAccumulateResponse extends AcsResponse {
 
 		private String consumeTps;
 
-		private Long delayTime;
+		private Long totalDiff;
 
 		private Long lastTimestamp;
 
-		private Boolean online;
+		private Long delayTime;
 
-		private Long totalDiff;
+		private Boolean online;
 
 		private List<DetailInTopicListItem> detailInTopicList;
 
@@ -87,12 +87,12 @@ public class QueryMqSofamqConsumerAccumulateResponse extends AcsResponse {
 			this.consumeTps = consumeTps;
 		}
 
-		public Long getDelayTime() {
-			return this.delayTime;
+		public Long getTotalDiff() {
+			return this.totalDiff;
 		}
 
-		public void setDelayTime(Long delayTime) {
-			this.delayTime = delayTime;
+		public void setTotalDiff(Long totalDiff) {
+			this.totalDiff = totalDiff;
 		}
 
 		public Long getLastTimestamp() {
@@ -103,20 +103,20 @@ public class QueryMqSofamqConsumerAccumulateResponse extends AcsResponse {
 			this.lastTimestamp = lastTimestamp;
 		}
 
+		public Long getDelayTime() {
+			return this.delayTime;
+		}
+
+		public void setDelayTime(Long delayTime) {
+			this.delayTime = delayTime;
+		}
+
 		public Boolean getOnline() {
 			return this.online;
 		}
 
 		public void setOnline(Boolean online) {
 			this.online = online;
-		}
-
-		public Long getTotalDiff() {
-			return this.totalDiff;
-		}
-
-		public void setTotalDiff(Long totalDiff) {
-			this.totalDiff = totalDiff;
 		}
 
 		public List<DetailInTopicListItem> getDetailInTopicList() {
@@ -129,13 +129,21 @@ public class QueryMqSofamqConsumerAccumulateResponse extends AcsResponse {
 
 		public static class DetailInTopicListItem {
 
+			private Long totalDiff;
+
 			private Long delayTime;
 
 			private Long lastTimestamp;
 
 			private String topic;
 
-			private Long totalDiff;
+			public Long getTotalDiff() {
+				return this.totalDiff;
+			}
+
+			public void setTotalDiff(Long totalDiff) {
+				this.totalDiff = totalDiff;
+			}
 
 			public Long getDelayTime() {
 				return this.delayTime;
@@ -159,14 +167,6 @@ public class QueryMqSofamqConsumerAccumulateResponse extends AcsResponse {
 
 			public void setTopic(String topic) {
 				this.topic = topic;
-			}
-
-			public Long getTotalDiff() {
-				return this.totalDiff;
-			}
-
-			public void setTotalDiff(Long totalDiff) {
-				this.totalDiff = totalDiff;
 			}
 		}
 	}

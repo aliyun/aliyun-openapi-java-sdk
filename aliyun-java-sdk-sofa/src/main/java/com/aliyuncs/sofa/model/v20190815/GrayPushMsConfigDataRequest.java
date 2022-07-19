@@ -35,7 +35,7 @@ public class GrayPushMsConfigDataRequest extends RpcAcsRequest<GrayPushMsConfigD
 
 	private String instanceId;
 	public GrayPushMsConfigDataRequest() {
-		super("SOFA", "2019-08-15", "GrayPushMsConfigData", "sofacaferms");
+		super("SOFA", "2019-08-15", "GrayPushMsConfigData");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

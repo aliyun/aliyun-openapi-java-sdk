@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListMqSofamqGroupResponse extends AcsResponse {
 
-	private String requestId;
+	private String resultMessage;
 
 	private String resultCode;
 
-	private String resultMessage;
+	private String requestId;
 
 	private Data data;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getResultMessage() {
+		return this.resultMessage;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setResultMessage(String resultMessage) {
+		this.resultMessage = resultMessage;
 	}
 
 	public String getResultCode() {
@@ -49,12 +49,12 @@ public class ListMqSofamqGroupResponse extends AcsResponse {
 		this.resultCode = resultCode;
 	}
 
-	public String getResultMessage() {
-		return this.resultMessage;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setResultMessage(String resultMessage) {
-		this.resultMessage = resultMessage;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Data getData() {
@@ -109,37 +109,45 @@ public class ListMqSofamqGroupResponse extends AcsResponse {
 
 		public static class ContentItem {
 
+			private Long retryPerm;
+
 			private String cluster;
-
-			private String deleteMark;
-
-			private Long gmtCreate;
-
-			private Long gmtModified;
-
-			private String groupId;
-
-			private String groupType;
-
-			private Long id;
-
-			private String instanceId;
-
-			private String operator;
-
-			private Boolean readEnable;
 
 			private String remark;
 
-			private Long retryPerm;
+			private String instanceId;
 
-			private Long retryReadQueueNum;
+			private Long gmtModified;
 
 			private Long retryWriteQueueNum;
 
-			private String scope;
+			private String deleteMark;
+
+			private String groupId;
 
 			private Long version;
+
+			private Long gmtCreate;
+
+			private Long retryReadQueueNum;
+
+			private String scope;
+
+			private String operator;
+
+			private String groupType;
+
+			private Boolean readEnable;
+
+			private Long id;
+
+			public Long getRetryPerm() {
+				return this.retryPerm;
+			}
+
+			public void setRetryPerm(Long retryPerm) {
+				this.retryPerm = retryPerm;
+			}
 
 			public String getCluster() {
 				return this.cluster;
@@ -147,78 +155,6 @@ public class ListMqSofamqGroupResponse extends AcsResponse {
 
 			public void setCluster(String cluster) {
 				this.cluster = cluster;
-			}
-
-			public String getDeleteMark() {
-				return this.deleteMark;
-			}
-
-			public void setDeleteMark(String deleteMark) {
-				this.deleteMark = deleteMark;
-			}
-
-			public Long getGmtCreate() {
-				return this.gmtCreate;
-			}
-
-			public void setGmtCreate(Long gmtCreate) {
-				this.gmtCreate = gmtCreate;
-			}
-
-			public Long getGmtModified() {
-				return this.gmtModified;
-			}
-
-			public void setGmtModified(Long gmtModified) {
-				this.gmtModified = gmtModified;
-			}
-
-			public String getGroupId() {
-				return this.groupId;
-			}
-
-			public void setGroupId(String groupId) {
-				this.groupId = groupId;
-			}
-
-			public String getGroupType() {
-				return this.groupType;
-			}
-
-			public void setGroupType(String groupType) {
-				this.groupType = groupType;
-			}
-
-			public Long getId() {
-				return this.id;
-			}
-
-			public void setId(Long id) {
-				this.id = id;
-			}
-
-			public String getInstanceId() {
-				return this.instanceId;
-			}
-
-			public void setInstanceId(String instanceId) {
-				this.instanceId = instanceId;
-			}
-
-			public String getOperator() {
-				return this.operator;
-			}
-
-			public void setOperator(String operator) {
-				this.operator = operator;
-			}
-
-			public Boolean getReadEnable() {
-				return this.readEnable;
-			}
-
-			public void setReadEnable(Boolean readEnable) {
-				this.readEnable = readEnable;
 			}
 
 			public String getRemark() {
@@ -229,20 +165,20 @@ public class ListMqSofamqGroupResponse extends AcsResponse {
 				this.remark = remark;
 			}
 
-			public Long getRetryPerm() {
-				return this.retryPerm;
+			public String getInstanceId() {
+				return this.instanceId;
 			}
 
-			public void setRetryPerm(Long retryPerm) {
-				this.retryPerm = retryPerm;
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
 			}
 
-			public Long getRetryReadQueueNum() {
-				return this.retryReadQueueNum;
+			public Long getGmtModified() {
+				return this.gmtModified;
 			}
 
-			public void setRetryReadQueueNum(Long retryReadQueueNum) {
-				this.retryReadQueueNum = retryReadQueueNum;
+			public void setGmtModified(Long gmtModified) {
+				this.gmtModified = gmtModified;
 			}
 
 			public Long getRetryWriteQueueNum() {
@@ -253,12 +189,20 @@ public class ListMqSofamqGroupResponse extends AcsResponse {
 				this.retryWriteQueueNum = retryWriteQueueNum;
 			}
 
-			public String getScope() {
-				return this.scope;
+			public String getDeleteMark() {
+				return this.deleteMark;
 			}
 
-			public void setScope(String scope) {
-				this.scope = scope;
+			public void setDeleteMark(String deleteMark) {
+				this.deleteMark = deleteMark;
+			}
+
+			public String getGroupId() {
+				return this.groupId;
+			}
+
+			public void setGroupId(String groupId) {
+				this.groupId = groupId;
 			}
 
 			public Long getVersion() {
@@ -267,6 +211,62 @@ public class ListMqSofamqGroupResponse extends AcsResponse {
 
 			public void setVersion(Long version) {
 				this.version = version;
+			}
+
+			public Long getGmtCreate() {
+				return this.gmtCreate;
+			}
+
+			public void setGmtCreate(Long gmtCreate) {
+				this.gmtCreate = gmtCreate;
+			}
+
+			public Long getRetryReadQueueNum() {
+				return this.retryReadQueueNum;
+			}
+
+			public void setRetryReadQueueNum(Long retryReadQueueNum) {
+				this.retryReadQueueNum = retryReadQueueNum;
+			}
+
+			public String getScope() {
+				return this.scope;
+			}
+
+			public void setScope(String scope) {
+				this.scope = scope;
+			}
+
+			public String getOperator() {
+				return this.operator;
+			}
+
+			public void setOperator(String operator) {
+				this.operator = operator;
+			}
+
+			public String getGroupType() {
+				return this.groupType;
+			}
+
+			public void setGroupType(String groupType) {
+				this.groupType = groupType;
+			}
+
+			public Boolean getReadEnable() {
+				return this.readEnable;
+			}
+
+			public void setReadEnable(Boolean readEnable) {
+				this.readEnable = readEnable;
+			}
+
+			public Long getId() {
+				return this.id;
+			}
+
+			public void setId(Long id) {
+				this.id = id;
 			}
 		}
 	}

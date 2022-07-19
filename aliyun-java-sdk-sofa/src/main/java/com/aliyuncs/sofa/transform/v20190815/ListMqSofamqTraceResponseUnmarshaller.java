@@ -28,8 +28,8 @@ public class ListMqSofamqTraceResponseUnmarshaller {
 	public static ListMqSofamqTraceResponse unmarshall(ListMqSofamqTraceResponse listMqSofamqTraceResponse, UnmarshallerContext _ctx) {
 		
 		listMqSofamqTraceResponse.setRequestId(_ctx.stringValue("ListMqSofamqTraceResponse.RequestId"));
-		listMqSofamqTraceResponse.setResultCode(_ctx.stringValue("ListMqSofamqTraceResponse.ResultCode"));
 		listMqSofamqTraceResponse.setResultMessage(_ctx.stringValue("ListMqSofamqTraceResponse.ResultMessage"));
+		listMqSofamqTraceResponse.setResultCode(_ctx.stringValue("ListMqSofamqTraceResponse.ResultCode"));
 
 		Data data = new Data();
 		data.setPageNum(_ctx.longValue("ListMqSofamqTraceResponse.Data.PageNum"));
@@ -39,15 +39,15 @@ public class ListMqSofamqTraceResponseUnmarshaller {
 		List<ContentItem> content = new ArrayList<ContentItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListMqSofamqTraceResponse.Data.Content.Length"); i++) {
 			ContentItem contentItem = new ContentItem();
-			contentItem.setCell(_ctx.stringValue("ListMqSofamqTraceResponse.Data.Content["+ i +"].Cell"));
-			contentItem.setGmtCreate(_ctx.longValue("ListMqSofamqTraceResponse.Data.Content["+ i +"].GmtCreate"));
-			contentItem.setGmtModified(_ctx.longValue("ListMqSofamqTraceResponse.Data.Content["+ i +"].GmtModified"));
-			contentItem.setInstanceId(_ctx.stringValue("ListMqSofamqTraceResponse.Data.Content["+ i +"].InstanceId"));
-			contentItem.setMsgId(_ctx.stringValue("ListMqSofamqTraceResponse.Data.Content["+ i +"].MsgId"));
-			contentItem.setMsgKey(_ctx.stringValue("ListMqSofamqTraceResponse.Data.Content["+ i +"].MsgKey"));
-			contentItem.setQueryId(_ctx.stringValue("ListMqSofamqTraceResponse.Data.Content["+ i +"].QueryId"));
 			contentItem.setStatus(_ctx.stringValue("ListMqSofamqTraceResponse.Data.Content["+ i +"].Status"));
+			contentItem.setMsgKey(_ctx.stringValue("ListMqSofamqTraceResponse.Data.Content["+ i +"].MsgKey"));
 			contentItem.setTopic(_ctx.stringValue("ListMqSofamqTraceResponse.Data.Content["+ i +"].Topic"));
+			contentItem.setGmtCreate(_ctx.longValue("ListMqSofamqTraceResponse.Data.Content["+ i +"].GmtCreate"));
+			contentItem.setInstanceId(_ctx.stringValue("ListMqSofamqTraceResponse.Data.Content["+ i +"].InstanceId"));
+			contentItem.setGmtModified(_ctx.longValue("ListMqSofamqTraceResponse.Data.Content["+ i +"].GmtModified"));
+			contentItem.setMsgId(_ctx.stringValue("ListMqSofamqTraceResponse.Data.Content["+ i +"].MsgId"));
+			contentItem.setQueryId(_ctx.stringValue("ListMqSofamqTraceResponse.Data.Content["+ i +"].QueryId"));
+			contentItem.setCell(_ctx.stringValue("ListMqSofamqTraceResponse.Data.Content["+ i +"].Cell"));
 
 			content.add(contentItem);
 		}

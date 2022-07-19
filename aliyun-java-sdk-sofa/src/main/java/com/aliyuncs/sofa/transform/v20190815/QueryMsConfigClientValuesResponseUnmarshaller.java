@@ -27,14 +27,14 @@ public class QueryMsConfigClientValuesResponseUnmarshaller {
 	public static QueryMsConfigClientValuesResponse unmarshall(QueryMsConfigClientValuesResponse queryMsConfigClientValuesResponse, UnmarshallerContext _ctx) {
 		
 		queryMsConfigClientValuesResponse.setRequestId(_ctx.stringValue("QueryMsConfigClientValuesResponse.RequestId"));
-		queryMsConfigClientValuesResponse.setResultCode(_ctx.stringValue("QueryMsConfigClientValuesResponse.ResultCode"));
 		queryMsConfigClientValuesResponse.setResultMessage(_ctx.stringValue("QueryMsConfigClientValuesResponse.ResultMessage"));
+		queryMsConfigClientValuesResponse.setResultCode(_ctx.stringValue("QueryMsConfigClientValuesResponse.ResultCode"));
 
 		List<ClientsItem> clients = new ArrayList<ClientsItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryMsConfigClientValuesResponse.Clients.Length"); i++) {
 			ClientsItem clientsItem = new ClientsItem();
-			clientsItem.setData(_ctx.stringValue("QueryMsConfigClientValuesResponse.Clients["+ i +"].Data"));
 			clientsItem.setIp(_ctx.stringValue("QueryMsConfigClientValuesResponse.Clients["+ i +"].Ip"));
+			clientsItem.setData(_ctx.stringValue("QueryMsConfigClientValuesResponse.Clients["+ i +"].Data"));
 			clientsItem.setSuccess(_ctx.booleanValue("QueryMsConfigClientValuesResponse.Clients["+ i +"].Success"));
 
 			clients.add(clientsItem);

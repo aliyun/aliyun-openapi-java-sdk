@@ -23,8 +23,8 @@ public class UpdateMqSofamqTopicResponseUnmarshaller {
 	public static UpdateMqSofamqTopicResponse unmarshall(UpdateMqSofamqTopicResponse updateMqSofamqTopicResponse, UnmarshallerContext _ctx) {
 		
 		updateMqSofamqTopicResponse.setRequestId(_ctx.stringValue("UpdateMqSofamqTopicResponse.RequestId"));
-		updateMqSofamqTopicResponse.setResultCode(_ctx.stringValue("UpdateMqSofamqTopicResponse.ResultCode"));
 		updateMqSofamqTopicResponse.setResultMessage(_ctx.stringValue("UpdateMqSofamqTopicResponse.ResultMessage"));
+		updateMqSofamqTopicResponse.setResultCode(_ctx.stringValue("UpdateMqSofamqTopicResponse.ResultCode"));
 	 
 	 	return updateMqSofamqTopicResponse;
 	}

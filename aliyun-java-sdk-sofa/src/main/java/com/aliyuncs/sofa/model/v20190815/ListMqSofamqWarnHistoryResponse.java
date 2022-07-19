@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListMqSofamqWarnHistoryResponse extends AcsResponse {
 
-	private String requestId;
+	private String resultMessage;
 
 	private String resultCode;
 
-	private String resultMessage;
+	private String requestId;
 
 	private Data data;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getResultMessage() {
+		return this.resultMessage;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setResultMessage(String resultMessage) {
+		this.resultMessage = resultMessage;
 	}
 
 	public String getResultCode() {
@@ -49,12 +49,12 @@ public class ListMqSofamqWarnHistoryResponse extends AcsResponse {
 		this.resultCode = resultCode;
 	}
 
-	public String getResultMessage() {
-		return this.resultMessage;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setResultMessage(String resultMessage) {
-		this.resultMessage = resultMessage;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Data getData() {
@@ -109,44 +109,28 @@ public class ListMqSofamqWarnHistoryResponse extends AcsResponse {
 
 		public static class ContentItem {
 
-			private String cell;
-
-			private Long gmtCreate;
-
-			private Long gmtModified;
+			private Long warnId;
 
 			private String groupId;
 
-			private String instanceId;
-
 			private String topic;
 
-			private Long warnId;
+			private Long gmtCreate;
 
 			private String warnInfo;
 
-			public String getCell() {
-				return this.cell;
+			private String instanceId;
+
+			private Long gmtModified;
+
+			private String cell;
+
+			public Long getWarnId() {
+				return this.warnId;
 			}
 
-			public void setCell(String cell) {
-				this.cell = cell;
-			}
-
-			public Long getGmtCreate() {
-				return this.gmtCreate;
-			}
-
-			public void setGmtCreate(Long gmtCreate) {
-				this.gmtCreate = gmtCreate;
-			}
-
-			public Long getGmtModified() {
-				return this.gmtModified;
-			}
-
-			public void setGmtModified(Long gmtModified) {
-				this.gmtModified = gmtModified;
+			public void setWarnId(Long warnId) {
+				this.warnId = warnId;
 			}
 
 			public String getGroupId() {
@@ -157,14 +141,6 @@ public class ListMqSofamqWarnHistoryResponse extends AcsResponse {
 				this.groupId = groupId;
 			}
 
-			public String getInstanceId() {
-				return this.instanceId;
-			}
-
-			public void setInstanceId(String instanceId) {
-				this.instanceId = instanceId;
-			}
-
 			public String getTopic() {
 				return this.topic;
 			}
@@ -173,12 +149,12 @@ public class ListMqSofamqWarnHistoryResponse extends AcsResponse {
 				this.topic = topic;
 			}
 
-			public Long getWarnId() {
-				return this.warnId;
+			public Long getGmtCreate() {
+				return this.gmtCreate;
 			}
 
-			public void setWarnId(Long warnId) {
-				this.warnId = warnId;
+			public void setGmtCreate(Long gmtCreate) {
+				this.gmtCreate = gmtCreate;
 			}
 
 			public String getWarnInfo() {
@@ -187,6 +163,30 @@ public class ListMqSofamqWarnHistoryResponse extends AcsResponse {
 
 			public void setWarnInfo(String warnInfo) {
 				this.warnInfo = warnInfo;
+			}
+
+			public String getInstanceId() {
+				return this.instanceId;
+			}
+
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
+			}
+
+			public Long getGmtModified() {
+				return this.gmtModified;
+			}
+
+			public void setGmtModified(Long gmtModified) {
+				this.gmtModified = gmtModified;
+			}
+
+			public String getCell() {
+				return this.cell;
+			}
+
+			public void setCell(String cell) {
+				this.cell = cell;
 			}
 		}
 	}

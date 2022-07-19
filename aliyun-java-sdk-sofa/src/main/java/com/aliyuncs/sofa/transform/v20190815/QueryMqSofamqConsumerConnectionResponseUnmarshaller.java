@@ -28,19 +28,19 @@ public class QueryMqSofamqConsumerConnectionResponseUnmarshaller {
 	public static QueryMqSofamqConsumerConnectionResponse unmarshall(QueryMqSofamqConsumerConnectionResponse queryMqSofamqConsumerConnectionResponse, UnmarshallerContext _ctx) {
 		
 		queryMqSofamqConsumerConnectionResponse.setRequestId(_ctx.stringValue("QueryMqSofamqConsumerConnectionResponse.RequestId"));
-		queryMqSofamqConsumerConnectionResponse.setResultCode(_ctx.stringValue("QueryMqSofamqConsumerConnectionResponse.ResultCode"));
 		queryMqSofamqConsumerConnectionResponse.setResultMessage(_ctx.stringValue("QueryMqSofamqConsumerConnectionResponse.ResultMessage"));
+		queryMqSofamqConsumerConnectionResponse.setResultCode(_ctx.stringValue("QueryMqSofamqConsumerConnectionResponse.ResultCode"));
 
 		Data data = new Data();
 
 		List<ConnectionListItem> connectionList = new ArrayList<ConnectionListItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryMqSofamqConsumerConnectionResponse.Data.ConnectionList.Length"); i++) {
 			ConnectionListItem connectionListItem = new ConnectionListItem();
-			connectionListItem.setClientAddr(_ctx.stringValue("QueryMqSofamqConsumerConnectionResponse.Data.ConnectionList["+ i +"].ClientAddr"));
-			connectionListItem.setClientId(_ctx.stringValue("QueryMqSofamqConsumerConnectionResponse.Data.ConnectionList["+ i +"].ClientId"));
-			connectionListItem.setLanguage(_ctx.stringValue("QueryMqSofamqConsumerConnectionResponse.Data.ConnectionList["+ i +"].Language"));
 			connectionListItem.setRemoteIp(_ctx.stringValue("QueryMqSofamqConsumerConnectionResponse.Data.ConnectionList["+ i +"].RemoteIp"));
+			connectionListItem.setClientAddr(_ctx.stringValue("QueryMqSofamqConsumerConnectionResponse.Data.ConnectionList["+ i +"].ClientAddr"));
 			connectionListItem.setVersion(_ctx.stringValue("QueryMqSofamqConsumerConnectionResponse.Data.ConnectionList["+ i +"].Version"));
+			connectionListItem.setLanguage(_ctx.stringValue("QueryMqSofamqConsumerConnectionResponse.Data.ConnectionList["+ i +"].Language"));
+			connectionListItem.setClientId(_ctx.stringValue("QueryMqSofamqConsumerConnectionResponse.Data.ConnectionList["+ i +"].ClientId"));
 
 			connectionList.add(connectionListItem);
 		}

@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryMqSofamqGroupSubDetailResponse extends AcsResponse {
 
-	private String requestId;
+	private String resultMessage;
 
 	private String resultCode;
 
-	private String resultMessage;
+	private String requestId;
 
 	private Data data;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getResultMessage() {
+		return this.resultMessage;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setResultMessage(String resultMessage) {
+		this.resultMessage = resultMessage;
 	}
 
 	public String getResultCode() {
@@ -49,12 +49,12 @@ public class QueryMqSofamqGroupSubDetailResponse extends AcsResponse {
 		this.resultCode = resultCode;
 	}
 
-	public String getResultMessage() {
-		return this.resultMessage;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setResultMessage(String resultMessage) {
-		this.resultMessage = resultMessage;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Data getData() {
@@ -109,19 +109,11 @@ public class QueryMqSofamqGroupSubDetailResponse extends AcsResponse {
 
 		public static class SubscriptionDataListItem {
 
-			private Boolean online;
-
 			private String subString;
 
+			private Boolean online;
+
 			private String topic;
-
-			public Boolean getOnline() {
-				return this.online;
-			}
-
-			public void setOnline(Boolean online) {
-				this.online = online;
-			}
 
 			public String getSubString() {
 				return this.subString;
@@ -129,6 +121,14 @@ public class QueryMqSofamqGroupSubDetailResponse extends AcsResponse {
 
 			public void setSubString(String subString) {
 				this.subString = subString;
+			}
+
+			public Boolean getOnline() {
+				return this.online;
+			}
+
+			public void setOnline(Boolean online) {
+				this.online = online;
 			}
 
 			public String getTopic() {

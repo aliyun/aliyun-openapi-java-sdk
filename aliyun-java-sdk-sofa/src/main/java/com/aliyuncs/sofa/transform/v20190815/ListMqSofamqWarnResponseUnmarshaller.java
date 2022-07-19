@@ -28,8 +28,8 @@ public class ListMqSofamqWarnResponseUnmarshaller {
 	public static ListMqSofamqWarnResponse unmarshall(ListMqSofamqWarnResponse listMqSofamqWarnResponse, UnmarshallerContext _ctx) {
 		
 		listMqSofamqWarnResponse.setRequestId(_ctx.stringValue("ListMqSofamqWarnResponse.RequestId"));
-		listMqSofamqWarnResponse.setResultCode(_ctx.stringValue("ListMqSofamqWarnResponse.ResultCode"));
 		listMqSofamqWarnResponse.setResultMessage(_ctx.stringValue("ListMqSofamqWarnResponse.ResultMessage"));
+		listMqSofamqWarnResponse.setResultCode(_ctx.stringValue("ListMqSofamqWarnResponse.ResultCode"));
 
 		Data data = new Data();
 		data.setPageNum(_ctx.longValue("ListMqSofamqWarnResponse.Data.PageNum"));
@@ -39,23 +39,23 @@ public class ListMqSofamqWarnResponseUnmarshaller {
 		List<ContentItem> content = new ArrayList<ContentItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListMqSofamqWarnResponse.Data.Content.Length"); i++) {
 			ContentItem contentItem = new ContentItem();
-			contentItem.setAlertTime(_ctx.stringValue("ListMqSofamqWarnResponse.Data.Content["+ i +"].AlertTime"));
-			contentItem.setAttribute(_ctx.stringValue("ListMqSofamqWarnResponse.Data.Content["+ i +"].Attribute"));
-			contentItem.setBlockTime(_ctx.longValue("ListMqSofamqWarnResponse.Data.Content["+ i +"].BlockTime"));
-			contentItem.setContacts(_ctx.stringValue("ListMqSofamqWarnResponse.Data.Content["+ i +"].Contacts"));
-			contentItem.setDelayTime(_ctx.longValue("ListMqSofamqWarnResponse.Data.Content["+ i +"].DelayTime"));
+			contentItem.setWarnLevel(_ctx.longValue("ListMqSofamqWarnResponse.Data.Content["+ i +"].WarnLevel"));
 			contentItem.setFrequency(_ctx.longValue("ListMqSofamqWarnResponse.Data.Content["+ i +"].Frequency"));
-			contentItem.setGmtCreate(_ctx.longValue("ListMqSofamqWarnResponse.Data.Content["+ i +"].GmtCreate"));
+			contentItem.setContacts(_ctx.stringValue("ListMqSofamqWarnResponse.Data.Content["+ i +"].Contacts"));
+			contentItem.setAttribute(_ctx.stringValue("ListMqSofamqWarnResponse.Data.Content["+ i +"].Attribute"));
+			contentItem.setWarnType(_ctx.longValue("ListMqSofamqWarnResponse.Data.Content["+ i +"].WarnType"));
+			contentItem.setInstanceId(_ctx.stringValue("ListMqSofamqWarnResponse.Data.Content["+ i +"].InstanceId"));
 			contentItem.setGmtModified(_ctx.longValue("ListMqSofamqWarnResponse.Data.Content["+ i +"].GmtModified"));
 			contentItem.setGroupId(_ctx.stringValue("ListMqSofamqWarnResponse.Data.Content["+ i +"].GroupId"));
-			contentItem.setId(_ctx.longValue("ListMqSofamqWarnResponse.Data.Content["+ i +"].Id"));
-			contentItem.setInstanceId(_ctx.stringValue("ListMqSofamqWarnResponse.Data.Content["+ i +"].InstanceId"));
+			contentItem.setAlertTime(_ctx.stringValue("ListMqSofamqWarnResponse.Data.Content["+ i +"].AlertTime"));
+			contentItem.setDelayTime(_ctx.longValue("ListMqSofamqWarnResponse.Data.Content["+ i +"].DelayTime"));
+			contentItem.setTopic(_ctx.stringValue("ListMqSofamqWarnResponse.Data.Content["+ i +"].Topic"));
+			contentItem.setGmtCreate(_ctx.longValue("ListMqSofamqWarnResponse.Data.Content["+ i +"].GmtCreate"));
+			contentItem.setWarnStatus(_ctx.longValue("ListMqSofamqWarnResponse.Data.Content["+ i +"].WarnStatus"));
+			contentItem.setBlockTime(_ctx.longValue("ListMqSofamqWarnResponse.Data.Content["+ i +"].BlockTime"));
 			contentItem.setOperator(_ctx.stringValue("ListMqSofamqWarnResponse.Data.Content["+ i +"].Operator"));
 			contentItem.setThreshold(_ctx.longValue("ListMqSofamqWarnResponse.Data.Content["+ i +"].Threshold"));
-			contentItem.setTopic(_ctx.stringValue("ListMqSofamqWarnResponse.Data.Content["+ i +"].Topic"));
-			contentItem.setWarnLevel(_ctx.longValue("ListMqSofamqWarnResponse.Data.Content["+ i +"].WarnLevel"));
-			contentItem.setWarnStatus(_ctx.longValue("ListMqSofamqWarnResponse.Data.Content["+ i +"].WarnStatus"));
-			contentItem.setWarnType(_ctx.longValue("ListMqSofamqWarnResponse.Data.Content["+ i +"].WarnType"));
+			contentItem.setId(_ctx.longValue("ListMqSofamqWarnResponse.Data.Content["+ i +"].Id"));
 
 			content.add(contentItem);
 		}

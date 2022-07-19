@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GrayPushMsConfigDataResponse extends AcsResponse {
 
-	private String requestId;
+	private String resultMessage;
 
 	private String resultCode;
 
-	private String resultMessage;
+	private String requestId;
 
 	private List<PushResultItem> pushResult;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getResultMessage() {
+		return this.resultMessage;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setResultMessage(String resultMessage) {
+		this.resultMessage = resultMessage;
 	}
 
 	public String getResultCode() {
@@ -49,12 +49,12 @@ public class GrayPushMsConfigDataResponse extends AcsResponse {
 		this.resultCode = resultCode;
 	}
 
-	public String getResultMessage() {
-		return this.resultMessage;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setResultMessage(String resultMessage) {
-		this.resultMessage = resultMessage;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<PushResultItem> getPushResult() {
@@ -67,17 +67,9 @@ public class GrayPushMsConfigDataResponse extends AcsResponse {
 
 	public static class PushResultItem {
 
-		private String host;
-
 		private Boolean success;
 
-		public String getHost() {
-			return this.host;
-		}
-
-		public void setHost(String host) {
-			this.host = host;
-		}
+		private String host;
 
 		public Boolean getSuccess() {
 			return this.success;
@@ -85,6 +77,14 @@ public class GrayPushMsConfigDataResponse extends AcsResponse {
 
 		public void setSuccess(Boolean success) {
 			this.success = success;
+		}
+
+		public String getHost() {
+			return this.host;
+		}
+
+		public void setHost(String host) {
+			this.host = host;
 		}
 	}
 

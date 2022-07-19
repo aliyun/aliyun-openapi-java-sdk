@@ -23,8 +23,8 @@ public class DeleteMsConfigAttributesResponseUnmarshaller {
 	public static DeleteMsConfigAttributesResponse unmarshall(DeleteMsConfigAttributesResponse deleteMsConfigAttributesResponse, UnmarshallerContext _ctx) {
 		
 		deleteMsConfigAttributesResponse.setRequestId(_ctx.stringValue("DeleteMsConfigAttributesResponse.RequestId"));
-		deleteMsConfigAttributesResponse.setResultCode(_ctx.stringValue("DeleteMsConfigAttributesResponse.ResultCode"));
 		deleteMsConfigAttributesResponse.setResultMessage(_ctx.stringValue("DeleteMsConfigAttributesResponse.ResultMessage"));
+		deleteMsConfigAttributesResponse.setResultCode(_ctx.stringValue("DeleteMsConfigAttributesResponse.ResultCode"));
 	 
 	 	return deleteMsConfigAttributesResponse;
 	}

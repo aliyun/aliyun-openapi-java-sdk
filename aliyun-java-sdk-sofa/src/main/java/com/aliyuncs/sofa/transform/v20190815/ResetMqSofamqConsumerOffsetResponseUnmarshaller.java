@@ -23,8 +23,8 @@ public class ResetMqSofamqConsumerOffsetResponseUnmarshaller {
 	public static ResetMqSofamqConsumerOffsetResponse unmarshall(ResetMqSofamqConsumerOffsetResponse resetMqSofamqConsumerOffsetResponse, UnmarshallerContext _ctx) {
 		
 		resetMqSofamqConsumerOffsetResponse.setRequestId(_ctx.stringValue("ResetMqSofamqConsumerOffsetResponse.RequestId"));
-		resetMqSofamqConsumerOffsetResponse.setResultCode(_ctx.stringValue("ResetMqSofamqConsumerOffsetResponse.ResultCode"));
 		resetMqSofamqConsumerOffsetResponse.setResultMessage(_ctx.stringValue("ResetMqSofamqConsumerOffsetResponse.ResultMessage"));
+		resetMqSofamqConsumerOffsetResponse.setResultCode(_ctx.stringValue("ResetMqSofamqConsumerOffsetResponse.ResultCode"));
 	 
 	 	return resetMqSofamqConsumerOffsetResponse;
 	}

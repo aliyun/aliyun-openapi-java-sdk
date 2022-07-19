@@ -23,8 +23,8 @@ public class QueryMqSofamqTraceByTopicResponseUnmarshaller {
 	public static QueryMqSofamqTraceByTopicResponse unmarshall(QueryMqSofamqTraceByTopicResponse queryMqSofamqTraceByTopicResponse, UnmarshallerContext _ctx) {
 		
 		queryMqSofamqTraceByTopicResponse.setRequestId(_ctx.stringValue("QueryMqSofamqTraceByTopicResponse.RequestId"));
-		queryMqSofamqTraceByTopicResponse.setResultCode(_ctx.stringValue("QueryMqSofamqTraceByTopicResponse.ResultCode"));
 		queryMqSofamqTraceByTopicResponse.setResultMessage(_ctx.stringValue("QueryMqSofamqTraceByTopicResponse.ResultMessage"));
+		queryMqSofamqTraceByTopicResponse.setResultCode(_ctx.stringValue("QueryMqSofamqTraceByTopicResponse.ResultCode"));
 		queryMqSofamqTraceByTopicResponse.setQueryId(_ctx.stringValue("QueryMqSofamqTraceByTopicResponse.QueryId"));
 	 
 	 	return queryMqSofamqTraceByTopicResponse;

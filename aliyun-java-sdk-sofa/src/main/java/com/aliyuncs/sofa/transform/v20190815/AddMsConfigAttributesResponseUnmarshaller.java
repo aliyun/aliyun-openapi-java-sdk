@@ -24,14 +24,14 @@ public class AddMsConfigAttributesResponseUnmarshaller {
 	public static AddMsConfigAttributesResponse unmarshall(AddMsConfigAttributesResponse addMsConfigAttributesResponse, UnmarshallerContext _ctx) {
 		
 		addMsConfigAttributesResponse.setRequestId(_ctx.stringValue("AddMsConfigAttributesResponse.RequestId"));
-		addMsConfigAttributesResponse.setResultCode(_ctx.stringValue("AddMsConfigAttributesResponse.ResultCode"));
 		addMsConfigAttributesResponse.setResultMessage(_ctx.stringValue("AddMsConfigAttributesResponse.ResultMessage"));
+		addMsConfigAttributesResponse.setResultCode(_ctx.stringValue("AddMsConfigAttributesResponse.ResultCode"));
 
 		Attribute attribute = new Attribute();
-		attribute.setAttributeName(_ctx.stringValue("AddMsConfigAttributesResponse.Attribute.AttributeName"));
-		attribute.setDesc(_ctx.stringValue("AddMsConfigAttributesResponse.Attribute.Desc"));
-		attribute.setId(_ctx.longValue("AddMsConfigAttributesResponse.Attribute.Id"));
 		attribute.setInstanceId(_ctx.stringValue("AddMsConfigAttributesResponse.Attribute.InstanceId"));
+		attribute.setAttributeName(_ctx.stringValue("AddMsConfigAttributesResponse.Attribute.AttributeName"));
+		attribute.setId(_ctx.longValue("AddMsConfigAttributesResponse.Attribute.Id"));
+		attribute.setDesc(_ctx.stringValue("AddMsConfigAttributesResponse.Attribute.Desc"));
 		addMsConfigAttributesResponse.setAttribute(attribute);
 	 
 	 	return addMsConfigAttributesResponse;

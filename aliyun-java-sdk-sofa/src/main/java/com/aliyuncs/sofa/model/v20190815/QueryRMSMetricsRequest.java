@@ -42,7 +42,7 @@ public class QueryRMSMetricsRequest extends RpcAcsRequest<QueryRMSMetricsRespons
 
 	private String plugin;
 	public QueryRMSMetricsRequest() {
-		super("SOFA", "2019-08-15", "QueryRMSMetrics", "sofacaferms");
+		super("SOFA", "2019-08-15", "QueryRMSMetrics");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

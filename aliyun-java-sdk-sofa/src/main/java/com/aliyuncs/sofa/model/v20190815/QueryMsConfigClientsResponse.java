@@ -25,13 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryMsConfigClientsResponse extends AcsResponse {
 
-	private String requestId;
+	private Long pageNum;
 
-	private String resultCode;
+	private String requestId;
 
 	private String resultMessage;
 
-	private Long pageNum;
+	private String resultCode;
 
 	private Long pageSize;
 
@@ -39,20 +39,20 @@ public class QueryMsConfigClientsResponse extends AcsResponse {
 
 	private List<ClientsItem> clients;
 
+	public Long getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Long pageNum) {
+		this.pageNum = pageNum;
+	}
+
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getResultCode() {
-		return this.resultCode;
-	}
-
-	public void setResultCode(String resultCode) {
-		this.resultCode = resultCode;
 	}
 
 	public String getResultMessage() {
@@ -63,12 +63,12 @@ public class QueryMsConfigClientsResponse extends AcsResponse {
 		this.resultMessage = resultMessage;
 	}
 
-	public Long getPageNum() {
-		return this.pageNum;
+	public String getResultCode() {
+		return this.resultCode;
 	}
 
-	public void setPageNum(Long pageNum) {
-		this.pageNum = pageNum;
+	public void setResultCode(String resultCode) {
+		this.resultCode = resultCode;
 	}
 
 	public Long getPageSize() {
@@ -97,28 +97,20 @@ public class QueryMsConfigClientsResponse extends AcsResponse {
 
 	public static class ClientsItem {
 
-		private String cell;
-
-		private String data;
+		private String pushData;
 
 		private String ip;
 
-		private String pushData;
+		private String data;
 
-		public String getCell() {
-			return this.cell;
+		private String cell;
+
+		public String getPushData() {
+			return this.pushData;
 		}
 
-		public void setCell(String cell) {
-			this.cell = cell;
-		}
-
-		public String getData() {
-			return this.data;
-		}
-
-		public void setData(String data) {
-			this.data = data;
+		public void setPushData(String pushData) {
+			this.pushData = pushData;
 		}
 
 		public String getIp() {
@@ -129,12 +121,20 @@ public class QueryMsConfigClientsResponse extends AcsResponse {
 			this.ip = ip;
 		}
 
-		public String getPushData() {
-			return this.pushData;
+		public String getData() {
+			return this.data;
 		}
 
-		public void setPushData(String pushData) {
-			this.pushData = pushData;
+		public void setData(String data) {
+			this.data = data;
+		}
+
+		public String getCell() {
+			return this.cell;
+		}
+
+		public void setCell(String cell) {
+			this.cell = cell;
 		}
 	}
 

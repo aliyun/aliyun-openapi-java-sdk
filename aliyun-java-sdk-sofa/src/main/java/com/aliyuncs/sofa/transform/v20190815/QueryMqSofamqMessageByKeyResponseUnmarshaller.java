@@ -28,23 +28,23 @@ public class QueryMqSofamqMessageByKeyResponseUnmarshaller {
 	public static QueryMqSofamqMessageByKeyResponse unmarshall(QueryMqSofamqMessageByKeyResponse queryMqSofamqMessageByKeyResponse, UnmarshallerContext _ctx) {
 		
 		queryMqSofamqMessageByKeyResponse.setRequestId(_ctx.stringValue("QueryMqSofamqMessageByKeyResponse.RequestId"));
-		queryMqSofamqMessageByKeyResponse.setResultCode(_ctx.stringValue("QueryMqSofamqMessageByKeyResponse.ResultCode"));
 		queryMqSofamqMessageByKeyResponse.setResultMessage(_ctx.stringValue("QueryMqSofamqMessageByKeyResponse.ResultMessage"));
+		queryMqSofamqMessageByKeyResponse.setResultCode(_ctx.stringValue("QueryMqSofamqMessageByKeyResponse.ResultCode"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryMqSofamqMessageByKeyResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setBody(_ctx.stringValue("QueryMqSofamqMessageByKeyResponse.Data["+ i +"].Body"));
-			dataItem.setBodyCrc(_ctx.longValue("QueryMqSofamqMessageByKeyResponse.Data["+ i +"].BodyCrc"));
-			dataItem.setBornHost(_ctx.stringValue("QueryMqSofamqMessageByKeyResponse.Data["+ i +"].BornHost"));
-			dataItem.setBornTimestamp(_ctx.longValue("QueryMqSofamqMessageByKeyResponse.Data["+ i +"].BornTimestamp"));
-			dataItem.setInstanceId(_ctx.stringValue("QueryMqSofamqMessageByKeyResponse.Data["+ i +"].InstanceId"));
-			dataItem.setMsgId(_ctx.stringValue("QueryMqSofamqMessageByKeyResponse.Data["+ i +"].MsgId"));
-			dataItem.setReconsumeTimes(_ctx.longValue("QueryMqSofamqMessageByKeyResponse.Data["+ i +"].ReconsumeTimes"));
-			dataItem.setStoreHost(_ctx.stringValue("QueryMqSofamqMessageByKeyResponse.Data["+ i +"].StoreHost"));
 			dataItem.setStoreSize(_ctx.longValue("QueryMqSofamqMessageByKeyResponse.Data["+ i +"].StoreSize"));
+			dataItem.setReconsumeTimes(_ctx.longValue("QueryMqSofamqMessageByKeyResponse.Data["+ i +"].ReconsumeTimes"));
 			dataItem.setStoreTimestamp(_ctx.longValue("QueryMqSofamqMessageByKeyResponse.Data["+ i +"].StoreTimestamp"));
 			dataItem.setTopic(_ctx.stringValue("QueryMqSofamqMessageByKeyResponse.Data["+ i +"].Topic"));
+			dataItem.setStoreHost(_ctx.stringValue("QueryMqSofamqMessageByKeyResponse.Data["+ i +"].StoreHost"));
+			dataItem.setBornTimestamp(_ctx.longValue("QueryMqSofamqMessageByKeyResponse.Data["+ i +"].BornTimestamp"));
+			dataItem.setInstanceId(_ctx.stringValue("QueryMqSofamqMessageByKeyResponse.Data["+ i +"].InstanceId"));
+			dataItem.setBody(_ctx.stringValue("QueryMqSofamqMessageByKeyResponse.Data["+ i +"].Body"));
+			dataItem.setMsgId(_ctx.stringValue("QueryMqSofamqMessageByKeyResponse.Data["+ i +"].MsgId"));
+			dataItem.setBodyCrc(_ctx.longValue("QueryMqSofamqMessageByKeyResponse.Data["+ i +"].BodyCrc"));
+			dataItem.setBornHost(_ctx.stringValue("QueryMqSofamqMessageByKeyResponse.Data["+ i +"].BornHost"));
 
 			List<PropertyListItem> propertyList = new ArrayList<PropertyListItem>();
 			for (int j = 0; j < _ctx.lengthValue("QueryMqSofamqMessageByKeyResponse.Data["+ i +"].PropertyList.Length"); j++) {

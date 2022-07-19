@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryMsConfigDataResponse extends AcsResponse {
 
-	private String requestId;
+	private String resultMessage;
 
 	private String resultCode;
 
-	private String resultMessage;
+	private String requestId;
 
 	private List<QueryResultItem> queryResult;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getResultMessage() {
+		return this.resultMessage;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setResultMessage(String resultMessage) {
+		this.resultMessage = resultMessage;
 	}
 
 	public String getResultCode() {
@@ -49,12 +49,12 @@ public class QueryMsConfigDataResponse extends AcsResponse {
 		this.resultCode = resultCode;
 	}
 
-	public String getResultMessage() {
-		return this.resultMessage;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setResultMessage(String resultMessage) {
-		this.resultMessage = resultMessage;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<QueryResultItem> getQueryResult() {
@@ -67,17 +67,9 @@ public class QueryMsConfigDataResponse extends AcsResponse {
 
 	public static class QueryResultItem {
 
-		private String cell;
-
 		private String data;
 
-		public String getCell() {
-			return this.cell;
-		}
-
-		public void setCell(String cell) {
-			this.cell = cell;
-		}
+		private String cell;
 
 		public String getData() {
 			return this.data;
@@ -85,6 +77,14 @@ public class QueryMsConfigDataResponse extends AcsResponse {
 
 		public void setData(String data) {
 			this.data = data;
+		}
+
+		public String getCell() {
+			return this.cell;
+		}
+
+		public void setCell(String cell) {
+			this.cell = cell;
 		}
 	}
 

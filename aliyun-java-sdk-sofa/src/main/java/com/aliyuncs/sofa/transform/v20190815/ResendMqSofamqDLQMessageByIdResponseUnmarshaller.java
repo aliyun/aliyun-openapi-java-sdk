@@ -23,8 +23,8 @@ public class ResendMqSofamqDLQMessageByIdResponseUnmarshaller {
 	public static ResendMqSofamqDLQMessageByIdResponse unmarshall(ResendMqSofamqDLQMessageByIdResponse resendMqSofamqDLQMessageByIdResponse, UnmarshallerContext _ctx) {
 		
 		resendMqSofamqDLQMessageByIdResponse.setRequestId(_ctx.stringValue("ResendMqSofamqDLQMessageByIdResponse.RequestId"));
-		resendMqSofamqDLQMessageByIdResponse.setResultCode(_ctx.stringValue("ResendMqSofamqDLQMessageByIdResponse.ResultCode"));
 		resendMqSofamqDLQMessageByIdResponse.setResultMessage(_ctx.stringValue("ResendMqSofamqDLQMessageByIdResponse.ResultMessage"));
+		resendMqSofamqDLQMessageByIdResponse.setResultCode(_ctx.stringValue("ResendMqSofamqDLQMessageByIdResponse.ResultCode"));
 	 
 	 	return resendMqSofamqDLQMessageByIdResponse;
 	}

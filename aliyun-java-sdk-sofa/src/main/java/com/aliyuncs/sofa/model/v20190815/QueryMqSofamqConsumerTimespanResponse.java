@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryMqSofamqConsumerTimespanResponse extends AcsResponse {
 
-	private String requestId;
+	private String resultMessage;
 
 	private String resultCode;
 
-	private String resultMessage;
+	private String requestId;
 
 	private Data data;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getResultMessage() {
+		return this.resultMessage;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setResultMessage(String resultMessage) {
+		this.resultMessage = resultMessage;
 	}
 
 	public String getResultCode() {
@@ -48,12 +48,12 @@ public class QueryMqSofamqConsumerTimespanResponse extends AcsResponse {
 		this.resultCode = resultCode;
 	}
 
-	public String getResultMessage() {
-		return this.resultMessage;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setResultMessage(String resultMessage) {
-		this.resultMessage = resultMessage;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Data getData() {
@@ -66,31 +66,15 @@ public class QueryMqSofamqConsumerTimespanResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Long consumeTimestamp;
-
-		private String instanceId;
-
 		private Long maxTimestamp;
 
 		private Long minTimestamp;
 
+		private String instanceId;
+
+		private Long consumeTimestamp;
+
 		private String topic;
-
-		public Long getConsumeTimestamp() {
-			return this.consumeTimestamp;
-		}
-
-		public void setConsumeTimestamp(Long consumeTimestamp) {
-			this.consumeTimestamp = consumeTimestamp;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
 
 		public Long getMaxTimestamp() {
 			return this.maxTimestamp;
@@ -106,6 +90,22 @@ public class QueryMqSofamqConsumerTimespanResponse extends AcsResponse {
 
 		public void setMinTimestamp(Long minTimestamp) {
 			this.minTimestamp = minTimestamp;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public Long getConsumeTimestamp() {
+			return this.consumeTimestamp;
+		}
+
+		public void setConsumeTimestamp(Long consumeTimestamp) {
+			this.consumeTimestamp = consumeTimestamp;
 		}
 
 		public String getTopic() {

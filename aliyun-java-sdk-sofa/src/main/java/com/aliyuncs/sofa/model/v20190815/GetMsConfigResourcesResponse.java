@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetMsConfigResourcesResponse extends AcsResponse {
 
-	private String requestId;
+	private String resultMessage;
 
 	private String resultCode;
 
-	private String resultMessage;
+	private String requestId;
 
 	private Resource resource;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getResultMessage() {
+		return this.resultMessage;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setResultMessage(String resultMessage) {
+		this.resultMessage = resultMessage;
 	}
 
 	public String getResultCode() {
@@ -49,12 +49,12 @@ public class GetMsConfigResourcesResponse extends AcsResponse {
 		this.resultCode = resultCode;
 	}
 
-	public String getResultMessage() {
-		return this.resultMessage;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setResultMessage(String resultMessage) {
-		this.resultMessage = resultMessage;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Resource getResource() {
@@ -69,15 +69,15 @@ public class GetMsConfigResourcesResponse extends AcsResponse {
 
 		private String appName;
 
-		private String desc;
-
-		private Long id;
+		private String region;
 
 		private String instanceId;
 
-		private String region;
-
 		private String resourceId;
+
+		private Long id;
+
+		private String desc;
 
 		private List<AttributesItem> attributes;
 
@@ -89,20 +89,12 @@ public class GetMsConfigResourcesResponse extends AcsResponse {
 			this.appName = appName;
 		}
 
-		public String getDesc() {
-			return this.desc;
+		public String getRegion() {
+			return this.region;
 		}
 
-		public void setDesc(String desc) {
-			this.desc = desc;
-		}
-
-		public Long getId() {
-			return this.id;
-		}
-
-		public void setId(Long id) {
-			this.id = id;
+		public void setRegion(String region) {
+			this.region = region;
 		}
 
 		public String getInstanceId() {
@@ -113,20 +105,28 @@ public class GetMsConfigResourcesResponse extends AcsResponse {
 			this.instanceId = instanceId;
 		}
 
-		public String getRegion() {
-			return this.region;
-		}
-
-		public void setRegion(String region) {
-			this.region = region;
-		}
-
 		public String getResourceId() {
 			return this.resourceId;
 		}
 
 		public void setResourceId(String resourceId) {
 			this.resourceId = resourceId;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
+		}
+
+		public String getDesc() {
+			return this.desc;
+		}
+
+		public void setDesc(String desc) {
+			this.desc = desc;
 		}
 
 		public List<AttributesItem> getAttributes() {
@@ -139,13 +139,21 @@ public class GetMsConfigResourcesResponse extends AcsResponse {
 
 		public static class AttributesItem {
 
-			private String attributeName;
+			private String instanceId;
 
-			private String desc;
+			private String attributeName;
 
 			private Long id;
 
-			private String instanceId;
+			private String desc;
+
+			public String getInstanceId() {
+				return this.instanceId;
+			}
+
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
+			}
 
 			public String getAttributeName() {
 				return this.attributeName;
@@ -153,14 +161,6 @@ public class GetMsConfigResourcesResponse extends AcsResponse {
 
 			public void setAttributeName(String attributeName) {
 				this.attributeName = attributeName;
-			}
-
-			public String getDesc() {
-				return this.desc;
-			}
-
-			public void setDesc(String desc) {
-				this.desc = desc;
 			}
 
 			public Long getId() {
@@ -171,12 +171,12 @@ public class GetMsConfigResourcesResponse extends AcsResponse {
 				this.id = id;
 			}
 
-			public String getInstanceId() {
-				return this.instanceId;
+			public String getDesc() {
+				return this.desc;
 			}
 
-			public void setInstanceId(String instanceId) {
-				this.instanceId = instanceId;
+			public void setDesc(String desc) {
+				this.desc = desc;
 			}
 		}
 	}

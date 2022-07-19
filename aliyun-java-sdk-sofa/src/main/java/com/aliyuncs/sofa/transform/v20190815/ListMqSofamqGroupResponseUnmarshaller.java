@@ -28,8 +28,8 @@ public class ListMqSofamqGroupResponseUnmarshaller {
 	public static ListMqSofamqGroupResponse unmarshall(ListMqSofamqGroupResponse listMqSofamqGroupResponse, UnmarshallerContext _ctx) {
 		
 		listMqSofamqGroupResponse.setRequestId(_ctx.stringValue("ListMqSofamqGroupResponse.RequestId"));
-		listMqSofamqGroupResponse.setResultCode(_ctx.stringValue("ListMqSofamqGroupResponse.ResultCode"));
 		listMqSofamqGroupResponse.setResultMessage(_ctx.stringValue("ListMqSofamqGroupResponse.ResultMessage"));
+		listMqSofamqGroupResponse.setResultCode(_ctx.stringValue("ListMqSofamqGroupResponse.ResultCode"));
 
 		Data data = new Data();
 		data.setPageNum(_ctx.longValue("ListMqSofamqGroupResponse.Data.PageNum"));
@@ -39,22 +39,22 @@ public class ListMqSofamqGroupResponseUnmarshaller {
 		List<ContentItem> content = new ArrayList<ContentItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListMqSofamqGroupResponse.Data.Content.Length"); i++) {
 			ContentItem contentItem = new ContentItem();
-			contentItem.setCluster(_ctx.stringValue("ListMqSofamqGroupResponse.Data.Content["+ i +"].Cluster"));
-			contentItem.setDeleteMark(_ctx.stringValue("ListMqSofamqGroupResponse.Data.Content["+ i +"].DeleteMark"));
-			contentItem.setGmtCreate(_ctx.longValue("ListMqSofamqGroupResponse.Data.Content["+ i +"].GmtCreate"));
-			contentItem.setGmtModified(_ctx.longValue("ListMqSofamqGroupResponse.Data.Content["+ i +"].GmtModified"));
-			contentItem.setGroupId(_ctx.stringValue("ListMqSofamqGroupResponse.Data.Content["+ i +"].GroupId"));
-			contentItem.setGroupType(_ctx.stringValue("ListMqSofamqGroupResponse.Data.Content["+ i +"].GroupType"));
-			contentItem.setId(_ctx.longValue("ListMqSofamqGroupResponse.Data.Content["+ i +"].Id"));
-			contentItem.setInstanceId(_ctx.stringValue("ListMqSofamqGroupResponse.Data.Content["+ i +"].InstanceId"));
-			contentItem.setOperator(_ctx.stringValue("ListMqSofamqGroupResponse.Data.Content["+ i +"].Operator"));
-			contentItem.setReadEnable(_ctx.booleanValue("ListMqSofamqGroupResponse.Data.Content["+ i +"].ReadEnable"));
-			contentItem.setRemark(_ctx.stringValue("ListMqSofamqGroupResponse.Data.Content["+ i +"].Remark"));
 			contentItem.setRetryPerm(_ctx.longValue("ListMqSofamqGroupResponse.Data.Content["+ i +"].RetryPerm"));
-			contentItem.setRetryReadQueueNum(_ctx.longValue("ListMqSofamqGroupResponse.Data.Content["+ i +"].RetryReadQueueNum"));
+			contentItem.setCluster(_ctx.stringValue("ListMqSofamqGroupResponse.Data.Content["+ i +"].Cluster"));
+			contentItem.setRemark(_ctx.stringValue("ListMqSofamqGroupResponse.Data.Content["+ i +"].Remark"));
+			contentItem.setInstanceId(_ctx.stringValue("ListMqSofamqGroupResponse.Data.Content["+ i +"].InstanceId"));
+			contentItem.setGmtModified(_ctx.longValue("ListMqSofamqGroupResponse.Data.Content["+ i +"].GmtModified"));
 			contentItem.setRetryWriteQueueNum(_ctx.longValue("ListMqSofamqGroupResponse.Data.Content["+ i +"].RetryWriteQueueNum"));
-			contentItem.setScope(_ctx.stringValue("ListMqSofamqGroupResponse.Data.Content["+ i +"].Scope"));
+			contentItem.setDeleteMark(_ctx.stringValue("ListMqSofamqGroupResponse.Data.Content["+ i +"].DeleteMark"));
+			contentItem.setGroupId(_ctx.stringValue("ListMqSofamqGroupResponse.Data.Content["+ i +"].GroupId"));
 			contentItem.setVersion(_ctx.longValue("ListMqSofamqGroupResponse.Data.Content["+ i +"].Version"));
+			contentItem.setGmtCreate(_ctx.longValue("ListMqSofamqGroupResponse.Data.Content["+ i +"].GmtCreate"));
+			contentItem.setRetryReadQueueNum(_ctx.longValue("ListMqSofamqGroupResponse.Data.Content["+ i +"].RetryReadQueueNum"));
+			contentItem.setScope(_ctx.stringValue("ListMqSofamqGroupResponse.Data.Content["+ i +"].Scope"));
+			contentItem.setOperator(_ctx.stringValue("ListMqSofamqGroupResponse.Data.Content["+ i +"].Operator"));
+			contentItem.setGroupType(_ctx.stringValue("ListMqSofamqGroupResponse.Data.Content["+ i +"].GroupType"));
+			contentItem.setReadEnable(_ctx.booleanValue("ListMqSofamqGroupResponse.Data.Content["+ i +"].ReadEnable"));
+			contentItem.setId(_ctx.longValue("ListMqSofamqGroupResponse.Data.Content["+ i +"].Id"));
 
 			content.add(contentItem);
 		}

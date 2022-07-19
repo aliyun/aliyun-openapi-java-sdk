@@ -37,7 +37,7 @@ public class QueryMqSofamqTraceByMsgKeyRequest extends RpcAcsRequest<QueryMqSofa
 
 	private String msgKey;
 	public QueryMqSofamqTraceByMsgKeyRequest() {
-		super("SOFA", "2019-08-15", "QueryMqSofamqTraceByMsgKey", "sofacaferms");
+		super("SOFA", "2019-08-15", "QueryMqSofamqTraceByMsgKey");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

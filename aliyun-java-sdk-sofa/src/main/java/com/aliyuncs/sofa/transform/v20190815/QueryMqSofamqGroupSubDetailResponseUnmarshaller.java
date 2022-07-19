@@ -28,8 +28,8 @@ public class QueryMqSofamqGroupSubDetailResponseUnmarshaller {
 	public static QueryMqSofamqGroupSubDetailResponse unmarshall(QueryMqSofamqGroupSubDetailResponse queryMqSofamqGroupSubDetailResponse, UnmarshallerContext _ctx) {
 		
 		queryMqSofamqGroupSubDetailResponse.setRequestId(_ctx.stringValue("QueryMqSofamqGroupSubDetailResponse.RequestId"));
-		queryMqSofamqGroupSubDetailResponse.setResultCode(_ctx.stringValue("QueryMqSofamqGroupSubDetailResponse.ResultCode"));
 		queryMqSofamqGroupSubDetailResponse.setResultMessage(_ctx.stringValue("QueryMqSofamqGroupSubDetailResponse.ResultMessage"));
+		queryMqSofamqGroupSubDetailResponse.setResultCode(_ctx.stringValue("QueryMqSofamqGroupSubDetailResponse.ResultCode"));
 
 		Data data = new Data();
 		data.setGroupId(_ctx.stringValue("QueryMqSofamqGroupSubDetailResponse.Data.GroupId"));
@@ -39,8 +39,8 @@ public class QueryMqSofamqGroupSubDetailResponseUnmarshaller {
 		List<SubscriptionDataListItem> subscriptionDataList = new ArrayList<SubscriptionDataListItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryMqSofamqGroupSubDetailResponse.Data.SubscriptionDataList.Length"); i++) {
 			SubscriptionDataListItem subscriptionDataListItem = new SubscriptionDataListItem();
-			subscriptionDataListItem.setOnline(_ctx.booleanValue("QueryMqSofamqGroupSubDetailResponse.Data.SubscriptionDataList["+ i +"].Online"));
 			subscriptionDataListItem.setSubString(_ctx.stringValue("QueryMqSofamqGroupSubDetailResponse.Data.SubscriptionDataList["+ i +"].SubString"));
+			subscriptionDataListItem.setOnline(_ctx.booleanValue("QueryMqSofamqGroupSubDetailResponse.Data.SubscriptionDataList["+ i +"].Online"));
 			subscriptionDataListItem.setTopic(_ctx.stringValue("QueryMqSofamqGroupSubDetailResponse.Data.SubscriptionDataList["+ i +"].Topic"));
 
 			subscriptionDataList.add(subscriptionDataListItem);

@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryMqSofamqConsumerConnectionResponse extends AcsResponse {
 
-	private String requestId;
+	private String resultMessage;
 
 	private String resultCode;
 
-	private String resultMessage;
+	private String requestId;
 
 	private Data data;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getResultMessage() {
+		return this.resultMessage;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setResultMessage(String resultMessage) {
+		this.resultMessage = resultMessage;
 	}
 
 	public String getResultCode() {
@@ -49,12 +49,12 @@ public class QueryMqSofamqConsumerConnectionResponse extends AcsResponse {
 		this.resultCode = resultCode;
 	}
 
-	public String getResultMessage() {
-		return this.resultMessage;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setResultMessage(String resultMessage) {
-		this.resultMessage = resultMessage;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Data getData() {
@@ -79,15 +79,23 @@ public class QueryMqSofamqConsumerConnectionResponse extends AcsResponse {
 
 		public static class ConnectionListItem {
 
+			private String remoteIp;
+
 			private String clientAddr;
 
-			private String clientId;
+			private String version;
 
 			private String language;
 
-			private String remoteIp;
+			private String clientId;
 
-			private String version;
+			public String getRemoteIp() {
+				return this.remoteIp;
+			}
+
+			public void setRemoteIp(String remoteIp) {
+				this.remoteIp = remoteIp;
+			}
 
 			public String getClientAddr() {
 				return this.clientAddr;
@@ -97,12 +105,12 @@ public class QueryMqSofamqConsumerConnectionResponse extends AcsResponse {
 				this.clientAddr = clientAddr;
 			}
 
-			public String getClientId() {
-				return this.clientId;
+			public String getVersion() {
+				return this.version;
 			}
 
-			public void setClientId(String clientId) {
-				this.clientId = clientId;
+			public void setVersion(String version) {
+				this.version = version;
 			}
 
 			public String getLanguage() {
@@ -113,20 +121,12 @@ public class QueryMqSofamqConsumerConnectionResponse extends AcsResponse {
 				this.language = language;
 			}
 
-			public String getRemoteIp() {
-				return this.remoteIp;
+			public String getClientId() {
+				return this.clientId;
 			}
 
-			public void setRemoteIp(String remoteIp) {
-				this.remoteIp = remoteIp;
-			}
-
-			public String getVersion() {
-				return this.version;
-			}
-
-			public void setVersion(String version) {
-				this.version = version;
+			public void setClientId(String clientId) {
+				this.clientId = clientId;
 			}
 		}
 	}

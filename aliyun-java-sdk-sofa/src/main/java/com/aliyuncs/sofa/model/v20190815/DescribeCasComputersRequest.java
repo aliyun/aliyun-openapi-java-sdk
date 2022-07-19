@@ -36,7 +36,7 @@ public class DescribeCasComputersRequest extends RpcAcsRequest<DescribeCasComput
 
 	private String name;
 	public DescribeCasComputersRequest() {
-		super("SOFA", "2019-08-15", "DescribeCasComputers", "sofacaferms");
+		super("SOFA", "2019-08-15", "DescribeCasComputers");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListMqSofamqTopicResponse extends AcsResponse {
 
-	private String requestId;
+	private String resultMessage;
 
 	private String resultCode;
 
-	private String resultMessage;
+	private String requestId;
 
 	private Data data;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getResultMessage() {
+		return this.resultMessage;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setResultMessage(String resultMessage) {
+		this.resultMessage = resultMessage;
 	}
 
 	public String getResultCode() {
@@ -49,12 +49,12 @@ public class ListMqSofamqTopicResponse extends AcsResponse {
 		this.resultCode = resultCode;
 	}
 
-	public String getResultMessage() {
-		return this.resultMessage;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setResultMessage(String resultMessage) {
-		this.resultMessage = resultMessage;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Data getData() {
@@ -111,27 +111,27 @@ public class ListMqSofamqTopicResponse extends AcsResponse {
 
 			private String cluster;
 
-			private Long gmtCreate;
+			private String remark;
 
-			private Long gmtModified;
-
-			private Long id;
-
-			private String instanceId;
-
-			private Long messageType;
-
-			private String operator;
-
-			private Long perm;
+			private Long writeQueueNum;
 
 			private Long readQueueNum;
 
-			private String remark;
+			private String instanceId;
+
+			private Long gmtModified;
+
+			private Long messageType;
+
+			private Long perm;
 
 			private String topic;
 
-			private Long writeQueueNum;
+			private Long gmtCreate;
+
+			private String operator;
+
+			private Long id;
 
 			public String getCluster() {
 				return this.cluster;
@@ -139,70 +139,6 @@ public class ListMqSofamqTopicResponse extends AcsResponse {
 
 			public void setCluster(String cluster) {
 				this.cluster = cluster;
-			}
-
-			public Long getGmtCreate() {
-				return this.gmtCreate;
-			}
-
-			public void setGmtCreate(Long gmtCreate) {
-				this.gmtCreate = gmtCreate;
-			}
-
-			public Long getGmtModified() {
-				return this.gmtModified;
-			}
-
-			public void setGmtModified(Long gmtModified) {
-				this.gmtModified = gmtModified;
-			}
-
-			public Long getId() {
-				return this.id;
-			}
-
-			public void setId(Long id) {
-				this.id = id;
-			}
-
-			public String getInstanceId() {
-				return this.instanceId;
-			}
-
-			public void setInstanceId(String instanceId) {
-				this.instanceId = instanceId;
-			}
-
-			public Long getMessageType() {
-				return this.messageType;
-			}
-
-			public void setMessageType(Long messageType) {
-				this.messageType = messageType;
-			}
-
-			public String getOperator() {
-				return this.operator;
-			}
-
-			public void setOperator(String operator) {
-				this.operator = operator;
-			}
-
-			public Long getPerm() {
-				return this.perm;
-			}
-
-			public void setPerm(Long perm) {
-				this.perm = perm;
-			}
-
-			public Long getReadQueueNum() {
-				return this.readQueueNum;
-			}
-
-			public void setReadQueueNum(Long readQueueNum) {
-				this.readQueueNum = readQueueNum;
 			}
 
 			public String getRemark() {
@@ -213,6 +149,54 @@ public class ListMqSofamqTopicResponse extends AcsResponse {
 				this.remark = remark;
 			}
 
+			public Long getWriteQueueNum() {
+				return this.writeQueueNum;
+			}
+
+			public void setWriteQueueNum(Long writeQueueNum) {
+				this.writeQueueNum = writeQueueNum;
+			}
+
+			public Long getReadQueueNum() {
+				return this.readQueueNum;
+			}
+
+			public void setReadQueueNum(Long readQueueNum) {
+				this.readQueueNum = readQueueNum;
+			}
+
+			public String getInstanceId() {
+				return this.instanceId;
+			}
+
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
+			}
+
+			public Long getGmtModified() {
+				return this.gmtModified;
+			}
+
+			public void setGmtModified(Long gmtModified) {
+				this.gmtModified = gmtModified;
+			}
+
+			public Long getMessageType() {
+				return this.messageType;
+			}
+
+			public void setMessageType(Long messageType) {
+				this.messageType = messageType;
+			}
+
+			public Long getPerm() {
+				return this.perm;
+			}
+
+			public void setPerm(Long perm) {
+				this.perm = perm;
+			}
+
 			public String getTopic() {
 				return this.topic;
 			}
@@ -221,12 +205,28 @@ public class ListMqSofamqTopicResponse extends AcsResponse {
 				this.topic = topic;
 			}
 
-			public Long getWriteQueueNum() {
-				return this.writeQueueNum;
+			public Long getGmtCreate() {
+				return this.gmtCreate;
 			}
 
-			public void setWriteQueueNum(Long writeQueueNum) {
-				this.writeQueueNum = writeQueueNum;
+			public void setGmtCreate(Long gmtCreate) {
+				this.gmtCreate = gmtCreate;
+			}
+
+			public String getOperator() {
+				return this.operator;
+			}
+
+			public void setOperator(String operator) {
+				this.operator = operator;
+			}
+
+			public Long getId() {
+				return this.id;
+			}
+
+			public void setId(Long id) {
+				this.id = id;
 			}
 		}
 	}

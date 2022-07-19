@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetMqSofamqConsumerStatusResponse extends AcsResponse {
 
-	private String requestId;
+	private String resultMessage;
 
 	private String resultCode;
 
-	private String resultMessage;
+	private String requestId;
 
 	private Data data;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getResultMessage() {
+		return this.resultMessage;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setResultMessage(String resultMessage) {
+		this.resultMessage = resultMessage;
 	}
 
 	public String getResultCode() {
@@ -49,12 +49,12 @@ public class GetMqSofamqConsumerStatusResponse extends AcsResponse {
 		this.resultCode = resultCode;
 	}
 
-	public String getResultMessage() {
-		return this.resultMessage;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setResultMessage(String resultMessage) {
-		this.resultMessage = resultMessage;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Data getData() {
@@ -67,23 +67,23 @@ public class GetMqSofamqConsumerStatusResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String consumeModel;
-
 		private String consumeTps;
-
-		private Long delayTime;
-
-		private String instanceId;
-
-		private Long lastTimestamp;
-
-		private Boolean online;
-
-		private Boolean rebalanceOk;
 
 		private Boolean subscriptionSame;
 
+		private String consumeModel;
+
 		private Long totalDiff;
+
+		private Long lastTimestamp;
+
+		private Long delayTime;
+
+		private Boolean online;
+
+		private String instanceId;
+
+		private Boolean rebalanceOk;
 
 		private List<ConnectionSetItem> connectionSet;
 
@@ -91,60 +91,12 @@ public class GetMqSofamqConsumerStatusResponse extends AcsResponse {
 
 		private List<DetailInTopicListItem> detailInTopicList;
 
-		public String getConsumeModel() {
-			return this.consumeModel;
-		}
-
-		public void setConsumeModel(String consumeModel) {
-			this.consumeModel = consumeModel;
-		}
-
 		public String getConsumeTps() {
 			return this.consumeTps;
 		}
 
 		public void setConsumeTps(String consumeTps) {
 			this.consumeTps = consumeTps;
-		}
-
-		public Long getDelayTime() {
-			return this.delayTime;
-		}
-
-		public void setDelayTime(Long delayTime) {
-			this.delayTime = delayTime;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public Long getLastTimestamp() {
-			return this.lastTimestamp;
-		}
-
-		public void setLastTimestamp(Long lastTimestamp) {
-			this.lastTimestamp = lastTimestamp;
-		}
-
-		public Boolean getOnline() {
-			return this.online;
-		}
-
-		public void setOnline(Boolean online) {
-			this.online = online;
-		}
-
-		public Boolean getRebalanceOk() {
-			return this.rebalanceOk;
-		}
-
-		public void setRebalanceOk(Boolean rebalanceOk) {
-			this.rebalanceOk = rebalanceOk;
 		}
 
 		public Boolean getSubscriptionSame() {
@@ -155,12 +107,60 @@ public class GetMqSofamqConsumerStatusResponse extends AcsResponse {
 			this.subscriptionSame = subscriptionSame;
 		}
 
+		public String getConsumeModel() {
+			return this.consumeModel;
+		}
+
+		public void setConsumeModel(String consumeModel) {
+			this.consumeModel = consumeModel;
+		}
+
 		public Long getTotalDiff() {
 			return this.totalDiff;
 		}
 
 		public void setTotalDiff(Long totalDiff) {
 			this.totalDiff = totalDiff;
+		}
+
+		public Long getLastTimestamp() {
+			return this.lastTimestamp;
+		}
+
+		public void setLastTimestamp(Long lastTimestamp) {
+			this.lastTimestamp = lastTimestamp;
+		}
+
+		public Long getDelayTime() {
+			return this.delayTime;
+		}
+
+		public void setDelayTime(Long delayTime) {
+			this.delayTime = delayTime;
+		}
+
+		public Boolean getOnline() {
+			return this.online;
+		}
+
+		public void setOnline(Boolean online) {
+			this.online = online;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public Boolean getRebalanceOk() {
+			return this.rebalanceOk;
+		}
+
+		public void setRebalanceOk(Boolean rebalanceOk) {
+			this.rebalanceOk = rebalanceOk;
 		}
 
 		public List<ConnectionSetItem> getConnectionSet() {
@@ -189,39 +189,15 @@ public class GetMqSofamqConsumerStatusResponse extends AcsResponse {
 
 		public static class ConnectionSetItem {
 
-			private String clientAddr;
-
-			private String clientId;
-
-			private String language;
-
 			private String remoteIp;
+
+			private String clientAddr;
 
 			private String version;
 
-			public String getClientAddr() {
-				return this.clientAddr;
-			}
+			private String language;
 
-			public void setClientAddr(String clientAddr) {
-				this.clientAddr = clientAddr;
-			}
-
-			public String getClientId() {
-				return this.clientId;
-			}
-
-			public void setClientId(String clientId) {
-				this.clientId = clientId;
-			}
-
-			public String getLanguage() {
-				return this.language;
-			}
-
-			public void setLanguage(String language) {
-				this.language = language;
-			}
+			private String clientId;
 
 			public String getRemoteIp() {
 				return this.remoteIp;
@@ -231,63 +207,20 @@ public class GetMqSofamqConsumerStatusResponse extends AcsResponse {
 				this.remoteIp = remoteIp;
 			}
 
+			public String getClientAddr() {
+				return this.clientAddr;
+			}
+
+			public void setClientAddr(String clientAddr) {
+				this.clientAddr = clientAddr;
+			}
+
 			public String getVersion() {
 				return this.version;
 			}
 
 			public void setVersion(String version) {
 				this.version = version;
-			}
-		}
-
-		public static class ConsumerConnectionInfoListItem {
-
-			private String clientId;
-
-			private String connection;
-
-			private String consumeType;
-
-			private String language;
-
-			private Long lastTimestamp;
-
-			private String messageModel;
-
-			private Long startTimestamp;
-
-			private Long threadCount;
-
-			private String version;
-
-			private List<JstackItem> jstack;
-
-			private List<RunningDataListItem> runningDataList;
-
-			private List<SubscriptionSetItem> subscriptionSet;
-
-			public String getClientId() {
-				return this.clientId;
-			}
-
-			public void setClientId(String clientId) {
-				this.clientId = clientId;
-			}
-
-			public String getConnection() {
-				return this.connection;
-			}
-
-			public void setConnection(String connection) {
-				this.connection = connection;
-			}
-
-			public String getConsumeType() {
-				return this.consumeType;
-			}
-
-			public void setConsumeType(String consumeType) {
-				this.consumeType = consumeType;
 			}
 
 			public String getLanguage() {
@@ -298,12 +231,47 @@ public class GetMqSofamqConsumerStatusResponse extends AcsResponse {
 				this.language = language;
 			}
 
-			public Long getLastTimestamp() {
-				return this.lastTimestamp;
+			public String getClientId() {
+				return this.clientId;
 			}
 
-			public void setLastTimestamp(Long lastTimestamp) {
-				this.lastTimestamp = lastTimestamp;
+			public void setClientId(String clientId) {
+				this.clientId = clientId;
+			}
+		}
+
+		public static class ConsumerConnectionInfoListItem {
+
+			private String connection;
+
+			private String messageModel;
+
+			private String version;
+
+			private Long startTimestamp;
+
+			private Long lastTimestamp;
+
+			private String consumeType;
+
+			private Long threadCount;
+
+			private String language;
+
+			private String clientId;
+
+			private List<JstackItem> jstack;
+
+			private List<RunningDataListItem> runningDataList;
+
+			private List<SubscriptionSetItem> subscriptionSet;
+
+			public String getConnection() {
+				return this.connection;
+			}
+
+			public void setConnection(String connection) {
+				this.connection = connection;
 			}
 
 			public String getMessageModel() {
@@ -314,12 +282,36 @@ public class GetMqSofamqConsumerStatusResponse extends AcsResponse {
 				this.messageModel = messageModel;
 			}
 
+			public String getVersion() {
+				return this.version;
+			}
+
+			public void setVersion(String version) {
+				this.version = version;
+			}
+
 			public Long getStartTimestamp() {
 				return this.startTimestamp;
 			}
 
 			public void setStartTimestamp(Long startTimestamp) {
 				this.startTimestamp = startTimestamp;
+			}
+
+			public Long getLastTimestamp() {
+				return this.lastTimestamp;
+			}
+
+			public void setLastTimestamp(Long lastTimestamp) {
+				this.lastTimestamp = lastTimestamp;
+			}
+
+			public String getConsumeType() {
+				return this.consumeType;
+			}
+
+			public void setConsumeType(String consumeType) {
+				this.consumeType = consumeType;
 			}
 
 			public Long getThreadCount() {
@@ -330,12 +322,20 @@ public class GetMqSofamqConsumerStatusResponse extends AcsResponse {
 				this.threadCount = threadCount;
 			}
 
-			public String getVersion() {
-				return this.version;
+			public String getLanguage() {
+				return this.language;
 			}
 
-			public void setVersion(String version) {
-				this.version = version;
+			public void setLanguage(String language) {
+				this.language = language;
+			}
+
+			public String getClientId() {
+				return this.clientId;
+			}
+
+			public void setClientId(String clientId) {
+				this.clientId = clientId;
 			}
 
 			public List<JstackItem> getJstack() {
@@ -387,43 +387,19 @@ public class GetMqSofamqConsumerStatusResponse extends AcsResponse {
 
 			public static class RunningDataListItem {
 
-				private Long diff;
-
-				private Long failedCountPerHour;
-
-				private String failedTps;
-
 				private String groupId;
 
-				private String okTps;
+				private Long diff;
 
 				private String rt;
 
 				private String topic;
 
-				public Long getDiff() {
-					return this.diff;
-				}
+				private Long failedCountPerHour;
 
-				public void setDiff(Long diff) {
-					this.diff = diff;
-				}
+				private String okTps;
 
-				public Long getFailedCountPerHour() {
-					return this.failedCountPerHour;
-				}
-
-				public void setFailedCountPerHour(Long failedCountPerHour) {
-					this.failedCountPerHour = failedCountPerHour;
-				}
-
-				public String getFailedTps() {
-					return this.failedTps;
-				}
-
-				public void setFailedTps(String failedTps) {
-					this.failedTps = failedTps;
-				}
+				private String failedTps;
 
 				public String getGroupId() {
 					return this.groupId;
@@ -433,12 +409,12 @@ public class GetMqSofamqConsumerStatusResponse extends AcsResponse {
 					this.groupId = groupId;
 				}
 
-				public String getOkTps() {
-					return this.okTps;
+				public Long getDiff() {
+					return this.diff;
 				}
 
-				public void setOkTps(String okTps) {
-					this.okTps = okTps;
+				public void setDiff(Long diff) {
+					this.diff = diff;
 				}
 
 				public String getRt() {
@@ -455,6 +431,30 @@ public class GetMqSofamqConsumerStatusResponse extends AcsResponse {
 
 				public void setTopic(String topic) {
 					this.topic = topic;
+				}
+
+				public Long getFailedCountPerHour() {
+					return this.failedCountPerHour;
+				}
+
+				public void setFailedCountPerHour(Long failedCountPerHour) {
+					this.failedCountPerHour = failedCountPerHour;
+				}
+
+				public String getOkTps() {
+					return this.okTps;
+				}
+
+				public void setOkTps(String okTps) {
+					this.okTps = okTps;
+				}
+
+				public String getFailedTps() {
+					return this.failedTps;
+				}
+
+				public void setFailedTps(String failedTps) {
+					this.failedTps = failedTps;
 				}
 			}
 
@@ -504,13 +504,21 @@ public class GetMqSofamqConsumerStatusResponse extends AcsResponse {
 
 		public static class DetailInTopicListItem {
 
+			private Long totalDiff;
+
 			private Long delayTime;
 
 			private Long lastTimestamp;
 
 			private String topic;
 
-			private Long totalDiff;
+			public Long getTotalDiff() {
+				return this.totalDiff;
+			}
+
+			public void setTotalDiff(Long totalDiff) {
+				this.totalDiff = totalDiff;
+			}
 
 			public Long getDelayTime() {
 				return this.delayTime;
@@ -534,14 +542,6 @@ public class GetMqSofamqConsumerStatusResponse extends AcsResponse {
 
 			public void setTopic(String topic) {
 				this.topic = topic;
-			}
-
-			public Long getTotalDiff() {
-				return this.totalDiff;
-			}
-
-			public void setTotalDiff(Long totalDiff) {
-				this.totalDiff = totalDiff;
 			}
 		}
 	}

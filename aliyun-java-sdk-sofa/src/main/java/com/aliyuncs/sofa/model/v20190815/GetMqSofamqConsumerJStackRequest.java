@@ -33,7 +33,7 @@ public class GetMqSofamqConsumerJStackRequest extends RpcAcsRequest<GetMqSofamqC
 
 	private String instanceId;
 	public GetMqSofamqConsumerJStackRequest() {
-		super("SOFA", "2019-08-15", "GetMqSofamqConsumerJStack", "sofacaferms");
+		super("SOFA", "2019-08-15", "GetMqSofamqConsumerJStack");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

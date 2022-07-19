@@ -23,8 +23,8 @@ public class DeleteMqSofamqGroupResponseUnmarshaller {
 	public static DeleteMqSofamqGroupResponse unmarshall(DeleteMqSofamqGroupResponse deleteMqSofamqGroupResponse, UnmarshallerContext _ctx) {
 		
 		deleteMqSofamqGroupResponse.setRequestId(_ctx.stringValue("DeleteMqSofamqGroupResponse.RequestId"));
-		deleteMqSofamqGroupResponse.setResultCode(_ctx.stringValue("DeleteMqSofamqGroupResponse.ResultCode"));
 		deleteMqSofamqGroupResponse.setResultMessage(_ctx.stringValue("DeleteMqSofamqGroupResponse.ResultMessage"));
+		deleteMqSofamqGroupResponse.setResultCode(_ctx.stringValue("DeleteMqSofamqGroupResponse.ResultCode"));
 	 
 	 	return deleteMqSofamqGroupResponse;
 	}

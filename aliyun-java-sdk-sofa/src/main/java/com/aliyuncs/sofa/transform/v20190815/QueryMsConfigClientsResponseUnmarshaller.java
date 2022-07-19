@@ -27,19 +27,19 @@ public class QueryMsConfigClientsResponseUnmarshaller {
 	public static QueryMsConfigClientsResponse unmarshall(QueryMsConfigClientsResponse queryMsConfigClientsResponse, UnmarshallerContext _ctx) {
 		
 		queryMsConfigClientsResponse.setRequestId(_ctx.stringValue("QueryMsConfigClientsResponse.RequestId"));
-		queryMsConfigClientsResponse.setResultCode(_ctx.stringValue("QueryMsConfigClientsResponse.ResultCode"));
-		queryMsConfigClientsResponse.setResultMessage(_ctx.stringValue("QueryMsConfigClientsResponse.ResultMessage"));
 		queryMsConfigClientsResponse.setPageNum(_ctx.longValue("QueryMsConfigClientsResponse.PageNum"));
+		queryMsConfigClientsResponse.setResultMessage(_ctx.stringValue("QueryMsConfigClientsResponse.ResultMessage"));
+		queryMsConfigClientsResponse.setResultCode(_ctx.stringValue("QueryMsConfigClientsResponse.ResultCode"));
 		queryMsConfigClientsResponse.setPageSize(_ctx.longValue("QueryMsConfigClientsResponse.PageSize"));
 		queryMsConfigClientsResponse.setTotalCount(_ctx.longValue("QueryMsConfigClientsResponse.TotalCount"));
 
 		List<ClientsItem> clients = new ArrayList<ClientsItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryMsConfigClientsResponse.Clients.Length"); i++) {
 			ClientsItem clientsItem = new ClientsItem();
-			clientsItem.setCell(_ctx.stringValue("QueryMsConfigClientsResponse.Clients["+ i +"].Cell"));
-			clientsItem.setData(_ctx.stringValue("QueryMsConfigClientsResponse.Clients["+ i +"].Data"));
-			clientsItem.setIp(_ctx.stringValue("QueryMsConfigClientsResponse.Clients["+ i +"].Ip"));
 			clientsItem.setPushData(_ctx.stringValue("QueryMsConfigClientsResponse.Clients["+ i +"].PushData"));
+			clientsItem.setIp(_ctx.stringValue("QueryMsConfigClientsResponse.Clients["+ i +"].Ip"));
+			clientsItem.setData(_ctx.stringValue("QueryMsConfigClientsResponse.Clients["+ i +"].Data"));
+			clientsItem.setCell(_ctx.stringValue("QueryMsConfigClientsResponse.Clients["+ i +"].Cell"));
 
 			clients.add(clientsItem);
 		}

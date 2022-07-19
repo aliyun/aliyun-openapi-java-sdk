@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryMsConfigClientValuesResponse extends AcsResponse {
 
-	private String requestId;
+	private String resultMessage;
 
 	private String resultCode;
 
-	private String resultMessage;
+	private String requestId;
 
 	private List<ClientsItem> clients;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getResultMessage() {
+		return this.resultMessage;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setResultMessage(String resultMessage) {
+		this.resultMessage = resultMessage;
 	}
 
 	public String getResultCode() {
@@ -49,12 +49,12 @@ public class QueryMsConfigClientValuesResponse extends AcsResponse {
 		this.resultCode = resultCode;
 	}
 
-	public String getResultMessage() {
-		return this.resultMessage;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setResultMessage(String resultMessage) {
-		this.resultMessage = resultMessage;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<ClientsItem> getClients() {
@@ -67,19 +67,11 @@ public class QueryMsConfigClientValuesResponse extends AcsResponse {
 
 	public static class ClientsItem {
 
-		private String data;
-
 		private String ip;
 
+		private String data;
+
 		private Boolean success;
-
-		public String getData() {
-			return this.data;
-		}
-
-		public void setData(String data) {
-			this.data = data;
-		}
 
 		public String getIp() {
 			return this.ip;
@@ -87,6 +79,14 @@ public class QueryMsConfigClientValuesResponse extends AcsResponse {
 
 		public void setIp(String ip) {
 			this.ip = ip;
+		}
+
+		public String getData() {
+			return this.data;
+		}
+
+		public void setData(String data) {
+			this.data = data;
 		}
 
 		public Boolean getSuccess() {

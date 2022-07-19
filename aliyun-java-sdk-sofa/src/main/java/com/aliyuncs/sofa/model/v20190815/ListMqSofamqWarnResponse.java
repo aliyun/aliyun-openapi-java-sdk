@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListMqSofamqWarnResponse extends AcsResponse {
 
-	private String requestId;
+	private String resultMessage;
 
 	private String resultCode;
 
-	private String resultMessage;
+	private String requestId;
 
 	private Data data;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getResultMessage() {
+		return this.resultMessage;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setResultMessage(String resultMessage) {
+		this.resultMessage = resultMessage;
 	}
 
 	public String getResultCode() {
@@ -49,12 +49,12 @@ public class ListMqSofamqWarnResponse extends AcsResponse {
 		this.resultCode = resultCode;
 	}
 
-	public String getResultMessage() {
-		return this.resultMessage;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setResultMessage(String resultMessage) {
-		this.resultMessage = resultMessage;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Data getData() {
@@ -109,78 +109,46 @@ public class ListMqSofamqWarnResponse extends AcsResponse {
 
 		public static class ContentItem {
 
-			private String alertTime;
-
-			private String attribute;
-
-			private Long blockTime;
-
-			private String contacts;
-
-			private Long delayTime;
+			private Long warnLevel;
 
 			private Long frequency;
 
-			private Long gmtCreate;
+			private String contacts;
+
+			private String attribute;
+
+			private Long warnType;
+
+			private String instanceId;
 
 			private Long gmtModified;
 
 			private String groupId;
 
-			private Long id;
+			private String alertTime;
 
-			private String instanceId;
+			private Long delayTime;
+
+			private String topic;
+
+			private Long gmtCreate;
+
+			private Long warnStatus;
+
+			private Long blockTime;
 
 			private String operator;
 
 			private Long threshold;
 
-			private String topic;
+			private Long id;
 
-			private Long warnLevel;
-
-			private Long warnStatus;
-
-			private Long warnType;
-
-			public String getAlertTime() {
-				return this.alertTime;
+			public Long getWarnLevel() {
+				return this.warnLevel;
 			}
 
-			public void setAlertTime(String alertTime) {
-				this.alertTime = alertTime;
-			}
-
-			public String getAttribute() {
-				return this.attribute;
-			}
-
-			public void setAttribute(String attribute) {
-				this.attribute = attribute;
-			}
-
-			public Long getBlockTime() {
-				return this.blockTime;
-			}
-
-			public void setBlockTime(Long blockTime) {
-				this.blockTime = blockTime;
-			}
-
-			public String getContacts() {
-				return this.contacts;
-			}
-
-			public void setContacts(String contacts) {
-				this.contacts = contacts;
-			}
-
-			public Long getDelayTime() {
-				return this.delayTime;
-			}
-
-			public void setDelayTime(Long delayTime) {
-				this.delayTime = delayTime;
+			public void setWarnLevel(Long warnLevel) {
+				this.warnLevel = warnLevel;
 			}
 
 			public Long getFrequency() {
@@ -191,12 +159,36 @@ public class ListMqSofamqWarnResponse extends AcsResponse {
 				this.frequency = frequency;
 			}
 
-			public Long getGmtCreate() {
-				return this.gmtCreate;
+			public String getContacts() {
+				return this.contacts;
 			}
 
-			public void setGmtCreate(Long gmtCreate) {
-				this.gmtCreate = gmtCreate;
+			public void setContacts(String contacts) {
+				this.contacts = contacts;
+			}
+
+			public String getAttribute() {
+				return this.attribute;
+			}
+
+			public void setAttribute(String attribute) {
+				this.attribute = attribute;
+			}
+
+			public Long getWarnType() {
+				return this.warnType;
+			}
+
+			public void setWarnType(Long warnType) {
+				this.warnType = warnType;
+			}
+
+			public String getInstanceId() {
+				return this.instanceId;
+			}
+
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
 			}
 
 			public Long getGmtModified() {
@@ -215,20 +207,52 @@ public class ListMqSofamqWarnResponse extends AcsResponse {
 				this.groupId = groupId;
 			}
 
-			public Long getId() {
-				return this.id;
+			public String getAlertTime() {
+				return this.alertTime;
 			}
 
-			public void setId(Long id) {
-				this.id = id;
+			public void setAlertTime(String alertTime) {
+				this.alertTime = alertTime;
 			}
 
-			public String getInstanceId() {
-				return this.instanceId;
+			public Long getDelayTime() {
+				return this.delayTime;
 			}
 
-			public void setInstanceId(String instanceId) {
-				this.instanceId = instanceId;
+			public void setDelayTime(Long delayTime) {
+				this.delayTime = delayTime;
+			}
+
+			public String getTopic() {
+				return this.topic;
+			}
+
+			public void setTopic(String topic) {
+				this.topic = topic;
+			}
+
+			public Long getGmtCreate() {
+				return this.gmtCreate;
+			}
+
+			public void setGmtCreate(Long gmtCreate) {
+				this.gmtCreate = gmtCreate;
+			}
+
+			public Long getWarnStatus() {
+				return this.warnStatus;
+			}
+
+			public void setWarnStatus(Long warnStatus) {
+				this.warnStatus = warnStatus;
+			}
+
+			public Long getBlockTime() {
+				return this.blockTime;
+			}
+
+			public void setBlockTime(Long blockTime) {
+				this.blockTime = blockTime;
 			}
 
 			public String getOperator() {
@@ -247,36 +271,12 @@ public class ListMqSofamqWarnResponse extends AcsResponse {
 				this.threshold = threshold;
 			}
 
-			public String getTopic() {
-				return this.topic;
+			public Long getId() {
+				return this.id;
 			}
 
-			public void setTopic(String topic) {
-				this.topic = topic;
-			}
-
-			public Long getWarnLevel() {
-				return this.warnLevel;
-			}
-
-			public void setWarnLevel(Long warnLevel) {
-				this.warnLevel = warnLevel;
-			}
-
-			public Long getWarnStatus() {
-				return this.warnStatus;
-			}
-
-			public void setWarnStatus(Long warnStatus) {
-				this.warnStatus = warnStatus;
-			}
-
-			public Long getWarnType() {
-				return this.warnType;
-			}
-
-			public void setWarnType(Long warnType) {
-				this.warnType = warnType;
+			public void setId(Long id) {
+				this.id = id;
 			}
 		}
 	}

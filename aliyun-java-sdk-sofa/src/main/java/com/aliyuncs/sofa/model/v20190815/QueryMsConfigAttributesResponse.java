@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryMsConfigAttributesResponse extends AcsResponse {
 
-	private String requestId;
+	private String resultMessage;
 
 	private String resultCode;
 
-	private String resultMessage;
+	private String requestId;
 
 	private Attribute attribute;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getResultMessage() {
+		return this.resultMessage;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setResultMessage(String resultMessage) {
+		this.resultMessage = resultMessage;
 	}
 
 	public String getResultCode() {
@@ -48,12 +48,12 @@ public class QueryMsConfigAttributesResponse extends AcsResponse {
 		this.resultCode = resultCode;
 	}
 
-	public String getResultMessage() {
-		return this.resultMessage;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setResultMessage(String resultMessage) {
-		this.resultMessage = resultMessage;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Attribute getAttribute() {
@@ -66,13 +66,21 @@ public class QueryMsConfigAttributesResponse extends AcsResponse {
 
 	public static class Attribute {
 
-		private String attributeName;
+		private String instanceId;
 
-		private String desc;
+		private String attributeName;
 
 		private Long id;
 
-		private String instanceId;
+		private String desc;
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
 
 		public String getAttributeName() {
 			return this.attributeName;
@@ -80,14 +88,6 @@ public class QueryMsConfigAttributesResponse extends AcsResponse {
 
 		public void setAttributeName(String attributeName) {
 			this.attributeName = attributeName;
-		}
-
-		public String getDesc() {
-			return this.desc;
-		}
-
-		public void setDesc(String desc) {
-			this.desc = desc;
 		}
 
 		public Long getId() {
@@ -98,12 +98,12 @@ public class QueryMsConfigAttributesResponse extends AcsResponse {
 			this.id = id;
 		}
 
-		public String getInstanceId() {
-			return this.instanceId;
+		public String getDesc() {
+			return this.desc;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
+		public void setDesc(String desc) {
+			this.desc = desc;
 		}
 	}
 

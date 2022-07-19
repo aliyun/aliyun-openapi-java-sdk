@@ -29,29 +29,29 @@ public class QueryMqSofamqMessageByTopicResponseUnmarshaller {
 	public static QueryMqSofamqMessageByTopicResponse unmarshall(QueryMqSofamqMessageByTopicResponse queryMqSofamqMessageByTopicResponse, UnmarshallerContext _ctx) {
 		
 		queryMqSofamqMessageByTopicResponse.setRequestId(_ctx.stringValue("QueryMqSofamqMessageByTopicResponse.RequestId"));
-		queryMqSofamqMessageByTopicResponse.setResultCode(_ctx.stringValue("QueryMqSofamqMessageByTopicResponse.ResultCode"));
 		queryMqSofamqMessageByTopicResponse.setResultMessage(_ctx.stringValue("QueryMqSofamqMessageByTopicResponse.ResultMessage"));
+		queryMqSofamqMessageByTopicResponse.setResultCode(_ctx.stringValue("QueryMqSofamqMessageByTopicResponse.ResultCode"));
 
 		Data data = new Data();
 		data.setPageNum(_ctx.longValue("QueryMqSofamqMessageByTopicResponse.Data.PageNum"));
 		data.setPageSize(_ctx.longValue("QueryMqSofamqMessageByTopicResponse.Data.PageSize"));
-		data.setTaskId(_ctx.stringValue("QueryMqSofamqMessageByTopicResponse.Data.TaskId"));
 		data.setTotal(_ctx.longValue("QueryMqSofamqMessageByTopicResponse.Data.Total"));
+		data.setTaskId(_ctx.stringValue("QueryMqSofamqMessageByTopicResponse.Data.TaskId"));
 
 		List<ContentItem> content = new ArrayList<ContentItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryMqSofamqMessageByTopicResponse.Data.Content.Length"); i++) {
 			ContentItem contentItem = new ContentItem();
-			contentItem.setBody(_ctx.stringValue("QueryMqSofamqMessageByTopicResponse.Data.Content["+ i +"].Body"));
-			contentItem.setBodyCrc(_ctx.longValue("QueryMqSofamqMessageByTopicResponse.Data.Content["+ i +"].BodyCrc"));
-			contentItem.setBornHost(_ctx.stringValue("QueryMqSofamqMessageByTopicResponse.Data.Content["+ i +"].BornHost"));
-			contentItem.setBornTimestamp(_ctx.longValue("QueryMqSofamqMessageByTopicResponse.Data.Content["+ i +"].BornTimestamp"));
-			contentItem.setInstanceId(_ctx.stringValue("QueryMqSofamqMessageByTopicResponse.Data.Content["+ i +"].InstanceId"));
-			contentItem.setMsgId(_ctx.stringValue("QueryMqSofamqMessageByTopicResponse.Data.Content["+ i +"].MsgId"));
-			contentItem.setReconsumeTimes(_ctx.longValue("QueryMqSofamqMessageByTopicResponse.Data.Content["+ i +"].ReconsumeTimes"));
-			contentItem.setStoreHost(_ctx.stringValue("QueryMqSofamqMessageByTopicResponse.Data.Content["+ i +"].StoreHost"));
 			contentItem.setStoreSize(_ctx.longValue("QueryMqSofamqMessageByTopicResponse.Data.Content["+ i +"].StoreSize"));
+			contentItem.setReconsumeTimes(_ctx.longValue("QueryMqSofamqMessageByTopicResponse.Data.Content["+ i +"].ReconsumeTimes"));
 			contentItem.setStoreTimestamp(_ctx.longValue("QueryMqSofamqMessageByTopicResponse.Data.Content["+ i +"].StoreTimestamp"));
 			contentItem.setTopic(_ctx.stringValue("QueryMqSofamqMessageByTopicResponse.Data.Content["+ i +"].Topic"));
+			contentItem.setStoreHost(_ctx.stringValue("QueryMqSofamqMessageByTopicResponse.Data.Content["+ i +"].StoreHost"));
+			contentItem.setBornTimestamp(_ctx.longValue("QueryMqSofamqMessageByTopicResponse.Data.Content["+ i +"].BornTimestamp"));
+			contentItem.setInstanceId(_ctx.stringValue("QueryMqSofamqMessageByTopicResponse.Data.Content["+ i +"].InstanceId"));
+			contentItem.setBody(_ctx.stringValue("QueryMqSofamqMessageByTopicResponse.Data.Content["+ i +"].Body"));
+			contentItem.setMsgId(_ctx.stringValue("QueryMqSofamqMessageByTopicResponse.Data.Content["+ i +"].MsgId"));
+			contentItem.setBodyCrc(_ctx.longValue("QueryMqSofamqMessageByTopicResponse.Data.Content["+ i +"].BodyCrc"));
+			contentItem.setBornHost(_ctx.stringValue("QueryMqSofamqMessageByTopicResponse.Data.Content["+ i +"].BornHost"));
 
 			List<PropertyListItem> propertyList = new ArrayList<PropertyListItem>();
 			for (int j = 0; j < _ctx.lengthValue("QueryMqSofamqMessageByTopicResponse.Data.Content["+ i +"].PropertyList.Length"); j++) {

@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListMqSofamqTraceResponse extends AcsResponse {
 
-	private String requestId;
+	private String resultMessage;
 
 	private String resultCode;
 
-	private String resultMessage;
+	private String requestId;
 
 	private Data data;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getResultMessage() {
+		return this.resultMessage;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setResultMessage(String resultMessage) {
+		this.resultMessage = resultMessage;
 	}
 
 	public String getResultCode() {
@@ -49,12 +49,12 @@ public class ListMqSofamqTraceResponse extends AcsResponse {
 		this.resultCode = resultCode;
 	}
 
-	public String getResultMessage() {
-		return this.resultMessage;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setResultMessage(String resultMessage) {
-		this.resultMessage = resultMessage;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Data getData() {
@@ -109,62 +109,30 @@ public class ListMqSofamqTraceResponse extends AcsResponse {
 
 		public static class ContentItem {
 
-			private String cell;
-
-			private Long gmtCreate;
-
-			private Long gmtModified;
-
-			private String instanceId;
-
-			private String msgId;
+			private String status;
 
 			private String msgKey;
 
-			private String queryId;
-
-			private String status;
-
 			private String topic;
 
-			public String getCell() {
-				return this.cell;
+			private Long gmtCreate;
+
+			private String instanceId;
+
+			private Long gmtModified;
+
+			private String msgId;
+
+			private String queryId;
+
+			private String cell;
+
+			public String getStatus() {
+				return this.status;
 			}
 
-			public void setCell(String cell) {
-				this.cell = cell;
-			}
-
-			public Long getGmtCreate() {
-				return this.gmtCreate;
-			}
-
-			public void setGmtCreate(Long gmtCreate) {
-				this.gmtCreate = gmtCreate;
-			}
-
-			public Long getGmtModified() {
-				return this.gmtModified;
-			}
-
-			public void setGmtModified(Long gmtModified) {
-				this.gmtModified = gmtModified;
-			}
-
-			public String getInstanceId() {
-				return this.instanceId;
-			}
-
-			public void setInstanceId(String instanceId) {
-				this.instanceId = instanceId;
-			}
-
-			public String getMsgId() {
-				return this.msgId;
-			}
-
-			public void setMsgId(String msgId) {
-				this.msgId = msgId;
+			public void setStatus(String status) {
+				this.status = status;
 			}
 
 			public String getMsgKey() {
@@ -175,6 +143,46 @@ public class ListMqSofamqTraceResponse extends AcsResponse {
 				this.msgKey = msgKey;
 			}
 
+			public String getTopic() {
+				return this.topic;
+			}
+
+			public void setTopic(String topic) {
+				this.topic = topic;
+			}
+
+			public Long getGmtCreate() {
+				return this.gmtCreate;
+			}
+
+			public void setGmtCreate(Long gmtCreate) {
+				this.gmtCreate = gmtCreate;
+			}
+
+			public String getInstanceId() {
+				return this.instanceId;
+			}
+
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
+			}
+
+			public Long getGmtModified() {
+				return this.gmtModified;
+			}
+
+			public void setGmtModified(Long gmtModified) {
+				this.gmtModified = gmtModified;
+			}
+
+			public String getMsgId() {
+				return this.msgId;
+			}
+
+			public void setMsgId(String msgId) {
+				this.msgId = msgId;
+			}
+
 			public String getQueryId() {
 				return this.queryId;
 			}
@@ -183,20 +191,12 @@ public class ListMqSofamqTraceResponse extends AcsResponse {
 				this.queryId = queryId;
 			}
 
-			public String getStatus() {
-				return this.status;
+			public String getCell() {
+				return this.cell;
 			}
 
-			public void setStatus(String status) {
-				this.status = status;
-			}
-
-			public String getTopic() {
-				return this.topic;
-			}
-
-			public void setTopic(String topic) {
-				this.topic = topic;
+			public void setCell(String cell) {
+				this.cell = cell;
 			}
 		}
 	}

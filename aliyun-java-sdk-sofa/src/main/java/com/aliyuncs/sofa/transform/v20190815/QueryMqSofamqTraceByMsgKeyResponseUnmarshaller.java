@@ -23,8 +23,8 @@ public class QueryMqSofamqTraceByMsgKeyResponseUnmarshaller {
 	public static QueryMqSofamqTraceByMsgKeyResponse unmarshall(QueryMqSofamqTraceByMsgKeyResponse queryMqSofamqTraceByMsgKeyResponse, UnmarshallerContext _ctx) {
 		
 		queryMqSofamqTraceByMsgKeyResponse.setRequestId(_ctx.stringValue("QueryMqSofamqTraceByMsgKeyResponse.RequestId"));
-		queryMqSofamqTraceByMsgKeyResponse.setResultCode(_ctx.stringValue("QueryMqSofamqTraceByMsgKeyResponse.ResultCode"));
 		queryMqSofamqTraceByMsgKeyResponse.setResultMessage(_ctx.stringValue("QueryMqSofamqTraceByMsgKeyResponse.ResultMessage"));
+		queryMqSofamqTraceByMsgKeyResponse.setResultCode(_ctx.stringValue("QueryMqSofamqTraceByMsgKeyResponse.ResultCode"));
 		queryMqSofamqTraceByMsgKeyResponse.setQueryId(_ctx.stringValue("QueryMqSofamqTraceByMsgKeyResponse.QueryId"));
 	 
 	 	return queryMqSofamqTraceByMsgKeyResponse;

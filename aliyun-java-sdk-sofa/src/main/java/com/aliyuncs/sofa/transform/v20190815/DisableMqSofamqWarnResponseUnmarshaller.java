@@ -23,8 +23,8 @@ public class DisableMqSofamqWarnResponseUnmarshaller {
 	public static DisableMqSofamqWarnResponse unmarshall(DisableMqSofamqWarnResponse disableMqSofamqWarnResponse, UnmarshallerContext _ctx) {
 		
 		disableMqSofamqWarnResponse.setRequestId(_ctx.stringValue("DisableMqSofamqWarnResponse.RequestId"));
-		disableMqSofamqWarnResponse.setResultCode(_ctx.stringValue("DisableMqSofamqWarnResponse.ResultCode"));
 		disableMqSofamqWarnResponse.setResultMessage(_ctx.stringValue("DisableMqSofamqWarnResponse.ResultMessage"));
+		disableMqSofamqWarnResponse.setResultCode(_ctx.stringValue("DisableMqSofamqWarnResponse.ResultCode"));
 	 
 	 	return disableMqSofamqWarnResponse;
 	}

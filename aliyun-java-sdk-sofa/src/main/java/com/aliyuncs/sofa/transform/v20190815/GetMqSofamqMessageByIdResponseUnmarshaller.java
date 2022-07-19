@@ -28,21 +28,21 @@ public class GetMqSofamqMessageByIdResponseUnmarshaller {
 	public static GetMqSofamqMessageByIdResponse unmarshall(GetMqSofamqMessageByIdResponse getMqSofamqMessageByIdResponse, UnmarshallerContext _ctx) {
 		
 		getMqSofamqMessageByIdResponse.setRequestId(_ctx.stringValue("GetMqSofamqMessageByIdResponse.RequestId"));
-		getMqSofamqMessageByIdResponse.setResultCode(_ctx.stringValue("GetMqSofamqMessageByIdResponse.ResultCode"));
 		getMqSofamqMessageByIdResponse.setResultMessage(_ctx.stringValue("GetMqSofamqMessageByIdResponse.ResultMessage"));
+		getMqSofamqMessageByIdResponse.setResultCode(_ctx.stringValue("GetMqSofamqMessageByIdResponse.ResultCode"));
 
 		Data data = new Data();
-		data.setBody(_ctx.stringValue("GetMqSofamqMessageByIdResponse.Data.Body"));
-		data.setBodyCrc(_ctx.longValue("GetMqSofamqMessageByIdResponse.Data.BodyCrc"));
-		data.setBornHost(_ctx.stringValue("GetMqSofamqMessageByIdResponse.Data.BornHost"));
-		data.setBornTimestamp(_ctx.longValue("GetMqSofamqMessageByIdResponse.Data.BornTimestamp"));
-		data.setInstanceId(_ctx.stringValue("GetMqSofamqMessageByIdResponse.Data.InstanceId"));
-		data.setMsgId(_ctx.stringValue("GetMqSofamqMessageByIdResponse.Data.MsgId"));
-		data.setReconsumeTimes(_ctx.longValue("GetMqSofamqMessageByIdResponse.Data.ReconsumeTimes"));
-		data.setStoreHost(_ctx.stringValue("GetMqSofamqMessageByIdResponse.Data.StoreHost"));
 		data.setStoreSize(_ctx.longValue("GetMqSofamqMessageByIdResponse.Data.StoreSize"));
+		data.setReconsumeTimes(_ctx.longValue("GetMqSofamqMessageByIdResponse.Data.ReconsumeTimes"));
 		data.setStoreTimestamp(_ctx.longValue("GetMqSofamqMessageByIdResponse.Data.StoreTimestamp"));
 		data.setTopic(_ctx.stringValue("GetMqSofamqMessageByIdResponse.Data.Topic"));
+		data.setStoreHost(_ctx.stringValue("GetMqSofamqMessageByIdResponse.Data.StoreHost"));
+		data.setBornTimestamp(_ctx.longValue("GetMqSofamqMessageByIdResponse.Data.BornTimestamp"));
+		data.setInstanceId(_ctx.stringValue("GetMqSofamqMessageByIdResponse.Data.InstanceId"));
+		data.setBody(_ctx.stringValue("GetMqSofamqMessageByIdResponse.Data.Body"));
+		data.setMsgId(_ctx.stringValue("GetMqSofamqMessageByIdResponse.Data.MsgId"));
+		data.setBodyCrc(_ctx.longValue("GetMqSofamqMessageByIdResponse.Data.BodyCrc"));
+		data.setBornHost(_ctx.stringValue("GetMqSofamqMessageByIdResponse.Data.BornHost"));
 
 		List<PropertyListItem> propertyList = new ArrayList<PropertyListItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetMqSofamqMessageByIdResponse.Data.PropertyList.Length"); i++) {

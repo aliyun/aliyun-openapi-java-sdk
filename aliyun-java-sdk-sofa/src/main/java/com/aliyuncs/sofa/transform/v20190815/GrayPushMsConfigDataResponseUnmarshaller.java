@@ -27,14 +27,14 @@ public class GrayPushMsConfigDataResponseUnmarshaller {
 	public static GrayPushMsConfigDataResponse unmarshall(GrayPushMsConfigDataResponse grayPushMsConfigDataResponse, UnmarshallerContext _ctx) {
 		
 		grayPushMsConfigDataResponse.setRequestId(_ctx.stringValue("GrayPushMsConfigDataResponse.RequestId"));
-		grayPushMsConfigDataResponse.setResultCode(_ctx.stringValue("GrayPushMsConfigDataResponse.ResultCode"));
 		grayPushMsConfigDataResponse.setResultMessage(_ctx.stringValue("GrayPushMsConfigDataResponse.ResultMessage"));
+		grayPushMsConfigDataResponse.setResultCode(_ctx.stringValue("GrayPushMsConfigDataResponse.ResultCode"));
 
 		List<PushResultItem> pushResult = new ArrayList<PushResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("GrayPushMsConfigDataResponse.PushResult.Length"); i++) {
 			PushResultItem pushResultItem = new PushResultItem();
-			pushResultItem.setHost(_ctx.stringValue("GrayPushMsConfigDataResponse.PushResult["+ i +"].Host"));
 			pushResultItem.setSuccess(_ctx.booleanValue("GrayPushMsConfigDataResponse.PushResult["+ i +"].Success"));
+			pushResultItem.setHost(_ctx.stringValue("GrayPushMsConfigDataResponse.PushResult["+ i +"].Host"));
 
 			pushResult.add(pushResultItem);
 		}

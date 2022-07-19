@@ -25,19 +25,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCasComputersResponse extends AcsResponse {
 
-	private String requestId;
+	private Long currentPage;
 
-	private String resultCode;
+	private String requestId;
 
 	private String resultMessage;
 
-	private Long totalCount;
+	private String resultCode;
 
 	private Long pageSize;
 
-	private Long currentPage;
+	private Long totalCount;
 
 	private List<DataItem> data;
+
+	public Long getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Long currentPage) {
+		this.currentPage = currentPage;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,14 +53,6 @@ public class DescribeCasComputersResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getResultCode() {
-		return this.resultCode;
-	}
-
-	public void setResultCode(String resultCode) {
-		this.resultCode = resultCode;
 	}
 
 	public String getResultMessage() {
@@ -63,12 +63,12 @@ public class DescribeCasComputersResponse extends AcsResponse {
 		this.resultMessage = resultMessage;
 	}
 
-	public Long getTotalCount() {
-		return this.totalCount;
+	public String getResultCode() {
+		return this.resultCode;
 	}
 
-	public void setTotalCount(Long totalCount) {
-		this.totalCount = totalCount;
+	public void setResultCode(String resultCode) {
+		this.resultCode = resultCode;
 	}
 
 	public Long getPageSize() {
@@ -79,12 +79,12 @@ public class DescribeCasComputersResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Long getCurrentPage() {
-		return this.currentPage;
+	public Long getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setCurrentPage(Long currentPage) {
-		this.currentPage = currentPage;
+	public void setTotalCount(Long totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<DataItem> getData() {
@@ -97,51 +97,69 @@ public class DescribeCasComputersResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private String appId;
-
-		private Boolean autoRenew;
-
-		private Long autoRenewPeriod;
-
-		private Long bandwidth;
-
-		private Boolean commonImage;
-
-		private Long cpu;
-
-		private Boolean cpuShared;
-
 		private String creationTime;
 
-		private String deployMode;
+		private String serialNumber;
 
-		private String description;
+		private String vpcId;
 
-		private String elasticIp;
+		private String privateIp;
 
-		private String expiredTime;
+		private String utcCreate;
 
-		private String iaasId;
-
-		private String iaasStatus;
-
-		private String iaasType;
-
-		private String id;
+		private String providerId;
 
 		private String imageIaasId;
 
 		private String imageId;
 
-		private String imageName;
+		private String specIaasId;
+
+		private String deployMode;
+
+		private String iaasId;
 
 		private Boolean initialized;
 
+		private Long autoRenewPeriod;
+
+		private String paasStatus;
+
 		private String instanceChargeType;
 
-		private Boolean ioOptimized;
+		private String vSwitchIaasId;
 
-		private String lastOpsOrderId;
+		private String workspaceId;
+
+		private String imageName;
+
+		private String publicIp;
+
+		private String zoneId;
+
+		private Boolean cpuShared;
+
+		private String iaasType;
+
+		private String status;
+
+		private Long osBit;
+
+		private String iaasStatus;
+
+		private String networkType;
+
+		private String password;
+
+		private Long bandwidth;
+
+		private String description;
+
+		private String utcModified;
+
+		private String appId;
+
+		private String osVersion;
 
 		private String lastOpsType;
 
@@ -149,49 +167,31 @@ public class DescribeCasComputersResponse extends AcsResponse {
 
 		private String name;
 
-		private String networkType;
+		private Boolean commonImage;
 
-		private String os;
-
-		private Long osBit;
-
-		private String osVersion;
-
-		private String paasStatus;
-
-		private String password;
-
-		private String privateIp;
-
-		private String providerId;
-
-		private String publicIp;
-
-		private String regionId;
-
-		private String serialNumber;
-
-		private String specIaasId;
-
-		private String status;
-
-		private String tenantId;
+		private Boolean autoRenew;
 
 		private String tenantId2;
 
+		private String os;
+
+		private String regionId;
+
+		private Boolean ioOptimized;
+
+		private Long cpu;
+
+		private String elasticIp;
+
+		private String expiredTime;
+
 		private Long threadsPerCore;
 
-		private String utcCreate;
+		private String id;
 
-		private String utcModified;
+		private String lastOpsOrderId;
 
-		private String vpcId;
-
-		private String vSwitchIaasId;
-
-		private String workspaceId;
-
-		private String zoneId;
+		private String tenantId;
 
 		private List<DataDisksItem> dataDisks;
 
@@ -199,67 +199,11 @@ public class DescribeCasComputersResponse extends AcsResponse {
 
 		private List<TagsItem> tags;
 
-		private List<String> appServiceIds;
-
 		private List<String> assignedAppServiceIds;
 
+		private List<String> appServiceIds;
+
 		private SystemDisk systemDisk;
-
-		public String getAppId() {
-			return this.appId;
-		}
-
-		public void setAppId(String appId) {
-			this.appId = appId;
-		}
-
-		public Boolean getAutoRenew() {
-			return this.autoRenew;
-		}
-
-		public void setAutoRenew(Boolean autoRenew) {
-			this.autoRenew = autoRenew;
-		}
-
-		public Long getAutoRenewPeriod() {
-			return this.autoRenewPeriod;
-		}
-
-		public void setAutoRenewPeriod(Long autoRenewPeriod) {
-			this.autoRenewPeriod = autoRenewPeriod;
-		}
-
-		public Long getBandwidth() {
-			return this.bandwidth;
-		}
-
-		public void setBandwidth(Long bandwidth) {
-			this.bandwidth = bandwidth;
-		}
-
-		public Boolean getCommonImage() {
-			return this.commonImage;
-		}
-
-		public void setCommonImage(Boolean commonImage) {
-			this.commonImage = commonImage;
-		}
-
-		public Long getCpu() {
-			return this.cpu;
-		}
-
-		public void setCpu(Long cpu) {
-			this.cpu = cpu;
-		}
-
-		public Boolean getCpuShared() {
-			return this.cpuShared;
-		}
-
-		public void setCpuShared(Boolean cpuShared) {
-			this.cpuShared = cpuShared;
-		}
 
 		public String getCreationTime() {
 			return this.creationTime;
@@ -269,68 +213,44 @@ public class DescribeCasComputersResponse extends AcsResponse {
 			this.creationTime = creationTime;
 		}
 
-		public String getDeployMode() {
-			return this.deployMode;
+		public String getSerialNumber() {
+			return this.serialNumber;
 		}
 
-		public void setDeployMode(String deployMode) {
-			this.deployMode = deployMode;
+		public void setSerialNumber(String serialNumber) {
+			this.serialNumber = serialNumber;
 		}
 
-		public String getDescription() {
-			return this.description;
+		public String getVpcId() {
+			return this.vpcId;
 		}
 
-		public void setDescription(String description) {
-			this.description = description;
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
 		}
 
-		public String getElasticIp() {
-			return this.elasticIp;
+		public String getPrivateIp() {
+			return this.privateIp;
 		}
 
-		public void setElasticIp(String elasticIp) {
-			this.elasticIp = elasticIp;
+		public void setPrivateIp(String privateIp) {
+			this.privateIp = privateIp;
 		}
 
-		public String getExpiredTime() {
-			return this.expiredTime;
+		public String getUtcCreate() {
+			return this.utcCreate;
 		}
 
-		public void setExpiredTime(String expiredTime) {
-			this.expiredTime = expiredTime;
+		public void setUtcCreate(String utcCreate) {
+			this.utcCreate = utcCreate;
 		}
 
-		public String getIaasId() {
-			return this.iaasId;
+		public String getProviderId() {
+			return this.providerId;
 		}
 
-		public void setIaasId(String iaasId) {
-			this.iaasId = iaasId;
-		}
-
-		public String getIaasStatus() {
-			return this.iaasStatus;
-		}
-
-		public void setIaasStatus(String iaasStatus) {
-			this.iaasStatus = iaasStatus;
-		}
-
-		public String getIaasType() {
-			return this.iaasType;
-		}
-
-		public void setIaasType(String iaasType) {
-			this.iaasType = iaasType;
-		}
-
-		public String getId() {
-			return this.id;
-		}
-
-		public void setId(String id) {
-			this.id = id;
+		public void setProviderId(String providerId) {
+			this.providerId = providerId;
 		}
 
 		public String getImageIaasId() {
@@ -349,12 +269,28 @@ public class DescribeCasComputersResponse extends AcsResponse {
 			this.imageId = imageId;
 		}
 
-		public String getImageName() {
-			return this.imageName;
+		public String getSpecIaasId() {
+			return this.specIaasId;
 		}
 
-		public void setImageName(String imageName) {
-			this.imageName = imageName;
+		public void setSpecIaasId(String specIaasId) {
+			this.specIaasId = specIaasId;
+		}
+
+		public String getDeployMode() {
+			return this.deployMode;
+		}
+
+		public void setDeployMode(String deployMode) {
+			this.deployMode = deployMode;
+		}
+
+		public String getIaasId() {
+			return this.iaasId;
+		}
+
+		public void setIaasId(String iaasId) {
+			this.iaasId = iaasId;
 		}
 
 		public Boolean getInitialized() {
@@ -365,6 +301,22 @@ public class DescribeCasComputersResponse extends AcsResponse {
 			this.initialized = initialized;
 		}
 
+		public Long getAutoRenewPeriod() {
+			return this.autoRenewPeriod;
+		}
+
+		public void setAutoRenewPeriod(Long autoRenewPeriod) {
+			this.autoRenewPeriod = autoRenewPeriod;
+		}
+
+		public String getPaasStatus() {
+			return this.paasStatus;
+		}
+
+		public void setPaasStatus(String paasStatus) {
+			this.paasStatus = paasStatus;
+		}
+
 		public String getInstanceChargeType() {
 			return this.instanceChargeType;
 		}
@@ -373,20 +325,140 @@ public class DescribeCasComputersResponse extends AcsResponse {
 			this.instanceChargeType = instanceChargeType;
 		}
 
-		public Boolean getIoOptimized() {
-			return this.ioOptimized;
+		public String getVSwitchIaasId() {
+			return this.vSwitchIaasId;
 		}
 
-		public void setIoOptimized(Boolean ioOptimized) {
-			this.ioOptimized = ioOptimized;
+		public void setVSwitchIaasId(String vSwitchIaasId) {
+			this.vSwitchIaasId = vSwitchIaasId;
 		}
 
-		public String getLastOpsOrderId() {
-			return this.lastOpsOrderId;
+		public String getWorkspaceId() {
+			return this.workspaceId;
 		}
 
-		public void setLastOpsOrderId(String lastOpsOrderId) {
-			this.lastOpsOrderId = lastOpsOrderId;
+		public void setWorkspaceId(String workspaceId) {
+			this.workspaceId = workspaceId;
+		}
+
+		public String getImageName() {
+			return this.imageName;
+		}
+
+		public void setImageName(String imageName) {
+			this.imageName = imageName;
+		}
+
+		public String getPublicIp() {
+			return this.publicIp;
+		}
+
+		public void setPublicIp(String publicIp) {
+			this.publicIp = publicIp;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public Boolean getCpuShared() {
+			return this.cpuShared;
+		}
+
+		public void setCpuShared(Boolean cpuShared) {
+			this.cpuShared = cpuShared;
+		}
+
+		public String getIaasType() {
+			return this.iaasType;
+		}
+
+		public void setIaasType(String iaasType) {
+			this.iaasType = iaasType;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public Long getOsBit() {
+			return this.osBit;
+		}
+
+		public void setOsBit(Long osBit) {
+			this.osBit = osBit;
+		}
+
+		public String getIaasStatus() {
+			return this.iaasStatus;
+		}
+
+		public void setIaasStatus(String iaasStatus) {
+			this.iaasStatus = iaasStatus;
+		}
+
+		public String getNetworkType() {
+			return this.networkType;
+		}
+
+		public void setNetworkType(String networkType) {
+			this.networkType = networkType;
+		}
+
+		public String getPassword() {
+			return this.password;
+		}
+
+		public void setPassword(String password) {
+			this.password = password;
+		}
+
+		public Long getBandwidth() {
+			return this.bandwidth;
+		}
+
+		public void setBandwidth(Long bandwidth) {
+			this.bandwidth = bandwidth;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getUtcModified() {
+			return this.utcModified;
+		}
+
+		public void setUtcModified(String utcModified) {
+			this.utcModified = utcModified;
+		}
+
+		public String getAppId() {
+			return this.appId;
+		}
+
+		public void setAppId(String appId) {
+			this.appId = appId;
+		}
+
+		public String getOsVersion() {
+			return this.osVersion;
+		}
+
+		public void setOsVersion(String osVersion) {
+			this.osVersion = osVersion;
 		}
 
 		public String getLastOpsType() {
@@ -413,116 +485,20 @@ public class DescribeCasComputersResponse extends AcsResponse {
 			this.name = name;
 		}
 
-		public String getNetworkType() {
-			return this.networkType;
+		public Boolean getCommonImage() {
+			return this.commonImage;
 		}
 
-		public void setNetworkType(String networkType) {
-			this.networkType = networkType;
+		public void setCommonImage(Boolean commonImage) {
+			this.commonImage = commonImage;
 		}
 
-		public String getOs() {
-			return this.os;
+		public Boolean getAutoRenew() {
+			return this.autoRenew;
 		}
 
-		public void setOs(String os) {
-			this.os = os;
-		}
-
-		public Long getOsBit() {
-			return this.osBit;
-		}
-
-		public void setOsBit(Long osBit) {
-			this.osBit = osBit;
-		}
-
-		public String getOsVersion() {
-			return this.osVersion;
-		}
-
-		public void setOsVersion(String osVersion) {
-			this.osVersion = osVersion;
-		}
-
-		public String getPaasStatus() {
-			return this.paasStatus;
-		}
-
-		public void setPaasStatus(String paasStatus) {
-			this.paasStatus = paasStatus;
-		}
-
-		public String getPassword() {
-			return this.password;
-		}
-
-		public void setPassword(String password) {
-			this.password = password;
-		}
-
-		public String getPrivateIp() {
-			return this.privateIp;
-		}
-
-		public void setPrivateIp(String privateIp) {
-			this.privateIp = privateIp;
-		}
-
-		public String getProviderId() {
-			return this.providerId;
-		}
-
-		public void setProviderId(String providerId) {
-			this.providerId = providerId;
-		}
-
-		public String getPublicIp() {
-			return this.publicIp;
-		}
-
-		public void setPublicIp(String publicIp) {
-			this.publicIp = publicIp;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getSerialNumber() {
-			return this.serialNumber;
-		}
-
-		public void setSerialNumber(String serialNumber) {
-			this.serialNumber = serialNumber;
-		}
-
-		public String getSpecIaasId() {
-			return this.specIaasId;
-		}
-
-		public void setSpecIaasId(String specIaasId) {
-			this.specIaasId = specIaasId;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getTenantId() {
-			return this.tenantId;
-		}
-
-		public void setTenantId(String tenantId) {
-			this.tenantId = tenantId;
+		public void setAutoRenew(Boolean autoRenew) {
+			this.autoRenew = autoRenew;
 		}
 
 		public String getTenantId2() {
@@ -533,6 +509,54 @@ public class DescribeCasComputersResponse extends AcsResponse {
 			this.tenantId2 = tenantId2;
 		}
 
+		public String getOs() {
+			return this.os;
+		}
+
+		public void setOs(String os) {
+			this.os = os;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public Boolean getIoOptimized() {
+			return this.ioOptimized;
+		}
+
+		public void setIoOptimized(Boolean ioOptimized) {
+			this.ioOptimized = ioOptimized;
+		}
+
+		public Long getCpu() {
+			return this.cpu;
+		}
+
+		public void setCpu(Long cpu) {
+			this.cpu = cpu;
+		}
+
+		public String getElasticIp() {
+			return this.elasticIp;
+		}
+
+		public void setElasticIp(String elasticIp) {
+			this.elasticIp = elasticIp;
+		}
+
+		public String getExpiredTime() {
+			return this.expiredTime;
+		}
+
+		public void setExpiredTime(String expiredTime) {
+			this.expiredTime = expiredTime;
+		}
+
 		public Long getThreadsPerCore() {
 			return this.threadsPerCore;
 		}
@@ -541,52 +565,28 @@ public class DescribeCasComputersResponse extends AcsResponse {
 			this.threadsPerCore = threadsPerCore;
 		}
 
-		public String getUtcCreate() {
-			return this.utcCreate;
+		public String getId() {
+			return this.id;
 		}
 
-		public void setUtcCreate(String utcCreate) {
-			this.utcCreate = utcCreate;
+		public void setId(String id) {
+			this.id = id;
 		}
 
-		public String getUtcModified() {
-			return this.utcModified;
+		public String getLastOpsOrderId() {
+			return this.lastOpsOrderId;
 		}
 
-		public void setUtcModified(String utcModified) {
-			this.utcModified = utcModified;
+		public void setLastOpsOrderId(String lastOpsOrderId) {
+			this.lastOpsOrderId = lastOpsOrderId;
 		}
 
-		public String getVpcId() {
-			return this.vpcId;
+		public String getTenantId() {
+			return this.tenantId;
 		}
 
-		public void setVpcId(String vpcId) {
-			this.vpcId = vpcId;
-		}
-
-		public String getVSwitchIaasId() {
-			return this.vSwitchIaasId;
-		}
-
-		public void setVSwitchIaasId(String vSwitchIaasId) {
-			this.vSwitchIaasId = vSwitchIaasId;
-		}
-
-		public String getWorkspaceId() {
-			return this.workspaceId;
-		}
-
-		public void setWorkspaceId(String workspaceId) {
-			this.workspaceId = workspaceId;
-		}
-
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
+		public void setTenantId(String tenantId) {
+			this.tenantId = tenantId;
 		}
 
 		public List<DataDisksItem> getDataDisks() {
@@ -613,20 +613,20 @@ public class DescribeCasComputersResponse extends AcsResponse {
 			this.tags = tags;
 		}
 
-		public List<String> getAppServiceIds() {
-			return this.appServiceIds;
-		}
-
-		public void setAppServiceIds(List<String> appServiceIds) {
-			this.appServiceIds = appServiceIds;
-		}
-
 		public List<String> getAssignedAppServiceIds() {
 			return this.assignedAppServiceIds;
 		}
 
 		public void setAssignedAppServiceIds(List<String> assignedAppServiceIds) {
 			this.assignedAppServiceIds = assignedAppServiceIds;
+		}
+
+		public List<String> getAppServiceIds() {
+			return this.appServiceIds;
+		}
+
+		public void setAppServiceIds(List<String> appServiceIds) {
+			this.appServiceIds = appServiceIds;
 		}
 
 		public SystemDisk getSystemDisk() {
@@ -639,150 +639,54 @@ public class DescribeCasComputersResponse extends AcsResponse {
 
 		public static class DataDisksItem {
 
-			private String category;
-
-			private Boolean deleteAutoSnapshot;
-
-			private Boolean deleteWithComputer;
-
-			private String device;
-
-			private Boolean enableAutoSnapshot;
-
-			private String iaasId;
-
-			private String id;
-
-			private String imageId;
-
-			private String name;
-
-			private Boolean portable;
-
-			private String providerId;
-
-			private String regionId;
-
-			private Long size;
+			private String type;
 
 			private String status;
 
-			private String tenantId;
-
-			private String type;
+			private Boolean enableAutoSnapshot;
 
 			private String utcCreate;
 
-			private String utcModified;
+			private String iaasId;
+
+			private String providerId;
+
+			private Boolean deleteAutoSnapshot;
+
+			private String regionId;
 
 			private String workspaceId;
 
+			private String utcModified;
+
+			private Long size;
+
+			private String device;
+
 			private String zoneId;
+
+			private Boolean portable;
+
+			private String category;
+
+			private String name;
+
+			private String imageId;
+
+			private Boolean deleteWithComputer;
+
+			private String id;
+
+			private String tenantId;
 
 			private Computer computer;
 
-			public String getCategory() {
-				return this.category;
+			public String getType() {
+				return this.type;
 			}
 
-			public void setCategory(String category) {
-				this.category = category;
-			}
-
-			public Boolean getDeleteAutoSnapshot() {
-				return this.deleteAutoSnapshot;
-			}
-
-			public void setDeleteAutoSnapshot(Boolean deleteAutoSnapshot) {
-				this.deleteAutoSnapshot = deleteAutoSnapshot;
-			}
-
-			public Boolean getDeleteWithComputer() {
-				return this.deleteWithComputer;
-			}
-
-			public void setDeleteWithComputer(Boolean deleteWithComputer) {
-				this.deleteWithComputer = deleteWithComputer;
-			}
-
-			public String getDevice() {
-				return this.device;
-			}
-
-			public void setDevice(String device) {
-				this.device = device;
-			}
-
-			public Boolean getEnableAutoSnapshot() {
-				return this.enableAutoSnapshot;
-			}
-
-			public void setEnableAutoSnapshot(Boolean enableAutoSnapshot) {
-				this.enableAutoSnapshot = enableAutoSnapshot;
-			}
-
-			public String getIaasId() {
-				return this.iaasId;
-			}
-
-			public void setIaasId(String iaasId) {
-				this.iaasId = iaasId;
-			}
-
-			public String getId() {
-				return this.id;
-			}
-
-			public void setId(String id) {
-				this.id = id;
-			}
-
-			public String getImageId() {
-				return this.imageId;
-			}
-
-			public void setImageId(String imageId) {
-				this.imageId = imageId;
-			}
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
-
-			public Boolean getPortable() {
-				return this.portable;
-			}
-
-			public void setPortable(Boolean portable) {
-				this.portable = portable;
-			}
-
-			public String getProviderId() {
-				return this.providerId;
-			}
-
-			public void setProviderId(String providerId) {
-				this.providerId = providerId;
-			}
-
-			public String getRegionId() {
-				return this.regionId;
-			}
-
-			public void setRegionId(String regionId) {
-				this.regionId = regionId;
-			}
-
-			public Long getSize() {
-				return this.size;
-			}
-
-			public void setSize(Long size) {
-				this.size = size;
+			public void setType(String type) {
+				this.type = type;
 			}
 
 			public String getStatus() {
@@ -793,20 +697,12 @@ public class DescribeCasComputersResponse extends AcsResponse {
 				this.status = status;
 			}
 
-			public String getTenantId() {
-				return this.tenantId;
+			public Boolean getEnableAutoSnapshot() {
+				return this.enableAutoSnapshot;
 			}
 
-			public void setTenantId(String tenantId) {
-				this.tenantId = tenantId;
-			}
-
-			public String getType() {
-				return this.type;
-			}
-
-			public void setType(String type) {
-				this.type = type;
+			public void setEnableAutoSnapshot(Boolean enableAutoSnapshot) {
+				this.enableAutoSnapshot = enableAutoSnapshot;
 			}
 
 			public String getUtcCreate() {
@@ -817,12 +713,36 @@ public class DescribeCasComputersResponse extends AcsResponse {
 				this.utcCreate = utcCreate;
 			}
 
-			public String getUtcModified() {
-				return this.utcModified;
+			public String getIaasId() {
+				return this.iaasId;
 			}
 
-			public void setUtcModified(String utcModified) {
-				this.utcModified = utcModified;
+			public void setIaasId(String iaasId) {
+				this.iaasId = iaasId;
+			}
+
+			public String getProviderId() {
+				return this.providerId;
+			}
+
+			public void setProviderId(String providerId) {
+				this.providerId = providerId;
+			}
+
+			public Boolean getDeleteAutoSnapshot() {
+				return this.deleteAutoSnapshot;
+			}
+
+			public void setDeleteAutoSnapshot(Boolean deleteAutoSnapshot) {
+				this.deleteAutoSnapshot = deleteAutoSnapshot;
+			}
+
+			public String getRegionId() {
+				return this.regionId;
+			}
+
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
 			}
 
 			public String getWorkspaceId() {
@@ -833,12 +753,92 @@ public class DescribeCasComputersResponse extends AcsResponse {
 				this.workspaceId = workspaceId;
 			}
 
+			public String getUtcModified() {
+				return this.utcModified;
+			}
+
+			public void setUtcModified(String utcModified) {
+				this.utcModified = utcModified;
+			}
+
+			public Long getSize() {
+				return this.size;
+			}
+
+			public void setSize(Long size) {
+				this.size = size;
+			}
+
+			public String getDevice() {
+				return this.device;
+			}
+
+			public void setDevice(String device) {
+				this.device = device;
+			}
+
 			public String getZoneId() {
 				return this.zoneId;
 			}
 
 			public void setZoneId(String zoneId) {
 				this.zoneId = zoneId;
+			}
+
+			public Boolean getPortable() {
+				return this.portable;
+			}
+
+			public void setPortable(Boolean portable) {
+				this.portable = portable;
+			}
+
+			public String getCategory() {
+				return this.category;
+			}
+
+			public void setCategory(String category) {
+				this.category = category;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getImageId() {
+				return this.imageId;
+			}
+
+			public void setImageId(String imageId) {
+				this.imageId = imageId;
+			}
+
+			public Boolean getDeleteWithComputer() {
+				return this.deleteWithComputer;
+			}
+
+			public void setDeleteWithComputer(Boolean deleteWithComputer) {
+				this.deleteWithComputer = deleteWithComputer;
+			}
+
+			public String getId() {
+				return this.id;
+			}
+
+			public void setId(String id) {
+				this.id = id;
+			}
+
+			public String getTenantId() {
+				return this.tenantId;
+			}
+
+			public void setTenantId(String tenantId) {
+				this.tenantId = tenantId;
 			}
 
 			public Computer getComputer() {
@@ -851,13 +851,29 @@ public class DescribeCasComputersResponse extends AcsResponse {
 
 			public static class Computer {
 
+				private String status;
+
+				private String iaasId;
+
 				private String name;
 
 				private String id;
 
-				private String iaasId;
+				public String getStatus() {
+					return this.status;
+				}
 
-				private String status;
+				public void setStatus(String status) {
+					this.status = status;
+				}
+
+				public String getIaasId() {
+					return this.iaasId;
+				}
+
+				public void setIaasId(String iaasId) {
+					this.iaasId = iaasId;
+				}
 
 				public String getName() {
 					return this.name;
@@ -873,22 +889,6 @@ public class DescribeCasComputersResponse extends AcsResponse {
 
 				public void setId(String id) {
 					this.id = id;
-				}
-
-				public String getIaasId() {
-					return this.iaasId;
-				}
-
-				public void setIaasId(String iaasId) {
-					this.iaasId = iaasId;
-				}
-
-				public String getStatus() {
-					return this.status;
-				}
-
-				public void setStatus(String status) {
-					this.status = status;
 				}
 			}
 		}
@@ -941,150 +941,54 @@ public class DescribeCasComputersResponse extends AcsResponse {
 
 		public static class SystemDisk {
 
-			private String category;
-
-			private Boolean deleteAutoSnapshot;
-
-			private Boolean deleteWithComputer;
-
-			private String device;
-
-			private Boolean enableAutoSnapshot;
-
-			private String iaasId;
-
-			private String id;
-
-			private String imageId;
-
-			private String name;
-
-			private Boolean portable;
-
-			private String providerId;
-
-			private String regionId;
-
-			private Long size;
+			private String type;
 
 			private String status;
 
-			private String tenantId;
-
-			private String type;
+			private Boolean enableAutoSnapshot;
 
 			private String utcCreate;
 
-			private String utcModified;
+			private String iaasId;
+
+			private String providerId;
+
+			private Boolean deleteAutoSnapshot;
+
+			private String regionId;
 
 			private String workspaceId;
 
+			private String utcModified;
+
+			private Long size;
+
+			private String device;
+
 			private String zoneId;
+
+			private Boolean portable;
+
+			private String category;
+
+			private String name;
+
+			private String imageId;
+
+			private Boolean deleteWithComputer;
+
+			private String id;
+
+			private String tenantId;
 
 			private Computer1 computer1;
 
-			public String getCategory() {
-				return this.category;
+			public String getType() {
+				return this.type;
 			}
 
-			public void setCategory(String category) {
-				this.category = category;
-			}
-
-			public Boolean getDeleteAutoSnapshot() {
-				return this.deleteAutoSnapshot;
-			}
-
-			public void setDeleteAutoSnapshot(Boolean deleteAutoSnapshot) {
-				this.deleteAutoSnapshot = deleteAutoSnapshot;
-			}
-
-			public Boolean getDeleteWithComputer() {
-				return this.deleteWithComputer;
-			}
-
-			public void setDeleteWithComputer(Boolean deleteWithComputer) {
-				this.deleteWithComputer = deleteWithComputer;
-			}
-
-			public String getDevice() {
-				return this.device;
-			}
-
-			public void setDevice(String device) {
-				this.device = device;
-			}
-
-			public Boolean getEnableAutoSnapshot() {
-				return this.enableAutoSnapshot;
-			}
-
-			public void setEnableAutoSnapshot(Boolean enableAutoSnapshot) {
-				this.enableAutoSnapshot = enableAutoSnapshot;
-			}
-
-			public String getIaasId() {
-				return this.iaasId;
-			}
-
-			public void setIaasId(String iaasId) {
-				this.iaasId = iaasId;
-			}
-
-			public String getId() {
-				return this.id;
-			}
-
-			public void setId(String id) {
-				this.id = id;
-			}
-
-			public String getImageId() {
-				return this.imageId;
-			}
-
-			public void setImageId(String imageId) {
-				this.imageId = imageId;
-			}
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
-
-			public Boolean getPortable() {
-				return this.portable;
-			}
-
-			public void setPortable(Boolean portable) {
-				this.portable = portable;
-			}
-
-			public String getProviderId() {
-				return this.providerId;
-			}
-
-			public void setProviderId(String providerId) {
-				this.providerId = providerId;
-			}
-
-			public String getRegionId() {
-				return this.regionId;
-			}
-
-			public void setRegionId(String regionId) {
-				this.regionId = regionId;
-			}
-
-			public Long getSize() {
-				return this.size;
-			}
-
-			public void setSize(Long size) {
-				this.size = size;
+			public void setType(String type) {
+				this.type = type;
 			}
 
 			public String getStatus() {
@@ -1095,20 +999,12 @@ public class DescribeCasComputersResponse extends AcsResponse {
 				this.status = status;
 			}
 
-			public String getTenantId() {
-				return this.tenantId;
+			public Boolean getEnableAutoSnapshot() {
+				return this.enableAutoSnapshot;
 			}
 
-			public void setTenantId(String tenantId) {
-				this.tenantId = tenantId;
-			}
-
-			public String getType() {
-				return this.type;
-			}
-
-			public void setType(String type) {
-				this.type = type;
+			public void setEnableAutoSnapshot(Boolean enableAutoSnapshot) {
+				this.enableAutoSnapshot = enableAutoSnapshot;
 			}
 
 			public String getUtcCreate() {
@@ -1119,12 +1015,36 @@ public class DescribeCasComputersResponse extends AcsResponse {
 				this.utcCreate = utcCreate;
 			}
 
-			public String getUtcModified() {
-				return this.utcModified;
+			public String getIaasId() {
+				return this.iaasId;
 			}
 
-			public void setUtcModified(String utcModified) {
-				this.utcModified = utcModified;
+			public void setIaasId(String iaasId) {
+				this.iaasId = iaasId;
+			}
+
+			public String getProviderId() {
+				return this.providerId;
+			}
+
+			public void setProviderId(String providerId) {
+				this.providerId = providerId;
+			}
+
+			public Boolean getDeleteAutoSnapshot() {
+				return this.deleteAutoSnapshot;
+			}
+
+			public void setDeleteAutoSnapshot(Boolean deleteAutoSnapshot) {
+				this.deleteAutoSnapshot = deleteAutoSnapshot;
+			}
+
+			public String getRegionId() {
+				return this.regionId;
+			}
+
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
 			}
 
 			public String getWorkspaceId() {
@@ -1135,12 +1055,92 @@ public class DescribeCasComputersResponse extends AcsResponse {
 				this.workspaceId = workspaceId;
 			}
 
+			public String getUtcModified() {
+				return this.utcModified;
+			}
+
+			public void setUtcModified(String utcModified) {
+				this.utcModified = utcModified;
+			}
+
+			public Long getSize() {
+				return this.size;
+			}
+
+			public void setSize(Long size) {
+				this.size = size;
+			}
+
+			public String getDevice() {
+				return this.device;
+			}
+
+			public void setDevice(String device) {
+				this.device = device;
+			}
+
 			public String getZoneId() {
 				return this.zoneId;
 			}
 
 			public void setZoneId(String zoneId) {
 				this.zoneId = zoneId;
+			}
+
+			public Boolean getPortable() {
+				return this.portable;
+			}
+
+			public void setPortable(Boolean portable) {
+				this.portable = portable;
+			}
+
+			public String getCategory() {
+				return this.category;
+			}
+
+			public void setCategory(String category) {
+				this.category = category;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getImageId() {
+				return this.imageId;
+			}
+
+			public void setImageId(String imageId) {
+				this.imageId = imageId;
+			}
+
+			public Boolean getDeleteWithComputer() {
+				return this.deleteWithComputer;
+			}
+
+			public void setDeleteWithComputer(Boolean deleteWithComputer) {
+				this.deleteWithComputer = deleteWithComputer;
+			}
+
+			public String getId() {
+				return this.id;
+			}
+
+			public void setId(String id) {
+				this.id = id;
+			}
+
+			public String getTenantId() {
+				return this.tenantId;
+			}
+
+			public void setTenantId(String tenantId) {
+				this.tenantId = tenantId;
 			}
 
 			public Computer1 getComputer1() {
@@ -1153,13 +1153,29 @@ public class DescribeCasComputersResponse extends AcsResponse {
 
 			public static class Computer1 {
 
+				private String status;
+
+				private String iaasId;
+
 				private String name;
 
 				private String id;
 
-				private String iaasId;
+				public String getStatus() {
+					return this.status;
+				}
 
-				private String status;
+				public void setStatus(String status) {
+					this.status = status;
+				}
+
+				public String getIaasId() {
+					return this.iaasId;
+				}
+
+				public void setIaasId(String iaasId) {
+					this.iaasId = iaasId;
+				}
 
 				public String getName() {
 					return this.name;
@@ -1175,22 +1191,6 @@ public class DescribeCasComputersResponse extends AcsResponse {
 
 				public void setId(String id) {
 					this.id = id;
-				}
-
-				public String getIaasId() {
-					return this.iaasId;
-				}
-
-				public void setIaasId(String iaasId) {
-					this.iaasId = iaasId;
-				}
-
-				public String getStatus() {
-					return this.status;
-				}
-
-				public void setStatus(String status) {
-					this.status = status;
 				}
 			}
 		}

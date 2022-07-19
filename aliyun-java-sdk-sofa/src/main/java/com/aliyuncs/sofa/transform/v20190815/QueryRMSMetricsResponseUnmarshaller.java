@@ -23,8 +23,8 @@ public class QueryRMSMetricsResponseUnmarshaller {
 	public static QueryRMSMetricsResponse unmarshall(QueryRMSMetricsResponse queryRMSMetricsResponse, UnmarshallerContext _ctx) {
 		
 		queryRMSMetricsResponse.setRequestId(_ctx.stringValue("QueryRMSMetricsResponse.RequestId"));
-		queryRMSMetricsResponse.setResultCode(_ctx.stringValue("QueryRMSMetricsResponse.ResultCode"));
 		queryRMSMetricsResponse.setResultMessage(_ctx.stringValue("QueryRMSMetricsResponse.ResultMessage"));
+		queryRMSMetricsResponse.setResultCode(_ctx.stringValue("QueryRMSMetricsResponse.ResultCode"));
 		queryRMSMetricsResponse.setResult(_ctx.stringValue("QueryRMSMetricsResponse.Result"));
 	 
 	 	return queryRMSMetricsResponse;

@@ -23,8 +23,8 @@ public class PushMsConfigDataResponseUnmarshaller {
 	public static PushMsConfigDataResponse unmarshall(PushMsConfigDataResponse pushMsConfigDataResponse, UnmarshallerContext _ctx) {
 		
 		pushMsConfigDataResponse.setRequestId(_ctx.stringValue("PushMsConfigDataResponse.RequestId"));
-		pushMsConfigDataResponse.setResultCode(_ctx.stringValue("PushMsConfigDataResponse.ResultCode"));
 		pushMsConfigDataResponse.setResultMessage(_ctx.stringValue("PushMsConfigDataResponse.ResultMessage"));
+		pushMsConfigDataResponse.setResultCode(_ctx.stringValue("PushMsConfigDataResponse.ResultCode"));
 	 
 	 	return pushMsConfigDataResponse;
 	}

@@ -29,7 +29,7 @@ public class GetMsConfigResourcesRequest extends RpcAcsRequest<GetMsConfigResour
 
 	private String instanceId;
 	public GetMsConfigResourcesRequest() {
-		super("SOFA", "2019-08-15", "GetMsConfigResources", "sofacaferms");
+		super("SOFA", "2019-08-15", "GetMsConfigResources");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

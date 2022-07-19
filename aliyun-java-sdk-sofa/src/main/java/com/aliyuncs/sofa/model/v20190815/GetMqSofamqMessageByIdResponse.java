@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetMqSofamqMessageByIdResponse extends AcsResponse {
 
-	private String requestId;
+	private String resultMessage;
 
 	private String resultCode;
 
-	private String resultMessage;
+	private String requestId;
 
 	private Data data;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getResultMessage() {
+		return this.resultMessage;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setResultMessage(String resultMessage) {
+		this.resultMessage = resultMessage;
 	}
 
 	public String getResultCode() {
@@ -49,12 +49,12 @@ public class GetMqSofamqMessageByIdResponse extends AcsResponse {
 		this.resultCode = resultCode;
 	}
 
-	public String getResultMessage() {
-		return this.resultMessage;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setResultMessage(String resultMessage) {
-		this.resultMessage = resultMessage;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Data getData() {
@@ -67,52 +67,68 @@ public class GetMqSofamqMessageByIdResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String body;
-
-		private Long bodyCrc;
-
-		private String bornHost;
-
-		private Long bornTimestamp;
-
-		private String instanceId;
-
-		private String msgId;
+		private Long storeSize;
 
 		private Long reconsumeTimes;
-
-		private String storeHost;
-
-		private Long storeSize;
 
 		private Long storeTimestamp;
 
 		private String topic;
 
+		private String storeHost;
+
+		private Long bornTimestamp;
+
+		private String instanceId;
+
+		private String body;
+
+		private String msgId;
+
+		private Long bodyCrc;
+
+		private String bornHost;
+
 		private List<PropertyListItem> propertyList;
 
-		public String getBody() {
-			return this.body;
+		public Long getStoreSize() {
+			return this.storeSize;
 		}
 
-		public void setBody(String body) {
-			this.body = body;
+		public void setStoreSize(Long storeSize) {
+			this.storeSize = storeSize;
 		}
 
-		public Long getBodyCrc() {
-			return this.bodyCrc;
+		public Long getReconsumeTimes() {
+			return this.reconsumeTimes;
 		}
 
-		public void setBodyCrc(Long bodyCrc) {
-			this.bodyCrc = bodyCrc;
+		public void setReconsumeTimes(Long reconsumeTimes) {
+			this.reconsumeTimes = reconsumeTimes;
 		}
 
-		public String getBornHost() {
-			return this.bornHost;
+		public Long getStoreTimestamp() {
+			return this.storeTimestamp;
 		}
 
-		public void setBornHost(String bornHost) {
-			this.bornHost = bornHost;
+		public void setStoreTimestamp(Long storeTimestamp) {
+			this.storeTimestamp = storeTimestamp;
+		}
+
+		public String getTopic() {
+			return this.topic;
+		}
+
+		public void setTopic(String topic) {
+			this.topic = topic;
+		}
+
+		public String getStoreHost() {
+			return this.storeHost;
+		}
+
+		public void setStoreHost(String storeHost) {
+			this.storeHost = storeHost;
 		}
 
 		public Long getBornTimestamp() {
@@ -131,6 +147,14 @@ public class GetMqSofamqMessageByIdResponse extends AcsResponse {
 			this.instanceId = instanceId;
 		}
 
+		public String getBody() {
+			return this.body;
+		}
+
+		public void setBody(String body) {
+			this.body = body;
+		}
+
 		public String getMsgId() {
 			return this.msgId;
 		}
@@ -139,44 +163,20 @@ public class GetMqSofamqMessageByIdResponse extends AcsResponse {
 			this.msgId = msgId;
 		}
 
-		public Long getReconsumeTimes() {
-			return this.reconsumeTimes;
+		public Long getBodyCrc() {
+			return this.bodyCrc;
 		}
 
-		public void setReconsumeTimes(Long reconsumeTimes) {
-			this.reconsumeTimes = reconsumeTimes;
+		public void setBodyCrc(Long bodyCrc) {
+			this.bodyCrc = bodyCrc;
 		}
 
-		public String getStoreHost() {
-			return this.storeHost;
+		public String getBornHost() {
+			return this.bornHost;
 		}
 
-		public void setStoreHost(String storeHost) {
-			this.storeHost = storeHost;
-		}
-
-		public Long getStoreSize() {
-			return this.storeSize;
-		}
-
-		public void setStoreSize(Long storeSize) {
-			this.storeSize = storeSize;
-		}
-
-		public Long getStoreTimestamp() {
-			return this.storeTimestamp;
-		}
-
-		public void setStoreTimestamp(Long storeTimestamp) {
-			this.storeTimestamp = storeTimestamp;
-		}
-
-		public String getTopic() {
-			return this.topic;
-		}
-
-		public void setTopic(String topic) {
-			this.topic = topic;
+		public void setBornHost(String bornHost) {
+			this.bornHost = bornHost;
 		}
 
 		public List<PropertyListItem> getPropertyList() {

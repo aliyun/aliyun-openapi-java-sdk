@@ -30,51 +30,51 @@ public class GetMqSofamqTraceResultResponseUnmarshaller {
 	public static GetMqSofamqTraceResultResponse unmarshall(GetMqSofamqTraceResultResponse getMqSofamqTraceResultResponse, UnmarshallerContext _ctx) {
 		
 		getMqSofamqTraceResultResponse.setRequestId(_ctx.stringValue("GetMqSofamqTraceResultResponse.RequestId"));
-		getMqSofamqTraceResultResponse.setResultCode(_ctx.stringValue("GetMqSofamqTraceResultResponse.ResultCode"));
 		getMqSofamqTraceResultResponse.setResultMessage(_ctx.stringValue("GetMqSofamqTraceResultResponse.ResultMessage"));
+		getMqSofamqTraceResultResponse.setResultCode(_ctx.stringValue("GetMqSofamqTraceResultResponse.ResultCode"));
 
 		Data data = new Data();
+		data.setStatus(_ctx.stringValue("GetMqSofamqTraceResultResponse.Data.Status"));
+		data.setMsgKey(_ctx.stringValue("GetMqSofamqTraceResultResponse.Data.MsgKey"));
+		data.setUpdateTime(_ctx.longValue("GetMqSofamqTraceResultResponse.Data.UpdateTime"));
 		data.setCreateTime(_ctx.longValue("GetMqSofamqTraceResultResponse.Data.CreateTime"));
+		data.setUserId(_ctx.stringValue("GetMqSofamqTraceResultResponse.Data.UserId"));
+		data.setTopic(_ctx.stringValue("GetMqSofamqTraceResultResponse.Data.Topic"));
 		data.setInstanceId(_ctx.stringValue("GetMqSofamqTraceResultResponse.Data.InstanceId"));
 		data.setMsgId(_ctx.stringValue("GetMqSofamqTraceResultResponse.Data.MsgId"));
-		data.setMsgKey(_ctx.stringValue("GetMqSofamqTraceResultResponse.Data.MsgKey"));
 		data.setQueryId(_ctx.stringValue("GetMqSofamqTraceResultResponse.Data.QueryId"));
-		data.setStatus(_ctx.stringValue("GetMqSofamqTraceResultResponse.Data.Status"));
-		data.setTopic(_ctx.stringValue("GetMqSofamqTraceResultResponse.Data.Topic"));
-		data.setUpdateTime(_ctx.longValue("GetMqSofamqTraceResultResponse.Data.UpdateTime"));
-		data.setUserId(_ctx.stringValue("GetMqSofamqTraceResultResponse.Data.UserId"));
 
 		List<TraceListItem> traceList = new ArrayList<TraceListItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetMqSofamqTraceResultResponse.Data.TraceList.Length"); i++) {
 			TraceListItem traceListItem = new TraceListItem();
-			traceListItem.setBornHost(_ctx.stringValue("GetMqSofamqTraceResultResponse.Data.TraceList["+ i +"].BornHost"));
-			traceListItem.setCell(_ctx.stringValue("GetMqSofamqTraceResultResponse.Data.TraceList["+ i +"].Cell"));
-			traceListItem.setCostTime(_ctx.longValue("GetMqSofamqTraceResultResponse.Data.TraceList["+ i +"].CostTime"));
-			traceListItem.setMsgId(_ctx.stringValue("GetMqSofamqTraceResultResponse.Data.TraceList["+ i +"].MsgId"));
-			traceListItem.setMsgKey(_ctx.stringValue("GetMqSofamqTraceResultResponse.Data.TraceList["+ i +"].MsgKey"));
-			traceListItem.setPubGroupName(_ctx.stringValue("GetMqSofamqTraceResultResponse.Data.TraceList["+ i +"].PubGroupName"));
-			traceListItem.setPubTime(_ctx.longValue("GetMqSofamqTraceResultResponse.Data.TraceList["+ i +"].PubTime"));
 			traceListItem.setStatus(_ctx.stringValue("GetMqSofamqTraceResultResponse.Data.TraceList["+ i +"].Status"));
-			traceListItem.setTag(_ctx.stringValue("GetMqSofamqTraceResultResponse.Data.TraceList["+ i +"].Tag"));
+			traceListItem.setMsgKey(_ctx.stringValue("GetMqSofamqTraceResultResponse.Data.TraceList["+ i +"].MsgKey"));
+			traceListItem.setPubTime(_ctx.longValue("GetMqSofamqTraceResultResponse.Data.TraceList["+ i +"].PubTime"));
 			traceListItem.setTopic(_ctx.stringValue("GetMqSofamqTraceResultResponse.Data.TraceList["+ i +"].Topic"));
+			traceListItem.setCostTime(_ctx.longValue("GetMqSofamqTraceResultResponse.Data.TraceList["+ i +"].CostTime"));
+			traceListItem.setTag(_ctx.stringValue("GetMqSofamqTraceResultResponse.Data.TraceList["+ i +"].Tag"));
+			traceListItem.setMsgId(_ctx.stringValue("GetMqSofamqTraceResultResponse.Data.TraceList["+ i +"].MsgId"));
+			traceListItem.setPubGroupName(_ctx.stringValue("GetMqSofamqTraceResultResponse.Data.TraceList["+ i +"].PubGroupName"));
+			traceListItem.setCell(_ctx.stringValue("GetMqSofamqTraceResultResponse.Data.TraceList["+ i +"].Cell"));
+			traceListItem.setBornHost(_ctx.stringValue("GetMqSofamqTraceResultResponse.Data.TraceList["+ i +"].BornHost"));
 
 			List<SubListItem> subList = new ArrayList<SubListItem>();
 			for (int j = 0; j < _ctx.lengthValue("GetMqSofamqTraceResultResponse.Data.TraceList["+ i +"].SubList.Length"); j++) {
 				SubListItem subListItem = new SubListItem();
-				subListItem.setCell(_ctx.stringValue("GetMqSofamqTraceResultResponse.Data.TraceList["+ i +"].SubList["+ j +"].Cell"));
-				subListItem.setFailCount(_ctx.longValue("GetMqSofamqTraceResultResponse.Data.TraceList["+ i +"].SubList["+ j +"].FailCount"));
 				subListItem.setSubGroupName(_ctx.stringValue("GetMqSofamqTraceResultResponse.Data.TraceList["+ i +"].SubList["+ j +"].SubGroupName"));
 				subListItem.setSuccessCount(_ctx.longValue("GetMqSofamqTraceResultResponse.Data.TraceList["+ i +"].SubList["+ j +"].SuccessCount"));
+				subListItem.setFailCount(_ctx.longValue("GetMqSofamqTraceResultResponse.Data.TraceList["+ i +"].SubList["+ j +"].FailCount"));
+				subListItem.setCell(_ctx.stringValue("GetMqSofamqTraceResultResponse.Data.TraceList["+ i +"].SubList["+ j +"].Cell"));
 
 				List<ClientListItem> clientList = new ArrayList<ClientListItem>();
 				for (int k = 0; k < _ctx.lengthValue("GetMqSofamqTraceResultResponse.Data.TraceList["+ i +"].SubList["+ j +"].ClientList.Length"); k++) {
 					ClientListItem clientListItem = new ClientListItem();
-					clientListItem.setClientHost(_ctx.stringValue("GetMqSofamqTraceResultResponse.Data.TraceList["+ i +"].SubList["+ j +"].ClientList["+ k +"].ClientHost"));
-					clientListItem.setCostTime(_ctx.longValue("GetMqSofamqTraceResultResponse.Data.TraceList["+ i +"].SubList["+ j +"].ClientList["+ k +"].CostTime"));
-					clientListItem.setReconsumeTimes(_ctx.longValue("GetMqSofamqTraceResultResponse.Data.TraceList["+ i +"].SubList["+ j +"].ClientList["+ k +"].ReconsumeTimes"));
 					clientListItem.setStatus(_ctx.stringValue("GetMqSofamqTraceResultResponse.Data.TraceList["+ i +"].SubList["+ j +"].ClientList["+ k +"].Status"));
-					clientListItem.setSubGroupName(_ctx.stringValue("GetMqSofamqTraceResultResponse.Data.TraceList["+ i +"].SubList["+ j +"].ClientList["+ k +"].SubGroupName"));
 					clientListItem.setSubTime(_ctx.longValue("GetMqSofamqTraceResultResponse.Data.TraceList["+ i +"].SubList["+ j +"].ClientList["+ k +"].SubTime"));
+					clientListItem.setReconsumeTimes(_ctx.longValue("GetMqSofamqTraceResultResponse.Data.TraceList["+ i +"].SubList["+ j +"].ClientList["+ k +"].ReconsumeTimes"));
+					clientListItem.setClientHost(_ctx.stringValue("GetMqSofamqTraceResultResponse.Data.TraceList["+ i +"].SubList["+ j +"].ClientList["+ k +"].ClientHost"));
+					clientListItem.setSubGroupName(_ctx.stringValue("GetMqSofamqTraceResultResponse.Data.TraceList["+ i +"].SubList["+ j +"].ClientList["+ k +"].SubGroupName"));
+					clientListItem.setCostTime(_ctx.longValue("GetMqSofamqTraceResultResponse.Data.TraceList["+ i +"].SubList["+ j +"].ClientList["+ k +"].CostTime"));
 
 					clientList.add(clientListItem);
 				}
