@@ -32,8 +32,10 @@ public class GetFileDetectResultResponseUnmarshaller {
 		List<Result> resultList = new ArrayList<Result>();
 		for (int i = 0; i < _ctx.lengthValue("GetFileDetectResultResponse.ResultList.Length"); i++) {
 			Result result = new Result();
-			result.setResult(_ctx.integerValue("GetFileDetectResultResponse.ResultList["+ i +"].Result"));
 			result.setHashKey(_ctx.stringValue("GetFileDetectResultResponse.ResultList["+ i +"].HashKey"));
+			result.setResult(_ctx.integerValue("GetFileDetectResultResponse.ResultList["+ i +"].Result"));
+			result.setScore(_ctx.integerValue("GetFileDetectResultResponse.ResultList["+ i +"].Score"));
+			result.setVirusType(_ctx.stringValue("GetFileDetectResultResponse.ResultList["+ i +"].VirusType"));
 
 			Ext ext = new Ext();
 			ext.setVirusName(_ctx.stringValue("GetFileDetectResultResponse.ResultList["+ i +"].Ext.VirusName"));

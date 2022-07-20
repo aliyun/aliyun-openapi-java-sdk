@@ -47,11 +47,23 @@ public class GetFileDetectResultResponse extends AcsResponse {
 
 	public static class Result {
 
-		private Integer result;
-
 		private String hashKey;
 
+		private Integer result;
+
+		private Integer score;
+
+		private String virusType;
+
 		private Ext ext;
+
+		public String getHashKey() {
+			return this.hashKey;
+		}
+
+		public void setHashKey(String hashKey) {
+			this.hashKey = hashKey;
+		}
 
 		public Integer getResult() {
 			return this.result;
@@ -61,12 +73,20 @@ public class GetFileDetectResultResponse extends AcsResponse {
 			this.result = result;
 		}
 
-		public String getHashKey() {
-			return this.hashKey;
+		public Integer getScore() {
+			return this.score;
 		}
 
-		public void setHashKey(String hashKey) {
-			this.hashKey = hashKey;
+		public void setScore(Integer score) {
+			this.score = score;
+		}
+
+		public String getVirusType() {
+			return this.virusType;
+		}
+
+		public void setVirusType(String virusType) {
+			this.virusType = virusType;
 		}
 
 		public Ext getExt() {
