@@ -25,6 +25,8 @@ import com.aliyuncs.dataworks_public.Endpoint;
 public class SubmitFileRequest extends RpcAcsRequest<SubmitFileResponse> {
 	   
 
+	private Boolean skipAllDeployFileExtensions;
+
 	private String comment;
 
 	private Long projectId;
@@ -39,6 +41,17 @@ public class SubmitFileRequest extends RpcAcsRequest<SubmitFileResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Boolean getSkipAllDeployFileExtensions() {
+		return this.skipAllDeployFileExtensions;
+	}
+
+	public void setSkipAllDeployFileExtensions(Boolean skipAllDeployFileExtensions) {
+		this.skipAllDeployFileExtensions = skipAllDeployFileExtensions;
+		if(skipAllDeployFileExtensions != null){
+			putBodyParameter("SkipAllDeployFileExtensions", skipAllDeployFileExtensions.toString());
+		}
 	}
 
 	public String getComment() {
