@@ -73,6 +73,14 @@ public class DescribeSiteMonitorListResponseUnmarshaller {
 			optionsJson.setEnable_operator_dns(_ctx.booleanValue("DescribeSiteMonitorListResponse.SiteMonitors["+ i +"].OptionsJson.enable_operator_dns"));
 			optionsJson.setAttempts(_ctx.longValue("DescribeSiteMonitorListResponse.SiteMonitors["+ i +"].OptionsJson.attempts"));
 			optionsJson.setBizProtocol(_ctx.stringValue("DescribeSiteMonitorListResponse.SiteMonitors["+ i +"].OptionsJson.protocol"));
+			optionsJson.setProxy_protocol(_ctx.booleanValue("DescribeSiteMonitorListResponse.SiteMonitors["+ i +"].OptionsJson.proxy_protocol"));
+			optionsJson.setAcceptable_response_code(_ctx.stringValue("DescribeSiteMonitorListResponse.SiteMonitors["+ i +"].OptionsJson.acceptable_response_code"));
+			optionsJson.setIsBase64Encode(_ctx.stringValue("DescribeSiteMonitorListResponse.SiteMonitors["+ i +"].OptionsJson.isBase64Encode"));
+			optionsJson.setCert_verify(_ctx.booleanValue("DescribeSiteMonitorListResponse.SiteMonitors["+ i +"].OptionsJson.cert_verify"));
+			optionsJson.setUnfollow_redirect(_ctx.booleanValue("DescribeSiteMonitorListResponse.SiteMonitors["+ i +"].OptionsJson.unfollow_redirect"));
+			optionsJson.setDiagnosis_mtr(_ctx.booleanValue("DescribeSiteMonitorListResponse.SiteMonitors["+ i +"].OptionsJson.diagnosis_mtr"));
+			optionsJson.setDiagnosis_ping(_ctx.booleanValue("DescribeSiteMonitorListResponse.SiteMonitors["+ i +"].OptionsJson.diagnosis_ping"));
+			optionsJson.setRetry_delay(_ctx.integerValue("DescribeSiteMonitorListResponse.SiteMonitors["+ i +"].OptionsJson.retry_delay"));
 			siteMonitor.setOptionsJson(optionsJson);
 
 			siteMonitors.add(siteMonitor);

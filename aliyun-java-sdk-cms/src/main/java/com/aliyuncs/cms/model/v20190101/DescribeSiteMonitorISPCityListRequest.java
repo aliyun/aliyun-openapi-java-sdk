@@ -28,6 +28,8 @@ public class DescribeSiteMonitorISPCityListRequest extends RpcAcsRequest<Describ
 
 	private String isp;
 
+	private Boolean viewAll;
+
 	private Boolean iPV4;
 
 	private Boolean iPV6;
@@ -55,6 +57,17 @@ public class DescribeSiteMonitorISPCityListRequest extends RpcAcsRequest<Describ
 		this.isp = isp;
 		if(isp != null){
 			putQueryParameter("Isp", isp);
+		}
+	}
+
+	public Boolean getViewAll() {
+		return this.viewAll;
+	}
+
+	public void setViewAll(Boolean viewAll) {
+		this.viewAll = viewAll;
+		if(viewAll != null){
+			putQueryParameter("ViewAll", viewAll.toString());
 		}
 	}
 

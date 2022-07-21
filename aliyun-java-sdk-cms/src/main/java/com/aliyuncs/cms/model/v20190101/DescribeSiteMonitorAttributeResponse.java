@@ -443,6 +443,12 @@ public class DescribeSiteMonitorAttributeResponse extends AcsResponse {
 
 			private String isBase64Encode;
 
+			private Boolean diagnosis_mtr;
+
+			private Boolean diagnosis_ping;
+
+			private Integer retry_delay;
+
 			public String getRequest_format() {
 				return this.request_format;
 			}
@@ -673,6 +679,30 @@ public class DescribeSiteMonitorAttributeResponse extends AcsResponse {
 
 			public void setIsBase64Encode(String isBase64Encode) {
 				this.isBase64Encode = isBase64Encode;
+			}
+
+			public Boolean getDiagnosis_mtr() {
+				return this.diagnosis_mtr;
+			}
+
+			public void setDiagnosis_mtr(Boolean diagnosis_mtr) {
+				this.diagnosis_mtr = diagnosis_mtr;
+			}
+
+			public Boolean getDiagnosis_ping() {
+				return this.diagnosis_ping;
+			}
+
+			public void setDiagnosis_ping(Boolean diagnosis_ping) {
+				this.diagnosis_ping = diagnosis_ping;
+			}
+
+			public Integer getRetry_delay() {
+				return this.retry_delay;
+			}
+
+			public void setRetry_delay(Integer retry_delay) {
+				this.retry_delay = retry_delay;
 			}
 		}
 	}

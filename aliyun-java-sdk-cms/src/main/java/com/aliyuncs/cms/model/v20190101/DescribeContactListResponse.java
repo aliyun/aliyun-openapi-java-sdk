@@ -97,6 +97,8 @@ public class DescribeContactListResponse extends AcsResponse {
 
 		private String desc;
 
+		private Long contactId;
+
 		private List<String> contactGroups;
 
 		private Channels channels;
@@ -141,6 +143,14 @@ public class DescribeContactListResponse extends AcsResponse {
 
 		public void setDesc(String desc) {
 			this.desc = desc;
+		}
+
+		public Long getContactId() {
+			return this.contactId;
+		}
+
+		public void setContactId(Long contactId) {
+			this.contactId = contactId;
 		}
 
 		public List<String> getContactGroups() {

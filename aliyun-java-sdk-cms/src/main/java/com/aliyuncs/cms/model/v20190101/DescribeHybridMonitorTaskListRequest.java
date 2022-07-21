@@ -26,6 +26,8 @@ public class DescribeHybridMonitorTaskListRequest extends RpcAcsRequest<Describe
 
 	private Integer pageNumber;
 
+	private Long targetUserId;
+
 	private Integer pageSize;
 
 	private String keyword;
@@ -52,6 +54,17 @@ public class DescribeHybridMonitorTaskListRequest extends RpcAcsRequest<Describe
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Long getTargetUserId() {
+		return this.targetUserId;
+	}
+
+	public void setTargetUserId(Long targetUserId) {
+		this.targetUserId = targetUserId;
+		if(targetUserId != null){
+			putQueryParameter("TargetUserId", targetUserId.toString());
 		}
 	}
 

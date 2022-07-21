@@ -15,14 +15,14 @@
 package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cms.transform.v20190101.CreateHybridMonitorTaskResponseUnmarshaller;
+import com.aliyuncs.cms.transform.v20190101.CreateMetricRuleBlackListResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateHybridMonitorTaskResponse extends AcsResponse {
+public class CreateMetricRuleBlackListResponse extends AcsResponse {
 
 	private String code;
 
@@ -30,9 +30,9 @@ public class CreateHybridMonitorTaskResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String success;
+	private Boolean success;
 
-	private Long taskId;
+	private String id;
 
 	public String getCode() {
 		return this.code;
@@ -58,25 +58,25 @@ public class CreateHybridMonitorTaskResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getSuccess() {
+	public Boolean getSuccess() {
 		return this.success;
 	}
 
-	public void setSuccess(String success) {
+	public void setSuccess(Boolean success) {
 		this.success = success;
 	}
 
-	public Long getTaskId() {
-		return this.taskId;
+	public String getId() {
+		return this.id;
 	}
 
-	public void setTaskId(Long taskId) {
-		this.taskId = taskId;
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	@Override
-	public CreateHybridMonitorTaskResponse getInstance(UnmarshallerContext context) {
-		return	CreateHybridMonitorTaskResponseUnmarshaller.unmarshall(this, context);
+	public CreateMetricRuleBlackListResponse getInstance(UnmarshallerContext context) {
+		return	CreateMetricRuleBlackListResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

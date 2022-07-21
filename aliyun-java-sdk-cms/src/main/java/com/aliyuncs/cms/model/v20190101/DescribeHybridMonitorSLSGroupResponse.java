@@ -107,7 +107,7 @@ public class DescribeHybridMonitorSLSGroupResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Long sLSGroupName;
+		private String sLSGroupName;
 
 		private String sLSGroupDescription;
 
@@ -117,11 +117,11 @@ public class DescribeHybridMonitorSLSGroupResponse extends AcsResponse {
 
 		private List<SLS> sLSGroupConfig;
 
-		public Long getSLSGroupName() {
+		public String getSLSGroupName() {
 			return this.sLSGroupName;
 		}
 
-		public void setSLSGroupName(Long sLSGroupName) {
+		public void setSLSGroupName(String sLSGroupName) {
 			this.sLSGroupName = sLSGroupName;
 		}
 

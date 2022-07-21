@@ -257,6 +257,22 @@ public class DescribeSiteMonitorListResponse extends AcsResponse {
 
 			private String protocol;
 
+			private Boolean proxy_protocol;
+
+			private String acceptable_response_code;
+
+			private String isBase64Encode;
+
+			private Boolean cert_verify;
+
+			private Boolean unfollow_redirect;
+
+			private Boolean diagnosis_mtr;
+
+			private Boolean diagnosis_ping;
+
+			private Integer retry_delay;
+
 			public String getPassword() {
 				return this.password;
 			}
@@ -447,6 +463,70 @@ public class DescribeSiteMonitorListResponse extends AcsResponse {
 
 			public void setBizProtocol(String protocol) {
 				this.protocol = protocol;
+			}
+
+			public Boolean getProxy_protocol() {
+				return this.proxy_protocol;
+			}
+
+			public void setProxy_protocol(Boolean proxy_protocol) {
+				this.proxy_protocol = proxy_protocol;
+			}
+
+			public String getAcceptable_response_code() {
+				return this.acceptable_response_code;
+			}
+
+			public void setAcceptable_response_code(String acceptable_response_code) {
+				this.acceptable_response_code = acceptable_response_code;
+			}
+
+			public String getIsBase64Encode() {
+				return this.isBase64Encode;
+			}
+
+			public void setIsBase64Encode(String isBase64Encode) {
+				this.isBase64Encode = isBase64Encode;
+			}
+
+			public Boolean getCert_verify() {
+				return this.cert_verify;
+			}
+
+			public void setCert_verify(Boolean cert_verify) {
+				this.cert_verify = cert_verify;
+			}
+
+			public Boolean getUnfollow_redirect() {
+				return this.unfollow_redirect;
+			}
+
+			public void setUnfollow_redirect(Boolean unfollow_redirect) {
+				this.unfollow_redirect = unfollow_redirect;
+			}
+
+			public Boolean getDiagnosis_mtr() {
+				return this.diagnosis_mtr;
+			}
+
+			public void setDiagnosis_mtr(Boolean diagnosis_mtr) {
+				this.diagnosis_mtr = diagnosis_mtr;
+			}
+
+			public Boolean getDiagnosis_ping() {
+				return this.diagnosis_ping;
+			}
+
+			public void setDiagnosis_ping(Boolean diagnosis_ping) {
+				this.diagnosis_ping = diagnosis_ping;
+			}
+
+			public Integer getRetry_delay() {
+				return this.retry_delay;
+			}
+
+			public void setRetry_delay(Integer retry_delay) {
+				this.retry_delay = retry_delay;
 			}
 		}
 	}

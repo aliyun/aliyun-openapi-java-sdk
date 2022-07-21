@@ -21,29 +21,42 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class DescribeActiveMetricRuleListRequest extends RpcAcsRequest<DescribeActiveMetricRuleListResponse> {
+public class EnableMetricRuleBlackListRequest extends RpcAcsRequest<EnableMetricRuleBlackListResponse> {
 	   
 
-	private String product;
-	public DescribeActiveMetricRuleListRequest() {
-		super("Cms", "2019-01-01", "DescribeActiveMetricRuleList", "cms");
+	private Boolean isEnable;
+
+	private String id;
+	public EnableMetricRuleBlackListRequest() {
+		super("Cms", "2019-01-01", "EnableMetricRuleBlackList", "cms");
 		setMethod(MethodType.POST);
 	}
 
-	public String getProduct() {
-		return this.product;
+	public Boolean getIsEnable() {
+		return this.isEnable;
 	}
 
-	public void setProduct(String product) {
-		this.product = product;
-		if(product != null){
-			putQueryParameter("Product", product);
+	public void setIsEnable(Boolean isEnable) {
+		this.isEnable = isEnable;
+		if(isEnable != null){
+			putQueryParameter("IsEnable", isEnable.toString());
+		}
+	}
+
+	public String getId() {
+		return this.id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+		if(id != null){
+			putQueryParameter("Id", id);
 		}
 	}
 
 	@Override
-	public Class<DescribeActiveMetricRuleListResponse> getResponseClass() {
-		return DescribeActiveMetricRuleListResponse.class;
+	public Class<EnableMetricRuleBlackListResponse> getResponseClass() {
+		return EnableMetricRuleBlackListResponse.class;
 	}
 
 }

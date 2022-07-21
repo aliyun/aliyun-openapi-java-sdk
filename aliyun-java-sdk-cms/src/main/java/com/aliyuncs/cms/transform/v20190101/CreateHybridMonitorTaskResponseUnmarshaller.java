@@ -26,6 +26,7 @@ public class CreateHybridMonitorTaskResponseUnmarshaller {
 		createHybridMonitorTaskResponse.setCode(_ctx.stringValue("CreateHybridMonitorTaskResponse.Code"));
 		createHybridMonitorTaskResponse.setMessage(_ctx.stringValue("CreateHybridMonitorTaskResponse.Message"));
 		createHybridMonitorTaskResponse.setSuccess(_ctx.stringValue("CreateHybridMonitorTaskResponse.Success"));
+		createHybridMonitorTaskResponse.setTaskId(_ctx.longValue("CreateHybridMonitorTaskResponse.TaskId"));
 	 
 	 	return createHybridMonitorTaskResponse;
 	}

@@ -73,6 +73,9 @@ public class DescribeSiteMonitorAttributeResponseUnmarshaller {
 		optionJson.setAttempts(_ctx.longValue("DescribeSiteMonitorAttributeResponse.SiteMonitors.OptionJson.attempts"));
 		optionJson.setBizProtocol(_ctx.stringValue("DescribeSiteMonitorAttributeResponse.SiteMonitors.OptionJson.protocol"));
 		optionJson.setIsBase64Encode(_ctx.stringValue("DescribeSiteMonitorAttributeResponse.SiteMonitors.OptionJson.isBase64Encode"));
+		optionJson.setDiagnosis_mtr(_ctx.booleanValue("DescribeSiteMonitorAttributeResponse.SiteMonitors.OptionJson.diagnosis_mtr"));
+		optionJson.setDiagnosis_ping(_ctx.booleanValue("DescribeSiteMonitorAttributeResponse.SiteMonitors.OptionJson.diagnosis_ping"));
+		optionJson.setRetry_delay(_ctx.integerValue("DescribeSiteMonitorAttributeResponse.SiteMonitors.OptionJson.retry_delay"));
 		siteMonitors.setOptionJson(optionJson);
 
 		List<IspCity> ispCities = new ArrayList<IspCity>();

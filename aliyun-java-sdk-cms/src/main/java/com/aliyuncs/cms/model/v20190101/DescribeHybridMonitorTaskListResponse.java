@@ -159,6 +159,8 @@ public class DescribeHybridMonitorTaskListResponse extends AcsResponse {
 
 		private List<String> instances;
 
+		private SLSProcessConfig sLSProcessConfig;
+
 		public String getYARMConfig() {
 			return this.yARMConfig;
 		}
@@ -367,6 +369,14 @@ public class DescribeHybridMonitorTaskListResponse extends AcsResponse {
 			this.instances = instances;
 		}
 
+		public SLSProcessConfig getSLSProcessConfig() {
+			return this.sLSProcessConfig;
+		}
+
+		public void setSLSProcessConfig(SLSProcessConfig sLSProcessConfig) {
+			this.sLSProcessConfig = sLSProcessConfig;
+		}
+
 		public static class AttachLabelsItem {
 
 			private String name;
@@ -420,6 +430,204 @@ public class DescribeHybridMonitorTaskListResponse extends AcsResponse {
 
 			public void setFunction(String function) {
 				this.function = function;
+			}
+		}
+
+		public static class SLSProcessConfig {
+
+			private List<StatisticsItem> statistics;
+
+			private List<GroupByItem> groupBy;
+
+			private List<ExpressItem> express;
+
+			private Filter filter;
+
+			public List<StatisticsItem> getStatistics() {
+				return this.statistics;
+			}
+
+			public void setStatistics(List<StatisticsItem> statistics) {
+				this.statistics = statistics;
+			}
+
+			public List<GroupByItem> getGroupBy() {
+				return this.groupBy;
+			}
+
+			public void setGroupBy(List<GroupByItem> groupBy) {
+				this.groupBy = groupBy;
+			}
+
+			public List<ExpressItem> getExpress() {
+				return this.express;
+			}
+
+			public void setExpress(List<ExpressItem> express) {
+				this.express = express;
+			}
+
+			public Filter getFilter() {
+				return this.filter;
+			}
+
+			public void setFilter(Filter filter) {
+				this.filter = filter;
+			}
+
+			public static class StatisticsItem {
+
+				private String sLSKeyName;
+
+				private String function;
+
+				private String alias;
+
+				private String parameter1;
+
+				private String parameter2;
+
+				public String getSLSKeyName() {
+					return this.sLSKeyName;
+				}
+
+				public void setSLSKeyName(String sLSKeyName) {
+					this.sLSKeyName = sLSKeyName;
+				}
+
+				public String getFunction() {
+					return this.function;
+				}
+
+				public void setFunction(String function) {
+					this.function = function;
+				}
+
+				public String getAlias() {
+					return this.alias;
+				}
+
+				public void setAlias(String alias) {
+					this.alias = alias;
+				}
+
+				public String getParameter1() {
+					return this.parameter1;
+				}
+
+				public void setParameter1(String parameter1) {
+					this.parameter1 = parameter1;
+				}
+
+				public String getParameter2() {
+					return this.parameter2;
+				}
+
+				public void setParameter2(String parameter2) {
+					this.parameter2 = parameter2;
+				}
+			}
+
+			public static class GroupByItem {
+
+				private String sLSKeyName;
+
+				private String alias;
+
+				public String getSLSKeyName() {
+					return this.sLSKeyName;
+				}
+
+				public void setSLSKeyName(String sLSKeyName) {
+					this.sLSKeyName = sLSKeyName;
+				}
+
+				public String getAlias() {
+					return this.alias;
+				}
+
+				public void setAlias(String alias) {
+					this.alias = alias;
+				}
+			}
+
+			public static class ExpressItem {
+
+				private String express;
+
+				private String alias;
+
+				public String getExpress() {
+					return this.express;
+				}
+
+				public void setExpress(String express) {
+					this.express = express;
+				}
+
+				public String getAlias() {
+					return this.alias;
+				}
+
+				public void setAlias(String alias) {
+					this.alias = alias;
+				}
+			}
+
+			public static class Filter {
+
+				private String relation;
+
+				private List<FiltersItem> filters;
+
+				public String getRelation() {
+					return this.relation;
+				}
+
+				public void setRelation(String relation) {
+					this.relation = relation;
+				}
+
+				public List<FiltersItem> getFilters() {
+					return this.filters;
+				}
+
+				public void setFilters(List<FiltersItem> filters) {
+					this.filters = filters;
+				}
+
+				public static class FiltersItem {
+
+					private String sLSKeyName;
+
+					private String operator;
+
+					private String value;
+
+					public String getSLSKeyName() {
+						return this.sLSKeyName;
+					}
+
+					public void setSLSKeyName(String sLSKeyName) {
+						this.sLSKeyName = sLSKeyName;
+					}
+
+					public String getOperator() {
+						return this.operator;
+					}
+
+					public void setOperator(String operator) {
+						this.operator = operator;
+					}
+
+					public String getValue() {
+						return this.value;
+					}
+
+					public void setValue(String value) {
+						this.value = value;
+					}
+				}
 			}
 		}
 	}

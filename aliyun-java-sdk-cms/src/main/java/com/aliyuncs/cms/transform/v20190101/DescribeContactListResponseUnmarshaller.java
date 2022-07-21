@@ -42,6 +42,7 @@ public class DescribeContactListResponseUnmarshaller {
 			contact.setCreateTime(_ctx.longValue("DescribeContactListResponse.Contacts["+ i +"].CreateTime"));
 			contact.setLang(_ctx.stringValue("DescribeContactListResponse.Contacts["+ i +"].Lang"));
 			contact.setDesc(_ctx.stringValue("DescribeContactListResponse.Contacts["+ i +"].Desc"));
+			contact.setContactId(_ctx.longValue("DescribeContactListResponse.Contacts["+ i +"].ContactId"));
 
 			List<String> contactGroups = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeContactListResponse.Contacts["+ i +"].ContactGroups.Length"); j++) {

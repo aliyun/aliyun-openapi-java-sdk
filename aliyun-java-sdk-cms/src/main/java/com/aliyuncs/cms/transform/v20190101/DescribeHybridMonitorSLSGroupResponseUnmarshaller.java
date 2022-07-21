@@ -38,7 +38,7 @@ public class DescribeHybridMonitorSLSGroupResponseUnmarshaller {
 		List<Data> list = new ArrayList<Data>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeHybridMonitorSLSGroupResponse.List.Length"); i++) {
 			Data data = new Data();
-			data.setSLSGroupName(_ctx.longValue("DescribeHybridMonitorSLSGroupResponse.List["+ i +"].SLSGroupName"));
+			data.setSLSGroupName(_ctx.stringValue("DescribeHybridMonitorSLSGroupResponse.List["+ i +"].SLSGroupName"));
 			data.setSLSGroupDescription(_ctx.stringValue("DescribeHybridMonitorSLSGroupResponse.List["+ i +"].SLSGroupDescription"));
 			data.setCreateTime(_ctx.stringValue("DescribeHybridMonitorSLSGroupResponse.List["+ i +"].CreateTime"));
 			data.setUpdateTime(_ctx.stringValue("DescribeHybridMonitorSLSGroupResponse.List["+ i +"].UpdateTime"));

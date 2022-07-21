@@ -21,6 +21,12 @@ import com.aliyuncs.cms.model.v20190101.DescribeHybridMonitorTaskListResponse;
 import com.aliyuncs.cms.model.v20190101.DescribeHybridMonitorTaskListResponse.TaskListItem;
 import com.aliyuncs.cms.model.v20190101.DescribeHybridMonitorTaskListResponse.TaskListItem.AttachLabelsItem;
 import com.aliyuncs.cms.model.v20190101.DescribeHybridMonitorTaskListResponse.TaskListItem.MatchExpressItem;
+import com.aliyuncs.cms.model.v20190101.DescribeHybridMonitorTaskListResponse.TaskListItem.SLSProcessConfig;
+import com.aliyuncs.cms.model.v20190101.DescribeHybridMonitorTaskListResponse.TaskListItem.SLSProcessConfig.ExpressItem;
+import com.aliyuncs.cms.model.v20190101.DescribeHybridMonitorTaskListResponse.TaskListItem.SLSProcessConfig.Filter;
+import com.aliyuncs.cms.model.v20190101.DescribeHybridMonitorTaskListResponse.TaskListItem.SLSProcessConfig.Filter.FiltersItem;
+import com.aliyuncs.cms.model.v20190101.DescribeHybridMonitorTaskListResponse.TaskListItem.SLSProcessConfig.GroupByItem;
+import com.aliyuncs.cms.model.v20190101.DescribeHybridMonitorTaskListResponse.TaskListItem.SLSProcessConfig.StatisticsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -68,6 +74,57 @@ public class DescribeHybridMonitorTaskListResponseUnmarshaller {
 				instances.add(_ctx.stringValue("DescribeHybridMonitorTaskListResponse.TaskList["+ i +"].Instances["+ j +"]"));
 			}
 			taskListItem.setInstances(instances);
+
+			SLSProcessConfig sLSProcessConfig = new SLSProcessConfig();
+
+			Filter filter = new Filter();
+			filter.setRelation(_ctx.stringValue("DescribeHybridMonitorTaskListResponse.TaskList["+ i +"].SLSProcessConfig.Filter.Relation"));
+
+			List<FiltersItem> filters = new ArrayList<FiltersItem>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeHybridMonitorTaskListResponse.TaskList["+ i +"].SLSProcessConfig.Filter.Filters.Length"); j++) {
+				FiltersItem filtersItem = new FiltersItem();
+				filtersItem.setSLSKeyName(_ctx.stringValue("DescribeHybridMonitorTaskListResponse.TaskList["+ i +"].SLSProcessConfig.Filter.Filters["+ j +"].SLSKeyName"));
+				filtersItem.setOperator(_ctx.stringValue("DescribeHybridMonitorTaskListResponse.TaskList["+ i +"].SLSProcessConfig.Filter.Filters["+ j +"].Operator"));
+				filtersItem.setValue(_ctx.stringValue("DescribeHybridMonitorTaskListResponse.TaskList["+ i +"].SLSProcessConfig.Filter.Filters["+ j +"].Value"));
+
+				filters.add(filtersItem);
+			}
+			filter.setFilters(filters);
+			sLSProcessConfig.setFilter(filter);
+
+			List<StatisticsItem> statistics = new ArrayList<StatisticsItem>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeHybridMonitorTaskListResponse.TaskList["+ i +"].SLSProcessConfig.Statistics.Length"); j++) {
+				StatisticsItem statisticsItem = new StatisticsItem();
+				statisticsItem.setSLSKeyName(_ctx.stringValue("DescribeHybridMonitorTaskListResponse.TaskList["+ i +"].SLSProcessConfig.Statistics["+ j +"].SLSKeyName"));
+				statisticsItem.setFunction(_ctx.stringValue("DescribeHybridMonitorTaskListResponse.TaskList["+ i +"].SLSProcessConfig.Statistics["+ j +"].Function"));
+				statisticsItem.setAlias(_ctx.stringValue("DescribeHybridMonitorTaskListResponse.TaskList["+ i +"].SLSProcessConfig.Statistics["+ j +"].Alias"));
+				statisticsItem.setParameter1(_ctx.stringValue("DescribeHybridMonitorTaskListResponse.TaskList["+ i +"].SLSProcessConfig.Statistics["+ j +"].Parameter1"));
+				statisticsItem.setParameter2(_ctx.stringValue("DescribeHybridMonitorTaskListResponse.TaskList["+ i +"].SLSProcessConfig.Statistics["+ j +"].Parameter2"));
+
+				statistics.add(statisticsItem);
+			}
+			sLSProcessConfig.setStatistics(statistics);
+
+			List<GroupByItem> groupBy = new ArrayList<GroupByItem>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeHybridMonitorTaskListResponse.TaskList["+ i +"].SLSProcessConfig.GroupBy.Length"); j++) {
+				GroupByItem groupByItem = new GroupByItem();
+				groupByItem.setSLSKeyName(_ctx.stringValue("DescribeHybridMonitorTaskListResponse.TaskList["+ i +"].SLSProcessConfig.GroupBy["+ j +"].SLSKeyName"));
+				groupByItem.setAlias(_ctx.stringValue("DescribeHybridMonitorTaskListResponse.TaskList["+ i +"].SLSProcessConfig.GroupBy["+ j +"].Alias"));
+
+				groupBy.add(groupByItem);
+			}
+			sLSProcessConfig.setGroupBy(groupBy);
+
+			List<ExpressItem> express = new ArrayList<ExpressItem>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeHybridMonitorTaskListResponse.TaskList["+ i +"].SLSProcessConfig.Express.Length"); j++) {
+				ExpressItem expressItem = new ExpressItem();
+				expressItem.setExpress(_ctx.stringValue("DescribeHybridMonitorTaskListResponse.TaskList["+ i +"].SLSProcessConfig.Express["+ j +"].Express"));
+				expressItem.setAlias(_ctx.stringValue("DescribeHybridMonitorTaskListResponse.TaskList["+ i +"].SLSProcessConfig.Express["+ j +"].Alias"));
+
+				express.add(expressItem);
+			}
+			sLSProcessConfig.setExpress(express);
+			taskListItem.setSLSProcessConfig(sLSProcessConfig);
 
 			List<AttachLabelsItem> attachLabels = new ArrayList<AttachLabelsItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeHybridMonitorTaskListResponse.TaskList["+ i +"].AttachLabels.Length"); j++) {

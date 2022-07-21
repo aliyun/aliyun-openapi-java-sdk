@@ -15,31 +15,31 @@
 package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cms.transform.v20190101.CreateHybridMonitorTaskResponseUnmarshaller;
+import com.aliyuncs.cms.transform.v20190101.BatchCreateInstantSiteMonitorResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateHybridMonitorTaskResponse extends AcsResponse {
-
-	private String code;
-
-	private String message;
+public class BatchCreateInstantSiteMonitorResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String success;
+	private String message;
 
-	private Long taskId;
+	private Boolean success;
 
-	public String getCode() {
-		return this.code;
+	private String data;
+
+	private String code;
+
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -50,33 +50,33 @@ public class CreateHybridMonitorTaskResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getSuccess() {
+	public Boolean getSuccess() {
 		return this.success;
 	}
 
-	public void setSuccess(String success) {
+	public void setSuccess(Boolean success) {
 		this.success = success;
 	}
 
-	public Long getTaskId() {
-		return this.taskId;
+	public String getData() {
+		return this.data;
 	}
 
-	public void setTaskId(Long taskId) {
-		this.taskId = taskId;
+	public void setData(String data) {
+		this.data = data;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	@Override
-	public CreateHybridMonitorTaskResponse getInstance(UnmarshallerContext context) {
-		return	CreateHybridMonitorTaskResponseUnmarshaller.unmarshall(this, context);
+	public BatchCreateInstantSiteMonitorResponse getInstance(UnmarshallerContext context) {
+		return	BatchCreateInstantSiteMonitorResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
