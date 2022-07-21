@@ -12,21 +12,22 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.imm.model.v20170906;
+package com.aliyuncs.imm.model.v20200930;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.imm.transform.v20170906.DecodeBlindWatermarkResponseUnmarshaller;
+import com.aliyuncs.imm.transform.v20200930.ListRegionsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DecodeBlindWatermarkResponse extends AcsResponse {
+public class ListRegionsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String targetUri;
+	private List<RegionsItem> regions;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,17 +37,40 @@ public class DecodeBlindWatermarkResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getTargetUri() {
-		return this.targetUri;
+	public List<RegionsItem> getRegions() {
+		return this.regions;
 	}
 
-	public void setTargetUri(String targetUri) {
-		this.targetUri = targetUri;
+	public void setRegions(List<RegionsItem> regions) {
+		this.regions = regions;
+	}
+
+	public static class RegionsItem {
+
+		private String regionId;
+
+		private String localName;
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getLocalName() {
+			return this.localName;
+		}
+
+		public void setLocalName(String localName) {
+			this.localName = localName;
+		}
 	}
 
 	@Override
-	public DecodeBlindWatermarkResponse getInstance(UnmarshallerContext context) {
-		return	DecodeBlindWatermarkResponseUnmarshaller.unmarshall(this, context);
+	public ListRegionsResponse getInstance(UnmarshallerContext context) {
+		return	ListRegionsResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

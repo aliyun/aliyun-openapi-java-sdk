@@ -12,19 +12,18 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.imm.transform.v20170906;
+package com.aliyuncs.imm.transform.v20200930;
 
-import com.aliyuncs.imm.model.v20170906.DecodeBlindWatermarkResponse;
+import com.aliyuncs.imm.model.v20200930.BatchDeleteFileMetaResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class DecodeBlindWatermarkResponseUnmarshaller {
+public class BatchDeleteFileMetaResponseUnmarshaller {
 
-	public static DecodeBlindWatermarkResponse unmarshall(DecodeBlindWatermarkResponse decodeBlindWatermarkResponse, UnmarshallerContext _ctx) {
+	public static BatchDeleteFileMetaResponse unmarshall(BatchDeleteFileMetaResponse batchDeleteFileMetaResponse, UnmarshallerContext _ctx) {
 		
-		decodeBlindWatermarkResponse.setRequestId(_ctx.stringValue("DecodeBlindWatermarkResponse.RequestId"));
-		decodeBlindWatermarkResponse.setTargetUri(_ctx.stringValue("DecodeBlindWatermarkResponse.TargetUri"));
+		batchDeleteFileMetaResponse.setRequestId(_ctx.stringValue("BatchDeleteFileMetaResponse.RequestId"));
 	 
-	 	return decodeBlindWatermarkResponse;
+	 	return batchDeleteFileMetaResponse;
 	}
 }

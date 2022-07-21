@@ -12,19 +12,18 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.imm.transform.v20170906;
+package com.aliyuncs.imm.transform.v20200930;
 
-import com.aliyuncs.imm.model.v20170906.DecodeBlindWatermarkResponse;
+import com.aliyuncs.imm.model.v20200930.UpdateFigureClusterResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class DecodeBlindWatermarkResponseUnmarshaller {
+public class UpdateFigureClusterResponseUnmarshaller {
 
-	public static DecodeBlindWatermarkResponse unmarshall(DecodeBlindWatermarkResponse decodeBlindWatermarkResponse, UnmarshallerContext _ctx) {
+	public static UpdateFigureClusterResponse unmarshall(UpdateFigureClusterResponse updateFigureClusterResponse, UnmarshallerContext _ctx) {
 		
-		decodeBlindWatermarkResponse.setRequestId(_ctx.stringValue("DecodeBlindWatermarkResponse.RequestId"));
-		decodeBlindWatermarkResponse.setTargetUri(_ctx.stringValue("DecodeBlindWatermarkResponse.TargetUri"));
+		updateFigureClusterResponse.setRequestId(_ctx.stringValue("UpdateFigureClusterResponse.RequestId"));
 	 
-	 	return decodeBlindWatermarkResponse;
+	 	return updateFigureClusterResponse;
 	}
 }

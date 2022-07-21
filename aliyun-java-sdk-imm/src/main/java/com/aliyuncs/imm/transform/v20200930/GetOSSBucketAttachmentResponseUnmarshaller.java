@@ -12,19 +12,19 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.imm.transform.v20170906;
+package com.aliyuncs.imm.transform.v20200930;
 
-import com.aliyuncs.imm.model.v20170906.DecodeBlindWatermarkResponse;
+import com.aliyuncs.imm.model.v20200930.GetOSSBucketAttachmentResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class DecodeBlindWatermarkResponseUnmarshaller {
+public class GetOSSBucketAttachmentResponseUnmarshaller {
 
-	public static DecodeBlindWatermarkResponse unmarshall(DecodeBlindWatermarkResponse decodeBlindWatermarkResponse, UnmarshallerContext _ctx) {
+	public static GetOSSBucketAttachmentResponse unmarshall(GetOSSBucketAttachmentResponse getOSSBucketAttachmentResponse, UnmarshallerContext _ctx) {
 		
-		decodeBlindWatermarkResponse.setRequestId(_ctx.stringValue("DecodeBlindWatermarkResponse.RequestId"));
-		decodeBlindWatermarkResponse.setTargetUri(_ctx.stringValue("DecodeBlindWatermarkResponse.TargetUri"));
+		getOSSBucketAttachmentResponse.setRequestId(_ctx.stringValue("GetOSSBucketAttachmentResponse.RequestId"));
+		getOSSBucketAttachmentResponse.setProjectName(_ctx.stringValue("GetOSSBucketAttachmentResponse.ProjectName"));
 	 
-	 	return decodeBlindWatermarkResponse;
+	 	return getOSSBucketAttachmentResponse;
 	}
 }

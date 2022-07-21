@@ -12,21 +12,19 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.imm.model.v20170906;
+package com.aliyuncs.imm.model.v20200930;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.imm.transform.v20170906.DecodeBlindWatermarkResponseUnmarshaller;
+import com.aliyuncs.imm.transform.v20200930.DeleteDatasetResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DecodeBlindWatermarkResponse extends AcsResponse {
+public class DeleteDatasetResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String targetUri;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,17 +34,9 @@ public class DecodeBlindWatermarkResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getTargetUri() {
-		return this.targetUri;
-	}
-
-	public void setTargetUri(String targetUri) {
-		this.targetUri = targetUri;
-	}
-
 	@Override
-	public DecodeBlindWatermarkResponse getInstance(UnmarshallerContext context) {
-		return	DecodeBlindWatermarkResponseUnmarshaller.unmarshall(this, context);
+	public DeleteDatasetResponse getInstance(UnmarshallerContext context) {
+		return	DeleteDatasetResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

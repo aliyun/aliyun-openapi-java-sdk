@@ -12,19 +12,19 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.imm.transform.v20170906;
+package com.aliyuncs.imm.transform.v20200930;
 
-import com.aliyuncs.imm.model.v20170906.DecodeBlindWatermarkResponse;
+import com.aliyuncs.imm.model.v20200930.BatchIndexFileMetaResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class DecodeBlindWatermarkResponseUnmarshaller {
+public class BatchIndexFileMetaResponseUnmarshaller {
 
-	public static DecodeBlindWatermarkResponse unmarshall(DecodeBlindWatermarkResponse decodeBlindWatermarkResponse, UnmarshallerContext _ctx) {
+	public static BatchIndexFileMetaResponse unmarshall(BatchIndexFileMetaResponse batchIndexFileMetaResponse, UnmarshallerContext _ctx) {
 		
-		decodeBlindWatermarkResponse.setRequestId(_ctx.stringValue("DecodeBlindWatermarkResponse.RequestId"));
-		decodeBlindWatermarkResponse.setTargetUri(_ctx.stringValue("DecodeBlindWatermarkResponse.TargetUri"));
+		batchIndexFileMetaResponse.setRequestId(_ctx.stringValue("BatchIndexFileMetaResponse.RequestId"));
+		batchIndexFileMetaResponse.setEventId(_ctx.stringValue("BatchIndexFileMetaResponse.EventId"));
 	 
-	 	return decodeBlindWatermarkResponse;
+	 	return batchIndexFileMetaResponse;
 	}
 }

@@ -12,21 +12,21 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.imm.model.v20170906;
+package com.aliyuncs.imm.model.v20200930;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.imm.transform.v20170906.DecodeBlindWatermarkResponseUnmarshaller;
+import com.aliyuncs.imm.transform.v20200930.DetectTextAnomalyResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DecodeBlindWatermarkResponse extends AcsResponse {
+public class DetectTextAnomalyResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String targetUri;
+	private String suggestion;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,17 +36,17 @@ public class DecodeBlindWatermarkResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getTargetUri() {
-		return this.targetUri;
+	public String getSuggestion() {
+		return this.suggestion;
 	}
 
-	public void setTargetUri(String targetUri) {
-		this.targetUri = targetUri;
+	public void setSuggestion(String suggestion) {
+		this.suggestion = suggestion;
 	}
 
 	@Override
-	public DecodeBlindWatermarkResponse getInstance(UnmarshallerContext context) {
-		return	DecodeBlindWatermarkResponseUnmarshaller.unmarshall(this, context);
+	public DetectTextAnomalyResponse getInstance(UnmarshallerContext context) {
+		return	DetectTextAnomalyResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

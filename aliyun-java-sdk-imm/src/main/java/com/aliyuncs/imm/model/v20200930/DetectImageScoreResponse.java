@@ -12,21 +12,21 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.imm.model.v20170906;
+package com.aliyuncs.imm.model.v20200930;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.imm.transform.v20170906.DecodeBlindWatermarkResponseUnmarshaller;
+import com.aliyuncs.imm.transform.v20200930.DetectImageScoreResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DecodeBlindWatermarkResponse extends AcsResponse {
+public class DetectImageScoreResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String targetUri;
+	private ImageScore imageScore;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,17 +36,30 @@ public class DecodeBlindWatermarkResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getTargetUri() {
-		return this.targetUri;
+	public ImageScore getImageScore() {
+		return this.imageScore;
 	}
 
-	public void setTargetUri(String targetUri) {
-		this.targetUri = targetUri;
+	public void setImageScore(ImageScore imageScore) {
+		this.imageScore = imageScore;
+	}
+
+	public static class ImageScore {
+
+		private Float overallQualityScore;
+
+		public Float getOverallQualityScore() {
+			return this.overallQualityScore;
+		}
+
+		public void setOverallQualityScore(Float overallQualityScore) {
+			this.overallQualityScore = overallQualityScore;
+		}
 	}
 
 	@Override
-	public DecodeBlindWatermarkResponse getInstance(UnmarshallerContext context) {
-		return	DecodeBlindWatermarkResponseUnmarshaller.unmarshall(this, context);
+	public DetectImageScoreResponse getInstance(UnmarshallerContext context) {
+		return	DetectImageScoreResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
