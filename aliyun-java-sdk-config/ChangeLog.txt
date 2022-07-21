@@ -1,3 +1,6 @@
+2022-07-21 Version: 2.1.5
+- Support PreConfigRule.
+
 2022-06-22 Version: 2.1.3
 - Fix bugs.
 

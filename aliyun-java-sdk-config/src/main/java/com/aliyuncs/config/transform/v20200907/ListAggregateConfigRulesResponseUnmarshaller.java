@@ -22,6 +22,7 @@ import com.aliyuncs.config.model.v20200907.ListAggregateConfigRulesResponse.Conf
 import com.aliyuncs.config.model.v20200907.ListAggregateConfigRulesResponse.ConfigRules.ConfigRule;
 import com.aliyuncs.config.model.v20200907.ListAggregateConfigRulesResponse.ConfigRules.ConfigRule.Compliance;
 import com.aliyuncs.config.model.v20200907.ListAggregateConfigRulesResponse.ConfigRules.ConfigRule.CreateBy;
+import com.aliyuncs.config.model.v20200907.ListAggregateConfigRulesResponse.ConfigRules.ConfigRule.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -64,6 +65,16 @@ public class ListAggregateConfigRulesResponseUnmarshaller {
 			createBy.setCreatorId(_ctx.stringValue("ListAggregateConfigRulesResponse.ConfigRules.ConfigRuleList["+ i +"].CreateBy.CreatorId"));
 			createBy.setAggregatorId(_ctx.stringValue("ListAggregateConfigRulesResponse.ConfigRules.ConfigRuleList["+ i +"].CreateBy.AggregatorId"));
 			configRule.setCreateBy(createBy);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("ListAggregateConfigRulesResponse.ConfigRules.ConfigRuleList["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("ListAggregateConfigRulesResponse.ConfigRules.ConfigRuleList["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("ListAggregateConfigRulesResponse.ConfigRules.ConfigRuleList["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			configRule.setTags(tags);
 
 			configRuleList.add(configRule);
 		}

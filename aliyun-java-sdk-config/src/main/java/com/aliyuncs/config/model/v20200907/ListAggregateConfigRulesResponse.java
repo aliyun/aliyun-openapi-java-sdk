@@ -109,6 +109,8 @@ public class ListAggregateConfigRulesResponse extends AcsResponse {
 
 			private String configRuleId;
 
+			private List<Tag> tags;
+
 			private Compliance compliance;
 
 			private CreateBy createBy;
@@ -193,6 +195,14 @@ public class ListAggregateConfigRulesResponse extends AcsResponse {
 				this.configRuleId = configRuleId;
 			}
 
+			public List<Tag> getTags() {
+				return this.tags;
+			}
+
+			public void setTags(List<Tag> tags) {
+				this.tags = tags;
+			}
+
 			public Compliance getCompliance() {
 				return this.compliance;
 			}
@@ -207,6 +217,29 @@ public class ListAggregateConfigRulesResponse extends AcsResponse {
 
 			public void setCreateBy(CreateBy createBy) {
 				this.createBy = createBy;
+			}
+
+			public static class Tag {
+
+				private String key;
+
+				private String value;
+
+				public String getKey() {
+					return this.key;
+				}
+
+				public void setKey(String key) {
+					this.key = key;
+				}
+
+				public String getValue() {
+					return this.value;
+				}
+
+				public void setValue(String value) {
+					this.value = value;
+				}
 			}
 
 			public static class Compliance {
