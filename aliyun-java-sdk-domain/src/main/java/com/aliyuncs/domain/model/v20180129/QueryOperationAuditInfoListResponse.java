@@ -25,36 +25,28 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryOperationAuditInfoListResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Integer totalItemNum;
+	private Boolean prePage;
 
 	private Integer currentPageNum;
 
-	private Integer totalPageNum;
+	private String requestId;
 
 	private Integer pageSize;
 
-	private Boolean prePage;
+	private Integer totalPageNum;
+
+	private Integer totalItemNum;
 
 	private Boolean nextPage;
 
 	private List<OperationAuditRecord> data;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Boolean getPrePage() {
+		return this.prePage;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getTotalItemNum() {
-		return this.totalItemNum;
-	}
-
-	public void setTotalItemNum(Integer totalItemNum) {
-		this.totalItemNum = totalItemNum;
+	public void setPrePage(Boolean prePage) {
+		this.prePage = prePage;
 	}
 
 	public Integer getCurrentPageNum() {
@@ -65,12 +57,12 @@ public class QueryOperationAuditInfoListResponse extends AcsResponse {
 		this.currentPageNum = currentPageNum;
 	}
 
-	public Integer getTotalPageNum() {
-		return this.totalPageNum;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setTotalPageNum(Integer totalPageNum) {
-		this.totalPageNum = totalPageNum;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageSize() {
@@ -81,12 +73,20 @@ public class QueryOperationAuditInfoListResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Boolean getPrePage() {
-		return this.prePage;
+	public Integer getTotalPageNum() {
+		return this.totalPageNum;
 	}
 
-	public void setPrePage(Boolean prePage) {
-		this.prePage = prePage;
+	public void setTotalPageNum(Integer totalPageNum) {
+		this.totalPageNum = totalPageNum;
+	}
+
+	public Integer getTotalItemNum() {
+		return this.totalItemNum;
+	}
+
+	public void setTotalItemNum(Integer totalItemNum) {
+		this.totalItemNum = totalItemNum;
 	}
 
 	public Boolean getNextPage() {
@@ -107,30 +107,38 @@ public class QueryOperationAuditInfoListResponse extends AcsResponse {
 
 	public static class OperationAuditRecord {
 
-		private Long id;
-
-		private Long createTime;
-
 		private Long updateTime;
-
-		private String businessName;
-
-		private String domainName;
-
-		private Integer auditType;
-
-		private Integer auditStatus;
-
-		private String auditInfo;
 
 		private String remark;
 
-		public Long getId() {
-			return this.id;
+		private Long createTime;
+
+		private Integer auditType;
+
+		private String businessName;
+
+		private String auditInfo;
+
+		private String domainName;
+
+		private Integer auditStatus;
+
+		private Long id;
+
+		public Long getUpdateTime() {
+			return this.updateTime;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
+		public void setUpdateTime(Long updateTime) {
+			this.updateTime = updateTime;
+		}
+
+		public String getRemark() {
+			return this.remark;
+		}
+
+		public void setRemark(String remark) {
+			this.remark = remark;
 		}
 
 		public Long getCreateTime() {
@@ -141,12 +149,12 @@ public class QueryOperationAuditInfoListResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public Long getUpdateTime() {
-			return this.updateTime;
+		public Integer getAuditType() {
+			return this.auditType;
 		}
 
-		public void setUpdateTime(Long updateTime) {
-			this.updateTime = updateTime;
+		public void setAuditType(Integer auditType) {
+			this.auditType = auditType;
 		}
 
 		public String getBusinessName() {
@@ -157,20 +165,20 @@ public class QueryOperationAuditInfoListResponse extends AcsResponse {
 			this.businessName = businessName;
 		}
 
+		public String getAuditInfo() {
+			return this.auditInfo;
+		}
+
+		public void setAuditInfo(String auditInfo) {
+			this.auditInfo = auditInfo;
+		}
+
 		public String getDomainName() {
 			return this.domainName;
 		}
 
 		public void setDomainName(String domainName) {
 			this.domainName = domainName;
-		}
-
-		public Integer getAuditType() {
-			return this.auditType;
-		}
-
-		public void setAuditType(Integer auditType) {
-			this.auditType = auditType;
 		}
 
 		public Integer getAuditStatus() {
@@ -181,20 +189,12 @@ public class QueryOperationAuditInfoListResponse extends AcsResponse {
 			this.auditStatus = auditStatus;
 		}
 
-		public String getAuditInfo() {
-			return this.auditInfo;
+		public Long getId() {
+			return this.id;
 		}
 
-		public void setAuditInfo(String auditInfo) {
-			this.auditInfo = auditInfo;
-		}
-
-		public String getRemark() {
-			return this.remark;
-		}
-
-		public void setRemark(String remark) {
-			this.remark = remark;
+		public void setId(Long id) {
+			this.id = id;
 		}
 	}
 

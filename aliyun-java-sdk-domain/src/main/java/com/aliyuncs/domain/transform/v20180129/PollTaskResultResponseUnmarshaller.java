@@ -27,29 +27,29 @@ public class PollTaskResultResponseUnmarshaller {
 	public static PollTaskResultResponse unmarshall(PollTaskResultResponse pollTaskResultResponse, UnmarshallerContext _ctx) {
 		
 		pollTaskResultResponse.setRequestId(_ctx.stringValue("PollTaskResultResponse.RequestId"));
-		pollTaskResultResponse.setTotalItemNum(_ctx.integerValue("PollTaskResultResponse.TotalItemNum"));
-		pollTaskResultResponse.setCurrentPageNum(_ctx.integerValue("PollTaskResultResponse.CurrentPageNum"));
-		pollTaskResultResponse.setTotalPageNum(_ctx.integerValue("PollTaskResultResponse.TotalPageNum"));
-		pollTaskResultResponse.setPageSize(_ctx.integerValue("PollTaskResultResponse.PageSize"));
 		pollTaskResultResponse.setPrePage(_ctx.booleanValue("PollTaskResultResponse.PrePage"));
+		pollTaskResultResponse.setCurrentPageNum(_ctx.integerValue("PollTaskResultResponse.CurrentPageNum"));
+		pollTaskResultResponse.setPageSize(_ctx.integerValue("PollTaskResultResponse.PageSize"));
+		pollTaskResultResponse.setTotalPageNum(_ctx.integerValue("PollTaskResultResponse.TotalPageNum"));
+		pollTaskResultResponse.setTotalItemNum(_ctx.integerValue("PollTaskResultResponse.TotalItemNum"));
 		pollTaskResultResponse.setNextPage(_ctx.booleanValue("PollTaskResultResponse.NextPage"));
 
 		List<TaskDetail> data = new ArrayList<TaskDetail>();
 		for (int i = 0; i < _ctx.lengthValue("PollTaskResultResponse.Data.Length"); i++) {
 			TaskDetail taskDetail = new TaskDetail();
-			taskDetail.setTaskNo(_ctx.stringValue("PollTaskResultResponse.Data["+ i +"].TaskNo"));
+			taskDetail.setUpdateTime(_ctx.stringValue("PollTaskResultResponse.Data["+ i +"].UpdateTime"));
 			taskDetail.setTaskDetailNo(_ctx.stringValue("PollTaskResultResponse.Data["+ i +"].TaskDetailNo"));
-			taskDetail.setTaskType(_ctx.stringValue("PollTaskResultResponse.Data["+ i +"].TaskType"));
+			taskDetail.setCreateTime(_ctx.stringValue("PollTaskResultResponse.Data["+ i +"].CreateTime"));
 			taskDetail.setInstanceId(_ctx.stringValue("PollTaskResultResponse.Data["+ i +"].InstanceId"));
 			taskDetail.setDomainName(_ctx.stringValue("PollTaskResultResponse.Data["+ i +"].DomainName"));
+			taskDetail.setTaskType(_ctx.stringValue("PollTaskResultResponse.Data["+ i +"].TaskType"));
+			taskDetail.setTaskNo(_ctx.stringValue("PollTaskResultResponse.Data["+ i +"].TaskNo"));
+			taskDetail.setTaskResult(_ctx.stringValue("PollTaskResultResponse.Data["+ i +"].TaskResult"));
+			taskDetail.setTaskStatusCode(_ctx.integerValue("PollTaskResultResponse.Data["+ i +"].TaskStatusCode"));
 			taskDetail.setTaskStatus(_ctx.stringValue("PollTaskResultResponse.Data["+ i +"].TaskStatus"));
-			taskDetail.setUpdateTime(_ctx.stringValue("PollTaskResultResponse.Data["+ i +"].UpdateTime"));
-			taskDetail.setCreateTime(_ctx.stringValue("PollTaskResultResponse.Data["+ i +"].CreateTime"));
+			taskDetail.setTaskTypeDescription(_ctx.stringValue("PollTaskResultResponse.Data["+ i +"].TaskTypeDescription"));
 			taskDetail.setTryCount(_ctx.integerValue("PollTaskResultResponse.Data["+ i +"].TryCount"));
 			taskDetail.setErrorMsg(_ctx.stringValue("PollTaskResultResponse.Data["+ i +"].ErrorMsg"));
-			taskDetail.setTaskStatusCode(_ctx.integerValue("PollTaskResultResponse.Data["+ i +"].TaskStatusCode"));
-			taskDetail.setTaskResult(_ctx.stringValue("PollTaskResultResponse.Data["+ i +"].TaskResult"));
-			taskDetail.setTaskTypeDescription(_ctx.stringValue("PollTaskResultResponse.Data["+ i +"].TaskTypeDescription"));
 
 			data.add(taskDetail);
 		}

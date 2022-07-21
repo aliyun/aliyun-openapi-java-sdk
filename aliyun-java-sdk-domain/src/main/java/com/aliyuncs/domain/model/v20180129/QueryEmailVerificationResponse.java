@@ -24,34 +24,34 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryEmailVerificationResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer verificationStatus;
 
 	private String gmtCreate;
 
-	private String gmtModified;
-
 	private String email;
-
-	private String userId;
 
 	private String emailVerificationNo;
 
-	private String tokenSendTime;
+	private String confirmIp;
 
-	private Integer verificationStatus;
+	private String requestId;
 
-	private String verificationTime;
+	private String userId;
+
+	private String gmtModified;
 
 	private String sendIp;
 
-	private String confirmIp;
+	private String verificationTime;
 
-	public String getRequestId() {
-		return this.requestId;
+	private String tokenSendTime;
+
+	public Integer getVerificationStatus() {
+		return this.verificationStatus;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setVerificationStatus(Integer verificationStatus) {
+		this.verificationStatus = verificationStatus;
 	}
 
 	public String getGmtCreate() {
@@ -62,28 +62,12 @@ public class QueryEmailVerificationResponse extends AcsResponse {
 		this.gmtCreate = gmtCreate;
 	}
 
-	public String getGmtModified() {
-		return this.gmtModified;
-	}
-
-	public void setGmtModified(String gmtModified) {
-		this.gmtModified = gmtModified;
-	}
-
 	public String getEmail() {
 		return this.email;
 	}
 
 	public void setEmail(String email) {
 		this.email = email;
-	}
-
-	public String getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
 	}
 
 	public String getEmailVerificationNo() {
@@ -94,28 +78,36 @@ public class QueryEmailVerificationResponse extends AcsResponse {
 		this.emailVerificationNo = emailVerificationNo;
 	}
 
-	public String getTokenSendTime() {
-		return this.tokenSendTime;
+	public String getConfirmIp() {
+		return this.confirmIp;
 	}
 
-	public void setTokenSendTime(String tokenSendTime) {
-		this.tokenSendTime = tokenSendTime;
+	public void setConfirmIp(String confirmIp) {
+		this.confirmIp = confirmIp;
 	}
 
-	public Integer getVerificationStatus() {
-		return this.verificationStatus;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setVerificationStatus(Integer verificationStatus) {
-		this.verificationStatus = verificationStatus;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
-	public String getVerificationTime() {
-		return this.verificationTime;
+	public String getUserId() {
+		return this.userId;
 	}
 
-	public void setVerificationTime(String verificationTime) {
-		this.verificationTime = verificationTime;
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+
+	public String getGmtModified() {
+		return this.gmtModified;
+	}
+
+	public void setGmtModified(String gmtModified) {
+		this.gmtModified = gmtModified;
 	}
 
 	public String getSendIp() {
@@ -126,12 +118,20 @@ public class QueryEmailVerificationResponse extends AcsResponse {
 		this.sendIp = sendIp;
 	}
 
-	public String getConfirmIp() {
-		return this.confirmIp;
+	public String getVerificationTime() {
+		return this.verificationTime;
 	}
 
-	public void setConfirmIp(String confirmIp) {
-		this.confirmIp = confirmIp;
+	public void setVerificationTime(String verificationTime) {
+		this.verificationTime = verificationTime;
+	}
+
+	public String getTokenSendTime() {
+		return this.tokenSendTime;
+	}
+
+	public void setTokenSendTime(String tokenSendTime) {
+		this.tokenSendTime = tokenSendTime;
 	}
 
 	@Override

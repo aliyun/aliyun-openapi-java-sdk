@@ -25,78 +25,76 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryDomainByInstanceIdResponse extends AcsResponse {
 
-	private String userId;
-
-	private String domainName;
-
-	private String instanceId;
+	private String email;
 
 	private String registrationDate;
 
-	private String expirationDate;
+	private Long registrationDateLong;
+
+	private String realNameStatus;
+
+	private Boolean premium;
+
+	private String domainNameVerificationStatus;
+
+	private Long expirationDateLong;
+
+	private String transferOutStatus;
+
+	private String zhRegistrantOrganization;
+
+	private Boolean emailVerificationClientHold;
+
+	private Integer emailVerificationStatus;
 
 	private String registrantOrganization;
-
-	private String registrantName;
-
-	private String email;
-
-	private String updateProhibitionLock;
 
 	private String transferProhibitionLock;
 
 	private Boolean domainNameProxyService;
 
-	private Boolean premium;
-
-	private Integer emailVerificationStatus;
-
-	private Boolean emailVerificationClientHold;
-
-	private String realNameStatus;
+	private String registrantType;
 
 	private String registrantUpdatingStatus;
 
-	private String transferOutStatus;
-
-	private String registrantType;
-
-	private String domainNameVerificationStatus;
-
 	private String requestId;
 
-	private String zhRegistrantOrganization;
+	private String domainName;
+
+	private String instanceId;
 
 	private String zhRegistrantName;
 
-	private Long registrationDateLong;
+	private String expirationDate;
 
-	private Long expirationDateLong;
+	private String registrantName;
+
+	private String userId;
+
+	private String updateProhibitionLock;
+
+	private Long domainGroupId;
+
+	private String remark;
+
+	private String domainGroupName;
+
+	private String expirationDateStatus;
+
+	private Integer expirationCurrDateDiff;
+
+	private String domainType;
+
+	private String domainStatus;
 
 	private List<String> dnsList;
 
-	public String getUserId() {
-		return this.userId;
+	public String getEmail() {
+		return this.email;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getRegistrationDate() {
@@ -107,12 +105,76 @@ public class QueryDomainByInstanceIdResponse extends AcsResponse {
 		this.registrationDate = registrationDate;
 	}
 
-	public String getExpirationDate() {
-		return this.expirationDate;
+	public Long getRegistrationDateLong() {
+		return this.registrationDateLong;
 	}
 
-	public void setExpirationDate(String expirationDate) {
-		this.expirationDate = expirationDate;
+	public void setRegistrationDateLong(Long registrationDateLong) {
+		this.registrationDateLong = registrationDateLong;
+	}
+
+	public String getRealNameStatus() {
+		return this.realNameStatus;
+	}
+
+	public void setRealNameStatus(String realNameStatus) {
+		this.realNameStatus = realNameStatus;
+	}
+
+	public Boolean getPremium() {
+		return this.premium;
+	}
+
+	public void setPremium(Boolean premium) {
+		this.premium = premium;
+	}
+
+	public String getDomainNameVerificationStatus() {
+		return this.domainNameVerificationStatus;
+	}
+
+	public void setDomainNameVerificationStatus(String domainNameVerificationStatus) {
+		this.domainNameVerificationStatus = domainNameVerificationStatus;
+	}
+
+	public Long getExpirationDateLong() {
+		return this.expirationDateLong;
+	}
+
+	public void setExpirationDateLong(Long expirationDateLong) {
+		this.expirationDateLong = expirationDateLong;
+	}
+
+	public String getTransferOutStatus() {
+		return this.transferOutStatus;
+	}
+
+	public void setTransferOutStatus(String transferOutStatus) {
+		this.transferOutStatus = transferOutStatus;
+	}
+
+	public String getZhRegistrantOrganization() {
+		return this.zhRegistrantOrganization;
+	}
+
+	public void setZhRegistrantOrganization(String zhRegistrantOrganization) {
+		this.zhRegistrantOrganization = zhRegistrantOrganization;
+	}
+
+	public Boolean getEmailVerificationClientHold() {
+		return this.emailVerificationClientHold;
+	}
+
+	public void setEmailVerificationClientHold(Boolean emailVerificationClientHold) {
+		this.emailVerificationClientHold = emailVerificationClientHold;
+	}
+
+	public Integer getEmailVerificationStatus() {
+		return this.emailVerificationStatus;
+	}
+
+	public void setEmailVerificationStatus(Integer emailVerificationStatus) {
+		this.emailVerificationStatus = emailVerificationStatus;
 	}
 
 	public String getRegistrantOrganization() {
@@ -121,30 +183,6 @@ public class QueryDomainByInstanceIdResponse extends AcsResponse {
 
 	public void setRegistrantOrganization(String registrantOrganization) {
 		this.registrantOrganization = registrantOrganization;
-	}
-
-	public String getRegistrantName() {
-		return this.registrantName;
-	}
-
-	public void setRegistrantName(String registrantName) {
-		this.registrantName = registrantName;
-	}
-
-	public String getEmail() {
-		return this.email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getUpdateProhibitionLock() {
-		return this.updateProhibitionLock;
-	}
-
-	public void setUpdateProhibitionLock(String updateProhibitionLock) {
-		this.updateProhibitionLock = updateProhibitionLock;
 	}
 
 	public String getTransferProhibitionLock() {
@@ -163,36 +201,12 @@ public class QueryDomainByInstanceIdResponse extends AcsResponse {
 		this.domainNameProxyService = domainNameProxyService;
 	}
 
-	public Boolean getPremium() {
-		return this.premium;
+	public String getRegistrantType() {
+		return this.registrantType;
 	}
 
-	public void setPremium(Boolean premium) {
-		this.premium = premium;
-	}
-
-	public Integer getEmailVerificationStatus() {
-		return this.emailVerificationStatus;
-	}
-
-	public void setEmailVerificationStatus(Integer emailVerificationStatus) {
-		this.emailVerificationStatus = emailVerificationStatus;
-	}
-
-	public Boolean getEmailVerificationClientHold() {
-		return this.emailVerificationClientHold;
-	}
-
-	public void setEmailVerificationClientHold(Boolean emailVerificationClientHold) {
-		this.emailVerificationClientHold = emailVerificationClientHold;
-	}
-
-	public String getRealNameStatus() {
-		return this.realNameStatus;
-	}
-
-	public void setRealNameStatus(String realNameStatus) {
-		this.realNameStatus = realNameStatus;
+	public void setRegistrantType(String registrantType) {
+		this.registrantType = registrantType;
 	}
 
 	public String getRegistrantUpdatingStatus() {
@@ -203,30 +217,6 @@ public class QueryDomainByInstanceIdResponse extends AcsResponse {
 		this.registrantUpdatingStatus = registrantUpdatingStatus;
 	}
 
-	public String getTransferOutStatus() {
-		return this.transferOutStatus;
-	}
-
-	public void setTransferOutStatus(String transferOutStatus) {
-		this.transferOutStatus = transferOutStatus;
-	}
-
-	public String getRegistrantType() {
-		return this.registrantType;
-	}
-
-	public void setRegistrantType(String registrantType) {
-		this.registrantType = registrantType;
-	}
-
-	public String getDomainNameVerificationStatus() {
-		return this.domainNameVerificationStatus;
-	}
-
-	public void setDomainNameVerificationStatus(String domainNameVerificationStatus) {
-		this.domainNameVerificationStatus = domainNameVerificationStatus;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -235,12 +225,20 @@ public class QueryDomainByInstanceIdResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getZhRegistrantOrganization() {
-		return this.zhRegistrantOrganization;
+	public String getDomainName() {
+		return this.domainName;
 	}
 
-	public void setZhRegistrantOrganization(String zhRegistrantOrganization) {
-		this.zhRegistrantOrganization = zhRegistrantOrganization;
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
 	}
 
 	public String getZhRegistrantName() {
@@ -251,20 +249,92 @@ public class QueryDomainByInstanceIdResponse extends AcsResponse {
 		this.zhRegistrantName = zhRegistrantName;
 	}
 
-	public Long getRegistrationDateLong() {
-		return this.registrationDateLong;
+	public String getExpirationDate() {
+		return this.expirationDate;
 	}
 
-	public void setRegistrationDateLong(Long registrationDateLong) {
-		this.registrationDateLong = registrationDateLong;
+	public void setExpirationDate(String expirationDate) {
+		this.expirationDate = expirationDate;
 	}
 
-	public Long getExpirationDateLong() {
-		return this.expirationDateLong;
+	public String getRegistrantName() {
+		return this.registrantName;
 	}
 
-	public void setExpirationDateLong(Long expirationDateLong) {
-		this.expirationDateLong = expirationDateLong;
+	public void setRegistrantName(String registrantName) {
+		this.registrantName = registrantName;
+	}
+
+	public String getUserId() {
+		return this.userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+
+	public String getUpdateProhibitionLock() {
+		return this.updateProhibitionLock;
+	}
+
+	public void setUpdateProhibitionLock(String updateProhibitionLock) {
+		this.updateProhibitionLock = updateProhibitionLock;
+	}
+
+	public Long getDomainGroupId() {
+		return this.domainGroupId;
+	}
+
+	public void setDomainGroupId(Long domainGroupId) {
+		this.domainGroupId = domainGroupId;
+	}
+
+	public String getRemark() {
+		return this.remark;
+	}
+
+	public void setRemark(String remark) {
+		this.remark = remark;
+	}
+
+	public String getDomainGroupName() {
+		return this.domainGroupName;
+	}
+
+	public void setDomainGroupName(String domainGroupName) {
+		this.domainGroupName = domainGroupName;
+	}
+
+	public String getExpirationDateStatus() {
+		return this.expirationDateStatus;
+	}
+
+	public void setExpirationDateStatus(String expirationDateStatus) {
+		this.expirationDateStatus = expirationDateStatus;
+	}
+
+	public Integer getExpirationCurrDateDiff() {
+		return this.expirationCurrDateDiff;
+	}
+
+	public void setExpirationCurrDateDiff(Integer expirationCurrDateDiff) {
+		this.expirationCurrDateDiff = expirationCurrDateDiff;
+	}
+
+	public String getDomainType() {
+		return this.domainType;
+	}
+
+	public void setDomainType(String domainType) {
+		this.domainType = domainType;
+	}
+
+	public String getDomainStatus() {
+		return this.domainStatus;
+	}
+
+	public void setDomainStatus(String domainStatus) {
+		this.domainStatus = domainStatus;
 	}
 
 	public List<String> getDnsList() {

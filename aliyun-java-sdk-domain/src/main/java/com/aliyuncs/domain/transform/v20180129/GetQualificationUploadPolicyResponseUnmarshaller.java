@@ -23,13 +23,13 @@ public class GetQualificationUploadPolicyResponseUnmarshaller {
 	public static GetQualificationUploadPolicyResponse unmarshall(GetQualificationUploadPolicyResponse getQualificationUploadPolicyResponse, UnmarshallerContext _ctx) {
 		
 		getQualificationUploadPolicyResponse.setRequestId(_ctx.stringValue("GetQualificationUploadPolicyResponse.RequestId"));
-		getQualificationUploadPolicyResponse.setAccessid(_ctx.stringValue("GetQualificationUploadPolicyResponse.Accessid"));
 		getQualificationUploadPolicyResponse.setPolicy(_ctx.stringValue("GetQualificationUploadPolicyResponse.Policy"));
-		getQualificationUploadPolicyResponse.setSignature(_ctx.stringValue("GetQualificationUploadPolicyResponse.Signature"));
-		getQualificationUploadPolicyResponse.setDir(_ctx.stringValue("GetQualificationUploadPolicyResponse.Dir"));
-		getQualificationUploadPolicyResponse.setPrefix(_ctx.stringValue("GetQualificationUploadPolicyResponse.Prefix"));
-		getQualificationUploadPolicyResponse.setHost(_ctx.stringValue("GetQualificationUploadPolicyResponse.Host"));
 		getQualificationUploadPolicyResponse.setExpire(_ctx.stringValue("GetQualificationUploadPolicyResponse.Expire"));
+		getQualificationUploadPolicyResponse.setAccessid(_ctx.stringValue("GetQualificationUploadPolicyResponse.Accessid"));
+		getQualificationUploadPolicyResponse.setSignature(_ctx.stringValue("GetQualificationUploadPolicyResponse.Signature"));
+		getQualificationUploadPolicyResponse.setHost(_ctx.stringValue("GetQualificationUploadPolicyResponse.Host"));
+		getQualificationUploadPolicyResponse.setPrefix(_ctx.stringValue("GetQualificationUploadPolicyResponse.Prefix"));
+		getQualificationUploadPolicyResponse.setDir(_ctx.stringValue("GetQualificationUploadPolicyResponse.Dir"));
 	 
 	 	return getQualificationUploadPolicyResponse;
 	}

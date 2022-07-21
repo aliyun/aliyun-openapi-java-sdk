@@ -24,25 +24,41 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryOperationAuditInfoDetailResponse extends AcsResponse {
 
+	private String auditInfo;
+
+	private Integer auditStatus;
+
 	private String requestId;
 
-	private String id;
+	private String businessName;
+
+	private Integer auditType;
+
+	private String domainName;
 
 	private Long createTime;
 
 	private Long updateTime;
 
-	private String businessName;
-
-	private String domainName;
-
-	private Integer auditType;
-
-	private Integer auditStatus;
-
-	private String auditInfo;
+	private String id;
 
 	private String remark;
+
+	public String getAuditInfo() {
+		return this.auditInfo;
+	}
+
+	public void setAuditInfo(String auditInfo) {
+		this.auditInfo = auditInfo;
+	}
+
+	public Integer getAuditStatus() {
+		return this.auditStatus;
+	}
+
+	public void setAuditStatus(Integer auditStatus) {
+		this.auditStatus = auditStatus;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -52,12 +68,28 @@ public class QueryOperationAuditInfoDetailResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getId() {
-		return this.id;
+	public String getBusinessName() {
+		return this.businessName;
 	}
 
-	public void setId(String id) {
-		this.id = id;
+	public void setBusinessName(String businessName) {
+		this.businessName = businessName;
+	}
+
+	public Integer getAuditType() {
+		return this.auditType;
+	}
+
+	public void setAuditType(Integer auditType) {
+		this.auditType = auditType;
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
 	}
 
 	public Long getCreateTime() {
@@ -76,44 +108,12 @@ public class QueryOperationAuditInfoDetailResponse extends AcsResponse {
 		this.updateTime = updateTime;
 	}
 
-	public String getBusinessName() {
-		return this.businessName;
+	public String getId() {
+		return this.id;
 	}
 
-	public void setBusinessName(String businessName) {
-		this.businessName = businessName;
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-	}
-
-	public Integer getAuditType() {
-		return this.auditType;
-	}
-
-	public void setAuditType(Integer auditType) {
-		this.auditType = auditType;
-	}
-
-	public Integer getAuditStatus() {
-		return this.auditStatus;
-	}
-
-	public void setAuditStatus(Integer auditStatus) {
-		this.auditStatus = auditStatus;
-	}
-
-	public String getAuditInfo() {
-		return this.auditInfo;
-	}
-
-	public void setAuditInfo(String auditInfo) {
-		this.auditInfo = auditInfo;
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public String getRemark() {

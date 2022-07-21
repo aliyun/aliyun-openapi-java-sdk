@@ -58,8 +58,8 @@ public class SaveBatchTaskForCreatingOrderTransferRequest extends RpcAcsRequest<
 			for (int depth1 = 0; depth1 < orderTransferParams.size(); depth1++) {
 				putQueryParameter("OrderTransferParam." + (depth1 + 1) + ".PermitPremiumTransfer" , orderTransferParams.get(depth1).getPermitPremiumTransfer());
 				putQueryParameter("OrderTransferParam." + (depth1 + 1) + ".AuthorizationCode" , orderTransferParams.get(depth1).getAuthorizationCode());
-				putQueryParameter("OrderTransferParam." + (depth1 + 1) + ".DomainName" , orderTransferParams.get(depth1).getDomainName());
 				putQueryParameter("OrderTransferParam." + (depth1 + 1) + ".RegistrantProfileId" , orderTransferParams.get(depth1).getRegistrantProfileId());
+				putQueryParameter("OrderTransferParam." + (depth1 + 1) + ".DomainName" , orderTransferParams.get(depth1).getDomainName());
 			}
 		}	
 	}
@@ -136,9 +136,9 @@ public class SaveBatchTaskForCreatingOrderTransferRequest extends RpcAcsRequest<
 
 		private String authorizationCode;
 
-		private String domainName;
-
 		private Long registrantProfileId;
+
+		private String domainName;
 
 		public Boolean getPermitPremiumTransfer() {
 			return this.permitPremiumTransfer;
@@ -156,20 +156,20 @@ public class SaveBatchTaskForCreatingOrderTransferRequest extends RpcAcsRequest<
 			this.authorizationCode = authorizationCode;
 		}
 
-		public String getDomainName() {
-			return this.domainName;
-		}
-
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
-		}
-
 		public Long getRegistrantProfileId() {
 			return this.registrantProfileId;
 		}
 
 		public void setRegistrantProfileId(Long registrantProfileId) {
 			this.registrantProfileId = registrantProfileId;
+		}
+
+		public String getDomainName() {
+			return this.domainName;
+		}
+
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
 		}
 	}
 

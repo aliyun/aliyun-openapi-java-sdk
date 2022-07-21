@@ -27,11 +27,11 @@ public class ScrollDomainListResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer totalItemNum;
-
 	private Integer pageSize;
 
 	private String scrollId;
+
+	private Integer totalItemNum;
 
 	private List<Domain> data;
 
@@ -41,14 +41,6 @@ public class ScrollDomainListResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalItemNum() {
-		return this.totalItemNum;
-	}
-
-	public void setTotalItemNum(Integer totalItemNum) {
-		this.totalItemNum = totalItemNum;
 	}
 
 	public Integer getPageSize() {
@@ -67,6 +59,14 @@ public class ScrollDomainListResponse extends AcsResponse {
 		this.scrollId = scrollId;
 	}
 
+	public Integer getTotalItemNum() {
+		return this.totalItemNum;
+	}
+
+	public void setTotalItemNum(Integer totalItemNum) {
+		this.totalItemNum = totalItemNum;
+	}
+
 	public List<Domain> getData() {
 		return this.data;
 	}
@@ -77,31 +77,7 @@ public class ScrollDomainListResponse extends AcsResponse {
 
 	public static class Domain {
 
-		private String domainName;
-
-		private String instanceId;
-
-		private String expirationDate;
-
-		private String registrationDate;
-
-		private String domainType;
-
-		private String domainStatus;
-
-		private String productId;
-
-		private Long expirationDateLong;
-
-		private Long registrationDateLong;
-
-		private Boolean premium;
-
 		private String domainAuditStatus;
-
-		private String expirationDateStatus;
-
-		private String registrantType;
 
 		private String domainGroupId;
 
@@ -109,95 +85,39 @@ public class ScrollDomainListResponse extends AcsResponse {
 
 		private String domainGroupName;
 
-		private Integer expirationCurrDateDiff;
-
-		private String email;
-
 		private String zhRegistrantOrganization;
 
 		private String registrantOrganization;
 
+		private String registrationDate;
+
+		private String instanceId;
+
+		private String domainName;
+
+		private String expirationDateStatus;
+
+		private String expirationDate;
+
+		private String email;
+
+		private String registrantType;
+
+		private Long expirationDateLong;
+
+		private Integer expirationCurrDateDiff;
+
+		private Boolean premium;
+
+		private Long registrationDateLong;
+
+		private String productId;
+
+		private String domainStatus;
+
+		private String domainType;
+
 		private List<String> dnsList;
-
-		public String getDomainName() {
-			return this.domainName;
-		}
-
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getExpirationDate() {
-			return this.expirationDate;
-		}
-
-		public void setExpirationDate(String expirationDate) {
-			this.expirationDate = expirationDate;
-		}
-
-		public String getRegistrationDate() {
-			return this.registrationDate;
-		}
-
-		public void setRegistrationDate(String registrationDate) {
-			this.registrationDate = registrationDate;
-		}
-
-		public String getDomainType() {
-			return this.domainType;
-		}
-
-		public void setDomainType(String domainType) {
-			this.domainType = domainType;
-		}
-
-		public String getDomainStatus() {
-			return this.domainStatus;
-		}
-
-		public void setDomainStatus(String domainStatus) {
-			this.domainStatus = domainStatus;
-		}
-
-		public String getProductId() {
-			return this.productId;
-		}
-
-		public void setProductId(String productId) {
-			this.productId = productId;
-		}
-
-		public Long getExpirationDateLong() {
-			return this.expirationDateLong;
-		}
-
-		public void setExpirationDateLong(Long expirationDateLong) {
-			this.expirationDateLong = expirationDateLong;
-		}
-
-		public Long getRegistrationDateLong() {
-			return this.registrationDateLong;
-		}
-
-		public void setRegistrationDateLong(Long registrationDateLong) {
-			this.registrationDateLong = registrationDateLong;
-		}
-
-		public Boolean getPremium() {
-			return this.premium;
-		}
-
-		public void setPremium(Boolean premium) {
-			this.premium = premium;
-		}
 
 		public String getDomainAuditStatus() {
 			return this.domainAuditStatus;
@@ -205,22 +125,6 @@ public class ScrollDomainListResponse extends AcsResponse {
 
 		public void setDomainAuditStatus(String domainAuditStatus) {
 			this.domainAuditStatus = domainAuditStatus;
-		}
-
-		public String getExpirationDateStatus() {
-			return this.expirationDateStatus;
-		}
-
-		public void setExpirationDateStatus(String expirationDateStatus) {
-			this.expirationDateStatus = expirationDateStatus;
-		}
-
-		public String getRegistrantType() {
-			return this.registrantType;
-		}
-
-		public void setRegistrantType(String registrantType) {
-			this.registrantType = registrantType;
 		}
 
 		public String getDomainGroupId() {
@@ -247,22 +151,6 @@ public class ScrollDomainListResponse extends AcsResponse {
 			this.domainGroupName = domainGroupName;
 		}
 
-		public Integer getExpirationCurrDateDiff() {
-			return this.expirationCurrDateDiff;
-		}
-
-		public void setExpirationCurrDateDiff(Integer expirationCurrDateDiff) {
-			this.expirationCurrDateDiff = expirationCurrDateDiff;
-		}
-
-		public String getEmail() {
-			return this.email;
-		}
-
-		public void setEmail(String email) {
-			this.email = email;
-		}
-
 		public String getZhRegistrantOrganization() {
 			return this.zhRegistrantOrganization;
 		}
@@ -277,6 +165,118 @@ public class ScrollDomainListResponse extends AcsResponse {
 
 		public void setRegistrantOrganization(String registrantOrganization) {
 			this.registrantOrganization = registrantOrganization;
+		}
+
+		public String getRegistrationDate() {
+			return this.registrationDate;
+		}
+
+		public void setRegistrationDate(String registrationDate) {
+			this.registrationDate = registrationDate;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getDomainName() {
+			return this.domainName;
+		}
+
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
+		}
+
+		public String getExpirationDateStatus() {
+			return this.expirationDateStatus;
+		}
+
+		public void setExpirationDateStatus(String expirationDateStatus) {
+			this.expirationDateStatus = expirationDateStatus;
+		}
+
+		public String getExpirationDate() {
+			return this.expirationDate;
+		}
+
+		public void setExpirationDate(String expirationDate) {
+			this.expirationDate = expirationDate;
+		}
+
+		public String getEmail() {
+			return this.email;
+		}
+
+		public void setEmail(String email) {
+			this.email = email;
+		}
+
+		public String getRegistrantType() {
+			return this.registrantType;
+		}
+
+		public void setRegistrantType(String registrantType) {
+			this.registrantType = registrantType;
+		}
+
+		public Long getExpirationDateLong() {
+			return this.expirationDateLong;
+		}
+
+		public void setExpirationDateLong(Long expirationDateLong) {
+			this.expirationDateLong = expirationDateLong;
+		}
+
+		public Integer getExpirationCurrDateDiff() {
+			return this.expirationCurrDateDiff;
+		}
+
+		public void setExpirationCurrDateDiff(Integer expirationCurrDateDiff) {
+			this.expirationCurrDateDiff = expirationCurrDateDiff;
+		}
+
+		public Boolean getPremium() {
+			return this.premium;
+		}
+
+		public void setPremium(Boolean premium) {
+			this.premium = premium;
+		}
+
+		public Long getRegistrationDateLong() {
+			return this.registrationDateLong;
+		}
+
+		public void setRegistrationDateLong(Long registrationDateLong) {
+			this.registrationDateLong = registrationDateLong;
+		}
+
+		public String getProductId() {
+			return this.productId;
+		}
+
+		public void setProductId(String productId) {
+			this.productId = productId;
+		}
+
+		public String getDomainStatus() {
+			return this.domainStatus;
+		}
+
+		public void setDomainStatus(String domainStatus) {
+			this.domainStatus = domainStatus;
+		}
+
+		public String getDomainType() {
+			return this.domainType;
+		}
+
+		public void setDomainType(String domainType) {
+			this.domainType = domainType;
 		}
 
 		public List<String> getDnsList() {

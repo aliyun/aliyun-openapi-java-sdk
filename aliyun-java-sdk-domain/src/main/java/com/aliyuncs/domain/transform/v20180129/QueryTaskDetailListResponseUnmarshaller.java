@@ -27,29 +27,29 @@ public class QueryTaskDetailListResponseUnmarshaller {
 	public static QueryTaskDetailListResponse unmarshall(QueryTaskDetailListResponse queryTaskDetailListResponse, UnmarshallerContext _ctx) {
 		
 		queryTaskDetailListResponse.setRequestId(_ctx.stringValue("QueryTaskDetailListResponse.RequestId"));
-		queryTaskDetailListResponse.setTotalItemNum(_ctx.integerValue("QueryTaskDetailListResponse.TotalItemNum"));
-		queryTaskDetailListResponse.setCurrentPageNum(_ctx.integerValue("QueryTaskDetailListResponse.CurrentPageNum"));
-		queryTaskDetailListResponse.setTotalPageNum(_ctx.integerValue("QueryTaskDetailListResponse.TotalPageNum"));
-		queryTaskDetailListResponse.setPageSize(_ctx.integerValue("QueryTaskDetailListResponse.PageSize"));
 		queryTaskDetailListResponse.setPrePage(_ctx.booleanValue("QueryTaskDetailListResponse.PrePage"));
+		queryTaskDetailListResponse.setCurrentPageNum(_ctx.integerValue("QueryTaskDetailListResponse.CurrentPageNum"));
+		queryTaskDetailListResponse.setPageSize(_ctx.integerValue("QueryTaskDetailListResponse.PageSize"));
+		queryTaskDetailListResponse.setTotalPageNum(_ctx.integerValue("QueryTaskDetailListResponse.TotalPageNum"));
+		queryTaskDetailListResponse.setTotalItemNum(_ctx.integerValue("QueryTaskDetailListResponse.TotalItemNum"));
 		queryTaskDetailListResponse.setNextPage(_ctx.booleanValue("QueryTaskDetailListResponse.NextPage"));
 
 		List<TaskDetail> data = new ArrayList<TaskDetail>();
 		for (int i = 0; i < _ctx.lengthValue("QueryTaskDetailListResponse.Data.Length"); i++) {
 			TaskDetail taskDetail = new TaskDetail();
-			taskDetail.setTaskNo(_ctx.stringValue("QueryTaskDetailListResponse.Data["+ i +"].TaskNo"));
+			taskDetail.setUpdateTime(_ctx.stringValue("QueryTaskDetailListResponse.Data["+ i +"].UpdateTime"));
 			taskDetail.setTaskDetailNo(_ctx.stringValue("QueryTaskDetailListResponse.Data["+ i +"].TaskDetailNo"));
-			taskDetail.setTaskType(_ctx.stringValue("QueryTaskDetailListResponse.Data["+ i +"].TaskType"));
+			taskDetail.setCreateTime(_ctx.stringValue("QueryTaskDetailListResponse.Data["+ i +"].CreateTime"));
 			taskDetail.setInstanceId(_ctx.stringValue("QueryTaskDetailListResponse.Data["+ i +"].InstanceId"));
 			taskDetail.setDomainName(_ctx.stringValue("QueryTaskDetailListResponse.Data["+ i +"].DomainName"));
+			taskDetail.setTaskType(_ctx.stringValue("QueryTaskDetailListResponse.Data["+ i +"].TaskType"));
+			taskDetail.setTaskNo(_ctx.stringValue("QueryTaskDetailListResponse.Data["+ i +"].TaskNo"));
+			taskDetail.setTaskResult(_ctx.stringValue("QueryTaskDetailListResponse.Data["+ i +"].TaskResult"));
+			taskDetail.setTaskStatusCode(_ctx.integerValue("QueryTaskDetailListResponse.Data["+ i +"].TaskStatusCode"));
 			taskDetail.setTaskStatus(_ctx.stringValue("QueryTaskDetailListResponse.Data["+ i +"].TaskStatus"));
-			taskDetail.setUpdateTime(_ctx.stringValue("QueryTaskDetailListResponse.Data["+ i +"].UpdateTime"));
-			taskDetail.setCreateTime(_ctx.stringValue("QueryTaskDetailListResponse.Data["+ i +"].CreateTime"));
+			taskDetail.setTaskTypeDescription(_ctx.stringValue("QueryTaskDetailListResponse.Data["+ i +"].TaskTypeDescription"));
 			taskDetail.setTryCount(_ctx.integerValue("QueryTaskDetailListResponse.Data["+ i +"].TryCount"));
 			taskDetail.setErrorMsg(_ctx.stringValue("QueryTaskDetailListResponse.Data["+ i +"].ErrorMsg"));
-			taskDetail.setTaskStatusCode(_ctx.integerValue("QueryTaskDetailListResponse.Data["+ i +"].TaskStatusCode"));
-			taskDetail.setTaskResult(_ctx.stringValue("QueryTaskDetailListResponse.Data["+ i +"].TaskResult"));
-			taskDetail.setTaskTypeDescription(_ctx.stringValue("QueryTaskDetailListResponse.Data["+ i +"].TaskTypeDescription"));
 
 			data.add(taskDetail);
 		}

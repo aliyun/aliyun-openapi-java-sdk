@@ -23,13 +23,13 @@ public class SaveDomainGroupResponseUnmarshaller {
 	public static SaveDomainGroupResponse unmarshall(SaveDomainGroupResponse saveDomainGroupResponse, UnmarshallerContext _ctx) {
 		
 		saveDomainGroupResponse.setRequestId(_ctx.stringValue("SaveDomainGroupResponse.RequestId"));
-		saveDomainGroupResponse.setDomainGroupId(_ctx.longValue("SaveDomainGroupResponse.DomainGroupId"));
-		saveDomainGroupResponse.setDomainGroupName(_ctx.stringValue("SaveDomainGroupResponse.DomainGroupName"));
-		saveDomainGroupResponse.setTotalNumber(_ctx.integerValue("SaveDomainGroupResponse.TotalNumber"));
+		saveDomainGroupResponse.setBeingDeleted(_ctx.booleanValue("SaveDomainGroupResponse.BeingDeleted"));
 		saveDomainGroupResponse.setCreationDate(_ctx.stringValue("SaveDomainGroupResponse.CreationDate"));
+		saveDomainGroupResponse.setDomainGroupName(_ctx.stringValue("SaveDomainGroupResponse.DomainGroupName"));
 		saveDomainGroupResponse.setModificationDate(_ctx.stringValue("SaveDomainGroupResponse.ModificationDate"));
 		saveDomainGroupResponse.setDomainGroupStatus(_ctx.stringValue("SaveDomainGroupResponse.DomainGroupStatus"));
-		saveDomainGroupResponse.setBeingDeleted(_ctx.booleanValue("SaveDomainGroupResponse.BeingDeleted"));
+		saveDomainGroupResponse.setDomainGroupId(_ctx.longValue("SaveDomainGroupResponse.DomainGroupId"));
+		saveDomainGroupResponse.setTotalNumber(_ctx.integerValue("SaveDomainGroupResponse.TotalNumber"));
 	 
 	 	return saveDomainGroupResponse;
 	}

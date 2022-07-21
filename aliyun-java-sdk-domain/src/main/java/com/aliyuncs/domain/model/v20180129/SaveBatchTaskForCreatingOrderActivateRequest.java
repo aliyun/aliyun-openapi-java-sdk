@@ -74,8 +74,8 @@ public class SaveBatchTaskForCreatingOrderActivateRequest extends RpcAcsRequest<
 				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".Address" , orderActivateParams.get(depth1).getAddress());
 				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".TelArea" , orderActivateParams.get(depth1).getTelArea());
 				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".DomainName" , orderActivateParams.get(depth1).getDomainName());
-				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".ZhAddress" , orderActivateParams.get(depth1).getZhAddress());
 				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".RegistrantType" , orderActivateParams.get(depth1).getRegistrantType());
+				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".ZhAddress" , orderActivateParams.get(depth1).getZhAddress());
 				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".Telephone" , orderActivateParams.get(depth1).getTelephone());
 				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".TrademarkDomainActivation" , orderActivateParams.get(depth1).getTrademarkDomainActivation());
 				putQueryParameter("OrderActivateParam." + (depth1 + 1) + ".ZhProvince" , orderActivateParams.get(depth1).getZhProvince());
@@ -190,9 +190,9 @@ public class SaveBatchTaskForCreatingOrderActivateRequest extends RpcAcsRequest<
 
 		private String domainName;
 
-		private String zhAddress;
-
 		private String registrantType;
+
+		private String zhAddress;
 
 		private String telephone;
 
@@ -350,20 +350,20 @@ public class SaveBatchTaskForCreatingOrderActivateRequest extends RpcAcsRequest<
 			this.domainName = domainName;
 		}
 
-		public String getZhAddress() {
-			return this.zhAddress;
-		}
-
-		public void setZhAddress(String zhAddress) {
-			this.zhAddress = zhAddress;
-		}
-
 		public String getRegistrantType() {
 			return this.registrantType;
 		}
 
 		public void setRegistrantType(String registrantType) {
 			this.registrantType = registrantType;
+		}
+
+		public String getZhAddress() {
+			return this.zhAddress;
+		}
+
+		public void setZhAddress(String zhAddress) {
+			this.zhAddress = zhAddress;
 		}
 
 		public String getTelephone() {

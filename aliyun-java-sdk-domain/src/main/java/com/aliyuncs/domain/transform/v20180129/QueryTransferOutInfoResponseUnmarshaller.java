@@ -25,11 +25,11 @@ public class QueryTransferOutInfoResponseUnmarshaller {
 		queryTransferOutInfoResponse.setRequestId(_ctx.stringValue("QueryTransferOutInfoResponse.RequestId"));
 		queryTransferOutInfoResponse.setStatus(_ctx.integerValue("QueryTransferOutInfoResponse.Status"));
 		queryTransferOutInfoResponse.setEmail(_ctx.stringValue("QueryTransferOutInfoResponse.Email"));
-		queryTransferOutInfoResponse.setTransferAuthorizationCodeSendDate(_ctx.stringValue("QueryTransferOutInfoResponse.TransferAuthorizationCodeSendDate"));
 		queryTransferOutInfoResponse.setExpirationDate(_ctx.stringValue("QueryTransferOutInfoResponse.ExpirationDate"));
+		queryTransferOutInfoResponse.setResultMsg(_ctx.stringValue("QueryTransferOutInfoResponse.ResultMsg"));
 		queryTransferOutInfoResponse.setPendingRequestDate(_ctx.stringValue("QueryTransferOutInfoResponse.PendingRequestDate"));
 		queryTransferOutInfoResponse.setResultCode(_ctx.stringValue("QueryTransferOutInfoResponse.ResultCode"));
-		queryTransferOutInfoResponse.setResultMsg(_ctx.stringValue("QueryTransferOutInfoResponse.ResultMsg"));
+		queryTransferOutInfoResponse.setTransferAuthorizationCodeSendDate(_ctx.stringValue("QueryTransferOutInfoResponse.TransferAuthorizationCodeSendDate"));
 	 
 	 	return queryTransferOutInfoResponse;
 	}

@@ -27,8 +27,8 @@ public class FuzzyMatchDomainSensitiveWordResponseUnmarshaller {
 	public static FuzzyMatchDomainSensitiveWordResponse unmarshall(FuzzyMatchDomainSensitiveWordResponse fuzzyMatchDomainSensitiveWordResponse, UnmarshallerContext _ctx) {
 		
 		fuzzyMatchDomainSensitiveWordResponse.setRequestId(_ctx.stringValue("FuzzyMatchDomainSensitiveWordResponse.RequestId"));
-		fuzzyMatchDomainSensitiveWordResponse.setKeyword(_ctx.stringValue("FuzzyMatchDomainSensitiveWordResponse.Keyword"));
 		fuzzyMatchDomainSensitiveWordResponse.setExist(_ctx.booleanValue("FuzzyMatchDomainSensitiveWordResponse.Exist"));
+		fuzzyMatchDomainSensitiveWordResponse.setKeyword(_ctx.stringValue("FuzzyMatchDomainSensitiveWordResponse.Keyword"));
 
 		List<MatchedSensitiveWord> matchedSentiveWords = new ArrayList<MatchedSensitiveWord>();
 		for (int i = 0; i < _ctx.lengthValue("FuzzyMatchDomainSensitiveWordResponse.MatchedSentiveWords.Length"); i++) {

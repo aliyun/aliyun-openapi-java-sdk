@@ -27,25 +27,25 @@ public class QueryOperationAuditInfoListResponseUnmarshaller {
 	public static QueryOperationAuditInfoListResponse unmarshall(QueryOperationAuditInfoListResponse queryOperationAuditInfoListResponse, UnmarshallerContext _ctx) {
 		
 		queryOperationAuditInfoListResponse.setRequestId(_ctx.stringValue("QueryOperationAuditInfoListResponse.RequestId"));
-		queryOperationAuditInfoListResponse.setTotalItemNum(_ctx.integerValue("QueryOperationAuditInfoListResponse.TotalItemNum"));
-		queryOperationAuditInfoListResponse.setCurrentPageNum(_ctx.integerValue("QueryOperationAuditInfoListResponse.CurrentPageNum"));
-		queryOperationAuditInfoListResponse.setTotalPageNum(_ctx.integerValue("QueryOperationAuditInfoListResponse.TotalPageNum"));
-		queryOperationAuditInfoListResponse.setPageSize(_ctx.integerValue("QueryOperationAuditInfoListResponse.PageSize"));
 		queryOperationAuditInfoListResponse.setPrePage(_ctx.booleanValue("QueryOperationAuditInfoListResponse.PrePage"));
+		queryOperationAuditInfoListResponse.setCurrentPageNum(_ctx.integerValue("QueryOperationAuditInfoListResponse.CurrentPageNum"));
+		queryOperationAuditInfoListResponse.setPageSize(_ctx.integerValue("QueryOperationAuditInfoListResponse.PageSize"));
+		queryOperationAuditInfoListResponse.setTotalPageNum(_ctx.integerValue("QueryOperationAuditInfoListResponse.TotalPageNum"));
+		queryOperationAuditInfoListResponse.setTotalItemNum(_ctx.integerValue("QueryOperationAuditInfoListResponse.TotalItemNum"));
 		queryOperationAuditInfoListResponse.setNextPage(_ctx.booleanValue("QueryOperationAuditInfoListResponse.NextPage"));
 
 		List<OperationAuditRecord> data = new ArrayList<OperationAuditRecord>();
 		for (int i = 0; i < _ctx.lengthValue("QueryOperationAuditInfoListResponse.Data.Length"); i++) {
 			OperationAuditRecord operationAuditRecord = new OperationAuditRecord();
-			operationAuditRecord.setId(_ctx.longValue("QueryOperationAuditInfoListResponse.Data["+ i +"].Id"));
-			operationAuditRecord.setCreateTime(_ctx.longValue("QueryOperationAuditInfoListResponse.Data["+ i +"].CreateTime"));
 			operationAuditRecord.setUpdateTime(_ctx.longValue("QueryOperationAuditInfoListResponse.Data["+ i +"].UpdateTime"));
-			operationAuditRecord.setBusinessName(_ctx.stringValue("QueryOperationAuditInfoListResponse.Data["+ i +"].BusinessName"));
-			operationAuditRecord.setDomainName(_ctx.stringValue("QueryOperationAuditInfoListResponse.Data["+ i +"].DomainName"));
-			operationAuditRecord.setAuditType(_ctx.integerValue("QueryOperationAuditInfoListResponse.Data["+ i +"].AuditType"));
-			operationAuditRecord.setAuditStatus(_ctx.integerValue("QueryOperationAuditInfoListResponse.Data["+ i +"].AuditStatus"));
-			operationAuditRecord.setAuditInfo(_ctx.stringValue("QueryOperationAuditInfoListResponse.Data["+ i +"].AuditInfo"));
 			operationAuditRecord.setRemark(_ctx.stringValue("QueryOperationAuditInfoListResponse.Data["+ i +"].Remark"));
+			operationAuditRecord.setCreateTime(_ctx.longValue("QueryOperationAuditInfoListResponse.Data["+ i +"].CreateTime"));
+			operationAuditRecord.setAuditType(_ctx.integerValue("QueryOperationAuditInfoListResponse.Data["+ i +"].AuditType"));
+			operationAuditRecord.setBusinessName(_ctx.stringValue("QueryOperationAuditInfoListResponse.Data["+ i +"].BusinessName"));
+			operationAuditRecord.setAuditInfo(_ctx.stringValue("QueryOperationAuditInfoListResponse.Data["+ i +"].AuditInfo"));
+			operationAuditRecord.setDomainName(_ctx.stringValue("QueryOperationAuditInfoListResponse.Data["+ i +"].DomainName"));
+			operationAuditRecord.setAuditStatus(_ctx.integerValue("QueryOperationAuditInfoListResponse.Data["+ i +"].AuditStatus"));
+			operationAuditRecord.setId(_ctx.longValue("QueryOperationAuditInfoListResponse.Data["+ i +"].Id"));
 
 			data.add(operationAuditRecord);
 		}

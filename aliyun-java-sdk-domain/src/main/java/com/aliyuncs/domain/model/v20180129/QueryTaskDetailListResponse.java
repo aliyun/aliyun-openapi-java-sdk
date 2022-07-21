@@ -25,36 +25,28 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryTaskDetailListResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Integer totalItemNum;
+	private Boolean prePage;
 
 	private Integer currentPageNum;
 
-	private Integer totalPageNum;
+	private String requestId;
 
 	private Integer pageSize;
 
-	private Boolean prePage;
+	private Integer totalPageNum;
+
+	private Integer totalItemNum;
 
 	private Boolean nextPage;
 
 	private List<TaskDetail> data;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Boolean getPrePage() {
+		return this.prePage;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getTotalItemNum() {
-		return this.totalItemNum;
-	}
-
-	public void setTotalItemNum(Integer totalItemNum) {
-		this.totalItemNum = totalItemNum;
+	public void setPrePage(Boolean prePage) {
+		this.prePage = prePage;
 	}
 
 	public Integer getCurrentPageNum() {
@@ -65,12 +57,12 @@ public class QueryTaskDetailListResponse extends AcsResponse {
 		this.currentPageNum = currentPageNum;
 	}
 
-	public Integer getTotalPageNum() {
-		return this.totalPageNum;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setTotalPageNum(Integer totalPageNum) {
-		this.totalPageNum = totalPageNum;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageSize() {
@@ -81,12 +73,20 @@ public class QueryTaskDetailListResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Boolean getPrePage() {
-		return this.prePage;
+	public Integer getTotalPageNum() {
+		return this.totalPageNum;
 	}
 
-	public void setPrePage(Boolean prePage) {
-		this.prePage = prePage;
+	public void setTotalPageNum(Integer totalPageNum) {
+		this.totalPageNum = totalPageNum;
+	}
+
+	public Integer getTotalItemNum() {
+		return this.totalItemNum;
+	}
+
+	public void setTotalItemNum(Integer totalItemNum) {
+		this.totalItemNum = totalItemNum;
 	}
 
 	public Boolean getNextPage() {
@@ -107,38 +107,38 @@ public class QueryTaskDetailListResponse extends AcsResponse {
 
 	public static class TaskDetail {
 
-		private String taskNo;
+		private String updateTime;
 
 		private String taskDetailNo;
 
-		private String taskType;
+		private String createTime;
 
 		private String instanceId;
 
 		private String domainName;
 
+		private String taskType;
+
+		private String taskNo;
+
+		private String taskResult;
+
+		private Integer taskStatusCode;
+
 		private String taskStatus;
 
-		private String updateTime;
-
-		private String createTime;
+		private String taskTypeDescription;
 
 		private Integer tryCount;
 
 		private String errorMsg;
 
-		private Integer taskStatusCode;
-
-		private String taskResult;
-
-		private String taskTypeDescription;
-
-		public String getTaskNo() {
-			return this.taskNo;
+		public String getUpdateTime() {
+			return this.updateTime;
 		}
 
-		public void setTaskNo(String taskNo) {
-			this.taskNo = taskNo;
+		public void setUpdateTime(String updateTime) {
+			this.updateTime = updateTime;
 		}
 
 		public String getTaskDetailNo() {
@@ -149,12 +149,12 @@ public class QueryTaskDetailListResponse extends AcsResponse {
 			this.taskDetailNo = taskDetailNo;
 		}
 
-		public String getTaskType() {
-			return this.taskType;
+		public String getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setTaskType(String taskType) {
-			this.taskType = taskType;
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
 		public String getInstanceId() {
@@ -173,6 +173,38 @@ public class QueryTaskDetailListResponse extends AcsResponse {
 			this.domainName = domainName;
 		}
 
+		public String getTaskType() {
+			return this.taskType;
+		}
+
+		public void setTaskType(String taskType) {
+			this.taskType = taskType;
+		}
+
+		public String getTaskNo() {
+			return this.taskNo;
+		}
+
+		public void setTaskNo(String taskNo) {
+			this.taskNo = taskNo;
+		}
+
+		public String getTaskResult() {
+			return this.taskResult;
+		}
+
+		public void setTaskResult(String taskResult) {
+			this.taskResult = taskResult;
+		}
+
+		public Integer getTaskStatusCode() {
+			return this.taskStatusCode;
+		}
+
+		public void setTaskStatusCode(Integer taskStatusCode) {
+			this.taskStatusCode = taskStatusCode;
+		}
+
 		public String getTaskStatus() {
 			return this.taskStatus;
 		}
@@ -181,20 +213,12 @@ public class QueryTaskDetailListResponse extends AcsResponse {
 			this.taskStatus = taskStatus;
 		}
 
-		public String getUpdateTime() {
-			return this.updateTime;
+		public String getTaskTypeDescription() {
+			return this.taskTypeDescription;
 		}
 
-		public void setUpdateTime(String updateTime) {
-			this.updateTime = updateTime;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
+		public void setTaskTypeDescription(String taskTypeDescription) {
+			this.taskTypeDescription = taskTypeDescription;
 		}
 
 		public Integer getTryCount() {
@@ -211,30 +235,6 @@ public class QueryTaskDetailListResponse extends AcsResponse {
 
 		public void setErrorMsg(String errorMsg) {
 			this.errorMsg = errorMsg;
-		}
-
-		public Integer getTaskStatusCode() {
-			return this.taskStatusCode;
-		}
-
-		public void setTaskStatusCode(Integer taskStatusCode) {
-			this.taskStatusCode = taskStatusCode;
-		}
-
-		public String getTaskResult() {
-			return this.taskResult;
-		}
-
-		public void setTaskResult(String taskResult) {
-			this.taskResult = taskResult;
-		}
-
-		public String getTaskTypeDescription() {
-			return this.taskTypeDescription;
-		}
-
-		public void setTaskTypeDescription(String taskTypeDescription) {
-			this.taskTypeDescription = taskTypeDescription;
 		}
 	}
 

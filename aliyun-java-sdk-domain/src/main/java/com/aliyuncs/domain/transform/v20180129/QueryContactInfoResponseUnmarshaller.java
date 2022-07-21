@@ -23,22 +23,22 @@ public class QueryContactInfoResponseUnmarshaller {
 	public static QueryContactInfoResponse unmarshall(QueryContactInfoResponse queryContactInfoResponse, UnmarshallerContext _ctx) {
 		
 		queryContactInfoResponse.setRequestId(_ctx.stringValue("QueryContactInfoResponse.RequestId"));
-		queryContactInfoResponse.setCreateDate(_ctx.stringValue("QueryContactInfoResponse.CreateDate"));
-		queryContactInfoResponse.setRegistrantName(_ctx.stringValue("QueryContactInfoResponse.RegistrantName"));
-		queryContactInfoResponse.setRegistrantOrganization(_ctx.stringValue("QueryContactInfoResponse.RegistrantOrganization"));
-		queryContactInfoResponse.setCountry(_ctx.stringValue("QueryContactInfoResponse.Country"));
-		queryContactInfoResponse.setProvince(_ctx.stringValue("QueryContactInfoResponse.Province"));
-		queryContactInfoResponse.setCity(_ctx.stringValue("QueryContactInfoResponse.City"));
-		queryContactInfoResponse.setAddress(_ctx.stringValue("QueryContactInfoResponse.Address"));
-		queryContactInfoResponse.setEmail(_ctx.stringValue("QueryContactInfoResponse.Email"));
-		queryContactInfoResponse.setPostalCode(_ctx.stringValue("QueryContactInfoResponse.PostalCode"));
-		queryContactInfoResponse.setTelArea(_ctx.stringValue("QueryContactInfoResponse.TelArea"));
-		queryContactInfoResponse.setTelephone(_ctx.stringValue("QueryContactInfoResponse.Telephone"));
-		queryContactInfoResponse.setTelExt(_ctx.stringValue("QueryContactInfoResponse.TelExt"));
-		queryContactInfoResponse.setZhRegistrantName(_ctx.stringValue("QueryContactInfoResponse.ZhRegistrantName"));
-		queryContactInfoResponse.setZhRegistrantOrganization(_ctx.stringValue("QueryContactInfoResponse.ZhRegistrantOrganization"));
 		queryContactInfoResponse.setZhProvince(_ctx.stringValue("QueryContactInfoResponse.ZhProvince"));
+		queryContactInfoResponse.setEmail(_ctx.stringValue("QueryContactInfoResponse.Email"));
+		queryContactInfoResponse.setTelephone(_ctx.stringValue("QueryContactInfoResponse.Telephone"));
+		queryContactInfoResponse.setAddress(_ctx.stringValue("QueryContactInfoResponse.Address"));
+		queryContactInfoResponse.setPostalCode(_ctx.stringValue("QueryContactInfoResponse.PostalCode"));
+		queryContactInfoResponse.setZhRegistrantName(_ctx.stringValue("QueryContactInfoResponse.ZhRegistrantName"));
+		queryContactInfoResponse.setCity(_ctx.stringValue("QueryContactInfoResponse.City"));
+		queryContactInfoResponse.setCreateDate(_ctx.stringValue("QueryContactInfoResponse.CreateDate"));
+		queryContactInfoResponse.setProvince(_ctx.stringValue("QueryContactInfoResponse.Province"));
 		queryContactInfoResponse.setZhCity(_ctx.stringValue("QueryContactInfoResponse.ZhCity"));
+		queryContactInfoResponse.setRegistrantName(_ctx.stringValue("QueryContactInfoResponse.RegistrantName"));
+		queryContactInfoResponse.setZhRegistrantOrganization(_ctx.stringValue("QueryContactInfoResponse.ZhRegistrantOrganization"));
+		queryContactInfoResponse.setCountry(_ctx.stringValue("QueryContactInfoResponse.Country"));
+		queryContactInfoResponse.setRegistrantOrganization(_ctx.stringValue("QueryContactInfoResponse.RegistrantOrganization"));
+		queryContactInfoResponse.setTelExt(_ctx.stringValue("QueryContactInfoResponse.TelExt"));
+		queryContactInfoResponse.setTelArea(_ctx.stringValue("QueryContactInfoResponse.TelArea"));
 		queryContactInfoResponse.setZhAddress(_ctx.stringValue("QueryContactInfoResponse.ZhAddress"));
 	 
 	 	return queryContactInfoResponse;

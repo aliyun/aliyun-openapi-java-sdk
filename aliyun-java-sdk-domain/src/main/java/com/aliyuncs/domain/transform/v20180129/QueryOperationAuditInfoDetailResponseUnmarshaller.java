@@ -23,14 +23,14 @@ public class QueryOperationAuditInfoDetailResponseUnmarshaller {
 	public static QueryOperationAuditInfoDetailResponse unmarshall(QueryOperationAuditInfoDetailResponse queryOperationAuditInfoDetailResponse, UnmarshallerContext _ctx) {
 		
 		queryOperationAuditInfoDetailResponse.setRequestId(_ctx.stringValue("QueryOperationAuditInfoDetailResponse.RequestId"));
-		queryOperationAuditInfoDetailResponse.setId(_ctx.stringValue("QueryOperationAuditInfoDetailResponse.Id"));
+		queryOperationAuditInfoDetailResponse.setAuditInfo(_ctx.stringValue("QueryOperationAuditInfoDetailResponse.AuditInfo"));
+		queryOperationAuditInfoDetailResponse.setAuditStatus(_ctx.integerValue("QueryOperationAuditInfoDetailResponse.AuditStatus"));
+		queryOperationAuditInfoDetailResponse.setBusinessName(_ctx.stringValue("QueryOperationAuditInfoDetailResponse.BusinessName"));
+		queryOperationAuditInfoDetailResponse.setAuditType(_ctx.integerValue("QueryOperationAuditInfoDetailResponse.AuditType"));
+		queryOperationAuditInfoDetailResponse.setDomainName(_ctx.stringValue("QueryOperationAuditInfoDetailResponse.DomainName"));
 		queryOperationAuditInfoDetailResponse.setCreateTime(_ctx.longValue("QueryOperationAuditInfoDetailResponse.CreateTime"));
 		queryOperationAuditInfoDetailResponse.setUpdateTime(_ctx.longValue("QueryOperationAuditInfoDetailResponse.UpdateTime"));
-		queryOperationAuditInfoDetailResponse.setBusinessName(_ctx.stringValue("QueryOperationAuditInfoDetailResponse.BusinessName"));
-		queryOperationAuditInfoDetailResponse.setDomainName(_ctx.stringValue("QueryOperationAuditInfoDetailResponse.DomainName"));
-		queryOperationAuditInfoDetailResponse.setAuditType(_ctx.integerValue("QueryOperationAuditInfoDetailResponse.AuditType"));
-		queryOperationAuditInfoDetailResponse.setAuditStatus(_ctx.integerValue("QueryOperationAuditInfoDetailResponse.AuditStatus"));
-		queryOperationAuditInfoDetailResponse.setAuditInfo(_ctx.stringValue("QueryOperationAuditInfoDetailResponse.AuditInfo"));
+		queryOperationAuditInfoDetailResponse.setId(_ctx.stringValue("QueryOperationAuditInfoDetailResponse.Id"));
 		queryOperationAuditInfoDetailResponse.setRemark(_ctx.stringValue("QueryOperationAuditInfoDetailResponse.Remark"));
 	 
 	 	return queryOperationAuditInfoDetailResponse;

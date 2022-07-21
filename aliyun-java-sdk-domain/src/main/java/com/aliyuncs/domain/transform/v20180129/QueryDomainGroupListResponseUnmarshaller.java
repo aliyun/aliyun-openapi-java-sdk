@@ -31,13 +31,13 @@ public class QueryDomainGroupListResponseUnmarshaller {
 		List<DomainGroup> data = new ArrayList<DomainGroup>();
 		for (int i = 0; i < _ctx.lengthValue("QueryDomainGroupListResponse.Data.Length"); i++) {
 			DomainGroup domainGroup = new DomainGroup();
+			domainGroup.setBeingDeleted(_ctx.booleanValue("QueryDomainGroupListResponse.Data["+ i +"].BeingDeleted"));
+			domainGroup.setDomainGroupStatus(_ctx.stringValue("QueryDomainGroupListResponse.Data["+ i +"].DomainGroupStatus"));
 			domainGroup.setDomainGroupId(_ctx.stringValue("QueryDomainGroupListResponse.Data["+ i +"].DomainGroupId"));
 			domainGroup.setDomainGroupName(_ctx.stringValue("QueryDomainGroupListResponse.Data["+ i +"].DomainGroupName"));
+			domainGroup.setModificationDate(_ctx.stringValue("QueryDomainGroupListResponse.Data["+ i +"].ModificationDate"));
 			domainGroup.setTotalNumber(_ctx.integerValue("QueryDomainGroupListResponse.Data["+ i +"].TotalNumber"));
 			domainGroup.setCreationDate(_ctx.stringValue("QueryDomainGroupListResponse.Data["+ i +"].CreationDate"));
-			domainGroup.setModificationDate(_ctx.stringValue("QueryDomainGroupListResponse.Data["+ i +"].ModificationDate"));
-			domainGroup.setDomainGroupStatus(_ctx.stringValue("QueryDomainGroupListResponse.Data["+ i +"].DomainGroupStatus"));
-			domainGroup.setBeingDeleted(_ctx.booleanValue("QueryDomainGroupListResponse.Data["+ i +"].BeingDeleted"));
 
 			data.add(domainGroup);
 		}

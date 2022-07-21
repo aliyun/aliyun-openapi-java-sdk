@@ -23,10 +23,10 @@ public class GetOperationOssUploadPolicyResponseUnmarshaller {
 	public static GetOperationOssUploadPolicyResponse unmarshall(GetOperationOssUploadPolicyResponse getOperationOssUploadPolicyResponse, UnmarshallerContext _ctx) {
 		
 		getOperationOssUploadPolicyResponse.setRequestId(_ctx.stringValue("GetOperationOssUploadPolicyResponse.RequestId"));
-		getOperationOssUploadPolicyResponse.setAccessid(_ctx.stringValue("GetOperationOssUploadPolicyResponse.Accessid"));
-		getOperationOssUploadPolicyResponse.setEncodedPolicy(_ctx.stringValue("GetOperationOssUploadPolicyResponse.EncodedPolicy"));
-		getOperationOssUploadPolicyResponse.setSignature(_ctx.stringValue("GetOperationOssUploadPolicyResponse.Signature"));
 		getOperationOssUploadPolicyResponse.setFileDir(_ctx.stringValue("GetOperationOssUploadPolicyResponse.FileDir"));
+		getOperationOssUploadPolicyResponse.setEncodedPolicy(_ctx.stringValue("GetOperationOssUploadPolicyResponse.EncodedPolicy"));
+		getOperationOssUploadPolicyResponse.setAccessid(_ctx.stringValue("GetOperationOssUploadPolicyResponse.Accessid"));
+		getOperationOssUploadPolicyResponse.setSignature(_ctx.stringValue("GetOperationOssUploadPolicyResponse.Signature"));
 		getOperationOssUploadPolicyResponse.setHost(_ctx.stringValue("GetOperationOssUploadPolicyResponse.Host"));
 		getOperationOssUploadPolicyResponse.setExpireTime(_ctx.stringValue("GetOperationOssUploadPolicyResponse.ExpireTime"));
 	 

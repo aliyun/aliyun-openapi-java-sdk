@@ -28,9 +28,9 @@ public class UpdateDomainToDomainGroupRequest extends RpcAcsRequest<UpdateDomain
 
 	private String fileToUpload;
 
-	private List<String> domainNames;
-
 	private Boolean replace;
+
+	private List<String> domainNames;
 
 	private Long domainGroupId;
 
@@ -59,6 +59,17 @@ public class UpdateDomainToDomainGroupRequest extends RpcAcsRequest<UpdateDomain
 		}
 	}
 
+	public Boolean getReplace() {
+		return this.replace;
+	}
+
+	public void setReplace(Boolean replace) {
+		this.replace = replace;
+		if(replace != null){
+			putQueryParameter("Replace", replace.toString());
+		}
+	}
+
 	public List<String> getDomainNames() {
 		return this.domainNames;
 	}
@@ -70,17 +81,6 @@ public class UpdateDomainToDomainGroupRequest extends RpcAcsRequest<UpdateDomain
 				putQueryParameter("DomainName." + (i + 1) , domainNames.get(i));
 			}
 		}	
-	}
-
-	public Boolean getReplace() {
-		return this.replace;
-	}
-
-	public void setReplace(Boolean replace) {
-		this.replace = replace;
-		if(replace != null){
-			putQueryParameter("Replace", replace.toString());
-		}
 	}
 
 	public Long getDomainGroupId() {

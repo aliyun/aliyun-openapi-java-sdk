@@ -23,8 +23,8 @@ public class CheckDomainSunriseClaimResponseUnmarshaller {
 	public static CheckDomainSunriseClaimResponse unmarshall(CheckDomainSunriseClaimResponse checkDomainSunriseClaimResponse, UnmarshallerContext _ctx) {
 		
 		checkDomainSunriseClaimResponse.setRequestId(_ctx.stringValue("CheckDomainSunriseClaimResponse.RequestId"));
-		checkDomainSunriseClaimResponse.setResult(_ctx.integerValue("CheckDomainSunriseClaimResponse.Result"));
 		checkDomainSunriseClaimResponse.setClaimKey(_ctx.stringValue("CheckDomainSunriseClaimResponse.ClaimKey"));
+		checkDomainSunriseClaimResponse.setResult(_ctx.integerValue("CheckDomainSunriseClaimResponse.Result"));
 	 
 	 	return checkDomainSunriseClaimResponse;
 	}

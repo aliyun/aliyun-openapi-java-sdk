@@ -24,19 +24,35 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetOperationOssUploadPolicyResponse extends AcsResponse {
 
+	private String fileDir;
+
+	private String encodedPolicy;
+
 	private String requestId;
 
 	private String accessid;
 
-	private String encodedPolicy;
-
 	private String signature;
-
-	private String fileDir;
 
 	private String host;
 
 	private String expireTime;
+
+	public String getFileDir() {
+		return this.fileDir;
+	}
+
+	public void setFileDir(String fileDir) {
+		this.fileDir = fileDir;
+	}
+
+	public String getEncodedPolicy() {
+		return this.encodedPolicy;
+	}
+
+	public void setEncodedPolicy(String encodedPolicy) {
+		this.encodedPolicy = encodedPolicy;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -54,28 +70,12 @@ public class GetOperationOssUploadPolicyResponse extends AcsResponse {
 		this.accessid = accessid;
 	}
 
-	public String getEncodedPolicy() {
-		return this.encodedPolicy;
-	}
-
-	public void setEncodedPolicy(String encodedPolicy) {
-		this.encodedPolicy = encodedPolicy;
-	}
-
 	public String getSignature() {
 		return this.signature;
 	}
 
 	public void setSignature(String signature) {
 		this.signature = signature;
-	}
-
-	public String getFileDir() {
-		return this.fileDir;
-	}
-
-	public void setFileDir(String fileDir) {
-		this.fileDir = fileDir;
 	}
 
 	public String getHost() {

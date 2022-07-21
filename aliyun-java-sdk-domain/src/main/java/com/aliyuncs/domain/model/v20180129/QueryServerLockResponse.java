@@ -24,34 +24,34 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryServerLockResponse extends AcsResponse {
 
-	private String requestId;
+	private String startDate;
 
 	private String gmtCreate;
 
-	private String gmtModified;
+	private String requestId;
 
-	private String userId;
+	private String expireDate;
 
 	private String domainName;
 
+	private String userId;
+
+	private String gmtModified;
+
 	private String domainInstanceId;
-
-	private String lockProductId;
-
-	private String startDate;
-
-	private String expireDate;
 
 	private String lockInstanceId;
 
 	private Integer serverLockStatus;
 
-	public String getRequestId() {
-		return this.requestId;
+	private String lockProductId;
+
+	public String getStartDate() {
+		return this.startDate;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setStartDate(String startDate) {
+		this.startDate = startDate;
 	}
 
 	public String getGmtCreate() {
@@ -62,20 +62,20 @@ public class QueryServerLockResponse extends AcsResponse {
 		this.gmtCreate = gmtCreate;
 	}
 
-	public String getGmtModified() {
-		return this.gmtModified;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setGmtModified(String gmtModified) {
-		this.gmtModified = gmtModified;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
-	public String getUserId() {
-		return this.userId;
+	public String getExpireDate() {
+		return this.expireDate;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
+	public void setExpireDate(String expireDate) {
+		this.expireDate = expireDate;
 	}
 
 	public String getDomainName() {
@@ -86,36 +86,28 @@ public class QueryServerLockResponse extends AcsResponse {
 		this.domainName = domainName;
 	}
 
+	public String getUserId() {
+		return this.userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+
+	public String getGmtModified() {
+		return this.gmtModified;
+	}
+
+	public void setGmtModified(String gmtModified) {
+		this.gmtModified = gmtModified;
+	}
+
 	public String getDomainInstanceId() {
 		return this.domainInstanceId;
 	}
 
 	public void setDomainInstanceId(String domainInstanceId) {
 		this.domainInstanceId = domainInstanceId;
-	}
-
-	public String getLockProductId() {
-		return this.lockProductId;
-	}
-
-	public void setLockProductId(String lockProductId) {
-		this.lockProductId = lockProductId;
-	}
-
-	public String getStartDate() {
-		return this.startDate;
-	}
-
-	public void setStartDate(String startDate) {
-		this.startDate = startDate;
-	}
-
-	public String getExpireDate() {
-		return this.expireDate;
-	}
-
-	public void setExpireDate(String expireDate) {
-		this.expireDate = expireDate;
 	}
 
 	public String getLockInstanceId() {
@@ -132,6 +124,14 @@ public class QueryServerLockResponse extends AcsResponse {
 
 	public void setServerLockStatus(Integer serverLockStatus) {
 		this.serverLockStatus = serverLockStatus;
+	}
+
+	public String getLockProductId() {
+		return this.lockProductId;
+	}
+
+	public void setLockProductId(String lockProductId) {
+		this.lockProductId = lockProductId;
 	}
 
 	@Override

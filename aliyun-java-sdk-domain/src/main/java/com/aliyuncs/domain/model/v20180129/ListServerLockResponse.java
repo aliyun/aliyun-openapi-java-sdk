@@ -25,36 +25,28 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListServerLockResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Integer totalItemNum;
+	private Boolean prePage;
 
 	private Integer currentPageNum;
 
-	private Integer totalPageNum;
+	private String requestId;
 
 	private Integer pageSize;
 
-	private Boolean prePage;
+	private Integer totalPageNum;
+
+	private Integer totalItemNum;
 
 	private Boolean nextPage;
 
 	private List<QueryTransferInResponse> data;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Boolean getPrePage() {
+		return this.prePage;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getTotalItemNum() {
-		return this.totalItemNum;
-	}
-
-	public void setTotalItemNum(Integer totalItemNum) {
-		this.totalItemNum = totalItemNum;
+	public void setPrePage(Boolean prePage) {
+		this.prePage = prePage;
 	}
 
 	public Integer getCurrentPageNum() {
@@ -65,12 +57,12 @@ public class ListServerLockResponse extends AcsResponse {
 		this.currentPageNum = currentPageNum;
 	}
 
-	public Integer getTotalPageNum() {
-		return this.totalPageNum;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setTotalPageNum(Integer totalPageNum) {
-		this.totalPageNum = totalPageNum;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageSize() {
@@ -81,12 +73,20 @@ public class ListServerLockResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Boolean getPrePage() {
-		return this.prePage;
+	public Integer getTotalPageNum() {
+		return this.totalPageNum;
 	}
 
-	public void setPrePage(Boolean prePage) {
-		this.prePage = prePage;
+	public void setTotalPageNum(Integer totalPageNum) {
+		this.totalPageNum = totalPageNum;
+	}
+
+	public Integer getTotalItemNum() {
+		return this.totalItemNum;
+	}
+
+	public void setTotalItemNum(Integer totalItemNum) {
+		this.totalItemNum = totalItemNum;
 	}
 
 	public Boolean getNextPage() {
@@ -107,88 +107,32 @@ public class ListServerLockResponse extends AcsResponse {
 
 	public static class QueryTransferInResponse {
 
-		private String gmtCreate;
-
-		private String gmtModified;
-
-		private String userId;
-
-		private String domainName;
-
-		private String domainInstanceId;
-
-		private String lockProductId;
-
-		private String startDate;
-
-		private String expireDate;
+		private String serverLockStatus;
 
 		private String lockInstanceId;
 
-		private String serverLockStatus;
+		private String userId;
 
-		public String getGmtCreate() {
-			return this.gmtCreate;
+		private String gmtCreate;
+
+		private String expireDate;
+
+		private String startDate;
+
+		private String lockProductId;
+
+		private String domainInstanceId;
+
+		private String gmtModified;
+
+		private String domainName;
+
+		public String getServerLockStatus() {
+			return this.serverLockStatus;
 		}
 
-		public void setGmtCreate(String gmtCreate) {
-			this.gmtCreate = gmtCreate;
-		}
-
-		public String getGmtModified() {
-			return this.gmtModified;
-		}
-
-		public void setGmtModified(String gmtModified) {
-			this.gmtModified = gmtModified;
-		}
-
-		public String getUserId() {
-			return this.userId;
-		}
-
-		public void setUserId(String userId) {
-			this.userId = userId;
-		}
-
-		public String getDomainName() {
-			return this.domainName;
-		}
-
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
-		}
-
-		public String getDomainInstanceId() {
-			return this.domainInstanceId;
-		}
-
-		public void setDomainInstanceId(String domainInstanceId) {
-			this.domainInstanceId = domainInstanceId;
-		}
-
-		public String getLockProductId() {
-			return this.lockProductId;
-		}
-
-		public void setLockProductId(String lockProductId) {
-			this.lockProductId = lockProductId;
-		}
-
-		public String getStartDate() {
-			return this.startDate;
-		}
-
-		public void setStartDate(String startDate) {
-			this.startDate = startDate;
-		}
-
-		public String getExpireDate() {
-			return this.expireDate;
-		}
-
-		public void setExpireDate(String expireDate) {
-			this.expireDate = expireDate;
+		public void setServerLockStatus(String serverLockStatus) {
+			this.serverLockStatus = serverLockStatus;
 		}
 
 		public String getLockInstanceId() {
@@ -199,12 +143,68 @@ public class ListServerLockResponse extends AcsResponse {
 			this.lockInstanceId = lockInstanceId;
 		}
 
-		public String getServerLockStatus() {
-			return this.serverLockStatus;
+		public String getUserId() {
+			return this.userId;
 		}
 
-		public void setServerLockStatus(String serverLockStatus) {
-			this.serverLockStatus = serverLockStatus;
+		public void setUserId(String userId) {
+			this.userId = userId;
+		}
+
+		public String getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(String gmtCreate) {
+			this.gmtCreate = gmtCreate;
+		}
+
+		public String getExpireDate() {
+			return this.expireDate;
+		}
+
+		public void setExpireDate(String expireDate) {
+			this.expireDate = expireDate;
+		}
+
+		public String getStartDate() {
+			return this.startDate;
+		}
+
+		public void setStartDate(String startDate) {
+			this.startDate = startDate;
+		}
+
+		public String getLockProductId() {
+			return this.lockProductId;
+		}
+
+		public void setLockProductId(String lockProductId) {
+			this.lockProductId = lockProductId;
+		}
+
+		public String getDomainInstanceId() {
+			return this.domainInstanceId;
+		}
+
+		public void setDomainInstanceId(String domainInstanceId) {
+			this.domainInstanceId = domainInstanceId;
+		}
+
+		public String getGmtModified() {
+			return this.gmtModified;
+		}
+
+		public void setGmtModified(String gmtModified) {
+			this.gmtModified = gmtModified;
+		}
+
+		public String getDomainName() {
+			return this.domainName;
+		}
+
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
 		}
 	}
 

@@ -24,29 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryTransferOutInfoResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer status;
 
 	private String email;
 
-	private String transferAuthorizationCodeSendDate;
-
 	private String expirationDate;
+
+	private String requestId;
+
+	private String resultMsg;
 
 	private String pendingRequestDate;
 
 	private String resultCode;
 
-	private String resultMsg;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String transferAuthorizationCodeSendDate;
 
 	public Integer getStatus() {
 		return this.status;
@@ -64,20 +56,28 @@ public class QueryTransferOutInfoResponse extends AcsResponse {
 		this.email = email;
 	}
 
-	public String getTransferAuthorizationCodeSendDate() {
-		return this.transferAuthorizationCodeSendDate;
-	}
-
-	public void setTransferAuthorizationCodeSendDate(String transferAuthorizationCodeSendDate) {
-		this.transferAuthorizationCodeSendDate = transferAuthorizationCodeSendDate;
-	}
-
 	public String getExpirationDate() {
 		return this.expirationDate;
 	}
 
 	public void setExpirationDate(String expirationDate) {
 		this.expirationDate = expirationDate;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getResultMsg() {
+		return this.resultMsg;
+	}
+
+	public void setResultMsg(String resultMsg) {
+		this.resultMsg = resultMsg;
 	}
 
 	public String getPendingRequestDate() {
@@ -96,12 +96,12 @@ public class QueryTransferOutInfoResponse extends AcsResponse {
 		this.resultCode = resultCode;
 	}
 
-	public String getResultMsg() {
-		return this.resultMsg;
+	public String getTransferAuthorizationCodeSendDate() {
+		return this.transferAuthorizationCodeSendDate;
 	}
 
-	public void setResultMsg(String resultMsg) {
-		this.resultMsg = resultMsg;
+	public void setTransferAuthorizationCodeSendDate(String transferAuthorizationCodeSendDate) {
+		this.transferAuthorizationCodeSendDate = transferAuthorizationCodeSendDate;
 	}
 
 	@Override

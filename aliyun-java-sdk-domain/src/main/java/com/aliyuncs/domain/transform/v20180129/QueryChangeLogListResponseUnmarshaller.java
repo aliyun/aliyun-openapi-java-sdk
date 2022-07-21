@@ -27,23 +27,23 @@ public class QueryChangeLogListResponseUnmarshaller {
 	public static QueryChangeLogListResponse unmarshall(QueryChangeLogListResponse queryChangeLogListResponse, UnmarshallerContext _ctx) {
 		
 		queryChangeLogListResponse.setRequestId(_ctx.stringValue("QueryChangeLogListResponse.RequestId"));
-		queryChangeLogListResponse.setTotalItemNum(_ctx.integerValue("QueryChangeLogListResponse.TotalItemNum"));
-		queryChangeLogListResponse.setCurrentPageNum(_ctx.integerValue("QueryChangeLogListResponse.CurrentPageNum"));
-		queryChangeLogListResponse.setTotalPageNum(_ctx.integerValue("QueryChangeLogListResponse.TotalPageNum"));
-		queryChangeLogListResponse.setPageSize(_ctx.integerValue("QueryChangeLogListResponse.PageSize"));
 		queryChangeLogListResponse.setPrePage(_ctx.booleanValue("QueryChangeLogListResponse.PrePage"));
-		queryChangeLogListResponse.setNextPage(_ctx.booleanValue("QueryChangeLogListResponse.NextPage"));
+		queryChangeLogListResponse.setCurrentPageNum(_ctx.integerValue("QueryChangeLogListResponse.CurrentPageNum"));
+		queryChangeLogListResponse.setPageSize(_ctx.integerValue("QueryChangeLogListResponse.PageSize"));
+		queryChangeLogListResponse.setTotalPageNum(_ctx.integerValue("QueryChangeLogListResponse.TotalPageNum"));
 		queryChangeLogListResponse.setResultLimit(_ctx.booleanValue("QueryChangeLogListResponse.ResultLimit"));
+		queryChangeLogListResponse.setTotalItemNum(_ctx.integerValue("QueryChangeLogListResponse.TotalItemNum"));
+		queryChangeLogListResponse.setNextPage(_ctx.booleanValue("QueryChangeLogListResponse.NextPage"));
 
 		List<ChangeLog> data = new ArrayList<ChangeLog>();
 		for (int i = 0; i < _ctx.lengthValue("QueryChangeLogListResponse.Data.Length"); i++) {
 			ChangeLog changeLog = new ChangeLog();
-			changeLog.setDomainName(_ctx.stringValue("QueryChangeLogListResponse.Data["+ i +"].DomainName"));
-			changeLog.setResult(_ctx.stringValue("QueryChangeLogListResponse.Data["+ i +"].Result"));
 			changeLog.setOperation(_ctx.stringValue("QueryChangeLogListResponse.Data["+ i +"].Operation"));
+			changeLog.setTime(_ctx.stringValue("QueryChangeLogListResponse.Data["+ i +"].Time"));
+			changeLog.setResult(_ctx.stringValue("QueryChangeLogListResponse.Data["+ i +"].Result"));
+			changeLog.setDomainName(_ctx.stringValue("QueryChangeLogListResponse.Data["+ i +"].DomainName"));
 			changeLog.setOperationIPAddress(_ctx.stringValue("QueryChangeLogListResponse.Data["+ i +"].OperationIPAddress"));
 			changeLog.setDetails(_ctx.stringValue("QueryChangeLogListResponse.Data["+ i +"].Details"));
-			changeLog.setTime(_ctx.stringValue("QueryChangeLogListResponse.Data["+ i +"].Time"));
 
 			data.add(changeLog);
 		}

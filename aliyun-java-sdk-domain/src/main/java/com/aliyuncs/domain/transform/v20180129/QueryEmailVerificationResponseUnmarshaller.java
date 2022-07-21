@@ -23,16 +23,16 @@ public class QueryEmailVerificationResponseUnmarshaller {
 	public static QueryEmailVerificationResponse unmarshall(QueryEmailVerificationResponse queryEmailVerificationResponse, UnmarshallerContext _ctx) {
 		
 		queryEmailVerificationResponse.setRequestId(_ctx.stringValue("QueryEmailVerificationResponse.RequestId"));
-		queryEmailVerificationResponse.setGmtCreate(_ctx.stringValue("QueryEmailVerificationResponse.GmtCreate"));
-		queryEmailVerificationResponse.setGmtModified(_ctx.stringValue("QueryEmailVerificationResponse.GmtModified"));
-		queryEmailVerificationResponse.setEmail(_ctx.stringValue("QueryEmailVerificationResponse.Email"));
-		queryEmailVerificationResponse.setUserId(_ctx.stringValue("QueryEmailVerificationResponse.UserId"));
-		queryEmailVerificationResponse.setEmailVerificationNo(_ctx.stringValue("QueryEmailVerificationResponse.EmailVerificationNo"));
-		queryEmailVerificationResponse.setTokenSendTime(_ctx.stringValue("QueryEmailVerificationResponse.TokenSendTime"));
 		queryEmailVerificationResponse.setVerificationStatus(_ctx.integerValue("QueryEmailVerificationResponse.VerificationStatus"));
-		queryEmailVerificationResponse.setVerificationTime(_ctx.stringValue("QueryEmailVerificationResponse.VerificationTime"));
-		queryEmailVerificationResponse.setSendIp(_ctx.stringValue("QueryEmailVerificationResponse.SendIp"));
+		queryEmailVerificationResponse.setGmtCreate(_ctx.stringValue("QueryEmailVerificationResponse.GmtCreate"));
+		queryEmailVerificationResponse.setEmail(_ctx.stringValue("QueryEmailVerificationResponse.Email"));
+		queryEmailVerificationResponse.setEmailVerificationNo(_ctx.stringValue("QueryEmailVerificationResponse.EmailVerificationNo"));
 		queryEmailVerificationResponse.setConfirmIp(_ctx.stringValue("QueryEmailVerificationResponse.ConfirmIp"));
+		queryEmailVerificationResponse.setUserId(_ctx.stringValue("QueryEmailVerificationResponse.UserId"));
+		queryEmailVerificationResponse.setGmtModified(_ctx.stringValue("QueryEmailVerificationResponse.GmtModified"));
+		queryEmailVerificationResponse.setSendIp(_ctx.stringValue("QueryEmailVerificationResponse.SendIp"));
+		queryEmailVerificationResponse.setVerificationTime(_ctx.stringValue("QueryEmailVerificationResponse.VerificationTime"));
+		queryEmailVerificationResponse.setTokenSendTime(_ctx.stringValue("QueryEmailVerificationResponse.TokenSendTime"));
 	 
 	 	return queryEmailVerificationResponse;
 	}

@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryQualificationDetailResponse extends AcsResponse {
 
-	private String trackId;
-
 	private Integer auditStatus;
 
 	private String requestId;
 
+	private String trackId;
+
 	private List<QualificationCredential> credentials;
-
-	public String getTrackId() {
-		return this.trackId;
-	}
-
-	public void setTrackId(String trackId) {
-		this.trackId = trackId;
-	}
 
 	public Integer getAuditStatus() {
 		return this.auditStatus;
@@ -57,6 +49,14 @@ public class QueryQualificationDetailResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getTrackId() {
+		return this.trackId;
+	}
+
+	public void setTrackId(String trackId) {
+		this.trackId = trackId;
+	}
+
 	public List<QualificationCredential> getCredentials() {
 		return this.credentials;
 	}
@@ -67,19 +67,11 @@ public class QueryQualificationDetailResponse extends AcsResponse {
 
 	public static class QualificationCredential {
 
-		private String credentialNo;
-
 		private String credentialType;
 
+		private String credentialNo;
+
 		private String credentialUrl;
-
-		public String getCredentialNo() {
-			return this.credentialNo;
-		}
-
-		public void setCredentialNo(String credentialNo) {
-			this.credentialNo = credentialNo;
-		}
 
 		public String getCredentialType() {
 			return this.credentialType;
@@ -87,6 +79,14 @@ public class QueryQualificationDetailResponse extends AcsResponse {
 
 		public void setCredentialType(String credentialType) {
 			this.credentialType = credentialType;
+		}
+
+		public String getCredentialNo() {
+			return this.credentialNo;
+		}
+
+		public void setCredentialNo(String credentialNo) {
+			this.credentialNo = credentialNo;
 		}
 
 		public String getCredentialUrl() {

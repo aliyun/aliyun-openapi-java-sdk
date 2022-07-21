@@ -25,36 +25,28 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryTransferInListResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Integer totalItemNum;
+	private Boolean prePage;
 
 	private Integer currentPageNum;
 
-	private Integer totalPageNum;
+	private String requestId;
 
 	private Integer pageSize;
 
-	private Boolean prePage;
+	private Integer totalPageNum;
+
+	private Integer totalItemNum;
 
 	private Boolean nextPage;
 
 	private List<TransferInInfo> data;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Boolean getPrePage() {
+		return this.prePage;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getTotalItemNum() {
-		return this.totalItemNum;
-	}
-
-	public void setTotalItemNum(Integer totalItemNum) {
-		this.totalItemNum = totalItemNum;
+	public void setPrePage(Boolean prePage) {
+		this.prePage = prePage;
 	}
 
 	public Integer getCurrentPageNum() {
@@ -65,12 +57,12 @@ public class QueryTransferInListResponse extends AcsResponse {
 		this.currentPageNum = currentPageNum;
 	}
 
-	public Integer getTotalPageNum() {
-		return this.totalPageNum;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setTotalPageNum(Integer totalPageNum) {
-		this.totalPageNum = totalPageNum;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageSize() {
@@ -81,12 +73,20 @@ public class QueryTransferInListResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Boolean getPrePage() {
-		return this.prePage;
+	public Integer getTotalPageNum() {
+		return this.totalPageNum;
 	}
 
-	public void setPrePage(Boolean prePage) {
-		this.prePage = prePage;
+	public void setTotalPageNum(Integer totalPageNum) {
+		this.totalPageNum = totalPageNum;
+	}
+
+	public Integer getTotalItemNum() {
+		return this.totalItemNum;
+	}
+
+	public void setTotalItemNum(Integer totalItemNum) {
+		this.totalItemNum = totalItemNum;
 	}
 
 	public Boolean getNextPage() {
@@ -107,54 +107,62 @@ public class QueryTransferInListResponse extends AcsResponse {
 
 	public static class TransferInInfo {
 
-		private String submissionDate;
+		private Integer status;
+
+		private String userId;
 
 		private String modificationDate;
 
-		private String userId;
+		private Long transferAuthorizationCodeSubmissionDateLong;
+
+		private Long submissionDateLong;
+
+		private String resultCode;
+
+		private Boolean needMailCheck;
+
+		private Long modificationDateLong;
 
 		private String instanceId;
 
 		private String domainName;
 
-		private Integer status;
-
-		private String simpleTransferInStatus;
-
-		private String resultCode;
-
-		private String resultDate;
+		private Integer progressBarType;
 
 		private String resultMsg;
 
-		private String transferAuthorizationCodeSubmissionDate;
+		private Long resultDateLong;
 
-		private Boolean needMailCheck;
+		private String expirationDate;
 
 		private String email;
 
 		private Boolean whoisMailStatus;
 
-		private String expirationDate;
+		private String transferAuthorizationCodeSubmissionDate;
 
-		private Integer progressBarType;
-
-		private Long submissionDateLong;
-
-		private Long modificationDateLong;
-
-		private Long resultDateLong;
+		private String submissionDate;
 
 		private Long expirationDateLong;
 
-		private Long transferAuthorizationCodeSubmissionDateLong;
+		private String simpleTransferInStatus;
 
-		public String getSubmissionDate() {
-			return this.submissionDate;
+		private String resultDate;
+
+		public Integer getStatus() {
+			return this.status;
 		}
 
-		public void setSubmissionDate(String submissionDate) {
-			this.submissionDate = submissionDate;
+		public void setStatus(Integer status) {
+			this.status = status;
+		}
+
+		public String getUserId() {
+			return this.userId;
+		}
+
+		public void setUserId(String userId) {
+			this.userId = userId;
 		}
 
 		public String getModificationDate() {
@@ -165,12 +173,44 @@ public class QueryTransferInListResponse extends AcsResponse {
 			this.modificationDate = modificationDate;
 		}
 
-		public String getUserId() {
-			return this.userId;
+		public Long getTransferAuthorizationCodeSubmissionDateLong() {
+			return this.transferAuthorizationCodeSubmissionDateLong;
 		}
 
-		public void setUserId(String userId) {
-			this.userId = userId;
+		public void setTransferAuthorizationCodeSubmissionDateLong(Long transferAuthorizationCodeSubmissionDateLong) {
+			this.transferAuthorizationCodeSubmissionDateLong = transferAuthorizationCodeSubmissionDateLong;
+		}
+
+		public Long getSubmissionDateLong() {
+			return this.submissionDateLong;
+		}
+
+		public void setSubmissionDateLong(Long submissionDateLong) {
+			this.submissionDateLong = submissionDateLong;
+		}
+
+		public String getResultCode() {
+			return this.resultCode;
+		}
+
+		public void setResultCode(String resultCode) {
+			this.resultCode = resultCode;
+		}
+
+		public Boolean getNeedMailCheck() {
+			return this.needMailCheck;
+		}
+
+		public void setNeedMailCheck(Boolean needMailCheck) {
+			this.needMailCheck = needMailCheck;
+		}
+
+		public Long getModificationDateLong() {
+			return this.modificationDateLong;
+		}
+
+		public void setModificationDateLong(Long modificationDateLong) {
+			this.modificationDateLong = modificationDateLong;
 		}
 
 		public String getInstanceId() {
@@ -189,36 +229,12 @@ public class QueryTransferInListResponse extends AcsResponse {
 			this.domainName = domainName;
 		}
 
-		public Integer getStatus() {
-			return this.status;
+		public Integer getProgressBarType() {
+			return this.progressBarType;
 		}
 
-		public void setStatus(Integer status) {
-			this.status = status;
-		}
-
-		public String getSimpleTransferInStatus() {
-			return this.simpleTransferInStatus;
-		}
-
-		public void setSimpleTransferInStatus(String simpleTransferInStatus) {
-			this.simpleTransferInStatus = simpleTransferInStatus;
-		}
-
-		public String getResultCode() {
-			return this.resultCode;
-		}
-
-		public void setResultCode(String resultCode) {
-			this.resultCode = resultCode;
-		}
-
-		public String getResultDate() {
-			return this.resultDate;
-		}
-
-		public void setResultDate(String resultDate) {
-			this.resultDate = resultDate;
+		public void setProgressBarType(Integer progressBarType) {
+			this.progressBarType = progressBarType;
 		}
 
 		public String getResultMsg() {
@@ -229,20 +245,20 @@ public class QueryTransferInListResponse extends AcsResponse {
 			this.resultMsg = resultMsg;
 		}
 
-		public String getTransferAuthorizationCodeSubmissionDate() {
-			return this.transferAuthorizationCodeSubmissionDate;
+		public Long getResultDateLong() {
+			return this.resultDateLong;
 		}
 
-		public void setTransferAuthorizationCodeSubmissionDate(String transferAuthorizationCodeSubmissionDate) {
-			this.transferAuthorizationCodeSubmissionDate = transferAuthorizationCodeSubmissionDate;
+		public void setResultDateLong(Long resultDateLong) {
+			this.resultDateLong = resultDateLong;
 		}
 
-		public Boolean getNeedMailCheck() {
-			return this.needMailCheck;
+		public String getExpirationDate() {
+			return this.expirationDate;
 		}
 
-		public void setNeedMailCheck(Boolean needMailCheck) {
-			this.needMailCheck = needMailCheck;
+		public void setExpirationDate(String expirationDate) {
+			this.expirationDate = expirationDate;
 		}
 
 		public String getEmail() {
@@ -261,44 +277,20 @@ public class QueryTransferInListResponse extends AcsResponse {
 			this.whoisMailStatus = whoisMailStatus;
 		}
 
-		public String getExpirationDate() {
-			return this.expirationDate;
+		public String getTransferAuthorizationCodeSubmissionDate() {
+			return this.transferAuthorizationCodeSubmissionDate;
 		}
 
-		public void setExpirationDate(String expirationDate) {
-			this.expirationDate = expirationDate;
+		public void setTransferAuthorizationCodeSubmissionDate(String transferAuthorizationCodeSubmissionDate) {
+			this.transferAuthorizationCodeSubmissionDate = transferAuthorizationCodeSubmissionDate;
 		}
 
-		public Integer getProgressBarType() {
-			return this.progressBarType;
+		public String getSubmissionDate() {
+			return this.submissionDate;
 		}
 
-		public void setProgressBarType(Integer progressBarType) {
-			this.progressBarType = progressBarType;
-		}
-
-		public Long getSubmissionDateLong() {
-			return this.submissionDateLong;
-		}
-
-		public void setSubmissionDateLong(Long submissionDateLong) {
-			this.submissionDateLong = submissionDateLong;
-		}
-
-		public Long getModificationDateLong() {
-			return this.modificationDateLong;
-		}
-
-		public void setModificationDateLong(Long modificationDateLong) {
-			this.modificationDateLong = modificationDateLong;
-		}
-
-		public Long getResultDateLong() {
-			return this.resultDateLong;
-		}
-
-		public void setResultDateLong(Long resultDateLong) {
-			this.resultDateLong = resultDateLong;
+		public void setSubmissionDate(String submissionDate) {
+			this.submissionDate = submissionDate;
 		}
 
 		public Long getExpirationDateLong() {
@@ -309,12 +301,20 @@ public class QueryTransferInListResponse extends AcsResponse {
 			this.expirationDateLong = expirationDateLong;
 		}
 
-		public Long getTransferAuthorizationCodeSubmissionDateLong() {
-			return this.transferAuthorizationCodeSubmissionDateLong;
+		public String getSimpleTransferInStatus() {
+			return this.simpleTransferInStatus;
 		}
 
-		public void setTransferAuthorizationCodeSubmissionDateLong(Long transferAuthorizationCodeSubmissionDateLong) {
-			this.transferAuthorizationCodeSubmissionDateLong = transferAuthorizationCodeSubmissionDateLong;
+		public void setSimpleTransferInStatus(String simpleTransferInStatus) {
+			this.simpleTransferInStatus = simpleTransferInStatus;
+		}
+
+		public String getResultDate() {
+			return this.resultDate;
+		}
+
+		public void setResultDate(String resultDate) {
+			this.resultDate = resultDate;
 		}
 	}
 

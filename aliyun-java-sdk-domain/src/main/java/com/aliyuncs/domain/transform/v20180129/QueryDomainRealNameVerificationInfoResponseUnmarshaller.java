@@ -23,12 +23,12 @@ public class QueryDomainRealNameVerificationInfoResponseUnmarshaller {
 	public static QueryDomainRealNameVerificationInfoResponse unmarshall(QueryDomainRealNameVerificationInfoResponse queryDomainRealNameVerificationInfoResponse, UnmarshallerContext _ctx) {
 		
 		queryDomainRealNameVerificationInfoResponse.setRequestId(_ctx.stringValue("QueryDomainRealNameVerificationInfoResponse.RequestId"));
-		queryDomainRealNameVerificationInfoResponse.setSubmissionDate(_ctx.stringValue("QueryDomainRealNameVerificationInfoResponse.SubmissionDate"));
-		queryDomainRealNameVerificationInfoResponse.setIdentityCredential(_ctx.stringValue("QueryDomainRealNameVerificationInfoResponse.IdentityCredential"));
-		queryDomainRealNameVerificationInfoResponse.setIdentityCredentialNo(_ctx.stringValue("QueryDomainRealNameVerificationInfoResponse.IdentityCredentialNo"));
 		queryDomainRealNameVerificationInfoResponse.setIdentityCredentialType(_ctx.stringValue("QueryDomainRealNameVerificationInfoResponse.IdentityCredentialType"));
-		queryDomainRealNameVerificationInfoResponse.setDomainName(_ctx.stringValue("QueryDomainRealNameVerificationInfoResponse.DomainName"));
 		queryDomainRealNameVerificationInfoResponse.setInstanceId(_ctx.stringValue("QueryDomainRealNameVerificationInfoResponse.InstanceId"));
+		queryDomainRealNameVerificationInfoResponse.setDomainName(_ctx.stringValue("QueryDomainRealNameVerificationInfoResponse.DomainName"));
+		queryDomainRealNameVerificationInfoResponse.setIdentityCredential(_ctx.stringValue("QueryDomainRealNameVerificationInfoResponse.IdentityCredential"));
+		queryDomainRealNameVerificationInfoResponse.setSubmissionDate(_ctx.stringValue("QueryDomainRealNameVerificationInfoResponse.SubmissionDate"));
+		queryDomainRealNameVerificationInfoResponse.setIdentityCredentialNo(_ctx.stringValue("QueryDomainRealNameVerificationInfoResponse.IdentityCredentialNo"));
 		queryDomainRealNameVerificationInfoResponse.setIdentityCredentialUrl(_ctx.stringValue("QueryDomainRealNameVerificationInfoResponse.IdentityCredentialUrl"));
 	 
 	 	return queryDomainRealNameVerificationInfoResponse;

@@ -47,19 +47,35 @@ public class QueryDomainGroupListResponse extends AcsResponse {
 
 	public static class DomainGroup {
 
+		private Boolean beingDeleted;
+
+		private String domainGroupStatus;
+
 		private String domainGroupId;
 
 		private String domainGroupName;
+
+		private String modificationDate;
 
 		private Integer totalNumber;
 
 		private String creationDate;
 
-		private String modificationDate;
+		public Boolean getBeingDeleted() {
+			return this.beingDeleted;
+		}
 
-		private String domainGroupStatus;
+		public void setBeingDeleted(Boolean beingDeleted) {
+			this.beingDeleted = beingDeleted;
+		}
 
-		private Boolean beingDeleted;
+		public String getDomainGroupStatus() {
+			return this.domainGroupStatus;
+		}
+
+		public void setDomainGroupStatus(String domainGroupStatus) {
+			this.domainGroupStatus = domainGroupStatus;
+		}
 
 		public String getDomainGroupId() {
 			return this.domainGroupId;
@@ -77,6 +93,14 @@ public class QueryDomainGroupListResponse extends AcsResponse {
 			this.domainGroupName = domainGroupName;
 		}
 
+		public String getModificationDate() {
+			return this.modificationDate;
+		}
+
+		public void setModificationDate(String modificationDate) {
+			this.modificationDate = modificationDate;
+		}
+
 		public Integer getTotalNumber() {
 			return this.totalNumber;
 		}
@@ -91,30 +115,6 @@ public class QueryDomainGroupListResponse extends AcsResponse {
 
 		public void setCreationDate(String creationDate) {
 			this.creationDate = creationDate;
-		}
-
-		public String getModificationDate() {
-			return this.modificationDate;
-		}
-
-		public void setModificationDate(String modificationDate) {
-			this.modificationDate = modificationDate;
-		}
-
-		public String getDomainGroupStatus() {
-			return this.domainGroupStatus;
-		}
-
-		public void setDomainGroupStatus(String domainGroupStatus) {
-			this.domainGroupStatus = domainGroupStatus;
-		}
-
-		public Boolean getBeingDeleted() {
-			return this.beingDeleted;
-		}
-
-		public void setBeingDeleted(Boolean beingDeleted) {
-			this.beingDeleted = beingDeleted;
 		}
 	}
 

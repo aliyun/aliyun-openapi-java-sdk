@@ -28,38 +28,38 @@ public class SubmitEmailVerificationResponseUnmarshaller {
 		
 		submitEmailVerificationResponse.setRequestId(_ctx.stringValue("SubmitEmailVerificationResponse.RequestId"));
 
+		List<SendResult> existList = new ArrayList<SendResult>();
+		for (int i = 0; i < _ctx.lengthValue("SubmitEmailVerificationResponse.ExistList.Length"); i++) {
+			SendResult sendResult = new SendResult();
+			sendResult.setEmail(_ctx.stringValue("SubmitEmailVerificationResponse.ExistList["+ i +"].Email"));
+			sendResult.setCode(_ctx.stringValue("SubmitEmailVerificationResponse.ExistList["+ i +"].Code"));
+			sendResult.setMessage(_ctx.stringValue("SubmitEmailVerificationResponse.ExistList["+ i +"].Message"));
+
+			existList.add(sendResult);
+		}
+		submitEmailVerificationResponse.setExistList(existList);
+
 		List<SendResult> successList = new ArrayList<SendResult>();
 		for (int i = 0; i < _ctx.lengthValue("SubmitEmailVerificationResponse.SuccessList.Length"); i++) {
-			SendResult sendResult = new SendResult();
-			sendResult.setEmail(_ctx.stringValue("SubmitEmailVerificationResponse.SuccessList["+ i +"].Email"));
-			sendResult.setCode(_ctx.stringValue("SubmitEmailVerificationResponse.SuccessList["+ i +"].Code"));
-			sendResult.setMessage(_ctx.stringValue("SubmitEmailVerificationResponse.SuccessList["+ i +"].Message"));
+			SendResult sendResult1 = new SendResult();
+			sendResult1.setEmail(_ctx.stringValue("SubmitEmailVerificationResponse.SuccessList["+ i +"].Email"));
+			sendResult1.setCode(_ctx.stringValue("SubmitEmailVerificationResponse.SuccessList["+ i +"].Code"));
+			sendResult1.setMessage(_ctx.stringValue("SubmitEmailVerificationResponse.SuccessList["+ i +"].Message"));
 
-			successList.add(sendResult);
+			successList.add(sendResult1);
 		}
 		submitEmailVerificationResponse.setSuccessList(successList);
 
 		List<SendResult> failList = new ArrayList<SendResult>();
 		for (int i = 0; i < _ctx.lengthValue("SubmitEmailVerificationResponse.FailList.Length"); i++) {
-			SendResult sendResult1 = new SendResult();
-			sendResult1.setEmail(_ctx.stringValue("SubmitEmailVerificationResponse.FailList["+ i +"].Email"));
-			sendResult1.setCode(_ctx.stringValue("SubmitEmailVerificationResponse.FailList["+ i +"].Code"));
-			sendResult1.setMessage(_ctx.stringValue("SubmitEmailVerificationResponse.FailList["+ i +"].Message"));
+			SendResult sendResult2 = new SendResult();
+			sendResult2.setEmail(_ctx.stringValue("SubmitEmailVerificationResponse.FailList["+ i +"].Email"));
+			sendResult2.setCode(_ctx.stringValue("SubmitEmailVerificationResponse.FailList["+ i +"].Code"));
+			sendResult2.setMessage(_ctx.stringValue("SubmitEmailVerificationResponse.FailList["+ i +"].Message"));
 
-			failList.add(sendResult1);
+			failList.add(sendResult2);
 		}
 		submitEmailVerificationResponse.setFailList(failList);
-
-		List<SendResult> existList = new ArrayList<SendResult>();
-		for (int i = 0; i < _ctx.lengthValue("SubmitEmailVerificationResponse.ExistList.Length"); i++) {
-			SendResult sendResult2 = new SendResult();
-			sendResult2.setEmail(_ctx.stringValue("SubmitEmailVerificationResponse.ExistList["+ i +"].Email"));
-			sendResult2.setCode(_ctx.stringValue("SubmitEmailVerificationResponse.ExistList["+ i +"].Code"));
-			sendResult2.setMessage(_ctx.stringValue("SubmitEmailVerificationResponse.ExistList["+ i +"].Message"));
-
-			existList.add(sendResult2);
-		}
-		submitEmailVerificationResponse.setExistList(existList);
 	 
 	 	return submitEmailVerificationResponse;
 	}

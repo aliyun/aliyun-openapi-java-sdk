@@ -24,21 +24,37 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetQualificationUploadPolicyResponse extends AcsResponse {
 
+	private String policy;
+
+	private String expire;
+
 	private String requestId;
 
 	private String accessid;
 
-	private String policy;
-
 	private String signature;
-
-	private String dir;
-
-	private String prefix;
 
 	private String host;
 
-	private String expire;
+	private String prefix;
+
+	private String dir;
+
+	public String getPolicy() {
+		return this.policy;
+	}
+
+	public void setPolicy(String policy) {
+		this.policy = policy;
+	}
+
+	public String getExpire() {
+		return this.expire;
+	}
+
+	public void setExpire(String expire) {
+		this.expire = expire;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -56,36 +72,12 @@ public class GetQualificationUploadPolicyResponse extends AcsResponse {
 		this.accessid = accessid;
 	}
 
-	public String getPolicy() {
-		return this.policy;
-	}
-
-	public void setPolicy(String policy) {
-		this.policy = policy;
-	}
-
 	public String getSignature() {
 		return this.signature;
 	}
 
 	public void setSignature(String signature) {
 		this.signature = signature;
-	}
-
-	public String getDir() {
-		return this.dir;
-	}
-
-	public void setDir(String dir) {
-		this.dir = dir;
-	}
-
-	public String getPrefix() {
-		return this.prefix;
-	}
-
-	public void setPrefix(String prefix) {
-		this.prefix = prefix;
 	}
 
 	public String getHost() {
@@ -96,12 +88,20 @@ public class GetQualificationUploadPolicyResponse extends AcsResponse {
 		this.host = host;
 	}
 
-	public String getExpire() {
-		return this.expire;
+	public String getPrefix() {
+		return this.prefix;
 	}
 
-	public void setExpire(String expire) {
-		this.expire = expire;
+	public void setPrefix(String prefix) {
+		this.prefix = prefix;
+	}
+
+	public String getDir() {
+		return this.dir;
+	}
+
+	public void setDir(String dir) {
+		this.dir = dir;
 	}
 
 	@Override

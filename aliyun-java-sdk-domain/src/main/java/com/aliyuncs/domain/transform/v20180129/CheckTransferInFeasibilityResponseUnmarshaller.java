@@ -24,9 +24,9 @@ public class CheckTransferInFeasibilityResponseUnmarshaller {
 		
 		checkTransferInFeasibilityResponse.setRequestId(_ctx.stringValue("CheckTransferInFeasibilityResponse.RequestId"));
 		checkTransferInFeasibilityResponse.setCanTransfer(_ctx.booleanValue("CheckTransferInFeasibilityResponse.CanTransfer"));
-		checkTransferInFeasibilityResponse.setCode(_ctx.stringValue("CheckTransferInFeasibilityResponse.Code"));
 		checkTransferInFeasibilityResponse.setMessage(_ctx.stringValue("CheckTransferInFeasibilityResponse.Message"));
 		checkTransferInFeasibilityResponse.setProductId(_ctx.stringValue("CheckTransferInFeasibilityResponse.ProductId"));
+		checkTransferInFeasibilityResponse.setCode(_ctx.stringValue("CheckTransferInFeasibilityResponse.Code"));
 	 
 	 	return checkTransferInFeasibilityResponse;
 	}

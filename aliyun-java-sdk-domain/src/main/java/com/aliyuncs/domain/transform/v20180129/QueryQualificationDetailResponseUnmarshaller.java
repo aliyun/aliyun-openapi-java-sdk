@@ -27,14 +27,14 @@ public class QueryQualificationDetailResponseUnmarshaller {
 	public static QueryQualificationDetailResponse unmarshall(QueryQualificationDetailResponse queryQualificationDetailResponse, UnmarshallerContext _ctx) {
 		
 		queryQualificationDetailResponse.setRequestId(_ctx.stringValue("QueryQualificationDetailResponse.RequestId"));
-		queryQualificationDetailResponse.setTrackId(_ctx.stringValue("QueryQualificationDetailResponse.TrackId"));
 		queryQualificationDetailResponse.setAuditStatus(_ctx.integerValue("QueryQualificationDetailResponse.AuditStatus"));
+		queryQualificationDetailResponse.setTrackId(_ctx.stringValue("QueryQualificationDetailResponse.TrackId"));
 
 		List<QualificationCredential> credentials = new ArrayList<QualificationCredential>();
 		for (int i = 0; i < _ctx.lengthValue("QueryQualificationDetailResponse.Credentials.Length"); i++) {
 			QualificationCredential qualificationCredential = new QualificationCredential();
-			qualificationCredential.setCredentialNo(_ctx.stringValue("QueryQualificationDetailResponse.Credentials["+ i +"].CredentialNo"));
 			qualificationCredential.setCredentialType(_ctx.stringValue("QueryQualificationDetailResponse.Credentials["+ i +"].CredentialType"));
+			qualificationCredential.setCredentialNo(_ctx.stringValue("QueryQualificationDetailResponse.Credentials["+ i +"].CredentialNo"));
 			qualificationCredential.setCredentialUrl(_ctx.stringValue("QueryQualificationDetailResponse.Credentials["+ i +"].CredentialUrl"));
 
 			credentials.add(qualificationCredential);

@@ -27,33 +27,33 @@ public class ScrollDomainListResponseUnmarshaller {
 	public static ScrollDomainListResponse unmarshall(ScrollDomainListResponse scrollDomainListResponse, UnmarshallerContext _ctx) {
 		
 		scrollDomainListResponse.setRequestId(_ctx.stringValue("ScrollDomainListResponse.RequestId"));
-		scrollDomainListResponse.setTotalItemNum(_ctx.integerValue("ScrollDomainListResponse.TotalItemNum"));
 		scrollDomainListResponse.setPageSize(_ctx.integerValue("ScrollDomainListResponse.PageSize"));
 		scrollDomainListResponse.setScrollId(_ctx.stringValue("ScrollDomainListResponse.ScrollId"));
+		scrollDomainListResponse.setTotalItemNum(_ctx.integerValue("ScrollDomainListResponse.TotalItemNum"));
 
 		List<Domain> data = new ArrayList<Domain>();
 		for (int i = 0; i < _ctx.lengthValue("ScrollDomainListResponse.Data.Length"); i++) {
 			Domain domain = new Domain();
-			domain.setDomainName(_ctx.stringValue("ScrollDomainListResponse.Data["+ i +"].DomainName"));
-			domain.setInstanceId(_ctx.stringValue("ScrollDomainListResponse.Data["+ i +"].InstanceId"));
-			domain.setExpirationDate(_ctx.stringValue("ScrollDomainListResponse.Data["+ i +"].ExpirationDate"));
-			domain.setRegistrationDate(_ctx.stringValue("ScrollDomainListResponse.Data["+ i +"].RegistrationDate"));
-			domain.setDomainType(_ctx.stringValue("ScrollDomainListResponse.Data["+ i +"].DomainType"));
-			domain.setDomainStatus(_ctx.stringValue("ScrollDomainListResponse.Data["+ i +"].DomainStatus"));
-			domain.setProductId(_ctx.stringValue("ScrollDomainListResponse.Data["+ i +"].ProductId"));
-			domain.setExpirationDateLong(_ctx.longValue("ScrollDomainListResponse.Data["+ i +"].ExpirationDateLong"));
-			domain.setRegistrationDateLong(_ctx.longValue("ScrollDomainListResponse.Data["+ i +"].RegistrationDateLong"));
-			domain.setPremium(_ctx.booleanValue("ScrollDomainListResponse.Data["+ i +"].Premium"));
 			domain.setDomainAuditStatus(_ctx.stringValue("ScrollDomainListResponse.Data["+ i +"].DomainAuditStatus"));
-			domain.setExpirationDateStatus(_ctx.stringValue("ScrollDomainListResponse.Data["+ i +"].ExpirationDateStatus"));
-			domain.setRegistrantType(_ctx.stringValue("ScrollDomainListResponse.Data["+ i +"].RegistrantType"));
 			domain.setDomainGroupId(_ctx.stringValue("ScrollDomainListResponse.Data["+ i +"].DomainGroupId"));
 			domain.setRemark(_ctx.stringValue("ScrollDomainListResponse.Data["+ i +"].Remark"));
 			domain.setDomainGroupName(_ctx.stringValue("ScrollDomainListResponse.Data["+ i +"].DomainGroupName"));
-			domain.setExpirationCurrDateDiff(_ctx.integerValue("ScrollDomainListResponse.Data["+ i +"].ExpirationCurrDateDiff"));
-			domain.setEmail(_ctx.stringValue("ScrollDomainListResponse.Data["+ i +"].Email"));
 			domain.setZhRegistrantOrganization(_ctx.stringValue("ScrollDomainListResponse.Data["+ i +"].ZhRegistrantOrganization"));
 			domain.setRegistrantOrganization(_ctx.stringValue("ScrollDomainListResponse.Data["+ i +"].RegistrantOrganization"));
+			domain.setRegistrationDate(_ctx.stringValue("ScrollDomainListResponse.Data["+ i +"].RegistrationDate"));
+			domain.setInstanceId(_ctx.stringValue("ScrollDomainListResponse.Data["+ i +"].InstanceId"));
+			domain.setDomainName(_ctx.stringValue("ScrollDomainListResponse.Data["+ i +"].DomainName"));
+			domain.setExpirationDateStatus(_ctx.stringValue("ScrollDomainListResponse.Data["+ i +"].ExpirationDateStatus"));
+			domain.setExpirationDate(_ctx.stringValue("ScrollDomainListResponse.Data["+ i +"].ExpirationDate"));
+			domain.setEmail(_ctx.stringValue("ScrollDomainListResponse.Data["+ i +"].Email"));
+			domain.setRegistrantType(_ctx.stringValue("ScrollDomainListResponse.Data["+ i +"].RegistrantType"));
+			domain.setExpirationDateLong(_ctx.longValue("ScrollDomainListResponse.Data["+ i +"].ExpirationDateLong"));
+			domain.setExpirationCurrDateDiff(_ctx.integerValue("ScrollDomainListResponse.Data["+ i +"].ExpirationCurrDateDiff"));
+			domain.setPremium(_ctx.booleanValue("ScrollDomainListResponse.Data["+ i +"].Premium"));
+			domain.setRegistrationDateLong(_ctx.longValue("ScrollDomainListResponse.Data["+ i +"].RegistrationDateLong"));
+			domain.setProductId(_ctx.stringValue("ScrollDomainListResponse.Data["+ i +"].ProductId"));
+			domain.setDomainStatus(_ctx.stringValue("ScrollDomainListResponse.Data["+ i +"].DomainStatus"));
+			domain.setDomainType(_ctx.stringValue("ScrollDomainListResponse.Data["+ i +"].DomainType"));
 
 			List<String> dnsList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ScrollDomainListResponse.Data["+ i +"].DnsList.Length"); j++) {

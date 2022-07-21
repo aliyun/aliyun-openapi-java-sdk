@@ -26,29 +26,36 @@ public class QueryDomainByDomainNameResponseUnmarshaller {
 	public static QueryDomainByDomainNameResponse unmarshall(QueryDomainByDomainNameResponse queryDomainByDomainNameResponse, UnmarshallerContext _ctx) {
 		
 		queryDomainByDomainNameResponse.setRequestId(_ctx.stringValue("QueryDomainByDomainNameResponse.RequestId"));
-		queryDomainByDomainNameResponse.setUserId(_ctx.stringValue("QueryDomainByDomainNameResponse.UserId"));
-		queryDomainByDomainNameResponse.setDomainName(_ctx.stringValue("QueryDomainByDomainNameResponse.DomainName"));
-		queryDomainByDomainNameResponse.setInstanceId(_ctx.stringValue("QueryDomainByDomainNameResponse.InstanceId"));
-		queryDomainByDomainNameResponse.setRegistrationDate(_ctx.stringValue("QueryDomainByDomainNameResponse.RegistrationDate"));
-		queryDomainByDomainNameResponse.setExpirationDate(_ctx.stringValue("QueryDomainByDomainNameResponse.ExpirationDate"));
-		queryDomainByDomainNameResponse.setRegistrantOrganization(_ctx.stringValue("QueryDomainByDomainNameResponse.RegistrantOrganization"));
-		queryDomainByDomainNameResponse.setRegistrantName(_ctx.stringValue("QueryDomainByDomainNameResponse.RegistrantName"));
 		queryDomainByDomainNameResponse.setEmail(_ctx.stringValue("QueryDomainByDomainNameResponse.Email"));
-		queryDomainByDomainNameResponse.setUpdateProhibitionLock(_ctx.stringValue("QueryDomainByDomainNameResponse.UpdateProhibitionLock"));
+		queryDomainByDomainNameResponse.setRegistrationDate(_ctx.stringValue("QueryDomainByDomainNameResponse.RegistrationDate"));
+		queryDomainByDomainNameResponse.setRegistrationDateLong(_ctx.longValue("QueryDomainByDomainNameResponse.RegistrationDateLong"));
+		queryDomainByDomainNameResponse.setRealNameStatus(_ctx.stringValue("QueryDomainByDomainNameResponse.RealNameStatus"));
+		queryDomainByDomainNameResponse.setPremium(_ctx.booleanValue("QueryDomainByDomainNameResponse.Premium"));
+		queryDomainByDomainNameResponse.setDomainNameVerificationStatus(_ctx.stringValue("QueryDomainByDomainNameResponse.DomainNameVerificationStatus"));
+		queryDomainByDomainNameResponse.setExpirationDateLong(_ctx.longValue("QueryDomainByDomainNameResponse.ExpirationDateLong"));
+		queryDomainByDomainNameResponse.setTransferOutStatus(_ctx.stringValue("QueryDomainByDomainNameResponse.TransferOutStatus"));
+		queryDomainByDomainNameResponse.setZhRegistrantOrganization(_ctx.stringValue("QueryDomainByDomainNameResponse.ZhRegistrantOrganization"));
+		queryDomainByDomainNameResponse.setEmailVerificationClientHold(_ctx.booleanValue("QueryDomainByDomainNameResponse.EmailVerificationClientHold"));
+		queryDomainByDomainNameResponse.setEmailVerificationStatus(_ctx.integerValue("QueryDomainByDomainNameResponse.EmailVerificationStatus"));
+		queryDomainByDomainNameResponse.setRegistrantOrganization(_ctx.stringValue("QueryDomainByDomainNameResponse.RegistrantOrganization"));
 		queryDomainByDomainNameResponse.setTransferProhibitionLock(_ctx.stringValue("QueryDomainByDomainNameResponse.TransferProhibitionLock"));
 		queryDomainByDomainNameResponse.setDomainNameProxyService(_ctx.booleanValue("QueryDomainByDomainNameResponse.DomainNameProxyService"));
-		queryDomainByDomainNameResponse.setPremium(_ctx.booleanValue("QueryDomainByDomainNameResponse.Premium"));
-		queryDomainByDomainNameResponse.setEmailVerificationStatus(_ctx.integerValue("QueryDomainByDomainNameResponse.EmailVerificationStatus"));
-		queryDomainByDomainNameResponse.setEmailVerificationClientHold(_ctx.booleanValue("QueryDomainByDomainNameResponse.EmailVerificationClientHold"));
-		queryDomainByDomainNameResponse.setRealNameStatus(_ctx.stringValue("QueryDomainByDomainNameResponse.RealNameStatus"));
-		queryDomainByDomainNameResponse.setRegistrantUpdatingStatus(_ctx.stringValue("QueryDomainByDomainNameResponse.RegistrantUpdatingStatus"));
-		queryDomainByDomainNameResponse.setTransferOutStatus(_ctx.stringValue("QueryDomainByDomainNameResponse.TransferOutStatus"));
 		queryDomainByDomainNameResponse.setRegistrantType(_ctx.stringValue("QueryDomainByDomainNameResponse.RegistrantType"));
-		queryDomainByDomainNameResponse.setDomainNameVerificationStatus(_ctx.stringValue("QueryDomainByDomainNameResponse.DomainNameVerificationStatus"));
-		queryDomainByDomainNameResponse.setZhRegistrantOrganization(_ctx.stringValue("QueryDomainByDomainNameResponse.ZhRegistrantOrganization"));
+		queryDomainByDomainNameResponse.setRegistrantUpdatingStatus(_ctx.stringValue("QueryDomainByDomainNameResponse.RegistrantUpdatingStatus"));
+		queryDomainByDomainNameResponse.setDomainName(_ctx.stringValue("QueryDomainByDomainNameResponse.DomainName"));
+		queryDomainByDomainNameResponse.setInstanceId(_ctx.stringValue("QueryDomainByDomainNameResponse.InstanceId"));
 		queryDomainByDomainNameResponse.setZhRegistrantName(_ctx.stringValue("QueryDomainByDomainNameResponse.ZhRegistrantName"));
-		queryDomainByDomainNameResponse.setRegistrationDateLong(_ctx.longValue("QueryDomainByDomainNameResponse.RegistrationDateLong"));
-		queryDomainByDomainNameResponse.setExpirationDateLong(_ctx.longValue("QueryDomainByDomainNameResponse.ExpirationDateLong"));
+		queryDomainByDomainNameResponse.setExpirationDate(_ctx.stringValue("QueryDomainByDomainNameResponse.ExpirationDate"));
+		queryDomainByDomainNameResponse.setRegistrantName(_ctx.stringValue("QueryDomainByDomainNameResponse.RegistrantName"));
+		queryDomainByDomainNameResponse.setUserId(_ctx.stringValue("QueryDomainByDomainNameResponse.UserId"));
+		queryDomainByDomainNameResponse.setUpdateProhibitionLock(_ctx.stringValue("QueryDomainByDomainNameResponse.UpdateProhibitionLock"));
+		queryDomainByDomainNameResponse.setDomainGroupId(_ctx.longValue("QueryDomainByDomainNameResponse.DomainGroupId"));
+		queryDomainByDomainNameResponse.setRemark(_ctx.stringValue("QueryDomainByDomainNameResponse.Remark"));
+		queryDomainByDomainNameResponse.setDomainGroupName(_ctx.stringValue("QueryDomainByDomainNameResponse.DomainGroupName"));
+		queryDomainByDomainNameResponse.setExpirationDateStatus(_ctx.stringValue("QueryDomainByDomainNameResponse.ExpirationDateStatus"));
+		queryDomainByDomainNameResponse.setExpirationCurrDateDiff(_ctx.integerValue("QueryDomainByDomainNameResponse.ExpirationCurrDateDiff"));
+		queryDomainByDomainNameResponse.setDomainType(_ctx.stringValue("QueryDomainByDomainNameResponse.DomainType"));
+		queryDomainByDomainNameResponse.setDomainStatus(_ctx.stringValue("QueryDomainByDomainNameResponse.domainStatus"));
 
 		List<String> dnsList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("QueryDomainByDomainNameResponse.DnsList.Length"); i++) {

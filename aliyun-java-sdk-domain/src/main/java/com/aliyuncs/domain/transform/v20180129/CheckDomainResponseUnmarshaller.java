@@ -23,12 +23,12 @@ public class CheckDomainResponseUnmarshaller {
 	public static CheckDomainResponse unmarshall(CheckDomainResponse checkDomainResponse, UnmarshallerContext _ctx) {
 		
 		checkDomainResponse.setRequestId(_ctx.stringValue("CheckDomainResponse.RequestId"));
-		checkDomainResponse.setDomainName(_ctx.stringValue("CheckDomainResponse.DomainName"));
 		checkDomainResponse.setAvail(_ctx.stringValue("CheckDomainResponse.Avail"));
-		checkDomainResponse.setPremium(_ctx.stringValue("CheckDomainResponse.Premium"));
-		checkDomainResponse.setReason(_ctx.stringValue("CheckDomainResponse.Reason"));
 		checkDomainResponse.setPrice(_ctx.longValue("CheckDomainResponse.Price"));
+		checkDomainResponse.setDomainName(_ctx.stringValue("CheckDomainResponse.DomainName"));
+		checkDomainResponse.setPremium(_ctx.stringValue("CheckDomainResponse.Premium"));
 		checkDomainResponse.setDynamicCheck(_ctx.booleanValue("CheckDomainResponse.DynamicCheck"));
+		checkDomainResponse.setReason(_ctx.stringValue("CheckDomainResponse.Reason"));
 	 
 	 	return checkDomainResponse;
 	}

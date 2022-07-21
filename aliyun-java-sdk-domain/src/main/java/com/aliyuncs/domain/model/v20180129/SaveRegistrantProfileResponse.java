@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class SaveRegistrantProfileResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Long registrantProfileId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public Long getRegistrantProfileId() {
 		return this.registrantProfileId;
@@ -42,6 +34,14 @@ public class SaveRegistrantProfileResponse extends AcsResponse {
 
 	public void setRegistrantProfileId(Long registrantProfileId) {
 		this.registrantProfileId = registrantProfileId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

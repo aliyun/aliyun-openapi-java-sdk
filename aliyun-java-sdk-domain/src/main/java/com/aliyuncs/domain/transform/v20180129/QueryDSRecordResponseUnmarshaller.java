@@ -31,10 +31,10 @@ public class QueryDSRecordResponseUnmarshaller {
 		List<DSRecord> dSRecordList = new ArrayList<DSRecord>();
 		for (int i = 0; i < _ctx.lengthValue("QueryDSRecordResponse.DSRecordList.Length"); i++) {
 			DSRecord dSRecord = new DSRecord();
-			dSRecord.setKeyTag(_ctx.integerValue("QueryDSRecordResponse.DSRecordList["+ i +"].KeyTag"));
-			dSRecord.setAlgorithm(_ctx.integerValue("QueryDSRecordResponse.DSRecordList["+ i +"].Algorithm"));
 			dSRecord.setDigestType(_ctx.integerValue("QueryDSRecordResponse.DSRecordList["+ i +"].DigestType"));
 			dSRecord.setDigest(_ctx.stringValue("QueryDSRecordResponse.DSRecordList["+ i +"].Digest"));
+			dSRecord.setAlgorithm(_ctx.integerValue("QueryDSRecordResponse.DSRecordList["+ i +"].Algorithm"));
+			dSRecord.setKeyTag(_ctx.integerValue("QueryDSRecordResponse.DSRecordList["+ i +"].KeyTag"));
 
 			dSRecordList.add(dSRecord);
 		}

@@ -24,21 +24,37 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class SaveDomainGroupResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Long domainGroupId;
-
-	private String domainGroupName;
-
-	private Integer totalNumber;
+	private Boolean beingDeleted;
 
 	private String creationDate;
+
+	private String requestId;
+
+	private String domainGroupName;
 
 	private String modificationDate;
 
 	private String domainGroupStatus;
 
-	private Boolean beingDeleted;
+	private Long domainGroupId;
+
+	private Integer totalNumber;
+
+	public Boolean getBeingDeleted() {
+		return this.beingDeleted;
+	}
+
+	public void setBeingDeleted(Boolean beingDeleted) {
+		this.beingDeleted = beingDeleted;
+	}
+
+	public String getCreationDate() {
+		return this.creationDate;
+	}
+
+	public void setCreationDate(String creationDate) {
+		this.creationDate = creationDate;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -48,36 +64,12 @@ public class SaveDomainGroupResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Long getDomainGroupId() {
-		return this.domainGroupId;
-	}
-
-	public void setDomainGroupId(Long domainGroupId) {
-		this.domainGroupId = domainGroupId;
-	}
-
 	public String getDomainGroupName() {
 		return this.domainGroupName;
 	}
 
 	public void setDomainGroupName(String domainGroupName) {
 		this.domainGroupName = domainGroupName;
-	}
-
-	public Integer getTotalNumber() {
-		return this.totalNumber;
-	}
-
-	public void setTotalNumber(Integer totalNumber) {
-		this.totalNumber = totalNumber;
-	}
-
-	public String getCreationDate() {
-		return this.creationDate;
-	}
-
-	public void setCreationDate(String creationDate) {
-		this.creationDate = creationDate;
 	}
 
 	public String getModificationDate() {
@@ -96,12 +88,20 @@ public class SaveDomainGroupResponse extends AcsResponse {
 		this.domainGroupStatus = domainGroupStatus;
 	}
 
-	public Boolean getBeingDeleted() {
-		return this.beingDeleted;
+	public Long getDomainGroupId() {
+		return this.domainGroupId;
 	}
 
-	public void setBeingDeleted(Boolean beingDeleted) {
-		this.beingDeleted = beingDeleted;
+	public void setDomainGroupId(Long domainGroupId) {
+		this.domainGroupId = domainGroupId;
+	}
+
+	public Integer getTotalNumber() {
+		return this.totalNumber;
+	}
+
+	public void setTotalNumber(Integer totalNumber) {
+		this.totalNumber = totalNumber;
 	}
 
 	@Override

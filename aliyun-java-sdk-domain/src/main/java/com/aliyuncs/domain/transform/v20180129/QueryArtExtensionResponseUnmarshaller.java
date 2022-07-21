@@ -25,14 +25,14 @@ public class QueryArtExtensionResponseUnmarshaller {
 		queryArtExtensionResponse.setRequestId(_ctx.stringValue("QueryArtExtensionResponse.RequestId"));
 		queryArtExtensionResponse.setObjectType(_ctx.stringValue("QueryArtExtensionResponse.ObjectType"));
 		queryArtExtensionResponse.setMaterialsAndTechniques(_ctx.stringValue("QueryArtExtensionResponse.MaterialsAndTechniques"));
+		queryArtExtensionResponse.setInscriptionsAndMarkings(_ctx.stringValue("QueryArtExtensionResponse.InscriptionsAndMarkings"));
+		queryArtExtensionResponse.setReference(_ctx.stringValue("QueryArtExtensionResponse.Reference"));
+		queryArtExtensionResponse.setDateOrPeriod(_ctx.stringValue("QueryArtExtensionResponse.DateOrPeriod"));
 		queryArtExtensionResponse.setDimensions(_ctx.stringValue("QueryArtExtensionResponse.Dimensions"));
 		queryArtExtensionResponse.setTitle(_ctx.stringValue("QueryArtExtensionResponse.Title"));
-		queryArtExtensionResponse.setDateOrPeriod(_ctx.stringValue("QueryArtExtensionResponse.DateOrPeriod"));
-		queryArtExtensionResponse.setMaker(_ctx.stringValue("QueryArtExtensionResponse.Maker"));
-		queryArtExtensionResponse.setInscriptionsAndMarkings(_ctx.stringValue("QueryArtExtensionResponse.InscriptionsAndMarkings"));
-		queryArtExtensionResponse.setSubject(_ctx.stringValue("QueryArtExtensionResponse.Subject"));
 		queryArtExtensionResponse.setFeatures(_ctx.stringValue("QueryArtExtensionResponse.Features"));
-		queryArtExtensionResponse.setReference(_ctx.stringValue("QueryArtExtensionResponse.Reference"));
+		queryArtExtensionResponse.setSubject(_ctx.stringValue("QueryArtExtensionResponse.Subject"));
+		queryArtExtensionResponse.setMaker(_ctx.stringValue("QueryArtExtensionResponse.Maker"));
 	 
 	 	return queryArtExtensionResponse;
 	}

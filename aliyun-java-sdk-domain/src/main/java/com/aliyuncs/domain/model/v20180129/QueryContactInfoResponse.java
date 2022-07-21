@@ -24,104 +24,48 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryContactInfoResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String createDate;
-
-	private String registrantName;
-
-	private String registrantOrganization;
-
-	private String country;
-
-	private String province;
-
-	private String city;
-
-	private String address;
+	private String zhProvince;
 
 	private String email;
 
-	private String postalCode;
-
-	private String telArea;
-
 	private String telephone;
 
-	private String telExt;
+	private String requestId;
+
+	private String address;
+
+	private String postalCode;
 
 	private String zhRegistrantName;
 
-	private String zhRegistrantOrganization;
+	private String city;
 
-	private String zhProvince;
+	private String createDate;
+
+	private String province;
 
 	private String zhCity;
 
+	private String registrantName;
+
+	private String zhRegistrantOrganization;
+
+	private String country;
+
+	private String registrantOrganization;
+
+	private String telExt;
+
+	private String telArea;
+
 	private String zhAddress;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getZhProvince() {
+		return this.zhProvince;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getCreateDate() {
-		return this.createDate;
-	}
-
-	public void setCreateDate(String createDate) {
-		this.createDate = createDate;
-	}
-
-	public String getRegistrantName() {
-		return this.registrantName;
-	}
-
-	public void setRegistrantName(String registrantName) {
-		this.registrantName = registrantName;
-	}
-
-	public String getRegistrantOrganization() {
-		return this.registrantOrganization;
-	}
-
-	public void setRegistrantOrganization(String registrantOrganization) {
-		this.registrantOrganization = registrantOrganization;
-	}
-
-	public String getCountry() {
-		return this.country;
-	}
-
-	public void setCountry(String country) {
-		this.country = country;
-	}
-
-	public String getProvince() {
-		return this.province;
-	}
-
-	public void setProvince(String province) {
-		this.province = province;
-	}
-
-	public String getCity() {
-		return this.city;
-	}
-
-	public void setCity(String city) {
-		this.city = city;
-	}
-
-	public String getAddress() {
-		return this.address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
+	public void setZhProvince(String zhProvince) {
+		this.zhProvince = zhProvince;
 	}
 
 	public String getEmail() {
@@ -132,22 +76,6 @@ public class QueryContactInfoResponse extends AcsResponse {
 		this.email = email;
 	}
 
-	public String getPostalCode() {
-		return this.postalCode;
-	}
-
-	public void setPostalCode(String postalCode) {
-		this.postalCode = postalCode;
-	}
-
-	public String getTelArea() {
-		return this.telArea;
-	}
-
-	public void setTelArea(String telArea) {
-		this.telArea = telArea;
-	}
-
 	public String getTelephone() {
 		return this.telephone;
 	}
@@ -156,12 +84,28 @@ public class QueryContactInfoResponse extends AcsResponse {
 		this.telephone = telephone;
 	}
 
-	public String getTelExt() {
-		return this.telExt;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setTelExt(String telExt) {
-		this.telExt = telExt;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getAddress() {
+		return this.address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getPostalCode() {
+		return this.postalCode;
+	}
+
+	public void setPostalCode(String postalCode) {
+		this.postalCode = postalCode;
 	}
 
 	public String getZhRegistrantName() {
@@ -172,20 +116,28 @@ public class QueryContactInfoResponse extends AcsResponse {
 		this.zhRegistrantName = zhRegistrantName;
 	}
 
-	public String getZhRegistrantOrganization() {
-		return this.zhRegistrantOrganization;
+	public String getCity() {
+		return this.city;
 	}
 
-	public void setZhRegistrantOrganization(String zhRegistrantOrganization) {
-		this.zhRegistrantOrganization = zhRegistrantOrganization;
+	public void setCity(String city) {
+		this.city = city;
 	}
 
-	public String getZhProvince() {
-		return this.zhProvince;
+	public String getCreateDate() {
+		return this.createDate;
 	}
 
-	public void setZhProvince(String zhProvince) {
-		this.zhProvince = zhProvince;
+	public void setCreateDate(String createDate) {
+		this.createDate = createDate;
+	}
+
+	public String getProvince() {
+		return this.province;
+	}
+
+	public void setProvince(String province) {
+		this.province = province;
 	}
 
 	public String getZhCity() {
@@ -194,6 +146,54 @@ public class QueryContactInfoResponse extends AcsResponse {
 
 	public void setZhCity(String zhCity) {
 		this.zhCity = zhCity;
+	}
+
+	public String getRegistrantName() {
+		return this.registrantName;
+	}
+
+	public void setRegistrantName(String registrantName) {
+		this.registrantName = registrantName;
+	}
+
+	public String getZhRegistrantOrganization() {
+		return this.zhRegistrantOrganization;
+	}
+
+	public void setZhRegistrantOrganization(String zhRegistrantOrganization) {
+		this.zhRegistrantOrganization = zhRegistrantOrganization;
+	}
+
+	public String getCountry() {
+		return this.country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
+
+	public String getRegistrantOrganization() {
+		return this.registrantOrganization;
+	}
+
+	public void setRegistrantOrganization(String registrantOrganization) {
+		this.registrantOrganization = registrantOrganization;
+	}
+
+	public String getTelExt() {
+		return this.telExt;
+	}
+
+	public void setTelExt(String telExt) {
+		this.telExt = telExt;
+	}
+
+	public String getTelArea() {
+		return this.telArea;
+	}
+
+	public void setTelArea(String telArea) {
+		this.telArea = telArea;
 	}
 
 	public String getZhAddress() {
