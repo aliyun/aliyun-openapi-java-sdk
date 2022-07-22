@@ -449,6 +449,10 @@ public class DescribeSiteMonitorAttributeResponse extends AcsResponse {
 
 			private Integer retry_delay;
 
+			private Boolean save_response_body;
+
+			private List<AssertionsItem> assertions;
+
 			public String getRequest_format() {
 				return this.request_format;
 			}
@@ -703,6 +707,65 @@ public class DescribeSiteMonitorAttributeResponse extends AcsResponse {
 
 			public void setRetry_delay(Integer retry_delay) {
 				this.retry_delay = retry_delay;
+			}
+
+			public Boolean getSave_response_body() {
+				return this.save_response_body;
+			}
+
+			public void setSave_response_body(Boolean save_response_body) {
+				this.save_response_body = save_response_body;
+			}
+
+			public List<AssertionsItem> getAssertions() {
+				return this.assertions;
+			}
+
+			public void setAssertions(List<AssertionsItem> assertions) {
+				this.assertions = assertions;
+			}
+
+			public static class AssertionsItem {
+
+				private String property;
+
+				private String type;
+
+				private String operator;
+
+				private String target;
+
+				public String getProperty() {
+					return this.property;
+				}
+
+				public void setProperty(String property) {
+					this.property = property;
+				}
+
+				public String getType() {
+					return this.type;
+				}
+
+				public void setType(String type) {
+					this.type = type;
+				}
+
+				public String getOperator() {
+					return this.operator;
+				}
+
+				public void setOperator(String operator) {
+					this.operator = operator;
+				}
+
+				public String getTarget() {
+					return this.target;
+				}
+
+				public void setTarget(String target) {
+					this.target = target;
+				}
 			}
 		}
 	}

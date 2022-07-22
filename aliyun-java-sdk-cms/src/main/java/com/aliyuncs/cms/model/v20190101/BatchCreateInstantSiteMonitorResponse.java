@@ -14,6 +14,7 @@
 
 package com.aliyuncs.cms.model.v20190101;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.cms.transform.v20190101.BatchCreateInstantSiteMonitorResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -30,9 +31,9 @@ public class BatchCreateInstantSiteMonitorResponse extends AcsResponse {
 
 	private Boolean success;
 
-	private String data;
-
 	private String code;
+
+	private List<DataItem> data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -58,20 +59,43 @@ public class BatchCreateInstantSiteMonitorResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
-	}
-
 	public String getCode() {
 		return this.code;
 	}
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public List<DataItem> getData() {
+		return this.data;
+	}
+
+	public void setData(List<DataItem> data) {
+		this.data = data;
+	}
+
+	public static class DataItem {
+
+		private String taskName;
+
+		private String taskId;
+
+		public String getTaskName() {
+			return this.taskName;
+		}
+
+		public void setTaskName(String taskName) {
+			this.taskName = taskName;
+		}
+
+		public String getTaskId() {
+			return this.taskId;
+		}
+
+		public void setTaskId(String taskId) {
+			this.taskId = taskId;
+		}
 	}
 
 	@Override

@@ -14,7 +14,11 @@
 
 package com.aliyuncs.cms.transform.v20190101;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.cms.model.v20190101.BatchCreateInstantSiteMonitorResponse;
+import com.aliyuncs.cms.model.v20190101.BatchCreateInstantSiteMonitorResponse.DataItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -25,8 +29,17 @@ public class BatchCreateInstantSiteMonitorResponseUnmarshaller {
 		batchCreateInstantSiteMonitorResponse.setRequestId(_ctx.stringValue("BatchCreateInstantSiteMonitorResponse.RequestId"));
 		batchCreateInstantSiteMonitorResponse.setMessage(_ctx.stringValue("BatchCreateInstantSiteMonitorResponse.Message"));
 		batchCreateInstantSiteMonitorResponse.setSuccess(_ctx.booleanValue("BatchCreateInstantSiteMonitorResponse.Success"));
-		batchCreateInstantSiteMonitorResponse.setData(_ctx.stringValue("BatchCreateInstantSiteMonitorResponse.Data"));
 		batchCreateInstantSiteMonitorResponse.setCode(_ctx.stringValue("BatchCreateInstantSiteMonitorResponse.Code"));
+
+		List<DataItem> data = new ArrayList<DataItem>();
+		for (int i = 0; i < _ctx.lengthValue("BatchCreateInstantSiteMonitorResponse.Data.Length"); i++) {
+			DataItem dataItem = new DataItem();
+			dataItem.setTaskName(_ctx.stringValue("BatchCreateInstantSiteMonitorResponse.Data["+ i +"].TaskName"));
+			dataItem.setTaskId(_ctx.stringValue("BatchCreateInstantSiteMonitorResponse.Data["+ i +"].TaskId"));
+
+			data.add(dataItem);
+		}
+		batchCreateInstantSiteMonitorResponse.setData(data);
 	 
 	 	return batchCreateInstantSiteMonitorResponse;
 	}

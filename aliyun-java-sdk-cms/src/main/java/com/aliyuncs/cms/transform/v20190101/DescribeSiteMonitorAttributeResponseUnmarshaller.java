@@ -22,6 +22,7 @@ import com.aliyuncs.cms.model.v20190101.DescribeSiteMonitorAttributeResponse.Met
 import com.aliyuncs.cms.model.v20190101.DescribeSiteMonitorAttributeResponse.SiteMonitors;
 import com.aliyuncs.cms.model.v20190101.DescribeSiteMonitorAttributeResponse.SiteMonitors.IspCity;
 import com.aliyuncs.cms.model.v20190101.DescribeSiteMonitorAttributeResponse.SiteMonitors.OptionJson;
+import com.aliyuncs.cms.model.v20190101.DescribeSiteMonitorAttributeResponse.SiteMonitors.OptionJson.AssertionsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -76,6 +77,19 @@ public class DescribeSiteMonitorAttributeResponseUnmarshaller {
 		optionJson.setDiagnosis_mtr(_ctx.booleanValue("DescribeSiteMonitorAttributeResponse.SiteMonitors.OptionJson.diagnosis_mtr"));
 		optionJson.setDiagnosis_ping(_ctx.booleanValue("DescribeSiteMonitorAttributeResponse.SiteMonitors.OptionJson.diagnosis_ping"));
 		optionJson.setRetry_delay(_ctx.integerValue("DescribeSiteMonitorAttributeResponse.SiteMonitors.OptionJson.retry_delay"));
+		optionJson.setSave_response_body(_ctx.booleanValue("DescribeSiteMonitorAttributeResponse.SiteMonitors.OptionJson.save_response_body"));
+
+		List<AssertionsItem> assertions = new ArrayList<AssertionsItem>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeSiteMonitorAttributeResponse.SiteMonitors.OptionJson.assertions.Length"); i++) {
+			AssertionsItem assertionsItem = new AssertionsItem();
+			assertionsItem.setProperty(_ctx.stringValue("DescribeSiteMonitorAttributeResponse.SiteMonitors.OptionJson.assertions["+ i +"].property"));
+			assertionsItem.setType(_ctx.stringValue("DescribeSiteMonitorAttributeResponse.SiteMonitors.OptionJson.assertions["+ i +"].type"));
+			assertionsItem.setOperator(_ctx.stringValue("DescribeSiteMonitorAttributeResponse.SiteMonitors.OptionJson.assertions["+ i +"].operator"));
+			assertionsItem.setTarget(_ctx.stringValue("DescribeSiteMonitorAttributeResponse.SiteMonitors.OptionJson.assertions["+ i +"].target"));
+
+			assertions.add(assertionsItem);
+		}
+		optionJson.setAssertions(assertions);
 		siteMonitors.setOptionJson(optionJson);
 
 		List<IspCity> ispCities = new ArrayList<IspCity>();

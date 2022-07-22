@@ -38,6 +38,7 @@ public class DescribeMetricRuleTargetsResponseUnmarshaller {
 			target.setArn(_ctx.stringValue("DescribeMetricRuleTargetsResponse.Targets["+ i +"].Arn"));
 			target.setLevel(_ctx.stringValue("DescribeMetricRuleTargetsResponse.Targets["+ i +"].Level"));
 			target.setJsonParams(_ctx.stringValue("DescribeMetricRuleTargetsResponse.Targets["+ i +"].JsonParams"));
+			target.setRuleId(_ctx.stringValue("DescribeMetricRuleTargetsResponse.Targets["+ i +"].RuleId"));
 
 			targets.add(target);
 		}

@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.cms.model.v20190101.DescribeSiteMonitorListResponse;
 import com.aliyuncs.cms.model.v20190101.DescribeSiteMonitorListResponse.SiteMonitor;
 import com.aliyuncs.cms.model.v20190101.DescribeSiteMonitorListResponse.SiteMonitor.OptionsJson;
+import com.aliyuncs.cms.model.v20190101.DescribeSiteMonitorListResponse.SiteMonitor.OptionsJson.AssertionsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -81,6 +82,19 @@ public class DescribeSiteMonitorListResponseUnmarshaller {
 			optionsJson.setDiagnosis_mtr(_ctx.booleanValue("DescribeSiteMonitorListResponse.SiteMonitors["+ i +"].OptionsJson.diagnosis_mtr"));
 			optionsJson.setDiagnosis_ping(_ctx.booleanValue("DescribeSiteMonitorListResponse.SiteMonitors["+ i +"].OptionsJson.diagnosis_ping"));
 			optionsJson.setRetry_delay(_ctx.integerValue("DescribeSiteMonitorListResponse.SiteMonitors["+ i +"].OptionsJson.retry_delay"));
+			optionsJson.setSave_response_body(_ctx.booleanValue("DescribeSiteMonitorListResponse.SiteMonitors["+ i +"].OptionsJson.save_response_body"));
+
+			List<AssertionsItem> assertions = new ArrayList<AssertionsItem>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeSiteMonitorListResponse.SiteMonitors["+ i +"].OptionsJson.assertions.Length"); j++) {
+				AssertionsItem assertionsItem = new AssertionsItem();
+				assertionsItem.setProperty(_ctx.stringValue("DescribeSiteMonitorListResponse.SiteMonitors["+ i +"].OptionsJson.assertions["+ j +"].property"));
+				assertionsItem.setType(_ctx.stringValue("DescribeSiteMonitorListResponse.SiteMonitors["+ i +"].OptionsJson.assertions["+ j +"].type"));
+				assertionsItem.setOperator(_ctx.stringValue("DescribeSiteMonitorListResponse.SiteMonitors["+ i +"].OptionsJson.assertions["+ j +"].operator"));
+				assertionsItem.setTarget(_ctx.stringValue("DescribeSiteMonitorListResponse.SiteMonitors["+ i +"].OptionsJson.assertions["+ j +"].target"));
+
+				assertions.add(assertionsItem);
+			}
+			optionsJson.setAssertions(assertions);
 			siteMonitor.setOptionsJson(optionsJson);
 
 			siteMonitors.add(siteMonitor);
