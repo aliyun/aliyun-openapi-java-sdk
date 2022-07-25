@@ -21,43 +21,17 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class ListAPNsRequest extends RpcAcsRequest<ListAPNsResponse> {
+public class ListIoTCloudConnectorEIPsRequest extends RpcAcsRequest<ListIoTCloudConnectorEIPsResponse> {
 	   
-
-	private String iSP;
-
-	private String type;
 
 	private String nextToken;
 
-	private String aPN;
+	private String ioTCloudConnectorId;
 
 	private Integer maxResults;
-	public ListAPNsRequest() {
-		super("IoTCC", "2021-05-13", "ListAPNs", "IoTCC");
+	public ListIoTCloudConnectorEIPsRequest() {
+		super("IoTCC", "2021-05-13", "ListIoTCloudConnectorEIPs", "IoTCC");
 		setMethod(MethodType.POST);
-	}
-
-	public String getISP() {
-		return this.iSP;
-	}
-
-	public void setISP(String iSP) {
-		this.iSP = iSP;
-		if(iSP != null){
-			putQueryParameter("ISP", iSP);
-		}
-	}
-
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
-		}
 	}
 
 	public String getNextToken() {
@@ -71,14 +45,14 @@ public class ListAPNsRequest extends RpcAcsRequest<ListAPNsResponse> {
 		}
 	}
 
-	public String getAPN() {
-		return this.aPN;
+	public String getIoTCloudConnectorId() {
+		return this.ioTCloudConnectorId;
 	}
 
-	public void setAPN(String aPN) {
-		this.aPN = aPN;
-		if(aPN != null){
-			putQueryParameter("APN", aPN);
+	public void setIoTCloudConnectorId(String ioTCloudConnectorId) {
+		this.ioTCloudConnectorId = ioTCloudConnectorId;
+		if(ioTCloudConnectorId != null){
+			putQueryParameter("IoTCloudConnectorId", ioTCloudConnectorId);
 		}
 	}
 
@@ -94,8 +68,8 @@ public class ListAPNsRequest extends RpcAcsRequest<ListAPNsResponse> {
 	}
 
 	@Override
-	public Class<ListAPNsResponse> getResponseClass() {
-		return ListAPNsResponse.class;
+	public Class<ListIoTCloudConnectorEIPsResponse> getResponseClass() {
+		return ListIoTCloudConnectorEIPsResponse.class;
 	}
 
 }
