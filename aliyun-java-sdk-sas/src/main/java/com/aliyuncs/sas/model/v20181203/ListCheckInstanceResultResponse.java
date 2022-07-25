@@ -26,45 +26,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListCheckInstanceResultResponse extends AcsResponse {
 
-	private String nextToken;
-
-	private Integer maxResults;
-
-	private Integer totalCount;
-
 	private String requestId;
-
-	private Map<Object,Object> checks;
 
 	private List<BasicDataItem> basicData;
 
 	private List<ColumnsItem> columns;
 
+	private List<Map<Object,Object>> checks;
+
 	private PageInfo pageInfo;
-
-	public String getNextToken() {
-		return this.nextToken;
-	}
-
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-	}
-
-	public Integer getMaxResults() {
-		return this.maxResults;
-	}
-
-	public void setMaxResults(Integer maxResults) {
-		this.maxResults = maxResults;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -72,14 +42,6 @@ public class ListCheckInstanceResultResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Map<Object,Object> getChecks() {
-		return this.checks;
-	}
-
-	public void setChecks(Map<Object,Object> checks) {
-		this.checks = checks;
 	}
 
 	public List<BasicDataItem> getBasicData() {
@@ -96,6 +58,14 @@ public class ListCheckInstanceResultResponse extends AcsResponse {
 
 	public void setColumns(List<ColumnsItem> columns) {
 		this.columns = columns;
+	}
+
+	public List<Map<Object,Object>> getChecks() {
+		return this.checks;
+	}
+
+	public void setChecks(List<Map<Object,Object>> checks) {
+		this.checks = checks;
 	}
 
 	public PageInfo getPageInfo() {

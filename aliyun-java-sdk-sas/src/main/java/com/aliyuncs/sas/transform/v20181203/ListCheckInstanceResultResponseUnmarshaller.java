@@ -31,10 +31,9 @@ public class ListCheckInstanceResultResponseUnmarshaller {
 	public static ListCheckInstanceResultResponse unmarshall(ListCheckInstanceResultResponse listCheckInstanceResultResponse, UnmarshallerContext _ctx) {
 		
 		listCheckInstanceResultResponse.setRequestId(_ctx.stringValue("ListCheckInstanceResultResponse.RequestId"));
-		listCheckInstanceResultResponse.setNextToken(_ctx.stringValue("ListCheckInstanceResultResponse.NextToken"));
-		listCheckInstanceResultResponse.setMaxResults(_ctx.integerValue("ListCheckInstanceResultResponse.MaxResults"));
-		listCheckInstanceResultResponse.setTotalCount(_ctx.integerValue("ListCheckInstanceResultResponse.TotalCount"));
-		listCheckInstanceResultResponse.setChecks(_ctx.mapValue("ListCheckInstanceResultResponse.Checks"));
+
+		List<Map<Object, Object>> checks = _ctx.listMapValue("ListCheckInstanceResultResponse.Checks");
+		listCheckInstanceResultResponse.setChecks(checks);
 
 		PageInfo pageInfo = new PageInfo();
 		pageInfo.setCurrentPage(_ctx.integerValue("ListCheckInstanceResultResponse.PageInfo.CurrentPage"));
