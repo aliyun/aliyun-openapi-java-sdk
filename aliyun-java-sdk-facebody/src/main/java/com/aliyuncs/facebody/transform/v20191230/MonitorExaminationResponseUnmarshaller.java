@@ -37,7 +37,7 @@ public class MonitorExaminationResponseUnmarshaller {
 		data.setThreshold(_ctx.floatValue("MonitorExaminationResponse.Data.Threshold"));
 
 		FaceInfo faceInfo = new FaceInfo();
-		faceInfo.setCompleteness(_ctx.longValue("MonitorExaminationResponse.Data.FaceInfo.Completeness"));
+		faceInfo.setCompleteness(_ctx.floatValue("MonitorExaminationResponse.Data.FaceInfo.Completeness"));
 		faceInfo.setFaceNumber(_ctx.longValue("MonitorExaminationResponse.Data.FaceInfo.FaceNumber"));
 
 		Pose pose = new Pose();

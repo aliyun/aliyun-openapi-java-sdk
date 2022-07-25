@@ -108,17 +108,17 @@ public class MonitorExaminationResponse extends AcsResponse {
 
 		public static class FaceInfo {
 
-			private Long completeness;
+			private Float completeness;
 
 			private Long faceNumber;
 
 			private Pose pose;
 
-			public Long getCompleteness() {
+			public Float getCompleteness() {
 				return this.completeness;
 			}
 
-			public void setCompleteness(Long completeness) {
+			public void setCompleteness(Float completeness) {
 				this.completeness = completeness;
 			}
 
