@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.sas.model.v20181203.GetFileDetectResultResponse;
 import com.aliyuncs.sas.model.v20181203.GetFileDetectResultResponse.Result;
-import com.aliyuncs.sas.model.v20181203.GetFileDetectResultResponse.Result.Ext;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -36,10 +35,7 @@ public class GetFileDetectResultResponseUnmarshaller {
 			result.setResult(_ctx.integerValue("GetFileDetectResultResponse.ResultList["+ i +"].Result"));
 			result.setScore(_ctx.integerValue("GetFileDetectResultResponse.ResultList["+ i +"].Score"));
 			result.setVirusType(_ctx.stringValue("GetFileDetectResultResponse.ResultList["+ i +"].VirusType"));
-
-			Ext ext = new Ext();
-			ext.setVirusName(_ctx.stringValue("GetFileDetectResultResponse.ResultList["+ i +"].Ext.VirusName"));
-			result.setExt(ext);
+			result.setExt(_ctx.stringValue("GetFileDetectResultResponse.ResultList["+ i +"].Ext"));
 
 			resultList.add(result);
 		}

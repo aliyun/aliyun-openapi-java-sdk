@@ -55,7 +55,7 @@ public class GetFileDetectResultResponse extends AcsResponse {
 
 		private String virusType;
 
-		private Ext ext;
+		private String ext;
 
 		public String getHashKey() {
 			return this.hashKey;
@@ -89,25 +89,12 @@ public class GetFileDetectResultResponse extends AcsResponse {
 			this.virusType = virusType;
 		}
 
-		public Ext getExt() {
+		public String getExt() {
 			return this.ext;
 		}
 
-		public void setExt(Ext ext) {
+		public void setExt(String ext) {
 			this.ext = ext;
-		}
-
-		public static class Ext {
-
-			private String virusName;
-
-			public String getVirusName() {
-				return this.virusName;
-			}
-
-			public void setVirusName(String virusName) {
-				this.virusName = virusName;
-			}
 		}
 	}
 
