@@ -27,20 +27,20 @@ public class GetParameterResponseUnmarshaller {
 		getParameterResponse.setRequestId(_ctx.stringValue("GetParameterResponse.RequestId"));
 
 		Parameter parameter = new Parameter();
-		parameter.setId(_ctx.stringValue("GetParameterResponse.Parameter.Id"));
-		parameter.setName(_ctx.stringValue("GetParameterResponse.Parameter.Name"));
-		parameter.setCreatedDate(_ctx.stringValue("GetParameterResponse.Parameter.CreatedDate"));
-		parameter.setCreatedBy(_ctx.stringValue("GetParameterResponse.Parameter.CreatedBy"));
+		parameter.setType(_ctx.stringValue("GetParameterResponse.Parameter.Type"));
 		parameter.setUpdatedDate(_ctx.stringValue("GetParameterResponse.Parameter.UpdatedDate"));
 		parameter.setUpdatedBy(_ctx.stringValue("GetParameterResponse.Parameter.UpdatedBy"));
-		parameter.setDescription(_ctx.stringValue("GetParameterResponse.Parameter.Description"));
-		parameter.setShareType(_ctx.stringValue("GetParameterResponse.Parameter.ShareType"));
-		parameter.setParameterVersion(_ctx.integerValue("GetParameterResponse.Parameter.ParameterVersion"));
-		parameter.setType(_ctx.stringValue("GetParameterResponse.Parameter.Type"));
-		parameter.setValue(_ctx.stringValue("GetParameterResponse.Parameter.Value"));
-		parameter.setConstraints(_ctx.stringValue("GetParameterResponse.Parameter.Constraints"));
 		parameter.setTags(_ctx.mapValue("GetParameterResponse.Parameter.Tags"));
+		parameter.setValue(_ctx.stringValue("GetParameterResponse.Parameter.Value"));
+		parameter.setDescription(_ctx.stringValue("GetParameterResponse.Parameter.Description"));
+		parameter.setConstraints(_ctx.stringValue("GetParameterResponse.Parameter.Constraints"));
 		parameter.setResourceGroupId(_ctx.stringValue("GetParameterResponse.Parameter.ResourceGroupId"));
+		parameter.setCreatedBy(_ctx.stringValue("GetParameterResponse.Parameter.CreatedBy"));
+		parameter.setCreatedDate(_ctx.stringValue("GetParameterResponse.Parameter.CreatedDate"));
+		parameter.setParameterVersion(_ctx.integerValue("GetParameterResponse.Parameter.ParameterVersion"));
+		parameter.setName(_ctx.stringValue("GetParameterResponse.Parameter.Name"));
+		parameter.setId(_ctx.stringValue("GetParameterResponse.Parameter.Id"));
+		parameter.setShareType(_ctx.stringValue("GetParameterResponse.Parameter.ShareType"));
 		getParameterResponse.setParameter(parameter);
 	 
 	 	return getParameterResponse;

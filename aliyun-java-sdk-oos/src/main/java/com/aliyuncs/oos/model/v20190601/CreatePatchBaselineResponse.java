@@ -46,56 +46,40 @@ public class CreatePatchBaselineResponse extends AcsResponse {
 
 	public static class PatchBaseline {
 
-		private String id;
+		private String operationSystem;
 
-		private String name;
-
-		private String createdDate;
-
-		private String createdBy;
+		private String description;
 
 		private String updatedDate;
 
 		private String updatedBy;
 
-		private String description;
+		private String createdBy;
 
-		private String shareType;
+		private String createdDate;
 
-		private String operationSystem;
+		private String name;
 
 		private String approvalRules;
 
-		public String getId() {
-			return this.id;
+		private String id;
+
+		private String shareType;
+
+		public String getOperationSystem() {
+			return this.operationSystem;
 		}
 
-		public void setId(String id) {
-			this.id = id;
+		public void setOperationSystem(String operationSystem) {
+			this.operationSystem = operationSystem;
 		}
 
-		public String getName() {
-			return this.name;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getCreatedDate() {
-			return this.createdDate;
-		}
-
-		public void setCreatedDate(String createdDate) {
-			this.createdDate = createdDate;
-		}
-
-		public String getCreatedBy() {
-			return this.createdBy;
-		}
-
-		public void setCreatedBy(String createdBy) {
-			this.createdBy = createdBy;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getUpdatedDate() {
@@ -114,28 +98,28 @@ public class CreatePatchBaselineResponse extends AcsResponse {
 			this.updatedBy = updatedBy;
 		}
 
-		public String getDescription() {
-			return this.description;
+		public String getCreatedBy() {
+			return this.createdBy;
 		}
 
-		public void setDescription(String description) {
-			this.description = description;
+		public void setCreatedBy(String createdBy) {
+			this.createdBy = createdBy;
 		}
 
-		public String getShareType() {
-			return this.shareType;
+		public String getCreatedDate() {
+			return this.createdDate;
 		}
 
-		public void setShareType(String shareType) {
-			this.shareType = shareType;
+		public void setCreatedDate(String createdDate) {
+			this.createdDate = createdDate;
 		}
 
-		public String getOperationSystem() {
-			return this.operationSystem;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setOperationSystem(String operationSystem) {
-			this.operationSystem = operationSystem;
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public String getApprovalRules() {
@@ -144,6 +128,22 @@ public class CreatePatchBaselineResponse extends AcsResponse {
 
 		public void setApprovalRules(String approvalRules) {
 			this.approvalRules = approvalRules;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
+
+		public String getShareType() {
+			return this.shareType;
+		}
+
+		public void setShareType(String shareType) {
+			this.shareType = shareType;
 		}
 	}
 

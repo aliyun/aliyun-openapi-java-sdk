@@ -25,42 +25,34 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListSecretParameterVersionsResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Integer maxResults;
+	private String type;
 
 	private String nextToken;
 
-	private Integer totalCount;
-
-	private String name;
-
-	private String id;
-
-	private String type;
+	private String requestId;
 
 	private String description;
 
-	private String createdDate;
+	private Integer maxResults;
 
 	private String createdBy;
 
+	private String createdDate;
+
+	private String name;
+
+	private Integer totalCount;
+
+	private String id;
+
 	private List<ParameterVersion> parameterVersions;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getType() {
+		return this.type;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getMaxResults() {
-		return this.maxResults;
-	}
-
-	public void setMaxResults(Integer maxResults) {
-		this.maxResults = maxResults;
+	public void setType(String type) {
+		this.type = type;
 	}
 
 	public String getNextToken() {
@@ -71,36 +63,12 @@ public class ListSecretParameterVersionsResponse extends AcsResponse {
 		this.nextToken = nextToken;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getId() {
-		return this.id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getDescription() {
@@ -111,12 +79,12 @@ public class ListSecretParameterVersionsResponse extends AcsResponse {
 		this.description = description;
 	}
 
-	public String getCreatedDate() {
-		return this.createdDate;
+	public Integer getMaxResults() {
+		return this.maxResults;
 	}
 
-	public void setCreatedDate(String createdDate) {
-		this.createdDate = createdDate;
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
 	}
 
 	public String getCreatedBy() {
@@ -125,6 +93,38 @@ public class ListSecretParameterVersionsResponse extends AcsResponse {
 
 	public void setCreatedBy(String createdBy) {
 		this.createdBy = createdBy;
+	}
+
+	public String getCreatedDate() {
+		return this.createdDate;
+	}
+
+	public void setCreatedDate(String createdDate) {
+		this.createdDate = createdDate;
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
+
+	public String getId() {
+		return this.id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public List<ParameterVersion> getParameterVersions() {
@@ -137,29 +137,13 @@ public class ListSecretParameterVersionsResponse extends AcsResponse {
 
 	public static class ParameterVersion {
 
-		private String updatedDate;
-
-		private String updatedBy;
-
 		private Integer parameterVersion;
 
 		private String value;
 
-		public String getUpdatedDate() {
-			return this.updatedDate;
-		}
+		private String updatedDate;
 
-		public void setUpdatedDate(String updatedDate) {
-			this.updatedDate = updatedDate;
-		}
-
-		public String getUpdatedBy() {
-			return this.updatedBy;
-		}
-
-		public void setUpdatedBy(String updatedBy) {
-			this.updatedBy = updatedBy;
-		}
+		private String updatedBy;
 
 		public Integer getParameterVersion() {
 			return this.parameterVersion;
@@ -175,6 +159,22 @@ public class ListSecretParameterVersionsResponse extends AcsResponse {
 
 		public void setValue(String value) {
 			this.value = value;
+		}
+
+		public String getUpdatedDate() {
+			return this.updatedDate;
+		}
+
+		public void setUpdatedDate(String updatedDate) {
+			this.updatedDate = updatedDate;
+		}
+
+		public String getUpdatedBy() {
+			return this.updatedBy;
+		}
+
+		public void setUpdatedBy(String updatedBy) {
+			this.updatedBy = updatedBy;
 		}
 	}
 

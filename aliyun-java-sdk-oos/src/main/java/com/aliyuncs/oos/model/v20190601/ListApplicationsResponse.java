@@ -26,13 +26,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListApplicationsResponse extends AcsResponse {
 
+	private String nextToken;
+
 	private String requestId;
 
 	private Integer maxResults;
 
-	private String nextToken;
-
 	private List<Application> applications;
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -50,14 +58,6 @@ public class ListApplicationsResponse extends AcsResponse {
 		this.maxResults = maxResults;
 	}
 
-	public String getNextToken() {
-		return this.nextToken;
-	}
-
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-	}
-
 	public List<Application> getApplications() {
 		return this.applications;
 	}
@@ -68,11 +68,7 @@ public class ListApplicationsResponse extends AcsResponse {
 
 	public static class Application {
 
-		private String name;
-
 		private String description;
-
-		private String createDate;
 
 		private String updateDate;
 
@@ -80,13 +76,9 @@ public class ListApplicationsResponse extends AcsResponse {
 
 		private Map<Object,Object> tags;
 
-		public String getName() {
-			return this.name;
-		}
+		private String name;
 
-		public void setName(String name) {
-			this.name = name;
-		}
+		private String createDate;
 
 		public String getDescription() {
 			return this.description;
@@ -94,14 +86,6 @@ public class ListApplicationsResponse extends AcsResponse {
 
 		public void setDescription(String description) {
 			this.description = description;
-		}
-
-		public String getCreateDate() {
-			return this.createDate;
-		}
-
-		public void setCreateDate(String createDate) {
-			this.createDate = createDate;
 		}
 
 		public String getUpdateDate() {
@@ -126,6 +110,22 @@ public class ListApplicationsResponse extends AcsResponse {
 
 		public void setTags(Map<Object,Object> tags) {
 			this.tags = tags;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getCreateDate() {
+			return this.createDate;
+		}
+
+		public void setCreateDate(String createDate) {
+			this.createDate = createDate;
 		}
 	}
 

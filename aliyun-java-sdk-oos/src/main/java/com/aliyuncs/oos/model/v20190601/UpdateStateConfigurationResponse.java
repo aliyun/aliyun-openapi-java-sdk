@@ -48,33 +48,41 @@ public class UpdateStateConfigurationResponse extends AcsResponse {
 
 	public static class StateConfigurationItem {
 
+		private String updateTime;
+
 		private String createTime;
 
-		private String description;
+		private String targets;
+
+		private Map<Object,Object> tags;
 
 		private String stateConfigurationId;
 
-		private String templateId;
+		private String scheduleExpression;
 
 		private String templateName;
 
 		private String templateVersion;
 
-		private String parameters;
-
 		private String configureMode;
 
 		private String scheduleType;
 
-		private String scheduleExpression;
+		private String parameters;
 
-		private String targets;
-
-		private String updateTime;
-
-		private Map<Object,Object> tags;
+		private String description;
 
 		private String resourceGroupId;
+
+		private String templateId;
+
+		public String getUpdateTime() {
+			return this.updateTime;
+		}
+
+		public void setUpdateTime(String updateTime) {
+			this.updateTime = updateTime;
+		}
 
 		public String getCreateTime() {
 			return this.createTime;
@@ -84,12 +92,20 @@ public class UpdateStateConfigurationResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getDescription() {
-			return this.description;
+		public String getTargets() {
+			return this.targets;
 		}
 
-		public void setDescription(String description) {
-			this.description = description;
+		public void setTargets(String targets) {
+			this.targets = targets;
+		}
+
+		public Map<Object,Object> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(Map<Object,Object> tags) {
+			this.tags = tags;
 		}
 
 		public String getStateConfigurationId() {
@@ -100,12 +116,12 @@ public class UpdateStateConfigurationResponse extends AcsResponse {
 			this.stateConfigurationId = stateConfigurationId;
 		}
 
-		public String getTemplateId() {
-			return this.templateId;
+		public String getScheduleExpression() {
+			return this.scheduleExpression;
 		}
 
-		public void setTemplateId(String templateId) {
-			this.templateId = templateId;
+		public void setScheduleExpression(String scheduleExpression) {
+			this.scheduleExpression = scheduleExpression;
 		}
 
 		public String getTemplateName() {
@@ -124,14 +140,6 @@ public class UpdateStateConfigurationResponse extends AcsResponse {
 			this.templateVersion = templateVersion;
 		}
 
-		public String getParameters() {
-			return this.parameters;
-		}
-
-		public void setParameters(String parameters) {
-			this.parameters = parameters;
-		}
-
 		public String getConfigureMode() {
 			return this.configureMode;
 		}
@@ -148,36 +156,20 @@ public class UpdateStateConfigurationResponse extends AcsResponse {
 			this.scheduleType = scheduleType;
 		}
 
-		public String getScheduleExpression() {
-			return this.scheduleExpression;
+		public String getParameters() {
+			return this.parameters;
 		}
 
-		public void setScheduleExpression(String scheduleExpression) {
-			this.scheduleExpression = scheduleExpression;
+		public void setParameters(String parameters) {
+			this.parameters = parameters;
 		}
 
-		public String getTargets() {
-			return this.targets;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setTargets(String targets) {
-			this.targets = targets;
-		}
-
-		public String getUpdateTime() {
-			return this.updateTime;
-		}
-
-		public void setUpdateTime(String updateTime) {
-			this.updateTime = updateTime;
-		}
-
-		public Map<Object,Object> getTags() {
-			return this.tags;
-		}
-
-		public void setTags(Map<Object,Object> tags) {
-			this.tags = tags;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getResourceGroupId() {
@@ -186,6 +178,14 @@ public class UpdateStateConfigurationResponse extends AcsResponse {
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getTemplateId() {
+			return this.templateId;
+		}
+
+		public void setTemplateId(String templateId) {
+			this.templateId = templateId;
 		}
 	}
 

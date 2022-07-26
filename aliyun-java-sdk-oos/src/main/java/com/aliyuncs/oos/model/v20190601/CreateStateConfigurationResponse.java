@@ -49,29 +49,29 @@ public class CreateStateConfigurationResponse extends AcsResponse {
 
 		private String createTime;
 
-		private String description;
+		private String targets;
+
+		private Map<Object,Object> tags;
 
 		private String stateConfigurationId;
 
-		private String templateId;
+		private String scheduleExpression;
 
 		private String templateName;
 
 		private String templateVersion;
 
-		private Map<Object,Object> parameters;
-
 		private String configureMode;
 
 		private String scheduleType;
 
-		private String scheduleExpression;
+		private Map<Object,Object> parameters;
 
-		private String targets;
-
-		private Map<Object,Object> tags;
+		private String description;
 
 		private String resourceGroupId;
+
+		private String templateId;
 
 		public String getCreateTime() {
 			return this.createTime;
@@ -79,78 +79,6 @@ public class CreateStateConfigurationResponse extends AcsResponse {
 
 		public void setCreateTime(String createTime) {
 			this.createTime = createTime;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getStateConfigurationId() {
-			return this.stateConfigurationId;
-		}
-
-		public void setStateConfigurationId(String stateConfigurationId) {
-			this.stateConfigurationId = stateConfigurationId;
-		}
-
-		public String getTemplateId() {
-			return this.templateId;
-		}
-
-		public void setTemplateId(String templateId) {
-			this.templateId = templateId;
-		}
-
-		public String getTemplateName() {
-			return this.templateName;
-		}
-
-		public void setTemplateName(String templateName) {
-			this.templateName = templateName;
-		}
-
-		public String getTemplateVersion() {
-			return this.templateVersion;
-		}
-
-		public void setTemplateVersion(String templateVersion) {
-			this.templateVersion = templateVersion;
-		}
-
-		public Map<Object,Object> getParameters() {
-			return this.parameters;
-		}
-
-		public void setParameters(Map<Object,Object> parameters) {
-			this.parameters = parameters;
-		}
-
-		public String getConfigureMode() {
-			return this.configureMode;
-		}
-
-		public void setConfigureMode(String configureMode) {
-			this.configureMode = configureMode;
-		}
-
-		public String getScheduleType() {
-			return this.scheduleType;
-		}
-
-		public void setScheduleType(String scheduleType) {
-			this.scheduleType = scheduleType;
-		}
-
-		public String getScheduleExpression() {
-			return this.scheduleExpression;
-		}
-
-		public void setScheduleExpression(String scheduleExpression) {
-			this.scheduleExpression = scheduleExpression;
 		}
 
 		public String getTargets() {
@@ -169,12 +97,84 @@ public class CreateStateConfigurationResponse extends AcsResponse {
 			this.tags = tags;
 		}
 
+		public String getStateConfigurationId() {
+			return this.stateConfigurationId;
+		}
+
+		public void setStateConfigurationId(String stateConfigurationId) {
+			this.stateConfigurationId = stateConfigurationId;
+		}
+
+		public String getScheduleExpression() {
+			return this.scheduleExpression;
+		}
+
+		public void setScheduleExpression(String scheduleExpression) {
+			this.scheduleExpression = scheduleExpression;
+		}
+
+		public String getTemplateName() {
+			return this.templateName;
+		}
+
+		public void setTemplateName(String templateName) {
+			this.templateName = templateName;
+		}
+
+		public String getTemplateVersion() {
+			return this.templateVersion;
+		}
+
+		public void setTemplateVersion(String templateVersion) {
+			this.templateVersion = templateVersion;
+		}
+
+		public String getConfigureMode() {
+			return this.configureMode;
+		}
+
+		public void setConfigureMode(String configureMode) {
+			this.configureMode = configureMode;
+		}
+
+		public String getScheduleType() {
+			return this.scheduleType;
+		}
+
+		public void setScheduleType(String scheduleType) {
+			this.scheduleType = scheduleType;
+		}
+
+		public Map<Object,Object> getParameters() {
+			return this.parameters;
+		}
+
+		public void setParameters(Map<Object,Object> parameters) {
+			this.parameters = parameters;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
 		public String getResourceGroupId() {
 			return this.resourceGroupId;
 		}
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getTemplateId() {
+			return this.templateId;
+		}
+
+		public void setTemplateId(String templateId) {
+			this.templateId = templateId;
 		}
 	}
 

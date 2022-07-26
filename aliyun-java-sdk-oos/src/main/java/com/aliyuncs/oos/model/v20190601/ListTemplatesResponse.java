@@ -26,13 +26,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListTemplatesResponse extends AcsResponse {
 
+	private String nextToken;
+
 	private String requestId;
 
 	private Integer maxResults;
 
-	private String nextToken;
-
 	private List<Template> templates;
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -50,14 +58,6 @@ public class ListTemplatesResponse extends AcsResponse {
 		this.maxResults = maxResults;
 	}
 
-	public String getNextToken() {
-		return this.nextToken;
-	}
-
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-	}
-
 	public List<Template> getTemplates() {
 		return this.templates;
 	}
@@ -68,72 +68,48 @@ public class ListTemplatesResponse extends AcsResponse {
 
 	public static class Template {
 
-		private String templateName;
-
-		private String templateId;
-
-		private String createdDate;
-
-		private String createdBy;
+		private String hash;
 
 		private String updatedDate;
 
 		private String updatedBy;
 
-		private String hash;
-
-		private String description;
-
-		private String shareType;
-
-		private String templateFormat;
-
-		private String templateVersion;
-
-		private Boolean hasTrigger;
-
-		private Integer totalExecutionCount;
-
-		private Integer popularity;
+		private String templateType;
 
 		private Map<Object,Object> tags;
 
-		private String category;
+		private String templateName;
 
-		private String templateType;
+		private String templateVersion;
+
+		private String templateFormat;
+
+		private Integer popularity;
+
+		private Integer totalExecutionCount;
+
+		private String description;
 
 		private String resourceGroupId;
 
-		public String getTemplateName() {
-			return this.templateName;
+		private String createdBy;
+
+		private String createdDate;
+
+		private String category;
+
+		private Boolean hasTrigger;
+
+		private String templateId;
+
+		private String shareType;
+
+		public String getHash() {
+			return this.hash;
 		}
 
-		public void setTemplateName(String templateName) {
-			this.templateName = templateName;
-		}
-
-		public String getTemplateId() {
-			return this.templateId;
-		}
-
-		public void setTemplateId(String templateId) {
-			this.templateId = templateId;
-		}
-
-		public String getCreatedDate() {
-			return this.createdDate;
-		}
-
-		public void setCreatedDate(String createdDate) {
-			this.createdDate = createdDate;
-		}
-
-		public String getCreatedBy() {
-			return this.createdBy;
-		}
-
-		public void setCreatedBy(String createdBy) {
-			this.createdBy = createdBy;
+		public void setHash(String hash) {
+			this.hash = hash;
 		}
 
 		public String getUpdatedDate() {
@@ -152,68 +128,12 @@ public class ListTemplatesResponse extends AcsResponse {
 			this.updatedBy = updatedBy;
 		}
 
-		public String getHash() {
-			return this.hash;
+		public String getTemplateType() {
+			return this.templateType;
 		}
 
-		public void setHash(String hash) {
-			this.hash = hash;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getShareType() {
-			return this.shareType;
-		}
-
-		public void setShareType(String shareType) {
-			this.shareType = shareType;
-		}
-
-		public String getTemplateFormat() {
-			return this.templateFormat;
-		}
-
-		public void setTemplateFormat(String templateFormat) {
-			this.templateFormat = templateFormat;
-		}
-
-		public String getTemplateVersion() {
-			return this.templateVersion;
-		}
-
-		public void setTemplateVersion(String templateVersion) {
-			this.templateVersion = templateVersion;
-		}
-
-		public Boolean getHasTrigger() {
-			return this.hasTrigger;
-		}
-
-		public void setHasTrigger(Boolean hasTrigger) {
-			this.hasTrigger = hasTrigger;
-		}
-
-		public Integer getTotalExecutionCount() {
-			return this.totalExecutionCount;
-		}
-
-		public void setTotalExecutionCount(Integer totalExecutionCount) {
-			this.totalExecutionCount = totalExecutionCount;
-		}
-
-		public Integer getPopularity() {
-			return this.popularity;
-		}
-
-		public void setPopularity(Integer popularity) {
-			this.popularity = popularity;
+		public void setTemplateType(String templateType) {
+			this.templateType = templateType;
 		}
 
 		public Map<Object,Object> getTags() {
@@ -224,20 +144,52 @@ public class ListTemplatesResponse extends AcsResponse {
 			this.tags = tags;
 		}
 
-		public String getCategory() {
-			return this.category;
+		public String getTemplateName() {
+			return this.templateName;
 		}
 
-		public void setCategory(String category) {
-			this.category = category;
+		public void setTemplateName(String templateName) {
+			this.templateName = templateName;
 		}
 
-		public String getTemplateType() {
-			return this.templateType;
+		public String getTemplateVersion() {
+			return this.templateVersion;
 		}
 
-		public void setTemplateType(String templateType) {
-			this.templateType = templateType;
+		public void setTemplateVersion(String templateVersion) {
+			this.templateVersion = templateVersion;
+		}
+
+		public String getTemplateFormat() {
+			return this.templateFormat;
+		}
+
+		public void setTemplateFormat(String templateFormat) {
+			this.templateFormat = templateFormat;
+		}
+
+		public Integer getPopularity() {
+			return this.popularity;
+		}
+
+		public void setPopularity(Integer popularity) {
+			this.popularity = popularity;
+		}
+
+		public Integer getTotalExecutionCount() {
+			return this.totalExecutionCount;
+		}
+
+		public void setTotalExecutionCount(Integer totalExecutionCount) {
+			this.totalExecutionCount = totalExecutionCount;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getResourceGroupId() {
@@ -246,6 +198,54 @@ public class ListTemplatesResponse extends AcsResponse {
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getCreatedBy() {
+			return this.createdBy;
+		}
+
+		public void setCreatedBy(String createdBy) {
+			this.createdBy = createdBy;
+		}
+
+		public String getCreatedDate() {
+			return this.createdDate;
+		}
+
+		public void setCreatedDate(String createdDate) {
+			this.createdDate = createdDate;
+		}
+
+		public String getCategory() {
+			return this.category;
+		}
+
+		public void setCategory(String category) {
+			this.category = category;
+		}
+
+		public Boolean getHasTrigger() {
+			return this.hasTrigger;
+		}
+
+		public void setHasTrigger(Boolean hasTrigger) {
+			this.hasTrigger = hasTrigger;
+		}
+
+		public String getTemplateId() {
+			return this.templateId;
+		}
+
+		public void setTemplateId(String templateId) {
+			this.templateId = templateId;
+		}
+
+		public String getShareType() {
+			return this.shareType;
+		}
+
+		public void setShareType(String shareType) {
+			this.shareType = shareType;
 		}
 	}
 

@@ -46,28 +46,52 @@ public class UpdateApplicationGroupResponse extends AcsResponse {
 
 	public static class ApplicationGroup {
 
-		private String name;
+		private String deployRegionId;
+
+		private String description;
+
+		private String importTagKey;
+
+		private String updatedDate;
 
 		private String applicationName;
 
 		private String createdDate;
 
-		private String updatedDate;
-
-		private String description;
-
-		private String deployRegionId;
-
-		private String importTagKey;
-
 		private String importTagValue;
 
-		public String getName() {
-			return this.name;
+		private String name;
+
+		public String getDeployRegionId() {
+			return this.deployRegionId;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+		public void setDeployRegionId(String deployRegionId) {
+			this.deployRegionId = deployRegionId;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getImportTagKey() {
+			return this.importTagKey;
+		}
+
+		public void setImportTagKey(String importTagKey) {
+			this.importTagKey = importTagKey;
+		}
+
+		public String getUpdatedDate() {
+			return this.updatedDate;
+		}
+
+		public void setUpdatedDate(String updatedDate) {
+			this.updatedDate = updatedDate;
 		}
 
 		public String getApplicationName() {
@@ -86,44 +110,20 @@ public class UpdateApplicationGroupResponse extends AcsResponse {
 			this.createdDate = createdDate;
 		}
 
-		public String getUpdatedDate() {
-			return this.updatedDate;
-		}
-
-		public void setUpdatedDate(String updatedDate) {
-			this.updatedDate = updatedDate;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getDeployRegionId() {
-			return this.deployRegionId;
-		}
-
-		public void setDeployRegionId(String deployRegionId) {
-			this.deployRegionId = deployRegionId;
-		}
-
-		public String getImportTagKey() {
-			return this.importTagKey;
-		}
-
-		public void setImportTagKey(String importTagKey) {
-			this.importTagKey = importTagKey;
-		}
-
 		public String getImportTagValue() {
 			return this.importTagValue;
 		}
 
 		public void setImportTagValue(String importTagValue) {
 			this.importTagValue = importTagValue;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 	}
 

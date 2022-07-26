@@ -38,21 +38,21 @@ public class GetSecretParametersResponseUnmarshaller {
 		List<Parameter> parameters = new ArrayList<Parameter>();
 		for (int i = 0; i < _ctx.lengthValue("GetSecretParametersResponse.Parameters.Length"); i++) {
 			Parameter parameter = new Parameter();
-			parameter.setId(_ctx.stringValue("GetSecretParametersResponse.Parameters["+ i +"].Id"));
-			parameter.setName(_ctx.stringValue("GetSecretParametersResponse.Parameters["+ i +"].Name"));
-			parameter.setCreatedDate(_ctx.stringValue("GetSecretParametersResponse.Parameters["+ i +"].CreatedDate"));
-			parameter.setCreatedBy(_ctx.stringValue("GetSecretParametersResponse.Parameters["+ i +"].CreatedBy"));
+			parameter.setType(_ctx.stringValue("GetSecretParametersResponse.Parameters["+ i +"].Type"));
 			parameter.setUpdatedDate(_ctx.stringValue("GetSecretParametersResponse.Parameters["+ i +"].UpdatedDate"));
 			parameter.setUpdatedBy(_ctx.stringValue("GetSecretParametersResponse.Parameters["+ i +"].UpdatedBy"));
-			parameter.setDescription(_ctx.stringValue("GetSecretParametersResponse.Parameters["+ i +"].Description"));
-			parameter.setShareType(_ctx.stringValue("GetSecretParametersResponse.Parameters["+ i +"].ShareType"));
-			parameter.setParameterVersion(_ctx.integerValue("GetSecretParametersResponse.Parameters["+ i +"].ParameterVersion"));
-			parameter.setType(_ctx.stringValue("GetSecretParametersResponse.Parameters["+ i +"].Type"));
-			parameter.setValue(_ctx.stringValue("GetSecretParametersResponse.Parameters["+ i +"].Value"));
-			parameter.setConstraints(_ctx.stringValue("GetSecretParametersResponse.Parameters["+ i +"].Constraints"));
 			parameter.setKeyId(_ctx.stringValue("GetSecretParametersResponse.Parameters["+ i +"].KeyId"));
 			parameter.setTags(_ctx.mapValue("GetSecretParametersResponse.Parameters["+ i +"].Tags"));
+			parameter.setValue(_ctx.stringValue("GetSecretParametersResponse.Parameters["+ i +"].Value"));
+			parameter.setDescription(_ctx.stringValue("GetSecretParametersResponse.Parameters["+ i +"].Description"));
+			parameter.setConstraints(_ctx.stringValue("GetSecretParametersResponse.Parameters["+ i +"].Constraints"));
 			parameter.setResourceGroupId(_ctx.stringValue("GetSecretParametersResponse.Parameters["+ i +"].ResourceGroupId"));
+			parameter.setCreatedBy(_ctx.stringValue("GetSecretParametersResponse.Parameters["+ i +"].CreatedBy"));
+			parameter.setCreatedDate(_ctx.stringValue("GetSecretParametersResponse.Parameters["+ i +"].CreatedDate"));
+			parameter.setParameterVersion(_ctx.integerValue("GetSecretParametersResponse.Parameters["+ i +"].ParameterVersion"));
+			parameter.setName(_ctx.stringValue("GetSecretParametersResponse.Parameters["+ i +"].Name"));
+			parameter.setId(_ctx.stringValue("GetSecretParametersResponse.Parameters["+ i +"].Id"));
+			parameter.setShareType(_ctx.stringValue("GetSecretParametersResponse.Parameters["+ i +"].ShareType"));
 
 			parameters.add(parameter);
 		}

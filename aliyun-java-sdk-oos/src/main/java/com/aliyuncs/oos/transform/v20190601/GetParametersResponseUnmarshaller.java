@@ -38,20 +38,20 @@ public class GetParametersResponseUnmarshaller {
 		List<Parameter> parameters = new ArrayList<Parameter>();
 		for (int i = 0; i < _ctx.lengthValue("GetParametersResponse.Parameters.Length"); i++) {
 			Parameter parameter = new Parameter();
-			parameter.setId(_ctx.stringValue("GetParametersResponse.Parameters["+ i +"].Id"));
-			parameter.setName(_ctx.stringValue("GetParametersResponse.Parameters["+ i +"].Name"));
-			parameter.setCreatedDate(_ctx.stringValue("GetParametersResponse.Parameters["+ i +"].CreatedDate"));
-			parameter.setCreatedBy(_ctx.stringValue("GetParametersResponse.Parameters["+ i +"].CreatedBy"));
+			parameter.setType(_ctx.stringValue("GetParametersResponse.Parameters["+ i +"].Type"));
 			parameter.setUpdatedDate(_ctx.stringValue("GetParametersResponse.Parameters["+ i +"].UpdatedDate"));
 			parameter.setUpdatedBy(_ctx.stringValue("GetParametersResponse.Parameters["+ i +"].UpdatedBy"));
-			parameter.setDescription(_ctx.stringValue("GetParametersResponse.Parameters["+ i +"].Description"));
-			parameter.setShareType(_ctx.stringValue("GetParametersResponse.Parameters["+ i +"].ShareType"));
-			parameter.setParameterVersion(_ctx.integerValue("GetParametersResponse.Parameters["+ i +"].ParameterVersion"));
-			parameter.setType(_ctx.stringValue("GetParametersResponse.Parameters["+ i +"].Type"));
-			parameter.setValue(_ctx.stringValue("GetParametersResponse.Parameters["+ i +"].Value"));
-			parameter.setConstraints(_ctx.stringValue("GetParametersResponse.Parameters["+ i +"].Constraints"));
 			parameter.setTags(_ctx.mapValue("GetParametersResponse.Parameters["+ i +"].Tags"));
+			parameter.setValue(_ctx.stringValue("GetParametersResponse.Parameters["+ i +"].Value"));
+			parameter.setDescription(_ctx.stringValue("GetParametersResponse.Parameters["+ i +"].Description"));
+			parameter.setConstraints(_ctx.stringValue("GetParametersResponse.Parameters["+ i +"].Constraints"));
 			parameter.setResourceGroupId(_ctx.stringValue("GetParametersResponse.Parameters["+ i +"].ResourceGroupId"));
+			parameter.setCreatedBy(_ctx.stringValue("GetParametersResponse.Parameters["+ i +"].CreatedBy"));
+			parameter.setCreatedDate(_ctx.stringValue("GetParametersResponse.Parameters["+ i +"].CreatedDate"));
+			parameter.setParameterVersion(_ctx.integerValue("GetParametersResponse.Parameters["+ i +"].ParameterVersion"));
+			parameter.setName(_ctx.stringValue("GetParametersResponse.Parameters["+ i +"].Name"));
+			parameter.setId(_ctx.stringValue("GetParametersResponse.Parameters["+ i +"].Id"));
+			parameter.setShareType(_ctx.stringValue("GetParametersResponse.Parameters["+ i +"].ShareType"));
 
 			parameters.add(parameter);
 		}

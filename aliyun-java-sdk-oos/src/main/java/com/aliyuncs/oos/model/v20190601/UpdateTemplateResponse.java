@@ -47,64 +47,40 @@ public class UpdateTemplateResponse extends AcsResponse {
 
 	public static class Template {
 
-		private String templateName;
-
-		private String templateId;
-
-		private String createdDate;
-
-		private String createdBy;
+		private String hash;
 
 		private String updatedDate;
 
 		private String updatedBy;
 
-		private String hash;
+		private Map<Object,Object> tags;
 
-		private String description;
-
-		private String shareType;
-
-		private String templateFormat;
+		private String templateName;
 
 		private String templateVersion;
 
-		private Boolean hasTrigger;
+		private String templateFormat;
 
-		private Map<Object,Object> tags;
+		private String description;
 
 		private String resourceGroupId;
 
-		public String getTemplateName() {
-			return this.templateName;
+		private String createdBy;
+
+		private String createdDate;
+
+		private String templateId;
+
+		private Boolean hasTrigger;
+
+		private String shareType;
+
+		public String getHash() {
+			return this.hash;
 		}
 
-		public void setTemplateName(String templateName) {
-			this.templateName = templateName;
-		}
-
-		public String getTemplateId() {
-			return this.templateId;
-		}
-
-		public void setTemplateId(String templateId) {
-			this.templateId = templateId;
-		}
-
-		public String getCreatedDate() {
-			return this.createdDate;
-		}
-
-		public void setCreatedDate(String createdDate) {
-			this.createdDate = createdDate;
-		}
-
-		public String getCreatedBy() {
-			return this.createdBy;
-		}
-
-		public void setCreatedBy(String createdBy) {
-			this.createdBy = createdBy;
+		public void setHash(String hash) {
+			this.hash = hash;
 		}
 
 		public String getUpdatedDate() {
@@ -123,36 +99,20 @@ public class UpdateTemplateResponse extends AcsResponse {
 			this.updatedBy = updatedBy;
 		}
 
-		public String getHash() {
-			return this.hash;
+		public Map<Object,Object> getTags() {
+			return this.tags;
 		}
 
-		public void setHash(String hash) {
-			this.hash = hash;
+		public void setTags(Map<Object,Object> tags) {
+			this.tags = tags;
 		}
 
-		public String getDescription() {
-			return this.description;
+		public String getTemplateName() {
+			return this.templateName;
 		}
 
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getShareType() {
-			return this.shareType;
-		}
-
-		public void setShareType(String shareType) {
-			this.shareType = shareType;
-		}
-
-		public String getTemplateFormat() {
-			return this.templateFormat;
-		}
-
-		public void setTemplateFormat(String templateFormat) {
-			this.templateFormat = templateFormat;
+		public void setTemplateName(String templateName) {
+			this.templateName = templateName;
 		}
 
 		public String getTemplateVersion() {
@@ -163,20 +123,20 @@ public class UpdateTemplateResponse extends AcsResponse {
 			this.templateVersion = templateVersion;
 		}
 
-		public Boolean getHasTrigger() {
-			return this.hasTrigger;
+		public String getTemplateFormat() {
+			return this.templateFormat;
 		}
 
-		public void setHasTrigger(Boolean hasTrigger) {
-			this.hasTrigger = hasTrigger;
+		public void setTemplateFormat(String templateFormat) {
+			this.templateFormat = templateFormat;
 		}
 
-		public Map<Object,Object> getTags() {
-			return this.tags;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setTags(Map<Object,Object> tags) {
-			this.tags = tags;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getResourceGroupId() {
@@ -185,6 +145,46 @@ public class UpdateTemplateResponse extends AcsResponse {
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getCreatedBy() {
+			return this.createdBy;
+		}
+
+		public void setCreatedBy(String createdBy) {
+			this.createdBy = createdBy;
+		}
+
+		public String getCreatedDate() {
+			return this.createdDate;
+		}
+
+		public void setCreatedDate(String createdDate) {
+			this.createdDate = createdDate;
+		}
+
+		public String getTemplateId() {
+			return this.templateId;
+		}
+
+		public void setTemplateId(String templateId) {
+			this.templateId = templateId;
+		}
+
+		public Boolean getHasTrigger() {
+			return this.hasTrigger;
+		}
+
+		public void setHasTrigger(Boolean hasTrigger) {
+			this.hasTrigger = hasTrigger;
+		}
+
+		public String getShareType() {
+			return this.shareType;
+		}
+
+		public void setShareType(String shareType) {
+			this.shareType = shareType;
 		}
 	}
 

@@ -26,14 +26,14 @@ public class UpdateApplicationGroupResponseUnmarshaller {
 		updateApplicationGroupResponse.setRequestId(_ctx.stringValue("UpdateApplicationGroupResponse.RequestId"));
 
 		ApplicationGroup applicationGroup = new ApplicationGroup();
-		applicationGroup.setName(_ctx.stringValue("UpdateApplicationGroupResponse.ApplicationGroup.Name"));
+		applicationGroup.setDeployRegionId(_ctx.stringValue("UpdateApplicationGroupResponse.ApplicationGroup.DeployRegionId"));
+		applicationGroup.setDescription(_ctx.stringValue("UpdateApplicationGroupResponse.ApplicationGroup.Description"));
+		applicationGroup.setImportTagKey(_ctx.stringValue("UpdateApplicationGroupResponse.ApplicationGroup.ImportTagKey"));
+		applicationGroup.setUpdatedDate(_ctx.stringValue("UpdateApplicationGroupResponse.ApplicationGroup.UpdatedDate"));
 		applicationGroup.setApplicationName(_ctx.stringValue("UpdateApplicationGroupResponse.ApplicationGroup.ApplicationName"));
 		applicationGroup.setCreatedDate(_ctx.stringValue("UpdateApplicationGroupResponse.ApplicationGroup.CreatedDate"));
-		applicationGroup.setUpdatedDate(_ctx.stringValue("UpdateApplicationGroupResponse.ApplicationGroup.UpdatedDate"));
-		applicationGroup.setDescription(_ctx.stringValue("UpdateApplicationGroupResponse.ApplicationGroup.Description"));
-		applicationGroup.setDeployRegionId(_ctx.stringValue("UpdateApplicationGroupResponse.ApplicationGroup.DeployRegionId"));
-		applicationGroup.setImportTagKey(_ctx.stringValue("UpdateApplicationGroupResponse.ApplicationGroup.ImportTagKey"));
 		applicationGroup.setImportTagValue(_ctx.stringValue("UpdateApplicationGroupResponse.ApplicationGroup.ImportTagValue"));
+		applicationGroup.setName(_ctx.stringValue("UpdateApplicationGroupResponse.ApplicationGroup.Name"));
 		updateApplicationGroupResponse.setApplicationGroup(applicationGroup);
 	 
 	 	return updateApplicationGroupResponse;

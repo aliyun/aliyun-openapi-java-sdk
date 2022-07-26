@@ -25,13 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListActionsResponse extends AcsResponse {
 
+	private String nextToken;
+
 	private String requestId;
 
 	private Integer maxResults;
 
-	private String nextToken;
-
 	private List<Action> actions;
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,14 +57,6 @@ public class ListActionsResponse extends AcsResponse {
 		this.maxResults = maxResults;
 	}
 
-	public String getNextToken() {
-		return this.nextToken;
-	}
-
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-	}
-
 	public List<Action> getActions() {
 		return this.actions;
 	}
@@ -67,34 +67,26 @@ public class ListActionsResponse extends AcsResponse {
 
 	public static class Action {
 
-		private String oOSActionName;
-
-		private String description;
+		private Integer popularity;
 
 		private String actionType;
 
-		private String createdDate;
+		private String description;
 
-		private String properties;
+		private String createdDate;
 
 		private String templateVersion;
 
-		private Integer popularity;
+		private String oOSActionName;
 
-		public String getOOSActionName() {
-			return this.oOSActionName;
+		private String properties;
+
+		public Integer getPopularity() {
+			return this.popularity;
 		}
 
-		public void setOOSActionName(String oOSActionName) {
-			this.oOSActionName = oOSActionName;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
+		public void setPopularity(Integer popularity) {
+			this.popularity = popularity;
 		}
 
 		public String getActionType() {
@@ -105,20 +97,20 @@ public class ListActionsResponse extends AcsResponse {
 			this.actionType = actionType;
 		}
 
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
 		public String getCreatedDate() {
 			return this.createdDate;
 		}
 
 		public void setCreatedDate(String createdDate) {
 			this.createdDate = createdDate;
-		}
-
-		public String getProperties() {
-			return this.properties;
-		}
-
-		public void setProperties(String properties) {
-			this.properties = properties;
 		}
 
 		public String getTemplateVersion() {
@@ -129,12 +121,20 @@ public class ListActionsResponse extends AcsResponse {
 			this.templateVersion = templateVersion;
 		}
 
-		public Integer getPopularity() {
-			return this.popularity;
+		public String getOOSActionName() {
+			return this.oOSActionName;
 		}
 
-		public void setPopularity(Integer popularity) {
-			this.popularity = popularity;
+		public void setOOSActionName(String oOSActionName) {
+			this.oOSActionName = oOSActionName;
+		}
+
+		public String getProperties() {
+			return this.properties;
+		}
+
+		public void setProperties(String properties) {
+			this.properties = properties;
 		}
 	}
 

@@ -46,64 +46,40 @@ public class UpdateSecretParameterResponse extends AcsResponse {
 
 	public static class Parameter {
 
-		private String id;
-
-		private String name;
-
-		private String createdDate;
-
-		private String createdBy;
+		private String type;
 
 		private String updatedDate;
 
 		private String updatedBy;
 
-		private String description;
-
-		private String shareType;
-
-		private Integer parameterVersion;
-
-		private String type;
-
-		private String constraints;
-
 		private String keyId;
 
 		private String tags;
 
+		private String description;
+
+		private String constraints;
+
 		private String resourceGroupId;
 
-		public String getId() {
-			return this.id;
+		private String createdBy;
+
+		private String createdDate;
+
+		private Integer parameterVersion;
+
+		private String name;
+
+		private String id;
+
+		private String shareType;
+
+		public String getType() {
+			return this.type;
 		}
 
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getCreatedDate() {
-			return this.createdDate;
-		}
-
-		public void setCreatedDate(String createdDate) {
-			this.createdDate = createdDate;
-		}
-
-		public String getCreatedBy() {
-			return this.createdBy;
-		}
-
-		public void setCreatedBy(String createdBy) {
-			this.createdBy = createdBy;
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public String getUpdatedDate() {
@@ -122,46 +98,6 @@ public class UpdateSecretParameterResponse extends AcsResponse {
 			this.updatedBy = updatedBy;
 		}
 
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getShareType() {
-			return this.shareType;
-		}
-
-		public void setShareType(String shareType) {
-			this.shareType = shareType;
-		}
-
-		public Integer getParameterVersion() {
-			return this.parameterVersion;
-		}
-
-		public void setParameterVersion(Integer parameterVersion) {
-			this.parameterVersion = parameterVersion;
-		}
-
-		public String getType() {
-			return this.type;
-		}
-
-		public void setType(String type) {
-			this.type = type;
-		}
-
-		public String getConstraints() {
-			return this.constraints;
-		}
-
-		public void setConstraints(String constraints) {
-			this.constraints = constraints;
-		}
-
 		public String getKeyId() {
 			return this.keyId;
 		}
@@ -178,12 +114,76 @@ public class UpdateSecretParameterResponse extends AcsResponse {
 			this.tags = tags;
 		}
 
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getConstraints() {
+			return this.constraints;
+		}
+
+		public void setConstraints(String constraints) {
+			this.constraints = constraints;
+		}
+
 		public String getResourceGroupId() {
 			return this.resourceGroupId;
 		}
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getCreatedBy() {
+			return this.createdBy;
+		}
+
+		public void setCreatedBy(String createdBy) {
+			this.createdBy = createdBy;
+		}
+
+		public String getCreatedDate() {
+			return this.createdDate;
+		}
+
+		public void setCreatedDate(String createdDate) {
+			this.createdDate = createdDate;
+		}
+
+		public Integer getParameterVersion() {
+			return this.parameterVersion;
+		}
+
+		public void setParameterVersion(Integer parameterVersion) {
+			this.parameterVersion = parameterVersion;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
+
+		public String getShareType() {
+			return this.shareType;
+		}
+
+		public void setShareType(String shareType) {
+			this.shareType = shareType;
 		}
 	}
 

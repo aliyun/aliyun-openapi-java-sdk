@@ -47,25 +47,17 @@ public class GetServiceSettingsResponse extends AcsResponse {
 
 	public static class ServiceSetting {
 
-		private Boolean deliveryOssEnabled;
-
 		private String deliveryOssBucketName;
 
 		private String deliveryOssKeyPrefix;
+
+		private Boolean deliveryOssEnabled;
 
 		private Boolean deliverySlsEnabled;
 
 		private String deliverySlsProjectName;
 
 		private String rdcEnterpriseId;
-
-		public Boolean getDeliveryOssEnabled() {
-			return this.deliveryOssEnabled;
-		}
-
-		public void setDeliveryOssEnabled(Boolean deliveryOssEnabled) {
-			this.deliveryOssEnabled = deliveryOssEnabled;
-		}
 
 		public String getDeliveryOssBucketName() {
 			return this.deliveryOssBucketName;
@@ -81,6 +73,14 @@ public class GetServiceSettingsResponse extends AcsResponse {
 
 		public void setDeliveryOssKeyPrefix(String deliveryOssKeyPrefix) {
 			this.deliveryOssKeyPrefix = deliveryOssKeyPrefix;
+		}
+
+		public Boolean getDeliveryOssEnabled() {
+			return this.deliveryOssEnabled;
+		}
+
+		public void setDeliveryOssEnabled(Boolean deliveryOssEnabled) {
+			this.deliveryOssEnabled = deliveryOssEnabled;
 		}
 
 		public Boolean getDeliverySlsEnabled() {

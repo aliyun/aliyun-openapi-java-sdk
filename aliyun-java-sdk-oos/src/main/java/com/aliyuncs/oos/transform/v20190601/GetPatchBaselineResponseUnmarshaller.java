@@ -26,17 +26,17 @@ public class GetPatchBaselineResponseUnmarshaller {
 		getPatchBaselineResponse.setRequestId(_ctx.stringValue("GetPatchBaselineResponse.RequestId"));
 
 		PatchBaseline patchBaseline = new PatchBaseline();
-		patchBaseline.setId(_ctx.stringValue("GetPatchBaselineResponse.PatchBaseline.Id"));
-		patchBaseline.setName(_ctx.stringValue("GetPatchBaselineResponse.PatchBaseline.Name"));
-		patchBaseline.setCreatedDate(_ctx.stringValue("GetPatchBaselineResponse.PatchBaseline.CreatedDate"));
-		patchBaseline.setCreatedBy(_ctx.stringValue("GetPatchBaselineResponse.PatchBaseline.CreatedBy"));
+		patchBaseline.setOperationSystem(_ctx.stringValue("GetPatchBaselineResponse.PatchBaseline.OperationSystem"));
+		patchBaseline.setIsDefault(_ctx.booleanValue("GetPatchBaselineResponse.PatchBaseline.IsDefault"));
+		patchBaseline.setDescription(_ctx.stringValue("GetPatchBaselineResponse.PatchBaseline.Description"));
 		patchBaseline.setUpdatedDate(_ctx.stringValue("GetPatchBaselineResponse.PatchBaseline.UpdatedDate"));
 		patchBaseline.setUpdatedBy(_ctx.stringValue("GetPatchBaselineResponse.PatchBaseline.UpdatedBy"));
-		patchBaseline.setDescription(_ctx.stringValue("GetPatchBaselineResponse.PatchBaseline.Description"));
-		patchBaseline.setShareType(_ctx.stringValue("GetPatchBaselineResponse.PatchBaseline.ShareType"));
-		patchBaseline.setOperationSystem(_ctx.stringValue("GetPatchBaselineResponse.PatchBaseline.OperationSystem"));
+		patchBaseline.setCreatedBy(_ctx.stringValue("GetPatchBaselineResponse.PatchBaseline.CreatedBy"));
+		patchBaseline.setCreatedDate(_ctx.stringValue("GetPatchBaselineResponse.PatchBaseline.CreatedDate"));
+		patchBaseline.setName(_ctx.stringValue("GetPatchBaselineResponse.PatchBaseline.Name"));
 		patchBaseline.setApprovalRules(_ctx.stringValue("GetPatchBaselineResponse.PatchBaseline.ApprovalRules"));
-		patchBaseline.setIsDefault(_ctx.booleanValue("GetPatchBaselineResponse.PatchBaseline.IsDefault"));
+		patchBaseline.setId(_ctx.stringValue("GetPatchBaselineResponse.PatchBaseline.Id"));
+		patchBaseline.setShareType(_ctx.stringValue("GetPatchBaselineResponse.PatchBaseline.ShareType"));
 		getPatchBaselineResponse.setPatchBaseline(patchBaseline);
 	 
 	 	return getPatchBaselineResponse;

@@ -27,20 +27,20 @@ public class UpdateTemplateResponseUnmarshaller {
 		updateTemplateResponse.setRequestId(_ctx.stringValue("UpdateTemplateResponse.RequestId"));
 
 		Template template = new Template();
-		template.setTemplateName(_ctx.stringValue("UpdateTemplateResponse.Template.TemplateName"));
-		template.setTemplateId(_ctx.stringValue("UpdateTemplateResponse.Template.TemplateId"));
-		template.setCreatedDate(_ctx.stringValue("UpdateTemplateResponse.Template.CreatedDate"));
-		template.setCreatedBy(_ctx.stringValue("UpdateTemplateResponse.Template.CreatedBy"));
+		template.setHash(_ctx.stringValue("UpdateTemplateResponse.Template.Hash"));
 		template.setUpdatedDate(_ctx.stringValue("UpdateTemplateResponse.Template.UpdatedDate"));
 		template.setUpdatedBy(_ctx.stringValue("UpdateTemplateResponse.Template.UpdatedBy"));
-		template.setHash(_ctx.stringValue("UpdateTemplateResponse.Template.Hash"));
-		template.setDescription(_ctx.stringValue("UpdateTemplateResponse.Template.Description"));
-		template.setShareType(_ctx.stringValue("UpdateTemplateResponse.Template.ShareType"));
-		template.setTemplateFormat(_ctx.stringValue("UpdateTemplateResponse.Template.TemplateFormat"));
-		template.setTemplateVersion(_ctx.stringValue("UpdateTemplateResponse.Template.TemplateVersion"));
-		template.setHasTrigger(_ctx.booleanValue("UpdateTemplateResponse.Template.HasTrigger"));
 		template.setTags(_ctx.mapValue("UpdateTemplateResponse.Template.Tags"));
+		template.setTemplateName(_ctx.stringValue("UpdateTemplateResponse.Template.TemplateName"));
+		template.setTemplateVersion(_ctx.stringValue("UpdateTemplateResponse.Template.TemplateVersion"));
+		template.setTemplateFormat(_ctx.stringValue("UpdateTemplateResponse.Template.TemplateFormat"));
+		template.setDescription(_ctx.stringValue("UpdateTemplateResponse.Template.Description"));
 		template.setResourceGroupId(_ctx.stringValue("UpdateTemplateResponse.Template.ResourceGroupId"));
+		template.setCreatedBy(_ctx.stringValue("UpdateTemplateResponse.Template.CreatedBy"));
+		template.setCreatedDate(_ctx.stringValue("UpdateTemplateResponse.Template.CreatedDate"));
+		template.setTemplateId(_ctx.stringValue("UpdateTemplateResponse.Template.TemplateId"));
+		template.setHasTrigger(_ctx.booleanValue("UpdateTemplateResponse.Template.HasTrigger"));
+		template.setShareType(_ctx.stringValue("UpdateTemplateResponse.Template.ShareType"));
 		updateTemplateResponse.setTemplate(template);
 	 
 	 	return updateTemplateResponse;

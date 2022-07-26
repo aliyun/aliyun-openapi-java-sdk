@@ -26,8 +26,8 @@ public class ListTagValuesResponseUnmarshaller {
 	public static ListTagValuesResponse unmarshall(ListTagValuesResponse listTagValuesResponse, UnmarshallerContext _ctx) {
 		
 		listTagValuesResponse.setRequestId(_ctx.stringValue("ListTagValuesResponse.RequestId"));
-		listTagValuesResponse.setMaxResults(_ctx.integerValue("ListTagValuesResponse.MaxResults"));
 		listTagValuesResponse.setNextToken(_ctx.stringValue("ListTagValuesResponse.NextToken"));
+		listTagValuesResponse.setMaxResults(_ctx.integerValue("ListTagValuesResponse.MaxResults"));
 
 		List<String> values = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("ListTagValuesResponse.Values.Length"); i++) {

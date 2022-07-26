@@ -28,18 +28,18 @@ public class GetExecutionTemplateResponseUnmarshaller {
 		getExecutionTemplateResponse.setContent(_ctx.stringValue("GetExecutionTemplateResponse.Content"));
 
 		Template template = new Template();
-		template.setTemplateName(_ctx.stringValue("GetExecutionTemplateResponse.Template.TemplateName"));
-		template.setTemplateId(_ctx.stringValue("GetExecutionTemplateResponse.Template.TemplateId"));
-		template.setCreatedDate(_ctx.stringValue("GetExecutionTemplateResponse.Template.CreatedDate"));
-		template.setCreatedBy(_ctx.stringValue("GetExecutionTemplateResponse.Template.CreatedBy"));
+		template.setHash(_ctx.stringValue("GetExecutionTemplateResponse.Template.Hash"));
 		template.setUpdatedDate(_ctx.stringValue("GetExecutionTemplateResponse.Template.UpdatedDate"));
 		template.setUpdatedBy(_ctx.stringValue("GetExecutionTemplateResponse.Template.UpdatedBy"));
-		template.setHash(_ctx.stringValue("GetExecutionTemplateResponse.Template.Hash"));
-		template.setDescription(_ctx.stringValue("GetExecutionTemplateResponse.Template.Description"));
-		template.setShareType(_ctx.stringValue("GetExecutionTemplateResponse.Template.ShareType"));
-		template.setTemplateFormat(_ctx.stringValue("GetExecutionTemplateResponse.Template.TemplateFormat"));
-		template.setTemplateVersion(_ctx.stringValue("GetExecutionTemplateResponse.Template.TemplateVersion"));
 		template.setTags(_ctx.mapValue("GetExecutionTemplateResponse.Template.Tags"));
+		template.setTemplateName(_ctx.stringValue("GetExecutionTemplateResponse.Template.TemplateName"));
+		template.setTemplateVersion(_ctx.stringValue("GetExecutionTemplateResponse.Template.TemplateVersion"));
+		template.setTemplateFormat(_ctx.stringValue("GetExecutionTemplateResponse.Template.TemplateFormat"));
+		template.setDescription(_ctx.stringValue("GetExecutionTemplateResponse.Template.Description"));
+		template.setCreatedBy(_ctx.stringValue("GetExecutionTemplateResponse.Template.CreatedBy"));
+		template.setCreatedDate(_ctx.stringValue("GetExecutionTemplateResponse.Template.CreatedDate"));
+		template.setTemplateId(_ctx.stringValue("GetExecutionTemplateResponse.Template.TemplateId"));
+		template.setShareType(_ctx.stringValue("GetExecutionTemplateResponse.Template.ShareType"));
 		getExecutionTemplateResponse.setTemplate(template);
 	 
 	 	return getExecutionTemplateResponse;

@@ -27,18 +27,18 @@ public class ValidateTemplateContentResponseUnmarshaller {
 	public static ValidateTemplateContentResponse unmarshall(ValidateTemplateContentResponse validateTemplateContentResponse, UnmarshallerContext _ctx) {
 		
 		validateTemplateContentResponse.setRequestId(_ctx.stringValue("ValidateTemplateContentResponse.RequestId"));
+		validateTemplateContentResponse.setOutputs(_ctx.stringValue("ValidateTemplateContentResponse.Outputs"));
 		validateTemplateContentResponse.setParameters(_ctx.stringValue("ValidateTemplateContentResponse.Parameters"));
 		validateTemplateContentResponse.setRamRole(_ctx.stringValue("ValidateTemplateContentResponse.RamRole"));
-		validateTemplateContentResponse.setOutputs(_ctx.stringValue("ValidateTemplateContentResponse.Outputs"));
 
 		List<Task> tasks = new ArrayList<Task>();
 		for (int i = 0; i < _ctx.lengthValue("ValidateTemplateContentResponse.Tasks.Length"); i++) {
 			Task task = new Task();
-			task.setName(_ctx.stringValue("ValidateTemplateContentResponse.Tasks["+ i +"].Name"));
+			task.setOutputs(_ctx.stringValue("ValidateTemplateContentResponse.Tasks["+ i +"].Outputs"));
 			task.setType(_ctx.stringValue("ValidateTemplateContentResponse.Tasks["+ i +"].Type"));
 			task.setDescription(_ctx.stringValue("ValidateTemplateContentResponse.Tasks["+ i +"].Description"));
+			task.setName(_ctx.stringValue("ValidateTemplateContentResponse.Tasks["+ i +"].Name"));
 			task.setProperties(_ctx.stringValue("ValidateTemplateContentResponse.Tasks["+ i +"].Properties"));
-			task.setOutputs(_ctx.stringValue("ValidateTemplateContentResponse.Tasks["+ i +"].Outputs"));
 
 			tasks.add(task);
 		}

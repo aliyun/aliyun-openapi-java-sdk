@@ -27,19 +27,19 @@ public class ListActionsResponseUnmarshaller {
 	public static ListActionsResponse unmarshall(ListActionsResponse listActionsResponse, UnmarshallerContext _ctx) {
 		
 		listActionsResponse.setRequestId(_ctx.stringValue("ListActionsResponse.RequestId"));
-		listActionsResponse.setMaxResults(_ctx.integerValue("ListActionsResponse.MaxResults"));
 		listActionsResponse.setNextToken(_ctx.stringValue("ListActionsResponse.NextToken"));
+		listActionsResponse.setMaxResults(_ctx.integerValue("ListActionsResponse.MaxResults"));
 
 		List<Action> actions = new ArrayList<Action>();
 		for (int i = 0; i < _ctx.lengthValue("ListActionsResponse.Actions.Length"); i++) {
 			Action action = new Action();
-			action.setOOSActionName(_ctx.stringValue("ListActionsResponse.Actions["+ i +"].OOSActionName"));
-			action.setDescription(_ctx.stringValue("ListActionsResponse.Actions["+ i +"].Description"));
-			action.setActionType(_ctx.stringValue("ListActionsResponse.Actions["+ i +"].ActionType"));
-			action.setCreatedDate(_ctx.stringValue("ListActionsResponse.Actions["+ i +"].CreatedDate"));
-			action.setProperties(_ctx.stringValue("ListActionsResponse.Actions["+ i +"].Properties"));
-			action.setTemplateVersion(_ctx.stringValue("ListActionsResponse.Actions["+ i +"].TemplateVersion"));
 			action.setPopularity(_ctx.integerValue("ListActionsResponse.Actions["+ i +"].Popularity"));
+			action.setActionType(_ctx.stringValue("ListActionsResponse.Actions["+ i +"].ActionType"));
+			action.setDescription(_ctx.stringValue("ListActionsResponse.Actions["+ i +"].Description"));
+			action.setCreatedDate(_ctx.stringValue("ListActionsResponse.Actions["+ i +"].CreatedDate"));
+			action.setTemplateVersion(_ctx.stringValue("ListActionsResponse.Actions["+ i +"].TemplateVersion"));
+			action.setOOSActionName(_ctx.stringValue("ListActionsResponse.Actions["+ i +"].OOSActionName"));
+			action.setProperties(_ctx.stringValue("ListActionsResponse.Actions["+ i +"].Properties"));
 
 			actions.add(action);
 		}

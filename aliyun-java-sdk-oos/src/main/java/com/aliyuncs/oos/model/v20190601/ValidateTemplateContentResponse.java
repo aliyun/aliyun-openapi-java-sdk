@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ValidateTemplateContentResponse extends AcsResponse {
 
+	private String outputs;
+
 	private String requestId;
 
 	private String parameters;
 
 	private String ramRole;
 
-	private String outputs;
-
 	private List<Task> tasks;
+
+	public String getOutputs() {
+		return this.outputs;
+	}
+
+	public void setOutputs(String outputs) {
+		this.outputs = outputs;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -59,14 +67,6 @@ public class ValidateTemplateContentResponse extends AcsResponse {
 		this.ramRole = ramRole;
 	}
 
-	public String getOutputs() {
-		return this.outputs;
-	}
-
-	public void setOutputs(String outputs) {
-		this.outputs = outputs;
-	}
-
 	public List<Task> getTasks() {
 		return this.tasks;
 	}
@@ -77,22 +77,22 @@ public class ValidateTemplateContentResponse extends AcsResponse {
 
 	public static class Task {
 
-		private String name;
+		private String outputs;
 
 		private String type;
 
 		private String description;
 
+		private String name;
+
 		private String properties;
 
-		private String outputs;
-
-		public String getName() {
-			return this.name;
+		public String getOutputs() {
+			return this.outputs;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+		public void setOutputs(String outputs) {
+			this.outputs = outputs;
 		}
 
 		public String getType() {
@@ -111,20 +111,20 @@ public class ValidateTemplateContentResponse extends AcsResponse {
 			this.description = description;
 		}
 
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
 		public String getProperties() {
 			return this.properties;
 		}
 
 		public void setProperties(String properties) {
 			this.properties = properties;
-		}
-
-		public String getOutputs() {
-			return this.outputs;
-		}
-
-		public void setOutputs(String outputs) {
-			this.outputs = outputs;
 		}
 	}
 

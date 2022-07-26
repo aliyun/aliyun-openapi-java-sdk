@@ -26,31 +26,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListParametersResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Integer maxResults;
-
 	private String nextToken;
+
+	private String requestId;
 
 	private Integer totalCount;
 
+	private Integer maxResults;
+
 	private List<Parameter> parameters;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getMaxResults() {
-		return this.maxResults;
-	}
-
-	public void setMaxResults(Integer maxResults) {
-		this.maxResults = maxResults;
-	}
 
 	public String getNextToken() {
 		return this.nextToken;
@@ -60,12 +44,28 @@ public class ListParametersResponse extends AcsResponse {
 		this.nextToken = nextToken;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public Integer getTotalCount() {
 		return this.totalCount;
 	}
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public Integer getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
 	}
 
 	public List<Parameter> getParameters() {
@@ -78,60 +78,36 @@ public class ListParametersResponse extends AcsResponse {
 
 	public static class Parameter {
 
-		private String name;
-
-		private String id;
-
-		private String createdDate;
-
-		private String createdBy;
+		private String type;
 
 		private String updatedDate;
 
 		private String updatedBy;
 
+		private Map<Object,Object> tags;
+
 		private String description;
 
-		private String shareType;
-
-		private String parameterVersion;
-
-		private String type;
-
-		private Map<Object,Object> tags;
+		private String createdBy;
 
 		private String resourceGroupId;
 
-		public String getName() {
-			return this.name;
+		private String createdDate;
+
+		private String parameterVersion;
+
+		private String name;
+
+		private String id;
+
+		private String shareType;
+
+		public String getType() {
+			return this.type;
 		}
 
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getId() {
-			return this.id;
-		}
-
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getCreatedDate() {
-			return this.createdDate;
-		}
-
-		public void setCreatedDate(String createdDate) {
-			this.createdDate = createdDate;
-		}
-
-		public String getCreatedBy() {
-			return this.createdBy;
-		}
-
-		public void setCreatedBy(String createdBy) {
-			this.createdBy = createdBy;
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public String getUpdatedDate() {
@@ -150,6 +126,14 @@ public class ListParametersResponse extends AcsResponse {
 			this.updatedBy = updatedBy;
 		}
 
+		public Map<Object,Object> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(Map<Object,Object> tags) {
+			this.tags = tags;
+		}
+
 		public String getDescription() {
 			return this.description;
 		}
@@ -158,12 +142,28 @@ public class ListParametersResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getShareType() {
-			return this.shareType;
+		public String getCreatedBy() {
+			return this.createdBy;
 		}
 
-		public void setShareType(String shareType) {
-			this.shareType = shareType;
+		public void setCreatedBy(String createdBy) {
+			this.createdBy = createdBy;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getCreatedDate() {
+			return this.createdDate;
+		}
+
+		public void setCreatedDate(String createdDate) {
+			this.createdDate = createdDate;
 		}
 
 		public String getParameterVersion() {
@@ -174,28 +174,28 @@ public class ListParametersResponse extends AcsResponse {
 			this.parameterVersion = parameterVersion;
 		}
 
-		public String getType() {
-			return this.type;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setType(String type) {
-			this.type = type;
+		public void setName(String name) {
+			this.name = name;
 		}
 
-		public Map<Object,Object> getTags() {
-			return this.tags;
+		public String getId() {
+			return this.id;
 		}
 
-		public void setTags(Map<Object,Object> tags) {
-			this.tags = tags;
+		public void setId(String id) {
+			this.id = id;
 		}
 
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
+		public String getShareType() {
+			return this.shareType;
 		}
 
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
+		public void setShareType(String shareType) {
+			this.shareType = shareType;
 		}
 	}
 

@@ -47,15 +47,23 @@ public class CreateApplicationResponse extends AcsResponse {
 
 	public static class Application {
 
+		private Map<Object,Object> tags;
+
 		private String name;
+
+		private String updateDate;
 
 		private String description;
 
 		private String createDate;
 
-		private String updateDate;
+		public Map<Object,Object> getTags() {
+			return this.tags;
+		}
 
-		private Map<Object,Object> tags;
+		public void setTags(Map<Object,Object> tags) {
+			this.tags = tags;
+		}
 
 		public String getName() {
 			return this.name;
@@ -63,6 +71,14 @@ public class CreateApplicationResponse extends AcsResponse {
 
 		public void setName(String name) {
 			this.name = name;
+		}
+
+		public String getUpdateDate() {
+			return this.updateDate;
+		}
+
+		public void setUpdateDate(String updateDate) {
+			this.updateDate = updateDate;
 		}
 
 		public String getDescription() {
@@ -79,22 +95,6 @@ public class CreateApplicationResponse extends AcsResponse {
 
 		public void setCreateDate(String createDate) {
 			this.createDate = createDate;
-		}
-
-		public String getUpdateDate() {
-			return this.updateDate;
-		}
-
-		public void setUpdateDate(String updateDate) {
-			this.updateDate = updateDate;
-		}
-
-		public Map<Object,Object> getTags() {
-			return this.tags;
-		}
-
-		public void setTags(Map<Object,Object> tags) {
-			this.tags = tags;
 		}
 	}
 

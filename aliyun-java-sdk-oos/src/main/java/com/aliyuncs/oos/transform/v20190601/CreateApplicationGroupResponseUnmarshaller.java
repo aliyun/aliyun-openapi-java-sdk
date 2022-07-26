@@ -26,15 +26,15 @@ public class CreateApplicationGroupResponseUnmarshaller {
 		createApplicationGroupResponse.setRequestId(_ctx.stringValue("CreateApplicationGroupResponse.RequestId"));
 
 		ApplicationGroup applicationGroup = new ApplicationGroup();
-		applicationGroup.setName(_ctx.stringValue("CreateApplicationGroupResponse.ApplicationGroup.Name"));
-		applicationGroup.setApplicationName(_ctx.stringValue("CreateApplicationGroupResponse.ApplicationGroup.ApplicationName"));
-		applicationGroup.setCreateDate(_ctx.stringValue("CreateApplicationGroupResponse.ApplicationGroup.CreateDate"));
-		applicationGroup.setUpdateDate(_ctx.stringValue("CreateApplicationGroupResponse.ApplicationGroup.UpdateDate"));
-		applicationGroup.setDescription(_ctx.stringValue("CreateApplicationGroupResponse.ApplicationGroup.Description"));
-		applicationGroup.setDeployRegionId(_ctx.stringValue("CreateApplicationGroupResponse.ApplicationGroup.DeployRegionId"));
-		applicationGroup.setImportTagKey(_ctx.stringValue("CreateApplicationGroupResponse.ApplicationGroup.ImportTagKey"));
-		applicationGroup.setImportTagValue(_ctx.stringValue("CreateApplicationGroupResponse.ApplicationGroup.ImportTagValue"));
 		applicationGroup.setCmsGroupId(_ctx.stringValue("CreateApplicationGroupResponse.ApplicationGroup.CmsGroupId"));
+		applicationGroup.setDeployRegionId(_ctx.stringValue("CreateApplicationGroupResponse.ApplicationGroup.DeployRegionId"));
+		applicationGroup.setDescription(_ctx.stringValue("CreateApplicationGroupResponse.ApplicationGroup.Description"));
+		applicationGroup.setUpdateDate(_ctx.stringValue("CreateApplicationGroupResponse.ApplicationGroup.UpdateDate"));
+		applicationGroup.setImportTagKey(_ctx.stringValue("CreateApplicationGroupResponse.ApplicationGroup.ImportTagKey"));
+		applicationGroup.setApplicationName(_ctx.stringValue("CreateApplicationGroupResponse.ApplicationGroup.ApplicationName"));
+		applicationGroup.setImportTagValue(_ctx.stringValue("CreateApplicationGroupResponse.ApplicationGroup.ImportTagValue"));
+		applicationGroup.setName(_ctx.stringValue("CreateApplicationGroupResponse.ApplicationGroup.Name"));
+		applicationGroup.setCreateDate(_ctx.stringValue("CreateApplicationGroupResponse.ApplicationGroup.CreateDate"));
 		createApplicationGroupResponse.setApplicationGroup(applicationGroup);
 	 
 	 	return createApplicationGroupResponse;

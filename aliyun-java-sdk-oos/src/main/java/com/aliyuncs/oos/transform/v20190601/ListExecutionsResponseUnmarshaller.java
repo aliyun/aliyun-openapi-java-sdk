@@ -29,42 +29,42 @@ public class ListExecutionsResponseUnmarshaller {
 	public static ListExecutionsResponse unmarshall(ListExecutionsResponse listExecutionsResponse, UnmarshallerContext _ctx) {
 		
 		listExecutionsResponse.setRequestId(_ctx.stringValue("ListExecutionsResponse.RequestId"));
-		listExecutionsResponse.setMaxResults(_ctx.integerValue("ListExecutionsResponse.MaxResults"));
 		listExecutionsResponse.setNextToken(_ctx.stringValue("ListExecutionsResponse.NextToken"));
+		listExecutionsResponse.setMaxResults(_ctx.integerValue("ListExecutionsResponse.MaxResults"));
 
 		List<Execution> executions = new ArrayList<Execution>();
 		for (int i = 0; i < _ctx.lengthValue("ListExecutionsResponse.Executions.Length"); i++) {
 			Execution execution = new Execution();
-			execution.setExecutionId(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].ExecutionId"));
-			execution.setTemplateName(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].TemplateName"));
-			execution.setTemplateId(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].TemplateId"));
-			execution.setTemplateVersion(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].TemplateVersion"));
+			execution.setStatus(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].Status"));
+			execution.setWaitingStatus(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].WaitingStatus"));
+			execution.setTargets(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].Targets"));
+			execution.setStatusReason(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].StatusReason"));
+			execution.setTags(_ctx.mapValue("ListExecutionsResponse.Executions["+ i +"].Tags"));
+			execution.setLastSuccessfulTriggerTime(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].LastSuccessfulTriggerTime"));
 			execution.setMode(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].Mode"));
-			execution.setExecutedBy(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].ExecutedBy"));
-			execution.setStartDate(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].StartDate"));
-			execution.setEndDate(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].EndDate"));
+			execution.setSafetyCheck(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].SafetyCheck"));
+			execution.setTemplateName(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].TemplateName"));
+			execution.setTemplateVersion(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].TemplateVersion"));
 			execution.setCreateDate(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].CreateDate"));
 			execution.setUpdateDate(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].UpdateDate"));
-			execution.setStatus(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].Status"));
-			execution.setStatusMessage(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].StatusMessage"));
-			execution.setStatusReason(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].StatusReason"));
-			execution.setWaitingStatus(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].WaitingStatus"));
-			execution.setParentExecutionId(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].ParentExecutionId"));
-			execution.setParameters(_ctx.mapValue("ListExecutionsResponse.Executions["+ i +"].Parameters"));
-			execution.setOutputs(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].Outputs"));
-			execution.setSafetyCheck(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].SafetyCheck"));
-			execution.setIsParent(_ctx.booleanValue("ListExecutionsResponse.Executions["+ i +"].IsParent"));
-			execution.setRamRole(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].RamRole"));
-			execution.setCounters(_ctx.mapValue("ListExecutionsResponse.Executions["+ i +"].Counters"));
-			execution.setCategory(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].Category"));
-			execution.setTags(_ctx.mapValue("ListExecutionsResponse.Executions["+ i +"].Tags"));
 			execution.setDescription(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].Description"));
-			execution.setTargets(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].Targets"));
 			execution.setLastTriggerTime(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].LastTriggerTime"));
+			execution.setParentExecutionId(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].ParentExecutionId"));
 			execution.setLastTriggerStatus(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].LastTriggerStatus"));
-			execution.setLastSuccessfulTriggerTime(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].LastSuccessfulTriggerTime"));
-			execution.setResourceStatus(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].ResourceStatus"));
+			execution.setStatusMessage(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].StatusMessage"));
+			execution.setOutputs(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].Outputs"));
+			execution.setExecutedBy(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].ExecutedBy"));
+			execution.setEndDate(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].EndDate"));
+			execution.setIsParent(_ctx.booleanValue("ListExecutionsResponse.Executions["+ i +"].IsParent"));
+			execution.setStartDate(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].StartDate"));
+			execution.setExecutionId(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].ExecutionId"));
+			execution.setParameters(_ctx.mapValue("ListExecutionsResponse.Executions["+ i +"].Parameters"));
+			execution.setCounters(_ctx.mapValue("ListExecutionsResponse.Executions["+ i +"].Counters"));
 			execution.setResourceGroupId(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].ResourceGroupId"));
+			execution.setCategory(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].Category"));
+			execution.setTemplateId(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].TemplateId"));
+			execution.setRamRole(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].RamRole"));
+			execution.setResourceStatus(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].ResourceStatus"));
 
 			List<CurrentTask> currentTasks = new ArrayList<CurrentTask>();
 			for (int j = 0; j < _ctx.lengthValue("ListExecutionsResponse.Executions["+ i +"].CurrentTasks.Length"); j++) {

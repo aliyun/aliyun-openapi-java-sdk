@@ -47,25 +47,17 @@ public class GetApplicationResponse extends AcsResponse {
 
 	public static class Application {
 
-		private String name;
-
 		private String description;
+
+		private String updateDate;
 
 		private String resourceGroupId;
 
-		private String createdDate;
-
-		private String updatedDate;
-
 		private Map<Object,Object> tags;
 
-		public String getName() {
-			return this.name;
-		}
+		private String name;
 
-		public void setName(String name) {
-			this.name = name;
-		}
+		private String createDate;
 
 		public String getDescription() {
 			return this.description;
@@ -73,6 +65,14 @@ public class GetApplicationResponse extends AcsResponse {
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public String getUpdateDate() {
+			return this.updateDate;
+		}
+
+		public void setUpdateDate(String updateDate) {
+			this.updateDate = updateDate;
 		}
 
 		public String getResourceGroupId() {
@@ -83,28 +83,28 @@ public class GetApplicationResponse extends AcsResponse {
 			this.resourceGroupId = resourceGroupId;
 		}
 
-		public String getCreatedDate() {
-			return this.createdDate;
-		}
-
-		public void setCreatedDate(String createdDate) {
-			this.createdDate = createdDate;
-		}
-
-		public String getUpdatedDate() {
-			return this.updatedDate;
-		}
-
-		public void setUpdatedDate(String updatedDate) {
-			this.updatedDate = updatedDate;
-		}
-
 		public Map<Object,Object> getTags() {
 			return this.tags;
 		}
 
 		public void setTags(Map<Object,Object> tags) {
 			this.tags = tags;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getCreateDate() {
+			return this.createDate;
+		}
+
+		public void setCreateDate(String createDate) {
+			this.createDate = createDate;
 		}
 	}
 

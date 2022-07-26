@@ -32,20 +32,20 @@ public class ListStateConfigurationsResponseUnmarshaller {
 		List<StateConfiguration> stateConfigurations = new ArrayList<StateConfiguration>();
 		for (int i = 0; i < _ctx.lengthValue("ListStateConfigurationsResponse.StateConfigurations.Length"); i++) {
 			StateConfiguration stateConfiguration = new StateConfiguration();
+			stateConfiguration.setUpdateTime(_ctx.stringValue("ListStateConfigurationsResponse.StateConfigurations["+ i +"].UpdateTime"));
 			stateConfiguration.setCreateTime(_ctx.stringValue("ListStateConfigurationsResponse.StateConfigurations["+ i +"].CreateTime"));
-			stateConfiguration.setDescription(_ctx.stringValue("ListStateConfigurationsResponse.StateConfigurations["+ i +"].Description"));
+			stateConfiguration.setTargets(_ctx.stringValue("ListStateConfigurationsResponse.StateConfigurations["+ i +"].Targets"));
+			stateConfiguration.setTags(_ctx.mapValue("ListStateConfigurationsResponse.StateConfigurations["+ i +"].Tags"));
 			stateConfiguration.setStateConfigurationId(_ctx.stringValue("ListStateConfigurationsResponse.StateConfigurations["+ i +"].StateConfigurationId"));
-			stateConfiguration.setTemplateId(_ctx.stringValue("ListStateConfigurationsResponse.StateConfigurations["+ i +"].TemplateId"));
+			stateConfiguration.setScheduleExpression(_ctx.stringValue("ListStateConfigurationsResponse.StateConfigurations["+ i +"].ScheduleExpression"));
 			stateConfiguration.setTemplateName(_ctx.stringValue("ListStateConfigurationsResponse.StateConfigurations["+ i +"].TemplateName"));
 			stateConfiguration.setTemplateVersion(_ctx.stringValue("ListStateConfigurationsResponse.StateConfigurations["+ i +"].TemplateVersion"));
-			stateConfiguration.setParameters(_ctx.stringValue("ListStateConfigurationsResponse.StateConfigurations["+ i +"].Parameters"));
 			stateConfiguration.setConfigureMode(_ctx.stringValue("ListStateConfigurationsResponse.StateConfigurations["+ i +"].ConfigureMode"));
 			stateConfiguration.setScheduleType(_ctx.stringValue("ListStateConfigurationsResponse.StateConfigurations["+ i +"].ScheduleType"));
-			stateConfiguration.setScheduleExpression(_ctx.stringValue("ListStateConfigurationsResponse.StateConfigurations["+ i +"].ScheduleExpression"));
-			stateConfiguration.setTargets(_ctx.stringValue("ListStateConfigurationsResponse.StateConfigurations["+ i +"].Targets"));
-			stateConfiguration.setUpdateTime(_ctx.stringValue("ListStateConfigurationsResponse.StateConfigurations["+ i +"].UpdateTime"));
-			stateConfiguration.setTags(_ctx.mapValue("ListStateConfigurationsResponse.StateConfigurations["+ i +"].Tags"));
+			stateConfiguration.setParameters(_ctx.stringValue("ListStateConfigurationsResponse.StateConfigurations["+ i +"].Parameters"));
+			stateConfiguration.setDescription(_ctx.stringValue("ListStateConfigurationsResponse.StateConfigurations["+ i +"].Description"));
 			stateConfiguration.setResourceGroupId(_ctx.stringValue("ListStateConfigurationsResponse.StateConfigurations["+ i +"].ResourceGroupId"));
+			stateConfiguration.setTemplateId(_ctx.stringValue("ListStateConfigurationsResponse.StateConfigurations["+ i +"].TemplateId"));
 
 			stateConfigurations.add(stateConfiguration);
 		}

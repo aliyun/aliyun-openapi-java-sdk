@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListInstancePatchesResponse extends AcsResponse {
 
-	private Integer maxResults;
-
 	private String nextToken;
 
 	private String requestId;
 
+	private Integer maxResults;
+
 	private List<Patch> patches;
-
-	public Integer getMaxResults() {
-		return this.maxResults;
-	}
-
-	public void setMaxResults(Integer maxResults) {
-		this.maxResults = maxResults;
-	}
 
 	public String getNextToken() {
 		return this.nextToken;
@@ -57,6 +49,14 @@ public class ListInstancePatchesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public Integer getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
+	}
+
 	public List<Patch> getPatches() {
 		return this.patches;
 	}
@@ -67,24 +67,32 @@ public class ListInstancePatchesResponse extends AcsResponse {
 
 	public static class Patch {
 
-		private String classification;
+		private String severity;
+
+		private String status;
 
 		private String installedTime;
 
 		private String kBId;
 
-		private String severity;
-
-		private String status;
-
 		private String title;
 
-		public String getClassification() {
-			return this.classification;
+		private String classification;
+
+		public String getSeverity() {
+			return this.severity;
 		}
 
-		public void setClassification(String classification) {
-			this.classification = classification;
+		public void setSeverity(String severity) {
+			this.severity = severity;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getInstalledTime() {
@@ -103,28 +111,20 @@ public class ListInstancePatchesResponse extends AcsResponse {
 			this.kBId = kBId;
 		}
 
-		public String getSeverity() {
-			return this.severity;
-		}
-
-		public void setSeverity(String severity) {
-			this.severity = severity;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
 		public String getTitle() {
 			return this.title;
 		}
 
 		public void setTitle(String title) {
 			this.title = title;
+		}
+
+		public String getClassification() {
+			return this.classification;
+		}
+
+		public void setClassification(String classification) {
+			this.classification = classification;
 		}
 	}
 

@@ -25,13 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListTemplateVersionsResponse extends AcsResponse {
 
+	private String nextToken;
+
 	private String requestId;
 
 	private Integer maxResults;
 
-	private String nextToken;
-
 	private List<TemplateVersion> templateVersions;
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,14 +57,6 @@ public class ListTemplateVersionsResponse extends AcsResponse {
 		this.maxResults = maxResults;
 	}
 
-	public String getNextToken() {
-		return this.nextToken;
-	}
-
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-	}
-
 	public List<TemplateVersion> getTemplateVersions() {
 		return this.templateVersions;
 	}
@@ -69,15 +69,15 @@ public class ListTemplateVersionsResponse extends AcsResponse {
 
 		private String description;
 
-		private String templateFormat;
-
-		private String templateVersion;
-
 		private String updatedDate;
 
 		private String updatedBy;
 
 		private String versionName;
+
+		private String templateVersion;
+
+		private String templateFormat;
 
 		public String getDescription() {
 			return this.description;
@@ -85,22 +85,6 @@ public class ListTemplateVersionsResponse extends AcsResponse {
 
 		public void setDescription(String description) {
 			this.description = description;
-		}
-
-		public String getTemplateFormat() {
-			return this.templateFormat;
-		}
-
-		public void setTemplateFormat(String templateFormat) {
-			this.templateFormat = templateFormat;
-		}
-
-		public String getTemplateVersion() {
-			return this.templateVersion;
-		}
-
-		public void setTemplateVersion(String templateVersion) {
-			this.templateVersion = templateVersion;
 		}
 
 		public String getUpdatedDate() {
@@ -125,6 +109,22 @@ public class ListTemplateVersionsResponse extends AcsResponse {
 
 		public void setVersionName(String versionName) {
 			this.versionName = versionName;
+		}
+
+		public String getTemplateVersion() {
+			return this.templateVersion;
+		}
+
+		public void setTemplateVersion(String templateVersion) {
+			this.templateVersion = templateVersion;
+		}
+
+		public String getTemplateFormat() {
+			return this.templateFormat;
+		}
+
+		public void setTemplateFormat(String templateFormat) {
+			this.templateFormat = templateFormat;
 		}
 	}
 

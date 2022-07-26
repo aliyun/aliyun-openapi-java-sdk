@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetSecretParametersByPathResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String nextToken;
 
-	private Integer maxResults;
+	private String requestId;
 
 	private Integer totalCount;
 
+	private Integer maxResults;
+
 	private List<Parameter> parameters;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getNextToken() {
 		return this.nextToken;
@@ -51,12 +43,12 @@ public class GetSecretParametersByPathResponse extends AcsResponse {
 		this.nextToken = nextToken;
 	}
 
-	public Integer getMaxResults() {
-		return this.maxResults;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setMaxResults(Integer maxResults) {
-		this.maxResults = maxResults;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getTotalCount() {
@@ -65,6 +57,14 @@ public class GetSecretParametersByPathResponse extends AcsResponse {
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public Integer getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
 	}
 
 	public List<Parameter> getParameters() {
@@ -77,62 +77,38 @@ public class GetSecretParametersByPathResponse extends AcsResponse {
 
 	public static class Parameter {
 
-		private String id;
-
-		private String name;
-
-		private String createdDate;
-
-		private String createdBy;
+		private String type;
 
 		private String updatedDate;
 
 		private String updatedBy;
 
-		private String description;
-
-		private String shareType;
-
-		private Integer parameterVersion;
-
-		private String type;
+		private String keyId;
 
 		private String value;
 
+		private String description;
+
 		private String constraints;
 
-		private String keyId;
+		private String createdBy;
 
-		public String getId() {
-			return this.id;
+		private String createdDate;
+
+		private Integer parameterVersion;
+
+		private String name;
+
+		private String id;
+
+		private String shareType;
+
+		public String getType() {
+			return this.type;
 		}
 
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getCreatedDate() {
-			return this.createdDate;
-		}
-
-		public void setCreatedDate(String createdDate) {
-			this.createdDate = createdDate;
-		}
-
-		public String getCreatedBy() {
-			return this.createdBy;
-		}
-
-		public void setCreatedBy(String createdBy) {
-			this.createdBy = createdBy;
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public String getUpdatedDate() {
@@ -151,36 +127,12 @@ public class GetSecretParametersByPathResponse extends AcsResponse {
 			this.updatedBy = updatedBy;
 		}
 
-		public String getDescription() {
-			return this.description;
+		public String getKeyId() {
+			return this.keyId;
 		}
 
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getShareType() {
-			return this.shareType;
-		}
-
-		public void setShareType(String shareType) {
-			this.shareType = shareType;
-		}
-
-		public Integer getParameterVersion() {
-			return this.parameterVersion;
-		}
-
-		public void setParameterVersion(Integer parameterVersion) {
-			this.parameterVersion = parameterVersion;
-		}
-
-		public String getType() {
-			return this.type;
-		}
-
-		public void setType(String type) {
-			this.type = type;
+		public void setKeyId(String keyId) {
+			this.keyId = keyId;
 		}
 
 		public String getValue() {
@@ -191,6 +143,14 @@ public class GetSecretParametersByPathResponse extends AcsResponse {
 			this.value = value;
 		}
 
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
 		public String getConstraints() {
 			return this.constraints;
 		}
@@ -199,12 +159,52 @@ public class GetSecretParametersByPathResponse extends AcsResponse {
 			this.constraints = constraints;
 		}
 
-		public String getKeyId() {
-			return this.keyId;
+		public String getCreatedBy() {
+			return this.createdBy;
 		}
 
-		public void setKeyId(String keyId) {
-			this.keyId = keyId;
+		public void setCreatedBy(String createdBy) {
+			this.createdBy = createdBy;
+		}
+
+		public String getCreatedDate() {
+			return this.createdDate;
+		}
+
+		public void setCreatedDate(String createdDate) {
+			this.createdDate = createdDate;
+		}
+
+		public Integer getParameterVersion() {
+			return this.parameterVersion;
+		}
+
+		public void setParameterVersion(Integer parameterVersion) {
+			this.parameterVersion = parameterVersion;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
+
+		public String getShareType() {
+			return this.shareType;
+		}
+
+		public void setShareType(String shareType) {
+			this.shareType = shareType;
 		}
 	}
 

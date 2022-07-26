@@ -31,9 +31,9 @@ public class GetServiceSettingsResponseUnmarshaller {
 		List<ServiceSetting> serviceSettings = new ArrayList<ServiceSetting>();
 		for (int i = 0; i < _ctx.lengthValue("GetServiceSettingsResponse.ServiceSettings.Length"); i++) {
 			ServiceSetting serviceSetting = new ServiceSetting();
-			serviceSetting.setDeliveryOssEnabled(_ctx.booleanValue("GetServiceSettingsResponse.ServiceSettings["+ i +"].DeliveryOssEnabled"));
 			serviceSetting.setDeliveryOssBucketName(_ctx.stringValue("GetServiceSettingsResponse.ServiceSettings["+ i +"].DeliveryOssBucketName"));
 			serviceSetting.setDeliveryOssKeyPrefix(_ctx.stringValue("GetServiceSettingsResponse.ServiceSettings["+ i +"].DeliveryOssKeyPrefix"));
+			serviceSetting.setDeliveryOssEnabled(_ctx.booleanValue("GetServiceSettingsResponse.ServiceSettings["+ i +"].DeliveryOssEnabled"));
 			serviceSetting.setDeliverySlsEnabled(_ctx.booleanValue("GetServiceSettingsResponse.ServiceSettings["+ i +"].DeliverySlsEnabled"));
 			serviceSetting.setDeliverySlsProjectName(_ctx.stringValue("GetServiceSettingsResponse.ServiceSettings["+ i +"].DeliverySlsProjectName"));
 			serviceSetting.setRdcEnterpriseId(_ctx.stringValue("GetServiceSettingsResponse.ServiceSettings["+ i +"].RdcEnterpriseId"));

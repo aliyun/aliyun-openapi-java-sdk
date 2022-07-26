@@ -26,20 +26,20 @@ public class UpdateSecretParameterResponseUnmarshaller {
 		updateSecretParameterResponse.setRequestId(_ctx.stringValue("UpdateSecretParameterResponse.RequestId"));
 
 		Parameter parameter = new Parameter();
-		parameter.setId(_ctx.stringValue("UpdateSecretParameterResponse.Parameter.Id"));
-		parameter.setName(_ctx.stringValue("UpdateSecretParameterResponse.Parameter.Name"));
-		parameter.setCreatedDate(_ctx.stringValue("UpdateSecretParameterResponse.Parameter.CreatedDate"));
-		parameter.setCreatedBy(_ctx.stringValue("UpdateSecretParameterResponse.Parameter.CreatedBy"));
+		parameter.setType(_ctx.stringValue("UpdateSecretParameterResponse.Parameter.Type"));
 		parameter.setUpdatedDate(_ctx.stringValue("UpdateSecretParameterResponse.Parameter.UpdatedDate"));
 		parameter.setUpdatedBy(_ctx.stringValue("UpdateSecretParameterResponse.Parameter.UpdatedBy"));
-		parameter.setDescription(_ctx.stringValue("UpdateSecretParameterResponse.Parameter.Description"));
-		parameter.setShareType(_ctx.stringValue("UpdateSecretParameterResponse.Parameter.ShareType"));
-		parameter.setParameterVersion(_ctx.integerValue("UpdateSecretParameterResponse.Parameter.ParameterVersion"));
-		parameter.setType(_ctx.stringValue("UpdateSecretParameterResponse.Parameter.Type"));
-		parameter.setConstraints(_ctx.stringValue("UpdateSecretParameterResponse.Parameter.Constraints"));
 		parameter.setKeyId(_ctx.stringValue("UpdateSecretParameterResponse.Parameter.KeyId"));
 		parameter.setTags(_ctx.stringValue("UpdateSecretParameterResponse.Parameter.Tags"));
+		parameter.setDescription(_ctx.stringValue("UpdateSecretParameterResponse.Parameter.Description"));
+		parameter.setConstraints(_ctx.stringValue("UpdateSecretParameterResponse.Parameter.Constraints"));
 		parameter.setResourceGroupId(_ctx.stringValue("UpdateSecretParameterResponse.Parameter.ResourceGroupId"));
+		parameter.setCreatedBy(_ctx.stringValue("UpdateSecretParameterResponse.Parameter.CreatedBy"));
+		parameter.setCreatedDate(_ctx.stringValue("UpdateSecretParameterResponse.Parameter.CreatedDate"));
+		parameter.setParameterVersion(_ctx.integerValue("UpdateSecretParameterResponse.Parameter.ParameterVersion"));
+		parameter.setName(_ctx.stringValue("UpdateSecretParameterResponse.Parameter.Name"));
+		parameter.setId(_ctx.stringValue("UpdateSecretParameterResponse.Parameter.Id"));
+		parameter.setShareType(_ctx.stringValue("UpdateSecretParameterResponse.Parameter.ShareType"));
 		updateSecretParameterResponse.setParameter(parameter);
 	 
 	 	return updateSecretParameterResponse;

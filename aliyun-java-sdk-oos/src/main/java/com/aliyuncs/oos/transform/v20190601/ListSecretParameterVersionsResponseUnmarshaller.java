@@ -27,23 +27,23 @@ public class ListSecretParameterVersionsResponseUnmarshaller {
 	public static ListSecretParameterVersionsResponse unmarshall(ListSecretParameterVersionsResponse listSecretParameterVersionsResponse, UnmarshallerContext _ctx) {
 		
 		listSecretParameterVersionsResponse.setRequestId(_ctx.stringValue("ListSecretParameterVersionsResponse.RequestId"));
-		listSecretParameterVersionsResponse.setMaxResults(_ctx.integerValue("ListSecretParameterVersionsResponse.MaxResults"));
-		listSecretParameterVersionsResponse.setNextToken(_ctx.stringValue("ListSecretParameterVersionsResponse.NextToken"));
-		listSecretParameterVersionsResponse.setTotalCount(_ctx.integerValue("ListSecretParameterVersionsResponse.TotalCount"));
-		listSecretParameterVersionsResponse.setName(_ctx.stringValue("ListSecretParameterVersionsResponse.Name"));
-		listSecretParameterVersionsResponse.setId(_ctx.stringValue("ListSecretParameterVersionsResponse.Id"));
 		listSecretParameterVersionsResponse.setType(_ctx.stringValue("ListSecretParameterVersionsResponse.Type"));
+		listSecretParameterVersionsResponse.setNextToken(_ctx.stringValue("ListSecretParameterVersionsResponse.NextToken"));
 		listSecretParameterVersionsResponse.setDescription(_ctx.stringValue("ListSecretParameterVersionsResponse.Description"));
-		listSecretParameterVersionsResponse.setCreatedDate(_ctx.stringValue("ListSecretParameterVersionsResponse.CreatedDate"));
+		listSecretParameterVersionsResponse.setMaxResults(_ctx.integerValue("ListSecretParameterVersionsResponse.MaxResults"));
 		listSecretParameterVersionsResponse.setCreatedBy(_ctx.stringValue("ListSecretParameterVersionsResponse.CreatedBy"));
+		listSecretParameterVersionsResponse.setCreatedDate(_ctx.stringValue("ListSecretParameterVersionsResponse.CreatedDate"));
+		listSecretParameterVersionsResponse.setName(_ctx.stringValue("ListSecretParameterVersionsResponse.Name"));
+		listSecretParameterVersionsResponse.setTotalCount(_ctx.integerValue("ListSecretParameterVersionsResponse.TotalCount"));
+		listSecretParameterVersionsResponse.setId(_ctx.stringValue("ListSecretParameterVersionsResponse.Id"));
 
 		List<ParameterVersion> parameterVersions = new ArrayList<ParameterVersion>();
 		for (int i = 0; i < _ctx.lengthValue("ListSecretParameterVersionsResponse.ParameterVersions.Length"); i++) {
 			ParameterVersion parameterVersion = new ParameterVersion();
-			parameterVersion.setUpdatedDate(_ctx.stringValue("ListSecretParameterVersionsResponse.ParameterVersions["+ i +"].UpdatedDate"));
-			parameterVersion.setUpdatedBy(_ctx.stringValue("ListSecretParameterVersionsResponse.ParameterVersions["+ i +"].UpdatedBy"));
 			parameterVersion.setParameterVersion(_ctx.integerValue("ListSecretParameterVersionsResponse.ParameterVersions["+ i +"].ParameterVersion"));
 			parameterVersion.setValue(_ctx.stringValue("ListSecretParameterVersionsResponse.ParameterVersions["+ i +"].Value"));
+			parameterVersion.setUpdatedDate(_ctx.stringValue("ListSecretParameterVersionsResponse.ParameterVersions["+ i +"].UpdatedDate"));
+			parameterVersion.setUpdatedBy(_ctx.stringValue("ListSecretParameterVersionsResponse.ParameterVersions["+ i +"].UpdatedBy"));
 
 			parameterVersions.add(parameterVersion);
 		}

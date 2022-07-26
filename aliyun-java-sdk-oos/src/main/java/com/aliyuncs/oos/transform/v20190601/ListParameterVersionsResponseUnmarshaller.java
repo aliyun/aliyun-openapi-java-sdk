@@ -27,23 +27,23 @@ public class ListParameterVersionsResponseUnmarshaller {
 	public static ListParameterVersionsResponse unmarshall(ListParameterVersionsResponse listParameterVersionsResponse, UnmarshallerContext _ctx) {
 		
 		listParameterVersionsResponse.setRequestId(_ctx.stringValue("ListParameterVersionsResponse.RequestId"));
-		listParameterVersionsResponse.setMaxResults(_ctx.integerValue("ListParameterVersionsResponse.MaxResults"));
-		listParameterVersionsResponse.setNextToken(_ctx.stringValue("ListParameterVersionsResponse.NextToken"));
-		listParameterVersionsResponse.setTotalCount(_ctx.integerValue("ListParameterVersionsResponse.TotalCount"));
-		listParameterVersionsResponse.setName(_ctx.stringValue("ListParameterVersionsResponse.Name"));
-		listParameterVersionsResponse.setId(_ctx.stringValue("ListParameterVersionsResponse.Id"));
 		listParameterVersionsResponse.setType(_ctx.stringValue("ListParameterVersionsResponse.Type"));
+		listParameterVersionsResponse.setNextToken(_ctx.stringValue("ListParameterVersionsResponse.NextToken"));
 		listParameterVersionsResponse.setDescription(_ctx.stringValue("ListParameterVersionsResponse.Description"));
-		listParameterVersionsResponse.setCreatedDate(_ctx.stringValue("ListParameterVersionsResponse.CreatedDate"));
+		listParameterVersionsResponse.setMaxResults(_ctx.integerValue("ListParameterVersionsResponse.MaxResults"));
 		listParameterVersionsResponse.setCreatedBy(_ctx.stringValue("ListParameterVersionsResponse.CreatedBy"));
+		listParameterVersionsResponse.setCreatedDate(_ctx.stringValue("ListParameterVersionsResponse.CreatedDate"));
+		listParameterVersionsResponse.setName(_ctx.stringValue("ListParameterVersionsResponse.Name"));
+		listParameterVersionsResponse.setTotalCount(_ctx.integerValue("ListParameterVersionsResponse.TotalCount"));
+		listParameterVersionsResponse.setId(_ctx.stringValue("ListParameterVersionsResponse.Id"));
 
 		List<ParameterVersion> parameterVersions = new ArrayList<ParameterVersion>();
 		for (int i = 0; i < _ctx.lengthValue("ListParameterVersionsResponse.ParameterVersions.Length"); i++) {
 			ParameterVersion parameterVersion = new ParameterVersion();
-			parameterVersion.setUpdatedDate(_ctx.stringValue("ListParameterVersionsResponse.ParameterVersions["+ i +"].UpdatedDate"));
-			parameterVersion.setUpdatedBy(_ctx.stringValue("ListParameterVersionsResponse.ParameterVersions["+ i +"].UpdatedBy"));
 			parameterVersion.setParameterVersion(_ctx.integerValue("ListParameterVersionsResponse.ParameterVersions["+ i +"].ParameterVersion"));
 			parameterVersion.setValue(_ctx.stringValue("ListParameterVersionsResponse.ParameterVersions["+ i +"].Value"));
+			parameterVersion.setUpdatedDate(_ctx.stringValue("ListParameterVersionsResponse.ParameterVersions["+ i +"].UpdatedDate"));
+			parameterVersion.setUpdatedBy(_ctx.stringValue("ListParameterVersionsResponse.ParameterVersions["+ i +"].UpdatedBy"));
 
 			parameterVersions.add(parameterVersion);
 		}

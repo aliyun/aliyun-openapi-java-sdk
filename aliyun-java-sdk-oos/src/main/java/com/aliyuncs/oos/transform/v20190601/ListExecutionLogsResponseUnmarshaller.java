@@ -27,17 +27,17 @@ public class ListExecutionLogsResponseUnmarshaller {
 	public static ListExecutionLogsResponse unmarshall(ListExecutionLogsResponse listExecutionLogsResponse, UnmarshallerContext _ctx) {
 		
 		listExecutionLogsResponse.setRequestId(_ctx.stringValue("ListExecutionLogsResponse.RequestId"));
-		listExecutionLogsResponse.setMaxResults(_ctx.integerValue("ListExecutionLogsResponse.MaxResults"));
 		listExecutionLogsResponse.setNextToken(_ctx.stringValue("ListExecutionLogsResponse.NextToken"));
 		listExecutionLogsResponse.setIsTruncated(_ctx.booleanValue("ListExecutionLogsResponse.IsTruncated"));
+		listExecutionLogsResponse.setMaxResults(_ctx.integerValue("ListExecutionLogsResponse.MaxResults"));
 
 		List<ExecutionLog> executionLogs = new ArrayList<ExecutionLog>();
 		for (int i = 0; i < _ctx.lengthValue("ListExecutionLogsResponse.ExecutionLogs.Length"); i++) {
 			ExecutionLog executionLog = new ExecutionLog();
-			executionLog.setTimestamp(_ctx.stringValue("ListExecutionLogsResponse.ExecutionLogs["+ i +"].Timestamp"));
-			executionLog.setMessage(_ctx.stringValue("ListExecutionLogsResponse.ExecutionLogs["+ i +"].Message"));
 			executionLog.setTaskExecutionId(_ctx.stringValue("ListExecutionLogsResponse.ExecutionLogs["+ i +"].TaskExecutionId"));
+			executionLog.setMessage(_ctx.stringValue("ListExecutionLogsResponse.ExecutionLogs["+ i +"].Message"));
 			executionLog.setLogType(_ctx.stringValue("ListExecutionLogsResponse.ExecutionLogs["+ i +"].LogType"));
+			executionLog.setTimestamp(_ctx.stringValue("ListExecutionLogsResponse.ExecutionLogs["+ i +"].Timestamp"));
 
 			executionLogs.add(executionLog);
 		}

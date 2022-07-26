@@ -25,11 +25,13 @@ import com.aliyuncs.oos.Endpoint;
 public class CreateApplicationGroupRequest extends RpcAcsRequest<CreateApplicationGroupResponse> {
 	   
 
-	private String deployRegionId;
-
 	private String clientToken;
 
 	private String description;
+
+	private String cmsGroupId;
+
+	private String deployRegionId;
 
 	private String applicationName;
 
@@ -45,17 +47,6 @@ public class CreateApplicationGroupRequest extends RpcAcsRequest<CreateApplicati
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getDeployRegionId() {
-		return this.deployRegionId;
-	}
-
-	public void setDeployRegionId(String deployRegionId) {
-		this.deployRegionId = deployRegionId;
-		if(deployRegionId != null){
-			putQueryParameter("DeployRegionId", deployRegionId);
-		}
 	}
 
 	public String getClientToken() {
@@ -77,6 +68,28 @@ public class CreateApplicationGroupRequest extends RpcAcsRequest<CreateApplicati
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getCmsGroupId() {
+		return this.cmsGroupId;
+	}
+
+	public void setCmsGroupId(String cmsGroupId) {
+		this.cmsGroupId = cmsGroupId;
+		if(cmsGroupId != null){
+			putQueryParameter("CmsGroupId", cmsGroupId);
+		}
+	}
+
+	public String getDeployRegionId() {
+		return this.deployRegionId;
+	}
+
+	public void setDeployRegionId(String deployRegionId) {
+		this.deployRegionId = deployRegionId;
+		if(deployRegionId != null){
+			putQueryParameter("DeployRegionId", deployRegionId);
 		}
 	}
 

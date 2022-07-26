@@ -28,18 +28,18 @@ public class CreateStateConfigurationResponseUnmarshaller {
 
 		StateConfiguration stateConfiguration = new StateConfiguration();
 		stateConfiguration.setCreateTime(_ctx.stringValue("CreateStateConfigurationResponse.StateConfiguration.CreateTime"));
-		stateConfiguration.setDescription(_ctx.stringValue("CreateStateConfigurationResponse.StateConfiguration.Description"));
-		stateConfiguration.setStateConfigurationId(_ctx.stringValue("CreateStateConfigurationResponse.StateConfiguration.StateConfigurationId"));
-		stateConfiguration.setTemplateId(_ctx.stringValue("CreateStateConfigurationResponse.StateConfiguration.TemplateId"));
-		stateConfiguration.setTemplateName(_ctx.stringValue("CreateStateConfigurationResponse.StateConfiguration.TemplateName"));
-		stateConfiguration.setTemplateVersion(_ctx.stringValue("CreateStateConfigurationResponse.StateConfiguration.TemplateVersion"));
-		stateConfiguration.setParameters(_ctx.mapValue("CreateStateConfigurationResponse.StateConfiguration.Parameters"));
-		stateConfiguration.setConfigureMode(_ctx.stringValue("CreateStateConfigurationResponse.StateConfiguration.ConfigureMode"));
-		stateConfiguration.setScheduleType(_ctx.stringValue("CreateStateConfigurationResponse.StateConfiguration.ScheduleType"));
-		stateConfiguration.setScheduleExpression(_ctx.stringValue("CreateStateConfigurationResponse.StateConfiguration.ScheduleExpression"));
 		stateConfiguration.setTargets(_ctx.stringValue("CreateStateConfigurationResponse.StateConfiguration.Targets"));
 		stateConfiguration.setTags(_ctx.mapValue("CreateStateConfigurationResponse.StateConfiguration.Tags"));
+		stateConfiguration.setStateConfigurationId(_ctx.stringValue("CreateStateConfigurationResponse.StateConfiguration.StateConfigurationId"));
+		stateConfiguration.setScheduleExpression(_ctx.stringValue("CreateStateConfigurationResponse.StateConfiguration.ScheduleExpression"));
+		stateConfiguration.setTemplateName(_ctx.stringValue("CreateStateConfigurationResponse.StateConfiguration.TemplateName"));
+		stateConfiguration.setTemplateVersion(_ctx.stringValue("CreateStateConfigurationResponse.StateConfiguration.TemplateVersion"));
+		stateConfiguration.setConfigureMode(_ctx.stringValue("CreateStateConfigurationResponse.StateConfiguration.ConfigureMode"));
+		stateConfiguration.setScheduleType(_ctx.stringValue("CreateStateConfigurationResponse.StateConfiguration.ScheduleType"));
+		stateConfiguration.setParameters(_ctx.mapValue("CreateStateConfigurationResponse.StateConfiguration.Parameters"));
+		stateConfiguration.setDescription(_ctx.stringValue("CreateStateConfigurationResponse.StateConfiguration.Description"));
 		stateConfiguration.setResourceGroupId(_ctx.stringValue("CreateStateConfigurationResponse.StateConfiguration.ResourceGroupId"));
+		stateConfiguration.setTemplateId(_ctx.stringValue("CreateStateConfigurationResponse.StateConfiguration.TemplateId"));
 		createStateConfigurationResponse.setStateConfiguration(stateConfiguration);
 	 
 	 	return createStateConfigurationResponse;

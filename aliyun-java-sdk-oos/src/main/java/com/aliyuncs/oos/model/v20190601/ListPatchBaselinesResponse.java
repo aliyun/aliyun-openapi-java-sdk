@@ -25,13 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListPatchBaselinesResponse extends AcsResponse {
 
+	private String nextToken;
+
 	private String requestId;
 
 	private Integer maxResults;
 
-	private String nextToken;
-
 	private List<PatchBaseline> patchBaselines;
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,14 +57,6 @@ public class ListPatchBaselinesResponse extends AcsResponse {
 		this.maxResults = maxResults;
 	}
 
-	public String getNextToken() {
-		return this.nextToken;
-	}
-
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-	}
-
 	public List<PatchBaseline> getPatchBaselines() {
 		return this.patchBaselines;
 	}
@@ -67,56 +67,48 @@ public class ListPatchBaselinesResponse extends AcsResponse {
 
 	public static class PatchBaseline {
 
-		private String id;
+		private String operationSystem;
 
-		private String name;
+		private Boolean isDefault;
 
-		private String createdDate;
-
-		private String createdBy;
+		private String description;
 
 		private String updatedDate;
 
 		private String updatedBy;
 
-		private String description;
+		private String createdBy;
+
+		private String createdDate;
+
+		private String name;
+
+		private String id;
 
 		private String shareType;
 
-		private String operationSystem;
-
-		private Boolean isDefault;
-
-		public String getId() {
-			return this.id;
+		public String getOperationSystem() {
+			return this.operationSystem;
 		}
 
-		public void setId(String id) {
-			this.id = id;
+		public void setOperationSystem(String operationSystem) {
+			this.operationSystem = operationSystem;
 		}
 
-		public String getName() {
-			return this.name;
+		public Boolean getIsDefault() {
+			return this.isDefault;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+		public void setIsDefault(Boolean isDefault) {
+			this.isDefault = isDefault;
 		}
 
-		public String getCreatedDate() {
-			return this.createdDate;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setCreatedDate(String createdDate) {
-			this.createdDate = createdDate;
-		}
-
-		public String getCreatedBy() {
-			return this.createdBy;
-		}
-
-		public void setCreatedBy(String createdBy) {
-			this.createdBy = createdBy;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getUpdatedDate() {
@@ -135,12 +127,36 @@ public class ListPatchBaselinesResponse extends AcsResponse {
 			this.updatedBy = updatedBy;
 		}
 
-		public String getDescription() {
-			return this.description;
+		public String getCreatedBy() {
+			return this.createdBy;
 		}
 
-		public void setDescription(String description) {
-			this.description = description;
+		public void setCreatedBy(String createdBy) {
+			this.createdBy = createdBy;
+		}
+
+		public String getCreatedDate() {
+			return this.createdDate;
+		}
+
+		public void setCreatedDate(String createdDate) {
+			this.createdDate = createdDate;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
 		}
 
 		public String getShareType() {
@@ -149,22 +165,6 @@ public class ListPatchBaselinesResponse extends AcsResponse {
 
 		public void setShareType(String shareType) {
 			this.shareType = shareType;
-		}
-
-		public String getOperationSystem() {
-			return this.operationSystem;
-		}
-
-		public void setOperationSystem(String operationSystem) {
-			this.operationSystem = operationSystem;
-		}
-
-		public Boolean getIsDefault() {
-			return this.isDefault;
-		}
-
-		public void setIsDefault(Boolean isDefault) {
-			this.isDefault = isDefault;
 		}
 	}
 

@@ -28,22 +28,22 @@ public class GetTemplateResponseUnmarshaller {
 		getTemplateResponse.setContent(_ctx.stringValue("GetTemplateResponse.Content"));
 
 		Template template = new Template();
-		template.setTemplateName(_ctx.stringValue("GetTemplateResponse.Template.TemplateName"));
-		template.setTemplateId(_ctx.stringValue("GetTemplateResponse.Template.TemplateId"));
-		template.setCreatedDate(_ctx.stringValue("GetTemplateResponse.Template.CreatedDate"));
-		template.setCreatedBy(_ctx.stringValue("GetTemplateResponse.Template.CreatedBy"));
+		template.setHash(_ctx.stringValue("GetTemplateResponse.Template.Hash"));
 		template.setUpdatedDate(_ctx.stringValue("GetTemplateResponse.Template.UpdatedDate"));
 		template.setUpdatedBy(_ctx.stringValue("GetTemplateResponse.Template.UpdatedBy"));
-		template.setHash(_ctx.stringValue("GetTemplateResponse.Template.Hash"));
-		template.setDescription(_ctx.stringValue("GetTemplateResponse.Template.Description"));
-		template.setShareType(_ctx.stringValue("GetTemplateResponse.Template.ShareType"));
-		template.setTemplateFormat(_ctx.stringValue("GetTemplateResponse.Template.TemplateFormat"));
-		template.setTemplateVersion(_ctx.stringValue("GetTemplateResponse.Template.TemplateVersion"));
-		template.setHasTrigger(_ctx.booleanValue("GetTemplateResponse.Template.HasTrigger"));
-		template.setTags(_ctx.mapValue("GetTemplateResponse.Template.Tags"));
 		template.setTemplateType(_ctx.stringValue("GetTemplateResponse.Template.TemplateType"));
-		template.setVersionName(_ctx.stringValue("GetTemplateResponse.Template.VersionName"));
+		template.setTags(_ctx.mapValue("GetTemplateResponse.Template.Tags"));
+		template.setTemplateName(_ctx.stringValue("GetTemplateResponse.Template.TemplateName"));
+		template.setTemplateVersion(_ctx.stringValue("GetTemplateResponse.Template.TemplateVersion"));
+		template.setTemplateFormat(_ctx.stringValue("GetTemplateResponse.Template.TemplateFormat"));
+		template.setDescription(_ctx.stringValue("GetTemplateResponse.Template.Description"));
 		template.setResourceGroupId(_ctx.stringValue("GetTemplateResponse.Template.ResourceGroupId"));
+		template.setCreatedBy(_ctx.stringValue("GetTemplateResponse.Template.CreatedBy"));
+		template.setCreatedDate(_ctx.stringValue("GetTemplateResponse.Template.CreatedDate"));
+		template.setVersionName(_ctx.stringValue("GetTemplateResponse.Template.VersionName"));
+		template.setTemplateId(_ctx.stringValue("GetTemplateResponse.Template.TemplateId"));
+		template.setHasTrigger(_ctx.booleanValue("GetTemplateResponse.Template.HasTrigger"));
+		template.setShareType(_ctx.stringValue("GetTemplateResponse.Template.ShareType"));
 		getTemplateResponse.setTemplate(template);
 	 
 	 	return getTemplateResponse;

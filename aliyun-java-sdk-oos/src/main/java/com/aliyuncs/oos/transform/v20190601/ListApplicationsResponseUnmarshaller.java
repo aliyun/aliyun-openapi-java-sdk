@@ -28,18 +28,18 @@ public class ListApplicationsResponseUnmarshaller {
 	public static ListApplicationsResponse unmarshall(ListApplicationsResponse listApplicationsResponse, UnmarshallerContext _ctx) {
 		
 		listApplicationsResponse.setRequestId(_ctx.stringValue("ListApplicationsResponse.RequestId"));
-		listApplicationsResponse.setMaxResults(_ctx.integerValue("ListApplicationsResponse.MaxResults"));
 		listApplicationsResponse.setNextToken(_ctx.stringValue("ListApplicationsResponse.NextToken"));
+		listApplicationsResponse.setMaxResults(_ctx.integerValue("ListApplicationsResponse.MaxResults"));
 
 		List<Application> applications = new ArrayList<Application>();
 		for (int i = 0; i < _ctx.lengthValue("ListApplicationsResponse.Applications.Length"); i++) {
 			Application application = new Application();
-			application.setName(_ctx.stringValue("ListApplicationsResponse.Applications["+ i +"].Name"));
 			application.setDescription(_ctx.stringValue("ListApplicationsResponse.Applications["+ i +"].Description"));
-			application.setCreateDate(_ctx.stringValue("ListApplicationsResponse.Applications["+ i +"].CreateDate"));
 			application.setUpdateDate(_ctx.stringValue("ListApplicationsResponse.Applications["+ i +"].UpdateDate"));
 			application.setResourceGroupId(_ctx.stringValue("ListApplicationsResponse.Applications["+ i +"].ResourceGroupId"));
 			application.setTags(_ctx.mapValue("ListApplicationsResponse.Applications["+ i +"].Tags"));
+			application.setName(_ctx.stringValue("ListApplicationsResponse.Applications["+ i +"].Name"));
+			application.setCreateDate(_ctx.stringValue("ListApplicationsResponse.Applications["+ i +"].CreateDate"));
 
 			applications.add(application);
 		}

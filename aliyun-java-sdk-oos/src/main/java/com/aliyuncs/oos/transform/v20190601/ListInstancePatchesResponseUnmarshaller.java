@@ -27,18 +27,18 @@ public class ListInstancePatchesResponseUnmarshaller {
 	public static ListInstancePatchesResponse unmarshall(ListInstancePatchesResponse listInstancePatchesResponse, UnmarshallerContext _ctx) {
 		
 		listInstancePatchesResponse.setRequestId(_ctx.stringValue("ListInstancePatchesResponse.RequestId"));
-		listInstancePatchesResponse.setMaxResults(_ctx.integerValue("ListInstancePatchesResponse.MaxResults"));
 		listInstancePatchesResponse.setNextToken(_ctx.stringValue("ListInstancePatchesResponse.NextToken"));
+		listInstancePatchesResponse.setMaxResults(_ctx.integerValue("ListInstancePatchesResponse.MaxResults"));
 
 		List<Patch> patches = new ArrayList<Patch>();
 		for (int i = 0; i < _ctx.lengthValue("ListInstancePatchesResponse.Patches.Length"); i++) {
 			Patch patch = new Patch();
-			patch.setClassification(_ctx.stringValue("ListInstancePatchesResponse.Patches["+ i +"].Classification"));
-			patch.setInstalledTime(_ctx.stringValue("ListInstancePatchesResponse.Patches["+ i +"].InstalledTime"));
-			patch.setKBId(_ctx.stringValue("ListInstancePatchesResponse.Patches["+ i +"].KBId"));
 			patch.setSeverity(_ctx.stringValue("ListInstancePatchesResponse.Patches["+ i +"].Severity"));
 			patch.setStatus(_ctx.stringValue("ListInstancePatchesResponse.Patches["+ i +"].Status"));
+			patch.setInstalledTime(_ctx.stringValue("ListInstancePatchesResponse.Patches["+ i +"].InstalledTime"));
+			patch.setKBId(_ctx.stringValue("ListInstancePatchesResponse.Patches["+ i +"].KBId"));
 			patch.setTitle(_ctx.stringValue("ListInstancePatchesResponse.Patches["+ i +"].Title"));
+			patch.setClassification(_ctx.stringValue("ListInstancePatchesResponse.Patches["+ i +"].Classification"));
 
 			patches.add(patch);
 		}

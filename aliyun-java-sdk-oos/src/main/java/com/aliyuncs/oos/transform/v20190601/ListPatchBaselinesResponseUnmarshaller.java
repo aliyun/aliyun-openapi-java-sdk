@@ -27,22 +27,22 @@ public class ListPatchBaselinesResponseUnmarshaller {
 	public static ListPatchBaselinesResponse unmarshall(ListPatchBaselinesResponse listPatchBaselinesResponse, UnmarshallerContext _ctx) {
 		
 		listPatchBaselinesResponse.setRequestId(_ctx.stringValue("ListPatchBaselinesResponse.RequestId"));
-		listPatchBaselinesResponse.setMaxResults(_ctx.integerValue("ListPatchBaselinesResponse.MaxResults"));
 		listPatchBaselinesResponse.setNextToken(_ctx.stringValue("ListPatchBaselinesResponse.NextToken"));
+		listPatchBaselinesResponse.setMaxResults(_ctx.integerValue("ListPatchBaselinesResponse.MaxResults"));
 
 		List<PatchBaseline> patchBaselines = new ArrayList<PatchBaseline>();
 		for (int i = 0; i < _ctx.lengthValue("ListPatchBaselinesResponse.PatchBaselines.Length"); i++) {
 			PatchBaseline patchBaseline = new PatchBaseline();
-			patchBaseline.setId(_ctx.stringValue("ListPatchBaselinesResponse.PatchBaselines["+ i +"].Id"));
-			patchBaseline.setName(_ctx.stringValue("ListPatchBaselinesResponse.PatchBaselines["+ i +"].Name"));
-			patchBaseline.setCreatedDate(_ctx.stringValue("ListPatchBaselinesResponse.PatchBaselines["+ i +"].CreatedDate"));
-			patchBaseline.setCreatedBy(_ctx.stringValue("ListPatchBaselinesResponse.PatchBaselines["+ i +"].CreatedBy"));
-			patchBaseline.setUpdatedDate(_ctx.stringValue("ListPatchBaselinesResponse.PatchBaselines["+ i +"].UpdatedDate"));
-			patchBaseline.setUpdatedBy(_ctx.stringValue("ListPatchBaselinesResponse.PatchBaselines["+ i +"].UpdatedBy"));
-			patchBaseline.setDescription(_ctx.stringValue("ListPatchBaselinesResponse.PatchBaselines["+ i +"].Description"));
-			patchBaseline.setShareType(_ctx.stringValue("ListPatchBaselinesResponse.PatchBaselines["+ i +"].ShareType"));
 			patchBaseline.setOperationSystem(_ctx.stringValue("ListPatchBaselinesResponse.PatchBaselines["+ i +"].OperationSystem"));
 			patchBaseline.setIsDefault(_ctx.booleanValue("ListPatchBaselinesResponse.PatchBaselines["+ i +"].IsDefault"));
+			patchBaseline.setDescription(_ctx.stringValue("ListPatchBaselinesResponse.PatchBaselines["+ i +"].Description"));
+			patchBaseline.setUpdatedDate(_ctx.stringValue("ListPatchBaselinesResponse.PatchBaselines["+ i +"].UpdatedDate"));
+			patchBaseline.setUpdatedBy(_ctx.stringValue("ListPatchBaselinesResponse.PatchBaselines["+ i +"].UpdatedBy"));
+			patchBaseline.setCreatedBy(_ctx.stringValue("ListPatchBaselinesResponse.PatchBaselines["+ i +"].CreatedBy"));
+			patchBaseline.setCreatedDate(_ctx.stringValue("ListPatchBaselinesResponse.PatchBaselines["+ i +"].CreatedDate"));
+			patchBaseline.setName(_ctx.stringValue("ListPatchBaselinesResponse.PatchBaselines["+ i +"].Name"));
+			patchBaseline.setId(_ctx.stringValue("ListPatchBaselinesResponse.PatchBaselines["+ i +"].Id"));
+			patchBaseline.setShareType(_ctx.stringValue("ListPatchBaselinesResponse.PatchBaselines["+ i +"].ShareType"));
 
 			patchBaselines.add(patchBaseline);
 		}

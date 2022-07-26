@@ -27,12 +27,12 @@ public class GetApplicationResponseUnmarshaller {
 		getApplicationResponse.setRequestId(_ctx.stringValue("GetApplicationResponse.RequestId"));
 
 		Application application = new Application();
-		application.setName(_ctx.stringValue("GetApplicationResponse.Application.Name"));
 		application.setDescription(_ctx.stringValue("GetApplicationResponse.Application.Description"));
+		application.setUpdateDate(_ctx.stringValue("GetApplicationResponse.Application.UpdateDate"));
 		application.setResourceGroupId(_ctx.stringValue("GetApplicationResponse.Application.ResourceGroupId"));
-		application.setCreatedDate(_ctx.stringValue("GetApplicationResponse.Application.CreatedDate"));
-		application.setUpdatedDate(_ctx.stringValue("GetApplicationResponse.Application.UpdatedDate"));
 		application.setTags(_ctx.mapValue("GetApplicationResponse.Application.Tags"));
+		application.setName(_ctx.stringValue("GetApplicationResponse.Application.Name"));
+		application.setCreateDate(_ctx.stringValue("GetApplicationResponse.Application.CreateDate"));
 		getApplicationResponse.setApplication(application);
 	 
 	 	return getApplicationResponse;

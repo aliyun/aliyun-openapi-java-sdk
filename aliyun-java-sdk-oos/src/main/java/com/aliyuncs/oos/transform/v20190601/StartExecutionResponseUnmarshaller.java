@@ -31,29 +31,29 @@ public class StartExecutionResponseUnmarshaller {
 		startExecutionResponse.setRequestId(_ctx.stringValue("StartExecutionResponse.RequestId"));
 
 		Execution execution = new Execution();
-		execution.setExecutionId(_ctx.stringValue("StartExecutionResponse.Execution.ExecutionId"));
-		execution.setTemplateName(_ctx.stringValue("StartExecutionResponse.Execution.TemplateName"));
-		execution.setTemplateId(_ctx.stringValue("StartExecutionResponse.Execution.TemplateId"));
-		execution.setTemplateVersion(_ctx.stringValue("StartExecutionResponse.Execution.TemplateVersion"));
-		execution.setMode(_ctx.stringValue("StartExecutionResponse.Execution.Mode"));
-		execution.setLoopMode(_ctx.stringValue("StartExecutionResponse.Execution.LoopMode"));
-		execution.setExecutedBy(_ctx.stringValue("StartExecutionResponse.Execution.ExecutedBy"));
-		execution.setStartDate(_ctx.stringValue("StartExecutionResponse.Execution.StartDate"));
-		execution.setEndDate(_ctx.stringValue("StartExecutionResponse.Execution.EndDate"));
-		execution.setCreateDate(_ctx.stringValue("StartExecutionResponse.Execution.CreateDate"));
-		execution.setUpdateDate(_ctx.stringValue("StartExecutionResponse.Execution.UpdateDate"));
-		execution.setStatus(_ctx.stringValue("StartExecutionResponse.Execution.Status"));
-		execution.setStatusMessage(_ctx.stringValue("StartExecutionResponse.Execution.StatusMessage"));
-		execution.setParentExecutionId(_ctx.stringValue("StartExecutionResponse.Execution.ParentExecutionId"));
-		execution.setParameters(_ctx.stringValue("StartExecutionResponse.Execution.Parameters"));
 		execution.setOutputs(_ctx.stringValue("StartExecutionResponse.Execution.Outputs"));
-		execution.setSafetyCheck(_ctx.stringValue("StartExecutionResponse.Execution.SafetyCheck"));
+		execution.setStatus(_ctx.stringValue("StartExecutionResponse.Execution.Status"));
+		execution.setEndDate(_ctx.stringValue("StartExecutionResponse.Execution.EndDate"));
+		execution.setExecutedBy(_ctx.stringValue("StartExecutionResponse.Execution.ExecutedBy"));
 		execution.setIsParent(_ctx.booleanValue("StartExecutionResponse.Execution.IsParent"));
-		execution.setCounters(_ctx.mapValue("StartExecutionResponse.Execution.Counters"));
-		execution.setRamRole(_ctx.stringValue("StartExecutionResponse.Execution.RamRole"));
 		execution.setTags(_ctx.mapValue("StartExecutionResponse.Execution.Tags"));
+		execution.setStartDate(_ctx.stringValue("StartExecutionResponse.Execution.StartDate"));
+		execution.setSafetyCheck(_ctx.stringValue("StartExecutionResponse.Execution.SafetyCheck"));
+		execution.setMode(_ctx.stringValue("StartExecutionResponse.Execution.Mode"));
+		execution.setTemplateName(_ctx.stringValue("StartExecutionResponse.Execution.TemplateName"));
+		execution.setCreateDate(_ctx.stringValue("StartExecutionResponse.Execution.CreateDate"));
+		execution.setTemplateVersion(_ctx.stringValue("StartExecutionResponse.Execution.TemplateVersion"));
+		execution.setExecutionId(_ctx.stringValue("StartExecutionResponse.Execution.ExecutionId"));
+		execution.setParameters(_ctx.stringValue("StartExecutionResponse.Execution.Parameters"));
 		execution.setDescription(_ctx.stringValue("StartExecutionResponse.Execution.Description"));
+		execution.setCounters(_ctx.mapValue("StartExecutionResponse.Execution.Counters"));
+		execution.setUpdateDate(_ctx.stringValue("StartExecutionResponse.Execution.UpdateDate"));
 		execution.setResourceGroupId(_ctx.stringValue("StartExecutionResponse.Execution.ResourceGroupId"));
+		execution.setParentExecutionId(_ctx.stringValue("StartExecutionResponse.Execution.ParentExecutionId"));
+		execution.setRamRole(_ctx.stringValue("StartExecutionResponse.Execution.RamRole"));
+		execution.setTemplateId(_ctx.stringValue("StartExecutionResponse.Execution.TemplateId"));
+		execution.setStatusMessage(_ctx.stringValue("StartExecutionResponse.Execution.StatusMessage"));
+		execution.setLoopMode(_ctx.stringValue("StartExecutionResponse.Execution.LoopMode"));
 
 		List<CurrentTask> currentTasks = new ArrayList<CurrentTask>();
 		for (int i = 0; i < _ctx.lengthValue("StartExecutionResponse.Execution.CurrentTasks.Length"); i++) {

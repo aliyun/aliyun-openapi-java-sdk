@@ -25,13 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListResourceExecutionStatusResponse extends AcsResponse {
 
+	private String nextToken;
+
 	private String requestId;
 
 	private Integer maxResults;
 
-	private String nextToken;
-
 	private List<Status> resourceExecutionStatus;
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,14 +57,6 @@ public class ListResourceExecutionStatusResponse extends AcsResponse {
 		this.maxResults = maxResults;
 	}
 
-	public String getNextToken() {
-		return this.nextToken;
-	}
-
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-	}
-
 	public List<Status> getResourceExecutionStatus() {
 		return this.resourceExecutionStatus;
 	}
@@ -67,30 +67,22 @@ public class ListResourceExecutionStatusResponse extends AcsResponse {
 
 	public static class Status {
 
-		private String resourceId;
-
-		private String executionTime;
+		private String outputs;
 
 		private String status;
 
-		private String outputs;
+		private String executionTime;
+
+		private String resourceId;
 
 		private String executionId;
 
-		public String getResourceId() {
-			return this.resourceId;
+		public String getOutputs() {
+			return this.outputs;
 		}
 
-		public void setResourceId(String resourceId) {
-			this.resourceId = resourceId;
-		}
-
-		public String getExecutionTime() {
-			return this.executionTime;
-		}
-
-		public void setExecutionTime(String executionTime) {
-			this.executionTime = executionTime;
+		public void setOutputs(String outputs) {
+			this.outputs = outputs;
 		}
 
 		public String getStatus() {
@@ -101,12 +93,20 @@ public class ListResourceExecutionStatusResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getOutputs() {
-			return this.outputs;
+		public String getExecutionTime() {
+			return this.executionTime;
 		}
 
-		public void setOutputs(String outputs) {
-			this.outputs = outputs;
+		public void setExecutionTime(String executionTime) {
+			this.executionTime = executionTime;
+		}
+
+		public String getResourceId() {
+			return this.resourceId;
+		}
+
+		public void setResourceId(String resourceId) {
+			this.resourceId = resourceId;
 		}
 
 		public String getExecutionId() {

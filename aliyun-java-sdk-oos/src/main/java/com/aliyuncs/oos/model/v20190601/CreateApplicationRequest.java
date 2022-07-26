@@ -29,9 +29,9 @@ public class CreateApplicationRequest extends RpcAcsRequest<CreateApplicationRes
 
 	private String description;
 
-	private String tags;
-
 	private String resourceGroupId;
+
+	private String tags;
 
 	private String name;
 	public CreateApplicationRequest() {
@@ -65,17 +65,6 @@ public class CreateApplicationRequest extends RpcAcsRequest<CreateApplicationRes
 		}
 	}
 
-	public String getTags() {
-		return this.tags;
-	}
-
-	public void setTags(String tags) {
-		this.tags = tags;
-		if(tags != null){
-			putQueryParameter("Tags", tags);
-		}
-	}
-
 	public String getResourceGroupId() {
 		return this.resourceGroupId;
 	}
@@ -84,6 +73,17 @@ public class CreateApplicationRequest extends RpcAcsRequest<CreateApplicationRes
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getTags() {
+		return this.tags;
+	}
+
+	public void setTags(String tags) {
+		this.tags = tags;
+		if(tags != null){
+			putQueryParameter("Tags", tags);
 		}
 	}
 

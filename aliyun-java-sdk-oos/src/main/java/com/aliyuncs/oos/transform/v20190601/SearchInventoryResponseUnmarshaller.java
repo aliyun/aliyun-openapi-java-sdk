@@ -27,8 +27,8 @@ public class SearchInventoryResponseUnmarshaller {
 	public static SearchInventoryResponse unmarshall(SearchInventoryResponse searchInventoryResponse, UnmarshallerContext _ctx) {
 		
 		searchInventoryResponse.setRequestId(_ctx.stringValue("SearchInventoryResponse.RequestId"));
-		searchInventoryResponse.setMaxResults(_ctx.integerValue("SearchInventoryResponse.MaxResults"));
 		searchInventoryResponse.setNextToken(_ctx.stringValue("SearchInventoryResponse.NextToken"));
+		searchInventoryResponse.setMaxResults(_ctx.integerValue("SearchInventoryResponse.MaxResults"));
 
 		List<Map<Object, Object>> entities = _ctx.listMapValue("SearchInventoryResponse.Entities");
 		searchInventoryResponse.setEntities(entities);

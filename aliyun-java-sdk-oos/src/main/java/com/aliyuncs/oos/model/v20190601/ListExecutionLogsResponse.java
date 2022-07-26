@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListExecutionLogsResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Integer maxResults;
-
 	private String nextToken;
+
+	private String requestId;
 
 	private Boolean isTruncated;
 
+	private Integer maxResults;
+
 	private List<ExecutionLog> executionLogs;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getMaxResults() {
-		return this.maxResults;
-	}
-
-	public void setMaxResults(Integer maxResults) {
-		this.maxResults = maxResults;
-	}
 
 	public String getNextToken() {
 		return this.nextToken;
@@ -59,12 +43,28 @@ public class ListExecutionLogsResponse extends AcsResponse {
 		this.nextToken = nextToken;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public Boolean getIsTruncated() {
 		return this.isTruncated;
 	}
 
 	public void setIsTruncated(Boolean isTruncated) {
 		this.isTruncated = isTruncated;
+	}
+
+	public Integer getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
 	}
 
 	public List<ExecutionLog> getExecutionLogs() {
@@ -77,20 +77,20 @@ public class ListExecutionLogsResponse extends AcsResponse {
 
 	public static class ExecutionLog {
 
-		private String timestamp;
+		private String taskExecutionId;
 
 		private String message;
 
-		private String taskExecutionId;
-
 		private String logType;
 
-		public String getTimestamp() {
-			return this.timestamp;
+		private String timestamp;
+
+		public String getTaskExecutionId() {
+			return this.taskExecutionId;
 		}
 
-		public void setTimestamp(String timestamp) {
-			this.timestamp = timestamp;
+		public void setTaskExecutionId(String taskExecutionId) {
+			this.taskExecutionId = taskExecutionId;
 		}
 
 		public String getMessage() {
@@ -101,20 +101,20 @@ public class ListExecutionLogsResponse extends AcsResponse {
 			this.message = message;
 		}
 
-		public String getTaskExecutionId() {
-			return this.taskExecutionId;
-		}
-
-		public void setTaskExecutionId(String taskExecutionId) {
-			this.taskExecutionId = taskExecutionId;
-		}
-
 		public String getLogType() {
 			return this.logType;
 		}
 
 		public void setLogType(String logType) {
 			this.logType = logType;
+		}
+
+		public String getTimestamp() {
+			return this.timestamp;
+		}
+
+		public void setTimestamp(String timestamp) {
+			this.timestamp = timestamp;
 		}
 	}
 

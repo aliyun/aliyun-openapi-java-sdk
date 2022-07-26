@@ -46,62 +46,38 @@ public class GetApplicationGroupResponse extends AcsResponse {
 
 	public static class ApplicationGroup {
 
-		private String name;
-
-		private String applicationName;
-
-		private String createDate;
-
-		private String updateDate;
-
-		private String description;
+		private String cmsGroupId;
 
 		private String deployRegionId;
 
+		private String description;
+
+		private String updateDate;
+
 		private String importTagKey;
+
+		private String applicationName;
 
 		private String importTagValue;
 
-		private String cmsGroupId;
+		private String name;
 
-		public String getName() {
-			return this.name;
+		private String createDate;
+
+		private String deployParameters;
+
+		private String status;
+
+		private String statusReason;
+
+		private String deployOutputs;
+
+		public String getCmsGroupId() {
+			return this.cmsGroupId;
 		}
 
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getApplicationName() {
-			return this.applicationName;
-		}
-
-		public void setApplicationName(String applicationName) {
-			this.applicationName = applicationName;
-		}
-
-		public String getCreateDate() {
-			return this.createDate;
-		}
-
-		public void setCreateDate(String createDate) {
-			this.createDate = createDate;
-		}
-
-		public String getUpdateDate() {
-			return this.updateDate;
-		}
-
-		public void setUpdateDate(String updateDate) {
-			this.updateDate = updateDate;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
+		public void setCmsGroupId(String cmsGroupId) {
+			this.cmsGroupId = cmsGroupId;
 		}
 
 		public String getDeployRegionId() {
@@ -112,12 +88,36 @@ public class GetApplicationGroupResponse extends AcsResponse {
 			this.deployRegionId = deployRegionId;
 		}
 
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getUpdateDate() {
+			return this.updateDate;
+		}
+
+		public void setUpdateDate(String updateDate) {
+			this.updateDate = updateDate;
+		}
+
 		public String getImportTagKey() {
 			return this.importTagKey;
 		}
 
 		public void setImportTagKey(String importTagKey) {
 			this.importTagKey = importTagKey;
+		}
+
+		public String getApplicationName() {
+			return this.applicationName;
+		}
+
+		public void setApplicationName(String applicationName) {
+			this.applicationName = applicationName;
 		}
 
 		public String getImportTagValue() {
@@ -128,12 +128,52 @@ public class GetApplicationGroupResponse extends AcsResponse {
 			this.importTagValue = importTagValue;
 		}
 
-		public String getCmsGroupId() {
-			return this.cmsGroupId;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setCmsGroupId(String cmsGroupId) {
-			this.cmsGroupId = cmsGroupId;
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getCreateDate() {
+			return this.createDate;
+		}
+
+		public void setCreateDate(String createDate) {
+			this.createDate = createDate;
+		}
+
+		public String getDeployParameters() {
+			return this.deployParameters;
+		}
+
+		public void setDeployParameters(String deployParameters) {
+			this.deployParameters = deployParameters;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getStatusReason() {
+			return this.statusReason;
+		}
+
+		public void setStatusReason(String statusReason) {
+			this.statusReason = statusReason;
+		}
+
+		public String getDeployOutputs() {
+			return this.deployOutputs;
+		}
+
+		public void setDeployOutputs(String deployOutputs) {
+			this.deployOutputs = deployOutputs;
 		}
 	}
 

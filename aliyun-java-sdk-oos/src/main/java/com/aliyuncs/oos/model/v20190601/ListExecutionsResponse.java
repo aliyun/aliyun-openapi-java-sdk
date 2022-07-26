@@ -26,13 +26,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListExecutionsResponse extends AcsResponse {
 
+	private String nextToken;
+
 	private String requestId;
 
 	private Integer maxResults;
 
-	private String nextToken;
-
 	private List<Execution> executions;
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -50,14 +58,6 @@ public class ListExecutionsResponse extends AcsResponse {
 		this.maxResults = maxResults;
 	}
 
-	public String getNextToken() {
-		return this.nextToken;
-	}
-
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-	}
-
 	public List<Execution> getExecutions() {
 		return this.executions;
 	}
@@ -68,98 +68,114 @@ public class ListExecutionsResponse extends AcsResponse {
 
 	public static class Execution {
 
-		private String executionId;
+		private String status;
 
-		private String templateName;
+		private String waitingStatus;
 
-		private String templateId;
+		private String targets;
 
-		private String templateVersion;
+		private String statusReason;
+
+		private Map<Object,Object> tags;
+
+		private String lastSuccessfulTriggerTime;
 
 		private String mode;
 
-		private String executedBy;
+		private String safetyCheck;
 
-		private String startDate;
+		private String templateName;
 
-		private String endDate;
+		private String templateVersion;
 
 		private String createDate;
 
 		private String updateDate;
 
-		private String status;
-
-		private String statusMessage;
-
-		private String statusReason;
-
-		private String waitingStatus;
-
-		private String parentExecutionId;
-
-		private Map<Object,Object> parameters;
-
-		private String outputs;
-
-		private String safetyCheck;
-
-		private Boolean isParent;
-
-		private String ramRole;
-
-		private Map<Object,Object> counters;
-
-		private String category;
-
-		private Map<Object,Object> tags;
-
 		private String description;
-
-		private String targets;
 
 		private String lastTriggerTime;
 
+		private String parentExecutionId;
+
 		private String lastTriggerStatus;
 
-		private String lastSuccessfulTriggerTime;
+		private String statusMessage;
 
-		private String resourceStatus;
+		private String outputs;
+
+		private String executedBy;
+
+		private String endDate;
+
+		private Boolean isParent;
+
+		private String startDate;
+
+		private String executionId;
+
+		private Map<Object,Object> parameters;
+
+		private Map<Object,Object> counters;
 
 		private String resourceGroupId;
 
+		private String category;
+
+		private String templateId;
+
+		private String ramRole;
+
+		private String resourceStatus;
+
 		private List<CurrentTask> currentTasks;
 
-		public String getExecutionId() {
-			return this.executionId;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setExecutionId(String executionId) {
-			this.executionId = executionId;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
-		public String getTemplateName() {
-			return this.templateName;
+		public String getWaitingStatus() {
+			return this.waitingStatus;
 		}
 
-		public void setTemplateName(String templateName) {
-			this.templateName = templateName;
+		public void setWaitingStatus(String waitingStatus) {
+			this.waitingStatus = waitingStatus;
 		}
 
-		public String getTemplateId() {
-			return this.templateId;
+		public String getTargets() {
+			return this.targets;
 		}
 
-		public void setTemplateId(String templateId) {
-			this.templateId = templateId;
+		public void setTargets(String targets) {
+			this.targets = targets;
 		}
 
-		public String getTemplateVersion() {
-			return this.templateVersion;
+		public String getStatusReason() {
+			return this.statusReason;
 		}
 
-		public void setTemplateVersion(String templateVersion) {
-			this.templateVersion = templateVersion;
+		public void setStatusReason(String statusReason) {
+			this.statusReason = statusReason;
+		}
+
+		public Map<Object,Object> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(Map<Object,Object> tags) {
+			this.tags = tags;
+		}
+
+		public String getLastSuccessfulTriggerTime() {
+			return this.lastSuccessfulTriggerTime;
+		}
+
+		public void setLastSuccessfulTriggerTime(String lastSuccessfulTriggerTime) {
+			this.lastSuccessfulTriggerTime = lastSuccessfulTriggerTime;
 		}
 
 		public String getMode() {
@@ -170,28 +186,28 @@ public class ListExecutionsResponse extends AcsResponse {
 			this.mode = mode;
 		}
 
-		public String getExecutedBy() {
-			return this.executedBy;
+		public String getSafetyCheck() {
+			return this.safetyCheck;
 		}
 
-		public void setExecutedBy(String executedBy) {
-			this.executedBy = executedBy;
+		public void setSafetyCheck(String safetyCheck) {
+			this.safetyCheck = safetyCheck;
 		}
 
-		public String getStartDate() {
-			return this.startDate;
+		public String getTemplateName() {
+			return this.templateName;
 		}
 
-		public void setStartDate(String startDate) {
-			this.startDate = startDate;
+		public void setTemplateName(String templateName) {
+			this.templateName = templateName;
 		}
 
-		public String getEndDate() {
-			return this.endDate;
+		public String getTemplateVersion() {
+			return this.templateVersion;
 		}
 
-		public void setEndDate(String endDate) {
-			this.endDate = endDate;
+		public void setTemplateVersion(String templateVersion) {
+			this.templateVersion = templateVersion;
 		}
 
 		public String getCreateDate() {
@@ -210,124 +226,12 @@ public class ListExecutionsResponse extends AcsResponse {
 			this.updateDate = updateDate;
 		}
 
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getStatusMessage() {
-			return this.statusMessage;
-		}
-
-		public void setStatusMessage(String statusMessage) {
-			this.statusMessage = statusMessage;
-		}
-
-		public String getStatusReason() {
-			return this.statusReason;
-		}
-
-		public void setStatusReason(String statusReason) {
-			this.statusReason = statusReason;
-		}
-
-		public String getWaitingStatus() {
-			return this.waitingStatus;
-		}
-
-		public void setWaitingStatus(String waitingStatus) {
-			this.waitingStatus = waitingStatus;
-		}
-
-		public String getParentExecutionId() {
-			return this.parentExecutionId;
-		}
-
-		public void setParentExecutionId(String parentExecutionId) {
-			this.parentExecutionId = parentExecutionId;
-		}
-
-		public Map<Object,Object> getParameters() {
-			return this.parameters;
-		}
-
-		public void setParameters(Map<Object,Object> parameters) {
-			this.parameters = parameters;
-		}
-
-		public String getOutputs() {
-			return this.outputs;
-		}
-
-		public void setOutputs(String outputs) {
-			this.outputs = outputs;
-		}
-
-		public String getSafetyCheck() {
-			return this.safetyCheck;
-		}
-
-		public void setSafetyCheck(String safetyCheck) {
-			this.safetyCheck = safetyCheck;
-		}
-
-		public Boolean getIsParent() {
-			return this.isParent;
-		}
-
-		public void setIsParent(Boolean isParent) {
-			this.isParent = isParent;
-		}
-
-		public String getRamRole() {
-			return this.ramRole;
-		}
-
-		public void setRamRole(String ramRole) {
-			this.ramRole = ramRole;
-		}
-
-		public Map<Object,Object> getCounters() {
-			return this.counters;
-		}
-
-		public void setCounters(Map<Object,Object> counters) {
-			this.counters = counters;
-		}
-
-		public String getCategory() {
-			return this.category;
-		}
-
-		public void setCategory(String category) {
-			this.category = category;
-		}
-
-		public Map<Object,Object> getTags() {
-			return this.tags;
-		}
-
-		public void setTags(Map<Object,Object> tags) {
-			this.tags = tags;
-		}
-
 		public String getDescription() {
 			return this.description;
 		}
 
 		public void setDescription(String description) {
 			this.description = description;
-		}
-
-		public String getTargets() {
-			return this.targets;
-		}
-
-		public void setTargets(String targets) {
-			this.targets = targets;
 		}
 
 		public String getLastTriggerTime() {
@@ -338,6 +242,14 @@ public class ListExecutionsResponse extends AcsResponse {
 			this.lastTriggerTime = lastTriggerTime;
 		}
 
+		public String getParentExecutionId() {
+			return this.parentExecutionId;
+		}
+
+		public void setParentExecutionId(String parentExecutionId) {
+			this.parentExecutionId = parentExecutionId;
+		}
+
 		public String getLastTriggerStatus() {
 			return this.lastTriggerStatus;
 		}
@@ -346,20 +258,76 @@ public class ListExecutionsResponse extends AcsResponse {
 			this.lastTriggerStatus = lastTriggerStatus;
 		}
 
-		public String getLastSuccessfulTriggerTime() {
-			return this.lastSuccessfulTriggerTime;
+		public String getStatusMessage() {
+			return this.statusMessage;
 		}
 
-		public void setLastSuccessfulTriggerTime(String lastSuccessfulTriggerTime) {
-			this.lastSuccessfulTriggerTime = lastSuccessfulTriggerTime;
+		public void setStatusMessage(String statusMessage) {
+			this.statusMessage = statusMessage;
 		}
 
-		public String getResourceStatus() {
-			return this.resourceStatus;
+		public String getOutputs() {
+			return this.outputs;
 		}
 
-		public void setResourceStatus(String resourceStatus) {
-			this.resourceStatus = resourceStatus;
+		public void setOutputs(String outputs) {
+			this.outputs = outputs;
+		}
+
+		public String getExecutedBy() {
+			return this.executedBy;
+		}
+
+		public void setExecutedBy(String executedBy) {
+			this.executedBy = executedBy;
+		}
+
+		public String getEndDate() {
+			return this.endDate;
+		}
+
+		public void setEndDate(String endDate) {
+			this.endDate = endDate;
+		}
+
+		public Boolean getIsParent() {
+			return this.isParent;
+		}
+
+		public void setIsParent(Boolean isParent) {
+			this.isParent = isParent;
+		}
+
+		public String getStartDate() {
+			return this.startDate;
+		}
+
+		public void setStartDate(String startDate) {
+			this.startDate = startDate;
+		}
+
+		public String getExecutionId() {
+			return this.executionId;
+		}
+
+		public void setExecutionId(String executionId) {
+			this.executionId = executionId;
+		}
+
+		public Map<Object,Object> getParameters() {
+			return this.parameters;
+		}
+
+		public void setParameters(Map<Object,Object> parameters) {
+			this.parameters = parameters;
+		}
+
+		public Map<Object,Object> getCounters() {
+			return this.counters;
+		}
+
+		public void setCounters(Map<Object,Object> counters) {
+			this.counters = counters;
 		}
 
 		public String getResourceGroupId() {
@@ -368,6 +336,38 @@ public class ListExecutionsResponse extends AcsResponse {
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getCategory() {
+			return this.category;
+		}
+
+		public void setCategory(String category) {
+			this.category = category;
+		}
+
+		public String getTemplateId() {
+			return this.templateId;
+		}
+
+		public void setTemplateId(String templateId) {
+			this.templateId = templateId;
+		}
+
+		public String getRamRole() {
+			return this.ramRole;
+		}
+
+		public void setRamRole(String ramRole) {
+			this.ramRole = ramRole;
+		}
+
+		public String getResourceStatus() {
+			return this.resourceStatus;
+		}
+
+		public void setResourceStatus(String resourceStatus) {
+			this.resourceStatus = resourceStatus;
 		}
 
 		public List<CurrentTask> getCurrentTasks() {

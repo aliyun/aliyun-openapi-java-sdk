@@ -26,19 +26,19 @@ public class UpdateParameterResponseUnmarshaller {
 		updateParameterResponse.setRequestId(_ctx.stringValue("UpdateParameterResponse.RequestId"));
 
 		Parameter parameter = new Parameter();
-		parameter.setId(_ctx.stringValue("UpdateParameterResponse.Parameter.Id"));
-		parameter.setName(_ctx.stringValue("UpdateParameterResponse.Parameter.Name"));
-		parameter.setCreatedDate(_ctx.stringValue("UpdateParameterResponse.Parameter.CreatedDate"));
-		parameter.setCreatedBy(_ctx.stringValue("UpdateParameterResponse.Parameter.CreatedBy"));
+		parameter.setType(_ctx.stringValue("UpdateParameterResponse.Parameter.Type"));
 		parameter.setUpdatedDate(_ctx.stringValue("UpdateParameterResponse.Parameter.UpdatedDate"));
 		parameter.setUpdatedBy(_ctx.stringValue("UpdateParameterResponse.Parameter.UpdatedBy"));
-		parameter.setDescription(_ctx.stringValue("UpdateParameterResponse.Parameter.Description"));
-		parameter.setShareType(_ctx.stringValue("UpdateParameterResponse.Parameter.ShareType"));
-		parameter.setParameterVersion(_ctx.integerValue("UpdateParameterResponse.Parameter.ParameterVersion"));
-		parameter.setType(_ctx.stringValue("UpdateParameterResponse.Parameter.Type"));
-		parameter.setConstraints(_ctx.stringValue("UpdateParameterResponse.Parameter.Constraints"));
 		parameter.setTags(_ctx.stringValue("UpdateParameterResponse.Parameter.Tags"));
+		parameter.setDescription(_ctx.stringValue("UpdateParameterResponse.Parameter.Description"));
+		parameter.setConstraints(_ctx.stringValue("UpdateParameterResponse.Parameter.Constraints"));
 		parameter.setResourceGroupId(_ctx.stringValue("UpdateParameterResponse.Parameter.ResourceGroupId"));
+		parameter.setCreatedBy(_ctx.stringValue("UpdateParameterResponse.Parameter.CreatedBy"));
+		parameter.setCreatedDate(_ctx.stringValue("UpdateParameterResponse.Parameter.CreatedDate"));
+		parameter.setParameterVersion(_ctx.integerValue("UpdateParameterResponse.Parameter.ParameterVersion"));
+		parameter.setName(_ctx.stringValue("UpdateParameterResponse.Parameter.Name"));
+		parameter.setId(_ctx.stringValue("UpdateParameterResponse.Parameter.Id"));
+		parameter.setShareType(_ctx.stringValue("UpdateParameterResponse.Parameter.ShareType"));
 		updateParameterResponse.setParameter(parameter);
 	 
 	 	return updateParameterResponse;

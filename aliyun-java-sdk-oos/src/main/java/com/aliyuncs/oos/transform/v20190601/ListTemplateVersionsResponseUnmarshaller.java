@@ -27,18 +27,18 @@ public class ListTemplateVersionsResponseUnmarshaller {
 	public static ListTemplateVersionsResponse unmarshall(ListTemplateVersionsResponse listTemplateVersionsResponse, UnmarshallerContext _ctx) {
 		
 		listTemplateVersionsResponse.setRequestId(_ctx.stringValue("ListTemplateVersionsResponse.RequestId"));
-		listTemplateVersionsResponse.setMaxResults(_ctx.integerValue("ListTemplateVersionsResponse.MaxResults"));
 		listTemplateVersionsResponse.setNextToken(_ctx.stringValue("ListTemplateVersionsResponse.NextToken"));
+		listTemplateVersionsResponse.setMaxResults(_ctx.integerValue("ListTemplateVersionsResponse.MaxResults"));
 
 		List<TemplateVersion> templateVersions = new ArrayList<TemplateVersion>();
 		for (int i = 0; i < _ctx.lengthValue("ListTemplateVersionsResponse.TemplateVersions.Length"); i++) {
 			TemplateVersion templateVersion = new TemplateVersion();
 			templateVersion.setDescription(_ctx.stringValue("ListTemplateVersionsResponse.TemplateVersions["+ i +"].Description"));
-			templateVersion.setTemplateFormat(_ctx.stringValue("ListTemplateVersionsResponse.TemplateVersions["+ i +"].TemplateFormat"));
-			templateVersion.setTemplateVersion(_ctx.stringValue("ListTemplateVersionsResponse.TemplateVersions["+ i +"].TemplateVersion"));
 			templateVersion.setUpdatedDate(_ctx.stringValue("ListTemplateVersionsResponse.TemplateVersions["+ i +"].UpdatedDate"));
 			templateVersion.setUpdatedBy(_ctx.stringValue("ListTemplateVersionsResponse.TemplateVersions["+ i +"].UpdatedBy"));
 			templateVersion.setVersionName(_ctx.stringValue("ListTemplateVersionsResponse.TemplateVersions["+ i +"].VersionName"));
+			templateVersion.setTemplateVersion(_ctx.stringValue("ListTemplateVersionsResponse.TemplateVersions["+ i +"].TemplateVersion"));
+			templateVersion.setTemplateFormat(_ctx.stringValue("ListTemplateVersionsResponse.TemplateVersions["+ i +"].TemplateFormat"));
 
 			templateVersions.add(templateVersion);
 		}

@@ -34,8 +34,8 @@ public class GetInventorySchemaResponseUnmarshaller {
 		List<Schema> schemas = new ArrayList<Schema>();
 		for (int i = 0; i < _ctx.lengthValue("GetInventorySchemaResponse.Schemas.Length"); i++) {
 			Schema schema = new Schema();
-			schema.setTypeName(_ctx.stringValue("GetInventorySchemaResponse.Schemas["+ i +"].TypeName"));
 			schema.setVersion(_ctx.stringValue("GetInventorySchemaResponse.Schemas["+ i +"].Version"));
+			schema.setTypeName(_ctx.stringValue("GetInventorySchemaResponse.Schemas["+ i +"].TypeName"));
 
 			List<Attribute> attributes = new ArrayList<Attribute>();
 			for (int j = 0; j < _ctx.lengthValue("GetInventorySchemaResponse.Schemas["+ i +"].Attributes.Length"); j++) {

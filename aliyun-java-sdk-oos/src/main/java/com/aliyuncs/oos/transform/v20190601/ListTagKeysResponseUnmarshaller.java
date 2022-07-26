@@ -26,8 +26,8 @@ public class ListTagKeysResponseUnmarshaller {
 	public static ListTagKeysResponse unmarshall(ListTagKeysResponse listTagKeysResponse, UnmarshallerContext _ctx) {
 		
 		listTagKeysResponse.setRequestId(_ctx.stringValue("ListTagKeysResponse.RequestId"));
-		listTagKeysResponse.setMaxResults(_ctx.integerValue("ListTagKeysResponse.MaxResults"));
 		listTagKeysResponse.setNextToken(_ctx.stringValue("ListTagKeysResponse.NextToken"));
+		listTagKeysResponse.setMaxResults(_ctx.integerValue("ListTagKeysResponse.MaxResults"));
 
 		List<String> keys = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("ListTagKeysResponse.Keys.Length"); i++) {

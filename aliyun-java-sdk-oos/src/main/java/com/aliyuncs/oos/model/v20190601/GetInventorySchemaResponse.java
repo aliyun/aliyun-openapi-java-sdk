@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetInventorySchemaResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String nextToken;
+
+	private String requestId;
 
 	private String maxResults;
 
 	private List<Schema> schemas;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getNextToken() {
 		return this.nextToken;
@@ -47,6 +39,14 @@ public class GetInventorySchemaResponse extends AcsResponse {
 
 	public void setNextToken(String nextToken) {
 		this.nextToken = nextToken;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMaxResults() {
@@ -67,19 +67,11 @@ public class GetInventorySchemaResponse extends AcsResponse {
 
 	public static class Schema {
 
-		private String typeName;
-
 		private String version;
 
+		private String typeName;
+
 		private List<Attribute> attributes;
-
-		public String getTypeName() {
-			return this.typeName;
-		}
-
-		public void setTypeName(String typeName) {
-			this.typeName = typeName;
-		}
 
 		public String getVersion() {
 			return this.version;
@@ -87,6 +79,14 @@ public class GetInventorySchemaResponse extends AcsResponse {
 
 		public void setVersion(String version) {
 			this.version = version;
+		}
+
+		public String getTypeName() {
+			return this.typeName;
+		}
+
+		public void setTypeName(String typeName) {
+			this.typeName = typeName;
 		}
 
 		public List<Attribute> getAttributes() {

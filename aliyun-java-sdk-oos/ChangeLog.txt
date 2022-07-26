@@ -1,3 +1,6 @@
+2022-07-26 Version: 1.5.5
+- Add cmsGroupId parameter to CreateApplicationGroupRequest.
+
 2021-12-30 Version: 1.5.4
 - Supported UpdateApplication.
 

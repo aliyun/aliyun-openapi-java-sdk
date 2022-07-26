@@ -26,16 +26,16 @@ public class UpdatePatchBaselineResponseUnmarshaller {
 		updatePatchBaselineResponse.setRequestId(_ctx.stringValue("UpdatePatchBaselineResponse.RequestId"));
 
 		PatchBaseline patchBaseline = new PatchBaseline();
-		patchBaseline.setId(_ctx.stringValue("UpdatePatchBaselineResponse.PatchBaseline.Id"));
-		patchBaseline.setName(_ctx.stringValue("UpdatePatchBaselineResponse.PatchBaseline.Name"));
-		patchBaseline.setCreatedDate(_ctx.stringValue("UpdatePatchBaselineResponse.PatchBaseline.CreatedDate"));
-		patchBaseline.setCreatedBy(_ctx.stringValue("UpdatePatchBaselineResponse.PatchBaseline.CreatedBy"));
+		patchBaseline.setOperationSystem(_ctx.stringValue("UpdatePatchBaselineResponse.PatchBaseline.OperationSystem"));
+		patchBaseline.setDescription(_ctx.stringValue("UpdatePatchBaselineResponse.PatchBaseline.Description"));
 		patchBaseline.setUpdatedDate(_ctx.stringValue("UpdatePatchBaselineResponse.PatchBaseline.UpdatedDate"));
 		patchBaseline.setUpdatedBy(_ctx.stringValue("UpdatePatchBaselineResponse.PatchBaseline.UpdatedBy"));
-		patchBaseline.setDescription(_ctx.stringValue("UpdatePatchBaselineResponse.PatchBaseline.Description"));
-		patchBaseline.setShareType(_ctx.stringValue("UpdatePatchBaselineResponse.PatchBaseline.ShareType"));
-		patchBaseline.setOperationSystem(_ctx.stringValue("UpdatePatchBaselineResponse.PatchBaseline.OperationSystem"));
+		patchBaseline.setCreatedBy(_ctx.stringValue("UpdatePatchBaselineResponse.PatchBaseline.CreatedBy"));
+		patchBaseline.setCreatedDate(_ctx.stringValue("UpdatePatchBaselineResponse.PatchBaseline.CreatedDate"));
+		patchBaseline.setName(_ctx.stringValue("UpdatePatchBaselineResponse.PatchBaseline.Name"));
 		patchBaseline.setApprovalRules(_ctx.stringValue("UpdatePatchBaselineResponse.PatchBaseline.ApprovalRules"));
+		patchBaseline.setId(_ctx.stringValue("UpdatePatchBaselineResponse.PatchBaseline.Id"));
+		patchBaseline.setShareType(_ctx.stringValue("UpdatePatchBaselineResponse.PatchBaseline.ShareType"));
 		updatePatchBaselineResponse.setPatchBaseline(patchBaseline);
 	 
 	 	return updatePatchBaselineResponse;

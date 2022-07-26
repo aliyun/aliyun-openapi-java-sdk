@@ -27,16 +27,16 @@ public class ListResourceExecutionStatusResponseUnmarshaller {
 	public static ListResourceExecutionStatusResponse unmarshall(ListResourceExecutionStatusResponse listResourceExecutionStatusResponse, UnmarshallerContext _ctx) {
 		
 		listResourceExecutionStatusResponse.setRequestId(_ctx.stringValue("ListResourceExecutionStatusResponse.RequestId"));
-		listResourceExecutionStatusResponse.setMaxResults(_ctx.integerValue("ListResourceExecutionStatusResponse.MaxResults"));
 		listResourceExecutionStatusResponse.setNextToken(_ctx.stringValue("ListResourceExecutionStatusResponse.NextToken"));
+		listResourceExecutionStatusResponse.setMaxResults(_ctx.integerValue("ListResourceExecutionStatusResponse.MaxResults"));
 
 		List<Status> resourceExecutionStatus = new ArrayList<Status>();
 		for (int i = 0; i < _ctx.lengthValue("ListResourceExecutionStatusResponse.ResourceExecutionStatus.Length"); i++) {
 			Status status = new Status();
-			status.setResourceId(_ctx.stringValue("ListResourceExecutionStatusResponse.ResourceExecutionStatus["+ i +"].ResourceId"));
-			status.setExecutionTime(_ctx.stringValue("ListResourceExecutionStatusResponse.ResourceExecutionStatus["+ i +"].ExecutionTime"));
-			status.setStatus(_ctx.stringValue("ListResourceExecutionStatusResponse.ResourceExecutionStatus["+ i +"].Status"));
 			status.setOutputs(_ctx.stringValue("ListResourceExecutionStatusResponse.ResourceExecutionStatus["+ i +"].Outputs"));
+			status.setStatus(_ctx.stringValue("ListResourceExecutionStatusResponse.ResourceExecutionStatus["+ i +"].Status"));
+			status.setExecutionTime(_ctx.stringValue("ListResourceExecutionStatusResponse.ResourceExecutionStatus["+ i +"].ExecutionTime"));
+			status.setResourceId(_ctx.stringValue("ListResourceExecutionStatusResponse.ResourceExecutionStatus["+ i +"].ResourceId"));
 			status.setExecutionId(_ctx.stringValue("ListResourceExecutionStatusResponse.ResourceExecutionStatus["+ i +"].ExecutionId"));
 
 			resourceExecutionStatus.add(status);

@@ -28,25 +28,25 @@ public class GetSecretParametersByPathResponseUnmarshaller {
 		
 		getSecretParametersByPathResponse.setRequestId(_ctx.stringValue("GetSecretParametersByPathResponse.RequestId"));
 		getSecretParametersByPathResponse.setNextToken(_ctx.stringValue("GetSecretParametersByPathResponse.NextToken"));
-		getSecretParametersByPathResponse.setMaxResults(_ctx.integerValue("GetSecretParametersByPathResponse.MaxResults"));
 		getSecretParametersByPathResponse.setTotalCount(_ctx.integerValue("GetSecretParametersByPathResponse.TotalCount"));
+		getSecretParametersByPathResponse.setMaxResults(_ctx.integerValue("GetSecretParametersByPathResponse.MaxResults"));
 
 		List<Parameter> parameters = new ArrayList<Parameter>();
 		for (int i = 0; i < _ctx.lengthValue("GetSecretParametersByPathResponse.Parameters.Length"); i++) {
 			Parameter parameter = new Parameter();
-			parameter.setId(_ctx.stringValue("GetSecretParametersByPathResponse.Parameters["+ i +"].Id"));
-			parameter.setName(_ctx.stringValue("GetSecretParametersByPathResponse.Parameters["+ i +"].Name"));
-			parameter.setCreatedDate(_ctx.stringValue("GetSecretParametersByPathResponse.Parameters["+ i +"].CreatedDate"));
-			parameter.setCreatedBy(_ctx.stringValue("GetSecretParametersByPathResponse.Parameters["+ i +"].CreatedBy"));
+			parameter.setType(_ctx.stringValue("GetSecretParametersByPathResponse.Parameters["+ i +"].Type"));
 			parameter.setUpdatedDate(_ctx.stringValue("GetSecretParametersByPathResponse.Parameters["+ i +"].UpdatedDate"));
 			parameter.setUpdatedBy(_ctx.stringValue("GetSecretParametersByPathResponse.Parameters["+ i +"].UpdatedBy"));
-			parameter.setDescription(_ctx.stringValue("GetSecretParametersByPathResponse.Parameters["+ i +"].Description"));
-			parameter.setShareType(_ctx.stringValue("GetSecretParametersByPathResponse.Parameters["+ i +"].ShareType"));
-			parameter.setParameterVersion(_ctx.integerValue("GetSecretParametersByPathResponse.Parameters["+ i +"].ParameterVersion"));
-			parameter.setType(_ctx.stringValue("GetSecretParametersByPathResponse.Parameters["+ i +"].Type"));
-			parameter.setValue(_ctx.stringValue("GetSecretParametersByPathResponse.Parameters["+ i +"].Value"));
-			parameter.setConstraints(_ctx.stringValue("GetSecretParametersByPathResponse.Parameters["+ i +"].Constraints"));
 			parameter.setKeyId(_ctx.stringValue("GetSecretParametersByPathResponse.Parameters["+ i +"].KeyId"));
+			parameter.setValue(_ctx.stringValue("GetSecretParametersByPathResponse.Parameters["+ i +"].Value"));
+			parameter.setDescription(_ctx.stringValue("GetSecretParametersByPathResponse.Parameters["+ i +"].Description"));
+			parameter.setConstraints(_ctx.stringValue("GetSecretParametersByPathResponse.Parameters["+ i +"].Constraints"));
+			parameter.setCreatedBy(_ctx.stringValue("GetSecretParametersByPathResponse.Parameters["+ i +"].CreatedBy"));
+			parameter.setCreatedDate(_ctx.stringValue("GetSecretParametersByPathResponse.Parameters["+ i +"].CreatedDate"));
+			parameter.setParameterVersion(_ctx.integerValue("GetSecretParametersByPathResponse.Parameters["+ i +"].ParameterVersion"));
+			parameter.setName(_ctx.stringValue("GetSecretParametersByPathResponse.Parameters["+ i +"].Name"));
+			parameter.setId(_ctx.stringValue("GetSecretParametersByPathResponse.Parameters["+ i +"].Id"));
+			parameter.setShareType(_ctx.stringValue("GetSecretParametersByPathResponse.Parameters["+ i +"].ShareType"));
 
 			parameters.add(parameter);
 		}

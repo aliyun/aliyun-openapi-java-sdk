@@ -15,26 +15,16 @@
 package com.aliyuncs.oos.model.v20190601;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.oos.transform.v20190601.GenerateExecutionPolicyResponseUnmarshaller;
+import com.aliyuncs.oos.transform.v20190601.ContinueDeployApplicationGroupResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GenerateExecutionPolicyResponse extends AcsResponse {
-
-	private String policy;
+public class ContinueDeployApplicationGroupResponse extends AcsResponse {
 
 	private String requestId;
-
-	public String getPolicy() {
-		return this.policy;
-	}
-
-	public void setPolicy(String policy) {
-		this.policy = policy;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,8 +35,8 @@ public class GenerateExecutionPolicyResponse extends AcsResponse {
 	}
 
 	@Override
-	public GenerateExecutionPolicyResponse getInstance(UnmarshallerContext context) {
-		return	GenerateExecutionPolicyResponseUnmarshaller.unmarshall(this, context);
+	public ContinueDeployApplicationGroupResponse getInstance(UnmarshallerContext context) {
+		return	ContinueDeployApplicationGroupResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

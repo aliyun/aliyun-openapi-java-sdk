@@ -22,18 +22,16 @@ import com.aliyuncs.oos.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListApplicationGroupsRequest extends RpcAcsRequest<ListApplicationGroupsResponse> {
+public class ContinueDeployApplicationGroupRequest extends RpcAcsRequest<ContinueDeployApplicationGroupResponse> {
 	   
 
-	private String nextToken;
-
-	private String deployRegionId;
+	private String deployParameters;
 
 	private String applicationName;
 
-	private Integer maxResults;
-	public ListApplicationGroupsRequest() {
-		super("oos", "2019-06-01", "ListApplicationGroups", "oos");
+	private String name;
+	public ContinueDeployApplicationGroupRequest() {
+		super("oos", "2019-06-01", "ContinueDeployApplicationGroup", "oos");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,25 +39,14 @@ public class ListApplicationGroupsRequest extends RpcAcsRequest<ListApplicationG
 		} catch (Exception e) {}
 	}
 
-	public String getNextToken() {
-		return this.nextToken;
+	public String getDeployParameters() {
+		return this.deployParameters;
 	}
 
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-		if(nextToken != null){
-			putQueryParameter("NextToken", nextToken);
-		}
-	}
-
-	public String getDeployRegionId() {
-		return this.deployRegionId;
-	}
-
-	public void setDeployRegionId(String deployRegionId) {
-		this.deployRegionId = deployRegionId;
-		if(deployRegionId != null){
-			putQueryParameter("DeployRegionId", deployRegionId);
+	public void setDeployParameters(String deployParameters) {
+		this.deployParameters = deployParameters;
+		if(deployParameters != null){
+			putQueryParameter("DeployParameters", deployParameters);
 		}
 	}
 
@@ -74,20 +61,20 @@ public class ListApplicationGroupsRequest extends RpcAcsRequest<ListApplicationG
 		}
 	}
 
-	public Integer getMaxResults() {
-		return this.maxResults;
+	public String getName() {
+		return this.name;
 	}
 
-	public void setMaxResults(Integer maxResults) {
-		this.maxResults = maxResults;
-		if(maxResults != null){
-			putQueryParameter("MaxResults", maxResults.toString());
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 
 	@Override
-	public Class<ListApplicationGroupsResponse> getResponseClass() {
-		return ListApplicationGroupsResponse.class;
+	public Class<ContinueDeployApplicationGroupResponse> getResponseClass() {
+		return ContinueDeployApplicationGroupResponse.class;
 	}
 
 }
