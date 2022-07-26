@@ -25,7 +25,13 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribeWarningMachinesRequest extends RpcAcsRequest<DescribeWarningMachinesResponse> {
 	   
 
+	private String targetType;
+
+	private String containerFieldName;
+
 	private String sourceIp;
+
+	private String containerFieldValue;
 
 	private Integer pageSize;
 
@@ -34,6 +40,8 @@ public class DescribeWarningMachinesRequest extends RpcAcsRequest<DescribeWarnin
 	private String lang;
 
 	private Integer currentPage;
+
+	private String clusterId;
 
 	private Long riskId;
 
@@ -49,6 +57,28 @@ public class DescribeWarningMachinesRequest extends RpcAcsRequest<DescribeWarnin
 		} catch (Exception e) {}
 	}
 
+	public String getTargetType() {
+		return this.targetType;
+	}
+
+	public void setTargetType(String targetType) {
+		this.targetType = targetType;
+		if(targetType != null){
+			putQueryParameter("TargetType", targetType);
+		}
+	}
+
+	public String getContainerFieldName() {
+		return this.containerFieldName;
+	}
+
+	public void setContainerFieldName(String containerFieldName) {
+		this.containerFieldName = containerFieldName;
+		if(containerFieldName != null){
+			putQueryParameter("ContainerFieldName", containerFieldName);
+		}
+	}
+
 	public String getSourceIp() {
 		return this.sourceIp;
 	}
@@ -57,6 +87,17 @@ public class DescribeWarningMachinesRequest extends RpcAcsRequest<DescribeWarnin
 		this.sourceIp = sourceIp;
 		if(sourceIp != null){
 			putQueryParameter("SourceIp", sourceIp);
+		}
+	}
+
+	public String getContainerFieldValue() {
+		return this.containerFieldValue;
+	}
+
+	public void setContainerFieldValue(String containerFieldValue) {
+		this.containerFieldValue = containerFieldValue;
+		if(containerFieldValue != null){
+			putQueryParameter("ContainerFieldValue", containerFieldValue);
 		}
 	}
 
@@ -101,6 +142,17 @@ public class DescribeWarningMachinesRequest extends RpcAcsRequest<DescribeWarnin
 		this.currentPage = currentPage;
 		if(currentPage != null){
 			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 
