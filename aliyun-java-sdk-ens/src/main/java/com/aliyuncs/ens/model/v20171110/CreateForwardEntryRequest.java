@@ -30,6 +30,8 @@ public class CreateForwardEntryRequest extends RpcAcsRequest<CreateForwardEntryR
 
 	private String ipProtocol;
 
+	private Integer healthCheckPort;
+
 	private String externalPort;
 
 	private String natGatewayId;
@@ -72,6 +74,17 @@ public class CreateForwardEntryRequest extends RpcAcsRequest<CreateForwardEntryR
 		this.ipProtocol = ipProtocol;
 		if(ipProtocol != null){
 			putQueryParameter("IpProtocol", ipProtocol);
+		}
+	}
+
+	public Integer getHealthCheckPort() {
+		return this.healthCheckPort;
+	}
+
+	public void setHealthCheckPort(Integer healthCheckPort) {
+		this.healthCheckPort = healthCheckPort;
+		if(healthCheckPort != null){
+			putQueryParameter("HealthCheckPort", healthCheckPort.toString());
 		}
 	}
 

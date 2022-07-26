@@ -43,6 +43,7 @@ public class DescribeForwardTableEntriesResponseUnmarshaller {
 			forwardTableEntry.setForwardEntryName(_ctx.stringValue("DescribeForwardTableEntriesResponse.ForwardTableEntries["+ i +"].ForwardEntryName"));
 			forwardTableEntry.setStatus(_ctx.stringValue("DescribeForwardTableEntriesResponse.ForwardTableEntries["+ i +"].Status"));
 			forwardTableEntry.setIpProtocol(_ctx.stringValue("DescribeForwardTableEntriesResponse.ForwardTableEntries["+ i +"].IpProtocol"));
+			forwardTableEntry.setHealthCheckPort(_ctx.stringValue("DescribeForwardTableEntriesResponse.ForwardTableEntries["+ i +"].HealthCheckPort"));
 
 			forwardTableEntries.add(forwardTableEntry);
 		}

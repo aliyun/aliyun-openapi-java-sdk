@@ -95,6 +95,8 @@ public class DescribeForwardTableEntriesResponse extends AcsResponse {
 
 		private String ipProtocol;
 
+		private String healthCheckPort;
+
 		public String getNatGatewayId() {
 			return this.natGatewayId;
 		}
@@ -165,6 +167,14 @@ public class DescribeForwardTableEntriesResponse extends AcsResponse {
 
 		public void setIpProtocol(String ipProtocol) {
 			this.ipProtocol = ipProtocol;
+		}
+
+		public String getHealthCheckPort() {
+			return this.healthCheckPort;
+		}
+
+		public void setHealthCheckPort(String healthCheckPort) {
+			this.healthCheckPort = healthCheckPort;
 		}
 	}
 
