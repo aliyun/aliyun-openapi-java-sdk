@@ -28,6 +28,8 @@ public class UpdateIoTCloudConnectorAttributeRequest extends RpcAcsRequest<Updat
 
 	private String ioTCloudConnectorDescription;
 
+	private String mode;
+
 	private Boolean wildcardDomainEnabled;
 
 	private Boolean dryRun;
@@ -59,6 +61,17 @@ public class UpdateIoTCloudConnectorAttributeRequest extends RpcAcsRequest<Updat
 		this.ioTCloudConnectorDescription = ioTCloudConnectorDescription;
 		if(ioTCloudConnectorDescription != null){
 			putQueryParameter("IoTCloudConnectorDescription", ioTCloudConnectorDescription);
+		}
+	}
+
+	public String getMode() {
+		return this.mode;
+	}
+
+	public void setMode(String mode) {
+		this.mode = mode;
+		if(mode != null){
+			putQueryParameter("Mode", mode);
 		}
 	}
 
