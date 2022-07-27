@@ -42,8 +42,9 @@ public class ListProxiesResponseUnmarshaller {
 			proxyListItem.setPrivateHost(_ctx.stringValue("ListProxiesResponse.ProxyList["+ i +"].PrivateHost"));
 			proxyListItem.setPublicEnable(_ctx.booleanValue("ListProxiesResponse.ProxyList["+ i +"].PublicEnable"));
 			proxyListItem.setPublicHost(_ctx.stringValue("ListProxiesResponse.ProxyList["+ i +"].PublicHost"));
-			proxyListItem.setMysqlPort(_ctx.integerValue("ListProxiesResponse.ProxyList["+ i +"].MysqlPort"));
 			proxyListItem.setHttpsPort(_ctx.integerValue("ListProxiesResponse.ProxyList["+ i +"].HttpsPort"));
+			proxyListItem.setProtocolType(_ctx.stringValue("ListProxiesResponse.ProxyList["+ i +"].ProtocolType"));
+			proxyListItem.setProtocolPort(_ctx.integerValue("ListProxiesResponse.ProxyList["+ i +"].ProtocolPort"));
 
 			proxyList.add(proxyListItem);
 		}

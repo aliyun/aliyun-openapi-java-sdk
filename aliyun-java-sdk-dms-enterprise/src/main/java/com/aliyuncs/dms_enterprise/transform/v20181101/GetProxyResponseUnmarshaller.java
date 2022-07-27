@@ -34,8 +34,9 @@ public class GetProxyResponseUnmarshaller {
 		getProxyResponse.setPrivateHost(_ctx.stringValue("GetProxyResponse.PrivateHost"));
 		getProxyResponse.setPublicEnable(_ctx.booleanValue("GetProxyResponse.PublicEnable"));
 		getProxyResponse.setPublicHost(_ctx.stringValue("GetProxyResponse.PublicHost"));
-		getProxyResponse.setMysqlPort(_ctx.integerValue("GetProxyResponse.MysqlPort"));
 		getProxyResponse.setHttpsPort(_ctx.integerValue("GetProxyResponse.HttpsPort"));
+		getProxyResponse.setProtocolType(_ctx.stringValue("GetProxyResponse.ProtocolType"));
+		getProxyResponse.setProtocolPort(_ctx.integerValue("GetProxyResponse.ProtocolPort"));
 	 
 	 	return getProxyResponse;
 	}

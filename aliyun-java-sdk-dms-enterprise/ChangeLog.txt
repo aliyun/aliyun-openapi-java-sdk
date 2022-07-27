@@ -1,3 +1,7 @@
+2022-07-27 Version: 1.38.0
+- Support ListProxies API to return protocolType, protocolPort and remove mysqlPort.
+- Support GetProxy API to return protocolType, protocolPort and remove mysqlPort.
+
 2022-06-08 Version: 1.37.0
 - Support GetDataCorrectOrderDetail API to return execMode type.
 - Support CreateDataCorrectOrder, CreateFreeLockCorrectOrder API submit with execMode type.

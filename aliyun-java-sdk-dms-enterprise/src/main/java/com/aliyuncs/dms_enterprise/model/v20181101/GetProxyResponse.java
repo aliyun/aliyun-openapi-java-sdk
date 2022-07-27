@@ -48,9 +48,11 @@ public class GetProxyResponse extends AcsResponse {
 
 	private String publicHost;
 
-	private Integer mysqlPort;
-
 	private Integer httpsPort;
+
+	private String protocolType;
+
+	private Integer protocolPort;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -148,20 +150,28 @@ public class GetProxyResponse extends AcsResponse {
 		this.publicHost = publicHost;
 	}
 
-	public Integer getMysqlPort() {
-		return this.mysqlPort;
-	}
-
-	public void setMysqlPort(Integer mysqlPort) {
-		this.mysqlPort = mysqlPort;
-	}
-
 	public Integer getHttpsPort() {
 		return this.httpsPort;
 	}
 
 	public void setHttpsPort(Integer httpsPort) {
 		this.httpsPort = httpsPort;
+	}
+
+	public String getProtocolType() {
+		return this.protocolType;
+	}
+
+	public void setProtocolType(String protocolType) {
+		this.protocolType = protocolType;
+	}
+
+	public Integer getProtocolPort() {
+		return this.protocolPort;
+	}
+
+	public void setProtocolPort(Integer protocolPort) {
+		this.protocolPort = protocolPort;
 	}
 
 	@Override
