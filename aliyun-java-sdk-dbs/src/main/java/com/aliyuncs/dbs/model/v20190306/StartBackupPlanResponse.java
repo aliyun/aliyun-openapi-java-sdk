@@ -24,41 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class StartBackupPlanResponse extends AcsResponse {
 
-	private Boolean success;
-
-	private String errCode;
-
-	private String errMessage;
-
 	private Integer httpStatusCode;
 
 	private String requestId;
 
+	private String errCode;
+
+	private Boolean success;
+
+	private String errMessage;
+
+	private String createdFullBackupsetId;
+
 	private String backupPlanId;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getErrCode() {
-		return this.errCode;
-	}
-
-	public void setErrCode(String errCode) {
-		this.errCode = errCode;
-	}
-
-	public String getErrMessage() {
-		return this.errMessage;
-	}
-
-	public void setErrMessage(String errMessage) {
-		this.errMessage = errMessage;
-	}
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -74,6 +52,38 @@ public class StartBackupPlanResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getErrCode() {
+		return this.errCode;
+	}
+
+	public void setErrCode(String errCode) {
+		this.errCode = errCode;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public String getErrMessage() {
+		return this.errMessage;
+	}
+
+	public void setErrMessage(String errMessage) {
+		this.errMessage = errMessage;
+	}
+
+	public String getCreatedFullBackupsetId() {
+		return this.createdFullBackupsetId;
+	}
+
+	public void setCreatedFullBackupsetId(String createdFullBackupsetId) {
+		this.createdFullBackupsetId = createdFullBackupsetId;
 	}
 
 	public String getBackupPlanId() {

@@ -25,43 +25,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeNodeCidrListResponse extends AcsResponse {
 
-	private Boolean success;
-
-	private String errCode;
-
-	private String errMessage;
-
 	private Integer httpStatusCode;
 
 	private String requestId;
 
-	private List<String> internetIPs;
+	private String errCode;
+
+	private Boolean success;
+
+	private String errMessage;
 
 	private List<String> intranetIPs;
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getErrCode() {
-		return this.errCode;
-	}
-
-	public void setErrCode(String errCode) {
-		this.errCode = errCode;
-	}
-
-	public String getErrMessage() {
-		return this.errMessage;
-	}
-
-	public void setErrMessage(String errMessage) {
-		this.errMessage = errMessage;
-	}
+	private List<String> internetIPs;
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -79,12 +55,28 @@ public class DescribeNodeCidrListResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<String> getInternetIPs() {
-		return this.internetIPs;
+	public String getErrCode() {
+		return this.errCode;
 	}
 
-	public void setInternetIPs(List<String> internetIPs) {
-		this.internetIPs = internetIPs;
+	public void setErrCode(String errCode) {
+		this.errCode = errCode;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public String getErrMessage() {
+		return this.errMessage;
+	}
+
+	public void setErrMessage(String errMessage) {
+		this.errMessage = errMessage;
 	}
 
 	public List<String> getIntranetIPs() {
@@ -93,6 +85,14 @@ public class DescribeNodeCidrListResponse extends AcsResponse {
 
 	public void setIntranetIPs(List<String> intranetIPs) {
 		this.intranetIPs = intranetIPs;
+	}
+
+	public List<String> getInternetIPs() {
+		return this.internetIPs;
+	}
+
+	public void setInternetIPs(List<String> internetIPs) {
+		this.internetIPs = internetIPs;
 	}
 
 	@Override

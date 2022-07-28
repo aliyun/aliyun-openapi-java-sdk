@@ -33,6 +33,8 @@ public class DescribeBackupPlanListRequest extends RpcAcsRequest<DescribeBackupP
 
 	private String ownerId;
 
+	private String resourceGroupId;
+
 	private String backupPlanStatus;
 
 	private String backupPlanName;
@@ -41,7 +43,7 @@ public class DescribeBackupPlanListRequest extends RpcAcsRequest<DescribeBackupP
 
 	private String region;
 	public DescribeBackupPlanListRequest() {
-		super("Dbs", "2019-03-06", "DescribeBackupPlanList", "cbs");
+		super("Dbs", "2019-03-06", "DescribeBackupPlanList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -90,6 +92,17 @@ public class DescribeBackupPlanListRequest extends RpcAcsRequest<DescribeBackupP
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

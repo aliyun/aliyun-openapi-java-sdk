@@ -23,10 +23,10 @@ public class StartRestoreTaskResponseUnmarshaller {
 	public static StartRestoreTaskResponse unmarshall(StartRestoreTaskResponse startRestoreTaskResponse, UnmarshallerContext _ctx) {
 		
 		startRestoreTaskResponse.setRequestId(_ctx.stringValue("StartRestoreTaskResponse.RequestId"));
-		startRestoreTaskResponse.setSuccess(_ctx.booleanValue("StartRestoreTaskResponse.Success"));
-		startRestoreTaskResponse.setErrCode(_ctx.stringValue("StartRestoreTaskResponse.ErrCode"));
-		startRestoreTaskResponse.setErrMessage(_ctx.stringValue("StartRestoreTaskResponse.ErrMessage"));
 		startRestoreTaskResponse.setHttpStatusCode(_ctx.integerValue("StartRestoreTaskResponse.HttpStatusCode"));
+		startRestoreTaskResponse.setErrCode(_ctx.stringValue("StartRestoreTaskResponse.ErrCode"));
+		startRestoreTaskResponse.setSuccess(_ctx.booleanValue("StartRestoreTaskResponse.Success"));
+		startRestoreTaskResponse.setErrMessage(_ctx.stringValue("StartRestoreTaskResponse.ErrMessage"));
 		startRestoreTaskResponse.setRestoreTaskId(_ctx.stringValue("StartRestoreTaskResponse.RestoreTaskId"));
 	 
 	 	return startRestoreTaskResponse;

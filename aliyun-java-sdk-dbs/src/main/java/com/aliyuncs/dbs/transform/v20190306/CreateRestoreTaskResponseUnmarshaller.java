@@ -23,10 +23,10 @@ public class CreateRestoreTaskResponseUnmarshaller {
 	public static CreateRestoreTaskResponse unmarshall(CreateRestoreTaskResponse createRestoreTaskResponse, UnmarshallerContext _ctx) {
 		
 		createRestoreTaskResponse.setRequestId(_ctx.stringValue("CreateRestoreTaskResponse.RequestId"));
-		createRestoreTaskResponse.setSuccess(_ctx.booleanValue("CreateRestoreTaskResponse.Success"));
-		createRestoreTaskResponse.setErrCode(_ctx.stringValue("CreateRestoreTaskResponse.ErrCode"));
-		createRestoreTaskResponse.setErrMessage(_ctx.stringValue("CreateRestoreTaskResponse.ErrMessage"));
 		createRestoreTaskResponse.setHttpStatusCode(_ctx.integerValue("CreateRestoreTaskResponse.HttpStatusCode"));
+		createRestoreTaskResponse.setErrCode(_ctx.stringValue("CreateRestoreTaskResponse.ErrCode"));
+		createRestoreTaskResponse.setSuccess(_ctx.booleanValue("CreateRestoreTaskResponse.Success"));
+		createRestoreTaskResponse.setErrMessage(_ctx.stringValue("CreateRestoreTaskResponse.ErrMessage"));
 		createRestoreTaskResponse.setRestoreTaskId(_ctx.stringValue("CreateRestoreTaskResponse.RestoreTaskId"));
 	 
 	 	return createRestoreTaskResponse;

@@ -23,10 +23,10 @@ public class EnableBackupLogResponseUnmarshaller {
 	public static EnableBackupLogResponse unmarshall(EnableBackupLogResponse enableBackupLogResponse, UnmarshallerContext _ctx) {
 		
 		enableBackupLogResponse.setRequestId(_ctx.stringValue("EnableBackupLogResponse.RequestId"));
-		enableBackupLogResponse.setSuccess(_ctx.booleanValue("EnableBackupLogResponse.Success"));
-		enableBackupLogResponse.setErrCode(_ctx.stringValue("EnableBackupLogResponse.ErrCode"));
-		enableBackupLogResponse.setErrMessage(_ctx.stringValue("EnableBackupLogResponse.ErrMessage"));
 		enableBackupLogResponse.setHttpStatusCode(_ctx.integerValue("EnableBackupLogResponse.HttpStatusCode"));
+		enableBackupLogResponse.setErrCode(_ctx.stringValue("EnableBackupLogResponse.ErrCode"));
+		enableBackupLogResponse.setSuccess(_ctx.booleanValue("EnableBackupLogResponse.Success"));
+		enableBackupLogResponse.setErrMessage(_ctx.stringValue("EnableBackupLogResponse.ErrMessage"));
 		enableBackupLogResponse.setBackupPlanId(_ctx.stringValue("EnableBackupLogResponse.BackupPlanId"));
 		enableBackupLogResponse.setNeedPrecheck(_ctx.booleanValue("EnableBackupLogResponse.NeedPrecheck"));
 	 

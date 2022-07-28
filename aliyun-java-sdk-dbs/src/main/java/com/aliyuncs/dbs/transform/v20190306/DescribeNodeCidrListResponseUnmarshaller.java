@@ -26,22 +26,22 @@ public class DescribeNodeCidrListResponseUnmarshaller {
 	public static DescribeNodeCidrListResponse unmarshall(DescribeNodeCidrListResponse describeNodeCidrListResponse, UnmarshallerContext _ctx) {
 		
 		describeNodeCidrListResponse.setRequestId(_ctx.stringValue("DescribeNodeCidrListResponse.RequestId"));
-		describeNodeCidrListResponse.setSuccess(_ctx.booleanValue("DescribeNodeCidrListResponse.Success"));
-		describeNodeCidrListResponse.setErrCode(_ctx.stringValue("DescribeNodeCidrListResponse.ErrCode"));
-		describeNodeCidrListResponse.setErrMessage(_ctx.stringValue("DescribeNodeCidrListResponse.ErrMessage"));
 		describeNodeCidrListResponse.setHttpStatusCode(_ctx.integerValue("DescribeNodeCidrListResponse.HttpStatusCode"));
-
-		List<String> internetIPs = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeNodeCidrListResponse.InternetIPs.Length"); i++) {
-			internetIPs.add(_ctx.stringValue("DescribeNodeCidrListResponse.InternetIPs["+ i +"]"));
-		}
-		describeNodeCidrListResponse.setInternetIPs(internetIPs);
+		describeNodeCidrListResponse.setErrCode(_ctx.stringValue("DescribeNodeCidrListResponse.ErrCode"));
+		describeNodeCidrListResponse.setSuccess(_ctx.booleanValue("DescribeNodeCidrListResponse.Success"));
+		describeNodeCidrListResponse.setErrMessage(_ctx.stringValue("DescribeNodeCidrListResponse.ErrMessage"));
 
 		List<String> intranetIPs = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeNodeCidrListResponse.IntranetIPs.Length"); i++) {
 			intranetIPs.add(_ctx.stringValue("DescribeNodeCidrListResponse.IntranetIPs["+ i +"]"));
 		}
 		describeNodeCidrListResponse.setIntranetIPs(intranetIPs);
+
+		List<String> internetIPs = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeNodeCidrListResponse.InternetIPs.Length"); i++) {
+			internetIPs.add(_ctx.stringValue("DescribeNodeCidrListResponse.InternetIPs["+ i +"]"));
+		}
+		describeNodeCidrListResponse.setInternetIPs(internetIPs);
 	 
 	 	return describeNodeCidrListResponse;
 	}

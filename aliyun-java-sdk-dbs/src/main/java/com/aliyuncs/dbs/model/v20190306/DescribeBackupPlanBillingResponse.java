@@ -24,41 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeBackupPlanBillingResponse extends AcsResponse {
 
-	private Boolean success;
-
-	private String errCode;
-
-	private String errMessage;
-
 	private Integer httpStatusCode;
 
 	private String requestId;
 
+	private String errCode;
+
+	private Boolean success;
+
+	private String errMessage;
+
 	private Item item;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getErrCode() {
-		return this.errCode;
-	}
-
-	public void setErrCode(String errCode) {
-		this.errCode = errCode;
-	}
-
-	public String getErrMessage() {
-		return this.errMessage;
-	}
-
-	public void setErrMessage(String errMessage) {
-		this.errMessage = errMessage;
-	}
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -76,6 +52,30 @@ public class DescribeBackupPlanBillingResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getErrCode() {
+		return this.errCode;
+	}
+
+	public void setErrCode(String errCode) {
+		this.errCode = errCode;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public String getErrMessage() {
+		return this.errMessage;
+	}
+
+	public void setErrMessage(String errMessage) {
+		this.errMessage = errMessage;
+	}
+
 	public Item getItem() {
 		return this.item;
 	}
@@ -86,11 +86,19 @@ public class DescribeBackupPlanBillingResponse extends AcsResponse {
 
 	public static class Item {
 
-		private String buySpec;
+		private Long buyCreateTimestamp;
 
-		private String buyChargeType;
+		private Long fullStorageSize;
 
 		private Long buyExpiredTimestamp;
+
+		private String buySpec;
+
+		private Long quotaEndTimestamp;
+
+		private Boolean isExpired;
+
+		private Long quotaStartTimestamp;
 
 		private Long totalFreeBytes;
 
@@ -98,21 +106,39 @@ public class DescribeBackupPlanBillingResponse extends AcsResponse {
 
 		private Long usedFullBytes;
 
-		private Long usedIncrementBytes;
-
-		private Long quotaStartTimestamp;
-
-		private Long quotaEndTimestamp;
-
-		private Long buyCreateTimestamp;
-
-		private Long fullStorageSize;
+		private Boolean isFreeBytesUnlimited;
 
 		private Long contStorageSize;
 
-		private Boolean isExpired;
+		private String buyChargeType;
 
-		private Boolean isFreeBytesUnlimited;
+		private Long usedIncrementBytes;
+
+		private String resourceGroupId;
+
+		public Long getBuyCreateTimestamp() {
+			return this.buyCreateTimestamp;
+		}
+
+		public void setBuyCreateTimestamp(Long buyCreateTimestamp) {
+			this.buyCreateTimestamp = buyCreateTimestamp;
+		}
+
+		public Long getFullStorageSize() {
+			return this.fullStorageSize;
+		}
+
+		public void setFullStorageSize(Long fullStorageSize) {
+			this.fullStorageSize = fullStorageSize;
+		}
+
+		public Long getBuyExpiredTimestamp() {
+			return this.buyExpiredTimestamp;
+		}
+
+		public void setBuyExpiredTimestamp(Long buyExpiredTimestamp) {
+			this.buyExpiredTimestamp = buyExpiredTimestamp;
+		}
 
 		public String getBuySpec() {
 			return this.buySpec;
@@ -122,20 +148,28 @@ public class DescribeBackupPlanBillingResponse extends AcsResponse {
 			this.buySpec = buySpec;
 		}
 
-		public String getBuyChargeType() {
-			return this.buyChargeType;
+		public Long getQuotaEndTimestamp() {
+			return this.quotaEndTimestamp;
 		}
 
-		public void setBuyChargeType(String buyChargeType) {
-			this.buyChargeType = buyChargeType;
+		public void setQuotaEndTimestamp(Long quotaEndTimestamp) {
+			this.quotaEndTimestamp = quotaEndTimestamp;
 		}
 
-		public Long getBuyExpiredTimestamp() {
-			return this.buyExpiredTimestamp;
+		public Boolean getIsExpired() {
+			return this.isExpired;
 		}
 
-		public void setBuyExpiredTimestamp(Long buyExpiredTimestamp) {
-			this.buyExpiredTimestamp = buyExpiredTimestamp;
+		public void setIsExpired(Boolean isExpired) {
+			this.isExpired = isExpired;
+		}
+
+		public Long getQuotaStartTimestamp() {
+			return this.quotaStartTimestamp;
+		}
+
+		public void setQuotaStartTimestamp(Long quotaStartTimestamp) {
+			this.quotaStartTimestamp = quotaStartTimestamp;
 		}
 
 		public Long getTotalFreeBytes() {
@@ -162,44 +196,12 @@ public class DescribeBackupPlanBillingResponse extends AcsResponse {
 			this.usedFullBytes = usedFullBytes;
 		}
 
-		public Long getUsedIncrementBytes() {
-			return this.usedIncrementBytes;
+		public Boolean getIsFreeBytesUnlimited() {
+			return this.isFreeBytesUnlimited;
 		}
 
-		public void setUsedIncrementBytes(Long usedIncrementBytes) {
-			this.usedIncrementBytes = usedIncrementBytes;
-		}
-
-		public Long getQuotaStartTimestamp() {
-			return this.quotaStartTimestamp;
-		}
-
-		public void setQuotaStartTimestamp(Long quotaStartTimestamp) {
-			this.quotaStartTimestamp = quotaStartTimestamp;
-		}
-
-		public Long getQuotaEndTimestamp() {
-			return this.quotaEndTimestamp;
-		}
-
-		public void setQuotaEndTimestamp(Long quotaEndTimestamp) {
-			this.quotaEndTimestamp = quotaEndTimestamp;
-		}
-
-		public Long getBuyCreateTimestamp() {
-			return this.buyCreateTimestamp;
-		}
-
-		public void setBuyCreateTimestamp(Long buyCreateTimestamp) {
-			this.buyCreateTimestamp = buyCreateTimestamp;
-		}
-
-		public Long getFullStorageSize() {
-			return this.fullStorageSize;
-		}
-
-		public void setFullStorageSize(Long fullStorageSize) {
-			this.fullStorageSize = fullStorageSize;
+		public void setIsFreeBytesUnlimited(Boolean isFreeBytesUnlimited) {
+			this.isFreeBytesUnlimited = isFreeBytesUnlimited;
 		}
 
 		public Long getContStorageSize() {
@@ -210,20 +212,28 @@ public class DescribeBackupPlanBillingResponse extends AcsResponse {
 			this.contStorageSize = contStorageSize;
 		}
 
-		public Boolean getIsExpired() {
-			return this.isExpired;
+		public String getBuyChargeType() {
+			return this.buyChargeType;
 		}
 
-		public void setIsExpired(Boolean isExpired) {
-			this.isExpired = isExpired;
+		public void setBuyChargeType(String buyChargeType) {
+			this.buyChargeType = buyChargeType;
 		}
 
-		public Boolean getIsFreeBytesUnlimited() {
-			return this.isFreeBytesUnlimited;
+		public Long getUsedIncrementBytes() {
+			return this.usedIncrementBytes;
 		}
 
-		public void setIsFreeBytesUnlimited(Boolean isFreeBytesUnlimited) {
-			this.isFreeBytesUnlimited = isFreeBytesUnlimited;
+		public void setUsedIncrementBytes(Long usedIncrementBytes) {
+			this.usedIncrementBytes = usedIncrementBytes;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 	}
 

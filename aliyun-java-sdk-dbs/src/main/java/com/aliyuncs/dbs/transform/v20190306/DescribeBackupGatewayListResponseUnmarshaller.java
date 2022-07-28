@@ -27,28 +27,28 @@ public class DescribeBackupGatewayListResponseUnmarshaller {
 	public static DescribeBackupGatewayListResponse unmarshall(DescribeBackupGatewayListResponse describeBackupGatewayListResponse, UnmarshallerContext _ctx) {
 		
 		describeBackupGatewayListResponse.setRequestId(_ctx.stringValue("DescribeBackupGatewayListResponse.RequestId"));
-		describeBackupGatewayListResponse.setSuccess(_ctx.booleanValue("DescribeBackupGatewayListResponse.Success"));
-		describeBackupGatewayListResponse.setErrCode(_ctx.stringValue("DescribeBackupGatewayListResponse.ErrCode"));
-		describeBackupGatewayListResponse.setErrMessage(_ctx.stringValue("DescribeBackupGatewayListResponse.ErrMessage"));
 		describeBackupGatewayListResponse.setHttpStatusCode(_ctx.integerValue("DescribeBackupGatewayListResponse.HttpStatusCode"));
-		describeBackupGatewayListResponse.setTotalPages(_ctx.integerValue("DescribeBackupGatewayListResponse.TotalPages"));
-		describeBackupGatewayListResponse.setPageSize(_ctx.integerValue("DescribeBackupGatewayListResponse.PageSize"));
 		describeBackupGatewayListResponse.setPageNum(_ctx.integerValue("DescribeBackupGatewayListResponse.PageNum"));
+		describeBackupGatewayListResponse.setErrCode(_ctx.stringValue("DescribeBackupGatewayListResponse.ErrCode"));
+		describeBackupGatewayListResponse.setSuccess(_ctx.booleanValue("DescribeBackupGatewayListResponse.Success"));
+		describeBackupGatewayListResponse.setErrMessage(_ctx.stringValue("DescribeBackupGatewayListResponse.ErrMessage"));
+		describeBackupGatewayListResponse.setTotalPages(_ctx.integerValue("DescribeBackupGatewayListResponse.TotalPages"));
 		describeBackupGatewayListResponse.setTotalElements(_ctx.integerValue("DescribeBackupGatewayListResponse.TotalElements"));
+		describeBackupGatewayListResponse.setPageSize(_ctx.integerValue("DescribeBackupGatewayListResponse.PageSize"));
 
 		List<BackupGateway> items = new ArrayList<BackupGateway>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeBackupGatewayListResponse.Items.Length"); i++) {
 			BackupGateway backupGateway = new BackupGateway();
-			backupGateway.setBackupGatewayId(_ctx.stringValue("DescribeBackupGatewayListResponse.Items["+ i +"].BackupGatewayId"));
-			backupGateway.setSourceEndpointInternetIP(_ctx.stringValue("DescribeBackupGatewayListResponse.Items["+ i +"].SourceEndpointInternetIP"));
-			backupGateway.setSourceEndpointIntranetIP(_ctx.stringValue("DescribeBackupGatewayListResponse.Items["+ i +"].SourceEndpointIntranetIP"));
-			backupGateway.setSourceEndpointHostname(_ctx.stringValue("DescribeBackupGatewayListResponse.Items["+ i +"].SourceEndpointHostname"));
-			backupGateway.setBackupGatewayStatus(_ctx.stringValue("DescribeBackupGatewayListResponse.Items["+ i +"].BackupGatewayStatus"));
-			backupGateway.setLastHeartbeatTime(_ctx.longValue("DescribeBackupGatewayListResponse.Items["+ i +"].LastHeartbeatTime"));
-			backupGateway.setBackupGatewayCreateTime(_ctx.longValue("DescribeBackupGatewayListResponse.Items["+ i +"].BackupGatewayCreateTime"));
-			backupGateway.setRegion(_ctx.stringValue("DescribeBackupGatewayListResponse.Items["+ i +"].Region"));
 			backupGateway.setDisplayName(_ctx.stringValue("DescribeBackupGatewayListResponse.Items["+ i +"].DisplayName"));
+			backupGateway.setBackupGatewayCreateTime(_ctx.longValue("DescribeBackupGatewayListResponse.Items["+ i +"].BackupGatewayCreateTime"));
+			backupGateway.setBackupGatewayId(_ctx.stringValue("DescribeBackupGatewayListResponse.Items["+ i +"].BackupGatewayId"));
+			backupGateway.setRegion(_ctx.stringValue("DescribeBackupGatewayListResponse.Items["+ i +"].Region"));
 			backupGateway.setIdentifier(_ctx.stringValue("DescribeBackupGatewayListResponse.Items["+ i +"].Identifier"));
+			backupGateway.setSourceEndpointInternetIP(_ctx.stringValue("DescribeBackupGatewayListResponse.Items["+ i +"].SourceEndpointInternetIP"));
+			backupGateway.setBackupGatewayStatus(_ctx.stringValue("DescribeBackupGatewayListResponse.Items["+ i +"].BackupGatewayStatus"));
+			backupGateway.setSourceEndpointIntranetIP(_ctx.stringValue("DescribeBackupGatewayListResponse.Items["+ i +"].SourceEndpointIntranetIP"));
+			backupGateway.setLastHeartbeatTime(_ctx.longValue("DescribeBackupGatewayListResponse.Items["+ i +"].LastHeartbeatTime"));
+			backupGateway.setSourceEndpointHostname(_ctx.stringValue("DescribeBackupGatewayListResponse.Items["+ i +"].SourceEndpointHostname"));
 
 			items.add(backupGateway);
 		}

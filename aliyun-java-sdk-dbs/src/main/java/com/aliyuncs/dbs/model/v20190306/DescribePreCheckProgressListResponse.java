@@ -27,17 +27,17 @@ public class DescribePreCheckProgressListResponse extends AcsResponse {
 
 	private String status;
 
-	private Integer progress;
-
-	private Boolean success;
-
-	private String errCode;
-
-	private String errMessage;
-
 	private Integer httpStatusCode;
 
 	private String requestId;
+
+	private Integer progress;
+
+	private String errCode;
+
+	private Boolean success;
+
+	private String errMessage;
 
 	private List<PreCheckProgressDetail> items;
 
@@ -47,38 +47,6 @@ public class DescribePreCheckProgressListResponse extends AcsResponse {
 
 	public void setStatus(String status) {
 		this.status = status;
-	}
-
-	public Integer getProgress() {
-		return this.progress;
-	}
-
-	public void setProgress(Integer progress) {
-		this.progress = progress;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getErrCode() {
-		return this.errCode;
-	}
-
-	public void setErrCode(String errCode) {
-		this.errCode = errCode;
-	}
-
-	public String getErrMessage() {
-		return this.errMessage;
-	}
-
-	public void setErrMessage(String errMessage) {
-		this.errMessage = errMessage;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -97,6 +65,38 @@ public class DescribePreCheckProgressListResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public Integer getProgress() {
+		return this.progress;
+	}
+
+	public void setProgress(Integer progress) {
+		this.progress = progress;
+	}
+
+	public String getErrCode() {
+		return this.errCode;
+	}
+
+	public void setErrCode(String errCode) {
+		this.errCode = errCode;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public String getErrMessage() {
+		return this.errMessage;
+	}
+
+	public void setErrMessage(String errMessage) {
+		this.errMessage = errMessage;
+	}
+
 	public List<PreCheckProgressDetail> getItems() {
 		return this.items;
 	}
@@ -107,28 +107,28 @@ public class DescribePreCheckProgressListResponse extends AcsResponse {
 
 	public static class PreCheckProgressDetail {
 
-		private String jobId;
+		private Long finishTime;
 
 		private String state;
 
-		private String orderNum;
+		private Long bootTime;
 
-		private String errMsg;
-
-		private String names;
+		private String jobId;
 
 		private String item;
 
-		private Long bootTime;
+		private String errMsg;
 
-		private Long finishTime;
+		private String orderNum;
 
-		public String getJobId() {
-			return this.jobId;
+		private String names;
+
+		public Long getFinishTime() {
+			return this.finishTime;
 		}
 
-		public void setJobId(String jobId) {
-			this.jobId = jobId;
+		public void setFinishTime(Long finishTime) {
+			this.finishTime = finishTime;
 		}
 
 		public String getState() {
@@ -139,28 +139,20 @@ public class DescribePreCheckProgressListResponse extends AcsResponse {
 			this.state = state;
 		}
 
-		public String getOrderNum() {
-			return this.orderNum;
+		public Long getBootTime() {
+			return this.bootTime;
 		}
 
-		public void setOrderNum(String orderNum) {
-			this.orderNum = orderNum;
+		public void setBootTime(Long bootTime) {
+			this.bootTime = bootTime;
 		}
 
-		public String getErrMsg() {
-			return this.errMsg;
+		public String getJobId() {
+			return this.jobId;
 		}
 
-		public void setErrMsg(String errMsg) {
-			this.errMsg = errMsg;
-		}
-
-		public String getNames() {
-			return this.names;
-		}
-
-		public void setNames(String names) {
-			this.names = names;
+		public void setJobId(String jobId) {
+			this.jobId = jobId;
 		}
 
 		public String getItem() {
@@ -171,20 +163,28 @@ public class DescribePreCheckProgressListResponse extends AcsResponse {
 			this.item = item;
 		}
 
-		public Long getBootTime() {
-			return this.bootTime;
+		public String getErrMsg() {
+			return this.errMsg;
 		}
 
-		public void setBootTime(Long bootTime) {
-			this.bootTime = bootTime;
+		public void setErrMsg(String errMsg) {
+			this.errMsg = errMsg;
 		}
 
-		public Long getFinishTime() {
-			return this.finishTime;
+		public String getOrderNum() {
+			return this.orderNum;
 		}
 
-		public void setFinishTime(Long finishTime) {
-			this.finishTime = finishTime;
+		public void setOrderNum(String orderNum) {
+			this.orderNum = orderNum;
+		}
+
+		public String getNames() {
+			return this.names;
+		}
+
+		public void setNames(String names) {
+			this.names = names;
 		}
 	}
 

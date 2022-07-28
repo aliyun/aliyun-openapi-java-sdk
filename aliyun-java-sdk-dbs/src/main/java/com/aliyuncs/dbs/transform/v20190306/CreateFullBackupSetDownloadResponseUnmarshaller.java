@@ -23,10 +23,10 @@ public class CreateFullBackupSetDownloadResponseUnmarshaller {
 	public static CreateFullBackupSetDownloadResponse unmarshall(CreateFullBackupSetDownloadResponse createFullBackupSetDownloadResponse, UnmarshallerContext _ctx) {
 		
 		createFullBackupSetDownloadResponse.setRequestId(_ctx.stringValue("CreateFullBackupSetDownloadResponse.RequestId"));
-		createFullBackupSetDownloadResponse.setSuccess(_ctx.booleanValue("CreateFullBackupSetDownloadResponse.Success"));
-		createFullBackupSetDownloadResponse.setErrCode(_ctx.stringValue("CreateFullBackupSetDownloadResponse.ErrCode"));
-		createFullBackupSetDownloadResponse.setErrMessage(_ctx.stringValue("CreateFullBackupSetDownloadResponse.ErrMessage"));
 		createFullBackupSetDownloadResponse.setHttpStatusCode(_ctx.integerValue("CreateFullBackupSetDownloadResponse.HttpStatusCode"));
+		createFullBackupSetDownloadResponse.setErrCode(_ctx.stringValue("CreateFullBackupSetDownloadResponse.ErrCode"));
+		createFullBackupSetDownloadResponse.setSuccess(_ctx.booleanValue("CreateFullBackupSetDownloadResponse.Success"));
+		createFullBackupSetDownloadResponse.setErrMessage(_ctx.stringValue("CreateFullBackupSetDownloadResponse.ErrMessage"));
 		createFullBackupSetDownloadResponse.setBackupSetDownloadTaskId(_ctx.stringValue("CreateFullBackupSetDownloadResponse.BackupSetDownloadTaskId"));
 	 
 	 	return createFullBackupSetDownloadResponse;

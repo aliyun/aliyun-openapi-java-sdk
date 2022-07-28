@@ -23,10 +23,10 @@ public class StopBackupPlanResponseUnmarshaller {
 	public static StopBackupPlanResponse unmarshall(StopBackupPlanResponse stopBackupPlanResponse, UnmarshallerContext _ctx) {
 		
 		stopBackupPlanResponse.setRequestId(_ctx.stringValue("StopBackupPlanResponse.RequestId"));
-		stopBackupPlanResponse.setSuccess(_ctx.booleanValue("StopBackupPlanResponse.Success"));
-		stopBackupPlanResponse.setErrCode(_ctx.stringValue("StopBackupPlanResponse.ErrCode"));
-		stopBackupPlanResponse.setErrMessage(_ctx.stringValue("StopBackupPlanResponse.ErrMessage"));
 		stopBackupPlanResponse.setHttpStatusCode(_ctx.integerValue("StopBackupPlanResponse.HttpStatusCode"));
+		stopBackupPlanResponse.setErrCode(_ctx.stringValue("StopBackupPlanResponse.ErrCode"));
+		stopBackupPlanResponse.setSuccess(_ctx.booleanValue("StopBackupPlanResponse.Success"));
+		stopBackupPlanResponse.setErrMessage(_ctx.stringValue("StopBackupPlanResponse.ErrMessage"));
 		stopBackupPlanResponse.setBackupPlanId(_ctx.stringValue("StopBackupPlanResponse.BackupPlanId"));
 	 
 	 	return stopBackupPlanResponse;

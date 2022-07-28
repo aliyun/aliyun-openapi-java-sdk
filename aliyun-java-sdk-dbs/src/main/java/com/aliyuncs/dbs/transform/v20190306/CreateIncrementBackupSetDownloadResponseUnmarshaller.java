@@ -23,10 +23,10 @@ public class CreateIncrementBackupSetDownloadResponseUnmarshaller {
 	public static CreateIncrementBackupSetDownloadResponse unmarshall(CreateIncrementBackupSetDownloadResponse createIncrementBackupSetDownloadResponse, UnmarshallerContext _ctx) {
 		
 		createIncrementBackupSetDownloadResponse.setRequestId(_ctx.stringValue("CreateIncrementBackupSetDownloadResponse.RequestId"));
-		createIncrementBackupSetDownloadResponse.setSuccess(_ctx.booleanValue("CreateIncrementBackupSetDownloadResponse.Success"));
-		createIncrementBackupSetDownloadResponse.setErrCode(_ctx.stringValue("CreateIncrementBackupSetDownloadResponse.ErrCode"));
-		createIncrementBackupSetDownloadResponse.setErrMessage(_ctx.stringValue("CreateIncrementBackupSetDownloadResponse.ErrMessage"));
 		createIncrementBackupSetDownloadResponse.setHttpStatusCode(_ctx.integerValue("CreateIncrementBackupSetDownloadResponse.HttpStatusCode"));
+		createIncrementBackupSetDownloadResponse.setErrCode(_ctx.stringValue("CreateIncrementBackupSetDownloadResponse.ErrCode"));
+		createIncrementBackupSetDownloadResponse.setSuccess(_ctx.booleanValue("CreateIncrementBackupSetDownloadResponse.Success"));
+		createIncrementBackupSetDownloadResponse.setErrMessage(_ctx.stringValue("CreateIncrementBackupSetDownloadResponse.ErrMessage"));
 		createIncrementBackupSetDownloadResponse.setBackupSetDownloadTaskId(_ctx.stringValue("CreateIncrementBackupSetDownloadResponse.BackupSetDownloadTaskId"));
 	 
 	 	return createIncrementBackupSetDownloadResponse;

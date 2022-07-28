@@ -24,45 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateAndStartBackupPlanResponse extends AcsResponse {
 
-	private Boolean success;
-
-	private String errCode;
-
-	private String errMessage;
-
 	private Integer httpStatusCode;
 
 	private String requestId;
 
-	private String backupPlanId;
-
 	private Boolean createBackupSet;
 
+	private String errCode;
+
+	private Boolean success;
+
+	private String errMessage;
+
+	private String backupPlanId;
+
 	private String orderId;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getErrCode() {
-		return this.errCode;
-	}
-
-	public void setErrCode(String errCode) {
-		this.errCode = errCode;
-	}
-
-	public String getErrMessage() {
-		return this.errMessage;
-	}
-
-	public void setErrMessage(String errMessage) {
-		this.errMessage = errMessage;
-	}
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -80,20 +56,44 @@ public class CreateAndStartBackupPlanResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getBackupPlanId() {
-		return this.backupPlanId;
-	}
-
-	public void setBackupPlanId(String backupPlanId) {
-		this.backupPlanId = backupPlanId;
-	}
-
 	public Boolean getCreateBackupSet() {
 		return this.createBackupSet;
 	}
 
 	public void setCreateBackupSet(Boolean createBackupSet) {
 		this.createBackupSet = createBackupSet;
+	}
+
+	public String getErrCode() {
+		return this.errCode;
+	}
+
+	public void setErrCode(String errCode) {
+		this.errCode = errCode;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public String getErrMessage() {
+		return this.errMessage;
+	}
+
+	public void setErrMessage(String errMessage) {
+		this.errMessage = errMessage;
+	}
+
+	public String getBackupPlanId() {
+		return this.backupPlanId;
+	}
+
+	public void setBackupPlanId(String backupPlanId) {
+		this.backupPlanId = backupPlanId;
 	}
 
 	public String getOrderId() {

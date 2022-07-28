@@ -31,7 +31,7 @@ public class DescribeDLAServiceRequest extends RpcAcsRequest<DescribeDLAServiceR
 
 	private String ownerId;
 	public DescribeDLAServiceRequest() {
-		super("Dbs", "2019-03-06", "DescribeDLAService", "cbs");
+		super("Dbs", "2019-03-06", "DescribeDLAService");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

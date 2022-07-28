@@ -25,49 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeBackupSetDownloadTaskListResponse extends AcsResponse {
 
-	private Boolean success;
-
-	private String errCode;
-
-	private String errMessage;
-
 	private Integer httpStatusCode;
-
-	private String requestId;
-
-	private Integer totalPages;
-
-	private Integer pageSize;
 
 	private Integer pageNum;
 
+	private String requestId;
+
+	private String errCode;
+
+	private Boolean success;
+
+	private String errMessage;
+
+	private Integer totalPages;
+
 	private Integer totalElements;
 
+	private Integer pageSize;
+
 	private List<BackupSetDownloadTaskDetail> items;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getErrCode() {
-		return this.errCode;
-	}
-
-	public void setErrCode(String errCode) {
-		this.errCode = errCode;
-	}
-
-	public String getErrMessage() {
-		return this.errMessage;
-	}
-
-	public void setErrMessage(String errMessage) {
-		this.errMessage = errMessage;
-	}
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -75,30 +51,6 @@ public class DescribeBackupSetDownloadTaskListResponse extends AcsResponse {
 
 	public void setHttpStatusCode(Integer httpStatusCode) {
 		this.httpStatusCode = httpStatusCode;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getTotalPages() {
-		return this.totalPages;
-	}
-
-	public void setTotalPages(Integer totalPages) {
-		this.totalPages = totalPages;
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
 	}
 
 	public Integer getPageNum() {
@@ -109,12 +61,60 @@ public class DescribeBackupSetDownloadTaskListResponse extends AcsResponse {
 		this.pageNum = pageNum;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getErrCode() {
+		return this.errCode;
+	}
+
+	public void setErrCode(String errCode) {
+		this.errCode = errCode;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public String getErrMessage() {
+		return this.errMessage;
+	}
+
+	public void setErrMessage(String errMessage) {
+		this.errMessage = errMessage;
+	}
+
+	public Integer getTotalPages() {
+		return this.totalPages;
+	}
+
+	public void setTotalPages(Integer totalPages) {
+		this.totalPages = totalPages;
+	}
+
 	public Integer getTotalElements() {
 		return this.totalElements;
 	}
 
 	public void setTotalElements(Integer totalElements) {
 		this.totalElements = totalElements;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public List<BackupSetDownloadTaskDetail> getItems() {
@@ -127,43 +127,91 @@ public class DescribeBackupSetDownloadTaskListResponse extends AcsResponse {
 
 	public static class BackupSetDownloadTaskDetail {
 
+		private String backupSetDownloadStatus;
+
+		private Long backupSetDataSize;
+
+		private String backupSetDownloadTargetType;
+
+		private String backupSetDownloadDir;
+
+		private String errMessage;
+
+		private Long backupSetDownloadCreateTime;
+
 		private String backupPlanId;
+
+		private String backupSetDbType;
+
+		private String backupSetDownloadInternetUrl;
+
+		private String backupSetId;
+
+		private String backupSetDownloadIntranetUrl;
+
+		private Long backupGatewayId;
+
+		private String backupSetDownloadWay;
+
+		private Long backupSetDownloadFinishTime;
+
+		private String backupSetJobType;
 
 		private String backupSetDownloadTaskId;
 
 		private String backupSetDownloadTaskName;
 
-		private String backupSetDownloadStatus;
-
-		private Long backupSetDownloadCreateTime;
-
-		private Long backupSetDownloadFinishTime;
-
-		private String backupSetId;
+		private String backupSetDataFormat;
 
 		private String backupSetCode;
 
-		private String backupSetJobType;
+		public String getBackupSetDownloadStatus() {
+			return this.backupSetDownloadStatus;
+		}
 
-		private Long backupSetDataSize;
+		public void setBackupSetDownloadStatus(String backupSetDownloadStatus) {
+			this.backupSetDownloadStatus = backupSetDownloadStatus;
+		}
 
-		private String backupSetDataFormat;
+		public Long getBackupSetDataSize() {
+			return this.backupSetDataSize;
+		}
 
-		private String backupSetDbType;
+		public void setBackupSetDataSize(Long backupSetDataSize) {
+			this.backupSetDataSize = backupSetDataSize;
+		}
 
-		private String backupSetDownloadWay;
+		public String getBackupSetDownloadTargetType() {
+			return this.backupSetDownloadTargetType;
+		}
 
-		private String backupSetDownloadDir;
+		public void setBackupSetDownloadTargetType(String backupSetDownloadTargetType) {
+			this.backupSetDownloadTargetType = backupSetDownloadTargetType;
+		}
 
-		private String backupSetDownloadTargetType;
+		public String getBackupSetDownloadDir() {
+			return this.backupSetDownloadDir;
+		}
 
-		private Long backupGatewayId;
+		public void setBackupSetDownloadDir(String backupSetDownloadDir) {
+			this.backupSetDownloadDir = backupSetDownloadDir;
+		}
 
-		private String backupSetDownloadIntranetUrl;
+		public String getErrMessage() {
+			return this.errMessage;
+		}
 
-		private String backupSetDownloadInternetUrl;
+		public void setErrMessage(String errMessage) {
+			this.errMessage = errMessage;
+		}
 
-		private String errMessage;
+		public Long getBackupSetDownloadCreateTime() {
+			return this.backupSetDownloadCreateTime;
+		}
+
+		public void setBackupSetDownloadCreateTime(Long backupSetDownloadCreateTime) {
+			this.backupSetDownloadCreateTime = backupSetDownloadCreateTime;
+		}
 
 		public String getBackupPlanId() {
 			return this.backupPlanId;
@@ -171,6 +219,70 @@ public class DescribeBackupSetDownloadTaskListResponse extends AcsResponse {
 
 		public void setBackupPlanId(String backupPlanId) {
 			this.backupPlanId = backupPlanId;
+		}
+
+		public String getBackupSetDbType() {
+			return this.backupSetDbType;
+		}
+
+		public void setBackupSetDbType(String backupSetDbType) {
+			this.backupSetDbType = backupSetDbType;
+		}
+
+		public String getBackupSetDownloadInternetUrl() {
+			return this.backupSetDownloadInternetUrl;
+		}
+
+		public void setBackupSetDownloadInternetUrl(String backupSetDownloadInternetUrl) {
+			this.backupSetDownloadInternetUrl = backupSetDownloadInternetUrl;
+		}
+
+		public String getBackupSetId() {
+			return this.backupSetId;
+		}
+
+		public void setBackupSetId(String backupSetId) {
+			this.backupSetId = backupSetId;
+		}
+
+		public String getBackupSetDownloadIntranetUrl() {
+			return this.backupSetDownloadIntranetUrl;
+		}
+
+		public void setBackupSetDownloadIntranetUrl(String backupSetDownloadIntranetUrl) {
+			this.backupSetDownloadIntranetUrl = backupSetDownloadIntranetUrl;
+		}
+
+		public Long getBackupGatewayId() {
+			return this.backupGatewayId;
+		}
+
+		public void setBackupGatewayId(Long backupGatewayId) {
+			this.backupGatewayId = backupGatewayId;
+		}
+
+		public String getBackupSetDownloadWay() {
+			return this.backupSetDownloadWay;
+		}
+
+		public void setBackupSetDownloadWay(String backupSetDownloadWay) {
+			this.backupSetDownloadWay = backupSetDownloadWay;
+		}
+
+		public Long getBackupSetDownloadFinishTime() {
+			return this.backupSetDownloadFinishTime;
+		}
+
+		public void setBackupSetDownloadFinishTime(Long backupSetDownloadFinishTime) {
+			this.backupSetDownloadFinishTime = backupSetDownloadFinishTime;
+		}
+
+		public String getBackupSetJobType() {
+			return this.backupSetJobType;
+		}
+
+		public void setBackupSetJobType(String backupSetJobType) {
+			this.backupSetJobType = backupSetJobType;
 		}
 
 		public String getBackupSetDownloadTaskId() {
@@ -189,62 +301,6 @@ public class DescribeBackupSetDownloadTaskListResponse extends AcsResponse {
 			this.backupSetDownloadTaskName = backupSetDownloadTaskName;
 		}
 
-		public String getBackupSetDownloadStatus() {
-			return this.backupSetDownloadStatus;
-		}
-
-		public void setBackupSetDownloadStatus(String backupSetDownloadStatus) {
-			this.backupSetDownloadStatus = backupSetDownloadStatus;
-		}
-
-		public Long getBackupSetDownloadCreateTime() {
-			return this.backupSetDownloadCreateTime;
-		}
-
-		public void setBackupSetDownloadCreateTime(Long backupSetDownloadCreateTime) {
-			this.backupSetDownloadCreateTime = backupSetDownloadCreateTime;
-		}
-
-		public Long getBackupSetDownloadFinishTime() {
-			return this.backupSetDownloadFinishTime;
-		}
-
-		public void setBackupSetDownloadFinishTime(Long backupSetDownloadFinishTime) {
-			this.backupSetDownloadFinishTime = backupSetDownloadFinishTime;
-		}
-
-		public String getBackupSetId() {
-			return this.backupSetId;
-		}
-
-		public void setBackupSetId(String backupSetId) {
-			this.backupSetId = backupSetId;
-		}
-
-		public String getBackupSetCode() {
-			return this.backupSetCode;
-		}
-
-		public void setBackupSetCode(String backupSetCode) {
-			this.backupSetCode = backupSetCode;
-		}
-
-		public String getBackupSetJobType() {
-			return this.backupSetJobType;
-		}
-
-		public void setBackupSetJobType(String backupSetJobType) {
-			this.backupSetJobType = backupSetJobType;
-		}
-
-		public Long getBackupSetDataSize() {
-			return this.backupSetDataSize;
-		}
-
-		public void setBackupSetDataSize(Long backupSetDataSize) {
-			this.backupSetDataSize = backupSetDataSize;
-		}
-
 		public String getBackupSetDataFormat() {
 			return this.backupSetDataFormat;
 		}
@@ -253,68 +309,12 @@ public class DescribeBackupSetDownloadTaskListResponse extends AcsResponse {
 			this.backupSetDataFormat = backupSetDataFormat;
 		}
 
-		public String getBackupSetDbType() {
-			return this.backupSetDbType;
+		public String getBackupSetCode() {
+			return this.backupSetCode;
 		}
 
-		public void setBackupSetDbType(String backupSetDbType) {
-			this.backupSetDbType = backupSetDbType;
-		}
-
-		public String getBackupSetDownloadWay() {
-			return this.backupSetDownloadWay;
-		}
-
-		public void setBackupSetDownloadWay(String backupSetDownloadWay) {
-			this.backupSetDownloadWay = backupSetDownloadWay;
-		}
-
-		public String getBackupSetDownloadDir() {
-			return this.backupSetDownloadDir;
-		}
-
-		public void setBackupSetDownloadDir(String backupSetDownloadDir) {
-			this.backupSetDownloadDir = backupSetDownloadDir;
-		}
-
-		public String getBackupSetDownloadTargetType() {
-			return this.backupSetDownloadTargetType;
-		}
-
-		public void setBackupSetDownloadTargetType(String backupSetDownloadTargetType) {
-			this.backupSetDownloadTargetType = backupSetDownloadTargetType;
-		}
-
-		public Long getBackupGatewayId() {
-			return this.backupGatewayId;
-		}
-
-		public void setBackupGatewayId(Long backupGatewayId) {
-			this.backupGatewayId = backupGatewayId;
-		}
-
-		public String getBackupSetDownloadIntranetUrl() {
-			return this.backupSetDownloadIntranetUrl;
-		}
-
-		public void setBackupSetDownloadIntranetUrl(String backupSetDownloadIntranetUrl) {
-			this.backupSetDownloadIntranetUrl = backupSetDownloadIntranetUrl;
-		}
-
-		public String getBackupSetDownloadInternetUrl() {
-			return this.backupSetDownloadInternetUrl;
-		}
-
-		public void setBackupSetDownloadInternetUrl(String backupSetDownloadInternetUrl) {
-			this.backupSetDownloadInternetUrl = backupSetDownloadInternetUrl;
-		}
-
-		public String getErrMessage() {
-			return this.errMessage;
-		}
-
-		public void setErrMessage(String errMessage) {
-			this.errMessage = errMessage;
+		public void setBackupSetCode(String backupSetCode) {
+			this.backupSetCode = backupSetCode;
 		}
 	}
 

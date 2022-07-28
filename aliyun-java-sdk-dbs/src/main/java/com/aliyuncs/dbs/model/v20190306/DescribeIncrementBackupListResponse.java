@@ -25,49 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeIncrementBackupListResponse extends AcsResponse {
 
-	private Boolean success;
-
-	private String errCode;
-
-	private String errMessage;
-
 	private Integer httpStatusCode;
-
-	private String requestId;
-
-	private Integer totalPages;
-
-	private Integer pageSize;
 
 	private Integer pageNum;
 
+	private String requestId;
+
+	private String errCode;
+
+	private Boolean success;
+
+	private String errMessage;
+
+	private Integer totalPages;
+
 	private Integer totalElements;
 
+	private Integer pageSize;
+
 	private List<IncrementBackupFile> items;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getErrCode() {
-		return this.errCode;
-	}
-
-	public void setErrCode(String errCode) {
-		this.errCode = errCode;
-	}
-
-	public String getErrMessage() {
-		return this.errMessage;
-	}
-
-	public void setErrMessage(String errMessage) {
-		this.errMessage = errMessage;
-	}
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -75,30 +51,6 @@ public class DescribeIncrementBackupListResponse extends AcsResponse {
 
 	public void setHttpStatusCode(Integer httpStatusCode) {
 		this.httpStatusCode = httpStatusCode;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getTotalPages() {
-		return this.totalPages;
-	}
-
-	public void setTotalPages(Integer totalPages) {
-		this.totalPages = totalPages;
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
 	}
 
 	public Integer getPageNum() {
@@ -109,12 +61,60 @@ public class DescribeIncrementBackupListResponse extends AcsResponse {
 		this.pageNum = pageNum;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getErrCode() {
+		return this.errCode;
+	}
+
+	public void setErrCode(String errCode) {
+		this.errCode = errCode;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public String getErrMessage() {
+		return this.errMessage;
+	}
+
+	public void setErrMessage(String errMessage) {
+		this.errMessage = errMessage;
+	}
+
+	public Integer getTotalPages() {
+		return this.totalPages;
+	}
+
+	public void setTotalPages(Integer totalPages) {
+		this.totalPages = totalPages;
+	}
+
 	public Integer getTotalElements() {
 		return this.totalElements;
 	}
 
 	public void setTotalElements(Integer totalElements) {
 		this.totalElements = totalElements;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public List<IncrementBackupFile> getItems() {
@@ -127,55 +127,23 @@ public class DescribeIncrementBackupListResponse extends AcsResponse {
 
 	public static class IncrementBackupFile {
 
-		private String backupSetId;
-
-		private String backupSetJobId;
-
-		private String sourceEndpointIpPort;
-
-		private Long startTime;
-
 		private Long endTime;
-
-		private String backupStatus;
 
 		private Long backupSetExpiredTime;
 
-		private Long backupSize;
+		private Long startTime;
 
 		private String storageMethod;
 
-		public String getBackupSetId() {
-			return this.backupSetId;
-		}
+		private String backupSetJobId;
 
-		public void setBackupSetId(String backupSetId) {
-			this.backupSetId = backupSetId;
-		}
+		private String backupSetId;
 
-		public String getBackupSetJobId() {
-			return this.backupSetJobId;
-		}
+		private String backupStatus;
 
-		public void setBackupSetJobId(String backupSetJobId) {
-			this.backupSetJobId = backupSetJobId;
-		}
+		private String sourceEndpointIpPort;
 
-		public String getSourceEndpointIpPort() {
-			return this.sourceEndpointIpPort;
-		}
-
-		public void setSourceEndpointIpPort(String sourceEndpointIpPort) {
-			this.sourceEndpointIpPort = sourceEndpointIpPort;
-		}
-
-		public Long getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(Long startTime) {
-			this.startTime = startTime;
-		}
+		private Long backupSize;
 
 		public Long getEndTime() {
 			return this.endTime;
@@ -183,14 +151,6 @@ public class DescribeIncrementBackupListResponse extends AcsResponse {
 
 		public void setEndTime(Long endTime) {
 			this.endTime = endTime;
-		}
-
-		public String getBackupStatus() {
-			return this.backupStatus;
-		}
-
-		public void setBackupStatus(String backupStatus) {
-			this.backupStatus = backupStatus;
 		}
 
 		public Long getBackupSetExpiredTime() {
@@ -201,12 +161,12 @@ public class DescribeIncrementBackupListResponse extends AcsResponse {
 			this.backupSetExpiredTime = backupSetExpiredTime;
 		}
 
-		public Long getBackupSize() {
-			return this.backupSize;
+		public Long getStartTime() {
+			return this.startTime;
 		}
 
-		public void setBackupSize(Long backupSize) {
-			this.backupSize = backupSize;
+		public void setStartTime(Long startTime) {
+			this.startTime = startTime;
 		}
 
 		public String getStorageMethod() {
@@ -215,6 +175,46 @@ public class DescribeIncrementBackupListResponse extends AcsResponse {
 
 		public void setStorageMethod(String storageMethod) {
 			this.storageMethod = storageMethod;
+		}
+
+		public String getBackupSetJobId() {
+			return this.backupSetJobId;
+		}
+
+		public void setBackupSetJobId(String backupSetJobId) {
+			this.backupSetJobId = backupSetJobId;
+		}
+
+		public String getBackupSetId() {
+			return this.backupSetId;
+		}
+
+		public void setBackupSetId(String backupSetId) {
+			this.backupSetId = backupSetId;
+		}
+
+		public String getBackupStatus() {
+			return this.backupStatus;
+		}
+
+		public void setBackupStatus(String backupStatus) {
+			this.backupStatus = backupStatus;
+		}
+
+		public String getSourceEndpointIpPort() {
+			return this.sourceEndpointIpPort;
+		}
+
+		public void setSourceEndpointIpPort(String sourceEndpointIpPort) {
+			this.sourceEndpointIpPort = sourceEndpointIpPort;
+		}
+
+		public Long getBackupSize() {
+			return this.backupSize;
+		}
+
+		public void setBackupSize(Long backupSize) {
+			this.backupSize = backupSize;
 		}
 	}
 

@@ -25,49 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeBackupGatewayListResponse extends AcsResponse {
 
-	private Boolean success;
-
-	private String errCode;
-
-	private String errMessage;
-
 	private Integer httpStatusCode;
-
-	private String requestId;
-
-	private Integer totalPages;
-
-	private Integer pageSize;
 
 	private Integer pageNum;
 
+	private String requestId;
+
+	private String errCode;
+
+	private Boolean success;
+
+	private String errMessage;
+
+	private Integer totalPages;
+
 	private Integer totalElements;
 
+	private Integer pageSize;
+
 	private List<BackupGateway> items;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getErrCode() {
-		return this.errCode;
-	}
-
-	public void setErrCode(String errCode) {
-		this.errCode = errCode;
-	}
-
-	public String getErrMessage() {
-		return this.errMessage;
-	}
-
-	public void setErrMessage(String errMessage) {
-		this.errMessage = errMessage;
-	}
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -75,30 +51,6 @@ public class DescribeBackupGatewayListResponse extends AcsResponse {
 
 	public void setHttpStatusCode(Integer httpStatusCode) {
 		this.httpStatusCode = httpStatusCode;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getTotalPages() {
-		return this.totalPages;
-	}
-
-	public void setTotalPages(Integer totalPages) {
-		this.totalPages = totalPages;
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
 	}
 
 	public Integer getPageNum() {
@@ -109,12 +61,60 @@ public class DescribeBackupGatewayListResponse extends AcsResponse {
 		this.pageNum = pageNum;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getErrCode() {
+		return this.errCode;
+	}
+
+	public void setErrCode(String errCode) {
+		this.errCode = errCode;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public String getErrMessage() {
+		return this.errMessage;
+	}
+
+	public void setErrMessage(String errMessage) {
+		this.errMessage = errMessage;
+	}
+
+	public Integer getTotalPages() {
+		return this.totalPages;
+	}
+
+	public void setTotalPages(Integer totalPages) {
+		this.totalPages = totalPages;
+	}
+
 	public Integer getTotalElements() {
 		return this.totalElements;
 	}
 
 	public void setTotalElements(Integer totalElements) {
 		this.totalElements = totalElements;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public List<BackupGateway> getItems() {
@@ -127,72 +127,32 @@ public class DescribeBackupGatewayListResponse extends AcsResponse {
 
 	public static class BackupGateway {
 
-		private String backupGatewayId;
-
-		private String sourceEndpointInternetIP;
-
-		private String sourceEndpointIntranetIP;
-
-		private String sourceEndpointHostname;
-
-		private String backupGatewayStatus;
-
-		private Long lastHeartbeatTime;
+		private String displayName;
 
 		private Long backupGatewayCreateTime;
 
-		private String region;
+		private String backupGatewayId;
 
-		private String displayName;
+		private String region;
 
 		private String identifier;
 
-		public String getBackupGatewayId() {
-			return this.backupGatewayId;
+		private String sourceEndpointInternetIP;
+
+		private String backupGatewayStatus;
+
+		private String sourceEndpointIntranetIP;
+
+		private Long lastHeartbeatTime;
+
+		private String sourceEndpointHostname;
+
+		public String getDisplayName() {
+			return this.displayName;
 		}
 
-		public void setBackupGatewayId(String backupGatewayId) {
-			this.backupGatewayId = backupGatewayId;
-		}
-
-		public String getSourceEndpointInternetIP() {
-			return this.sourceEndpointInternetIP;
-		}
-
-		public void setSourceEndpointInternetIP(String sourceEndpointInternetIP) {
-			this.sourceEndpointInternetIP = sourceEndpointInternetIP;
-		}
-
-		public String getSourceEndpointIntranetIP() {
-			return this.sourceEndpointIntranetIP;
-		}
-
-		public void setSourceEndpointIntranetIP(String sourceEndpointIntranetIP) {
-			this.sourceEndpointIntranetIP = sourceEndpointIntranetIP;
-		}
-
-		public String getSourceEndpointHostname() {
-			return this.sourceEndpointHostname;
-		}
-
-		public void setSourceEndpointHostname(String sourceEndpointHostname) {
-			this.sourceEndpointHostname = sourceEndpointHostname;
-		}
-
-		public String getBackupGatewayStatus() {
-			return this.backupGatewayStatus;
-		}
-
-		public void setBackupGatewayStatus(String backupGatewayStatus) {
-			this.backupGatewayStatus = backupGatewayStatus;
-		}
-
-		public Long getLastHeartbeatTime() {
-			return this.lastHeartbeatTime;
-		}
-
-		public void setLastHeartbeatTime(Long lastHeartbeatTime) {
-			this.lastHeartbeatTime = lastHeartbeatTime;
+		public void setDisplayName(String displayName) {
+			this.displayName = displayName;
 		}
 
 		public Long getBackupGatewayCreateTime() {
@@ -203,6 +163,14 @@ public class DescribeBackupGatewayListResponse extends AcsResponse {
 			this.backupGatewayCreateTime = backupGatewayCreateTime;
 		}
 
+		public String getBackupGatewayId() {
+			return this.backupGatewayId;
+		}
+
+		public void setBackupGatewayId(String backupGatewayId) {
+			this.backupGatewayId = backupGatewayId;
+		}
+
 		public String getRegion() {
 			return this.region;
 		}
@@ -211,20 +179,52 @@ public class DescribeBackupGatewayListResponse extends AcsResponse {
 			this.region = region;
 		}
 
-		public String getDisplayName() {
-			return this.displayName;
-		}
-
-		public void setDisplayName(String displayName) {
-			this.displayName = displayName;
-		}
-
 		public String getIdentifier() {
 			return this.identifier;
 		}
 
 		public void setIdentifier(String identifier) {
 			this.identifier = identifier;
+		}
+
+		public String getSourceEndpointInternetIP() {
+			return this.sourceEndpointInternetIP;
+		}
+
+		public void setSourceEndpointInternetIP(String sourceEndpointInternetIP) {
+			this.sourceEndpointInternetIP = sourceEndpointInternetIP;
+		}
+
+		public String getBackupGatewayStatus() {
+			return this.backupGatewayStatus;
+		}
+
+		public void setBackupGatewayStatus(String backupGatewayStatus) {
+			this.backupGatewayStatus = backupGatewayStatus;
+		}
+
+		public String getSourceEndpointIntranetIP() {
+			return this.sourceEndpointIntranetIP;
+		}
+
+		public void setSourceEndpointIntranetIP(String sourceEndpointIntranetIP) {
+			this.sourceEndpointIntranetIP = sourceEndpointIntranetIP;
+		}
+
+		public Long getLastHeartbeatTime() {
+			return this.lastHeartbeatTime;
+		}
+
+		public void setLastHeartbeatTime(Long lastHeartbeatTime) {
+			this.lastHeartbeatTime = lastHeartbeatTime;
+		}
+
+		public String getSourceEndpointHostname() {
+			return this.sourceEndpointHostname;
+		}
+
+		public void setSourceEndpointHostname(String sourceEndpointHostname) {
+			this.sourceEndpointHostname = sourceEndpointHostname;
 		}
 	}
 

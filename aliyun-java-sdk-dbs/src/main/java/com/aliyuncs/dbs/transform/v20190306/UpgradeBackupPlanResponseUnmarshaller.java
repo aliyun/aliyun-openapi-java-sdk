@@ -23,10 +23,10 @@ public class UpgradeBackupPlanResponseUnmarshaller {
 	public static UpgradeBackupPlanResponse unmarshall(UpgradeBackupPlanResponse upgradeBackupPlanResponse, UnmarshallerContext _ctx) {
 		
 		upgradeBackupPlanResponse.setRequestId(_ctx.stringValue("UpgradeBackupPlanResponse.RequestId"));
-		upgradeBackupPlanResponse.setSuccess(_ctx.booleanValue("UpgradeBackupPlanResponse.Success"));
-		upgradeBackupPlanResponse.setErrCode(_ctx.stringValue("UpgradeBackupPlanResponse.ErrCode"));
-		upgradeBackupPlanResponse.setErrMessage(_ctx.stringValue("UpgradeBackupPlanResponse.ErrMessage"));
 		upgradeBackupPlanResponse.setHttpStatusCode(_ctx.integerValue("UpgradeBackupPlanResponse.HttpStatusCode"));
+		upgradeBackupPlanResponse.setErrCode(_ctx.stringValue("UpgradeBackupPlanResponse.ErrCode"));
+		upgradeBackupPlanResponse.setSuccess(_ctx.booleanValue("UpgradeBackupPlanResponse.Success"));
+		upgradeBackupPlanResponse.setErrMessage(_ctx.stringValue("UpgradeBackupPlanResponse.ErrMessage"));
 		upgradeBackupPlanResponse.setBackupPlanId(_ctx.stringValue("UpgradeBackupPlanResponse.BackupPlanId"));
 		upgradeBackupPlanResponse.setOrderId(_ctx.stringValue("UpgradeBackupPlanResponse.OrderId"));
 	 

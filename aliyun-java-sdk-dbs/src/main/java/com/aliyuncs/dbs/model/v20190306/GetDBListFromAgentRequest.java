@@ -35,7 +35,7 @@ public class GetDBListFromAgentRequest extends RpcAcsRequest<GetDBListFromAgentR
 
 	private Long taskId;
 	public GetDBListFromAgentRequest() {
-		super("Dbs", "2019-03-06", "GetDBListFromAgent", "cbs");
+		super("Dbs", "2019-03-06", "GetDBListFromAgent");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

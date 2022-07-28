@@ -26,10 +26,10 @@ public class DescribeRegionsResponseUnmarshaller {
 	public static DescribeRegionsResponse unmarshall(DescribeRegionsResponse describeRegionsResponse, UnmarshallerContext _ctx) {
 		
 		describeRegionsResponse.setRequestId(_ctx.stringValue("DescribeRegionsResponse.RequestId"));
-		describeRegionsResponse.setSuccess(_ctx.booleanValue("DescribeRegionsResponse.Success"));
-		describeRegionsResponse.setErrCode(_ctx.stringValue("DescribeRegionsResponse.ErrCode"));
-		describeRegionsResponse.setErrMessage(_ctx.stringValue("DescribeRegionsResponse.ErrMessage"));
 		describeRegionsResponse.setHttpStatusCode(_ctx.integerValue("DescribeRegionsResponse.HttpStatusCode"));
+		describeRegionsResponse.setErrCode(_ctx.stringValue("DescribeRegionsResponse.ErrCode"));
+		describeRegionsResponse.setSuccess(_ctx.booleanValue("DescribeRegionsResponse.Success"));
+		describeRegionsResponse.setErrMessage(_ctx.stringValue("DescribeRegionsResponse.ErrMessage"));
 
 		List<String> regions = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeRegionsResponse.Regions.Length"); i++) {

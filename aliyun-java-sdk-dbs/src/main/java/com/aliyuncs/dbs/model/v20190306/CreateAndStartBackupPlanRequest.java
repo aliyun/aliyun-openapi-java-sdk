@@ -35,6 +35,8 @@ public class CreateAndStartBackupPlanRequest extends RpcAcsRequest<CreateAndStar
 
 	private String databaseRegion;
 
+	private String resourceGroupId;
+
 	private String backupStartTime;
 
 	private String sourceEndpointIP;
@@ -107,7 +109,7 @@ public class CreateAndStartBackupPlanRequest extends RpcAcsRequest<CreateAndStar
 
 	private String payType;
 	public CreateAndStartBackupPlanRequest() {
-		super("Dbs", "2019-03-06", "CreateAndStartBackupPlan", "cbs");
+		super("Dbs", "2019-03-06", "CreateAndStartBackupPlan");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -167,6 +169,17 @@ public class CreateAndStartBackupPlanRequest extends RpcAcsRequest<CreateAndStar
 		this.databaseRegion = databaseRegion;
 		if(databaseRegion != null){
 			putQueryParameter("DatabaseRegion", databaseRegion);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

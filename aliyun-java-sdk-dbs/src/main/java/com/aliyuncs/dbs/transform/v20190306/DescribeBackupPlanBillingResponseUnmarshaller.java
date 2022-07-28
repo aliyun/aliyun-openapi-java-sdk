@@ -24,26 +24,27 @@ public class DescribeBackupPlanBillingResponseUnmarshaller {
 	public static DescribeBackupPlanBillingResponse unmarshall(DescribeBackupPlanBillingResponse describeBackupPlanBillingResponse, UnmarshallerContext _ctx) {
 		
 		describeBackupPlanBillingResponse.setRequestId(_ctx.stringValue("DescribeBackupPlanBillingResponse.RequestId"));
-		describeBackupPlanBillingResponse.setSuccess(_ctx.booleanValue("DescribeBackupPlanBillingResponse.Success"));
-		describeBackupPlanBillingResponse.setErrCode(_ctx.stringValue("DescribeBackupPlanBillingResponse.ErrCode"));
-		describeBackupPlanBillingResponse.setErrMessage(_ctx.stringValue("DescribeBackupPlanBillingResponse.ErrMessage"));
 		describeBackupPlanBillingResponse.setHttpStatusCode(_ctx.integerValue("DescribeBackupPlanBillingResponse.HttpStatusCode"));
+		describeBackupPlanBillingResponse.setErrCode(_ctx.stringValue("DescribeBackupPlanBillingResponse.ErrCode"));
+		describeBackupPlanBillingResponse.setSuccess(_ctx.booleanValue("DescribeBackupPlanBillingResponse.Success"));
+		describeBackupPlanBillingResponse.setErrMessage(_ctx.stringValue("DescribeBackupPlanBillingResponse.ErrMessage"));
 
 		Item item = new Item();
-		item.setBuySpec(_ctx.stringValue("DescribeBackupPlanBillingResponse.Item.BuySpec"));
-		item.setBuyChargeType(_ctx.stringValue("DescribeBackupPlanBillingResponse.Item.BuyChargeType"));
+		item.setBuyCreateTimestamp(_ctx.longValue("DescribeBackupPlanBillingResponse.Item.BuyCreateTimestamp"));
+		item.setFullStorageSize(_ctx.longValue("DescribeBackupPlanBillingResponse.Item.FullStorageSize"));
 		item.setBuyExpiredTimestamp(_ctx.longValue("DescribeBackupPlanBillingResponse.Item.BuyExpiredTimestamp"));
+		item.setBuySpec(_ctx.stringValue("DescribeBackupPlanBillingResponse.Item.BuySpec"));
+		item.setQuotaEndTimestamp(_ctx.longValue("DescribeBackupPlanBillingResponse.Item.QuotaEndTimestamp"));
+		item.setIsExpired(_ctx.booleanValue("DescribeBackupPlanBillingResponse.Item.IsExpired"));
+		item.setQuotaStartTimestamp(_ctx.longValue("DescribeBackupPlanBillingResponse.Item.QuotaStartTimestamp"));
 		item.setTotalFreeBytes(_ctx.longValue("DescribeBackupPlanBillingResponse.Item.TotalFreeBytes"));
 		item.setPaiedBytes(_ctx.longValue("DescribeBackupPlanBillingResponse.Item.PaiedBytes"));
 		item.setUsedFullBytes(_ctx.longValue("DescribeBackupPlanBillingResponse.Item.UsedFullBytes"));
-		item.setUsedIncrementBytes(_ctx.longValue("DescribeBackupPlanBillingResponse.Item.UsedIncrementBytes"));
-		item.setQuotaStartTimestamp(_ctx.longValue("DescribeBackupPlanBillingResponse.Item.QuotaStartTimestamp"));
-		item.setQuotaEndTimestamp(_ctx.longValue("DescribeBackupPlanBillingResponse.Item.QuotaEndTimestamp"));
-		item.setBuyCreateTimestamp(_ctx.longValue("DescribeBackupPlanBillingResponse.Item.BuyCreateTimestamp"));
-		item.setFullStorageSize(_ctx.longValue("DescribeBackupPlanBillingResponse.Item.FullStorageSize"));
-		item.setContStorageSize(_ctx.longValue("DescribeBackupPlanBillingResponse.Item.ContStorageSize"));
-		item.setIsExpired(_ctx.booleanValue("DescribeBackupPlanBillingResponse.Item.IsExpired"));
 		item.setIsFreeBytesUnlimited(_ctx.booleanValue("DescribeBackupPlanBillingResponse.Item.IsFreeBytesUnlimited"));
+		item.setContStorageSize(_ctx.longValue("DescribeBackupPlanBillingResponse.Item.ContStorageSize"));
+		item.setBuyChargeType(_ctx.stringValue("DescribeBackupPlanBillingResponse.Item.BuyChargeType"));
+		item.setUsedIncrementBytes(_ctx.longValue("DescribeBackupPlanBillingResponse.Item.UsedIncrementBytes"));
+		item.setResourceGroupId(_ctx.stringValue("DescribeBackupPlanBillingResponse.Item.ResourceGroupId"));
 		describeBackupPlanBillingResponse.setItem(item);
 	 
 	 	return describeBackupPlanBillingResponse;

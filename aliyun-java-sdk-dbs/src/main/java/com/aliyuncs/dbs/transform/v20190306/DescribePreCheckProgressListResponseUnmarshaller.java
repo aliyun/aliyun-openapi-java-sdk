@@ -28,23 +28,23 @@ public class DescribePreCheckProgressListResponseUnmarshaller {
 		
 		describePreCheckProgressListResponse.setRequestId(_ctx.stringValue("DescribePreCheckProgressListResponse.RequestId"));
 		describePreCheckProgressListResponse.setStatus(_ctx.stringValue("DescribePreCheckProgressListResponse.Status"));
-		describePreCheckProgressListResponse.setProgress(_ctx.integerValue("DescribePreCheckProgressListResponse.Progress"));
-		describePreCheckProgressListResponse.setSuccess(_ctx.booleanValue("DescribePreCheckProgressListResponse.Success"));
-		describePreCheckProgressListResponse.setErrCode(_ctx.stringValue("DescribePreCheckProgressListResponse.ErrCode"));
-		describePreCheckProgressListResponse.setErrMessage(_ctx.stringValue("DescribePreCheckProgressListResponse.ErrMessage"));
 		describePreCheckProgressListResponse.setHttpStatusCode(_ctx.integerValue("DescribePreCheckProgressListResponse.HttpStatusCode"));
+		describePreCheckProgressListResponse.setProgress(_ctx.integerValue("DescribePreCheckProgressListResponse.Progress"));
+		describePreCheckProgressListResponse.setErrCode(_ctx.stringValue("DescribePreCheckProgressListResponse.ErrCode"));
+		describePreCheckProgressListResponse.setSuccess(_ctx.booleanValue("DescribePreCheckProgressListResponse.Success"));
+		describePreCheckProgressListResponse.setErrMessage(_ctx.stringValue("DescribePreCheckProgressListResponse.ErrMessage"));
 
 		List<PreCheckProgressDetail> items = new ArrayList<PreCheckProgressDetail>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePreCheckProgressListResponse.Items.Length"); i++) {
 			PreCheckProgressDetail preCheckProgressDetail = new PreCheckProgressDetail();
-			preCheckProgressDetail.setJobId(_ctx.stringValue("DescribePreCheckProgressListResponse.Items["+ i +"].JobId"));
-			preCheckProgressDetail.setState(_ctx.stringValue("DescribePreCheckProgressListResponse.Items["+ i +"].State"));
-			preCheckProgressDetail.setOrderNum(_ctx.stringValue("DescribePreCheckProgressListResponse.Items["+ i +"].OrderNum"));
-			preCheckProgressDetail.setErrMsg(_ctx.stringValue("DescribePreCheckProgressListResponse.Items["+ i +"].ErrMsg"));
-			preCheckProgressDetail.setNames(_ctx.stringValue("DescribePreCheckProgressListResponse.Items["+ i +"].Names"));
-			preCheckProgressDetail.setItem(_ctx.stringValue("DescribePreCheckProgressListResponse.Items["+ i +"].Item"));
-			preCheckProgressDetail.setBootTime(_ctx.longValue("DescribePreCheckProgressListResponse.Items["+ i +"].BootTime"));
 			preCheckProgressDetail.setFinishTime(_ctx.longValue("DescribePreCheckProgressListResponse.Items["+ i +"].FinishTime"));
+			preCheckProgressDetail.setState(_ctx.stringValue("DescribePreCheckProgressListResponse.Items["+ i +"].State"));
+			preCheckProgressDetail.setBootTime(_ctx.longValue("DescribePreCheckProgressListResponse.Items["+ i +"].BootTime"));
+			preCheckProgressDetail.setJobId(_ctx.stringValue("DescribePreCheckProgressListResponse.Items["+ i +"].JobId"));
+			preCheckProgressDetail.setItem(_ctx.stringValue("DescribePreCheckProgressListResponse.Items["+ i +"].Item"));
+			preCheckProgressDetail.setErrMsg(_ctx.stringValue("DescribePreCheckProgressListResponse.Items["+ i +"].ErrMsg"));
+			preCheckProgressDetail.setOrderNum(_ctx.stringValue("DescribePreCheckProgressListResponse.Items["+ i +"].OrderNum"));
+			preCheckProgressDetail.setNames(_ctx.stringValue("DescribePreCheckProgressListResponse.Items["+ i +"].Names"));
 
 			items.add(preCheckProgressDetail);
 		}

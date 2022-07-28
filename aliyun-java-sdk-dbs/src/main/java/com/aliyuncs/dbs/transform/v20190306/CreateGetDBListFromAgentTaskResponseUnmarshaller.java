@@ -23,10 +23,10 @@ public class CreateGetDBListFromAgentTaskResponseUnmarshaller {
 	public static CreateGetDBListFromAgentTaskResponse unmarshall(CreateGetDBListFromAgentTaskResponse createGetDBListFromAgentTaskResponse, UnmarshallerContext _ctx) {
 		
 		createGetDBListFromAgentTaskResponse.setRequestId(_ctx.stringValue("CreateGetDBListFromAgentTaskResponse.RequestId"));
-		createGetDBListFromAgentTaskResponse.setSuccess(_ctx.booleanValue("CreateGetDBListFromAgentTaskResponse.Success"));
-		createGetDBListFromAgentTaskResponse.setErrCode(_ctx.stringValue("CreateGetDBListFromAgentTaskResponse.ErrCode"));
-		createGetDBListFromAgentTaskResponse.setErrMessage(_ctx.stringValue("CreateGetDBListFromAgentTaskResponse.ErrMessage"));
 		createGetDBListFromAgentTaskResponse.setHttpStatusCode(_ctx.integerValue("CreateGetDBListFromAgentTaskResponse.HttpStatusCode"));
+		createGetDBListFromAgentTaskResponse.setErrCode(_ctx.stringValue("CreateGetDBListFromAgentTaskResponse.ErrCode"));
+		createGetDBListFromAgentTaskResponse.setSuccess(_ctx.booleanValue("CreateGetDBListFromAgentTaskResponse.Success"));
+		createGetDBListFromAgentTaskResponse.setErrMessage(_ctx.stringValue("CreateGetDBListFromAgentTaskResponse.ErrMessage"));
 		createGetDBListFromAgentTaskResponse.setTaskId(_ctx.longValue("CreateGetDBListFromAgentTaskResponse.TaskId"));
 	 
 	 	return createGetDBListFromAgentTaskResponse;

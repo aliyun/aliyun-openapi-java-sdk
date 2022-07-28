@@ -24,41 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeJobErrorCodeResponse extends AcsResponse {
 
-	private Boolean success;
-
-	private String errCode;
-
-	private String errMessage;
-
 	private Integer httpStatusCode;
 
 	private String requestId;
 
+	private String errCode;
+
+	private Boolean success;
+
+	private String errMessage;
+
 	private Item item;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getErrCode() {
-		return this.errCode;
-	}
-
-	public void setErrCode(String errCode) {
-		this.errCode = errCode;
-	}
-
-	public String getErrMessage() {
-		return this.errMessage;
-	}
-
-	public void setErrMessage(String errMessage) {
-		this.errMessage = errMessage;
-	}
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -76,6 +52,30 @@ public class DescribeJobErrorCodeResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getErrCode() {
+		return this.errCode;
+	}
+
+	public void setErrCode(String errCode) {
+		this.errCode = errCode;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public String getErrMessage() {
+		return this.errMessage;
+	}
+
+	public void setErrMessage(String errMessage) {
+		this.errMessage = errMessage;
+	}
+
 	public Item getItem() {
 		return this.item;
 	}
@@ -86,40 +86,24 @@ public class DescribeJobErrorCodeResponse extends AcsResponse {
 
 	public static class Item {
 
-		private String jobId;
-
-		private String language;
-
-		private String errorCode;
+		private String jobState;
 
 		private String errorMessage;
 
+		private String errorCode;
+
+		private String jobId;
+
 		private String jobType;
 
-		private String jobState;
+		private String language;
 
-		public String getJobId() {
-			return this.jobId;
+		public String getJobState() {
+			return this.jobState;
 		}
 
-		public void setJobId(String jobId) {
-			this.jobId = jobId;
-		}
-
-		public String getLanguage() {
-			return this.language;
-		}
-
-		public void setLanguage(String language) {
-			this.language = language;
-		}
-
-		public String getErrorCode() {
-			return this.errorCode;
-		}
-
-		public void setErrorCode(String errorCode) {
-			this.errorCode = errorCode;
+		public void setJobState(String jobState) {
+			this.jobState = jobState;
 		}
 
 		public String getErrorMessage() {
@@ -130,6 +114,22 @@ public class DescribeJobErrorCodeResponse extends AcsResponse {
 			this.errorMessage = errorMessage;
 		}
 
+		public String getErrorCode() {
+			return this.errorCode;
+		}
+
+		public void setErrorCode(String errorCode) {
+			this.errorCode = errorCode;
+		}
+
+		public String getJobId() {
+			return this.jobId;
+		}
+
+		public void setJobId(String jobId) {
+			this.jobId = jobId;
+		}
+
 		public String getJobType() {
 			return this.jobType;
 		}
@@ -138,12 +138,12 @@ public class DescribeJobErrorCodeResponse extends AcsResponse {
 			this.jobType = jobType;
 		}
 
-		public String getJobState() {
-			return this.jobState;
+		public String getLanguage() {
+			return this.language;
 		}
 
-		public void setJobState(String jobState) {
-			this.jobState = jobState;
+		public void setLanguage(String language) {
+			this.language = language;
 		}
 	}
 

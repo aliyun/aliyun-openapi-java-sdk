@@ -23,10 +23,10 @@ public class CreateBackupPlanResponseUnmarshaller {
 	public static CreateBackupPlanResponse unmarshall(CreateBackupPlanResponse createBackupPlanResponse, UnmarshallerContext _ctx) {
 		
 		createBackupPlanResponse.setRequestId(_ctx.stringValue("CreateBackupPlanResponse.RequestId"));
-		createBackupPlanResponse.setSuccess(_ctx.booleanValue("CreateBackupPlanResponse.Success"));
-		createBackupPlanResponse.setErrCode(_ctx.stringValue("CreateBackupPlanResponse.ErrCode"));
-		createBackupPlanResponse.setErrMessage(_ctx.stringValue("CreateBackupPlanResponse.ErrMessage"));
 		createBackupPlanResponse.setHttpStatusCode(_ctx.integerValue("CreateBackupPlanResponse.HttpStatusCode"));
+		createBackupPlanResponse.setErrCode(_ctx.stringValue("CreateBackupPlanResponse.ErrCode"));
+		createBackupPlanResponse.setSuccess(_ctx.booleanValue("CreateBackupPlanResponse.Success"));
+		createBackupPlanResponse.setErrMessage(_ctx.stringValue("CreateBackupPlanResponse.ErrMessage"));
 		createBackupPlanResponse.setBackupPlanId(_ctx.stringValue("CreateBackupPlanResponse.BackupPlanId"));
 		createBackupPlanResponse.setOrderId(_ctx.stringValue("CreateBackupPlanResponse.OrderId"));
 	 

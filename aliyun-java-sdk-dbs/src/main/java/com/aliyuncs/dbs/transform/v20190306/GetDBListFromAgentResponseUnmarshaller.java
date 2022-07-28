@@ -26,10 +26,10 @@ public class GetDBListFromAgentResponseUnmarshaller {
 	public static GetDBListFromAgentResponse unmarshall(GetDBListFromAgentResponse getDBListFromAgentResponse, UnmarshallerContext _ctx) {
 		
 		getDBListFromAgentResponse.setRequestId(_ctx.stringValue("GetDBListFromAgentResponse.RequestId"));
-		getDBListFromAgentResponse.setSuccess(_ctx.booleanValue("GetDBListFromAgentResponse.Success"));
-		getDBListFromAgentResponse.setErrCode(_ctx.stringValue("GetDBListFromAgentResponse.ErrCode"));
-		getDBListFromAgentResponse.setErrMessage(_ctx.stringValue("GetDBListFromAgentResponse.ErrMessage"));
 		getDBListFromAgentResponse.setHttpStatusCode(_ctx.integerValue("GetDBListFromAgentResponse.HttpStatusCode"));
+		getDBListFromAgentResponse.setErrCode(_ctx.stringValue("GetDBListFromAgentResponse.ErrCode"));
+		getDBListFromAgentResponse.setSuccess(_ctx.booleanValue("GetDBListFromAgentResponse.Success"));
+		getDBListFromAgentResponse.setErrMessage(_ctx.stringValue("GetDBListFromAgentResponse.ErrMessage"));
 
 		List<String> dbList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetDBListFromAgentResponse.DbList.Length"); i++) {

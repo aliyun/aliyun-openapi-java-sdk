@@ -41,6 +41,8 @@ public class ConfigureBackupPlanRequest extends RpcAcsRequest<ConfigureBackupPla
 
 	private Integer duplicationInfrequentAccessPeriod;
 
+	private String resourceGroupId;
+
 	private String backupStartTime;
 
 	private String sourceEndpointIP;
@@ -85,7 +87,7 @@ public class ConfigureBackupPlanRequest extends RpcAcsRequest<ConfigureBackupPla
 
 	private String backupStrategyType;
 	public ConfigureBackupPlanRequest() {
-		super("Dbs", "2019-03-06", "ConfigureBackupPlan", "cbs");
+		super("Dbs", "2019-03-06", "ConfigureBackupPlan");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -178,6 +180,17 @@ public class ConfigureBackupPlanRequest extends RpcAcsRequest<ConfigureBackupPla
 		this.duplicationInfrequentAccessPeriod = duplicationInfrequentAccessPeriod;
 		if(duplicationInfrequentAccessPeriod != null){
 			putQueryParameter("DuplicationInfrequentAccessPeriod", duplicationInfrequentAccessPeriod.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

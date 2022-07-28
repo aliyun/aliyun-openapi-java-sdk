@@ -27,43 +27,43 @@ public class DescribeRestoreTaskListResponseUnmarshaller {
 	public static DescribeRestoreTaskListResponse unmarshall(DescribeRestoreTaskListResponse describeRestoreTaskListResponse, UnmarshallerContext _ctx) {
 		
 		describeRestoreTaskListResponse.setRequestId(_ctx.stringValue("DescribeRestoreTaskListResponse.RequestId"));
-		describeRestoreTaskListResponse.setSuccess(_ctx.booleanValue("DescribeRestoreTaskListResponse.Success"));
-		describeRestoreTaskListResponse.setErrCode(_ctx.stringValue("DescribeRestoreTaskListResponse.ErrCode"));
-		describeRestoreTaskListResponse.setErrMessage(_ctx.stringValue("DescribeRestoreTaskListResponse.ErrMessage"));
 		describeRestoreTaskListResponse.setHttpStatusCode(_ctx.integerValue("DescribeRestoreTaskListResponse.HttpStatusCode"));
-		describeRestoreTaskListResponse.setTotalPages(_ctx.integerValue("DescribeRestoreTaskListResponse.TotalPages"));
-		describeRestoreTaskListResponse.setPageSize(_ctx.integerValue("DescribeRestoreTaskListResponse.PageSize"));
 		describeRestoreTaskListResponse.setPageNum(_ctx.integerValue("DescribeRestoreTaskListResponse.PageNum"));
+		describeRestoreTaskListResponse.setErrCode(_ctx.stringValue("DescribeRestoreTaskListResponse.ErrCode"));
+		describeRestoreTaskListResponse.setSuccess(_ctx.booleanValue("DescribeRestoreTaskListResponse.Success"));
+		describeRestoreTaskListResponse.setErrMessage(_ctx.stringValue("DescribeRestoreTaskListResponse.ErrMessage"));
+		describeRestoreTaskListResponse.setTotalPages(_ctx.integerValue("DescribeRestoreTaskListResponse.TotalPages"));
 		describeRestoreTaskListResponse.setTotalElements(_ctx.integerValue("DescribeRestoreTaskListResponse.TotalElements"));
+		describeRestoreTaskListResponse.setPageSize(_ctx.integerValue("DescribeRestoreTaskListResponse.PageSize"));
 
 		List<RestoreTaskDetail> items = new ArrayList<RestoreTaskDetail>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeRestoreTaskListResponse.Items.Length"); i++) {
 			RestoreTaskDetail restoreTaskDetail = new RestoreTaskDetail();
+			restoreTaskDetail.setRestoreStatus(_ctx.stringValue("DescribeRestoreTaskListResponse.Items["+ i +"].RestoreStatus"));
+			restoreTaskDetail.setFullStruAfterRestoreProgress(_ctx.integerValue("DescribeRestoreTaskListResponse.Items["+ i +"].FullStruAfterRestoreProgress"));
+			restoreTaskDetail.setCrossRoleName(_ctx.stringValue("DescribeRestoreTaskListResponse.Items["+ i +"].CrossRoleName"));
+			restoreTaskDetail.setRestoreDir(_ctx.stringValue("DescribeRestoreTaskListResponse.Items["+ i +"].RestoreDir"));
+			restoreTaskDetail.setCrossAliyunId(_ctx.stringValue("DescribeRestoreTaskListResponse.Items["+ i +"].CrossAliyunId"));
+			restoreTaskDetail.setRestoreObjects(_ctx.stringValue("DescribeRestoreTaskListResponse.Items["+ i +"].RestoreObjects"));
 			restoreTaskDetail.setBackupPlanId(_ctx.stringValue("DescribeRestoreTaskListResponse.Items["+ i +"].BackupPlanId"));
-			restoreTaskDetail.setDestinationEndpointInstanceType(_ctx.stringValue("DescribeRestoreTaskListResponse.Items["+ i +"].DestinationEndpointInstanceType"));
 			restoreTaskDetail.setDestinationEndpointRegion(_ctx.stringValue("DescribeRestoreTaskListResponse.Items["+ i +"].DestinationEndpointRegion"));
-			restoreTaskDetail.setDestinationEndpointInstanceID(_ctx.stringValue("DescribeRestoreTaskListResponse.Items["+ i +"].DestinationEndpointInstanceID"));
+			restoreTaskDetail.setRestoreTaskCreateTime(_ctx.longValue("DescribeRestoreTaskListResponse.Items["+ i +"].RestoreTaskCreateTime"));
+			restoreTaskDetail.setDestinationEndpointUserName(_ctx.stringValue("DescribeRestoreTaskListResponse.Items["+ i +"].DestinationEndpointUserName"));
+			restoreTaskDetail.setRestoreTaskFinishTime(_ctx.longValue("DescribeRestoreTaskListResponse.Items["+ i +"].RestoreTaskFinishTime"));
 			restoreTaskDetail.setDestinationEndpointIpPort(_ctx.stringValue("DescribeRestoreTaskListResponse.Items["+ i +"].DestinationEndpointIpPort"));
 			restoreTaskDetail.setDestinationEndpointDatabaseName(_ctx.stringValue("DescribeRestoreTaskListResponse.Items["+ i +"].DestinationEndpointDatabaseName"));
-			restoreTaskDetail.setDestinationEndpointUserName(_ctx.stringValue("DescribeRestoreTaskListResponse.Items["+ i +"].DestinationEndpointUserName"));
+			restoreTaskDetail.setDestinationEndpointInstanceType(_ctx.stringValue("DescribeRestoreTaskListResponse.Items["+ i +"].DestinationEndpointInstanceType"));
 			restoreTaskDetail.setDestinationEndpointOracleSID(_ctx.stringValue("DescribeRestoreTaskListResponse.Items["+ i +"].DestinationEndpointOracleSID"));
-			restoreTaskDetail.setRestoreObjects(_ctx.stringValue("DescribeRestoreTaskListResponse.Items["+ i +"].RestoreObjects"));
-			restoreTaskDetail.setBackupGatewayId(_ctx.longValue("DescribeRestoreTaskListResponse.Items["+ i +"].BackupGatewayId"));
-			restoreTaskDetail.setRestoreDir(_ctx.stringValue("DescribeRestoreTaskListResponse.Items["+ i +"].RestoreDir"));
-			restoreTaskDetail.setRestoreTaskName(_ctx.stringValue("DescribeRestoreTaskListResponse.Items["+ i +"].RestoreTaskName"));
-			restoreTaskDetail.setBackupSetId(_ctx.stringValue("DescribeRestoreTaskListResponse.Items["+ i +"].BackupSetId"));
-			restoreTaskDetail.setRestoreTime(_ctx.longValue("DescribeRestoreTaskListResponse.Items["+ i +"].RestoreTime"));
-			restoreTaskDetail.setRestoreTaskCreateTime(_ctx.longValue("DescribeRestoreTaskListResponse.Items["+ i +"].RestoreTaskCreateTime"));
-			restoreTaskDetail.setRestoreTaskFinishTime(_ctx.longValue("DescribeRestoreTaskListResponse.Items["+ i +"].RestoreTaskFinishTime"));
-			restoreTaskDetail.setRestoreStatus(_ctx.stringValue("DescribeRestoreTaskListResponse.Items["+ i +"].RestoreStatus"));
-			restoreTaskDetail.setRestoreTaskId(_ctx.stringValue("DescribeRestoreTaskListResponse.Items["+ i +"].RestoreTaskId"));
 			restoreTaskDetail.setFullStruforeRestoreProgress(_ctx.integerValue("DescribeRestoreTaskListResponse.Items["+ i +"].FullStruforeRestoreProgress"));
+			restoreTaskDetail.setErrMessage(_ctx.stringValue("DescribeRestoreTaskListResponse.Items["+ i +"].ErrMessage"));
+			restoreTaskDetail.setRestoreTaskId(_ctx.stringValue("DescribeRestoreTaskListResponse.Items["+ i +"].RestoreTaskId"));
 			restoreTaskDetail.setFullDataRestoreProgress(_ctx.integerValue("DescribeRestoreTaskListResponse.Items["+ i +"].FullDataRestoreProgress"));
 			restoreTaskDetail.setContinuousRestoreProgress(_ctx.integerValue("DescribeRestoreTaskListResponse.Items["+ i +"].ContinuousRestoreProgress"));
-			restoreTaskDetail.setFullStruAfterRestoreProgress(_ctx.integerValue("DescribeRestoreTaskListResponse.Items["+ i +"].FullStruAfterRestoreProgress"));
-			restoreTaskDetail.setCrossAliyunId(_ctx.stringValue("DescribeRestoreTaskListResponse.Items["+ i +"].CrossAliyunId"));
-			restoreTaskDetail.setCrossRoleName(_ctx.stringValue("DescribeRestoreTaskListResponse.Items["+ i +"].CrossRoleName"));
-			restoreTaskDetail.setErrMessage(_ctx.stringValue("DescribeRestoreTaskListResponse.Items["+ i +"].ErrMessage"));
+			restoreTaskDetail.setDestinationEndpointInstanceID(_ctx.stringValue("DescribeRestoreTaskListResponse.Items["+ i +"].DestinationEndpointInstanceID"));
+			restoreTaskDetail.setBackupSetId(_ctx.stringValue("DescribeRestoreTaskListResponse.Items["+ i +"].BackupSetId"));
+			restoreTaskDetail.setBackupGatewayId(_ctx.longValue("DescribeRestoreTaskListResponse.Items["+ i +"].BackupGatewayId"));
+			restoreTaskDetail.setRestoreTaskName(_ctx.stringValue("DescribeRestoreTaskListResponse.Items["+ i +"].RestoreTaskName"));
+			restoreTaskDetail.setRestoreTime(_ctx.longValue("DescribeRestoreTaskListResponse.Items["+ i +"].RestoreTime"));
 
 			items.add(restoreTaskDetail);
 		}

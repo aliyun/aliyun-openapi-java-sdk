@@ -35,6 +35,8 @@ public class CreateBackupPlanRequest extends RpcAcsRequest<CreateBackupPlanRespo
 
 	private String databaseRegion;
 
+	private String resourceGroupId;
+
 	private String instanceType;
 
 	private String period;
@@ -53,7 +55,7 @@ public class CreateBackupPlanRequest extends RpcAcsRequest<CreateBackupPlanRespo
 
 	private String payType;
 	public CreateBackupPlanRequest() {
-		super("Dbs", "2019-03-06", "CreateBackupPlan", "cbs");
+		super("Dbs", "2019-03-06", "CreateBackupPlan");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -113,6 +115,17 @@ public class CreateBackupPlanRequest extends RpcAcsRequest<CreateBackupPlanRespo
 		this.databaseRegion = databaseRegion;
 		if(databaseRegion != null){
 			putQueryParameter("DatabaseRegion", databaseRegion);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

@@ -25,49 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeBackupPlanListResponse extends AcsResponse {
 
-	private Boolean success;
-
-	private String errCode;
-
-	private String errMessage;
-
 	private Integer httpStatusCode;
-
-	private String requestId;
-
-	private Integer totalPages;
-
-	private Integer pageSize;
 
 	private Integer pageNum;
 
+	private String requestId;
+
+	private String errCode;
+
+	private Boolean success;
+
+	private String errMessage;
+
+	private Integer totalPages;
+
 	private Integer totalElements;
 
+	private Integer pageSize;
+
 	private List<BackupPlanDetail> items;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getErrCode() {
-		return this.errCode;
-	}
-
-	public void setErrCode(String errCode) {
-		this.errCode = errCode;
-	}
-
-	public String getErrMessage() {
-		return this.errMessage;
-	}
-
-	public void setErrMessage(String errMessage) {
-		this.errMessage = errMessage;
-	}
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -75,30 +51,6 @@ public class DescribeBackupPlanListResponse extends AcsResponse {
 
 	public void setHttpStatusCode(Integer httpStatusCode) {
 		this.httpStatusCode = httpStatusCode;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getTotalPages() {
-		return this.totalPages;
-	}
-
-	public void setTotalPages(Integer totalPages) {
-		this.totalPages = totalPages;
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
 	}
 
 	public Integer getPageNum() {
@@ -109,12 +61,60 @@ public class DescribeBackupPlanListResponse extends AcsResponse {
 		this.pageNum = pageNum;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getErrCode() {
+		return this.errCode;
+	}
+
+	public void setErrCode(String errCode) {
+		this.errCode = errCode;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public String getErrMessage() {
+		return this.errMessage;
+	}
+
+	public void setErrMessage(String errMessage) {
+		this.errMessage = errMessage;
+	}
+
+	public Integer getTotalPages() {
+		return this.totalPages;
+	}
+
+	public void setTotalPages(Integer totalPages) {
+		this.totalPages = totalPages;
+	}
+
 	public Integer getTotalElements() {
 		return this.totalElements;
 	}
 
 	public void setTotalElements(Integer totalElements) {
 		this.totalElements = totalElements;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public List<BackupPlanDetail> getItems() {
@@ -127,82 +127,84 @@ public class DescribeBackupPlanListResponse extends AcsResponse {
 
 	public static class BackupPlanDetail {
 
-		private String backupPlanId;
+		private String crossRoleName;
 
 		private String sourceEndpointInstanceType;
 
-		private String sourceEndpointRegion;
-
-		private String sourceEndpointInstanceID;
+		private String backupSetDownloadDir;
 
 		private String sourceEndpointIpPort;
 
-		private String sourceEndpointDatabaseName;
-
-		private String sourceEndpointUserName;
-
-		private String backupObjects;
-
-		private Long backupGatewayId;
-
-		private String oSSBucketRegion;
-
-		private String oSSBucketName;
-
-		private String backupPeriod;
-
-		private String backupStartTime;
-
-		private Boolean enableBackupLog;
-
-		private Integer backupRetentionPeriod;
-
-		private Integer duplicationInfrequentAccessPeriod;
+		private String crossAliyunId;
 
 		private Integer duplicationArchivePeriod;
 
-		private String backupPlanName;
-
-		private String sourceEndpointOracleSID;
-
-		private String instanceClass;
-
-		private String backupMethod;
-
-		private Long backupPlanCreateTime;
-
-		private String backupPlanStatus;
-
-		private Long beginTimestampForRestore;
+		private String backupPlanId;
 
 		private Long endTimestampForRestore;
 
-		private Boolean openBackupSetAutoDownload;
-
-		private String backupSetDownloadTargetType;
-
-		private String backupSetDownloadDir;
-
-		private Long backupSetDownloadGatewayId;
+		private String backupPlanStatus;
 
 		private String backupSetDownloadFullDataFormat;
 
-		private String backupSetDownloadIncrementDataFormat;
+		private Integer backupRetentionPeriod;
 
-		private String crossAliyunId;
+		private String oSSBucketRegion;
 
-		private String crossRoleName;
+		private String sourceEndpointOracleSID;
 
 		private String backupStorageType;
 
+		private String backupMethod;
+
+		private String sourceEndpointRegion;
+
+		private String backupPeriod;
+
+		private String sourceEndpointDatabaseName;
+
+		private Long backupSetDownloadGatewayId;
+
+		private Long backupPlanCreateTime;
+
+		private String instanceClass;
+
+		private String backupSetDownloadTargetType;
+
+		private Integer duplicationInfrequentAccessPeriod;
+
+		private String backupStartTime;
+
 		private String errMessage;
 
-		public String getBackupPlanId() {
-			return this.backupPlanId;
+		private String backupObjects;
+
+		private Long beginTimestampForRestore;
+
+		private String sourceEndpointInstanceID;
+
+		private Boolean openBackupSetAutoDownload;
+
+		private String backupPlanName;
+
+		private String oSSBucketName;
+
+		private Long backupGatewayId;
+
+		private String sourceEndpointUserName;
+
+		private String backupSetDownloadIncrementDataFormat;
+
+		private Boolean enableBackupLog;
+
+		private String resourceGroupId;
+
+		public String getCrossRoleName() {
+			return this.crossRoleName;
 		}
 
-		public void setBackupPlanId(String backupPlanId) {
-			this.backupPlanId = backupPlanId;
+		public void setCrossRoleName(String crossRoleName) {
+			this.crossRoleName = crossRoleName;
 		}
 
 		public String getSourceEndpointInstanceType() {
@@ -213,20 +215,12 @@ public class DescribeBackupPlanListResponse extends AcsResponse {
 			this.sourceEndpointInstanceType = sourceEndpointInstanceType;
 		}
 
-		public String getSourceEndpointRegion() {
-			return this.sourceEndpointRegion;
+		public String getBackupSetDownloadDir() {
+			return this.backupSetDownloadDir;
 		}
 
-		public void setSourceEndpointRegion(String sourceEndpointRegion) {
-			this.sourceEndpointRegion = sourceEndpointRegion;
-		}
-
-		public String getSourceEndpointInstanceID() {
-			return this.sourceEndpointInstanceID;
-		}
-
-		public void setSourceEndpointInstanceID(String sourceEndpointInstanceID) {
-			this.sourceEndpointInstanceID = sourceEndpointInstanceID;
+		public void setBackupSetDownloadDir(String backupSetDownloadDir) {
+			this.backupSetDownloadDir = backupSetDownloadDir;
 		}
 
 		public String getSourceEndpointIpPort() {
@@ -237,92 +231,12 @@ public class DescribeBackupPlanListResponse extends AcsResponse {
 			this.sourceEndpointIpPort = sourceEndpointIpPort;
 		}
 
-		public String getSourceEndpointDatabaseName() {
-			return this.sourceEndpointDatabaseName;
+		public String getCrossAliyunId() {
+			return this.crossAliyunId;
 		}
 
-		public void setSourceEndpointDatabaseName(String sourceEndpointDatabaseName) {
-			this.sourceEndpointDatabaseName = sourceEndpointDatabaseName;
-		}
-
-		public String getSourceEndpointUserName() {
-			return this.sourceEndpointUserName;
-		}
-
-		public void setSourceEndpointUserName(String sourceEndpointUserName) {
-			this.sourceEndpointUserName = sourceEndpointUserName;
-		}
-
-		public String getBackupObjects() {
-			return this.backupObjects;
-		}
-
-		public void setBackupObjects(String backupObjects) {
-			this.backupObjects = backupObjects;
-		}
-
-		public Long getBackupGatewayId() {
-			return this.backupGatewayId;
-		}
-
-		public void setBackupGatewayId(Long backupGatewayId) {
-			this.backupGatewayId = backupGatewayId;
-		}
-
-		public String getOSSBucketRegion() {
-			return this.oSSBucketRegion;
-		}
-
-		public void setOSSBucketRegion(String oSSBucketRegion) {
-			this.oSSBucketRegion = oSSBucketRegion;
-		}
-
-		public String getOSSBucketName() {
-			return this.oSSBucketName;
-		}
-
-		public void setOSSBucketName(String oSSBucketName) {
-			this.oSSBucketName = oSSBucketName;
-		}
-
-		public String getBackupPeriod() {
-			return this.backupPeriod;
-		}
-
-		public void setBackupPeriod(String backupPeriod) {
-			this.backupPeriod = backupPeriod;
-		}
-
-		public String getBackupStartTime() {
-			return this.backupStartTime;
-		}
-
-		public void setBackupStartTime(String backupStartTime) {
-			this.backupStartTime = backupStartTime;
-		}
-
-		public Boolean getEnableBackupLog() {
-			return this.enableBackupLog;
-		}
-
-		public void setEnableBackupLog(Boolean enableBackupLog) {
-			this.enableBackupLog = enableBackupLog;
-		}
-
-		public Integer getBackupRetentionPeriod() {
-			return this.backupRetentionPeriod;
-		}
-
-		public void setBackupRetentionPeriod(Integer backupRetentionPeriod) {
-			this.backupRetentionPeriod = backupRetentionPeriod;
-		}
-
-		public Integer getDuplicationInfrequentAccessPeriod() {
-			return this.duplicationInfrequentAccessPeriod;
-		}
-
-		public void setDuplicationInfrequentAccessPeriod(Integer duplicationInfrequentAccessPeriod) {
-			this.duplicationInfrequentAccessPeriod = duplicationInfrequentAccessPeriod;
+		public void setCrossAliyunId(String crossAliyunId) {
+			this.crossAliyunId = crossAliyunId;
 		}
 
 		public Integer getDuplicationArchivePeriod() {
@@ -333,60 +247,12 @@ public class DescribeBackupPlanListResponse extends AcsResponse {
 			this.duplicationArchivePeriod = duplicationArchivePeriod;
 		}
 
-		public String getBackupPlanName() {
-			return this.backupPlanName;
+		public String getBackupPlanId() {
+			return this.backupPlanId;
 		}
 
-		public void setBackupPlanName(String backupPlanName) {
-			this.backupPlanName = backupPlanName;
-		}
-
-		public String getSourceEndpointOracleSID() {
-			return this.sourceEndpointOracleSID;
-		}
-
-		public void setSourceEndpointOracleSID(String sourceEndpointOracleSID) {
-			this.sourceEndpointOracleSID = sourceEndpointOracleSID;
-		}
-
-		public String getInstanceClass() {
-			return this.instanceClass;
-		}
-
-		public void setInstanceClass(String instanceClass) {
-			this.instanceClass = instanceClass;
-		}
-
-		public String getBackupMethod() {
-			return this.backupMethod;
-		}
-
-		public void setBackupMethod(String backupMethod) {
-			this.backupMethod = backupMethod;
-		}
-
-		public Long getBackupPlanCreateTime() {
-			return this.backupPlanCreateTime;
-		}
-
-		public void setBackupPlanCreateTime(Long backupPlanCreateTime) {
-			this.backupPlanCreateTime = backupPlanCreateTime;
-		}
-
-		public String getBackupPlanStatus() {
-			return this.backupPlanStatus;
-		}
-
-		public void setBackupPlanStatus(String backupPlanStatus) {
-			this.backupPlanStatus = backupPlanStatus;
-		}
-
-		public Long getBeginTimestampForRestore() {
-			return this.beginTimestampForRestore;
-		}
-
-		public void setBeginTimestampForRestore(Long beginTimestampForRestore) {
-			this.beginTimestampForRestore = beginTimestampForRestore;
+		public void setBackupPlanId(String backupPlanId) {
+			this.backupPlanId = backupPlanId;
 		}
 
 		public Long getEndTimestampForRestore() {
@@ -397,36 +263,12 @@ public class DescribeBackupPlanListResponse extends AcsResponse {
 			this.endTimestampForRestore = endTimestampForRestore;
 		}
 
-		public Boolean getOpenBackupSetAutoDownload() {
-			return this.openBackupSetAutoDownload;
+		public String getBackupPlanStatus() {
+			return this.backupPlanStatus;
 		}
 
-		public void setOpenBackupSetAutoDownload(Boolean openBackupSetAutoDownload) {
-			this.openBackupSetAutoDownload = openBackupSetAutoDownload;
-		}
-
-		public String getBackupSetDownloadTargetType() {
-			return this.backupSetDownloadTargetType;
-		}
-
-		public void setBackupSetDownloadTargetType(String backupSetDownloadTargetType) {
-			this.backupSetDownloadTargetType = backupSetDownloadTargetType;
-		}
-
-		public String getBackupSetDownloadDir() {
-			return this.backupSetDownloadDir;
-		}
-
-		public void setBackupSetDownloadDir(String backupSetDownloadDir) {
-			this.backupSetDownloadDir = backupSetDownloadDir;
-		}
-
-		public Long getBackupSetDownloadGatewayId() {
-			return this.backupSetDownloadGatewayId;
-		}
-
-		public void setBackupSetDownloadGatewayId(Long backupSetDownloadGatewayId) {
-			this.backupSetDownloadGatewayId = backupSetDownloadGatewayId;
+		public void setBackupPlanStatus(String backupPlanStatus) {
+			this.backupPlanStatus = backupPlanStatus;
 		}
 
 		public String getBackupSetDownloadFullDataFormat() {
@@ -437,28 +279,28 @@ public class DescribeBackupPlanListResponse extends AcsResponse {
 			this.backupSetDownloadFullDataFormat = backupSetDownloadFullDataFormat;
 		}
 
-		public String getBackupSetDownloadIncrementDataFormat() {
-			return this.backupSetDownloadIncrementDataFormat;
+		public Integer getBackupRetentionPeriod() {
+			return this.backupRetentionPeriod;
 		}
 
-		public void setBackupSetDownloadIncrementDataFormat(String backupSetDownloadIncrementDataFormat) {
-			this.backupSetDownloadIncrementDataFormat = backupSetDownloadIncrementDataFormat;
+		public void setBackupRetentionPeriod(Integer backupRetentionPeriod) {
+			this.backupRetentionPeriod = backupRetentionPeriod;
 		}
 
-		public String getCrossAliyunId() {
-			return this.crossAliyunId;
+		public String getOSSBucketRegion() {
+			return this.oSSBucketRegion;
 		}
 
-		public void setCrossAliyunId(String crossAliyunId) {
-			this.crossAliyunId = crossAliyunId;
+		public void setOSSBucketRegion(String oSSBucketRegion) {
+			this.oSSBucketRegion = oSSBucketRegion;
 		}
 
-		public String getCrossRoleName() {
-			return this.crossRoleName;
+		public String getSourceEndpointOracleSID() {
+			return this.sourceEndpointOracleSID;
 		}
 
-		public void setCrossRoleName(String crossRoleName) {
-			this.crossRoleName = crossRoleName;
+		public void setSourceEndpointOracleSID(String sourceEndpointOracleSID) {
+			this.sourceEndpointOracleSID = sourceEndpointOracleSID;
 		}
 
 		public String getBackupStorageType() {
@@ -469,12 +311,180 @@ public class DescribeBackupPlanListResponse extends AcsResponse {
 			this.backupStorageType = backupStorageType;
 		}
 
+		public String getBackupMethod() {
+			return this.backupMethod;
+		}
+
+		public void setBackupMethod(String backupMethod) {
+			this.backupMethod = backupMethod;
+		}
+
+		public String getSourceEndpointRegion() {
+			return this.sourceEndpointRegion;
+		}
+
+		public void setSourceEndpointRegion(String sourceEndpointRegion) {
+			this.sourceEndpointRegion = sourceEndpointRegion;
+		}
+
+		public String getBackupPeriod() {
+			return this.backupPeriod;
+		}
+
+		public void setBackupPeriod(String backupPeriod) {
+			this.backupPeriod = backupPeriod;
+		}
+
+		public String getSourceEndpointDatabaseName() {
+			return this.sourceEndpointDatabaseName;
+		}
+
+		public void setSourceEndpointDatabaseName(String sourceEndpointDatabaseName) {
+			this.sourceEndpointDatabaseName = sourceEndpointDatabaseName;
+		}
+
+		public Long getBackupSetDownloadGatewayId() {
+			return this.backupSetDownloadGatewayId;
+		}
+
+		public void setBackupSetDownloadGatewayId(Long backupSetDownloadGatewayId) {
+			this.backupSetDownloadGatewayId = backupSetDownloadGatewayId;
+		}
+
+		public Long getBackupPlanCreateTime() {
+			return this.backupPlanCreateTime;
+		}
+
+		public void setBackupPlanCreateTime(Long backupPlanCreateTime) {
+			this.backupPlanCreateTime = backupPlanCreateTime;
+		}
+
+		public String getInstanceClass() {
+			return this.instanceClass;
+		}
+
+		public void setInstanceClass(String instanceClass) {
+			this.instanceClass = instanceClass;
+		}
+
+		public String getBackupSetDownloadTargetType() {
+			return this.backupSetDownloadTargetType;
+		}
+
+		public void setBackupSetDownloadTargetType(String backupSetDownloadTargetType) {
+			this.backupSetDownloadTargetType = backupSetDownloadTargetType;
+		}
+
+		public Integer getDuplicationInfrequentAccessPeriod() {
+			return this.duplicationInfrequentAccessPeriod;
+		}
+
+		public void setDuplicationInfrequentAccessPeriod(Integer duplicationInfrequentAccessPeriod) {
+			this.duplicationInfrequentAccessPeriod = duplicationInfrequentAccessPeriod;
+		}
+
+		public String getBackupStartTime() {
+			return this.backupStartTime;
+		}
+
+		public void setBackupStartTime(String backupStartTime) {
+			this.backupStartTime = backupStartTime;
+		}
+
 		public String getErrMessage() {
 			return this.errMessage;
 		}
 
 		public void setErrMessage(String errMessage) {
 			this.errMessage = errMessage;
+		}
+
+		public String getBackupObjects() {
+			return this.backupObjects;
+		}
+
+		public void setBackupObjects(String backupObjects) {
+			this.backupObjects = backupObjects;
+		}
+
+		public Long getBeginTimestampForRestore() {
+			return this.beginTimestampForRestore;
+		}
+
+		public void setBeginTimestampForRestore(Long beginTimestampForRestore) {
+			this.beginTimestampForRestore = beginTimestampForRestore;
+		}
+
+		public String getSourceEndpointInstanceID() {
+			return this.sourceEndpointInstanceID;
+		}
+
+		public void setSourceEndpointInstanceID(String sourceEndpointInstanceID) {
+			this.sourceEndpointInstanceID = sourceEndpointInstanceID;
+		}
+
+		public Boolean getOpenBackupSetAutoDownload() {
+			return this.openBackupSetAutoDownload;
+		}
+
+		public void setOpenBackupSetAutoDownload(Boolean openBackupSetAutoDownload) {
+			this.openBackupSetAutoDownload = openBackupSetAutoDownload;
+		}
+
+		public String getBackupPlanName() {
+			return this.backupPlanName;
+		}
+
+		public void setBackupPlanName(String backupPlanName) {
+			this.backupPlanName = backupPlanName;
+		}
+
+		public String getOSSBucketName() {
+			return this.oSSBucketName;
+		}
+
+		public void setOSSBucketName(String oSSBucketName) {
+			this.oSSBucketName = oSSBucketName;
+		}
+
+		public Long getBackupGatewayId() {
+			return this.backupGatewayId;
+		}
+
+		public void setBackupGatewayId(Long backupGatewayId) {
+			this.backupGatewayId = backupGatewayId;
+		}
+
+		public String getSourceEndpointUserName() {
+			return this.sourceEndpointUserName;
+		}
+
+		public void setSourceEndpointUserName(String sourceEndpointUserName) {
+			this.sourceEndpointUserName = sourceEndpointUserName;
+		}
+
+		public String getBackupSetDownloadIncrementDataFormat() {
+			return this.backupSetDownloadIncrementDataFormat;
+		}
+
+		public void setBackupSetDownloadIncrementDataFormat(String backupSetDownloadIncrementDataFormat) {
+			this.backupSetDownloadIncrementDataFormat = backupSetDownloadIncrementDataFormat;
+		}
+
+		public Boolean getEnableBackupLog() {
+			return this.enableBackupLog;
+		}
+
+		public void setEnableBackupLog(Boolean enableBackupLog) {
+			this.enableBackupLog = enableBackupLog;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 	}
 

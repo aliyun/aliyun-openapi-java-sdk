@@ -23,10 +23,10 @@ public class ModifyStorageStrategyResponseUnmarshaller {
 	public static ModifyStorageStrategyResponse unmarshall(ModifyStorageStrategyResponse modifyStorageStrategyResponse, UnmarshallerContext _ctx) {
 		
 		modifyStorageStrategyResponse.setRequestId(_ctx.stringValue("ModifyStorageStrategyResponse.RequestId"));
-		modifyStorageStrategyResponse.setSuccess(_ctx.booleanValue("ModifyStorageStrategyResponse.Success"));
-		modifyStorageStrategyResponse.setErrCode(_ctx.stringValue("ModifyStorageStrategyResponse.ErrCode"));
-		modifyStorageStrategyResponse.setErrMessage(_ctx.stringValue("ModifyStorageStrategyResponse.ErrMessage"));
 		modifyStorageStrategyResponse.setHttpStatusCode(_ctx.integerValue("ModifyStorageStrategyResponse.HttpStatusCode"));
+		modifyStorageStrategyResponse.setErrCode(_ctx.stringValue("ModifyStorageStrategyResponse.ErrCode"));
+		modifyStorageStrategyResponse.setSuccess(_ctx.booleanValue("ModifyStorageStrategyResponse.Success"));
+		modifyStorageStrategyResponse.setErrMessage(_ctx.stringValue("ModifyStorageStrategyResponse.ErrMessage"));
 		modifyStorageStrategyResponse.setBackupPlanId(_ctx.stringValue("ModifyStorageStrategyResponse.BackupPlanId"));
 		modifyStorageStrategyResponse.setNeedPrecheck(_ctx.booleanValue("ModifyStorageStrategyResponse.NeedPrecheck"));
 	 

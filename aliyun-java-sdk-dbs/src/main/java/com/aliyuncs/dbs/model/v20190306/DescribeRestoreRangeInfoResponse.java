@@ -25,41 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeRestoreRangeInfoResponse extends AcsResponse {
 
-	private Boolean success;
-
-	private String errCode;
-
-	private String errMessage;
-
 	private Integer httpStatusCode;
 
 	private String requestId;
 
+	private String errCode;
+
+	private Boolean success;
+
+	private String errMessage;
+
 	private List<DBSRecoverRange> items;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getErrCode() {
-		return this.errCode;
-	}
-
-	public void setErrCode(String errCode) {
-		this.errCode = errCode;
-	}
-
-	public String getErrMessage() {
-		return this.errMessage;
-	}
-
-	public void setErrMessage(String errMessage) {
-		this.errMessage = errMessage;
-	}
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -77,6 +53,30 @@ public class DescribeRestoreRangeInfoResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getErrCode() {
+		return this.errCode;
+	}
+
+	public void setErrCode(String errCode) {
+		this.errCode = errCode;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public String getErrMessage() {
+		return this.errMessage;
+	}
+
+	public void setErrMessage(String errMessage) {
+		this.errMessage = errMessage;
+	}
+
 	public List<DBSRecoverRange> getItems() {
 		return this.items;
 	}
@@ -87,17 +87,25 @@ public class DescribeRestoreRangeInfoResponse extends AcsResponse {
 
 	public static class DBSRecoverRange {
 
-		private String sourceEndpointInstanceType;
-
-		private String sourceEndpointInstanceID;
-
-		private Long beginTimestampForRestore;
-
 		private Long endTimestampForRestore;
+
+		private String sourceEndpointInstanceType;
 
 		private String rangeType;
 
+		private Long beginTimestampForRestore;
+
+		private String sourceEndpointInstanceID;
+
 		private List<FullBackupDetail> fullBackupList;
+
+		public Long getEndTimestampForRestore() {
+			return this.endTimestampForRestore;
+		}
+
+		public void setEndTimestampForRestore(Long endTimestampForRestore) {
+			this.endTimestampForRestore = endTimestampForRestore;
+		}
 
 		public String getSourceEndpointInstanceType() {
 			return this.sourceEndpointInstanceType;
@@ -107,12 +115,12 @@ public class DescribeRestoreRangeInfoResponse extends AcsResponse {
 			this.sourceEndpointInstanceType = sourceEndpointInstanceType;
 		}
 
-		public String getSourceEndpointInstanceID() {
-			return this.sourceEndpointInstanceID;
+		public String getRangeType() {
+			return this.rangeType;
 		}
 
-		public void setSourceEndpointInstanceID(String sourceEndpointInstanceID) {
-			this.sourceEndpointInstanceID = sourceEndpointInstanceID;
+		public void setRangeType(String rangeType) {
+			this.rangeType = rangeType;
 		}
 
 		public Long getBeginTimestampForRestore() {
@@ -123,20 +131,12 @@ public class DescribeRestoreRangeInfoResponse extends AcsResponse {
 			this.beginTimestampForRestore = beginTimestampForRestore;
 		}
 
-		public Long getEndTimestampForRestore() {
-			return this.endTimestampForRestore;
+		public String getSourceEndpointInstanceID() {
+			return this.sourceEndpointInstanceID;
 		}
 
-		public void setEndTimestampForRestore(Long endTimestampForRestore) {
-			this.endTimestampForRestore = endTimestampForRestore;
-		}
-
-		public String getRangeType() {
-			return this.rangeType;
-		}
-
-		public void setRangeType(String rangeType) {
-			this.rangeType = rangeType;
+		public void setSourceEndpointInstanceID(String sourceEndpointInstanceID) {
+			this.sourceEndpointInstanceID = sourceEndpointInstanceID;
 		}
 
 		public List<FullBackupDetail> getFullBackupList() {
@@ -149,18 +149,18 @@ public class DescribeRestoreRangeInfoResponse extends AcsResponse {
 
 		public static class FullBackupDetail {
 
-			private String backupSetId;
+			private Long endTime;
 
 			private Long startTime;
 
-			private Long endTime;
+			private String backupSetId;
 
-			public String getBackupSetId() {
-				return this.backupSetId;
+			public Long getEndTime() {
+				return this.endTime;
 			}
 
-			public void setBackupSetId(String backupSetId) {
-				this.backupSetId = backupSetId;
+			public void setEndTime(Long endTime) {
+				this.endTime = endTime;
 			}
 
 			public Long getStartTime() {
@@ -171,12 +171,12 @@ public class DescribeRestoreRangeInfoResponse extends AcsResponse {
 				this.startTime = startTime;
 			}
 
-			public Long getEndTime() {
-				return this.endTime;
+			public String getBackupSetId() {
+				return this.backupSetId;
 			}
 
-			public void setEndTime(Long endTime) {
-				this.endTime = endTime;
+			public void setBackupSetId(String backupSetId) {
+				this.backupSetId = backupSetId;
 			}
 		}
 	}

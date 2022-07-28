@@ -23,10 +23,10 @@ public class ModifyBackupPlanNameResponseUnmarshaller {
 	public static ModifyBackupPlanNameResponse unmarshall(ModifyBackupPlanNameResponse modifyBackupPlanNameResponse, UnmarshallerContext _ctx) {
 		
 		modifyBackupPlanNameResponse.setRequestId(_ctx.stringValue("ModifyBackupPlanNameResponse.RequestId"));
-		modifyBackupPlanNameResponse.setSuccess(_ctx.booleanValue("ModifyBackupPlanNameResponse.Success"));
-		modifyBackupPlanNameResponse.setErrCode(_ctx.stringValue("ModifyBackupPlanNameResponse.ErrCode"));
-		modifyBackupPlanNameResponse.setErrMessage(_ctx.stringValue("ModifyBackupPlanNameResponse.ErrMessage"));
 		modifyBackupPlanNameResponse.setHttpStatusCode(_ctx.integerValue("ModifyBackupPlanNameResponse.HttpStatusCode"));
+		modifyBackupPlanNameResponse.setErrCode(_ctx.stringValue("ModifyBackupPlanNameResponse.ErrCode"));
+		modifyBackupPlanNameResponse.setSuccess(_ctx.booleanValue("ModifyBackupPlanNameResponse.Success"));
+		modifyBackupPlanNameResponse.setErrMessage(_ctx.stringValue("ModifyBackupPlanNameResponse.ErrMessage"));
 		modifyBackupPlanNameResponse.setBackupPlanId(_ctx.stringValue("ModifyBackupPlanNameResponse.BackupPlanId"));
 	 
 	 	return modifyBackupPlanNameResponse;

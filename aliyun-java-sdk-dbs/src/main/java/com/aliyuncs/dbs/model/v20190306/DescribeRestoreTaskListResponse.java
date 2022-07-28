@@ -25,49 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeRestoreTaskListResponse extends AcsResponse {
 
-	private Boolean success;
-
-	private String errCode;
-
-	private String errMessage;
-
 	private Integer httpStatusCode;
-
-	private String requestId;
-
-	private Integer totalPages;
-
-	private Integer pageSize;
 
 	private Integer pageNum;
 
+	private String requestId;
+
+	private String errCode;
+
+	private Boolean success;
+
+	private String errMessage;
+
+	private Integer totalPages;
+
 	private Integer totalElements;
 
+	private Integer pageSize;
+
 	private List<RestoreTaskDetail> items;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getErrCode() {
-		return this.errCode;
-	}
-
-	public void setErrCode(String errCode) {
-		this.errCode = errCode;
-	}
-
-	public String getErrMessage() {
-		return this.errMessage;
-	}
-
-	public void setErrMessage(String errMessage) {
-		this.errMessage = errMessage;
-	}
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -75,30 +51,6 @@ public class DescribeRestoreTaskListResponse extends AcsResponse {
 
 	public void setHttpStatusCode(Integer httpStatusCode) {
 		this.httpStatusCode = httpStatusCode;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getTotalPages() {
-		return this.totalPages;
-	}
-
-	public void setTotalPages(Integer totalPages) {
-		this.totalPages = totalPages;
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
 	}
 
 	public Integer getPageNum() {
@@ -109,12 +61,60 @@ public class DescribeRestoreTaskListResponse extends AcsResponse {
 		this.pageNum = pageNum;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getErrCode() {
+		return this.errCode;
+	}
+
+	public void setErrCode(String errCode) {
+		this.errCode = errCode;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public String getErrMessage() {
+		return this.errMessage;
+	}
+
+	public void setErrMessage(String errMessage) {
+		this.errMessage = errMessage;
+	}
+
+	public Integer getTotalPages() {
+		return this.totalPages;
+	}
+
+	public void setTotalPages(Integer totalPages) {
+		this.totalPages = totalPages;
+	}
+
 	public Integer getTotalElements() {
 		return this.totalElements;
 	}
 
 	public void setTotalElements(Integer totalElements) {
 		this.totalElements = totalElements;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public List<RestoreTaskDetail> getItems() {
@@ -127,55 +127,103 @@ public class DescribeRestoreTaskListResponse extends AcsResponse {
 
 	public static class RestoreTaskDetail {
 
-		private String backupPlanId;
+		private String restoreStatus;
 
-		private String destinationEndpointInstanceType;
+		private Integer fullStruAfterRestoreProgress;
+
+		private String crossRoleName;
+
+		private String restoreDir;
+
+		private String crossAliyunId;
+
+		private String restoreObjects;
+
+		private String backupPlanId;
 
 		private String destinationEndpointRegion;
 
-		private String destinationEndpointInstanceID;
+		private Long restoreTaskCreateTime;
+
+		private String destinationEndpointUserName;
+
+		private Long restoreTaskFinishTime;
 
 		private String destinationEndpointIpPort;
 
 		private String destinationEndpointDatabaseName;
 
-		private String destinationEndpointUserName;
+		private String destinationEndpointInstanceType;
 
 		private String destinationEndpointOracleSID;
 
-		private String restoreObjects;
+		private Integer fullStruforeRestoreProgress;
 
-		private Long backupGatewayId;
-
-		private String restoreDir;
-
-		private String restoreTaskName;
-
-		private String backupSetId;
-
-		private Long restoreTime;
-
-		private Long restoreTaskCreateTime;
-
-		private Long restoreTaskFinishTime;
-
-		private String restoreStatus;
+		private String errMessage;
 
 		private String restoreTaskId;
-
-		private Integer fullStruforeRestoreProgress;
 
 		private Integer fullDataRestoreProgress;
 
 		private Integer continuousRestoreProgress;
 
-		private Integer fullStruAfterRestoreProgress;
+		private String destinationEndpointInstanceID;
 
-		private String crossAliyunId;
+		private String backupSetId;
 
-		private String crossRoleName;
+		private Long backupGatewayId;
 
-		private String errMessage;
+		private String restoreTaskName;
+
+		private Long restoreTime;
+
+		public String getRestoreStatus() {
+			return this.restoreStatus;
+		}
+
+		public void setRestoreStatus(String restoreStatus) {
+			this.restoreStatus = restoreStatus;
+		}
+
+		public Integer getFullStruAfterRestoreProgress() {
+			return this.fullStruAfterRestoreProgress;
+		}
+
+		public void setFullStruAfterRestoreProgress(Integer fullStruAfterRestoreProgress) {
+			this.fullStruAfterRestoreProgress = fullStruAfterRestoreProgress;
+		}
+
+		public String getCrossRoleName() {
+			return this.crossRoleName;
+		}
+
+		public void setCrossRoleName(String crossRoleName) {
+			this.crossRoleName = crossRoleName;
+		}
+
+		public String getRestoreDir() {
+			return this.restoreDir;
+		}
+
+		public void setRestoreDir(String restoreDir) {
+			this.restoreDir = restoreDir;
+		}
+
+		public String getCrossAliyunId() {
+			return this.crossAliyunId;
+		}
+
+		public void setCrossAliyunId(String crossAliyunId) {
+			this.crossAliyunId = crossAliyunId;
+		}
+
+		public String getRestoreObjects() {
+			return this.restoreObjects;
+		}
+
+		public void setRestoreObjects(String restoreObjects) {
+			this.restoreObjects = restoreObjects;
+		}
 
 		public String getBackupPlanId() {
 			return this.backupPlanId;
@@ -183,14 +231,6 @@ public class DescribeRestoreTaskListResponse extends AcsResponse {
 
 		public void setBackupPlanId(String backupPlanId) {
 			this.backupPlanId = backupPlanId;
-		}
-
-		public String getDestinationEndpointInstanceType() {
-			return this.destinationEndpointInstanceType;
-		}
-
-		public void setDestinationEndpointInstanceType(String destinationEndpointInstanceType) {
-			this.destinationEndpointInstanceType = destinationEndpointInstanceType;
 		}
 
 		public String getDestinationEndpointRegion() {
@@ -201,12 +241,28 @@ public class DescribeRestoreTaskListResponse extends AcsResponse {
 			this.destinationEndpointRegion = destinationEndpointRegion;
 		}
 
-		public String getDestinationEndpointInstanceID() {
-			return this.destinationEndpointInstanceID;
+		public Long getRestoreTaskCreateTime() {
+			return this.restoreTaskCreateTime;
 		}
 
-		public void setDestinationEndpointInstanceID(String destinationEndpointInstanceID) {
-			this.destinationEndpointInstanceID = destinationEndpointInstanceID;
+		public void setRestoreTaskCreateTime(Long restoreTaskCreateTime) {
+			this.restoreTaskCreateTime = restoreTaskCreateTime;
+		}
+
+		public String getDestinationEndpointUserName() {
+			return this.destinationEndpointUserName;
+		}
+
+		public void setDestinationEndpointUserName(String destinationEndpointUserName) {
+			this.destinationEndpointUserName = destinationEndpointUserName;
+		}
+
+		public Long getRestoreTaskFinishTime() {
+			return this.restoreTaskFinishTime;
+		}
+
+		public void setRestoreTaskFinishTime(Long restoreTaskFinishTime) {
+			this.restoreTaskFinishTime = restoreTaskFinishTime;
 		}
 
 		public String getDestinationEndpointIpPort() {
@@ -225,12 +281,12 @@ public class DescribeRestoreTaskListResponse extends AcsResponse {
 			this.destinationEndpointDatabaseName = destinationEndpointDatabaseName;
 		}
 
-		public String getDestinationEndpointUserName() {
-			return this.destinationEndpointUserName;
+		public String getDestinationEndpointInstanceType() {
+			return this.destinationEndpointInstanceType;
 		}
 
-		public void setDestinationEndpointUserName(String destinationEndpointUserName) {
-			this.destinationEndpointUserName = destinationEndpointUserName;
+		public void setDestinationEndpointInstanceType(String destinationEndpointInstanceType) {
+			this.destinationEndpointInstanceType = destinationEndpointInstanceType;
 		}
 
 		public String getDestinationEndpointOracleSID() {
@@ -241,76 +297,20 @@ public class DescribeRestoreTaskListResponse extends AcsResponse {
 			this.destinationEndpointOracleSID = destinationEndpointOracleSID;
 		}
 
-		public String getRestoreObjects() {
-			return this.restoreObjects;
+		public Integer getFullStruforeRestoreProgress() {
+			return this.fullStruforeRestoreProgress;
 		}
 
-		public void setRestoreObjects(String restoreObjects) {
-			this.restoreObjects = restoreObjects;
+		public void setFullStruforeRestoreProgress(Integer fullStruforeRestoreProgress) {
+			this.fullStruforeRestoreProgress = fullStruforeRestoreProgress;
 		}
 
-		public Long getBackupGatewayId() {
-			return this.backupGatewayId;
+		public String getErrMessage() {
+			return this.errMessage;
 		}
 
-		public void setBackupGatewayId(Long backupGatewayId) {
-			this.backupGatewayId = backupGatewayId;
-		}
-
-		public String getRestoreDir() {
-			return this.restoreDir;
-		}
-
-		public void setRestoreDir(String restoreDir) {
-			this.restoreDir = restoreDir;
-		}
-
-		public String getRestoreTaskName() {
-			return this.restoreTaskName;
-		}
-
-		public void setRestoreTaskName(String restoreTaskName) {
-			this.restoreTaskName = restoreTaskName;
-		}
-
-		public String getBackupSetId() {
-			return this.backupSetId;
-		}
-
-		public void setBackupSetId(String backupSetId) {
-			this.backupSetId = backupSetId;
-		}
-
-		public Long getRestoreTime() {
-			return this.restoreTime;
-		}
-
-		public void setRestoreTime(Long restoreTime) {
-			this.restoreTime = restoreTime;
-		}
-
-		public Long getRestoreTaskCreateTime() {
-			return this.restoreTaskCreateTime;
-		}
-
-		public void setRestoreTaskCreateTime(Long restoreTaskCreateTime) {
-			this.restoreTaskCreateTime = restoreTaskCreateTime;
-		}
-
-		public Long getRestoreTaskFinishTime() {
-			return this.restoreTaskFinishTime;
-		}
-
-		public void setRestoreTaskFinishTime(Long restoreTaskFinishTime) {
-			this.restoreTaskFinishTime = restoreTaskFinishTime;
-		}
-
-		public String getRestoreStatus() {
-			return this.restoreStatus;
-		}
-
-		public void setRestoreStatus(String restoreStatus) {
-			this.restoreStatus = restoreStatus;
+		public void setErrMessage(String errMessage) {
+			this.errMessage = errMessage;
 		}
 
 		public String getRestoreTaskId() {
@@ -319,14 +319,6 @@ public class DescribeRestoreTaskListResponse extends AcsResponse {
 
 		public void setRestoreTaskId(String restoreTaskId) {
 			this.restoreTaskId = restoreTaskId;
-		}
-
-		public Integer getFullStruforeRestoreProgress() {
-			return this.fullStruforeRestoreProgress;
-		}
-
-		public void setFullStruforeRestoreProgress(Integer fullStruforeRestoreProgress) {
-			this.fullStruforeRestoreProgress = fullStruforeRestoreProgress;
 		}
 
 		public Integer getFullDataRestoreProgress() {
@@ -345,36 +337,44 @@ public class DescribeRestoreTaskListResponse extends AcsResponse {
 			this.continuousRestoreProgress = continuousRestoreProgress;
 		}
 
-		public Integer getFullStruAfterRestoreProgress() {
-			return this.fullStruAfterRestoreProgress;
+		public String getDestinationEndpointInstanceID() {
+			return this.destinationEndpointInstanceID;
 		}
 
-		public void setFullStruAfterRestoreProgress(Integer fullStruAfterRestoreProgress) {
-			this.fullStruAfterRestoreProgress = fullStruAfterRestoreProgress;
+		public void setDestinationEndpointInstanceID(String destinationEndpointInstanceID) {
+			this.destinationEndpointInstanceID = destinationEndpointInstanceID;
 		}
 
-		public String getCrossAliyunId() {
-			return this.crossAliyunId;
+		public String getBackupSetId() {
+			return this.backupSetId;
 		}
 
-		public void setCrossAliyunId(String crossAliyunId) {
-			this.crossAliyunId = crossAliyunId;
+		public void setBackupSetId(String backupSetId) {
+			this.backupSetId = backupSetId;
 		}
 
-		public String getCrossRoleName() {
-			return this.crossRoleName;
+		public Long getBackupGatewayId() {
+			return this.backupGatewayId;
 		}
 
-		public void setCrossRoleName(String crossRoleName) {
-			this.crossRoleName = crossRoleName;
+		public void setBackupGatewayId(Long backupGatewayId) {
+			this.backupGatewayId = backupGatewayId;
 		}
 
-		public String getErrMessage() {
-			return this.errMessage;
+		public String getRestoreTaskName() {
+			return this.restoreTaskName;
 		}
 
-		public void setErrMessage(String errMessage) {
-			this.errMessage = errMessage;
+		public void setRestoreTaskName(String restoreTaskName) {
+			this.restoreTaskName = restoreTaskName;
+		}
+
+		public Long getRestoreTime() {
+			return this.restoreTime;
+		}
+
+		public void setRestoreTime(Long restoreTime) {
+			this.restoreTime = restoreTime;
 		}
 	}
 

@@ -23,10 +23,10 @@ public class RenewBackupPlanResponseUnmarshaller {
 	public static RenewBackupPlanResponse unmarshall(RenewBackupPlanResponse renewBackupPlanResponse, UnmarshallerContext _ctx) {
 		
 		renewBackupPlanResponse.setRequestId(_ctx.stringValue("RenewBackupPlanResponse.RequestId"));
-		renewBackupPlanResponse.setSuccess(_ctx.booleanValue("RenewBackupPlanResponse.Success"));
-		renewBackupPlanResponse.setErrCode(_ctx.stringValue("RenewBackupPlanResponse.ErrCode"));
-		renewBackupPlanResponse.setErrMessage(_ctx.stringValue("RenewBackupPlanResponse.ErrMessage"));
 		renewBackupPlanResponse.setHttpStatusCode(_ctx.integerValue("RenewBackupPlanResponse.HttpStatusCode"));
+		renewBackupPlanResponse.setErrCode(_ctx.stringValue("RenewBackupPlanResponse.ErrCode"));
+		renewBackupPlanResponse.setSuccess(_ctx.booleanValue("RenewBackupPlanResponse.Success"));
+		renewBackupPlanResponse.setErrMessage(_ctx.stringValue("RenewBackupPlanResponse.ErrMessage"));
 		renewBackupPlanResponse.setBackupPlanId(_ctx.stringValue("RenewBackupPlanResponse.BackupPlanId"));
 		renewBackupPlanResponse.setOrderId(_ctx.stringValue("RenewBackupPlanResponse.OrderId"));
 	 

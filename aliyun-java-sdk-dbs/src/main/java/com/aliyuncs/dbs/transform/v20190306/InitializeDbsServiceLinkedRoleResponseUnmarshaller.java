@@ -23,10 +23,10 @@ public class InitializeDbsServiceLinkedRoleResponseUnmarshaller {
 	public static InitializeDbsServiceLinkedRoleResponse unmarshall(InitializeDbsServiceLinkedRoleResponse initializeDbsServiceLinkedRoleResponse, UnmarshallerContext _ctx) {
 		
 		initializeDbsServiceLinkedRoleResponse.setRequestId(_ctx.stringValue("InitializeDbsServiceLinkedRoleResponse.RequestId"));
-		initializeDbsServiceLinkedRoleResponse.setErrorCode(_ctx.stringValue("InitializeDbsServiceLinkedRoleResponse.ErrorCode"));
 		initializeDbsServiceLinkedRoleResponse.setData(_ctx.stringValue("InitializeDbsServiceLinkedRoleResponse.Data"));
-		initializeDbsServiceLinkedRoleResponse.setErrMessage(_ctx.stringValue("InitializeDbsServiceLinkedRoleResponse.ErrMessage"));
 		initializeDbsServiceLinkedRoleResponse.setSuccess(_ctx.stringValue("InitializeDbsServiceLinkedRoleResponse.Success"));
+		initializeDbsServiceLinkedRoleResponse.setErrorCode(_ctx.stringValue("InitializeDbsServiceLinkedRoleResponse.ErrorCode"));
+		initializeDbsServiceLinkedRoleResponse.setErrMessage(_ctx.stringValue("InitializeDbsServiceLinkedRoleResponse.ErrMessage"));
 	 
 	 	return initializeDbsServiceLinkedRoleResponse;
 	}

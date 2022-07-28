@@ -24,45 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDLAServiceResponse extends AcsResponse {
 
-	private Boolean success;
-
-	private String errCode;
-
-	private String errMessage;
-
 	private Integer httpStatusCode;
 
 	private String requestId;
 
+	private String errCode;
+
+	private Boolean success;
+
 	private String state;
+
+	private String errMessage;
 
 	private Boolean autoAdd;
 
 	private Boolean haveJobFailed;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getErrCode() {
-		return this.errCode;
-	}
-
-	public void setErrCode(String errCode) {
-		this.errCode = errCode;
-	}
-
-	public String getErrMessage() {
-		return this.errMessage;
-	}
-
-	public void setErrMessage(String errMessage) {
-		this.errMessage = errMessage;
-	}
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -80,12 +56,36 @@ public class DescribeDLAServiceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getErrCode() {
+		return this.errCode;
+	}
+
+	public void setErrCode(String errCode) {
+		this.errCode = errCode;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public String getState() {
 		return this.state;
 	}
 
 	public void setState(String state) {
 		this.state = state;
+	}
+
+	public String getErrMessage() {
+		return this.errMessage;
+	}
+
+	public void setErrMessage(String errMessage) {
+		this.errMessage = errMessage;
 	}
 
 	public Boolean getAutoAdd() {

@@ -24,18 +24,18 @@ public class DescribeJobErrorCodeResponseUnmarshaller {
 	public static DescribeJobErrorCodeResponse unmarshall(DescribeJobErrorCodeResponse describeJobErrorCodeResponse, UnmarshallerContext _ctx) {
 		
 		describeJobErrorCodeResponse.setRequestId(_ctx.stringValue("DescribeJobErrorCodeResponse.RequestId"));
-		describeJobErrorCodeResponse.setSuccess(_ctx.booleanValue("DescribeJobErrorCodeResponse.Success"));
-		describeJobErrorCodeResponse.setErrCode(_ctx.stringValue("DescribeJobErrorCodeResponse.ErrCode"));
-		describeJobErrorCodeResponse.setErrMessage(_ctx.stringValue("DescribeJobErrorCodeResponse.ErrMessage"));
 		describeJobErrorCodeResponse.setHttpStatusCode(_ctx.integerValue("DescribeJobErrorCodeResponse.HttpStatusCode"));
+		describeJobErrorCodeResponse.setErrCode(_ctx.stringValue("DescribeJobErrorCodeResponse.ErrCode"));
+		describeJobErrorCodeResponse.setSuccess(_ctx.booleanValue("DescribeJobErrorCodeResponse.Success"));
+		describeJobErrorCodeResponse.setErrMessage(_ctx.stringValue("DescribeJobErrorCodeResponse.ErrMessage"));
 
 		Item item = new Item();
-		item.setJobId(_ctx.stringValue("DescribeJobErrorCodeResponse.Item.JobId"));
-		item.setLanguage(_ctx.stringValue("DescribeJobErrorCodeResponse.Item.Language"));
-		item.setErrorCode(_ctx.stringValue("DescribeJobErrorCodeResponse.Item.ErrorCode"));
-		item.setErrorMessage(_ctx.stringValue("DescribeJobErrorCodeResponse.Item.ErrorMessage"));
-		item.setJobType(_ctx.stringValue("DescribeJobErrorCodeResponse.Item.JobType"));
 		item.setJobState(_ctx.stringValue("DescribeJobErrorCodeResponse.Item.JobState"));
+		item.setErrorMessage(_ctx.stringValue("DescribeJobErrorCodeResponse.Item.ErrorMessage"));
+		item.setErrorCode(_ctx.stringValue("DescribeJobErrorCodeResponse.Item.ErrorCode"));
+		item.setJobId(_ctx.stringValue("DescribeJobErrorCodeResponse.Item.JobId"));
+		item.setJobType(_ctx.stringValue("DescribeJobErrorCodeResponse.Item.JobType"));
+		item.setLanguage(_ctx.stringValue("DescribeJobErrorCodeResponse.Item.Language"));
 		describeJobErrorCodeResponse.setItem(item);
 	 
 	 	return describeJobErrorCodeResponse;

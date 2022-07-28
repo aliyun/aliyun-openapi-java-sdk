@@ -23,11 +23,11 @@ public class DescribeDLAServiceResponseUnmarshaller {
 	public static DescribeDLAServiceResponse unmarshall(DescribeDLAServiceResponse describeDLAServiceResponse, UnmarshallerContext _ctx) {
 		
 		describeDLAServiceResponse.setRequestId(_ctx.stringValue("DescribeDLAServiceResponse.RequestId"));
-		describeDLAServiceResponse.setSuccess(_ctx.booleanValue("DescribeDLAServiceResponse.Success"));
-		describeDLAServiceResponse.setErrCode(_ctx.stringValue("DescribeDLAServiceResponse.ErrCode"));
-		describeDLAServiceResponse.setErrMessage(_ctx.stringValue("DescribeDLAServiceResponse.ErrMessage"));
 		describeDLAServiceResponse.setHttpStatusCode(_ctx.integerValue("DescribeDLAServiceResponse.HttpStatusCode"));
+		describeDLAServiceResponse.setErrCode(_ctx.stringValue("DescribeDLAServiceResponse.ErrCode"));
+		describeDLAServiceResponse.setSuccess(_ctx.booleanValue("DescribeDLAServiceResponse.Success"));
 		describeDLAServiceResponse.setState(_ctx.stringValue("DescribeDLAServiceResponse.State"));
+		describeDLAServiceResponse.setErrMessage(_ctx.stringValue("DescribeDLAServiceResponse.ErrMessage"));
 		describeDLAServiceResponse.setAutoAdd(_ctx.booleanValue("DescribeDLAServiceResponse.AutoAdd"));
 		describeDLAServiceResponse.setHaveJobFailed(_ctx.booleanValue("DescribeDLAServiceResponse.HaveJobFailed"));
 	 

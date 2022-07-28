@@ -24,23 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class InitializeDbsServiceLinkedRoleResponse extends AcsResponse {
 
-	private String errorCode;
-
 	private String data;
-
-	private String errMessage;
 
 	private String requestId;
 
 	private String success;
 
-	public String getErrorCode() {
-		return this.errorCode;
-	}
+	private String errorCode;
 
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
+	private String errMessage;
 
 	public String getData() {
 		return this.data;
@@ -48,14 +40,6 @@ public class InitializeDbsServiceLinkedRoleResponse extends AcsResponse {
 
 	public void setData(String data) {
 		this.data = data;
-	}
-
-	public String getErrMessage() {
-		return this.errMessage;
-	}
-
-	public void setErrMessage(String errMessage) {
-		this.errMessage = errMessage;
 	}
 
 	public String getRequestId() {
@@ -72,6 +56,22 @@ public class InitializeDbsServiceLinkedRoleResponse extends AcsResponse {
 
 	public void setSuccess(String success) {
 		this.success = success;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public String getErrMessage() {
+		return this.errMessage;
+	}
+
+	public void setErrMessage(String errMessage) {
+		this.errMessage = errMessage;
 	}
 
 	@Override

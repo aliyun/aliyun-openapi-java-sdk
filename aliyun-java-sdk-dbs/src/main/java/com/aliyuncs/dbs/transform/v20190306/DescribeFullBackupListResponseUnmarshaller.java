@@ -27,30 +27,30 @@ public class DescribeFullBackupListResponseUnmarshaller {
 	public static DescribeFullBackupListResponse unmarshall(DescribeFullBackupListResponse describeFullBackupListResponse, UnmarshallerContext _ctx) {
 		
 		describeFullBackupListResponse.setRequestId(_ctx.stringValue("DescribeFullBackupListResponse.RequestId"));
-		describeFullBackupListResponse.setSuccess(_ctx.booleanValue("DescribeFullBackupListResponse.Success"));
-		describeFullBackupListResponse.setErrCode(_ctx.stringValue("DescribeFullBackupListResponse.ErrCode"));
-		describeFullBackupListResponse.setErrMessage(_ctx.stringValue("DescribeFullBackupListResponse.ErrMessage"));
 		describeFullBackupListResponse.setHttpStatusCode(_ctx.integerValue("DescribeFullBackupListResponse.HttpStatusCode"));
-		describeFullBackupListResponse.setTotalPages(_ctx.integerValue("DescribeFullBackupListResponse.TotalPages"));
-		describeFullBackupListResponse.setPageSize(_ctx.integerValue("DescribeFullBackupListResponse.PageSize"));
 		describeFullBackupListResponse.setPageNum(_ctx.integerValue("DescribeFullBackupListResponse.PageNum"));
+		describeFullBackupListResponse.setErrCode(_ctx.stringValue("DescribeFullBackupListResponse.ErrCode"));
+		describeFullBackupListResponse.setSuccess(_ctx.booleanValue("DescribeFullBackupListResponse.Success"));
+		describeFullBackupListResponse.setErrMessage(_ctx.stringValue("DescribeFullBackupListResponse.ErrMessage"));
+		describeFullBackupListResponse.setTotalPages(_ctx.integerValue("DescribeFullBackupListResponse.TotalPages"));
 		describeFullBackupListResponse.setTotalElements(_ctx.integerValue("DescribeFullBackupListResponse.TotalElements"));
+		describeFullBackupListResponse.setPageSize(_ctx.integerValue("DescribeFullBackupListResponse.PageSize"));
 
 		List<FullBackupFile> items = new ArrayList<FullBackupFile>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeFullBackupListResponse.Items.Length"); i++) {
 			FullBackupFile fullBackupFile = new FullBackupFile();
-			fullBackupFile.setBackupSetId(_ctx.stringValue("DescribeFullBackupListResponse.Items["+ i +"].BackupSetId"));
-			fullBackupFile.setSourceEndpointIpPort(_ctx.stringValue("DescribeFullBackupListResponse.Items["+ i +"].SourceEndpointIpPort"));
-			fullBackupFile.setStartTime(_ctx.longValue("DescribeFullBackupListResponse.Items["+ i +"].StartTime"));
-			fullBackupFile.setEndTime(_ctx.longValue("DescribeFullBackupListResponse.Items["+ i +"].EndTime"));
+			fullBackupFile.setFinishTime(_ctx.longValue("DescribeFullBackupListResponse.Items["+ i +"].FinishTime"));
 			fullBackupFile.setBackupStatus(_ctx.stringValue("DescribeFullBackupListResponse.Items["+ i +"].BackupStatus"));
-			fullBackupFile.setBackupSetExpiredTime(_ctx.longValue("DescribeFullBackupListResponse.Items["+ i +"].BackupSetExpiredTime"));
-			fullBackupFile.setBackupSize(_ctx.longValue("DescribeFullBackupListResponse.Items["+ i +"].BackupSize"));
-			fullBackupFile.setStorageMethod(_ctx.stringValue("DescribeFullBackupListResponse.Items["+ i +"].StorageMethod"));
+			fullBackupFile.setSourceEndpointIpPort(_ctx.stringValue("DescribeFullBackupListResponse.Items["+ i +"].SourceEndpointIpPort"));
+			fullBackupFile.setCreateTime(_ctx.longValue("DescribeFullBackupListResponse.Items["+ i +"].CreateTime"));
 			fullBackupFile.setErrMessage(_ctx.stringValue("DescribeFullBackupListResponse.Items["+ i +"].ErrMessage"));
 			fullBackupFile.setBackupObjects(_ctx.stringValue("DescribeFullBackupListResponse.Items["+ i +"].BackupObjects"));
-			fullBackupFile.setCreateTime(_ctx.longValue("DescribeFullBackupListResponse.Items["+ i +"].CreateTime"));
-			fullBackupFile.setFinishTime(_ctx.longValue("DescribeFullBackupListResponse.Items["+ i +"].FinishTime"));
+			fullBackupFile.setEndTime(_ctx.longValue("DescribeFullBackupListResponse.Items["+ i +"].EndTime"));
+			fullBackupFile.setStartTime(_ctx.longValue("DescribeFullBackupListResponse.Items["+ i +"].StartTime"));
+			fullBackupFile.setBackupSetExpiredTime(_ctx.longValue("DescribeFullBackupListResponse.Items["+ i +"].BackupSetExpiredTime"));
+			fullBackupFile.setStorageMethod(_ctx.stringValue("DescribeFullBackupListResponse.Items["+ i +"].StorageMethod"));
+			fullBackupFile.setBackupSetId(_ctx.stringValue("DescribeFullBackupListResponse.Items["+ i +"].BackupSetId"));
+			fullBackupFile.setBackupSize(_ctx.longValue("DescribeFullBackupListResponse.Items["+ i +"].BackupSize"));
 
 			items.add(fullBackupFile);
 		}

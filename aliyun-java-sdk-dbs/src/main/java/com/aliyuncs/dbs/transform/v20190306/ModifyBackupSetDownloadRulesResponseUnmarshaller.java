@@ -23,10 +23,10 @@ public class ModifyBackupSetDownloadRulesResponseUnmarshaller {
 	public static ModifyBackupSetDownloadRulesResponse unmarshall(ModifyBackupSetDownloadRulesResponse modifyBackupSetDownloadRulesResponse, UnmarshallerContext _ctx) {
 		
 		modifyBackupSetDownloadRulesResponse.setRequestId(_ctx.stringValue("ModifyBackupSetDownloadRulesResponse.RequestId"));
-		modifyBackupSetDownloadRulesResponse.setSuccess(_ctx.booleanValue("ModifyBackupSetDownloadRulesResponse.Success"));
-		modifyBackupSetDownloadRulesResponse.setErrCode(_ctx.stringValue("ModifyBackupSetDownloadRulesResponse.ErrCode"));
-		modifyBackupSetDownloadRulesResponse.setErrMessage(_ctx.stringValue("ModifyBackupSetDownloadRulesResponse.ErrMessage"));
 		modifyBackupSetDownloadRulesResponse.setHttpStatusCode(_ctx.integerValue("ModifyBackupSetDownloadRulesResponse.HttpStatusCode"));
+		modifyBackupSetDownloadRulesResponse.setErrCode(_ctx.stringValue("ModifyBackupSetDownloadRulesResponse.ErrCode"));
+		modifyBackupSetDownloadRulesResponse.setSuccess(_ctx.booleanValue("ModifyBackupSetDownloadRulesResponse.Success"));
+		modifyBackupSetDownloadRulesResponse.setErrMessage(_ctx.stringValue("ModifyBackupSetDownloadRulesResponse.ErrMessage"));
 		modifyBackupSetDownloadRulesResponse.setBackupPlanId(_ctx.stringValue("ModifyBackupSetDownloadRulesResponse.BackupPlanId"));
 	 
 	 	return modifyBackupSetDownloadRulesResponse;
