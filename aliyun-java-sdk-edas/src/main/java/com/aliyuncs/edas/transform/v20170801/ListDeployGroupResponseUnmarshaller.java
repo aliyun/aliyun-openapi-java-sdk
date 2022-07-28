@@ -65,6 +65,8 @@ public class ListDeployGroupResponseUnmarshaller {
 			deployGroup.setReversion(_ctx.stringValue("ListDeployGroupResponse.DeployGroupList["+ i +"].Reversion"));
 			deployGroup.setVExtServerGroupId(_ctx.stringValue("ListDeployGroupResponse.DeployGroupList["+ i +"].VExtServerGroupId"));
 			deployGroup.setPackagePublicUrl(_ctx.stringValue("ListDeployGroupResponse.DeployGroupList["+ i +"].PackagePublicUrl"));
+			deployGroup.setEphemeralStorageRequest(_ctx.stringValue("ListDeployGroupResponse.DeployGroupList["+ i +"].EphemeralStorageRequest"));
+			deployGroup.setEphemeralStorageLimit(_ctx.stringValue("ListDeployGroupResponse.DeployGroupList["+ i +"].EphemeralStorageLimit"));
 
 			deployGroupList.add(deployGroup);
 		}

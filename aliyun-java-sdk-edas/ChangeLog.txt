@@ -1,3 +1,6 @@
+2022-07-28 Version: 3.26.8
+- Supported SlbInfo in GetK8sApplication.
+
 2022-07-14 Version: 3.26.7
 - Supported SubClusterType in GetK8sCluster.
 

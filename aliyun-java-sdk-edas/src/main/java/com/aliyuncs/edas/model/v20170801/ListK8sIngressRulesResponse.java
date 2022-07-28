@@ -15,6 +15,7 @@
 package com.aliyuncs.edas.model.v20170801;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.edas.transform.v20170801.ListK8sIngressRulesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -125,6 +126,10 @@ public class ListK8sIngressRulesResponse extends AcsResponse {
 
 			private String ingressType;
 
+			private Boolean newDashboard;
+
+			private Map<Object,Object> newDashboardUrls;
+
 			private List<RulesItem> rules;
 
 			public String getCreationTime() {
@@ -191,6 +196,22 @@ public class ListK8sIngressRulesResponse extends AcsResponse {
 				this.ingressType = ingressType;
 			}
 
+			public Boolean getNewDashboard() {
+				return this.newDashboard;
+			}
+
+			public void setNewDashboard(Boolean newDashboard) {
+				this.newDashboard = newDashboard;
+			}
+
+			public Map<Object,Object> getNewDashboardUrls() {
+				return this.newDashboardUrls;
+			}
+
+			public void setNewDashboardUrls(Map<Object,Object> newDashboardUrls) {
+				this.newDashboardUrls = newDashboardUrls;
+			}
+
 			public List<RulesItem> getRules() {
 				return this.rules;
 			}
@@ -251,6 +272,8 @@ public class ListK8sIngressRulesResponse extends AcsResponse {
 
 					private String appId;
 
+					private Integer collectRate;
+
 					private Backend backend;
 
 					public String getStatus() {
@@ -283,6 +306,14 @@ public class ListK8sIngressRulesResponse extends AcsResponse {
 
 					public void setAppId(String appId) {
 						this.appId = appId;
+					}
+
+					public Integer getCollectRate() {
+						return this.collectRate;
+					}
+
+					public void setCollectRate(Integer collectRate) {
+						this.collectRate = collectRate;
 					}
 
 					public Backend getBackend() {

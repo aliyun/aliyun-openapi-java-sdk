@@ -131,6 +131,10 @@ public class ListDeployGroupResponse extends AcsResponse {
 
 		private String packagePublicUrl;
 
+		private String ephemeralStorageRequest;
+
+		private String ephemeralStorageLimit;
+
 		public String getVServerGroupId() {
 			return this.vServerGroupId;
 		}
@@ -385,6 +389,22 @@ public class ListDeployGroupResponse extends AcsResponse {
 
 		public void setPackagePublicUrl(String packagePublicUrl) {
 			this.packagePublicUrl = packagePublicUrl;
+		}
+
+		public String getEphemeralStorageRequest() {
+			return this.ephemeralStorageRequest;
+		}
+
+		public void setEphemeralStorageRequest(String ephemeralStorageRequest) {
+			this.ephemeralStorageRequest = ephemeralStorageRequest;
+		}
+
+		public String getEphemeralStorageLimit() {
+			return this.ephemeralStorageLimit;
+		}
+
+		public void setEphemeralStorageLimit(String ephemeralStorageLimit) {
+			this.ephemeralStorageLimit = ephemeralStorageLimit;
 		}
 	}
 

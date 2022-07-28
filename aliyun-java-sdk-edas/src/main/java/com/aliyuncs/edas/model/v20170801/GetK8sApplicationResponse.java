@@ -296,6 +296,8 @@ public class GetK8sApplicationResponse extends AcsResponse {
 
 			private String developType;
 
+			private String slbInfo;
+
 			private List<Env> envList;
 
 			private List<String> cmdArgs;
@@ -450,6 +452,14 @@ public class GetK8sApplicationResponse extends AcsResponse {
 
 			public void setDevelopType(String developType) {
 				this.developType = developType;
+			}
+
+			public String getSlbInfo() {
+				return this.slbInfo;
+			}
+
+			public void setSlbInfo(String slbInfo) {
+				this.slbInfo = slbInfo;
 			}
 
 			public List<Env> getEnvList() {
