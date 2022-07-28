@@ -27,7 +27,7 @@ public class FtGatedLaunchPolicy4Request extends RpcAcsRequest<FtGatedLaunchPoli
 
 	private String isGatedLaunch;
 	public FtGatedLaunchPolicy4Request() {
-		super("Ft", "2018-07-13", "FtGatedLaunchPolicy4", "aaa");
+		super("Ft", "2018-07-13", "FtGatedLaunchPolicy4");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

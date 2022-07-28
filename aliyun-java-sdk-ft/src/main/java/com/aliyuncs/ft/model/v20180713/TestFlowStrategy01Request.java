@@ -29,7 +29,7 @@ public class TestFlowStrategy01Request extends RpcAcsRequest<TestFlowStrategy01R
 
 	private List<Object> names;
 	public TestFlowStrategy01Request() {
-		super("Ft", "2018-07-13", "TestFlowStrategy01", "aaa");
+		super("Ft", "2018-07-13", "TestFlowStrategy01");
 		setMethod(MethodType.PUT);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

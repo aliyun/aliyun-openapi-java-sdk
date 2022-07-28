@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class FtDynamicAddressHttpVpcResponse extends AcsResponse {
 
-	private String params;
-
 	private String serviceRpcSign;
 
-	public String getParams() {
-		return this.params;
-	}
-
-	public void setParams(String params) {
-		this.params = params;
-	}
+	private String params;
 
 	public String getServiceRpcSign() {
 		return this.serviceRpcSign;
@@ -42,6 +34,14 @@ public class FtDynamicAddressHttpVpcResponse extends AcsResponse {
 
 	public void setServiceRpcSign(String serviceRpcSign) {
 		this.serviceRpcSign = serviceRpcSign;
+	}
+
+	public String getParams() {
+		return this.params;
+	}
+
+	public void setParams(String params) {
+		this.params = params;
 	}
 
 	@Override

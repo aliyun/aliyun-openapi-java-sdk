@@ -22,8 +22,8 @@ public class TestHttpApiResponseUnmarshaller {
 
 	public static TestHttpApiResponse unmarshall(TestHttpApiResponse testHttpApiResponse, UnmarshallerContext _ctx) {
 		
-		testHttpApiResponse.setParams(_ctx.stringValue("TestHttpApiResponse.Params"));
 		testHttpApiResponse.setServiceRpcSign(_ctx.stringValue("TestHttpApiResponse.ServiceRpcSign"));
+		testHttpApiResponse.setParams(_ctx.stringValue("TestHttpApiResponse.Params"));
 	 
 	 	return testHttpApiResponse;
 	}

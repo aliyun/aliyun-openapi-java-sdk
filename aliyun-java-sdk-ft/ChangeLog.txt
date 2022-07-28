@@ -1,3 +1,6 @@
+2022-07-28 Version: 1.22.12
+- AMP version.
+
 2021-09-08 Version: 1.10.9
 - Generated 2018-07-13 for `Ft`.
 
