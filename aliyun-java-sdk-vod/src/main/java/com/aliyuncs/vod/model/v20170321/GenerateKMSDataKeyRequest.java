@@ -27,10 +27,6 @@ public class GenerateKMSDataKeyRequest extends RpcAcsRequest<GenerateKMSDataKeyR
 
 	private String resourceOwnerId;
 
-	private Long resourceRealOwnerId;
-
-	private String kmsRegionId;
-
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -53,28 +49,6 @@ public class GenerateKMSDataKeyRequest extends RpcAcsRequest<GenerateKMSDataKeyR
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId);
-		}
-	}
-
-	public Long getResourceRealOwnerId() {
-		return this.resourceRealOwnerId;
-	}
-
-	public void setResourceRealOwnerId(Long resourceRealOwnerId) {
-		this.resourceRealOwnerId = resourceRealOwnerId;
-		if(resourceRealOwnerId != null){
-			putQueryParameter("ResourceRealOwnerId", resourceRealOwnerId.toString());
-		}
-	}
-
-	public String getKmsRegionId() {
-		return this.kmsRegionId;
-	}
-
-	public void setKmsRegionId(String kmsRegionId) {
-		this.kmsRegionId = kmsRegionId;
-		if(kmsRegionId != null){
-			putQueryParameter("KmsRegionId", kmsRegionId);
 		}
 	}
 

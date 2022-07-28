@@ -1,3 +1,6 @@
+2022-07-28 Version: 2.16.9
+- Add GetImageInfos api.
+
 2022-07-21 Version: 2.16.8
 - Add kms apis.
 

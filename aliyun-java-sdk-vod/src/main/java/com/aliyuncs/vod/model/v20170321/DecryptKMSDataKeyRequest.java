@@ -27,10 +27,6 @@ public class DecryptKMSDataKeyRequest extends RpcAcsRequest<DecryptKMSDataKeyRes
 
 	private String resourceOwnerId;
 
-	private Long resourceRealOwnerId;
-
-	private String kmsRegionId;
-
 	private String cipherText;
 
 	private String resourceOwnerAccount;
@@ -55,28 +51,6 @@ public class DecryptKMSDataKeyRequest extends RpcAcsRequest<DecryptKMSDataKeyRes
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId);
-		}
-	}
-
-	public Long getResourceRealOwnerId() {
-		return this.resourceRealOwnerId;
-	}
-
-	public void setResourceRealOwnerId(Long resourceRealOwnerId) {
-		this.resourceRealOwnerId = resourceRealOwnerId;
-		if(resourceRealOwnerId != null){
-			putQueryParameter("ResourceRealOwnerId", resourceRealOwnerId.toString());
-		}
-	}
-
-	public String getKmsRegionId() {
-		return this.kmsRegionId;
-	}
-
-	public void setKmsRegionId(String kmsRegionId) {
-		this.kmsRegionId = kmsRegionId;
-		if(kmsRegionId != null){
-			putQueryParameter("KmsRegionId", kmsRegionId);
 		}
 	}
 
