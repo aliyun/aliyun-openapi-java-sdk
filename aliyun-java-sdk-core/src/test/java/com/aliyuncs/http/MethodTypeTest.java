@@ -12,7 +12,7 @@ public class MethodTypeTest {
         Assert.assertTrue(MethodType.PUT.hasContent());
         Assert.assertTrue(MethodType.POST.hasContent());
         Assert.assertTrue(MethodType.PATCH.hasContent());
-        Assert.assertFalse(MethodType.DELETE.hasContent());
+        Assert.assertTrue(MethodType.DELETE.hasContent());
         Assert.assertFalse(MethodType.HEAD.hasContent());
         Assert.assertFalse(MethodType.OPTIONS.hasContent());
     }

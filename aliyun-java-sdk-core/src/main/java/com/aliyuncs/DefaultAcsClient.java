@@ -392,6 +392,9 @@ public class DefaultAcsClient implements IAcsClient {
                         .exception(ex)
                         .build();
             }
+            if (context.httpResponse() != null) {
+                return context.httpResponse();
+            }
             if (context.exception() != null) {
                 throw context.exception();
             }
