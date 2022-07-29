@@ -39,6 +39,8 @@ public class CreateOrUpdateIMRobotRequest extends RpcAcsRequest<CreateOrUpdateIM
 
 	private String token;
 
+	private String cardTemplate;
+
 	private Boolean enableOutgoing;
 	public CreateOrUpdateIMRobotRequest() {
 		super("ARMS", "2019-08-08", "CreateOrUpdateIMRobot", "arms");
@@ -123,6 +125,17 @@ public class CreateOrUpdateIMRobotRequest extends RpcAcsRequest<CreateOrUpdateIM
 		this.token = token;
 		if(token != null){
 			putBodyParameter("Token", token);
+		}
+	}
+
+	public String getCardTemplate() {
+		return this.cardTemplate;
+	}
+
+	public void setCardTemplate(String cardTemplate) {
+		this.cardTemplate = cardTemplate;
+		if(cardTemplate != null){
+			putBodyParameter("CardTemplate", cardTemplate);
 		}
 	}
 

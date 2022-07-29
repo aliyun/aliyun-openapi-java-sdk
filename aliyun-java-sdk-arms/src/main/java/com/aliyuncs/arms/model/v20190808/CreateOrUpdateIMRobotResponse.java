@@ -62,6 +62,8 @@ public class CreateOrUpdateIMRobotResponse extends AcsResponse {
 
 		private Boolean enableOutgoing;
 
+		private String cardTemplate;
+
 		public Float getRobotId() {
 			return this.robotId;
 		}
@@ -124,6 +126,14 @@ public class CreateOrUpdateIMRobotResponse extends AcsResponse {
 
 		public void setEnableOutgoing(Boolean enableOutgoing) {
 			this.enableOutgoing = enableOutgoing;
+		}
+
+		public String getCardTemplate() {
+			return this.cardTemplate;
+		}
+
+		public void setCardTemplate(String cardTemplate) {
+			this.cardTemplate = cardTemplate;
 		}
 	}
 

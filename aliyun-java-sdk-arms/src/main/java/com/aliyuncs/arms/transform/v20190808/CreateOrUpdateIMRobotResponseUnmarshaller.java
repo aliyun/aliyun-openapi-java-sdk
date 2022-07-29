@@ -34,6 +34,7 @@ public class CreateOrUpdateIMRobotResponseUnmarshaller {
 		alertRobot.setDailyNocTime(_ctx.stringValue("CreateOrUpdateIMRobotResponse.AlertRobot.DailyNocTime"));
 		alertRobot.setToken(_ctx.stringValue("CreateOrUpdateIMRobotResponse.AlertRobot.Token"));
 		alertRobot.setEnableOutgoing(_ctx.booleanValue("CreateOrUpdateIMRobotResponse.AlertRobot.EnableOutgoing"));
+		alertRobot.setCardTemplate(_ctx.stringValue("CreateOrUpdateIMRobotResponse.AlertRobot.CardTemplate"));
 		createOrUpdateIMRobotResponse.setAlertRobot(alertRobot);
 	 
 	 	return createOrUpdateIMRobotResponse;
