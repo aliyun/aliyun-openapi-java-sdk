@@ -46,6 +46,7 @@ public class DescribeFieldStatisticsResponseUnmarshaller {
 		groupedFields.setRiskInstanceCount(_ctx.integerValue("DescribeFieldStatisticsResponse.GroupedFields.RiskInstanceCount"));
 		groupedFields.setHuaweiInstanceCount(_ctx.integerValue("DescribeFieldStatisticsResponse.GroupedFields.HuaweiInstanceCount"));
 		groupedFields.setAwsInstanceCount(_ctx.integerValue("DescribeFieldStatisticsResponse.GroupedFields.AwsInstanceCount"));
+		groupedFields.setOutMachineInstanceCount(_ctx.integerValue("DescribeFieldStatisticsResponse.GroupedFields.OutMachineInstanceCount"));
 		describeFieldStatisticsResponse.setGroupedFields(groupedFields);
 	 
 	 	return describeFieldStatisticsResponse;

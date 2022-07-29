@@ -86,6 +86,8 @@ public class DescribeFieldStatisticsResponse extends AcsResponse {
 
 		private Integer awsInstanceCount;
 
+		private Integer outMachineInstanceCount;
+
 		public Integer getOfflineInstanceCount() {
 			return this.offlineInstanceCount;
 		}
@@ -244,6 +246,14 @@ public class DescribeFieldStatisticsResponse extends AcsResponse {
 
 		public void setAwsInstanceCount(Integer awsInstanceCount) {
 			this.awsInstanceCount = awsInstanceCount;
+		}
+
+		public Integer getOutMachineInstanceCount() {
+			return this.outMachineInstanceCount;
+		}
+
+		public void setOutMachineInstanceCount(Integer outMachineInstanceCount) {
+			this.outMachineInstanceCount = outMachineInstanceCount;
 		}
 	}
 
