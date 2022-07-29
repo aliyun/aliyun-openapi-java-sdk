@@ -398,7 +398,6 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
 
     public void setSysLocationProduct(String locationProduct) {
         this.locationProduct = locationProduct;
-        putQueryParameter("ServiceCode", locationProduct);
     }
 
     public String getSysEndpointType() {
@@ -407,7 +406,6 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
 
     public void setSysEndpointType(String endpointType) {
         this.endpointType = endpointType;
-        putQueryParameter("Type", endpointType);
     }
 
     public ProductDomain getSysProductDomain() {

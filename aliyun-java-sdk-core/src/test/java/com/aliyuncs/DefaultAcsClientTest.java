@@ -504,6 +504,22 @@ public class DefaultAcsClientTest {
         thrown.expect(ClientException.class);
         thrown.expectMessage(ErrorCodeConstant.SDK_ENDPOINT_TESTABILITY + " : " + endPoint);
         client.doAction(request);
+
+        HttpResponse response = mock(HttpResponse.class);
+        AcsRequest req = mock(AcsRequest.class);
+        Mockito.doReturn(response).when(client).doAction(req);
+        when(response.isSuccess()).thenReturn(false);
+        when(response.getHttpContentType()).thenReturn(FormatType.XML);
+        when(response.getHttpContentString()).thenReturn(makeAcsErrorXML("", "", "500", "ServerException", ""));
+        HttpResponse resp = client.doAction(request);
+        Assert.assertNotNull(resp);
+        Assert.assertEquals(500, resp.getStatus());
+        when(response.isSuccess()).thenReturn(true);
+        when(response.getHttpContentType()).thenReturn(FormatType.XML);
+        when(response.getHttpContentString()).thenReturn(makeAcsErrorXML("", "", "200", "Succeed", ""));
+        resp = client.doAction(request);
+        Assert.assertNotNull(resp);
+        Assert.assertEquals(200, resp.getStatus());
     }
 
     @SuppressWarnings({"unchecked", "rawtypes"})
