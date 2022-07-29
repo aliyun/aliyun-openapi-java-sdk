@@ -8,6 +8,12 @@ public class MethodTypeTest {
     @Test
     public void testMethodType() {
         // new MethodType();
-        Assert.assertFalse("GET has content", MethodType.GET.hasContent());
+        Assert.assertFalse(MethodType.GET.hasContent());
+        Assert.assertTrue(MethodType.PUT.hasContent());
+        Assert.assertTrue(MethodType.POST.hasContent());
+        Assert.assertTrue(MethodType.PATCH.hasContent());
+        Assert.assertFalse(MethodType.DELETE.hasContent());
+        Assert.assertFalse(MethodType.HEAD.hasContent());
+        Assert.assertFalse(MethodType.OPTIONS.hasContent());
     }
 }

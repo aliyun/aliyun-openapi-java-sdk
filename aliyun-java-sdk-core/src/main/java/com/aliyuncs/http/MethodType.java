@@ -5,12 +5,16 @@ public enum MethodType {
      * GET
      * PUT
      * POST
+     * PATCH
      * DELETE
+     * HEAD
+     * OPTIONS
      */
     GET(false),
     PUT(true),
     POST(true),
-    DELETE(false),
+    PATCH(true),
+    DELETE(true),
     HEAD(false),
     OPTIONS(false);
 
