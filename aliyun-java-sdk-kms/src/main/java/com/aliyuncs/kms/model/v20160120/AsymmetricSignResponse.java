@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class AsymmetricSignResponse extends AcsResponse {
 
-	private String value;
+	private String keyVersionId;
 
 	private String keyId;
 
+	private String value;
+
 	private String requestId;
 
-	private String keyVersionId;
-
-	public String getValue() {
-		return this.value;
+	public String getKeyVersionId() {
+		return this.keyVersionId;
 	}
 
-	public void setValue(String value) {
-		this.value = value;
+	public void setKeyVersionId(String keyVersionId) {
+		this.keyVersionId = keyVersionId;
 	}
 
 	public String getKeyId() {
@@ -48,20 +48,20 @@ public class AsymmetricSignResponse extends AcsResponse {
 		this.keyId = keyId;
 	}
 
+	public String getValue() {
+		return this.value;
+	}
+
+	public void setValue(String value) {
+		this.value = value;
+	}
+
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getKeyVersionId() {
-		return this.keyVersionId;
-	}
-
-	public void setKeyVersionId(String keyVersionId) {
-		this.keyVersionId = keyVersionId;
 	}
 
 	@Override

@@ -77,17 +77,9 @@ public class ListKeysResponse extends AcsResponse {
 
 	public static class Key {
 
-		private String keyArn;
-
 		private String keyId;
 
-		public String getKeyArn() {
-			return this.keyArn;
-		}
-
-		public void setKeyArn(String keyArn) {
-			this.keyArn = keyArn;
-		}
+		private String keyArn;
 
 		public String getKeyId() {
 			return this.keyId;
@@ -95,6 +87,14 @@ public class ListKeysResponse extends AcsResponse {
 
 		public void setKeyId(String keyId) {
 			this.keyId = keyId;
+		}
+
+		public String getKeyArn() {
+			return this.keyArn;
+		}
+
+		public void setKeyArn(String keyArn) {
+			this.keyArn = keyArn;
 		}
 	}
 

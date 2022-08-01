@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class EncryptResponse extends AcsResponse {
 
-	private String ciphertextBlob;
+	private String keyVersionId;
 
 	private String keyId;
 
+	private String ciphertextBlob;
+
 	private String requestId;
 
-	private String keyVersionId;
-
-	public String getCiphertextBlob() {
-		return this.ciphertextBlob;
+	public String getKeyVersionId() {
+		return this.keyVersionId;
 	}
 
-	public void setCiphertextBlob(String ciphertextBlob) {
-		this.ciphertextBlob = ciphertextBlob;
+	public void setKeyVersionId(String keyVersionId) {
+		this.keyVersionId = keyVersionId;
 	}
 
 	public String getKeyId() {
@@ -48,20 +48,20 @@ public class EncryptResponse extends AcsResponse {
 		this.keyId = keyId;
 	}
 
+	public String getCiphertextBlob() {
+		return this.ciphertextBlob;
+	}
+
+	public void setCiphertextBlob(String ciphertextBlob) {
+		this.ciphertextBlob = ciphertextBlob;
+	}
+
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getKeyVersionId() {
-		return this.keyVersionId;
-	}
-
-	public void setKeyVersionId(String keyVersionId) {
-		this.keyVersionId = keyVersionId;
 	}
 
 	@Override

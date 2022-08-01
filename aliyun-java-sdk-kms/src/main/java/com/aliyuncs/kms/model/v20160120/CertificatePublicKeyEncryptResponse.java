@@ -24,11 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CertificatePublicKeyEncryptResponse extends AcsResponse {
 
+	private String ciphertextBlob;
+
 	private String requestId;
 
 	private String certificateId;
 
-	private String ciphertextBlob;
+	public String getCiphertextBlob() {
+		return this.ciphertextBlob;
+	}
+
+	public void setCiphertextBlob(String ciphertextBlob) {
+		this.ciphertextBlob = ciphertextBlob;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,14 +52,6 @@ public class CertificatePublicKeyEncryptResponse extends AcsResponse {
 
 	public void setCertificateId(String certificateId) {
 		this.certificateId = certificateId;
-	}
-
-	public String getCiphertextBlob() {
-		return this.ciphertextBlob;
-	}
-
-	public void setCiphertextBlob(String ciphertextBlob) {
-		this.ciphertextBlob = ciphertextBlob;
 	}
 
 	@Override

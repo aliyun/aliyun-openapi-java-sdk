@@ -23,9 +23,9 @@ public class AsymmetricEncryptResponseUnmarshaller {
 	public static AsymmetricEncryptResponse unmarshall(AsymmetricEncryptResponse asymmetricEncryptResponse, UnmarshallerContext _ctx) {
 		
 		asymmetricEncryptResponse.setRequestId(_ctx.stringValue("AsymmetricEncryptResponse.RequestId"));
-		asymmetricEncryptResponse.setCiphertextBlob(_ctx.stringValue("AsymmetricEncryptResponse.CiphertextBlob"));
-		asymmetricEncryptResponse.setKeyId(_ctx.stringValue("AsymmetricEncryptResponse.KeyId"));
 		asymmetricEncryptResponse.setKeyVersionId(_ctx.stringValue("AsymmetricEncryptResponse.KeyVersionId"));
+		asymmetricEncryptResponse.setKeyId(_ctx.stringValue("AsymmetricEncryptResponse.KeyId"));
+		asymmetricEncryptResponse.setCiphertextBlob(_ctx.stringValue("AsymmetricEncryptResponse.CiphertextBlob"));
 	 
 	 	return asymmetricEncryptResponse;
 	}

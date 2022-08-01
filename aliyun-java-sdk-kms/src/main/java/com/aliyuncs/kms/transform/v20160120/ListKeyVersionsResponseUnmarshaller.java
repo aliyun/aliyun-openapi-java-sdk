@@ -27,9 +27,9 @@ public class ListKeyVersionsResponseUnmarshaller {
 	public static ListKeyVersionsResponse unmarshall(ListKeyVersionsResponse listKeyVersionsResponse, UnmarshallerContext _ctx) {
 		
 		listKeyVersionsResponse.setRequestId(_ctx.stringValue("ListKeyVersionsResponse.RequestId"));
-		listKeyVersionsResponse.setTotalCount(_ctx.integerValue("ListKeyVersionsResponse.TotalCount"));
-		listKeyVersionsResponse.setPageNumber(_ctx.integerValue("ListKeyVersionsResponse.PageNumber"));
 		listKeyVersionsResponse.setPageSize(_ctx.integerValue("ListKeyVersionsResponse.PageSize"));
+		listKeyVersionsResponse.setPageNumber(_ctx.integerValue("ListKeyVersionsResponse.PageNumber"));
+		listKeyVersionsResponse.setTotalCount(_ctx.integerValue("ListKeyVersionsResponse.TotalCount"));
 
 		List<KeyVersion> keyVersions = new ArrayList<KeyVersion>();
 		for (int i = 0; i < _ctx.lengthValue("ListKeyVersionsResponse.KeyVersions.Length"); i++) {

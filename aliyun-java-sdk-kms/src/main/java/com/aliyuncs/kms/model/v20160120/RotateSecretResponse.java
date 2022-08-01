@@ -24,21 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class RotateSecretResponse extends AcsResponse {
 
-	private String arn;
-
 	private String versionId;
 
 	private String secretName;
 
 	private String requestId;
 
-	public String getArn() {
-		return this.arn;
-	}
-
-	public void setArn(String arn) {
-		this.arn = arn;
-	}
+	private String arn;
 
 	public String getVersionId() {
 		return this.versionId;
@@ -62,6 +54,14 @@ public class RotateSecretResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getArn() {
+		return this.arn;
+	}
+
+	public void setArn(String arn) {
+		this.arn = arn;
 	}
 
 	@Override

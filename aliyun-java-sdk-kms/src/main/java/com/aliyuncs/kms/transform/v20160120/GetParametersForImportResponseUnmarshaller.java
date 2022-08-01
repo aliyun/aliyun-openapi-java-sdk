@@ -25,8 +25,8 @@ public class GetParametersForImportResponseUnmarshaller {
 		getParametersForImportResponse.setRequestId(_ctx.stringValue("GetParametersForImportResponse.RequestId"));
 		getParametersForImportResponse.setKeyId(_ctx.stringValue("GetParametersForImportResponse.KeyId"));
 		getParametersForImportResponse.setImportToken(_ctx.stringValue("GetParametersForImportResponse.ImportToken"));
-		getParametersForImportResponse.setPublicKey(_ctx.stringValue("GetParametersForImportResponse.PublicKey"));
 		getParametersForImportResponse.setTokenExpireTime(_ctx.stringValue("GetParametersForImportResponse.TokenExpireTime"));
+		getParametersForImportResponse.setPublicKey(_ctx.stringValue("GetParametersForImportResponse.PublicKey"));
 	 
 	 	return getParametersForImportResponse;
 	}

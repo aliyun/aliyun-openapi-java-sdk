@@ -23,9 +23,9 @@ public class ExportDataKeyResponseUnmarshaller {
 	public static ExportDataKeyResponse unmarshall(ExportDataKeyResponse exportDataKeyResponse, UnmarshallerContext _ctx) {
 		
 		exportDataKeyResponse.setRequestId(_ctx.stringValue("ExportDataKeyResponse.RequestId"));
-		exportDataKeyResponse.setExportedDataKey(_ctx.stringValue("ExportDataKeyResponse.ExportedDataKey"));
-		exportDataKeyResponse.setKeyId(_ctx.stringValue("ExportDataKeyResponse.KeyId"));
 		exportDataKeyResponse.setKeyVersionId(_ctx.stringValue("ExportDataKeyResponse.KeyVersionId"));
+		exportDataKeyResponse.setKeyId(_ctx.stringValue("ExportDataKeyResponse.KeyId"));
+		exportDataKeyResponse.setExportedDataKey(_ctx.stringValue("ExportDataKeyResponse.ExportedDataKey"));
 	 
 	 	return exportDataKeyResponse;
 	}

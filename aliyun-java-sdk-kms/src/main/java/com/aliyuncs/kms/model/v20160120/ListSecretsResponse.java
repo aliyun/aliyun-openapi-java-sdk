@@ -77,33 +77,17 @@ public class ListSecretsResponse extends AcsResponse {
 
 	public static class Secret {
 
-		private String createTime;
-
-		private String plannedDeleteTime;
-
 		private String secretName;
 
 		private String updateTime;
 
 		private String secretType;
 
+		private String plannedDeleteTime;
+
+		private String createTime;
+
 		private List<Tag> tags;
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getPlannedDeleteTime() {
-			return this.plannedDeleteTime;
-		}
-
-		public void setPlannedDeleteTime(String plannedDeleteTime) {
-			this.plannedDeleteTime = plannedDeleteTime;
-		}
 
 		public String getSecretName() {
 			return this.secretName;
@@ -129,6 +113,22 @@ public class ListSecretsResponse extends AcsResponse {
 			this.secretType = secretType;
 		}
 
+		public String getPlannedDeleteTime() {
+			return this.plannedDeleteTime;
+		}
+
+		public void setPlannedDeleteTime(String plannedDeleteTime) {
+			this.plannedDeleteTime = plannedDeleteTime;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
 		public List<Tag> getTags() {
 			return this.tags;
 		}
@@ -139,17 +139,9 @@ public class ListSecretsResponse extends AcsResponse {
 
 		public static class Tag {
 
-			private String tagKey;
-
 			private String tagValue;
 
-			public String getTagKey() {
-				return this.tagKey;
-			}
-
-			public void setTagKey(String tagKey) {
-				this.tagKey = tagKey;
-			}
+			private String tagKey;
 
 			public String getTagValue() {
 				return this.tagValue;
@@ -157,6 +149,14 @@ public class ListSecretsResponse extends AcsResponse {
 
 			public void setTagValue(String tagValue) {
 				this.tagValue = tagValue;
+			}
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
 			}
 		}
 	}

@@ -46,55 +46,41 @@ public class CreateKeyResponse extends AcsResponse {
 
 	public static class KeyMetadata {
 
-		private String creationDate;
-
-		private String description;
-
 		private String keyId;
+
+		private String nextRotationDate;
 
 		private String keyState;
 
-		private String keyUsage;
+		private String rotationInterval;
 
-		private String deleteDate;
+		private String arn;
 
 		private String creator;
 
-		private String arn;
+		private String lastRotationDate;
+
+		private String deleteDate;
+
+		private String primaryKeyVersion;
+
+		private String description;
+
+		private String keySpec;
 
 		private String origin;
 
 		private String materialExpireTime;
 
-		private String protectionLevel;
-
-		private String primaryKeyVersion;
-
-		private String lastRotationDate;
-
 		private String automaticRotation;
 
-		private String rotationInterval;
+		private String protectionLevel;
 
-		private String nextRotationDate;
+		private String keyUsage;
 
-		private String keySpec;
+		private String creationDate;
 
-		public String getCreationDate() {
-			return this.creationDate;
-		}
-
-		public void setCreationDate(String creationDate) {
-			this.creationDate = creationDate;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
+		private String dKMSInstanceId;
 
 		public String getKeyId() {
 			return this.keyId;
@@ -102,6 +88,14 @@ public class CreateKeyResponse extends AcsResponse {
 
 		public void setKeyId(String keyId) {
 			this.keyId = keyId;
+		}
+
+		public String getNextRotationDate() {
+			return this.nextRotationDate;
+		}
+
+		public void setNextRotationDate(String nextRotationDate) {
+			this.nextRotationDate = nextRotationDate;
 		}
 
 		public String getKeyState() {
@@ -112,20 +106,20 @@ public class CreateKeyResponse extends AcsResponse {
 			this.keyState = keyState;
 		}
 
-		public String getKeyUsage() {
-			return this.keyUsage;
+		public String getRotationInterval() {
+			return this.rotationInterval;
 		}
 
-		public void setKeyUsage(String keyUsage) {
-			this.keyUsage = keyUsage;
+		public void setRotationInterval(String rotationInterval) {
+			this.rotationInterval = rotationInterval;
 		}
 
-		public String getDeleteDate() {
-			return this.deleteDate;
+		public String getArn() {
+			return this.arn;
 		}
 
-		public void setDeleteDate(String deleteDate) {
-			this.deleteDate = deleteDate;
+		public void setArn(String arn) {
+			this.arn = arn;
 		}
 
 		public String getCreator() {
@@ -136,12 +130,44 @@ public class CreateKeyResponse extends AcsResponse {
 			this.creator = creator;
 		}
 
-		public String getArn() {
-			return this.arn;
+		public String getLastRotationDate() {
+			return this.lastRotationDate;
 		}
 
-		public void setArn(String arn) {
-			this.arn = arn;
+		public void setLastRotationDate(String lastRotationDate) {
+			this.lastRotationDate = lastRotationDate;
+		}
+
+		public String getDeleteDate() {
+			return this.deleteDate;
+		}
+
+		public void setDeleteDate(String deleteDate) {
+			this.deleteDate = deleteDate;
+		}
+
+		public String getPrimaryKeyVersion() {
+			return this.primaryKeyVersion;
+		}
+
+		public void setPrimaryKeyVersion(String primaryKeyVersion) {
+			this.primaryKeyVersion = primaryKeyVersion;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getKeySpec() {
+			return this.keySpec;
+		}
+
+		public void setKeySpec(String keySpec) {
+			this.keySpec = keySpec;
 		}
 
 		public String getOrigin() {
@@ -160,30 +186,6 @@ public class CreateKeyResponse extends AcsResponse {
 			this.materialExpireTime = materialExpireTime;
 		}
 
-		public String getProtectionLevel() {
-			return this.protectionLevel;
-		}
-
-		public void setProtectionLevel(String protectionLevel) {
-			this.protectionLevel = protectionLevel;
-		}
-
-		public String getPrimaryKeyVersion() {
-			return this.primaryKeyVersion;
-		}
-
-		public void setPrimaryKeyVersion(String primaryKeyVersion) {
-			this.primaryKeyVersion = primaryKeyVersion;
-		}
-
-		public String getLastRotationDate() {
-			return this.lastRotationDate;
-		}
-
-		public void setLastRotationDate(String lastRotationDate) {
-			this.lastRotationDate = lastRotationDate;
-		}
-
 		public String getAutomaticRotation() {
 			return this.automaticRotation;
 		}
@@ -192,28 +194,36 @@ public class CreateKeyResponse extends AcsResponse {
 			this.automaticRotation = automaticRotation;
 		}
 
-		public String getRotationInterval() {
-			return this.rotationInterval;
+		public String getProtectionLevel() {
+			return this.protectionLevel;
 		}
 
-		public void setRotationInterval(String rotationInterval) {
-			this.rotationInterval = rotationInterval;
+		public void setProtectionLevel(String protectionLevel) {
+			this.protectionLevel = protectionLevel;
 		}
 
-		public String getNextRotationDate() {
-			return this.nextRotationDate;
+		public String getKeyUsage() {
+			return this.keyUsage;
 		}
 
-		public void setNextRotationDate(String nextRotationDate) {
-			this.nextRotationDate = nextRotationDate;
+		public void setKeyUsage(String keyUsage) {
+			this.keyUsage = keyUsage;
 		}
 
-		public String getKeySpec() {
-			return this.keySpec;
+		public String getCreationDate() {
+			return this.creationDate;
 		}
 
-		public void setKeySpec(String keySpec) {
-			this.keySpec = keySpec;
+		public void setCreationDate(String creationDate) {
+			this.creationDate = creationDate;
+		}
+
+		public String getDKMSInstanceId() {
+			return this.dKMSInstanceId;
+		}
+
+		public void setDKMSInstanceId(String dKMSInstanceId) {
+			this.dKMSInstanceId = dKMSInstanceId;
 		}
 	}
 

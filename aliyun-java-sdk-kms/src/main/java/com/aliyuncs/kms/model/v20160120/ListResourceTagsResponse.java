@@ -49,9 +49,9 @@ public class ListResourceTagsResponse extends AcsResponse {
 
 		private String keyId;
 
-		private String tagKey;
-
 		private String tagValue;
+
+		private String tagKey;
 
 		public String getKeyId() {
 			return this.keyId;
@@ -61,20 +61,20 @@ public class ListResourceTagsResponse extends AcsResponse {
 			this.keyId = keyId;
 		}
 
-		public String getTagKey() {
-			return this.tagKey;
-		}
-
-		public void setTagKey(String tagKey) {
-			this.tagKey = tagKey;
-		}
-
 		public String getTagValue() {
 			return this.tagValue;
 		}
 
 		public void setTagValue(String tagValue) {
 			this.tagValue = tagValue;
+		}
+
+		public String getTagKey() {
+			return this.tagKey;
+		}
+
+		public void setTagKey(String tagKey) {
+			this.tagKey = tagKey;
 		}
 	}
 

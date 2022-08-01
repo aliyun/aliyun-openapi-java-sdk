@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class AsymmetricDecryptResponse extends AcsResponse {
 
-	private String plaintext;
+	private String keyVersionId;
 
 	private String keyId;
 
 	private String requestId;
 
-	private String keyVersionId;
+	private String plaintext;
 
-	public String getPlaintext() {
-		return this.plaintext;
+	public String getKeyVersionId() {
+		return this.keyVersionId;
 	}
 
-	public void setPlaintext(String plaintext) {
-		this.plaintext = plaintext;
+	public void setKeyVersionId(String keyVersionId) {
+		this.keyVersionId = keyVersionId;
 	}
 
 	public String getKeyId() {
@@ -56,12 +56,12 @@ public class AsymmetricDecryptResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getKeyVersionId() {
-		return this.keyVersionId;
+	public String getPlaintext() {
+		return this.plaintext;
 	}
 
-	public void setKeyVersionId(String keyVersionId) {
-		this.keyVersionId = keyVersionId;
+	public void setPlaintext(String plaintext) {
+		this.plaintext = plaintext;
 	}
 
 	@Override

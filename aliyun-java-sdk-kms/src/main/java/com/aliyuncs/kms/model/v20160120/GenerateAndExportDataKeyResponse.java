@@ -24,22 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GenerateAndExportDataKeyResponse extends AcsResponse {
 
-	private String ciphertextBlob;
+	private String keyVersionId;
 
 	private String keyId;
 
-	private String exportedDataKey;
+	private String ciphertextBlob;
 
 	private String requestId;
 
-	private String keyVersionId;
+	private String exportedDataKey;
 
-	public String getCiphertextBlob() {
-		return this.ciphertextBlob;
+	public String getKeyVersionId() {
+		return this.keyVersionId;
 	}
 
-	public void setCiphertextBlob(String ciphertextBlob) {
-		this.ciphertextBlob = ciphertextBlob;
+	public void setKeyVersionId(String keyVersionId) {
+		this.keyVersionId = keyVersionId;
 	}
 
 	public String getKeyId() {
@@ -50,12 +50,12 @@ public class GenerateAndExportDataKeyResponse extends AcsResponse {
 		this.keyId = keyId;
 	}
 
-	public String getExportedDataKey() {
-		return this.exportedDataKey;
+	public String getCiphertextBlob() {
+		return this.ciphertextBlob;
 	}
 
-	public void setExportedDataKey(String exportedDataKey) {
-		this.exportedDataKey = exportedDataKey;
+	public void setCiphertextBlob(String ciphertextBlob) {
+		this.ciphertextBlob = ciphertextBlob;
 	}
 
 	public String getRequestId() {
@@ -66,12 +66,12 @@ public class GenerateAndExportDataKeyResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getKeyVersionId() {
-		return this.keyVersionId;
+	public String getExportedDataKey() {
+		return this.exportedDataKey;
 	}
 
-	public void setKeyVersionId(String keyVersionId) {
-		this.keyVersionId = keyVersionId;
+	public void setExportedDataKey(String exportedDataKey) {
+		this.exportedDataKey = exportedDataKey;
 	}
 
 	@Override

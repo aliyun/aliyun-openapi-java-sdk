@@ -30,6 +30,8 @@ public class CreateSecretRequest extends RpcAcsRequest<CreateSecretResponse> {
 
 	private String versionId;
 
+	private String dKMSInstanceId;
+
 	private String secretData;
 
 	private String description;
@@ -76,6 +78,17 @@ public class CreateSecretRequest extends RpcAcsRequest<CreateSecretResponse> {
 		this.versionId = versionId;
 		if(versionId != null){
 			putQueryParameter("VersionId", versionId);
+		}
+	}
+
+	public String getDKMSInstanceId() {
+		return this.dKMSInstanceId;
+	}
+
+	public void setDKMSInstanceId(String dKMSInstanceId) {
+		this.dKMSInstanceId = dKMSInstanceId;
+		if(dKMSInstanceId != null){
+			putQueryParameter("DKMSInstanceId", dKMSInstanceId);
 		}
 	}
 

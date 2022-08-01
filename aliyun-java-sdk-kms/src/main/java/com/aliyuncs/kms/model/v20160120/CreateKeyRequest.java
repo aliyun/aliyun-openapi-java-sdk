@@ -32,6 +32,8 @@ public class CreateKeyRequest extends RpcAcsRequest<CreateKeyResponse> {
 
 	private String origin;
 
+	private String dKMSInstanceId;
+
 	private String description;
 
 	private String keySpec;
@@ -79,6 +81,17 @@ public class CreateKeyRequest extends RpcAcsRequest<CreateKeyResponse> {
 		this.origin = origin;
 		if(origin != null){
 			putQueryParameter("Origin", origin);
+		}
+	}
+
+	public String getDKMSInstanceId() {
+		return this.dKMSInstanceId;
+	}
+
+	public void setDKMSInstanceId(String dKMSInstanceId) {
+		this.dKMSInstanceId = dKMSInstanceId;
+		if(dKMSInstanceId != null){
+			putQueryParameter("DKMSInstanceId", dKMSInstanceId);
 		}
 	}
 

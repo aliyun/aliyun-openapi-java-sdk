@@ -24,22 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetCertificateResponse extends AcsResponse {
 
-	private String requestId;
+	private String certificateChain;
 
 	private String certificate;
 
-	private String certificateChain;
-
-	private String csr;
+	private String requestId;
 
 	private String certificateId;
 
-	public String getRequestId() {
-		return this.requestId;
+	private String csr;
+
+	public String getCertificateChain() {
+		return this.certificateChain;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCertificateChain(String certificateChain) {
+		this.certificateChain = certificateChain;
 	}
 
 	public String getCertificate() {
@@ -50,20 +50,12 @@ public class GetCertificateResponse extends AcsResponse {
 		this.certificate = certificate;
 	}
 
-	public String getCertificateChain() {
-		return this.certificateChain;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCertificateChain(String certificateChain) {
-		this.certificateChain = certificateChain;
-	}
-
-	public String getCsr() {
-		return this.csr;
-	}
-
-	public void setCsr(String csr) {
-		this.csr = csr;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCertificateId() {
@@ -72,6 +64,14 @@ public class GetCertificateResponse extends AcsResponse {
 
 	public void setCertificateId(String certificateId) {
 		this.certificateId = certificateId;
+	}
+
+	public String getCsr() {
+		return this.csr;
+	}
+
+	public void setCsr(String csr) {
+		this.csr = csr;
 	}
 
 	@Override

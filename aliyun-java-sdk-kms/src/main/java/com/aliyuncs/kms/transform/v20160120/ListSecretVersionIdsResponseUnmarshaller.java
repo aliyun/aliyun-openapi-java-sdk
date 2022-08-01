@@ -27,16 +27,16 @@ public class ListSecretVersionIdsResponseUnmarshaller {
 	public static ListSecretVersionIdsResponse unmarshall(ListSecretVersionIdsResponse listSecretVersionIdsResponse, UnmarshallerContext _ctx) {
 		
 		listSecretVersionIdsResponse.setRequestId(_ctx.stringValue("ListSecretVersionIdsResponse.RequestId"));
-		listSecretVersionIdsResponse.setPageNumber(_ctx.integerValue("ListSecretVersionIdsResponse.PageNumber"));
-		listSecretVersionIdsResponse.setPageSize(_ctx.integerValue("ListSecretVersionIdsResponse.PageSize"));
 		listSecretVersionIdsResponse.setSecretName(_ctx.stringValue("ListSecretVersionIdsResponse.SecretName"));
+		listSecretVersionIdsResponse.setPageSize(_ctx.integerValue("ListSecretVersionIdsResponse.PageSize"));
+		listSecretVersionIdsResponse.setPageNumber(_ctx.integerValue("ListSecretVersionIdsResponse.PageNumber"));
 		listSecretVersionIdsResponse.setTotalCount(_ctx.integerValue("ListSecretVersionIdsResponse.TotalCount"));
 
 		List<VersionId> versionIds = new ArrayList<VersionId>();
 		for (int i = 0; i < _ctx.lengthValue("ListSecretVersionIdsResponse.VersionIds.Length"); i++) {
 			VersionId versionId = new VersionId();
-			versionId.setCreateTime(_ctx.stringValue("ListSecretVersionIdsResponse.VersionIds["+ i +"].CreateTime"));
 			versionId.setVersionId(_ctx.stringValue("ListSecretVersionIdsResponse.VersionIds["+ i +"].VersionId"));
+			versionId.setCreateTime(_ctx.stringValue("ListSecretVersionIdsResponse.VersionIds["+ i +"].CreateTime"));
 
 			List<String> versionStages = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListSecretVersionIdsResponse.VersionIds["+ i +"].VersionStages.Length"); j++) {

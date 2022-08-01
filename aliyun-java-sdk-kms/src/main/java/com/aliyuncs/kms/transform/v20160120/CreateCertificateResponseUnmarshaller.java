@@ -23,9 +23,9 @@ public class CreateCertificateResponseUnmarshaller {
 	public static CreateCertificateResponse unmarshall(CreateCertificateResponse createCertificateResponse, UnmarshallerContext _ctx) {
 		
 		createCertificateResponse.setRequestId(_ctx.stringValue("CreateCertificateResponse.RequestId"));
+		createCertificateResponse.setCsr(_ctx.stringValue("CreateCertificateResponse.Csr"));
 		createCertificateResponse.setCertificateId(_ctx.stringValue("CreateCertificateResponse.CertificateId"));
 		createCertificateResponse.setArn(_ctx.stringValue("CreateCertificateResponse.Arn"));
-		createCertificateResponse.setCsr(_ctx.stringValue("CreateCertificateResponse.Csr"));
 	 
 	 	return createCertificateResponse;
 	}

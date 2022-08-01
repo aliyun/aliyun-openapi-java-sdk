@@ -26,11 +26,11 @@ public class CreateCertificateResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String csr;
+
 	private String certificateId;
 
 	private String arn;
-
-	private String csr;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,6 +38,14 @@ public class CreateCertificateResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getCsr() {
+		return this.csr;
+	}
+
+	public void setCsr(String csr) {
+		this.csr = csr;
 	}
 
 	public String getCertificateId() {
@@ -54,14 +62,6 @@ public class CreateCertificateResponse extends AcsResponse {
 
 	public void setArn(String arn) {
 		this.arn = arn;
-	}
-
-	public String getCsr() {
-		return this.csr;
-	}
-
-	public void setCsr(String csr) {
-		this.csr = csr;
 	}
 
 	@Override

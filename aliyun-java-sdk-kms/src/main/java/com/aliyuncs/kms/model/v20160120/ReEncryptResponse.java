@@ -24,21 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ReEncryptResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String keyId;
 
 	private String keyVersionId;
 
 	private String ciphertextBlob;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getKeyId() {
 		return this.keyId;
@@ -62,6 +54,14 @@ public class ReEncryptResponse extends AcsResponse {
 
 	public void setCiphertextBlob(String ciphertextBlob) {
 		this.ciphertextBlob = ciphertextBlob;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

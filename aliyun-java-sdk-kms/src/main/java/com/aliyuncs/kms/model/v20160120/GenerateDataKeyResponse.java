@@ -24,22 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GenerateDataKeyResponse extends AcsResponse {
 
-	private String ciphertextBlob;
+	private String keyVersionId;
 
 	private String keyId;
 
-	private String plaintext;
+	private String ciphertextBlob;
 
 	private String requestId;
 
-	private String keyVersionId;
+	private String plaintext;
 
-	public String getCiphertextBlob() {
-		return this.ciphertextBlob;
+	public String getKeyVersionId() {
+		return this.keyVersionId;
 	}
 
-	public void setCiphertextBlob(String ciphertextBlob) {
-		this.ciphertextBlob = ciphertextBlob;
+	public void setKeyVersionId(String keyVersionId) {
+		this.keyVersionId = keyVersionId;
 	}
 
 	public String getKeyId() {
@@ -50,12 +50,12 @@ public class GenerateDataKeyResponse extends AcsResponse {
 		this.keyId = keyId;
 	}
 
-	public String getPlaintext() {
-		return this.plaintext;
+	public String getCiphertextBlob() {
+		return this.ciphertextBlob;
 	}
 
-	public void setPlaintext(String plaintext) {
-		this.plaintext = plaintext;
+	public void setCiphertextBlob(String ciphertextBlob) {
+		this.ciphertextBlob = ciphertextBlob;
 	}
 
 	public String getRequestId() {
@@ -66,12 +66,12 @@ public class GenerateDataKeyResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getKeyVersionId() {
-		return this.keyVersionId;
+	public String getPlaintext() {
+		return this.plaintext;
 	}
 
-	public void setKeyVersionId(String keyVersionId) {
-		this.keyVersionId = keyVersionId;
+	public void setPlaintext(String plaintext) {
+		this.plaintext = plaintext;
 	}
 
 	@Override

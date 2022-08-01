@@ -23,10 +23,10 @@ public class GenerateDataKeyResponseUnmarshaller {
 	public static GenerateDataKeyResponse unmarshall(GenerateDataKeyResponse generateDataKeyResponse, UnmarshallerContext _ctx) {
 		
 		generateDataKeyResponse.setRequestId(_ctx.stringValue("GenerateDataKeyResponse.RequestId"));
-		generateDataKeyResponse.setCiphertextBlob(_ctx.stringValue("GenerateDataKeyResponse.CiphertextBlob"));
-		generateDataKeyResponse.setKeyId(_ctx.stringValue("GenerateDataKeyResponse.KeyId"));
-		generateDataKeyResponse.setPlaintext(_ctx.stringValue("GenerateDataKeyResponse.Plaintext"));
 		generateDataKeyResponse.setKeyVersionId(_ctx.stringValue("GenerateDataKeyResponse.KeyVersionId"));
+		generateDataKeyResponse.setKeyId(_ctx.stringValue("GenerateDataKeyResponse.KeyId"));
+		generateDataKeyResponse.setCiphertextBlob(_ctx.stringValue("GenerateDataKeyResponse.CiphertextBlob"));
+		generateDataKeyResponse.setPlaintext(_ctx.stringValue("GenerateDataKeyResponse.Plaintext"));
 	 
 	 	return generateDataKeyResponse;
 	}

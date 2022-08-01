@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class UpdateSecretRotationPolicyResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String secretName;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getSecretName() {
 		return this.secretName;
@@ -42,6 +34,14 @@ public class UpdateSecretRotationPolicyResponse extends AcsResponse {
 
 	public void setSecretName(String secretName) {
 		this.secretName = secretName;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

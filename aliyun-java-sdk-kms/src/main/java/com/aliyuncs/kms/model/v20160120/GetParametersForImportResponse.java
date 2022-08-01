@@ -26,13 +26,13 @@ public class GetParametersForImportResponse extends AcsResponse {
 
 	private String keyId;
 
-	private String requestId;
-
 	private String importToken;
 
-	private String publicKey;
+	private String requestId;
 
 	private String tokenExpireTime;
+
+	private String publicKey;
 
 	public String getKeyId() {
 		return this.keyId;
@@ -40,14 +40,6 @@ public class GetParametersForImportResponse extends AcsResponse {
 
 	public void setKeyId(String keyId) {
 		this.keyId = keyId;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
 	}
 
 	public String getImportToken() {
@@ -58,12 +50,12 @@ public class GetParametersForImportResponse extends AcsResponse {
 		this.importToken = importToken;
 	}
 
-	public String getPublicKey() {
-		return this.publicKey;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPublicKey(String publicKey) {
-		this.publicKey = publicKey;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getTokenExpireTime() {
@@ -72,6 +64,14 @@ public class GetParametersForImportResponse extends AcsResponse {
 
 	public void setTokenExpireTime(String tokenExpireTime) {
 		this.tokenExpireTime = tokenExpireTime;
+	}
+
+	public String getPublicKey() {
+		return this.publicKey;
+	}
+
+	public void setPublicKey(String publicKey) {
+		this.publicKey = publicKey;
 	}
 
 	@Override

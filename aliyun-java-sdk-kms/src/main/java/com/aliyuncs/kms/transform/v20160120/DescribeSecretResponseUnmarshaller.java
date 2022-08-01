@@ -27,25 +27,26 @@ public class DescribeSecretResponseUnmarshaller {
 	public static DescribeSecretResponse unmarshall(DescribeSecretResponse describeSecretResponse, UnmarshallerContext _ctx) {
 		
 		describeSecretResponse.setRequestId(_ctx.stringValue("DescribeSecretResponse.RequestId"));
-		describeSecretResponse.setArn(_ctx.stringValue("DescribeSecretResponse.Arn"));
-		describeSecretResponse.setSecretName(_ctx.stringValue("DescribeSecretResponse.SecretName"));
-		describeSecretResponse.setEncryptionKeyId(_ctx.stringValue("DescribeSecretResponse.EncryptionKeyId"));
-		describeSecretResponse.setDescription(_ctx.stringValue("DescribeSecretResponse.Description"));
-		describeSecretResponse.setCreateTime(_ctx.stringValue("DescribeSecretResponse.CreateTime"));
 		describeSecretResponse.setUpdateTime(_ctx.stringValue("DescribeSecretResponse.UpdateTime"));
-		describeSecretResponse.setPlannedDeleteTime(_ctx.stringValue("DescribeSecretResponse.PlannedDeleteTime"));
-		describeSecretResponse.setAutomaticRotation(_ctx.stringValue("DescribeSecretResponse.AutomaticRotation"));
-		describeSecretResponse.setLastRotationDate(_ctx.stringValue("DescribeSecretResponse.LastRotationDate"));
-		describeSecretResponse.setRotationInterval(_ctx.stringValue("DescribeSecretResponse.RotationInterval"));
+		describeSecretResponse.setCreateTime(_ctx.stringValue("DescribeSecretResponse.CreateTime"));
 		describeSecretResponse.setNextRotationDate(_ctx.stringValue("DescribeSecretResponse.NextRotationDate"));
+		describeSecretResponse.setEncryptionKeyId(_ctx.stringValue("DescribeSecretResponse.EncryptionKeyId"));
+		describeSecretResponse.setRotationInterval(_ctx.stringValue("DescribeSecretResponse.RotationInterval"));
+		describeSecretResponse.setArn(_ctx.stringValue("DescribeSecretResponse.Arn"));
 		describeSecretResponse.setExtendedConfig(_ctx.stringValue("DescribeSecretResponse.ExtendedConfig"));
+		describeSecretResponse.setLastRotationDate(_ctx.stringValue("DescribeSecretResponse.LastRotationDate"));
+		describeSecretResponse.setDescription(_ctx.stringValue("DescribeSecretResponse.Description"));
+		describeSecretResponse.setSecretName(_ctx.stringValue("DescribeSecretResponse.SecretName"));
+		describeSecretResponse.setAutomaticRotation(_ctx.stringValue("DescribeSecretResponse.AutomaticRotation"));
 		describeSecretResponse.setSecretType(_ctx.stringValue("DescribeSecretResponse.SecretType"));
+		describeSecretResponse.setPlannedDeleteTime(_ctx.stringValue("DescribeSecretResponse.PlannedDeleteTime"));
+		describeSecretResponse.setDKMSInstanceId(_ctx.stringValue("DescribeSecretResponse.DKMSInstanceId"));
 
 		List<Tag> tags = new ArrayList<Tag>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSecretResponse.Tags.Length"); i++) {
 			Tag tag = new Tag();
-			tag.setTagKey(_ctx.stringValue("DescribeSecretResponse.Tags["+ i +"].TagKey"));
 			tag.setTagValue(_ctx.stringValue("DescribeSecretResponse.Tags["+ i +"].TagValue"));
+			tag.setTagKey(_ctx.stringValue("DescribeSecretResponse.Tags["+ i +"].TagKey"));
 
 			tags.add(tag);
 		}

@@ -25,32 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListSecretVersionIdsResponse extends AcsResponse {
 
-	private Integer pageNumber;
-
-	private Integer pageSize;
+	private String secretName;
 
 	private String requestId;
 
-	private String secretName;
+	private Integer pageSize;
+
+	private Integer pageNumber;
 
 	private Integer totalCount;
 
 	private List<VersionId> versionIds;
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getSecretName() {
+		return this.secretName;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setSecretName(String secretName) {
+		this.secretName = secretName;
 	}
 
 	public String getRequestId() {
@@ -61,12 +53,20 @@ public class ListSecretVersionIdsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getSecretName() {
-		return this.secretName;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setSecretName(String secretName) {
-		this.secretName = secretName;
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public Integer getTotalCount() {
@@ -87,19 +87,11 @@ public class ListSecretVersionIdsResponse extends AcsResponse {
 
 	public static class VersionId {
 
-		private String createTime;
-
 		private String versionId;
 
+		private String createTime;
+
 		private List<String> versionStages;
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
 
 		public String getVersionId() {
 			return this.versionId;
@@ -107,6 +99,14 @@ public class ListSecretVersionIdsResponse extends AcsResponse {
 
 		public void setVersionId(String versionId) {
 			this.versionId = versionId;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
 		public List<String> getVersionStages() {

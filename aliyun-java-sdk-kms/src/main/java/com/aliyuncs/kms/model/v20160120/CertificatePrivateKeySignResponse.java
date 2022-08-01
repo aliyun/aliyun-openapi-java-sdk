@@ -24,11 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CertificatePrivateKeySignResponse extends AcsResponse {
 
+	private String signatureValue;
+
 	private String requestId;
 
 	private String certificateId;
 
-	private String signatureValue;
+	public String getSignatureValue() {
+		return this.signatureValue;
+	}
+
+	public void setSignatureValue(String signatureValue) {
+		this.signatureValue = signatureValue;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,14 +52,6 @@ public class CertificatePrivateKeySignResponse extends AcsResponse {
 
 	public void setCertificateId(String certificateId) {
 		this.certificateId = certificateId;
-	}
-
-	public String getSignatureValue() {
-		return this.signatureValue;
-	}
-
-	public void setSignatureValue(String signatureValue) {
-		this.signatureValue = signatureValue;
 	}
 
 	@Override

@@ -23,9 +23,9 @@ public class GetPublicKeyResponseUnmarshaller {
 	public static GetPublicKeyResponse unmarshall(GetPublicKeyResponse getPublicKeyResponse, UnmarshallerContext _ctx) {
 		
 		getPublicKeyResponse.setRequestId(_ctx.stringValue("GetPublicKeyResponse.RequestId"));
-		getPublicKeyResponse.setPublicKey(_ctx.stringValue("GetPublicKeyResponse.PublicKey"));
-		getPublicKeyResponse.setKeyId(_ctx.stringValue("GetPublicKeyResponse.KeyId"));
 		getPublicKeyResponse.setKeyVersionId(_ctx.stringValue("GetPublicKeyResponse.KeyVersionId"));
+		getPublicKeyResponse.setKeyId(_ctx.stringValue("GetPublicKeyResponse.KeyId"));
+		getPublicKeyResponse.setPublicKey(_ctx.stringValue("GetPublicKeyResponse.PublicKey"));
 	 
 	 	return getPublicKeyResponse;
 	}

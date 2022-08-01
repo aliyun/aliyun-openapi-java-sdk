@@ -23,9 +23,9 @@ public class AsymmetricSignResponseUnmarshaller {
 	public static AsymmetricSignResponse unmarshall(AsymmetricSignResponse asymmetricSignResponse, UnmarshallerContext _ctx) {
 		
 		asymmetricSignResponse.setRequestId(_ctx.stringValue("AsymmetricSignResponse.RequestId"));
-		asymmetricSignResponse.setValue(_ctx.stringValue("AsymmetricSignResponse.Value"));
-		asymmetricSignResponse.setKeyId(_ctx.stringValue("AsymmetricSignResponse.KeyId"));
 		asymmetricSignResponse.setKeyVersionId(_ctx.stringValue("AsymmetricSignResponse.KeyVersionId"));
+		asymmetricSignResponse.setKeyId(_ctx.stringValue("AsymmetricSignResponse.KeyId"));
+		asymmetricSignResponse.setValue(_ctx.stringValue("AsymmetricSignResponse.Value"));
 	 
 	 	return asymmetricSignResponse;
 	}

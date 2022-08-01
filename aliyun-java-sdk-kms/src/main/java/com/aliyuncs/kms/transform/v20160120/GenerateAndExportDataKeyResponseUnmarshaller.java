@@ -23,10 +23,10 @@ public class GenerateAndExportDataKeyResponseUnmarshaller {
 	public static GenerateAndExportDataKeyResponse unmarshall(GenerateAndExportDataKeyResponse generateAndExportDataKeyResponse, UnmarshallerContext _ctx) {
 		
 		generateAndExportDataKeyResponse.setRequestId(_ctx.stringValue("GenerateAndExportDataKeyResponse.RequestId"));
-		generateAndExportDataKeyResponse.setCiphertextBlob(_ctx.stringValue("GenerateAndExportDataKeyResponse.CiphertextBlob"));
-		generateAndExportDataKeyResponse.setKeyId(_ctx.stringValue("GenerateAndExportDataKeyResponse.KeyId"));
-		generateAndExportDataKeyResponse.setExportedDataKey(_ctx.stringValue("GenerateAndExportDataKeyResponse.ExportedDataKey"));
 		generateAndExportDataKeyResponse.setKeyVersionId(_ctx.stringValue("GenerateAndExportDataKeyResponse.KeyVersionId"));
+		generateAndExportDataKeyResponse.setKeyId(_ctx.stringValue("GenerateAndExportDataKeyResponse.KeyId"));
+		generateAndExportDataKeyResponse.setCiphertextBlob(_ctx.stringValue("GenerateAndExportDataKeyResponse.CiphertextBlob"));
+		generateAndExportDataKeyResponse.setExportedDataKey(_ctx.stringValue("GenerateAndExportDataKeyResponse.ExportedDataKey"));
 	 
 	 	return generateAndExportDataKeyResponse;
 	}

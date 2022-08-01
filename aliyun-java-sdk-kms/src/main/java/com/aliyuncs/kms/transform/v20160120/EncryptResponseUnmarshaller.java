@@ -23,9 +23,9 @@ public class EncryptResponseUnmarshaller {
 	public static EncryptResponse unmarshall(EncryptResponse encryptResponse, UnmarshallerContext _ctx) {
 		
 		encryptResponse.setRequestId(_ctx.stringValue("EncryptResponse.RequestId"));
-		encryptResponse.setCiphertextBlob(_ctx.stringValue("EncryptResponse.CiphertextBlob"));
-		encryptResponse.setKeyId(_ctx.stringValue("EncryptResponse.KeyId"));
 		encryptResponse.setKeyVersionId(_ctx.stringValue("EncryptResponse.KeyVersionId"));
+		encryptResponse.setKeyId(_ctx.stringValue("EncryptResponse.KeyId"));
+		encryptResponse.setCiphertextBlob(_ctx.stringValue("EncryptResponse.CiphertextBlob"));
 	 
 	 	return encryptResponse;
 	}

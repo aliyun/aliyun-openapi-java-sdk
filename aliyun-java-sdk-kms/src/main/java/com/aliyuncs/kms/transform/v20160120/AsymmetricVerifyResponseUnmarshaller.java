@@ -23,9 +23,9 @@ public class AsymmetricVerifyResponseUnmarshaller {
 	public static AsymmetricVerifyResponse unmarshall(AsymmetricVerifyResponse asymmetricVerifyResponse, UnmarshallerContext _ctx) {
 		
 		asymmetricVerifyResponse.setRequestId(_ctx.stringValue("AsymmetricVerifyResponse.RequestId"));
-		asymmetricVerifyResponse.setValue(_ctx.booleanValue("AsymmetricVerifyResponse.Value"));
-		asymmetricVerifyResponse.setKeyId(_ctx.stringValue("AsymmetricVerifyResponse.KeyId"));
 		asymmetricVerifyResponse.setKeyVersionId(_ctx.stringValue("AsymmetricVerifyResponse.KeyVersionId"));
+		asymmetricVerifyResponse.setKeyId(_ctx.stringValue("AsymmetricVerifyResponse.KeyId"));
+		asymmetricVerifyResponse.setValue(_ctx.booleanValue("AsymmetricVerifyResponse.Value"));
 	 
 	 	return asymmetricVerifyResponse;
 	}

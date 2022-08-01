@@ -23,8 +23,8 @@ public class CertificatePublicKeyEncryptResponseUnmarshaller {
 	public static CertificatePublicKeyEncryptResponse unmarshall(CertificatePublicKeyEncryptResponse certificatePublicKeyEncryptResponse, UnmarshallerContext _ctx) {
 		
 		certificatePublicKeyEncryptResponse.setRequestId(_ctx.stringValue("CertificatePublicKeyEncryptResponse.RequestId"));
-		certificatePublicKeyEncryptResponse.setCertificateId(_ctx.stringValue("CertificatePublicKeyEncryptResponse.CertificateId"));
 		certificatePublicKeyEncryptResponse.setCiphertextBlob(_ctx.stringValue("CertificatePublicKeyEncryptResponse.CiphertextBlob"));
+		certificatePublicKeyEncryptResponse.setCertificateId(_ctx.stringValue("CertificatePublicKeyEncryptResponse.CertificateId"));
 	 
 	 	return certificatePublicKeyEncryptResponse;
 	}

@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class PutSecretValueResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String secretName;
 
 	private String versionId;
 
+	private String requestId;
+
 	private List<String> versionStages;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getSecretName() {
 		return this.secretName;
@@ -55,6 +47,14 @@ public class PutSecretValueResponse extends AcsResponse {
 
 	public void setVersionId(String versionId) {
 		this.versionId = versionId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<String> getVersionStages() {

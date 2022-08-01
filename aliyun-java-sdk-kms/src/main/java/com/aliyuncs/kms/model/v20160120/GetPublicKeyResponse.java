@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetPublicKeyResponse extends AcsResponse {
 
-	private String publicKey;
+	private String keyVersionId;
 
 	private String keyId;
 
 	private String requestId;
 
-	private String keyVersionId;
+	private String publicKey;
 
-	public String getPublicKey() {
-		return this.publicKey;
+	public String getKeyVersionId() {
+		return this.keyVersionId;
 	}
 
-	public void setPublicKey(String publicKey) {
-		this.publicKey = publicKey;
+	public void setKeyVersionId(String keyVersionId) {
+		this.keyVersionId = keyVersionId;
 	}
 
 	public String getKeyId() {
@@ -56,12 +56,12 @@ public class GetPublicKeyResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getKeyVersionId() {
-		return this.keyVersionId;
+	public String getPublicKey() {
+		return this.publicKey;
 	}
 
-	public void setKeyVersionId(String keyVersionId) {
-		this.keyVersionId = keyVersionId;
+	public void setPublicKey(String publicKey) {
+		this.publicKey = publicKey;
 	}
 
 	@Override

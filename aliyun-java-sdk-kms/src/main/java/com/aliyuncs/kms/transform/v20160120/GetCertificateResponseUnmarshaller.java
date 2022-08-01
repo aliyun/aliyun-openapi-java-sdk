@@ -23,10 +23,10 @@ public class GetCertificateResponseUnmarshaller {
 	public static GetCertificateResponse unmarshall(GetCertificateResponse getCertificateResponse, UnmarshallerContext _ctx) {
 		
 		getCertificateResponse.setRequestId(_ctx.stringValue("GetCertificateResponse.RequestId"));
-		getCertificateResponse.setCertificate(_ctx.stringValue("GetCertificateResponse.Certificate"));
 		getCertificateResponse.setCertificateChain(_ctx.stringValue("GetCertificateResponse.CertificateChain"));
-		getCertificateResponse.setCsr(_ctx.stringValue("GetCertificateResponse.Csr"));
+		getCertificateResponse.setCertificate(_ctx.stringValue("GetCertificateResponse.Certificate"));
 		getCertificateResponse.setCertificateId(_ctx.stringValue("GetCertificateResponse.CertificateId"));
+		getCertificateResponse.setCsr(_ctx.stringValue("GetCertificateResponse.Csr"));
 	 
 	 	return getCertificateResponse;
 	}

@@ -26,23 +26,24 @@ public class CreateKeyResponseUnmarshaller {
 		createKeyResponse.setRequestId(_ctx.stringValue("CreateKeyResponse.RequestId"));
 
 		KeyMetadata keyMetadata = new KeyMetadata();
-		keyMetadata.setCreationDate(_ctx.stringValue("CreateKeyResponse.KeyMetadata.CreationDate"));
-		keyMetadata.setDescription(_ctx.stringValue("CreateKeyResponse.KeyMetadata.Description"));
 		keyMetadata.setKeyId(_ctx.stringValue("CreateKeyResponse.KeyMetadata.KeyId"));
+		keyMetadata.setNextRotationDate(_ctx.stringValue("CreateKeyResponse.KeyMetadata.NextRotationDate"));
 		keyMetadata.setKeyState(_ctx.stringValue("CreateKeyResponse.KeyMetadata.KeyState"));
-		keyMetadata.setKeyUsage(_ctx.stringValue("CreateKeyResponse.KeyMetadata.KeyUsage"));
-		keyMetadata.setDeleteDate(_ctx.stringValue("CreateKeyResponse.KeyMetadata.DeleteDate"));
-		keyMetadata.setCreator(_ctx.stringValue("CreateKeyResponse.KeyMetadata.Creator"));
+		keyMetadata.setRotationInterval(_ctx.stringValue("CreateKeyResponse.KeyMetadata.RotationInterval"));
 		keyMetadata.setArn(_ctx.stringValue("CreateKeyResponse.KeyMetadata.Arn"));
+		keyMetadata.setCreator(_ctx.stringValue("CreateKeyResponse.KeyMetadata.Creator"));
+		keyMetadata.setLastRotationDate(_ctx.stringValue("CreateKeyResponse.KeyMetadata.LastRotationDate"));
+		keyMetadata.setDeleteDate(_ctx.stringValue("CreateKeyResponse.KeyMetadata.DeleteDate"));
+		keyMetadata.setPrimaryKeyVersion(_ctx.stringValue("CreateKeyResponse.KeyMetadata.PrimaryKeyVersion"));
+		keyMetadata.setDescription(_ctx.stringValue("CreateKeyResponse.KeyMetadata.Description"));
+		keyMetadata.setKeySpec(_ctx.stringValue("CreateKeyResponse.KeyMetadata.KeySpec"));
 		keyMetadata.setOrigin(_ctx.stringValue("CreateKeyResponse.KeyMetadata.Origin"));
 		keyMetadata.setMaterialExpireTime(_ctx.stringValue("CreateKeyResponse.KeyMetadata.MaterialExpireTime"));
-		keyMetadata.setProtectionLevel(_ctx.stringValue("CreateKeyResponse.KeyMetadata.ProtectionLevel"));
-		keyMetadata.setPrimaryKeyVersion(_ctx.stringValue("CreateKeyResponse.KeyMetadata.PrimaryKeyVersion"));
-		keyMetadata.setLastRotationDate(_ctx.stringValue("CreateKeyResponse.KeyMetadata.LastRotationDate"));
 		keyMetadata.setAutomaticRotation(_ctx.stringValue("CreateKeyResponse.KeyMetadata.AutomaticRotation"));
-		keyMetadata.setRotationInterval(_ctx.stringValue("CreateKeyResponse.KeyMetadata.RotationInterval"));
-		keyMetadata.setNextRotationDate(_ctx.stringValue("CreateKeyResponse.KeyMetadata.NextRotationDate"));
-		keyMetadata.setKeySpec(_ctx.stringValue("CreateKeyResponse.KeyMetadata.KeySpec"));
+		keyMetadata.setProtectionLevel(_ctx.stringValue("CreateKeyResponse.KeyMetadata.ProtectionLevel"));
+		keyMetadata.setKeyUsage(_ctx.stringValue("CreateKeyResponse.KeyMetadata.KeyUsage"));
+		keyMetadata.setCreationDate(_ctx.stringValue("CreateKeyResponse.KeyMetadata.CreationDate"));
+		keyMetadata.setDKMSInstanceId(_ctx.stringValue("CreateKeyResponse.KeyMetadata.DKMSInstanceId"));
 		createKeyResponse.setKeyMetadata(keyMetadata);
 	 
 	 	return createKeyResponse;

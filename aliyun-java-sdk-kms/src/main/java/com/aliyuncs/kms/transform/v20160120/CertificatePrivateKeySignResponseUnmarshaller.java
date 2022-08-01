@@ -23,8 +23,8 @@ public class CertificatePrivateKeySignResponseUnmarshaller {
 	public static CertificatePrivateKeySignResponse unmarshall(CertificatePrivateKeySignResponse certificatePrivateKeySignResponse, UnmarshallerContext _ctx) {
 		
 		certificatePrivateKeySignResponse.setRequestId(_ctx.stringValue("CertificatePrivateKeySignResponse.RequestId"));
-		certificatePrivateKeySignResponse.setCertificateId(_ctx.stringValue("CertificatePrivateKeySignResponse.CertificateId"));
 		certificatePrivateKeySignResponse.setSignatureValue(_ctx.stringValue("CertificatePrivateKeySignResponse.SignatureValue"));
+		certificatePrivateKeySignResponse.setCertificateId(_ctx.stringValue("CertificatePrivateKeySignResponse.CertificateId"));
 	 
 	 	return certificatePrivateKeySignResponse;
 	}

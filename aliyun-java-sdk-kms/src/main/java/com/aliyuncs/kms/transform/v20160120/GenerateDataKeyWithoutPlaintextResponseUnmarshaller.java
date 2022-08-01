@@ -23,9 +23,9 @@ public class GenerateDataKeyWithoutPlaintextResponseUnmarshaller {
 	public static GenerateDataKeyWithoutPlaintextResponse unmarshall(GenerateDataKeyWithoutPlaintextResponse generateDataKeyWithoutPlaintextResponse, UnmarshallerContext _ctx) {
 		
 		generateDataKeyWithoutPlaintextResponse.setRequestId(_ctx.stringValue("GenerateDataKeyWithoutPlaintextResponse.RequestId"));
-		generateDataKeyWithoutPlaintextResponse.setCiphertextBlob(_ctx.stringValue("GenerateDataKeyWithoutPlaintextResponse.CiphertextBlob"));
-		generateDataKeyWithoutPlaintextResponse.setKeyId(_ctx.stringValue("GenerateDataKeyWithoutPlaintextResponse.KeyId"));
 		generateDataKeyWithoutPlaintextResponse.setKeyVersionId(_ctx.stringValue("GenerateDataKeyWithoutPlaintextResponse.KeyVersionId"));
+		generateDataKeyWithoutPlaintextResponse.setKeyId(_ctx.stringValue("GenerateDataKeyWithoutPlaintextResponse.KeyId"));
+		generateDataKeyWithoutPlaintextResponse.setCiphertextBlob(_ctx.stringValue("GenerateDataKeyWithoutPlaintextResponse.CiphertextBlob"));
 	 
 	 	return generateDataKeyWithoutPlaintextResponse;
 	}

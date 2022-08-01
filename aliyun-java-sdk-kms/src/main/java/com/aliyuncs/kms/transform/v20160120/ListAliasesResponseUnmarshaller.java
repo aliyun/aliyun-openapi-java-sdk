@@ -27,16 +27,16 @@ public class ListAliasesResponseUnmarshaller {
 	public static ListAliasesResponse unmarshall(ListAliasesResponse listAliasesResponse, UnmarshallerContext _ctx) {
 		
 		listAliasesResponse.setRequestId(_ctx.stringValue("ListAliasesResponse.RequestId"));
-		listAliasesResponse.setTotalCount(_ctx.integerValue("ListAliasesResponse.TotalCount"));
 		listAliasesResponse.setPageNumber(_ctx.integerValue("ListAliasesResponse.PageNumber"));
 		listAliasesResponse.setPageSize(_ctx.integerValue("ListAliasesResponse.PageSize"));
+		listAliasesResponse.setTotalCount(_ctx.integerValue("ListAliasesResponse.TotalCount"));
 
 		List<Alias> aliases = new ArrayList<Alias>();
 		for (int i = 0; i < _ctx.lengthValue("ListAliasesResponse.Aliases.Length"); i++) {
 			Alias alias = new Alias();
 			alias.setKeyId(_ctx.stringValue("ListAliasesResponse.Aliases["+ i +"].KeyId"));
-			alias.setAliasName(_ctx.stringValue("ListAliasesResponse.Aliases["+ i +"].AliasName"));
 			alias.setAliasArn(_ctx.stringValue("ListAliasesResponse.Aliases["+ i +"].AliasArn"));
+			alias.setAliasName(_ctx.stringValue("ListAliasesResponse.Aliases["+ i +"].AliasName"));
 
 			aliases.add(alias);
 		}

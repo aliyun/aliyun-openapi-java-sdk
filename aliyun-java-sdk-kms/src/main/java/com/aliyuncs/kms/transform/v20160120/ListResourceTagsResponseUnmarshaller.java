@@ -32,8 +32,8 @@ public class ListResourceTagsResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("ListResourceTagsResponse.Tags.Length"); i++) {
 			Tag tag = new Tag();
 			tag.setKeyId(_ctx.stringValue("ListResourceTagsResponse.Tags["+ i +"].KeyId"));
-			tag.setTagKey(_ctx.stringValue("ListResourceTagsResponse.Tags["+ i +"].TagKey"));
 			tag.setTagValue(_ctx.stringValue("ListResourceTagsResponse.Tags["+ i +"].TagValue"));
+			tag.setTagKey(_ctx.stringValue("ListResourceTagsResponse.Tags["+ i +"].TagKey"));
 
 			tags.add(tag);
 		}

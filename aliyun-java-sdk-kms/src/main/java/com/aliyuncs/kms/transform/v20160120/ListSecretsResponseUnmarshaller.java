@@ -35,17 +35,17 @@ public class ListSecretsResponseUnmarshaller {
 		List<Secret> secretList = new ArrayList<Secret>();
 		for (int i = 0; i < _ctx.lengthValue("ListSecretsResponse.SecretList.Length"); i++) {
 			Secret secret = new Secret();
-			secret.setCreateTime(_ctx.stringValue("ListSecretsResponse.SecretList["+ i +"].CreateTime"));
-			secret.setPlannedDeleteTime(_ctx.stringValue("ListSecretsResponse.SecretList["+ i +"].PlannedDeleteTime"));
 			secret.setSecretName(_ctx.stringValue("ListSecretsResponse.SecretList["+ i +"].SecretName"));
 			secret.setUpdateTime(_ctx.stringValue("ListSecretsResponse.SecretList["+ i +"].UpdateTime"));
 			secret.setSecretType(_ctx.stringValue("ListSecretsResponse.SecretList["+ i +"].SecretType"));
+			secret.setPlannedDeleteTime(_ctx.stringValue("ListSecretsResponse.SecretList["+ i +"].PlannedDeleteTime"));
+			secret.setCreateTime(_ctx.stringValue("ListSecretsResponse.SecretList["+ i +"].CreateTime"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("ListSecretsResponse.SecretList["+ i +"].Tags.Length"); j++) {
 				Tag tag = new Tag();
-				tag.setTagKey(_ctx.stringValue("ListSecretsResponse.SecretList["+ i +"].Tags["+ j +"].TagKey"));
 				tag.setTagValue(_ctx.stringValue("ListSecretsResponse.SecretList["+ i +"].Tags["+ j +"].TagValue"));
+				tag.setTagKey(_ctx.stringValue("ListSecretsResponse.SecretList["+ i +"].Tags["+ j +"].TagKey"));
 
 				tags.add(tag);
 			}

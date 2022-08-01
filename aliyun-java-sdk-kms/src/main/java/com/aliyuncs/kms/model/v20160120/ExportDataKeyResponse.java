@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ExportDataKeyResponse extends AcsResponse {
 
-	private String exportedDataKey;
+	private String keyVersionId;
 
 	private String keyId;
 
 	private String requestId;
 
-	private String keyVersionId;
+	private String exportedDataKey;
 
-	public String getExportedDataKey() {
-		return this.exportedDataKey;
+	public String getKeyVersionId() {
+		return this.keyVersionId;
 	}
 
-	public void setExportedDataKey(String exportedDataKey) {
-		this.exportedDataKey = exportedDataKey;
+	public void setKeyVersionId(String keyVersionId) {
+		this.keyVersionId = keyVersionId;
 	}
 
 	public String getKeyId() {
@@ -56,12 +56,12 @@ public class ExportDataKeyResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getKeyVersionId() {
-		return this.keyVersionId;
+	public String getExportedDataKey() {
+		return this.exportedDataKey;
 	}
 
-	public void setKeyVersionId(String keyVersionId) {
-		this.keyVersionId = keyVersionId;
+	public void setExportedDataKey(String exportedDataKey) {
+		this.exportedDataKey = exportedDataKey;
 	}
 
 	@Override

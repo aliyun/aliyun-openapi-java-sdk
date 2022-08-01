@@ -25,74 +25,44 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSecretResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String arn;
-
-	private String secretName;
-
-	private String encryptionKeyId;
-
-	private String description;
+	private String updateTime;
 
 	private String createTime;
 
-	private String updateTime;
+	private String nextRotationDate;
 
-	private String plannedDeleteTime;
-
-	private String automaticRotation;
-
-	private String lastRotationDate;
+	private String encryptionKeyId;
 
 	private String rotationInterval;
 
-	private String nextRotationDate;
+	private String arn;
 
 	private String extendedConfig;
 
+	private String lastRotationDate;
+
+	private String requestId;
+
+	private String description;
+
+	private String secretName;
+
+	private String automaticRotation;
+
 	private String secretType;
+
+	private String plannedDeleteTime;
+
+	private String dKMSInstanceId;
 
 	private List<Tag> tags;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getUpdateTime() {
+		return this.updateTime;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getArn() {
-		return this.arn;
-	}
-
-	public void setArn(String arn) {
-		this.arn = arn;
-	}
-
-	public String getSecretName() {
-		return this.secretName;
-	}
-
-	public void setSecretName(String secretName) {
-		this.secretName = secretName;
-	}
-
-	public String getEncryptionKeyId() {
-		return this.encryptionKeyId;
-	}
-
-	public void setEncryptionKeyId(String encryptionKeyId) {
-		this.encryptionKeyId = encryptionKeyId;
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
+	public void setUpdateTime(String updateTime) {
+		this.updateTime = updateTime;
 	}
 
 	public String getCreateTime() {
@@ -103,36 +73,20 @@ public class DescribeSecretResponse extends AcsResponse {
 		this.createTime = createTime;
 	}
 
-	public String getUpdateTime() {
-		return this.updateTime;
+	public String getNextRotationDate() {
+		return this.nextRotationDate;
 	}
 
-	public void setUpdateTime(String updateTime) {
-		this.updateTime = updateTime;
+	public void setNextRotationDate(String nextRotationDate) {
+		this.nextRotationDate = nextRotationDate;
 	}
 
-	public String getPlannedDeleteTime() {
-		return this.plannedDeleteTime;
+	public String getEncryptionKeyId() {
+		return this.encryptionKeyId;
 	}
 
-	public void setPlannedDeleteTime(String plannedDeleteTime) {
-		this.plannedDeleteTime = plannedDeleteTime;
-	}
-
-	public String getAutomaticRotation() {
-		return this.automaticRotation;
-	}
-
-	public void setAutomaticRotation(String automaticRotation) {
-		this.automaticRotation = automaticRotation;
-	}
-
-	public String getLastRotationDate() {
-		return this.lastRotationDate;
-	}
-
-	public void setLastRotationDate(String lastRotationDate) {
-		this.lastRotationDate = lastRotationDate;
+	public void setEncryptionKeyId(String encryptionKeyId) {
+		this.encryptionKeyId = encryptionKeyId;
 	}
 
 	public String getRotationInterval() {
@@ -143,12 +97,12 @@ public class DescribeSecretResponse extends AcsResponse {
 		this.rotationInterval = rotationInterval;
 	}
 
-	public String getNextRotationDate() {
-		return this.nextRotationDate;
+	public String getArn() {
+		return this.arn;
 	}
 
-	public void setNextRotationDate(String nextRotationDate) {
-		this.nextRotationDate = nextRotationDate;
+	public void setArn(String arn) {
+		this.arn = arn;
 	}
 
 	public String getExtendedConfig() {
@@ -159,12 +113,68 @@ public class DescribeSecretResponse extends AcsResponse {
 		this.extendedConfig = extendedConfig;
 	}
 
+	public String getLastRotationDate() {
+		return this.lastRotationDate;
+	}
+
+	public void setLastRotationDate(String lastRotationDate) {
+		this.lastRotationDate = lastRotationDate;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getSecretName() {
+		return this.secretName;
+	}
+
+	public void setSecretName(String secretName) {
+		this.secretName = secretName;
+	}
+
+	public String getAutomaticRotation() {
+		return this.automaticRotation;
+	}
+
+	public void setAutomaticRotation(String automaticRotation) {
+		this.automaticRotation = automaticRotation;
+	}
+
 	public String getSecretType() {
 		return this.secretType;
 	}
 
 	public void setSecretType(String secretType) {
 		this.secretType = secretType;
+	}
+
+	public String getPlannedDeleteTime() {
+		return this.plannedDeleteTime;
+	}
+
+	public void setPlannedDeleteTime(String plannedDeleteTime) {
+		this.plannedDeleteTime = plannedDeleteTime;
+	}
+
+	public String getDKMSInstanceId() {
+		return this.dKMSInstanceId;
+	}
+
+	public void setDKMSInstanceId(String dKMSInstanceId) {
+		this.dKMSInstanceId = dKMSInstanceId;
 	}
 
 	public List<Tag> getTags() {
@@ -177,17 +187,9 @@ public class DescribeSecretResponse extends AcsResponse {
 
 	public static class Tag {
 
-		private String tagKey;
-
 		private String tagValue;
 
-		public String getTagKey() {
-			return this.tagKey;
-		}
-
-		public void setTagKey(String tagKey) {
-			this.tagKey = tagKey;
-		}
+		private String tagKey;
 
 		public String getTagValue() {
 			return this.tagValue;
@@ -195,6 +197,14 @@ public class DescribeSecretResponse extends AcsResponse {
 
 		public void setTagValue(String tagValue) {
 			this.tagValue = tagValue;
+		}
+
+		public String getTagKey() {
+			return this.tagKey;
+		}
+
+		public void setTagKey(String tagKey) {
+			this.tagKey = tagKey;
 		}
 	}
 

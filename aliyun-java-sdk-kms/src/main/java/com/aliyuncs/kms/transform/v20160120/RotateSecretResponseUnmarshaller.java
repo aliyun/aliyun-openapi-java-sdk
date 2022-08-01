@@ -23,9 +23,9 @@ public class RotateSecretResponseUnmarshaller {
 	public static RotateSecretResponse unmarshall(RotateSecretResponse rotateSecretResponse, UnmarshallerContext _ctx) {
 		
 		rotateSecretResponse.setRequestId(_ctx.stringValue("RotateSecretResponse.RequestId"));
-		rotateSecretResponse.setArn(_ctx.stringValue("RotateSecretResponse.Arn"));
 		rotateSecretResponse.setVersionId(_ctx.stringValue("RotateSecretResponse.VersionId"));
 		rotateSecretResponse.setSecretName(_ctx.stringValue("RotateSecretResponse.SecretName"));
+		rotateSecretResponse.setArn(_ctx.stringValue("RotateSecretResponse.Arn"));
 	 
 	 	return rotateSecretResponse;
 	}

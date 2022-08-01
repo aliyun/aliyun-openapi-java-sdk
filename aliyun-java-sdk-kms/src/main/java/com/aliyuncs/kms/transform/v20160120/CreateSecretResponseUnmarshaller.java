@@ -23,14 +23,15 @@ public class CreateSecretResponseUnmarshaller {
 	public static CreateSecretResponse unmarshall(CreateSecretResponse createSecretResponse, UnmarshallerContext _ctx) {
 		
 		createSecretResponse.setRequestId(_ctx.stringValue("CreateSecretResponse.RequestId"));
-		createSecretResponse.setArn(_ctx.stringValue("CreateSecretResponse.Arn"));
-		createSecretResponse.setVersionId(_ctx.stringValue("CreateSecretResponse.VersionId"));
-		createSecretResponse.setSecretName(_ctx.stringValue("CreateSecretResponse.SecretName"));
-		createSecretResponse.setSecretType(_ctx.stringValue("CreateSecretResponse.SecretType"));
 		createSecretResponse.setAutomaticRotation(_ctx.stringValue("CreateSecretResponse.AutomaticRotation"));
-		createSecretResponse.setRotationInterval(_ctx.stringValue("CreateSecretResponse.RotationInterval"));
+		createSecretResponse.setSecretName(_ctx.stringValue("CreateSecretResponse.SecretName"));
+		createSecretResponse.setVersionId(_ctx.stringValue("CreateSecretResponse.VersionId"));
 		createSecretResponse.setNextRotationDate(_ctx.stringValue("CreateSecretResponse.NextRotationDate"));
+		createSecretResponse.setSecretType(_ctx.stringValue("CreateSecretResponse.SecretType"));
+		createSecretResponse.setRotationInterval(_ctx.stringValue("CreateSecretResponse.RotationInterval"));
+		createSecretResponse.setArn(_ctx.stringValue("CreateSecretResponse.Arn"));
 		createSecretResponse.setExtendedConfig(_ctx.stringValue("CreateSecretResponse.ExtendedConfig"));
+		createSecretResponse.setDKMSInstanceId(_ctx.stringValue("CreateSecretResponse.DKMSInstanceId"));
 	 
 	 	return createSecretResponse;
 	}

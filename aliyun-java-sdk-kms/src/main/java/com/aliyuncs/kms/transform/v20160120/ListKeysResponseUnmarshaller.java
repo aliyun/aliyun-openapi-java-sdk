@@ -34,8 +34,8 @@ public class ListKeysResponseUnmarshaller {
 		List<Key> keys = new ArrayList<Key>();
 		for (int i = 0; i < _ctx.lengthValue("ListKeysResponse.Keys.Length"); i++) {
 			Key key = new Key();
-			key.setKeyArn(_ctx.stringValue("ListKeysResponse.Keys["+ i +"].KeyArn"));
 			key.setKeyId(_ctx.stringValue("ListKeysResponse.Keys["+ i +"].KeyId"));
+			key.setKeyArn(_ctx.stringValue("ListKeysResponse.Keys["+ i +"].KeyArn"));
 
 			keys.add(key);
 		}

@@ -27,23 +27,23 @@ public class DescribeCertificateResponseUnmarshaller {
 	public static DescribeCertificateResponse unmarshall(DescribeCertificateResponse describeCertificateResponse, UnmarshallerContext _ctx) {
 		
 		describeCertificateResponse.setRequestId(_ctx.stringValue("DescribeCertificateResponse.RequestId"));
-		describeCertificateResponse.setCertificateId(_ctx.stringValue("DescribeCertificateResponse.CertificateId"));
-		describeCertificateResponse.setArn(_ctx.stringValue("DescribeCertificateResponse.Arn"));
-		describeCertificateResponse.setKeySpec(_ctx.stringValue("DescribeCertificateResponse.KeySpec"));
 		describeCertificateResponse.setStatus(_ctx.stringValue("DescribeCertificateResponse.Status"));
-		describeCertificateResponse.setCreatedAt(_ctx.stringValue("DescribeCertificateResponse.CreatedAt"));
-		describeCertificateResponse.setUpdatedAt(_ctx.stringValue("DescribeCertificateResponse.UpdatedAt"));
 		describeCertificateResponse.setSerial(_ctx.stringValue("DescribeCertificateResponse.Serial"));
-		describeCertificateResponse.setSubject(_ctx.stringValue("DescribeCertificateResponse.Subject"));
-		describeCertificateResponse.setIssuer(_ctx.stringValue("DescribeCertificateResponse.Issuer"));
-		describeCertificateResponse.setNotBefore(_ctx.stringValue("DescribeCertificateResponse.NotBefore"));
-		describeCertificateResponse.setNotAfter(_ctx.stringValue("DescribeCertificateResponse.NotAfter"));
-		describeCertificateResponse.setSignatureAlgorithm(_ctx.stringValue("DescribeCertificateResponse.SignatureAlgorithm"));
-		describeCertificateResponse.setSubjectPublicKey(_ctx.stringValue("DescribeCertificateResponse.SubjectPublicKey"));
-		describeCertificateResponse.setSubjectKeyIdentifier(_ctx.stringValue("DescribeCertificateResponse.SubjectKeyIdentifier"));
+		describeCertificateResponse.setCreatedAt(_ctx.stringValue("DescribeCertificateResponse.CreatedAt"));
 		describeCertificateResponse.setTags(_ctx.mapValue("DescribeCertificateResponse.Tags"));
+		describeCertificateResponse.setSubjectKeyIdentifier(_ctx.stringValue("DescribeCertificateResponse.SubjectKeyIdentifier"));
 		describeCertificateResponse.setExportablePrivateKey(_ctx.booleanValue("DescribeCertificateResponse.ExportablePrivateKey"));
+		describeCertificateResponse.setIssuer(_ctx.stringValue("DescribeCertificateResponse.Issuer"));
+		describeCertificateResponse.setSignatureAlgorithm(_ctx.stringValue("DescribeCertificateResponse.SignatureAlgorithm"));
+		describeCertificateResponse.setNotAfter(_ctx.stringValue("DescribeCertificateResponse.NotAfter"));
+		describeCertificateResponse.setArn(_ctx.stringValue("DescribeCertificateResponse.Arn"));
+		describeCertificateResponse.setCertificateId(_ctx.stringValue("DescribeCertificateResponse.CertificateId"));
+		describeCertificateResponse.setKeySpec(_ctx.stringValue("DescribeCertificateResponse.KeySpec"));
 		describeCertificateResponse.setProtectionLevel(_ctx.stringValue("DescribeCertificateResponse.ProtectionLevel"));
+		describeCertificateResponse.setSubjectPublicKey(_ctx.stringValue("DescribeCertificateResponse.SubjectPublicKey"));
+		describeCertificateResponse.setSubject(_ctx.stringValue("DescribeCertificateResponse.Subject"));
+		describeCertificateResponse.setNotBefore(_ctx.stringValue("DescribeCertificateResponse.NotBefore"));
+		describeCertificateResponse.setUpdatedAt(_ctx.stringValue("DescribeCertificateResponse.UpdatedAt"));
 
 		List<String> subjectAlternativeNames = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCertificateResponse.SubjectAlternativeNames.Length"); i++) {

@@ -26,75 +26,43 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCertificateResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String certificateId;
-
-	private String arn;
-
-	private String keySpec;
-
 	private String status;
-
-	private String createdAt;
-
-	private String updatedAt;
 
 	private String serial;
 
-	private String subject;
-
-	private String issuer;
-
-	private String notBefore;
-
-	private String notAfter;
-
-	private String signatureAlgorithm;
-
-	private String subjectPublicKey;
-
-	private String subjectKeyIdentifier;
+	private String createdAt;
 
 	private Map<Object,Object> tags;
 
+	private String subjectKeyIdentifier;
+
 	private Boolean exportablePrivateKey;
+
+	private String issuer;
+
+	private String signatureAlgorithm;
+
+	private String notAfter;
+
+	private String arn;
+
+	private String certificateId;
+
+	private String requestId;
+
+	private String keySpec;
 
 	private String protectionLevel;
 
+	private String subjectPublicKey;
+
+	private String subject;
+
+	private String notBefore;
+
+	private String updatedAt;
+
 	private List<String> subjectAlternativeNames;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getCertificateId() {
-		return this.certificateId;
-	}
-
-	public void setCertificateId(String certificateId) {
-		this.certificateId = certificateId;
-	}
-
-	public String getArn() {
-		return this.arn;
-	}
-
-	public void setArn(String arn) {
-		this.arn = arn;
-	}
-
-	public String getKeySpec() {
-		return this.keySpec;
-	}
-
-	public void setKeySpec(String keySpec) {
-		this.keySpec = keySpec;
-	}
 
 	public String getStatus() {
 		return this.status;
@@ -102,22 +70,6 @@ public class DescribeCertificateResponse extends AcsResponse {
 
 	public void setStatus(String status) {
 		this.status = status;
-	}
-
-	public String getCreatedAt() {
-		return this.createdAt;
-	}
-
-	public void setCreatedAt(String createdAt) {
-		this.createdAt = createdAt;
-	}
-
-	public String getUpdatedAt() {
-		return this.updatedAt;
-	}
-
-	public void setUpdatedAt(String updatedAt) {
-		this.updatedAt = updatedAt;
 	}
 
 	public String getSerial() {
@@ -128,60 +80,12 @@ public class DescribeCertificateResponse extends AcsResponse {
 		this.serial = serial;
 	}
 
-	public String getSubject() {
-		return this.subject;
+	public String getCreatedAt() {
+		return this.createdAt;
 	}
 
-	public void setSubject(String subject) {
-		this.subject = subject;
-	}
-
-	public String getIssuer() {
-		return this.issuer;
-	}
-
-	public void setIssuer(String issuer) {
-		this.issuer = issuer;
-	}
-
-	public String getNotBefore() {
-		return this.notBefore;
-	}
-
-	public void setNotBefore(String notBefore) {
-		this.notBefore = notBefore;
-	}
-
-	public String getNotAfter() {
-		return this.notAfter;
-	}
-
-	public void setNotAfter(String notAfter) {
-		this.notAfter = notAfter;
-	}
-
-	public String getSignatureAlgorithm() {
-		return this.signatureAlgorithm;
-	}
-
-	public void setSignatureAlgorithm(String signatureAlgorithm) {
-		this.signatureAlgorithm = signatureAlgorithm;
-	}
-
-	public String getSubjectPublicKey() {
-		return this.subjectPublicKey;
-	}
-
-	public void setSubjectPublicKey(String subjectPublicKey) {
-		this.subjectPublicKey = subjectPublicKey;
-	}
-
-	public String getSubjectKeyIdentifier() {
-		return this.subjectKeyIdentifier;
-	}
-
-	public void setSubjectKeyIdentifier(String subjectKeyIdentifier) {
-		this.subjectKeyIdentifier = subjectKeyIdentifier;
+	public void setCreatedAt(String createdAt) {
+		this.createdAt = createdAt;
 	}
 
 	public Map<Object,Object> getTags() {
@@ -192,6 +96,14 @@ public class DescribeCertificateResponse extends AcsResponse {
 		this.tags = tags;
 	}
 
+	public String getSubjectKeyIdentifier() {
+		return this.subjectKeyIdentifier;
+	}
+
+	public void setSubjectKeyIdentifier(String subjectKeyIdentifier) {
+		this.subjectKeyIdentifier = subjectKeyIdentifier;
+	}
+
 	public Boolean getExportablePrivateKey() {
 		return this.exportablePrivateKey;
 	}
@@ -200,12 +112,100 @@ public class DescribeCertificateResponse extends AcsResponse {
 		this.exportablePrivateKey = exportablePrivateKey;
 	}
 
+	public String getIssuer() {
+		return this.issuer;
+	}
+
+	public void setIssuer(String issuer) {
+		this.issuer = issuer;
+	}
+
+	public String getSignatureAlgorithm() {
+		return this.signatureAlgorithm;
+	}
+
+	public void setSignatureAlgorithm(String signatureAlgorithm) {
+		this.signatureAlgorithm = signatureAlgorithm;
+	}
+
+	public String getNotAfter() {
+		return this.notAfter;
+	}
+
+	public void setNotAfter(String notAfter) {
+		this.notAfter = notAfter;
+	}
+
+	public String getArn() {
+		return this.arn;
+	}
+
+	public void setArn(String arn) {
+		this.arn = arn;
+	}
+
+	public String getCertificateId() {
+		return this.certificateId;
+	}
+
+	public void setCertificateId(String certificateId) {
+		this.certificateId = certificateId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getKeySpec() {
+		return this.keySpec;
+	}
+
+	public void setKeySpec(String keySpec) {
+		this.keySpec = keySpec;
+	}
+
 	public String getProtectionLevel() {
 		return this.protectionLevel;
 	}
 
 	public void setProtectionLevel(String protectionLevel) {
 		this.protectionLevel = protectionLevel;
+	}
+
+	public String getSubjectPublicKey() {
+		return this.subjectPublicKey;
+	}
+
+	public void setSubjectPublicKey(String subjectPublicKey) {
+		this.subjectPublicKey = subjectPublicKey;
+	}
+
+	public String getSubject() {
+		return this.subject;
+	}
+
+	public void setSubject(String subject) {
+		this.subject = subject;
+	}
+
+	public String getNotBefore() {
+		return this.notBefore;
+	}
+
+	public void setNotBefore(String notBefore) {
+		this.notBefore = notBefore;
+	}
+
+	public String getUpdatedAt() {
+		return this.updatedAt;
+	}
+
+	public void setUpdatedAt(String updatedAt) {
+		this.updatedAt = updatedAt;
 	}
 
 	public List<String> getSubjectAlternativeNames() {

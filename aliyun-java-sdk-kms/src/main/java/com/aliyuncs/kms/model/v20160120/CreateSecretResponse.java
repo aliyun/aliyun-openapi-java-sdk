@@ -26,21 +26,23 @@ public class CreateSecretResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String arn;
-
-	private String versionId;
+	private String automaticRotation;
 
 	private String secretName;
 
-	private String secretType;
-
-	private String automaticRotation;
-
-	private String rotationInterval;
+	private String versionId;
 
 	private String nextRotationDate;
 
+	private String secretType;
+
+	private String rotationInterval;
+
+	private String arn;
+
 	private String extendedConfig;
+
+	private String dKMSInstanceId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -48,38 +50,6 @@ public class CreateSecretResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getArn() {
-		return this.arn;
-	}
-
-	public void setArn(String arn) {
-		this.arn = arn;
-	}
-
-	public String getVersionId() {
-		return this.versionId;
-	}
-
-	public void setVersionId(String versionId) {
-		this.versionId = versionId;
-	}
-
-	public String getSecretName() {
-		return this.secretName;
-	}
-
-	public void setSecretName(String secretName) {
-		this.secretName = secretName;
-	}
-
-	public String getSecretType() {
-		return this.secretType;
-	}
-
-	public void setSecretType(String secretType) {
-		this.secretType = secretType;
 	}
 
 	public String getAutomaticRotation() {
@@ -90,12 +60,20 @@ public class CreateSecretResponse extends AcsResponse {
 		this.automaticRotation = automaticRotation;
 	}
 
-	public String getRotationInterval() {
-		return this.rotationInterval;
+	public String getSecretName() {
+		return this.secretName;
 	}
 
-	public void setRotationInterval(String rotationInterval) {
-		this.rotationInterval = rotationInterval;
+	public void setSecretName(String secretName) {
+		this.secretName = secretName;
+	}
+
+	public String getVersionId() {
+		return this.versionId;
+	}
+
+	public void setVersionId(String versionId) {
+		this.versionId = versionId;
 	}
 
 	public String getNextRotationDate() {
@@ -106,12 +84,44 @@ public class CreateSecretResponse extends AcsResponse {
 		this.nextRotationDate = nextRotationDate;
 	}
 
+	public String getSecretType() {
+		return this.secretType;
+	}
+
+	public void setSecretType(String secretType) {
+		this.secretType = secretType;
+	}
+
+	public String getRotationInterval() {
+		return this.rotationInterval;
+	}
+
+	public void setRotationInterval(String rotationInterval) {
+		this.rotationInterval = rotationInterval;
+	}
+
+	public String getArn() {
+		return this.arn;
+	}
+
+	public void setArn(String arn) {
+		this.arn = arn;
+	}
+
 	public String getExtendedConfig() {
 		return this.extendedConfig;
 	}
 
 	public void setExtendedConfig(String extendedConfig) {
 		this.extendedConfig = extendedConfig;
+	}
+
+	public String getDKMSInstanceId() {
+		return this.dKMSInstanceId;
+	}
+
+	public void setDKMSInstanceId(String dKMSInstanceId) {
+		this.dKMSInstanceId = dKMSInstanceId;
 	}
 
 	@Override

@@ -25,22 +25,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListAliasesResponse extends AcsResponse {
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageNumber;
 
 	private Integer pageSize;
 
-	private String requestId;
+	private Integer totalCount;
 
 	private List<Alias> aliases;
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class ListAliasesResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<Alias> getAliases() {
@@ -79,9 +79,9 @@ public class ListAliasesResponse extends AcsResponse {
 
 		private String keyId;
 
-		private String aliasName;
-
 		private String aliasArn;
+
+		private String aliasName;
 
 		public String getKeyId() {
 			return this.keyId;
@@ -91,20 +91,20 @@ public class ListAliasesResponse extends AcsResponse {
 			this.keyId = keyId;
 		}
 
-		public String getAliasName() {
-			return this.aliasName;
-		}
-
-		public void setAliasName(String aliasName) {
-			this.aliasName = aliasName;
-		}
-
 		public String getAliasArn() {
 			return this.aliasArn;
 		}
 
 		public void setAliasArn(String aliasArn) {
 			this.aliasArn = aliasArn;
+		}
+
+		public String getAliasName() {
+			return this.aliasName;
+		}
+
+		public void setAliasName(String aliasName) {
+			this.aliasName = aliasName;
 		}
 	}
 

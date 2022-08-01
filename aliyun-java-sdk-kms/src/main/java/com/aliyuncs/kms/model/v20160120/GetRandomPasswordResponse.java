@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetRandomPasswordResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String randomPassword;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getRandomPassword() {
 		return this.randomPassword;
@@ -42,6 +34,14 @@ public class GetRandomPasswordResponse extends AcsResponse {
 
 	public void setRandomPassword(String randomPassword) {
 		this.randomPassword = randomPassword;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

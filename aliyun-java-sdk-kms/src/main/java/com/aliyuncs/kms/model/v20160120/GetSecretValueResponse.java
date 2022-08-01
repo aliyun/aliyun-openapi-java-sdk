@@ -25,31 +25,95 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetSecretValueResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String secretName;
-
-	private String versionId;
+	private String secretDataType;
 
 	private String createTime;
 
-	private String secretData;
-
-	private String secretDataType;
-
-	private String automaticRotation;
-
-	private String rotationInterval;
+	private String versionId;
 
 	private String nextRotationDate;
+
+	private String secretData;
+
+	private String rotationInterval;
 
 	private String extendedConfig;
 
 	private String lastRotationDate;
 
+	private String requestId;
+
+	private String secretName;
+
+	private String automaticRotation;
+
 	private String secretType;
 
 	private List<String> versionStages;
+
+	public String getSecretDataType() {
+		return this.secretDataType;
+	}
+
+	public void setSecretDataType(String secretDataType) {
+		this.secretDataType = secretDataType;
+	}
+
+	public String getCreateTime() {
+		return this.createTime;
+	}
+
+	public void setCreateTime(String createTime) {
+		this.createTime = createTime;
+	}
+
+	public String getVersionId() {
+		return this.versionId;
+	}
+
+	public void setVersionId(String versionId) {
+		this.versionId = versionId;
+	}
+
+	public String getNextRotationDate() {
+		return this.nextRotationDate;
+	}
+
+	public void setNextRotationDate(String nextRotationDate) {
+		this.nextRotationDate = nextRotationDate;
+	}
+
+	public String getSecretData() {
+		return this.secretData;
+	}
+
+	public void setSecretData(String secretData) {
+		this.secretData = secretData;
+	}
+
+	public String getRotationInterval() {
+		return this.rotationInterval;
+	}
+
+	public void setRotationInterval(String rotationInterval) {
+		this.rotationInterval = rotationInterval;
+	}
+
+	public String getExtendedConfig() {
+		return this.extendedConfig;
+	}
+
+	public void setExtendedConfig(String extendedConfig) {
+		this.extendedConfig = extendedConfig;
+	}
+
+	public String getLastRotationDate() {
+		return this.lastRotationDate;
+	}
+
+	public void setLastRotationDate(String lastRotationDate) {
+		this.lastRotationDate = lastRotationDate;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,76 +131,12 @@ public class GetSecretValueResponse extends AcsResponse {
 		this.secretName = secretName;
 	}
 
-	public String getVersionId() {
-		return this.versionId;
-	}
-
-	public void setVersionId(String versionId) {
-		this.versionId = versionId;
-	}
-
-	public String getCreateTime() {
-		return this.createTime;
-	}
-
-	public void setCreateTime(String createTime) {
-		this.createTime = createTime;
-	}
-
-	public String getSecretData() {
-		return this.secretData;
-	}
-
-	public void setSecretData(String secretData) {
-		this.secretData = secretData;
-	}
-
-	public String getSecretDataType() {
-		return this.secretDataType;
-	}
-
-	public void setSecretDataType(String secretDataType) {
-		this.secretDataType = secretDataType;
-	}
-
 	public String getAutomaticRotation() {
 		return this.automaticRotation;
 	}
 
 	public void setAutomaticRotation(String automaticRotation) {
 		this.automaticRotation = automaticRotation;
-	}
-
-	public String getRotationInterval() {
-		return this.rotationInterval;
-	}
-
-	public void setRotationInterval(String rotationInterval) {
-		this.rotationInterval = rotationInterval;
-	}
-
-	public String getNextRotationDate() {
-		return this.nextRotationDate;
-	}
-
-	public void setNextRotationDate(String nextRotationDate) {
-		this.nextRotationDate = nextRotationDate;
-	}
-
-	public String getExtendedConfig() {
-		return this.extendedConfig;
-	}
-
-	public void setExtendedConfig(String extendedConfig) {
-		this.extendedConfig = extendedConfig;
-	}
-
-	public String getLastRotationDate() {
-		return this.lastRotationDate;
-	}
-
-	public void setLastRotationDate(String lastRotationDate) {
-		this.lastRotationDate = lastRotationDate;
 	}
 
 	public String getSecretType() {
