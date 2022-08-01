@@ -15,20 +15,16 @@
 package com.aliyuncs.polardb.model.v20170801;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.polardb.transform.v20170801.DescribePolarSQLCollectorPolicyResponseUnmarshaller;
+import com.aliyuncs.polardb.transform.v20170801.ModifyDBClusterResourceGroupResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribePolarSQLCollectorPolicyResponse extends AcsResponse {
+public class ModifyDBClusterResourceGroupResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String sQLCollectorStatus;
-
-	private String dBClusterId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,25 +34,9 @@ public class DescribePolarSQLCollectorPolicyResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getSQLCollectorStatus() {
-		return this.sQLCollectorStatus;
-	}
-
-	public void setSQLCollectorStatus(String sQLCollectorStatus) {
-		this.sQLCollectorStatus = sQLCollectorStatus;
-	}
-
-	public String getDBClusterId() {
-		return this.dBClusterId;
-	}
-
-	public void setDBClusterId(String dBClusterId) {
-		this.dBClusterId = dBClusterId;
-	}
-
 	@Override
-	public DescribePolarSQLCollectorPolicyResponse getInstance(UnmarshallerContext context) {
-		return	DescribePolarSQLCollectorPolicyResponseUnmarshaller.unmarshall(this, context);
+	public ModifyDBClusterResourceGroupResponse getInstance(UnmarshallerContext context) {
+		return	ModifyDBClusterResourceGroupResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

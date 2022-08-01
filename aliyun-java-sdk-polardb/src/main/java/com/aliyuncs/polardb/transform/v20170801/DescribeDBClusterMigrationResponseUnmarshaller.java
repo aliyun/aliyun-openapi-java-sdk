@@ -39,6 +39,7 @@ public class DescribeDBClusterMigrationResponseUnmarshaller {
 		describeDBClusterMigrationResponse.setDBClusterReadWriteMode(_ctx.stringValue("DescribeDBClusterMigrationResponse.DBClusterReadWriteMode"));
 		describeDBClusterMigrationResponse.setDelayedSeconds(_ctx.integerValue("DescribeDBClusterMigrationResponse.DelayedSeconds"));
 		describeDBClusterMigrationResponse.setMigrationStatus(_ctx.stringValue("DescribeDBClusterMigrationResponse.MigrationStatus"));
+		describeDBClusterMigrationResponse.setDtsInstanceId(_ctx.stringValue("DescribeDBClusterMigrationResponse.DtsInstanceId"));
 
 		List<DBClusterEndpoint> dBClusterEndpointList = new ArrayList<DBClusterEndpoint>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBClusterMigrationResponse.DBClusterEndpointList.Length"); i++) {

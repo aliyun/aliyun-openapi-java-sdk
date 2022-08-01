@@ -121,6 +121,8 @@ public class DescribeDBNodesParametersResponse extends AcsResponse {
 
 			private String paramRelyRule;
 
+			private String factor;
+
 			public String getCheckingCode() {
 				return this.checkingCode;
 			}
@@ -207,6 +209,14 @@ public class DescribeDBNodesParametersResponse extends AcsResponse {
 
 			public void setParamRelyRule(String paramRelyRule) {
 				this.paramRelyRule = paramRelyRule;
+			}
+
+			public String getFactor() {
+				return this.factor;
+			}
+
+			public void setFactor(String factor) {
+				this.factor = factor;
 			}
 		}
 	}

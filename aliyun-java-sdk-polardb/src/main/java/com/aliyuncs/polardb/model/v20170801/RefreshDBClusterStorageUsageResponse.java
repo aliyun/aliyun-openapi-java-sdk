@@ -15,20 +15,22 @@
 package com.aliyuncs.polardb.model.v20170801;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.polardb.transform.v20170801.DescribePolarSQLCollectorPolicyResponseUnmarshaller;
+import com.aliyuncs.polardb.transform.v20170801.RefreshDBClusterStorageUsageResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribePolarSQLCollectorPolicyResponse extends AcsResponse {
+public class RefreshDBClusterStorageUsageResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String sQLCollectorStatus;
+	private String usedStorage;
 
 	private String dBClusterId;
+
+	private String usedStorageModified;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,12 +40,12 @@ public class DescribePolarSQLCollectorPolicyResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getSQLCollectorStatus() {
-		return this.sQLCollectorStatus;
+	public String getUsedStorage() {
+		return this.usedStorage;
 	}
 
-	public void setSQLCollectorStatus(String sQLCollectorStatus) {
-		this.sQLCollectorStatus = sQLCollectorStatus;
+	public void setUsedStorage(String usedStorage) {
+		this.usedStorage = usedStorage;
 	}
 
 	public String getDBClusterId() {
@@ -54,9 +56,17 @@ public class DescribePolarSQLCollectorPolicyResponse extends AcsResponse {
 		this.dBClusterId = dBClusterId;
 	}
 
+	public String getUsedStorageModified() {
+		return this.usedStorageModified;
+	}
+
+	public void setUsedStorageModified(String usedStorageModified) {
+		this.usedStorageModified = usedStorageModified;
+	}
+
 	@Override
-	public DescribePolarSQLCollectorPolicyResponse getInstance(UnmarshallerContext context) {
-		return	DescribePolarSQLCollectorPolicyResponseUnmarshaller.unmarshall(this, context);
+	public RefreshDBClusterStorageUsageResponse getInstance(UnmarshallerContext context) {
+		return	RefreshDBClusterStorageUsageResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

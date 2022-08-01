@@ -35,6 +35,8 @@ public class DescribeBackupPolicyResponseUnmarshaller {
 		describeBackupPolicyResponse.setDataLevel1BackupPeriod(_ctx.stringValue("DescribeBackupPolicyResponse.DataLevel1BackupPeriod"));
 		describeBackupPolicyResponse.setDataLevel1BackupTime(_ctx.stringValue("DescribeBackupPolicyResponse.DataLevel1BackupTime"));
 		describeBackupPolicyResponse.setDataLevel2BackupPeriod(_ctx.stringValue("DescribeBackupPolicyResponse.DataLevel2BackupPeriod"));
+		describeBackupPolicyResponse.setDataLevel2BackupAnotherRegionRetentionPeriod(_ctx.stringValue("DescribeBackupPolicyResponse.DataLevel2BackupAnotherRegionRetentionPeriod"));
+		describeBackupPolicyResponse.setDataLevel2BackupAnotherRegionRegion(_ctx.stringValue("DescribeBackupPolicyResponse.DataLevel2BackupAnotherRegionRegion"));
 	 
 	 	return describeBackupPolicyResponse;
 	}

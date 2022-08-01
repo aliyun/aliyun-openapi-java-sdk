@@ -51,6 +51,7 @@ public class DescribeDBNodesParametersResponseUnmarshaller {
 				parameter.setParameterValue(_ctx.stringValue("DescribeDBNodesParametersResponse.DBNodeIds["+ i +"].RunningParameters["+ j +"].ParameterValue"));
 				parameter.setIsNodeAvailable(_ctx.stringValue("DescribeDBNodesParametersResponse.DBNodeIds["+ i +"].RunningParameters["+ j +"].IsNodeAvailable"));
 				parameter.setParamRelyRule(_ctx.stringValue("DescribeDBNodesParametersResponse.DBNodeIds["+ i +"].RunningParameters["+ j +"].ParamRelyRule"));
+				parameter.setFactor(_ctx.stringValue("DescribeDBNodesParametersResponse.DBNodeIds["+ i +"].RunningParameters["+ j +"].Factor"));
 
 				runningParameters.add(parameter);
 			}

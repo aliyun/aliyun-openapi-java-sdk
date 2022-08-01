@@ -22,18 +22,12 @@ import com.aliyuncs.polardb.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeDetachedBackupsRequest extends RpcAcsRequest<DescribeDetachedBackupsResponse> {
+public class EnableFirewallRulesRequest extends RpcAcsRequest<EnableFirewallRulesResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String startTime;
-
-	private Integer pageNumber;
-
-	private Integer pageSize;
-
-	private String backupRegion;
+	private Boolean enable;
 
 	private String resourceOwnerAccount;
 
@@ -41,17 +35,11 @@ public class DescribeDetachedBackupsRequest extends RpcAcsRequest<DescribeDetach
 
 	private String ownerAccount;
 
-	private String backupId;
-
-	private String endTime;
-
 	private Long ownerId;
 
-	private String backupStatus;
-
-	private String backupMode;
-	public DescribeDetachedBackupsRequest() {
-		super("polardb", "2017-08-01", "DescribeDetachedBackups");
+	private String ruleNameList;
+	public EnableFirewallRulesRequest() {
+		super("polardb", "2017-08-01", "EnableFirewallRules");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -70,47 +58,14 @@ public class DescribeDetachedBackupsRequest extends RpcAcsRequest<DescribeDetach
 		}
 	}
 
-	public String getStartTime() {
-		return this.startTime;
+	public Boolean getEnable() {
+		return this.enable;
 	}
 
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getBackupRegion() {
-		return this.backupRegion;
-	}
-
-	public void setBackupRegion(String backupRegion) {
-		this.backupRegion = backupRegion;
-		if(backupRegion != null){
-			putQueryParameter("BackupRegion", backupRegion);
+	public void setEnable(Boolean enable) {
+		this.enable = enable;
+		if(enable != null){
+			putQueryParameter("Enable", enable.toString());
 		}
 	}
 
@@ -147,28 +102,6 @@ public class DescribeDetachedBackupsRequest extends RpcAcsRequest<DescribeDetach
 		}
 	}
 
-	public String getBackupId() {
-		return this.backupId;
-	}
-
-	public void setBackupId(String backupId) {
-		this.backupId = backupId;
-		if(backupId != null){
-			putQueryParameter("BackupId", backupId);
-		}
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -180,31 +113,20 @@ public class DescribeDetachedBackupsRequest extends RpcAcsRequest<DescribeDetach
 		}
 	}
 
-	public String getBackupStatus() {
-		return this.backupStatus;
+	public String getRuleNameList() {
+		return this.ruleNameList;
 	}
 
-	public void setBackupStatus(String backupStatus) {
-		this.backupStatus = backupStatus;
-		if(backupStatus != null){
-			putQueryParameter("BackupStatus", backupStatus);
-		}
-	}
-
-	public String getBackupMode() {
-		return this.backupMode;
-	}
-
-	public void setBackupMode(String backupMode) {
-		this.backupMode = backupMode;
-		if(backupMode != null){
-			putQueryParameter("BackupMode", backupMode);
+	public void setRuleNameList(String ruleNameList) {
+		this.ruleNameList = ruleNameList;
+		if(ruleNameList != null){
+			putQueryParameter("RuleNameList", ruleNameList);
 		}
 	}
 
 	@Override
-	public Class<DescribeDetachedBackupsResponse> getResponseClass() {
-		return DescribeDetachedBackupsResponse.class;
+	public Class<EnableFirewallRulesResponse> getResponseClass() {
+		return EnableFirewallRulesResponse.class;
 	}
 
 }

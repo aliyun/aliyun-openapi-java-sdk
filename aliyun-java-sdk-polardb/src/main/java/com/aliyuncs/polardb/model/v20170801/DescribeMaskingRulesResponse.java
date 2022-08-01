@@ -31,6 +31,8 @@ public class DescribeMaskingRulesResponse extends AcsResponse {
 
 	private Boolean success;
 
+	private String dBClusterId;
+
 	private Data data;
 
 	public String getRequestId() {
@@ -55,6 +57,14 @@ public class DescribeMaskingRulesResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getDBClusterId() {
+		return this.dBClusterId;
+	}
+
+	public void setDBClusterId(String dBClusterId) {
+		this.dBClusterId = dBClusterId;
 	}
 
 	public Data getData() {

@@ -27,6 +27,8 @@ public class ModifyLogBackupPolicyRequest extends RpcAcsRequest<ModifyLogBackupP
 
 	private Long resourceOwnerId;
 
+	private String logBackupAnotherRegionRegion;
+
 	private String resourceOwnerAccount;
 
 	private String dBClusterId;
@@ -34,6 +36,8 @@ public class ModifyLogBackupPolicyRequest extends RpcAcsRequest<ModifyLogBackupP
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private String logBackupAnotherRegionRetentionPeriod;
 
 	private String logBackupRetentionPeriod;
 	public ModifyLogBackupPolicyRequest() {
@@ -53,6 +57,17 @@ public class ModifyLogBackupPolicyRequest extends RpcAcsRequest<ModifyLogBackupP
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getLogBackupAnotherRegionRegion() {
+		return this.logBackupAnotherRegionRegion;
+	}
+
+	public void setLogBackupAnotherRegionRegion(String logBackupAnotherRegionRegion) {
+		this.logBackupAnotherRegionRegion = logBackupAnotherRegionRegion;
+		if(logBackupAnotherRegionRegion != null){
+			putQueryParameter("LogBackupAnotherRegionRegion", logBackupAnotherRegionRegion);
 		}
 	}
 
@@ -97,6 +112,17 @@ public class ModifyLogBackupPolicyRequest extends RpcAcsRequest<ModifyLogBackupP
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getLogBackupAnotherRegionRetentionPeriod() {
+		return this.logBackupAnotherRegionRetentionPeriod;
+	}
+
+	public void setLogBackupAnotherRegionRetentionPeriod(String logBackupAnotherRegionRetentionPeriod) {
+		this.logBackupAnotherRegionRetentionPeriod = logBackupAnotherRegionRetentionPeriod;
+		if(logBackupAnotherRegionRetentionPeriod != null){
+			putQueryParameter("LogBackupAnotherRegionRetentionPeriod", logBackupAnotherRegionRetentionPeriod);
 		}
 	}
 

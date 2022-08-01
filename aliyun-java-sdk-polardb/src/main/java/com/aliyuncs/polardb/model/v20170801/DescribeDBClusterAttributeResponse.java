@@ -65,15 +65,27 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 	private String payType;
 
+	private String storagePayType;
+
 	private String lockMode;
 
 	private Long storageUsed;
+
+	private Long storageSpace;
 
 	private String dBVersionStatus;
 
 	private String creationTime;
 
 	private Long sQLSize;
+
+	private Long inodeTotal;
+
+	private Long inodeUsed;
+
+	private Long blktagTotal;
+
+	private Long blktagUsed;
 
 	private String regionId;
 
@@ -257,6 +269,14 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 		this.payType = payType;
 	}
 
+	public String getStoragePayType() {
+		return this.storagePayType;
+	}
+
+	public void setStoragePayType(String storagePayType) {
+		this.storagePayType = storagePayType;
+	}
+
 	public String getLockMode() {
 		return this.lockMode;
 	}
@@ -271,6 +291,14 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 	public void setStorageUsed(Long storageUsed) {
 		this.storageUsed = storageUsed;
+	}
+
+	public Long getStorageSpace() {
+		return this.storageSpace;
+	}
+
+	public void setStorageSpace(Long storageSpace) {
+		this.storageSpace = storageSpace;
 	}
 
 	public String getDBVersionStatus() {
@@ -295,6 +323,38 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 	public void setSQLSize(Long sQLSize) {
 		this.sQLSize = sQLSize;
+	}
+
+	public Long getInodeTotal() {
+		return this.inodeTotal;
+	}
+
+	public void setInodeTotal(Long inodeTotal) {
+		this.inodeTotal = inodeTotal;
+	}
+
+	public Long getInodeUsed() {
+		return this.inodeUsed;
+	}
+
+	public void setInodeUsed(Long inodeUsed) {
+		this.inodeUsed = inodeUsed;
+	}
+
+	public Long getBlktagTotal() {
+		return this.blktagTotal;
+	}
+
+	public void setBlktagTotal(Long blktagTotal) {
+		this.blktagTotal = blktagTotal;
+	}
+
+	public Long getBlktagUsed() {
+		return this.blktagUsed;
+	}
+
+	public void setBlktagUsed(Long blktagUsed) {
+		this.blktagUsed = blktagUsed;
 	}
 
 	public String getRegionId() {

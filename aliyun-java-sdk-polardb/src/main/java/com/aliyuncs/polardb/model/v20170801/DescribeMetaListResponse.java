@@ -35,6 +35,8 @@ public class DescribeMetaListResponse extends AcsResponse {
 
 	private String pageNumber;
 
+	private String dBClusterId;
+
 	private List<MetaItem> items;
 
 	public String getTotalPageCount() {
@@ -75,6 +77,14 @@ public class DescribeMetaListResponse extends AcsResponse {
 
 	public void setPageNumber(String pageNumber) {
 		this.pageNumber = pageNumber;
+	}
+
+	public String getDBClusterId() {
+		return this.dBClusterId;
+	}
+
+	public void setDBClusterId(String dBClusterId) {
+		this.dBClusterId = dBClusterId;
 	}
 
 	public List<MetaItem> getItems() {

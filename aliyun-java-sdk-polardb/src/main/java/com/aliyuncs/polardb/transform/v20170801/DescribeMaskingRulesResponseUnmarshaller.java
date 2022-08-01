@@ -29,6 +29,7 @@ public class DescribeMaskingRulesResponseUnmarshaller {
 		describeMaskingRulesResponse.setRequestId(_ctx.stringValue("DescribeMaskingRulesResponse.RequestId"));
 		describeMaskingRulesResponse.setMessage(_ctx.stringValue("DescribeMaskingRulesResponse.Message"));
 		describeMaskingRulesResponse.setSuccess(_ctx.booleanValue("DescribeMaskingRulesResponse.Success"));
+		describeMaskingRulesResponse.setDBClusterId(_ctx.stringValue("DescribeMaskingRulesResponse.DBClusterId"));
 
 		Data data = new Data();
 

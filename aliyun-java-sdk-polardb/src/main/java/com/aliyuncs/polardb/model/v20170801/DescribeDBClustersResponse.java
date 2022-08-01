@@ -89,6 +89,8 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 		private String payType;
 
+		private String storagePayType;
+
 		private String dBNodeClass;
 
 		private String dBType;
@@ -108,6 +110,8 @@ public class DescribeDBClustersResponse extends AcsResponse {
 		private String resourceGroupId;
 
 		private Long storageUsed;
+
+		private Long storageSpace;
 
 		private String dBClusterNetworkType;
 
@@ -169,6 +173,14 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 		public void setPayType(String payType) {
 			this.payType = payType;
+		}
+
+		public String getStoragePayType() {
+			return this.storagePayType;
+		}
+
+		public void setStoragePayType(String storagePayType) {
+			this.storagePayType = storagePayType;
 		}
 
 		public String getDBNodeClass() {
@@ -249,6 +261,14 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 		public void setStorageUsed(Long storageUsed) {
 			this.storageUsed = storageUsed;
+		}
+
+		public Long getStorageSpace() {
+			return this.storageSpace;
+		}
+
+		public void setStorageSpace(Long storageSpace) {
+			this.storageSpace = storageSpace;
 		}
 
 		public String getDBClusterNetworkType() {

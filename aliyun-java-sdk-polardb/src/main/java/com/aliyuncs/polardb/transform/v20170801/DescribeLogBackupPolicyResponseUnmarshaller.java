@@ -24,6 +24,8 @@ public class DescribeLogBackupPolicyResponseUnmarshaller {
 		
 		describeLogBackupPolicyResponse.setRequestId(_ctx.stringValue("DescribeLogBackupPolicyResponse.RequestId"));
 		describeLogBackupPolicyResponse.setLogBackupRetentionPeriod(_ctx.integerValue("DescribeLogBackupPolicyResponse.LogBackupRetentionPeriod"));
+		describeLogBackupPolicyResponse.setLogBackupAnotherRegionRetentionPeriod(_ctx.stringValue("DescribeLogBackupPolicyResponse.LogBackupAnotherRegionRetentionPeriod"));
+		describeLogBackupPolicyResponse.setLogBackupAnotherRegionRegion(_ctx.stringValue("DescribeLogBackupPolicyResponse.LogBackupAnotherRegionRegion"));
 		describeLogBackupPolicyResponse.setEnableBackupLog(_ctx.integerValue("DescribeLogBackupPolicyResponse.EnableBackupLog"));
 	 
 	 	return describeLogBackupPolicyResponse;

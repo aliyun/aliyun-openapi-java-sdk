@@ -47,11 +47,17 @@ public class DescribeDBClusterAttributeResponseUnmarshaller {
 		describeDBClusterAttributeResponse.setDBClusterDescription(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBClusterDescription"));
 		describeDBClusterAttributeResponse.setExpired(_ctx.stringValue("DescribeDBClusterAttributeResponse.Expired"));
 		describeDBClusterAttributeResponse.setPayType(_ctx.stringValue("DescribeDBClusterAttributeResponse.PayType"));
+		describeDBClusterAttributeResponse.setStoragePayType(_ctx.stringValue("DescribeDBClusterAttributeResponse.StoragePayType"));
 		describeDBClusterAttributeResponse.setLockMode(_ctx.stringValue("DescribeDBClusterAttributeResponse.LockMode"));
 		describeDBClusterAttributeResponse.setStorageUsed(_ctx.longValue("DescribeDBClusterAttributeResponse.StorageUsed"));
+		describeDBClusterAttributeResponse.setStorageSpace(_ctx.longValue("DescribeDBClusterAttributeResponse.StorageSpace"));
 		describeDBClusterAttributeResponse.setDBVersionStatus(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBVersionStatus"));
 		describeDBClusterAttributeResponse.setCreationTime(_ctx.stringValue("DescribeDBClusterAttributeResponse.CreationTime"));
 		describeDBClusterAttributeResponse.setSQLSize(_ctx.longValue("DescribeDBClusterAttributeResponse.SQLSize"));
+		describeDBClusterAttributeResponse.setInodeTotal(_ctx.longValue("DescribeDBClusterAttributeResponse.InodeTotal"));
+		describeDBClusterAttributeResponse.setInodeUsed(_ctx.longValue("DescribeDBClusterAttributeResponse.InodeUsed"));
+		describeDBClusterAttributeResponse.setBlktagTotal(_ctx.longValue("DescribeDBClusterAttributeResponse.BlktagTotal"));
+		describeDBClusterAttributeResponse.setBlktagUsed(_ctx.longValue("DescribeDBClusterAttributeResponse.BlktagUsed"));
 		describeDBClusterAttributeResponse.setRegionId(_ctx.stringValue("DescribeDBClusterAttributeResponse.RegionId"));
 		describeDBClusterAttributeResponse.setExpireTime(_ctx.stringValue("DescribeDBClusterAttributeResponse.ExpireTime"));
 		describeDBClusterAttributeResponse.setSubCategory(_ctx.stringValue("DescribeDBClusterAttributeResponse.SubCategory"));

@@ -28,6 +28,10 @@ public class DescribeLogBackupPolicyResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String logBackupAnotherRegionRetentionPeriod;
+
+	private String logBackupAnotherRegionRegion;
+
 	private Integer enableBackupLog;
 
 	public Integer getLogBackupRetentionPeriod() {
@@ -44,6 +48,22 @@ public class DescribeLogBackupPolicyResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getLogBackupAnotherRegionRetentionPeriod() {
+		return this.logBackupAnotherRegionRetentionPeriod;
+	}
+
+	public void setLogBackupAnotherRegionRetentionPeriod(String logBackupAnotherRegionRetentionPeriod) {
+		this.logBackupAnotherRegionRetentionPeriod = logBackupAnotherRegionRetentionPeriod;
+	}
+
+	public String getLogBackupAnotherRegionRegion() {
+		return this.logBackupAnotherRegionRegion;
+	}
+
+	public void setLogBackupAnotherRegionRegion(String logBackupAnotherRegionRegion) {
+		this.logBackupAnotherRegionRegion = logBackupAnotherRegionRegion;
 	}
 
 	public Integer getEnableBackupLog() {

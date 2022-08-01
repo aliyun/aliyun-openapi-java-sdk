@@ -24,6 +24,7 @@ public class DescribePolarSQLCollectorPolicyResponseUnmarshaller {
 		
 		describePolarSQLCollectorPolicyResponse.setRequestId(_ctx.stringValue("DescribePolarSQLCollectorPolicyResponse.RequestId"));
 		describePolarSQLCollectorPolicyResponse.setSQLCollectorStatus(_ctx.stringValue("DescribePolarSQLCollectorPolicyResponse.SQLCollectorStatus"));
+		describePolarSQLCollectorPolicyResponse.setDBClusterId(_ctx.stringValue("DescribePolarSQLCollectorPolicyResponse.DBClusterId"));
 	 
 	 	return describePolarSQLCollectorPolicyResponse;
 	}

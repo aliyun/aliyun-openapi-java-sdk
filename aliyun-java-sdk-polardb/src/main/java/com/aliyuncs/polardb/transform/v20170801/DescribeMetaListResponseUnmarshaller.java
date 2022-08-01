@@ -31,6 +31,7 @@ public class DescribeMetaListResponseUnmarshaller {
 		describeMetaListResponse.setTotalRecordCount(_ctx.stringValue("DescribeMetaListResponse.TotalRecordCount"));
 		describeMetaListResponse.setPageSize(_ctx.stringValue("DescribeMetaListResponse.PageSize"));
 		describeMetaListResponse.setPageNumber(_ctx.stringValue("DescribeMetaListResponse.PageNumber"));
+		describeMetaListResponse.setDBClusterId(_ctx.stringValue("DescribeMetaListResponse.DBClusterId"));
 
 		List<MetaItem> items = new ArrayList<MetaItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeMetaListResponse.Items.Length"); i++) {

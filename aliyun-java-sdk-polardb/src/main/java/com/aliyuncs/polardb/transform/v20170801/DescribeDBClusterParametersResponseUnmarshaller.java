@@ -45,6 +45,7 @@ public class DescribeDBClusterParametersResponseUnmarshaller {
 			parameter.setIsModifiable(_ctx.booleanValue("DescribeDBClusterParametersResponse.RunningParameters["+ i +"].IsModifiable"));
 			parameter.setIsNodeAvailable(_ctx.stringValue("DescribeDBClusterParametersResponse.RunningParameters["+ i +"].IsNodeAvailable"));
 			parameter.setParamRelyRule(_ctx.stringValue("DescribeDBClusterParametersResponse.RunningParameters["+ i +"].ParamRelyRule"));
+			parameter.setFactor(_ctx.stringValue("DescribeDBClusterParametersResponse.RunningParameters["+ i +"].Factor"));
 
 			runningParameters.add(parameter);
 		}

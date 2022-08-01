@@ -15,20 +15,20 @@
 package com.aliyuncs.polardb.model.v20170801;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.polardb.transform.v20170801.DescribePolarSQLCollectorPolicyResponseUnmarshaller;
+import com.aliyuncs.polardb.transform.v20170801.EnableFirewallRulesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribePolarSQLCollectorPolicyResponse extends AcsResponse {
+public class EnableFirewallRulesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String sQLCollectorStatus;
+	private String message;
 
-	private String dBClusterId;
+	private Boolean success;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,25 +38,25 @@ public class DescribePolarSQLCollectorPolicyResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getSQLCollectorStatus() {
-		return this.sQLCollectorStatus;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSQLCollectorStatus(String sQLCollectorStatus) {
-		this.sQLCollectorStatus = sQLCollectorStatus;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
-	public String getDBClusterId() {
-		return this.dBClusterId;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setDBClusterId(String dBClusterId) {
-		this.dBClusterId = dBClusterId;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override
-	public DescribePolarSQLCollectorPolicyResponse getInstance(UnmarshallerContext context) {
-		return	DescribePolarSQLCollectorPolicyResponseUnmarshaller.unmarshall(this, context);
+	public EnableFirewallRulesResponse getInstance(UnmarshallerContext context) {
+		return	EnableFirewallRulesResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

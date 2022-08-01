@@ -27,6 +27,8 @@ public class ModifyDBClusterParametersRequest extends RpcAcsRequest<ModifyDBClus
 
 	private Long resourceOwnerId;
 
+	private String plannedEndTime;
+
 	private String parameterGroupId;
 
 	private String resourceOwnerAccount;
@@ -37,7 +39,11 @@ public class ModifyDBClusterParametersRequest extends RpcAcsRequest<ModifyDBClus
 
 	private Long ownerId;
 
+	private String plannedStartTime;
+
 	private String parameters;
+
+	private Boolean fromTimeService;
 	public ModifyDBClusterParametersRequest() {
 		super("polardb", "2017-08-01", "ModifyDBClusterParameters");
 		setMethod(MethodType.POST);
@@ -55,6 +61,17 @@ public class ModifyDBClusterParametersRequest extends RpcAcsRequest<ModifyDBClus
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getPlannedEndTime() {
+		return this.plannedEndTime;
+	}
+
+	public void setPlannedEndTime(String plannedEndTime) {
+		this.plannedEndTime = plannedEndTime;
+		if(plannedEndTime != null){
+			putQueryParameter("PlannedEndTime", plannedEndTime);
 		}
 	}
 
@@ -113,6 +130,17 @@ public class ModifyDBClusterParametersRequest extends RpcAcsRequest<ModifyDBClus
 		}
 	}
 
+	public String getPlannedStartTime() {
+		return this.plannedStartTime;
+	}
+
+	public void setPlannedStartTime(String plannedStartTime) {
+		this.plannedStartTime = plannedStartTime;
+		if(plannedStartTime != null){
+			putQueryParameter("PlannedStartTime", plannedStartTime);
+		}
+	}
+
 	public String getParameters() {
 		return this.parameters;
 	}
@@ -121,6 +149,17 @@ public class ModifyDBClusterParametersRequest extends RpcAcsRequest<ModifyDBClus
 		this.parameters = parameters;
 		if(parameters != null){
 			putQueryParameter("Parameters", parameters);
+		}
+	}
+
+	public Boolean getFromTimeService() {
+		return this.fromTimeService;
+	}
+
+	public void setFromTimeService(Boolean fromTimeService) {
+		this.fromTimeService = fromTimeService;
+		if(fromTimeService != null){
+			putQueryParameter("FromTimeService", fromTimeService.toString());
 		}
 	}
 

@@ -33,6 +33,8 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 
 	private Integer pageSize;
 
+	private String backupRegion;
+
 	private String resourceOwnerAccount;
 
 	private String dBClusterId;
@@ -98,6 +100,17 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getBackupRegion() {
+		return this.backupRegion;
+	}
+
+	public void setBackupRegion(String backupRegion) {
+		this.backupRegion = backupRegion;
+		if(backupRegion != null){
+			putQueryParameter("BackupRegion", backupRegion);
 		}
 	}
 

@@ -45,6 +45,8 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 
 	private String ownerAccount;
 
+	private String dataLevel2BackupAnotherRegionRetentionPeriod;
+
 	private Long ownerId;
 
 	private String preferredBackupTime;
@@ -52,6 +54,8 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 	private String backupFrequency;
 
 	private String dataLevel1BackupFrequency;
+
+	private String dataLevel2BackupAnotherRegionRegion;
 
 	private String dataLevel1BackupTime;
 	public ModifyBackupPolicyRequest() {
@@ -173,6 +177,17 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		}
 	}
 
+	public String getDataLevel2BackupAnotherRegionRetentionPeriod() {
+		return this.dataLevel2BackupAnotherRegionRetentionPeriod;
+	}
+
+	public void setDataLevel2BackupAnotherRegionRetentionPeriod(String dataLevel2BackupAnotherRegionRetentionPeriod) {
+		this.dataLevel2BackupAnotherRegionRetentionPeriod = dataLevel2BackupAnotherRegionRetentionPeriod;
+		if(dataLevel2BackupAnotherRegionRetentionPeriod != null){
+			putQueryParameter("DataLevel2BackupAnotherRegionRetentionPeriod", dataLevel2BackupAnotherRegionRetentionPeriod);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -214,6 +229,17 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		this.dataLevel1BackupFrequency = dataLevel1BackupFrequency;
 		if(dataLevel1BackupFrequency != null){
 			putQueryParameter("DataLevel1BackupFrequency", dataLevel1BackupFrequency);
+		}
+	}
+
+	public String getDataLevel2BackupAnotherRegionRegion() {
+		return this.dataLevel2BackupAnotherRegionRegion;
+	}
+
+	public void setDataLevel2BackupAnotherRegionRegion(String dataLevel2BackupAnotherRegionRegion) {
+		this.dataLevel2BackupAnotherRegionRegion = dataLevel2BackupAnotherRegionRegion;
+		if(dataLevel2BackupAnotherRegionRegion != null){
+			putQueryParameter("DataLevel2BackupAnotherRegionRegion", dataLevel2BackupAnotherRegionRegion);
 		}
 	}
 

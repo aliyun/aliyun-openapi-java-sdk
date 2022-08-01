@@ -35,11 +35,15 @@ public class UpgradeDBClusterVersionRequest extends RpcAcsRequest<UpgradeDBClust
 
 	private String dBClusterId;
 
+	private String upgradeLabel;
+
 	private String ownerAccount;
 
 	private Long ownerId;
 
 	private String plannedStartTime;
+
+	private String upgradePolicy;
 
 	private Boolean fromTimeService;
 	public UpgradeDBClusterVersionRequest() {
@@ -106,6 +110,17 @@ public class UpgradeDBClusterVersionRequest extends RpcAcsRequest<UpgradeDBClust
 		}
 	}
 
+	public String getUpgradeLabel() {
+		return this.upgradeLabel;
+	}
+
+	public void setUpgradeLabel(String upgradeLabel) {
+		this.upgradeLabel = upgradeLabel;
+		if(upgradeLabel != null){
+			putQueryParameter("UpgradeLabel", upgradeLabel);
+		}
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -136,6 +151,17 @@ public class UpgradeDBClusterVersionRequest extends RpcAcsRequest<UpgradeDBClust
 		this.plannedStartTime = plannedStartTime;
 		if(plannedStartTime != null){
 			putQueryParameter("PlannedStartTime", plannedStartTime);
+		}
+	}
+
+	public String getUpgradePolicy() {
+		return this.upgradePolicy;
+	}
+
+	public void setUpgradePolicy(String upgradePolicy) {
+		this.upgradePolicy = upgradePolicy;
+		if(upgradePolicy != null){
+			putQueryParameter("UpgradePolicy", upgradePolicy);
 		}
 	}
 

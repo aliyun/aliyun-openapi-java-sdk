@@ -50,6 +50,10 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 
 	private String dataLevel2BackupPeriod;
 
+	private String dataLevel2BackupAnotherRegionRetentionPeriod;
+
+	private String dataLevel2BackupAnotherRegionRegion;
+
 	public String getPreferredBackupPeriod() {
 		return this.preferredBackupPeriod;
 	}
@@ -152,6 +156,22 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 
 	public void setDataLevel2BackupPeriod(String dataLevel2BackupPeriod) {
 		this.dataLevel2BackupPeriod = dataLevel2BackupPeriod;
+	}
+
+	public String getDataLevel2BackupAnotherRegionRetentionPeriod() {
+		return this.dataLevel2BackupAnotherRegionRetentionPeriod;
+	}
+
+	public void setDataLevel2BackupAnotherRegionRetentionPeriod(String dataLevel2BackupAnotherRegionRetentionPeriod) {
+		this.dataLevel2BackupAnotherRegionRetentionPeriod = dataLevel2BackupAnotherRegionRetentionPeriod;
+	}
+
+	public String getDataLevel2BackupAnotherRegionRegion() {
+		return this.dataLevel2BackupAnotherRegionRegion;
+	}
+
+	public void setDataLevel2BackupAnotherRegionRegion(String dataLevel2BackupAnotherRegionRegion) {
+		this.dataLevel2BackupAnotherRegionRegion = dataLevel2BackupAnotherRegionRegion;
 	}
 
 	@Override

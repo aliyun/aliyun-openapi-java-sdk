@@ -26,6 +26,8 @@ public class DescribeDBClusterVersionResponse extends AcsResponse {
 
 	private String isLatestVersion;
 
+	private String isProxyLatestVersion;
+
 	private String dBVersion;
 
 	private String dBRevisionVersion;
@@ -52,6 +54,14 @@ public class DescribeDBClusterVersionResponse extends AcsResponse {
 
 	public void setIsLatestVersion(String isLatestVersion) {
 		this.isLatestVersion = isLatestVersion;
+	}
+
+	public String getIsProxyLatestVersion() {
+		return this.isProxyLatestVersion;
+	}
+
+	public void setIsProxyLatestVersion(String isProxyLatestVersion) {
+		this.isProxyLatestVersion = isProxyLatestVersion;
 	}
 
 	public String getDBVersion() {

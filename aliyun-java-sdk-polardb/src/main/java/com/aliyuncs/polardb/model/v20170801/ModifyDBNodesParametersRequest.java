@@ -27,6 +27,8 @@ public class ModifyDBNodesParametersRequest extends RpcAcsRequest<ModifyDBNodesP
 
 	private Long resourceOwnerId;
 
+	private String plannedEndTime;
+
 	private String dBNodeIds;
 
 	private String parameterGroupId;
@@ -39,7 +41,11 @@ public class ModifyDBNodesParametersRequest extends RpcAcsRequest<ModifyDBNodesP
 
 	private Long ownerId;
 
+	private String plannedStartTime;
+
 	private String parameters;
+
+	private Boolean fromTimeService;
 	public ModifyDBNodesParametersRequest() {
 		super("polardb", "2017-08-01", "ModifyDBNodesParameters");
 		setMethod(MethodType.POST);
@@ -57,6 +63,17 @@ public class ModifyDBNodesParametersRequest extends RpcAcsRequest<ModifyDBNodesP
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getPlannedEndTime() {
+		return this.plannedEndTime;
+	}
+
+	public void setPlannedEndTime(String plannedEndTime) {
+		this.plannedEndTime = plannedEndTime;
+		if(plannedEndTime != null){
+			putQueryParameter("PlannedEndTime", plannedEndTime);
 		}
 	}
 
@@ -126,6 +143,17 @@ public class ModifyDBNodesParametersRequest extends RpcAcsRequest<ModifyDBNodesP
 		}
 	}
 
+	public String getPlannedStartTime() {
+		return this.plannedStartTime;
+	}
+
+	public void setPlannedStartTime(String plannedStartTime) {
+		this.plannedStartTime = plannedStartTime;
+		if(plannedStartTime != null){
+			putQueryParameter("PlannedStartTime", plannedStartTime);
+		}
+	}
+
 	public String getParameters() {
 		return this.parameters;
 	}
@@ -134,6 +162,17 @@ public class ModifyDBNodesParametersRequest extends RpcAcsRequest<ModifyDBNodesP
 		this.parameters = parameters;
 		if(parameters != null){
 			putQueryParameter("Parameters", parameters);
+		}
+	}
+
+	public Boolean getFromTimeService() {
+		return this.fromTimeService;
+	}
+
+	public void setFromTimeService(Boolean fromTimeService) {
+		this.fromTimeService = fromTimeService;
+		if(fromTimeService != null){
+			putQueryParameter("FromTimeService", fromTimeService.toString());
 		}
 	}
 

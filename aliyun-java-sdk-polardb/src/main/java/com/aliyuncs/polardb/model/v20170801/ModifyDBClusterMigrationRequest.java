@@ -27,6 +27,8 @@ public class ModifyDBClusterMigrationRequest extends RpcAcsRequest<ModifyDBClust
 
 	private Long resourceOwnerId;
 
+	private String connectionStrings;
+
 	private String securityToken;
 
 	private String newMasterInstanceId;
@@ -59,6 +61,17 @@ public class ModifyDBClusterMigrationRequest extends RpcAcsRequest<ModifyDBClust
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getConnectionStrings() {
+		return this.connectionStrings;
+	}
+
+	public void setConnectionStrings(String connectionStrings) {
+		this.connectionStrings = connectionStrings;
+		if(connectionStrings != null){
+			putQueryParameter("ConnectionStrings", connectionStrings);
 		}
 	}
 
