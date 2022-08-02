@@ -15,18 +15,16 @@
 package com.aliyuncs.clickhouse.model.v20191111;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.clickhouse.transform.v20191111.DescribeRDSVpcResponseUnmarshaller;
+import com.aliyuncs.clickhouse.transform.v20191111.ModifyMinorVersionGreadeTypeResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeRDSVpcResponse extends AcsResponse {
+public class ModifyMinorVersionGreadeTypeResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String vpcId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,17 +34,9 @@ public class DescribeRDSVpcResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getVpcId() {
-		return this.vpcId;
-	}
-
-	public void setVpcId(String vpcId) {
-		this.vpcId = vpcId;
-	}
-
 	@Override
-	public DescribeRDSVpcResponse getInstance(UnmarshallerContext context) {
-		return	DescribeRDSVpcResponseUnmarshaller.unmarshall(this, context);
+	public ModifyMinorVersionGreadeTypeResponse getInstance(UnmarshallerContext context) {
+		return	ModifyMinorVersionGreadeTypeResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

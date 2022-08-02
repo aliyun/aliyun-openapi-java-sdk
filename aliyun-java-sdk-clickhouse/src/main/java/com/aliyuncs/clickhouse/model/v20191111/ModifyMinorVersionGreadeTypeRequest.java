@@ -22,16 +22,10 @@ import com.aliyuncs.clickhouse.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeLorneTasksMCountRequest extends RpcAcsRequest<DescribeLorneTasksMCountResponse> {
+public class ModifyMinorVersionGreadeTypeRequest extends RpcAcsRequest<ModifyMinorVersionGreadeTypeResponse> {
 	   
 
 	private Long resourceOwnerId;
-
-	private String startTime;
-
-	private String metricName;
-
-	private String taskId;
 
 	private String resourceOwnerAccount;
 
@@ -39,11 +33,11 @@ public class DescribeLorneTasksMCountRequest extends RpcAcsRequest<DescribeLorne
 
 	private String ownerAccount;
 
-	private String endTime;
-
 	private Long ownerId;
-	public DescribeLorneTasksMCountRequest() {
-		super("clickhouse", "2019-11-11", "DescribeLorneTasksMCount");
+
+	private Boolean maintainAutoType;
+	public ModifyMinorVersionGreadeTypeRequest() {
+		super("clickhouse", "2019-11-11", "ModifyMinorVersionGreadeType");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -59,39 +53,6 @@ public class DescribeLorneTasksMCountRequest extends RpcAcsRequest<DescribeLorne
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public String getMetricName() {
-		return this.metricName;
-	}
-
-	public void setMetricName(String metricName) {
-		this.metricName = metricName;
-		if(metricName != null){
-			putQueryParameter("MetricName", metricName);
-		}
-	}
-
-	public String getTaskId() {
-		return this.taskId;
-	}
-
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
-		if(taskId != null){
-			putQueryParameter("TaskId", taskId);
 		}
 	}
 
@@ -128,17 +89,6 @@ public class DescribeLorneTasksMCountRequest extends RpcAcsRequest<DescribeLorne
 		}
 	}
 
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -150,9 +100,20 @@ public class DescribeLorneTasksMCountRequest extends RpcAcsRequest<DescribeLorne
 		}
 	}
 
+	public Boolean getMaintainAutoType() {
+		return this.maintainAutoType;
+	}
+
+	public void setMaintainAutoType(Boolean maintainAutoType) {
+		this.maintainAutoType = maintainAutoType;
+		if(maintainAutoType != null){
+			putQueryParameter("MaintainAutoType", maintainAutoType.toString());
+		}
+	}
+
 	@Override
-	public Class<DescribeLorneTasksMCountResponse> getResponseClass() {
-		return DescribeLorneTasksMCountResponse.class;
+	public Class<ModifyMinorVersionGreadeTypeResponse> getResponseClass() {
+		return ModifyMinorVersionGreadeTypeResponse.class;
 	}
 
 }

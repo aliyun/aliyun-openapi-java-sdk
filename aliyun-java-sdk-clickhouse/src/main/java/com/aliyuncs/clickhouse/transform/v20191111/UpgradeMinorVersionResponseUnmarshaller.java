@@ -14,16 +14,16 @@
 
 package com.aliyuncs.clickhouse.transform.v20191111;
 
-import com.aliyuncs.clickhouse.model.v20191111.OperateLogHubResponse;
+import com.aliyuncs.clickhouse.model.v20191111.UpgradeMinorVersionResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class OperateLogHubResponseUnmarshaller {
+public class UpgradeMinorVersionResponseUnmarshaller {
 
-	public static OperateLogHubResponse unmarshall(OperateLogHubResponse operateLogHubResponse, UnmarshallerContext _ctx) {
+	public static UpgradeMinorVersionResponse unmarshall(UpgradeMinorVersionResponse upgradeMinorVersionResponse, UnmarshallerContext _ctx) {
 		
-		operateLogHubResponse.setRequestId(_ctx.stringValue("OperateLogHubResponse.RequestId"));
+		upgradeMinorVersionResponse.setRequestId(_ctx.stringValue("UpgradeMinorVersionResponse.RequestId"));
 	 
-	 	return operateLogHubResponse;
+	 	return upgradeMinorVersionResponse;
 	}
 }

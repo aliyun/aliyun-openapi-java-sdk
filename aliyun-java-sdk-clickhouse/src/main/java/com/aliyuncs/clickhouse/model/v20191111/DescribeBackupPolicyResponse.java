@@ -34,6 +34,8 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 
 	private Integer backupRetentionPeriod;
 
+	private String backupSize;
+
 	public String getPreferredBackupPeriod() {
 		return this.preferredBackupPeriod;
 	}
@@ -72,6 +74,14 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 
 	public void setBackupRetentionPeriod(Integer backupRetentionPeriod) {
 		this.backupRetentionPeriod = backupRetentionPeriod;
+	}
+
+	public String getBackupSize() {
+		return this.backupSize;
+	}
+
+	public void setBackupSize(String backupSize) {
+		this.backupSize = backupSize;
 	}
 
 	@Override

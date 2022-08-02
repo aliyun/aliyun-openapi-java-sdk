@@ -22,22 +22,26 @@ import com.aliyuncs.clickhouse.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeRDSVpcRequest extends RpcAcsRequest<DescribeRDSVpcResponse> {
+public class UpgradeMinorVersionRequest extends RpcAcsRequest<UpgradeMinorVersionResponse> {
 	   
 
 	private Long resourceOwnerId;
 
+	private Boolean upgradeImmediately;
+
+	private String upgradeVersion;
+
 	private String resourceOwnerAccount;
 
-	private String dbClusterId;
+	private String dBClusterId;
 
 	private String ownerAccount;
 
-	private String rdsId;
-
 	private Long ownerId;
-	public DescribeRDSVpcRequest() {
-		super("clickhouse", "2019-11-11", "DescribeRDSVpc");
+
+	private String upgradeTime;
+	public UpgradeMinorVersionRequest() {
+		super("clickhouse", "2019-11-11", "UpgradeMinorVersion");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -56,6 +60,28 @@ public class DescribeRDSVpcRequest extends RpcAcsRequest<DescribeRDSVpcResponse>
 		}
 	}
 
+	public Boolean getUpgradeImmediately() {
+		return this.upgradeImmediately;
+	}
+
+	public void setUpgradeImmediately(Boolean upgradeImmediately) {
+		this.upgradeImmediately = upgradeImmediately;
+		if(upgradeImmediately != null){
+			putQueryParameter("UpgradeImmediately", upgradeImmediately.toString());
+		}
+	}
+
+	public String getUpgradeVersion() {
+		return this.upgradeVersion;
+	}
+
+	public void setUpgradeVersion(String upgradeVersion) {
+		this.upgradeVersion = upgradeVersion;
+		if(upgradeVersion != null){
+			putQueryParameter("UpgradeVersion", upgradeVersion);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -67,14 +93,14 @@ public class DescribeRDSVpcRequest extends RpcAcsRequest<DescribeRDSVpcResponse>
 		}
 	}
 
-	public String getDbClusterId() {
-		return this.dbClusterId;
+	public String getDBClusterId() {
+		return this.dBClusterId;
 	}
 
-	public void setDbClusterId(String dbClusterId) {
-		this.dbClusterId = dbClusterId;
-		if(dbClusterId != null){
-			putQueryParameter("DbClusterId", dbClusterId);
+	public void setDBClusterId(String dBClusterId) {
+		this.dBClusterId = dBClusterId;
+		if(dBClusterId != null){
+			putQueryParameter("DBClusterId", dBClusterId);
 		}
 	}
 
@@ -89,17 +115,6 @@ public class DescribeRDSVpcRequest extends RpcAcsRequest<DescribeRDSVpcResponse>
 		}
 	}
 
-	public String getRdsId() {
-		return this.rdsId;
-	}
-
-	public void setRdsId(String rdsId) {
-		this.rdsId = rdsId;
-		if(rdsId != null){
-			putQueryParameter("RdsId", rdsId);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -111,9 +126,20 @@ public class DescribeRDSVpcRequest extends RpcAcsRequest<DescribeRDSVpcResponse>
 		}
 	}
 
+	public String getUpgradeTime() {
+		return this.upgradeTime;
+	}
+
+	public void setUpgradeTime(String upgradeTime) {
+		this.upgradeTime = upgradeTime;
+		if(upgradeTime != null){
+			putQueryParameter("UpgradeTime", upgradeTime);
+		}
+	}
+
 	@Override
-	public Class<DescribeRDSVpcResponse> getResponseClass() {
-		return DescribeRDSVpcResponse.class;
+	public Class<UpgradeMinorVersionResponse> getResponseClass() {
+		return UpgradeMinorVersionResponse.class;
 	}
 
 }

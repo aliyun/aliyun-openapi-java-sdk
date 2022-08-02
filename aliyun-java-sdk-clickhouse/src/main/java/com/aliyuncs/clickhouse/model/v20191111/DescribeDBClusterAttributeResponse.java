@@ -127,6 +127,12 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 		private String vpcIpAddr;
 
+		private String engineMinorVersion;
+
+		private String engineLatestMinorVersion;
+
+		private Boolean maintainAutoType;
+
 		private List<Tag> tags;
 
 		private ScaleOutStatus scaleOutStatus;
@@ -449,6 +455,30 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 		public void setVpcIpAddr(String vpcIpAddr) {
 			this.vpcIpAddr = vpcIpAddr;
+		}
+
+		public String getEngineMinorVersion() {
+			return this.engineMinorVersion;
+		}
+
+		public void setEngineMinorVersion(String engineMinorVersion) {
+			this.engineMinorVersion = engineMinorVersion;
+		}
+
+		public String getEngineLatestMinorVersion() {
+			return this.engineLatestMinorVersion;
+		}
+
+		public void setEngineLatestMinorVersion(String engineLatestMinorVersion) {
+			this.engineLatestMinorVersion = engineLatestMinorVersion;
+		}
+
+		public Boolean getMaintainAutoType() {
+			return this.maintainAutoType;
+		}
+
+		public void setMaintainAutoType(Boolean maintainAutoType) {
+			this.maintainAutoType = maintainAutoType;
 		}
 
 		public List<Tag> getTags() {

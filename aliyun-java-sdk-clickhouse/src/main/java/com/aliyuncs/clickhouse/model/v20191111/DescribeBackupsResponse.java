@@ -95,6 +95,8 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		private String backupMethod;
 
+		private String expireDate;
+
 		public String getDBClusterId() {
 			return this.dBClusterId;
 		}
@@ -165,6 +167,14 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		public void setBackupMethod(String backupMethod) {
 			this.backupMethod = backupMethod;
+		}
+
+		public String getExpireDate() {
+			return this.expireDate;
+		}
+
+		public void setExpireDate(String expireDate) {
+			this.expireDate = expireDate;
 		}
 	}
 

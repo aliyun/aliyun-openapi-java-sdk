@@ -14,17 +14,16 @@
 
 package com.aliyuncs.clickhouse.transform.v20191111;
 
-import com.aliyuncs.clickhouse.model.v20191111.DescribeRDSVpcResponse;
+import com.aliyuncs.clickhouse.model.v20191111.ModifyMinorVersionGreadeTypeResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class DescribeRDSVpcResponseUnmarshaller {
+public class ModifyMinorVersionGreadeTypeResponseUnmarshaller {
 
-	public static DescribeRDSVpcResponse unmarshall(DescribeRDSVpcResponse describeRDSVpcResponse, UnmarshallerContext _ctx) {
+	public static ModifyMinorVersionGreadeTypeResponse unmarshall(ModifyMinorVersionGreadeTypeResponse modifyMinorVersionGreadeTypeResponse, UnmarshallerContext _ctx) {
 		
-		describeRDSVpcResponse.setRequestId(_ctx.stringValue("DescribeRDSVpcResponse.RequestId"));
-		describeRDSVpcResponse.setVpcId(_ctx.stringValue("DescribeRDSVpcResponse.VpcId"));
+		modifyMinorVersionGreadeTypeResponse.setRequestId(_ctx.stringValue("ModifyMinorVersionGreadeTypeResponse.RequestId"));
 	 
-	 	return describeRDSVpcResponse;
+	 	return modifyMinorVersionGreadeTypeResponse;
 	}
 }

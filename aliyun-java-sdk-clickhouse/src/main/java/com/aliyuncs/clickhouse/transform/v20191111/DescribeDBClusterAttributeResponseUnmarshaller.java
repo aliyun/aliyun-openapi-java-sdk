@@ -71,6 +71,9 @@ public class DescribeDBClusterAttributeResponseUnmarshaller {
 		dBCluster.setControlVersion(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBCluster.ControlVersion"));
 		dBCluster.setPublicIpAddr(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBCluster.PublicIpAddr"));
 		dBCluster.setVpcIpAddr(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBCluster.VpcIpAddr"));
+		dBCluster.setEngineMinorVersion(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBCluster.EngineMinorVersion"));
+		dBCluster.setEngineLatestMinorVersion(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBCluster.EngineLatestMinorVersion"));
+		dBCluster.setMaintainAutoType(_ctx.booleanValue("DescribeDBClusterAttributeResponse.DBCluster.MaintainAutoType"));
 
 		ScaleOutStatus scaleOutStatus = new ScaleOutStatus();
 		scaleOutStatus.setProgress(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBCluster.ScaleOutStatus.Progress"));

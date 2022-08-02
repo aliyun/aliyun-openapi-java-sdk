@@ -27,6 +27,7 @@ public class DescribeBackupPolicyResponseUnmarshaller {
 		describeBackupPolicyResponse.set_Switch(_ctx.stringValue("DescribeBackupPolicyResponse.Switch"));
 		describeBackupPolicyResponse.setPreferredBackupTime(_ctx.stringValue("DescribeBackupPolicyResponse.PreferredBackupTime"));
 		describeBackupPolicyResponse.setBackupRetentionPeriod(_ctx.integerValue("DescribeBackupPolicyResponse.BackupRetentionPeriod"));
+		describeBackupPolicyResponse.setBackupSize(_ctx.stringValue("DescribeBackupPolicyResponse.BackupSize"));
 	 
 	 	return describeBackupPolicyResponse;
 	}

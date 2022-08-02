@@ -14,20 +14,17 @@
 
 package com.aliyuncs.clickhouse.model.v20191111;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.clickhouse.transform.v20191111.DescribeLogStoreKeysResponseUnmarshaller;
+import com.aliyuncs.clickhouse.transform.v20191111.UpgradeMinorVersionResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeLogStoreKeysResponse extends AcsResponse {
+public class UpgradeMinorVersionResponse extends AcsResponse {
 
 	private String requestId;
-
-	private List<String> logStoreKeys;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,16 +34,13 @@ public class DescribeLogStoreKeysResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<String> getLogStoreKeys() {
-		return this.logStoreKeys;
-	}
-
-	public void setLogStoreKeys(List<String> logStoreKeys) {
-		this.logStoreKeys = logStoreKeys;
+	@Override
+	public UpgradeMinorVersionResponse getInstance(UnmarshallerContext context) {
+		return	UpgradeMinorVersionResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
-	public DescribeLogStoreKeysResponse getInstance(UnmarshallerContext context) {
-		return	DescribeLogStoreKeysResponseUnmarshaller.unmarshall(this, context);
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

@@ -43,6 +43,7 @@ public class DescribeBackupsResponseUnmarshaller {
 			backup.setBackupSetInfo(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupSetInfo"));
 			backup.setBackupId(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupId"));
 			backup.setBackupMethod(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupMethod"));
+			backup.setExpireDate(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].ExpireDate"));
 
 			items.add(backup);
 		}
