@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.ecs.model.v20140526.DescribeInvocationsResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeInvocationsResponse.Invocation;
 import com.aliyuncs.ecs.model.v20140526.DescribeInvocationsResponse.Invocation.InvokeInstance;
+import com.aliyuncs.ecs.model.v20140526.DescribeInvocationsResponse.Invocation.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -74,6 +75,16 @@ public class DescribeInvocationsResponseUnmarshaller {
 				invokeInstances.add(invokeInstance);
 			}
 			invocation.setInvokeInstances(invokeInstances);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeInvocationsResponse.Invocations["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setTagKey(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].Tags["+ j +"].TagKey"));
+				tag.setTagValue(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].Tags["+ j +"].TagValue"));
+
+				tags.add(tag);
+			}
+			invocation.setTags(tags);
 
 			invocations.add(invocation);
 		}

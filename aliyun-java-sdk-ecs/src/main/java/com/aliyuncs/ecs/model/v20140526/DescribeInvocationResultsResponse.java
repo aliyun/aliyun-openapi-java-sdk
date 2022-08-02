@@ -119,6 +119,8 @@ public class DescribeInvocationResultsResponse extends AcsResponse {
 
 			private String username;
 
+			private List<Tag> tags;
+
 			public String getInvocationStatus() {
 				return this.invocationStatus;
 			}
@@ -237,6 +239,37 @@ public class DescribeInvocationResultsResponse extends AcsResponse {
 
 			public void setUsername(String username) {
 				this.username = username;
+			}
+
+			public List<Tag> getTags() {
+				return this.tags;
+			}
+
+			public void setTags(List<Tag> tags) {
+				this.tags = tags;
+			}
+
+			public static class Tag {
+
+				private String tagKey;
+
+				private String tagValue;
+
+				public String getTagKey() {
+					return this.tagKey;
+				}
+
+				public void setTagKey(String tagKey) {
+					this.tagKey = tagKey;
+				}
+
+				public String getTagValue() {
+					return this.tagValue;
+				}
+
+				public void setTagValue(String tagValue) {
+					this.tagValue = tagValue;
+				}
 			}
 		}
 	}

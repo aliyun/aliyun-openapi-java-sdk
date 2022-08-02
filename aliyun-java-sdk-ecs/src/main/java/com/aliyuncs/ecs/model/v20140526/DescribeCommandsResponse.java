@@ -107,6 +107,8 @@ public class DescribeCommandsResponse extends AcsResponse {
 
 		private List<ParameterDefinition> parameterDefinitions;
 
+		private List<Tag> tags;
+
 		private List<String> parameterNames;
 
 		public String getCreationTime() {
@@ -229,6 +231,14 @@ public class DescribeCommandsResponse extends AcsResponse {
 			this.parameterDefinitions = parameterDefinitions;
 		}
 
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
 		public List<String> getParameterNames() {
 			return this.parameterNames;
 		}
@@ -287,6 +297,29 @@ public class DescribeCommandsResponse extends AcsResponse {
 
 			public void setPossibleValues(List<String> possibleValues) {
 				this.possibleValues = possibleValues;
+			}
+		}
+
+		public static class Tag {
+
+			private String tagKey;
+
+			private String tagValue;
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
 			}
 		}
 	}

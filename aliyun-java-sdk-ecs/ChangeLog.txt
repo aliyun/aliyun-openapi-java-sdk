@@ -1,3 +1,6 @@
+2022-08-02 Version: 4.24.23
+- Support ecs instance diagnostic features.
+
 2022-07-15 Version: 4.24.22
 - Support Security Group Batch Manager Rules.
 

@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.ecs.model.v20140526.DescribeCommandsResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeCommandsResponse.Command;
 import com.aliyuncs.ecs.model.v20140526.DescribeCommandsResponse.Command.ParameterDefinition;
+import com.aliyuncs.ecs.model.v20140526.DescribeCommandsResponse.Command.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -73,6 +74,16 @@ public class DescribeCommandsResponseUnmarshaller {
 				parameterDefinitions.add(parameterDefinition);
 			}
 			command.setParameterDefinitions(parameterDefinitions);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeCommandsResponse.Commands["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setTagKey(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].Tags["+ j +"].TagKey"));
+				tag.setTagValue(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].Tags["+ j +"].TagValue"));
+
+				tags.add(tag);
+			}
+			command.setTags(tags);
 
 			commands.add(command);
 		}

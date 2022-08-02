@@ -43,11 +43,11 @@ public class ModifySecurityGroupRuleRequest extends RpcAcsRequest<ModifySecurity
 
 	private String sourceGroupOwnerAccount;
 
+	private String policy;
+
 	private String ipv6SourceCidrIp;
 
 	private String ipv6DestCidrIp;
-
-	private String policy;
 
 	private String portRange;
 
@@ -174,6 +174,17 @@ public class ModifySecurityGroupRuleRequest extends RpcAcsRequest<ModifySecurity
 		}
 	}
 
+	public String getPolicy() {
+		return this.policy;
+	}
+
+	public void setPolicy(String policy) {
+		this.policy = policy;
+		if(policy != null){
+			putQueryParameter("Policy", policy);
+		}
+	}
+
 	public String getIpv6SourceCidrIp() {
 		return this.ipv6SourceCidrIp;
 	}
@@ -193,17 +204,6 @@ public class ModifySecurityGroupRuleRequest extends RpcAcsRequest<ModifySecurity
 		this.ipv6DestCidrIp = ipv6DestCidrIp;
 		if(ipv6DestCidrIp != null){
 			putQueryParameter("Ipv6DestCidrIp", ipv6DestCidrIp);
-		}
-	}
-
-	public String getPolicy() {
-		return this.policy;
-	}
-
-	public void setPolicy(String policy) {
-		this.policy = policy;
-		if(policy != null){
-			putQueryParameter("Policy", policy);
 		}
 	}
 

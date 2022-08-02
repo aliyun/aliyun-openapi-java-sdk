@@ -39,11 +39,11 @@ public class ModifySecurityGroupEgressRuleRequest extends RpcAcsRequest<ModifySe
 
 	private String description;
 
+	private String policy;
+
 	private String ipv6DestCidrIp;
 
 	private String ipv6SourceCidrIp;
-
-	private String policy;
 
 	private String portRange;
 
@@ -59,9 +59,9 @@ public class ModifySecurityGroupEgressRuleRequest extends RpcAcsRequest<ModifySe
 
 	private Long ownerId;
 
-	private String destGroupOwnerAccount;
-
 	private String priority;
+
+	private String destGroupOwnerAccount;
 
 	private String destCidrIp;
 
@@ -152,6 +152,17 @@ public class ModifySecurityGroupEgressRuleRequest extends RpcAcsRequest<ModifySe
 		}
 	}
 
+	public String getPolicy() {
+		return this.policy;
+	}
+
+	public void setPolicy(String policy) {
+		this.policy = policy;
+		if(policy != null){
+			putQueryParameter("Policy", policy);
+		}
+	}
+
 	public String getIpv6DestCidrIp() {
 		return this.ipv6DestCidrIp;
 	}
@@ -171,17 +182,6 @@ public class ModifySecurityGroupEgressRuleRequest extends RpcAcsRequest<ModifySe
 		this.ipv6SourceCidrIp = ipv6SourceCidrIp;
 		if(ipv6SourceCidrIp != null){
 			putQueryParameter("Ipv6SourceCidrIp", ipv6SourceCidrIp);
-		}
-	}
-
-	public String getPolicy() {
-		return this.policy;
-	}
-
-	public void setPolicy(String policy) {
-		this.policy = policy;
-		if(policy != null){
-			putQueryParameter("Policy", policy);
 		}
 	}
 
@@ -262,17 +262,6 @@ public class ModifySecurityGroupEgressRuleRequest extends RpcAcsRequest<ModifySe
 		}
 	}
 
-	public String getDestGroupOwnerAccount() {
-		return this.destGroupOwnerAccount;
-	}
-
-	public void setDestGroupOwnerAccount(String destGroupOwnerAccount) {
-		this.destGroupOwnerAccount = destGroupOwnerAccount;
-		if(destGroupOwnerAccount != null){
-			putQueryParameter("DestGroupOwnerAccount", destGroupOwnerAccount);
-		}
-	}
-
 	public String getPriority() {
 		return this.priority;
 	}
@@ -281,6 +270,17 @@ public class ModifySecurityGroupEgressRuleRequest extends RpcAcsRequest<ModifySe
 		this.priority = priority;
 		if(priority != null){
 			putQueryParameter("Priority", priority);
+		}
+	}
+
+	public String getDestGroupOwnerAccount() {
+		return this.destGroupOwnerAccount;
+	}
+
+	public void setDestGroupOwnerAccount(String destGroupOwnerAccount) {
+		this.destGroupOwnerAccount = destGroupOwnerAccount;
+		if(destGroupOwnerAccount != null){
+			putQueryParameter("DestGroupOwnerAccount", destGroupOwnerAccount);
 		}
 	}
 
