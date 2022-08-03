@@ -33,6 +33,8 @@ public class ListResourceGroupsResponse extends AcsResponse {
 
 	private Integer pageNumber;
 
+	private String resourceGroupListAclMode;
+
 	private List<ResourceGroup> resourceGroups;
 
 	public Integer getTotalCount() {
@@ -67,6 +69,14 @@ public class ListResourceGroupsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
+	public String getResourceGroupListAclMode() {
+		return this.resourceGroupListAclMode;
+	}
+
+	public void setResourceGroupListAclMode(String resourceGroupListAclMode) {
+		this.resourceGroupListAclMode = resourceGroupListAclMode;
+	}
+
 	public List<ResourceGroup> getResourceGroups() {
 		return this.resourceGroups;
 	}
@@ -88,6 +98,8 @@ public class ListResourceGroupsResponse extends AcsResponse {
 		private String createDate;
 
 		private String id;
+
+		private List<Tag> tags;
 
 		public String getDisplayName() {
 			return this.displayName;
@@ -135,6 +147,37 @@ public class ListResourceGroupsResponse extends AcsResponse {
 
 		public void setId(String id) {
 			this.id = id;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
+		public static class Tag {
+
+			private String tagKey;
+
+			private String tagValue;
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
+			}
 		}
 	}
 

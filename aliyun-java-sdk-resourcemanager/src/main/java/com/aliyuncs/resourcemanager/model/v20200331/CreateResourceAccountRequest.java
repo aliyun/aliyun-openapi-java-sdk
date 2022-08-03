@@ -15,6 +15,7 @@
 package com.aliyuncs.resourcemanager.model.v20200331;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.resourcemanager.Endpoint;
@@ -31,6 +32,8 @@ public class CreateResourceAccountRequest extends RpcAcsRequest<CreateResourceAc
 	private String parentFolderId;
 
 	private String displayName;
+
+	private List<Tag> tag;
 
 	private String payerAccountId;
 	public CreateResourceAccountRequest() {
@@ -76,6 +79,23 @@ public class CreateResourceAccountRequest extends RpcAcsRequest<CreateResourceAc
 		}
 	}
 
+	public List<Tag> getTag() {
+		return this.tag;
+	}
+
+	public void setTag(List<Tag> tag) {
+		this.tag = tag;	
+		if (tag != null) {
+			for (int depth1 = 0; depth1 < tag.size(); depth1++) {
+				if (tag.get(depth1) != null) {
+					
+						putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tag.get(depth1).getValue());
+						putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tag.get(depth1).getKey());
+				}
+			}
+		}	
+	}
+
 	public String getPayerAccountId() {
 		return this.payerAccountId;
 	}
@@ -84,6 +104,29 @@ public class CreateResourceAccountRequest extends RpcAcsRequest<CreateResourceAc
 		this.payerAccountId = payerAccountId;
 		if(payerAccountId != null){
 			putQueryParameter("PayerAccountId", payerAccountId);
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

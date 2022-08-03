@@ -24,18 +24,16 @@ import com.aliyuncs.resourcemanager.Endpoint;
  * @author auto create
  * @version 
  */
-public class InviteAccountToResourceDirectoryRequest extends RpcAcsRequest<InviteAccountToResourceDirectoryResponse> {
+public class TagResourcesRequest extends RpcAcsRequest<TagResourcesResponse> {
 	   
 
-	private String note;
+	private List<String> resourceId;
 
-	private String targetType;
+	private String resourceType;
 
 	private List<Tag> tag;
-
-	private String targetEntity;
-	public InviteAccountToResourceDirectoryRequest() {
-		super("ResourceManager", "2020-03-31", "InviteAccountToResourceDirectory");
+	public TagResourcesRequest() {
+		super("ResourceManager", "2020-03-31", "TagResources");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
@@ -44,25 +42,27 @@ public class InviteAccountToResourceDirectoryRequest extends RpcAcsRequest<Invit
 		} catch (Exception e) {}
 	}
 
-	public String getNote() {
-		return this.note;
+	public List<String> getResourceId() {
+		return this.resourceId;
 	}
 
-	public void setNote(String note) {
-		this.note = note;
-		if(note != null){
-			putQueryParameter("Note", note);
-		}
+	public void setResourceId(List<String> resourceId) {
+		this.resourceId = resourceId;	
+		if (resourceId != null) {
+			for (int depth1 = 0; depth1 < resourceId.size(); depth1++) {
+				putQueryParameter("ResourceId." + (depth1 + 1) , resourceId.get(depth1));
+			}
+		}	
 	}
 
-	public String getTargetType() {
-		return this.targetType;
+	public String getResourceType() {
+		return this.resourceType;
 	}
 
-	public void setTargetType(String targetType) {
-		this.targetType = targetType;
-		if(targetType != null){
-			putQueryParameter("TargetType", targetType);
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
 		}
 	}
 
@@ -81,17 +81,6 @@ public class InviteAccountToResourceDirectoryRequest extends RpcAcsRequest<Invit
 				}
 			}
 		}	
-	}
-
-	public String getTargetEntity() {
-		return this.targetEntity;
-	}
-
-	public void setTargetEntity(String targetEntity) {
-		this.targetEntity = targetEntity;
-		if(targetEntity != null){
-			putQueryParameter("TargetEntity", targetEntity);
-		}
 	}
 
 	public static class Tag {
@@ -118,8 +107,8 @@ public class InviteAccountToResourceDirectoryRequest extends RpcAcsRequest<Invit
 	}
 
 	@Override
-	public Class<InviteAccountToResourceDirectoryResponse> getResponseClass() {
-		return InviteAccountToResourceDirectoryResponse.class;
+	public Class<TagResourcesResponse> getResponseClass() {
+		return TagResourcesResponse.class;
 	}
 
 }

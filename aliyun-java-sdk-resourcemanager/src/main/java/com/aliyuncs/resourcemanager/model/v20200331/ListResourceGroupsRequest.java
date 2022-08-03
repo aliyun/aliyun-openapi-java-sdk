@@ -15,6 +15,7 @@
 package com.aliyuncs.resourcemanager.model.v20200331;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.resourcemanager.Endpoint;
@@ -31,6 +32,12 @@ public class ListResourceGroupsRequest extends RpcAcsRequest<ListResourceGroupsR
 	private String resourceGroupId;
 
 	private Integer pageSize;
+
+	private List<Tag> tag;
+
+	private List<String> resourceGroupIds;
+
+	private Boolean includeTags;
 
 	private String displayName;
 
@@ -80,6 +87,47 @@ public class ListResourceGroupsRequest extends RpcAcsRequest<ListResourceGroupsR
 		}
 	}
 
+	public List<Tag> getTag() {
+		return this.tag;
+	}
+
+	public void setTag(List<Tag> tag) {
+		this.tag = tag;	
+		if (tag != null) {
+			for (int depth1 = 0; depth1 < tag.size(); depth1++) {
+				if (tag.get(depth1) != null) {
+					
+						putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tag.get(depth1).getValue());
+						putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tag.get(depth1).getKey());
+				}
+			}
+		}	
+	}
+
+	public List<String> getResourceGroupIds() {
+		return this.resourceGroupIds;
+	}
+
+	public void setResourceGroupIds(List<String> resourceGroupIds) {
+		this.resourceGroupIds = resourceGroupIds;	
+		if (resourceGroupIds != null) {
+			for (int depth1 = 0; depth1 < resourceGroupIds.size(); depth1++) {
+				putQueryParameter("ResourceGroupIds." + (depth1 + 1) , resourceGroupIds.get(depth1));
+			}
+		}	
+	}
+
+	public Boolean getIncludeTags() {
+		return this.includeTags;
+	}
+
+	public void setIncludeTags(Boolean includeTags) {
+		this.includeTags = includeTags;
+		if(includeTags != null){
+			putQueryParameter("IncludeTags", includeTags.toString());
+		}
+	}
+
 	public String getDisplayName() {
 		return this.displayName;
 	}
@@ -110,6 +158,29 @@ public class ListResourceGroupsRequest extends RpcAcsRequest<ListResourceGroupsR
 		this.status = status;
 		if(status != null){
 			putQueryParameter("Status", status);
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

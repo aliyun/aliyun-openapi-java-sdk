@@ -62,6 +62,8 @@ public class GetResourceDirectoryResponse extends AcsResponse {
 
 		private String memberDeletionStatus;
 
+		private String identityInformation;
+
 		public String getRootFolderId() {
 			return this.rootFolderId;
 		}
@@ -124,6 +126,14 @@ public class GetResourceDirectoryResponse extends AcsResponse {
 
 		public void setMemberDeletionStatus(String memberDeletionStatus) {
 			this.memberDeletionStatus = memberDeletionStatus;
+		}
+
+		public String getIdentityInformation() {
+			return this.identityInformation;
+		}
+
+		public void setIdentityInformation(String identityInformation) {
+			this.identityInformation = identityInformation;
 		}
 	}
 

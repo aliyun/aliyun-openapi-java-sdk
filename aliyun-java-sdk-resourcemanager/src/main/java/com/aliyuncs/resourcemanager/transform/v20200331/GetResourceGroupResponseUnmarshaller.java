@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.resourcemanager.model.v20200331.GetResourceGroupResponse;
 import com.aliyuncs.resourcemanager.model.v20200331.GetResourceGroupResponse.ResourceGroup;
 import com.aliyuncs.resourcemanager.model.v20200331.GetResourceGroupResponse.ResourceGroup.RegionStatus;
+import com.aliyuncs.resourcemanager.model.v20200331.GetResourceGroupResponse.ResourceGroup.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -46,6 +47,16 @@ public class GetResourceGroupResponseUnmarshaller {
 			regionStatuses.add(regionStatus);
 		}
 		resourceGroup.setRegionStatuses(regionStatuses);
+
+		List<Tag> tags = new ArrayList<Tag>();
+		for (int i = 0; i < _ctx.lengthValue("GetResourceGroupResponse.ResourceGroup.Tags.Length"); i++) {
+			Tag tag = new Tag();
+			tag.setTagKey(_ctx.stringValue("GetResourceGroupResponse.ResourceGroup.Tags["+ i +"].TagKey"));
+			tag.setTagValue(_ctx.stringValue("GetResourceGroupResponse.ResourceGroup.Tags["+ i +"].TagValue"));
+
+			tags.add(tag);
+		}
+		resourceGroup.setTags(tags);
 		getResourceGroupResponse.setResourceGroup(resourceGroup);
 	 
 	 	return getResourceGroupResponse;

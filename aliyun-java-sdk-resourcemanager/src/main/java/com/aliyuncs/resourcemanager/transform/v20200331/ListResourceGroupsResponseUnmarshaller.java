@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.resourcemanager.model.v20200331.ListResourceGroupsResponse;
 import com.aliyuncs.resourcemanager.model.v20200331.ListResourceGroupsResponse.ResourceGroup;
+import com.aliyuncs.resourcemanager.model.v20200331.ListResourceGroupsResponse.ResourceGroup.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -30,6 +31,7 @@ public class ListResourceGroupsResponseUnmarshaller {
 		listResourceGroupsResponse.setTotalCount(_ctx.integerValue("ListResourceGroupsResponse.TotalCount"));
 		listResourceGroupsResponse.setPageSize(_ctx.integerValue("ListResourceGroupsResponse.PageSize"));
 		listResourceGroupsResponse.setPageNumber(_ctx.integerValue("ListResourceGroupsResponse.PageNumber"));
+		listResourceGroupsResponse.setResourceGroupListAclMode(_ctx.stringValue("ListResourceGroupsResponse.ResourceGroupListAclMode"));
 
 		List<ResourceGroup> resourceGroups = new ArrayList<ResourceGroup>();
 		for (int i = 0; i < _ctx.lengthValue("ListResourceGroupsResponse.ResourceGroups.Length"); i++) {
@@ -40,6 +42,16 @@ public class ListResourceGroupsResponseUnmarshaller {
 			resourceGroup.setName(_ctx.stringValue("ListResourceGroupsResponse.ResourceGroups["+ i +"].Name"));
 			resourceGroup.setCreateDate(_ctx.stringValue("ListResourceGroupsResponse.ResourceGroups["+ i +"].CreateDate"));
 			resourceGroup.setId(_ctx.stringValue("ListResourceGroupsResponse.ResourceGroups["+ i +"].Id"));
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("ListResourceGroupsResponse.ResourceGroups["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setTagKey(_ctx.stringValue("ListResourceGroupsResponse.ResourceGroups["+ i +"].Tags["+ j +"].TagKey"));
+				tag.setTagValue(_ctx.stringValue("ListResourceGroupsResponse.ResourceGroups["+ i +"].Tags["+ j +"].TagValue"));
+
+				tags.add(tag);
+			}
+			resourceGroup.setTags(tags);
 
 			resourceGroups.add(resourceGroup);
 		}

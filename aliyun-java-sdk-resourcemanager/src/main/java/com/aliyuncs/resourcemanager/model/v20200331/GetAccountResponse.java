@@ -14,6 +14,7 @@
 
 package com.aliyuncs.resourcemanager.model.v20200331;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.resourcemanager.transform.v20200331.GetAccountResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -69,6 +70,10 @@ public class GetAccountResponse extends AcsResponse {
 		private String accountName;
 
 		private String resourceDirectoryPath;
+
+		private String location;
+
+		private List<Tag> tags;
 
 		public String getStatus() {
 			return this.status;
@@ -164,6 +169,45 @@ public class GetAccountResponse extends AcsResponse {
 
 		public void setResourceDirectoryPath(String resourceDirectoryPath) {
 			this.resourceDirectoryPath = resourceDirectoryPath;
+		}
+
+		public String getLocation() {
+			return this.location;
+		}
+
+		public void setLocation(String location) {
+			this.location = location;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
+		public static class Tag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 	}
 

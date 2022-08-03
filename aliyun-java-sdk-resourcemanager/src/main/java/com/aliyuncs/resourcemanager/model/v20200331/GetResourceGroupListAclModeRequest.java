@@ -15,7 +15,6 @@
 package com.aliyuncs.resourcemanager.model.v20200331;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.resourcemanager.Endpoint;
 
@@ -23,47 +22,20 @@ import com.aliyuncs.resourcemanager.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetAccountRequest extends RpcAcsRequest<GetAccountResponse> {
+public class GetResourceGroupListAclModeRequest extends RpcAcsRequest<GetResourceGroupListAclModeResponse> {
 	   
-
-	private String accountId;
-
-	private Boolean includeTags;
-	public GetAccountRequest() {
-		super("ResourceManager", "2020-03-31", "GetAccount");
-		setProtocol(ProtocolType.HTTPS);
-		setMethod(MethodType.POST);
+	public GetResourceGroupListAclModeRequest() {
+		super("ResourceManager", "2020-03-31", "GetResourceGroupListAclMode");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getAccountId() {
-		return this.accountId;
-	}
-
-	public void setAccountId(String accountId) {
-		this.accountId = accountId;
-		if(accountId != null){
-			putQueryParameter("AccountId", accountId);
-		}
-	}
-
-	public Boolean getIncludeTags() {
-		return this.includeTags;
-	}
-
-	public void setIncludeTags(Boolean includeTags) {
-		this.includeTags = includeTags;
-		if(includeTags != null){
-			putQueryParameter("IncludeTags", includeTags.toString());
-		}
-	}
-
 	@Override
-	public Class<GetAccountResponse> getResponseClass() {
-		return GetAccountResponse.class;
+	public Class<GetResourceGroupListAclModeResponse> getResponseClass() {
+		return GetResourceGroupListAclModeResponse.class;
 	}
 
 }

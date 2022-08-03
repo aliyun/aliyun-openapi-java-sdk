@@ -23,14 +23,12 @@ import com.aliyuncs.resourcemanager.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetAccountRequest extends RpcAcsRequest<GetAccountResponse> {
+public class SetMemberDeletionPermissionRequest extends RpcAcsRequest<SetMemberDeletionPermissionResponse> {
 	   
 
-	private String accountId;
-
-	private Boolean includeTags;
-	public GetAccountRequest() {
-		super("ResourceManager", "2020-03-31", "GetAccount");
+	private String status;
+	public SetMemberDeletionPermissionRequest() {
+		super("ResourceManager", "2020-03-31", "SetMemberDeletionPermission");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
@@ -39,31 +37,20 @@ public class GetAccountRequest extends RpcAcsRequest<GetAccountResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getAccountId() {
-		return this.accountId;
+	public String getStatus() {
+		return this.status;
 	}
 
-	public void setAccountId(String accountId) {
-		this.accountId = accountId;
-		if(accountId != null){
-			putQueryParameter("AccountId", accountId);
-		}
-	}
-
-	public Boolean getIncludeTags() {
-		return this.includeTags;
-	}
-
-	public void setIncludeTags(Boolean includeTags) {
-		this.includeTags = includeTags;
-		if(includeTags != null){
-			putQueryParameter("IncludeTags", includeTags.toString());
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
 		}
 	}
 
 	@Override
-	public Class<GetAccountResponse> getResponseClass() {
-		return GetAccountResponse.class;
+	public Class<SetMemberDeletionPermissionResponse> getResponseClass() {
+		return SetMemberDeletionPermissionResponse.class;
 	}
 
 }

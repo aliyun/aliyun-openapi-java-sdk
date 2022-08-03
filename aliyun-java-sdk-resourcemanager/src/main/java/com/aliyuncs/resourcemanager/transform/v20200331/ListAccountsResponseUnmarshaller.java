@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.resourcemanager.model.v20200331.ListAccountsResponse;
 import com.aliyuncs.resourcemanager.model.v20200331.ListAccountsResponse.Account;
+import com.aliyuncs.resourcemanager.model.v20200331.ListAccountsResponse.Account.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -44,6 +45,16 @@ public class ListAccountsResponseUnmarshaller {
 			account.setJoinMethod(_ctx.stringValue("ListAccountsResponse.Accounts["+ i +"].JoinMethod"));
 			account.setModifyTime(_ctx.stringValue("ListAccountsResponse.Accounts["+ i +"].ModifyTime"));
 			account.setResourceDirectoryPath(_ctx.stringValue("ListAccountsResponse.Accounts["+ i +"].ResourceDirectoryPath"));
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("ListAccountsResponse.Accounts["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("ListAccountsResponse.Accounts["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("ListAccountsResponse.Accounts["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			account.setTags(tags);
 
 			accounts.add(account);
 		}

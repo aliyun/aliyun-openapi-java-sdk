@@ -34,6 +34,7 @@ public class GetResourceDirectoryResponseUnmarshaller {
 		resourceDirectory.setScpStatus(_ctx.stringValue("GetResourceDirectoryResponse.ResourceDirectory.ScpStatus"));
 		resourceDirectory.setControlPolicyStatus(_ctx.stringValue("GetResourceDirectoryResponse.ResourceDirectory.ControlPolicyStatus"));
 		resourceDirectory.setMemberDeletionStatus(_ctx.stringValue("GetResourceDirectoryResponse.ResourceDirectory.MemberDeletionStatus"));
+		resourceDirectory.setIdentityInformation(_ctx.stringValue("GetResourceDirectoryResponse.ResourceDirectory.IdentityInformation"));
 		getResourceDirectoryResponse.setResourceDirectory(resourceDirectory);
 	 
 	 	return getResourceDirectoryResponse;

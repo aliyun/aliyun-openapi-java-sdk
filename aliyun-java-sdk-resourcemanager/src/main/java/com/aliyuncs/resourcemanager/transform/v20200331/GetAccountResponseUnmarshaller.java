@@ -14,8 +14,12 @@
 
 package com.aliyuncs.resourcemanager.transform.v20200331;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.resourcemanager.model.v20200331.GetAccountResponse;
 import com.aliyuncs.resourcemanager.model.v20200331.GetAccountResponse.Account;
+import com.aliyuncs.resourcemanager.model.v20200331.GetAccountResponse.Account.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -38,6 +42,17 @@ public class GetAccountResponseUnmarshaller {
 		account.setModifyTime(_ctx.stringValue("GetAccountResponse.Account.ModifyTime"));
 		account.setAccountName(_ctx.stringValue("GetAccountResponse.Account.AccountName"));
 		account.setResourceDirectoryPath(_ctx.stringValue("GetAccountResponse.Account.ResourceDirectoryPath"));
+		account.setLocation(_ctx.stringValue("GetAccountResponse.Account.Location"));
+
+		List<Tag> tags = new ArrayList<Tag>();
+		for (int i = 0; i < _ctx.lengthValue("GetAccountResponse.Account.Tags.Length"); i++) {
+			Tag tag = new Tag();
+			tag.setKey(_ctx.stringValue("GetAccountResponse.Account.Tags["+ i +"].Key"));
+			tag.setValue(_ctx.stringValue("GetAccountResponse.Account.Tags["+ i +"].Value"));
+
+			tags.add(tag);
+		}
+		account.setTags(tags);
 		getAccountResponse.setAccount(account);
 	 
 	 	return getAccountResponse;

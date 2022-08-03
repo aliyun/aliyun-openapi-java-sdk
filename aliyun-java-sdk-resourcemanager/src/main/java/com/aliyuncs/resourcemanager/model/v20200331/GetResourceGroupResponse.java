@@ -61,6 +61,8 @@ public class GetResourceGroupResponse extends AcsResponse {
 
 		private List<RegionStatus> regionStatuses;
 
+		private List<Tag> tags;
+
 		public String getDisplayName() {
 			return this.displayName;
 		}
@@ -117,6 +119,14 @@ public class GetResourceGroupResponse extends AcsResponse {
 			this.regionStatuses = regionStatuses;
 		}
 
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
 		public static class RegionStatus {
 
 			private String status;
@@ -137,6 +147,29 @@ public class GetResourceGroupResponse extends AcsResponse {
 
 			public void setRegionId(String regionId) {
 				this.regionId = regionId;
+			}
+		}
+
+		public static class Tag {
+
+			private String tagKey;
+
+			private String tagValue;
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
 			}
 		}
 	}

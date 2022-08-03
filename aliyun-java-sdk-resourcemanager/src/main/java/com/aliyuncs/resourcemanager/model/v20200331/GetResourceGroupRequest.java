@@ -27,6 +27,8 @@ public class GetResourceGroupRequest extends RpcAcsRequest<GetResourceGroupRespo
 	   
 
 	private String resourceGroupId;
+
+	private Boolean includeTags;
 	public GetResourceGroupRequest() {
 		super("ResourceManager", "2020-03-31", "GetResourceGroup");
 		setProtocol(ProtocolType.HTTPS);
@@ -45,6 +47,17 @@ public class GetResourceGroupRequest extends RpcAcsRequest<GetResourceGroupRespo
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public Boolean getIncludeTags() {
+		return this.includeTags;
+	}
+
+	public void setIncludeTags(Boolean includeTags) {
+		this.includeTags = includeTags;
+		if(includeTags != null){
+			putQueryParameter("IncludeTags", includeTags.toString());
 		}
 	}
 
