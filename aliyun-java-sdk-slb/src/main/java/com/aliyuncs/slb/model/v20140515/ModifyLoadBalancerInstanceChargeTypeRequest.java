@@ -29,7 +29,11 @@ public class ModifyLoadBalancerInstanceChargeTypeRequest extends RpcAcsRequest<M
 
 	private String instanceChargeType;
 
+	private String loadBalancerSpec;
+
 	private String resourceOwnerAccount;
+
+	private Integer bandwidth;
 
 	private String ownerAccount;
 
@@ -69,6 +73,17 @@ public class ModifyLoadBalancerInstanceChargeTypeRequest extends RpcAcsRequest<M
 		}
 	}
 
+	public String getLoadBalancerSpec() {
+		return this.loadBalancerSpec;
+	}
+
+	public void setLoadBalancerSpec(String loadBalancerSpec) {
+		this.loadBalancerSpec = loadBalancerSpec;
+		if(loadBalancerSpec != null){
+			putQueryParameter("LoadBalancerSpec", loadBalancerSpec);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -77,6 +92,17 @@ public class ModifyLoadBalancerInstanceChargeTypeRequest extends RpcAcsRequest<M
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public Integer getBandwidth() {
+		return this.bandwidth;
+	}
+
+	public void setBandwidth(Integer bandwidth) {
+		this.bandwidth = bandwidth;
+		if(bandwidth != null){
+			putQueryParameter("Bandwidth", bandwidth.toString());
 		}
 	}
 

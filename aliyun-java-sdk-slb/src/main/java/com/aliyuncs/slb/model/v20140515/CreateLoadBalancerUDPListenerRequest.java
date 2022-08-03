@@ -49,6 +49,8 @@ public class CreateLoadBalancerUDPListenerRequest extends RpcAcsRequest<CreateLo
 
 	private String healthCheckExp;
 
+	private Boolean proxyProtocolV2Enabled;
+
 	private Integer healthCheckConnectTimeout;
 
 	private String description;
@@ -206,6 +208,17 @@ public class CreateLoadBalancerUDPListenerRequest extends RpcAcsRequest<CreateLo
 		this.healthCheckExp = healthCheckExp;
 		if(healthCheckExp != null){
 			putQueryParameter("healthCheckExp", healthCheckExp);
+		}
+	}
+
+	public Boolean getProxyProtocolV2Enabled() {
+		return this.proxyProtocolV2Enabled;
+	}
+
+	public void setProxyProtocolV2Enabled(Boolean proxyProtocolV2Enabled) {
+		this.proxyProtocolV2Enabled = proxyProtocolV2Enabled;
+		if(proxyProtocolV2Enabled != null){
+			putQueryParameter("ProxyProtocolV2Enabled", proxyProtocolV2Enabled.toString());
 		}
 	}
 

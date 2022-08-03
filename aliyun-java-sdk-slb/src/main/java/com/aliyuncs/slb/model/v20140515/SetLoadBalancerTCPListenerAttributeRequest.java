@@ -55,6 +55,8 @@ public class SetLoadBalancerTCPListenerAttributeRequest extends RpcAcsRequest<Se
 
 	private Integer healthCheckInterval;
 
+	private Boolean proxyProtocolV2Enabled;
+
 	private String connectionDrain;
 
 	private Integer healthCheckConnectTimeout;
@@ -255,6 +257,17 @@ public class SetLoadBalancerTCPListenerAttributeRequest extends RpcAcsRequest<Se
 		this.healthCheckInterval = healthCheckInterval;
 		if(healthCheckInterval != null){
 			putQueryParameter("HealthCheckInterval", healthCheckInterval.toString());
+		}
+	}
+
+	public Boolean getProxyProtocolV2Enabled() {
+		return this.proxyProtocolV2Enabled;
+	}
+
+	public void setProxyProtocolV2Enabled(Boolean proxyProtocolV2Enabled) {
+		this.proxyProtocolV2Enabled = proxyProtocolV2Enabled;
+		if(proxyProtocolV2Enabled != null){
+			putQueryParameter("ProxyProtocolV2Enabled", proxyProtocolV2Enabled.toString());
 		}
 	}
 
