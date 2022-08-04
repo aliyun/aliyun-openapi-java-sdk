@@ -27,13 +27,13 @@ public class SearchTmOnsalesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer totalCount;
+	private Integer pageSize;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
-
 	private Integer totalPageNumber;
+
+	private Integer totalCount;
 
 	private List<Trademark> trademarks;
 
@@ -45,12 +45,12 @@ public class SearchTmOnsalesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public Integer getPageNumber() {
@@ -61,20 +61,20 @@ public class SearchTmOnsalesResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
 	public Integer getTotalPageNumber() {
 		return this.totalPageNumber;
 	}
 
 	public void setTotalPageNumber(Integer totalPageNumber) {
 		this.totalPageNumber = totalPageNumber;
+	}
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<Trademark> getTrademarks() {
@@ -87,33 +87,25 @@ public class SearchTmOnsalesResponse extends AcsResponse {
 
 	public static class Trademark {
 
-		private String uid;
-
 		private String trademarkName;
-
-		private String registrationNumber;
-
-		private String classification;
-
-		private String icon;
-
-		private String productCode;
-
-		private Long orderPrice;
-
-		private String productDesc;
-
-		private String partnerCode;
 
 		private Long status;
 
-		public String getUid() {
-			return this.uid;
-		}
+		private String productDesc;
 
-		public void setUid(String uid) {
-			this.uid = uid;
-		}
+		private String registrationNumber;
+
+		private String icon;
+
+		private String partnerCode;
+
+		private String classification;
+
+		private String uid;
+
+		private String productCode;
+
+		private String orderPrice;
 
 		public String getTrademarkName() {
 			return this.trademarkName;
@@ -123,44 +115,12 @@ public class SearchTmOnsalesResponse extends AcsResponse {
 			this.trademarkName = trademarkName;
 		}
 
-		public String getRegistrationNumber() {
-			return this.registrationNumber;
+		public Long getStatus() {
+			return this.status;
 		}
 
-		public void setRegistrationNumber(String registrationNumber) {
-			this.registrationNumber = registrationNumber;
-		}
-
-		public String getClassification() {
-			return this.classification;
-		}
-
-		public void setClassification(String classification) {
-			this.classification = classification;
-		}
-
-		public String getIcon() {
-			return this.icon;
-		}
-
-		public void setIcon(String icon) {
-			this.icon = icon;
-		}
-
-		public String getProductCode() {
-			return this.productCode;
-		}
-
-		public void setProductCode(String productCode) {
-			this.productCode = productCode;
-		}
-
-		public Long getOrderPrice() {
-			return this.orderPrice;
-		}
-
-		public void setOrderPrice(Long orderPrice) {
-			this.orderPrice = orderPrice;
+		public void setStatus(Long status) {
+			this.status = status;
 		}
 
 		public String getProductDesc() {
@@ -171,6 +131,22 @@ public class SearchTmOnsalesResponse extends AcsResponse {
 			this.productDesc = productDesc;
 		}
 
+		public String getRegistrationNumber() {
+			return this.registrationNumber;
+		}
+
+		public void setRegistrationNumber(String registrationNumber) {
+			this.registrationNumber = registrationNumber;
+		}
+
+		public String getIcon() {
+			return this.icon;
+		}
+
+		public void setIcon(String icon) {
+			this.icon = icon;
+		}
+
 		public String getPartnerCode() {
 			return this.partnerCode;
 		}
@@ -179,12 +155,36 @@ public class SearchTmOnsalesResponse extends AcsResponse {
 			this.partnerCode = partnerCode;
 		}
 
-		public Long getStatus() {
-			return this.status;
+		public String getClassification() {
+			return this.classification;
 		}
 
-		public void setStatus(Long status) {
-			this.status = status;
+		public void setClassification(String classification) {
+			this.classification = classification;
+		}
+
+		public String getUid() {
+			return this.uid;
+		}
+
+		public void setUid(String uid) {
+			this.uid = uid;
+		}
+
+		public String getProductCode() {
+			return this.productCode;
+		}
+
+		public void setProductCode(String productCode) {
+			this.productCode = productCode;
+		}
+
+		public String getOrderPrice() {
+			return this.orderPrice;
+		}
+
+		public void setOrderPrice(String orderPrice) {
+			this.orderPrice = orderPrice;
 		}
 	}
 

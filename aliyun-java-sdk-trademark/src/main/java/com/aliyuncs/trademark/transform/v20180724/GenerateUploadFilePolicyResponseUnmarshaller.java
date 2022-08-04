@@ -23,12 +23,12 @@ public class GenerateUploadFilePolicyResponseUnmarshaller {
 	public static GenerateUploadFilePolicyResponse unmarshall(GenerateUploadFilePolicyResponse generateUploadFilePolicyResponse, UnmarshallerContext _ctx) {
 		
 		generateUploadFilePolicyResponse.setRequestId(_ctx.stringValue("GenerateUploadFilePolicyResponse.RequestId"));
-		generateUploadFilePolicyResponse.setEncodedPolicy(_ctx.stringValue("GenerateUploadFilePolicyResponse.EncodedPolicy"));
-		generateUploadFilePolicyResponse.setAccessId(_ctx.stringValue("GenerateUploadFilePolicyResponse.AccessId"));
 		generateUploadFilePolicyResponse.setSignature(_ctx.stringValue("GenerateUploadFilePolicyResponse.Signature"));
-		generateUploadFilePolicyResponse.setFileDir(_ctx.stringValue("GenerateUploadFilePolicyResponse.FileDir"));
 		generateUploadFilePolicyResponse.setHost(_ctx.stringValue("GenerateUploadFilePolicyResponse.Host"));
 		generateUploadFilePolicyResponse.setExpireTime(_ctx.longValue("GenerateUploadFilePolicyResponse.ExpireTime"));
+		generateUploadFilePolicyResponse.setEncodedPolicy(_ctx.stringValue("GenerateUploadFilePolicyResponse.EncodedPolicy"));
+		generateUploadFilePolicyResponse.setFileDir(_ctx.stringValue("GenerateUploadFilePolicyResponse.FileDir"));
+		generateUploadFilePolicyResponse.setAccessId(_ctx.stringValue("GenerateUploadFilePolicyResponse.AccessId"));
 	 
 	 	return generateUploadFilePolicyResponse;
 	}

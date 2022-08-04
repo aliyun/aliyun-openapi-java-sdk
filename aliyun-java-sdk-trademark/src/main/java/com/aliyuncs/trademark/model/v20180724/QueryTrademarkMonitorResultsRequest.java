@@ -27,19 +27,19 @@ public class QueryTrademarkMonitorResultsRequest extends RpcAcsRequest<QueryTrad
 
 	private Integer actionType;
 
-	private String tmName;
-
-	private String classification;
-
 	private Integer pageNum;
-
-	private String registrationNumber;
-
-	private String applyYear;
 
 	private Integer pageSize;
 
 	private Integer procedureStatus;
+
+	private String tmName;
+
+	private String classification;
+
+	private String registrationNumber;
+
+	private String applyYear;
 
 	private Long ruleId;
 	public QueryTrademarkMonitorResultsRequest() {
@@ -59,6 +59,39 @@ public class QueryTrademarkMonitorResultsRequest extends RpcAcsRequest<QueryTrad
 		this.actionType = actionType;
 		if(actionType != null){
 			putQueryParameter("ActionType", actionType.toString());
+		}
+	}
+
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Integer getProcedureStatus() {
+		return this.procedureStatus;
+	}
+
+	public void setProcedureStatus(Integer procedureStatus) {
+		this.procedureStatus = procedureStatus;
+		if(procedureStatus != null){
+			putQueryParameter("ProcedureStatus", procedureStatus.toString());
 		}
 	}
 
@@ -84,17 +117,6 @@ public class QueryTrademarkMonitorResultsRequest extends RpcAcsRequest<QueryTrad
 		}
 	}
 
-	public Integer getPageNum() {
-		return this.pageNum;
-	}
-
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-		if(pageNum != null){
-			putQueryParameter("PageNum", pageNum.toString());
-		}
-	}
-
 	public String getRegistrationNumber() {
 		return this.registrationNumber;
 	}
@@ -114,28 +136,6 @@ public class QueryTrademarkMonitorResultsRequest extends RpcAcsRequest<QueryTrad
 		this.applyYear = applyYear;
 		if(applyYear != null){
 			putQueryParameter("ApplyYear", applyYear);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public Integer getProcedureStatus() {
-		return this.procedureStatus;
-	}
-
-	public void setProcedureStatus(Integer procedureStatus) {
-		this.procedureStatus = procedureStatus;
-		if(procedureStatus != null){
-			putQueryParameter("ProcedureStatus", procedureStatus.toString());
 		}
 	}
 

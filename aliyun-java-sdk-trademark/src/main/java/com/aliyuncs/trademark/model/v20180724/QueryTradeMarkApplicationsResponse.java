@@ -25,33 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryTradeMarkApplicationsResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Integer totalItemNum;
-
 	private Integer currentPageNum;
-
-	private Integer pageSize;
 
 	private Integer totalPageNum;
 
+	private String requestId;
+
+	private Integer pageSize;
+
+	private Integer totalItemNum;
+
 	private List<TmProduces> data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getTotalItemNum() {
-		return this.totalItemNum;
-	}
-
-	public void setTotalItemNum(Integer totalItemNum) {
-		this.totalItemNum = totalItemNum;
-	}
 
 	public Integer getCurrentPageNum() {
 		return this.currentPageNum;
@@ -59,6 +43,22 @@ public class QueryTradeMarkApplicationsResponse extends AcsResponse {
 
 	public void setCurrentPageNum(Integer currentPageNum) {
 		this.currentPageNum = currentPageNum;
+	}
+
+	public Integer getTotalPageNum() {
+		return this.totalPageNum;
+	}
+
+	public void setTotalPageNum(Integer totalPageNum) {
+		this.totalPageNum = totalPageNum;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageSize() {
@@ -69,12 +69,12 @@ public class QueryTradeMarkApplicationsResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getTotalPageNum() {
-		return this.totalPageNum;
+	public Integer getTotalItemNum() {
+		return this.totalItemNum;
 	}
 
-	public void setTotalPageNum(Integer totalPageNum) {
-		this.totalPageNum = totalPageNum;
+	public void setTotalItemNum(Integer totalItemNum) {
+		this.totalItemNum = totalItemNum;
 	}
 
 	public List<TmProduces> getData() {
@@ -87,43 +87,51 @@ public class QueryTradeMarkApplicationsResponse extends AcsResponse {
 
 	public static class TmProduces {
 
-		private String bizId;
+		private Integer type;
 
-		private String orderId;
+		private Integer status;
+
+		private Float orderPrice;
+
+		private Long submitAuditTime;
+
+		private Long updateTime;
 
 		private String materialName;
+
+		private String remark;
+
+		private Long createTime;
+
+		private String userId;
+
+		private String bizId;
+
+		private Float servicePrice;
 
 		private String tmIcon;
 
 		private String tmName;
 
-		private String tmNumber;
-
-		private Long createTime;
-
-		private Integer type;
-
-		private Integer status;
-
-		private String userId;
-
-		private Float orderPrice;
-
 		private Long materialId;
-
-		private String loaUrl;
-
-		private String note;
-
-		private Long updateTime;
-
-		private Integer supplementStatus;
 
 		private Long supplementId;
 
+		private String loaUrl;
+
+		private String tmNumber;
+
+		private String note;
+
+		private Integer supplementStatus;
+
+		private Integer principalName;
+
 		private Float totalPrice;
 
-		private Float servicePrice;
+		private Long submitTime;
+
+		private String orderId;
 
 		private List<ThirdClassifications> thirdClassification;
 
@@ -133,20 +141,44 @@ public class QueryTradeMarkApplicationsResponse extends AcsResponse {
 
 		private RenewResponse renewResponse;
 
-		public String getBizId() {
-			return this.bizId;
+		public Integer getType() {
+			return this.type;
 		}
 
-		public void setBizId(String bizId) {
-			this.bizId = bizId;
+		public void setType(Integer type) {
+			this.type = type;
 		}
 
-		public String getOrderId() {
-			return this.orderId;
+		public Integer getStatus() {
+			return this.status;
 		}
 
-		public void setOrderId(String orderId) {
-			this.orderId = orderId;
+		public void setStatus(Integer status) {
+			this.status = status;
+		}
+
+		public Float getOrderPrice() {
+			return this.orderPrice;
+		}
+
+		public void setOrderPrice(Float orderPrice) {
+			this.orderPrice = orderPrice;
+		}
+
+		public Long getSubmitAuditTime() {
+			return this.submitAuditTime;
+		}
+
+		public void setSubmitAuditTime(Long submitAuditTime) {
+			this.submitAuditTime = submitAuditTime;
+		}
+
+		public Long getUpdateTime() {
+			return this.updateTime;
+		}
+
+		public void setUpdateTime(Long updateTime) {
+			this.updateTime = updateTime;
 		}
 
 		public String getMaterialName() {
@@ -155,6 +187,46 @@ public class QueryTradeMarkApplicationsResponse extends AcsResponse {
 
 		public void setMaterialName(String materialName) {
 			this.materialName = materialName;
+		}
+
+		public String getRemark() {
+			return this.remark;
+		}
+
+		public void setRemark(String remark) {
+			this.remark = remark;
+		}
+
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getUserId() {
+			return this.userId;
+		}
+
+		public void setUserId(String userId) {
+			this.userId = userId;
+		}
+
+		public String getBizId() {
+			return this.bizId;
+		}
+
+		public void setBizId(String bizId) {
+			this.bizId = bizId;
+		}
+
+		public Float getServicePrice() {
+			return this.servicePrice;
+		}
+
+		public void setServicePrice(Float servicePrice) {
+			this.servicePrice = servicePrice;
 		}
 
 		public String getTmIcon() {
@@ -173,92 +245,12 @@ public class QueryTradeMarkApplicationsResponse extends AcsResponse {
 			this.tmName = tmName;
 		}
 
-		public String getTmNumber() {
-			return this.tmNumber;
-		}
-
-		public void setTmNumber(String tmNumber) {
-			this.tmNumber = tmNumber;
-		}
-
-		public Long getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
-		}
-
-		public Integer getType() {
-			return this.type;
-		}
-
-		public void setType(Integer type) {
-			this.type = type;
-		}
-
-		public Integer getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(Integer status) {
-			this.status = status;
-		}
-
-		public String getUserId() {
-			return this.userId;
-		}
-
-		public void setUserId(String userId) {
-			this.userId = userId;
-		}
-
-		public Float getOrderPrice() {
-			return this.orderPrice;
-		}
-
-		public void setOrderPrice(Float orderPrice) {
-			this.orderPrice = orderPrice;
-		}
-
 		public Long getMaterialId() {
 			return this.materialId;
 		}
 
 		public void setMaterialId(Long materialId) {
 			this.materialId = materialId;
-		}
-
-		public String getLoaUrl() {
-			return this.loaUrl;
-		}
-
-		public void setLoaUrl(String loaUrl) {
-			this.loaUrl = loaUrl;
-		}
-
-		public String getNote() {
-			return this.note;
-		}
-
-		public void setNote(String note) {
-			this.note = note;
-		}
-
-		public Long getUpdateTime() {
-			return this.updateTime;
-		}
-
-		public void setUpdateTime(Long updateTime) {
-			this.updateTime = updateTime;
-		}
-
-		public Integer getSupplementStatus() {
-			return this.supplementStatus;
-		}
-
-		public void setSupplementStatus(Integer supplementStatus) {
-			this.supplementStatus = supplementStatus;
 		}
 
 		public Long getSupplementId() {
@@ -269,6 +261,46 @@ public class QueryTradeMarkApplicationsResponse extends AcsResponse {
 			this.supplementId = supplementId;
 		}
 
+		public String getLoaUrl() {
+			return this.loaUrl;
+		}
+
+		public void setLoaUrl(String loaUrl) {
+			this.loaUrl = loaUrl;
+		}
+
+		public String getTmNumber() {
+			return this.tmNumber;
+		}
+
+		public void setTmNumber(String tmNumber) {
+			this.tmNumber = tmNumber;
+		}
+
+		public String getNote() {
+			return this.note;
+		}
+
+		public void setNote(String note) {
+			this.note = note;
+		}
+
+		public Integer getSupplementStatus() {
+			return this.supplementStatus;
+		}
+
+		public void setSupplementStatus(Integer supplementStatus) {
+			this.supplementStatus = supplementStatus;
+		}
+
+		public Integer getPrincipalName() {
+			return this.principalName;
+		}
+
+		public void setPrincipalName(Integer principalName) {
+			this.principalName = principalName;
+		}
+
 		public Float getTotalPrice() {
 			return this.totalPrice;
 		}
@@ -277,12 +309,20 @@ public class QueryTradeMarkApplicationsResponse extends AcsResponse {
 			this.totalPrice = totalPrice;
 		}
 
-		public Float getServicePrice() {
-			return this.servicePrice;
+		public Long getSubmitTime() {
+			return this.submitTime;
 		}
 
-		public void setServicePrice(Float servicePrice) {
-			this.servicePrice = servicePrice;
+		public void setSubmitTime(Long submitTime) {
+			this.submitTime = submitTime;
+		}
+
+		public String getOrderId() {
+			return this.orderId;
+		}
+
+		public void setOrderId(String orderId) {
+			this.orderId = orderId;
 		}
 
 		public List<ThirdClassifications> getThirdClassification() {
@@ -319,17 +359,9 @@ public class QueryTradeMarkApplicationsResponse extends AcsResponse {
 
 		public static class ThirdClassifications {
 
-			private String classificationCode;
-
 			private String classificationName;
 
-			public String getClassificationCode() {
-				return this.classificationCode;
-			}
-
-			public void setClassificationCode(String classificationCode) {
-				this.classificationCode = classificationCode;
-			}
+			private String classificationCode;
 
 			public String getClassificationName() {
 				return this.classificationName;
@@ -337,22 +369,22 @@ public class QueryTradeMarkApplicationsResponse extends AcsResponse {
 
 			public void setClassificationName(String classificationName) {
 				this.classificationName = classificationName;
+			}
+
+			public String getClassificationCode() {
+				return this.classificationCode;
+			}
+
+			public void setClassificationCode(String classificationCode) {
+				this.classificationCode = classificationCode;
 			}
 		}
 
 		public static class FirstClassification {
 
-			private String classificationCode;
-
 			private String classificationName;
 
-			public String getClassificationCode() {
-				return this.classificationCode;
-			}
-
-			public void setClassificationCode(String classificationCode) {
-				this.classificationCode = classificationCode;
-			}
+			private String classificationCode;
 
 			public String getClassificationName() {
 				return this.classificationName;
@@ -361,29 +393,29 @@ public class QueryTradeMarkApplicationsResponse extends AcsResponse {
 			public void setClassificationName(String classificationName) {
 				this.classificationName = classificationName;
 			}
+
+			public String getClassificationCode() {
+				return this.classificationCode;
+			}
+
+			public void setClassificationCode(String classificationCode) {
+				this.classificationCode = classificationCode;
+			}
 		}
 
 		public static class RenewResponse {
 
-			private String name;
-
 			private String engName;
-
-			private String address;
-
-			private String engAddress;
 
 			private Long registerTime;
 
+			private String engAddress;
+
+			private String address;
+
+			private String name;
+
 			private Long submitSbjtime;
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
 
 			public String getEngName() {
 				return this.engName;
@@ -393,12 +425,12 @@ public class QueryTradeMarkApplicationsResponse extends AcsResponse {
 				this.engName = engName;
 			}
 
-			public String getAddress() {
-				return this.address;
+			public Long getRegisterTime() {
+				return this.registerTime;
 			}
 
-			public void setAddress(String address) {
-				this.address = address;
+			public void setRegisterTime(Long registerTime) {
+				this.registerTime = registerTime;
 			}
 
 			public String getEngAddress() {
@@ -409,12 +441,20 @@ public class QueryTradeMarkApplicationsResponse extends AcsResponse {
 				this.engAddress = engAddress;
 			}
 
-			public Long getRegisterTime() {
-				return this.registerTime;
+			public String getAddress() {
+				return this.address;
 			}
 
-			public void setRegisterTime(Long registerTime) {
-				this.registerTime = registerTime;
+			public void setAddress(String address) {
+				this.address = address;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
 			}
 
 			public Long getSubmitSbjtime() {

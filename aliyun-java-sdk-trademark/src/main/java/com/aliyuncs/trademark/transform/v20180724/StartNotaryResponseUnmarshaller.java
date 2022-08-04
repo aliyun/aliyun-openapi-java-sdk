@@ -23,9 +23,9 @@ public class StartNotaryResponseUnmarshaller {
 	public static StartNotaryResponse unmarshall(StartNotaryResponse startNotaryResponse, UnmarshallerContext _ctx) {
 		
 		startNotaryResponse.setRequestId(_ctx.stringValue("StartNotaryResponse.RequestId"));
-		startNotaryResponse.setNotaryUrl(_ctx.stringValue("StartNotaryResponse.NotaryUrl"));
-		startNotaryResponse.setSuccess(_ctx.booleanValue("StartNotaryResponse.Success"));
 		startNotaryResponse.setErrorMsg(_ctx.stringValue("StartNotaryResponse.ErrorMsg"));
+		startNotaryResponse.setSuccess(_ctx.booleanValue("StartNotaryResponse.Success"));
+		startNotaryResponse.setNotaryUrl(_ctx.stringValue("StartNotaryResponse.NotaryUrl"));
 		startNotaryResponse.setErrorCode(_ctx.stringValue("StartNotaryResponse.ErrorCode"));
 	 
 	 	return startNotaryResponse;

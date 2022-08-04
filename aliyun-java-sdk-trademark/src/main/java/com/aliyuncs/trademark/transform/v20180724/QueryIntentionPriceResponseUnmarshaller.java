@@ -29,42 +29,42 @@ public class QueryIntentionPriceResponseUnmarshaller {
 	public static QueryIntentionPriceResponse unmarshall(QueryIntentionPriceResponse queryIntentionPriceResponse, UnmarshallerContext _ctx) {
 		
 		queryIntentionPriceResponse.setRequestId(_ctx.stringValue("QueryIntentionPriceResponse.RequestId"));
-		queryIntentionPriceResponse.setTotalItemNum(_ctx.integerValue("QueryIntentionPriceResponse.TotalItemNum"));
 		queryIntentionPriceResponse.setCurrentPageNum(_ctx.integerValue("QueryIntentionPriceResponse.CurrentPageNum"));
-		queryIntentionPriceResponse.setPageSize(_ctx.integerValue("QueryIntentionPriceResponse.PageSize"));
 		queryIntentionPriceResponse.setTotalPageNum(_ctx.integerValue("QueryIntentionPriceResponse.TotalPageNum"));
+		queryIntentionPriceResponse.setPageSize(_ctx.integerValue("QueryIntentionPriceResponse.PageSize"));
+		queryIntentionPriceResponse.setTotalItemNum(_ctx.integerValue("QueryIntentionPriceResponse.TotalItemNum"));
 
 		List<TmProduces> data = new ArrayList<TmProduces>();
 		for (int i = 0; i < _ctx.lengthValue("QueryIntentionPriceResponse.Data.Length"); i++) {
 			TmProduces tmProduces = new TmProduces();
-			tmProduces.setBizId(_ctx.stringValue("QueryIntentionPriceResponse.Data["+ i +"].BizId"));
-			tmProduces.setMaterialName(_ctx.stringValue("QueryIntentionPriceResponse.Data["+ i +"].MaterialName"));
-			tmProduces.setTmIcon(_ctx.stringValue("QueryIntentionPriceResponse.Data["+ i +"].TmIcon"));
-			tmProduces.setTmName(_ctx.stringValue("QueryIntentionPriceResponse.Data["+ i +"].TmName"));
-			tmProduces.setTmNumber(_ctx.stringValue("QueryIntentionPriceResponse.Data["+ i +"].TmNumber"));
-			tmProduces.setCreateTime(_ctx.longValue("QueryIntentionPriceResponse.Data["+ i +"].CreateTime"));
 			tmProduces.setType(_ctx.integerValue("QueryIntentionPriceResponse.Data["+ i +"].Type"));
 			tmProduces.setStatus(_ctx.integerValue("QueryIntentionPriceResponse.Data["+ i +"].Status"));
 			tmProduces.setOrderPrice(_ctx.floatValue("QueryIntentionPriceResponse.Data["+ i +"].OrderPrice"));
-			tmProduces.setMaterialId(_ctx.stringValue("QueryIntentionPriceResponse.Data["+ i +"].MaterialId"));
-			tmProduces.setLoaUrl(_ctx.stringValue("QueryIntentionPriceResponse.Data["+ i +"].LoaUrl"));
-			tmProduces.setNote(_ctx.stringValue("QueryIntentionPriceResponse.Data["+ i +"].Note"));
 			tmProduces.setUpdateTime(_ctx.longValue("QueryIntentionPriceResponse.Data["+ i +"].UpdateTime"));
-			tmProduces.setSupplementStatus(_ctx.integerValue("QueryIntentionPriceResponse.Data["+ i +"].SupplementStatus"));
-			tmProduces.setSupplementId(_ctx.longValue("QueryIntentionPriceResponse.Data["+ i +"].SupplementId"));
-			tmProduces.setTotalPrice(_ctx.floatValue("QueryIntentionPriceResponse.Data["+ i +"].TotalPrice"));
+			tmProduces.setMaterialName(_ctx.stringValue("QueryIntentionPriceResponse.Data["+ i +"].MaterialName"));
+			tmProduces.setCreateTime(_ctx.longValue("QueryIntentionPriceResponse.Data["+ i +"].CreateTime"));
+			tmProduces.setBizId(_ctx.stringValue("QueryIntentionPriceResponse.Data["+ i +"].BizId"));
 			tmProduces.setServicePrice(_ctx.floatValue("QueryIntentionPriceResponse.Data["+ i +"].ServicePrice"));
+			tmProduces.setTmIcon(_ctx.stringValue("QueryIntentionPriceResponse.Data["+ i +"].TmIcon"));
+			tmProduces.setTmName(_ctx.stringValue("QueryIntentionPriceResponse.Data["+ i +"].TmName"));
+			tmProduces.setMaterialId(_ctx.stringValue("QueryIntentionPriceResponse.Data["+ i +"].MaterialId"));
+			tmProduces.setSupplementId(_ctx.longValue("QueryIntentionPriceResponse.Data["+ i +"].SupplementId"));
+			tmProduces.setLoaUrl(_ctx.stringValue("QueryIntentionPriceResponse.Data["+ i +"].LoaUrl"));
+			tmProduces.setTmNumber(_ctx.stringValue("QueryIntentionPriceResponse.Data["+ i +"].TmNumber"));
+			tmProduces.setNote(_ctx.stringValue("QueryIntentionPriceResponse.Data["+ i +"].Note"));
+			tmProduces.setSupplementStatus(_ctx.integerValue("QueryIntentionPriceResponse.Data["+ i +"].SupplementStatus"));
+			tmProduces.setTotalPrice(_ctx.floatValue("QueryIntentionPriceResponse.Data["+ i +"].TotalPrice"));
 
 			FirstClassification firstClassification = new FirstClassification();
-			firstClassification.setClassificationCode(_ctx.stringValue("QueryIntentionPriceResponse.Data["+ i +"].FirstClassification.ClassificationCode"));
 			firstClassification.setClassificationName(_ctx.stringValue("QueryIntentionPriceResponse.Data["+ i +"].FirstClassification.ClassificationName"));
+			firstClassification.setClassificationCode(_ctx.stringValue("QueryIntentionPriceResponse.Data["+ i +"].FirstClassification.ClassificationCode"));
 			tmProduces.setFirstClassification(firstClassification);
 
 			List<ThirdClassifications> thirdClassification = new ArrayList<ThirdClassifications>();
 			for (int j = 0; j < _ctx.lengthValue("QueryIntentionPriceResponse.Data["+ i +"].ThirdClassification.Length"); j++) {
 				ThirdClassifications thirdClassifications = new ThirdClassifications();
-				thirdClassifications.setClassificationCode(_ctx.stringValue("QueryIntentionPriceResponse.Data["+ i +"].ThirdClassification["+ j +"].ClassificationCode"));
 				thirdClassifications.setClassificationName(_ctx.stringValue("QueryIntentionPriceResponse.Data["+ i +"].ThirdClassification["+ j +"].ClassificationName"));
+				thirdClassifications.setClassificationCode(_ctx.stringValue("QueryIntentionPriceResponse.Data["+ i +"].ThirdClassification["+ j +"].ClassificationCode"));
 
 				thirdClassification.add(thirdClassifications);
 			}

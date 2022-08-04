@@ -25,9 +25,11 @@ import com.aliyuncs.trademark.Endpoint;
 public class BindMaterialRequest extends RpcAcsRequest<BindMaterialResponse> {
 	   
 
-	private String bizId;
+	private String legalNoticeKey;
 
 	private String materialId;
+
+	private String bizId;
 
 	private String loaOssKey;
 	public BindMaterialRequest() {
@@ -39,14 +41,14 @@ public class BindMaterialRequest extends RpcAcsRequest<BindMaterialResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getBizId() {
-		return this.bizId;
+	public String getLegalNoticeKey() {
+		return this.legalNoticeKey;
 	}
 
-	public void setBizId(String bizId) {
-		this.bizId = bizId;
-		if(bizId != null){
-			putQueryParameter("BizId", bizId);
+	public void setLegalNoticeKey(String legalNoticeKey) {
+		this.legalNoticeKey = legalNoticeKey;
+		if(legalNoticeKey != null){
+			putQueryParameter("LegalNoticeKey", legalNoticeKey);
 		}
 	}
 
@@ -58,6 +60,17 @@ public class BindMaterialRequest extends RpcAcsRequest<BindMaterialResponse> {
 		this.materialId = materialId;
 		if(materialId != null){
 			putQueryParameter("MaterialId", materialId);
+		}
+	}
+
+	public String getBizId() {
+		return this.bizId;
+	}
+
+	public void setBizId(String bizId) {
+		this.bizId = bizId;
+		if(bizId != null){
+			putQueryParameter("BizId", bizId);
 		}
 	}
 

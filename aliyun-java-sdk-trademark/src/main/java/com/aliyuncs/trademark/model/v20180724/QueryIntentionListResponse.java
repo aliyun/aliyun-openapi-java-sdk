@@ -25,33 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryIntentionListResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Integer totalItemNum;
-
 	private Integer currentPageNum;
-
-	private Integer pageSize;
 
 	private Integer totalPageNum;
 
+	private String requestId;
+
+	private Integer pageSize;
+
+	private Integer totalItemNum;
+
 	private List<Intention> data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getTotalItemNum() {
-		return this.totalItemNum;
-	}
-
-	public void setTotalItemNum(Integer totalItemNum) {
-		this.totalItemNum = totalItemNum;
-	}
 
 	public Integer getCurrentPageNum() {
 		return this.currentPageNum;
@@ -59,6 +43,22 @@ public class QueryIntentionListResponse extends AcsResponse {
 
 	public void setCurrentPageNum(Integer currentPageNum) {
 		this.currentPageNum = currentPageNum;
+	}
+
+	public Integer getTotalPageNum() {
+		return this.totalPageNum;
+	}
+
+	public void setTotalPageNum(Integer totalPageNum) {
+		this.totalPageNum = totalPageNum;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageSize() {
@@ -69,12 +69,12 @@ public class QueryIntentionListResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getTotalPageNum() {
-		return this.totalPageNum;
+	public Integer getTotalItemNum() {
+		return this.totalItemNum;
 	}
 
-	public void setTotalPageNum(Integer totalPageNum) {
-		this.totalPageNum = totalPageNum;
+	public void setTotalItemNum(Integer totalItemNum) {
+		this.totalItemNum = totalItemNum;
 	}
 
 	public List<Intention> getData() {
@@ -87,47 +87,23 @@ public class QueryIntentionListResponse extends AcsResponse {
 
 	public static class Intention {
 
-		private String userId;
-
-		private String registerNumber;
-
-		private String classification;
-
 		private Integer type;
-
-		private String bizId;
-
-		private String description;
 
 		private Integer status;
 
 		private Long updateTime;
 
+		private String description;
+
+		private String registerNumber;
+
 		private Long createTime;
 
-		public String getUserId() {
-			return this.userId;
-		}
+		private String userId;
 
-		public void setUserId(String userId) {
-			this.userId = userId;
-		}
+		private String bizId;
 
-		public String getRegisterNumber() {
-			return this.registerNumber;
-		}
-
-		public void setRegisterNumber(String registerNumber) {
-			this.registerNumber = registerNumber;
-		}
-
-		public String getClassification() {
-			return this.classification;
-		}
-
-		public void setClassification(String classification) {
-			this.classification = classification;
-		}
+		private String classification;
 
 		public Integer getType() {
 			return this.type;
@@ -135,22 +111,6 @@ public class QueryIntentionListResponse extends AcsResponse {
 
 		public void setType(Integer type) {
 			this.type = type;
-		}
-
-		public String getBizId() {
-			return this.bizId;
-		}
-
-		public void setBizId(String bizId) {
-			this.bizId = bizId;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
 		}
 
 		public Integer getStatus() {
@@ -169,12 +129,52 @@ public class QueryIntentionListResponse extends AcsResponse {
 			this.updateTime = updateTime;
 		}
 
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getRegisterNumber() {
+			return this.registerNumber;
+		}
+
+		public void setRegisterNumber(String registerNumber) {
+			this.registerNumber = registerNumber;
+		}
+
 		public Long getCreateTime() {
 			return this.createTime;
 		}
 
 		public void setCreateTime(Long createTime) {
 			this.createTime = createTime;
+		}
+
+		public String getUserId() {
+			return this.userId;
+		}
+
+		public void setUserId(String userId) {
+			this.userId = userId;
+		}
+
+		public String getBizId() {
+			return this.bizId;
+		}
+
+		public void setBizId(String bizId) {
+			this.bizId = bizId;
+		}
+
+		public String getClassification() {
+			return this.classification;
+		}
+
+		public void setClassification(String classification) {
+			this.classification = classification;
 		}
 	}
 

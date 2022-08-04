@@ -47,135 +47,49 @@ public class QueryTradeProduceDetailResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String bizId;
-
-		private String preOrderId;
-
-		private Float preAmount;
-
-		private Float finalAmount;
-
-		private String registerNumber;
-
-		private String classification;
-
-		private String icon;
-
-		private String operateNote;
-
-		private Integer buyerStatus;
-
-		private String userId;
-
-		private Long createTime;
-
 		private Long updateTime;
-
-		private Map<Object,Object> extend;
 
 		private String thirdCode;
 
 		private String share;
 
+		private Float preAmount;
+
+		private Long createTime;
+
+		private String userId;
+
+		private Float refundAmount;
+
+		private String icon;
+
+		private String bizId;
+
+		private Integer buyerStatus;
+
+		private Integer source;
+
+		private Float confiscateAmount;
+
+		private String operateNote;
+
+		private String preOrderId;
+
+		private Map<Object,Object> extend;
+
+		private String tmName;
+
 		private String exclusiveDateLimit;
 
 		private Boolean allowCancel;
 
-		private String tmName;
+		private String registerNumber;
+
+		private Float finalAmount;
+
+		private String classification;
 
 		private Float paidAmount;
-
-		private Float confiscateAmount;
-
-		private Float refundAmount;
-
-		public String getBizId() {
-			return this.bizId;
-		}
-
-		public void setBizId(String bizId) {
-			this.bizId = bizId;
-		}
-
-		public String getPreOrderId() {
-			return this.preOrderId;
-		}
-
-		public void setPreOrderId(String preOrderId) {
-			this.preOrderId = preOrderId;
-		}
-
-		public Float getPreAmount() {
-			return this.preAmount;
-		}
-
-		public void setPreAmount(Float preAmount) {
-			this.preAmount = preAmount;
-		}
-
-		public Float getFinalAmount() {
-			return this.finalAmount;
-		}
-
-		public void setFinalAmount(Float finalAmount) {
-			this.finalAmount = finalAmount;
-		}
-
-		public String getRegisterNumber() {
-			return this.registerNumber;
-		}
-
-		public void setRegisterNumber(String registerNumber) {
-			this.registerNumber = registerNumber;
-		}
-
-		public String getClassification() {
-			return this.classification;
-		}
-
-		public void setClassification(String classification) {
-			this.classification = classification;
-		}
-
-		public String getIcon() {
-			return this.icon;
-		}
-
-		public void setIcon(String icon) {
-			this.icon = icon;
-		}
-
-		public String getOperateNote() {
-			return this.operateNote;
-		}
-
-		public void setOperateNote(String operateNote) {
-			this.operateNote = operateNote;
-		}
-
-		public Integer getBuyerStatus() {
-			return this.buyerStatus;
-		}
-
-		public void setBuyerStatus(Integer buyerStatus) {
-			this.buyerStatus = buyerStatus;
-		}
-
-		public String getUserId() {
-			return this.userId;
-		}
-
-		public void setUserId(String userId) {
-			this.userId = userId;
-		}
-
-		public Long getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
-		}
 
 		public Long getUpdateTime() {
 			return this.updateTime;
@@ -183,14 +97,6 @@ public class QueryTradeProduceDetailResponse extends AcsResponse {
 
 		public void setUpdateTime(Long updateTime) {
 			this.updateTime = updateTime;
-		}
-
-		public Map<Object,Object> getExtend() {
-			return this.extend;
-		}
-
-		public void setExtend(Map<Object,Object> extend) {
-			this.extend = extend;
 		}
 
 		public String getThirdCode() {
@@ -209,6 +115,110 @@ public class QueryTradeProduceDetailResponse extends AcsResponse {
 			this.share = share;
 		}
 
+		public Float getPreAmount() {
+			return this.preAmount;
+		}
+
+		public void setPreAmount(Float preAmount) {
+			this.preAmount = preAmount;
+		}
+
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getUserId() {
+			return this.userId;
+		}
+
+		public void setUserId(String userId) {
+			this.userId = userId;
+		}
+
+		public Float getRefundAmount() {
+			return this.refundAmount;
+		}
+
+		public void setRefundAmount(Float refundAmount) {
+			this.refundAmount = refundAmount;
+		}
+
+		public String getIcon() {
+			return this.icon;
+		}
+
+		public void setIcon(String icon) {
+			this.icon = icon;
+		}
+
+		public String getBizId() {
+			return this.bizId;
+		}
+
+		public void setBizId(String bizId) {
+			this.bizId = bizId;
+		}
+
+		public Integer getBuyerStatus() {
+			return this.buyerStatus;
+		}
+
+		public void setBuyerStatus(Integer buyerStatus) {
+			this.buyerStatus = buyerStatus;
+		}
+
+		public Integer getSource() {
+			return this.source;
+		}
+
+		public void setSource(Integer source) {
+			this.source = source;
+		}
+
+		public Float getConfiscateAmount() {
+			return this.confiscateAmount;
+		}
+
+		public void setConfiscateAmount(Float confiscateAmount) {
+			this.confiscateAmount = confiscateAmount;
+		}
+
+		public String getOperateNote() {
+			return this.operateNote;
+		}
+
+		public void setOperateNote(String operateNote) {
+			this.operateNote = operateNote;
+		}
+
+		public String getPreOrderId() {
+			return this.preOrderId;
+		}
+
+		public void setPreOrderId(String preOrderId) {
+			this.preOrderId = preOrderId;
+		}
+
+		public Map<Object,Object> getExtend() {
+			return this.extend;
+		}
+
+		public void setExtend(Map<Object,Object> extend) {
+			this.extend = extend;
+		}
+
+		public String getTmName() {
+			return this.tmName;
+		}
+
+		public void setTmName(String tmName) {
+			this.tmName = tmName;
+		}
+
 		public String getExclusiveDateLimit() {
 			return this.exclusiveDateLimit;
 		}
@@ -225,12 +235,28 @@ public class QueryTradeProduceDetailResponse extends AcsResponse {
 			this.allowCancel = allowCancel;
 		}
 
-		public String getTmName() {
-			return this.tmName;
+		public String getRegisterNumber() {
+			return this.registerNumber;
 		}
 
-		public void setTmName(String tmName) {
-			this.tmName = tmName;
+		public void setRegisterNumber(String registerNumber) {
+			this.registerNumber = registerNumber;
+		}
+
+		public Float getFinalAmount() {
+			return this.finalAmount;
+		}
+
+		public void setFinalAmount(Float finalAmount) {
+			this.finalAmount = finalAmount;
+		}
+
+		public String getClassification() {
+			return this.classification;
+		}
+
+		public void setClassification(String classification) {
+			this.classification = classification;
 		}
 
 		public Float getPaidAmount() {
@@ -239,22 +265,6 @@ public class QueryTradeProduceDetailResponse extends AcsResponse {
 
 		public void setPaidAmount(Float paidAmount) {
 			this.paidAmount = paidAmount;
-		}
-
-		public Float getConfiscateAmount() {
-			return this.confiscateAmount;
-		}
-
-		public void setConfiscateAmount(Float confiscateAmount) {
-			this.confiscateAmount = confiscateAmount;
-		}
-
-		public Float getRefundAmount() {
-			return this.refundAmount;
-		}
-
-		public void setRefundAmount(Float refundAmount) {
-			this.refundAmount = refundAmount;
 		}
 	}
 

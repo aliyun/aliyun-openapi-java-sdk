@@ -47,23 +47,15 @@ public class QueryCommunicationLogsResponse extends AcsResponse {
 
 	public static class TaskList {
 
-		private String bizId;
-
 		private String note;
 
-		private String partnerCode;
+		private String bizId;
 
 		private Long updateTime;
 
+		private String partnerCode;
+
 		private Long createTime;
-
-		public String getBizId() {
-			return this.bizId;
-		}
-
-		public void setBizId(String bizId) {
-			this.bizId = bizId;
-		}
 
 		public String getNote() {
 			return this.note;
@@ -73,12 +65,12 @@ public class QueryCommunicationLogsResponse extends AcsResponse {
 			this.note = note;
 		}
 
-		public String getPartnerCode() {
-			return this.partnerCode;
+		public String getBizId() {
+			return this.bizId;
 		}
 
-		public void setPartnerCode(String partnerCode) {
-			this.partnerCode = partnerCode;
+		public void setBizId(String bizId) {
+			this.bizId = bizId;
 		}
 
 		public Long getUpdateTime() {
@@ -87,6 +79,14 @@ public class QueryCommunicationLogsResponse extends AcsResponse {
 
 		public void setUpdateTime(Long updateTime) {
 			this.updateTime = updateTime;
+		}
+
+		public String getPartnerCode() {
+			return this.partnerCode;
+		}
+
+		public void setPartnerCode(String partnerCode) {
+			this.partnerCode = partnerCode;
 		}
 
 		public Long getCreateTime() {

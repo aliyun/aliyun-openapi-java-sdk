@@ -25,11 +25,11 @@ import com.aliyuncs.trademark.Endpoint;
 public class ApplyNotaryPostRequest extends RpcAcsRequest<ApplyNotaryPostResponse> {
 	   
 
+	private Long notaryOrderId;
+
 	private String receiverName;
 
 	private String receiverPhone;
-
-	private Long notaryOrderId;
 
 	private String receiverAddress;
 	public ApplyNotaryPostRequest() {
@@ -39,6 +39,17 @@ public class ApplyNotaryPostRequest extends RpcAcsRequest<ApplyNotaryPostRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getNotaryOrderId() {
+		return this.notaryOrderId;
+	}
+
+	public void setNotaryOrderId(Long notaryOrderId) {
+		this.notaryOrderId = notaryOrderId;
+		if(notaryOrderId != null){
+			putQueryParameter("NotaryOrderId", notaryOrderId.toString());
+		}
 	}
 
 	public String getReceiverName() {
@@ -60,17 +71,6 @@ public class ApplyNotaryPostRequest extends RpcAcsRequest<ApplyNotaryPostRespons
 		this.receiverPhone = receiverPhone;
 		if(receiverPhone != null){
 			putQueryParameter("ReceiverPhone", receiverPhone);
-		}
-	}
-
-	public Long getNotaryOrderId() {
-		return this.notaryOrderId;
-	}
-
-	public void setNotaryOrderId(Long notaryOrderId) {
-		this.notaryOrderId = notaryOrderId;
-		if(notaryOrderId != null){
-			putQueryParameter("NotaryOrderId", notaryOrderId.toString());
 		}
 	}
 

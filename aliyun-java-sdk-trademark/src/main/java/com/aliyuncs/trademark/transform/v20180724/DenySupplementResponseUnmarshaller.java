@@ -23,8 +23,8 @@ public class DenySupplementResponseUnmarshaller {
 	public static DenySupplementResponse unmarshall(DenySupplementResponse denySupplementResponse, UnmarshallerContext _ctx) {
 		
 		denySupplementResponse.setRequestId(_ctx.stringValue("DenySupplementResponse.RequestId"));
-		denySupplementResponse.setSuccess(_ctx.booleanValue("DenySupplementResponse.Success"));
 		denySupplementResponse.setErrorMsg(_ctx.stringValue("DenySupplementResponse.ErrorMsg"));
+		denySupplementResponse.setSuccess(_ctx.booleanValue("DenySupplementResponse.Success"));
 		denySupplementResponse.setErrorCode(_ctx.stringValue("DenySupplementResponse.ErrorCode"));
 	 
 	 	return denySupplementResponse;

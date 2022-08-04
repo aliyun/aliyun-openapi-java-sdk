@@ -25,33 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryOfficialFileCustomListResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Integer totalItemNum;
-
 	private Integer currentPageNum;
-
-	private Integer pageSize;
 
 	private Integer totalPageNum;
 
+	private String requestId;
+
+	private Integer pageSize;
+
+	private Integer totalItemNum;
+
 	private List<CustomList> data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getTotalItemNum() {
-		return this.totalItemNum;
-	}
-
-	public void setTotalItemNum(Integer totalItemNum) {
-		this.totalItemNum = totalItemNum;
-	}
 
 	public Integer getCurrentPageNum() {
 		return this.currentPageNum;
@@ -59,6 +43,22 @@ public class QueryOfficialFileCustomListResponse extends AcsResponse {
 
 	public void setCurrentPageNum(Integer currentPageNum) {
 		this.currentPageNum = currentPageNum;
+	}
+
+	public Integer getTotalPageNum() {
+		return this.totalPageNum;
+	}
+
+	public void setTotalPageNum(Integer totalPageNum) {
+		this.totalPageNum = totalPageNum;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageSize() {
@@ -69,12 +69,12 @@ public class QueryOfficialFileCustomListResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getTotalPageNum() {
-		return this.totalPageNum;
+	public Integer getTotalItemNum() {
+		return this.totalItemNum;
 	}
 
-	public void setTotalPageNum(Integer totalPageNum) {
-		this.totalPageNum = totalPageNum;
+	public void setTotalItemNum(Integer totalItemNum) {
+		this.totalItemNum = totalItemNum;
 	}
 
 	public List<CustomList> getData() {
@@ -89,17 +89,17 @@ public class QueryOfficialFileCustomListResponse extends AcsResponse {
 
 		private String status;
 
-		private Long createTime;
-
-		private Long startAcceptTime;
-
-		private Long endAcceptTime;
-
 		private Long expireTime;
+
+		private String remark;
 
 		private String downloadUrl;
 
-		private String remark;
+		private Long createTime;
+
+		private Long endAcceptTime;
+
+		private Long startAcceptTime;
 
 		public String getStatus() {
 			return this.status;
@@ -107,30 +107,6 @@ public class QueryOfficialFileCustomListResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
-		}
-
-		public Long getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
-		}
-
-		public Long getStartAcceptTime() {
-			return this.startAcceptTime;
-		}
-
-		public void setStartAcceptTime(Long startAcceptTime) {
-			this.startAcceptTime = startAcceptTime;
-		}
-
-		public Long getEndAcceptTime() {
-			return this.endAcceptTime;
-		}
-
-		public void setEndAcceptTime(Long endAcceptTime) {
-			this.endAcceptTime = endAcceptTime;
 		}
 
 		public Long getExpireTime() {
@@ -141,6 +117,14 @@ public class QueryOfficialFileCustomListResponse extends AcsResponse {
 			this.expireTime = expireTime;
 		}
 
+		public String getRemark() {
+			return this.remark;
+		}
+
+		public void setRemark(String remark) {
+			this.remark = remark;
+		}
+
 		public String getDownloadUrl() {
 			return this.downloadUrl;
 		}
@@ -149,12 +133,28 @@ public class QueryOfficialFileCustomListResponse extends AcsResponse {
 			this.downloadUrl = downloadUrl;
 		}
 
-		public String getRemark() {
-			return this.remark;
+		public Long getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setRemark(String remark) {
-			this.remark = remark;
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
+		}
+
+		public Long getEndAcceptTime() {
+			return this.endAcceptTime;
+		}
+
+		public void setEndAcceptTime(Long endAcceptTime) {
+			this.endAcceptTime = endAcceptTime;
+		}
+
+		public Long getStartAcceptTime() {
+			return this.startAcceptTime;
+		}
+
+		public void setStartAcceptTime(Long startAcceptTime) {
+			this.startAcceptTime = startAcceptTime;
 		}
 	}
 

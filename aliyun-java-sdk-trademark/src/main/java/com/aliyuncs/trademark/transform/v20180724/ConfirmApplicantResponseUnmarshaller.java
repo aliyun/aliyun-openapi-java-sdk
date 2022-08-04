@@ -23,8 +23,8 @@ public class ConfirmApplicantResponseUnmarshaller {
 	public static ConfirmApplicantResponse unmarshall(ConfirmApplicantResponse confirmApplicantResponse, UnmarshallerContext _ctx) {
 		
 		confirmApplicantResponse.setRequestId(_ctx.stringValue("ConfirmApplicantResponse.RequestId"));
-		confirmApplicantResponse.setSuccess(_ctx.booleanValue("ConfirmApplicantResponse.Success"));
 		confirmApplicantResponse.setErrorMsg(_ctx.stringValue("ConfirmApplicantResponse.ErrorMsg"));
+		confirmApplicantResponse.setSuccess(_ctx.booleanValue("ConfirmApplicantResponse.Success"));
 		confirmApplicantResponse.setErrorCode(_ctx.stringValue("ConfirmApplicantResponse.ErrorCode"));
 	 
 	 	return confirmApplicantResponse;

@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class UploadNotaryDataResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String userAuthUrl;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getUserAuthUrl() {
 		return this.userAuthUrl;
@@ -42,6 +34,14 @@ public class UploadNotaryDataResponse extends AcsResponse {
 
 	public void setUserAuthUrl(String userAuthUrl) {
 		this.userAuthUrl = userAuthUrl;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

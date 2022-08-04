@@ -31,10 +31,10 @@ public class QueryCommunicationLogsResponseUnmarshaller {
 		List<TaskList> data = new ArrayList<TaskList>();
 		for (int i = 0; i < _ctx.lengthValue("QueryCommunicationLogsResponse.Data.Length"); i++) {
 			TaskList taskList = new TaskList();
-			taskList.setBizId(_ctx.stringValue("QueryCommunicationLogsResponse.Data["+ i +"].BizId"));
 			taskList.setNote(_ctx.stringValue("QueryCommunicationLogsResponse.Data["+ i +"].Note"));
-			taskList.setPartnerCode(_ctx.stringValue("QueryCommunicationLogsResponse.Data["+ i +"].PartnerCode"));
+			taskList.setBizId(_ctx.stringValue("QueryCommunicationLogsResponse.Data["+ i +"].BizId"));
 			taskList.setUpdateTime(_ctx.longValue("QueryCommunicationLogsResponse.Data["+ i +"].UpdateTime"));
+			taskList.setPartnerCode(_ctx.stringValue("QueryCommunicationLogsResponse.Data["+ i +"].PartnerCode"));
 			taskList.setCreateTime(_ctx.longValue("QueryCommunicationLogsResponse.Data["+ i +"].CreateTime"));
 
 			data.add(taskList);

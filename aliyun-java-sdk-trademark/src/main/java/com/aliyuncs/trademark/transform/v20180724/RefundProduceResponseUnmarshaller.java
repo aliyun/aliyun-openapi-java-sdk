@@ -23,8 +23,8 @@ public class RefundProduceResponseUnmarshaller {
 	public static RefundProduceResponse unmarshall(RefundProduceResponse refundProduceResponse, UnmarshallerContext _ctx) {
 		
 		refundProduceResponse.setRequestId(_ctx.stringValue("RefundProduceResponse.RequestId"));
-		refundProduceResponse.setSuccess(_ctx.booleanValue("RefundProduceResponse.Success"));
 		refundProduceResponse.setErrorMsg(_ctx.stringValue("RefundProduceResponse.ErrorMsg"));
+		refundProduceResponse.setSuccess(_ctx.booleanValue("RefundProduceResponse.Success"));
 		refundProduceResponse.setErrorCode(_ctx.stringValue("RefundProduceResponse.ErrorCode"));
 	 
 	 	return refundProduceResponse;

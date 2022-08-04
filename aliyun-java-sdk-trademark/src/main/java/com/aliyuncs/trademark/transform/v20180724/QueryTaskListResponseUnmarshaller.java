@@ -27,21 +27,21 @@ public class QueryTaskListResponseUnmarshaller {
 	public static QueryTaskListResponse unmarshall(QueryTaskListResponse queryTaskListResponse, UnmarshallerContext _ctx) {
 		
 		queryTaskListResponse.setRequestId(_ctx.stringValue("QueryTaskListResponse.RequestId"));
-		queryTaskListResponse.setTotalItemNum(_ctx.integerValue("QueryTaskListResponse.TotalItemNum"));
 		queryTaskListResponse.setCurrentPageNum(_ctx.integerValue("QueryTaskListResponse.CurrentPageNum"));
-		queryTaskListResponse.setPageSize(_ctx.integerValue("QueryTaskListResponse.PageSize"));
 		queryTaskListResponse.setTotalPageNum(_ctx.integerValue("QueryTaskListResponse.TotalPageNum"));
+		queryTaskListResponse.setPageSize(_ctx.integerValue("QueryTaskListResponse.PageSize"));
+		queryTaskListResponse.setTotalItemNum(_ctx.integerValue("QueryTaskListResponse.TotalItemNum"));
 
 		List<TaskList> data = new ArrayList<TaskList>();
 		for (int i = 0; i < _ctx.lengthValue("QueryTaskListResponse.Data.Length"); i++) {
 			TaskList taskList = new TaskList();
-			taskList.setTaskStatus(_ctx.stringValue("QueryTaskListResponse.Data["+ i +"].TaskStatus"));
 			taskList.setTaskType(_ctx.stringValue("QueryTaskListResponse.Data["+ i +"].TaskType"));
-			taskList.setErrMsg(_ctx.stringValue("QueryTaskListResponse.Data["+ i +"].ErrMsg"));
 			taskList.setResult(_ctx.stringValue("QueryTaskListResponse.Data["+ i +"].Result"));
-			taskList.setFileName(_ctx.stringValue("QueryTaskListResponse.Data["+ i +"].FileName"));
-			taskList.setCreateTime(_ctx.longValue("QueryTaskListResponse.Data["+ i +"].CreateTime"));
+			taskList.setTaskStatus(_ctx.stringValue("QueryTaskListResponse.Data["+ i +"].TaskStatus"));
 			taskList.setCompleteTime(_ctx.longValue("QueryTaskListResponse.Data["+ i +"].CompleteTime"));
+			taskList.setCreateTime(_ctx.longValue("QueryTaskListResponse.Data["+ i +"].CreateTime"));
+			taskList.setErrMsg(_ctx.stringValue("QueryTaskListResponse.Data["+ i +"].ErrMsg"));
+			taskList.setFileName(_ctx.stringValue("QueryTaskListResponse.Data["+ i +"].FileName"));
 
 			data.add(taskList);
 		}

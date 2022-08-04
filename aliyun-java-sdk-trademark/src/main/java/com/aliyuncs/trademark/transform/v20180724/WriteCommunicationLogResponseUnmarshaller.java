@@ -23,8 +23,8 @@ public class WriteCommunicationLogResponseUnmarshaller {
 	public static WriteCommunicationLogResponse unmarshall(WriteCommunicationLogResponse writeCommunicationLogResponse, UnmarshallerContext _ctx) {
 		
 		writeCommunicationLogResponse.setRequestId(_ctx.stringValue("WriteCommunicationLogResponse.RequestId"));
-		writeCommunicationLogResponse.setSuccess(_ctx.booleanValue("WriteCommunicationLogResponse.Success"));
 		writeCommunicationLogResponse.setErrorMsg(_ctx.stringValue("WriteCommunicationLogResponse.ErrorMsg"));
+		writeCommunicationLogResponse.setSuccess(_ctx.booleanValue("WriteCommunicationLogResponse.Success"));
 		writeCommunicationLogResponse.setErrorCode(_ctx.stringValue("WriteCommunicationLogResponse.ErrorCode"));
 	 
 	 	return writeCommunicationLogResponse;

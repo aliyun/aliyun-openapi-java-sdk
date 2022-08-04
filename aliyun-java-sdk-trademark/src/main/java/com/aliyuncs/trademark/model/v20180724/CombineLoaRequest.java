@@ -29,6 +29,8 @@ public class CombineLoaRequest extends RpcAcsRequest<CombineLoaResponse> {
 
 	private String address;
 
+	private String tmNumber;
+
 	private String materialId;
 
 	private String trademarkName;
@@ -36,6 +38,8 @@ public class CombineLoaRequest extends RpcAcsRequest<CombineLoaResponse> {
 	private String nationality;
 
 	private String tmProduceType;
+
+	private Integer principalName;
 	public CombineLoaRequest() {
 		super("Trademark", "2018-07-24", "CombineLoa");
 		setMethod(MethodType.POST);
@@ -64,6 +68,17 @@ public class CombineLoaRequest extends RpcAcsRequest<CombineLoaResponse> {
 		this.address = address;
 		if(address != null){
 			putQueryParameter("Address", address);
+		}
+	}
+
+	public String getTmNumber() {
+		return this.tmNumber;
+	}
+
+	public void setTmNumber(String tmNumber) {
+		this.tmNumber = tmNumber;
+		if(tmNumber != null){
+			putQueryParameter("TmNumber", tmNumber);
 		}
 	}
 
@@ -108,6 +123,17 @@ public class CombineLoaRequest extends RpcAcsRequest<CombineLoaResponse> {
 		this.tmProduceType = tmProduceType;
 		if(tmProduceType != null){
 			putQueryParameter("TmProduceType", tmProduceType);
+		}
+	}
+
+	public Integer getPrincipalName() {
+		return this.principalName;
+	}
+
+	public void setPrincipalName(Integer principalName) {
+		this.principalName = principalName;
+		if(principalName != null){
+			putQueryParameter("PrincipalName", principalName.toString());
 		}
 	}
 

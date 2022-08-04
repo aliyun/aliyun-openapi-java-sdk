@@ -27,11 +27,13 @@ public class QueryTradeMarkApplicationsByIntentionRequest extends RpcAcsRequest<
 
 	private String channel;
 
-	private Integer pageSize;
-
 	private String intentionBizId;
 
 	private Integer pageNum;
+
+	private Integer pageSize;
+
+	private String tmProduceStatus;
 	public QueryTradeMarkApplicationsByIntentionRequest() {
 		super("Trademark", "2018-07-24", "QueryTradeMarkApplicationsByIntention");
 		setMethod(MethodType.POST);
@@ -49,17 +51,6 @@ public class QueryTradeMarkApplicationsByIntentionRequest extends RpcAcsRequest<
 		this.channel = channel;
 		if(channel != null){
 			putQueryParameter("Channel", channel);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -82,6 +73,28 @@ public class QueryTradeMarkApplicationsByIntentionRequest extends RpcAcsRequest<
 		this.pageNum = pageNum;
 		if(pageNum != null){
 			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getTmProduceStatus() {
+		return this.tmProduceStatus;
+	}
+
+	public void setTmProduceStatus(String tmProduceStatus) {
+		this.tmProduceStatus = tmProduceStatus;
+		if(tmProduceStatus != null){
+			putQueryParameter("TmProduceStatus", tmProduceStatus);
 		}
 	}
 

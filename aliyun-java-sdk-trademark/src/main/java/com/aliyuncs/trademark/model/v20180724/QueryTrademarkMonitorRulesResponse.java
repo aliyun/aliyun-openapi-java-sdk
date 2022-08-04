@@ -25,21 +25,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryTrademarkMonitorRulesResponse extends AcsResponse {
 
+	private Boolean nextPage;
+
 	private String requestId;
+
+	private Boolean prePage;
 
 	private Integer totalItemNum;
 
 	private Integer currentPageNum;
 
-	private Integer pageSize;
-
 	private Integer totalPageNum;
 
-	private Boolean prePage;
-
-	private Boolean nextPage;
+	private Integer pageSize;
 
 	private List<TmMonitorRule> data;
+
+	public Boolean getNextPage() {
+		return this.nextPage;
+	}
+
+	public void setNextPage(Boolean nextPage) {
+		this.nextPage = nextPage;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,6 +55,14 @@ public class QueryTrademarkMonitorRulesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getPrePage() {
+		return this.prePage;
+	}
+
+	public void setPrePage(Boolean prePage) {
+		this.prePage = prePage;
 	}
 
 	public Integer getTotalItemNum() {
@@ -65,14 +81,6 @@ public class QueryTrademarkMonitorRulesResponse extends AcsResponse {
 		this.currentPageNum = currentPageNum;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
 	public Integer getTotalPageNum() {
 		return this.totalPageNum;
 	}
@@ -81,20 +89,12 @@ public class QueryTrademarkMonitorRulesResponse extends AcsResponse {
 		this.totalPageNum = totalPageNum;
 	}
 
-	public Boolean getPrePage() {
-		return this.prePage;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setPrePage(Boolean prePage) {
-		this.prePage = prePage;
-	}
-
-	public Boolean getNextPage() {
-		return this.nextPage;
-	}
-
-	public void setNextPage(Boolean nextPage) {
-		this.nextPage = nextPage;
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public List<TmMonitorRule> getData() {
@@ -107,59 +107,43 @@ public class QueryTrademarkMonitorRulesResponse extends AcsResponse {
 
 	public static class TmMonitorRule {
 
-		private String id;
-
-		private String userId;
-
 		private String ruleStatus;
 
-		private String ruleSource;
+		private String lastFinishTime;
 
-		private String ruleName;
+		private String updateTime;
 
 		private Integer ruleType;
 
-		private String ruleKeyword;
+		private String createTime;
 
-		private String ruleDetail;
+		private String userId;
 
-		private Integer notifyUpdate;
+		private String ruleExtend;
 
-		private Integer version;
-
-		private String startTime;
+		private String ruleName;
 
 		private String endTime;
 
+		private String startTime;
+
+		private String ruleKeyword;
+
 		private String lastRunTime;
 
-		private String lastFinishTime;
+		private Integer version;
+
+		private String ruleSource;
 
 		private String lastUpdateTime;
 
 		private String env;
 
-		private String ruleExtend;
+		private Integer notifyUpdate;
 
-		private String createTime;
+		private String ruleDetail;
 
-		private String updateTime;
-
-		public String getId() {
-			return this.id;
-		}
-
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getUserId() {
-			return this.userId;
-		}
-
-		public void setUserId(String userId) {
-			this.userId = userId;
-		}
+		private String id;
 
 		public String getRuleStatus() {
 			return this.ruleStatus;
@@ -169,20 +153,20 @@ public class QueryTrademarkMonitorRulesResponse extends AcsResponse {
 			this.ruleStatus = ruleStatus;
 		}
 
-		public String getRuleSource() {
-			return this.ruleSource;
+		public String getLastFinishTime() {
+			return this.lastFinishTime;
 		}
 
-		public void setRuleSource(String ruleSource) {
-			this.ruleSource = ruleSource;
+		public void setLastFinishTime(String lastFinishTime) {
+			this.lastFinishTime = lastFinishTime;
 		}
 
-		public String getRuleName() {
-			return this.ruleName;
+		public String getUpdateTime() {
+			return this.updateTime;
 		}
 
-		public void setRuleName(String ruleName) {
-			this.ruleName = ruleName;
+		public void setUpdateTime(String updateTime) {
+			this.updateTime = updateTime;
 		}
 
 		public Integer getRuleType() {
@@ -193,44 +177,36 @@ public class QueryTrademarkMonitorRulesResponse extends AcsResponse {
 			this.ruleType = ruleType;
 		}
 
-		public String getRuleKeyword() {
-			return this.ruleKeyword;
+		public String getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setRuleKeyword(String ruleKeyword) {
-			this.ruleKeyword = ruleKeyword;
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
-		public String getRuleDetail() {
-			return this.ruleDetail;
+		public String getUserId() {
+			return this.userId;
 		}
 
-		public void setRuleDetail(String ruleDetail) {
-			this.ruleDetail = ruleDetail;
+		public void setUserId(String userId) {
+			this.userId = userId;
 		}
 
-		public Integer getNotifyUpdate() {
-			return this.notifyUpdate;
+		public String getRuleExtend() {
+			return this.ruleExtend;
 		}
 
-		public void setNotifyUpdate(Integer notifyUpdate) {
-			this.notifyUpdate = notifyUpdate;
+		public void setRuleExtend(String ruleExtend) {
+			this.ruleExtend = ruleExtend;
 		}
 
-		public Integer getVersion() {
-			return this.version;
+		public String getRuleName() {
+			return this.ruleName;
 		}
 
-		public void setVersion(Integer version) {
-			this.version = version;
-		}
-
-		public String getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
+		public void setRuleName(String ruleName) {
+			this.ruleName = ruleName;
 		}
 
 		public String getEndTime() {
@@ -241,6 +217,22 @@ public class QueryTrademarkMonitorRulesResponse extends AcsResponse {
 			this.endTime = endTime;
 		}
 
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
+		}
+
+		public String getRuleKeyword() {
+			return this.ruleKeyword;
+		}
+
+		public void setRuleKeyword(String ruleKeyword) {
+			this.ruleKeyword = ruleKeyword;
+		}
+
 		public String getLastRunTime() {
 			return this.lastRunTime;
 		}
@@ -249,12 +241,20 @@ public class QueryTrademarkMonitorRulesResponse extends AcsResponse {
 			this.lastRunTime = lastRunTime;
 		}
 
-		public String getLastFinishTime() {
-			return this.lastFinishTime;
+		public Integer getVersion() {
+			return this.version;
 		}
 
-		public void setLastFinishTime(String lastFinishTime) {
-			this.lastFinishTime = lastFinishTime;
+		public void setVersion(Integer version) {
+			this.version = version;
+		}
+
+		public String getRuleSource() {
+			return this.ruleSource;
+		}
+
+		public void setRuleSource(String ruleSource) {
+			this.ruleSource = ruleSource;
 		}
 
 		public String getLastUpdateTime() {
@@ -273,28 +273,28 @@ public class QueryTrademarkMonitorRulesResponse extends AcsResponse {
 			this.env = env;
 		}
 
-		public String getRuleExtend() {
-			return this.ruleExtend;
+		public Integer getNotifyUpdate() {
+			return this.notifyUpdate;
 		}
 
-		public void setRuleExtend(String ruleExtend) {
-			this.ruleExtend = ruleExtend;
+		public void setNotifyUpdate(Integer notifyUpdate) {
+			this.notifyUpdate = notifyUpdate;
 		}
 
-		public String getCreateTime() {
-			return this.createTime;
+		public String getRuleDetail() {
+			return this.ruleDetail;
 		}
 
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
+		public void setRuleDetail(String ruleDetail) {
+			this.ruleDetail = ruleDetail;
 		}
 
-		public String getUpdateTime() {
-			return this.updateTime;
+		public String getId() {
+			return this.id;
 		}
 
-		public void setUpdateTime(String updateTime) {
-			this.updateTime = updateTime;
+		public void setId(String id) {
+			this.id = id;
 		}
 	}
 

@@ -25,21 +25,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryTrademarkMonitorResultsResponse extends AcsResponse {
 
+	private Boolean nextPage;
+
 	private String requestId;
+
+	private Boolean prePage;
 
 	private Integer totalItemNum;
 
 	private Integer currentPageNum;
 
-	private Integer pageSize;
-
 	private Integer totalPageNum;
 
-	private Boolean prePage;
-
-	private Boolean nextPage;
+	private Integer pageSize;
 
 	private List<TmMonitorResult> data;
+
+	public Boolean getNextPage() {
+		return this.nextPage;
+	}
+
+	public void setNextPage(Boolean nextPage) {
+		this.nextPage = nextPage;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,6 +55,14 @@ public class QueryTrademarkMonitorResultsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getPrePage() {
+		return this.prePage;
+	}
+
+	public void setPrePage(Boolean prePage) {
+		this.prePage = prePage;
 	}
 
 	public Integer getTotalItemNum() {
@@ -65,14 +81,6 @@ public class QueryTrademarkMonitorResultsResponse extends AcsResponse {
 		this.currentPageNum = currentPageNum;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
 	public Integer getTotalPageNum() {
 		return this.totalPageNum;
 	}
@@ -81,20 +89,12 @@ public class QueryTrademarkMonitorResultsResponse extends AcsResponse {
 		this.totalPageNum = totalPageNum;
 	}
 
-	public Boolean getPrePage() {
-		return this.prePage;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setPrePage(Boolean prePage) {
-		this.prePage = prePage;
-	}
-
-	public Boolean getNextPage() {
-		return this.nextPage;
-	}
-
-	public void setNextPage(Boolean nextPage) {
-		this.nextPage = nextPage;
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public List<TmMonitorResult> getData() {
@@ -107,39 +107,55 @@ public class QueryTrademarkMonitorResultsResponse extends AcsResponse {
 
 	public static class TmMonitorResult {
 
+		private String tmProcedureStatusDesc;
+
+		private String wuxiaoEndDate;
+
 		private String userId;
 
-		private String ruleId;
+		private String ownerEnName;
 
 		private String tmUid;
 
-		private Long dataCreateTime;
+		private String ownerName;
 
 		private Long dataUpdateTime;
+
+		private String chesanEndDate;
+
+		private String xuzhanEndDate;
+
+		private String ruleId;
+
+		private String registrationNumber;
 
 		private String tmName;
 
 		private String tmImage;
 
+		private Long dataCreateTime;
+
+		private String yiyiEndDate;
+
 		private String classification;
-
-		private String registrationNumber;
-
-		private String tmProcedureStatusDesc;
-
-		private String ownerName;
-
-		private String ownerEnName;
 
 		private String applyDate;
 
-		private String xuzhanEndDate;
+		public String getTmProcedureStatusDesc() {
+			return this.tmProcedureStatusDesc;
+		}
 
-		private String chesanEndDate;
+		public void setTmProcedureStatusDesc(String tmProcedureStatusDesc) {
+			this.tmProcedureStatusDesc = tmProcedureStatusDesc;
+		}
 
-		private String wuxiaoEndDate;
+		public String getWuxiaoEndDate() {
+			return this.wuxiaoEndDate;
+		}
 
-		private String yiyiEndDate;
+		public void setWuxiaoEndDate(String wuxiaoEndDate) {
+			this.wuxiaoEndDate = wuxiaoEndDate;
+		}
 
 		public String getUserId() {
 			return this.userId;
@@ -149,12 +165,12 @@ public class QueryTrademarkMonitorResultsResponse extends AcsResponse {
 			this.userId = userId;
 		}
 
-		public String getRuleId() {
-			return this.ruleId;
+		public String getOwnerEnName() {
+			return this.ownerEnName;
 		}
 
-		public void setRuleId(String ruleId) {
-			this.ruleId = ruleId;
+		public void setOwnerEnName(String ownerEnName) {
+			this.ownerEnName = ownerEnName;
 		}
 
 		public String getTmUid() {
@@ -165,12 +181,12 @@ public class QueryTrademarkMonitorResultsResponse extends AcsResponse {
 			this.tmUid = tmUid;
 		}
 
-		public Long getDataCreateTime() {
-			return this.dataCreateTime;
+		public String getOwnerName() {
+			return this.ownerName;
 		}
 
-		public void setDataCreateTime(Long dataCreateTime) {
-			this.dataCreateTime = dataCreateTime;
+		public void setOwnerName(String ownerName) {
+			this.ownerName = ownerName;
 		}
 
 		public Long getDataUpdateTime() {
@@ -179,6 +195,38 @@ public class QueryTrademarkMonitorResultsResponse extends AcsResponse {
 
 		public void setDataUpdateTime(Long dataUpdateTime) {
 			this.dataUpdateTime = dataUpdateTime;
+		}
+
+		public String getChesanEndDate() {
+			return this.chesanEndDate;
+		}
+
+		public void setChesanEndDate(String chesanEndDate) {
+			this.chesanEndDate = chesanEndDate;
+		}
+
+		public String getXuzhanEndDate() {
+			return this.xuzhanEndDate;
+		}
+
+		public void setXuzhanEndDate(String xuzhanEndDate) {
+			this.xuzhanEndDate = xuzhanEndDate;
+		}
+
+		public String getRuleId() {
+			return this.ruleId;
+		}
+
+		public void setRuleId(String ruleId) {
+			this.ruleId = ruleId;
+		}
+
+		public String getRegistrationNumber() {
+			return this.registrationNumber;
+		}
+
+		public void setRegistrationNumber(String registrationNumber) {
+			this.registrationNumber = registrationNumber;
 		}
 
 		public String getTmName() {
@@ -197,76 +245,12 @@ public class QueryTrademarkMonitorResultsResponse extends AcsResponse {
 			this.tmImage = tmImage;
 		}
 
-		public String getClassification() {
-			return this.classification;
+		public Long getDataCreateTime() {
+			return this.dataCreateTime;
 		}
 
-		public void setClassification(String classification) {
-			this.classification = classification;
-		}
-
-		public String getRegistrationNumber() {
-			return this.registrationNumber;
-		}
-
-		public void setRegistrationNumber(String registrationNumber) {
-			this.registrationNumber = registrationNumber;
-		}
-
-		public String getTmProcedureStatusDesc() {
-			return this.tmProcedureStatusDesc;
-		}
-
-		public void setTmProcedureStatusDesc(String tmProcedureStatusDesc) {
-			this.tmProcedureStatusDesc = tmProcedureStatusDesc;
-		}
-
-		public String getOwnerName() {
-			return this.ownerName;
-		}
-
-		public void setOwnerName(String ownerName) {
-			this.ownerName = ownerName;
-		}
-
-		public String getOwnerEnName() {
-			return this.ownerEnName;
-		}
-
-		public void setOwnerEnName(String ownerEnName) {
-			this.ownerEnName = ownerEnName;
-		}
-
-		public String getApplyDate() {
-			return this.applyDate;
-		}
-
-		public void setApplyDate(String applyDate) {
-			this.applyDate = applyDate;
-		}
-
-		public String getXuzhanEndDate() {
-			return this.xuzhanEndDate;
-		}
-
-		public void setXuzhanEndDate(String xuzhanEndDate) {
-			this.xuzhanEndDate = xuzhanEndDate;
-		}
-
-		public String getChesanEndDate() {
-			return this.chesanEndDate;
-		}
-
-		public void setChesanEndDate(String chesanEndDate) {
-			this.chesanEndDate = chesanEndDate;
-		}
-
-		public String getWuxiaoEndDate() {
-			return this.wuxiaoEndDate;
-		}
-
-		public void setWuxiaoEndDate(String wuxiaoEndDate) {
-			this.wuxiaoEndDate = wuxiaoEndDate;
+		public void setDataCreateTime(Long dataCreateTime) {
+			this.dataCreateTime = dataCreateTime;
 		}
 
 		public String getYiyiEndDate() {
@@ -275,6 +259,22 @@ public class QueryTrademarkMonitorResultsResponse extends AcsResponse {
 
 		public void setYiyiEndDate(String yiyiEndDate) {
 			this.yiyiEndDate = yiyiEndDate;
+		}
+
+		public String getClassification() {
+			return this.classification;
+		}
+
+		public void setClassification(String classification) {
+			this.classification = classification;
+		}
+
+		public String getApplyDate() {
+			return this.applyDate;
+		}
+
+		public void setApplyDate(String applyDate) {
+			this.applyDate = applyDate;
 		}
 	}
 

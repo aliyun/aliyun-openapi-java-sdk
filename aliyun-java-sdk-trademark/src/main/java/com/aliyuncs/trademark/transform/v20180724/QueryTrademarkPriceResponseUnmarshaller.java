@@ -27,19 +27,19 @@ public class QueryTrademarkPriceResponseUnmarshaller {
 	public static QueryTrademarkPriceResponse unmarshall(QueryTrademarkPriceResponse queryTrademarkPriceResponse, UnmarshallerContext _ctx) {
 		
 		queryTrademarkPriceResponse.setRequestId(_ctx.stringValue("QueryTrademarkPriceResponse.RequestId"));
-		queryTrademarkPriceResponse.setDiscountPrice(_ctx.floatValue("QueryTrademarkPriceResponse.DiscountPrice"));
 		queryTrademarkPriceResponse.setOriginalPrice(_ctx.floatValue("QueryTrademarkPriceResponse.OriginalPrice"));
-		queryTrademarkPriceResponse.setTradePrice(_ctx.floatValue("QueryTrademarkPriceResponse.TradePrice"));
+		queryTrademarkPriceResponse.setDiscountPrice(_ctx.floatValue("QueryTrademarkPriceResponse.DiscountPrice"));
 		queryTrademarkPriceResponse.setCurrency(_ctx.stringValue("QueryTrademarkPriceResponse.Currency"));
+		queryTrademarkPriceResponse.setTradePrice(_ctx.floatValue("QueryTrademarkPriceResponse.TradePrice"));
 
 		List<PricesItem> prices = new ArrayList<PricesItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryTrademarkPriceResponse.Prices.Length"); i++) {
 			PricesItem pricesItem = new PricesItem();
-			pricesItem.setClassificationCode(_ctx.stringValue("QueryTrademarkPriceResponse.Prices["+ i +"].ClassificationCode"));
-			pricesItem.setDiscountPrice(_ctx.floatValue("QueryTrademarkPriceResponse.Prices["+ i +"].DiscountPrice"));
 			pricesItem.setOriginalPrice(_ctx.floatValue("QueryTrademarkPriceResponse.Prices["+ i +"].OriginalPrice"));
-			pricesItem.setTradePrice(_ctx.floatValue("QueryTrademarkPriceResponse.Prices["+ i +"].TradePrice"));
+			pricesItem.setDiscountPrice(_ctx.floatValue("QueryTrademarkPriceResponse.Prices["+ i +"].DiscountPrice"));
 			pricesItem.setCurrency(_ctx.stringValue("QueryTrademarkPriceResponse.Prices["+ i +"].Currency"));
+			pricesItem.setTradePrice(_ctx.floatValue("QueryTrademarkPriceResponse.Prices["+ i +"].TradePrice"));
+			pricesItem.setClassificationCode(_ctx.stringValue("QueryTrademarkPriceResponse.Prices["+ i +"].ClassificationCode"));
 
 			prices.add(pricesItem);
 		}

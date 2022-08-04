@@ -31,17 +31,17 @@ public class ListNotaryOrdersRequest extends RpcAcsRequest<ListNotaryOrdersRespo
 
 	private Integer pageNum;
 
+	private Integer pageSize;
+
+	private String aliyunOrderId;
+
 	private Integer sortKeyType;
 
 	private String sortByType;
 
-	private Integer pageSize;
-
 	private String bizId;
 
 	private Long endOrderDate;
-
-	private String aliyunOrderId;
 
 	private Integer notaryStatus;
 	public ListNotaryOrdersRequest() {
@@ -86,6 +86,28 @@ public class ListNotaryOrdersRequest extends RpcAcsRequest<ListNotaryOrdersRespo
 		}
 	}
 
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getAliyunOrderId() {
+		return this.aliyunOrderId;
+	}
+
+	public void setAliyunOrderId(String aliyunOrderId) {
+		this.aliyunOrderId = aliyunOrderId;
+		if(aliyunOrderId != null){
+			putQueryParameter("AliyunOrderId", aliyunOrderId);
+		}
+	}
+
 	public Integer getSortKeyType() {
 		return this.sortKeyType;
 	}
@@ -108,17 +130,6 @@ public class ListNotaryOrdersRequest extends RpcAcsRequest<ListNotaryOrdersRespo
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	public String getBizId() {
 		return this.bizId;
 	}
@@ -138,17 +149,6 @@ public class ListNotaryOrdersRequest extends RpcAcsRequest<ListNotaryOrdersRespo
 		this.endOrderDate = endOrderDate;
 		if(endOrderDate != null){
 			putQueryParameter("EndOrderDate", endOrderDate.toString());
-		}
-	}
-
-	public String getAliyunOrderId() {
-		return this.aliyunOrderId;
-	}
-
-	public void setAliyunOrderId(String aliyunOrderId) {
-		this.aliyunOrderId = aliyunOrderId;
-		if(aliyunOrderId != null){
-			putQueryParameter("AliyunOrderId", aliyunOrderId);
 		}
 	}
 

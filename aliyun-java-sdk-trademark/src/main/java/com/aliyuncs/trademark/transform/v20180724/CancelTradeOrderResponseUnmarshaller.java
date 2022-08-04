@@ -23,8 +23,8 @@ public class CancelTradeOrderResponseUnmarshaller {
 	public static CancelTradeOrderResponse unmarshall(CancelTradeOrderResponse cancelTradeOrderResponse, UnmarshallerContext _ctx) {
 		
 		cancelTradeOrderResponse.setRequestId(_ctx.stringValue("CancelTradeOrderResponse.RequestId"));
-		cancelTradeOrderResponse.setSuccess(_ctx.booleanValue("CancelTradeOrderResponse.Success"));
 		cancelTradeOrderResponse.setErrorMsg(_ctx.stringValue("CancelTradeOrderResponse.ErrorMsg"));
+		cancelTradeOrderResponse.setSuccess(_ctx.booleanValue("CancelTradeOrderResponse.Success"));
 		cancelTradeOrderResponse.setErrorCode(_ctx.stringValue("CancelTradeOrderResponse.ErrorCode"));
 	 
 	 	return cancelTradeOrderResponse;

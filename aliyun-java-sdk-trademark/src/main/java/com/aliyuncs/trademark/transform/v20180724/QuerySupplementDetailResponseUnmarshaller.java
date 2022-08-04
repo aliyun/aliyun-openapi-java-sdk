@@ -26,18 +26,18 @@ public class QuerySupplementDetailResponseUnmarshaller {
 	public static QuerySupplementDetailResponse unmarshall(QuerySupplementDetailResponse querySupplementDetailResponse, UnmarshallerContext _ctx) {
 		
 		querySupplementDetailResponse.setRequestId(_ctx.stringValue("QuerySupplementDetailResponse.RequestId"));
-		querySupplementDetailResponse.setId(_ctx.longValue("QuerySupplementDetailResponse.Id"));
+		querySupplementDetailResponse.setOperateTime(_ctx.longValue("QuerySupplementDetailResponse.OperateTime"));
 		querySupplementDetailResponse.setSerialNumber(_ctx.stringValue("QuerySupplementDetailResponse.SerialNumber"));
-		querySupplementDetailResponse.setType(_ctx.integerValue("QuerySupplementDetailResponse.Type"));
 		querySupplementDetailResponse.setStatus(_ctx.integerValue("QuerySupplementDetailResponse.Status"));
-		querySupplementDetailResponse.setTmNumber(_ctx.stringValue("QuerySupplementDetailResponse.TmNumber"));
-		querySupplementDetailResponse.setSendTime(_ctx.longValue("QuerySupplementDetailResponse.SendTime"));
-		querySupplementDetailResponse.setAcceptTime(_ctx.longValue("QuerySupplementDetailResponse.AcceptTime"));
+		querySupplementDetailResponse.setType(_ctx.integerValue("QuerySupplementDetailResponse.Type"));
 		querySupplementDetailResponse.setSbjDeadTime(_ctx.longValue("QuerySupplementDetailResponse.SbjDeadTime"));
 		querySupplementDetailResponse.setAcceptDeadTime(_ctx.longValue("QuerySupplementDetailResponse.AcceptDeadTime"));
-		querySupplementDetailResponse.setOperateTime(_ctx.longValue("QuerySupplementDetailResponse.OperateTime"));
+		querySupplementDetailResponse.setSendTime(_ctx.longValue("QuerySupplementDetailResponse.SendTime"));
+		querySupplementDetailResponse.setAcceptTime(_ctx.longValue("QuerySupplementDetailResponse.AcceptTime"));
+		querySupplementDetailResponse.setTmNumber(_ctx.stringValue("QuerySupplementDetailResponse.TmNumber"));
 		querySupplementDetailResponse.setUploadFileTemplateUrl(_ctx.stringValue("QuerySupplementDetailResponse.UploadFileTemplateUrl"));
 		querySupplementDetailResponse.setContent(_ctx.stringValue("QuerySupplementDetailResponse.Content"));
+		querySupplementDetailResponse.setId(_ctx.longValue("QuerySupplementDetailResponse.Id"));
 
 		List<String> fileTemplateUrls = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("QuerySupplementDetailResponse.FileTemplateUrls.Length"); i++) {

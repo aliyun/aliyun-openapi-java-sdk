@@ -25,9 +25,9 @@ import com.aliyuncs.trademark.Endpoint;
 public class QueryOfficialFileCustomListRequest extends RpcAcsRequest<QueryOfficialFileCustomListResponse> {
 	   
 
-	private Integer pageSize;
-
 	private Integer pageNum;
+
+	private Integer pageSize;
 	public QueryOfficialFileCustomListRequest() {
 		super("Trademark", "2018-07-24", "QueryOfficialFileCustomList");
 		setMethod(MethodType.POST);
@@ -35,17 +35,6 @@ public class QueryOfficialFileCustomListRequest extends RpcAcsRequest<QueryOffic
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
 	}
 
 	public Integer getPageNum() {
@@ -56,6 +45,17 @@ public class QueryOfficialFileCustomListRequest extends RpcAcsRequest<QueryOffic
 		this.pageNum = pageNum;
 		if(pageNum != null){
 			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

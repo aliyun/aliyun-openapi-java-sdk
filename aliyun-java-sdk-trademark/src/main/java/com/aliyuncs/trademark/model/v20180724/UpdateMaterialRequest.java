@@ -41,11 +41,19 @@ public class UpdateMaterialRequest extends RpcAcsRequest<UpdateMaterialResponse>
 
 	private String province;
 
+	private String contactProvince;
+
+	private Long personalType;
+
 	private Long id;
 
 	private String loaOssKey;
 
+	private String idCardName;
+
 	private String contactAddress;
+
+	private String idCardNumber;
 
 	private String address;
 
@@ -57,6 +65,8 @@ public class UpdateMaterialRequest extends RpcAcsRequest<UpdateMaterialResponse>
 
 	private String eName;
 
+	private String contactDistrict;
+
 	private String businessLicenceOssKey;
 
 	private String name;
@@ -64,6 +74,10 @@ public class UpdateMaterialRequest extends RpcAcsRequest<UpdateMaterialResponse>
 	private String cardNumber;
 
 	private Long loaId;
+
+	private String contactCounty;
+
+	private String contactCity;
 	public UpdateMaterialRequest() {
 		super("Trademark", "2018-07-24", "UpdateMaterial");
 		setMethod(MethodType.POST);
@@ -161,6 +175,28 @@ public class UpdateMaterialRequest extends RpcAcsRequest<UpdateMaterialResponse>
 		}
 	}
 
+	public String getContactProvince() {
+		return this.contactProvince;
+	}
+
+	public void setContactProvince(String contactProvince) {
+		this.contactProvince = contactProvince;
+		if(contactProvince != null){
+			putQueryParameter("ContactProvince", contactProvince);
+		}
+	}
+
+	public Long getPersonalType() {
+		return this.personalType;
+	}
+
+	public void setPersonalType(Long personalType) {
+		this.personalType = personalType;
+		if(personalType != null){
+			putQueryParameter("PersonalType", personalType.toString());
+		}
+	}
+
 	public Long getId() {
 		return this.id;
 	}
@@ -183,6 +219,17 @@ public class UpdateMaterialRequest extends RpcAcsRequest<UpdateMaterialResponse>
 		}
 	}
 
+	public String getIdCardName() {
+		return this.idCardName;
+	}
+
+	public void setIdCardName(String idCardName) {
+		this.idCardName = idCardName;
+		if(idCardName != null){
+			putQueryParameter("IdCardName", idCardName);
+		}
+	}
+
 	public String getContactAddress() {
 		return this.contactAddress;
 	}
@@ -191,6 +238,17 @@ public class UpdateMaterialRequest extends RpcAcsRequest<UpdateMaterialResponse>
 		this.contactAddress = contactAddress;
 		if(contactAddress != null){
 			putQueryParameter("ContactAddress", contactAddress);
+		}
+	}
+
+	public String getIdCardNumber() {
+		return this.idCardNumber;
+	}
+
+	public void setIdCardNumber(String idCardNumber) {
+		this.idCardNumber = idCardNumber;
+		if(idCardNumber != null){
+			putQueryParameter("IdCardNumber", idCardNumber);
 		}
 	}
 
@@ -249,6 +307,17 @@ public class UpdateMaterialRequest extends RpcAcsRequest<UpdateMaterialResponse>
 		}
 	}
 
+	public String getContactDistrict() {
+		return this.contactDistrict;
+	}
+
+	public void setContactDistrict(String contactDistrict) {
+		this.contactDistrict = contactDistrict;
+		if(contactDistrict != null){
+			putQueryParameter("ContactDistrict", contactDistrict);
+		}
+	}
+
 	public String getBusinessLicenceOssKey() {
 		return this.businessLicenceOssKey;
 	}
@@ -290,6 +359,28 @@ public class UpdateMaterialRequest extends RpcAcsRequest<UpdateMaterialResponse>
 		this.loaId = loaId;
 		if(loaId != null){
 			putQueryParameter("LoaId", loaId.toString());
+		}
+	}
+
+	public String getContactCounty() {
+		return this.contactCounty;
+	}
+
+	public void setContactCounty(String contactCounty) {
+		this.contactCounty = contactCounty;
+		if(contactCounty != null){
+			putQueryParameter("ContactCounty", contactCounty);
+		}
+	}
+
+	public String getContactCity() {
+		return this.contactCity;
+	}
+
+	public void setContactCity(String contactCity) {
+		this.contactCity = contactCity;
+		if(contactCity != null){
+			putQueryParameter("ContactCity", contactCity);
 		}
 	}
 

@@ -25,33 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryIntentionPriceResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Integer totalItemNum;
-
 	private Integer currentPageNum;
-
-	private Integer pageSize;
 
 	private Integer totalPageNum;
 
+	private String requestId;
+
+	private Integer pageSize;
+
+	private Integer totalItemNum;
+
 	private List<TmProduces> data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getTotalItemNum() {
-		return this.totalItemNum;
-	}
-
-	public void setTotalItemNum(Integer totalItemNum) {
-		this.totalItemNum = totalItemNum;
-	}
 
 	public Integer getCurrentPageNum() {
 		return this.currentPageNum;
@@ -59,6 +43,22 @@ public class QueryIntentionPriceResponse extends AcsResponse {
 
 	public void setCurrentPageNum(Integer currentPageNum) {
 		this.currentPageNum = currentPageNum;
+	}
+
+	public Integer getTotalPageNum() {
+		return this.totalPageNum;
+	}
+
+	public void setTotalPageNum(Integer totalPageNum) {
+		this.totalPageNum = totalPageNum;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageSize() {
@@ -69,12 +69,12 @@ public class QueryIntentionPriceResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getTotalPageNum() {
-		return this.totalPageNum;
+	public Integer getTotalItemNum() {
+		return this.totalItemNum;
 	}
 
-	public void setTotalPageNum(Integer totalPageNum) {
-		this.totalPageNum = totalPageNum;
+	public void setTotalItemNum(Integer totalItemNum) {
+		this.totalItemNum = totalItemNum;
 	}
 
 	public List<TmProduces> getData() {
@@ -87,91 +87,43 @@ public class QueryIntentionPriceResponse extends AcsResponse {
 
 	public static class TmProduces {
 
-		private String bizId;
-
-		private String materialName;
-
-		private String tmIcon;
-
-		private String tmName;
-
-		private String tmNumber;
-
-		private Long createTime;
-
 		private Integer type;
 
 		private Integer status;
 
 		private Float orderPrice;
 
-		private String materialId;
-
-		private String loaUrl;
-
-		private String note;
-
 		private Long updateTime;
 
-		private Integer supplementStatus;
+		private String materialName;
+
+		private Long createTime;
+
+		private String bizId;
+
+		private Float servicePrice;
+
+		private String tmIcon;
+
+		private String tmName;
+
+		private String materialId;
 
 		private Long supplementId;
 
-		private Float totalPrice;
+		private String loaUrl;
 
-		private Float servicePrice;
+		private String tmNumber;
+
+		private String note;
+
+		private Integer supplementStatus;
+
+		private Float totalPrice;
 
 		private List<ThirdClassifications> thirdClassification;
 
 		private FirstClassification firstClassification;
-
-		public String getBizId() {
-			return this.bizId;
-		}
-
-		public void setBizId(String bizId) {
-			this.bizId = bizId;
-		}
-
-		public String getMaterialName() {
-			return this.materialName;
-		}
-
-		public void setMaterialName(String materialName) {
-			this.materialName = materialName;
-		}
-
-		public String getTmIcon() {
-			return this.tmIcon;
-		}
-
-		public void setTmIcon(String tmIcon) {
-			this.tmIcon = tmIcon;
-		}
-
-		public String getTmName() {
-			return this.tmName;
-		}
-
-		public void setTmName(String tmName) {
-			this.tmName = tmName;
-		}
-
-		public String getTmNumber() {
-			return this.tmNumber;
-		}
-
-		public void setTmNumber(String tmNumber) {
-			this.tmNumber = tmNumber;
-		}
-
-		public Long getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
-		}
 
 		public Integer getType() {
 			return this.type;
@@ -197,30 +149,6 @@ public class QueryIntentionPriceResponse extends AcsResponse {
 			this.orderPrice = orderPrice;
 		}
 
-		public String getMaterialId() {
-			return this.materialId;
-		}
-
-		public void setMaterialId(String materialId) {
-			this.materialId = materialId;
-		}
-
-		public String getLoaUrl() {
-			return this.loaUrl;
-		}
-
-		public void setLoaUrl(String loaUrl) {
-			this.loaUrl = loaUrl;
-		}
-
-		public String getNote() {
-			return this.note;
-		}
-
-		public void setNote(String note) {
-			this.note = note;
-		}
-
 		public Long getUpdateTime() {
 			return this.updateTime;
 		}
@@ -229,12 +157,60 @@ public class QueryIntentionPriceResponse extends AcsResponse {
 			this.updateTime = updateTime;
 		}
 
-		public Integer getSupplementStatus() {
-			return this.supplementStatus;
+		public String getMaterialName() {
+			return this.materialName;
 		}
 
-		public void setSupplementStatus(Integer supplementStatus) {
-			this.supplementStatus = supplementStatus;
+		public void setMaterialName(String materialName) {
+			this.materialName = materialName;
+		}
+
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getBizId() {
+			return this.bizId;
+		}
+
+		public void setBizId(String bizId) {
+			this.bizId = bizId;
+		}
+
+		public Float getServicePrice() {
+			return this.servicePrice;
+		}
+
+		public void setServicePrice(Float servicePrice) {
+			this.servicePrice = servicePrice;
+		}
+
+		public String getTmIcon() {
+			return this.tmIcon;
+		}
+
+		public void setTmIcon(String tmIcon) {
+			this.tmIcon = tmIcon;
+		}
+
+		public String getTmName() {
+			return this.tmName;
+		}
+
+		public void setTmName(String tmName) {
+			this.tmName = tmName;
+		}
+
+		public String getMaterialId() {
+			return this.materialId;
+		}
+
+		public void setMaterialId(String materialId) {
+			this.materialId = materialId;
 		}
 
 		public Long getSupplementId() {
@@ -245,20 +221,44 @@ public class QueryIntentionPriceResponse extends AcsResponse {
 			this.supplementId = supplementId;
 		}
 
+		public String getLoaUrl() {
+			return this.loaUrl;
+		}
+
+		public void setLoaUrl(String loaUrl) {
+			this.loaUrl = loaUrl;
+		}
+
+		public String getTmNumber() {
+			return this.tmNumber;
+		}
+
+		public void setTmNumber(String tmNumber) {
+			this.tmNumber = tmNumber;
+		}
+
+		public String getNote() {
+			return this.note;
+		}
+
+		public void setNote(String note) {
+			this.note = note;
+		}
+
+		public Integer getSupplementStatus() {
+			return this.supplementStatus;
+		}
+
+		public void setSupplementStatus(Integer supplementStatus) {
+			this.supplementStatus = supplementStatus;
+		}
+
 		public Float getTotalPrice() {
 			return this.totalPrice;
 		}
 
 		public void setTotalPrice(Float totalPrice) {
 			this.totalPrice = totalPrice;
-		}
-
-		public Float getServicePrice() {
-			return this.servicePrice;
-		}
-
-		public void setServicePrice(Float servicePrice) {
-			this.servicePrice = servicePrice;
 		}
 
 		public List<ThirdClassifications> getThirdClassification() {
@@ -279,17 +279,9 @@ public class QueryIntentionPriceResponse extends AcsResponse {
 
 		public static class ThirdClassifications {
 
-			private String classificationCode;
-
 			private String classificationName;
 
-			public String getClassificationCode() {
-				return this.classificationCode;
-			}
-
-			public void setClassificationCode(String classificationCode) {
-				this.classificationCode = classificationCode;
-			}
+			private String classificationCode;
 
 			public String getClassificationName() {
 				return this.classificationName;
@@ -297,22 +289,22 @@ public class QueryIntentionPriceResponse extends AcsResponse {
 
 			public void setClassificationName(String classificationName) {
 				this.classificationName = classificationName;
+			}
+
+			public String getClassificationCode() {
+				return this.classificationCode;
+			}
+
+			public void setClassificationCode(String classificationCode) {
+				this.classificationCode = classificationCode;
 			}
 		}
 
 		public static class FirstClassification {
 
-			private String classificationCode;
-
 			private String classificationName;
 
-			public String getClassificationCode() {
-				return this.classificationCode;
-			}
-
-			public void setClassificationCode(String classificationCode) {
-				this.classificationCode = classificationCode;
-			}
+			private String classificationCode;
 
 			public String getClassificationName() {
 				return this.classificationName;
@@ -320,6 +312,14 @@ public class QueryIntentionPriceResponse extends AcsResponse {
 
 			public void setClassificationName(String classificationName) {
 				this.classificationName = classificationName;
+			}
+
+			public String getClassificationCode() {
+				return this.classificationCode;
+			}
+
+			public void setClassificationCode(String classificationCode) {
+				this.classificationCode = classificationCode;
 			}
 		}
 	}

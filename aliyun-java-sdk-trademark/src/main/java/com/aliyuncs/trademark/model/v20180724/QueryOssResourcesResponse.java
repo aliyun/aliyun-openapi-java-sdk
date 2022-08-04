@@ -49,11 +49,11 @@ public class QueryOssResourcesResponse extends AcsResponse {
 
 		private String bizId;
 
-		private String name;
+		private Long updateTime;
 
 		private String ossUrl;
 
-		private Long updateTime;
+		private String name;
 
 		private Long createTime;
 
@@ -65,12 +65,12 @@ public class QueryOssResourcesResponse extends AcsResponse {
 			this.bizId = bizId;
 		}
 
-		public String getName() {
-			return this.name;
+		public Long getUpdateTime() {
+			return this.updateTime;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+		public void setUpdateTime(Long updateTime) {
+			this.updateTime = updateTime;
 		}
 
 		public String getOssUrl() {
@@ -81,12 +81,12 @@ public class QueryOssResourcesResponse extends AcsResponse {
 			this.ossUrl = ossUrl;
 		}
 
-		public Long getUpdateTime() {
-			return this.updateTime;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setUpdateTime(Long updateTime) {
-			this.updateTime = updateTime;
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public Long getCreateTime() {

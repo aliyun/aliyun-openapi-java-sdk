@@ -25,33 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryTradeProduceListResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Integer totalItemNum;
-
 	private Integer currentPageNum;
-
-	private Integer pageSize;
 
 	private Integer totalPageNum;
 
+	private String requestId;
+
+	private Integer pageSize;
+
+	private Integer totalItemNum;
+
 	private List<TradeProduces> data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getTotalItemNum() {
-		return this.totalItemNum;
-	}
-
-	public void setTotalItemNum(Integer totalItemNum) {
-		this.totalItemNum = totalItemNum;
-	}
 
 	public Integer getCurrentPageNum() {
 		return this.currentPageNum;
@@ -59,6 +43,22 @@ public class QueryTradeProduceListResponse extends AcsResponse {
 
 	public void setCurrentPageNum(Integer currentPageNum) {
 		this.currentPageNum = currentPageNum;
+	}
+
+	public Integer getTotalPageNum() {
+		return this.totalPageNum;
+	}
+
+	public void setTotalPageNum(Integer totalPageNum) {
+		this.totalPageNum = totalPageNum;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageSize() {
@@ -69,12 +69,12 @@ public class QueryTradeProduceListResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getTotalPageNum() {
-		return this.totalPageNum;
+	public Integer getTotalItemNum() {
+		return this.totalItemNum;
 	}
 
-	public void setTotalPageNum(Integer totalPageNum) {
-		this.totalPageNum = totalPageNum;
+	public void setTotalItemNum(Integer totalItemNum) {
+		this.totalItemNum = totalItemNum;
 	}
 
 	public List<TradeProduces> getData() {
@@ -87,33 +87,67 @@ public class QueryTradeProduceListResponse extends AcsResponse {
 
 	public static class TradeProduces {
 
+		private Long updateTime;
+
+		private Float preAmount;
+
+		private Long createTime;
+
+		private String userId;
+
 		private String bizId;
+
+		private String icon;
+
+		private Integer buyerStatus;
+
+		private Integer source;
+
+		private String operateNote;
 
 		private String preOrderId;
 
-		private Integer preAmount;
-
-		private Integer finalAmount;
+		private Boolean allowCancel;
 
 		private String registerNumber;
 
 		private String classification;
 
-		private String icon;
-
-		private String operateNote;
-
-		private Integer buyerStatus;
-
-		private String userId;
-
-		private Long createTime;
-
-		private Long updateTime;
-
-		private Boolean allowCancel;
+		private Float finalAmount;
 
 		private Integer failReason;
+
+		public Long getUpdateTime() {
+			return this.updateTime;
+		}
+
+		public void setUpdateTime(Long updateTime) {
+			this.updateTime = updateTime;
+		}
+
+		public Float getPreAmount() {
+			return this.preAmount;
+		}
+
+		public void setPreAmount(Float preAmount) {
+			this.preAmount = preAmount;
+		}
+
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getUserId() {
+			return this.userId;
+		}
+
+		public void setUserId(String userId) {
+			this.userId = userId;
+		}
 
 		public String getBizId() {
 			return this.bizId;
@@ -121,6 +155,38 @@ public class QueryTradeProduceListResponse extends AcsResponse {
 
 		public void setBizId(String bizId) {
 			this.bizId = bizId;
+		}
+
+		public String getIcon() {
+			return this.icon;
+		}
+
+		public void setIcon(String icon) {
+			this.icon = icon;
+		}
+
+		public Integer getBuyerStatus() {
+			return this.buyerStatus;
+		}
+
+		public void setBuyerStatus(Integer buyerStatus) {
+			this.buyerStatus = buyerStatus;
+		}
+
+		public Integer getSource() {
+			return this.source;
+		}
+
+		public void setSource(Integer source) {
+			this.source = source;
+		}
+
+		public String getOperateNote() {
+			return this.operateNote;
+		}
+
+		public void setOperateNote(String operateNote) {
+			this.operateNote = operateNote;
 		}
 
 		public String getPreOrderId() {
@@ -131,20 +197,12 @@ public class QueryTradeProduceListResponse extends AcsResponse {
 			this.preOrderId = preOrderId;
 		}
 
-		public Integer getPreAmount() {
-			return this.preAmount;
+		public Boolean getAllowCancel() {
+			return this.allowCancel;
 		}
 
-		public void setPreAmount(Integer preAmount) {
-			this.preAmount = preAmount;
-		}
-
-		public Integer getFinalAmount() {
-			return this.finalAmount;
-		}
-
-		public void setFinalAmount(Integer finalAmount) {
-			this.finalAmount = finalAmount;
+		public void setAllowCancel(Boolean allowCancel) {
+			this.allowCancel = allowCancel;
 		}
 
 		public String getRegisterNumber() {
@@ -163,60 +221,12 @@ public class QueryTradeProduceListResponse extends AcsResponse {
 			this.classification = classification;
 		}
 
-		public String getIcon() {
-			return this.icon;
+		public Float getFinalAmount() {
+			return this.finalAmount;
 		}
 
-		public void setIcon(String icon) {
-			this.icon = icon;
-		}
-
-		public String getOperateNote() {
-			return this.operateNote;
-		}
-
-		public void setOperateNote(String operateNote) {
-			this.operateNote = operateNote;
-		}
-
-		public Integer getBuyerStatus() {
-			return this.buyerStatus;
-		}
-
-		public void setBuyerStatus(Integer buyerStatus) {
-			this.buyerStatus = buyerStatus;
-		}
-
-		public String getUserId() {
-			return this.userId;
-		}
-
-		public void setUserId(String userId) {
-			this.userId = userId;
-		}
-
-		public Long getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
-		}
-
-		public Long getUpdateTime() {
-			return this.updateTime;
-		}
-
-		public void setUpdateTime(Long updateTime) {
-			this.updateTime = updateTime;
-		}
-
-		public Boolean getAllowCancel() {
-			return this.allowCancel;
-		}
-
-		public void setAllowCancel(Boolean allowCancel) {
-			this.allowCancel = allowCancel;
+		public void setFinalAmount(Float finalAmount) {
+			this.finalAmount = finalAmount;
 		}
 
 		public Integer getFailReason() {

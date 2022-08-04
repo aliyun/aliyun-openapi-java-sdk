@@ -23,19 +23,19 @@ public class QueryIntentionDetailResponseUnmarshaller {
 	public static QueryIntentionDetailResponse unmarshall(QueryIntentionDetailResponse queryIntentionDetailResponse, UnmarshallerContext _ctx) {
 		
 		queryIntentionDetailResponse.setRequestId(_ctx.stringValue("QueryIntentionDetailResponse.RequestId"));
+		queryIntentionDetailResponse.setStatus(_ctx.integerValue("QueryIntentionDetailResponse.Status"));
+		queryIntentionDetailResponse.setType(_ctx.integerValue("QueryIntentionDetailResponse.Type"));
+		queryIntentionDetailResponse.setUpdateTime(_ctx.longValue("QueryIntentionDetailResponse.UpdateTime"));
+		queryIntentionDetailResponse.setRelationBizId(_ctx.stringValue("QueryIntentionDetailResponse.RelationBizId"));
+		queryIntentionDetailResponse.setCreateTime(_ctx.longValue("QueryIntentionDetailResponse.CreateTime"));
 		queryIntentionDetailResponse.setUserId(_ctx.stringValue("QueryIntentionDetailResponse.UserId"));
+		queryIntentionDetailResponse.setBizId(_ctx.stringValue("QueryIntentionDetailResponse.BizId"));
+		queryIntentionDetailResponse.setPartnerMobile(_ctx.stringValue("QueryIntentionDetailResponse.PartnerMobile"));
+		queryIntentionDetailResponse.setDescription(_ctx.stringValue("QueryIntentionDetailResponse.Description"));
+		queryIntentionDetailResponse.setMobile(_ctx.stringValue("QueryIntentionDetailResponse.Mobile"));
 		queryIntentionDetailResponse.setRegisterNumber(_ctx.stringValue("QueryIntentionDetailResponse.RegisterNumber"));
 		queryIntentionDetailResponse.setClassification(_ctx.stringValue("QueryIntentionDetailResponse.Classification"));
-		queryIntentionDetailResponse.setType(_ctx.integerValue("QueryIntentionDetailResponse.Type"));
-		queryIntentionDetailResponse.setBizId(_ctx.stringValue("QueryIntentionDetailResponse.BizId"));
-		queryIntentionDetailResponse.setDescription(_ctx.stringValue("QueryIntentionDetailResponse.Description"));
-		queryIntentionDetailResponse.setStatus(_ctx.integerValue("QueryIntentionDetailResponse.Status"));
-		queryIntentionDetailResponse.setUpdateTime(_ctx.longValue("QueryIntentionDetailResponse.UpdateTime"));
-		queryIntentionDetailResponse.setCreateTime(_ctx.longValue("QueryIntentionDetailResponse.CreateTime"));
-		queryIntentionDetailResponse.setMobile(_ctx.stringValue("QueryIntentionDetailResponse.Mobile"));
 		queryIntentionDetailResponse.setUserName(_ctx.stringValue("QueryIntentionDetailResponse.UserName"));
-		queryIntentionDetailResponse.setRelationBizId(_ctx.stringValue("QueryIntentionDetailResponse.RelationBizId"));
-		queryIntentionDetailResponse.setPartnerMobile(_ctx.stringValue("QueryIntentionDetailResponse.PartnerMobile"));
 	 
 	 	return queryIntentionDetailResponse;
 	}

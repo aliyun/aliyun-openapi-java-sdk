@@ -23,8 +23,8 @@ public class ApplyNotaryPostResponseUnmarshaller {
 	public static ApplyNotaryPostResponse unmarshall(ApplyNotaryPostResponse applyNotaryPostResponse, UnmarshallerContext _ctx) {
 		
 		applyNotaryPostResponse.setRequestId(_ctx.stringValue("ApplyNotaryPostResponse.RequestId"));
-		applyNotaryPostResponse.setSuccess(_ctx.booleanValue("ApplyNotaryPostResponse.Success"));
 		applyNotaryPostResponse.setErrorMsg(_ctx.stringValue("ApplyNotaryPostResponse.ErrorMsg"));
+		applyNotaryPostResponse.setSuccess(_ctx.booleanValue("ApplyNotaryPostResponse.Success"));
 		applyNotaryPostResponse.setErrorCode(_ctx.stringValue("ApplyNotaryPostResponse.ErrorCode"));
 	 
 	 	return applyNotaryPostResponse;

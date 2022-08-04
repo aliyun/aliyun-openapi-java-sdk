@@ -24,15 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryQrCodeUploadStatusResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer status;
 
-	private String ossKey;
+	private String requestId;
 
 	private String ossUrl;
 
-	private Integer status;
+	private String ossKey;
 
 	private Boolean success;
+
+	public Integer getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(Integer status) {
+		this.status = status;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,14 +48,6 @@ public class QueryQrCodeUploadStatusResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getOssKey() {
-		return this.ossKey;
-	}
-
-	public void setOssKey(String ossKey) {
-		this.ossKey = ossKey;
 	}
 
 	public String getOssUrl() {
@@ -58,12 +58,12 @@ public class QueryQrCodeUploadStatusResponse extends AcsResponse {
 		this.ossUrl = ossUrl;
 	}
 
-	public Integer getStatus() {
-		return this.status;
+	public String getOssKey() {
+		return this.ossKey;
 	}
 
-	public void setStatus(Integer status) {
-		this.status = status;
+	public void setOssKey(String ossKey) {
+		this.ossKey = ossKey;
 	}
 
 	public Boolean getSuccess() {

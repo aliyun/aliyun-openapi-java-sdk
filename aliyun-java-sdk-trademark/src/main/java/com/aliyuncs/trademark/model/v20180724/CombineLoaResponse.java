@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CombineLoaResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String templateCombineUrl;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getTemplateCombineUrl() {
 		return this.templateCombineUrl;
@@ -42,6 +34,14 @@ public class CombineLoaResponse extends AcsResponse {
 
 	public void setTemplateCombineUrl(String templateCombineUrl) {
 		this.templateCombineUrl = templateCombineUrl;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

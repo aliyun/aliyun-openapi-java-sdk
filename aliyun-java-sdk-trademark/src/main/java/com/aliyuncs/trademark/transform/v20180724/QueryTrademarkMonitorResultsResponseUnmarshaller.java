@@ -27,33 +27,33 @@ public class QueryTrademarkMonitorResultsResponseUnmarshaller {
 	public static QueryTrademarkMonitorResultsResponse unmarshall(QueryTrademarkMonitorResultsResponse queryTrademarkMonitorResultsResponse, UnmarshallerContext _ctx) {
 		
 		queryTrademarkMonitorResultsResponse.setRequestId(_ctx.stringValue("QueryTrademarkMonitorResultsResponse.RequestId"));
+		queryTrademarkMonitorResultsResponse.setNextPage(_ctx.booleanValue("QueryTrademarkMonitorResultsResponse.NextPage"));
+		queryTrademarkMonitorResultsResponse.setPrePage(_ctx.booleanValue("QueryTrademarkMonitorResultsResponse.PrePage"));
 		queryTrademarkMonitorResultsResponse.setTotalItemNum(_ctx.integerValue("QueryTrademarkMonitorResultsResponse.TotalItemNum"));
 		queryTrademarkMonitorResultsResponse.setCurrentPageNum(_ctx.integerValue("QueryTrademarkMonitorResultsResponse.CurrentPageNum"));
-		queryTrademarkMonitorResultsResponse.setPageSize(_ctx.integerValue("QueryTrademarkMonitorResultsResponse.PageSize"));
 		queryTrademarkMonitorResultsResponse.setTotalPageNum(_ctx.integerValue("QueryTrademarkMonitorResultsResponse.TotalPageNum"));
-		queryTrademarkMonitorResultsResponse.setPrePage(_ctx.booleanValue("QueryTrademarkMonitorResultsResponse.PrePage"));
-		queryTrademarkMonitorResultsResponse.setNextPage(_ctx.booleanValue("QueryTrademarkMonitorResultsResponse.NextPage"));
+		queryTrademarkMonitorResultsResponse.setPageSize(_ctx.integerValue("QueryTrademarkMonitorResultsResponse.PageSize"));
 
 		List<TmMonitorResult> data = new ArrayList<TmMonitorResult>();
 		for (int i = 0; i < _ctx.lengthValue("QueryTrademarkMonitorResultsResponse.Data.Length"); i++) {
 			TmMonitorResult tmMonitorResult = new TmMonitorResult();
+			tmMonitorResult.setTmProcedureStatusDesc(_ctx.stringValue("QueryTrademarkMonitorResultsResponse.Data["+ i +"].TmProcedureStatusDesc"));
+			tmMonitorResult.setWuxiaoEndDate(_ctx.stringValue("QueryTrademarkMonitorResultsResponse.Data["+ i +"].WuxiaoEndDate"));
 			tmMonitorResult.setUserId(_ctx.stringValue("QueryTrademarkMonitorResultsResponse.Data["+ i +"].UserId"));
-			tmMonitorResult.setRuleId(_ctx.stringValue("QueryTrademarkMonitorResultsResponse.Data["+ i +"].RuleId"));
+			tmMonitorResult.setOwnerEnName(_ctx.stringValue("QueryTrademarkMonitorResultsResponse.Data["+ i +"].OwnerEnName"));
 			tmMonitorResult.setTmUid(_ctx.stringValue("QueryTrademarkMonitorResultsResponse.Data["+ i +"].TmUid"));
-			tmMonitorResult.setDataCreateTime(_ctx.longValue("QueryTrademarkMonitorResultsResponse.Data["+ i +"].DataCreateTime"));
+			tmMonitorResult.setOwnerName(_ctx.stringValue("QueryTrademarkMonitorResultsResponse.Data["+ i +"].OwnerName"));
 			tmMonitorResult.setDataUpdateTime(_ctx.longValue("QueryTrademarkMonitorResultsResponse.Data["+ i +"].DataUpdateTime"));
+			tmMonitorResult.setChesanEndDate(_ctx.stringValue("QueryTrademarkMonitorResultsResponse.Data["+ i +"].ChesanEndDate"));
+			tmMonitorResult.setXuzhanEndDate(_ctx.stringValue("QueryTrademarkMonitorResultsResponse.Data["+ i +"].XuzhanEndDate"));
+			tmMonitorResult.setRuleId(_ctx.stringValue("QueryTrademarkMonitorResultsResponse.Data["+ i +"].RuleId"));
+			tmMonitorResult.setRegistrationNumber(_ctx.stringValue("QueryTrademarkMonitorResultsResponse.Data["+ i +"].RegistrationNumber"));
 			tmMonitorResult.setTmName(_ctx.stringValue("QueryTrademarkMonitorResultsResponse.Data["+ i +"].TmName"));
 			tmMonitorResult.setTmImage(_ctx.stringValue("QueryTrademarkMonitorResultsResponse.Data["+ i +"].TmImage"));
-			tmMonitorResult.setClassification(_ctx.stringValue("QueryTrademarkMonitorResultsResponse.Data["+ i +"].Classification"));
-			tmMonitorResult.setRegistrationNumber(_ctx.stringValue("QueryTrademarkMonitorResultsResponse.Data["+ i +"].RegistrationNumber"));
-			tmMonitorResult.setTmProcedureStatusDesc(_ctx.stringValue("QueryTrademarkMonitorResultsResponse.Data["+ i +"].TmProcedureStatusDesc"));
-			tmMonitorResult.setOwnerName(_ctx.stringValue("QueryTrademarkMonitorResultsResponse.Data["+ i +"].OwnerName"));
-			tmMonitorResult.setOwnerEnName(_ctx.stringValue("QueryTrademarkMonitorResultsResponse.Data["+ i +"].OwnerEnName"));
-			tmMonitorResult.setApplyDate(_ctx.stringValue("QueryTrademarkMonitorResultsResponse.Data["+ i +"].ApplyDate"));
-			tmMonitorResult.setXuzhanEndDate(_ctx.stringValue("QueryTrademarkMonitorResultsResponse.Data["+ i +"].XuzhanEndDate"));
-			tmMonitorResult.setChesanEndDate(_ctx.stringValue("QueryTrademarkMonitorResultsResponse.Data["+ i +"].ChesanEndDate"));
-			tmMonitorResult.setWuxiaoEndDate(_ctx.stringValue("QueryTrademarkMonitorResultsResponse.Data["+ i +"].WuxiaoEndDate"));
+			tmMonitorResult.setDataCreateTime(_ctx.longValue("QueryTrademarkMonitorResultsResponse.Data["+ i +"].DataCreateTime"));
 			tmMonitorResult.setYiyiEndDate(_ctx.stringValue("QueryTrademarkMonitorResultsResponse.Data["+ i +"].YiyiEndDate"));
+			tmMonitorResult.setClassification(_ctx.stringValue("QueryTrademarkMonitorResultsResponse.Data["+ i +"].Classification"));
+			tmMonitorResult.setApplyDate(_ctx.stringValue("QueryTrademarkMonitorResultsResponse.Data["+ i +"].ApplyDate"));
 
 			data.add(tmMonitorResult);
 		}

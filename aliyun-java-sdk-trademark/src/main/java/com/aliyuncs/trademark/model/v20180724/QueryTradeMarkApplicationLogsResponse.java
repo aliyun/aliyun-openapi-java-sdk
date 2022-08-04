@@ -47,17 +47,41 @@ public class QueryTradeMarkApplicationLogsResponse extends AcsResponse {
 
 	public static class DataItem {
 
+		private Long operateTime;
+
+		private Integer operateType;
+
+		private String extendContent;
+
 		private String bizId;
 
 		private String note;
 
-		private Integer operateType;
-
-		private Long operateTime;
-
 		private Integer bizStatus;
 
-		private String extendContent;
+		public Long getOperateTime() {
+			return this.operateTime;
+		}
+
+		public void setOperateTime(Long operateTime) {
+			this.operateTime = operateTime;
+		}
+
+		public Integer getOperateType() {
+			return this.operateType;
+		}
+
+		public void setOperateType(Integer operateType) {
+			this.operateType = operateType;
+		}
+
+		public String getExtendContent() {
+			return this.extendContent;
+		}
+
+		public void setExtendContent(String extendContent) {
+			this.extendContent = extendContent;
+		}
 
 		public String getBizId() {
 			return this.bizId;
@@ -75,36 +99,12 @@ public class QueryTradeMarkApplicationLogsResponse extends AcsResponse {
 			this.note = note;
 		}
 
-		public Integer getOperateType() {
-			return this.operateType;
-		}
-
-		public void setOperateType(Integer operateType) {
-			this.operateType = operateType;
-		}
-
-		public Long getOperateTime() {
-			return this.operateTime;
-		}
-
-		public void setOperateTime(Long operateTime) {
-			this.operateTime = operateTime;
-		}
-
 		public Integer getBizStatus() {
 			return this.bizStatus;
 		}
 
 		public void setBizStatus(Integer bizStatus) {
 			this.bizStatus = bizStatus;
-		}
-
-		public String getExtendContent() {
-			return this.extendContent;
-		}
-
-		public void setExtendContent(String extendContent) {
-			this.extendContent = extendContent;
 		}
 	}
 

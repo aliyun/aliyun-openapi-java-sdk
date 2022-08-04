@@ -27,21 +27,21 @@ public class QueryOfficialFileCustomListResponseUnmarshaller {
 	public static QueryOfficialFileCustomListResponse unmarshall(QueryOfficialFileCustomListResponse queryOfficialFileCustomListResponse, UnmarshallerContext _ctx) {
 		
 		queryOfficialFileCustomListResponse.setRequestId(_ctx.stringValue("QueryOfficialFileCustomListResponse.RequestId"));
-		queryOfficialFileCustomListResponse.setTotalItemNum(_ctx.integerValue("QueryOfficialFileCustomListResponse.TotalItemNum"));
 		queryOfficialFileCustomListResponse.setCurrentPageNum(_ctx.integerValue("QueryOfficialFileCustomListResponse.CurrentPageNum"));
-		queryOfficialFileCustomListResponse.setPageSize(_ctx.integerValue("QueryOfficialFileCustomListResponse.PageSize"));
 		queryOfficialFileCustomListResponse.setTotalPageNum(_ctx.integerValue("QueryOfficialFileCustomListResponse.TotalPageNum"));
+		queryOfficialFileCustomListResponse.setPageSize(_ctx.integerValue("QueryOfficialFileCustomListResponse.PageSize"));
+		queryOfficialFileCustomListResponse.setTotalItemNum(_ctx.integerValue("QueryOfficialFileCustomListResponse.TotalItemNum"));
 
 		List<CustomList> data = new ArrayList<CustomList>();
 		for (int i = 0; i < _ctx.lengthValue("QueryOfficialFileCustomListResponse.Data.Length"); i++) {
 			CustomList customList = new CustomList();
 			customList.setStatus(_ctx.stringValue("QueryOfficialFileCustomListResponse.Data["+ i +"].Status"));
-			customList.setCreateTime(_ctx.longValue("QueryOfficialFileCustomListResponse.Data["+ i +"].CreateTime"));
-			customList.setStartAcceptTime(_ctx.longValue("QueryOfficialFileCustomListResponse.Data["+ i +"].StartAcceptTime"));
-			customList.setEndAcceptTime(_ctx.longValue("QueryOfficialFileCustomListResponse.Data["+ i +"].EndAcceptTime"));
 			customList.setExpireTime(_ctx.longValue("QueryOfficialFileCustomListResponse.Data["+ i +"].ExpireTime"));
-			customList.setDownloadUrl(_ctx.stringValue("QueryOfficialFileCustomListResponse.Data["+ i +"].DownloadUrl"));
 			customList.setRemark(_ctx.stringValue("QueryOfficialFileCustomListResponse.Data["+ i +"].Remark"));
+			customList.setDownloadUrl(_ctx.stringValue("QueryOfficialFileCustomListResponse.Data["+ i +"].DownloadUrl"));
+			customList.setCreateTime(_ctx.longValue("QueryOfficialFileCustomListResponse.Data["+ i +"].CreateTime"));
+			customList.setEndAcceptTime(_ctx.longValue("QueryOfficialFileCustomListResponse.Data["+ i +"].EndAcceptTime"));
+			customList.setStartAcceptTime(_ctx.longValue("QueryOfficialFileCustomListResponse.Data["+ i +"].StartAcceptTime"));
 
 			data.add(customList);
 		}

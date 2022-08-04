@@ -23,8 +23,8 @@ public class RefuseAdditionalMaterialResponseUnmarshaller {
 	public static RefuseAdditionalMaterialResponse unmarshall(RefuseAdditionalMaterialResponse refuseAdditionalMaterialResponse, UnmarshallerContext _ctx) {
 		
 		refuseAdditionalMaterialResponse.setRequestId(_ctx.stringValue("RefuseAdditionalMaterialResponse.RequestId"));
-		refuseAdditionalMaterialResponse.setSuccess(_ctx.booleanValue("RefuseAdditionalMaterialResponse.Success"));
 		refuseAdditionalMaterialResponse.setErrorMsg(_ctx.stringValue("RefuseAdditionalMaterialResponse.ErrorMsg"));
+		refuseAdditionalMaterialResponse.setSuccess(_ctx.booleanValue("RefuseAdditionalMaterialResponse.Success"));
 		refuseAdditionalMaterialResponse.setErrorCode(_ctx.stringValue("RefuseAdditionalMaterialResponse.ErrorCode"));
 	 
 	 	return refuseAdditionalMaterialResponse;

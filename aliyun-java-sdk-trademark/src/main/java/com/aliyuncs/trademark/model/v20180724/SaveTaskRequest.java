@@ -25,9 +25,9 @@ import com.aliyuncs.trademark.Endpoint;
 public class SaveTaskRequest extends RpcAcsRequest<SaveTaskResponse> {
 	   
 
-	private String bizType;
-
 	private String request;
+
+	private String bizType;
 	public SaveTaskRequest() {
 		super("Trademark", "2018-07-24", "SaveTask");
 		setMethod(MethodType.POST);
@@ -35,17 +35,6 @@ public class SaveTaskRequest extends RpcAcsRequest<SaveTaskResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getBizType() {
-		return this.bizType;
-	}
-
-	public void setBizType(String bizType) {
-		this.bizType = bizType;
-		if(bizType != null){
-			putQueryParameter("BizType", bizType);
-		}
 	}
 
 	public String getRequest() {
@@ -56,6 +45,17 @@ public class SaveTaskRequest extends RpcAcsRequest<SaveTaskResponse> {
 		this.request = request;
 		if(request != null){
 			putQueryParameter("Request", request);
+		}
+	}
+
+	public String getBizType() {
+		return this.bizType;
+	}
+
+	public void setBizType(String bizType) {
+		this.bizType = bizType;
+		if(bizType != null){
+			putQueryParameter("BizType", bizType);
 		}
 	}
 

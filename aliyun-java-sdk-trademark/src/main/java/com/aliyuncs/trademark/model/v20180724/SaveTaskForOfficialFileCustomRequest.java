@@ -25,9 +25,9 @@ import com.aliyuncs.trademark.Endpoint;
 public class SaveTaskForOfficialFileCustomRequest extends RpcAcsRequest<SaveTaskForOfficialFileCustomResponse> {
 	   
 
-	private Long endAcceptTime;
-
 	private Long startAcceptTime;
+
+	private Long endAcceptTime;
 	public SaveTaskForOfficialFileCustomRequest() {
 		super("Trademark", "2018-07-24", "SaveTaskForOfficialFileCustom");
 		setMethod(MethodType.POST);
@@ -35,17 +35,6 @@ public class SaveTaskForOfficialFileCustomRequest extends RpcAcsRequest<SaveTask
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getEndAcceptTime() {
-		return this.endAcceptTime;
-	}
-
-	public void setEndAcceptTime(Long endAcceptTime) {
-		this.endAcceptTime = endAcceptTime;
-		if(endAcceptTime != null){
-			putQueryParameter("EndAcceptTime", endAcceptTime.toString());
-		}
 	}
 
 	public Long getStartAcceptTime() {
@@ -56,6 +45,17 @@ public class SaveTaskForOfficialFileCustomRequest extends RpcAcsRequest<SaveTask
 		this.startAcceptTime = startAcceptTime;
 		if(startAcceptTime != null){
 			putQueryParameter("StartAcceptTime", startAcceptTime.toString());
+		}
+	}
+
+	public Long getEndAcceptTime() {
+		return this.endAcceptTime;
+	}
+
+	public void setEndAcceptTime(Long endAcceptTime) {
+		this.endAcceptTime = endAcceptTime;
+		if(endAcceptTime != null){
+			putQueryParameter("EndAcceptTime", endAcceptTime.toString());
 		}
 	}
 

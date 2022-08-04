@@ -33,9 +33,13 @@ public class SaveTradeMarkReviewMaterialDetailRequest extends RpcAcsRequest<Save
 
 	private String legalNoticeOssKey;
 
+	private Boolean separate;
+
 	private String contactNumber;
 
 	private String engAddress;
+
+	private Boolean submitOnline;
 
 	private Integer type;
 
@@ -54,6 +58,8 @@ public class SaveTradeMarkReviewMaterialDetailRequest extends RpcAcsRequest<Save
 	private String address;
 
 	private String idCardOssKey;
+
+	private String reviewMaterialAdditionalJson;
 
 	private String applicationOssKey;
 
@@ -121,6 +127,17 @@ public class SaveTradeMarkReviewMaterialDetailRequest extends RpcAcsRequest<Save
 		}
 	}
 
+	public Boolean getSeparate() {
+		return this.separate;
+	}
+
+	public void setSeparate(Boolean separate) {
+		this.separate = separate;
+		if(separate != null){
+			putBodyParameter("Separate", separate.toString());
+		}
+	}
+
 	public String getContactNumber() {
 		return this.contactNumber;
 	}
@@ -140,6 +157,17 @@ public class SaveTradeMarkReviewMaterialDetailRequest extends RpcAcsRequest<Save
 		this.engAddress = engAddress;
 		if(engAddress != null){
 			putBodyParameter("EngAddress", engAddress);
+		}
+	}
+
+	public Boolean getSubmitOnline() {
+		return this.submitOnline;
+	}
+
+	public void setSubmitOnline(Boolean submitOnline) {
+		this.submitOnline = submitOnline;
+		if(submitOnline != null){
+			putBodyParameter("SubmitOnline", submitOnline.toString());
 		}
 	}
 
@@ -239,6 +267,17 @@ public class SaveTradeMarkReviewMaterialDetailRequest extends RpcAcsRequest<Save
 		this.idCardOssKey = idCardOssKey;
 		if(idCardOssKey != null){
 			putBodyParameter("IdCardOssKey", idCardOssKey);
+		}
+	}
+
+	public String getReviewMaterialAdditionalJson() {
+		return this.reviewMaterialAdditionalJson;
+	}
+
+	public void setReviewMaterialAdditionalJson(String reviewMaterialAdditionalJson) {
+		this.reviewMaterialAdditionalJson = reviewMaterialAdditionalJson;
+		if(reviewMaterialAdditionalJson != null){
+			putBodyParameter("ReviewMaterialAdditionalJson", reviewMaterialAdditionalJson);
 		}
 	}
 

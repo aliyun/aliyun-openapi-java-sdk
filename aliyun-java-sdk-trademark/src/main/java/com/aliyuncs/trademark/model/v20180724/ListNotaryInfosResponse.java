@@ -25,75 +25,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListNotaryInfosResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Integer totalItemNum;
-
-	private Integer currentPageNum;
-
-	private Integer pageSize;
-
-	private Integer totalPageNum;
-
-	private Boolean prePage;
-
 	private Boolean nextPage;
+
+	private String requestId;
 
 	private Boolean success;
 
-	private String errorMsg;
-
 	private String errorCode;
 
+	private Integer totalItemNum;
+
+	private Boolean prePage;
+
+	private Integer currentPageNum;
+
+	private String errorMsg;
+
+	private Integer totalPageNum;
+
+	private Integer pageSize;
+
 	private List<NotaryInfo> data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getTotalItemNum() {
-		return this.totalItemNum;
-	}
-
-	public void setTotalItemNum(Integer totalItemNum) {
-		this.totalItemNum = totalItemNum;
-	}
-
-	public Integer getCurrentPageNum() {
-		return this.currentPageNum;
-	}
-
-	public void setCurrentPageNum(Integer currentPageNum) {
-		this.currentPageNum = currentPageNum;
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
-	public Integer getTotalPageNum() {
-		return this.totalPageNum;
-	}
-
-	public void setTotalPageNum(Integer totalPageNum) {
-		this.totalPageNum = totalPageNum;
-	}
-
-	public Boolean getPrePage() {
-		return this.prePage;
-	}
-
-	public void setPrePage(Boolean prePage) {
-		this.prePage = prePage;
-	}
 
 	public Boolean getNextPage() {
 		return this.nextPage;
@@ -101,6 +53,14 @@ public class ListNotaryInfosResponse extends AcsResponse {
 
 	public void setNextPage(Boolean nextPage) {
 		this.nextPage = nextPage;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Boolean getSuccess() {
@@ -111,6 +71,38 @@ public class ListNotaryInfosResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public Integer getTotalItemNum() {
+		return this.totalItemNum;
+	}
+
+	public void setTotalItemNum(Integer totalItemNum) {
+		this.totalItemNum = totalItemNum;
+	}
+
+	public Boolean getPrePage() {
+		return this.prePage;
+	}
+
+	public void setPrePage(Boolean prePage) {
+		this.prePage = prePage;
+	}
+
+	public Integer getCurrentPageNum() {
+		return this.currentPageNum;
+	}
+
+	public void setCurrentPageNum(Integer currentPageNum) {
+		this.currentPageNum = currentPageNum;
+	}
+
 	public String getErrorMsg() {
 		return this.errorMsg;
 	}
@@ -119,12 +111,20 @@ public class ListNotaryInfosResponse extends AcsResponse {
 		this.errorMsg = errorMsg;
 	}
 
-	public String getErrorCode() {
-		return this.errorCode;
+	public Integer getTotalPageNum() {
+		return this.totalPageNum;
 	}
 
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setTotalPageNum(Integer totalPageNum) {
+		this.totalPageNum = totalPageNum;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public List<NotaryInfo> getData() {
@@ -137,27 +137,19 @@ public class ListNotaryInfosResponse extends AcsResponse {
 
 	public static class NotaryInfo {
 
-		private String bizOrderNo;
-
 		private String token;
-
-		private Integer notaryStatus;
 
 		private String tmRegisterNo;
 
 		private String tmClassification;
 
-		private Long gmtModified;
-
 		private String notaryFailedReason;
 
-		public String getBizOrderNo() {
-			return this.bizOrderNo;
-		}
+		private Long gmtModified;
 
-		public void setBizOrderNo(String bizOrderNo) {
-			this.bizOrderNo = bizOrderNo;
-		}
+		private Integer notaryStatus;
+
+		private String bizOrderNo;
 
 		public String getToken() {
 			return this.token;
@@ -165,14 +157,6 @@ public class ListNotaryInfosResponse extends AcsResponse {
 
 		public void setToken(String token) {
 			this.token = token;
-		}
-
-		public Integer getNotaryStatus() {
-			return this.notaryStatus;
-		}
-
-		public void setNotaryStatus(Integer notaryStatus) {
-			this.notaryStatus = notaryStatus;
 		}
 
 		public String getTmRegisterNo() {
@@ -191,6 +175,14 @@ public class ListNotaryInfosResponse extends AcsResponse {
 			this.tmClassification = tmClassification;
 		}
 
+		public String getNotaryFailedReason() {
+			return this.notaryFailedReason;
+		}
+
+		public void setNotaryFailedReason(String notaryFailedReason) {
+			this.notaryFailedReason = notaryFailedReason;
+		}
+
 		public Long getGmtModified() {
 			return this.gmtModified;
 		}
@@ -199,12 +191,20 @@ public class ListNotaryInfosResponse extends AcsResponse {
 			this.gmtModified = gmtModified;
 		}
 
-		public String getNotaryFailedReason() {
-			return this.notaryFailedReason;
+		public Integer getNotaryStatus() {
+			return this.notaryStatus;
 		}
 
-		public void setNotaryFailedReason(String notaryFailedReason) {
-			this.notaryFailedReason = notaryFailedReason;
+		public void setNotaryStatus(Integer notaryStatus) {
+			this.notaryStatus = notaryStatus;
+		}
+
+		public String getBizOrderNo() {
+			return this.bizOrderNo;
+		}
+
+		public void setBizOrderNo(String bizOrderNo) {
+			this.bizOrderNo = bizOrderNo;
 		}
 	}
 

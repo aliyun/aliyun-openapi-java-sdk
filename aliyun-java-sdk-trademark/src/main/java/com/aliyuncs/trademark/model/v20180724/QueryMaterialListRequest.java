@@ -29,11 +29,17 @@ public class QueryMaterialListRequest extends RpcAcsRequest<QueryMaterialListRes
 
 	private Integer pageNum;
 
-	private String name;
+	private Long materialId;
+
+	private String materialVersion;
 
 	private Integer pageSize;
 
+	private String name;
+
 	private String cardNumber;
+
+	private Integer principalName;
 
 	private Integer region;
 
@@ -69,14 +75,25 @@ public class QueryMaterialListRequest extends RpcAcsRequest<QueryMaterialListRes
 		}
 	}
 
-	public String getName() {
-		return this.name;
+	public Long getMaterialId() {
+		return this.materialId;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
+	public void setMaterialId(Long materialId) {
+		this.materialId = materialId;
+		if(materialId != null){
+			putQueryParameter("MaterialId", materialId.toString());
+		}
+	}
+
+	public String getMaterialVersion() {
+		return this.materialVersion;
+	}
+
+	public void setMaterialVersion(String materialVersion) {
+		this.materialVersion = materialVersion;
+		if(materialVersion != null){
+			putQueryParameter("MaterialVersion", materialVersion);
 		}
 	}
 
@@ -91,6 +108,17 @@ public class QueryMaterialListRequest extends RpcAcsRequest<QueryMaterialListRes
 		}
 	}
 
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
 	public String getCardNumber() {
 		return this.cardNumber;
 	}
@@ -99,6 +127,17 @@ public class QueryMaterialListRequest extends RpcAcsRequest<QueryMaterialListRes
 		this.cardNumber = cardNumber;
 		if(cardNumber != null){
 			putQueryParameter("CardNumber", cardNumber);
+		}
+	}
+
+	public Integer getPrincipalName() {
+		return this.principalName;
+	}
+
+	public void setPrincipalName(Integer principalName) {
+		this.principalName = principalName;
+		if(principalName != null){
+			putQueryParameter("PrincipalName", principalName.toString());
 		}
 	}
 

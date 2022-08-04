@@ -23,8 +23,8 @@ public class SaveTradeMarkReviewMaterialDetailResponseUnmarshaller {
 	public static SaveTradeMarkReviewMaterialDetailResponse unmarshall(SaveTradeMarkReviewMaterialDetailResponse saveTradeMarkReviewMaterialDetailResponse, UnmarshallerContext _ctx) {
 		
 		saveTradeMarkReviewMaterialDetailResponse.setRequestId(_ctx.stringValue("SaveTradeMarkReviewMaterialDetailResponse.RequestId"));
-		saveTradeMarkReviewMaterialDetailResponse.setSuccess(_ctx.booleanValue("SaveTradeMarkReviewMaterialDetailResponse.Success"));
 		saveTradeMarkReviewMaterialDetailResponse.setErrorMsg(_ctx.stringValue("SaveTradeMarkReviewMaterialDetailResponse.ErrorMsg"));
+		saveTradeMarkReviewMaterialDetailResponse.setSuccess(_ctx.booleanValue("SaveTradeMarkReviewMaterialDetailResponse.Success"));
 	 
 	 	return saveTradeMarkReviewMaterialDetailResponse;
 	}

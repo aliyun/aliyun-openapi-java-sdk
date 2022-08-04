@@ -28,9 +28,9 @@ public class QueryCredentialsInfoResponseUnmarshaller {
 		CredentialsInfo credentialsInfo = new CredentialsInfo();
 		credentialsInfo.setCardNumber(_ctx.stringValue("QueryCredentialsInfoResponse.CredentialsInfo.CardNumber"));
 		credentialsInfo.setAddress(_ctx.stringValue("QueryCredentialsInfoResponse.CredentialsInfo.Address"));
-		credentialsInfo.setCompanyName(_ctx.stringValue("QueryCredentialsInfoResponse.CredentialsInfo.CompanyName"));
 		credentialsInfo.setPersonName(_ctx.stringValue("QueryCredentialsInfoResponse.CredentialsInfo.PersonName"));
 		credentialsInfo.setProvince(_ctx.stringValue("QueryCredentialsInfoResponse.CredentialsInfo.Province"));
+		credentialsInfo.setCompanyName(_ctx.stringValue("QueryCredentialsInfoResponse.CredentialsInfo.CompanyName"));
 		queryCredentialsInfoResponse.setCredentialsInfo(credentialsInfo);
 	 
 	 	return queryCredentialsInfoResponse;

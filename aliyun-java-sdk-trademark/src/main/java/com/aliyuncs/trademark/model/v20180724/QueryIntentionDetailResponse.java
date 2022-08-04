@@ -24,33 +24,97 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryIntentionDetailResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer status;
+
+	private Integer type;
+
+	private Long updateTime;
+
+	private String relationBizId;
+
+	private Long createTime;
 
 	private String userId;
+
+	private String bizId;
+
+	private String partnerMobile;
+
+	private String requestId;
+
+	private String description;
+
+	private String mobile;
 
 	private String registerNumber;
 
 	private String classification;
 
-	private Integer type;
-
-	private String bizId;
-
-	private String description;
-
-	private Integer status;
-
-	private Long updateTime;
-
-	private Long createTime;
-
-	private String mobile;
-
 	private String userName;
 
-	private String relationBizId;
+	public Integer getStatus() {
+		return this.status;
+	}
 
-	private String partnerMobile;
+	public void setStatus(Integer status) {
+		this.status = status;
+	}
+
+	public Integer getType() {
+		return this.type;
+	}
+
+	public void setType(Integer type) {
+		this.type = type;
+	}
+
+	public Long getUpdateTime() {
+		return this.updateTime;
+	}
+
+	public void setUpdateTime(Long updateTime) {
+		this.updateTime = updateTime;
+	}
+
+	public String getRelationBizId() {
+		return this.relationBizId;
+	}
+
+	public void setRelationBizId(String relationBizId) {
+		this.relationBizId = relationBizId;
+	}
+
+	public Long getCreateTime() {
+		return this.createTime;
+	}
+
+	public void setCreateTime(Long createTime) {
+		this.createTime = createTime;
+	}
+
+	public String getUserId() {
+		return this.userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+
+	public String getBizId() {
+		return this.bizId;
+	}
+
+	public void setBizId(String bizId) {
+		this.bizId = bizId;
+	}
+
+	public String getPartnerMobile() {
+		return this.partnerMobile;
+	}
+
+	public void setPartnerMobile(String partnerMobile) {
+		this.partnerMobile = partnerMobile;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -60,12 +124,20 @@ public class QueryIntentionDetailResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getUserId() {
-		return this.userId;
+	public String getDescription() {
+		return this.description;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getMobile() {
+		return this.mobile;
+	}
+
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
 	}
 
 	public String getRegisterNumber() {
@@ -84,84 +156,12 @@ public class QueryIntentionDetailResponse extends AcsResponse {
 		this.classification = classification;
 	}
 
-	public Integer getType() {
-		return this.type;
-	}
-
-	public void setType(Integer type) {
-		this.type = type;
-	}
-
-	public String getBizId() {
-		return this.bizId;
-	}
-
-	public void setBizId(String bizId) {
-		this.bizId = bizId;
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public Integer getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(Integer status) {
-		this.status = status;
-	}
-
-	public Long getUpdateTime() {
-		return this.updateTime;
-	}
-
-	public void setUpdateTime(Long updateTime) {
-		this.updateTime = updateTime;
-	}
-
-	public Long getCreateTime() {
-		return this.createTime;
-	}
-
-	public void setCreateTime(Long createTime) {
-		this.createTime = createTime;
-	}
-
-	public String getMobile() {
-		return this.mobile;
-	}
-
-	public void setMobile(String mobile) {
-		this.mobile = mobile;
-	}
-
 	public String getUserName() {
 		return this.userName;
 	}
 
 	public void setUserName(String userName) {
 		this.userName = userName;
-	}
-
-	public String getRelationBizId() {
-		return this.relationBizId;
-	}
-
-	public void setRelationBizId(String relationBizId) {
-		this.relationBizId = relationBizId;
-	}
-
-	public String getPartnerMobile() {
-		return this.partnerMobile;
-	}
-
-	public void setPartnerMobile(String partnerMobile) {
-		this.partnerMobile = partnerMobile;
 	}
 
 	@Override

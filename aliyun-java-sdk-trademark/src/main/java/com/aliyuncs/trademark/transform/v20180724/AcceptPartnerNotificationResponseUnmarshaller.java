@@ -23,8 +23,8 @@ public class AcceptPartnerNotificationResponseUnmarshaller {
 	public static AcceptPartnerNotificationResponse unmarshall(AcceptPartnerNotificationResponse acceptPartnerNotificationResponse, UnmarshallerContext _ctx) {
 		
 		acceptPartnerNotificationResponse.setRequestId(_ctx.stringValue("AcceptPartnerNotificationResponse.RequestId"));
-		acceptPartnerNotificationResponse.setSuccess(_ctx.booleanValue("AcceptPartnerNotificationResponse.Success"));
 		acceptPartnerNotificationResponse.setErrorMsg(_ctx.stringValue("AcceptPartnerNotificationResponse.ErrorMsg"));
+		acceptPartnerNotificationResponse.setSuccess(_ctx.booleanValue("AcceptPartnerNotificationResponse.Success"));
 		acceptPartnerNotificationResponse.setErrorCode(_ctx.stringValue("AcceptPartnerNotificationResponse.ErrorCode"));
 	 
 	 	return acceptPartnerNotificationResponse;

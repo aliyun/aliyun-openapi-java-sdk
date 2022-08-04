@@ -23,8 +23,8 @@ public class FillLogisticsResponseUnmarshaller {
 	public static FillLogisticsResponse unmarshall(FillLogisticsResponse fillLogisticsResponse, UnmarshallerContext _ctx) {
 		
 		fillLogisticsResponse.setRequestId(_ctx.stringValue("FillLogisticsResponse.RequestId"));
-		fillLogisticsResponse.setSuccess(_ctx.booleanValue("FillLogisticsResponse.Success"));
 		fillLogisticsResponse.setErrorMsg(_ctx.stringValue("FillLogisticsResponse.ErrorMsg"));
+		fillLogisticsResponse.setSuccess(_ctx.booleanValue("FillLogisticsResponse.Success"));
 		fillLogisticsResponse.setErrorCode(_ctx.stringValue("FillLogisticsResponse.ErrorCode"));
 	 
 	 	return fillLogisticsResponse;

@@ -32,9 +32,9 @@ public class QueryOssResourcesResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("QueryOssResourcesResponse.Data.Length"); i++) {
 			TaskList taskList = new TaskList();
 			taskList.setBizId(_ctx.stringValue("QueryOssResourcesResponse.Data["+ i +"].BizId"));
-			taskList.setName(_ctx.stringValue("QueryOssResourcesResponse.Data["+ i +"].Name"));
-			taskList.setOssUrl(_ctx.stringValue("QueryOssResourcesResponse.Data["+ i +"].OssUrl"));
 			taskList.setUpdateTime(_ctx.longValue("QueryOssResourcesResponse.Data["+ i +"].UpdateTime"));
+			taskList.setOssUrl(_ctx.stringValue("QueryOssResourcesResponse.Data["+ i +"].OssUrl"));
+			taskList.setName(_ctx.stringValue("QueryOssResourcesResponse.Data["+ i +"].Name"));
 			taskList.setCreateTime(_ctx.longValue("QueryOssResourcesResponse.Data["+ i +"].CreateTime"));
 
 			data.add(taskList);

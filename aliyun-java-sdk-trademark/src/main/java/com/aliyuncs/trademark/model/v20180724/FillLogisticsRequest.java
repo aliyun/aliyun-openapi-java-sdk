@@ -25,9 +25,9 @@ import com.aliyuncs.trademark.Endpoint;
 public class FillLogisticsRequest extends RpcAcsRequest<FillLogisticsResponse> {
 	   
 
-	private String bizId;
-
 	private String logistics;
+
+	private String bizId;
 	public FillLogisticsRequest() {
 		super("Trademark", "2018-07-24", "FillLogistics");
 		setMethod(MethodType.POST);
@@ -35,17 +35,6 @@ public class FillLogisticsRequest extends RpcAcsRequest<FillLogisticsResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getBizId() {
-		return this.bizId;
-	}
-
-	public void setBizId(String bizId) {
-		this.bizId = bizId;
-		if(bizId != null){
-			putQueryParameter("BizId", bizId);
-		}
 	}
 
 	public String getLogistics() {
@@ -56,6 +45,17 @@ public class FillLogisticsRequest extends RpcAcsRequest<FillLogisticsResponse> {
 		this.logistics = logistics;
 		if(logistics != null){
 			putQueryParameter("Logistics", logistics);
+		}
+	}
+
+	public String getBizId() {
+		return this.bizId;
+	}
+
+	public void setBizId(String bizId) {
+		this.bizId = bizId;
+		if(bizId != null){
+			putQueryParameter("BizId", bizId);
 		}
 	}
 

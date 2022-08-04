@@ -25,23 +25,9 @@ import com.aliyuncs.trademark.Endpoint;
 public class SearchTmOnsalesRequest extends RpcAcsRequest<SearchTmOnsalesResponse> {
 	   
 
-	private String tmName;
-
 	private String productCode;
 
-	private String topSearch;
-
-	private Integer regLeft;
-
-	private String classification;
-
 	private Integer pageNum;
-
-	private Long orderPriceLeft;
-
-	private Boolean queryAll;
-
-	private String sortName;
 
 	private Long orderPriceRight;
 
@@ -56,6 +42,20 @@ public class SearchTmOnsalesRequest extends RpcAcsRequest<SearchTmOnsalesRespons
 	private String registerNumber;
 
 	private Integer regRight;
+
+	private String tmName;
+
+	private String topSearch;
+
+	private Integer regLeft;
+
+	private String classification;
+
+	private Long orderPriceLeft;
+
+	private Boolean queryAll;
+
+	private String sortName;
 	public SearchTmOnsalesRequest() {
 		super("Trademark", "2018-07-24", "SearchTmOnsales");
 		setMethod(MethodType.POST);
@@ -63,17 +63,6 @@ public class SearchTmOnsalesRequest extends RpcAcsRequest<SearchTmOnsalesRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getTmName() {
-		return this.tmName;
-	}
-
-	public void setTmName(String tmName) {
-		this.tmName = tmName;
-		if(tmName != null){
-			putQueryParameter("TmName", tmName);
-		}
 	}
 
 	public String getProductCode() {
@@ -87,39 +76,6 @@ public class SearchTmOnsalesRequest extends RpcAcsRequest<SearchTmOnsalesRespons
 		}
 	}
 
-	public String getTopSearch() {
-		return this.topSearch;
-	}
-
-	public void setTopSearch(String topSearch) {
-		this.topSearch = topSearch;
-		if(topSearch != null){
-			putQueryParameter("TopSearch", topSearch);
-		}
-	}
-
-	public Integer getRegLeft() {
-		return this.regLeft;
-	}
-
-	public void setRegLeft(Integer regLeft) {
-		this.regLeft = regLeft;
-		if(regLeft != null){
-			putQueryParameter("RegLeft", regLeft.toString());
-		}
-	}
-
-	public String getClassification() {
-		return this.classification;
-	}
-
-	public void setClassification(String classification) {
-		this.classification = classification;
-		if(classification != null){
-			putQueryParameter("Classification", classification);
-		}
-	}
-
 	public Integer getPageNum() {
 		return this.pageNum;
 	}
@@ -128,39 +84,6 @@ public class SearchTmOnsalesRequest extends RpcAcsRequest<SearchTmOnsalesRespons
 		this.pageNum = pageNum;
 		if(pageNum != null){
 			putQueryParameter("PageNum", pageNum.toString());
-		}
-	}
-
-	public Long getOrderPriceLeft() {
-		return this.orderPriceLeft;
-	}
-
-	public void setOrderPriceLeft(Long orderPriceLeft) {
-		this.orderPriceLeft = orderPriceLeft;
-		if(orderPriceLeft != null){
-			putQueryParameter("OrderPriceLeft", orderPriceLeft.toString());
-		}
-	}
-
-	public Boolean getQueryAll() {
-		return this.queryAll;
-	}
-
-	public void setQueryAll(Boolean queryAll) {
-		this.queryAll = queryAll;
-		if(queryAll != null){
-			putQueryParameter("QueryAll", queryAll.toString());
-		}
-	}
-
-	public String getSortName() {
-		return this.sortName;
-	}
-
-	public void setSortName(String sortName) {
-		this.sortName = sortName;
-		if(sortName != null){
-			putQueryParameter("SortName", sortName);
 		}
 	}
 
@@ -238,6 +161,83 @@ public class SearchTmOnsalesRequest extends RpcAcsRequest<SearchTmOnsalesRespons
 		this.regRight = regRight;
 		if(regRight != null){
 			putQueryParameter("RegRight", regRight.toString());
+		}
+	}
+
+	public String getTmName() {
+		return this.tmName;
+	}
+
+	public void setTmName(String tmName) {
+		this.tmName = tmName;
+		if(tmName != null){
+			putQueryParameter("TmName", tmName);
+		}
+	}
+
+	public String getTopSearch() {
+		return this.topSearch;
+	}
+
+	public void setTopSearch(String topSearch) {
+		this.topSearch = topSearch;
+		if(topSearch != null){
+			putQueryParameter("TopSearch", topSearch);
+		}
+	}
+
+	public Integer getRegLeft() {
+		return this.regLeft;
+	}
+
+	public void setRegLeft(Integer regLeft) {
+		this.regLeft = regLeft;
+		if(regLeft != null){
+			putQueryParameter("RegLeft", regLeft.toString());
+		}
+	}
+
+	public String getClassification() {
+		return this.classification;
+	}
+
+	public void setClassification(String classification) {
+		this.classification = classification;
+		if(classification != null){
+			putQueryParameter("Classification", classification);
+		}
+	}
+
+	public Long getOrderPriceLeft() {
+		return this.orderPriceLeft;
+	}
+
+	public void setOrderPriceLeft(Long orderPriceLeft) {
+		this.orderPriceLeft = orderPriceLeft;
+		if(orderPriceLeft != null){
+			putQueryParameter("OrderPriceLeft", orderPriceLeft.toString());
+		}
+	}
+
+	public Boolean getQueryAll() {
+		return this.queryAll;
+	}
+
+	public void setQueryAll(Boolean queryAll) {
+		this.queryAll = queryAll;
+		if(queryAll != null){
+			putQueryParameter("QueryAll", queryAll.toString());
+		}
+	}
+
+	public String getSortName() {
+		return this.sortName;
+	}
+
+	public void setSortName(String sortName) {
+		this.sortName = sortName;
+		if(sortName != null){
+			putQueryParameter("SortName", sortName);
 		}
 	}
 

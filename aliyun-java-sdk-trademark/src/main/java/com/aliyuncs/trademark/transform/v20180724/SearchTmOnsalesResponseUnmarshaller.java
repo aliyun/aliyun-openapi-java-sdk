@@ -27,24 +27,24 @@ public class SearchTmOnsalesResponseUnmarshaller {
 	public static SearchTmOnsalesResponse unmarshall(SearchTmOnsalesResponse searchTmOnsalesResponse, UnmarshallerContext _ctx) {
 		
 		searchTmOnsalesResponse.setRequestId(_ctx.stringValue("SearchTmOnsalesResponse.RequestId"));
-		searchTmOnsalesResponse.setTotalCount(_ctx.integerValue("SearchTmOnsalesResponse.TotalCount"));
-		searchTmOnsalesResponse.setPageNumber(_ctx.integerValue("SearchTmOnsalesResponse.PageNumber"));
 		searchTmOnsalesResponse.setPageSize(_ctx.integerValue("SearchTmOnsalesResponse.PageSize"));
+		searchTmOnsalesResponse.setPageNumber(_ctx.integerValue("SearchTmOnsalesResponse.PageNumber"));
 		searchTmOnsalesResponse.setTotalPageNumber(_ctx.integerValue("SearchTmOnsalesResponse.TotalPageNumber"));
+		searchTmOnsalesResponse.setTotalCount(_ctx.integerValue("SearchTmOnsalesResponse.TotalCount"));
 
 		List<Trademark> trademarks = new ArrayList<Trademark>();
 		for (int i = 0; i < _ctx.lengthValue("SearchTmOnsalesResponse.Trademarks.Length"); i++) {
 			Trademark trademark = new Trademark();
-			trademark.setUid(_ctx.stringValue("SearchTmOnsalesResponse.Trademarks["+ i +"].Uid"));
 			trademark.setTrademarkName(_ctx.stringValue("SearchTmOnsalesResponse.Trademarks["+ i +"].TrademarkName"));
-			trademark.setRegistrationNumber(_ctx.stringValue("SearchTmOnsalesResponse.Trademarks["+ i +"].RegistrationNumber"));
-			trademark.setClassification(_ctx.stringValue("SearchTmOnsalesResponse.Trademarks["+ i +"].Classification"));
-			trademark.setIcon(_ctx.stringValue("SearchTmOnsalesResponse.Trademarks["+ i +"].Icon"));
-			trademark.setProductCode(_ctx.stringValue("SearchTmOnsalesResponse.Trademarks["+ i +"].ProductCode"));
-			trademark.setOrderPrice(_ctx.longValue("SearchTmOnsalesResponse.Trademarks["+ i +"].OrderPrice"));
-			trademark.setProductDesc(_ctx.stringValue("SearchTmOnsalesResponse.Trademarks["+ i +"].ProductDesc"));
-			trademark.setPartnerCode(_ctx.stringValue("SearchTmOnsalesResponse.Trademarks["+ i +"].PartnerCode"));
 			trademark.setStatus(_ctx.longValue("SearchTmOnsalesResponse.Trademarks["+ i +"].Status"));
+			trademark.setProductDesc(_ctx.stringValue("SearchTmOnsalesResponse.Trademarks["+ i +"].ProductDesc"));
+			trademark.setRegistrationNumber(_ctx.stringValue("SearchTmOnsalesResponse.Trademarks["+ i +"].RegistrationNumber"));
+			trademark.setIcon(_ctx.stringValue("SearchTmOnsalesResponse.Trademarks["+ i +"].Icon"));
+			trademark.setPartnerCode(_ctx.stringValue("SearchTmOnsalesResponse.Trademarks["+ i +"].PartnerCode"));
+			trademark.setClassification(_ctx.stringValue("SearchTmOnsalesResponse.Trademarks["+ i +"].Classification"));
+			trademark.setUid(_ctx.stringValue("SearchTmOnsalesResponse.Trademarks["+ i +"].Uid"));
+			trademark.setProductCode(_ctx.stringValue("SearchTmOnsalesResponse.Trademarks["+ i +"].ProductCode"));
+			trademark.setOrderPrice(_ctx.stringValue("SearchTmOnsalesResponse.Trademarks["+ i +"].OrderPrice"));
 
 			trademarks.add(trademark);
 		}

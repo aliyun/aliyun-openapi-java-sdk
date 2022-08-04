@@ -29,13 +29,13 @@ public class CheckLoaFillResponseUnmarshaller {
 		checkLoaFillResponse.setRequestId(_ctx.stringValue("CheckLoaFillResponse.RequestId"));
 
 		Data data = new Data();
-		data.setStampFill(_ctx.booleanValue("CheckLoaFillResponse.Data.StampFill"));
 		data.setAddressFill(_ctx.booleanValue("CheckLoaFillResponse.Data.AddressFill"));
-		data.setTradeMarkNameFill(_ctx.booleanValue("CheckLoaFillResponse.Data.TradeMarkNameFill"));
+		data.setTemplateUrl(_ctx.stringValue("CheckLoaFillResponse.Data.TemplateUrl"));
 		data.setCountryFill(_ctx.booleanValue("CheckLoaFillResponse.Data.CountryFill"));
 		data.setNationalityFill(_ctx.booleanValue("CheckLoaFillResponse.Data.NationalityFill"));
+		data.setStampFill(_ctx.booleanValue("CheckLoaFillResponse.Data.StampFill"));
+		data.setTradeMarkNameFill(_ctx.booleanValue("CheckLoaFillResponse.Data.TradeMarkNameFill"));
 		data.setMaterialNameFill(_ctx.booleanValue("CheckLoaFillResponse.Data.MaterialNameFill"));
-		data.setTemplateUrl(_ctx.stringValue("CheckLoaFillResponse.Data.TemplateUrl"));
 
 		List<String> errorMsgs = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("CheckLoaFillResponse.Data.ErrorMsgs.Length"); i++) {

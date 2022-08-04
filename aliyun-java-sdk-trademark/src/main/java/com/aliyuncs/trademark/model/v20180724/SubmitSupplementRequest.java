@@ -25,11 +25,11 @@ import com.aliyuncs.trademark.Endpoint;
 public class SubmitSupplementRequest extends RpcAcsRequest<SubmitSupplementResponse> {
 	   
 
+	private String content;
+
 	private String uploadOssKeyList;
 
 	private Long id;
-
-	private String content;
 	public SubmitSupplementRequest() {
 		super("Trademark", "2018-07-24", "SubmitSupplement");
 		setMethod(MethodType.POST);
@@ -37,6 +37,17 @@ public class SubmitSupplementRequest extends RpcAcsRequest<SubmitSupplementRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getContent() {
+		return this.content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+		if(content != null){
+			putQueryParameter("Content", content);
+		}
 	}
 
 	public String getUploadOssKeyList() {
@@ -58,17 +69,6 @@ public class SubmitSupplementRequest extends RpcAcsRequest<SubmitSupplementRespo
 		this.id = id;
 		if(id != null){
 			putQueryParameter("Id", id.toString());
-		}
-	}
-
-	public String getContent() {
-		return this.content;
-	}
-
-	public void setContent(String content) {
-		this.content = content;
-		if(content != null){
-			putQueryParameter("Content", content);
 		}
 	}
 

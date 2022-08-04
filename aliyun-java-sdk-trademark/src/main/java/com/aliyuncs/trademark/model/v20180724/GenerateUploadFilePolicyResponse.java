@@ -24,43 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GenerateUploadFilePolicyResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String encodedPolicy;
-
-	private String accessId;
-
 	private String signature;
-
-	private String fileDir;
 
 	private String host;
 
+	private String requestId;
+
 	private Long expireTime;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private String encodedPolicy;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String fileDir;
 
-	public String getEncodedPolicy() {
-		return this.encodedPolicy;
-	}
-
-	public void setEncodedPolicy(String encodedPolicy) {
-		this.encodedPolicy = encodedPolicy;
-	}
-
-	public String getAccessId() {
-		return this.accessId;
-	}
-
-	public void setAccessId(String accessId) {
-		this.accessId = accessId;
-	}
+	private String accessId;
 
 	public String getSignature() {
 		return this.signature;
@@ -68,14 +44,6 @@ public class GenerateUploadFilePolicyResponse extends AcsResponse {
 
 	public void setSignature(String signature) {
 		this.signature = signature;
-	}
-
-	public String getFileDir() {
-		return this.fileDir;
-	}
-
-	public void setFileDir(String fileDir) {
-		this.fileDir = fileDir;
 	}
 
 	public String getHost() {
@@ -86,12 +54,44 @@ public class GenerateUploadFilePolicyResponse extends AcsResponse {
 		this.host = host;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public Long getExpireTime() {
 		return this.expireTime;
 	}
 
 	public void setExpireTime(Long expireTime) {
 		this.expireTime = expireTime;
+	}
+
+	public String getEncodedPolicy() {
+		return this.encodedPolicy;
+	}
+
+	public void setEncodedPolicy(String encodedPolicy) {
+		this.encodedPolicy = encodedPolicy;
+	}
+
+	public String getFileDir() {
+		return this.fileDir;
+	}
+
+	public void setFileDir(String fileDir) {
+		this.fileDir = fileDir;
+	}
+
+	public String getAccessId() {
+		return this.accessId;
+	}
+
+	public void setAccessId(String accessId) {
+		this.accessId = accessId;
 	}
 
 	@Override

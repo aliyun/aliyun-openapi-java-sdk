@@ -50,11 +50,11 @@ public class QueryCredentialsInfoResponse extends AcsResponse {
 
 		private String address;
 
-		private String companyName;
-
 		private String personName;
 
 		private String province;
+
+		private String companyName;
 
 		public String getCardNumber() {
 			return this.cardNumber;
@@ -72,14 +72,6 @@ public class QueryCredentialsInfoResponse extends AcsResponse {
 			this.address = address;
 		}
 
-		public String getCompanyName() {
-			return this.companyName;
-		}
-
-		public void setCompanyName(String companyName) {
-			this.companyName = companyName;
-		}
-
 		public String getPersonName() {
 			return this.personName;
 		}
@@ -94,6 +86,14 @@ public class QueryCredentialsInfoResponse extends AcsResponse {
 
 		public void setProvince(String province) {
 			this.province = province;
+		}
+
+		public String getCompanyName() {
+			return this.companyName;
+		}
+
+		public void setCompanyName(String companyName) {
+			this.companyName = companyName;
 		}
 	}
 

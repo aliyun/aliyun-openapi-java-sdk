@@ -25,11 +25,11 @@ import com.aliyuncs.trademark.Endpoint;
 public class QueryTaskListRequest extends RpcAcsRequest<QueryTaskListResponse> {
 	   
 
+	private Integer pageNum;
+
 	private String bizType;
 
 	private Integer pageSize;
-
-	private Integer pageNum;
 	public QueryTaskListRequest() {
 		super("Trademark", "2018-07-24", "QueryTaskList");
 		setMethod(MethodType.POST);
@@ -37,6 +37,17 @@ public class QueryTaskListRequest extends RpcAcsRequest<QueryTaskListResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
+		}
 	}
 
 	public String getBizType() {
@@ -58,17 +69,6 @@ public class QueryTaskListRequest extends RpcAcsRequest<QueryTaskListResponse> {
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public Integer getPageNum() {
-		return this.pageNum;
-	}
-
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-		if(pageNum != null){
-			putQueryParameter("PageNum", pageNum.toString());
 		}
 	}
 

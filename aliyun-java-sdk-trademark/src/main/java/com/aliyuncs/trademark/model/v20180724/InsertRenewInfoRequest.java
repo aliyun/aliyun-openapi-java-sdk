@@ -29,9 +29,9 @@ public class InsertRenewInfoRequest extends RpcAcsRequest<InsertRenewInfoRespons
 
 	private String address;
 
-	private Long registerTime;
-
 	private String engAddress;
+
+	private Long registerTime;
 
 	private String name;
 	public InsertRenewInfoRequest() {
@@ -65,17 +65,6 @@ public class InsertRenewInfoRequest extends RpcAcsRequest<InsertRenewInfoRespons
 		}
 	}
 
-	public Long getRegisterTime() {
-		return this.registerTime;
-	}
-
-	public void setRegisterTime(Long registerTime) {
-		this.registerTime = registerTime;
-		if(registerTime != null){
-			putQueryParameter("RegisterTime", registerTime.toString());
-		}
-	}
-
 	public String getEngAddress() {
 		return this.engAddress;
 	}
@@ -84,6 +73,17 @@ public class InsertRenewInfoRequest extends RpcAcsRequest<InsertRenewInfoRespons
 		this.engAddress = engAddress;
 		if(engAddress != null){
 			putQueryParameter("EngAddress", engAddress);
+		}
+	}
+
+	public Long getRegisterTime() {
+		return this.registerTime;
+	}
+
+	public void setRegisterTime(Long registerTime) {
+		this.registerTime = registerTime;
+		if(registerTime != null){
+			putQueryParameter("RegisterTime", registerTime.toString());
 		}
 	}
 

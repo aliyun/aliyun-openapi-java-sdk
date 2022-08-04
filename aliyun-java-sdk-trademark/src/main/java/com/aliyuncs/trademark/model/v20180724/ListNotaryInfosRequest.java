@@ -25,15 +25,15 @@ import com.aliyuncs.trademark.Endpoint;
 public class ListNotaryInfosRequest extends RpcAcsRequest<ListNotaryInfosResponse> {
 	   
 
-	private String bizOrderNo;
-
 	private Integer notaryType;
-
-	private Integer pageSize;
 
 	private Integer pageNum;
 
 	private String token;
+
+	private String bizOrderNo;
+
+	private Integer pageSize;
 	public ListNotaryInfosRequest() {
 		super("Trademark", "2018-07-24", "ListNotaryInfos");
 		setMethod(MethodType.POST);
@@ -41,17 +41,6 @@ public class ListNotaryInfosRequest extends RpcAcsRequest<ListNotaryInfosRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getBizOrderNo() {
-		return this.bizOrderNo;
-	}
-
-	public void setBizOrderNo(String bizOrderNo) {
-		this.bizOrderNo = bizOrderNo;
-		if(bizOrderNo != null){
-			putQueryParameter("BizOrderNo", bizOrderNo);
-		}
 	}
 
 	public Integer getNotaryType() {
@@ -62,17 +51,6 @@ public class ListNotaryInfosRequest extends RpcAcsRequest<ListNotaryInfosRespons
 		this.notaryType = notaryType;
 		if(notaryType != null){
 			putQueryParameter("NotaryType", notaryType.toString());
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -95,6 +73,28 @@ public class ListNotaryInfosRequest extends RpcAcsRequest<ListNotaryInfosRespons
 		this.token = token;
 		if(token != null){
 			putQueryParameter("Token", token);
+		}
+	}
+
+	public String getBizOrderNo() {
+		return this.bizOrderNo;
+	}
+
+	public void setBizOrderNo(String bizOrderNo) {
+		this.bizOrderNo = bizOrderNo;
+		if(bizOrderNo != null){
+			putQueryParameter("BizOrderNo", bizOrderNo);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

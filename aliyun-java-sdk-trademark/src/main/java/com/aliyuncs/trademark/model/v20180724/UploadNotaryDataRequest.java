@@ -27,9 +27,9 @@ public class UploadNotaryDataRequest extends RpcAcsRequest<UploadNotaryDataRespo
 
 	private String uploadContext;
 
-	private String bizOrderNo;
-
 	private Integer notaryType;
+
+	private String bizOrderNo;
 	public UploadNotaryDataRequest() {
 		super("Trademark", "2018-07-24", "UploadNotaryData");
 		setMethod(MethodType.POST);
@@ -50,17 +50,6 @@ public class UploadNotaryDataRequest extends RpcAcsRequest<UploadNotaryDataRespo
 		}
 	}
 
-	public String getBizOrderNo() {
-		return this.bizOrderNo;
-	}
-
-	public void setBizOrderNo(String bizOrderNo) {
-		this.bizOrderNo = bizOrderNo;
-		if(bizOrderNo != null){
-			putQueryParameter("BizOrderNo", bizOrderNo);
-		}
-	}
-
 	public Integer getNotaryType() {
 		return this.notaryType;
 	}
@@ -69,6 +58,17 @@ public class UploadNotaryDataRequest extends RpcAcsRequest<UploadNotaryDataRespo
 		this.notaryType = notaryType;
 		if(notaryType != null){
 			putQueryParameter("NotaryType", notaryType.toString());
+		}
+	}
+
+	public String getBizOrderNo() {
+		return this.bizOrderNo;
+	}
+
+	public void setBizOrderNo(String bizOrderNo) {
+		this.bizOrderNo = bizOrderNo;
+		if(bizOrderNo != null){
+			putQueryParameter("BizOrderNo", bizOrderNo);
 		}
 	}
 

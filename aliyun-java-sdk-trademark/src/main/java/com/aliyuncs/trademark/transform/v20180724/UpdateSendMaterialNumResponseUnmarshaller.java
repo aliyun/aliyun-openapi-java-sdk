@@ -23,8 +23,8 @@ public class UpdateSendMaterialNumResponseUnmarshaller {
 	public static UpdateSendMaterialNumResponse unmarshall(UpdateSendMaterialNumResponse updateSendMaterialNumResponse, UnmarshallerContext _ctx) {
 		
 		updateSendMaterialNumResponse.setRequestId(_ctx.stringValue("UpdateSendMaterialNumResponse.RequestId"));
-		updateSendMaterialNumResponse.setSuccess(_ctx.booleanValue("UpdateSendMaterialNumResponse.Success"));
 		updateSendMaterialNumResponse.setErrorMsg(_ctx.stringValue("UpdateSendMaterialNumResponse.ErrorMsg"));
+		updateSendMaterialNumResponse.setSuccess(_ctx.booleanValue("UpdateSendMaterialNumResponse.Success"));
 		updateSendMaterialNumResponse.setErrorCode(_ctx.stringValue("UpdateSendMaterialNumResponse.ErrorCode"));
 	 
 	 	return updateSendMaterialNumResponse;

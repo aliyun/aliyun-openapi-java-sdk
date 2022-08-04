@@ -23,8 +23,8 @@ public class DeleteMaterialResponseUnmarshaller {
 	public static DeleteMaterialResponse unmarshall(DeleteMaterialResponse deleteMaterialResponse, UnmarshallerContext _ctx) {
 		
 		deleteMaterialResponse.setRequestId(_ctx.stringValue("DeleteMaterialResponse.RequestId"));
-		deleteMaterialResponse.setSuccess(_ctx.booleanValue("DeleteMaterialResponse.Success"));
 		deleteMaterialResponse.setErrorMsg(_ctx.stringValue("DeleteMaterialResponse.ErrorMsg"));
+		deleteMaterialResponse.setSuccess(_ctx.booleanValue("DeleteMaterialResponse.Success"));
 		deleteMaterialResponse.setErrorCode(_ctx.stringValue("DeleteMaterialResponse.ErrorCode"));
 	 
 	 	return deleteMaterialResponse;

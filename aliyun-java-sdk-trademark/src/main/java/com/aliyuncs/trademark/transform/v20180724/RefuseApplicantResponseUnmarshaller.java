@@ -23,8 +23,8 @@ public class RefuseApplicantResponseUnmarshaller {
 	public static RefuseApplicantResponse unmarshall(RefuseApplicantResponse refuseApplicantResponse, UnmarshallerContext _ctx) {
 		
 		refuseApplicantResponse.setRequestId(_ctx.stringValue("RefuseApplicantResponse.RequestId"));
-		refuseApplicantResponse.setSuccess(_ctx.booleanValue("RefuseApplicantResponse.Success"));
 		refuseApplicantResponse.setErrorMsg(_ctx.stringValue("RefuseApplicantResponse.ErrorMsg"));
+		refuseApplicantResponse.setSuccess(_ctx.booleanValue("RefuseApplicantResponse.Success"));
 		refuseApplicantResponse.setErrorCode(_ctx.stringValue("RefuseApplicantResponse.ErrorCode"));
 	 
 	 	return refuseApplicantResponse;

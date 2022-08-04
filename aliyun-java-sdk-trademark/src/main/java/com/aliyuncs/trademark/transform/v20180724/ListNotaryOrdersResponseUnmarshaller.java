@@ -27,34 +27,34 @@ public class ListNotaryOrdersResponseUnmarshaller {
 	public static ListNotaryOrdersResponse unmarshall(ListNotaryOrdersResponse listNotaryOrdersResponse, UnmarshallerContext _ctx) {
 		
 		listNotaryOrdersResponse.setRequestId(_ctx.stringValue("ListNotaryOrdersResponse.RequestId"));
-		listNotaryOrdersResponse.setTotalItemNum(_ctx.integerValue("ListNotaryOrdersResponse.TotalItemNum"));
-		listNotaryOrdersResponse.setCurrentPageNum(_ctx.integerValue("ListNotaryOrdersResponse.CurrentPageNum"));
-		listNotaryOrdersResponse.setPageSize(_ctx.integerValue("ListNotaryOrdersResponse.PageSize"));
-		listNotaryOrdersResponse.setTotalPageNum(_ctx.integerValue("ListNotaryOrdersResponse.TotalPageNum"));
-		listNotaryOrdersResponse.setPrePage(_ctx.booleanValue("ListNotaryOrdersResponse.PrePage"));
 		listNotaryOrdersResponse.setNextPage(_ctx.booleanValue("ListNotaryOrdersResponse.NextPage"));
 		listNotaryOrdersResponse.setSuccess(_ctx.booleanValue("ListNotaryOrdersResponse.Success"));
-		listNotaryOrdersResponse.setErrorMsg(_ctx.stringValue("ListNotaryOrdersResponse.ErrorMsg"));
 		listNotaryOrdersResponse.setErrorCode(_ctx.stringValue("ListNotaryOrdersResponse.ErrorCode"));
+		listNotaryOrdersResponse.setTotalItemNum(_ctx.integerValue("ListNotaryOrdersResponse.TotalItemNum"));
+		listNotaryOrdersResponse.setPrePage(_ctx.booleanValue("ListNotaryOrdersResponse.PrePage"));
+		listNotaryOrdersResponse.setCurrentPageNum(_ctx.integerValue("ListNotaryOrdersResponse.CurrentPageNum"));
+		listNotaryOrdersResponse.setErrorMsg(_ctx.stringValue("ListNotaryOrdersResponse.ErrorMsg"));
+		listNotaryOrdersResponse.setTotalPageNum(_ctx.integerValue("ListNotaryOrdersResponse.TotalPageNum"));
+		listNotaryOrdersResponse.setPageSize(_ctx.integerValue("ListNotaryOrdersResponse.PageSize"));
 
 		List<NotaryOrder> data = new ArrayList<NotaryOrder>();
 		for (int i = 0; i < _ctx.lengthValue("ListNotaryOrdersResponse.Data.Length"); i++) {
 			NotaryOrder notaryOrder = new NotaryOrder();
-			notaryOrder.setNotaryOrderId(_ctx.longValue("ListNotaryOrdersResponse.Data["+ i +"].NotaryOrderId"));
-			notaryOrder.setAliyunOrderId(_ctx.stringValue("ListNotaryOrdersResponse.Data["+ i +"].AliyunOrderId"));
-			notaryOrder.setTmRegisterNo(_ctx.stringValue("ListNotaryOrdersResponse.Data["+ i +"].TmRegisterNo"));
-			notaryOrder.setTmName(_ctx.stringValue("ListNotaryOrdersResponse.Data["+ i +"].TmName"));
-			notaryOrder.setTmImage(_ctx.stringValue("ListNotaryOrdersResponse.Data["+ i +"].TmImage"));
-			notaryOrder.setTmClassification(_ctx.stringValue("ListNotaryOrdersResponse.Data["+ i +"].TmClassification"));
-			notaryOrder.setOrderPrice(_ctx.floatValue("ListNotaryOrdersResponse.Data["+ i +"].OrderPrice"));
-			notaryOrder.setNotaryStatus(_ctx.integerValue("ListNotaryOrdersResponse.Data["+ i +"].NotaryStatus"));
 			notaryOrder.setOrderDate(_ctx.longValue("ListNotaryOrdersResponse.Data["+ i +"].OrderDate"));
-			notaryOrder.setGmtModified(_ctx.longValue("ListNotaryOrdersResponse.Data["+ i +"].GmtModified"));
-			notaryOrder.setNotaryCertificate(_ctx.stringValue("ListNotaryOrdersResponse.Data["+ i +"].NotaryCertificate"));
-			notaryOrder.setBizId(_ctx.stringValue("ListNotaryOrdersResponse.Data["+ i +"].BizId"));
+			notaryOrder.setOrderPrice(_ctx.floatValue("ListNotaryOrdersResponse.Data["+ i +"].OrderPrice"));
 			notaryOrder.setNotaryType(_ctx.integerValue("ListNotaryOrdersResponse.Data["+ i +"].NotaryType"));
-			notaryOrder.setNotaryPlatformName(_ctx.stringValue("ListNotaryOrdersResponse.Data["+ i +"].NotaryPlatformName"));
+			notaryOrder.setTmClassification(_ctx.stringValue("ListNotaryOrdersResponse.Data["+ i +"].TmClassification"));
+			notaryOrder.setBizId(_ctx.stringValue("ListNotaryOrdersResponse.Data["+ i +"].BizId"));
+			notaryOrder.setGmtModified(_ctx.longValue("ListNotaryOrdersResponse.Data["+ i +"].GmtModified"));
+			notaryOrder.setNotaryStatus(_ctx.integerValue("ListNotaryOrdersResponse.Data["+ i +"].NotaryStatus"));
+			notaryOrder.setNotaryOrderId(_ctx.longValue("ListNotaryOrdersResponse.Data["+ i +"].NotaryOrderId"));
+			notaryOrder.setTmName(_ctx.stringValue("ListNotaryOrdersResponse.Data["+ i +"].TmName"));
+			notaryOrder.setTmRegisterNo(_ctx.stringValue("ListNotaryOrdersResponse.Data["+ i +"].TmRegisterNo"));
+			notaryOrder.setTmImage(_ctx.stringValue("ListNotaryOrdersResponse.Data["+ i +"].TmImage"));
+			notaryOrder.setAliyunOrderId(_ctx.stringValue("ListNotaryOrdersResponse.Data["+ i +"].AliyunOrderId"));
 			notaryOrder.setApplyPostStatus(_ctx.stringValue("ListNotaryOrdersResponse.Data["+ i +"].ApplyPostStatus"));
+			notaryOrder.setNotaryCertificate(_ctx.stringValue("ListNotaryOrdersResponse.Data["+ i +"].NotaryCertificate"));
+			notaryOrder.setNotaryPlatformName(_ctx.stringValue("ListNotaryOrdersResponse.Data["+ i +"].NotaryPlatformName"));
 
 			data.add(notaryOrder);
 		}

@@ -27,23 +27,28 @@ public class QueryMaterialListResponseUnmarshaller {
 	public static QueryMaterialListResponse unmarshall(QueryMaterialListResponse queryMaterialListResponse, UnmarshallerContext _ctx) {
 		
 		queryMaterialListResponse.setRequestId(_ctx.stringValue("QueryMaterialListResponse.RequestId"));
-		queryMaterialListResponse.setTotalItemNum(_ctx.integerValue("QueryMaterialListResponse.TotalItemNum"));
 		queryMaterialListResponse.setCurrentPageNum(_ctx.integerValue("QueryMaterialListResponse.CurrentPageNum"));
-		queryMaterialListResponse.setPageSize(_ctx.integerValue("QueryMaterialListResponse.PageSize"));
 		queryMaterialListResponse.setTotalPageNum(_ctx.integerValue("QueryMaterialListResponse.TotalPageNum"));
+		queryMaterialListResponse.setPageSize(_ctx.integerValue("QueryMaterialListResponse.PageSize"));
+		queryMaterialListResponse.setTotalItemNum(_ctx.integerValue("QueryMaterialListResponse.TotalItemNum"));
 
 		List<Trademark> data = new ArrayList<Trademark>();
 		for (int i = 0; i < _ctx.lengthValue("QueryMaterialListResponse.Data.Length"); i++) {
 			Trademark trademark = new Trademark();
-			trademark.setId(_ctx.longValue("QueryMaterialListResponse.Data["+ i +"].Id"));
-			trademark.setName(_ctx.stringValue("QueryMaterialListResponse.Data["+ i +"].Name"));
-			trademark.setType(_ctx.integerValue("QueryMaterialListResponse.Data["+ i +"].Type"));
-			trademark.setRegion(_ctx.integerValue("QueryMaterialListResponse.Data["+ i +"].Region"));
-			trademark.setContactName(_ctx.stringValue("QueryMaterialListResponse.Data["+ i +"].ContactName"));
+			trademark.setPrincipalDescription(_ctx.stringValue("QueryMaterialListResponse.Data["+ i +"].PrincipalDescription"));
 			trademark.setStatus(_ctx.integerValue("QueryMaterialListResponse.Data["+ i +"].Status"));
-			trademark.setLoaKey(_ctx.stringValue("QueryMaterialListResponse.Data["+ i +"].LoaKey"));
-			trademark.setLoaStatus(_ctx.integerValue("QueryMaterialListResponse.Data["+ i +"].LoaStatus"));
+			trademark.setType(_ctx.integerValue("QueryMaterialListResponse.Data["+ i +"].Type"));
+			trademark.setContactName(_ctx.stringValue("QueryMaterialListResponse.Data["+ i +"].ContactName"));
 			trademark.setCardNumber(_ctx.stringValue("QueryMaterialListResponse.Data["+ i +"].CardNumber"));
+			trademark.setValidDate(_ctx.longValue("QueryMaterialListResponse.Data["+ i +"].ValidDate"));
+			trademark.setRegion(_ctx.integerValue("QueryMaterialListResponse.Data["+ i +"].Region"));
+			trademark.setPrincipalName(_ctx.integerValue("QueryMaterialListResponse.Data["+ i +"].PrincipalName"));
+			trademark.setLoaStatus(_ctx.integerValue("QueryMaterialListResponse.Data["+ i +"].LoaStatus"));
+			trademark.setName(_ctx.stringValue("QueryMaterialListResponse.Data["+ i +"].Name"));
+			trademark.setLoaKey(_ctx.stringValue("QueryMaterialListResponse.Data["+ i +"].LoaKey"));
+			trademark.setId(_ctx.longValue("QueryMaterialListResponse.Data["+ i +"].Id"));
+			trademark.setReason(_ctx.stringValue("QueryMaterialListResponse.Data["+ i +"].Reason"));
+			trademark.setMaterialVersion(_ctx.stringValue("QueryMaterialListResponse.Data["+ i +"].MaterialVersion"));
 
 			data.add(trademark);
 		}

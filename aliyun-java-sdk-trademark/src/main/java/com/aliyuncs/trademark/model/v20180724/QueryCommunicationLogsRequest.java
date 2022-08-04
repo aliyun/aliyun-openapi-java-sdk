@@ -25,13 +25,13 @@ import com.aliyuncs.trademark.Endpoint;
 public class QueryCommunicationLogsRequest extends RpcAcsRequest<QueryCommunicationLogsResponse> {
 	   
 
-	private String bizId;
-
-	private Integer pageSize;
-
 	private Integer type;
 
 	private Integer pageNum;
+
+	private String bizId;
+
+	private Integer pageSize;
 	public QueryCommunicationLogsRequest() {
 		super("Trademark", "2018-07-24", "QueryCommunicationLogs");
 		setMethod(MethodType.POST);
@@ -39,28 +39,6 @@ public class QueryCommunicationLogsRequest extends RpcAcsRequest<QueryCommunicat
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getBizId() {
-		return this.bizId;
-	}
-
-	public void setBizId(String bizId) {
-		this.bizId = bizId;
-		if(bizId != null){
-			putQueryParameter("BizId", bizId);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
 	}
 
 	public Integer getType() {
@@ -82,6 +60,28 @@ public class QueryCommunicationLogsRequest extends RpcAcsRequest<QueryCommunicat
 		this.pageNum = pageNum;
 		if(pageNum != null){
 			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
+	public String getBizId() {
+		return this.bizId;
+	}
+
+	public void setBizId(String bizId) {
+		this.bizId = bizId;
+		if(bizId != null){
+			putQueryParameter("BizId", bizId);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

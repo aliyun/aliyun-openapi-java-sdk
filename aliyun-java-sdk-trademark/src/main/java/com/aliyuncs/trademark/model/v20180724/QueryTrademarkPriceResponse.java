@@ -25,17 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryTrademarkPriceResponse extends AcsResponse {
 
+	private Float originalPrice;
+
 	private String requestId;
 
 	private Float discountPrice;
 
-	private Float originalPrice;
+	private String currency;
 
 	private Float tradePrice;
 
-	private String currency;
-
 	private List<PricesItem> prices;
+
+	public Float getOriginalPrice() {
+		return this.originalPrice;
+	}
+
+	public void setOriginalPrice(Float originalPrice) {
+		this.originalPrice = originalPrice;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -53,12 +61,12 @@ public class QueryTrademarkPriceResponse extends AcsResponse {
 		this.discountPrice = discountPrice;
 	}
 
-	public Float getOriginalPrice() {
-		return this.originalPrice;
+	public String getCurrency() {
+		return this.currency;
 	}
 
-	public void setOriginalPrice(Float originalPrice) {
-		this.originalPrice = originalPrice;
+	public void setCurrency(String currency) {
+		this.currency = currency;
 	}
 
 	public Float getTradePrice() {
@@ -67,14 +75,6 @@ public class QueryTrademarkPriceResponse extends AcsResponse {
 
 	public void setTradePrice(Float tradePrice) {
 		this.tradePrice = tradePrice;
-	}
-
-	public String getCurrency() {
-		return this.currency;
-	}
-
-	public void setCurrency(String currency) {
-		this.currency = currency;
 	}
 
 	public List<PricesItem> getPrices() {
@@ -87,22 +87,22 @@ public class QueryTrademarkPriceResponse extends AcsResponse {
 
 	public static class PricesItem {
 
-		private String classificationCode;
+		private Float originalPrice;
 
 		private Float discountPrice;
 
-		private Float originalPrice;
+		private String currency;
 
 		private Float tradePrice;
 
-		private String currency;
+		private String classificationCode;
 
-		public String getClassificationCode() {
-			return this.classificationCode;
+		public Float getOriginalPrice() {
+			return this.originalPrice;
 		}
 
-		public void setClassificationCode(String classificationCode) {
-			this.classificationCode = classificationCode;
+		public void setOriginalPrice(Float originalPrice) {
+			this.originalPrice = originalPrice;
 		}
 
 		public Float getDiscountPrice() {
@@ -113,12 +113,12 @@ public class QueryTrademarkPriceResponse extends AcsResponse {
 			this.discountPrice = discountPrice;
 		}
 
-		public Float getOriginalPrice() {
-			return this.originalPrice;
+		public String getCurrency() {
+			return this.currency;
 		}
 
-		public void setOriginalPrice(Float originalPrice) {
-			this.originalPrice = originalPrice;
+		public void setCurrency(String currency) {
+			this.currency = currency;
 		}
 
 		public Float getTradePrice() {
@@ -129,12 +129,12 @@ public class QueryTrademarkPriceResponse extends AcsResponse {
 			this.tradePrice = tradePrice;
 		}
 
-		public String getCurrency() {
-			return this.currency;
+		public String getClassificationCode() {
+			return this.classificationCode;
 		}
 
-		public void setCurrency(String currency) {
-			this.currency = currency;
+		public void setClassificationCode(String classificationCode) {
+			this.classificationCode = classificationCode;
 		}
 	}
 

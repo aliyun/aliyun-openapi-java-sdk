@@ -25,48 +25,40 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QuerySupplementDetailResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Long id;
+	private Long operateTime;
 
 	private String serialNumber;
 
-	private Integer type;
-
 	private Integer status;
 
-	private String tmNumber;
-
-	private Long sendTime;
-
-	private Long acceptTime;
+	private Integer type;
 
 	private Long sbjDeadTime;
 
 	private Long acceptDeadTime;
 
-	private Long operateTime;
+	private Long sendTime;
+
+	private Long acceptTime;
+
+	private String requestId;
+
+	private String tmNumber;
 
 	private String uploadFileTemplateUrl;
 
 	private String content;
 
+	private Long id;
+
 	private List<String> fileTemplateUrls;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Long getOperateTime() {
+		return this.operateTime;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Long getId() {
-		return this.id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
+	public void setOperateTime(Long operateTime) {
+		this.operateTime = operateTime;
 	}
 
 	public String getSerialNumber() {
@@ -77,14 +69,6 @@ public class QuerySupplementDetailResponse extends AcsResponse {
 		this.serialNumber = serialNumber;
 	}
 
-	public Integer getType() {
-		return this.type;
-	}
-
-	public void setType(Integer type) {
-		this.type = type;
-	}
-
 	public Integer getStatus() {
 		return this.status;
 	}
@@ -93,28 +77,12 @@ public class QuerySupplementDetailResponse extends AcsResponse {
 		this.status = status;
 	}
 
-	public String getTmNumber() {
-		return this.tmNumber;
+	public Integer getType() {
+		return this.type;
 	}
 
-	public void setTmNumber(String tmNumber) {
-		this.tmNumber = tmNumber;
-	}
-
-	public Long getSendTime() {
-		return this.sendTime;
-	}
-
-	public void setSendTime(Long sendTime) {
-		this.sendTime = sendTime;
-	}
-
-	public Long getAcceptTime() {
-		return this.acceptTime;
-	}
-
-	public void setAcceptTime(Long acceptTime) {
-		this.acceptTime = acceptTime;
+	public void setType(Integer type) {
+		this.type = type;
 	}
 
 	public Long getSbjDeadTime() {
@@ -133,12 +101,36 @@ public class QuerySupplementDetailResponse extends AcsResponse {
 		this.acceptDeadTime = acceptDeadTime;
 	}
 
-	public Long getOperateTime() {
-		return this.operateTime;
+	public Long getSendTime() {
+		return this.sendTime;
 	}
 
-	public void setOperateTime(Long operateTime) {
-		this.operateTime = operateTime;
+	public void setSendTime(Long sendTime) {
+		this.sendTime = sendTime;
+	}
+
+	public Long getAcceptTime() {
+		return this.acceptTime;
+	}
+
+	public void setAcceptTime(Long acceptTime) {
+		this.acceptTime = acceptTime;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getTmNumber() {
+		return this.tmNumber;
+	}
+
+	public void setTmNumber(String tmNumber) {
+		this.tmNumber = tmNumber;
 	}
 
 	public String getUploadFileTemplateUrl() {
@@ -155,6 +147,14 @@ public class QuerySupplementDetailResponse extends AcsResponse {
 
 	public void setContent(String content) {
 		this.content = content;
+	}
+
+	public Long getId() {
+		return this.id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public List<String> getFileTemplateUrls() {

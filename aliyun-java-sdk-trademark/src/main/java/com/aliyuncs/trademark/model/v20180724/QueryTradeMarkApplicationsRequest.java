@@ -25,15 +25,11 @@ import com.aliyuncs.trademark.Endpoint;
 public class QueryTradeMarkApplicationsRequest extends RpcAcsRequest<QueryTradeMarkApplicationsResponse> {
 	   
 
-	private String tmName;
-
 	private String materialName;
 
+	private String classificationCode;
+
 	private Integer hidden;
-
-	private String orderId;
-
-	private String tmNumber;
 
 	private String intentionBizId;
 
@@ -41,13 +37,25 @@ public class QueryTradeMarkApplicationsRequest extends RpcAcsRequest<QueryTradeM
 
 	private String type;
 
+	private Integer productType;
+
 	private Integer supplementStatus;
 
 	private Integer pageSize;
 
-	private String bizId;
+	private String logisticsNo;
 
 	private String sortOrder;
+
+	private String tmName;
+
+	private String orderId;
+
+	private String tmNumber;
+
+	private String sortFiled;
+
+	private String bizId;
 
 	private Integer status;
 	public QueryTradeMarkApplicationsRequest() {
@@ -57,17 +65,6 @@ public class QueryTradeMarkApplicationsRequest extends RpcAcsRequest<QueryTradeM
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getTmName() {
-		return this.tmName;
-	}
-
-	public void setTmName(String tmName) {
-		this.tmName = tmName;
-		if(tmName != null){
-			putQueryParameter("TmName", tmName);
-		}
 	}
 
 	public String getMaterialName() {
@@ -81,6 +78,17 @@ public class QueryTradeMarkApplicationsRequest extends RpcAcsRequest<QueryTradeM
 		}
 	}
 
+	public String getClassificationCode() {
+		return this.classificationCode;
+	}
+
+	public void setClassificationCode(String classificationCode) {
+		this.classificationCode = classificationCode;
+		if(classificationCode != null){
+			putQueryParameter("ClassificationCode", classificationCode);
+		}
+	}
+
 	public Integer getHidden() {
 		return this.hidden;
 	}
@@ -89,28 +97,6 @@ public class QueryTradeMarkApplicationsRequest extends RpcAcsRequest<QueryTradeM
 		this.hidden = hidden;
 		if(hidden != null){
 			putQueryParameter("Hidden", hidden.toString());
-		}
-	}
-
-	public String getOrderId() {
-		return this.orderId;
-	}
-
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-		if(orderId != null){
-			putQueryParameter("OrderId", orderId);
-		}
-	}
-
-	public String getTmNumber() {
-		return this.tmNumber;
-	}
-
-	public void setTmNumber(String tmNumber) {
-		this.tmNumber = tmNumber;
-		if(tmNumber != null){
-			putQueryParameter("TmNumber", tmNumber);
 		}
 	}
 
@@ -147,6 +133,17 @@ public class QueryTradeMarkApplicationsRequest extends RpcAcsRequest<QueryTradeM
 		}
 	}
 
+	public Integer getProductType() {
+		return this.productType;
+	}
+
+	public void setProductType(Integer productType) {
+		this.productType = productType;
+		if(productType != null){
+			putQueryParameter("ProductType", productType.toString());
+		}
+	}
+
 	public Integer getSupplementStatus() {
 		return this.supplementStatus;
 	}
@@ -169,14 +166,14 @@ public class QueryTradeMarkApplicationsRequest extends RpcAcsRequest<QueryTradeM
 		}
 	}
 
-	public String getBizId() {
-		return this.bizId;
+	public String getLogisticsNo() {
+		return this.logisticsNo;
 	}
 
-	public void setBizId(String bizId) {
-		this.bizId = bizId;
-		if(bizId != null){
-			putQueryParameter("BizId", bizId);
+	public void setLogisticsNo(String logisticsNo) {
+		this.logisticsNo = logisticsNo;
+		if(logisticsNo != null){
+			putQueryParameter("LogisticsNo", logisticsNo);
 		}
 	}
 
@@ -188,6 +185,61 @@ public class QueryTradeMarkApplicationsRequest extends RpcAcsRequest<QueryTradeM
 		this.sortOrder = sortOrder;
 		if(sortOrder != null){
 			putQueryParameter("SortOrder", sortOrder);
+		}
+	}
+
+	public String getTmName() {
+		return this.tmName;
+	}
+
+	public void setTmName(String tmName) {
+		this.tmName = tmName;
+		if(tmName != null){
+			putQueryParameter("TmName", tmName);
+		}
+	}
+
+	public String getOrderId() {
+		return this.orderId;
+	}
+
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
+		if(orderId != null){
+			putQueryParameter("OrderId", orderId);
+		}
+	}
+
+	public String getTmNumber() {
+		return this.tmNumber;
+	}
+
+	public void setTmNumber(String tmNumber) {
+		this.tmNumber = tmNumber;
+		if(tmNumber != null){
+			putQueryParameter("TmNumber", tmNumber);
+		}
+	}
+
+	public String getSortFiled() {
+		return this.sortFiled;
+	}
+
+	public void setSortFiled(String sortFiled) {
+		this.sortFiled = sortFiled;
+		if(sortFiled != null){
+			putQueryParameter("SortFiled", sortFiled);
+		}
+	}
+
+	public String getBizId() {
+		return this.bizId;
+	}
+
+	public void setBizId(String bizId) {
+		this.bizId = bizId;
+		if(bizId != null){
+			putQueryParameter("BizId", bizId);
 		}
 	}
 

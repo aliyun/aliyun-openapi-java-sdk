@@ -47,29 +47,21 @@ public class CheckLoaFillResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Boolean stampFill;
-
 		private Boolean addressFill;
 
-		private Boolean tradeMarkNameFill;
+		private String templateUrl;
 
 		private Boolean countryFill;
 
 		private Boolean nationalityFill;
 
+		private Boolean stampFill;
+
+		private Boolean tradeMarkNameFill;
+
 		private Boolean materialNameFill;
 
-		private String templateUrl;
-
 		private List<String> errorMsgs;
-
-		public Boolean getStampFill() {
-			return this.stampFill;
-		}
-
-		public void setStampFill(Boolean stampFill) {
-			this.stampFill = stampFill;
-		}
 
 		public Boolean getAddressFill() {
 			return this.addressFill;
@@ -79,12 +71,12 @@ public class CheckLoaFillResponse extends AcsResponse {
 			this.addressFill = addressFill;
 		}
 
-		public Boolean getTradeMarkNameFill() {
-			return this.tradeMarkNameFill;
+		public String getTemplateUrl() {
+			return this.templateUrl;
 		}
 
-		public void setTradeMarkNameFill(Boolean tradeMarkNameFill) {
-			this.tradeMarkNameFill = tradeMarkNameFill;
+		public void setTemplateUrl(String templateUrl) {
+			this.templateUrl = templateUrl;
 		}
 
 		public Boolean getCountryFill() {
@@ -103,20 +95,28 @@ public class CheckLoaFillResponse extends AcsResponse {
 			this.nationalityFill = nationalityFill;
 		}
 
+		public Boolean getStampFill() {
+			return this.stampFill;
+		}
+
+		public void setStampFill(Boolean stampFill) {
+			this.stampFill = stampFill;
+		}
+
+		public Boolean getTradeMarkNameFill() {
+			return this.tradeMarkNameFill;
+		}
+
+		public void setTradeMarkNameFill(Boolean tradeMarkNameFill) {
+			this.tradeMarkNameFill = tradeMarkNameFill;
+		}
+
 		public Boolean getMaterialNameFill() {
 			return this.materialNameFill;
 		}
 
 		public void setMaterialNameFill(Boolean materialNameFill) {
 			this.materialNameFill = materialNameFill;
-		}
-
-		public String getTemplateUrl() {
-			return this.templateUrl;
-		}
-
-		public void setTemplateUrl(String templateUrl) {
-			this.templateUrl = templateUrl;
 		}
 
 		public List<String> getErrorMsgs() {

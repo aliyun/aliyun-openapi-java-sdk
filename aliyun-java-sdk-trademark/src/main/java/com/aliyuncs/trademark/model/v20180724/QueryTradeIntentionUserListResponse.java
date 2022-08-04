@@ -25,33 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryTradeIntentionUserListResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Integer totalItemNum;
-
 	private Integer currentPageNum;
-
-	private Integer pageSize;
 
 	private Integer totalPageNum;
 
+	private String requestId;
+
+	private Integer pageSize;
+
+	private Integer totalItemNum;
+
 	private List<Trademark> data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getTotalItemNum() {
-		return this.totalItemNum;
-	}
-
-	public void setTotalItemNum(Integer totalItemNum) {
-		this.totalItemNum = totalItemNum;
-	}
 
 	public Integer getCurrentPageNum() {
 		return this.currentPageNum;
@@ -59,6 +43,22 @@ public class QueryTradeIntentionUserListResponse extends AcsResponse {
 
 	public void setCurrentPageNum(Integer currentPageNum) {
 		this.currentPageNum = currentPageNum;
+	}
+
+	public Integer getTotalPageNum() {
+		return this.totalPageNum;
+	}
+
+	public void setTotalPageNum(Integer totalPageNum) {
+		this.totalPageNum = totalPageNum;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageSize() {
@@ -69,12 +69,12 @@ public class QueryTradeIntentionUserListResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getTotalPageNum() {
-		return this.totalPageNum;
+	public Integer getTotalItemNum() {
+		return this.totalItemNum;
 	}
 
-	public void setTotalPageNum(Integer totalPageNum) {
-		this.totalPageNum = totalPageNum;
+	public void setTotalItemNum(Integer totalItemNum) {
+		this.totalItemNum = totalItemNum;
 	}
 
 	public List<Trademark> getData() {
@@ -87,68 +87,36 @@ public class QueryTradeIntentionUserListResponse extends AcsResponse {
 
 	public static class Trademark {
 
-		private String registerNumber;
-
-		private String classification;
-
-		private String mobile;
-
-		private String userName;
-
-		private String bizId;
-
-		private String description;
+		private Integer type;
 
 		private Integer status;
 
-		private Integer type;
+		private String description;
 
-		public String getRegisterNumber() {
-			return this.registerNumber;
+		private String mobile;
+
+		private String registerNumber;
+
+		private String bizId;
+
+		private String classification;
+
+		private String userName;
+
+		private String documentDate;
+
+		private String documentUrl;
+
+		private String documentName;
+
+		private Integer grade;
+
+		public Integer getType() {
+			return this.type;
 		}
 
-		public void setRegisterNumber(String registerNumber) {
-			this.registerNumber = registerNumber;
-		}
-
-		public String getClassification() {
-			return this.classification;
-		}
-
-		public void setClassification(String classification) {
-			this.classification = classification;
-		}
-
-		public String getMobile() {
-			return this.mobile;
-		}
-
-		public void setMobile(String mobile) {
-			this.mobile = mobile;
-		}
-
-		public String getUserName() {
-			return this.userName;
-		}
-
-		public void setUserName(String userName) {
-			this.userName = userName;
-		}
-
-		public String getBizId() {
-			return this.bizId;
-		}
-
-		public void setBizId(String bizId) {
-			this.bizId = bizId;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
+		public void setType(Integer type) {
+			this.type = type;
 		}
 
 		public Integer getStatus() {
@@ -159,12 +127,84 @@ public class QueryTradeIntentionUserListResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public Integer getType() {
-			return this.type;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setType(Integer type) {
-			this.type = type;
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getMobile() {
+			return this.mobile;
+		}
+
+		public void setMobile(String mobile) {
+			this.mobile = mobile;
+		}
+
+		public String getRegisterNumber() {
+			return this.registerNumber;
+		}
+
+		public void setRegisterNumber(String registerNumber) {
+			this.registerNumber = registerNumber;
+		}
+
+		public String getBizId() {
+			return this.bizId;
+		}
+
+		public void setBizId(String bizId) {
+			this.bizId = bizId;
+		}
+
+		public String getClassification() {
+			return this.classification;
+		}
+
+		public void setClassification(String classification) {
+			this.classification = classification;
+		}
+
+		public String getUserName() {
+			return this.userName;
+		}
+
+		public void setUserName(String userName) {
+			this.userName = userName;
+		}
+
+		public String getDocumentDate() {
+			return this.documentDate;
+		}
+
+		public void setDocumentDate(String documentDate) {
+			this.documentDate = documentDate;
+		}
+
+		public String getDocumentUrl() {
+			return this.documentUrl;
+		}
+
+		public void setDocumentUrl(String documentUrl) {
+			this.documentUrl = documentUrl;
+		}
+
+		public String getDocumentName() {
+			return this.documentName;
+		}
+
+		public void setDocumentName(String documentName) {
+			this.documentName = documentName;
+		}
+
+		public Integer getGrade() {
+			return this.grade;
+		}
+
+		public void setGrade(Integer grade) {
+			this.grade = grade;
 		}
 	}
 

@@ -24,15 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class StartNotaryResponse extends AcsResponse {
 
-	private String requestId;
+	private String errorMsg;
 
-	private String notaryUrl;
+	private String requestId;
 
 	private Boolean success;
 
-	private String errorMsg;
+	private String notaryUrl;
 
 	private String errorCode;
+
+	public String getErrorMsg() {
+		return this.errorMsg;
+	}
+
+	public void setErrorMsg(String errorMsg) {
+		this.errorMsg = errorMsg;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,14 +48,6 @@ public class StartNotaryResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getNotaryUrl() {
-		return this.notaryUrl;
-	}
-
-	public void setNotaryUrl(String notaryUrl) {
-		this.notaryUrl = notaryUrl;
 	}
 
 	public Boolean getSuccess() {
@@ -58,12 +58,12 @@ public class StartNotaryResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getErrorMsg() {
-		return this.errorMsg;
+	public String getNotaryUrl() {
+		return this.notaryUrl;
 	}
 
-	public void setErrorMsg(String errorMsg) {
-		this.errorMsg = errorMsg;
+	public void setNotaryUrl(String notaryUrl) {
+		this.notaryUrl = notaryUrl;
 	}
 
 	public String getErrorCode() {

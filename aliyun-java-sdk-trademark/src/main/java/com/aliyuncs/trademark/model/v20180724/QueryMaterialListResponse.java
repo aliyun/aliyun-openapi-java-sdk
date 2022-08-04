@@ -25,33 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryMaterialListResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Integer totalItemNum;
-
 	private Integer currentPageNum;
-
-	private Integer pageSize;
 
 	private Integer totalPageNum;
 
+	private String requestId;
+
+	private Integer pageSize;
+
+	private Integer totalItemNum;
+
 	private List<Trademark> data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getTotalItemNum() {
-		return this.totalItemNum;
-	}
-
-	public void setTotalItemNum(Integer totalItemNum) {
-		this.totalItemNum = totalItemNum;
-	}
 
 	public Integer getCurrentPageNum() {
 		return this.currentPageNum;
@@ -59,6 +43,22 @@ public class QueryMaterialListResponse extends AcsResponse {
 
 	public void setCurrentPageNum(Integer currentPageNum) {
 		this.currentPageNum = currentPageNum;
+	}
+
+	public Integer getTotalPageNum() {
+		return this.totalPageNum;
+	}
+
+	public void setTotalPageNum(Integer totalPageNum) {
+		this.totalPageNum = totalPageNum;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageSize() {
@@ -69,12 +69,12 @@ public class QueryMaterialListResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getTotalPageNum() {
-		return this.totalPageNum;
+	public Integer getTotalItemNum() {
+		return this.totalItemNum;
 	}
 
-	public void setTotalPageNum(Integer totalPageNum) {
-		this.totalPageNum = totalPageNum;
+	public void setTotalItemNum(Integer totalItemNum) {
+		this.totalItemNum = totalItemNum;
 	}
 
 	public List<Trademark> getData() {
@@ -87,62 +87,40 @@ public class QueryMaterialListResponse extends AcsResponse {
 
 	public static class Trademark {
 
-		private Long id;
-
-		private String name;
-
-		private Integer type;
-
-		private Integer region;
-
-		private String contactName;
+		private String principalDescription;
 
 		private Integer status;
 
-		private String loaKey;
+		private Integer type;
 
-		private Integer loaStatus;
+		private String contactName;
 
 		private String cardNumber;
 
-		public Long getId() {
-			return this.id;
+		private Long validDate;
+
+		private Integer region;
+
+		private Integer principalName;
+
+		private Integer loaStatus;
+
+		private String name;
+
+		private String loaKey;
+
+		private Long id;
+
+		private String reason;
+
+		private String materialVersion;
+
+		public String getPrincipalDescription() {
+			return this.principalDescription;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public Integer getType() {
-			return this.type;
-		}
-
-		public void setType(Integer type) {
-			this.type = type;
-		}
-
-		public Integer getRegion() {
-			return this.region;
-		}
-
-		public void setRegion(Integer region) {
-			this.region = region;
-		}
-
-		public String getContactName() {
-			return this.contactName;
-		}
-
-		public void setContactName(String contactName) {
-			this.contactName = contactName;
+		public void setPrincipalDescription(String principalDescription) {
+			this.principalDescription = principalDescription;
 		}
 
 		public Integer getStatus() {
@@ -153,12 +131,52 @@ public class QueryMaterialListResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getLoaKey() {
-			return this.loaKey;
+		public Integer getType() {
+			return this.type;
 		}
 
-		public void setLoaKey(String loaKey) {
-			this.loaKey = loaKey;
+		public void setType(Integer type) {
+			this.type = type;
+		}
+
+		public String getContactName() {
+			return this.contactName;
+		}
+
+		public void setContactName(String contactName) {
+			this.contactName = contactName;
+		}
+
+		public String getCardNumber() {
+			return this.cardNumber;
+		}
+
+		public void setCardNumber(String cardNumber) {
+			this.cardNumber = cardNumber;
+		}
+
+		public Long getValidDate() {
+			return this.validDate;
+		}
+
+		public void setValidDate(Long validDate) {
+			this.validDate = validDate;
+		}
+
+		public Integer getRegion() {
+			return this.region;
+		}
+
+		public void setRegion(Integer region) {
+			this.region = region;
+		}
+
+		public Integer getPrincipalName() {
+			return this.principalName;
+		}
+
+		public void setPrincipalName(Integer principalName) {
+			this.principalName = principalName;
 		}
 
 		public Integer getLoaStatus() {
@@ -169,12 +187,44 @@ public class QueryMaterialListResponse extends AcsResponse {
 			this.loaStatus = loaStatus;
 		}
 
-		public String getCardNumber() {
-			return this.cardNumber;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setCardNumber(String cardNumber) {
-			this.cardNumber = cardNumber;
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getLoaKey() {
+			return this.loaKey;
+		}
+
+		public void setLoaKey(String loaKey) {
+			this.loaKey = loaKey;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
+		}
+
+		public String getReason() {
+			return this.reason;
+		}
+
+		public void setReason(String reason) {
+			this.reason = reason;
+		}
+
+		public String getMaterialVersion() {
+			return this.materialVersion;
+		}
+
+		public void setMaterialVersion(String materialVersion) {
+			this.materialVersion = materialVersion;
 		}
 	}
 

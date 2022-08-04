@@ -31,9 +31,13 @@ public class CreateTrademarkOrderRequest extends RpcAcsRequest<CreateTrademarkOr
 
 	private String channel;
 
+	private String sessionId;
+
 	private Integer type;
 
 	private String materialId;
+
+	private String ua;
 
 	private Long userId;
 
@@ -45,6 +49,8 @@ public class CreateTrademarkOrderRequest extends RpcAcsRequest<CreateTrademarkOr
 
 	private String uid;
 
+	private String bigDipperSource;
+
 	private String renewInfoId;
 
 	private String rootCode;
@@ -55,6 +61,8 @@ public class CreateTrademarkOrderRequest extends RpcAcsRequest<CreateTrademarkOr
 
 	private String tmName;
 
+	private String legalNoticeKey;
+
 	private String partnerCode;
 
 	private String phoneNum;
@@ -64,6 +72,8 @@ public class CreateTrademarkOrderRequest extends RpcAcsRequest<CreateTrademarkOr
 	private Boolean isBlackIcon;
 
 	private String bizId;
+
+	private Integer principalName;
 	public CreateTrademarkOrderRequest() {
 		super("Trademark", "2018-07-24", "CreateTrademarkOrder");
 		setMethod(MethodType.POST);
@@ -106,6 +116,17 @@ public class CreateTrademarkOrderRequest extends RpcAcsRequest<CreateTrademarkOr
 		}
 	}
 
+	public String getSessionId() {
+		return this.sessionId;
+	}
+
+	public void setSessionId(String sessionId) {
+		this.sessionId = sessionId;
+		if(sessionId != null){
+			putQueryParameter("SessionId", sessionId);
+		}
+	}
+
 	public Integer getType() {
 		return this.type;
 	}
@@ -125,6 +146,17 @@ public class CreateTrademarkOrderRequest extends RpcAcsRequest<CreateTrademarkOr
 		this.materialId = materialId;
 		if(materialId != null){
 			putQueryParameter("MaterialId", materialId);
+		}
+	}
+
+	public String getUa() {
+		return this.ua;
+	}
+
+	public void setUa(String ua) {
+		this.ua = ua;
+		if(ua != null){
+			putQueryParameter("Ua", ua);
 		}
 	}
 
@@ -183,6 +215,17 @@ public class CreateTrademarkOrderRequest extends RpcAcsRequest<CreateTrademarkOr
 		}
 	}
 
+	public String getBigDipperSource() {
+		return this.bigDipperSource;
+	}
+
+	public void setBigDipperSource(String bigDipperSource) {
+		this.bigDipperSource = bigDipperSource;
+		if(bigDipperSource != null){
+			putQueryParameter("BigDipperSource", bigDipperSource);
+		}
+	}
+
 	public String getRenewInfoId() {
 		return this.renewInfoId;
 	}
@@ -238,6 +281,17 @@ public class CreateTrademarkOrderRequest extends RpcAcsRequest<CreateTrademarkOr
 		}
 	}
 
+	public String getLegalNoticeKey() {
+		return this.legalNoticeKey;
+	}
+
+	public void setLegalNoticeKey(String legalNoticeKey) {
+		this.legalNoticeKey = legalNoticeKey;
+		if(legalNoticeKey != null){
+			putQueryParameter("LegalNoticeKey", legalNoticeKey);
+		}
+	}
+
 	public String getPartnerCode() {
 		return this.partnerCode;
 	}
@@ -290,6 +344,17 @@ public class CreateTrademarkOrderRequest extends RpcAcsRequest<CreateTrademarkOr
 		this.bizId = bizId;
 		if(bizId != null){
 			putQueryParameter("BizId", bizId);
+		}
+	}
+
+	public Integer getPrincipalName() {
+		return this.principalName;
+	}
+
+	public void setPrincipalName(Integer principalName) {
+		this.principalName = principalName;
+		if(principalName != null){
+			putQueryParameter("PrincipalName", principalName.toString());
 		}
 	}
 

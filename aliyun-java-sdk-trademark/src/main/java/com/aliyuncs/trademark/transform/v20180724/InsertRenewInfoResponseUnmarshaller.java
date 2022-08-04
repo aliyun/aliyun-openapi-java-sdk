@@ -23,10 +23,10 @@ public class InsertRenewInfoResponseUnmarshaller {
 	public static InsertRenewInfoResponse unmarshall(InsertRenewInfoResponse insertRenewInfoResponse, UnmarshallerContext _ctx) {
 		
 		insertRenewInfoResponse.setRequestId(_ctx.stringValue("InsertRenewInfoResponse.RequestId"));
-		insertRenewInfoResponse.setId(_ctx.longValue("InsertRenewInfoResponse.Id"));
-		insertRenewInfoResponse.setSuccess(_ctx.booleanValue("InsertRenewInfoResponse.Success"));
 		insertRenewInfoResponse.setErrorMsg(_ctx.stringValue("InsertRenewInfoResponse.ErrorMsg"));
+		insertRenewInfoResponse.setSuccess(_ctx.booleanValue("InsertRenewInfoResponse.Success"));
 		insertRenewInfoResponse.setErrorCode(_ctx.stringValue("InsertRenewInfoResponse.ErrorCode"));
+		insertRenewInfoResponse.setId(_ctx.longValue("InsertRenewInfoResponse.Id"));
 	 
 	 	return insertRenewInfoResponse;
 	}

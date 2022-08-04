@@ -26,8 +26,8 @@ public class CreateIntentionOrderResponseUnmarshaller {
 	public static CreateIntentionOrderResponse unmarshall(CreateIntentionOrderResponse createIntentionOrderResponse, UnmarshallerContext _ctx) {
 		
 		createIntentionOrderResponse.setRequestId(_ctx.stringValue("CreateIntentionOrderResponse.RequestId"));
-		createIntentionOrderResponse.setSuccess(_ctx.booleanValue("CreateIntentionOrderResponse.Success"));
 		createIntentionOrderResponse.setErrorMsg(_ctx.stringValue("CreateIntentionOrderResponse.ErrorMsg"));
+		createIntentionOrderResponse.setSuccess(_ctx.booleanValue("CreateIntentionOrderResponse.Success"));
 
 		List<String> data = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("CreateIntentionOrderResponse.Data.Length"); i++) {

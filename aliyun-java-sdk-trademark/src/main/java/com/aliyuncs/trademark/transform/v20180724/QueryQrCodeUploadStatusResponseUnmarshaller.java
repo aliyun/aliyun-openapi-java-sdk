@@ -23,9 +23,9 @@ public class QueryQrCodeUploadStatusResponseUnmarshaller {
 	public static QueryQrCodeUploadStatusResponse unmarshall(QueryQrCodeUploadStatusResponse queryQrCodeUploadStatusResponse, UnmarshallerContext _ctx) {
 		
 		queryQrCodeUploadStatusResponse.setRequestId(_ctx.stringValue("QueryQrCodeUploadStatusResponse.RequestId"));
-		queryQrCodeUploadStatusResponse.setOssKey(_ctx.stringValue("QueryQrCodeUploadStatusResponse.OssKey"));
-		queryQrCodeUploadStatusResponse.setOssUrl(_ctx.stringValue("QueryQrCodeUploadStatusResponse.OssUrl"));
 		queryQrCodeUploadStatusResponse.setStatus(_ctx.integerValue("QueryQrCodeUploadStatusResponse.Status"));
+		queryQrCodeUploadStatusResponse.setOssUrl(_ctx.stringValue("QueryQrCodeUploadStatusResponse.OssUrl"));
+		queryQrCodeUploadStatusResponse.setOssKey(_ctx.stringValue("QueryQrCodeUploadStatusResponse.OssKey"));
 		queryQrCodeUploadStatusResponse.setSuccess(_ctx.booleanValue("QueryQrCodeUploadStatusResponse.Success"));
 	 
 	 	return queryQrCodeUploadStatusResponse;

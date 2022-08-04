@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ConvertImageToGrayResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String signatureUrl;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getSignatureUrl() {
 		return this.signatureUrl;
@@ -42,6 +34,14 @@ public class ConvertImageToGrayResponse extends AcsResponse {
 
 	public void setSignatureUrl(String signatureUrl) {
 		this.signatureUrl = signatureUrl;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

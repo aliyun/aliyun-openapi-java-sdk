@@ -24,13 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateTrademarkOrderResponse extends AcsResponse {
 
-	private String requestId;
+	private String errorMsg;
 
-	private Long orderId;
+	private String requestId;
 
 	private Boolean success;
 
-	private String errorMsg;
+	private Long orderId;
+
+	public String getErrorMsg() {
+		return this.errorMsg;
+	}
+
+	public void setErrorMsg(String errorMsg) {
+		this.errorMsg = errorMsg;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,14 +46,6 @@ public class CreateTrademarkOrderResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Long getOrderId() {
-		return this.orderId;
-	}
-
-	public void setOrderId(Long orderId) {
-		this.orderId = orderId;
 	}
 
 	public Boolean getSuccess() {
@@ -56,12 +56,12 @@ public class CreateTrademarkOrderResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getErrorMsg() {
-		return this.errorMsg;
+	public Long getOrderId() {
+		return this.orderId;
 	}
 
-	public void setErrorMsg(String errorMsg) {
-		this.errorMsg = errorMsg;
+	public void setOrderId(Long orderId) {
+		this.orderId = orderId;
 	}
 
 	@Override

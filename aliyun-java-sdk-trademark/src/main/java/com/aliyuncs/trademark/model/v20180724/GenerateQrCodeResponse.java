@@ -24,25 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GenerateQrCodeResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String uuid;
 
+	private String requestId;
+
 	private Long expireTime;
+
+	private Boolean success;
 
 	private String qrcodeUrl;
 
 	private String fieldKey;
-
-	private Boolean success;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getUuid() {
 		return this.uuid;
@@ -52,12 +44,28 @@ public class GenerateQrCodeResponse extends AcsResponse {
 		this.uuid = uuid;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public Long getExpireTime() {
 		return this.expireTime;
 	}
 
 	public void setExpireTime(Long expireTime) {
 		this.expireTime = expireTime;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public String getQrcodeUrl() {
@@ -74,14 +82,6 @@ public class GenerateQrCodeResponse extends AcsResponse {
 
 	public void setFieldKey(String fieldKey) {
 		this.fieldKey = fieldKey;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	@Override

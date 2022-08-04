@@ -25,9 +25,9 @@ public class GenerateQrCodeResponseUnmarshaller {
 		generateQrCodeResponse.setRequestId(_ctx.stringValue("GenerateQrCodeResponse.RequestId"));
 		generateQrCodeResponse.setUuid(_ctx.stringValue("GenerateQrCodeResponse.Uuid"));
 		generateQrCodeResponse.setExpireTime(_ctx.longValue("GenerateQrCodeResponse.ExpireTime"));
+		generateQrCodeResponse.setSuccess(_ctx.booleanValue("GenerateQrCodeResponse.Success"));
 		generateQrCodeResponse.setQrcodeUrl(_ctx.stringValue("GenerateQrCodeResponse.QrcodeUrl"));
 		generateQrCodeResponse.setFieldKey(_ctx.stringValue("GenerateQrCodeResponse.FieldKey"));
-		generateQrCodeResponse.setSuccess(_ctx.booleanValue("GenerateQrCodeResponse.Success"));
 	 
 	 	return generateQrCodeResponse;
 	}

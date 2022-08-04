@@ -27,23 +27,23 @@ public class QueryIntentionListResponseUnmarshaller {
 	public static QueryIntentionListResponse unmarshall(QueryIntentionListResponse queryIntentionListResponse, UnmarshallerContext _ctx) {
 		
 		queryIntentionListResponse.setRequestId(_ctx.stringValue("QueryIntentionListResponse.RequestId"));
-		queryIntentionListResponse.setTotalItemNum(_ctx.integerValue("QueryIntentionListResponse.TotalItemNum"));
 		queryIntentionListResponse.setCurrentPageNum(_ctx.integerValue("QueryIntentionListResponse.CurrentPageNum"));
-		queryIntentionListResponse.setPageSize(_ctx.integerValue("QueryIntentionListResponse.PageSize"));
 		queryIntentionListResponse.setTotalPageNum(_ctx.integerValue("QueryIntentionListResponse.TotalPageNum"));
+		queryIntentionListResponse.setPageSize(_ctx.integerValue("QueryIntentionListResponse.PageSize"));
+		queryIntentionListResponse.setTotalItemNum(_ctx.integerValue("QueryIntentionListResponse.TotalItemNum"));
 
 		List<Intention> data = new ArrayList<Intention>();
 		for (int i = 0; i < _ctx.lengthValue("QueryIntentionListResponse.Data.Length"); i++) {
 			Intention intention = new Intention();
-			intention.setUserId(_ctx.stringValue("QueryIntentionListResponse.Data["+ i +"].UserId"));
-			intention.setRegisterNumber(_ctx.stringValue("QueryIntentionListResponse.Data["+ i +"].RegisterNumber"));
-			intention.setClassification(_ctx.stringValue("QueryIntentionListResponse.Data["+ i +"].Classification"));
 			intention.setType(_ctx.integerValue("QueryIntentionListResponse.Data["+ i +"].Type"));
-			intention.setBizId(_ctx.stringValue("QueryIntentionListResponse.Data["+ i +"].BizId"));
-			intention.setDescription(_ctx.stringValue("QueryIntentionListResponse.Data["+ i +"].Description"));
 			intention.setStatus(_ctx.integerValue("QueryIntentionListResponse.Data["+ i +"].Status"));
 			intention.setUpdateTime(_ctx.longValue("QueryIntentionListResponse.Data["+ i +"].UpdateTime"));
+			intention.setDescription(_ctx.stringValue("QueryIntentionListResponse.Data["+ i +"].Description"));
+			intention.setRegisterNumber(_ctx.stringValue("QueryIntentionListResponse.Data["+ i +"].RegisterNumber"));
 			intention.setCreateTime(_ctx.longValue("QueryIntentionListResponse.Data["+ i +"].CreateTime"));
+			intention.setUserId(_ctx.stringValue("QueryIntentionListResponse.Data["+ i +"].UserId"));
+			intention.setBizId(_ctx.stringValue("QueryIntentionListResponse.Data["+ i +"].BizId"));
+			intention.setClassification(_ctx.stringValue("QueryIntentionListResponse.Data["+ i +"].Classification"));
 
 			data.add(intention);
 		}

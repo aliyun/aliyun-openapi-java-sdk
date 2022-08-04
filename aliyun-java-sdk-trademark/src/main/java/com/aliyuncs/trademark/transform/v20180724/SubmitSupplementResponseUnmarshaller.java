@@ -23,8 +23,8 @@ public class SubmitSupplementResponseUnmarshaller {
 	public static SubmitSupplementResponse unmarshall(SubmitSupplementResponse submitSupplementResponse, UnmarshallerContext _ctx) {
 		
 		submitSupplementResponse.setRequestId(_ctx.stringValue("SubmitSupplementResponse.RequestId"));
-		submitSupplementResponse.setSuccess(_ctx.booleanValue("SubmitSupplementResponse.Success"));
 		submitSupplementResponse.setErrorMsg(_ctx.stringValue("SubmitSupplementResponse.ErrorMsg"));
+		submitSupplementResponse.setSuccess(_ctx.booleanValue("SubmitSupplementResponse.Success"));
 		submitSupplementResponse.setErrorCode(_ctx.stringValue("SubmitSupplementResponse.ErrorCode"));
 	 
 	 	return submitSupplementResponse;

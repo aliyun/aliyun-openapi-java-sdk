@@ -25,33 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryTaskListResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Integer totalItemNum;
-
 	private Integer currentPageNum;
-
-	private Integer pageSize;
 
 	private Integer totalPageNum;
 
+	private String requestId;
+
+	private Integer pageSize;
+
+	private Integer totalItemNum;
+
 	private List<TaskList> data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getTotalItemNum() {
-		return this.totalItemNum;
-	}
-
-	public void setTotalItemNum(Integer totalItemNum) {
-		this.totalItemNum = totalItemNum;
-	}
 
 	public Integer getCurrentPageNum() {
 		return this.currentPageNum;
@@ -59,6 +43,22 @@ public class QueryTaskListResponse extends AcsResponse {
 
 	public void setCurrentPageNum(Integer currentPageNum) {
 		this.currentPageNum = currentPageNum;
+	}
+
+	public Integer getTotalPageNum() {
+		return this.totalPageNum;
+	}
+
+	public void setTotalPageNum(Integer totalPageNum) {
+		this.totalPageNum = totalPageNum;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageSize() {
@@ -69,12 +69,12 @@ public class QueryTaskListResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getTotalPageNum() {
-		return this.totalPageNum;
+	public Integer getTotalItemNum() {
+		return this.totalItemNum;
 	}
 
-	public void setTotalPageNum(Integer totalPageNum) {
-		this.totalPageNum = totalPageNum;
+	public void setTotalItemNum(Integer totalItemNum) {
+		this.totalItemNum = totalItemNum;
 	}
 
 	public List<TaskList> getData() {
@@ -87,27 +87,19 @@ public class QueryTaskListResponse extends AcsResponse {
 
 	public static class TaskList {
 
-		private String taskStatus;
-
 		private String taskType;
-
-		private String errMsg;
 
 		private String result;
 
-		private String fileName;
-
-		private Long createTime;
+		private String taskStatus;
 
 		private Long completeTime;
 
-		public String getTaskStatus() {
-			return this.taskStatus;
-		}
+		private Long createTime;
 
-		public void setTaskStatus(String taskStatus) {
-			this.taskStatus = taskStatus;
-		}
+		private String errMsg;
+
+		private String fileName;
 
 		public String getTaskType() {
 			return this.taskType;
@@ -115,14 +107,6 @@ public class QueryTaskListResponse extends AcsResponse {
 
 		public void setTaskType(String taskType) {
 			this.taskType = taskType;
-		}
-
-		public String getErrMsg() {
-			return this.errMsg;
-		}
-
-		public void setErrMsg(String errMsg) {
-			this.errMsg = errMsg;
 		}
 
 		public String getResult() {
@@ -133,12 +117,20 @@ public class QueryTaskListResponse extends AcsResponse {
 			this.result = result;
 		}
 
-		public String getFileName() {
-			return this.fileName;
+		public String getTaskStatus() {
+			return this.taskStatus;
 		}
 
-		public void setFileName(String fileName) {
-			this.fileName = fileName;
+		public void setTaskStatus(String taskStatus) {
+			this.taskStatus = taskStatus;
+		}
+
+		public Long getCompleteTime() {
+			return this.completeTime;
+		}
+
+		public void setCompleteTime(Long completeTime) {
+			this.completeTime = completeTime;
 		}
 
 		public Long getCreateTime() {
@@ -149,12 +141,20 @@ public class QueryTaskListResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public Long getCompleteTime() {
-			return this.completeTime;
+		public String getErrMsg() {
+			return this.errMsg;
 		}
 
-		public void setCompleteTime(Long completeTime) {
-			this.completeTime = completeTime;
+		public void setErrMsg(String errMsg) {
+			this.errMsg = errMsg;
+		}
+
+		public String getFileName() {
+			return this.fileName;
+		}
+
+		public void setFileName(String fileName) {
+			this.fileName = fileName;
 		}
 	}
 

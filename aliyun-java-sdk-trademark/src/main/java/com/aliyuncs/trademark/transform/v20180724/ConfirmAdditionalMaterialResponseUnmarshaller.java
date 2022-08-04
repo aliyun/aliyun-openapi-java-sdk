@@ -23,8 +23,8 @@ public class ConfirmAdditionalMaterialResponseUnmarshaller {
 	public static ConfirmAdditionalMaterialResponse unmarshall(ConfirmAdditionalMaterialResponse confirmAdditionalMaterialResponse, UnmarshallerContext _ctx) {
 		
 		confirmAdditionalMaterialResponse.setRequestId(_ctx.stringValue("ConfirmAdditionalMaterialResponse.RequestId"));
-		confirmAdditionalMaterialResponse.setSuccess(_ctx.booleanValue("ConfirmAdditionalMaterialResponse.Success"));
 		confirmAdditionalMaterialResponse.setErrorMsg(_ctx.stringValue("ConfirmAdditionalMaterialResponse.ErrorMsg"));
+		confirmAdditionalMaterialResponse.setSuccess(_ctx.booleanValue("ConfirmAdditionalMaterialResponse.Success"));
 		confirmAdditionalMaterialResponse.setErrorCode(_ctx.stringValue("ConfirmAdditionalMaterialResponse.ErrorCode"));
 	 
 	 	return confirmAdditionalMaterialResponse;

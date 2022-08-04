@@ -27,6 +27,8 @@ public class QueryTradeIntentionUserListRequest extends RpcAcsRequest<QueryTrade
 
 	private Integer pageNum;
 
+	private Integer type;
+
 	private Integer pageSize;
 
 	private String bizId;
@@ -53,6 +55,17 @@ public class QueryTradeIntentionUserListRequest extends RpcAcsRequest<QueryTrade
 		this.pageNum = pageNum;
 		if(pageNum != null){
 			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
+	public Integer getType() {
+		return this.type;
+	}
+
+	public void setType(Integer type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type.toString());
 		}
 	}
 

@@ -25,6 +25,14 @@ import com.aliyuncs.trademark.Endpoint;
 public class DescirbeCombineTrademarkRequest extends RpcAcsRequest<DescirbeCombineTrademarkResponse> {
 	   
 
+	private Integer pageNumber;
+
+	private String products;
+
+	private String similarGroups;
+
+	private Integer pageSize;
+
 	private String ownerName;
 
 	private String classification;
@@ -33,15 +41,7 @@ public class DescirbeCombineTrademarkRequest extends RpcAcsRequest<DescirbeCombi
 
 	private Boolean accurateMatch;
 
-	private Integer pageNumber;
-
-	private String products;
-
-	private String similarGroups;
-
 	private String name;
-
-	private Integer pageSize;
 	public DescirbeCombineTrademarkRequest() {
 		super("Trademark", "2018-07-24", "DescirbeCombineTrademark");
 		setMethod(MethodType.POST);
@@ -49,6 +49,50 @@ public class DescirbeCombineTrademarkRequest extends RpcAcsRequest<DescirbeCombi
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getProducts() {
+		return this.products;
+	}
+
+	public void setProducts(String products) {
+		this.products = products;
+		if(products != null){
+			putQueryParameter("Products", products);
+		}
+	}
+
+	public String getSimilarGroups() {
+		return this.similarGroups;
+	}
+
+	public void setSimilarGroups(String similarGroups) {
+		this.similarGroups = similarGroups;
+		if(similarGroups != null){
+			putQueryParameter("SimilarGroups", similarGroups);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
 	}
 
 	public String getOwnerName() {
@@ -95,39 +139,6 @@ public class DescirbeCombineTrademarkRequest extends RpcAcsRequest<DescirbeCombi
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public String getProducts() {
-		return this.products;
-	}
-
-	public void setProducts(String products) {
-		this.products = products;
-		if(products != null){
-			putQueryParameter("Products", products);
-		}
-	}
-
-	public String getSimilarGroups() {
-		return this.similarGroups;
-	}
-
-	public void setSimilarGroups(String similarGroups) {
-		this.similarGroups = similarGroups;
-		if(similarGroups != null){
-			putQueryParameter("SimilarGroups", similarGroups);
-		}
-	}
-
 	public String getName() {
 		return this.name;
 	}
@@ -136,17 +147,6 @@ public class DescirbeCombineTrademarkRequest extends RpcAcsRequest<DescirbeCombi
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

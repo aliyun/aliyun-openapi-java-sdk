@@ -25,11 +25,11 @@ import com.aliyuncs.trademark.Endpoint;
 public class AcceptPartnerNotificationRequest extends RpcAcsRequest<AcceptPartnerNotificationResponse> {
 	   
 
+	private String remark;
+
 	private String material;
 
 	private String bizId;
-
-	private String remark;
 
 	private String operation;
 	public AcceptPartnerNotificationRequest() {
@@ -39,6 +39,17 @@ public class AcceptPartnerNotificationRequest extends RpcAcsRequest<AcceptPartne
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getRemark() {
+		return this.remark;
+	}
+
+	public void setRemark(String remark) {
+		this.remark = remark;
+		if(remark != null){
+			putQueryParameter("Remark", remark);
+		}
 	}
 
 	public String getMaterial() {
@@ -60,17 +71,6 @@ public class AcceptPartnerNotificationRequest extends RpcAcsRequest<AcceptPartne
 		this.bizId = bizId;
 		if(bizId != null){
 			putQueryParameter("BizId", bizId);
-		}
-	}
-
-	public String getRemark() {
-		return this.remark;
-	}
-
-	public void setRemark(String remark) {
-		this.remark = remark;
-		if(remark != null){
-			putQueryParameter("Remark", remark);
 		}
 	}
 
