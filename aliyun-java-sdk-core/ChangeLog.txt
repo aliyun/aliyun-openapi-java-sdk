@@ -1,4 +1,11 @@
-﻿2022-01-04 Version:4.6.0
+﻿2022-08-04 Version:4.6.1
+1, Fix v3 signature without path && update signer name
+2, Support patch(http method)
+3, Support payload for delete(http method)
+4, Remove useless system params
+5, Return response when http request failed
+
+2022-01-04 Version:4.6.0
 1, Support retry policy
 2, Enable throttling control
 3, Return raw content when parse failed in readError
