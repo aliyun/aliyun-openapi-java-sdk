@@ -22,20 +22,20 @@ import com.aliyuncs.polardb.Endpoint;
  * @author auto create
  * @version 
  */
-public class RefreshDBClusterStorageUsageRequest extends RpcAcsRequest<RefreshDBClusterStorageUsageResponse> {
+public class CloseAITaskRequest extends RpcAcsRequest<CloseAITaskResponse> {
 	   
 
 	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
+	private String dBClusterId;
+
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private Boolean syncRealTime;
-	public RefreshDBClusterStorageUsageRequest() {
-		super("polardb", "2017-08-01", "RefreshDBClusterStorageUsage");
+	public CloseAITaskRequest() {
+		super("polardb", "2017-08-01", "CloseAITask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -65,6 +65,17 @@ public class RefreshDBClusterStorageUsageRequest extends RpcAcsRequest<RefreshDB
 		}
 	}
 
+	public String getDBClusterId() {
+		return this.dBClusterId;
+	}
+
+	public void setDBClusterId(String dBClusterId) {
+		this.dBClusterId = dBClusterId;
+		if(dBClusterId != null){
+			putQueryParameter("DBClusterId", dBClusterId);
+		}
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -87,20 +98,9 @@ public class RefreshDBClusterStorageUsageRequest extends RpcAcsRequest<RefreshDB
 		}
 	}
 
-	public Boolean getSyncRealTime() {
-		return this.syncRealTime;
-	}
-
-	public void setSyncRealTime(Boolean syncRealTime) {
-		this.syncRealTime = syncRealTime;
-		if(syncRealTime != null){
-			putQueryParameter("SyncRealTime", syncRealTime.toString());
-		}
-	}
-
 	@Override
-	public Class<RefreshDBClusterStorageUsageResponse> getResponseClass() {
-		return RefreshDBClusterStorageUsageResponse.class;
+	public Class<CloseAITaskResponse> getResponseClass() {
+		return CloseAITaskResponse.class;
 	}
 
 }

@@ -22,20 +22,22 @@ import com.aliyuncs.polardb.Endpoint;
  * @author auto create
  * @version 
  */
-public class RefreshDBClusterStorageUsageRequest extends RpcAcsRequest<RefreshDBClusterStorageUsageResponse> {
+public class ModifyDBClusterDeletionRequest extends RpcAcsRequest<ModifyDBClusterDeletionResponse> {
 	   
 
 	private Long resourceOwnerId;
 
+	private Boolean protection;
+
 	private String resourceOwnerAccount;
+
+	private String dBClusterId;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private Boolean syncRealTime;
-	public RefreshDBClusterStorageUsageRequest() {
-		super("polardb", "2017-08-01", "RefreshDBClusterStorageUsage");
+	public ModifyDBClusterDeletionRequest() {
+		super("polardb", "2017-08-01", "ModifyDBClusterDeletion");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -54,6 +56,17 @@ public class RefreshDBClusterStorageUsageRequest extends RpcAcsRequest<RefreshDB
 		}
 	}
 
+	public Boolean getProtection() {
+		return this.protection;
+	}
+
+	public void setProtection(Boolean protection) {
+		this.protection = protection;
+		if(protection != null){
+			putQueryParameter("Protection", protection.toString());
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -62,6 +75,17 @@ public class RefreshDBClusterStorageUsageRequest extends RpcAcsRequest<RefreshDB
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getDBClusterId() {
+		return this.dBClusterId;
+	}
+
+	public void setDBClusterId(String dBClusterId) {
+		this.dBClusterId = dBClusterId;
+		if(dBClusterId != null){
+			putQueryParameter("DBClusterId", dBClusterId);
 		}
 	}
 
@@ -87,20 +111,9 @@ public class RefreshDBClusterStorageUsageRequest extends RpcAcsRequest<RefreshDB
 		}
 	}
 
-	public Boolean getSyncRealTime() {
-		return this.syncRealTime;
-	}
-
-	public void setSyncRealTime(Boolean syncRealTime) {
-		this.syncRealTime = syncRealTime;
-		if(syncRealTime != null){
-			putQueryParameter("SyncRealTime", syncRealTime.toString());
-		}
-	}
-
 	@Override
-	public Class<RefreshDBClusterStorageUsageResponse> getResponseClass() {
-		return RefreshDBClusterStorageUsageResponse.class;
+	public Class<ModifyDBClusterDeletionResponse> getResponseClass() {
+		return ModifyDBClusterDeletionResponse.class;
 	}
 
 }

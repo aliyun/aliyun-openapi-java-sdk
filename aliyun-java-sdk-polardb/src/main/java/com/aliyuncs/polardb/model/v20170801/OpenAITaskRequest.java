@@ -22,20 +22,24 @@ import com.aliyuncs.polardb.Endpoint;
  * @author auto create
  * @version 
  */
-public class RefreshDBClusterStorageUsageRequest extends RpcAcsRequest<RefreshDBClusterStorageUsageResponse> {
+public class OpenAITaskRequest extends RpcAcsRequest<OpenAITaskResponse> {
 	   
 
 	private Long resourceOwnerId;
 
+	private String password;
+
 	private String resourceOwnerAccount;
+
+	private String dBClusterId;
 
 	private String ownerAccount;
 
 	private Long ownerId;
 
-	private Boolean syncRealTime;
-	public RefreshDBClusterStorageUsageRequest() {
-		super("polardb", "2017-08-01", "RefreshDBClusterStorageUsage");
+	private String username;
+	public OpenAITaskRequest() {
+		super("polardb", "2017-08-01", "OpenAITask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -54,6 +58,17 @@ public class RefreshDBClusterStorageUsageRequest extends RpcAcsRequest<RefreshDB
 		}
 	}
 
+	public String getPassword() {
+		return this.password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+		if(password != null){
+			putQueryParameter("Password", password);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -62,6 +77,17 @@ public class RefreshDBClusterStorageUsageRequest extends RpcAcsRequest<RefreshDB
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getDBClusterId() {
+		return this.dBClusterId;
+	}
+
+	public void setDBClusterId(String dBClusterId) {
+		this.dBClusterId = dBClusterId;
+		if(dBClusterId != null){
+			putQueryParameter("DBClusterId", dBClusterId);
 		}
 	}
 
@@ -87,20 +113,20 @@ public class RefreshDBClusterStorageUsageRequest extends RpcAcsRequest<RefreshDB
 		}
 	}
 
-	public Boolean getSyncRealTime() {
-		return this.syncRealTime;
+	public String getUsername() {
+		return this.username;
 	}
 
-	public void setSyncRealTime(Boolean syncRealTime) {
-		this.syncRealTime = syncRealTime;
-		if(syncRealTime != null){
-			putQueryParameter("SyncRealTime", syncRealTime.toString());
+	public void setUsername(String username) {
+		this.username = username;
+		if(username != null){
+			putQueryParameter("Username", username);
 		}
 	}
 
 	@Override
-	public Class<RefreshDBClusterStorageUsageResponse> getResponseClass() {
-		return RefreshDBClusterStorageUsageResponse.class;
+	public Class<OpenAITaskResponse> getResponseClass() {
+		return OpenAITaskResponse.class;
 	}
 
 }
