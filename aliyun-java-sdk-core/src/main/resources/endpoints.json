@@ -515,14 +515,14 @@
       "cn-hangzhou":"metrics.cn-hangzhou.aliyuncs.com",
       "cn-shanghai":"metrics.cn-hangzhou.aliyuncs.com",
       "cn-shenzhen":"metrics.cn-hangzhou.aliyuncs.com",
-      "cn-hongkong":"metrics.cn-hangzhou.aliyuncs.com",
-      "ap-southeast-1":"metrics.cn-hangzhou.aliyuncs.com",
-      "ap-southeast-2":"metrics.cn-hangzhou.aliyuncs.com",
+      "cn-hongkong":"metrics.cn-hongkong.aliyuncs.com",
+      "ap-southeast-1":"metrics.ap-southeast-1.aliyuncs.com",
+      "ap-southeast-2":"metrics.ap-southeast-2.aliyuncs.com",
       "eu-west-1":"metrics.eu-west-1.aliyuncs.com",
-      "us-west-1":"metrics.cn-hangzhou.aliyuncs.com",
-      "us-east-1":"metrics.cn-hangzhou.aliyuncs.com",
-      "eu-central-1":"metrics.cn-hangzhou.aliyuncs.com",
-      "me-east-1":"metrics.cn-hangzhou.aliyuncs.com"
+      "us-west-1":"metrics.us-west-1.aliyuncs.com",
+      "us-east-1":"metrics.us-east-1.aliyuncs.com",
+      "eu-central-1":"metrics.eu-central-1.aliyuncs.com",
+      "me-east-1":"metrics.me-east-1.aliyuncs.com"
     },
     "luban": {
       "cn-shanghai": "luban.cn-shanghai.aliyuncs.com",
