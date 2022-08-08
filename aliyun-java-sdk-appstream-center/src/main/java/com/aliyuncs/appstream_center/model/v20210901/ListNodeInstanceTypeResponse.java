@@ -91,6 +91,12 @@ public class ListNodeInstanceTypeResponse extends AcsResponse {
 
 		private Long dataDiskSize;
 
+		private Long gpuMemory;
+
+		private Integer maxCapacity;
+
+		private String nodeTypeName;
+
 		public String getNodeInstanceType() {
 			return this.nodeInstanceType;
 		}
@@ -145,6 +151,30 @@ public class ListNodeInstanceTypeResponse extends AcsResponse {
 
 		public void setDataDiskSize(Long dataDiskSize) {
 			this.dataDiskSize = dataDiskSize;
+		}
+
+		public Long getGpuMemory() {
+			return this.gpuMemory;
+		}
+
+		public void setGpuMemory(Long gpuMemory) {
+			this.gpuMemory = gpuMemory;
+		}
+
+		public Integer getMaxCapacity() {
+			return this.maxCapacity;
+		}
+
+		public void setMaxCapacity(Integer maxCapacity) {
+			this.maxCapacity = maxCapacity;
+		}
+
+		public String getNodeTypeName() {
+			return this.nodeTypeName;
+		}
+
+		public void setNodeTypeName(String nodeTypeName) {
+			this.nodeTypeName = nodeTypeName;
 		}
 	}
 

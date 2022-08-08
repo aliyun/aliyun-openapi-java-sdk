@@ -24,6 +24,12 @@ import com.aliyuncs.http.MethodType;
 public class ListNodeInstanceTypeRequest extends RpcAcsRequest<ListNodeInstanceTypeResponse> {
 	   
 
+	private String bizRegionId;
+
+	private String language;
+
+	private String osType;
+
 	private Integer pageNumber;
 
 	private String productType;
@@ -32,6 +38,39 @@ public class ListNodeInstanceTypeRequest extends RpcAcsRequest<ListNodeInstanceT
 	public ListNodeInstanceTypeRequest() {
 		super("appstream-center", "2021-09-01", "ListNodeInstanceType");
 		setMethod(MethodType.POST);
+	}
+
+	public String getBizRegionId() {
+		return this.bizRegionId;
+	}
+
+	public void setBizRegionId(String bizRegionId) {
+		this.bizRegionId = bizRegionId;
+		if(bizRegionId != null){
+			putQueryParameter("BizRegionId", bizRegionId);
+		}
+	}
+
+	public String getLanguage() {
+		return this.language;
+	}
+
+	public void setLanguage(String language) {
+		this.language = language;
+		if(language != null){
+			putQueryParameter("Language", language);
+		}
+	}
+
+	public String getOsType() {
+		return this.osType;
+	}
+
+	public void setOsType(String osType) {
+		this.osType = osType;
+		if(osType != null){
+			putQueryParameter("OsType", osType);
+		}
 	}
 
 	public Integer getPageNumber() {

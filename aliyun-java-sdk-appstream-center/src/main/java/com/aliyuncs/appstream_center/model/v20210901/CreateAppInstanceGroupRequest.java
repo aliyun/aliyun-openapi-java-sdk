@@ -249,8 +249,23 @@ public class CreateAppInstanceGroupRequest extends RpcAcsRequest<CreateAppInstan
 		@SerializedName("NodeAmount")
 		private Integer nodeAmount;
 
+		@SerializedName("ScalingStep")
+		private Integer scalingStep;
+
 		@SerializedName("NodeInstanceType")
 		private String nodeInstanceType;
+
+		@SerializedName("ScalingDownAfterIdleMinutes")
+		private Integer scalingDownAfterIdleMinutes;
+
+		@SerializedName("StrategyType")
+		private String strategyType;
+
+		@SerializedName("MaxScalingAmount")
+		private Integer maxScalingAmount;
+
+		@SerializedName("ScalingUsageThreshold")
+		private String scalingUsageThreshold;
 
 		@SerializedName("NodeCapacity")
 		private Integer nodeCapacity;
@@ -263,12 +278,52 @@ public class CreateAppInstanceGroupRequest extends RpcAcsRequest<CreateAppInstan
 			this.nodeAmount = nodeAmount;
 		}
 
+		public Integer getScalingStep() {
+			return this.scalingStep;
+		}
+
+		public void setScalingStep(Integer scalingStep) {
+			this.scalingStep = scalingStep;
+		}
+
 		public String getNodeInstanceType() {
 			return this.nodeInstanceType;
 		}
 
 		public void setNodeInstanceType(String nodeInstanceType) {
 			this.nodeInstanceType = nodeInstanceType;
+		}
+
+		public Integer getScalingDownAfterIdleMinutes() {
+			return this.scalingDownAfterIdleMinutes;
+		}
+
+		public void setScalingDownAfterIdleMinutes(Integer scalingDownAfterIdleMinutes) {
+			this.scalingDownAfterIdleMinutes = scalingDownAfterIdleMinutes;
+		}
+
+		public String getStrategyType() {
+			return this.strategyType;
+		}
+
+		public void setStrategyType(String strategyType) {
+			this.strategyType = strategyType;
+		}
+
+		public Integer getMaxScalingAmount() {
+			return this.maxScalingAmount;
+		}
+
+		public void setMaxScalingAmount(Integer maxScalingAmount) {
+			this.maxScalingAmount = maxScalingAmount;
+		}
+
+		public String getScalingUsageThreshold() {
+			return this.scalingUsageThreshold;
+		}
+
+		public void setScalingUsageThreshold(String scalingUsageThreshold) {
+			this.scalingUsageThreshold = scalingUsageThreshold;
 		}
 
 		public Integer getNodeCapacity() {

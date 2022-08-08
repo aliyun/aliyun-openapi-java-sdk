@@ -41,6 +41,9 @@ public class ListNodeInstanceTypeResponseUnmarshaller {
 			node.setMemory(_ctx.longValue("ListNodeInstanceTypeResponse.NodeInstanceTypeModels["+ i +"].Memory"));
 			node.setSystemDiskSize(_ctx.longValue("ListNodeInstanceTypeResponse.NodeInstanceTypeModels["+ i +"].SystemDiskSize"));
 			node.setDataDiskSize(_ctx.longValue("ListNodeInstanceTypeResponse.NodeInstanceTypeModels["+ i +"].DataDiskSize"));
+			node.setGpuMemory(_ctx.longValue("ListNodeInstanceTypeResponse.NodeInstanceTypeModels["+ i +"].GpuMemory"));
+			node.setMaxCapacity(_ctx.integerValue("ListNodeInstanceTypeResponse.NodeInstanceTypeModels["+ i +"].MaxCapacity"));
+			node.setNodeTypeName(_ctx.stringValue("ListNodeInstanceTypeResponse.NodeInstanceTypeModels["+ i +"].NodeTypeName"));
 
 			nodeInstanceTypeModels.add(node);
 		}

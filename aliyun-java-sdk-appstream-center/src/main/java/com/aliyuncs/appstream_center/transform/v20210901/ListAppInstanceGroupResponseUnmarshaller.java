@@ -21,6 +21,7 @@ import com.aliyuncs.appstream_center.model.v20210901.ListAppInstanceGroupRespons
 import com.aliyuncs.appstream_center.model.v20210901.ListAppInstanceGroupResponse.Data;
 import com.aliyuncs.appstream_center.model.v20210901.ListAppInstanceGroupResponse.Data.AppsItem;
 import com.aliyuncs.appstream_center.model.v20210901.ListAppInstanceGroupResponse.Data.Node;
+import com.aliyuncs.appstream_center.model.v20210901.ListAppInstanceGroupResponse.Data.OtaInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -55,6 +56,13 @@ public class ListAppInstanceGroupResponseUnmarshaller {
 			data.setSessionTimeout(_ctx.stringValue("ListAppInstanceGroupResponse.AppInstanceGroupModels["+ i +"].SessionTimeout"));
 			data.setAppInstanceGroupName(_ctx.stringValue("ListAppInstanceGroupResponse.AppInstanceGroupModels["+ i +"].AppInstanceGroupName"));
 			data.setExpiredTime(_ctx.stringValue("ListAppInstanceGroupResponse.AppInstanceGroupModels["+ i +"].ExpiredTime"));
+			data.setOsType(_ctx.stringValue("ListAppInstanceGroupResponse.AppInstanceGroupModels["+ i +"].OsType"));
+
+			OtaInfo otaInfo = new OtaInfo();
+			otaInfo.setOtaVersion(_ctx.stringValue("ListAppInstanceGroupResponse.AppInstanceGroupModels["+ i +"].OtaInfo.OtaVersion"));
+			otaInfo.setNewOtaVersion(_ctx.stringValue("ListAppInstanceGroupResponse.AppInstanceGroupModels["+ i +"].OtaInfo.NewOtaVersion"));
+			otaInfo.setTaskId(_ctx.stringValue("ListAppInstanceGroupResponse.AppInstanceGroupModels["+ i +"].OtaInfo.TaskId"));
+			data.setOtaInfo(otaInfo);
 
 			List<AppsItem> apps = new ArrayList<AppsItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListAppInstanceGroupResponse.AppInstanceGroupModels["+ i +"].Apps.Length"); j++) {
@@ -74,6 +82,14 @@ public class ListAppInstanceGroupResponseUnmarshaller {
 				node.setNodeAmount(_ctx.integerValue("ListAppInstanceGroupResponse.AppInstanceGroupModels["+ i +"].NodePool["+ j +"].NodeAmount"));
 				node.setNodeUsed(_ctx.integerValue("ListAppInstanceGroupResponse.AppInstanceGroupModels["+ i +"].NodePool["+ j +"].NodeUsed"));
 				node.setNodeCapacity(_ctx.integerValue("ListAppInstanceGroupResponse.AppInstanceGroupModels["+ i +"].NodePool["+ j +"].NodeCapacity"));
+				node.setScalingNodeAmount(_ctx.integerValue("ListAppInstanceGroupResponse.AppInstanceGroupModels["+ i +"].NodePool["+ j +"].ScalingNodeAmount"));
+				node.setScalingNodeUsed(_ctx.integerValue("ListAppInstanceGroupResponse.AppInstanceGroupModels["+ i +"].NodePool["+ j +"].ScalingNodeUsed"));
+				node.setStrategyType(_ctx.stringValue("ListAppInstanceGroupResponse.AppInstanceGroupModels["+ i +"].NodePool["+ j +"].StrategyType"));
+				node.setAmount(_ctx.integerValue("ListAppInstanceGroupResponse.AppInstanceGroupModels["+ i +"].NodePool["+ j +"].Amount"));
+				node.setMaxScalingAmount(_ctx.integerValue("ListAppInstanceGroupResponse.AppInstanceGroupModels["+ i +"].NodePool["+ j +"].MaxScalingAmount"));
+				node.setScalingStep(_ctx.integerValue("ListAppInstanceGroupResponse.AppInstanceGroupModels["+ i +"].NodePool["+ j +"].ScalingStep"));
+				node.setScalingUsageThreshold(_ctx.stringValue("ListAppInstanceGroupResponse.AppInstanceGroupModels["+ i +"].NodePool["+ j +"].ScalingUsageThreshold"));
+				node.setScalingDownAfterIdleMinutes(_ctx.integerValue("ListAppInstanceGroupResponse.AppInstanceGroupModels["+ i +"].NodePool["+ j +"].ScalingDownAfterIdleMinutes"));
 
 				nodePool.add(node);
 			}

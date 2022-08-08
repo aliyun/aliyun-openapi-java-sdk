@@ -115,9 +115,13 @@ public class ListAppInstanceGroupResponse extends AcsResponse {
 
 		private String expiredTime;
 
+		private String osType;
+
 		private List<AppsItem> apps;
 
 		private List<Node> nodePool;
+
+		private OtaInfo otaInfo;
 
 		public String getAppCenterImageId() {
 			return this.appCenterImageId;
@@ -271,6 +275,14 @@ public class ListAppInstanceGroupResponse extends AcsResponse {
 			this.expiredTime = expiredTime;
 		}
 
+		public String getOsType() {
+			return this.osType;
+		}
+
+		public void setOsType(String osType) {
+			this.osType = osType;
+		}
+
 		public List<AppsItem> getApps() {
 			return this.apps;
 		}
@@ -285,6 +297,14 @@ public class ListAppInstanceGroupResponse extends AcsResponse {
 
 		public void setNodePool(List<Node> nodePool) {
 			this.nodePool = nodePool;
+		}
+
+		public OtaInfo getOtaInfo() {
+			return this.otaInfo;
+		}
+
+		public void setOtaInfo(OtaInfo otaInfo) {
+			this.otaInfo = otaInfo;
 		}
 
 		public static class AppsItem {
@@ -321,6 +341,22 @@ public class ListAppInstanceGroupResponse extends AcsResponse {
 			private Integer nodeUsed;
 
 			private Integer nodeCapacity;
+
+			private Integer scalingNodeAmount;
+
+			private Integer scalingNodeUsed;
+
+			private String strategyType;
+
+			private Integer amount;
+
+			private Integer maxScalingAmount;
+
+			private Integer scalingStep;
+
+			private String scalingUsageThreshold;
+
+			private Integer scalingDownAfterIdleMinutes;
 
 			public String getNodePoolId() {
 				return this.nodePoolId;
@@ -360,6 +396,103 @@ public class ListAppInstanceGroupResponse extends AcsResponse {
 
 			public void setNodeCapacity(Integer nodeCapacity) {
 				this.nodeCapacity = nodeCapacity;
+			}
+
+			public Integer getScalingNodeAmount() {
+				return this.scalingNodeAmount;
+			}
+
+			public void setScalingNodeAmount(Integer scalingNodeAmount) {
+				this.scalingNodeAmount = scalingNodeAmount;
+			}
+
+			public Integer getScalingNodeUsed() {
+				return this.scalingNodeUsed;
+			}
+
+			public void setScalingNodeUsed(Integer scalingNodeUsed) {
+				this.scalingNodeUsed = scalingNodeUsed;
+			}
+
+			public String getStrategyType() {
+				return this.strategyType;
+			}
+
+			public void setStrategyType(String strategyType) {
+				this.strategyType = strategyType;
+			}
+
+			public Integer getAmount() {
+				return this.amount;
+			}
+
+			public void setAmount(Integer amount) {
+				this.amount = amount;
+			}
+
+			public Integer getMaxScalingAmount() {
+				return this.maxScalingAmount;
+			}
+
+			public void setMaxScalingAmount(Integer maxScalingAmount) {
+				this.maxScalingAmount = maxScalingAmount;
+			}
+
+			public Integer getScalingStep() {
+				return this.scalingStep;
+			}
+
+			public void setScalingStep(Integer scalingStep) {
+				this.scalingStep = scalingStep;
+			}
+
+			public String getScalingUsageThreshold() {
+				return this.scalingUsageThreshold;
+			}
+
+			public void setScalingUsageThreshold(String scalingUsageThreshold) {
+				this.scalingUsageThreshold = scalingUsageThreshold;
+			}
+
+			public Integer getScalingDownAfterIdleMinutes() {
+				return this.scalingDownAfterIdleMinutes;
+			}
+
+			public void setScalingDownAfterIdleMinutes(Integer scalingDownAfterIdleMinutes) {
+				this.scalingDownAfterIdleMinutes = scalingDownAfterIdleMinutes;
+			}
+		}
+
+		public static class OtaInfo {
+
+			private String otaVersion;
+
+			private String newOtaVersion;
+
+			private String taskId;
+
+			public String getOtaVersion() {
+				return this.otaVersion;
+			}
+
+			public void setOtaVersion(String otaVersion) {
+				this.otaVersion = otaVersion;
+			}
+
+			public String getNewOtaVersion() {
+				return this.newOtaVersion;
+			}
+
+			public void setNewOtaVersion(String newOtaVersion) {
+				this.newOtaVersion = newOtaVersion;
+			}
+
+			public String getTaskId() {
+				return this.taskId;
+			}
+
+			public void setTaskId(String taskId) {
+				this.taskId = taskId;
 			}
 		}
 	}
