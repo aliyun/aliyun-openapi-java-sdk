@@ -390,13 +390,23 @@ public class QueryRMSUnifiedAlarmNotifyHistoryResponse extends AcsResponse {
 
 	public static class AlarmNotifySubsItem {
 
+		private String subscriberSource;
+
 		private String subscriber;
 
-		private String subscriberSource;
+		private String subscriberUuid;
 
 		private String subscriberType;
 
 		private String subscriberName;
+
+		public String getSubscriberSource() {
+			return this.subscriberSource;
+		}
+
+		public void setSubscriberSource(String subscriberSource) {
+			this.subscriberSource = subscriberSource;
+		}
 
 		public String getSubscriber() {
 			return this.subscriber;
@@ -406,12 +416,12 @@ public class QueryRMSUnifiedAlarmNotifyHistoryResponse extends AcsResponse {
 			this.subscriber = subscriber;
 		}
 
-		public String getSubscriberSource() {
-			return this.subscriberSource;
+		public String getSubscriberUuid() {
+			return this.subscriberUuid;
 		}
 
-		public void setSubscriberSource(String subscriberSource) {
-			this.subscriberSource = subscriberSource;
+		public void setSubscriberUuid(String subscriberUuid) {
+			this.subscriberUuid = subscriberUuid;
 		}
 
 		public String getSubscriberType() {

@@ -73,8 +73,9 @@ public class QueryRMSUnifiedAlarmNotifyHistoryResponseUnmarshaller {
 		List<AlarmNotifySubsItem> alarmNotifySubs = new ArrayList<AlarmNotifySubsItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryRMSUnifiedAlarmNotifyHistoryResponse.AlarmNotifySubs.Length"); i++) {
 			AlarmNotifySubsItem alarmNotifySubsItem = new AlarmNotifySubsItem();
-			alarmNotifySubsItem.setSubscriber(_ctx.stringValue("QueryRMSUnifiedAlarmNotifyHistoryResponse.AlarmNotifySubs["+ i +"].Subscriber"));
 			alarmNotifySubsItem.setSubscriberSource(_ctx.stringValue("QueryRMSUnifiedAlarmNotifyHistoryResponse.AlarmNotifySubs["+ i +"].SubscriberSource"));
+			alarmNotifySubsItem.setSubscriber(_ctx.stringValue("QueryRMSUnifiedAlarmNotifyHistoryResponse.AlarmNotifySubs["+ i +"].Subscriber"));
+			alarmNotifySubsItem.setSubscriberUuid(_ctx.stringValue("QueryRMSUnifiedAlarmNotifyHistoryResponse.AlarmNotifySubs["+ i +"].SubscriberUuid"));
 			alarmNotifySubsItem.setSubscriberType(_ctx.stringValue("QueryRMSUnifiedAlarmNotifyHistoryResponse.AlarmNotifySubs["+ i +"].SubscriberType"));
 			alarmNotifySubsItem.setSubscriberName(_ctx.stringValue("QueryRMSUnifiedAlarmNotifyHistoryResponse.AlarmNotifySubs["+ i +"].SubscriberName"));
 

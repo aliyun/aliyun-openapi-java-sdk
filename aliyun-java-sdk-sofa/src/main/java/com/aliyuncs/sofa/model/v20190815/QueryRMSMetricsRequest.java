@@ -30,6 +30,8 @@ public class QueryRMSMetricsRequest extends RpcAcsRequest<QueryRMSMetricsRespons
 
 	private String workspaceName;
 
+	private String periodType;
+
 	private Long end;
 
 	private List<Where> wheres;
@@ -69,6 +71,17 @@ public class QueryRMSMetricsRequest extends RpcAcsRequest<QueryRMSMetricsRespons
 		this.workspaceName = workspaceName;
 		if(workspaceName != null){
 			putBodyParameter("WorkspaceName", workspaceName);
+		}
+	}
+
+	public String getPeriodType() {
+		return this.periodType;
+	}
+
+	public void setPeriodType(String periodType) {
+		this.periodType = periodType;
+		if(periodType != null){
+			putBodyParameter("PeriodType", periodType);
 		}
 	}
 

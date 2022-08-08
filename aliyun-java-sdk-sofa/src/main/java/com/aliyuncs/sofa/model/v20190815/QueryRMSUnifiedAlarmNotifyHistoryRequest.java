@@ -127,6 +127,7 @@ public class QueryRMSUnifiedAlarmNotifyHistoryRequest extends RpcAcsRequest<Quer
 			for (int depth1 = 0; depth1 < alarmSubscriberss.size(); depth1++) {
 				putBodyParameter("AlarmSubscribers." + (depth1 + 1) + ".SubscriberName" , alarmSubscriberss.get(depth1).getSubscriberName());
 				putBodyParameter("AlarmSubscribers." + (depth1 + 1) + ".Subscriber" , alarmSubscriberss.get(depth1).getSubscriber());
+				putBodyParameter("AlarmSubscribers." + (depth1 + 1) + ".SubscriberUuid" , alarmSubscriberss.get(depth1).getSubscriberUuid());
 				putBodyParameter("AlarmSubscribers." + (depth1 + 1) + ".SubscriberType" , alarmSubscriberss.get(depth1).getSubscriberType());
 				putBodyParameter("AlarmSubscribers." + (depth1 + 1) + ".SubscriberSource" , alarmSubscriberss.get(depth1).getSubscriberSource());
 			}
@@ -227,6 +228,8 @@ public class QueryRMSUnifiedAlarmNotifyHistoryRequest extends RpcAcsRequest<Quer
 
 		private String subscriber;
 
+		private String subscriberUuid;
+
 		private String subscriberType;
 
 		private String subscriberSource;
@@ -245,6 +248,14 @@ public class QueryRMSUnifiedAlarmNotifyHistoryRequest extends RpcAcsRequest<Quer
 
 		public void setSubscriber(String subscriber) {
 			this.subscriber = subscriber;
+		}
+
+		public String getSubscriberUuid() {
+			return this.subscriberUuid;
+		}
+
+		public void setSubscriberUuid(String subscriberUuid) {
+			this.subscriberUuid = subscriberUuid;
 		}
 
 		public String getSubscriberType() {
