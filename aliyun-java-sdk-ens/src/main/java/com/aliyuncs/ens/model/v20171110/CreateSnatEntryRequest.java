@@ -30,6 +30,8 @@ public class CreateSnatEntryRequest extends RpcAcsRequest<CreateSnatEntryRespons
 
 	private String sourceVSwitchId;
 
+	private String sourceNetworkId;
+
 	private String natGatewayId;
 
 	private String snatEntryName;
@@ -68,6 +70,17 @@ public class CreateSnatEntryRequest extends RpcAcsRequest<CreateSnatEntryRespons
 		this.sourceVSwitchId = sourceVSwitchId;
 		if(sourceVSwitchId != null){
 			putQueryParameter("SourceVSwitchId", sourceVSwitchId);
+		}
+	}
+
+	public String getSourceNetworkId() {
+		return this.sourceNetworkId;
+	}
+
+	public void setSourceNetworkId(String sourceNetworkId) {
+		this.sourceNetworkId = sourceNetworkId;
+		if(sourceNetworkId != null){
+			putQueryParameter("SourceNetworkId", sourceNetworkId);
 		}
 	}
 

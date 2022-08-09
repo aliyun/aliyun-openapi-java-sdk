@@ -89,6 +89,8 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 
 		private String creationTime;
 
+		private String spec;
+
 		public String getEnsRegionId() {
 			return this.ensRegionId;
 		}
@@ -135,6 +137,14 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 
 		public void setCreationTime(String creationTime) {
 			this.creationTime = creationTime;
+		}
+
+		public String getSpec() {
+			return this.spec;
+		}
+
+		public void setSpec(String spec) {
+			this.spec = spec;
 		}
 	}
 

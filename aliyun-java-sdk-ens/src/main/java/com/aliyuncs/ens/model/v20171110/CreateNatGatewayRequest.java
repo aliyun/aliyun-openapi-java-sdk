@@ -26,6 +26,8 @@ public class CreateNatGatewayRequest extends RpcAcsRequest<CreateNatGatewayRespo
 
 	private String ensRegionId;
 
+	private String instanceType;
+
 	private String vSwitchId;
 
 	private String name;
@@ -44,6 +46,17 @@ public class CreateNatGatewayRequest extends RpcAcsRequest<CreateNatGatewayRespo
 		this.ensRegionId = ensRegionId;
 		if(ensRegionId != null){
 			putQueryParameter("EnsRegionId", ensRegionId);
+		}
+	}
+
+	public String getInstanceType() {
+		return this.instanceType;
+	}
+
+	public void setInstanceType(String instanceType) {
+		this.instanceType = instanceType;
+		if(instanceType != null){
+			putQueryParameter("InstanceType", instanceType);
 		}
 	}
 

@@ -40,6 +40,7 @@ public class DescribeNatGatewaysResponseUnmarshaller {
 			natGateway.setVSwitchId(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].VSwitchId"));
 			natGateway.setName(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].Name"));
 			natGateway.setCreationTime(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].CreationTime"));
+			natGateway.setSpec(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].Spec"));
 
 			natGateways.add(natGateway);
 		}
