@@ -14,17 +14,30 @@
 
 package com.aliyuncs.ecd.model.v20200930;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ecd.transform.v20200930.SetDirectorySsoStatusResponseUnmarshaller;
+import com.aliyuncs.ecd.transform.v20200930.SetDesktopGroupTimerResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SetDirectorySsoStatusResponse extends AcsResponse {
+public class SetDesktopGroupTimerResponse extends AcsResponse {
+
+	private String desktopGroupId;
 
 	private String requestId;
+
+	private List<String> orderIds;
+
+	public String getDesktopGroupId() {
+		return this.desktopGroupId;
+	}
+
+	public void setDesktopGroupId(String desktopGroupId) {
+		this.desktopGroupId = desktopGroupId;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -34,9 +47,17 @@ public class SetDirectorySsoStatusResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public List<String> getOrderIds() {
+		return this.orderIds;
+	}
+
+	public void setOrderIds(List<String> orderIds) {
+		this.orderIds = orderIds;
+	}
+
 	@Override
-	public SetDirectorySsoStatusResponse getInstance(UnmarshallerContext context) {
-		return	SetDirectorySsoStatusResponseUnmarshaller.unmarshall(this, context);
+	public SetDesktopGroupTimerResponse getInstance(UnmarshallerContext context) {
+		return	SetDesktopGroupTimerResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

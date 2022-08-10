@@ -15,26 +15,16 @@
 package com.aliyuncs.ecd.model.v20200930;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ecd.transform.v20200930.GetDirectorySsoStatusResponseUnmarshaller;
+import com.aliyuncs.ecd.transform.v20200930.CancelCoordinationForMonitoringResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetDirectorySsoStatusResponse extends AcsResponse {
-
-	private Boolean ssoStatus;
+public class CancelCoordinationForMonitoringResponse extends AcsResponse {
 
 	private String requestId;
-
-	public Boolean getSsoStatus() {
-		return this.ssoStatus;
-	}
-
-	public void setSsoStatus(Boolean ssoStatus) {
-		this.ssoStatus = ssoStatus;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,8 +35,8 @@ public class GetDirectorySsoStatusResponse extends AcsResponse {
 	}
 
 	@Override
-	public GetDirectorySsoStatusResponse getInstance(UnmarshallerContext context) {
-		return	GetDirectorySsoStatusResponseUnmarshaller.unmarshall(this, context);
+	public CancelCoordinationForMonitoringResponse getInstance(UnmarshallerContext context) {
+		return	CancelCoordinationForMonitoringResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

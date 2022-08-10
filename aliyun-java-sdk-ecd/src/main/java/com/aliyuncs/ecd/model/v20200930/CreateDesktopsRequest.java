@@ -54,6 +54,8 @@ public class CreateDesktopsRequest extends RpcAcsRequest<CreateDesktopsResponse>
 
 	private Boolean autoPay;
 
+	private List<UserCommands> userCommandss;
+
 	private String groupId;
 
 	private String promotionId;
@@ -237,6 +239,21 @@ public class CreateDesktopsRequest extends RpcAcsRequest<CreateDesktopsResponse>
 		}
 	}
 
+	public List<UserCommands> getUserCommandss() {
+		return this.userCommandss;
+	}
+
+	public void setUserCommandss(List<UserCommands> userCommandss) {
+		this.userCommandss = userCommandss;	
+		if (userCommandss != null) {
+			for (int depth1 = 0; depth1 < userCommandss.size(); depth1++) {
+				putQueryParameter("UserCommands." + (depth1 + 1) + ".ContentEncoding" , userCommandss.get(depth1).getContentEncoding());
+				putQueryParameter("UserCommands." + (depth1 + 1) + ".Content" , userCommandss.get(depth1).getContent());
+				putQueryParameter("UserCommands." + (depth1 + 1) + ".ContentType" , userCommandss.get(depth1).getContentType());
+			}
+		}	
+	}
+
 	public String getGroupId() {
 		return this.groupId;
 	}
@@ -345,6 +362,39 @@ public class CreateDesktopsRequest extends RpcAcsRequest<CreateDesktopsResponse>
 
 		public void setKey(String key) {
 			this.key = key;
+		}
+	}
+
+	public static class UserCommands {
+
+		private String contentEncoding;
+
+		private String content;
+
+		private String contentType;
+
+		public String getContentEncoding() {
+			return this.contentEncoding;
+		}
+
+		public void setContentEncoding(String contentEncoding) {
+			this.contentEncoding = contentEncoding;
+		}
+
+		public String getContent() {
+			return this.content;
+		}
+
+		public void setContent(String content) {
+			this.content = content;
+		}
+
+		public String getContentType() {
+			return this.contentType;
+		}
+
+		public void setContentType(String contentType) {
+			this.contentType = contentType;
 		}
 	}
 

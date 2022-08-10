@@ -59,6 +59,7 @@ public class DescribePolicyGroupsResponseUnmarshaller {
 			describePolicyGroup.setRecordingStartTime(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].RecordingStartTime"));
 			describePolicyGroup.setRecordingEndTime(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].RecordingEndTime"));
 			describePolicyGroup.setRecordingFps(_ctx.longValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].RecordingFps"));
+			describePolicyGroup.setRecordingExpires(_ctx.longValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].RecordingExpires"));
 			describePolicyGroup.setCameraRedirect(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].CameraRedirect"));
 			describePolicyGroup.setNetRedirect(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].NetRedirect"));
 

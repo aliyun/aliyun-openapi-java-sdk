@@ -40,6 +40,9 @@ public class DescribeNetworkPackagesResponseUnmarshaller {
 			networkPackage.setInternetChargeType(_ctx.stringValue("DescribeNetworkPackagesResponse.NetworkPackages["+ i +"].InternetChargeType"));
 			networkPackage.setNetworkPackageStatus(_ctx.stringValue("DescribeNetworkPackagesResponse.NetworkPackages["+ i +"].NetworkPackageStatus"));
 			networkPackage.setOfficeSiteName(_ctx.stringValue("DescribeNetworkPackagesResponse.NetworkPackages["+ i +"].OfficeSiteName"));
+			networkPackage.setOfficeSiteVpcType(_ctx.stringValue("DescribeNetworkPackagesResponse.NetworkPackages["+ i +"].OfficeSiteVpcType"));
+			networkPackage.setVpcSnatPolicy(_ctx.stringValue("DescribeNetworkPackagesResponse.NetworkPackages["+ i +"].VpcSnatPolicy"));
+			networkPackage.setQosType(_ctx.stringValue("DescribeNetworkPackagesResponse.NetworkPackages["+ i +"].QosType"));
 
 			List<String> eipAddresses = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeNetworkPackagesResponse.NetworkPackages["+ i +"].EipAddresses.Length"); j++) {

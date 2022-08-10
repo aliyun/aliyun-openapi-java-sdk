@@ -103,6 +103,8 @@ public class DescribePolicyGroupsResponse extends AcsResponse {
 
 		private Long recordingFps;
 
+		private Long recordingExpires;
+
 		private String cameraRedirect;
 
 		private String netRedirect;
@@ -299,6 +301,14 @@ public class DescribePolicyGroupsResponse extends AcsResponse {
 
 		public void setRecordingFps(Long recordingFps) {
 			this.recordingFps = recordingFps;
+		}
+
+		public Long getRecordingExpires() {
+			return this.recordingExpires;
+		}
+
+		public void setRecordingExpires(Long recordingExpires) {
+			this.recordingExpires = recordingExpires;
 		}
 
 		public String getCameraRedirect() {

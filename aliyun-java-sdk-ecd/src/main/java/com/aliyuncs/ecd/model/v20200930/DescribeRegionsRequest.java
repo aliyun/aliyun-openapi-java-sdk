@@ -24,6 +24,8 @@ import com.aliyuncs.ecd.Endpoint;
  */
 public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsResponse> {
 	   
+
+	private String acceptLanguage;
 	public DescribeRegionsRequest() {
 		super("ecd", "2020-09-30", "DescribeRegions");
 		setMethod(MethodType.POST);
@@ -31,6 +33,17 @@ public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
+		}
 	}
 
 	@Override

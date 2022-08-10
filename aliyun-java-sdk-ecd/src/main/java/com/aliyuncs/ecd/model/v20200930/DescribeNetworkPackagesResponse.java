@@ -73,6 +73,12 @@ public class DescribeNetworkPackagesResponse extends AcsResponse {
 
 		private String officeSiteName;
 
+		private String officeSiteVpcType;
+
+		private String vpcSnatPolicy;
+
+		private String qosType;
+
 		private List<String> eipAddresses;
 
 		public String getNetworkPackageId() {
@@ -137,6 +143,30 @@ public class DescribeNetworkPackagesResponse extends AcsResponse {
 
 		public void setOfficeSiteName(String officeSiteName) {
 			this.officeSiteName = officeSiteName;
+		}
+
+		public String getOfficeSiteVpcType() {
+			return this.officeSiteVpcType;
+		}
+
+		public void setOfficeSiteVpcType(String officeSiteVpcType) {
+			this.officeSiteVpcType = officeSiteVpcType;
+		}
+
+		public String getVpcSnatPolicy() {
+			return this.vpcSnatPolicy;
+		}
+
+		public void setVpcSnatPolicy(String vpcSnatPolicy) {
+			this.vpcSnatPolicy = vpcSnatPolicy;
+		}
+
+		public String getQosType() {
+			return this.qosType;
+		}
+
+		public void setQosType(String qosType) {
+			this.qosType = qosType;
 		}
 
 		public List<String> getEipAddresses() {

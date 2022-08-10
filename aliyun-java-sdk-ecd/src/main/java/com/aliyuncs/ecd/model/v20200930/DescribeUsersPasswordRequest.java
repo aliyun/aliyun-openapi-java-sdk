@@ -22,14 +22,12 @@ import com.aliyuncs.ecd.Endpoint;
  * @author auto create
  * @version 
  */
-public class SetDirectorySsoStatusRequest extends RpcAcsRequest<SetDirectorySsoStatusResponse> {
+public class DescribeUsersPasswordRequest extends RpcAcsRequest<DescribeUsersPasswordResponse> {
 	   
 
-	private Boolean enableSso;
-
-	private String directoryId;
-	public SetDirectorySsoStatusRequest() {
-		super("ecd", "2020-09-30", "SetDirectorySsoStatus");
+	private String desktopId;
+	public DescribeUsersPasswordRequest() {
+		super("ecd", "2020-09-30", "DescribeUsersPassword");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +35,20 @@ public class SetDirectorySsoStatusRequest extends RpcAcsRequest<SetDirectorySsoS
 		} catch (Exception e) {}
 	}
 
-	public Boolean getEnableSso() {
-		return this.enableSso;
+	public String getDesktopId() {
+		return this.desktopId;
 	}
 
-	public void setEnableSso(Boolean enableSso) {
-		this.enableSso = enableSso;
-		if(enableSso != null){
-			putQueryParameter("EnableSso", enableSso.toString());
-		}
-	}
-
-	public String getDirectoryId() {
-		return this.directoryId;
-	}
-
-	public void setDirectoryId(String directoryId) {
-		this.directoryId = directoryId;
-		if(directoryId != null){
-			putQueryParameter("DirectoryId", directoryId);
+	public void setDesktopId(String desktopId) {
+		this.desktopId = desktopId;
+		if(desktopId != null){
+			putQueryParameter("DesktopId", desktopId);
 		}
 	}
 
 	@Override
-	public Class<SetDirectorySsoStatusResponse> getResponseClass() {
-		return SetDirectorySsoStatusResponse.class;
+	public Class<DescribeUsersPasswordResponse> getResponseClass() {
+		return DescribeUsersPasswordResponse.class;
 	}
 
 }

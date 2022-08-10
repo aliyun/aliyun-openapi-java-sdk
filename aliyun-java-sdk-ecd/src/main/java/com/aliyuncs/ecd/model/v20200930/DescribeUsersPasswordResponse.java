@@ -16,18 +16,18 @@ package com.aliyuncs.ecd.model.v20200930;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ecd.transform.v20200930.DescribeRegionsResponseUnmarshaller;
+import com.aliyuncs.ecd.transform.v20200930.DescribeUsersPasswordResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeRegionsResponse extends AcsResponse {
+public class DescribeUsersPasswordResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<Region> regions;
+	private List<DesktopUser> desktopUsers;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,50 +37,50 @@ public class DescribeRegionsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<Region> getRegions() {
-		return this.regions;
+	public List<DesktopUser> getDesktopUsers() {
+		return this.desktopUsers;
 	}
 
-	public void setRegions(List<Region> regions) {
-		this.regions = regions;
+	public void setDesktopUsers(List<DesktopUser> desktopUsers) {
+		this.desktopUsers = desktopUsers;
 	}
 
-	public static class Region {
+	public static class DesktopUser {
 
-		private String regionEndpoint;
+		private String displayName;
 
-		private String regionId;
+		private String password;
 
-		private String localName;
+		private String endUserId;
 
-		public String getRegionEndpoint() {
-			return this.regionEndpoint;
+		public String getDisplayName() {
+			return this.displayName;
 		}
 
-		public void setRegionEndpoint(String regionEndpoint) {
-			this.regionEndpoint = regionEndpoint;
+		public void setDisplayName(String displayName) {
+			this.displayName = displayName;
 		}
 
-		public String getRegionId() {
-			return this.regionId;
+		public String getPassword() {
+			return this.password;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setPassword(String password) {
+			this.password = password;
 		}
 
-		public String getLocalName() {
-			return this.localName;
+		public String getEndUserId() {
+			return this.endUserId;
 		}
 
-		public void setLocalName(String localName) {
-			this.localName = localName;
+		public void setEndUserId(String endUserId) {
+			this.endUserId = endUserId;
 		}
 	}
 
 	@Override
-	public DescribeRegionsResponse getInstance(UnmarshallerContext context) {
-		return	DescribeRegionsResponseUnmarshaller.unmarshall(this, context);
+	public DescribeUsersPasswordResponse getInstance(UnmarshallerContext context) {
+		return	DescribeUsersPasswordResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

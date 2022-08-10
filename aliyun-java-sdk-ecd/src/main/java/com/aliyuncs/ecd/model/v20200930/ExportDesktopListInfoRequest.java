@@ -36,6 +36,8 @@ public class ExportDesktopListInfoRequest extends RpcAcsRequest<ExportDesktopLis
 
 	private List<String> desktopIds;
 
+	private List<Tag> tags;
+
 	private String desktopName;
 
 	private String groupId;
@@ -115,6 +117,20 @@ public class ExportDesktopListInfoRequest extends RpcAcsRequest<ExportDesktopLis
 		if (desktopIds != null) {
 			for (int i = 0; i < desktopIds.size(); i++) {
 				putQueryParameter("DesktopId." + (i + 1) , desktopIds.get(i));
+			}
+		}	
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
 	}
@@ -204,6 +220,29 @@ public class ExportDesktopListInfoRequest extends RpcAcsRequest<ExportDesktopLis
 		this.userName = userName;
 		if(userName != null){
 			putQueryParameter("UserName", userName);
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

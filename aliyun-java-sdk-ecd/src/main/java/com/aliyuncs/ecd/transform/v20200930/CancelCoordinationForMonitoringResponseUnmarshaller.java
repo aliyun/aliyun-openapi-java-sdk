@@ -14,16 +14,16 @@
 
 package com.aliyuncs.ecd.transform.v20200930;
 
-import com.aliyuncs.ecd.model.v20200930.SetDirectorySsoStatusResponse;
+import com.aliyuncs.ecd.model.v20200930.CancelCoordinationForMonitoringResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class SetDirectorySsoStatusResponseUnmarshaller {
+public class CancelCoordinationForMonitoringResponseUnmarshaller {
 
-	public static SetDirectorySsoStatusResponse unmarshall(SetDirectorySsoStatusResponse setDirectorySsoStatusResponse, UnmarshallerContext _ctx) {
+	public static CancelCoordinationForMonitoringResponse unmarshall(CancelCoordinationForMonitoringResponse cancelCoordinationForMonitoringResponse, UnmarshallerContext _ctx) {
 		
-		setDirectorySsoStatusResponse.setRequestId(_ctx.stringValue("SetDirectorySsoStatusResponse.RequestId"));
+		cancelCoordinationForMonitoringResponse.setRequestId(_ctx.stringValue("CancelCoordinationForMonitoringResponse.RequestId"));
 	 
-	 	return setDirectorySsoStatusResponse;
+	 	return cancelCoordinationForMonitoringResponse;
 	}
 }

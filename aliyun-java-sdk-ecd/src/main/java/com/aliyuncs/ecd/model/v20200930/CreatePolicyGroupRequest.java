@@ -28,6 +28,8 @@ public class CreatePolicyGroupRequest extends RpcAcsRequest<CreatePolicyGroupRes
 
 	private String preemptLogin;
 
+	private Long recordingExpires;
+
 	private List<ClientType> clientTypes;
 
 	private List<UsbSupplyRedirectRule> usbSupplyRedirectRules;
@@ -92,6 +94,17 @@ public class CreatePolicyGroupRequest extends RpcAcsRequest<CreatePolicyGroupRes
 		this.preemptLogin = preemptLogin;
 		if(preemptLogin != null){
 			putQueryParameter("PreemptLogin", preemptLogin);
+		}
+	}
+
+	public Long getRecordingExpires() {
+		return this.recordingExpires;
+	}
+
+	public void setRecordingExpires(Long recordingExpires) {
+		this.recordingExpires = recordingExpires;
+		if(recordingExpires != null){
+			putQueryParameter("RecordingExpires", recordingExpires.toString());
 		}
 	}
 

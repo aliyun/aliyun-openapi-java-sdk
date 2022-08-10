@@ -28,6 +28,8 @@ public class ModifyPolicyGroupRequest extends RpcAcsRequest<ModifyPolicyGroupRes
 
 	private String preemptLogin;
 
+	private Long recordingExpires;
+
 	private List<ClientType> clientTypes;
 
 	private List<RevokeSecurityPolicyRule> revokeSecurityPolicyRules;
@@ -98,6 +100,17 @@ public class ModifyPolicyGroupRequest extends RpcAcsRequest<ModifyPolicyGroupRes
 		this.preemptLogin = preemptLogin;
 		if(preemptLogin != null){
 			putQueryParameter("PreemptLogin", preemptLogin);
+		}
+	}
+
+	public Long getRecordingExpires() {
+		return this.recordingExpires;
+	}
+
+	public void setRecordingExpires(Long recordingExpires) {
+		this.recordingExpires = recordingExpires;
+		if(recordingExpires != null){
+			putQueryParameter("RecordingExpires", recordingExpires.toString());
 		}
 	}
 
