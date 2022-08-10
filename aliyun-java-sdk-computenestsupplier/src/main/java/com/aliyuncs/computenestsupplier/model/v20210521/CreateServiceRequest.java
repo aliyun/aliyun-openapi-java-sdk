@@ -52,6 +52,8 @@ public class CreateServiceRequest extends RpcAcsRequest<CreateServiceResponse> {
 
 	private Boolean isSupportOperated;
 
+	private String tenantType;
+
 	private List<ServiceInfo> serviceInfos;
 
 	private String serviceId;
@@ -214,6 +216,17 @@ public class CreateServiceRequest extends RpcAcsRequest<CreateServiceResponse> {
 		this.isSupportOperated = isSupportOperated;
 		if(isSupportOperated != null){
 			putQueryParameter("IsSupportOperated", isSupportOperated.toString());
+		}
+	}
+
+	public String getTenantType() {
+		return this.tenantType;
+	}
+
+	public void setTenantType(String tenantType) {
+		this.tenantType = tenantType;
+		if(tenantType != null){
+			putQueryParameter("TenantType", tenantType);
 		}
 	}
 
