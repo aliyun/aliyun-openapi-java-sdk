@@ -15,6 +15,8 @@
 package com.aliyuncs.dataworks_public.model.v20200518;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.dataworks_public.Endpoint;
 
@@ -24,6 +26,9 @@ import com.aliyuncs.dataworks_public.Endpoint;
  */
 public class GetMetaTablePartitionRequest extends RpcAcsRequest<GetMetaTablePartitionResponse> {
 	   
+
+	@SerializedName("sortCriterion")
+	private SortCriterion sortCriterion;
 
 	private String dataSourceType;
 
@@ -45,6 +50,17 @@ public class GetMetaTablePartitionRequest extends RpcAcsRequest<GetMetaTablePart
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public SortCriterion getSortCriterion() {
+		return this.sortCriterion;
+	}
+
+	public void setSortCriterion(SortCriterion sortCriterion) {
+		this.sortCriterion = sortCriterion;	
+		if (sortCriterion != null) {
+			putQueryParameter("SortCriterion" , new Gson().toJson(sortCriterion));
+		}	
 	}
 
 	public String getDataSourceType() {
@@ -121,6 +137,31 @@ public class GetMetaTablePartitionRequest extends RpcAcsRequest<GetMetaTablePart
 		this.tableName = tableName;
 		if(tableName != null){
 			putQueryParameter("TableName", tableName);
+		}
+	}
+
+	public static class SortCriterion {
+
+		@SerializedName("SortField")
+		private String sortField;
+
+		@SerializedName("Order")
+		private String order;
+
+		public String getSortField() {
+			return this.sortField;
+		}
+
+		public void setSortField(String sortField) {
+			this.sortField = sortField;
+		}
+
+		public String getOrder() {
+			return this.order;
+		}
+
+		public void setOrder(String order) {
+			this.order = order;
 		}
 	}
 
