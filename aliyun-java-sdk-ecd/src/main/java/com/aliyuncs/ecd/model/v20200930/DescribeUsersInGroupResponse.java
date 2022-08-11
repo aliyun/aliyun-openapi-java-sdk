@@ -93,6 +93,8 @@ public class DescribeUsersInGroupResponse extends AcsResponse {
 
 		private String endUserName;
 
+		private String userDesktopId;
+
 		private List<UserSetPropertiesModelsItem> userSetPropertiesModels;
 
 		private ExternalInfo externalInfo;
@@ -159,6 +161,14 @@ public class DescribeUsersInGroupResponse extends AcsResponse {
 
 		public void setEndUserName(String endUserName) {
 			this.endUserName = endUserName;
+		}
+
+		public String getUserDesktopId() {
+			return this.userDesktopId;
+		}
+
+		public void setUserDesktopId(String userDesktopId) {
+			this.userDesktopId = userDesktopId;
 		}
 
 		public List<UserSetPropertiesModelsItem> getUserSetPropertiesModels() {

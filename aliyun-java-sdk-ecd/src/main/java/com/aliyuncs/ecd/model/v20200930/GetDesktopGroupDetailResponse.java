@@ -117,6 +117,14 @@ public class GetDesktopGroupDetailResponse extends AcsResponse {
 
 		private String officeSiteType;
 
+		private Float ratioThreshold;
+
+		private Long connectDuration;
+
+		private Long idleDisconnectDuration;
+
+		private Long version;
+
 		private List<TimerInfo> timerInfos;
 
 		public Integer getStatus() {
@@ -399,6 +407,38 @@ public class GetDesktopGroupDetailResponse extends AcsResponse {
 			this.officeSiteType = officeSiteType;
 		}
 
+		public Float getRatioThreshold() {
+			return this.ratioThreshold;
+		}
+
+		public void setRatioThreshold(Float ratioThreshold) {
+			this.ratioThreshold = ratioThreshold;
+		}
+
+		public Long getConnectDuration() {
+			return this.connectDuration;
+		}
+
+		public void setConnectDuration(Long connectDuration) {
+			this.connectDuration = connectDuration;
+		}
+
+		public Long getIdleDisconnectDuration() {
+			return this.idleDisconnectDuration;
+		}
+
+		public void setIdleDisconnectDuration(Long idleDisconnectDuration) {
+			this.idleDisconnectDuration = idleDisconnectDuration;
+		}
+
+		public Long getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(Long version) {
+			this.version = version;
+		}
+
 		public List<TimerInfo> getTimerInfos() {
 			return this.timerInfos;
 		}
@@ -414,6 +454,8 @@ public class GetDesktopGroupDetailResponse extends AcsResponse {
 			private String cronExpression;
 
 			private Integer timerType;
+
+			private Boolean forced;
 
 			public Integer getStatus() {
 				return this.status;
@@ -437,6 +479,14 @@ public class GetDesktopGroupDetailResponse extends AcsResponse {
 
 			public void setTimerType(Integer timerType) {
 				this.timerType = timerType;
+			}
+
+			public Boolean getForced() {
+				return this.forced;
+			}
+
+			public void setForced(Boolean forced) {
+				this.forced = forced;
 			}
 		}
 	}

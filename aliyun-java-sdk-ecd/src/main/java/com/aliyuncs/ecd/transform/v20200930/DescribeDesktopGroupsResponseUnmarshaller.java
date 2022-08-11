@@ -68,6 +68,10 @@ public class DescribeDesktopGroupsResponseUnmarshaller {
 			desktopGroup.setImageId(_ctx.stringValue("DescribeDesktopGroupsResponse.DesktopGroups["+ i +"].ImageId"));
 			desktopGroup.setVolumeEncryptionEnabled(_ctx.booleanValue("DescribeDesktopGroupsResponse.DesktopGroups["+ i +"].VolumeEncryptionEnabled"));
 			desktopGroup.setVolumeEncryptionKey(_ctx.stringValue("DescribeDesktopGroupsResponse.DesktopGroups["+ i +"].VolumeEncryptionKey"));
+			desktopGroup.setRatioThreshold(_ctx.floatValue("DescribeDesktopGroupsResponse.DesktopGroups["+ i +"].RatioThreshold"));
+			desktopGroup.setConnectDuration(_ctx.longValue("DescribeDesktopGroupsResponse.DesktopGroups["+ i +"].ConnectDuration"));
+			desktopGroup.setIdleDisconnectDuration(_ctx.longValue("DescribeDesktopGroupsResponse.DesktopGroups["+ i +"].IdleDisconnectDuration"));
+			desktopGroup.setVersion(_ctx.integerValue("DescribeDesktopGroupsResponse.DesktopGroups["+ i +"].Version"));
 
 			desktopGroups.add(desktopGroup);
 		}

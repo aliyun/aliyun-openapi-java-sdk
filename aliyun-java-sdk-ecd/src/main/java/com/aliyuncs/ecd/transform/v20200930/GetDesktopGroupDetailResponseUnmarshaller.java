@@ -65,6 +65,10 @@ public class GetDesktopGroupDetailResponseUnmarshaller {
 		desktops.setExpiredTime(_ctx.stringValue("GetDesktopGroupDetailResponse.Desktops.ExpiredTime"));
 		desktops.setComments(_ctx.stringValue("GetDesktopGroupDetailResponse.Desktops.Comments"));
 		desktops.setOfficeSiteType(_ctx.stringValue("GetDesktopGroupDetailResponse.Desktops.OfficeSiteType"));
+		desktops.setRatioThreshold(_ctx.floatValue("GetDesktopGroupDetailResponse.Desktops.RatioThreshold"));
+		desktops.setConnectDuration(_ctx.longValue("GetDesktopGroupDetailResponse.Desktops.ConnectDuration"));
+		desktops.setIdleDisconnectDuration(_ctx.longValue("GetDesktopGroupDetailResponse.Desktops.IdleDisconnectDuration"));
+		desktops.setVersion(_ctx.longValue("GetDesktopGroupDetailResponse.Desktops.Version"));
 
 		List<TimerInfo> timerInfos = new ArrayList<TimerInfo>();
 		for (int i = 0; i < _ctx.lengthValue("GetDesktopGroupDetailResponse.Desktops.TimerInfos.Length"); i++) {
@@ -72,6 +76,7 @@ public class GetDesktopGroupDetailResponseUnmarshaller {
 			timerInfo.setStatus(_ctx.integerValue("GetDesktopGroupDetailResponse.Desktops.TimerInfos["+ i +"].Status"));
 			timerInfo.setCronExpression(_ctx.stringValue("GetDesktopGroupDetailResponse.Desktops.TimerInfos["+ i +"].CronExpression"));
 			timerInfo.setTimerType(_ctx.integerValue("GetDesktopGroupDetailResponse.Desktops.TimerInfos["+ i +"].TimerType"));
+			timerInfo.setForced(_ctx.booleanValue("GetDesktopGroupDetailResponse.Desktops.TimerInfos["+ i +"].Forced"));
 
 			timerInfos.add(timerInfo);
 		}

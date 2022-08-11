@@ -50,6 +50,8 @@ public class CreateDesktopGroupRequest extends RpcAcsRequest<CreateDesktopGroupR
 
 	private Integer defaultInitDesktopCount;
 
+	private Long idleDisconnectDuration;
+
 	private String directoryId;
 
 	private Integer minDesktopsCount;
@@ -72,7 +74,11 @@ public class CreateDesktopGroupRequest extends RpcAcsRequest<CreateDesktopGroupR
 
 	private Integer ownType;
 
+	private Float ratioThreshold;
+
 	private Long keepDuration;
+
+	private Long connectDuration;
 
 	private String periodUnit;
 
@@ -224,6 +230,17 @@ public class CreateDesktopGroupRequest extends RpcAcsRequest<CreateDesktopGroupR
 		}
 	}
 
+	public Long getIdleDisconnectDuration() {
+		return this.idleDisconnectDuration;
+	}
+
+	public void setIdleDisconnectDuration(Long idleDisconnectDuration) {
+		this.idleDisconnectDuration = idleDisconnectDuration;
+		if(idleDisconnectDuration != null){
+			putQueryParameter("IdleDisconnectDuration", idleDisconnectDuration.toString());
+		}
+	}
+
 	public String getDirectoryId() {
 		return this.directoryId;
 	}
@@ -345,6 +362,17 @@ public class CreateDesktopGroupRequest extends RpcAcsRequest<CreateDesktopGroupR
 		}
 	}
 
+	public Float getRatioThreshold() {
+		return this.ratioThreshold;
+	}
+
+	public void setRatioThreshold(Float ratioThreshold) {
+		this.ratioThreshold = ratioThreshold;
+		if(ratioThreshold != null){
+			putQueryParameter("RatioThreshold", ratioThreshold.toString());
+		}
+	}
+
 	public Long getKeepDuration() {
 		return this.keepDuration;
 	}
@@ -353,6 +381,17 @@ public class CreateDesktopGroupRequest extends RpcAcsRequest<CreateDesktopGroupR
 		this.keepDuration = keepDuration;
 		if(keepDuration != null){
 			putQueryParameter("KeepDuration", keepDuration.toString());
+		}
+	}
+
+	public Long getConnectDuration() {
+		return this.connectDuration;
+	}
+
+	public void setConnectDuration(Long connectDuration) {
+		this.connectDuration = connectDuration;
+		if(connectDuration != null){
+			putQueryParameter("ConnectDuration", connectDuration.toString());
 		}
 	}
 

@@ -129,6 +129,14 @@ public class DescribeDesktopGroupsResponse extends AcsResponse {
 
 		private String volumeEncryptionKey;
 
+		private Float ratioThreshold;
+
+		private Long connectDuration;
+
+		private Long idleDisconnectDuration;
+
+		private Integer version;
+
 		public String getCreateTime() {
 			return this.createTime;
 		}
@@ -415,6 +423,38 @@ public class DescribeDesktopGroupsResponse extends AcsResponse {
 
 		public void setVolumeEncryptionKey(String volumeEncryptionKey) {
 			this.volumeEncryptionKey = volumeEncryptionKey;
+		}
+
+		public Float getRatioThreshold() {
+			return this.ratioThreshold;
+		}
+
+		public void setRatioThreshold(Float ratioThreshold) {
+			this.ratioThreshold = ratioThreshold;
+		}
+
+		public Long getConnectDuration() {
+			return this.connectDuration;
+		}
+
+		public void setConnectDuration(Long connectDuration) {
+			this.connectDuration = connectDuration;
+		}
+
+		public Long getIdleDisconnectDuration() {
+			return this.idleDisconnectDuration;
+		}
+
+		public void setIdleDisconnectDuration(Long idleDisconnectDuration) {
+			this.idleDisconnectDuration = idleDisconnectDuration;
+		}
+
+		public Integer getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(Integer version) {
+			this.version = version;
 		}
 	}
 

@@ -31,6 +31,8 @@ public class ModifyDesktopGroupRequest extends RpcAcsRequest<ModifyDesktopGroupR
 
 	private String scaleStrategyId;
 
+	private Boolean disableSessionConfig;
+
 	private Long bindAmount;
 
 	private Long loadPolicy;
@@ -38,6 +40,8 @@ public class ModifyDesktopGroupRequest extends RpcAcsRequest<ModifyDesktopGroupR
 	private String desktopGroupName;
 
 	private Integer allowBufferCount;
+
+	private Long idleDisconnectDuration;
 
 	private String desktopGroupId;
 
@@ -53,7 +57,11 @@ public class ModifyDesktopGroupRequest extends RpcAcsRequest<ModifyDesktopGroupR
 
 	private String ownBundleId;
 
+	private Float ratioThreshold;
+
 	private Long keepDuration;
+
+	private Long connectDuration;
 
 	private String policyGroupId;
 	public ModifyDesktopGroupRequest() {
@@ -98,6 +106,17 @@ public class ModifyDesktopGroupRequest extends RpcAcsRequest<ModifyDesktopGroupR
 		}
 	}
 
+	public Boolean getDisableSessionConfig() {
+		return this.disableSessionConfig;
+	}
+
+	public void setDisableSessionConfig(Boolean disableSessionConfig) {
+		this.disableSessionConfig = disableSessionConfig;
+		if(disableSessionConfig != null){
+			putQueryParameter("DisableSessionConfig", disableSessionConfig.toString());
+		}
+	}
+
 	public Long getBindAmount() {
 		return this.bindAmount;
 	}
@@ -139,6 +158,17 @@ public class ModifyDesktopGroupRequest extends RpcAcsRequest<ModifyDesktopGroupR
 		this.allowBufferCount = allowBufferCount;
 		if(allowBufferCount != null){
 			putQueryParameter("AllowBufferCount", allowBufferCount.toString());
+		}
+	}
+
+	public Long getIdleDisconnectDuration() {
+		return this.idleDisconnectDuration;
+	}
+
+	public void setIdleDisconnectDuration(Long idleDisconnectDuration) {
+		this.idleDisconnectDuration = idleDisconnectDuration;
+		if(idleDisconnectDuration != null){
+			putQueryParameter("IdleDisconnectDuration", idleDisconnectDuration.toString());
 		}
 	}
 
@@ -219,6 +249,17 @@ public class ModifyDesktopGroupRequest extends RpcAcsRequest<ModifyDesktopGroupR
 		}
 	}
 
+	public Float getRatioThreshold() {
+		return this.ratioThreshold;
+	}
+
+	public void setRatioThreshold(Float ratioThreshold) {
+		this.ratioThreshold = ratioThreshold;
+		if(ratioThreshold != null){
+			putQueryParameter("RatioThreshold", ratioThreshold.toString());
+		}
+	}
+
 	public Long getKeepDuration() {
 		return this.keepDuration;
 	}
@@ -227,6 +268,17 @@ public class ModifyDesktopGroupRequest extends RpcAcsRequest<ModifyDesktopGroupR
 		this.keepDuration = keepDuration;
 		if(keepDuration != null){
 			putQueryParameter("KeepDuration", keepDuration.toString());
+		}
+	}
+
+	public Long getConnectDuration() {
+		return this.connectDuration;
+	}
+
+	public void setConnectDuration(Long connectDuration) {
+		this.connectDuration = connectDuration;
+		if(connectDuration != null){
+			putQueryParameter("ConnectDuration", connectDuration.toString());
 		}
 	}
 
