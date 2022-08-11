@@ -1,3 +1,6 @@
+2022-08-11 Version: 0.0.6
+- Add some missing field.
+
 2022-07-28 Version: 0.0.5
 - Fix bug.
 

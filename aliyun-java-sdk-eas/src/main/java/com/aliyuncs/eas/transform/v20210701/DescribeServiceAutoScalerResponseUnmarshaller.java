@@ -29,6 +29,7 @@ public class DescribeServiceAutoScalerResponseUnmarshaller {
 		describeServiceAutoScalerResponse.setMaxReplica(_ctx.integerValue("DescribeServiceAutoScalerResponse.MaxReplica"));
 		describeServiceAutoScalerResponse.setStrategies(_ctx.mapValue("DescribeServiceAutoScalerResponse.Strategies"));
 		describeServiceAutoScalerResponse.setCurrentValues(_ctx.mapValue("DescribeServiceAutoScalerResponse.CurrentValues"));
+		describeServiceAutoScalerResponse.setBehavior(_ctx.mapValue("DescribeServiceAutoScalerResponse.Behavior"));
 	 
 	 	return describeServiceAutoScalerResponse;
 	}

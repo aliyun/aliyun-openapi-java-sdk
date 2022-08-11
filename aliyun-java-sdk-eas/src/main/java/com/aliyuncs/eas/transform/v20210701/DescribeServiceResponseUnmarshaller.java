@@ -41,8 +41,10 @@ public class DescribeServiceResponseUnmarshaller {
 		describeServiceResponse.setNamespace(_ctx.stringValue("DescribeServiceResponse.Namespace"));
 		describeServiceResponse.setReason(_ctx.stringValue("DescribeServiceResponse.Reason"));
 		describeServiceResponse.setResource(_ctx.stringValue("DescribeServiceResponse.Resource"));
+		describeServiceResponse.setResourceAlias(_ctx.stringValue("DescribeServiceResponse.ResourceAlias"));
 		describeServiceResponse.setServiceConfig(_ctx.stringValue("DescribeServiceResponse.ServiceConfig"));
 		describeServiceResponse.setServiceName(_ctx.stringValue("DescribeServiceResponse.ServiceName"));
+		describeServiceResponse.setServiceGroup(_ctx.stringValue("DescribeServiceResponse.ServiceGroup"));
 		describeServiceResponse.setStatus(_ctx.stringValue("DescribeServiceResponse.Status"));
 		describeServiceResponse.setCreateTime(_ctx.stringValue("DescribeServiceResponse.CreateTime"));
 		describeServiceResponse.setUpdateTime(_ctx.stringValue("DescribeServiceResponse.UpdateTime"));
@@ -50,6 +52,7 @@ public class DescribeServiceResponseUnmarshaller {
 		describeServiceResponse.setServiceId(_ctx.stringValue("DescribeServiceResponse.ServiceId"));
 		describeServiceResponse.setAccessToken(_ctx.stringValue("DescribeServiceResponse.AccessToken"));
 		describeServiceResponse.setSource(_ctx.stringValue("DescribeServiceResponse.Source"));
+		describeServiceResponse.setExtraData(_ctx.stringValue("DescribeServiceResponse.ExtraData"));
 	 
 	 	return describeServiceResponse;
 	}

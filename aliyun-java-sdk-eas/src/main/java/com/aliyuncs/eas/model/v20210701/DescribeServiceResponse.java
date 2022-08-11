@@ -62,9 +62,13 @@ public class DescribeServiceResponse extends AcsResponse {
 
 	private String resource;
 
+	private String resourceAlias;
+
 	private String serviceConfig;
 
 	private String serviceName;
+
+	private String serviceGroup;
 
 	private String status;
 
@@ -79,6 +83,8 @@ public class DescribeServiceResponse extends AcsResponse {
 	private String accessToken;
 
 	private String source;
+
+	private String extraData;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -232,6 +238,14 @@ public class DescribeServiceResponse extends AcsResponse {
 		this.resource = resource;
 	}
 
+	public String getResourceAlias() {
+		return this.resourceAlias;
+	}
+
+	public void setResourceAlias(String resourceAlias) {
+		this.resourceAlias = resourceAlias;
+	}
+
 	public String getServiceConfig() {
 		return this.serviceConfig;
 	}
@@ -246,6 +260,14 @@ public class DescribeServiceResponse extends AcsResponse {
 
 	public void setServiceName(String serviceName) {
 		this.serviceName = serviceName;
+	}
+
+	public String getServiceGroup() {
+		return this.serviceGroup;
+	}
+
+	public void setServiceGroup(String serviceGroup) {
+		this.serviceGroup = serviceGroup;
 	}
 
 	public String getStatus() {
@@ -302,6 +324,14 @@ public class DescribeServiceResponse extends AcsResponse {
 
 	public void setSource(String source) {
 		this.source = source;
+	}
+
+	public String getExtraData() {
+		return this.extraData;
+	}
+
+	public void setExtraData(String extraData) {
+		this.extraData = extraData;
 	}
 
 	@Override

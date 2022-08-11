@@ -37,6 +37,8 @@ public class DescribeServiceAutoScalerResponse extends AcsResponse {
 
 	private Map<Object,Object> currentValues;
 
+	private Map<Object,Object> behavior;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -83,6 +85,14 @@ public class DescribeServiceAutoScalerResponse extends AcsResponse {
 
 	public void setCurrentValues(Map<Object,Object> currentValues) {
 		this.currentValues = currentValues;
+	}
+
+	public Map<Object,Object> getBehavior() {
+		return this.behavior;
+	}
+
+	public void setBehavior(Map<Object,Object> behavior) {
+		this.behavior = behavior;
 	}
 
 	@Override

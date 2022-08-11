@@ -53,8 +53,10 @@ public class ListResourceServicesResponseUnmarshaller {
 			servicesItem.setNamespace(_ctx.stringValue("ListResourceServicesResponse.Services["+ i +"].Namespace"));
 			servicesItem.setReason(_ctx.stringValue("ListResourceServicesResponse.Services["+ i +"].Reason"));
 			servicesItem.setResource(_ctx.stringValue("ListResourceServicesResponse.Services["+ i +"].Resource"));
+			servicesItem.setResourceAlias(_ctx.stringValue("ListResourceServicesResponse.Services["+ i +"].ResourceAlias"));
 			servicesItem.setServiceConfig(_ctx.stringValue("ListResourceServicesResponse.Services["+ i +"].ServiceConfig"));
 			servicesItem.setServiceName(_ctx.stringValue("ListResourceServicesResponse.Services["+ i +"].ServiceName"));
+			servicesItem.setServiceGroup(_ctx.stringValue("ListResourceServicesResponse.Services["+ i +"].ServiceGroup"));
 			servicesItem.setStatus(_ctx.stringValue("ListResourceServicesResponse.Services["+ i +"].Status"));
 			servicesItem.setCreateTime(_ctx.stringValue("ListResourceServicesResponse.Services["+ i +"].CreateTime"));
 			servicesItem.setUpdateTime(_ctx.stringValue("ListResourceServicesResponse.Services["+ i +"].UpdateTime"));
@@ -62,6 +64,7 @@ public class ListResourceServicesResponseUnmarshaller {
 			servicesItem.setServiceId(_ctx.stringValue("ListResourceServicesResponse.Services["+ i +"].ServiceId"));
 			servicesItem.setAccessToken(_ctx.stringValue("ListResourceServicesResponse.Services["+ i +"].AccessToken"));
 			servicesItem.setSource(_ctx.stringValue("ListResourceServicesResponse.Services["+ i +"].Source"));
+			servicesItem.setExtraData(_ctx.stringValue("ListResourceServicesResponse.Services["+ i +"].ExtraData"));
 
 			services.add(servicesItem);
 		}
