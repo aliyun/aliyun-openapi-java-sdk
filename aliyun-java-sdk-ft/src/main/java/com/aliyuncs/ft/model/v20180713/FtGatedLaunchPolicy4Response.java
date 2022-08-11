@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class FtGatedLaunchPolicy4Response extends AcsResponse {
 
-	private String isGatedLaunch;
-
 	private String requestId;
 
-	public String getIsGatedLaunch() {
-		return this.isGatedLaunch;
-	}
-
-	public void setIsGatedLaunch(String isGatedLaunch) {
-		this.isGatedLaunch = isGatedLaunch;
-	}
+	private String isGatedLaunch;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,6 +34,14 @@ public class FtGatedLaunchPolicy4Response extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getIsGatedLaunch() {
+		return this.isGatedLaunch;
+	}
+
+	public void setIsGatedLaunch(String isGatedLaunch) {
+		this.isGatedLaunch = isGatedLaunch;
 	}
 
 	@Override

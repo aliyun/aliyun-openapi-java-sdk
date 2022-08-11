@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class FtFlowSpecialResponse extends AcsResponse {
 
-	private String name;
-
 	private String requestId;
 
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
+	private String name;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,6 +34,14 @@ public class FtFlowSpecialResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	@Override

@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class TestHttpApiResponse extends AcsResponse {
 
-	private String serviceRpcSign;
-
 	private String params;
 
-	public String getServiceRpcSign() {
-		return this.serviceRpcSign;
-	}
-
-	public void setServiceRpcSign(String serviceRpcSign) {
-		this.serviceRpcSign = serviceRpcSign;
-	}
+	private String serviceRpcSign;
 
 	public String getParams() {
 		return this.params;
@@ -42,6 +34,14 @@ public class TestHttpApiResponse extends AcsResponse {
 
 	public void setParams(String params) {
 		this.params = params;
+	}
+
+	public String getServiceRpcSign() {
+		return this.serviceRpcSign;
+	}
+
+	public void setServiceRpcSign(String serviceRpcSign) {
+		this.serviceRpcSign = serviceRpcSign;
 	}
 
 	@Override
