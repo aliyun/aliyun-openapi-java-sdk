@@ -1,3 +1,6 @@
+2022-08-12 Version: 2.1.7
+- Fix ListManagedRules bugs.
+
 2022-07-21 Version: 2.1.5
 - Support PreConfigRule.
 

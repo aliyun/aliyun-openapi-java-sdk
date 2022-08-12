@@ -25,19 +25,19 @@ import com.aliyuncs.config.Endpoint;
 public class ListAggregateResourceEvaluationResultsRequest extends RpcAcsRequest<ListAggregateResourceEvaluationResultsResponse> {
 	   
 
-	private String resourceId;
-
 	private String aggregatorId;
 
-	private String resourceType;
-
 	private String nextToken;
+
+	private String complianceType;
+
+	private String resourceId;
+
+	private String resourceType;
 
 	private Integer maxResults;
 
 	private String region;
-
-	private String complianceType;
 	public ListAggregateResourceEvaluationResultsRequest() {
 		super("Config", "2020-09-07", "ListAggregateResourceEvaluationResults");
 		setMethod(MethodType.POST);
@@ -45,17 +45,6 @@ public class ListAggregateResourceEvaluationResultsRequest extends RpcAcsRequest
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getResourceId() {
-		return this.resourceId;
-	}
-
-	public void setResourceId(String resourceId) {
-		this.resourceId = resourceId;
-		if(resourceId != null){
-			putQueryParameter("ResourceId", resourceId);
-		}
 	}
 
 	public String getAggregatorId() {
@@ -69,17 +58,6 @@ public class ListAggregateResourceEvaluationResultsRequest extends RpcAcsRequest
 		}
 	}
 
-	public String getResourceType() {
-		return this.resourceType;
-	}
-
-	public void setResourceType(String resourceType) {
-		this.resourceType = resourceType;
-		if(resourceType != null){
-			putQueryParameter("ResourceType", resourceType);
-		}
-	}
-
 	public String getNextToken() {
 		return this.nextToken;
 	}
@@ -88,6 +66,39 @@ public class ListAggregateResourceEvaluationResultsRequest extends RpcAcsRequest
 		this.nextToken = nextToken;
 		if(nextToken != null){
 			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public String getComplianceType() {
+		return this.complianceType;
+	}
+
+	public void setComplianceType(String complianceType) {
+		this.complianceType = complianceType;
+		if(complianceType != null){
+			putQueryParameter("ComplianceType", complianceType);
+		}
+	}
+
+	public String getResourceId() {
+		return this.resourceId;
+	}
+
+	public void setResourceId(String resourceId) {
+		this.resourceId = resourceId;
+		if(resourceId != null){
+			putQueryParameter("ResourceId", resourceId);
+		}
+	}
+
+	public String getResourceType() {
+		return this.resourceType;
+	}
+
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
 		}
 	}
 
@@ -110,17 +121,6 @@ public class ListAggregateResourceEvaluationResultsRequest extends RpcAcsRequest
 		this.region = region;
 		if(region != null){
 			putQueryParameter("Region", region);
-		}
-	}
-
-	public String getComplianceType() {
-		return this.complianceType;
-	}
-
-	public void setComplianceType(String complianceType) {
-		this.complianceType = complianceType;
-		if(complianceType != null){
-			putQueryParameter("ComplianceType", complianceType);
 		}
 	}
 

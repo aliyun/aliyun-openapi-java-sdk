@@ -18,8 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.config.model.v20200907.ListManagedRulesResponse;
-import com.aliyuncs.config.model.v20200907.ListManagedRulesResponse.Data;
-import com.aliyuncs.config.model.v20200907.ListManagedRulesResponse.Data.ManagedRule;
+import com.aliyuncs.config.model.v20200907.ListManagedRulesResponse.ManagedRules;
+import com.aliyuncs.config.model.v20200907.ListManagedRulesResponse.ManagedRules.ManagedRule;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -29,36 +29,31 @@ public class ListManagedRulesResponseUnmarshaller {
 		
 		listManagedRulesResponse.setRequestId(_ctx.stringValue("ListManagedRulesResponse.RequestId"));
 
-		List<Data> managedRules = new ArrayList<Data>();
-		for (int i = 0; i < _ctx.lengthValue("ListManagedRulesResponse.ManagedRules.Length"); i++) {
-			Data data = new Data();
-			data.setPageSize(_ctx.integerValue("ListManagedRulesResponse.ManagedRules["+ i +"].PageSize"));
-			data.setPageNumber(_ctx.integerValue("ListManagedRulesResponse.ManagedRules["+ i +"].PageNumber"));
-			data.setTotalCount(_ctx.longValue("ListManagedRulesResponse.ManagedRules["+ i +"].TotalCount"));
+		ManagedRules managedRules = new ManagedRules();
+		managedRules.setPageSize(_ctx.integerValue("ListManagedRulesResponse.ManagedRules.PageSize"));
+		managedRules.setPageNumber(_ctx.integerValue("ListManagedRulesResponse.ManagedRules.PageNumber"));
+		managedRules.setTotalCount(_ctx.longValue("ListManagedRulesResponse.ManagedRules.TotalCount"));
 
-			List<ManagedRule> managedRuleList = new ArrayList<ManagedRule>();
-			for (int j = 0; j < _ctx.lengthValue("ListManagedRulesResponse.ManagedRules["+ i +"].ManagedRuleList.Length"); j++) {
-				ManagedRule managedRule = new ManagedRule();
-				managedRule.setRiskLevel(_ctx.integerValue("ListManagedRulesResponse.ManagedRules["+ i +"].ManagedRuleList["+ j +"].RiskLevel"));
-				managedRule.setDescription(_ctx.stringValue("ListManagedRulesResponse.ManagedRules["+ i +"].ManagedRuleList["+ j +"].Description"));
-				managedRule.setUseCases(_ctx.stringValue("ListManagedRulesResponse.ManagedRules["+ i +"].ManagedRuleList["+ j +"].UseCases"));
-				managedRule.setIdentifier(_ctx.stringValue("ListManagedRulesResponse.ManagedRules["+ i +"].ManagedRuleList["+ j +"].Identifier"));
-				managedRule.setConfigRuleName(_ctx.stringValue("ListManagedRulesResponse.ManagedRules["+ i +"].ManagedRuleList["+ j +"].ConfigRuleName"));
-				managedRule.setReferenceCount(_ctx.integerValue("ListManagedRulesResponse.ManagedRules["+ i +"].ManagedRuleList["+ j +"].ReferenceCount"));
-				managedRule.setHelpUrls(_ctx.stringValue("ListManagedRulesResponse.ManagedRules["+ i +"].ManagedRuleList["+ j +"].HelpUrls"));
+		List<ManagedRule> managedRuleList = new ArrayList<ManagedRule>();
+		for (int i = 0; i < _ctx.lengthValue("ListManagedRulesResponse.ManagedRules.ManagedRuleList.Length"); i++) {
+			ManagedRule managedRule = new ManagedRule();
+			managedRule.setRiskLevel(_ctx.integerValue("ListManagedRulesResponse.ManagedRules.ManagedRuleList["+ i +"].RiskLevel"));
+			managedRule.setDescription(_ctx.stringValue("ListManagedRulesResponse.ManagedRules.ManagedRuleList["+ i +"].Description"));
+			managedRule.setUseCases(_ctx.stringValue("ListManagedRulesResponse.ManagedRules.ManagedRuleList["+ i +"].UseCases"));
+			managedRule.setIdentifier(_ctx.stringValue("ListManagedRulesResponse.ManagedRules.ManagedRuleList["+ i +"].Identifier"));
+			managedRule.setConfigRuleName(_ctx.stringValue("ListManagedRulesResponse.ManagedRules.ManagedRuleList["+ i +"].ConfigRuleName"));
+			managedRule.setReferenceCount(_ctx.integerValue("ListManagedRulesResponse.ManagedRules.ManagedRuleList["+ i +"].ReferenceCount"));
+			managedRule.setHelpUrls(_ctx.stringValue("ListManagedRulesResponse.ManagedRules.ManagedRuleList["+ i +"].HelpUrls"));
 
-				List<String> labels = new ArrayList<String>();
-				for (int k = 0; k < _ctx.lengthValue("ListManagedRulesResponse.ManagedRules["+ i +"].ManagedRuleList["+ j +"].Labels.Length"); k++) {
-					labels.add(_ctx.stringValue("ListManagedRulesResponse.ManagedRules["+ i +"].ManagedRuleList["+ j +"].Labels["+ k +"]"));
-				}
-				managedRule.setLabels(labels);
-
-				managedRuleList.add(managedRule);
+			List<String> labels = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("ListManagedRulesResponse.ManagedRules.ManagedRuleList["+ i +"].Labels.Length"); j++) {
+				labels.add(_ctx.stringValue("ListManagedRulesResponse.ManagedRules.ManagedRuleList["+ i +"].Labels["+ j +"]"));
 			}
-			data.setManagedRuleList(managedRuleList);
+			managedRule.setLabels(labels);
 
-			managedRules.add(data);
+			managedRuleList.add(managedRule);
 		}
+		managedRules.setManagedRuleList(managedRuleList);
 		listManagedRulesResponse.setManagedRules(managedRules);
 	 
 	 	return listManagedRulesResponse;

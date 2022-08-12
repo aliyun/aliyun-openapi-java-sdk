@@ -27,7 +27,7 @@ public class ListManagedRulesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<Data> managedRules;
+	private ManagedRules managedRules;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,15 +37,15 @@ public class ListManagedRulesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<Data> getManagedRules() {
+	public ManagedRules getManagedRules() {
 		return this.managedRules;
 	}
 
-	public void setManagedRules(List<Data> managedRules) {
+	public void setManagedRules(ManagedRules managedRules) {
 		this.managedRules = managedRules;
 	}
 
-	public static class Data {
+	public static class ManagedRules {
 
 		private Integer pageSize;
 
