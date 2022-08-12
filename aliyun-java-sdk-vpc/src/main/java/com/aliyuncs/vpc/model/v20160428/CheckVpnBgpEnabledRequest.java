@@ -22,22 +22,18 @@ import com.aliyuncs.vpc.Endpoint;
  * @author auto create
  * @version 
  */
-public class UpdateCrossBoarderStatusRequest extends RpcAcsRequest<UpdateCrossBoarderStatusResponse> {
+public class CheckVpnBgpEnabledRequest extends RpcAcsRequest<CheckVpnBgpEnabledResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private Boolean enable;
-
-	private Long resourceUid;
+	private String clientToken;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
-
-	private Long ownerId;
-	public UpdateCrossBoarderStatusRequest() {
-		super("Vpc", "2016-04-28", "UpdateCrossBoarderStatus", "vpc");
+	public CheckVpnBgpEnabledRequest() {
+		super("Vpc", "2016-04-28", "CheckVpnBgpEnabled", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -56,25 +52,14 @@ public class UpdateCrossBoarderStatusRequest extends RpcAcsRequest<UpdateCrossBo
 		}
 	}
 
-	public Boolean getEnable() {
-		return this.enable;
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setEnable(Boolean enable) {
-		this.enable = enable;
-		if(enable != null){
-			putQueryParameter("Enable", enable.toString());
-		}
-	}
-
-	public Long getResourceUid() {
-		return this.resourceUid;
-	}
-
-	public void setResourceUid(Long resourceUid) {
-		this.resourceUid = resourceUid;
-		if(resourceUid != null){
-			putQueryParameter("ResourceUid", resourceUid.toString());
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -100,20 +85,9 @@ public class UpdateCrossBoarderStatusRequest extends RpcAcsRequest<UpdateCrossBo
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	@Override
-	public Class<UpdateCrossBoarderStatusResponse> getResponseClass() {
-		return UpdateCrossBoarderStatusResponse.class;
+	public Class<CheckVpnBgpEnabledResponse> getResponseClass() {
+		return CheckVpnBgpEnabledResponse.class;
 	}
 
 }

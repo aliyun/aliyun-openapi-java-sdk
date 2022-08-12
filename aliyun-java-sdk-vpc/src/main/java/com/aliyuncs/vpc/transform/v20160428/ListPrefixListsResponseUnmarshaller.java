@@ -35,11 +35,15 @@ public class ListPrefixListsResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("ListPrefixListsResponse.PrefixLists.Length"); i++) {
 			PrefixList prefixList = new PrefixList();
 			prefixList.setPrefixListId(_ctx.stringValue("ListPrefixListsResponse.PrefixLists["+ i +"].PrefixListId"));
-			prefixList.setPrefixListStatus(_ctx.stringValue("ListPrefixListsResponse.PrefixLists["+ i +"].PrefixListStatus"));
 			prefixList.setPrefixListName(_ctx.stringValue("ListPrefixListsResponse.PrefixLists["+ i +"].PrefixListName"));
 			prefixList.setPrefixListDescription(_ctx.stringValue("ListPrefixListsResponse.PrefixLists["+ i +"].PrefixListDescription"));
 			prefixList.setIpVersion(_ctx.stringValue("ListPrefixListsResponse.PrefixLists["+ i +"].IpVersion"));
 			prefixList.setCreationTime(_ctx.stringValue("ListPrefixListsResponse.PrefixLists["+ i +"].CreationTime"));
+			prefixList.setShareType(_ctx.stringValue("ListPrefixListsResponse.PrefixLists["+ i +"].ShareType"));
+			prefixList.setMaxEntries(_ctx.integerValue("ListPrefixListsResponse.PrefixLists["+ i +"].MaxEntries"));
+			prefixList.setStatus(_ctx.stringValue("ListPrefixListsResponse.PrefixLists["+ i +"].Status"));
+			prefixList.setOwnerId(_ctx.stringValue("ListPrefixListsResponse.PrefixLists["+ i +"].OwnerId"));
+			prefixList.setPrefixListStatus(_ctx.stringValue("ListPrefixListsResponse.PrefixLists["+ i +"].PrefixListStatus"));
 
 			List<String> cidrBlocks = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListPrefixListsResponse.PrefixLists["+ i +"].CidrBlocks.Length"); j++) {

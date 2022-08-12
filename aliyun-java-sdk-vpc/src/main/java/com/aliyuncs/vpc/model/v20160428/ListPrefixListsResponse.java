@@ -79,8 +79,6 @@ public class ListPrefixListsResponse extends AcsResponse {
 
 		private String prefixListId;
 
-		private String prefixListStatus;
-
 		private String prefixListName;
 
 		private String prefixListDescription;
@@ -88,6 +86,16 @@ public class ListPrefixListsResponse extends AcsResponse {
 		private String ipVersion;
 
 		private String creationTime;
+
+		private String shareType;
+
+		private Integer maxEntries;
+
+		private String status;
+
+		private String ownerId;
+
+		private String prefixListStatus;
 
 		private List<String> cidrBlocks;
 
@@ -97,14 +105,6 @@ public class ListPrefixListsResponse extends AcsResponse {
 
 		public void setPrefixListId(String prefixListId) {
 			this.prefixListId = prefixListId;
-		}
-
-		public String getPrefixListStatus() {
-			return this.prefixListStatus;
-		}
-
-		public void setPrefixListStatus(String prefixListStatus) {
-			this.prefixListStatus = prefixListStatus;
 		}
 
 		public String getPrefixListName() {
@@ -137,6 +137,46 @@ public class ListPrefixListsResponse extends AcsResponse {
 
 		public void setCreationTime(String creationTime) {
 			this.creationTime = creationTime;
+		}
+
+		public String getShareType() {
+			return this.shareType;
+		}
+
+		public void setShareType(String shareType) {
+			this.shareType = shareType;
+		}
+
+		public Integer getMaxEntries() {
+			return this.maxEntries;
+		}
+
+		public void setMaxEntries(Integer maxEntries) {
+			this.maxEntries = maxEntries;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getOwnerId() {
+			return this.ownerId;
+		}
+
+		public void setOwnerId(String ownerId) {
+			this.ownerId = ownerId;
+		}
+
+		public String getPrefixListStatus() {
+			return this.prefixListStatus;
+		}
+
+		public void setPrefixListStatus(String prefixListStatus) {
+			this.prefixListStatus = prefixListStatus;
 		}
 
 		public List<String> getCidrBlocks() {

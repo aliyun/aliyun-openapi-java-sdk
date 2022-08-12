@@ -39,6 +39,16 @@ public class DescribeVpnConnectionResponseUnmarshaller {
 		describeVpnConnectionResponse.setCustomerGatewayId(_ctx.stringValue("DescribeVpnConnectionResponse.CustomerGatewayId"));
 		describeVpnConnectionResponse.setName(_ctx.stringValue("DescribeVpnConnectionResponse.Name"));
 		describeVpnConnectionResponse.setEnableDpd(_ctx.booleanValue("DescribeVpnConnectionResponse.EnableDpd"));
+		describeVpnConnectionResponse.setAttachType(_ctx.stringValue("DescribeVpnConnectionResponse.AttachType"));
+		describeVpnConnectionResponse.setNetworkType(_ctx.stringValue("DescribeVpnConnectionResponse.NetworkType"));
+		describeVpnConnectionResponse.setAttachInstanceId(_ctx.stringValue("DescribeVpnConnectionResponse.AttachInstanceId"));
+		describeVpnConnectionResponse.setSpec(_ctx.stringValue("DescribeVpnConnectionResponse.Spec"));
+		describeVpnConnectionResponse.setState(_ctx.stringValue("DescribeVpnConnectionResponse.State"));
+		describeVpnConnectionResponse.setZoneNo(_ctx.stringValue("DescribeVpnConnectionResponse.ZoneNo"));
+		describeVpnConnectionResponse.setInternetIp(_ctx.stringValue("DescribeVpnConnectionResponse.InternetIp"));
+		describeVpnConnectionResponse.setTransitRouterId(_ctx.stringValue("DescribeVpnConnectionResponse.TransitRouterId"));
+		describeVpnConnectionResponse.setTransitRouterName(_ctx.stringValue("DescribeVpnConnectionResponse.TransitRouterName"));
+		describeVpnConnectionResponse.setCrossAccountAuthorized(_ctx.booleanValue("DescribeVpnConnectionResponse.CrossAccountAuthorized"));
 
 		IkeConfig ikeConfig = new IkeConfig();
 		ikeConfig.setRemoteId(_ctx.stringValue("DescribeVpnConnectionResponse.IkeConfig.RemoteId"));
@@ -66,6 +76,7 @@ public class DescribeVpnConnectionResponseUnmarshaller {
 		vcoHealthCheck.setRetry(_ctx.integerValue("DescribeVpnConnectionResponse.VcoHealthCheck.Retry"));
 		vcoHealthCheck.setSip(_ctx.stringValue("DescribeVpnConnectionResponse.VcoHealthCheck.Sip"));
 		vcoHealthCheck.setEnable(_ctx.stringValue("DescribeVpnConnectionResponse.VcoHealthCheck.Enable"));
+		vcoHealthCheck.setPolicy(_ctx.stringValue("DescribeVpnConnectionResponse.VcoHealthCheck.Policy"));
 		describeVpnConnectionResponse.setVcoHealthCheck(vcoHealthCheck);
 
 		VpnBgpConfig vpnBgpConfig = new VpnBgpConfig();

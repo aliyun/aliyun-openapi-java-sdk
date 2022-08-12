@@ -428,6 +428,10 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 
 			private Integer maxBandwidth;
 
+			private Integer maxSessionQuota;
+
+			private Integer maxSessionEstablishRate;
+
 			private String privateIpAddress;
 
 			private String izNo;
@@ -456,6 +460,22 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 
 			public void setMaxBandwidth(Integer maxBandwidth) {
 				this.maxBandwidth = maxBandwidth;
+			}
+
+			public Integer getMaxSessionQuota() {
+				return this.maxSessionQuota;
+			}
+
+			public void setMaxSessionQuota(Integer maxSessionQuota) {
+				this.maxSessionQuota = maxSessionQuota;
+			}
+
+			public Integer getMaxSessionEstablishRate() {
+				return this.maxSessionEstablishRate;
+			}
+
+			public void setMaxSessionEstablishRate(Integer maxSessionEstablishRate) {
+				this.maxSessionEstablishRate = maxSessionEstablishRate;
 			}
 
 			public String getPrivateIpAddress() {

@@ -39,6 +39,8 @@ public class GetDhcpOptionsSetResponseUnmarshaller {
 		dhcpOptions.setDomainNameServers(_ctx.stringValue("GetDhcpOptionsSetResponse.DhcpOptions.DomainNameServers"));
 		dhcpOptions.setDomainName(_ctx.stringValue("GetDhcpOptionsSetResponse.DhcpOptions.DomainName"));
 		dhcpOptions.setBootFileName(_ctx.stringValue("GetDhcpOptionsSetResponse.DhcpOptions.BootFileName"));
+		dhcpOptions.setLeaseTime(_ctx.stringValue("GetDhcpOptionsSetResponse.DhcpOptions.LeaseTime"));
+		dhcpOptions.setIpv6LeaseTime(_ctx.stringValue("GetDhcpOptionsSetResponse.DhcpOptions.Ipv6LeaseTime"));
 		getDhcpOptionsSetResponse.setDhcpOptions(dhcpOptions);
 
 		List<AssociateVpc> associateVpcs = new ArrayList<AssociateVpc>();

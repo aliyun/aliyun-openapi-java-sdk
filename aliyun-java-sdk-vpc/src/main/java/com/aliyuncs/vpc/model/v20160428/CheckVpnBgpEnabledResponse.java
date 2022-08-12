@@ -15,46 +15,18 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.vpc.transform.v20160428.UpdateCrossBoarderStatusResponseUnmarshaller;
+import com.aliyuncs.vpc.transform.v20160428.CheckVpnBgpEnabledResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UpdateCrossBoarderStatusResponse extends AcsResponse {
-
-	private String code;
-
-	private String message;
-
-	private Boolean success;
+public class CheckVpnBgpEnabledResponse extends AcsResponse {
 
 	private String requestId;
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
+	private Boolean bgpEnabled;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -64,9 +36,17 @@ public class UpdateCrossBoarderStatusResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public Boolean getBgpEnabled() {
+		return this.bgpEnabled;
+	}
+
+	public void setBgpEnabled(Boolean bgpEnabled) {
+		this.bgpEnabled = bgpEnabled;
+	}
+
 	@Override
-	public UpdateCrossBoarderStatusResponse getInstance(UnmarshallerContext context) {
-		return	UpdateCrossBoarderStatusResponseUnmarshaller.unmarshall(this, context);
+	public CheckVpnBgpEnabledResponse getInstance(UnmarshallerContext context) {
+		return	CheckVpnBgpEnabledResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

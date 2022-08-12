@@ -61,6 +61,8 @@ public class CreateNatGatewayRequest extends RpcAcsRequest<CreateNatGatewayRespo
 
 	private String name;
 
+	private String eipBindMode;
+
 	private String pricingCycle;
 	public CreateNatGatewayRequest() {
 		super("Vpc", "2016-04-28", "CreateNatGateway", "vpc");
@@ -266,6 +268,17 @@ public class CreateNatGatewayRequest extends RpcAcsRequest<CreateNatGatewayRespo
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getEipBindMode() {
+		return this.eipBindMode;
+	}
+
+	public void setEipBindMode(String eipBindMode) {
+		this.eipBindMode = eipBindMode;
+		if(eipBindMode != null){
+			putQueryParameter("EipBindMode", eipBindMode);
 		}
 	}
 

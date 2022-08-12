@@ -36,6 +36,8 @@ public class ListPrefixListsRequest extends RpcAcsRequest<ListPrefixListsRespons
 
 	private Long ownerId;
 
+	private String prefixListName;
+
 	private String nextToken;
 
 	private Long maxResults;
@@ -102,6 +104,17 @@ public class ListPrefixListsRequest extends RpcAcsRequest<ListPrefixListsRespons
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getPrefixListName() {
+		return this.prefixListName;
+	}
+
+	public void setPrefixListName(String prefixListName) {
+		this.prefixListName = prefixListName;
+		if(prefixListName != null){
+			putQueryParameter("PrefixListName", prefixListName);
 		}
 	}
 

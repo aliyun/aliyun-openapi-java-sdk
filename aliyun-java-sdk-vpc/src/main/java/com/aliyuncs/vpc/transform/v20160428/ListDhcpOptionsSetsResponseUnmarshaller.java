@@ -43,6 +43,8 @@ public class ListDhcpOptionsSetsResponseUnmarshaller {
 			DhcpOptions dhcpOptions = new DhcpOptions();
 			dhcpOptions.setDomainNameServers(_ctx.stringValue("ListDhcpOptionsSetsResponse.DhcpOptionsSets["+ i +"].DhcpOptions.DomainNameServers"));
 			dhcpOptions.setDomainName(_ctx.stringValue("ListDhcpOptionsSetsResponse.DhcpOptionsSets["+ i +"].DhcpOptions.DomainName"));
+			dhcpOptions.setLeaseTime(_ctx.stringValue("ListDhcpOptionsSetsResponse.DhcpOptionsSets["+ i +"].DhcpOptions.LeaseTime"));
+			dhcpOptions.setIpv6LeaseTime(_ctx.stringValue("ListDhcpOptionsSetsResponse.DhcpOptionsSets["+ i +"].DhcpOptions.Ipv6LeaseTime"));
 			dhcpOptionsSet.setDhcpOptions(dhcpOptions);
 
 			dhcpOptionsSets.add(dhcpOptionsSet);

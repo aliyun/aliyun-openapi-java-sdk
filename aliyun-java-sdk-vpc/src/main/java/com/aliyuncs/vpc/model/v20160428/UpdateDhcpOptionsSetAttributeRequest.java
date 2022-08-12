@@ -33,6 +33,8 @@ public class UpdateDhcpOptionsSetAttributeRequest extends RpcAcsRequest<UpdateDh
 
 	private String tFTPServerName;
 
+	private String leaseTime;
+
 	private String domainNameServers;
 
 	private String dhcpOptionsSetDescription;
@@ -50,6 +52,8 @@ public class UpdateDhcpOptionsSetAttributeRequest extends RpcAcsRequest<UpdateDh
 	private Long ownerId;
 
 	private String dhcpOptionsSetName;
+
+	private String ipv6LeaseTime;
 	public UpdateDhcpOptionsSetAttributeRequest() {
 		super("Vpc", "2016-04-28", "UpdateDhcpOptionsSetAttribute", "vpc");
 		setMethod(MethodType.POST);
@@ -100,6 +104,17 @@ public class UpdateDhcpOptionsSetAttributeRequest extends RpcAcsRequest<UpdateDh
 		this.tFTPServerName = tFTPServerName;
 		if(tFTPServerName != null){
 			putQueryParameter("TFTPServerName", tFTPServerName);
+		}
+	}
+
+	public String getLeaseTime() {
+		return this.leaseTime;
+	}
+
+	public void setLeaseTime(String leaseTime) {
+		this.leaseTime = leaseTime;
+		if(leaseTime != null){
+			putQueryParameter("LeaseTime", leaseTime);
 		}
 	}
 
@@ -199,6 +214,17 @@ public class UpdateDhcpOptionsSetAttributeRequest extends RpcAcsRequest<UpdateDh
 		this.dhcpOptionsSetName = dhcpOptionsSetName;
 		if(dhcpOptionsSetName != null){
 			putQueryParameter("DhcpOptionsSetName", dhcpOptionsSetName);
+		}
+	}
+
+	public String getIpv6LeaseTime() {
+		return this.ipv6LeaseTime;
+	}
+
+	public void setIpv6LeaseTime(String ipv6LeaseTime) {
+		this.ipv6LeaseTime = ipv6LeaseTime;
+		if(ipv6LeaseTime != null){
+			putQueryParameter("Ipv6LeaseTime", ipv6LeaseTime);
 		}
 	}
 

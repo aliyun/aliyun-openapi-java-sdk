@@ -138,6 +138,10 @@ public class GetDhcpOptionsSetResponse extends AcsResponse {
 
 		private String bootFileName;
 
+		private String leaseTime;
+
+		private String ipv6LeaseTime;
+
 		public String getTFTPServerName() {
 			return this.tFTPServerName;
 		}
@@ -168,6 +172,22 @@ public class GetDhcpOptionsSetResponse extends AcsResponse {
 
 		public void setBootFileName(String bootFileName) {
 			this.bootFileName = bootFileName;
+		}
+
+		public String getLeaseTime() {
+			return this.leaseTime;
+		}
+
+		public void setLeaseTime(String leaseTime) {
+			this.leaseTime = leaseTime;
+		}
+
+		public String getIpv6LeaseTime() {
+			return this.ipv6LeaseTime;
+		}
+
+		public void setIpv6LeaseTime(String ipv6LeaseTime) {
+			this.ipv6LeaseTime = ipv6LeaseTime;
 		}
 	}
 

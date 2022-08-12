@@ -133,6 +133,10 @@ public class ListDhcpOptionsSetsResponse extends AcsResponse {
 
 			private String domainName;
 
+			private String leaseTime;
+
+			private String ipv6LeaseTime;
+
 			public String getDomainNameServers() {
 				return this.domainNameServers;
 			}
@@ -147,6 +151,22 @@ public class ListDhcpOptionsSetsResponse extends AcsResponse {
 
 			public void setDomainName(String domainName) {
 				this.domainName = domainName;
+			}
+
+			public String getLeaseTime() {
+				return this.leaseTime;
+			}
+
+			public void setLeaseTime(String leaseTime) {
+				this.leaseTime = leaseTime;
+			}
+
+			public String getIpv6LeaseTime() {
+				return this.ipv6LeaseTime;
+			}
+
+			public void setIpv6LeaseTime(String ipv6LeaseTime) {
+				this.ipv6LeaseTime = ipv6LeaseTime;
 			}
 		}
 	}

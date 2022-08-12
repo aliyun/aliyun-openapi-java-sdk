@@ -50,7 +50,7 @@ public class DescribeBgpPeersResponseUnmarshaller {
 			bgpPeer.setKeepalive(_ctx.stringValue("DescribeBgpPeersResponse.BgpPeers["+ i +"].Keepalive"));
 			bgpPeer.setDescription(_ctx.stringValue("DescribeBgpPeersResponse.BgpPeers["+ i +"].Description"));
 			bgpPeer.setRouteLimit(_ctx.stringValue("DescribeBgpPeersResponse.BgpPeers["+ i +"].RouteLimit"));
-			bgpPeer.setIsFake(_ctx.stringValue("DescribeBgpPeersResponse.BgpPeers["+ i +"].IsFake"));
+			bgpPeer.setIsFake(_ctx.booleanValue("DescribeBgpPeersResponse.BgpPeers["+ i +"].IsFake"));
 			bgpPeer.setAuthKey(_ctx.stringValue("DescribeBgpPeersResponse.BgpPeers["+ i +"].AuthKey"));
 			bgpPeer.setName(_ctx.stringValue("DescribeBgpPeersResponse.BgpPeers["+ i +"].Name"));
 			bgpPeer.setAdvertisedRouteCount(_ctx.integerValue("DescribeBgpPeersResponse.BgpPeers["+ i +"].AdvertisedRouteCount"));

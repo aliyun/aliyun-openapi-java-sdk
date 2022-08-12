@@ -15,7 +15,6 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vpc.Endpoint;
 
@@ -23,10 +22,12 @@ import com.aliyuncs.vpc.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeExpressCloudConnectionsRequest extends RpcAcsRequest<DescribeExpressCloudConnectionsResponse> {
+public class DescribeVpnAttachmentsRequest extends RpcAcsRequest<DescribeVpnAttachmentsResponse> {
 	   
 
 	private Long resourceOwnerId;
+
+	private String attachType;
 
 	private Integer pageNumber;
 
@@ -38,9 +39,9 @@ public class DescribeExpressCloudConnectionsRequest extends RpcAcsRequest<Descri
 
 	private Long ownerId;
 
-	private List<Filter> filters;
-	public DescribeExpressCloudConnectionsRequest() {
-		super("Vpc", "2016-04-28", "DescribeExpressCloudConnections", "vpc");
+	private String vpnConnectionId;
+	public DescribeVpnAttachmentsRequest() {
+		super("Vpc", "2016-04-28", "DescribeVpnAttachments", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -56,6 +57,17 @@ public class DescribeExpressCloudConnectionsRequest extends RpcAcsRequest<Descri
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getAttachType() {
+		return this.attachType;
+	}
+
+	public void setAttachType(String attachType) {
+		this.attachType = attachType;
+		if(attachType != null){
+			putQueryParameter("AttachType", attachType);
 		}
 	}
 
@@ -114,50 +126,20 @@ public class DescribeExpressCloudConnectionsRequest extends RpcAcsRequest<Descri
 		}
 	}
 
-	public List<Filter> getFilters() {
-		return this.filters;
+	public String getVpnConnectionId() {
+		return this.vpnConnectionId;
 	}
 
-	public void setFilters(List<Filter> filters) {
-		this.filters = filters;	
-		if (filters != null) {
-			for (int depth1 = 0; depth1 < filters.size(); depth1++) {
-				if (filters.get(depth1).getValues() != null) {
-					for (int i = 0; i < filters.get(depth1).getValues().size(); i++) {
-						putQueryParameter("Filter." + (depth1 + 1) + ".Value." + (i + 1) , filters.get(depth1).getValues().get(i));
-					}
-				}
-				putQueryParameter("Filter." + (depth1 + 1) + ".Key" , filters.get(depth1).getKey());
-			}
-		}	
-	}
-
-	public static class Filter {
-
-		private List<String> values;
-
-		private String key;
-
-		public List<String> getValues() {
-			return this.values;
-		}
-
-		public void setValues(List<String> values) {
-			this.values = values;
-		}
-
-		public String getKey() {
-			return this.key;
-		}
-
-		public void setKey(String key) {
-			this.key = key;
+	public void setVpnConnectionId(String vpnConnectionId) {
+		this.vpnConnectionId = vpnConnectionId;
+		if(vpnConnectionId != null){
+			putQueryParameter("VpnConnectionId", vpnConnectionId);
 		}
 	}
 
 	@Override
-	public Class<DescribeExpressCloudConnectionsResponse> getResponseClass() {
-		return DescribeExpressCloudConnectionsResponse.class;
+	public Class<DescribeVpnAttachmentsResponse> getResponseClass() {
+		return DescribeVpnAttachmentsResponse.class;
 	}
 
 }

@@ -87,6 +87,8 @@ public class DescribeNatGatewaysResponseUnmarshaller {
 			natGatewayPrivateInfo.setVswitchId(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].NatGatewayPrivateInfo.VswitchId"));
 			natGatewayPrivateInfo.setEniInstanceId(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].NatGatewayPrivateInfo.EniInstanceId"));
 			natGatewayPrivateInfo.setMaxBandwidth(_ctx.integerValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].NatGatewayPrivateInfo.MaxBandwidth"));
+			natGatewayPrivateInfo.setMaxSessionQuota(_ctx.integerValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].NatGatewayPrivateInfo.MaxSessionQuota"));
+			natGatewayPrivateInfo.setMaxSessionEstablishRate(_ctx.integerValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].NatGatewayPrivateInfo.MaxSessionEstablishRate"));
 			natGatewayPrivateInfo.setPrivateIpAddress(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].NatGatewayPrivateInfo.PrivateIpAddress"));
 			natGatewayPrivateInfo.setIzNo(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].NatGatewayPrivateInfo.IzNo"));
 			natGatewayPrivateInfo.setEniType(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].NatGatewayPrivateInfo.EniType"));

@@ -35,6 +35,8 @@ public class CreateSnatEntryRequest extends RpcAcsRequest<CreateSnatEntryRespons
 
 	private String sourceVSwitchId;
 
+	private Integer eipAffinity;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -105,6 +107,17 @@ public class CreateSnatEntryRequest extends RpcAcsRequest<CreateSnatEntryRespons
 		this.sourceVSwitchId = sourceVSwitchId;
 		if(sourceVSwitchId != null){
 			putQueryParameter("SourceVSwitchId", sourceVSwitchId);
+		}
+	}
+
+	public Integer getEipAffinity() {
+		return this.eipAffinity;
+	}
+
+	public void setEipAffinity(Integer eipAffinity) {
+		this.eipAffinity = eipAffinity;
+		if(eipAffinity != null){
+			putQueryParameter("EipAffinity", eipAffinity.toString());
 		}
 	}
 

@@ -50,6 +50,26 @@ public class DescribeVpnConnectionResponse extends AcsResponse {
 
 	private Boolean enableDpd;
 
+	private String attachType;
+
+	private String networkType;
+
+	private String attachInstanceId;
+
+	private String spec;
+
+	private String state;
+
+	private String zoneNo;
+
+	private String internetIp;
+
+	private String transitRouterId;
+
+	private String transitRouterName;
+
+	private Boolean crossAccountAuthorized;
+
 	private IkeConfig ikeConfig;
 
 	private IpsecConfig ipsecConfig;
@@ -160,6 +180,86 @@ public class DescribeVpnConnectionResponse extends AcsResponse {
 
 	public void setEnableDpd(Boolean enableDpd) {
 		this.enableDpd = enableDpd;
+	}
+
+	public String getAttachType() {
+		return this.attachType;
+	}
+
+	public void setAttachType(String attachType) {
+		this.attachType = attachType;
+	}
+
+	public String getNetworkType() {
+		return this.networkType;
+	}
+
+	public void setNetworkType(String networkType) {
+		this.networkType = networkType;
+	}
+
+	public String getAttachInstanceId() {
+		return this.attachInstanceId;
+	}
+
+	public void setAttachInstanceId(String attachInstanceId) {
+		this.attachInstanceId = attachInstanceId;
+	}
+
+	public String getSpec() {
+		return this.spec;
+	}
+
+	public void setSpec(String spec) {
+		this.spec = spec;
+	}
+
+	public String getState() {
+		return this.state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+	}
+
+	public String getZoneNo() {
+		return this.zoneNo;
+	}
+
+	public void setZoneNo(String zoneNo) {
+		this.zoneNo = zoneNo;
+	}
+
+	public String getInternetIp() {
+		return this.internetIp;
+	}
+
+	public void setInternetIp(String internetIp) {
+		this.internetIp = internetIp;
+	}
+
+	public String getTransitRouterId() {
+		return this.transitRouterId;
+	}
+
+	public void setTransitRouterId(String transitRouterId) {
+		this.transitRouterId = transitRouterId;
+	}
+
+	public String getTransitRouterName() {
+		return this.transitRouterName;
+	}
+
+	public void setTransitRouterName(String transitRouterName) {
+		this.transitRouterName = transitRouterName;
+	}
+
+	public Boolean getCrossAccountAuthorized() {
+		return this.crossAccountAuthorized;
+	}
+
+	public void setCrossAccountAuthorized(Boolean crossAccountAuthorized) {
+		this.crossAccountAuthorized = crossAccountAuthorized;
 	}
 
 	public IkeConfig getIkeConfig() {
@@ -344,6 +444,8 @@ public class DescribeVpnConnectionResponse extends AcsResponse {
 
 		private String enable;
 
+		private String policy;
+
 		public String getStatus() {
 			return this.status;
 		}
@@ -390,6 +492,14 @@ public class DescribeVpnConnectionResponse extends AcsResponse {
 
 		public void setEnable(String enable) {
 			this.enable = enable;
+		}
+
+		public String getPolicy() {
+			return this.policy;
+		}
+
+		public void setPolicy(String policy) {
+			this.policy = policy;
 		}
 	}
 

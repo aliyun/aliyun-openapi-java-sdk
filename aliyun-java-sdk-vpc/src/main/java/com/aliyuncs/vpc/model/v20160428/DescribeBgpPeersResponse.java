@@ -109,7 +109,7 @@ public class DescribeBgpPeersResponse extends AcsResponse {
 
 		private String routeLimit;
 
-		private String isFake;
+		private Boolean isFake;
 
 		private String authKey;
 
@@ -249,11 +249,11 @@ public class DescribeBgpPeersResponse extends AcsResponse {
 			this.routeLimit = routeLimit;
 		}
 
-		public String getIsFake() {
+		public Boolean getIsFake() {
 			return this.isFake;
 		}
 
-		public void setIsFake(String isFake) {
+		public void setIsFake(Boolean isFake) {
 			this.isFake = isFake;
 		}
 
