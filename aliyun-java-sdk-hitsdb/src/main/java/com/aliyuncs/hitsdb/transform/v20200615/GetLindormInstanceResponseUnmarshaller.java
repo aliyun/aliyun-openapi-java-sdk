@@ -59,6 +59,9 @@ public class GetLindormInstanceResponseUnmarshaller {
 		getLindormInstanceResponse.setEnableCdc(_ctx.booleanValue("GetLindormInstanceResponse.EnableCdc"));
 		getLindormInstanceResponse.setEnableStream(_ctx.booleanValue("GetLindormInstanceResponse.EnableStream"));
 		getLindormInstanceResponse.setEnableShs(_ctx.booleanValue("GetLindormInstanceResponse.EnableShs"));
+		getLindormInstanceResponse.setMaintainStartTime(_ctx.stringValue("GetLindormInstanceResponse.MaintainStartTime"));
+		getLindormInstanceResponse.setMaintainEndTime(_ctx.stringValue("GetLindormInstanceResponse.MaintainEndTime"));
+		getLindormInstanceResponse.setResourceGroupId(_ctx.stringValue("GetLindormInstanceResponse.ResourceGroupId"));
 
 		List<Engine> engineList = new ArrayList<Engine>();
 		for (int i = 0; i < _ctx.lengthValue("GetLindormInstanceResponse.EngineList.Length"); i++) {

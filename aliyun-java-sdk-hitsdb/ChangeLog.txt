@@ -1,3 +1,6 @@
+2022-08-15 Version: 3.0.5
+- update Lindorm OpenAPI.
+
 2022-04-06 Version: 3.0.4
 - Add ListTagResources api.
 - Add TagResources api.

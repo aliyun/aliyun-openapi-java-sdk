@@ -33,6 +33,8 @@ public class CreateLindormInstanceRequest extends RpcAcsRequest<CreateLindormIns
 
 	private String duration;
 
+	private String resourceGroupId;
+
 	private String securityToken;
 
 	private Integer tsdbNum;
@@ -122,6 +124,17 @@ public class CreateLindormInstanceRequest extends RpcAcsRequest<CreateLindormIns
 		this.duration = duration;
 		if(duration != null){
 			putQueryParameter("Duration", duration);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

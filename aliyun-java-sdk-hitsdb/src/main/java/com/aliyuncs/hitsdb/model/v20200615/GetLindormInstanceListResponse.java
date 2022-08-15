@@ -111,6 +111,10 @@ public class GetLindormInstanceListResponse extends AcsResponse {
 
 		private Boolean enableStream;
 
+		private Boolean enableCompute;
+
+		private String resourceGroupId;
+
 		private List<Tag> tags;
 
 		public String getVpcId() {
@@ -247,6 +251,22 @@ public class GetLindormInstanceListResponse extends AcsResponse {
 
 		public void setEnableStream(Boolean enableStream) {
 			this.enableStream = enableStream;
+		}
+
+		public Boolean getEnableCompute() {
+			return this.enableCompute;
+		}
+
+		public void setEnableCompute(Boolean enableCompute) {
+			this.enableCompute = enableCompute;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public List<Tag> getTags() {

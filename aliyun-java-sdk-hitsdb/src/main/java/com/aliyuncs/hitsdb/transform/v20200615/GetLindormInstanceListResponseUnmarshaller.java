@@ -52,6 +52,8 @@ public class GetLindormInstanceListResponseUnmarshaller {
 			lindormInstanceSummary.setInstanceStatus(_ctx.stringValue("GetLindormInstanceListResponse.InstanceList["+ i +"].InstanceStatus"));
 			lindormInstanceSummary.setExpiredMilliseconds(_ctx.longValue("GetLindormInstanceListResponse.InstanceList["+ i +"].ExpiredMilliseconds"));
 			lindormInstanceSummary.setEnableStream(_ctx.booleanValue("GetLindormInstanceListResponse.InstanceList["+ i +"].EnableStream"));
+			lindormInstanceSummary.setEnableCompute(_ctx.booleanValue("GetLindormInstanceListResponse.InstanceList["+ i +"].EnableCompute"));
+			lindormInstanceSummary.setResourceGroupId(_ctx.stringValue("GetLindormInstanceListResponse.InstanceList["+ i +"].ResourceGroupId"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("GetLindormInstanceListResponse.InstanceList["+ i +"].Tags.Length"); j++) {

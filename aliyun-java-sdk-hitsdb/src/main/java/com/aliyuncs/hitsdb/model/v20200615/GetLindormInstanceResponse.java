@@ -91,6 +91,12 @@ public class GetLindormInstanceResponse extends AcsResponse {
 
 	private Boolean enableShs;
 
+	private String maintainStartTime;
+
+	private String maintainEndTime;
+
+	private String resourceGroupId;
+
 	private List<Engine> engineList;
 
 	public String getVpcId() {
@@ -355,6 +361,30 @@ public class GetLindormInstanceResponse extends AcsResponse {
 
 	public void setEnableShs(Boolean enableShs) {
 		this.enableShs = enableShs;
+	}
+
+	public String getMaintainStartTime() {
+		return this.maintainStartTime;
+	}
+
+	public void setMaintainStartTime(String maintainStartTime) {
+		this.maintainStartTime = maintainStartTime;
+	}
+
+	public String getMaintainEndTime() {
+		return this.maintainEndTime;
+	}
+
+	public void setMaintainEndTime(String maintainEndTime) {
+		this.maintainEndTime = maintainEndTime;
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
 	}
 
 	public List<Engine> getEngineList() {
