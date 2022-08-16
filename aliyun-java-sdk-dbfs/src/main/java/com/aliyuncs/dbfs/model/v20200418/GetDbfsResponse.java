@@ -85,7 +85,11 @@ public class GetDbfsResponse extends AcsResponse {
 
 		private Boolean enableRaid;
 
+		private String instanceType;
+
 		private Integer raidStrip;
+
+		private String lastFailed;
 
 		private List<TagList> tags;
 
@@ -245,12 +249,28 @@ public class GetDbfsResponse extends AcsResponse {
 			this.enableRaid = enableRaid;
 		}
 
+		public String getInstanceType() {
+			return this.instanceType;
+		}
+
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
+		}
+
 		public Integer getRaidStrip() {
 			return this.raidStrip;
 		}
 
 		public void setRaidStrip(Integer raidStrip) {
 			this.raidStrip = raidStrip;
+		}
+
+		public String getLastFailed() {
+			return this.lastFailed;
+		}
+
+		public void setLastFailed(String lastFailed) {
+			this.lastFailed = lastFailed;
 		}
 
 		public List<TagList> getTags() {

@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListSnapshotResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
-
-	private Integer pageNumber;
 
 	private Integer pageSize;
 
+	private String requestId;
+
+	private Integer pageNumber;
+
 	private List<SnapshotsItem> snapshots;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class ListSnapshotResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<SnapshotsItem> getSnapshots() {
@@ -77,38 +77,40 @@ public class ListSnapshotResponse extends AcsResponse {
 
 	public static class SnapshotsItem {
 
-		private String category;
+		private String status;
 
 		private String creationTime;
 
-		private String description;
-
-		private String lastModifiedTime;
-
 		private String progress;
-
-		private Integer remainTime;
-
-		private Integer retentionDays;
-
-		private String snapshotId;
-
-		private String snapshotName;
-
-		private String snapshotType;
-
-		private String status;
-
-		private String sourceFsId;
 
 		private Integer sourceFsSize;
 
-		public String getCategory() {
-			return this.category;
+		private Integer retentionDays;
+
+		private Integer remainTime;
+
+		private String lastModifiedTime;
+
+		private String snapshotType;
+
+		private String snapshotName;
+
+		private String description;
+
+		private String sourceFsId;
+
+		private String snapshotId;
+
+		private String category;
+
+		private Integer sourceFsStripeWidth;
+
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setCategory(String category) {
-			this.category = category;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getCreationTime() {
@@ -119,22 +121,6 @@ public class ListSnapshotResponse extends AcsResponse {
 			this.creationTime = creationTime;
 		}
 
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getLastModifiedTime() {
-			return this.lastModifiedTime;
-		}
-
-		public void setLastModifiedTime(String lastModifiedTime) {
-			this.lastModifiedTime = lastModifiedTime;
-		}
-
 		public String getProgress() {
 			return this.progress;
 		}
@@ -143,12 +129,12 @@ public class ListSnapshotResponse extends AcsResponse {
 			this.progress = progress;
 		}
 
-		public Integer getRemainTime() {
-			return this.remainTime;
+		public Integer getSourceFsSize() {
+			return this.sourceFsSize;
 		}
 
-		public void setRemainTime(Integer remainTime) {
-			this.remainTime = remainTime;
+		public void setSourceFsSize(Integer sourceFsSize) {
+			this.sourceFsSize = sourceFsSize;
 		}
 
 		public Integer getRetentionDays() {
@@ -159,20 +145,20 @@ public class ListSnapshotResponse extends AcsResponse {
 			this.retentionDays = retentionDays;
 		}
 
-		public String getSnapshotId() {
-			return this.snapshotId;
+		public Integer getRemainTime() {
+			return this.remainTime;
 		}
 
-		public void setSnapshotId(String snapshotId) {
-			this.snapshotId = snapshotId;
+		public void setRemainTime(Integer remainTime) {
+			this.remainTime = remainTime;
 		}
 
-		public String getSnapshotName() {
-			return this.snapshotName;
+		public String getLastModifiedTime() {
+			return this.lastModifiedTime;
 		}
 
-		public void setSnapshotName(String snapshotName) {
-			this.snapshotName = snapshotName;
+		public void setLastModifiedTime(String lastModifiedTime) {
+			this.lastModifiedTime = lastModifiedTime;
 		}
 
 		public String getSnapshotType() {
@@ -183,12 +169,20 @@ public class ListSnapshotResponse extends AcsResponse {
 			this.snapshotType = snapshotType;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getSnapshotName() {
+			return this.snapshotName;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setSnapshotName(String snapshotName) {
+			this.snapshotName = snapshotName;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getSourceFsId() {
@@ -199,12 +193,28 @@ public class ListSnapshotResponse extends AcsResponse {
 			this.sourceFsId = sourceFsId;
 		}
 
-		public Integer getSourceFsSize() {
-			return this.sourceFsSize;
+		public String getSnapshotId() {
+			return this.snapshotId;
 		}
 
-		public void setSourceFsSize(Integer sourceFsSize) {
-			this.sourceFsSize = sourceFsSize;
+		public void setSnapshotId(String snapshotId) {
+			this.snapshotId = snapshotId;
+		}
+
+		public String getCategory() {
+			return this.category;
+		}
+
+		public void setCategory(String category) {
+			this.category = category;
+		}
+
+		public Integer getSourceFsStripeWidth() {
+			return this.sourceFsStripeWidth;
+		}
+
+		public void setSourceFsStripeWidth(Integer sourceFsStripeWidth) {
+			this.sourceFsStripeWidth = sourceFsStripeWidth;
 		}
 	}
 

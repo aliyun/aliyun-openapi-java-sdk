@@ -28,25 +28,26 @@ public class ListSnapshotResponseUnmarshaller {
 		
 		listSnapshotResponse.setRequestId(_ctx.stringValue("ListSnapshotResponse.RequestId"));
 		listSnapshotResponse.setTotalCount(_ctx.integerValue("ListSnapshotResponse.TotalCount"));
-		listSnapshotResponse.setPageNumber(_ctx.integerValue("ListSnapshotResponse.PageNumber"));
 		listSnapshotResponse.setPageSize(_ctx.integerValue("ListSnapshotResponse.PageSize"));
+		listSnapshotResponse.setPageNumber(_ctx.integerValue("ListSnapshotResponse.PageNumber"));
 
 		List<SnapshotsItem> snapshots = new ArrayList<SnapshotsItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListSnapshotResponse.Snapshots.Length"); i++) {
 			SnapshotsItem snapshotsItem = new SnapshotsItem();
-			snapshotsItem.setCategory(_ctx.stringValue("ListSnapshotResponse.Snapshots["+ i +"].Category"));
-			snapshotsItem.setCreationTime(_ctx.stringValue("ListSnapshotResponse.Snapshots["+ i +"].CreationTime"));
-			snapshotsItem.setDescription(_ctx.stringValue("ListSnapshotResponse.Snapshots["+ i +"].Description"));
-			snapshotsItem.setLastModifiedTime(_ctx.stringValue("ListSnapshotResponse.Snapshots["+ i +"].LastModifiedTime"));
-			snapshotsItem.setProgress(_ctx.stringValue("ListSnapshotResponse.Snapshots["+ i +"].Progress"));
-			snapshotsItem.setRemainTime(_ctx.integerValue("ListSnapshotResponse.Snapshots["+ i +"].RemainTime"));
-			snapshotsItem.setRetentionDays(_ctx.integerValue("ListSnapshotResponse.Snapshots["+ i +"].RetentionDays"));
-			snapshotsItem.setSnapshotId(_ctx.stringValue("ListSnapshotResponse.Snapshots["+ i +"].SnapshotId"));
-			snapshotsItem.setSnapshotName(_ctx.stringValue("ListSnapshotResponse.Snapshots["+ i +"].SnapshotName"));
-			snapshotsItem.setSnapshotType(_ctx.stringValue("ListSnapshotResponse.Snapshots["+ i +"].SnapshotType"));
 			snapshotsItem.setStatus(_ctx.stringValue("ListSnapshotResponse.Snapshots["+ i +"].Status"));
-			snapshotsItem.setSourceFsId(_ctx.stringValue("ListSnapshotResponse.Snapshots["+ i +"].SourceFsId"));
+			snapshotsItem.setCreationTime(_ctx.stringValue("ListSnapshotResponse.Snapshots["+ i +"].CreationTime"));
+			snapshotsItem.setProgress(_ctx.stringValue("ListSnapshotResponse.Snapshots["+ i +"].Progress"));
 			snapshotsItem.setSourceFsSize(_ctx.integerValue("ListSnapshotResponse.Snapshots["+ i +"].SourceFsSize"));
+			snapshotsItem.setRetentionDays(_ctx.integerValue("ListSnapshotResponse.Snapshots["+ i +"].RetentionDays"));
+			snapshotsItem.setRemainTime(_ctx.integerValue("ListSnapshotResponse.Snapshots["+ i +"].RemainTime"));
+			snapshotsItem.setLastModifiedTime(_ctx.stringValue("ListSnapshotResponse.Snapshots["+ i +"].LastModifiedTime"));
+			snapshotsItem.setSnapshotType(_ctx.stringValue("ListSnapshotResponse.Snapshots["+ i +"].SnapshotType"));
+			snapshotsItem.setSnapshotName(_ctx.stringValue("ListSnapshotResponse.Snapshots["+ i +"].SnapshotName"));
+			snapshotsItem.setDescription(_ctx.stringValue("ListSnapshotResponse.Snapshots["+ i +"].Description"));
+			snapshotsItem.setSourceFsId(_ctx.stringValue("ListSnapshotResponse.Snapshots["+ i +"].SourceFsId"));
+			snapshotsItem.setSnapshotId(_ctx.stringValue("ListSnapshotResponse.Snapshots["+ i +"].SnapshotId"));
+			snapshotsItem.setCategory(_ctx.stringValue("ListSnapshotResponse.Snapshots["+ i +"].Category"));
+			snapshotsItem.setSourceFsStripeWidth(_ctx.integerValue("ListSnapshotResponse.Snapshots["+ i +"].SourceFsStripeWidth"));
 
 			snapshots.add(snapshotsItem);
 		}

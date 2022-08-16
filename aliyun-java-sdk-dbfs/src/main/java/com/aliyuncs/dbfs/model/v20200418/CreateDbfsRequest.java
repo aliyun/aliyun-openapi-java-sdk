@@ -39,6 +39,10 @@ public class CreateDbfsRequest extends RpcAcsRequest<CreateDbfsResponse> {
 
 	private Boolean encryption;
 
+	private String instanceType;
+
+	private String advancedFeatures;
+
 	private String performanceLevel;
 
 	private Boolean enableRaid;
@@ -133,6 +137,28 @@ public class CreateDbfsRequest extends RpcAcsRequest<CreateDbfsResponse> {
 		this.encryption = encryption;
 		if(encryption != null){
 			putQueryParameter("Encryption", encryption.toString());
+		}
+	}
+
+	public String getInstanceType() {
+		return this.instanceType;
+	}
+
+	public void setInstanceType(String instanceType) {
+		this.instanceType = instanceType;
+		if(instanceType != null){
+			putQueryParameter("InstanceType", instanceType);
+		}
+	}
+
+	public String getAdvancedFeatures() {
+		return this.advancedFeatures;
+	}
+
+	public void setAdvancedFeatures(String advancedFeatures) {
+		this.advancedFeatures = advancedFeatures;
+		if(advancedFeatures != null){
+			putQueryParameter("AdvancedFeatures", advancedFeatures);
 		}
 	}
 

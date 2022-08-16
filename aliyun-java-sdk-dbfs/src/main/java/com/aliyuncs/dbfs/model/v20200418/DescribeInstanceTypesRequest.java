@@ -22,14 +22,10 @@ import com.aliyuncs.dbfs.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetSynchronizConstantsRequest extends RpcAcsRequest<GetSynchronizConstantsResponse> {
+public class DescribeInstanceTypesRequest extends RpcAcsRequest<DescribeInstanceTypesResponse> {
 	   
-
-	private Integer pageNumber;
-
-	private Integer pageSize;
-	public GetSynchronizConstantsRequest() {
-		super("DBFS", "2020-04-18", "GetSynchronizConstants");
+	public DescribeInstanceTypesRequest() {
+		super("DBFS", "2020-04-18", "DescribeInstanceTypes");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +33,9 @@ public class GetSynchronizConstantsRequest extends RpcAcsRequest<GetSynchronizCo
 		} catch (Exception e) {}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	@Override
-	public Class<GetSynchronizConstantsResponse> getResponseClass() {
-		return GetSynchronizConstantsResponse.class;
+	public Class<DescribeInstanceTypesResponse> getResponseClass() {
+		return DescribeInstanceTypesResponse.class;
 	}
 
 }

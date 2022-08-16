@@ -115,6 +115,10 @@ public class ListDbfsResponse extends AcsResponse {
 
 		private Integer raidStrip;
 
+		private String instanceType;
+
+		private String lastFailed;
+
 		private List<TagList> tags;
 
 		private List<EcsListItem> ecsList;
@@ -271,6 +275,22 @@ public class ListDbfsResponse extends AcsResponse {
 
 		public void setRaidStrip(Integer raidStrip) {
 			this.raidStrip = raidStrip;
+		}
+
+		public String getInstanceType() {
+			return this.instanceType;
+		}
+
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
+		}
+
+		public String getLastFailed() {
+			return this.lastFailed;
+		}
+
+		public void setLastFailed(String lastFailed) {
+			this.lastFailed = lastFailed;
 		}
 
 		public List<TagList> getTags() {

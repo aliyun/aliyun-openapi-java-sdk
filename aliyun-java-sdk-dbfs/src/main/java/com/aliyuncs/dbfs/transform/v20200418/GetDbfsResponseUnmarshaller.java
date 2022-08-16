@@ -51,7 +51,9 @@ public class GetDbfsResponseUnmarshaller {
 		dBFSInfo.setLastMountTime(_ctx.stringValue("GetDbfsResponse.DBFSInfo.LastMountTime"));
 		dBFSInfo.setLastUmountTime(_ctx.stringValue("GetDbfsResponse.DBFSInfo.LastUmountTime"));
 		dBFSInfo.setEnableRaid(_ctx.booleanValue("GetDbfsResponse.DBFSInfo.EnableRaid"));
+		dBFSInfo.setInstanceType(_ctx.stringValue("GetDbfsResponse.DBFSInfo.InstanceType"));
 		dBFSInfo.setRaidStrip(_ctx.integerValue("GetDbfsResponse.DBFSInfo.RaidStrip"));
+		dBFSInfo.setLastFailed(_ctx.stringValue("GetDbfsResponse.DBFSInfo.LastFailed"));
 
 		List<TagList> tags = new ArrayList<TagList>();
 		for (int i = 0; i < _ctx.lengthValue("GetDbfsResponse.DBFSInfo.Tags.Length"); i++) {

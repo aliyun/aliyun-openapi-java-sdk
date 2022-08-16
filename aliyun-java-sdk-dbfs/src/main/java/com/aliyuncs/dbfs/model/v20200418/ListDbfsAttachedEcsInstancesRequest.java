@@ -22,30 +22,17 @@ import com.aliyuncs.dbfs.Endpoint;
  * @author auto create
  * @version 
  */
-public class ResetDbfsRequest extends RpcAcsRequest<ResetDbfsResponse> {
+public class ListDbfsAttachedEcsInstancesRequest extends RpcAcsRequest<ListDbfsAttachedEcsInstancesResponse> {
 	   
 
-	private String snapshotId;
-
 	private String fsId;
-	public ResetDbfsRequest() {
-		super("DBFS", "2020-04-18", "ResetDbfs");
+	public ListDbfsAttachedEcsInstancesRequest() {
+		super("DBFS", "2020-04-18", "ListDbfsAttachedEcsInstances");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getSnapshotId() {
-		return this.snapshotId;
-	}
-
-	public void setSnapshotId(String snapshotId) {
-		this.snapshotId = snapshotId;
-		if(snapshotId != null){
-			putQueryParameter("SnapshotId", snapshotId);
-		}
 	}
 
 	public String getFsId() {
@@ -60,8 +47,8 @@ public class ResetDbfsRequest extends RpcAcsRequest<ResetDbfsResponse> {
 	}
 
 	@Override
-	public Class<ResetDbfsResponse> getResponseClass() {
-		return ResetDbfsResponse.class;
+	public Class<ListDbfsAttachedEcsInstancesResponse> getResponseClass() {
+		return ListDbfsAttachedEcsInstancesResponse.class;
 	}
 
 }

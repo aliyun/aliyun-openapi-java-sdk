@@ -22,14 +22,10 @@ import com.aliyuncs.dbfs.Endpoint;
  * @author auto create
  * @version 
  */
-public class UpdateTaskRequest extends RpcAcsRequest<UpdateTaskResponse> {
+public class ListDbfsAttachableEcsInstancesRequest extends RpcAcsRequest<ListDbfsAttachableEcsInstancesResponse> {
 	   
-
-	private Integer taskProgress;
-
-	private String taskIds;
-	public UpdateTaskRequest() {
-		super("DBFS", "2020-04-18", "UpdateTask");
+	public ListDbfsAttachableEcsInstancesRequest() {
+		super("DBFS", "2020-04-18", "ListDbfsAttachableEcsInstances");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +33,9 @@ public class UpdateTaskRequest extends RpcAcsRequest<UpdateTaskResponse> {
 		} catch (Exception e) {}
 	}
 
-	public Integer getTaskProgress() {
-		return this.taskProgress;
-	}
-
-	public void setTaskProgress(Integer taskProgress) {
-		this.taskProgress = taskProgress;
-		if(taskProgress != null){
-			putQueryParameter("TaskProgress", taskProgress.toString());
-		}
-	}
-
-	public String getTaskIds() {
-		return this.taskIds;
-	}
-
-	public void setTaskIds(String taskIds) {
-		this.taskIds = taskIds;
-		if(taskIds != null){
-			putQueryParameter("TaskIds", taskIds);
-		}
-	}
-
 	@Override
-	public Class<UpdateTaskResponse> getResponseClass() {
-		return UpdateTaskResponse.class;
+	public Class<ListDbfsAttachableEcsInstancesResponse> getResponseClass() {
+		return ListDbfsAttachableEcsInstancesResponse.class;
 	}
 
 }
