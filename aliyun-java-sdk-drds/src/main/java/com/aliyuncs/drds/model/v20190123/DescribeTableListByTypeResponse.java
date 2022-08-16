@@ -25,32 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeTableListByTypeResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
+	private Integer pageSize;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private String requestId;
 
 	private Integer total;
 
+	private Boolean success;
+
 	private List<ListItem> list;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public Integer getPageNumber() {
@@ -61,12 +53,12 @@ public class DescribeTableListByTypeResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getTotal() {
@@ -75,6 +67,14 @@ public class DescribeTableListByTypeResponse extends AcsResponse {
 
 	public void setTotal(Integer total) {
 		this.total = total;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<ListItem> getList() {
@@ -87,17 +87,9 @@ public class DescribeTableListByTypeResponse extends AcsResponse {
 
 	public static class ListItem {
 
-		private String tableName;
-
 		private String property;
 
-		public String getTableName() {
-			return this.tableName;
-		}
-
-		public void setTableName(String tableName) {
-			this.tableName = tableName;
-		}
+		private String tableName;
 
 		public String getProperty() {
 			return this.property;
@@ -105,6 +97,14 @@ public class DescribeTableListByTypeResponse extends AcsResponse {
 
 		public void setProperty(String property) {
 			this.property = property;
+		}
+
+		public String getTableName() {
+			return this.tableName;
+		}
+
+		public void setTableName(String tableName) {
+			this.tableName = tableName;
 		}
 	}
 

@@ -27,23 +27,23 @@ public class DescribeBackupLocalResponseUnmarshaller {
 		describeBackupLocalResponse.setSuccess(_ctx.booleanValue("DescribeBackupLocalResponse.Success"));
 
 		BackupPolicyDO backupPolicyDO = new BackupPolicyDO();
-		backupPolicyDO.setGmtCreate(_ctx.longValue("DescribeBackupLocalResponse.BackupPolicyDO.GmtCreate"));
-		backupPolicyDO.setGmtModified(_ctx.longValue("DescribeBackupLocalResponse.BackupPolicyDO.GmtModified"));
-		backupPolicyDO.setBackupPolicyMode(_ctx.stringValue("DescribeBackupLocalResponse.BackupPolicyDO.BackupPolicyMode"));
+		backupPolicyDO.setBackupDbName(_ctx.stringValue("DescribeBackupLocalResponse.BackupPolicyDO.BackupDbName"));
+		backupPolicyDO.setLogBackupRetentionPeriod(_ctx.longValue("DescribeBackupLocalResponse.BackupPolicyDO.LogBackupRetentionPeriod"));
+		backupPolicyDO.setDataBackupRetentionPeriod(_ctx.longValue("DescribeBackupLocalResponse.BackupPolicyDO.DataBackupRetentionPeriod"));
 		backupPolicyDO.setBackupType(_ctx.stringValue("DescribeBackupLocalResponse.BackupPolicyDO.BackupType"));
 		backupPolicyDO.setBackupLevel(_ctx.stringValue("DescribeBackupLocalResponse.BackupPolicyDO.BackupLevel"));
-		backupPolicyDO.setBackupDbName(_ctx.stringValue("DescribeBackupLocalResponse.BackupPolicyDO.BackupDbName"));
-		backupPolicyDO.setPreferredBackupTime(_ctx.stringValue("DescribeBackupLocalResponse.BackupPolicyDO.PreferredBackupTime"));
-		backupPolicyDO.setPreferredBackupPeriod(_ctx.stringValue("DescribeBackupLocalResponse.BackupPolicyDO.PreferredBackupPeriod"));
-		backupPolicyDO.setDataBackupRetentionPeriod(_ctx.longValue("DescribeBackupLocalResponse.BackupPolicyDO.DataBackupRetentionPeriod"));
-		backupPolicyDO.setLogBackupRetentionPeriod(_ctx.longValue("DescribeBackupLocalResponse.BackupPolicyDO.LogBackupRetentionPeriod"));
-		backupPolicyDO.setBackupRetentionPeriod(_ctx.longValue("DescribeBackupLocalResponse.BackupPolicyDO.BackupRetentionPeriod"));
-		backupPolicyDO.setBackupLog(_ctx.stringValue("DescribeBackupLocalResponse.BackupPolicyDO.BackupLog"));
 		backupPolicyDO.setLocalLogRetentionHours(_ctx.longValue("DescribeBackupLocalResponse.BackupPolicyDO.LocalLogRetentionHours"));
-		backupPolicyDO.setLocalLogRetentionSpace(_ctx.longValue("DescribeBackupLocalResponse.BackupPolicyDO.LocalLogRetentionSpace"));
 		backupPolicyDO.setHighSpaceUsageProtection(_ctx.longValue("DescribeBackupLocalResponse.BackupPolicyDO.HighSpaceUsageProtection"));
+		backupPolicyDO.setGmtModified(_ctx.longValue("DescribeBackupLocalResponse.BackupPolicyDO.GmtModified"));
+		backupPolicyDO.setBackupRetentionPeriod(_ctx.longValue("DescribeBackupLocalResponse.BackupPolicyDO.BackupRetentionPeriod"));
+		backupPolicyDO.setBackupPolicyMode(_ctx.stringValue("DescribeBackupLocalResponse.BackupPolicyDO.BackupPolicyMode"));
+		backupPolicyDO.setPreferredBackupPeriod(_ctx.stringValue("DescribeBackupLocalResponse.BackupPolicyDO.PreferredBackupPeriod"));
+		backupPolicyDO.setLocalLogRetentionSpace(_ctx.longValue("DescribeBackupLocalResponse.BackupPolicyDO.LocalLogRetentionSpace"));
 		backupPolicyDO.setBackupAppName(_ctx.stringValue("DescribeBackupLocalResponse.BackupPolicyDO.BackupAppName"));
+		backupPolicyDO.setPreferredBackupTime(_ctx.stringValue("DescribeBackupLocalResponse.BackupPolicyDO.PreferredBackupTime"));
+		backupPolicyDO.setGmtCreate(_ctx.longValue("DescribeBackupLocalResponse.BackupPolicyDO.GmtCreate"));
 		backupPolicyDO.setBackupMode(_ctx.stringValue("DescribeBackupLocalResponse.BackupPolicyDO.BackupMode"));
+		backupPolicyDO.setBackupLog(_ctx.stringValue("DescribeBackupLocalResponse.BackupPolicyDO.BackupLog"));
 		backupPolicyDO.setNextBackupActuallyTime(_ctx.stringValue("DescribeBackupLocalResponse.BackupPolicyDO.NextBackupActuallyTime"));
 		describeBackupLocalResponse.setBackupPolicyDO(backupPolicyDO);
 	 

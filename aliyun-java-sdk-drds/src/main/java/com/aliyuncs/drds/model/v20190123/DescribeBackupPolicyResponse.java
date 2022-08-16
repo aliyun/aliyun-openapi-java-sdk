@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeBackupPolicyResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean success;
 
+	private String requestId;
+
 	private BackupPolicyDO backupPolicyDO;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -44,6 +36,14 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public BackupPolicyDO getBackupPolicyDO() {
@@ -56,64 +56,64 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 
 	public static class BackupPolicyDO {
 
-		private Long gmtCreate;
+		private String backupDbName;
 
-		private Long gmtModified;
+		private Long logBackupRetentionPeriod;
 
-		private String backupPolicyMode;
+		private Long dataBackupRetentionPeriod;
 
 		private String backupType;
 
 		private String backupLevel;
 
-		private String backupDbName;
-
-		private String preferredBackupTime;
-
-		private String preferredBackupPeriod;
-
-		private Long dataBackupRetentionPeriod;
-
-		private Long logBackupRetentionPeriod;
-
-		private Long backupRetentionPeriod;
-
-		private String backupLog;
-
 		private Long localLogRetentionHours;
-
-		private Long localLogRetentionSpace;
 
 		private Long highSpaceUsageProtection;
 
+		private Long gmtModified;
+
+		private Long backupRetentionPeriod;
+
+		private String backupPolicyMode;
+
+		private String preferredBackupPeriod;
+
+		private Long localLogRetentionSpace;
+
 		private String backupAppName;
+
+		private String preferredBackupTime;
+
+		private Long gmtCreate;
 
 		private String backupMode;
 
+		private String backupLog;
+
 		private String nextBackupActuallyTime;
 
-		public Long getGmtCreate() {
-			return this.gmtCreate;
+		public String getBackupDbName() {
+			return this.backupDbName;
 		}
 
-		public void setGmtCreate(Long gmtCreate) {
-			this.gmtCreate = gmtCreate;
+		public void setBackupDbName(String backupDbName) {
+			this.backupDbName = backupDbName;
 		}
 
-		public Long getGmtModified() {
-			return this.gmtModified;
+		public Long getLogBackupRetentionPeriod() {
+			return this.logBackupRetentionPeriod;
 		}
 
-		public void setGmtModified(Long gmtModified) {
-			this.gmtModified = gmtModified;
+		public void setLogBackupRetentionPeriod(Long logBackupRetentionPeriod) {
+			this.logBackupRetentionPeriod = logBackupRetentionPeriod;
 		}
 
-		public String getBackupPolicyMode() {
-			return this.backupPolicyMode;
+		public Long getDataBackupRetentionPeriod() {
+			return this.dataBackupRetentionPeriod;
 		}
 
-		public void setBackupPolicyMode(String backupPolicyMode) {
-			this.backupPolicyMode = backupPolicyMode;
+		public void setDataBackupRetentionPeriod(Long dataBackupRetentionPeriod) {
+			this.dataBackupRetentionPeriod = dataBackupRetentionPeriod;
 		}
 
 		public String getBackupType() {
@@ -132,76 +132,12 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 			this.backupLevel = backupLevel;
 		}
 
-		public String getBackupDbName() {
-			return this.backupDbName;
-		}
-
-		public void setBackupDbName(String backupDbName) {
-			this.backupDbName = backupDbName;
-		}
-
-		public String getPreferredBackupTime() {
-			return this.preferredBackupTime;
-		}
-
-		public void setPreferredBackupTime(String preferredBackupTime) {
-			this.preferredBackupTime = preferredBackupTime;
-		}
-
-		public String getPreferredBackupPeriod() {
-			return this.preferredBackupPeriod;
-		}
-
-		public void setPreferredBackupPeriod(String preferredBackupPeriod) {
-			this.preferredBackupPeriod = preferredBackupPeriod;
-		}
-
-		public Long getDataBackupRetentionPeriod() {
-			return this.dataBackupRetentionPeriod;
-		}
-
-		public void setDataBackupRetentionPeriod(Long dataBackupRetentionPeriod) {
-			this.dataBackupRetentionPeriod = dataBackupRetentionPeriod;
-		}
-
-		public Long getLogBackupRetentionPeriod() {
-			return this.logBackupRetentionPeriod;
-		}
-
-		public void setLogBackupRetentionPeriod(Long logBackupRetentionPeriod) {
-			this.logBackupRetentionPeriod = logBackupRetentionPeriod;
-		}
-
-		public Long getBackupRetentionPeriod() {
-			return this.backupRetentionPeriod;
-		}
-
-		public void setBackupRetentionPeriod(Long backupRetentionPeriod) {
-			this.backupRetentionPeriod = backupRetentionPeriod;
-		}
-
-		public String getBackupLog() {
-			return this.backupLog;
-		}
-
-		public void setBackupLog(String backupLog) {
-			this.backupLog = backupLog;
-		}
-
 		public Long getLocalLogRetentionHours() {
 			return this.localLogRetentionHours;
 		}
 
 		public void setLocalLogRetentionHours(Long localLogRetentionHours) {
 			this.localLogRetentionHours = localLogRetentionHours;
-		}
-
-		public Long getLocalLogRetentionSpace() {
-			return this.localLogRetentionSpace;
-		}
-
-		public void setLocalLogRetentionSpace(Long localLogRetentionSpace) {
-			this.localLogRetentionSpace = localLogRetentionSpace;
 		}
 
 		public Long getHighSpaceUsageProtection() {
@@ -212,6 +148,46 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 			this.highSpaceUsageProtection = highSpaceUsageProtection;
 		}
 
+		public Long getGmtModified() {
+			return this.gmtModified;
+		}
+
+		public void setGmtModified(Long gmtModified) {
+			this.gmtModified = gmtModified;
+		}
+
+		public Long getBackupRetentionPeriod() {
+			return this.backupRetentionPeriod;
+		}
+
+		public void setBackupRetentionPeriod(Long backupRetentionPeriod) {
+			this.backupRetentionPeriod = backupRetentionPeriod;
+		}
+
+		public String getBackupPolicyMode() {
+			return this.backupPolicyMode;
+		}
+
+		public void setBackupPolicyMode(String backupPolicyMode) {
+			this.backupPolicyMode = backupPolicyMode;
+		}
+
+		public String getPreferredBackupPeriod() {
+			return this.preferredBackupPeriod;
+		}
+
+		public void setPreferredBackupPeriod(String preferredBackupPeriod) {
+			this.preferredBackupPeriod = preferredBackupPeriod;
+		}
+
+		public Long getLocalLogRetentionSpace() {
+			return this.localLogRetentionSpace;
+		}
+
+		public void setLocalLogRetentionSpace(Long localLogRetentionSpace) {
+			this.localLogRetentionSpace = localLogRetentionSpace;
+		}
+
 		public String getBackupAppName() {
 			return this.backupAppName;
 		}
@@ -220,12 +196,36 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 			this.backupAppName = backupAppName;
 		}
 
+		public String getPreferredBackupTime() {
+			return this.preferredBackupTime;
+		}
+
+		public void setPreferredBackupTime(String preferredBackupTime) {
+			this.preferredBackupTime = preferredBackupTime;
+		}
+
+		public Long getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(Long gmtCreate) {
+			this.gmtCreate = gmtCreate;
+		}
+
 		public String getBackupMode() {
 			return this.backupMode;
 		}
 
 		public void setBackupMode(String backupMode) {
 			this.backupMode = backupMode;
+		}
+
+		public String getBackupLog() {
+			return this.backupLog;
+		}
+
+		public void setBackupLog(String backupLog) {
+			this.backupLog = backupLog;
 		}
 
 		public String getNextBackupActuallyTime() {

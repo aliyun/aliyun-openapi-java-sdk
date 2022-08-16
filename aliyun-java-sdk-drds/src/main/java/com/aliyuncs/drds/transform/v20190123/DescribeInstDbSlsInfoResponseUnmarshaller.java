@@ -27,8 +27,8 @@ public class DescribeInstDbSlsInfoResponseUnmarshaller {
 		describeInstDbSlsInfoResponse.setSuccess(_ctx.booleanValue("DescribeInstDbSlsInfoResponse.Success"));
 
 		AuditInfo auditInfo = new AuditInfo();
-		auditInfo.setProject(_ctx.stringValue("DescribeInstDbSlsInfoResponse.AuditInfo.Project"));
 		auditInfo.setLogStore(_ctx.stringValue("DescribeInstDbSlsInfoResponse.AuditInfo.LogStore"));
+		auditInfo.setProject(_ctx.stringValue("DescribeInstDbSlsInfoResponse.AuditInfo.Project"));
 		describeInstDbSlsInfoResponse.setAuditInfo(auditInfo);
 	 
 	 	return describeInstDbSlsInfoResponse;

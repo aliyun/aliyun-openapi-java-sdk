@@ -22,25 +22,32 @@ import com.aliyuncs.drds.Endpoint;
  * @author auto create
  * @version 
  */
-public class SubmitSwitchTaskRequest extends RpcAcsRequest<SubmitSwitchTaskResponse> {
+public class SetupRecycleBinStatusRequest extends RpcAcsRequest<SetupRecycleBinStatusResponse> {
 	   
+
+	private String statusAction;
 
 	private String drdsInstanceId;
 
-	private String expandType;
-
-	private String jobId;
-
 	private String dbName;
-
-	private String parentJobId;
-	public SubmitSwitchTaskRequest() {
-		super("Drds", "2019-01-23", "SubmitSwitchTask", "drds");
+	public SetupRecycleBinStatusRequest() {
+		super("Drds", "2019-01-23", "SetupRecycleBinStatus");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getStatusAction() {
+		return this.statusAction;
+	}
+
+	public void setStatusAction(String statusAction) {
+		this.statusAction = statusAction;
+		if(statusAction != null){
+			putQueryParameter("StatusAction", statusAction);
+		}
 	}
 
 	public String getDrdsInstanceId() {
@@ -51,28 +58,6 @@ public class SubmitSwitchTaskRequest extends RpcAcsRequest<SubmitSwitchTaskRespo
 		this.drdsInstanceId = drdsInstanceId;
 		if(drdsInstanceId != null){
 			putQueryParameter("DrdsInstanceId", drdsInstanceId);
-		}
-	}
-
-	public String getExpandType() {
-		return this.expandType;
-	}
-
-	public void setExpandType(String expandType) {
-		this.expandType = expandType;
-		if(expandType != null){
-			putQueryParameter("ExpandType", expandType);
-		}
-	}
-
-	public String getJobId() {
-		return this.jobId;
-	}
-
-	public void setJobId(String jobId) {
-		this.jobId = jobId;
-		if(jobId != null){
-			putQueryParameter("JobId", jobId);
 		}
 	}
 
@@ -87,20 +72,9 @@ public class SubmitSwitchTaskRequest extends RpcAcsRequest<SubmitSwitchTaskRespo
 		}
 	}
 
-	public String getParentJobId() {
-		return this.parentJobId;
-	}
-
-	public void setParentJobId(String parentJobId) {
-		this.parentJobId = parentJobId;
-		if(parentJobId != null){
-			putQueryParameter("ParentJobId", parentJobId);
-		}
-	}
-
 	@Override
-	public Class<SubmitSwitchTaskResponse> getResponseClass() {
-		return SubmitSwitchTaskResponse.class;
+	public Class<SetupRecycleBinStatusResponse> getResponseClass() {
+		return SetupRecycleBinStatusResponse.class;
 	}
 
 }

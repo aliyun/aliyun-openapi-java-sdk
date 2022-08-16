@@ -31,39 +31,39 @@ public class DescribeDrdsDbInstanceResponseUnmarshaller {
 		describeDrdsDbInstanceResponse.setSuccess(_ctx.booleanValue("DescribeDrdsDbInstanceResponse.Success"));
 
 		DbInstance dbInstance = new DbInstance();
-		dbInstance.setDBInstanceId(_ctx.stringValue("DescribeDrdsDbInstanceResponse.DbInstance.DBInstanceId"));
+		dbInstance.setExpireTime(_ctx.stringValue("DescribeDrdsDbInstanceResponse.DbInstance.ExpireTime"));
+		dbInstance.setPayType(_ctx.stringValue("DescribeDrdsDbInstanceResponse.DbInstance.PayType"));
+		dbInstance.setDBInstanceStatus(_ctx.stringValue("DescribeDrdsDbInstanceResponse.DbInstance.DBInstanceStatus"));
+		dbInstance.setNetworkType(_ctx.stringValue("DescribeDrdsDbInstanceResponse.DbInstance.NetworkType"));
+		dbInstance.setPort(_ctx.integerValue("DescribeDrdsDbInstanceResponse.DbInstance.Port"));
+		dbInstance.setEngineVersion(_ctx.stringValue("DescribeDrdsDbInstanceResponse.DbInstance.EngineVersion"));
 		dbInstance.setDmInstanceId(_ctx.stringValue("DescribeDrdsDbInstanceResponse.DbInstance.DmInstanceId"));
 		dbInstance.setConnectUrl(_ctx.stringValue("DescribeDrdsDbInstanceResponse.DbInstance.ConnectUrl"));
-		dbInstance.setPort(_ctx.integerValue("DescribeDrdsDbInstanceResponse.DbInstance.Port"));
-		dbInstance.setDBInstanceStatus(_ctx.stringValue("DescribeDrdsDbInstanceResponse.DbInstance.DBInstanceStatus"));
-		dbInstance.setDbInstType(_ctx.stringValue("DescribeDrdsDbInstanceResponse.DbInstance.DbInstType"));
 		dbInstance.setReadWeight(_ctx.integerValue("DescribeDrdsDbInstanceResponse.DbInstance.ReadWeight"));
-		dbInstance.setEngine(_ctx.stringValue("DescribeDrdsDbInstanceResponse.DbInstance.Engine"));
-		dbInstance.setEngineVersion(_ctx.stringValue("DescribeDrdsDbInstanceResponse.DbInstance.EngineVersion"));
 		dbInstance.setRdsInstType(_ctx.stringValue("DescribeDrdsDbInstanceResponse.DbInstance.RdsInstType"));
-		dbInstance.setPayType(_ctx.stringValue("DescribeDrdsDbInstanceResponse.DbInstance.PayType"));
-		dbInstance.setExpireTime(_ctx.stringValue("DescribeDrdsDbInstanceResponse.DbInstance.ExpireTime"));
 		dbInstance.setRemainDays(_ctx.stringValue("DescribeDrdsDbInstanceResponse.DbInstance.RemainDays"));
-		dbInstance.setNetworkType(_ctx.stringValue("DescribeDrdsDbInstanceResponse.DbInstance.NetworkType"));
+		dbInstance.setDBInstanceId(_ctx.stringValue("DescribeDrdsDbInstanceResponse.DbInstance.DBInstanceId"));
+		dbInstance.setDbInstType(_ctx.stringValue("DescribeDrdsDbInstanceResponse.DbInstance.DbInstType"));
+		dbInstance.setEngine(_ctx.stringValue("DescribeDrdsDbInstanceResponse.DbInstance.Engine"));
 
 		List<ReadOnlyInstance> readOnlyInstances = new ArrayList<ReadOnlyInstance>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDrdsDbInstanceResponse.DbInstance.ReadOnlyInstances.Length"); i++) {
 			ReadOnlyInstance readOnlyInstance = new ReadOnlyInstance();
-			readOnlyInstance.setDBInstanceId(_ctx.stringValue("DescribeDrdsDbInstanceResponse.DbInstance.ReadOnlyInstances["+ i +"].DBInstanceId"));
+			readOnlyInstance.setExpireTime(_ctx.stringValue("DescribeDrdsDbInstanceResponse.DbInstance.ReadOnlyInstances["+ i +"].ExpireTime"));
+			readOnlyInstance.setPayType(_ctx.stringValue("DescribeDrdsDbInstanceResponse.DbInstance.ReadOnlyInstances["+ i +"].PayType"));
+			readOnlyInstance.setVersionAction(_ctx.integerValue("DescribeDrdsDbInstanceResponse.DbInstance.ReadOnlyInstances["+ i +"].VersionAction"));
+			readOnlyInstance.setDBInstanceStatus(_ctx.stringValue("DescribeDrdsDbInstanceResponse.DbInstance.ReadOnlyInstances["+ i +"].DBInstanceStatus"));
+			readOnlyInstance.setNetworkType(_ctx.stringValue("DescribeDrdsDbInstanceResponse.DbInstance.ReadOnlyInstances["+ i +"].NetworkType"));
+			readOnlyInstance.setPort(_ctx.integerValue("DescribeDrdsDbInstanceResponse.DbInstance.ReadOnlyInstances["+ i +"].Port"));
+			readOnlyInstance.setEngineVersion(_ctx.stringValue("DescribeDrdsDbInstanceResponse.DbInstance.ReadOnlyInstances["+ i +"].EngineVersion"));
 			readOnlyInstance.setDmInstanceId(_ctx.stringValue("DescribeDrdsDbInstanceResponse.DbInstance.ReadOnlyInstances["+ i +"].DmInstanceId"));
 			readOnlyInstance.setConnectUrl(_ctx.stringValue("DescribeDrdsDbInstanceResponse.DbInstance.ReadOnlyInstances["+ i +"].ConnectUrl"));
-			readOnlyInstance.setPort(_ctx.integerValue("DescribeDrdsDbInstanceResponse.DbInstance.ReadOnlyInstances["+ i +"].Port"));
-			readOnlyInstance.setDBInstanceStatus(_ctx.stringValue("DescribeDrdsDbInstanceResponse.DbInstance.ReadOnlyInstances["+ i +"].DBInstanceStatus"));
-			readOnlyInstance.setDbInstType(_ctx.stringValue("DescribeDrdsDbInstanceResponse.DbInstance.ReadOnlyInstances["+ i +"].DbInstType"));
 			readOnlyInstance.setReadWeight(_ctx.integerValue("DescribeDrdsDbInstanceResponse.DbInstance.ReadOnlyInstances["+ i +"].ReadWeight"));
-			readOnlyInstance.setEngine(_ctx.stringValue("DescribeDrdsDbInstanceResponse.DbInstance.ReadOnlyInstances["+ i +"].Engine"));
-			readOnlyInstance.setEngineVersion(_ctx.stringValue("DescribeDrdsDbInstanceResponse.DbInstance.ReadOnlyInstances["+ i +"].EngineVersion"));
 			readOnlyInstance.setRdsInstType(_ctx.stringValue("DescribeDrdsDbInstanceResponse.DbInstance.ReadOnlyInstances["+ i +"].RdsInstType"));
-			readOnlyInstance.setPayType(_ctx.stringValue("DescribeDrdsDbInstanceResponse.DbInstance.ReadOnlyInstances["+ i +"].PayType"));
-			readOnlyInstance.setExpireTime(_ctx.stringValue("DescribeDrdsDbInstanceResponse.DbInstance.ReadOnlyInstances["+ i +"].ExpireTime"));
 			readOnlyInstance.setRemainDays(_ctx.stringValue("DescribeDrdsDbInstanceResponse.DbInstance.ReadOnlyInstances["+ i +"].RemainDays"));
-			readOnlyInstance.setNetworkType(_ctx.stringValue("DescribeDrdsDbInstanceResponse.DbInstance.ReadOnlyInstances["+ i +"].NetworkType"));
-			readOnlyInstance.setVersionAction(_ctx.integerValue("DescribeDrdsDbInstanceResponse.DbInstance.ReadOnlyInstances["+ i +"].VersionAction"));
+			readOnlyInstance.setDBInstanceId(_ctx.stringValue("DescribeDrdsDbInstanceResponse.DbInstance.ReadOnlyInstances["+ i +"].DBInstanceId"));
+			readOnlyInstance.setDbInstType(_ctx.stringValue("DescribeDrdsDbInstanceResponse.DbInstance.ReadOnlyInstances["+ i +"].DbInstType"));
+			readOnlyInstance.setEngine(_ctx.stringValue("DescribeDrdsDbInstanceResponse.DbInstance.ReadOnlyInstances["+ i +"].Engine"));
 
 			readOnlyInstances.add(readOnlyInstance);
 		}

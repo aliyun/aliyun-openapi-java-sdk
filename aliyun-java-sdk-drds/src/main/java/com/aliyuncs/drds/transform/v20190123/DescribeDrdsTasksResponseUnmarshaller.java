@@ -32,9 +32,9 @@ public class DescribeDrdsTasksResponseUnmarshaller {
 		List<Task> tasks = new ArrayList<Task>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDrdsTasksResponse.Tasks.Length"); i++) {
 			Task task = new Task();
-			task.setId(_ctx.longValue("DescribeDrdsTasksResponse.Tasks["+ i +"].Id"));
 			task.setState(_ctx.stringValue("DescribeDrdsTasksResponse.Tasks["+ i +"].State"));
 			task.setContent(_ctx.stringValue("DescribeDrdsTasksResponse.Tasks["+ i +"].Content"));
+			task.setId(_ctx.longValue("DescribeDrdsTasksResponse.Tasks["+ i +"].Id"));
 
 			tasks.add(task);
 		}

@@ -25,32 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDrdsRdsInstancesResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
+	private String pageSize;
 
 	private String pageNumber;
 
-	private String pageSize;
+	private String requestId;
 
 	private String total;
 
+	private Boolean success;
+
 	private List<DbInstance> dbInstances;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setPageSize(String pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public String getPageNumber() {
@@ -61,12 +53,12 @@ public class DescribeDrdsRdsInstancesResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public String getPageSize() {
-		return this.pageSize;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPageSize(String pageSize) {
-		this.pageSize = pageSize;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getTotal() {
@@ -75,6 +67,14 @@ public class DescribeDrdsRdsInstancesResponse extends AcsResponse {
 
 	public void setTotal(String total) {
 		this.total = total;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<DbInstance> getDbInstances() {
@@ -87,128 +87,64 @@ public class DescribeDrdsRdsInstancesResponse extends AcsResponse {
 
 	public static class DbInstance {
 
-		private String dBInstanceId;
+		private String dBInstanceCPU;
 
-		private String dmInstanceId;
+		private String expireTime;
 
-		private String connectUrl;
-
-		private Integer port;
-
-		private String dBInstanceStatus;
-
-		private String dbInstType;
-
-		private Integer readWeight;
-
-		private String networkType;
-
-		private String engine;
-
-		private String engineVersion;
-
-		private String rdsInstType;
+		private Long dBInstanceMemory;
 
 		private String payType;
 
-		private String expireTime;
+		private String dBInstanceStatus;
+
+		private String networkType;
+
+		private Integer port;
+
+		private String engineVersion;
+
+		private String dmInstanceId;
+
+		private Long dBInstanceStorage;
+
+		private String connectUrl;
+
+		private Integer readWeight;
+
+		private String rdsInstType;
 
 		private Integer remainDays;
 
 		private String dBInstanceClassType;
 
-		private String dBInstanceCPU;
+		private String dBInstanceId;
 
-		private Long dBInstanceMemory;
+		private String engine;
 
-		private Long dBInstanceStorage;
+		private String dbInstType;
 
-		public String getDBInstanceId() {
-			return this.dBInstanceId;
+		public String getDBInstanceCPU() {
+			return this.dBInstanceCPU;
 		}
 
-		public void setDBInstanceId(String dBInstanceId) {
-			this.dBInstanceId = dBInstanceId;
+		public void setDBInstanceCPU(String dBInstanceCPU) {
+			this.dBInstanceCPU = dBInstanceCPU;
 		}
 
-		public String getDmInstanceId() {
-			return this.dmInstanceId;
+		public String getExpireTime() {
+			return this.expireTime;
 		}
 
-		public void setDmInstanceId(String dmInstanceId) {
-			this.dmInstanceId = dmInstanceId;
+		public void setExpireTime(String expireTime) {
+			this.expireTime = expireTime;
 		}
 
-		public String getConnectUrl() {
-			return this.connectUrl;
+		public Long getDBInstanceMemory() {
+			return this.dBInstanceMemory;
 		}
 
-		public void setConnectUrl(String connectUrl) {
-			this.connectUrl = connectUrl;
-		}
-
-		public Integer getPort() {
-			return this.port;
-		}
-
-		public void setPort(Integer port) {
-			this.port = port;
-		}
-
-		public String getDBInstanceStatus() {
-			return this.dBInstanceStatus;
-		}
-
-		public void setDBInstanceStatus(String dBInstanceStatus) {
-			this.dBInstanceStatus = dBInstanceStatus;
-		}
-
-		public String getDbInstType() {
-			return this.dbInstType;
-		}
-
-		public void setDbInstType(String dbInstType) {
-			this.dbInstType = dbInstType;
-		}
-
-		public Integer getReadWeight() {
-			return this.readWeight;
-		}
-
-		public void setReadWeight(Integer readWeight) {
-			this.readWeight = readWeight;
-		}
-
-		public String getNetworkType() {
-			return this.networkType;
-		}
-
-		public void setNetworkType(String networkType) {
-			this.networkType = networkType;
-		}
-
-		public String getEngine() {
-			return this.engine;
-		}
-
-		public void setEngine(String engine) {
-			this.engine = engine;
-		}
-
-		public String getEngineVersion() {
-			return this.engineVersion;
-		}
-
-		public void setEngineVersion(String engineVersion) {
-			this.engineVersion = engineVersion;
-		}
-
-		public String getRdsInstType() {
-			return this.rdsInstType;
-		}
-
-		public void setRdsInstType(String rdsInstType) {
-			this.rdsInstType = rdsInstType;
+		public void setDBInstanceMemory(Long dBInstanceMemory) {
+			this.dBInstanceMemory = dBInstanceMemory;
 		}
 
 		public String getPayType() {
@@ -219,12 +155,76 @@ public class DescribeDrdsRdsInstancesResponse extends AcsResponse {
 			this.payType = payType;
 		}
 
-		public String getExpireTime() {
-			return this.expireTime;
+		public String getDBInstanceStatus() {
+			return this.dBInstanceStatus;
 		}
 
-		public void setExpireTime(String expireTime) {
-			this.expireTime = expireTime;
+		public void setDBInstanceStatus(String dBInstanceStatus) {
+			this.dBInstanceStatus = dBInstanceStatus;
+		}
+
+		public String getNetworkType() {
+			return this.networkType;
+		}
+
+		public void setNetworkType(String networkType) {
+			this.networkType = networkType;
+		}
+
+		public Integer getPort() {
+			return this.port;
+		}
+
+		public void setPort(Integer port) {
+			this.port = port;
+		}
+
+		public String getEngineVersion() {
+			return this.engineVersion;
+		}
+
+		public void setEngineVersion(String engineVersion) {
+			this.engineVersion = engineVersion;
+		}
+
+		public String getDmInstanceId() {
+			return this.dmInstanceId;
+		}
+
+		public void setDmInstanceId(String dmInstanceId) {
+			this.dmInstanceId = dmInstanceId;
+		}
+
+		public Long getDBInstanceStorage() {
+			return this.dBInstanceStorage;
+		}
+
+		public void setDBInstanceStorage(Long dBInstanceStorage) {
+			this.dBInstanceStorage = dBInstanceStorage;
+		}
+
+		public String getConnectUrl() {
+			return this.connectUrl;
+		}
+
+		public void setConnectUrl(String connectUrl) {
+			this.connectUrl = connectUrl;
+		}
+
+		public Integer getReadWeight() {
+			return this.readWeight;
+		}
+
+		public void setReadWeight(Integer readWeight) {
+			this.readWeight = readWeight;
+		}
+
+		public String getRdsInstType() {
+			return this.rdsInstType;
+		}
+
+		public void setRdsInstType(String rdsInstType) {
+			this.rdsInstType = rdsInstType;
 		}
 
 		public Integer getRemainDays() {
@@ -243,28 +243,28 @@ public class DescribeDrdsRdsInstancesResponse extends AcsResponse {
 			this.dBInstanceClassType = dBInstanceClassType;
 		}
 
-		public String getDBInstanceCPU() {
-			return this.dBInstanceCPU;
+		public String getDBInstanceId() {
+			return this.dBInstanceId;
 		}
 
-		public void setDBInstanceCPU(String dBInstanceCPU) {
-			this.dBInstanceCPU = dBInstanceCPU;
+		public void setDBInstanceId(String dBInstanceId) {
+			this.dBInstanceId = dBInstanceId;
 		}
 
-		public Long getDBInstanceMemory() {
-			return this.dBInstanceMemory;
+		public String getEngine() {
+			return this.engine;
 		}
 
-		public void setDBInstanceMemory(Long dBInstanceMemory) {
-			this.dBInstanceMemory = dBInstanceMemory;
+		public void setEngine(String engine) {
+			this.engine = engine;
 		}
 
-		public Long getDBInstanceStorage() {
-			return this.dBInstanceStorage;
+		public String getDbInstType() {
+			return this.dbInstType;
 		}
 
-		public void setDBInstanceStorage(Long dBInstanceStorage) {
-			this.dBInstanceStorage = dBInstanceStorage;
+		public void setDbInstType(String dbInstType) {
+			this.dbInstType = dbInstType;
 		}
 	}
 

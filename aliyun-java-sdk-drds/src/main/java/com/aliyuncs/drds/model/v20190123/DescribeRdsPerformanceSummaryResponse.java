@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeRdsPerformanceSummaryResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean success;
 
+	private String requestId;
+
 	private List<RdsPerformanceInfo> rdsPerformanceInfos;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -45,6 +37,14 @@ public class DescribeRdsPerformanceSummaryResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<RdsPerformanceInfo> getRdsPerformanceInfos() {
@@ -57,25 +57,17 @@ public class DescribeRdsPerformanceSummaryResponse extends AcsResponse {
 
 	public static class RdsPerformanceInfo {
 
-		private String rdsId;
-
 		private Float cpu;
-
-		private Float iops;
 
 		private Integer activeSessions;
 
 		private Integer totalSessions;
 
+		private String rdsId;
+
+		private Float iops;
+
 		private Long spaceUsage;
-
-		public String getRdsId() {
-			return this.rdsId;
-		}
-
-		public void setRdsId(String rdsId) {
-			this.rdsId = rdsId;
-		}
 
 		public Float getCpu() {
 			return this.cpu;
@@ -83,14 +75,6 @@ public class DescribeRdsPerformanceSummaryResponse extends AcsResponse {
 
 		public void setCpu(Float cpu) {
 			this.cpu = cpu;
-		}
-
-		public Float getIops() {
-			return this.iops;
-		}
-
-		public void setIops(Float iops) {
-			this.iops = iops;
 		}
 
 		public Integer getActiveSessions() {
@@ -107,6 +91,22 @@ public class DescribeRdsPerformanceSummaryResponse extends AcsResponse {
 
 		public void setTotalSessions(Integer totalSessions) {
 			this.totalSessions = totalSessions;
+		}
+
+		public String getRdsId() {
+			return this.rdsId;
+		}
+
+		public void setRdsId(String rdsId) {
+			this.rdsId = rdsId;
+		}
+
+		public Float getIops() {
+			return this.iops;
+		}
+
+		public void setIops(Float iops) {
+			this.iops = iops;
 		}
 
 		public Long getSpaceUsage() {

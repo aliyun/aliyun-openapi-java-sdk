@@ -14,17 +14,18 @@
 
 package com.aliyuncs.drds.transform.v20190123;
 
-import com.aliyuncs.drds.model.v20190123.SubmitSmoothExpandTaskResponse;
+import com.aliyuncs.drds.model.v20190123.RefreshDrdsAtomUrlResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class SubmitSmoothExpandTaskResponseUnmarshaller {
+public class RefreshDrdsAtomUrlResponseUnmarshaller {
 
-	public static SubmitSmoothExpandTaskResponse unmarshall(SubmitSmoothExpandTaskResponse submitSmoothExpandTaskResponse, UnmarshallerContext _ctx) {
+	public static RefreshDrdsAtomUrlResponse unmarshall(RefreshDrdsAtomUrlResponse refreshDrdsAtomUrlResponse, UnmarshallerContext _ctx) {
 		
-		submitSmoothExpandTaskResponse.setRequestId(_ctx.stringValue("SubmitSmoothExpandTaskResponse.RequestId"));
-		submitSmoothExpandTaskResponse.setSuccess(_ctx.booleanValue("SubmitSmoothExpandTaskResponse.Success"));
+		refreshDrdsAtomUrlResponse.setRequestId(_ctx.stringValue("RefreshDrdsAtomUrlResponse.RequestId"));
+		refreshDrdsAtomUrlResponse.setResult(_ctx.booleanValue("RefreshDrdsAtomUrlResponse.Result"));
+		refreshDrdsAtomUrlResponse.setSuccess(_ctx.booleanValue("RefreshDrdsAtomUrlResponse.Success"));
 	 
-	 	return submitSmoothExpandTaskResponse;
+	 	return refreshDrdsAtomUrlResponse;
 	}
 }

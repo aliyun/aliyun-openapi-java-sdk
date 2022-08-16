@@ -22,60 +22,19 @@ import com.aliyuncs.drds.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeShardTaskListRequest extends RpcAcsRequest<DescribeShardTaskListResponse> {
+public class DescribeRecycleBinStatusRequest extends RpcAcsRequest<DescribeRecycleBinStatusResponse> {
 	   
-
-	private String taskType;
-
-	private String query;
-
-	private Integer currentPage;
 
 	private String drdsInstanceId;
 
 	private String dbName;
-
-	private Integer pageSize;
-	public DescribeShardTaskListRequest() {
-		super("Drds", "2019-01-23", "DescribeShardTaskList", "drds");
+	public DescribeRecycleBinStatusRequest() {
+		super("Drds", "2019-01-23", "DescribeRecycleBinStatus");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getTaskType() {
-		return this.taskType;
-	}
-
-	public void setTaskType(String taskType) {
-		this.taskType = taskType;
-		if(taskType != null){
-			putQueryParameter("TaskType", taskType);
-		}
-	}
-
-	public String getQuery() {
-		return this.query;
-	}
-
-	public void setQuery(String query) {
-		this.query = query;
-		if(query != null){
-			putQueryParameter("Query", query);
-		}
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
-		}
 	}
 
 	public String getDrdsInstanceId() {
@@ -100,20 +59,9 @@ public class DescribeShardTaskListRequest extends RpcAcsRequest<DescribeShardTas
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	@Override
-	public Class<DescribeShardTaskListResponse> getResponseClass() {
-		return DescribeShardTaskListResponse.class;
+	public Class<DescribeRecycleBinStatusResponse> getResponseClass() {
+		return DescribeRecycleBinStatusResponse.class;
 	}
 
 }

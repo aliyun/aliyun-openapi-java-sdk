@@ -23,8 +23,8 @@ public class RemoveDrdsDbFailedRecordResponseUnmarshaller {
 	public static RemoveDrdsDbFailedRecordResponse unmarshall(RemoveDrdsDbFailedRecordResponse removeDrdsDbFailedRecordResponse, UnmarshallerContext _ctx) {
 		
 		removeDrdsDbFailedRecordResponse.setRequestId(_ctx.stringValue("RemoveDrdsDbFailedRecordResponse.RequestId"));
-		removeDrdsDbFailedRecordResponse.setSuccess(_ctx.booleanValue("RemoveDrdsDbFailedRecordResponse.Success"));
 		removeDrdsDbFailedRecordResponse.setResult(_ctx.booleanValue("RemoveDrdsDbFailedRecordResponse.Result"));
+		removeDrdsDbFailedRecordResponse.setSuccess(_ctx.booleanValue("RemoveDrdsDbFailedRecordResponse.Success"));
 	 
 	 	return removeDrdsDbFailedRecordResponse;
 	}

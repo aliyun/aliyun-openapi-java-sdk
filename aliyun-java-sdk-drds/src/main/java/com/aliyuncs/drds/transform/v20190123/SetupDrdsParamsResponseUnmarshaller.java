@@ -23,8 +23,8 @@ public class SetupDrdsParamsResponseUnmarshaller {
 	public static SetupDrdsParamsResponse unmarshall(SetupDrdsParamsResponse setupDrdsParamsResponse, UnmarshallerContext _ctx) {
 		
 		setupDrdsParamsResponse.setRequestId(_ctx.stringValue("SetupDrdsParamsResponse.RequestId"));
-		setupDrdsParamsResponse.setSuccess(_ctx.booleanValue("SetupDrdsParamsResponse.Success"));
 		setupDrdsParamsResponse.setData(_ctx.booleanValue("SetupDrdsParamsResponse.Data"));
+		setupDrdsParamsResponse.setSuccess(_ctx.booleanValue("SetupDrdsParamsResponse.Success"));
 	 
 	 	return setupDrdsParamsResponse;
 	}

@@ -31,30 +31,30 @@ public class DescribeDrdsInstanceResponseUnmarshaller {
 		describeDrdsInstanceResponse.setSuccess(_ctx.booleanValue("DescribeDrdsInstanceResponse.Success"));
 
 		Data data = new Data();
-		data.setDrdsInstanceId(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.DrdsInstanceId"));
 		data.setType(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.Type"));
-		data.setRegionId(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.RegionId"));
-		data.setZoneId(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.ZoneId"));
-		data.setDescription(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.Description"));
-		data.setNetworkType(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.NetworkType"));
 		data.setStatus(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.Status"));
 		data.setCreateTime(_ctx.longValue("DescribeDrdsInstanceResponse.Data.CreateTime"));
-		data.setVersion(_ctx.longValue("DescribeDrdsInstanceResponse.Data.Version"));
-		data.setInstanceSeries(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.InstanceSeries"));
+		data.setVersionAction(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.VersionAction"));
+		data.setStorageType(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.StorageType"));
+		data.setNetworkType(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.NetworkType"));
+		data.setLabel(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.Label"));
+		data.setMysqlVersion(_ctx.integerValue("DescribeDrdsInstanceResponse.Data.MysqlVersion"));
 		data.setInstanceSpec(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.InstanceSpec"));
 		data.setVpcCloudInstanceId(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.VpcCloudInstanceId"));
-		data.setInstRole(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.InstRole"));
-		data.setCommodityCode(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.CommodityCode"));
+		data.setDescription(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.Description"));
+		data.setVersion(_ctx.longValue("DescribeDrdsInstanceResponse.Data.Version"));
 		data.setExpireDate(_ctx.longValue("DescribeDrdsInstanceResponse.Data.ExpireDate"));
-		data.setVersionAction(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.VersionAction"));
-		data.setLabel(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.Label"));
 		data.setMasterInstanceId(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.MasterInstanceId"));
+		data.setCommodityCode(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.CommodityCode"));
 		data.setMachineType(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.MachineType"));
-		data.setOrderInstanceId(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.OrderInstanceId"));
-		data.setMysqlVersion(_ctx.integerValue("DescribeDrdsInstanceResponse.Data.MysqlVersion"));
-		data.setStorageType(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.StorageType"));
-		data.setResourceGroupId(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.ResourceGroupId"));
+		data.setInstanceSeries(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.InstanceSeries"));
 		data.setProductVersion(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.ProductVersion"));
+		data.setRegionId(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.RegionId"));
+		data.setResourceGroupId(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.ResourceGroupId"));
+		data.setDrdsInstanceId(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.DrdsInstanceId"));
+		data.setZoneId(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.ZoneId"));
+		data.setInstRole(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.InstRole"));
+		data.setOrderInstanceId(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.OrderInstanceId"));
 
 		List<String> readOnlyDBInstanceIds = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDrdsInstanceResponse.Data.ReadOnlyDBInstanceIds.Length"); i++) {
@@ -65,12 +65,12 @@ public class DescribeDrdsInstanceResponseUnmarshaller {
 		List<Vip> vips = new ArrayList<Vip>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDrdsInstanceResponse.Data.Vips.Length"); i++) {
 			Vip vip = new Vip();
-			vip.setDns(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.Vips["+ i +"].Dns"));
-			vip.setExpireDays(_ctx.longValue("DescribeDrdsInstanceResponse.Data.Vips["+ i +"].ExpireDays"));
-			vip.setPort(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.Vips["+ i +"].Port"));
 			vip.setType(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.Vips["+ i +"].Type"));
 			vip.setVpcId(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.Vips["+ i +"].VpcId"));
 			vip.setVswitchId(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.Vips["+ i +"].VswitchId"));
+			vip.setDns(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.Vips["+ i +"].Dns"));
+			vip.setPort(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.Vips["+ i +"].Port"));
+			vip.setExpireDays(_ctx.longValue("DescribeDrdsInstanceResponse.Data.Vips["+ i +"].ExpireDays"));
 
 			vips.add(vip);
 		}

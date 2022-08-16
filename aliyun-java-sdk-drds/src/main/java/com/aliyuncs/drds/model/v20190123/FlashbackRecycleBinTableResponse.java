@@ -15,18 +15,28 @@
 package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.drds.transform.v20190123.SubmitSmoothExpandTaskResponseUnmarshaller;
+import com.aliyuncs.drds.transform.v20190123.FlashbackRecycleBinTableResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SubmitSmoothExpandTaskResponse extends AcsResponse {
+public class FlashbackRecycleBinTableResponse extends AcsResponse {
+
+	private Boolean data;
 
 	private String requestId;
 
 	private Boolean success;
+
+	public Boolean getData() {
+		return this.data;
+	}
+
+	public void setData(Boolean data) {
+		this.data = data;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,7 +55,12 @@ public class SubmitSmoothExpandTaskResponse extends AcsResponse {
 	}
 
 	@Override
-	public SubmitSmoothExpandTaskResponse getInstance(UnmarshallerContext context) {
-		return	SubmitSmoothExpandTaskResponseUnmarshaller.unmarshall(this, context);
+	public FlashbackRecycleBinTableResponse getInstance(UnmarshallerContext context) {
+		return	FlashbackRecycleBinTableResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

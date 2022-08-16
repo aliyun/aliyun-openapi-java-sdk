@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateInstanceInternetAddressResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer code;
 
 	private Boolean data;
 
+	private String requestId;
+
 	private Boolean success;
 
-	private Integer code;
-
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(Integer code) {
+		this.code = code;
 	}
 
 	public Boolean getData() {
@@ -48,20 +48,20 @@ public class CreateInstanceInternetAddressResponse extends AcsResponse {
 		this.data = data;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public Boolean getSuccess() {
 		return this.success;
 	}
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public Integer getCode() {
-		return this.code;
-	}
-
-	public void setCode(Integer code) {
-		this.code = code;
 	}
 
 	@Override

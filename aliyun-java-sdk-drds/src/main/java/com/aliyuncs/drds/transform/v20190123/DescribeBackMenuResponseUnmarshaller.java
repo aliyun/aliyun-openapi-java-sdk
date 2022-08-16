@@ -32,8 +32,8 @@ public class DescribeBackMenuResponseUnmarshaller {
 		List<ListItem> list = new ArrayList<ListItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeBackMenuResponse.List.Length"); i++) {
 			ListItem listItem = new ListItem();
-			listItem.setMenuName(_ctx.stringValue("DescribeBackMenuResponse.List["+ i +"].MenuName"));
 			listItem.setSupport(_ctx.booleanValue("DescribeBackMenuResponse.List["+ i +"].Support"));
+			listItem.setMenuName(_ctx.stringValue("DescribeBackMenuResponse.List["+ i +"].MenuName"));
 
 			list.add(listItem);
 		}

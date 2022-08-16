@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeInstDbSlsInfoResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean success;
 
+	private String requestId;
+
 	private AuditInfo auditInfo;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -44,6 +36,14 @@ public class DescribeInstDbSlsInfoResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public AuditInfo getAuditInfo() {
@@ -56,17 +56,9 @@ public class DescribeInstDbSlsInfoResponse extends AcsResponse {
 
 	public static class AuditInfo {
 
-		private String project;
-
 		private String logStore;
 
-		public String getProject() {
-			return this.project;
-		}
-
-		public void setProject(String project) {
-			this.project = project;
-		}
+		private String project;
 
 		public String getLogStore() {
 			return this.logStore;
@@ -74,6 +66,14 @@ public class DescribeInstDbSlsInfoResponse extends AcsResponse {
 
 		public void setLogStore(String logStore) {
 			this.logStore = logStore;
+		}
+
+		public String getProject() {
+			return this.project;
+		}
+
+		public void setProject(String project) {
+			this.project = project;
 		}
 	}
 

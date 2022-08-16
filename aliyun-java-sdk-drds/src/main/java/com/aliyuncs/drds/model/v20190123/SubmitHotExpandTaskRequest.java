@@ -26,9 +26,9 @@ import com.aliyuncs.drds.Endpoint;
 public class SubmitHotExpandTaskRequest extends RpcAcsRequest<SubmitHotExpandTaskResponse> {
 	   
 
-	private List<Mapping> mappings;
-
 	private String taskDesc;
+
+	private List<Mapping> mappings;
 
 	private List<SupperAccountMapping> supperAccountMappings;
 
@@ -42,31 +42,12 @@ public class SubmitHotExpandTaskRequest extends RpcAcsRequest<SubmitHotExpandTas
 
 	private String dbName;
 	public SubmitHotExpandTaskRequest() {
-		super("Drds", "2019-01-23", "SubmitHotExpandTask", "drds");
+		super("Drds", "2019-01-23", "SubmitHotExpandTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public List<Mapping> getMappings() {
-		return this.mappings;
-	}
-
-	public void setMappings(List<Mapping> mappings) {
-		this.mappings = mappings;	
-		if (mappings != null) {
-			for (int depth1 = 0; depth1 < mappings.size(); depth1++) {
-				putQueryParameter("Mapping." + (depth1 + 1) + ".DbShardColumn" , mappings.get(depth1).getDbShardColumn());
-				putQueryParameter("Mapping." + (depth1 + 1) + ".TbShardColumn" , mappings.get(depth1).getTbShardColumn());
-				putQueryParameter("Mapping." + (depth1 + 1) + ".ShardTbValue" , mappings.get(depth1).getShardTbValue());
-				putQueryParameter("Mapping." + (depth1 + 1) + ".HotDbName" , mappings.get(depth1).getHotDbName());
-				putQueryParameter("Mapping." + (depth1 + 1) + ".ShardDbValue" , mappings.get(depth1).getShardDbValue());
-				putQueryParameter("Mapping." + (depth1 + 1) + ".HotTableName" , mappings.get(depth1).getHotTableName());
-				putQueryParameter("Mapping." + (depth1 + 1) + ".LogicTable" , mappings.get(depth1).getLogicTable());
-			}
-		}	
 	}
 
 	public String getTaskDesc() {
@@ -78,6 +59,25 @@ public class SubmitHotExpandTaskRequest extends RpcAcsRequest<SubmitHotExpandTas
 		if(taskDesc != null){
 			putQueryParameter("TaskDesc", taskDesc);
 		}
+	}
+
+	public List<Mapping> getMappings() {
+		return this.mappings;
+	}
+
+	public void setMappings(List<Mapping> mappings) {
+		this.mappings = mappings;	
+		if (mappings != null) {
+			for (int depth1 = 0; depth1 < mappings.size(); depth1++) {
+				putQueryParameter("Mapping." + (depth1 + 1) + ".TbShardColumn" , mappings.get(depth1).getTbShardColumn());
+				putQueryParameter("Mapping." + (depth1 + 1) + ".DbShardColumn" , mappings.get(depth1).getDbShardColumn());
+				putQueryParameter("Mapping." + (depth1 + 1) + ".ShardTbValue" , mappings.get(depth1).getShardTbValue());
+				putQueryParameter("Mapping." + (depth1 + 1) + ".HotDbName" , mappings.get(depth1).getHotDbName());
+				putQueryParameter("Mapping." + (depth1 + 1) + ".ShardDbValue" , mappings.get(depth1).getShardDbValue());
+				putQueryParameter("Mapping." + (depth1 + 1) + ".HotTableName" , mappings.get(depth1).getHotTableName());
+				putQueryParameter("Mapping." + (depth1 + 1) + ".LogicTable" , mappings.get(depth1).getLogicTable());
+			}
+		}	
 	}
 
 	public List<SupperAccountMapping> getSupperAccountMappings() {
@@ -158,9 +158,9 @@ public class SubmitHotExpandTaskRequest extends RpcAcsRequest<SubmitHotExpandTas
 
 	public static class Mapping {
 
-		private String dbShardColumn;
-
 		private String tbShardColumn;
+
+		private String dbShardColumn;
 
 		private String shardTbValue;
 
@@ -172,20 +172,20 @@ public class SubmitHotExpandTaskRequest extends RpcAcsRequest<SubmitHotExpandTas
 
 		private String logicTable;
 
-		public String getDbShardColumn() {
-			return this.dbShardColumn;
-		}
-
-		public void setDbShardColumn(String dbShardColumn) {
-			this.dbShardColumn = dbShardColumn;
-		}
-
 		public String getTbShardColumn() {
 			return this.tbShardColumn;
 		}
 
 		public void setTbShardColumn(String tbShardColumn) {
 			this.tbShardColumn = tbShardColumn;
+		}
+
+		public String getDbShardColumn() {
+			return this.dbShardColumn;
+		}
+
+		public void setDbShardColumn(String dbShardColumn) {
+			this.dbShardColumn = dbShardColumn;
 		}
 
 		public String getShardTbValue() {

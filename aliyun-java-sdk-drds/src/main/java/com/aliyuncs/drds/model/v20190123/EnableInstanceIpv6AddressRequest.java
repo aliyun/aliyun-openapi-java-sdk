@@ -22,30 +22,17 @@ import com.aliyuncs.drds.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeHiStoreInstanceInfoRequest extends RpcAcsRequest<DescribeHiStoreInstanceInfoResponse> {
+public class EnableInstanceIpv6AddressRequest extends RpcAcsRequest<EnableInstanceIpv6AddressResponse> {
 	   
 
-	private String historeInstanceId;
-
 	private String drdsInstanceId;
-	public DescribeHiStoreInstanceInfoRequest() {
-		super("Drds", "2019-01-23", "DescribeHiStoreInstanceInfo", "drds");
+	public EnableInstanceIpv6AddressRequest() {
+		super("Drds", "2019-01-23", "EnableInstanceIpv6Address");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getHistoreInstanceId() {
-		return this.historeInstanceId;
-	}
-
-	public void setHistoreInstanceId(String historeInstanceId) {
-		this.historeInstanceId = historeInstanceId;
-		if(historeInstanceId != null){
-			putQueryParameter("HistoreInstanceId", historeInstanceId);
-		}
 	}
 
 	public String getDrdsInstanceId() {
@@ -60,8 +47,8 @@ public class DescribeHiStoreInstanceInfoRequest extends RpcAcsRequest<DescribeHi
 	}
 
 	@Override
-	public Class<DescribeHiStoreInstanceInfoResponse> getResponseClass() {
-		return DescribeHiStoreInstanceInfoResponse.class;
+	public Class<EnableInstanceIpv6AddressResponse> getResponseClass() {
+		return EnableInstanceIpv6AddressResponse.class;
 	}
 
 }

@@ -35,29 +35,29 @@ public class DescribeDrdsInstancesResponseUnmarshaller {
 		List<Instance> instances = new ArrayList<Instance>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDrdsInstancesResponse.Instances.Length"); i++) {
 			Instance instance = new Instance();
-			instance.setDrdsInstanceId(_ctx.stringValue("DescribeDrdsInstancesResponse.Instances["+ i +"].DrdsInstanceId"));
-			instance.setType(_ctx.stringValue("DescribeDrdsInstancesResponse.Instances["+ i +"].Type"));
-			instance.setRegionId(_ctx.stringValue("DescribeDrdsInstancesResponse.Instances["+ i +"].RegionId"));
-			instance.setZoneId(_ctx.stringValue("DescribeDrdsInstancesResponse.Instances["+ i +"].ZoneId"));
-			instance.setDescription(_ctx.stringValue("DescribeDrdsInstancesResponse.Instances["+ i +"].Description"));
-			instance.setNetworkType(_ctx.stringValue("DescribeDrdsInstancesResponse.Instances["+ i +"].NetworkType"));
-			instance.setStatus(_ctx.stringValue("DescribeDrdsInstancesResponse.Instances["+ i +"].Status"));
-			instance.setCreateTime(_ctx.longValue("DescribeDrdsInstancesResponse.Instances["+ i +"].CreateTime"));
-			instance.setVersion(_ctx.longValue("DescribeDrdsInstancesResponse.Instances["+ i +"].Version"));
-			instance.setCommodityCode(_ctx.stringValue("DescribeDrdsInstancesResponse.Instances["+ i +"].CommodityCode"));
-			instance.setInstRole(_ctx.stringValue("DescribeDrdsInstancesResponse.Instances["+ i +"].InstRole"));
-			instance.setInstanceSeries(_ctx.stringValue("DescribeDrdsInstancesResponse.Instances["+ i +"].InstanceSeries"));
-			instance.setInstanceSpec(_ctx.stringValue("DescribeDrdsInstancesResponse.Instances["+ i +"].InstanceSpec"));
-			instance.setMasterInstanceId(_ctx.stringValue("DescribeDrdsInstancesResponse.Instances["+ i +"].MasterInstanceId"));
-			instance.setVpcCloudInstanceId(_ctx.stringValue("DescribeDrdsInstancesResponse.Instances["+ i +"].VpcCloudInstanceId"));
 			instance.setVpcId(_ctx.stringValue("DescribeDrdsInstancesResponse.Instances["+ i +"].VpcId"));
-			instance.setExpireDate(_ctx.longValue("DescribeDrdsInstancesResponse.Instances["+ i +"].ExpireDate"));
-			instance.setVersionAction(_ctx.stringValue("DescribeDrdsInstancesResponse.Instances["+ i +"].VersionAction"));
-			instance.setLabel(_ctx.stringValue("DescribeDrdsInstancesResponse.Instances["+ i +"].Label"));
+			instance.setStatus(_ctx.stringValue("DescribeDrdsInstancesResponse.Instances["+ i +"].Status"));
+			instance.setType(_ctx.stringValue("DescribeDrdsInstancesResponse.Instances["+ i +"].Type"));
+			instance.setCommodityCode(_ctx.stringValue("DescribeDrdsInstancesResponse.Instances["+ i +"].CommodityCode"));
 			instance.setMachineType(_ctx.stringValue("DescribeDrdsInstancesResponse.Instances["+ i +"].MachineType"));
-			instance.setOrderInstanceId(_ctx.stringValue("DescribeDrdsInstancesResponse.Instances["+ i +"].OrderInstanceId"));
-			instance.setResourceGroupId(_ctx.stringValue("DescribeDrdsInstancesResponse.Instances["+ i +"].ResourceGroupId"));
+			instance.setCreateTime(_ctx.longValue("DescribeDrdsInstancesResponse.Instances["+ i +"].CreateTime"));
+			instance.setVersionAction(_ctx.stringValue("DescribeDrdsInstancesResponse.Instances["+ i +"].VersionAction"));
+			instance.setInstanceSeries(_ctx.stringValue("DescribeDrdsInstancesResponse.Instances["+ i +"].InstanceSeries"));
+			instance.setNetworkType(_ctx.stringValue("DescribeDrdsInstancesResponse.Instances["+ i +"].NetworkType"));
+			instance.setLabel(_ctx.stringValue("DescribeDrdsInstancesResponse.Instances["+ i +"].Label"));
 			instance.setProductVersion(_ctx.stringValue("DescribeDrdsInstancesResponse.Instances["+ i +"].ProductVersion"));
+			instance.setInstanceSpec(_ctx.stringValue("DescribeDrdsInstancesResponse.Instances["+ i +"].InstanceSpec"));
+			instance.setRegionId(_ctx.stringValue("DescribeDrdsInstancesResponse.Instances["+ i +"].RegionId"));
+			instance.setVpcCloudInstanceId(_ctx.stringValue("DescribeDrdsInstancesResponse.Instances["+ i +"].VpcCloudInstanceId"));
+			instance.setDescription(_ctx.stringValue("DescribeDrdsInstancesResponse.Instances["+ i +"].Description"));
+			instance.setVersion(_ctx.longValue("DescribeDrdsInstancesResponse.Instances["+ i +"].Version"));
+			instance.setResourceGroupId(_ctx.stringValue("DescribeDrdsInstancesResponse.Instances["+ i +"].ResourceGroupId"));
+			instance.setZoneId(_ctx.stringValue("DescribeDrdsInstancesResponse.Instances["+ i +"].ZoneId"));
+			instance.setDrdsInstanceId(_ctx.stringValue("DescribeDrdsInstancesResponse.Instances["+ i +"].DrdsInstanceId"));
+			instance.setExpireDate(_ctx.longValue("DescribeDrdsInstancesResponse.Instances["+ i +"].ExpireDate"));
+			instance.setMasterInstanceId(_ctx.stringValue("DescribeDrdsInstancesResponse.Instances["+ i +"].MasterInstanceId"));
+			instance.setOrderInstanceId(_ctx.stringValue("DescribeDrdsInstancesResponse.Instances["+ i +"].OrderInstanceId"));
+			instance.setInstRole(_ctx.stringValue("DescribeDrdsInstancesResponse.Instances["+ i +"].InstRole"));
 
 			List<String> readOnlyDBInstanceIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDrdsInstancesResponse.Instances["+ i +"].ReadOnlyDBInstanceIds.Length"); j++) {
@@ -68,11 +68,11 @@ public class DescribeDrdsInstancesResponseUnmarshaller {
 			List<Vip> vips = new ArrayList<Vip>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDrdsInstancesResponse.Instances["+ i +"].Vips.Length"); j++) {
 				Vip vip = new Vip();
-				vip.setIP(_ctx.stringValue("DescribeDrdsInstancesResponse.Instances["+ i +"].Vips["+ j +"].IP"));
-				vip.setPort(_ctx.stringValue("DescribeDrdsInstancesResponse.Instances["+ i +"].Vips["+ j +"].Port"));
-				vip.setType(_ctx.stringValue("DescribeDrdsInstancesResponse.Instances["+ i +"].Vips["+ j +"].Type"));
 				vip.setVpcId(_ctx.stringValue("DescribeDrdsInstancesResponse.Instances["+ i +"].Vips["+ j +"].VpcId"));
+				vip.setType(_ctx.stringValue("DescribeDrdsInstancesResponse.Instances["+ i +"].Vips["+ j +"].Type"));
 				vip.setVswitchId(_ctx.stringValue("DescribeDrdsInstancesResponse.Instances["+ i +"].Vips["+ j +"].VswitchId"));
+				vip.setPort(_ctx.stringValue("DescribeDrdsInstancesResponse.Instances["+ i +"].Vips["+ j +"].Port"));
+				vip.setIP(_ctx.stringValue("DescribeDrdsInstancesResponse.Instances["+ i +"].Vips["+ j +"].IP"));
 
 				vips.add(vip);
 			}

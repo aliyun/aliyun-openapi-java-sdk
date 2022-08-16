@@ -15,18 +15,26 @@
 package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.drds.transform.v20190123.SubmitSwitchTaskResponseUnmarshaller;
+import com.aliyuncs.drds.transform.v20190123.RollbackInstanceVersionResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SubmitSwitchTaskResponse extends AcsResponse {
+public class RollbackInstanceVersionResponse extends AcsResponse {
+
+	private String data;
 
 	private String requestId;
 
-	private Boolean success;
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,16 +44,13 @@ public class SubmitSwitchTaskResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	@Override
+	public RollbackInstanceVersionResponse getInstance(UnmarshallerContext context) {
+		return	RollbackInstanceVersionResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
-	public SubmitSwitchTaskResponse getInstance(UnmarshallerContext context) {
-		return	SubmitSwitchTaskResponseUnmarshaller.unmarshall(this, context);
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

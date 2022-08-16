@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDrdsInstanceResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean success;
 
+	private String requestId;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -45,6 +37,14 @@ public class DescribeDrdsInstanceResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Data getData() {
@@ -57,65 +57,57 @@ public class DescribeDrdsInstanceResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String drdsInstanceId;
-
 		private String type;
-
-		private String regionId;
-
-		private String zoneId;
-
-		private String description;
-
-		private String networkType;
 
 		private String status;
 
 		private Long createTime;
 
-		private Long version;
+		private String versionAction;
 
-		private String instanceSeries;
+		private String storageType;
+
+		private String networkType;
+
+		private String label;
+
+		private Integer mysqlVersion;
 
 		private String instanceSpec;
 
 		private String vpcCloudInstanceId;
 
-		private String instRole;
+		private String description;
 
-		private String commodityCode;
+		private Long version;
 
 		private Long expireDate;
 
-		private String versionAction;
-
-		private String label;
-
 		private String masterInstanceId;
+
+		private String commodityCode;
 
 		private String machineType;
 
-		private String orderInstanceId;
+		private String instanceSeries;
 
-		private Integer mysqlVersion;
+		private String productVersion;
 
-		private String storageType;
+		private String regionId;
 
 		private String resourceGroupId;
 
-		private String productVersion;
+		private String drdsInstanceId;
+
+		private String zoneId;
+
+		private String instRole;
+
+		private String orderInstanceId;
 
 		private List<Vip> vips;
 
 		private List<String> readOnlyDBInstanceIds;
-
-		public String getDrdsInstanceId() {
-			return this.drdsInstanceId;
-		}
-
-		public void setDrdsInstanceId(String drdsInstanceId) {
-			this.drdsInstanceId = drdsInstanceId;
-		}
 
 		public String getType() {
 			return this.type;
@@ -123,38 +115,6 @@ public class DescribeDrdsInstanceResponse extends AcsResponse {
 
 		public void setType(String type) {
 			this.type = type;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getNetworkType() {
-			return this.networkType;
-		}
-
-		public void setNetworkType(String networkType) {
-			this.networkType = networkType;
 		}
 
 		public String getStatus() {
@@ -173,20 +133,44 @@ public class DescribeDrdsInstanceResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public Long getVersion() {
-			return this.version;
+		public String getVersionAction() {
+			return this.versionAction;
 		}
 
-		public void setVersion(Long version) {
-			this.version = version;
+		public void setVersionAction(String versionAction) {
+			this.versionAction = versionAction;
 		}
 
-		public String getInstanceSeries() {
-			return this.instanceSeries;
+		public String getStorageType() {
+			return this.storageType;
 		}
 
-		public void setInstanceSeries(String instanceSeries) {
-			this.instanceSeries = instanceSeries;
+		public void setStorageType(String storageType) {
+			this.storageType = storageType;
+		}
+
+		public String getNetworkType() {
+			return this.networkType;
+		}
+
+		public void setNetworkType(String networkType) {
+			this.networkType = networkType;
+		}
+
+		public String getLabel() {
+			return this.label;
+		}
+
+		public void setLabel(String label) {
+			this.label = label;
+		}
+
+		public Integer getMysqlVersion() {
+			return this.mysqlVersion;
+		}
+
+		public void setMysqlVersion(Integer mysqlVersion) {
+			this.mysqlVersion = mysqlVersion;
 		}
 
 		public String getInstanceSpec() {
@@ -205,20 +189,20 @@ public class DescribeDrdsInstanceResponse extends AcsResponse {
 			this.vpcCloudInstanceId = vpcCloudInstanceId;
 		}
 
-		public String getInstRole() {
-			return this.instRole;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setInstRole(String instRole) {
-			this.instRole = instRole;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
-		public String getCommodityCode() {
-			return this.commodityCode;
+		public Long getVersion() {
+			return this.version;
 		}
 
-		public void setCommodityCode(String commodityCode) {
-			this.commodityCode = commodityCode;
+		public void setVersion(Long version) {
+			this.version = version;
 		}
 
 		public Long getExpireDate() {
@@ -229,28 +213,20 @@ public class DescribeDrdsInstanceResponse extends AcsResponse {
 			this.expireDate = expireDate;
 		}
 
-		public String getVersionAction() {
-			return this.versionAction;
-		}
-
-		public void setVersionAction(String versionAction) {
-			this.versionAction = versionAction;
-		}
-
-		public String getLabel() {
-			return this.label;
-		}
-
-		public void setLabel(String label) {
-			this.label = label;
-		}
-
 		public String getMasterInstanceId() {
 			return this.masterInstanceId;
 		}
 
 		public void setMasterInstanceId(String masterInstanceId) {
 			this.masterInstanceId = masterInstanceId;
+		}
+
+		public String getCommodityCode() {
+			return this.commodityCode;
+		}
+
+		public void setCommodityCode(String commodityCode) {
+			this.commodityCode = commodityCode;
 		}
 
 		public String getMachineType() {
@@ -261,28 +237,28 @@ public class DescribeDrdsInstanceResponse extends AcsResponse {
 			this.machineType = machineType;
 		}
 
-		public String getOrderInstanceId() {
-			return this.orderInstanceId;
+		public String getInstanceSeries() {
+			return this.instanceSeries;
 		}
 
-		public void setOrderInstanceId(String orderInstanceId) {
-			this.orderInstanceId = orderInstanceId;
+		public void setInstanceSeries(String instanceSeries) {
+			this.instanceSeries = instanceSeries;
 		}
 
-		public Integer getMysqlVersion() {
-			return this.mysqlVersion;
+		public String getProductVersion() {
+			return this.productVersion;
 		}
 
-		public void setMysqlVersion(Integer mysqlVersion) {
-			this.mysqlVersion = mysqlVersion;
+		public void setProductVersion(String productVersion) {
+			this.productVersion = productVersion;
 		}
 
-		public String getStorageType() {
-			return this.storageType;
+		public String getRegionId() {
+			return this.regionId;
 		}
 
-		public void setStorageType(String storageType) {
-			this.storageType = storageType;
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
 		public String getResourceGroupId() {
@@ -293,12 +269,36 @@ public class DescribeDrdsInstanceResponse extends AcsResponse {
 			this.resourceGroupId = resourceGroupId;
 		}
 
-		public String getProductVersion() {
-			return this.productVersion;
+		public String getDrdsInstanceId() {
+			return this.drdsInstanceId;
 		}
 
-		public void setProductVersion(String productVersion) {
-			this.productVersion = productVersion;
+		public void setDrdsInstanceId(String drdsInstanceId) {
+			this.drdsInstanceId = drdsInstanceId;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public String getInstRole() {
+			return this.instRole;
+		}
+
+		public void setInstRole(String instRole) {
+			this.instRole = instRole;
+		}
+
+		public String getOrderInstanceId() {
+			return this.orderInstanceId;
+		}
+
+		public void setOrderInstanceId(String orderInstanceId) {
+			this.orderInstanceId = orderInstanceId;
 		}
 
 		public List<Vip> getVips() {
@@ -319,41 +319,17 @@ public class DescribeDrdsInstanceResponse extends AcsResponse {
 
 		public static class Vip {
 
-			private String dns;
-
-			private Long expireDays;
-
-			private String port;
-
 			private String type;
 
 			private String vpcId;
 
 			private String vswitchId;
 
-			public String getDns() {
-				return this.dns;
-			}
+			private String dns;
 
-			public void setDns(String dns) {
-				this.dns = dns;
-			}
+			private String port;
 
-			public Long getExpireDays() {
-				return this.expireDays;
-			}
-
-			public void setExpireDays(Long expireDays) {
-				this.expireDays = expireDays;
-			}
-
-			public String getPort() {
-				return this.port;
-			}
-
-			public void setPort(String port) {
-				this.port = port;
-			}
+			private Long expireDays;
 
 			public String getType() {
 				return this.type;
@@ -377,6 +353,30 @@ public class DescribeDrdsInstanceResponse extends AcsResponse {
 
 			public void setVswitchId(String vswitchId) {
 				this.vswitchId = vswitchId;
+			}
+
+			public String getDns() {
+				return this.dns;
+			}
+
+			public void setDns(String dns) {
+				this.dns = dns;
+			}
+
+			public String getPort() {
+				return this.port;
+			}
+
+			public void setPort(String port) {
+				this.port = port;
+			}
+
+			public Long getExpireDays() {
+				return this.expireDays;
+			}
+
+			public void setExpireDays(Long expireDays) {
+				this.expireDays = expireDays;
 			}
 		}
 	}

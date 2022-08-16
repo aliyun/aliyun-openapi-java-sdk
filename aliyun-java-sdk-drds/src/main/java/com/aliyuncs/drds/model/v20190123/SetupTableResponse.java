@@ -24,11 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class SetupTableResponse extends AcsResponse {
 
+	private Boolean data;
+
 	private String requestId;
 
 	private Boolean success;
 
-	private Boolean data;
+	public Boolean getData() {
+		return this.data;
+	}
+
+	public void setData(Boolean data) {
+		this.data = data;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,14 +52,6 @@ public class SetupTableResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public Boolean getData() {
-		return this.data;
-	}
-
-	public void setData(Boolean data) {
-		this.data = data;
 	}
 
 	@Override

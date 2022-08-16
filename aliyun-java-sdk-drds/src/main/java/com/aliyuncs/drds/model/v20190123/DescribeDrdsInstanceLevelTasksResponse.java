@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDrdsInstanceLevelTasksResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean success;
 
+	private String requestId;
+
 	private List<Task> tasks;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -45,6 +37,14 @@ public class DescribeDrdsInstanceLevelTasksResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<Task> getTasks() {
@@ -57,43 +57,27 @@ public class DescribeDrdsInstanceLevelTasksResponse extends AcsResponse {
 
 	public static class Task {
 
-		private String taskName;
-
-		private Long gmtCreate;
-
 		private Integer taskType;
-
-		private Long targetId;
-
-		private Integer taskStatus;
-
-		private Integer progress;
-
-		private String progressDescription;
 
 		private String taskPhase;
 
-		private String errMsg;
-
-		private Boolean showProgress;
+		private Integer progress;
 
 		private Boolean allowCancel;
 
-		public String getTaskName() {
-			return this.taskName;
-		}
+		private Integer taskStatus;
 
-		public void setTaskName(String taskName) {
-			this.taskName = taskName;
-		}
+		private Boolean showProgress;
 
-		public Long getGmtCreate() {
-			return this.gmtCreate;
-		}
+		private String taskName;
 
-		public void setGmtCreate(Long gmtCreate) {
-			this.gmtCreate = gmtCreate;
-		}
+		private String progressDescription;
+
+		private Long gmtCreate;
+
+		private Long targetId;
+
+		private String errMsg;
 
 		public Integer getTaskType() {
 			return this.taskType;
@@ -101,38 +85,6 @@ public class DescribeDrdsInstanceLevelTasksResponse extends AcsResponse {
 
 		public void setTaskType(Integer taskType) {
 			this.taskType = taskType;
-		}
-
-		public Long getTargetId() {
-			return this.targetId;
-		}
-
-		public void setTargetId(Long targetId) {
-			this.targetId = targetId;
-		}
-
-		public Integer getTaskStatus() {
-			return this.taskStatus;
-		}
-
-		public void setTaskStatus(Integer taskStatus) {
-			this.taskStatus = taskStatus;
-		}
-
-		public Integer getProgress() {
-			return this.progress;
-		}
-
-		public void setProgress(Integer progress) {
-			this.progress = progress;
-		}
-
-		public String getProgressDescription() {
-			return this.progressDescription;
-		}
-
-		public void setProgressDescription(String progressDescription) {
-			this.progressDescription = progressDescription;
 		}
 
 		public String getTaskPhase() {
@@ -143,12 +95,28 @@ public class DescribeDrdsInstanceLevelTasksResponse extends AcsResponse {
 			this.taskPhase = taskPhase;
 		}
 
-		public String getErrMsg() {
-			return this.errMsg;
+		public Integer getProgress() {
+			return this.progress;
 		}
 
-		public void setErrMsg(String errMsg) {
-			this.errMsg = errMsg;
+		public void setProgress(Integer progress) {
+			this.progress = progress;
+		}
+
+		public Boolean getAllowCancel() {
+			return this.allowCancel;
+		}
+
+		public void setAllowCancel(Boolean allowCancel) {
+			this.allowCancel = allowCancel;
+		}
+
+		public Integer getTaskStatus() {
+			return this.taskStatus;
+		}
+
+		public void setTaskStatus(Integer taskStatus) {
+			this.taskStatus = taskStatus;
 		}
 
 		public Boolean getShowProgress() {
@@ -159,12 +127,44 @@ public class DescribeDrdsInstanceLevelTasksResponse extends AcsResponse {
 			this.showProgress = showProgress;
 		}
 
-		public Boolean getAllowCancel() {
-			return this.allowCancel;
+		public String getTaskName() {
+			return this.taskName;
 		}
 
-		public void setAllowCancel(Boolean allowCancel) {
-			this.allowCancel = allowCancel;
+		public void setTaskName(String taskName) {
+			this.taskName = taskName;
+		}
+
+		public String getProgressDescription() {
+			return this.progressDescription;
+		}
+
+		public void setProgressDescription(String progressDescription) {
+			this.progressDescription = progressDescription;
+		}
+
+		public Long getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(Long gmtCreate) {
+			this.gmtCreate = gmtCreate;
+		}
+
+		public Long getTargetId() {
+			return this.targetId;
+		}
+
+		public void setTargetId(Long targetId) {
+			this.targetId = targetId;
+		}
+
+		public String getErrMsg() {
+			return this.errMsg;
+		}
+
+		public void setErrMsg(String errMsg) {
+			this.errMsg = errMsg;
 		}
 	}
 

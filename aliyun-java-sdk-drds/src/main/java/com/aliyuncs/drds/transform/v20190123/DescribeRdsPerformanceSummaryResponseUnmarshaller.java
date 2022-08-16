@@ -32,11 +32,11 @@ public class DescribeRdsPerformanceSummaryResponseUnmarshaller {
 		List<RdsPerformanceInfo> rdsPerformanceInfos = new ArrayList<RdsPerformanceInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeRdsPerformanceSummaryResponse.RdsPerformanceInfos.Length"); i++) {
 			RdsPerformanceInfo rdsPerformanceInfo = new RdsPerformanceInfo();
-			rdsPerformanceInfo.setRdsId(_ctx.stringValue("DescribeRdsPerformanceSummaryResponse.RdsPerformanceInfos["+ i +"].RdsId"));
 			rdsPerformanceInfo.setCpu(_ctx.floatValue("DescribeRdsPerformanceSummaryResponse.RdsPerformanceInfos["+ i +"].Cpu"));
-			rdsPerformanceInfo.setIops(_ctx.floatValue("DescribeRdsPerformanceSummaryResponse.RdsPerformanceInfos["+ i +"].Iops"));
 			rdsPerformanceInfo.setActiveSessions(_ctx.integerValue("DescribeRdsPerformanceSummaryResponse.RdsPerformanceInfos["+ i +"].ActiveSessions"));
 			rdsPerformanceInfo.setTotalSessions(_ctx.integerValue("DescribeRdsPerformanceSummaryResponse.RdsPerformanceInfos["+ i +"].TotalSessions"));
+			rdsPerformanceInfo.setRdsId(_ctx.stringValue("DescribeRdsPerformanceSummaryResponse.RdsPerformanceInfos["+ i +"].RdsId"));
+			rdsPerformanceInfo.setIops(_ctx.floatValue("DescribeRdsPerformanceSummaryResponse.RdsPerformanceInfos["+ i +"].Iops"));
 			rdsPerformanceInfo.setSpaceUsage(_ctx.longValue("DescribeRdsPerformanceSummaryResponse.RdsPerformanceInfos["+ i +"].SpaceUsage"));
 
 			rdsPerformanceInfos.add(rdsPerformanceInfo);

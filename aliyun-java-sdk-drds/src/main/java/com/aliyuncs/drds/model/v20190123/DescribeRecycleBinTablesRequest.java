@@ -22,12 +22,14 @@ import com.aliyuncs.drds.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeInstanceMenuSwitchRequest extends RpcAcsRequest<DescribeInstanceMenuSwitchResponse> {
+public class DescribeRecycleBinTablesRequest extends RpcAcsRequest<DescribeRecycleBinTablesResponse> {
 	   
 
 	private String drdsInstanceId;
-	public DescribeInstanceMenuSwitchRequest() {
-		super("Drds", "2019-01-23", "DescribeInstanceMenuSwitch", "drds");
+
+	private String dbName;
+	public DescribeRecycleBinTablesRequest() {
+		super("Drds", "2019-01-23", "DescribeRecycleBinTables");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -46,9 +48,20 @@ public class DescribeInstanceMenuSwitchRequest extends RpcAcsRequest<DescribeIns
 		}
 	}
 
+	public String getDbName() {
+		return this.dbName;
+	}
+
+	public void setDbName(String dbName) {
+		this.dbName = dbName;
+		if(dbName != null){
+			putQueryParameter("DbName", dbName);
+		}
+	}
+
 	@Override
-	public Class<DescribeInstanceMenuSwitchResponse> getResponseClass() {
-		return DescribeInstanceMenuSwitchResponse.class;
+	public Class<DescribeRecycleBinTablesResponse> getResponseClass() {
+		return DescribeRecycleBinTablesResponse.class;
 	}
 
 }

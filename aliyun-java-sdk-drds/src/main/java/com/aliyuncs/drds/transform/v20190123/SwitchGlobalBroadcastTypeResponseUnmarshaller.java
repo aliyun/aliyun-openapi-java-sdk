@@ -23,8 +23,8 @@ public class SwitchGlobalBroadcastTypeResponseUnmarshaller {
 	public static SwitchGlobalBroadcastTypeResponse unmarshall(SwitchGlobalBroadcastTypeResponse switchGlobalBroadcastTypeResponse, UnmarshallerContext _ctx) {
 		
 		switchGlobalBroadcastTypeResponse.setRequestId(_ctx.stringValue("SwitchGlobalBroadcastTypeResponse.RequestId"));
-		switchGlobalBroadcastTypeResponse.setSuccess(_ctx.booleanValue("SwitchGlobalBroadcastTypeResponse.Success"));
 		switchGlobalBroadcastTypeResponse.setData(_ctx.booleanValue("SwitchGlobalBroadcastTypeResponse.Data"));
+		switchGlobalBroadcastTypeResponse.setSuccess(_ctx.booleanValue("SwitchGlobalBroadcastTypeResponse.Success"));
 	 
 	 	return switchGlobalBroadcastTypeResponse;
 	}

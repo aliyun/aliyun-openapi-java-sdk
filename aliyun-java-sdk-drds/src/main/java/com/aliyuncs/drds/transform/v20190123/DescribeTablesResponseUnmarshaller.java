@@ -27,22 +27,22 @@ public class DescribeTablesResponseUnmarshaller {
 	public static DescribeTablesResponse unmarshall(DescribeTablesResponse describeTablesResponse, UnmarshallerContext _ctx) {
 		
 		describeTablesResponse.setRequestId(_ctx.stringValue("DescribeTablesResponse.RequestId"));
-		describeTablesResponse.setSuccess(_ctx.booleanValue("DescribeTablesResponse.Success"));
-		describeTablesResponse.setPageNumber(_ctx.integerValue("DescribeTablesResponse.PageNumber"));
 		describeTablesResponse.setPageSize(_ctx.integerValue("DescribeTablesResponse.PageSize"));
+		describeTablesResponse.setPageNumber(_ctx.integerValue("DescribeTablesResponse.PageNumber"));
 		describeTablesResponse.setTotal(_ctx.integerValue("DescribeTablesResponse.Total"));
+		describeTablesResponse.setSuccess(_ctx.booleanValue("DescribeTablesResponse.Success"));
 
 		List<ListItem> list = new ArrayList<ListItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeTablesResponse.List.Length"); i++) {
 			ListItem listItem = new ListItem();
-			listItem.setTable(_ctx.stringValue("DescribeTablesResponse.List["+ i +"].Table"));
+			listItem.setStatus(_ctx.integerValue("DescribeTablesResponse.List["+ i +"].Status"));
+			listItem.setIsLocked(_ctx.booleanValue("DescribeTablesResponse.List["+ i +"].IsLocked"));
 			listItem.setShardKey(_ctx.stringValue("DescribeTablesResponse.List["+ i +"].ShardKey"));
 			listItem.setIsShard(_ctx.booleanValue("DescribeTablesResponse.List["+ i +"].IsShard"));
-			listItem.setIsLocked(_ctx.booleanValue("DescribeTablesResponse.List["+ i +"].IsLocked"));
-			listItem.setDbInstType(_ctx.integerValue("DescribeTablesResponse.List["+ i +"].DbInstType"));
 			listItem.setBroadcast(_ctx.booleanValue("DescribeTablesResponse.List["+ i +"].Broadcast"));
 			listItem.setAllowFullTableScan(_ctx.booleanValue("DescribeTablesResponse.List["+ i +"].AllowFullTableScan"));
-			listItem.setStatus(_ctx.integerValue("DescribeTablesResponse.List["+ i +"].Status"));
+			listItem.setTable(_ctx.stringValue("DescribeTablesResponse.List["+ i +"].Table"));
+			listItem.setDbInstType(_ctx.integerValue("DescribeTablesResponse.List["+ i +"].DbInstType"));
 
 			list.add(listItem);
 		}

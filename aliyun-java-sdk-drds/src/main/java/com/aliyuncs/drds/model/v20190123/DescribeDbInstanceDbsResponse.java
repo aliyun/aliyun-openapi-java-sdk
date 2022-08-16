@@ -67,19 +67,11 @@ public class DescribeDbInstanceDbsResponse extends AcsResponse {
 
 	public static class Database {
 
-		private String dbName;
-
 		private Integer status;
 
+		private String dbName;
+
 		private String description;
-
-		public String getDbName() {
-			return this.dbName;
-		}
-
-		public void setDbName(String dbName) {
-			this.dbName = dbName;
-		}
 
 		public Integer getStatus() {
 			return this.status;
@@ -87,6 +79,14 @@ public class DescribeDbInstanceDbsResponse extends AcsResponse {
 
 		public void setStatus(Integer status) {
 			this.status = status;
+		}
+
+		public String getDbName() {
+			return this.dbName;
+		}
+
+		public void setDbName(String dbName) {
+			this.dbName = dbName;
 		}
 
 		public String getDescription() {

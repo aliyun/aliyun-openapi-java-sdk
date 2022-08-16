@@ -32,25 +32,25 @@ public class DescribeDrdsDBClusterResponseUnmarshaller {
 		describeDrdsDBClusterResponse.setSuccess(_ctx.booleanValue("DescribeDrdsDBClusterResponse.Success"));
 
 		DbInstance dbInstance = new DbInstance();
-		dbInstance.setDBInstanceId(_ctx.stringValue("DescribeDrdsDBClusterResponse.DbInstance.DBInstanceId"));
-		dbInstance.setPort(_ctx.integerValue("DescribeDrdsDBClusterResponse.DbInstance.Port"));
+		dbInstance.setExpireTime(_ctx.stringValue("DescribeDrdsDBClusterResponse.DbInstance.ExpireTime"));
+		dbInstance.setPayType(_ctx.stringValue("DescribeDrdsDBClusterResponse.DbInstance.PayType"));
 		dbInstance.setDBInstanceStatus(_ctx.stringValue("DescribeDrdsDBClusterResponse.DbInstance.DBInstanceStatus"));
-		dbInstance.setDbInstType(_ctx.stringValue("DescribeDrdsDBClusterResponse.DbInstance.DbInstType"));
-		dbInstance.setEngine(_ctx.stringValue("DescribeDrdsDBClusterResponse.DbInstance.Engine"));
+		dbInstance.setNetworkType(_ctx.stringValue("DescribeDrdsDBClusterResponse.DbInstance.NetworkType"));
+		dbInstance.setPort(_ctx.integerValue("DescribeDrdsDBClusterResponse.DbInstance.Port"));
 		dbInstance.setEngineVersion(_ctx.stringValue("DescribeDrdsDBClusterResponse.DbInstance.EngineVersion"));
 		dbInstance.setRdsInstType(_ctx.stringValue("DescribeDrdsDBClusterResponse.DbInstance.RdsInstType"));
-		dbInstance.setPayType(_ctx.stringValue("DescribeDrdsDBClusterResponse.DbInstance.PayType"));
-		dbInstance.setExpireTime(_ctx.stringValue("DescribeDrdsDBClusterResponse.DbInstance.ExpireTime"));
 		dbInstance.setRemainDays(_ctx.stringValue("DescribeDrdsDBClusterResponse.DbInstance.RemainDays"));
-		dbInstance.setNetworkType(_ctx.stringValue("DescribeDrdsDBClusterResponse.DbInstance.NetworkType"));
+		dbInstance.setDBInstanceId(_ctx.stringValue("DescribeDrdsDBClusterResponse.DbInstance.DBInstanceId"));
+		dbInstance.setDbInstType(_ctx.stringValue("DescribeDrdsDBClusterResponse.DbInstance.DbInstType"));
+		dbInstance.setEngine(_ctx.stringValue("DescribeDrdsDBClusterResponse.DbInstance.Engine"));
 		dbInstance.setReadMode(_ctx.stringValue("DescribeDrdsDBClusterResponse.DbInstance.ReadMode"));
 
 		List<Endpoint> endpoints = new ArrayList<Endpoint>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDrdsDBClusterResponse.DbInstance.Endpoints.Length"); i++) {
 			Endpoint endpoint = new Endpoint();
-			endpoint.setNodeIds(_ctx.stringValue("DescribeDrdsDBClusterResponse.DbInstance.Endpoints["+ i +"].NodeIds"));
-			endpoint.setEndpointId(_ctx.stringValue("DescribeDrdsDBClusterResponse.DbInstance.Endpoints["+ i +"].EndpointId"));
 			endpoint.setReadWeight(_ctx.integerValue("DescribeDrdsDBClusterResponse.DbInstance.Endpoints["+ i +"].ReadWeight"));
+			endpoint.setEndpointId(_ctx.stringValue("DescribeDrdsDBClusterResponse.DbInstance.Endpoints["+ i +"].EndpointId"));
+			endpoint.setNodeIds(_ctx.stringValue("DescribeDrdsDBClusterResponse.DbInstance.Endpoints["+ i +"].NodeIds"));
 
 			endpoints.add(endpoint);
 		}
@@ -59,10 +59,10 @@ public class DescribeDrdsDBClusterResponseUnmarshaller {
 		List<DBNode> dBNodes = new ArrayList<DBNode>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDrdsDBClusterResponse.DbInstance.DBNodes.Length"); i++) {
 			DBNode dBNode = new DBNode();
-			dBNode.setDBNodeId(_ctx.stringValue("DescribeDrdsDBClusterResponse.DbInstance.DBNodes["+ i +"].DBNodeId"));
-			dBNode.setZoneId(_ctx.stringValue("DescribeDrdsDBClusterResponse.DbInstance.DBNodes["+ i +"].ZoneId"));
-			dBNode.setDBNodeStatus(_ctx.stringValue("DescribeDrdsDBClusterResponse.DbInstance.DBNodes["+ i +"].DBNodeStatus"));
 			dBNode.setDBNodeRole(_ctx.stringValue("DescribeDrdsDBClusterResponse.DbInstance.DBNodes["+ i +"].DBNodeRole"));
+			dBNode.setZoneId(_ctx.stringValue("DescribeDrdsDBClusterResponse.DbInstance.DBNodes["+ i +"].ZoneId"));
+			dBNode.setDBNodeId(_ctx.stringValue("DescribeDrdsDBClusterResponse.DbInstance.DBNodes["+ i +"].DBNodeId"));
+			dBNode.setDBNodeStatus(_ctx.stringValue("DescribeDrdsDBClusterResponse.DbInstance.DBNodes["+ i +"].DBNodeStatus"));
 
 			dBNodes.add(dBNode);
 		}

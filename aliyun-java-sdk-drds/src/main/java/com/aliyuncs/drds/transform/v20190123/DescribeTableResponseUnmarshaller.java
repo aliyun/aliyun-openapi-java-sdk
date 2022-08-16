@@ -35,12 +35,12 @@ public class DescribeTableResponseUnmarshaller {
 		List<ColumnInfo> list = new ArrayList<ColumnInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeTableResponse.Data.List.Length"); i++) {
 			ColumnInfo columnInfo = new ColumnInfo();
-			columnInfo.setColumnName(_ctx.stringValue("DescribeTableResponse.Data.List["+ i +"].ColumnName"));
-			columnInfo.setColumnType(_ctx.stringValue("DescribeTableResponse.Data.List["+ i +"].ColumnType"));
-			columnInfo.setExtra(_ctx.stringValue("DescribeTableResponse.Data.List["+ i +"].Extra"));
 			columnInfo.setIndex(_ctx.stringValue("DescribeTableResponse.Data.List["+ i +"].Index"));
 			columnInfo.setIsAllowNull(_ctx.stringValue("DescribeTableResponse.Data.List["+ i +"].IsAllowNull"));
+			columnInfo.setColumnName(_ctx.stringValue("DescribeTableResponse.Data.List["+ i +"].ColumnName"));
 			columnInfo.setIsPk(_ctx.stringValue("DescribeTableResponse.Data.List["+ i +"].IsPk"));
+			columnInfo.setColumnType(_ctx.stringValue("DescribeTableResponse.Data.List["+ i +"].ColumnType"));
+			columnInfo.setExtra(_ctx.stringValue("DescribeTableResponse.Data.List["+ i +"].Extra"));
 
 			list.add(columnInfo);
 		}

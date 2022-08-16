@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeInstanceAccountsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean success;
 
+	private String requestId;
+
 	private List<InstanceAccount> instanceAccounts;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -45,6 +37,14 @@ public class DescribeInstanceAccountsResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<InstanceAccount> getInstanceAccounts() {
@@ -57,23 +57,15 @@ public class DescribeInstanceAccountsResponse extends AcsResponse {
 
 	public static class InstanceAccount {
 
-		private String accountName;
-
 		private String host;
-
-		private Integer accountType;
 
 		private String description;
 
+		private Integer accountType;
+
+		private String accountName;
+
 		private List<DbPrivilege> dbPrivileges;
-
-		public String getAccountName() {
-			return this.accountName;
-		}
-
-		public void setAccountName(String accountName) {
-			this.accountName = accountName;
-		}
 
 		public String getHost() {
 			return this.host;
@@ -81,6 +73,14 @@ public class DescribeInstanceAccountsResponse extends AcsResponse {
 
 		public void setHost(String host) {
 			this.host = host;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public Integer getAccountType() {
@@ -91,12 +91,12 @@ public class DescribeInstanceAccountsResponse extends AcsResponse {
 			this.accountType = accountType;
 		}
 
-		public String getDescription() {
-			return this.description;
+		public String getAccountName() {
+			return this.accountName;
 		}
 
-		public void setDescription(String description) {
-			this.description = description;
+		public void setAccountName(String accountName) {
+			this.accountName = accountName;
 		}
 
 		public List<DbPrivilege> getDbPrivileges() {

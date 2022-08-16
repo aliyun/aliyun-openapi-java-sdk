@@ -34,15 +34,15 @@ public class DescribeRDSPerformanceResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeRDSPerformanceResponse.Data.Length"); i++) {
 			PartialPerformanceData partialPerformanceData = new PartialPerformanceData();
 			partialPerformanceData.setKey(_ctx.stringValue("DescribeRDSPerformanceResponse.Data["+ i +"].Key"));
+			partialPerformanceData.setNodeName(_ctx.stringValue("DescribeRDSPerformanceResponse.Data["+ i +"].NodeName"));
 			partialPerformanceData.setUnit(_ctx.stringValue("DescribeRDSPerformanceResponse.Data["+ i +"].Unit"));
 			partialPerformanceData.setNodeNum(_ctx.integerValue("DescribeRDSPerformanceResponse.Data["+ i +"].NodeNum"));
-			partialPerformanceData.setNodeName(_ctx.stringValue("DescribeRDSPerformanceResponse.Data["+ i +"].NodeName"));
 
 			List<PerformanceValue> values = new ArrayList<PerformanceValue>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeRDSPerformanceResponse.Data["+ i +"].Values.Length"); j++) {
 				PerformanceValue performanceValue = new PerformanceValue();
-				performanceValue.setValue(_ctx.stringValue("DescribeRDSPerformanceResponse.Data["+ i +"].Values["+ j +"].Value"));
 				performanceValue.setDate(_ctx.longValue("DescribeRDSPerformanceResponse.Data["+ i +"].Values["+ j +"].Date"));
+				performanceValue.setValue(_ctx.stringValue("DescribeRDSPerformanceResponse.Data["+ i +"].Values["+ j +"].Value"));
 
 				values.add(performanceValue);
 			}

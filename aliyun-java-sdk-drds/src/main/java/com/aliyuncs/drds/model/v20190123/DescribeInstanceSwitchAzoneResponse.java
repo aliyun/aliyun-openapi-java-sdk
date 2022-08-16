@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeInstanceSwitchAzoneResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean success;
 
+	private String requestId;
+
 	private Result result;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -45,6 +37,14 @@ public class DescribeInstanceSwitchAzoneResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Result getResult() {
@@ -59,9 +59,9 @@ public class DescribeInstanceSwitchAzoneResponse extends AcsResponse {
 
 		private String originAzoneId;
 
-		private String regionId;
-
 		private Boolean switchAble;
+
+		private String regionId;
 
 		private List<String> targetAzones;
 
@@ -73,20 +73,20 @@ public class DescribeInstanceSwitchAzoneResponse extends AcsResponse {
 			this.originAzoneId = originAzoneId;
 		}
 
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
 		public Boolean getSwitchAble() {
 			return this.switchAble;
 		}
 
 		public void setSwitchAble(Boolean switchAble) {
 			this.switchAble = switchAble;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
 		public List<String> getTargetAzones() {

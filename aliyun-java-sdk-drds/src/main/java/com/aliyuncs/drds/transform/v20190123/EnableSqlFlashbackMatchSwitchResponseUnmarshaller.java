@@ -23,8 +23,8 @@ public class EnableSqlFlashbackMatchSwitchResponseUnmarshaller {
 	public static EnableSqlFlashbackMatchSwitchResponse unmarshall(EnableSqlFlashbackMatchSwitchResponse enableSqlFlashbackMatchSwitchResponse, UnmarshallerContext _ctx) {
 		
 		enableSqlFlashbackMatchSwitchResponse.setRequestId(_ctx.stringValue("EnableSqlFlashbackMatchSwitchResponse.RequestId"));
-		enableSqlFlashbackMatchSwitchResponse.setSuccess(_ctx.booleanValue("EnableSqlFlashbackMatchSwitchResponse.Success"));
 		enableSqlFlashbackMatchSwitchResponse.setResult(_ctx.booleanValue("EnableSqlFlashbackMatchSwitchResponse.Result"));
+		enableSqlFlashbackMatchSwitchResponse.setSuccess(_ctx.booleanValue("EnableSqlFlashbackMatchSwitchResponse.Success"));
 	 
 	 	return enableSqlFlashbackMatchSwitchResponse;
 	}

@@ -36,12 +36,12 @@ public class DescribeBroadcastTablesResponseUnmarshaller {
 		List<ListItem> list = new ArrayList<ListItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeBroadcastTablesResponse.List.Length"); i++) {
 			ListItem listItem = new ListItem();
-			listItem.setTable(_ctx.stringValue("DescribeBroadcastTablesResponse.List["+ i +"].Table"));
-			listItem.setBroadcastType(_ctx.stringValue("DescribeBroadcastTablesResponse.List["+ i +"].BroadcastType"));
-			listItem.setIsShard(_ctx.booleanValue("DescribeBroadcastTablesResponse.List["+ i +"].IsShard"));
-			listItem.setDbInstType(_ctx.integerValue("DescribeBroadcastTablesResponse.List["+ i +"].DbInstType"));
-			listItem.setBroadcast(_ctx.booleanValue("DescribeBroadcastTablesResponse.List["+ i +"].Broadcast"));
 			listItem.setStatus(_ctx.integerValue("DescribeBroadcastTablesResponse.List["+ i +"].Status"));
+			listItem.setIsShard(_ctx.booleanValue("DescribeBroadcastTablesResponse.List["+ i +"].IsShard"));
+			listItem.setBroadcast(_ctx.booleanValue("DescribeBroadcastTablesResponse.List["+ i +"].Broadcast"));
+			listItem.setTable(_ctx.stringValue("DescribeBroadcastTablesResponse.List["+ i +"].Table"));
+			listItem.setDbInstType(_ctx.integerValue("DescribeBroadcastTablesResponse.List["+ i +"].DbInstType"));
+			listItem.setBroadcastType(_ctx.stringValue("DescribeBroadcastTablesResponse.List["+ i +"].BroadcastType"));
 
 			list.add(listItem);
 		}

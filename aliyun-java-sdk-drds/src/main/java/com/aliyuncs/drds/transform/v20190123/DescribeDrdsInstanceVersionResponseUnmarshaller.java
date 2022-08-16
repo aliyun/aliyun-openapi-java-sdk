@@ -27,8 +27,8 @@ public class DescribeDrdsInstanceVersionResponseUnmarshaller {
 		describeDrdsInstanceVersionResponse.setSuccess(_ctx.booleanValue("DescribeDrdsInstanceVersionResponse.Success"));
 
 		Data data = new Data();
-		data.setInstanceVersion(_ctx.stringValue("DescribeDrdsInstanceVersionResponse.Data.InstanceVersion"));
 		data.setNewestVersion(_ctx.stringValue("DescribeDrdsInstanceVersionResponse.Data.NewestVersion"));
+		data.setInstanceVersion(_ctx.stringValue("DescribeDrdsInstanceVersionResponse.Data.InstanceVersion"));
 		describeDrdsInstanceVersionResponse.setData(data);
 	 
 	 	return describeDrdsInstanceVersionResponse;

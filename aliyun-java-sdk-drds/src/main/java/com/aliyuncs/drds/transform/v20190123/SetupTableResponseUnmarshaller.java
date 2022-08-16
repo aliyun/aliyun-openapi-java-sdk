@@ -23,8 +23,8 @@ public class SetupTableResponseUnmarshaller {
 	public static SetupTableResponse unmarshall(SetupTableResponse setupTableResponse, UnmarshallerContext _ctx) {
 		
 		setupTableResponse.setRequestId(_ctx.stringValue("SetupTableResponse.RequestId"));
-		setupTableResponse.setSuccess(_ctx.booleanValue("SetupTableResponse.Success"));
 		setupTableResponse.setData(_ctx.booleanValue("SetupTableResponse.Data"));
+		setupTableResponse.setSuccess(_ctx.booleanValue("SetupTableResponse.Success"));
 	 
 	 	return setupTableResponse;
 	}

@@ -97,32 +97,24 @@ public class DescribeBroadcastTablesResponse extends AcsResponse {
 
 	public static class ListItem {
 
-		private String table;
-
-		private String broadcastType;
+		private Integer status;
 
 		private Boolean isShard;
 
-		private Integer dbInstType;
-
 		private Boolean broadcast;
 
-		private Integer status;
+		private String table;
 
-		public String getTable() {
-			return this.table;
+		private Integer dbInstType;
+
+		private String broadcastType;
+
+		public Integer getStatus() {
+			return this.status;
 		}
 
-		public void setTable(String table) {
-			this.table = table;
-		}
-
-		public String getBroadcastType() {
-			return this.broadcastType;
-		}
-
-		public void setBroadcastType(String broadcastType) {
-			this.broadcastType = broadcastType;
+		public void setStatus(Integer status) {
+			this.status = status;
 		}
 
 		public Boolean getIsShard() {
@@ -133,14 +125,6 @@ public class DescribeBroadcastTablesResponse extends AcsResponse {
 			this.isShard = isShard;
 		}
 
-		public Integer getDbInstType() {
-			return this.dbInstType;
-		}
-
-		public void setDbInstType(Integer dbInstType) {
-			this.dbInstType = dbInstType;
-		}
-
 		public Boolean getBroadcast() {
 			return this.broadcast;
 		}
@@ -149,12 +133,28 @@ public class DescribeBroadcastTablesResponse extends AcsResponse {
 			this.broadcast = broadcast;
 		}
 
-		public Integer getStatus() {
-			return this.status;
+		public String getTable() {
+			return this.table;
 		}
 
-		public void setStatus(Integer status) {
-			this.status = status;
+		public void setTable(String table) {
+			this.table = table;
+		}
+
+		public Integer getDbInstType() {
+			return this.dbInstType;
+		}
+
+		public void setDbInstType(Integer dbInstType) {
+			this.dbInstType = dbInstType;
+		}
+
+		public String getBroadcastType() {
+			return this.broadcastType;
+		}
+
+		public void setBroadcastType(String broadcastType) {
+			this.broadcastType = broadcastType;
 		}
 	}
 

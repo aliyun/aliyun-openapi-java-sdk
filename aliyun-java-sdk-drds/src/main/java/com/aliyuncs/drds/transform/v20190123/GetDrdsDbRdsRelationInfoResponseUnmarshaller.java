@@ -33,8 +33,8 @@ public class GetDrdsDbRdsRelationInfoResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("GetDrdsDbRdsRelationInfoResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
 			dataItem.setRdsInstanceId(_ctx.stringValue("GetDrdsDbRdsRelationInfoResponse.Data["+ i +"].RdsInstanceId"));
-			dataItem.setUsedInstanceId(_ctx.stringValue("GetDrdsDbRdsRelationInfoResponse.Data["+ i +"].UsedInstanceId"));
 			dataItem.setUsedInstanceType(_ctx.stringValue("GetDrdsDbRdsRelationInfoResponse.Data["+ i +"].UsedInstanceType"));
+			dataItem.setUsedInstanceId(_ctx.stringValue("GetDrdsDbRdsRelationInfoResponse.Data["+ i +"].UsedInstanceId"));
 
 			List<String> readOnlyInstanceInfo = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("GetDrdsDbRdsRelationInfoResponse.Data["+ i +"].ReadOnlyInstanceInfo.Length"); j++) {

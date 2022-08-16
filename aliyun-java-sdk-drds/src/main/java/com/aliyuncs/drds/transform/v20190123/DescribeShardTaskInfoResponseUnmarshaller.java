@@ -32,49 +32,49 @@ public class DescribeShardTaskInfoResponseUnmarshaller {
 		describeShardTaskInfoResponse.setSuccess(_ctx.booleanValue("DescribeShardTaskInfoResponse.Success"));
 
 		Data data = new Data();
-		data.setSourceTableName(_ctx.stringValue("DescribeShardTaskInfoResponse.Data.SourceTableName"));
-		data.setTargetTableName(_ctx.stringValue("DescribeShardTaskInfoResponse.Data.TargetTableName"));
 		data.setStatus(_ctx.stringValue("DescribeShardTaskInfoResponse.Data.Status"));
 		data.setStage(_ctx.stringValue("DescribeShardTaskInfoResponse.Data.Stage"));
 		data.setProgress(_ctx.stringValue("DescribeShardTaskInfoResponse.Data.Progress"));
 		data.setExpired(_ctx.stringValue("DescribeShardTaskInfoResponse.Data.Expired"));
+		data.setTargetTableName(_ctx.stringValue("DescribeShardTaskInfoResponse.Data.TargetTableName"));
+		data.setSourceTableName(_ctx.stringValue("DescribeShardTaskInfoResponse.Data.SourceTableName"));
 
 		Full full = new Full();
-		full.setExpired(_ctx.integerValue("DescribeShardTaskInfoResponse.Data.Full.Expired"));
-		full.setProgress(_ctx.integerValue("DescribeShardTaskInfoResponse.Data.Full.Progress"));
-		full.setTotal(_ctx.integerValue("DescribeShardTaskInfoResponse.Data.Full.Total"));
-		full.setTps(_ctx.integerValue("DescribeShardTaskInfoResponse.Data.Full.Tps"));
 		full.setStartTime(_ctx.stringValue("DescribeShardTaskInfoResponse.Data.Full.StartTime"));
+		full.setProgress(_ctx.integerValue("DescribeShardTaskInfoResponse.Data.Full.Progress"));
+		full.setTps(_ctx.integerValue("DescribeShardTaskInfoResponse.Data.Full.Tps"));
+		full.setTotal(_ctx.integerValue("DescribeShardTaskInfoResponse.Data.Full.Total"));
+		full.setExpired(_ctx.integerValue("DescribeShardTaskInfoResponse.Data.Full.Expired"));
 		data.setFull(full);
 
 		FullCheck fullCheck = new FullCheck();
-		fullCheck.setExpired(_ctx.integerValue("DescribeShardTaskInfoResponse.Data.FullCheck.Expired"));
-		fullCheck.setProgress(_ctx.integerValue("DescribeShardTaskInfoResponse.Data.FullCheck.Progress"));
-		fullCheck.setTotal(_ctx.integerValue("DescribeShardTaskInfoResponse.Data.FullCheck.Total"));
-		fullCheck.setTps(_ctx.integerValue("DescribeShardTaskInfoResponse.Data.FullCheck.Tps"));
 		fullCheck.setStartTime(_ctx.stringValue("DescribeShardTaskInfoResponse.Data.FullCheck.StartTime"));
+		fullCheck.setProgress(_ctx.integerValue("DescribeShardTaskInfoResponse.Data.FullCheck.Progress"));
+		fullCheck.setTps(_ctx.integerValue("DescribeShardTaskInfoResponse.Data.FullCheck.Tps"));
+		fullCheck.setTotal(_ctx.integerValue("DescribeShardTaskInfoResponse.Data.FullCheck.Total"));
+		fullCheck.setExpired(_ctx.integerValue("DescribeShardTaskInfoResponse.Data.FullCheck.Expired"));
 		data.setFullCheck(fullCheck);
 
 		FullRevise fullRevise = new FullRevise();
-		fullRevise.setExpired(_ctx.integerValue("DescribeShardTaskInfoResponse.Data.FullRevise.Expired"));
-		fullRevise.setProgress(_ctx.integerValue("DescribeShardTaskInfoResponse.Data.FullRevise.Progress"));
-		fullRevise.setTotal(_ctx.integerValue("DescribeShardTaskInfoResponse.Data.FullRevise.Total"));
-		fullRevise.setTps(_ctx.integerValue("DescribeShardTaskInfoResponse.Data.FullRevise.Tps"));
 		fullRevise.setStartTime(_ctx.stringValue("DescribeShardTaskInfoResponse.Data.FullRevise.StartTime"));
+		fullRevise.setProgress(_ctx.integerValue("DescribeShardTaskInfoResponse.Data.FullRevise.Progress"));
+		fullRevise.setTps(_ctx.integerValue("DescribeShardTaskInfoResponse.Data.FullRevise.Tps"));
+		fullRevise.setTotal(_ctx.integerValue("DescribeShardTaskInfoResponse.Data.FullRevise.Total"));
+		fullRevise.setExpired(_ctx.integerValue("DescribeShardTaskInfoResponse.Data.FullRevise.Expired"));
 		data.setFullRevise(fullRevise);
 
 		Review review = new Review();
-		review.setExpired(_ctx.integerValue("DescribeShardTaskInfoResponse.Data.Review.Expired"));
-		review.setProgress(_ctx.integerValue("DescribeShardTaskInfoResponse.Data.Review.Progress"));
-		review.setTotal(_ctx.integerValue("DescribeShardTaskInfoResponse.Data.Review.Total"));
-		review.setTps(_ctx.integerValue("DescribeShardTaskInfoResponse.Data.Review.Tps"));
 		review.setStartTime(_ctx.stringValue("DescribeShardTaskInfoResponse.Data.Review.StartTime"));
+		review.setProgress(_ctx.integerValue("DescribeShardTaskInfoResponse.Data.Review.Progress"));
+		review.setTps(_ctx.integerValue("DescribeShardTaskInfoResponse.Data.Review.Tps"));
+		review.setTotal(_ctx.integerValue("DescribeShardTaskInfoResponse.Data.Review.Total"));
+		review.setExpired(_ctx.integerValue("DescribeShardTaskInfoResponse.Data.Review.Expired"));
 		data.setReview(review);
 
 		Increment increment = new Increment();
 		increment.setDelay(_ctx.integerValue("DescribeShardTaskInfoResponse.Data.Increment.Delay"));
-		increment.setTps(_ctx.integerValue("DescribeShardTaskInfoResponse.Data.Increment.Tps"));
 		increment.setStartTime(_ctx.stringValue("DescribeShardTaskInfoResponse.Data.Increment.StartTime"));
+		increment.setTps(_ctx.integerValue("DescribeShardTaskInfoResponse.Data.Increment.Tps"));
 		data.setIncrement(increment);
 		describeShardTaskInfoResponse.setData(data);
 	 

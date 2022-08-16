@@ -14,22 +14,29 @@
 
 package com.aliyuncs.drds.model.v20190123;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.drds.transform.v20190123.DescribeInstanceMenuSwitchResponseUnmarshaller;
+import com.aliyuncs.drds.transform.v20190123.RemoveRecycleBinTableResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeInstanceMenuSwitchResponse extends AcsResponse {
+public class RemoveRecycleBinTableResponse extends AcsResponse {
+
+	private Boolean data;
 
 	private String requestId;
 
 	private Boolean success;
 
-	private Map<Object,Object> config;
+	public Boolean getData() {
+		return this.data;
+	}
+
+	public void setData(Boolean data) {
+		this.data = data;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,16 +54,13 @@ public class DescribeInstanceMenuSwitchResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public Map<Object,Object> getConfig() {
-		return this.config;
-	}
-
-	public void setConfig(Map<Object,Object> config) {
-		this.config = config;
+	@Override
+	public RemoveRecycleBinTableResponse getInstance(UnmarshallerContext context) {
+		return	RemoveRecycleBinTableResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
-	public DescribeInstanceMenuSwitchResponse getInstance(UnmarshallerContext context) {
-		return	DescribeInstanceMenuSwitchResponseUnmarshaller.unmarshall(this, context);
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

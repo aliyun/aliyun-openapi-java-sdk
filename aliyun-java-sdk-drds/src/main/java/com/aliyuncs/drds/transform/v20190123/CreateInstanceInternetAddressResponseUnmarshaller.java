@@ -23,9 +23,9 @@ public class CreateInstanceInternetAddressResponseUnmarshaller {
 	public static CreateInstanceInternetAddressResponse unmarshall(CreateInstanceInternetAddressResponse createInstanceInternetAddressResponse, UnmarshallerContext _ctx) {
 		
 		createInstanceInternetAddressResponse.setRequestId(_ctx.stringValue("CreateInstanceInternetAddressResponse.RequestId"));
+		createInstanceInternetAddressResponse.setCode(_ctx.integerValue("CreateInstanceInternetAddressResponse.Code"));
 		createInstanceInternetAddressResponse.setData(_ctx.booleanValue("CreateInstanceInternetAddressResponse.Data"));
 		createInstanceInternetAddressResponse.setSuccess(_ctx.booleanValue("CreateInstanceInternetAddressResponse.Success"));
-		createInstanceInternetAddressResponse.setCode(_ctx.integerValue("CreateInstanceInternetAddressResponse.Code"));
 	 
 	 	return createInstanceInternetAddressResponse;
 	}

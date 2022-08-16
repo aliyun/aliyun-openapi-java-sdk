@@ -77,102 +77,62 @@ public class DescribeDrdsInstancesResponse extends AcsResponse {
 
 	public static class Instance {
 
-		private String drdsInstanceId;
-
-		private String type;
-
-		private String regionId;
-
-		private String zoneId;
-
-		private String description;
-
-		private String networkType;
+		private String vpcId;
 
 		private String status;
 
-		private Long createTime;
-
-		private Long version;
+		private String type;
 
 		private String commodityCode;
 
-		private String instRole;
+		private String machineType;
 
-		private String instanceSeries;
-
-		private String instanceSpec;
-
-		private String masterInstanceId;
-
-		private String vpcCloudInstanceId;
-
-		private String vpcId;
-
-		private Long expireDate;
+		private Long createTime;
 
 		private String versionAction;
 
+		private String instanceSeries;
+
+		private String networkType;
+
 		private String label;
 
-		private String machineType;
+		private String productVersion;
 
-		private String orderInstanceId;
+		private String instanceSpec;
+
+		private String regionId;
+
+		private String vpcCloudInstanceId;
+
+		private String description;
+
+		private Long version;
 
 		private String resourceGroupId;
 
-		private String productVersion;
+		private String zoneId;
+
+		private String drdsInstanceId;
+
+		private Long expireDate;
+
+		private String masterInstanceId;
+
+		private String orderInstanceId;
+
+		private String instRole;
 
 		private List<Vip> vips;
 
 		private List<String> readOnlyDBInstanceIds;
 
-		public String getDrdsInstanceId() {
-			return this.drdsInstanceId;
+		public String getVpcId() {
+			return this.vpcId;
 		}
 
-		public void setDrdsInstanceId(String drdsInstanceId) {
-			this.drdsInstanceId = drdsInstanceId;
-		}
-
-		public String getType() {
-			return this.type;
-		}
-
-		public void setType(String type) {
-			this.type = type;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getNetworkType() {
-			return this.networkType;
-		}
-
-		public void setNetworkType(String networkType) {
-			this.networkType = networkType;
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
 		}
 
 		public String getStatus() {
@@ -183,20 +143,12 @@ public class DescribeDrdsInstancesResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public Long getCreateTime() {
-			return this.createTime;
+		public String getType() {
+			return this.type;
 		}
 
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
-		}
-
-		public Long getVersion() {
-			return this.version;
-		}
-
-		public void setVersion(Long version) {
-			this.version = version;
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public String getCommodityCode() {
@@ -207,60 +159,20 @@ public class DescribeDrdsInstancesResponse extends AcsResponse {
 			this.commodityCode = commodityCode;
 		}
 
-		public String getInstRole() {
-			return this.instRole;
+		public String getMachineType() {
+			return this.machineType;
 		}
 
-		public void setInstRole(String instRole) {
-			this.instRole = instRole;
+		public void setMachineType(String machineType) {
+			this.machineType = machineType;
 		}
 
-		public String getInstanceSeries() {
-			return this.instanceSeries;
+		public Long getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setInstanceSeries(String instanceSeries) {
-			this.instanceSeries = instanceSeries;
-		}
-
-		public String getInstanceSpec() {
-			return this.instanceSpec;
-		}
-
-		public void setInstanceSpec(String instanceSpec) {
-			this.instanceSpec = instanceSpec;
-		}
-
-		public String getMasterInstanceId() {
-			return this.masterInstanceId;
-		}
-
-		public void setMasterInstanceId(String masterInstanceId) {
-			this.masterInstanceId = masterInstanceId;
-		}
-
-		public String getVpcCloudInstanceId() {
-			return this.vpcCloudInstanceId;
-		}
-
-		public void setVpcCloudInstanceId(String vpcCloudInstanceId) {
-			this.vpcCloudInstanceId = vpcCloudInstanceId;
-		}
-
-		public String getVpcId() {
-			return this.vpcId;
-		}
-
-		public void setVpcId(String vpcId) {
-			this.vpcId = vpcId;
-		}
-
-		public Long getExpireDate() {
-			return this.expireDate;
-		}
-
-		public void setExpireDate(Long expireDate) {
-			this.expireDate = expireDate;
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
 		}
 
 		public String getVersionAction() {
@@ -271,6 +183,22 @@ public class DescribeDrdsInstancesResponse extends AcsResponse {
 			this.versionAction = versionAction;
 		}
 
+		public String getInstanceSeries() {
+			return this.instanceSeries;
+		}
+
+		public void setInstanceSeries(String instanceSeries) {
+			this.instanceSeries = instanceSeries;
+		}
+
+		public String getNetworkType() {
+			return this.networkType;
+		}
+
+		public void setNetworkType(String networkType) {
+			this.networkType = networkType;
+		}
+
 		public String getLabel() {
 			return this.label;
 		}
@@ -279,20 +207,52 @@ public class DescribeDrdsInstancesResponse extends AcsResponse {
 			this.label = label;
 		}
 
-		public String getMachineType() {
-			return this.machineType;
+		public String getProductVersion() {
+			return this.productVersion;
 		}
 
-		public void setMachineType(String machineType) {
-			this.machineType = machineType;
+		public void setProductVersion(String productVersion) {
+			this.productVersion = productVersion;
 		}
 
-		public String getOrderInstanceId() {
-			return this.orderInstanceId;
+		public String getInstanceSpec() {
+			return this.instanceSpec;
 		}
 
-		public void setOrderInstanceId(String orderInstanceId) {
-			this.orderInstanceId = orderInstanceId;
+		public void setInstanceSpec(String instanceSpec) {
+			this.instanceSpec = instanceSpec;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getVpcCloudInstanceId() {
+			return this.vpcCloudInstanceId;
+		}
+
+		public void setVpcCloudInstanceId(String vpcCloudInstanceId) {
+			this.vpcCloudInstanceId = vpcCloudInstanceId;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public Long getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(Long version) {
+			this.version = version;
 		}
 
 		public String getResourceGroupId() {
@@ -303,12 +263,52 @@ public class DescribeDrdsInstancesResponse extends AcsResponse {
 			this.resourceGroupId = resourceGroupId;
 		}
 
-		public String getProductVersion() {
-			return this.productVersion;
+		public String getZoneId() {
+			return this.zoneId;
 		}
 
-		public void setProductVersion(String productVersion) {
-			this.productVersion = productVersion;
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public String getDrdsInstanceId() {
+			return this.drdsInstanceId;
+		}
+
+		public void setDrdsInstanceId(String drdsInstanceId) {
+			this.drdsInstanceId = drdsInstanceId;
+		}
+
+		public Long getExpireDate() {
+			return this.expireDate;
+		}
+
+		public void setExpireDate(Long expireDate) {
+			this.expireDate = expireDate;
+		}
+
+		public String getMasterInstanceId() {
+			return this.masterInstanceId;
+		}
+
+		public void setMasterInstanceId(String masterInstanceId) {
+			this.masterInstanceId = masterInstanceId;
+		}
+
+		public String getOrderInstanceId() {
+			return this.orderInstanceId;
+		}
+
+		public void setOrderInstanceId(String orderInstanceId) {
+			this.orderInstanceId = orderInstanceId;
+		}
+
+		public String getInstRole() {
+			return this.instRole;
+		}
+
+		public void setInstRole(String instRole) {
+			this.instRole = instRole;
 		}
 
 		public List<Vip> getVips() {
@@ -329,30 +329,22 @@ public class DescribeDrdsInstancesResponse extends AcsResponse {
 
 		public static class Vip {
 
-			private String iP;
-
-			private String port;
+			private String vpcId;
 
 			private String type;
 
-			private String vpcId;
-
 			private String vswitchId;
 
-			public String getIP() {
-				return this.iP;
+			private String port;
+
+			private String iP;
+
+			public String getVpcId() {
+				return this.vpcId;
 			}
 
-			public void setIP(String iP) {
-				this.iP = iP;
-			}
-
-			public String getPort() {
-				return this.port;
-			}
-
-			public void setPort(String port) {
-				this.port = port;
+			public void setVpcId(String vpcId) {
+				this.vpcId = vpcId;
 			}
 
 			public String getType() {
@@ -363,20 +355,28 @@ public class DescribeDrdsInstancesResponse extends AcsResponse {
 				this.type = type;
 			}
 
-			public String getVpcId() {
-				return this.vpcId;
-			}
-
-			public void setVpcId(String vpcId) {
-				this.vpcId = vpcId;
-			}
-
 			public String getVswitchId() {
 				return this.vswitchId;
 			}
 
 			public void setVswitchId(String vswitchId) {
 				this.vswitchId = vswitchId;
+			}
+
+			public String getPort() {
+				return this.port;
+			}
+
+			public void setPort(String port) {
+				this.port = port;
+			}
+
+			public String getIP() {
+				return this.iP;
+			}
+
+			public void setIP(String iP) {
+				this.iP = iP;
 			}
 		}
 	}

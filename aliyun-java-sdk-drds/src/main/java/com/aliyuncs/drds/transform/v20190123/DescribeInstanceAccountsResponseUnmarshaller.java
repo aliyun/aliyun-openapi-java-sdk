@@ -33,10 +33,10 @@ public class DescribeInstanceAccountsResponseUnmarshaller {
 		List<InstanceAccount> instanceAccounts = new ArrayList<InstanceAccount>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceAccountsResponse.InstanceAccounts.Length"); i++) {
 			InstanceAccount instanceAccount = new InstanceAccount();
-			instanceAccount.setAccountName(_ctx.stringValue("DescribeInstanceAccountsResponse.InstanceAccounts["+ i +"].AccountName"));
 			instanceAccount.setHost(_ctx.stringValue("DescribeInstanceAccountsResponse.InstanceAccounts["+ i +"].Host"));
-			instanceAccount.setAccountType(_ctx.integerValue("DescribeInstanceAccountsResponse.InstanceAccounts["+ i +"].AccountType"));
 			instanceAccount.setDescription(_ctx.stringValue("DescribeInstanceAccountsResponse.InstanceAccounts["+ i +"].Description"));
+			instanceAccount.setAccountType(_ctx.integerValue("DescribeInstanceAccountsResponse.InstanceAccounts["+ i +"].AccountType"));
+			instanceAccount.setAccountName(_ctx.stringValue("DescribeInstanceAccountsResponse.InstanceAccounts["+ i +"].AccountName"));
 
 			List<DbPrivilege> dbPrivileges = new ArrayList<DbPrivilege>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstanceAccountsResponse.InstanceAccounts["+ i +"].DbPrivileges.Length"); j++) {

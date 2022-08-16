@@ -23,8 +23,8 @@ public class UpdatePrivateRdsClassResponseUnmarshaller {
 	public static UpdatePrivateRdsClassResponse unmarshall(UpdatePrivateRdsClassResponse updatePrivateRdsClassResponse, UnmarshallerContext _ctx) {
 		
 		updatePrivateRdsClassResponse.setRequestId(_ctx.stringValue("UpdatePrivateRdsClassResponse.RequestId"));
-		updatePrivateRdsClassResponse.setSuccess(_ctx.booleanValue("UpdatePrivateRdsClassResponse.Success"));
 		updatePrivateRdsClassResponse.setData(_ctx.stringValue("UpdatePrivateRdsClassResponse.Data"));
+		updatePrivateRdsClassResponse.setSuccess(_ctx.booleanValue("UpdatePrivateRdsClassResponse.Success"));
 	 
 	 	return updatePrivateRdsClassResponse;
 	}

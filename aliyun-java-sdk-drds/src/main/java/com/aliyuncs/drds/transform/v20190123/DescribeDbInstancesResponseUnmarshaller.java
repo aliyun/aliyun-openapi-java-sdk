@@ -31,15 +31,15 @@ public class DescribeDbInstancesResponseUnmarshaller {
 		List<DBInstance> items = new ArrayList<DBInstance>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDbInstancesResponse.Items.Length"); i++) {
 			DBInstance dBInstance = new DBInstance();
-			dBInstance.setDBInstanceId(_ctx.stringValue("DescribeDbInstancesResponse.Items["+ i +"].DBInstanceId"));
-			dBInstance.setDBInstanceStatus(_ctx.integerValue("DescribeDbInstancesResponse.Items["+ i +"].DBInstanceStatus"));
+			dBInstance.setInstanceNetworkType(_ctx.stringValue("DescribeDbInstancesResponse.Items["+ i +"].InstanceNetworkType"));
 			dBInstance.setDBInstanceType(_ctx.stringValue("DescribeDbInstancesResponse.Items["+ i +"].DBInstanceType"));
+			dBInstance.setZoneId(_ctx.stringValue("DescribeDbInstancesResponse.Items["+ i +"].ZoneId"));
+			dBInstance.setDBInstanceStatus(_ctx.integerValue("DescribeDbInstancesResponse.Items["+ i +"].DBInstanceStatus"));
+			dBInstance.setDBInstanceId(_ctx.stringValue("DescribeDbInstancesResponse.Items["+ i +"].DBInstanceId"));
 			dBInstance.setEngine(_ctx.stringValue("DescribeDbInstancesResponse.Items["+ i +"].Engine"));
+			dBInstance.setDBInstanceDescription(_ctx.stringValue("DescribeDbInstancesResponse.Items["+ i +"].DBInstanceDescription"));
 			dBInstance.setEngineVersion(_ctx.stringValue("DescribeDbInstancesResponse.Items["+ i +"].EngineVersion"));
 			dBInstance.setRegionId(_ctx.stringValue("DescribeDbInstancesResponse.Items["+ i +"].RegionId"));
-			dBInstance.setZoneId(_ctx.stringValue("DescribeDbInstancesResponse.Items["+ i +"].ZoneId"));
-			dBInstance.setDBInstanceDescription(_ctx.stringValue("DescribeDbInstancesResponse.Items["+ i +"].DBInstanceDescription"));
-			dBInstance.setInstanceNetworkType(_ctx.stringValue("DescribeDbInstancesResponse.Items["+ i +"].InstanceNetworkType"));
 
 			List<String> readOnlyDBInstanceId = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDbInstancesResponse.Items["+ i +"].ReadOnlyDBInstanceId.Length"); j++) {

@@ -32,9 +32,9 @@ public class DescribeExpandLogicTableInfoListResponseUnmarshaller {
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeExpandLogicTableInfoListResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
+			dataItem.setShardTbKey(_ctx.stringValue("DescribeExpandLogicTableInfoListResponse.Data["+ i +"].ShardTbKey"));
 			dataItem.setTableName(_ctx.stringValue("DescribeExpandLogicTableInfoListResponse.Data["+ i +"].TableName"));
 			dataItem.setShardDbKey(_ctx.stringValue("DescribeExpandLogicTableInfoListResponse.Data["+ i +"].ShardDbKey"));
-			dataItem.setShardTbKey(_ctx.stringValue("DescribeExpandLogicTableInfoListResponse.Data["+ i +"].ShardTbKey"));
 
 			data.add(dataItem);
 		}

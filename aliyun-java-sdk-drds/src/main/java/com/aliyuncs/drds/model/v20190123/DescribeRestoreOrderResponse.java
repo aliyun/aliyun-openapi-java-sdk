@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeRestoreOrderResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean success;
 
+	private String requestId;
+
 	private RestoreOrderDO restoreOrderDO;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -45,6 +37,14 @@ public class DescribeRestoreOrderResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public RestoreOrderDO getRestoreOrderDO() {
@@ -89,32 +89,24 @@ public class DescribeRestoreOrderResponse extends AcsResponse {
 
 		public static class DrdsOrderDOListItem {
 
-			private String regionId;
-
-			private String azoneId;
+			private String vpcId;
 
 			private String network;
-
-			private String vpcId;
 
 			private String vSwtichId;
 
 			private String instSpec;
 
-			public String getRegionId() {
-				return this.regionId;
+			private String azoneId;
+
+			private String regionId;
+
+			public String getVpcId() {
+				return this.vpcId;
 			}
 
-			public void setRegionId(String regionId) {
-				this.regionId = regionId;
-			}
-
-			public String getAzoneId() {
-				return this.azoneId;
-			}
-
-			public void setAzoneId(String azoneId) {
-				this.azoneId = azoneId;
+			public void setVpcId(String vpcId) {
+				this.vpcId = vpcId;
 			}
 
 			public String getNetwork() {
@@ -123,14 +115,6 @@ public class DescribeRestoreOrderResponse extends AcsResponse {
 
 			public void setNetwork(String network) {
 				this.network = network;
-			}
-
-			public String getVpcId() {
-				return this.vpcId;
-			}
-
-			public void setVpcId(String vpcId) {
-				this.vpcId = vpcId;
 			}
 
 			public String getVSwtichId() {
@@ -148,33 +132,6 @@ public class DescribeRestoreOrderResponse extends AcsResponse {
 			public void setInstSpec(String instSpec) {
 				this.instSpec = instSpec;
 			}
-		}
-
-		public static class RdsOrderDOListItem {
-
-			private String regionId;
-
-			private String azoneId;
-
-			private String engine;
-
-			private String version;
-
-			private String instanceClass;
-
-			private String dbInstanceStorage;
-
-			private String network;
-
-			private Long num;
-
-			public String getRegionId() {
-				return this.regionId;
-			}
-
-			public void setRegionId(String regionId) {
-				this.regionId = regionId;
-			}
 
 			public String getAzoneId() {
 				return this.azoneId;
@@ -184,12 +141,39 @@ public class DescribeRestoreOrderResponse extends AcsResponse {
 				this.azoneId = azoneId;
 			}
 
-			public String getEngine() {
-				return this.engine;
+			public String getRegionId() {
+				return this.regionId;
 			}
 
-			public void setEngine(String engine) {
-				this.engine = engine;
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
+			}
+		}
+
+		public static class RdsOrderDOListItem {
+
+			private String network;
+
+			private String version;
+
+			private String instanceClass;
+
+			private String dbInstanceStorage;
+
+			private Long num;
+
+			private String engine;
+
+			private String azoneId;
+
+			private String regionId;
+
+			public String getNetwork() {
+				return this.network;
+			}
+
+			public void setNetwork(String network) {
+				this.network = network;
 			}
 
 			public String getVersion() {
@@ -216,30 +200,42 @@ public class DescribeRestoreOrderResponse extends AcsResponse {
 				this.dbInstanceStorage = dbInstanceStorage;
 			}
 
-			public String getNetwork() {
-				return this.network;
-			}
-
-			public void setNetwork(String network) {
-				this.network = network;
-			}
-
 			public Long getNum() {
 				return this.num;
 			}
 
 			public void setNum(Long num) {
 				this.num = num;
+			}
+
+			public String getEngine() {
+				return this.engine;
+			}
+
+			public void setEngine(String engine) {
+				this.engine = engine;
+			}
+
+			public String getAzoneId() {
+				return this.azoneId;
+			}
+
+			public void setAzoneId(String azoneId) {
+				this.azoneId = azoneId;
+			}
+
+			public String getRegionId() {
+				return this.regionId;
+			}
+
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
 			}
 		}
 
 		public static class PolarOrderDOListItem {
 
-			private String regionId;
-
-			private String azoneId;
-
-			private String engine;
+			private String network;
 
 			private String version;
 
@@ -247,32 +243,20 @@ public class DescribeRestoreOrderResponse extends AcsResponse {
 
 			private String dbInstanceStorage;
 
-			private String network;
-
 			private Long num;
 
-			public String getRegionId() {
-				return this.regionId;
+			private String engine;
+
+			private String azoneId;
+
+			private String regionId;
+
+			public String getNetwork() {
+				return this.network;
 			}
 
-			public void setRegionId(String regionId) {
-				this.regionId = regionId;
-			}
-
-			public String getAzoneId() {
-				return this.azoneId;
-			}
-
-			public void setAzoneId(String azoneId) {
-				this.azoneId = azoneId;
-			}
-
-			public String getEngine() {
-				return this.engine;
-			}
-
-			public void setEngine(String engine) {
-				this.engine = engine;
+			public void setNetwork(String network) {
+				this.network = network;
 			}
 
 			public String getVersion() {
@@ -299,20 +283,36 @@ public class DescribeRestoreOrderResponse extends AcsResponse {
 				this.dbInstanceStorage = dbInstanceStorage;
 			}
 
-			public String getNetwork() {
-				return this.network;
-			}
-
-			public void setNetwork(String network) {
-				this.network = network;
-			}
-
 			public Long getNum() {
 				return this.num;
 			}
 
 			public void setNum(Long num) {
 				this.num = num;
+			}
+
+			public String getEngine() {
+				return this.engine;
+			}
+
+			public void setEngine(String engine) {
+				this.engine = engine;
+			}
+
+			public String getAzoneId() {
+				return this.azoneId;
+			}
+
+			public void setAzoneId(String azoneId) {
+				this.azoneId = azoneId;
+			}
+
+			public String getRegionId() {
+				return this.regionId;
+			}
+
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
 			}
 		}
 	}

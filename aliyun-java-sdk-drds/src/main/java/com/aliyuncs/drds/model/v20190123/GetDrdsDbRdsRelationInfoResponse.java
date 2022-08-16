@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetDrdsDbRdsRelationInfoResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean success;
 
+	private String requestId;
+
 	private List<DataItem> data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -45,6 +37,14 @@ public class GetDrdsDbRdsRelationInfoResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<DataItem> getData() {
@@ -59,9 +59,9 @@ public class GetDrdsDbRdsRelationInfoResponse extends AcsResponse {
 
 		private String rdsInstanceId;
 
-		private String usedInstanceId;
-
 		private String usedInstanceType;
+
+		private String usedInstanceId;
 
 		private List<String> readOnlyInstanceInfo;
 
@@ -73,20 +73,20 @@ public class GetDrdsDbRdsRelationInfoResponse extends AcsResponse {
 			this.rdsInstanceId = rdsInstanceId;
 		}
 
-		public String getUsedInstanceId() {
-			return this.usedInstanceId;
-		}
-
-		public void setUsedInstanceId(String usedInstanceId) {
-			this.usedInstanceId = usedInstanceId;
-		}
-
 		public String getUsedInstanceType() {
 			return this.usedInstanceType;
 		}
 
 		public void setUsedInstanceType(String usedInstanceType) {
 			this.usedInstanceType = usedInstanceType;
+		}
+
+		public String getUsedInstanceId() {
+			return this.usedInstanceId;
+		}
+
+		public void setUsedInstanceId(String usedInstanceId) {
+			this.usedInstanceId = usedInstanceId;
 		}
 
 		public List<String> getReadOnlyInstanceInfo() {

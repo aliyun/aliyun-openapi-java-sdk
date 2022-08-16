@@ -22,32 +22,21 @@ import com.aliyuncs.drds.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeDrdsDbTasksRequest extends RpcAcsRequest<DescribeDrdsDbTasksResponse> {
+public class ChangeAccountPasswordRequest extends RpcAcsRequest<ChangeAccountPasswordResponse> {
 	   
-
-	private String taskType;
 
 	private String drdsInstanceId;
 
-	private String dbName;
-	public DescribeDrdsDbTasksRequest() {
-		super("Drds", "2019-01-23", "DescribeDrdsDbTasks", "drds");
+	private String password;
+
+	private String accountName;
+	public ChangeAccountPasswordRequest() {
+		super("Drds", "2019-01-23", "ChangeAccountPassword");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getTaskType() {
-		return this.taskType;
-	}
-
-	public void setTaskType(String taskType) {
-		this.taskType = taskType;
-		if(taskType != null){
-			putQueryParameter("TaskType", taskType);
-		}
 	}
 
 	public String getDrdsInstanceId() {
@@ -61,20 +50,31 @@ public class DescribeDrdsDbTasksRequest extends RpcAcsRequest<DescribeDrdsDbTask
 		}
 	}
 
-	public String getDbName() {
-		return this.dbName;
+	public String getPassword() {
+		return this.password;
 	}
 
-	public void setDbName(String dbName) {
-		this.dbName = dbName;
-		if(dbName != null){
-			putQueryParameter("DbName", dbName);
+	public void setPassword(String password) {
+		this.password = password;
+		if(password != null){
+			putQueryParameter("Password", password);
+		}
+	}
+
+	public String getAccountName() {
+		return this.accountName;
+	}
+
+	public void setAccountName(String accountName) {
+		this.accountName = accountName;
+		if(accountName != null){
+			putQueryParameter("AccountName", accountName);
 		}
 	}
 
 	@Override
-	public Class<DescribeDrdsDbTasksResponse> getResponseClass() {
-		return DescribeDrdsDbTasksResponse.class;
+	public Class<ChangeAccountPasswordResponse> getResponseClass() {
+		return ChangeAccountPasswordResponse.class;
 	}
 
 }

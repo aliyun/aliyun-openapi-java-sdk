@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CheckExpandStatusResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean success;
 
+	private String requestId;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -44,6 +36,14 @@ public class CheckExpandStatusResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Data getData() {
@@ -56,17 +56,9 @@ public class CheckExpandStatusResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Boolean isActive;
-
 		private String msg;
 
-		public Boolean getIsActive() {
-			return this.isActive;
-		}
-
-		public void setIsActive(Boolean isActive) {
-			this.isActive = isActive;
-		}
+		private Boolean isActive;
 
 		public String getMsg() {
 			return this.msg;
@@ -74,6 +66,14 @@ public class CheckExpandStatusResponse extends AcsResponse {
 
 		public void setMsg(String msg) {
 			this.msg = msg;
+		}
+
+		public Boolean getIsActive() {
+			return this.isActive;
+		}
+
+		public void setIsActive(Boolean isActive) {
+			this.isActive = isActive;
 		}
 	}
 

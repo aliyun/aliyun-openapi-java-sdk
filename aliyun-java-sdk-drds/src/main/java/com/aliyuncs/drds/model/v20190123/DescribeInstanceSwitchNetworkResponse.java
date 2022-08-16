@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeInstanceSwitchNetworkResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean success;
 
+	private String requestId;
+
 	private List<VpcInfo> vpcInfos;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -45,6 +37,14 @@ public class DescribeInstanceSwitchNetworkResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<VpcInfo> getVpcInfos() {
@@ -59,9 +59,9 @@ public class DescribeInstanceSwitchNetworkResponse extends AcsResponse {
 
 		private String vpcId;
 
-		private String regionId;
-
 		private String vpcName;
+
+		private String regionId;
 
 		private List<VswitchInfo> vswitchInfos;
 
@@ -73,20 +73,20 @@ public class DescribeInstanceSwitchNetworkResponse extends AcsResponse {
 			this.vpcId = vpcId;
 		}
 
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
 		public String getVpcName() {
 			return this.vpcName;
 		}
 
 		public void setVpcName(String vpcName) {
 			this.vpcName = vpcName;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
 		public List<VswitchInfo> getVswitchInfos() {
@@ -99,23 +99,15 @@ public class DescribeInstanceSwitchNetworkResponse extends AcsResponse {
 
 		public static class VswitchInfo {
 
-			private String vswitchId;
-
 			private String vpcId;
-
-			private String vswitchName;
-
-			private String azoneId;
 
 			private Boolean drdsSupported;
 
-			public String getVswitchId() {
-				return this.vswitchId;
-			}
+			private String vswitchId;
 
-			public void setVswitchId(String vswitchId) {
-				this.vswitchId = vswitchId;
-			}
+			private String azoneId;
+
+			private String vswitchName;
 
 			public String getVpcId() {
 				return this.vpcId;
@@ -125,12 +117,20 @@ public class DescribeInstanceSwitchNetworkResponse extends AcsResponse {
 				this.vpcId = vpcId;
 			}
 
-			public String getVswitchName() {
-				return this.vswitchName;
+			public Boolean getDrdsSupported() {
+				return this.drdsSupported;
 			}
 
-			public void setVswitchName(String vswitchName) {
-				this.vswitchName = vswitchName;
+			public void setDrdsSupported(Boolean drdsSupported) {
+				this.drdsSupported = drdsSupported;
+			}
+
+			public String getVswitchId() {
+				return this.vswitchId;
+			}
+
+			public void setVswitchId(String vswitchId) {
+				this.vswitchId = vswitchId;
 			}
 
 			public String getAzoneId() {
@@ -141,12 +141,12 @@ public class DescribeInstanceSwitchNetworkResponse extends AcsResponse {
 				this.azoneId = azoneId;
 			}
 
-			public Boolean getDrdsSupported() {
-				return this.drdsSupported;
+			public String getVswitchName() {
+				return this.vswitchName;
 			}
 
-			public void setDrdsSupported(Boolean drdsSupported) {
-				this.drdsSupported = drdsSupported;
+			public void setVswitchName(String vswitchName) {
+				this.vswitchName = vswitchName;
 			}
 		}
 	}

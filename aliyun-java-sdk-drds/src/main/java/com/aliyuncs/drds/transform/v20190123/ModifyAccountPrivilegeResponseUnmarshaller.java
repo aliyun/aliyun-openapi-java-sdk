@@ -14,17 +14,17 @@
 
 package com.aliyuncs.drds.transform.v20190123;
 
-import com.aliyuncs.drds.model.v20190123.SubmitSwitchTaskResponse;
+import com.aliyuncs.drds.model.v20190123.ModifyAccountPrivilegeResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class SubmitSwitchTaskResponseUnmarshaller {
+public class ModifyAccountPrivilegeResponseUnmarshaller {
 
-	public static SubmitSwitchTaskResponse unmarshall(SubmitSwitchTaskResponse submitSwitchTaskResponse, UnmarshallerContext _ctx) {
+	public static ModifyAccountPrivilegeResponse unmarshall(ModifyAccountPrivilegeResponse modifyAccountPrivilegeResponse, UnmarshallerContext _ctx) {
 		
-		submitSwitchTaskResponse.setRequestId(_ctx.stringValue("SubmitSwitchTaskResponse.RequestId"));
-		submitSwitchTaskResponse.setSuccess(_ctx.booleanValue("SubmitSwitchTaskResponse.Success"));
+		modifyAccountPrivilegeResponse.setRequestId(_ctx.stringValue("ModifyAccountPrivilegeResponse.RequestId"));
+		modifyAccountPrivilegeResponse.setSuccess(_ctx.booleanValue("ModifyAccountPrivilegeResponse.Success"));
 	 
-	 	return submitSwitchTaskResponse;
+	 	return modifyAccountPrivilegeResponse;
 	}
 }
