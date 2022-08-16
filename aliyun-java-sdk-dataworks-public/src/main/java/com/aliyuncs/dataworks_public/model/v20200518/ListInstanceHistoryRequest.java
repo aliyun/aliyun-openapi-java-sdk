@@ -22,16 +22,14 @@ import com.aliyuncs.dataworks_public.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetInstanceLogRequest extends RpcAcsRequest<GetInstanceLogResponse> {
+public class ListInstanceHistoryRequest extends RpcAcsRequest<ListInstanceHistoryResponse> {
 	   
 
 	private String projectEnv;
 
 	private Long instanceId;
-
-	private Long instanceHistoryId;
-	public GetInstanceLogRequest() {
-		super("dataworks-public", "2020-05-18", "GetInstanceLog");
+	public ListInstanceHistoryRequest() {
+		super("dataworks-public", "2020-05-18", "ListInstanceHistory");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -61,20 +59,9 @@ public class GetInstanceLogRequest extends RpcAcsRequest<GetInstanceLogResponse>
 		}
 	}
 
-	public Long getInstanceHistoryId() {
-		return this.instanceHistoryId;
-	}
-
-	public void setInstanceHistoryId(Long instanceHistoryId) {
-		this.instanceHistoryId = instanceHistoryId;
-		if(instanceHistoryId != null){
-			putBodyParameter("InstanceHistoryId", instanceHistoryId.toString());
-		}
-	}
-
 	@Override
-	public Class<GetInstanceLogResponse> getResponseClass() {
-		return GetInstanceLogResponse.class;
+	public Class<ListInstanceHistoryResponse> getResponseClass() {
+		return ListInstanceHistoryResponse.class;
 	}
 
 }

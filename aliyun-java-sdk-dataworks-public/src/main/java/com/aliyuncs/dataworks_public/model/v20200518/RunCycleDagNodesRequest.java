@@ -37,6 +37,8 @@ public class RunCycleDagNodesRequest extends RpcAcsRequest<RunCycleDagNodesRespo
 
 	private String endBizDate;
 
+	private Boolean startFutureInstanceImmediately;
+
 	private String includeNodeIds;
 
 	private String bizEndTime;
@@ -118,6 +120,17 @@ public class RunCycleDagNodesRequest extends RpcAcsRequest<RunCycleDagNodesRespo
 		this.endBizDate = endBizDate;
 		if(endBizDate != null){
 			putBodyParameter("EndBizDate", endBizDate);
+		}
+	}
+
+	public Boolean getStartFutureInstanceImmediately() {
+		return this.startFutureInstanceImmediately;
+	}
+
+	public void setStartFutureInstanceImmediately(Boolean startFutureInstanceImmediately) {
+		this.startFutureInstanceImmediately = startFutureInstanceImmediately;
+		if(startFutureInstanceImmediately != null){
+			putBodyParameter("StartFutureInstanceImmediately", startFutureInstanceImmediately.toString());
 		}
 	}
 
