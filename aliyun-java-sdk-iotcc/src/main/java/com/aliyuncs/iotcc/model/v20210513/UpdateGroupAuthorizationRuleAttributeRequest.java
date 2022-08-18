@@ -31,6 +31,8 @@ public class UpdateGroupAuthorizationRuleAttributeRequest extends RpcAcsRequest<
 
 	private String destination;
 
+	private String protocol;
+
 	private String authorizationRuleDescription;
 
 	private String policy;
@@ -44,6 +46,8 @@ public class UpdateGroupAuthorizationRuleAttributeRequest extends RpcAcsRequest<
 	private String authorizationRuleName;
 
 	private String authorizationRuleId;
+
+	private String destinationPort;
 	public UpdateGroupAuthorizationRuleAttributeRequest() {
 		super("IoTCC", "2021-05-13", "UpdateGroupAuthorizationRuleAttribute", "IoTCC");
 		setMethod(MethodType.POST);
@@ -79,6 +83,17 @@ public class UpdateGroupAuthorizationRuleAttributeRequest extends RpcAcsRequest<
 		this.destination = destination;
 		if(destination != null){
 			putQueryParameter("Destination", destination);
+		}
+	}
+
+	public String getBizProtocol() {
+		return this.protocol;
+	}
+
+	public void setBizProtocol(String protocol) {
+		this.protocol = protocol;
+		if(protocol != null){
+			putQueryParameter("Protocol", protocol);
 		}
 	}
 
@@ -158,6 +173,17 @@ public class UpdateGroupAuthorizationRuleAttributeRequest extends RpcAcsRequest<
 		this.authorizationRuleId = authorizationRuleId;
 		if(authorizationRuleId != null){
 			putQueryParameter("AuthorizationRuleId", authorizationRuleId);
+		}
+	}
+
+	public String getDestinationPort() {
+		return this.destinationPort;
+	}
+
+	public void setDestinationPort(String destinationPort) {
+		this.destinationPort = destinationPort;
+		if(destinationPort != null){
+			putQueryParameter("DestinationPort", destinationPort);
 		}
 	}
 

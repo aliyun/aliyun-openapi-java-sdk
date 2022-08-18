@@ -31,6 +31,8 @@ public class UpdateAuthorizationRuleAttributeRequest extends RpcAcsRequest<Updat
 
 	private String destination;
 
+	private String protocol;
+
 	private String authorizationRuleDescription;
 
 	private String policy;
@@ -42,6 +44,8 @@ public class UpdateAuthorizationRuleAttributeRequest extends RpcAcsRequest<Updat
 	private String authorizationRuleId;
 
 	private String authorizationRuleName;
+
+	private String destinationPort;
 
 	private String ioTCloudConnectorId;
 	public UpdateAuthorizationRuleAttributeRequest() {
@@ -79,6 +83,17 @@ public class UpdateAuthorizationRuleAttributeRequest extends RpcAcsRequest<Updat
 		this.destination = destination;
 		if(destination != null){
 			putQueryParameter("Destination", destination);
+		}
+	}
+
+	public String getBizProtocol() {
+		return this.protocol;
+	}
+
+	public void setBizProtocol(String protocol) {
+		this.protocol = protocol;
+		if(protocol != null){
+			putQueryParameter("Protocol", protocol);
 		}
 	}
 
@@ -147,6 +162,17 @@ public class UpdateAuthorizationRuleAttributeRequest extends RpcAcsRequest<Updat
 		this.authorizationRuleName = authorizationRuleName;
 		if(authorizationRuleName != null){
 			putQueryParameter("AuthorizationRuleName", authorizationRuleName);
+		}
+	}
+
+	public String getDestinationPort() {
+		return this.destinationPort;
+	}
+
+	public void setDestinationPort(String destinationPort) {
+		this.destinationPort = destinationPort;
+		if(destinationPort != null){
+			putQueryParameter("DestinationPort", destinationPort);
 		}
 	}
 

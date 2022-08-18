@@ -50,6 +50,7 @@ public class ListIoTCloudConnectorsResponseUnmarshaller {
 			ioTCloudConnectorModels.setMode(_ctx.stringValue("ListIoTCloudConnectorsResponse.IoTCloudConnectors["+ i +"].Mode"));
 			ioTCloudConnectorModels.setIpFeature(_ctx.stringValue("ListIoTCloudConnectorsResponse.IoTCloudConnectors["+ i +"].IpFeature"));
 			ioTCloudConnectorModels.setType(_ctx.stringValue("ListIoTCloudConnectorsResponse.IoTCloudConnectors["+ i +"].Type"));
+			ioTCloudConnectorModels.setServiceType(_ctx.stringValue("ListIoTCloudConnectorsResponse.IoTCloudConnectors["+ i +"].ServiceType"));
 
 			List<String> vSwitchList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListIoTCloudConnectorsResponse.IoTCloudConnectors["+ i +"].VSwitchList.Length"); j++) {

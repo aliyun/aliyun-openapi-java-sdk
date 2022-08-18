@@ -29,6 +29,8 @@ public class ListAuthorizationRulesRequest extends RpcAcsRequest<ListAuthorizati
 
 	private List<String> destinations;
 
+	private List<String> protocols;
+
 	private List<String> authorizationRuleIdss;
 
 	private String nextToken;
@@ -40,6 +42,8 @@ public class ListAuthorizationRulesRequest extends RpcAcsRequest<ListAuthorizati
 	private List<String> authorizationRuleStatuss;
 
 	private List<String> authorizationRuleNames;
+
+	private List<String> destinationPorts;
 
 	private String ioTCloudConnectorId;
 
@@ -71,6 +75,19 @@ public class ListAuthorizationRulesRequest extends RpcAcsRequest<ListAuthorizati
 		if (destinations != null) {
 			for (int i = 0; i < destinations.size(); i++) {
 				putQueryParameter("Destination." + (i + 1) , destinations.get(i));
+			}
+		}	
+	}
+
+	public List<String> getBizProtocols() {
+		return this.protocols;
+	}
+
+	public void setBizProtocols(List<String> protocols) {
+		this.protocols = protocols;	
+		if (protocols != null) {
+			for (int i = 0; i < protocols.size(); i++) {
+				putQueryParameter("Protocol." + (i + 1) , protocols.get(i));
 			}
 		}	
 	}
@@ -145,6 +162,19 @@ public class ListAuthorizationRulesRequest extends RpcAcsRequest<ListAuthorizati
 		if (authorizationRuleNames != null) {
 			for (int i = 0; i < authorizationRuleNames.size(); i++) {
 				putQueryParameter("AuthorizationRuleName." + (i + 1) , authorizationRuleNames.get(i));
+			}
+		}	
+	}
+
+	public List<String> getDestinationPorts() {
+		return this.destinationPorts;
+	}
+
+	public void setDestinationPorts(List<String> destinationPorts) {
+		this.destinationPorts = destinationPorts;	
+		if (destinationPorts != null) {
+			for (int i = 0; i < destinationPorts.size(); i++) {
+				putQueryParameter("DestinationPort." + (i + 1) , destinationPorts.get(i));
 			}
 		}	
 	}

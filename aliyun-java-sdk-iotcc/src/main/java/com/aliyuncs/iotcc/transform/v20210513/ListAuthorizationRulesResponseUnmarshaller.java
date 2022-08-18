@@ -38,6 +38,8 @@ public class ListAuthorizationRulesResponseUnmarshaller {
 			authorizationRuleModels.setPolicy(_ctx.stringValue("ListAuthorizationRulesResponse.AuthorizationRules["+ i +"].Policy"));
 			authorizationRuleModels.setAuthorizationRuleStatus(_ctx.stringValue("ListAuthorizationRulesResponse.AuthorizationRules["+ i +"].AuthorizationRuleStatus"));
 			authorizationRuleModels.setDestinationType(_ctx.stringValue("ListAuthorizationRulesResponse.AuthorizationRules["+ i +"].DestinationType"));
+			authorizationRuleModels.setBizProtocol(_ctx.stringValue("ListAuthorizationRulesResponse.AuthorizationRules["+ i +"].Protocol"));
+			authorizationRuleModels.setDestinationPort(_ctx.stringValue("ListAuthorizationRulesResponse.AuthorizationRules["+ i +"].DestinationPort"));
 			authorizationRuleModels.setDestination(_ctx.stringValue("ListAuthorizationRulesResponse.AuthorizationRules["+ i +"].Destination"));
 			authorizationRuleModels.setAuthorizationRuleName(_ctx.stringValue("ListAuthorizationRulesResponse.AuthorizationRules["+ i +"].AuthorizationRuleName"));
 			authorizationRuleModels.setAuthorizationRuleDescription(_ctx.stringValue("ListAuthorizationRulesResponse.AuthorizationRules["+ i +"].AuthorizationRuleDescription"));

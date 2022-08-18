@@ -31,6 +31,8 @@ public class CreateAuthorizationRuleRequest extends RpcAcsRequest<CreateAuthoriz
 
 	private String destination;
 
+	private String protocol;
+
 	private String authorizationRuleDescription;
 
 	private String policy;
@@ -40,6 +42,8 @@ public class CreateAuthorizationRuleRequest extends RpcAcsRequest<CreateAuthoriz
 	private List<String> sourceCidrss;
 
 	private String authorizationRuleName;
+
+	private String destinationPort;
 
 	private String ioTCloudConnectorId;
 	public CreateAuthorizationRuleRequest() {
@@ -77,6 +81,17 @@ public class CreateAuthorizationRuleRequest extends RpcAcsRequest<CreateAuthoriz
 		this.destination = destination;
 		if(destination != null){
 			putQueryParameter("Destination", destination);
+		}
+	}
+
+	public String getBizProtocol() {
+		return this.protocol;
+	}
+
+	public void setBizProtocol(String protocol) {
+		this.protocol = protocol;
+		if(protocol != null){
+			putQueryParameter("Protocol", protocol);
 		}
 	}
 
@@ -134,6 +149,17 @@ public class CreateAuthorizationRuleRequest extends RpcAcsRequest<CreateAuthoriz
 		this.authorizationRuleName = authorizationRuleName;
 		if(authorizationRuleName != null){
 			putQueryParameter("AuthorizationRuleName", authorizationRuleName);
+		}
+	}
+
+	public String getDestinationPort() {
+		return this.destinationPort;
+	}
+
+	public void setDestinationPort(String destinationPort) {
+		this.destinationPort = destinationPort;
+		if(destinationPort != null){
+			putQueryParameter("DestinationPort", destinationPort);
 		}
 	}
 
