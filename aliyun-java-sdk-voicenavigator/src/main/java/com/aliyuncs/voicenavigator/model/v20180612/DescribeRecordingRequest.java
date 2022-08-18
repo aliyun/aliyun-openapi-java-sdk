@@ -25,6 +25,8 @@ import com.aliyuncs.voicenavigator.Endpoint;
 public class DescribeRecordingRequest extends RpcAcsRequest<DescribeRecordingResponse> {
 	   
 
+	private Boolean needVoiceSliceRecording;
+
 	private String conversationId;
 
 	private String instanceId;
@@ -35,6 +37,17 @@ public class DescribeRecordingRequest extends RpcAcsRequest<DescribeRecordingRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Boolean getNeedVoiceSliceRecording() {
+		return this.needVoiceSliceRecording;
+	}
+
+	public void setNeedVoiceSliceRecording(Boolean needVoiceSliceRecording) {
+		this.needVoiceSliceRecording = needVoiceSliceRecording;
+		if(needVoiceSliceRecording != null){
+			putQueryParameter("NeedVoiceSliceRecording", needVoiceSliceRecording.toString());
+		}
 	}
 
 	public String getConversationId() {

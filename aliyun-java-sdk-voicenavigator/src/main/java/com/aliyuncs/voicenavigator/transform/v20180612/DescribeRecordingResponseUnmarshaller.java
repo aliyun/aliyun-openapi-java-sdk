@@ -25,6 +25,7 @@ public class DescribeRecordingResponseUnmarshaller {
 		describeRecordingResponse.setRequestId(_ctx.stringValue("DescribeRecordingResponse.RequestId"));
 		describeRecordingResponse.setFilePath(_ctx.stringValue("DescribeRecordingResponse.FilePath"));
 		describeRecordingResponse.setFileName(_ctx.stringValue("DescribeRecordingResponse.FileName"));
+		describeRecordingResponse.setVoiceSliceRecordingListJson(_ctx.stringValue("DescribeRecordingResponse.VoiceSliceRecordingListJson"));
 	 
 	 	return describeRecordingResponse;
 	}

@@ -30,6 +30,8 @@ public class DescribeRecordingResponse extends AcsResponse {
 
 	private String fileName;
 
+	private String voiceSliceRecordingListJson;
+
 	public String getFilePath() {
 		return this.filePath;
 	}
@@ -52,6 +54,14 @@ public class DescribeRecordingResponse extends AcsResponse {
 
 	public void setFileName(String fileName) {
 		this.fileName = fileName;
+	}
+
+	public String getVoiceSliceRecordingListJson() {
+		return this.voiceSliceRecordingListJson;
+	}
+
+	public void setVoiceSliceRecordingListJson(String voiceSliceRecordingListJson) {
+		this.voiceSliceRecordingListJson = voiceSliceRecordingListJson;
 	}
 
 	@Override

@@ -25,6 +25,8 @@ import com.aliyuncs.voicenavigator.Endpoint;
 public class SaveRecordingRequest extends RpcAcsRequest<SaveRecordingResponse> {
 	   
 
+	private String voiceSliceRecordingList;
+
 	private String conversationId;
 
 	private Long startTime;
@@ -47,6 +49,17 @@ public class SaveRecordingRequest extends RpcAcsRequest<SaveRecordingResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getVoiceSliceRecordingList() {
+		return this.voiceSliceRecordingList;
+	}
+
+	public void setVoiceSliceRecordingList(String voiceSliceRecordingList) {
+		this.voiceSliceRecordingList = voiceSliceRecordingList;
+		if(voiceSliceRecordingList != null){
+			putQueryParameter("VoiceSliceRecordingList", voiceSliceRecordingList);
+		}
 	}
 
 	public String getConversationId() {
