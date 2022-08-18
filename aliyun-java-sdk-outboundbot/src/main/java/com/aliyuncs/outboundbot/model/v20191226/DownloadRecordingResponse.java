@@ -90,6 +90,8 @@ public class DownloadRecordingResponse extends AcsResponse {
 
 		private String fileName;
 
+		private String voiceSliceRecordingListJson;
+
 		public String getSignatureUrl() {
 			return this.signatureUrl;
 		}
@@ -104,6 +106,14 @@ public class DownloadRecordingResponse extends AcsResponse {
 
 		public void setFileName(String fileName) {
 			this.fileName = fileName;
+		}
+
+		public String getVoiceSliceRecordingListJson() {
+			return this.voiceSliceRecordingListJson;
+		}
+
+		public void setVoiceSliceRecordingListJson(String voiceSliceRecordingListJson) {
+			this.voiceSliceRecordingListJson = voiceSliceRecordingListJson;
 		}
 	}
 

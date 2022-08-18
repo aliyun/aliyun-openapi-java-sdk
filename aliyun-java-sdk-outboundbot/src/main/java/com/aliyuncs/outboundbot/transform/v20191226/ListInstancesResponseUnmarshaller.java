@@ -55,6 +55,7 @@ public class ListInstancesResponseUnmarshaller {
 			nluProfile.setAccessKey(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].NluProfile.AccessKey"));
 			nluProfile.setSecretKey(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].NluProfile.SecretKey"));
 			nluProfile.setEndpoint(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].NluProfile.Endpoint"));
+			nluProfile.setAgentId(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].NluProfile.AgentId"));
 			instance.setNluProfile(nluProfile);
 
 			List<ResourceTag> resourceTags = new ArrayList<ResourceTag>();

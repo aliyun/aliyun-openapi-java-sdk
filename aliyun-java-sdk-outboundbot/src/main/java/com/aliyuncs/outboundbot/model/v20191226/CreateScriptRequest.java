@@ -38,6 +38,8 @@ public class CreateScriptRequest extends RpcAcsRequest<CreateScriptResponse> {
 
 	private String asrConfig;
 
+	private String miniPlaybackConfigListJsonString;
+
 	private Boolean newBargeInEnable;
 
 	private Boolean miniPlaybackEnable;
@@ -125,6 +127,17 @@ public class CreateScriptRequest extends RpcAcsRequest<CreateScriptResponse> {
 		this.asrConfig = asrConfig;
 		if(asrConfig != null){
 			putQueryParameter("AsrConfig", asrConfig);
+		}
+	}
+
+	public String getMiniPlaybackConfigListJsonString() {
+		return this.miniPlaybackConfigListJsonString;
+	}
+
+	public void setMiniPlaybackConfigListJsonString(String miniPlaybackConfigListJsonString) {
+		this.miniPlaybackConfigListJsonString = miniPlaybackConfigListJsonString;
+		if(miniPlaybackConfigListJsonString != null){
+			putQueryParameter("MiniPlaybackConfigListJsonString", miniPlaybackConfigListJsonString);
 		}
 	}
 

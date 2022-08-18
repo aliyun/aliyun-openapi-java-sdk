@@ -48,6 +48,7 @@ public class DescribeInstanceResponseUnmarshaller {
 		nluProfile.setAccessKey(_ctx.stringValue("DescribeInstanceResponse.Instance.NluProfile.AccessKey"));
 		nluProfile.setSecretKey(_ctx.stringValue("DescribeInstanceResponse.Instance.NluProfile.SecretKey"));
 		nluProfile.setEndpoint(_ctx.stringValue("DescribeInstanceResponse.Instance.NluProfile.Endpoint"));
+		nluProfile.setAgentId(_ctx.stringValue("DescribeInstanceResponse.Instance.NluProfile.AgentId"));
 		instance.setNluProfile(nluProfile);
 		describeInstanceResponse.setInstance(instance);
 	 

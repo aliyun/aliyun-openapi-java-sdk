@@ -1,3 +1,6 @@
+2022-08-18 Version: 1.6.0
+- Supported new features for outbound.
+
 2022-06-24 Version: 1.5.0
 - Supported new features for outbound.
 
