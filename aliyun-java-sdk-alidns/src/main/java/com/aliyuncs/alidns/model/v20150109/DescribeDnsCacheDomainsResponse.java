@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDnsCacheDomainsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Long totalCount;
-
-	private Long pageNumber;
 
 	private Long pageSize;
 
+	private String requestId;
+
+	private Long pageNumber;
+
 	private List<Domain> domains;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Long getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class DescribeDnsCacheDomainsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Long getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Long getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Long pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<Domain> getDomains() {
@@ -77,76 +77,44 @@ public class DescribeDnsCacheDomainsResponse extends AcsResponse {
 
 	public static class Domain {
 
-		private String domainId;
-
-		private String domainName;
-
-		private String instanceId;
-
-		private String versionCode;
-
-		private String remark;
+		private String sourceProtocol;
 
 		private String updateTime;
 
-		private Long updateTimestamp;
-
-		private String createTime;
-
-		private Long createTimestamp;
-
-		private Integer cacheTtlMin;
-
-		private Integer cacheTtlMax;
-
-		private String sourceProtocol;
-
-		private String sourceEdns;
+		private String remark;
 
 		private String expireTime;
 
+		private String createTime;
+
+		private String instanceId;
+
+		private String sourceEdns;
+
+		private String domainName;
+
+		private String domainId;
+
+		private Long updateTimestamp;
+
 		private Long expireTimestamp;
+
+		private Integer cacheTtlMax;
+
+		private Integer cacheTtlMin;
+
+		private String versionCode;
+
+		private Long createTimestamp;
 
 		private List<SourceDnsServer> sourceDnsServers;
 
-		public String getDomainId() {
-			return this.domainId;
+		public String getSourceProtocol() {
+			return this.sourceProtocol;
 		}
 
-		public void setDomainId(String domainId) {
-			this.domainId = domainId;
-		}
-
-		public String getDomainName() {
-			return this.domainName;
-		}
-
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getVersionCode() {
-			return this.versionCode;
-		}
-
-		public void setVersionCode(String versionCode) {
-			this.versionCode = versionCode;
-		}
-
-		public String getRemark() {
-			return this.remark;
-		}
-
-		public void setRemark(String remark) {
-			this.remark = remark;
+		public void setSourceProtocol(String sourceProtocol) {
+			this.sourceProtocol = sourceProtocol;
 		}
 
 		public String getUpdateTime() {
@@ -157,60 +125,12 @@ public class DescribeDnsCacheDomainsResponse extends AcsResponse {
 			this.updateTime = updateTime;
 		}
 
-		public Long getUpdateTimestamp() {
-			return this.updateTimestamp;
+		public String getRemark() {
+			return this.remark;
 		}
 
-		public void setUpdateTimestamp(Long updateTimestamp) {
-			this.updateTimestamp = updateTimestamp;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public Long getCreateTimestamp() {
-			return this.createTimestamp;
-		}
-
-		public void setCreateTimestamp(Long createTimestamp) {
-			this.createTimestamp = createTimestamp;
-		}
-
-		public Integer getCacheTtlMin() {
-			return this.cacheTtlMin;
-		}
-
-		public void setCacheTtlMin(Integer cacheTtlMin) {
-			this.cacheTtlMin = cacheTtlMin;
-		}
-
-		public Integer getCacheTtlMax() {
-			return this.cacheTtlMax;
-		}
-
-		public void setCacheTtlMax(Integer cacheTtlMax) {
-			this.cacheTtlMax = cacheTtlMax;
-		}
-
-		public String getSourceProtocol() {
-			return this.sourceProtocol;
-		}
-
-		public void setSourceProtocol(String sourceProtocol) {
-			this.sourceProtocol = sourceProtocol;
-		}
-
-		public String getSourceEdns() {
-			return this.sourceEdns;
-		}
-
-		public void setSourceEdns(String sourceEdns) {
-			this.sourceEdns = sourceEdns;
+		public void setRemark(String remark) {
+			this.remark = remark;
 		}
 
 		public String getExpireTime() {
@@ -221,12 +141,92 @@ public class DescribeDnsCacheDomainsResponse extends AcsResponse {
 			this.expireTime = expireTime;
 		}
 
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getSourceEdns() {
+			return this.sourceEdns;
+		}
+
+		public void setSourceEdns(String sourceEdns) {
+			this.sourceEdns = sourceEdns;
+		}
+
+		public String getDomainName() {
+			return this.domainName;
+		}
+
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
+		}
+
+		public String getDomainId() {
+			return this.domainId;
+		}
+
+		public void setDomainId(String domainId) {
+			this.domainId = domainId;
+		}
+
+		public Long getUpdateTimestamp() {
+			return this.updateTimestamp;
+		}
+
+		public void setUpdateTimestamp(Long updateTimestamp) {
+			this.updateTimestamp = updateTimestamp;
+		}
+
 		public Long getExpireTimestamp() {
 			return this.expireTimestamp;
 		}
 
 		public void setExpireTimestamp(Long expireTimestamp) {
 			this.expireTimestamp = expireTimestamp;
+		}
+
+		public Integer getCacheTtlMax() {
+			return this.cacheTtlMax;
+		}
+
+		public void setCacheTtlMax(Integer cacheTtlMax) {
+			this.cacheTtlMax = cacheTtlMax;
+		}
+
+		public Integer getCacheTtlMin() {
+			return this.cacheTtlMin;
+		}
+
+		public void setCacheTtlMin(Integer cacheTtlMin) {
+			this.cacheTtlMin = cacheTtlMin;
+		}
+
+		public String getVersionCode() {
+			return this.versionCode;
+		}
+
+		public void setVersionCode(String versionCode) {
+			this.versionCode = versionCode;
+		}
+
+		public Long getCreateTimestamp() {
+			return this.createTimestamp;
+		}
+
+		public void setCreateTimestamp(Long createTimestamp) {
+			this.createTimestamp = createTimestamp;
 		}
 
 		public List<SourceDnsServer> getSourceDnsServers() {

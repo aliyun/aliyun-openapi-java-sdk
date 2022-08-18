@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDomainLogsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Long totalCount;
-
-	private Long pageNumber;
 
 	private Long pageSize;
 
+	private String requestId;
+
+	private Long pageNumber;
+
 	private List<DomainLog> domainLogs;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Long getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class DescribeDomainLogsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Long getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Long getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Long pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<DomainLog> getDomainLogs() {
@@ -77,26 +77,26 @@ public class DescribeDomainLogsResponse extends AcsResponse {
 
 	public static class DomainLog {
 
-		private String actionTime;
+		private String action;
 
 		private Long actionTimestamp;
 
-		private String domainName;
-
-		private String action;
-
-		private String message;
+		private String zoneId;
 
 		private String clientIp;
 
-		private String zoneId;
+		private String message;
 
-		public String getActionTime() {
-			return this.actionTime;
+		private String actionTime;
+
+		private String domainName;
+
+		public String getAction() {
+			return this.action;
 		}
 
-		public void setActionTime(String actionTime) {
-			this.actionTime = actionTime;
+		public void setAction(String action) {
+			this.action = action;
 		}
 
 		public Long getActionTimestamp() {
@@ -107,28 +107,12 @@ public class DescribeDomainLogsResponse extends AcsResponse {
 			this.actionTimestamp = actionTimestamp;
 		}
 
-		public String getDomainName() {
-			return this.domainName;
+		public String getZoneId() {
+			return this.zoneId;
 		}
 
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
-		}
-
-		public String getAction() {
-			return this.action;
-		}
-
-		public void setAction(String action) {
-			this.action = action;
-		}
-
-		public String getMessage() {
-			return this.message;
-		}
-
-		public void setMessage(String message) {
-			this.message = message;
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
 		}
 
 		public String getClientIp() {
@@ -139,12 +123,28 @@ public class DescribeDomainLogsResponse extends AcsResponse {
 			this.clientIp = clientIp;
 		}
 
-		public String getZoneId() {
-			return this.zoneId;
+		public String getMessage() {
+			return this.message;
 		}
 
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
+		public void setMessage(String message) {
+			this.message = message;
+		}
+
+		public String getActionTime() {
+			return this.actionTime;
+		}
+
+		public void setActionTime(String actionTime) {
+			this.actionTime = actionTime;
+		}
+
+		public String getDomainName() {
+			return this.domainName;
+		}
+
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
 		}
 	}
 

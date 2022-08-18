@@ -27,16 +27,16 @@ public class DescribeInstanceDomainsResponseUnmarshaller {
 	public static DescribeInstanceDomainsResponse unmarshall(DescribeInstanceDomainsResponse describeInstanceDomainsResponse, UnmarshallerContext _ctx) {
 		
 		describeInstanceDomainsResponse.setRequestId(_ctx.stringValue("DescribeInstanceDomainsResponse.RequestId"));
-		describeInstanceDomainsResponse.setTotalItems(_ctx.integerValue("DescribeInstanceDomainsResponse.TotalItems"));
-		describeInstanceDomainsResponse.setPageNumber(_ctx.integerValue("DescribeInstanceDomainsResponse.PageNumber"));
 		describeInstanceDomainsResponse.setPageSize(_ctx.integerValue("DescribeInstanceDomainsResponse.PageSize"));
+		describeInstanceDomainsResponse.setPageNumber(_ctx.integerValue("DescribeInstanceDomainsResponse.PageNumber"));
 		describeInstanceDomainsResponse.setTotalPages(_ctx.integerValue("DescribeInstanceDomainsResponse.TotalPages"));
+		describeInstanceDomainsResponse.setTotalItems(_ctx.integerValue("DescribeInstanceDomainsResponse.TotalItems"));
 
 		List<InstanceDomain> instanceDomains = new ArrayList<InstanceDomain>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceDomainsResponse.InstanceDomains.Length"); i++) {
 			InstanceDomain instanceDomain = new InstanceDomain();
-			instanceDomain.setDomainName(_ctx.stringValue("DescribeInstanceDomainsResponse.InstanceDomains["+ i +"].DomainName"));
 			instanceDomain.setCreateTime(_ctx.stringValue("DescribeInstanceDomainsResponse.InstanceDomains["+ i +"].CreateTime"));
+			instanceDomain.setDomainName(_ctx.stringValue("DescribeInstanceDomainsResponse.InstanceDomains["+ i +"].DomainName"));
 			instanceDomain.setCreateTimestamp(_ctx.longValue("DescribeInstanceDomainsResponse.InstanceDomains["+ i +"].CreateTimestamp"));
 
 			instanceDomains.add(instanceDomain);

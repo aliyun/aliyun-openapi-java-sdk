@@ -28,17 +28,17 @@ public class DescribeRecordLogsResponseUnmarshaller {
 		
 		describeRecordLogsResponse.setRequestId(_ctx.stringValue("DescribeRecordLogsResponse.RequestId"));
 		describeRecordLogsResponse.setTotalCount(_ctx.longValue("DescribeRecordLogsResponse.TotalCount"));
-		describeRecordLogsResponse.setPageNumber(_ctx.longValue("DescribeRecordLogsResponse.PageNumber"));
 		describeRecordLogsResponse.setPageSize(_ctx.longValue("DescribeRecordLogsResponse.PageSize"));
+		describeRecordLogsResponse.setPageNumber(_ctx.longValue("DescribeRecordLogsResponse.PageNumber"));
 
 		List<RecordLog> recordLogs = new ArrayList<RecordLog>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeRecordLogsResponse.RecordLogs.Length"); i++) {
 			RecordLog recordLog = new RecordLog();
-			recordLog.setActionTime(_ctx.stringValue("DescribeRecordLogsResponse.RecordLogs["+ i +"].ActionTime"));
-			recordLog.setActionTimestamp(_ctx.longValue("DescribeRecordLogsResponse.RecordLogs["+ i +"].ActionTimestamp"));
 			recordLog.setAction(_ctx.stringValue("DescribeRecordLogsResponse.RecordLogs["+ i +"].Action"));
-			recordLog.setMessage(_ctx.stringValue("DescribeRecordLogsResponse.RecordLogs["+ i +"].Message"));
+			recordLog.setActionTimestamp(_ctx.longValue("DescribeRecordLogsResponse.RecordLogs["+ i +"].ActionTimestamp"));
 			recordLog.setClientIp(_ctx.stringValue("DescribeRecordLogsResponse.RecordLogs["+ i +"].ClientIp"));
+			recordLog.setMessage(_ctx.stringValue("DescribeRecordLogsResponse.RecordLogs["+ i +"].Message"));
+			recordLog.setActionTime(_ctx.stringValue("DescribeRecordLogsResponse.RecordLogs["+ i +"].ActionTime"));
 
 			recordLogs.add(recordLog);
 		}

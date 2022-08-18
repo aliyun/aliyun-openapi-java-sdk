@@ -27,9 +27,9 @@ public class DescribePdnsThreatLogsResponse extends AcsResponse {
 
 	private Long totalCount;
 
-	private String requestId;
-
 	private Long pageSize;
+
+	private String requestId;
 
 	private Long pageNumber;
 
@@ -43,20 +43,20 @@ public class DescribePdnsThreatLogsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Long getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Long pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Long getPageNumber() {
@@ -77,39 +77,15 @@ public class DescribePdnsThreatLogsResponse extends AcsResponse {
 
 	public static class Log {
 
-		private String subDomain;
-
-		private String sourceIp;
-
-		private String threatLevel;
-
 		private String threatTime;
 
 		private String threatType;
 
-		public String getSubDomain() {
-			return this.subDomain;
-		}
+		private String threatLevel;
 
-		public void setSubDomain(String subDomain) {
-			this.subDomain = subDomain;
-		}
+		private String sourceIp;
 
-		public String getSourceIp() {
-			return this.sourceIp;
-		}
-
-		public void setSourceIp(String sourceIp) {
-			this.sourceIp = sourceIp;
-		}
-
-		public String getThreatLevel() {
-			return this.threatLevel;
-		}
-
-		public void setThreatLevel(String threatLevel) {
-			this.threatLevel = threatLevel;
-		}
+		private String subDomain;
 
 		public String getThreatTime() {
 			return this.threatTime;
@@ -125,6 +101,30 @@ public class DescribePdnsThreatLogsResponse extends AcsResponse {
 
 		public void setThreatType(String threatType) {
 			this.threatType = threatType;
+		}
+
+		public String getThreatLevel() {
+			return this.threatLevel;
+		}
+
+		public void setThreatLevel(String threatLevel) {
+			this.threatLevel = threatLevel;
+		}
+
+		public String getSourceIp() {
+			return this.sourceIp;
+		}
+
+		public void setSourceIp(String sourceIp) {
+			this.sourceIp = sourceIp;
+		}
+
+		public String getSubDomain() {
+			return this.subDomain;
+		}
+
+		public void setSubDomain(String subDomain) {
+			this.subDomain = subDomain;
 		}
 	}
 

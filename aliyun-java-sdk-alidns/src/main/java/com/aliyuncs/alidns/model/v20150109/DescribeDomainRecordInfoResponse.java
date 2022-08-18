@@ -24,90 +24,42 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDomainRecordInfoResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String domainId;
-
-	private String domainName;
-
-	private String punyCode;
-
-	private String groupId;
-
-	private String groupName;
-
-	private String recordId;
+	private String status;
 
 	private String rR;
 
-	private String type;
+	private String groupName;
 
-	private String value;
+	private String requestId;
 
-	private Long tTL;
+	private String domainName;
 
 	private Long priority;
 
-	private String line;
+	private String punyCode;
 
-	private String status;
+	private Long tTL;
+
+	private String groupId;
+
+	private String line;
 
 	private Boolean locked;
 
-	public String getRequestId() {
-		return this.requestId;
+	private String type;
+
+	private String domainId;
+
+	private String value;
+
+	private String recordId;
+
+	public String getStatus() {
+		return this.status;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getDomainId() {
-		return this.domainId;
-	}
-
-	public void setDomainId(String domainId) {
-		this.domainId = domainId;
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-	}
-
-	public String getPunyCode() {
-		return this.punyCode;
-	}
-
-	public void setPunyCode(String punyCode) {
-		this.punyCode = punyCode;
-	}
-
-	public String getGroupId() {
-		return this.groupId;
-	}
-
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-	}
-
-	public String getGroupName() {
-		return this.groupName;
-	}
-
-	public void setGroupName(String groupName) {
-		this.groupName = groupName;
-	}
-
-	public String getRecordId() {
-		return this.recordId;
-	}
-
-	public void setRecordId(String recordId) {
-		this.recordId = recordId;
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	public String getRR() {
@@ -118,28 +70,28 @@ public class DescribeDomainRecordInfoResponse extends AcsResponse {
 		this.rR = rR;
 	}
 
-	public String getType() {
-		return this.type;
+	public String getGroupName() {
+		return this.groupName;
 	}
 
-	public void setType(String type) {
-		this.type = type;
+	public void setGroupName(String groupName) {
+		this.groupName = groupName;
 	}
 
-	public String getValue() {
-		return this.value;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setValue(String value) {
-		this.value = value;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
-	public Long getTTL() {
-		return this.tTL;
+	public String getDomainName() {
+		return this.domainName;
 	}
 
-	public void setTTL(Long tTL) {
-		this.tTL = tTL;
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
 	}
 
 	public Long getPriority() {
@@ -150,6 +102,30 @@ public class DescribeDomainRecordInfoResponse extends AcsResponse {
 		this.priority = priority;
 	}
 
+	public String getPunyCode() {
+		return this.punyCode;
+	}
+
+	public void setPunyCode(String punyCode) {
+		this.punyCode = punyCode;
+	}
+
+	public Long getTTL() {
+		return this.tTL;
+	}
+
+	public void setTTL(Long tTL) {
+		this.tTL = tTL;
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+	}
+
 	public String getLine() {
 		return this.line;
 	}
@@ -158,20 +134,44 @@ public class DescribeDomainRecordInfoResponse extends AcsResponse {
 		this.line = line;
 	}
 
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
 	public Boolean getLocked() {
 		return this.locked;
 	}
 
 	public void setLocked(Boolean locked) {
 		this.locked = locked;
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public String getDomainId() {
+		return this.domainId;
+	}
+
+	public void setDomainId(String domainId) {
+		this.domainId = domainId;
+	}
+
+	public String getValue() {
+		return this.value;
+	}
+
+	public void setValue(String value) {
+		this.value = value;
+	}
+
+	public String getRecordId() {
+		return this.recordId;
+	}
+
+	public void setRecordId(String recordId) {
+		this.recordId = recordId;
 	}
 
 	@Override

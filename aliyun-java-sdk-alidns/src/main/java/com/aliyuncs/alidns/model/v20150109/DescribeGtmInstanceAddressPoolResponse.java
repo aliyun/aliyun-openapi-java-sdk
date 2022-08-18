@@ -25,33 +25,41 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeGtmInstanceAddressPoolResponse extends AcsResponse {
 
-	private String requestId;
+	private String status;
 
-	private String addrPoolId;
+	private String requestId;
 
 	private String createTime;
 
-	private Long createTimestamp;
-
-	private String updateTime;
-
-	private Long updateTimestamp;
-
 	private Integer addrCount;
-
-	private Integer minAvailableAddrNum;
-
-	private String monitorConfigId;
-
-	private String monitorStatus;
 
 	private String name;
 
-	private String status;
-
 	private String type;
 
+	private String updateTime;
+
+	private String addrPoolId;
+
+	private Long updateTimestamp;
+
+	private String monitorConfigId;
+
+	private Integer minAvailableAddrNum;
+
+	private String monitorStatus;
+
+	private Long createTimestamp;
+
 	private List<Addr> addrs;
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -59,14 +67,6 @@ public class DescribeGtmInstanceAddressPoolResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getAddrPoolId() {
-		return this.addrPoolId;
-	}
-
-	public void setAddrPoolId(String addrPoolId) {
-		this.addrPoolId = addrPoolId;
 	}
 
 	public String getCreateTime() {
@@ -77,60 +77,12 @@ public class DescribeGtmInstanceAddressPoolResponse extends AcsResponse {
 		this.createTime = createTime;
 	}
 
-	public Long getCreateTimestamp() {
-		return this.createTimestamp;
-	}
-
-	public void setCreateTimestamp(Long createTimestamp) {
-		this.createTimestamp = createTimestamp;
-	}
-
-	public String getUpdateTime() {
-		return this.updateTime;
-	}
-
-	public void setUpdateTime(String updateTime) {
-		this.updateTime = updateTime;
-	}
-
-	public Long getUpdateTimestamp() {
-		return this.updateTimestamp;
-	}
-
-	public void setUpdateTimestamp(Long updateTimestamp) {
-		this.updateTimestamp = updateTimestamp;
-	}
-
 	public Integer getAddrCount() {
 		return this.addrCount;
 	}
 
 	public void setAddrCount(Integer addrCount) {
 		this.addrCount = addrCount;
-	}
-
-	public Integer getMinAvailableAddrNum() {
-		return this.minAvailableAddrNum;
-	}
-
-	public void setMinAvailableAddrNum(Integer minAvailableAddrNum) {
-		this.minAvailableAddrNum = minAvailableAddrNum;
-	}
-
-	public String getMonitorConfigId() {
-		return this.monitorConfigId;
-	}
-
-	public void setMonitorConfigId(String monitorConfigId) {
-		this.monitorConfigId = monitorConfigId;
-	}
-
-	public String getMonitorStatus() {
-		return this.monitorStatus;
-	}
-
-	public void setMonitorStatus(String monitorStatus) {
-		this.monitorStatus = monitorStatus;
 	}
 
 	public String getName() {
@@ -141,20 +93,68 @@ public class DescribeGtmInstanceAddressPoolResponse extends AcsResponse {
 		this.name = name;
 	}
 
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
 	public String getType() {
 		return this.type;
 	}
 
 	public void setType(String type) {
 		this.type = type;
+	}
+
+	public String getUpdateTime() {
+		return this.updateTime;
+	}
+
+	public void setUpdateTime(String updateTime) {
+		this.updateTime = updateTime;
+	}
+
+	public String getAddrPoolId() {
+		return this.addrPoolId;
+	}
+
+	public void setAddrPoolId(String addrPoolId) {
+		this.addrPoolId = addrPoolId;
+	}
+
+	public Long getUpdateTimestamp() {
+		return this.updateTimestamp;
+	}
+
+	public void setUpdateTimestamp(Long updateTimestamp) {
+		this.updateTimestamp = updateTimestamp;
+	}
+
+	public String getMonitorConfigId() {
+		return this.monitorConfigId;
+	}
+
+	public void setMonitorConfigId(String monitorConfigId) {
+		this.monitorConfigId = monitorConfigId;
+	}
+
+	public Integer getMinAvailableAddrNum() {
+		return this.minAvailableAddrNum;
+	}
+
+	public void setMinAvailableAddrNum(Integer minAvailableAddrNum) {
+		this.minAvailableAddrNum = minAvailableAddrNum;
+	}
+
+	public String getMonitorStatus() {
+		return this.monitorStatus;
+	}
+
+	public void setMonitorStatus(String monitorStatus) {
+		this.monitorStatus = monitorStatus;
+	}
+
+	public Long getCreateTimestamp() {
+		return this.createTimestamp;
+	}
+
+	public void setCreateTimestamp(Long createTimestamp) {
+		this.createTimestamp = createTimestamp;
 	}
 
 	public List<Addr> getAddrs() {
@@ -167,54 +167,30 @@ public class DescribeGtmInstanceAddressPoolResponse extends AcsResponse {
 
 	public static class Addr {
 
-		private Long addrId;
-
-		private String createTime;
-
-		private Long createTimestamp;
-
-		private String updateTime;
+		private String value;
 
 		private Long updateTimestamp;
 
-		private String value;
-
-		private Integer lbaWeight;
-
-		private String mode;
+		private String updateTime;
 
 		private String alertStatus;
 
-		public Long getAddrId() {
-			return this.addrId;
+		private Integer lbaWeight;
+
+		private String createTime;
+
+		private Long addrId;
+
+		private String mode;
+
+		private Long createTimestamp;
+
+		public String getValue() {
+			return this.value;
 		}
 
-		public void setAddrId(Long addrId) {
-			this.addrId = addrId;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public Long getCreateTimestamp() {
-			return this.createTimestamp;
-		}
-
-		public void setCreateTimestamp(Long createTimestamp) {
-			this.createTimestamp = createTimestamp;
-		}
-
-		public String getUpdateTime() {
-			return this.updateTime;
-		}
-
-		public void setUpdateTime(String updateTime) {
-			this.updateTime = updateTime;
+		public void setValue(String value) {
+			this.value = value;
 		}
 
 		public Long getUpdateTimestamp() {
@@ -225,12 +201,20 @@ public class DescribeGtmInstanceAddressPoolResponse extends AcsResponse {
 			this.updateTimestamp = updateTimestamp;
 		}
 
-		public String getValue() {
-			return this.value;
+		public String getUpdateTime() {
+			return this.updateTime;
 		}
 
-		public void setValue(String value) {
-			this.value = value;
+		public void setUpdateTime(String updateTime) {
+			this.updateTime = updateTime;
+		}
+
+		public String getAlertStatus() {
+			return this.alertStatus;
+		}
+
+		public void setAlertStatus(String alertStatus) {
+			this.alertStatus = alertStatus;
 		}
 
 		public Integer getLbaWeight() {
@@ -241,6 +225,22 @@ public class DescribeGtmInstanceAddressPoolResponse extends AcsResponse {
 			this.lbaWeight = lbaWeight;
 		}
 
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public Long getAddrId() {
+			return this.addrId;
+		}
+
+		public void setAddrId(Long addrId) {
+			this.addrId = addrId;
+		}
+
 		public String getMode() {
 			return this.mode;
 		}
@@ -249,12 +249,12 @@ public class DescribeGtmInstanceAddressPoolResponse extends AcsResponse {
 			this.mode = mode;
 		}
 
-		public String getAlertStatus() {
-			return this.alertStatus;
+		public Long getCreateTimestamp() {
+			return this.createTimestamp;
 		}
 
-		public void setAlertStatus(String alertStatus) {
-			this.alertStatus = alertStatus;
+		public void setCreateTimestamp(Long createTimestamp) {
+			this.createTimestamp = createTimestamp;
 		}
 	}
 

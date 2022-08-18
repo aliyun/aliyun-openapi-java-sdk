@@ -27,33 +27,33 @@ public class DescribeGtmAccessStrategyResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String strategyId;
-
-	private String strategyName;
-
-	private String defultAddrPoolId;
-
-	private String defaultAddrPoolName;
-
-	private String failoverAddrPoolId;
-
-	private String failoverAddrPoolName;
-
-	private String strategyMode;
-
-	private String accessMode;
-
-	private String accessStatus;
-
 	private String instanceId;
+
+	private String strategyId;
 
 	private String defaultAddrPoolStatus;
 
-	private String failoverAddrPoolStatus;
+	private String failoverAddrPoolId;
+
+	private String accessStatus;
 
 	private String defaultAddrPoolMonitorStatus;
 
+	private String defaultAddrPoolName;
+
+	private String defultAddrPoolId;
+
+	private String strategyName;
+
+	private String failoverAddrPoolStatus;
+
+	private String accessMode;
+
+	private String strategyMode;
+
 	private String failoverAddrPoolMonitorStatus;
+
+	private String failoverAddrPoolName;
 
 	private List<Line> lines;
 
@@ -65,84 +65,20 @@ public class DescribeGtmAccessStrategyResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getStrategyId() {
-		return this.strategyId;
-	}
-
-	public void setStrategyId(String strategyId) {
-		this.strategyId = strategyId;
-	}
-
-	public String getStrategyName() {
-		return this.strategyName;
-	}
-
-	public void setStrategyName(String strategyName) {
-		this.strategyName = strategyName;
-	}
-
-	public String getDefultAddrPoolId() {
-		return this.defultAddrPoolId;
-	}
-
-	public void setDefultAddrPoolId(String defultAddrPoolId) {
-		this.defultAddrPoolId = defultAddrPoolId;
-	}
-
-	public String getDefaultAddrPoolName() {
-		return this.defaultAddrPoolName;
-	}
-
-	public void setDefaultAddrPoolName(String defaultAddrPoolName) {
-		this.defaultAddrPoolName = defaultAddrPoolName;
-	}
-
-	public String getFailoverAddrPoolId() {
-		return this.failoverAddrPoolId;
-	}
-
-	public void setFailoverAddrPoolId(String failoverAddrPoolId) {
-		this.failoverAddrPoolId = failoverAddrPoolId;
-	}
-
-	public String getFailoverAddrPoolName() {
-		return this.failoverAddrPoolName;
-	}
-
-	public void setFailoverAddrPoolName(String failoverAddrPoolName) {
-		this.failoverAddrPoolName = failoverAddrPoolName;
-	}
-
-	public String getStrategyMode() {
-		return this.strategyMode;
-	}
-
-	public void setStrategyMode(String strategyMode) {
-		this.strategyMode = strategyMode;
-	}
-
-	public String getAccessMode() {
-		return this.accessMode;
-	}
-
-	public void setAccessMode(String accessMode) {
-		this.accessMode = accessMode;
-	}
-
-	public String getAccessStatus() {
-		return this.accessStatus;
-	}
-
-	public void setAccessStatus(String accessStatus) {
-		this.accessStatus = accessStatus;
-	}
-
 	public String getInstanceId() {
 		return this.instanceId;
 	}
 
 	public void setInstanceId(String instanceId) {
 		this.instanceId = instanceId;
+	}
+
+	public String getStrategyId() {
+		return this.strategyId;
+	}
+
+	public void setStrategyId(String strategyId) {
+		this.strategyId = strategyId;
 	}
 
 	public String getDefaultAddrPoolStatus() {
@@ -153,12 +89,20 @@ public class DescribeGtmAccessStrategyResponse extends AcsResponse {
 		this.defaultAddrPoolStatus = defaultAddrPoolStatus;
 	}
 
-	public String getFailoverAddrPoolStatus() {
-		return this.failoverAddrPoolStatus;
+	public String getFailoverAddrPoolId() {
+		return this.failoverAddrPoolId;
 	}
 
-	public void setFailoverAddrPoolStatus(String failoverAddrPoolStatus) {
-		this.failoverAddrPoolStatus = failoverAddrPoolStatus;
+	public void setFailoverAddrPoolId(String failoverAddrPoolId) {
+		this.failoverAddrPoolId = failoverAddrPoolId;
+	}
+
+	public String getAccessStatus() {
+		return this.accessStatus;
+	}
+
+	public void setAccessStatus(String accessStatus) {
+		this.accessStatus = accessStatus;
 	}
 
 	public String getDefaultAddrPoolMonitorStatus() {
@@ -169,12 +113,68 @@ public class DescribeGtmAccessStrategyResponse extends AcsResponse {
 		this.defaultAddrPoolMonitorStatus = defaultAddrPoolMonitorStatus;
 	}
 
+	public String getDefaultAddrPoolName() {
+		return this.defaultAddrPoolName;
+	}
+
+	public void setDefaultAddrPoolName(String defaultAddrPoolName) {
+		this.defaultAddrPoolName = defaultAddrPoolName;
+	}
+
+	public String getDefultAddrPoolId() {
+		return this.defultAddrPoolId;
+	}
+
+	public void setDefultAddrPoolId(String defultAddrPoolId) {
+		this.defultAddrPoolId = defultAddrPoolId;
+	}
+
+	public String getStrategyName() {
+		return this.strategyName;
+	}
+
+	public void setStrategyName(String strategyName) {
+		this.strategyName = strategyName;
+	}
+
+	public String getFailoverAddrPoolStatus() {
+		return this.failoverAddrPoolStatus;
+	}
+
+	public void setFailoverAddrPoolStatus(String failoverAddrPoolStatus) {
+		this.failoverAddrPoolStatus = failoverAddrPoolStatus;
+	}
+
+	public String getAccessMode() {
+		return this.accessMode;
+	}
+
+	public void setAccessMode(String accessMode) {
+		this.accessMode = accessMode;
+	}
+
+	public String getStrategyMode() {
+		return this.strategyMode;
+	}
+
+	public void setStrategyMode(String strategyMode) {
+		this.strategyMode = strategyMode;
+	}
+
 	public String getFailoverAddrPoolMonitorStatus() {
 		return this.failoverAddrPoolMonitorStatus;
 	}
 
 	public void setFailoverAddrPoolMonitorStatus(String failoverAddrPoolMonitorStatus) {
 		this.failoverAddrPoolMonitorStatus = failoverAddrPoolMonitorStatus;
+	}
+
+	public String getFailoverAddrPoolName() {
+		return this.failoverAddrPoolName;
+	}
+
+	public void setFailoverAddrPoolName(String failoverAddrPoolName) {
+		this.failoverAddrPoolName = failoverAddrPoolName;
 	}
 
 	public List<Line> getLines() {
@@ -187,13 +187,21 @@ public class DescribeGtmAccessStrategyResponse extends AcsResponse {
 
 	public static class Line {
 
+		private String groupName;
+
 		private String lineCode;
 
 		private String lineName;
 
 		private String groupCode;
 
-		private String groupName;
+		public String getGroupName() {
+			return this.groupName;
+		}
+
+		public void setGroupName(String groupName) {
+			this.groupName = groupName;
+		}
 
 		public String getLineCode() {
 			return this.lineCode;
@@ -217,14 +225,6 @@ public class DescribeGtmAccessStrategyResponse extends AcsResponse {
 
 		public void setGroupCode(String groupCode) {
 			this.groupCode = groupCode;
-		}
-
-		public String getGroupName() {
-			return this.groupName;
-		}
-
-		public void setGroupName(String groupName) {
-			this.groupName = groupName;
 		}
 	}
 

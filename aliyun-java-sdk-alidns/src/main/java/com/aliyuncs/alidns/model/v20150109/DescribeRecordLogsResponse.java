@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeRecordLogsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Long totalCount;
-
-	private Long pageNumber;
 
 	private Long pageSize;
 
+	private String requestId;
+
+	private Long pageNumber;
+
 	private List<RecordLog> recordLogs;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Long getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class DescribeRecordLogsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Long getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Long getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Long pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<RecordLog> getRecordLogs() {
@@ -77,22 +77,22 @@ public class DescribeRecordLogsResponse extends AcsResponse {
 
 	public static class RecordLog {
 
-		private String actionTime;
+		private String action;
 
 		private Long actionTimestamp;
 
-		private String action;
+		private String clientIp;
 
 		private String message;
 
-		private String clientIp;
+		private String actionTime;
 
-		public String getActionTime() {
-			return this.actionTime;
+		public String getAction() {
+			return this.action;
 		}
 
-		public void setActionTime(String actionTime) {
-			this.actionTime = actionTime;
+		public void setAction(String action) {
+			this.action = action;
 		}
 
 		public Long getActionTimestamp() {
@@ -103,12 +103,12 @@ public class DescribeRecordLogsResponse extends AcsResponse {
 			this.actionTimestamp = actionTimestamp;
 		}
 
-		public String getAction() {
-			return this.action;
+		public String getClientIp() {
+			return this.clientIp;
 		}
 
-		public void setAction(String action) {
-			this.action = action;
+		public void setClientIp(String clientIp) {
+			this.clientIp = clientIp;
 		}
 
 		public String getMessage() {
@@ -119,12 +119,12 @@ public class DescribeRecordLogsResponse extends AcsResponse {
 			this.message = message;
 		}
 
-		public String getClientIp() {
-			return this.clientIp;
+		public String getActionTime() {
+			return this.actionTime;
 		}
 
-		public void setClientIp(String clientIp) {
-			this.clientIp = clientIp;
+		public void setActionTime(String actionTime) {
+			this.actionTime = actionTime;
 		}
 	}
 

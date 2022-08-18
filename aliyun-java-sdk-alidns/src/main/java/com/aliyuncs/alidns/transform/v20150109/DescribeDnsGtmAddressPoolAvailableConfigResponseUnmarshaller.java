@@ -31,11 +31,11 @@ public class DescribeDnsGtmAddressPoolAvailableConfigResponseUnmarshaller {
 		List<AttributeInfo> attributeInfos = new ArrayList<AttributeInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDnsGtmAddressPoolAvailableConfigResponse.AttributeInfos.Length"); i++) {
 			AttributeInfo attributeInfo = new AttributeInfo();
+			attributeInfo.setFatherCode(_ctx.stringValue("DescribeDnsGtmAddressPoolAvailableConfigResponse.AttributeInfos["+ i +"].FatherCode"));
+			attributeInfo.setGroupName(_ctx.stringValue("DescribeDnsGtmAddressPoolAvailableConfigResponse.AttributeInfos["+ i +"].GroupName"));
 			attributeInfo.setLineCode(_ctx.stringValue("DescribeDnsGtmAddressPoolAvailableConfigResponse.AttributeInfos["+ i +"].LineCode"));
 			attributeInfo.setLineName(_ctx.stringValue("DescribeDnsGtmAddressPoolAvailableConfigResponse.AttributeInfos["+ i +"].LineName"));
 			attributeInfo.setGroupCode(_ctx.stringValue("DescribeDnsGtmAddressPoolAvailableConfigResponse.AttributeInfos["+ i +"].GroupCode"));
-			attributeInfo.setGroupName(_ctx.stringValue("DescribeDnsGtmAddressPoolAvailableConfigResponse.AttributeInfos["+ i +"].GroupName"));
-			attributeInfo.setFatherCode(_ctx.stringValue("DescribeDnsGtmAddressPoolAvailableConfigResponse.AttributeInfos["+ i +"].FatherCode"));
 
 			attributeInfos.add(attributeInfo);
 		}

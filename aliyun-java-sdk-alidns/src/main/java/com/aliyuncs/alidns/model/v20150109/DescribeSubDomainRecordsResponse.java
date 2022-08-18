@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSubDomainRecordsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Long totalCount;
-
-	private Long pageNumber;
 
 	private Long pageSize;
 
+	private String requestId;
+
+	private Long pageNumber;
+
 	private List<Record> domainRecords;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Long getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class DescribeSubDomainRecordsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Long getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Long getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Long pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<Record> getDomainRecords() {
@@ -77,50 +77,34 @@ public class DescribeSubDomainRecordsResponse extends AcsResponse {
 
 	public static class Record {
 
-		private String domainName;
-
-		private String recordId;
-
-		private String rR;
+		private String status;
 
 		private String type;
+
+		private Integer weight;
 
 		private String value;
 
 		private Long tTL;
 
-		private Long priority;
-
 		private String line;
 
-		private String status;
+		private String recordId;
+
+		private Long priority;
+
+		private String rR;
+
+		private String domainName;
 
 		private Boolean locked;
 
-		private Integer weight;
-
-		public String getDomainName() {
-			return this.domainName;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
-		}
-
-		public String getRecordId() {
-			return this.recordId;
-		}
-
-		public void setRecordId(String recordId) {
-			this.recordId = recordId;
-		}
-
-		public String getRR() {
-			return this.rR;
-		}
-
-		public void setRR(String rR) {
-			this.rR = rR;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getType() {
@@ -129,6 +113,14 @@ public class DescribeSubDomainRecordsResponse extends AcsResponse {
 
 		public void setType(String type) {
 			this.type = type;
+		}
+
+		public Integer getWeight() {
+			return this.weight;
+		}
+
+		public void setWeight(Integer weight) {
+			this.weight = weight;
 		}
 
 		public String getValue() {
@@ -147,14 +139,6 @@ public class DescribeSubDomainRecordsResponse extends AcsResponse {
 			this.tTL = tTL;
 		}
 
-		public Long getPriority() {
-			return this.priority;
-		}
-
-		public void setPriority(Long priority) {
-			this.priority = priority;
-		}
-
 		public String getLine() {
 			return this.line;
 		}
@@ -163,12 +147,36 @@ public class DescribeSubDomainRecordsResponse extends AcsResponse {
 			this.line = line;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getRecordId() {
+			return this.recordId;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setRecordId(String recordId) {
+			this.recordId = recordId;
+		}
+
+		public Long getPriority() {
+			return this.priority;
+		}
+
+		public void setPriority(Long priority) {
+			this.priority = priority;
+		}
+
+		public String getRR() {
+			return this.rR;
+		}
+
+		public void setRR(String rR) {
+			this.rR = rR;
+		}
+
+		public String getDomainName() {
+			return this.domainName;
+		}
+
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
 		}
 
 		public Boolean getLocked() {
@@ -177,14 +185,6 @@ public class DescribeSubDomainRecordsResponse extends AcsResponse {
 
 		public void setLocked(Boolean locked) {
 			this.locked = locked;
-		}
-
-		public Integer getWeight() {
-			return this.weight;
-		}
-
-		public void setWeight(Integer weight) {
-			this.weight = weight;
 		}
 	}
 

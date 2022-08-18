@@ -23,8 +23,8 @@ public class AddDomainBackupResponseUnmarshaller {
 	public static AddDomainBackupResponse unmarshall(AddDomainBackupResponse addDomainBackupResponse, UnmarshallerContext _ctx) {
 		
 		addDomainBackupResponse.setRequestId(_ctx.stringValue("AddDomainBackupResponse.RequestId"));
-		addDomainBackupResponse.setDomainName(_ctx.stringValue("AddDomainBackupResponse.DomainName"));
 		addDomainBackupResponse.setPeriodType(_ctx.stringValue("AddDomainBackupResponse.PeriodType"));
+		addDomainBackupResponse.setDomainName(_ctx.stringValue("AddDomainBackupResponse.DomainName"));
 	 
 	 	return addDomainBackupResponse;
 	}

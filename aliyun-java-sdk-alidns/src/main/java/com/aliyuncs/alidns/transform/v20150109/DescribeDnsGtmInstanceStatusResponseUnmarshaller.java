@@ -23,11 +23,11 @@ public class DescribeDnsGtmInstanceStatusResponseUnmarshaller {
 	public static DescribeDnsGtmInstanceStatusResponse unmarshall(DescribeDnsGtmInstanceStatusResponse describeDnsGtmInstanceStatusResponse, UnmarshallerContext _ctx) {
 		
 		describeDnsGtmInstanceStatusResponse.setRequestId(_ctx.stringValue("DescribeDnsGtmInstanceStatusResponse.RequestId"));
-		describeDnsGtmInstanceStatusResponse.setAddrNotAvailableNum(_ctx.integerValue("DescribeDnsGtmInstanceStatusResponse.AddrNotAvailableNum"));
-		describeDnsGtmInstanceStatusResponse.setAddrPoolGroupNotAvailableNum(_ctx.integerValue("DescribeDnsGtmInstanceStatusResponse.AddrPoolGroupNotAvailableNum"));
-		describeDnsGtmInstanceStatusResponse.setSwitchToFailoverStrategyNum(_ctx.integerValue("DescribeDnsGtmInstanceStatusResponse.SwitchToFailoverStrategyNum"));
 		describeDnsGtmInstanceStatusResponse.setStrategyNotAvailableNum(_ctx.integerValue("DescribeDnsGtmInstanceStatusResponse.StrategyNotAvailableNum"));
 		describeDnsGtmInstanceStatusResponse.setAddrAvailableNum(_ctx.integerValue("DescribeDnsGtmInstanceStatusResponse.AddrAvailableNum"));
+		describeDnsGtmInstanceStatusResponse.setSwitchToFailoverStrategyNum(_ctx.integerValue("DescribeDnsGtmInstanceStatusResponse.SwitchToFailoverStrategyNum"));
+		describeDnsGtmInstanceStatusResponse.setAddrNotAvailableNum(_ctx.integerValue("DescribeDnsGtmInstanceStatusResponse.AddrNotAvailableNum"));
+		describeDnsGtmInstanceStatusResponse.setAddrPoolGroupNotAvailableNum(_ctx.integerValue("DescribeDnsGtmInstanceStatusResponse.AddrPoolGroupNotAvailableNum"));
 	 
 	 	return describeDnsGtmInstanceStatusResponse;
 	}

@@ -34,17 +34,17 @@ public class DescribePdnsThreatStatisticsResponseUnmarshaller {
 		List<StatisticItem> data = new ArrayList<StatisticItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePdnsThreatStatisticsResponse.Data.Length"); i++) {
 			StatisticItem statisticItem = new StatisticItem();
-			statisticItem.setSubDomain(_ctx.stringValue("DescribePdnsThreatStatisticsResponse.Data["+ i +"].SubDomain"));
-			statisticItem.setUdpTotalCount(_ctx.longValue("DescribePdnsThreatStatisticsResponse.Data["+ i +"].UdpTotalCount"));
-			statisticItem.setTotalCount(_ctx.longValue("DescribePdnsThreatStatisticsResponse.Data["+ i +"].TotalCount"));
-			statisticItem.setSourceIp(_ctx.stringValue("DescribePdnsThreatStatisticsResponse.Data["+ i +"].SourceIp"));
-			statisticItem.setThreatLevel(_ctx.stringValue("DescribePdnsThreatStatisticsResponse.Data["+ i +"].ThreatLevel"));
 			statisticItem.setDomainName(_ctx.stringValue("DescribePdnsThreatStatisticsResponse.Data["+ i +"].DomainName"));
-			statisticItem.setThreatType(_ctx.stringValue("DescribePdnsThreatStatisticsResponse.Data["+ i +"].ThreatType"));
-			statisticItem.setMaxThreatLevel(_ctx.stringValue("DescribePdnsThreatStatisticsResponse.Data["+ i +"].MaxThreatLevel"));
+			statisticItem.setSubDomain(_ctx.stringValue("DescribePdnsThreatStatisticsResponse.Data["+ i +"].SubDomain"));
 			statisticItem.setLatestThreatTime(_ctx.longValue("DescribePdnsThreatStatisticsResponse.Data["+ i +"].LatestThreatTime"));
+			statisticItem.setTotalCount(_ctx.longValue("DescribePdnsThreatStatisticsResponse.Data["+ i +"].TotalCount"));
 			statisticItem.setDohTotalCount(_ctx.longValue("DescribePdnsThreatStatisticsResponse.Data["+ i +"].DohTotalCount"));
+			statisticItem.setUdpTotalCount(_ctx.longValue("DescribePdnsThreatStatisticsResponse.Data["+ i +"].UdpTotalCount"));
+			statisticItem.setMaxThreatLevel(_ctx.stringValue("DescribePdnsThreatStatisticsResponse.Data["+ i +"].MaxThreatLevel"));
 			statisticItem.setDomainCount(_ctx.longValue("DescribePdnsThreatStatisticsResponse.Data["+ i +"].DomainCount"));
+			statisticItem.setSourceIp(_ctx.stringValue("DescribePdnsThreatStatisticsResponse.Data["+ i +"].SourceIp"));
+			statisticItem.setThreatType(_ctx.stringValue("DescribePdnsThreatStatisticsResponse.Data["+ i +"].ThreatType"));
+			statisticItem.setThreatLevel(_ctx.stringValue("DescribePdnsThreatStatisticsResponse.Data["+ i +"].ThreatLevel"));
 
 			data.add(statisticItem);
 		}

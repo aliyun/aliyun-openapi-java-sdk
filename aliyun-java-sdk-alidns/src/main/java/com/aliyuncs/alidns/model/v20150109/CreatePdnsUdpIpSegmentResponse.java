@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreatePdnsUdpIpSegmentResponse extends AcsResponse {
 
-	private String validMessage;
-
 	private String requestId;
 
-	public String getValidMessage() {
-		return this.validMessage;
-	}
-
-	public void setValidMessage(String validMessage) {
-		this.validMessage = validMessage;
-	}
+	private String validMessage;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,6 +34,14 @@ public class CreatePdnsUdpIpSegmentResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getValidMessage() {
+		return this.validMessage;
+	}
+
+	public void setValidMessage(String validMessage) {
+		this.validMessage = validMessage;
 	}
 
 	@Override

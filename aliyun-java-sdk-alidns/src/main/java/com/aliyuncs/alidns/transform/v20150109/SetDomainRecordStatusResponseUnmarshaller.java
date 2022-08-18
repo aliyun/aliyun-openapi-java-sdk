@@ -23,8 +23,8 @@ public class SetDomainRecordStatusResponseUnmarshaller {
 	public static SetDomainRecordStatusResponse unmarshall(SetDomainRecordStatusResponse setDomainRecordStatusResponse, UnmarshallerContext _ctx) {
 		
 		setDomainRecordStatusResponse.setRequestId(_ctx.stringValue("SetDomainRecordStatusResponse.RequestId"));
-		setDomainRecordStatusResponse.setRecordId(_ctx.stringValue("SetDomainRecordStatusResponse.RecordId"));
 		setDomainRecordStatusResponse.setStatus(_ctx.stringValue("SetDomainRecordStatusResponse.Status"));
+		setDomainRecordStatusResponse.setRecordId(_ctx.stringValue("SetDomainRecordStatusResponse.RecordId"));
 	 
 	 	return setDomainRecordStatusResponse;
 	}

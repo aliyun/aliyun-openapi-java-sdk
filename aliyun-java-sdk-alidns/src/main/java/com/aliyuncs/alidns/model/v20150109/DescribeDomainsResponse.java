@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDomainsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Long totalCount;
-
-	private Long pageNumber;
 
 	private Long pageSize;
 
+	private String requestId;
+
+	private Long pageNumber;
+
 	private List<Domain> domains;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Long getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class DescribeDomainsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Long getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Long getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Long pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<Domain> getDomains() {
@@ -77,76 +77,60 @@ public class DescribeDomainsResponse extends AcsResponse {
 
 	public static class Domain {
 
-		private String domainId;
+		private String remark;
 
-		private String domainName;
-
-		private String punyCode;
-
-		private Boolean aliDomain;
+		private String createTime;
 
 		private Long recordCount;
 
-		private String registrantEmail;
+		private String instanceId;
 
-		private String remark;
+		private String domainName;
+
+		private String domainId;
+
+		private Boolean aliDomain;
 
 		private String groupId;
 
 		private String groupName;
 
-		private String instanceId;
-
-		private String versionCode;
-
-		private String versionName;
+		private String resourceGroupId;
 
 		private String instanceEndTime;
 
 		private Boolean instanceExpired;
 
-		private Boolean starmark;
+		private String versionName;
 
-		private String createTime;
+		private String versionCode;
+
+		private String punyCode;
+
+		private String registrantEmail;
 
 		private Long createTimestamp;
 
-		private String resourceGroupId;
+		private Boolean starmark;
 
 		private List<Tag> tags;
 
 		private List<String> dnsServers;
 
-		public String getDomainId() {
-			return this.domainId;
+		public String getRemark() {
+			return this.remark;
 		}
 
-		public void setDomainId(String domainId) {
-			this.domainId = domainId;
+		public void setRemark(String remark) {
+			this.remark = remark;
 		}
 
-		public String getDomainName() {
-			return this.domainName;
+		public String getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
-		}
-
-		public String getPunyCode() {
-			return this.punyCode;
-		}
-
-		public void setPunyCode(String punyCode) {
-			this.punyCode = punyCode;
-		}
-
-		public Boolean getAliDomain() {
-			return this.aliDomain;
-		}
-
-		public void setAliDomain(Boolean aliDomain) {
-			this.aliDomain = aliDomain;
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
 		public Long getRecordCount() {
@@ -157,20 +141,36 @@ public class DescribeDomainsResponse extends AcsResponse {
 			this.recordCount = recordCount;
 		}
 
-		public String getRegistrantEmail() {
-			return this.registrantEmail;
+		public String getInstanceId() {
+			return this.instanceId;
 		}
 
-		public void setRegistrantEmail(String registrantEmail) {
-			this.registrantEmail = registrantEmail;
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
-		public String getRemark() {
-			return this.remark;
+		public String getDomainName() {
+			return this.domainName;
 		}
 
-		public void setRemark(String remark) {
-			this.remark = remark;
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
+		}
+
+		public String getDomainId() {
+			return this.domainId;
+		}
+
+		public void setDomainId(String domainId) {
+			this.domainId = domainId;
+		}
+
+		public Boolean getAliDomain() {
+			return this.aliDomain;
+		}
+
+		public void setAliDomain(Boolean aliDomain) {
+			this.aliDomain = aliDomain;
 		}
 
 		public String getGroupId() {
@@ -189,28 +189,12 @@ public class DescribeDomainsResponse extends AcsResponse {
 			this.groupName = groupName;
 		}
 
-		public String getInstanceId() {
-			return this.instanceId;
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getVersionCode() {
-			return this.versionCode;
-		}
-
-		public void setVersionCode(String versionCode) {
-			this.versionCode = versionCode;
-		}
-
-		public String getVersionName() {
-			return this.versionName;
-		}
-
-		public void setVersionName(String versionName) {
-			this.versionName = versionName;
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public String getInstanceEndTime() {
@@ -229,20 +213,36 @@ public class DescribeDomainsResponse extends AcsResponse {
 			this.instanceExpired = instanceExpired;
 		}
 
-		public Boolean getStarmark() {
-			return this.starmark;
+		public String getVersionName() {
+			return this.versionName;
 		}
 
-		public void setStarmark(Boolean starmark) {
-			this.starmark = starmark;
+		public void setVersionName(String versionName) {
+			this.versionName = versionName;
 		}
 
-		public String getCreateTime() {
-			return this.createTime;
+		public String getVersionCode() {
+			return this.versionCode;
 		}
 
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
+		public void setVersionCode(String versionCode) {
+			this.versionCode = versionCode;
+		}
+
+		public String getPunyCode() {
+			return this.punyCode;
+		}
+
+		public void setPunyCode(String punyCode) {
+			this.punyCode = punyCode;
+		}
+
+		public String getRegistrantEmail() {
+			return this.registrantEmail;
+		}
+
+		public void setRegistrantEmail(String registrantEmail) {
+			this.registrantEmail = registrantEmail;
 		}
 
 		public Long getCreateTimestamp() {
@@ -253,12 +253,12 @@ public class DescribeDomainsResponse extends AcsResponse {
 			this.createTimestamp = createTimestamp;
 		}
 
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
+		public Boolean getStarmark() {
+			return this.starmark;
 		}
 
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
+		public void setStarmark(Boolean starmark) {
+			this.starmark = starmark;
 		}
 
 		public List<Tag> getTags() {

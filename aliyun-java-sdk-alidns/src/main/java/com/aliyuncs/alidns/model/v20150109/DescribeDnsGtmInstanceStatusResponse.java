@@ -24,17 +24,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDnsGtmInstanceStatusResponse extends AcsResponse {
 
+	private Integer strategyNotAvailableNum;
+
+	private Integer addrAvailableNum;
+
 	private String requestId;
+
+	private Integer switchToFailoverStrategyNum;
 
 	private Integer addrNotAvailableNum;
 
 	private Integer addrPoolGroupNotAvailableNum;
 
-	private Integer switchToFailoverStrategyNum;
+	public Integer getStrategyNotAvailableNum() {
+		return this.strategyNotAvailableNum;
+	}
 
-	private Integer strategyNotAvailableNum;
+	public void setStrategyNotAvailableNum(Integer strategyNotAvailableNum) {
+		this.strategyNotAvailableNum = strategyNotAvailableNum;
+	}
 
-	private Integer addrAvailableNum;
+	public Integer getAddrAvailableNum() {
+		return this.addrAvailableNum;
+	}
+
+	public void setAddrAvailableNum(Integer addrAvailableNum) {
+		this.addrAvailableNum = addrAvailableNum;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,6 +58,14 @@ public class DescribeDnsGtmInstanceStatusResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getSwitchToFailoverStrategyNum() {
+		return this.switchToFailoverStrategyNum;
+	}
+
+	public void setSwitchToFailoverStrategyNum(Integer switchToFailoverStrategyNum) {
+		this.switchToFailoverStrategyNum = switchToFailoverStrategyNum;
 	}
 
 	public Integer getAddrNotAvailableNum() {
@@ -58,30 +82,6 @@ public class DescribeDnsGtmInstanceStatusResponse extends AcsResponse {
 
 	public void setAddrPoolGroupNotAvailableNum(Integer addrPoolGroupNotAvailableNum) {
 		this.addrPoolGroupNotAvailableNum = addrPoolGroupNotAvailableNum;
-	}
-
-	public Integer getSwitchToFailoverStrategyNum() {
-		return this.switchToFailoverStrategyNum;
-	}
-
-	public void setSwitchToFailoverStrategyNum(Integer switchToFailoverStrategyNum) {
-		this.switchToFailoverStrategyNum = switchToFailoverStrategyNum;
-	}
-
-	public Integer getStrategyNotAvailableNum() {
-		return this.strategyNotAvailableNum;
-	}
-
-	public void setStrategyNotAvailableNum(Integer strategyNotAvailableNum) {
-		this.strategyNotAvailableNum = strategyNotAvailableNum;
-	}
-
-	public Integer getAddrAvailableNum() {
-		return this.addrAvailableNum;
-	}
-
-	public void setAddrAvailableNum(Integer addrAvailableNum) {
-		this.addrAvailableNum = addrAvailableNum;
 	}
 
 	@Override

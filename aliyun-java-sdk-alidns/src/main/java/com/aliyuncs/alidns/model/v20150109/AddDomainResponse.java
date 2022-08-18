@@ -25,9 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class AddDomainResponse extends AcsResponse {
 
-	private String requestId;
+	private String groupName;
 
 	private String domainId;
+
+	private String requestId;
 
 	private String domainName;
 
@@ -35,16 +37,14 @@ public class AddDomainResponse extends AcsResponse {
 
 	private String groupId;
 
-	private String groupName;
-
 	private List<String> dnsServers;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getGroupName() {
+		return this.groupName;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setGroupName(String groupName) {
+		this.groupName = groupName;
 	}
 
 	public String getDomainId() {
@@ -53,6 +53,14 @@ public class AddDomainResponse extends AcsResponse {
 
 	public void setDomainId(String domainId) {
 		this.domainId = domainId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getDomainName() {
@@ -77,14 +85,6 @@ public class AddDomainResponse extends AcsResponse {
 
 	public void setGroupId(String groupId) {
 		this.groupId = groupId;
-	}
-
-	public String getGroupName() {
-		return this.groupName;
-	}
-
-	public void setGroupName(String groupName) {
-		this.groupName = groupName;
 	}
 
 	public List<String> getDnsServers() {

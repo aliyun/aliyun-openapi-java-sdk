@@ -47,46 +47,54 @@ public class DescribePdnsRequestStatisticResponse extends AcsResponse {
 
 	public static class StatisticItem {
 
-		private Long udpTotalCount;
+		private Long v6HttpCount;
 
-		private Long ipCount;
+		private Long v6HttpsCount;
+
+		private Long timestamp;
 
 		private Long totalCount;
 
 		private Long v4HttpCount;
 
-		private Long v6HttpCount;
+		private Long v4HttpsCount;
 
 		private Long v4Count;
 
-		private Long httpsCount;
+		private Long v6Count;
 
 		private Long httpCount;
 
-		private Long v4HttpsCount;
-
-		private Long timestamp;
-
-		private Long v6HttpsCount;
+		private Long httpsCount;
 
 		private Long dohTotalCount;
 
-		private Long v6Count;
+		private Long udpTotalCount;
 
-		public Long getUdpTotalCount() {
-			return this.udpTotalCount;
+		private Long ipCount;
+
+		public Long getV6HttpCount() {
+			return this.v6HttpCount;
 		}
 
-		public void setUdpTotalCount(Long udpTotalCount) {
-			this.udpTotalCount = udpTotalCount;
+		public void setV6HttpCount(Long v6HttpCount) {
+			this.v6HttpCount = v6HttpCount;
 		}
 
-		public Long getIpCount() {
-			return this.ipCount;
+		public Long getV6HttpsCount() {
+			return this.v6HttpsCount;
 		}
 
-		public void setIpCount(Long ipCount) {
-			this.ipCount = ipCount;
+		public void setV6HttpsCount(Long v6HttpsCount) {
+			this.v6HttpsCount = v6HttpsCount;
+		}
+
+		public Long getTimestamp() {
+			return this.timestamp;
+		}
+
+		public void setTimestamp(Long timestamp) {
+			this.timestamp = timestamp;
 		}
 
 		public Long getTotalCount() {
@@ -105,12 +113,12 @@ public class DescribePdnsRequestStatisticResponse extends AcsResponse {
 			this.v4HttpCount = v4HttpCount;
 		}
 
-		public Long getV6HttpCount() {
-			return this.v6HttpCount;
+		public Long getV4HttpsCount() {
+			return this.v4HttpsCount;
 		}
 
-		public void setV6HttpCount(Long v6HttpCount) {
-			this.v6HttpCount = v6HttpCount;
+		public void setV4HttpsCount(Long v4HttpsCount) {
+			this.v4HttpsCount = v4HttpsCount;
 		}
 
 		public Long getV4Count() {
@@ -121,12 +129,12 @@ public class DescribePdnsRequestStatisticResponse extends AcsResponse {
 			this.v4Count = v4Count;
 		}
 
-		public Long getHttpsCount() {
-			return this.httpsCount;
+		public Long getV6Count() {
+			return this.v6Count;
 		}
 
-		public void setHttpsCount(Long httpsCount) {
-			this.httpsCount = httpsCount;
+		public void setV6Count(Long v6Count) {
+			this.v6Count = v6Count;
 		}
 
 		public Long getHttpCount() {
@@ -137,28 +145,12 @@ public class DescribePdnsRequestStatisticResponse extends AcsResponse {
 			this.httpCount = httpCount;
 		}
 
-		public Long getV4HttpsCount() {
-			return this.v4HttpsCount;
+		public Long getHttpsCount() {
+			return this.httpsCount;
 		}
 
-		public void setV4HttpsCount(Long v4HttpsCount) {
-			this.v4HttpsCount = v4HttpsCount;
-		}
-
-		public Long getTimestamp() {
-			return this.timestamp;
-		}
-
-		public void setTimestamp(Long timestamp) {
-			this.timestamp = timestamp;
-		}
-
-		public Long getV6HttpsCount() {
-			return this.v6HttpsCount;
-		}
-
-		public void setV6HttpsCount(Long v6HttpsCount) {
-			this.v6HttpsCount = v6HttpsCount;
+		public void setHttpsCount(Long httpsCount) {
+			this.httpsCount = httpsCount;
 		}
 
 		public Long getDohTotalCount() {
@@ -169,12 +161,20 @@ public class DescribePdnsRequestStatisticResponse extends AcsResponse {
 			this.dohTotalCount = dohTotalCount;
 		}
 
-		public Long getV6Count() {
-			return this.v6Count;
+		public Long getUdpTotalCount() {
+			return this.udpTotalCount;
 		}
 
-		public void setV6Count(Long v6Count) {
-			this.v6Count = v6Count;
+		public void setUdpTotalCount(Long udpTotalCount) {
+			this.udpTotalCount = udpTotalCount;
+		}
+
+		public Long getIpCount() {
+			return this.ipCount;
+		}
+
+		public void setIpCount(Long ipCount) {
+			this.ipCount = ipCount;
 		}
 	}
 

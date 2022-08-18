@@ -34,11 +34,11 @@ public class DescribePdnsThreatLogsResponseUnmarshaller {
 		List<Log> logs = new ArrayList<Log>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePdnsThreatLogsResponse.Logs.Length"); i++) {
 			Log log = new Log();
-			log.setSubDomain(_ctx.stringValue("DescribePdnsThreatLogsResponse.Logs["+ i +"].SubDomain"));
-			log.setSourceIp(_ctx.stringValue("DescribePdnsThreatLogsResponse.Logs["+ i +"].SourceIp"));
-			log.setThreatLevel(_ctx.stringValue("DescribePdnsThreatLogsResponse.Logs["+ i +"].ThreatLevel"));
 			log.setThreatTime(_ctx.stringValue("DescribePdnsThreatLogsResponse.Logs["+ i +"].ThreatTime"));
 			log.setThreatType(_ctx.stringValue("DescribePdnsThreatLogsResponse.Logs["+ i +"].ThreatType"));
+			log.setThreatLevel(_ctx.stringValue("DescribePdnsThreatLogsResponse.Logs["+ i +"].ThreatLevel"));
+			log.setSourceIp(_ctx.stringValue("DescribePdnsThreatLogsResponse.Logs["+ i +"].SourceIp"));
+			log.setSubDomain(_ctx.stringValue("DescribePdnsThreatLogsResponse.Logs["+ i +"].SubDomain"));
 
 			logs.add(log);
 		}

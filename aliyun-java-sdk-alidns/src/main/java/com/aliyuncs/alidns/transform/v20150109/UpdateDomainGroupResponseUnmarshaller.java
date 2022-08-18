@@ -23,8 +23,8 @@ public class UpdateDomainGroupResponseUnmarshaller {
 	public static UpdateDomainGroupResponse unmarshall(UpdateDomainGroupResponse updateDomainGroupResponse, UnmarshallerContext _ctx) {
 		
 		updateDomainGroupResponse.setRequestId(_ctx.stringValue("UpdateDomainGroupResponse.RequestId"));
-		updateDomainGroupResponse.setGroupId(_ctx.stringValue("UpdateDomainGroupResponse.GroupId"));
 		updateDomainGroupResponse.setGroupName(_ctx.stringValue("UpdateDomainGroupResponse.GroupName"));
+		updateDomainGroupResponse.setGroupId(_ctx.stringValue("UpdateDomainGroupResponse.GroupId"));
 	 
 	 	return updateDomainGroupResponse;
 	}

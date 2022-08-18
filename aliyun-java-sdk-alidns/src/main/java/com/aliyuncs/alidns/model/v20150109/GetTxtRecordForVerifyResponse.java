@@ -24,13 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetTxtRecordForVerifyResponse extends AcsResponse {
 
+	private String rR;
+
 	private String requestId;
 
 	private String domainName;
 
-	private String rR;
-
 	private String value;
+
+	public String getRR() {
+		return this.rR;
+	}
+
+	public void setRR(String rR) {
+		this.rR = rR;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -46,14 +54,6 @@ public class GetTxtRecordForVerifyResponse extends AcsResponse {
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-	}
-
-	public String getRR() {
-		return this.rR;
-	}
-
-	public void setRR(String rR) {
-		this.rR = rR;
 	}
 
 	public String getValue() {

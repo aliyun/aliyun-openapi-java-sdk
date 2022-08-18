@@ -28,18 +28,18 @@ public class DescribeTransferDomainsResponseUnmarshaller {
 		
 		describeTransferDomainsResponse.setRequestId(_ctx.stringValue("DescribeTransferDomainsResponse.RequestId"));
 		describeTransferDomainsResponse.setTotalCount(_ctx.longValue("DescribeTransferDomainsResponse.TotalCount"));
-		describeTransferDomainsResponse.setPageNumber(_ctx.longValue("DescribeTransferDomainsResponse.PageNumber"));
 		describeTransferDomainsResponse.setPageSize(_ctx.longValue("DescribeTransferDomainsResponse.PageSize"));
+		describeTransferDomainsResponse.setPageNumber(_ctx.longValue("DescribeTransferDomainsResponse.PageNumber"));
 
 		List<DomainTransfer> domainTransfers = new ArrayList<DomainTransfer>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeTransferDomainsResponse.DomainTransfers.Length"); i++) {
 			DomainTransfer domainTransfer = new DomainTransfer();
-			domainTransfer.setDomainName(_ctx.stringValue("DescribeTransferDomainsResponse.DomainTransfers["+ i +"].DomainName"));
-			domainTransfer.setCreateTime(_ctx.stringValue("DescribeTransferDomainsResponse.DomainTransfers["+ i +"].CreateTime"));
-			domainTransfer.setCreateTimestamp(_ctx.longValue("DescribeTransferDomainsResponse.DomainTransfers["+ i +"].CreateTimestamp"));
 			domainTransfer.setFromUserId(_ctx.longValue("DescribeTransferDomainsResponse.DomainTransfers["+ i +"].FromUserId"));
+			domainTransfer.setCreateTime(_ctx.stringValue("DescribeTransferDomainsResponse.DomainTransfers["+ i +"].CreateTime"));
 			domainTransfer.setTargetUserId(_ctx.longValue("DescribeTransferDomainsResponse.DomainTransfers["+ i +"].TargetUserId"));
+			domainTransfer.setDomainName(_ctx.stringValue("DescribeTransferDomainsResponse.DomainTransfers["+ i +"].DomainName"));
 			domainTransfer.setId(_ctx.longValue("DescribeTransferDomainsResponse.DomainTransfers["+ i +"].Id"));
+			domainTransfer.setCreateTimestamp(_ctx.longValue("DescribeTransferDomainsResponse.DomainTransfers["+ i +"].CreateTimestamp"));
 
 			domainTransfers.add(domainTransfer);
 		}

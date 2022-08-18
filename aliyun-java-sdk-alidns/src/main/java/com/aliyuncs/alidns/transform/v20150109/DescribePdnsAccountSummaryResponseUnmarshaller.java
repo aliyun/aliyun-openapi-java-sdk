@@ -26,13 +26,13 @@ public class DescribePdnsAccountSummaryResponseUnmarshaller {
 		describePdnsAccountSummaryResponse.setRequestId(_ctx.stringValue("DescribePdnsAccountSummaryResponse.RequestId"));
 
 		Data data = new Data();
+		data.setUserId(_ctx.longValue("DescribePdnsAccountSummaryResponse.Data.UserId"));
+		data.setDomainCount(_ctx.longValue("DescribePdnsAccountSummaryResponse.Data.DomainCount"));
+		data.setSubDomainCount(_ctx.longValue("DescribePdnsAccountSummaryResponse.Data.SubDomainCount"));
+		data.setHttpCount(_ctx.longValue("DescribePdnsAccountSummaryResponse.Data.HttpCount"));
+		data.setHttpsCount(_ctx.longValue("DescribePdnsAccountSummaryResponse.Data.HttpsCount"));
 		data.setTotalCount(_ctx.longValue("DescribePdnsAccountSummaryResponse.Data.TotalCount"));
 		data.setThreatCount(_ctx.longValue("DescribePdnsAccountSummaryResponse.Data.ThreatCount"));
-		data.setUserId(_ctx.longValue("DescribePdnsAccountSummaryResponse.Data.UserId"));
-		data.setHttpsCount(_ctx.longValue("DescribePdnsAccountSummaryResponse.Data.HttpsCount"));
-		data.setHttpCount(_ctx.longValue("DescribePdnsAccountSummaryResponse.Data.HttpCount"));
-		data.setSubDomainCount(_ctx.longValue("DescribePdnsAccountSummaryResponse.Data.SubDomainCount"));
-		data.setDomainCount(_ctx.longValue("DescribePdnsAccountSummaryResponse.Data.DomainCount"));
 		describePdnsAccountSummaryResponse.setData(data);
 	 
 	 	return describePdnsAccountSummaryResponse;

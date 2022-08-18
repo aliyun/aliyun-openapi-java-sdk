@@ -26,10 +26,10 @@ public class DescribePdnsAppKeyResponseUnmarshaller {
 		describePdnsAppKeyResponse.setRequestId(_ctx.stringValue("DescribePdnsAppKeyResponse.RequestId"));
 
 		AppKey appKey = new AppKey();
-		appKey.setState(_ctx.stringValue("DescribePdnsAppKeyResponse.AppKey.State"));
 		appKey.setAppKeyId(_ctx.stringValue("DescribePdnsAppKeyResponse.AppKey.AppKeyId"));
-		appKey.setCreateDate(_ctx.stringValue("DescribePdnsAppKeyResponse.AppKey.CreateDate"));
 		appKey.setAppKeySecret(_ctx.stringValue("DescribePdnsAppKeyResponse.AppKey.AppKeySecret"));
+		appKey.setState(_ctx.stringValue("DescribePdnsAppKeyResponse.AppKey.State"));
+		appKey.setCreateDate(_ctx.stringValue("DescribePdnsAppKeyResponse.AppKey.CreateDate"));
 		describePdnsAppKeyResponse.setAppKey(appKey);
 	 
 	 	return describePdnsAppKeyResponse;

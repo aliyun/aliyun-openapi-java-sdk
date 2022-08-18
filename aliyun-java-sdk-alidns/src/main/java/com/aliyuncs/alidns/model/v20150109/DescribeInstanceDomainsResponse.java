@@ -25,17 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeInstanceDomainsResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalItems;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
-
 	private Integer totalPages;
 
+	private Integer totalItems;
+
 	private List<InstanceDomain> instanceDomains;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -43,14 +51,6 @@ public class DescribeInstanceDomainsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalItems() {
-		return this.totalItems;
-	}
-
-	public void setTotalItems(Integer totalItems) {
-		this.totalItems = totalItems;
 	}
 
 	public Integer getPageNumber() {
@@ -61,20 +61,20 @@ public class DescribeInstanceDomainsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
 	public Integer getTotalPages() {
 		return this.totalPages;
 	}
 
 	public void setTotalPages(Integer totalPages) {
 		this.totalPages = totalPages;
+	}
+
+	public Integer getTotalItems() {
+		return this.totalItems;
+	}
+
+	public void setTotalItems(Integer totalItems) {
+		this.totalItems = totalItems;
 	}
 
 	public List<InstanceDomain> getInstanceDomains() {
@@ -87,19 +87,11 @@ public class DescribeInstanceDomainsResponse extends AcsResponse {
 
 	public static class InstanceDomain {
 
-		private String domainName;
-
 		private String createTime;
 
+		private String domainName;
+
 		private Long createTimestamp;
-
-		public String getDomainName() {
-			return this.domainName;
-		}
-
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
-		}
 
 		public String getCreateTime() {
 			return this.createTime;
@@ -107,6 +99,14 @@ public class DescribeInstanceDomainsResponse extends AcsResponse {
 
 		public void setCreateTime(String createTime) {
 			this.createTime = createTime;
+		}
+
+		public String getDomainName() {
+			return this.domainName;
+		}
+
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
 		}
 
 		public Long getCreateTimestamp() {

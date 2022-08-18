@@ -27,9 +27,9 @@ public class DescribePdnsOperateLogsResponse extends AcsResponse {
 
 	private Long totalCount;
 
-	private String requestId;
-
 	private Long pageSize;
+
+	private String requestId;
 
 	private Long pageNumber;
 
@@ -43,20 +43,20 @@ public class DescribePdnsOperateLogsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Long getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Long pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Long getPageNumber() {
@@ -79,9 +79,9 @@ public class DescribePdnsOperateLogsResponse extends AcsResponse {
 
 		private String operateTime;
 
-		private String action;
-
 		private String type;
+
+		private String action;
 
 		private String content;
 
@@ -93,20 +93,20 @@ public class DescribePdnsOperateLogsResponse extends AcsResponse {
 			this.operateTime = operateTime;
 		}
 
-		public String getAction() {
-			return this.action;
-		}
-
-		public void setAction(String action) {
-			this.action = action;
-		}
-
 		public String getType() {
 			return this.type;
 		}
 
 		public void setType(String type) {
 			this.type = type;
+		}
+
+		public String getAction() {
+			return this.action;
+		}
+
+		public void setAction(String action) {
+			this.action = action;
 		}
 
 		public String getContent() {

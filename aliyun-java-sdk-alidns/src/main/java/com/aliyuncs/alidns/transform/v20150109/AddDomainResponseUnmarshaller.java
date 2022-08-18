@@ -26,11 +26,11 @@ public class AddDomainResponseUnmarshaller {
 	public static AddDomainResponse unmarshall(AddDomainResponse addDomainResponse, UnmarshallerContext _ctx) {
 		
 		addDomainResponse.setRequestId(_ctx.stringValue("AddDomainResponse.RequestId"));
+		addDomainResponse.setGroupName(_ctx.stringValue("AddDomainResponse.GroupName"));
 		addDomainResponse.setDomainId(_ctx.stringValue("AddDomainResponse.DomainId"));
 		addDomainResponse.setDomainName(_ctx.stringValue("AddDomainResponse.DomainName"));
 		addDomainResponse.setPunyCode(_ctx.stringValue("AddDomainResponse.PunyCode"));
 		addDomainResponse.setGroupId(_ctx.stringValue("AddDomainResponse.GroupId"));
-		addDomainResponse.setGroupName(_ctx.stringValue("AddDomainResponse.GroupName"));
 
 		List<String> dnsServers = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("AddDomainResponse.DnsServers.Length"); i++) {

@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeTransferDomainsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Long totalCount;
-
-	private Long pageNumber;
 
 	private Long pageSize;
 
+	private String requestId;
+
+	private Long pageNumber;
+
 	private List<DomainTransfer> domainTransfers;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Long getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class DescribeTransferDomainsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Long getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Long getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Long pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<DomainTransfer> getDomainTransfers() {
@@ -77,24 +77,24 @@ public class DescribeTransferDomainsResponse extends AcsResponse {
 
 	public static class DomainTransfer {
 
-		private String domainName;
+		private Long fromUserId;
 
 		private String createTime;
 
-		private Long createTimestamp;
-
-		private Long fromUserId;
-
 		private Long targetUserId;
+
+		private String domainName;
 
 		private Long id;
 
-		public String getDomainName() {
-			return this.domainName;
+		private Long createTimestamp;
+
+		public Long getFromUserId() {
+			return this.fromUserId;
 		}
 
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
+		public void setFromUserId(Long fromUserId) {
+			this.fromUserId = fromUserId;
 		}
 
 		public String getCreateTime() {
@@ -105,22 +105,6 @@ public class DescribeTransferDomainsResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public Long getCreateTimestamp() {
-			return this.createTimestamp;
-		}
-
-		public void setCreateTimestamp(Long createTimestamp) {
-			this.createTimestamp = createTimestamp;
-		}
-
-		public Long getFromUserId() {
-			return this.fromUserId;
-		}
-
-		public void setFromUserId(Long fromUserId) {
-			this.fromUserId = fromUserId;
-		}
-
 		public Long getTargetUserId() {
 			return this.targetUserId;
 		}
@@ -129,12 +113,28 @@ public class DescribeTransferDomainsResponse extends AcsResponse {
 			this.targetUserId = targetUserId;
 		}
 
+		public String getDomainName() {
+			return this.domainName;
+		}
+
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
+		}
+
 		public Long getId() {
 			return this.id;
 		}
 
 		public void setId(Long id) {
 			this.id = id;
+		}
+
+		public Long getCreateTimestamp() {
+			return this.createTimestamp;
+		}
+
+		public void setCreateTimestamp(Long createTimestamp) {
+			this.createTimestamp = createTimestamp;
 		}
 	}
 

@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDnsGtmInstanceSystemCnameResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String systemCname;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getSystemCname() {
 		return this.systemCname;
@@ -42,6 +34,14 @@ public class DescribeDnsGtmInstanceSystemCnameResponse extends AcsResponse {
 
 	public void setSystemCname(String systemCname) {
 		this.systemCname = systemCname;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

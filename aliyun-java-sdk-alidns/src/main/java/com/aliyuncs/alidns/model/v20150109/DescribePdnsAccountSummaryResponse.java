@@ -46,19 +46,59 @@ public class DescribePdnsAccountSummaryResponse extends AcsResponse {
 
 	public static class Data {
 
+		private Long userId;
+
+		private Long domainCount;
+
+		private Long subDomainCount;
+
+		private Long httpCount;
+
+		private Long httpsCount;
+
 		private Long totalCount;
 
 		private Long threatCount;
 
-		private Long userId;
+		public Long getUserId() {
+			return this.userId;
+		}
 
-		private Long httpsCount;
+		public void setUserId(Long userId) {
+			this.userId = userId;
+		}
 
-		private Long httpCount;
+		public Long getDomainCount() {
+			return this.domainCount;
+		}
 
-		private Long subDomainCount;
+		public void setDomainCount(Long domainCount) {
+			this.domainCount = domainCount;
+		}
 
-		private Long domainCount;
+		public Long getSubDomainCount() {
+			return this.subDomainCount;
+		}
+
+		public void setSubDomainCount(Long subDomainCount) {
+			this.subDomainCount = subDomainCount;
+		}
+
+		public Long getHttpCount() {
+			return this.httpCount;
+		}
+
+		public void setHttpCount(Long httpCount) {
+			this.httpCount = httpCount;
+		}
+
+		public Long getHttpsCount() {
+			return this.httpsCount;
+		}
+
+		public void setHttpsCount(Long httpsCount) {
+			this.httpsCount = httpsCount;
+		}
 
 		public Long getTotalCount() {
 			return this.totalCount;
@@ -74,46 +114,6 @@ public class DescribePdnsAccountSummaryResponse extends AcsResponse {
 
 		public void setThreatCount(Long threatCount) {
 			this.threatCount = threatCount;
-		}
-
-		public Long getUserId() {
-			return this.userId;
-		}
-
-		public void setUserId(Long userId) {
-			this.userId = userId;
-		}
-
-		public Long getHttpsCount() {
-			return this.httpsCount;
-		}
-
-		public void setHttpsCount(Long httpsCount) {
-			this.httpsCount = httpsCount;
-		}
-
-		public Long getHttpCount() {
-			return this.httpCount;
-		}
-
-		public void setHttpCount(Long httpCount) {
-			this.httpCount = httpCount;
-		}
-
-		public Long getSubDomainCount() {
-			return this.subDomainCount;
-		}
-
-		public void setSubDomainCount(Long subDomainCount) {
-			this.subDomainCount = subDomainCount;
-		}
-
-		public Long getDomainCount() {
-			return this.domainCount;
-		}
-
-		public void setDomainCount(Long domainCount) {
-			this.domainCount = domainCount;
 		}
 	}
 

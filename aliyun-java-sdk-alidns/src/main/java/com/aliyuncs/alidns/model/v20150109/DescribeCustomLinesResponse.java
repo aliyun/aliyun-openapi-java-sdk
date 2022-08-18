@@ -25,17 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCustomLinesResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageSize;
 
-	private Integer totalItems;
+	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
-
 	private Integer totalPages;
 
+	private Integer totalItems;
+
 	private List<CustomLine> customLines;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -43,14 +51,6 @@ public class DescribeCustomLinesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalItems() {
-		return this.totalItems;
-	}
-
-	public void setTotalItems(Integer totalItems) {
-		this.totalItems = totalItems;
 	}
 
 	public Integer getPageNumber() {
@@ -61,20 +61,20 @@ public class DescribeCustomLinesResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
 	public Integer getTotalPages() {
 		return this.totalPages;
 	}
 
 	public void setTotalPages(Integer totalPages) {
 		this.totalPages = totalPages;
+	}
+
+	public Integer getTotalItems() {
+		return this.totalItems;
+	}
+
+	public void setTotalItems(Integer totalItems) {
+		this.totalItems = totalItems;
 	}
 
 	public List<CustomLine> getCustomLines() {
@@ -87,26 +87,34 @@ public class DescribeCustomLinesResponse extends AcsResponse {
 
 	public static class CustomLine {
 
-		private Long id;
-
-		private String name;
-
 		private String createTime;
-
-		private Long createTimestamp;
-
-		private String ipSegments;
 
 		private String code;
 
+		private String name;
+
+		private String ipSegments;
+
+		private Long id;
+
+		private Long createTimestamp;
+
 		private List<IpSegment> ipSegmentList;
 
-		public Long getId() {
-			return this.id;
+		public String getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getCode() {
+			return this.code;
+		}
+
+		public void setCode(String code) {
+			this.code = code;
 		}
 
 		public String getName() {
@@ -117,22 +125,6 @@ public class DescribeCustomLinesResponse extends AcsResponse {
 			this.name = name;
 		}
 
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public Long getCreateTimestamp() {
-			return this.createTimestamp;
-		}
-
-		public void setCreateTimestamp(Long createTimestamp) {
-			this.createTimestamp = createTimestamp;
-		}
-
 		public String getIpSegments() {
 			return this.ipSegments;
 		}
@@ -141,12 +133,20 @@ public class DescribeCustomLinesResponse extends AcsResponse {
 			this.ipSegments = ipSegments;
 		}
 
-		public String getCode() {
-			return this.code;
+		public Long getId() {
+			return this.id;
 		}
 
-		public void setCode(String code) {
-			this.code = code;
+		public void setId(Long id) {
+			this.id = id;
+		}
+
+		public Long getCreateTimestamp() {
+			return this.createTimestamp;
+		}
+
+		public void setCreateTimestamp(Long createTimestamp) {
+			this.createTimestamp = createTimestamp;
 		}
 
 		public List<IpSegment> getIpSegmentList() {
@@ -159,18 +159,18 @@ public class DescribeCustomLinesResponse extends AcsResponse {
 
 		public static class IpSegment {
 
-			private String name;
+			private String endIp;
 
 			private String startIp;
 
-			private String endIp;
+			private String name;
 
-			public String getName() {
-				return this.name;
+			public String getEndIp() {
+				return this.endIp;
 			}
 
-			public void setName(String name) {
-				this.name = name;
+			public void setEndIp(String endIp) {
+				this.endIp = endIp;
 			}
 
 			public String getStartIp() {
@@ -181,12 +181,12 @@ public class DescribeCustomLinesResponse extends AcsResponse {
 				this.startIp = startIp;
 			}
 
-			public String getEndIp() {
-				return this.endIp;
+			public String getName() {
+				return this.name;
 			}
 
-			public void setEndIp(String endIp) {
-				this.endIp = endIp;
+			public void setName(String name) {
+				this.name = name;
 			}
 		}
 	}

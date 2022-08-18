@@ -77,21 +77,29 @@ public class DescribeDnsGtmMonitorAvailableConfigResponse extends AcsResponse {
 
 	public static class Ipv4IspCityNode {
 
+		private String cityCode;
+
 		private String groupName;
 
-		private String cityCode;
+		private String ispCode;
+
+		private String cityName;
 
 		private String ispName;
 
 		private String groupType;
 
-		private String cityName;
-
 		private Boolean defaultSelected;
 
-		private String ispCode;
-
 		private List<String> ips;
+
+		public String getCityCode() {
+			return this.cityCode;
+		}
+
+		public void setCityCode(String cityCode) {
+			this.cityCode = cityCode;
+		}
 
 		public String getGroupName() {
 			return this.groupName;
@@ -101,12 +109,20 @@ public class DescribeDnsGtmMonitorAvailableConfigResponse extends AcsResponse {
 			this.groupName = groupName;
 		}
 
-		public String getCityCode() {
-			return this.cityCode;
+		public String getIspCode() {
+			return this.ispCode;
 		}
 
-		public void setCityCode(String cityCode) {
-			this.cityCode = cityCode;
+		public void setIspCode(String ispCode) {
+			this.ispCode = ispCode;
+		}
+
+		public String getCityName() {
+			return this.cityName;
+		}
+
+		public void setCityName(String cityName) {
+			this.cityName = cityName;
 		}
 
 		public String getIspName() {
@@ -125,28 +141,12 @@ public class DescribeDnsGtmMonitorAvailableConfigResponse extends AcsResponse {
 			this.groupType = groupType;
 		}
 
-		public String getCityName() {
-			return this.cityName;
-		}
-
-		public void setCityName(String cityName) {
-			this.cityName = cityName;
-		}
-
 		public Boolean getDefaultSelected() {
 			return this.defaultSelected;
 		}
 
 		public void setDefaultSelected(Boolean defaultSelected) {
 			this.defaultSelected = defaultSelected;
-		}
-
-		public String getIspCode() {
-			return this.ispCode;
-		}
-
-		public void setIspCode(String ispCode) {
-			this.ispCode = ispCode;
 		}
 
 		public List<String> getIps() {
@@ -160,21 +160,29 @@ public class DescribeDnsGtmMonitorAvailableConfigResponse extends AcsResponse {
 
 	public static class DomainIpv4IspCityNode {
 
+		private String cityCode;
+
 		private String groupName;
 
-		private String cityCode;
+		private String ispCode;
+
+		private String cityName;
 
 		private String ispName;
 
 		private String groupType;
 
-		private String cityName;
-
 		private Boolean defaultSelected;
 
-		private String ispCode;
-
 		private List<String> ips1;
+
+		public String getCityCode() {
+			return this.cityCode;
+		}
+
+		public void setCityCode(String cityCode) {
+			this.cityCode = cityCode;
+		}
 
 		public String getGroupName() {
 			return this.groupName;
@@ -184,12 +192,20 @@ public class DescribeDnsGtmMonitorAvailableConfigResponse extends AcsResponse {
 			this.groupName = groupName;
 		}
 
-		public String getCityCode() {
-			return this.cityCode;
+		public String getIspCode() {
+			return this.ispCode;
 		}
 
-		public void setCityCode(String cityCode) {
-			this.cityCode = cityCode;
+		public void setIspCode(String ispCode) {
+			this.ispCode = ispCode;
+		}
+
+		public String getCityName() {
+			return this.cityName;
+		}
+
+		public void setCityName(String cityName) {
+			this.cityName = cityName;
 		}
 
 		public String getIspName() {
@@ -208,28 +224,12 @@ public class DescribeDnsGtmMonitorAvailableConfigResponse extends AcsResponse {
 			this.groupType = groupType;
 		}
 
-		public String getCityName() {
-			return this.cityName;
-		}
-
-		public void setCityName(String cityName) {
-			this.cityName = cityName;
-		}
-
 		public Boolean getDefaultSelected() {
 			return this.defaultSelected;
 		}
 
 		public void setDefaultSelected(Boolean defaultSelected) {
 			this.defaultSelected = defaultSelected;
-		}
-
-		public String getIspCode() {
-			return this.ispCode;
-		}
-
-		public void setIspCode(String ispCode) {
-			this.ispCode = ispCode;
 		}
 
 		public List<String> getIps1() {
@@ -243,21 +243,29 @@ public class DescribeDnsGtmMonitorAvailableConfigResponse extends AcsResponse {
 
 	public static class DomainIpv6IspCityNode {
 
+		private String cityCode;
+
 		private String groupName;
 
-		private String cityCode;
+		private String ispCode;
+
+		private String cityName;
 
 		private String ispName;
 
 		private String groupType;
 
-		private String cityName;
-
 		private Boolean defaultSelected;
 
-		private String ispCode;
-
 		private List<String> ips2;
+
+		public String getCityCode() {
+			return this.cityCode;
+		}
+
+		public void setCityCode(String cityCode) {
+			this.cityCode = cityCode;
+		}
 
 		public String getGroupName() {
 			return this.groupName;
@@ -267,12 +275,20 @@ public class DescribeDnsGtmMonitorAvailableConfigResponse extends AcsResponse {
 			this.groupName = groupName;
 		}
 
-		public String getCityCode() {
-			return this.cityCode;
+		public String getIspCode() {
+			return this.ispCode;
 		}
 
-		public void setCityCode(String cityCode) {
-			this.cityCode = cityCode;
+		public void setIspCode(String ispCode) {
+			this.ispCode = ispCode;
+		}
+
+		public String getCityName() {
+			return this.cityName;
+		}
+
+		public void setCityName(String cityName) {
+			this.cityName = cityName;
 		}
 
 		public String getIspName() {
@@ -291,28 +307,12 @@ public class DescribeDnsGtmMonitorAvailableConfigResponse extends AcsResponse {
 			this.groupType = groupType;
 		}
 
-		public String getCityName() {
-			return this.cityName;
-		}
-
-		public void setCityName(String cityName) {
-			this.cityName = cityName;
-		}
-
 		public Boolean getDefaultSelected() {
 			return this.defaultSelected;
 		}
 
 		public void setDefaultSelected(Boolean defaultSelected) {
 			this.defaultSelected = defaultSelected;
-		}
-
-		public String getIspCode() {
-			return this.ispCode;
-		}
-
-		public void setIspCode(String ispCode) {
-			this.ispCode = ispCode;
 		}
 
 		public List<String> getIps2() {
@@ -326,21 +326,29 @@ public class DescribeDnsGtmMonitorAvailableConfigResponse extends AcsResponse {
 
 	public static class Ipv6IspCityNode {
 
+		private String cityCode;
+
 		private String groupName;
 
-		private String cityCode;
+		private String ispCode;
+
+		private String cityName;
 
 		private String ispName;
 
 		private String groupType;
 
-		private String cityName;
-
 		private Boolean defaultSelected;
 
-		private String ispCode;
-
 		private List<String> ips3;
+
+		public String getCityCode() {
+			return this.cityCode;
+		}
+
+		public void setCityCode(String cityCode) {
+			this.cityCode = cityCode;
+		}
 
 		public String getGroupName() {
 			return this.groupName;
@@ -350,12 +358,20 @@ public class DescribeDnsGtmMonitorAvailableConfigResponse extends AcsResponse {
 			this.groupName = groupName;
 		}
 
-		public String getCityCode() {
-			return this.cityCode;
+		public String getIspCode() {
+			return this.ispCode;
 		}
 
-		public void setCityCode(String cityCode) {
-			this.cityCode = cityCode;
+		public void setIspCode(String ispCode) {
+			this.ispCode = ispCode;
+		}
+
+		public String getCityName() {
+			return this.cityName;
+		}
+
+		public void setCityName(String cityName) {
+			this.cityName = cityName;
 		}
 
 		public String getIspName() {
@@ -374,28 +390,12 @@ public class DescribeDnsGtmMonitorAvailableConfigResponse extends AcsResponse {
 			this.groupType = groupType;
 		}
 
-		public String getCityName() {
-			return this.cityName;
-		}
-
-		public void setCityName(String cityName) {
-			this.cityName = cityName;
-		}
-
 		public Boolean getDefaultSelected() {
 			return this.defaultSelected;
 		}
 
 		public void setDefaultSelected(Boolean defaultSelected) {
 			this.defaultSelected = defaultSelected;
-		}
-
-		public String getIspCode() {
-			return this.ispCode;
-		}
-
-		public void setIspCode(String ispCode) {
-			this.ispCode = ispCode;
 		}
 
 		public List<String> getIps3() {

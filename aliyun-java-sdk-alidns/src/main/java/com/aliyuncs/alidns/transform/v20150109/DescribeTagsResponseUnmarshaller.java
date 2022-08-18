@@ -28,8 +28,8 @@ public class DescribeTagsResponseUnmarshaller {
 		
 		describeTagsResponse.setRequestId(_ctx.stringValue("DescribeTagsResponse.RequestId"));
 		describeTagsResponse.setTotalCount(_ctx.longValue("DescribeTagsResponse.TotalCount"));
-		describeTagsResponse.setPageNumber(_ctx.longValue("DescribeTagsResponse.PageNumber"));
 		describeTagsResponse.setPageSize(_ctx.longValue("DescribeTagsResponse.PageSize"));
+		describeTagsResponse.setPageNumber(_ctx.longValue("DescribeTagsResponse.PageNumber"));
 
 		List<Tag> tags = new ArrayList<Tag>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeTagsResponse.Tags.Length"); i++) {

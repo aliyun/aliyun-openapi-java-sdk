@@ -25,75 +25,35 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeGtmRecoveryPlanResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Long recoveryPlanId;
-
-	private String name;
-
-	private String remark;
-
-	private Integer faultAddrPoolNum;
-
 	private String status;
-
-	private String lastExecuteTime;
-
-	private Long lastExecuteTimestamp;
 
 	private String lastRollbackTime;
 
-	private Long lastRollbackTimestamp;
+	private Integer faultAddrPoolNum;
+
+	private String lastExecuteTime;
+
+	private String requestId;
 
 	private String createTime;
 
-	private Long createTimestamp;
+	private Long lastExecuteTimestamp;
+
+	private String remark;
+
+	private String name;
+
+	private Long recoveryPlanId;
 
 	private String updateTime;
 
 	private Long updateTimestamp;
 
+	private Long lastRollbackTimestamp;
+
+	private Long createTimestamp;
+
 	private List<FaultAddrPool> faultAddrPools;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Long getRecoveryPlanId() {
-		return this.recoveryPlanId;
-	}
-
-	public void setRecoveryPlanId(Long recoveryPlanId) {
-		this.recoveryPlanId = recoveryPlanId;
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getRemark() {
-		return this.remark;
-	}
-
-	public void setRemark(String remark) {
-		this.remark = remark;
-	}
-
-	public Integer getFaultAddrPoolNum() {
-		return this.faultAddrPoolNum;
-	}
-
-	public void setFaultAddrPoolNum(Integer faultAddrPoolNum) {
-		this.faultAddrPoolNum = faultAddrPoolNum;
-	}
 
 	public String getStatus() {
 		return this.status;
@@ -101,22 +61,6 @@ public class DescribeGtmRecoveryPlanResponse extends AcsResponse {
 
 	public void setStatus(String status) {
 		this.status = status;
-	}
-
-	public String getLastExecuteTime() {
-		return this.lastExecuteTime;
-	}
-
-	public void setLastExecuteTime(String lastExecuteTime) {
-		this.lastExecuteTime = lastExecuteTime;
-	}
-
-	public Long getLastExecuteTimestamp() {
-		return this.lastExecuteTimestamp;
-	}
-
-	public void setLastExecuteTimestamp(Long lastExecuteTimestamp) {
-		this.lastExecuteTimestamp = lastExecuteTimestamp;
 	}
 
 	public String getLastRollbackTime() {
@@ -127,12 +71,28 @@ public class DescribeGtmRecoveryPlanResponse extends AcsResponse {
 		this.lastRollbackTime = lastRollbackTime;
 	}
 
-	public Long getLastRollbackTimestamp() {
-		return this.lastRollbackTimestamp;
+	public Integer getFaultAddrPoolNum() {
+		return this.faultAddrPoolNum;
 	}
 
-	public void setLastRollbackTimestamp(Long lastRollbackTimestamp) {
-		this.lastRollbackTimestamp = lastRollbackTimestamp;
+	public void setFaultAddrPoolNum(Integer faultAddrPoolNum) {
+		this.faultAddrPoolNum = faultAddrPoolNum;
+	}
+
+	public String getLastExecuteTime() {
+		return this.lastExecuteTime;
+	}
+
+	public void setLastExecuteTime(String lastExecuteTime) {
+		this.lastExecuteTime = lastExecuteTime;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCreateTime() {
@@ -143,12 +103,36 @@ public class DescribeGtmRecoveryPlanResponse extends AcsResponse {
 		this.createTime = createTime;
 	}
 
-	public Long getCreateTimestamp() {
-		return this.createTimestamp;
+	public Long getLastExecuteTimestamp() {
+		return this.lastExecuteTimestamp;
 	}
 
-	public void setCreateTimestamp(Long createTimestamp) {
-		this.createTimestamp = createTimestamp;
+	public void setLastExecuteTimestamp(Long lastExecuteTimestamp) {
+		this.lastExecuteTimestamp = lastExecuteTimestamp;
+	}
+
+	public String getRemark() {
+		return this.remark;
+	}
+
+	public void setRemark(String remark) {
+		this.remark = remark;
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Long getRecoveryPlanId() {
+		return this.recoveryPlanId;
+	}
+
+	public void setRecoveryPlanId(Long recoveryPlanId) {
+		this.recoveryPlanId = recoveryPlanId;
 	}
 
 	public String getUpdateTime() {
@@ -167,6 +151,22 @@ public class DescribeGtmRecoveryPlanResponse extends AcsResponse {
 		this.updateTimestamp = updateTimestamp;
 	}
 
+	public Long getLastRollbackTimestamp() {
+		return this.lastRollbackTimestamp;
+	}
+
+	public void setLastRollbackTimestamp(Long lastRollbackTimestamp) {
+		this.lastRollbackTimestamp = lastRollbackTimestamp;
+	}
+
+	public Long getCreateTimestamp() {
+		return this.createTimestamp;
+	}
+
+	public void setCreateTimestamp(Long createTimestamp) {
+		this.createTimestamp = createTimestamp;
+	}
+
 	public List<FaultAddrPool> getFaultAddrPools() {
 		return this.faultAddrPools;
 	}
@@ -179,9 +179,9 @@ public class DescribeGtmRecoveryPlanResponse extends AcsResponse {
 
 		private String addrPoolId;
 
-		private String addrPoolName;
-
 		private String instanceId;
+
+		private String addrPoolName;
 
 		private List<Addr> addrs;
 
@@ -193,20 +193,20 @@ public class DescribeGtmRecoveryPlanResponse extends AcsResponse {
 			this.addrPoolId = addrPoolId;
 		}
 
-		public String getAddrPoolName() {
-			return this.addrPoolName;
-		}
-
-		public void setAddrPoolName(String addrPoolName) {
-			this.addrPoolName = addrPoolName;
-		}
-
 		public String getInstanceId() {
 			return this.instanceId;
 		}
 
 		public void setInstanceId(String instanceId) {
 			this.instanceId = instanceId;
+		}
+
+		public String getAddrPoolName() {
+			return this.addrPoolName;
+		}
+
+		public void setAddrPoolName(String addrPoolName) {
+			this.addrPoolName = addrPoolName;
 		}
 
 		public List<Addr> getAddrs() {
@@ -219,18 +219,18 @@ public class DescribeGtmRecoveryPlanResponse extends AcsResponse {
 
 		public static class Addr {
 
-			private Long id;
+			private String value;
 
 			private String mode;
 
-			private String value;
+			private Long id;
 
-			public Long getId() {
-				return this.id;
+			public String getValue() {
+				return this.value;
 			}
 
-			public void setId(Long id) {
-				this.id = id;
+			public void setValue(String value) {
+				this.value = value;
 			}
 
 			public String getMode() {
@@ -241,12 +241,12 @@ public class DescribeGtmRecoveryPlanResponse extends AcsResponse {
 				this.mode = mode;
 			}
 
-			public String getValue() {
-				return this.value;
+			public Long getId() {
+				return this.id;
 			}
 
-			public void setValue(String value) {
-				this.value = value;
+			public void setId(Long id) {
+				this.id = id;
 			}
 		}
 	}

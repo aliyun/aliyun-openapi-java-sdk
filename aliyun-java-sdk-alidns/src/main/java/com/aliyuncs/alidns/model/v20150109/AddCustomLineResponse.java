@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class AddCustomLineResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Long lineId;
 
+	private String requestId;
+
 	private String lineCode;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Long getLineId() {
 		return this.lineId;
@@ -44,6 +36,14 @@ public class AddCustomLineResponse extends AcsResponse {
 
 	public void setLineId(Long lineId) {
 		this.lineId = lineId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getLineCode() {

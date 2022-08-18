@@ -29,45 +29,45 @@ public class DescribeDnsGtmAccessStrategiesResponseUnmarshaller {
 	public static DescribeDnsGtmAccessStrategiesResponse unmarshall(DescribeDnsGtmAccessStrategiesResponse describeDnsGtmAccessStrategiesResponse, UnmarshallerContext _ctx) {
 		
 		describeDnsGtmAccessStrategiesResponse.setRequestId(_ctx.stringValue("DescribeDnsGtmAccessStrategiesResponse.RequestId"));
-		describeDnsGtmAccessStrategiesResponse.setTotalItems(_ctx.integerValue("DescribeDnsGtmAccessStrategiesResponse.TotalItems"));
-		describeDnsGtmAccessStrategiesResponse.setTotalPages(_ctx.integerValue("DescribeDnsGtmAccessStrategiesResponse.TotalPages"));
-		describeDnsGtmAccessStrategiesResponse.setPageNumber(_ctx.integerValue("DescribeDnsGtmAccessStrategiesResponse.PageNumber"));
 		describeDnsGtmAccessStrategiesResponse.setPageSize(_ctx.integerValue("DescribeDnsGtmAccessStrategiesResponse.PageSize"));
+		describeDnsGtmAccessStrategiesResponse.setPageNumber(_ctx.integerValue("DescribeDnsGtmAccessStrategiesResponse.PageNumber"));
+		describeDnsGtmAccessStrategiesResponse.setTotalPages(_ctx.integerValue("DescribeDnsGtmAccessStrategiesResponse.TotalPages"));
+		describeDnsGtmAccessStrategiesResponse.setTotalItems(_ctx.integerValue("DescribeDnsGtmAccessStrategiesResponse.TotalItems"));
 
 		List<Strategy> strategies = new ArrayList<Strategy>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDnsGtmAccessStrategiesResponse.Strategies.Length"); i++) {
 			Strategy strategy = new Strategy();
+			strategy.setEffectiveLbaStrategy(_ctx.stringValue("DescribeDnsGtmAccessStrategiesResponse.Strategies["+ i +"].EffectiveLbaStrategy"));
 			strategy.setStrategyId(_ctx.stringValue("DescribeDnsGtmAccessStrategiesResponse.Strategies["+ i +"].StrategyId"));
 			strategy.setStrategyName(_ctx.stringValue("DescribeDnsGtmAccessStrategiesResponse.Strategies["+ i +"].StrategyName"));
+			strategy.setEffectiveAddrPoolGroupType(_ctx.stringValue("DescribeDnsGtmAccessStrategiesResponse.Strategies["+ i +"].EffectiveAddrPoolGroupType"));
 			strategy.setCreateTime(_ctx.stringValue("DescribeDnsGtmAccessStrategiesResponse.Strategies["+ i +"].CreateTime"));
 			strategy.setCreateTimestamp(_ctx.longValue("DescribeDnsGtmAccessStrategiesResponse.Strategies["+ i +"].CreateTimestamp"));
-			strategy.setEffectiveAddrPoolGroupType(_ctx.stringValue("DescribeDnsGtmAccessStrategiesResponse.Strategies["+ i +"].EffectiveAddrPoolGroupType"));
 			strategy.setEffectiveAddrPoolType(_ctx.stringValue("DescribeDnsGtmAccessStrategiesResponse.Strategies["+ i +"].EffectiveAddrPoolType"));
-			strategy.setEffectiveLbaStrategy(_ctx.stringValue("DescribeDnsGtmAccessStrategiesResponse.Strategies["+ i +"].EffectiveLbaStrategy"));
-
-			List<Line> lines = new ArrayList<Line>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeDnsGtmAccessStrategiesResponse.Strategies["+ i +"].Lines.Length"); j++) {
-				Line line = new Line();
-				line.setLineCode(_ctx.stringValue("DescribeDnsGtmAccessStrategiesResponse.Strategies["+ i +"].Lines["+ j +"].LineCode"));
-				line.setLineName(_ctx.stringValue("DescribeDnsGtmAccessStrategiesResponse.Strategies["+ i +"].Lines["+ j +"].LineName"));
-				line.setGroupCode(_ctx.stringValue("DescribeDnsGtmAccessStrategiesResponse.Strategies["+ i +"].Lines["+ j +"].GroupCode"));
-				line.setGroupName(_ctx.stringValue("DescribeDnsGtmAccessStrategiesResponse.Strategies["+ i +"].Lines["+ j +"].GroupName"));
-
-				lines.add(line);
-			}
-			strategy.setLines(lines);
 
 			List<EffectiveAddrPool> effectiveAddrPools = new ArrayList<EffectiveAddrPool>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDnsGtmAccessStrategiesResponse.Strategies["+ i +"].EffectiveAddrPools.Length"); j++) {
 				EffectiveAddrPool effectiveAddrPool = new EffectiveAddrPool();
-				effectiveAddrPool.setId(_ctx.stringValue("DescribeDnsGtmAccessStrategiesResponse.Strategies["+ i +"].EffectiveAddrPools["+ j +"].Id"));
+				effectiveAddrPool.setLbaWeight(_ctx.integerValue("DescribeDnsGtmAccessStrategiesResponse.Strategies["+ i +"].EffectiveAddrPools["+ j +"].LbaWeight"));
 				effectiveAddrPool.setName(_ctx.stringValue("DescribeDnsGtmAccessStrategiesResponse.Strategies["+ i +"].EffectiveAddrPools["+ j +"].Name"));
 				effectiveAddrPool.setAddrCount(_ctx.integerValue("DescribeDnsGtmAccessStrategiesResponse.Strategies["+ i +"].EffectiveAddrPools["+ j +"].AddrCount"));
-				effectiveAddrPool.setLbaWeight(_ctx.integerValue("DescribeDnsGtmAccessStrategiesResponse.Strategies["+ i +"].EffectiveAddrPools["+ j +"].LbaWeight"));
+				effectiveAddrPool.setId(_ctx.stringValue("DescribeDnsGtmAccessStrategiesResponse.Strategies["+ i +"].EffectiveAddrPools["+ j +"].Id"));
 
 				effectiveAddrPools.add(effectiveAddrPool);
 			}
 			strategy.setEffectiveAddrPools(effectiveAddrPools);
+
+			List<Line> lines = new ArrayList<Line>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDnsGtmAccessStrategiesResponse.Strategies["+ i +"].Lines.Length"); j++) {
+				Line line = new Line();
+				line.setGroupName(_ctx.stringValue("DescribeDnsGtmAccessStrategiesResponse.Strategies["+ i +"].Lines["+ j +"].GroupName"));
+				line.setLineCode(_ctx.stringValue("DescribeDnsGtmAccessStrategiesResponse.Strategies["+ i +"].Lines["+ j +"].LineCode"));
+				line.setLineName(_ctx.stringValue("DescribeDnsGtmAccessStrategiesResponse.Strategies["+ i +"].Lines["+ j +"].LineName"));
+				line.setGroupCode(_ctx.stringValue("DescribeDnsGtmAccessStrategiesResponse.Strategies["+ i +"].Lines["+ j +"].GroupCode"));
+
+				lines.add(line);
+			}
+			strategy.setLines(lines);
 
 			strategies.add(strategy);
 		}

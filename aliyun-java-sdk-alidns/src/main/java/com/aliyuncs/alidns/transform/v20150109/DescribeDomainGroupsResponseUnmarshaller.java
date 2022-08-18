@@ -28,8 +28,8 @@ public class DescribeDomainGroupsResponseUnmarshaller {
 		
 		describeDomainGroupsResponse.setRequestId(_ctx.stringValue("DescribeDomainGroupsResponse.RequestId"));
 		describeDomainGroupsResponse.setTotalCount(_ctx.longValue("DescribeDomainGroupsResponse.TotalCount"));
-		describeDomainGroupsResponse.setPageNumber(_ctx.longValue("DescribeDomainGroupsResponse.PageNumber"));
 		describeDomainGroupsResponse.setPageSize(_ctx.longValue("DescribeDomainGroupsResponse.PageSize"));
+		describeDomainGroupsResponse.setPageNumber(_ctx.longValue("DescribeDomainGroupsResponse.PageNumber"));
 
 		List<DomainGroup> domainGroups = new ArrayList<DomainGroup>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDomainGroupsResponse.DomainGroups.Length"); i++) {

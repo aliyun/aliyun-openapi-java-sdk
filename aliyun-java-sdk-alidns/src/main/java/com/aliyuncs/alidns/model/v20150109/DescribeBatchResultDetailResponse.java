@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeBatchResultDetailResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Long totalCount;
-
-	private Long pageNumber;
 
 	private Long pageSize;
 
+	private String requestId;
+
+	private Long pageNumber;
+
 	private List<BatchResultDetail> batchResultDetails;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Long getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class DescribeBatchResultDetailResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Long getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Long getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Long pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<BatchResultDetail> getBatchResultDetails() {
@@ -77,44 +77,44 @@ public class DescribeBatchResultDetailResponse extends AcsResponse {
 
 	public static class BatchResultDetail {
 
-		private String domain;
+		private Boolean status;
 
 		private String type;
 
-		private String rr;
-
-		private String value;
-
-		private Boolean status;
-
-		private String reason;
-
-		private String newRr;
-
-		private String newValue;
-
-		private String batchType;
-
-		private String operateDateStr;
-
-		private String line;
-
-		private String priority;
-
-		private String ttl;
-
-		private String recordId;
+		private String domain;
 
 		private String remark;
 
+		private String recordId;
+
+		private String rr;
+
+		private String priority;
+
 		private String rrStatus;
 
-		public String getDomain() {
-			return this.domain;
+		private String operateDateStr;
+
+		private String newValue;
+
+		private String value;
+
+		private String ttl;
+
+		private String batchType;
+
+		private String line;
+
+		private String newRr;
+
+		private String reason;
+
+		public Boolean getStatus() {
+			return this.status;
 		}
 
-		public void setDomain(String domain) {
-			this.domain = domain;
+		public void setStatus(Boolean status) {
+			this.status = status;
 		}
 
 		public String getType() {
@@ -125,100 +125,12 @@ public class DescribeBatchResultDetailResponse extends AcsResponse {
 			this.type = type;
 		}
 
-		public String getRr() {
-			return this.rr;
+		public String getDomain() {
+			return this.domain;
 		}
 
-		public void setRr(String rr) {
-			this.rr = rr;
-		}
-
-		public String getValue() {
-			return this.value;
-		}
-
-		public void setValue(String value) {
-			this.value = value;
-		}
-
-		public Boolean getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(Boolean status) {
-			this.status = status;
-		}
-
-		public String getReason() {
-			return this.reason;
-		}
-
-		public void setReason(String reason) {
-			this.reason = reason;
-		}
-
-		public String getNewRr() {
-			return this.newRr;
-		}
-
-		public void setNewRr(String newRr) {
-			this.newRr = newRr;
-		}
-
-		public String getNewValue() {
-			return this.newValue;
-		}
-
-		public void setNewValue(String newValue) {
-			this.newValue = newValue;
-		}
-
-		public String getBatchType() {
-			return this.batchType;
-		}
-
-		public void setBatchType(String batchType) {
-			this.batchType = batchType;
-		}
-
-		public String getOperateDateStr() {
-			return this.operateDateStr;
-		}
-
-		public void setOperateDateStr(String operateDateStr) {
-			this.operateDateStr = operateDateStr;
-		}
-
-		public String getLine() {
-			return this.line;
-		}
-
-		public void setLine(String line) {
-			this.line = line;
-		}
-
-		public String getPriority() {
-			return this.priority;
-		}
-
-		public void setPriority(String priority) {
-			this.priority = priority;
-		}
-
-		public String getTtl() {
-			return this.ttl;
-		}
-
-		public void setTtl(String ttl) {
-			this.ttl = ttl;
-		}
-
-		public String getRecordId() {
-			return this.recordId;
-		}
-
-		public void setRecordId(String recordId) {
-			this.recordId = recordId;
+		public void setDomain(String domain) {
+			this.domain = domain;
 		}
 
 		public String getRemark() {
@@ -229,12 +141,100 @@ public class DescribeBatchResultDetailResponse extends AcsResponse {
 			this.remark = remark;
 		}
 
+		public String getRecordId() {
+			return this.recordId;
+		}
+
+		public void setRecordId(String recordId) {
+			this.recordId = recordId;
+		}
+
+		public String getRr() {
+			return this.rr;
+		}
+
+		public void setRr(String rr) {
+			this.rr = rr;
+		}
+
+		public String getPriority() {
+			return this.priority;
+		}
+
+		public void setPriority(String priority) {
+			this.priority = priority;
+		}
+
 		public String getRrStatus() {
 			return this.rrStatus;
 		}
 
 		public void setRrStatus(String rrStatus) {
 			this.rrStatus = rrStatus;
+		}
+
+		public String getOperateDateStr() {
+			return this.operateDateStr;
+		}
+
+		public void setOperateDateStr(String operateDateStr) {
+			this.operateDateStr = operateDateStr;
+		}
+
+		public String getNewValue() {
+			return this.newValue;
+		}
+
+		public void setNewValue(String newValue) {
+			this.newValue = newValue;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getTtl() {
+			return this.ttl;
+		}
+
+		public void setTtl(String ttl) {
+			this.ttl = ttl;
+		}
+
+		public String getBatchType() {
+			return this.batchType;
+		}
+
+		public void setBatchType(String batchType) {
+			this.batchType = batchType;
+		}
+
+		public String getLine() {
+			return this.line;
+		}
+
+		public void setLine(String line) {
+			this.line = line;
+		}
+
+		public String getNewRr() {
+			return this.newRr;
+		}
+
+		public void setNewRr(String newRr) {
+			this.newRr = newRr;
+		}
+
+		public String getReason() {
+			return this.reason;
+		}
+
+		public void setReason(String reason) {
+			this.reason = reason;
 		}
 	}
 

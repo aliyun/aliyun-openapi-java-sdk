@@ -35,11 +35,11 @@ public class DescribeDnsGtmAddrAttributeInfoResponseUnmarshaller {
 			addrItem.setAddr(_ctx.stringValue("DescribeDnsGtmAddrAttributeInfoResponse.Addr["+ i +"].Addr"));
 
 			AttributeInfo attributeInfo = new AttributeInfo();
+			attributeInfo.setFatherCode(_ctx.stringValue("DescribeDnsGtmAddrAttributeInfoResponse.Addr["+ i +"].AttributeInfo.FatherCode"));
+			attributeInfo.setGroupName(_ctx.stringValue("DescribeDnsGtmAddrAttributeInfoResponse.Addr["+ i +"].AttributeInfo.GroupName"));
 			attributeInfo.setLineCode(_ctx.stringValue("DescribeDnsGtmAddrAttributeInfoResponse.Addr["+ i +"].AttributeInfo.LineCode"));
 			attributeInfo.setLineName(_ctx.stringValue("DescribeDnsGtmAddrAttributeInfoResponse.Addr["+ i +"].AttributeInfo.LineName"));
 			attributeInfo.setGroupCode(_ctx.stringValue("DescribeDnsGtmAddrAttributeInfoResponse.Addr["+ i +"].AttributeInfo.GroupCode"));
-			attributeInfo.setGroupName(_ctx.stringValue("DescribeDnsGtmAddrAttributeInfoResponse.Addr["+ i +"].AttributeInfo.GroupName"));
-			attributeInfo.setFatherCode(_ctx.stringValue("DescribeDnsGtmAddrAttributeInfoResponse.Addr["+ i +"].AttributeInfo.FatherCode"));
 			addrItem.setAttributeInfo(attributeInfo);
 
 			addr.add(addrItem);

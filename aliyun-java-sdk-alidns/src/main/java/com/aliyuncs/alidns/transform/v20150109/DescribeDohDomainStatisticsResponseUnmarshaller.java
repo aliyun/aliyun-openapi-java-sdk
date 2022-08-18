@@ -31,12 +31,12 @@ public class DescribeDohDomainStatisticsResponseUnmarshaller {
 		List<Statistic> statistics = new ArrayList<Statistic>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDohDomainStatisticsResponse.Statistics.Length"); i++) {
 			Statistic statistic = new Statistic();
-			statistic.setTimestamp(_ctx.longValue("DescribeDohDomainStatisticsResponse.Statistics["+ i +"].Timestamp"));
-			statistic.setV4HttpCount(_ctx.longValue("DescribeDohDomainStatisticsResponse.Statistics["+ i +"].V4HttpCount"));
 			statistic.setV6HttpCount(_ctx.longValue("DescribeDohDomainStatisticsResponse.Statistics["+ i +"].V6HttpCount"));
 			statistic.setV4HttpsCount(_ctx.longValue("DescribeDohDomainStatisticsResponse.Statistics["+ i +"].V4HttpsCount"));
-			statistic.setV6HttpsCount(_ctx.longValue("DescribeDohDomainStatisticsResponse.Statistics["+ i +"].V6HttpsCount"));
+			statistic.setTimestamp(_ctx.longValue("DescribeDohDomainStatisticsResponse.Statistics["+ i +"].Timestamp"));
 			statistic.setTotalCount(_ctx.longValue("DescribeDohDomainStatisticsResponse.Statistics["+ i +"].TotalCount"));
+			statistic.setV4HttpCount(_ctx.longValue("DescribeDohDomainStatisticsResponse.Statistics["+ i +"].V4HttpCount"));
+			statistic.setV6HttpsCount(_ctx.longValue("DescribeDohDomainStatisticsResponse.Statistics["+ i +"].V6HttpsCount"));
 
 			statistics.add(statistic);
 		}

@@ -32,8 +32,8 @@ public class DescribeGtmRecoveryPlanAvailableConfigResponseUnmarshaller {
 		List<Instance> instances = new ArrayList<Instance>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeGtmRecoveryPlanAvailableConfigResponse.Instances.Length"); i++) {
 			Instance instance = new Instance();
-			instance.setInstanceId(_ctx.stringValue("DescribeGtmRecoveryPlanAvailableConfigResponse.Instances["+ i +"].InstanceId"));
 			instance.setInstanceName(_ctx.stringValue("DescribeGtmRecoveryPlanAvailableConfigResponse.Instances["+ i +"].InstanceName"));
+			instance.setInstanceId(_ctx.stringValue("DescribeGtmRecoveryPlanAvailableConfigResponse.Instances["+ i +"].InstanceId"));
 
 			List<AddrPool> addrPools = new ArrayList<AddrPool>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeGtmRecoveryPlanAvailableConfigResponse.Instances["+ i +"].AddrPools.Length"); j++) {

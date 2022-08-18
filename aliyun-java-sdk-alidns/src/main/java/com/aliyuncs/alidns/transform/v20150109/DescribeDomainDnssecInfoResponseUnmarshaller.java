@@ -23,15 +23,15 @@ public class DescribeDomainDnssecInfoResponseUnmarshaller {
 	public static DescribeDomainDnssecInfoResponse unmarshall(DescribeDomainDnssecInfoResponse describeDomainDnssecInfoResponse, UnmarshallerContext _ctx) {
 		
 		describeDomainDnssecInfoResponse.setRequestId(_ctx.stringValue("DescribeDomainDnssecInfoResponse.RequestId"));
-		describeDomainDnssecInfoResponse.setDomainName(_ctx.stringValue("DescribeDomainDnssecInfoResponse.DomainName"));
 		describeDomainDnssecInfoResponse.setStatus(_ctx.stringValue("DescribeDomainDnssecInfoResponse.Status"));
-		describeDomainDnssecInfoResponse.setDsRecord(_ctx.stringValue("DescribeDomainDnssecInfoResponse.DsRecord"));
 		describeDomainDnssecInfoResponse.setDigest(_ctx.stringValue("DescribeDomainDnssecInfoResponse.Digest"));
-		describeDomainDnssecInfoResponse.setDigestType(_ctx.stringValue("DescribeDomainDnssecInfoResponse.DigestType"));
-		describeDomainDnssecInfoResponse.setAlgorithm(_ctx.stringValue("DescribeDomainDnssecInfoResponse.Algorithm"));
+		describeDomainDnssecInfoResponse.setDomainName(_ctx.stringValue("DescribeDomainDnssecInfoResponse.DomainName"));
 		describeDomainDnssecInfoResponse.setPublicKey(_ctx.stringValue("DescribeDomainDnssecInfoResponse.PublicKey"));
+		describeDomainDnssecInfoResponse.setDigestType(_ctx.stringValue("DescribeDomainDnssecInfoResponse.DigestType"));
+		describeDomainDnssecInfoResponse.setDsRecord(_ctx.stringValue("DescribeDomainDnssecInfoResponse.DsRecord"));
 		describeDomainDnssecInfoResponse.setKeyTag(_ctx.stringValue("DescribeDomainDnssecInfoResponse.KeyTag"));
 		describeDomainDnssecInfoResponse.setFlags(_ctx.stringValue("DescribeDomainDnssecInfoResponse.Flags"));
+		describeDomainDnssecInfoResponse.setAlgorithm(_ctx.stringValue("DescribeDomainDnssecInfoResponse.Algorithm"));
 	 
 	 	return describeDomainDnssecInfoResponse;
 	}

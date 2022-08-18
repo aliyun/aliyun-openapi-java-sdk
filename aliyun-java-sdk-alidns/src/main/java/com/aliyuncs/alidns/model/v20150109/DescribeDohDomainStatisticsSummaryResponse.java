@@ -25,17 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDohDomainStatisticsSummaryResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Integer totalItems;
-
-	private Integer totalPages;
-
 	private Integer pageSize;
+
+	private String requestId;
 
 	private Integer pageNumber;
 
+	private Integer totalPages;
+
+	private Integer totalItems;
+
 	private List<Statistic> statistics;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,12 +53,12 @@ public class DescribeDohDomainStatisticsSummaryResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getTotalItems() {
-		return this.totalItems;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setTotalItems(Integer totalItems) {
-		this.totalItems = totalItems;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public Integer getTotalPages() {
@@ -61,20 +69,12 @@ public class DescribeDohDomainStatisticsSummaryResponse extends AcsResponse {
 		this.totalPages = totalPages;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalItems() {
+		return this.totalItems;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setTotalItems(Integer totalItems) {
+		this.totalItems = totalItems;
 	}
 
 	public List<Statistic> getStatistics() {
@@ -87,39 +87,23 @@ public class DescribeDohDomainStatisticsSummaryResponse extends AcsResponse {
 
 	public static class Statistic {
 
-		private String domainName;
-
-		private Long v4HttpCount;
-
 		private Long v6HttpCount;
 
 		private Long v4HttpsCount;
 
-		private Long v6HttpsCount;
+		private Long ipCount;
 
 		private Long totalCount;
 
-		private Long ipCount;
-
 		private Long httpCount;
+
+		private String domainName;
 
 		private Long httpsCount;
 
-		public String getDomainName() {
-			return this.domainName;
-		}
+		private Long v4HttpCount;
 
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
-		}
-
-		public Long getV4HttpCount() {
-			return this.v4HttpCount;
-		}
-
-		public void setV4HttpCount(Long v4HttpCount) {
-			this.v4HttpCount = v4HttpCount;
-		}
+		private Long v6HttpsCount;
 
 		public Long getV6HttpCount() {
 			return this.v6HttpCount;
@@ -137,12 +121,12 @@ public class DescribeDohDomainStatisticsSummaryResponse extends AcsResponse {
 			this.v4HttpsCount = v4HttpsCount;
 		}
 
-		public Long getV6HttpsCount() {
-			return this.v6HttpsCount;
+		public Long getIpCount() {
+			return this.ipCount;
 		}
 
-		public void setV6HttpsCount(Long v6HttpsCount) {
-			this.v6HttpsCount = v6HttpsCount;
+		public void setIpCount(Long ipCount) {
+			this.ipCount = ipCount;
 		}
 
 		public Long getTotalCount() {
@@ -153,14 +137,6 @@ public class DescribeDohDomainStatisticsSummaryResponse extends AcsResponse {
 			this.totalCount = totalCount;
 		}
 
-		public Long getIpCount() {
-			return this.ipCount;
-		}
-
-		public void setIpCount(Long ipCount) {
-			this.ipCount = ipCount;
-		}
-
 		public Long getHttpCount() {
 			return this.httpCount;
 		}
@@ -169,12 +145,36 @@ public class DescribeDohDomainStatisticsSummaryResponse extends AcsResponse {
 			this.httpCount = httpCount;
 		}
 
+		public String getDomainName() {
+			return this.domainName;
+		}
+
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
+		}
+
 		public Long getHttpsCount() {
 			return this.httpsCount;
 		}
 
 		public void setHttpsCount(Long httpsCount) {
 			this.httpsCount = httpsCount;
+		}
+
+		public Long getV4HttpCount() {
+			return this.v4HttpCount;
+		}
+
+		public void setV4HttpCount(Long v4HttpCount) {
+			this.v4HttpCount = v4HttpCount;
+		}
+
+		public Long getV6HttpsCount() {
+			return this.v6HttpsCount;
+		}
+
+		public void setV6HttpsCount(Long v6HttpsCount) {
+			this.v6HttpsCount = v6HttpsCount;
 		}
 	}
 

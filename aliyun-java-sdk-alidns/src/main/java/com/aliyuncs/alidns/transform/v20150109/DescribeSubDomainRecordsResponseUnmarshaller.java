@@ -28,23 +28,23 @@ public class DescribeSubDomainRecordsResponseUnmarshaller {
 		
 		describeSubDomainRecordsResponse.setRequestId(_ctx.stringValue("DescribeSubDomainRecordsResponse.RequestId"));
 		describeSubDomainRecordsResponse.setTotalCount(_ctx.longValue("DescribeSubDomainRecordsResponse.TotalCount"));
-		describeSubDomainRecordsResponse.setPageNumber(_ctx.longValue("DescribeSubDomainRecordsResponse.PageNumber"));
 		describeSubDomainRecordsResponse.setPageSize(_ctx.longValue("DescribeSubDomainRecordsResponse.PageSize"));
+		describeSubDomainRecordsResponse.setPageNumber(_ctx.longValue("DescribeSubDomainRecordsResponse.PageNumber"));
 
 		List<Record> domainRecords = new ArrayList<Record>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSubDomainRecordsResponse.DomainRecords.Length"); i++) {
 			Record record = new Record();
-			record.setDomainName(_ctx.stringValue("DescribeSubDomainRecordsResponse.DomainRecords["+ i +"].DomainName"));
-			record.setRecordId(_ctx.stringValue("DescribeSubDomainRecordsResponse.DomainRecords["+ i +"].RecordId"));
-			record.setRR(_ctx.stringValue("DescribeSubDomainRecordsResponse.DomainRecords["+ i +"].RR"));
+			record.setStatus(_ctx.stringValue("DescribeSubDomainRecordsResponse.DomainRecords["+ i +"].Status"));
 			record.setType(_ctx.stringValue("DescribeSubDomainRecordsResponse.DomainRecords["+ i +"].Type"));
+			record.setWeight(_ctx.integerValue("DescribeSubDomainRecordsResponse.DomainRecords["+ i +"].Weight"));
 			record.setValue(_ctx.stringValue("DescribeSubDomainRecordsResponse.DomainRecords["+ i +"].Value"));
 			record.setTTL(_ctx.longValue("DescribeSubDomainRecordsResponse.DomainRecords["+ i +"].TTL"));
-			record.setPriority(_ctx.longValue("DescribeSubDomainRecordsResponse.DomainRecords["+ i +"].Priority"));
 			record.setLine(_ctx.stringValue("DescribeSubDomainRecordsResponse.DomainRecords["+ i +"].Line"));
-			record.setStatus(_ctx.stringValue("DescribeSubDomainRecordsResponse.DomainRecords["+ i +"].Status"));
+			record.setRecordId(_ctx.stringValue("DescribeSubDomainRecordsResponse.DomainRecords["+ i +"].RecordId"));
+			record.setPriority(_ctx.longValue("DescribeSubDomainRecordsResponse.DomainRecords["+ i +"].Priority"));
+			record.setRR(_ctx.stringValue("DescribeSubDomainRecordsResponse.DomainRecords["+ i +"].RR"));
+			record.setDomainName(_ctx.stringValue("DescribeSubDomainRecordsResponse.DomainRecords["+ i +"].DomainName"));
 			record.setLocked(_ctx.booleanValue("DescribeSubDomainRecordsResponse.DomainRecords["+ i +"].Locked"));
-			record.setWeight(_ctx.integerValue("DescribeSubDomainRecordsResponse.DomainRecords["+ i +"].Weight"));
 
 			domainRecords.add(record);
 		}

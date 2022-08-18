@@ -26,9 +26,9 @@ public class BindInstanceDomainsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer successCount;
-
 	private Integer failedCount;
+
+	private Integer successCount;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,20 +38,20 @@ public class BindInstanceDomainsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getSuccessCount() {
-		return this.successCount;
-	}
-
-	public void setSuccessCount(Integer successCount) {
-		this.successCount = successCount;
-	}
-
 	public Integer getFailedCount() {
 		return this.failedCount;
 	}
 
 	public void setFailedCount(Integer failedCount) {
 		this.failedCount = failedCount;
+	}
+
+	public Integer getSuccessCount() {
+		return this.successCount;
+	}
+
+	public void setSuccessCount(Integer successCount) {
+		this.successCount = successCount;
 	}
 
 	@Override

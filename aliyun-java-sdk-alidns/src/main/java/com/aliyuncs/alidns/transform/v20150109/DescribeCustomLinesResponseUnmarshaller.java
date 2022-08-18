@@ -28,27 +28,27 @@ public class DescribeCustomLinesResponseUnmarshaller {
 	public static DescribeCustomLinesResponse unmarshall(DescribeCustomLinesResponse describeCustomLinesResponse, UnmarshallerContext _ctx) {
 		
 		describeCustomLinesResponse.setRequestId(_ctx.stringValue("DescribeCustomLinesResponse.RequestId"));
-		describeCustomLinesResponse.setTotalItems(_ctx.integerValue("DescribeCustomLinesResponse.TotalItems"));
-		describeCustomLinesResponse.setPageNumber(_ctx.integerValue("DescribeCustomLinesResponse.PageNumber"));
 		describeCustomLinesResponse.setPageSize(_ctx.integerValue("DescribeCustomLinesResponse.PageSize"));
+		describeCustomLinesResponse.setPageNumber(_ctx.integerValue("DescribeCustomLinesResponse.PageNumber"));
 		describeCustomLinesResponse.setTotalPages(_ctx.integerValue("DescribeCustomLinesResponse.TotalPages"));
+		describeCustomLinesResponse.setTotalItems(_ctx.integerValue("DescribeCustomLinesResponse.TotalItems"));
 
 		List<CustomLine> customLines = new ArrayList<CustomLine>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCustomLinesResponse.CustomLines.Length"); i++) {
 			CustomLine customLine = new CustomLine();
-			customLine.setId(_ctx.longValue("DescribeCustomLinesResponse.CustomLines["+ i +"].Id"));
-			customLine.setName(_ctx.stringValue("DescribeCustomLinesResponse.CustomLines["+ i +"].Name"));
 			customLine.setCreateTime(_ctx.stringValue("DescribeCustomLinesResponse.CustomLines["+ i +"].CreateTime"));
-			customLine.setCreateTimestamp(_ctx.longValue("DescribeCustomLinesResponse.CustomLines["+ i +"].CreateTimestamp"));
-			customLine.setIpSegments(_ctx.stringValue("DescribeCustomLinesResponse.CustomLines["+ i +"].IpSegments"));
 			customLine.setCode(_ctx.stringValue("DescribeCustomLinesResponse.CustomLines["+ i +"].Code"));
+			customLine.setName(_ctx.stringValue("DescribeCustomLinesResponse.CustomLines["+ i +"].Name"));
+			customLine.setIpSegments(_ctx.stringValue("DescribeCustomLinesResponse.CustomLines["+ i +"].IpSegments"));
+			customLine.setId(_ctx.longValue("DescribeCustomLinesResponse.CustomLines["+ i +"].Id"));
+			customLine.setCreateTimestamp(_ctx.longValue("DescribeCustomLinesResponse.CustomLines["+ i +"].CreateTimestamp"));
 
 			List<IpSegment> ipSegmentList = new ArrayList<IpSegment>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeCustomLinesResponse.CustomLines["+ i +"].IpSegmentList.Length"); j++) {
 				IpSegment ipSegment = new IpSegment();
-				ipSegment.setName(_ctx.stringValue("DescribeCustomLinesResponse.CustomLines["+ i +"].IpSegmentList["+ j +"].Name"));
-				ipSegment.setStartIp(_ctx.stringValue("DescribeCustomLinesResponse.CustomLines["+ i +"].IpSegmentList["+ j +"].StartIp"));
 				ipSegment.setEndIp(_ctx.stringValue("DescribeCustomLinesResponse.CustomLines["+ i +"].IpSegmentList["+ j +"].EndIp"));
+				ipSegment.setStartIp(_ctx.stringValue("DescribeCustomLinesResponse.CustomLines["+ i +"].IpSegmentList["+ j +"].StartIp"));
+				ipSegment.setName(_ctx.stringValue("DescribeCustomLinesResponse.CustomLines["+ i +"].IpSegmentList["+ j +"].Name"));
 
 				ipSegmentList.add(ipSegment);
 			}

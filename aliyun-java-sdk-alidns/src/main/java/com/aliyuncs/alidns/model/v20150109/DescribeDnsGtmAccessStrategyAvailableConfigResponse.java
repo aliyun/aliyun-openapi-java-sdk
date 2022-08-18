@@ -29,19 +29,19 @@ public class DescribeDnsGtmAccessStrategyAvailableConfigResponse extends AcsResp
 
 	private Boolean suggestSetDefaultLine;
 
-	private List<Ipv4AddrPool> ipv4AddrPools;
+	private List<DomainAddrPool> domainAddrPools;
 
-	private List<Line> lines;
+	private List<Ipv4AddrPool> ipv4AddrPools;
 
 	private List<Ipv6AddrPool> ipv6AddrPools;
 
-	private List<DomainAddrPool> domainAddrPools;
+	private List<Line> lines;
+
+	private List<String> selectedDomainLines;
 
 	private List<String> selectedIpv4Lines;
 
 	private List<String> selectedIpv6Lines;
-
-	private List<String> selectedDomainLines;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -59,20 +59,20 @@ public class DescribeDnsGtmAccessStrategyAvailableConfigResponse extends AcsResp
 		this.suggestSetDefaultLine = suggestSetDefaultLine;
 	}
 
+	public List<DomainAddrPool> getDomainAddrPools() {
+		return this.domainAddrPools;
+	}
+
+	public void setDomainAddrPools(List<DomainAddrPool> domainAddrPools) {
+		this.domainAddrPools = domainAddrPools;
+	}
+
 	public List<Ipv4AddrPool> getIpv4AddrPools() {
 		return this.ipv4AddrPools;
 	}
 
 	public void setIpv4AddrPools(List<Ipv4AddrPool> ipv4AddrPools) {
 		this.ipv4AddrPools = ipv4AddrPools;
-	}
-
-	public List<Line> getLines() {
-		return this.lines;
-	}
-
-	public void setLines(List<Line> lines) {
-		this.lines = lines;
 	}
 
 	public List<Ipv6AddrPool> getIpv6AddrPools() {
@@ -83,12 +83,20 @@ public class DescribeDnsGtmAccessStrategyAvailableConfigResponse extends AcsResp
 		this.ipv6AddrPools = ipv6AddrPools;
 	}
 
-	public List<DomainAddrPool> getDomainAddrPools() {
-		return this.domainAddrPools;
+	public List<Line> getLines() {
+		return this.lines;
 	}
 
-	public void setDomainAddrPools(List<DomainAddrPool> domainAddrPools) {
-		this.domainAddrPools = domainAddrPools;
+	public void setLines(List<Line> lines) {
+		this.lines = lines;
+	}
+
+	public List<String> getSelectedDomainLines() {
+		return this.selectedDomainLines;
+	}
+
+	public void setSelectedDomainLines(List<String> selectedDomainLines) {
+		this.selectedDomainLines = selectedDomainLines;
 	}
 
 	public List<String> getSelectedIpv4Lines() {
@@ -107,29 +115,13 @@ public class DescribeDnsGtmAccessStrategyAvailableConfigResponse extends AcsResp
 		this.selectedIpv6Lines = selectedIpv6Lines;
 	}
 
-	public List<String> getSelectedDomainLines() {
-		return this.selectedDomainLines;
-	}
-
-	public void setSelectedDomainLines(List<String> selectedDomainLines) {
-		this.selectedDomainLines = selectedDomainLines;
-	}
-
-	public static class Ipv4AddrPool {
-
-		private String id;
+	public static class DomainAddrPool {
 
 		private String name;
 
 		private Integer addrCount;
 
-		public String getId() {
-			return this.id;
-		}
-
-		public void setId(String id) {
-			this.id = id;
-		}
+		private String id;
 
 		public String getName() {
 			return this.name;
@@ -146,9 +138,87 @@ public class DescribeDnsGtmAccessStrategyAvailableConfigResponse extends AcsResp
 		public void setAddrCount(Integer addrCount) {
 			this.addrCount = addrCount;
 		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
+	}
+
+	public static class Ipv4AddrPool {
+
+		private String name;
+
+		private Integer addrCount;
+
+		private String id;
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public Integer getAddrCount() {
+			return this.addrCount;
+		}
+
+		public void setAddrCount(Integer addrCount) {
+			this.addrCount = addrCount;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
+	}
+
+	public static class Ipv6AddrPool {
+
+		private String name;
+
+		private Integer addrCount;
+
+		private String id;
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public Integer getAddrCount() {
+			return this.addrCount;
+		}
+
+		public void setAddrCount(Integer addrCount) {
+			this.addrCount = addrCount;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
 	}
 
 	public static class Line {
+
+		private String fatherCode;
+
+		private String groupName;
 
 		private String lineCode;
 
@@ -156,9 +226,21 @@ public class DescribeDnsGtmAccessStrategyAvailableConfigResponse extends AcsResp
 
 		private String groupCode;
 
-		private String groupName;
+		public String getFatherCode() {
+			return this.fatherCode;
+		}
 
-		private String fatherCode;
+		public void setFatherCode(String fatherCode) {
+			this.fatherCode = fatherCode;
+		}
+
+		public String getGroupName() {
+			return this.groupName;
+		}
+
+		public void setGroupName(String groupName) {
+			this.groupName = groupName;
+		}
 
 		public String getLineCode() {
 			return this.lineCode;
@@ -182,88 +264,6 @@ public class DescribeDnsGtmAccessStrategyAvailableConfigResponse extends AcsResp
 
 		public void setGroupCode(String groupCode) {
 			this.groupCode = groupCode;
-		}
-
-		public String getGroupName() {
-			return this.groupName;
-		}
-
-		public void setGroupName(String groupName) {
-			this.groupName = groupName;
-		}
-
-		public String getFatherCode() {
-			return this.fatherCode;
-		}
-
-		public void setFatherCode(String fatherCode) {
-			this.fatherCode = fatherCode;
-		}
-	}
-
-	public static class Ipv6AddrPool {
-
-		private String id;
-
-		private String name;
-
-		private Integer addrCount;
-
-		public String getId() {
-			return this.id;
-		}
-
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public Integer getAddrCount() {
-			return this.addrCount;
-		}
-
-		public void setAddrCount(Integer addrCount) {
-			this.addrCount = addrCount;
-		}
-	}
-
-	public static class DomainAddrPool {
-
-		private String id;
-
-		private String name;
-
-		private Integer addrCount;
-
-		public String getId() {
-			return this.id;
-		}
-
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public Integer getAddrCount() {
-			return this.addrCount;
-		}
-
-		public void setAddrCount(Integer addrCount) {
-			this.addrCount = addrCount;
 		}
 	}
 

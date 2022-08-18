@@ -27,27 +27,27 @@ public class DescribeDnsGtmInstanceAddressPoolResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String addrPoolId;
+	private String lbaStrategy;
 
 	private String createTime;
 
-	private Long createTimestamp;
-
-	private String updateTime;
-
-	private Long updateTimestamp;
-
 	private Integer addrCount;
-
-	private String monitorConfigId;
-
-	private String monitorStatus;
 
 	private String name;
 
 	private String type;
 
-	private String lbaStrategy;
+	private String updateTime;
+
+	private String addrPoolId;
+
+	private Long updateTimestamp;
+
+	private String monitorConfigId;
+
+	private String monitorStatus;
+
+	private Long createTimestamp;
 
 	private List<Addr> addrs;
 
@@ -59,12 +59,12 @@ public class DescribeDnsGtmInstanceAddressPoolResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getAddrPoolId() {
-		return this.addrPoolId;
+	public String getLbaStrategy() {
+		return this.lbaStrategy;
 	}
 
-	public void setAddrPoolId(String addrPoolId) {
-		this.addrPoolId = addrPoolId;
+	public void setLbaStrategy(String lbaStrategy) {
+		this.lbaStrategy = lbaStrategy;
 	}
 
 	public String getCreateTime() {
@@ -75,52 +75,12 @@ public class DescribeDnsGtmInstanceAddressPoolResponse extends AcsResponse {
 		this.createTime = createTime;
 	}
 
-	public Long getCreateTimestamp() {
-		return this.createTimestamp;
-	}
-
-	public void setCreateTimestamp(Long createTimestamp) {
-		this.createTimestamp = createTimestamp;
-	}
-
-	public String getUpdateTime() {
-		return this.updateTime;
-	}
-
-	public void setUpdateTime(String updateTime) {
-		this.updateTime = updateTime;
-	}
-
-	public Long getUpdateTimestamp() {
-		return this.updateTimestamp;
-	}
-
-	public void setUpdateTimestamp(Long updateTimestamp) {
-		this.updateTimestamp = updateTimestamp;
-	}
-
 	public Integer getAddrCount() {
 		return this.addrCount;
 	}
 
 	public void setAddrCount(Integer addrCount) {
 		this.addrCount = addrCount;
-	}
-
-	public String getMonitorConfigId() {
-		return this.monitorConfigId;
-	}
-
-	public void setMonitorConfigId(String monitorConfigId) {
-		this.monitorConfigId = monitorConfigId;
-	}
-
-	public String getMonitorStatus() {
-		return this.monitorStatus;
-	}
-
-	public void setMonitorStatus(String monitorStatus) {
-		this.monitorStatus = monitorStatus;
 	}
 
 	public String getName() {
@@ -139,12 +99,52 @@ public class DescribeDnsGtmInstanceAddressPoolResponse extends AcsResponse {
 		this.type = type;
 	}
 
-	public String getLbaStrategy() {
-		return this.lbaStrategy;
+	public String getUpdateTime() {
+		return this.updateTime;
 	}
 
-	public void setLbaStrategy(String lbaStrategy) {
-		this.lbaStrategy = lbaStrategy;
+	public void setUpdateTime(String updateTime) {
+		this.updateTime = updateTime;
+	}
+
+	public String getAddrPoolId() {
+		return this.addrPoolId;
+	}
+
+	public void setAddrPoolId(String addrPoolId) {
+		this.addrPoolId = addrPoolId;
+	}
+
+	public Long getUpdateTimestamp() {
+		return this.updateTimestamp;
+	}
+
+	public void setUpdateTimestamp(Long updateTimestamp) {
+		this.updateTimestamp = updateTimestamp;
+	}
+
+	public String getMonitorConfigId() {
+		return this.monitorConfigId;
+	}
+
+	public void setMonitorConfigId(String monitorConfigId) {
+		this.monitorConfigId = monitorConfigId;
+	}
+
+	public String getMonitorStatus() {
+		return this.monitorStatus;
+	}
+
+	public void setMonitorStatus(String monitorStatus) {
+		this.monitorStatus = monitorStatus;
+	}
+
+	public Long getCreateTimestamp() {
+		return this.createTimestamp;
+	}
+
+	public void setCreateTimestamp(Long createTimestamp) {
+		this.createTimestamp = createTimestamp;
 	}
 
 	public List<Addr> getAddrs() {
@@ -157,49 +157,25 @@ public class DescribeDnsGtmInstanceAddressPoolResponse extends AcsResponse {
 
 	public static class Addr {
 
-		private String createTime;
-
-		private Long createTimestamp;
-
-		private String updateTime;
-
 		private Long updateTimestamp;
 
-		private String addr;
+		private String attributeInfo;
 
-		private Integer lbaWeight;
-
-		private String mode;
+		private String updateTime;
 
 		private String alertStatus;
 
 		private String remark;
 
-		private String attributeInfo;
+		private Integer lbaWeight;
 
-		public String getCreateTime() {
-			return this.createTime;
-		}
+		private String addr;
 
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
+		private String createTime;
 
-		public Long getCreateTimestamp() {
-			return this.createTimestamp;
-		}
+		private String mode;
 
-		public void setCreateTimestamp(Long createTimestamp) {
-			this.createTimestamp = createTimestamp;
-		}
-
-		public String getUpdateTime() {
-			return this.updateTime;
-		}
-
-		public void setUpdateTime(String updateTime) {
-			this.updateTime = updateTime;
-		}
+		private Long createTimestamp;
 
 		public Long getUpdateTimestamp() {
 			return this.updateTimestamp;
@@ -209,28 +185,20 @@ public class DescribeDnsGtmInstanceAddressPoolResponse extends AcsResponse {
 			this.updateTimestamp = updateTimestamp;
 		}
 
-		public String getAddr() {
-			return this.addr;
+		public String getAttributeInfo() {
+			return this.attributeInfo;
 		}
 
-		public void setAddr(String addr) {
-			this.addr = addr;
+		public void setAttributeInfo(String attributeInfo) {
+			this.attributeInfo = attributeInfo;
 		}
 
-		public Integer getLbaWeight() {
-			return this.lbaWeight;
+		public String getUpdateTime() {
+			return this.updateTime;
 		}
 
-		public void setLbaWeight(Integer lbaWeight) {
-			this.lbaWeight = lbaWeight;
-		}
-
-		public String getMode() {
-			return this.mode;
-		}
-
-		public void setMode(String mode) {
-			this.mode = mode;
+		public void setUpdateTime(String updateTime) {
+			this.updateTime = updateTime;
 		}
 
 		public String getAlertStatus() {
@@ -249,12 +217,44 @@ public class DescribeDnsGtmInstanceAddressPoolResponse extends AcsResponse {
 			this.remark = remark;
 		}
 
-		public String getAttributeInfo() {
-			return this.attributeInfo;
+		public Integer getLbaWeight() {
+			return this.lbaWeight;
 		}
 
-		public void setAttributeInfo(String attributeInfo) {
-			this.attributeInfo = attributeInfo;
+		public void setLbaWeight(Integer lbaWeight) {
+			this.lbaWeight = lbaWeight;
+		}
+
+		public String getAddr() {
+			return this.addr;
+		}
+
+		public void setAddr(String addr) {
+			this.addr = addr;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getMode() {
+			return this.mode;
+		}
+
+		public void setMode(String mode) {
+			this.mode = mode;
+		}
+
+		public Long getCreateTimestamp() {
+			return this.createTimestamp;
+		}
+
+		public void setCreateTimestamp(Long createTimestamp) {
+			this.createTimestamp = createTimestamp;
 		}
 	}
 

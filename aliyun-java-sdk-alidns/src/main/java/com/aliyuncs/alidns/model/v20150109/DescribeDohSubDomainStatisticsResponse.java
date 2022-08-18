@@ -47,32 +47,24 @@ public class DescribeDohSubDomainStatisticsResponse extends AcsResponse {
 
 	public static class Statistic {
 
-		private Long timestamp;
-
-		private Long v4HttpCount;
+		private Long v6HttpCount;
 
 		private Long v4HttpsCount;
 
-		private Long v6HttpCount;
-
-		private Long v6HttpsCount;
+		private Long timestamp;
 
 		private Long totalCount;
 
-		public Long getTimestamp() {
-			return this.timestamp;
+		private Long v4HttpCount;
+
+		private Long v6HttpsCount;
+
+		public Long getV6HttpCount() {
+			return this.v6HttpCount;
 		}
 
-		public void setTimestamp(Long timestamp) {
-			this.timestamp = timestamp;
-		}
-
-		public Long getV4HttpCount() {
-			return this.v4HttpCount;
-		}
-
-		public void setV4HttpCount(Long v4HttpCount) {
-			this.v4HttpCount = v4HttpCount;
+		public void setV6HttpCount(Long v6HttpCount) {
+			this.v6HttpCount = v6HttpCount;
 		}
 
 		public Long getV4HttpsCount() {
@@ -83,20 +75,12 @@ public class DescribeDohSubDomainStatisticsResponse extends AcsResponse {
 			this.v4HttpsCount = v4HttpsCount;
 		}
 
-		public Long getV6HttpCount() {
-			return this.v6HttpCount;
+		public Long getTimestamp() {
+			return this.timestamp;
 		}
 
-		public void setV6HttpCount(Long v6HttpCount) {
-			this.v6HttpCount = v6HttpCount;
-		}
-
-		public Long getV6HttpsCount() {
-			return this.v6HttpsCount;
-		}
-
-		public void setV6HttpsCount(Long v6HttpsCount) {
-			this.v6HttpsCount = v6HttpsCount;
+		public void setTimestamp(Long timestamp) {
+			this.timestamp = timestamp;
 		}
 
 		public Long getTotalCount() {
@@ -105,6 +89,22 @@ public class DescribeDohSubDomainStatisticsResponse extends AcsResponse {
 
 		public void setTotalCount(Long totalCount) {
 			this.totalCount = totalCount;
+		}
+
+		public Long getV4HttpCount() {
+			return this.v4HttpCount;
+		}
+
+		public void setV4HttpCount(Long v4HttpCount) {
+			this.v4HttpCount = v4HttpCount;
+		}
+
+		public Long getV6HttpsCount() {
+			return this.v6HttpsCount;
+		}
+
+		public void setV6HttpsCount(Long v6HttpsCount) {
+			this.v6HttpsCount = v6HttpsCount;
 		}
 	}
 

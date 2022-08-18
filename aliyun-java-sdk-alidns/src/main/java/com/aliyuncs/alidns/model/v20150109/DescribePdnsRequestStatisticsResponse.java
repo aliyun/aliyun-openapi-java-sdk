@@ -27,9 +27,9 @@ public class DescribePdnsRequestStatisticsResponse extends AcsResponse {
 
 	private Long totalCount;
 
-	private String requestId;
-
 	private Long pageSize;
+
+	private String requestId;
 
 	private Long pageNumber;
 
@@ -43,20 +43,20 @@ public class DescribePdnsRequestStatisticsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Long getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Long pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Long getPageNumber() {
@@ -77,55 +77,39 @@ public class DescribePdnsRequestStatisticsResponse extends AcsResponse {
 
 	public static class StatisticItem {
 
-		private Long udpTotalCount;
-
-		private Long ipCount;
-
 		private String domainName;
+
+		private String subDomain;
 
 		private Long v6HttpCount;
 
-		private Long v4Count;
-
-		private Long httpsCount;
-
-		private Long v4HttpsCount;
-
-		private Long v6Count;
-
-		private String subDomain;
+		private Long v6HttpsCount;
 
 		private Long totalCount;
 
 		private Long v4HttpCount;
 
+		private Long v4HttpsCount;
+
+		private Long v4Count;
+
+		private Long v6Count;
+
+		private Long httpCount;
+
+		private Long httpsCount;
+
+		private Long dohTotalCount;
+
+		private Long udpTotalCount;
+
+		private Long ipCount;
+
 		private Long threatCount;
 
 		private String maxThreatLevel;
 
-		private Long httpCount;
-
-		private Long v6HttpsCount;
-
-		private Long dohTotalCount;
-
 		private List<ThreatItem> threatInfo;
-
-		public Long getUdpTotalCount() {
-			return this.udpTotalCount;
-		}
-
-		public void setUdpTotalCount(Long udpTotalCount) {
-			this.udpTotalCount = udpTotalCount;
-		}
-
-		public Long getIpCount() {
-			return this.ipCount;
-		}
-
-		public void setIpCount(Long ipCount) {
-			this.ipCount = ipCount;
-		}
 
 		public String getDomainName() {
 			return this.domainName;
@@ -133,6 +117,14 @@ public class DescribePdnsRequestStatisticsResponse extends AcsResponse {
 
 		public void setDomainName(String domainName) {
 			this.domainName = domainName;
+		}
+
+		public String getSubDomain() {
+			return this.subDomain;
+		}
+
+		public void setSubDomain(String subDomain) {
+			this.subDomain = subDomain;
 		}
 
 		public Long getV6HttpCount() {
@@ -143,44 +135,12 @@ public class DescribePdnsRequestStatisticsResponse extends AcsResponse {
 			this.v6HttpCount = v6HttpCount;
 		}
 
-		public Long getV4Count() {
-			return this.v4Count;
+		public Long getV6HttpsCount() {
+			return this.v6HttpsCount;
 		}
 
-		public void setV4Count(Long v4Count) {
-			this.v4Count = v4Count;
-		}
-
-		public Long getHttpsCount() {
-			return this.httpsCount;
-		}
-
-		public void setHttpsCount(Long httpsCount) {
-			this.httpsCount = httpsCount;
-		}
-
-		public Long getV4HttpsCount() {
-			return this.v4HttpsCount;
-		}
-
-		public void setV4HttpsCount(Long v4HttpsCount) {
-			this.v4HttpsCount = v4HttpsCount;
-		}
-
-		public Long getV6Count() {
-			return this.v6Count;
-		}
-
-		public void setV6Count(Long v6Count) {
-			this.v6Count = v6Count;
-		}
-
-		public String getSubDomain() {
-			return this.subDomain;
-		}
-
-		public void setSubDomain(String subDomain) {
-			this.subDomain = subDomain;
+		public void setV6HttpsCount(Long v6HttpsCount) {
+			this.v6HttpsCount = v6HttpsCount;
 		}
 
 		public Long getTotalCount() {
@@ -199,6 +159,70 @@ public class DescribePdnsRequestStatisticsResponse extends AcsResponse {
 			this.v4HttpCount = v4HttpCount;
 		}
 
+		public Long getV4HttpsCount() {
+			return this.v4HttpsCount;
+		}
+
+		public void setV4HttpsCount(Long v4HttpsCount) {
+			this.v4HttpsCount = v4HttpsCount;
+		}
+
+		public Long getV4Count() {
+			return this.v4Count;
+		}
+
+		public void setV4Count(Long v4Count) {
+			this.v4Count = v4Count;
+		}
+
+		public Long getV6Count() {
+			return this.v6Count;
+		}
+
+		public void setV6Count(Long v6Count) {
+			this.v6Count = v6Count;
+		}
+
+		public Long getHttpCount() {
+			return this.httpCount;
+		}
+
+		public void setHttpCount(Long httpCount) {
+			this.httpCount = httpCount;
+		}
+
+		public Long getHttpsCount() {
+			return this.httpsCount;
+		}
+
+		public void setHttpsCount(Long httpsCount) {
+			this.httpsCount = httpsCount;
+		}
+
+		public Long getDohTotalCount() {
+			return this.dohTotalCount;
+		}
+
+		public void setDohTotalCount(Long dohTotalCount) {
+			this.dohTotalCount = dohTotalCount;
+		}
+
+		public Long getUdpTotalCount() {
+			return this.udpTotalCount;
+		}
+
+		public void setUdpTotalCount(Long udpTotalCount) {
+			this.udpTotalCount = udpTotalCount;
+		}
+
+		public Long getIpCount() {
+			return this.ipCount;
+		}
+
+		public void setIpCount(Long ipCount) {
+			this.ipCount = ipCount;
+		}
+
 		public Long getThreatCount() {
 			return this.threatCount;
 		}
@@ -215,30 +239,6 @@ public class DescribePdnsRequestStatisticsResponse extends AcsResponse {
 			this.maxThreatLevel = maxThreatLevel;
 		}
 
-		public Long getHttpCount() {
-			return this.httpCount;
-		}
-
-		public void setHttpCount(Long httpCount) {
-			this.httpCount = httpCount;
-		}
-
-		public Long getV6HttpsCount() {
-			return this.v6HttpsCount;
-		}
-
-		public void setV6HttpsCount(Long v6HttpsCount) {
-			this.v6HttpsCount = v6HttpsCount;
-		}
-
-		public Long getDohTotalCount() {
-			return this.dohTotalCount;
-		}
-
-		public void setDohTotalCount(Long dohTotalCount) {
-			this.dohTotalCount = dohTotalCount;
-		}
-
 		public List<ThreatItem> getThreatInfo() {
 			return this.threatInfo;
 		}
@@ -249,17 +249,9 @@ public class DescribePdnsRequestStatisticsResponse extends AcsResponse {
 
 		public static class ThreatItem {
 
-			private String threatLevel;
-
 			private String threatType;
 
-			public String getThreatLevel() {
-				return this.threatLevel;
-			}
-
-			public void setThreatLevel(String threatLevel) {
-				this.threatLevel = threatLevel;
-			}
+			private String threatLevel;
 
 			public String getThreatType() {
 				return this.threatType;
@@ -267,6 +259,14 @@ public class DescribePdnsRequestStatisticsResponse extends AcsResponse {
 
 			public void setThreatType(String threatType) {
 				this.threatType = threatType;
+			}
+
+			public String getThreatLevel() {
+				return this.threatLevel;
+			}
+
+			public void setThreatLevel(String threatLevel) {
+				this.threatLevel = threatLevel;
 			}
 		}
 	}

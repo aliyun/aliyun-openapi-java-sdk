@@ -23,8 +23,8 @@ public class BindInstanceDomainsResponseUnmarshaller {
 	public static BindInstanceDomainsResponse unmarshall(BindInstanceDomainsResponse bindInstanceDomainsResponse, UnmarshallerContext _ctx) {
 		
 		bindInstanceDomainsResponse.setRequestId(_ctx.stringValue("BindInstanceDomainsResponse.RequestId"));
-		bindInstanceDomainsResponse.setSuccessCount(_ctx.integerValue("BindInstanceDomainsResponse.SuccessCount"));
 		bindInstanceDomainsResponse.setFailedCount(_ctx.integerValue("BindInstanceDomainsResponse.FailedCount"));
+		bindInstanceDomainsResponse.setSuccessCount(_ctx.integerValue("BindInstanceDomainsResponse.SuccessCount"));
 	 
 	 	return bindInstanceDomainsResponse;
 	}

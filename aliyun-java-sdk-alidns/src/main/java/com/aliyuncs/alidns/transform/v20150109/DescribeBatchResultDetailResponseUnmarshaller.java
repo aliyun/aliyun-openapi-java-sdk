@@ -28,28 +28,28 @@ public class DescribeBatchResultDetailResponseUnmarshaller {
 		
 		describeBatchResultDetailResponse.setRequestId(_ctx.stringValue("DescribeBatchResultDetailResponse.RequestId"));
 		describeBatchResultDetailResponse.setTotalCount(_ctx.longValue("DescribeBatchResultDetailResponse.TotalCount"));
-		describeBatchResultDetailResponse.setPageNumber(_ctx.longValue("DescribeBatchResultDetailResponse.PageNumber"));
 		describeBatchResultDetailResponse.setPageSize(_ctx.longValue("DescribeBatchResultDetailResponse.PageSize"));
+		describeBatchResultDetailResponse.setPageNumber(_ctx.longValue("DescribeBatchResultDetailResponse.PageNumber"));
 
 		List<BatchResultDetail> batchResultDetails = new ArrayList<BatchResultDetail>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeBatchResultDetailResponse.BatchResultDetails.Length"); i++) {
 			BatchResultDetail batchResultDetail = new BatchResultDetail();
-			batchResultDetail.setDomain(_ctx.stringValue("DescribeBatchResultDetailResponse.BatchResultDetails["+ i +"].Domain"));
-			batchResultDetail.setType(_ctx.stringValue("DescribeBatchResultDetailResponse.BatchResultDetails["+ i +"].Type"));
-			batchResultDetail.setRr(_ctx.stringValue("DescribeBatchResultDetailResponse.BatchResultDetails["+ i +"].Rr"));
-			batchResultDetail.setValue(_ctx.stringValue("DescribeBatchResultDetailResponse.BatchResultDetails["+ i +"].Value"));
 			batchResultDetail.setStatus(_ctx.booleanValue("DescribeBatchResultDetailResponse.BatchResultDetails["+ i +"].Status"));
-			batchResultDetail.setReason(_ctx.stringValue("DescribeBatchResultDetailResponse.BatchResultDetails["+ i +"].Reason"));
-			batchResultDetail.setNewRr(_ctx.stringValue("DescribeBatchResultDetailResponse.BatchResultDetails["+ i +"].NewRr"));
-			batchResultDetail.setNewValue(_ctx.stringValue("DescribeBatchResultDetailResponse.BatchResultDetails["+ i +"].NewValue"));
-			batchResultDetail.setBatchType(_ctx.stringValue("DescribeBatchResultDetailResponse.BatchResultDetails["+ i +"].BatchType"));
-			batchResultDetail.setOperateDateStr(_ctx.stringValue("DescribeBatchResultDetailResponse.BatchResultDetails["+ i +"].OperateDateStr"));
-			batchResultDetail.setLine(_ctx.stringValue("DescribeBatchResultDetailResponse.BatchResultDetails["+ i +"].Line"));
-			batchResultDetail.setPriority(_ctx.stringValue("DescribeBatchResultDetailResponse.BatchResultDetails["+ i +"].Priority"));
-			batchResultDetail.setTtl(_ctx.stringValue("DescribeBatchResultDetailResponse.BatchResultDetails["+ i +"].Ttl"));
-			batchResultDetail.setRecordId(_ctx.stringValue("DescribeBatchResultDetailResponse.BatchResultDetails["+ i +"].RecordId"));
+			batchResultDetail.setType(_ctx.stringValue("DescribeBatchResultDetailResponse.BatchResultDetails["+ i +"].Type"));
+			batchResultDetail.setDomain(_ctx.stringValue("DescribeBatchResultDetailResponse.BatchResultDetails["+ i +"].Domain"));
 			batchResultDetail.setRemark(_ctx.stringValue("DescribeBatchResultDetailResponse.BatchResultDetails["+ i +"].Remark"));
+			batchResultDetail.setRecordId(_ctx.stringValue("DescribeBatchResultDetailResponse.BatchResultDetails["+ i +"].RecordId"));
+			batchResultDetail.setRr(_ctx.stringValue("DescribeBatchResultDetailResponse.BatchResultDetails["+ i +"].Rr"));
+			batchResultDetail.setPriority(_ctx.stringValue("DescribeBatchResultDetailResponse.BatchResultDetails["+ i +"].Priority"));
 			batchResultDetail.setRrStatus(_ctx.stringValue("DescribeBatchResultDetailResponse.BatchResultDetails["+ i +"].RrStatus"));
+			batchResultDetail.setOperateDateStr(_ctx.stringValue("DescribeBatchResultDetailResponse.BatchResultDetails["+ i +"].OperateDateStr"));
+			batchResultDetail.setNewValue(_ctx.stringValue("DescribeBatchResultDetailResponse.BatchResultDetails["+ i +"].NewValue"));
+			batchResultDetail.setValue(_ctx.stringValue("DescribeBatchResultDetailResponse.BatchResultDetails["+ i +"].Value"));
+			batchResultDetail.setTtl(_ctx.stringValue("DescribeBatchResultDetailResponse.BatchResultDetails["+ i +"].Ttl"));
+			batchResultDetail.setBatchType(_ctx.stringValue("DescribeBatchResultDetailResponse.BatchResultDetails["+ i +"].BatchType"));
+			batchResultDetail.setLine(_ctx.stringValue("DescribeBatchResultDetailResponse.BatchResultDetails["+ i +"].Line"));
+			batchResultDetail.setNewRr(_ctx.stringValue("DescribeBatchResultDetailResponse.BatchResultDetails["+ i +"].NewRr"));
+			batchResultDetail.setReason(_ctx.stringValue("DescribeBatchResultDetailResponse.BatchResultDetails["+ i +"].Reason"));
 
 			batchResultDetails.add(batchResultDetail);
 		}

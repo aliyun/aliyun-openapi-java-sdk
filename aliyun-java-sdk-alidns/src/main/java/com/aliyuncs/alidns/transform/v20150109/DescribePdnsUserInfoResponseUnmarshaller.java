@@ -26,11 +26,11 @@ public class DescribePdnsUserInfoResponseUnmarshaller {
 		describePdnsUserInfoResponse.setRequestId(_ctx.stringValue("DescribePdnsUserInfoResponse.RequestId"));
 
 		UserInfo userInfo = new UserInfo();
-		userInfo.setAvailableService(_ctx.stringValue("DescribePdnsUserInfoResponse.UserInfo.AvailableService"));
-		userInfo.setServiceType(_ctx.stringValue("DescribePdnsUserInfoResponse.UserInfo.ServiceType"));
-		userInfo.setState(_ctx.stringValue("DescribePdnsUserInfoResponse.UserInfo.State"));
-		userInfo.setStoppedService(_ctx.stringValue("DescribePdnsUserInfoResponse.UserInfo.StoppedService"));
 		userInfo.setPdnsId(_ctx.longValue("DescribePdnsUserInfoResponse.UserInfo.PdnsId"));
+		userInfo.setState(_ctx.stringValue("DescribePdnsUserInfoResponse.UserInfo.State"));
+		userInfo.setServiceType(_ctx.stringValue("DescribePdnsUserInfoResponse.UserInfo.ServiceType"));
+		userInfo.setStoppedService(_ctx.stringValue("DescribePdnsUserInfoResponse.UserInfo.StoppedService"));
+		userInfo.setAvailableService(_ctx.stringValue("DescribePdnsUserInfoResponse.UserInfo.AvailableService"));
 		describePdnsUserInfoResponse.setUserInfo(userInfo);
 	 
 	 	return describePdnsUserInfoResponse;

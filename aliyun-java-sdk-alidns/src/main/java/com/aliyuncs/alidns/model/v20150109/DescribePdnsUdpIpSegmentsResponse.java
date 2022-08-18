@@ -27,9 +27,9 @@ public class DescribePdnsUdpIpSegmentsResponse extends AcsResponse {
 
 	private Long totalCount;
 
-	private String requestId;
-
 	private Long pageSize;
+
+	private String requestId;
 
 	private Long pageNumber;
 
@@ -43,20 +43,20 @@ public class DescribePdnsUdpIpSegmentsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Long getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Long pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Long getPageNumber() {
@@ -77,32 +77,24 @@ public class DescribePdnsUdpIpSegmentsResponse extends AcsResponse {
 
 	public static class IpSegment {
 
-		private String updateDate;
-
-		private String state;
+		private String name;
 
 		private String ip;
 
 		private Long mask;
 
+		private String state;
+
 		private String createDate;
 
-		private String name;
+		private String updateDate;
 
-		public String getUpdateDate() {
-			return this.updateDate;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setUpdateDate(String updateDate) {
-			this.updateDate = updateDate;
-		}
-
-		public String getState() {
-			return this.state;
-		}
-
-		public void setState(String state) {
-			this.state = state;
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public String getIp() {
@@ -121,6 +113,14 @@ public class DescribePdnsUdpIpSegmentsResponse extends AcsResponse {
 			this.mask = mask;
 		}
 
+		public String getState() {
+			return this.state;
+		}
+
+		public void setState(String state) {
+			this.state = state;
+		}
+
 		public String getCreateDate() {
 			return this.createDate;
 		}
@@ -129,12 +129,12 @@ public class DescribePdnsUdpIpSegmentsResponse extends AcsResponse {
 			this.createDate = createDate;
 		}
 
-		public String getName() {
-			return this.name;
+		public String getUpdateDate() {
+			return this.updateDate;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+		public void setUpdateDate(String updateDate) {
+			this.updateDate = updateDate;
 		}
 	}
 

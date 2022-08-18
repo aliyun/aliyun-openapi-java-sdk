@@ -27,10 +27,10 @@ public class DescribeDomainStatisticsSummaryResponseUnmarshaller {
 	public static DescribeDomainStatisticsSummaryResponse unmarshall(DescribeDomainStatisticsSummaryResponse describeDomainStatisticsSummaryResponse, UnmarshallerContext _ctx) {
 		
 		describeDomainStatisticsSummaryResponse.setRequestId(_ctx.stringValue("DescribeDomainStatisticsSummaryResponse.RequestId"));
-		describeDomainStatisticsSummaryResponse.setTotalItems(_ctx.integerValue("DescribeDomainStatisticsSummaryResponse.TotalItems"));
-		describeDomainStatisticsSummaryResponse.setTotalPages(_ctx.integerValue("DescribeDomainStatisticsSummaryResponse.TotalPages"));
 		describeDomainStatisticsSummaryResponse.setPageSize(_ctx.integerValue("DescribeDomainStatisticsSummaryResponse.PageSize"));
 		describeDomainStatisticsSummaryResponse.setPageNumber(_ctx.integerValue("DescribeDomainStatisticsSummaryResponse.PageNumber"));
+		describeDomainStatisticsSummaryResponse.setTotalPages(_ctx.integerValue("DescribeDomainStatisticsSummaryResponse.TotalPages"));
+		describeDomainStatisticsSummaryResponse.setTotalItems(_ctx.integerValue("DescribeDomainStatisticsSummaryResponse.TotalItems"));
 
 		List<Statistic> statistics = new ArrayList<Statistic>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDomainStatisticsSummaryResponse.Statistics.Length"); i++) {

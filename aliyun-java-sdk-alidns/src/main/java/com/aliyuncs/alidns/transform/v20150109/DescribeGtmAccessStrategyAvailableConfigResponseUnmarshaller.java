@@ -42,12 +42,12 @@ public class DescribeGtmAccessStrategyAvailableConfigResponseUnmarshaller {
 		List<Line> lines = new ArrayList<Line>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeGtmAccessStrategyAvailableConfigResponse.Lines.Length"); i++) {
 			Line line = new Line();
-			line.setLineCode(_ctx.stringValue("DescribeGtmAccessStrategyAvailableConfigResponse.Lines["+ i +"].LineCode"));
-			line.setLineName(_ctx.stringValue("DescribeGtmAccessStrategyAvailableConfigResponse.Lines["+ i +"].LineName"));
-			line.setGroupCode(_ctx.stringValue("DescribeGtmAccessStrategyAvailableConfigResponse.Lines["+ i +"].GroupCode"));
-			line.setGroupName(_ctx.stringValue("DescribeGtmAccessStrategyAvailableConfigResponse.Lines["+ i +"].GroupName"));
 			line.setStatus(_ctx.stringValue("DescribeGtmAccessStrategyAvailableConfigResponse.Lines["+ i +"].Status"));
 			line.setFatherCode(_ctx.stringValue("DescribeGtmAccessStrategyAvailableConfigResponse.Lines["+ i +"].FatherCode"));
+			line.setLineCode(_ctx.stringValue("DescribeGtmAccessStrategyAvailableConfigResponse.Lines["+ i +"].LineCode"));
+			line.setGroupName(_ctx.stringValue("DescribeGtmAccessStrategyAvailableConfigResponse.Lines["+ i +"].GroupName"));
+			line.setLineName(_ctx.stringValue("DescribeGtmAccessStrategyAvailableConfigResponse.Lines["+ i +"].LineName"));
+			line.setGroupCode(_ctx.stringValue("DescribeGtmAccessStrategyAvailableConfigResponse.Lines["+ i +"].GroupCode"));
 
 			lines.add(line);
 		}

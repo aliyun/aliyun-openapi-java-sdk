@@ -23,8 +23,8 @@ public class GetTxtRecordForVerifyResponseUnmarshaller {
 	public static GetTxtRecordForVerifyResponse unmarshall(GetTxtRecordForVerifyResponse getTxtRecordForVerifyResponse, UnmarshallerContext _ctx) {
 		
 		getTxtRecordForVerifyResponse.setRequestId(_ctx.stringValue("GetTxtRecordForVerifyResponse.RequestId"));
-		getTxtRecordForVerifyResponse.setDomainName(_ctx.stringValue("GetTxtRecordForVerifyResponse.DomainName"));
 		getTxtRecordForVerifyResponse.setRR(_ctx.stringValue("GetTxtRecordForVerifyResponse.RR"));
+		getTxtRecordForVerifyResponse.setDomainName(_ctx.stringValue("GetTxtRecordForVerifyResponse.DomainName"));
 		getTxtRecordForVerifyResponse.setValue(_ctx.stringValue("GetTxtRecordForVerifyResponse.Value"));
 	 
 	 	return getTxtRecordForVerifyResponse;

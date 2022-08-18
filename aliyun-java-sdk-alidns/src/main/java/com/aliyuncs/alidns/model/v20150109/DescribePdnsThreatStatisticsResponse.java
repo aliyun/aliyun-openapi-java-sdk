@@ -27,9 +27,9 @@ public class DescribePdnsThreatStatisticsResponse extends AcsResponse {
 
 	private Long totalCount;
 
-	private String requestId;
-
 	private Long pageSize;
+
+	private String requestId;
 
 	private Long pageNumber;
 
@@ -43,20 +43,20 @@ public class DescribePdnsThreatStatisticsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Long getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Long pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Long getPageNumber() {
@@ -77,67 +77,27 @@ public class DescribePdnsThreatStatisticsResponse extends AcsResponse {
 
 	public static class StatisticItem {
 
-		private String subDomain;
-
-		private Long udpTotalCount;
-
-		private Long totalCount;
-
-		private String sourceIp;
-
-		private String threatLevel;
-
 		private String domainName;
 
-		private String threatType;
-
-		private String maxThreatLevel;
+		private String subDomain;
 
 		private Long latestThreatTime;
 
+		private Long totalCount;
+
 		private Long dohTotalCount;
+
+		private Long udpTotalCount;
+
+		private String maxThreatLevel;
 
 		private Long domainCount;
 
-		public String getSubDomain() {
-			return this.subDomain;
-		}
+		private String sourceIp;
 
-		public void setSubDomain(String subDomain) {
-			this.subDomain = subDomain;
-		}
+		private String threatType;
 
-		public Long getUdpTotalCount() {
-			return this.udpTotalCount;
-		}
-
-		public void setUdpTotalCount(Long udpTotalCount) {
-			this.udpTotalCount = udpTotalCount;
-		}
-
-		public Long getTotalCount() {
-			return this.totalCount;
-		}
-
-		public void setTotalCount(Long totalCount) {
-			this.totalCount = totalCount;
-		}
-
-		public String getSourceIp() {
-			return this.sourceIp;
-		}
-
-		public void setSourceIp(String sourceIp) {
-			this.sourceIp = sourceIp;
-		}
-
-		public String getThreatLevel() {
-			return this.threatLevel;
-		}
-
-		public void setThreatLevel(String threatLevel) {
-			this.threatLevel = threatLevel;
-		}
+		private String threatLevel;
 
 		public String getDomainName() {
 			return this.domainName;
@@ -147,20 +107,12 @@ public class DescribePdnsThreatStatisticsResponse extends AcsResponse {
 			this.domainName = domainName;
 		}
 
-		public String getThreatType() {
-			return this.threatType;
+		public String getSubDomain() {
+			return this.subDomain;
 		}
 
-		public void setThreatType(String threatType) {
-			this.threatType = threatType;
-		}
-
-		public String getMaxThreatLevel() {
-			return this.maxThreatLevel;
-		}
-
-		public void setMaxThreatLevel(String maxThreatLevel) {
-			this.maxThreatLevel = maxThreatLevel;
+		public void setSubDomain(String subDomain) {
+			this.subDomain = subDomain;
 		}
 
 		public Long getLatestThreatTime() {
@@ -171,6 +123,14 @@ public class DescribePdnsThreatStatisticsResponse extends AcsResponse {
 			this.latestThreatTime = latestThreatTime;
 		}
 
+		public Long getTotalCount() {
+			return this.totalCount;
+		}
+
+		public void setTotalCount(Long totalCount) {
+			this.totalCount = totalCount;
+		}
+
 		public Long getDohTotalCount() {
 			return this.dohTotalCount;
 		}
@@ -179,12 +139,52 @@ public class DescribePdnsThreatStatisticsResponse extends AcsResponse {
 			this.dohTotalCount = dohTotalCount;
 		}
 
+		public Long getUdpTotalCount() {
+			return this.udpTotalCount;
+		}
+
+		public void setUdpTotalCount(Long udpTotalCount) {
+			this.udpTotalCount = udpTotalCount;
+		}
+
+		public String getMaxThreatLevel() {
+			return this.maxThreatLevel;
+		}
+
+		public void setMaxThreatLevel(String maxThreatLevel) {
+			this.maxThreatLevel = maxThreatLevel;
+		}
+
 		public Long getDomainCount() {
 			return this.domainCount;
 		}
 
 		public void setDomainCount(Long domainCount) {
 			this.domainCount = domainCount;
+		}
+
+		public String getSourceIp() {
+			return this.sourceIp;
+		}
+
+		public void setSourceIp(String sourceIp) {
+			this.sourceIp = sourceIp;
+		}
+
+		public String getThreatType() {
+			return this.threatType;
+		}
+
+		public void setThreatType(String threatType) {
+			this.threatType = threatType;
+		}
+
+		public String getThreatLevel() {
+			return this.threatLevel;
+		}
+
+		public void setThreatLevel(String threatLevel) {
+			this.threatLevel = threatLevel;
 		}
 	}
 

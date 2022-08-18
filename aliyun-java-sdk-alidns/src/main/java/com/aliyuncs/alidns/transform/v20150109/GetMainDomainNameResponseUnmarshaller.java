@@ -23,8 +23,8 @@ public class GetMainDomainNameResponseUnmarshaller {
 	public static GetMainDomainNameResponse unmarshall(GetMainDomainNameResponse getMainDomainNameResponse, UnmarshallerContext _ctx) {
 		
 		getMainDomainNameResponse.setRequestId(_ctx.stringValue("GetMainDomainNameResponse.RequestId"));
-		getMainDomainNameResponse.setDomainName(_ctx.stringValue("GetMainDomainNameResponse.DomainName"));
 		getMainDomainNameResponse.setRR(_ctx.stringValue("GetMainDomainNameResponse.RR"));
+		getMainDomainNameResponse.setDomainName(_ctx.stringValue("GetMainDomainNameResponse.DomainName"));
 		getMainDomainNameResponse.setDomainLevel(_ctx.longValue("GetMainDomainNameResponse.DomainLevel"));
 	 
 	 	return getMainDomainNameResponse;

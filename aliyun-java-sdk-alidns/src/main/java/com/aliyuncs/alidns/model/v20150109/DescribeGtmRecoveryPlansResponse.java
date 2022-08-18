@@ -25,17 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeGtmRecoveryPlansResponse extends AcsResponse {
 
+	private Integer pageSize;
+
 	private String requestId;
-
-	private Integer totalItems;
-
-	private Integer totalPages;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer totalPages;
+
+	private Integer totalItems;
 
 	private List<RecoveryPlan> recoveryPlans;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -43,22 +51,6 @@ public class DescribeGtmRecoveryPlansResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalItems() {
-		return this.totalItems;
-	}
-
-	public void setTotalItems(Integer totalItems) {
-		this.totalItems = totalItems;
-	}
-
-	public Integer getTotalPages() {
-		return this.totalPages;
-	}
-
-	public void setTotalPages(Integer totalPages) {
-		this.totalPages = totalPages;
 	}
 
 	public Integer getPageNumber() {
@@ -69,12 +61,20 @@ public class DescribeGtmRecoveryPlansResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalPages() {
+		return this.totalPages;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setTotalPages(Integer totalPages) {
+		this.totalPages = totalPages;
+	}
+
+	public Integer getTotalItems() {
+		return this.totalItems;
+	}
+
+	public void setTotalItems(Integer totalItems) {
+		this.totalItems = totalItems;
 	}
 
 	public List<RecoveryPlan> getRecoveryPlans() {
@@ -87,86 +87,38 @@ public class DescribeGtmRecoveryPlansResponse extends AcsResponse {
 
 	public static class RecoveryPlan {
 
-		private Long recoveryPlanId;
-
-		private String name;
-
-		private String remark;
-
-		private Integer faultAddrPoolNum;
-
-		private String lastExecuteTime;
-
-		private Long lastExecuteTimestamp;
-
-		private String lastRollbackTime;
+		private String status;
 
 		private Long lastRollbackTimestamp;
 
+		private String updateTime;
+
+		private String remark;
+
 		private String createTime;
 
-		private Long createTimestamp;
-
-		private String updateTime;
+		private Long recoveryPlanId;
 
 		private Long updateTimestamp;
 
-		private String status;
+		private Long lastExecuteTimestamp;
 
-		public Long getRecoveryPlanId() {
-			return this.recoveryPlanId;
+		private String lastExecuteTime;
+
+		private String lastRollbackTime;
+
+		private String name;
+
+		private Integer faultAddrPoolNum;
+
+		private Long createTimestamp;
+
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setRecoveryPlanId(Long recoveryPlanId) {
-			this.recoveryPlanId = recoveryPlanId;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getRemark() {
-			return this.remark;
-		}
-
-		public void setRemark(String remark) {
-			this.remark = remark;
-		}
-
-		public Integer getFaultAddrPoolNum() {
-			return this.faultAddrPoolNum;
-		}
-
-		public void setFaultAddrPoolNum(Integer faultAddrPoolNum) {
-			this.faultAddrPoolNum = faultAddrPoolNum;
-		}
-
-		public String getLastExecuteTime() {
-			return this.lastExecuteTime;
-		}
-
-		public void setLastExecuteTime(String lastExecuteTime) {
-			this.lastExecuteTime = lastExecuteTime;
-		}
-
-		public Long getLastExecuteTimestamp() {
-			return this.lastExecuteTimestamp;
-		}
-
-		public void setLastExecuteTimestamp(Long lastExecuteTimestamp) {
-			this.lastExecuteTimestamp = lastExecuteTimestamp;
-		}
-
-		public String getLastRollbackTime() {
-			return this.lastRollbackTime;
-		}
-
-		public void setLastRollbackTime(String lastRollbackTime) {
-			this.lastRollbackTime = lastRollbackTime;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public Long getLastRollbackTimestamp() {
@@ -177,6 +129,22 @@ public class DescribeGtmRecoveryPlansResponse extends AcsResponse {
 			this.lastRollbackTimestamp = lastRollbackTimestamp;
 		}
 
+		public String getUpdateTime() {
+			return this.updateTime;
+		}
+
+		public void setUpdateTime(String updateTime) {
+			this.updateTime = updateTime;
+		}
+
+		public String getRemark() {
+			return this.remark;
+		}
+
+		public void setRemark(String remark) {
+			this.remark = remark;
+		}
+
 		public String getCreateTime() {
 			return this.createTime;
 		}
@@ -185,20 +153,12 @@ public class DescribeGtmRecoveryPlansResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public Long getCreateTimestamp() {
-			return this.createTimestamp;
+		public Long getRecoveryPlanId() {
+			return this.recoveryPlanId;
 		}
 
-		public void setCreateTimestamp(Long createTimestamp) {
-			this.createTimestamp = createTimestamp;
-		}
-
-		public String getUpdateTime() {
-			return this.updateTime;
-		}
-
-		public void setUpdateTime(String updateTime) {
-			this.updateTime = updateTime;
+		public void setRecoveryPlanId(Long recoveryPlanId) {
+			this.recoveryPlanId = recoveryPlanId;
 		}
 
 		public Long getUpdateTimestamp() {
@@ -209,12 +169,52 @@ public class DescribeGtmRecoveryPlansResponse extends AcsResponse {
 			this.updateTimestamp = updateTimestamp;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public Long getLastExecuteTimestamp() {
+			return this.lastExecuteTimestamp;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setLastExecuteTimestamp(Long lastExecuteTimestamp) {
+			this.lastExecuteTimestamp = lastExecuteTimestamp;
+		}
+
+		public String getLastExecuteTime() {
+			return this.lastExecuteTime;
+		}
+
+		public void setLastExecuteTime(String lastExecuteTime) {
+			this.lastExecuteTime = lastExecuteTime;
+		}
+
+		public String getLastRollbackTime() {
+			return this.lastRollbackTime;
+		}
+
+		public void setLastRollbackTime(String lastRollbackTime) {
+			this.lastRollbackTime = lastRollbackTime;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public Integer getFaultAddrPoolNum() {
+			return this.faultAddrPoolNum;
+		}
+
+		public void setFaultAddrPoolNum(Integer faultAddrPoolNum) {
+			this.faultAddrPoolNum = faultAddrPoolNum;
+		}
+
+		public Long getCreateTimestamp() {
+			return this.createTimestamp;
+		}
+
+		public void setCreateTimestamp(Long createTimestamp) {
+			this.createTimestamp = createTimestamp;
 		}
 	}
 

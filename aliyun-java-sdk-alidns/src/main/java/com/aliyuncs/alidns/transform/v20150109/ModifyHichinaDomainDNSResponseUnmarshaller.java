@@ -27,17 +27,17 @@ public class ModifyHichinaDomainDNSResponseUnmarshaller {
 		
 		modifyHichinaDomainDNSResponse.setRequestId(_ctx.stringValue("ModifyHichinaDomainDNSResponse.RequestId"));
 
-		List<String> originalDnsServers = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("ModifyHichinaDomainDNSResponse.OriginalDnsServers.Length"); i++) {
-			originalDnsServers.add(_ctx.stringValue("ModifyHichinaDomainDNSResponse.OriginalDnsServers["+ i +"]"));
-		}
-		modifyHichinaDomainDNSResponse.setOriginalDnsServers(originalDnsServers);
-
 		List<String> newDnsServers = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("ModifyHichinaDomainDNSResponse.NewDnsServers.Length"); i++) {
 			newDnsServers.add(_ctx.stringValue("ModifyHichinaDomainDNSResponse.NewDnsServers["+ i +"]"));
 		}
 		modifyHichinaDomainDNSResponse.setNewDnsServers(newDnsServers);
+
+		List<String> originalDnsServers = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("ModifyHichinaDomainDNSResponse.OriginalDnsServers.Length"); i++) {
+			originalDnsServers.add(_ctx.stringValue("ModifyHichinaDomainDNSResponse.OriginalDnsServers["+ i +"]"));
+		}
+		modifyHichinaDomainDNSResponse.setOriginalDnsServers(originalDnsServers);
 	 
 	 	return modifyHichinaDomainDNSResponse;
 	}

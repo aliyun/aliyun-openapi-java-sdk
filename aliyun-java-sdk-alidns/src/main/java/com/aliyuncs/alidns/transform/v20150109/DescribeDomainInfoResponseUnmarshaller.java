@@ -27,25 +27,25 @@ public class DescribeDomainInfoResponseUnmarshaller {
 	public static DescribeDomainInfoResponse unmarshall(DescribeDomainInfoResponse describeDomainInfoResponse, UnmarshallerContext _ctx) {
 		
 		describeDomainInfoResponse.setRequestId(_ctx.stringValue("DescribeDomainInfoResponse.RequestId"));
-		describeDomainInfoResponse.setDomainId(_ctx.stringValue("DescribeDomainInfoResponse.DomainId"));
-		describeDomainInfoResponse.setDomainName(_ctx.stringValue("DescribeDomainInfoResponse.DomainName"));
-		describeDomainInfoResponse.setPunyCode(_ctx.stringValue("DescribeDomainInfoResponse.PunyCode"));
+		describeDomainInfoResponse.setRecordLineTreeJson(_ctx.stringValue("DescribeDomainInfoResponse.RecordLineTreeJson"));
+		describeDomainInfoResponse.setGroupName(_ctx.stringValue("DescribeDomainInfoResponse.GroupName"));
+		describeDomainInfoResponse.setInBlackHole(_ctx.booleanValue("DescribeDomainInfoResponse.InBlackHole"));
+		describeDomainInfoResponse.setRegionLines(_ctx.booleanValue("DescribeDomainInfoResponse.RegionLines"));
+		describeDomainInfoResponse.setSlaveDns(_ctx.booleanValue("DescribeDomainInfoResponse.SlaveDns"));
 		describeDomainInfoResponse.setAliDomain(_ctx.booleanValue("DescribeDomainInfoResponse.AliDomain"));
+		describeDomainInfoResponse.setResourceGroupId(_ctx.stringValue("DescribeDomainInfoResponse.ResourceGroupId"));
+		describeDomainInfoResponse.setInstanceId(_ctx.stringValue("DescribeDomainInfoResponse.InstanceId"));
+		describeDomainInfoResponse.setDomainName(_ctx.stringValue("DescribeDomainInfoResponse.DomainName"));
+		describeDomainInfoResponse.setCreateTime(_ctx.stringValue("DescribeDomainInfoResponse.CreateTime"));
+		describeDomainInfoResponse.setPunyCode(_ctx.stringValue("DescribeDomainInfoResponse.PunyCode"));
 		describeDomainInfoResponse.setRemark(_ctx.stringValue("DescribeDomainInfoResponse.Remark"));
 		describeDomainInfoResponse.setGroupId(_ctx.stringValue("DescribeDomainInfoResponse.GroupId"));
-		describeDomainInfoResponse.setGroupName(_ctx.stringValue("DescribeDomainInfoResponse.GroupName"));
-		describeDomainInfoResponse.setInstanceId(_ctx.stringValue("DescribeDomainInfoResponse.InstanceId"));
 		describeDomainInfoResponse.setVersionCode(_ctx.stringValue("DescribeDomainInfoResponse.VersionCode"));
-		describeDomainInfoResponse.setVersionName(_ctx.stringValue("DescribeDomainInfoResponse.VersionName"));
+		describeDomainInfoResponse.setDomainId(_ctx.stringValue("DescribeDomainInfoResponse.DomainId"));
 		describeDomainInfoResponse.setMinTtl(_ctx.longValue("DescribeDomainInfoResponse.MinTtl"));
-		describeDomainInfoResponse.setRecordLineTreeJson(_ctx.stringValue("DescribeDomainInfoResponse.RecordLineTreeJson"));
-		describeDomainInfoResponse.setLineType(_ctx.stringValue("DescribeDomainInfoResponse.LineType"));
-		describeDomainInfoResponse.setRegionLines(_ctx.booleanValue("DescribeDomainInfoResponse.RegionLines"));
-		describeDomainInfoResponse.setInBlackHole(_ctx.booleanValue("DescribeDomainInfoResponse.InBlackHole"));
 		describeDomainInfoResponse.setInClean(_ctx.booleanValue("DescribeDomainInfoResponse.InClean"));
-		describeDomainInfoResponse.setSlaveDns(_ctx.booleanValue("DescribeDomainInfoResponse.SlaveDns"));
-		describeDomainInfoResponse.setResourceGroupId(_ctx.stringValue("DescribeDomainInfoResponse.ResourceGroupId"));
-		describeDomainInfoResponse.setCreateTime(_ctx.stringValue("DescribeDomainInfoResponse.CreateTime"));
+		describeDomainInfoResponse.setVersionName(_ctx.stringValue("DescribeDomainInfoResponse.VersionName"));
+		describeDomainInfoResponse.setLineType(_ctx.stringValue("DescribeDomainInfoResponse.LineType"));
 
 		List<String> dnsServers = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDomainInfoResponse.DnsServers.Length"); i++) {
@@ -62,10 +62,10 @@ public class DescribeDomainInfoResponseUnmarshaller {
 		List<RecordLine> recordLines = new ArrayList<RecordLine>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDomainInfoResponse.RecordLines.Length"); i++) {
 			RecordLine recordLine = new RecordLine();
-			recordLine.setLineCode(_ctx.stringValue("DescribeDomainInfoResponse.RecordLines["+ i +"].LineCode"));
 			recordLine.setFatherCode(_ctx.stringValue("DescribeDomainInfoResponse.RecordLines["+ i +"].FatherCode"));
-			recordLine.setLineName(_ctx.stringValue("DescribeDomainInfoResponse.RecordLines["+ i +"].LineName"));
 			recordLine.setLineDisplayName(_ctx.stringValue("DescribeDomainInfoResponse.RecordLines["+ i +"].LineDisplayName"));
+			recordLine.setLineCode(_ctx.stringValue("DescribeDomainInfoResponse.RecordLines["+ i +"].LineCode"));
+			recordLine.setLineName(_ctx.stringValue("DescribeDomainInfoResponse.RecordLines["+ i +"].LineName"));
 
 			recordLines.add(recordLine);
 		}

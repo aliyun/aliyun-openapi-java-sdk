@@ -96,34 +96,26 @@ public class UpdateDnsGtmAddressPoolRequest extends RpcAcsRequest<UpdateDnsGtmAd
 		this.addrs = addrs;	
 		if (addrs != null) {
 			for (int depth1 = 0; depth1 < addrs.size(); depth1++) {
-				putQueryParameter("Addr." + (depth1 + 1) + ".Mode" , addrs.get(depth1).getMode());
 				putQueryParameter("Addr." + (depth1 + 1) + ".AttributeInfo" , addrs.get(depth1).getAttributeInfo());
+				putQueryParameter("Addr." + (depth1 + 1) + ".Mode" , addrs.get(depth1).getMode());
 				putQueryParameter("Addr." + (depth1 + 1) + ".Remark" , addrs.get(depth1).getRemark());
-				putQueryParameter("Addr." + (depth1 + 1) + ".Addr" , addrs.get(depth1).getAddr());
 				putQueryParameter("Addr." + (depth1 + 1) + ".LbaWeight" , addrs.get(depth1).getLbaWeight());
+				putQueryParameter("Addr." + (depth1 + 1) + ".Addr" , addrs.get(depth1).getAddr());
 			}
 		}	
 	}
 
 	public static class Addr {
 
-		private String mode;
-
 		private String attributeInfo;
+
+		private String mode;
 
 		private String remark;
 
-		private String addr;
-
 		private Integer lbaWeight;
 
-		public String getMode() {
-			return this.mode;
-		}
-
-		public void setMode(String mode) {
-			this.mode = mode;
-		}
+		private String addr;
 
 		public String getAttributeInfo() {
 			return this.attributeInfo;
@@ -131,6 +123,14 @@ public class UpdateDnsGtmAddressPoolRequest extends RpcAcsRequest<UpdateDnsGtmAd
 
 		public void setAttributeInfo(String attributeInfo) {
 			this.attributeInfo = attributeInfo;
+		}
+
+		public String getMode() {
+			return this.mode;
+		}
+
+		public void setMode(String mode) {
+			this.mode = mode;
 		}
 
 		public String getRemark() {
@@ -141,20 +141,20 @@ public class UpdateDnsGtmAddressPoolRequest extends RpcAcsRequest<UpdateDnsGtmAd
 			this.remark = remark;
 		}
 
-		public String getAddr() {
-			return this.addr;
-		}
-
-		public void setAddr(String addr) {
-			this.addr = addr;
-		}
-
 		public Integer getLbaWeight() {
 			return this.lbaWeight;
 		}
 
 		public void setLbaWeight(Integer lbaWeight) {
 			this.lbaWeight = lbaWeight;
+		}
+
+		public String getAddr() {
+			return this.addr;
+		}
+
+		public void setAddr(String addr) {
+			this.addr = addr;
 		}
 	}
 

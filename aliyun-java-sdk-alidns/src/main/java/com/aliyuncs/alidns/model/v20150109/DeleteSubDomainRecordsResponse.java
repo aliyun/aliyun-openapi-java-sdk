@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DeleteSubDomainRecordsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String rR;
 
 	private String totalCount;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getRR() {
 		return this.rR;
@@ -52,6 +44,14 @@ public class DeleteSubDomainRecordsResponse extends AcsResponse {
 
 	public void setTotalCount(String totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

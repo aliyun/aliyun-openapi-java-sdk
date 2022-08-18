@@ -27,31 +27,31 @@ public class DescribeDnsGtmInstanceAddressPoolResponseUnmarshaller {
 	public static DescribeDnsGtmInstanceAddressPoolResponse unmarshall(DescribeDnsGtmInstanceAddressPoolResponse describeDnsGtmInstanceAddressPoolResponse, UnmarshallerContext _ctx) {
 		
 		describeDnsGtmInstanceAddressPoolResponse.setRequestId(_ctx.stringValue("DescribeDnsGtmInstanceAddressPoolResponse.RequestId"));
-		describeDnsGtmInstanceAddressPoolResponse.setAddrPoolId(_ctx.stringValue("DescribeDnsGtmInstanceAddressPoolResponse.AddrPoolId"));
+		describeDnsGtmInstanceAddressPoolResponse.setLbaStrategy(_ctx.stringValue("DescribeDnsGtmInstanceAddressPoolResponse.LbaStrategy"));
 		describeDnsGtmInstanceAddressPoolResponse.setCreateTime(_ctx.stringValue("DescribeDnsGtmInstanceAddressPoolResponse.CreateTime"));
-		describeDnsGtmInstanceAddressPoolResponse.setCreateTimestamp(_ctx.longValue("DescribeDnsGtmInstanceAddressPoolResponse.CreateTimestamp"));
-		describeDnsGtmInstanceAddressPoolResponse.setUpdateTime(_ctx.stringValue("DescribeDnsGtmInstanceAddressPoolResponse.UpdateTime"));
-		describeDnsGtmInstanceAddressPoolResponse.setUpdateTimestamp(_ctx.longValue("DescribeDnsGtmInstanceAddressPoolResponse.UpdateTimestamp"));
 		describeDnsGtmInstanceAddressPoolResponse.setAddrCount(_ctx.integerValue("DescribeDnsGtmInstanceAddressPoolResponse.AddrCount"));
-		describeDnsGtmInstanceAddressPoolResponse.setMonitorConfigId(_ctx.stringValue("DescribeDnsGtmInstanceAddressPoolResponse.MonitorConfigId"));
-		describeDnsGtmInstanceAddressPoolResponse.setMonitorStatus(_ctx.stringValue("DescribeDnsGtmInstanceAddressPoolResponse.MonitorStatus"));
 		describeDnsGtmInstanceAddressPoolResponse.setName(_ctx.stringValue("DescribeDnsGtmInstanceAddressPoolResponse.Name"));
 		describeDnsGtmInstanceAddressPoolResponse.setType(_ctx.stringValue("DescribeDnsGtmInstanceAddressPoolResponse.Type"));
-		describeDnsGtmInstanceAddressPoolResponse.setLbaStrategy(_ctx.stringValue("DescribeDnsGtmInstanceAddressPoolResponse.LbaStrategy"));
+		describeDnsGtmInstanceAddressPoolResponse.setUpdateTime(_ctx.stringValue("DescribeDnsGtmInstanceAddressPoolResponse.UpdateTime"));
+		describeDnsGtmInstanceAddressPoolResponse.setAddrPoolId(_ctx.stringValue("DescribeDnsGtmInstanceAddressPoolResponse.AddrPoolId"));
+		describeDnsGtmInstanceAddressPoolResponse.setUpdateTimestamp(_ctx.longValue("DescribeDnsGtmInstanceAddressPoolResponse.UpdateTimestamp"));
+		describeDnsGtmInstanceAddressPoolResponse.setMonitorConfigId(_ctx.stringValue("DescribeDnsGtmInstanceAddressPoolResponse.MonitorConfigId"));
+		describeDnsGtmInstanceAddressPoolResponse.setMonitorStatus(_ctx.stringValue("DescribeDnsGtmInstanceAddressPoolResponse.MonitorStatus"));
+		describeDnsGtmInstanceAddressPoolResponse.setCreateTimestamp(_ctx.longValue("DescribeDnsGtmInstanceAddressPoolResponse.CreateTimestamp"));
 
 		List<Addr> addrs = new ArrayList<Addr>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDnsGtmInstanceAddressPoolResponse.Addrs.Length"); i++) {
 			Addr addr = new Addr();
-			addr.setCreateTime(_ctx.stringValue("DescribeDnsGtmInstanceAddressPoolResponse.Addrs["+ i +"].CreateTime"));
-			addr.setCreateTimestamp(_ctx.longValue("DescribeDnsGtmInstanceAddressPoolResponse.Addrs["+ i +"].CreateTimestamp"));
-			addr.setUpdateTime(_ctx.stringValue("DescribeDnsGtmInstanceAddressPoolResponse.Addrs["+ i +"].UpdateTime"));
 			addr.setUpdateTimestamp(_ctx.longValue("DescribeDnsGtmInstanceAddressPoolResponse.Addrs["+ i +"].UpdateTimestamp"));
-			addr.setAddr(_ctx.stringValue("DescribeDnsGtmInstanceAddressPoolResponse.Addrs["+ i +"].Addr"));
-			addr.setLbaWeight(_ctx.integerValue("DescribeDnsGtmInstanceAddressPoolResponse.Addrs["+ i +"].LbaWeight"));
-			addr.setMode(_ctx.stringValue("DescribeDnsGtmInstanceAddressPoolResponse.Addrs["+ i +"].Mode"));
+			addr.setAttributeInfo(_ctx.stringValue("DescribeDnsGtmInstanceAddressPoolResponse.Addrs["+ i +"].AttributeInfo"));
+			addr.setUpdateTime(_ctx.stringValue("DescribeDnsGtmInstanceAddressPoolResponse.Addrs["+ i +"].UpdateTime"));
 			addr.setAlertStatus(_ctx.stringValue("DescribeDnsGtmInstanceAddressPoolResponse.Addrs["+ i +"].AlertStatus"));
 			addr.setRemark(_ctx.stringValue("DescribeDnsGtmInstanceAddressPoolResponse.Addrs["+ i +"].Remark"));
-			addr.setAttributeInfo(_ctx.stringValue("DescribeDnsGtmInstanceAddressPoolResponse.Addrs["+ i +"].AttributeInfo"));
+			addr.setLbaWeight(_ctx.integerValue("DescribeDnsGtmInstanceAddressPoolResponse.Addrs["+ i +"].LbaWeight"));
+			addr.setAddr(_ctx.stringValue("DescribeDnsGtmInstanceAddressPoolResponse.Addrs["+ i +"].Addr"));
+			addr.setCreateTime(_ctx.stringValue("DescribeDnsGtmInstanceAddressPoolResponse.Addrs["+ i +"].CreateTime"));
+			addr.setMode(_ctx.stringValue("DescribeDnsGtmInstanceAddressPoolResponse.Addrs["+ i +"].Mode"));
+			addr.setCreateTimestamp(_ctx.longValue("DescribeDnsGtmInstanceAddressPoolResponse.Addrs["+ i +"].CreateTimestamp"));
 
 			addrs.add(addr);
 		}
