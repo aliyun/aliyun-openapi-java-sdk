@@ -37,7 +37,7 @@ public class GetWeChCommentRequest extends RpcAcsRequest<GetWeChCommentResponse>
 
 	private String operation;
 	public GetWeChCommentRequest() {
-		super("alinlp", "2020-06-29", "GetWeChComment", "GetKeywordChEcom");
+		super("alinlp", "2020-06-29", "GetWeChComment", "alinlp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

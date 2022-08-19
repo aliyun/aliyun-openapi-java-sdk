@@ -31,7 +31,7 @@ public class GetBrandChEcomRequest extends RpcAcsRequest<GetBrandChEcomResponse>
 
 	private String text;
 	public GetBrandChEcomRequest() {
-		super("alinlp", "2020-06-29", "GetBrandChEcom", "GetKeywordChEcom");
+		super("alinlp", "2020-06-29", "GetBrandChEcom", "alinlp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

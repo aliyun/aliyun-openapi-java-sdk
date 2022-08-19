@@ -31,7 +31,7 @@ public class GetSaSeaEcomRequest extends RpcAcsRequest<GetSaSeaEcomResponse> {
 
 	private String text;
 	public GetSaSeaEcomRequest() {
-		super("alinlp", "2020-06-29", "GetSaSeaEcom", "GetKeywordChEcom");
+		super("alinlp", "2020-06-29", "GetSaSeaEcom", "alinlp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

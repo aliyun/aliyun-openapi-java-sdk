@@ -31,7 +31,7 @@ public class GetItemPubChEcomRequest extends RpcAcsRequest<GetItemPubChEcomRespo
 
 	private String text;
 	public GetItemPubChEcomRequest() {
-		super("alinlp", "2020-06-29", "GetItemPubChEcom", "GetKeywordChEcom");
+		super("alinlp", "2020-06-29", "GetItemPubChEcom", "alinlp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

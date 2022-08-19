@@ -29,7 +29,7 @@ public class GetOperationChMedicalRequest extends RpcAcsRequest<GetOperationChMe
 
 	private String name;
 	public GetOperationChMedicalRequest() {
-		super("alinlp", "2020-06-29", "GetOperationChMedical", "GetKeywordChEcom");
+		super("alinlp", "2020-06-29", "GetOperationChMedical", "alinlp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
