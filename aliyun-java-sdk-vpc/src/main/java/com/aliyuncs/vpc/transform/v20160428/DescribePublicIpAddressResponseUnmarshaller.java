@@ -33,13 +33,18 @@ public class DescribePublicIpAddressResponseUnmarshaller {
 		describePublicIpAddressResponse.setPageNumber(_ctx.integerValue("DescribePublicIpAddressResponse.PageNumber"));
 		describePublicIpAddressResponse.setTotalCount(_ctx.integerValue("DescribePublicIpAddressResponse.TotalCount"));
 		describePublicIpAddressResponse.setRegionId(_ctx.stringValue("DescribePublicIpAddressResponse.RegionId"));
-		describePublicIpAddressResponse.setPublicIpAddress(_ctx.stringValue("DescribePublicIpAddressResponse.PublicIpAddress"));
 
 		List<String> ipRange = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePublicIpAddressResponse.IpRange.Length"); i++) {
 			ipRange.add(_ctx.stringValue("DescribePublicIpAddressResponse.IpRange["+ i +"]"));
 		}
 		describePublicIpAddressResponse.setIpRange(ipRange);
+
+		List<String> publicIpAddress = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribePublicIpAddressResponse.PublicIpAddress.Length"); i++) {
+			publicIpAddress.add(_ctx.stringValue("DescribePublicIpAddressResponse.PublicIpAddress["+ i +"]"));
+		}
+		describePublicIpAddressResponse.setPublicIpAddress(publicIpAddress);
 	 
 	 	return describePublicIpAddressResponse;
 	}

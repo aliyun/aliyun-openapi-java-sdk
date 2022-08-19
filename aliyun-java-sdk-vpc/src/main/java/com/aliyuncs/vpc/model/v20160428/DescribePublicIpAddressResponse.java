@@ -41,9 +41,9 @@ public class DescribePublicIpAddressResponse extends AcsResponse {
 
 	private String regionId;
 
-	private String publicIpAddress;
-
 	private List<String> ipRange;
+
+	private List<String> publicIpAddress;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -109,14 +109,6 @@ public class DescribePublicIpAddressResponse extends AcsResponse {
 		this.regionId = regionId;
 	}
 
-	public String getPublicIpAddress() {
-		return this.publicIpAddress;
-	}
-
-	public void setPublicIpAddress(String publicIpAddress) {
-		this.publicIpAddress = publicIpAddress;
-	}
-
 	public List<String> getIpRange() {
 		return this.ipRange;
 	}
@@ -125,8 +117,21 @@ public class DescribePublicIpAddressResponse extends AcsResponse {
 		this.ipRange = ipRange;
 	}
 
+	public List<String> getPublicIpAddress() {
+		return this.publicIpAddress;
+	}
+
+	public void setPublicIpAddress(List<String> publicIpAddress) {
+		this.publicIpAddress = publicIpAddress;
+	}
+
 	@Override
 	public DescribePublicIpAddressResponse getInstance(UnmarshallerContext context) {
 		return	DescribePublicIpAddressResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }
