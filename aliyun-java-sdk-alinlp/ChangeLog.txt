@@ -1,3 +1,6 @@
+2022-08-19 Version: 1.0.19
+- Support version 3.
+
 2022-03-28 Version: 1.0.18
 - Generated 2020-06-29 for `alinlp`.
 

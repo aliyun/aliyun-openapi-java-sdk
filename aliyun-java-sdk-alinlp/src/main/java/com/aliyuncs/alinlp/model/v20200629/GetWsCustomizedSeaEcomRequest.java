@@ -31,7 +31,7 @@ public class GetWsCustomizedSeaEcomRequest extends RpcAcsRequest<GetWsCustomized
 
 	private String text;
 	public GetWsCustomizedSeaEcomRequest() {
-		super("alinlp", "2020-06-29", "GetWsCustomizedSeaEcom", "alinlp");
+		super("alinlp", "2020-06-29", "GetWsCustomizedSeaEcom", "GetKeywordChEcom");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

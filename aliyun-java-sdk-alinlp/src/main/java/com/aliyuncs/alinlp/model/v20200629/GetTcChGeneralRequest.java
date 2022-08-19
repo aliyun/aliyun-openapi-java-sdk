@@ -29,7 +29,7 @@ public class GetTcChGeneralRequest extends RpcAcsRequest<GetTcChGeneralResponse>
 
 	private String text;
 	public GetTcChGeneralRequest() {
-		super("alinlp", "2020-06-29", "GetTcChGeneral", "alinlp");
+		super("alinlp", "2020-06-29", "GetTcChGeneral", "GetKeywordChEcom");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

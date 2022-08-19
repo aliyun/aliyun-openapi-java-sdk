@@ -37,7 +37,7 @@ public class GetWeChEntertainmentRequest extends RpcAcsRequest<GetWeChEntertainm
 
 	private String operation;
 	public GetWeChEntertainmentRequest() {
-		super("alinlp", "2020-06-29", "GetWeChEntertainment", "alinlp");
+		super("alinlp", "2020-06-29", "GetWeChEntertainment", "GetKeywordChEcom");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

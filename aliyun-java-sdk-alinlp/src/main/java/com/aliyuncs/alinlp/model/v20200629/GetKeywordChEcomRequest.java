@@ -25,16 +25,29 @@ import com.aliyuncs.alinlp.Endpoint;
 public class GetKeywordChEcomRequest extends RpcAcsRequest<GetKeywordChEcomResponse> {
 	   
 
+	private String apiVersion;
+
 	private String serviceCode;
 
 	private String text;
 	public GetKeywordChEcomRequest() {
-		super("alinlp", "2020-06-29", "GetKeywordChEcom", "alinlp");
+		super("alinlp", "2020-06-29", "GetKeywordChEcom", "GetKeywordChEcom");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getApiVersion() {
+		return this.apiVersion;
+	}
+
+	public void setApiVersion(String apiVersion) {
+		this.apiVersion = apiVersion;
+		if(apiVersion != null){
+			putBodyParameter("ApiVersion", apiVersion);
+		}
 	}
 
 	public String getServiceCode() {

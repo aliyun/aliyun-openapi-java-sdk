@@ -31,7 +31,7 @@ public class GetCheckDuplicationChMedicalRequest extends RpcAcsRequest<GetCheckD
 
 	private String originQ;
 	public GetCheckDuplicationChMedicalRequest() {
-		super("alinlp", "2020-06-29", "GetCheckDuplicationChMedical", "alinlp");
+		super("alinlp", "2020-06-29", "GetCheckDuplicationChMedical", "GetKeywordChEcom");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
