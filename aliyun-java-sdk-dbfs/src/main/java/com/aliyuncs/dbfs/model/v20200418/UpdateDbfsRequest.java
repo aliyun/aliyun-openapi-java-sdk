@@ -22,17 +22,34 @@ import com.aliyuncs.dbfs.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetDbfsRequest extends RpcAcsRequest<GetDbfsResponse> {
+public class UpdateDbfsRequest extends RpcAcsRequest<UpdateDbfsResponse> {
 	   
 
+	private String usedScene;
+
 	private String fsId;
-	public GetDbfsRequest() {
-		super("DBFS", "2020-04-18", "GetDbfs", "dbfs");
+
+	private String instanceType;
+
+	private String advancedFeatures;
+	public UpdateDbfsRequest() {
+		super("DBFS", "2020-04-18", "UpdateDbfs", "dbfs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getUsedScene() {
+		return this.usedScene;
+	}
+
+	public void setUsedScene(String usedScene) {
+		this.usedScene = usedScene;
+		if(usedScene != null){
+			putQueryParameter("UsedScene", usedScene);
+		}
 	}
 
 	public String getFsId() {
@@ -46,9 +63,31 @@ public class GetDbfsRequest extends RpcAcsRequest<GetDbfsResponse> {
 		}
 	}
 
+	public String getInstanceType() {
+		return this.instanceType;
+	}
+
+	public void setInstanceType(String instanceType) {
+		this.instanceType = instanceType;
+		if(instanceType != null){
+			putQueryParameter("InstanceType", instanceType);
+		}
+	}
+
+	public String getAdvancedFeatures() {
+		return this.advancedFeatures;
+	}
+
+	public void setAdvancedFeatures(String advancedFeatures) {
+		this.advancedFeatures = advancedFeatures;
+		if(advancedFeatures != null){
+			putQueryParameter("AdvancedFeatures", advancedFeatures);
+		}
+	}
+
 	@Override
-	public Class<GetDbfsResponse> getResponseClass() {
-		return GetDbfsResponse.class;
+	public Class<UpdateDbfsResponse> getResponseClass() {
+		return UpdateDbfsResponse.class;
 	}
 
 }

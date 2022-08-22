@@ -29,7 +29,7 @@ public class RenameDbfsRequest extends RpcAcsRequest<RenameDbfsResponse> {
 
 	private String fsId;
 	public RenameDbfsRequest() {
-		super("DBFS", "2020-04-18", "RenameDbfs");
+		super("DBFS", "2020-04-18", "RenameDbfs", "dbfs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

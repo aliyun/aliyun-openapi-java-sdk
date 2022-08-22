@@ -27,6 +27,7 @@ public class ListDbfsAttachableEcsInstancesResponseUnmarshaller {
 	public static ListDbfsAttachableEcsInstancesResponse unmarshall(ListDbfsAttachableEcsInstancesResponse listDbfsAttachableEcsInstancesResponse, UnmarshallerContext _ctx) {
 		
 		listDbfsAttachableEcsInstancesResponse.setRequestId(_ctx.stringValue("ListDbfsAttachableEcsInstancesResponse.RequestId"));
+		listDbfsAttachableEcsInstancesResponse.setTotalCount(_ctx.integerValue("ListDbfsAttachableEcsInstancesResponse.TotalCount"));
 
 		List<LabelInfo> ecsLabelInfo = new ArrayList<LabelInfo>();
 		for (int i = 0; i < _ctx.lengthValue("ListDbfsAttachableEcsInstancesResponse.EcsLabelInfo.Length"); i++) {

@@ -27,6 +27,8 @@ public class ListDbfsAttachableEcsInstancesResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Integer totalCount;
+
 	private List<LabelInfo> ecsLabelInfo;
 
 	public String getRequestId() {
@@ -35,6 +37,14 @@ public class ListDbfsAttachableEcsInstancesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<LabelInfo> getEcsLabelInfo() {

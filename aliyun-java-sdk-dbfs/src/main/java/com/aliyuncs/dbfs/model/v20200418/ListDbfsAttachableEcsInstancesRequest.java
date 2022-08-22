@@ -24,13 +24,39 @@ import com.aliyuncs.dbfs.Endpoint;
  */
 public class ListDbfsAttachableEcsInstancesRequest extends RpcAcsRequest<ListDbfsAttachableEcsInstancesResponse> {
 	   
+
+	private Integer pageSize;
+
+	private Integer pageNumber;
 	public ListDbfsAttachableEcsInstancesRequest() {
-		super("DBFS", "2020-04-18", "ListDbfsAttachableEcsInstances");
+		super("DBFS", "2020-04-18", "ListDbfsAttachableEcsInstances", "dbfs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
 	}
 
 	@Override

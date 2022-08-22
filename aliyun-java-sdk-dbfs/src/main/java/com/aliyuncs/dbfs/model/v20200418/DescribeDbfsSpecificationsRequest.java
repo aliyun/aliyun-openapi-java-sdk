@@ -29,7 +29,7 @@ public class DescribeDbfsSpecificationsRequest extends RpcAcsRequest<DescribeDbf
 
 	private String category;
 	public DescribeDbfsSpecificationsRequest() {
-		super("DBFS", "2020-04-18", "DescribeDbfsSpecifications");
+		super("DBFS", "2020-04-18", "DescribeDbfsSpecifications", "dbfs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
