@@ -25,7 +25,11 @@ import com.aliyuncs.dbfs.Endpoint;
 public class ListDbfsAttachableEcsInstancesRequest extends RpcAcsRequest<ListDbfsAttachableEcsInstancesResponse> {
 	   
 
+	private String filterKey;
+
 	private Integer pageSize;
+
+	private String filterValue;
 
 	private Integer pageNumber;
 	public ListDbfsAttachableEcsInstancesRequest() {
@@ -37,6 +41,17 @@ public class ListDbfsAttachableEcsInstancesRequest extends RpcAcsRequest<ListDbf
 		} catch (Exception e) {}
 	}
 
+	public String getFilterKey() {
+		return this.filterKey;
+	}
+
+	public void setFilterKey(String filterKey) {
+		this.filterKey = filterKey;
+		if(filterKey != null){
+			putQueryParameter("FilterKey", filterKey);
+		}
+	}
+
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -45,6 +60,17 @@ public class ListDbfsAttachableEcsInstancesRequest extends RpcAcsRequest<ListDbf
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getFilterValue() {
+		return this.filterValue;
+	}
+
+	public void setFilterValue(String filterValue) {
+		this.filterValue = filterValue;
+		if(filterValue != null){
+			putQueryParameter("FilterValue", filterValue);
 		}
 	}
 
