@@ -1,3 +1,6 @@
+2022-08-23 Version: 1.3.0
+- QuerySmsReports.
+
 2022-08-23 Version: 1.2.9
 - QuerySmsReports.
 
