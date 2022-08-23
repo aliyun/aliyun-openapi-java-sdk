@@ -19,7 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.cbn.model.v20170912.ListTransitRouterVpnAttachmentsResponse;
 import com.aliyuncs.cbn.model.v20170912.ListTransitRouterVpnAttachmentsResponse.TransitRouterAttachment;
-import com.aliyuncs.cbn.model.v20170912.ListTransitRouterVpnAttachmentsResponse.TransitRouterAttachment.Zone;
+import com.aliyuncs.cbn.model.v20170912.ListTransitRouterVpnAttachmentsResponse.TransitRouterAttachment.ZoneMapping;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -47,12 +47,12 @@ public class ListTransitRouterVpnAttachmentsResponseUnmarshaller {
 			transitRouterAttachment.setAutoPublishRouteEnabled(_ctx.booleanValue("ListTransitRouterVpnAttachmentsResponse.TransitRouterAttachments["+ i +"].AutoPublishRouteEnabled"));
 			transitRouterAttachment.setTransitRouterAttachmentName(_ctx.stringValue("ListTransitRouterVpnAttachmentsResponse.TransitRouterAttachments["+ i +"].TransitRouterAttachmentName"));
 
-			List<Zone> zones = new ArrayList<Zone>();
+			List<ZoneMapping> zones = new ArrayList<ZoneMapping>();
 			for (int j = 0; j < _ctx.lengthValue("ListTransitRouterVpnAttachmentsResponse.TransitRouterAttachments["+ i +"].Zones.Length"); j++) {
-				Zone zone = new Zone();
-				zone.setZoneId(_ctx.stringValue("ListTransitRouterVpnAttachmentsResponse.TransitRouterAttachments["+ i +"].Zones["+ j +"].ZoneId"));
+				ZoneMapping zoneMapping = new ZoneMapping();
+				zoneMapping.setZoneId(_ctx.stringValue("ListTransitRouterVpnAttachmentsResponse.TransitRouterAttachments["+ i +"].Zones["+ j +"].ZoneId"));
 
-				zones.add(zone);
+				zones.add(zoneMapping);
 			}
 			transitRouterAttachment.setZones(zones);
 

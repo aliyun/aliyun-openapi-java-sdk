@@ -99,7 +99,7 @@ public class ListTransitRouterVpnAttachmentsResponse extends AcsResponse {
 
 		private String transitRouterAttachmentName;
 
-		private List<Zone> zones;
+		private List<ZoneMapping> zones;
 
 		public String getCreationTime() {
 			return this.creationTime;
@@ -189,15 +189,15 @@ public class ListTransitRouterVpnAttachmentsResponse extends AcsResponse {
 			this.transitRouterAttachmentName = transitRouterAttachmentName;
 		}
 
-		public List<Zone> getZones() {
+		public List<ZoneMapping> getZones() {
 			return this.zones;
 		}
 
-		public void setZones(List<Zone> zones) {
+		public void setZones(List<ZoneMapping> zones) {
 			this.zones = zones;
 		}
 
-		public static class Zone {
+		public static class ZoneMapping {
 
 			private String zoneId;
 

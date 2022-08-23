@@ -1,3 +1,7 @@
+2022-08-23 Version: 1.0.22
+- The action parameter is required for some APIs.
+- RegisterTransitRouterMulticastGroupSources and RegisterTransitRouterMulticastGroupMembers add parameter VpcId.
+
 2022-07-26 Version: 1.0.21-SNAPSHOT
 - Support MatchAddressType in RouteMap API.
 

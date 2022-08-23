@@ -43,6 +43,8 @@ public class RegisterTransitRouterMulticastGroupSourcesRequest extends RpcAcsReq
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private String vpcId;
 	public RegisterTransitRouterMulticastGroupSourcesRequest() {
 		super("Cbn", "2017-09-12", "RegisterTransitRouterMulticastGroupSources");
 		setMethod(MethodType.POST);
@@ -150,6 +152,17 @@ public class RegisterTransitRouterMulticastGroupSourcesRequest extends RpcAcsReq
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
 		}
 	}
 
