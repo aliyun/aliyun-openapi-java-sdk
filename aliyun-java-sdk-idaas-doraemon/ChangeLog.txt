@@ -1,3 +1,6 @@
+2022-08-23 Version: 1.2.9
+- QuerySmsReports.
+
 2022-06-17 Version: 1.2.8
 - ListOrderConsumeStatisticRecords add AliOrderCode.
 
