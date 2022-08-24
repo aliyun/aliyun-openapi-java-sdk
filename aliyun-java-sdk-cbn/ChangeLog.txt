@@ -1,3 +1,9 @@
+2022-08-24 Version: 1.0.23
+- Add ErrorCode for CreateTransitRouterPrefixListAssociation .
+- Add ErrorCode for DeleteTransitRouterPrefixListAssociation .
+- Update Requried params for CreateTransitRouterPrefixListAssociation .
+- Update Requried params for DeleteTransitRouterPrefixListAssociation .
+
 2022-08-23 Version: 1.0.22
 - The action parameter is required for some APIs.
 - RegisterTransitRouterMulticastGroupSources and RegisterTransitRouterMulticastGroupMembers add parameter VpcId.

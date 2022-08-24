@@ -31,8 +31,6 @@ public class DeleteTransitRouterPrefixListAssociationRequest extends RpcAcsReque
 
 	private String prefixListId;
 
-	private String nextHopType;
-
 	private Boolean dryRun;
 
 	private String resourceOwnerAccount;
@@ -85,17 +83,6 @@ public class DeleteTransitRouterPrefixListAssociationRequest extends RpcAcsReque
 		this.prefixListId = prefixListId;
 		if(prefixListId != null){
 			putQueryParameter("PrefixListId", prefixListId);
-		}
-	}
-
-	public String getNextHopType() {
-		return this.nextHopType;
-	}
-
-	public void setNextHopType(String nextHopType) {
-		this.nextHopType = nextHopType;
-		if(nextHopType != null){
-			putQueryParameter("NextHopType", nextHopType);
 		}
 	}
 
