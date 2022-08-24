@@ -16,6 +16,7 @@ package com.aliyuncs.viapi_regen.model.v20211119;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.viapi_regen.Endpoint;
 
 /**
  * @author auto create
@@ -28,10 +29,16 @@ public class UpdateTrainTaskRequest extends RpcAcsRequest<UpdateTrainTaskRespons
 
 	private Long id;
 
+	private String advancedParameters;
+
 	private String name;
 	public UpdateTrainTaskRequest() {
-		super("viapi-regen", "2021-11-19", "UpdateTrainTask", "viapi-regen");
+		super("viapi-regen", "2021-11-19", "UpdateTrainTask", "selflearning");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getDescription() {
@@ -53,6 +60,17 @@ public class UpdateTrainTaskRequest extends RpcAcsRequest<UpdateTrainTaskRespons
 		this.id = id;
 		if(id != null){
 			putBodyParameter("Id", id.toString());
+		}
+	}
+
+	public String getAdvancedParameters() {
+		return this.advancedParameters;
+	}
+
+	public void setAdvancedParameters(String advancedParameters) {
+		this.advancedParameters = advancedParameters;
+		if(advancedParameters != null){
+			putBodyParameter("AdvancedParameters", advancedParameters);
 		}
 	}
 

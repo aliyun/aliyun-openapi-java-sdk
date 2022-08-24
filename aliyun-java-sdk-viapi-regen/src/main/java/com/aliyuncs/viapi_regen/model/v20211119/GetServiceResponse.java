@@ -76,7 +76,7 @@ public class GetServiceResponse extends AcsResponse {
 
 		private String status;
 
-		private String curlExample;
+		private String serviceId;
 
 		private String inputParams;
 
@@ -128,12 +128,12 @@ public class GetServiceResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getCurlExample() {
-			return this.curlExample;
+		public String getServiceId() {
+			return this.serviceId;
 		}
 
-		public void setCurlExample(String curlExample) {
-			this.curlExample = curlExample;
+		public void setServiceId(String serviceId) {
+			this.serviceId = serviceId;
 		}
 
 		public String getInputParams() {

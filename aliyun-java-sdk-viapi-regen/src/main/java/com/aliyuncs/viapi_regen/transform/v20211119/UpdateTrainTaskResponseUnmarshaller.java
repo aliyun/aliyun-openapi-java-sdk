@@ -37,6 +37,7 @@ public class UpdateTrainTaskResponseUnmarshaller {
 		data.setLabelId(_ctx.longValue("UpdateTrainTaskResponse.Data.LabelId"));
 		data.setLabelName(_ctx.stringValue("UpdateTrainTaskResponse.Data.LabelName"));
 		data.setTrainMode(_ctx.stringValue("UpdateTrainTaskResponse.Data.TrainMode"));
+		data.setAdvancedParameters(_ctx.stringValue("UpdateTrainTaskResponse.Data.AdvancedParameters"));
 		data.setTrainStatus(_ctx.stringValue("UpdateTrainTaskResponse.Data.TrainStatus"));
 		data.setModelId(_ctx.longValue("UpdateTrainTaskResponse.Data.ModelId"));
 		data.setModelEffect(_ctx.stringValue("UpdateTrainTaskResponse.Data.ModelEffect"));

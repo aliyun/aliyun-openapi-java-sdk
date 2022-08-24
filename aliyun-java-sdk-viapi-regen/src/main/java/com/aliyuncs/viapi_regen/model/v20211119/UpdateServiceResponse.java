@@ -74,6 +74,10 @@ public class UpdateServiceResponse extends AcsResponse {
 
 		private String serviceDescription;
 
+		private String authorizationType;
+
+		private String authorizedAccount;
+
 		public Long getId() {
 			return this.id;
 		}
@@ -104,6 +108,22 @@ public class UpdateServiceResponse extends AcsResponse {
 
 		public void setServiceDescription(String serviceDescription) {
 			this.serviceDescription = serviceDescription;
+		}
+
+		public String getAuthorizationType() {
+			return this.authorizationType;
+		}
+
+		public void setAuthorizationType(String authorizationType) {
+			this.authorizationType = authorizationType;
+		}
+
+		public String getAuthorizedAccount() {
+			return this.authorizedAccount;
+		}
+
+		public void setAuthorizedAccount(String authorizedAccount) {
+			this.authorizedAccount = authorizedAccount;
 		}
 	}
 

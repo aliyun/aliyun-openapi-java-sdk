@@ -16,6 +16,7 @@ package com.aliyuncs.viapi_regen.transform.v20211119;
 
 import com.aliyuncs.viapi_regen.model.v20211119.StartTrainTaskResponse;
 import com.aliyuncs.viapi_regen.model.v20211119.StartTrainTaskResponse.Data;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -29,6 +30,7 @@ public class StartTrainTaskResponseUnmarshaller {
 
 		Data data = new Data();
 		data.setId(_ctx.longValue("StartTrainTaskResponse.Data.Id"));
+		data.setCheckResult(_ctx.mapValue("StartTrainTaskResponse.Data.CheckResult"));
 		data.setGmtCreate(_ctx.longValue("StartTrainTaskResponse.Data.GmtCreate"));
 		data.setTaskName(_ctx.stringValue("StartTrainTaskResponse.Data.TaskName"));
 		data.setDescription(_ctx.stringValue("StartTrainTaskResponse.Data.Description"));

@@ -14,6 +14,7 @@
 
 package com.aliyuncs.viapi_regen.model.v20211119;
 
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.viapi_regen.transform.v20211119.StartTrainTaskResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -68,6 +69,8 @@ public class StartTrainTaskResponse extends AcsResponse {
 
 		private Long id;
 
+		private Map<Object,Object> checkResult;
+
 		private Long gmtCreate;
 
 		private String taskName;
@@ -96,6 +99,14 @@ public class StartTrainTaskResponse extends AcsResponse {
 
 		public void setId(Long id) {
 			this.id = id;
+		}
+
+		public Map<Object,Object> getCheckResult() {
+			return this.checkResult;
+		}
+
+		public void setCheckResult(Map<Object,Object> checkResult) {
+			this.checkResult = checkResult;
 		}
 
 		public Long getGmtCreate() {

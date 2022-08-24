@@ -33,7 +33,7 @@ public class GetServiceResponseUnmarshaller {
 		data.setServiceName(_ctx.stringValue("GetServiceResponse.Data.ServiceName"));
 		data.setServiceDescription(_ctx.stringValue("GetServiceResponse.Data.ServiceDescription"));
 		data.setStatus(_ctx.stringValue("GetServiceResponse.Data.Status"));
-		data.setCurlExample(_ctx.stringValue("GetServiceResponse.Data.CurlExample"));
+		data.setServiceId(_ctx.stringValue("GetServiceResponse.Data.ServiceId"));
 		data.setInputParams(_ctx.stringValue("GetServiceResponse.Data.InputParams"));
 		data.setOutputParams(_ctx.stringValue("GetServiceResponse.Data.OutputParams"));
 		data.setErrorcodes(_ctx.stringValue("GetServiceResponse.Data.Errorcodes"));

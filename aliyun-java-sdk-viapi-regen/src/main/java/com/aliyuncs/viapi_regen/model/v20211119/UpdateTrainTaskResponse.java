@@ -84,6 +84,8 @@ public class UpdateTrainTaskResponse extends AcsResponse {
 
 		private String trainMode;
 
+		private String advancedParameters;
+
 		private String trainStatus;
 
 		private Long modelId;
@@ -160,6 +162,14 @@ public class UpdateTrainTaskResponse extends AcsResponse {
 
 		public void setTrainMode(String trainMode) {
 			this.trainMode = trainMode;
+		}
+
+		public String getAdvancedParameters() {
+			return this.advancedParameters;
+		}
+
+		public void setAdvancedParameters(String advancedParameters) {
+			this.advancedParameters = advancedParameters;
 		}
 
 		public String getTrainStatus() {

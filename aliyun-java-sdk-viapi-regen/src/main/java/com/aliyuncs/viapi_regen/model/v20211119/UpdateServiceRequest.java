@@ -16,6 +16,7 @@ package com.aliyuncs.viapi_regen.model.v20211119;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.viapi_regen.Endpoint;
 
 /**
  * @author auto create
@@ -28,10 +29,18 @@ public class UpdateServiceRequest extends RpcAcsRequest<UpdateServiceResponse> {
 
 	private Long id;
 
+	private String authorizationType;
+
 	private String name;
+
+	private String authorizedAccount;
 	public UpdateServiceRequest() {
-		super("viapi-regen", "2021-11-19", "UpdateService", "viapi-regen");
+		super("viapi-regen", "2021-11-19", "UpdateService", "selflearning");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getDescription() {
@@ -56,6 +65,17 @@ public class UpdateServiceRequest extends RpcAcsRequest<UpdateServiceResponse> {
 		}
 	}
 
+	public String getAuthorizationType() {
+		return this.authorizationType;
+	}
+
+	public void setAuthorizationType(String authorizationType) {
+		this.authorizationType = authorizationType;
+		if(authorizationType != null){
+			putBodyParameter("AuthorizationType", authorizationType);
+		}
+	}
+
 	public String getName() {
 		return this.name;
 	}
@@ -64,6 +84,17 @@ public class UpdateServiceRequest extends RpcAcsRequest<UpdateServiceResponse> {
 		this.name = name;
 		if(name != null){
 			putBodyParameter("Name", name);
+		}
+	}
+
+	public String getAuthorizedAccount() {
+		return this.authorizedAccount;
+	}
+
+	public void setAuthorizedAccount(String authorizedAccount) {
+		this.authorizedAccount = authorizedAccount;
+		if(authorizedAccount != null){
+			putBodyParameter("AuthorizedAccount", authorizedAccount);
 		}
 	}
 

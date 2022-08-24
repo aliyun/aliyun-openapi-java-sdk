@@ -16,6 +16,7 @@ package com.aliyuncs.viapi_regen.model.v20211119;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.viapi_regen.Endpoint;
 
 /**
  * @author auto create
@@ -24,10 +25,27 @@ import com.aliyuncs.http.MethodType;
 public class StartTrainTaskRequest extends RpcAcsRequest<StartTrainTaskResponse> {
 	   
 
+	private Boolean forceStartFlag;
+
 	private Long id;
 	public StartTrainTaskRequest() {
-		super("viapi-regen", "2021-11-19", "StartTrainTask", "viapi-regen");
+		super("viapi-regen", "2021-11-19", "StartTrainTask", "selflearning");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public Boolean getForceStartFlag() {
+		return this.forceStartFlag;
+	}
+
+	public void setForceStartFlag(Boolean forceStartFlag) {
+		this.forceStartFlag = forceStartFlag;
+		if(forceStartFlag != null){
+			putBodyParameter("ForceStartFlag", forceStartFlag.toString());
+		}
 	}
 
 	public Long getId() {
