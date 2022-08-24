@@ -46,6 +46,8 @@ public class ListHistoricalAgentReportResponseUnmarshaller {
 			items.setAgentName(_ctx.stringValue("ListHistoricalAgentReportResponse.Data.List["+ i +"].AgentName"));
 			items.setAgentId(_ctx.stringValue("ListHistoricalAgentReportResponse.Data.List["+ i +"].AgentId"));
 			items.setDisplayId(_ctx.stringValue("ListHistoricalAgentReportResponse.Data.List["+ i +"].DisplayId"));
+			items.setSkillGroupIds(_ctx.stringValue("ListHistoricalAgentReportResponse.Data.List["+ i +"].SkillGroupIds"));
+			items.setSkillGroupNames(_ctx.stringValue("ListHistoricalAgentReportResponse.Data.List["+ i +"].SkillGroupNames"));
 
 			Inbound inbound = new Inbound();
 			inbound.setAverageRingTime(_ctx.floatValue("ListHistoricalAgentReportResponse.Data.List["+ i +"].Inbound.AverageRingTime"));

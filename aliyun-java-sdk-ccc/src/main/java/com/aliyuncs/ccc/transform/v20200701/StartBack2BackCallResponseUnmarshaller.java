@@ -22,7 +22,6 @@ import com.aliyuncs.ccc.model.v20200701.StartBack2BackCallResponse.Data;
 import com.aliyuncs.ccc.model.v20200701.StartBack2BackCallResponse.Data.CallContext;
 import com.aliyuncs.ccc.model.v20200701.StartBack2BackCallResponse.Data.CallContext.ChannelContext;
 import com.aliyuncs.ccc.model.v20200701.StartBack2BackCallResponse.Data.UserContext;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -57,7 +56,6 @@ public class StartBack2BackCallResponseUnmarshaller {
 			channelContext.setUserId(_ctx.stringValue("StartBack2BackCallResponse.Data.CallContext.ChannelContexts["+ i +"].UserId"));
 			channelContext.setChannelFlags(_ctx.stringValue("StartBack2BackCallResponse.Data.CallContext.ChannelContexts["+ i +"].ChannelFlags"));
 			channelContext.setTimestamp(_ctx.longValue("StartBack2BackCallResponse.Data.CallContext.ChannelContexts["+ i +"].Timestamp"));
-			channelContext.setAssociatedData(_ctx.mapValue("StartBack2BackCallResponse.Data.CallContext.ChannelContexts["+ i +"].AssociatedData"));
 			channelContext.setReleaseReason(_ctx.stringValue("StartBack2BackCallResponse.Data.CallContext.ChannelContexts["+ i +"].ReleaseReason"));
 			channelContext.setCallType(_ctx.stringValue("StartBack2BackCallResponse.Data.CallContext.ChannelContexts["+ i +"].CallType"));
 			channelContext.setJobId(_ctx.stringValue("StartBack2BackCallResponse.Data.CallContext.ChannelContexts["+ i +"].JobId"));
@@ -80,7 +78,6 @@ public class StartBack2BackCallResponseUnmarshaller {
 		userContext.setBreakCode(_ctx.stringValue("StartBack2BackCallResponse.Data.UserContext.BreakCode"));
 		userContext.setInstanceId(_ctx.stringValue("StartBack2BackCallResponse.Data.UserContext.InstanceId"));
 		userContext.setOutboundScenario(_ctx.booleanValue("StartBack2BackCallResponse.Data.UserContext.OutboundScenario"));
-		userContext.setUri(_ctx.stringValue("StartBack2BackCallResponse.Data.UserContext.Uri"));
 		userContext.setDeviceState(_ctx.stringValue("StartBack2BackCallResponse.Data.UserContext.DeviceState"));
 		userContext.setMobile(_ctx.stringValue("StartBack2BackCallResponse.Data.UserContext.Mobile"));
 		userContext.setJobId(_ctx.stringValue("StartBack2BackCallResponse.Data.UserContext.JobId"));

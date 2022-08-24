@@ -34,12 +34,6 @@ public class GetInstanceResponseUnmarshaller {
 		getInstanceResponse.setHttpStatusCode(_ctx.integerValue("GetInstanceResponse.HttpStatusCode"));
 		getInstanceResponse.setMessage(_ctx.stringValue("GetInstanceResponse.Message"));
 
-		List<String> params = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("GetInstanceResponse.Params.Length"); i++) {
-			params.add(_ctx.stringValue("GetInstanceResponse.Params["+ i +"]"));
-		}
-		getInstanceResponse.setParams(params);
-
 		Data data = new Data();
 		data.setStatus(_ctx.stringValue("GetInstanceResponse.Data.Status"));
 		data.setConsoleUrl(_ctx.stringValue("GetInstanceResponse.Data.ConsoleUrl"));

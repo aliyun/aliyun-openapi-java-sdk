@@ -145,6 +145,8 @@ public class ListAgentStatesResponse extends AcsResponse {
 
 			private String breakCode;
 
+			private Boolean outboundScenario;
+
 			public String getLoginName() {
 				return this.loginName;
 			}
@@ -207,6 +209,14 @@ public class ListAgentStatesResponse extends AcsResponse {
 
 			public void setBreakCode(String breakCode) {
 				this.breakCode = breakCode;
+			}
+
+			public Boolean getOutboundScenario() {
+				return this.outboundScenario;
+			}
+
+			public void setOutboundScenario(Boolean outboundScenario) {
+				this.outboundScenario = outboundScenario;
 			}
 		}
 	}

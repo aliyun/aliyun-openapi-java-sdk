@@ -1,3 +1,6 @@
+2022-08-24 Version: 2.6.6
+- Supported legacy api.
+
 2022-06-30 Version: 2.6.1
 - Supported ListAgentStates params query.
 

@@ -35,12 +35,6 @@ public class ListInstancesOfUserResponseUnmarshaller {
 		listInstancesOfUserResponse.setHttpStatusCode(_ctx.integerValue("ListInstancesOfUserResponse.HttpStatusCode"));
 		listInstancesOfUserResponse.setMessage(_ctx.stringValue("ListInstancesOfUserResponse.Message"));
 
-		List<String> params = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("ListInstancesOfUserResponse.Params.Length"); i++) {
-			params.add(_ctx.stringValue("ListInstancesOfUserResponse.Params["+ i +"]"));
-		}
-		listInstancesOfUserResponse.setParams(params);
-
 		Data data = new Data();
 		data.setPageNumber(_ctx.integerValue("ListInstancesOfUserResponse.Data.PageNumber"));
 		data.setPageSize(_ctx.integerValue("ListInstancesOfUserResponse.Data.PageSize"));

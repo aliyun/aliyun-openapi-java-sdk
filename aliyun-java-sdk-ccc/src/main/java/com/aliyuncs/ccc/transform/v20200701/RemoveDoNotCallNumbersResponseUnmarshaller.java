@@ -14,9 +14,6 @@
 
 package com.aliyuncs.ccc.transform.v20200701;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.aliyuncs.ccc.model.v20200701.RemoveDoNotCallNumbersResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -30,12 +27,6 @@ public class RemoveDoNotCallNumbersResponseUnmarshaller {
 		removeDoNotCallNumbersResponse.setCode(_ctx.stringValue("RemoveDoNotCallNumbersResponse.Code"));
 		removeDoNotCallNumbersResponse.setMessage(_ctx.stringValue("RemoveDoNotCallNumbersResponse.Message"));
 		removeDoNotCallNumbersResponse.setData(_ctx.stringValue("RemoveDoNotCallNumbersResponse.Data"));
-
-		List<String> params = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("RemoveDoNotCallNumbersResponse.Params.Length"); i++) {
-			params.add(_ctx.stringValue("RemoveDoNotCallNumbersResponse.Params["+ i +"]"));
-		}
-		removeDoNotCallNumbersResponse.setParams(params);
 	 
 	 	return removeDoNotCallNumbersResponse;
 	}

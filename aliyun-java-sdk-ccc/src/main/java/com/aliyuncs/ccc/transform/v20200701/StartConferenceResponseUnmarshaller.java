@@ -22,7 +22,6 @@ import com.aliyuncs.ccc.model.v20200701.StartConferenceResponse.Data;
 import com.aliyuncs.ccc.model.v20200701.StartConferenceResponse.Data.CallContext;
 import com.aliyuncs.ccc.model.v20200701.StartConferenceResponse.Data.CallContext.ChannelContext;
 import com.aliyuncs.ccc.model.v20200701.StartConferenceResponse.Data.UserContext;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -57,7 +56,6 @@ public class StartConferenceResponseUnmarshaller {
 			channelContext.setUserId(_ctx.stringValue("StartConferenceResponse.Data.CallContext.ChannelContexts["+ i +"].UserId"));
 			channelContext.setChannelFlags(_ctx.stringValue("StartConferenceResponse.Data.CallContext.ChannelContexts["+ i +"].ChannelFlags"));
 			channelContext.setTimestamp(_ctx.longValue("StartConferenceResponse.Data.CallContext.ChannelContexts["+ i +"].Timestamp"));
-			channelContext.setAssociatedData(_ctx.mapValue("StartConferenceResponse.Data.CallContext.ChannelContexts["+ i +"].AssociatedData"));
 			channelContext.setReleaseReason(_ctx.stringValue("StartConferenceResponse.Data.CallContext.ChannelContexts["+ i +"].ReleaseReason"));
 			channelContext.setCallType(_ctx.stringValue("StartConferenceResponse.Data.CallContext.ChannelContexts["+ i +"].CallType"));
 			channelContext.setJobId(_ctx.stringValue("StartConferenceResponse.Data.CallContext.ChannelContexts["+ i +"].JobId"));
@@ -80,7 +78,6 @@ public class StartConferenceResponseUnmarshaller {
 		userContext.setBreakCode(_ctx.stringValue("StartConferenceResponse.Data.UserContext.BreakCode"));
 		userContext.setInstanceId(_ctx.stringValue("StartConferenceResponse.Data.UserContext.InstanceId"));
 		userContext.setOutboundScenario(_ctx.booleanValue("StartConferenceResponse.Data.UserContext.OutboundScenario"));
-		userContext.setUri(_ctx.stringValue("StartConferenceResponse.Data.UserContext.Uri"));
 		userContext.setDeviceState(_ctx.stringValue("StartConferenceResponse.Data.UserContext.DeviceState"));
 		userContext.setMobile(_ctx.stringValue("StartConferenceResponse.Data.UserContext.Mobile"));
 		userContext.setJobId(_ctx.stringValue("StartConferenceResponse.Data.UserContext.JobId"));

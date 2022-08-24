@@ -25,11 +25,7 @@ import com.aliyuncs.ccc.Endpoint;
 public class EndConferenceRequest extends RpcAcsRequest<EndConferenceResponse> {
 	   
 
-	private String bearerTokenScope;
-
 	private String userId;
-
-	private String bearerTokenClientId;
 
 	private String jobId;
 
@@ -43,17 +39,6 @@ public class EndConferenceRequest extends RpcAcsRequest<EndConferenceResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getBearerTokenScope() {
-		return this.bearerTokenScope;
-	}
-
-	public void setBearerTokenScope(String bearerTokenScope) {
-		this.bearerTokenScope = bearerTokenScope;
-		if(bearerTokenScope != null){
-			putQueryParameter("BearerTokenScope", bearerTokenScope);
-		}
-	}
-
 	public String getUserId() {
 		return this.userId;
 	}
@@ -62,17 +47,6 @@ public class EndConferenceRequest extends RpcAcsRequest<EndConferenceResponse> {
 		this.userId = userId;
 		if(userId != null){
 			putQueryParameter("UserId", userId);
-		}
-	}
-
-	public String getBearerTokenClientId() {
-		return this.bearerTokenClientId;
-	}
-
-	public void setBearerTokenClientId(String bearerTokenClientId) {
-		this.bearerTokenClientId = bearerTokenClientId;
-		if(bearerTokenClientId != null){
-			putQueryParameter("BearerTokenClientId", bearerTokenClientId);
 		}
 	}
 

@@ -31,8 +31,6 @@ public class ListAudioFilesResponseUnmarshaller {
 		listAudioFilesResponse.setHttpStatusCode(_ctx.integerValue("ListAudioFilesResponse.HttpStatusCode"));
 		listAudioFilesResponse.setCode(_ctx.stringValue("ListAudioFilesResponse.Code"));
 		listAudioFilesResponse.setMessage(_ctx.stringValue("ListAudioFilesResponse.Message"));
-		listAudioFilesResponse.setPublished(_ctx.booleanValue("ListAudioFilesResponse.Published"));
-		listAudioFilesResponse.setMainFlow(_ctx.booleanValue("ListAudioFilesResponse.MainFlow"));
 
 		Data data = new Data();
 		data.setPageNumber(_ctx.integerValue("ListAudioFilesResponse.Data.PageNumber"));

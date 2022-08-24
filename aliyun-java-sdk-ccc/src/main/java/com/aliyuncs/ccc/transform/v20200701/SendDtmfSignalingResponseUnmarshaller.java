@@ -22,7 +22,6 @@ import com.aliyuncs.ccc.model.v20200701.SendDtmfSignalingResponse.Data;
 import com.aliyuncs.ccc.model.v20200701.SendDtmfSignalingResponse.Data.CallContext;
 import com.aliyuncs.ccc.model.v20200701.SendDtmfSignalingResponse.Data.CallContext.ChannelContext;
 import com.aliyuncs.ccc.model.v20200701.SendDtmfSignalingResponse.Data.UserContext;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -59,7 +58,6 @@ public class SendDtmfSignalingResponseUnmarshaller {
 			channelContext.setChannelFlags(_ctx.stringValue("SendDtmfSignalingResponse.Data.CallContext.ChannelContexts["+ i +"].ChannelFlags"));
 			channelContext.setSkillGroupId(_ctx.stringValue("SendDtmfSignalingResponse.Data.CallContext.ChannelContexts["+ i +"].SkillGroupId"));
 			channelContext.setTimestamp(_ctx.longValue("SendDtmfSignalingResponse.Data.CallContext.ChannelContexts["+ i +"].Timestamp"));
-			channelContext.setAssociatedData(_ctx.mapValue("SendDtmfSignalingResponse.Data.CallContext.ChannelContexts["+ i +"].AssociatedData"));
 			channelContext.setReleaseReason(_ctx.stringValue("SendDtmfSignalingResponse.Data.CallContext.ChannelContexts["+ i +"].ReleaseReason"));
 			channelContext.setCallType(_ctx.stringValue("SendDtmfSignalingResponse.Data.CallContext.ChannelContexts["+ i +"].CallType"));
 			channelContext.setJobId(_ctx.stringValue("SendDtmfSignalingResponse.Data.CallContext.ChannelContexts["+ i +"].JobId"));

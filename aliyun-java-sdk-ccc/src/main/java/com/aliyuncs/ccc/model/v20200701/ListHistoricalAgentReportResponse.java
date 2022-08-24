@@ -125,6 +125,10 @@ public class ListHistoricalAgentReportResponse extends AcsResponse {
 
 			private String displayId;
 
+			private String skillGroupIds;
+
+			private String skillGroupNames;
+
 			private Inbound inbound;
 
 			private Outbound outbound;
@@ -153,6 +157,22 @@ public class ListHistoricalAgentReportResponse extends AcsResponse {
 
 			public void setDisplayId(String displayId) {
 				this.displayId = displayId;
+			}
+
+			public String getSkillGroupIds() {
+				return this.skillGroupIds;
+			}
+
+			public void setSkillGroupIds(String skillGroupIds) {
+				this.skillGroupIds = skillGroupIds;
+			}
+
+			public String getSkillGroupNames() {
+				return this.skillGroupNames;
+			}
+
+			public void setSkillGroupNames(String skillGroupNames) {
+				this.skillGroupNames = skillGroupNames;
 			}
 
 			public Inbound getInbound() {

@@ -32,8 +32,6 @@ public class ListPhoneNumbersResponseUnmarshaller {
 		listPhoneNumbersResponse.setHttpStatusCode(_ctx.integerValue("ListPhoneNumbersResponse.HttpStatusCode"));
 		listPhoneNumbersResponse.setCode(_ctx.stringValue("ListPhoneNumbersResponse.Code"));
 		listPhoneNumbersResponse.setMessage(_ctx.stringValue("ListPhoneNumbersResponse.Message"));
-		listPhoneNumbersResponse.setPageNumber(_ctx.integerValue("ListPhoneNumbersResponse.PageNumber"));
-		listPhoneNumbersResponse.setPageSize(_ctx.integerValue("ListPhoneNumbersResponse.PageSize"));
 
 		Data data = new Data();
 		data.setPageNumber(_ctx.integerValue("ListPhoneNumbersResponse.Data.PageNumber"));

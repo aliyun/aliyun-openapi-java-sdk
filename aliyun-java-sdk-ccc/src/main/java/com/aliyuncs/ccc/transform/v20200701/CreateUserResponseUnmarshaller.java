@@ -14,9 +14,6 @@
 
 package com.aliyuncs.ccc.transform.v20200701;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.aliyuncs.ccc.model.v20200701.CreateUserResponse;
 import com.aliyuncs.ccc.model.v20200701.CreateUserResponse.Data;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -30,12 +27,6 @@ public class CreateUserResponseUnmarshaller {
 		createUserResponse.setCode(_ctx.stringValue("CreateUserResponse.Code"));
 		createUserResponse.setHttpStatusCode(_ctx.integerValue("CreateUserResponse.HttpStatusCode"));
 		createUserResponse.setMessage(_ctx.stringValue("CreateUserResponse.Message"));
-
-		List<String> params = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("CreateUserResponse.Params.Length"); i++) {
-			params.add(_ctx.stringValue("CreateUserResponse.Params["+ i +"]"));
-		}
-		createUserResponse.setParams(params);
 
 		Data data = new Data();
 		data.setDisplayName(_ctx.stringValue("CreateUserResponse.Data.DisplayName"));

@@ -30,8 +30,6 @@ public class AssignUsersResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String sync;
-
 	private String code;
 
 	private String workflowId;
@@ -60,14 +58,6 @@ public class AssignUsersResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getSync() {
-		return this.sync;
-	}
-
-	public void setSync(String sync) {
-		this.sync = sync;
 	}
 
 	public String getCode() {

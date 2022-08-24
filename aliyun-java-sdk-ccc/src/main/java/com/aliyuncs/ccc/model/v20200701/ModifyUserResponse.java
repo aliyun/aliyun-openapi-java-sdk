@@ -14,7 +14,6 @@
 
 package com.aliyuncs.ccc.model.v20200701;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ccc.transform.v20200701.ModifyUserResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -31,11 +30,9 @@ public class ModifyUserResponse extends AcsResponse {
 
 	private String message;
 
-	private String data;
-
 	private String requestId;
 
-	private List<String> params;
+	private String data;
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -61,14 +58,6 @@ public class ModifyUserResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -77,12 +66,12 @@ public class ModifyUserResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<String> getParams() {
-		return this.params;
+	public String getData() {
+		return this.data;
 	}
 
-	public void setParams(List<String> params) {
-		this.params = params;
+	public void setData(String data) {
+		this.data = data;
 	}
 
 	@Override

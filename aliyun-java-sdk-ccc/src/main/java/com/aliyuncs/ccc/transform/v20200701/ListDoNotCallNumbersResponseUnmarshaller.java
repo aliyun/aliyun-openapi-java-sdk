@@ -32,12 +32,6 @@ public class ListDoNotCallNumbersResponseUnmarshaller {
 		listDoNotCallNumbersResponse.setHttpStatusCode(_ctx.integerValue("ListDoNotCallNumbersResponse.HttpStatusCode"));
 		listDoNotCallNumbersResponse.setMessage(_ctx.stringValue("ListDoNotCallNumbersResponse.Message"));
 
-		List<String> params = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("ListDoNotCallNumbersResponse.Params.Length"); i++) {
-			params.add(_ctx.stringValue("ListDoNotCallNumbersResponse.Params["+ i +"]"));
-		}
-		listDoNotCallNumbersResponse.setParams(params);
-
 		Data data = new Data();
 		data.setPageNumber(_ctx.integerValue("ListDoNotCallNumbersResponse.Data.PageNumber"));
 		data.setPageSize(_ctx.integerValue("ListDoNotCallNumbersResponse.Data.PageSize"));

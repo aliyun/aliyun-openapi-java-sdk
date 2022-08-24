@@ -49,6 +49,7 @@ public class ListAgentStatesResponseUnmarshaller {
 			realTimeAgentState.setAgentName(_ctx.stringValue("ListAgentStatesResponse.Data.List["+ i +"].AgentName"));
 			realTimeAgentState.setInstanceId(_ctx.stringValue("ListAgentStatesResponse.Data.List["+ i +"].InstanceId"));
 			realTimeAgentState.setBreakCode(_ctx.stringValue("ListAgentStatesResponse.Data.List["+ i +"].BreakCode"));
+			realTimeAgentState.setOutboundScenario(_ctx.booleanValue("ListAgentStatesResponse.Data.List["+ i +"].OutboundScenario"));
 
 			list.add(realTimeAgentState);
 		}

@@ -22,7 +22,6 @@ import com.aliyuncs.ccc.model.v20200701.ReleaseCallResponse.Data;
 import com.aliyuncs.ccc.model.v20200701.ReleaseCallResponse.Data.CallContext;
 import com.aliyuncs.ccc.model.v20200701.ReleaseCallResponse.Data.CallContext.ChannelContext;
 import com.aliyuncs.ccc.model.v20200701.ReleaseCallResponse.Data.UserContext;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -56,7 +55,6 @@ public class ReleaseCallResponseUnmarshaller {
 			channelContext.setDestination(_ctx.stringValue("ReleaseCallResponse.Data.CallContext.ChannelContexts["+ i +"].Destination"));
 			channelContext.setUserId(_ctx.stringValue("ReleaseCallResponse.Data.CallContext.ChannelContexts["+ i +"].UserId"));
 			channelContext.setTimestamp(_ctx.longValue("ReleaseCallResponse.Data.CallContext.ChannelContexts["+ i +"].Timestamp"));
-			channelContext.setAssociatedData(_ctx.mapValue("ReleaseCallResponse.Data.CallContext.ChannelContexts["+ i +"].AssociatedData"));
 			channelContext.setReleaseReason(_ctx.stringValue("ReleaseCallResponse.Data.CallContext.ChannelContexts["+ i +"].ReleaseReason"));
 			channelContext.setCallType(_ctx.stringValue("ReleaseCallResponse.Data.CallContext.ChannelContexts["+ i +"].CallType"));
 			channelContext.setJobId(_ctx.stringValue("ReleaseCallResponse.Data.CallContext.ChannelContexts["+ i +"].JobId"));

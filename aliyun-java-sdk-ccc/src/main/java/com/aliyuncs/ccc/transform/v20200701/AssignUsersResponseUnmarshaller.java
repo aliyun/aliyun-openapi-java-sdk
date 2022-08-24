@@ -25,7 +25,6 @@ public class AssignUsersResponseUnmarshaller {
 		assignUsersResponse.setRequestId(_ctx.stringValue("AssignUsersResponse.RequestId"));
 		assignUsersResponse.setHttpStatusCode(_ctx.integerValue("AssignUsersResponse.HttpStatusCode"));
 		assignUsersResponse.setData(_ctx.stringValue("AssignUsersResponse.Data"));
-		assignUsersResponse.setSync(_ctx.stringValue("AssignUsersResponse.Sync"));
 		assignUsersResponse.setCode(_ctx.stringValue("AssignUsersResponse.Code"));
 		assignUsersResponse.setWorkflowId(_ctx.stringValue("AssignUsersResponse.WorkflowId"));
 		assignUsersResponse.setMessage(_ctx.stringValue("AssignUsersResponse.Message"));

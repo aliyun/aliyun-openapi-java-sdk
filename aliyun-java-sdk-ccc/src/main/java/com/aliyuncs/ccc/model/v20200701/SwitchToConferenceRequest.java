@@ -22,14 +22,18 @@ import com.aliyuncs.ccc.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListSipTracesRequest extends RpcAcsRequest<ListSipTracesResponse> {
+public class SwitchToConferenceRequest extends RpcAcsRequest<SwitchToConferenceResponse> {
 	   
 
-	private String callId;
+	private String userId;
+
+	private String deviceId;
+
+	private String jobId;
 
 	private String instanceId;
-	public ListSipTracesRequest() {
-		super("CCC", "2020-07-01", "ListSipTraces", "CCC");
+	public SwitchToConferenceRequest() {
+		super("CCC", "2020-07-01", "SwitchToConference", "CCC");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,14 +41,36 @@ public class ListSipTracesRequest extends RpcAcsRequest<ListSipTracesResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getCallId() {
-		return this.callId;
+	public String getUserId() {
+		return this.userId;
 	}
 
-	public void setCallId(String callId) {
-		this.callId = callId;
-		if(callId != null){
-			putQueryParameter("CallId", callId);
+	public void setUserId(String userId) {
+		this.userId = userId;
+		if(userId != null){
+			putQueryParameter("UserId", userId);
+		}
+	}
+
+	public String getDeviceId() {
+		return this.deviceId;
+	}
+
+	public void setDeviceId(String deviceId) {
+		this.deviceId = deviceId;
+		if(deviceId != null){
+			putQueryParameter("DeviceId", deviceId);
+		}
+	}
+
+	public String getJobId() {
+		return this.jobId;
+	}
+
+	public void setJobId(String jobId) {
+		this.jobId = jobId;
+		if(jobId != null){
+			putQueryParameter("JobId", jobId);
 		}
 	}
 
@@ -60,8 +86,8 @@ public class ListSipTracesRequest extends RpcAcsRequest<ListSipTracesResponse> {
 	}
 
 	@Override
-	public Class<ListSipTracesResponse> getResponseClass() {
-		return ListSipTracesResponse.class;
+	public Class<SwitchToConferenceResponse> getResponseClass() {
+		return SwitchToConferenceResponse.class;
 	}
 
 }

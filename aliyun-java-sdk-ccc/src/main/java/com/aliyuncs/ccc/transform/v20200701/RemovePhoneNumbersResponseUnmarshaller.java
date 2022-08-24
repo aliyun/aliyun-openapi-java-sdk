@@ -35,12 +35,6 @@ public class RemovePhoneNumbersResponseUnmarshaller {
 			data.add(_ctx.stringValue("RemovePhoneNumbersResponse.Data["+ i +"]"));
 		}
 		removePhoneNumbersResponse.setData(data);
-
-		List<String> params = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("RemovePhoneNumbersResponse.Params.Length"); i++) {
-			params.add(_ctx.stringValue("RemovePhoneNumbersResponse.Params["+ i +"]"));
-		}
-		removePhoneNumbersResponse.setParams(params);
 	 
 	 	return removePhoneNumbersResponse;
 	}

@@ -30,8 +30,6 @@ public class GetCampaignResponse extends AcsResponse {
 
 	private String code;
 
-	private Boolean success;
-
 	private Data data;
 
 	public String getRequestId() {
@@ -56,14 +54,6 @@ public class GetCampaignResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public Data getData() {

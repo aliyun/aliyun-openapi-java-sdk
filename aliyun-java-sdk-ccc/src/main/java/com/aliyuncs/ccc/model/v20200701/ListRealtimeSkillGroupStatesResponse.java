@@ -139,6 +139,8 @@ public class ListRealtimeSkillGroupStatesResponse extends AcsResponse {
 
 			private String instanceId;
 
+			private Long outboundScenarioReadyAgents;
+
 			public Long getWorkingAgents() {
 				return this.workingAgents;
 			}
@@ -217,6 +219,14 @@ public class ListRealtimeSkillGroupStatesResponse extends AcsResponse {
 
 			public void setInstanceId(String instanceId) {
 				this.instanceId = instanceId;
+			}
+
+			public Long getOutboundScenarioReadyAgents() {
+				return this.outboundScenarioReadyAgents;
+			}
+
+			public void setOutboundScenarioReadyAgents(Long outboundScenarioReadyAgents) {
+				this.outboundScenarioReadyAgents = outboundScenarioReadyAgents;
 			}
 		}
 	}

@@ -22,7 +22,6 @@ import com.aliyuncs.ccc.model.v20200701.EndConferenceResponse.Data;
 import com.aliyuncs.ccc.model.v20200701.EndConferenceResponse.Data.CallContext;
 import com.aliyuncs.ccc.model.v20200701.EndConferenceResponse.Data.CallContext.ChannelContext;
 import com.aliyuncs.ccc.model.v20200701.EndConferenceResponse.Data.UserContext;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -56,7 +55,6 @@ public class EndConferenceResponseUnmarshaller {
 			channelContext.setDestination(_ctx.stringValue("EndConferenceResponse.Data.CallContext.ChannelContexts["+ i +"].Destination"));
 			channelContext.setUserId(_ctx.stringValue("EndConferenceResponse.Data.CallContext.ChannelContexts["+ i +"].UserId"));
 			channelContext.setTimestamp(_ctx.longValue("EndConferenceResponse.Data.CallContext.ChannelContexts["+ i +"].Timestamp"));
-			channelContext.setAssociatedData(_ctx.mapValue("EndConferenceResponse.Data.CallContext.ChannelContexts["+ i +"].AssociatedData"));
 			channelContext.setReleaseReason(_ctx.stringValue("EndConferenceResponse.Data.CallContext.ChannelContexts["+ i +"].ReleaseReason"));
 			channelContext.setCallType(_ctx.stringValue("EndConferenceResponse.Data.CallContext.ChannelContexts["+ i +"].CallType"));
 			channelContext.setJobId(_ctx.stringValue("EndConferenceResponse.Data.CallContext.ChannelContexts["+ i +"].JobId"));
@@ -79,7 +77,6 @@ public class EndConferenceResponseUnmarshaller {
 		userContext.setBreakCode(_ctx.stringValue("EndConferenceResponse.Data.UserContext.BreakCode"));
 		userContext.setInstanceId(_ctx.stringValue("EndConferenceResponse.Data.UserContext.InstanceId"));
 		userContext.setOutboundScenario(_ctx.booleanValue("EndConferenceResponse.Data.UserContext.OutboundScenario"));
-		userContext.setUri(_ctx.stringValue("EndConferenceResponse.Data.UserContext.Uri"));
 		userContext.setUserState(_ctx.stringValue("EndConferenceResponse.Data.UserContext.UserState"));
 
 		List<String> signedSkillGroupIdList = new ArrayList<String>();

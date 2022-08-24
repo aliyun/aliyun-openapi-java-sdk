@@ -14,7 +14,6 @@
 
 package com.aliyuncs.ccc.model.v20200701;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ccc.transform.v20200701.ExportDoNotCallNumbersResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -34,8 +33,6 @@ public class ExportDoNotCallNumbersResponse extends AcsResponse {
 	private String data;
 
 	private String requestId;
-
-	private List<String> params;
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -75,14 +72,6 @@ public class ExportDoNotCallNumbersResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public List<String> getParams() {
-		return this.params;
-	}
-
-	public void setParams(List<String> params) {
-		this.params = params;
 	}
 
 	@Override

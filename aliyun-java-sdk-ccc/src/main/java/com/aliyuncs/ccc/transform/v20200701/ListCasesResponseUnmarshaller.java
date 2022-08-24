@@ -31,7 +31,6 @@ public class ListCasesResponseUnmarshaller {
 		listCasesResponse.setMessage(_ctx.stringValue("ListCasesResponse.Message"));
 		listCasesResponse.setHttpStatusCode(_ctx.longValue("ListCasesResponse.HttpStatusCode"));
 		listCasesResponse.setCode(_ctx.stringValue("ListCasesResponse.Code"));
-		listCasesResponse.setSuccess(_ctx.booleanValue("ListCasesResponse.Success"));
 
 		Data data = new Data();
 		data.setPageNumber(_ctx.longValue("ListCasesResponse.Data.PageNumber"));
@@ -43,7 +42,6 @@ public class ListCasesResponseUnmarshaller {
 			ListItem listItem = new ListItem();
 			listItem.setAbandonType(_ctx.stringValue("ListCasesResponse.Data.List["+ i +"].AbandonType"));
 			listItem.setAttemptCount(_ctx.longValue("ListCasesResponse.Data.List["+ i +"].AttemptCount"));
-			listItem.setExpandInfo(_ctx.stringValue("ListCasesResponse.Data.List["+ i +"].ExpandInfo"));
 			listItem.setFailureReason(_ctx.stringValue("ListCasesResponse.Data.List["+ i +"].FailureReason"));
 			listItem.setPhoneNumber(_ctx.stringValue("ListCasesResponse.Data.List["+ i +"].PhoneNumber"));
 			listItem.setState(_ctx.stringValue("ListCasesResponse.Data.List["+ i +"].State"));

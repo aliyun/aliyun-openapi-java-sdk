@@ -14,9 +14,6 @@
 
 package com.aliyuncs.ccc.transform.v20200701;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.aliyuncs.ccc.model.v20200701.ExportCustomCallTaggingResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -30,12 +27,6 @@ public class ExportCustomCallTaggingResponseUnmarshaller {
 		exportCustomCallTaggingResponse.setCode(_ctx.stringValue("ExportCustomCallTaggingResponse.Code"));
 		exportCustomCallTaggingResponse.setMessage(_ctx.stringValue("ExportCustomCallTaggingResponse.Message"));
 		exportCustomCallTaggingResponse.setData(_ctx.stringValue("ExportCustomCallTaggingResponse.Data"));
-
-		List<String> params = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("ExportCustomCallTaggingResponse.Params.Length"); i++) {
-			params.add(_ctx.stringValue("ExportCustomCallTaggingResponse.Params["+ i +"]"));
-		}
-		exportCustomCallTaggingResponse.setParams(params);
 	 
 	 	return exportCustomCallTaggingResponse;
 	}

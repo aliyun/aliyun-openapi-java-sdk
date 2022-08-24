@@ -14,7 +14,6 @@
 
 package com.aliyuncs.ccc.model.v20200701;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ccc.transform.v20200701.GetTurnCredentialsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -32,8 +31,6 @@ public class GetTurnCredentialsResponse extends AcsResponse {
 	private String message;
 
 	private String requestId;
-
-	private List<String> params;
 
 	private Data data;
 
@@ -67,14 +64,6 @@ public class GetTurnCredentialsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public List<String> getParams() {
-		return this.params;
-	}
-
-	public void setParams(List<String> params) {
-		this.params = params;
 	}
 
 	public Data getData() {

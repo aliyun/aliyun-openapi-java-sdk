@@ -32,8 +32,6 @@ public class GetAudioFileUploadParametersResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
-
 	private Data data;
 
 	public Integer getHttpStatusCode() {
@@ -66,14 +64,6 @@ public class GetAudioFileUploadParametersResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public Data getData() {

@@ -22,29 +22,29 @@ import com.aliyuncs.ccc.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListSipCallRecordsRequest extends RpcAcsRequest<ListSipCallRecordsResponse> {
+public class GetUploadAudioDataParamsRequest extends RpcAcsRequest<GetUploadAudioDataParamsResponse> {
 	   
 
-	private String contactIdList;
+	private String contactId;
 
 	private String instanceId;
-	public ListSipCallRecordsRequest() {
-		super("CCC", "2020-07-01", "ListSipCallRecords", "CCC");
-		setMethod(MethodType.POST);
+	public GetUploadAudioDataParamsRequest() {
+		super("CCC", "2020-07-01", "GetUploadAudioDataParams", "CCC");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getContactIdList() {
-		return this.contactIdList;
+	public String getContactId() {
+		return this.contactId;
 	}
 
-	public void setContactIdList(String contactIdList) {
-		this.contactIdList = contactIdList;
-		if(contactIdList != null){
-			putQueryParameter("ContactIdList", contactIdList);
+	public void setContactId(String contactId) {
+		this.contactId = contactId;
+		if(contactId != null){
+			putQueryParameter("ContactId", contactId);
 		}
 	}
 
@@ -60,8 +60,8 @@ public class ListSipCallRecordsRequest extends RpcAcsRequest<ListSipCallRecordsR
 	}
 
 	@Override
-	public Class<ListSipCallRecordsResponse> getResponseClass() {
-		return ListSipCallRecordsResponse.class;
+	public Class<GetUploadAudioDataParamsResponse> getResponseClass() {
+		return GetUploadAudioDataParamsResponse.class;
 	}
 
 }

@@ -26,7 +26,6 @@ public class GetCampaignResponseUnmarshaller {
 		getCampaignResponse.setRequestId(_ctx.stringValue("GetCampaignResponse.RequestId"));
 		getCampaignResponse.setHttpStatusCode(_ctx.longValue("GetCampaignResponse.HttpStatusCode"));
 		getCampaignResponse.setCode(_ctx.stringValue("GetCampaignResponse.Code"));
-		getCampaignResponse.setSuccess(_ctx.booleanValue("GetCampaignResponse.Success"));
 
 		Data data = new Data();
 		data.setActualEndTime(_ctx.longValue("GetCampaignResponse.Data.ActualEndTime"));

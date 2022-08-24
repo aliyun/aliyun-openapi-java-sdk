@@ -15,7 +15,6 @@
 package com.aliyuncs.ccc.model.v20200701;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ccc.transform.v20200701.BlindTransferResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -174,8 +173,6 @@ public class BlindTransferResponse extends AcsResponse {
 
 				private Long timestamp;
 
-				private Map<Object,Object> associatedData;
-
 				private String releaseReason;
 
 				private String callType;
@@ -234,14 +231,6 @@ public class BlindTransferResponse extends AcsResponse {
 
 				public void setTimestamp(Long timestamp) {
 					this.timestamp = timestamp;
-				}
-
-				public Map<Object,Object> getAssociatedData() {
-					return this.associatedData;
-				}
-
-				public void setAssociatedData(Map<Object,Object> associatedData) {
-					this.associatedData = associatedData;
 				}
 
 				public String getReleaseReason() {

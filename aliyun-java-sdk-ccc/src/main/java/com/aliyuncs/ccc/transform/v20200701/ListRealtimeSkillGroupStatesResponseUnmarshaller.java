@@ -50,6 +50,7 @@ public class ListRealtimeSkillGroupStatesResponseUnmarshaller {
 			skillGroupState.setSkillGroupId(_ctx.stringValue("ListRealtimeSkillGroupStatesResponse.Data.List["+ i +"].SkillGroupId"));
 			skillGroupState.setReadyAgents(_ctx.longValue("ListRealtimeSkillGroupStatesResponse.Data.List["+ i +"].ReadyAgents"));
 			skillGroupState.setInstanceId(_ctx.stringValue("ListRealtimeSkillGroupStatesResponse.Data.List["+ i +"].InstanceId"));
+			skillGroupState.setOutboundScenarioReadyAgents(_ctx.longValue("ListRealtimeSkillGroupStatesResponse.Data.List["+ i +"].OutboundScenarioReadyAgents"));
 
 			list.add(skillGroupState);
 		}

@@ -22,7 +22,6 @@ import com.aliyuncs.ccc.model.v20200701.PollUserStatusResponse.Data;
 import com.aliyuncs.ccc.model.v20200701.PollUserStatusResponse.Data.CallContext;
 import com.aliyuncs.ccc.model.v20200701.PollUserStatusResponse.Data.CallContext.ChannelContext;
 import com.aliyuncs.ccc.model.v20200701.PollUserStatusResponse.Data.UserContext;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -60,7 +59,6 @@ public class PollUserStatusResponseUnmarshaller {
 			channelContext.setChannelFlags(_ctx.stringValue("PollUserStatusResponse.Data.CallContext.ChannelContexts["+ i +"].ChannelFlags"));
 			channelContext.setSkillGroupId(_ctx.stringValue("PollUserStatusResponse.Data.CallContext.ChannelContexts["+ i +"].SkillGroupId"));
 			channelContext.setTimestamp(_ctx.longValue("PollUserStatusResponse.Data.CallContext.ChannelContexts["+ i +"].Timestamp"));
-			channelContext.setAssociatedData(_ctx.mapValue("PollUserStatusResponse.Data.CallContext.ChannelContexts["+ i +"].AssociatedData"));
 			channelContext.setReleaseReason(_ctx.stringValue("PollUserStatusResponse.Data.CallContext.ChannelContexts["+ i +"].ReleaseReason"));
 			channelContext.setCallType(_ctx.stringValue("PollUserStatusResponse.Data.CallContext.ChannelContexts["+ i +"].CallType"));
 			channelContext.setChannelVariables(_ctx.stringValue("PollUserStatusResponse.Data.CallContext.ChannelContexts["+ i +"].ChannelVariables"));

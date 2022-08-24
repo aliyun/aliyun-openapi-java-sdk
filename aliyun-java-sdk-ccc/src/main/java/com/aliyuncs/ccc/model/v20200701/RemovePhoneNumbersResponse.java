@@ -35,8 +35,6 @@ public class RemovePhoneNumbersResponse extends AcsResponse {
 
 	private List<String> data;
 
-	private List<String> params;
-
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
 	}
@@ -75,14 +73,6 @@ public class RemovePhoneNumbersResponse extends AcsResponse {
 
 	public void setData(List<String> data) {
 		this.data = data;
-	}
-
-	public List<String> getParams() {
-		return this.params;
-	}
-
-	public void setParams(List<String> params) {
-		this.params = params;
 	}
 
 	@Override
