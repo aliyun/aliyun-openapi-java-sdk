@@ -22,7 +22,7 @@ import com.aliyuncs.onsmqtt.Endpoint;
  * @author auto create
  * @version 
  */
-public class UnregisterDeviceCertificateRequest extends RpcAcsRequest<UnregisterDeviceCertificateResponse> {
+public class InactivateDeviceCertificateRequest extends RpcAcsRequest<InactivateDeviceCertificateResponse> {
 	   
 
 	private String deviceSn;
@@ -30,8 +30,8 @@ public class UnregisterDeviceCertificateRequest extends RpcAcsRequest<Unregister
 	private String caSn;
 
 	private String mqttInstanceId;
-	public UnregisterDeviceCertificateRequest() {
-		super("OnsMqtt", "2020-04-20", "UnregisterDeviceCertificate");
+	public InactivateDeviceCertificateRequest() {
+		super("OnsMqtt", "2020-04-20", "InactivateDeviceCertificate");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -73,8 +73,8 @@ public class UnregisterDeviceCertificateRequest extends RpcAcsRequest<Unregister
 	}
 
 	@Override
-	public Class<UnregisterDeviceCertificateResponse> getResponseClass() {
-		return UnregisterDeviceCertificateResponse.class;
+	public Class<InactivateDeviceCertificateResponse> getResponseClass() {
+		return InactivateDeviceCertificateResponse.class;
 	}
 
 }

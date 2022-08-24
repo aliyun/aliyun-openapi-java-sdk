@@ -22,14 +22,14 @@ import com.aliyuncs.onsmqtt.Endpoint;
  * @author auto create
  * @version 
  */
-public class UnregisterCaCertificateRequest extends RpcAcsRequest<UnregisterCaCertificateResponse> {
+public class InactivateCaCertificateRequest extends RpcAcsRequest<InactivateCaCertificateResponse> {
 	   
 
 	private String sn;
 
 	private String mqttInstanceId;
-	public UnregisterCaCertificateRequest() {
-		super("OnsMqtt", "2020-04-20", "UnregisterCaCertificate");
+	public InactivateCaCertificateRequest() {
+		super("OnsMqtt", "2020-04-20", "InactivateCaCertificate");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -60,8 +60,8 @@ public class UnregisterCaCertificateRequest extends RpcAcsRequest<UnregisterCaCe
 	}
 
 	@Override
-	public Class<UnregisterCaCertificateResponse> getResponseClass() {
-		return UnregisterCaCertificateResponse.class;
+	public Class<InactivateCaCertificateResponse> getResponseClass() {
+		return InactivateCaCertificateResponse.class;
 	}
 
 }

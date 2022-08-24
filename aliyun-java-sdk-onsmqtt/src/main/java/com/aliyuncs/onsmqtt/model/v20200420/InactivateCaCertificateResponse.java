@@ -15,18 +15,18 @@
 package com.aliyuncs.onsmqtt.model.v20200420;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.onsmqtt.transform.v20200420.UnregisterDeviceCertificateResponseUnmarshaller;
+import com.aliyuncs.onsmqtt.transform.v20200420.InactivateCaCertificateResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UnregisterDeviceCertificateResponse extends AcsResponse {
+public class InactivateCaCertificateResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String deviceSn;
+	private String sn;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,17 +36,17 @@ public class UnregisterDeviceCertificateResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getDeviceSn() {
-		return this.deviceSn;
+	public String getSn() {
+		return this.sn;
 	}
 
-	public void setDeviceSn(String deviceSn) {
-		this.deviceSn = deviceSn;
+	public void setSn(String sn) {
+		this.sn = sn;
 	}
 
 	@Override
-	public UnregisterDeviceCertificateResponse getInstance(UnmarshallerContext context) {
-		return	UnregisterDeviceCertificateResponseUnmarshaller.unmarshall(this, context);
+	public InactivateCaCertificateResponse getInstance(UnmarshallerContext context) {
+		return	InactivateCaCertificateResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

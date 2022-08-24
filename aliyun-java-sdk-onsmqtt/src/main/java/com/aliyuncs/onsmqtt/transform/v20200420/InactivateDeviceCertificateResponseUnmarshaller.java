@@ -14,17 +14,17 @@
 
 package com.aliyuncs.onsmqtt.transform.v20200420;
 
-import com.aliyuncs.onsmqtt.model.v20200420.UnregisterCaCertificateResponse;
+import com.aliyuncs.onsmqtt.model.v20200420.InactivateDeviceCertificateResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class UnregisterCaCertificateResponseUnmarshaller {
+public class InactivateDeviceCertificateResponseUnmarshaller {
 
-	public static UnregisterCaCertificateResponse unmarshall(UnregisterCaCertificateResponse unregisterCaCertificateResponse, UnmarshallerContext _ctx) {
+	public static InactivateDeviceCertificateResponse unmarshall(InactivateDeviceCertificateResponse inactivateDeviceCertificateResponse, UnmarshallerContext _ctx) {
 		
-		unregisterCaCertificateResponse.setRequestId(_ctx.stringValue("UnregisterCaCertificateResponse.RequestId"));
-		unregisterCaCertificateResponse.setSn(_ctx.stringValue("UnregisterCaCertificateResponse.Sn"));
+		inactivateDeviceCertificateResponse.setRequestId(_ctx.stringValue("InactivateDeviceCertificateResponse.RequestId"));
+		inactivateDeviceCertificateResponse.setDeviceSn(_ctx.stringValue("InactivateDeviceCertificateResponse.DeviceSn"));
 	 
-	 	return unregisterCaCertificateResponse;
+	 	return inactivateDeviceCertificateResponse;
 	}
 }
