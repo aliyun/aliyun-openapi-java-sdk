@@ -1,3 +1,6 @@
+2022-08-25 Version: 1.0.24
+- Add AvailableZones for ListTransitRouterAvailableResource.
+
 2022-08-24 Version: 1.0.23
 - Add ErrorCode for CreateTransitRouterPrefixListAssociation .
 - Add ErrorCode for DeleteTransitRouterPrefixListAssociation .

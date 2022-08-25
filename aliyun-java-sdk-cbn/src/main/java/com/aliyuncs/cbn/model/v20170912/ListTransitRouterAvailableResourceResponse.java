@@ -31,6 +31,8 @@ public class ListTransitRouterAvailableResourceResponse extends AcsResponse {
 
 	private List<String> masterZones;
 
+	private List<String> availableZones;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -53,6 +55,14 @@ public class ListTransitRouterAvailableResourceResponse extends AcsResponse {
 
 	public void setMasterZones(List<String> masterZones) {
 		this.masterZones = masterZones;
+	}
+
+	public List<String> getAvailableZones() {
+		return this.availableZones;
+	}
+
+	public void setAvailableZones(List<String> availableZones) {
+		this.availableZones = availableZones;
 	}
 
 	@Override
