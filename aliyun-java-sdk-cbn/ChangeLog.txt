@@ -1,3 +1,6 @@
+2022-08-26 Version: 1.0.25
+- Update param NextHopType visibility for DeleteTransitRouterPrefixListAssociation .
+
 2022-08-25 Version: 1.0.24
 - Add AvailableZones for ListTransitRouterAvailableResource.
 
