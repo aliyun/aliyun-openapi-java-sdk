@@ -123,6 +123,8 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 
 		private List<IpList> ipLists;
 
+		private List<Tag> tags;
+
 		private List<String> forwardTableIds;
 
 		private List<String> snatTableIds;
@@ -317,6 +319,14 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 			this.ipLists = ipLists;
 		}
 
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
 		public List<String> getForwardTableIds() {
 			return this.forwardTableIds;
 		}
@@ -417,6 +427,29 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 
 			public void setPrivateIpAddress(String privateIpAddress) {
 				this.privateIpAddress = privateIpAddress;
+			}
+		}
+
+		public static class Tag {
+
+			private String tagKey;
+
+			private String tagValue;
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
 			}
 		}
 
