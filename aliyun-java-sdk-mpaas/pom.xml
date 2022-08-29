@@ -4,11 +4,7 @@
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-mpaas</artifactId>
   <packaging>jar</packaging>
-<<<<<<< Updated upstream
-  <version>2.1.9</version>
-=======
-  <version>3.0.8</version>
->>>>>>> Stashed changes
+  <version>4.0.0</version>
   <name>aliyun-java-sdk-mpaas</name>
   <url>http://www.aliyun.com</url>
   <description>Aliyun Open API SDK for Java
