@@ -22,34 +22,26 @@ import com.aliyuncs.mts.Endpoint;
  * @author auto create
  * @version 
  */
-public class SubmitSmarttagJobRequest extends RpcAcsRequest<SubmitSmarttagJobResponse> {
+public class ListCustomEntitiesRequest extends RpcAcsRequest<ListCustomEntitiesResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String title;
+	private Integer pageNumber;
 
-	private String content;
+	private Integer pageSize;
 
-	private String userData;
+	private String algorithm;
+
+	private String customGroupId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String params;
-
-	private String templateId;
-
-	private String pipelineId;
-
-	private String input;
-
-	private String contentAddr;
-	public SubmitSmarttagJobRequest() {
-		super("Mts", "2014-06-18", "SubmitSmarttagJob", "mts");
+	public ListCustomEntitiesRequest() {
+		super("Mts", "2014-06-18", "ListCustomEntities", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -68,36 +60,47 @@ public class SubmitSmarttagJobRequest extends RpcAcsRequest<SubmitSmarttagJobRes
 		}
 	}
 
-	public String getTitle() {
-		return this.title;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setTitle(String title) {
-		this.title = title;
-		if(title != null){
-			putQueryParameter("Title", title);
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
-	public String getContent() {
-		return this.content;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setContent(String content) {
-		this.content = content;
-		if(content != null){
-			putQueryParameter("Content", content);
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
-	public String getUserData() {
-		return this.userData;
+	public String getAlgorithm() {
+		return this.algorithm;
 	}
 
-	public void setUserData(String userData) {
-		this.userData = userData;
-		if(userData != null){
-			putQueryParameter("UserData", userData);
+	public void setAlgorithm(String algorithm) {
+		this.algorithm = algorithm;
+		if(algorithm != null){
+			putQueryParameter("Algorithm", algorithm);
+		}
+	}
+
+	public String getCustomGroupId() {
+		return this.customGroupId;
+	}
+
+	public void setCustomGroupId(String customGroupId) {
+		this.customGroupId = customGroupId;
+		if(customGroupId != null){
+			putQueryParameter("CustomGroupId", customGroupId);
 		}
 	}
 
@@ -134,64 +137,9 @@ public class SubmitSmarttagJobRequest extends RpcAcsRequest<SubmitSmarttagJobRes
 		}
 	}
 
-	public String getParams() {
-		return this.params;
-	}
-
-	public void setParams(String params) {
-		this.params = params;
-		if(params != null){
-			putQueryParameter("Params", params);
-		}
-	}
-
-	public String getTemplateId() {
-		return this.templateId;
-	}
-
-	public void setTemplateId(String templateId) {
-		this.templateId = templateId;
-		if(templateId != null){
-			putQueryParameter("TemplateId", templateId);
-		}
-	}
-
-	public String getPipelineId() {
-		return this.pipelineId;
-	}
-
-	public void setPipelineId(String pipelineId) {
-		this.pipelineId = pipelineId;
-		if(pipelineId != null){
-			putQueryParameter("PipelineId", pipelineId);
-		}
-	}
-
-	public String getInput() {
-		return this.input;
-	}
-
-	public void setInput(String input) {
-		this.input = input;
-		if(input != null){
-			putQueryParameter("Input", input);
-		}
-	}
-
-	public String getContentAddr() {
-		return this.contentAddr;
-	}
-
-	public void setContentAddr(String contentAddr) {
-		this.contentAddr = contentAddr;
-		if(contentAddr != null){
-			putQueryParameter("ContentAddr", contentAddr);
-		}
-	}
-
 	@Override
-	public Class<SubmitSmarttagJobResponse> getResponseClass() {
-		return SubmitSmarttagJobResponse.class;
+	public Class<ListCustomEntitiesResponse> getResponseClass() {
+		return ListCustomEntitiesResponse.class;
 	}
 
 }

@@ -45,9 +45,13 @@ public class AddSmarttagTemplateRequest extends RpcAcsRequest<AddSmarttagTemplat
 
 	private String keywordConfig;
 
+	private String landmarkGroupIds;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
+
+	private String objectGroupIds;
 
 	private Long ownerId;
 
@@ -173,6 +177,17 @@ public class AddSmarttagTemplateRequest extends RpcAcsRequest<AddSmarttagTemplat
 		}
 	}
 
+	public String getLandmarkGroupIds() {
+		return this.landmarkGroupIds;
+	}
+
+	public void setLandmarkGroupIds(String landmarkGroupIds) {
+		this.landmarkGroupIds = landmarkGroupIds;
+		if(landmarkGroupIds != null){
+			putQueryParameter("LandmarkGroupIds", landmarkGroupIds);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -192,6 +207,17 @@ public class AddSmarttagTemplateRequest extends RpcAcsRequest<AddSmarttagTemplat
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getObjectGroupIds() {
+		return this.objectGroupIds;
+	}
+
+	public void setObjectGroupIds(String objectGroupIds) {
+		this.objectGroupIds = objectGroupIds;
+		if(objectGroupIds != null){
+			putQueryParameter("ObjectGroupIds", objectGroupIds);
 		}
 	}
 

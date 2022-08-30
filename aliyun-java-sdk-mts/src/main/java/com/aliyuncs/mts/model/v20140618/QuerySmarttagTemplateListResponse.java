@@ -61,6 +61,10 @@ public class QuerySmarttagTemplateListResponse extends AcsResponse {
 
 		private String faceCustomParamsConfig;
 
+		private String objectGroupIds;
+
+		private String landmarkGroupIds;
+
 		private String scene;
 
 		private String labelType;
@@ -125,6 +129,22 @@ public class QuerySmarttagTemplateListResponse extends AcsResponse {
 
 		public void setFaceCustomParamsConfig(String faceCustomParamsConfig) {
 			this.faceCustomParamsConfig = faceCustomParamsConfig;
+		}
+
+		public String getObjectGroupIds() {
+			return this.objectGroupIds;
+		}
+
+		public void setObjectGroupIds(String objectGroupIds) {
+			this.objectGroupIds = objectGroupIds;
+		}
+
+		public String getLandmarkGroupIds() {
+			return this.landmarkGroupIds;
+		}
+
+		public void setLandmarkGroupIds(String landmarkGroupIds) {
+			this.landmarkGroupIds = landmarkGroupIds;
 		}
 
 		public String getScene() {

@@ -22,16 +22,14 @@ import com.aliyuncs.mts.Endpoint;
  * @author auto create
  * @version 
  */
-public class SubmitSmarttagJobRequest extends RpcAcsRequest<SubmitSmarttagJobResponse> {
+public class CreateCustomGroupRequest extends RpcAcsRequest<CreateCustomGroupResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String title;
+	private String customGroupName;
 
-	private String content;
-
-	private String userData;
+	private String algorithm;
 
 	private String resourceOwnerAccount;
 
@@ -39,17 +37,9 @@ public class SubmitSmarttagJobRequest extends RpcAcsRequest<SubmitSmarttagJobRes
 
 	private Long ownerId;
 
-	private String params;
-
-	private String templateId;
-
-	private String pipelineId;
-
-	private String input;
-
-	private String contentAddr;
-	public SubmitSmarttagJobRequest() {
-		super("Mts", "2014-06-18", "SubmitSmarttagJob", "mts");
+	private String customGroupDescription;
+	public CreateCustomGroupRequest() {
+		super("Mts", "2014-06-18", "CreateCustomGroup", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -68,36 +58,25 @@ public class SubmitSmarttagJobRequest extends RpcAcsRequest<SubmitSmarttagJobRes
 		}
 	}
 
-	public String getTitle() {
-		return this.title;
+	public String getCustomGroupName() {
+		return this.customGroupName;
 	}
 
-	public void setTitle(String title) {
-		this.title = title;
-		if(title != null){
-			putQueryParameter("Title", title);
+	public void setCustomGroupName(String customGroupName) {
+		this.customGroupName = customGroupName;
+		if(customGroupName != null){
+			putQueryParameter("CustomGroupName", customGroupName);
 		}
 	}
 
-	public String getContent() {
-		return this.content;
+	public String getAlgorithm() {
+		return this.algorithm;
 	}
 
-	public void setContent(String content) {
-		this.content = content;
-		if(content != null){
-			putQueryParameter("Content", content);
-		}
-	}
-
-	public String getUserData() {
-		return this.userData;
-	}
-
-	public void setUserData(String userData) {
-		this.userData = userData;
-		if(userData != null){
-			putQueryParameter("UserData", userData);
+	public void setAlgorithm(String algorithm) {
+		this.algorithm = algorithm;
+		if(algorithm != null){
+			putQueryParameter("Algorithm", algorithm);
 		}
 	}
 
@@ -134,64 +113,20 @@ public class SubmitSmarttagJobRequest extends RpcAcsRequest<SubmitSmarttagJobRes
 		}
 	}
 
-	public String getParams() {
-		return this.params;
+	public String getCustomGroupDescription() {
+		return this.customGroupDescription;
 	}
 
-	public void setParams(String params) {
-		this.params = params;
-		if(params != null){
-			putQueryParameter("Params", params);
-		}
-	}
-
-	public String getTemplateId() {
-		return this.templateId;
-	}
-
-	public void setTemplateId(String templateId) {
-		this.templateId = templateId;
-		if(templateId != null){
-			putQueryParameter("TemplateId", templateId);
-		}
-	}
-
-	public String getPipelineId() {
-		return this.pipelineId;
-	}
-
-	public void setPipelineId(String pipelineId) {
-		this.pipelineId = pipelineId;
-		if(pipelineId != null){
-			putQueryParameter("PipelineId", pipelineId);
-		}
-	}
-
-	public String getInput() {
-		return this.input;
-	}
-
-	public void setInput(String input) {
-		this.input = input;
-		if(input != null){
-			putQueryParameter("Input", input);
-		}
-	}
-
-	public String getContentAddr() {
-		return this.contentAddr;
-	}
-
-	public void setContentAddr(String contentAddr) {
-		this.contentAddr = contentAddr;
-		if(contentAddr != null){
-			putQueryParameter("ContentAddr", contentAddr);
+	public void setCustomGroupDescription(String customGroupDescription) {
+		this.customGroupDescription = customGroupDescription;
+		if(customGroupDescription != null){
+			putQueryParameter("CustomGroupDescription", customGroupDescription);
 		}
 	}
 
 	@Override
-	public Class<SubmitSmarttagJobResponse> getResponseClass() {
-		return SubmitSmarttagJobResponse.class;
+	public Class<CreateCustomGroupResponse> getResponseClass() {
+		return CreateCustomGroupResponse.class;
 	}
 
 }

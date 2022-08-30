@@ -48,6 +48,7 @@ public class ListFpShotImportJobResponseUnmarshaller {
 			fpShotImportJob.setFinishTime(_ctx.stringValue("ListFpShotImportJobResponse.FpShotImportJobList["+ i +"].FinishTime"));
 			fpShotImportJob.setUserData(_ctx.stringValue("ListFpShotImportJobResponse.FpShotImportJobList["+ i +"].UserData"));
 			fpShotImportJob.setInput(_ctx.stringValue("ListFpShotImportJobResponse.FpShotImportJobList["+ i +"].Input"));
+			fpShotImportJob.setProcessMessage(_ctx.stringValue("ListFpShotImportJobResponse.FpShotImportJobList["+ i +"].ProcessMessage"));
 
 			fpShotImportJobList.add(fpShotImportJob);
 		}
