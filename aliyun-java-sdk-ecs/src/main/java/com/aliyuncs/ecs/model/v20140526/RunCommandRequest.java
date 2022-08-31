@@ -64,6 +64,8 @@ public class RunCommandRequest extends RpcAcsRequest<RunCommandResponse> {
 
 	private String name;
 
+	private String containerId;
+
 	private Map<Object,Object> parameters;
 
 	private Boolean enableParameter;
@@ -278,6 +280,17 @@ public class RunCommandRequest extends RpcAcsRequest<RunCommandResponse> {
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getContainerId() {
+		return this.containerId;
+	}
+
+	public void setContainerId(String containerId) {
+		this.containerId = containerId;
+		if(containerId != null){
+			putQueryParameter("ContainerId", containerId);
 		}
 	}
 

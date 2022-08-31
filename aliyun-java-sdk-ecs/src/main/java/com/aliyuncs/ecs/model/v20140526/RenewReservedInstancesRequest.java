@@ -15,6 +15,7 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecs.Endpoint;
 
@@ -22,36 +23,31 @@ import com.aliyuncs.ecs.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteImagePipelineRequest extends RpcAcsRequest<DeleteImagePipelineResponse> {
+public class RenewReservedInstancesRequest extends RpcAcsRequest<RenewReservedInstancesResponse> {
 	   
 
-	private String imagePipelineId;
-
 	private Long resourceOwnerId;
+
+	private String clientToken;
+
+	private Integer period;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-	public DeleteImagePipelineRequest() {
-		super("Ecs", "2014-05-26", "DeleteImagePipeline", "ecs");
+
+	private String periodUnit;
+
+	private List<String> reservedInstanceIds;
+	public RenewReservedInstancesRequest() {
+		super("Ecs", "2014-05-26", "RenewReservedInstances", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getImagePipelineId() {
-		return this.imagePipelineId;
-	}
-
-	public void setImagePipelineId(String imagePipelineId) {
-		this.imagePipelineId = imagePipelineId;
-		if(imagePipelineId != null){
-			putQueryParameter("ImagePipelineId", imagePipelineId);
-		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -62,6 +58,28 @@ public class DeleteImagePipelineRequest extends RpcAcsRequest<DeleteImagePipelin
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public Integer getPeriod() {
+		return this.period;
+	}
+
+	public void setPeriod(Integer period) {
+		this.period = period;
+		if(period != null){
+			putQueryParameter("Period", period.toString());
 		}
 	}
 
@@ -98,9 +116,33 @@ public class DeleteImagePipelineRequest extends RpcAcsRequest<DeleteImagePipelin
 		}
 	}
 
+	public String getPeriodUnit() {
+		return this.periodUnit;
+	}
+
+	public void setPeriodUnit(String periodUnit) {
+		this.periodUnit = periodUnit;
+		if(periodUnit != null){
+			putQueryParameter("PeriodUnit", periodUnit);
+		}
+	}
+
+	public List<String> getReservedInstanceIds() {
+		return this.reservedInstanceIds;
+	}
+
+	public void setReservedInstanceIds(List<String> reservedInstanceIds) {
+		this.reservedInstanceIds = reservedInstanceIds;	
+		if (reservedInstanceIds != null) {
+			for (int i = 0; i < reservedInstanceIds.size(); i++) {
+				putQueryParameter("ReservedInstanceId." + (i + 1) , reservedInstanceIds.get(i));
+			}
+		}	
+	}
+
 	@Override
-	public Class<DeleteImagePipelineResponse> getResponseClass() {
-		return DeleteImagePipelineResponse.class;
+	public Class<RenewReservedInstancesResponse> getResponseClass() {
+		return RenewReservedInstancesResponse.class;
 	}
 
 }

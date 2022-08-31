@@ -15,7 +15,6 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecs.Endpoint;
 
@@ -29,8 +28,6 @@ public class DeleteImageComponentRequest extends RpcAcsRequest<DeleteImageCompon
 	private Long resourceOwnerId;
 
 	private String imageComponentId;
-
-	private List<TemplateTag> templateTags;
 
 	private String resourceOwnerAccount;
 
@@ -68,20 +65,6 @@ public class DeleteImageComponentRequest extends RpcAcsRequest<DeleteImageCompon
 		}
 	}
 
-	public List<TemplateTag> getTemplateTags() {
-		return this.templateTags;
-	}
-
-	public void setTemplateTags(List<TemplateTag> templateTags) {
-		this.templateTags = templateTags;	
-		if (templateTags != null) {
-			for (int depth1 = 0; depth1 < templateTags.size(); depth1++) {
-				putQueryParameter("TemplateTag." + (depth1 + 1) + ".Key" , templateTags.get(depth1).getKey());
-				putQueryParameter("TemplateTag." + (depth1 + 1) + ".Value" , templateTags.get(depth1).getValue());
-			}
-		}	
-	}
-
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -112,29 +95,6 @@ public class DeleteImageComponentRequest extends RpcAcsRequest<DeleteImageCompon
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public static class TemplateTag {
-
-		private String key;
-
-		private String value;
-
-		public String getKey() {
-			return this.key;
-		}
-
-		public void setKey(String key) {
-			this.key = key;
-		}
-
-		public String getValue() {
-			return this.value;
-		}
-
-		public void setValue(String value) {
-			this.value = value;
 		}
 	}
 

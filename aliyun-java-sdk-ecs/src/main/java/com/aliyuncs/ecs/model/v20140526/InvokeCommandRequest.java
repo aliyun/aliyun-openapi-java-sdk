@@ -48,6 +48,8 @@ public class InvokeCommandRequest extends RpcAcsRequest<InvokeCommandResponse> {
 
 	private List<String> instanceIds;
 
+	private String containerId;
+
 	private Map<Object,Object> parameters;
 
 	private String username;
@@ -170,6 +172,17 @@ public class InvokeCommandRequest extends RpcAcsRequest<InvokeCommandResponse> {
 				putQueryParameter("InstanceId." + (i + 1) , instanceIds.get(i));
 			}
 		}	
+	}
+
+	public String getContainerId() {
+		return this.containerId;
+	}
+
+	public void setContainerId(String containerId) {
+		this.containerId = containerId;
+		if(containerId != null){
+			putQueryParameter("ContainerId", containerId);
+		}
 	}
 
 	public Map<Object,Object> getParameters() {

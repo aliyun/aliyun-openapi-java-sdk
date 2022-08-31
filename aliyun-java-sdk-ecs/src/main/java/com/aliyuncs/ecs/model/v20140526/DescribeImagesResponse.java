@@ -133,6 +133,8 @@ public class DescribeImagesResponse extends AcsResponse {
 
 		private String architecture;
 
+		private String bootMode;
+
 		private Boolean isPublic;
 
 		private Long imageOwnerId;
@@ -331,6 +333,14 @@ public class DescribeImagesResponse extends AcsResponse {
 
 		public void setArchitecture(String architecture) {
 			this.architecture = architecture;
+		}
+
+		public String getBootMode() {
+			return this.bootMode;
+		}
+
+		public void setBootMode(String bootMode) {
+			this.bootMode = bootMode;
 		}
 
 		public Boolean getIsPublic() {

@@ -109,6 +109,8 @@ public class DescribeInvocationsResponse extends AcsResponse {
 
 		private Long timeout;
 
+		private String containerId;
+
 		private List<InvokeInstance> invokeInstances;
 
 		private List<Tag> tags;
@@ -239,6 +241,14 @@ public class DescribeInvocationsResponse extends AcsResponse {
 
 		public void setTimeout(Long timeout) {
 			this.timeout = timeout;
+		}
+
+		public String getContainerId() {
+			return this.containerId;
+		}
+
+		public void setContainerId(String containerId) {
+			this.containerId = containerId;
 		}
 
 		public List<InvokeInstance> getInvokeInstances() {
