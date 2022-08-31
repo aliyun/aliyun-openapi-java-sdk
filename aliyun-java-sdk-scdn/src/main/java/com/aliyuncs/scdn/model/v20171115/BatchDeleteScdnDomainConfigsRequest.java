@@ -29,11 +29,11 @@ public class BatchDeleteScdnDomainConfigsRequest extends RpcAcsRequest<BatchDele
 
 	private String domainNames;
 
+	private String securityToken;
+
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String securityToken;
 	public BatchDeleteScdnDomainConfigsRequest() {
 		super("scdn", "2017-11-15", "BatchDeleteScdnDomainConfigs");
 		setMethod(MethodType.POST);
@@ -65,6 +65,17 @@ public class BatchDeleteScdnDomainConfigsRequest extends RpcAcsRequest<BatchDele
 		}
 	}
 
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -84,17 +95,6 @@ public class BatchDeleteScdnDomainConfigsRequest extends RpcAcsRequest<BatchDele
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

@@ -27,17 +27,17 @@ public class DescribeScdnDomainHitRateDataResponseUnmarshaller {
 	public static DescribeScdnDomainHitRateDataResponse unmarshall(DescribeScdnDomainHitRateDataResponse describeScdnDomainHitRateDataResponse, UnmarshallerContext _ctx) {
 		
 		describeScdnDomainHitRateDataResponse.setRequestId(_ctx.stringValue("DescribeScdnDomainHitRateDataResponse.RequestId"));
-		describeScdnDomainHitRateDataResponse.setDomainName(_ctx.stringValue("DescribeScdnDomainHitRateDataResponse.DomainName"));
-		describeScdnDomainHitRateDataResponse.setStartTime(_ctx.stringValue("DescribeScdnDomainHitRateDataResponse.StartTime"));
 		describeScdnDomainHitRateDataResponse.setEndTime(_ctx.stringValue("DescribeScdnDomainHitRateDataResponse.EndTime"));
+		describeScdnDomainHitRateDataResponse.setStartTime(_ctx.stringValue("DescribeScdnDomainHitRateDataResponse.StartTime"));
+		describeScdnDomainHitRateDataResponse.setDomainName(_ctx.stringValue("DescribeScdnDomainHitRateDataResponse.DomainName"));
 		describeScdnDomainHitRateDataResponse.setDataInterval(_ctx.stringValue("DescribeScdnDomainHitRateDataResponse.DataInterval"));
 
 		List<DataModule> hitRatePerInterval = new ArrayList<DataModule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeScdnDomainHitRateDataResponse.HitRatePerInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
 			dataModule.setTimeStamp(_ctx.stringValue("DescribeScdnDomainHitRateDataResponse.HitRatePerInterval["+ i +"].TimeStamp"));
-			dataModule.setReqHitRate(_ctx.stringValue("DescribeScdnDomainHitRateDataResponse.HitRatePerInterval["+ i +"].ReqHitRate"));
 			dataModule.setByteHitRate(_ctx.stringValue("DescribeScdnDomainHitRateDataResponse.HitRatePerInterval["+ i +"].ByteHitRate"));
+			dataModule.setReqHitRate(_ctx.stringValue("DescribeScdnDomainHitRateDataResponse.HitRatePerInterval["+ i +"].ReqHitRate"));
 
 			hitRatePerInterval.add(dataModule);
 		}

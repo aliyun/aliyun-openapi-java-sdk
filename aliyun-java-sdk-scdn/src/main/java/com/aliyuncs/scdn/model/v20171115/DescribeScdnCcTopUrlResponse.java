@@ -67,17 +67,9 @@ public class DescribeScdnCcTopUrlResponse extends AcsResponse {
 
 	public static class AttackUrlDatas {
 
-		private String url;
-
 		private String attackCount;
 
-		public String getUrl() {
-			return this.url;
-		}
-
-		public void setUrl(String url) {
-			this.url = url;
-		}
+		private String url;
 
 		public String getAttackCount() {
 			return this.attackCount;
@@ -85,6 +77,14 @@ public class DescribeScdnCcTopUrlResponse extends AcsResponse {
 
 		public void setAttackCount(String attackCount) {
 			this.attackCount = attackCount;
+		}
+
+		public String getUrl() {
+			return this.url;
+		}
+
+		public void setUrl(String url) {
+			this.url = url;
 		}
 	}
 

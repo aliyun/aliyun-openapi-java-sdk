@@ -14,16 +14,17 @@
 
 package com.aliyuncs.scdn.transform.v20171115;
 
-import com.aliyuncs.scdn.model.v20171115.OpenScdnServiceResponse;
+import com.aliyuncs.scdn.model.v20171115.VerifyScdnDomainOwnerResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class OpenScdnServiceResponseUnmarshaller {
+public class VerifyScdnDomainOwnerResponseUnmarshaller {
 
-	public static OpenScdnServiceResponse unmarshall(OpenScdnServiceResponse openScdnServiceResponse, UnmarshallerContext _ctx) {
+	public static VerifyScdnDomainOwnerResponse unmarshall(VerifyScdnDomainOwnerResponse verifyScdnDomainOwnerResponse, UnmarshallerContext _ctx) {
 		
-		openScdnServiceResponse.setRequestId(_ctx.stringValue("OpenScdnServiceResponse.RequestId"));
+		verifyScdnDomainOwnerResponse.setRequestId(_ctx.stringValue("VerifyScdnDomainOwnerResponse.RequestId"));
+		verifyScdnDomainOwnerResponse.setContent(_ctx.stringValue("VerifyScdnDomainOwnerResponse.Content"));
 	 
-	 	return openScdnServiceResponse;
+	 	return verifyScdnDomainOwnerResponse;
 	}
 }

@@ -15,16 +15,26 @@
 package com.aliyuncs.scdn.model.v20171115;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.scdn.transform.v20171115.SetScdnDomainBizInfoResponseUnmarshaller;
+import com.aliyuncs.scdn.transform.v20171115.VerifyScdnDomainOwnerResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SetScdnDomainBizInfoResponse extends AcsResponse {
+public class VerifyScdnDomainOwnerResponse extends AcsResponse {
+
+	private String content;
 
 	private String requestId;
+
+	public String getContent() {
+		return this.content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -35,7 +45,7 @@ public class SetScdnDomainBizInfoResponse extends AcsResponse {
 	}
 
 	@Override
-	public SetScdnDomainBizInfoResponse getInstance(UnmarshallerContext context) {
-		return	SetScdnDomainBizInfoResponseUnmarshaller.unmarshall(this, context);
+	public VerifyScdnDomainOwnerResponse getInstance(UnmarshallerContext context) {
+		return	VerifyScdnDomainOwnerResponseUnmarshaller.unmarshall(this, context);
 	}
 }

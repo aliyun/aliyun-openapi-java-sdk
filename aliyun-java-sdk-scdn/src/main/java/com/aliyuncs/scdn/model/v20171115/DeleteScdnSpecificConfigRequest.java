@@ -25,11 +25,11 @@ import com.aliyuncs.scdn.Endpoint;
 public class DeleteScdnSpecificConfigRequest extends RpcAcsRequest<DeleteScdnSpecificConfigResponse> {
 	   
 
+	private String securityToken;
+
 	private String domainName;
 
 	private Long ownerId;
-
-	private String securityToken;
 
 	private String configId;
 	public DeleteScdnSpecificConfigRequest() {
@@ -39,6 +39,17 @@ public class DeleteScdnSpecificConfigRequest extends RpcAcsRequest<DeleteScdnSpe
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getDomainName() {
@@ -60,17 +71,6 @@ public class DeleteScdnSpecificConfigRequest extends RpcAcsRequest<DeleteScdnSpe
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

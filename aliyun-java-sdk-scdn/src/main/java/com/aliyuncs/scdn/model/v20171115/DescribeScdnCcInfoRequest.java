@@ -24,8 +24,6 @@ import com.aliyuncs.scdn.Endpoint;
  */
 public class DescribeScdnCcInfoRequest extends RpcAcsRequest<DescribeScdnCcInfoResponse> {
 	   
-
-	private Long ownerId;
 	public DescribeScdnCcInfoRequest() {
 		super("scdn", "2017-11-15", "DescribeScdnCcInfo");
 		setMethod(MethodType.GET);
@@ -33,17 +31,6 @@ public class DescribeScdnCcInfoRequest extends RpcAcsRequest<DescribeScdnCcInfoR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
 	}
 
 	@Override

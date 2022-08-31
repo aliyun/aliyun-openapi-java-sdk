@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeScdnDDoSInfoResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer secBandwidth;
 
+	private String requestId;
+
 	private Integer elasticBandwidth;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getSecBandwidth() {
 		return this.secBandwidth;
@@ -44,6 +36,14 @@ public class DescribeScdnDDoSInfoResponse extends AcsResponse {
 
 	public void setSecBandwidth(Integer secBandwidth) {
 		this.secBandwidth = secBandwidth;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getElasticBandwidth() {

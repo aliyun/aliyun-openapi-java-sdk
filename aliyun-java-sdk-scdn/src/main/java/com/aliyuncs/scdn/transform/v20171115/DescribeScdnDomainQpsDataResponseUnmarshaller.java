@@ -27,21 +27,21 @@ public class DescribeScdnDomainQpsDataResponseUnmarshaller {
 	public static DescribeScdnDomainQpsDataResponse unmarshall(DescribeScdnDomainQpsDataResponse describeScdnDomainQpsDataResponse, UnmarshallerContext _ctx) {
 		
 		describeScdnDomainQpsDataResponse.setRequestId(_ctx.stringValue("DescribeScdnDomainQpsDataResponse.RequestId"));
-		describeScdnDomainQpsDataResponse.setDomainName(_ctx.stringValue("DescribeScdnDomainQpsDataResponse.DomainName"));
-		describeScdnDomainQpsDataResponse.setStartTime(_ctx.stringValue("DescribeScdnDomainQpsDataResponse.StartTime"));
 		describeScdnDomainQpsDataResponse.setEndTime(_ctx.stringValue("DescribeScdnDomainQpsDataResponse.EndTime"));
+		describeScdnDomainQpsDataResponse.setStartTime(_ctx.stringValue("DescribeScdnDomainQpsDataResponse.StartTime"));
+		describeScdnDomainQpsDataResponse.setDomainName(_ctx.stringValue("DescribeScdnDomainQpsDataResponse.DomainName"));
 		describeScdnDomainQpsDataResponse.setDataInterval(_ctx.stringValue("DescribeScdnDomainQpsDataResponse.DataInterval"));
 
 		List<DataModule> qpsDataPerInterval = new ArrayList<DataModule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeScdnDomainQpsDataResponse.QpsDataPerInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
-			dataModule.setTimeStamp(_ctx.stringValue("DescribeScdnDomainQpsDataResponse.QpsDataPerInterval["+ i +"].TimeStamp"));
-			dataModule.setQpsValue(_ctx.stringValue("DescribeScdnDomainQpsDataResponse.QpsDataPerInterval["+ i +"].QpsValue"));
-			dataModule.setHttpQpsValue(_ctx.stringValue("DescribeScdnDomainQpsDataResponse.QpsDataPerInterval["+ i +"].HttpQpsValue"));
-			dataModule.setHttpsQpsValue(_ctx.stringValue("DescribeScdnDomainQpsDataResponse.QpsDataPerInterval["+ i +"].HttpsQpsValue"));
-			dataModule.setAccValue(_ctx.stringValue("DescribeScdnDomainQpsDataResponse.QpsDataPerInterval["+ i +"].AccValue"));
-			dataModule.setHttpAccValue(_ctx.stringValue("DescribeScdnDomainQpsDataResponse.QpsDataPerInterval["+ i +"].HttpAccValue"));
 			dataModule.setHttpsAccValue(_ctx.stringValue("DescribeScdnDomainQpsDataResponse.QpsDataPerInterval["+ i +"].HttpsAccValue"));
+			dataModule.setQpsValue(_ctx.stringValue("DescribeScdnDomainQpsDataResponse.QpsDataPerInterval["+ i +"].QpsValue"));
+			dataModule.setAccValue(_ctx.stringValue("DescribeScdnDomainQpsDataResponse.QpsDataPerInterval["+ i +"].AccValue"));
+			dataModule.setHttpQpsValue(_ctx.stringValue("DescribeScdnDomainQpsDataResponse.QpsDataPerInterval["+ i +"].HttpQpsValue"));
+			dataModule.setTimeStamp(_ctx.stringValue("DescribeScdnDomainQpsDataResponse.QpsDataPerInterval["+ i +"].TimeStamp"));
+			dataModule.setHttpsQpsValue(_ctx.stringValue("DescribeScdnDomainQpsDataResponse.QpsDataPerInterval["+ i +"].HttpsQpsValue"));
+			dataModule.setHttpAccValue(_ctx.stringValue("DescribeScdnDomainQpsDataResponse.QpsDataPerInterval["+ i +"].HttpAccValue"));
 
 			qpsDataPerInterval.add(dataModule);
 		}

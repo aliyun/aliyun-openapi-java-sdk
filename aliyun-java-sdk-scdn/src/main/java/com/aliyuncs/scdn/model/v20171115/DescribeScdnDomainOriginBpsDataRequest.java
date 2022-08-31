@@ -25,15 +25,13 @@ import com.aliyuncs.scdn.Endpoint;
 public class DescribeScdnDomainOriginBpsDataRequest extends RpcAcsRequest<DescribeScdnDomainOriginBpsDataResponse> {
 	   
 
-	private String startTime;
-
 	private String domainName;
 
 	private String endTime;
 
-	private Long ownerId;
-
 	private String interval;
+
+	private String startTime;
 	public DescribeScdnDomainOriginBpsDataRequest() {
 		super("scdn", "2017-11-15", "DescribeScdnDomainOriginBpsData");
 		setMethod(MethodType.POST);
@@ -41,17 +39,6 @@ public class DescribeScdnDomainOriginBpsDataRequest extends RpcAcsRequest<Descri
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
 	}
 
 	public String getDomainName() {
@@ -76,17 +63,6 @@ public class DescribeScdnDomainOriginBpsDataRequest extends RpcAcsRequest<Descri
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public String getInterval() {
 		return this.interval;
 	}
@@ -95,6 +71,17 @@ public class DescribeScdnDomainOriginBpsDataRequest extends RpcAcsRequest<Descri
 		this.interval = interval;
 		if(interval != null){
 			putQueryParameter("Interval", interval);
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
 		}
 	}
 

@@ -22,20 +22,33 @@ import com.aliyuncs.scdn.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeScdnUserProtectInfoRequest extends RpcAcsRequest<DescribeScdnUserProtectInfoResponse> {
+public class DescribeScdnVerifyContentRequest extends RpcAcsRequest<DescribeScdnVerifyContentResponse> {
 	   
-	public DescribeScdnUserProtectInfoRequest() {
-		super("scdn", "2017-11-15", "DescribeScdnUserProtectInfo");
-		setMethod(MethodType.GET);
+
+	private String domainName;
+	public DescribeScdnVerifyContentRequest() {
+		super("scdn", "2017-11-15", "DescribeScdnVerifyContent");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
 	@Override
-	public Class<DescribeScdnUserProtectInfoResponse> getResponseClass() {
-		return DescribeScdnUserProtectInfoResponse.class;
+	public Class<DescribeScdnVerifyContentResponse> getResponseClass() {
+		return DescribeScdnVerifyContentResponse.class;
 	}
 
 }

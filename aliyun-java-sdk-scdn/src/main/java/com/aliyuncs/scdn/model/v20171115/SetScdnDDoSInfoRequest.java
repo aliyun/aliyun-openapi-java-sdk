@@ -25,8 +25,6 @@ import com.aliyuncs.scdn.Endpoint;
 public class SetScdnDDoSInfoRequest extends RpcAcsRequest<SetScdnDDoSInfoResponse> {
 	   
 
-	private Long ownerId;
-
 	private Integer elasticBandwidth;
 	public SetScdnDDoSInfoRequest() {
 		super("scdn", "2017-11-15", "SetScdnDDoSInfo");
@@ -35,17 +33,6 @@ public class SetScdnDDoSInfoRequest extends RpcAcsRequest<SetScdnDDoSInfoRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
 	}
 
 	public Integer getElasticBandwidth() {

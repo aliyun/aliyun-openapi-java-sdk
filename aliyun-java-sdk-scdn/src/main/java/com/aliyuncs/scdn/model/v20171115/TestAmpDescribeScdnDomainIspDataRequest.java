@@ -22,22 +22,16 @@ import com.aliyuncs.scdn.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeScdnDomainHttpCodeDataRequest extends RpcAcsRequest<DescribeScdnDomainHttpCodeDataResponse> {
+public class TestAmpDescribeScdnDomainIspDataRequest extends RpcAcsRequest<TestAmpDescribeScdnDomainIspDataResponse> {
 	   
 
 	private String domainName;
 
 	private String endTime;
 
-	private String interval;
-
-	private String locationNameEn;
-
 	private String startTime;
-
-	private String ispNameEn;
-	public DescribeScdnDomainHttpCodeDataRequest() {
-		super("scdn", "2017-11-15", "DescribeScdnDomainHttpCodeData");
+	public TestAmpDescribeScdnDomainIspDataRequest() {
+		super("scdn", "2017-11-15", "TestAmpDescribeScdnDomainIspData");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -67,28 +61,6 @@ public class DescribeScdnDomainHttpCodeDataRequest extends RpcAcsRequest<Describ
 		}
 	}
 
-	public String getInterval() {
-		return this.interval;
-	}
-
-	public void setInterval(String interval) {
-		this.interval = interval;
-		if(interval != null){
-			putQueryParameter("Interval", interval);
-		}
-	}
-
-	public String getLocationNameEn() {
-		return this.locationNameEn;
-	}
-
-	public void setLocationNameEn(String locationNameEn) {
-		this.locationNameEn = locationNameEn;
-		if(locationNameEn != null){
-			putQueryParameter("LocationNameEn", locationNameEn);
-		}
-	}
-
 	public String getStartTime() {
 		return this.startTime;
 	}
@@ -100,20 +72,9 @@ public class DescribeScdnDomainHttpCodeDataRequest extends RpcAcsRequest<Describ
 		}
 	}
 
-	public String getIspNameEn() {
-		return this.ispNameEn;
-	}
-
-	public void setIspNameEn(String ispNameEn) {
-		this.ispNameEn = ispNameEn;
-		if(ispNameEn != null){
-			putQueryParameter("IspNameEn", ispNameEn);
-		}
-	}
-
 	@Override
-	public Class<DescribeScdnDomainHttpCodeDataResponse> getResponseClass() {
-		return DescribeScdnDomainHttpCodeDataResponse.class;
+	public Class<TestAmpDescribeScdnDomainIspDataResponse> getResponseClass() {
+		return TestAmpDescribeScdnDomainIspDataResponse.class;
 	}
 
 }

@@ -29,9 +29,9 @@ public class DescribeScdnCcQpsInfoResponse extends AcsResponse {
 
 	private List<TimeScope> timeScopes;
 
-	private List<String> totals;
-
 	private List<String> attacks;
+
+	private List<String> totals;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,20 +49,20 @@ public class DescribeScdnCcQpsInfoResponse extends AcsResponse {
 		this.timeScopes = timeScopes;
 	}
 
-	public List<String> getTotals() {
-		return this.totals;
-	}
-
-	public void setTotals(List<String> totals) {
-		this.totals = totals;
-	}
-
 	public List<String> getAttacks() {
 		return this.attacks;
 	}
 
 	public void setAttacks(List<String> attacks) {
 		this.attacks = attacks;
+	}
+
+	public List<String> getTotals() {
+		return this.totals;
+	}
+
+	public void setTotals(List<String> totals) {
+		this.totals = totals;
 	}
 
 	public static class TimeScope {

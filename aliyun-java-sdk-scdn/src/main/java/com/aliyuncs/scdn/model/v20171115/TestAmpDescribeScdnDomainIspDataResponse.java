@@ -16,14 +16,14 @@ package com.aliyuncs.scdn.model.v20171115;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.scdn.transform.v20171115.DescribeScdnDomainIspDataResponseUnmarshaller;
+import com.aliyuncs.scdn.transform.v20171115.TestAmpDescribeScdnDomainIspDataResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeScdnDomainIspDataResponse extends AcsResponse {
+public class TestAmpDescribeScdnDomainIspDataResponse extends AcsResponse {
 
 	private String endTime;
 
@@ -209,7 +209,7 @@ public class DescribeScdnDomainIspDataResponse extends AcsResponse {
 	}
 
 	@Override
-	public DescribeScdnDomainIspDataResponse getInstance(UnmarshallerContext context) {
-		return	DescribeScdnDomainIspDataResponseUnmarshaller.unmarshall(this, context);
+	public TestAmpDescribeScdnDomainIspDataResponse getInstance(UnmarshallerContext context) {
+		return	TestAmpDescribeScdnDomainIspDataResponseUnmarshaller.unmarshall(this, context);
 	}
 }

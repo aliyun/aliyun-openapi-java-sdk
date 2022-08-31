@@ -25,11 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeScdnDomainTopUrlVisitResponse extends AcsResponse {
 
+	private String startTime;
+
 	private String requestId;
 
 	private String domainName;
-
-	private String startTime;
 
 	private List<UrlList> allUrlList;
 
@@ -40,6 +40,14 @@ public class DescribeScdnDomainTopUrlVisitResponse extends AcsResponse {
 	private List<UrlList> url400List;
 
 	private List<UrlList> url500List;
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -55,14 +63,6 @@ public class DescribeScdnDomainTopUrlVisitResponse extends AcsResponse {
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
 	}
 
 	public List<UrlList> getAllUrlList() {
@@ -107,15 +107,23 @@ public class DescribeScdnDomainTopUrlVisitResponse extends AcsResponse {
 
 	public static class UrlList {
 
+		private String flow;
+
 		private String urlDetail;
+
+		private Float flowProportion;
 
 		private String visitData;
 
 		private Float visitProportion;
 
-		private String flow;
+		public String getFlow() {
+			return this.flow;
+		}
 
-		private Float flowProportion;
+		public void setFlow(String flow) {
+			this.flow = flow;
+		}
 
 		public String getUrlDetail() {
 			return this.urlDetail;
@@ -123,6 +131,14 @@ public class DescribeScdnDomainTopUrlVisitResponse extends AcsResponse {
 
 		public void setUrlDetail(String urlDetail) {
 			this.urlDetail = urlDetail;
+		}
+
+		public Float getFlowProportion() {
+			return this.flowProportion;
+		}
+
+		public void setFlowProportion(Float flowProportion) {
+			this.flowProportion = flowProportion;
 		}
 
 		public String getVisitData() {
@@ -139,22 +155,6 @@ public class DescribeScdnDomainTopUrlVisitResponse extends AcsResponse {
 
 		public void setVisitProportion(Float visitProportion) {
 			this.visitProportion = visitProportion;
-		}
-
-		public String getFlow() {
-			return this.flow;
-		}
-
-		public void setFlow(String flow) {
-			this.flow = flow;
-		}
-
-		public Float getFlowProportion() {
-			return this.flowProportion;
-		}
-
-		public void setFlowProportion(Float flowProportion) {
-			this.flowProportion = flowProportion;
 		}
 	}
 

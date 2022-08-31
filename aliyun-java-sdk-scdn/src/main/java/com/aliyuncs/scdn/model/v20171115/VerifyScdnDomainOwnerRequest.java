@@ -22,32 +22,19 @@ import com.aliyuncs.scdn.Endpoint;
  * @author auto create
  * @version 
  */
-public class SetScdnDomainBizInfoRequest extends RpcAcsRequest<SetScdnDomainBizInfoResponse> {
+public class VerifyScdnDomainOwnerRequest extends RpcAcsRequest<VerifyScdnDomainOwnerResponse> {
 	   
-
-	private String bizName;
 
 	private String domainName;
 
-	private Long ownerId;
-	public SetScdnDomainBizInfoRequest() {
-		super("scdn", "2017-11-15", "SetScdnDomainBizInfo");
-		setMethod(MethodType.GET);
+	private String verifyType;
+	public VerifyScdnDomainOwnerRequest() {
+		super("scdn", "2017-11-15", "VerifyScdnDomainOwner");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getBizName() {
-		return this.bizName;
-	}
-
-	public void setBizName(String bizName) {
-		this.bizName = bizName;
-		if(bizName != null){
-			putQueryParameter("BizName", bizName);
-		}
 	}
 
 	public String getDomainName() {
@@ -61,20 +48,20 @@ public class SetScdnDomainBizInfoRequest extends RpcAcsRequest<SetScdnDomainBizI
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getVerifyType() {
+		return this.verifyType;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
+	public void setVerifyType(String verifyType) {
+		this.verifyType = verifyType;
+		if(verifyType != null){
+			putQueryParameter("VerifyType", verifyType);
 		}
 	}
 
 	@Override
-	public Class<SetScdnDomainBizInfoResponse> getResponseClass() {
-		return SetScdnDomainBizInfoResponse.class;
+	public Class<VerifyScdnDomainOwnerResponse> getResponseClass() {
+		return VerifyScdnDomainOwnerResponse.class;
 	}
 
 }

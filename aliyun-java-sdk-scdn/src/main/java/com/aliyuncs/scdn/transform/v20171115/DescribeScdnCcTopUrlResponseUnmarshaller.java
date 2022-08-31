@@ -33,8 +33,8 @@ public class DescribeScdnCcTopUrlResponseUnmarshaller {
 		List<AttackUrlDatas> attackUrlDataList = new ArrayList<AttackUrlDatas>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeScdnCcTopUrlResponse.AttackUrlDataList.Length"); i++) {
 			AttackUrlDatas attackUrlDatas = new AttackUrlDatas();
-			attackUrlDatas.setUrl(_ctx.stringValue("DescribeScdnCcTopUrlResponse.AttackUrlDataList["+ i +"].Url"));
 			attackUrlDatas.setAttackCount(_ctx.stringValue("DescribeScdnCcTopUrlResponse.AttackUrlDataList["+ i +"].AttackCount"));
+			attackUrlDatas.setUrl(_ctx.stringValue("DescribeScdnCcTopUrlResponse.AttackUrlDataList["+ i +"].Url"));
 
 			attackUrlDataList.add(attackUrlDatas);
 		}
