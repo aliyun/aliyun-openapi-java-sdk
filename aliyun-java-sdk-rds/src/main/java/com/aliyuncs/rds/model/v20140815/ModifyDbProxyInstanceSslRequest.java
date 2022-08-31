@@ -31,6 +31,8 @@ public class ModifyDbProxyInstanceSslRequest extends RpcAcsRequest<ModifyDbProxy
 
 	private String dbInstanceId;
 
+	private String dBProxyEngineType;
+
 	private String dbProxyEndpointId;
 	public ModifyDbProxyInstanceSslRequest() {
 		super("Rds", "2014-08-15", "ModifyDbProxyInstanceSsl", "rds");
@@ -71,6 +73,17 @@ public class ModifyDbProxyInstanceSslRequest extends RpcAcsRequest<ModifyDbProxy
 		this.dbInstanceId = dbInstanceId;
 		if(dbInstanceId != null){
 			putQueryParameter("DbInstanceId", dbInstanceId);
+		}
+	}
+
+	public String getDBProxyEngineType() {
+		return this.dBProxyEngineType;
+	}
+
+	public void setDBProxyEngineType(String dBProxyEngineType) {
+		this.dBProxyEngineType = dBProxyEngineType;
+		if(dBProxyEngineType != null){
+			putQueryParameter("DBProxyEngineType", dBProxyEngineType);
 		}
 	}
 

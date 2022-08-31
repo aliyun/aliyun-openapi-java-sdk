@@ -31,6 +31,8 @@ public class DescribeDBInstancesAsCsvRequest extends RpcAcsRequest<DescribeDBIns
 
 	private Long ownerId;
 
+	private String resourceGroupId;
+
 	private String dBInstanceId;
 	public DescribeDBInstancesAsCsvRequest() {
 		super("Rds", "2014-08-15", "DescribeDBInstancesAsCsv", "rds");
@@ -71,6 +73,17 @@ public class DescribeDBInstancesAsCsvRequest extends RpcAcsRequest<DescribeDBIns
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

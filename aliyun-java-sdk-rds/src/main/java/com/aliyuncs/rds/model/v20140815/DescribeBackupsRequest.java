@@ -31,9 +31,13 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 
 	private Integer pageNumber;
 
+	private String resourceGroupId;
+
 	private Integer pageSize;
 
 	private String dBInstanceId;
+
+	private String backupType;
 
 	private String backupId;
 
@@ -84,6 +88,17 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 		}
 	}
 
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -103,6 +118,17 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 		this.dBInstanceId = dBInstanceId;
 		if(dBInstanceId != null){
 			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getBackupType() {
+		return this.backupType;
+	}
+
+	public void setBackupType(String backupType) {
+		this.backupType = backupType;
+		if(backupType != null){
+			putQueryParameter("BackupType", backupType);
 		}
 	}
 

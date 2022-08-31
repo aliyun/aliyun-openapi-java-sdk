@@ -33,6 +33,8 @@ public class DescribePGHbaConfigResponse extends AcsResponse {
 
 	private String lastModifyStatus;
 
+	private String dBInstanceId;
+
 	private List<HbaItem> defaultHbaItems;
 
 	private List<HbaItem> runningHbaItems;
@@ -67,6 +69,14 @@ public class DescribePGHbaConfigResponse extends AcsResponse {
 
 	public void setLastModifyStatus(String lastModifyStatus) {
 		this.lastModifyStatus = lastModifyStatus;
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
 	}
 
 	public List<HbaItem> getDefaultHbaItems() {

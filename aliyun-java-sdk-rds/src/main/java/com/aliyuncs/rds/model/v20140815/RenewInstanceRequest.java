@@ -38,6 +38,8 @@ public class RenewInstanceRequest extends RpcAcsRequest<RenewInstanceResponse> {
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
+
+	private String autoRenew;
 	public RenewInstanceRequest() {
 		super("Rds", "2014-08-15", "RenewInstance", "rds");
 		setMethod(MethodType.POST);
@@ -121,6 +123,17 @@ public class RenewInstanceRequest extends RpcAcsRequest<RenewInstanceResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getAutoRenew() {
+		return this.autoRenew;
+	}
+
+	public void setAutoRenew(String autoRenew) {
+		this.autoRenew = autoRenew;
+		if(autoRenew != null){
+			putQueryParameter("AutoRenew", autoRenew);
 		}
 	}
 

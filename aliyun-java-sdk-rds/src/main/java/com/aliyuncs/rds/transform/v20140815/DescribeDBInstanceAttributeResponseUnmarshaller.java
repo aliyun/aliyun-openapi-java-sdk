@@ -115,6 +115,7 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 			dBInstanceAttribute.setDBInstanceClass(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBInstanceClass"));
 			dBInstanceAttribute.setEngine(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].Engine"));
 			dBInstanceAttribute.setDeletionProtection(_ctx.booleanValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DeletionProtection"));
+			dBInstanceAttribute.setKindCode(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].kindCode"));
 
 			Extra extra = new Extra();
 			extra.setReplicaGroupStatus(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].Extra.ReplicaGroupStatus"));
@@ -131,6 +132,8 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 			ServerlessConfig serverlessConfig = new ServerlessConfig();
 			serverlessConfig.setScaleMin(_ctx.doubleValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ServerlessConfig.ScaleMin"));
 			serverlessConfig.setScaleMax(_ctx.doubleValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ServerlessConfig.ScaleMax"));
+			serverlessConfig.setAutoPause(_ctx.booleanValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ServerlessConfig.AutoPause"));
+			serverlessConfig.setSwitchForce(_ctx.booleanValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ServerlessConfig.SwitchForce"));
 			dBInstanceAttribute.setServerlessConfig(serverlessConfig);
 
 			BabelfishConfig babelfishConfig = new BabelfishConfig();

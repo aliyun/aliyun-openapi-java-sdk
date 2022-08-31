@@ -28,6 +28,7 @@ public class DescribeAvailableMetricsResponseUnmarshaller {
 		
 		describeAvailableMetricsResponse.setRequestId(_ctx.stringValue("DescribeAvailableMetricsResponse.RequestId"));
 		describeAvailableMetricsResponse.setTotalRecordCount(_ctx.integerValue("DescribeAvailableMetricsResponse.TotalRecordCount"));
+		describeAvailableMetricsResponse.setDBInstanceName(_ctx.stringValue("DescribeAvailableMetricsResponse.DBInstanceName"));
 
 		List<Metrics> items = new ArrayList<Metrics>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAvailableMetricsResponse.Items.Length"); i++) {

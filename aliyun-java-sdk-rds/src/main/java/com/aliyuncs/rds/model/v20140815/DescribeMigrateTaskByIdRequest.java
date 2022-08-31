@@ -33,6 +33,8 @@ public class DescribeMigrateTaskByIdRequest extends RpcAcsRequest<DescribeMigrat
 
 	private Long ownerId;
 
+	private String resourceGroupId;
+
 	private String dBInstanceId;
 	public DescribeMigrateTaskByIdRequest() {
 		super("Rds", "2014-08-15", "DescribeMigrateTaskById", "rds");
@@ -84,6 +86,17 @@ public class DescribeMigrateTaskByIdRequest extends RpcAcsRequest<DescribeMigrat
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

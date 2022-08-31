@@ -151,6 +151,8 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		private String checksum;
 
+		private String resourceGroupId;
+
 		private List<BackupDownloadLinkByDBItem> backupDownloadLinkByDB;
 
 		public String getStorageClass() {
@@ -367,6 +369,14 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		public void setChecksum(String checksum) {
 			this.checksum = checksum;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public List<BackupDownloadLinkByDBItem> getBackupDownloadLinkByDB() {

@@ -30,6 +30,7 @@ public class DescribePGHbaConfigResponseUnmarshaller {
 		describePGHbaConfigResponse.setHbaModifyTime(_ctx.stringValue("DescribePGHbaConfigResponse.HbaModifyTime"));
 		describePGHbaConfigResponse.setModifyStatusReason(_ctx.stringValue("DescribePGHbaConfigResponse.ModifyStatusReason"));
 		describePGHbaConfigResponse.setLastModifyStatus(_ctx.stringValue("DescribePGHbaConfigResponse.LastModifyStatus"));
+		describePGHbaConfigResponse.setDBInstanceId(_ctx.stringValue("DescribePGHbaConfigResponse.DBInstanceId"));
 
 		List<HbaItem> defaultHbaItems = new ArrayList<HbaItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePGHbaConfigResponse.DefaultHbaItems.Length"); i++) {

@@ -33,6 +33,8 @@ public class DescribeDBInstanceDetailRequest extends RpcAcsRequest<DescribeDBIns
 
 	private Long ownerId;
 
+	private String resourceGroupId;
+
 	private String dBInstanceId;
 	public DescribeDBInstanceDetailRequest() {
 		super("Rds", "2014-08-15", "DescribeDBInstanceDetail", "rds");
@@ -84,6 +86,17 @@ public class DescribeDBInstanceDetailRequest extends RpcAcsRequest<DescribeDBIns
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

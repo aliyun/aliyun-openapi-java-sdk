@@ -27,9 +27,13 @@ public class ModifyDBProxyRequest extends RpcAcsRequest<ModifyDBProxyResponse> {
 
 	private Long resourceOwnerId;
 
+	private String resourceGroupId;
+
 	private String dBInstanceId;
 
 	private String resourceOwnerAccount;
+
+	private String dBProxyEngineType;
 
 	private Long ownerId;
 
@@ -62,6 +66,17 @@ public class ModifyDBProxyRequest extends RpcAcsRequest<ModifyDBProxyResponse> {
 		}
 	}
 
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
 	public String getDBInstanceId() {
 		return this.dBInstanceId;
 	}
@@ -81,6 +96,17 @@ public class ModifyDBProxyRequest extends RpcAcsRequest<ModifyDBProxyResponse> {
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getDBProxyEngineType() {
+		return this.dBProxyEngineType;
+	}
+
+	public void setDBProxyEngineType(String dBProxyEngineType) {
+		this.dBProxyEngineType = dBProxyEngineType;
+		if(dBProxyEngineType != null){
+			putQueryParameter("DBProxyEngineType", dBProxyEngineType);
 		}
 	}
 

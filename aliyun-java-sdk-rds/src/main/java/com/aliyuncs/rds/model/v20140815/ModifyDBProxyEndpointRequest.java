@@ -39,6 +39,8 @@ public class ModifyDBProxyEndpointRequest extends RpcAcsRequest<ModifyDBProxyEnd
 
 	private String dbEndpointAliases;
 
+	private String dBProxyEngineType;
+
 	private String dbEndpointOperator;
 
 	private String dbEndpointType;
@@ -133,6 +135,17 @@ public class ModifyDBProxyEndpointRequest extends RpcAcsRequest<ModifyDBProxyEnd
 		this.dbEndpointAliases = dbEndpointAliases;
 		if(dbEndpointAliases != null){
 			putQueryParameter("DbEndpointAliases", dbEndpointAliases);
+		}
+	}
+
+	public String getDBProxyEngineType() {
+		return this.dBProxyEngineType;
+	}
+
+	public void setDBProxyEngineType(String dBProxyEngineType) {
+		this.dBProxyEngineType = dBProxyEngineType;
+		if(dBProxyEngineType != null){
+			putQueryParameter("DBProxyEngineType", dBProxyEngineType);
 		}
 	}
 

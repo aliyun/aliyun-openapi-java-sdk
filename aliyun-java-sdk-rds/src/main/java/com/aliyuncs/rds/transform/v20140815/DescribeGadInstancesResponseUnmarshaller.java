@@ -49,6 +49,7 @@ public class DescribeGadInstancesResponseUnmarshaller {
 				gadInstanceMembersItem.setRole(_ctx.stringValue("DescribeGadInstancesResponse.GadInstances["+ i +"].GadInstanceMembers["+ j +"].Role"));
 				gadInstanceMembersItem.setStatus(_ctx.stringValue("DescribeGadInstancesResponse.GadInstances["+ i +"].GadInstanceMembers["+ j +"].Status"));
 				gadInstanceMembersItem.setDtsInstance(_ctx.stringValue("DescribeGadInstancesResponse.GadInstances["+ i +"].GadInstanceMembers["+ j +"].DtsInstance"));
+				gadInstanceMembersItem.setResourceGroupId(_ctx.stringValue("DescribeGadInstancesResponse.GadInstances["+ i +"].GadInstanceMembers["+ j +"].ResourceGroupId"));
 
 				gadInstanceMembers.add(gadInstanceMembersItem);
 			}

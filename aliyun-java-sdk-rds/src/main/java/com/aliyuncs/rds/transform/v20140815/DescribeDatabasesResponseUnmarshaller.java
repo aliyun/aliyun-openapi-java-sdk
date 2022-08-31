@@ -38,6 +38,10 @@ public class DescribeDatabasesResponseUnmarshaller {
 			database.setDBInstanceId(_ctx.stringValue("DescribeDatabasesResponse.Databases["+ i +"].DBInstanceId"));
 			database.setEngine(_ctx.stringValue("DescribeDatabasesResponse.Databases["+ i +"].Engine"));
 			database.setCharacterSetName(_ctx.stringValue("DescribeDatabasesResponse.Databases["+ i +"].CharacterSetName"));
+			database.setPageNumber(_ctx.integerValue("DescribeDatabasesResponse.Databases["+ i +"].PageNumber"));
+			database.setPageSize(_ctx.integerValue("DescribeDatabasesResponse.Databases["+ i +"].PageSize"));
+			database.setTotalCount(_ctx.integerValue("DescribeDatabasesResponse.Databases["+ i +"].TotalCount"));
+			database.setResourceGroupId(_ctx.stringValue("DescribeDatabasesResponse.Databases["+ i +"].ResourceGroupId"));
 
 			List<AccountPrivilegeInfo> accounts = new ArrayList<AccountPrivilegeInfo>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDatabasesResponse.Databases["+ i +"].Accounts.Length"); j++) {

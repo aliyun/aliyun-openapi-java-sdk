@@ -43,6 +43,12 @@ public class DescribeDBProxyResponse extends AcsResponse {
 
 	private String dBProxyInstanceSize;
 
+	private String dBProxyEngineType;
+
+	private String accountName;
+
+	private String resourceGroupId;
+
 	private List<DBProxyConnectStringItemsItem> dBProxyConnectStringItems;
 
 	private List<DbProxyEndpointItemsItem> dbProxyEndpointItems;
@@ -117,6 +123,30 @@ public class DescribeDBProxyResponse extends AcsResponse {
 
 	public void setDBProxyInstanceSize(String dBProxyInstanceSize) {
 		this.dBProxyInstanceSize = dBProxyInstanceSize;
+	}
+
+	public String getDBProxyEngineType() {
+		return this.dBProxyEngineType;
+	}
+
+	public void setDBProxyEngineType(String dBProxyEngineType) {
+		this.dBProxyEngineType = dBProxyEngineType;
+	}
+
+	public String getAccountName() {
+		return this.accountName;
+	}
+
+	public void setAccountName(String accountName) {
+		this.accountName = accountName;
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
 	}
 
 	public List<DBProxyConnectStringItemsItem> getDBProxyConnectStringItems() {

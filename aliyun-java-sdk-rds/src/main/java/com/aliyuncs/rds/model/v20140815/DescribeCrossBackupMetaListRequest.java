@@ -29,6 +29,8 @@ public class DescribeCrossBackupMetaListRequest extends RpcAcsRequest<DescribeCr
 
 	private String pattern;
 
+	private String resourceGroupId;
+
 	private String pageSize;
 
 	private String pageIndex;
@@ -70,6 +72,17 @@ public class DescribeCrossBackupMetaListRequest extends RpcAcsRequest<DescribeCr
 		this.pattern = pattern;
 		if(pattern != null){
 			putQueryParameter("Pattern", pattern);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

@@ -62,6 +62,7 @@ public class DescribeSlowLogRecordsResponseUnmarshaller {
 			sQLSlowRecord.setClientHostName(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].ClientHostName"));
 			sQLSlowRecord.setUserName(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].UserName"));
 			sQLSlowRecord.setLastRowsAffectedCount(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].LastRowsAffectedCount"));
+			sQLSlowRecord.setSQLHash(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].SQLHash"));
 
 			items.add(sQLSlowRecord);
 		}

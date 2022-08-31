@@ -682,6 +682,12 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		@SerializedName("MaxCapacity")
 		private Double maxCapacity;
 
+		@SerializedName("AutoPause")
+		private Boolean autoPause;
+
+		@SerializedName("SwitchForce")
+		private Boolean switchForce;
+
 		public Double getMinCapacity() {
 			return this.minCapacity;
 		}
@@ -696,6 +702,22 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 		public void setMaxCapacity(Double maxCapacity) {
 			this.maxCapacity = maxCapacity;
+		}
+
+		public Boolean getAutoPause() {
+			return this.autoPause;
+		}
+
+		public void setAutoPause(Boolean autoPause) {
+			this.autoPause = autoPause;
+		}
+
+		public Boolean getSwitchForce() {
+			return this.switchForce;
+		}
+
+		public void setSwitchForce(Boolean switchForce) {
+			this.switchForce = switchForce;
 		}
 	}
 

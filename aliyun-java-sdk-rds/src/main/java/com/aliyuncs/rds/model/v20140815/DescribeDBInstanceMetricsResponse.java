@@ -29,6 +29,8 @@ public class DescribeDBInstanceMetricsResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String dBInstanceName;
+
 	private List<Metrics> items;
 
 	public Integer getTotalRecordCount() {
@@ -45,6 +47,14 @@ public class DescribeDBInstanceMetricsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getDBInstanceName() {
+		return this.dBInstanceName;
+	}
+
+	public void setDBInstanceName(String dBInstanceName) {
+		this.dBInstanceName = dBInstanceName;
 	}
 
 	public List<Metrics> getItems() {

@@ -47,6 +47,8 @@ public class DescribeDBProxyEndpointResponse extends AcsResponse {
 
 	private String dBProxyConnectString;
 
+	private String dBProxyEngineType;
+
 	private List<EndpointConnectItemsItem> endpointConnectItems;
 
 	public String getDBProxyConnectStringNetType() {
@@ -135,6 +137,14 @@ public class DescribeDBProxyEndpointResponse extends AcsResponse {
 
 	public void setDBProxyConnectString(String dBProxyConnectString) {
 		this.dBProxyConnectString = dBProxyConnectString;
+	}
+
+	public String getDBProxyEngineType() {
+		return this.dBProxyEngineType;
+	}
+
+	public void setDBProxyEngineType(String dBProxyEngineType) {
+		this.dBProxyEngineType = dBProxyEngineType;
 	}
 
 	public List<EndpointConnectItemsItem> getEndpointConnectItems() {

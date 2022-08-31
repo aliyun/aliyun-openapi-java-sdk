@@ -213,6 +213,8 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 
 		private Long lastRowsAffectedCount;
 
+		private String sQLHash;
+
 		public String getHostAddress() {
 			return this.hostAddress;
 		}
@@ -355,6 +357,14 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 
 		public void setLastRowsAffectedCount(Long lastRowsAffectedCount) {
 			this.lastRowsAffectedCount = lastRowsAffectedCount;
+		}
+
+		public String getSQLHash() {
+			return this.sQLHash;
+		}
+
+		public void setSQLHash(String sQLHash) {
+			this.sQLHash = sQLHash;
 		}
 	}
 

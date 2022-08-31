@@ -37,6 +37,8 @@ public class DescribeDBProxyPerformanceRequest extends RpcAcsRequest<DescribeDBP
 
 	private String endTime;
 
+	private String dBProxyEngineType;
+
 	private Long ownerId;
 
 	private String dBProxyInstanceType;
@@ -112,6 +114,17 @@ public class DescribeDBProxyPerformanceRequest extends RpcAcsRequest<DescribeDBP
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public String getDBProxyEngineType() {
+		return this.dBProxyEngineType;
+	}
+
+	public void setDBProxyEngineType(String dBProxyEngineType) {
+		this.dBProxyEngineType = dBProxyEngineType;
+		if(dBProxyEngineType != null){
+			putQueryParameter("DBProxyEngineType", dBProxyEngineType);
 		}
 	}
 

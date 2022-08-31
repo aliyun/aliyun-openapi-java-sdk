@@ -27,9 +27,11 @@ public class DeleteDBProxyEndpointAddressRequest extends RpcAcsRequest<DeleteDBP
 
 	private String dBProxyConnectStringNetType;
 
-	private String dBProxyEndpointId;
-
 	private String dBInstanceId;
+
+	private String dBProxyEngineType;
+
+	private String dBProxyEndpointId;
 	public DeleteDBProxyEndpointAddressRequest() {
 		super("Rds", "2014-08-15", "DeleteDBProxyEndpointAddress", "rds");
 		setMethod(MethodType.POST);
@@ -50,17 +52,6 @@ public class DeleteDBProxyEndpointAddressRequest extends RpcAcsRequest<DeleteDBP
 		}
 	}
 
-	public String getDBProxyEndpointId() {
-		return this.dBProxyEndpointId;
-	}
-
-	public void setDBProxyEndpointId(String dBProxyEndpointId) {
-		this.dBProxyEndpointId = dBProxyEndpointId;
-		if(dBProxyEndpointId != null){
-			putQueryParameter("DBProxyEndpointId", dBProxyEndpointId);
-		}
-	}
-
 	public String getDBInstanceId() {
 		return this.dBInstanceId;
 	}
@@ -69,6 +60,28 @@ public class DeleteDBProxyEndpointAddressRequest extends RpcAcsRequest<DeleteDBP
 		this.dBInstanceId = dBInstanceId;
 		if(dBInstanceId != null){
 			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getDBProxyEngineType() {
+		return this.dBProxyEngineType;
+	}
+
+	public void setDBProxyEngineType(String dBProxyEngineType) {
+		this.dBProxyEngineType = dBProxyEngineType;
+		if(dBProxyEngineType != null){
+			putQueryParameter("DBProxyEngineType", dBProxyEngineType);
+		}
+	}
+
+	public String getDBProxyEndpointId() {
+		return this.dBProxyEndpointId;
+	}
+
+	public void setDBProxyEndpointId(String dBProxyEndpointId) {
+		this.dBProxyEndpointId = dBProxyEndpointId;
+		if(dBProxyEndpointId != null){
+			putQueryParameter("DBProxyEndpointId", dBProxyEndpointId);
 		}
 	}
 

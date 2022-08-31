@@ -37,6 +37,7 @@ public class DescribeDBProxyEndpointResponseUnmarshaller {
 		describeDBProxyEndpointResponse.setDBProxyEndpointId(_ctx.stringValue("DescribeDBProxyEndpointResponse.DBProxyEndpointId"));
 		describeDBProxyEndpointResponse.setDBProxyConnectStringPort(_ctx.stringValue("DescribeDBProxyEndpointResponse.DBProxyConnectStringPort"));
 		describeDBProxyEndpointResponse.setDBProxyConnectString(_ctx.stringValue("DescribeDBProxyEndpointResponse.DBProxyConnectString"));
+		describeDBProxyEndpointResponse.setDBProxyEngineType(_ctx.stringValue("DescribeDBProxyEndpointResponse.DBProxyEngineType"));
 
 		List<EndpointConnectItemsItem> endpointConnectItems = new ArrayList<EndpointConnectItemsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBProxyEndpointResponse.EndpointConnectItems.Length"); i++) {

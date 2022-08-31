@@ -31,6 +31,7 @@ public class DescribeDBProxyPerformanceResponseUnmarshaller {
 		describeDBProxyPerformanceResponse.setEndTime(_ctx.stringValue("DescribeDBProxyPerformanceResponse.EndTime"));
 		describeDBProxyPerformanceResponse.setStartTime(_ctx.stringValue("DescribeDBProxyPerformanceResponse.StartTime"));
 		describeDBProxyPerformanceResponse.setDBInstanceId(_ctx.stringValue("DescribeDBProxyPerformanceResponse.DBInstanceId"));
+		describeDBProxyPerformanceResponse.setDBProxyEngineType(_ctx.stringValue("DescribeDBProxyPerformanceResponse.DBProxyEngineType"));
 
 		List<PerformanceKey> performanceKeys = new ArrayList<PerformanceKey>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBProxyPerformanceResponse.PerformanceKeys.Length"); i++) {

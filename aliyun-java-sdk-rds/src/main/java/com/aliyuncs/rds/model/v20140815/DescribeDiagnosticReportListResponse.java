@@ -27,6 +27,8 @@ public class DescribeDiagnosticReportListResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String dBInstanceId;
+
 	private List<Report> reportList;
 
 	public String getRequestId() {
@@ -35,6 +37,14 @@ public class DescribeDiagnosticReportListResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
 	}
 
 	public List<Report> getReportList() {

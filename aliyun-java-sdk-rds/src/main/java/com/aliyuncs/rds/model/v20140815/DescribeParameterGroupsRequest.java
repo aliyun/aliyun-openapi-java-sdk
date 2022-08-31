@@ -30,6 +30,8 @@ public class DescribeParameterGroupsRequest extends RpcAcsRequest<DescribeParame
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
+
+	private String resourceGroupId;
 	public DescribeParameterGroupsRequest() {
 		super("Rds", "2014-08-15", "DescribeParameterGroups", "rds");
 		setMethod(MethodType.POST);
@@ -69,6 +71,17 @@ public class DescribeParameterGroupsRequest extends RpcAcsRequest<DescribeParame
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

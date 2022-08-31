@@ -133,6 +133,8 @@ public class DescribeGadInstancesResponse extends AcsResponse {
 
 			private String dtsInstance;
 
+			private String resourceGroupId;
+
 			public String getDBInstanceID() {
 				return this.dBInstanceID;
 			}
@@ -187,6 +189,14 @@ public class DescribeGadInstancesResponse extends AcsResponse {
 
 			public void setDtsInstance(String dtsInstance) {
 				this.dtsInstance = dtsInstance;
+			}
+
+			public String getResourceGroupId() {
+				return this.resourceGroupId;
+			}
+
+			public void setResourceGroupId(String resourceGroupId) {
+				this.resourceGroupId = resourceGroupId;
 			}
 		}
 	}

@@ -31,6 +31,8 @@ public class DescribeLocalAvailableRecoveryTimeRequest extends RpcAcsRequest<Des
 
 	private Long ownerId;
 
+	private String resourceGroupId;
+
 	private String dBInstanceId;
 
 	private String region;
@@ -73,6 +75,17 @@ public class DescribeLocalAvailableRecoveryTimeRequest extends RpcAcsRequest<Des
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

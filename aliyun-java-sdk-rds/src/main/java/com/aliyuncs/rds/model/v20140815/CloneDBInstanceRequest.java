@@ -15,6 +15,8 @@
 package com.aliyuncs.rds.model.v20140815;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.rds.Endpoint;
 
@@ -56,6 +58,9 @@ public class CloneDBInstanceRequest extends RpcAcsRequest<CloneDBInstanceRespons
 	private String dedicatedHostGroupId;
 
 	private String restoreTime;
+
+	@SerializedName("serverlessConfig")
+	private ServerlessConfig serverlessConfig;
 
 	private String restoreTable;
 
@@ -253,6 +258,17 @@ public class CloneDBInstanceRequest extends RpcAcsRequest<CloneDBInstanceRespons
 		}
 	}
 
+	public ServerlessConfig getServerlessConfig() {
+		return this.serverlessConfig;
+	}
+
+	public void setServerlessConfig(ServerlessConfig serverlessConfig) {
+		this.serverlessConfig = serverlessConfig;	
+		if (serverlessConfig != null) {
+			putQueryParameter("ServerlessConfig" , new Gson().toJson(serverlessConfig));
+		}	
+	}
+
 	public String getRestoreTable() {
 		return this.restoreTable;
 	}
@@ -316,6 +332,53 @@ public class CloneDBInstanceRequest extends RpcAcsRequest<CloneDBInstanceRespons
 		this.payType = payType;
 		if(payType != null){
 			putQueryParameter("PayType", payType);
+		}
+	}
+
+	public static class ServerlessConfig {
+
+		@SerializedName("MinCapacity")
+		private Double minCapacity;
+
+		@SerializedName("MaxCapacity")
+		private Double maxCapacity;
+
+		@SerializedName("AutoPause")
+		private Boolean autoPause;
+
+		@SerializedName("SwitchForce")
+		private Boolean switchForce;
+
+		public Double getMinCapacity() {
+			return this.minCapacity;
+		}
+
+		public void setMinCapacity(Double minCapacity) {
+			this.minCapacity = minCapacity;
+		}
+
+		public Double getMaxCapacity() {
+			return this.maxCapacity;
+		}
+
+		public void setMaxCapacity(Double maxCapacity) {
+			this.maxCapacity = maxCapacity;
+		}
+
+		public Boolean getAutoPause() {
+			return this.autoPause;
+		}
+
+		public void setAutoPause(Boolean autoPause) {
+			this.autoPause = autoPause;
+		}
+
+		public Boolean getSwitchForce() {
+			return this.switchForce;
+		}
+
+		public void setSwitchForce(Boolean switchForce) {
+			this.switchForce = switchForce;
 		}
 	}
 

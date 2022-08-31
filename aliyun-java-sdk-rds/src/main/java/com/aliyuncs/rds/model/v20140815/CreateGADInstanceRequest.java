@@ -26,19 +26,23 @@ import com.aliyuncs.rds.Endpoint;
 public class CreateGADInstanceRequest extends RpcAcsRequest<CreateGADInstanceResponse> {
 	   
 
-	private String dBList;
-
-	private String centralDBInstanceId;
-
-	private String centralRdsDtsAdminPassword;
-
 	private String description;
 
 	private String centralRdsDtsAdminAccount;
 
 	private String centralRegionId;
 
+	private String resourceGroupId;
+
+	private List<Tag> tags;
+
 	private List<UnitNode> unitNodes;
+
+	private String dBList;
+
+	private String centralDBInstanceId;
+
+	private String centralRdsDtsAdminPassword;
 	public CreateGADInstanceRequest() {
 		super("Rds", "2014-08-15", "CreateGADInstance", "rds");
 		setMethod(MethodType.POST);
@@ -46,39 +50,6 @@ public class CreateGADInstanceRequest extends RpcAcsRequest<CreateGADInstanceRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getDBList() {
-		return this.dBList;
-	}
-
-	public void setDBList(String dBList) {
-		this.dBList = dBList;
-		if(dBList != null){
-			putQueryParameter("DBList", dBList);
-		}
-	}
-
-	public String getCentralDBInstanceId() {
-		return this.centralDBInstanceId;
-	}
-
-	public void setCentralDBInstanceId(String centralDBInstanceId) {
-		this.centralDBInstanceId = centralDBInstanceId;
-		if(centralDBInstanceId != null){
-			putQueryParameter("CentralDBInstanceId", centralDBInstanceId);
-		}
-	}
-
-	public String getCentralRdsDtsAdminPassword() {
-		return this.centralRdsDtsAdminPassword;
-	}
-
-	public void setCentralRdsDtsAdminPassword(String centralRdsDtsAdminPassword) {
-		this.centralRdsDtsAdminPassword = centralRdsDtsAdminPassword;
-		if(centralRdsDtsAdminPassword != null){
-			putQueryParameter("CentralRdsDtsAdminPassword", centralRdsDtsAdminPassword);
-		}
 	}
 
 	public String getDescription() {
@@ -114,6 +85,31 @@ public class CreateGADInstanceRequest extends RpcAcsRequest<CreateGADInstanceRes
 		}
 	}
 
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
 	public List<UnitNode> getUnitNodes() {
 		return this.unitNodes;
 	}
@@ -139,6 +135,62 @@ public class CreateGADInstanceRequest extends RpcAcsRequest<CreateGADInstanceRes
 				putQueryParameter("UnitNode." + (depth1 + 1) + ".DtsConflict" , unitNodes.get(depth1).getDtsConflict());
 			}
 		}	
+	}
+
+	public String getDBList() {
+		return this.dBList;
+	}
+
+	public void setDBList(String dBList) {
+		this.dBList = dBList;
+		if(dBList != null){
+			putQueryParameter("DBList", dBList);
+		}
+	}
+
+	public String getCentralDBInstanceId() {
+		return this.centralDBInstanceId;
+	}
+
+	public void setCentralDBInstanceId(String centralDBInstanceId) {
+		this.centralDBInstanceId = centralDBInstanceId;
+		if(centralDBInstanceId != null){
+			putQueryParameter("CentralDBInstanceId", centralDBInstanceId);
+		}
+	}
+
+	public String getCentralRdsDtsAdminPassword() {
+		return this.centralRdsDtsAdminPassword;
+	}
+
+	public void setCentralRdsDtsAdminPassword(String centralRdsDtsAdminPassword) {
+		this.centralRdsDtsAdminPassword = centralRdsDtsAdminPassword;
+		if(centralRdsDtsAdminPassword != null){
+			putQueryParameter("CentralRdsDtsAdminPassword", centralRdsDtsAdminPassword);
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
 	}
 
 	public static class UnitNode {

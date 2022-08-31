@@ -36,6 +36,9 @@ public class DescribeDBProxyResponseUnmarshaller {
 		describeDBProxyResponse.setDBProxyServiceStatus(_ctx.stringValue("DescribeDBProxyResponse.DBProxyServiceStatus"));
 		describeDBProxyResponse.setDBProxyInstanceName(_ctx.stringValue("DescribeDBProxyResponse.DBProxyInstanceName"));
 		describeDBProxyResponse.setDBProxyInstanceSize(_ctx.stringValue("DescribeDBProxyResponse.DBProxyInstanceSize"));
+		describeDBProxyResponse.setDBProxyEngineType(_ctx.stringValue("DescribeDBProxyResponse.DBProxyEngineType"));
+		describeDBProxyResponse.setAccountName(_ctx.stringValue("DescribeDBProxyResponse.AccountName"));
+		describeDBProxyResponse.setResourceGroupId(_ctx.stringValue("DescribeDBProxyResponse.ResourceGroupId"));
 
 		List<DBProxyConnectStringItemsItem> dBProxyConnectStringItems = new ArrayList<DBProxyConnectStringItemsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBProxyResponse.DBProxyConnectStringItems.Length"); i++) {

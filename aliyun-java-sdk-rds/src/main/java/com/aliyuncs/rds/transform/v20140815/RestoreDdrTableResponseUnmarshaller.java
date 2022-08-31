@@ -23,6 +23,7 @@ public class RestoreDdrTableResponseUnmarshaller {
 	public static RestoreDdrTableResponse unmarshall(RestoreDdrTableResponse restoreDdrTableResponse, UnmarshallerContext _ctx) {
 		
 		restoreDdrTableResponse.setRequestId(_ctx.stringValue("RestoreDdrTableResponse.RequestId"));
+		restoreDdrTableResponse.setDBInstanceId(_ctx.stringValue("RestoreDdrTableResponse.DBInstanceId"));
 	 
 	 	return restoreDdrTableResponse;
 	}

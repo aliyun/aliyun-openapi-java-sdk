@@ -33,6 +33,8 @@ public class DescribeDBProxyPerformanceResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String dBProxyEngineType;
+
 	private List<PerformanceKey> performanceKeys;
 
 	public String getEndTime() {
@@ -65,6 +67,14 @@ public class DescribeDBProxyPerformanceResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getDBProxyEngineType() {
+		return this.dBProxyEngineType;
+	}
+
+	public void setDBProxyEngineType(String dBProxyEngineType) {
+		this.dBProxyEngineType = dBProxyEngineType;
 	}
 
 	public List<PerformanceKey> getPerformanceKeys() {

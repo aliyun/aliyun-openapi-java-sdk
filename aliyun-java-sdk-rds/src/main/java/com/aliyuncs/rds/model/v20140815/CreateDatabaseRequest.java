@@ -27,6 +27,8 @@ public class CreateDatabaseRequest extends RpcAcsRequest<CreateDatabaseResponse>
 
 	private Long resourceOwnerId;
 
+	private String resourceGroupId;
+
 	private String dBInstanceId;
 
 	private String dBDescription;
@@ -57,6 +59,17 @@ public class CreateDatabaseRequest extends RpcAcsRequest<CreateDatabaseResponse>
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

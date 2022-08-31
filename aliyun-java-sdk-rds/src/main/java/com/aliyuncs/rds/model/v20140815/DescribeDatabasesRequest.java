@@ -29,6 +29,8 @@ public class DescribeDatabasesRequest extends RpcAcsRequest<DescribeDatabasesRes
 
 	private Integer pageNumber;
 
+	private String resourceGroupId;
+
 	private String dBStatus;
 
 	private Integer pageSize;
@@ -70,6 +72,17 @@ public class DescribeDatabasesRequest extends RpcAcsRequest<DescribeDatabasesRes
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

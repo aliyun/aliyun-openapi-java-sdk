@@ -28,6 +28,7 @@ public class DescribeDBInstanceMetricsResponseUnmarshaller {
 		
 		describeDBInstanceMetricsResponse.setRequestId(_ctx.stringValue("DescribeDBInstanceMetricsResponse.RequestId"));
 		describeDBInstanceMetricsResponse.setTotalRecordCount(_ctx.integerValue("DescribeDBInstanceMetricsResponse.TotalRecordCount"));
+		describeDBInstanceMetricsResponse.setDBInstanceName(_ctx.stringValue("DescribeDBInstanceMetricsResponse.DBInstanceName"));
 
 		List<Metrics> items = new ArrayList<Metrics>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBInstanceMetricsResponse.Items.Length"); i++) {

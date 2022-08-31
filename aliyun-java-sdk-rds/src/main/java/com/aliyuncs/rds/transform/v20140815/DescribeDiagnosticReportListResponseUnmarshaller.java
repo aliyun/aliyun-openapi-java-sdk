@@ -27,6 +27,7 @@ public class DescribeDiagnosticReportListResponseUnmarshaller {
 	public static DescribeDiagnosticReportListResponse unmarshall(DescribeDiagnosticReportListResponse describeDiagnosticReportListResponse, UnmarshallerContext _ctx) {
 		
 		describeDiagnosticReportListResponse.setRequestId(_ctx.stringValue("DescribeDiagnosticReportListResponse.RequestId"));
+		describeDiagnosticReportListResponse.setDBInstanceId(_ctx.stringValue("DescribeDiagnosticReportListResponse.DBInstanceId"));
 
 		List<Report> reportList = new ArrayList<Report>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDiagnosticReportListResponse.ReportList.Length"); i++) {

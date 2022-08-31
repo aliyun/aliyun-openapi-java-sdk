@@ -205,6 +205,8 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		private Boolean deletionProtection;
 
+		private String kindCode;
+
 		private List<SlaveZone> slaveZones;
 
 		private List<ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
@@ -847,6 +849,14 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 			this.deletionProtection = deletionProtection;
 		}
 
+		public String getKindCode() {
+			return this.kindCode;
+		}
+
+		public void setKindCode(String kindCode) {
+			this.kindCode = kindCode;
+		}
+
 		public List<SlaveZone> getSlaveZones() {
 			return this.slaveZones;
 		}
@@ -962,6 +972,10 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 			private Double scaleMax;
 
+			private Boolean autoPause;
+
+			private Boolean switchForce;
+
 			public Double getScaleMin() {
 				return this.scaleMin;
 			}
@@ -976,6 +990,22 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 			public void setScaleMax(Double scaleMax) {
 				this.scaleMax = scaleMax;
+			}
+
+			public Boolean getAutoPause() {
+				return this.autoPause;
+			}
+
+			public void setAutoPause(Boolean autoPause) {
+				this.autoPause = autoPause;
+			}
+
+			public Boolean getSwitchForce() {
+				return this.switchForce;
+			}
+
+			public void setSwitchForce(Boolean switchForce) {
+				this.switchForce = switchForce;
 			}
 		}
 

@@ -59,6 +59,14 @@ public class DescribeDatabasesResponse extends AcsResponse {
 
 		private String characterSetName;
 
+		private Integer pageNumber;
+
+		private Integer pageSize;
+
+		private Integer totalCount;
+
+		private String resourceGroupId;
+
 		private List<AccountPrivilegeInfo> accounts;
 
 		public String getDBDescription() {
@@ -107,6 +115,38 @@ public class DescribeDatabasesResponse extends AcsResponse {
 
 		public void setCharacterSetName(String characterSetName) {
 			this.characterSetName = characterSetName;
+		}
+
+		public Integer getPageNumber() {
+			return this.pageNumber;
+		}
+
+		public void setPageNumber(Integer pageNumber) {
+			this.pageNumber = pageNumber;
+		}
+
+		public Integer getPageSize() {
+			return this.pageSize;
+		}
+
+		public void setPageSize(Integer pageSize) {
+			this.pageSize = pageSize;
+		}
+
+		public Integer getTotalCount() {
+			return this.totalCount;
+		}
+
+		public void setTotalCount(Integer totalCount) {
+			this.totalCount = totalCount;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public List<AccountPrivilegeInfo> getAccounts() {
