@@ -27,27 +27,27 @@ public class DescribeDomainQpsDataResponseUnmarshaller {
 	public static DescribeDomainQpsDataResponse unmarshall(DescribeDomainQpsDataResponse describeDomainQpsDataResponse, UnmarshallerContext _ctx) {
 		
 		describeDomainQpsDataResponse.setRequestId(_ctx.stringValue("DescribeDomainQpsDataResponse.RequestId"));
-		describeDomainQpsDataResponse.setDomainName(_ctx.stringValue("DescribeDomainQpsDataResponse.DomainName"));
-		describeDomainQpsDataResponse.setStartTime(_ctx.stringValue("DescribeDomainQpsDataResponse.StartTime"));
 		describeDomainQpsDataResponse.setEndTime(_ctx.stringValue("DescribeDomainQpsDataResponse.EndTime"));
+		describeDomainQpsDataResponse.setStartTime(_ctx.stringValue("DescribeDomainQpsDataResponse.StartTime"));
+		describeDomainQpsDataResponse.setDomainName(_ctx.stringValue("DescribeDomainQpsDataResponse.DomainName"));
 		describeDomainQpsDataResponse.setDataInterval(_ctx.stringValue("DescribeDomainQpsDataResponse.DataInterval"));
 
 		List<DataModule> qpsDataInterval = new ArrayList<DataModule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDomainQpsDataResponse.QpsDataInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
-			dataModule.setTimeStamp(_ctx.stringValue("DescribeDomainQpsDataResponse.QpsDataInterval["+ i +"].TimeStamp"));
-			dataModule.setValue(_ctx.stringValue("DescribeDomainQpsDataResponse.QpsDataInterval["+ i +"].Value"));
-			dataModule.setDomesticValue(_ctx.stringValue("DescribeDomainQpsDataResponse.QpsDataInterval["+ i +"].DomesticValue"));
-			dataModule.setOverseasValue(_ctx.stringValue("DescribeDomainQpsDataResponse.QpsDataInterval["+ i +"].OverseasValue"));
 			dataModule.setAccValue(_ctx.stringValue("DescribeDomainQpsDataResponse.QpsDataInterval["+ i +"].AccValue"));
+			dataModule.setDynamicValue(_ctx.stringValue("DescribeDomainQpsDataResponse.QpsDataInterval["+ i +"].DynamicValue"));
 			dataModule.setAccDomesticValue(_ctx.stringValue("DescribeDomainQpsDataResponse.QpsDataInterval["+ i +"].AccDomesticValue"));
 			dataModule.setAccOverseasValue(_ctx.stringValue("DescribeDomainQpsDataResponse.QpsDataInterval["+ i +"].AccOverseasValue"));
-			dataModule.setDynamicValue(_ctx.stringValue("DescribeDomainQpsDataResponse.QpsDataInterval["+ i +"].DynamicValue"));
 			dataModule.setDynamicDomesticValue(_ctx.stringValue("DescribeDomainQpsDataResponse.QpsDataInterval["+ i +"].DynamicDomesticValue"));
-			dataModule.setDynamicOverseasValue(_ctx.stringValue("DescribeDomainQpsDataResponse.QpsDataInterval["+ i +"].DynamicOverseasValue"));
-			dataModule.setStaticValue(_ctx.stringValue("DescribeDomainQpsDataResponse.QpsDataInterval["+ i +"].StaticValue"));
+			dataModule.setDomesticValue(_ctx.stringValue("DescribeDomainQpsDataResponse.QpsDataInterval["+ i +"].DomesticValue"));
+			dataModule.setValue(_ctx.stringValue("DescribeDomainQpsDataResponse.QpsDataInterval["+ i +"].Value"));
 			dataModule.setStaticDomesticValue(_ctx.stringValue("DescribeDomainQpsDataResponse.QpsDataInterval["+ i +"].StaticDomesticValue"));
+			dataModule.setOverseasValue(_ctx.stringValue("DescribeDomainQpsDataResponse.QpsDataInterval["+ i +"].OverseasValue"));
+			dataModule.setStaticValue(_ctx.stringValue("DescribeDomainQpsDataResponse.QpsDataInterval["+ i +"].StaticValue"));
+			dataModule.setTimeStamp(_ctx.stringValue("DescribeDomainQpsDataResponse.QpsDataInterval["+ i +"].TimeStamp"));
 			dataModule.setStaticOverseasValue(_ctx.stringValue("DescribeDomainQpsDataResponse.QpsDataInterval["+ i +"].StaticOverseasValue"));
+			dataModule.setDynamicOverseasValue(_ctx.stringValue("DescribeDomainQpsDataResponse.QpsDataInterval["+ i +"].DynamicOverseasValue"));
 
 			qpsDataInterval.add(dataModule);
 		}

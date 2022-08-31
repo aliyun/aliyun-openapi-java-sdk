@@ -24,71 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeRefreshQuotaResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String urlQuota;
-
-	private String dirQuota;
-
-	private String urlRemain;
-
-	private String dirRemain;
-
-	private String preloadQuota;
-
 	private String blockQuota;
-
-	private String preloadRemain;
 
 	private String blockRemain;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private String preloadRemain;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
-	public String getUrlQuota() {
-		return this.urlQuota;
-	}
+	private String dirRemain;
 
-	public void setUrlQuota(String urlQuota) {
-		this.urlQuota = urlQuota;
-	}
+	private String urlRemain;
 
-	public String getDirQuota() {
-		return this.dirQuota;
-	}
+	private String dirQuota;
 
-	public void setDirQuota(String dirQuota) {
-		this.dirQuota = dirQuota;
-	}
+	private String urlQuota;
 
-	public String getUrlRemain() {
-		return this.urlRemain;
-	}
-
-	public void setUrlRemain(String urlRemain) {
-		this.urlRemain = urlRemain;
-	}
-
-	public String getDirRemain() {
-		return this.dirRemain;
-	}
-
-	public void setDirRemain(String dirRemain) {
-		this.dirRemain = dirRemain;
-	}
-
-	public String getPreloadQuota() {
-		return this.preloadQuota;
-	}
-
-	public void setPreloadQuota(String preloadQuota) {
-		this.preloadQuota = preloadQuota;
-	}
+	private String preloadQuota;
 
 	public String getBlockQuota() {
 		return this.blockQuota;
@@ -96,6 +48,14 @@ public class DescribeRefreshQuotaResponse extends AcsResponse {
 
 	public void setBlockQuota(String blockQuota) {
 		this.blockQuota = blockQuota;
+	}
+
+	public String getBlockRemain() {
+		return this.blockRemain;
+	}
+
+	public void setBlockRemain(String blockRemain) {
+		this.blockRemain = blockRemain;
 	}
 
 	public String getPreloadRemain() {
@@ -106,12 +66,52 @@ public class DescribeRefreshQuotaResponse extends AcsResponse {
 		this.preloadRemain = preloadRemain;
 	}
 
-	public String getBlockRemain() {
-		return this.blockRemain;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setBlockRemain(String blockRemain) {
-		this.blockRemain = blockRemain;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getDirRemain() {
+		return this.dirRemain;
+	}
+
+	public void setDirRemain(String dirRemain) {
+		this.dirRemain = dirRemain;
+	}
+
+	public String getUrlRemain() {
+		return this.urlRemain;
+	}
+
+	public void setUrlRemain(String urlRemain) {
+		this.urlRemain = urlRemain;
+	}
+
+	public String getDirQuota() {
+		return this.dirQuota;
+	}
+
+	public void setDirQuota(String dirQuota) {
+		this.dirQuota = dirQuota;
+	}
+
+	public String getUrlQuota() {
+		return this.urlQuota;
+	}
+
+	public void setUrlQuota(String urlQuota) {
+		this.urlQuota = urlQuota;
+	}
+
+	public String getPreloadQuota() {
+		return this.preloadQuota;
+	}
+
+	public void setPreloadQuota(String preloadQuota) {
+		this.preloadQuota = preloadQuota;
 	}
 
 	@Override

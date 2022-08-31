@@ -99,30 +99,22 @@ public class DescribeCdnDomainLogsResponse extends AcsResponse {
 
 		public static class DomainLogDetail {
 
-			private String logName;
-
-			private String logPath;
+			private String endTime;
 
 			private Long logSize;
 
 			private String startTime;
 
-			private String endTime;
+			private String logName;
 
-			public String getLogName() {
-				return this.logName;
+			private String logPath;
+
+			public String getEndTime() {
+				return this.endTime;
 			}
 
-			public void setLogName(String logName) {
-				this.logName = logName;
-			}
-
-			public String getLogPath() {
-				return this.logPath;
-			}
-
-			public void setLogPath(String logPath) {
-				this.logPath = logPath;
+			public void setEndTime(String endTime) {
+				this.endTime = endTime;
 			}
 
 			public Long getLogSize() {
@@ -141,12 +133,20 @@ public class DescribeCdnDomainLogsResponse extends AcsResponse {
 				this.startTime = startTime;
 			}
 
-			public String getEndTime() {
-				return this.endTime;
+			public String getLogName() {
+				return this.logName;
 			}
 
-			public void setEndTime(String endTime) {
-				this.endTime = endTime;
+			public void setLogName(String logName) {
+				this.logName = logName;
+			}
+
+			public String getLogPath() {
+				return this.logPath;
+			}
+
+			public void setLogPath(String logPath) {
+				this.logPath = logPath;
 			}
 		}
 	}

@@ -16,14 +16,14 @@ package com.aliyuncs.cdn.model.v20141111;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cdn.transform.v20141111.DescribeDomainBpsDataResponseUnmarshaller;
+import com.aliyuncs.cdn.transform.v20141111.TestDescribeDomainBpsDataResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeDomainBpsDataResponse extends AcsResponse {
+public class TestDescribeDomainBpsDataResponse extends AcsResponse {
 
 	private String endTime;
 
@@ -259,7 +259,7 @@ public class DescribeDomainBpsDataResponse extends AcsResponse {
 	}
 
 	@Override
-	public DescribeDomainBpsDataResponse getInstance(UnmarshallerContext context) {
-		return	DescribeDomainBpsDataResponseUnmarshaller.unmarshall(this, context);
+	public TestDescribeDomainBpsDataResponse getInstance(UnmarshallerContext context) {
+		return	TestDescribeDomainBpsDataResponseUnmarshaller.unmarshall(this, context);
 	}
 }

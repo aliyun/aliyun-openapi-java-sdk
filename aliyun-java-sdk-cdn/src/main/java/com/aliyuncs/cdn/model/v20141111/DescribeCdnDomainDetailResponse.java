@@ -47,69 +47,37 @@ public class DescribeCdnDomainDetailResponse extends AcsResponse {
 
 	public static class GetDomainDetailModel {
 
-		private String gmtCreated;
-
-		private String gmtModified;
-
-		private String sourceType;
-
-		private String domainStatus;
-
 		private Integer sourcePort;
-
-		private String cdnType;
-
-		private String cname;
 
 		private String httpsCname;
 
-		private String domainName;
-
-		private String description;
+		private String sourceType;
 
 		private String serverCertificateStatus;
 
+		private String gmtModified;
+
+		private String domainName;
+
+		private String gmtCreated;
+
+		private String description;
+
 		private String region;
+
+		private String resourceGroupId;
 
 		private String scope;
 
-		private String resourceGroupId;
+		private String domainStatus;
+
+		private String cname;
+
+		private String cdnType;
 
 		private List<SourceModel> sourceModels;
 
 		private List<String> sources;
-
-		public String getGmtCreated() {
-			return this.gmtCreated;
-		}
-
-		public void setGmtCreated(String gmtCreated) {
-			this.gmtCreated = gmtCreated;
-		}
-
-		public String getGmtModified() {
-			return this.gmtModified;
-		}
-
-		public void setGmtModified(String gmtModified) {
-			this.gmtModified = gmtModified;
-		}
-
-		public String getSourceType() {
-			return this.sourceType;
-		}
-
-		public void setSourceType(String sourceType) {
-			this.sourceType = sourceType;
-		}
-
-		public String getDomainStatus() {
-			return this.domainStatus;
-		}
-
-		public void setDomainStatus(String domainStatus) {
-			this.domainStatus = domainStatus;
-		}
 
 		public Integer getSourcePort() {
 			return this.sourcePort;
@@ -117,22 +85,6 @@ public class DescribeCdnDomainDetailResponse extends AcsResponse {
 
 		public void setSourcePort(Integer sourcePort) {
 			this.sourcePort = sourcePort;
-		}
-
-		public String getCdnType() {
-			return this.cdnType;
-		}
-
-		public void setCdnType(String cdnType) {
-			this.cdnType = cdnType;
-		}
-
-		public String getCname() {
-			return this.cname;
-		}
-
-		public void setCname(String cname) {
-			this.cname = cname;
 		}
 
 		public String getHttpsCname() {
@@ -143,20 +95,12 @@ public class DescribeCdnDomainDetailResponse extends AcsResponse {
 			this.httpsCname = httpsCname;
 		}
 
-		public String getDomainName() {
-			return this.domainName;
+		public String getSourceType() {
+			return this.sourceType;
 		}
 
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
+		public void setSourceType(String sourceType) {
+			this.sourceType = sourceType;
 		}
 
 		public String getServerCertificateStatus() {
@@ -167,12 +111,52 @@ public class DescribeCdnDomainDetailResponse extends AcsResponse {
 			this.serverCertificateStatus = serverCertificateStatus;
 		}
 
+		public String getGmtModified() {
+			return this.gmtModified;
+		}
+
+		public void setGmtModified(String gmtModified) {
+			this.gmtModified = gmtModified;
+		}
+
+		public String getDomainName() {
+			return this.domainName;
+		}
+
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
+		}
+
+		public String getGmtCreated() {
+			return this.gmtCreated;
+		}
+
+		public void setGmtCreated(String gmtCreated) {
+			this.gmtCreated = gmtCreated;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
 		public String getRegion() {
 			return this.region;
 		}
 
 		public void setRegion(String region) {
 			this.region = region;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public String getScope() {
@@ -183,12 +167,28 @@ public class DescribeCdnDomainDetailResponse extends AcsResponse {
 			this.scope = scope;
 		}
 
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
+		public String getDomainStatus() {
+			return this.domainStatus;
 		}
 
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
+		public void setDomainStatus(String domainStatus) {
+			this.domainStatus = domainStatus;
+		}
+
+		public String getCname() {
+			return this.cname;
+		}
+
+		public void setCname(String cname) {
+			this.cname = cname;
+		}
+
+		public String getCdnType() {
+			return this.cdnType;
+		}
+
+		public void setCdnType(String cdnType) {
+			this.cdnType = cdnType;
 		}
 
 		public List<SourceModel> getSourceModels() {
@@ -209,23 +209,15 @@ public class DescribeCdnDomainDetailResponse extends AcsResponse {
 
 		public static class SourceModel {
 
-			private String content;
-
 			private String type;
-
-			private Integer port;
-
-			private String enabled;
 
 			private String priority;
 
-			public String getContent() {
-				return this.content;
-			}
+			private Integer port;
 
-			public void setContent(String content) {
-				this.content = content;
-			}
+			private String content;
+
+			private String enabled;
 
 			public String getType() {
 				return this.type;
@@ -233,6 +225,14 @@ public class DescribeCdnDomainDetailResponse extends AcsResponse {
 
 			public void setType(String type) {
 				this.type = type;
+			}
+
+			public String getPriority() {
+				return this.priority;
+			}
+
+			public void setPriority(String priority) {
+				this.priority = priority;
 			}
 
 			public Integer getPort() {
@@ -243,20 +243,20 @@ public class DescribeCdnDomainDetailResponse extends AcsResponse {
 				this.port = port;
 			}
 
+			public String getContent() {
+				return this.content;
+			}
+
+			public void setContent(String content) {
+				this.content = content;
+			}
+
 			public String getEnabled() {
 				return this.enabled;
 			}
 
 			public void setEnabled(String enabled) {
 				this.enabled = enabled;
-			}
-
-			public String getPriority() {
-				return this.priority;
-			}
-
-			public void setPriority(String priority) {
-				this.priority = priority;
 			}
 		}
 	}

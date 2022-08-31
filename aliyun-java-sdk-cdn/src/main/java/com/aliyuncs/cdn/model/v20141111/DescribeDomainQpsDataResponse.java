@@ -25,17 +25,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDomainQpsDataResponse extends AcsResponse {
 
+	private String endTime;
+
+	private String startTime;
+
 	private String requestId;
 
 	private String domainName;
 
-	private String startTime;
-
-	private String endTime;
-
 	private String dataInterval;
 
 	private List<DataModule> qpsDataInterval;
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -51,22 +67,6 @@ public class DescribeDomainQpsDataResponse extends AcsResponse {
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
 	}
 
 	public String getDataInterval() {
@@ -87,63 +87,31 @@ public class DescribeDomainQpsDataResponse extends AcsResponse {
 
 	public static class DataModule {
 
-		private String timeStamp;
-
-		private String value;
-
-		private String domesticValue;
-
-		private String overseasValue;
-
 		private String accValue;
+
+		private String dynamicValue;
 
 		private String accDomesticValue;
 
 		private String accOverseasValue;
 
-		private String dynamicValue;
-
 		private String dynamicDomesticValue;
 
-		private String dynamicOverseasValue;
+		private String domesticValue;
 
-		private String staticValue;
+		private String value;
 
 		private String staticDomesticValue;
 
+		private String overseasValue;
+
+		private String staticValue;
+
+		private String timeStamp;
+
 		private String staticOverseasValue;
 
-		public String getTimeStamp() {
-			return this.timeStamp;
-		}
-
-		public void setTimeStamp(String timeStamp) {
-			this.timeStamp = timeStamp;
-		}
-
-		public String getValue() {
-			return this.value;
-		}
-
-		public void setValue(String value) {
-			this.value = value;
-		}
-
-		public String getDomesticValue() {
-			return this.domesticValue;
-		}
-
-		public void setDomesticValue(String domesticValue) {
-			this.domesticValue = domesticValue;
-		}
-
-		public String getOverseasValue() {
-			return this.overseasValue;
-		}
-
-		public void setOverseasValue(String overseasValue) {
-			this.overseasValue = overseasValue;
-		}
+		private String dynamicOverseasValue;
 
 		public String getAccValue() {
 			return this.accValue;
@@ -151,6 +119,14 @@ public class DescribeDomainQpsDataResponse extends AcsResponse {
 
 		public void setAccValue(String accValue) {
 			this.accValue = accValue;
+		}
+
+		public String getDynamicValue() {
+			return this.dynamicValue;
+		}
+
+		public void setDynamicValue(String dynamicValue) {
+			this.dynamicValue = dynamicValue;
 		}
 
 		public String getAccDomesticValue() {
@@ -169,14 +145,6 @@ public class DescribeDomainQpsDataResponse extends AcsResponse {
 			this.accOverseasValue = accOverseasValue;
 		}
 
-		public String getDynamicValue() {
-			return this.dynamicValue;
-		}
-
-		public void setDynamicValue(String dynamicValue) {
-			this.dynamicValue = dynamicValue;
-		}
-
 		public String getDynamicDomesticValue() {
 			return this.dynamicDomesticValue;
 		}
@@ -185,20 +153,20 @@ public class DescribeDomainQpsDataResponse extends AcsResponse {
 			this.dynamicDomesticValue = dynamicDomesticValue;
 		}
 
-		public String getDynamicOverseasValue() {
-			return this.dynamicOverseasValue;
+		public String getDomesticValue() {
+			return this.domesticValue;
 		}
 
-		public void setDynamicOverseasValue(String dynamicOverseasValue) {
-			this.dynamicOverseasValue = dynamicOverseasValue;
+		public void setDomesticValue(String domesticValue) {
+			this.domesticValue = domesticValue;
 		}
 
-		public String getStaticValue() {
-			return this.staticValue;
+		public String getValue() {
+			return this.value;
 		}
 
-		public void setStaticValue(String staticValue) {
-			this.staticValue = staticValue;
+		public void setValue(String value) {
+			this.value = value;
 		}
 
 		public String getStaticDomesticValue() {
@@ -209,12 +177,44 @@ public class DescribeDomainQpsDataResponse extends AcsResponse {
 			this.staticDomesticValue = staticDomesticValue;
 		}
 
+		public String getOverseasValue() {
+			return this.overseasValue;
+		}
+
+		public void setOverseasValue(String overseasValue) {
+			this.overseasValue = overseasValue;
+		}
+
+		public String getStaticValue() {
+			return this.staticValue;
+		}
+
+		public void setStaticValue(String staticValue) {
+			this.staticValue = staticValue;
+		}
+
+		public String getTimeStamp() {
+			return this.timeStamp;
+		}
+
+		public void setTimeStamp(String timeStamp) {
+			this.timeStamp = timeStamp;
+		}
+
 		public String getStaticOverseasValue() {
 			return this.staticOverseasValue;
 		}
 
 		public void setStaticOverseasValue(String staticOverseasValue) {
 			this.staticOverseasValue = staticOverseasValue;
+		}
+
+		public String getDynamicOverseasValue() {
+			return this.dynamicOverseasValue;
+		}
+
+		public void setDynamicOverseasValue(String dynamicOverseasValue) {
+			this.dynamicOverseasValue = dynamicOverseasValue;
 		}
 	}
 

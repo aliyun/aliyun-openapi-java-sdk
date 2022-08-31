@@ -34,17 +34,17 @@ public class DescribeUserDomainsResponseUnmarshaller {
 		List<PageData> domains = new ArrayList<PageData>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeUserDomainsResponse.Domains.Length"); i++) {
 			PageData pageData = new PageData();
-			pageData.setDomainName(_ctx.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].DomainName"));
-			pageData.setCname(_ctx.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].Cname"));
-			pageData.setCdnType(_ctx.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].CdnType"));
-			pageData.setDomainStatus(_ctx.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].DomainStatus"));
 			pageData.setGmtCreated(_ctx.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].GmtCreated"));
-			pageData.setGmtModified(_ctx.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].GmtModified"));
-			pageData.setDescription(_ctx.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].Description"));
-			pageData.setSourceType(_ctx.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].SourceType"));
 			pageData.setSslProtocol(_ctx.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].SslProtocol"));
+			pageData.setDescription(_ctx.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].Description"));
 			pageData.setResourceGroupId(_ctx.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].ResourceGroupId"));
+			pageData.setSourceType(_ctx.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].SourceType"));
 			pageData.setSandbox(_ctx.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].Sandbox"));
+			pageData.setDomainStatus(_ctx.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].DomainStatus"));
+			pageData.setCname(_ctx.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].Cname"));
+			pageData.setGmtModified(_ctx.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].GmtModified"));
+			pageData.setCdnType(_ctx.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].CdnType"));
+			pageData.setDomainName(_ctx.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].DomainName"));
 
 			List<String> sources = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeUserDomainsResponse.Domains["+ i +"].Sources.Length"); j++) {

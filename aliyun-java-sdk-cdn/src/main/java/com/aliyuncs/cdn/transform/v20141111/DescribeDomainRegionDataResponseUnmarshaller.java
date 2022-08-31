@@ -27,28 +27,28 @@ public class DescribeDomainRegionDataResponseUnmarshaller {
 	public static DescribeDomainRegionDataResponse unmarshall(DescribeDomainRegionDataResponse describeDomainRegionDataResponse, UnmarshallerContext _ctx) {
 		
 		describeDomainRegionDataResponse.setRequestId(_ctx.stringValue("DescribeDomainRegionDataResponse.RequestId"));
+		describeDomainRegionDataResponse.setEndTime(_ctx.stringValue("DescribeDomainRegionDataResponse.EndTime"));
+		describeDomainRegionDataResponse.setStartTime(_ctx.stringValue("DescribeDomainRegionDataResponse.StartTime"));
 		describeDomainRegionDataResponse.setDomainName(_ctx.stringValue("DescribeDomainRegionDataResponse.DomainName"));
 		describeDomainRegionDataResponse.setDataInterval(_ctx.stringValue("DescribeDomainRegionDataResponse.DataInterval"));
-		describeDomainRegionDataResponse.setStartTime(_ctx.stringValue("DescribeDomainRegionDataResponse.StartTime"));
-		describeDomainRegionDataResponse.setEndTime(_ctx.stringValue("DescribeDomainRegionDataResponse.EndTime"));
 
 		List<RegionProportionData> value = new ArrayList<RegionProportionData>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDomainRegionDataResponse.Value.Length"); i++) {
 			RegionProportionData regionProportionData = new RegionProportionData();
-			regionProportionData.setRegion(_ctx.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].Region"));
-			regionProportionData.setProportion(_ctx.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].Proportion"));
-			regionProportionData.setRegionEname(_ctx.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].RegionEname"));
-			regionProportionData.setAvgObjectSize(_ctx.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].AvgObjectSize"));
+			regionProportionData.setTotalQuery(_ctx.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].TotalQuery"));
+			regionProportionData.setByteHitRate(_ctx.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].ByteHitRate"));
+			regionProportionData.setTotalBytes(_ctx.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].TotalBytes"));
+			regionProportionData.setReqHitRate(_ctx.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].ReqHitRate"));
+			regionProportionData.setAvgResponseRate(_ctx.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].AvgResponseRate"));
 			regionProportionData.setAvgResponseTime(_ctx.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].AvgResponseTime"));
+			regionProportionData.setReqErrRate(_ctx.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].ReqErrRate"));
+			regionProportionData.setAvgObjectSize(_ctx.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].AvgObjectSize"));
 			regionProportionData.setBps(_ctx.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].Bps"));
 			regionProportionData.setQps(_ctx.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].Qps"));
-			regionProportionData.setAvgResponseRate(_ctx.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].AvgResponseRate"));
-			regionProportionData.setByteHitRate(_ctx.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].ByteHitRate"));
-			regionProportionData.setReqHitRate(_ctx.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].ReqHitRate"));
-			regionProportionData.setReqErrRate(_ctx.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].ReqErrRate"));
-			regionProportionData.setTotalBytes(_ctx.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].TotalBytes"));
+			regionProportionData.setRegionEname(_ctx.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].RegionEname"));
+			regionProportionData.setRegion(_ctx.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].Region"));
+			regionProportionData.setProportion(_ctx.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].Proportion"));
 			regionProportionData.setBytesProportion(_ctx.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].BytesProportion"));
-			regionProportionData.setTotalQuery(_ctx.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].TotalQuery"));
 
 			value.add(regionProportionData);
 		}

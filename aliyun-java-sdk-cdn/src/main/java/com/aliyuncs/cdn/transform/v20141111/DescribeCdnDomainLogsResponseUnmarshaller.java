@@ -38,11 +38,11 @@ public class DescribeCdnDomainLogsResponseUnmarshaller {
 		List<DomainLogDetail> domainLogDetails = new ArrayList<DomainLogDetail>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCdnDomainLogsResponse.DomainLogModel.DomainLogDetails.Length"); i++) {
 			DomainLogDetail domainLogDetail = new DomainLogDetail();
-			domainLogDetail.setLogName(_ctx.stringValue("DescribeCdnDomainLogsResponse.DomainLogModel.DomainLogDetails["+ i +"].LogName"));
-			domainLogDetail.setLogPath(_ctx.stringValue("DescribeCdnDomainLogsResponse.DomainLogModel.DomainLogDetails["+ i +"].LogPath"));
+			domainLogDetail.setEndTime(_ctx.stringValue("DescribeCdnDomainLogsResponse.DomainLogModel.DomainLogDetails["+ i +"].EndTime"));
 			domainLogDetail.setLogSize(_ctx.longValue("DescribeCdnDomainLogsResponse.DomainLogModel.DomainLogDetails["+ i +"].LogSize"));
 			domainLogDetail.setStartTime(_ctx.stringValue("DescribeCdnDomainLogsResponse.DomainLogModel.DomainLogDetails["+ i +"].StartTime"));
-			domainLogDetail.setEndTime(_ctx.stringValue("DescribeCdnDomainLogsResponse.DomainLogModel.DomainLogDetails["+ i +"].EndTime"));
+			domainLogDetail.setLogName(_ctx.stringValue("DescribeCdnDomainLogsResponse.DomainLogModel.DomainLogDetails["+ i +"].LogName"));
+			domainLogDetail.setLogPath(_ctx.stringValue("DescribeCdnDomainLogsResponse.DomainLogModel.DomainLogDetails["+ i +"].LogPath"));
 
 			domainLogDetails.add(domainLogDetail);
 		}

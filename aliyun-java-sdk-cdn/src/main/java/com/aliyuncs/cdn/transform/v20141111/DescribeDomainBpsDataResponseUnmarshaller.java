@@ -27,31 +27,31 @@ public class DescribeDomainBpsDataResponseUnmarshaller {
 	public static DescribeDomainBpsDataResponse unmarshall(DescribeDomainBpsDataResponse describeDomainBpsDataResponse, UnmarshallerContext _ctx) {
 		
 		describeDomainBpsDataResponse.setRequestId(_ctx.stringValue("DescribeDomainBpsDataResponse.RequestId"));
-		describeDomainBpsDataResponse.setDomainName(_ctx.stringValue("DescribeDomainBpsDataResponse.DomainName"));
-		describeDomainBpsDataResponse.setStartTime(_ctx.stringValue("DescribeDomainBpsDataResponse.StartTime"));
 		describeDomainBpsDataResponse.setEndTime(_ctx.stringValue("DescribeDomainBpsDataResponse.EndTime"));
-		describeDomainBpsDataResponse.setLocationNameEn(_ctx.stringValue("DescribeDomainBpsDataResponse.LocationNameEn"));
+		describeDomainBpsDataResponse.setStartTime(_ctx.stringValue("DescribeDomainBpsDataResponse.StartTime"));
 		describeDomainBpsDataResponse.setIspNameEn(_ctx.stringValue("DescribeDomainBpsDataResponse.IspNameEn"));
+		describeDomainBpsDataResponse.setLocationNameEn(_ctx.stringValue("DescribeDomainBpsDataResponse.LocationNameEn"));
 		describeDomainBpsDataResponse.setLocationName(_ctx.stringValue("DescribeDomainBpsDataResponse.LocationName"));
 		describeDomainBpsDataResponse.setIspName(_ctx.stringValue("DescribeDomainBpsDataResponse.IspName"));
+		describeDomainBpsDataResponse.setDomainName(_ctx.stringValue("DescribeDomainBpsDataResponse.DomainName"));
 		describeDomainBpsDataResponse.setDataInterval(_ctx.stringValue("DescribeDomainBpsDataResponse.DataInterval"));
 
 		List<DataModule> bpsDataPerInterval = new ArrayList<DataModule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDomainBpsDataResponse.BpsDataPerInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
-			dataModule.setTimeStamp(_ctx.stringValue("DescribeDomainBpsDataResponse.BpsDataPerInterval["+ i +"].TimeStamp"));
-			dataModule.setValue(_ctx.stringValue("DescribeDomainBpsDataResponse.BpsDataPerInterval["+ i +"].Value"));
-			dataModule.setDomesticValue(_ctx.stringValue("DescribeDomainBpsDataResponse.BpsDataPerInterval["+ i +"].DomesticValue"));
-			dataModule.setOverseasValue(_ctx.stringValue("DescribeDomainBpsDataResponse.BpsDataPerInterval["+ i +"].OverseasValue"));
 			dataModule.setL2Value(_ctx.stringValue("DescribeDomainBpsDataResponse.BpsDataPerInterval["+ i +"].L2Value"));
-			dataModule.setDomesticL2Value(_ctx.stringValue("DescribeDomainBpsDataResponse.BpsDataPerInterval["+ i +"].DomesticL2Value"));
-			dataModule.setOverseasL2Value(_ctx.stringValue("DescribeDomainBpsDataResponse.BpsDataPerInterval["+ i +"].OverseasL2Value"));
 			dataModule.setDynamicValue(_ctx.stringValue("DescribeDomainBpsDataResponse.BpsDataPerInterval["+ i +"].DynamicValue"));
 			dataModule.setDynamicDomesticValue(_ctx.stringValue("DescribeDomainBpsDataResponse.BpsDataPerInterval["+ i +"].DynamicDomesticValue"));
-			dataModule.setDynamicOverseasValue(_ctx.stringValue("DescribeDomainBpsDataResponse.BpsDataPerInterval["+ i +"].DynamicOverseasValue"));
-			dataModule.setStaticValue(_ctx.stringValue("DescribeDomainBpsDataResponse.BpsDataPerInterval["+ i +"].StaticValue"));
+			dataModule.setDomesticValue(_ctx.stringValue("DescribeDomainBpsDataResponse.BpsDataPerInterval["+ i +"].DomesticValue"));
+			dataModule.setValue(_ctx.stringValue("DescribeDomainBpsDataResponse.BpsDataPerInterval["+ i +"].Value"));
+			dataModule.setOverseasL2Value(_ctx.stringValue("DescribeDomainBpsDataResponse.BpsDataPerInterval["+ i +"].OverseasL2Value"));
 			dataModule.setStaticDomesticValue(_ctx.stringValue("DescribeDomainBpsDataResponse.BpsDataPerInterval["+ i +"].StaticDomesticValue"));
+			dataModule.setDomesticL2Value(_ctx.stringValue("DescribeDomainBpsDataResponse.BpsDataPerInterval["+ i +"].DomesticL2Value"));
+			dataModule.setOverseasValue(_ctx.stringValue("DescribeDomainBpsDataResponse.BpsDataPerInterval["+ i +"].OverseasValue"));
+			dataModule.setStaticValue(_ctx.stringValue("DescribeDomainBpsDataResponse.BpsDataPerInterval["+ i +"].StaticValue"));
+			dataModule.setTimeStamp(_ctx.stringValue("DescribeDomainBpsDataResponse.BpsDataPerInterval["+ i +"].TimeStamp"));
 			dataModule.setStaticOverseasValue(_ctx.stringValue("DescribeDomainBpsDataResponse.BpsDataPerInterval["+ i +"].StaticOverseasValue"));
+			dataModule.setDynamicOverseasValue(_ctx.stringValue("DescribeDomainBpsDataResponse.BpsDataPerInterval["+ i +"].DynamicOverseasValue"));
 
 			bpsDataPerInterval.add(dataModule);
 		}

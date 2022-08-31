@@ -27,16 +27,16 @@ public class DescribeDomainSrcFlowDataResponseUnmarshaller {
 	public static DescribeDomainSrcFlowDataResponse unmarshall(DescribeDomainSrcFlowDataResponse describeDomainSrcFlowDataResponse, UnmarshallerContext _ctx) {
 		
 		describeDomainSrcFlowDataResponse.setRequestId(_ctx.stringValue("DescribeDomainSrcFlowDataResponse.RequestId"));
-		describeDomainSrcFlowDataResponse.setDomainName(_ctx.stringValue("DescribeDomainSrcFlowDataResponse.DomainName"));
-		describeDomainSrcFlowDataResponse.setStartTime(_ctx.stringValue("DescribeDomainSrcFlowDataResponse.StartTime"));
 		describeDomainSrcFlowDataResponse.setEndTime(_ctx.stringValue("DescribeDomainSrcFlowDataResponse.EndTime"));
+		describeDomainSrcFlowDataResponse.setStartTime(_ctx.stringValue("DescribeDomainSrcFlowDataResponse.StartTime"));
+		describeDomainSrcFlowDataResponse.setDomainName(_ctx.stringValue("DescribeDomainSrcFlowDataResponse.DomainName"));
 		describeDomainSrcFlowDataResponse.setDataInterval(_ctx.stringValue("DescribeDomainSrcFlowDataResponse.DataInterval"));
 
 		List<DataModule> srcFlowDataPerInterval = new ArrayList<DataModule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDomainSrcFlowDataResponse.SrcFlowDataPerInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
-			dataModule.setTimeStamp(_ctx.stringValue("DescribeDomainSrcFlowDataResponse.SrcFlowDataPerInterval["+ i +"].TimeStamp"));
 			dataModule.setValue(_ctx.stringValue("DescribeDomainSrcFlowDataResponse.SrcFlowDataPerInterval["+ i +"].Value"));
+			dataModule.setTimeStamp(_ctx.stringValue("DescribeDomainSrcFlowDataResponse.SrcFlowDataPerInterval["+ i +"].TimeStamp"));
 
 			srcFlowDataPerInterval.add(dataModule);
 		}

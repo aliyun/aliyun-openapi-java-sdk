@@ -25,17 +25,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDomainFileSizeProportionDataResponse extends AcsResponse {
 
+	private String endTime;
+
+	private String startTime;
+
 	private String requestId;
 
 	private String domainName;
 
 	private String dataInterval;
 
-	private String startTime;
-
-	private String endTime;
-
 	private List<UsageData> fileSizeProportionDataInterval;
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -59,22 +75,6 @@ public class DescribeDomainFileSizeProportionDataResponse extends AcsResponse {
 
 	public void setDataInterval(String dataInterval) {
 		this.dataInterval = dataInterval;
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
 	}
 
 	public List<UsageData> getFileSizeProportionDataInterval() {
@@ -109,17 +109,9 @@ public class DescribeDomainFileSizeProportionDataResponse extends AcsResponse {
 
 		public static class FileSizeProportionData {
 
-			private String fileSize;
-
 			private String proportion;
 
-			public String getFileSize() {
-				return this.fileSize;
-			}
-
-			public void setFileSize(String fileSize) {
-				this.fileSize = fileSize;
-			}
+			private String fileSize;
 
 			public String getProportion() {
 				return this.proportion;
@@ -127,6 +119,14 @@ public class DescribeDomainFileSizeProportionDataResponse extends AcsResponse {
 
 			public void setProportion(String proportion) {
 				this.proportion = proportion;
+			}
+
+			public String getFileSize() {
+				return this.fileSize;
+			}
+
+			public void setFileSize(String fileSize) {
+				this.fileSize = fileSize;
 			}
 		}
 	}

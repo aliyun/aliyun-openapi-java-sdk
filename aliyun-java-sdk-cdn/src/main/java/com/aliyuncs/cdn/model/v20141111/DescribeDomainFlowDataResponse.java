@@ -25,17 +25,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDomainFlowDataResponse extends AcsResponse {
 
+	private String endTime;
+
+	private String startTime;
+
 	private String requestId;
 
 	private String domainName;
 
-	private String startTime;
-
-	private String endTime;
-
 	private String dataInterval;
 
 	private List<DataModule> flowDataPerInterval;
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -51,22 +67,6 @@ public class DescribeDomainFlowDataResponse extends AcsResponse {
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
 	}
 
 	public String getDataInterval() {
@@ -87,33 +87,25 @@ public class DescribeDomainFlowDataResponse extends AcsResponse {
 
 	public static class DataModule {
 
-		private String timeStamp;
-
 		private String value;
-
-		private String domesticValue;
-
-		private String overseasValue;
-
-		private String dynamicValue;
-
-		private String dynamicDomesticValue;
-
-		private String dynamicOverseasValue;
-
-		private String staticValue;
 
 		private String staticDomesticValue;
 
+		private String dynamicValue;
+
+		private String overseasValue;
+
+		private String staticValue;
+
+		private String timeStamp;
+
 		private String staticOverseasValue;
 
-		public String getTimeStamp() {
-			return this.timeStamp;
-		}
+		private String dynamicDomesticValue;
 
-		public void setTimeStamp(String timeStamp) {
-			this.timeStamp = timeStamp;
-		}
+		private String domesticValue;
+
+		private String dynamicOverseasValue;
 
 		public String getValue() {
 			return this.value;
@@ -121,54 +113,6 @@ public class DescribeDomainFlowDataResponse extends AcsResponse {
 
 		public void setValue(String value) {
 			this.value = value;
-		}
-
-		public String getDomesticValue() {
-			return this.domesticValue;
-		}
-
-		public void setDomesticValue(String domesticValue) {
-			this.domesticValue = domesticValue;
-		}
-
-		public String getOverseasValue() {
-			return this.overseasValue;
-		}
-
-		public void setOverseasValue(String overseasValue) {
-			this.overseasValue = overseasValue;
-		}
-
-		public String getDynamicValue() {
-			return this.dynamicValue;
-		}
-
-		public void setDynamicValue(String dynamicValue) {
-			this.dynamicValue = dynamicValue;
-		}
-
-		public String getDynamicDomesticValue() {
-			return this.dynamicDomesticValue;
-		}
-
-		public void setDynamicDomesticValue(String dynamicDomesticValue) {
-			this.dynamicDomesticValue = dynamicDomesticValue;
-		}
-
-		public String getDynamicOverseasValue() {
-			return this.dynamicOverseasValue;
-		}
-
-		public void setDynamicOverseasValue(String dynamicOverseasValue) {
-			this.dynamicOverseasValue = dynamicOverseasValue;
-		}
-
-		public String getStaticValue() {
-			return this.staticValue;
-		}
-
-		public void setStaticValue(String staticValue) {
-			this.staticValue = staticValue;
 		}
 
 		public String getStaticDomesticValue() {
@@ -179,12 +123,68 @@ public class DescribeDomainFlowDataResponse extends AcsResponse {
 			this.staticDomesticValue = staticDomesticValue;
 		}
 
+		public String getDynamicValue() {
+			return this.dynamicValue;
+		}
+
+		public void setDynamicValue(String dynamicValue) {
+			this.dynamicValue = dynamicValue;
+		}
+
+		public String getOverseasValue() {
+			return this.overseasValue;
+		}
+
+		public void setOverseasValue(String overseasValue) {
+			this.overseasValue = overseasValue;
+		}
+
+		public String getStaticValue() {
+			return this.staticValue;
+		}
+
+		public void setStaticValue(String staticValue) {
+			this.staticValue = staticValue;
+		}
+
+		public String getTimeStamp() {
+			return this.timeStamp;
+		}
+
+		public void setTimeStamp(String timeStamp) {
+			this.timeStamp = timeStamp;
+		}
+
 		public String getStaticOverseasValue() {
 			return this.staticOverseasValue;
 		}
 
 		public void setStaticOverseasValue(String staticOverseasValue) {
 			this.staticOverseasValue = staticOverseasValue;
+		}
+
+		public String getDynamicDomesticValue() {
+			return this.dynamicDomesticValue;
+		}
+
+		public void setDynamicDomesticValue(String dynamicDomesticValue) {
+			this.dynamicDomesticValue = dynamicDomesticValue;
+		}
+
+		public String getDomesticValue() {
+			return this.domesticValue;
+		}
+
+		public void setDomesticValue(String domesticValue) {
+			this.domesticValue = domesticValue;
+		}
+
+		public String getDynamicOverseasValue() {
+			return this.dynamicOverseasValue;
+		}
+
+		public void setDynamicOverseasValue(String dynamicOverseasValue) {
+			this.dynamicOverseasValue = dynamicOverseasValue;
 		}
 	}
 

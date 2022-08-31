@@ -28,35 +28,35 @@ public class DescribeDomainsUsageByDayResponseUnmarshaller {
 	public static DescribeDomainsUsageByDayResponse unmarshall(DescribeDomainsUsageByDayResponse describeDomainsUsageByDayResponse, UnmarshallerContext _ctx) {
 		
 		describeDomainsUsageByDayResponse.setRequestId(_ctx.stringValue("DescribeDomainsUsageByDayResponse.RequestId"));
+		describeDomainsUsageByDayResponse.setEndTime(_ctx.stringValue("DescribeDomainsUsageByDayResponse.EndTime"));
+		describeDomainsUsageByDayResponse.setStartTime(_ctx.stringValue("DescribeDomainsUsageByDayResponse.StartTime"));
 		describeDomainsUsageByDayResponse.setDomainName(_ctx.stringValue("DescribeDomainsUsageByDayResponse.DomainName"));
 		describeDomainsUsageByDayResponse.setDataInterval(_ctx.stringValue("DescribeDomainsUsageByDayResponse.DataInterval"));
-		describeDomainsUsageByDayResponse.setStartTime(_ctx.stringValue("DescribeDomainsUsageByDayResponse.StartTime"));
-		describeDomainsUsageByDayResponse.setEndTime(_ctx.stringValue("DescribeDomainsUsageByDayResponse.EndTime"));
 
 		UsageTotal usageTotal = new UsageTotal();
-		usageTotal.setBytesHitRate(_ctx.stringValue("DescribeDomainsUsageByDayResponse.UsageTotal.BytesHitRate"));
+		usageTotal.setMaxSrcBpsTime(_ctx.stringValue("DescribeDomainsUsageByDayResponse.UsageTotal.MaxSrcBpsTime"));
 		usageTotal.setRequestHitRate(_ctx.stringValue("DescribeDomainsUsageByDayResponse.UsageTotal.RequestHitRate"));
 		usageTotal.setMaxBps(_ctx.stringValue("DescribeDomainsUsageByDayResponse.UsageTotal.MaxBps"));
+		usageTotal.setTotalAccess(_ctx.stringValue("DescribeDomainsUsageByDayResponse.UsageTotal.TotalAccess"));
+		usageTotal.setBytesHitRate(_ctx.stringValue("DescribeDomainsUsageByDayResponse.UsageTotal.BytesHitRate"));
+		usageTotal.setTotalTraffic(_ctx.stringValue("DescribeDomainsUsageByDayResponse.UsageTotal.TotalTraffic"));
 		usageTotal.setMaxBpsTime(_ctx.stringValue("DescribeDomainsUsageByDayResponse.UsageTotal.MaxBpsTime"));
 		usageTotal.setMaxSrcBps(_ctx.stringValue("DescribeDomainsUsageByDayResponse.UsageTotal.MaxSrcBps"));
-		usageTotal.setMaxSrcBpsTime(_ctx.stringValue("DescribeDomainsUsageByDayResponse.UsageTotal.MaxSrcBpsTime"));
-		usageTotal.setTotalAccess(_ctx.stringValue("DescribeDomainsUsageByDayResponse.UsageTotal.TotalAccess"));
-		usageTotal.setTotalTraffic(_ctx.stringValue("DescribeDomainsUsageByDayResponse.UsageTotal.TotalTraffic"));
 		describeDomainsUsageByDayResponse.setUsageTotal(usageTotal);
 
 		List<UsageByDay> usageByDays = new ArrayList<UsageByDay>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDomainsUsageByDayResponse.UsageByDays.Length"); i++) {
 			UsageByDay usageByDay = new UsageByDay();
-			usageByDay.setTimeStamp(_ctx.stringValue("DescribeDomainsUsageByDayResponse.UsageByDays["+ i +"].TimeStamp"));
+			usageByDay.setMaxSrcBpsTime(_ctx.stringValue("DescribeDomainsUsageByDayResponse.UsageByDays["+ i +"].MaxSrcBpsTime"));
 			usageByDay.setQps(_ctx.stringValue("DescribeDomainsUsageByDayResponse.UsageByDays["+ i +"].Qps"));
-			usageByDay.setBytesHitRate(_ctx.stringValue("DescribeDomainsUsageByDayResponse.UsageByDays["+ i +"].BytesHitRate"));
 			usageByDay.setRequestHitRate(_ctx.stringValue("DescribeDomainsUsageByDayResponse.UsageByDays["+ i +"].RequestHitRate"));
 			usageByDay.setMaxBps(_ctx.stringValue("DescribeDomainsUsageByDayResponse.UsageByDays["+ i +"].MaxBps"));
-			usageByDay.setMaxBpsTime(_ctx.stringValue("DescribeDomainsUsageByDayResponse.UsageByDays["+ i +"].MaxBpsTime"));
-			usageByDay.setMaxSrcBps(_ctx.stringValue("DescribeDomainsUsageByDayResponse.UsageByDays["+ i +"].MaxSrcBps"));
-			usageByDay.setMaxSrcBpsTime(_ctx.stringValue("DescribeDomainsUsageByDayResponse.UsageByDays["+ i +"].MaxSrcBpsTime"));
 			usageByDay.setTotalAccess(_ctx.stringValue("DescribeDomainsUsageByDayResponse.UsageByDays["+ i +"].TotalAccess"));
+			usageByDay.setTimeStamp(_ctx.stringValue("DescribeDomainsUsageByDayResponse.UsageByDays["+ i +"].TimeStamp"));
+			usageByDay.setBytesHitRate(_ctx.stringValue("DescribeDomainsUsageByDayResponse.UsageByDays["+ i +"].BytesHitRate"));
 			usageByDay.setTotalTraffic(_ctx.stringValue("DescribeDomainsUsageByDayResponse.UsageByDays["+ i +"].TotalTraffic"));
+			usageByDay.setMaxSrcBps(_ctx.stringValue("DescribeDomainsUsageByDayResponse.UsageByDays["+ i +"].MaxSrcBps"));
+			usageByDay.setMaxBpsTime(_ctx.stringValue("DescribeDomainsUsageByDayResponse.UsageByDays["+ i +"].MaxBpsTime"));
 
 			usageByDays.add(usageByDay);
 		}

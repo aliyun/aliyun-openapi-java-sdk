@@ -25,17 +25,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDomainUvDataResponse extends AcsResponse {
 
+	private String endTime;
+
+	private String startTime;
+
 	private String requestId;
 
 	private String domainName;
 
 	private String dataInterval;
 
-	private String startTime;
-
-	private String endTime;
-
 	private List<UsageData> uvDataInterval;
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -61,22 +77,6 @@ public class DescribeDomainUvDataResponse extends AcsResponse {
 		this.dataInterval = dataInterval;
 	}
 
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-	}
-
 	public List<UsageData> getUvDataInterval() {
 		return this.uvDataInterval;
 	}
@@ -87,17 +87,9 @@ public class DescribeDomainUvDataResponse extends AcsResponse {
 
 	public static class UsageData {
 
-		private String timeStamp;
-
 		private String value;
 
-		public String getTimeStamp() {
-			return this.timeStamp;
-		}
-
-		public void setTimeStamp(String timeStamp) {
-			this.timeStamp = timeStamp;
-		}
+		private String timeStamp;
 
 		public String getValue() {
 			return this.value;
@@ -105,6 +97,14 @@ public class DescribeDomainUvDataResponse extends AcsResponse {
 
 		public void setValue(String value) {
 			this.value = value;
+		}
+
+		public String getTimeStamp() {
+			return this.timeStamp;
+		}
+
+		public void setTimeStamp(String timeStamp) {
+			this.timeStamp = timeStamp;
 		}
 	}
 

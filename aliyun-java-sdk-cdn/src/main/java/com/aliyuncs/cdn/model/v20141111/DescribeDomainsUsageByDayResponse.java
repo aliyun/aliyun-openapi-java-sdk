@@ -25,19 +25,35 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDomainsUsageByDayResponse extends AcsResponse {
 
+	private String endTime;
+
+	private String startTime;
+
 	private String requestId;
 
 	private String domainName;
 
 	private String dataInterval;
 
-	private String startTime;
-
-	private String endTime;
-
 	private List<UsageByDay> usageByDays;
 
 	private UsageTotal usageTotal;
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -63,22 +79,6 @@ public class DescribeDomainsUsageByDayResponse extends AcsResponse {
 		this.dataInterval = dataInterval;
 	}
 
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-	}
-
 	public List<UsageByDay> getUsageByDays() {
 		return this.usageByDays;
 	}
@@ -97,32 +97,32 @@ public class DescribeDomainsUsageByDayResponse extends AcsResponse {
 
 	public static class UsageByDay {
 
-		private String timeStamp;
+		private String maxSrcBpsTime;
 
 		private String qps;
-
-		private String bytesHitRate;
 
 		private String requestHitRate;
 
 		private String maxBps;
 
-		private String maxBpsTime;
-
-		private String maxSrcBps;
-
-		private String maxSrcBpsTime;
-
 		private String totalAccess;
+
+		private String timeStamp;
+
+		private String bytesHitRate;
 
 		private String totalTraffic;
 
-		public String getTimeStamp() {
-			return this.timeStamp;
+		private String maxSrcBps;
+
+		private String maxBpsTime;
+
+		public String getMaxSrcBpsTime() {
+			return this.maxSrcBpsTime;
 		}
 
-		public void setTimeStamp(String timeStamp) {
-			this.timeStamp = timeStamp;
+		public void setMaxSrcBpsTime(String maxSrcBpsTime) {
+			this.maxSrcBpsTime = maxSrcBpsTime;
 		}
 
 		public String getQps() {
@@ -133,14 +133,6 @@ public class DescribeDomainsUsageByDayResponse extends AcsResponse {
 			this.qps = qps;
 		}
 
-		public String getBytesHitRate() {
-			return this.bytesHitRate;
-		}
-
-		public void setBytesHitRate(String bytesHitRate) {
-			this.bytesHitRate = bytesHitRate;
-		}
-
 		public String getRequestHitRate() {
 			return this.requestHitRate;
 		}
@@ -157,12 +149,36 @@ public class DescribeDomainsUsageByDayResponse extends AcsResponse {
 			this.maxBps = maxBps;
 		}
 
-		public String getMaxBpsTime() {
-			return this.maxBpsTime;
+		public String getTotalAccess() {
+			return this.totalAccess;
 		}
 
-		public void setMaxBpsTime(String maxBpsTime) {
-			this.maxBpsTime = maxBpsTime;
+		public void setTotalAccess(String totalAccess) {
+			this.totalAccess = totalAccess;
+		}
+
+		public String getTimeStamp() {
+			return this.timeStamp;
+		}
+
+		public void setTimeStamp(String timeStamp) {
+			this.timeStamp = timeStamp;
+		}
+
+		public String getBytesHitRate() {
+			return this.bytesHitRate;
+		}
+
+		public void setBytesHitRate(String bytesHitRate) {
+			this.bytesHitRate = bytesHitRate;
+		}
+
+		public String getTotalTraffic() {
+			return this.totalTraffic;
+		}
+
+		public void setTotalTraffic(String totalTraffic) {
+			this.totalTraffic = totalTraffic;
 		}
 
 		public String getMaxSrcBps() {
@@ -173,55 +189,39 @@ public class DescribeDomainsUsageByDayResponse extends AcsResponse {
 			this.maxSrcBps = maxSrcBps;
 		}
 
-		public String getMaxSrcBpsTime() {
-			return this.maxSrcBpsTime;
+		public String getMaxBpsTime() {
+			return this.maxBpsTime;
 		}
 
-		public void setMaxSrcBpsTime(String maxSrcBpsTime) {
-			this.maxSrcBpsTime = maxSrcBpsTime;
-		}
-
-		public String getTotalAccess() {
-			return this.totalAccess;
-		}
-
-		public void setTotalAccess(String totalAccess) {
-			this.totalAccess = totalAccess;
-		}
-
-		public String getTotalTraffic() {
-			return this.totalTraffic;
-		}
-
-		public void setTotalTraffic(String totalTraffic) {
-			this.totalTraffic = totalTraffic;
+		public void setMaxBpsTime(String maxBpsTime) {
+			this.maxBpsTime = maxBpsTime;
 		}
 	}
 
 	public static class UsageTotal {
 
-		private String bytesHitRate;
+		private String maxSrcBpsTime;
 
 		private String requestHitRate;
 
 		private String maxBps;
 
+		private String totalAccess;
+
+		private String bytesHitRate;
+
+		private String totalTraffic;
+
 		private String maxBpsTime;
 
 		private String maxSrcBps;
 
-		private String maxSrcBpsTime;
-
-		private String totalAccess;
-
-		private String totalTraffic;
-
-		public String getBytesHitRate() {
-			return this.bytesHitRate;
+		public String getMaxSrcBpsTime() {
+			return this.maxSrcBpsTime;
 		}
 
-		public void setBytesHitRate(String bytesHitRate) {
-			this.bytesHitRate = bytesHitRate;
+		public void setMaxSrcBpsTime(String maxSrcBpsTime) {
+			this.maxSrcBpsTime = maxSrcBpsTime;
 		}
 
 		public String getRequestHitRate() {
@@ -240,6 +240,30 @@ public class DescribeDomainsUsageByDayResponse extends AcsResponse {
 			this.maxBps = maxBps;
 		}
 
+		public String getTotalAccess() {
+			return this.totalAccess;
+		}
+
+		public void setTotalAccess(String totalAccess) {
+			this.totalAccess = totalAccess;
+		}
+
+		public String getBytesHitRate() {
+			return this.bytesHitRate;
+		}
+
+		public void setBytesHitRate(String bytesHitRate) {
+			this.bytesHitRate = bytesHitRate;
+		}
+
+		public String getTotalTraffic() {
+			return this.totalTraffic;
+		}
+
+		public void setTotalTraffic(String totalTraffic) {
+			this.totalTraffic = totalTraffic;
+		}
+
 		public String getMaxBpsTime() {
 			return this.maxBpsTime;
 		}
@@ -254,30 +278,6 @@ public class DescribeDomainsUsageByDayResponse extends AcsResponse {
 
 		public void setMaxSrcBps(String maxSrcBps) {
 			this.maxSrcBps = maxSrcBps;
-		}
-
-		public String getMaxSrcBpsTime() {
-			return this.maxSrcBpsTime;
-		}
-
-		public void setMaxSrcBpsTime(String maxSrcBpsTime) {
-			this.maxSrcBpsTime = maxSrcBpsTime;
-		}
-
-		public String getTotalAccess() {
-			return this.totalAccess;
-		}
-
-		public void setTotalAccess(String totalAccess) {
-			this.totalAccess = totalAccess;
-		}
-
-		public String getTotalTraffic() {
-			return this.totalTraffic;
-		}
-
-		public void setTotalTraffic(String totalTraffic) {
-			this.totalTraffic = totalTraffic;
 		}
 	}
 

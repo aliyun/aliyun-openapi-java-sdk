@@ -30,20 +30,20 @@ public class DescribeCdnDomainDetailResponseUnmarshaller {
 		describeCdnDomainDetailResponse.setRequestId(_ctx.stringValue("DescribeCdnDomainDetailResponse.RequestId"));
 
 		GetDomainDetailModel getDomainDetailModel = new GetDomainDetailModel();
-		getDomainDetailModel.setGmtCreated(_ctx.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.GmtCreated"));
-		getDomainDetailModel.setGmtModified(_ctx.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.GmtModified"));
-		getDomainDetailModel.setSourceType(_ctx.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.SourceType"));
-		getDomainDetailModel.setDomainStatus(_ctx.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.DomainStatus"));
 		getDomainDetailModel.setSourcePort(_ctx.integerValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.SourcePort"));
-		getDomainDetailModel.setCdnType(_ctx.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.CdnType"));
-		getDomainDetailModel.setCname(_ctx.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.Cname"));
 		getDomainDetailModel.setHttpsCname(_ctx.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.HttpsCname"));
-		getDomainDetailModel.setDomainName(_ctx.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.DomainName"));
-		getDomainDetailModel.setDescription(_ctx.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.Description"));
+		getDomainDetailModel.setSourceType(_ctx.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.SourceType"));
 		getDomainDetailModel.setServerCertificateStatus(_ctx.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.ServerCertificateStatus"));
+		getDomainDetailModel.setGmtModified(_ctx.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.GmtModified"));
+		getDomainDetailModel.setDomainName(_ctx.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.DomainName"));
+		getDomainDetailModel.setGmtCreated(_ctx.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.GmtCreated"));
+		getDomainDetailModel.setDescription(_ctx.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.Description"));
 		getDomainDetailModel.setRegion(_ctx.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.Region"));
-		getDomainDetailModel.setScope(_ctx.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.Scope"));
 		getDomainDetailModel.setResourceGroupId(_ctx.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.ResourceGroupId"));
+		getDomainDetailModel.setScope(_ctx.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.Scope"));
+		getDomainDetailModel.setDomainStatus(_ctx.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.DomainStatus"));
+		getDomainDetailModel.setCname(_ctx.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.Cname"));
+		getDomainDetailModel.setCdnType(_ctx.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.CdnType"));
 
 		List<String> sources = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.Sources.Length"); i++) {
@@ -54,11 +54,11 @@ public class DescribeCdnDomainDetailResponseUnmarshaller {
 		List<SourceModel> sourceModels = new ArrayList<SourceModel>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.SourceModels.Length"); i++) {
 			SourceModel sourceModel = new SourceModel();
-			sourceModel.setContent(_ctx.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.SourceModels["+ i +"].Content"));
 			sourceModel.setType(_ctx.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.SourceModels["+ i +"].Type"));
-			sourceModel.setPort(_ctx.integerValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.SourceModels["+ i +"].Port"));
-			sourceModel.setEnabled(_ctx.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.SourceModels["+ i +"].Enabled"));
 			sourceModel.setPriority(_ctx.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.SourceModels["+ i +"].Priority"));
+			sourceModel.setPort(_ctx.integerValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.SourceModels["+ i +"].Port"));
+			sourceModel.setContent(_ctx.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.SourceModels["+ i +"].Content"));
+			sourceModel.setEnabled(_ctx.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.SourceModels["+ i +"].Enabled"));
 
 			sourceModels.add(sourceModel);
 		}

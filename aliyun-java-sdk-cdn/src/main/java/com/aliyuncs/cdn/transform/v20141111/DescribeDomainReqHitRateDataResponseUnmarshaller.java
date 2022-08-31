@@ -27,16 +27,16 @@ public class DescribeDomainReqHitRateDataResponseUnmarshaller {
 	public static DescribeDomainReqHitRateDataResponse unmarshall(DescribeDomainReqHitRateDataResponse describeDomainReqHitRateDataResponse, UnmarshallerContext _ctx) {
 		
 		describeDomainReqHitRateDataResponse.setRequestId(_ctx.stringValue("DescribeDomainReqHitRateDataResponse.RequestId"));
-		describeDomainReqHitRateDataResponse.setDomainName(_ctx.stringValue("DescribeDomainReqHitRateDataResponse.DomainName"));
-		describeDomainReqHitRateDataResponse.setStartTime(_ctx.stringValue("DescribeDomainReqHitRateDataResponse.StartTime"));
 		describeDomainReqHitRateDataResponse.setEndTime(_ctx.stringValue("DescribeDomainReqHitRateDataResponse.EndTime"));
+		describeDomainReqHitRateDataResponse.setStartTime(_ctx.stringValue("DescribeDomainReqHitRateDataResponse.StartTime"));
+		describeDomainReqHitRateDataResponse.setDomainName(_ctx.stringValue("DescribeDomainReqHitRateDataResponse.DomainName"));
 		describeDomainReqHitRateDataResponse.setDataInterval(_ctx.stringValue("DescribeDomainReqHitRateDataResponse.DataInterval"));
 
 		List<DataModule> reqHitRateInterval = new ArrayList<DataModule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDomainReqHitRateDataResponse.ReqHitRateInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
-			dataModule.setTimeStamp(_ctx.stringValue("DescribeDomainReqHitRateDataResponse.ReqHitRateInterval["+ i +"].TimeStamp"));
 			dataModule.setValue(_ctx.stringValue("DescribeDomainReqHitRateDataResponse.ReqHitRateInterval["+ i +"].Value"));
+			dataModule.setTimeStamp(_ctx.stringValue("DescribeDomainReqHitRateDataResponse.ReqHitRateInterval["+ i +"].TimeStamp"));
 
 			reqHitRateInterval.add(dataModule);
 		}

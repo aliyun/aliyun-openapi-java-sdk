@@ -25,13 +25,13 @@ import com.aliyuncs.cdn.Endpoint;
 public class PushObjectCacheRequest extends RpcAcsRequest<PushObjectCacheResponse> {
 	   
 
-	private String area;
-
 	private String objectPath;
 
-	private Long ownerId;
-
 	private String securityToken;
+
+	private String area;
+
+	private Long ownerId;
 	public PushObjectCacheRequest() {
 		super("Cdn", "2014-11-11", "PushObjectCache");
 		setMethod(MethodType.POST);
@@ -39,17 +39,6 @@ public class PushObjectCacheRequest extends RpcAcsRequest<PushObjectCacheRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getArea() {
-		return this.area;
-	}
-
-	public void setArea(String area) {
-		this.area = area;
-		if(area != null){
-			putQueryParameter("Area", area);
-		}
 	}
 
 	public String getObjectPath() {
@@ -63,17 +52,6 @@ public class PushObjectCacheRequest extends RpcAcsRequest<PushObjectCacheRespons
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
@@ -82,6 +60,28 @@ public class PushObjectCacheRequest extends RpcAcsRequest<PushObjectCacheRespons
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getArea() {
+		return this.area;
+	}
+
+	public void setArea(String area) {
+		this.area = area;
+		if(area != null){
+			putQueryParameter("Area", area);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
