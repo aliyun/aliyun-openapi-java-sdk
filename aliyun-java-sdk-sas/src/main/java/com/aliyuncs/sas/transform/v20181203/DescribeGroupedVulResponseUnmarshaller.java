@@ -44,6 +44,7 @@ public class DescribeGroupedVulResponseUnmarshaller {
 			groupedVulItem.setName(_ctx.stringValue("DescribeGroupedVulResponse.GroupedVulItems["+ i +"].Name"));
 			groupedVulItem.setTotalFixCount(_ctx.longValue("DescribeGroupedVulResponse.GroupedVulItems["+ i +"].TotalFixCount"));
 			groupedVulItem.setAsapCount(_ctx.integerValue("DescribeGroupedVulResponse.GroupedVulItems["+ i +"].AsapCount"));
+			groupedVulItem.setRuleModifyTime(_ctx.longValue("DescribeGroupedVulResponse.GroupedVulItems["+ i +"].RuleModifyTime"));
 
 			groupedVulItems.add(groupedVulItem);
 		}

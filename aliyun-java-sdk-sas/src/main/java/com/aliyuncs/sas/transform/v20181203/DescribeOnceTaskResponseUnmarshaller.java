@@ -48,6 +48,8 @@ public class DescribeOnceTaskResponseUnmarshaller {
 			taskManageResponse.setTaskStartTime(_ctx.longValue("DescribeOnceTaskResponse.TaskManageResponseList["+ i +"].TaskStartTime"));
 			taskManageResponse.setTaskEndTime(_ctx.longValue("DescribeOnceTaskResponse.TaskManageResponseList["+ i +"].TaskEndTime"));
 			taskManageResponse.setTaskId(_ctx.stringValue("DescribeOnceTaskResponse.TaskManageResponseList["+ i +"].TaskId"));
+			taskManageResponse.setSource(_ctx.stringValue("DescribeOnceTaskResponse.TaskManageResponseList["+ i +"].Source"));
+			taskManageResponse.setContext(_ctx.stringValue("DescribeOnceTaskResponse.TaskManageResponseList["+ i +"].Context"));
 
 			taskManageResponseList.add(taskManageResponse);
 		}

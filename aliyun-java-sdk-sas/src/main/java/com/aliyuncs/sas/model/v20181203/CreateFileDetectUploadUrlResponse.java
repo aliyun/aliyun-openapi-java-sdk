@@ -57,6 +57,10 @@ public class CreateFileDetectUploadUrlResponse extends AcsResponse {
 
 		private String hashKey;
 
+		private String code;
+
+		private String message;
+
 		private Context context;
 
 		public String getPublicUrl() {
@@ -97,6 +101,22 @@ public class CreateFileDetectUploadUrlResponse extends AcsResponse {
 
 		public void setHashKey(String hashKey) {
 			this.hashKey = hashKey;
+		}
+
+		public String getCode() {
+			return this.code;
+		}
+
+		public void setCode(String code) {
+			this.code = code;
+		}
+
+		public String getMessage() {
+			return this.message;
+		}
+
+		public void setMessage(String message) {
+			this.message = message;
 		}
 
 		public Context getContext() {

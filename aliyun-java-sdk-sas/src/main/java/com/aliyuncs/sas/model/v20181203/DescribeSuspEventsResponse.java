@@ -179,6 +179,8 @@ public class DescribeSuspEventsResponse extends AcsResponse {
 
 		private Long id;
 
+		private Boolean displaySandboxResult;
+
 		private List<TacticItem> tacticItems;
 
 		private List<QuaraFile> details;
@@ -551,6 +553,14 @@ public class DescribeSuspEventsResponse extends AcsResponse {
 
 		public void setId(Long id) {
 			this.id = id;
+		}
+
+		public Boolean getDisplaySandboxResult() {
+			return this.displaySandboxResult;
+		}
+
+		public void setDisplaySandboxResult(Boolean displaySandboxResult) {
+			this.displaySandboxResult = displaySandboxResult;
 		}
 
 		public List<TacticItem> getTacticItems() {

@@ -22,66 +22,21 @@ import com.aliyuncs.sas.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeCheckWarningsRequest extends RpcAcsRequest<DescribeCheckWarningsResponse> {
+public class CheckUserHasEcsRequest extends RpcAcsRequest<CheckUserHasEcsResponse> {
 	   
-
-	private String uuid;
-
-	private String checkType;
-
-	private String sourceIp;
 
 	private Integer pageSize;
 
 	private String lang;
 
-	private Long checkId;
-
 	private Integer currentPage;
-
-	private Long riskId;
-
-	private Integer riskStatus;
-	public DescribeCheckWarningsRequest() {
-		super("Sas", "2018-12-03", "DescribeCheckWarnings");
+	public CheckUserHasEcsRequest() {
+		super("Sas", "2018-12-03", "CheckUserHasEcs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getUuid() {
-		return this.uuid;
-	}
-
-	public void setUuid(String uuid) {
-		this.uuid = uuid;
-		if(uuid != null){
-			putQueryParameter("Uuid", uuid);
-		}
-	}
-
-	public String getCheckType() {
-		return this.checkType;
-	}
-
-	public void setCheckType(String checkType) {
-		this.checkType = checkType;
-		if(checkType != null){
-			putQueryParameter("CheckType", checkType);
-		}
-	}
-
-	public String getSourceIp() {
-		return this.sourceIp;
-	}
-
-	public void setSourceIp(String sourceIp) {
-		this.sourceIp = sourceIp;
-		if(sourceIp != null){
-			putQueryParameter("SourceIp", sourceIp);
-		}
 	}
 
 	public Integer getPageSize() {
@@ -106,17 +61,6 @@ public class DescribeCheckWarningsRequest extends RpcAcsRequest<DescribeCheckWar
 		}
 	}
 
-	public Long getCheckId() {
-		return this.checkId;
-	}
-
-	public void setCheckId(Long checkId) {
-		this.checkId = checkId;
-		if(checkId != null){
-			putQueryParameter("CheckId", checkId.toString());
-		}
-	}
-
 	public Integer getCurrentPage() {
 		return this.currentPage;
 	}
@@ -128,31 +72,9 @@ public class DescribeCheckWarningsRequest extends RpcAcsRequest<DescribeCheckWar
 		}
 	}
 
-	public Long getRiskId() {
-		return this.riskId;
-	}
-
-	public void setRiskId(Long riskId) {
-		this.riskId = riskId;
-		if(riskId != null){
-			putQueryParameter("RiskId", riskId.toString());
-		}
-	}
-
-	public Integer getRiskStatus() {
-		return this.riskStatus;
-	}
-
-	public void setRiskStatus(Integer riskStatus) {
-		this.riskStatus = riskStatus;
-		if(riskStatus != null){
-			putQueryParameter("RiskStatus", riskStatus.toString());
-		}
-	}
-
 	@Override
-	public Class<DescribeCheckWarningsResponse> getResponseClass() {
-		return DescribeCheckWarningsResponse.class;
+	public Class<CheckUserHasEcsResponse> getResponseClass() {
+		return CheckUserHasEcsResponse.class;
 	}
 
 }

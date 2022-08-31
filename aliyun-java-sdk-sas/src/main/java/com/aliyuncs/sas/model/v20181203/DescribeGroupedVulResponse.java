@@ -97,6 +97,8 @@ public class DescribeGroupedVulResponse extends AcsResponse {
 
 		private Integer asapCount;
 
+		private Long ruleModifyTime;
+
 		public String getType() {
 			return this.type;
 		}
@@ -175,6 +177,14 @@ public class DescribeGroupedVulResponse extends AcsResponse {
 
 		public void setAsapCount(Integer asapCount) {
 			this.asapCount = asapCount;
+		}
+
+		public Long getRuleModifyTime() {
+			return this.ruleModifyTime;
+		}
+
+		public void setRuleModifyTime(Long ruleModifyTime) {
+			this.ruleModifyTime = ruleModifyTime;
 		}
 	}
 

@@ -75,6 +75,10 @@ public class DescribeOnceTaskResponse extends AcsResponse {
 
 		private String taskId;
 
+		private String source;
+
+		private String context;
+
 		public String getTaskType() {
 			return this.taskType;
 		}
@@ -145,6 +149,22 @@ public class DescribeOnceTaskResponse extends AcsResponse {
 
 		public void setTaskId(String taskId) {
 			this.taskId = taskId;
+		}
+
+		public String getSource() {
+			return this.source;
+		}
+
+		public void setSource(String source) {
+			this.source = source;
+		}
+
+		public String getContext() {
+			return this.context;
+		}
+
+		public void setContext(String context) {
+			this.context = context;
 		}
 	}
 

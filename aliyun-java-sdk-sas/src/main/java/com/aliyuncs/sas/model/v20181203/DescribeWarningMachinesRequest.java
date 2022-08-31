@@ -39,6 +39,8 @@ public class DescribeWarningMachinesRequest extends RpcAcsRequest<DescribeWarnin
 
 	private String lang;
 
+	private Integer haveRisk;
+
 	private Integer currentPage;
 
 	private String clusterId;
@@ -131,6 +133,17 @@ public class DescribeWarningMachinesRequest extends RpcAcsRequest<DescribeWarnin
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public Integer getHaveRisk() {
+		return this.haveRisk;
+	}
+
+	public void setHaveRisk(Integer haveRisk) {
+		this.haveRisk = haveRisk;
+		if(haveRisk != null){
+			putQueryParameter("HaveRisk", haveRisk.toString());
 		}
 	}
 
