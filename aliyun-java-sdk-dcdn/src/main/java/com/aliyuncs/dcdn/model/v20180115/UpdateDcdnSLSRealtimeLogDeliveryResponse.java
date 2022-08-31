@@ -47,13 +47,21 @@ public class UpdateDcdnSLSRealtimeLogDeliveryResponse extends AcsResponse {
 
 	public static class Domains {
 
+		private String status;
+
 		private String domainName;
 
 		private String region;
 
-		private String status;
-
 		private String desc;
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
 
 		public String getDomainName() {
 			return this.domainName;
@@ -69,14 +77,6 @@ public class UpdateDcdnSLSRealtimeLogDeliveryResponse extends AcsResponse {
 
 		public void setRegion(String region) {
 			this.region = region;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
 		}
 
 		public String getDesc() {

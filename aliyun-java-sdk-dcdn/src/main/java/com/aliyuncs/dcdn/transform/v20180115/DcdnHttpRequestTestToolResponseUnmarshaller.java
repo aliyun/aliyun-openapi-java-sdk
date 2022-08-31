@@ -23,8 +23,8 @@ public class DcdnHttpRequestTestToolResponseUnmarshaller {
 	public static DcdnHttpRequestTestToolResponse unmarshall(DcdnHttpRequestTestToolResponse dcdnHttpRequestTestToolResponse, UnmarshallerContext _ctx) {
 		
 		dcdnHttpRequestTestToolResponse.setRequestId(_ctx.stringValue("DcdnHttpRequestTestToolResponse.RequestId"));
-		dcdnHttpRequestTestToolResponse.setHeader(_ctx.stringValue("DcdnHttpRequestTestToolResponse.Header"));
 		dcdnHttpRequestTestToolResponse.setBody(_ctx.stringValue("DcdnHttpRequestTestToolResponse.Body"));
+		dcdnHttpRequestTestToolResponse.setHeader(_ctx.stringValue("DcdnHttpRequestTestToolResponse.Header"));
 		dcdnHttpRequestTestToolResponse.setStatusCode(_ctx.integerValue("DcdnHttpRequestTestToolResponse.StatusCode"));
 	 
 	 	return dcdnHttpRequestTestToolResponse;

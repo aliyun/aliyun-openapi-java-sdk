@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDcdnHttpsDomainListResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
 
+	private String requestId;
+
 	private List<CertInfo> certInfos;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -45,6 +37,14 @@ public class DescribeDcdnHttpsDomainListResponse extends AcsResponse {
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<CertInfo> getCertInfos() {
@@ -57,37 +57,21 @@ public class DescribeDcdnHttpsDomainListResponse extends AcsResponse {
 
 	public static class CertInfo {
 
-		private String certCommonName;
-
-		private String certName;
-
 		private String certStartTime;
 
 		private String certExpireTime;
 
-		private String certStatus;
+		private String certUpdateTime;
 
 		private String certType;
 
+		private String certName;
+
+		private String certStatus;
+
 		private String domainName;
 
-		private String certUpdateTime;
-
-		public String getCertCommonName() {
-			return this.certCommonName;
-		}
-
-		public void setCertCommonName(String certCommonName) {
-			this.certCommonName = certCommonName;
-		}
-
-		public String getCertName() {
-			return this.certName;
-		}
-
-		public void setCertName(String certName) {
-			this.certName = certName;
-		}
+		private String certCommonName;
 
 		public String getCertStartTime() {
 			return this.certStartTime;
@@ -105,12 +89,12 @@ public class DescribeDcdnHttpsDomainListResponse extends AcsResponse {
 			this.certExpireTime = certExpireTime;
 		}
 
-		public String getCertStatus() {
-			return this.certStatus;
+		public String getCertUpdateTime() {
+			return this.certUpdateTime;
 		}
 
-		public void setCertStatus(String certStatus) {
-			this.certStatus = certStatus;
+		public void setCertUpdateTime(String certUpdateTime) {
+			this.certUpdateTime = certUpdateTime;
 		}
 
 		public String getCertType() {
@@ -121,6 +105,22 @@ public class DescribeDcdnHttpsDomainListResponse extends AcsResponse {
 			this.certType = certType;
 		}
 
+		public String getCertName() {
+			return this.certName;
+		}
+
+		public void setCertName(String certName) {
+			this.certName = certName;
+		}
+
+		public String getCertStatus() {
+			return this.certStatus;
+		}
+
+		public void setCertStatus(String certStatus) {
+			this.certStatus = certStatus;
+		}
+
 		public String getDomainName() {
 			return this.domainName;
 		}
@@ -129,12 +129,12 @@ public class DescribeDcdnHttpsDomainListResponse extends AcsResponse {
 			this.domainName = domainName;
 		}
 
-		public String getCertUpdateTime() {
-			return this.certUpdateTime;
+		public String getCertCommonName() {
+			return this.certCommonName;
 		}
 
-		public void setCertUpdateTime(String certUpdateTime) {
-			this.certUpdateTime = certUpdateTime;
+		public void setCertCommonName(String certCommonName) {
+			this.certCommonName = certCommonName;
 		}
 	}
 

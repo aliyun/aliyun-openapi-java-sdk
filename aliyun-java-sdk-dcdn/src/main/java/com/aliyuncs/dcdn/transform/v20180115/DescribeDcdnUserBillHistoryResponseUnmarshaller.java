@@ -39,11 +39,11 @@ public class DescribeDcdnUserBillHistoryResponseUnmarshaller {
 			List<BillingDataItem> billingData = new ArrayList<BillingDataItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDcdnUserBillHistoryResponse.BillHistoryData["+ i +"].BillingData.Length"); j++) {
 				BillingDataItem billingDataItem = new BillingDataItem();
-				billingDataItem.setChargeType(_ctx.stringValue("DescribeDcdnUserBillHistoryResponse.BillHistoryData["+ i +"].BillingData["+ j +"].ChargeType"));
-				billingDataItem.setCdnRegion(_ctx.stringValue("DescribeDcdnUserBillHistoryResponse.BillHistoryData["+ i +"].BillingData["+ j +"].CdnRegion"));
-				billingDataItem.setBandwidth(_ctx.floatValue("DescribeDcdnUserBillHistoryResponse.BillHistoryData["+ i +"].BillingData["+ j +"].Bandwidth"));
 				billingDataItem.setFlow(_ctx.floatValue("DescribeDcdnUserBillHistoryResponse.BillHistoryData["+ i +"].BillingData["+ j +"].Flow"));
+				billingDataItem.setBandwidth(_ctx.floatValue("DescribeDcdnUserBillHistoryResponse.BillHistoryData["+ i +"].BillingData["+ j +"].Bandwidth"));
 				billingDataItem.setCount(_ctx.floatValue("DescribeDcdnUserBillHistoryResponse.BillHistoryData["+ i +"].BillingData["+ j +"].Count"));
+				billingDataItem.setCdnRegion(_ctx.stringValue("DescribeDcdnUserBillHistoryResponse.BillHistoryData["+ i +"].BillingData["+ j +"].CdnRegion"));
+				billingDataItem.setChargeType(_ctx.stringValue("DescribeDcdnUserBillHistoryResponse.BillHistoryData["+ i +"].BillingData["+ j +"].ChargeType"));
 
 				billingData.add(billingDataItem);
 			}

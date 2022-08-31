@@ -77,17 +77,9 @@ public class DescribeDcdnDeletedDomainsResponse extends AcsResponse {
 
 	public static class PageData {
 
-		private String domainName;
-
 		private String gmtModified;
 
-		public String getDomainName() {
-			return this.domainName;
-		}
-
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
-		}
+		private String domainName;
 
 		public String getGmtModified() {
 			return this.gmtModified;
@@ -95,6 +87,14 @@ public class DescribeDcdnDeletedDomainsResponse extends AcsResponse {
 
 		public void setGmtModified(String gmtModified) {
 			this.gmtModified = gmtModified;
+		}
+
+		public String getDomainName() {
+			return this.domainName;
+		}
+
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
 		}
 	}
 

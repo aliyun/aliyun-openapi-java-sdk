@@ -47,23 +47,63 @@ public class DescribeDcdnUserResourcePackageResponse extends AcsResponse {
 
 	public static class ResourcePackageInfo {
 
+		private String endTime;
+
+		private String status;
+
+		private String displayName;
+
+		private String startTime;
+
+		private String commodityCode;
+
 		private String currCapacity;
 
 		private String initCapacity;
 
-		private String commodityCode;
-
-		private String displayName;
+		private String instanceId;
 
 		private String templateName;
 
-		private String instanceId;
+		public String getEndTime() {
+			return this.endTime;
+		}
 
-		private String status;
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
+		}
 
-		private String startTime;
+		public String getStatus() {
+			return this.status;
+		}
 
-		private String endTime;
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getDisplayName() {
+			return this.displayName;
+		}
+
+		public void setDisplayName(String displayName) {
+			this.displayName = displayName;
+		}
+
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
+		}
+
+		public String getCommodityCode() {
+			return this.commodityCode;
+		}
+
+		public void setCommodityCode(String commodityCode) {
+			this.commodityCode = commodityCode;
+		}
 
 		public String getCurrCapacity() {
 			return this.currCapacity;
@@ -81,30 +121,6 @@ public class DescribeDcdnUserResourcePackageResponse extends AcsResponse {
 			this.initCapacity = initCapacity;
 		}
 
-		public String getCommodityCode() {
-			return this.commodityCode;
-		}
-
-		public void setCommodityCode(String commodityCode) {
-			this.commodityCode = commodityCode;
-		}
-
-		public String getDisplayName() {
-			return this.displayName;
-		}
-
-		public void setDisplayName(String displayName) {
-			this.displayName = displayName;
-		}
-
-		public String getTemplateName() {
-			return this.templateName;
-		}
-
-		public void setTemplateName(String templateName) {
-			this.templateName = templateName;
-		}
-
 		public String getInstanceId() {
 			return this.instanceId;
 		}
@@ -113,28 +129,12 @@ public class DescribeDcdnUserResourcePackageResponse extends AcsResponse {
 			this.instanceId = instanceId;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getTemplateName() {
+			return this.templateName;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
-		}
-
-		public String getEndTime() {
-			return this.endTime;
-		}
-
-		public void setEndTime(String endTime) {
-			this.endTime = endTime;
+		public void setTemplateName(String templateName) {
+			this.templateName = templateName;
 		}
 	}
 

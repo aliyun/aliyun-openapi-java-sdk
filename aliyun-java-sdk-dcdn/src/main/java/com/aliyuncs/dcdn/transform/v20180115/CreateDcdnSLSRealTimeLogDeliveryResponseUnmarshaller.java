@@ -31,9 +31,9 @@ public class CreateDcdnSLSRealTimeLogDeliveryResponseUnmarshaller {
 		List<Domains> content = new ArrayList<Domains>();
 		for (int i = 0; i < _ctx.lengthValue("CreateDcdnSLSRealTimeLogDeliveryResponse.Content.Length"); i++) {
 			Domains domains = new Domains();
+			domains.setStatus(_ctx.stringValue("CreateDcdnSLSRealTimeLogDeliveryResponse.Content["+ i +"].Status"));
 			domains.setDomainName(_ctx.stringValue("CreateDcdnSLSRealTimeLogDeliveryResponse.Content["+ i +"].DomainName"));
 			domains.setRegion(_ctx.stringValue("CreateDcdnSLSRealTimeLogDeliveryResponse.Content["+ i +"].Region"));
-			domains.setStatus(_ctx.stringValue("CreateDcdnSLSRealTimeLogDeliveryResponse.Content["+ i +"].Status"));
 			domains.setDesc(_ctx.stringValue("CreateDcdnSLSRealTimeLogDeliveryResponse.Content["+ i +"].Desc"));
 
 			content.add(domains);

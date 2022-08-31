@@ -25,22 +25,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDcdnDomainMultiUsageDataResponse extends AcsResponse {
 
-	private String requestId;
+	private String endTime;
 
 	private String startTime;
 
-	private String endTime;
+	private String requestId;
 
 	private List<RequestDataModule> requestPerInterval;
 
 	private List<TrafficDataModule> trafficPerInterval;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getEndTime() {
+		return this.endTime;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
 	}
 
 	public String getStartTime() {
@@ -51,12 +51,12 @@ public class DescribeDcdnDomainMultiUsageDataResponse extends AcsResponse {
 		this.startTime = startTime;
 	}
 
-	public String getEndTime() {
-		return this.endTime;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<RequestDataModule> getRequestPerInterval() {
@@ -77,13 +77,21 @@ public class DescribeDcdnDomainMultiUsageDataResponse extends AcsResponse {
 
 	public static class RequestDataModule {
 
+		private String type;
+
 		private String timeStamp;
 
 		private String domain;
 
 		private Long request;
 
-		private String type;
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
+		}
 
 		public String getTimeStamp() {
 			return this.timeStamp;
@@ -108,6 +116,19 @@ public class DescribeDcdnDomainMultiUsageDataResponse extends AcsResponse {
 		public void setRequest(Long request) {
 			this.request = request;
 		}
+	}
+
+	public static class TrafficDataModule {
+
+		private String type;
+
+		private String domain;
+
+		private String timeStamp;
+
+		private String area;
+
+		private Float bps;
 
 		public String getType() {
 			return this.type;
@@ -115,27 +136,6 @@ public class DescribeDcdnDomainMultiUsageDataResponse extends AcsResponse {
 
 		public void setType(String type) {
 			this.type = type;
-		}
-	}
-
-	public static class TrafficDataModule {
-
-		private String timeStamp;
-
-		private String domain;
-
-		private Float bps;
-
-		private String type;
-
-		private String area;
-
-		public String getTimeStamp() {
-			return this.timeStamp;
-		}
-
-		public void setTimeStamp(String timeStamp) {
-			this.timeStamp = timeStamp;
 		}
 
 		public String getDomain() {
@@ -146,20 +146,12 @@ public class DescribeDcdnDomainMultiUsageDataResponse extends AcsResponse {
 			this.domain = domain;
 		}
 
-		public Float getBps() {
-			return this.bps;
+		public String getTimeStamp() {
+			return this.timeStamp;
 		}
 
-		public void setBps(Float bps) {
-			this.bps = bps;
-		}
-
-		public String getType() {
-			return this.type;
-		}
-
-		public void setType(String type) {
-			this.type = type;
+		public void setTimeStamp(String timeStamp) {
+			this.timeStamp = timeStamp;
 		}
 
 		public String getArea() {
@@ -168,6 +160,14 @@ public class DescribeDcdnDomainMultiUsageDataResponse extends AcsResponse {
 
 		public void setArea(String area) {
 			this.area = area;
+		}
+
+		public Float getBps() {
+			return this.bps;
+		}
+
+		public void setBps(Float bps) {
+			this.bps = bps;
 		}
 	}
 

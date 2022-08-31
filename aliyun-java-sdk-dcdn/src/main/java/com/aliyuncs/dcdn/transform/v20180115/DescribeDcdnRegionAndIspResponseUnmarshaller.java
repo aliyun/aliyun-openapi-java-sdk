@@ -32,8 +32,8 @@ public class DescribeDcdnRegionAndIspResponseUnmarshaller {
 		List<Region> regions = new ArrayList<Region>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDcdnRegionAndIspResponse.Regions.Length"); i++) {
 			Region region = new Region();
-			region.setNameZh(_ctx.stringValue("DescribeDcdnRegionAndIspResponse.Regions["+ i +"].NameZh"));
 			region.setNameEn(_ctx.stringValue("DescribeDcdnRegionAndIspResponse.Regions["+ i +"].NameEn"));
+			region.setNameZh(_ctx.stringValue("DescribeDcdnRegionAndIspResponse.Regions["+ i +"].NameZh"));
 
 			regions.add(region);
 		}
@@ -42,8 +42,8 @@ public class DescribeDcdnRegionAndIspResponseUnmarshaller {
 		List<Isp> isps = new ArrayList<Isp>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDcdnRegionAndIspResponse.Isps.Length"); i++) {
 			Isp isp = new Isp();
-			isp.setNameZh(_ctx.stringValue("DescribeDcdnRegionAndIspResponse.Isps["+ i +"].NameZh"));
 			isp.setNameEn(_ctx.stringValue("DescribeDcdnRegionAndIspResponse.Isps["+ i +"].NameEn"));
+			isp.setNameZh(_ctx.stringValue("DescribeDcdnRegionAndIspResponse.Isps["+ i +"].NameZh"));
 
 			isps.add(isp);
 		}

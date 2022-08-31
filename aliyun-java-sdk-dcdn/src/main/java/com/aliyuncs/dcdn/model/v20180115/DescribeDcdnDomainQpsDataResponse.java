@@ -25,17 +25,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDcdnDomainQpsDataResponse extends AcsResponse {
 
+	private String endTime;
+
+	private String startTime;
+
 	private String requestId;
 
 	private String domainName;
 
-	private String startTime;
-
-	private String endTime;
-
 	private String dataInterval;
 
 	private List<DataModule> qpsDataPerInterval;
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -51,22 +67,6 @@ public class DescribeDcdnDomainQpsDataResponse extends AcsResponse {
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
 	}
 
 	public String getDataInterval() {
@@ -87,82 +87,34 @@ public class DescribeDcdnDomainQpsDataResponse extends AcsResponse {
 
 	public static class DataModule {
 
-		private String timeStamp;
-
-		private Float qps;
-
-		private Float dynamicHttpQps;
-
-		private Float dynamicHttpsQps;
-
-		private Float staticHttpQps;
-
-		private Float staticHttpsQps;
-
-		private Float acc;
+		private Float dynamicHttpsAcc;
 
 		private Float dynamicHttpAcc;
 
-		private Float dynamicHttpsAcc;
-
-		private Float staticHttpAcc;
+		private Float qps;
 
 		private Float staticHttpsAcc;
 
-		public String getTimeStamp() {
-			return this.timeStamp;
+		private Float staticHttpQps;
+
+		private Float staticHttpAcc;
+
+		private Float dynamicHttpsQps;
+
+		private Float acc;
+
+		private Float staticHttpsQps;
+
+		private Float dynamicHttpQps;
+
+		private String timeStamp;
+
+		public Float getDynamicHttpsAcc() {
+			return this.dynamicHttpsAcc;
 		}
 
-		public void setTimeStamp(String timeStamp) {
-			this.timeStamp = timeStamp;
-		}
-
-		public Float getQps() {
-			return this.qps;
-		}
-
-		public void setQps(Float qps) {
-			this.qps = qps;
-		}
-
-		public Float getDynamicHttpQps() {
-			return this.dynamicHttpQps;
-		}
-
-		public void setDynamicHttpQps(Float dynamicHttpQps) {
-			this.dynamicHttpQps = dynamicHttpQps;
-		}
-
-		public Float getDynamicHttpsQps() {
-			return this.dynamicHttpsQps;
-		}
-
-		public void setDynamicHttpsQps(Float dynamicHttpsQps) {
-			this.dynamicHttpsQps = dynamicHttpsQps;
-		}
-
-		public Float getStaticHttpQps() {
-			return this.staticHttpQps;
-		}
-
-		public void setStaticHttpQps(Float staticHttpQps) {
-			this.staticHttpQps = staticHttpQps;
-		}
-
-		public Float getStaticHttpsQps() {
-			return this.staticHttpsQps;
-		}
-
-		public void setStaticHttpsQps(Float staticHttpsQps) {
-			this.staticHttpsQps = staticHttpsQps;
-		}
-
-		public Float getAcc() {
-			return this.acc;
-		}
-
-		public void setAcc(Float acc) {
-			this.acc = acc;
+		public void setDynamicHttpsAcc(Float dynamicHttpsAcc) {
+			this.dynamicHttpsAcc = dynamicHttpsAcc;
 		}
 
 		public Float getDynamicHttpAcc() {
@@ -173,12 +125,28 @@ public class DescribeDcdnDomainQpsDataResponse extends AcsResponse {
 			this.dynamicHttpAcc = dynamicHttpAcc;
 		}
 
-		public Float getDynamicHttpsAcc() {
-			return this.dynamicHttpsAcc;
+		public Float getQps() {
+			return this.qps;
 		}
 
-		public void setDynamicHttpsAcc(Float dynamicHttpsAcc) {
-			this.dynamicHttpsAcc = dynamicHttpsAcc;
+		public void setQps(Float qps) {
+			this.qps = qps;
+		}
+
+		public Float getStaticHttpsAcc() {
+			return this.staticHttpsAcc;
+		}
+
+		public void setStaticHttpsAcc(Float staticHttpsAcc) {
+			this.staticHttpsAcc = staticHttpsAcc;
+		}
+
+		public Float getStaticHttpQps() {
+			return this.staticHttpQps;
+		}
+
+		public void setStaticHttpQps(Float staticHttpQps) {
+			this.staticHttpQps = staticHttpQps;
 		}
 
 		public Float getStaticHttpAcc() {
@@ -189,12 +157,44 @@ public class DescribeDcdnDomainQpsDataResponse extends AcsResponse {
 			this.staticHttpAcc = staticHttpAcc;
 		}
 
-		public Float getStaticHttpsAcc() {
-			return this.staticHttpsAcc;
+		public Float getDynamicHttpsQps() {
+			return this.dynamicHttpsQps;
 		}
 
-		public void setStaticHttpsAcc(Float staticHttpsAcc) {
-			this.staticHttpsAcc = staticHttpsAcc;
+		public void setDynamicHttpsQps(Float dynamicHttpsQps) {
+			this.dynamicHttpsQps = dynamicHttpsQps;
+		}
+
+		public Float getAcc() {
+			return this.acc;
+		}
+
+		public void setAcc(Float acc) {
+			this.acc = acc;
+		}
+
+		public Float getStaticHttpsQps() {
+			return this.staticHttpsQps;
+		}
+
+		public void setStaticHttpsQps(Float staticHttpsQps) {
+			this.staticHttpsQps = staticHttpsQps;
+		}
+
+		public Float getDynamicHttpQps() {
+			return this.dynamicHttpQps;
+		}
+
+		public void setDynamicHttpQps(Float dynamicHttpQps) {
+			this.dynamicHttpQps = dynamicHttpQps;
+		}
+
+		public String getTimeStamp() {
+			return this.timeStamp;
+		}
+
+		public void setTimeStamp(String timeStamp) {
+			this.timeStamp = timeStamp;
 		}
 	}
 

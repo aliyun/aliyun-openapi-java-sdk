@@ -27,11 +27,11 @@ public class DescribeDcdnIpaDomainConfigsRequest extends RpcAcsRequest<DescribeD
 
 	private String functionNames;
 
+	private String securityToken;
+
 	private String domainName;
 
 	private Long ownerId;
-
-	private String securityToken;
 	public DescribeDcdnIpaDomainConfigsRequest() {
 		super("dcdn", "2018-01-15", "DescribeDcdnIpaDomainConfigs");
 		setMethod(MethodType.POST);
@@ -49,6 +49,17 @@ public class DescribeDcdnIpaDomainConfigsRequest extends RpcAcsRequest<DescribeD
 		this.functionNames = functionNames;
 		if(functionNames != null){
 			putQueryParameter("FunctionNames", functionNames);
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
@@ -71,17 +82,6 @@ public class DescribeDcdnIpaDomainConfigsRequest extends RpcAcsRequest<DescribeD
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

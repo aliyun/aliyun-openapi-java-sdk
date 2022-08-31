@@ -27,11 +27,11 @@ public class DescribeDcdnIpaServiceResponseUnmarshaller {
 	public static DescribeDcdnIpaServiceResponse unmarshall(DescribeDcdnIpaServiceResponse describeDcdnIpaServiceResponse, UnmarshallerContext _ctx) {
 		
 		describeDcdnIpaServiceResponse.setRequestId(_ctx.stringValue("DescribeDcdnIpaServiceResponse.RequestId"));
-		describeDcdnIpaServiceResponse.setInstanceId(_ctx.stringValue("DescribeDcdnIpaServiceResponse.InstanceId"));
-		describeDcdnIpaServiceResponse.setInternetChargeType(_ctx.stringValue("DescribeDcdnIpaServiceResponse.InternetChargeType"));
-		describeDcdnIpaServiceResponse.setOpeningTime(_ctx.stringValue("DescribeDcdnIpaServiceResponse.OpeningTime"));
-		describeDcdnIpaServiceResponse.setChangingChargeType(_ctx.stringValue("DescribeDcdnIpaServiceResponse.ChangingChargeType"));
 		describeDcdnIpaServiceResponse.setChangingAffectTime(_ctx.stringValue("DescribeDcdnIpaServiceResponse.ChangingAffectTime"));
+		describeDcdnIpaServiceResponse.setChangingChargeType(_ctx.stringValue("DescribeDcdnIpaServiceResponse.ChangingChargeType"));
+		describeDcdnIpaServiceResponse.setOpeningTime(_ctx.stringValue("DescribeDcdnIpaServiceResponse.OpeningTime"));
+		describeDcdnIpaServiceResponse.setInternetChargeType(_ctx.stringValue("DescribeDcdnIpaServiceResponse.InternetChargeType"));
+		describeDcdnIpaServiceResponse.setInstanceId(_ctx.stringValue("DescribeDcdnIpaServiceResponse.InstanceId"));
 
 		List<LockReason> operationLocks = new ArrayList<LockReason>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDcdnIpaServiceResponse.OperationLocks.Length"); i++) {

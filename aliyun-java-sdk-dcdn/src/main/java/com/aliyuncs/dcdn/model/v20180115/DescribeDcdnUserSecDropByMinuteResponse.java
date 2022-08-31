@@ -29,13 +29,13 @@ public class DescribeDcdnUserSecDropByMinuteResponse extends AcsResponse {
 
 	private String description;
 
-	private Integer totalCount;
-
 	private Integer len;
 
 	private Integer pageNumber;
 
 	private Integer pageSize;
+
+	private Integer totalCount;
 
 	private List<RowsItem> rows;
 
@@ -53,14 +53,6 @@ public class DescribeDcdnUserSecDropByMinuteResponse extends AcsResponse {
 
 	public void setDescription(String description) {
 		this.description = description;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getLen() {
@@ -87,6 +79,14 @@ public class DescribeDcdnUserSecDropByMinuteResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
+
 	public List<RowsItem> getRows() {
 		return this.rows;
 	}
@@ -97,33 +97,17 @@ public class DescribeDcdnUserSecDropByMinuteResponse extends AcsResponse {
 
 	public static class RowsItem {
 
-		private String ruleName;
-
-		private String object;
-
 		private String domain;
-
-		private String secFunc;
 
 		private String tmStr;
 
 		private Integer drops;
 
-		public String getRuleName() {
-			return this.ruleName;
-		}
+		private String object;
 
-		public void setRuleName(String ruleName) {
-			this.ruleName = ruleName;
-		}
+		private String secFunc;
 
-		public String getObject() {
-			return this.object;
-		}
-
-		public void setObject(String object) {
-			this.object = object;
-		}
+		private String ruleName;
 
 		public String getDomain() {
 			return this.domain;
@@ -131,14 +115,6 @@ public class DescribeDcdnUserSecDropByMinuteResponse extends AcsResponse {
 
 		public void setDomain(String domain) {
 			this.domain = domain;
-		}
-
-		public String getSecFunc() {
-			return this.secFunc;
-		}
-
-		public void setSecFunc(String secFunc) {
-			this.secFunc = secFunc;
 		}
 
 		public String getTmStr() {
@@ -155,6 +131,30 @@ public class DescribeDcdnUserSecDropByMinuteResponse extends AcsResponse {
 
 		public void setDrops(Integer drops) {
 			this.drops = drops;
+		}
+
+		public String getObject() {
+			return this.object;
+		}
+
+		public void setObject(String object) {
+			this.object = object;
+		}
+
+		public String getSecFunc() {
+			return this.secFunc;
+		}
+
+		public void setSecFunc(String secFunc) {
+			this.secFunc = secFunc;
+		}
+
+		public String getRuleName() {
+			return this.ruleName;
+		}
+
+		public void setRuleName(String ruleName) {
+			this.ruleName = ruleName;
 		}
 	}
 

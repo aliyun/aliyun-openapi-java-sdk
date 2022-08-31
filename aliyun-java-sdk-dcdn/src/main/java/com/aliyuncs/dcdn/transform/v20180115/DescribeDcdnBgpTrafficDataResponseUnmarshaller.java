@@ -27,14 +27,14 @@ public class DescribeDcdnBgpTrafficDataResponseUnmarshaller {
 	public static DescribeDcdnBgpTrafficDataResponse unmarshall(DescribeDcdnBgpTrafficDataResponse describeDcdnBgpTrafficDataResponse, UnmarshallerContext _ctx) {
 		
 		describeDcdnBgpTrafficDataResponse.setRequestId(_ctx.stringValue("DescribeDcdnBgpTrafficDataResponse.RequestId"));
-		describeDcdnBgpTrafficDataResponse.setStartTime(_ctx.stringValue("DescribeDcdnBgpTrafficDataResponse.StartTime"));
 		describeDcdnBgpTrafficDataResponse.setEndTime(_ctx.stringValue("DescribeDcdnBgpTrafficDataResponse.EndTime"));
+		describeDcdnBgpTrafficDataResponse.setStartTime(_ctx.stringValue("DescribeDcdnBgpTrafficDataResponse.StartTime"));
 
 		List<BgpData> bgpDataInterval = new ArrayList<BgpData>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDcdnBgpTrafficDataResponse.BgpDataInterval.Length"); i++) {
 			BgpData bgpData = new BgpData();
-			bgpData.setIn(_ctx.longValue("DescribeDcdnBgpTrafficDataResponse.BgpDataInterval["+ i +"].In"));
 			bgpData.setOut(_ctx.longValue("DescribeDcdnBgpTrafficDataResponse.BgpDataInterval["+ i +"].Out"));
+			bgpData.setIn(_ctx.longValue("DescribeDcdnBgpTrafficDataResponse.BgpDataInterval["+ i +"].In"));
 			bgpData.setTimeStamp(_ctx.stringValue("DescribeDcdnBgpTrafficDataResponse.BgpDataInterval["+ i +"].TimeStamp"));
 
 			bgpDataInterval.add(bgpData);

@@ -25,72 +25,32 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDcdnServiceResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String instanceId;
-
-	private String internetChargeType;
-
-	private String openingTime;
-
-	private String changingChargeType;
-
-	private String changingAffectTime;
+	private String websocketChangingTime;
 
 	private String websocketChangingType;
 
+	private String changingAffectTime;
+
+	private String changingChargeType;
+
+	private String requestId;
+
+	private String openingTime;
+
+	private String internetChargeType;
+
 	private String websocketType;
 
-	private String websocketChangingTime;
+	private String instanceId;
 
 	private List<LockReason> operationLocks;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getWebsocketChangingTime() {
+		return this.websocketChangingTime;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-	}
-
-	public String getInternetChargeType() {
-		return this.internetChargeType;
-	}
-
-	public void setInternetChargeType(String internetChargeType) {
-		this.internetChargeType = internetChargeType;
-	}
-
-	public String getOpeningTime() {
-		return this.openingTime;
-	}
-
-	public void setOpeningTime(String openingTime) {
-		this.openingTime = openingTime;
-	}
-
-	public String getChangingChargeType() {
-		return this.changingChargeType;
-	}
-
-	public void setChangingChargeType(String changingChargeType) {
-		this.changingChargeType = changingChargeType;
-	}
-
-	public String getChangingAffectTime() {
-		return this.changingAffectTime;
-	}
-
-	public void setChangingAffectTime(String changingAffectTime) {
-		this.changingAffectTime = changingAffectTime;
+	public void setWebsocketChangingTime(String websocketChangingTime) {
+		this.websocketChangingTime = websocketChangingTime;
 	}
 
 	public String getWebsocketChangingType() {
@@ -101,6 +61,46 @@ public class DescribeDcdnServiceResponse extends AcsResponse {
 		this.websocketChangingType = websocketChangingType;
 	}
 
+	public String getChangingAffectTime() {
+		return this.changingAffectTime;
+	}
+
+	public void setChangingAffectTime(String changingAffectTime) {
+		this.changingAffectTime = changingAffectTime;
+	}
+
+	public String getChangingChargeType() {
+		return this.changingChargeType;
+	}
+
+	public void setChangingChargeType(String changingChargeType) {
+		this.changingChargeType = changingChargeType;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getOpeningTime() {
+		return this.openingTime;
+	}
+
+	public void setOpeningTime(String openingTime) {
+		this.openingTime = openingTime;
+	}
+
+	public String getInternetChargeType() {
+		return this.internetChargeType;
+	}
+
+	public void setInternetChargeType(String internetChargeType) {
+		this.internetChargeType = internetChargeType;
+	}
+
 	public String getWebsocketType() {
 		return this.websocketType;
 	}
@@ -109,12 +109,12 @@ public class DescribeDcdnServiceResponse extends AcsResponse {
 		this.websocketType = websocketType;
 	}
 
-	public String getWebsocketChangingTime() {
-		return this.websocketChangingTime;
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setWebsocketChangingTime(String websocketChangingTime) {
-		this.websocketChangingTime = websocketChangingTime;
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
 	}
 
 	public List<LockReason> getOperationLocks() {

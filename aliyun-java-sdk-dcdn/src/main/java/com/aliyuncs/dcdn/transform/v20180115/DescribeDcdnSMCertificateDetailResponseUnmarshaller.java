@@ -23,14 +23,14 @@ public class DescribeDcdnSMCertificateDetailResponseUnmarshaller {
 	public static DescribeDcdnSMCertificateDetailResponse unmarshall(DescribeDcdnSMCertificateDetailResponse describeDcdnSMCertificateDetailResponse, UnmarshallerContext _ctx) {
 		
 		describeDcdnSMCertificateDetailResponse.setRequestId(_ctx.stringValue("DescribeDcdnSMCertificateDetailResponse.RequestId"));
-		describeDcdnSMCertificateDetailResponse.setSignCertificate(_ctx.stringValue("DescribeDcdnSMCertificateDetailResponse.SignCertificate"));
-		describeDcdnSMCertificateDetailResponse.setEncryptCertificate(_ctx.stringValue("DescribeDcdnSMCertificateDetailResponse.EncryptCertificate"));
-		describeDcdnSMCertificateDetailResponse.setCertIdentifier(_ctx.stringValue("DescribeDcdnSMCertificateDetailResponse.CertIdentifier"));
-		describeDcdnSMCertificateDetailResponse.setCertName(_ctx.stringValue("DescribeDcdnSMCertificateDetailResponse.CertName"));
-		describeDcdnSMCertificateDetailResponse.setCommonName(_ctx.stringValue("DescribeDcdnSMCertificateDetailResponse.CommonName"));
-		describeDcdnSMCertificateDetailResponse.setSans(_ctx.stringValue("DescribeDcdnSMCertificateDetailResponse.Sans"));
-		describeDcdnSMCertificateDetailResponse.setCertOrg(_ctx.stringValue("DescribeDcdnSMCertificateDetailResponse.CertOrg"));
 		describeDcdnSMCertificateDetailResponse.setCertExpireTime(_ctx.stringValue("DescribeDcdnSMCertificateDetailResponse.CertExpireTime"));
+		describeDcdnSMCertificateDetailResponse.setCertIdentifier(_ctx.stringValue("DescribeDcdnSMCertificateDetailResponse.CertIdentifier"));
+		describeDcdnSMCertificateDetailResponse.setCommonName(_ctx.stringValue("DescribeDcdnSMCertificateDetailResponse.CommonName"));
+		describeDcdnSMCertificateDetailResponse.setCertName(_ctx.stringValue("DescribeDcdnSMCertificateDetailResponse.CertName"));
+		describeDcdnSMCertificateDetailResponse.setSans(_ctx.stringValue("DescribeDcdnSMCertificateDetailResponse.Sans"));
+		describeDcdnSMCertificateDetailResponse.setSignCertificate(_ctx.stringValue("DescribeDcdnSMCertificateDetailResponse.SignCertificate"));
+		describeDcdnSMCertificateDetailResponse.setCertOrg(_ctx.stringValue("DescribeDcdnSMCertificateDetailResponse.CertOrg"));
+		describeDcdnSMCertificateDetailResponse.setEncryptCertificate(_ctx.stringValue("DescribeDcdnSMCertificateDetailResponse.EncryptCertificate"));
 	 
 	 	return describeDcdnSMCertificateDetailResponse;
 	}

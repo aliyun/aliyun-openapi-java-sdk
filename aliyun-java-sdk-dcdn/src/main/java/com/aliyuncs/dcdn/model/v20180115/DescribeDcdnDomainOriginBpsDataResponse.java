@@ -25,17 +25,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDcdnDomainOriginBpsDataResponse extends AcsResponse {
 
+	private String endTime;
+
+	private String startTime;
+
 	private String requestId;
 
 	private String domainName;
 
-	private String startTime;
-
-	private String endTime;
-
 	private String dataInterval;
 
 	private List<DataModule> originBpsDataPerInterval;
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -51,22 +67,6 @@ public class DescribeDcdnDomainOriginBpsDataResponse extends AcsResponse {
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
 	}
 
 	public String getDataInterval() {
@@ -87,33 +87,17 @@ public class DescribeDcdnDomainOriginBpsDataResponse extends AcsResponse {
 
 	public static class DataModule {
 
-		private String timeStamp;
-
-		private Float originBps;
-
 		private Float dynamicHttpOriginBps;
-
-		private Float dynamicHttpsOriginBps;
 
 		private Float staticHttpOriginBps;
 
+		private String timeStamp;
+
 		private Float staticHttpsOriginBps;
 
-		public String getTimeStamp() {
-			return this.timeStamp;
-		}
+		private Float originBps;
 
-		public void setTimeStamp(String timeStamp) {
-			this.timeStamp = timeStamp;
-		}
-
-		public Float getOriginBps() {
-			return this.originBps;
-		}
-
-		public void setOriginBps(Float originBps) {
-			this.originBps = originBps;
-		}
+		private Float dynamicHttpsOriginBps;
 
 		public Float getDynamicHttpOriginBps() {
 			return this.dynamicHttpOriginBps;
@@ -121,14 +105,6 @@ public class DescribeDcdnDomainOriginBpsDataResponse extends AcsResponse {
 
 		public void setDynamicHttpOriginBps(Float dynamicHttpOriginBps) {
 			this.dynamicHttpOriginBps = dynamicHttpOriginBps;
-		}
-
-		public Float getDynamicHttpsOriginBps() {
-			return this.dynamicHttpsOriginBps;
-		}
-
-		public void setDynamicHttpsOriginBps(Float dynamicHttpsOriginBps) {
-			this.dynamicHttpsOriginBps = dynamicHttpsOriginBps;
 		}
 
 		public Float getStaticHttpOriginBps() {
@@ -139,12 +115,36 @@ public class DescribeDcdnDomainOriginBpsDataResponse extends AcsResponse {
 			this.staticHttpOriginBps = staticHttpOriginBps;
 		}
 
+		public String getTimeStamp() {
+			return this.timeStamp;
+		}
+
+		public void setTimeStamp(String timeStamp) {
+			this.timeStamp = timeStamp;
+		}
+
 		public Float getStaticHttpsOriginBps() {
 			return this.staticHttpsOriginBps;
 		}
 
 		public void setStaticHttpsOriginBps(Float staticHttpsOriginBps) {
 			this.staticHttpsOriginBps = staticHttpsOriginBps;
+		}
+
+		public Float getOriginBps() {
+			return this.originBps;
+		}
+
+		public void setOriginBps(Float originBps) {
+			this.originBps = originBps;
+		}
+
+		public Float getDynamicHttpsOriginBps() {
+			return this.dynamicHttpsOriginBps;
+		}
+
+		public void setDynamicHttpsOriginBps(Float dynamicHttpsOriginBps) {
+			this.dynamicHttpsOriginBps = dynamicHttpsOriginBps;
 		}
 	}
 

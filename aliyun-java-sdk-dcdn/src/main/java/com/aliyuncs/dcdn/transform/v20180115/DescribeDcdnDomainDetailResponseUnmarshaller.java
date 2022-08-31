@@ -31,26 +31,26 @@ public class DescribeDcdnDomainDetailResponseUnmarshaller {
 
 		DomainDetail domainDetail = new DomainDetail();
 		domainDetail.setGmtCreated(_ctx.stringValue("DescribeDcdnDomainDetailResponse.DomainDetail.GmtCreated"));
-		domainDetail.setGmtModified(_ctx.stringValue("DescribeDcdnDomainDetailResponse.DomainDetail.GmtModified"));
-		domainDetail.setDomainStatus(_ctx.stringValue("DescribeDcdnDomainDetailResponse.DomainDetail.DomainStatus"));
-		domainDetail.setCname(_ctx.stringValue("DescribeDcdnDomainDetailResponse.DomainDetail.Cname"));
-		domainDetail.setDomainName(_ctx.stringValue("DescribeDcdnDomainDetailResponse.DomainDetail.DomainName"));
+		domainDetail.setSSLPub(_ctx.stringValue("DescribeDcdnDomainDetailResponse.DomainDetail.SSLPub"));
 		domainDetail.setDescription(_ctx.stringValue("DescribeDcdnDomainDetailResponse.DomainDetail.Description"));
 		domainDetail.setSSLProtocol(_ctx.stringValue("DescribeDcdnDomainDetailResponse.DomainDetail.SSLProtocol"));
-		domainDetail.setSSLPub(_ctx.stringValue("DescribeDcdnDomainDetailResponse.DomainDetail.SSLPub"));
-		domainDetail.setScope(_ctx.stringValue("DescribeDcdnDomainDetailResponse.DomainDetail.Scope"));
-		domainDetail.setCertName(_ctx.stringValue("DescribeDcdnDomainDetailResponse.DomainDetail.CertName"));
 		domainDetail.setResourceGroupId(_ctx.stringValue("DescribeDcdnDomainDetailResponse.DomainDetail.ResourceGroupId"));
+		domainDetail.setCertName(_ctx.stringValue("DescribeDcdnDomainDetailResponse.DomainDetail.CertName"));
+		domainDetail.setScope(_ctx.stringValue("DescribeDcdnDomainDetailResponse.DomainDetail.Scope"));
+		domainDetail.setCname(_ctx.stringValue("DescribeDcdnDomainDetailResponse.DomainDetail.Cname"));
+		domainDetail.setDomainStatus(_ctx.stringValue("DescribeDcdnDomainDetailResponse.DomainDetail.DomainStatus"));
+		domainDetail.setGmtModified(_ctx.stringValue("DescribeDcdnDomainDetailResponse.DomainDetail.GmtModified"));
+		domainDetail.setDomainName(_ctx.stringValue("DescribeDcdnDomainDetailResponse.DomainDetail.DomainName"));
 
 		List<Source> sources = new ArrayList<Source>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDcdnDomainDetailResponse.DomainDetail.Sources.Length"); i++) {
 			Source source = new Source();
-			source.setContent(_ctx.stringValue("DescribeDcdnDomainDetailResponse.DomainDetail.Sources["+ i +"].Content"));
 			source.setType(_ctx.stringValue("DescribeDcdnDomainDetailResponse.DomainDetail.Sources["+ i +"].Type"));
-			source.setPort(_ctx.integerValue("DescribeDcdnDomainDetailResponse.DomainDetail.Sources["+ i +"].Port"));
+			source.setWeight(_ctx.stringValue("DescribeDcdnDomainDetailResponse.DomainDetail.Sources["+ i +"].Weight"));
 			source.setEnabled(_ctx.stringValue("DescribeDcdnDomainDetailResponse.DomainDetail.Sources["+ i +"].Enabled"));
 			source.setPriority(_ctx.stringValue("DescribeDcdnDomainDetailResponse.DomainDetail.Sources["+ i +"].Priority"));
-			source.setWeight(_ctx.stringValue("DescribeDcdnDomainDetailResponse.DomainDetail.Sources["+ i +"].Weight"));
+			source.setPort(_ctx.integerValue("DescribeDcdnDomainDetailResponse.DomainDetail.Sources["+ i +"].Port"));
+			source.setContent(_ctx.stringValue("DescribeDcdnDomainDetailResponse.DomainDetail.Sources["+ i +"].Content"));
 
 			sources.add(source);
 		}

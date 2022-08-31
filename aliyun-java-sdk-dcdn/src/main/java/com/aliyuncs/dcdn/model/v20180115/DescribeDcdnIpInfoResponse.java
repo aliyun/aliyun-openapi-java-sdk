@@ -26,15 +26,15 @@ public class DescribeDcdnIpInfoResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String dcdnIp;
-
-	private String iSP;
-
-	private String ispEname;
+	private String regionEname;
 
 	private String region;
 
-	private String regionEname;
+	private String ispEname;
+
+	private String dcdnIp;
+
+	private String iSP;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,6 +42,30 @@ public class DescribeDcdnIpInfoResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getRegionEname() {
+		return this.regionEname;
+	}
+
+	public void setRegionEname(String regionEname) {
+		this.regionEname = regionEname;
+	}
+
+	public String getRegion() {
+		return this.region;
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
+	}
+
+	public String getIspEname() {
+		return this.ispEname;
+	}
+
+	public void setIspEname(String ispEname) {
+		this.ispEname = ispEname;
 	}
 
 	public String getDcdnIp() {
@@ -58,30 +82,6 @@ public class DescribeDcdnIpInfoResponse extends AcsResponse {
 
 	public void setISP(String iSP) {
 		this.iSP = iSP;
-	}
-
-	public String getIspEname() {
-		return this.ispEname;
-	}
-
-	public void setIspEname(String ispEname) {
-		this.ispEname = ispEname;
-	}
-
-	public String getRegion() {
-		return this.region;
-	}
-
-	public void setRegion(String region) {
-		this.region = region;
-	}
-
-	public String getRegionEname() {
-		return this.regionEname;
-	}
-
-	public void setRegionEname(String regionEname) {
-		this.regionEname = regionEname;
 	}
 
 	@Override

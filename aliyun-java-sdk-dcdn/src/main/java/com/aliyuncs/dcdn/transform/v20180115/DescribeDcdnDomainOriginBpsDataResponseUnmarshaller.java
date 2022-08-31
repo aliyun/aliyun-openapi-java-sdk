@@ -27,20 +27,20 @@ public class DescribeDcdnDomainOriginBpsDataResponseUnmarshaller {
 	public static DescribeDcdnDomainOriginBpsDataResponse unmarshall(DescribeDcdnDomainOriginBpsDataResponse describeDcdnDomainOriginBpsDataResponse, UnmarshallerContext _ctx) {
 		
 		describeDcdnDomainOriginBpsDataResponse.setRequestId(_ctx.stringValue("DescribeDcdnDomainOriginBpsDataResponse.RequestId"));
-		describeDcdnDomainOriginBpsDataResponse.setDomainName(_ctx.stringValue("DescribeDcdnDomainOriginBpsDataResponse.DomainName"));
-		describeDcdnDomainOriginBpsDataResponse.setStartTime(_ctx.stringValue("DescribeDcdnDomainOriginBpsDataResponse.StartTime"));
 		describeDcdnDomainOriginBpsDataResponse.setEndTime(_ctx.stringValue("DescribeDcdnDomainOriginBpsDataResponse.EndTime"));
+		describeDcdnDomainOriginBpsDataResponse.setStartTime(_ctx.stringValue("DescribeDcdnDomainOriginBpsDataResponse.StartTime"));
+		describeDcdnDomainOriginBpsDataResponse.setDomainName(_ctx.stringValue("DescribeDcdnDomainOriginBpsDataResponse.DomainName"));
 		describeDcdnDomainOriginBpsDataResponse.setDataInterval(_ctx.stringValue("DescribeDcdnDomainOriginBpsDataResponse.DataInterval"));
 
 		List<DataModule> originBpsDataPerInterval = new ArrayList<DataModule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDcdnDomainOriginBpsDataResponse.OriginBpsDataPerInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
-			dataModule.setTimeStamp(_ctx.stringValue("DescribeDcdnDomainOriginBpsDataResponse.OriginBpsDataPerInterval["+ i +"].TimeStamp"));
-			dataModule.setOriginBps(_ctx.floatValue("DescribeDcdnDomainOriginBpsDataResponse.OriginBpsDataPerInterval["+ i +"].OriginBps"));
 			dataModule.setDynamicHttpOriginBps(_ctx.floatValue("DescribeDcdnDomainOriginBpsDataResponse.OriginBpsDataPerInterval["+ i +"].DynamicHttpOriginBps"));
-			dataModule.setDynamicHttpsOriginBps(_ctx.floatValue("DescribeDcdnDomainOriginBpsDataResponse.OriginBpsDataPerInterval["+ i +"].DynamicHttpsOriginBps"));
 			dataModule.setStaticHttpOriginBps(_ctx.floatValue("DescribeDcdnDomainOriginBpsDataResponse.OriginBpsDataPerInterval["+ i +"].StaticHttpOriginBps"));
+			dataModule.setTimeStamp(_ctx.stringValue("DescribeDcdnDomainOriginBpsDataResponse.OriginBpsDataPerInterval["+ i +"].TimeStamp"));
 			dataModule.setStaticHttpsOriginBps(_ctx.floatValue("DescribeDcdnDomainOriginBpsDataResponse.OriginBpsDataPerInterval["+ i +"].StaticHttpsOriginBps"));
+			dataModule.setOriginBps(_ctx.floatValue("DescribeDcdnDomainOriginBpsDataResponse.OriginBpsDataPerInterval["+ i +"].OriginBps"));
+			dataModule.setDynamicHttpsOriginBps(_ctx.floatValue("DescribeDcdnDomainOriginBpsDataResponse.OriginBpsDataPerInterval["+ i +"].DynamicHttpsOriginBps"));
 
 			originBpsDataPerInterval.add(dataModule);
 		}

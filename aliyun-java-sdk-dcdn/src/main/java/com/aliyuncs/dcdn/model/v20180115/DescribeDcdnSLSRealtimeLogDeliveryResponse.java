@@ -46,80 +46,42 @@ public class DescribeDcdnSLSRealtimeLogDeliveryResponse extends AcsResponse {
 
 	public static class Content {
 
-		private String projectName;
-
-		private String domainName;
-
-		private String fieldName;
-
-		private String samplingRate;
-
-		private String dataCenter;
-
-		private String sLSRegion;
-
-		private String sLSProject;
-
-		private String sLSLogStore;
-
-		private String businessType;
+		private String status;
 
 		private String type;
 
-		public String getProjectName() {
-			return this.projectName;
+		private String sLSLogStore;
+
+		private String dataCenter;
+
+		private String fieldName;
+
+		private String projectName;
+
+		private String samplingRate;
+
+		private String sLSProject;
+
+		private String domainName;
+
+		private String businessType;
+
+		private String sLSRegion;
+
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setProjectName(String projectName) {
-			this.projectName = projectName;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
-		public String getDomainName() {
-			return this.domainName;
+		public String getType() {
+			return this.type;
 		}
 
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
-		}
-
-		public String getFieldName() {
-			return this.fieldName;
-		}
-
-		public void setFieldName(String fieldName) {
-			this.fieldName = fieldName;
-		}
-
-		public String getSamplingRate() {
-			return this.samplingRate;
-		}
-
-		public void setSamplingRate(String samplingRate) {
-			this.samplingRate = samplingRate;
-		}
-
-		public String getDataCenter() {
-			return this.dataCenter;
-		}
-
-		public void setDataCenter(String dataCenter) {
-			this.dataCenter = dataCenter;
-		}
-
-		public String getSLSRegion() {
-			return this.sLSRegion;
-		}
-
-		public void setSLSRegion(String sLSRegion) {
-			this.sLSRegion = sLSRegion;
-		}
-
-		public String getSLSProject() {
-			return this.sLSProject;
-		}
-
-		public void setSLSProject(String sLSProject) {
-			this.sLSProject = sLSProject;
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public String getSLSLogStore() {
@@ -130,6 +92,54 @@ public class DescribeDcdnSLSRealtimeLogDeliveryResponse extends AcsResponse {
 			this.sLSLogStore = sLSLogStore;
 		}
 
+		public String getDataCenter() {
+			return this.dataCenter;
+		}
+
+		public void setDataCenter(String dataCenter) {
+			this.dataCenter = dataCenter;
+		}
+
+		public String getFieldName() {
+			return this.fieldName;
+		}
+
+		public void setFieldName(String fieldName) {
+			this.fieldName = fieldName;
+		}
+
+		public String getProjectName() {
+			return this.projectName;
+		}
+
+		public void setProjectName(String projectName) {
+			this.projectName = projectName;
+		}
+
+		public String getSamplingRate() {
+			return this.samplingRate;
+		}
+
+		public void setSamplingRate(String samplingRate) {
+			this.samplingRate = samplingRate;
+		}
+
+		public String getSLSProject() {
+			return this.sLSProject;
+		}
+
+		public void setSLSProject(String sLSProject) {
+			this.sLSProject = sLSProject;
+		}
+
+		public String getDomainName() {
+			return this.domainName;
+		}
+
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
+		}
+
 		public String getBusinessType() {
 			return this.businessType;
 		}
@@ -138,12 +148,12 @@ public class DescribeDcdnSLSRealtimeLogDeliveryResponse extends AcsResponse {
 			this.businessType = businessType;
 		}
 
-		public String getType() {
-			return this.type;
+		public String getSLSRegion() {
+			return this.sLSRegion;
 		}
 
-		public void setType(String type) {
-			this.type = type;
+		public void setSLSRegion(String sLSRegion) {
+			this.sLSRegion = sLSRegion;
 		}
 	}
 

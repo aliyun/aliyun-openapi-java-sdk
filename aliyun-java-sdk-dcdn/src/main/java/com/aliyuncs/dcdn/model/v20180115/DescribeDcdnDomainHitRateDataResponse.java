@@ -25,17 +25,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDcdnDomainHitRateDataResponse extends AcsResponse {
 
+	private String endTime;
+
+	private String startTime;
+
 	private String requestId;
 
 	private String domainName;
 
-	private String startTime;
-
-	private String endTime;
-
 	private String dataInterval;
 
 	private List<DataModule> hitRatePerInterval;
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -51,22 +67,6 @@ public class DescribeDcdnDomainHitRateDataResponse extends AcsResponse {
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
 	}
 
 	public String getDataInterval() {
@@ -89,9 +89,9 @@ public class DescribeDcdnDomainHitRateDataResponse extends AcsResponse {
 
 		private String timeStamp;
 
-		private Float reqHitRate;
-
 		private Float byteHitRate;
+
+		private Float reqHitRate;
 
 		public String getTimeStamp() {
 			return this.timeStamp;
@@ -101,20 +101,20 @@ public class DescribeDcdnDomainHitRateDataResponse extends AcsResponse {
 			this.timeStamp = timeStamp;
 		}
 
-		public Float getReqHitRate() {
-			return this.reqHitRate;
-		}
-
-		public void setReqHitRate(Float reqHitRate) {
-			this.reqHitRate = reqHitRate;
-		}
-
 		public Float getByteHitRate() {
 			return this.byteHitRate;
 		}
 
 		public void setByteHitRate(Float byteHitRate) {
 			this.byteHitRate = byteHitRate;
+		}
+
+		public Float getReqHitRate() {
+			return this.reqHitRate;
+		}
+
+		public void setReqHitRate(Float reqHitRate) {
+			this.reqHitRate = reqHitRate;
 		}
 	}
 

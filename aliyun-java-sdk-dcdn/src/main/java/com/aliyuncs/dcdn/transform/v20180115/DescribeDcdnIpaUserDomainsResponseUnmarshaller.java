@@ -35,24 +35,25 @@ public class DescribeDcdnIpaUserDomainsResponseUnmarshaller {
 		List<PageData> domains = new ArrayList<PageData>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDcdnIpaUserDomainsResponse.Domains.Length"); i++) {
 			PageData pageData = new PageData();
-			pageData.setDomainName(_ctx.stringValue("DescribeDcdnIpaUserDomainsResponse.Domains["+ i +"].DomainName"));
-			pageData.setCname(_ctx.stringValue("DescribeDcdnIpaUserDomainsResponse.Domains["+ i +"].Cname"));
-			pageData.setDomainStatus(_ctx.stringValue("DescribeDcdnIpaUserDomainsResponse.Domains["+ i +"].DomainStatus"));
 			pageData.setGmtCreated(_ctx.stringValue("DescribeDcdnIpaUserDomainsResponse.Domains["+ i +"].GmtCreated"));
-			pageData.setGmtModified(_ctx.stringValue("DescribeDcdnIpaUserDomainsResponse.Domains["+ i +"].GmtModified"));
 			pageData.setDescription(_ctx.stringValue("DescribeDcdnIpaUserDomainsResponse.Domains["+ i +"].Description"));
 			pageData.setSSLProtocol(_ctx.stringValue("DescribeDcdnIpaUserDomainsResponse.Domains["+ i +"].SSLProtocol"));
 			pageData.setResourceGroupId(_ctx.stringValue("DescribeDcdnIpaUserDomainsResponse.Domains["+ i +"].ResourceGroupId"));
 			pageData.setSandbox(_ctx.stringValue("DescribeDcdnIpaUserDomainsResponse.Domains["+ i +"].Sandbox"));
+			pageData.setTenantID(_ctx.stringValue("DescribeDcdnIpaUserDomainsResponse.Domains["+ i +"].TenantID"));
+			pageData.setDomainStatus(_ctx.stringValue("DescribeDcdnIpaUserDomainsResponse.Domains["+ i +"].DomainStatus"));
+			pageData.setCname(_ctx.stringValue("DescribeDcdnIpaUserDomainsResponse.Domains["+ i +"].Cname"));
+			pageData.setGmtModified(_ctx.stringValue("DescribeDcdnIpaUserDomainsResponse.Domains["+ i +"].GmtModified"));
+			pageData.setDomainName(_ctx.stringValue("DescribeDcdnIpaUserDomainsResponse.Domains["+ i +"].DomainName"));
 
 			List<Source> sources = new ArrayList<Source>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDcdnIpaUserDomainsResponse.Domains["+ i +"].Sources.Length"); j++) {
 				Source source = new Source();
 				source.setType(_ctx.stringValue("DescribeDcdnIpaUserDomainsResponse.Domains["+ i +"].Sources["+ j +"].Type"));
-				source.setContent(_ctx.stringValue("DescribeDcdnIpaUserDomainsResponse.Domains["+ i +"].Sources["+ j +"].Content"));
-				source.setPort(_ctx.integerValue("DescribeDcdnIpaUserDomainsResponse.Domains["+ i +"].Sources["+ j +"].Port"));
-				source.setPriority(_ctx.stringValue("DescribeDcdnIpaUserDomainsResponse.Domains["+ i +"].Sources["+ j +"].Priority"));
 				source.setWeight(_ctx.stringValue("DescribeDcdnIpaUserDomainsResponse.Domains["+ i +"].Sources["+ j +"].Weight"));
+				source.setPriority(_ctx.stringValue("DescribeDcdnIpaUserDomainsResponse.Domains["+ i +"].Sources["+ j +"].Priority"));
+				source.setPort(_ctx.integerValue("DescribeDcdnIpaUserDomainsResponse.Domains["+ i +"].Sources["+ j +"].Port"));
+				source.setContent(_ctx.stringValue("DescribeDcdnIpaUserDomainsResponse.Domains["+ i +"].Sources["+ j +"].Content"));
 
 				sources.add(source);
 			}

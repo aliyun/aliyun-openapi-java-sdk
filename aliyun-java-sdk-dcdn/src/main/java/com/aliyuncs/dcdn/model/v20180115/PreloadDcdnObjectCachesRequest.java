@@ -25,13 +25,15 @@ import com.aliyuncs.dcdn.Endpoint;
 public class PreloadDcdnObjectCachesRequest extends RpcAcsRequest<PreloadDcdnObjectCachesResponse> {
 	   
 
-	private String area;
-
 	private String objectPath;
 
-	private Long ownerId;
-
 	private String securityToken;
+
+	private Boolean l2Preload;
+
+	private String area;
+
+	private Long ownerId;
 	public PreloadDcdnObjectCachesRequest() {
 		super("dcdn", "2018-01-15", "PreloadDcdnObjectCaches");
 		setMethod(MethodType.POST);
@@ -39,17 +41,6 @@ public class PreloadDcdnObjectCachesRequest extends RpcAcsRequest<PreloadDcdnObj
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getArea() {
-		return this.area;
-	}
-
-	public void setArea(String area) {
-		this.area = area;
-		if(area != null){
-			putQueryParameter("Area", area);
-		}
 	}
 
 	public String getObjectPath() {
@@ -63,17 +54,6 @@ public class PreloadDcdnObjectCachesRequest extends RpcAcsRequest<PreloadDcdnObj
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
@@ -82,6 +62,39 @@ public class PreloadDcdnObjectCachesRequest extends RpcAcsRequest<PreloadDcdnObj
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public Boolean getL2Preload() {
+		return this.l2Preload;
+	}
+
+	public void setL2Preload(Boolean l2Preload) {
+		this.l2Preload = l2Preload;
+		if(l2Preload != null){
+			putQueryParameter("L2Preload", l2Preload.toString());
+		}
+	}
+
+	public String getArea() {
+		return this.area;
+	}
+
+	public void setArea(String area) {
+		this.area = area;
+		if(area != null){
+			putQueryParameter("Area", area);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

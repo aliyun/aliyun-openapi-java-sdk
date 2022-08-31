@@ -35,24 +35,25 @@ public class DescribeDcdnUserDomainsResponseUnmarshaller {
 		List<PageData> domains = new ArrayList<PageData>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDcdnUserDomainsResponse.Domains.Length"); i++) {
 			PageData pageData = new PageData();
-			pageData.setDomainName(_ctx.stringValue("DescribeDcdnUserDomainsResponse.Domains["+ i +"].DomainName"));
-			pageData.setCname(_ctx.stringValue("DescribeDcdnUserDomainsResponse.Domains["+ i +"].Cname"));
-			pageData.setDomainStatus(_ctx.stringValue("DescribeDcdnUserDomainsResponse.Domains["+ i +"].DomainStatus"));
 			pageData.setGmtCreated(_ctx.stringValue("DescribeDcdnUserDomainsResponse.Domains["+ i +"].GmtCreated"));
-			pageData.setGmtModified(_ctx.stringValue("DescribeDcdnUserDomainsResponse.Domains["+ i +"].GmtModified"));
 			pageData.setDescription(_ctx.stringValue("DescribeDcdnUserDomainsResponse.Domains["+ i +"].Description"));
 			pageData.setSSLProtocol(_ctx.stringValue("DescribeDcdnUserDomainsResponse.Domains["+ i +"].SSLProtocol"));
 			pageData.setResourceGroupId(_ctx.stringValue("DescribeDcdnUserDomainsResponse.Domains["+ i +"].ResourceGroupId"));
 			pageData.setSandbox(_ctx.stringValue("DescribeDcdnUserDomainsResponse.Domains["+ i +"].Sandbox"));
+			pageData.setDomainStatus(_ctx.stringValue("DescribeDcdnUserDomainsResponse.Domains["+ i +"].DomainStatus"));
+			pageData.setCname(_ctx.stringValue("DescribeDcdnUserDomainsResponse.Domains["+ i +"].Cname"));
+			pageData.setGmtModified(_ctx.stringValue("DescribeDcdnUserDomainsResponse.Domains["+ i +"].GmtModified"));
+			pageData.setDomainName(_ctx.stringValue("DescribeDcdnUserDomainsResponse.Domains["+ i +"].DomainName"));
+			pageData.setDomainId(_ctx.longValue("DescribeDcdnUserDomainsResponse.Domains["+ i +"].DomainId"));
 
 			List<Source> sources = new ArrayList<Source>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDcdnUserDomainsResponse.Domains["+ i +"].Sources.Length"); j++) {
 				Source source = new Source();
 				source.setType(_ctx.stringValue("DescribeDcdnUserDomainsResponse.Domains["+ i +"].Sources["+ j +"].Type"));
-				source.setContent(_ctx.stringValue("DescribeDcdnUserDomainsResponse.Domains["+ i +"].Sources["+ j +"].Content"));
-				source.setPort(_ctx.integerValue("DescribeDcdnUserDomainsResponse.Domains["+ i +"].Sources["+ j +"].Port"));
-				source.setPriority(_ctx.stringValue("DescribeDcdnUserDomainsResponse.Domains["+ i +"].Sources["+ j +"].Priority"));
 				source.setWeight(_ctx.stringValue("DescribeDcdnUserDomainsResponse.Domains["+ i +"].Sources["+ j +"].Weight"));
+				source.setPriority(_ctx.stringValue("DescribeDcdnUserDomainsResponse.Domains["+ i +"].Sources["+ j +"].Priority"));
+				source.setPort(_ctx.integerValue("DescribeDcdnUserDomainsResponse.Domains["+ i +"].Sources["+ j +"].Port"));
+				source.setContent(_ctx.stringValue("DescribeDcdnUserDomainsResponse.Domains["+ i +"].Sources["+ j +"].Content"));
 
 				sources.add(source);
 			}

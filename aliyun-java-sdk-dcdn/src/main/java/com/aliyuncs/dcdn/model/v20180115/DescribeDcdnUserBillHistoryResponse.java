@@ -89,30 +89,22 @@ public class DescribeDcdnUserBillHistoryResponse extends AcsResponse {
 
 		public static class BillingDataItem {
 
-			private String chargeType;
-
-			private String cdnRegion;
+			private Float flow;
 
 			private Float bandwidth;
 
-			private Float flow;
-
 			private Float count;
 
-			public String getChargeType() {
-				return this.chargeType;
+			private String cdnRegion;
+
+			private String chargeType;
+
+			public Float getFlow() {
+				return this.flow;
 			}
 
-			public void setChargeType(String chargeType) {
-				this.chargeType = chargeType;
-			}
-
-			public String getCdnRegion() {
-				return this.cdnRegion;
-			}
-
-			public void setCdnRegion(String cdnRegion) {
-				this.cdnRegion = cdnRegion;
+			public void setFlow(Float flow) {
+				this.flow = flow;
 			}
 
 			public Float getBandwidth() {
@@ -123,20 +115,28 @@ public class DescribeDcdnUserBillHistoryResponse extends AcsResponse {
 				this.bandwidth = bandwidth;
 			}
 
-			public Float getFlow() {
-				return this.flow;
-			}
-
-			public void setFlow(Float flow) {
-				this.flow = flow;
-			}
-
 			public Float getCount() {
 				return this.count;
 			}
 
 			public void setCount(Float count) {
 				this.count = count;
+			}
+
+			public String getCdnRegion() {
+				return this.cdnRegion;
+			}
+
+			public void setCdnRegion(String cdnRegion) {
+				this.cdnRegion = cdnRegion;
+			}
+
+			public String getChargeType() {
+				return this.chargeType;
+			}
+
+			public void setChargeType(String chargeType) {
+				this.chargeType = chargeType;
 			}
 		}
 	}

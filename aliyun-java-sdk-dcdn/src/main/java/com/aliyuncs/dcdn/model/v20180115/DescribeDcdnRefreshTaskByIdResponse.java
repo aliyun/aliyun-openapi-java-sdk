@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDcdnRefreshTaskByIdResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Long totalCount;
 
+	private String requestId;
+
 	private List<CDNTask> tasks;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Long getTotalCount() {
 		return this.totalCount;
@@ -45,6 +37,14 @@ public class DescribeDcdnRefreshTaskByIdResponse extends AcsResponse {
 
 	public void setTotalCount(Long totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<CDNTask> getTasks() {
@@ -57,43 +57,19 @@ public class DescribeDcdnRefreshTaskByIdResponse extends AcsResponse {
 
 	public static class CDNTask {
 
-		private String taskId;
-
-		private String objectPath;
-
-		private String process;
-
 		private String status;
 
 		private String creationTime;
 
-		private String description;
-
 		private String objectType;
 
-		public String getTaskId() {
-			return this.taskId;
-		}
+		private String process;
 
-		public void setTaskId(String taskId) {
-			this.taskId = taskId;
-		}
+		private String description;
 
-		public String getObjectPath() {
-			return this.objectPath;
-		}
+		private String objectPath;
 
-		public void setObjectPath(String objectPath) {
-			this.objectPath = objectPath;
-		}
-
-		public String getProcess() {
-			return this.process;
-		}
-
-		public void setProcess(String process) {
-			this.process = process;
-		}
+		private String taskId;
 
 		public String getStatus() {
 			return this.status;
@@ -111,6 +87,22 @@ public class DescribeDcdnRefreshTaskByIdResponse extends AcsResponse {
 			this.creationTime = creationTime;
 		}
 
+		public String getObjectType() {
+			return this.objectType;
+		}
+
+		public void setObjectType(String objectType) {
+			this.objectType = objectType;
+		}
+
+		public String getProcess() {
+			return this.process;
+		}
+
+		public void setProcess(String process) {
+			this.process = process;
+		}
+
 		public String getDescription() {
 			return this.description;
 		}
@@ -119,12 +111,20 @@ public class DescribeDcdnRefreshTaskByIdResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getObjectType() {
-			return this.objectType;
+		public String getObjectPath() {
+			return this.objectPath;
 		}
 
-		public void setObjectType(String objectType) {
-			this.objectType = objectType;
+		public void setObjectPath(String objectPath) {
+			this.objectPath = objectPath;
+		}
+
+		public String getTaskId() {
+			return this.taskId;
+		}
+
+		public void setTaskId(String taskId) {
+			this.taskId = taskId;
 		}
 	}
 

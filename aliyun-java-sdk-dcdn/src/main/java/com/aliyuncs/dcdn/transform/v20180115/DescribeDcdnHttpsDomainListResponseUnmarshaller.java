@@ -32,14 +32,14 @@ public class DescribeDcdnHttpsDomainListResponseUnmarshaller {
 		List<CertInfo> certInfos = new ArrayList<CertInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDcdnHttpsDomainListResponse.CertInfos.Length"); i++) {
 			CertInfo certInfo = new CertInfo();
-			certInfo.setCertCommonName(_ctx.stringValue("DescribeDcdnHttpsDomainListResponse.CertInfos["+ i +"].CertCommonName"));
-			certInfo.setCertName(_ctx.stringValue("DescribeDcdnHttpsDomainListResponse.CertInfos["+ i +"].CertName"));
 			certInfo.setCertStartTime(_ctx.stringValue("DescribeDcdnHttpsDomainListResponse.CertInfos["+ i +"].CertStartTime"));
 			certInfo.setCertExpireTime(_ctx.stringValue("DescribeDcdnHttpsDomainListResponse.CertInfos["+ i +"].CertExpireTime"));
-			certInfo.setCertStatus(_ctx.stringValue("DescribeDcdnHttpsDomainListResponse.CertInfos["+ i +"].CertStatus"));
-			certInfo.setCertType(_ctx.stringValue("DescribeDcdnHttpsDomainListResponse.CertInfos["+ i +"].CertType"));
-			certInfo.setDomainName(_ctx.stringValue("DescribeDcdnHttpsDomainListResponse.CertInfos["+ i +"].DomainName"));
 			certInfo.setCertUpdateTime(_ctx.stringValue("DescribeDcdnHttpsDomainListResponse.CertInfos["+ i +"].CertUpdateTime"));
+			certInfo.setCertType(_ctx.stringValue("DescribeDcdnHttpsDomainListResponse.CertInfos["+ i +"].CertType"));
+			certInfo.setCertName(_ctx.stringValue("DescribeDcdnHttpsDomainListResponse.CertInfos["+ i +"].CertName"));
+			certInfo.setCertStatus(_ctx.stringValue("DescribeDcdnHttpsDomainListResponse.CertInfos["+ i +"].CertStatus"));
+			certInfo.setDomainName(_ctx.stringValue("DescribeDcdnHttpsDomainListResponse.CertInfos["+ i +"].DomainName"));
+			certInfo.setCertCommonName(_ctx.stringValue("DescribeDcdnHttpsDomainListResponse.CertInfos["+ i +"].CertCommonName"));
 
 			certInfos.add(certInfo);
 		}

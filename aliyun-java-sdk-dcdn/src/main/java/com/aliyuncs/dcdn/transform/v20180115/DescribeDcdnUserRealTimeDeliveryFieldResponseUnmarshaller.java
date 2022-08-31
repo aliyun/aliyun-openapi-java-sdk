@@ -31,9 +31,9 @@ public class DescribeDcdnUserRealTimeDeliveryFieldResponseUnmarshaller {
 		List<Fields> content = new ArrayList<Fields>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDcdnUserRealTimeDeliveryFieldResponse.Content.Length"); i++) {
 			Fields fields = new Fields();
-			fields.setFieldName(_ctx.stringValue("DescribeDcdnUserRealTimeDeliveryFieldResponse.Content["+ i +"].FieldName"));
 			fields.setDescription(_ctx.stringValue("DescribeDcdnUserRealTimeDeliveryFieldResponse.Content["+ i +"].Description"));
 			fields.setSelected(_ctx.booleanValue("DescribeDcdnUserRealTimeDeliveryFieldResponse.Content["+ i +"].Selected"));
+			fields.setFieldName(_ctx.stringValue("DescribeDcdnUserRealTimeDeliveryFieldResponse.Content["+ i +"].FieldName"));
 
 			content.add(fields);
 		}

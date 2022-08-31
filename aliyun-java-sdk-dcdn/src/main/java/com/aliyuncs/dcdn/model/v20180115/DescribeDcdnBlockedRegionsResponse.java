@@ -49,9 +49,9 @@ public class DescribeDcdnBlockedRegionsResponse extends AcsResponse {
 
 		private String countriesAndRegions;
 
-		private String countriesAndRegionsName;
-
 		private String continent;
+
+		private String countriesAndRegionsName;
 
 		public String getCountriesAndRegions() {
 			return this.countriesAndRegions;
@@ -61,20 +61,20 @@ public class DescribeDcdnBlockedRegionsResponse extends AcsResponse {
 			this.countriesAndRegions = countriesAndRegions;
 		}
 
-		public String getCountriesAndRegionsName() {
-			return this.countriesAndRegionsName;
-		}
-
-		public void setCountriesAndRegionsName(String countriesAndRegionsName) {
-			this.countriesAndRegionsName = countriesAndRegionsName;
-		}
-
 		public String getContinent() {
 			return this.continent;
 		}
 
 		public void setContinent(String continent) {
 			this.continent = continent;
+		}
+
+		public String getCountriesAndRegionsName() {
+			return this.countriesAndRegionsName;
+		}
+
+		public void setCountriesAndRegionsName(String countriesAndRegionsName) {
+			this.countriesAndRegionsName = countriesAndRegionsName;
 		}
 	}
 

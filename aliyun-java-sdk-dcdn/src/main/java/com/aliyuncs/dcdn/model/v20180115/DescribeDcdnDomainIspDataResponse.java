@@ -25,17 +25,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDcdnDomainIspDataResponse extends AcsResponse {
 
+	private String endTime;
+
+	private String startTime;
+
 	private String requestId;
 
 	private String domainName;
 
 	private String dataInterval;
 
-	private String startTime;
-
-	private String endTime;
-
 	private List<IspProportionData> value;
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -61,22 +77,6 @@ public class DescribeDcdnDomainIspDataResponse extends AcsResponse {
 		this.dataInterval = dataInterval;
 	}
 
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-	}
-
 	public List<IspProportionData> getValue() {
 		return this.value;
 	}
@@ -87,75 +87,27 @@ public class DescribeDcdnDomainIspDataResponse extends AcsResponse {
 
 	public static class IspProportionData {
 
-		private String isp;
-
-		private String proportion;
-
-		private String ispEname;
-
-		private String avgObjectSize;
-
-		private String avgResponseTime;
-
-		private String bps;
-
 		private String qps;
-
-		private String avgResponseRate;
-
-		private String totalBytes;
-
-		private String bytesProportion;
 
 		private String totalQuery;
 
-		public String getIsp() {
-			return this.isp;
-		}
+		private String totalBytes;
 
-		public void setIsp(String isp) {
-			this.isp = isp;
-		}
+		private String avgResponseRate;
 
-		public String getProportion() {
-			return this.proportion;
-		}
+		private String avgResponseTime;
 
-		public void setProportion(String proportion) {
-			this.proportion = proportion;
-		}
+		private String proportion;
 
-		public String getIspEname() {
-			return this.ispEname;
-		}
+		private String avgObjectSize;
 
-		public void setIspEname(String ispEname) {
-			this.ispEname = ispEname;
-		}
+		private String ispEname;
 
-		public String getAvgObjectSize() {
-			return this.avgObjectSize;
-		}
+		private String bps;
 
-		public void setAvgObjectSize(String avgObjectSize) {
-			this.avgObjectSize = avgObjectSize;
-		}
+		private String isp;
 
-		public String getAvgResponseTime() {
-			return this.avgResponseTime;
-		}
-
-		public void setAvgResponseTime(String avgResponseTime) {
-			this.avgResponseTime = avgResponseTime;
-		}
-
-		public String getBps() {
-			return this.bps;
-		}
-
-		public void setBps(String bps) {
-			this.bps = bps;
-		}
+		private String bytesProportion;
 
 		public String getQps() {
 			return this.qps;
@@ -165,12 +117,12 @@ public class DescribeDcdnDomainIspDataResponse extends AcsResponse {
 			this.qps = qps;
 		}
 
-		public String getAvgResponseRate() {
-			return this.avgResponseRate;
+		public String getTotalQuery() {
+			return this.totalQuery;
 		}
 
-		public void setAvgResponseRate(String avgResponseRate) {
-			this.avgResponseRate = avgResponseRate;
+		public void setTotalQuery(String totalQuery) {
+			this.totalQuery = totalQuery;
 		}
 
 		public String getTotalBytes() {
@@ -181,20 +133,68 @@ public class DescribeDcdnDomainIspDataResponse extends AcsResponse {
 			this.totalBytes = totalBytes;
 		}
 
+		public String getAvgResponseRate() {
+			return this.avgResponseRate;
+		}
+
+		public void setAvgResponseRate(String avgResponseRate) {
+			this.avgResponseRate = avgResponseRate;
+		}
+
+		public String getAvgResponseTime() {
+			return this.avgResponseTime;
+		}
+
+		public void setAvgResponseTime(String avgResponseTime) {
+			this.avgResponseTime = avgResponseTime;
+		}
+
+		public String getProportion() {
+			return this.proportion;
+		}
+
+		public void setProportion(String proportion) {
+			this.proportion = proportion;
+		}
+
+		public String getAvgObjectSize() {
+			return this.avgObjectSize;
+		}
+
+		public void setAvgObjectSize(String avgObjectSize) {
+			this.avgObjectSize = avgObjectSize;
+		}
+
+		public String getIspEname() {
+			return this.ispEname;
+		}
+
+		public void setIspEname(String ispEname) {
+			this.ispEname = ispEname;
+		}
+
+		public String getBps() {
+			return this.bps;
+		}
+
+		public void setBps(String bps) {
+			this.bps = bps;
+		}
+
+		public String getIsp() {
+			return this.isp;
+		}
+
+		public void setIsp(String isp) {
+			this.isp = isp;
+		}
+
 		public String getBytesProportion() {
 			return this.bytesProportion;
 		}
 
 		public void setBytesProportion(String bytesProportion) {
 			this.bytesProportion = bytesProportion;
-		}
-
-		public String getTotalQuery() {
-			return this.totalQuery;
-		}
-
-		public void setTotalQuery(String totalQuery) {
-			this.totalQuery = totalQuery;
 		}
 	}
 

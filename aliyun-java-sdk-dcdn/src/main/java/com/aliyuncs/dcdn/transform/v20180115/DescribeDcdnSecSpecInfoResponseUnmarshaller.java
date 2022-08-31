@@ -39,8 +39,8 @@ public class DescribeDcdnSecSpecInfoResponseUnmarshaller {
 			for (int j = 0; j < _ctx.lengthValue("DescribeDcdnSecSpecInfoResponse.SpecInfos["+ i +"].RuleConfigs.Length"); j++) {
 				ConfigItem configItem = new ConfigItem();
 				configItem.setCode(_ctx.stringValue("DescribeDcdnSecSpecInfoResponse.SpecInfos["+ i +"].RuleConfigs["+ j +"].Code"));
-				configItem.setExpr(_ctx.stringValue("DescribeDcdnSecSpecInfoResponse.SpecInfos["+ i +"].RuleConfigs["+ j +"].Expr"));
 				configItem.setValue(_ctx.stringValue("DescribeDcdnSecSpecInfoResponse.SpecInfos["+ i +"].RuleConfigs["+ j +"].Value"));
+				configItem.setExpr(_ctx.stringValue("DescribeDcdnSecSpecInfoResponse.SpecInfos["+ i +"].RuleConfigs["+ j +"].Expr"));
 
 				ruleConfigs.add(configItem);
 			}

@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDcdnDomainCcActivityLogResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Long pageIndex;
+
+	private String requestId;
 
 	private Long pageSize;
 
@@ -35,20 +35,20 @@ public class DescribeDcdnDomainCcActivityLogResponse extends AcsResponse {
 
 	private List<LogInfo> activityLog;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Long getPageIndex() {
 		return this.pageIndex;
 	}
 
 	public void setPageIndex(Long pageIndex) {
 		this.pageIndex = pageIndex;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Long getPageSize() {
@@ -77,27 +77,19 @@ public class DescribeDcdnDomainCcActivityLogResponse extends AcsResponse {
 
 	public static class LogInfo {
 
-		private String timeStamp;
-
 		private String value;
-
-		private String triggerObject;
-
-		private String domainName;
 
 		private Long ttl;
 
 		private String action;
 
+		private String triggerObject;
+
+		private String timeStamp;
+
+		private String domainName;
+
 		private String ruleName;
-
-		public String getTimeStamp() {
-			return this.timeStamp;
-		}
-
-		public void setTimeStamp(String timeStamp) {
-			this.timeStamp = timeStamp;
-		}
 
 		public String getValue() {
 			return this.value;
@@ -105,22 +97,6 @@ public class DescribeDcdnDomainCcActivityLogResponse extends AcsResponse {
 
 		public void setValue(String value) {
 			this.value = value;
-		}
-
-		public String getTriggerObject() {
-			return this.triggerObject;
-		}
-
-		public void setTriggerObject(String triggerObject) {
-			this.triggerObject = triggerObject;
-		}
-
-		public String getDomainName() {
-			return this.domainName;
-		}
-
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
 		}
 
 		public Long getTtl() {
@@ -137,6 +113,30 @@ public class DescribeDcdnDomainCcActivityLogResponse extends AcsResponse {
 
 		public void setAction(String action) {
 			this.action = action;
+		}
+
+		public String getTriggerObject() {
+			return this.triggerObject;
+		}
+
+		public void setTriggerObject(String triggerObject) {
+			this.triggerObject = triggerObject;
+		}
+
+		public String getTimeStamp() {
+			return this.timeStamp;
+		}
+
+		public void setTimeStamp(String timeStamp) {
+			this.timeStamp = timeStamp;
+		}
+
+		public String getDomainName() {
+			return this.domainName;
+		}
+
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
 		}
 
 		public String getRuleName() {

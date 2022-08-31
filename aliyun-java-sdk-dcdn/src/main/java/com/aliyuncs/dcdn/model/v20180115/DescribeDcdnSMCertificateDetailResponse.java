@@ -24,46 +24,30 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDcdnSMCertificateDetailResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String signCertificate;
-
-	private String encryptCertificate;
+	private String certExpireTime;
 
 	private String certIdentifier;
 
-	private String certName;
+	private String requestId;
 
 	private String commonName;
 
+	private String certName;
+
 	private String sans;
+
+	private String signCertificate;
 
 	private String certOrg;
 
-	private String certExpireTime;
+	private String encryptCertificate;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCertExpireTime() {
+		return this.certExpireTime;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getSignCertificate() {
-		return this.signCertificate;
-	}
-
-	public void setSignCertificate(String signCertificate) {
-		this.signCertificate = signCertificate;
-	}
-
-	public String getEncryptCertificate() {
-		return this.encryptCertificate;
-	}
-
-	public void setEncryptCertificate(String encryptCertificate) {
-		this.encryptCertificate = encryptCertificate;
+	public void setCertExpireTime(String certExpireTime) {
+		this.certExpireTime = certExpireTime;
 	}
 
 	public String getCertIdentifier() {
@@ -74,12 +58,12 @@ public class DescribeDcdnSMCertificateDetailResponse extends AcsResponse {
 		this.certIdentifier = certIdentifier;
 	}
 
-	public String getCertName() {
-		return this.certName;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCertName(String certName) {
-		this.certName = certName;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCommonName() {
@@ -90,12 +74,28 @@ public class DescribeDcdnSMCertificateDetailResponse extends AcsResponse {
 		this.commonName = commonName;
 	}
 
+	public String getCertName() {
+		return this.certName;
+	}
+
+	public void setCertName(String certName) {
+		this.certName = certName;
+	}
+
 	public String getSans() {
 		return this.sans;
 	}
 
 	public void setSans(String sans) {
 		this.sans = sans;
+	}
+
+	public String getSignCertificate() {
+		return this.signCertificate;
+	}
+
+	public void setSignCertificate(String signCertificate) {
+		this.signCertificate = signCertificate;
 	}
 
 	public String getCertOrg() {
@@ -106,12 +106,12 @@ public class DescribeDcdnSMCertificateDetailResponse extends AcsResponse {
 		this.certOrg = certOrg;
 	}
 
-	public String getCertExpireTime() {
-		return this.certExpireTime;
+	public String getEncryptCertificate() {
+		return this.encryptCertificate;
 	}
 
-	public void setCertExpireTime(String certExpireTime) {
-		this.certExpireTime = certExpireTime;
+	public void setEncryptCertificate(String encryptCertificate) {
+		this.encryptCertificate = encryptCertificate;
 	}
 
 	@Override

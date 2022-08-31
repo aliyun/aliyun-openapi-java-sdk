@@ -47,17 +47,25 @@ public class DescribeDcdnUserBillTypeResponse extends AcsResponse {
 
 	public static class BillTypeDataItem {
 
+		private String endTime;
+
 		private String startTime;
 
-		private String endTime;
+		private String billingCycle;
 
 		private String product;
 
-		private String dimension;
-
 		private String billType;
 
-		private String billingCycle;
+		private String dimension;
+
+		public String getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
+		}
 
 		public String getStartTime() {
 			return this.startTime;
@@ -67,12 +75,12 @@ public class DescribeDcdnUserBillTypeResponse extends AcsResponse {
 			this.startTime = startTime;
 		}
 
-		public String getEndTime() {
-			return this.endTime;
+		public String getBillingCycle() {
+			return this.billingCycle;
 		}
 
-		public void setEndTime(String endTime) {
-			this.endTime = endTime;
+		public void setBillingCycle(String billingCycle) {
+			this.billingCycle = billingCycle;
 		}
 
 		public String getProduct() {
@@ -83,14 +91,6 @@ public class DescribeDcdnUserBillTypeResponse extends AcsResponse {
 			this.product = product;
 		}
 
-		public String getDimension() {
-			return this.dimension;
-		}
-
-		public void setDimension(String dimension) {
-			this.dimension = dimension;
-		}
-
 		public String getBillType() {
 			return this.billType;
 		}
@@ -99,12 +99,12 @@ public class DescribeDcdnUserBillTypeResponse extends AcsResponse {
 			this.billType = billType;
 		}
 
-		public String getBillingCycle() {
-			return this.billingCycle;
+		public String getDimension() {
+			return this.dimension;
 		}
 
-		public void setBillingCycle(String billingCycle) {
-			this.billingCycle = billingCycle;
+		public void setDimension(String dimension) {
+			this.dimension = dimension;
 		}
 	}
 

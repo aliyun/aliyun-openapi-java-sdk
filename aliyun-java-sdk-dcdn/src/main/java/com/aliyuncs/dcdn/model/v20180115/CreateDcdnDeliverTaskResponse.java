@@ -24,7 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateDcdnDeliverTaskResponse extends AcsResponse {
 
+	private String deliverId;
+
 	private String requestId;
+
+	public String getDeliverId() {
+		return this.deliverId;
+	}
+
+	public void setDeliverId(String deliverId) {
+		this.deliverId = deliverId;
+	}
 
 	public String getRequestId() {
 		return this.requestId;

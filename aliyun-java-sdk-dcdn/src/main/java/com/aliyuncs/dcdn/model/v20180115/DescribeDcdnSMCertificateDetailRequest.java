@@ -25,9 +25,9 @@ import com.aliyuncs.dcdn.Endpoint;
 public class DescribeDcdnSMCertificateDetailRequest extends RpcAcsRequest<DescribeDcdnSMCertificateDetailResponse> {
 	   
 
-	private Long ownerId;
-
 	private String securityToken;
+
+	private Long ownerId;
 
 	private String certIdentifier;
 	public DescribeDcdnSMCertificateDetailRequest() {
@@ -39,17 +39,6 @@ public class DescribeDcdnSMCertificateDetailRequest extends RpcAcsRequest<Descri
 		} catch (Exception e) {}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
@@ -58,6 +47,17 @@ public class DescribeDcdnSMCertificateDetailRequest extends RpcAcsRequest<Descri
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

@@ -27,17 +27,17 @@ public class DescribeDcdnDomainTopReferVisitResponseUnmarshaller {
 	public static DescribeDcdnDomainTopReferVisitResponse unmarshall(DescribeDcdnDomainTopReferVisitResponse describeDcdnDomainTopReferVisitResponse, UnmarshallerContext _ctx) {
 		
 		describeDcdnDomainTopReferVisitResponse.setRequestId(_ctx.stringValue("DescribeDcdnDomainTopReferVisitResponse.RequestId"));
-		describeDcdnDomainTopReferVisitResponse.setDomainName(_ctx.stringValue("DescribeDcdnDomainTopReferVisitResponse.DomainName"));
 		describeDcdnDomainTopReferVisitResponse.setStartTime(_ctx.stringValue("DescribeDcdnDomainTopReferVisitResponse.StartTime"));
+		describeDcdnDomainTopReferVisitResponse.setDomainName(_ctx.stringValue("DescribeDcdnDomainTopReferVisitResponse.DomainName"));
 
 		List<ReferList> topReferList = new ArrayList<ReferList>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDcdnDomainTopReferVisitResponse.TopReferList.Length"); i++) {
 			ReferList referList = new ReferList();
-			referList.setReferDetail(_ctx.stringValue("DescribeDcdnDomainTopReferVisitResponse.TopReferList["+ i +"].ReferDetail"));
-			referList.setVisitData(_ctx.stringValue("DescribeDcdnDomainTopReferVisitResponse.TopReferList["+ i +"].VisitData"));
-			referList.setVisitProportion(_ctx.floatValue("DescribeDcdnDomainTopReferVisitResponse.TopReferList["+ i +"].VisitProportion"));
 			referList.setFlow(_ctx.stringValue("DescribeDcdnDomainTopReferVisitResponse.TopReferList["+ i +"].Flow"));
 			referList.setFlowProportion(_ctx.floatValue("DescribeDcdnDomainTopReferVisitResponse.TopReferList["+ i +"].FlowProportion"));
+			referList.setVisitData(_ctx.stringValue("DescribeDcdnDomainTopReferVisitResponse.TopReferList["+ i +"].VisitData"));
+			referList.setReferDetail(_ctx.stringValue("DescribeDcdnDomainTopReferVisitResponse.TopReferList["+ i +"].ReferDetail"));
+			referList.setVisitProportion(_ctx.floatValue("DescribeDcdnDomainTopReferVisitResponse.TopReferList["+ i +"].VisitProportion"));
 
 			topReferList.add(referList);
 		}

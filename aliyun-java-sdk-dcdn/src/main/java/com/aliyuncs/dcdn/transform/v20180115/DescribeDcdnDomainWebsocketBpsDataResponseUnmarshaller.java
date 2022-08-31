@@ -27,9 +27,9 @@ public class DescribeDcdnDomainWebsocketBpsDataResponseUnmarshaller {
 	public static DescribeDcdnDomainWebsocketBpsDataResponse unmarshall(DescribeDcdnDomainWebsocketBpsDataResponse describeDcdnDomainWebsocketBpsDataResponse, UnmarshallerContext _ctx) {
 		
 		describeDcdnDomainWebsocketBpsDataResponse.setRequestId(_ctx.stringValue("DescribeDcdnDomainWebsocketBpsDataResponse.RequestId"));
-		describeDcdnDomainWebsocketBpsDataResponse.setDomainName(_ctx.stringValue("DescribeDcdnDomainWebsocketBpsDataResponse.DomainName"));
-		describeDcdnDomainWebsocketBpsDataResponse.setStartTime(_ctx.stringValue("DescribeDcdnDomainWebsocketBpsDataResponse.StartTime"));
 		describeDcdnDomainWebsocketBpsDataResponse.setEndTime(_ctx.stringValue("DescribeDcdnDomainWebsocketBpsDataResponse.EndTime"));
+		describeDcdnDomainWebsocketBpsDataResponse.setStartTime(_ctx.stringValue("DescribeDcdnDomainWebsocketBpsDataResponse.StartTime"));
+		describeDcdnDomainWebsocketBpsDataResponse.setDomainName(_ctx.stringValue("DescribeDcdnDomainWebsocketBpsDataResponse.DomainName"));
 		describeDcdnDomainWebsocketBpsDataResponse.setDataInterval(_ctx.stringValue("DescribeDcdnDomainWebsocketBpsDataResponse.DataInterval"));
 
 		List<DataModule> bpsDataPerInterval = new ArrayList<DataModule>();
