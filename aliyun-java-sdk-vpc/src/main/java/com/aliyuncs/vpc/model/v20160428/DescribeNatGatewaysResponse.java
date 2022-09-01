@@ -121,6 +121,8 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 
 		private String privateLinkMode;
 
+		private String eipBindMode;
+
 		private List<IpList> ipLists;
 
 		private List<Tag> tags;
@@ -309,6 +311,14 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 
 		public void setPrivateLinkMode(String privateLinkMode) {
 			this.privateLinkMode = privateLinkMode;
+		}
+
+		public String getEipBindMode() {
+			return this.eipBindMode;
+		}
+
+		public void setEipBindMode(String eipBindMode) {
+			this.eipBindMode = eipBindMode;
 		}
 
 		public List<IpList> getIpLists() {

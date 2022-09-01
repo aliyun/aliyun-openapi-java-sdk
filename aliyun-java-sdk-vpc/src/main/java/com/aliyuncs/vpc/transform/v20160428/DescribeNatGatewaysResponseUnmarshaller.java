@@ -59,6 +59,7 @@ public class DescribeNatGatewaysResponseUnmarshaller {
 			natGateway.setName(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].Name"));
 			natGateway.setPrivateLinkEnabled(_ctx.booleanValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].PrivateLinkEnabled"));
 			natGateway.setPrivateLinkMode(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].PrivateLinkMode"));
+			natGateway.setEipBindMode(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].EipBindMode"));
 
 			List<String> forwardTableIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].ForwardTableIds.Length"); j++) {

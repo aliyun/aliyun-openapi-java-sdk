@@ -23,6 +23,8 @@ public class OpenFlowLogServiceResponseUnmarshaller {
 	public static OpenFlowLogServiceResponse unmarshall(OpenFlowLogServiceResponse openFlowLogServiceResponse, UnmarshallerContext _ctx) {
 		
 		openFlowLogServiceResponse.setRequestId(_ctx.stringValue("OpenFlowLogServiceResponse.RequestId"));
+		openFlowLogServiceResponse.setCode(_ctx.stringValue("OpenFlowLogServiceResponse.Code"));
+		openFlowLogServiceResponse.setMessage(_ctx.stringValue("OpenFlowLogServiceResponse.Message"));
 	 
 	 	return openFlowLogServiceResponse;
 	}
