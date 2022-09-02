@@ -22,14 +22,12 @@ import com.aliyuncs.arms.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListCmsInstancesRequest extends RpcAcsRequest<ListCmsInstancesResponse> {
+public class GetSyntheticTaskDetailRequest extends RpcAcsRequest<GetSyntheticTaskDetailResponse> {
 	   
 
-	private String typeFilter;
-
-	private String clusterId;
-	public ListCmsInstancesRequest() {
-		super("ARMS", "2019-08-08", "ListCmsInstances", "arms");
+	private String taskId;
+	public GetSyntheticTaskDetailRequest() {
+		super("ARMS", "2019-08-08", "GetSyntheticTaskDetail", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +35,20 @@ public class ListCmsInstancesRequest extends RpcAcsRequest<ListCmsInstancesRespo
 		} catch (Exception e) {}
 	}
 
-	public String getTypeFilter() {
-		return this.typeFilter;
+	public String getTaskId() {
+		return this.taskId;
 	}
 
-	public void setTypeFilter(String typeFilter) {
-		this.typeFilter = typeFilter;
-		if(typeFilter != null){
-			putQueryParameter("TypeFilter", typeFilter);
-		}
-	}
-
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+		if(taskId != null){
+			putQueryParameter("TaskId", taskId);
 		}
 	}
 
 	@Override
-	public Class<ListCmsInstancesResponse> getResponseClass() {
-		return ListCmsInstancesResponse.class;
+	public Class<GetSyntheticTaskDetailResponse> getResponseClass() {
+		return GetSyntheticTaskDetailResponse.class;
 	}
 
 }

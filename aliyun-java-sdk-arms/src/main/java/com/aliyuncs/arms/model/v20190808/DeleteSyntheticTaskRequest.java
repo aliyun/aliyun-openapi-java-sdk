@@ -15,6 +15,7 @@
 package com.aliyuncs.arms.model.v20190808;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.arms.Endpoint;
 
@@ -22,14 +23,12 @@ import com.aliyuncs.arms.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListCmsInstancesRequest extends RpcAcsRequest<ListCmsInstancesResponse> {
+public class DeleteSyntheticTaskRequest extends RpcAcsRequest<DeleteSyntheticTaskResponse> {
 	   
 
-	private String typeFilter;
-
-	private String clusterId;
-	public ListCmsInstancesRequest() {
-		super("ARMS", "2019-08-08", "ListCmsInstances", "arms");
+	private List<String> taskIdss;
+	public DeleteSyntheticTaskRequest() {
+		super("ARMS", "2019-08-08", "DeleteSyntheticTask", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +36,22 @@ public class ListCmsInstancesRequest extends RpcAcsRequest<ListCmsInstancesRespo
 		} catch (Exception e) {}
 	}
 
-	public String getTypeFilter() {
-		return this.typeFilter;
+	public List<String> getTaskIdss() {
+		return this.taskIdss;
 	}
 
-	public void setTypeFilter(String typeFilter) {
-		this.typeFilter = typeFilter;
-		if(typeFilter != null){
-			putQueryParameter("TypeFilter", typeFilter);
-		}
-	}
-
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
-		}
+	public void setTaskIdss(List<String> taskIdss) {
+		this.taskIdss = taskIdss;	
+		if (taskIdss != null) {
+			for (int i = 0; i < taskIdss.size(); i++) {
+				putQueryParameter("TaskIds." + (i + 1) , taskIdss.get(i));
+			}
+		}	
 	}
 
 	@Override
-	public Class<ListCmsInstancesResponse> getResponseClass() {
-		return ListCmsInstancesResponse.class;
+	public Class<DeleteSyntheticTaskResponse> getResponseClass() {
+		return DeleteSyntheticTaskResponse.class;
 	}
 
 }

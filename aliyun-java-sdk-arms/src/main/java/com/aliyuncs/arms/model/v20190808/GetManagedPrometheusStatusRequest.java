@@ -22,14 +22,14 @@ import com.aliyuncs.arms.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListCmsInstancesRequest extends RpcAcsRequest<ListCmsInstancesResponse> {
+public class GetManagedPrometheusStatusRequest extends RpcAcsRequest<GetManagedPrometheusStatusResponse> {
 	   
 
-	private String typeFilter;
+	private String clusterType;
 
 	private String clusterId;
-	public ListCmsInstancesRequest() {
-		super("ARMS", "2019-08-08", "ListCmsInstances", "arms");
+	public GetManagedPrometheusStatusRequest() {
+		super("ARMS", "2019-08-08", "GetManagedPrometheusStatus", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,14 +37,14 @@ public class ListCmsInstancesRequest extends RpcAcsRequest<ListCmsInstancesRespo
 		} catch (Exception e) {}
 	}
 
-	public String getTypeFilter() {
-		return this.typeFilter;
+	public String getClusterType() {
+		return this.clusterType;
 	}
 
-	public void setTypeFilter(String typeFilter) {
-		this.typeFilter = typeFilter;
-		if(typeFilter != null){
-			putQueryParameter("TypeFilter", typeFilter);
+	public void setClusterType(String clusterType) {
+		this.clusterType = clusterType;
+		if(clusterType != null){
+			putQueryParameter("ClusterType", clusterType);
 		}
 	}
 
@@ -60,8 +60,8 @@ public class ListCmsInstancesRequest extends RpcAcsRequest<ListCmsInstancesRespo
 	}
 
 	@Override
-	public Class<ListCmsInstancesResponse> getResponseClass() {
-		return ListCmsInstancesResponse.class;
+	public Class<GetManagedPrometheusStatusResponse> getResponseClass() {
+		return GetManagedPrometheusStatusResponse.class;
 	}
 
 }

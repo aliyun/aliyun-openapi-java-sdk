@@ -15,6 +15,7 @@
 package com.aliyuncs.arms.model.v20190808;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.arms.Endpoint;
 
@@ -22,14 +23,14 @@ import com.aliyuncs.arms.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListCmsInstancesRequest extends RpcAcsRequest<ListCmsInstancesResponse> {
+public class SwitchSyntheticTaskStatusRequest extends RpcAcsRequest<SwitchSyntheticTaskStatusResponse> {
 	   
 
-	private String typeFilter;
+	private List<Long> taskIdss;
 
-	private String clusterId;
-	public ListCmsInstancesRequest() {
-		super("ARMS", "2019-08-08", "ListCmsInstances", "arms");
+	private Long switchStatus;
+	public SwitchSyntheticTaskStatusRequest() {
+		super("ARMS", "2019-08-08", "SwitchSyntheticTaskStatus", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +38,33 @@ public class ListCmsInstancesRequest extends RpcAcsRequest<ListCmsInstancesRespo
 		} catch (Exception e) {}
 	}
 
-	public String getTypeFilter() {
-		return this.typeFilter;
+	public List<Long> getTaskIdss() {
+		return this.taskIdss;
 	}
 
-	public void setTypeFilter(String typeFilter) {
-		this.typeFilter = typeFilter;
-		if(typeFilter != null){
-			putQueryParameter("TypeFilter", typeFilter);
-		}
+	public void setTaskIdss(List<Long> taskIdss) {
+		this.taskIdss = taskIdss;	
+		if (taskIdss != null) {
+			for (int i = 0; i < taskIdss.size(); i++) {
+				putQueryParameter("TaskIds." + (i + 1) , taskIdss.get(i));
+			}
+		}	
 	}
 
-	public String getClusterId() {
-		return this.clusterId;
+	public Long getSwitchStatus() {
+		return this.switchStatus;
 	}
 
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
+	public void setSwitchStatus(Long switchStatus) {
+		this.switchStatus = switchStatus;
+		if(switchStatus != null){
+			putQueryParameter("SwitchStatus", switchStatus.toString());
 		}
 	}
 
 	@Override
-	public Class<ListCmsInstancesResponse> getResponseClass() {
-		return ListCmsInstancesResponse.class;
+	public Class<SwitchSyntheticTaskStatusResponse> getResponseClass() {
+		return SwitchSyntheticTaskStatusResponse.class;
 	}
 
 }

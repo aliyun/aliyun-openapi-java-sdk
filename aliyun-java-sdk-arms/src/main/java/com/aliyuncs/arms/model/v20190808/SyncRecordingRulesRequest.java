@@ -22,30 +22,19 @@ import com.aliyuncs.arms.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListCmsInstancesRequest extends RpcAcsRequest<ListCmsInstancesResponse> {
+public class SyncRecordingRulesRequest extends RpcAcsRequest<SyncRecordingRulesResponse> {
 	   
 
-	private String typeFilter;
-
 	private String clusterId;
-	public ListCmsInstancesRequest() {
-		super("ARMS", "2019-08-08", "ListCmsInstances", "arms");
+
+	private String targetClusters;
+	public SyncRecordingRulesRequest() {
+		super("ARMS", "2019-08-08", "SyncRecordingRules", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getTypeFilter() {
-		return this.typeFilter;
-	}
-
-	public void setTypeFilter(String typeFilter) {
-		this.typeFilter = typeFilter;
-		if(typeFilter != null){
-			putQueryParameter("TypeFilter", typeFilter);
-		}
 	}
 
 	public String getClusterId() {
@@ -59,9 +48,20 @@ public class ListCmsInstancesRequest extends RpcAcsRequest<ListCmsInstancesRespo
 		}
 	}
 
+	public String getTargetClusters() {
+		return this.targetClusters;
+	}
+
+	public void setTargetClusters(String targetClusters) {
+		this.targetClusters = targetClusters;
+		if(targetClusters != null){
+			putQueryParameter("TargetClusters", targetClusters);
+		}
+	}
+
 	@Override
-	public Class<ListCmsInstancesResponse> getResponseClass() {
-		return ListCmsInstancesResponse.class;
+	public Class<SyncRecordingRulesResponse> getResponseClass() {
+		return SyncRecordingRulesResponse.class;
 	}
 
 }

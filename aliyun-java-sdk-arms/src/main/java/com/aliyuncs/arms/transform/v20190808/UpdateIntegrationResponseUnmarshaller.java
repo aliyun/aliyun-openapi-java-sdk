@@ -41,6 +41,8 @@ public class UpdateIntegrationResponseUnmarshaller {
 		integration.setDuplicateKey(_ctx.stringValue("UpdateIntegrationResponse.Integration.DuplicateKey"));
 		integration.setState(_ctx.booleanValue("UpdateIntegrationResponse.Integration.State"));
 		integration.setLiveness(_ctx.stringValue("UpdateIntegrationResponse.Integration.Liveness"));
+		integration.setInitiativeRecoverField(_ctx.stringValue("UpdateIntegrationResponse.Integration.InitiativeRecoverField"));
+		integration.setInitiativeRecoverValue(_ctx.stringValue("UpdateIntegrationResponse.Integration.InitiativeRecoverValue"));
 
 		List<Long> stat = new ArrayList<Long>();
 		for (int i = 0; i < _ctx.lengthValue("UpdateIntegrationResponse.Integration.Stat.Length"); i++) {

@@ -31,6 +31,8 @@ public class UpdateIntegrationRequest extends RpcAcsRequest<UpdateIntegrationRes
 
 	private String stat;
 
+	private String initiativeRecoverValue;
+
 	private String liveness;
 
 	private Long integrationId;
@@ -50,6 +52,8 @@ public class UpdateIntegrationRequest extends RpcAcsRequest<UpdateIntegrationRes
 	private Boolean state;
 
 	private String extendedFieldRedefineRules;
+
+	private String initiativeRecoverField;
 
 	private String integrationProductType;
 	public UpdateIntegrationRequest() {
@@ -91,6 +95,17 @@ public class UpdateIntegrationRequest extends RpcAcsRequest<UpdateIntegrationRes
 		this.stat = stat;
 		if(stat != null){
 			putBodyParameter("Stat", stat);
+		}
+	}
+
+	public String getInitiativeRecoverValue() {
+		return this.initiativeRecoverValue;
+	}
+
+	public void setInitiativeRecoverValue(String initiativeRecoverValue) {
+		this.initiativeRecoverValue = initiativeRecoverValue;
+		if(initiativeRecoverValue != null){
+			putBodyParameter("InitiativeRecoverValue", initiativeRecoverValue);
 		}
 	}
 
@@ -201,6 +216,17 @@ public class UpdateIntegrationRequest extends RpcAcsRequest<UpdateIntegrationRes
 		this.extendedFieldRedefineRules = extendedFieldRedefineRules;
 		if(extendedFieldRedefineRules != null){
 			putBodyParameter("ExtendedFieldRedefineRules", extendedFieldRedefineRules);
+		}
+	}
+
+	public String getInitiativeRecoverField() {
+		return this.initiativeRecoverField;
+	}
+
+	public void setInitiativeRecoverField(String initiativeRecoverField) {
+		this.initiativeRecoverField = initiativeRecoverField;
+		if(initiativeRecoverField != null){
+			putBodyParameter("InitiativeRecoverField", initiativeRecoverField);
 		}
 	}
 

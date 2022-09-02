@@ -54,7 +54,7 @@ public class ListIntegrationResponse extends AcsResponse {
 
 		private Long page;
 
-		private List<Integrations> iintegrations;
+		private List<IntegrationsItem> integrations;
 
 		public Long getTotal() {
 			return this.total;
@@ -80,15 +80,15 @@ public class ListIntegrationResponse extends AcsResponse {
 			this.page = page;
 		}
 
-		public List<Integrations> getIintegrations() {
-			return this.iintegrations;
+		public List<IntegrationsItem> getIntegrations() {
+			return this.integrations;
 		}
 
-		public void setIintegrations(List<Integrations> iintegrations) {
-			this.iintegrations = iintegrations;
+		public void setIntegrations(List<IntegrationsItem> integrations) {
+			this.integrations = integrations;
 		}
 
-		public static class Integrations {
+		public static class IntegrationsItem {
 
 			private Long integrationId;
 
@@ -190,6 +190,10 @@ public class ListIntegrationResponse extends AcsResponse {
 
 				private Long recoverTime;
 
+				private String initiativeRecoverField;
+
+				private String initiativeRecoverValue;
+
 				private List<Long> stat;
 
 				private List<Map<Object,Object>> fieldRedefineRules;
@@ -226,6 +230,22 @@ public class ListIntegrationResponse extends AcsResponse {
 
 				public void setRecoverTime(Long recoverTime) {
 					this.recoverTime = recoverTime;
+				}
+
+				public String getInitiativeRecoverField() {
+					return this.initiativeRecoverField;
+				}
+
+				public void setInitiativeRecoverField(String initiativeRecoverField) {
+					this.initiativeRecoverField = initiativeRecoverField;
+				}
+
+				public String getInitiativeRecoverValue() {
+					return this.initiativeRecoverValue;
+				}
+
+				public void setInitiativeRecoverValue(String initiativeRecoverValue) {
+					this.initiativeRecoverValue = initiativeRecoverValue;
 				}
 
 				public List<Long> getStat() {
