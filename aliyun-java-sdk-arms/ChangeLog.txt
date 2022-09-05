@@ -1,3 +1,6 @@
+2022-09-05 Version: 2.8.23
+- Update sdk.
+
 2022-09-02 Version: 2.8.22
 - Add SyncRecordingRules api.
 

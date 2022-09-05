@@ -27,6 +27,8 @@ public class GetAlertRulesRequest extends RpcAcsRequest<GetAlertRulesResponse> {
 
 	private String alertStatus;
 
+	private String clusterId;
+
 	private String alertNames;
 
 	private String alertType;
@@ -53,6 +55,17 @@ public class GetAlertRulesRequest extends RpcAcsRequest<GetAlertRulesResponse> {
 		this.alertStatus = alertStatus;
 		if(alertStatus != null){
 			putQueryParameter("AlertStatus", alertStatus);
+		}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 
