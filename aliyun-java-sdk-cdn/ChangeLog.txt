@@ -1,3 +1,6 @@
+2022-09-05 Version: 3.7.4
+- Support STS.
+
 2022-09-05 Version: 3.7.3
 - Init.
 
