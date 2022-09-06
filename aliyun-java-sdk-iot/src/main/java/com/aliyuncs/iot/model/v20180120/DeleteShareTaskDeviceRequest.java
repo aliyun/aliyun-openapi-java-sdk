@@ -23,38 +23,21 @@ import com.aliyuncs.iot.Endpoint;
  * @author auto create
  * @version 
  */
-public class BindLicenseDeviceRequest extends RpcAcsRequest<BindLicenseDeviceResponse> {
+public class DeleteShareTaskDeviceRequest extends RpcAcsRequest<DeleteShareTaskDeviceResponse> {
 	   
-
-	private List<String> deviceNameLists;
 
 	private String iotInstanceId;
 
 	private List<String> iotIdLists;
 
-	private String productKey;
-
-	private String licenseCode;
-	public BindLicenseDeviceRequest() {
-		super("Iot", "2018-01-20", "BindLicenseDevice");
+	private String shareTaskId;
+	public DeleteShareTaskDeviceRequest() {
+		super("Iot", "2018-01-20", "DeleteShareTaskDevice");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public List<String> getDeviceNameLists() {
-		return this.deviceNameLists;
-	}
-
-	public void setDeviceNameLists(List<String> deviceNameLists) {
-		this.deviceNameLists = deviceNameLists;	
-		if (deviceNameLists != null) {
-			for (int i = 0; i < deviceNameLists.size(); i++) {
-				putBodyParameter("DeviceNameList." + (i + 1) , deviceNameLists.get(i));
-			}
-		}	
 	}
 
 	public String getIotInstanceId() {
@@ -64,7 +47,7 @@ public class BindLicenseDeviceRequest extends RpcAcsRequest<BindLicenseDeviceRes
 	public void setIotInstanceId(String iotInstanceId) {
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
-			putQueryParameter("IotInstanceId", iotInstanceId);
+			putBodyParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 
@@ -81,31 +64,20 @@ public class BindLicenseDeviceRequest extends RpcAcsRequest<BindLicenseDeviceRes
 		}	
 	}
 
-	public String getProductKey() {
-		return this.productKey;
+	public String getShareTaskId() {
+		return this.shareTaskId;
 	}
 
-	public void setProductKey(String productKey) {
-		this.productKey = productKey;
-		if(productKey != null){
-			putQueryParameter("ProductKey", productKey);
-		}
-	}
-
-	public String getLicenseCode() {
-		return this.licenseCode;
-	}
-
-	public void setLicenseCode(String licenseCode) {
-		this.licenseCode = licenseCode;
-		if(licenseCode != null){
-			putQueryParameter("LicenseCode", licenseCode);
+	public void setShareTaskId(String shareTaskId) {
+		this.shareTaskId = shareTaskId;
+		if(shareTaskId != null){
+			putBodyParameter("ShareTaskId", shareTaskId);
 		}
 	}
 
 	@Override
-	public Class<BindLicenseDeviceResponse> getResponseClass() {
-		return BindLicenseDeviceResponse.class;
+	public Class<DeleteShareTaskDeviceResponse> getResponseClass() {
+		return DeleteShareTaskDeviceResponse.class;
 	}
 
 }

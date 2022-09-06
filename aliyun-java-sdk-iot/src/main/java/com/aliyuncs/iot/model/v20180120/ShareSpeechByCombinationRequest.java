@@ -23,7 +23,7 @@ import com.aliyuncs.iot.Endpoint;
  * @author auto create
  * @version 
  */
-public class SpeechByCombinationRequest extends RpcAcsRequest<SpeechByCombinationResponse> {
+public class ShareSpeechByCombinationRequest extends RpcAcsRequest<ShareSpeechByCombinationResponse> {
 	   
 
 	private String speechId;
@@ -36,13 +36,11 @@ public class SpeechByCombinationRequest extends RpcAcsRequest<SpeechByCombinatio
 
 	private String iotInstanceId;
 
-	private Boolean enforceFlag;
-
 	private String productKey;
 
 	private String deviceName;
-	public SpeechByCombinationRequest() {
-		super("Iot", "2018-01-20", "SpeechByCombination");
+	public ShareSpeechByCombinationRequest() {
+		super("Iot", "2018-01-20", "ShareSpeechByCombination");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -107,17 +105,6 @@ public class SpeechByCombinationRequest extends RpcAcsRequest<SpeechByCombinatio
 		}
 	}
 
-	public Boolean getEnforceFlag() {
-		return this.enforceFlag;
-	}
-
-	public void setEnforceFlag(Boolean enforceFlag) {
-		this.enforceFlag = enforceFlag;
-		if(enforceFlag != null){
-			putBodyParameter("EnforceFlag", enforceFlag.toString());
-		}
-	}
-
 	public String getProductKey() {
 		return this.productKey;
 	}
@@ -141,8 +128,8 @@ public class SpeechByCombinationRequest extends RpcAcsRequest<SpeechByCombinatio
 	}
 
 	@Override
-	public Class<SpeechByCombinationResponse> getResponseClass() {
-		return SpeechByCombinationResponse.class;
+	public Class<ShareSpeechByCombinationResponse> getResponseClass() {
+		return ShareSpeechByCombinationResponse.class;
 	}
 
 }

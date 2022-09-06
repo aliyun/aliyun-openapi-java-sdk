@@ -23,20 +23,18 @@ import com.aliyuncs.iot.Endpoint;
  * @author auto create
  * @version 
  */
-public class BindLicenseDeviceRequest extends RpcAcsRequest<BindLicenseDeviceResponse> {
+public class ReBindLicenseDeviceRequest extends RpcAcsRequest<ReBindLicenseDeviceResponse> {
 	   
 
 	private List<String> deviceNameLists;
 
 	private String iotInstanceId;
 
-	private List<String> iotIdLists;
-
 	private String productKey;
 
 	private String licenseCode;
-	public BindLicenseDeviceRequest() {
-		super("Iot", "2018-01-20", "BindLicenseDevice");
+	public ReBindLicenseDeviceRequest() {
+		super("Iot", "2018-01-20", "ReBindLicenseDevice");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -68,19 +66,6 @@ public class BindLicenseDeviceRequest extends RpcAcsRequest<BindLicenseDeviceRes
 		}
 	}
 
-	public List<String> getIotIdLists() {
-		return this.iotIdLists;
-	}
-
-	public void setIotIdLists(List<String> iotIdLists) {
-		this.iotIdLists = iotIdLists;	
-		if (iotIdLists != null) {
-			for (int i = 0; i < iotIdLists.size(); i++) {
-				putBodyParameter("IotIdList." + (i + 1) , iotIdLists.get(i));
-			}
-		}	
-	}
-
 	public String getProductKey() {
 		return this.productKey;
 	}
@@ -104,8 +89,8 @@ public class BindLicenseDeviceRequest extends RpcAcsRequest<BindLicenseDeviceRes
 	}
 
 	@Override
-	public Class<BindLicenseDeviceResponse> getResponseClass() {
-		return BindLicenseDeviceResponse.class;
+	public Class<ReBindLicenseDeviceResponse> getResponseClass() {
+		return ReBindLicenseDeviceResponse.class;
 	}
 
 }

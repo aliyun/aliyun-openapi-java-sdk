@@ -36,6 +36,8 @@ public class SyncSpeechByCombinationRequest extends RpcAcsRequest<SyncSpeechByCo
 
 	private String iotInstanceId;
 
+	private Boolean enforceFlag;
+
 	private String productKey;
 
 	private String deviceName;
@@ -102,6 +104,17 @@ public class SyncSpeechByCombinationRequest extends RpcAcsRequest<SyncSpeechByCo
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
 			putBodyParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
+	public Boolean getEnforceFlag() {
+		return this.enforceFlag;
+	}
+
+	public void setEnforceFlag(Boolean enforceFlag) {
+		this.enforceFlag = enforceFlag;
+		if(enforceFlag != null){
+			putBodyParameter("EnforceFlag", enforceFlag.toString());
 		}
 	}
 
