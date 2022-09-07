@@ -36,6 +36,8 @@ public class ServiceInvokeResponse extends AcsResponse {
 
 	private String idToken;
 
+	private String eventId;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -82,6 +84,14 @@ public class ServiceInvokeResponse extends AcsResponse {
 
 	public void setIdToken(String idToken) {
 		this.idToken = idToken;
+	}
+
+	public String getEventId() {
+		return this.eventId;
+	}
+
+	public void setEventId(String eventId) {
+		this.eventId = eventId;
 	}
 
 	@Override
