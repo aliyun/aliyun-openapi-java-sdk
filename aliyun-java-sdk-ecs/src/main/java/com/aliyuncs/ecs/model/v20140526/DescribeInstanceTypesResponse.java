@@ -115,6 +115,18 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 		private Boolean eniTrunkSupported;
 
+		private Float cpuSpeedFrequency;
+
+		private Float cpuTurboFrequency;
+
+		private String physicalProcessorModel;
+
+		private Boolean networkEncryptionSupport;
+
+		private String instanceCategory;
+
+		private String cpuArchitecture;
+
 		public Integer getEniTotalQuantity() {
 			return this.eniTotalQuantity;
 		}
@@ -345,6 +357,54 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 		public void setEniTrunkSupported(Boolean eniTrunkSupported) {
 			this.eniTrunkSupported = eniTrunkSupported;
+		}
+
+		public Float getCpuSpeedFrequency() {
+			return this.cpuSpeedFrequency;
+		}
+
+		public void setCpuSpeedFrequency(Float cpuSpeedFrequency) {
+			this.cpuSpeedFrequency = cpuSpeedFrequency;
+		}
+
+		public Float getCpuTurboFrequency() {
+			return this.cpuTurboFrequency;
+		}
+
+		public void setCpuTurboFrequency(Float cpuTurboFrequency) {
+			this.cpuTurboFrequency = cpuTurboFrequency;
+		}
+
+		public String getPhysicalProcessorModel() {
+			return this.physicalProcessorModel;
+		}
+
+		public void setPhysicalProcessorModel(String physicalProcessorModel) {
+			this.physicalProcessorModel = physicalProcessorModel;
+		}
+
+		public Boolean getNetworkEncryptionSupport() {
+			return this.networkEncryptionSupport;
+		}
+
+		public void setNetworkEncryptionSupport(Boolean networkEncryptionSupport) {
+			this.networkEncryptionSupport = networkEncryptionSupport;
+		}
+
+		public String getInstanceCategory() {
+			return this.instanceCategory;
+		}
+
+		public void setInstanceCategory(String instanceCategory) {
+			this.instanceCategory = instanceCategory;
+		}
+
+		public String getCpuArchitecture() {
+			return this.cpuArchitecture;
+		}
+
+		public void setCpuArchitecture(String cpuArchitecture) {
+			this.cpuArchitecture = cpuArchitecture;
 		}
 	}
 

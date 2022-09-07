@@ -61,6 +61,12 @@ public class DescribeInstanceTypesResponseUnmarshaller {
 			instanceType.setInstanceTypeFamily(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].InstanceTypeFamily"));
 			instanceType.setEniQuantity(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].EniQuantity"));
 			instanceType.setEniTrunkSupported(_ctx.booleanValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].EniTrunkSupported"));
+			instanceType.setCpuSpeedFrequency(_ctx.floatValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].CpuSpeedFrequency"));
+			instanceType.setCpuTurboFrequency(_ctx.floatValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].CpuTurboFrequency"));
+			instanceType.setPhysicalProcessorModel(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].PhysicalProcessorModel"));
+			instanceType.setNetworkEncryptionSupport(_ctx.booleanValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].NetworkEncryptionSupport"));
+			instanceType.setInstanceCategory(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].InstanceCategory"));
+			instanceType.setCpuArchitecture(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].CpuArchitecture"));
 
 			instanceTypes.add(instanceType);
 		}

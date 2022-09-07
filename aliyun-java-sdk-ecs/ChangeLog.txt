@@ -1,3 +1,7 @@
+2022-09-07 Version: 4.24.25
+- Support attribute filtering for DescribeInstanceTypes.
+- Provide cpuArchitecture and insatnceCategory attribute in DescribeInstanceTypes.
+
 2022-08-31 Version: 4.24.24
 - Support create image with boot mode.
 - Provide image boot mode info in DescribeImages.
