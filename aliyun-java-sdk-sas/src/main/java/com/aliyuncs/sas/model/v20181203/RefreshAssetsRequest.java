@@ -25,7 +25,11 @@ import com.aliyuncs.sas.Endpoint;
 public class RefreshAssetsRequest extends RpcAcsRequest<RefreshAssetsResponse> {
 	   
 
+	private Integer cloudAssetSubType;
+
 	private String assetType;
+
+	private Integer cloudAssetType;
 	public RefreshAssetsRequest() {
 		super("Sas", "2018-12-03", "RefreshAssets");
 		setMethod(MethodType.POST);
@@ -33,6 +37,17 @@ public class RefreshAssetsRequest extends RpcAcsRequest<RefreshAssetsResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getCloudAssetSubType() {
+		return this.cloudAssetSubType;
+	}
+
+	public void setCloudAssetSubType(Integer cloudAssetSubType) {
+		this.cloudAssetSubType = cloudAssetSubType;
+		if(cloudAssetSubType != null){
+			putQueryParameter("CloudAssetSubType", cloudAssetSubType.toString());
+		}
 	}
 
 	public String getAssetType() {
@@ -43,6 +58,17 @@ public class RefreshAssetsRequest extends RpcAcsRequest<RefreshAssetsResponse> {
 		this.assetType = assetType;
 		if(assetType != null){
 			putQueryParameter("AssetType", assetType);
+		}
+	}
+
+	public Integer getCloudAssetType() {
+		return this.cloudAssetType;
+	}
+
+	public void setCloudAssetType(Integer cloudAssetType) {
+		this.cloudAssetType = cloudAssetType;
+		if(cloudAssetType != null){
+			putQueryParameter("CloudAssetType", cloudAssetType.toString());
 		}
 	}
 
