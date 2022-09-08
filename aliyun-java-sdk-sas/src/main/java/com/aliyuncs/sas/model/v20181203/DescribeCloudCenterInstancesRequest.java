@@ -33,6 +33,8 @@ public class DescribeCloudCenterInstancesRequest extends RpcAcsRequest<DescribeC
 
 	private String logicalExp;
 
+	private String lang;
+
 	private Integer currentPage;
 
 	private String machineTypes;
@@ -88,6 +90,17 @@ public class DescribeCloudCenterInstancesRequest extends RpcAcsRequest<DescribeC
 		this.logicalExp = logicalExp;
 		if(logicalExp != null){
 			putQueryParameter("LogicalExp", logicalExp);
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
 		}
 	}
 

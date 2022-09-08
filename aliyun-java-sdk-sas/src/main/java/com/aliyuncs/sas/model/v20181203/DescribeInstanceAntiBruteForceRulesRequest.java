@@ -28,7 +28,11 @@ public class DescribeInstanceAntiBruteForceRulesRequest extends RpcAcsRequest<De
 
 	private Long resourceOwnerId;
 
+	private Integer currentPage;
+
 	private String sourceIp;
+
+	private Integer pageSize;
 
 	private List<String> uuidLists;
 	public DescribeInstanceAntiBruteForceRulesRequest() {
@@ -51,6 +55,17 @@ public class DescribeInstanceAntiBruteForceRulesRequest extends RpcAcsRequest<De
 		}
 	}
 
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
 	public String getSourceIp() {
 		return this.sourceIp;
 	}
@@ -59,6 +74,17 @@ public class DescribeInstanceAntiBruteForceRulesRequest extends RpcAcsRequest<De
 		this.sourceIp = sourceIp;
 		if(sourceIp != null){
 			putQueryParameter("SourceIp", sourceIp);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

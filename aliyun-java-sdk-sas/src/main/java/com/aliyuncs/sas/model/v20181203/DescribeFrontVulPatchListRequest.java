@@ -29,6 +29,8 @@ public class DescribeFrontVulPatchListRequest extends RpcAcsRequest<DescribeFron
 
 	private String operateType;
 
+	private String lang;
+
 	private String info;
 	public DescribeFrontVulPatchListRequest() {
 		super("Sas", "2018-12-03", "DescribeFrontVulPatchList");
@@ -58,6 +60,17 @@ public class DescribeFrontVulPatchListRequest extends RpcAcsRequest<DescribeFron
 		this.operateType = operateType;
 		if(operateType != null){
 			putQueryParameter("OperateType", operateType);
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
 		}
 	}
 
