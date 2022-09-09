@@ -23,6 +23,7 @@ public class CheckDBNameResponseUnmarshaller {
 	public static CheckDBNameResponse unmarshall(CheckDBNameResponse checkDBNameResponse, UnmarshallerContext _ctx) {
 		
 		checkDBNameResponse.setRequestId(_ctx.stringValue("CheckDBNameResponse.RequestId"));
+		checkDBNameResponse.setDBName(_ctx.stringValue("CheckDBNameResponse.DBName"));
 	 
 	 	return checkDBNameResponse;
 	}

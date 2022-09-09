@@ -81,6 +81,8 @@ public class DescribeAccountsResponse extends AcsResponse {
 
 		private String accountName;
 
+		private String accountPassword;
+
 		private List<DatabasePrivilege> databasePrivileges;
 
 		public String getAccountStatus() {
@@ -137,6 +139,14 @@ public class DescribeAccountsResponse extends AcsResponse {
 
 		public void setAccountName(String accountName) {
 			this.accountName = accountName;
+		}
+
+		public String getAccountPassword() {
+			return this.accountPassword;
+		}
+
+		public void setAccountPassword(String accountPassword) {
+			this.accountPassword = accountPassword;
 		}
 
 		public List<DatabasePrivilege> getDatabasePrivileges() {

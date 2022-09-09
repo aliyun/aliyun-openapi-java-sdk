@@ -56,6 +56,7 @@ public class DescribeDBClusterMigrationResponseUnmarshaller {
 				address.setPort(_ctx.stringValue("DescribeDBClusterMigrationResponse.DBClusterEndpointList["+ i +"].AddressItems["+ j +"].Port"));
 				address.setVPCId(_ctx.stringValue("DescribeDBClusterMigrationResponse.DBClusterEndpointList["+ i +"].AddressItems["+ j +"].VPCId"));
 				address.setIPAddress(_ctx.stringValue("DescribeDBClusterMigrationResponse.DBClusterEndpointList["+ i +"].AddressItems["+ j +"].IPAddress"));
+				address.setSSLEnabled(_ctx.stringValue("DescribeDBClusterMigrationResponse.DBClusterEndpointList["+ i +"].AddressItems["+ j +"].SSLEnabled"));
 
 				addressItems.add(address);
 			}
@@ -80,6 +81,7 @@ public class DescribeDBClusterMigrationResponseUnmarshaller {
 				address2.setPort(_ctx.stringValue("DescribeDBClusterMigrationResponse.RdsEndpointList["+ i +"].AddressItems["+ j +"].Port"));
 				address2.setVPCId(_ctx.stringValue("DescribeDBClusterMigrationResponse.RdsEndpointList["+ i +"].AddressItems["+ j +"].VPCId"));
 				address2.setIPAddress(_ctx.stringValue("DescribeDBClusterMigrationResponse.RdsEndpointList["+ i +"].AddressItems["+ j +"].IPAddress"));
+				address2.setSSLEnabled(_ctx.stringValue("DescribeDBClusterMigrationResponse.RdsEndpointList["+ i +"].AddressItems["+ j +"].SSLEnabled"));
 
 				addressItems1.add(address2);
 			}

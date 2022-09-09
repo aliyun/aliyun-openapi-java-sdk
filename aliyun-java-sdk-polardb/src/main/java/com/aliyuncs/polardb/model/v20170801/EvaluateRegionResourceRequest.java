@@ -22,26 +22,36 @@ import com.aliyuncs.polardb.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyGlobalDatabaseNetworkRequest extends RpcAcsRequest<ModifyGlobalDatabaseNetworkResponse> {
+public class EvaluateRegionResourceRequest extends RpcAcsRequest<EvaluateRegionResourceResponse> {
 	   
 
 	private Long resourceOwnerId;
 
+	private String dBInstanceConnType;
+
 	private String resourceGroupId;
 
-	private String securityToken;
+	private String dBNodeClass;
 
-	private String gDNId;
-
-	private String gDNDescription;
+	private String dispenseMode;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-	public ModifyGlobalDatabaseNetworkRequest() {
-		super("polardb", "2017-08-01", "ModifyGlobalDatabaseNetwork");
+
+	private String needMaxScaleLink;
+
+	private String dBType;
+
+	private String dBVersion;
+
+	private String subDomain;
+
+	private String zoneId;
+	public EvaluateRegionResourceRequest() {
+		super("polardb", "2017-08-01", "EvaluateRegionResource");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -60,6 +70,17 @@ public class ModifyGlobalDatabaseNetworkRequest extends RpcAcsRequest<ModifyGlob
 		}
 	}
 
+	public String getDBInstanceConnType() {
+		return this.dBInstanceConnType;
+	}
+
+	public void setDBInstanceConnType(String dBInstanceConnType) {
+		this.dBInstanceConnType = dBInstanceConnType;
+		if(dBInstanceConnType != null){
+			putQueryParameter("DBInstanceConnType", dBInstanceConnType);
+		}
+	}
+
 	public String getResourceGroupId() {
 		return this.resourceGroupId;
 	}
@@ -71,36 +92,25 @@ public class ModifyGlobalDatabaseNetworkRequest extends RpcAcsRequest<ModifyGlob
 		}
 	}
 
-	public String getSecurityToken() {
-		return this.securityToken;
+	public String getDBNodeClass() {
+		return this.dBNodeClass;
 	}
 
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setDBNodeClass(String dBNodeClass) {
+		this.dBNodeClass = dBNodeClass;
+		if(dBNodeClass != null){
+			putQueryParameter("DBNodeClass", dBNodeClass);
 		}
 	}
 
-	public String getGDNId() {
-		return this.gDNId;
+	public String getDispenseMode() {
+		return this.dispenseMode;
 	}
 
-	public void setGDNId(String gDNId) {
-		this.gDNId = gDNId;
-		if(gDNId != null){
-			putQueryParameter("GDNId", gDNId);
-		}
-	}
-
-	public String getGDNDescription() {
-		return this.gDNDescription;
-	}
-
-	public void setGDNDescription(String gDNDescription) {
-		this.gDNDescription = gDNDescription;
-		if(gDNDescription != null){
-			putQueryParameter("GDNDescription", gDNDescription);
+	public void setDispenseMode(String dispenseMode) {
+		this.dispenseMode = dispenseMode;
+		if(dispenseMode != null){
+			putQueryParameter("DispenseMode", dispenseMode);
 		}
 	}
 
@@ -137,9 +147,64 @@ public class ModifyGlobalDatabaseNetworkRequest extends RpcAcsRequest<ModifyGlob
 		}
 	}
 
+	public String getNeedMaxScaleLink() {
+		return this.needMaxScaleLink;
+	}
+
+	public void setNeedMaxScaleLink(String needMaxScaleLink) {
+		this.needMaxScaleLink = needMaxScaleLink;
+		if(needMaxScaleLink != null){
+			putQueryParameter("NeedMaxScaleLink", needMaxScaleLink);
+		}
+	}
+
+	public String getDBType() {
+		return this.dBType;
+	}
+
+	public void setDBType(String dBType) {
+		this.dBType = dBType;
+		if(dBType != null){
+			putQueryParameter("DBType", dBType);
+		}
+	}
+
+	public String getDBVersion() {
+		return this.dBVersion;
+	}
+
+	public void setDBVersion(String dBVersion) {
+		this.dBVersion = dBVersion;
+		if(dBVersion != null){
+			putQueryParameter("DBVersion", dBVersion);
+		}
+	}
+
+	public String getSubDomain() {
+		return this.subDomain;
+	}
+
+	public void setSubDomain(String subDomain) {
+		this.subDomain = subDomain;
+		if(subDomain != null){
+			putQueryParameter("SubDomain", subDomain);
+		}
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
 	@Override
-	public Class<ModifyGlobalDatabaseNetworkResponse> getResponseClass() {
-		return ModifyGlobalDatabaseNetworkResponse.class;
+	public Class<EvaluateRegionResourceResponse> getResponseClass() {
+		return EvaluateRegionResourceResponse.class;
 	}
 
 }

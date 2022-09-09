@@ -63,6 +63,7 @@ public class DescribeDBClusterAttributeResponseUnmarshaller {
 		describeDBClusterAttributeResponse.setSubCategory(_ctx.stringValue("DescribeDBClusterAttributeResponse.SubCategory"));
 		describeDBClusterAttributeResponse.setIsProxyLatestVersion(_ctx.booleanValue("DescribeDBClusterAttributeResponse.IsProxyLatestVersion"));
 		describeDBClusterAttributeResponse.setStorageType(_ctx.stringValue("DescribeDBClusterAttributeResponse.StorageType"));
+		describeDBClusterAttributeResponse.setServerlessType(_ctx.stringValue("DescribeDBClusterAttributeResponse.ServerlessType"));
 		describeDBClusterAttributeResponse.setProxyCpuCores(_ctx.stringValue("DescribeDBClusterAttributeResponse.ProxyCpuCores"));
 		describeDBClusterAttributeResponse.setProxyStandardCpuCores(_ctx.stringValue("DescribeDBClusterAttributeResponse.ProxyStandardCpuCores"));
 		describeDBClusterAttributeResponse.setProxyType(_ctx.stringValue("DescribeDBClusterAttributeResponse.ProxyType"));
@@ -84,6 +85,7 @@ public class DescribeDBClusterAttributeResponseUnmarshaller {
 			dBNode.setHotReplicaMode(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].HotReplicaMode"));
 			dBNode.setAddedCpuCores(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].AddedCpuCores"));
 			dBNode.setMasterId(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].MasterId"));
+			dBNode.setSccMode(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].SccMode"));
 
 			dBNodes.add(dBNode);
 		}

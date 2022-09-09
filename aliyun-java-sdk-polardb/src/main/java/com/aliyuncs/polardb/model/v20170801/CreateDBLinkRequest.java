@@ -35,6 +35,8 @@ public class CreateDBLinkRequest extends RpcAcsRequest<CreateDBLinkResponse> {
 
 	private String targetIp;
 
+	private String resourceGroupId;
+
 	private String dBLinkName;
 
 	private String targetPort;
@@ -115,6 +117,17 @@ public class CreateDBLinkRequest extends RpcAcsRequest<CreateDBLinkResponse> {
 		this.targetIp = targetIp;
 		if(targetIp != null){
 			putQueryParameter("TargetIp", targetIp);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

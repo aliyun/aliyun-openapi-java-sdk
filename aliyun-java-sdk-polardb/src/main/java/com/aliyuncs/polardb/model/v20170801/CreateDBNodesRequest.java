@@ -34,6 +34,8 @@ public class CreateDBNodesRequest extends RpcAcsRequest<CreateDBNodesResponse> {
 
 	private String plannedEndTime;
 
+	private String resourceGroupId;
+
 	private String resourceOwnerAccount;
 
 	private String dBClusterId;
@@ -97,6 +99,17 @@ public class CreateDBNodesRequest extends RpcAcsRequest<CreateDBNodesResponse> {
 		this.plannedEndTime = plannedEndTime;
 		if(plannedEndTime != null){
 			putQueryParameter("PlannedEndTime", plannedEndTime);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

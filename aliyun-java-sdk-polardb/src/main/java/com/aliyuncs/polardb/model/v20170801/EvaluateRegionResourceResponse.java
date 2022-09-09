@@ -15,16 +15,22 @@
 package com.aliyuncs.polardb.model.v20170801;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.polardb.transform.v20170801.RefreshDBClusterStorageUsageResponseUnmarshaller;
+import com.aliyuncs.polardb.transform.v20170801.EvaluateRegionResourceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class RefreshDBClusterStorageUsageResponse extends AcsResponse {
+public class EvaluateRegionResourceResponse extends AcsResponse {
 
 	private String requestId;
+
+	private String dBInstanceAvailable;
+
+	private String dBType;
+
+	private String dBVersion;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -34,9 +40,33 @@ public class RefreshDBClusterStorageUsageResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getDBInstanceAvailable() {
+		return this.dBInstanceAvailable;
+	}
+
+	public void setDBInstanceAvailable(String dBInstanceAvailable) {
+		this.dBInstanceAvailable = dBInstanceAvailable;
+	}
+
+	public String getDBType() {
+		return this.dBType;
+	}
+
+	public void setDBType(String dBType) {
+		this.dBType = dBType;
+	}
+
+	public String getDBVersion() {
+		return this.dBVersion;
+	}
+
+	public void setDBVersion(String dBVersion) {
+		this.dBVersion = dBVersion;
+	}
+
 	@Override
-	public RefreshDBClusterStorageUsageResponse getInstance(UnmarshallerContext context) {
-		return	RefreshDBClusterStorageUsageResponseUnmarshaller.unmarshall(this, context);
+	public EvaluateRegionResourceResponse getInstance(UnmarshallerContext context) {
+		return	EvaluateRegionResourceResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

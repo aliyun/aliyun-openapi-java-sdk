@@ -63,6 +63,8 @@ public class DescribeDBClusterEndpointsResponse extends AcsResponse {
 
 		private String autoAddNewNodes;
 
+		private String dBClusterId;
+
 		private List<Address> addressItems;
 
 		public String getNodeWithRoles() {
@@ -127,6 +129,14 @@ public class DescribeDBClusterEndpointsResponse extends AcsResponse {
 
 		public void setAutoAddNewNodes(String autoAddNewNodes) {
 			this.autoAddNewNodes = autoAddNewNodes;
+		}
+
+		public String getDBClusterId() {
+			return this.dBClusterId;
+		}
+
+		public void setDBClusterId(String dBClusterId) {
+			this.dBClusterId = dBClusterId;
 		}
 
 		public List<Address> getAddressItems() {

@@ -29,6 +29,8 @@ public class DescribePendingMaintenanceActionRequest extends RpcAcsRequest<Descr
 
 	private Integer pageNumber;
 
+	private String resourceGroupId;
+
 	private Integer isHistory;
 
 	private String securityToken;
@@ -72,6 +74,17 @@ public class DescribePendingMaintenanceActionRequest extends RpcAcsRequest<Descr
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

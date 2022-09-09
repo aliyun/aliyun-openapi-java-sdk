@@ -97,6 +97,8 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 	private String storageType;
 
+	private String serverlessType;
+
 	private String proxyCpuCores;
 
 	private String proxyStandardCpuCores;
@@ -397,6 +399,14 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 		this.storageType = storageType;
 	}
 
+	public String getServerlessType() {
+		return this.serverlessType;
+	}
+
+	public void setServerlessType(String serverlessType) {
+		this.serverlessType = serverlessType;
+	}
+
 	public String getProxyCpuCores() {
 		return this.proxyCpuCores;
 	}
@@ -472,6 +482,8 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 		private String addedCpuCores;
 
 		private String masterId;
+
+		private String sccMode;
 
 		public String getCreationTime() {
 			return this.creationTime;
@@ -575,6 +587,14 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 		public void setMasterId(String masterId) {
 			this.masterId = masterId;
+		}
+
+		public String getSccMode() {
+			return this.sccMode;
+		}
+
+		public void setSccMode(String sccMode) {
+			this.sccMode = sccMode;
 		}
 	}
 

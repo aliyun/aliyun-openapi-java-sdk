@@ -34,6 +34,8 @@ public class DescribeDBClusterTDEResponse extends AcsResponse {
 
 	private String encryptNewTables;
 
+	private String tDERegion;
+
 	public String getTDEStatus() {
 		return this.tDEStatus;
 	}
@@ -72,6 +74,14 @@ public class DescribeDBClusterTDEResponse extends AcsResponse {
 
 	public void setEncryptNewTables(String encryptNewTables) {
 		this.encryptNewTables = encryptNewTables;
+	}
+
+	public String getTDERegion() {
+		return this.tDERegion;
+	}
+
+	public void setTDERegion(String tDERegion) {
+		this.tDERegion = tDERegion;
 	}
 
 	@Override

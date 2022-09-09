@@ -27,6 +27,7 @@ public class DescribeDBClusterTDEResponseUnmarshaller {
 		describeDBClusterTDEResponse.setDBClusterId(_ctx.stringValue("DescribeDBClusterTDEResponse.DBClusterId"));
 		describeDBClusterTDEResponse.setEncryptionKey(_ctx.stringValue("DescribeDBClusterTDEResponse.EncryptionKey"));
 		describeDBClusterTDEResponse.setEncryptNewTables(_ctx.stringValue("DescribeDBClusterTDEResponse.EncryptNewTables"));
+		describeDBClusterTDEResponse.setTDERegion(_ctx.stringValue("DescribeDBClusterTDEResponse.TDERegion"));
 	 
 	 	return describeDBClusterTDEResponse;
 	}

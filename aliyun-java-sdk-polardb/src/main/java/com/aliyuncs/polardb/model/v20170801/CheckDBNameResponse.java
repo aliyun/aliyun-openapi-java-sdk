@@ -26,12 +26,22 @@ public class CheckDBNameResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String dBName;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getDBName() {
+		return this.dBName;
+	}
+
+	public void setDBName(String dBName) {
+		this.dBName = dBName;
 	}
 
 	@Override

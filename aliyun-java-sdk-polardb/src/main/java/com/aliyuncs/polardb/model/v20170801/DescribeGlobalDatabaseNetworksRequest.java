@@ -29,6 +29,8 @@ public class DescribeGlobalDatabaseNetworksRequest extends RpcAcsRequest<Describ
 
 	private Integer pageNumber;
 
+	private String resourceGroupId;
+
 	private String securityToken;
 
 	private String gDNId;
@@ -72,6 +74,17 @@ public class DescribeGlobalDatabaseNetworksRequest extends RpcAcsRequest<Describ
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

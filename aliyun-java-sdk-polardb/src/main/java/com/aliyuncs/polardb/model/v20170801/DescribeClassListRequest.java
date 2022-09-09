@@ -22,26 +22,24 @@ import com.aliyuncs.polardb.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyGlobalDatabaseNetworkRequest extends RpcAcsRequest<ModifyGlobalDatabaseNetworkResponse> {
+public class DescribeClassListRequest extends RpcAcsRequest<DescribeClassListResponse> {
 	   
 
 	private Long resourceOwnerId;
 
 	private String resourceGroupId;
 
-	private String securityToken;
-
-	private String gDNId;
-
-	private String gDNDescription;
-
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
+	private String commodityCode;
+
 	private Long ownerId;
-	public ModifyGlobalDatabaseNetworkRequest() {
-		super("polardb", "2017-08-01", "ModifyGlobalDatabaseNetwork");
+
+	private String orderType;
+	public DescribeClassListRequest() {
+		super("polardb", "2017-08-01", "DescribeClassList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -71,39 +69,6 @@ public class ModifyGlobalDatabaseNetworkRequest extends RpcAcsRequest<ModifyGlob
 		}
 	}
 
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getGDNId() {
-		return this.gDNId;
-	}
-
-	public void setGDNId(String gDNId) {
-		this.gDNId = gDNId;
-		if(gDNId != null){
-			putQueryParameter("GDNId", gDNId);
-		}
-	}
-
-	public String getGDNDescription() {
-		return this.gDNDescription;
-	}
-
-	public void setGDNDescription(String gDNDescription) {
-		this.gDNDescription = gDNDescription;
-		if(gDNDescription != null){
-			putQueryParameter("GDNDescription", gDNDescription);
-		}
-	}
-
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -126,6 +91,17 @@ public class ModifyGlobalDatabaseNetworkRequest extends RpcAcsRequest<ModifyGlob
 		}
 	}
 
+	public String getCommodityCode() {
+		return this.commodityCode;
+	}
+
+	public void setCommodityCode(String commodityCode) {
+		this.commodityCode = commodityCode;
+		if(commodityCode != null){
+			putQueryParameter("CommodityCode", commodityCode);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -137,9 +113,20 @@ public class ModifyGlobalDatabaseNetworkRequest extends RpcAcsRequest<ModifyGlob
 		}
 	}
 
+	public String getOrderType() {
+		return this.orderType;
+	}
+
+	public void setOrderType(String orderType) {
+		this.orderType = orderType;
+		if(orderType != null){
+			putQueryParameter("OrderType", orderType);
+		}
+	}
+
 	@Override
-	public Class<ModifyGlobalDatabaseNetworkResponse> getResponseClass() {
-		return ModifyGlobalDatabaseNetworkResponse.class;
+	public Class<DescribeClassListResponse> getResponseClass() {
+		return DescribeClassListResponse.class;
 	}
 
 }

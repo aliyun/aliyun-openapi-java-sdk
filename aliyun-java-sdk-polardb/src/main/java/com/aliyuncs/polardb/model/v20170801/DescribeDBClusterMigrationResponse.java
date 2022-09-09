@@ -201,6 +201,8 @@ public class DescribeDBClusterMigrationResponse extends AcsResponse {
 
 			private String iPAddress;
 
+			private String sSLEnabled;
+
 			public String getVSwitchId() {
 				return this.vSwitchId;
 			}
@@ -247,6 +249,14 @@ public class DescribeDBClusterMigrationResponse extends AcsResponse {
 
 			public void setIPAddress(String iPAddress) {
 				this.iPAddress = iPAddress;
+			}
+
+			public String getSSLEnabled() {
+				return this.sSLEnabled;
+			}
+
+			public void setSSLEnabled(String sSLEnabled) {
+				this.sSLEnabled = sSLEnabled;
 			}
 		}
 	}
@@ -297,6 +307,8 @@ public class DescribeDBClusterMigrationResponse extends AcsResponse {
 
 			private String iPAddress;
 
+			private String sSLEnabled;
+
 			public String getVSwitchId() {
 				return this.vSwitchId;
 			}
@@ -343,6 +355,14 @@ public class DescribeDBClusterMigrationResponse extends AcsResponse {
 
 			public void setIPAddress(String iPAddress) {
 				this.iPAddress = iPAddress;
+			}
+
+			public String getSSLEnabled() {
+				return this.sSLEnabled;
+			}
+
+			public void setSSLEnabled(String sSLEnabled) {
+				this.sSLEnabled = sSLEnabled;
 			}
 		}
 	}
