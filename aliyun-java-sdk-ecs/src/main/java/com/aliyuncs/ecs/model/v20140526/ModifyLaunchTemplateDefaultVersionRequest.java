@@ -39,7 +39,7 @@ public class ModifyLaunchTemplateDefaultVersionRequest extends RpcAcsRequest<Mod
 
 	private Long defaultVersionNumber;
 	public ModifyLaunchTemplateDefaultVersionRequest() {
-		super("Ecs", "2014-05-26", "ModifyLaunchTemplateDefaultVersion", "ecs");
+		super("Ecs", "2014-05-26", "ModifyLaunchTemplateDefaultVersion");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

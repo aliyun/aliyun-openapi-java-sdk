@@ -39,7 +39,7 @@ public class CancelPhysicalConnectionRequest extends RpcAcsRequest<CancelPhysica
 
 	private String physicalConnectionId;
 	public CancelPhysicalConnectionRequest() {
-		super("Ecs", "2014-05-26", "CancelPhysicalConnection", "ecs");
+		super("Ecs", "2014-05-26", "CancelPhysicalConnection");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

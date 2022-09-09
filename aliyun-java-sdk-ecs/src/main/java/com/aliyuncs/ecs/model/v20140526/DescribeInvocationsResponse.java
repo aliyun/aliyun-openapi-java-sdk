@@ -111,6 +111,8 @@ public class DescribeInvocationsResponse extends AcsResponse {
 
 		private String containerId;
 
+		private String containerName;
+
 		private List<InvokeInstance> invokeInstances;
 
 		private List<Tag> tags;
@@ -249,6 +251,14 @@ public class DescribeInvocationsResponse extends AcsResponse {
 
 		public void setContainerId(String containerId) {
 			this.containerId = containerId;
+		}
+
+		public String getContainerName() {
+			return this.containerName;
+		}
+
+		public void setContainerName(String containerName) {
+			this.containerName = containerName;
 		}
 
 		public List<InvokeInstance> getInvokeInstances() {

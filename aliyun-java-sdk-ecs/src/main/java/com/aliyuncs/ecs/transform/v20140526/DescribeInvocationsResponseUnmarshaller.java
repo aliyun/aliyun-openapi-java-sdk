@@ -53,6 +53,7 @@ public class DescribeInvocationsResponseUnmarshaller {
 			invocation.setWorkingDir(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].WorkingDir"));
 			invocation.setTimeout(_ctx.longValue("DescribeInvocationsResponse.Invocations["+ i +"].Timeout"));
 			invocation.setContainerId(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].ContainerId"));
+			invocation.setContainerName(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].ContainerName"));
 
 			List<InvokeInstance> invokeInstances = new ArrayList<InvokeInstance>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeInstances.Length"); j++) {

@@ -30,6 +30,8 @@ public class RunCommandRequest extends RpcAcsRequest<RunCommandResponse> {
 
 	private Long resourceOwnerId;
 
+	private String containerName;
+
 	private String workingDir;
 
 	private String description;
@@ -72,7 +74,7 @@ public class RunCommandRequest extends RpcAcsRequest<RunCommandResponse> {
 
 	private String username;
 	public RunCommandRequest() {
-		super("Ecs", "2014-05-26", "RunCommand", "ecs");
+		super("Ecs", "2014-05-26", "RunCommand");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -88,6 +90,17 @@ public class RunCommandRequest extends RpcAcsRequest<RunCommandResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getContainerName() {
+		return this.containerName;
+	}
+
+	public void setContainerName(String containerName) {
+		this.containerName = containerName;
+		if(containerName != null){
+			putQueryParameter("ContainerName", containerName);
 		}
 	}
 

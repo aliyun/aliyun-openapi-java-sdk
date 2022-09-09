@@ -47,7 +47,7 @@ public class ModifyAutoSnapshotPolicyExRequest extends RpcAcsRequest<ModifyAutoS
 
 	private String targetCopyRegions;
 	public ModifyAutoSnapshotPolicyExRequest() {
-		super("Ecs", "2014-05-26", "ModifyAutoSnapshotPolicyEx", "ecs");
+		super("Ecs", "2014-05-26", "ModifyAutoSnapshotPolicyEx");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

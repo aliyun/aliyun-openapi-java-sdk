@@ -46,7 +46,7 @@ public class CreateDedicatedHostClusterRequest extends RpcAcsRequest<CreateDedic
 
 	private String zoneId;
 	public CreateDedicatedHostClusterRequest() {
-		super("Ecs", "2014-05-26", "CreateDedicatedHostCluster", "ecs");
+		super("Ecs", "2014-05-26", "CreateDedicatedHostCluster");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

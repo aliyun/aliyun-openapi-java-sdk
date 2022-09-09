@@ -39,7 +39,7 @@ public class AssociateHaVipRequest extends RpcAcsRequest<AssociateHaVipResponse>
 
 	private String instanceId;
 	public AssociateHaVipRequest() {
-		super("Ecs", "2014-05-26", "AssociateHaVip", "ecs");
+		super("Ecs", "2014-05-26", "AssociateHaVip");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -121,6 +121,8 @@ public class DescribeInvocationResultsResponse extends AcsResponse {
 
 			private String containerId;
 
+			private String containerName;
+
 			private List<Tag> tags;
 
 			public String getInvocationStatus() {
@@ -249,6 +251,14 @@ public class DescribeInvocationResultsResponse extends AcsResponse {
 
 			public void setContainerId(String containerId) {
 				this.containerId = containerId;
+			}
+
+			public String getContainerName() {
+				return this.containerName;
+			}
+
+			public void setContainerName(String containerName) {
+				this.containerName = containerName;
 			}
 
 			public List<Tag> getTags() {

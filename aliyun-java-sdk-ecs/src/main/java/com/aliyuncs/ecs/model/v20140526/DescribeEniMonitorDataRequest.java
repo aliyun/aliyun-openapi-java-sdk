@@ -43,7 +43,7 @@ public class DescribeEniMonitorDataRequest extends RpcAcsRequest<DescribeEniMoni
 
 	private String eniId;
 	public DescribeEniMonitorDataRequest() {
-		super("Ecs", "2014-05-26", "DescribeEniMonitorData", "ecs");
+		super("Ecs", "2014-05-26", "DescribeEniMonitorData");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

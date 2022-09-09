@@ -30,6 +30,8 @@ public class InvokeCommandRequest extends RpcAcsRequest<InvokeCommandResponse> {
 
 	private Long resourceOwnerId;
 
+	private String containerName;
+
 	private String commandId;
 
 	private String frequency;
@@ -54,7 +56,7 @@ public class InvokeCommandRequest extends RpcAcsRequest<InvokeCommandResponse> {
 
 	private String username;
 	public InvokeCommandRequest() {
-		super("Ecs", "2014-05-26", "InvokeCommand", "ecs");
+		super("Ecs", "2014-05-26", "InvokeCommand");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -70,6 +72,17 @@ public class InvokeCommandRequest extends RpcAcsRequest<InvokeCommandResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getContainerName() {
+		return this.containerName;
+	}
+
+	public void setContainerName(String containerName) {
+		this.containerName = containerName;
+		if(containerName != null){
+			putQueryParameter("ContainerName", containerName);
 		}
 	}
 

@@ -50,7 +50,7 @@ public class CreateImageComponentRequest extends RpcAcsRequest<CreateImageCompon
 
 	private String name;
 	public CreateImageComponentRequest() {
-		super("Ecs", "2014-05-26", "CreateImageComponent", "ecs");
+		super("Ecs", "2014-05-26", "CreateImageComponent");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

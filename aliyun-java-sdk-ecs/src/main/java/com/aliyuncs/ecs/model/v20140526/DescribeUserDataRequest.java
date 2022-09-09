@@ -33,7 +33,7 @@ public class DescribeUserDataRequest extends RpcAcsRequest<DescribeUserDataRespo
 
 	private String instanceId;
 	public DescribeUserDataRequest() {
-		super("Ecs", "2014-05-26", "DescribeUserData", "ecs");
+		super("Ecs", "2014-05-26", "DescribeUserData");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

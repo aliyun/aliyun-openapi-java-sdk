@@ -41,7 +41,7 @@ public class AttachNetworkInterfaceRequest extends RpcAcsRequest<AttachNetworkIn
 
 	private String networkInterfaceId;
 	public AttachNetworkInterfaceRequest() {
-		super("Ecs", "2014-05-26", "AttachNetworkInterface", "ecs");
+		super("Ecs", "2014-05-26", "AttachNetworkInterface");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

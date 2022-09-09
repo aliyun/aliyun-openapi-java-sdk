@@ -52,7 +52,7 @@ public class CreateSnapshotGroupRequest extends RpcAcsRequest<CreateSnapshotGrou
 
 	private String name;
 	public CreateSnapshotGroupRequest() {
-		super("Ecs", "2014-05-26", "CreateSnapshotGroup", "ecs");
+		super("Ecs", "2014-05-26", "CreateSnapshotGroup");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

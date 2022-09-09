@@ -46,7 +46,7 @@ public class DescribeImagePipelinesRequest extends RpcAcsRequest<DescribeImagePi
 
 	private Integer maxResults;
 	public DescribeImagePipelinesRequest() {
-		super("Ecs", "2014-05-26", "DescribeImagePipelines", "ecs");
+		super("Ecs", "2014-05-26", "DescribeImagePipelines");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

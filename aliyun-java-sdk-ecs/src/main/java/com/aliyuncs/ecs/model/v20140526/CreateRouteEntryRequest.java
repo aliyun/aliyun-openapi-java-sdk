@@ -46,7 +46,7 @@ public class CreateRouteEntryRequest extends RpcAcsRequest<CreateRouteEntryRespo
 
 	private List<NextHopList> nextHopLists;
 	public CreateRouteEntryRequest() {
-		super("Ecs", "2014-05-26", "CreateRouteEntry", "ecs");
+		super("Ecs", "2014-05-26", "CreateRouteEntry");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

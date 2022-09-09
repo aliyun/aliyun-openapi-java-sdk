@@ -37,7 +37,7 @@ public class ModifyEipAddressAttributeRequest extends RpcAcsRequest<ModifyEipAdd
 
 	private Long ownerId;
 	public ModifyEipAddressAttributeRequest() {
-		super("Ecs", "2014-05-26", "ModifyEipAddressAttribute", "ecs");
+		super("Ecs", "2014-05-26", "ModifyEipAddressAttribute");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

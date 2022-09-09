@@ -54,6 +54,7 @@ public class DescribeInvocationResultsResponseUnmarshaller {
 			invocationResult.setInvokeRecordStatus(_ctx.stringValue("DescribeInvocationResultsResponse.Invocation.InvocationResults["+ i +"].InvokeRecordStatus"));
 			invocationResult.setUsername(_ctx.stringValue("DescribeInvocationResultsResponse.Invocation.InvocationResults["+ i +"].Username"));
 			invocationResult.setContainerId(_ctx.stringValue("DescribeInvocationResultsResponse.Invocation.InvocationResults["+ i +"].ContainerId"));
+			invocationResult.setContainerName(_ctx.stringValue("DescribeInvocationResultsResponse.Invocation.InvocationResults["+ i +"].ContainerName"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInvocationResultsResponse.Invocation.InvocationResults["+ i +"].Tags.Length"); j++) {

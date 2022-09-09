@@ -35,7 +35,7 @@ public class DeleteActivationRequest extends RpcAcsRequest<DeleteActivationRespo
 
 	private String activationId;
 	public DeleteActivationRequest() {
-		super("Ecs", "2014-05-26", "DeleteActivation", "ecs");
+		super("Ecs", "2014-05-26", "DeleteActivation");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

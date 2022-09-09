@@ -41,7 +41,7 @@ public class DescribeZonesRequest extends RpcAcsRequest<DescribeZonesResponse> {
 
 	private String acceptLanguage;
 	public DescribeZonesRequest() {
-		super("Ecs", "2014-05-26", "DescribeZones", "ecs");
+		super("Ecs", "2014-05-26", "DescribeZones");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
