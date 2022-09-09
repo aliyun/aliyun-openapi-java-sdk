@@ -69,6 +69,10 @@ public class GetDesktopGroupDetailResponseUnmarshaller {
 		desktops.setConnectDuration(_ctx.longValue("GetDesktopGroupDetailResponse.Desktops.ConnectDuration"));
 		desktops.setIdleDisconnectDuration(_ctx.longValue("GetDesktopGroupDetailResponse.Desktops.IdleDisconnectDuration"));
 		desktops.setVersion(_ctx.longValue("GetDesktopGroupDetailResponse.Desktops.Version"));
+		desktops.setStopDuration(_ctx.longValue("GetDesktopGroupDetailResponse.Desktops.StopDuration"));
+		desktops.setProfileFollowSwitch(_ctx.booleanValue("GetDesktopGroupDetailResponse.Desktops.ProfileFollowSwitch"));
+		desktops.setNasFileSystemID(_ctx.stringValue("GetDesktopGroupDetailResponse.Desktops.NasFileSystemID"));
+		desktops.setNasFileSystemName(_ctx.stringValue("GetDesktopGroupDetailResponse.Desktops.NasFileSystemName"));
 
 		List<TimerInfo> timerInfos = new ArrayList<TimerInfo>();
 		for (int i = 0; i < _ctx.lengthValue("GetDesktopGroupDetailResponse.Desktops.TimerInfos.Length"); i++) {

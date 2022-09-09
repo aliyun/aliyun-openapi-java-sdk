@@ -72,6 +72,7 @@ public class DescribeDesktopGroupsResponseUnmarshaller {
 			desktopGroup.setConnectDuration(_ctx.longValue("DescribeDesktopGroupsResponse.DesktopGroups["+ i +"].ConnectDuration"));
 			desktopGroup.setIdleDisconnectDuration(_ctx.longValue("DescribeDesktopGroupsResponse.DesktopGroups["+ i +"].IdleDisconnectDuration"));
 			desktopGroup.setVersion(_ctx.integerValue("DescribeDesktopGroupsResponse.DesktopGroups["+ i +"].Version"));
+			desktopGroup.setStopDuration(_ctx.longValue("DescribeDesktopGroupsResponse.DesktopGroups["+ i +"].StopDuration"));
 
 			desktopGroups.add(desktopGroup);
 		}

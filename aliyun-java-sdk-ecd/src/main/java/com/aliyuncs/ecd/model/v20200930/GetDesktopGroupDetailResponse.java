@@ -125,6 +125,14 @@ public class GetDesktopGroupDetailResponse extends AcsResponse {
 
 		private Long version;
 
+		private Long stopDuration;
+
+		private Boolean profileFollowSwitch;
+
+		private String nasFileSystemID;
+
+		private String nasFileSystemName;
+
 		private List<TimerInfo> timerInfos;
 
 		public Integer getStatus() {
@@ -437,6 +445,38 @@ public class GetDesktopGroupDetailResponse extends AcsResponse {
 
 		public void setVersion(Long version) {
 			this.version = version;
+		}
+
+		public Long getStopDuration() {
+			return this.stopDuration;
+		}
+
+		public void setStopDuration(Long stopDuration) {
+			this.stopDuration = stopDuration;
+		}
+
+		public Boolean getProfileFollowSwitch() {
+			return this.profileFollowSwitch;
+		}
+
+		public void setProfileFollowSwitch(Boolean profileFollowSwitch) {
+			this.profileFollowSwitch = profileFollowSwitch;
+		}
+
+		public String getNasFileSystemID() {
+			return this.nasFileSystemID;
+		}
+
+		public void setNasFileSystemID(String nasFileSystemID) {
+			this.nasFileSystemID = nasFileSystemID;
+		}
+
+		public String getNasFileSystemName() {
+			return this.nasFileSystemName;
+		}
+
+		public void setNasFileSystemName(String nasFileSystemName) {
+			this.nasFileSystemName = nasFileSystemName;
 		}
 
 		public List<TimerInfo> getTimerInfos() {

@@ -49,6 +49,8 @@ public class ModifyDesktopGroupRequest extends RpcAcsRequest<ModifyDesktopGroupR
 
 	private Integer maxDesktopsCount;
 
+	private String fileSystemId;
+
 	private Integer allowAutoSetup;
 
 	private String comments;
@@ -57,11 +59,15 @@ public class ModifyDesktopGroupRequest extends RpcAcsRequest<ModifyDesktopGroupR
 
 	private String ownBundleId;
 
+	private Long stopDuration;
+
 	private Float ratioThreshold;
 
 	private Long keepDuration;
 
 	private Long connectDuration;
+
+	private Boolean profileFollowSwitch;
 
 	private String policyGroupId;
 	public ModifyDesktopGroupRequest() {
@@ -205,6 +211,17 @@ public class ModifyDesktopGroupRequest extends RpcAcsRequest<ModifyDesktopGroupR
 		}
 	}
 
+	public String getFileSystemId() {
+		return this.fileSystemId;
+	}
+
+	public void setFileSystemId(String fileSystemId) {
+		this.fileSystemId = fileSystemId;
+		if(fileSystemId != null){
+			putQueryParameter("FileSystemId", fileSystemId);
+		}
+	}
+
 	public Integer getAllowAutoSetup() {
 		return this.allowAutoSetup;
 	}
@@ -249,6 +266,17 @@ public class ModifyDesktopGroupRequest extends RpcAcsRequest<ModifyDesktopGroupR
 		}
 	}
 
+	public Long getStopDuration() {
+		return this.stopDuration;
+	}
+
+	public void setStopDuration(Long stopDuration) {
+		this.stopDuration = stopDuration;
+		if(stopDuration != null){
+			putQueryParameter("StopDuration", stopDuration.toString());
+		}
+	}
+
 	public Float getRatioThreshold() {
 		return this.ratioThreshold;
 	}
@@ -279,6 +307,17 @@ public class ModifyDesktopGroupRequest extends RpcAcsRequest<ModifyDesktopGroupR
 		this.connectDuration = connectDuration;
 		if(connectDuration != null){
 			putQueryParameter("ConnectDuration", connectDuration.toString());
+		}
+	}
+
+	public Boolean getProfileFollowSwitch() {
+		return this.profileFollowSwitch;
+	}
+
+	public void setProfileFollowSwitch(Boolean profileFollowSwitch) {
+		this.profileFollowSwitch = profileFollowSwitch;
+		if(profileFollowSwitch != null){
+			putQueryParameter("ProfileFollowSwitch", profileFollowSwitch.toString());
 		}
 	}
 

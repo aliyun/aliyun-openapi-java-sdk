@@ -83,6 +83,8 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 
 		private String volumeEncryptionKey;
 
+		private String protocolType;
+
 		public String getCreationTime() {
 			return this.creationTime;
 		}
@@ -185,6 +187,14 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 
 		public void setVolumeEncryptionKey(String volumeEncryptionKey) {
 			this.volumeEncryptionKey = volumeEncryptionKey;
+		}
+
+		public String getProtocolType() {
+			return this.protocolType;
+		}
+
+		public void setProtocolType(String protocolType) {
+			this.protocolType = protocolType;
 		}
 	}
 

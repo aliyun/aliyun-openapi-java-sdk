@@ -165,6 +165,8 @@ public class DescribeDesktopsResponse extends AcsResponse {
 
 		private List<String> endUserIds;
 
+		private List<String> managementFlags;
+
 		private FotaUpdate fotaUpdate;
 
 		public String getCreationTime() {
@@ -557,6 +559,14 @@ public class DescribeDesktopsResponse extends AcsResponse {
 
 		public void setEndUserIds(List<String> endUserIds) {
 			this.endUserIds = endUserIds;
+		}
+
+		public List<String> getManagementFlags() {
+			return this.managementFlags;
+		}
+
+		public void setManagementFlags(List<String> managementFlags) {
+			this.managementFlags = managementFlags;
 		}
 
 		public FotaUpdate getFotaUpdate() {

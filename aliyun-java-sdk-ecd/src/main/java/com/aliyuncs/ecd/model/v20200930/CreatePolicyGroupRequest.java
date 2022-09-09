@@ -58,6 +58,10 @@ public class CreatePolicyGroupRequest extends RpcAcsRequest<CreatePolicyGroupRes
 
 	private String recordingStartTime;
 
+	private String recordContent;
+
+	private Long recordContentExpires;
+
 	private String watermark;
 
 	private String cameraRedirect;
@@ -67,6 +71,8 @@ public class CreatePolicyGroupRequest extends RpcAcsRequest<CreatePolicyGroupRes
 	private String gpuAcceleration;
 
 	private String html5FileTransfer;
+
+	private String appContentProtection;
 
 	private List<AuthorizeAccessPolicyRule> authorizeAccessPolicyRules;
 
@@ -283,6 +289,28 @@ public class CreatePolicyGroupRequest extends RpcAcsRequest<CreatePolicyGroupRes
 		}
 	}
 
+	public String getRecordContent() {
+		return this.recordContent;
+	}
+
+	public void setRecordContent(String recordContent) {
+		this.recordContent = recordContent;
+		if(recordContent != null){
+			putQueryParameter("RecordContent", recordContent);
+		}
+	}
+
+	public Long getRecordContentExpires() {
+		return this.recordContentExpires;
+	}
+
+	public void setRecordContentExpires(Long recordContentExpires) {
+		this.recordContentExpires = recordContentExpires;
+		if(recordContentExpires != null){
+			putQueryParameter("RecordContentExpires", recordContentExpires.toString());
+		}
+	}
+
 	public String getWatermark() {
 		return this.watermark;
 	}
@@ -335,6 +363,17 @@ public class CreatePolicyGroupRequest extends RpcAcsRequest<CreatePolicyGroupRes
 		this.html5FileTransfer = html5FileTransfer;
 		if(html5FileTransfer != null){
 			putQueryParameter("Html5FileTransfer", html5FileTransfer);
+		}
+	}
+
+	public String getAppContentProtection() {
+		return this.appContentProtection;
+	}
+
+	public void setAppContentProtection(String appContentProtection) {
+		this.appContentProtection = appContentProtection;
+		if(appContentProtection != null){
+			putQueryParameter("AppContentProtection", appContentProtection);
 		}
 	}
 

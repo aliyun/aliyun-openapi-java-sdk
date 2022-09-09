@@ -15,6 +15,7 @@
 package com.aliyuncs.ecd.model.v20200930;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecd.Endpoint;
 
@@ -26,6 +27,8 @@ public class ExportClientEventsRequest extends RpcAcsRequest<ExportClientEventsR
 	   
 
 	private String officeSiteId;
+
+	private List<String> eventTypess;
 
 	private String startTime;
 
@@ -60,6 +63,19 @@ public class ExportClientEventsRequest extends RpcAcsRequest<ExportClientEventsR
 		if(officeSiteId != null){
 			putQueryParameter("OfficeSiteId", officeSiteId);
 		}
+	}
+
+	public List<String> getEventTypess() {
+		return this.eventTypess;
+	}
+
+	public void setEventTypess(List<String> eventTypess) {
+		this.eventTypess = eventTypess;	
+		if (eventTypess != null) {
+			for (int i = 0; i < eventTypess.size(); i++) {
+				putQueryParameter("EventTypes." + (i + 1) , eventTypess.get(i));
+			}
+		}	
 	}
 
 	public String getStartTime() {

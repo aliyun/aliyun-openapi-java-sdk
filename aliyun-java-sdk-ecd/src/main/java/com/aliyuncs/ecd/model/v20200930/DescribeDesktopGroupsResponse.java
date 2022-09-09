@@ -137,6 +137,8 @@ public class DescribeDesktopGroupsResponse extends AcsResponse {
 
 		private Integer version;
 
+		private Long stopDuration;
+
 		public String getCreateTime() {
 			return this.createTime;
 		}
@@ -455,6 +457,14 @@ public class DescribeDesktopGroupsResponse extends AcsResponse {
 
 		public void setVersion(Integer version) {
 			this.version = version;
+		}
+
+		public Long getStopDuration() {
+			return this.stopDuration;
+		}
+
+		public void setStopDuration(Long stopDuration) {
+			this.stopDuration = stopDuration;
 		}
 	}
 

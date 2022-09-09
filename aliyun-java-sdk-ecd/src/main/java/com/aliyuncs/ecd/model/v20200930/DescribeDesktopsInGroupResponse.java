@@ -155,9 +155,15 @@ public class DescribeDesktopsInGroupResponse extends AcsResponse {
 
 		private String diskType;
 
+		private String memberEniIp;
+
+		private String primaryEniIp;
+
 		private List<String> endUserIds;
 
 		private List<String> endUserNames;
+
+		private List<String> managementFlags;
 
 		public String getEndUserId() {
 			return this.endUserId;
@@ -271,6 +277,22 @@ public class DescribeDesktopsInGroupResponse extends AcsResponse {
 			this.diskType = diskType;
 		}
 
+		public String getMemberEniIp() {
+			return this.memberEniIp;
+		}
+
+		public void setMemberEniIp(String memberEniIp) {
+			this.memberEniIp = memberEniIp;
+		}
+
+		public String getPrimaryEniIp() {
+			return this.primaryEniIp;
+		}
+
+		public void setPrimaryEniIp(String primaryEniIp) {
+			this.primaryEniIp = primaryEniIp;
+		}
+
 		public List<String> getEndUserIds() {
 			return this.endUserIds;
 		}
@@ -285,6 +307,14 @@ public class DescribeDesktopsInGroupResponse extends AcsResponse {
 
 		public void setEndUserNames(List<String> endUserNames) {
 			this.endUserNames = endUserNames;
+		}
+
+		public List<String> getManagementFlags() {
+			return this.managementFlags;
+		}
+
+		public void setManagementFlags(List<String> managementFlags) {
+			this.managementFlags = managementFlags;
 		}
 	}
 
@@ -324,9 +354,15 @@ public class DescribeDesktopsInGroupResponse extends AcsResponse {
 
 		private String diskType;
 
+		private String memberEniIp;
+
+		private String primaryEniIp;
+
 		private List<String> endUserIds1;
 
 		private List<String> endUserNames2;
+
+		private List<String> managementFlags3;
 
 		public String getCreateDuration() {
 			return this.createDuration;
@@ -464,6 +500,22 @@ public class DescribeDesktopsInGroupResponse extends AcsResponse {
 			this.diskType = diskType;
 		}
 
+		public String getMemberEniIp() {
+			return this.memberEniIp;
+		}
+
+		public void setMemberEniIp(String memberEniIp) {
+			this.memberEniIp = memberEniIp;
+		}
+
+		public String getPrimaryEniIp() {
+			return this.primaryEniIp;
+		}
+
+		public void setPrimaryEniIp(String primaryEniIp) {
+			this.primaryEniIp = primaryEniIp;
+		}
+
 		public List<String> getEndUserIds1() {
 			return this.endUserIds1;
 		}
@@ -478,6 +530,14 @@ public class DescribeDesktopsInGroupResponse extends AcsResponse {
 
 		public void setEndUserNames2(List<String> endUserNames2) {
 			this.endUserNames2 = endUserNames2;
+		}
+
+		public List<String> getManagementFlags3() {
+			return this.managementFlags3;
+		}
+
+		public void setManagementFlags3(List<String> managementFlags3) {
+			this.managementFlags3 = managementFlags3;
 		}
 	}
 

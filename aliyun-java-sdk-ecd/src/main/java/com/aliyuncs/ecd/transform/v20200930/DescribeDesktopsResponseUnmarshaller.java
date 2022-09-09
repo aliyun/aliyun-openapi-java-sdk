@@ -89,6 +89,12 @@ public class DescribeDesktopsResponseUnmarshaller {
 			}
 			desktop.setEndUserIds(endUserIds);
 
+			List<String> managementFlags = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDesktopsResponse.Desktops["+ i +"].ManagementFlags.Length"); j++) {
+				managementFlags.add(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].ManagementFlags["+ j +"]"));
+			}
+			desktop.setManagementFlags(managementFlags);
+
 			FotaUpdate fotaUpdate = new FotaUpdate();
 			fotaUpdate.setCurrentAppVersion(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].FotaUpdate.CurrentAppVersion"));
 			fotaUpdate.setNewAppVersion(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].FotaUpdate.NewAppVersion"));

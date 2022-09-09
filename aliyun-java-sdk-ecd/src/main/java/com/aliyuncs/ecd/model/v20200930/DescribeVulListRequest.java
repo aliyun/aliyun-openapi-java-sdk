@@ -27,17 +27,19 @@ public class DescribeVulListRequest extends RpcAcsRequest<DescribeVulListRespons
 
 	private String officeSiteId;
 
-	private String dealed;
-
-	private Integer currentPage;
-
 	private String type;
-
-	private String aliasName;
 
 	private Integer pageSize;
 
 	private String lang;
+
+	private String dealed;
+
+	private Integer currentPage;
+
+	private String aliasName;
+
+	private String name;
 
 	private String necessity;
 	public DescribeVulListRequest() {
@@ -57,6 +59,39 @@ public class DescribeVulListRequest extends RpcAcsRequest<DescribeVulListRespons
 		this.officeSiteId = officeSiteId;
 		if(officeSiteId != null){
 			putQueryParameter("OfficeSiteId", officeSiteId);
+		}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
 		}
 	}
 
@@ -82,17 +117,6 @@ public class DescribeVulListRequest extends RpcAcsRequest<DescribeVulListRespons
 		}
 	}
 
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
-		}
-	}
-
 	public String getAliasName() {
 		return this.aliasName;
 	}
@@ -104,25 +128,14 @@ public class DescribeVulListRequest extends RpcAcsRequest<DescribeVulListRespons
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getName() {
+		return this.name;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

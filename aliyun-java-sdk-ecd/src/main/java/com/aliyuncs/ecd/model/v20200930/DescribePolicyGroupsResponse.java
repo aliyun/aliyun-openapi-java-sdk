@@ -109,6 +109,12 @@ public class DescribePolicyGroupsResponse extends AcsResponse {
 
 		private String netRedirect;
 
+		private String appContentProtection;
+
+		private String recordContent;
+
+		private Long recordContentExpires;
+
 		private List<AuthorizeSecurityPolicyRule> authorizeSecurityPolicyRules;
 
 		private List<AuthorizeAccessPolicyRule> authorizeAccessPolicyRules;
@@ -325,6 +331,30 @@ public class DescribePolicyGroupsResponse extends AcsResponse {
 
 		public void setNetRedirect(String netRedirect) {
 			this.netRedirect = netRedirect;
+		}
+
+		public String getAppContentProtection() {
+			return this.appContentProtection;
+		}
+
+		public void setAppContentProtection(String appContentProtection) {
+			this.appContentProtection = appContentProtection;
+		}
+
+		public String getRecordContent() {
+			return this.recordContent;
+		}
+
+		public void setRecordContent(String recordContent) {
+			this.recordContent = recordContent;
+		}
+
+		public Long getRecordContentExpires() {
+			return this.recordContentExpires;
+		}
+
+		public void setRecordContentExpires(Long recordContentExpires) {
+			this.recordContentExpires = recordContentExpires;
 		}
 
 		public List<AuthorizeSecurityPolicyRule> getAuthorizeSecurityPolicyRules() {

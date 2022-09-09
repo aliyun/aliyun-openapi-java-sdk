@@ -45,6 +45,7 @@ public class DescribeSnapshotsResponseUnmarshaller {
 			snapshot.setDesktopId(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].DesktopId"));
 			snapshot.setVolumeEncryptionEnabled(_ctx.booleanValue("DescribeSnapshotsResponse.Snapshots["+ i +"].VolumeEncryptionEnabled"));
 			snapshot.setVolumeEncryptionKey(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].VolumeEncryptionKey"));
+			snapshot.setProtocolType(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].ProtocolType"));
 
 			snapshots.add(snapshot);
 		}

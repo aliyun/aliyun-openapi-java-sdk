@@ -53,6 +53,8 @@ public class DescribeDesktopsInGroupResponseUnmarshaller {
 			paidDesktop.setOsType(_ctx.stringValue("DescribeDesktopsInGroupResponse.PaidDesktops["+ i +"].OsType"));
 			paidDesktop.setGpuDriverVersion(_ctx.stringValue("DescribeDesktopsInGroupResponse.PaidDesktops["+ i +"].GpuDriverVersion"));
 			paidDesktop.setDiskType(_ctx.stringValue("DescribeDesktopsInGroupResponse.PaidDesktops["+ i +"].DiskType"));
+			paidDesktop.setMemberEniIp(_ctx.stringValue("DescribeDesktopsInGroupResponse.PaidDesktops["+ i +"].MemberEniIp"));
+			paidDesktop.setPrimaryEniIp(_ctx.stringValue("DescribeDesktopsInGroupResponse.PaidDesktops["+ i +"].PrimaryEniIp"));
 
 			List<String> endUserIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDesktopsInGroupResponse.PaidDesktops["+ i +"].EndUserIds.Length"); j++) {
@@ -65,6 +67,12 @@ public class DescribeDesktopsInGroupResponseUnmarshaller {
 				endUserNames.add(_ctx.stringValue("DescribeDesktopsInGroupResponse.PaidDesktops["+ i +"].EndUserNames["+ j +"]"));
 			}
 			paidDesktop.setEndUserNames(endUserNames);
+
+			List<String> managementFlags = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDesktopsInGroupResponse.PaidDesktops["+ i +"].ManagementFlags.Length"); j++) {
+				managementFlags.add(_ctx.stringValue("DescribeDesktopsInGroupResponse.PaidDesktops["+ i +"].ManagementFlags["+ j +"]"));
+			}
+			paidDesktop.setManagementFlags(managementFlags);
 
 			paidDesktops.add(paidDesktop);
 		}
@@ -90,6 +98,8 @@ public class DescribeDesktopsInGroupResponseUnmarshaller {
 			postPaidDesktop.setOsType(_ctx.stringValue("DescribeDesktopsInGroupResponse.PostPaidDesktops["+ i +"].OsType"));
 			postPaidDesktop.setGpuDriverVersion(_ctx.stringValue("DescribeDesktopsInGroupResponse.PostPaidDesktops["+ i +"].GpuDriverVersion"));
 			postPaidDesktop.setDiskType(_ctx.stringValue("DescribeDesktopsInGroupResponse.PostPaidDesktops["+ i +"].DiskType"));
+			postPaidDesktop.setMemberEniIp(_ctx.stringValue("DescribeDesktopsInGroupResponse.PostPaidDesktops["+ i +"].MemberEniIp"));
+			postPaidDesktop.setPrimaryEniIp(_ctx.stringValue("DescribeDesktopsInGroupResponse.PostPaidDesktops["+ i +"].PrimaryEniIp"));
 
 			List<String> endUserIds1 = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDesktopsInGroupResponse.PostPaidDesktops["+ i +"].EndUserIds.Length"); j++) {
@@ -102,6 +112,12 @@ public class DescribeDesktopsInGroupResponseUnmarshaller {
 				endUserNames2.add(_ctx.stringValue("DescribeDesktopsInGroupResponse.PostPaidDesktops["+ i +"].EndUserNames["+ j +"]"));
 			}
 			postPaidDesktop.setEndUserNames2(endUserNames2);
+
+			List<String> managementFlags3 = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDesktopsInGroupResponse.PostPaidDesktops["+ i +"].ManagementFlags.Length"); j++) {
+				managementFlags3.add(_ctx.stringValue("DescribeDesktopsInGroupResponse.PostPaidDesktops["+ i +"].ManagementFlags["+ j +"]"));
+			}
+			postPaidDesktop.setManagementFlags3(managementFlags3);
 
 			postPaidDesktops.add(postPaidDesktop);
 		}
