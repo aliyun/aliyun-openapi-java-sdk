@@ -265,6 +265,7 @@ public class CompatibleUrlConnClientTest {
 
     @Test
     public void syncInvokeIOExceptionTest() throws Exception {
+        thrown.expect(IOException.class);
         HttpClientConfig config = mock(HttpClientConfig.class);
         when(config.isIgnoreSSLCerts()).thenReturn(true);
         CompatibleUrlConnClient client0 = new CompatibleUrlConnClient(config);
@@ -280,10 +281,7 @@ public class CompatibleUrlConnClientTest {
         when(connection.getErrorStream()).thenReturn(errorStream);
         PowerMockito.doNothing().when(client, "parseHttpConn", any(HttpResponse.class), any(HttpURLConnection.class),
                 any(InputStream.class));
-        HttpResponse response = client.syncInvoke(request);
-        verifyPrivate(client, times(1)).invoke("parseHttpConn", any(HttpResponse.class), any(HttpURLConnection.class),
-                any(InputStream.class));
-        Assert.assertEquals("http://www.aliyun.com", response.getSysUrl());
+        client.syncInvoke(request);
     }
 
     @Test
