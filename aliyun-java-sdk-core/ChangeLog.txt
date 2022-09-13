@@ -1,4 +1,8 @@
-﻿2022-08-04 Version:4.6.1
+﻿2022-09-13 Version:4.6.2
+1, Update endpoints.
+2, Fix CompatibleUrlConnClient npe
+
+2022-08-04 Version:4.6.1
 1, Fix v3 signature without path && update signer name
 2, Support patch(http method)
 3, Support payload for delete(http method)
