@@ -46,6 +46,8 @@ public class DescribeResourcesModificationRequest extends RpcAcsRequest<Describe
 	private Long ownerId;
 
 	private String destinationResource;
+
+	private String zoneId;
 	public DescribeResourcesModificationRequest() {
 		super("Ecs", "2014-05-26", "DescribeResourcesModification");
 		setMethod(MethodType.POST);
@@ -173,6 +175,17 @@ public class DescribeResourcesModificationRequest extends RpcAcsRequest<Describe
 		this.destinationResource = destinationResource;
 		if(destinationResource != null){
 			putQueryParameter("DestinationResource", destinationResource);
+		}
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
 		}
 	}
 
