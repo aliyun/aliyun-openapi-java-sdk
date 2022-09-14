@@ -124,11 +124,17 @@ public class QueryConfigResponse extends AcsResponse {
 
 		private Boolean configSecretEnabled;
 
+		private Boolean namingAuthEnabled;
+
+		private Boolean namingAuthSupported;
+
 		private Boolean namingCreateServiceSupported;
 
 		private String minSessionTimeout;
 
 		private String maxSessionTimeout;
+
+		private String snapshotCount;
 
 		public String getMaxClientCnxns() {
 			return this.maxClientCnxns;
@@ -282,6 +288,22 @@ public class QueryConfigResponse extends AcsResponse {
 			this.configSecretEnabled = configSecretEnabled;
 		}
 
+		public Boolean getNamingAuthEnabled() {
+			return this.namingAuthEnabled;
+		}
+
+		public void setNamingAuthEnabled(Boolean namingAuthEnabled) {
+			this.namingAuthEnabled = namingAuthEnabled;
+		}
+
+		public Boolean getNamingAuthSupported() {
+			return this.namingAuthSupported;
+		}
+
+		public void setNamingAuthSupported(Boolean namingAuthSupported) {
+			this.namingAuthSupported = namingAuthSupported;
+		}
+
 		public Boolean getNamingCreateServiceSupported() {
 			return this.namingCreateServiceSupported;
 		}
@@ -304,6 +326,14 @@ public class QueryConfigResponse extends AcsResponse {
 
 		public void setMaxSessionTimeout(String maxSessionTimeout) {
 			this.maxSessionTimeout = maxSessionTimeout;
+		}
+
+		public String getSnapshotCount() {
+			return this.snapshotCount;
+		}
+
+		public void setSnapshotCount(String snapshotCount) {
+			this.snapshotCount = snapshotCount;
 		}
 	}
 

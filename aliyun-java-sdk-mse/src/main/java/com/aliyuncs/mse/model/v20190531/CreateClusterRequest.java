@@ -27,9 +27,13 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 
 	private String clusterSpecification;
 
+	private String mseSessionId;
+
 	private String pubSlbSpecification;
 
 	private String privateSlbSpecification;
+
+	private String resourceGroupId;
 
 	private Integer instanceCount;
 
@@ -44,6 +48,8 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 	private String vSwitchId;
 
 	private String clusterType;
+
+	private String instanceName;
 
 	private String pubNetworkFlow;
 
@@ -76,6 +82,17 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		}
 	}
 
+	public String getMseSessionId() {
+		return this.mseSessionId;
+	}
+
+	public void setMseSessionId(String mseSessionId) {
+		this.mseSessionId = mseSessionId;
+		if(mseSessionId != null){
+			putQueryParameter("MseSessionId", mseSessionId);
+		}
+	}
+
 	public String getPubSlbSpecification() {
 		return this.pubSlbSpecification;
 	}
@@ -95,6 +112,17 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		this.privateSlbSpecification = privateSlbSpecification;
 		if(privateSlbSpecification != null){
 			putQueryParameter("PrivateSlbSpecification", privateSlbSpecification);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
@@ -172,6 +200,17 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		this.clusterType = clusterType;
 		if(clusterType != null){
 			putQueryParameter("ClusterType", clusterType);
+		}
+	}
+
+	public String getInstanceName() {
+		return this.instanceName;
+	}
+
+	public void setInstanceName(String instanceName) {
+		this.instanceName = instanceName;
+		if(instanceName != null){
+			putQueryParameter("InstanceName", instanceName);
 		}
 	}
 

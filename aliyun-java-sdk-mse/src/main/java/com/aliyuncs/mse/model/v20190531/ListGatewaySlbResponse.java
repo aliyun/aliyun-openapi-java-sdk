@@ -107,6 +107,18 @@ public class ListGatewaySlbResponse extends AcsResponse {
 
 		private String statusDesc;
 
+		private String vServerGroupId;
+
+		private Integer httpPort;
+
+		private Integer httpsPort;
+
+		private Integer serviceWeight;
+
+		private Boolean editEnable;
+
+		private String httpsVServerGroupId;
+
 		public String getId() {
 			return this.id;
 		}
@@ -185,6 +197,54 @@ public class ListGatewaySlbResponse extends AcsResponse {
 
 		public void setStatusDesc(String statusDesc) {
 			this.statusDesc = statusDesc;
+		}
+
+		public String getVServerGroupId() {
+			return this.vServerGroupId;
+		}
+
+		public void setVServerGroupId(String vServerGroupId) {
+			this.vServerGroupId = vServerGroupId;
+		}
+
+		public Integer getHttpPort() {
+			return this.httpPort;
+		}
+
+		public void setHttpPort(Integer httpPort) {
+			this.httpPort = httpPort;
+		}
+
+		public Integer getHttpsPort() {
+			return this.httpsPort;
+		}
+
+		public void setHttpsPort(Integer httpsPort) {
+			this.httpsPort = httpsPort;
+		}
+
+		public Integer getServiceWeight() {
+			return this.serviceWeight;
+		}
+
+		public void setServiceWeight(Integer serviceWeight) {
+			this.serviceWeight = serviceWeight;
+		}
+
+		public Boolean getEditEnable() {
+			return this.editEnable;
+		}
+
+		public void setEditEnable(Boolean editEnable) {
+			this.editEnable = editEnable;
+		}
+
+		public String getHttpsVServerGroupId() {
+			return this.httpsVServerGroupId;
+		}
+
+		public void setHttpsVServerGroupId(String httpsVServerGroupId) {
+			this.httpsVServerGroupId = httpsVServerGroupId;
 		}
 	}
 

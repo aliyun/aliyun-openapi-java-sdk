@@ -25,6 +25,8 @@ import com.aliyuncs.mse.Endpoint;
 public class CreateMseServiceApplicationRequest extends RpcAcsRequest<CreateMseServiceApplicationResponse> {
 	   
 
+	private String mseSessionId;
+
 	private String language;
 
 	private String source;
@@ -34,6 +36,8 @@ public class CreateMseServiceApplicationRequest extends RpcAcsRequest<CreateMseS
 	private String appName;
 
 	private String switchEnable;
+
+	private String mseVersion;
 
 	private String acceptLanguage;
 
@@ -47,6 +51,17 @@ public class CreateMseServiceApplicationRequest extends RpcAcsRequest<CreateMseS
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getMseSessionId() {
+		return this.mseSessionId;
+	}
+
+	public void setMseSessionId(String mseSessionId) {
+		this.mseSessionId = mseSessionId;
+		if(mseSessionId != null){
+			putQueryParameter("MseSessionId", mseSessionId);
+		}
 	}
 
 	public String getLanguage() {
@@ -101,6 +116,17 @@ public class CreateMseServiceApplicationRequest extends RpcAcsRequest<CreateMseS
 		this.switchEnable = switchEnable;
 		if(switchEnable != null){
 			putQueryParameter("SwitchEnable", switchEnable);
+		}
+	}
+
+	public String getMseVersion() {
+		return this.mseVersion;
+	}
+
+	public void setMseVersion(String mseVersion) {
+		this.mseVersion = mseVersion;
+		if(mseVersion != null){
+			putQueryParameter("MseVersion", mseVersion);
 		}
 	}
 

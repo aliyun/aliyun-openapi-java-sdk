@@ -25,15 +25,17 @@ import com.aliyuncs.mse.Endpoint;
 public class UpdateGatewayRouteHTTPRewriteRequest extends RpcAcsRequest<UpdateGatewayRouteHTTPRewriteResponse> {
 	   
 
+	private String mseSessionId;
+
 	private String gatewayUniqueId;
-
-	private String httpRewriteJSON;
-
-	private String acceptLanguage;
 
 	private Long id;
 
 	private Long gatewayId;
+
+	private String httpRewriteJSON;
+
+	private String acceptLanguage;
 	public UpdateGatewayRouteHTTPRewriteRequest() {
 		super("mse", "2019-05-31", "UpdateGatewayRouteHTTPRewrite", "mse");
 		setMethod(MethodType.POST);
@@ -41,6 +43,17 @@ public class UpdateGatewayRouteHTTPRewriteRequest extends RpcAcsRequest<UpdateGa
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getMseSessionId() {
+		return this.mseSessionId;
+	}
+
+	public void setMseSessionId(String mseSessionId) {
+		this.mseSessionId = mseSessionId;
+		if(mseSessionId != null){
+			putQueryParameter("MseSessionId", mseSessionId);
+		}
 	}
 
 	public String getGatewayUniqueId() {
@@ -51,28 +64,6 @@ public class UpdateGatewayRouteHTTPRewriteRequest extends RpcAcsRequest<UpdateGa
 		this.gatewayUniqueId = gatewayUniqueId;
 		if(gatewayUniqueId != null){
 			putQueryParameter("GatewayUniqueId", gatewayUniqueId);
-		}
-	}
-
-	public String getHttpRewriteJSON() {
-		return this.httpRewriteJSON;
-	}
-
-	public void setHttpRewriteJSON(String httpRewriteJSON) {
-		this.httpRewriteJSON = httpRewriteJSON;
-		if(httpRewriteJSON != null){
-			putQueryParameter("HttpRewriteJSON", httpRewriteJSON);
-		}
-	}
-
-	public String getAcceptLanguage() {
-		return this.acceptLanguage;
-	}
-
-	public void setAcceptLanguage(String acceptLanguage) {
-		this.acceptLanguage = acceptLanguage;
-		if(acceptLanguage != null){
-			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 
@@ -95,6 +86,28 @@ public class UpdateGatewayRouteHTTPRewriteRequest extends RpcAcsRequest<UpdateGa
 		this.gatewayId = gatewayId;
 		if(gatewayId != null){
 			putQueryParameter("GatewayId", gatewayId.toString());
+		}
+	}
+
+	public String getHttpRewriteJSON() {
+		return this.httpRewriteJSON;
+	}
+
+	public void setHttpRewriteJSON(String httpRewriteJSON) {
+		this.httpRewriteJSON = httpRewriteJSON;
+		if(httpRewriteJSON != null){
+			putQueryParameter("HttpRewriteJSON", httpRewriteJSON);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

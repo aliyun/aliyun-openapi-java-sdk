@@ -27,6 +27,8 @@ import com.aliyuncs.mse.Endpoint;
 public class ListGatewayRouteRequest extends RpcAcsRequest<ListGatewayRouteResponse> {
 	   
 
+	private String mseSessionId;
+
 	private Integer pageNumber;
 
 	private String orderItem;
@@ -46,6 +48,17 @@ public class ListGatewayRouteRequest extends RpcAcsRequest<ListGatewayRouteRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getMseSessionId() {
+		return this.mseSessionId;
+	}
+
+	public void setMseSessionId(String mseSessionId) {
+		this.mseSessionId = mseSessionId;
+		if(mseSessionId != null){
+			putQueryParameter("MseSessionId", mseSessionId);
+		}
 	}
 
 	public Integer getPageNumber() {

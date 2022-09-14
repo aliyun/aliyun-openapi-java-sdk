@@ -30,13 +30,15 @@ public class UpdateGatewayRouteTimeoutRequest extends RpcAcsRequest<UpdateGatewa
 	@SerializedName("timeoutJSON")
 	private TimeoutJSON timeoutJSON;
 
-	private String gatewayUniqueId;
+	private String mseSessionId;
 
-	private String acceptLanguage;
+	private String gatewayUniqueId;
 
 	private Long id;
 
 	private Long gatewayId;
+
+	private String acceptLanguage;
 	public UpdateGatewayRouteTimeoutRequest() {
 		super("mse", "2019-05-31", "UpdateGatewayRouteTimeout", "mse");
 		setMethod(MethodType.POST);
@@ -57,6 +59,17 @@ public class UpdateGatewayRouteTimeoutRequest extends RpcAcsRequest<UpdateGatewa
 		}	
 	}
 
+	public String getMseSessionId() {
+		return this.mseSessionId;
+	}
+
+	public void setMseSessionId(String mseSessionId) {
+		this.mseSessionId = mseSessionId;
+		if(mseSessionId != null){
+			putQueryParameter("MseSessionId", mseSessionId);
+		}
+	}
+
 	public String getGatewayUniqueId() {
 		return this.gatewayUniqueId;
 	}
@@ -65,17 +78,6 @@ public class UpdateGatewayRouteTimeoutRequest extends RpcAcsRequest<UpdateGatewa
 		this.gatewayUniqueId = gatewayUniqueId;
 		if(gatewayUniqueId != null){
 			putQueryParameter("GatewayUniqueId", gatewayUniqueId);
-		}
-	}
-
-	public String getAcceptLanguage() {
-		return this.acceptLanguage;
-	}
-
-	public void setAcceptLanguage(String acceptLanguage) {
-		this.acceptLanguage = acceptLanguage;
-		if(acceptLanguage != null){
-			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 
@@ -98,6 +100,17 @@ public class UpdateGatewayRouteTimeoutRequest extends RpcAcsRequest<UpdateGatewa
 		this.gatewayId = gatewayId;
 		if(gatewayId != null){
 			putQueryParameter("GatewayId", gatewayId.toString());
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

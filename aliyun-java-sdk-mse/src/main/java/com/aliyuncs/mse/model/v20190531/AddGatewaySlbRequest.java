@@ -25,13 +25,25 @@ import com.aliyuncs.mse.Endpoint;
 public class AddGatewaySlbRequest extends RpcAcsRequest<AddGatewaySlbResponse> {
 	   
 
+	private String mseSessionId;
+
 	private String slbId;
 
 	private String gatewayUniqueId;
 
 	private String type;
 
+	private Integer httpPort;
+
+	private Integer serviceWeight;
+
+	private String vServerGroupId;
+
+	private String httpsVServerGroupId;
+
 	private String acceptLanguage;
+
+	private Integer httpsPort;
 	public AddGatewaySlbRequest() {
 		super("mse", "2019-05-31", "AddGatewaySlb", "mse");
 		setMethod(MethodType.POST);
@@ -39,6 +51,17 @@ public class AddGatewaySlbRequest extends RpcAcsRequest<AddGatewaySlbResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getMseSessionId() {
+		return this.mseSessionId;
+	}
+
+	public void setMseSessionId(String mseSessionId) {
+		this.mseSessionId = mseSessionId;
+		if(mseSessionId != null){
+			putQueryParameter("MseSessionId", mseSessionId);
+		}
 	}
 
 	public String getSlbId() {
@@ -74,6 +97,50 @@ public class AddGatewaySlbRequest extends RpcAcsRequest<AddGatewaySlbResponse> {
 		}
 	}
 
+	public Integer getHttpPort() {
+		return this.httpPort;
+	}
+
+	public void setHttpPort(Integer httpPort) {
+		this.httpPort = httpPort;
+		if(httpPort != null){
+			putQueryParameter("HttpPort", httpPort.toString());
+		}
+	}
+
+	public Integer getServiceWeight() {
+		return this.serviceWeight;
+	}
+
+	public void setServiceWeight(Integer serviceWeight) {
+		this.serviceWeight = serviceWeight;
+		if(serviceWeight != null){
+			putQueryParameter("ServiceWeight", serviceWeight.toString());
+		}
+	}
+
+	public String getVServerGroupId() {
+		return this.vServerGroupId;
+	}
+
+	public void setVServerGroupId(String vServerGroupId) {
+		this.vServerGroupId = vServerGroupId;
+		if(vServerGroupId != null){
+			putQueryParameter("VServerGroupId", vServerGroupId);
+		}
+	}
+
+	public String getHttpsVServerGroupId() {
+		return this.httpsVServerGroupId;
+	}
+
+	public void setHttpsVServerGroupId(String httpsVServerGroupId) {
+		this.httpsVServerGroupId = httpsVServerGroupId;
+		if(httpsVServerGroupId != null){
+			putQueryParameter("HttpsVServerGroupId", httpsVServerGroupId);
+		}
+	}
+
 	public String getAcceptLanguage() {
 		return this.acceptLanguage;
 	}
@@ -82,6 +149,17 @@ public class AddGatewaySlbRequest extends RpcAcsRequest<AddGatewaySlbResponse> {
 		this.acceptLanguage = acceptLanguage;
 		if(acceptLanguage != null){
 			putQueryParameter("AcceptLanguage", acceptLanguage);
+		}
+	}
+
+	public Integer getHttpsPort() {
+		return this.httpsPort;
+	}
+
+	public void setHttpsPort(Integer httpsPort) {
+		this.httpsPort = httpsPort;
+		if(httpsPort != null){
+			putQueryParameter("HttpsPort", httpsPort.toString());
 		}
 	}
 

@@ -36,6 +36,7 @@ public class GetAppMessageQueueRouteResponseUnmarshaller {
 		data.setAppId(_ctx.stringValue("GetAppMessageQueueRouteResponse.Data.AppId"));
 		data.setRegion(_ctx.stringValue("GetAppMessageQueueRouteResponse.Data.Region"));
 		data.setEnable(_ctx.booleanValue("GetAppMessageQueueRouteResponse.Data.Enable"));
+		data.setFilterSide(_ctx.stringValue("GetAppMessageQueueRouteResponse.Data.FilterSide"));
 
 		List<String> tags = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetAppMessageQueueRouteResponse.Data.Tags.Length"); i++) {

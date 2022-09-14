@@ -25,13 +25,21 @@ import com.aliyuncs.mse.Endpoint;
 public class UpdateGatewayDomainRequest extends RpcAcsRequest<UpdateGatewayDomainResponse> {
 	   
 
+	private String mseSessionId;
+
 	private String gatewayUniqueId;
+
+	private String tlsMax;
 
 	private String protocol;
 
 	private Boolean mustHttps;
 
+	private String http2;
+
 	private Long id;
+
+	private String tlsMin;
 
 	private String certIdentifier;
 
@@ -45,6 +53,17 @@ public class UpdateGatewayDomainRequest extends RpcAcsRequest<UpdateGatewayDomai
 		} catch (Exception e) {}
 	}
 
+	public String getMseSessionId() {
+		return this.mseSessionId;
+	}
+
+	public void setMseSessionId(String mseSessionId) {
+		this.mseSessionId = mseSessionId;
+		if(mseSessionId != null){
+			putQueryParameter("MseSessionId", mseSessionId);
+		}
+	}
+
 	public String getGatewayUniqueId() {
 		return this.gatewayUniqueId;
 	}
@@ -53,6 +72,17 @@ public class UpdateGatewayDomainRequest extends RpcAcsRequest<UpdateGatewayDomai
 		this.gatewayUniqueId = gatewayUniqueId;
 		if(gatewayUniqueId != null){
 			putQueryParameter("GatewayUniqueId", gatewayUniqueId);
+		}
+	}
+
+	public String getTlsMax() {
+		return this.tlsMax;
+	}
+
+	public void setTlsMax(String tlsMax) {
+		this.tlsMax = tlsMax;
+		if(tlsMax != null){
+			putQueryParameter("TlsMax", tlsMax);
 		}
 	}
 
@@ -78,6 +108,17 @@ public class UpdateGatewayDomainRequest extends RpcAcsRequest<UpdateGatewayDomai
 		}
 	}
 
+	public String getHttp2() {
+		return this.http2;
+	}
+
+	public void setHttp2(String http2) {
+		this.http2 = http2;
+		if(http2 != null){
+			putQueryParameter("Http2", http2);
+		}
+	}
+
 	public Long getId() {
 		return this.id;
 	}
@@ -86,6 +127,17 @@ public class UpdateGatewayDomainRequest extends RpcAcsRequest<UpdateGatewayDomai
 		this.id = id;
 		if(id != null){
 			putQueryParameter("Id", id.toString());
+		}
+	}
+
+	public String getTlsMin() {
+		return this.tlsMin;
+	}
+
+	public void setTlsMin(String tlsMin) {
+		this.tlsMin = tlsMin;
+		if(tlsMin != null){
+			putQueryParameter("TlsMin", tlsMin);
 		}
 	}
 

@@ -22,12 +22,16 @@ import com.aliyuncs.mse.model.v20190531.ListGatewayRouteResponse.Data;
 import com.aliyuncs.mse.model.v20190531.ListGatewayRouteResponse.Data.Routes;
 import com.aliyuncs.mse.model.v20190531.ListGatewayRouteResponse.Data.Routes.Comment;
 import com.aliyuncs.mse.model.v20190531.ListGatewayRouteResponse.Data.Routes.DirectResponse;
+import com.aliyuncs.mse.model.v20190531.ListGatewayRouteResponse.Data.Routes.FallbackServicesItem;
 import com.aliyuncs.mse.model.v20190531.ListGatewayRouteResponse.Data.Routes.Redirect;
 import com.aliyuncs.mse.model.v20190531.ListGatewayRouteResponse.Data.Routes.RoutePredicates;
 import com.aliyuncs.mse.model.v20190531.ListGatewayRouteResponse.Data.Routes.RoutePredicates.HeaderPredicatesItem;
 import com.aliyuncs.mse.model.v20190531.ListGatewayRouteResponse.Data.Routes.RoutePredicates.PathPredicates;
 import com.aliyuncs.mse.model.v20190531.ListGatewayRouteResponse.Data.Routes.RoutePredicates.QueryPredicatesItem;
 import com.aliyuncs.mse.model.v20190531.ListGatewayRouteResponse.Data.Routes.RouteServicesItem;
+import com.aliyuncs.mse.model.v20190531.ListGatewayRouteResponse.Data.Routes.RouteServicesItem.HttpDubboTranscoder;
+import com.aliyuncs.mse.model.v20190531.ListGatewayRouteResponse.Data.Routes.RouteServicesItem.HttpDubboTranscoder.MothedMapListItem;
+import com.aliyuncs.mse.model.v20190531.ListGatewayRouteResponse.Data.Routes.RouteServicesItem.HttpDubboTranscoder.MothedMapListItem.ParamMapsListItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -66,6 +70,7 @@ public class ListGatewayRouteResponseUnmarshaller {
 			routes.setDestinationType(_ctx.stringValue("ListGatewayRouteResponse.Data.Result["+ i +"].DestinationType"));
 			routes.setType(_ctx.stringValue("ListGatewayRouteResponse.Data.Result["+ i +"].Type"));
 			routes.setEnableWaf(_ctx.stringValue("ListGatewayRouteResponse.Data.Result["+ i +"].EnableWaf"));
+			routes.setFallback(_ctx.booleanValue("ListGatewayRouteResponse.Data.Result["+ i +"].Fallback"));
 
 			List<Long> domainIdList = new ArrayList<Long>();
 			for (int j = 0; j < _ctx.lengthValue("ListGatewayRouteResponse.Data.Result["+ i +"].DomainIdList.Length"); j++) {
@@ -142,10 +147,62 @@ public class ListGatewayRouteResponseUnmarshaller {
 				routeServicesItem.setSourceType(_ctx.stringValue("ListGatewayRouteResponse.Data.Result["+ i +"].RouteServices["+ j +"].SourceType"));
 				routeServicesItem.setNamespace(_ctx.stringValue("ListGatewayRouteResponse.Data.Result["+ i +"].RouteServices["+ j +"].Namespace"));
 				routeServicesItem.setGroupName(_ctx.stringValue("ListGatewayRouteResponse.Data.Result["+ i +"].RouteServices["+ j +"].GroupName"));
+				routeServicesItem.setAgreementType(_ctx.stringValue("ListGatewayRouteResponse.Data.Result["+ i +"].RouteServices["+ j +"].AgreementType"));
+
+				HttpDubboTranscoder httpDubboTranscoder = new HttpDubboTranscoder();
+				httpDubboTranscoder.setDubboServiceName(_ctx.stringValue("ListGatewayRouteResponse.Data.Result["+ i +"].RouteServices["+ j +"].HttpDubboTranscoder.DubboServiceName"));
+				httpDubboTranscoder.setDubboServiceVersion(_ctx.stringValue("ListGatewayRouteResponse.Data.Result["+ i +"].RouteServices["+ j +"].HttpDubboTranscoder.DubboServiceVersion"));
+
+				List<MothedMapListItem> mothedMapList = new ArrayList<MothedMapListItem>();
+				for (int k = 0; k < _ctx.lengthValue("ListGatewayRouteResponse.Data.Result["+ i +"].RouteServices["+ j +"].HttpDubboTranscoder.MothedMapList.Length"); k++) {
+					MothedMapListItem mothedMapListItem = new MothedMapListItem();
+					mothedMapListItem.setDubboMothedName(_ctx.stringValue("ListGatewayRouteResponse.Data.Result["+ i +"].RouteServices["+ j +"].HttpDubboTranscoder.MothedMapList["+ k +"].DubboMothedName"));
+					mothedMapListItem.setHttpMothed(_ctx.stringValue("ListGatewayRouteResponse.Data.Result["+ i +"].RouteServices["+ j +"].HttpDubboTranscoder.MothedMapList["+ k +"].HttpMothed"));
+					mothedMapListItem.setMothedpath(_ctx.stringValue("ListGatewayRouteResponse.Data.Result["+ i +"].RouteServices["+ j +"].HttpDubboTranscoder.MothedMapList["+ k +"].Mothedpath"));
+					mothedMapListItem.setPassThroughAllHeaders(_ctx.stringValue("ListGatewayRouteResponse.Data.Result["+ i +"].RouteServices["+ j +"].HttpDubboTranscoder.MothedMapList["+ k +"].PassThroughAllHeaders"));
+
+					List<String> passThroughList = new ArrayList<String>();
+					for (int l = 0; l < _ctx.lengthValue("ListGatewayRouteResponse.Data.Result["+ i +"].RouteServices["+ j +"].HttpDubboTranscoder.MothedMapList["+ k +"].PassThroughList.Length"); l++) {
+						passThroughList.add(_ctx.stringValue("ListGatewayRouteResponse.Data.Result["+ i +"].RouteServices["+ j +"].HttpDubboTranscoder.MothedMapList["+ k +"].PassThroughList["+ l +"]"));
+					}
+					mothedMapListItem.setPassThroughList(passThroughList);
+
+					List<ParamMapsListItem> paramMapsList = new ArrayList<ParamMapsListItem>();
+					for (int l = 0; l < _ctx.lengthValue("ListGatewayRouteResponse.Data.Result["+ i +"].RouteServices["+ j +"].HttpDubboTranscoder.MothedMapList["+ k +"].ParamMapsList.Length"); l++) {
+						ParamMapsListItem paramMapsListItem = new ParamMapsListItem();
+						paramMapsListItem.setExtractKeySpec(_ctx.stringValue("ListGatewayRouteResponse.Data.Result["+ i +"].RouteServices["+ j +"].HttpDubboTranscoder.MothedMapList["+ k +"].ParamMapsList["+ l +"].ExtractKeySpec"));
+						paramMapsListItem.setExtractKey(_ctx.stringValue("ListGatewayRouteResponse.Data.Result["+ i +"].RouteServices["+ j +"].HttpDubboTranscoder.MothedMapList["+ k +"].ParamMapsList["+ l +"].ExtractKey"));
+						paramMapsListItem.setMappingType(_ctx.stringValue("ListGatewayRouteResponse.Data.Result["+ i +"].RouteServices["+ j +"].HttpDubboTranscoder.MothedMapList["+ k +"].ParamMapsList["+ l +"].MappingType"));
+
+						paramMapsList.add(paramMapsListItem);
+					}
+					mothedMapListItem.setParamMapsList(paramMapsList);
+
+					mothedMapList.add(mothedMapListItem);
+				}
+				httpDubboTranscoder.setMothedMapList(mothedMapList);
+				routeServicesItem.setHttpDubboTranscoder(httpDubboTranscoder);
 
 				routeServices.add(routeServicesItem);
 			}
 			routes.setRouteServices(routeServices);
+
+			List<FallbackServicesItem> fallbackServices = new ArrayList<FallbackServicesItem>();
+			for (int j = 0; j < _ctx.lengthValue("ListGatewayRouteResponse.Data.Result["+ i +"].FallbackServices.Length"); j++) {
+				FallbackServicesItem fallbackServicesItem = new FallbackServicesItem();
+				fallbackServicesItem.setServiceId(_ctx.longValue("ListGatewayRouteResponse.Data.Result["+ i +"].FallbackServices["+ j +"].ServiceId"));
+				fallbackServicesItem.setServiceName(_ctx.stringValue("ListGatewayRouteResponse.Data.Result["+ i +"].FallbackServices["+ j +"].ServiceName"));
+				fallbackServicesItem.setPercent(_ctx.integerValue("ListGatewayRouteResponse.Data.Result["+ i +"].FallbackServices["+ j +"].Percent"));
+				fallbackServicesItem.setVersion(_ctx.stringValue("ListGatewayRouteResponse.Data.Result["+ i +"].FallbackServices["+ j +"].Version"));
+				fallbackServicesItem.setName(_ctx.stringValue("ListGatewayRouteResponse.Data.Result["+ i +"].FallbackServices["+ j +"].Name"));
+				fallbackServicesItem.setSourceType(_ctx.stringValue("ListGatewayRouteResponse.Data.Result["+ i +"].FallbackServices["+ j +"].SourceType"));
+				fallbackServicesItem.setNamespace(_ctx.stringValue("ListGatewayRouteResponse.Data.Result["+ i +"].FallbackServices["+ j +"].Namespace"));
+				fallbackServicesItem.setGroupName(_ctx.stringValue("ListGatewayRouteResponse.Data.Result["+ i +"].FallbackServices["+ j +"].GroupName"));
+				fallbackServicesItem.setAgreementType(_ctx.stringValue("ListGatewayRouteResponse.Data.Result["+ i +"].FallbackServices["+ j +"].AgreementType"));
+
+				fallbackServices.add(fallbackServicesItem);
+			}
+			routes.setFallbackServices(fallbackServices);
 
 			result.add(routes);
 		}

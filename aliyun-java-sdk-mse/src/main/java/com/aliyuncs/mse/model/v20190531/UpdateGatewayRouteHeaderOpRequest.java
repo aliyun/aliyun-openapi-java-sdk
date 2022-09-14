@@ -25,15 +25,17 @@ import com.aliyuncs.mse.Endpoint;
 public class UpdateGatewayRouteHeaderOpRequest extends RpcAcsRequest<UpdateGatewayRouteHeaderOpResponse> {
 	   
 
+	private String mseSessionId;
+
 	private String gatewayUniqueId;
 
 	private String headerOpJSON;
 
-	private String acceptLanguage;
-
 	private Long id;
 
 	private Long gatewayId;
+
+	private String acceptLanguage;
 	public UpdateGatewayRouteHeaderOpRequest() {
 		super("mse", "2019-05-31", "UpdateGatewayRouteHeaderOp", "mse");
 		setMethod(MethodType.POST);
@@ -41,6 +43,17 @@ public class UpdateGatewayRouteHeaderOpRequest extends RpcAcsRequest<UpdateGatew
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getMseSessionId() {
+		return this.mseSessionId;
+	}
+
+	public void setMseSessionId(String mseSessionId) {
+		this.mseSessionId = mseSessionId;
+		if(mseSessionId != null){
+			putQueryParameter("MseSessionId", mseSessionId);
+		}
 	}
 
 	public String getGatewayUniqueId() {
@@ -65,17 +78,6 @@ public class UpdateGatewayRouteHeaderOpRequest extends RpcAcsRequest<UpdateGatew
 		}
 	}
 
-	public String getAcceptLanguage() {
-		return this.acceptLanguage;
-	}
-
-	public void setAcceptLanguage(String acceptLanguage) {
-		this.acceptLanguage = acceptLanguage;
-		if(acceptLanguage != null){
-			putQueryParameter("AcceptLanguage", acceptLanguage);
-		}
-	}
-
 	public Long getId() {
 		return this.id;
 	}
@@ -95,6 +97,17 @@ public class UpdateGatewayRouteHeaderOpRequest extends RpcAcsRequest<UpdateGatew
 		this.gatewayId = gatewayId;
 		if(gatewayId != null){
 			putQueryParameter("GatewayId", gatewayId.toString());
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

@@ -93,6 +93,8 @@ public class GetAppMessageQueueRouteResponse extends AcsResponse {
 
 		private Boolean enable;
 
+		private String filterSide;
+
 		private List<String> tags;
 
 		public String getAppId() {
@@ -117,6 +119,14 @@ public class GetAppMessageQueueRouteResponse extends AcsResponse {
 
 		public void setEnable(Boolean enable) {
 			this.enable = enable;
+		}
+
+		public String getFilterSide() {
+			return this.filterSide;
+		}
+
+		public void setFilterSide(String filterSide) {
+			this.filterSide = filterSide;
 		}
 
 		public List<String> getTags() {

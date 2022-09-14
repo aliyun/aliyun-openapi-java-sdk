@@ -121,7 +121,11 @@ public class GetGatewayRouteDetailResponse extends AcsResponse {
 
 		private Integer ahasStatus;
 
+		private Boolean fallback;
+
 		private List<RouteServicesItem> routeServices;
+
+		private List<FallbackServicesItem> fallbackServices;
 
 		private List<Long> domainIdList;
 
@@ -279,12 +283,28 @@ public class GetGatewayRouteDetailResponse extends AcsResponse {
 			this.ahasStatus = ahasStatus;
 		}
 
+		public Boolean getFallback() {
+			return this.fallback;
+		}
+
+		public void setFallback(Boolean fallback) {
+			this.fallback = fallback;
+		}
+
 		public List<RouteServicesItem> getRouteServices() {
 			return this.routeServices;
 		}
 
 		public void setRouteServices(List<RouteServicesItem> routeServices) {
 			this.routeServices = routeServices;
+		}
+
+		public List<FallbackServicesItem> getFallbackServices() {
+			return this.fallbackServices;
+		}
+
+		public void setFallbackServices(List<FallbackServicesItem> fallbackServices) {
+			this.fallbackServices = fallbackServices;
 		}
 
 		public List<Long> getDomainIdList() {
@@ -385,6 +405,8 @@ public class GetGatewayRouteDetailResponse extends AcsResponse {
 
 			private String groupName;
 
+			private String agreementType;
+
 			public Long getServiceId() {
 				return this.serviceId;
 			}
@@ -447,6 +469,107 @@ public class GetGatewayRouteDetailResponse extends AcsResponse {
 
 			public void setGroupName(String groupName) {
 				this.groupName = groupName;
+			}
+
+			public String getAgreementType() {
+				return this.agreementType;
+			}
+
+			public void setAgreementType(String agreementType) {
+				this.agreementType = agreementType;
+			}
+		}
+
+		public static class FallbackServicesItem {
+
+			private Long serviceId;
+
+			private String serviceName;
+
+			private Integer percent;
+
+			private String version;
+
+			private String name;
+
+			private String sourceType;
+
+			private String namespace;
+
+			private String groupName;
+
+			private String agreementType;
+
+			public Long getServiceId() {
+				return this.serviceId;
+			}
+
+			public void setServiceId(Long serviceId) {
+				this.serviceId = serviceId;
+			}
+
+			public String getServiceName() {
+				return this.serviceName;
+			}
+
+			public void setServiceName(String serviceName) {
+				this.serviceName = serviceName;
+			}
+
+			public Integer getPercent() {
+				return this.percent;
+			}
+
+			public void setPercent(Integer percent) {
+				this.percent = percent;
+			}
+
+			public String getVersion() {
+				return this.version;
+			}
+
+			public void setVersion(String version) {
+				this.version = version;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getSourceType() {
+				return this.sourceType;
+			}
+
+			public void setSourceType(String sourceType) {
+				this.sourceType = sourceType;
+			}
+
+			public String getNamespace() {
+				return this.namespace;
+			}
+
+			public void setNamespace(String namespace) {
+				this.namespace = namespace;
+			}
+
+			public String getGroupName() {
+				return this.groupName;
+			}
+
+			public void setGroupName(String groupName) {
+				this.groupName = groupName;
+			}
+
+			public String getAgreementType() {
+				return this.agreementType;
+			}
+
+			public void setAgreementType(String agreementType) {
+				this.agreementType = agreementType;
 			}
 		}
 

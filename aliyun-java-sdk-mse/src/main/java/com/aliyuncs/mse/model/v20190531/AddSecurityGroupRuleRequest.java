@@ -25,13 +25,15 @@ import com.aliyuncs.mse.Endpoint;
 public class AddSecurityGroupRuleRequest extends RpcAcsRequest<AddSecurityGroupRuleResponse> {
 	   
 
-	private String portRange;
+	private String mseSessionId;
 
 	private String gatewayUniqueId;
 
 	private String securityGroupId;
 
 	private String description;
+
+	private String portRange;
 
 	private String acceptLanguage;
 	public AddSecurityGroupRuleRequest() {
@@ -43,14 +45,14 @@ public class AddSecurityGroupRuleRequest extends RpcAcsRequest<AddSecurityGroupR
 		} catch (Exception e) {}
 	}
 
-	public String getPortRange() {
-		return this.portRange;
+	public String getMseSessionId() {
+		return this.mseSessionId;
 	}
 
-	public void setPortRange(String portRange) {
-		this.portRange = portRange;
-		if(portRange != null){
-			putQueryParameter("PortRange", portRange);
+	public void setMseSessionId(String mseSessionId) {
+		this.mseSessionId = mseSessionId;
+		if(mseSessionId != null){
+			putQueryParameter("MseSessionId", mseSessionId);
 		}
 	}
 
@@ -84,6 +86,17 @@ public class AddSecurityGroupRuleRequest extends RpcAcsRequest<AddSecurityGroupR
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getPortRange() {
+		return this.portRange;
+	}
+
+	public void setPortRange(String portRange) {
+		this.portRange = portRange;
+		if(portRange != null){
+			putQueryParameter("PortRange", portRange);
 		}
 	}
 

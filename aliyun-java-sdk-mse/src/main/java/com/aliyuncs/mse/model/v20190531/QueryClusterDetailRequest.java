@@ -27,6 +27,8 @@ public class QueryClusterDetailRequest extends RpcAcsRequest<QueryClusterDetailR
 
 	private Boolean aclSwitch;
 
+	private String mseSessionId;
+
 	private String orderId;
 
 	private String instanceId;
@@ -49,6 +51,17 @@ public class QueryClusterDetailRequest extends RpcAcsRequest<QueryClusterDetailR
 		this.aclSwitch = aclSwitch;
 		if(aclSwitch != null){
 			putQueryParameter("AclSwitch", aclSwitch.toString());
+		}
+	}
+
+	public String getMseSessionId() {
+		return this.mseSessionId;
+	}
+
+	public void setMseSessionId(String mseSessionId) {
+		this.mseSessionId = mseSessionId;
+		if(mseSessionId != null){
+			putQueryParameter("MseSessionId", mseSessionId);
 		}
 	}
 

@@ -25,7 +25,11 @@ import com.aliyuncs.mse.Endpoint;
 public class PullServicesRequest extends RpcAcsRequest<PullServicesResponse> {
 	   
 
+	private String mseSessionId;
+
 	private String gatewayUniqueId;
+
+	private String namespace;
 
 	private String acceptLanguage;
 
@@ -39,6 +43,17 @@ public class PullServicesRequest extends RpcAcsRequest<PullServicesResponse> {
 		} catch (Exception e) {}
 	}
 
+	public String getMseSessionId() {
+		return this.mseSessionId;
+	}
+
+	public void setMseSessionId(String mseSessionId) {
+		this.mseSessionId = mseSessionId;
+		if(mseSessionId != null){
+			putQueryParameter("MseSessionId", mseSessionId);
+		}
+	}
+
 	public String getGatewayUniqueId() {
 		return this.gatewayUniqueId;
 	}
@@ -47,6 +62,17 @@ public class PullServicesRequest extends RpcAcsRequest<PullServicesResponse> {
 		this.gatewayUniqueId = gatewayUniqueId;
 		if(gatewayUniqueId != null){
 			putQueryParameter("GatewayUniqueId", gatewayUniqueId);
+		}
+	}
+
+	public String getNamespace() {
+		return this.namespace;
+	}
+
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+		if(namespace != null){
+			putQueryParameter("Namespace", namespace);
 		}
 	}
 

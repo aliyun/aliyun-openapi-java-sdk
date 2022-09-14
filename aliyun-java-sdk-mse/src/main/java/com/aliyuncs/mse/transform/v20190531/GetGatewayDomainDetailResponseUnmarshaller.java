@@ -48,6 +48,9 @@ public class GetGatewayDomainDetailResponseUnmarshaller {
 		data.setIssuer(_ctx.stringValue("GetGatewayDomainDetailResponse.Data.Issuer"));
 		data.setGmtBefore(_ctx.stringValue("GetGatewayDomainDetailResponse.Data.GmtBefore"));
 		data.setGmtAfter(_ctx.stringValue("GetGatewayDomainDetailResponse.Data.GmtAfter"));
+		data.setHttp2(_ctx.stringValue("GetGatewayDomainDetailResponse.Data.Http2"));
+		data.setTlsMax(_ctx.stringValue("GetGatewayDomainDetailResponse.Data.TlsMax"));
+		data.setTlsMin(_ctx.stringValue("GetGatewayDomainDetailResponse.Data.TlsMin"));
 		getGatewayDomainDetailResponse.setData(data);
 	 
 	 	return getGatewayDomainDetailResponse;

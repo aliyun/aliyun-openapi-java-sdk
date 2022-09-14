@@ -25,6 +25,8 @@ import com.aliyuncs.mse.Endpoint;
 public class ListServiceSourceRequest extends RpcAcsRequest<ListServiceSourceResponse> {
 	   
 
+	private String mseSessionId;
+
 	private String gatewayUniqueId;
 
 	private String acceptLanguage;
@@ -35,6 +37,17 @@ public class ListServiceSourceRequest extends RpcAcsRequest<ListServiceSourceRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getMseSessionId() {
+		return this.mseSessionId;
+	}
+
+	public void setMseSessionId(String mseSessionId) {
+		this.mseSessionId = mseSessionId;
+		if(mseSessionId != null){
+			putQueryParameter("MseSessionId", mseSessionId);
+		}
 	}
 
 	public String getGatewayUniqueId() {

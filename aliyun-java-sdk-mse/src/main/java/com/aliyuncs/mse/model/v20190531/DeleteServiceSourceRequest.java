@@ -27,6 +27,8 @@ public class DeleteServiceSourceRequest extends RpcAcsRequest<DeleteServiceSourc
 
 	private Long sourceId;
 
+	private String mseSessionId;
+
 	private String gatewayUniqueId;
 
 	private String acceptLanguage;
@@ -47,6 +49,17 @@ public class DeleteServiceSourceRequest extends RpcAcsRequest<DeleteServiceSourc
 		this.sourceId = sourceId;
 		if(sourceId != null){
 			putQueryParameter("SourceId", sourceId.toString());
+		}
+	}
+
+	public String getMseSessionId() {
+		return this.mseSessionId;
+	}
+
+	public void setMseSessionId(String mseSessionId) {
+		this.mseSessionId = mseSessionId;
+		if(mseSessionId != null){
+			putQueryParameter("MseSessionId", mseSessionId);
 		}
 	}
 

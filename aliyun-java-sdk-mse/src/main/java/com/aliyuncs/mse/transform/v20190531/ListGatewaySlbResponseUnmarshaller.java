@@ -45,6 +45,12 @@ public class ListGatewaySlbResponseUnmarshaller {
 			sources.setGatewaySlbMode(_ctx.stringValue("ListGatewaySlbResponse.Data["+ i +"].GatewaySlbMode"));
 			sources.setGatewaySlbStatus(_ctx.stringValue("ListGatewaySlbResponse.Data["+ i +"].GatewaySlbStatus"));
 			sources.setStatusDesc(_ctx.stringValue("ListGatewaySlbResponse.Data["+ i +"].StatusDesc"));
+			sources.setVServerGroupId(_ctx.stringValue("ListGatewaySlbResponse.Data["+ i +"].VServerGroupId"));
+			sources.setHttpPort(_ctx.integerValue("ListGatewaySlbResponse.Data["+ i +"].HttpPort"));
+			sources.setHttpsPort(_ctx.integerValue("ListGatewaySlbResponse.Data["+ i +"].HttpsPort"));
+			sources.setServiceWeight(_ctx.integerValue("ListGatewaySlbResponse.Data["+ i +"].ServiceWeight"));
+			sources.setEditEnable(_ctx.booleanValue("ListGatewaySlbResponse.Data["+ i +"].EditEnable"));
+			sources.setHttpsVServerGroupId(_ctx.stringValue("ListGatewaySlbResponse.Data["+ i +"].HttpsVServerGroupId"));
 
 			data.add(sources);
 		}

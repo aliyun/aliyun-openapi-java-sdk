@@ -28,10 +28,14 @@ import com.aliyuncs.mse.Endpoint;
 public class UpdateMessageQueueRouteRequest extends RpcAcsRequest<UpdateMessageQueueRouteResponse> {
 	   
 
+	private String mseSessionId;
+
+	private Boolean enable;
+
 	@SerializedName("tags")
 	private List<String> tags;
 
-	private Boolean enable;
+	private String filterSide;
 
 	private String appId;
 
@@ -47,6 +51,28 @@ public class UpdateMessageQueueRouteRequest extends RpcAcsRequest<UpdateMessageQ
 		} catch (Exception e) {}
 	}
 
+	public String getMseSessionId() {
+		return this.mseSessionId;
+	}
+
+	public void setMseSessionId(String mseSessionId) {
+		this.mseSessionId = mseSessionId;
+		if(mseSessionId != null){
+			putQueryParameter("MseSessionId", mseSessionId);
+		}
+	}
+
+	public Boolean getEnable() {
+		return this.enable;
+	}
+
+	public void setEnable(Boolean enable) {
+		this.enable = enable;
+		if(enable != null){
+			putQueryParameter("Enable", enable.toString());
+		}
+	}
+
 	public List<String> getTags() {
 		return this.tags;
 	}
@@ -58,14 +84,14 @@ public class UpdateMessageQueueRouteRequest extends RpcAcsRequest<UpdateMessageQ
 		}	
 	}
 
-	public Boolean getEnable() {
-		return this.enable;
+	public String getFilterSide() {
+		return this.filterSide;
 	}
 
-	public void setEnable(Boolean enable) {
-		this.enable = enable;
-		if(enable != null){
-			putQueryParameter("Enable", enable.toString());
+	public void setFilterSide(String filterSide) {
+		this.filterSide = filterSide;
+		if(filterSide != null){
+			putQueryParameter("FilterSide", filterSide);
 		}
 	}
 

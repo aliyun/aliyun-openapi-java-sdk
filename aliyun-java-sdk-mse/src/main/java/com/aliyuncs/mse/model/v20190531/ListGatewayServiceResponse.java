@@ -159,9 +159,19 @@ public class ListGatewayServiceResponse extends AcsResponse {
 
 			private String healehStatus;
 
+			private String healthStatus;
+
+			private Boolean healthCheck;
+
 			private List<VersionsItem> versions;
 
 			private List<String> ips;
+
+			private List<String> unhealthyEndpoints;
+
+			private HealthCheckInfo healthCheckInfo;
+
+			private GatewayTrafficPolicy gatewayTrafficPolicy;
 
 			public Long getId() {
 				return this.id;
@@ -283,6 +293,22 @@ public class ListGatewayServiceResponse extends AcsResponse {
 				this.healehStatus = healehStatus;
 			}
 
+			public String getHealthStatus() {
+				return this.healthStatus;
+			}
+
+			public void setHealthStatus(String healthStatus) {
+				this.healthStatus = healthStatus;
+			}
+
+			public Boolean getHealthCheck() {
+				return this.healthCheck;
+			}
+
+			public void setHealthCheck(Boolean healthCheck) {
+				this.healthCheck = healthCheck;
+			}
+
 			public List<VersionsItem> getVersions() {
 				return this.versions;
 			}
@@ -299,6 +325,30 @@ public class ListGatewayServiceResponse extends AcsResponse {
 				this.ips = ips;
 			}
 
+			public List<String> getUnhealthyEndpoints() {
+				return this.unhealthyEndpoints;
+			}
+
+			public void setUnhealthyEndpoints(List<String> unhealthyEndpoints) {
+				this.unhealthyEndpoints = unhealthyEndpoints;
+			}
+
+			public HealthCheckInfo getHealthCheckInfo() {
+				return this.healthCheckInfo;
+			}
+
+			public void setHealthCheckInfo(HealthCheckInfo healthCheckInfo) {
+				this.healthCheckInfo = healthCheckInfo;
+			}
+
+			public GatewayTrafficPolicy getGatewayTrafficPolicy() {
+				return this.gatewayTrafficPolicy;
+			}
+
+			public void setGatewayTrafficPolicy(GatewayTrafficPolicy gatewayTrafficPolicy) {
+				this.gatewayTrafficPolicy = gatewayTrafficPolicy;
+			}
+
 			public static class VersionsItem {
 
 				private String name;
@@ -309,6 +359,294 @@ public class ListGatewayServiceResponse extends AcsResponse {
 
 				public void setName(String name) {
 					this.name = name;
+				}
+			}
+
+			public static class HealthCheckInfo {
+
+				private Boolean check;
+
+				private String protocol;
+
+				private Integer timeout;
+
+				private Integer interval;
+
+				private Integer healthyThreshold;
+
+				private Integer unhealthyThreshold;
+
+				private String httpPath;
+
+				private String httpHost;
+
+				private List<Integer> expectedStatuses;
+
+				public Boolean getCheck() {
+					return this.check;
+				}
+
+				public void setCheck(Boolean check) {
+					this.check = check;
+				}
+
+				public String getBizProtocol() {
+					return this.protocol;
+				}
+
+				public void setBizProtocol(String protocol) {
+					this.protocol = protocol;
+				}
+
+				public Integer getTimeout() {
+					return this.timeout;
+				}
+
+				public void setTimeout(Integer timeout) {
+					this.timeout = timeout;
+				}
+
+				public Integer getInterval() {
+					return this.interval;
+				}
+
+				public void setInterval(Integer interval) {
+					this.interval = interval;
+				}
+
+				public Integer getHealthyThreshold() {
+					return this.healthyThreshold;
+				}
+
+				public void setHealthyThreshold(Integer healthyThreshold) {
+					this.healthyThreshold = healthyThreshold;
+				}
+
+				public Integer getUnhealthyThreshold() {
+					return this.unhealthyThreshold;
+				}
+
+				public void setUnhealthyThreshold(Integer unhealthyThreshold) {
+					this.unhealthyThreshold = unhealthyThreshold;
+				}
+
+				public String getHttpPath() {
+					return this.httpPath;
+				}
+
+				public void setHttpPath(String httpPath) {
+					this.httpPath = httpPath;
+				}
+
+				public String getHttpHost() {
+					return this.httpHost;
+				}
+
+				public void setHttpHost(String httpHost) {
+					this.httpHost = httpHost;
+				}
+
+				public List<Integer> getExpectedStatuses() {
+					return this.expectedStatuses;
+				}
+
+				public void setExpectedStatuses(List<Integer> expectedStatuses) {
+					this.expectedStatuses = expectedStatuses;
+				}
+			}
+
+			public static class GatewayTrafficPolicy {
+
+				private Tls tls;
+
+				private LoadBalancerSettings loadBalancerSettings;
+
+				public Tls getTls() {
+					return this.tls;
+				}
+
+				public void setTls(Tls tls) {
+					this.tls = tls;
+				}
+
+				public LoadBalancerSettings getLoadBalancerSettings() {
+					return this.loadBalancerSettings;
+				}
+
+				public void setLoadBalancerSettings(LoadBalancerSettings loadBalancerSettings) {
+					this.loadBalancerSettings = loadBalancerSettings;
+				}
+
+				public static class Tls {
+
+					private String mode;
+
+					private String certId;
+
+					private String caCertId;
+
+					private String caCertContent;
+
+					private String sni;
+
+					private List<String> subjectAltNames;
+
+					public String getMode() {
+						return this.mode;
+					}
+
+					public void setMode(String mode) {
+						this.mode = mode;
+					}
+
+					public String getCertId() {
+						return this.certId;
+					}
+
+					public void setCertId(String certId) {
+						this.certId = certId;
+					}
+
+					public String getCaCertId() {
+						return this.caCertId;
+					}
+
+					public void setCaCertId(String caCertId) {
+						this.caCertId = caCertId;
+					}
+
+					public String getCaCertContent() {
+						return this.caCertContent;
+					}
+
+					public void setCaCertContent(String caCertContent) {
+						this.caCertContent = caCertContent;
+					}
+
+					public String getSni() {
+						return this.sni;
+					}
+
+					public void setSni(String sni) {
+						this.sni = sni;
+					}
+
+					public List<String> getSubjectAltNames() {
+						return this.subjectAltNames;
+					}
+
+					public void setSubjectAltNames(List<String> subjectAltNames) {
+						this.subjectAltNames = subjectAltNames;
+					}
+				}
+
+				public static class LoadBalancerSettings {
+
+					private String loadbalancerType;
+
+					private Integer warmupDuration;
+
+					private ConsistentHashLBConfig consistentHashLBConfig;
+
+					public String getLoadbalancerType() {
+						return this.loadbalancerType;
+					}
+
+					public void setLoadbalancerType(String loadbalancerType) {
+						this.loadbalancerType = loadbalancerType;
+					}
+
+					public Integer getWarmupDuration() {
+						return this.warmupDuration;
+					}
+
+					public void setWarmupDuration(Integer warmupDuration) {
+						this.warmupDuration = warmupDuration;
+					}
+
+					public ConsistentHashLBConfig getConsistentHashLBConfig() {
+						return this.consistentHashLBConfig;
+					}
+
+					public void setConsistentHashLBConfig(ConsistentHashLBConfig consistentHashLBConfig) {
+						this.consistentHashLBConfig = consistentHashLBConfig;
+					}
+
+					public static class ConsistentHashLBConfig {
+
+						private String parameterName;
+
+						private Long minimumRingSize;
+
+						private String consistentHashLBType;
+
+						private HttpCookie httpCookie;
+
+						public String getParameterName() {
+							return this.parameterName;
+						}
+
+						public void setParameterName(String parameterName) {
+							this.parameterName = parameterName;
+						}
+
+						public Long getMinimumRingSize() {
+							return this.minimumRingSize;
+						}
+
+						public void setMinimumRingSize(Long minimumRingSize) {
+							this.minimumRingSize = minimumRingSize;
+						}
+
+						public String getConsistentHashLBType() {
+							return this.consistentHashLBType;
+						}
+
+						public void setConsistentHashLBType(String consistentHashLBType) {
+							this.consistentHashLBType = consistentHashLBType;
+						}
+
+						public HttpCookie getHttpCookie() {
+							return this.httpCookie;
+						}
+
+						public void setHttpCookie(HttpCookie httpCookie) {
+							this.httpCookie = httpCookie;
+						}
+
+						public static class HttpCookie {
+
+							private String name;
+
+							private String path;
+
+							private String ttl;
+
+							public String getName() {
+								return this.name;
+							}
+
+							public void setName(String name) {
+								this.name = name;
+							}
+
+							public String getPath() {
+								return this.path;
+							}
+
+							public void setPath(String path) {
+								this.path = path;
+							}
+
+							public String getTtl() {
+								return this.ttl;
+							}
+
+							public void setTtl(String ttl) {
+								this.ttl = ttl;
+							}
+						}
+					}
 				}
 			}
 		}

@@ -27,7 +27,11 @@ import com.aliyuncs.mse.Endpoint;
 public class UpdateGatewayServiceTrafficPolicyRequest extends RpcAcsRequest<UpdateGatewayServiceTrafficPolicyResponse> {
 	   
 
+	private String mseSessionId;
+
 	private String gatewayUniqueId;
+
+	private Long gatewayId;
 
 	@SerializedName("gatewayTrafficPolicy")
 	private GatewayTrafficPolicy gatewayTrafficPolicy;
@@ -35,8 +39,6 @@ public class UpdateGatewayServiceTrafficPolicyRequest extends RpcAcsRequest<Upda
 	private String acceptLanguage;
 
 	private Long serviceId;
-
-	private Long gatewayId;
 	public UpdateGatewayServiceTrafficPolicyRequest() {
 		super("mse", "2019-05-31", "UpdateGatewayServiceTrafficPolicy", "mse");
 		setMethod(MethodType.POST);
@@ -44,6 +46,17 @@ public class UpdateGatewayServiceTrafficPolicyRequest extends RpcAcsRequest<Upda
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getMseSessionId() {
+		return this.mseSessionId;
+	}
+
+	public void setMseSessionId(String mseSessionId) {
+		this.mseSessionId = mseSessionId;
+		if(mseSessionId != null){
+			putQueryParameter("MseSessionId", mseSessionId);
+		}
 	}
 
 	public String getGatewayUniqueId() {
@@ -54,6 +67,17 @@ public class UpdateGatewayServiceTrafficPolicyRequest extends RpcAcsRequest<Upda
 		this.gatewayUniqueId = gatewayUniqueId;
 		if(gatewayUniqueId != null){
 			putQueryParameter("GatewayUniqueId", gatewayUniqueId);
+		}
+	}
+
+	public Long getGatewayId() {
+		return this.gatewayId;
+	}
+
+	public void setGatewayId(Long gatewayId) {
+		this.gatewayId = gatewayId;
+		if(gatewayId != null){
+			putQueryParameter("GatewayId", gatewayId.toString());
 		}
 	}
 
@@ -87,17 +111,6 @@ public class UpdateGatewayServiceTrafficPolicyRequest extends RpcAcsRequest<Upda
 		this.serviceId = serviceId;
 		if(serviceId != null){
 			putQueryParameter("ServiceId", serviceId.toString());
-		}
-	}
-
-	public Long getGatewayId() {
-		return this.gatewayId;
-	}
-
-	public void setGatewayId(Long gatewayId) {
-		this.gatewayId = gatewayId;
-		if(gatewayId != null){
-			putQueryParameter("GatewayId", gatewayId.toString());
 		}
 	}
 

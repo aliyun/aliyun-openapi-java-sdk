@@ -26,6 +26,8 @@ import com.aliyuncs.mse.Endpoint;
 public class CreateOrUpdateSwimmingLaneRequest extends RpcAcsRequest<CreateOrUpdateSwimmingLaneResponse> {
 	   
 
+	private String mseSessionId;
+
 	private String source;
 
 	private String gmtModified;
@@ -62,6 +64,17 @@ public class CreateOrUpdateSwimmingLaneRequest extends RpcAcsRequest<CreateOrUpd
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getMseSessionId() {
+		return this.mseSessionId;
+	}
+
+	public void setMseSessionId(String mseSessionId) {
+		this.mseSessionId = mseSessionId;
+		if(mseSessionId != null){
+			putQueryParameter("MseSessionId", mseSessionId);
+		}
 	}
 
 	public String getSource() {
@@ -181,6 +194,11 @@ public class CreateOrUpdateSwimmingLaneRequest extends RpcAcsRequest<CreateOrUpd
 				putQueryParameter("EntryRules." + (depth1 + 1) + ".Path" , entryRuless.get(depth1).getPath());
 				putQueryParameter("EntryRules." + (depth1 + 1) + ".Condition" , entryRuless.get(depth1).getCondition());
 				putQueryParameter("EntryRules." + (depth1 + 1) + ".Enable" , entryRuless.get(depth1).getEnable());
+				if (entryRuless.get(depth1).getPathss() != null) {
+					for (int i = 0; i < entryRuless.get(depth1).getPathss().size(); i++) {
+						putQueryParameter("EntryRules." + (depth1 + 1) + ".Paths." + (i + 1) , entryRuless.get(depth1).getPathss().get(i));
+					}
+				}
 				putQueryParameter("EntryRules." + (depth1 + 1) + ".Priority" , entryRuless.get(depth1).getPriority());
 			}
 		}	
@@ -262,6 +280,8 @@ public class CreateOrUpdateSwimmingLaneRequest extends RpcAcsRequest<CreateOrUpd
 
 		private Boolean enable;
 
+		private List<String> pathss;
+
 		private Integer priority;
 
 		public List<RestItems> getRestItemss() {
@@ -294,6 +314,14 @@ public class CreateOrUpdateSwimmingLaneRequest extends RpcAcsRequest<CreateOrUpd
 
 		public void setEnable(Boolean enable) {
 			this.enable = enable;
+		}
+
+		public List<String> getPathss() {
+			return this.pathss;
+		}
+
+		public void setPathss(List<String> pathss) {
+			this.pathss = pathss;
 		}
 
 		public Integer getPriority() {

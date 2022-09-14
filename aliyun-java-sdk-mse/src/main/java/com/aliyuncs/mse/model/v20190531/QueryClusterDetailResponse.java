@@ -15,6 +15,7 @@
 package com.aliyuncs.mse.model.v20190531;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.mse.transform.v20190531.QueryClusterDetailResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -146,6 +147,10 @@ public class QueryClusterDetailResponse extends AcsResponse {
 		private String chargeType;
 
 		private String orderClusterVersion;
+
+		private Map<Object,Object> tags;
+
+		private String resourceGroupId;
 
 		private List<InstanceModel> instanceModels;
 
@@ -427,6 +432,22 @@ public class QueryClusterDetailResponse extends AcsResponse {
 
 		public void setOrderClusterVersion(String orderClusterVersion) {
 			this.orderClusterVersion = orderClusterVersion;
+		}
+
+		public Map<Object,Object> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(Map<Object,Object> tags) {
+			this.tags = tags;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public List<InstanceModel> getInstanceModels() {

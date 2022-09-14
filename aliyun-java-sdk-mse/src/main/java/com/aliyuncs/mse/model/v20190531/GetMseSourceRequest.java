@@ -25,7 +25,11 @@ import com.aliyuncs.mse.Endpoint;
 public class GetMseSourceRequest extends RpcAcsRequest<GetMseSourceResponse> {
 	   
 
+	private String mseSessionId;
+
 	private String gatewayUniqueId;
+
+	private String type;
 
 	private String acceptLanguage;
 	public GetMseSourceRequest() {
@@ -37,6 +41,17 @@ public class GetMseSourceRequest extends RpcAcsRequest<GetMseSourceResponse> {
 		} catch (Exception e) {}
 	}
 
+	public String getMseSessionId() {
+		return this.mseSessionId;
+	}
+
+	public void setMseSessionId(String mseSessionId) {
+		this.mseSessionId = mseSessionId;
+		if(mseSessionId != null){
+			putQueryParameter("MseSessionId", mseSessionId);
+		}
+	}
+
 	public String getGatewayUniqueId() {
 		return this.gatewayUniqueId;
 	}
@@ -45,6 +60,17 @@ public class GetMseSourceRequest extends RpcAcsRequest<GetMseSourceResponse> {
 		this.gatewayUniqueId = gatewayUniqueId;
 		if(gatewayUniqueId != null){
 			putQueryParameter("GatewayUniqueId", gatewayUniqueId);
+		}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
 		}
 	}
 

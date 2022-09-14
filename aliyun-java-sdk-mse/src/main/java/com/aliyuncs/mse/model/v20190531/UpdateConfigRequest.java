@@ -27,9 +27,13 @@ public class UpdateConfigRequest extends RpcAcsRequest<UpdateConfigResponse> {
 
 	private String openSuperAcl;
 
+	private String mseSessionId;
+
 	private Boolean configAuthEnabled;
 
 	private String passWord;
+
+	private String snapshotCount;
 
 	private String minSessionTimeout;
 
@@ -38,6 +42,8 @@ public class UpdateConfigRequest extends RpcAcsRequest<UpdateConfigResponse> {
 	private String requestPars;
 
 	private String juteMaxbuffer;
+
+	private Boolean namingAuthEnabled;
 
 	private String configType;
 
@@ -84,6 +90,17 @@ public class UpdateConfigRequest extends RpcAcsRequest<UpdateConfigResponse> {
 		}
 	}
 
+	public String getMseSessionId() {
+		return this.mseSessionId;
+	}
+
+	public void setMseSessionId(String mseSessionId) {
+		this.mseSessionId = mseSessionId;
+		if(mseSessionId != null){
+			putQueryParameter("MseSessionId", mseSessionId);
+		}
+	}
+
 	public Boolean getConfigAuthEnabled() {
 		return this.configAuthEnabled;
 	}
@@ -103,6 +120,17 @@ public class UpdateConfigRequest extends RpcAcsRequest<UpdateConfigResponse> {
 		this.passWord = passWord;
 		if(passWord != null){
 			putQueryParameter("PassWord", passWord);
+		}
+	}
+
+	public String getSnapshotCount() {
+		return this.snapshotCount;
+	}
+
+	public void setSnapshotCount(String snapshotCount) {
+		this.snapshotCount = snapshotCount;
+		if(snapshotCount != null){
+			putQueryParameter("SnapshotCount", snapshotCount);
 		}
 	}
 
@@ -147,6 +175,17 @@ public class UpdateConfigRequest extends RpcAcsRequest<UpdateConfigResponse> {
 		this.juteMaxbuffer = juteMaxbuffer;
 		if(juteMaxbuffer != null){
 			putQueryParameter("JuteMaxbuffer", juteMaxbuffer);
+		}
+	}
+
+	public Boolean getNamingAuthEnabled() {
+		return this.namingAuthEnabled;
+	}
+
+	public void setNamingAuthEnabled(Boolean namingAuthEnabled) {
+		this.namingAuthEnabled = namingAuthEnabled;
+		if(namingAuthEnabled != null){
+			putQueryParameter("NamingAuthEnabled", namingAuthEnabled.toString());
 		}
 	}
 

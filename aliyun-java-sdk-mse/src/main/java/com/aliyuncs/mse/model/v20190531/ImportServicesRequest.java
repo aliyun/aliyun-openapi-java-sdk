@@ -28,16 +28,18 @@ import com.aliyuncs.mse.Endpoint;
 public class ImportServicesRequest extends RpcAcsRequest<ImportServicesResponse> {
 	   
 
-	private String sourceId;
+	private String mseSessionId;
 
 	private String gatewayUniqueId;
 
 	@SerializedName("serviceList")
 	private List<ServiceList> serviceList;
 
-	private String acceptLanguage;
+	private String tlsSetting;
 
 	private String sourceType;
+
+	private String acceptLanguage;
 	public ImportServicesRequest() {
 		super("mse", "2019-05-31", "ImportServices", "mse");
 		setMethod(MethodType.POST);
@@ -47,14 +49,14 @@ public class ImportServicesRequest extends RpcAcsRequest<ImportServicesResponse>
 		} catch (Exception e) {}
 	}
 
-	public String getSourceId() {
-		return this.sourceId;
+	public String getMseSessionId() {
+		return this.mseSessionId;
 	}
 
-	public void setSourceId(String sourceId) {
-		this.sourceId = sourceId;
-		if(sourceId != null){
-			putQueryParameter("SourceId", sourceId);
+	public void setMseSessionId(String mseSessionId) {
+		this.mseSessionId = mseSessionId;
+		if(mseSessionId != null){
+			putQueryParameter("MseSessionId", mseSessionId);
 		}
 	}
 
@@ -80,14 +82,14 @@ public class ImportServicesRequest extends RpcAcsRequest<ImportServicesResponse>
 		}	
 	}
 
-	public String getAcceptLanguage() {
-		return this.acceptLanguage;
+	public String getTlsSetting() {
+		return this.tlsSetting;
 	}
 
-	public void setAcceptLanguage(String acceptLanguage) {
-		this.acceptLanguage = acceptLanguage;
-		if(acceptLanguage != null){
-			putQueryParameter("AcceptLanguage", acceptLanguage);
+	public void setTlsSetting(String tlsSetting) {
+		this.tlsSetting = tlsSetting;
+		if(tlsSetting != null){
+			putQueryParameter("TlsSetting", tlsSetting);
 		}
 	}
 
@@ -99,6 +101,17 @@ public class ImportServicesRequest extends RpcAcsRequest<ImportServicesResponse>
 		this.sourceType = sourceType;
 		if(sourceType != null){
 			putQueryParameter("SourceType", sourceType);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

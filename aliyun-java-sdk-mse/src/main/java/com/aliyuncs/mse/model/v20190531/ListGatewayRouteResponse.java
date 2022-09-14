@@ -163,7 +163,11 @@ public class ListGatewayRouteResponse extends AcsResponse {
 
 			private String enableWaf;
 
+			private Boolean fallback;
+
 			private List<RouteServicesItem> routeServices;
+
+			private List<FallbackServicesItem> fallbackServices;
 
 			private List<Long> domainIdList;
 
@@ -313,12 +317,28 @@ public class ListGatewayRouteResponse extends AcsResponse {
 				this.enableWaf = enableWaf;
 			}
 
+			public Boolean getFallback() {
+				return this.fallback;
+			}
+
+			public void setFallback(Boolean fallback) {
+				this.fallback = fallback;
+			}
+
 			public List<RouteServicesItem> getRouteServices() {
 				return this.routeServices;
 			}
 
 			public void setRouteServices(List<RouteServicesItem> routeServices) {
 				this.routeServices = routeServices;
+			}
+
+			public List<FallbackServicesItem> getFallbackServices() {
+				return this.fallbackServices;
+			}
+
+			public void setFallbackServices(List<FallbackServicesItem> fallbackServices) {
+				this.fallbackServices = fallbackServices;
 			}
 
 			public List<Long> getDomainIdList() {
@@ -387,6 +407,10 @@ public class ListGatewayRouteResponse extends AcsResponse {
 
 				private String groupName;
 
+				private String agreementType;
+
+				private HttpDubboTranscoder httpDubboTranscoder;
+
 				public Long getServiceId() {
 					return this.serviceId;
 				}
@@ -449,6 +473,244 @@ public class ListGatewayRouteResponse extends AcsResponse {
 
 				public void setGroupName(String groupName) {
 					this.groupName = groupName;
+				}
+
+				public String getAgreementType() {
+					return this.agreementType;
+				}
+
+				public void setAgreementType(String agreementType) {
+					this.agreementType = agreementType;
+				}
+
+				public HttpDubboTranscoder getHttpDubboTranscoder() {
+					return this.httpDubboTranscoder;
+				}
+
+				public void setHttpDubboTranscoder(HttpDubboTranscoder httpDubboTranscoder) {
+					this.httpDubboTranscoder = httpDubboTranscoder;
+				}
+
+				public static class HttpDubboTranscoder {
+
+					private String dubboServiceName;
+
+					private String dubboServiceVersion;
+
+					private List<MothedMapListItem> mothedMapList;
+
+					public String getDubboServiceName() {
+						return this.dubboServiceName;
+					}
+
+					public void setDubboServiceName(String dubboServiceName) {
+						this.dubboServiceName = dubboServiceName;
+					}
+
+					public String getDubboServiceVersion() {
+						return this.dubboServiceVersion;
+					}
+
+					public void setDubboServiceVersion(String dubboServiceVersion) {
+						this.dubboServiceVersion = dubboServiceVersion;
+					}
+
+					public List<MothedMapListItem> getMothedMapList() {
+						return this.mothedMapList;
+					}
+
+					public void setMothedMapList(List<MothedMapListItem> mothedMapList) {
+						this.mothedMapList = mothedMapList;
+					}
+
+					public static class MothedMapListItem {
+
+						private String dubboMothedName;
+
+						private String httpMothed;
+
+						private String mothedpath;
+
+						private String passThroughAllHeaders;
+
+						private List<ParamMapsListItem> paramMapsList;
+
+						private List<String> passThroughList;
+
+						public String getDubboMothedName() {
+							return this.dubboMothedName;
+						}
+
+						public void setDubboMothedName(String dubboMothedName) {
+							this.dubboMothedName = dubboMothedName;
+						}
+
+						public String getHttpMothed() {
+							return this.httpMothed;
+						}
+
+						public void setHttpMothed(String httpMothed) {
+							this.httpMothed = httpMothed;
+						}
+
+						public String getMothedpath() {
+							return this.mothedpath;
+						}
+
+						public void setMothedpath(String mothedpath) {
+							this.mothedpath = mothedpath;
+						}
+
+						public String getPassThroughAllHeaders() {
+							return this.passThroughAllHeaders;
+						}
+
+						public void setPassThroughAllHeaders(String passThroughAllHeaders) {
+							this.passThroughAllHeaders = passThroughAllHeaders;
+						}
+
+						public List<ParamMapsListItem> getParamMapsList() {
+							return this.paramMapsList;
+						}
+
+						public void setParamMapsList(List<ParamMapsListItem> paramMapsList) {
+							this.paramMapsList = paramMapsList;
+						}
+
+						public List<String> getPassThroughList() {
+							return this.passThroughList;
+						}
+
+						public void setPassThroughList(List<String> passThroughList) {
+							this.passThroughList = passThroughList;
+						}
+
+						public static class ParamMapsListItem {
+
+							private String extractKeySpec;
+
+							private String extractKey;
+
+							private String mappingType;
+
+							public String getExtractKeySpec() {
+								return this.extractKeySpec;
+							}
+
+							public void setExtractKeySpec(String extractKeySpec) {
+								this.extractKeySpec = extractKeySpec;
+							}
+
+							public String getExtractKey() {
+								return this.extractKey;
+							}
+
+							public void setExtractKey(String extractKey) {
+								this.extractKey = extractKey;
+							}
+
+							public String getMappingType() {
+								return this.mappingType;
+							}
+
+							public void setMappingType(String mappingType) {
+								this.mappingType = mappingType;
+							}
+						}
+					}
+				}
+			}
+
+			public static class FallbackServicesItem {
+
+				private Long serviceId;
+
+				private String serviceName;
+
+				private Integer percent;
+
+				private String version;
+
+				private String name;
+
+				private String sourceType;
+
+				private String namespace;
+
+				private String groupName;
+
+				private String agreementType;
+
+				public Long getServiceId() {
+					return this.serviceId;
+				}
+
+				public void setServiceId(Long serviceId) {
+					this.serviceId = serviceId;
+				}
+
+				public String getServiceName() {
+					return this.serviceName;
+				}
+
+				public void setServiceName(String serviceName) {
+					this.serviceName = serviceName;
+				}
+
+				public Integer getPercent() {
+					return this.percent;
+				}
+
+				public void setPercent(Integer percent) {
+					this.percent = percent;
+				}
+
+				public String getVersion() {
+					return this.version;
+				}
+
+				public void setVersion(String version) {
+					this.version = version;
+				}
+
+				public String getName() {
+					return this.name;
+				}
+
+				public void setName(String name) {
+					this.name = name;
+				}
+
+				public String getSourceType() {
+					return this.sourceType;
+				}
+
+				public void setSourceType(String sourceType) {
+					this.sourceType = sourceType;
+				}
+
+				public String getNamespace() {
+					return this.namespace;
+				}
+
+				public void setNamespace(String namespace) {
+					this.namespace = namespace;
+				}
+
+				public String getGroupName() {
+					return this.groupName;
+				}
+
+				public void setGroupName(String groupName) {
+					this.groupName = groupName;
+				}
+
+				public String getAgreementType() {
+					return this.agreementType;
+				}
+
+				public void setAgreementType(String agreementType) {
+					this.agreementType = agreementType;
 				}
 			}
 

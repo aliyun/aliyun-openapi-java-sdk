@@ -28,6 +28,8 @@ import com.aliyuncs.mse.Endpoint;
 public class UpdateGatewayRouteRequest extends RpcAcsRequest<UpdateGatewayRouteResponse> {
 	   
 
+	private String mseSessionId;
+
 	private String gatewayUniqueId;
 
 	private String destinationType;
@@ -57,6 +59,11 @@ public class UpdateGatewayRouteRequest extends RpcAcsRequest<UpdateGatewayRouteR
 	private String name;
 
 	private String acceptLanguage;
+
+	@SerializedName("fallbackServices")
+	private List<FallbackServices> fallbackServices;
+
+	private Boolean fallback;
 	public UpdateGatewayRouteRequest() {
 		super("mse", "2019-05-31", "UpdateGatewayRoute", "mse");
 		setMethod(MethodType.POST);
@@ -64,6 +71,17 @@ public class UpdateGatewayRouteRequest extends RpcAcsRequest<UpdateGatewayRouteR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getMseSessionId() {
+		return this.mseSessionId;
+	}
+
+	public void setMseSessionId(String mseSessionId) {
+		this.mseSessionId = mseSessionId;
+		if(mseSessionId != null){
+			putQueryParameter("MseSessionId", mseSessionId);
+		}
 	}
 
 	public String getGatewayUniqueId() {
@@ -209,7 +227,35 @@ public class UpdateGatewayRouteRequest extends RpcAcsRequest<UpdateGatewayRouteR
 		}
 	}
 
+	public List<FallbackServices> getFallbackServices() {
+		return this.fallbackServices;
+	}
+
+	public void setFallbackServices(List<FallbackServices> fallbackServices) {
+		this.fallbackServices = fallbackServices;	
+		if (fallbackServices != null) {
+			putQueryParameter("FallbackServices" , new Gson().toJson(fallbackServices));
+		}	
+	}
+
+	public Boolean getFallback() {
+		return this.fallback;
+	}
+
+	public void setFallback(Boolean fallback) {
+		this.fallback = fallback;
+		if(fallback != null){
+			putQueryParameter("Fallback", fallback.toString());
+		}
+	}
+
 	public static class Services {
+
+		@SerializedName("HttpDubboTranscoder")
+		private HttpDubboTranscoder httpDubboTranscoder;
+
+		@SerializedName("AgreementType")
+		private String agreementType;
 
 		@SerializedName("Name")
 		private String name;
@@ -231,6 +277,25 @@ public class UpdateGatewayRouteRequest extends RpcAcsRequest<UpdateGatewayRouteR
 
 		@SerializedName("GroupName")
 		private String groupName;
+
+		@SerializedName("ServicePort")
+		private Integer servicePort;
+
+		public HttpDubboTranscoder getHttpDubboTranscoder() {
+			return this.httpDubboTranscoder;
+		}
+
+		public void setHttpDubboTranscoder(HttpDubboTranscoder httpDubboTranscoder) {
+			this.httpDubboTranscoder = httpDubboTranscoder;
+		}
+
+		public String getAgreementType() {
+			return this.agreementType;
+		}
+
+		public void setAgreementType(String agreementType) {
+			this.agreementType = agreementType;
+		}
 
 		public String getName() {
 			return this.name;
@@ -286,6 +351,155 @@ public class UpdateGatewayRouteRequest extends RpcAcsRequest<UpdateGatewayRouteR
 
 		public void setGroupName(String groupName) {
 			this.groupName = groupName;
+		}
+
+		public Integer getServicePort() {
+			return this.servicePort;
+		}
+
+		public void setServicePort(Integer servicePort) {
+			this.servicePort = servicePort;
+		}
+
+		public static class HttpDubboTranscoder {
+
+			@SerializedName("DubboServiceName")
+			private String dubboServiceName;
+
+			@SerializedName("MothedMapList")
+			private List<MothedMapListItem> mothedMapList;
+
+			@SerializedName("DubboServiceVersion")
+			private String dubboServiceVersion;
+
+			public String getDubboServiceName() {
+				return this.dubboServiceName;
+			}
+
+			public void setDubboServiceName(String dubboServiceName) {
+				this.dubboServiceName = dubboServiceName;
+			}
+
+			public List<MothedMapListItem> getMothedMapList() {
+				return this.mothedMapList;
+			}
+
+			public void setMothedMapList(List<MothedMapListItem> mothedMapList) {
+				this.mothedMapList = mothedMapList;
+			}
+
+			public String getDubboServiceVersion() {
+				return this.dubboServiceVersion;
+			}
+
+			public void setDubboServiceVersion(String dubboServiceVersion) {
+				this.dubboServiceVersion = dubboServiceVersion;
+			}
+
+			public static class MothedMapListItem {
+
+				@SerializedName("HttpMothed")
+				private String httpMothed;
+
+				@SerializedName("ParamMapsList")
+				private List<ParamMapsListItem> paramMapsList;
+
+				@SerializedName("Mothedpath")
+				private String mothedpath;
+
+				@SerializedName("DubboMothedName")
+				private String dubboMothedName;
+
+				@SerializedName("PassThroughAllHeaders")
+				private String passThroughAllHeaders;
+
+				@SerializedName("PassThroughList")
+				private List<String> passThroughList;
+
+				public String getHttpMothed() {
+					return this.httpMothed;
+				}
+
+				public void setHttpMothed(String httpMothed) {
+					this.httpMothed = httpMothed;
+				}
+
+				public List<ParamMapsListItem> getParamMapsList() {
+					return this.paramMapsList;
+				}
+
+				public void setParamMapsList(List<ParamMapsListItem> paramMapsList) {
+					this.paramMapsList = paramMapsList;
+				}
+
+				public String getMothedpath() {
+					return this.mothedpath;
+				}
+
+				public void setMothedpath(String mothedpath) {
+					this.mothedpath = mothedpath;
+				}
+
+				public String getDubboMothedName() {
+					return this.dubboMothedName;
+				}
+
+				public void setDubboMothedName(String dubboMothedName) {
+					this.dubboMothedName = dubboMothedName;
+				}
+
+				public String getPassThroughAllHeaders() {
+					return this.passThroughAllHeaders;
+				}
+
+				public void setPassThroughAllHeaders(String passThroughAllHeaders) {
+					this.passThroughAllHeaders = passThroughAllHeaders;
+				}
+
+				public List<String> getPassThroughList() {
+					return this.passThroughList;
+				}
+
+				public void setPassThroughList(List<String> passThroughList) {
+					this.passThroughList = passThroughList;
+				}
+
+				public static class ParamMapsListItem {
+
+					@SerializedName("ExtractKeySpec")
+					private String extractKeySpec;
+
+					@SerializedName("ExtractKey")
+					private String extractKey;
+
+					@SerializedName("MappingType")
+					private String mappingType;
+
+					public String getExtractKeySpec() {
+						return this.extractKeySpec;
+					}
+
+					public void setExtractKeySpec(String extractKeySpec) {
+						this.extractKeySpec = extractKeySpec;
+					}
+
+					public String getExtractKey() {
+						return this.extractKey;
+					}
+
+					public void setExtractKey(String extractKey) {
+						this.extractKey = extractKey;
+					}
+
+					public String getMappingType() {
+						return this.mappingType;
+					}
+
+					public void setMappingType(String mappingType) {
+						this.mappingType = mappingType;
+					}
+				}
+			}
 		}
 	}
 
@@ -502,6 +716,108 @@ public class UpdateGatewayRouteRequest extends RpcAcsRequest<UpdateGatewayRouteR
 
 		public void setBody(String body) {
 			this.body = body;
+		}
+	}
+
+	public static class FallbackServices {
+
+		@SerializedName("AgreementType")
+		private String agreementType;
+
+		@SerializedName("Name")
+		private String name;
+
+		@SerializedName("Namespace")
+		private String namespace;
+
+		@SerializedName("SourceType")
+		private String sourceType;
+
+		@SerializedName("ServiceId")
+		private Long serviceId;
+
+		@SerializedName("Percent")
+		private Integer percent;
+
+		@SerializedName("Version")
+		private String version;
+
+		@SerializedName("GroupName")
+		private String groupName;
+
+		@SerializedName("ServicePort")
+		private Integer servicePort;
+
+		public String getAgreementType() {
+			return this.agreementType;
+		}
+
+		public void setAgreementType(String agreementType) {
+			this.agreementType = agreementType;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getNamespace() {
+			return this.namespace;
+		}
+
+		public void setNamespace(String namespace) {
+			this.namespace = namespace;
+		}
+
+		public String getSourceType() {
+			return this.sourceType;
+		}
+
+		public void setSourceType(String sourceType) {
+			this.sourceType = sourceType;
+		}
+
+		public Long getServiceId() {
+			return this.serviceId;
+		}
+
+		public void setServiceId(Long serviceId) {
+			this.serviceId = serviceId;
+		}
+
+		public Integer getPercent() {
+			return this.percent;
+		}
+
+		public void setPercent(Integer percent) {
+			this.percent = percent;
+		}
+
+		public String getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(String version) {
+			this.version = version;
+		}
+
+		public String getGroupName() {
+			return this.groupName;
+		}
+
+		public void setGroupName(String groupName) {
+			this.groupName = groupName;
+		}
+
+		public Integer getServicePort() {
+			return this.servicePort;
+		}
+
+		public void setServicePort(Integer servicePort) {
+			this.servicePort = servicePort;
 		}
 	}
 

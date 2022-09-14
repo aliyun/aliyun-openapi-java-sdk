@@ -25,13 +25,15 @@ import com.aliyuncs.mse.Endpoint;
 public class AddAuthResourceRequest extends RpcAcsRequest<AddAuthResourceResponse> {
 	   
 
-	private String gatewayUniqueId;
+	private String mseSessionId;
 
-	private Long authId;
+	private String gatewayUniqueId;
 
 	private Long domainId;
 
 	private String path;
+
+	private Long authId;
 
 	private String acceptLanguage;
 	public AddAuthResourceRequest() {
@@ -43,6 +45,17 @@ public class AddAuthResourceRequest extends RpcAcsRequest<AddAuthResourceRespons
 		} catch (Exception e) {}
 	}
 
+	public String getMseSessionId() {
+		return this.mseSessionId;
+	}
+
+	public void setMseSessionId(String mseSessionId) {
+		this.mseSessionId = mseSessionId;
+		if(mseSessionId != null){
+			putQueryParameter("MseSessionId", mseSessionId);
+		}
+	}
+
 	public String getGatewayUniqueId() {
 		return this.gatewayUniqueId;
 	}
@@ -51,17 +64,6 @@ public class AddAuthResourceRequest extends RpcAcsRequest<AddAuthResourceRespons
 		this.gatewayUniqueId = gatewayUniqueId;
 		if(gatewayUniqueId != null){
 			putQueryParameter("GatewayUniqueId", gatewayUniqueId);
-		}
-	}
-
-	public Long getAuthId() {
-		return this.authId;
-	}
-
-	public void setAuthId(Long authId) {
-		this.authId = authId;
-		if(authId != null){
-			putQueryParameter("AuthId", authId.toString());
 		}
 	}
 
@@ -84,6 +86,17 @@ public class AddAuthResourceRequest extends RpcAcsRequest<AddAuthResourceRespons
 		this.path = path;
 		if(path != null){
 			putQueryParameter("Path", path);
+		}
+	}
+
+	public Long getAuthId() {
+		return this.authId;
+	}
+
+	public void setAuthId(Long authId) {
+		this.authId = authId;
+		if(authId != null){
+			putQueryParameter("AuthId", authId.toString());
 		}
 	}
 

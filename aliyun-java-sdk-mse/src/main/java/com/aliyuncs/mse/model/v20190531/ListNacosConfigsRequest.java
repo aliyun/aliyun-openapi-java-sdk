@@ -25,13 +25,9 @@ import com.aliyuncs.mse.Endpoint;
 public class ListNacosConfigsRequest extends RpcAcsRequest<ListNacosConfigsResponse> {
 	   
 
+	private String mseSessionId;
+
 	private Integer pageNum;
-
-	private String tags;
-
-	private String instanceId;
-
-	private String dataId;
 
 	private String appName;
 
@@ -41,9 +37,15 @@ public class ListNacosConfigsRequest extends RpcAcsRequest<ListNacosConfigsRespo
 
 	private Integer pageSize;
 
-	private String acceptLanguage;
-
 	private String group;
+
+	private String tags;
+
+	private String instanceId;
+
+	private String dataId;
+
+	private String acceptLanguage;
 	public ListNacosConfigsRequest() {
 		super("mse", "2019-05-31", "ListNacosConfigs", "mse");
 		setMethod(MethodType.POST);
@@ -51,6 +53,17 @@ public class ListNacosConfigsRequest extends RpcAcsRequest<ListNacosConfigsRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getMseSessionId() {
+		return this.mseSessionId;
+	}
+
+	public void setMseSessionId(String mseSessionId) {
+		this.mseSessionId = mseSessionId;
+		if(mseSessionId != null){
+			putQueryParameter("MseSessionId", mseSessionId);
+		}
 	}
 
 	public Integer getPageNum() {
@@ -61,39 +74,6 @@ public class ListNacosConfigsRequest extends RpcAcsRequest<ListNacosConfigsRespo
 		this.pageNum = pageNum;
 		if(pageNum != null){
 			putQueryParameter("PageNum", pageNum.toString());
-		}
-	}
-
-	public String getTags() {
-		return this.tags;
-	}
-
-	public void setTags(String tags) {
-		this.tags = tags;
-		if(tags != null){
-			putQueryParameter("Tags", tags);
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getDataId() {
-		return this.dataId;
-	}
-
-	public void setDataId(String dataId) {
-		this.dataId = dataId;
-		if(dataId != null){
-			putQueryParameter("DataId", dataId);
 		}
 	}
 
@@ -141,17 +121,6 @@ public class ListNacosConfigsRequest extends RpcAcsRequest<ListNacosConfigsRespo
 		}
 	}
 
-	public String getAcceptLanguage() {
-		return this.acceptLanguage;
-	}
-
-	public void setAcceptLanguage(String acceptLanguage) {
-		this.acceptLanguage = acceptLanguage;
-		if(acceptLanguage != null){
-			putQueryParameter("AcceptLanguage", acceptLanguage);
-		}
-	}
-
 	public String getGroup() {
 		return this.group;
 	}
@@ -160,6 +129,50 @@ public class ListNacosConfigsRequest extends RpcAcsRequest<ListNacosConfigsRespo
 		this.group = group;
 		if(group != null){
 			putQueryParameter("Group", group);
+		}
+	}
+
+	public String getTags() {
+		return this.tags;
+	}
+
+	public void setTags(String tags) {
+		this.tags = tags;
+		if(tags != null){
+			putQueryParameter("Tags", tags);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getDataId() {
+		return this.dataId;
+	}
+
+	public void setDataId(String dataId) {
+		this.dataId = dataId;
+		if(dataId != null){
+			putQueryParameter("DataId", dataId);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

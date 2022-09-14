@@ -55,6 +55,9 @@ public class GetGatewayServiceDetailResponseUnmarshaller {
 		data.setMetaInfo(_ctx.stringValue("GetGatewayServiceDetailResponse.Data.MetaInfo"));
 		data.setGmtCreate(_ctx.stringValue("GetGatewayServiceDetailResponse.Data.GmtCreate"));
 		data.setGmtModified(_ctx.stringValue("GetGatewayServiceDetailResponse.Data.GmtModified"));
+		data.setHealthStatus(_ctx.stringValue("GetGatewayServiceDetailResponse.Data.HealthStatus"));
+		data.setHealthCheck(_ctx.stringValue("GetGatewayServiceDetailResponse.Data.HealthCheck"));
+		data.setServiceProtocol(_ctx.stringValue("GetGatewayServiceDetailResponse.Data.ServiceProtocol"));
 
 		List<String> ips = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetGatewayServiceDetailResponse.Data.Ips.Length"); i++) {

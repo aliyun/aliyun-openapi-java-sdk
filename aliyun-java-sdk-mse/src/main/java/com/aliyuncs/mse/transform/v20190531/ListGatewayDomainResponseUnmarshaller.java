@@ -47,6 +47,9 @@ public class ListGatewayDomainResponseUnmarshaller {
 			domains.setGmtModified(_ctx.stringValue("ListGatewayDomainResponse.Data["+ i +"].GmtModified"));
 			domains.setStatus(_ctx.integerValue("ListGatewayDomainResponse.Data["+ i +"].Status"));
 			domains.setType(_ctx.stringValue("ListGatewayDomainResponse.Data["+ i +"].Type"));
+			domains.setHttp2(_ctx.stringValue("ListGatewayDomainResponse.Data["+ i +"].Http2"));
+			domains.setTlsMax(_ctx.stringValue("ListGatewayDomainResponse.Data["+ i +"].TlsMax"));
+			domains.setTlsMin(_ctx.stringValue("ListGatewayDomainResponse.Data["+ i +"].TlsMin"));
 
 			Comment comment = new Comment();
 			comment.setStatus(_ctx.stringValue("ListGatewayDomainResponse.Data["+ i +"].Comment.Status"));

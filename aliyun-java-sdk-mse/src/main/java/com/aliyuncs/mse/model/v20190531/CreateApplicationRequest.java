@@ -25,6 +25,8 @@ import com.aliyuncs.mse.Endpoint;
 public class CreateApplicationRequest extends RpcAcsRequest<CreateApplicationResponse> {
 	   
 
+	private String mseSessionId;
+
 	private String language;
 
 	private String source;
@@ -47,6 +49,17 @@ public class CreateApplicationRequest extends RpcAcsRequest<CreateApplicationRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getMseSessionId() {
+		return this.mseSessionId;
+	}
+
+	public void setMseSessionId(String mseSessionId) {
+		this.mseSessionId = mseSessionId;
+		if(mseSessionId != null){
+			putQueryParameter("MseSessionId", mseSessionId);
+		}
 	}
 
 	public String getLanguage() {

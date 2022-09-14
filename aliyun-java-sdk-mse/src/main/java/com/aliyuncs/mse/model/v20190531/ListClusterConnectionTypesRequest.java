@@ -25,6 +25,8 @@ import com.aliyuncs.mse.Endpoint;
 public class ListClusterConnectionTypesRequest extends RpcAcsRequest<ListClusterConnectionTypesResponse> {
 	   
 
+	private String mseSessionId;
+
 	private String acceptLanguage;
 	public ListClusterConnectionTypesRequest() {
 		super("mse", "2019-05-31", "ListClusterConnectionTypes", "mse");
@@ -33,6 +35,17 @@ public class ListClusterConnectionTypesRequest extends RpcAcsRequest<ListCluster
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getMseSessionId() {
+		return this.mseSessionId;
+	}
+
+	public void setMseSessionId(String mseSessionId) {
+		this.mseSessionId = mseSessionId;
+		if(mseSessionId != null){
+			putQueryParameter("MseSessionId", mseSessionId);
+		}
 	}
 
 	public String getAcceptLanguage() {

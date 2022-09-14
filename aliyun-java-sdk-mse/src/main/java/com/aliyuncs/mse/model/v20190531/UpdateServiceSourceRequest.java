@@ -30,6 +30,8 @@ public class UpdateServiceSourceRequest extends RpcAcsRequest<UpdateServiceSourc
 	@SerializedName("ingressOptionsRequest")
 	private IngressOptionsRequest ingressOptionsRequest;
 
+	private String mseSessionId;
+
 	private String gatewayUniqueId;
 
 	private String source;
@@ -63,6 +65,17 @@ public class UpdateServiceSourceRequest extends RpcAcsRequest<UpdateServiceSourc
 		if (ingressOptionsRequest != null) {
 			putQueryParameter("IngressOptionsRequest" , new Gson().toJson(ingressOptionsRequest));
 		}	
+	}
+
+	public String getMseSessionId() {
+		return this.mseSessionId;
+	}
+
+	public void setMseSessionId(String mseSessionId) {
+		this.mseSessionId = mseSessionId;
+		if(mseSessionId != null){
+			putQueryParameter("MseSessionId", mseSessionId);
+		}
 	}
 
 	public String getGatewayUniqueId() {
