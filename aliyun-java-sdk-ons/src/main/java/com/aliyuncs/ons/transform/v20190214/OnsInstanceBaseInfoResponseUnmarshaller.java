@@ -37,13 +37,16 @@ public class OnsInstanceBaseInfoResponseUnmarshaller {
 		instanceBaseInfo.setInstanceStatus(_ctx.integerValue("OnsInstanceBaseInfoResponse.InstanceBaseInfo.InstanceStatus"));
 		instanceBaseInfo.setInstanceId(_ctx.stringValue("OnsInstanceBaseInfoResponse.InstanceBaseInfo.InstanceId"));
 		instanceBaseInfo.setInstanceType(_ctx.integerValue("OnsInstanceBaseInfoResponse.InstanceBaseInfo.InstanceType"));
+		instanceBaseInfo.setCreateTime(_ctx.stringValue("OnsInstanceBaseInfoResponse.InstanceBaseInfo.CreateTime"));
+		instanceBaseInfo.setSpInstanceId(_ctx.stringValue("OnsInstanceBaseInfoResponse.InstanceBaseInfo.spInstanceId"));
+		instanceBaseInfo.setSpInstanceType(_ctx.integerValue("OnsInstanceBaseInfoResponse.InstanceBaseInfo.spInstanceType"));
 
 		Endpoints endpoints = new Endpoints();
 		endpoints.setTcpEndpoint(_ctx.stringValue("OnsInstanceBaseInfoResponse.InstanceBaseInfo.Endpoints.TcpEndpoint"));
+		endpoints.setTcpInternetEndpoint(_ctx.stringValue("OnsInstanceBaseInfoResponse.InstanceBaseInfo.Endpoints.TcpInternetEndpoint"));
 		endpoints.setHttpInternetEndpoint(_ctx.stringValue("OnsInstanceBaseInfoResponse.InstanceBaseInfo.Endpoints.HttpInternetEndpoint"));
 		endpoints.setHttpInternalEndpoint(_ctx.stringValue("OnsInstanceBaseInfoResponse.InstanceBaseInfo.Endpoints.HttpInternalEndpoint"));
 		endpoints.setHttpInternetSecureEndpoint(_ctx.stringValue("OnsInstanceBaseInfoResponse.InstanceBaseInfo.Endpoints.HttpInternetSecureEndpoint"));
-		endpoints.setTcpInternetEndpoint(_ctx.stringValue("OnsInstanceBaseInfoResponse.InstanceBaseInfo.Endpoints.TcpInternetEndpoint"));
 		instanceBaseInfo.setEndpoints(endpoints);
 		onsInstanceBaseInfoResponse.setInstanceBaseInfo(instanceBaseInfo);
 	 

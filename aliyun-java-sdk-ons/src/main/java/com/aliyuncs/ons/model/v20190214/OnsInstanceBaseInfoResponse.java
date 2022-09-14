@@ -74,6 +74,12 @@ public class OnsInstanceBaseInfoResponse extends AcsResponse {
 
 		private Integer instanceType;
 
+		private String createTime;
+
+		private String spInstanceId;
+
+		private Integer spInstanceType;
+
 		private Endpoints endpoints;
 
 		public Boolean getIndependentNaming() {
@@ -148,6 +154,30 @@ public class OnsInstanceBaseInfoResponse extends AcsResponse {
 			this.instanceType = instanceType;
 		}
 
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getSpInstanceId() {
+			return this.spInstanceId;
+		}
+
+		public void setSpInstanceId(String spInstanceId) {
+			this.spInstanceId = spInstanceId;
+		}
+
+		public Integer getSpInstanceType() {
+			return this.spInstanceType;
+		}
+
+		public void setSpInstanceType(Integer spInstanceType) {
+			this.spInstanceType = spInstanceType;
+		}
+
 		public Endpoints getEndpoints() {
 			return this.endpoints;
 		}
@@ -160,13 +190,13 @@ public class OnsInstanceBaseInfoResponse extends AcsResponse {
 
 			private String tcpEndpoint;
 
+			private String tcpInternetEndpoint;
+
 			private String httpInternetEndpoint;
 
 			private String httpInternalEndpoint;
 
 			private String httpInternetSecureEndpoint;
-
-			private String tcpInternetEndpoint;
 
 			public String getTcpEndpoint() {
 				return this.tcpEndpoint;
@@ -174,6 +204,14 @@ public class OnsInstanceBaseInfoResponse extends AcsResponse {
 
 			public void setTcpEndpoint(String tcpEndpoint) {
 				this.tcpEndpoint = tcpEndpoint;
+			}
+
+			public String getTcpInternetEndpoint() {
+				return this.tcpInternetEndpoint;
+			}
+
+			public void setTcpInternetEndpoint(String tcpInternetEndpoint) {
+				this.tcpInternetEndpoint = tcpInternetEndpoint;
 			}
 
 			public String getHttpInternetEndpoint() {
@@ -198,14 +236,6 @@ public class OnsInstanceBaseInfoResponse extends AcsResponse {
 
 			public void setHttpInternetSecureEndpoint(String httpInternetSecureEndpoint) {
 				this.httpInternetSecureEndpoint = httpInternetSecureEndpoint;
-			}
-
-			public String getTcpInternetEndpoint() {
-				return this.tcpInternetEndpoint;
-			}
-
-			public void setTcpInternetEndpoint(String tcpInternetEndpoint) {
-				this.tcpInternetEndpoint = tcpInternetEndpoint;
 			}
 		}
 	}

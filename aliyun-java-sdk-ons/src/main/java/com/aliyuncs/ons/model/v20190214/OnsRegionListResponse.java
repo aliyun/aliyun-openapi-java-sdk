@@ -57,34 +57,26 @@ public class OnsRegionListResponse extends AcsResponse {
 
 	public static class RegionDo {
 
-		private Long id;
-
-		private String onsRegionId;
+		private Long updateTime;
 
 		private String regionName;
-
-		private Integer channelId;
 
 		private String channelName;
 
 		private Long createTime;
 
-		private Long updateTime;
+		private Integer channelId;
 
-		public Long getId() {
-			return this.id;
+		private Long id;
+
+		private String onsRegionId;
+
+		public Long getUpdateTime() {
+			return this.updateTime;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
-		}
-
-		public String getOnsRegionId() {
-			return this.onsRegionId;
-		}
-
-		public void setOnsRegionId(String onsRegionId) {
-			this.onsRegionId = onsRegionId;
+		public void setUpdateTime(Long updateTime) {
+			this.updateTime = updateTime;
 		}
 
 		public String getRegionName() {
@@ -93,14 +85,6 @@ public class OnsRegionListResponse extends AcsResponse {
 
 		public void setRegionName(String regionName) {
 			this.regionName = regionName;
-		}
-
-		public Integer getChannelId() {
-			return this.channelId;
-		}
-
-		public void setChannelId(Integer channelId) {
-			this.channelId = channelId;
 		}
 
 		public String getChannelName() {
@@ -119,12 +103,28 @@ public class OnsRegionListResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public Long getUpdateTime() {
-			return this.updateTime;
+		public Integer getChannelId() {
+			return this.channelId;
 		}
 
-		public void setUpdateTime(Long updateTime) {
-			this.updateTime = updateTime;
+		public void setChannelId(Integer channelId) {
+			this.channelId = channelId;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
+		}
+
+		public String getOnsRegionId() {
+			return this.onsRegionId;
+		}
+
+		public void setOnsRegionId(String onsRegionId) {
+			this.onsRegionId = onsRegionId;
 		}
 	}
 

@@ -1,3 +1,6 @@
+2022-09-14 Version: 3.2.2
+- Add spInstanceId and spInstanceType for api OnsInstanceBaseInfo.
+
 2022-03-15 Version: 3.2.1
 - Add tcpInternetEndpoint field for the api OnsInstanceBaseInfo.
 
