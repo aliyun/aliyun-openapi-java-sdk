@@ -31,11 +31,15 @@ public class ListFpShotFilesRequest extends RpcAcsRequest<ListFpShotFilesRespons
 
 	private String nextPageToken;
 
+	private String startTime;
+
 	private Integer pageSize;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
+
+	private String endTime;
 
 	private Long ownerId;
 	public ListFpShotFilesRequest() {
@@ -80,6 +84,17 @@ public class ListFpShotFilesRequest extends RpcAcsRequest<ListFpShotFilesRespons
 		}
 	}
 
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -110,6 +125,17 @@ public class ListFpShotFilesRequest extends RpcAcsRequest<ListFpShotFilesRespons
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
 		}
 	}
 

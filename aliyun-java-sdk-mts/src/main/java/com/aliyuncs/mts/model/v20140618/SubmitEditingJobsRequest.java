@@ -22,18 +22,20 @@ import com.aliyuncs.mts.Endpoint;
  * @author auto create
  * @version 
  */
-public class SubmitSmarttagJobRequest extends RpcAcsRequest<SubmitSmarttagJobResponse> {
+public class SubmitEditingJobsRequest extends RpcAcsRequest<SubmitEditingJobsResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String title;
+	private String outputLocation;
 
-	private String content;
+	private String editingInputs;
 
-	private String userData;
+	private String editingJobURL;
 
-	private String notifyUrl;
+	private Long editingJobOssFileUid;
+
+	private String editingJobOutputs;
 
 	private String resourceOwnerAccount;
 
@@ -41,19 +43,13 @@ public class SubmitSmarttagJobRequest extends RpcAcsRequest<SubmitSmarttagJobRes
 
 	private Long ownerId;
 
-	private String params;
-
-	private String templateId;
-
 	private String pipelineId;
 
-	private String contentType;
+	private String outputBucket;
 
-	private String input;
-
-	private String contentAddr;
-	public SubmitSmarttagJobRequest() {
-		super("Mts", "2014-06-18", "SubmitSmarttagJob", "mts");
+	private String editingJobOssFileRoleArn;
+	public SubmitEditingJobsRequest() {
+		super("Mts", "2014-06-18", "SubmitEditingJobs", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -72,47 +68,58 @@ public class SubmitSmarttagJobRequest extends RpcAcsRequest<SubmitSmarttagJobRes
 		}
 	}
 
-	public String getTitle() {
-		return this.title;
+	public String getOutputLocation() {
+		return this.outputLocation;
 	}
 
-	public void setTitle(String title) {
-		this.title = title;
-		if(title != null){
-			putQueryParameter("Title", title);
+	public void setOutputLocation(String outputLocation) {
+		this.outputLocation = outputLocation;
+		if(outputLocation != null){
+			putQueryParameter("OutputLocation", outputLocation);
 		}
 	}
 
-	public String getContent() {
-		return this.content;
+	public String getEditingInputs() {
+		return this.editingInputs;
 	}
 
-	public void setContent(String content) {
-		this.content = content;
-		if(content != null){
-			putQueryParameter("Content", content);
+	public void setEditingInputs(String editingInputs) {
+		this.editingInputs = editingInputs;
+		if(editingInputs != null){
+			putQueryParameter("EditingInputs", editingInputs);
 		}
 	}
 
-	public String getUserData() {
-		return this.userData;
+	public String getEditingJobURL() {
+		return this.editingJobURL;
 	}
 
-	public void setUserData(String userData) {
-		this.userData = userData;
-		if(userData != null){
-			putQueryParameter("UserData", userData);
+	public void setEditingJobURL(String editingJobURL) {
+		this.editingJobURL = editingJobURL;
+		if(editingJobURL != null){
+			putQueryParameter("EditingJobURL", editingJobURL);
 		}
 	}
 
-	public String getNotifyUrl() {
-		return this.notifyUrl;
+	public Long getEditingJobOssFileUid() {
+		return this.editingJobOssFileUid;
 	}
 
-	public void setNotifyUrl(String notifyUrl) {
-		this.notifyUrl = notifyUrl;
-		if(notifyUrl != null){
-			putQueryParameter("NotifyUrl", notifyUrl);
+	public void setEditingJobOssFileUid(Long editingJobOssFileUid) {
+		this.editingJobOssFileUid = editingJobOssFileUid;
+		if(editingJobOssFileUid != null){
+			putQueryParameter("EditingJobOssFileUid", editingJobOssFileUid.toString());
+		}
+	}
+
+	public String getEditingJobOutputs() {
+		return this.editingJobOutputs;
+	}
+
+	public void setEditingJobOutputs(String editingJobOutputs) {
+		this.editingJobOutputs = editingJobOutputs;
+		if(editingJobOutputs != null){
+			putQueryParameter("EditingJobOutputs", editingJobOutputs);
 		}
 	}
 
@@ -149,28 +156,6 @@ public class SubmitSmarttagJobRequest extends RpcAcsRequest<SubmitSmarttagJobRes
 		}
 	}
 
-	public String getParams() {
-		return this.params;
-	}
-
-	public void setParams(String params) {
-		this.params = params;
-		if(params != null){
-			putQueryParameter("Params", params);
-		}
-	}
-
-	public String getTemplateId() {
-		return this.templateId;
-	}
-
-	public void setTemplateId(String templateId) {
-		this.templateId = templateId;
-		if(templateId != null){
-			putQueryParameter("TemplateId", templateId);
-		}
-	}
-
 	public String getPipelineId() {
 		return this.pipelineId;
 	}
@@ -182,42 +167,31 @@ public class SubmitSmarttagJobRequest extends RpcAcsRequest<SubmitSmarttagJobRes
 		}
 	}
 
-	public String getContentType() {
-		return this.contentType;
+	public String getOutputBucket() {
+		return this.outputBucket;
 	}
 
-	public void setContentType(String contentType) {
-		this.contentType = contentType;
-		if(contentType != null){
-			putQueryParameter("ContentType", contentType);
+	public void setOutputBucket(String outputBucket) {
+		this.outputBucket = outputBucket;
+		if(outputBucket != null){
+			putQueryParameter("OutputBucket", outputBucket);
 		}
 	}
 
-	public String getInput() {
-		return this.input;
+	public String getEditingJobOssFileRoleArn() {
+		return this.editingJobOssFileRoleArn;
 	}
 
-	public void setInput(String input) {
-		this.input = input;
-		if(input != null){
-			putQueryParameter("Input", input);
-		}
-	}
-
-	public String getContentAddr() {
-		return this.contentAddr;
-	}
-
-	public void setContentAddr(String contentAddr) {
-		this.contentAddr = contentAddr;
-		if(contentAddr != null){
-			putQueryParameter("ContentAddr", contentAddr);
+	public void setEditingJobOssFileRoleArn(String editingJobOssFileRoleArn) {
+		this.editingJobOssFileRoleArn = editingJobOssFileRoleArn;
+		if(editingJobOssFileRoleArn != null){
+			putQueryParameter("EditingJobOssFileRoleArn", editingJobOssFileRoleArn);
 		}
 	}
 
 	@Override
-	public Class<SubmitSmarttagJobResponse> getResponseClass() {
-		return SubmitSmarttagJobResponse.class;
+	public Class<SubmitEditingJobsResponse> getResponseClass() {
+		return SubmitEditingJobsResponse.class;
 	}
 
 }
