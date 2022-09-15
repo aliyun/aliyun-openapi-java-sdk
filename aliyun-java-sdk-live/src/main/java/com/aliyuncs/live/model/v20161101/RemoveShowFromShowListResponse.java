@@ -24,9 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class RemoveShowFromShowListResponse extends AcsResponse {
 
+	private String requestId;
+
 	private String showId;
 
-	private String requestId;
+	private String successfulShowIds;
+
+	private String failedList;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public String getShowId() {
 		return this.showId;
@@ -36,12 +48,20 @@ public class RemoveShowFromShowListResponse extends AcsResponse {
 		this.showId = showId;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getSuccessfulShowIds() {
+		return this.successfulShowIds;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setSuccessfulShowIds(String successfulShowIds) {
+		this.successfulShowIds = successfulShowIds;
+	}
+
+	public String getFailedList() {
+		return this.failedList;
+	}
+
+	public void setFailedList(String failedList) {
+		this.failedList = failedList;
 	}
 
 	@Override

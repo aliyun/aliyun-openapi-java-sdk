@@ -15,6 +15,7 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.live.Endpoint;
 
@@ -24,6 +25,10 @@ import com.aliyuncs.live.Endpoint;
  */
 public class RemoveShowFromShowListRequest extends RpcAcsRequest<RemoveShowFromShowListResponse> {
 	   
+
+	private Boolean isBatchMode;
+
+	private List<String> showIdLists;
 
 	private String casterId;
 
@@ -37,6 +42,30 @@ public class RemoveShowFromShowListRequest extends RpcAcsRequest<RemoveShowFromS
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Boolean getIsBatchMode() {
+		return this.isBatchMode;
+	}
+
+	public void setIsBatchMode(Boolean isBatchMode) {
+		this.isBatchMode = isBatchMode;
+		if(isBatchMode != null){
+			putQueryParameter("isBatchMode", isBatchMode.toString());
+		}
+	}
+
+	public List<String> getShowIdLists() {
+		return this.showIdLists;
+	}
+
+	public void setShowIdLists(List<String> showIdLists) {
+		this.showIdLists = showIdLists;	
+		if (showIdLists != null) {
+			for (int i = 0; i < showIdLists.size(); i++) {
+				putQueryParameter("showIdList." + (i + 1) , showIdLists.get(i));
+			}
+		}	
 	}
 
 	public String getCasterId() {
