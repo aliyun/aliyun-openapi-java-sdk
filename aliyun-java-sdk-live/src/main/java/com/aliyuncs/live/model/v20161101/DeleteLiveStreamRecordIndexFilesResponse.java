@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DeleteLiveStreamRecordIndexFilesResponse extends AcsResponse {
 
-	private String requestId;
+	private String code;
 
 	private String message;
 
-	private String code;
+	private String requestId;
 
 	private List<RecordDeleteInfo> recordDeleteInfoList;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getMessage() {
@@ -49,12 +49,12 @@ public class DeleteLiveStreamRecordIndexFilesResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<RecordDeleteInfo> getRecordDeleteInfoList() {
@@ -67,17 +67,9 @@ public class DeleteLiveStreamRecordIndexFilesResponse extends AcsResponse {
 
 	public static class RecordDeleteInfo {
 
-		private String recordId;
-
 		private String message;
 
-		public String getRecordId() {
-			return this.recordId;
-		}
-
-		public void setRecordId(String recordId) {
-			this.recordId = recordId;
-		}
+		private String recordId;
 
 		public String getMessage() {
 			return this.message;
@@ -85,6 +77,14 @@ public class DeleteLiveStreamRecordIndexFilesResponse extends AcsResponse {
 
 		public void setMessage(String message) {
 			this.message = message;
+		}
+
+		public String getRecordId() {
+			return this.recordId;
+		}
+
+		public void setRecordId(String recordId) {
+			this.recordId = recordId;
 		}
 	}
 

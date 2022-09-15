@@ -47,18 +47,34 @@ public class DescribeLiveDomainLimitResponse extends AcsResponse {
 
 	public static class LiveDomainLimit {
 
-		private String domainName;
+		private Integer limitTranscodeNum;
+
+		private Integer currentTranscodeNum;
 
 		private Integer limitNum;
 
-		private Integer limitTranscodeNum;
+		private Integer limitTransferNum;
 
-		public String getDomainName() {
-			return this.domainName;
+		private Integer currentNum;
+
+		private Integer currentTransferNum;
+
+		private String domainName;
+
+		public Integer getLimitTranscodeNum() {
+			return this.limitTranscodeNum;
 		}
 
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
+		public void setLimitTranscodeNum(Integer limitTranscodeNum) {
+			this.limitTranscodeNum = limitTranscodeNum;
+		}
+
+		public Integer getCurrentTranscodeNum() {
+			return this.currentTranscodeNum;
+		}
+
+		public void setCurrentTranscodeNum(Integer currentTranscodeNum) {
+			this.currentTranscodeNum = currentTranscodeNum;
 		}
 
 		public Integer getLimitNum() {
@@ -69,12 +85,36 @@ public class DescribeLiveDomainLimitResponse extends AcsResponse {
 			this.limitNum = limitNum;
 		}
 
-		public Integer getLimitTranscodeNum() {
-			return this.limitTranscodeNum;
+		public Integer getLimitTransferNum() {
+			return this.limitTransferNum;
 		}
 
-		public void setLimitTranscodeNum(Integer limitTranscodeNum) {
-			this.limitTranscodeNum = limitTranscodeNum;
+		public void setLimitTransferNum(Integer limitTransferNum) {
+			this.limitTransferNum = limitTransferNum;
+		}
+
+		public Integer getCurrentNum() {
+			return this.currentNum;
+		}
+
+		public void setCurrentNum(Integer currentNum) {
+			this.currentNum = currentNum;
+		}
+
+		public Integer getCurrentTransferNum() {
+			return this.currentTransferNum;
+		}
+
+		public void setCurrentTransferNum(Integer currentTransferNum) {
+			this.currentTransferNum = currentTransferNum;
+		}
+
+		public String getDomainName() {
+			return this.domainName;
+		}
+
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
 		}
 	}
 

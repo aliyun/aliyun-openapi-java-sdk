@@ -14,16 +14,21 @@
 
 package com.aliyuncs.live.transform.v20161101;
 
-import com.aliyuncs.live.model.v20161101.SetLiveDomainSpecialConfigResponse;
+import com.aliyuncs.live.model.v20161101.SendMessageToGroupResponse;
+import com.aliyuncs.live.model.v20161101.SendMessageToGroupResponse.Result;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class SetLiveDomainSpecialConfigResponseUnmarshaller {
+public class SendMessageToGroupResponseUnmarshaller {
 
-	public static SetLiveDomainSpecialConfigResponse unmarshall(SetLiveDomainSpecialConfigResponse setLiveDomainSpecialConfigResponse, UnmarshallerContext _ctx) {
+	public static SendMessageToGroupResponse unmarshall(SendMessageToGroupResponse sendMessageToGroupResponse, UnmarshallerContext _ctx) {
 		
-		setLiveDomainSpecialConfigResponse.setRequestId(_ctx.stringValue("SetLiveDomainSpecialConfigResponse.RequestId"));
+		sendMessageToGroupResponse.setRequestId(_ctx.stringValue("SendMessageToGroupResponse.RequestId"));
+
+		Result result = new Result();
+		result.setMessageId(_ctx.stringValue("SendMessageToGroupResponse.Result.MessageId"));
+		sendMessageToGroupResponse.setResult(result);
 	 
-	 	return setLiveDomainSpecialConfigResponse;
+	 	return sendMessageToGroupResponse;
 	}
 }

@@ -39,6 +39,8 @@ public class SetCasterConfigRequest extends RpcAcsRequest<SetCasterConfigRespons
 
 	private String casterName;
 
+	private String urgentLiveStreamUrl;
+
 	private String sideOutputUrl;
 
 	private String syncGroupsConfig;
@@ -137,6 +139,17 @@ public class SetCasterConfigRequest extends RpcAcsRequest<SetCasterConfigRespons
 		this.casterName = casterName;
 		if(casterName != null){
 			putQueryParameter("CasterName", casterName);
+		}
+	}
+
+	public String getUrgentLiveStreamUrl() {
+		return this.urgentLiveStreamUrl;
+	}
+
+	public void setUrgentLiveStreamUrl(String urgentLiveStreamUrl) {
+		this.urgentLiveStreamUrl = urgentLiveStreamUrl;
+		if(urgentLiveStreamUrl != null){
+			putQueryParameter("UrgentLiveStreamUrl", urgentLiveStreamUrl);
 		}
 	}
 

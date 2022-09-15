@@ -22,16 +22,14 @@ import com.aliyuncs.live.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeLiveDomainSpecialConfigRequest extends RpcAcsRequest<DescribeLiveDomainSpecialConfigResponse> {
+public class CloseMessageGroupRequest extends RpcAcsRequest<CloseMessageGroupResponse> {
 	   
 
-	private String domainName;
+	private String groupId;
 
-	private Long ownerId;
-
-	private String name;
-	public DescribeLiveDomainSpecialConfigRequest() {
-		super("live", "2016-11-01", "DescribeLiveDomainSpecialConfig", "live");
+	private String appId;
+	public CloseMessageGroupRequest() {
+		super("live", "2016-11-01", "CloseMessageGroup", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,42 +37,31 @@ public class DescribeLiveDomainSpecialConfigRequest extends RpcAcsRequest<Descri
 		} catch (Exception e) {}
 	}
 
-	public String getDomainName() {
-		return this.domainName;
+	public String getGroupId() {
+		return this.groupId;
 	}
 
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putBodyParameter("GroupId", groupId);
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getAppId() {
+		return this.appId;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
+	public void setAppId(String appId) {
+		this.appId = appId;
+		if(appId != null){
+			putBodyParameter("AppId", appId);
 		}
 	}
 
 	@Override
-	public Class<DescribeLiveDomainSpecialConfigResponse> getResponseClass() {
-		return DescribeLiveDomainSpecialConfigResponse.class;
+	public Class<CloseMessageGroupResponse> getResponseClass() {
+		return CloseMessageGroupResponse.class;
 	}
 
 }

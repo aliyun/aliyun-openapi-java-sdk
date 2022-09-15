@@ -27,14 +27,14 @@ public class DeleteLiveStreamRecordIndexFilesResponseUnmarshaller {
 	public static DeleteLiveStreamRecordIndexFilesResponse unmarshall(DeleteLiveStreamRecordIndexFilesResponse deleteLiveStreamRecordIndexFilesResponse, UnmarshallerContext _ctx) {
 		
 		deleteLiveStreamRecordIndexFilesResponse.setRequestId(_ctx.stringValue("DeleteLiveStreamRecordIndexFilesResponse.RequestId"));
-		deleteLiveStreamRecordIndexFilesResponse.setMessage(_ctx.stringValue("DeleteLiveStreamRecordIndexFilesResponse.Message"));
 		deleteLiveStreamRecordIndexFilesResponse.setCode(_ctx.stringValue("DeleteLiveStreamRecordIndexFilesResponse.Code"));
+		deleteLiveStreamRecordIndexFilesResponse.setMessage(_ctx.stringValue("DeleteLiveStreamRecordIndexFilesResponse.Message"));
 
 		List<RecordDeleteInfo> recordDeleteInfoList = new ArrayList<RecordDeleteInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DeleteLiveStreamRecordIndexFilesResponse.RecordDeleteInfoList.Length"); i++) {
 			RecordDeleteInfo recordDeleteInfo = new RecordDeleteInfo();
-			recordDeleteInfo.setRecordId(_ctx.stringValue("DeleteLiveStreamRecordIndexFilesResponse.RecordDeleteInfoList["+ i +"].RecordId"));
 			recordDeleteInfo.setMessage(_ctx.stringValue("DeleteLiveStreamRecordIndexFilesResponse.RecordDeleteInfoList["+ i +"].Message"));
+			recordDeleteInfo.setRecordId(_ctx.stringValue("DeleteLiveStreamRecordIndexFilesResponse.RecordDeleteInfoList["+ i +"].RecordId"));
 
 			recordDeleteInfoList.add(recordDeleteInfo);
 		}

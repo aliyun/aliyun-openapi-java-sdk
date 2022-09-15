@@ -25,75 +25,37 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCasterConfigResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String casterId;
-
-	private String casterName;
-
-	private String domainName;
-
-	private String sideOutputUrlList;
-
 	private Float delay;
 
-	private String urgentMaterialId;
+	private String urgentLiveStreamUrl;
 
-	private String sideOutputUrl;
+	private String urgentMaterialId;
 
 	private String callbackUrl;
 
 	private String programName;
 
+	private String casterName;
+
+	private String casterId;
+
 	private Integer programEffect;
 
 	private Integer channelEnable;
+
+	private String domainName;
+
+	private String requestId;
+
+	private String sideOutputUrlList;
+
+	private String sideOutputUrl;
 
 	private List<SyncGroup> syncGroupsConfig;
 
 	private TranscodeConfig transcodeConfig;
 
 	private RecordConfig recordConfig;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getCasterId() {
-		return this.casterId;
-	}
-
-	public void setCasterId(String casterId) {
-		this.casterId = casterId;
-	}
-
-	public String getCasterName() {
-		return this.casterName;
-	}
-
-	public void setCasterName(String casterName) {
-		this.casterName = casterName;
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-	}
-
-	public String getSideOutputUrlList() {
-		return this.sideOutputUrlList;
-	}
-
-	public void setSideOutputUrlList(String sideOutputUrlList) {
-		this.sideOutputUrlList = sideOutputUrlList;
-	}
 
 	public Float getDelay() {
 		return this.delay;
@@ -103,20 +65,20 @@ public class DescribeCasterConfigResponse extends AcsResponse {
 		this.delay = delay;
 	}
 
+	public String getUrgentLiveStreamUrl() {
+		return this.urgentLiveStreamUrl;
+	}
+
+	public void setUrgentLiveStreamUrl(String urgentLiveStreamUrl) {
+		this.urgentLiveStreamUrl = urgentLiveStreamUrl;
+	}
+
 	public String getUrgentMaterialId() {
 		return this.urgentMaterialId;
 	}
 
 	public void setUrgentMaterialId(String urgentMaterialId) {
 		this.urgentMaterialId = urgentMaterialId;
-	}
-
-	public String getSideOutputUrl() {
-		return this.sideOutputUrl;
-	}
-
-	public void setSideOutputUrl(String sideOutputUrl) {
-		this.sideOutputUrl = sideOutputUrl;
 	}
 
 	public String getCallbackUrl() {
@@ -135,6 +97,22 @@ public class DescribeCasterConfigResponse extends AcsResponse {
 		this.programName = programName;
 	}
 
+	public String getCasterName() {
+		return this.casterName;
+	}
+
+	public void setCasterName(String casterName) {
+		this.casterName = casterName;
+	}
+
+	public String getCasterId() {
+		return this.casterId;
+	}
+
+	public void setCasterId(String casterId) {
+		this.casterId = casterId;
+	}
+
 	public Integer getProgramEffect() {
 		return this.programEffect;
 	}
@@ -149,6 +127,38 @@ public class DescribeCasterConfigResponse extends AcsResponse {
 
 	public void setChannelEnable(Integer channelEnable) {
 		this.channelEnable = channelEnable;
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getSideOutputUrlList() {
+		return this.sideOutputUrlList;
+	}
+
+	public void setSideOutputUrlList(String sideOutputUrlList) {
+		this.sideOutputUrlList = sideOutputUrlList;
+	}
+
+	public String getSideOutputUrl() {
+		return this.sideOutputUrl;
+	}
+
+	public void setSideOutputUrl(String sideOutputUrl) {
+		this.sideOutputUrl = sideOutputUrl;
 	}
 
 	public List<SyncGroup> getSyncGroupsConfig() {
@@ -177,19 +187,11 @@ public class DescribeCasterConfigResponse extends AcsResponse {
 
 	public static class SyncGroup {
 
-		private Integer mode;
-
 		private String hostResourceId;
 
+		private Integer mode;
+
 		private List<String> resourceIds;
-
-		public Integer getMode() {
-			return this.mode;
-		}
-
-		public void setMode(Integer mode) {
-			this.mode = mode;
-		}
 
 		public String getHostResourceId() {
 			return this.hostResourceId;
@@ -197,6 +199,14 @@ public class DescribeCasterConfigResponse extends AcsResponse {
 
 		public void setHostResourceId(String hostResourceId) {
 			this.hostResourceId = hostResourceId;
+		}
+
+		public Integer getMode() {
+			return this.mode;
+		}
+
+		public void setMode(Integer mode) {
+			this.mode = mode;
 		}
 
 		public List<String> getResourceIds() {
@@ -265,28 +275,20 @@ public class DescribeCasterConfigResponse extends AcsResponse {
 
 		public static class RecordFormatItem {
 
-			private String format;
-
-			private String ossObjectPrefix;
+			private Integer cycleDuration;
 
 			private String sliceOssObjectPrefix;
 
-			private Integer cycleDuration;
+			private String ossObjectPrefix;
 
-			public String getFormat() {
-				return this.format;
+			private String format;
+
+			public Integer getCycleDuration() {
+				return this.cycleDuration;
 			}
 
-			public void setFormat(String format) {
-				this.format = format;
-			}
-
-			public String getOssObjectPrefix() {
-				return this.ossObjectPrefix;
-			}
-
-			public void setOssObjectPrefix(String ossObjectPrefix) {
-				this.ossObjectPrefix = ossObjectPrefix;
+			public void setCycleDuration(Integer cycleDuration) {
+				this.cycleDuration = cycleDuration;
 			}
 
 			public String getSliceOssObjectPrefix() {
@@ -297,12 +299,20 @@ public class DescribeCasterConfigResponse extends AcsResponse {
 				this.sliceOssObjectPrefix = sliceOssObjectPrefix;
 			}
 
-			public Integer getCycleDuration() {
-				return this.cycleDuration;
+			public String getOssObjectPrefix() {
+				return this.ossObjectPrefix;
 			}
 
-			public void setCycleDuration(Integer cycleDuration) {
-				this.cycleDuration = cycleDuration;
+			public void setOssObjectPrefix(String ossObjectPrefix) {
+				this.ossObjectPrefix = ossObjectPrefix;
+			}
+
+			public String getFormat() {
+				return this.format;
+			}
+
+			public void setFormat(String format) {
+				this.format = format;
 			}
 		}
 	}

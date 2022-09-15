@@ -25,27 +25,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLiveSnapshotDetectPornConfigResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer pageNum;
 
-	private Integer pageSize;
+	private String requestId;
 
 	private String order;
 
-	private Integer totalNum;
-
 	private Integer totalPage;
 
+	private Integer pageSize;
+
+	private Integer totalNum;
+
 	private List<LiveSnapshotDetectPornConfig> liveSnapshotDetectPornConfigList;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getPageNum() {
 		return this.pageNum;
@@ -55,12 +47,12 @@ public class DescribeLiveSnapshotDetectPornConfigResponse extends AcsResponse {
 		this.pageNum = pageNum;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getOrder() {
@@ -71,20 +63,28 @@ public class DescribeLiveSnapshotDetectPornConfigResponse extends AcsResponse {
 		this.order = order;
 	}
 
-	public Integer getTotalNum() {
-		return this.totalNum;
-	}
-
-	public void setTotalNum(Integer totalNum) {
-		this.totalNum = totalNum;
-	}
-
 	public Integer getTotalPage() {
 		return this.totalPage;
 	}
 
 	public void setTotalPage(Integer totalPage) {
 		this.totalPage = totalPage;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public Integer getTotalNum() {
+		return this.totalNum;
+	}
+
+	public void setTotalNum(Integer totalNum) {
+		this.totalNum = totalNum;
 	}
 
 	public List<LiveSnapshotDetectPornConfig> getLiveSnapshotDetectPornConfigList() {
@@ -97,26 +97,26 @@ public class DescribeLiveSnapshotDetectPornConfigResponse extends AcsResponse {
 
 	public static class LiveSnapshotDetectPornConfig {
 
-		private String domainName;
+		private String ossObject;
 
 		private String appName;
 
-		private String ossEndpoint;
+		private Integer interval;
 
 		private String ossBucket;
 
-		private String ossObject;
+		private String domainName;
 
-		private Integer interval;
+		private String ossEndpoint;
 
 		private List<String> scenes;
 
-		public String getDomainName() {
-			return this.domainName;
+		public String getOssObject() {
+			return this.ossObject;
 		}
 
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
+		public void setOssObject(String ossObject) {
+			this.ossObject = ossObject;
 		}
 
 		public String getAppName() {
@@ -127,12 +127,12 @@ public class DescribeLiveSnapshotDetectPornConfigResponse extends AcsResponse {
 			this.appName = appName;
 		}
 
-		public String getOssEndpoint() {
-			return this.ossEndpoint;
+		public Integer getInterval() {
+			return this.interval;
 		}
 
-		public void setOssEndpoint(String ossEndpoint) {
-			this.ossEndpoint = ossEndpoint;
+		public void setInterval(Integer interval) {
+			this.interval = interval;
 		}
 
 		public String getOssBucket() {
@@ -143,20 +143,20 @@ public class DescribeLiveSnapshotDetectPornConfigResponse extends AcsResponse {
 			this.ossBucket = ossBucket;
 		}
 
-		public String getOssObject() {
-			return this.ossObject;
+		public String getDomainName() {
+			return this.domainName;
 		}
 
-		public void setOssObject(String ossObject) {
-			this.ossObject = ossObject;
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
 		}
 
-		public Integer getInterval() {
-			return this.interval;
+		public String getOssEndpoint() {
+			return this.ossEndpoint;
 		}
 
-		public void setInterval(Integer interval) {
-			this.interval = interval;
+		public void setOssEndpoint(String ossEndpoint) {
+			this.ossEndpoint = ossEndpoint;
 		}
 
 		public List<String> getScenes() {

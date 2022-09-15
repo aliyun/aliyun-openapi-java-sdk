@@ -27,21 +27,21 @@ public class DescribeLiveTopDomainsByFlowResponseUnmarshaller {
 	public static DescribeLiveTopDomainsByFlowResponse unmarshall(DescribeLiveTopDomainsByFlowResponse describeLiveTopDomainsByFlowResponse, UnmarshallerContext _ctx) {
 		
 		describeLiveTopDomainsByFlowResponse.setRequestId(_ctx.stringValue("DescribeLiveTopDomainsByFlowResponse.RequestId"));
-		describeLiveTopDomainsByFlowResponse.setStartTime(_ctx.stringValue("DescribeLiveTopDomainsByFlowResponse.StartTime"));
-		describeLiveTopDomainsByFlowResponse.setEndTime(_ctx.stringValue("DescribeLiveTopDomainsByFlowResponse.EndTime"));
-		describeLiveTopDomainsByFlowResponse.setDomainCount(_ctx.longValue("DescribeLiveTopDomainsByFlowResponse.DomainCount"));
 		describeLiveTopDomainsByFlowResponse.setDomainOnlineCount(_ctx.longValue("DescribeLiveTopDomainsByFlowResponse.DomainOnlineCount"));
+		describeLiveTopDomainsByFlowResponse.setEndTime(_ctx.stringValue("DescribeLiveTopDomainsByFlowResponse.EndTime"));
+		describeLiveTopDomainsByFlowResponse.setStartTime(_ctx.stringValue("DescribeLiveTopDomainsByFlowResponse.StartTime"));
+		describeLiveTopDomainsByFlowResponse.setDomainCount(_ctx.longValue("DescribeLiveTopDomainsByFlowResponse.DomainCount"));
 
 		List<TopDomain> topDomains = new ArrayList<TopDomain>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLiveTopDomainsByFlowResponse.TopDomains.Length"); i++) {
 			TopDomain topDomain = new TopDomain();
-			topDomain.setDomainName(_ctx.stringValue("DescribeLiveTopDomainsByFlowResponse.TopDomains["+ i +"].DomainName"));
-			topDomain.setRank(_ctx.longValue("DescribeLiveTopDomainsByFlowResponse.TopDomains["+ i +"].Rank"));
-			topDomain.setTotalTraffic(_ctx.stringValue("DescribeLiveTopDomainsByFlowResponse.TopDomains["+ i +"].TotalTraffic"));
-			topDomain.setTrafficPercent(_ctx.stringValue("DescribeLiveTopDomainsByFlowResponse.TopDomains["+ i +"].TrafficPercent"));
 			topDomain.setMaxBps(_ctx.longValue("DescribeLiveTopDomainsByFlowResponse.TopDomains["+ i +"].MaxBps"));
-			topDomain.setMaxBpsTime(_ctx.stringValue("DescribeLiveTopDomainsByFlowResponse.TopDomains["+ i +"].MaxBpsTime"));
+			topDomain.setRank(_ctx.longValue("DescribeLiveTopDomainsByFlowResponse.TopDomains["+ i +"].Rank"));
 			topDomain.setTotalAccess(_ctx.longValue("DescribeLiveTopDomainsByFlowResponse.TopDomains["+ i +"].TotalAccess"));
+			topDomain.setTrafficPercent(_ctx.stringValue("DescribeLiveTopDomainsByFlowResponse.TopDomains["+ i +"].TrafficPercent"));
+			topDomain.setDomainName(_ctx.stringValue("DescribeLiveTopDomainsByFlowResponse.TopDomains["+ i +"].DomainName"));
+			topDomain.setTotalTraffic(_ctx.stringValue("DescribeLiveTopDomainsByFlowResponse.TopDomains["+ i +"].TotalTraffic"));
+			topDomain.setMaxBpsTime(_ctx.stringValue("DescribeLiveTopDomainsByFlowResponse.TopDomains["+ i +"].MaxBpsTime"));
 
 			topDomains.add(topDomain);
 		}

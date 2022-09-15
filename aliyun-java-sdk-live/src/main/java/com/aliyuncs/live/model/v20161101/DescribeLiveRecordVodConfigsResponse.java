@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLiveRecordVodConfigsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer pageNum;
+
+	private String requestId;
 
 	private Integer pageSize;
 
@@ -35,20 +35,20 @@ public class DescribeLiveRecordVodConfigsResponse extends AcsResponse {
 
 	private List<LiveRecordVodConfig> liveRecordVodConfigs;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Integer getPageNum() {
 		return this.pageNum;
 	}
 
 	public void setPageNum(Integer pageNum) {
 		this.pageNum = pageNum;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageSize() {
@@ -77,37 +77,21 @@ public class DescribeLiveRecordVodConfigsResponse extends AcsResponse {
 
 	public static class LiveRecordVodConfig {
 
-		private String createTime;
-
-		private String domainName;
-
 		private String appName;
 
+		private String autoCompose;
+
 		private String streamName;
+
+		private String createTime;
 
 		private String vodTranscodeGroupId;
 
 		private Integer cycleDuration;
 
-		private String autoCompose;
+		private String domainName;
 
 		private String composeVodTranscodeGroupId;
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getDomainName() {
-			return this.domainName;
-		}
-
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
-		}
 
 		public String getAppName() {
 			return this.appName;
@@ -117,12 +101,28 @@ public class DescribeLiveRecordVodConfigsResponse extends AcsResponse {
 			this.appName = appName;
 		}
 
+		public String getAutoCompose() {
+			return this.autoCompose;
+		}
+
+		public void setAutoCompose(String autoCompose) {
+			this.autoCompose = autoCompose;
+		}
+
 		public String getStreamName() {
 			return this.streamName;
 		}
 
 		public void setStreamName(String streamName) {
 			this.streamName = streamName;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
 		public String getVodTranscodeGroupId() {
@@ -141,12 +141,12 @@ public class DescribeLiveRecordVodConfigsResponse extends AcsResponse {
 			this.cycleDuration = cycleDuration;
 		}
 
-		public String getAutoCompose() {
-			return this.autoCompose;
+		public String getDomainName() {
+			return this.domainName;
 		}
 
-		public void setAutoCompose(String autoCompose) {
-			this.autoCompose = autoCompose;
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
 		}
 
 		public String getComposeVodTranscodeGroupId() {

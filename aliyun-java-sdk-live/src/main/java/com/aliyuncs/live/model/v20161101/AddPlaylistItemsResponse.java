@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class AddPlaylistItemsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String programId;
 
+	private String requestId;
+
 	private Items items;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getProgramId() {
 		return this.programId;
@@ -45,6 +37,14 @@ public class AddPlaylistItemsResponse extends AcsResponse {
 
 	public void setProgramId(String programId) {
 		this.programId = programId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Items getItems() {
@@ -79,17 +79,9 @@ public class AddPlaylistItemsResponse extends AcsResponse {
 
 		public static class SuccessItem {
 
-			private String itemId;
-
 			private String itemName;
 
-			public String getItemId() {
-				return this.itemId;
-			}
-
-			public void setItemId(String itemId) {
-				this.itemId = itemId;
-			}
+			private String itemId;
 
 			public String getItemName() {
 				return this.itemName;
@@ -97,22 +89,22 @@ public class AddPlaylistItemsResponse extends AcsResponse {
 
 			public void setItemName(String itemName) {
 				this.itemName = itemName;
+			}
+
+			public String getItemId() {
+				return this.itemId;
+			}
+
+			public void setItemId(String itemId) {
+				this.itemId = itemId;
 			}
 		}
 
 		public static class FailedItem {
 
-			private String itemId;
-
 			private String itemName;
 
-			public String getItemId() {
-				return this.itemId;
-			}
-
-			public void setItemId(String itemId) {
-				this.itemId = itemId;
-			}
+			private String itemId;
 
 			public String getItemName() {
 				return this.itemName;
@@ -120,6 +112,14 @@ public class AddPlaylistItemsResponse extends AcsResponse {
 
 			public void setItemName(String itemName) {
 				this.itemName = itemName;
+			}
+
+			public String getItemId() {
+				return this.itemId;
+			}
+
+			public void setItemId(String itemId) {
+				this.itemId = itemId;
 			}
 		}
 	}

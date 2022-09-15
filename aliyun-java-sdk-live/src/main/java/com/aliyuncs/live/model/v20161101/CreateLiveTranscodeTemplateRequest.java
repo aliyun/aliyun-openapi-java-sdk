@@ -22,18 +22,18 @@ import com.aliyuncs.live.Endpoint;
  * @author auto create
  * @version 
  */
-public class SetLiveDomainSpecialConfigRequest extends RpcAcsRequest<SetLiveDomainSpecialConfigResponse> {
+public class CreateLiveTranscodeTemplateRequest extends RpcAcsRequest<CreateLiveTranscodeTemplateResponse> {
 	   
 
-	private String value;
+	private String type;
 
-	private String domainName;
+	private String securityToken;
+
+	private String templateConfig;
 
 	private Long ownerId;
-
-	private String name;
-	public SetLiveDomainSpecialConfigRequest() {
-		super("live", "2016-11-01", "SetLiveDomainSpecialConfig", "live");
+	public CreateLiveTranscodeTemplateRequest() {
+		super("live", "2016-11-01", "CreateLiveTranscodeTemplate", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,25 +41,36 @@ public class SetLiveDomainSpecialConfigRequest extends RpcAcsRequest<SetLiveDoma
 		} catch (Exception e) {}
 	}
 
-	public String getValue() {
-		return this.value;
+	public String getType() {
+		return this.type;
 	}
 
-	public void setValue(String value) {
-		this.value = value;
-		if(value != null){
-			putQueryParameter("Value", value);
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
 		}
 	}
 
-	public String getDomainName() {
-		return this.domainName;
+	public String getSecurityToken() {
+		return this.securityToken;
 	}
 
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getTemplateConfig() {
+		return this.templateConfig;
+	}
+
+	public void setTemplateConfig(String templateConfig) {
+		this.templateConfig = templateConfig;
+		if(templateConfig != null){
+			putQueryParameter("TemplateConfig", templateConfig);
 		}
 	}
 
@@ -74,20 +85,9 @@ public class SetLiveDomainSpecialConfigRequest extends RpcAcsRequest<SetLiveDoma
 		}
 	}
 
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
 	@Override
-	public Class<SetLiveDomainSpecialConfigResponse> getResponseClass() {
-		return SetLiveDomainSpecialConfigResponse.class;
+	public Class<CreateLiveTranscodeTemplateResponse> getResponseClass() {
+		return CreateLiveTranscodeTemplateResponse.class;
 	}
 
 }

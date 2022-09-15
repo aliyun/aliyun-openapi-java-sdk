@@ -27,16 +27,16 @@ public class DescribeForbidPushStreamRoomListResponseUnmarshaller {
 	public static DescribeForbidPushStreamRoomListResponse unmarshall(DescribeForbidPushStreamRoomListResponse describeForbidPushStreamRoomListResponse, UnmarshallerContext _ctx) {
 		
 		describeForbidPushStreamRoomListResponse.setRequestId(_ctx.stringValue("DescribeForbidPushStreamRoomListResponse.RequestId"));
-		describeForbidPushStreamRoomListResponse.setTotalNum(_ctx.integerValue("DescribeForbidPushStreamRoomListResponse.TotalNum"));
 		describeForbidPushStreamRoomListResponse.setTotalPage(_ctx.integerValue("DescribeForbidPushStreamRoomListResponse.TotalPage"));
+		describeForbidPushStreamRoomListResponse.setTotalNum(_ctx.integerValue("DescribeForbidPushStreamRoomListResponse.TotalNum"));
 
 		List<Room> roomList = new ArrayList<Room>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeForbidPushStreamRoomListResponse.RoomList.Length"); i++) {
 			Room room = new Room();
-			room.setRoomId(_ctx.stringValue("DescribeForbidPushStreamRoomListResponse.RoomList["+ i +"].RoomId"));
+			room.setOpEndTime(_ctx.stringValue("DescribeForbidPushStreamRoomListResponse.RoomList["+ i +"].OpEndTime"));
 			room.setAnchorId(_ctx.stringValue("DescribeForbidPushStreamRoomListResponse.RoomList["+ i +"].AnchorId"));
 			room.setOpStartTime(_ctx.stringValue("DescribeForbidPushStreamRoomListResponse.RoomList["+ i +"].OpStartTime"));
-			room.setOpEndTime(_ctx.stringValue("DescribeForbidPushStreamRoomListResponse.RoomList["+ i +"].OpEndTime"));
+			room.setRoomId(_ctx.stringValue("DescribeForbidPushStreamRoomListResponse.RoomList["+ i +"].RoomId"));
 
 			roomList.add(room);
 		}

@@ -25,6 +25,8 @@ import com.aliyuncs.live.Endpoint;
 public class DescribeLiveStreamsOnlineListRequest extends RpcAcsRequest<DescribeLiveStreamsOnlineListResponse> {
 	   
 
+	private String onlyStream;
+
 	private Integer pageNum;
 
 	private String appName;
@@ -47,6 +49,17 @@ public class DescribeLiveStreamsOnlineListRequest extends RpcAcsRequest<Describe
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getOnlyStream() {
+		return this.onlyStream;
+	}
+
+	public void setOnlyStream(String onlyStream) {
+		this.onlyStream = onlyStream;
+		if(onlyStream != null){
+			putQueryParameter("OnlyStream", onlyStream);
+		}
 	}
 
 	public Integer getPageNum() {

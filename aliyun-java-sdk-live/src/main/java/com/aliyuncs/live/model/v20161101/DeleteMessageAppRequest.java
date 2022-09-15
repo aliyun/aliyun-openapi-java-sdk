@@ -22,14 +22,12 @@ import com.aliyuncs.live.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeLiveUserQuotaRequest extends RpcAcsRequest<DescribeLiveUserQuotaResponse> {
+public class DeleteMessageAppRequest extends RpcAcsRequest<DeleteMessageAppResponse> {
 	   
 
-	private Long ownerId;
-
-	private String securityToken;
-	public DescribeLiveUserQuotaRequest() {
-		super("live", "2016-11-01", "DescribeLiveUserQuota", "live");
+	private String appId;
+	public DeleteMessageAppRequest() {
+		super("live", "2016-11-01", "DeleteMessageApp", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +35,20 @@ public class DescribeLiveUserQuotaRequest extends RpcAcsRequest<DescribeLiveUser
 		} catch (Exception e) {}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getAppId() {
+		return this.appId;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setAppId(String appId) {
+		this.appId = appId;
+		if(appId != null){
+			putBodyParameter("AppId", appId);
 		}
 	}
 
 	@Override
-	public Class<DescribeLiveUserQuotaResponse> getResponseClass() {
-		return DescribeLiveUserQuotaResponse.class;
+	public Class<DeleteMessageAppResponse> getResponseClass() {
+		return DeleteMessageAppResponse.class;
 	}
 
 }

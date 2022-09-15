@@ -14,20 +14,20 @@
 
 package com.aliyuncs.live.model.v20161101;
 
-import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.live.transform.v20161101.DescribeLiveDomainSpecialConfigResponseUnmarshaller;
+import com.aliyuncs.live.transform.v20161101.CreateMessageGroupResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeLiveDomainSpecialConfigResponse extends AcsResponse {
+public class CreateMessageGroupResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<Config> configs;
+	private Result result;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,50 +37,40 @@ public class DescribeLiveDomainSpecialConfigResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<Config> getConfigs() {
-		return this.configs;
+	public Result getResult() {
+		return this.result;
 	}
 
-	public void setConfigs(List<Config> configs) {
-		this.configs = configs;
+	public void setResult(Result result) {
+		this.result = result;
 	}
 
-	public static class Config {
+	public static class Result {
 
-		private String name;
+		private String groupId;
 
-		private Long configId;
+		private Map<Object,Object> extension;
 
-		private String value;
-
-		public String getName() {
-			return this.name;
+		public String getGroupId() {
+			return this.groupId;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+		public void setGroupId(String groupId) {
+			this.groupId = groupId;
 		}
 
-		public Long getConfigId() {
-			return this.configId;
+		public Map<Object,Object> getExtension() {
+			return this.extension;
 		}
 
-		public void setConfigId(Long configId) {
-			this.configId = configId;
-		}
-
-		public String getValue() {
-			return this.value;
-		}
-
-		public void setValue(String value) {
-			this.value = value;
+		public void setExtension(Map<Object,Object> extension) {
+			this.extension = extension;
 		}
 	}
 
 	@Override
-	public DescribeLiveDomainSpecialConfigResponse getInstance(UnmarshallerContext context) {
-		return	DescribeLiveDomainSpecialConfigResponseUnmarshaller.unmarshall(this, context);
+	public CreateMessageGroupResponse getInstance(UnmarshallerContext context) {
+		return	CreateMessageGroupResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

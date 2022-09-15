@@ -25,13 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DeleteSnapshotFilesResponse extends AcsResponse {
 
+	private Integer failureCount;
+
 	private String requestId;
 
 	private Integer successCount;
 
-	private Integer failureCount;
-
 	private List<SnapshotDeleteInfo> snapshotDeleteInfoList;
+
+	public Integer getFailureCount() {
+		return this.failureCount;
+	}
+
+	public void setFailureCount(Integer failureCount) {
+		this.failureCount = failureCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,14 +57,6 @@ public class DeleteSnapshotFilesResponse extends AcsResponse {
 		this.successCount = successCount;
 	}
 
-	public Integer getFailureCount() {
-		return this.failureCount;
-	}
-
-	public void setFailureCount(Integer failureCount) {
-		this.failureCount = failureCount;
-	}
-
 	public List<SnapshotDeleteInfo> getSnapshotDeleteInfoList() {
 		return this.snapshotDeleteInfoList;
 	}
@@ -67,17 +67,9 @@ public class DeleteSnapshotFilesResponse extends AcsResponse {
 
 	public static class SnapshotDeleteInfo {
 
-		private Long createTimestamp;
-
 		private String message;
 
-		public Long getCreateTimestamp() {
-			return this.createTimestamp;
-		}
-
-		public void setCreateTimestamp(Long createTimestamp) {
-			this.createTimestamp = createTimestamp;
-		}
+		private Long createTimestamp;
 
 		public String getMessage() {
 			return this.message;
@@ -85,6 +77,14 @@ public class DeleteSnapshotFilesResponse extends AcsResponse {
 
 		public void setMessage(String message) {
 			this.message = message;
+		}
+
+		public Long getCreateTimestamp() {
+			return this.createTimestamp;
+		}
+
+		public void setCreateTimestamp(Long createTimestamp) {
+			this.createTimestamp = createTimestamp;
 		}
 	}
 

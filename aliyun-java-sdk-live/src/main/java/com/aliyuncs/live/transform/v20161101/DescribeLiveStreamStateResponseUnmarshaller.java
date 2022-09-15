@@ -23,8 +23,8 @@ public class DescribeLiveStreamStateResponseUnmarshaller {
 	public static DescribeLiveStreamStateResponse unmarshall(DescribeLiveStreamStateResponse describeLiveStreamStateResponse, UnmarshallerContext _ctx) {
 		
 		describeLiveStreamStateResponse.setRequestId(_ctx.stringValue("DescribeLiveStreamStateResponse.RequestId"));
-		describeLiveStreamStateResponse.setStreamState(_ctx.stringValue("DescribeLiveStreamStateResponse.StreamState"));
 		describeLiveStreamStateResponse.setType(_ctx.stringValue("DescribeLiveStreamStateResponse.Type"));
+		describeLiveStreamStateResponse.setStreamState(_ctx.stringValue("DescribeLiveStreamStateResponse.StreamState"));
 	 
 	 	return describeLiveStreamStateResponse;
 	}

@@ -77,45 +77,21 @@ public class DescribeLiveUserDomainsResponse extends AcsResponse {
 
 	public static class PageData {
 
-		private String domainName;
-
-		private String cname;
-
-		private String liveDomainType;
-
 		private String gmtCreated;
 
-		private String gmtModified;
-
-		private String description;
+		private String liveDomainType;
 
 		private String liveDomainStatus;
 
 		private String regionName;
 
-		public String getDomainName() {
-			return this.domainName;
-		}
+		private String description;
 
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
-		}
+		private String cname;
 
-		public String getCname() {
-			return this.cname;
-		}
+		private String gmtModified;
 
-		public void setCname(String cname) {
-			this.cname = cname;
-		}
-
-		public String getLiveDomainType() {
-			return this.liveDomainType;
-		}
-
-		public void setLiveDomainType(String liveDomainType) {
-			this.liveDomainType = liveDomainType;
-		}
+		private String domainName;
 
 		public String getGmtCreated() {
 			return this.gmtCreated;
@@ -125,20 +101,12 @@ public class DescribeLiveUserDomainsResponse extends AcsResponse {
 			this.gmtCreated = gmtCreated;
 		}
 
-		public String getGmtModified() {
-			return this.gmtModified;
+		public String getLiveDomainType() {
+			return this.liveDomainType;
 		}
 
-		public void setGmtModified(String gmtModified) {
-			this.gmtModified = gmtModified;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
+		public void setLiveDomainType(String liveDomainType) {
+			this.liveDomainType = liveDomainType;
 		}
 
 		public String getLiveDomainStatus() {
@@ -155,6 +123,38 @@ public class DescribeLiveUserDomainsResponse extends AcsResponse {
 
 		public void setRegionName(String regionName) {
 			this.regionName = regionName;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getCname() {
+			return this.cname;
+		}
+
+		public void setCname(String cname) {
+			this.cname = cname;
+		}
+
+		public String getGmtModified() {
+			return this.gmtModified;
+		}
+
+		public void setGmtModified(String gmtModified) {
+			this.gmtModified = gmtModified;
+		}
+
+		public String getDomainName() {
+			return this.domainName;
+		}
+
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
 		}
 	}
 

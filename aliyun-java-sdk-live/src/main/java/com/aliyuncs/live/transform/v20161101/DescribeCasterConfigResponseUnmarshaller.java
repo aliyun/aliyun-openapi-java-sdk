@@ -30,17 +30,18 @@ public class DescribeCasterConfigResponseUnmarshaller {
 	public static DescribeCasterConfigResponse unmarshall(DescribeCasterConfigResponse describeCasterConfigResponse, UnmarshallerContext _ctx) {
 		
 		describeCasterConfigResponse.setRequestId(_ctx.stringValue("DescribeCasterConfigResponse.RequestId"));
-		describeCasterConfigResponse.setCasterId(_ctx.stringValue("DescribeCasterConfigResponse.CasterId"));
-		describeCasterConfigResponse.setCasterName(_ctx.stringValue("DescribeCasterConfigResponse.CasterName"));
-		describeCasterConfigResponse.setDomainName(_ctx.stringValue("DescribeCasterConfigResponse.DomainName"));
-		describeCasterConfigResponse.setSideOutputUrlList(_ctx.stringValue("DescribeCasterConfigResponse.SideOutputUrlList"));
 		describeCasterConfigResponse.setDelay(_ctx.floatValue("DescribeCasterConfigResponse.Delay"));
+		describeCasterConfigResponse.setUrgentLiveStreamUrl(_ctx.stringValue("DescribeCasterConfigResponse.UrgentLiveStreamUrl"));
 		describeCasterConfigResponse.setUrgentMaterialId(_ctx.stringValue("DescribeCasterConfigResponse.UrgentMaterialId"));
-		describeCasterConfigResponse.setSideOutputUrl(_ctx.stringValue("DescribeCasterConfigResponse.SideOutputUrl"));
 		describeCasterConfigResponse.setCallbackUrl(_ctx.stringValue("DescribeCasterConfigResponse.CallbackUrl"));
 		describeCasterConfigResponse.setProgramName(_ctx.stringValue("DescribeCasterConfigResponse.ProgramName"));
+		describeCasterConfigResponse.setCasterName(_ctx.stringValue("DescribeCasterConfigResponse.CasterName"));
+		describeCasterConfigResponse.setCasterId(_ctx.stringValue("DescribeCasterConfigResponse.CasterId"));
 		describeCasterConfigResponse.setProgramEffect(_ctx.integerValue("DescribeCasterConfigResponse.ProgramEffect"));
 		describeCasterConfigResponse.setChannelEnable(_ctx.integerValue("DescribeCasterConfigResponse.ChannelEnable"));
+		describeCasterConfigResponse.setDomainName(_ctx.stringValue("DescribeCasterConfigResponse.DomainName"));
+		describeCasterConfigResponse.setSideOutputUrlList(_ctx.stringValue("DescribeCasterConfigResponse.SideOutputUrlList"));
+		describeCasterConfigResponse.setSideOutputUrl(_ctx.stringValue("DescribeCasterConfigResponse.SideOutputUrl"));
 
 		TranscodeConfig transcodeConfig = new TranscodeConfig();
 		transcodeConfig.setCasterTemplate(_ctx.stringValue("DescribeCasterConfigResponse.TranscodeConfig.CasterTemplate"));
@@ -59,10 +60,10 @@ public class DescribeCasterConfigResponseUnmarshaller {
 		List<RecordFormatItem> recordFormat = new ArrayList<RecordFormatItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCasterConfigResponse.RecordConfig.RecordFormat.Length"); i++) {
 			RecordFormatItem recordFormatItem = new RecordFormatItem();
-			recordFormatItem.setFormat(_ctx.stringValue("DescribeCasterConfigResponse.RecordConfig.RecordFormat["+ i +"].Format"));
-			recordFormatItem.setOssObjectPrefix(_ctx.stringValue("DescribeCasterConfigResponse.RecordConfig.RecordFormat["+ i +"].OssObjectPrefix"));
-			recordFormatItem.setSliceOssObjectPrefix(_ctx.stringValue("DescribeCasterConfigResponse.RecordConfig.RecordFormat["+ i +"].SliceOssObjectPrefix"));
 			recordFormatItem.setCycleDuration(_ctx.integerValue("DescribeCasterConfigResponse.RecordConfig.RecordFormat["+ i +"].CycleDuration"));
+			recordFormatItem.setSliceOssObjectPrefix(_ctx.stringValue("DescribeCasterConfigResponse.RecordConfig.RecordFormat["+ i +"].SliceOssObjectPrefix"));
+			recordFormatItem.setOssObjectPrefix(_ctx.stringValue("DescribeCasterConfigResponse.RecordConfig.RecordFormat["+ i +"].OssObjectPrefix"));
+			recordFormatItem.setFormat(_ctx.stringValue("DescribeCasterConfigResponse.RecordConfig.RecordFormat["+ i +"].Format"));
 
 			recordFormat.add(recordFormatItem);
 		}
@@ -72,8 +73,8 @@ public class DescribeCasterConfigResponseUnmarshaller {
 		List<SyncGroup> syncGroupsConfig = new ArrayList<SyncGroup>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCasterConfigResponse.SyncGroupsConfig.Length"); i++) {
 			SyncGroup syncGroup = new SyncGroup();
-			syncGroup.setMode(_ctx.integerValue("DescribeCasterConfigResponse.SyncGroupsConfig["+ i +"].Mode"));
 			syncGroup.setHostResourceId(_ctx.stringValue("DescribeCasterConfigResponse.SyncGroupsConfig["+ i +"].HostResourceId"));
+			syncGroup.setMode(_ctx.integerValue("DescribeCasterConfigResponse.SyncGroupsConfig["+ i +"].Mode"));
 
 			List<String> resourceIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeCasterConfigResponse.SyncGroupsConfig["+ i +"].ResourceIds.Length"); j++) {

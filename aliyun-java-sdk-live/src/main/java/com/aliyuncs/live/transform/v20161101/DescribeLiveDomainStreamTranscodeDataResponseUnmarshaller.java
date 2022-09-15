@@ -31,13 +31,13 @@ public class DescribeLiveDomainStreamTranscodeDataResponseUnmarshaller {
 		List<TranscodeData> transcodeDataList = new ArrayList<TranscodeData>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLiveDomainStreamTranscodeDataResponse.TranscodeDataList.Length"); i++) {
 			TranscodeData transcodeData = new TranscodeData();
-			transcodeData.setTimeStamp(_ctx.stringValue("DescribeLiveDomainStreamTranscodeDataResponse.TranscodeDataList["+ i +"].TimeStamp"));
+			transcodeData.setTanscodeType(_ctx.stringValue("DescribeLiveDomainStreamTranscodeDataResponse.TranscodeDataList["+ i +"].TanscodeType"));
 			transcodeData.setDomain(_ctx.stringValue("DescribeLiveDomainStreamTranscodeDataResponse.TranscodeDataList["+ i +"].Domain"));
 			transcodeData.setRegion(_ctx.stringValue("DescribeLiveDomainStreamTranscodeDataResponse.TranscodeDataList["+ i +"].Region"));
-			transcodeData.setTanscodeType(_ctx.stringValue("DescribeLiveDomainStreamTranscodeDataResponse.TranscodeDataList["+ i +"].TanscodeType"));
-			transcodeData.setResolution(_ctx.stringValue("DescribeLiveDomainStreamTranscodeDataResponse.TranscodeDataList["+ i +"].Resolution"));
-			transcodeData.setFps(_ctx.stringValue("DescribeLiveDomainStreamTranscodeDataResponse.TranscodeDataList["+ i +"].Fps"));
 			transcodeData.setDuration(_ctx.integerValue("DescribeLiveDomainStreamTranscodeDataResponse.TranscodeDataList["+ i +"].Duration"));
+			transcodeData.setTimeStamp(_ctx.stringValue("DescribeLiveDomainStreamTranscodeDataResponse.TranscodeDataList["+ i +"].TimeStamp"));
+			transcodeData.setFps(_ctx.stringValue("DescribeLiveDomainStreamTranscodeDataResponse.TranscodeDataList["+ i +"].Fps"));
+			transcodeData.setResolution(_ctx.stringValue("DescribeLiveDomainStreamTranscodeDataResponse.TranscodeDataList["+ i +"].Resolution"));
 
 			transcodeDataList.add(transcodeData);
 		}

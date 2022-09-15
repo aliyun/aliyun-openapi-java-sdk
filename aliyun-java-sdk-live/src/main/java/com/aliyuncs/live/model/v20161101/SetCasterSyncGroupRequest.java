@@ -70,8 +70,6 @@ public class SetCasterSyncGroupRequest extends RpcAcsRequest<SetCasterSyncGroupR
 		this.syncGroups = syncGroups;	
 		if (syncGroups != null) {
 			for (int depth1 = 0; depth1 < syncGroups.size(); depth1++) {
-				putQueryParameter("SyncGroup." + (depth1 + 1) + ".Mode" , syncGroups.get(depth1).getMode());
-				putQueryParameter("SyncGroup." + (depth1 + 1) + ".SyncDelayThreshold" , syncGroups.get(depth1).getSyncDelayThreshold());
 				putQueryParameter("SyncGroup." + (depth1 + 1) + ".HostResourceId" , syncGroups.get(depth1).getHostResourceId());
 				if (syncGroups.get(depth1).getResourceIdss() != null) {
 					for (int i = 0; i < syncGroups.get(depth1).getResourceIdss().size(); i++) {
@@ -83,15 +81,13 @@ public class SetCasterSyncGroupRequest extends RpcAcsRequest<SetCasterSyncGroupR
 						putQueryParameter("SyncGroup." + (depth1 + 1) + ".SyncOffsets." + (i + 1) , syncGroups.get(depth1).getSyncOffsetss().get(i));
 					}
 				}
+				putQueryParameter("SyncGroup." + (depth1 + 1) + ".SyncDelayThreshold" , syncGroups.get(depth1).getSyncDelayThreshold());
+				putQueryParameter("SyncGroup." + (depth1 + 1) + ".Mode" , syncGroups.get(depth1).getMode());
 			}
 		}	
 	}
 
 	public static class SyncGroup {
-
-		private Integer mode;
-
-		private Long syncDelayThreshold;
 
 		private String hostResourceId;
 
@@ -99,21 +95,9 @@ public class SetCasterSyncGroupRequest extends RpcAcsRequest<SetCasterSyncGroupR
 
 		private List<Integer> syncOffsetss;
 
-		public Integer getMode() {
-			return this.mode;
-		}
+		private Long syncDelayThreshold;
 
-		public void setMode(Integer mode) {
-			this.mode = mode;
-		}
-
-		public Long getSyncDelayThreshold() {
-			return this.syncDelayThreshold;
-		}
-
-		public void setSyncDelayThreshold(Long syncDelayThreshold) {
-			this.syncDelayThreshold = syncDelayThreshold;
-		}
+		private Integer mode;
 
 		public String getHostResourceId() {
 			return this.hostResourceId;
@@ -137,6 +121,22 @@ public class SetCasterSyncGroupRequest extends RpcAcsRequest<SetCasterSyncGroupR
 
 		public void setSyncOffsetss(List<Integer> syncOffsetss) {
 			this.syncOffsetss = syncOffsetss;
+		}
+
+		public Long getSyncDelayThreshold() {
+			return this.syncDelayThreshold;
+		}
+
+		public void setSyncDelayThreshold(Long syncDelayThreshold) {
+			this.syncDelayThreshold = syncDelayThreshold;
+		}
+
+		public Integer getMode() {
+			return this.mode;
+		}
+
+		public void setMode(Integer mode) {
+			this.mode = mode;
 		}
 	}
 

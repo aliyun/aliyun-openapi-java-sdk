@@ -14,18 +14,21 @@
 
 package com.aliyuncs.live.transform.v20161101;
 
-import com.aliyuncs.live.model.v20161101.DescribeLiveUserQuotaResponse;
+import com.aliyuncs.live.model.v20161101.JoinMessageGroupResponse;
+import com.aliyuncs.live.model.v20161101.JoinMessageGroupResponse.Result;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class DescribeLiveUserQuotaResponseUnmarshaller {
+public class JoinMessageGroupResponseUnmarshaller {
 
-	public static DescribeLiveUserQuotaResponse unmarshall(DescribeLiveUserQuotaResponse describeLiveUserQuotaResponse, UnmarshallerContext _ctx) {
+	public static JoinMessageGroupResponse unmarshall(JoinMessageGroupResponse joinMessageGroupResponse, UnmarshallerContext _ctx) {
 		
-		describeLiveUserQuotaResponse.setRequestId(_ctx.stringValue("DescribeLiveUserQuotaResponse.RequestId"));
-		describeLiveUserQuotaResponse.setDomainQuota(_ctx.integerValue("DescribeLiveUserQuotaResponse.DomainQuota"));
-		describeLiveUserQuotaResponse.setDomainUsedCount(_ctx.stringValue("DescribeLiveUserQuotaResponse.DomainUsedCount"));
+		joinMessageGroupResponse.setRequestId(_ctx.stringValue("JoinMessageGroupResponse.RequestId"));
+
+		Result result = new Result();
+		result.setSuccess(_ctx.booleanValue("JoinMessageGroupResponse.Result.Success"));
+		joinMessageGroupResponse.setResult(result);
 	 
-	 	return describeLiveUserQuotaResponse;
+	 	return joinMessageGroupResponse;
 	}
 }

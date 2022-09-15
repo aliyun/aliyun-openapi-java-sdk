@@ -15,16 +15,18 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.live.transform.v20161101.SetLiveDomainSpecialConfigResponseUnmarshaller;
+import com.aliyuncs.live.transform.v20161101.CloseMessageGroupResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SetLiveDomainSpecialConfigResponse extends AcsResponse {
+public class CloseMessageGroupResponse extends AcsResponse {
 
 	private String requestId;
+
+	private Result result;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -34,8 +36,34 @@ public class SetLiveDomainSpecialConfigResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public Result getResult() {
+		return this.result;
+	}
+
+	public void setResult(Result result) {
+		this.result = result;
+	}
+
+	public static class Result {
+
+		private Boolean success;
+
+		public Boolean getSuccess() {
+			return this.success;
+		}
+
+		public void setSuccess(Boolean success) {
+			this.success = success;
+		}
+	}
+
 	@Override
-	public SetLiveDomainSpecialConfigResponse getInstance(UnmarshallerContext context) {
-		return	SetLiveDomainSpecialConfigResponseUnmarshaller.unmarshall(this, context);
+	public CloseMessageGroupResponse getInstance(UnmarshallerContext context) {
+		return	CloseMessageGroupResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

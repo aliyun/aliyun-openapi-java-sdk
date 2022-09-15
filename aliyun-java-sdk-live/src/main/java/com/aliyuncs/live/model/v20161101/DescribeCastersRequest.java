@@ -33,6 +33,8 @@ public class DescribeCastersRequest extends RpcAcsRequest<DescribeCastersRespons
 
 	private Integer pageSize;
 
+	private String normType;
+
 	private String casterId;
 
 	private String endTime;
@@ -94,6 +96,17 @@ public class DescribeCastersRequest extends RpcAcsRequest<DescribeCastersRespons
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getNormType() {
+		return this.normType;
+	}
+
+	public void setNormType(String normType) {
+		this.normType = normType;
+		if(normType != null){
+			putQueryParameter("NormType", normType);
 		}
 	}
 

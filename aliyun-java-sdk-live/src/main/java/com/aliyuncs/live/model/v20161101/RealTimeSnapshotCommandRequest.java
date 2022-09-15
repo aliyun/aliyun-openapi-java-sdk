@@ -25,6 +25,8 @@ import com.aliyuncs.live.Endpoint;
 public class RealTimeSnapshotCommandRequest extends RpcAcsRequest<RealTimeSnapshotCommandResponse> {
 	   
 
+	private Integer source;
+
 	private Integer mode;
 
 	private String appName;
@@ -45,6 +47,17 @@ public class RealTimeSnapshotCommandRequest extends RpcAcsRequest<RealTimeSnapsh
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getSource() {
+		return this.source;
+	}
+
+	public void setSource(Integer source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source.toString());
+		}
 	}
 
 	public Integer getMode() {

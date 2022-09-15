@@ -47,21 +47,13 @@ public class DescribeLiveStreamOptimizedFeatureConfigResponse extends AcsRespons
 
 	public static class LiveStreamOptimizedFeatureConfig {
 
-		private String domainName;
-
 		private String configName;
 
 		private String configStatus;
 
+		private String domainName;
+
 		private String configValue;
-
-		public String getDomainName() {
-			return this.domainName;
-		}
-
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
-		}
 
 		public String getConfigName() {
 			return this.configName;
@@ -77,6 +69,14 @@ public class DescribeLiveStreamOptimizedFeatureConfigResponse extends AcsRespons
 
 		public void setConfigStatus(String configStatus) {
 			this.configStatus = configStatus;
+		}
+
+		public String getDomainName() {
+			return this.domainName;
+		}
+
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
 		}
 
 		public String getConfigValue() {

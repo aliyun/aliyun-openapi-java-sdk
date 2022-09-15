@@ -47,19 +47,11 @@ public class ListLiveRealtimeLogDeliveryInfosResponse extends AcsResponse {
 
 	public static class RealtimeLogDeliveryInfos {
 
-		private String project;
-
 		private String logstore;
 
+		private String project;
+
 		private String region;
-
-		public String getProject() {
-			return this.project;
-		}
-
-		public void setProject(String project) {
-			this.project = project;
-		}
 
 		public String getLogstore() {
 			return this.logstore;
@@ -67,6 +59,14 @@ public class ListLiveRealtimeLogDeliveryInfosResponse extends AcsResponse {
 
 		public void setLogstore(String logstore) {
 			this.logstore = logstore;
+		}
+
+		public String getProject() {
+			return this.project;
+		}
+
+		public void setProject(String project) {
+			this.project = project;
 		}
 
 		public String getRegion() {

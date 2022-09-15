@@ -15,36 +15,18 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.live.transform.v20161101.DescribeLiveUserQuotaResponseUnmarshaller;
+import com.aliyuncs.live.transform.v20161101.CreateLiveTranscodeTemplateResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeLiveUserQuotaResponse extends AcsResponse {
-
-	private Integer domainQuota;
-
-	private String domainUsedCount;
+public class CreateLiveTranscodeTemplateResponse extends AcsResponse {
 
 	private String requestId;
 
-	public Integer getDomainQuota() {
-		return this.domainQuota;
-	}
-
-	public void setDomainQuota(Integer domainQuota) {
-		this.domainQuota = domainQuota;
-	}
-
-	public String getDomainUsedCount() {
-		return this.domainUsedCount;
-	}
-
-	public void setDomainUsedCount(String domainUsedCount) {
-		this.domainUsedCount = domainUsedCount;
-	}
+	private String templateId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -54,8 +36,16 @@ public class DescribeLiveUserQuotaResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getTemplateId() {
+		return this.templateId;
+	}
+
+	public void setTemplateId(String templateId) {
+		this.templateId = templateId;
+	}
+
 	@Override
-	public DescribeLiveUserQuotaResponse getInstance(UnmarshallerContext context) {
-		return	DescribeLiveUserQuotaResponseUnmarshaller.unmarshall(this, context);
+	public CreateLiveTranscodeTemplateResponse getInstance(UnmarshallerContext context) {
+		return	CreateLiveTranscodeTemplateResponseUnmarshaller.unmarshall(this, context);
 	}
 }

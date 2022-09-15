@@ -26,9 +26,9 @@ public class DeleteCasterLayoutResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String casterId;
-
 	private String layoutId;
+
+	private String casterId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,20 +38,20 @@ public class DeleteCasterLayoutResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getCasterId() {
-		return this.casterId;
-	}
-
-	public void setCasterId(String casterId) {
-		this.casterId = casterId;
-	}
-
 	public String getLayoutId() {
 		return this.layoutId;
 	}
 
 	public void setLayoutId(String layoutId) {
 		this.layoutId = layoutId;
+	}
+
+	public String getCasterId() {
+		return this.casterId;
+	}
+
+	public void setCasterId(String casterId) {
+		this.casterId = casterId;
 	}
 
 	@Override

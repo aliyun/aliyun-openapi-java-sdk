@@ -28,8 +28,8 @@ public class DescribeLiveDomainOnlineUserNumResponseUnmarshaller {
 	public static DescribeLiveDomainOnlineUserNumResponse unmarshall(DescribeLiveDomainOnlineUserNumResponse describeLiveDomainOnlineUserNumResponse, UnmarshallerContext _ctx) {
 		
 		describeLiveDomainOnlineUserNumResponse.setRequestId(_ctx.stringValue("DescribeLiveDomainOnlineUserNumResponse.RequestId"));
-		describeLiveDomainOnlineUserNumResponse.setStreamCount(_ctx.integerValue("DescribeLiveDomainOnlineUserNumResponse.StreamCount"));
 		describeLiveDomainOnlineUserNumResponse.setUserCount(_ctx.integerValue("DescribeLiveDomainOnlineUserNumResponse.UserCount"));
+		describeLiveDomainOnlineUserNumResponse.setStreamCount(_ctx.integerValue("DescribeLiveDomainOnlineUserNumResponse.StreamCount"));
 
 		List<LiveStreamOnlineUserNumInfo> onlineUserInfo = new ArrayList<LiveStreamOnlineUserNumInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLiveDomainOnlineUserNumResponse.OnlineUserInfo.Length"); i++) {
@@ -39,8 +39,8 @@ public class DescribeLiveDomainOnlineUserNumResponseUnmarshaller {
 			List<Info> infos = new ArrayList<Info>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeLiveDomainOnlineUserNumResponse.OnlineUserInfo["+ i +"].Infos.Length"); j++) {
 				Info info = new Info();
-				info.setTranscodeTemplate(_ctx.stringValue("DescribeLiveDomainOnlineUserNumResponse.OnlineUserInfo["+ i +"].Infos["+ j +"].TranscodeTemplate"));
 				info.setUserNumber(_ctx.longValue("DescribeLiveDomainOnlineUserNumResponse.OnlineUserInfo["+ i +"].Infos["+ j +"].UserNumber"));
+				info.setTranscodeTemplate(_ctx.stringValue("DescribeLiveDomainOnlineUserNumResponse.OnlineUserInfo["+ i +"].Infos["+ j +"].TranscodeTemplate"));
 
 				infos.add(info);
 			}

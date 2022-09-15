@@ -47,21 +47,13 @@ public class DescribeUpBpsPeakDataResponse extends AcsResponse {
 
 	public static class DescribeUpPeakTraffic {
 
-		private String peakTime;
-
 		private String queryTime;
-
-		private String statName;
 
 		private String bandWidth;
 
-		public String getPeakTime() {
-			return this.peakTime;
-		}
+		private String statName;
 
-		public void setPeakTime(String peakTime) {
-			this.peakTime = peakTime;
-		}
+		private String peakTime;
 
 		public String getQueryTime() {
 			return this.queryTime;
@@ -69,6 +61,14 @@ public class DescribeUpBpsPeakDataResponse extends AcsResponse {
 
 		public void setQueryTime(String queryTime) {
 			this.queryTime = queryTime;
+		}
+
+		public String getBandWidth() {
+			return this.bandWidth;
+		}
+
+		public void setBandWidth(String bandWidth) {
+			this.bandWidth = bandWidth;
 		}
 
 		public String getStatName() {
@@ -79,12 +79,12 @@ public class DescribeUpBpsPeakDataResponse extends AcsResponse {
 			this.statName = statName;
 		}
 
-		public String getBandWidth() {
-			return this.bandWidth;
+		public String getPeakTime() {
+			return this.peakTime;
 		}
 
-		public void setBandWidth(String bandWidth) {
-			this.bandWidth = bandWidth;
+		public void setPeakTime(String peakTime) {
+			this.peakTime = peakTime;
 		}
 	}
 
