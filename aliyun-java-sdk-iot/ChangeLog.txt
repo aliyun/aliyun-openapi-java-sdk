@@ -1,3 +1,6 @@
+2022-09-16 Version: 7.44.0
+- Iot_20180120 old version sdk.
+
 2022-09-06 Version: 7.43.0
 - Iot_20180120 old version sdk.
 

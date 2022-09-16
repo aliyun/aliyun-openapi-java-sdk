@@ -87,6 +87,8 @@ public class ListRuleActionsResponse extends AcsResponse {
 
 		private Boolean errorActionFlag;
 
+		private String status;
+
 		public Long getId() {
 			return this.id;
 		}
@@ -125,6 +127,14 @@ public class ListRuleActionsResponse extends AcsResponse {
 
 		public void setErrorActionFlag(Boolean errorActionFlag) {
 			this.errorActionFlag = errorActionFlag;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
 		}
 	}
 

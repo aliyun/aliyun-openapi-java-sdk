@@ -35,6 +35,7 @@ public class GetDestinationResponseUnmarshaller {
 		destination.setConfiguration(_ctx.stringValue("GetDestinationResponse.Destination.Configuration"));
 		destination.setIsFailover(_ctx.booleanValue("GetDestinationResponse.Destination.IsFailover"));
 		destination.setUtcCreated(_ctx.stringValue("GetDestinationResponse.Destination.UtcCreated"));
+		destination.setStatus(_ctx.stringValue("GetDestinationResponse.Destination.Status"));
 		getDestinationResponse.setDestination(destination);
 	 
 	 	return getDestinationResponse;
