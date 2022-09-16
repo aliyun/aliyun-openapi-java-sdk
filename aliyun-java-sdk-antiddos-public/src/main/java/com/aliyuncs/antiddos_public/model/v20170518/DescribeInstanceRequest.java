@@ -16,6 +16,7 @@ package com.aliyuncs.antiddos_public.model.v20170518;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.antiddos_public.Endpoint;
 
 /**
  * @author auto create
@@ -42,6 +43,10 @@ public class DescribeInstanceRequest extends RpcAcsRequest<DescribeInstanceRespo
 	public DescribeInstanceRequest() {
 		super("antiddos-public", "2017-05-18", "DescribeInstance", "ddosbasic");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Integer getPageSize() {
