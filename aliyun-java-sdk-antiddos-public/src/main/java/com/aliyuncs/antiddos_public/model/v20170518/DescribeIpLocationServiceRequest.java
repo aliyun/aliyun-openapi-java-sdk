@@ -16,7 +16,6 @@ package com.aliyuncs.antiddos_public.model.v20170518;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.antiddos_public.Endpoint;
 
 /**
  * @author auto create
@@ -29,10 +28,6 @@ public class DescribeIpLocationServiceRequest extends RpcAcsRequest<DescribeIpLo
 	public DescribeIpLocationServiceRequest() {
 		super("antiddos-public", "2017-05-18", "DescribeIpLocationService", "ddosbasic");
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
 	}
 
 	public String getInternetIp() {
