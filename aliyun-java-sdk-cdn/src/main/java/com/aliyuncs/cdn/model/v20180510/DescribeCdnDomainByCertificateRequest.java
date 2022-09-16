@@ -27,6 +27,8 @@ public class DescribeCdnDomainByCertificateRequest extends RpcAcsRequest<Describ
 
 	private Long ownerId;
 
+	private Boolean sSLStatus;
+
 	private String sSLPub;
 	public DescribeCdnDomainByCertificateRequest() {
 		super("Cdn", "2018-05-10", "DescribeCdnDomainByCertificate");
@@ -45,6 +47,17 @@ public class DescribeCdnDomainByCertificateRequest extends RpcAcsRequest<Describ
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Boolean getSSLStatus() {
+		return this.sSLStatus;
+	}
+
+	public void setSSLStatus(Boolean sSLStatus) {
+		this.sSLStatus = sSLStatus;
+		if(sSLStatus != null){
+			putQueryParameter("SSLStatus", sSLStatus.toString());
 		}
 	}
 
