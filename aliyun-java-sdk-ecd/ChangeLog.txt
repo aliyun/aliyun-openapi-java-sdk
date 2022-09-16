@@ -1,3 +1,6 @@
+2022-09-16 Version: 2.0.13
+- Support remote coordinate control.
+
 2022-09-09 Version: 2.0.9
 - Support user customized desktop list.
 

@@ -65,6 +65,7 @@ public class DescribePolicyGroupsResponseUnmarshaller {
 			describePolicyGroup.setAppContentProtection(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].AppContentProtection"));
 			describePolicyGroup.setRecordContent(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].RecordContent"));
 			describePolicyGroup.setRecordContentExpires(_ctx.longValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].RecordContentExpires"));
+			describePolicyGroup.setRemoteCoordinate(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].RemoteCoordinate"));
 
 			List<String> preemptLoginUsers = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].PreemptLoginUsers.Length"); j++) {

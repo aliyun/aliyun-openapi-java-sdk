@@ -66,6 +66,8 @@ public class CreatePolicyGroupRequest extends RpcAcsRequest<CreatePolicyGroupRes
 
 	private String cameraRedirect;
 
+	private String remoteCoordinate;
+
 	private String html5Access;
 
 	private String gpuAcceleration;
@@ -330,6 +332,17 @@ public class CreatePolicyGroupRequest extends RpcAcsRequest<CreatePolicyGroupRes
 		this.cameraRedirect = cameraRedirect;
 		if(cameraRedirect != null){
 			putQueryParameter("CameraRedirect", cameraRedirect);
+		}
+	}
+
+	public String getRemoteCoordinate() {
+		return this.remoteCoordinate;
+	}
+
+	public void setRemoteCoordinate(String remoteCoordinate) {
+		this.remoteCoordinate = remoteCoordinate;
+		if(remoteCoordinate != null){
+			putQueryParameter("RemoteCoordinate", remoteCoordinate);
 		}
 	}
 

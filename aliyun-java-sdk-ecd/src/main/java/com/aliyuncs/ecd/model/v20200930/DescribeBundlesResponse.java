@@ -89,6 +89,8 @@ public class DescribeBundlesResponse extends AcsResponse {
 
 		private String volumeEncryptionKey;
 
+		private String platform;
+
 		private List<Disk> disks;
 
 		private DesktopTypeAttribute desktopTypeAttribute;
@@ -219,6 +221,14 @@ public class DescribeBundlesResponse extends AcsResponse {
 
 		public void setVolumeEncryptionKey(String volumeEncryptionKey) {
 			this.volumeEncryptionKey = volumeEncryptionKey;
+		}
+
+		public String getPlatform() {
+			return this.platform;
+		}
+
+		public void setPlatform(String platform) {
+			this.platform = platform;
 		}
 
 		public List<Disk> getDisks() {

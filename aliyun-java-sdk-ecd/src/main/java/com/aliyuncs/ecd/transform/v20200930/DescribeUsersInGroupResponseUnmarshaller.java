@@ -46,6 +46,8 @@ public class DescribeUsersInGroupResponseUnmarshaller {
 			endUser.setEndUserPhone(_ctx.stringValue("DescribeUsersInGroupResponse.EndUsers["+ i +"].EndUserPhone"));
 			endUser.setEndUserName(_ctx.stringValue("DescribeUsersInGroupResponse.EndUsers["+ i +"].EndUserName"));
 			endUser.setUserDesktopId(_ctx.stringValue("DescribeUsersInGroupResponse.EndUsers["+ i +"].UserDesktopId"));
+			endUser.setEndUserRemark(_ctx.stringValue("DescribeUsersInGroupResponse.EndUsers["+ i +"].EndUserRemark"));
+			endUser.setDisplayName(_ctx.stringValue("DescribeUsersInGroupResponse.EndUsers["+ i +"].DisplayName"));
 
 			ExternalInfo externalInfo = new ExternalInfo();
 			externalInfo.setExternalName(_ctx.stringValue("DescribeUsersInGroupResponse.EndUsers["+ i +"].ExternalInfo.ExternalName"));

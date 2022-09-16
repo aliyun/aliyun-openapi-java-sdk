@@ -80,6 +80,8 @@ public class ModifyPolicyGroupRequest extends RpcAcsRequest<ModifyPolicyGroupRes
 
 	private Long recordContentExpires;
 
+	private String remoteCoordinate;
+
 	private String html5Access;
 
 	private String gpuAcceleration;
@@ -427,6 +429,17 @@ public class ModifyPolicyGroupRequest extends RpcAcsRequest<ModifyPolicyGroupRes
 		this.recordContentExpires = recordContentExpires;
 		if(recordContentExpires != null){
 			putQueryParameter("RecordContentExpires", recordContentExpires.toString());
+		}
+	}
+
+	public String getRemoteCoordinate() {
+		return this.remoteCoordinate;
+	}
+
+	public void setRemoteCoordinate(String remoteCoordinate) {
+		this.remoteCoordinate = remoteCoordinate;
+		if(remoteCoordinate != null){
+			putQueryParameter("RemoteCoordinate", remoteCoordinate);
 		}
 	}
 

@@ -115,6 +115,8 @@ public class DescribePolicyGroupsResponse extends AcsResponse {
 
 		private Long recordContentExpires;
 
+		private String remoteCoordinate;
+
 		private List<AuthorizeSecurityPolicyRule> authorizeSecurityPolicyRules;
 
 		private List<AuthorizeAccessPolicyRule> authorizeAccessPolicyRules;
@@ -355,6 +357,14 @@ public class DescribePolicyGroupsResponse extends AcsResponse {
 
 		public void setRecordContentExpires(Long recordContentExpires) {
 			this.recordContentExpires = recordContentExpires;
+		}
+
+		public String getRemoteCoordinate() {
+			return this.remoteCoordinate;
+		}
+
+		public void setRemoteCoordinate(String remoteCoordinate) {
+			this.remoteCoordinate = remoteCoordinate;
 		}
 
 		public List<AuthorizeSecurityPolicyRule> getAuthorizeSecurityPolicyRules() {
