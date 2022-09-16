@@ -1,3 +1,6 @@
+2022-09-16 Version: 2.0.1
+- Init amp.
+
 2022-09-16 Version: 2.0.0
 - Init amp.
 
