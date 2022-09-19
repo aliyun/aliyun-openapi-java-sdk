@@ -15,6 +15,9 @@
 package com.aliyuncs.oos.model.v20190601;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.Map;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.oos.Endpoint;
 
@@ -39,7 +42,8 @@ public class CreateSecretParameterRequest extends RpcAcsRequest<CreateSecretPara
 
 	private String keyId;
 
-	private String tags;
+	@SerializedName("tags")
+	private Map<String,String> tags;
 
 	private String name;
 	public CreateSecretParameterRequest() {
@@ -128,15 +132,15 @@ public class CreateSecretParameterRequest extends RpcAcsRequest<CreateSecretPara
 		}
 	}
 
-	public String getTags() {
+	public Map<String,String> getTags() {
 		return this.tags;
 	}
 
-	public void setTags(String tags) {
-		this.tags = tags;
-		if(tags != null){
-			putQueryParameter("Tags", tags);
-		}
+	public void setTags(Map<String,String> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			putQueryParameter("Tags" , new Gson().toJson(tags));
+		}	
 	}
 
 	public String getName() {

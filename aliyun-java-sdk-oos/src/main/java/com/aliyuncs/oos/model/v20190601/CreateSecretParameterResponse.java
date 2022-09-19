@@ -14,6 +14,7 @@
 
 package com.aliyuncs.oos.model.v20190601;
 
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.oos.transform.v20190601.CreateSecretParameterResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -54,7 +55,7 @@ public class CreateSecretParameterResponse extends AcsResponse {
 
 		private String keyId;
 
-		private String tags;
+		private Map<Object,Object> tags;
 
 		private String description;
 
@@ -106,11 +107,11 @@ public class CreateSecretParameterResponse extends AcsResponse {
 			this.keyId = keyId;
 		}
 
-		public String getTags() {
+		public Map<Object,Object> getTags() {
 			return this.tags;
 		}
 
-		public void setTags(String tags) {
+		public void setTags(Map<Object,Object> tags) {
 			this.tags = tags;
 		}
 

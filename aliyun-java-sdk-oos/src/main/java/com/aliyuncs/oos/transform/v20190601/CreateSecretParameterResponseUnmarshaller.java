@@ -16,6 +16,7 @@ package com.aliyuncs.oos.transform.v20190601;
 
 import com.aliyuncs.oos.model.v20190601.CreateSecretParameterResponse;
 import com.aliyuncs.oos.model.v20190601.CreateSecretParameterResponse.Parameter;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -30,7 +31,7 @@ public class CreateSecretParameterResponseUnmarshaller {
 		parameter.setUpdatedDate(_ctx.stringValue("CreateSecretParameterResponse.Parameter.UpdatedDate"));
 		parameter.setUpdatedBy(_ctx.stringValue("CreateSecretParameterResponse.Parameter.UpdatedBy"));
 		parameter.setKeyId(_ctx.stringValue("CreateSecretParameterResponse.Parameter.KeyId"));
-		parameter.setTags(_ctx.stringValue("CreateSecretParameterResponse.Parameter.Tags"));
+		parameter.setTags(_ctx.mapValue("CreateSecretParameterResponse.Parameter.Tags"));
 		parameter.setDescription(_ctx.stringValue("CreateSecretParameterResponse.Parameter.Description"));
 		parameter.setConstraints(_ctx.stringValue("CreateSecretParameterResponse.Parameter.Constraints"));
 		parameter.setResourceGroupId(_ctx.stringValue("CreateSecretParameterResponse.Parameter.ResourceGroupId"));
