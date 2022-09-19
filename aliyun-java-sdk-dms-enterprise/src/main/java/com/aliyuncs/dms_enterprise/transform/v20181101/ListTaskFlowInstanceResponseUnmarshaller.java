@@ -45,6 +45,7 @@ public class ListTaskFlowInstanceResponseUnmarshaller {
 			dAGInstance.setHistoryDagId(_ctx.longValue("ListTaskFlowInstanceResponse.DAGInstanceList["+ i +"].HistoryDagId"));
 			dAGInstance.setDagName(_ctx.stringValue("ListTaskFlowInstanceResponse.DAGInstanceList["+ i +"].DagName"));
 			dAGInstance.setOwnerName(_ctx.stringValue("ListTaskFlowInstanceResponse.DAGInstanceList["+ i +"].OwnerName"));
+			dAGInstance.setDagVersion(_ctx.stringValue("ListTaskFlowInstanceResponse.DAGInstanceList["+ i +"].DagVersion"));
 
 			dAGInstanceList.add(dAGInstance);
 		}

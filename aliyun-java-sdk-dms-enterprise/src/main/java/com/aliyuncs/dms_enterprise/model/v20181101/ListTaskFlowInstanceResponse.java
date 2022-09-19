@@ -107,6 +107,8 @@ public class ListTaskFlowInstanceResponse extends AcsResponse {
 
 		private String ownerName;
 
+		private String dagVersion;
+
 		public Long getId() {
 			return this.id;
 		}
@@ -185,6 +187,14 @@ public class ListTaskFlowInstanceResponse extends AcsResponse {
 
 		public void setOwnerName(String ownerName) {
 			this.ownerName = ownerName;
+		}
+
+		public String getDagVersion() {
+			return this.dagVersion;
+		}
+
+		public void setDagVersion(String dagVersion) {
+			this.dagVersion = dagVersion;
 		}
 	}
 
