@@ -22,23 +22,51 @@ import com.aliyuncs.viapi_regen.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListTrainTasksRequest extends RpcAcsRequest<ListTrainTasksResponse> {
+public class ListDataReflowDatasRequest extends RpcAcsRequest<ListDataReflowDatasResponse> {
 	   
+
+	private Long startTime;
+
+	private String imageName;
 
 	private Long pageSize;
 
+	private Long endTime;
+
 	private Long currentPage;
 
-	private String status;
+	private Long serviceId;
 
-	private Long workspaceId;
-	public ListTrainTasksRequest() {
-		super("viapi-regen", "2021-11-19", "ListTrainTasks", "selflearning");
+	private String category;
+	public ListDataReflowDatasRequest() {
+		super("viapi-regen", "2021-11-19", "ListDataReflowDatas", "selflearning");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(Long startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putBodyParameter("StartTime", startTime.toString());
+		}
+	}
+
+	public String getImageName() {
+		return this.imageName;
+	}
+
+	public void setImageName(String imageName) {
+		this.imageName = imageName;
+		if(imageName != null){
+			putBodyParameter("ImageName", imageName);
+		}
 	}
 
 	public Long getPageSize() {
@@ -49,6 +77,17 @@ public class ListTrainTasksRequest extends RpcAcsRequest<ListTrainTasksResponse>
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putBodyParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Long getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(Long endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putBodyParameter("EndTime", endTime.toString());
 		}
 	}
 
@@ -63,31 +102,31 @@ public class ListTrainTasksRequest extends RpcAcsRequest<ListTrainTasksResponse>
 		}
 	}
 
-	public String getStatus() {
-		return this.status;
+	public Long getServiceId() {
+		return this.serviceId;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
-		if(status != null){
-			putBodyParameter("Status", status);
+	public void setServiceId(Long serviceId) {
+		this.serviceId = serviceId;
+		if(serviceId != null){
+			putBodyParameter("ServiceId", serviceId.toString());
 		}
 	}
 
-	public Long getWorkspaceId() {
-		return this.workspaceId;
+	public String getCategory() {
+		return this.category;
 	}
 
-	public void setWorkspaceId(Long workspaceId) {
-		this.workspaceId = workspaceId;
-		if(workspaceId != null){
-			putBodyParameter("WorkspaceId", workspaceId.toString());
+	public void setCategory(String category) {
+		this.category = category;
+		if(category != null){
+			putBodyParameter("Category", category);
 		}
 	}
 
 	@Override
-	public Class<ListTrainTasksResponse> getResponseClass() {
-		return ListTrainTasksResponse.class;
+	public Class<ListDataReflowDatasResponse> getResponseClass() {
+		return ListDataReflowDatasResponse.class;
 	}
 
 }

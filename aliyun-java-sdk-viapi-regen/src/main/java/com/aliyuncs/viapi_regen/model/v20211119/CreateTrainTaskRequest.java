@@ -29,6 +29,8 @@ public class CreateTrainTaskRequest extends RpcAcsRequest<CreateTrainTaskRespons
 
 	private String trainMode;
 
+	private Long preTrainTaskId;
+
 	private String advancedParameters;
 
 	private Long labelId;
@@ -66,6 +68,17 @@ public class CreateTrainTaskRequest extends RpcAcsRequest<CreateTrainTaskRespons
 		this.trainMode = trainMode;
 		if(trainMode != null){
 			putBodyParameter("TrainMode", trainMode);
+		}
+	}
+
+	public Long getPreTrainTaskId() {
+		return this.preTrainTaskId;
+	}
+
+	public void setPreTrainTaskId(Long preTrainTaskId) {
+		this.preTrainTaskId = preTrainTaskId;
+		if(preTrainTaskId != null){
+			putBodyParameter("PreTrainTaskId", preTrainTaskId.toString());
 		}
 	}
 

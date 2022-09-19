@@ -16,6 +16,7 @@ package com.aliyuncs.viapi_regen.transform.v20211119;
 
 import com.aliyuncs.viapi_regen.model.v20211119.GetServiceResponse;
 import com.aliyuncs.viapi_regen.model.v20211119.GetServiceResponse.Data;
+import com.aliyuncs.viapi_regen.model.v20211119.GetServiceResponse.Data.DataReflowInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -39,6 +40,13 @@ public class GetServiceResponseUnmarshaller {
 		data.setErrorcodes(_ctx.stringValue("GetServiceResponse.Data.Errorcodes"));
 		data.setInputExample(_ctx.stringValue("GetServiceResponse.Data.InputExample"));
 		data.setOutputExample(_ctx.stringValue("GetServiceResponse.Data.OutputExample"));
+
+		DataReflowInfo dataReflowInfo = new DataReflowInfo();
+		dataReflowInfo.setDataReflowCount(_ctx.longValue("GetServiceResponse.Data.DataReflowInfo.DataReflowCount"));
+		dataReflowInfo.setDataReflowRate(_ctx.longValue("GetServiceResponse.Data.DataReflowInfo.DataReflowRate"));
+		dataReflowInfo.setDataReflowOssPath(_ctx.stringValue("GetServiceResponse.Data.DataReflowInfo.DataReflowOssPath"));
+		dataReflowInfo.setEnableDataReflowFlag(_ctx.booleanValue("GetServiceResponse.Data.DataReflowInfo.EnableDataReflowFlag"));
+		data.setDataReflowInfo(dataReflowInfo);
 		getServiceResponse.setData(data);
 	 
 	 	return getServiceResponse;

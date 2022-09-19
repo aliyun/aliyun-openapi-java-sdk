@@ -29,6 +29,8 @@ public class CreateLabelsetRequest extends RpcAcsRequest<CreateLabelsetResponse>
 
 	private String type;
 
+	private Long preLabelId;
+
 	private String tagUserList;
 
 	private String userOssUrl;
@@ -68,6 +70,17 @@ public class CreateLabelsetRequest extends RpcAcsRequest<CreateLabelsetResponse>
 		this.type = type;
 		if(type != null){
 			putBodyParameter("Type", type);
+		}
+	}
+
+	public Long getPreLabelId() {
+		return this.preLabelId;
+	}
+
+	public void setPreLabelId(Long preLabelId) {
+		this.preLabelId = preLabelId;
+		if(preLabelId != null){
+			putBodyParameter("PreLabelId", preLabelId.toString());
 		}
 	}
 

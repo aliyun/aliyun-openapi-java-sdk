@@ -27,11 +27,21 @@ public class UpdateTrainTaskRequest extends RpcAcsRequest<UpdateTrainTaskRespons
 
 	private String description;
 
+	private String trainMode;
+
 	private Long id;
+
+	private Long preTrainTaskId;
+
+	private Boolean preTrainTaskFlag;
 
 	private String advancedParameters;
 
+	private Long labelId;
+
 	private String name;
+
+	private Long datasetId;
 	public UpdateTrainTaskRequest() {
 		super("viapi-regen", "2021-11-19", "UpdateTrainTask", "selflearning");
 		setMethod(MethodType.POST);
@@ -52,6 +62,17 @@ public class UpdateTrainTaskRequest extends RpcAcsRequest<UpdateTrainTaskRespons
 		}
 	}
 
+	public String getTrainMode() {
+		return this.trainMode;
+	}
+
+	public void setTrainMode(String trainMode) {
+		this.trainMode = trainMode;
+		if(trainMode != null){
+			putBodyParameter("TrainMode", trainMode);
+		}
+	}
+
 	public Long getId() {
 		return this.id;
 	}
@@ -60,6 +81,28 @@ public class UpdateTrainTaskRequest extends RpcAcsRequest<UpdateTrainTaskRespons
 		this.id = id;
 		if(id != null){
 			putBodyParameter("Id", id.toString());
+		}
+	}
+
+	public Long getPreTrainTaskId() {
+		return this.preTrainTaskId;
+	}
+
+	public void setPreTrainTaskId(Long preTrainTaskId) {
+		this.preTrainTaskId = preTrainTaskId;
+		if(preTrainTaskId != null){
+			putBodyParameter("PreTrainTaskId", preTrainTaskId.toString());
+		}
+	}
+
+	public Boolean getPreTrainTaskFlag() {
+		return this.preTrainTaskFlag;
+	}
+
+	public void setPreTrainTaskFlag(Boolean preTrainTaskFlag) {
+		this.preTrainTaskFlag = preTrainTaskFlag;
+		if(preTrainTaskFlag != null){
+			putBodyParameter("PreTrainTaskFlag", preTrainTaskFlag.toString());
 		}
 	}
 
@@ -74,6 +117,17 @@ public class UpdateTrainTaskRequest extends RpcAcsRequest<UpdateTrainTaskRespons
 		}
 	}
 
+	public Long getLabelId() {
+		return this.labelId;
+	}
+
+	public void setLabelId(Long labelId) {
+		this.labelId = labelId;
+		if(labelId != null){
+			putBodyParameter("LabelId", labelId.toString());
+		}
+	}
+
 	public String getName() {
 		return this.name;
 	}
@@ -82,6 +136,17 @@ public class UpdateTrainTaskRequest extends RpcAcsRequest<UpdateTrainTaskRespons
 		this.name = name;
 		if(name != null){
 			putBodyParameter("Name", name);
+		}
+	}
+
+	public Long getDatasetId() {
+		return this.datasetId;
+	}
+
+	public void setDatasetId(Long datasetId) {
+		this.datasetId = datasetId;
+		if(datasetId != null){
+			putBodyParameter("DatasetId", datasetId.toString());
 		}
 	}
 

@@ -37,6 +37,8 @@ public class CreateTrainTaskResponseUnmarshaller {
 		data.setLabelId(_ctx.longValue("CreateTrainTaskResponse.Data.LabelId"));
 		data.setLabelName(_ctx.stringValue("CreateTrainTaskResponse.Data.LabelName"));
 		data.setTrainMode(_ctx.stringValue("CreateTrainTaskResponse.Data.TrainMode"));
+		data.setRelyOnTaskId(_ctx.longValue("CreateTrainTaskResponse.Data.RelyOnTaskId"));
+		data.setRelyOnTaskName(_ctx.stringValue("CreateTrainTaskResponse.Data.RelyOnTaskName"));
 		data.setAdvancedParameters(_ctx.stringValue("CreateTrainTaskResponse.Data.AdvancedParameters"));
 		data.setTrainStatus(_ctx.stringValue("CreateTrainTaskResponse.Data.TrainStatus"));
 		data.setModelId(_ctx.longValue("CreateTrainTaskResponse.Data.ModelId"));

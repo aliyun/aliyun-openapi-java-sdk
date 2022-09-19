@@ -30,6 +30,8 @@ public class ListLabelsetsRequest extends RpcAcsRequest<ListLabelsetsResponse> {
 	private Long currentPage;
 
 	private Long datasetId;
+
+	private String status;
 	public ListLabelsetsRequest() {
 		super("viapi-regen", "2021-11-19", "ListLabelsets", "selflearning");
 		setMethod(MethodType.POST);
@@ -69,6 +71,17 @@ public class ListLabelsetsRequest extends RpcAcsRequest<ListLabelsetsResponse> {
 		this.datasetId = datasetId;
 		if(datasetId != null){
 			putBodyParameter("DatasetId", datasetId.toString());
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putBodyParameter("Status", status);
 		}
 	}
 

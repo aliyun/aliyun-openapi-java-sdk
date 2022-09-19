@@ -29,6 +29,8 @@ public class UpdateLabelsetRequest extends RpcAcsRequest<UpdateLabelsetResponse>
 
 	private Long id;
 
+	private String tagUserList;
+
 	private String userOssUrl;
 
 	private String objectKey;
@@ -62,6 +64,17 @@ public class UpdateLabelsetRequest extends RpcAcsRequest<UpdateLabelsetResponse>
 		this.id = id;
 		if(id != null){
 			putBodyParameter("Id", id.toString());
+		}
+	}
+
+	public String getTagUserList() {
+		return this.tagUserList;
+	}
+
+	public void setTagUserList(String tagUserList) {
+		this.tagUserList = tagUserList;
+		if(tagUserList != null){
+			putBodyParameter("TagUserList", tagUserList);
 		}
 	}
 

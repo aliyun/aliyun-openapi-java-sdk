@@ -15,14 +15,14 @@
 package com.aliyuncs.viapi_regen.model.v20211119;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.viapi_regen.transform.v20211119.GetLabelsetResponseUnmarshaller;
+import com.aliyuncs.viapi_regen.transform.v20211119.DeleteDataReflowDataResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetLabelsetResponse extends AcsResponse {
+public class DeleteDataReflowDataResponse extends AcsResponse {
 
 	private String message;
 
@@ -68,23 +68,11 @@ public class GetLabelsetResponse extends AcsResponse {
 
 		private Long id;
 
-		private Long gmtCreate;
-
-		private String name;
-
-		private String description;
-
-		private String labelType;
-
-		private String tagUserList;
-
-		private String tags;
-
-		private String subTaskPackageSize;
+		private Long serviceId;
 
 		private String status;
 
-		private Long total;
+		private Long gmtModified;
 
 		public Long getId() {
 			return this.id;
@@ -94,60 +82,12 @@ public class GetLabelsetResponse extends AcsResponse {
 			this.id = id;
 		}
 
-		public Long getGmtCreate() {
-			return this.gmtCreate;
+		public Long getServiceId() {
+			return this.serviceId;
 		}
 
-		public void setGmtCreate(Long gmtCreate) {
-			this.gmtCreate = gmtCreate;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getLabelType() {
-			return this.labelType;
-		}
-
-		public void setLabelType(String labelType) {
-			this.labelType = labelType;
-		}
-
-		public String getTagUserList() {
-			return this.tagUserList;
-		}
-
-		public void setTagUserList(String tagUserList) {
-			this.tagUserList = tagUserList;
-		}
-
-		public String getTags() {
-			return this.tags;
-		}
-
-		public void setTags(String tags) {
-			this.tags = tags;
-		}
-
-		public String getSubTaskPackageSize() {
-			return this.subTaskPackageSize;
-		}
-
-		public void setSubTaskPackageSize(String subTaskPackageSize) {
-			this.subTaskPackageSize = subTaskPackageSize;
+		public void setServiceId(Long serviceId) {
+			this.serviceId = serviceId;
 		}
 
 		public String getStatus() {
@@ -158,18 +98,18 @@ public class GetLabelsetResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public Long getTotal() {
-			return this.total;
+		public Long getGmtModified() {
+			return this.gmtModified;
 		}
 
-		public void setTotal(Long total) {
-			this.total = total;
+		public void setGmtModified(Long gmtModified) {
+			this.gmtModified = gmtModified;
 		}
 	}
 
 	@Override
-	public GetLabelsetResponse getInstance(UnmarshallerContext context) {
-		return	GetLabelsetResponseUnmarshaller.unmarshall(this, context);
+	public DeleteDataReflowDataResponse getInstance(UnmarshallerContext context) {
+		return	DeleteDataReflowDataResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

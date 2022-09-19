@@ -22,16 +22,12 @@ import com.aliyuncs.viapi_regen.Endpoint;
  * @author auto create
  * @version 
  */
-public class StartTrainTaskRequest extends RpcAcsRequest<StartTrainTaskResponse> {
+public class DisableDataReflowRequest extends RpcAcsRequest<DisableDataReflowResponse> {
 	   
 
-	private Long relyOnTaskId;
-
-	private Boolean forceStartFlag;
-
-	private Long id;
-	public StartTrainTaskRequest() {
-		super("viapi-regen", "2021-11-19", "StartTrainTask", "selflearning");
+	private Long serviceId;
+	public DisableDataReflowRequest() {
+		super("viapi-regen", "2021-11-19", "DisableDataReflow", "selflearning");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,42 +35,20 @@ public class StartTrainTaskRequest extends RpcAcsRequest<StartTrainTaskResponse>
 		} catch (Exception e) {}
 	}
 
-	public Long getRelyOnTaskId() {
-		return this.relyOnTaskId;
+	public Long getServiceId() {
+		return this.serviceId;
 	}
 
-	public void setRelyOnTaskId(Long relyOnTaskId) {
-		this.relyOnTaskId = relyOnTaskId;
-		if(relyOnTaskId != null){
-			putBodyParameter("RelyOnTaskId", relyOnTaskId.toString());
-		}
-	}
-
-	public Boolean getForceStartFlag() {
-		return this.forceStartFlag;
-	}
-
-	public void setForceStartFlag(Boolean forceStartFlag) {
-		this.forceStartFlag = forceStartFlag;
-		if(forceStartFlag != null){
-			putBodyParameter("ForceStartFlag", forceStartFlag.toString());
-		}
-	}
-
-	public Long getId() {
-		return this.id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-		if(id != null){
-			putBodyParameter("Id", id.toString());
+	public void setServiceId(Long serviceId) {
+		this.serviceId = serviceId;
+		if(serviceId != null){
+			putBodyParameter("ServiceId", serviceId.toString());
 		}
 	}
 
 	@Override
-	public Class<StartTrainTaskResponse> getResponseClass() {
-		return StartTrainTaskResponse.class;
+	public Class<DisableDataReflowResponse> getResponseClass() {
+		return DisableDataReflowResponse.class;
 	}
 
 }
