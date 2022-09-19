@@ -15,38 +15,16 @@
 package com.aliyuncs.netana.model.v20181018;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.netana.transform.v20181018.CreateNetworkDiagnosticResponseUnmarshaller;
+import com.aliyuncs.netana.transform.v20181018.NetCancelIdleInstanceWhiteListResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateNetworkDiagnosticResponse extends AcsResponse {
-
-	private String status;
-
-	private String tpl;
+public class NetCancelIdleInstanceWhiteListResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String params;
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
-	public String getTpl() {
-		return this.tpl;
-	}
-
-	public void setTpl(String tpl) {
-		this.tpl = tpl;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -56,16 +34,8 @@ public class CreateNetworkDiagnosticResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getParams() {
-		return this.params;
-	}
-
-	public void setParams(String params) {
-		this.params = params;
-	}
-
 	@Override
-	public CreateNetworkDiagnosticResponse getInstance(UnmarshallerContext context) {
-		return	CreateNetworkDiagnosticResponseUnmarshaller.unmarshall(this, context);
+	public NetCancelIdleInstanceWhiteListResponse getInstance(UnmarshallerContext context) {
+		return	NetCancelIdleInstanceWhiteListResponseUnmarshaller.unmarshall(this, context);
 	}
 }

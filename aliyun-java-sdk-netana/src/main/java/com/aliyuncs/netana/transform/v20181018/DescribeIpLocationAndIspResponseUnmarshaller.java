@@ -20,16 +20,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeIpLocationAndIspResponseUnmarshaller {
 
-	public static DescribeIpLocationAndIspResponse unmarshall(DescribeIpLocationAndIspResponse describeIpLocationAndIspResponse, UnmarshallerContext context) {
+	public static DescribeIpLocationAndIspResponse unmarshall(DescribeIpLocationAndIspResponse describeIpLocationAndIspResponse, UnmarshallerContext _ctx) {
 		
-		describeIpLocationAndIspResponse.setRequestId(context.stringValue("DescribeIpLocationAndIspResponse.RequestId"));
-		describeIpLocationAndIspResponse.setIpAddress(context.stringValue("DescribeIpLocationAndIspResponse.IpAddress"));
-		describeIpLocationAndIspResponse.setCountry(context.stringValue("DescribeIpLocationAndIspResponse.Country"));
-		describeIpLocationAndIspResponse.setCity(context.stringValue("DescribeIpLocationAndIspResponse.City"));
-		describeIpLocationAndIspResponse.setISP(context.stringValue("DescribeIpLocationAndIspResponse.ISP"));
-		describeIpLocationAndIspResponse.setCountryCode(context.stringValue("DescribeIpLocationAndIspResponse.CountryCode"));
-		describeIpLocationAndIspResponse.setCityCode(context.stringValue("DescribeIpLocationAndIspResponse.CityCode"));
-		describeIpLocationAndIspResponse.setISPCode(context.stringValue("DescribeIpLocationAndIspResponse.ISPCode"));
+		describeIpLocationAndIspResponse.setRequestId(_ctx.stringValue("DescribeIpLocationAndIspResponse.RequestId"));
+		describeIpLocationAndIspResponse.setCityCode(_ctx.stringValue("DescribeIpLocationAndIspResponse.CityCode"));
+		describeIpLocationAndIspResponse.setISPCode(_ctx.stringValue("DescribeIpLocationAndIspResponse.ISPCode"));
+		describeIpLocationAndIspResponse.setISP(_ctx.stringValue("DescribeIpLocationAndIspResponse.ISP"));
+		describeIpLocationAndIspResponse.setCountry(_ctx.stringValue("DescribeIpLocationAndIspResponse.Country"));
+		describeIpLocationAndIspResponse.setIpAddress(_ctx.stringValue("DescribeIpLocationAndIspResponse.IpAddress"));
+		describeIpLocationAndIspResponse.setCity(_ctx.stringValue("DescribeIpLocationAndIspResponse.City"));
+		describeIpLocationAndIspResponse.setCountryCode(_ctx.stringValue("DescribeIpLocationAndIspResponse.CountryCode"));
 	 
 	 	return describeIpLocationAndIspResponse;
 	}

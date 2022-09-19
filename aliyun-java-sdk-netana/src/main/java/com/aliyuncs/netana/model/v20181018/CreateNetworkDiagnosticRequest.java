@@ -15,24 +15,19 @@
 package com.aliyuncs.netana.model.v20181018;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.netana.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class CreateNetworkDiagnosticRequest extends RpcAcsRequest<CreateNetworkDiagnosticResponse> {
-	
-	public CreateNetworkDiagnosticRequest() {
-		super("Netana", "2018-10-18", "CreateNetworkDiagnostic", "Netana");
-	}
-
-	private Long resourceOwnerId;
+	   
 
 	private String requestParams;
 
-	private String instanceId;
-
-	private String resourceOwnerAccount;
+	private Long resourceOwnerId;
 
 	private String userRequestId;
 
@@ -40,21 +35,22 @@ public class CreateNetworkDiagnosticRequest extends RpcAcsRequest<CreateNetworkD
 
 	private String requestApiName;
 
-	private String errorCode;
-
 	private String productType;
 
+	private String errorCode;
+
+	private String resourceOwnerAccount;
+
+	private String instanceId;
+
 	private String responseParams;
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
+	public CreateNetworkDiagnosticRequest() {
+		super("Netana", "2018-10-18", "CreateNetworkDiagnostic", "netana");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getRequestParams() {
@@ -68,25 +64,14 @@ public class CreateNetworkDiagnosticRequest extends RpcAcsRequest<CreateNetworkD
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 
@@ -123,6 +108,17 @@ public class CreateNetworkDiagnosticRequest extends RpcAcsRequest<CreateNetworkD
 		}
 	}
 
+	public String getProductType() {
+		return this.productType;
+	}
+
+	public void setProductType(String productType) {
+		this.productType = productType;
+		if(productType != null){
+			putQueryParameter("ProductType", productType);
+		}
+	}
+
 	public String getErrorCode() {
 		return this.errorCode;
 	}
@@ -134,14 +130,25 @@ public class CreateNetworkDiagnosticRequest extends RpcAcsRequest<CreateNetworkD
 		}
 	}
 
-	public String getProductType() {
-		return this.productType;
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
 	}
 
-	public void setProductType(String productType) {
-		this.productType = productType;
-		if(productType != null){
-			putQueryParameter("ProductType", productType);
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

@@ -15,38 +15,45 @@
 package com.aliyuncs.netana.model.v20181018;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.netana.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeNetworkAnalyticsNetQualityRequest extends RpcAcsRequest<DescribeNetworkAnalyticsNetQualityResponse> {
-	
-	public DescribeNetworkAnalyticsNetQualityRequest() {
-		super("Netana", "2018-10-18", "DescribeNetworkAnalyticsNetQuality", "Netana");
-	}
+	   
 
 	private String country;
 
 	private Long resourceOwnerId;
 
+	private Long startTime;
+
+	private Integer pageNumber;
+
+	private String province;
+
+	private Integer pageSize;
+
 	private String period;
 
 	private String resourceOwnerAccount;
 
-	private String endTime;
-
-	private String startTime;
-
-	private String pageNumber;
+	private Long endTime;
 
 	private String carrier;
 
-	private String province;
-
 	private String grade;
-
-	private String pageSize;
+	public DescribeNetworkAnalyticsNetQualityRequest() {
+		super("Netana", "2018-10-18", "DescribeNetworkAnalyticsNetQuality", "netana");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getCountry() {
 		return this.country;
@@ -67,6 +74,50 @@ public class DescribeNetworkAnalyticsNetQualityRequest extends RpcAcsRequest<Des
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Long getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(Long startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime.toString());
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getProvince() {
+		return this.province;
+	}
+
+	public void setProvince(String province) {
+		this.province = province;
+		if(province != null){
+			putQueryParameter("Province", province);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -92,36 +143,14 @@ public class DescribeNetworkAnalyticsNetQualityRequest extends RpcAcsRequest<Des
 		}
 	}
 
-	public String getEndTime() {
+	public Long getEndTime() {
 		return this.endTime;
 	}
 
-	public void setEndTime(String endTime) {
+	public void setEndTime(Long endTime) {
 		this.endTime = endTime;
 		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public String getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(String pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber);
+			putQueryParameter("EndTime", endTime.toString());
 		}
 	}
 
@@ -136,17 +165,6 @@ public class DescribeNetworkAnalyticsNetQualityRequest extends RpcAcsRequest<Des
 		}
 	}
 
-	public String getProvince() {
-		return this.province;
-	}
-
-	public void setProvince(String province) {
-		this.province = province;
-		if(province != null){
-			putQueryParameter("Province", province);
-		}
-	}
-
 	public String getGrade() {
 		return this.grade;
 	}
@@ -155,17 +173,6 @@ public class DescribeNetworkAnalyticsNetQualityRequest extends RpcAcsRequest<Des
 		this.grade = grade;
 		if(grade != null){
 			putQueryParameter("Grade", grade);
-		}
-	}
-
-	public String getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(String pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize);
 		}
 	}
 

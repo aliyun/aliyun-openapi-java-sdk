@@ -15,44 +15,40 @@
 package com.aliyuncs.netana.model.v20181018;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.netana.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class CreateNetworkQuotaRequestRequest extends RpcAcsRequest<CreateNetworkQuotaRequestResponse> {
-	
-	public CreateNetworkQuotaRequestRequest() {
-		super("Netana", "2018-10-18", "CreateNetworkQuotaRequest", "Netana");
-	}
-
-	private String requestReason;
+	   
 
 	private Long resourceOwnerId;
 
-	private String product;
+	private String requestQuantity;
 
 	private String quotaPublicityName;
 
-	private String resourceOwnerAccount;
-
-	private String requestQuantity;
-
 	private String mobilePhone;
-
-	private String resourceType;
 
 	private String email;
 
-	public String getRequestReason() {
-		return this.requestReason;
-	}
+	private String requestReason;
 
-	public void setRequestReason(String requestReason) {
-		this.requestReason = requestReason;
-		if(requestReason != null){
-			putQueryParameter("RequestReason", requestReason);
-		}
+	private String product;
+
+	private String resourceOwnerAccount;
+
+	private String resourceType;
+	public CreateNetworkQuotaRequestRequest() {
+		super("Netana", "2018-10-18", "CreateNetworkQuotaRequest", "netana");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -63,58 +59,6 @@ public class CreateNetworkQuotaRequestRequest extends RpcAcsRequest<CreateNetwor
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getBizProduct() {
-		return this.product;
-	}
-
-	public void setBizProduct(String product) {
-		this.product = product;
-		if(product != null){
-			putQueryParameter("Product", product);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizProduct instead of this.
-	 */
-	@Deprecated
-	public String getProduct() {
-		return this.product;
-	}
-
-	/**
-	 * @deprecated use setBizProduct instead of this.
-	 */
-	@Deprecated
-	public void setProduct(String product) {
-		this.product = product;
-		if(product != null){
-			putQueryParameter("Product", product);
-		}
-	}
-
-	public String getQuotaPublicityName() {
-		return this.quotaPublicityName;
-	}
-
-	public void setQuotaPublicityName(String quotaPublicityName) {
-		this.quotaPublicityName = quotaPublicityName;
-		if(quotaPublicityName != null){
-			putQueryParameter("QuotaPublicityName", quotaPublicityName);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -129,6 +73,17 @@ public class CreateNetworkQuotaRequestRequest extends RpcAcsRequest<CreateNetwor
 		}
 	}
 
+	public String getQuotaPublicityName() {
+		return this.quotaPublicityName;
+	}
+
+	public void setQuotaPublicityName(String quotaPublicityName) {
+		this.quotaPublicityName = quotaPublicityName;
+		if(quotaPublicityName != null){
+			putQueryParameter("QuotaPublicityName", quotaPublicityName);
+		}
+	}
+
 	public String getMobilePhone() {
 		return this.mobilePhone;
 	}
@@ -140,17 +95,6 @@ public class CreateNetworkQuotaRequestRequest extends RpcAcsRequest<CreateNetwor
 		}
 	}
 
-	public String getResourceType() {
-		return this.resourceType;
-	}
-
-	public void setResourceType(String resourceType) {
-		this.resourceType = resourceType;
-		if(resourceType != null){
-			putQueryParameter("ResourceType", resourceType);
-		}
-	}
-
 	public String getEmail() {
 		return this.email;
 	}
@@ -159,6 +103,50 @@ public class CreateNetworkQuotaRequestRequest extends RpcAcsRequest<CreateNetwor
 		this.email = email;
 		if(email != null){
 			putQueryParameter("Email", email);
+		}
+	}
+
+	public String getRequestReason() {
+		return this.requestReason;
+	}
+
+	public void setRequestReason(String requestReason) {
+		this.requestReason = requestReason;
+		if(requestReason != null){
+			putQueryParameter("RequestReason", requestReason);
+		}
+	}
+
+	public String getProduct() {
+		return this.product;
+	}
+
+	public void setProduct(String product) {
+		this.product = product;
+		if(product != null){
+			putQueryParameter("Product", product);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getResourceType() {
+		return this.resourceType;
+	}
+
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
 		}
 	}
 

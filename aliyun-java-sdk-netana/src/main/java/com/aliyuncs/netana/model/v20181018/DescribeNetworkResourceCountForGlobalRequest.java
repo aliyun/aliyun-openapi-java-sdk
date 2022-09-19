@@ -22,26 +22,22 @@ import com.aliyuncs.netana.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeNetworkQuotaRequestResultRequest extends RpcAcsRequest<DescribeNetworkQuotaRequestResultResponse> {
+public class DescribeNetworkResourceCountForGlobalRequest extends RpcAcsRequest<DescribeNetworkResourceCountForGlobalResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String quotaPublicityName;
+	private String autoRenewal;
 
-	private String quotaRequestId;
-
-	private Integer pageSize;
-
-	private String product;
+	private String resourceRegionId;
 
 	private String resourceOwnerAccount;
 
 	private String resourceType;
 
-	private Integer pageNo;
-	public DescribeNetworkQuotaRequestResultRequest() {
-		super("Netana", "2018-10-18", "DescribeNetworkQuotaRequestResult", "netana");
+	private String expireDays;
+	public DescribeNetworkResourceCountForGlobalRequest() {
+		super("Netana", "2018-10-18", "DescribeNetworkResourceCountForGlobal", "netana");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -60,47 +56,25 @@ public class DescribeNetworkQuotaRequestResultRequest extends RpcAcsRequest<Desc
 		}
 	}
 
-	public String getQuotaPublicityName() {
-		return this.quotaPublicityName;
+	public String getAutoRenewal() {
+		return this.autoRenewal;
 	}
 
-	public void setQuotaPublicityName(String quotaPublicityName) {
-		this.quotaPublicityName = quotaPublicityName;
-		if(quotaPublicityName != null){
-			putQueryParameter("QuotaPublicityName", quotaPublicityName);
+	public void setAutoRenewal(String autoRenewal) {
+		this.autoRenewal = autoRenewal;
+		if(autoRenewal != null){
+			putQueryParameter("AutoRenewal", autoRenewal);
 		}
 	}
 
-	public String getQuotaRequestId() {
-		return this.quotaRequestId;
+	public String getResourceRegionId() {
+		return this.resourceRegionId;
 	}
 
-	public void setQuotaRequestId(String quotaRequestId) {
-		this.quotaRequestId = quotaRequestId;
-		if(quotaRequestId != null){
-			putQueryParameter("QuotaRequestId", quotaRequestId);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getProduct() {
-		return this.product;
-	}
-
-	public void setProduct(String product) {
-		this.product = product;
-		if(product != null){
-			putQueryParameter("Product", product);
+	public void setResourceRegionId(String resourceRegionId) {
+		this.resourceRegionId = resourceRegionId;
+		if(resourceRegionId != null){
+			putQueryParameter("ResourceRegionId", resourceRegionId);
 		}
 	}
 
@@ -126,20 +100,20 @@ public class DescribeNetworkQuotaRequestResultRequest extends RpcAcsRequest<Desc
 		}
 	}
 
-	public Integer getPageNo() {
-		return this.pageNo;
+	public String getExpireDays() {
+		return this.expireDays;
 	}
 
-	public void setPageNo(Integer pageNo) {
-		this.pageNo = pageNo;
-		if(pageNo != null){
-			putQueryParameter("PageNo", pageNo.toString());
+	public void setExpireDays(String expireDays) {
+		this.expireDays = expireDays;
+		if(expireDays != null){
+			putQueryParameter("ExpireDays", expireDays);
 		}
 	}
 
 	@Override
-	public Class<DescribeNetworkQuotaRequestResultResponse> getResponseClass() {
-		return DescribeNetworkQuotaRequestResultResponse.class;
+	public Class<DescribeNetworkResourceCountForGlobalResponse> getResponseClass() {
+		return DescribeNetworkResourceCountForGlobalResponse.class;
 	}
 
 }

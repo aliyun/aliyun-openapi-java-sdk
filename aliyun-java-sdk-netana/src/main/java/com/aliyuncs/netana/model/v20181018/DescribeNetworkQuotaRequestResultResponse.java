@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeNetworkQuotaRequestResultResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
-
-	private Integer pageNumber;
 
 	private Integer pageSize;
 
+	private String requestId;
+
+	private Integer pageNumber;
+
 	private List<QuotaRequest> quotaRequests;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class DescribeNetworkQuotaRequestResultResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<QuotaRequest> getQuotaRequests() {
@@ -77,78 +77,34 @@ public class DescribeNetworkQuotaRequestResultResponse extends AcsResponse {
 
 	public static class QuotaRequest {
 
-		private String regionId;
-
-		private String product;
+		private String quotaPublicityName;
 
 		private String resourceType;
 
-		private String quotaPublicityName;
-
-		private String requestReason;
-
-		private String mobilePhone;
-
-		private String email;
-
-		private String requestResult;
-
-		private String resultQuantity;
-
-		private String resultReason;
-
 		private String requestId;
+
+		private String product;
 
 		private String createTime;
 
 		private String requestQuantity;
 
-		public String getBizRegionId() {
-			return this.regionId;
+		private String requestReason;
+
+		private String resultReason;
+
+		private String requestResult;
+
+		private String resultQuantity;
+
+		private String regionId;
+
+		public String getQuotaPublicityName() {
+			return this.quotaPublicityName;
 		}
 
-		public void setBizRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		/**
-		 * @deprecated use getBizRegionId instead of this.
-		 */
-		@Deprecated
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		/**
-		 * @deprecated use setBizRegionId instead of this.
-		 */
-		@Deprecated
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getBizProduct() {
-			return this.product;
-		}
-
-		public void setBizProduct(String product) {
-			this.product = product;
-		}
-
-		/**
-		 * @deprecated use getBizProduct instead of this.
-		 */
-		@Deprecated
-		public String getProduct() {
-			return this.product;
-		}
-
-		/**
-		 * @deprecated use setBizProduct instead of this.
-		 */
-		@Deprecated
-		public void setProduct(String product) {
-			this.product = product;
+		public void setQuotaPublicityName(String quotaPublicityName) {
+			this.quotaPublicityName = quotaPublicityName;
 		}
 
 		public String getResourceType() {
@@ -159,12 +115,36 @@ public class DescribeNetworkQuotaRequestResultResponse extends AcsResponse {
 			this.resourceType = resourceType;
 		}
 
-		public String getQuotaPublicityName() {
-			return this.quotaPublicityName;
+		public String getRequestId() {
+			return this.requestId;
 		}
 
-		public void setQuotaPublicityName(String quotaPublicityName) {
-			this.quotaPublicityName = quotaPublicityName;
+		public void setRequestId(String requestId) {
+			this.requestId = requestId;
+		}
+
+		public String getProduct() {
+			return this.product;
+		}
+
+		public void setProduct(String product) {
+			this.product = product;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getRequestQuantity() {
+			return this.requestQuantity;
+		}
+
+		public void setRequestQuantity(String requestQuantity) {
+			this.requestQuantity = requestQuantity;
 		}
 
 		public String getRequestReason() {
@@ -175,20 +155,12 @@ public class DescribeNetworkQuotaRequestResultResponse extends AcsResponse {
 			this.requestReason = requestReason;
 		}
 
-		public String getMobilePhone() {
-			return this.mobilePhone;
+		public String getResultReason() {
+			return this.resultReason;
 		}
 
-		public void setMobilePhone(String mobilePhone) {
-			this.mobilePhone = mobilePhone;
-		}
-
-		public String getEmail() {
-			return this.email;
-		}
-
-		public void setEmail(String email) {
-			this.email = email;
+		public void setResultReason(String resultReason) {
+			this.resultReason = resultReason;
 		}
 
 		public String getRequestResult() {
@@ -207,36 +179,12 @@ public class DescribeNetworkQuotaRequestResultResponse extends AcsResponse {
 			this.resultQuantity = resultQuantity;
 		}
 
-		public String getResultReason() {
-			return this.resultReason;
+		public String getRegionId() {
+			return this.regionId;
 		}
 
-		public void setResultReason(String resultReason) {
-			this.resultReason = resultReason;
-		}
-
-		public String getRequestId() {
-			return this.requestId;
-		}
-
-		public void setRequestId(String requestId) {
-			this.requestId = requestId;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getRequestQuantity() {
-			return this.requestQuantity;
-		}
-
-		public void setRequestQuantity(String requestQuantity) {
-			this.requestQuantity = requestQuantity;
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 	}
 

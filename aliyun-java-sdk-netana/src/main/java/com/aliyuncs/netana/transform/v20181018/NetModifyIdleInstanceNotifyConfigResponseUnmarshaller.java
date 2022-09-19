@@ -14,16 +14,16 @@
 
 package com.aliyuncs.netana.transform.v20181018;
 
-import com.aliyuncs.netana.model.v20181018.CreateNetworkQuotaRequestResponse;
+import com.aliyuncs.netana.model.v20181018.NetModifyIdleInstanceNotifyConfigResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CreateNetworkQuotaRequestResponseUnmarshaller {
+public class NetModifyIdleInstanceNotifyConfigResponseUnmarshaller {
 
-	public static CreateNetworkQuotaRequestResponse unmarshall(CreateNetworkQuotaRequestResponse createNetworkQuotaRequestResponse, UnmarshallerContext _ctx) {
+	public static NetModifyIdleInstanceNotifyConfigResponse unmarshall(NetModifyIdleInstanceNotifyConfigResponse netModifyIdleInstanceNotifyConfigResponse, UnmarshallerContext _ctx) {
 		
-		createNetworkQuotaRequestResponse.setRequestId(_ctx.stringValue("CreateNetworkQuotaRequestResponse.RequestId"));
+		netModifyIdleInstanceNotifyConfigResponse.setRequestId(_ctx.stringValue("NetModifyIdleInstanceNotifyConfigResponse.RequestId"));
 	 
-	 	return createNetworkQuotaRequestResponse;
+	 	return netModifyIdleInstanceNotifyConfigResponse;
 	}
 }

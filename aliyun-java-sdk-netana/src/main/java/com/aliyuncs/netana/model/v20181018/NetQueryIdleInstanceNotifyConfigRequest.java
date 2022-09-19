@@ -22,26 +22,22 @@ import com.aliyuncs.netana.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeNetworkQuotaRequestResultRequest extends RpcAcsRequest<DescribeNetworkQuotaRequestResultResponse> {
+public class NetQueryIdleInstanceNotifyConfigRequest extends RpcAcsRequest<NetQueryIdleInstanceNotifyConfigResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String quotaPublicityName;
-
-	private String quotaRequestId;
+	private Integer pageNumber;
 
 	private Integer pageSize;
 
-	private String product;
-
 	private String resourceOwnerAccount;
 
-	private String resourceType;
+	private String ownerAccount;
 
-	private Integer pageNo;
-	public DescribeNetworkQuotaRequestResultRequest() {
-		super("Netana", "2018-10-18", "DescribeNetworkQuotaRequestResult", "netana");
+	private Long ownerId;
+	public NetQueryIdleInstanceNotifyConfigRequest() {
+		super("Netana", "2018-10-18", "NetQueryIdleInstanceNotifyConfig", "netana");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -60,25 +56,14 @@ public class DescribeNetworkQuotaRequestResultRequest extends RpcAcsRequest<Desc
 		}
 	}
 
-	public String getQuotaPublicityName() {
-		return this.quotaPublicityName;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setQuotaPublicityName(String quotaPublicityName) {
-		this.quotaPublicityName = quotaPublicityName;
-		if(quotaPublicityName != null){
-			putQueryParameter("QuotaPublicityName", quotaPublicityName);
-		}
-	}
-
-	public String getQuotaRequestId() {
-		return this.quotaRequestId;
-	}
-
-	public void setQuotaRequestId(String quotaRequestId) {
-		this.quotaRequestId = quotaRequestId;
-		if(quotaRequestId != null){
-			putQueryParameter("QuotaRequestId", quotaRequestId);
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
@@ -93,17 +78,6 @@ public class DescribeNetworkQuotaRequestResultRequest extends RpcAcsRequest<Desc
 		}
 	}
 
-	public String getProduct() {
-		return this.product;
-	}
-
-	public void setProduct(String product) {
-		this.product = product;
-		if(product != null){
-			putQueryParameter("Product", product);
-		}
-	}
-
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -115,31 +89,31 @@ public class DescribeNetworkQuotaRequestResultRequest extends RpcAcsRequest<Desc
 		}
 	}
 
-	public String getResourceType() {
-		return this.resourceType;
+	public String getOwnerAccount() {
+		return this.ownerAccount;
 	}
 
-	public void setResourceType(String resourceType) {
-		this.resourceType = resourceType;
-		if(resourceType != null){
-			putQueryParameter("ResourceType", resourceType);
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 
-	public Integer getPageNo() {
-		return this.pageNo;
+	public Long getOwnerId() {
+		return this.ownerId;
 	}
 
-	public void setPageNo(Integer pageNo) {
-		this.pageNo = pageNo;
-		if(pageNo != null){
-			putQueryParameter("PageNo", pageNo.toString());
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
 	@Override
-	public Class<DescribeNetworkQuotaRequestResultResponse> getResponseClass() {
-		return DescribeNetworkQuotaRequestResultResponse.class;
+	public Class<NetQueryIdleInstanceNotifyConfigResponse> getResponseClass() {
+		return NetQueryIdleInstanceNotifyConfigResponse.class;
 	}
 
 }

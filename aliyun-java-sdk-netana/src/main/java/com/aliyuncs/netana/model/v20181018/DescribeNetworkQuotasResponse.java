@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeNetworkQuotasResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
 
+	private String requestId;
+
 	private List<NetworkQuota> networkQuotas;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -45,6 +37,14 @@ public class DescribeNetworkQuotasResponse extends AcsResponse {
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<NetworkQuota> getNetworkQuotas() {
@@ -57,37 +57,13 @@ public class DescribeNetworkQuotasResponse extends AcsResponse {
 
 	public static class NetworkQuota {
 
-		private String product;
-
 		private String resourceType;
+
+		private String product;
 
 		private List<Privilege> privileges;
 
 		private List<NetworkQuotaInfo> networkQuotaInfos;
-
-		public String getBizProduct() {
-			return this.product;
-		}
-
-		public void setBizProduct(String product) {
-			this.product = product;
-		}
-
-		/**
-		 * @deprecated use getBizProduct instead of this.
-		 */
-		@Deprecated
-		public String getProduct() {
-			return this.product;
-		}
-
-		/**
-		 * @deprecated use setBizProduct instead of this.
-		 */
-		@Deprecated
-		public void setProduct(String product) {
-			this.product = product;
-		}
 
 		public String getResourceType() {
 			return this.resourceType;
@@ -95,6 +71,14 @@ public class DescribeNetworkQuotasResponse extends AcsResponse {
 
 		public void setResourceType(String resourceType) {
 			this.resourceType = resourceType;
+		}
+
+		public String getProduct() {
+			return this.product;
+		}
+
+		public void setProduct(String product) {
+			this.product = product;
 		}
 
 		public List<Privilege> getPrivileges() {
@@ -119,9 +103,9 @@ public class DescribeNetworkQuotasResponse extends AcsResponse {
 
 			private String description;
 
-			private Boolean enabled;
-
 			private String descriptionCn;
+
+			private Boolean enabled;
 
 			public String getPrivilege() {
 				return this.privilege;
@@ -139,14 +123,6 @@ public class DescribeNetworkQuotasResponse extends AcsResponse {
 				this.description = description;
 			}
 
-			public Boolean getEnabled() {
-				return this.enabled;
-			}
-
-			public void setEnabled(Boolean enabled) {
-				this.enabled = enabled;
-			}
-
 			public String getDescriptionCn() {
 				return this.descriptionCn;
 			}
@@ -154,23 +130,49 @@ public class DescribeNetworkQuotasResponse extends AcsResponse {
 			public void setDescriptionCn(String descriptionCn) {
 				this.descriptionCn = descriptionCn;
 			}
+
+			public Boolean getEnabled() {
+				return this.enabled;
+			}
+
+			public void setEnabled(Boolean enabled) {
+				this.enabled = enabled;
+			}
 		}
 
 		public static class NetworkQuotaInfo {
 
-			private String quotaName;
+			private String canExceptional;
 
-			private String quotaDescription;
+			private String sequence;
+
+			private String quotaName;
 
 			private String quotaQuantity;
 
-			private String instanceQuantity;
+			private String quotaDescription;
 
-			private String canExceptional;
+			private String instanceQuantity;
 
 			private String quotaDescriptionCn;
 
-			private String sequence;
+			private List<QuotaDetail> quotaDetails;
+
+			public String getCanExceptional() {
+				return this.canExceptional;
+			}
+
+			public void setCanExceptional(String canExceptional) {
+				this.canExceptional = canExceptional;
+			}
+
+			public String getSequence() {
+				return this.sequence;
+			}
+
+			public void setSequence(String sequence) {
+				this.sequence = sequence;
+			}
 
 			public String getQuotaName() {
 				return this.quotaName;
@@ -178,14 +180,6 @@ public class DescribeNetworkQuotasResponse extends AcsResponse {
 
 			public void setQuotaName(String quotaName) {
 				this.quotaName = quotaName;
-			}
-
-			public String getQuotaDescription() {
-				return this.quotaDescription;
-			}
-
-			public void setQuotaDescription(String quotaDescription) {
-				this.quotaDescription = quotaDescription;
 			}
 
 			public String getQuotaQuantity() {
@@ -196,20 +190,20 @@ public class DescribeNetworkQuotasResponse extends AcsResponse {
 				this.quotaQuantity = quotaQuantity;
 			}
 
+			public String getQuotaDescription() {
+				return this.quotaDescription;
+			}
+
+			public void setQuotaDescription(String quotaDescription) {
+				this.quotaDescription = quotaDescription;
+			}
+
 			public String getInstanceQuantity() {
 				return this.instanceQuantity;
 			}
 
 			public void setInstanceQuantity(String instanceQuantity) {
 				this.instanceQuantity = instanceQuantity;
-			}
-
-			public String getCanExceptional() {
-				return this.canExceptional;
-			}
-
-			public void setCanExceptional(String canExceptional) {
-				this.canExceptional = canExceptional;
 			}
 
 			public String getQuotaDescriptionCn() {
@@ -220,12 +214,55 @@ public class DescribeNetworkQuotasResponse extends AcsResponse {
 				this.quotaDescriptionCn = quotaDescriptionCn;
 			}
 
-			public String getSequence() {
-				return this.sequence;
+			public List<QuotaDetail> getQuotaDetails() {
+				return this.quotaDetails;
 			}
 
-			public void setSequence(String sequence) {
-				this.sequence = sequence;
+			public void setQuotaDetails(List<QuotaDetail> quotaDetails) {
+				this.quotaDetails = quotaDetails;
+			}
+
+			public static class QuotaDetail {
+
+				private Integer top;
+
+				private String childResourceType;
+
+				private String instanceId;
+
+				private Integer quotaQuantity;
+
+				public Integer getTop() {
+					return this.top;
+				}
+
+				public void setTop(Integer top) {
+					this.top = top;
+				}
+
+				public String getChildResourceType() {
+					return this.childResourceType;
+				}
+
+				public void setChildResourceType(String childResourceType) {
+					this.childResourceType = childResourceType;
+				}
+
+				public String getInstanceId() {
+					return this.instanceId;
+				}
+
+				public void setInstanceId(String instanceId) {
+					this.instanceId = instanceId;
+				}
+
+				public Integer getQuotaQuantity() {
+					return this.quotaQuantity;
+				}
+
+				public void setQuotaQuantity(Integer quotaQuantity) {
+					this.quotaQuantity = quotaQuantity;
+				}
 			}
 		}
 	}

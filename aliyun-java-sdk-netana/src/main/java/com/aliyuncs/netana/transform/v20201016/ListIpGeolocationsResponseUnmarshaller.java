@@ -34,10 +34,10 @@ public class ListIpGeolocationsResponseUnmarshaller {
 		List<IpGeolocationModel> ipGeolocationModels = new ArrayList<IpGeolocationModel>();
 		for (int i = 0; i < _ctx.lengthValue("ListIpGeolocationsResponse.IpGeolocationModels.Length"); i++) {
 			IpGeolocationModel ipGeolocationModel = new IpGeolocationModel();
-			ipGeolocationModel.setIpv4Prefix(_ctx.stringValue("ListIpGeolocationsResponse.IpGeolocationModels["+ i +"].Ipv4Prefix"));
-			ipGeolocationModel.setCountryCode(_ctx.stringValue("ListIpGeolocationsResponse.IpGeolocationModels["+ i +"].CountryCode"));
 			ipGeolocationModel.setCityCode(_ctx.stringValue("ListIpGeolocationsResponse.IpGeolocationModels["+ i +"].CityCode"));
 			ipGeolocationModel.setResourcePoolName(_ctx.stringValue("ListIpGeolocationsResponse.IpGeolocationModels["+ i +"].ResourcePoolName"));
+			ipGeolocationModel.setCountryCode(_ctx.stringValue("ListIpGeolocationsResponse.IpGeolocationModels["+ i +"].CountryCode"));
+			ipGeolocationModel.setIpv4Prefix(_ctx.stringValue("ListIpGeolocationsResponse.IpGeolocationModels["+ i +"].Ipv4Prefix"));
 
 			ipGeolocationModels.add(ipGeolocationModel);
 		}

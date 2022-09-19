@@ -15,6 +15,7 @@
 package com.aliyuncs.netana.model.v20181018;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.netana.Endpoint;
 
@@ -22,20 +23,22 @@ import com.aliyuncs.netana.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeNetworkQuotasRequest extends RpcAcsRequest<DescribeNetworkQuotasResponse> {
+public class NetCancelIdleInstanceWhiteListRequest extends RpcAcsRequest<NetCancelIdleInstanceWhiteListResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String quotaPublicityName;
-
-	private String product;
+	private String productId;
 
 	private String resourceOwnerAccount;
 
-	private String resourceType;
-	public DescribeNetworkQuotasRequest() {
-		super("Netana", "2018-10-18", "DescribeNetworkQuotas", "netana");
+	private String ownerAccount;
+
+	private Long ownerId;
+
+	private List<String> instanceIds;
+	public NetCancelIdleInstanceWhiteListRequest() {
+		super("Netana", "2018-10-18", "NetCancelIdleInstanceWhiteList", "netana");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -54,25 +57,14 @@ public class DescribeNetworkQuotasRequest extends RpcAcsRequest<DescribeNetworkQ
 		}
 	}
 
-	public String getQuotaPublicityName() {
-		return this.quotaPublicityName;
+	public String getProductId() {
+		return this.productId;
 	}
 
-	public void setQuotaPublicityName(String quotaPublicityName) {
-		this.quotaPublicityName = quotaPublicityName;
-		if(quotaPublicityName != null){
-			putQueryParameter("QuotaPublicityName", quotaPublicityName);
-		}
-	}
-
-	public String getProduct() {
-		return this.product;
-	}
-
-	public void setProduct(String product) {
-		this.product = product;
-		if(product != null){
-			putQueryParameter("Product", product);
+	public void setProductId(String productId) {
+		this.productId = productId;
+		if(productId != null){
+			putQueryParameter("ProductId", productId);
 		}
 	}
 
@@ -87,20 +79,44 @@ public class DescribeNetworkQuotasRequest extends RpcAcsRequest<DescribeNetworkQ
 		}
 	}
 
-	public String getResourceType() {
-		return this.resourceType;
+	public String getOwnerAccount() {
+		return this.ownerAccount;
 	}
 
-	public void setResourceType(String resourceType) {
-		this.resourceType = resourceType;
-		if(resourceType != null){
-			putQueryParameter("ResourceType", resourceType);
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public List<String> getInstanceIds() {
+		return this.instanceIds;
+	}
+
+	public void setInstanceIds(List<String> instanceIds) {
+		this.instanceIds = instanceIds;	
+		if (instanceIds != null) {
+			for (int depth1 = 0; depth1 < instanceIds.size(); depth1++) {
+				putQueryParameter("InstanceIds." + (depth1 + 1) , instanceIds.get(depth1));
+			}
+		}	
+	}
+
 	@Override
-	public Class<DescribeNetworkQuotasResponse> getResponseClass() {
-		return DescribeNetworkQuotasResponse.class;
+	public Class<NetCancelIdleInstanceWhiteListResponse> getResponseClass() {
+		return NetCancelIdleInstanceWhiteListResponse.class;
 	}
 
 }

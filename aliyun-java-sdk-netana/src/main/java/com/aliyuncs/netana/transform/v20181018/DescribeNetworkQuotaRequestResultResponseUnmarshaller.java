@@ -24,29 +24,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeNetworkQuotaRequestResultResponseUnmarshaller {
 
-	public static DescribeNetworkQuotaRequestResultResponse unmarshall(DescribeNetworkQuotaRequestResultResponse describeNetworkQuotaRequestResultResponse, UnmarshallerContext context) {
+	public static DescribeNetworkQuotaRequestResultResponse unmarshall(DescribeNetworkQuotaRequestResultResponse describeNetworkQuotaRequestResultResponse, UnmarshallerContext _ctx) {
 		
-		describeNetworkQuotaRequestResultResponse.setRequestId(context.stringValue("DescribeNetworkQuotaRequestResultResponse.RequestId"));
-		describeNetworkQuotaRequestResultResponse.setTotalCount(context.integerValue("DescribeNetworkQuotaRequestResultResponse.TotalCount"));
-		describeNetworkQuotaRequestResultResponse.setPageNumber(context.integerValue("DescribeNetworkQuotaRequestResultResponse.PageNumber"));
-		describeNetworkQuotaRequestResultResponse.setPageSize(context.integerValue("DescribeNetworkQuotaRequestResultResponse.PageSize"));
+		describeNetworkQuotaRequestResultResponse.setRequestId(_ctx.stringValue("DescribeNetworkQuotaRequestResultResponse.RequestId"));
+		describeNetworkQuotaRequestResultResponse.setTotalCount(_ctx.integerValue("DescribeNetworkQuotaRequestResultResponse.TotalCount"));
+		describeNetworkQuotaRequestResultResponse.setPageSize(_ctx.integerValue("DescribeNetworkQuotaRequestResultResponse.PageSize"));
+		describeNetworkQuotaRequestResultResponse.setPageNumber(_ctx.integerValue("DescribeNetworkQuotaRequestResultResponse.PageNumber"));
 
 		List<QuotaRequest> quotaRequests = new ArrayList<QuotaRequest>();
-		for (int i = 0; i < context.lengthValue("DescribeNetworkQuotaRequestResultResponse.QuotaRequests.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeNetworkQuotaRequestResultResponse.QuotaRequests.Length"); i++) {
 			QuotaRequest quotaRequest = new QuotaRequest();
-			quotaRequest.setRegionId(context.stringValue("DescribeNetworkQuotaRequestResultResponse.QuotaRequests["+ i +"].RegionId"));
-			quotaRequest.setProduct(context.stringValue("DescribeNetworkQuotaRequestResultResponse.QuotaRequests["+ i +"].Product"));
-			quotaRequest.setResourceType(context.stringValue("DescribeNetworkQuotaRequestResultResponse.QuotaRequests["+ i +"].ResourceType"));
-			quotaRequest.setQuotaPublicityName(context.stringValue("DescribeNetworkQuotaRequestResultResponse.QuotaRequests["+ i +"].QuotaPublicityName"));
-			quotaRequest.setRequestReason(context.stringValue("DescribeNetworkQuotaRequestResultResponse.QuotaRequests["+ i +"].RequestReason"));
-			quotaRequest.setMobilePhone(context.stringValue("DescribeNetworkQuotaRequestResultResponse.QuotaRequests["+ i +"].MobilePhone"));
-			quotaRequest.setEmail(context.stringValue("DescribeNetworkQuotaRequestResultResponse.QuotaRequests["+ i +"].Email"));
-			quotaRequest.setRequestResult(context.stringValue("DescribeNetworkQuotaRequestResultResponse.QuotaRequests["+ i +"].RequestResult"));
-			quotaRequest.setResultQuantity(context.stringValue("DescribeNetworkQuotaRequestResultResponse.QuotaRequests["+ i +"].ResultQuantity"));
-			quotaRequest.setResultReason(context.stringValue("DescribeNetworkQuotaRequestResultResponse.QuotaRequests["+ i +"].ResultReason"));
-			quotaRequest.setRequestId(context.stringValue("DescribeNetworkQuotaRequestResultResponse.QuotaRequests["+ i +"].RequestId"));
-			quotaRequest.setCreateTime(context.stringValue("DescribeNetworkQuotaRequestResultResponse.QuotaRequests["+ i +"].CreateTime"));
-			quotaRequest.setRequestQuantity(context.stringValue("DescribeNetworkQuotaRequestResultResponse.QuotaRequests["+ i +"].RequestQuantity"));
+			quotaRequest.setQuotaPublicityName(_ctx.stringValue("DescribeNetworkQuotaRequestResultResponse.QuotaRequests["+ i +"].QuotaPublicityName"));
+			quotaRequest.setResourceType(_ctx.stringValue("DescribeNetworkQuotaRequestResultResponse.QuotaRequests["+ i +"].ResourceType"));
+			quotaRequest.setRequestId(_ctx.stringValue("DescribeNetworkQuotaRequestResultResponse.QuotaRequests["+ i +"].RequestId"));
+			quotaRequest.setProduct(_ctx.stringValue("DescribeNetworkQuotaRequestResultResponse.QuotaRequests["+ i +"].Product"));
+			quotaRequest.setCreateTime(_ctx.stringValue("DescribeNetworkQuotaRequestResultResponse.QuotaRequests["+ i +"].CreateTime"));
+			quotaRequest.setRequestQuantity(_ctx.stringValue("DescribeNetworkQuotaRequestResultResponse.QuotaRequests["+ i +"].RequestQuantity"));
+			quotaRequest.setRequestReason(_ctx.stringValue("DescribeNetworkQuotaRequestResultResponse.QuotaRequests["+ i +"].RequestReason"));
+			quotaRequest.setResultReason(_ctx.stringValue("DescribeNetworkQuotaRequestResultResponse.QuotaRequests["+ i +"].ResultReason"));
+			quotaRequest.setRequestResult(_ctx.stringValue("DescribeNetworkQuotaRequestResultResponse.QuotaRequests["+ i +"].RequestResult"));
+			quotaRequest.setResultQuantity(_ctx.stringValue("DescribeNetworkQuotaRequestResultResponse.QuotaRequests["+ i +"].ResultQuantity"));
+			quotaRequest.setRegionId(_ctx.stringValue("DescribeNetworkQuotaRequestResultResponse.QuotaRequests["+ i +"].RegionId"));
 
 			quotaRequests.add(quotaRequest);
 		}
