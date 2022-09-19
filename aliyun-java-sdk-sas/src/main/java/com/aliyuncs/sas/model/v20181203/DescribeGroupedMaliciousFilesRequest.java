@@ -15,6 +15,7 @@
 package com.aliyuncs.sas.model.v20181203;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.sas.Endpoint;
 
@@ -32,6 +33,8 @@ public class DescribeGroupedMaliciousFilesRequest extends RpcAcsRequest<Describe
 	private String repoNamespace;
 
 	private String imageDigest;
+
+	private List<String> scanRanges;
 
 	private String pageSize;
 
@@ -103,6 +106,19 @@ public class DescribeGroupedMaliciousFilesRequest extends RpcAcsRequest<Describe
 		if(imageDigest != null){
 			putQueryParameter("ImageDigest", imageDigest);
 		}
+	}
+
+	public List<String> getScanRanges() {
+		return this.scanRanges;
+	}
+
+	public void setScanRanges(List<String> scanRanges) {
+		this.scanRanges = scanRanges;	
+		if (scanRanges != null) {
+			for (int i = 0; i < scanRanges.size(); i++) {
+				putQueryParameter("ScanRange." + (i + 1) , scanRanges.get(i));
+			}
+		}	
 	}
 
 	public String getPageSize() {

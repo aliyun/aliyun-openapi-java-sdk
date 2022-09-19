@@ -58,7 +58,14 @@ public class DescribeImageListWithBaselineNameResponseUnmarshaller {
 			imageInfosItem.setNoRiskImage(_ctx.integerValue("DescribeImageListWithBaselineNameResponse.ImageInfos["+ i +"].NoRiskImage"));
 			imageInfosItem.setImageId(_ctx.stringValue("DescribeImageListWithBaselineNameResponse.ImageInfos["+ i +"].ImageId"));
 			imageInfosItem.setRepoName(_ctx.stringValue("DescribeImageListWithBaselineNameResponse.ImageInfos["+ i +"].RepoName"));
+			imageInfosItem.setClusterId(_ctx.stringValue("DescribeImageListWithBaselineNameResponse.ImageInfos["+ i +"].ClusterId"));
+			imageInfosItem.setClusterName(_ctx.stringValue("DescribeImageListWithBaselineNameResponse.ImageInfos["+ i +"].ClusterName"));
 			imageInfosItem.setRepoNamespace(_ctx.stringValue("DescribeImageListWithBaselineNameResponse.ImageInfos["+ i +"].RepoNamespace"));
+			imageInfosItem.setPod(_ctx.stringValue("DescribeImageListWithBaselineNameResponse.ImageInfos["+ i +"].Pod"));
+			imageInfosItem.setNamespace(_ctx.stringValue("DescribeImageListWithBaselineNameResponse.ImageInfos["+ i +"].Namespace"));
+			imageInfosItem.setContainerId(_ctx.stringValue("DescribeImageListWithBaselineNameResponse.ImageInfos["+ i +"].ContainerId"));
+			imageInfosItem.setImage(_ctx.stringValue("DescribeImageListWithBaselineNameResponse.ImageInfos["+ i +"].Image"));
+			imageInfosItem.setBaselineType(_ctx.stringValue("DescribeImageListWithBaselineNameResponse.ImageInfos["+ i +"].BaselineType"));
 
 			imageInfos.add(imageInfosItem);
 		}

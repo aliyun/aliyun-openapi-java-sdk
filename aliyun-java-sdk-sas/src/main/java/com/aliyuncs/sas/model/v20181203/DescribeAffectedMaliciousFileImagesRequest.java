@@ -15,6 +15,7 @@
 package com.aliyuncs.sas.model.v20181203;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.sas.Endpoint;
 
@@ -27,15 +28,23 @@ public class DescribeAffectedMaliciousFileImagesRequest extends RpcAcsRequest<De
 
 	private String repoId;
 
+	private String pod;
+
+	private String clusterName;
+
 	private String repoNamespace;
 
 	private String imageDigest;
+
+	private List<String> scanRanges;
 
 	private String pageSize;
 
 	private String lang;
 
 	private String imageTag;
+
+	private String image;
 
 	private String maliciousMd5;
 
@@ -45,9 +54,15 @@ public class DescribeAffectedMaliciousFileImagesRequest extends RpcAcsRequest<De
 
 	private String repoName;
 
+	private String namespace;
+
 	private String repoInstanceId;
 
 	private String imageLayer;
+
+	private String containerId;
+
+	private String levels;
 
 	private String repoRegionId;
 	public DescribeAffectedMaliciousFileImagesRequest() {
@@ -67,6 +82,28 @@ public class DescribeAffectedMaliciousFileImagesRequest extends RpcAcsRequest<De
 		this.repoId = repoId;
 		if(repoId != null){
 			putQueryParameter("RepoId", repoId);
+		}
+	}
+
+	public String getPod() {
+		return this.pod;
+	}
+
+	public void setPod(String pod) {
+		this.pod = pod;
+		if(pod != null){
+			putQueryParameter("Pod", pod);
+		}
+	}
+
+	public String getClusterName() {
+		return this.clusterName;
+	}
+
+	public void setClusterName(String clusterName) {
+		this.clusterName = clusterName;
+		if(clusterName != null){
+			putQueryParameter("ClusterName", clusterName);
 		}
 	}
 
@@ -90,6 +127,19 @@ public class DescribeAffectedMaliciousFileImagesRequest extends RpcAcsRequest<De
 		if(imageDigest != null){
 			putQueryParameter("ImageDigest", imageDigest);
 		}
+	}
+
+	public List<String> getScanRanges() {
+		return this.scanRanges;
+	}
+
+	public void setScanRanges(List<String> scanRanges) {
+		this.scanRanges = scanRanges;	
+		if (scanRanges != null) {
+			for (int i = 0; i < scanRanges.size(); i++) {
+				putQueryParameter("ScanRange." + (i + 1) , scanRanges.get(i));
+			}
+		}	
 	}
 
 	public String getPageSize() {
@@ -122,6 +172,17 @@ public class DescribeAffectedMaliciousFileImagesRequest extends RpcAcsRequest<De
 		this.imageTag = imageTag;
 		if(imageTag != null){
 			putQueryParameter("ImageTag", imageTag);
+		}
+	}
+
+	public String getImage() {
+		return this.image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+		if(image != null){
+			putQueryParameter("Image", image);
 		}
 	}
 
@@ -169,6 +230,17 @@ public class DescribeAffectedMaliciousFileImagesRequest extends RpcAcsRequest<De
 		}
 	}
 
+	public String getNamespace() {
+		return this.namespace;
+	}
+
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+		if(namespace != null){
+			putQueryParameter("Namespace", namespace);
+		}
+	}
+
 	public String getRepoInstanceId() {
 		return this.repoInstanceId;
 	}
@@ -188,6 +260,28 @@ public class DescribeAffectedMaliciousFileImagesRequest extends RpcAcsRequest<De
 		this.imageLayer = imageLayer;
 		if(imageLayer != null){
 			putQueryParameter("ImageLayer", imageLayer);
+		}
+	}
+
+	public String getContainerId() {
+		return this.containerId;
+	}
+
+	public void setContainerId(String containerId) {
+		this.containerId = containerId;
+		if(containerId != null){
+			putQueryParameter("ContainerId", containerId);
+		}
+	}
+
+	public String getLevels() {
+		return this.levels;
+	}
+
+	public void setLevels(String levels) {
+		this.levels = levels;
+		if(levels != null){
+			putQueryParameter("Levels", levels);
 		}
 	}
 

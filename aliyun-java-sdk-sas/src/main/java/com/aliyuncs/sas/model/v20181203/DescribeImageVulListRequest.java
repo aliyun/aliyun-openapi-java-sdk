@@ -15,6 +15,7 @@
 package com.aliyuncs.sas.model.v20181203;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.sas.Endpoint;
 
@@ -25,15 +26,21 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribeImageVulListRequest extends RpcAcsRequest<DescribeImageVulListResponse> {
 	   
 
+	private String clusterName;
+
 	private String type;
 
 	private String tag;
+
+	private String image;
 
 	private String aliasName;
 
 	private String instanceId;
 
 	private String name;
+
+	private String containerId;
 
 	private String necessity;
 
@@ -43,7 +50,11 @@ public class DescribeImageVulListRequest extends RpcAcsRequest<DescribeImageVulL
 
 	private String statusList;
 
+	private String pod;
+
 	private String repoNamespace;
+
+	private List<String> scanRanges;
 
 	private Integer pageSize;
 
@@ -59,6 +70,8 @@ public class DescribeImageVulListRequest extends RpcAcsRequest<DescribeImageVulL
 
 	private String repoName;
 
+	private String namespace;
+
 	private String repoInstanceId;
 
 	private String repoRegionId;
@@ -69,6 +82,17 @@ public class DescribeImageVulListRequest extends RpcAcsRequest<DescribeImageVulL
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getClusterName() {
+		return this.clusterName;
+	}
+
+	public void setClusterName(String clusterName) {
+		this.clusterName = clusterName;
+		if(clusterName != null){
+			putQueryParameter("ClusterName", clusterName);
+		}
 	}
 
 	public String getType() {
@@ -90,6 +114,17 @@ public class DescribeImageVulListRequest extends RpcAcsRequest<DescribeImageVulL
 		this.tag = tag;
 		if(tag != null){
 			putQueryParameter("Tag", tag);
+		}
+	}
+
+	public String getImage() {
+		return this.image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+		if(image != null){
+			putQueryParameter("Image", image);
 		}
 	}
 
@@ -123,6 +158,17 @@ public class DescribeImageVulListRequest extends RpcAcsRequest<DescribeImageVulL
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getContainerId() {
+		return this.containerId;
+	}
+
+	public void setContainerId(String containerId) {
+		this.containerId = containerId;
+		if(containerId != null){
+			putQueryParameter("ContainerId", containerId);
 		}
 	}
 
@@ -170,6 +216,17 @@ public class DescribeImageVulListRequest extends RpcAcsRequest<DescribeImageVulL
 		}
 	}
 
+	public String getPod() {
+		return this.pod;
+	}
+
+	public void setPod(String pod) {
+		this.pod = pod;
+		if(pod != null){
+			putQueryParameter("Pod", pod);
+		}
+	}
+
 	public String getRepoNamespace() {
 		return this.repoNamespace;
 	}
@@ -179,6 +236,19 @@ public class DescribeImageVulListRequest extends RpcAcsRequest<DescribeImageVulL
 		if(repoNamespace != null){
 			putQueryParameter("RepoNamespace", repoNamespace);
 		}
+	}
+
+	public List<String> getScanRanges() {
+		return this.scanRanges;
+	}
+
+	public void setScanRanges(List<String> scanRanges) {
+		this.scanRanges = scanRanges;	
+		if (scanRanges != null) {
+			for (int i = 0; i < scanRanges.size(); i++) {
+				putQueryParameter("ScanRange." + (i + 1) , scanRanges.get(i));
+			}
+		}	
 	}
 
 	public Integer getPageSize() {
@@ -255,6 +325,17 @@ public class DescribeImageVulListRequest extends RpcAcsRequest<DescribeImageVulL
 		this.repoName = repoName;
 		if(repoName != null){
 			putQueryParameter("RepoName", repoName);
+		}
+	}
+
+	public String getNamespace() {
+		return this.namespace;
+	}
+
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+		if(namespace != null){
+			putQueryParameter("Namespace", namespace);
 		}
 	}
 

@@ -93,6 +93,18 @@ public class DescribeAffectedMaliciousFileImagesResponse extends AcsResponse {
 
 		private String highLight;
 
+		private String containerId;
+
+		private String image;
+
+		private String pod;
+
+		private String clusterId;
+
+		private String clusterName;
+
+		private String maliciousSource;
+
 		public Integer getStatus() {
 			return this.status;
 		}
@@ -235,6 +247,54 @@ public class DescribeAffectedMaliciousFileImagesResponse extends AcsResponse {
 
 		public void setHighLight(String highLight) {
 			this.highLight = highLight;
+		}
+
+		public String getContainerId() {
+			return this.containerId;
+		}
+
+		public void setContainerId(String containerId) {
+			this.containerId = containerId;
+		}
+
+		public String getImage() {
+			return this.image;
+		}
+
+		public void setImage(String image) {
+			this.image = image;
+		}
+
+		public String getPod() {
+			return this.pod;
+		}
+
+		public void setPod(String pod) {
+			this.pod = pod;
+		}
+
+		public String getClusterId() {
+			return this.clusterId;
+		}
+
+		public void setClusterId(String clusterId) {
+			this.clusterId = clusterId;
+		}
+
+		public String getClusterName() {
+			return this.clusterName;
+		}
+
+		public void setClusterName(String clusterName) {
+			this.clusterName = clusterName;
+		}
+
+		public String getMaliciousSource() {
+			return this.maliciousSource;
+		}
+
+		public void setMaliciousSource(String maliciousSource) {
+			this.maliciousSource = maliciousSource;
 		}
 	}
 
