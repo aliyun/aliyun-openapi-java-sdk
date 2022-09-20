@@ -16,6 +16,7 @@ package com.aliyuncs.threedvision.model.v20210131;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.threedvision.Endpoint;
 
 /**
  * @author auto create
@@ -28,8 +29,12 @@ public class EstimateMonocularVideoDepthRequest extends RpcAcsRequest<EstimateMo
 
 	private String videoURL;
 	public EstimateMonocularVideoDepthRequest() {
-		super("threedvision", "2021-01-31", "EstimateMonocularVideoDepth");
+		super("threedvision", "2021-01-31", "EstimateMonocularVideoDepth", "threedvision");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getSampleRate() {
