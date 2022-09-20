@@ -72,6 +72,7 @@ public class DescribeRouterInterfacesResponseUnmarshaller {
 			routerInterfaceType.setHasReservationData(_ctx.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].HasReservationData"));
 			routerInterfaceType.setAccessPointId(_ctx.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].AccessPointId"));
 			routerInterfaceType.setIpv6Status(_ctx.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].Ipv6Status"));
+			routerInterfaceType.setFastLinkMode(_ctx.booleanValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].FastLinkMode"));
 
 			routerInterfaceSet.add(routerInterfaceType);
 		}

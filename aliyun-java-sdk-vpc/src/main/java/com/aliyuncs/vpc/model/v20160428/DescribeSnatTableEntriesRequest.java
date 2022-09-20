@@ -39,6 +39,8 @@ public class DescribeSnatTableEntriesRequest extends RpcAcsRequest<DescribeSnatT
 
 	private String snatEntryId;
 
+	private String natGatewayId;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -131,6 +133,17 @@ public class DescribeSnatTableEntriesRequest extends RpcAcsRequest<DescribeSnatT
 		this.snatEntryId = snatEntryId;
 		if(snatEntryId != null){
 			putQueryParameter("SnatEntryId", snatEntryId);
+		}
+	}
+
+	public String getNatGatewayId() {
+		return this.natGatewayId;
+	}
+
+	public void setNatGatewayId(String natGatewayId) {
+		this.natGatewayId = natGatewayId;
+		if(natGatewayId != null){
+			putQueryParameter("NatGatewayId", natGatewayId);
 		}
 	}
 

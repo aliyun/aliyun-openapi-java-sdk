@@ -42,6 +42,8 @@ public class DescribePhysicalConnectionsRequest extends RpcAcsRequest<DescribePh
 
 	private Long ownerId;
 
+	private List<Tags> tagss;
+
 	private List<Filter> filters;
 	public DescribePhysicalConnectionsRequest() {
 		super("Vpc", "2016-04-28", "DescribePhysicalConnections", "vpc");
@@ -140,6 +142,20 @@ public class DescribePhysicalConnectionsRequest extends RpcAcsRequest<DescribePh
 		}
 	}
 
+	public List<Tags> getTagss() {
+		return this.tagss;
+	}
+
+	public void setTagss(List<Tags> tagss) {
+		this.tagss = tagss;	
+		if (tagss != null) {
+			for (int depth1 = 0; depth1 < tagss.size(); depth1++) {
+				putQueryParameter("Tags." + (depth1 + 1) + ".Value" , tagss.get(depth1).getValue());
+				putQueryParameter("Tags." + (depth1 + 1) + ".Key" , tagss.get(depth1).getKey());
+			}
+		}	
+	}
+
 	public List<Filter> getFilters() {
 		return this.filters;
 	}
@@ -156,6 +172,29 @@ public class DescribePhysicalConnectionsRequest extends RpcAcsRequest<DescribePh
 				putQueryParameter("Filter." + (depth1 + 1) + ".Key" , filters.get(depth1).getKey());
 			}
 		}	
+	}
+
+	public static class Tags {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
 	}
 
 	public static class Filter {

@@ -153,6 +153,8 @@ public class DescribeRouterInterfacesResponse extends AcsResponse {
 
 		private String ipv6Status;
 
+		private Boolean fastLinkMode;
+
 		public String getReservationActiveTime() {
 			return this.reservationActiveTime;
 		}
@@ -455,6 +457,14 @@ public class DescribeRouterInterfacesResponse extends AcsResponse {
 
 		public void setIpv6Status(String ipv6Status) {
 			this.ipv6Status = ipv6Status;
+		}
+
+		public Boolean getFastLinkMode() {
+			return this.fastLinkMode;
+		}
+
+		public void setFastLinkMode(Boolean fastLinkMode) {
+			this.fastLinkMode = fastLinkMode;
 		}
 	}
 

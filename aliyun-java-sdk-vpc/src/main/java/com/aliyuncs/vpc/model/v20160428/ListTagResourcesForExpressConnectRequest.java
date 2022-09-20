@@ -23,36 +23,28 @@ import com.aliyuncs.vpc.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListFullNatEntriesRequest extends RpcAcsRequest<ListFullNatEntriesResponse> {
+public class ListTagResourcesForExpressConnectRequest extends RpcAcsRequest<ListTagResourcesForExpressConnectResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String clientToken;
-
-	private List<String> networkInterfaceIdss;
-
-	private String fullNatEntryId;
-
-	private String fullNatTableId;
-
 	private String nextToken;
 
-	private List<String> fullNatEntryNamess;
+	private List<Tag> tags;
 
-	private String natGatewayId;
+	private List<String> resourceIds;
 
 	private String resourceOwnerAccount;
-
-	private String ipProtocol;
 
 	private String ownerAccount;
 
 	private Long ownerId;
 
-	private Long maxResults;
-	public ListFullNatEntriesRequest() {
-		super("Vpc", "2016-04-28", "ListFullNatEntries", "vpc");
+	private String resourceType;
+
+	private Integer maxResults;
+	public ListTagResourcesForExpressConnectRequest() {
+		super("Vpc", "2016-04-28", "ListTagResourcesForExpressConnect", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -71,52 +63,6 @@ public class ListFullNatEntriesRequest extends RpcAcsRequest<ListFullNatEntriesR
 		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public List<String> getNetworkInterfaceIdss() {
-		return this.networkInterfaceIdss;
-	}
-
-	public void setNetworkInterfaceIdss(List<String> networkInterfaceIdss) {
-		this.networkInterfaceIdss = networkInterfaceIdss;	
-		if (networkInterfaceIdss != null) {
-			for (int i = 0; i < networkInterfaceIdss.size(); i++) {
-				putQueryParameter("NetworkInterfaceIds." + (i + 1) , networkInterfaceIdss.get(i));
-			}
-		}	
-	}
-
-	public String getFullNatEntryId() {
-		return this.fullNatEntryId;
-	}
-
-	public void setFullNatEntryId(String fullNatEntryId) {
-		this.fullNatEntryId = fullNatEntryId;
-		if(fullNatEntryId != null){
-			putQueryParameter("FullNatEntryId", fullNatEntryId);
-		}
-	}
-
-	public String getFullNatTableId() {
-		return this.fullNatTableId;
-	}
-
-	public void setFullNatTableId(String fullNatTableId) {
-		this.fullNatTableId = fullNatTableId;
-		if(fullNatTableId != null){
-			putQueryParameter("FullNatTableId", fullNatTableId);
-		}
-	}
-
 	public String getNextToken() {
 		return this.nextToken;
 	}
@@ -128,28 +74,31 @@ public class ListFullNatEntriesRequest extends RpcAcsRequest<ListFullNatEntriesR
 		}
 	}
 
-	public List<String> getFullNatEntryNamess() {
-		return this.fullNatEntryNamess;
+	public List<Tag> getTags() {
+		return this.tags;
 	}
 
-	public void setFullNatEntryNamess(List<String> fullNatEntryNamess) {
-		this.fullNatEntryNamess = fullNatEntryNamess;	
-		if (fullNatEntryNamess != null) {
-			for (int i = 0; i < fullNatEntryNamess.size(); i++) {
-				putQueryParameter("FullNatEntryNames." + (i + 1) , fullNatEntryNamess.get(i));
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
 	}
 
-	public String getNatGatewayId() {
-		return this.natGatewayId;
+	public List<String> getResourceIds() {
+		return this.resourceIds;
 	}
 
-	public void setNatGatewayId(String natGatewayId) {
-		this.natGatewayId = natGatewayId;
-		if(natGatewayId != null){
-			putQueryParameter("NatGatewayId", natGatewayId);
-		}
+	public void setResourceIds(List<String> resourceIds) {
+		this.resourceIds = resourceIds;	
+		if (resourceIds != null) {
+			for (int i = 0; i < resourceIds.size(); i++) {
+				putQueryParameter("ResourceId." + (i + 1) , resourceIds.get(i));
+			}
+		}	
 	}
 
 	public String getResourceOwnerAccount() {
@@ -160,17 +109,6 @@ public class ListFullNatEntriesRequest extends RpcAcsRequest<ListFullNatEntriesR
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getIpProtocol() {
-		return this.ipProtocol;
-	}
-
-	public void setIpProtocol(String ipProtocol) {
-		this.ipProtocol = ipProtocol;
-		if(ipProtocol != null){
-			putQueryParameter("IpProtocol", ipProtocol);
 		}
 	}
 
@@ -196,20 +134,54 @@ public class ListFullNatEntriesRequest extends RpcAcsRequest<ListFullNatEntriesR
 		}
 	}
 
-	public Long getMaxResults() {
+	public String getResourceType() {
+		return this.resourceType;
+	}
+
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
+		}
+	}
+
+	public Integer getMaxResults() {
 		return this.maxResults;
 	}
 
-	public void setMaxResults(Long maxResults) {
+	public void setMaxResults(Integer maxResults) {
 		this.maxResults = maxResults;
 		if(maxResults != null){
 			putQueryParameter("MaxResults", maxResults.toString());
 		}
 	}
 
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+	}
+
 	@Override
-	public Class<ListFullNatEntriesResponse> getResponseClass() {
-		return ListFullNatEntriesResponse.class;
+	public Class<ListTagResourcesForExpressConnectResponse> getResponseClass() {
+		return ListTagResourcesForExpressConnectResponse.class;
 	}
 
 }

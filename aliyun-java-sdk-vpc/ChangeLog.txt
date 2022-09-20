@@ -1,3 +1,6 @@
+2022-09-20 Version: 3.2.7
+- DescribeSnatTableEntries DescribeSnatTableEntries ListFullnatEntries support query --by natGatewayId.
+
 2022-09-01 Version: 3.2.6
 - Support DescribeNatGateways return EipBindMode.
 
