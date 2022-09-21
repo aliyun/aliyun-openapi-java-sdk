@@ -105,6 +105,10 @@ public class DescribeCapacityReservationsResponse extends AcsResponse {
 
 		private String startTimeType;
 
+		private String savingPlanId;
+
+		private String reservedInstanceId;
+
 		private List<AllocatedResource> allocatedResources;
 
 		private List<Tag> tags;
@@ -219,6 +223,22 @@ public class DescribeCapacityReservationsResponse extends AcsResponse {
 
 		public void setStartTimeType(String startTimeType) {
 			this.startTimeType = startTimeType;
+		}
+
+		public String getSavingPlanId() {
+			return this.savingPlanId;
+		}
+
+		public void setSavingPlanId(String savingPlanId) {
+			this.savingPlanId = savingPlanId;
+		}
+
+		public String getReservedInstanceId() {
+			return this.reservedInstanceId;
+		}
+
+		public void setReservedInstanceId(String reservedInstanceId) {
+			this.reservedInstanceId = reservedInstanceId;
 		}
 
 		public List<AllocatedResource> getAllocatedResources() {
