@@ -134,6 +134,8 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 
 	private String payAsYouGoTargetCapacity;
 
+	private Boolean hibernationOptionsConfigured;
+
 	private String totalTargetCapacity;
 
 	private String spotTargetCapacity;
@@ -776,6 +778,17 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 		this.payAsYouGoTargetCapacity = payAsYouGoTargetCapacity;
 		if(payAsYouGoTargetCapacity != null){
 			putQueryParameter("PayAsYouGoTargetCapacity", payAsYouGoTargetCapacity);
+		}
+	}
+
+	public Boolean getHibernationOptionsConfigured() {
+		return this.hibernationOptionsConfigured;
+	}
+
+	public void setHibernationOptionsConfigured(Boolean hibernationOptionsConfigured) {
+		this.hibernationOptionsConfigured = hibernationOptionsConfigured;
+		if(hibernationOptionsConfigured != null){
+			putQueryParameter("HibernationOptionsConfigured", hibernationOptionsConfigured.toString());
 		}
 	}
 
