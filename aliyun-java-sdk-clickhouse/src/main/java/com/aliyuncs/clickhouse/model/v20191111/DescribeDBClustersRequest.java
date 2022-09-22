@@ -32,8 +32,6 @@ public class DescribeDBClustersRequest extends RpcAcsRequest<DescribeDBClustersR
 
 	private String dBClusterStatus;
 
-	private String controlVersion;
-
 	private Integer pageNumber;
 
 	private Integer pageSize;
@@ -86,17 +84,6 @@ public class DescribeDBClustersRequest extends RpcAcsRequest<DescribeDBClustersR
 		this.dBClusterStatus = dBClusterStatus;
 		if(dBClusterStatus != null){
 			putQueryParameter("DBClusterStatus", dBClusterStatus);
-		}
-	}
-
-	public String getControlVersion() {
-		return this.controlVersion;
-	}
-
-	public void setControlVersion(String controlVersion) {
-		this.controlVersion = controlVersion;
-		if(controlVersion != null){
-			putQueryParameter("ControlVersion", controlVersion);
 		}
 	}
 
