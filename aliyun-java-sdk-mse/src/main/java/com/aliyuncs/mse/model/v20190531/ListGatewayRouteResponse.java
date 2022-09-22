@@ -497,6 +497,8 @@ public class ListGatewayRouteResponse extends AcsResponse {
 
 					private String dubboServiceVersion;
 
+					private String dubboServiceGroup;
+
 					private List<MothedMapListItem> mothedMapList;
 
 					public String getDubboServiceName() {
@@ -513,6 +515,14 @@ public class ListGatewayRouteResponse extends AcsResponse {
 
 					public void setDubboServiceVersion(String dubboServiceVersion) {
 						this.dubboServiceVersion = dubboServiceVersion;
+					}
+
+					public String getDubboServiceGroup() {
+						return this.dubboServiceGroup;
+					}
+
+					public void setDubboServiceGroup(String dubboServiceGroup) {
+						this.dubboServiceGroup = dubboServiceGroup;
 					}
 
 					public List<MothedMapListItem> getMothedMapList() {

@@ -29,6 +29,8 @@ public class ListClusterVersionsRequest extends RpcAcsRequest<ListClusterVersion
 
 	private String clusterType;
 
+	private String mseVersion;
+
 	private String acceptLanguage;
 	public ListClusterVersionsRequest() {
 		super("mse", "2019-05-31", "ListClusterVersions", "mse");
@@ -58,6 +60,17 @@ public class ListClusterVersionsRequest extends RpcAcsRequest<ListClusterVersion
 		this.clusterType = clusterType;
 		if(clusterType != null){
 			putQueryParameter("ClusterType", clusterType);
+		}
+	}
+
+	public String getMseVersion() {
+		return this.mseVersion;
+	}
+
+	public void setMseVersion(String mseVersion) {
+		this.mseVersion = mseVersion;
+		if(mseVersion != null){
+			putQueryParameter("MseVersion", mseVersion);
 		}
 	}
 

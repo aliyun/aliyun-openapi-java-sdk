@@ -27,9 +27,9 @@ public class UpdateGatewayRouteWafStatusRequest extends RpcAcsRequest<UpdateGate
 
 	private String mseSessionId;
 
-	private Boolean enableWaf;
-
 	private String gatewayUniqueId;
+
+	private Boolean enableWaf;
 
 	private Long routeId;
 
@@ -54,17 +54,6 @@ public class UpdateGatewayRouteWafStatusRequest extends RpcAcsRequest<UpdateGate
 		}
 	}
 
-	public Boolean getEnableWaf() {
-		return this.enableWaf;
-	}
-
-	public void setEnableWaf(Boolean enableWaf) {
-		this.enableWaf = enableWaf;
-		if(enableWaf != null){
-			putQueryParameter("EnableWaf", enableWaf.toString());
-		}
-	}
-
 	public String getGatewayUniqueId() {
 		return this.gatewayUniqueId;
 	}
@@ -73,6 +62,17 @@ public class UpdateGatewayRouteWafStatusRequest extends RpcAcsRequest<UpdateGate
 		this.gatewayUniqueId = gatewayUniqueId;
 		if(gatewayUniqueId != null){
 			putQueryParameter("GatewayUniqueId", gatewayUniqueId);
+		}
+	}
+
+	public Boolean getEnableWaf() {
+		return this.enableWaf;
+	}
+
+	public void setEnableWaf(Boolean enableWaf) {
+		this.enableWaf = enableWaf;
+		if(enableWaf != null){
+			putQueryParameter("EnableWaf", enableWaf.toString());
 		}
 	}
 

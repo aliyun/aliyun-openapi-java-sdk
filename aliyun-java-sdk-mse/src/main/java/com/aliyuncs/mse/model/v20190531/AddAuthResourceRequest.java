@@ -33,6 +33,8 @@ public class AddAuthResourceRequest extends RpcAcsRequest<AddAuthResourceRespons
 
 	private String path;
 
+	private String matchType;
+
 	private Long authId;
 
 	private String acceptLanguage;
@@ -86,6 +88,17 @@ public class AddAuthResourceRequest extends RpcAcsRequest<AddAuthResourceRespons
 		this.path = path;
 		if(path != null){
 			putQueryParameter("Path", path);
+		}
+	}
+
+	public String getMatchType() {
+		return this.matchType;
+	}
+
+	public void setMatchType(String matchType) {
+		this.matchType = matchType;
+		if(matchType != null){
+			putQueryParameter("MatchType", matchType);
 		}
 	}
 

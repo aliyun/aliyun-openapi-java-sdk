@@ -372,6 +372,9 @@ public class UpdateGatewayRouteRequest extends RpcAcsRequest<UpdateGatewayRouteR
 			@SerializedName("DubboServiceVersion")
 			private String dubboServiceVersion;
 
+			@SerializedName("DubboServiceGroup")
+			private String dubboServiceGroup;
+
 			public String getDubboServiceName() {
 				return this.dubboServiceName;
 			}
@@ -394,6 +397,14 @@ public class UpdateGatewayRouteRequest extends RpcAcsRequest<UpdateGatewayRouteR
 
 			public void setDubboServiceVersion(String dubboServiceVersion) {
 				this.dubboServiceVersion = dubboServiceVersion;
+			}
+
+			public String getDubboServiceGroup() {
+				return this.dubboServiceGroup;
+			}
+
+			public void setDubboServiceGroup(String dubboServiceGroup) {
+				this.dubboServiceGroup = dubboServiceGroup;
 			}
 
 			public static class MothedMapListItem {

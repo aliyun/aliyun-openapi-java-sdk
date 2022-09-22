@@ -22,7 +22,7 @@ import com.aliyuncs.mse.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListAnsServiceClustersRequest extends RpcAcsRequest<ListAnsServiceClustersResponse> {
+public class GetServiceListenersRequest extends RpcAcsRequest<GetServiceListenersResponse> {
 	   
 
 	private String mseSessionId;
@@ -33,9 +33,9 @@ public class ListAnsServiceClustersRequest extends RpcAcsRequest<ListAnsServiceC
 
 	private String namespaceId;
 
-	private String requestPars;
-
 	private Integer pageSize;
+
+	private String requestPars;
 
 	private String serviceName;
 
@@ -43,12 +43,14 @@ public class ListAnsServiceClustersRequest extends RpcAcsRequest<ListAnsServiceC
 
 	private String groupName;
 
+	private String hasIpCount;
+
 	private String instanceId;
 
 	private String acceptLanguage;
-	public ListAnsServiceClustersRequest() {
-		super("mse", "2019-05-31", "ListAnsServiceClusters", "mse");
-		setMethod(MethodType.GET);
+	public GetServiceListenersRequest() {
+		super("mse", "2019-05-31", "GetServiceListeners", "mse");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -99,17 +101,6 @@ public class ListAnsServiceClustersRequest extends RpcAcsRequest<ListAnsServiceC
 		}
 	}
 
-	public String getRequestPars() {
-		return this.requestPars;
-	}
-
-	public void setRequestPars(String requestPars) {
-		this.requestPars = requestPars;
-		if(requestPars != null){
-			putQueryParameter("RequestPars", requestPars);
-		}
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -118,6 +109,17 @@ public class ListAnsServiceClustersRequest extends RpcAcsRequest<ListAnsServiceC
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getRequestPars() {
+		return this.requestPars;
+	}
+
+	public void setRequestPars(String requestPars) {
+		this.requestPars = requestPars;
+		if(requestPars != null){
+			putQueryParameter("RequestPars", requestPars);
 		}
 	}
 
@@ -154,6 +156,17 @@ public class ListAnsServiceClustersRequest extends RpcAcsRequest<ListAnsServiceC
 		}
 	}
 
+	public String getHasIpCount() {
+		return this.hasIpCount;
+	}
+
+	public void setHasIpCount(String hasIpCount) {
+		this.hasIpCount = hasIpCount;
+		if(hasIpCount != null){
+			putQueryParameter("HasIpCount", hasIpCount);
+		}
+	}
+
 	public String getInstanceId() {
 		return this.instanceId;
 	}
@@ -177,8 +190,8 @@ public class ListAnsServiceClustersRequest extends RpcAcsRequest<ListAnsServiceC
 	}
 
 	@Override
-	public Class<ListAnsServiceClustersResponse> getResponseClass() {
-		return ListAnsServiceClustersResponse.class;
+	public Class<GetServiceListenersResponse> getResponseClass() {
+		return GetServiceListenersResponse.class;
 	}
 
 }

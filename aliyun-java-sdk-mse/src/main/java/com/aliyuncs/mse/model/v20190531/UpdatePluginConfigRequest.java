@@ -29,23 +29,23 @@ public class UpdatePluginConfigRequest extends RpcAcsRequest<UpdatePluginConfigR
 
 	private String gatewayUniqueId;
 
-	private Long pluginId;
-
-	private String gmtCreate;
-
 	private String gmtModified;
 
 	private Boolean enable;
+
+	private Long id;
+
+	private Long gatewayId;
+
+	private Long pluginId;
+
+	private String gmtCreate;
 
 	private String acceptLanguage;
 
 	private Integer configLevel;
 
-	private Long id;
-
 	private String config;
-
-	private Long gatewayId;
 	public UpdatePluginConfigRequest() {
 		super("mse", "2019-05-31", "UpdatePluginConfig", "mse");
 		setMethod(MethodType.POST);
@@ -77,28 +77,6 @@ public class UpdatePluginConfigRequest extends RpcAcsRequest<UpdatePluginConfigR
 		}
 	}
 
-	public Long getPluginId() {
-		return this.pluginId;
-	}
-
-	public void setPluginId(Long pluginId) {
-		this.pluginId = pluginId;
-		if(pluginId != null){
-			putQueryParameter("PluginId", pluginId.toString());
-		}
-	}
-
-	public String getGmtCreate() {
-		return this.gmtCreate;
-	}
-
-	public void setGmtCreate(String gmtCreate) {
-		this.gmtCreate = gmtCreate;
-		if(gmtCreate != null){
-			putQueryParameter("GmtCreate", gmtCreate);
-		}
-	}
-
 	public String getGmtModified() {
 		return this.gmtModified;
 	}
@@ -118,6 +96,50 @@ public class UpdatePluginConfigRequest extends RpcAcsRequest<UpdatePluginConfigR
 		this.enable = enable;
 		if(enable != null){
 			putQueryParameter("Enable", enable.toString());
+		}
+	}
+
+	public Long getId() {
+		return this.id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+		if(id != null){
+			putQueryParameter("Id", id.toString());
+		}
+	}
+
+	public Long getGatewayId() {
+		return this.gatewayId;
+	}
+
+	public void setGatewayId(Long gatewayId) {
+		this.gatewayId = gatewayId;
+		if(gatewayId != null){
+			putQueryParameter("GatewayId", gatewayId.toString());
+		}
+	}
+
+	public Long getPluginId() {
+		return this.pluginId;
+	}
+
+	public void setPluginId(Long pluginId) {
+		this.pluginId = pluginId;
+		if(pluginId != null){
+			putQueryParameter("PluginId", pluginId.toString());
+		}
+	}
+
+	public String getGmtCreate() {
+		return this.gmtCreate;
+	}
+
+	public void setGmtCreate(String gmtCreate) {
+		this.gmtCreate = gmtCreate;
+		if(gmtCreate != null){
+			putQueryParameter("GmtCreate", gmtCreate);
 		}
 	}
 
@@ -143,17 +165,6 @@ public class UpdatePluginConfigRequest extends RpcAcsRequest<UpdatePluginConfigR
 		}
 	}
 
-	public Long getId() {
-		return this.id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-		if(id != null){
-			putQueryParameter("Id", id.toString());
-		}
-	}
-
 	public String getConfig() {
 		return this.config;
 	}
@@ -162,17 +173,6 @@ public class UpdatePluginConfigRequest extends RpcAcsRequest<UpdatePluginConfigR
 		this.config = config;
 		if(config != null){
 			putQueryParameter("Config", config);
-		}
-	}
-
-	public Long getGatewayId() {
-		return this.gatewayId;
-	}
-
-	public void setGatewayId(Long gatewayId) {
-		this.gatewayId = gatewayId;
-		if(gatewayId != null){
-			putQueryParameter("GatewayId", gatewayId.toString());
 		}
 	}
 

@@ -152,6 +152,7 @@ public class ListGatewayRouteResponseUnmarshaller {
 				HttpDubboTranscoder httpDubboTranscoder = new HttpDubboTranscoder();
 				httpDubboTranscoder.setDubboServiceName(_ctx.stringValue("ListGatewayRouteResponse.Data.Result["+ i +"].RouteServices["+ j +"].HttpDubboTranscoder.DubboServiceName"));
 				httpDubboTranscoder.setDubboServiceVersion(_ctx.stringValue("ListGatewayRouteResponse.Data.Result["+ i +"].RouteServices["+ j +"].HttpDubboTranscoder.DubboServiceVersion"));
+				httpDubboTranscoder.setDubboServiceGroup(_ctx.stringValue("ListGatewayRouteResponse.Data.Result["+ i +"].RouteServices["+ j +"].HttpDubboTranscoder.DubboServiceGroup"));
 
 				List<MothedMapListItem> mothedMapList = new ArrayList<MothedMapListItem>();
 				for (int k = 0; k < _ctx.lengthValue("ListGatewayRouteResponse.Data.Result["+ i +"].RouteServices["+ j +"].HttpDubboTranscoder.MothedMapList.Length"); k++) {

@@ -29,11 +29,11 @@ public class PullServicesRequest extends RpcAcsRequest<PullServicesResponse> {
 
 	private String gatewayUniqueId;
 
+	private String sourceType;
+
 	private String namespace;
 
 	private String acceptLanguage;
-
-	private String sourceType;
 	public PullServicesRequest() {
 		super("mse", "2019-05-31", "PullServices", "mse");
 		setMethod(MethodType.POST);
@@ -65,6 +65,17 @@ public class PullServicesRequest extends RpcAcsRequest<PullServicesResponse> {
 		}
 	}
 
+	public String getSourceType() {
+		return this.sourceType;
+	}
+
+	public void setSourceType(String sourceType) {
+		this.sourceType = sourceType;
+		if(sourceType != null){
+			putQueryParameter("SourceType", sourceType);
+		}
+	}
+
 	public String getNamespace() {
 		return this.namespace;
 	}
@@ -84,17 +95,6 @@ public class PullServicesRequest extends RpcAcsRequest<PullServicesResponse> {
 		this.acceptLanguage = acceptLanguage;
 		if(acceptLanguage != null){
 			putQueryParameter("AcceptLanguage", acceptLanguage);
-		}
-	}
-
-	public String getSourceType() {
-		return this.sourceType;
-	}
-
-	public void setSourceType(String sourceType) {
-		this.sourceType = sourceType;
-		if(sourceType != null){
-			putQueryParameter("SourceType", sourceType);
 		}
 	}
 

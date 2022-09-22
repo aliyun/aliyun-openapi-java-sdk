@@ -29,11 +29,11 @@ public class DeleteGatewayServiceRequest extends RpcAcsRequest<DeleteGatewayServ
 
 	private String gatewayUniqueId;
 
+	private Long gatewayId;
+
 	private String acceptLanguage;
 
 	private String serviceId;
-
-	private Long gatewayId;
 	public DeleteGatewayServiceRequest() {
 		super("mse", "2019-05-31", "DeleteGatewayService", "mse");
 		setMethod(MethodType.POST);
@@ -65,6 +65,17 @@ public class DeleteGatewayServiceRequest extends RpcAcsRequest<DeleteGatewayServ
 		}
 	}
 
+	public Long getGatewayId() {
+		return this.gatewayId;
+	}
+
+	public void setGatewayId(Long gatewayId) {
+		this.gatewayId = gatewayId;
+		if(gatewayId != null){
+			putQueryParameter("GatewayId", gatewayId.toString());
+		}
+	}
+
 	public String getAcceptLanguage() {
 		return this.acceptLanguage;
 	}
@@ -84,17 +95,6 @@ public class DeleteGatewayServiceRequest extends RpcAcsRequest<DeleteGatewayServ
 		this.serviceId = serviceId;
 		if(serviceId != null){
 			putQueryParameter("ServiceId", serviceId);
-		}
-	}
-
-	public Long getGatewayId() {
-		return this.gatewayId;
-	}
-
-	public void setGatewayId(Long gatewayId) {
-		this.gatewayId = gatewayId;
-		if(gatewayId != null){
-			putQueryParameter("GatewayId", gatewayId.toString());
 		}
 	}
 
