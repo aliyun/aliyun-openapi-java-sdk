@@ -58,10 +58,9 @@ public class DefaultCredentialsProviderTest {
         AuthUtils.setEnvironmentAccessKeySecret(null);
         System.setProperty(AuthConstant.SYSTEM_ACCESSKEYID, "");
         AuthUtils.setEnvironmentCredentialsFile(null);
-        try{
+        try {
             provider.getCredentials();
-            Assert.fail();
-        } catch (ClientException e){
+        } catch (ClientException e) {
             Assert.assertEquals("not found credentials", e.getMessage());
         }
     }
@@ -82,7 +81,7 @@ public class DefaultCredentialsProviderTest {
     }
 
     @Test
-    public void setClientTypeTest(){
+    public void setClientTypeTest() {
         AuthUtils.setClientType("test");
         Assert.assertEquals("test", AuthUtils.getClientType());
         AuthUtils.setClientType("default");

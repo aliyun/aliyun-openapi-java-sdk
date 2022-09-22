@@ -1,5 +1,7 @@
 package com.aliyuncs.exceptions;
 
+import java.util.Map;
+
 public class ClientException extends Exception {
 
     private static final long serialVersionUID = 534996425110290578L;
@@ -13,6 +15,15 @@ public class ClientException extends Exception {
     private ErrorType errorType;
 
     private String errorDescription;
+
+    private Map<String, Object> accessDeniedDetail;
+
+    public ClientException(String errorCode, String errorMessage, String requestId, String errorDescription, Map<String, Object> accessDeniedDetail) {
+        this(errorCode, errorMessage);
+        this.setErrorDescription(errorDescription);
+        this.setRequestId(requestId);
+        this.setAccessDeniedDetail(accessDeniedDetail);
+    }
 
     public ClientException(String errorCode, String errorMessage, String requestId, String errorDescription) {
         this(errorCode, errorMessage);
@@ -88,6 +99,14 @@ public class ClientException extends Exception {
 
     public void setErrorDescription(String errorDescription) {
         this.errorDescription = errorDescription;
+    }
+
+    public Map<String, Object> getAccessDeniedDetail() {
+        return accessDeniedDetail;
+    }
+
+    public void setAccessDeniedDetail(Map<String, Object> accessDeniedDetail) {
+        this.accessDeniedDetail = accessDeniedDetail;
     }
 
     @Override
