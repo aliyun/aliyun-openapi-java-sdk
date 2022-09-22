@@ -2,6 +2,8 @@ package com.aliyuncs;
 
 import com.aliyuncs.transform.UnmarshallerContext;
 
+import java.util.Map;
+
 public class AcsError extends AcsResponse {
 
     private int statusCode;
@@ -9,6 +11,7 @@ public class AcsError extends AcsResponse {
     private String errorMessage;
     private String requestId;
     private String errorDescription;
+    private Map<String, Object> accessDeniedDetail;
 
     public String getErrorCode() {
         return errorCode;
@@ -55,6 +58,14 @@ public class AcsError extends AcsResponse {
         this.requestId = requestId;
     }
 
+    public Map<String, Object> getAccessDeniedDetail() {
+        return accessDeniedDetail;
+    }
+
+    public void setAccessDeniedDetail(Map<String, Object> accessDeniedDetail) {
+        this.accessDeniedDetail = accessDeniedDetail;
+    }
+
     @Override
     public String toString() {
         final StringBuffer sb = new StringBuffer("AcsError{");
@@ -63,6 +74,9 @@ public class AcsError extends AcsResponse {
         sb.append(", errorMessage='").append(errorMessage).append('\'');
         sb.append(", requestId='").append(requestId).append('\'');
         sb.append(", errorDescription='").append(errorDescription).append('\'');
+        if (null != accessDeniedDetail) {
+            sb.append(", accessDeniedDetail='").append(accessDeniedDetail).append('\'');
+        }
         sb.append('}');
         return sb.toString();
     }

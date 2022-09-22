@@ -180,7 +180,7 @@ public class DefaultAcsClient implements IAcsClient {
             if (500 <= baseResponse.getStatus()) {
                 throw new ServerException(error.getErrorCode(), error.getErrorMessage(), error.getRequestId());
             } else {
-                throw new ClientException(error.getErrorCode(), error.getErrorMessage(), error.getRequestId());
+                throw new ClientException(error.getErrorCode(), error.getErrorMessage(), error.getRequestId(), error.getErrorDescription(), error.getAccessDeniedDetail());
             }
         }
     }
@@ -243,7 +243,7 @@ public class DefaultAcsClient implements IAcsClient {
                     }
                 }
             }
-            throw new ClientException(error.getErrorCode(), error.getErrorMessage(), error.getRequestId(), error.getErrorDescription());
+            throw new ClientException(error.getErrorCode(), error.getErrorMessage(), error.getRequestId(), error.getErrorDescription(), error.getAccessDeniedDetail());
         }
     }
 
@@ -377,7 +377,7 @@ public class DefaultAcsClient implements IAcsClient {
                         if (500 <= response.getStatus()) {
                             ex = new ServerException(error.getErrorCode(), error.getErrorMessage(), error.getRequestId());
                         } else {
-                            ex = new ClientException(error.getErrorCode(), error.getErrorMessage(), error.getRequestId());
+                            ex = new ClientException(error.getErrorCode(), error.getErrorMessage(), error.getRequestId(), error.getErrorDescription(), error.getAccessDeniedDetail());
                         }
                     }
                 } catch (SocketTimeoutException exp) {
