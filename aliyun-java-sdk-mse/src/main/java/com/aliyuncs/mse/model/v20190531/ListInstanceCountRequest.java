@@ -22,18 +22,20 @@ import com.aliyuncs.mse.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryClusterSpecificationRequest extends RpcAcsRequest<QueryClusterSpecificationResponse> {
+public class ListInstanceCountRequest extends RpcAcsRequest<ListInstanceCountResponse> {
 	   
 
 	private String mseSessionId;
 
-	private String connectType;
+	private String clusterType;
 
 	private String mseVersion;
 
+	private String requestPars;
+
 	private String acceptLanguage;
-	public QueryClusterSpecificationRequest() {
-		super("mse", "2019-05-31", "QueryClusterSpecification", "mse");
+	public ListInstanceCountRequest() {
+		super("mse", "2019-05-31", "ListInstanceCount", "mse");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -52,14 +54,14 @@ public class QueryClusterSpecificationRequest extends RpcAcsRequest<QueryCluster
 		}
 	}
 
-	public String getConnectType() {
-		return this.connectType;
+	public String getClusterType() {
+		return this.clusterType;
 	}
 
-	public void setConnectType(String connectType) {
-		this.connectType = connectType;
-		if(connectType != null){
-			putQueryParameter("ConnectType", connectType);
+	public void setClusterType(String clusterType) {
+		this.clusterType = clusterType;
+		if(clusterType != null){
+			putQueryParameter("ClusterType", clusterType);
 		}
 	}
 
@@ -71,6 +73,17 @@ public class QueryClusterSpecificationRequest extends RpcAcsRequest<QueryCluster
 		this.mseVersion = mseVersion;
 		if(mseVersion != null){
 			putQueryParameter("MseVersion", mseVersion);
+		}
+	}
+
+	public String getRequestPars() {
+		return this.requestPars;
+	}
+
+	public void setRequestPars(String requestPars) {
+		this.requestPars = requestPars;
+		if(requestPars != null){
+			putQueryParameter("RequestPars", requestPars);
 		}
 	}
 
@@ -86,8 +99,8 @@ public class QueryClusterSpecificationRequest extends RpcAcsRequest<QueryCluster
 	}
 
 	@Override
-	public Class<QueryClusterSpecificationResponse> getResponseClass() {
-		return QueryClusterSpecificationResponse.class;
+	public Class<ListInstanceCountResponse> getResponseClass() {
+		return ListInstanceCountResponse.class;
 	}
 
 }
