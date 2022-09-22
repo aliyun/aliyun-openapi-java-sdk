@@ -57,6 +57,7 @@ public class QueryAdvancedDomainListResponseUnmarshaller {
 			domain.setProductId(_ctx.stringValue("QueryAdvancedDomainListResponse.Data["+ i +"].ProductId"));
 			domain.setDomainStatus(_ctx.stringValue("QueryAdvancedDomainListResponse.Data["+ i +"].DomainStatus"));
 			domain.setDomainType(_ctx.stringValue("QueryAdvancedDomainListResponse.Data["+ i +"].DomainType"));
+			domain.setResourceGroupId(_ctx.stringValue("QueryAdvancedDomainListResponse.Data["+ i +"].ResourceGroupId"));
 
 			List<String> dnsList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("QueryAdvancedDomainListResponse.Data["+ i +"].DnsList.Length"); j++) {

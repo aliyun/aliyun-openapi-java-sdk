@@ -56,6 +56,7 @@ public class QueryDomainByInstanceIdResponseUnmarshaller {
 		queryDomainByInstanceIdResponse.setExpirationCurrDateDiff(_ctx.integerValue("QueryDomainByInstanceIdResponse.ExpirationCurrDateDiff"));
 		queryDomainByInstanceIdResponse.setDomainType(_ctx.stringValue("QueryDomainByInstanceIdResponse.DomainType"));
 		queryDomainByInstanceIdResponse.setDomainStatus(_ctx.stringValue("QueryDomainByInstanceIdResponse.DomainStatus"));
+		queryDomainByInstanceIdResponse.setResourceGroupId(_ctx.stringValue("QueryDomainByInstanceIdResponse.ResourceGroupId"));
 
 		List<String> dnsList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("QueryDomainByInstanceIdResponse.DnsList.Length"); i++) {

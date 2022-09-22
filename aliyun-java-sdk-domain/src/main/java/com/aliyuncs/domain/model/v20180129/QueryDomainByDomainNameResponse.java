@@ -87,6 +87,8 @@ public class QueryDomainByDomainNameResponse extends AcsResponse {
 
 	private String domainStatus;
 
+	private String resourceGroupId;
+
 	private List<String> dnsList;
 
 	public String getEmail() {
@@ -335,6 +337,14 @@ public class QueryDomainByDomainNameResponse extends AcsResponse {
 
 	public void setDomainStatus(String domainStatus) {
 		this.domainStatus = domainStatus;
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
 	}
 
 	public List<String> getDnsList() {

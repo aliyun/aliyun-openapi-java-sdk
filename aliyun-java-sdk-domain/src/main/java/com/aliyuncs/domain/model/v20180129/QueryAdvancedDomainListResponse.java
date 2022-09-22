@@ -147,6 +147,8 @@ public class QueryAdvancedDomainListResponse extends AcsResponse {
 
 		private String domainType;
 
+		private String resourceGroupId;
+
 		private List<String> dnsList;
 
 		public String getDomainAuditStatus() {
@@ -307,6 +309,14 @@ public class QueryAdvancedDomainListResponse extends AcsResponse {
 
 		public void setDomainType(String domainType) {
 			this.domainType = domainType;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public List<String> getDnsList() {

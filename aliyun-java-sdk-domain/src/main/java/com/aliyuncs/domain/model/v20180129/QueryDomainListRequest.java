@@ -33,6 +33,8 @@ public class QueryDomainListRequest extends RpcAcsRequest<QueryDomainListRespons
 
 	private String orderByType;
 
+	private String resourceGroupId;
+
 	private Integer pageSize;
 
 	private String lang;
@@ -102,6 +104,17 @@ public class QueryDomainListRequest extends RpcAcsRequest<QueryDomainListRespons
 		this.orderByType = orderByType;
 		if(orderByType != null){
 			putQueryParameter("OrderByType", orderByType);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

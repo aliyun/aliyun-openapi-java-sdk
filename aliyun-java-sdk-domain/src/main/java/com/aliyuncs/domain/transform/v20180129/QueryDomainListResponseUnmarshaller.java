@@ -54,6 +54,7 @@ public class QueryDomainListResponseUnmarshaller {
 			domain.setProductId(_ctx.stringValue("QueryDomainListResponse.Data["+ i +"].ProductId"));
 			domain.setDomainStatus(_ctx.stringValue("QueryDomainListResponse.Data["+ i +"].DomainStatus"));
 			domain.setDomainType(_ctx.stringValue("QueryDomainListResponse.Data["+ i +"].DomainType"));
+			domain.setResourceGroupId(_ctx.stringValue("QueryDomainListResponse.Data["+ i +"].ResourceGroupId"));
 
 			data.add(domain);
 		}

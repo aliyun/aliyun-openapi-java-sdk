@@ -141,6 +141,8 @@ public class QueryDomainListResponse extends AcsResponse {
 
 		private String domainType;
 
+		private String resourceGroupId;
+
 		public String getDomainAuditStatus() {
 			return this.domainAuditStatus;
 		}
@@ -275,6 +277,14 @@ public class QueryDomainListResponse extends AcsResponse {
 
 		public void setDomainType(String domainType) {
 			this.domainType = domainType;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 	}
 

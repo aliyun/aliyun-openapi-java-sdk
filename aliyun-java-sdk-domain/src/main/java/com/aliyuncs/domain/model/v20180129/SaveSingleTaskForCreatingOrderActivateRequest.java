@@ -27,29 +27,47 @@ public class SaveSingleTaskForCreatingOrderActivateRequest extends RpcAcsRequest
 
 	private String country;
 
+	private String dns2;
+
+	private String dns1;
+
+	private String couponNo;
+
+	private String zhCity;
+
+	private String resourceGroupId;
+
+	private String telExt;
+
+	private String province;
+
+	private String domainName;
+
+	private String zhAddress;
+
+	private String telephone;
+
+	private String zhProvince;
+
+	private String registrantOrganization;
+
+	private String promotionNo;
+
+	private String registrantName;
+
+	private Boolean usePromotion;
+
 	private Integer subscriptionDuration;
 
 	private Boolean permitPremiumActivation;
 
 	private String city;
 
-	private String dns2;
-
-	private String dns1;
-
 	private Long registrantProfileId;
-
-	private String couponNo;
 
 	private Boolean aliyunDns;
 
-	private String zhCity;
-
-	private String telExt;
-
 	private String zhRegistrantName;
-
-	private String province;
 
 	private String postalCode;
 
@@ -63,31 +81,15 @@ public class SaveSingleTaskForCreatingOrderActivateRequest extends RpcAcsRequest
 
 	private String telArea;
 
-	private String domainName;
-
-	private String zhAddress;
-
 	private String registrantType;
-
-	private String telephone;
 
 	private Boolean trademarkDomainActivation;
 
 	private Boolean useCoupon;
 
-	private String zhProvince;
-
-	private String registrantOrganization;
-
-	private String promotionNo;
-
 	private Boolean enableDomainProxy;
 
 	private String userClientIp;
-
-	private String registrantName;
-
-	private Boolean usePromotion;
 	public SaveSingleTaskForCreatingOrderActivateRequest() {
 		super("Domain", "2018-01-29", "SaveSingleTaskForCreatingOrderActivate");
 		setMethod(MethodType.POST);
@@ -105,6 +107,171 @@ public class SaveSingleTaskForCreatingOrderActivateRequest extends RpcAcsRequest
 		this.country = country;
 		if(country != null){
 			putQueryParameter("Country", country);
+		}
+	}
+
+	public String getDns2() {
+		return this.dns2;
+	}
+
+	public void setDns2(String dns2) {
+		this.dns2 = dns2;
+		if(dns2 != null){
+			putQueryParameter("Dns2", dns2);
+		}
+	}
+
+	public String getDns1() {
+		return this.dns1;
+	}
+
+	public void setDns1(String dns1) {
+		this.dns1 = dns1;
+		if(dns1 != null){
+			putQueryParameter("Dns1", dns1);
+		}
+	}
+
+	public String getCouponNo() {
+		return this.couponNo;
+	}
+
+	public void setCouponNo(String couponNo) {
+		this.couponNo = couponNo;
+		if(couponNo != null){
+			putQueryParameter("CouponNo", couponNo);
+		}
+	}
+
+	public String getZhCity() {
+		return this.zhCity;
+	}
+
+	public void setZhCity(String zhCity) {
+		this.zhCity = zhCity;
+		if(zhCity != null){
+			putQueryParameter("ZhCity", zhCity);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getTelExt() {
+		return this.telExt;
+	}
+
+	public void setTelExt(String telExt) {
+		this.telExt = telExt;
+		if(telExt != null){
+			putQueryParameter("TelExt", telExt);
+		}
+	}
+
+	public String getProvince() {
+		return this.province;
+	}
+
+	public void setProvince(String province) {
+		this.province = province;
+		if(province != null){
+			putQueryParameter("Province", province);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public String getZhAddress() {
+		return this.zhAddress;
+	}
+
+	public void setZhAddress(String zhAddress) {
+		this.zhAddress = zhAddress;
+		if(zhAddress != null){
+			putQueryParameter("ZhAddress", zhAddress);
+		}
+	}
+
+	public String getTelephone() {
+		return this.telephone;
+	}
+
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
+		if(telephone != null){
+			putQueryParameter("Telephone", telephone);
+		}
+	}
+
+	public String getZhProvince() {
+		return this.zhProvince;
+	}
+
+	public void setZhProvince(String zhProvince) {
+		this.zhProvince = zhProvince;
+		if(zhProvince != null){
+			putQueryParameter("ZhProvince", zhProvince);
+		}
+	}
+
+	public String getRegistrantOrganization() {
+		return this.registrantOrganization;
+	}
+
+	public void setRegistrantOrganization(String registrantOrganization) {
+		this.registrantOrganization = registrantOrganization;
+		if(registrantOrganization != null){
+			putQueryParameter("RegistrantOrganization", registrantOrganization);
+		}
+	}
+
+	public String getPromotionNo() {
+		return this.promotionNo;
+	}
+
+	public void setPromotionNo(String promotionNo) {
+		this.promotionNo = promotionNo;
+		if(promotionNo != null){
+			putQueryParameter("PromotionNo", promotionNo);
+		}
+	}
+
+	public String getRegistrantName() {
+		return this.registrantName;
+	}
+
+	public void setRegistrantName(String registrantName) {
+		this.registrantName = registrantName;
+		if(registrantName != null){
+			putQueryParameter("RegistrantName", registrantName);
+		}
+	}
+
+	public Boolean getUsePromotion() {
+		return this.usePromotion;
+	}
+
+	public void setUsePromotion(Boolean usePromotion) {
+		this.usePromotion = usePromotion;
+		if(usePromotion != null){
+			putQueryParameter("UsePromotion", usePromotion.toString());
 		}
 	}
 
@@ -141,28 +308,6 @@ public class SaveSingleTaskForCreatingOrderActivateRequest extends RpcAcsRequest
 		}
 	}
 
-	public String getDns2() {
-		return this.dns2;
-	}
-
-	public void setDns2(String dns2) {
-		this.dns2 = dns2;
-		if(dns2 != null){
-			putQueryParameter("Dns2", dns2);
-		}
-	}
-
-	public String getDns1() {
-		return this.dns1;
-	}
-
-	public void setDns1(String dns1) {
-		this.dns1 = dns1;
-		if(dns1 != null){
-			putQueryParameter("Dns1", dns1);
-		}
-	}
-
 	public Long getRegistrantProfileId() {
 		return this.registrantProfileId;
 	}
@@ -171,17 +316,6 @@ public class SaveSingleTaskForCreatingOrderActivateRequest extends RpcAcsRequest
 		this.registrantProfileId = registrantProfileId;
 		if(registrantProfileId != null){
 			putQueryParameter("RegistrantProfileId", registrantProfileId.toString());
-		}
-	}
-
-	public String getCouponNo() {
-		return this.couponNo;
-	}
-
-	public void setCouponNo(String couponNo) {
-		this.couponNo = couponNo;
-		if(couponNo != null){
-			putQueryParameter("CouponNo", couponNo);
 		}
 	}
 
@@ -196,28 +330,6 @@ public class SaveSingleTaskForCreatingOrderActivateRequest extends RpcAcsRequest
 		}
 	}
 
-	public String getZhCity() {
-		return this.zhCity;
-	}
-
-	public void setZhCity(String zhCity) {
-		this.zhCity = zhCity;
-		if(zhCity != null){
-			putQueryParameter("ZhCity", zhCity);
-		}
-	}
-
-	public String getTelExt() {
-		return this.telExt;
-	}
-
-	public void setTelExt(String telExt) {
-		this.telExt = telExt;
-		if(telExt != null){
-			putQueryParameter("TelExt", telExt);
-		}
-	}
-
 	public String getZhRegistrantName() {
 		return this.zhRegistrantName;
 	}
@@ -226,17 +338,6 @@ public class SaveSingleTaskForCreatingOrderActivateRequest extends RpcAcsRequest
 		this.zhRegistrantName = zhRegistrantName;
 		if(zhRegistrantName != null){
 			putQueryParameter("ZhRegistrantName", zhRegistrantName);
-		}
-	}
-
-	public String getProvince() {
-		return this.province;
-	}
-
-	public void setProvince(String province) {
-		this.province = province;
-		if(province != null){
-			putQueryParameter("Province", province);
 		}
 	}
 
@@ -306,28 +407,6 @@ public class SaveSingleTaskForCreatingOrderActivateRequest extends RpcAcsRequest
 		}
 	}
 
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
-		}
-	}
-
-	public String getZhAddress() {
-		return this.zhAddress;
-	}
-
-	public void setZhAddress(String zhAddress) {
-		this.zhAddress = zhAddress;
-		if(zhAddress != null){
-			putQueryParameter("ZhAddress", zhAddress);
-		}
-	}
-
 	public String getRegistrantType() {
 		return this.registrantType;
 	}
@@ -336,17 +415,6 @@ public class SaveSingleTaskForCreatingOrderActivateRequest extends RpcAcsRequest
 		this.registrantType = registrantType;
 		if(registrantType != null){
 			putQueryParameter("RegistrantType", registrantType);
-		}
-	}
-
-	public String getTelephone() {
-		return this.telephone;
-	}
-
-	public void setTelephone(String telephone) {
-		this.telephone = telephone;
-		if(telephone != null){
-			putQueryParameter("Telephone", telephone);
 		}
 	}
 
@@ -372,39 +440,6 @@ public class SaveSingleTaskForCreatingOrderActivateRequest extends RpcAcsRequest
 		}
 	}
 
-	public String getZhProvince() {
-		return this.zhProvince;
-	}
-
-	public void setZhProvince(String zhProvince) {
-		this.zhProvince = zhProvince;
-		if(zhProvince != null){
-			putQueryParameter("ZhProvince", zhProvince);
-		}
-	}
-
-	public String getRegistrantOrganization() {
-		return this.registrantOrganization;
-	}
-
-	public void setRegistrantOrganization(String registrantOrganization) {
-		this.registrantOrganization = registrantOrganization;
-		if(registrantOrganization != null){
-			putQueryParameter("RegistrantOrganization", registrantOrganization);
-		}
-	}
-
-	public String getPromotionNo() {
-		return this.promotionNo;
-	}
-
-	public void setPromotionNo(String promotionNo) {
-		this.promotionNo = promotionNo;
-		if(promotionNo != null){
-			putQueryParameter("PromotionNo", promotionNo);
-		}
-	}
-
 	public Boolean getEnableDomainProxy() {
 		return this.enableDomainProxy;
 	}
@@ -424,28 +459,6 @@ public class SaveSingleTaskForCreatingOrderActivateRequest extends RpcAcsRequest
 		this.userClientIp = userClientIp;
 		if(userClientIp != null){
 			putQueryParameter("UserClientIp", userClientIp);
-		}
-	}
-
-	public String getRegistrantName() {
-		return this.registrantName;
-	}
-
-	public void setRegistrantName(String registrantName) {
-		this.registrantName = registrantName;
-		if(registrantName != null){
-			putQueryParameter("RegistrantName", registrantName);
-		}
-	}
-
-	public Boolean getUsePromotion() {
-		return this.usePromotion;
-	}
-
-	public void setUsePromotion(Boolean usePromotion) {
-		this.usePromotion = usePromotion;
-		if(usePromotion != null){
-			putQueryParameter("UsePromotion", usePromotion.toString());
 		}
 	}
 

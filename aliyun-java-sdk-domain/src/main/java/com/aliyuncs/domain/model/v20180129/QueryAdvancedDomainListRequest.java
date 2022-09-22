@@ -33,6 +33,8 @@ public class QueryAdvancedDomainListRequest extends RpcAcsRequest<QueryAdvancedD
 
 	private Integer startLength;
 
+	private String resourceGroupId;
+
 	private Boolean excludedSuffix;
 
 	private Integer pageSize;
@@ -126,6 +128,17 @@ public class QueryAdvancedDomainListRequest extends RpcAcsRequest<QueryAdvancedD
 		this.startLength = startLength;
 		if(startLength != null){
 			putQueryParameter("StartLength", startLength.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
