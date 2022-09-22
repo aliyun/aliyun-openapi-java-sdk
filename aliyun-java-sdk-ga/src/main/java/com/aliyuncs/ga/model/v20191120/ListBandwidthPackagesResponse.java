@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListBandwidthPackagesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
-
-	private Integer pageNumber;
 
 	private Integer pageSize;
 
+	private String requestId;
+
+	private Integer pageNumber;
+
 	private List<BandwidthPackage> bandwidthPackages;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class ListBandwidthPackagesResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<BandwidthPackage> getBandwidthPackages() {
@@ -77,105 +77,37 @@ public class ListBandwidthPackagesResponse extends AcsResponse {
 
 	public static class BandwidthPackage {
 
-		private String bandwidthPackageId;
-
-		private String name;
-
-		private String description;
-
-		private String state;
-
-		private Integer bandwidth;
-
-		private String chargeType;
-
-		private String expiredTime;
-
-		private String createTime;
-
-		private String regionId;
-
 		private String type;
 
 		private String bandwidthType;
 
+		private String state;
+
+		private String createTime;
+
+		private String chargeType;
+
+		private String regionId;
+
 		private String cbnGeographicRegionIdA;
+
+		private String bandwidthPackageId;
+
+		private Integer bandwidth;
+
+		private String description;
+
+		private String expiredTime;
 
 		private String cbnGeographicRegionIdB;
 
+		private String name;
+
+		private String billingType;
+
+		private Integer ratio;
+
 		private List<String> accelerators;
-
-		public String getBandwidthPackageId() {
-			return this.bandwidthPackageId;
-		}
-
-		public void setBandwidthPackageId(String bandwidthPackageId) {
-			this.bandwidthPackageId = bandwidthPackageId;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getState() {
-			return this.state;
-		}
-
-		public void setState(String state) {
-			this.state = state;
-		}
-
-		public Integer getBandwidth() {
-			return this.bandwidth;
-		}
-
-		public void setBandwidth(Integer bandwidth) {
-			this.bandwidth = bandwidth;
-		}
-
-		public String getChargeType() {
-			return this.chargeType;
-		}
-
-		public void setChargeType(String chargeType) {
-			this.chargeType = chargeType;
-		}
-
-		public String getExpiredTime() {
-			return this.expiredTime;
-		}
-
-		public void setExpiredTime(String expiredTime) {
-			this.expiredTime = expiredTime;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
 
 		public String getType() {
 			return this.type;
@@ -193,6 +125,38 @@ public class ListBandwidthPackagesResponse extends AcsResponse {
 			this.bandwidthType = bandwidthType;
 		}
 
+		public String getState() {
+			return this.state;
+		}
+
+		public void setState(String state) {
+			this.state = state;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getChargeType() {
+			return this.chargeType;
+		}
+
+		public void setChargeType(String chargeType) {
+			this.chargeType = chargeType;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
 		public String getCbnGeographicRegionIdA() {
 			return this.cbnGeographicRegionIdA;
 		}
@@ -201,12 +165,68 @@ public class ListBandwidthPackagesResponse extends AcsResponse {
 			this.cbnGeographicRegionIdA = cbnGeographicRegionIdA;
 		}
 
+		public String getBandwidthPackageId() {
+			return this.bandwidthPackageId;
+		}
+
+		public void setBandwidthPackageId(String bandwidthPackageId) {
+			this.bandwidthPackageId = bandwidthPackageId;
+		}
+
+		public Integer getBandwidth() {
+			return this.bandwidth;
+		}
+
+		public void setBandwidth(Integer bandwidth) {
+			this.bandwidth = bandwidth;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getExpiredTime() {
+			return this.expiredTime;
+		}
+
+		public void setExpiredTime(String expiredTime) {
+			this.expiredTime = expiredTime;
+		}
+
 		public String getCbnGeographicRegionIdB() {
 			return this.cbnGeographicRegionIdB;
 		}
 
 		public void setCbnGeographicRegionIdB(String cbnGeographicRegionIdB) {
 			this.cbnGeographicRegionIdB = cbnGeographicRegionIdB;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getBillingType() {
+			return this.billingType;
+		}
+
+		public void setBillingType(String billingType) {
+			this.billingType = billingType;
+		}
+
+		public Integer getRatio() {
+			return this.ratio;
+		}
+
+		public void setRatio(Integer ratio) {
+			this.ratio = ratio;
 		}
 
 		public List<String> getAccelerators() {

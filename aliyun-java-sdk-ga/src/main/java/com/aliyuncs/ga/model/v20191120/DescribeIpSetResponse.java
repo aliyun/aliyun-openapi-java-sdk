@@ -25,25 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeIpSetResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String ipSetId;
 
-	private String accelerateRegionId;
+	private String requestId;
 
-	private Integer bandwidth;
+	private String ipVersion;
 
 	private String state;
 
+	private Integer bandwidth;
+
+	private String accelerateRegionId;
+
+	private String acceleratorId;
+
 	private List<String> ipAddressList;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getIpSetId() {
 		return this.ipSetId;
@@ -53,12 +49,28 @@ public class DescribeIpSetResponse extends AcsResponse {
 		this.ipSetId = ipSetId;
 	}
 
-	public String getAccelerateRegionId() {
-		return this.accelerateRegionId;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setAccelerateRegionId(String accelerateRegionId) {
-		this.accelerateRegionId = accelerateRegionId;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getIpVersion() {
+		return this.ipVersion;
+	}
+
+	public void setIpVersion(String ipVersion) {
+		this.ipVersion = ipVersion;
+	}
+
+	public String getState() {
+		return this.state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
 	}
 
 	public Integer getBandwidth() {
@@ -69,12 +81,20 @@ public class DescribeIpSetResponse extends AcsResponse {
 		this.bandwidth = bandwidth;
 	}
 
-	public String getState() {
-		return this.state;
+	public String getAccelerateRegionId() {
+		return this.accelerateRegionId;
 	}
 
-	public void setState(String state) {
-		this.state = state;
+	public void setAccelerateRegionId(String accelerateRegionId) {
+		this.accelerateRegionId = accelerateRegionId;
+	}
+
+	public String getAcceleratorId() {
+		return this.acceleratorId;
+	}
+
+	public void setAcceleratorId(String acceleratorId) {
+		this.acceleratorId = acceleratorId;
 	}
 
 	public List<String> getIpAddressList() {

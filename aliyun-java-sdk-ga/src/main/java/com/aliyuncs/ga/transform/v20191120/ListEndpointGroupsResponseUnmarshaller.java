@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.ga.model.v20191120.ListEndpointGroupsResponse;
 import com.aliyuncs.ga.model.v20191120.ListEndpointGroupsResponse.EndpointGroupsItem;
 import com.aliyuncs.ga.model.v20191120.ListEndpointGroupsResponse.EndpointGroupsItem.EndpointConfigurationsItem;
+import com.aliyuncs.ga.model.v20191120.ListEndpointGroupsResponse.EndpointGroupsItem.PortOverridesItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -29,35 +30,72 @@ public class ListEndpointGroupsResponseUnmarshaller {
 		
 		listEndpointGroupsResponse.setRequestId(_ctx.stringValue("ListEndpointGroupsResponse.RequestId"));
 		listEndpointGroupsResponse.setTotalCount(_ctx.integerValue("ListEndpointGroupsResponse.TotalCount"));
-		listEndpointGroupsResponse.setPageNumber(_ctx.integerValue("ListEndpointGroupsResponse.PageNumber"));
 		listEndpointGroupsResponse.setPageSize(_ctx.integerValue("ListEndpointGroupsResponse.PageSize"));
+		listEndpointGroupsResponse.setPageNumber(_ctx.integerValue("ListEndpointGroupsResponse.PageNumber"));
 
 		List<EndpointGroupsItem> endpointGroups = new ArrayList<EndpointGroupsItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListEndpointGroupsResponse.EndpointGroups.Length"); i++) {
 			EndpointGroupsItem endpointGroupsItem = new EndpointGroupsItem();
 			endpointGroupsItem.setEndpointGroupId(_ctx.stringValue("ListEndpointGroupsResponse.EndpointGroups["+ i +"].EndpointGroupId"));
-			endpointGroupsItem.setName(_ctx.stringValue("ListEndpointGroupsResponse.EndpointGroups["+ i +"].Name"));
-			endpointGroupsItem.setDescription(_ctx.stringValue("ListEndpointGroupsResponse.EndpointGroups["+ i +"].Description"));
-			endpointGroupsItem.setTrafficPercentage(_ctx.integerValue("ListEndpointGroupsResponse.EndpointGroups["+ i +"].TrafficPercentage"));
-			endpointGroupsItem.setEndpointGroupRegion(_ctx.stringValue("ListEndpointGroupsResponse.EndpointGroups["+ i +"].EndpointGroupRegion"));
 			endpointGroupsItem.setState(_ctx.stringValue("ListEndpointGroupsResponse.EndpointGroups["+ i +"].State"));
-			endpointGroupsItem.setListenerId(_ctx.stringValue("ListEndpointGroupsResponse.EndpointGroups["+ i +"].ListenerId"));
-			endpointGroupsItem.setHealthCheckIntervalSeconds(_ctx.integerValue("ListEndpointGroupsResponse.EndpointGroups["+ i +"].HealthCheckIntervalSeconds"));
 			endpointGroupsItem.setHealthCheckPath(_ctx.stringValue("ListEndpointGroupsResponse.EndpointGroups["+ i +"].HealthCheckPath"));
-			endpointGroupsItem.setHealthCheckPort(_ctx.integerValue("ListEndpointGroupsResponse.EndpointGroups["+ i +"].HealthCheckPort"));
+			endpointGroupsItem.setEndpointGroupRegion(_ctx.stringValue("ListEndpointGroupsResponse.EndpointGroups["+ i +"].EndpointGroupRegion"));
+			endpointGroupsItem.setHealthCheckIntervalSeconds(_ctx.integerValue("ListEndpointGroupsResponse.EndpointGroups["+ i +"].HealthCheckIntervalSeconds"));
+			endpointGroupsItem.setTrafficPercentage(_ctx.integerValue("ListEndpointGroupsResponse.EndpointGroups["+ i +"].TrafficPercentage"));
 			endpointGroupsItem.setHealthCheckProtocol(_ctx.stringValue("ListEndpointGroupsResponse.EndpointGroups["+ i +"].HealthCheckProtocol"));
 			endpointGroupsItem.setThresholdCount(_ctx.integerValue("ListEndpointGroupsResponse.EndpointGroups["+ i +"].ThresholdCount"));
+			endpointGroupsItem.setListenerId(_ctx.stringValue("ListEndpointGroupsResponse.EndpointGroups["+ i +"].ListenerId"));
+			endpointGroupsItem.setAcceleratorId(_ctx.stringValue("ListEndpointGroupsResponse.EndpointGroups["+ i +"].AcceleratorId"));
+			endpointGroupsItem.setEndpointGroupType(_ctx.stringValue("ListEndpointGroupsResponse.EndpointGroups["+ i +"].EndpointGroupType"));
+			endpointGroupsItem.setEndpointRequestProtocol(_ctx.stringValue("ListEndpointGroupsResponse.EndpointGroups["+ i +"].EndpointRequestProtocol"));
+			endpointGroupsItem.setDescription(_ctx.stringValue("ListEndpointGroupsResponse.EndpointGroups["+ i +"].Description"));
+			endpointGroupsItem.setName(_ctx.stringValue("ListEndpointGroupsResponse.EndpointGroups["+ i +"].Name"));
+			endpointGroupsItem.setHealthCheckPort(_ctx.integerValue("ListEndpointGroupsResponse.EndpointGroups["+ i +"].HealthCheckPort"));
+			endpointGroupsItem.setHealthCheckEnabled(_ctx.booleanValue("ListEndpointGroupsResponse.EndpointGroups["+ i +"].HealthCheckEnabled"));
+
+			List<String> endpointGroupIpList = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("ListEndpointGroupsResponse.EndpointGroups["+ i +"].EndpointGroupIpList.Length"); j++) {
+				endpointGroupIpList.add(_ctx.stringValue("ListEndpointGroupsResponse.EndpointGroups["+ i +"].EndpointGroupIpList["+ j +"]"));
+			}
+			endpointGroupsItem.setEndpointGroupIpList(endpointGroupIpList);
+
+			List<String> endpointGroupUnconfirmedIpList = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("ListEndpointGroupsResponse.EndpointGroups["+ i +"].EndpointGroupUnconfirmedIpList.Length"); j++) {
+				endpointGroupUnconfirmedIpList.add(_ctx.stringValue("ListEndpointGroupsResponse.EndpointGroups["+ i +"].EndpointGroupUnconfirmedIpList["+ j +"]"));
+			}
+			endpointGroupsItem.setEndpointGroupUnconfirmedIpList(endpointGroupUnconfirmedIpList);
+
+			List<String> forwardingRuleIds = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("ListEndpointGroupsResponse.EndpointGroups["+ i +"].ForwardingRuleIds.Length"); j++) {
+				forwardingRuleIds.add(_ctx.stringValue("ListEndpointGroupsResponse.EndpointGroups["+ i +"].ForwardingRuleIds["+ j +"]"));
+			}
+			endpointGroupsItem.setForwardingRuleIds(forwardingRuleIds);
 
 			List<EndpointConfigurationsItem> endpointConfigurations = new ArrayList<EndpointConfigurationsItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListEndpointGroupsResponse.EndpointGroups["+ i +"].EndpointConfigurations.Length"); j++) {
 				EndpointConfigurationsItem endpointConfigurationsItem = new EndpointConfigurationsItem();
-				endpointConfigurationsItem.setEndpoint(_ctx.stringValue("ListEndpointGroupsResponse.EndpointGroups["+ i +"].EndpointConfigurations["+ j +"].Endpoint"));
-				endpointConfigurationsItem.setWeight(_ctx.integerValue("ListEndpointGroupsResponse.EndpointGroups["+ i +"].EndpointConfigurations["+ j +"].Weight"));
 				endpointConfigurationsItem.setType(_ctx.stringValue("ListEndpointGroupsResponse.EndpointGroups["+ i +"].EndpointConfigurations["+ j +"].Type"));
+				endpointConfigurationsItem.setEnableClientIPPreservation(_ctx.booleanValue("ListEndpointGroupsResponse.EndpointGroups["+ i +"].EndpointConfigurations["+ j +"].EnableClientIPPreservation"));
+				endpointConfigurationsItem.setWeight(_ctx.integerValue("ListEndpointGroupsResponse.EndpointGroups["+ i +"].EndpointConfigurations["+ j +"].Weight"));
+				endpointConfigurationsItem.setProbeProtocol(_ctx.stringValue("ListEndpointGroupsResponse.EndpointGroups["+ i +"].EndpointConfigurations["+ j +"].ProbeProtocol"));
+				endpointConfigurationsItem.setEndpoint(_ctx.stringValue("ListEndpointGroupsResponse.EndpointGroups["+ i +"].EndpointConfigurations["+ j +"].Endpoint"));
+				endpointConfigurationsItem.setEnableProxyProtocol(_ctx.booleanValue("ListEndpointGroupsResponse.EndpointGroups["+ i +"].EndpointConfigurations["+ j +"].EnableProxyProtocol"));
+				endpointConfigurationsItem.setProbePort(_ctx.integerValue("ListEndpointGroupsResponse.EndpointGroups["+ i +"].EndpointConfigurations["+ j +"].ProbePort"));
+				endpointConfigurationsItem.setEndpointId(_ctx.stringValue("ListEndpointGroupsResponse.EndpointGroups["+ i +"].EndpointConfigurations["+ j +"].EndpointId"));
 
 				endpointConfigurations.add(endpointConfigurationsItem);
 			}
 			endpointGroupsItem.setEndpointConfigurations(endpointConfigurations);
+
+			List<PortOverridesItem> portOverrides = new ArrayList<PortOverridesItem>();
+			for (int j = 0; j < _ctx.lengthValue("ListEndpointGroupsResponse.EndpointGroups["+ i +"].PortOverrides.Length"); j++) {
+				PortOverridesItem portOverridesItem = new PortOverridesItem();
+				portOverridesItem.setListenerPort(_ctx.integerValue("ListEndpointGroupsResponse.EndpointGroups["+ i +"].PortOverrides["+ j +"].ListenerPort"));
+				portOverridesItem.setEndpointPort(_ctx.integerValue("ListEndpointGroupsResponse.EndpointGroups["+ i +"].PortOverrides["+ j +"].EndpointPort"));
+
+				portOverrides.add(portOverridesItem);
+			}
+			endpointGroupsItem.setPortOverrides(portOverrides);
 
 			endpointGroups.add(endpointGroupsItem);
 		}

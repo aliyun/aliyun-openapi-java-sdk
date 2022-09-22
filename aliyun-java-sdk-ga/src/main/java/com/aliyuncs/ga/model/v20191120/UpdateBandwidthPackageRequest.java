@@ -35,6 +35,8 @@ public class UpdateBandwidthPackageRequest extends RpcAcsRequest<UpdateBandwidth
 
 	private String description;
 
+	private Boolean autoUseCoupon;
+
 	private String name;
 	public UpdateBandwidthPackageRequest() {
 		super("Ga", "2019-11-20", "UpdateBandwidthPackage", "gaplus");
@@ -97,6 +99,17 @@ public class UpdateBandwidthPackageRequest extends RpcAcsRequest<UpdateBandwidth
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public Boolean getAutoUseCoupon() {
+		return this.autoUseCoupon;
+	}
+
+	public void setAutoUseCoupon(Boolean autoUseCoupon) {
+		this.autoUseCoupon = autoUseCoupon;
+		if(autoUseCoupon != null){
+			putQueryParameter("AutoUseCoupon", autoUseCoupon.toString());
 		}
 	}
 

@@ -18,7 +18,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.ga.model.v20191120.DescribeListenerResponse;
+import com.aliyuncs.ga.model.v20191120.DescribeListenerResponse.BackendPort;
+import com.aliyuncs.ga.model.v20191120.DescribeListenerResponse.Certificate;
 import com.aliyuncs.ga.model.v20191120.DescribeListenerResponse.PortRangesItem;
+import com.aliyuncs.ga.model.v20191120.DescribeListenerResponse.RelatedAclsItem;
+import com.aliyuncs.ga.model.v20191120.DescribeListenerResponse.XForwardedForConfig;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -27,13 +31,26 @@ public class DescribeListenerResponseUnmarshaller {
 	public static DescribeListenerResponse unmarshall(DescribeListenerResponse describeListenerResponse, UnmarshallerContext _ctx) {
 		
 		describeListenerResponse.setRequestId(_ctx.stringValue("DescribeListenerResponse.RequestId"));
-		describeListenerResponse.setListenerId(_ctx.stringValue("DescribeListenerResponse.ListenerId"));
-		describeListenerResponse.setName(_ctx.stringValue("DescribeListenerResponse.Name"));
 		describeListenerResponse.setDescription(_ctx.stringValue("DescribeListenerResponse.Description"));
-		describeListenerResponse.setBizProtocol(_ctx.stringValue("DescribeListenerResponse.Protocol"));
-		describeListenerResponse.setClientAffinity(_ctx.stringValue("DescribeListenerResponse.ClientAffinity"));
 		describeListenerResponse.setState(_ctx.stringValue("DescribeListenerResponse.State"));
 		describeListenerResponse.setCreateTime(_ctx.stringValue("DescribeListenerResponse.CreateTime"));
+		describeListenerResponse.setBizProtocol(_ctx.stringValue("DescribeListenerResponse.Protocol"));
+		describeListenerResponse.setListenerId(_ctx.stringValue("DescribeListenerResponse.ListenerId"));
+		describeListenerResponse.setClientAffinity(_ctx.stringValue("DescribeListenerResponse.ClientAffinity"));
+		describeListenerResponse.setName(_ctx.stringValue("DescribeListenerResponse.Name"));
+		describeListenerResponse.setAclType(_ctx.stringValue("DescribeListenerResponse.AclType"));
+		describeListenerResponse.setAcceleratorId(_ctx.stringValue("DescribeListenerResponse.AcceleratorId"));
+		describeListenerResponse.setProxyProtocol(_ctx.booleanValue("DescribeListenerResponse.ProxyProtocol"));
+		describeListenerResponse.setSecurityPolicyId(_ctx.stringValue("DescribeListenerResponse.SecurityPolicyId"));
+		describeListenerResponse.setType(_ctx.stringValue("DescribeListenerResponse.Type"));
+
+		XForwardedForConfig xForwardedForConfig = new XForwardedForConfig();
+		xForwardedForConfig.setXForwardedForGaIdEnabled(_ctx.booleanValue("DescribeListenerResponse.XForwardedForConfig.XForwardedForGaIdEnabled"));
+		xForwardedForConfig.setXForwardedForGaApEnabled(_ctx.booleanValue("DescribeListenerResponse.XForwardedForConfig.XForwardedForGaApEnabled"));
+		xForwardedForConfig.setXForwardedForProtoEnabled(_ctx.booleanValue("DescribeListenerResponse.XForwardedForConfig.XForwardedForProtoEnabled"));
+		xForwardedForConfig.setXForwardedForPortEnabled(_ctx.booleanValue("DescribeListenerResponse.XForwardedForConfig.XForwardedForPortEnabled"));
+		xForwardedForConfig.setXRealIpEnabled(_ctx.booleanValue("DescribeListenerResponse.XForwardedForConfig.XRealIpEnabled"));
+		describeListenerResponse.setXForwardedForConfig(xForwardedForConfig);
 
 		List<PortRangesItem> portRanges = new ArrayList<PortRangesItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeListenerResponse.PortRanges.Length"); i++) {
@@ -44,6 +61,36 @@ public class DescribeListenerResponseUnmarshaller {
 			portRanges.add(portRangesItem);
 		}
 		describeListenerResponse.setPortRanges(portRanges);
+
+		List<BackendPort> backendPorts = new ArrayList<BackendPort>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeListenerResponse.BackendPorts.Length"); i++) {
+			BackendPort backendPort = new BackendPort();
+			backendPort.setFromPort(_ctx.stringValue("DescribeListenerResponse.BackendPorts["+ i +"].FromPort"));
+			backendPort.setToPort(_ctx.stringValue("DescribeListenerResponse.BackendPorts["+ i +"].ToPort"));
+
+			backendPorts.add(backendPort);
+		}
+		describeListenerResponse.setBackendPorts(backendPorts);
+
+		List<Certificate> certificates = new ArrayList<Certificate>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeListenerResponse.Certificates.Length"); i++) {
+			Certificate certificate = new Certificate();
+			certificate.setType(_ctx.stringValue("DescribeListenerResponse.Certificates["+ i +"].Type"));
+			certificate.setId(_ctx.stringValue("DescribeListenerResponse.Certificates["+ i +"].Id"));
+
+			certificates.add(certificate);
+		}
+		describeListenerResponse.setCertificates(certificates);
+
+		List<RelatedAclsItem> relatedAcls = new ArrayList<RelatedAclsItem>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeListenerResponse.RelatedAcls.Length"); i++) {
+			RelatedAclsItem relatedAclsItem = new RelatedAclsItem();
+			relatedAclsItem.setAclId(_ctx.stringValue("DescribeListenerResponse.RelatedAcls["+ i +"].AclId"));
+			relatedAclsItem.setStatus(_ctx.stringValue("DescribeListenerResponse.RelatedAcls["+ i +"].Status"));
+
+			relatedAcls.add(relatedAclsItem);
+		}
+		describeListenerResponse.setRelatedAcls(relatedAcls);
 	 
 	 	return describeListenerResponse;
 	}

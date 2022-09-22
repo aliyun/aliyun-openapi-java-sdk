@@ -17,6 +17,7 @@ package com.aliyuncs.ga.transform.v20191120;
 import com.aliyuncs.ga.model.v20191120.DescribeAcceleratorResponse;
 import com.aliyuncs.ga.model.v20191120.DescribeAcceleratorResponse.BasicBandwidthPackage;
 import com.aliyuncs.ga.model.v20191120.DescribeAcceleratorResponse.CrossDomainBandwidthPackage;
+import com.aliyuncs.ga.model.v20191120.DescribeAcceleratorResponse.IpSetConfig;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -25,28 +26,34 @@ public class DescribeAcceleratorResponseUnmarshaller {
 	public static DescribeAcceleratorResponse unmarshall(DescribeAcceleratorResponse describeAcceleratorResponse, UnmarshallerContext _ctx) {
 		
 		describeAcceleratorResponse.setRequestId(_ctx.stringValue("DescribeAcceleratorResponse.RequestId"));
-		describeAcceleratorResponse.setAcceleratorId(_ctx.stringValue("DescribeAcceleratorResponse.AcceleratorId"));
-		describeAcceleratorResponse.setName(_ctx.stringValue("DescribeAcceleratorResponse.Name"));
+		describeAcceleratorResponse.setDdosId(_ctx.stringValue("DescribeAcceleratorResponse.DdosId"));
+		describeAcceleratorResponse.setDnsName(_ctx.stringValue("DescribeAcceleratorResponse.DnsName"));
 		describeAcceleratorResponse.setDescription(_ctx.stringValue("DescribeAcceleratorResponse.Description"));
 		describeAcceleratorResponse.setInstanceChargeType(_ctx.stringValue("DescribeAcceleratorResponse.InstanceChargeType"));
+		describeAcceleratorResponse.setCreateTime(_ctx.longValue("DescribeAcceleratorResponse.CreateTime"));
+		describeAcceleratorResponse.setSecondDnsName(_ctx.stringValue("DescribeAcceleratorResponse.SecondDnsName"));
+		describeAcceleratorResponse.setName(_ctx.stringValue("DescribeAcceleratorResponse.Name"));
+		describeAcceleratorResponse.setState(_ctx.stringValue("DescribeAcceleratorResponse.State"));
 		describeAcceleratorResponse.setExpiredTime(_ctx.longValue("DescribeAcceleratorResponse.ExpiredTime"));
 		describeAcceleratorResponse.setCenId(_ctx.stringValue("DescribeAcceleratorResponse.CenId"));
-		describeAcceleratorResponse.setState(_ctx.stringValue("DescribeAcceleratorResponse.State"));
-		describeAcceleratorResponse.setDnsName(_ctx.stringValue("DescribeAcceleratorResponse.DnsName"));
-		describeAcceleratorResponse.setCreateTime(_ctx.longValue("DescribeAcceleratorResponse.CreateTime"));
-		describeAcceleratorResponse.setSpec(_ctx.stringValue("DescribeAcceleratorResponse.Spec"));
 		describeAcceleratorResponse.setRegionId(_ctx.stringValue("DescribeAcceleratorResponse.RegionId"));
-
-		BasicBandwidthPackage basicBandwidthPackage = new BasicBandwidthPackage();
-		basicBandwidthPackage.setInstanceId(_ctx.stringValue("DescribeAcceleratorResponse.BasicBandwidthPackage.InstanceId"));
-		basicBandwidthPackage.setBandwidth(_ctx.integerValue("DescribeAcceleratorResponse.BasicBandwidthPackage.Bandwidth"));
-		basicBandwidthPackage.setBandwidthType(_ctx.stringValue("DescribeAcceleratorResponse.BasicBandwidthPackage.BandwidthType"));
-		describeAcceleratorResponse.setBasicBandwidthPackage(basicBandwidthPackage);
+		describeAcceleratorResponse.setSpec(_ctx.stringValue("DescribeAcceleratorResponse.Spec"));
+		describeAcceleratorResponse.setAcceleratorId(_ctx.stringValue("DescribeAcceleratorResponse.AcceleratorId"));
 
 		CrossDomainBandwidthPackage crossDomainBandwidthPackage = new CrossDomainBandwidthPackage();
-		crossDomainBandwidthPackage.setInstanceId(_ctx.stringValue("DescribeAcceleratorResponse.CrossDomainBandwidthPackage.InstanceId"));
 		crossDomainBandwidthPackage.setBandwidth(_ctx.integerValue("DescribeAcceleratorResponse.CrossDomainBandwidthPackage.Bandwidth"));
+		crossDomainBandwidthPackage.setInstanceId(_ctx.stringValue("DescribeAcceleratorResponse.CrossDomainBandwidthPackage.InstanceId"));
 		describeAcceleratorResponse.setCrossDomainBandwidthPackage(crossDomainBandwidthPackage);
+
+		BasicBandwidthPackage basicBandwidthPackage = new BasicBandwidthPackage();
+		basicBandwidthPackage.setBandwidth(_ctx.integerValue("DescribeAcceleratorResponse.BasicBandwidthPackage.Bandwidth"));
+		basicBandwidthPackage.setBandwidthType(_ctx.stringValue("DescribeAcceleratorResponse.BasicBandwidthPackage.BandwidthType"));
+		basicBandwidthPackage.setInstanceId(_ctx.stringValue("DescribeAcceleratorResponse.BasicBandwidthPackage.InstanceId"));
+		describeAcceleratorResponse.setBasicBandwidthPackage(basicBandwidthPackage);
+
+		IpSetConfig ipSetConfig = new IpSetConfig();
+		ipSetConfig.setAccessMode(_ctx.stringValue("DescribeAcceleratorResponse.IpSetConfig.AccessMode"));
+		describeAcceleratorResponse.setIpSetConfig(ipSetConfig);
 	 
 	 	return describeAcceleratorResponse;
 	}

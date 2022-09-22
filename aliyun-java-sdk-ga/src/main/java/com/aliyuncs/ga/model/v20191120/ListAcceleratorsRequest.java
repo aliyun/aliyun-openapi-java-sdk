@@ -28,6 +28,10 @@ public class ListAcceleratorsRequest extends RpcAcsRequest<ListAcceleratorsRespo
 	private Integer pageNumber;
 
 	private Integer pageSize;
+
+	private String acceleratorId;
+
+	private String state;
 	public ListAcceleratorsRequest() {
 		super("Ga", "2019-11-20", "ListAccelerators", "gaplus");
 		setMethod(MethodType.POST);
@@ -56,6 +60,28 @@ public class ListAcceleratorsRequest extends RpcAcsRequest<ListAcceleratorsRespo
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getAcceleratorId() {
+		return this.acceleratorId;
+	}
+
+	public void setAcceleratorId(String acceleratorId) {
+		this.acceleratorId = acceleratorId;
+		if(acceleratorId != null){
+			putQueryParameter("AcceleratorId", acceleratorId);
+		}
+	}
+
+	public String getState() {
+		return this.state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+		if(state != null){
+			putQueryParameter("State", state);
 		}
 	}
 

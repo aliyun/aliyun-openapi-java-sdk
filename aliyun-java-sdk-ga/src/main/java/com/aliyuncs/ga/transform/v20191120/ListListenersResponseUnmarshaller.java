@@ -19,7 +19,10 @@ import java.util.List;
 
 import com.aliyuncs.ga.model.v20191120.ListListenersResponse;
 import com.aliyuncs.ga.model.v20191120.ListListenersResponse.ListenersItem;
+import com.aliyuncs.ga.model.v20191120.ListListenersResponse.ListenersItem.BackendPort;
+import com.aliyuncs.ga.model.v20191120.ListListenersResponse.ListenersItem.Certificate;
 import com.aliyuncs.ga.model.v20191120.ListListenersResponse.ListenersItem.PortRangesItem;
+import com.aliyuncs.ga.model.v20191120.ListListenersResponse.ListenersItem.XForwardedForConfig;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -29,19 +32,51 @@ public class ListListenersResponseUnmarshaller {
 		
 		listListenersResponse.setRequestId(_ctx.stringValue("ListListenersResponse.RequestId"));
 		listListenersResponse.setTotalCount(_ctx.integerValue("ListListenersResponse.TotalCount"));
-		listListenersResponse.setPageNumber(_ctx.integerValue("ListListenersResponse.PageNumber"));
 		listListenersResponse.setPageSize(_ctx.integerValue("ListListenersResponse.PageSize"));
+		listListenersResponse.setPageNumber(_ctx.integerValue("ListListenersResponse.PageNumber"));
 
 		List<ListenersItem> listeners = new ArrayList<ListenersItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListListenersResponse.Listeners.Length"); i++) {
 			ListenersItem listenersItem = new ListenersItem();
 			listenersItem.setListenerId(_ctx.stringValue("ListListenersResponse.Listeners["+ i +"].ListenerId"));
-			listenersItem.setName(_ctx.stringValue("ListListenersResponse.Listeners["+ i +"].Name"));
 			listenersItem.setDescription(_ctx.stringValue("ListListenersResponse.Listeners["+ i +"].Description"));
-			listenersItem.setBizProtocol(_ctx.stringValue("ListListenersResponse.Listeners["+ i +"].Protocol"));
-			listenersItem.setClientAffinity(_ctx.stringValue("ListListenersResponse.Listeners["+ i +"].ClientAffinity"));
 			listenersItem.setState(_ctx.stringValue("ListListenersResponse.Listeners["+ i +"].State"));
+			listenersItem.setClientAffinity(_ctx.stringValue("ListListenersResponse.Listeners["+ i +"].ClientAffinity"));
+			listenersItem.setBizProtocol(_ctx.stringValue("ListListenersResponse.Listeners["+ i +"].Protocol"));
 			listenersItem.setCreateTime(_ctx.longValue("ListListenersResponse.Listeners["+ i +"].CreateTime"));
+			listenersItem.setName(_ctx.stringValue("ListListenersResponse.Listeners["+ i +"].Name"));
+			listenersItem.setProxyProtocol(_ctx.booleanValue("ListListenersResponse.Listeners["+ i +"].ProxyProtocol"));
+			listenersItem.setAcceleratorId(_ctx.stringValue("ListListenersResponse.Listeners["+ i +"].AcceleratorId"));
+			listenersItem.setSecurityPolicyId(_ctx.stringValue("ListListenersResponse.Listeners["+ i +"].SecurityPolicyId"));
+			listenersItem.setType(_ctx.stringValue("ListListenersResponse.Listeners["+ i +"].Type"));
+
+			XForwardedForConfig xForwardedForConfig = new XForwardedForConfig();
+			xForwardedForConfig.setXForwardedForGaIdEnabled(_ctx.booleanValue("ListListenersResponse.Listeners["+ i +"].XForwardedForConfig.XForwardedForGaIdEnabled"));
+			xForwardedForConfig.setXRealIpEnabled(_ctx.booleanValue("ListListenersResponse.Listeners["+ i +"].XForwardedForConfig.XRealIpEnabled"));
+			xForwardedForConfig.setXForwardedForGaApEnabled(_ctx.booleanValue("ListListenersResponse.Listeners["+ i +"].XForwardedForConfig.XForwardedForGaApEnabled"));
+			xForwardedForConfig.setXForwardedForProtoEnabled(_ctx.booleanValue("ListListenersResponse.Listeners["+ i +"].XForwardedForConfig.XForwardedForProtoEnabled"));
+			xForwardedForConfig.setXForwardedForPortEnabled(_ctx.booleanValue("ListListenersResponse.Listeners["+ i +"].XForwardedForConfig.XForwardedForPortEnabled"));
+			listenersItem.setXForwardedForConfig(xForwardedForConfig);
+
+			List<Certificate> certificates = new ArrayList<Certificate>();
+			for (int j = 0; j < _ctx.lengthValue("ListListenersResponse.Listeners["+ i +"].Certificates.Length"); j++) {
+				Certificate certificate = new Certificate();
+				certificate.setType(_ctx.stringValue("ListListenersResponse.Listeners["+ i +"].Certificates["+ j +"].Type"));
+				certificate.setId(_ctx.stringValue("ListListenersResponse.Listeners["+ i +"].Certificates["+ j +"].Id"));
+
+				certificates.add(certificate);
+			}
+			listenersItem.setCertificates(certificates);
+
+			List<BackendPort> backendPorts = new ArrayList<BackendPort>();
+			for (int j = 0; j < _ctx.lengthValue("ListListenersResponse.Listeners["+ i +"].BackendPorts.Length"); j++) {
+				BackendPort backendPort = new BackendPort();
+				backendPort.setFromPort(_ctx.stringValue("ListListenersResponse.Listeners["+ i +"].BackendPorts["+ j +"].FromPort"));
+				backendPort.setToPort(_ctx.stringValue("ListListenersResponse.Listeners["+ i +"].BackendPorts["+ j +"].ToPort"));
+
+				backendPorts.add(backendPort);
+			}
+			listenersItem.setBackendPorts(backendPorts);
 
 			List<PortRangesItem> portRanges = new ArrayList<PortRangesItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListListenersResponse.Listeners["+ i +"].PortRanges.Length"); j++) {

@@ -28,20 +28,20 @@ public class ListBandwidthackagesResponseUnmarshaller {
 		
 		listBandwidthackagesResponse.setRequestId(_ctx.stringValue("ListBandwidthackagesResponse.RequestId"));
 		listBandwidthackagesResponse.setTotalCount(_ctx.integerValue("ListBandwidthackagesResponse.TotalCount"));
-		listBandwidthackagesResponse.setPageNumber(_ctx.integerValue("ListBandwidthackagesResponse.PageNumber"));
 		listBandwidthackagesResponse.setPageSize(_ctx.integerValue("ListBandwidthackagesResponse.PageSize"));
+		listBandwidthackagesResponse.setPageNumber(_ctx.integerValue("ListBandwidthackagesResponse.PageNumber"));
 
 		List<BandwidthPackage> bandwidthPackages = new ArrayList<BandwidthPackage>();
 		for (int i = 0; i < _ctx.lengthValue("ListBandwidthackagesResponse.BandwidthPackages.Length"); i++) {
 			BandwidthPackage bandwidthPackage = new BandwidthPackage();
 			bandwidthPackage.setBandwidthPackageId(_ctx.stringValue("ListBandwidthackagesResponse.BandwidthPackages["+ i +"].BandwidthPackageId"));
-			bandwidthPackage.setName(_ctx.stringValue("ListBandwidthackagesResponse.BandwidthPackages["+ i +"].Name"));
-			bandwidthPackage.setDescription(_ctx.stringValue("ListBandwidthackagesResponse.BandwidthPackages["+ i +"].Description"));
-			bandwidthPackage.setState(_ctx.stringValue("ListBandwidthackagesResponse.BandwidthPackages["+ i +"].State"));
 			bandwidthPackage.setBandwidth(_ctx.integerValue("ListBandwidthackagesResponse.BandwidthPackages["+ i +"].Bandwidth"));
-			bandwidthPackage.setChargeType(_ctx.stringValue("ListBandwidthackagesResponse.BandwidthPackages["+ i +"].ChargeType"));
+			bandwidthPackage.setDescription(_ctx.stringValue("ListBandwidthackagesResponse.BandwidthPackages["+ i +"].Description"));
 			bandwidthPackage.setExpiredTime(_ctx.stringValue("ListBandwidthackagesResponse.BandwidthPackages["+ i +"].ExpiredTime"));
+			bandwidthPackage.setState(_ctx.stringValue("ListBandwidthackagesResponse.BandwidthPackages["+ i +"].State"));
 			bandwidthPackage.setCreateTime(_ctx.stringValue("ListBandwidthackagesResponse.BandwidthPackages["+ i +"].CreateTime"));
+			bandwidthPackage.setChargeType(_ctx.stringValue("ListBandwidthackagesResponse.BandwidthPackages["+ i +"].ChargeType"));
+			bandwidthPackage.setName(_ctx.stringValue("ListBandwidthackagesResponse.BandwidthPackages["+ i +"].Name"));
 			bandwidthPackage.setRegionId(_ctx.stringValue("ListBandwidthackagesResponse.BandwidthPackages["+ i +"].RegionId"));
 
 			List<String> accelerators = new ArrayList<String>();

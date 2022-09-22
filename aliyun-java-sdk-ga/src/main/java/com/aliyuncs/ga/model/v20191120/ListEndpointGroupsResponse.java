@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListEndpointGroupsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
-
-	private Integer pageNumber;
 
 	private Integer pageSize;
 
+	private String requestId;
+
+	private Integer pageNumber;
+
 	private List<EndpointGroupsItem> endpointGroups;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class ListEndpointGroupsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<EndpointGroupsItem> getEndpointGroups() {
@@ -79,29 +79,45 @@ public class ListEndpointGroupsResponse extends AcsResponse {
 
 		private String endpointGroupId;
 
-		private String name;
-
-		private String description;
-
-		private Integer trafficPercentage;
-
-		private String endpointGroupRegion;
-
 		private String state;
-
-		private String listenerId;
-
-		private Integer healthCheckIntervalSeconds;
 
 		private String healthCheckPath;
 
-		private Integer healthCheckPort;
+		private String endpointGroupRegion;
+
+		private Integer healthCheckIntervalSeconds;
+
+		private Integer trafficPercentage;
 
 		private String healthCheckProtocol;
 
 		private Integer thresholdCount;
 
+		private String listenerId;
+
+		private String acceleratorId;
+
+		private String endpointGroupType;
+
+		private String endpointRequestProtocol;
+
+		private String description;
+
+		private String name;
+
+		private Integer healthCheckPort;
+
+		private Boolean healthCheckEnabled;
+
 		private List<EndpointConfigurationsItem> endpointConfigurations;
+
+		private List<PortOverridesItem> portOverrides;
+
+		private List<String> endpointGroupIpList;
+
+		private List<String> endpointGroupUnconfirmedIpList;
+
+		private List<String> forwardingRuleIds;
 
 		public String getEndpointGroupId() {
 			return this.endpointGroupId;
@@ -109,38 +125,6 @@ public class ListEndpointGroupsResponse extends AcsResponse {
 
 		public void setEndpointGroupId(String endpointGroupId) {
 			this.endpointGroupId = endpointGroupId;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public Integer getTrafficPercentage() {
-			return this.trafficPercentage;
-		}
-
-		public void setTrafficPercentage(Integer trafficPercentage) {
-			this.trafficPercentage = trafficPercentage;
-		}
-
-		public String getEndpointGroupRegion() {
-			return this.endpointGroupRegion;
-		}
-
-		public void setEndpointGroupRegion(String endpointGroupRegion) {
-			this.endpointGroupRegion = endpointGroupRegion;
 		}
 
 		public String getState() {
@@ -151,12 +135,20 @@ public class ListEndpointGroupsResponse extends AcsResponse {
 			this.state = state;
 		}
 
-		public String getListenerId() {
-			return this.listenerId;
+		public String getHealthCheckPath() {
+			return this.healthCheckPath;
 		}
 
-		public void setListenerId(String listenerId) {
-			this.listenerId = listenerId;
+		public void setHealthCheckPath(String healthCheckPath) {
+			this.healthCheckPath = healthCheckPath;
+		}
+
+		public String getEndpointGroupRegion() {
+			return this.endpointGroupRegion;
+		}
+
+		public void setEndpointGroupRegion(String endpointGroupRegion) {
+			this.endpointGroupRegion = endpointGroupRegion;
 		}
 
 		public Integer getHealthCheckIntervalSeconds() {
@@ -167,20 +159,12 @@ public class ListEndpointGroupsResponse extends AcsResponse {
 			this.healthCheckIntervalSeconds = healthCheckIntervalSeconds;
 		}
 
-		public String getHealthCheckPath() {
-			return this.healthCheckPath;
+		public Integer getTrafficPercentage() {
+			return this.trafficPercentage;
 		}
 
-		public void setHealthCheckPath(String healthCheckPath) {
-			this.healthCheckPath = healthCheckPath;
-		}
-
-		public Integer getHealthCheckPort() {
-			return this.healthCheckPort;
-		}
-
-		public void setHealthCheckPort(Integer healthCheckPort) {
-			this.healthCheckPort = healthCheckPort;
+		public void setTrafficPercentage(Integer trafficPercentage) {
+			this.trafficPercentage = trafficPercentage;
 		}
 
 		public String getHealthCheckProtocol() {
@@ -199,6 +183,70 @@ public class ListEndpointGroupsResponse extends AcsResponse {
 			this.thresholdCount = thresholdCount;
 		}
 
+		public String getListenerId() {
+			return this.listenerId;
+		}
+
+		public void setListenerId(String listenerId) {
+			this.listenerId = listenerId;
+		}
+
+		public String getAcceleratorId() {
+			return this.acceleratorId;
+		}
+
+		public void setAcceleratorId(String acceleratorId) {
+			this.acceleratorId = acceleratorId;
+		}
+
+		public String getEndpointGroupType() {
+			return this.endpointGroupType;
+		}
+
+		public void setEndpointGroupType(String endpointGroupType) {
+			this.endpointGroupType = endpointGroupType;
+		}
+
+		public String getEndpointRequestProtocol() {
+			return this.endpointRequestProtocol;
+		}
+
+		public void setEndpointRequestProtocol(String endpointRequestProtocol) {
+			this.endpointRequestProtocol = endpointRequestProtocol;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public Integer getHealthCheckPort() {
+			return this.healthCheckPort;
+		}
+
+		public void setHealthCheckPort(Integer healthCheckPort) {
+			this.healthCheckPort = healthCheckPort;
+		}
+
+		public Boolean getHealthCheckEnabled() {
+			return this.healthCheckEnabled;
+		}
+
+		public void setHealthCheckEnabled(Boolean healthCheckEnabled) {
+			this.healthCheckEnabled = healthCheckEnabled;
+		}
+
 		public List<EndpointConfigurationsItem> getEndpointConfigurations() {
 			return this.endpointConfigurations;
 		}
@@ -207,20 +255,70 @@ public class ListEndpointGroupsResponse extends AcsResponse {
 			this.endpointConfigurations = endpointConfigurations;
 		}
 
+		public List<PortOverridesItem> getPortOverrides() {
+			return this.portOverrides;
+		}
+
+		public void setPortOverrides(List<PortOverridesItem> portOverrides) {
+			this.portOverrides = portOverrides;
+		}
+
+		public List<String> getEndpointGroupIpList() {
+			return this.endpointGroupIpList;
+		}
+
+		public void setEndpointGroupIpList(List<String> endpointGroupIpList) {
+			this.endpointGroupIpList = endpointGroupIpList;
+		}
+
+		public List<String> getEndpointGroupUnconfirmedIpList() {
+			return this.endpointGroupUnconfirmedIpList;
+		}
+
+		public void setEndpointGroupUnconfirmedIpList(List<String> endpointGroupUnconfirmedIpList) {
+			this.endpointGroupUnconfirmedIpList = endpointGroupUnconfirmedIpList;
+		}
+
+		public List<String> getForwardingRuleIds() {
+			return this.forwardingRuleIds;
+		}
+
+		public void setForwardingRuleIds(List<String> forwardingRuleIds) {
+			this.forwardingRuleIds = forwardingRuleIds;
+		}
+
 		public static class EndpointConfigurationsItem {
-
-			private String endpoint;
-
-			private Integer weight;
 
 			private String type;
 
-			public String getEndpoint() {
-				return this.endpoint;
+			private Boolean enableClientIPPreservation;
+
+			private Integer weight;
+
+			private String probeProtocol;
+
+			private String endpoint;
+
+			private Boolean enableProxyProtocol;
+
+			private Integer probePort;
+
+			private String endpointId;
+
+			public String getType() {
+				return this.type;
 			}
 
-			public void setEndpoint(String endpoint) {
-				this.endpoint = endpoint;
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public Boolean getEnableClientIPPreservation() {
+				return this.enableClientIPPreservation;
+			}
+
+			public void setEnableClientIPPreservation(Boolean enableClientIPPreservation) {
+				this.enableClientIPPreservation = enableClientIPPreservation;
 			}
 
 			public Integer getWeight() {
@@ -231,12 +329,67 @@ public class ListEndpointGroupsResponse extends AcsResponse {
 				this.weight = weight;
 			}
 
-			public String getType() {
-				return this.type;
+			public String getProbeProtocol() {
+				return this.probeProtocol;
 			}
 
-			public void setType(String type) {
-				this.type = type;
+			public void setProbeProtocol(String probeProtocol) {
+				this.probeProtocol = probeProtocol;
+			}
+
+			public String getEndpoint() {
+				return this.endpoint;
+			}
+
+			public void setEndpoint(String endpoint) {
+				this.endpoint = endpoint;
+			}
+
+			public Boolean getEnableProxyProtocol() {
+				return this.enableProxyProtocol;
+			}
+
+			public void setEnableProxyProtocol(Boolean enableProxyProtocol) {
+				this.enableProxyProtocol = enableProxyProtocol;
+			}
+
+			public Integer getProbePort() {
+				return this.probePort;
+			}
+
+			public void setProbePort(Integer probePort) {
+				this.probePort = probePort;
+			}
+
+			public String getEndpointId() {
+				return this.endpointId;
+			}
+
+			public void setEndpointId(String endpointId) {
+				this.endpointId = endpointId;
+			}
+		}
+
+		public static class PortOverridesItem {
+
+			private Integer listenerPort;
+
+			private Integer endpointPort;
+
+			public Integer getListenerPort() {
+				return this.listenerPort;
+			}
+
+			public void setListenerPort(Integer listenerPort) {
+				this.listenerPort = listenerPort;
+			}
+
+			public Integer getEndpointPort() {
+				return this.endpointPort;
+			}
+
+			public void setEndpointPort(Integer endpointPort) {
+				this.endpointPort = endpointPort;
 			}
 		}
 	}

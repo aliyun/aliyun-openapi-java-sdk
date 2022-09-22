@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateEndpointGroupResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String endpointGroupId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getEndpointGroupId() {
 		return this.endpointGroupId;
@@ -42,6 +34,14 @@ public class CreateEndpointGroupResponse extends AcsResponse {
 
 	public void setEndpointGroupId(String endpointGroupId) {
 		this.endpointGroupId = endpointGroupId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

@@ -26,19 +26,21 @@ public class DescribeBandwidthPackageResponseUnmarshaller {
 	public static DescribeBandwidthPackageResponse unmarshall(DescribeBandwidthPackageResponse describeBandwidthPackageResponse, UnmarshallerContext _ctx) {
 		
 		describeBandwidthPackageResponse.setRequestId(_ctx.stringValue("DescribeBandwidthPackageResponse.RequestId"));
-		describeBandwidthPackageResponse.setBandwidthPackageId(_ctx.stringValue("DescribeBandwidthPackageResponse.BandwidthPackageId"));
-		describeBandwidthPackageResponse.setName(_ctx.stringValue("DescribeBandwidthPackageResponse.Name"));
-		describeBandwidthPackageResponse.setDescription(_ctx.stringValue("DescribeBandwidthPackageResponse.Description"));
-		describeBandwidthPackageResponse.setState(_ctx.stringValue("DescribeBandwidthPackageResponse.State"));
-		describeBandwidthPackageResponse.setBandwidth(_ctx.integerValue("DescribeBandwidthPackageResponse.Bandwidth"));
-		describeBandwidthPackageResponse.setChargeType(_ctx.stringValue("DescribeBandwidthPackageResponse.ChargeType"));
-		describeBandwidthPackageResponse.setExpiredTime(_ctx.stringValue("DescribeBandwidthPackageResponse.ExpiredTime"));
-		describeBandwidthPackageResponse.setCreateTime(_ctx.stringValue("DescribeBandwidthPackageResponse.CreateTime"));
-		describeBandwidthPackageResponse.setRegionId(_ctx.stringValue("DescribeBandwidthPackageResponse.RegionId"));
-		describeBandwidthPackageResponse.setType(_ctx.stringValue("DescribeBandwidthPackageResponse.Type"));
-		describeBandwidthPackageResponse.setBandwidthType(_ctx.stringValue("DescribeBandwidthPackageResponse.BandwidthType"));
-		describeBandwidthPackageResponse.setCbnGeographicRegionIdA(_ctx.stringValue("DescribeBandwidthPackageResponse.CbnGeographicRegionIdA"));
 		describeBandwidthPackageResponse.setCbnGeographicRegionIdB(_ctx.stringValue("DescribeBandwidthPackageResponse.CbnGeographicRegionIdB"));
+		describeBandwidthPackageResponse.setCbnGeographicRegionIdA(_ctx.stringValue("DescribeBandwidthPackageResponse.CbnGeographicRegionIdA"));
+		describeBandwidthPackageResponse.setDescription(_ctx.stringValue("DescribeBandwidthPackageResponse.Description"));
+		describeBandwidthPackageResponse.setCreateTime(_ctx.stringValue("DescribeBandwidthPackageResponse.CreateTime"));
+		describeBandwidthPackageResponse.setName(_ctx.stringValue("DescribeBandwidthPackageResponse.Name"));
+		describeBandwidthPackageResponse.setBandwidthType(_ctx.stringValue("DescribeBandwidthPackageResponse.BandwidthType"));
+		describeBandwidthPackageResponse.setType(_ctx.stringValue("DescribeBandwidthPackageResponse.Type"));
+		describeBandwidthPackageResponse.setState(_ctx.stringValue("DescribeBandwidthPackageResponse.State"));
+		describeBandwidthPackageResponse.setChargeType(_ctx.stringValue("DescribeBandwidthPackageResponse.ChargeType"));
+		describeBandwidthPackageResponse.setBandwidth(_ctx.integerValue("DescribeBandwidthPackageResponse.Bandwidth"));
+		describeBandwidthPackageResponse.setExpiredTime(_ctx.stringValue("DescribeBandwidthPackageResponse.ExpiredTime"));
+		describeBandwidthPackageResponse.setBandwidthPackageId(_ctx.stringValue("DescribeBandwidthPackageResponse.BandwidthPackageId"));
+		describeBandwidthPackageResponse.setRegionId(_ctx.stringValue("DescribeBandwidthPackageResponse.RegionId"));
+		describeBandwidthPackageResponse.setBillingType(_ctx.stringValue("DescribeBandwidthPackageResponse.BillingType"));
+		describeBandwidthPackageResponse.setRatio(_ctx.integerValue("DescribeBandwidthPackageResponse.Ratio"));
 
 		List<String> accelerators = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeBandwidthPackageResponse.Accelerators.Length"); i++) {

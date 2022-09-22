@@ -24,8 +24,8 @@ public class UpdateBandwidthPackageResponseUnmarshaller {
 		
 		updateBandwidthPackageResponse.setRequestId(_ctx.stringValue("UpdateBandwidthPackageResponse.RequestId"));
 		updateBandwidthPackageResponse.setBandwidthPackage(_ctx.stringValue("UpdateBandwidthPackageResponse.BandwidthPackage"));
-		updateBandwidthPackageResponse.setName(_ctx.stringValue("UpdateBandwidthPackageResponse.Name"));
 		updateBandwidthPackageResponse.setDescription(_ctx.stringValue("UpdateBandwidthPackageResponse.Description"));
+		updateBandwidthPackageResponse.setName(_ctx.stringValue("UpdateBandwidthPackageResponse.Name"));
 	 
 	 	return updateBandwidthPackageResponse;
 	}

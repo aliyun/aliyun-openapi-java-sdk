@@ -28,16 +28,17 @@ public class ListIpSetsResponseUnmarshaller {
 		
 		listIpSetsResponse.setRequestId(_ctx.stringValue("ListIpSetsResponse.RequestId"));
 		listIpSetsResponse.setTotalCount(_ctx.integerValue("ListIpSetsResponse.TotalCount"));
-		listIpSetsResponse.setPageNumber(_ctx.integerValue("ListIpSetsResponse.PageNumber"));
 		listIpSetsResponse.setPageSize(_ctx.integerValue("ListIpSetsResponse.PageSize"));
+		listIpSetsResponse.setPageNumber(_ctx.integerValue("ListIpSetsResponse.PageNumber"));
 
 		List<IpSetsItem> ipSets = new ArrayList<IpSetsItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListIpSetsResponse.IpSets.Length"); i++) {
 			IpSetsItem ipSetsItem = new IpSetsItem();
-			ipSetsItem.setIpSetId(_ctx.stringValue("ListIpSetsResponse.IpSets["+ i +"].IpSetId"));
 			ipSetsItem.setAccelerateRegionId(_ctx.stringValue("ListIpSetsResponse.IpSets["+ i +"].AccelerateRegionId"));
+			ipSetsItem.setIpVersion(_ctx.stringValue("ListIpSetsResponse.IpSets["+ i +"].IpVersion"));
 			ipSetsItem.setBandwidth(_ctx.integerValue("ListIpSetsResponse.IpSets["+ i +"].Bandwidth"));
 			ipSetsItem.setState(_ctx.stringValue("ListIpSetsResponse.IpSets["+ i +"].State"));
+			ipSetsItem.setIpSetId(_ctx.stringValue("ListIpSetsResponse.IpSets["+ i +"].IpSetId"));
 
 			List<String> ipAddressList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListIpSetsResponse.IpSets["+ i +"].IpAddressList.Length"); j++) {

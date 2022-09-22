@@ -57,21 +57,13 @@ public class CreateIpSetsResponse extends AcsResponse {
 
 	public static class GaIpSet {
 
-		private String ipSetId;
-
 		private String accelerateRegionId;
 
 		private Integer bandwidth;
 
+		private String ipSetId;
+
 		private List<String> ipList;
-
-		public String getIpSetId() {
-			return this.ipSetId;
-		}
-
-		public void setIpSetId(String ipSetId) {
-			this.ipSetId = ipSetId;
-		}
 
 		public String getAccelerateRegionId() {
 			return this.accelerateRegionId;
@@ -87,6 +79,14 @@ public class CreateIpSetsResponse extends AcsResponse {
 
 		public void setBandwidth(Integer bandwidth) {
 			this.bandwidth = bandwidth;
+		}
+
+		public String getIpSetId() {
+			return this.ipSetId;
+		}
+
+		public void setIpSetId(String ipSetId) {
+			this.ipSetId = ipSetId;
 		}
 
 		public List<String> getIpList() {

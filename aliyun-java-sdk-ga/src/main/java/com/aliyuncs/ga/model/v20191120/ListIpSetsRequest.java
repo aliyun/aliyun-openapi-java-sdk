@@ -25,11 +25,11 @@ import com.aliyuncs.ga.Endpoint;
 public class ListIpSetsRequest extends RpcAcsRequest<ListIpSetsResponse> {
 	   
 
+	private Integer pageNumber;
+
 	private Integer pageSize;
 
 	private String acceleratorId;
-
-	private Integer pageNumber;
 	public ListIpSetsRequest() {
 		super("Ga", "2019-11-20", "ListIpSets", "gaplus");
 		setMethod(MethodType.POST);
@@ -37,6 +37,17 @@ public class ListIpSetsRequest extends RpcAcsRequest<ListIpSetsResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
 	}
 
 	public Integer getPageSize() {
@@ -58,17 +69,6 @@ public class ListIpSetsRequest extends RpcAcsRequest<ListIpSetsResponse> {
 		this.acceleratorId = acceleratorId;
 		if(acceleratorId != null){
 			putQueryParameter("AcceleratorId", acceleratorId);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

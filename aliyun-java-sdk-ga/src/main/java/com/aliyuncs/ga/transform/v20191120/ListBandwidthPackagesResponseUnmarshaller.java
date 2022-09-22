@@ -28,25 +28,27 @@ public class ListBandwidthPackagesResponseUnmarshaller {
 		
 		listBandwidthPackagesResponse.setRequestId(_ctx.stringValue("ListBandwidthPackagesResponse.RequestId"));
 		listBandwidthPackagesResponse.setTotalCount(_ctx.integerValue("ListBandwidthPackagesResponse.TotalCount"));
-		listBandwidthPackagesResponse.setPageNumber(_ctx.integerValue("ListBandwidthPackagesResponse.PageNumber"));
 		listBandwidthPackagesResponse.setPageSize(_ctx.integerValue("ListBandwidthPackagesResponse.PageSize"));
+		listBandwidthPackagesResponse.setPageNumber(_ctx.integerValue("ListBandwidthPackagesResponse.PageNumber"));
 
 		List<BandwidthPackage> bandwidthPackages = new ArrayList<BandwidthPackage>();
 		for (int i = 0; i < _ctx.lengthValue("ListBandwidthPackagesResponse.BandwidthPackages.Length"); i++) {
 			BandwidthPackage bandwidthPackage = new BandwidthPackage();
-			bandwidthPackage.setBandwidthPackageId(_ctx.stringValue("ListBandwidthPackagesResponse.BandwidthPackages["+ i +"].BandwidthPackageId"));
-			bandwidthPackage.setName(_ctx.stringValue("ListBandwidthPackagesResponse.BandwidthPackages["+ i +"].Name"));
-			bandwidthPackage.setDescription(_ctx.stringValue("ListBandwidthPackagesResponse.BandwidthPackages["+ i +"].Description"));
-			bandwidthPackage.setState(_ctx.stringValue("ListBandwidthPackagesResponse.BandwidthPackages["+ i +"].State"));
-			bandwidthPackage.setBandwidth(_ctx.integerValue("ListBandwidthPackagesResponse.BandwidthPackages["+ i +"].Bandwidth"));
-			bandwidthPackage.setChargeType(_ctx.stringValue("ListBandwidthPackagesResponse.BandwidthPackages["+ i +"].ChargeType"));
-			bandwidthPackage.setExpiredTime(_ctx.stringValue("ListBandwidthPackagesResponse.BandwidthPackages["+ i +"].ExpiredTime"));
-			bandwidthPackage.setCreateTime(_ctx.stringValue("ListBandwidthPackagesResponse.BandwidthPackages["+ i +"].CreateTime"));
-			bandwidthPackage.setRegionId(_ctx.stringValue("ListBandwidthPackagesResponse.BandwidthPackages["+ i +"].RegionId"));
 			bandwidthPackage.setType(_ctx.stringValue("ListBandwidthPackagesResponse.BandwidthPackages["+ i +"].Type"));
 			bandwidthPackage.setBandwidthType(_ctx.stringValue("ListBandwidthPackagesResponse.BandwidthPackages["+ i +"].BandwidthType"));
+			bandwidthPackage.setState(_ctx.stringValue("ListBandwidthPackagesResponse.BandwidthPackages["+ i +"].State"));
+			bandwidthPackage.setCreateTime(_ctx.stringValue("ListBandwidthPackagesResponse.BandwidthPackages["+ i +"].CreateTime"));
+			bandwidthPackage.setChargeType(_ctx.stringValue("ListBandwidthPackagesResponse.BandwidthPackages["+ i +"].ChargeType"));
+			bandwidthPackage.setRegionId(_ctx.stringValue("ListBandwidthPackagesResponse.BandwidthPackages["+ i +"].RegionId"));
 			bandwidthPackage.setCbnGeographicRegionIdA(_ctx.stringValue("ListBandwidthPackagesResponse.BandwidthPackages["+ i +"].CbnGeographicRegionIdA"));
+			bandwidthPackage.setBandwidthPackageId(_ctx.stringValue("ListBandwidthPackagesResponse.BandwidthPackages["+ i +"].BandwidthPackageId"));
+			bandwidthPackage.setBandwidth(_ctx.integerValue("ListBandwidthPackagesResponse.BandwidthPackages["+ i +"].Bandwidth"));
+			bandwidthPackage.setDescription(_ctx.stringValue("ListBandwidthPackagesResponse.BandwidthPackages["+ i +"].Description"));
+			bandwidthPackage.setExpiredTime(_ctx.stringValue("ListBandwidthPackagesResponse.BandwidthPackages["+ i +"].ExpiredTime"));
 			bandwidthPackage.setCbnGeographicRegionIdB(_ctx.stringValue("ListBandwidthPackagesResponse.BandwidthPackages["+ i +"].CbnGeographicRegionIdB"));
+			bandwidthPackage.setName(_ctx.stringValue("ListBandwidthPackagesResponse.BandwidthPackages["+ i +"].Name"));
+			bandwidthPackage.setBillingType(_ctx.stringValue("ListBandwidthPackagesResponse.BandwidthPackages["+ i +"].BillingType"));
+			bandwidthPackage.setRatio(_ctx.integerValue("ListBandwidthPackagesResponse.BandwidthPackages["+ i +"].Ratio"));
 
 			List<String> accelerators = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListBandwidthPackagesResponse.BandwidthPackages["+ i +"].Accelerators.Length"); j++) {

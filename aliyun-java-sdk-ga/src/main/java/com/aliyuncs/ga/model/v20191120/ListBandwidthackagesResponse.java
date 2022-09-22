@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListBandwidthackagesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
-
-	private Integer pageNumber;
 
 	private Integer pageSize;
 
+	private String requestId;
+
+	private Integer pageNumber;
+
 	private List<BandwidthPackage> bandwidthPackages;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class ListBandwidthackagesResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<BandwidthPackage> getBandwidthPackages() {
@@ -79,19 +79,19 @@ public class ListBandwidthackagesResponse extends AcsResponse {
 
 		private String bandwidthPackageId;
 
-		private String name;
+		private Integer bandwidth;
 
 		private String description;
 
+		private String expiredTime;
+
 		private String state;
 
-		private Integer bandwidth;
+		private String createTime;
 
 		private String chargeType;
 
-		private String expiredTime;
-
-		private String createTime;
+		private String name;
 
 		private String regionId;
 
@@ -105,12 +105,12 @@ public class ListBandwidthackagesResponse extends AcsResponse {
 			this.bandwidthPackageId = bandwidthPackageId;
 		}
 
-		public String getName() {
-			return this.name;
+		public Integer getBandwidth() {
+			return this.bandwidth;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+		public void setBandwidth(Integer bandwidth) {
+			this.bandwidth = bandwidth;
 		}
 
 		public String getDescription() {
@@ -121,6 +121,14 @@ public class ListBandwidthackagesResponse extends AcsResponse {
 			this.description = description;
 		}
 
+		public String getExpiredTime() {
+			return this.expiredTime;
+		}
+
+		public void setExpiredTime(String expiredTime) {
+			this.expiredTime = expiredTime;
+		}
+
 		public String getState() {
 			return this.state;
 		}
@@ -129,12 +137,12 @@ public class ListBandwidthackagesResponse extends AcsResponse {
 			this.state = state;
 		}
 
-		public Integer getBandwidth() {
-			return this.bandwidth;
+		public String getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setBandwidth(Integer bandwidth) {
-			this.bandwidth = bandwidth;
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
 		public String getChargeType() {
@@ -145,20 +153,12 @@ public class ListBandwidthackagesResponse extends AcsResponse {
 			this.chargeType = chargeType;
 		}
 
-		public String getExpiredTime() {
-			return this.expiredTime;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setExpiredTime(String expiredTime) {
-			this.expiredTime = expiredTime;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public String getRegionId() {

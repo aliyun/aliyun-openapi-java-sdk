@@ -27,9 +27,11 @@ public class DescribeIpSetResponseUnmarshaller {
 		
 		describeIpSetResponse.setRequestId(_ctx.stringValue("DescribeIpSetResponse.RequestId"));
 		describeIpSetResponse.setIpSetId(_ctx.stringValue("DescribeIpSetResponse.IpSetId"));
-		describeIpSetResponse.setAccelerateRegionId(_ctx.stringValue("DescribeIpSetResponse.AccelerateRegionId"));
-		describeIpSetResponse.setBandwidth(_ctx.integerValue("DescribeIpSetResponse.Bandwidth"));
+		describeIpSetResponse.setIpVersion(_ctx.stringValue("DescribeIpSetResponse.IpVersion"));
 		describeIpSetResponse.setState(_ctx.stringValue("DescribeIpSetResponse.State"));
+		describeIpSetResponse.setBandwidth(_ctx.integerValue("DescribeIpSetResponse.Bandwidth"));
+		describeIpSetResponse.setAccelerateRegionId(_ctx.stringValue("DescribeIpSetResponse.AccelerateRegionId"));
+		describeIpSetResponse.setAcceleratorId(_ctx.stringValue("DescribeIpSetResponse.AcceleratorId"));
 
 		List<String> ipAddressList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeIpSetResponse.IpAddressList.Length"); i++) {

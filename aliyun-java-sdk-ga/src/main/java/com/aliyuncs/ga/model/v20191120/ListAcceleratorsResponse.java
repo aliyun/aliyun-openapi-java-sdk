@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListAcceleratorsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
-
-	private Integer pageNumber;
 
 	private Integer pageSize;
 
+	private String requestId;
+
+	private Integer pageNumber;
+
 	private List<AcceleratorsItem> accelerators;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class ListAcceleratorsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<AcceleratorsItem> getAccelerators() {
@@ -77,35 +77,121 @@ public class ListAcceleratorsResponse extends AcsResponse {
 
 	public static class AcceleratorsItem {
 
-		private String acceleratorId;
+		private String dnsName;
 
-		private String name;
+		private String type;
+
+		private String secondDnsName;
+
+		private String spec;
+
+		private String state;
+
+		private Long createTime;
+
+		private String cenId;
+
+		private String ddosId;
+
+		private String regionId;
+
+		private String instanceChargeType;
+
+		private String acceleratorId;
 
 		private String description;
 
 		private Integer bandwidth;
 
-		private String type;
-
-		private String instanceChargeType;
-
 		private Long expiredTime;
 
-		private String cenId;
-
-		private String state;
-
-		private String dnsName;
-
-		private Long createTime;
-
-		private String regionId;
-
-		private String spec;
+		private String name;
 
 		private BasicBandwidthPackage basicBandwidthPackage;
 
 		private CrossDomainBandwidthPackage crossDomainBandwidthPackage;
+
+		private IpSetConfig ipSetConfig;
+
+		public String getDnsName() {
+			return this.dnsName;
+		}
+
+		public void setDnsName(String dnsName) {
+			this.dnsName = dnsName;
+		}
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
+		}
+
+		public String getSecondDnsName() {
+			return this.secondDnsName;
+		}
+
+		public void setSecondDnsName(String secondDnsName) {
+			this.secondDnsName = secondDnsName;
+		}
+
+		public String getSpec() {
+			return this.spec;
+		}
+
+		public void setSpec(String spec) {
+			this.spec = spec;
+		}
+
+		public String getState() {
+			return this.state;
+		}
+
+		public void setState(String state) {
+			this.state = state;
+		}
+
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getCenId() {
+			return this.cenId;
+		}
+
+		public void setCenId(String cenId) {
+			this.cenId = cenId;
+		}
+
+		public String getDdosId() {
+			return this.ddosId;
+		}
+
+		public void setDdosId(String ddosId) {
+			this.ddosId = ddosId;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getInstanceChargeType() {
+			return this.instanceChargeType;
+		}
+
+		public void setInstanceChargeType(String instanceChargeType) {
+			this.instanceChargeType = instanceChargeType;
+		}
 
 		public String getAcceleratorId() {
 			return this.acceleratorId;
@@ -113,14 +199,6 @@ public class ListAcceleratorsResponse extends AcsResponse {
 
 		public void setAcceleratorId(String acceleratorId) {
 			this.acceleratorId = acceleratorId;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
 		}
 
 		public String getDescription() {
@@ -139,22 +217,6 @@ public class ListAcceleratorsResponse extends AcsResponse {
 			this.bandwidth = bandwidth;
 		}
 
-		public String getType() {
-			return this.type;
-		}
-
-		public void setType(String type) {
-			this.type = type;
-		}
-
-		public String getInstanceChargeType() {
-			return this.instanceChargeType;
-		}
-
-		public void setInstanceChargeType(String instanceChargeType) {
-			this.instanceChargeType = instanceChargeType;
-		}
-
 		public Long getExpiredTime() {
 			return this.expiredTime;
 		}
@@ -163,52 +225,12 @@ public class ListAcceleratorsResponse extends AcsResponse {
 			this.expiredTime = expiredTime;
 		}
 
-		public String getCenId() {
-			return this.cenId;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setCenId(String cenId) {
-			this.cenId = cenId;
-		}
-
-		public String getState() {
-			return this.state;
-		}
-
-		public void setState(String state) {
-			this.state = state;
-		}
-
-		public String getDnsName() {
-			return this.dnsName;
-		}
-
-		public void setDnsName(String dnsName) {
-			this.dnsName = dnsName;
-		}
-
-		public Long getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getSpec() {
-			return this.spec;
-		}
-
-		public void setSpec(String spec) {
-			this.spec = spec;
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public BasicBandwidthPackage getBasicBandwidthPackage() {
@@ -227,21 +249,21 @@ public class ListAcceleratorsResponse extends AcsResponse {
 			this.crossDomainBandwidthPackage = crossDomainBandwidthPackage;
 		}
 
-		public static class BasicBandwidthPackage {
+		public IpSetConfig getIpSetConfig() {
+			return this.ipSetConfig;
+		}
 
-			private String instanceId;
+		public void setIpSetConfig(IpSetConfig ipSetConfig) {
+			this.ipSetConfig = ipSetConfig;
+		}
+
+		public static class BasicBandwidthPackage {
 
 			private Integer bandwidth;
 
 			private String bandwidthType;
 
-			public String getInstanceId() {
-				return this.instanceId;
-			}
-
-			public void setInstanceId(String instanceId) {
-				this.instanceId = instanceId;
-			}
+			private String instanceId;
 
 			public Integer getBandwidth() {
 				return this.bandwidth;
@@ -258,13 +280,6 @@ public class ListAcceleratorsResponse extends AcsResponse {
 			public void setBandwidthType(String bandwidthType) {
 				this.bandwidthType = bandwidthType;
 			}
-		}
-
-		public static class CrossDomainBandwidthPackage {
-
-			private String instanceId;
-
-			private Integer bandwidth;
 
 			public String getInstanceId() {
 				return this.instanceId;
@@ -273,6 +288,13 @@ public class ListAcceleratorsResponse extends AcsResponse {
 			public void setInstanceId(String instanceId) {
 				this.instanceId = instanceId;
 			}
+		}
+
+		public static class CrossDomainBandwidthPackage {
+
+			private Integer bandwidth;
+
+			private String instanceId;
 
 			public Integer getBandwidth() {
 				return this.bandwidth;
@@ -280,6 +302,27 @@ public class ListAcceleratorsResponse extends AcsResponse {
 
 			public void setBandwidth(Integer bandwidth) {
 				this.bandwidth = bandwidth;
+			}
+
+			public String getInstanceId() {
+				return this.instanceId;
+			}
+
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
+			}
+		}
+
+		public static class IpSetConfig {
+
+			private String accessMode;
+
+			public String getAccessMode() {
+				return this.accessMode;
+			}
+
+			public void setAccessMode(String accessMode) {
+				this.accessMode = accessMode;
 			}
 		}
 	}

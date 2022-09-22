@@ -25,6 +25,8 @@ import com.aliyuncs.ga.Endpoint;
 public class ListBandwidthPackagesRequest extends RpcAcsRequest<ListBandwidthPackagesResponse> {
 	   
 
+	private String bandwidthPackageId;
+
 	private String type;
 
 	private Integer pageNumber;
@@ -39,6 +41,17 @@ public class ListBandwidthPackagesRequest extends RpcAcsRequest<ListBandwidthPac
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getBandwidthPackageId() {
+		return this.bandwidthPackageId;
+	}
+
+	public void setBandwidthPackageId(String bandwidthPackageId) {
+		this.bandwidthPackageId = bandwidthPackageId;
+		if(bandwidthPackageId != null){
+			putQueryParameter("BandwidthPackageId", bandwidthPackageId);
+		}
 	}
 
 	public String getType() {
