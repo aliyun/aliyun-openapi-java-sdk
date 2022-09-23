@@ -93,6 +93,8 @@ public class DescribeNetworksResponse extends AcsResponse {
 
 		private String routerTableId;
 
+		private String networkAclId;
+
 		private List<String> vSwitchIds;
 
 		public String getEnsRegionId() {
@@ -157,6 +159,14 @@ public class DescribeNetworksResponse extends AcsResponse {
 
 		public void setRouterTableId(String routerTableId) {
 			this.routerTableId = routerTableId;
+		}
+
+		public String getNetworkAclId() {
+			return this.networkAclId;
+		}
+
+		public void setNetworkAclId(String networkAclId) {
+			this.networkAclId = networkAclId;
 		}
 
 		public List<String> getVSwitchIds() {

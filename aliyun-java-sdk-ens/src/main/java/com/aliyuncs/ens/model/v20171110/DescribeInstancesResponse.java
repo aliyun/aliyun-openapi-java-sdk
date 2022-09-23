@@ -93,6 +93,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private String specName;
 
+		private String instanceTypeFamily;
+
 		private String instanceResourceType;
 
 		private String hostName;
@@ -113,9 +115,9 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private Integer disk;
 
-		private Integer memory;
-
 		private String oSName;
+
+		private Integer memory;
 
 		private String imageId;
 
@@ -157,6 +159,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setSpecName(String specName) {
 			this.specName = specName;
+		}
+
+		public String getInstanceTypeFamily() {
+			return this.instanceTypeFamily;
+		}
+
+		public void setInstanceTypeFamily(String instanceTypeFamily) {
+			this.instanceTypeFamily = instanceTypeFamily;
 		}
 
 		public String getInstanceResourceType() {
@@ -239,20 +249,20 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.disk = disk;
 		}
 
-		public Integer getMemory() {
-			return this.memory;
-		}
-
-		public void setMemory(Integer memory) {
-			this.memory = memory;
-		}
-
 		public String getOSName() {
 			return this.oSName;
 		}
 
 		public void setOSName(String oSName) {
 			this.oSName = oSName;
+		}
+
+		public Integer getMemory() {
+			return this.memory;
+		}
+
+		public void setMemory(Integer memory) {
+			this.memory = memory;
 		}
 
 		public String getImageId() {

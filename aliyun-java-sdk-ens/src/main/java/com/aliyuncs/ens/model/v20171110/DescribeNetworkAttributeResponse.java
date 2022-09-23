@@ -43,6 +43,8 @@ public class DescribeNetworkAttributeResponse extends AcsResponse {
 
 	private String routerTableId;
 
+	private String networkAclId;
+
 	private List<CloudResourceSetType> cloudResources;
 
 	private List<String> vSwitchIds;
@@ -117,6 +119,14 @@ public class DescribeNetworkAttributeResponse extends AcsResponse {
 
 	public void setRouterTableId(String routerTableId) {
 		this.routerTableId = routerTableId;
+	}
+
+	public String getNetworkAclId() {
+		return this.networkAclId;
+	}
+
+	public void setNetworkAclId(String networkAclId) {
+		this.networkAclId = networkAclId;
 	}
 
 	public List<CloudResourceSetType> getCloudResources() {

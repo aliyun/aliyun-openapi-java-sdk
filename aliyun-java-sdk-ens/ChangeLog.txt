@@ -1,3 +1,6 @@
+2022-09-23 Version: 3.0.7
+- Support ipv4-network.
+
 2022-08-09 Version: 3.0.6
 - Support API ARMInstance.
 - Support Control ARM API.

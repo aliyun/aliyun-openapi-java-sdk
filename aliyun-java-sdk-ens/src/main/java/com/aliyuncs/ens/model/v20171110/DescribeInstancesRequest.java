@@ -44,6 +44,8 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 
 	private String status;
 
+	private String intranetIp;
+
 	private String imageId;
 
 	private String securityGroupId;
@@ -167,6 +169,17 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		this.status = status;
 		if(status != null){
 			putQueryParameter("Status", status);
+		}
+	}
+
+	public String getIntranetIp() {
+		return this.intranetIp;
+	}
+
+	public void setIntranetIp(String intranetIp) {
+		this.intranetIp = intranetIp;
+		if(intranetIp != null){
+			putQueryParameter("IntranetIp", intranetIp);
 		}
 	}
 
