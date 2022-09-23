@@ -15,7 +15,6 @@
 package com.aliyuncs.cbn.model.v20170912;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cbn.Endpoint;
 
@@ -23,16 +22,12 @@ import com.aliyuncs.cbn.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListTransitRouterMulticastDomainAssociationsRequest extends RpcAcsRequest<ListTransitRouterMulticastDomainAssociationsResponse> {
+public class DescribeGrantRulesToResourceRequest extends RpcAcsRequest<DescribeGrantRulesToResourceResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String clientToken;
-
-	private List<String> vSwitchIdss;
-
-	private String transitRouterMulticastDomainId;
+	private String productType;
 
 	private String nextToken;
 
@@ -44,13 +39,9 @@ public class ListTransitRouterMulticastDomainAssociationsRequest extends RpcAcsR
 
 	private Long ownerId;
 
-	private String resourceType;
-
-	private String transitRouterAttachmentId;
-
-	private Long maxResults;
-	public ListTransitRouterMulticastDomainAssociationsRequest() {
-		super("Cbn", "2017-09-12", "ListTransitRouterMulticastDomainAssociations");
+	private Integer maxResults;
+	public DescribeGrantRulesToResourceRequest() {
+		super("Cbn", "2017-09-12", "DescribeGrantRulesToResource");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -69,38 +60,14 @@ public class ListTransitRouterMulticastDomainAssociationsRequest extends RpcAcsR
 		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
+	public String getProductType() {
+		return this.productType;
 	}
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public List<String> getVSwitchIdss() {
-		return this.vSwitchIdss;
-	}
-
-	public void setVSwitchIdss(List<String> vSwitchIdss) {
-		this.vSwitchIdss = vSwitchIdss;	
-		if (vSwitchIdss != null) {
-			for (int i = 0; i < vSwitchIdss.size(); i++) {
-				putQueryParameter("VSwitchIds." + (i + 1) , vSwitchIdss.get(i));
-			}
-		}	
-	}
-
-	public String getTransitRouterMulticastDomainId() {
-		return this.transitRouterMulticastDomainId;
-	}
-
-	public void setTransitRouterMulticastDomainId(String transitRouterMulticastDomainId) {
-		this.transitRouterMulticastDomainId = transitRouterMulticastDomainId;
-		if(transitRouterMulticastDomainId != null){
-			putQueryParameter("TransitRouterMulticastDomainId", transitRouterMulticastDomainId);
+	public void setProductType(String productType) {
+		this.productType = productType;
+		if(productType != null){
+			putQueryParameter("ProductType", productType);
 		}
 	}
 
@@ -159,33 +126,11 @@ public class ListTransitRouterMulticastDomainAssociationsRequest extends RpcAcsR
 		}
 	}
 
-	public String getResourceType() {
-		return this.resourceType;
-	}
-
-	public void setResourceType(String resourceType) {
-		this.resourceType = resourceType;
-		if(resourceType != null){
-			putQueryParameter("ResourceType", resourceType);
-		}
-	}
-
-	public String getTransitRouterAttachmentId() {
-		return this.transitRouterAttachmentId;
-	}
-
-	public void setTransitRouterAttachmentId(String transitRouterAttachmentId) {
-		this.transitRouterAttachmentId = transitRouterAttachmentId;
-		if(transitRouterAttachmentId != null){
-			putQueryParameter("TransitRouterAttachmentId", transitRouterAttachmentId);
-		}
-	}
-
-	public Long getMaxResults() {
+	public Integer getMaxResults() {
 		return this.maxResults;
 	}
 
-	public void setMaxResults(Long maxResults) {
+	public void setMaxResults(Integer maxResults) {
 		this.maxResults = maxResults;
 		if(maxResults != null){
 			putQueryParameter("MaxResults", maxResults.toString());
@@ -193,8 +138,8 @@ public class ListTransitRouterMulticastDomainAssociationsRequest extends RpcAcsR
 	}
 
 	@Override
-	public Class<ListTransitRouterMulticastDomainAssociationsResponse> getResponseClass() {
-		return ListTransitRouterMulticastDomainAssociationsResponse.class;
+	public Class<DescribeGrantRulesToResourceResponse> getResponseClass() {
+		return DescribeGrantRulesToResourceResponse.class;
 	}
 
 }

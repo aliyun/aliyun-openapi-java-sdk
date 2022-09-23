@@ -31,11 +31,15 @@ public class DescribeGrantRulesToCenRequest extends RpcAcsRequest<DescribeGrantR
 
 	private String productType;
 
+	private String nextToken;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private Long maxResults;
 	public DescribeGrantRulesToCenRequest() {
 		super("Cbn", "2017-09-12", "DescribeGrantRulesToCen");
 		setMethod(MethodType.POST);
@@ -78,6 +82,17 @@ public class DescribeGrantRulesToCenRequest extends RpcAcsRequest<DescribeGrantR
 		}
 	}
 
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -108,6 +123,17 @@ public class DescribeGrantRulesToCenRequest extends RpcAcsRequest<DescribeGrantR
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Long getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Long maxResults) {
+		this.maxResults = maxResults;
+		if(maxResults != null){
+			putQueryParameter("MaxResults", maxResults.toString());
 		}
 	}
 

@@ -27,6 +27,9 @@ public class DescribeGrantRulesToCenResponseUnmarshaller {
 	public static DescribeGrantRulesToCenResponse unmarshall(DescribeGrantRulesToCenResponse describeGrantRulesToCenResponse, UnmarshallerContext _ctx) {
 		
 		describeGrantRulesToCenResponse.setRequestId(_ctx.stringValue("DescribeGrantRulesToCenResponse.RequestId"));
+		describeGrantRulesToCenResponse.setTotalCount(_ctx.longValue("DescribeGrantRulesToCenResponse.TotalCount"));
+		describeGrantRulesToCenResponse.setMaxResults(_ctx.longValue("DescribeGrantRulesToCenResponse.MaxResults"));
+		describeGrantRulesToCenResponse.setNextToken(_ctx.stringValue("DescribeGrantRulesToCenResponse.NextToken"));
 
 		List<GrantRule> grantRules = new ArrayList<GrantRule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeGrantRulesToCenResponse.GrantRules.Length"); i++) {
@@ -37,6 +40,7 @@ public class DescribeGrantRulesToCenResponseUnmarshaller {
 			grantRule.setChildInstanceId(_ctx.stringValue("DescribeGrantRulesToCenResponse.GrantRules["+ i +"].ChildInstanceId"));
 			grantRule.setCenId(_ctx.stringValue("DescribeGrantRulesToCenResponse.GrantRules["+ i +"].CenId"));
 			grantRule.setOrderType(_ctx.stringValue("DescribeGrantRulesToCenResponse.GrantRules["+ i +"].OrderType"));
+			grantRule.setCenOwnerId(_ctx.longValue("DescribeGrantRulesToCenResponse.GrantRules["+ i +"].CenOwnerId"));
 
 			grantRules.add(grantRule);
 		}

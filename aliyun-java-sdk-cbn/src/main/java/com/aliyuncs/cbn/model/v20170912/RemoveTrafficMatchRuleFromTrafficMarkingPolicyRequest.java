@@ -15,6 +15,7 @@
 package com.aliyuncs.cbn.model.v20170912;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cbn.Endpoint;
 
@@ -22,30 +23,26 @@ import com.aliyuncs.cbn.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListTransitRouterMulticastDomainsRequest extends RpcAcsRequest<ListTransitRouterMulticastDomainsResponse> {
+public class RemoveTrafficMatchRuleFromTrafficMarkingPolicyRequest extends RpcAcsRequest<RemoveTrafficMatchRuleFromTrafficMarkingPolicyResponse> {
 	   
 
 	private Long resourceOwnerId;
 
 	private String clientToken;
 
-	private String cenId;
+	private String trafficMarkingPolicyId;
 
-	private String transitRouterMulticastDomainId;
-
-	private String nextToken;
+	private Boolean dryRun;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
+	private List<String> trafficMarkRuleIdss;
+
 	private Long ownerId;
-
-	private String transitRouterId;
-
-	private Long maxResults;
-	public ListTransitRouterMulticastDomainsRequest() {
-		super("Cbn", "2017-09-12", "ListTransitRouterMulticastDomains");
+	public RemoveTrafficMatchRuleFromTrafficMarkingPolicyRequest() {
+		super("Cbn", "2017-09-12", "RemoveTrafficMatchRuleFromTrafficMarkingPolicy");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -75,36 +72,25 @@ public class ListTransitRouterMulticastDomainsRequest extends RpcAcsRequest<List
 		}
 	}
 
-	public String getCenId() {
-		return this.cenId;
+	public String getTrafficMarkingPolicyId() {
+		return this.trafficMarkingPolicyId;
 	}
 
-	public void setCenId(String cenId) {
-		this.cenId = cenId;
-		if(cenId != null){
-			putQueryParameter("CenId", cenId);
+	public void setTrafficMarkingPolicyId(String trafficMarkingPolicyId) {
+		this.trafficMarkingPolicyId = trafficMarkingPolicyId;
+		if(trafficMarkingPolicyId != null){
+			putQueryParameter("TrafficMarkingPolicyId", trafficMarkingPolicyId);
 		}
 	}
 
-	public String getTransitRouterMulticastDomainId() {
-		return this.transitRouterMulticastDomainId;
+	public Boolean getDryRun() {
+		return this.dryRun;
 	}
 
-	public void setTransitRouterMulticastDomainId(String transitRouterMulticastDomainId) {
-		this.transitRouterMulticastDomainId = transitRouterMulticastDomainId;
-		if(transitRouterMulticastDomainId != null){
-			putQueryParameter("TransitRouterMulticastDomainId", transitRouterMulticastDomainId);
-		}
-	}
-
-	public String getNextToken() {
-		return this.nextToken;
-	}
-
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-		if(nextToken != null){
-			putQueryParameter("NextToken", nextToken);
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 
@@ -130,6 +116,19 @@ public class ListTransitRouterMulticastDomainsRequest extends RpcAcsRequest<List
 		}
 	}
 
+	public List<String> getTrafficMarkRuleIdss() {
+		return this.trafficMarkRuleIdss;
+	}
+
+	public void setTrafficMarkRuleIdss(List<String> trafficMarkRuleIdss) {
+		this.trafficMarkRuleIdss = trafficMarkRuleIdss;	
+		if (trafficMarkRuleIdss != null) {
+			for (int i = 0; i < trafficMarkRuleIdss.size(); i++) {
+				putQueryParameter("TrafficMarkRuleIds." + (i + 1) , trafficMarkRuleIdss.get(i));
+			}
+		}	
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -141,31 +140,9 @@ public class ListTransitRouterMulticastDomainsRequest extends RpcAcsRequest<List
 		}
 	}
 
-	public String getTransitRouterId() {
-		return this.transitRouterId;
-	}
-
-	public void setTransitRouterId(String transitRouterId) {
-		this.transitRouterId = transitRouterId;
-		if(transitRouterId != null){
-			putQueryParameter("TransitRouterId", transitRouterId);
-		}
-	}
-
-	public Long getMaxResults() {
-		return this.maxResults;
-	}
-
-	public void setMaxResults(Long maxResults) {
-		this.maxResults = maxResults;
-		if(maxResults != null){
-			putQueryParameter("MaxResults", maxResults.toString());
-		}
-	}
-
 	@Override
-	public Class<ListTransitRouterMulticastDomainsResponse> getResponseClass() {
-		return ListTransitRouterMulticastDomainsResponse.class;
+	public Class<RemoveTrafficMatchRuleFromTrafficMarkingPolicyResponse> getResponseClass() {
+		return RemoveTrafficMatchRuleFromTrafficMarkingPolicyResponse.class;
 	}
 
 }

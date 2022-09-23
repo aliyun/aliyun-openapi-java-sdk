@@ -15,6 +15,7 @@
 package com.aliyuncs.cbn.model.v20170912;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cbn.Endpoint;
 
@@ -22,18 +23,22 @@ import com.aliyuncs.cbn.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListTransitRouterMulticastDomainsRequest extends RpcAcsRequest<ListTransitRouterMulticastDomainsResponse> {
+public class CreateCenInterRegionTrafficQosQueueRequest extends RpcAcsRequest<CreateCenInterRegionTrafficQosQueueResponse> {
 	   
+
+	private List<Integer> dscpss;
 
 	private Long resourceOwnerId;
 
 	private String clientToken;
 
-	private String cenId;
+	private String qosQueueName;
 
-	private String transitRouterMulticastDomainId;
+	private String remainBandwidthPercent;
 
-	private String nextToken;
+	private Boolean dryRun;
+
+	private String trafficQosPolicyId;
 
 	private String resourceOwnerAccount;
 
@@ -41,16 +46,27 @@ public class ListTransitRouterMulticastDomainsRequest extends RpcAcsRequest<List
 
 	private Long ownerId;
 
-	private String transitRouterId;
-
-	private Long maxResults;
-	public ListTransitRouterMulticastDomainsRequest() {
-		super("Cbn", "2017-09-12", "ListTransitRouterMulticastDomains");
+	private String qosQueueDescription;
+	public CreateCenInterRegionTrafficQosQueueRequest() {
+		super("Cbn", "2017-09-12", "CreateCenInterRegionTrafficQosQueue");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public List<Integer> getDscpss() {
+		return this.dscpss;
+	}
+
+	public void setDscpss(List<Integer> dscpss) {
+		this.dscpss = dscpss;	
+		if (dscpss != null) {
+			for (int i = 0; i < dscpss.size(); i++) {
+				putQueryParameter("Dscps." + (i + 1) , dscpss.get(i));
+			}
+		}	
 	}
 
 	public Long getResourceOwnerId() {
@@ -75,36 +91,47 @@ public class ListTransitRouterMulticastDomainsRequest extends RpcAcsRequest<List
 		}
 	}
 
-	public String getCenId() {
-		return this.cenId;
+	public String getQosQueueName() {
+		return this.qosQueueName;
 	}
 
-	public void setCenId(String cenId) {
-		this.cenId = cenId;
-		if(cenId != null){
-			putQueryParameter("CenId", cenId);
+	public void setQosQueueName(String qosQueueName) {
+		this.qosQueueName = qosQueueName;
+		if(qosQueueName != null){
+			putQueryParameter("QosQueueName", qosQueueName);
 		}
 	}
 
-	public String getTransitRouterMulticastDomainId() {
-		return this.transitRouterMulticastDomainId;
+	public String getRemainBandwidthPercent() {
+		return this.remainBandwidthPercent;
 	}
 
-	public void setTransitRouterMulticastDomainId(String transitRouterMulticastDomainId) {
-		this.transitRouterMulticastDomainId = transitRouterMulticastDomainId;
-		if(transitRouterMulticastDomainId != null){
-			putQueryParameter("TransitRouterMulticastDomainId", transitRouterMulticastDomainId);
+	public void setRemainBandwidthPercent(String remainBandwidthPercent) {
+		this.remainBandwidthPercent = remainBandwidthPercent;
+		if(remainBandwidthPercent != null){
+			putQueryParameter("RemainBandwidthPercent", remainBandwidthPercent);
 		}
 	}
 
-	public String getNextToken() {
-		return this.nextToken;
+	public Boolean getDryRun() {
+		return this.dryRun;
 	}
 
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-		if(nextToken != null){
-			putQueryParameter("NextToken", nextToken);
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
+		}
+	}
+
+	public String getTrafficQosPolicyId() {
+		return this.trafficQosPolicyId;
+	}
+
+	public void setTrafficQosPolicyId(String trafficQosPolicyId) {
+		this.trafficQosPolicyId = trafficQosPolicyId;
+		if(trafficQosPolicyId != null){
+			putQueryParameter("TrafficQosPolicyId", trafficQosPolicyId);
 		}
 	}
 
@@ -141,31 +168,20 @@ public class ListTransitRouterMulticastDomainsRequest extends RpcAcsRequest<List
 		}
 	}
 
-	public String getTransitRouterId() {
-		return this.transitRouterId;
+	public String getQosQueueDescription() {
+		return this.qosQueueDescription;
 	}
 
-	public void setTransitRouterId(String transitRouterId) {
-		this.transitRouterId = transitRouterId;
-		if(transitRouterId != null){
-			putQueryParameter("TransitRouterId", transitRouterId);
-		}
-	}
-
-	public Long getMaxResults() {
-		return this.maxResults;
-	}
-
-	public void setMaxResults(Long maxResults) {
-		this.maxResults = maxResults;
-		if(maxResults != null){
-			putQueryParameter("MaxResults", maxResults.toString());
+	public void setQosQueueDescription(String qosQueueDescription) {
+		this.qosQueueDescription = qosQueueDescription;
+		if(qosQueueDescription != null){
+			putQueryParameter("QosQueueDescription", qosQueueDescription);
 		}
 	}
 
 	@Override
-	public Class<ListTransitRouterMulticastDomainsResponse> getResponseClass() {
-		return ListTransitRouterMulticastDomainsResponse.class;
+	public Class<CreateCenInterRegionTrafficQosQueueResponse> getResponseClass() {
+		return CreateCenInterRegionTrafficQosQueueResponse.class;
 	}
 
 }
