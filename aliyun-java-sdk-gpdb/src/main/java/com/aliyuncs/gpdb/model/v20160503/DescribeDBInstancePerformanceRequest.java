@@ -27,6 +27,8 @@ public class DescribeDBInstancePerformanceRequest extends RpcAcsRequest<Describe
 
 	private String startTime;
 
+	private String resourceGroupId;
+
 	private String dBInstanceId;
 
 	private String key;
@@ -49,6 +51,17 @@ public class DescribeDBInstancePerformanceRequest extends RpcAcsRequest<Describe
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

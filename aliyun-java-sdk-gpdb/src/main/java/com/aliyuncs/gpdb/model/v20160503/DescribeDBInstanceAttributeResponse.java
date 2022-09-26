@@ -149,6 +149,14 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		private String encryptionType;
 
+		private String coreVersion;
+
+		private String runningTime;
+
+		private String startTime;
+
+		private String resourceGroupId;
+
 		private List<Tag> tags;
 
 		public String getVpcId() {
@@ -557,6 +565,38 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		public void setEncryptionType(String encryptionType) {
 			this.encryptionType = encryptionType;
+		}
+
+		public String getCoreVersion() {
+			return this.coreVersion;
+		}
+
+		public void setCoreVersion(String coreVersion) {
+			this.coreVersion = coreVersion;
+		}
+
+		public String getRunningTime() {
+			return this.runningTime;
+		}
+
+		public void setRunningTime(String runningTime) {
+			this.runningTime = runningTime;
+		}
+
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public List<Tag> getTags() {

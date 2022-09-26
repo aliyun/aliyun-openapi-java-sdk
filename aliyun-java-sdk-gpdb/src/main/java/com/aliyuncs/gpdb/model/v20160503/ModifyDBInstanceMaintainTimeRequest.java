@@ -27,6 +27,8 @@ public class ModifyDBInstanceMaintainTimeRequest extends RpcAcsRequest<ModifyDBI
 
 	private String startTime;
 
+	private String resourceGroupId;
+
 	private String dBInstanceId;
 
 	private String endTime;
@@ -47,6 +49,17 @@ public class ModifyDBInstanceMaintainTimeRequest extends RpcAcsRequest<ModifyDBI
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

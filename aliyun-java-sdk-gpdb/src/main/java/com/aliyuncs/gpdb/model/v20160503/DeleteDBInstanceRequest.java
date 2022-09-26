@@ -27,6 +27,8 @@ public class DeleteDBInstanceRequest extends RpcAcsRequest<DeleteDBInstanceRespo
 
 	private String clientToken;
 
+	private String resourceGroupId;
+
 	private String dBInstanceId;
 
 	private Long ownerId;
@@ -47,6 +49,17 @@ public class DeleteDBInstanceRequest extends RpcAcsRequest<DeleteDBInstanceRespo
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

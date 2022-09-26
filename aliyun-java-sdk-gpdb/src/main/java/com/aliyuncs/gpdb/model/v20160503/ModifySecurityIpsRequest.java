@@ -27,6 +27,8 @@ public class ModifySecurityIpsRequest extends RpcAcsRequest<ModifySecurityIpsRes
 
 	private String dBInstanceIPArrayName;
 
+	private String resourceGroupId;
+
 	private String dBInstanceId;
 
 	private String securityIPList;
@@ -49,6 +51,17 @@ public class ModifySecurityIpsRequest extends RpcAcsRequest<ModifySecurityIpsRes
 		this.dBInstanceIPArrayName = dBInstanceIPArrayName;
 		if(dBInstanceIPArrayName != null){
 			putQueryParameter("DBInstanceIPArrayName", dBInstanceIPArrayName);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

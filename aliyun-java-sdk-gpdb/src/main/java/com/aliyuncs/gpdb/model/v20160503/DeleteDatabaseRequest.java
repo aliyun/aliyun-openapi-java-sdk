@@ -25,6 +25,8 @@ import com.aliyuncs.gpdb.Endpoint;
 public class DeleteDatabaseRequest extends RpcAcsRequest<DeleteDatabaseResponse> {
 	   
 
+	private String resourceGroupId;
+
 	private String dBInstanceId;
 
 	private String dBName;
@@ -35,6 +37,17 @@ public class DeleteDatabaseRequest extends RpcAcsRequest<DeleteDatabaseResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
 	}
 
 	public String getDBInstanceId() {

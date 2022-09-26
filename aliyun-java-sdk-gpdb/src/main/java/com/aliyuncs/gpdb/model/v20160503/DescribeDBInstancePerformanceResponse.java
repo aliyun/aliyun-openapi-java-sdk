@@ -27,13 +27,13 @@ public class DescribeDBInstancePerformanceResponse extends AcsResponse {
 
 	private String endTime;
 
-	private String requestId;
+	private String startTime;
 
 	private String dBInstanceId;
 
-	private String startTime;
-
 	private String engine;
+
+	private String requestId;
 
 	private List<String> performanceKeys;
 
@@ -45,12 +45,12 @@ public class DescribeDBInstancePerformanceResponse extends AcsResponse {
 		this.endTime = endTime;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getStartTime() {
+		return this.startTime;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
 	}
 
 	public String getDBInstanceId() {
@@ -61,20 +61,20 @@ public class DescribeDBInstancePerformanceResponse extends AcsResponse {
 		this.dBInstanceId = dBInstanceId;
 	}
 
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-	}
-
 	public String getEngine() {
 		return this.engine;
 	}
 
 	public void setEngine(String engine) {
 		this.engine = engine;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<String> getPerformanceKeys() {

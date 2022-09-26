@@ -76,6 +76,10 @@ public class DescribeHealthStatusResponse extends AcsResponse {
 
 		private Node_segment_connection_status node_segment_connection_status;
 
+		private Adbpg_master_status adbpg_master_status;
+
+		private Adbpg_segment_status adbpg_segment_status;
+
 		public Adbpg_status getAdbpg_status() {
 			return this.adbpg_status;
 		}
@@ -154,6 +158,22 @@ public class DescribeHealthStatusResponse extends AcsResponse {
 
 		public void setNode_segment_connection_status(Node_segment_connection_status node_segment_connection_status) {
 			this.node_segment_connection_status = node_segment_connection_status;
+		}
+
+		public Adbpg_master_status getAdbpg_master_status() {
+			return this.adbpg_master_status;
+		}
+
+		public void setAdbpg_master_status(Adbpg_master_status adbpg_master_status) {
+			this.adbpg_master_status = adbpg_master_status;
+		}
+
+		public Adbpg_segment_status getAdbpg_segment_status() {
+			return this.adbpg_segment_status;
+		}
+
+		public void setAdbpg_segment_status(Adbpg_segment_status adbpg_segment_status) {
+			this.adbpg_segment_status = adbpg_segment_status;
 		}
 
 		public static class Adbpg_status {
@@ -364,6 +384,52 @@ public class DescribeHealthStatusResponse extends AcsResponse {
 		}
 
 		public static class Node_segment_connection_status {
+
+			private String status;
+
+			private Float value;
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public Float getValue() {
+				return this.value;
+			}
+
+			public void setValue(Float value) {
+				this.value = value;
+			}
+		}
+
+		public static class Adbpg_master_status {
+
+			private String status;
+
+			private Float value;
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public Float getValue() {
+				return this.value;
+			}
+
+			public void setValue(Float value) {
+				this.value = value;
+			}
+		}
+
+		public static class Adbpg_segment_status {
 
 			private String status;
 

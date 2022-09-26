@@ -27,6 +27,8 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 
 	private String accountDescription;
 
+	private String resourceGroupId;
+
 	private String accountName;
 
 	private String dBInstanceId;
@@ -53,6 +55,17 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 		this.accountDescription = accountDescription;
 		if(accountDescription != null){
 			putQueryParameter("AccountDescription", accountDescription);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

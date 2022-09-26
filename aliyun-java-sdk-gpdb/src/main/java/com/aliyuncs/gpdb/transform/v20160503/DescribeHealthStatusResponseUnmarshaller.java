@@ -21,6 +21,8 @@ import com.aliyuncs.gpdb.model.v20160503.DescribeHealthStatusResponse.Status.Adb
 import com.aliyuncs.gpdb.model.v20160503.DescribeHealthStatusResponse.Status.Adbpg_disk_status;
 import com.aliyuncs.gpdb.model.v20160503.DescribeHealthStatusResponse.Status.Adbpg_disk_usage_percent;
 import com.aliyuncs.gpdb.model.v20160503.DescribeHealthStatusResponse.Status.Adbpg_master_disk_usage_percent_max;
+import com.aliyuncs.gpdb.model.v20160503.DescribeHealthStatusResponse.Status.Adbpg_master_status;
+import com.aliyuncs.gpdb.model.v20160503.DescribeHealthStatusResponse.Status.Adbpg_segment_status;
 import com.aliyuncs.gpdb.model.v20160503.DescribeHealthStatusResponse.Status.Adbpg_status;
 import com.aliyuncs.gpdb.model.v20160503.DescribeHealthStatusResponse.Status.Node_master_connection_status;
 import com.aliyuncs.gpdb.model.v20160503.DescribeHealthStatusResponse.Status.Node_master_status;
@@ -87,6 +89,16 @@ public class DescribeHealthStatusResponseUnmarshaller {
 		node_segment_connection_status.setStatus(_ctx.stringValue("DescribeHealthStatusResponse.Status.node_segment_connection_status.Status"));
 		node_segment_connection_status.setValue(_ctx.floatValue("DescribeHealthStatusResponse.Status.node_segment_connection_status.Value"));
 		status.setNode_segment_connection_status(node_segment_connection_status);
+
+		Adbpg_master_status adbpg_master_status = new Adbpg_master_status();
+		adbpg_master_status.setStatus(_ctx.stringValue("DescribeHealthStatusResponse.Status.adbpg_master_status.Status"));
+		adbpg_master_status.setValue(_ctx.floatValue("DescribeHealthStatusResponse.Status.adbpg_master_status.Value"));
+		status.setAdbpg_master_status(adbpg_master_status);
+
+		Adbpg_segment_status adbpg_segment_status = new Adbpg_segment_status();
+		adbpg_segment_status.setStatus(_ctx.stringValue("DescribeHealthStatusResponse.Status.adbpg_segment_status.Status"));
+		adbpg_segment_status.setValue(_ctx.floatValue("DescribeHealthStatusResponse.Status.adbpg_segment_status.Value"));
+		status.setAdbpg_segment_status(adbpg_segment_status);
 		describeHealthStatusResponse.setStatus(status);
 	 
 	 	return describeHealthStatusResponse;

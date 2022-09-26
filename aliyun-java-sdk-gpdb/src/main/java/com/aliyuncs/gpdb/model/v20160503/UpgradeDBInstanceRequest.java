@@ -25,6 +25,18 @@ import com.aliyuncs.gpdb.Endpoint;
 public class UpgradeDBInstanceRequest extends RpcAcsRequest<UpgradeDBInstanceResponse> {
 	   
 
+	private String instanceSpec;
+
+	private String storageSize;
+
+	private String masterNodeNum;
+
+	private Long upgradeType;
+
+	private String resourceGroupId;
+
+	private String segNodeNum;
+
 	private String dBInstanceId;
 
 	private String dBInstanceGroupCount;
@@ -41,6 +53,72 @@ public class UpgradeDBInstanceRequest extends RpcAcsRequest<UpgradeDBInstanceRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getInstanceSpec() {
+		return this.instanceSpec;
+	}
+
+	public void setInstanceSpec(String instanceSpec) {
+		this.instanceSpec = instanceSpec;
+		if(instanceSpec != null){
+			putQueryParameter("InstanceSpec", instanceSpec);
+		}
+	}
+
+	public String getStorageSize() {
+		return this.storageSize;
+	}
+
+	public void setStorageSize(String storageSize) {
+		this.storageSize = storageSize;
+		if(storageSize != null){
+			putQueryParameter("StorageSize", storageSize);
+		}
+	}
+
+	public String getMasterNodeNum() {
+		return this.masterNodeNum;
+	}
+
+	public void setMasterNodeNum(String masterNodeNum) {
+		this.masterNodeNum = masterNodeNum;
+		if(masterNodeNum != null){
+			putQueryParameter("MasterNodeNum", masterNodeNum);
+		}
+	}
+
+	public Long getUpgradeType() {
+		return this.upgradeType;
+	}
+
+	public void setUpgradeType(Long upgradeType) {
+		this.upgradeType = upgradeType;
+		if(upgradeType != null){
+			putQueryParameter("UpgradeType", upgradeType.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getSegNodeNum() {
+		return this.segNodeNum;
+	}
+
+	public void setSegNodeNum(String segNodeNum) {
+		this.segNodeNum = segNodeNum;
+		if(segNodeNum != null){
+			putQueryParameter("SegNodeNum", segNodeNum);
+		}
 	}
 
 	public String getDBInstanceId() {

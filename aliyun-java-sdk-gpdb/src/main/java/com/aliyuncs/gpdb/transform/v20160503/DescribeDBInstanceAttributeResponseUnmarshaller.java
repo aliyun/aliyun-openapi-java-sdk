@@ -83,6 +83,10 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 			dBInstanceAttribute.setVSwitchId(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].VSwitchId"));
 			dBInstanceAttribute.setEncryptionKey(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].EncryptionKey"));
 			dBInstanceAttribute.setEncryptionType(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].EncryptionType"));
+			dBInstanceAttribute.setCoreVersion(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].CoreVersion"));
+			dBInstanceAttribute.setRunningTime(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].RunningTime"));
+			dBInstanceAttribute.setStartTime(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].StartTime"));
+			dBInstanceAttribute.setResourceGroupId(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ResourceGroupId"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].Tags.Length"); j++) {

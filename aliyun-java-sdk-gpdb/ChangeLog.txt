@@ -1,3 +1,8 @@
+2022-09-26 Version: 1.0.20
+- Support Openapi Tag.
+- Support Tag Ram.
+
+
 2022-01-18 Version: 1.0.19
 - Openapi support querydisplay.
 

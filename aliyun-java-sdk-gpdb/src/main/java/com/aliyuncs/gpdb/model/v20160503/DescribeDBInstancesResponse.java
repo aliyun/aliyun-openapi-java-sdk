@@ -125,6 +125,8 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 		private String dBInstanceMode;
 
+		private String resourceGroupId;
+
 		private List<Tag> tags;
 
 		public String getVpcId() {
@@ -317,6 +319,14 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 		public void setDBInstanceMode(String dBInstanceMode) {
 			this.dBInstanceMode = dBInstanceMode;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public List<Tag> getTags() {
