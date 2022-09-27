@@ -42,6 +42,8 @@ public class CreateAppGroupRequest extends RpcAcsRequest<CreateAppGroupResponse>
 
 	private String groupId;
 
+	private Integer appType;
+
 	private String monitorConfigJson;
 
 	private String namespace;
@@ -142,6 +144,17 @@ public class CreateAppGroupRequest extends RpcAcsRequest<CreateAppGroupResponse>
 		this.groupId = groupId;
 		if(groupId != null){
 			putQueryParameter("GroupId", groupId);
+		}
+	}
+
+	public Integer getAppType() {
+		return this.appType;
+	}
+
+	public void setAppType(Integer appType) {
+		this.appType = appType;
+		if(appType != null){
+			putQueryParameter("AppType", appType.toString());
 		}
 	}
 

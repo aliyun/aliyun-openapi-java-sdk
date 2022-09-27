@@ -1,3 +1,6 @@
+2022-09-27 Version: 1.1.3
+- Create Job Support XAttrs.
+
 2022-06-13 Version: 1.1.2
 - Create Job Support Setting Status.
 

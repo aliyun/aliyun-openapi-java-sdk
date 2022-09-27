@@ -29,19 +29,19 @@ public class ExecuteJobRequest extends RpcAcsRequest<ExecuteJobResponse> {
 
 	private Boolean checkJobStatus;
 
-	private String groupId;
-
-	private String label;
-
 	private Integer designateType;
 
 	private Long jobId;
 
-	private String namespace;
-
 	private String worker;
 
 	private String instanceParameters;
+
+	private String groupId;
+
+	private String label;
+
+	private String namespace;
 	public ExecuteJobRequest() {
 		super("schedulerx2", "2019-04-30", "ExecuteJob");
 		setMethod(MethodType.GET);
@@ -73,28 +73,6 @@ public class ExecuteJobRequest extends RpcAcsRequest<ExecuteJobResponse> {
 		}
 	}
 
-	public String getGroupId() {
-		return this.groupId;
-	}
-
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putQueryParameter("GroupId", groupId);
-		}
-	}
-
-	public String getLabel() {
-		return this.label;
-	}
-
-	public void setLabel(String label) {
-		this.label = label;
-		if(label != null){
-			putQueryParameter("Label", label);
-		}
-	}
-
 	public Integer getDesignateType() {
 		return this.designateType;
 	}
@@ -117,17 +95,6 @@ public class ExecuteJobRequest extends RpcAcsRequest<ExecuteJobResponse> {
 		}
 	}
 
-	public String getNamespace() {
-		return this.namespace;
-	}
-
-	public void setNamespace(String namespace) {
-		this.namespace = namespace;
-		if(namespace != null){
-			putQueryParameter("Namespace", namespace);
-		}
-	}
-
 	public String getWorker() {
 		return this.worker;
 	}
@@ -147,6 +114,39 @@ public class ExecuteJobRequest extends RpcAcsRequest<ExecuteJobResponse> {
 		this.instanceParameters = instanceParameters;
 		if(instanceParameters != null){
 			putQueryParameter("InstanceParameters", instanceParameters);
+		}
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
+		}
+	}
+
+	public String getLabel() {
+		return this.label;
+	}
+
+	public void setLabel(String label) {
+		this.label = label;
+		if(label != null){
+			putQueryParameter("Label", label);
+		}
+	}
+
+	public String getNamespace() {
+		return this.namespace;
+	}
+
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+		if(namespace != null){
+			putQueryParameter("Namespace", namespace);
 		}
 	}
 

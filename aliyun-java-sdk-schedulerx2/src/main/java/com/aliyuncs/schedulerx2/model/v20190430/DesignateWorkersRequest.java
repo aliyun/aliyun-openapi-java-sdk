@@ -27,19 +27,19 @@ public class DesignateWorkersRequest extends RpcAcsRequest<DesignateWorkersRespo
 
 	private String namespaceSource;
 
-	private String groupId;
-
 	private Boolean transferable;
-
-	private String labels;
 
 	private Integer designateType;
 
 	private Long jobId;
 
-	private String namespace;
-
 	private String workers;
+
+	private String groupId;
+
+	private String labels;
+
+	private String namespace;
 	public DesignateWorkersRequest() {
 		super("schedulerx2", "2019-04-30", "DesignateWorkers");
 		setMethod(MethodType.GET);
@@ -60,17 +60,6 @@ public class DesignateWorkersRequest extends RpcAcsRequest<DesignateWorkersRespo
 		}
 	}
 
-	public String getGroupId() {
-		return this.groupId;
-	}
-
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putQueryParameter("GroupId", groupId);
-		}
-	}
-
 	public Boolean getTransferable() {
 		return this.transferable;
 	}
@@ -79,17 +68,6 @@ public class DesignateWorkersRequest extends RpcAcsRequest<DesignateWorkersRespo
 		this.transferable = transferable;
 		if(transferable != null){
 			putQueryParameter("Transferable", transferable.toString());
-		}
-	}
-
-	public String getLabels() {
-		return this.labels;
-	}
-
-	public void setLabels(String labels) {
-		this.labels = labels;
-		if(labels != null){
-			putQueryParameter("Labels", labels);
 		}
 	}
 
@@ -115,17 +93,6 @@ public class DesignateWorkersRequest extends RpcAcsRequest<DesignateWorkersRespo
 		}
 	}
 
-	public String getNamespace() {
-		return this.namespace;
-	}
-
-	public void setNamespace(String namespace) {
-		this.namespace = namespace;
-		if(namespace != null){
-			putQueryParameter("Namespace", namespace);
-		}
-	}
-
 	public String getWorkers() {
 		return this.workers;
 	}
@@ -134,6 +101,39 @@ public class DesignateWorkersRequest extends RpcAcsRequest<DesignateWorkersRespo
 		this.workers = workers;
 		if(workers != null){
 			putQueryParameter("Workers", workers);
+		}
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
+		}
+	}
+
+	public String getLabels() {
+		return this.labels;
+	}
+
+	public void setLabels(String labels) {
+		this.labels = labels;
+		if(labels != null){
+			putQueryParameter("Labels", labels);
+		}
+	}
+
+	public String getNamespace() {
+		return this.namespace;
+	}
+
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+		if(namespace != null){
+			putQueryParameter("Namespace", namespace);
 		}
 	}
 
