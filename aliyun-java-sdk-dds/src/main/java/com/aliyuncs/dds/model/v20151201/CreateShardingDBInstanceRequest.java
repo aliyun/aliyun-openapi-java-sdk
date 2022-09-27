@@ -27,7 +27,7 @@ public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardin
 
 	private Long resourceOwnerId;
 
-	private String clientToken;
+	private String secondaryZoneId;
 
 	private String engineVersion;
 
@@ -35,25 +35,13 @@ public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardin
 
 	private List<ReplicaSet> replicaSets;
 
-	private String storageEngine;
-
 	private String resourceGroupId;
 
 	private String securityToken;
 
-	private String engine;
-
 	private String dBInstanceDescription;
 
 	private Integer period;
-
-	private String restoreTime;
-
-	private String resourceOwnerAccount;
-
-	private String srcDBInstanceId;
-
-	private String ownerAccount;
 
 	private List<ConfigServer> configServers;
 
@@ -65,13 +53,29 @@ public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardin
 
 	private List<Mongos> mongoss;
 
-	private String accountPassword;
-
 	private String autoRenew;
 
-	private String vpcId;
-
 	private String zoneId;
+
+	private String clientToken;
+
+	private String storageEngine;
+
+	private String engine;
+
+	private String hiddenZoneId;
+
+	private String restoreTime;
+
+	private String resourceOwnerAccount;
+
+	private String srcDBInstanceId;
+
+	private String ownerAccount;
+
+	private String accountPassword;
+
+	private String vpcId;
 
 	private String protocolType;
 
@@ -92,14 +96,14 @@ public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardin
 		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
+	public String getSecondaryZoneId() {
+		return this.secondaryZoneId;
 	}
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
+	public void setSecondaryZoneId(String secondaryZoneId) {
+		this.secondaryZoneId = secondaryZoneId;
+		if(secondaryZoneId != null){
+			putQueryParameter("SecondaryZoneId", secondaryZoneId);
 		}
 	}
 
@@ -140,17 +144,6 @@ public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardin
 		}	
 	}
 
-	public String getStorageEngine() {
-		return this.storageEngine;
-	}
-
-	public void setStorageEngine(String storageEngine) {
-		this.storageEngine = storageEngine;
-		if(storageEngine != null){
-			putQueryParameter("StorageEngine", storageEngine);
-		}
-	}
-
 	public String getResourceGroupId() {
 		return this.resourceGroupId;
 	}
@@ -173,17 +166,6 @@ public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardin
 		}
 	}
 
-	public String getEngine() {
-		return this.engine;
-	}
-
-	public void setEngine(String engine) {
-		this.engine = engine;
-		if(engine != null){
-			putQueryParameter("Engine", engine);
-		}
-	}
-
 	public String getDBInstanceDescription() {
 		return this.dBInstanceDescription;
 	}
@@ -203,50 +185,6 @@ public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardin
 		this.period = period;
 		if(period != null){
 			putQueryParameter("Period", period.toString());
-		}
-	}
-
-	public String getRestoreTime() {
-		return this.restoreTime;
-	}
-
-	public void setRestoreTime(String restoreTime) {
-		this.restoreTime = restoreTime;
-		if(restoreTime != null){
-			putQueryParameter("RestoreTime", restoreTime);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getSrcDBInstanceId() {
-		return this.srcDBInstanceId;
-	}
-
-	public void setSrcDBInstanceId(String srcDBInstanceId) {
-		this.srcDBInstanceId = srcDBInstanceId;
-		if(srcDBInstanceId != null){
-			putQueryParameter("SrcDBInstanceId", srcDBInstanceId);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 
@@ -310,17 +248,6 @@ public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardin
 		}	
 	}
 
-	public String getAccountPassword() {
-		return this.accountPassword;
-	}
-
-	public void setAccountPassword(String accountPassword) {
-		this.accountPassword = accountPassword;
-		if(accountPassword != null){
-			putQueryParameter("AccountPassword", accountPassword);
-		}
-	}
-
 	public String getAutoRenew() {
 		return this.autoRenew;
 	}
@@ -332,17 +259,6 @@ public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardin
 		}
 	}
 
-	public String getVpcId() {
-		return this.vpcId;
-	}
-
-	public void setVpcId(String vpcId) {
-		this.vpcId = vpcId;
-		if(vpcId != null){
-			putQueryParameter("VpcId", vpcId);
-		}
-	}
-
 	public String getZoneId() {
 		return this.zoneId;
 	}
@@ -351,6 +267,116 @@ public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardin
 		this.zoneId = zoneId;
 		if(zoneId != null){
 			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getStorageEngine() {
+		return this.storageEngine;
+	}
+
+	public void setStorageEngine(String storageEngine) {
+		this.storageEngine = storageEngine;
+		if(storageEngine != null){
+			putQueryParameter("StorageEngine", storageEngine);
+		}
+	}
+
+	public String getEngine() {
+		return this.engine;
+	}
+
+	public void setEngine(String engine) {
+		this.engine = engine;
+		if(engine != null){
+			putQueryParameter("Engine", engine);
+		}
+	}
+
+	public String getHiddenZoneId() {
+		return this.hiddenZoneId;
+	}
+
+	public void setHiddenZoneId(String hiddenZoneId) {
+		this.hiddenZoneId = hiddenZoneId;
+		if(hiddenZoneId != null){
+			putQueryParameter("HiddenZoneId", hiddenZoneId);
+		}
+	}
+
+	public String getRestoreTime() {
+		return this.restoreTime;
+	}
+
+	public void setRestoreTime(String restoreTime) {
+		this.restoreTime = restoreTime;
+		if(restoreTime != null){
+			putQueryParameter("RestoreTime", restoreTime);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getSrcDBInstanceId() {
+		return this.srcDBInstanceId;
+	}
+
+	public void setSrcDBInstanceId(String srcDBInstanceId) {
+		this.srcDBInstanceId = srcDBInstanceId;
+		if(srcDBInstanceId != null){
+			putQueryParameter("SrcDBInstanceId", srcDBInstanceId);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getAccountPassword() {
+		return this.accountPassword;
+	}
+
+	public void setAccountPassword(String accountPassword) {
+		this.accountPassword = accountPassword;
+		if(accountPassword != null){
+			putQueryParameter("AccountPassword", accountPassword);
+		}
+	}
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
 		}
 	}
 

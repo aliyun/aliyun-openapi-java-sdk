@@ -26,6 +26,8 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 
 	private Long resourceOwnerId;
 
+	private String backupInterval;
+
 	private String securityToken;
 
 	private String dBInstanceId;
@@ -39,6 +41,8 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private String snapshotBackupType;
 
 	private String preferredBackupTime;
 
@@ -58,6 +62,17 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getBackupInterval() {
+		return this.backupInterval;
+	}
+
+	public void setBackupInterval(String backupInterval) {
+		this.backupInterval = backupInterval;
+		if(backupInterval != null){
+			putQueryParameter("BackupInterval", backupInterval);
 		}
 	}
 
@@ -135,6 +150,17 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getSnapshotBackupType() {
+		return this.snapshotBackupType;
+	}
+
+	public void setSnapshotBackupType(String snapshotBackupType) {
+		this.snapshotBackupType = snapshotBackupType;
+		if(snapshotBackupType != null){
+			putQueryParameter("SnapshotBackupType", snapshotBackupType);
 		}
 	}
 

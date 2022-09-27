@@ -32,6 +32,10 @@ public class CreateNodeBatchRequest extends RpcAcsRequest<CreateNodeBatchRespons
 
 	private String couponNo;
 
+	private Boolean shardDirect;
+
+	private String accountName;
+
 	private String securityToken;
 
 	private String dBInstanceId;
@@ -47,6 +51,8 @@ public class CreateNodeBatchRequest extends RpcAcsRequest<CreateNodeBatchRespons
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private String accountPassword;
 	public CreateNodeBatchRequest() {
 		super("Dds", "2015-12-01", "CreateNodeBatch", "dds");
 		setMethod(MethodType.POST);
@@ -93,6 +99,28 @@ public class CreateNodeBatchRequest extends RpcAcsRequest<CreateNodeBatchRespons
 		this.couponNo = couponNo;
 		if(couponNo != null){
 			putQueryParameter("CouponNo", couponNo);
+		}
+	}
+
+	public Boolean getShardDirect() {
+		return this.shardDirect;
+	}
+
+	public void setShardDirect(Boolean shardDirect) {
+		this.shardDirect = shardDirect;
+		if(shardDirect != null){
+			putQueryParameter("ShardDirect", shardDirect.toString());
+		}
+	}
+
+	public String getAccountName() {
+		return this.accountName;
+	}
+
+	public void setAccountName(String accountName) {
+		this.accountName = accountName;
+		if(accountName != null){
+			putQueryParameter("AccountName", accountName);
 		}
 	}
 
@@ -181,6 +209,17 @@ public class CreateNodeBatchRequest extends RpcAcsRequest<CreateNodeBatchRespons
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getAccountPassword() {
+		return this.accountPassword;
+	}
+
+	public void setAccountPassword(String accountPassword) {
+		this.accountPassword = accountPassword;
+		if(accountPassword != null){
+			putQueryParameter("AccountPassword", accountPassword);
 		}
 	}
 

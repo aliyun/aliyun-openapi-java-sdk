@@ -21,6 +21,7 @@ import com.aliyuncs.dds.model.v20151201.DescribeDBInstanceAttributeResponse;
 import com.aliyuncs.dds.model.v20151201.DescribeDBInstanceAttributeResponse.DBInstance;
 import com.aliyuncs.dds.model.v20151201.DescribeDBInstanceAttributeResponse.DBInstance.ConfigserverAttribute;
 import com.aliyuncs.dds.model.v20151201.DescribeDBInstanceAttributeResponse.DBInstance.MongosAttribute;
+import com.aliyuncs.dds.model.v20151201.DescribeDBInstanceAttributeResponse.DBInstance.NetworkAddress;
 import com.aliyuncs.dds.model.v20151201.DescribeDBInstanceAttributeResponse.DBInstance.ReplicaSet;
 import com.aliyuncs.dds.model.v20151201.DescribeDBInstanceAttributeResponse.DBInstance.ShardAttribute;
 import com.aliyuncs.dds.model.v20151201.DescribeDBInstanceAttributeResponse.DBInstance.Tag;
@@ -38,7 +39,6 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 			DBInstance dBInstance = new DBInstance();
 			dBInstance.setCreationTime(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].CreationTime"));
 			dBInstance.setReplacateId(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].ReplacateId"));
-			dBInstance.setChargeType(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].ChargeType"));
 			dBInstance.setVpcAuthMode(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].VpcAuthMode"));
 			dBInstance.setNetworkType(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].NetworkType"));
 			dBInstance.setLockMode(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].LockMode"));
@@ -72,7 +72,12 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 			dBInstance.setKindCode(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].KindCode"));
 			dBInstance.setCapacityUnit(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].CapacityUnit"));
 			dBInstance.setCloudType(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].CloudType"));
+			dBInstance.setChargeType(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].ChargeType"));
 			dBInstance.setStorageType(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].StorageType"));
+			dBInstance.setSecondaryZoneId(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].SecondaryZoneId"));
+			dBInstance.setHiddenZoneId(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].HiddenZoneId"));
+			dBInstance.setDestroyTime(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].DestroyTime"));
+			dBInstance.setPaymentType(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].PaymentType"));
 
 			List<ReplicaSet> replicaSets = new ArrayList<ReplicaSet>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].ReplicaSets.Length"); j++) {
@@ -152,6 +157,24 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 				configserverList.add(configserverAttribute);
 			}
 			dBInstance.setConfigserverList(configserverList);
+
+			List<NetworkAddress> networkAddresses = new ArrayList<NetworkAddress>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].NetworkAddresses.Length"); j++) {
+				NetworkAddress networkAddress = new NetworkAddress();
+				networkAddress.setNodeType(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].NetworkAddresses["+ j +"].NodeType"));
+				networkAddress.setVSwitchId(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].NetworkAddresses["+ j +"].VSwitchId"));
+				networkAddress.setExpiredTime(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].NetworkAddresses["+ j +"].ExpiredTime"));
+				networkAddress.setNetworkType(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].NetworkAddresses["+ j +"].NetworkType"));
+				networkAddress.setRole(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].NetworkAddresses["+ j +"].Role"));
+				networkAddress.setPort(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].NetworkAddresses["+ j +"].Port"));
+				networkAddress.setVPCId(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].NetworkAddresses["+ j +"].VPCId"));
+				networkAddress.setNetworkAddress(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].NetworkAddresses["+ j +"].NetworkAddress"));
+				networkAddress.setNodeId(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].NetworkAddresses["+ j +"].NodeId"));
+				networkAddress.setIPAddress(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].NetworkAddresses["+ j +"].IPAddress"));
+
+				networkAddresses.add(networkAddress);
+			}
+			dBInstance.setNetworkAddresses(networkAddresses);
 
 			dBInstances.add(dBInstance);
 		}

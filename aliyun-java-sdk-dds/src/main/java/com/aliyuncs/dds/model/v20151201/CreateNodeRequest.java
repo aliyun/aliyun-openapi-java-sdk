@@ -36,6 +36,10 @@ public class CreateNodeRequest extends RpcAcsRequest<CreateNodeResponse> {
 
 	private String nodeClass;
 
+	private Boolean shardDirect;
+
+	private String accountName;
+
 	private String securityToken;
 
 	private String dBInstanceId;
@@ -51,6 +55,8 @@ public class CreateNodeRequest extends RpcAcsRequest<CreateNodeResponse> {
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private String accountPassword;
 	public CreateNodeRequest() {
 		super("Dds", "2015-12-01", "CreateNode", "dds");
 		setMethod(MethodType.POST);
@@ -119,6 +125,28 @@ public class CreateNodeRequest extends RpcAcsRequest<CreateNodeResponse> {
 		this.nodeClass = nodeClass;
 		if(nodeClass != null){
 			putQueryParameter("NodeClass", nodeClass);
+		}
+	}
+
+	public Boolean getShardDirect() {
+		return this.shardDirect;
+	}
+
+	public void setShardDirect(Boolean shardDirect) {
+		this.shardDirect = shardDirect;
+		if(shardDirect != null){
+			putQueryParameter("ShardDirect", shardDirect.toString());
+		}
+	}
+
+	public String getAccountName() {
+		return this.accountName;
+	}
+
+	public void setAccountName(String accountName) {
+		this.accountName = accountName;
+		if(accountName != null){
+			putQueryParameter("AccountName", accountName);
 		}
 	}
 
@@ -207,6 +235,17 @@ public class CreateNodeRequest extends RpcAcsRequest<CreateNodeResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getAccountPassword() {
+		return this.accountPassword;
+	}
+
+	public void setAccountPassword(String accountPassword) {
+		this.accountPassword = accountPassword;
+		if(accountPassword != null){
+			putQueryParameter("AccountPassword", accountPassword);
 		}
 	}
 

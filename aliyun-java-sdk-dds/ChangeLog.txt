@@ -1,3 +1,6 @@
+2022-09-27 Version: 3.7.1
+- Update by SDK platform.
+
 2022-05-24 Version: 3.7.0
 - Fix endpoint for new regionId.
 

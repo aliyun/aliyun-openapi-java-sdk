@@ -51,8 +51,6 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		private String replacateId;
 
-		private String chargeType;
-
 		private String vpcAuthMode;
 
 		private String networkType;
@@ -119,7 +117,17 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		private String cloudType;
 
+		private String chargeType;
+
 		private String storageType;
+
+		private String secondaryZoneId;
+
+		private String hiddenZoneId;
+
+		private String destroyTime;
+
+		private String paymentType;
 
 		private List<ReplicaSet> replicaSets;
 
@@ -130,6 +138,8 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 		private List<ShardAttribute> shardList;
 
 		private List<ConfigserverAttribute> configserverList;
+
+		private List<NetworkAddress> networkAddresses;
 
 		public String getCreationTime() {
 			return this.creationTime;
@@ -145,14 +155,6 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		public void setReplacateId(String replacateId) {
 			this.replacateId = replacateId;
-		}
-
-		public String getChargeType() {
-			return this.chargeType;
-		}
-
-		public void setChargeType(String chargeType) {
-			this.chargeType = chargeType;
 		}
 
 		public String getVpcAuthMode() {
@@ -419,12 +421,52 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 			this.cloudType = cloudType;
 		}
 
+		public String getChargeType() {
+			return this.chargeType;
+		}
+
+		public void setChargeType(String chargeType) {
+			this.chargeType = chargeType;
+		}
+
 		public String getStorageType() {
 			return this.storageType;
 		}
 
 		public void setStorageType(String storageType) {
 			this.storageType = storageType;
+		}
+
+		public String getSecondaryZoneId() {
+			return this.secondaryZoneId;
+		}
+
+		public void setSecondaryZoneId(String secondaryZoneId) {
+			this.secondaryZoneId = secondaryZoneId;
+		}
+
+		public String getHiddenZoneId() {
+			return this.hiddenZoneId;
+		}
+
+		public void setHiddenZoneId(String hiddenZoneId) {
+			this.hiddenZoneId = hiddenZoneId;
+		}
+
+		public String getDestroyTime() {
+			return this.destroyTime;
+		}
+
+		public void setDestroyTime(String destroyTime) {
+			this.destroyTime = destroyTime;
+		}
+
+		public String getPaymentType() {
+			return this.paymentType;
+		}
+
+		public void setPaymentType(String paymentType) {
+			this.paymentType = paymentType;
 		}
 
 		public List<ReplicaSet> getReplicaSets() {
@@ -465,6 +507,14 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		public void setConfigserverList(List<ConfigserverAttribute> configserverList) {
 			this.configserverList = configserverList;
+		}
+
+		public List<NetworkAddress> getNetworkAddresses() {
+			return this.networkAddresses;
+		}
+
+		public void setNetworkAddresses(List<NetworkAddress> networkAddresses) {
+			this.networkAddresses = networkAddresses;
 		}
 
 		public static class ReplicaSet {
@@ -869,6 +919,109 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 			public void setStatus(String status) {
 				this.status = status;
+			}
+		}
+
+		public static class NetworkAddress {
+
+			private String nodeType;
+
+			private String vSwitchId;
+
+			private String expiredTime;
+
+			private String networkType;
+
+			private String role;
+
+			private String port;
+
+			private String vPCId;
+
+			private String networkAddress;
+
+			private String nodeId;
+
+			private String iPAddress;
+
+			public String getNodeType() {
+				return this.nodeType;
+			}
+
+			public void setNodeType(String nodeType) {
+				this.nodeType = nodeType;
+			}
+
+			public String getVSwitchId() {
+				return this.vSwitchId;
+			}
+
+			public void setVSwitchId(String vSwitchId) {
+				this.vSwitchId = vSwitchId;
+			}
+
+			public String getExpiredTime() {
+				return this.expiredTime;
+			}
+
+			public void setExpiredTime(String expiredTime) {
+				this.expiredTime = expiredTime;
+			}
+
+			public String getNetworkType() {
+				return this.networkType;
+			}
+
+			public void setNetworkType(String networkType) {
+				this.networkType = networkType;
+			}
+
+			public String getRole() {
+				return this.role;
+			}
+
+			public void setRole(String role) {
+				this.role = role;
+			}
+
+			public String getPort() {
+				return this.port;
+			}
+
+			public void setPort(String port) {
+				this.port = port;
+			}
+
+			public String getVPCId() {
+				return this.vPCId;
+			}
+
+			public void setVPCId(String vPCId) {
+				this.vPCId = vPCId;
+			}
+
+			public String getNetworkAddress() {
+				return this.networkAddress;
+			}
+
+			public void setNetworkAddress(String networkAddress) {
+				this.networkAddress = networkAddress;
+			}
+
+			public String getNodeId() {
+				return this.nodeId;
+			}
+
+			public void setNodeId(String nodeId) {
+				this.nodeId = nodeId;
+			}
+
+			public String getIPAddress() {
+				return this.iPAddress;
+			}
+
+			public void setIPAddress(String iPAddress) {
+				this.iPAddress = iPAddress;
 			}
 		}
 	}

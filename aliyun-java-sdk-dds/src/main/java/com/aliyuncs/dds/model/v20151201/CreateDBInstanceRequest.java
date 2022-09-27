@@ -28,6 +28,8 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private Integer dBInstanceStorage;
 
+	private String secondaryZoneId;
+
 	private String couponNo;
 
 	private String engineVersion;
@@ -72,6 +74,8 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private String engine;
 
+	private String hiddenZoneId;
+
 	private String restoreTime;
 
 	private String resourceOwnerAccount;
@@ -111,6 +115,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.dBInstanceStorage = dBInstanceStorage;
 		if(dBInstanceStorage != null){
 			putQueryParameter("DBInstanceStorage", dBInstanceStorage.toString());
+		}
+	}
+
+	public String getSecondaryZoneId() {
+		return this.secondaryZoneId;
+	}
+
+	public void setSecondaryZoneId(String secondaryZoneId) {
+		this.secondaryZoneId = secondaryZoneId;
+		if(secondaryZoneId != null){
+			putQueryParameter("SecondaryZoneId", secondaryZoneId);
 		}
 	}
 
@@ -353,6 +368,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.engine = engine;
 		if(engine != null){
 			putQueryParameter("Engine", engine);
+		}
+	}
+
+	public String getHiddenZoneId() {
+		return this.hiddenZoneId;
+	}
+
+	public void setHiddenZoneId(String hiddenZoneId) {
+		this.hiddenZoneId = hiddenZoneId;
+		if(hiddenZoneId != null){
+			putQueryParameter("HiddenZoneId", hiddenZoneId);
 		}
 	}
 

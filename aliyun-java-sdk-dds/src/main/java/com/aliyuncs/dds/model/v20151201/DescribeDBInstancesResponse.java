@@ -125,6 +125,10 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 		private String storageType;
 
+		private String secondaryZoneId;
+
+		private String hiddenZoneId;
+
 		private List<Tag> tags;
 
 		private List<MongosAttribute> mongosList;
@@ -321,6 +325,22 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 		public void setStorageType(String storageType) {
 			this.storageType = storageType;
+		}
+
+		public String getSecondaryZoneId() {
+			return this.secondaryZoneId;
+		}
+
+		public void setSecondaryZoneId(String secondaryZoneId) {
+			this.secondaryZoneId = secondaryZoneId;
+		}
+
+		public String getHiddenZoneId() {
+			return this.hiddenZoneId;
+		}
+
+		public void setHiddenZoneId(String hiddenZoneId) {
+			this.hiddenZoneId = hiddenZoneId;
 		}
 
 		public List<Tag> getTags() {

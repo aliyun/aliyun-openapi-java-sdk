@@ -38,6 +38,10 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 
 	private Integer logBackupRetentionPeriod;
 
+	private String snapshotBackupType;
+
+	private Integer backupInterval;
+
 	public String getPreferredBackupPeriod() {
 		return this.preferredBackupPeriod;
 	}
@@ -92,6 +96,22 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 
 	public void setLogBackupRetentionPeriod(Integer logBackupRetentionPeriod) {
 		this.logBackupRetentionPeriod = logBackupRetentionPeriod;
+	}
+
+	public String getSnapshotBackupType() {
+		return this.snapshotBackupType;
+	}
+
+	public void setSnapshotBackupType(String snapshotBackupType) {
+		this.snapshotBackupType = snapshotBackupType;
+	}
+
+	public Integer getBackupInterval() {
+		return this.backupInterval;
+	}
+
+	public void setBackupInterval(Integer backupInterval) {
+		this.backupInterval = backupInterval;
 	}
 
 	@Override
