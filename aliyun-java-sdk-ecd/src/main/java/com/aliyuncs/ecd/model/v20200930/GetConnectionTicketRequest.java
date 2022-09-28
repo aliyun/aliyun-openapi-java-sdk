@@ -29,6 +29,8 @@ public class GetConnectionTicketRequest extends RpcAcsRequest<GetConnectionTicke
 
 	private String uuid;
 
+	private String commandContent;
+
 	private String password;
 
 	private String endUserId;
@@ -68,6 +70,17 @@ public class GetConnectionTicketRequest extends RpcAcsRequest<GetConnectionTicke
 		this.uuid = uuid;
 		if(uuid != null){
 			putQueryParameter("Uuid", uuid);
+		}
+	}
+
+	public String getCommandContent() {
+		return this.commandContent;
+	}
+
+	public void setCommandContent(String commandContent) {
+		this.commandContent = commandContent;
+		if(commandContent != null){
+			putQueryParameter("CommandContent", commandContent);
 		}
 	}
 

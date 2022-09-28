@@ -36,8 +36,6 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 
 	private String nextToken;
 
-	private String fotaChannel;
-
 	private String imageType;
 
 	private String osType;
@@ -112,17 +110,6 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 		this.nextToken = nextToken;
 		if(nextToken != null){
 			putQueryParameter("NextToken", nextToken);
-		}
-	}
-
-	public String getFotaChannel() {
-		return this.fotaChannel;
-	}
-
-	public void setFotaChannel(String fotaChannel) {
-		this.fotaChannel = fotaChannel;
-		if(fotaChannel != null){
-			putQueryParameter("FotaChannel", fotaChannel);
 		}
 	}
 
