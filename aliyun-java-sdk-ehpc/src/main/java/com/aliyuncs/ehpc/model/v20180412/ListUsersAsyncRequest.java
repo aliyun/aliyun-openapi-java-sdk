@@ -22,19 +22,34 @@ import com.aliyuncs.ehpc.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListQueuesRequest extends RpcAcsRequest<ListQueuesResponse> {
+public class ListUsersAsyncRequest extends RpcAcsRequest<ListUsersAsyncResponse> {
 	   
+
+	private String asyncId;
 
 	private String clusterId;
 
-	private Boolean async;
-	public ListQueuesRequest() {
-		super("EHPC", "2018-04-12", "ListQueues");
+	private Integer pageNumber;
+
+	private Integer pageSize;
+	public ListUsersAsyncRequest() {
+		super("EHPC", "2018-04-12", "ListUsersAsync");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getAsyncId() {
+		return this.asyncId;
+	}
+
+	public void setAsyncId(String asyncId) {
+		this.asyncId = asyncId;
+		if(asyncId != null){
+			putQueryParameter("AsyncId", asyncId);
+		}
 	}
 
 	public String getClusterId() {
@@ -48,20 +63,31 @@ public class ListQueuesRequest extends RpcAcsRequest<ListQueuesResponse> {
 		}
 	}
 
-	public Boolean getAsync() {
-		return this.async;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setAsync(Boolean async) {
-		this.async = async;
-		if(async != null){
-			putQueryParameter("Async", async.toString());
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
 	@Override
-	public Class<ListQueuesResponse> getResponseClass() {
-		return ListQueuesResponse.class;
+	public Class<ListUsersAsyncResponse> getResponseClass() {
+		return ListUsersAsyncResponse.class;
 	}
 
 }
