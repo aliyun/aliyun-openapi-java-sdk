@@ -28,8 +28,6 @@ public class DescribeSummaryInfoRequest extends RpcAcsRequest<DescribeSummaryInf
 	private String sourceIp;
 
 	private String lang;
-
-	private String resourceDirectoryAccountId;
 	public DescribeSummaryInfoRequest() {
 		super("Sas", "2018-12-03", "DescribeSummaryInfo");
 		setMethod(MethodType.POST);
@@ -58,17 +56,6 @@ public class DescribeSummaryInfoRequest extends RpcAcsRequest<DescribeSummaryInf
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
-		}
-	}
-
-	public String getResourceDirectoryAccountId() {
-		return this.resourceDirectoryAccountId;
-	}
-
-	public void setResourceDirectoryAccountId(String resourceDirectoryAccountId) {
-		this.resourceDirectoryAccountId = resourceDirectoryAccountId;
-		if(resourceDirectoryAccountId != null){
-			putQueryParameter("ResourceDirectoryAccountId", resourceDirectoryAccountId);
 		}
 	}
 

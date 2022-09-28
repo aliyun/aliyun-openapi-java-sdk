@@ -29,6 +29,8 @@ public class DescribeVulFixStatisticsResponse extends AcsResponse {
 
 	private List<Fix> fixStat;
 
+	private FixTotal fixTotal;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -43,6 +45,14 @@ public class DescribeVulFixStatisticsResponse extends AcsResponse {
 
 	public void setFixStat(List<Fix> fixStat) {
 		this.fixStat = fixStat;
+	}
+
+	public FixTotal getFixTotal() {
+		return this.fixTotal;
+	}
+
+	public void setFixTotal(FixTotal fixTotal) {
+		this.fixTotal = fixTotal;
 	}
 
 	public static class Fix {
@@ -71,6 +81,49 @@ public class DescribeVulFixStatisticsResponse extends AcsResponse {
 
 		public void setType(String type) {
 			this.type = type;
+		}
+
+		public Integer getFixedTodayNum() {
+			return this.fixedTodayNum;
+		}
+
+		public void setFixedTodayNum(Integer fixedTodayNum) {
+			this.fixedTodayNum = fixedTodayNum;
+		}
+
+		public Integer getFixedTotalNum() {
+			return this.fixedTotalNum;
+		}
+
+		public void setFixedTotalNum(Integer fixedTotalNum) {
+			this.fixedTotalNum = fixedTotalNum;
+		}
+
+		public Integer getNeedFixNum() {
+			return this.needFixNum;
+		}
+
+		public void setNeedFixNum(Integer needFixNum) {
+			this.needFixNum = needFixNum;
+		}
+	}
+
+	public static class FixTotal {
+
+		private Integer fixingNum;
+
+		private Integer fixedTodayNum;
+
+		private Integer fixedTotalNum;
+
+		private Integer needFixNum;
+
+		public Integer getFixingNum() {
+			return this.fixingNum;
+		}
+
+		public void setFixingNum(Integer fixingNum) {
+			this.fixingNum = fixingNum;
 		}
 
 		public Integer getFixedTodayNum() {

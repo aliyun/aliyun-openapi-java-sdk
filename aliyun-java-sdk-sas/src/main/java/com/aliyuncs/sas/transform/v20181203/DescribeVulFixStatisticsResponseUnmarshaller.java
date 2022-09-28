@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.sas.model.v20181203.DescribeVulFixStatisticsResponse;
 import com.aliyuncs.sas.model.v20181203.DescribeVulFixStatisticsResponse.Fix;
+import com.aliyuncs.sas.model.v20181203.DescribeVulFixStatisticsResponse.FixTotal;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -27,6 +28,13 @@ public class DescribeVulFixStatisticsResponseUnmarshaller {
 	public static DescribeVulFixStatisticsResponse unmarshall(DescribeVulFixStatisticsResponse describeVulFixStatisticsResponse, UnmarshallerContext _ctx) {
 		
 		describeVulFixStatisticsResponse.setRequestId(_ctx.stringValue("DescribeVulFixStatisticsResponse.RequestId"));
+
+		FixTotal fixTotal = new FixTotal();
+		fixTotal.setFixingNum(_ctx.integerValue("DescribeVulFixStatisticsResponse.FixTotal.FixingNum"));
+		fixTotal.setFixedTodayNum(_ctx.integerValue("DescribeVulFixStatisticsResponse.FixTotal.FixedTodayNum"));
+		fixTotal.setFixedTotalNum(_ctx.integerValue("DescribeVulFixStatisticsResponse.FixTotal.FixedTotalNum"));
+		fixTotal.setNeedFixNum(_ctx.integerValue("DescribeVulFixStatisticsResponse.FixTotal.NeedFixNum"));
+		describeVulFixStatisticsResponse.setFixTotal(fixTotal);
 
 		List<Fix> fixStat = new ArrayList<Fix>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeVulFixStatisticsResponse.FixStat.Length"); i++) {
