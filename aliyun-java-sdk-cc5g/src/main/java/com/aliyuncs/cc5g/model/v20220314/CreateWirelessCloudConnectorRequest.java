@@ -33,6 +33,8 @@ public class CreateWirelessCloudConnectorRequest extends RpcAcsRequest<CreateWir
 
 	private String description;
 
+	private String businessType;
+
 	private List<NetLinks> netLinks;
 
 	private Boolean dryRun;
@@ -84,6 +86,17 @@ public class CreateWirelessCloudConnectorRequest extends RpcAcsRequest<CreateWir
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getBusinessType() {
+		return this.businessType;
+	}
+
+	public void setBusinessType(String businessType) {
+		this.businessType = businessType;
+		if(businessType != null){
+			putQueryParameter("BusinessType", businessType);
 		}
 	}
 

@@ -91,11 +91,15 @@ public class ListAuthorizationRulesResponse extends AcsResponse {
 
 		private String destinationType;
 
+		private String protocol;
+
+		private String destinationPort;
+
 		private String destination;
 
 		private String policy;
 
-		private String dns;
+		private Boolean dns;
 
 		private String createTime;
 
@@ -155,6 +159,22 @@ public class ListAuthorizationRulesResponse extends AcsResponse {
 			this.destinationType = destinationType;
 		}
 
+		public String getBizProtocol() {
+			return this.protocol;
+		}
+
+		public void setBizProtocol(String protocol) {
+			this.protocol = protocol;
+		}
+
+		public String getDestinationPort() {
+			return this.destinationPort;
+		}
+
+		public void setDestinationPort(String destinationPort) {
+			this.destinationPort = destinationPort;
+		}
+
 		public String getDestination() {
 			return this.destination;
 		}
@@ -171,11 +191,11 @@ public class ListAuthorizationRulesResponse extends AcsResponse {
 			this.policy = policy;
 		}
 
-		public String getDns() {
+		public Boolean getDns() {
 			return this.dns;
 		}
 
-		public void setDns(String dns) {
+		public void setDns(Boolean dns) {
 			this.dns = dns;
 		}
 

@@ -41,7 +41,7 @@ public class ListBatchOperateCardsTasksResponseUnmarshaller {
 			batchOperateCardsTask.setThreshold(_ctx.stringValue("ListBatchOperateCardsTasksResponse.BatchOperateCardsTasks["+ i +"].Threshold"));
 			batchOperateCardsTask.setEffectType(_ctx.stringValue("ListBatchOperateCardsTasksResponse.BatchOperateCardsTasks["+ i +"].EffectType"));
 			batchOperateCardsTask.setIccidsOssFilePath(_ctx.stringValue("ListBatchOperateCardsTasksResponse.BatchOperateCardsTasks["+ i +"].IccidsOssFilePath"));
-			batchOperateCardsTask.setOperateResultOssFilePath(_ctx.booleanValue("ListBatchOperateCardsTasksResponse.BatchOperateCardsTasks["+ i +"].OperateResultOssFilePath"));
+			batchOperateCardsTask.setOperateResultOssFilePath(_ctx.stringValue("ListBatchOperateCardsTasksResponse.BatchOperateCardsTasks["+ i +"].OperateResultOssFilePath"));
 			batchOperateCardsTask.setDescription(_ctx.stringValue("ListBatchOperateCardsTasksResponse.BatchOperateCardsTasks["+ i +"].Description"));
 			batchOperateCardsTask.setName(_ctx.stringValue("ListBatchOperateCardsTasksResponse.BatchOperateCardsTasks["+ i +"].Name"));
 			batchOperateCardsTask.setCreateTime(_ctx.stringValue("ListBatchOperateCardsTasksResponse.BatchOperateCardsTasks["+ i +"].CreateTime"));

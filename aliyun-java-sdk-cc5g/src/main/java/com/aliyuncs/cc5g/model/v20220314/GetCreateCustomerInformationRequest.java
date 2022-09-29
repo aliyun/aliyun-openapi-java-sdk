@@ -21,16 +21,29 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class GetCreateCustomerInfomationRequest extends RpcAcsRequest<GetCreateCustomerInfomationResponse> {
+public class GetCreateCustomerInformationRequest extends RpcAcsRequest<GetCreateCustomerInformationResponse> {
 	   
-	public GetCreateCustomerInfomationRequest() {
-		super("CC5G", "2022-03-14", "GetCreateCustomerInfomation", "fivegcc");
+
+	private String wirelessCloudConnectorId;
+	public GetCreateCustomerInformationRequest() {
+		super("CC5G", "2022-03-14", "GetCreateCustomerInformation", "fivegcc");
 		setMethod(MethodType.GET);
 	}
 
+	public String getWirelessCloudConnectorId() {
+		return this.wirelessCloudConnectorId;
+	}
+
+	public void setWirelessCloudConnectorId(String wirelessCloudConnectorId) {
+		this.wirelessCloudConnectorId = wirelessCloudConnectorId;
+		if(wirelessCloudConnectorId != null){
+			putQueryParameter("WirelessCloudConnectorId", wirelessCloudConnectorId);
+		}
+	}
+
 	@Override
-	public Class<GetCreateCustomerInfomationResponse> getResponseClass() {
-		return GetCreateCustomerInfomationResponse.class;
+	public Class<GetCreateCustomerInformationResponse> getResponseClass() {
+		return GetCreateCustomerInformationResponse.class;
 	}
 
 }

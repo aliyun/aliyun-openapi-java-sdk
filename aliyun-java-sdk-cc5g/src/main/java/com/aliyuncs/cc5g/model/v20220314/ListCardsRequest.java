@@ -29,7 +29,7 @@ public class ListCardsRequest extends RpcAcsRequest<ListCardsResponse> {
 
 	private List<String> iccids;
 
-	private String destinationType;
+	private String iccid;
 
 	private String nextToken;
 
@@ -40,8 +40,6 @@ public class ListCardsRequest extends RpcAcsRequest<ListCardsResponse> {
 	private String netLinkId;
 
 	private String wirelessCloudConnectorId;
-
-	private String vpcId;
 
 	private Boolean online;
 
@@ -77,14 +75,14 @@ public class ListCardsRequest extends RpcAcsRequest<ListCardsResponse> {
 		}	
 	}
 
-	public String getDestinationType() {
-		return this.destinationType;
+	public String getIccid() {
+		return this.iccid;
 	}
 
-	public void setDestinationType(String destinationType) {
-		this.destinationType = destinationType;
-		if(destinationType != null){
-			putQueryParameter("DestinationType", destinationType);
+	public void setIccid(String iccid) {
+		this.iccid = iccid;
+		if(iccid != null){
+			putQueryParameter("Iccid", iccid);
 		}
 	}
 
@@ -140,17 +138,6 @@ public class ListCardsRequest extends RpcAcsRequest<ListCardsResponse> {
 		this.wirelessCloudConnectorId = wirelessCloudConnectorId;
 		if(wirelessCloudConnectorId != null){
 			putQueryParameter("WirelessCloudConnectorId", wirelessCloudConnectorId);
-		}
-	}
-
-	public String getVpcId() {
-		return this.vpcId;
-	}
-
-	public void setVpcId(String vpcId) {
-		this.vpcId = vpcId;
-		if(vpcId != null){
-			putQueryParameter("VpcId", vpcId);
 		}
 	}
 

@@ -15,14 +15,14 @@
 package com.aliyuncs.cc5g.model.v20220314;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cc5g.transform.v20220314.GetCreateCustomerInfomationResponseUnmarshaller;
+import com.aliyuncs.cc5g.transform.v20220314.GetCreateCustomerInformationResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetCreateCustomerInfomationResponse extends AcsResponse {
+public class GetCreateCustomerInformationResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -55,8 +55,8 @@ public class GetCreateCustomerInfomationResponse extends AcsResponse {
 	}
 
 	@Override
-	public GetCreateCustomerInfomationResponse getInstance(UnmarshallerContext context) {
-		return	GetCreateCustomerInfomationResponseUnmarshaller.unmarshall(this, context);
+	public GetCreateCustomerInformationResponse getInstance(UnmarshallerContext context) {
+		return	GetCreateCustomerInformationResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

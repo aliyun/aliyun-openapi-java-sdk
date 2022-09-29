@@ -32,11 +32,15 @@ public class UpdateAuthorizationRuleRequest extends RpcAcsRequest<UpdateAuthoriz
 
 	private String description;
 
+	private String protocol;
+
 	private String policy;
 
 	private Boolean dryRun;
 
 	private String authorizationRuleId;
+
+	private String destinationPort;
 
 	private String wirelessCloudConnectorId;
 
@@ -90,6 +94,17 @@ public class UpdateAuthorizationRuleRequest extends RpcAcsRequest<UpdateAuthoriz
 		}
 	}
 
+	public String getBizProtocol() {
+		return this.protocol;
+	}
+
+	public void setBizProtocol(String protocol) {
+		this.protocol = protocol;
+		if(protocol != null){
+			putQueryParameter("Protocol", protocol);
+		}
+	}
+
 	public String getPolicy() {
 		return this.policy;
 	}
@@ -120,6 +135,17 @@ public class UpdateAuthorizationRuleRequest extends RpcAcsRequest<UpdateAuthoriz
 		this.authorizationRuleId = authorizationRuleId;
 		if(authorizationRuleId != null){
 			putQueryParameter("AuthorizationRuleId", authorizationRuleId);
+		}
+	}
+
+	public String getDestinationPort() {
+		return this.destinationPort;
+	}
+
+	public void setDestinationPort(String destinationPort) {
+		this.destinationPort = destinationPort;
+		if(destinationPort != null){
+			putQueryParameter("DestinationPort", destinationPort);
 		}
 	}
 

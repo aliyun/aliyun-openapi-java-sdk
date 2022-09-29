@@ -50,6 +50,8 @@ public class ListCardsResponseUnmarshaller {
 			card.setOrderId(_ctx.stringValue("ListCardsResponse.Cards["+ i +"].OrderId"));
 			card.setActivatedTime(_ctx.stringValue("ListCardsResponse.Cards["+ i +"].ActivatedTime"));
 			card.setBusinessStatus(_ctx.stringValue("ListCardsResponse.Cards["+ i +"].BusinessStatus"));
+			card.setMsisdn(_ctx.stringValue("ListCardsResponse.Cards["+ i +"].Msisdn"));
+			card.setUsageDataTotal(_ctx.stringValue("ListCardsResponse.Cards["+ i +"].UsageDataTotal"));
 
 			cards.add(card);
 		}
