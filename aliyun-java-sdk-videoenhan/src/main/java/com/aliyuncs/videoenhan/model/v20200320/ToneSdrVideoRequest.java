@@ -25,9 +25,9 @@ import com.aliyuncs.videoenhan.Endpoint;
 public class ToneSdrVideoRequest extends RpcAcsRequest<ToneSdrVideoResponse> {
 	   
 
-	private String recolorModel;
-
 	private Integer bitrate;
+
+	private String recolorModel;
 
 	private String videoURL;
 	public ToneSdrVideoRequest() {
@@ -39,17 +39,6 @@ public class ToneSdrVideoRequest extends RpcAcsRequest<ToneSdrVideoResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getRecolorModel() {
-		return this.recolorModel;
-	}
-
-	public void setRecolorModel(String recolorModel) {
-		this.recolorModel = recolorModel;
-		if(recolorModel != null){
-			putBodyParameter("RecolorModel", recolorModel);
-		}
-	}
-
 	public Integer getBitrate() {
 		return this.bitrate;
 	}
@@ -58,6 +47,17 @@ public class ToneSdrVideoRequest extends RpcAcsRequest<ToneSdrVideoResponse> {
 		this.bitrate = bitrate;
 		if(bitrate != null){
 			putBodyParameter("Bitrate", bitrate.toString());
+		}
+	}
+
+	public String getRecolorModel() {
+		return this.recolorModel;
+	}
+
+	public void setRecolorModel(String recolorModel) {
+		this.recolorModel = recolorModel;
+		if(recolorModel != null){
+			putBodyParameter("RecolorModel", recolorModel);
 		}
 	}
 

@@ -28,19 +28,19 @@ public class QueryFaceVideoTemplateResponseUnmarshaller {
 	public static QueryFaceVideoTemplateResponse unmarshall(QueryFaceVideoTemplateResponse queryFaceVideoTemplateResponse, UnmarshallerContext _ctx) {
 		
 		queryFaceVideoTemplateResponse.setRequestId(_ctx.stringValue("QueryFaceVideoTemplateResponse.RequestId"));
-		queryFaceVideoTemplateResponse.setMessage(_ctx.stringValue("QueryFaceVideoTemplateResponse.Message"));
 		queryFaceVideoTemplateResponse.setCode(_ctx.stringValue("QueryFaceVideoTemplateResponse.Code"));
+		queryFaceVideoTemplateResponse.setMessage(_ctx.stringValue("QueryFaceVideoTemplateResponse.Message"));
 
 		Data data = new Data();
 
 		List<ElementsItem> elements = new ArrayList<ElementsItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryFaceVideoTemplateResponse.Data.Elements.Length"); i++) {
 			ElementsItem elementsItem = new ElementsItem();
-			elementsItem.setTemplateURL(_ctx.stringValue("QueryFaceVideoTemplateResponse.Data.Elements["+ i +"].TemplateURL"));
-			elementsItem.setUserId(_ctx.stringValue("QueryFaceVideoTemplateResponse.Data.Elements["+ i +"].UserId"));
 			elementsItem.setCreateTime(_ctx.stringValue("QueryFaceVideoTemplateResponse.Data.Elements["+ i +"].CreateTime"));
 			elementsItem.setUpdateTime(_ctx.stringValue("QueryFaceVideoTemplateResponse.Data.Elements["+ i +"].UpdateTime"));
+			elementsItem.setUserId(_ctx.stringValue("QueryFaceVideoTemplateResponse.Data.Elements["+ i +"].UserId"));
 			elementsItem.setTemplateId(_ctx.stringValue("QueryFaceVideoTemplateResponse.Data.Elements["+ i +"].TemplateId"));
+			elementsItem.setTemplateURL(_ctx.stringValue("QueryFaceVideoTemplateResponse.Data.Elements["+ i +"].TemplateURL"));
 
 			elements.add(elementsItem);
 		}

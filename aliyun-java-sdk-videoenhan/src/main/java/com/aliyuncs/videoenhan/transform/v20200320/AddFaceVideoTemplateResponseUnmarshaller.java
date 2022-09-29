@@ -24,8 +24,8 @@ public class AddFaceVideoTemplateResponseUnmarshaller {
 	public static AddFaceVideoTemplateResponse unmarshall(AddFaceVideoTemplateResponse addFaceVideoTemplateResponse, UnmarshallerContext _ctx) {
 		
 		addFaceVideoTemplateResponse.setRequestId(_ctx.stringValue("AddFaceVideoTemplateResponse.RequestId"));
-		addFaceVideoTemplateResponse.setMessage(_ctx.stringValue("AddFaceVideoTemplateResponse.Message"));
 		addFaceVideoTemplateResponse.setCode(_ctx.stringValue("AddFaceVideoTemplateResponse.Code"));
+		addFaceVideoTemplateResponse.setMessage(_ctx.stringValue("AddFaceVideoTemplateResponse.Message"));
 
 		Date date = new Date();
 		date.setTemplateId(_ctx.stringValue("AddFaceVideoTemplateResponse.Date.TemplateId"));

@@ -25,9 +25,9 @@ import com.aliyuncs.videoenhan.Endpoint;
 public class MergeVideoFaceRequest extends RpcAcsRequest<MergeVideoFaceResponse> {
 	   
 
-	private String postURL;
-
 	private String referenceURL;
+
+	private String postURL;
 
 	private String videoURL;
 	public MergeVideoFaceRequest() {
@@ -39,17 +39,6 @@ public class MergeVideoFaceRequest extends RpcAcsRequest<MergeVideoFaceResponse>
 		} catch (Exception e) {}
 	}
 
-	public String getPostURL() {
-		return this.postURL;
-	}
-
-	public void setPostURL(String postURL) {
-		this.postURL = postURL;
-		if(postURL != null){
-			putBodyParameter("PostURL", postURL);
-		}
-	}
-
 	public String getReferenceURL() {
 		return this.referenceURL;
 	}
@@ -58,6 +47,17 @@ public class MergeVideoFaceRequest extends RpcAcsRequest<MergeVideoFaceResponse>
 		this.referenceURL = referenceURL;
 		if(referenceURL != null){
 			putBodyParameter("ReferenceURL", referenceURL);
+		}
+	}
+
+	public String getPostURL() {
+		return this.postURL;
+	}
+
+	public void setPostURL(String postURL) {
+		this.postURL = postURL;
+		if(postURL != null){
+			putBodyParameter("PostURL", postURL);
 		}
 	}
 

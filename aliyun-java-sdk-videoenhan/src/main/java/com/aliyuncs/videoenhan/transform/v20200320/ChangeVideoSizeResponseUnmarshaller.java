@@ -26,8 +26,8 @@ public class ChangeVideoSizeResponseUnmarshaller {
 		changeVideoSizeResponse.setRequestId(_ctx.stringValue("ChangeVideoSizeResponse.RequestId"));
 
 		Data data = new Data();
-		data.setVideoUrl(_ctx.stringValue("ChangeVideoSizeResponse.Data.VideoUrl"));
 		data.setVideoCoverUrl(_ctx.stringValue("ChangeVideoSizeResponse.Data.VideoCoverUrl"));
+		data.setVideoUrl(_ctx.stringValue("ChangeVideoSizeResponse.Data.VideoUrl"));
 		changeVideoSizeResponse.setData(data);
 	 
 	 	return changeVideoSizeResponse;

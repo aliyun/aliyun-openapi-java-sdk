@@ -26,8 +26,8 @@ public class GenerateVideoResponseUnmarshaller {
 		generateVideoResponse.setRequestId(_ctx.stringValue("GenerateVideoResponse.RequestId"));
 
 		Data data = new Data();
-		data.setVideoUrl(_ctx.stringValue("GenerateVideoResponse.Data.VideoUrl"));
 		data.setVideoCoverUrl(_ctx.stringValue("GenerateVideoResponse.Data.VideoCoverUrl"));
+		data.setVideoUrl(_ctx.stringValue("GenerateVideoResponse.Data.VideoUrl"));
 		generateVideoResponse.setData(data);
 	 
 	 	return generateVideoResponse;
