@@ -27,7 +27,7 @@ public class ParseFaceRequest extends RpcAcsRequest<ParseFaceResponse> {
 
 	private String imageURL;
 	public ParseFaceRequest() {
-		super("imageseg", "2019-12-30", "ParseFace", "imageseg");
+		super("imageseg", "2019-12-30", "ParseFace");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -34,8 +34,8 @@ public class SegmentVehicleResponseUnmarshaller {
 		List<Element> elements = new ArrayList<Element>();
 		for (int i = 0; i < _ctx.lengthValue("SegmentVehicleResponse.Data.Elements.Length"); i++) {
 			Element element = new Element();
-			element.setOriginImageURL(_ctx.stringValue("SegmentVehicleResponse.Data.Elements["+ i +"].OriginImageURL"));
 			element.setImageURL(_ctx.stringValue("SegmentVehicleResponse.Data.Elements["+ i +"].ImageURL"));
+			element.setOriginImageURL(_ctx.stringValue("SegmentVehicleResponse.Data.Elements["+ i +"].OriginImageURL"));
 
 			elements.add(element);
 		}

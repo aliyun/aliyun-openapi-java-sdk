@@ -27,7 +27,7 @@ public class SegmentHDCommonImageRequest extends RpcAcsRequest<SegmentHDCommonIm
 
 	private String imageUrl;
 	public SegmentHDCommonImageRequest() {
-		super("imageseg", "2019-12-30", "SegmentHDCommonImage", "imageseg");
+		super("imageseg", "2019-12-30", "SegmentHDCommonImage");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

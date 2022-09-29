@@ -35,10 +35,10 @@ public class SegmentHairResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("SegmentHairResponse.Data.Elements.Length"); i++) {
 			Element element = new Element();
 			element.setImageURL(_ctx.stringValue("SegmentHairResponse.Data.Elements["+ i +"].ImageURL"));
-			element.setX(_ctx.integerValue("SegmentHairResponse.Data.Elements["+ i +"].X"));
-			element.setY(_ctx.integerValue("SegmentHairResponse.Data.Elements["+ i +"].Y"));
 			element.setWidth(_ctx.integerValue("SegmentHairResponse.Data.Elements["+ i +"].Width"));
 			element.setHeight(_ctx.integerValue("SegmentHairResponse.Data.Elements["+ i +"].Height"));
+			element.setY(_ctx.integerValue("SegmentHairResponse.Data.Elements["+ i +"].Y"));
+			element.setX(_ctx.integerValue("SegmentHairResponse.Data.Elements["+ i +"].X"));
 
 			elements.add(element);
 		}

@@ -27,7 +27,7 @@ public class GetAsyncJobResultRequest extends RpcAcsRequest<GetAsyncJobResultRes
 
 	private String jobId;
 	public GetAsyncJobResultRequest() {
-		super("imageseg", "2019-12-30", "GetAsyncJobResult", "imageseg");
+		super("imageseg", "2019-12-30", "GetAsyncJobResult");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

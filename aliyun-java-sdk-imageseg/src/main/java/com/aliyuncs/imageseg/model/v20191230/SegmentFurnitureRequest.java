@@ -27,7 +27,7 @@ public class SegmentFurnitureRequest extends RpcAcsRequest<SegmentFurnitureRespo
 
 	private String imageURL;
 	public SegmentFurnitureRequest() {
-		super("imageseg", "2019-12-30", "SegmentFurniture", "imageseg");
+		super("imageseg", "2019-12-30", "SegmentFurniture");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -59,17 +59,9 @@ public class SegmentVehicleResponse extends AcsResponse {
 
 		public static class Element {
 
-			private String originImageURL;
-
 			private String imageURL;
 
-			public String getOriginImageURL() {
-				return this.originImageURL;
-			}
-
-			public void setOriginImageURL(String originImageURL) {
-				this.originImageURL = originImageURL;
-			}
+			private String originImageURL;
 
 			public String getImageURL() {
 				return this.imageURL;
@@ -77,6 +69,14 @@ public class SegmentVehicleResponse extends AcsResponse {
 
 			public void setImageURL(String imageURL) {
 				this.imageURL = imageURL;
+			}
+
+			public String getOriginImageURL() {
+				return this.originImageURL;
+			}
+
+			public void setOriginImageURL(String originImageURL) {
+				this.originImageURL = originImageURL;
 			}
 		}
 	}

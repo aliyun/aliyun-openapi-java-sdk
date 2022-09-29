@@ -35,10 +35,10 @@ public class SegmentFaceResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("SegmentFaceResponse.Data.Elements.Length"); i++) {
 			Element element = new Element();
 			element.setImageURL(_ctx.stringValue("SegmentFaceResponse.Data.Elements["+ i +"].ImageURL"));
-			element.setX(_ctx.integerValue("SegmentFaceResponse.Data.Elements["+ i +"].X"));
-			element.setY(_ctx.integerValue("SegmentFaceResponse.Data.Elements["+ i +"].Y"));
 			element.setWidth(_ctx.integerValue("SegmentFaceResponse.Data.Elements["+ i +"].Width"));
 			element.setHeight(_ctx.integerValue("SegmentFaceResponse.Data.Elements["+ i +"].Height"));
+			element.setY(_ctx.integerValue("SegmentFaceResponse.Data.Elements["+ i +"].Y"));
+			element.setX(_ctx.integerValue("SegmentFaceResponse.Data.Elements["+ i +"].X"));
 
 			elements.add(element);
 		}

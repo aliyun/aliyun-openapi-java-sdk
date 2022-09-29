@@ -27,7 +27,7 @@ public class SegmentSkyRequest extends RpcAcsRequest<SegmentSkyResponse> {
 
 	private String imageURL;
 	public SegmentSkyRequest() {
-		super("imageseg", "2019-12-30", "SegmentSky", "imageseg");
+		super("imageseg", "2019-12-30", "SegmentSky");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

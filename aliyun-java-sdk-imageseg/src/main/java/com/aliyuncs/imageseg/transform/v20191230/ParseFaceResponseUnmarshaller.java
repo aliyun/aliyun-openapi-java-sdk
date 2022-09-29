@@ -35,8 +35,8 @@ public class ParseFaceResponseUnmarshaller {
 		List<Element> elements = new ArrayList<Element>();
 		for (int i = 0; i < _ctx.lengthValue("ParseFaceResponse.Data.Elements.Length"); i++) {
 			Element element = new Element();
-			element.setName(_ctx.stringValue("ParseFaceResponse.Data.Elements["+ i +"].Name"));
 			element.setImageURL(_ctx.stringValue("ParseFaceResponse.Data.Elements["+ i +"].ImageURL"));
+			element.setName(_ctx.stringValue("ParseFaceResponse.Data.Elements["+ i +"].Name"));
 
 			elements.add(element);
 		}

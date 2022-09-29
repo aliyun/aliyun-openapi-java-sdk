@@ -27,7 +27,7 @@ public class SegmentSkinRequest extends RpcAcsRequest<SegmentSkinResponse> {
 
 	private String uRL;
 	public SegmentSkinRequest() {
-		super("imageseg", "2019-12-30", "SegmentSkin", "imageseg");
+		super("imageseg", "2019-12-30", "SegmentSkin");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
