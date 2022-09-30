@@ -35,6 +35,8 @@ public class ListCardsRequest extends RpcAcsRequest<ListCardsResponse> {
 
 	private Boolean lock;
 
+	private String msisdn;
+
 	private String apn;
 
 	private String netLinkId;
@@ -105,6 +107,17 @@ public class ListCardsRequest extends RpcAcsRequest<ListCardsResponse> {
 		this.lock = lock;
 		if(lock != null){
 			putQueryParameter("Lock", lock.toString());
+		}
+	}
+
+	public String getMsisdn() {
+		return this.msisdn;
+	}
+
+	public void setMsisdn(String msisdn) {
+		this.msisdn = msisdn;
+		if(msisdn != null){
+			putQueryParameter("Msisdn", msisdn);
 		}
 	}
 
