@@ -39,8 +39,6 @@ public class DescribeDBInstanceAttributeRequest extends RpcAcsRequest<DescribeDB
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String chargeType;
 	public DescribeDBInstanceAttributeRequest() {
 		super("Dds", "2015-12-01", "DescribeDBInstanceAttribute", "dds");
 		setMethod(MethodType.POST);
@@ -131,17 +129,6 @@ public class DescribeDBInstanceAttributeRequest extends RpcAcsRequest<DescribeDB
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getChargeType() {
-		return this.chargeType;
-	}
-
-	public void setChargeType(String chargeType) {
-		this.chargeType = chargeType;
-		if(chargeType != null){
-			putQueryParameter("ChargeType", chargeType);
 		}
 	}
 
