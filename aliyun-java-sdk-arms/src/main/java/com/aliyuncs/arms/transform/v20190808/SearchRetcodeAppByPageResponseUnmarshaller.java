@@ -46,6 +46,7 @@ public class SearchRetcodeAppByPageResponseUnmarshaller {
 			retcodeApp.setAppId(_ctx.longValue("SearchRetcodeAppByPageResponse.PageBean.RetcodeApps["+ i +"].AppId"));
 			retcodeApp.setUserId(_ctx.stringValue("SearchRetcodeAppByPageResponse.PageBean.RetcodeApps["+ i +"].UserId"));
 			retcodeApp.setRegionId(_ctx.stringValue("SearchRetcodeAppByPageResponse.PageBean.RetcodeApps["+ i +"].RegionId"));
+			retcodeApp.setNickName(_ctx.stringValue("SearchRetcodeAppByPageResponse.PageBean.RetcodeApps["+ i +"].NickName"));
 
 			retcodeApps.add(retcodeApp);
 		}

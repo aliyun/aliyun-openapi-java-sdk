@@ -50,6 +50,7 @@ public class ListAlertEventsResponseUnmarshaller {
 			eventsItem.setDescription(_ctx.stringValue("ListAlertEventsResponse.PageBean.Events["+ i +"].Description"));
 			eventsItem.setAnnotations(_ctx.stringValue("ListAlertEventsResponse.PageBean.Events["+ i +"].Annotations"));
 			eventsItem.setLabels(_ctx.stringValue("ListAlertEventsResponse.PageBean.Events["+ i +"].Labels"));
+			eventsItem.setHandlerName(_ctx.stringValue("ListAlertEventsResponse.PageBean.Events["+ i +"].HandlerName"));
 
 			List<AlarmsItem> alarms = new ArrayList<AlarmsItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListAlertEventsResponse.PageBean.Events["+ i +"].Alarms.Length"); j++) {

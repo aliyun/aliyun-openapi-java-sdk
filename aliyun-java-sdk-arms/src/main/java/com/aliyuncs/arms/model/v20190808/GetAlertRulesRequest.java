@@ -25,6 +25,8 @@ import com.aliyuncs.arms.Endpoint;
 public class GetAlertRulesRequest extends RpcAcsRequest<GetAlertRulesResponse> {
 	   
 
+	private String productCode;
+
 	private String alertStatus;
 
 	private String clusterId;
@@ -45,6 +47,17 @@ public class GetAlertRulesRequest extends RpcAcsRequest<GetAlertRulesResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getProductCode() {
+		return this.productCode;
+	}
+
+	public void setProductCode(String productCode) {
+		this.productCode = productCode;
+		if(productCode != null){
+			putQueryParameter("ProductCode", productCode);
+		}
 	}
 
 	public String getAlertStatus() {

@@ -61,7 +61,9 @@ public class GetSyntheticTaskDetailResponse extends AcsResponse {
 
 		private Long ipType;
 
-		private List<MinotorListItem> minotorList;
+		private String monitorListString;
+
+		private List<MonitorListItem> monitorList;
 
 		private ExtendInterval extendInterval;
 
@@ -72,6 +74,8 @@ public class GetSyntheticTaskDetailResponse extends AcsResponse {
 		private Nav nav;
 
 		private Protocol protocol;
+
+		private CommonParam commonParam;
 
 		public Long getTaskId() {
 			return this.taskId;
@@ -129,12 +133,20 @@ public class GetSyntheticTaskDetailResponse extends AcsResponse {
 			this.ipType = ipType;
 		}
 
-		public List<MinotorListItem> getMinotorList() {
-			return this.minotorList;
+		public String getMonitorListString() {
+			return this.monitorListString;
 		}
 
-		public void setMinotorList(List<MinotorListItem> minotorList) {
-			this.minotorList = minotorList;
+		public void setMonitorListString(String monitorListString) {
+			this.monitorListString = monitorListString;
+		}
+
+		public List<MonitorListItem> getMonitorList() {
+			return this.monitorList;
+		}
+
+		public void setMonitorList(List<MonitorListItem> monitorList) {
+			this.monitorList = monitorList;
 		}
 
 		public ExtendInterval getExtendInterval() {
@@ -177,7 +189,15 @@ public class GetSyntheticTaskDetailResponse extends AcsResponse {
 			this.protocol = protocol;
 		}
 
-		public static class MinotorListItem {
+		public CommonParam getCommonParam() {
+			return this.commonParam;
+		}
+
+		public void setCommonParam(CommonParam commonParam) {
+			this.commonParam = commonParam;
+		}
+
+		public static class MonitorListItem {
 
 			private Long cityCode;
 
@@ -450,6 +470,8 @@ public class GetSyntheticTaskDetailResponse extends AcsResponse {
 
 			private Long netDnsServer;
 
+			private String netDnsTimeout;
+
 			public Long getNetIcmpSwitch() {
 				return this.netIcmpSwitch;
 			}
@@ -576,6 +598,14 @@ public class GetSyntheticTaskDetailResponse extends AcsResponse {
 
 			public void setNetDnsServer(Long netDnsServer) {
 				this.netDnsServer = netDnsServer;
+			}
+
+			public String getNetDnsTimeout() {
+				return this.netDnsTimeout;
+			}
+
+			public void setNetDnsTimeout(String netDnsTimeout) {
+				this.netDnsTimeout = netDnsTimeout;
 			}
 		}
 
@@ -1106,6 +1136,122 @@ public class GetSyntheticTaskDetailResponse extends AcsResponse {
 							this.value = value;
 						}
 					}
+				}
+			}
+		}
+
+		public static class CommonParam {
+
+			private Long alarmFlag;
+
+			private String alertPolicyId;
+
+			private String alertNotifierId;
+
+			private String startExecutionTime;
+
+			private String monitorSamples;
+
+			private List<AlertListItem> alertList;
+
+			public Long getAlarmFlag() {
+				return this.alarmFlag;
+			}
+
+			public void setAlarmFlag(Long alarmFlag) {
+				this.alarmFlag = alarmFlag;
+			}
+
+			public String getAlertPolicyId() {
+				return this.alertPolicyId;
+			}
+
+			public void setAlertPolicyId(String alertPolicyId) {
+				this.alertPolicyId = alertPolicyId;
+			}
+
+			public String getAlertNotifierId() {
+				return this.alertNotifierId;
+			}
+
+			public void setAlertNotifierId(String alertNotifierId) {
+				this.alertNotifierId = alertNotifierId;
+			}
+
+			public String getStartExecutionTime() {
+				return this.startExecutionTime;
+			}
+
+			public void setStartExecutionTime(String startExecutionTime) {
+				this.startExecutionTime = startExecutionTime;
+			}
+
+			public String getMonitorSamples() {
+				return this.monitorSamples;
+			}
+
+			public void setMonitorSamples(String monitorSamples) {
+				this.monitorSamples = monitorSamples;
+			}
+
+			public List<AlertListItem> getAlertList() {
+				return this.alertList;
+			}
+
+			public void setAlertList(List<AlertListItem> alertList) {
+				this.alertList = alertList;
+			}
+
+			public static class AlertListItem {
+
+				private String name;
+
+				private String generalAlert;
+
+				private String seriousAlert;
+
+				private String isCritical;
+
+				private String symbols;
+
+				public String getName() {
+					return this.name;
+				}
+
+				public void setName(String name) {
+					this.name = name;
+				}
+
+				public String getGeneralAlert() {
+					return this.generalAlert;
+				}
+
+				public void setGeneralAlert(String generalAlert) {
+					this.generalAlert = generalAlert;
+				}
+
+				public String getSeriousAlert() {
+					return this.seriousAlert;
+				}
+
+				public void setSeriousAlert(String seriousAlert) {
+					this.seriousAlert = seriousAlert;
+				}
+
+				public String getIsCritical() {
+					return this.isCritical;
+				}
+
+				public void setIsCritical(String isCritical) {
+					this.isCritical = isCritical;
+				}
+
+				public String getSymbols() {
+					return this.symbols;
+				}
+
+				public void setSymbols(String symbols) {
+					this.symbols = symbols;
 				}
 			}
 		}

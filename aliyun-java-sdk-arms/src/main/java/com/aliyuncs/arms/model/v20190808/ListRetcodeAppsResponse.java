@@ -55,6 +55,8 @@ public class ListRetcodeAppsResponse extends AcsResponse {
 
 		private String pid;
 
+		private String nickName;
+
 		public String getAppName() {
 			return this.appName;
 		}
@@ -85,6 +87,14 @@ public class ListRetcodeAppsResponse extends AcsResponse {
 
 		public void setPid(String pid) {
 			this.pid = pid;
+		}
+
+		public String getNickName() {
+			return this.nickName;
+		}
+
+		public void setNickName(String nickName) {
+			this.nickName = nickName;
 		}
 	}
 

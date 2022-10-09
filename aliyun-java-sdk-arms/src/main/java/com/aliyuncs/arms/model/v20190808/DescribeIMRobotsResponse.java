@@ -101,6 +101,8 @@ public class DescribeIMRobotsResponse extends AcsResponse {
 
 			private String dailyNocTime;
 
+			private String dingSignKey;
+
 			public Float getRobotId() {
 				return this.robotId;
 			}
@@ -147,6 +149,14 @@ public class DescribeIMRobotsResponse extends AcsResponse {
 
 			public void setDailyNocTime(String dailyNocTime) {
 				this.dailyNocTime = dailyNocTime;
+			}
+
+			public String getDingSignKey() {
+				return this.dingSignKey;
+			}
+
+			public void setDingSignKey(String dingSignKey) {
+				this.dingSignKey = dingSignKey;
 			}
 		}
 	}
