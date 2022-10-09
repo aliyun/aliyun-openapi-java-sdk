@@ -35,6 +35,8 @@ public class CreateBasicAcceleratorRequest extends RpcAcsRequest<CreateBasicAcce
 
 	private Integer duration;
 
+	private String bandwidthBillingType;
+
 	private Boolean autoRenew;
 
 	private String pricingCycle;
@@ -99,6 +101,17 @@ public class CreateBasicAcceleratorRequest extends RpcAcsRequest<CreateBasicAcce
 		this.duration = duration;
 		if(duration != null){
 			putQueryParameter("Duration", duration.toString());
+		}
+	}
+
+	public String getBandwidthBillingType() {
+		return this.bandwidthBillingType;
+	}
+
+	public void setBandwidthBillingType(String bandwidthBillingType) {
+		this.bandwidthBillingType = bandwidthBillingType;
+		if(bandwidthBillingType != null){
+			putQueryParameter("BandwidthBillingType", bandwidthBillingType);
 		}
 	}
 

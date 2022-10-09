@@ -47,6 +47,7 @@ public class ListBasicAcceleratorsResponseUnmarshaller {
 			acceleratorsItem.setName(_ctx.stringValue("ListBasicAcceleratorsResponse.Accelerators["+ i +"].Name"));
 			acceleratorsItem.setBasicEndpointGroupId(_ctx.stringValue("ListBasicAcceleratorsResponse.Accelerators["+ i +"].BasicEndpointGroupId"));
 			acceleratorsItem.setBasicIpSetId(_ctx.stringValue("ListBasicAcceleratorsResponse.Accelerators["+ i +"].BasicIpSetId"));
+			acceleratorsItem.setBandwidthBillingType(_ctx.stringValue("ListBasicAcceleratorsResponse.Accelerators["+ i +"].BandwidthBillingType"));
 
 			BasicBandwidthPackage basicBandwidthPackage = new BasicBandwidthPackage();
 			basicBandwidthPackage.setBandwidth(_ctx.integerValue("ListBasicAcceleratorsResponse.Accelerators["+ i +"].BasicBandwidthPackage.Bandwidth"));

@@ -50,6 +50,7 @@ public class ListAcceleratorsResponseUnmarshaller {
 			acceleratorsItem.setAcceleratorId(_ctx.stringValue("ListAcceleratorsResponse.Accelerators["+ i +"].AcceleratorId"));
 			acceleratorsItem.setDescription(_ctx.stringValue("ListAcceleratorsResponse.Accelerators["+ i +"].Description"));
 			acceleratorsItem.setBandwidth(_ctx.integerValue("ListAcceleratorsResponse.Accelerators["+ i +"].Bandwidth"));
+			acceleratorsItem.setBandwidthBillingType(_ctx.stringValue("ListAcceleratorsResponse.Accelerators["+ i +"].BandwidthBillingType"));
 			acceleratorsItem.setExpiredTime(_ctx.longValue("ListAcceleratorsResponse.Accelerators["+ i +"].ExpiredTime"));
 			acceleratorsItem.setName(_ctx.stringValue("ListAcceleratorsResponse.Accelerators["+ i +"].Name"));
 

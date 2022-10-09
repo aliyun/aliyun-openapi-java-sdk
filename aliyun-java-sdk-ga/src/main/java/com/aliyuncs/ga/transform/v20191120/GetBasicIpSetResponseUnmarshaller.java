@@ -24,7 +24,7 @@ public class GetBasicIpSetResponseUnmarshaller {
 		
 		getBasicIpSetResponse.setRequestId(_ctx.stringValue("GetBasicIpSetResponse.RequestId"));
 		getBasicIpSetResponse.setAccelerateRegionId(_ctx.stringValue("GetBasicIpSetResponse.AccelerateRegionId"));
-		getBasicIpSetResponse.setBandwidth(_ctx.integerValue("GetBasicIpSetResponse.Bandwidth"));
+		getBasicIpSetResponse.setBandwidth(_ctx.longValue("GetBasicIpSetResponse.Bandwidth"));
 		getBasicIpSetResponse.setIpSetId(_ctx.stringValue("GetBasicIpSetResponse.IpSetId"));
 		getBasicIpSetResponse.setIpAddress(_ctx.stringValue("GetBasicIpSetResponse.IpAddress"));
 		getBasicIpSetResponse.setAcceleratorId(_ctx.stringValue("GetBasicIpSetResponse.AcceleratorId"));

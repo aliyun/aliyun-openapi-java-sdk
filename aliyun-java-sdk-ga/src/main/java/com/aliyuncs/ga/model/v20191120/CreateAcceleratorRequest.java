@@ -39,6 +39,8 @@ public class CreateAcceleratorRequest extends RpcAcsRequest<CreateAcceleratorRes
 
 	private Boolean autoPay;
 
+	private String bandwidthBillingType;
+
 	private Boolean autoRenew;
 
 	private String name;
@@ -128,6 +130,17 @@ public class CreateAcceleratorRequest extends RpcAcsRequest<CreateAcceleratorRes
 		this.autoPay = autoPay;
 		if(autoPay != null){
 			putQueryParameter("AutoPay", autoPay.toString());
+		}
+	}
+
+	public String getBandwidthBillingType() {
+		return this.bandwidthBillingType;
+	}
+
+	public void setBandwidthBillingType(String bandwidthBillingType) {
+		this.bandwidthBillingType = bandwidthBillingType;
+		if(bandwidthBillingType != null){
+			putQueryParameter("BandwidthBillingType", bandwidthBillingType);
 		}
 	}
 

@@ -27,6 +27,8 @@ public class CreateBasicIpSetRequest extends RpcAcsRequest<CreateBasicIpSetRespo
 
 	private String clientToken;
 
+	private Long bandwidth;
+
 	private String ispType;
 
 	private String accelerateRegionId;
@@ -49,6 +51,17 @@ public class CreateBasicIpSetRequest extends RpcAcsRequest<CreateBasicIpSetRespo
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public Long getBandwidth() {
+		return this.bandwidth;
+	}
+
+	public void setBandwidth(Long bandwidth) {
+		this.bandwidth = bandwidth;
+		if(bandwidth != null){
+			putQueryParameter("Bandwidth", bandwidth.toString());
 		}
 	}
 

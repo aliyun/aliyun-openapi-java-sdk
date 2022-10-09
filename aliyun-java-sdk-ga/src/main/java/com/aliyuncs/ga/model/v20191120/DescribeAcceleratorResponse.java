@@ -52,6 +52,10 @@ public class DescribeAcceleratorResponse extends AcsResponse {
 
 	private String acceleratorId;
 
+	private String bandwidthBillingType;
+
+	private String crossPrivateState;
+
 	private CrossDomainBandwidthPackage crossDomainBandwidthPackage;
 
 	private BasicBandwidthPackage basicBandwidthPackage;
@@ -168,6 +172,22 @@ public class DescribeAcceleratorResponse extends AcsResponse {
 
 	public void setAcceleratorId(String acceleratorId) {
 		this.acceleratorId = acceleratorId;
+	}
+
+	public String getBandwidthBillingType() {
+		return this.bandwidthBillingType;
+	}
+
+	public void setBandwidthBillingType(String bandwidthBillingType) {
+		this.bandwidthBillingType = bandwidthBillingType;
+	}
+
+	public String getCrossPrivateState() {
+		return this.crossPrivateState;
+	}
+
+	public void setCrossPrivateState(String crossPrivateState) {
+		this.crossPrivateState = crossPrivateState;
 	}
 
 	public CrossDomainBandwidthPackage getCrossDomainBandwidthPackage() {

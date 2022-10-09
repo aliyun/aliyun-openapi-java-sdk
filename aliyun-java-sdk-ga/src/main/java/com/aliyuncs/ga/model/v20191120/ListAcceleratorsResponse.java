@@ -103,6 +103,8 @@ public class ListAcceleratorsResponse extends AcsResponse {
 
 		private Integer bandwidth;
 
+		private String bandwidthBillingType;
+
 		private Long expiredTime;
 
 		private String name;
@@ -215,6 +217,14 @@ public class ListAcceleratorsResponse extends AcsResponse {
 
 		public void setBandwidth(Integer bandwidth) {
 			this.bandwidth = bandwidth;
+		}
+
+		public String getBandwidthBillingType() {
+			return this.bandwidthBillingType;
+		}
+
+		public void setBandwidthBillingType(String bandwidthBillingType) {
+			this.bandwidthBillingType = bandwidthBillingType;
 		}
 
 		public Long getExpiredTime() {

@@ -38,6 +38,8 @@ public class CreateBasicEndpointGroupRequest extends RpcAcsRequest<CreateBasicEn
 	private String name;
 
 	private String acceleratorId;
+
+	private String endpointSubAddress;
 	public CreateBasicEndpointGroupRequest() {
 		super("Ga", "2019-11-20", "CreateBasicEndpointGroup", "gaplus");
 		setMethod(MethodType.POST);
@@ -121,6 +123,17 @@ public class CreateBasicEndpointGroupRequest extends RpcAcsRequest<CreateBasicEn
 		this.acceleratorId = acceleratorId;
 		if(acceleratorId != null){
 			putQueryParameter("AcceleratorId", acceleratorId);
+		}
+	}
+
+	public String getEndpointSubAddress() {
+		return this.endpointSubAddress;
+	}
+
+	public void setEndpointSubAddress(String endpointSubAddress) {
+		this.endpointSubAddress = endpointSubAddress;
+		if(endpointSubAddress != null){
+			putQueryParameter("EndpointSubAddress", endpointSubAddress);
 		}
 	}
 

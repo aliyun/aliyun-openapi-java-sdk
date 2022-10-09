@@ -83,6 +83,8 @@ public class ListIpSetsResponse extends AcsResponse {
 
 		private Integer bandwidth;
 
+		private String ispType;
+
 		private String state;
 
 		private String ipSetId;
@@ -111,6 +113,14 @@ public class ListIpSetsResponse extends AcsResponse {
 
 		public void setBandwidth(Integer bandwidth) {
 			this.bandwidth = bandwidth;
+		}
+
+		public String getIspType() {
+			return this.ispType;
+		}
+
+		public void setIspType(String ispType) {
+			this.ispType = ispType;
 		}
 
 		public String getState() {

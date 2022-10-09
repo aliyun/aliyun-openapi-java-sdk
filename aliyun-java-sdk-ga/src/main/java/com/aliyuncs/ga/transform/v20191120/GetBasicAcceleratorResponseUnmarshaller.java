@@ -36,6 +36,7 @@ public class GetBasicAcceleratorResponseUnmarshaller {
 		getBasicAcceleratorResponse.setAcceleratorId(_ctx.stringValue("GetBasicAcceleratorResponse.AcceleratorId"));
 		getBasicAcceleratorResponse.setBasicEndpointGroupId(_ctx.stringValue("GetBasicAcceleratorResponse.BasicEndpointGroupId"));
 		getBasicAcceleratorResponse.setBasicIpSetId(_ctx.stringValue("GetBasicAcceleratorResponse.BasicIpSetId"));
+		getBasicAcceleratorResponse.setBandwidthBillingType(_ctx.stringValue("GetBasicAcceleratorResponse.BandwidthBillingType"));
 
 		CrossDomainBandwidthPackage crossDomainBandwidthPackage = new CrossDomainBandwidthPackage();
 		crossDomainBandwidthPackage.setBandwidth(_ctx.integerValue("GetBasicAcceleratorResponse.CrossDomainBandwidthPackage.Bandwidth"));

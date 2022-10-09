@@ -31,6 +31,7 @@ public class GetBasicEndpointGroupResponseUnmarshaller {
 		getBasicEndpointGroupResponse.setEndpointType(_ctx.stringValue("GetBasicEndpointGroupResponse.EndpointType"));
 		getBasicEndpointGroupResponse.setEndpointAddress(_ctx.stringValue("GetBasicEndpointGroupResponse.EndpointAddress"));
 		getBasicEndpointGroupResponse.setState(_ctx.stringValue("GetBasicEndpointGroupResponse.State"));
+		getBasicEndpointGroupResponse.setEndpointSubAddress(_ctx.stringValue("GetBasicEndpointGroupResponse.EndpointSubAddress"));
 	 
 	 	return getBasicEndpointGroupResponse;
 	}

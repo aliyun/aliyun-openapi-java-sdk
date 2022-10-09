@@ -35,6 +35,8 @@ public class UpdateBasicEndpointGroupRequest extends RpcAcsRequest<UpdateBasicEn
 
 	private String name;
 
+	private String endpointSubAddress;
+
 	private String endpointGroupId;
 	public UpdateBasicEndpointGroupRequest() {
 		super("Ga", "2019-11-20", "UpdateBasicEndpointGroup", "gaplus");
@@ -97,6 +99,17 @@ public class UpdateBasicEndpointGroupRequest extends RpcAcsRequest<UpdateBasicEn
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getEndpointSubAddress() {
+		return this.endpointSubAddress;
+	}
+
+	public void setEndpointSubAddress(String endpointSubAddress) {
+		this.endpointSubAddress = endpointSubAddress;
+		if(endpointSubAddress != null){
+			putQueryParameter("EndpointSubAddress", endpointSubAddress);
 		}
 	}
 

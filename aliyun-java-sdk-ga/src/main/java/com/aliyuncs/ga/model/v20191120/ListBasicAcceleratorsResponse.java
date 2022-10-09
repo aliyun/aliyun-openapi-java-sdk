@@ -99,6 +99,8 @@ public class ListBasicAcceleratorsResponse extends AcsResponse {
 
 		private String basicIpSetId;
 
+		private String bandwidthBillingType;
+
 		private BasicBandwidthPackage basicBandwidthPackage;
 
 		private CrossDomainBandwidthPackage crossDomainBandwidthPackage;
@@ -189,6 +191,14 @@ public class ListBasicAcceleratorsResponse extends AcsResponse {
 
 		public void setBasicIpSetId(String basicIpSetId) {
 			this.basicIpSetId = basicIpSetId;
+		}
+
+		public String getBandwidthBillingType() {
+			return this.bandwidthBillingType;
+		}
+
+		public void setBandwidthBillingType(String bandwidthBillingType) {
+			this.bandwidthBillingType = bandwidthBillingType;
 		}
 
 		public BasicBandwidthPackage getBasicBandwidthPackage() {
