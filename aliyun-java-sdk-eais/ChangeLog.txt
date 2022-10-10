@@ -1,3 +1,7 @@
+2022-10-10 Version: 2.0.4
+- Add OpenAPI CreateEaiJupyter.
+- Fixd bugs for OpenAPI  DeleteEaiAll.
+
 2021-07-28 Version: 2.0.3
 - DesccribeEais api adds PageNumber, PageSize parameters.
 - The api frequency of DescribeEais is set to 100.

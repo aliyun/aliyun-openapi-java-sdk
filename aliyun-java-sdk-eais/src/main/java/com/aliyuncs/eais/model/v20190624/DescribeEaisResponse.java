@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeEaisResponse extends AcsResponse {
 
-	private Integer pageNumber;
+	private String requestId;
 
-	private Integer totalCount;
+	private Integer pageNumber;
 
 	private Integer pageSize;
 
-	private String requestId;
+	private Integer totalCount;
 
 	private List<Instance> instances;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -41,14 +49,6 @@ public class DescribeEaisResponse extends AcsResponse {
 
 	public void setPageNumber(Integer pageNumber) {
 		this.pageNumber = pageNumber;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageSize() {
@@ -59,12 +59,12 @@ public class DescribeEaisResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<Instance> getInstances() {
@@ -77,44 +77,44 @@ public class DescribeEaisResponse extends AcsResponse {
 
 	public static class Instance {
 
-		private String regionId;
-
-		private String zoneId;
+		private String status;
 
 		private String creationTime;
 
-		private String instanceName;
+		private String clientInstanceName;
 
 		private String description;
 
-		private String status;
-
 		private String elasticAcceleratedInstanceId;
 
-		private String clientInstanceId;
-
-		private String instanceType;
+		private String instanceName;
 
 		private String clientInstanceType;
 
-		private String clientInstanceName;
+		private String clientInstanceId;
+
+		private String zoneId;
+
+		private String instanceType;
+
+		private String regionId;
+
+		private String category;
+
+		private String jupyterUrl;
+
+		private String vSwitchId;
+
+		private String securityGroupId;
 
 		private List<Tag> tags;
 
-		public String getRegionId() {
-			return this.regionId;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getCreationTime() {
@@ -125,12 +125,12 @@ public class DescribeEaisResponse extends AcsResponse {
 			this.creationTime = creationTime;
 		}
 
-		public String getInstanceName() {
-			return this.instanceName;
+		public String getClientInstanceName() {
+			return this.clientInstanceName;
 		}
 
-		public void setInstanceName(String instanceName) {
-			this.instanceName = instanceName;
+		public void setClientInstanceName(String clientInstanceName) {
+			this.clientInstanceName = clientInstanceName;
 		}
 
 		public String getDescription() {
@@ -141,14 +141,6 @@ public class DescribeEaisResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
 		public String getElasticAcceleratedInstanceId() {
 			return this.elasticAcceleratedInstanceId;
 		}
@@ -157,20 +149,12 @@ public class DescribeEaisResponse extends AcsResponse {
 			this.elasticAcceleratedInstanceId = elasticAcceleratedInstanceId;
 		}
 
-		public String getClientInstanceId() {
-			return this.clientInstanceId;
+		public String getInstanceName() {
+			return this.instanceName;
 		}
 
-		public void setClientInstanceId(String clientInstanceId) {
-			this.clientInstanceId = clientInstanceId;
-		}
-
-		public String getInstanceType() {
-			return this.instanceType;
-		}
-
-		public void setInstanceType(String instanceType) {
-			this.instanceType = instanceType;
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
 		}
 
 		public String getClientInstanceType() {
@@ -181,12 +165,68 @@ public class DescribeEaisResponse extends AcsResponse {
 			this.clientInstanceType = clientInstanceType;
 		}
 
-		public String getClientInstanceName() {
-			return this.clientInstanceName;
+		public String getClientInstanceId() {
+			return this.clientInstanceId;
 		}
 
-		public void setClientInstanceName(String clientInstanceName) {
-			this.clientInstanceName = clientInstanceName;
+		public void setClientInstanceId(String clientInstanceId) {
+			this.clientInstanceId = clientInstanceId;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public String getInstanceType() {
+			return this.instanceType;
+		}
+
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getCategory() {
+			return this.category;
+		}
+
+		public void setCategory(String category) {
+			this.category = category;
+		}
+
+		public String getJupyterUrl() {
+			return this.jupyterUrl;
+		}
+
+		public void setJupyterUrl(String jupyterUrl) {
+			this.jupyterUrl = jupyterUrl;
+		}
+
+		public String getVSwitchId() {
+			return this.vSwitchId;
+		}
+
+		public void setVSwitchId(String vSwitchId) {
+			this.vSwitchId = vSwitchId;
+		}
+
+		public String getSecurityGroupId() {
+			return this.securityGroupId;
+		}
+
+		public void setSecurityGroupId(String securityGroupId) {
+			this.securityGroupId = securityGroupId;
 		}
 
 		public List<Tag> getTags() {
@@ -199,17 +239,9 @@ public class DescribeEaisResponse extends AcsResponse {
 
 		public static class Tag {
 
-			private String tagValue;
-
 			private String tagKey;
 
-			public String getTagValue() {
-				return this.tagValue;
-			}
-
-			public void setTagValue(String tagValue) {
-				this.tagValue = tagValue;
-			}
+			private String tagValue;
 
 			public String getTagKey() {
 				return this.tagKey;
@@ -217,6 +249,14 @@ public class DescribeEaisResponse extends AcsResponse {
 
 			public void setTagKey(String tagKey) {
 				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
 			}
 		}
 	}

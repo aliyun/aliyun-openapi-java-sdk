@@ -15,26 +15,18 @@
 package com.aliyuncs.eais.model.v20190624;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.eais.transform.v20190624.CreateEaiResponseUnmarshaller;
+import com.aliyuncs.eais.transform.v20190624.CreateEaiJupyterResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateEaiResponse extends AcsResponse {
-
-	private String elasticAcceleratedInstanceId;
+public class CreateEaiJupyterResponse extends AcsResponse {
 
 	private String requestId;
 
-	public String getElasticAcceleratedInstanceId() {
-		return this.elasticAcceleratedInstanceId;
-	}
-
-	public void setElasticAcceleratedInstanceId(String elasticAcceleratedInstanceId) {
-		this.elasticAcceleratedInstanceId = elasticAcceleratedInstanceId;
-	}
+	private String elasticAcceleratedInstanceId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,9 +36,17 @@ public class CreateEaiResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getElasticAcceleratedInstanceId() {
+		return this.elasticAcceleratedInstanceId;
+	}
+
+	public void setElasticAcceleratedInstanceId(String elasticAcceleratedInstanceId) {
+		this.elasticAcceleratedInstanceId = elasticAcceleratedInstanceId;
+	}
+
 	@Override
-	public CreateEaiResponse getInstance(UnmarshallerContext context) {
-		return	CreateEaiResponseUnmarshaller.unmarshall(this, context);
+	public CreateEaiJupyterResponse getInstance(UnmarshallerContext context) {
+		return	CreateEaiJupyterResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
