@@ -1,3 +1,6 @@
+2022-10-10 Version: 1.8.22
+- Support serverless feature.
+
 2022-09-09 Version: 1.8.21
 - Support new feature.
 

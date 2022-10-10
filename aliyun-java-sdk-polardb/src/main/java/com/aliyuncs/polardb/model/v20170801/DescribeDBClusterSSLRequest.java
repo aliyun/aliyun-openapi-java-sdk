@@ -35,7 +35,7 @@ public class DescribeDBClusterSSLRequest extends RpcAcsRequest<DescribeDBCluster
 
 	private Long ownerId;
 	public DescribeDBClusterSSLRequest() {
-		super("polardb", "2017-08-01", "DescribeDBClusterSSL");
+		super("polardb", "2017-08-01", "DescribeDBClusterSSL", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

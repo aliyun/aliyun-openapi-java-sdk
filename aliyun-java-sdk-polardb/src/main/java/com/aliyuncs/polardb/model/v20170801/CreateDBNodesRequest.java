@@ -50,7 +50,7 @@ public class CreateDBNodesRequest extends RpcAcsRequest<CreateDBNodesResponse> {
 
 	private String imciSwitch;
 	public CreateDBNodesRequest() {
-		super("polardb", "2017-08-01", "CreateDBNodes");
+		super("polardb", "2017-08-01", "CreateDBNodes", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

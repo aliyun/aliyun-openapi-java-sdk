@@ -39,7 +39,7 @@ public class CancelScheduleTasksRequest extends RpcAcsRequest<CancelScheduleTask
 
 	private Long ownerId;
 	public CancelScheduleTasksRequest() {
-		super("polardb", "2017-08-01", "CancelScheduleTasks");
+		super("polardb", "2017-08-01", "CancelScheduleTasks", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

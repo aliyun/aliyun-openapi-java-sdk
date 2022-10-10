@@ -43,7 +43,7 @@ public class CreateStoragePlanRequest extends RpcAcsRequest<CreateStoragePlanRes
 
 	private String storageClass;
 	public CreateStoragePlanRequest() {
-		super("polardb", "2017-08-01", "CreateStoragePlan");
+		super("polardb", "2017-08-01", "CreateStoragePlan", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

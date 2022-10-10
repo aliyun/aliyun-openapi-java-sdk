@@ -39,7 +39,7 @@ public class ModifyDBClusterResourceGroupRequest extends RpcAcsRequest<ModifyDBC
 
 	private String newResourceGroupId;
 	public ModifyDBClusterResourceGroupRequest() {
-		super("polardb", "2017-08-01", "ModifyDBClusterResourceGroup");
+		super("polardb", "2017-08-01", "ModifyDBClusterResourceGroup", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
