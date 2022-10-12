@@ -67,7 +67,7 @@ public class CreateOpsItemResponse extends AcsResponse {
 
 		private String source;
 
-		private String priority;
+		private Integer priority;
 
 		private String solutions;
 
@@ -161,11 +161,11 @@ public class CreateOpsItemResponse extends AcsResponse {
 			this.source = source;
 		}
 
-		public String getPriority() {
+		public Integer getPriority() {
 			return this.priority;
 		}
 
-		public void setPriority(String priority) {
+		public void setPriority(Integer priority) {
 			this.priority = priority;
 		}
 

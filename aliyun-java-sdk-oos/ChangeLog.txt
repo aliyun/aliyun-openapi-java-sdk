@@ -1,3 +1,6 @@
+2022-10-12 Version: 1.5.8
+- Add Force Option for DeleteApplication API.
+
 2022-09-19 Version: 1.5.7
 - Add ops item APIs.
 

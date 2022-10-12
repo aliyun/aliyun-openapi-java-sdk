@@ -27,7 +27,13 @@ public class ListApplicationGroupsRequest extends RpcAcsRequest<ListApplicationG
 
 	private String nextToken;
 
+	private String resourceId;
+
+	private String product;
+
 	private String deployRegionId;
+
+	private String resourceType;
 
 	private String applicationName;
 
@@ -52,6 +58,28 @@ public class ListApplicationGroupsRequest extends RpcAcsRequest<ListApplicationG
 		}
 	}
 
+	public String getResourceId() {
+		return this.resourceId;
+	}
+
+	public void setResourceId(String resourceId) {
+		this.resourceId = resourceId;
+		if(resourceId != null){
+			putQueryParameter("ResourceId", resourceId);
+		}
+	}
+
+	public String getProduct() {
+		return this.product;
+	}
+
+	public void setProduct(String product) {
+		this.product = product;
+		if(product != null){
+			putQueryParameter("Product", product);
+		}
+	}
+
 	public String getDeployRegionId() {
 		return this.deployRegionId;
 	}
@@ -60,6 +88,17 @@ public class ListApplicationGroupsRequest extends RpcAcsRequest<ListApplicationG
 		this.deployRegionId = deployRegionId;
 		if(deployRegionId != null){
 			putQueryParameter("DeployRegionId", deployRegionId);
+		}
+	}
+
+	public String getResourceType() {
+		return this.resourceType;
+	}
+
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
 		}
 	}
 

@@ -72,6 +72,8 @@ public class GetApplicationGroupResponse extends AcsResponse {
 
 		private String deployOutputs;
 
+		private String progress;
+
 		public String getCmsGroupId() {
 			return this.cmsGroupId;
 		}
@@ -174,6 +176,14 @@ public class GetApplicationGroupResponse extends AcsResponse {
 
 		public void setDeployOutputs(String deployOutputs) {
 			this.deployOutputs = deployOutputs;
+		}
+
+		public String getProgress() {
+			return this.progress;
+		}
+
+		public void setProgress(String progress) {
+			this.progress = progress;
 		}
 	}
 

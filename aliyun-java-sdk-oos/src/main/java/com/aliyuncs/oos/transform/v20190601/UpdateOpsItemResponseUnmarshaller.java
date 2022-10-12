@@ -40,7 +40,7 @@ public class UpdateOpsItemResponseUnmarshaller {
 		opsItem.setSeverity(_ctx.stringValue("UpdateOpsItemResponse.OpsItem.Severity"));
 		opsItem.setCategory(_ctx.stringValue("UpdateOpsItemResponse.OpsItem.Category"));
 		opsItem.setSource(_ctx.stringValue("UpdateOpsItemResponse.OpsItem.Source"));
-		opsItem.setPriority(_ctx.stringValue("UpdateOpsItemResponse.OpsItem.Priority"));
+		opsItem.setPriority(_ctx.integerValue("UpdateOpsItemResponse.OpsItem.Priority"));
 		opsItem.setAttributes(_ctx.stringValue("UpdateOpsItemResponse.OpsItem.Attributes"));
 		opsItem.setCreatedBy(_ctx.stringValue("UpdateOpsItemResponse.OpsItem.CreatedBy"));
 		opsItem.setLastModifiedBy(_ctx.stringValue("UpdateOpsItemResponse.OpsItem.LastModifiedBy"));

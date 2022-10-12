@@ -26,6 +26,8 @@ public class DeleteApplicationRequest extends RpcAcsRequest<DeleteApplicationRes
 	   
 
 	private String name;
+
+	private Boolean force;
 	public DeleteApplicationRequest() {
 		super("oos", "2019-06-01", "DeleteApplication", "oos");
 		setMethod(MethodType.POST);
@@ -43,6 +45,17 @@ public class DeleteApplicationRequest extends RpcAcsRequest<DeleteApplicationRes
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
+		}
+	}
+
+	public Boolean getForce() {
+		return this.force;
+	}
+
+	public void setForce(Boolean force) {
+		this.force = force;
+		if(force != null){
+			putQueryParameter("Force", force.toString());
 		}
 	}
 

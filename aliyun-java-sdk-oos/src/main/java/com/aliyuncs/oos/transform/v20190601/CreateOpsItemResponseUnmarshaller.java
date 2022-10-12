@@ -37,7 +37,7 @@ public class CreateOpsItemResponseUnmarshaller {
 		opsItem.setSeverity(_ctx.stringValue("CreateOpsItemResponse.OpsItem.Severity"));
 		opsItem.setCategory(_ctx.stringValue("CreateOpsItemResponse.OpsItem.Category"));
 		opsItem.setSource(_ctx.stringValue("CreateOpsItemResponse.OpsItem.Source"));
-		opsItem.setPriority(_ctx.stringValue("CreateOpsItemResponse.OpsItem.Priority"));
+		opsItem.setPriority(_ctx.integerValue("CreateOpsItemResponse.OpsItem.Priority"));
 		opsItem.setSolutions(_ctx.stringValue("CreateOpsItemResponse.OpsItem.Solutions"));
 		opsItem.setResources(_ctx.stringValue("CreateOpsItemResponse.OpsItem.Resources"));
 		opsItem.setAttributes(_ctx.stringValue("CreateOpsItemResponse.OpsItem.Attributes"));
