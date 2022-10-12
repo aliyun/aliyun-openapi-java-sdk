@@ -1,3 +1,6 @@
+2022-10-12 Version: 1.8.0
+- Add QueryCommodityList QuerySkuPriceList QueryPriceEntityList.
+
 2022-09-27 Version: 1.7.17
 - Update QueryResourcePackageInstances add field commodityCode.
 
