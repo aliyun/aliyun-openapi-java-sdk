@@ -27,9 +27,9 @@ public class TestNetworkConnectionRequest extends RpcAcsRequest<TestNetworkConne
 
 	private String resourceGroup;
 
-	private String envType;
-
 	private String datasourceName;
+
+	private String envType;
 
 	private Long projectId;
 	public TestNetworkConnectionRequest() {
@@ -52,17 +52,6 @@ public class TestNetworkConnectionRequest extends RpcAcsRequest<TestNetworkConne
 		}
 	}
 
-	public String getEnvType() {
-		return this.envType;
-	}
-
-	public void setEnvType(String envType) {
-		this.envType = envType;
-		if(envType != null){
-			putQueryParameter("EnvType", envType);
-		}
-	}
-
 	public String getDatasourceName() {
 		return this.datasourceName;
 	}
@@ -71,6 +60,17 @@ public class TestNetworkConnectionRequest extends RpcAcsRequest<TestNetworkConne
 		this.datasourceName = datasourceName;
 		if(datasourceName != null){
 			putQueryParameter("DatasourceName", datasourceName);
+		}
+	}
+
+	public String getEnvType() {
+		return this.envType;
+	}
+
+	public void setEnvType(String envType) {
+		this.envType = envType;
+		if(envType != null){
+			putQueryParameter("EnvType", envType);
 		}
 	}
 

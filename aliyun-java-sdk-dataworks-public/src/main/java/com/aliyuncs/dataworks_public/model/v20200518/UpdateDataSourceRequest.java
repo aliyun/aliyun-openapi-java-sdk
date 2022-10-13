@@ -25,13 +25,13 @@ import com.aliyuncs.dataworks_public.Endpoint;
 public class UpdateDataSourceRequest extends RpcAcsRequest<UpdateDataSourceResponse> {
 	   
 
-	private Integer envType;
-
-	private Long dataSourceId;
-
 	private String description;
 
 	private String content;
+
+	private Integer envType;
+
+	private Long dataSourceId;
 
 	private String status;
 	public UpdateDataSourceRequest() {
@@ -41,28 +41,6 @@ public class UpdateDataSourceRequest extends RpcAcsRequest<UpdateDataSourceRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getEnvType() {
-		return this.envType;
-	}
-
-	public void setEnvType(Integer envType) {
-		this.envType = envType;
-		if(envType != null){
-			putQueryParameter("EnvType", envType.toString());
-		}
-	}
-
-	public Long getDataSourceId() {
-		return this.dataSourceId;
-	}
-
-	public void setDataSourceId(Long dataSourceId) {
-		this.dataSourceId = dataSourceId;
-		if(dataSourceId != null){
-			putQueryParameter("DataSourceId", dataSourceId.toString());
-		}
 	}
 
 	public String getDescription() {
@@ -84,6 +62,28 @@ public class UpdateDataSourceRequest extends RpcAcsRequest<UpdateDataSourceRespo
 		this.content = content;
 		if(content != null){
 			putQueryParameter("Content", content);
+		}
+	}
+
+	public Integer getEnvType() {
+		return this.envType;
+	}
+
+	public void setEnvType(Integer envType) {
+		this.envType = envType;
+		if(envType != null){
+			putQueryParameter("EnvType", envType.toString());
+		}
+	}
+
+	public Long getDataSourceId() {
+		return this.dataSourceId;
+	}
+
+	public void setDataSourceId(Long dataSourceId) {
+		this.dataSourceId = dataSourceId;
+		if(dataSourceId != null){
+			putQueryParameter("DataSourceId", dataSourceId.toString());
 		}
 	}
 

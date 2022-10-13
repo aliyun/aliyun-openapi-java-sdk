@@ -27,9 +27,9 @@ public class RemoveProjectMemberFromRoleRequest extends RpcAcsRequest<RemoveProj
 
 	private String roleCode;
 
-	private Long projectId;
-
 	private String userId;
+
+	private Long projectId;
 	public RemoveProjectMemberFromRoleRequest() {
 		super("dataworks-public", "2020-05-18", "RemoveProjectMemberFromRole");
 		setMethod(MethodType.POST);
@@ -50,17 +50,6 @@ public class RemoveProjectMemberFromRoleRequest extends RpcAcsRequest<RemoveProj
 		}
 	}
 
-	public Long getProjectId() {
-		return this.projectId;
-	}
-
-	public void setProjectId(Long projectId) {
-		this.projectId = projectId;
-		if(projectId != null){
-			putQueryParameter("ProjectId", projectId.toString());
-		}
-	}
-
 	public String getUserId() {
 		return this.userId;
 	}
@@ -69,6 +58,17 @@ public class RemoveProjectMemberFromRoleRequest extends RpcAcsRequest<RemoveProj
 		this.userId = userId;
 		if(userId != null){
 			putQueryParameter("UserId", userId);
+		}
+	}
+
+	public Long getProjectId() {
+		return this.projectId;
+	}
+
+	public void setProjectId(Long projectId) {
+		this.projectId = projectId;
+		if(projectId != null){
+			putQueryParameter("ProjectId", projectId.toString());
 		}
 	}
 

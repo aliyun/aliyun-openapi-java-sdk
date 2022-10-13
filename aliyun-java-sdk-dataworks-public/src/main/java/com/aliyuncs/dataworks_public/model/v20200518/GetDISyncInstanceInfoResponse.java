@@ -147,6 +147,8 @@ public class GetDISyncInstanceInfoResponse extends AcsResponse {
 
 				private String stepName;
 
+				private String info;
+
 				public String getStatus() {
 					return this.status;
 				}
@@ -169,6 +171,14 @@ public class GetDISyncInstanceInfoResponse extends AcsResponse {
 
 				public void setStepName(String stepName) {
 					this.stepName = stepName;
+				}
+
+				public String getInfo() {
+					return this.info;
+				}
+
+				public void setInfo(String info) {
+					this.info = info;
 				}
 			}
 		}

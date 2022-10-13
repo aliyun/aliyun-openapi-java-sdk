@@ -25,15 +25,9 @@ import com.aliyuncs.dataworks_public.Endpoint;
 public class ListPermissionApplyOrdersRequest extends RpcAcsRequest<ListPermissionApplyOrdersResponse> {
 	   
 
-	private String maxComputeProjectName;
-
-	private Long endTime;
-
 	private Long startTime;
 
 	private Integer pageNum;
-
-	private Integer flowStatus;
 
 	private Integer pageSize;
 
@@ -41,11 +35,17 @@ public class ListPermissionApplyOrdersRequest extends RpcAcsRequest<ListPermissi
 
 	private Integer queryType;
 
+	private String engineType;
+
+	private String maxComputeProjectName;
+
+	private Long endTime;
+
+	private Integer flowStatus;
+
 	private Integer workspaceId;
 
 	private Integer orderType;
-
-	private String engineType;
 	public ListPermissionApplyOrdersRequest() {
 		super("dataworks-public", "2020-05-18", "ListPermissionApplyOrders");
 		setMethod(MethodType.POST);
@@ -53,28 +53,6 @@ public class ListPermissionApplyOrdersRequest extends RpcAcsRequest<ListPermissi
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getMaxComputeProjectName() {
-		return this.maxComputeProjectName;
-	}
-
-	public void setMaxComputeProjectName(String maxComputeProjectName) {
-		this.maxComputeProjectName = maxComputeProjectName;
-		if(maxComputeProjectName != null){
-			putQueryParameter("MaxComputeProjectName", maxComputeProjectName);
-		}
-	}
-
-	public Long getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(Long endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime.toString());
-		}
 	}
 
 	public Long getStartTime() {
@@ -96,17 +74,6 @@ public class ListPermissionApplyOrdersRequest extends RpcAcsRequest<ListPermissi
 		this.pageNum = pageNum;
 		if(pageNum != null){
 			putQueryParameter("PageNum", pageNum.toString());
-		}
-	}
-
-	public Integer getFlowStatus() {
-		return this.flowStatus;
-	}
-
-	public void setFlowStatus(Integer flowStatus) {
-		this.flowStatus = flowStatus;
-		if(flowStatus != null){
-			putQueryParameter("FlowStatus", flowStatus.toString());
 		}
 	}
 
@@ -143,6 +110,50 @@ public class ListPermissionApplyOrdersRequest extends RpcAcsRequest<ListPermissi
 		}
 	}
 
+	public String getEngineType() {
+		return this.engineType;
+	}
+
+	public void setEngineType(String engineType) {
+		this.engineType = engineType;
+		if(engineType != null){
+			putQueryParameter("EngineType", engineType);
+		}
+	}
+
+	public String getMaxComputeProjectName() {
+		return this.maxComputeProjectName;
+	}
+
+	public void setMaxComputeProjectName(String maxComputeProjectName) {
+		this.maxComputeProjectName = maxComputeProjectName;
+		if(maxComputeProjectName != null){
+			putQueryParameter("MaxComputeProjectName", maxComputeProjectName);
+		}
+	}
+
+	public Long getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(Long endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime.toString());
+		}
+	}
+
+	public Integer getFlowStatus() {
+		return this.flowStatus;
+	}
+
+	public void setFlowStatus(Integer flowStatus) {
+		this.flowStatus = flowStatus;
+		if(flowStatus != null){
+			putQueryParameter("FlowStatus", flowStatus.toString());
+		}
+	}
+
 	public Integer getWorkspaceId() {
 		return this.workspaceId;
 	}
@@ -162,17 +173,6 @@ public class ListPermissionApplyOrdersRequest extends RpcAcsRequest<ListPermissi
 		this.orderType = orderType;
 		if(orderType != null){
 			putQueryParameter("OrderType", orderType.toString());
-		}
-	}
-
-	public String getEngineType() {
-		return this.engineType;
-	}
-
-	public void setEngineType(String engineType) {
-		this.engineType = engineType;
-		if(engineType != null){
-			putQueryParameter("EngineType", engineType);
 		}
 	}
 

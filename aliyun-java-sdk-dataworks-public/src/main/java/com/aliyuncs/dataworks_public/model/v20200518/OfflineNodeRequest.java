@@ -22,18 +22,14 @@ import com.aliyuncs.dataworks_public.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateProjectMemberRequest extends RpcAcsRequest<CreateProjectMemberResponse> {
+public class OfflineNodeRequest extends RpcAcsRequest<OfflineNodeResponse> {
 	   
 
-	private String roleCode;
-
-	private String clientToken;
-
-	private String userId;
+	private Long nodeId;
 
 	private Long projectId;
-	public CreateProjectMemberRequest() {
-		super("dataworks-public", "2020-05-18", "CreateProjectMember");
+	public OfflineNodeRequest() {
+		super("dataworks-public", "2020-05-18", "OfflineNode");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,36 +37,14 @@ public class CreateProjectMemberRequest extends RpcAcsRequest<CreateProjectMembe
 		} catch (Exception e) {}
 	}
 
-	public String getRoleCode() {
-		return this.roleCode;
+	public Long getNodeId() {
+		return this.nodeId;
 	}
 
-	public void setRoleCode(String roleCode) {
-		this.roleCode = roleCode;
-		if(roleCode != null){
-			putQueryParameter("RoleCode", roleCode);
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public String getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId);
+	public void setNodeId(Long nodeId) {
+		this.nodeId = nodeId;
+		if(nodeId != null){
+			putBodyParameter("NodeId", nodeId.toString());
 		}
 	}
 
@@ -81,13 +55,13 @@ public class CreateProjectMemberRequest extends RpcAcsRequest<CreateProjectMembe
 	public void setProjectId(Long projectId) {
 		this.projectId = projectId;
 		if(projectId != null){
-			putQueryParameter("ProjectId", projectId.toString());
+			putBodyParameter("ProjectId", projectId.toString());
 		}
 	}
 
 	@Override
-	public Class<CreateProjectMemberResponse> getResponseClass() {
-		return CreateProjectMemberResponse.class;
+	public Class<OfflineNodeResponse> getResponseClass() {
+		return OfflineNodeResponse.class;
 	}
 
 }
