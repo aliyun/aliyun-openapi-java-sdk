@@ -1,3 +1,6 @@
+2022-10-13 Version: 1.8.1
+- Modify QueryCommodityList QuerySkuPriceList QueryPriceEntityList.
+
 2022-10-12 Version: 1.8.0
 - Add QueryCommodityList QuerySkuPriceList QueryPriceEntityList.
 
