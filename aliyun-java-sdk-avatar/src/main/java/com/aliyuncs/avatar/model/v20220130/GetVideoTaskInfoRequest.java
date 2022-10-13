@@ -23,7 +23,7 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class QueryRunningInstanceRequest extends RpcAcsRequest<QueryRunningInstanceResponse> {
+public class GetVideoTaskInfoRequest extends RpcAcsRequest<GetVideoTaskInfoResponse> {
 	   
 
 	@SerializedName("app")
@@ -31,10 +31,10 @@ public class QueryRunningInstanceRequest extends RpcAcsRequest<QueryRunningInsta
 
 	private Long tenantId;
 
-	private String sessionId;
-	public QueryRunningInstanceRequest() {
-		super("avatar", "2022-01-30", "QueryRunningInstance");
-		setMethod(MethodType.POST);
+	private String taskUuid;
+	public GetVideoTaskInfoRequest() {
+		super("avatar", "2022-01-30", "GetVideoTaskInfo");
+		setMethod(MethodType.GET);
 	}
 
 	public App getApp() {
@@ -59,14 +59,14 @@ public class QueryRunningInstanceRequest extends RpcAcsRequest<QueryRunningInsta
 		}
 	}
 
-	public String getSessionId() {
-		return this.sessionId;
+	public String getTaskUuid() {
+		return this.taskUuid;
 	}
 
-	public void setSessionId(String sessionId) {
-		this.sessionId = sessionId;
-		if(sessionId != null){
-			putQueryParameter("SessionId", sessionId);
+	public void setTaskUuid(String taskUuid) {
+		this.taskUuid = taskUuid;
+		if(taskUuid != null){
+			putQueryParameter("TaskUuid", taskUuid);
 		}
 	}
 
@@ -85,8 +85,8 @@ public class QueryRunningInstanceRequest extends RpcAcsRequest<QueryRunningInsta
 	}
 
 	@Override
-	public Class<QueryRunningInstanceResponse> getResponseClass() {
-		return QueryRunningInstanceResponse.class;
+	public Class<GetVideoTaskInfoResponse> getResponseClass() {
+		return GetVideoTaskInfoResponse.class;
 	}
 
 }

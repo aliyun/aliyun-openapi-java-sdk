@@ -23,17 +23,22 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class QueryRunningInstanceRequest extends RpcAcsRequest<QueryRunningInstanceResponse> {
+public class SubmitTextTo2DAvatarVideoTaskRequest extends RpcAcsRequest<SubmitTextTo2DAvatarVideoTaskResponse> {
 	   
 
 	@SerializedName("app")
 	private App app;
 
+	@SerializedName("videoInfo")
+	private VideoInfo videoInfo;
+
 	private Long tenantId;
 
-	private String sessionId;
-	public QueryRunningInstanceRequest() {
-		super("avatar", "2022-01-30", "QueryRunningInstance");
+	private String text;
+
+	private String title;
+	public SubmitTextTo2DAvatarVideoTaskRequest() {
+		super("avatar", "2022-01-30", "SubmitTextTo2DAvatarVideoTask");
 		setMethod(MethodType.POST);
 	}
 
@@ -48,6 +53,17 @@ public class QueryRunningInstanceRequest extends RpcAcsRequest<QueryRunningInsta
 		}	
 	}
 
+	public VideoInfo getVideoInfo() {
+		return this.videoInfo;
+	}
+
+	public void setVideoInfo(VideoInfo videoInfo) {
+		this.videoInfo = videoInfo;	
+		if (videoInfo != null) {
+			putQueryParameter("VideoInfo" , new Gson().toJson(videoInfo));
+		}	
+	}
+
 	public Long getTenantId() {
 		return this.tenantId;
 	}
@@ -59,14 +75,25 @@ public class QueryRunningInstanceRequest extends RpcAcsRequest<QueryRunningInsta
 		}
 	}
 
-	public String getSessionId() {
-		return this.sessionId;
+	public String getText() {
+		return this.text;
 	}
 
-	public void setSessionId(String sessionId) {
-		this.sessionId = sessionId;
-		if(sessionId != null){
-			putQueryParameter("SessionId", sessionId);
+	public void setText(String text) {
+		this.text = text;
+		if(text != null){
+			putQueryParameter("Text", text);
+		}
+	}
+
+	public String getTitle() {
+		return this.title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+		if(title != null){
+			putQueryParameter("Title", title);
 		}
 	}
 
@@ -84,9 +111,34 @@ public class QueryRunningInstanceRequest extends RpcAcsRequest<QueryRunningInsta
 		}
 	}
 
+	public static class VideoInfo {
+
+		@SerializedName("IsAlpha")
+		private Boolean isAlpha;
+
+		@SerializedName("IsSubtitles")
+		private Boolean isSubtitles;
+
+		public Boolean getIsAlpha() {
+			return this.isAlpha;
+		}
+
+		public void setIsAlpha(Boolean isAlpha) {
+			this.isAlpha = isAlpha;
+		}
+
+		public Boolean getIsSubtitles() {
+			return this.isSubtitles;
+		}
+
+		public void setIsSubtitles(Boolean isSubtitles) {
+			this.isSubtitles = isSubtitles;
+		}
+	}
+
 	@Override
-	public Class<QueryRunningInstanceResponse> getResponseClass() {
-		return QueryRunningInstanceResponse.class;
+	public Class<SubmitTextTo2DAvatarVideoTaskResponse> getResponseClass() {
+		return SubmitTextTo2DAvatarVideoTaskResponse.class;
 	}
 
 }
