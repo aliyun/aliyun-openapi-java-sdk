@@ -91,10 +91,12 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 				putBodyParameter("PushTask." + (depth1 + 1) + ".Title" , pushTasks.get(depth1).getTitle());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidRenderStyle" , pushTasks.get(depth1).getAndroidRenderStyle());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".iOSExtParameters" , pushTasks.get(depth1).getIOSExtParameters());
+				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidNotificationHonorChannel" , pushTasks.get(depth1).getAndroidNotificationHonorChannel());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidXiaomiImageUrl" , pushTasks.get(depth1).getAndroidXiaomiImageUrl());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidPopupBody" , pushTasks.get(depth1).getAndroidPopupBody());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidBigPictureUrl" , pushTasks.get(depth1).getAndroidBigPictureUrl());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".iOSSilentNotification" , pushTasks.get(depth1).getIOSSilentNotification());
+				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidNotificationGroup" , pushTasks.get(depth1).getAndroidNotificationGroup());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".SendChannels" , pushTasks.get(depth1).getSendChannels());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".Target" , pushTasks.get(depth1).getTarget());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidBigTitle" , pushTasks.get(depth1).getAndroidBigTitle());
@@ -212,6 +214,8 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 
 		private String iOSExtParameters;
 
+		private String androidNotificationHonorChannel;
+
 		private String androidXiaomiImageUrl;
 
 		private String androidPopupBody;
@@ -219,6 +223,8 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 		private String androidBigPictureUrl;
 
 		private Boolean iOSSilentNotification;
+
+		private String androidNotificationGroup;
 
 		private String sendChannels;
 
@@ -600,6 +606,14 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 			this.iOSExtParameters = iOSExtParameters;
 		}
 
+		public String getAndroidNotificationHonorChannel() {
+			return this.androidNotificationHonorChannel;
+		}
+
+		public void setAndroidNotificationHonorChannel(String androidNotificationHonorChannel) {
+			this.androidNotificationHonorChannel = androidNotificationHonorChannel;
+		}
+
 		public String getAndroidXiaomiImageUrl() {
 			return this.androidXiaomiImageUrl;
 		}
@@ -630,6 +644,14 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 
 		public void setIOSSilentNotification(Boolean iOSSilentNotification) {
 			this.iOSSilentNotification = iOSSilentNotification;
+		}
+
+		public String getAndroidNotificationGroup() {
+			return this.androidNotificationGroup;
+		}
+
+		public void setAndroidNotificationGroup(String androidNotificationGroup) {
+			this.androidNotificationGroup = androidNotificationGroup;
 		}
 
 		public String getSendChannels() {

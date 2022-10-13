@@ -71,9 +71,9 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 
 	private Boolean storeOffline;
 
-	private String smsParams;
-
 	private Double iOSRelevanceScore;
+
+	private String smsParams;
 
 	private Integer androidVivoPushMode;
 
@@ -121,6 +121,8 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 
 	private String iOSExtParameters;
 
+	private String androidNotificationHonorChannel;
+
 	private String androidXiaomiImageUrl;
 
 	private String smsTemplateName;
@@ -130,6 +132,8 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 	private String androidBigPictureUrl;
 
 	private Boolean iOSSilentNotification;
+
+	private String androidNotificationGroup;
 
 	private String sendChannels;
 
@@ -151,9 +155,9 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 
 	private String targetValue;
 
-	private String androidXiaoMiActivity;
-
 	private String androidXiaoMiNotifyTitle;
+
+	private String androidXiaoMiActivity;
 	public PushRequest() {
 		super("Push", "2016-08-01", "Push");
 		setMethod(MethodType.POST);
@@ -416,17 +420,6 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 		}
 	}
 
-	public String getSmsParams() {
-		return this.smsParams;
-	}
-
-	public void setSmsParams(String smsParams) {
-		this.smsParams = smsParams;
-		if(smsParams != null){
-			putQueryParameter("SmsParams", smsParams);
-		}
-	}
-
 	public Double getIOSRelevanceScore() {
 		return this.iOSRelevanceScore;
 	}
@@ -435,6 +428,17 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 		this.iOSRelevanceScore = iOSRelevanceScore;
 		if(iOSRelevanceScore != null){
 			putQueryParameter("iOSRelevanceScore", iOSRelevanceScore.toString());
+		}
+	}
+
+	public String getSmsParams() {
+		return this.smsParams;
+	}
+
+	public void setSmsParams(String smsParams) {
+		this.smsParams = smsParams;
+		if(smsParams != null){
+			putQueryParameter("SmsParams", smsParams);
 		}
 	}
 
@@ -691,6 +695,17 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 		}
 	}
 
+	public String getAndroidNotificationHonorChannel() {
+		return this.androidNotificationHonorChannel;
+	}
+
+	public void setAndroidNotificationHonorChannel(String androidNotificationHonorChannel) {
+		this.androidNotificationHonorChannel = androidNotificationHonorChannel;
+		if(androidNotificationHonorChannel != null){
+			putQueryParameter("AndroidNotificationHonorChannel", androidNotificationHonorChannel);
+		}
+	}
+
 	public String getAndroidXiaomiImageUrl() {
 		return this.androidXiaomiImageUrl;
 	}
@@ -743,6 +758,17 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 		this.iOSSilentNotification = iOSSilentNotification;
 		if(iOSSilentNotification != null){
 			putQueryParameter("iOSSilentNotification", iOSSilentNotification.toString());
+		}
+	}
+
+	public String getAndroidNotificationGroup() {
+		return this.androidNotificationGroup;
+	}
+
+	public void setAndroidNotificationGroup(String androidNotificationGroup) {
+		this.androidNotificationGroup = androidNotificationGroup;
+		if(androidNotificationGroup != null){
+			putQueryParameter("AndroidNotificationGroup", androidNotificationGroup);
 		}
 	}
 
@@ -856,17 +882,6 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 		}
 	}
 
-	public String getAndroidXiaoMiActivity() {
-		return this.androidXiaoMiActivity;
-	}
-
-	public void setAndroidXiaoMiActivity(String androidXiaoMiActivity) {
-		this.androidXiaoMiActivity = androidXiaoMiActivity;
-		if(androidXiaoMiActivity != null){
-			putQueryParameter("AndroidXiaoMiActivity", androidXiaoMiActivity);
-		}
-	}
-
 	public String getAndroidXiaoMiNotifyTitle() {
 		return this.androidXiaoMiNotifyTitle;
 	}
@@ -875,6 +890,17 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 		this.androidXiaoMiNotifyTitle = androidXiaoMiNotifyTitle;
 		if(androidXiaoMiNotifyTitle != null){
 			putQueryParameter("AndroidXiaoMiNotifyTitle", androidXiaoMiNotifyTitle);
+		}
+	}
+
+	public String getAndroidXiaoMiActivity() {
+		return this.androidXiaoMiActivity;
+	}
+
+	public void setAndroidXiaoMiActivity(String androidXiaoMiActivity) {
+		this.androidXiaoMiActivity = androidXiaoMiActivity;
+		if(androidXiaoMiActivity != null){
+			putQueryParameter("AndroidXiaoMiActivity", androidXiaoMiActivity);
 		}
 	}
 
