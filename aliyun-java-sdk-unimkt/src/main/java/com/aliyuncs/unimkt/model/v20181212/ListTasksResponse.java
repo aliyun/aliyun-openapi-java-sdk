@@ -15,6 +15,7 @@
 package com.aliyuncs.unimkt.model.v20181212;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.unimkt.transform.v20181212.ListTasksResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -212,6 +213,10 @@ public class ListTasksResponse extends AcsResponse {
 			private String actualInfo;
 
 			private Long currencyType;
+
+			private Map<Object,Object> predictCommonSceneVO;
+
+			private Map<Object,Object> actualCommonSceneVO;
 
 			private PredictBankRegisterVO predictBankRegisterVO;
 
@@ -551,6 +556,22 @@ public class ListTasksResponse extends AcsResponse {
 
 			public void setCurrencyType(Long currencyType) {
 				this.currencyType = currencyType;
+			}
+
+			public Map<Object,Object> getPredictCommonSceneVO() {
+				return this.predictCommonSceneVO;
+			}
+
+			public void setPredictCommonSceneVO(Map<Object,Object> predictCommonSceneVO) {
+				this.predictCommonSceneVO = predictCommonSceneVO;
+			}
+
+			public Map<Object,Object> getActualCommonSceneVO() {
+				return this.actualCommonSceneVO;
+			}
+
+			public void setActualCommonSceneVO(Map<Object,Object> actualCommonSceneVO) {
+				this.actualCommonSceneVO = actualCommonSceneVO;
 			}
 
 			public PredictBankRegisterVO getPredictBankRegisterVO() {

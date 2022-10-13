@@ -34,6 +34,8 @@ public class CreateUnionTaskRequest extends RpcAcsRequest<CreateUnionTaskRespons
 
 	private String startTime;
 
+	private String anchorId;
+
 	private String contentUrl;
 
 	private String mediaIndustry;
@@ -72,7 +74,7 @@ public class CreateUnionTaskRequest extends RpcAcsRequest<CreateUnionTaskRespons
 
 	private String channelId;
 	public CreateUnionTaskRequest() {
-		super("UniMkt", "2018-12-12", "CreateUnionTask", "1.0.0");
+		super("UniMkt", "2018-12-12", "CreateUnionTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -110,6 +112,17 @@ public class CreateUnionTaskRequest extends RpcAcsRequest<CreateUnionTaskRespons
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getAnchorId() {
+		return this.anchorId;
+	}
+
+	public void setAnchorId(String anchorId) {
+		this.anchorId = anchorId;
+		if(anchorId != null){
+			putQueryParameter("AnchorId", anchorId);
 		}
 	}
 

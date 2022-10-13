@@ -12,10 +12,9 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.unimkt.model.v20181207;
+package com.aliyuncs.unimkt.model.v20181212;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.unimkt.Endpoint;
 
@@ -23,13 +22,12 @@ import com.aliyuncs.unimkt.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetConsoleInfoRequest extends RpcAcsRequest<GetConsoleInfoResponse> {
+public class GetProductConfigRequest extends RpcAcsRequest<GetProductConfigResponse> {
 	   
 
-	private String message;
-	public GetConsoleInfoRequest() {
-		super("UniMkt", "2018-12-07", "GetConsoleInfo", "1.0.0");
-		setProtocol(ProtocolType.HTTPS);
+	private String accountType;
+	public GetProductConfigRequest() {
+		super("UniMkt", "2018-12-12", "GetProductConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,20 +35,20 @@ public class GetConsoleInfoRequest extends RpcAcsRequest<GetConsoleInfoResponse>
 		} catch (Exception e) {}
 	}
 
-	public String getMessage() {
-		return this.message;
+	public String getAccountType() {
+		return this.accountType;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
-		if(message != null){
-			putBodyParameter("Message", message);
+	public void setAccountType(String accountType) {
+		this.accountType = accountType;
+		if(accountType != null){
+			putBodyParameter("AccountType", accountType);
 		}
 	}
 
 	@Override
-	public Class<GetConsoleInfoResponse> getResponseClass() {
-		return GetConsoleInfoResponse.class;
+	public Class<GetProductConfigResponse> getResponseClass() {
+		return GetProductConfigResponse.class;
 	}
 
 }
