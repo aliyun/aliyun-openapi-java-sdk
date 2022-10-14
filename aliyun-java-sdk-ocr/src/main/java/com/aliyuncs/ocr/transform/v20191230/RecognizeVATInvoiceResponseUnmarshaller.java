@@ -147,6 +147,12 @@ public class RecognizeVATInvoiceResponseUnmarshaller {
 			payeeRegisterNoes.add(_ctx.floatValue("RecognizeVATInvoiceResponse.Data.Box.PayeeRegisterNoes["+ i +"]"));
 		}
 		box.setPayeeRegisterNoes(payeeRegisterNoes);
+
+		List<Integer> itemNames = new ArrayList<Integer>();
+		for (int i = 0; i < _ctx.lengthValue("RecognizeVATInvoiceResponse.Data.Box.ItemNames.Length"); i++) {
+			itemNames.add(_ctx.integerValue("RecognizeVATInvoiceResponse.Data.Box.ItemNames["+ i +"]"));
+		}
+		box.setItemNames(itemNames);
 		data.setBox(box);
 
 		Content content = new Content();
@@ -169,6 +175,12 @@ public class RecognizeVATInvoiceResponseUnmarshaller {
 		content.setPayeeName(_ctx.stringValue("RecognizeVATInvoiceResponse.Data.Content.PayeeName"));
 		content.setPayeeAddress(_ctx.stringValue("RecognizeVATInvoiceResponse.Data.Content.PayeeAddress"));
 		content.setInvoiceCode(_ctx.stringValue("RecognizeVATInvoiceResponse.Data.Content.InvoiceCode"));
+
+		List<String> itemName = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("RecognizeVATInvoiceResponse.Data.Content.ItemName.Length"); i++) {
+			itemName.add(_ctx.stringValue("RecognizeVATInvoiceResponse.Data.Content.ItemName["+ i +"]"));
+		}
+		content.setItemName(itemName);
 		data.setContent(content);
 		recognizeVATInvoiceResponse.setData(data);
 	 
