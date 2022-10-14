@@ -49,7 +49,7 @@ public class ModifyDedicatedHostsChargeTypeRequest extends RpcAcsRequest<ModifyD
 
 	private String periodUnit;
 	public ModifyDedicatedHostsChargeTypeRequest() {
-		super("Ecs", "2014-05-26", "ModifyDedicatedHostsChargeType");
+		super("Ecs", "2014-05-26", "ModifyDedicatedHostsChargeType", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

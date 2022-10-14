@@ -37,7 +37,7 @@ public class ModifyUserBusinessBehaviorRequest extends RpcAcsRequest<ModifyUserB
 
 	private String statusKey;
 	public ModifyUserBusinessBehaviorRequest() {
-		super("Ecs", "2014-05-26", "ModifyUserBusinessBehavior");
+		super("Ecs", "2014-05-26", "ModifyUserBusinessBehavior", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

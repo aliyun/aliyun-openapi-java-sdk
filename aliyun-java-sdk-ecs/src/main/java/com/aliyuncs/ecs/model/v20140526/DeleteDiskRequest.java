@@ -35,7 +35,7 @@ public class DeleteDiskRequest extends RpcAcsRequest<DeleteDiskResponse> {
 
 	private Long ownerId;
 	public DeleteDiskRequest() {
-		super("Ecs", "2014-05-26", "DeleteDisk");
+		super("Ecs", "2014-05-26", "DeleteDisk", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

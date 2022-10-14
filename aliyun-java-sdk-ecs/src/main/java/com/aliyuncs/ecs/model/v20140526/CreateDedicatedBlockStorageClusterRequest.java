@@ -53,7 +53,7 @@ public class CreateDedicatedBlockStorageClusterRequest extends RpcAcsRequest<Cre
 
 	private String category;
 	public CreateDedicatedBlockStorageClusterRequest() {
-		super("Ecs", "2014-05-26", "CreateDedicatedBlockStorageCluster");
+		super("Ecs", "2014-05-26", "CreateDedicatedBlockStorageCluster", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

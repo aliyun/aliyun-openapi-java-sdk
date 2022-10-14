@@ -35,7 +35,7 @@ public class ReleaseEipAddressRequest extends RpcAcsRequest<ReleaseEipAddressRes
 
 	private Long ownerId;
 	public ReleaseEipAddressRequest() {
-		super("Ecs", "2014-05-26", "ReleaseEipAddress");
+		super("Ecs", "2014-05-26", "ReleaseEipAddress", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

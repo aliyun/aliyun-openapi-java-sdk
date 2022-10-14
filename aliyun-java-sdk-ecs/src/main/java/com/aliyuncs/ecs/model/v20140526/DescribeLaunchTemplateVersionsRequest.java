@@ -52,7 +52,7 @@ public class DescribeLaunchTemplateVersionsRequest extends RpcAcsRequest<Describ
 
 	private Boolean detailFlag;
 	public DescribeLaunchTemplateVersionsRequest() {
-		super("Ecs", "2014-05-26", "DescribeLaunchTemplateVersions");
+		super("Ecs", "2014-05-26", "DescribeLaunchTemplateVersions", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

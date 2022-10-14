@@ -35,7 +35,7 @@ public class DetachInstanceRamRoleRequest extends RpcAcsRequest<DetachInstanceRa
 
 	private String instanceIds;
 	public DetachInstanceRamRoleRequest() {
-		super("Ecs", "2014-05-26", "DetachInstanceRamRole");
+		super("Ecs", "2014-05-26", "DetachInstanceRamRole", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

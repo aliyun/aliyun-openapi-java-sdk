@@ -127,6 +127,8 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 		private String cpuArchitecture;
 
+		private Float gPUMemorySize;
+
 		public Integer getEniTotalQuantity() {
 			return this.eniTotalQuantity;
 		}
@@ -405,6 +407,14 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 		public void setCpuArchitecture(String cpuArchitecture) {
 			this.cpuArchitecture = cpuArchitecture;
+		}
+
+		public Float getGPUMemorySize() {
+			return this.gPUMemorySize;
+		}
+
+		public void setGPUMemorySize(Float gPUMemorySize) {
+			this.gPUMemorySize = gPUMemorySize;
 		}
 	}
 

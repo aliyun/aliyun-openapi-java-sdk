@@ -38,7 +38,7 @@ public class CancelImagePipelineExecutionRequest extends RpcAcsRequest<CancelIma
 
 	private Long ownerId;
 	public CancelImagePipelineExecutionRequest() {
-		super("Ecs", "2014-05-26", "CancelImagePipelineExecution");
+		super("Ecs", "2014-05-26", "CancelImagePipelineExecution", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -39,7 +39,7 @@ public class ModifyInstanceAttachmentAttributesRequest extends RpcAcsRequest<Mod
 
 	private String instanceId;
 	public ModifyInstanceAttachmentAttributesRequest() {
-		super("Ecs", "2014-05-26", "ModifyInstanceAttachmentAttributes");
+		super("Ecs", "2014-05-26", "ModifyInstanceAttachmentAttributes", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

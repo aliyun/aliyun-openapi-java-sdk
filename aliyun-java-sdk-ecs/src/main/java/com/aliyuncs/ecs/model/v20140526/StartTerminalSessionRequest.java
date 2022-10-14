@@ -38,7 +38,7 @@ public class StartTerminalSessionRequest extends RpcAcsRequest<StartTerminalSess
 
 	private Integer portNumber;
 	public StartTerminalSessionRequest() {
-		super("Ecs", "2014-05-26", "StartTerminalSession");
+		super("Ecs", "2014-05-26", "StartTerminalSession", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

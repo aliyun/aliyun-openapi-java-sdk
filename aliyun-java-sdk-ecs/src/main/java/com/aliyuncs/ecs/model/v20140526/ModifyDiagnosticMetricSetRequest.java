@@ -36,7 +36,7 @@ public class ModifyDiagnosticMetricSetRequest extends RpcAcsRequest<ModifyDiagno
 
 	private String resourceType;
 	public ModifyDiagnosticMetricSetRequest() {
-		super("Ecs", "2014-05-26", "ModifyDiagnosticMetricSet");
+		super("Ecs", "2014-05-26", "ModifyDiagnosticMetricSet", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

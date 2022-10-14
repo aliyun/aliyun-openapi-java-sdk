@@ -41,7 +41,7 @@ public class ResizeDiskRequest extends RpcAcsRequest<ResizeDiskResponse> {
 
 	private Long ownerId;
 	public ResizeDiskRequest() {
-		super("Ecs", "2014-05-26", "ResizeDisk");
+		super("Ecs", "2014-05-26", "ResizeDisk", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

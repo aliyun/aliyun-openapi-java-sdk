@@ -46,7 +46,7 @@ public class DescribeDedicatedBlockStorageClustersRequest extends RpcAcsRequest<
 
 	private List<String> statuss;
 	public DescribeDedicatedBlockStorageClustersRequest() {
-		super("Ecs", "2014-05-26", "DescribeDedicatedBlockStorageClusters");
+		super("Ecs", "2014-05-26", "DescribeDedicatedBlockStorageClusters", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

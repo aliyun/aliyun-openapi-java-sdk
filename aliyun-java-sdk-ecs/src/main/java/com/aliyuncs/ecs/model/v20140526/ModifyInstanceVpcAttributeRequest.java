@@ -44,7 +44,7 @@ public class ModifyInstanceVpcAttributeRequest extends RpcAcsRequest<ModifyInsta
 
 	private String vpcId;
 	public ModifyInstanceVpcAttributeRequest() {
-		super("Ecs", "2014-05-26", "ModifyInstanceVpcAttribute");
+		super("Ecs", "2014-05-26", "ModifyInstanceVpcAttribute", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

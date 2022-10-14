@@ -60,7 +60,7 @@ public class PurchaseReservedInstancesOfferingRequest extends RpcAcsRequest<Purc
 
 	private Integer instanceAmount;
 	public PurchaseReservedInstancesOfferingRequest() {
-		super("Ecs", "2014-05-26", "PurchaseReservedInstancesOffering");
+		super("Ecs", "2014-05-26", "PurchaseReservedInstancesOffering", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

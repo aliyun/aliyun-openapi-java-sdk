@@ -44,7 +44,7 @@ public class DescribeInstanceStatusRequest extends RpcAcsRequest<DescribeInstanc
 
 	private String zoneId;
 	public DescribeInstanceStatusRequest() {
-		super("Ecs", "2014-05-26", "DescribeInstanceStatus");
+		super("Ecs", "2014-05-26", "DescribeInstanceStatus", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
