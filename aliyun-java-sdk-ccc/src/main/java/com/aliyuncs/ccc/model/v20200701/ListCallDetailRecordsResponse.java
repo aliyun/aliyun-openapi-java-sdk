@@ -179,6 +179,8 @@ public class ListCallDetailRecordsResponse extends AcsResponse {
 
 			private String earlyMediaState;
 
+			private String releaseReason;
+
 			public String getContactDisposition() {
 				return this.contactDisposition;
 			}
@@ -417,6 +419,14 @@ public class ListCallDetailRecordsResponse extends AcsResponse {
 
 			public void setEarlyMediaState(String earlyMediaState) {
 				this.earlyMediaState = earlyMediaState;
+			}
+
+			public String getReleaseReason() {
+				return this.releaseReason;
+			}
+
+			public void setReleaseReason(String releaseReason) {
+				this.releaseReason = releaseReason;
 			}
 		}
 	}
