@@ -22,14 +22,14 @@ import com.aliyuncs.ahas_openapi.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryExperimentsByEmpIdRequest extends RpcAcsRequest<QueryExperimentsByEmpIdResponse> {
+public class GetUserWorkspaceRequest extends RpcAcsRequest<GetUserWorkspaceResponse> {
 	   
 
-	private String empId;
+	private String ahasRegionId;
 
 	private String namespace;
-	public QueryExperimentsByEmpIdRequest() {
-		super("ahas-openapi", "2019-09-01", "QueryExperimentsByEmpId", "ahas");
+	public GetUserWorkspaceRequest() {
+		super("ahas-openapi", "2019-09-01", "GetUserWorkspace", "ahas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,14 +37,14 @@ public class QueryExperimentsByEmpIdRequest extends RpcAcsRequest<QueryExperimen
 		} catch (Exception e) {}
 	}
 
-	public String getEmpId() {
-		return this.empId;
+	public String getAhasRegionId() {
+		return this.ahasRegionId;
 	}
 
-	public void setEmpId(String empId) {
-		this.empId = empId;
-		if(empId != null){
-			putQueryParameter("EmpId", empId);
+	public void setAhasRegionId(String ahasRegionId) {
+		this.ahasRegionId = ahasRegionId;
+		if(ahasRegionId != null){
+			putQueryParameter("AhasRegionId", ahasRegionId);
 		}
 	}
 
@@ -60,8 +60,8 @@ public class QueryExperimentsByEmpIdRequest extends RpcAcsRequest<QueryExperimen
 	}
 
 	@Override
-	public Class<QueryExperimentsByEmpIdResponse> getResponseClass() {
-		return QueryExperimentsByEmpIdResponse.class;
+	public Class<GetUserWorkspaceResponse> getResponseClass() {
+		return GetUserWorkspaceResponse.class;
 	}
 
 }

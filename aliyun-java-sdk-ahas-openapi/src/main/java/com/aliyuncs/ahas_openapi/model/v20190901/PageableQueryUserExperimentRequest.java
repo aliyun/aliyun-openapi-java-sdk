@@ -15,6 +15,7 @@
 package com.aliyuncs.ahas_openapi.model.v20190901;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ahas_openapi.Endpoint;
 
@@ -22,24 +23,28 @@ import com.aliyuncs.ahas_openapi.Endpoint;
  * @author auto create
  * @version 
  */
-public class SearchApplicationScopesRequest extends RpcAcsRequest<SearchApplicationScopesResponse> {
+public class PageableQueryUserExperimentRequest extends RpcAcsRequest<PageableQueryUserExperimentResponse> {
 	   
 
-	private String ip;
+	private String searchKey;
 
 	private String ahasRegionId;
 
+	private List<String> tagss;
+
 	private Integer size;
-
-	private String appName;
-
-	private String appId;
 
 	private String namespace;
 
+	private String state;
+
 	private Integer page;
-	public SearchApplicationScopesRequest() {
-		super("ahas-openapi", "2019-09-01", "SearchApplicationScopes", "ahas");
+
+	private List<String> resultss;
+
+	private String workspaceId;
+	public PageableQueryUserExperimentRequest() {
+		super("ahas-openapi", "2019-09-01", "PageableQueryUserExperiment", "ahas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -47,14 +52,14 @@ public class SearchApplicationScopesRequest extends RpcAcsRequest<SearchApplicat
 		} catch (Exception e) {}
 	}
 
-	public String getIp() {
-		return this.ip;
+	public String getSearchKey() {
+		return this.searchKey;
 	}
 
-	public void setIp(String ip) {
-		this.ip = ip;
-		if(ip != null){
-			putQueryParameter("Ip", ip);
+	public void setSearchKey(String searchKey) {
+		this.searchKey = searchKey;
+		if(searchKey != null){
+			putQueryParameter("SearchKey", searchKey);
 		}
 	}
 
@@ -69,6 +74,19 @@ public class SearchApplicationScopesRequest extends RpcAcsRequest<SearchApplicat
 		}
 	}
 
+	public List<String> getTagss() {
+		return this.tagss;
+	}
+
+	public void setTagss(List<String> tagss) {
+		this.tagss = tagss;	
+		if (tagss != null) {
+			for (int i = 0; i < tagss.size(); i++) {
+				putQueryParameter("Tags." + (i + 1) , tagss.get(i));
+			}
+		}	
+	}
+
 	public Integer getSize() {
 		return this.size;
 	}
@@ -77,28 +95,6 @@ public class SearchApplicationScopesRequest extends RpcAcsRequest<SearchApplicat
 		this.size = size;
 		if(size != null){
 			putQueryParameter("Size", size.toString());
-		}
-	}
-
-	public String getAppName() {
-		return this.appName;
-	}
-
-	public void setAppName(String appName) {
-		this.appName = appName;
-		if(appName != null){
-			putQueryParameter("AppName", appName);
-		}
-	}
-
-	public String getAppId() {
-		return this.appId;
-	}
-
-	public void setAppId(String appId) {
-		this.appId = appId;
-		if(appId != null){
-			putQueryParameter("AppId", appId);
 		}
 	}
 
@@ -113,6 +109,17 @@ public class SearchApplicationScopesRequest extends RpcAcsRequest<SearchApplicat
 		}
 	}
 
+	public String getState() {
+		return this.state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+		if(state != null){
+			putQueryParameter("State", state);
+		}
+	}
+
 	public Integer getPage() {
 		return this.page;
 	}
@@ -124,9 +131,33 @@ public class SearchApplicationScopesRequest extends RpcAcsRequest<SearchApplicat
 		}
 	}
 
+	public List<String> getResultss() {
+		return this.resultss;
+	}
+
+	public void setResultss(List<String> resultss) {
+		this.resultss = resultss;	
+		if (resultss != null) {
+			for (int i = 0; i < resultss.size(); i++) {
+				putQueryParameter("Results." + (i + 1) , resultss.get(i));
+			}
+		}	
+	}
+
+	public String getWorkspaceId() {
+		return this.workspaceId;
+	}
+
+	public void setWorkspaceId(String workspaceId) {
+		this.workspaceId = workspaceId;
+		if(workspaceId != null){
+			putQueryParameter("WorkspaceId", workspaceId);
+		}
+	}
+
 	@Override
-	public Class<SearchApplicationScopesResponse> getResponseClass() {
-		return SearchApplicationScopesResponse.class;
+	public Class<PageableQueryUserExperimentResponse> getResponseClass() {
+		return PageableQueryUserExperimentResponse.class;
 	}
 
 }

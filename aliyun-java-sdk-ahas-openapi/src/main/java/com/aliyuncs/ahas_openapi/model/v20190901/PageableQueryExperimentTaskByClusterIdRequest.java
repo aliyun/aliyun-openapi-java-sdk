@@ -22,23 +22,60 @@ import com.aliyuncs.ahas_openapi.Endpoint;
  * @author auto create
  * @version 
  */
-public class SearchUserApplicationsRequest extends RpcAcsRequest<SearchUserApplicationsResponse> {
+public class PageableQueryExperimentTaskByClusterIdRequest extends RpcAcsRequest<PageableQueryExperimentTaskByClusterIdResponse> {
 	   
+
+	private String clusterId;
+
+	private String ahasRegionId;
+
+	private Boolean includeInvalidHost;
 
 	private Integer size;
 
 	private String namespace;
 
 	private Integer page;
-
-	private String ahasRegionId;
-	public SearchUserApplicationsRequest() {
-		super("ahas-openapi", "2019-09-01", "SearchUserApplications", "ahas");
+	public PageableQueryExperimentTaskByClusterIdRequest() {
+		super("ahas-openapi", "2019-09-01", "PageableQueryExperimentTaskByClusterId", "ahas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getAhasRegionId() {
+		return this.ahasRegionId;
+	}
+
+	public void setAhasRegionId(String ahasRegionId) {
+		this.ahasRegionId = ahasRegionId;
+		if(ahasRegionId != null){
+			putQueryParameter("AhasRegionId", ahasRegionId);
+		}
+	}
+
+	public Boolean getIncludeInvalidHost() {
+		return this.includeInvalidHost;
+	}
+
+	public void setIncludeInvalidHost(Boolean includeInvalidHost) {
+		this.includeInvalidHost = includeInvalidHost;
+		if(includeInvalidHost != null){
+			putQueryParameter("IncludeInvalidHost", includeInvalidHost.toString());
+		}
 	}
 
 	public Integer getSize() {
@@ -74,20 +111,9 @@ public class SearchUserApplicationsRequest extends RpcAcsRequest<SearchUserAppli
 		}
 	}
 
-	public String getAhasRegionId() {
-		return this.ahasRegionId;
-	}
-
-	public void setAhasRegionId(String ahasRegionId) {
-		this.ahasRegionId = ahasRegionId;
-		if(ahasRegionId != null){
-			putQueryParameter("AhasRegionId", ahasRegionId);
-		}
-	}
-
 	@Override
-	public Class<SearchUserApplicationsResponse> getResponseClass() {
-		return SearchUserApplicationsResponse.class;
+	public Class<PageableQueryExperimentTaskByClusterIdResponse> getResponseClass() {
+		return PageableQueryExperimentTaskByClusterIdResponse.class;
 	}
 
 }

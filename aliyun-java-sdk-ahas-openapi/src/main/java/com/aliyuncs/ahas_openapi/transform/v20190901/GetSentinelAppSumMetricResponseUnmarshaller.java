@@ -24,19 +24,19 @@ public class GetSentinelAppSumMetricResponseUnmarshaller {
 	public static GetSentinelAppSumMetricResponse unmarshall(GetSentinelAppSumMetricResponse getSentinelAppSumMetricResponse, UnmarshallerContext _ctx) {
 		
 		getSentinelAppSumMetricResponse.setRequestId(_ctx.stringValue("GetSentinelAppSumMetricResponse.RequestId"));
+		getSentinelAppSumMetricResponse.setMessage(_ctx.stringValue("GetSentinelAppSumMetricResponse.Message"));
 		getSentinelAppSumMetricResponse.setCode(_ctx.stringValue("GetSentinelAppSumMetricResponse.Code"));
 		getSentinelAppSumMetricResponse.setSuccess(_ctx.booleanValue("GetSentinelAppSumMetricResponse.Success"));
-		getSentinelAppSumMetricResponse.setMessage(_ctx.stringValue("GetSentinelAppSumMetricResponse.Message"));
 
 		MetricData metricData = new MetricData();
-		metricData.setUserId(_ctx.stringValue("GetSentinelAppSumMetricResponse.MetricData.UserId"));
-		metricData.setNamespace(_ctx.stringValue("GetSentinelAppSumMetricResponse.MetricData.Namespace"));
 		metricData.setAppName(_ctx.stringValue("GetSentinelAppSumMetricResponse.MetricData.AppName"));
 		metricData.setPassCount(_ctx.floatValue("GetSentinelAppSumMetricResponse.MetricData.PassCount"));
-		metricData.setBlockCount(_ctx.floatValue("GetSentinelAppSumMetricResponse.MetricData.BlockCount"));
-		metricData.setTotalCount(_ctx.floatValue("GetSentinelAppSumMetricResponse.MetricData.TotalCount"));
-		metricData.setAvgRt(_ctx.floatValue("GetSentinelAppSumMetricResponse.MetricData.AvgRt"));
 		metricData.setMachineCount(_ctx.longValue("GetSentinelAppSumMetricResponse.MetricData.MachineCount"));
+		metricData.setAvgRt(_ctx.floatValue("GetSentinelAppSumMetricResponse.MetricData.AvgRt"));
+		metricData.setUserId(_ctx.stringValue("GetSentinelAppSumMetricResponse.MetricData.UserId"));
+		metricData.setNamespace(_ctx.stringValue("GetSentinelAppSumMetricResponse.MetricData.Namespace"));
+		metricData.setTotalCount(_ctx.floatValue("GetSentinelAppSumMetricResponse.MetricData.TotalCount"));
+		metricData.setBlockCount(_ctx.floatValue("GetSentinelAppSumMetricResponse.MetricData.BlockCount"));
 		getSentinelAppSumMetricResponse.setMetricData(metricData);
 	 
 	 	return getSentinelAppSumMetricResponse;

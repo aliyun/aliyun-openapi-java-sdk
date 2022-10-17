@@ -27,16 +27,16 @@ public class DescribeRegionsResponseUnmarshaller {
 	public static DescribeRegionsResponse unmarshall(DescribeRegionsResponse describeRegionsResponse, UnmarshallerContext _ctx) {
 		
 		describeRegionsResponse.setRequestId(_ctx.stringValue("DescribeRegionsResponse.RequestId"));
+		describeRegionsResponse.setMessage(_ctx.stringValue("DescribeRegionsResponse.Message"));
 		describeRegionsResponse.setCode(_ctx.stringValue("DescribeRegionsResponse.Code"));
 		describeRegionsResponse.setSuccess(_ctx.booleanValue("DescribeRegionsResponse.Success"));
-		describeRegionsResponse.setMessage(_ctx.stringValue("DescribeRegionsResponse.Message"));
 
 		List<Data> regions = new ArrayList<Data>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeRegionsResponse.Regions.Length"); i++) {
 			Data data = new Data();
-			data.setRegionId(_ctx.stringValue("DescribeRegionsResponse.Regions["+ i +"].RegionId"));
-			data.setRegionEndpoint(_ctx.stringValue("DescribeRegionsResponse.Regions["+ i +"].RegionEndpoint"));
 			data.setLocalName(_ctx.stringValue("DescribeRegionsResponse.Regions["+ i +"].LocalName"));
+			data.setRegionEndpoint(_ctx.stringValue("DescribeRegionsResponse.Regions["+ i +"].RegionEndpoint"));
+			data.setRegionId(_ctx.stringValue("DescribeRegionsResponse.Regions["+ i +"].RegionId"));
 
 			regions.add(data);
 		}

@@ -16,40 +16,26 @@ package com.aliyuncs.ahas_openapi.model.v20190901;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ahas_openapi.transform.v20190901.GetHitCountResponseUnmarshaller;
+import com.aliyuncs.ahas_openapi.transform.v20190901.GetUserApplicationGroupsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetHitCountResponse extends AcsResponse {
-
-	private String code;
-
-	private String message;
+public class GetUserApplicationGroupsResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Integer httpStatusCode;
+
 	private Boolean success;
 
-	private List<HitsItem> hits;
+	private String message;
 
-	public String getCode() {
-		return this.code;
-	}
+	private String code;
 
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
+	private List<String> appGroups;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -57,6 +43,14 @@ public class GetHitCountResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public Boolean getSuccess() {
@@ -67,40 +61,33 @@ public class GetHitCountResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public List<HitsItem> getHits() {
-		return this.hits;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setHits(List<HitsItem> hits) {
-		this.hits = hits;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
-	public static class HitsItem {
+	public String getCode() {
+		return this.code;
+	}
 
-		private Float count;
+	public void setCode(String code) {
+		this.code = code;
+	}
 
-		private String hostIp;
+	public List<String> getAppGroups() {
+		return this.appGroups;
+	}
 
-		public Float getCount() {
-			return this.count;
-		}
-
-		public void setCount(Float count) {
-			this.count = count;
-		}
-
-		public String getHostIp() {
-			return this.hostIp;
-		}
-
-		public void setHostIp(String hostIp) {
-			this.hostIp = hostIp;
-		}
+	public void setAppGroups(List<String> appGroups) {
+		this.appGroups = appGroups;
 	}
 
 	@Override
-	public GetHitCountResponse getInstance(UnmarshallerContext context) {
-		return	GetHitCountResponseUnmarshaller.unmarshall(this, context);
+	public GetUserApplicationGroupsResponse getInstance(UnmarshallerContext context) {
+		return	GetUserApplicationGroupsResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

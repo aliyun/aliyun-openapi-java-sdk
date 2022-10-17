@@ -29,16 +29,16 @@ public class GetUserApplicationsResponseUnmarshaller {
 		getUserApplicationsResponse.setRequestId(_ctx.stringValue("GetUserApplicationsResponse.RequestId"));
 		getUserApplicationsResponse.setMessage(_ctx.stringValue("GetUserApplicationsResponse.Message"));
 		getUserApplicationsResponse.setHttpStatusCode(_ctx.integerValue("GetUserApplicationsResponse.HttpStatusCode"));
-		getUserApplicationsResponse.setSuccess(_ctx.booleanValue("GetUserApplicationsResponse.Success"));
 		getUserApplicationsResponse.setCode(_ctx.stringValue("GetUserApplicationsResponse.Code"));
+		getUserApplicationsResponse.setSuccess(_ctx.booleanValue("GetUserApplicationsResponse.Success"));
 
 		List<AppNameAndIdPairsItem> appNameAndIdPairs = new ArrayList<AppNameAndIdPairsItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetUserApplicationsResponse.AppNameAndIdPairs.Length"); i++) {
 			AppNameAndIdPairsItem appNameAndIdPairsItem = new AppNameAndIdPairsItem();
-			appNameAndIdPairsItem.setAppId(_ctx.stringValue("GetUserApplicationsResponse.AppNameAndIdPairs["+ i +"].AppId"));
 			appNameAndIdPairsItem.setAppName(_ctx.stringValue("GetUserApplicationsResponse.AppNameAndIdPairs["+ i +"].AppName"));
-			appNameAndIdPairsItem.setAppType(_ctx.integerValue("GetUserApplicationsResponse.AppNameAndIdPairs["+ i +"].AppType"));
+			appNameAndIdPairsItem.setAppId(_ctx.stringValue("GetUserApplicationsResponse.AppNameAndIdPairs["+ i +"].AppId"));
 			appNameAndIdPairsItem.setScopeType(_ctx.integerValue("GetUserApplicationsResponse.AppNameAndIdPairs["+ i +"].ScopeType"));
+			appNameAndIdPairsItem.setAppType(_ctx.integerValue("GetUserApplicationsResponse.AppNameAndIdPairs["+ i +"].AppType"));
 
 			appNameAndIdPairs.add(appNameAndIdPairsItem);
 		}

@@ -22,32 +22,21 @@ import com.aliyuncs.ahas_openapi.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteApplicationEmpIdRelationRequest extends RpcAcsRequest<DeleteApplicationEmpIdRelationResponse> {
+public class GetUserApplicationGroupsRequest extends RpcAcsRequest<GetUserApplicationGroupsResponse> {
 	   
-
-	private String applicationId;
 
 	private String ahasRegionId;
 
-	private String empIds;
-	public DeleteApplicationEmpIdRelationRequest() {
-		super("ahas-openapi", "2019-09-01", "DeleteApplicationEmpIdRelation", "ahas");
+	private String nameSpace;
+
+	private String applicationId;
+	public GetUserApplicationGroupsRequest() {
+		super("ahas-openapi", "2019-09-01", "GetUserApplicationGroups", "ahas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getApplicationId() {
-		return this.applicationId;
-	}
-
-	public void setApplicationId(String applicationId) {
-		this.applicationId = applicationId;
-		if(applicationId != null){
-			putQueryParameter("ApplicationId", applicationId);
-		}
 	}
 
 	public String getAhasRegionId() {
@@ -61,20 +50,31 @@ public class DeleteApplicationEmpIdRelationRequest extends RpcAcsRequest<DeleteA
 		}
 	}
 
-	public String getEmpIds() {
-		return this.empIds;
+	public String getNameSpace() {
+		return this.nameSpace;
 	}
 
-	public void setEmpIds(String empIds) {
-		this.empIds = empIds;
-		if(empIds != null){
-			putQueryParameter("EmpIds", empIds);
+	public void setNameSpace(String nameSpace) {
+		this.nameSpace = nameSpace;
+		if(nameSpace != null){
+			putQueryParameter("NameSpace", nameSpace);
+		}
+	}
+
+	public String getApplicationId() {
+		return this.applicationId;
+	}
+
+	public void setApplicationId(String applicationId) {
+		this.applicationId = applicationId;
+		if(applicationId != null){
+			putQueryParameter("ApplicationId", applicationId);
 		}
 	}
 
 	@Override
-	public Class<DeleteApplicationEmpIdRelationResponse> getResponseClass() {
-		return DeleteApplicationEmpIdRelationResponse.class;
+	public Class<GetUserApplicationGroupsResponse> getResponseClass() {
+		return GetUserApplicationGroupsResponse.class;
 	}
 
 }

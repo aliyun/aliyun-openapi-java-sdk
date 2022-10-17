@@ -24,15 +24,15 @@ public class EnableSystemRuleResponseUnmarshaller {
 	public static EnableSystemRuleResponse unmarshall(EnableSystemRuleResponse enableSystemRuleResponse, UnmarshallerContext _ctx) {
 		
 		enableSystemRuleResponse.setRequestId(_ctx.stringValue("EnableSystemRuleResponse.RequestId"));
-		enableSystemRuleResponse.setCode(_ctx.stringValue("EnableSystemRuleResponse.Code"));
 		enableSystemRuleResponse.setMessage(_ctx.stringValue("EnableSystemRuleResponse.Message"));
+		enableSystemRuleResponse.setCode(_ctx.stringValue("EnableSystemRuleResponse.Code"));
 		enableSystemRuleResponse.setSuccess(_ctx.booleanValue("EnableSystemRuleResponse.Success"));
 
 		Data data = new Data();
-		data.setThreshold(_ctx.floatValue("EnableSystemRuleResponse.Data.Threshold"));
-		data.setEnable(_ctx.booleanValue("EnableSystemRuleResponse.Data.Enable"));
 		data.setMetricType(_ctx.integerValue("EnableSystemRuleResponse.Data.MetricType"));
+		data.setThreshold(_ctx.floatValue("EnableSystemRuleResponse.Data.Threshold"));
 		data.setRuleId(_ctx.longValue("EnableSystemRuleResponse.Data.RuleId"));
+		data.setEnable(_ctx.booleanValue("EnableSystemRuleResponse.Data.Enable"));
 		enableSystemRuleResponse.setData(data);
 	 
 	 	return enableSystemRuleResponse;

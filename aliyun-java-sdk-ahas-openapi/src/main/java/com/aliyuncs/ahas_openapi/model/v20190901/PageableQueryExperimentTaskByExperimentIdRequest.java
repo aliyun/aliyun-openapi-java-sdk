@@ -22,19 +22,47 @@ import com.aliyuncs.ahas_openapi.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryExperimentSimpleInfoForMkRequest extends RpcAcsRequest<QueryExperimentSimpleInfoForMkResponse> {
+public class PageableQueryExperimentTaskByExperimentIdRequest extends RpcAcsRequest<PageableQueryExperimentTaskByExperimentIdResponse> {
 	   
+
+	private String ahasRegionId;
+
+	private Integer size;
 
 	private String namespace;
 
 	private String experimentId;
-	public QueryExperimentSimpleInfoForMkRequest() {
-		super("ahas-openapi", "2019-09-01", "QueryExperimentSimpleInfoForMk", "ahas");
+
+	private Integer page;
+	public PageableQueryExperimentTaskByExperimentIdRequest() {
+		super("ahas-openapi", "2019-09-01", "PageableQueryExperimentTaskByExperimentId", "ahas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getAhasRegionId() {
+		return this.ahasRegionId;
+	}
+
+	public void setAhasRegionId(String ahasRegionId) {
+		this.ahasRegionId = ahasRegionId;
+		if(ahasRegionId != null){
+			putQueryParameter("AhasRegionId", ahasRegionId);
+		}
+	}
+
+	public Integer getSize() {
+		return this.size;
+	}
+
+	public void setSize(Integer size) {
+		this.size = size;
+		if(size != null){
+			putQueryParameter("Size", size.toString());
+		}
 	}
 
 	public String getNamespace() {
@@ -59,9 +87,20 @@ public class QueryExperimentSimpleInfoForMkRequest extends RpcAcsRequest<QueryEx
 		}
 	}
 
+	public Integer getPage() {
+		return this.page;
+	}
+
+	public void setPage(Integer page) {
+		this.page = page;
+		if(page != null){
+			putQueryParameter("Page", page.toString());
+		}
+	}
+
 	@Override
-	public Class<QueryExperimentSimpleInfoForMkResponse> getResponseClass() {
-		return QueryExperimentSimpleInfoForMkResponse.class;
+	public Class<PageableQueryExperimentTaskByExperimentIdResponse> getResponseClass() {
+		return PageableQueryExperimentTaskByExperimentIdResponse.class;
 	}
 
 }

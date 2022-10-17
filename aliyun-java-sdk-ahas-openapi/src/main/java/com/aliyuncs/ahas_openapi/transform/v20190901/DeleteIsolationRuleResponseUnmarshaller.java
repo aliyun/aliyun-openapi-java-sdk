@@ -24,8 +24,8 @@ public class DeleteIsolationRuleResponseUnmarshaller {
 	public static DeleteIsolationRuleResponse unmarshall(DeleteIsolationRuleResponse deleteIsolationRuleResponse, UnmarshallerContext _ctx) {
 		
 		deleteIsolationRuleResponse.setRequestId(_ctx.stringValue("DeleteIsolationRuleResponse.RequestId"));
-		deleteIsolationRuleResponse.setCode(_ctx.stringValue("DeleteIsolationRuleResponse.Code"));
 		deleteIsolationRuleResponse.setMessage(_ctx.stringValue("DeleteIsolationRuleResponse.Message"));
+		deleteIsolationRuleResponse.setCode(_ctx.stringValue("DeleteIsolationRuleResponse.Code"));
 		deleteIsolationRuleResponse.setSuccess(_ctx.booleanValue("DeleteIsolationRuleResponse.Success"));
 
 		Data data = new Data();

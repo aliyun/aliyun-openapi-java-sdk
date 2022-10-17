@@ -25,13 +25,13 @@ import com.aliyuncs.ahas_openapi.Endpoint;
 public class GetActivityTaskRequest extends RpcAcsRequest<GetActivityTaskResponse> {
 	   
 
-	private String nameSpace;
-
 	private String activityTaskId;
 
-	private String experimentTaskId;
-
 	private String ahasRegionId;
+
+	private String nameSpace;
+
+	private String experimentTaskId;
 	public GetActivityTaskRequest() {
 		super("ahas-openapi", "2019-09-01", "GetActivityTask", "ahas");
 		setMethod(MethodType.POST);
@@ -39,17 +39,6 @@ public class GetActivityTaskRequest extends RpcAcsRequest<GetActivityTaskRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getNameSpace() {
-		return this.nameSpace;
-	}
-
-	public void setNameSpace(String nameSpace) {
-		this.nameSpace = nameSpace;
-		if(nameSpace != null){
-			putQueryParameter("NameSpace", nameSpace);
-		}
 	}
 
 	public String getActivityTaskId() {
@@ -63,17 +52,6 @@ public class GetActivityTaskRequest extends RpcAcsRequest<GetActivityTaskRespons
 		}
 	}
 
-	public String getExperimentTaskId() {
-		return this.experimentTaskId;
-	}
-
-	public void setExperimentTaskId(String experimentTaskId) {
-		this.experimentTaskId = experimentTaskId;
-		if(experimentTaskId != null){
-			putQueryParameter("ExperimentTaskId", experimentTaskId);
-		}
-	}
-
 	public String getAhasRegionId() {
 		return this.ahasRegionId;
 	}
@@ -82,6 +60,28 @@ public class GetActivityTaskRequest extends RpcAcsRequest<GetActivityTaskRespons
 		this.ahasRegionId = ahasRegionId;
 		if(ahasRegionId != null){
 			putQueryParameter("AhasRegionId", ahasRegionId);
+		}
+	}
+
+	public String getNameSpace() {
+		return this.nameSpace;
+	}
+
+	public void setNameSpace(String nameSpace) {
+		this.nameSpace = nameSpace;
+		if(nameSpace != null){
+			putQueryParameter("NameSpace", nameSpace);
+		}
+	}
+
+	public String getExperimentTaskId() {
+		return this.experimentTaskId;
+	}
+
+	public void setExperimentTaskId(String experimentTaskId) {
+		this.experimentTaskId = experimentTaskId;
+		if(experimentTaskId != null){
+			putQueryParameter("ExperimentTaskId", experimentTaskId);
 		}
 	}
 
