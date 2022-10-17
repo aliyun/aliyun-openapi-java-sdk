@@ -30,6 +30,8 @@ public class RecognizeVideoCharacterResponseUnmarshaller {
 	public static RecognizeVideoCharacterResponse unmarshall(RecognizeVideoCharacterResponse recognizeVideoCharacterResponse, UnmarshallerContext _ctx) {
 		
 		recognizeVideoCharacterResponse.setRequestId(_ctx.stringValue("RecognizeVideoCharacterResponse.RequestId"));
+		recognizeVideoCharacterResponse.setCode(_ctx.stringValue("RecognizeVideoCharacterResponse.Code"));
+		recognizeVideoCharacterResponse.setMessage(_ctx.stringValue("RecognizeVideoCharacterResponse.Message"));
 
 		Data data = new Data();
 		data.setWidth(_ctx.longValue("RecognizeVideoCharacterResponse.Data.Width"));
