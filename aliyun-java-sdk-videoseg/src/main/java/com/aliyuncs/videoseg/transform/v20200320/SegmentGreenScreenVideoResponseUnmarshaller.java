@@ -24,8 +24,8 @@ public class SegmentGreenScreenVideoResponseUnmarshaller {
 	public static SegmentGreenScreenVideoResponse unmarshall(SegmentGreenScreenVideoResponse segmentGreenScreenVideoResponse, UnmarshallerContext _ctx) {
 		
 		segmentGreenScreenVideoResponse.setRequestId(_ctx.stringValue("SegmentGreenScreenVideoResponse.RequestId"));
-		segmentGreenScreenVideoResponse.setMessage(_ctx.stringValue("SegmentGreenScreenVideoResponse.Message"));
 		segmentGreenScreenVideoResponse.setCode(_ctx.stringValue("SegmentGreenScreenVideoResponse.Code"));
+		segmentGreenScreenVideoResponse.setMessage(_ctx.stringValue("SegmentGreenScreenVideoResponse.Message"));
 
 		Data data = new Data();
 		data.setVideoURL(_ctx.stringValue("SegmentGreenScreenVideoResponse.Data.VideoURL"));

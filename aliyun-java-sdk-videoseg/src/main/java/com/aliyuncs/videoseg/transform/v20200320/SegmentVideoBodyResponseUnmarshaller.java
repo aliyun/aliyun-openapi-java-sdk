@@ -24,6 +24,8 @@ public class SegmentVideoBodyResponseUnmarshaller {
 	public static SegmentVideoBodyResponse unmarshall(SegmentVideoBodyResponse segmentVideoBodyResponse, UnmarshallerContext _ctx) {
 		
 		segmentVideoBodyResponse.setRequestId(_ctx.stringValue("SegmentVideoBodyResponse.RequestId"));
+		segmentVideoBodyResponse.setCode(_ctx.stringValue("SegmentVideoBodyResponse.Code"));
+		segmentVideoBodyResponse.setMessage(_ctx.stringValue("SegmentVideoBodyResponse.Message"));
 
 		Data data = new Data();
 		data.setVideoUrl(_ctx.stringValue("SegmentVideoBodyResponse.Data.VideoUrl"));

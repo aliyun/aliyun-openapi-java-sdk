@@ -27,7 +27,7 @@ public class SegmentHalfBodyRequest extends RpcAcsRequest<SegmentHalfBodyRespons
 
 	private String videoUrl;
 	public SegmentHalfBodyRequest() {
-		super("videoseg", "2020-03-20", "SegmentHalfBody", "videoseg");
+		super("videoseg", "2020-03-20", "SegmentHalfBody");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
