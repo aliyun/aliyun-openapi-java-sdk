@@ -48,13 +48,13 @@ public class GetAsyncJobResultResponse extends AcsResponse {
 
 		private String status;
 
-		private String errorCode;
-
 		private String errorMessage;
 
-		private String jobId;
-
 		private String result;
+
+		private String errorCode;
+
+		private String jobId;
 
 		public String getStatus() {
 			return this.status;
@@ -62,14 +62,6 @@ public class GetAsyncJobResultResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
-		}
-
-		public String getErrorCode() {
-			return this.errorCode;
-		}
-
-		public void setErrorCode(String errorCode) {
-			this.errorCode = errorCode;
 		}
 
 		public String getErrorMessage() {
@@ -80,20 +72,28 @@ public class GetAsyncJobResultResponse extends AcsResponse {
 			this.errorMessage = errorMessage;
 		}
 
-		public String getJobId() {
-			return this.jobId;
-		}
-
-		public void setJobId(String jobId) {
-			this.jobId = jobId;
-		}
-
 		public String getResult() {
 			return this.result;
 		}
 
 		public void setResult(String result) {
 			this.result = result;
+		}
+
+		public String getErrorCode() {
+			return this.errorCode;
+		}
+
+		public void setErrorCode(String errorCode) {
+			this.errorCode = errorCode;
+		}
+
+		public String getJobId() {
+			return this.jobId;
+		}
+
+		public void setJobId(String jobId) {
+			this.jobId = jobId;
 		}
 	}
 

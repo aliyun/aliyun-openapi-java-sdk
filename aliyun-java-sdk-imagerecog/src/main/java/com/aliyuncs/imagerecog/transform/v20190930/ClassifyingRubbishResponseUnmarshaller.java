@@ -35,10 +35,10 @@ public class ClassifyingRubbishResponseUnmarshaller {
 		List<Element> elements = new ArrayList<Element>();
 		for (int i = 0; i < _ctx.lengthValue("ClassifyingRubbishResponse.Data.Elements.Length"); i++) {
 			Element element = new Element();
-			element.setCategory(_ctx.stringValue("ClassifyingRubbishResponse.Data.Elements["+ i +"].Category"));
 			element.setCategoryScore(_ctx.floatValue("ClassifyingRubbishResponse.Data.Elements["+ i +"].CategoryScore"));
 			element.setRubbish(_ctx.stringValue("ClassifyingRubbishResponse.Data.Elements["+ i +"].Rubbish"));
 			element.setRubbishScore(_ctx.floatValue("ClassifyingRubbishResponse.Data.Elements["+ i +"].RubbishScore"));
+			element.setCategory(_ctx.stringValue("ClassifyingRubbishResponse.Data.Elements["+ i +"].Category"));
 
 			elements.add(element);
 		}

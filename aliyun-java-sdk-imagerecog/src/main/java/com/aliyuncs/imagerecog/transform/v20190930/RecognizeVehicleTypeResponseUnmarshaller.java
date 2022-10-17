@@ -35,8 +35,8 @@ public class RecognizeVehicleTypeResponseUnmarshaller {
 		List<Element> elements = new ArrayList<Element>();
 		for (int i = 0; i < _ctx.lengthValue("RecognizeVehicleTypeResponse.Data.Elements.Length"); i++) {
 			Element element = new Element();
-			element.setName(_ctx.stringValue("RecognizeVehicleTypeResponse.Data.Elements["+ i +"].Name"));
 			element.setScore(_ctx.floatValue("RecognizeVehicleTypeResponse.Data.Elements["+ i +"].Score"));
+			element.setName(_ctx.stringValue("RecognizeVehicleTypeResponse.Data.Elements["+ i +"].Name"));
 
 			elements.add(element);
 		}

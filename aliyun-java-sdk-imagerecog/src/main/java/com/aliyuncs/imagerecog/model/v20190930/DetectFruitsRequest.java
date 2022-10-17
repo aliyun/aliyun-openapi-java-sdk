@@ -27,7 +27,7 @@ public class DetectFruitsRequest extends RpcAcsRequest<DetectFruitsResponse> {
 
 	private String imageURL;
 	public DetectFruitsRequest() {
-		super("imagerecog", "2019-09-30", "DetectFruits", "imagerecog");
+		super("imagerecog", "2019-09-30", "DetectFruits");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

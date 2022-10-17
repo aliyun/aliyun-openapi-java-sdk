@@ -59,19 +59,11 @@ public class DetectFruitsResponse extends AcsResponse {
 
 		public static class Element {
 
-			private String name;
-
 			private Float score;
 
+			private String name;
+
 			private List<Float> box;
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
 
 			public Float getScore() {
 				return this.score;
@@ -79,6 +71,14 @@ public class DetectFruitsResponse extends AcsResponse {
 
 			public void setScore(Float score) {
 				this.score = score;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
 			}
 
 			public List<Float> getBox() {

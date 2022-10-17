@@ -36,25 +36,25 @@ public class RecognizeLogoResponseUnmarshaller {
 		List<Element> elements = new ArrayList<Element>();
 		for (int i = 0; i < _ctx.lengthValue("RecognizeLogoResponse.Data.Elements.Length"); i++) {
 			Element element = new Element();
-			element.setTaskId(_ctx.stringValue("RecognizeLogoResponse.Data.Elements["+ i +"].TaskId"));
 			element.setImageURL(_ctx.stringValue("RecognizeLogoResponse.Data.Elements["+ i +"].ImageURL"));
+			element.setTaskId(_ctx.stringValue("RecognizeLogoResponse.Data.Elements["+ i +"].TaskId"));
 
 			List<Result> results = new ArrayList<Result>();
 			for (int j = 0; j < _ctx.lengthValue("RecognizeLogoResponse.Data.Elements["+ i +"].Results.Length"); j++) {
 				Result result = new Result();
-				result.setLabel(_ctx.stringValue("RecognizeLogoResponse.Data.Elements["+ i +"].Results["+ j +"].Label"));
 				result.setSuggestion(_ctx.stringValue("RecognizeLogoResponse.Data.Elements["+ i +"].Results["+ j +"].Suggestion"));
+				result.setLabel(_ctx.stringValue("RecognizeLogoResponse.Data.Elements["+ i +"].Results["+ j +"].Label"));
 				result.setRate(_ctx.floatValue("RecognizeLogoResponse.Data.Elements["+ i +"].Results["+ j +"].Rate"));
 
 				List<LogoData> logosData = new ArrayList<LogoData>();
 				for (int k = 0; k < _ctx.lengthValue("RecognizeLogoResponse.Data.Elements["+ i +"].Results["+ j +"].LogosData.Length"); k++) {
 					LogoData logoData = new LogoData();
-					logoData.setName(_ctx.stringValue("RecognizeLogoResponse.Data.Elements["+ i +"].Results["+ j +"].LogosData["+ k +"].Name"));
 					logoData.setType(_ctx.stringValue("RecognizeLogoResponse.Data.Elements["+ i +"].Results["+ j +"].LogosData["+ k +"].Type"));
-					logoData.setX(_ctx.floatValue("RecognizeLogoResponse.Data.Elements["+ i +"].Results["+ j +"].LogosData["+ k +"].X"));
-					logoData.setY(_ctx.floatValue("RecognizeLogoResponse.Data.Elements["+ i +"].Results["+ j +"].LogosData["+ k +"].Y"));
-					logoData.setH(_ctx.floatValue("RecognizeLogoResponse.Data.Elements["+ i +"].Results["+ j +"].LogosData["+ k +"].H"));
 					logoData.setW(_ctx.floatValue("RecognizeLogoResponse.Data.Elements["+ i +"].Results["+ j +"].LogosData["+ k +"].W"));
+					logoData.setH(_ctx.floatValue("RecognizeLogoResponse.Data.Elements["+ i +"].Results["+ j +"].LogosData["+ k +"].H"));
+					logoData.setY(_ctx.floatValue("RecognizeLogoResponse.Data.Elements["+ i +"].Results["+ j +"].LogosData["+ k +"].Y"));
+					logoData.setName(_ctx.stringValue("RecognizeLogoResponse.Data.Elements["+ i +"].Results["+ j +"].LogosData["+ k +"].Name"));
+					logoData.setX(_ctx.floatValue("RecognizeLogoResponse.Data.Elements["+ i +"].Results["+ j +"].LogosData["+ k +"].X"));
 
 					logosData.add(logoData);
 				}
