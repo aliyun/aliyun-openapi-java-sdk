@@ -24,6 +24,8 @@ public class SegmentHDCommonImageResponseUnmarshaller {
 	public static SegmentHDCommonImageResponse unmarshall(SegmentHDCommonImageResponse segmentHDCommonImageResponse, UnmarshallerContext _ctx) {
 		
 		segmentHDCommonImageResponse.setRequestId(_ctx.stringValue("SegmentHDCommonImageResponse.RequestId"));
+		segmentHDCommonImageResponse.setCode(_ctx.stringValue("SegmentHDCommonImageResponse.Code"));
+		segmentHDCommonImageResponse.setMessage(_ctx.stringValue("SegmentHDCommonImageResponse.Message"));
 
 		Data data = new Data();
 		data.setImageUrl(_ctx.stringValue("SegmentHDCommonImageResponse.Data.ImageUrl"));
