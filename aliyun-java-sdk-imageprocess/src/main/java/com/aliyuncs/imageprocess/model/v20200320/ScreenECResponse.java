@@ -15,16 +15,15 @@
 package com.aliyuncs.imageprocess.model.v20200320;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.imageprocess.transform.v20200320.RunMedQAResponseUnmarshaller;
+import com.aliyuncs.imageprocess.transform.v20200320.ScreenECResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class RunMedQAResponse extends AcsResponse {
+public class ScreenECResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -68,70 +67,73 @@ public class RunMedQAResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String sessionId;
+		private Lesion lesion;
 
-		private String questionType;
-
-		private String question;
-
-		private String answerType;
-
-		private Map<Object,Object> reports;
-
-		private List<String> options;
-
-		public String getSessionId() {
-			return this.sessionId;
+		public Lesion getLesion() {
+			return this.lesion;
 		}
 
-		public void setSessionId(String sessionId) {
-			this.sessionId = sessionId;
+		public void setLesion(Lesion lesion) {
+			this.lesion = lesion;
 		}
 
-		public String getQuestionType() {
-			return this.questionType;
-		}
+		public static class Lesion {
 
-		public void setQuestionType(String questionType) {
-			this.questionType = questionType;
-		}
+			private String esoVolume;
 
-		public String getQuestion() {
-			return this.question;
-		}
+			private String ecVolume;
 
-		public void setQuestion(String question) {
-			this.question = question;
-		}
+			private String benignVolume;
 
-		public String getAnswerType() {
-			return this.answerType;
-		}
+			private String mask;
 
-		public void setAnswerType(String answerType) {
-			this.answerType = answerType;
-		}
+			private List<String> possibilities;
 
-		public Map<Object,Object> getReports() {
-			return this.reports;
-		}
+			public String getEsoVolume() {
+				return this.esoVolume;
+			}
 
-		public void setReports(Map<Object,Object> reports) {
-			this.reports = reports;
-		}
+			public void setEsoVolume(String esoVolume) {
+				this.esoVolume = esoVolume;
+			}
 
-		public List<String> getOptions() {
-			return this.options;
-		}
+			public String getEcVolume() {
+				return this.ecVolume;
+			}
 
-		public void setOptions(List<String> options) {
-			this.options = options;
+			public void setEcVolume(String ecVolume) {
+				this.ecVolume = ecVolume;
+			}
+
+			public String getBenignVolume() {
+				return this.benignVolume;
+			}
+
+			public void setBenignVolume(String benignVolume) {
+				this.benignVolume = benignVolume;
+			}
+
+			public String getMask() {
+				return this.mask;
+			}
+
+			public void setMask(String mask) {
+				this.mask = mask;
+			}
+
+			public List<String> getPossibilities() {
+				return this.possibilities;
+			}
+
+			public void setPossibilities(List<String> possibilities) {
+				this.possibilities = possibilities;
+			}
 		}
 	}
 
 	@Override
-	public RunMedQAResponse getInstance(UnmarshallerContext context) {
-		return	RunMedQAResponseUnmarshaller.unmarshall(this, context);
+	public ScreenECResponse getInstance(UnmarshallerContext context) {
+		return	ScreenECResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

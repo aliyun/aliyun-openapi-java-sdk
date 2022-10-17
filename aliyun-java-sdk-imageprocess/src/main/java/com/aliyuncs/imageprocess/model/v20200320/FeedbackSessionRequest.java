@@ -22,16 +22,14 @@ import com.aliyuncs.imageprocess.Endpoint;
  * @author auto create
  * @version 
  */
-public class DetectSkinDiseaseRequest extends RpcAcsRequest<DetectSkinDiseaseResponse> {
+public class FeedbackSessionRequest extends RpcAcsRequest<FeedbackSessionResponse> {
 	   
 
-	private String orgName;
+	private String sessionId;
 
-	private String url;
-
-	private String orgId;
-	public DetectSkinDiseaseRequest() {
-		super("imageprocess", "2020-03-20", "DetectSkinDisease", "imageprocess");
+	private String feedback;
+	public FeedbackSessionRequest() {
+		super("imageprocess", "2020-03-20", "FeedbackSession", "imageprocess");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,42 +37,31 @@ public class DetectSkinDiseaseRequest extends RpcAcsRequest<DetectSkinDiseaseRes
 		} catch (Exception e) {}
 	}
 
-	public String getOrgName() {
-		return this.orgName;
+	public String getSessionId() {
+		return this.sessionId;
 	}
 
-	public void setOrgName(String orgName) {
-		this.orgName = orgName;
-		if(orgName != null){
-			putBodyParameter("OrgName", orgName);
+	public void setSessionId(String sessionId) {
+		this.sessionId = sessionId;
+		if(sessionId != null){
+			putBodyParameter("SessionId", sessionId);
 		}
 	}
 
-	public String getUrl() {
-		return this.url;
+	public String getFeedback() {
+		return this.feedback;
 	}
 
-	public void setUrl(String url) {
-		this.url = url;
-		if(url != null){
-			putBodyParameter("Url", url);
-		}
-	}
-
-	public String getOrgId() {
-		return this.orgId;
-	}
-
-	public void setOrgId(String orgId) {
-		this.orgId = orgId;
-		if(orgId != null){
-			putBodyParameter("OrgId", orgId);
+	public void setFeedback(String feedback) {
+		this.feedback = feedback;
+		if(feedback != null){
+			putBodyParameter("Feedback", feedback);
 		}
 	}
 
 	@Override
-	public Class<DetectSkinDiseaseResponse> getResponseClass() {
-		return DetectSkinDiseaseResponse.class;
+	public Class<FeedbackSessionResponse> getResponseClass() {
+		return FeedbackSessionResponse.class;
 	}
 
 }

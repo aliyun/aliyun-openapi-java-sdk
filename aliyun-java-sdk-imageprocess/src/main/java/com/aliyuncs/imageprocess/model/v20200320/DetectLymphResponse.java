@@ -15,18 +15,18 @@
 package com.aliyuncs.imageprocess.model.v20200320;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.imageprocess.transform.v20200320.ScreenChestCTResponseUnmarshaller;
+import com.aliyuncs.imageprocess.transform.v20200320.DetectLymphResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ScreenChestCTResponse extends AcsResponse {
+public class DetectLymphResponse extends AcsResponse {
 
 	@Override
-	public ScreenChestCTResponse getInstance(UnmarshallerContext context) {
-		return	ScreenChestCTResponseUnmarshaller.unmarshall(this, context);
+	public DetectLymphResponse getInstance(UnmarshallerContext context) {
+		return	DetectLymphResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

@@ -14,6 +14,7 @@
 
 package com.aliyuncs.imageprocess.model.v20200320;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.imageprocess.transform.v20200320.CalcCACSResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -26,6 +27,10 @@ public class CalcCACSResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String code;
+
+	private String message;
+
 	private Data data;
 
 	public String getRequestId() {
@@ -34,6 +39,22 @@ public class CalcCACSResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Data getData() {
@@ -46,9 +67,21 @@ public class CalcCACSResponse extends AcsResponse {
 
 	public static class Data {
 
+		private String resultUrl;
+
 		private String score;
 
-		private String resultUrl;
+		private String volumeScore;
+
+		private List<DetectionsItem> detections;
+
+		public String getResultUrl() {
+			return this.resultUrl;
+		}
+
+		public void setResultUrl(String resultUrl) {
+			this.resultUrl = resultUrl;
+		}
 
 		public String getScore() {
 			return this.score;
@@ -58,12 +91,63 @@ public class CalcCACSResponse extends AcsResponse {
 			this.score = score;
 		}
 
-		public String getResultUrl() {
-			return this.resultUrl;
+		public String getVolumeScore() {
+			return this.volumeScore;
 		}
 
-		public void setResultUrl(String resultUrl) {
-			this.resultUrl = resultUrl;
+		public void setVolumeScore(String volumeScore) {
+			this.volumeScore = volumeScore;
+		}
+
+		public List<DetectionsItem> getDetections() {
+			return this.detections;
+		}
+
+		public void setDetections(List<DetectionsItem> detections) {
+			this.detections = detections;
+		}
+
+		public static class DetectionsItem {
+
+			private Long calciumId;
+
+			private Float calciumScore;
+
+			private Float calciumVolume;
+
+			private List<Long> calciumCenter;
+
+			public Long getCalciumId() {
+				return this.calciumId;
+			}
+
+			public void setCalciumId(Long calciumId) {
+				this.calciumId = calciumId;
+			}
+
+			public Float getCalciumScore() {
+				return this.calciumScore;
+			}
+
+			public void setCalciumScore(Float calciumScore) {
+				this.calciumScore = calciumScore;
+			}
+
+			public Float getCalciumVolume() {
+				return this.calciumVolume;
+			}
+
+			public void setCalciumVolume(Float calciumVolume) {
+				this.calciumVolume = calciumVolume;
+			}
+
+			public List<Long> getCalciumCenter() {
+				return this.calciumCenter;
+			}
+
+			public void setCalciumCenter(List<Long> calciumCenter) {
+				this.calciumCenter = calciumCenter;
+			}
 		}
 	}
 

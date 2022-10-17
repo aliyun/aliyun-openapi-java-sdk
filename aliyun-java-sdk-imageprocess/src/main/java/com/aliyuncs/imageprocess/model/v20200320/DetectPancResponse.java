@@ -15,16 +15,15 @@
 package com.aliyuncs.imageprocess.model.v20200320;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.imageprocess.transform.v20200320.RunMedQAResponseUnmarshaller;
+import com.aliyuncs.imageprocess.transform.v20200320.DetectPancResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class RunMedQAResponse extends AcsResponse {
+public class DetectPancResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -68,70 +67,73 @@ public class RunMedQAResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String sessionId;
+		private Lesion lesion;
 
-		private String questionType;
-
-		private String question;
-
-		private String answerType;
-
-		private Map<Object,Object> reports;
-
-		private List<String> options;
-
-		public String getSessionId() {
-			return this.sessionId;
+		public Lesion getLesion() {
+			return this.lesion;
 		}
 
-		public void setSessionId(String sessionId) {
-			this.sessionId = sessionId;
+		public void setLesion(Lesion lesion) {
+			this.lesion = lesion;
 		}
 
-		public String getQuestionType() {
-			return this.questionType;
-		}
+		public static class Lesion {
 
-		public void setQuestionType(String questionType) {
-			this.questionType = questionType;
-		}
+			private String pancVol;
 
-		public String getQuestion() {
-			return this.question;
-		}
+			private String pdacVol;
 
-		public void setQuestion(String question) {
-			this.question = question;
-		}
+			private String nonPdacVol;
 
-		public String getAnswerType() {
-			return this.answerType;
-		}
+			private String mask;
 
-		public void setAnswerType(String answerType) {
-			this.answerType = answerType;
-		}
+			private List<String> possibilities;
 
-		public Map<Object,Object> getReports() {
-			return this.reports;
-		}
+			public String getPancVol() {
+				return this.pancVol;
+			}
 
-		public void setReports(Map<Object,Object> reports) {
-			this.reports = reports;
-		}
+			public void setPancVol(String pancVol) {
+				this.pancVol = pancVol;
+			}
 
-		public List<String> getOptions() {
-			return this.options;
-		}
+			public String getPdacVol() {
+				return this.pdacVol;
+			}
 
-		public void setOptions(List<String> options) {
-			this.options = options;
+			public void setPdacVol(String pdacVol) {
+				this.pdacVol = pdacVol;
+			}
+
+			public String getNonPdacVol() {
+				return this.nonPdacVol;
+			}
+
+			public void setNonPdacVol(String nonPdacVol) {
+				this.nonPdacVol = nonPdacVol;
+			}
+
+			public String getMask() {
+				return this.mask;
+			}
+
+			public void setMask(String mask) {
+				this.mask = mask;
+			}
+
+			public List<String> getPossibilities() {
+				return this.possibilities;
+			}
+
+			public void setPossibilities(List<String> possibilities) {
+				this.possibilities = possibilities;
+			}
 		}
 	}
 
 	@Override
-	public RunMedQAResponse getInstance(UnmarshallerContext context) {
-		return	RunMedQAResponseUnmarshaller.unmarshall(this, context);
+	public DetectPancResponse getInstance(UnmarshallerContext context) {
+		return	DetectPancResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

@@ -23,20 +23,14 @@ import com.aliyuncs.imageprocess.Endpoint;
  * @author auto create
  * @version 
  */
-public class CalcCACSRequest extends RpcAcsRequest<CalcCACSResponse> {
+public class DetectLymphRequest extends RpcAcsRequest<DetectLymphResponse> {
 	   
 
 	private String dataSourceType;
 
-	private String orgName;
-
-	private String dataFormat;
-
 	private List<URLList> uRLLists;
-
-	private String orgId;
-	public CalcCACSRequest() {
-		super("imageprocess", "2020-03-20", "CalcCACS", "imageprocess");
+	public DetectLymphRequest() {
+		super("imageprocess", "2020-03-20", "DetectLymph", "imageprocess");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -55,28 +49,6 @@ public class CalcCACSRequest extends RpcAcsRequest<CalcCACSResponse> {
 		}
 	}
 
-	public String getOrgName() {
-		return this.orgName;
-	}
-
-	public void setOrgName(String orgName) {
-		this.orgName = orgName;
-		if(orgName != null){
-			putBodyParameter("OrgName", orgName);
-		}
-	}
-
-	public String getDataFormat() {
-		return this.dataFormat;
-	}
-
-	public void setDataFormat(String dataFormat) {
-		this.dataFormat = dataFormat;
-		if(dataFormat != null){
-			putBodyParameter("DataFormat", dataFormat);
-		}
-	}
-
 	public List<URLList> getURLLists() {
 		return this.uRLLists;
 	}
@@ -88,17 +60,6 @@ public class CalcCACSRequest extends RpcAcsRequest<CalcCACSResponse> {
 				putBodyParameter("URLList." + (depth1 + 1) + ".URL" , uRLLists.get(depth1).getURL());
 			}
 		}	
-	}
-
-	public String getOrgId() {
-		return this.orgId;
-	}
-
-	public void setOrgId(String orgId) {
-		this.orgId = orgId;
-		if(orgId != null){
-			putBodyParameter("OrgId", orgId);
-		}
 	}
 
 	public static class URLList {
@@ -115,8 +76,8 @@ public class CalcCACSRequest extends RpcAcsRequest<CalcCACSResponse> {
 	}
 
 	@Override
-	public Class<CalcCACSResponse> getResponseClass() {
-		return CalcCACSResponse.class;
+	public Class<DetectLymphResponse> getResponseClass() {
+		return DetectLymphResponse.class;
 	}
 
 }

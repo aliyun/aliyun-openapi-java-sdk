@@ -26,13 +26,13 @@ import com.aliyuncs.imageprocess.Endpoint;
 public class DetectCovid19CadRequest extends RpcAcsRequest<DetectCovid19CadResponse> {
 	   
 
+	private String orgName;
+
 	private String dataFormat;
 
 	private List<URLList> uRLLists;
 
 	private String orgId;
-
-	private String orgName;
 	public DetectCovid19CadRequest() {
 		super("imageprocess", "2020-03-20", "DetectCovid19Cad", "imageprocess");
 		setMethod(MethodType.POST);
@@ -40,6 +40,17 @@ public class DetectCovid19CadRequest extends RpcAcsRequest<DetectCovid19CadRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getOrgName() {
+		return this.orgName;
+	}
+
+	public void setOrgName(String orgName) {
+		this.orgName = orgName;
+		if(orgName != null){
+			putBodyParameter("OrgName", orgName);
+		}
 	}
 
 	public String getDataFormat() {
@@ -74,17 +85,6 @@ public class DetectCovid19CadRequest extends RpcAcsRequest<DetectCovid19CadRespo
 		this.orgId = orgId;
 		if(orgId != null){
 			putBodyParameter("OrgId", orgId);
-		}
-	}
-
-	public String getOrgName() {
-		return this.orgName;
-	}
-
-	public void setOrgName(String orgName) {
-		this.orgName = orgName;
-		if(orgName != null){
-			putBodyParameter("OrgName", orgName);
 		}
 	}
 

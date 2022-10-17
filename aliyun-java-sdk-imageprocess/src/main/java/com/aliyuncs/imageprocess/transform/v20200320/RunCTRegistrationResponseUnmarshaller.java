@@ -24,6 +24,8 @@ public class RunCTRegistrationResponseUnmarshaller {
 	public static RunCTRegistrationResponse unmarshall(RunCTRegistrationResponse runCTRegistrationResponse, UnmarshallerContext _ctx) {
 		
 		runCTRegistrationResponse.setRequestId(_ctx.stringValue("RunCTRegistrationResponse.RequestId"));
+		runCTRegistrationResponse.setCode(_ctx.stringValue("RunCTRegistrationResponse.Code"));
+		runCTRegistrationResponse.setMessage(_ctx.stringValue("RunCTRegistrationResponse.Message"));
 
 		Data data = new Data();
 		data.setDUrl(_ctx.stringValue("RunCTRegistrationResponse.Data.DUrl"));

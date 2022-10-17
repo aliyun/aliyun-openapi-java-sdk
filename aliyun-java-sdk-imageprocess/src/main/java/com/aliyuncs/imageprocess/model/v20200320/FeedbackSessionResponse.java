@@ -15,16 +15,20 @@
 package com.aliyuncs.imageprocess.model.v20200320;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.imageprocess.transform.v20200320.GetAsyncJobResultResponseUnmarshaller;
+import com.aliyuncs.imageprocess.transform.v20200320.FeedbackSessionResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetAsyncJobResultResponse extends AcsResponse {
+public class FeedbackSessionResponse extends AcsResponse {
 
 	private String requestId;
+
+	private String code;
+
+	private String message;
 
 	private Data data;
 
@@ -34,6 +38,22 @@ public class GetAsyncJobResultResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Data getData() {
@@ -46,60 +66,20 @@ public class GetAsyncJobResultResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String status;
+		private String data;
 
-		private String errorMessage;
-
-		private String result;
-
-		private String errorCode;
-
-		private String jobId;
-
-		public String getStatus() {
-			return this.status;
+		public String getData() {
+			return this.data;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getErrorMessage() {
-			return this.errorMessage;
-		}
-
-		public void setErrorMessage(String errorMessage) {
-			this.errorMessage = errorMessage;
-		}
-
-		public String getResult() {
-			return this.result;
-		}
-
-		public void setResult(String result) {
-			this.result = result;
-		}
-
-		public String getErrorCode() {
-			return this.errorCode;
-		}
-
-		public void setErrorCode(String errorCode) {
-			this.errorCode = errorCode;
-		}
-
-		public String getJobId() {
-			return this.jobId;
-		}
-
-		public void setJobId(String jobId) {
-			this.jobId = jobId;
+		public void setData(String data) {
+			this.data = data;
 		}
 	}
 
 	@Override
-	public GetAsyncJobResultResponse getInstance(UnmarshallerContext context) {
-		return	GetAsyncJobResultResponseUnmarshaller.unmarshall(this, context);
+	public FeedbackSessionResponse getInstance(UnmarshallerContext context) {
+		return	FeedbackSessionResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

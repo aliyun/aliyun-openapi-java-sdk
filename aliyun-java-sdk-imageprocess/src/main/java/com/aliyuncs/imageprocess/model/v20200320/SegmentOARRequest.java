@@ -23,36 +23,29 @@ import com.aliyuncs.imageprocess.Endpoint;
  * @author auto create
  * @version 
  */
-public class CalcCACSRequest extends RpcAcsRequest<CalcCACSResponse> {
+public class SegmentOARRequest extends RpcAcsRequest<SegmentOARResponse> {
 	   
 
-	private String dataSourceType;
-
 	private String orgName;
+
+	private String bodyPart;
 
 	private String dataFormat;
 
 	private List<URLList> uRLLists;
 
 	private String orgId;
-	public CalcCACSRequest() {
-		super("imageprocess", "2020-03-20", "CalcCACS", "imageprocess");
+
+	private Boolean contrast;
+
+	private List<Long> maskLists;
+	public SegmentOARRequest() {
+		super("imageprocess", "2020-03-20", "SegmentOAR", "imageprocess");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getDataSourceType() {
-		return this.dataSourceType;
-	}
-
-	public void setDataSourceType(String dataSourceType) {
-		this.dataSourceType = dataSourceType;
-		if(dataSourceType != null){
-			putBodyParameter("DataSourceType", dataSourceType);
-		}
 	}
 
 	public String getOrgName() {
@@ -63,6 +56,17 @@ public class CalcCACSRequest extends RpcAcsRequest<CalcCACSResponse> {
 		this.orgName = orgName;
 		if(orgName != null){
 			putBodyParameter("OrgName", orgName);
+		}
+	}
+
+	public String getBodyPart() {
+		return this.bodyPart;
+	}
+
+	public void setBodyPart(String bodyPart) {
+		this.bodyPart = bodyPart;
+		if(bodyPart != null){
+			putBodyParameter("BodyPart", bodyPart);
 		}
 	}
 
@@ -101,6 +105,30 @@ public class CalcCACSRequest extends RpcAcsRequest<CalcCACSResponse> {
 		}
 	}
 
+	public Boolean getContrast() {
+		return this.contrast;
+	}
+
+	public void setContrast(Boolean contrast) {
+		this.contrast = contrast;
+		if(contrast != null){
+			putBodyParameter("Contrast", contrast.toString());
+		}
+	}
+
+	public List<Long> getMaskLists() {
+		return this.maskLists;
+	}
+
+	public void setMaskLists(List<Long> maskLists) {
+		this.maskLists = maskLists;	
+		if (maskLists != null) {
+			for (int i = 0; i < maskLists.size(); i++) {
+				putBodyParameter("MaskList." + (i + 1) , maskLists.get(i));
+			}
+		}	
+	}
+
 	public static class URLList {
 
 		private String uRL;
@@ -115,8 +143,8 @@ public class CalcCACSRequest extends RpcAcsRequest<CalcCACSResponse> {
 	}
 
 	@Override
-	public Class<CalcCACSResponse> getResponseClass() {
-		return CalcCACSResponse.class;
+	public Class<SegmentOARResponse> getResponseClass() {
+		return SegmentOARResponse.class;
 	}
 
 }

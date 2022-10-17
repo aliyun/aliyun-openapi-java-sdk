@@ -14,22 +14,15 @@
 
 package com.aliyuncs.imageprocess.transform.v20200320;
 
-import com.aliyuncs.imageprocess.model.v20200320.TranslateMedResponse;
-import com.aliyuncs.imageprocess.model.v20200320.TranslateMedResponse.Data;
+import com.aliyuncs.imageprocess.model.v20200320.DetectLymphResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class TranslateMedResponseUnmarshaller {
+public class DetectLymphResponseUnmarshaller {
 
-	public static TranslateMedResponse unmarshall(TranslateMedResponse translateMedResponse, UnmarshallerContext _ctx) {
+	public static DetectLymphResponse unmarshall(DetectLymphResponse detectLymphResponse, UnmarshallerContext _ctx) {
 		
-		translateMedResponse.setRequestId(_ctx.stringValue("TranslateMedResponse.RequestId"));
-
-		Data data = new Data();
-		data.setWords(_ctx.longValue("TranslateMedResponse.Data.Words"));
-		data.setText(_ctx.stringValue("TranslateMedResponse.Data.Text"));
-		translateMedResponse.setData(data);
 	 
-	 	return translateMedResponse;
+	 	return detectLymphResponse;
 	}
 }

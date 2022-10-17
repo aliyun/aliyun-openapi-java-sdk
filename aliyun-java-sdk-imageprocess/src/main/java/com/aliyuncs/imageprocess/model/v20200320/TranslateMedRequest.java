@@ -25,11 +25,11 @@ import com.aliyuncs.imageprocess.Endpoint;
 public class TranslateMedRequest extends RpcAcsRequest<TranslateMedResponse> {
 	   
 
-	private String fromLanguage;
-
 	private String toLanguage;
 
 	private String text;
+
+	private String fromLanguage;
 	public TranslateMedRequest() {
 		super("imageprocess", "2020-03-20", "TranslateMed", "imageprocess");
 		setMethod(MethodType.POST);
@@ -37,17 +37,6 @@ public class TranslateMedRequest extends RpcAcsRequest<TranslateMedResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getFromLanguage() {
-		return this.fromLanguage;
-	}
-
-	public void setFromLanguage(String fromLanguage) {
-		this.fromLanguage = fromLanguage;
-		if(fromLanguage != null){
-			putBodyParameter("FromLanguage", fromLanguage);
-		}
 	}
 
 	public String getToLanguage() {
@@ -69,6 +58,17 @@ public class TranslateMedRequest extends RpcAcsRequest<TranslateMedResponse> {
 		this.text = text;
 		if(text != null){
 			putBodyParameter("Text", text);
+		}
+	}
+
+	public String getFromLanguage() {
+		return this.fromLanguage;
+	}
+
+	public void setFromLanguage(String fromLanguage) {
+		this.fromLanguage = fromLanguage;
+		if(fromLanguage != null){
+			putBodyParameter("FromLanguage", fromLanguage);
 		}
 	}
 

@@ -15,18 +15,18 @@
 package com.aliyuncs.imageprocess.model.v20200320;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.imageprocess.transform.v20200320.ScreenChestCTResponseUnmarshaller;
+import com.aliyuncs.imageprocess.transform.v20200320.AnalyzeChestVesselResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ScreenChestCTResponse extends AcsResponse {
+public class AnalyzeChestVesselResponse extends AcsResponse {
 
 	@Override
-	public ScreenChestCTResponse getInstance(UnmarshallerContext context) {
-		return	ScreenChestCTResponseUnmarshaller.unmarshall(this, context);
+	public AnalyzeChestVesselResponse getInstance(UnmarshallerContext context) {
+		return	AnalyzeChestVesselResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

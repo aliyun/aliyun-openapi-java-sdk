@@ -14,22 +14,23 @@
 
 package com.aliyuncs.imageprocess.transform.v20200320;
 
-import com.aliyuncs.imageprocess.model.v20200320.TranslateMedResponse;
-import com.aliyuncs.imageprocess.model.v20200320.TranslateMedResponse.Data;
+import com.aliyuncs.imageprocess.model.v20200320.SegmentOARResponse;
+import com.aliyuncs.imageprocess.model.v20200320.SegmentOARResponse.Data;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class TranslateMedResponseUnmarshaller {
+public class SegmentOARResponseUnmarshaller {
 
-	public static TranslateMedResponse unmarshall(TranslateMedResponse translateMedResponse, UnmarshallerContext _ctx) {
+	public static SegmentOARResponse unmarshall(SegmentOARResponse segmentOARResponse, UnmarshallerContext _ctx) {
 		
-		translateMedResponse.setRequestId(_ctx.stringValue("TranslateMedResponse.RequestId"));
+		segmentOARResponse.setRequestId(_ctx.stringValue("SegmentOARResponse.RequestId"));
+		segmentOARResponse.setCode(_ctx.stringValue("SegmentOARResponse.Code"));
+		segmentOARResponse.setMessage(_ctx.stringValue("SegmentOARResponse.Message"));
 
 		Data data = new Data();
-		data.setWords(_ctx.longValue("TranslateMedResponse.Data.Words"));
-		data.setText(_ctx.stringValue("TranslateMedResponse.Data.Text"));
-		translateMedResponse.setData(data);
+		data.setResultURL(_ctx.stringValue("SegmentOARResponse.Data.ResultURL"));
+		segmentOARResponse.setData(data);
 	 
-	 	return translateMedResponse;
+	 	return segmentOARResponse;
 	}
 }

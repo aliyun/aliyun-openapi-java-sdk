@@ -1,3 +1,6 @@
+2022-10-17 Version: 1.0.15
+- Release ScreenEC.
+
 2021-05-14 Version: 1.0.14
 - Update ScreenChestCT.
 

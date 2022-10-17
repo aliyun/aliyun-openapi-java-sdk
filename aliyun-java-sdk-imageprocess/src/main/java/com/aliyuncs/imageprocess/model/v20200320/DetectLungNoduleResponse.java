@@ -27,6 +27,10 @@ public class DetectLungNoduleResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String code;
+
+	private String message;
+
 	private Data data;
 
 	public String getRequestId() {
@@ -35,6 +39,22 @@ public class DetectLungNoduleResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Data getData() {
@@ -59,9 +79,9 @@ public class DetectLungNoduleResponse extends AcsResponse {
 
 		public static class Serie {
 
-			private String report;
-
 			private String seriesInstanceUid;
+
+			private String report;
 
 			private List<Element> elements;
 
@@ -69,20 +89,20 @@ public class DetectLungNoduleResponse extends AcsResponse {
 
 			private List<Float> spacing;
 
-			public String getReport() {
-				return this.report;
-			}
-
-			public void setReport(String report) {
-				this.report = report;
-			}
-
 			public String getSeriesInstanceUid() {
 				return this.seriesInstanceUid;
 			}
 
 			public void setSeriesInstanceUid(String seriesInstanceUid) {
 				this.seriesInstanceUid = seriesInstanceUid;
+			}
+
+			public String getReport() {
+				return this.report;
+			}
+
+			public void setReport(String report) {
+				this.report = report;
 			}
 
 			public List<Element> getElements() {
@@ -111,56 +131,40 @@ public class DetectLungNoduleResponse extends AcsResponse {
 
 			public static class Element {
 
-				private Float imageZ;
-
-				private Float imageY;
-
-				private Float imageX;
+				private Float z;
 
 				private String lobe;
 
-				private String category;
+				private Float meanValue;
+
+				private Float imageZ;
 
 				private String lung;
 
-				private Float meanValue;
-
-				private Float volume;
-
 				private Float confidence;
-
-				private Float x;
-
-				private Float y;
-
-				private Float z;
 
 				private String sOPInstanceUID;
 
+				private Float imageX;
+
+				private Float y;
+
+				private String category;
+
+				private Float volume;
+
+				private Float imageY;
+
 				private Float diameter;
 
-				public Float getImageZ() {
-					return this.imageZ;
+				private Float x;
+
+				public Float getZ() {
+					return this.z;
 				}
 
-				public void setImageZ(Float imageZ) {
-					this.imageZ = imageZ;
-				}
-
-				public Float getImageY() {
-					return this.imageY;
-				}
-
-				public void setImageY(Float imageY) {
-					this.imageY = imageY;
-				}
-
-				public Float getImageX() {
-					return this.imageX;
-				}
-
-				public void setImageX(Float imageX) {
-					this.imageX = imageX;
+				public void setZ(Float z) {
+					this.z = z;
 				}
 
 				public String getLobe() {
@@ -171,12 +175,20 @@ public class DetectLungNoduleResponse extends AcsResponse {
 					this.lobe = lobe;
 				}
 
-				public String getCategory() {
-					return this.category;
+				public Float getMeanValue() {
+					return this.meanValue;
 				}
 
-				public void setCategory(String category) {
-					this.category = category;
+				public void setMeanValue(Float meanValue) {
+					this.meanValue = meanValue;
+				}
+
+				public Float getImageZ() {
+					return this.imageZ;
+				}
+
+				public void setImageZ(Float imageZ) {
+					this.imageZ = imageZ;
 				}
 
 				public String getLung() {
@@ -187,52 +199,12 @@ public class DetectLungNoduleResponse extends AcsResponse {
 					this.lung = lung;
 				}
 
-				public Float getMeanValue() {
-					return this.meanValue;
-				}
-
-				public void setMeanValue(Float meanValue) {
-					this.meanValue = meanValue;
-				}
-
-				public Float getVolume() {
-					return this.volume;
-				}
-
-				public void setVolume(Float volume) {
-					this.volume = volume;
-				}
-
 				public Float getConfidence() {
 					return this.confidence;
 				}
 
 				public void setConfidence(Float confidence) {
 					this.confidence = confidence;
-				}
-
-				public Float getX() {
-					return this.x;
-				}
-
-				public void setX(Float x) {
-					this.x = x;
-				}
-
-				public Float getY() {
-					return this.y;
-				}
-
-				public void setY(Float y) {
-					this.y = y;
-				}
-
-				public Float getZ() {
-					return this.z;
-				}
-
-				public void setZ(Float z) {
-					this.z = z;
 				}
 
 				public String getSOPInstanceUID() {
@@ -243,12 +215,60 @@ public class DetectLungNoduleResponse extends AcsResponse {
 					this.sOPInstanceUID = sOPInstanceUID;
 				}
 
+				public Float getImageX() {
+					return this.imageX;
+				}
+
+				public void setImageX(Float imageX) {
+					this.imageX = imageX;
+				}
+
+				public Float getY() {
+					return this.y;
+				}
+
+				public void setY(Float y) {
+					this.y = y;
+				}
+
+				public String getCategory() {
+					return this.category;
+				}
+
+				public void setCategory(String category) {
+					this.category = category;
+				}
+
+				public Float getVolume() {
+					return this.volume;
+				}
+
+				public void setVolume(Float volume) {
+					this.volume = volume;
+				}
+
+				public Float getImageY() {
+					return this.imageY;
+				}
+
+				public void setImageY(Float imageY) {
+					this.imageY = imageY;
+				}
+
 				public Float getDiameter() {
 					return this.diameter;
 				}
 
 				public void setDiameter(Float diameter) {
 					this.diameter = diameter;
+				}
+
+				public Float getX() {
+					return this.x;
+				}
+
+				public void setX(Float x) {
+					this.x = x;
 				}
 			}
 		}

@@ -35,8 +35,8 @@ public class DetectSpineMRIResponseUnmarshaller {
 		List<Disc> discs = new ArrayList<Disc>();
 		for (int i = 0; i < _ctx.lengthValue("DetectSpineMRIResponse.Data.Discs.Length"); i++) {
 			Disc disc = new Disc();
-			disc.setDisease(_ctx.stringValue("DetectSpineMRIResponse.Data.Discs["+ i +"].Disease"));
 			disc.setIdentification(_ctx.stringValue("DetectSpineMRIResponse.Data.Discs["+ i +"].Identification"));
+			disc.setDisease(_ctx.stringValue("DetectSpineMRIResponse.Data.Discs["+ i +"].Disease"));
 
 			List<Float> location = new ArrayList<Float>();
 			for (int j = 0; j < _ctx.lengthValue("DetectSpineMRIResponse.Data.Discs["+ i +"].Location.Length"); j++) {
@@ -51,8 +51,8 @@ public class DetectSpineMRIResponseUnmarshaller {
 		List<Vertebra> vertebras = new ArrayList<Vertebra>();
 		for (int i = 0; i < _ctx.lengthValue("DetectSpineMRIResponse.Data.Vertebras.Length"); i++) {
 			Vertebra vertebra = new Vertebra();
-			vertebra.setDisease(_ctx.stringValue("DetectSpineMRIResponse.Data.Vertebras["+ i +"].Disease"));
 			vertebra.setIdentification(_ctx.stringValue("DetectSpineMRIResponse.Data.Vertebras["+ i +"].Identification"));
+			vertebra.setDisease(_ctx.stringValue("DetectSpineMRIResponse.Data.Vertebras["+ i +"].Disease"));
 
 			List<Float> location1 = new ArrayList<Float>();
 			for (int j = 0; j < _ctx.lengthValue("DetectSpineMRIResponse.Data.Vertebras["+ i +"].Location.Length"); j++) {

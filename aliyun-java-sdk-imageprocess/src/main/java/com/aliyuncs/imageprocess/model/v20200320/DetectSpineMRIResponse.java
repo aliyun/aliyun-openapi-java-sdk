@@ -69,19 +69,11 @@ public class DetectSpineMRIResponse extends AcsResponse {
 
 		public static class Disc {
 
-			private String disease;
-
 			private String identification;
 
+			private String disease;
+
 			private List<Float> location;
-
-			public String getDisease() {
-				return this.disease;
-			}
-
-			public void setDisease(String disease) {
-				this.disease = disease;
-			}
 
 			public String getIdentification() {
 				return this.identification;
@@ -89,6 +81,14 @@ public class DetectSpineMRIResponse extends AcsResponse {
 
 			public void setIdentification(String identification) {
 				this.identification = identification;
+			}
+
+			public String getDisease() {
+				return this.disease;
+			}
+
+			public void setDisease(String disease) {
+				this.disease = disease;
 			}
 
 			public List<Float> getLocation() {
@@ -102,19 +102,11 @@ public class DetectSpineMRIResponse extends AcsResponse {
 
 		public static class Vertebra {
 
-			private String disease;
-
 			private String identification;
 
+			private String disease;
+
 			private List<Float> location1;
-
-			public String getDisease() {
-				return this.disease;
-			}
-
-			public void setDisease(String disease) {
-				this.disease = disease;
-			}
 
 			public String getIdentification() {
 				return this.identification;
@@ -122,6 +114,14 @@ public class DetectSpineMRIResponse extends AcsResponse {
 
 			public void setIdentification(String identification) {
 				this.identification = identification;
+			}
+
+			public String getDisease() {
+				return this.disease;
+			}
+
+			public void setDisease(String disease) {
+				this.disease = disease;
 			}
 
 			public List<Float> getLocation1() {

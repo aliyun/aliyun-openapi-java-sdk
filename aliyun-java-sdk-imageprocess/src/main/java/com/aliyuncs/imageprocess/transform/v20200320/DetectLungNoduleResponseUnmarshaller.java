@@ -29,14 +29,16 @@ public class DetectLungNoduleResponseUnmarshaller {
 	public static DetectLungNoduleResponse unmarshall(DetectLungNoduleResponse detectLungNoduleResponse, UnmarshallerContext _ctx) {
 		
 		detectLungNoduleResponse.setRequestId(_ctx.stringValue("DetectLungNoduleResponse.RequestId"));
+		detectLungNoduleResponse.setCode(_ctx.stringValue("DetectLungNoduleResponse.Code"));
+		detectLungNoduleResponse.setMessage(_ctx.stringValue("DetectLungNoduleResponse.Message"));
 
 		Data data = new Data();
 
 		List<Serie> series = new ArrayList<Serie>();
 		for (int i = 0; i < _ctx.lengthValue("DetectLungNoduleResponse.Data.Series.Length"); i++) {
 			Serie serie = new Serie();
-			serie.setReport(_ctx.stringValue("DetectLungNoduleResponse.Data.Series["+ i +"].Report"));
 			serie.setSeriesInstanceUid(_ctx.stringValue("DetectLungNoduleResponse.Data.Series["+ i +"].SeriesInstanceUid"));
+			serie.setReport(_ctx.stringValue("DetectLungNoduleResponse.Data.Series["+ i +"].Report"));
 
 			List<Float> origin = new ArrayList<Float>();
 			for (int j = 0; j < _ctx.lengthValue("DetectLungNoduleResponse.Data.Series["+ i +"].Origin.Length"); j++) {
@@ -53,20 +55,20 @@ public class DetectLungNoduleResponseUnmarshaller {
 			List<Element> elements = new ArrayList<Element>();
 			for (int j = 0; j < _ctx.lengthValue("DetectLungNoduleResponse.Data.Series["+ i +"].Elements.Length"); j++) {
 				Element element = new Element();
-				element.setImageZ(_ctx.floatValue("DetectLungNoduleResponse.Data.Series["+ i +"].Elements["+ j +"].ImageZ"));
-				element.setImageY(_ctx.floatValue("DetectLungNoduleResponse.Data.Series["+ i +"].Elements["+ j +"].ImageY"));
-				element.setImageX(_ctx.floatValue("DetectLungNoduleResponse.Data.Series["+ i +"].Elements["+ j +"].ImageX"));
-				element.setLobe(_ctx.stringValue("DetectLungNoduleResponse.Data.Series["+ i +"].Elements["+ j +"].Lobe"));
-				element.setCategory(_ctx.stringValue("DetectLungNoduleResponse.Data.Series["+ i +"].Elements["+ j +"].Category"));
-				element.setLung(_ctx.stringValue("DetectLungNoduleResponse.Data.Series["+ i +"].Elements["+ j +"].Lung"));
-				element.setMeanValue(_ctx.floatValue("DetectLungNoduleResponse.Data.Series["+ i +"].Elements["+ j +"].MeanValue"));
-				element.setVolume(_ctx.floatValue("DetectLungNoduleResponse.Data.Series["+ i +"].Elements["+ j +"].Volume"));
-				element.setConfidence(_ctx.floatValue("DetectLungNoduleResponse.Data.Series["+ i +"].Elements["+ j +"].Confidence"));
-				element.setX(_ctx.floatValue("DetectLungNoduleResponse.Data.Series["+ i +"].Elements["+ j +"].X"));
-				element.setY(_ctx.floatValue("DetectLungNoduleResponse.Data.Series["+ i +"].Elements["+ j +"].Y"));
 				element.setZ(_ctx.floatValue("DetectLungNoduleResponse.Data.Series["+ i +"].Elements["+ j +"].Z"));
+				element.setLobe(_ctx.stringValue("DetectLungNoduleResponse.Data.Series["+ i +"].Elements["+ j +"].Lobe"));
+				element.setMeanValue(_ctx.floatValue("DetectLungNoduleResponse.Data.Series["+ i +"].Elements["+ j +"].MeanValue"));
+				element.setImageZ(_ctx.floatValue("DetectLungNoduleResponse.Data.Series["+ i +"].Elements["+ j +"].ImageZ"));
+				element.setLung(_ctx.stringValue("DetectLungNoduleResponse.Data.Series["+ i +"].Elements["+ j +"].Lung"));
+				element.setConfidence(_ctx.floatValue("DetectLungNoduleResponse.Data.Series["+ i +"].Elements["+ j +"].Confidence"));
 				element.setSOPInstanceUID(_ctx.stringValue("DetectLungNoduleResponse.Data.Series["+ i +"].Elements["+ j +"].SOPInstanceUID"));
+				element.setImageX(_ctx.floatValue("DetectLungNoduleResponse.Data.Series["+ i +"].Elements["+ j +"].ImageX"));
+				element.setY(_ctx.floatValue("DetectLungNoduleResponse.Data.Series["+ i +"].Elements["+ j +"].Y"));
+				element.setCategory(_ctx.stringValue("DetectLungNoduleResponse.Data.Series["+ i +"].Elements["+ j +"].Category"));
+				element.setVolume(_ctx.floatValue("DetectLungNoduleResponse.Data.Series["+ i +"].Elements["+ j +"].Volume"));
+				element.setImageY(_ctx.floatValue("DetectLungNoduleResponse.Data.Series["+ i +"].Elements["+ j +"].ImageY"));
 				element.setDiameter(_ctx.floatValue("DetectLungNoduleResponse.Data.Series["+ i +"].Elements["+ j +"].Diameter"));
+				element.setX(_ctx.floatValue("DetectLungNoduleResponse.Data.Series["+ i +"].Elements["+ j +"].X"));
 
 				elements.add(element);
 			}

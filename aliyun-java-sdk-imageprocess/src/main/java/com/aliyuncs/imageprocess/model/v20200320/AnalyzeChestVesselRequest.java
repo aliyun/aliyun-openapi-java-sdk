@@ -23,7 +23,7 @@ import com.aliyuncs.imageprocess.Endpoint;
  * @author auto create
  * @version 
  */
-public class CalcCACSRequest extends RpcAcsRequest<CalcCACSResponse> {
+public class AnalyzeChestVesselRequest extends RpcAcsRequest<AnalyzeChestVesselResponse> {
 	   
 
 	private String dataSourceType;
@@ -35,8 +35,8 @@ public class CalcCACSRequest extends RpcAcsRequest<CalcCACSResponse> {
 	private List<URLList> uRLLists;
 
 	private String orgId;
-	public CalcCACSRequest() {
-		super("imageprocess", "2020-03-20", "CalcCACS", "imageprocess");
+	public AnalyzeChestVesselRequest() {
+		super("imageprocess", "2020-03-20", "AnalyzeChestVessel", "imageprocess");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -115,8 +115,8 @@ public class CalcCACSRequest extends RpcAcsRequest<CalcCACSResponse> {
 	}
 
 	@Override
-	public Class<CalcCACSResponse> getResponseClass() {
-		return CalcCACSResponse.class;
+	public Class<AnalyzeChestVesselResponse> getResponseClass() {
+		return AnalyzeChestVesselResponse.class;
 	}
 
 }
