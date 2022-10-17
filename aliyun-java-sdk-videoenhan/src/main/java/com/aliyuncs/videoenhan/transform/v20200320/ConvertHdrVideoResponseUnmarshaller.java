@@ -24,6 +24,8 @@ public class ConvertHdrVideoResponseUnmarshaller {
 	public static ConvertHdrVideoResponse unmarshall(ConvertHdrVideoResponse convertHdrVideoResponse, UnmarshallerContext _ctx) {
 		
 		convertHdrVideoResponse.setRequestId(_ctx.stringValue("ConvertHdrVideoResponse.RequestId"));
+		convertHdrVideoResponse.setCode(_ctx.stringValue("ConvertHdrVideoResponse.Code"));
+		convertHdrVideoResponse.setMessage(_ctx.stringValue("ConvertHdrVideoResponse.Message"));
 
 		Data data = new Data();
 		data.setVideoURL(_ctx.stringValue("ConvertHdrVideoResponse.Data.VideoURL"));

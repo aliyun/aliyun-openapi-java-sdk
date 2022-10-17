@@ -24,6 +24,8 @@ public class EnhanceVideoQualityResponseUnmarshaller {
 	public static EnhanceVideoQualityResponse unmarshall(EnhanceVideoQualityResponse enhanceVideoQualityResponse, UnmarshallerContext _ctx) {
 		
 		enhanceVideoQualityResponse.setRequestId(_ctx.stringValue("EnhanceVideoQualityResponse.RequestId"));
+		enhanceVideoQualityResponse.setCode(_ctx.stringValue("EnhanceVideoQualityResponse.Code"));
+		enhanceVideoQualityResponse.setMessage(_ctx.stringValue("EnhanceVideoQualityResponse.Message"));
 
 		Data data = new Data();
 		data.setVideoURL(_ctx.stringValue("EnhanceVideoQualityResponse.Data.VideoURL"));

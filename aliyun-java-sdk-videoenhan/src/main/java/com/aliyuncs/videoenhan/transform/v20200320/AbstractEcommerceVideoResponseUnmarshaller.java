@@ -24,6 +24,8 @@ public class AbstractEcommerceVideoResponseUnmarshaller {
 	public static AbstractEcommerceVideoResponse unmarshall(AbstractEcommerceVideoResponse abstractEcommerceVideoResponse, UnmarshallerContext _ctx) {
 		
 		abstractEcommerceVideoResponse.setRequestId(_ctx.stringValue("AbstractEcommerceVideoResponse.RequestId"));
+		abstractEcommerceVideoResponse.setCode(_ctx.stringValue("AbstractEcommerceVideoResponse.Code"));
+		abstractEcommerceVideoResponse.setMessage(_ctx.stringValue("AbstractEcommerceVideoResponse.Message"));
 
 		Data data = new Data();
 		data.setVideoCoverUrl(_ctx.stringValue("AbstractEcommerceVideoResponse.Data.VideoCoverUrl"));

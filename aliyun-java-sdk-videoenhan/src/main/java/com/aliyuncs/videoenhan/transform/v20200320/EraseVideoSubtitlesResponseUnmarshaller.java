@@ -24,6 +24,8 @@ public class EraseVideoSubtitlesResponseUnmarshaller {
 	public static EraseVideoSubtitlesResponse unmarshall(EraseVideoSubtitlesResponse eraseVideoSubtitlesResponse, UnmarshallerContext _ctx) {
 		
 		eraseVideoSubtitlesResponse.setRequestId(_ctx.stringValue("EraseVideoSubtitlesResponse.RequestId"));
+		eraseVideoSubtitlesResponse.setCode(_ctx.stringValue("EraseVideoSubtitlesResponse.Code"));
+		eraseVideoSubtitlesResponse.setMessage(_ctx.stringValue("EraseVideoSubtitlesResponse.Message"));
 
 		Data data = new Data();
 		data.setVideoUrl(_ctx.stringValue("EraseVideoSubtitlesResponse.Data.VideoUrl"));

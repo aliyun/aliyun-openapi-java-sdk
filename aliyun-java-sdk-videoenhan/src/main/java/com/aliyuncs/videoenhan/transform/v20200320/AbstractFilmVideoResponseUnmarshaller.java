@@ -24,6 +24,8 @@ public class AbstractFilmVideoResponseUnmarshaller {
 	public static AbstractFilmVideoResponse unmarshall(AbstractFilmVideoResponse abstractFilmVideoResponse, UnmarshallerContext _ctx) {
 		
 		abstractFilmVideoResponse.setRequestId(_ctx.stringValue("AbstractFilmVideoResponse.RequestId"));
+		abstractFilmVideoResponse.setCode(_ctx.stringValue("AbstractFilmVideoResponse.Code"));
+		abstractFilmVideoResponse.setMessage(_ctx.stringValue("AbstractFilmVideoResponse.Message"));
 
 		Data data = new Data();
 		data.setVideoUrl(_ctx.stringValue("AbstractFilmVideoResponse.Data.VideoUrl"));
