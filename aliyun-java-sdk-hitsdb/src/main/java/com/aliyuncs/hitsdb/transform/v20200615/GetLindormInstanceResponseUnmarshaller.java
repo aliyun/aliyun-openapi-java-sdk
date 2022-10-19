@@ -62,6 +62,23 @@ public class GetLindormInstanceResponseUnmarshaller {
 		getLindormInstanceResponse.setMaintainStartTime(_ctx.stringValue("GetLindormInstanceResponse.MaintainStartTime"));
 		getLindormInstanceResponse.setMaintainEndTime(_ctx.stringValue("GetLindormInstanceResponse.MaintainEndTime"));
 		getLindormInstanceResponse.setResourceGroupId(_ctx.stringValue("GetLindormInstanceResponse.ResourceGroupId"));
+		getLindormInstanceResponse.setLocalCloudCategory(_ctx.stringValue("GetLindormInstanceResponse.LocalCloudCategory"));
+		getLindormInstanceResponse.setLocalCloudStorage(_ctx.integerValue("GetLindormInstanceResponse.LocalCloudStorage"));
+		getLindormInstanceResponse.setPrimaryZoneId(_ctx.stringValue("GetLindormInstanceResponse.PrimaryZoneId"));
+		getLindormInstanceResponse.setStandbyZoneId(_ctx.stringValue("GetLindormInstanceResponse.StandbyZoneId"));
+		getLindormInstanceResponse.setArbiterZoneId(_ctx.stringValue("GetLindormInstanceResponse.ArbiterZoneId"));
+		getLindormInstanceResponse.setPrimaryVSwitchId(_ctx.stringValue("GetLindormInstanceResponse.PrimaryVSwitchId"));
+		getLindormInstanceResponse.setStandbyVSwitchId(_ctx.stringValue("GetLindormInstanceResponse.StandbyVSwitchId"));
+		getLindormInstanceResponse.setArbiterVSwitchId(_ctx.stringValue("GetLindormInstanceResponse.ArbiterVSwitchId"));
+		getLindormInstanceResponse.setMultiZoneCombination(_ctx.stringValue("GetLindormInstanceResponse.MultiZoneCombination"));
+		getLindormInstanceResponse.setCoreDiskCategory(_ctx.stringValue("GetLindormInstanceResponse.CoreDiskCategory"));
+		getLindormInstanceResponse.setCoreSpec(_ctx.stringValue("GetLindormInstanceResponse.CoreSpec"));
+		getLindormInstanceResponse.setCoreNum(_ctx.integerValue("GetLindormInstanceResponse.CoreNum"));
+		getLindormInstanceResponse.setCoreSingleStorage(_ctx.integerValue("GetLindormInstanceResponse.CoreSingleStorage"));
+		getLindormInstanceResponse.setLogDiskCategory(_ctx.stringValue("GetLindormInstanceResponse.LogDiskCategory"));
+		getLindormInstanceResponse.setLogSpec(_ctx.stringValue("GetLindormInstanceResponse.LogSpec"));
+		getLindormInstanceResponse.setLogNum(_ctx.integerValue("GetLindormInstanceResponse.LogNum"));
+		getLindormInstanceResponse.setLogSingleStorage(_ctx.integerValue("GetLindormInstanceResponse.LogSingleStorage"));
 
 		List<Engine> engineList = new ArrayList<Engine>();
 		for (int i = 0; i < _ctx.lengthValue("GetLindormInstanceResponse.EngineList.Length"); i++) {

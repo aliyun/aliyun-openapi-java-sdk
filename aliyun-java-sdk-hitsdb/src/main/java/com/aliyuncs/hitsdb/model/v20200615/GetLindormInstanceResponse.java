@@ -97,6 +97,40 @@ public class GetLindormInstanceResponse extends AcsResponse {
 
 	private String resourceGroupId;
 
+	private String localCloudCategory;
+
+	private Integer localCloudStorage;
+
+	private String primaryZoneId;
+
+	private String standbyZoneId;
+
+	private String arbiterZoneId;
+
+	private String primaryVSwitchId;
+
+	private String standbyVSwitchId;
+
+	private String arbiterVSwitchId;
+
+	private String multiZoneCombination;
+
+	private String coreDiskCategory;
+
+	private String coreSpec;
+
+	private Integer coreNum;
+
+	private Integer coreSingleStorage;
+
+	private String logDiskCategory;
+
+	private String logSpec;
+
+	private Integer logNum;
+
+	private Integer logSingleStorage;
+
 	private List<Engine> engineList;
 
 	public String getVpcId() {
@@ -385,6 +419,142 @@ public class GetLindormInstanceResponse extends AcsResponse {
 
 	public void setResourceGroupId(String resourceGroupId) {
 		this.resourceGroupId = resourceGroupId;
+	}
+
+	public String getLocalCloudCategory() {
+		return this.localCloudCategory;
+	}
+
+	public void setLocalCloudCategory(String localCloudCategory) {
+		this.localCloudCategory = localCloudCategory;
+	}
+
+	public Integer getLocalCloudStorage() {
+		return this.localCloudStorage;
+	}
+
+	public void setLocalCloudStorage(Integer localCloudStorage) {
+		this.localCloudStorage = localCloudStorage;
+	}
+
+	public String getPrimaryZoneId() {
+		return this.primaryZoneId;
+	}
+
+	public void setPrimaryZoneId(String primaryZoneId) {
+		this.primaryZoneId = primaryZoneId;
+	}
+
+	public String getStandbyZoneId() {
+		return this.standbyZoneId;
+	}
+
+	public void setStandbyZoneId(String standbyZoneId) {
+		this.standbyZoneId = standbyZoneId;
+	}
+
+	public String getArbiterZoneId() {
+		return this.arbiterZoneId;
+	}
+
+	public void setArbiterZoneId(String arbiterZoneId) {
+		this.arbiterZoneId = arbiterZoneId;
+	}
+
+	public String getPrimaryVSwitchId() {
+		return this.primaryVSwitchId;
+	}
+
+	public void setPrimaryVSwitchId(String primaryVSwitchId) {
+		this.primaryVSwitchId = primaryVSwitchId;
+	}
+
+	public String getStandbyVSwitchId() {
+		return this.standbyVSwitchId;
+	}
+
+	public void setStandbyVSwitchId(String standbyVSwitchId) {
+		this.standbyVSwitchId = standbyVSwitchId;
+	}
+
+	public String getArbiterVSwitchId() {
+		return this.arbiterVSwitchId;
+	}
+
+	public void setArbiterVSwitchId(String arbiterVSwitchId) {
+		this.arbiterVSwitchId = arbiterVSwitchId;
+	}
+
+	public String getMultiZoneCombination() {
+		return this.multiZoneCombination;
+	}
+
+	public void setMultiZoneCombination(String multiZoneCombination) {
+		this.multiZoneCombination = multiZoneCombination;
+	}
+
+	public String getCoreDiskCategory() {
+		return this.coreDiskCategory;
+	}
+
+	public void setCoreDiskCategory(String coreDiskCategory) {
+		this.coreDiskCategory = coreDiskCategory;
+	}
+
+	public String getCoreSpec() {
+		return this.coreSpec;
+	}
+
+	public void setCoreSpec(String coreSpec) {
+		this.coreSpec = coreSpec;
+	}
+
+	public Integer getCoreNum() {
+		return this.coreNum;
+	}
+
+	public void setCoreNum(Integer coreNum) {
+		this.coreNum = coreNum;
+	}
+
+	public Integer getCoreSingleStorage() {
+		return this.coreSingleStorage;
+	}
+
+	public void setCoreSingleStorage(Integer coreSingleStorage) {
+		this.coreSingleStorage = coreSingleStorage;
+	}
+
+	public String getLogDiskCategory() {
+		return this.logDiskCategory;
+	}
+
+	public void setLogDiskCategory(String logDiskCategory) {
+		this.logDiskCategory = logDiskCategory;
+	}
+
+	public String getLogSpec() {
+		return this.logSpec;
+	}
+
+	public void setLogSpec(String logSpec) {
+		this.logSpec = logSpec;
+	}
+
+	public Integer getLogNum() {
+		return this.logNum;
+	}
+
+	public void setLogNum(Integer logNum) {
+		this.logNum = logNum;
+	}
+
+	public Integer getLogSingleStorage() {
+		return this.logSingleStorage;
+	}
+
+	public void setLogSingleStorage(Integer logSingleStorage) {
+		this.logSingleStorage = logSingleStorage;
 	}
 
 	public List<Engine> getEngineList() {
