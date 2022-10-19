@@ -15,7 +15,6 @@
 package com.aliyuncs.workorder.model.v20210610;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.workorder.Endpoint;
 
@@ -23,23 +22,34 @@ import com.aliyuncs.workorder.Endpoint;
  * @author auto create
  * @version 
  */
-public class ReplyTicketRequest extends RpcAcsRequest<ReplyTicketResponse> {
+public class EvaluateTicketRequest extends RpcAcsRequest<EvaluateTicketResponse> {
 	   
+
+	private Boolean solved;
 
 	private String content;
 
-	private List<String> fileNameList;
-
-	private Boolean encrypt;
+	private String score;
 
 	private String ticketId;
-	public ReplyTicketRequest() {
-		super("Workorder", "2021-06-10", "ReplyTicket");
+	public EvaluateTicketRequest() {
+		super("Workorder", "2021-06-10", "EvaluateTicket");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Boolean getSolved() {
+		return this.solved;
+	}
+
+	public void setSolved(Boolean solved) {
+		this.solved = solved;
+		if(solved != null){
+			putBodyParameter("Solved", solved.toString());
+		}
 	}
 
 	public String getContent() {
@@ -53,32 +63,14 @@ public class ReplyTicketRequest extends RpcAcsRequest<ReplyTicketResponse> {
 		}
 	}
 
-	public List<String> getFileNameList() {
-		return this.fileNameList;
+	public String getScore() {
+		return this.score;
 	}
 
-	public void setFileNameList(List<String> fileNameList) {
-		this.fileNameList = fileNameList;	
-		if (fileNameList != null) {
-			String fileNameListArrVal = "";
-			for(int depth1 = 0; depth1 < fileNameList.size(); depth1++) {
-				fileNameListArrVal += fileNameList.get(depth1) + ",";
-			}
-			if (fileNameListArrVal.length() > 0) {
-				fileNameListArrVal = fileNameListArrVal.substring(0, fileNameListArrVal.length() - 1);
-			}
-			putQueryParameter("FileNameList" , fileNameListArrVal);
-		}	
-	}
-
-	public Boolean getEncrypt() {
-		return this.encrypt;
-	}
-
-	public void setEncrypt(Boolean encrypt) {
-		this.encrypt = encrypt;
-		if(encrypt != null){
-			putBodyParameter("Encrypt", encrypt.toString());
+	public void setScore(String score) {
+		this.score = score;
+		if(score != null){
+			putBodyParameter("Score", score);
 		}
 	}
 
@@ -94,8 +86,8 @@ public class ReplyTicketRequest extends RpcAcsRequest<ReplyTicketResponse> {
 	}
 
 	@Override
-	public Class<ReplyTicketResponse> getResponseClass() {
-		return ReplyTicketResponse.class;
+	public Class<EvaluateTicketResponse> getResponseClass() {
+		return EvaluateTicketResponse.class;
 	}
 
 }

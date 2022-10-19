@@ -34,8 +34,8 @@ public class ListCategoriesResponseUnmarshaller {
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListCategoriesResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setCategoryId(_ctx.longValue("ListCategoriesResponse.Data["+ i +"].CategoryId"));
 			dataItem.setCategoryName(_ctx.stringValue("ListCategoriesResponse.Data["+ i +"].CategoryName"));
+			dataItem.setCategoryId(_ctx.longValue("ListCategoriesResponse.Data["+ i +"].CategoryId"));
 
 			data.add(dataItem);
 		}

@@ -22,16 +22,12 @@ import com.aliyuncs.workorder.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListCategoriesRequest extends RpcAcsRequest<ListCategoriesResponse> {
+public class GetTicketRequest extends RpcAcsRequest<GetTicketResponse> {
 	   
 
-	private Long productId;
-
-	private String language;
-
-	private String name;
-	public ListCategoriesRequest() {
-		super("Workorder", "2021-06-10", "ListCategories");
+	private String ticketId;
+	public GetTicketRequest() {
+		super("Workorder", "2021-06-10", "GetTicket");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,42 +35,20 @@ public class ListCategoriesRequest extends RpcAcsRequest<ListCategoriesResponse>
 		} catch (Exception e) {}
 	}
 
-	public Long getProductId() {
-		return this.productId;
+	public String getTicketId() {
+		return this.ticketId;
 	}
 
-	public void setProductId(Long productId) {
-		this.productId = productId;
-		if(productId != null){
-			putBodyParameter("ProductId", productId.toString());
-		}
-	}
-
-	public String getLanguage() {
-		return this.language;
-	}
-
-	public void setLanguage(String language) {
-		this.language = language;
-		if(language != null){
-			putQueryParameter("Language", language);
-		}
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putBodyParameter("Name", name);
+	public void setTicketId(String ticketId) {
+		this.ticketId = ticketId;
+		if(ticketId != null){
+			putBodyParameter("TicketId", ticketId);
 		}
 	}
 
 	@Override
-	public Class<ListCategoriesResponse> getResponseClass() {
-		return ListCategoriesResponse.class;
+	public Class<GetTicketResponse> getResponseClass() {
+		return GetTicketResponse.class;
 	}
 
 }

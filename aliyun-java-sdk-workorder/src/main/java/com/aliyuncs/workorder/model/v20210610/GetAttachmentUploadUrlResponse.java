@@ -15,24 +15,24 @@
 package com.aliyuncs.workorder.model.v20210610;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.workorder.transform.v20210610.CreateTicketResponseUnmarshaller;
+import com.aliyuncs.workorder.transform.v20210610.GetAttachmentUploadUrlResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateTicketResponse extends AcsResponse {
+public class GetAttachmentUploadUrlResponse extends AcsResponse {
 
 	private Integer code;
 
 	private String message;
 
-	private String data;
-
 	private String requestId;
 
 	private Boolean success;
+
+	private Data data;
 
 	public Integer getCode() {
 		return this.code;
@@ -48,14 +48,6 @@ public class CreateTicketResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
-	}
-
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
 	}
 
 	public String getRequestId() {
@@ -74,9 +66,50 @@ public class CreateTicketResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public Data getData() {
+		return this.data;
+	}
+
+	public void setData(Data data) {
+		this.data = data;
+	}
+
+	public static class Data {
+
+		private String objectKey;
+
+		private String putSignedUrl;
+
+		private String getSignedUrl;
+
+		public String getObjectKey() {
+			return this.objectKey;
+		}
+
+		public void setObjectKey(String objectKey) {
+			this.objectKey = objectKey;
+		}
+
+		public String getPutSignedUrl() {
+			return this.putSignedUrl;
+		}
+
+		public void setPutSignedUrl(String putSignedUrl) {
+			this.putSignedUrl = putSignedUrl;
+		}
+
+		public String getGetSignedUrl() {
+			return this.getSignedUrl;
+		}
+
+		public void setGetSignedUrl(String getSignedUrl) {
+			this.getSignedUrl = getSignedUrl;
+		}
+	}
+
 	@Override
-	public CreateTicketResponse getInstance(UnmarshallerContext context) {
-		return	CreateTicketResponseUnmarshaller.unmarshall(this, context);
+	public GetAttachmentUploadUrlResponse getInstance(UnmarshallerContext context) {
+		return	GetAttachmentUploadUrlResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

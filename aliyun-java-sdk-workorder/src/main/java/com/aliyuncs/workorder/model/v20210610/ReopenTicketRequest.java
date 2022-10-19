@@ -15,7 +15,6 @@
 package com.aliyuncs.workorder.model.v20210610;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.workorder.Endpoint;
 
@@ -23,18 +22,14 @@ import com.aliyuncs.workorder.Endpoint;
  * @author auto create
  * @version 
  */
-public class ReplyTicketRequest extends RpcAcsRequest<ReplyTicketResponse> {
+public class ReopenTicketRequest extends RpcAcsRequest<ReopenTicketResponse> {
 	   
 
 	private String content;
 
-	private List<String> fileNameList;
-
-	private Boolean encrypt;
-
 	private String ticketId;
-	public ReplyTicketRequest() {
-		super("Workorder", "2021-06-10", "ReplyTicket");
+	public ReopenTicketRequest() {
+		super("Workorder", "2021-06-10", "ReopenTicket");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -53,35 +48,6 @@ public class ReplyTicketRequest extends RpcAcsRequest<ReplyTicketResponse> {
 		}
 	}
 
-	public List<String> getFileNameList() {
-		return this.fileNameList;
-	}
-
-	public void setFileNameList(List<String> fileNameList) {
-		this.fileNameList = fileNameList;	
-		if (fileNameList != null) {
-			String fileNameListArrVal = "";
-			for(int depth1 = 0; depth1 < fileNameList.size(); depth1++) {
-				fileNameListArrVal += fileNameList.get(depth1) + ",";
-			}
-			if (fileNameListArrVal.length() > 0) {
-				fileNameListArrVal = fileNameListArrVal.substring(0, fileNameListArrVal.length() - 1);
-			}
-			putQueryParameter("FileNameList" , fileNameListArrVal);
-		}	
-	}
-
-	public Boolean getEncrypt() {
-		return this.encrypt;
-	}
-
-	public void setEncrypt(Boolean encrypt) {
-		this.encrypt = encrypt;
-		if(encrypt != null){
-			putBodyParameter("Encrypt", encrypt.toString());
-		}
-	}
-
 	public String getTicketId() {
 		return this.ticketId;
 	}
@@ -94,8 +60,8 @@ public class ReplyTicketRequest extends RpcAcsRequest<ReplyTicketResponse> {
 	}
 
 	@Override
-	public Class<ReplyTicketResponse> getResponseClass() {
-		return ReplyTicketResponse.class;
+	public Class<ReopenTicketResponse> getResponseClass() {
+		return ReopenTicketResponse.class;
 	}
 
 }

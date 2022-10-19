@@ -14,16 +14,15 @@
 
 package com.aliyuncs.workorder.model.v20210610;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.workorder.transform.v20210610.ListTicketsResponseUnmarshaller;
+import com.aliyuncs.workorder.transform.v20210610.GetTicketResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListTicketsResponse extends AcsResponse {
+public class GetTicketResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -39,7 +38,7 @@ public class ListTicketsResponse extends AcsResponse {
 
 	private Long totalCount;
 
-	private List<DataItem> data;
+	private Data data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -97,21 +96,31 @@ public class ListTicketsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public List<DataItem> getData() {
+	public Data getData() {
 		return this.data;
 	}
 
-	public void setData(List<DataItem> data) {
+	public void setData(Data data) {
 		this.data = data;
 	}
 
-	public static class DataItem {
+	public static class Data {
 
 		private String ticketId;
 
 		private String title;
 
+		private String description;
+
+		private Long createTime;
+
+		private String creatorId;
+
+		private String categoryId;
+
 		private Status status;
+
+		private Severity severity;
 
 		public String getTicketId() {
 			return this.ticketId;
@@ -129,12 +138,52 @@ public class ListTicketsResponse extends AcsResponse {
 			this.title = title;
 		}
 
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getCreatorId() {
+			return this.creatorId;
+		}
+
+		public void setCreatorId(String creatorId) {
+			this.creatorId = creatorId;
+		}
+
+		public String getCategoryId() {
+			return this.categoryId;
+		}
+
+		public void setCategoryId(String categoryId) {
+			this.categoryId = categoryId;
+		}
+
 		public Status getStatus() {
 			return this.status;
 		}
 
 		public void setStatus(Status status) {
 			this.status = status;
+		}
+
+		public Severity getSeverity() {
+			return this.severity;
+		}
+
+		public void setSeverity(Severity severity) {
+			this.severity = severity;
 		}
 
 		public static class Status {
@@ -159,11 +208,34 @@ public class ListTicketsResponse extends AcsResponse {
 				this.value = value;
 			}
 		}
+
+		public static class Severity {
+
+			private String label;
+
+			private String value;
+
+			public String getLabel() {
+				return this.label;
+			}
+
+			public void setLabel(String label) {
+				this.label = label;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
+		}
 	}
 
 	@Override
-	public ListTicketsResponse getInstance(UnmarshallerContext context) {
-		return	ListTicketsResponseUnmarshaller.unmarshall(this, context);
+	public GetTicketResponse getInstance(UnmarshallerContext context) {
+		return	GetTicketResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

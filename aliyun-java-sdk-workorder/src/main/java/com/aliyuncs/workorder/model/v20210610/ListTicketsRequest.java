@@ -32,6 +32,8 @@ public class ListTicketsRequest extends RpcAcsRequest<ListTicketsResponse> {
 
 	private Integer pageNumber;
 
+	private List<String> ticketIdList;
+
 	private Long endDate;
 
 	private Integer pageSize;
@@ -81,6 +83,24 @@ public class ListTicketsRequest extends RpcAcsRequest<ListTicketsResponse> {
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
 		}
+	}
+
+	public List<String> getTicketIdList() {
+		return this.ticketIdList;
+	}
+
+	public void setTicketIdList(List<String> ticketIdList) {
+		this.ticketIdList = ticketIdList;	
+		if (ticketIdList != null) {
+			String ticketIdListArrVal = "";
+			for(int depth1 = 0; depth1 < ticketIdList.size(); depth1++) {
+				ticketIdListArrVal += ticketIdList.get(depth1) + ",";
+			}
+			if (ticketIdListArrVal.length() > 0) {
+				ticketIdListArrVal = ticketIdListArrVal.substring(0, ticketIdListArrVal.length() - 1);
+			}
+			putBodyParameter("TicketIdList" , ticketIdListArrVal);
+		}	
 	}
 
 	public Long getEndDate() {

@@ -27,9 +27,9 @@ public class ListCategoriesResponse extends AcsResponse {
 
 	private Integer code;
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private Boolean success;
 
@@ -43,20 +43,20 @@ public class ListCategoriesResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Boolean getSuccess() {
@@ -77,17 +77,9 @@ public class ListCategoriesResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private Long categoryId;
-
 		private String categoryName;
 
-		public Long getCategoryId() {
-			return this.categoryId;
-		}
-
-		public void setCategoryId(Long categoryId) {
-			this.categoryId = categoryId;
-		}
+		private Long categoryId;
 
 		public String getCategoryName() {
 			return this.categoryName;
@@ -95,6 +87,14 @@ public class ListCategoriesResponse extends AcsResponse {
 
 		public void setCategoryName(String categoryName) {
 			this.categoryName = categoryName;
+		}
+
+		public Long getCategoryId() {
+			return this.categoryId;
+		}
+
+		public void setCategoryId(Long categoryId) {
+			this.categoryId = categoryId;
 		}
 	}
 

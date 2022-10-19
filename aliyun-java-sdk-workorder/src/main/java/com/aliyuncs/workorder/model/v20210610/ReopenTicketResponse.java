@@ -15,14 +15,14 @@
 package com.aliyuncs.workorder.model.v20210610;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.workorder.transform.v20210610.CreateTicketResponseUnmarshaller;
+import com.aliyuncs.workorder.transform.v20210610.ReopenTicketResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateTicketResponse extends AcsResponse {
+public class ReopenTicketResponse extends AcsResponse {
 
 	private Integer code;
 
@@ -75,8 +75,8 @@ public class CreateTicketResponse extends AcsResponse {
 	}
 
 	@Override
-	public CreateTicketResponse getInstance(UnmarshallerContext context) {
-		return	CreateTicketResponseUnmarshaller.unmarshall(this, context);
+	public ReopenTicketResponse getInstance(UnmarshallerContext context) {
+		return	ReopenTicketResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

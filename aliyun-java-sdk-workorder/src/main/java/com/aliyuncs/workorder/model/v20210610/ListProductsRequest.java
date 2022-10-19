@@ -25,6 +25,8 @@ import com.aliyuncs.workorder.Endpoint;
 public class ListProductsRequest extends RpcAcsRequest<ListProductsResponse> {
 	   
 
+	private String language;
+
 	private String name;
 	public ListProductsRequest() {
 		super("Workorder", "2021-06-10", "ListProducts");
@@ -33,6 +35,17 @@ public class ListProductsRequest extends RpcAcsRequest<ListProductsResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getLanguage() {
+		return this.language;
+	}
+
+	public void setLanguage(String language) {
+		this.language = language;
+		if(language != null){
+			putQueryParameter("Language", language);
+		}
 	}
 
 	public String getName() {

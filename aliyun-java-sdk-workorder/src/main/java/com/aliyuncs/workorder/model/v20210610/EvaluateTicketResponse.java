@@ -15,20 +15,18 @@
 package com.aliyuncs.workorder.model.v20210610;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.workorder.transform.v20210610.CreateTicketResponseUnmarshaller;
+import com.aliyuncs.workorder.transform.v20210610.EvaluateTicketResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateTicketResponse extends AcsResponse {
+public class EvaluateTicketResponse extends AcsResponse {
 
 	private Integer code;
 
 	private String message;
-
-	private String data;
 
 	private String requestId;
 
@@ -50,14 +48,6 @@ public class CreateTicketResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -75,8 +65,8 @@ public class CreateTicketResponse extends AcsResponse {
 	}
 
 	@Override
-	public CreateTicketResponse getInstance(UnmarshallerContext context) {
-		return	CreateTicketResponseUnmarshaller.unmarshall(this, context);
+	public EvaluateTicketResponse getInstance(UnmarshallerContext context) {
+		return	EvaluateTicketResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
