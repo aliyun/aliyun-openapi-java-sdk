@@ -33,6 +33,7 @@ public class ListDelegatedServicesForAccountResponseUnmarshaller {
 			DelegatedService delegatedService = new DelegatedService();
 			delegatedService.setDelegationEnabledTime(_ctx.stringValue("ListDelegatedServicesForAccountResponse.DelegatedServices["+ i +"].DelegationEnabledTime"));
 			delegatedService.setServicePrincipal(_ctx.stringValue("ListDelegatedServicesForAccountResponse.DelegatedServices["+ i +"].ServicePrincipal"));
+			delegatedService.setStatus(_ctx.stringValue("ListDelegatedServicesForAccountResponse.DelegatedServices["+ i +"].Status"));
 
 			delegatedServices.add(delegatedService);
 		}
