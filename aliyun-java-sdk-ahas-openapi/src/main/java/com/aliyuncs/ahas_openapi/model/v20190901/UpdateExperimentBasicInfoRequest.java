@@ -37,6 +37,8 @@ public class UpdateExperimentBasicInfoRequest extends RpcAcsRequest<UpdateExperi
 	private String name;
 
 	private String experimentId;
+
+	private List<String> workspacess;
 	public UpdateExperimentBasicInfoRequest() {
 		super("ahas-openapi", "2019-09-01", "UpdateExperimentBasicInfo", "ahas");
 		setMethod(MethodType.POST);
@@ -112,6 +114,19 @@ public class UpdateExperimentBasicInfoRequest extends RpcAcsRequest<UpdateExperi
 		if(experimentId != null){
 			putQueryParameter("ExperimentId", experimentId);
 		}
+	}
+
+	public List<String> getWorkspacess() {
+		return this.workspacess;
+	}
+
+	public void setWorkspacess(List<String> workspacess) {
+		this.workspacess = workspacess;	
+		if (workspacess != null) {
+			for (int i = 0; i < workspacess.size(); i++) {
+				putQueryParameter("Workspaces." + (i + 1) , workspacess.get(i));
+			}
+		}	
 	}
 
 	@Override
