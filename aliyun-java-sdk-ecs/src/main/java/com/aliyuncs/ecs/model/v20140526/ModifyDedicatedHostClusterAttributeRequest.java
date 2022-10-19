@@ -39,7 +39,7 @@ public class ModifyDedicatedHostClusterAttributeRequest extends RpcAcsRequest<Mo
 
 	private Long ownerId;
 	public ModifyDedicatedHostClusterAttributeRequest() {
-		super("Ecs", "2014-05-26", "ModifyDedicatedHostClusterAttribute", "ecs");
+		super("Ecs", "2014-05-26", "ModifyDedicatedHostClusterAttribute");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,7 +35,7 @@ public class DeleteImageComponentRequest extends RpcAcsRequest<DeleteImageCompon
 
 	private Long ownerId;
 	public DeleteImageComponentRequest() {
-		super("Ecs", "2014-05-26", "DeleteImageComponent", "ecs");
+		super("Ecs", "2014-05-26", "DeleteImageComponent");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

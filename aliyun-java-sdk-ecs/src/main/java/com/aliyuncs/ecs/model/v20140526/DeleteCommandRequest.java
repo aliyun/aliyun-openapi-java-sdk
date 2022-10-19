@@ -35,7 +35,7 @@ public class DeleteCommandRequest extends RpcAcsRequest<DeleteCommandResponse> {
 
 	private Long ownerId;
 	public DeleteCommandRequest() {
-		super("Ecs", "2014-05-26", "DeleteCommand", "ecs");
+		super("Ecs", "2014-05-26", "DeleteCommand");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -41,7 +41,7 @@ public class DescribeBandwidthPackagesRequest extends RpcAcsRequest<DescribeBand
 
 	private Long ownerId;
 	public DescribeBandwidthPackagesRequest() {
-		super("Ecs", "2014-05-26", "DescribeBandwidthPackages", "ecs");
+		super("Ecs", "2014-05-26", "DescribeBandwidthPackages");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

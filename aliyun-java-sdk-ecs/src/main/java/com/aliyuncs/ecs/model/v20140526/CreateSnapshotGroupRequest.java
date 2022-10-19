@@ -38,6 +38,8 @@ public class CreateSnapshotGroupRequest extends RpcAcsRequest<CreateSnapshotGrou
 
 	private Integer instantAccessRetentionDays;
 
+	private String storageLocationArn;
+
 	private List<String> diskIds;
 
 	private List<Tag> tags;
@@ -52,7 +54,7 @@ public class CreateSnapshotGroupRequest extends RpcAcsRequest<CreateSnapshotGrou
 
 	private String name;
 	public CreateSnapshotGroupRequest() {
-		super("Ecs", "2014-05-26", "CreateSnapshotGroup", "ecs");
+		super("Ecs", "2014-05-26", "CreateSnapshotGroup");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -125,6 +127,17 @@ public class CreateSnapshotGroupRequest extends RpcAcsRequest<CreateSnapshotGrou
 		this.instantAccessRetentionDays = instantAccessRetentionDays;
 		if(instantAccessRetentionDays != null){
 			putQueryParameter("InstantAccessRetentionDays", instantAccessRetentionDays.toString());
+		}
+	}
+
+	public String getStorageLocationArn() {
+		return this.storageLocationArn;
+	}
+
+	public void setStorageLocationArn(String storageLocationArn) {
+		this.storageLocationArn = storageLocationArn;
+		if(storageLocationArn != null){
+			putQueryParameter("StorageLocationArn", storageLocationArn);
 		}
 	}
 

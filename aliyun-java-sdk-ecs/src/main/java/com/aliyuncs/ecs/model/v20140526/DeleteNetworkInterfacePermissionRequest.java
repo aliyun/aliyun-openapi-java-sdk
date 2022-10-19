@@ -37,7 +37,7 @@ public class DeleteNetworkInterfacePermissionRequest extends RpcAcsRequest<Delet
 
 	private Boolean force;
 	public DeleteNetworkInterfacePermissionRequest() {
-		super("Ecs", "2014-05-26", "DeleteNetworkInterfacePermission", "ecs");
+		super("Ecs", "2014-05-26", "DeleteNetworkInterfacePermission");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

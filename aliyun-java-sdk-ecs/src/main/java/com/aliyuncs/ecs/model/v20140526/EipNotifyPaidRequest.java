@@ -39,7 +39,7 @@ public class EipNotifyPaidRequest extends RpcAcsRequest<EipNotifyPaidResponse> {
 
 	private Long ownerId;
 	public EipNotifyPaidRequest() {
-		super("Ecs", "2014-05-26", "EipNotifyPaid", "ecs");
+		super("Ecs", "2014-05-26", "EipNotifyPaid");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -37,7 +37,7 @@ public class GetInstanceConsoleOutputRequest extends RpcAcsRequest<GetInstanceCo
 
 	private String instanceId;
 	public GetInstanceConsoleOutputRequest() {
-		super("Ecs", "2014-05-26", "GetInstanceConsoleOutput", "ecs");
+		super("Ecs", "2014-05-26", "GetInstanceConsoleOutput");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -44,7 +44,7 @@ public class ModifyPrefixListRequest extends RpcAcsRequest<ModifyPrefixListRespo
 
 	private List<RemoveEntry> removeEntrys;
 	public ModifyPrefixListRequest() {
-		super("Ecs", "2014-05-26", "ModifyPrefixList", "ecs");
+		super("Ecs", "2014-05-26", "ModifyPrefixList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

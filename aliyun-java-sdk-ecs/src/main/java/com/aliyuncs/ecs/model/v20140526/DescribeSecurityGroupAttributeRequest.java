@@ -39,7 +39,7 @@ public class DescribeSecurityGroupAttributeRequest extends RpcAcsRequest<Describ
 
 	private Long ownerId;
 	public DescribeSecurityGroupAttributeRequest() {
-		super("Ecs", "2014-05-26", "DescribeSecurityGroupAttribute", "ecs");
+		super("Ecs", "2014-05-26", "DescribeSecurityGroupAttribute");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

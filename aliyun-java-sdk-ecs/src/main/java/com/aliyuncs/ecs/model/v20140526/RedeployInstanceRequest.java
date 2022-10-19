@@ -37,7 +37,7 @@ public class RedeployInstanceRequest extends RpcAcsRequest<RedeployInstanceRespo
 
 	private String instanceId;
 	public RedeployInstanceRequest() {
-		super("Ecs", "2014-05-26", "RedeployInstance", "ecs");
+		super("Ecs", "2014-05-26", "RedeployInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

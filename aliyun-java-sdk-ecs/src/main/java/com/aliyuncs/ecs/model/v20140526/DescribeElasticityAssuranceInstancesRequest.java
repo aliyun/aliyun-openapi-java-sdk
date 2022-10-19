@@ -39,7 +39,7 @@ public class DescribeElasticityAssuranceInstancesRequest extends RpcAcsRequest<D
 
 	private Integer maxResults;
 	public DescribeElasticityAssuranceInstancesRequest() {
-		super("Ecs", "2014-05-26", "DescribeElasticityAssuranceInstances", "ecs");
+		super("Ecs", "2014-05-26", "DescribeElasticityAssuranceInstances");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

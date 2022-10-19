@@ -35,7 +35,7 @@ public class StartElasticityAssuranceRequest extends RpcAcsRequest<StartElastici
 
 	private Long ownerId;
 	public StartElasticityAssuranceRequest() {
-		super("Ecs", "2014-05-26", "StartElasticityAssurance", "ecs");
+		super("Ecs", "2014-05-26", "StartElasticityAssurance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

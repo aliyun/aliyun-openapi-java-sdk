@@ -55,7 +55,7 @@ public class CreateDemandRequest extends RpcAcsRequest<CreateDemandResponse> {
 
 	private String zoneId;
 	public CreateDemandRequest() {
-		super("Ecs", "2014-05-26", "CreateDemand", "ecs");
+		super("Ecs", "2014-05-26", "CreateDemand");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -37,7 +37,7 @@ public class ReleaseCapacityReservationRequest extends RpcAcsRequest<ReleaseCapa
 
 	private Long ownerId;
 	public ReleaseCapacityReservationRequest() {
-		super("Ecs", "2014-05-26", "ReleaseCapacityReservation", "ecs");
+		super("Ecs", "2014-05-26", "ReleaseCapacityReservation");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

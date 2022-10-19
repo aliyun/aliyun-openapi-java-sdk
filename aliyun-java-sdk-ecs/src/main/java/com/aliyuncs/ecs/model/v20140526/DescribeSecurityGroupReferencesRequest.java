@@ -36,7 +36,7 @@ public class DescribeSecurityGroupReferencesRequest extends RpcAcsRequest<Descri
 
 	private Long ownerId;
 	public DescribeSecurityGroupReferencesRequest() {
-		super("Ecs", "2014-05-26", "DescribeSecurityGroupReferences", "ecs");
+		super("Ecs", "2014-05-26", "DescribeSecurityGroupReferences");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

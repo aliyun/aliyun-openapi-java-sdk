@@ -33,7 +33,7 @@ public class DescribeInstanceTopologyRequest extends RpcAcsRequest<DescribeInsta
 
 	private String instanceIds;
 	public DescribeInstanceTopologyRequest() {
-		super("Ecs", "2014-05-26", "DescribeInstanceTopology", "ecs");
+		super("Ecs", "2014-05-26", "DescribeInstanceTopology");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
