@@ -15,20 +15,20 @@
 package com.aliyuncs.dytnsapi.model.v20200217;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.dytnsapi.transform.v20200217.DescribePhoneNumberOnlineTimeResponseUnmarshaller;
+import com.aliyuncs.dytnsapi.transform.v20200217.PhoneNumberStatusForPublicResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribePhoneNumberOnlineTimeResponse extends AcsResponse {
+public class PhoneNumberStatusForPublicResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String code;
-
 	private String message;
+
+	private String code;
 
 	private Data data;
 
@@ -40,20 +40,20 @@ public class DescribePhoneNumberOnlineTimeResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Data getData() {
@@ -66,30 +66,30 @@ public class DescribePhoneNumberOnlineTimeResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String verifyResult;
+		private String status;
 
-		private String carrierCode;
+		private String carrier;
 
-		public String getVerifyResult() {
-			return this.verifyResult;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setVerifyResult(String verifyResult) {
-			this.verifyResult = verifyResult;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
-		public String getCarrierCode() {
-			return this.carrierCode;
+		public String getCarrier() {
+			return this.carrier;
 		}
 
-		public void setCarrierCode(String carrierCode) {
-			this.carrierCode = carrierCode;
+		public void setCarrier(String carrier) {
+			this.carrier = carrier;
 		}
 	}
 
 	@Override
-	public DescribePhoneNumberOnlineTimeResponse getInstance(UnmarshallerContext context) {
-		return	DescribePhoneNumberOnlineTimeResponseUnmarshaller.unmarshall(this, context);
+	public PhoneNumberStatusForPublicResponse getInstance(UnmarshallerContext context) {
+		return	PhoneNumberStatusForPublicResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
