@@ -24,12 +24,25 @@ import com.aliyuncs.http.MethodType;
 public class DeleteRuleRequest extends RpcAcsRequest<DeleteRuleResponse> {
 	   
 
+	private Integer isSchemeData;
+
 	private Boolean forceDelete;
 
 	private Long ruleId;
 	public DeleteRuleRequest() {
 		super("Qualitycheck", "2019-01-15", "DeleteRule");
 		setMethod(MethodType.POST);
+	}
+
+	public Integer getIsSchemeData() {
+		return this.isSchemeData;
+	}
+
+	public void setIsSchemeData(Integer isSchemeData) {
+		this.isSchemeData = isSchemeData;
+		if(isSchemeData != null){
+			putBodyParameter("IsSchemeData", isSchemeData.toString());
+		}
 	}
 
 	public Boolean getForceDelete() {
