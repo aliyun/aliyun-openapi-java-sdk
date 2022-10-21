@@ -39,7 +39,7 @@ public class ListTransitRouterVpnAttachmentsResponseUnmarshaller {
 			transitRouterAttachment.setStatus(_ctx.stringValue("ListTransitRouterVpnAttachmentsResponse.TransitRouterAttachments["+ i +"].Status"));
 			transitRouterAttachment.setTransitRouterAttachmentId(_ctx.stringValue("ListTransitRouterVpnAttachmentsResponse.TransitRouterAttachments["+ i +"].TransitRouterAttachmentId"));
 			transitRouterAttachment.setTransitRouterId(_ctx.stringValue("ListTransitRouterVpnAttachmentsResponse.TransitRouterAttachments["+ i +"].TransitRouterId"));
-			transitRouterAttachment.setResourceType(_ctx.integerValue("ListTransitRouterVpnAttachmentsResponse.TransitRouterAttachments["+ i +"].ResourceType"));
+			transitRouterAttachment.setResourceType(_ctx.stringValue("ListTransitRouterVpnAttachmentsResponse.TransitRouterAttachments["+ i +"].ResourceType"));
 			transitRouterAttachment.setVpnOwnerId(_ctx.longValue("ListTransitRouterVpnAttachmentsResponse.TransitRouterAttachments["+ i +"].VpnOwnerId"));
 			transitRouterAttachment.setVpnId(_ctx.stringValue("ListTransitRouterVpnAttachmentsResponse.TransitRouterAttachments["+ i +"].VpnId"));
 			transitRouterAttachment.setTransitRouterAttachmentDescription(_ctx.stringValue("ListTransitRouterVpnAttachmentsResponse.TransitRouterAttachments["+ i +"].TransitRouterAttachmentDescription"));

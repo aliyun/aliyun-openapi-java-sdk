@@ -103,6 +103,8 @@ public class ListTransitRouterMulticastGroupsResponse extends AcsResponse {
 
 		private String resourceId;
 
+		private String connectPeerId;
+
 		public String getGroupIpAddress() {
 			return this.groupIpAddress;
 		}
@@ -205,6 +207,14 @@ public class ListTransitRouterMulticastGroupsResponse extends AcsResponse {
 
 		public void setResourceId(String resourceId) {
 			this.resourceId = resourceId;
+		}
+
+		public String getConnectPeerId() {
+			return this.connectPeerId;
+		}
+
+		public void setConnectPeerId(String connectPeerId) {
+			this.connectPeerId = connectPeerId;
 		}
 	}
 

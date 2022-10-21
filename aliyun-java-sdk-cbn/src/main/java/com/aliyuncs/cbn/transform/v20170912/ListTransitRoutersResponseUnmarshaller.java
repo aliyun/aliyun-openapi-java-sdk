@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.cbn.model.v20170912.ListTransitRoutersResponse;
 import com.aliyuncs.cbn.model.v20170912.ListTransitRoutersResponse.TransitRouter;
+import com.aliyuncs.cbn.model.v20170912.ListTransitRoutersResponse.TransitRouter.TransitRouterCidrListItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -45,6 +46,19 @@ public class ListTransitRoutersResponseUnmarshaller {
 			transitRouter.setRegionId(_ctx.stringValue("ListTransitRoutersResponse.TransitRouters["+ i +"].RegionId"));
 			transitRouter.setServiceMode(_ctx.stringValue("ListTransitRoutersResponse.TransitRouters["+ i +"].ServiceMode"));
 			transitRouter.setSupportMulticast(_ctx.booleanValue("ListTransitRoutersResponse.TransitRouters["+ i +"].SupportMulticast"));
+
+			List<TransitRouterCidrListItem> transitRouterCidrList = new ArrayList<TransitRouterCidrListItem>();
+			for (int j = 0; j < _ctx.lengthValue("ListTransitRoutersResponse.TransitRouters["+ i +"].TransitRouterCidrList.Length"); j++) {
+				TransitRouterCidrListItem transitRouterCidrListItem = new TransitRouterCidrListItem();
+				transitRouterCidrListItem.setCidr(_ctx.stringValue("ListTransitRoutersResponse.TransitRouters["+ i +"].TransitRouterCidrList["+ j +"].Cidr"));
+				transitRouterCidrListItem.setName(_ctx.stringValue("ListTransitRoutersResponse.TransitRouters["+ i +"].TransitRouterCidrList["+ j +"].Name"));
+				transitRouterCidrListItem.setDescription(_ctx.stringValue("ListTransitRoutersResponse.TransitRouters["+ i +"].TransitRouterCidrList["+ j +"].Description"));
+				transitRouterCidrListItem.setTransitRouterCidrId(_ctx.stringValue("ListTransitRoutersResponse.TransitRouters["+ i +"].TransitRouterCidrList["+ j +"].TransitRouterCidrId"));
+				transitRouterCidrListItem.setPublishCidrRoute(_ctx.booleanValue("ListTransitRoutersResponse.TransitRouters["+ i +"].TransitRouterCidrList["+ j +"].PublishCidrRoute"));
+
+				transitRouterCidrList.add(transitRouterCidrListItem);
+			}
+			transitRouter.setTransitRouterCidrList(transitRouterCidrList);
 
 			transitRouters.add(transitRouter);
 		}

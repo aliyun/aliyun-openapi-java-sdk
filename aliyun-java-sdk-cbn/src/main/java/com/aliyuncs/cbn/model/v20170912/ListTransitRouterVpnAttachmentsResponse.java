@@ -85,7 +85,7 @@ public class ListTransitRouterVpnAttachmentsResponse extends AcsResponse {
 
 		private String transitRouterId;
 
-		private Integer resourceType;
+		private String resourceType;
 
 		private Long vpnOwnerId;
 
@@ -133,11 +133,11 @@ public class ListTransitRouterVpnAttachmentsResponse extends AcsResponse {
 			this.transitRouterId = transitRouterId;
 		}
 
-		public Integer getResourceType() {
+		public String getResourceType() {
 			return this.resourceType;
 		}
 
-		public void setResourceType(Integer resourceType) {
+		public void setResourceType(String resourceType) {
 			this.resourceType = resourceType;
 		}
 

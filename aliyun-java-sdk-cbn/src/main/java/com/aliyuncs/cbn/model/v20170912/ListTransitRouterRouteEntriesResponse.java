@@ -95,6 +95,10 @@ public class ListTransitRouterRouteEntriesResponse extends AcsResponse {
 
 		private String transitRouterRouteEntryDescription;
 
+		private Boolean operationalMode;
+
+		private String tag;
+
 		public String getTransitRouterRouteEntryId() {
 			return this.transitRouterRouteEntryId;
 		}
@@ -165,6 +169,22 @@ public class ListTransitRouterRouteEntriesResponse extends AcsResponse {
 
 		public void setTransitRouterRouteEntryDescription(String transitRouterRouteEntryDescription) {
 			this.transitRouterRouteEntryDescription = transitRouterRouteEntryDescription;
+		}
+
+		public Boolean getOperationalMode() {
+			return this.operationalMode;
+		}
+
+		public void setOperationalMode(Boolean operationalMode) {
+			this.operationalMode = operationalMode;
+		}
+
+		public String getTag() {
+			return this.tag;
+		}
+
+		public void setTag(String tag) {
+			this.tag = tag;
 		}
 	}
 

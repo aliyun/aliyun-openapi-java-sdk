@@ -53,6 +53,7 @@ public class DescribeCenRouteMapsResponseUnmarshaller {
 			routeMap.setNextPriority(_ctx.integerValue("DescribeCenRouteMapsResponse.RouteMaps["+ i +"].NextPriority"));
 			routeMap.setMatchAddressType(_ctx.stringValue("DescribeCenRouteMapsResponse.RouteMaps["+ i +"].MatchAddressType"));
 			routeMap.setGatewayZoneId(_ctx.stringValue("DescribeCenRouteMapsResponse.RouteMaps["+ i +"].GatewayZoneId"));
+			routeMap.setGatewayRegionId(_ctx.stringValue("DescribeCenRouteMapsResponse.RouteMaps["+ i +"].GatewayRegionId"));
 
 			List<String> sourceRegionIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeCenRouteMapsResponse.RouteMaps["+ i +"].SourceRegionIds.Length"); j++) {

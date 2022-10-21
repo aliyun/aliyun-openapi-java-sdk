@@ -1,3 +1,10 @@
+2022-10-21 Version: 1.0.27
+- Update ListTransitRouterVpnAttachments fix ResourceType .
+- Update CreateCenBandwidthPackage support service type .
+- Update DescribeCenBandwidthPackages support service type .
+- Update ModifyCenBandwidthpackageSpec support service type .
+- Update CreateTransitRouterVpcAttachment support  at most 10 avaliable zones.
+
 2022-09-23 Version: 1.0.26
 - Add new API DescribeGrantRulesToResource .
 - Update DescribeGrantRulesToCen support MaxResult and nextToken .

@@ -99,6 +99,8 @@ public class ListTransitRouterVpcAttachmentsResponse extends AcsResponse {
 
 		private String serviceMode;
 
+		private Boolean autoPublishRouteEnabled;
+
 		private String chargeType;
 
 		private List<ZoneMapping> zoneMappings;
@@ -189,6 +191,14 @@ public class ListTransitRouterVpcAttachmentsResponse extends AcsResponse {
 
 		public void setServiceMode(String serviceMode) {
 			this.serviceMode = serviceMode;
+		}
+
+		public Boolean getAutoPublishRouteEnabled() {
+			return this.autoPublishRouteEnabled;
+		}
+
+		public void setAutoPublishRouteEnabled(Boolean autoPublishRouteEnabled) {
+			this.autoPublishRouteEnabled = autoPublishRouteEnabled;
 		}
 
 		public String getChargeType() {
