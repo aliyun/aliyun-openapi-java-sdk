@@ -15,6 +15,9 @@
 package com.aliyuncs.eais.model.v20190624;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.eais.Endpoint;
 
@@ -32,6 +35,9 @@ public class CreateEaiJupyterRequest extends RpcAcsRequest<CreateEaiJupyterRespo
 	private String eaisType;
 
 	private String vSwitchId;
+
+	@SerializedName("environmentVar")
+	private List<EnvironmentVar> environmentVar;
 	public CreateEaiJupyterRequest() {
 		super("eais", "2019-06-24", "CreateEaiJupyter", "eais");
 		setMethod(MethodType.POST);
@@ -82,6 +88,42 @@ public class CreateEaiJupyterRequest extends RpcAcsRequest<CreateEaiJupyterRespo
 		this.vSwitchId = vSwitchId;
 		if(vSwitchId != null){
 			putQueryParameter("VSwitchId", vSwitchId);
+		}
+	}
+
+	public List<EnvironmentVar> getEnvironmentVar() {
+		return this.environmentVar;
+	}
+
+	public void setEnvironmentVar(List<EnvironmentVar> environmentVar) {
+		this.environmentVar = environmentVar;	
+		if (environmentVar != null) {
+			putQueryParameter("EnvironmentVar" , new Gson().toJson(environmentVar));
+		}	
+	}
+
+	public static class EnvironmentVar {
+
+		@SerializedName("Value")
+		private String value;
+
+		@SerializedName("Key")
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 
