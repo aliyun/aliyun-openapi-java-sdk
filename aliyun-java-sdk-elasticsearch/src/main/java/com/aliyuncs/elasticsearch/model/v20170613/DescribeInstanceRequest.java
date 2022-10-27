@@ -26,8 +26,6 @@ public class DescribeInstanceRequest extends RoaAcsRequest<DescribeInstanceRespo
 	   
 
 	private String instanceId;
-
-	private String body;
 	public DescribeInstanceRequest() {
 		super("elasticsearch", "2017-06-13", "DescribeInstance", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]");
@@ -46,17 +44,6 @@ public class DescribeInstanceRequest extends RoaAcsRequest<DescribeInstanceRespo
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putPathParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getBody() {
-		return this.body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
-		if(body != null){
-			putBodyParameter("body", body);
 		}
 	}
 

@@ -37,8 +37,6 @@ public class ListLogstashRequest extends RoaAcsRequest<ListLogstashResponse> {
 
 	private String ownerId;
 
-	private String body;
-
 	private String version;
 
 	private String tags;
@@ -115,17 +113,6 @@ public class ListLogstashRequest extends RoaAcsRequest<ListLogstashResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("ownerId", ownerId);
-		}
-	}
-
-	public String getBody() {
-		return this.body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
-		if(body != null){
-			putBodyParameter("body", body);
 		}
 	}
 

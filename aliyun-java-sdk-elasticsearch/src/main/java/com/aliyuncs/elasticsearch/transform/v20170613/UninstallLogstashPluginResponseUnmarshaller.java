@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.elasticsearch.model.v20170613.UninstallLogstashPluginResponse;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -26,6 +27,7 @@ public class UninstallLogstashPluginResponseUnmarshaller {
 	public static UninstallLogstashPluginResponse unmarshall(UninstallLogstashPluginResponse uninstallLogstashPluginResponse, UnmarshallerContext _ctx) {
 		
 		uninstallLogstashPluginResponse.setRequestId(_ctx.stringValue("UninstallLogstashPluginResponse.RequestId"));
+		uninstallLogstashPluginResponse.setHeaders(_ctx.mapValue("UninstallLogstashPluginResponse.Headers"));
 
 		List<String> result = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("UninstallLogstashPluginResponse.Result.Length"); i++) {

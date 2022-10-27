@@ -28,8 +28,6 @@ public class DescribeComponentIndexRequest extends RoaAcsRequest<DescribeCompone
 	private String instanceId;
 
 	private String name;
-
-	private String body;
 	public DescribeComponentIndexRequest() {
 		super("elasticsearch", "2017-06-13", "DescribeComponentIndex", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/component-index/[name]");
@@ -59,17 +57,6 @@ public class DescribeComponentIndexRequest extends RoaAcsRequest<DescribeCompone
 		this.name = name;
 		if(name != null){
 			putPathParameter("name", name);
-		}
-	}
-
-	public String getBody() {
-		return this.body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
-		if(body != null){
-			putBodyParameter("body", body);
 		}
 	}
 

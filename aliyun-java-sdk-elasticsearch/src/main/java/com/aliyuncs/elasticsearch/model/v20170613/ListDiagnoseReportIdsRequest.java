@@ -38,8 +38,6 @@ public class ListDiagnoseReportIdsRequest extends RoaAcsRequest<ListDiagnoseRepo
 	private String trigger;
 
 	private String lang;
-
-	private String body;
 	public ListDiagnoseReportIdsRequest() {
 		super("elasticsearch", "2017-06-13", "ListDiagnoseReportIds", "elasticsearch");
 		setUriPattern("/openapi/diagnosis/instances/[InstanceId]/report-ids");
@@ -124,17 +122,6 @@ public class ListDiagnoseReportIdsRequest extends RoaAcsRequest<ListDiagnoseRepo
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("lang", lang);
-		}
-	}
-
-	public String getBody() {
-		return this.body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
-		if(body != null){
-			putBodyParameter("body", body);
 		}
 	}
 

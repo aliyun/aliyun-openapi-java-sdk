@@ -58,6 +58,7 @@ public class ListInstanceResponseUnmarshaller {
 			instance.setIsNewDeployment(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].isNewDeployment"));
 			instance.setUpdatedAt(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].updatedAt"));
 			instance.setInstanceId(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].instanceId"));
+			instance.setVpcInstanceId(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].vpcInstanceId"));
 
 			List<Map<Object, Object>> extendConfigs = _ctx.listMapValue("ListInstanceResponse.Result["+ i +"].extendConfigs");
 			instance.setExtendConfigs(extendConfigs);
@@ -103,6 +104,7 @@ public class ListInstanceResponseUnmarshaller {
 			nodeSpec.setDisk(_ctx.integerValue("ListInstanceResponse.Result["+ i +"].nodeSpec.disk"));
 			nodeSpec.setDiskEncryption(_ctx.booleanValue("ListInstanceResponse.Result["+ i +"].nodeSpec.diskEncryption"));
 			nodeSpec.setDiskType(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].nodeSpec.diskType"));
+			nodeSpec.setPerformanceLevel(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].nodeSpec.performanceLevel"));
 			instance.setNodeSpec(nodeSpec);
 
 			List<Tag> tags = new ArrayList<Tag>();

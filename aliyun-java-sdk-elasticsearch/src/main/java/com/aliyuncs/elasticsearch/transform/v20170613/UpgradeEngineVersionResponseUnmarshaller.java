@@ -14,9 +14,12 @@
 
 package com.aliyuncs.elasticsearch.transform.v20170613;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.elasticsearch.model.v20170613.UpgradeEngineVersionResponse;
-import com.aliyuncs.elasticsearch.model.v20170613.UpgradeEngineVersionResponse.Result;
-import com.aliyuncs.elasticsearch.model.v20170613.UpgradeEngineVersionResponse.Result.ValidateResult;
+import com.aliyuncs.elasticsearch.model.v20170613.UpgradeEngineVersionResponse.ResultItem;
+import com.aliyuncs.elasticsearch.model.v20170613.UpgradeEngineVersionResponse.ResultItem.ValidateResultItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -26,15 +29,25 @@ public class UpgradeEngineVersionResponseUnmarshaller {
 		
 		upgradeEngineVersionResponse.setRequestId(_ctx.stringValue("UpgradeEngineVersionResponse.RequestId"));
 
-		Result result = new Result();
-		result.setValidateType(_ctx.stringValue("UpgradeEngineVersionResponse.Result.validateType"));
-		result.setStatus(_ctx.stringValue("UpgradeEngineVersionResponse.Result.status"));
+		List<ResultItem> result = new ArrayList<ResultItem>();
+		for (int i = 0; i < _ctx.lengthValue("UpgradeEngineVersionResponse.Result.Length"); i++) {
+			ResultItem resultItem = new ResultItem();
+			resultItem.setValidateType(_ctx.stringValue("UpgradeEngineVersionResponse.Result["+ i +"].validateType"));
+			resultItem.setStatus(_ctx.stringValue("UpgradeEngineVersionResponse.Result["+ i +"].status"));
 
-		ValidateResult validateResult = new ValidateResult();
-		validateResult.setErrorType(_ctx.stringValue("UpgradeEngineVersionResponse.Result.validateResult.errorType"));
-		validateResult.setErrorCode(_ctx.stringValue("UpgradeEngineVersionResponse.Result.validateResult.errorCode"));
-		validateResult.setErrorMsg(_ctx.stringValue("UpgradeEngineVersionResponse.Result.validateResult.errorMsg"));
-		result.setValidateResult(validateResult);
+			List<ValidateResultItem> validateResult = new ArrayList<ValidateResultItem>();
+			for (int j = 0; j < _ctx.lengthValue("UpgradeEngineVersionResponse.Result["+ i +"].validateResult.Length"); j++) {
+				ValidateResultItem validateResultItem = new ValidateResultItem();
+				validateResultItem.setErrorType(_ctx.stringValue("UpgradeEngineVersionResponse.Result["+ i +"].validateResult["+ j +"].errorType"));
+				validateResultItem.setErrorCode(_ctx.stringValue("UpgradeEngineVersionResponse.Result["+ i +"].validateResult["+ j +"].errorCode"));
+				validateResultItem.setErrorMsg(_ctx.stringValue("UpgradeEngineVersionResponse.Result["+ i +"].validateResult["+ j +"].errorMsg"));
+
+				validateResult.add(validateResultItem);
+			}
+			resultItem.setValidateResult(validateResult);
+
+			result.add(resultItem);
+		}
 		upgradeEngineVersionResponse.setResult(result);
 	 
 	 	return upgradeEngineVersionResponse;

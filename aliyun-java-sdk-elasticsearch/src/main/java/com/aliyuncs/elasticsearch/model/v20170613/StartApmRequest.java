@@ -26,8 +26,6 @@ public class StartApmRequest extends RoaAcsRequest<StartApmResponse> {
 	   
 
 	private String instanceId;
-
-	private String body;
 	public StartApmRequest() {
 		super("elasticsearch", "2017-06-13", "StartApm", "elasticsearch");
 		setUriPattern("/openapi/apm/[instanceId]/actions/start");
@@ -46,17 +44,6 @@ public class StartApmRequest extends RoaAcsRequest<StartApmResponse> {
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putPathParameter("instanceId", instanceId);
-		}
-	}
-
-	public String getBody() {
-		return this.body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
-		if(body != null){
-			putBodyParameter("body", body);
 		}
 	}
 

@@ -29,8 +29,6 @@ public class DeleteDataTaskRequest extends RoaAcsRequest<DeleteDataTaskResponse>
 
 	private String clientToken;
 
-	private String body;
-
 	private String taskId;
 	public DeleteDataTaskRequest() {
 		super("elasticsearch", "2017-06-13", "DeleteDataTask", "elasticsearch");
@@ -61,17 +59,6 @@ public class DeleteDataTaskRequest extends RoaAcsRequest<DeleteDataTaskResponse>
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public String getBody() {
-		return this.body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
-		if(body != null){
-			putBodyParameter("body", body);
 		}
 	}
 

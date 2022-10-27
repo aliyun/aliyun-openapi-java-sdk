@@ -35,8 +35,6 @@ public class ListEcsInstancesRequest extends RoaAcsRequest<ListEcsInstancesRespo
 
 	private Integer page;
 
-	private String body;
-
 	private String tags;
 	public ListEcsInstancesRequest() {
 		super("elasticsearch", "2017-06-13", "ListEcsInstances", "elasticsearch");
@@ -100,17 +98,6 @@ public class ListEcsInstancesRequest extends RoaAcsRequest<ListEcsInstancesRespo
 		this.page = page;
 		if(page != null){
 			putQueryParameter("page", page.toString());
-		}
-	}
-
-	public String getBody() {
-		return this.body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
-		if(body != null){
-			putBodyParameter("body", body);
 		}
 	}
 

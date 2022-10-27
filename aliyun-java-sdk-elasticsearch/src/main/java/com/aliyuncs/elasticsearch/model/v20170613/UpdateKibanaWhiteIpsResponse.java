@@ -51,6 +51,8 @@ public class UpdateKibanaWhiteIpsResponse extends AcsResponse {
 
 		private List<String> kibanaIPWhitelist;
 
+		private NetworkConfig networkConfig;
+
 		public List<String> getKibanaPrivateIPWhitelist() {
 			return this.kibanaPrivateIPWhitelist;
 		}
@@ -65,6 +67,100 @@ public class UpdateKibanaWhiteIpsResponse extends AcsResponse {
 
 		public void setKibanaIPWhitelist(List<String> kibanaIPWhitelist) {
 			this.kibanaIPWhitelist = kibanaIPWhitelist;
+		}
+
+		public NetworkConfig getNetworkConfig() {
+			return this.networkConfig;
+		}
+
+		public void setNetworkConfig(NetworkConfig networkConfig) {
+			this.networkConfig = networkConfig;
+		}
+
+		public static class NetworkConfig {
+
+			private String vpcId;
+
+			private String vswitchId;
+
+			private String vsArea;
+
+			private String type;
+
+			private List<WhiteIpGroupListItem> whiteIpGroupList;
+
+			public String getVpcId() {
+				return this.vpcId;
+			}
+
+			public void setVpcId(String vpcId) {
+				this.vpcId = vpcId;
+			}
+
+			public String getVswitchId() {
+				return this.vswitchId;
+			}
+
+			public void setVswitchId(String vswitchId) {
+				this.vswitchId = vswitchId;
+			}
+
+			public String getVsArea() {
+				return this.vsArea;
+			}
+
+			public void setVsArea(String vsArea) {
+				this.vsArea = vsArea;
+			}
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public List<WhiteIpGroupListItem> getWhiteIpGroupList() {
+				return this.whiteIpGroupList;
+			}
+
+			public void setWhiteIpGroupList(List<WhiteIpGroupListItem> whiteIpGroupList) {
+				this.whiteIpGroupList = whiteIpGroupList;
+			}
+
+			public static class WhiteIpGroupListItem {
+
+				private String groupName;
+
+				private String whiteIpType;
+
+				private List<String> ips;
+
+				public String getGroupName() {
+					return this.groupName;
+				}
+
+				public void setGroupName(String groupName) {
+					this.groupName = groupName;
+				}
+
+				public String getWhiteIpType() {
+					return this.whiteIpType;
+				}
+
+				public void setWhiteIpType(String whiteIpType) {
+					this.whiteIpType = whiteIpType;
+				}
+
+				public List<String> getIps() {
+					return this.ips;
+				}
+
+				public void setIps(List<String> ips) {
+					this.ips = ips;
+				}
+			}
 		}
 	}
 

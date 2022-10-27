@@ -30,8 +30,6 @@ public class ListDefaultCollectorConfigurationsRequest extends RoaAcsRequest<Lis
 	private String resVersion;
 
 	private String sourceType;
-
-	private String body;
 	public ListDefaultCollectorConfigurationsRequest() {
 		super("elasticsearch", "2017-06-13", "ListDefaultCollectorConfigurations", "elasticsearch");
 		setUriPattern("/openapi/beats/default-configurations");
@@ -72,17 +70,6 @@ public class ListDefaultCollectorConfigurationsRequest extends RoaAcsRequest<Lis
 		this.sourceType = sourceType;
 		if(sourceType != null){
 			putQueryParameter("sourceType", sourceType);
-		}
-	}
-
-	public String getBody() {
-		return this.body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
-		if(body != null){
-			putBodyParameter("body", body);
 		}
 	}
 

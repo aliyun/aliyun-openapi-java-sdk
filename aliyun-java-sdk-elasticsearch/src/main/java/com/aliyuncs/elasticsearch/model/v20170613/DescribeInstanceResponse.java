@@ -118,6 +118,8 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 		private List<Tag> tags;
 
+		private List<IkHotDictsItem> ikHotDicts;
+
 		private List<String> esIPWhitelist;
 
 		private List<Map<Object,Object>> extendConfigs;
@@ -428,6 +430,14 @@ public class DescribeInstanceResponse extends AcsResponse {
 			this.tags = tags;
 		}
 
+		public List<IkHotDictsItem> getIkHotDicts() {
+			return this.ikHotDicts;
+		}
+
+		public void setIkHotDicts(List<IkHotDictsItem> ikHotDicts) {
+			this.ikHotDicts = ikHotDicts;
+		}
+
 		public List<String> getEsIPWhitelist() {
 			return this.esIPWhitelist;
 		}
@@ -723,6 +733,49 @@ public class DescribeInstanceResponse extends AcsResponse {
 			}
 		}
 
+		public static class IkHotDictsItem {
+
+			private String type;
+
+			private String sourceType;
+
+			private Integer fileSize;
+
+			private String name;
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public String getSourceType() {
+				return this.sourceType;
+			}
+
+			public void setSourceType(String sourceType) {
+				this.sourceType = sourceType;
+			}
+
+			public Integer getFileSize() {
+				return this.fileSize;
+			}
+
+			public void setFileSize(Integer fileSize) {
+				this.fileSize = fileSize;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+		}
+
 		public static class NodeSpec {
 
 			private String spec;
@@ -732,6 +785,8 @@ public class DescribeInstanceResponse extends AcsResponse {
 			private Boolean diskEncryption;
 
 			private String diskType;
+
+			private String performanceLevel;
 
 			public String getSpec() {
 				return this.spec;
@@ -763,6 +818,14 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 			public void setDiskType(String diskType) {
 				this.diskType = diskType;
+			}
+
+			public String getPerformanceLevel() {
+				return this.performanceLevel;
+			}
+
+			public void setPerformanceLevel(String performanceLevel) {
+				this.performanceLevel = performanceLevel;
 			}
 		}
 
@@ -858,6 +921,8 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 			private String spec;
 
+			private Integer disk;
+
 			public Integer getAmount() {
 				return this.amount;
 			}
@@ -872,6 +937,14 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 			public void setSpec(String spec) {
 				this.spec = spec;
+			}
+
+			public Integer getDisk() {
+				return this.disk;
+			}
+
+			public void setDisk(Integer disk) {
+				this.disk = disk;
 			}
 		}
 

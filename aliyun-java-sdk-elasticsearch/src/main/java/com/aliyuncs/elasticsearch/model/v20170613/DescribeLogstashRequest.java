@@ -26,8 +26,6 @@ public class DescribeLogstashRequest extends RoaAcsRequest<DescribeLogstashRespo
 	   
 
 	private String instanceId;
-
-	private String body;
 	public DescribeLogstashRequest() {
 		super("elasticsearch", "2017-06-13", "DescribeLogstash", "elasticsearch");
 		setUriPattern("/openapi/logstashes/[InstanceId]");
@@ -46,17 +44,6 @@ public class DescribeLogstashRequest extends RoaAcsRequest<DescribeLogstashRespo
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putPathParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getBody() {
-		return this.body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
-		if(body != null){
-			putBodyParameter("body", body);
 		}
 	}
 

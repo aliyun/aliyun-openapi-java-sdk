@@ -27,8 +27,6 @@ public class StartCollectorRequest extends RoaAcsRequest<StartCollectorResponse>
 
 	private String clientToken;
 
-	private String body;
-
 	private String resId;
 	public StartCollectorRequest() {
 		super("elasticsearch", "2017-06-13", "StartCollector", "elasticsearch");
@@ -48,17 +46,6 @@ public class StartCollectorRequest extends RoaAcsRequest<StartCollectorResponse>
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public String getBody() {
-		return this.body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
-		if(body != null){
-			putBodyParameter("body", body);
 		}
 	}
 

@@ -32,8 +32,6 @@ public class ListDeprecatedTemplatesRequest extends RoaAcsRequest<ListDeprecated
 	private String name;
 
 	private Integer page;
-
-	private String body;
 	public ListDeprecatedTemplatesRequest() {
 		super("elasticsearch", "2017-06-13", "ListDeprecatedTemplates", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/deprecated-templates");
@@ -85,17 +83,6 @@ public class ListDeprecatedTemplatesRequest extends RoaAcsRequest<ListDeprecated
 		this.page = page;
 		if(page != null){
 			putQueryParameter("page", page.toString());
-		}
-	}
-
-	public String getBody() {
-		return this.body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
-		if(body != null){
-			putBodyParameter("body", body);
 		}
 	}
 

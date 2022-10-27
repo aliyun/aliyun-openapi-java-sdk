@@ -34,8 +34,6 @@ public class ListLogstashPluginsRequest extends RoaAcsRequest<ListLogstashPlugin
 	private Integer page;
 
 	private String source;
-
-	private String body;
 	public ListLogstashPluginsRequest() {
 		super("elasticsearch", "2017-06-13", "ListLogstashPlugins", "elasticsearch");
 		setUriPattern("/openapi/logstashes/[InstanceId]/plugins");
@@ -98,17 +96,6 @@ public class ListLogstashPluginsRequest extends RoaAcsRequest<ListLogstashPlugin
 		this.source = source;
 		if(source != null){
 			putQueryParameter("source", source);
-		}
-	}
-
-	public String getBody() {
-		return this.body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
-		if(body != null){
-			putBodyParameter("body", body);
 		}
 	}
 

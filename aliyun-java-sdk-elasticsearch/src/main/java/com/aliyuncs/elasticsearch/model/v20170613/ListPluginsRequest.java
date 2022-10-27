@@ -34,8 +34,6 @@ public class ListPluginsRequest extends RoaAcsRequest<ListPluginsResponse> {
 	private String page;
 
 	private String source;
-
-	private String body;
 	public ListPluginsRequest() {
 		super("elasticsearch", "2017-06-13", "ListPlugins", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/plugins");
@@ -98,17 +96,6 @@ public class ListPluginsRequest extends RoaAcsRequest<ListPluginsResponse> {
 		this.source = source;
 		if(source != null){
 			putQueryParameter("source", source);
-		}
-	}
-
-	public String getBody() {
-		return this.body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
-		if(body != null){
-			putBodyParameter("body", body);
 		}
 	}
 

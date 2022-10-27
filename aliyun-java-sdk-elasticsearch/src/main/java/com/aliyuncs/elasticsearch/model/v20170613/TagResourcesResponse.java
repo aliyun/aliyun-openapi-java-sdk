@@ -24,7 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class TagResourcesResponse extends AcsResponse {
 
+	private Boolean result;
+
 	private String requestId;
+
+	public Boolean getResult() {
+		return this.result;
+	}
+
+	public void setResult(Boolean result) {
+		this.result = result;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
