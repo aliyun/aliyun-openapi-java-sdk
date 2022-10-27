@@ -22,12 +22,16 @@ import com.aliyuncs.unimkt.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetProductConfigRequest extends RpcAcsRequest<GetProductConfigResponse> {
+public class StopUnionTaskRequest extends RpcAcsRequest<StopUnionTaskResponse> {
 	   
 
-	private String accountType;
-	public GetProductConfigRequest() {
-		super("UniMkt", "2018-12-12", "GetProductConfig");
+	private Long proxyUserId;
+
+	private String channelId;
+
+	private Long taskId;
+	public StopUnionTaskRequest() {
+		super("UniMkt", "2018-12-12", "StopUnionTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,20 +39,42 @@ public class GetProductConfigRequest extends RpcAcsRequest<GetProductConfigRespo
 		} catch (Exception e) {}
 	}
 
-	public String getAccountType() {
-		return this.accountType;
+	public Long getProxyUserId() {
+		return this.proxyUserId;
 	}
 
-	public void setAccountType(String accountType) {
-		this.accountType = accountType;
-		if(accountType != null){
-			putBodyParameter("AccountType", accountType);
+	public void setProxyUserId(Long proxyUserId) {
+		this.proxyUserId = proxyUserId;
+		if(proxyUserId != null){
+			putQueryParameter("ProxyUserId", proxyUserId.toString());
+		}
+	}
+
+	public String getChannelId() {
+		return this.channelId;
+	}
+
+	public void setChannelId(String channelId) {
+		this.channelId = channelId;
+		if(channelId != null){
+			putQueryParameter("ChannelId", channelId);
+		}
+	}
+
+	public Long getTaskId() {
+		return this.taskId;
+	}
+
+	public void setTaskId(Long taskId) {
+		this.taskId = taskId;
+		if(taskId != null){
+			putQueryParameter("TaskId", taskId.toString());
 		}
 	}
 
 	@Override
-	public Class<GetProductConfigResponse> getResponseClass() {
-		return GetProductConfigResponse.class;
+	public Class<StopUnionTaskResponse> getResponseClass() {
+		return StopUnionTaskResponse.class;
 	}
 
 }

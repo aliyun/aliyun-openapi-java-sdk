@@ -32,6 +32,8 @@ public class CreateUnionTaskRequest extends RpcAcsRequest<CreateUnionTaskRespons
 
 	private String channel;
 
+	private Long chargePloy;
+
 	private String startTime;
 
 	private String anchorId;
@@ -58,6 +60,8 @@ public class CreateUnionTaskRequest extends RpcAcsRequest<CreateUnionTaskRespons
 
 	private String brandUserNick;
 
+	private Long optimizationSwitch;
+
 	private Long proxyUserId;
 
 	@SerializedName("mediaIdWhiteList")
@@ -69,6 +73,8 @@ public class CreateUnionTaskRequest extends RpcAcsRequest<CreateUnionTaskRespons
 	private String taskRuleType;
 
 	private String name;
+
+	private Long chargeType;
 
 	private Long quotaDay;
 
@@ -101,6 +107,17 @@ public class CreateUnionTaskRequest extends RpcAcsRequest<CreateUnionTaskRespons
 		this.channel = channel;
 		if(channel != null){
 			putQueryParameter("Channel", channel);
+		}
+	}
+
+	public Long getChargePloy() {
+		return this.chargePloy;
+	}
+
+	public void setChargePloy(Long chargePloy) {
+		this.chargePloy = chargePloy;
+		if(chargePloy != null){
+			putQueryParameter("ChargePloy", chargePloy.toString());
 		}
 	}
 
@@ -247,6 +264,17 @@ public class CreateUnionTaskRequest extends RpcAcsRequest<CreateUnionTaskRespons
 		}
 	}
 
+	public Long getOptimizationSwitch() {
+		return this.optimizationSwitch;
+	}
+
+	public void setOptimizationSwitch(Long optimizationSwitch) {
+		this.optimizationSwitch = optimizationSwitch;
+		if(optimizationSwitch != null){
+			putQueryParameter("OptimizationSwitch", optimizationSwitch.toString());
+		}
+	}
+
 	public Long getProxyUserId() {
 		return this.proxyUserId;
 	}
@@ -299,6 +327,17 @@ public class CreateUnionTaskRequest extends RpcAcsRequest<CreateUnionTaskRespons
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
+		}
+	}
+
+	public Long getChargeType() {
+		return this.chargeType;
+	}
+
+	public void setChargeType(Long chargeType) {
+		this.chargeType = chargeType;
+		if(chargeType != null){
+			putQueryParameter("ChargeType", chargeType.toString());
 		}
 	}
 
