@@ -34,6 +34,8 @@ public class InvokeCommandRequest extends RpcAcsRequest<InvokeCommandResponse> {
 
 	private String commandId;
 
+	private Long timeout;
+
 	private String frequency;
 
 	private String repeatMode;
@@ -94,6 +96,17 @@ public class InvokeCommandRequest extends RpcAcsRequest<InvokeCommandResponse> {
 		this.commandId = commandId;
 		if(commandId != null){
 			putQueryParameter("CommandId", commandId);
+		}
+	}
+
+	public Long getTimeout() {
+		return this.timeout;
+	}
+
+	public void setTimeout(Long timeout) {
+		this.timeout = timeout;
+		if(timeout != null){
+			putQueryParameter("Timeout", timeout.toString());
 		}
 	}
 

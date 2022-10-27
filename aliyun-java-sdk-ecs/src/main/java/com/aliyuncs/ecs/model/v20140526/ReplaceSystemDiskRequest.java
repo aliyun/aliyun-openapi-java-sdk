@@ -15,6 +15,7 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecs.Endpoint;
 
@@ -31,6 +32,8 @@ public class ReplaceSystemDiskRequest extends RpcAcsRequest<ReplaceSystemDiskRes
 
 	private String clientToken;
 
+	private String encryptAlgorithm;
+
 	private String securityEnhancementStrategy;
 
 	private String keyPairName;
@@ -43,6 +46,8 @@ public class ReplaceSystemDiskRequest extends RpcAcsRequest<ReplaceSystemDiskRes
 
 	private String diskId;
 
+	private List<Arn> arns;
+
 	private String architecture;
 
 	private String resourceOwnerAccount;
@@ -54,6 +59,10 @@ public class ReplaceSystemDiskRequest extends RpcAcsRequest<ReplaceSystemDiskRes
 	private String instanceId;
 
 	private Integer systemDiskSize;
+
+	private Boolean encrypted;
+
+	private String kMSKeyId;
 
 	private Boolean useAdditionalService;
 	public ReplaceSystemDiskRequest() {
@@ -95,6 +104,17 @@ public class ReplaceSystemDiskRequest extends RpcAcsRequest<ReplaceSystemDiskRes
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getEncryptAlgorithm() {
+		return this.encryptAlgorithm;
+	}
+
+	public void setEncryptAlgorithm(String encryptAlgorithm) {
+		this.encryptAlgorithm = encryptAlgorithm;
+		if(encryptAlgorithm != null){
+			putQueryParameter("EncryptAlgorithm", encryptAlgorithm);
 		}
 	}
 
@@ -164,6 +184,21 @@ public class ReplaceSystemDiskRequest extends RpcAcsRequest<ReplaceSystemDiskRes
 		}
 	}
 
+	public List<Arn> getArns() {
+		return this.arns;
+	}
+
+	public void setArns(List<Arn> arns) {
+		this.arns = arns;	
+		if (arns != null) {
+			for (int depth1 = 0; depth1 < arns.size(); depth1++) {
+				putQueryParameter("Arn." + (depth1 + 1) + ".Rolearn" , arns.get(depth1).getRolearn());
+				putQueryParameter("Arn." + (depth1 + 1) + ".RoleType" , arns.get(depth1).getRoleType());
+				putQueryParameter("Arn." + (depth1 + 1) + ".AssumeRoleFor" , arns.get(depth1).getAssumeRoleFor());
+			}
+		}	
+	}
+
 	public String getArchitecture() {
 		return this.architecture;
 	}
@@ -230,6 +265,28 @@ public class ReplaceSystemDiskRequest extends RpcAcsRequest<ReplaceSystemDiskRes
 		}
 	}
 
+	public Boolean getEncrypted() {
+		return this.encrypted;
+	}
+
+	public void setEncrypted(Boolean encrypted) {
+		this.encrypted = encrypted;
+		if(encrypted != null){
+			putQueryParameter("Encrypted", encrypted.toString());
+		}
+	}
+
+	public String getKMSKeyId() {
+		return this.kMSKeyId;
+	}
+
+	public void setKMSKeyId(String kMSKeyId) {
+		this.kMSKeyId = kMSKeyId;
+		if(kMSKeyId != null){
+			putQueryParameter("KMSKeyId", kMSKeyId);
+		}
+	}
+
 	public Boolean getUseAdditionalService() {
 		return this.useAdditionalService;
 	}
@@ -238,6 +295,39 @@ public class ReplaceSystemDiskRequest extends RpcAcsRequest<ReplaceSystemDiskRes
 		this.useAdditionalService = useAdditionalService;
 		if(useAdditionalService != null){
 			putQueryParameter("UseAdditionalService", useAdditionalService.toString());
+		}
+	}
+
+	public static class Arn {
+
+		private String rolearn;
+
+		private String roleType;
+
+		private Long assumeRoleFor;
+
+		public String getRolearn() {
+			return this.rolearn;
+		}
+
+		public void setRolearn(String rolearn) {
+			this.rolearn = rolearn;
+		}
+
+		public String getRoleType() {
+			return this.roleType;
+		}
+
+		public void setRoleType(String roleType) {
+			this.roleType = roleType;
+		}
+
+		public Long getAssumeRoleFor() {
+			return this.assumeRoleFor;
+		}
+
+		public void setAssumeRoleFor(Long assumeRoleFor) {
+			this.assumeRoleFor = assumeRoleFor;
 		}
 	}
 
