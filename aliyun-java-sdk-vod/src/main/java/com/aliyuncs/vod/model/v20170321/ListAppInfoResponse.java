@@ -71,6 +71,8 @@ public class ListAppInfoResponse extends AcsResponse {
 
 		private String modificationTime;
 
+		private List<TagsItem> tags;
+
 		public String getType() {
 			return this.type;
 		}
@@ -125,6 +127,37 @@ public class ListAppInfoResponse extends AcsResponse {
 
 		public void setModificationTime(String modificationTime) {
 			this.modificationTime = modificationTime;
+		}
+
+		public List<TagsItem> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<TagsItem> tags) {
+			this.tags = tags;
+		}
+
+		public static class TagsItem {
+
+			private String tagKey;
+
+			private String tagValue;
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
+			}
 		}
 	}
 

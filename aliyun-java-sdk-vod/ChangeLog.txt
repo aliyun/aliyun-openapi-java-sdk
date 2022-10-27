@@ -1,3 +1,7 @@
+2022-10-27 Version: 2.16.11
+- Modify DescribeVodUserDomains api.
+- Modify CreateUploadImage api.
+
 2022-08-25 Version: 2.16.10
 - Add kms apis.
 
