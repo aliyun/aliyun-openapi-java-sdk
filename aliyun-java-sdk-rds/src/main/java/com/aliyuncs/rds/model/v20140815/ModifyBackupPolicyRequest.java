@@ -49,6 +49,8 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 
 	private String preferredBackupPeriod;
 
+	private Boolean enableIncrementDataBackup;
+
 	private String releasedKeepPolicy;
 
 	private String resourceOwnerAccount;
@@ -212,6 +214,17 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		this.preferredBackupPeriod = preferredBackupPeriod;
 		if(preferredBackupPeriod != null){
 			putQueryParameter("PreferredBackupPeriod", preferredBackupPeriod);
+		}
+	}
+
+	public Boolean getEnableIncrementDataBackup() {
+		return this.enableIncrementDataBackup;
+	}
+
+	public void setEnableIncrementDataBackup(Boolean enableIncrementDataBackup) {
+		this.enableIncrementDataBackup = enableIncrementDataBackup;
+		if(enableIncrementDataBackup != null){
+			putQueryParameter("EnableIncrementDataBackup", enableIncrementDataBackup.toString());
 		}
 	}
 

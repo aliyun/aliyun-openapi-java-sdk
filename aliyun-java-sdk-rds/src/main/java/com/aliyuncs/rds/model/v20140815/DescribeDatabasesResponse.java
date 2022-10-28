@@ -59,13 +59,21 @@ public class DescribeDatabasesResponse extends AcsResponse {
 
 		private String characterSetName;
 
+		private String collate;
+
+		private String ctype;
+
+		private String connLimit;
+
+		private String tablespace;
+
+		private String resourceGroupId;
+
 		private Integer pageNumber;
 
 		private Integer pageSize;
 
 		private Integer totalCount;
-
-		private String resourceGroupId;
 
 		private List<AccountPrivilegeInfo> accounts;
 
@@ -117,6 +125,46 @@ public class DescribeDatabasesResponse extends AcsResponse {
 			this.characterSetName = characterSetName;
 		}
 
+		public String getCollate() {
+			return this.collate;
+		}
+
+		public void setCollate(String collate) {
+			this.collate = collate;
+		}
+
+		public String getCtype() {
+			return this.ctype;
+		}
+
+		public void setCtype(String ctype) {
+			this.ctype = ctype;
+		}
+
+		public String getConnLimit() {
+			return this.connLimit;
+		}
+
+		public void setConnLimit(String connLimit) {
+			this.connLimit = connLimit;
+		}
+
+		public String getTablespace() {
+			return this.tablespace;
+		}
+
+		public void setTablespace(String tablespace) {
+			this.tablespace = tablespace;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
 		public Integer getPageNumber() {
 			return this.pageNumber;
 		}
@@ -139,14 +187,6 @@ public class DescribeDatabasesResponse extends AcsResponse {
 
 		public void setTotalCount(Integer totalCount) {
 			this.totalCount = totalCount;
-		}
-
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
-		}
-
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
 		}
 
 		public List<AccountPrivilegeInfo> getAccounts() {

@@ -38,6 +38,8 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private String systemDBCharset;
 
+	private String connectionString;
+
 	private String engineVersion;
 
 	private Boolean deletionProtection;
@@ -183,6 +185,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.systemDBCharset = systemDBCharset;
 		if(systemDBCharset != null){
 			putQueryParameter("SystemDBCharset", systemDBCharset);
+		}
+	}
+
+	public String getConnectionString() {
+		return this.connectionString;
+	}
+
+	public void setConnectionString(String connectionString) {
+		this.connectionString = connectionString;
+		if(connectionString != null){
+			putQueryParameter("ConnectionString", connectionString);
 		}
 	}
 

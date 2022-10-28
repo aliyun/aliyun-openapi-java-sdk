@@ -43,6 +43,8 @@ public class DescribeDBMiniEngineVersionsResponseUnmarshaller {
 			minorVersionItemsItem.setStatusDesc(_ctx.stringValue("DescribeDBMiniEngineVersionsResponse.MinorVersionItems["+ i +"].StatusDesc"));
 			minorVersionItemsItem.setEngineVersion(_ctx.stringValue("DescribeDBMiniEngineVersionsResponse.MinorVersionItems["+ i +"].EngineVersion"));
 			minorVersionItemsItem.setMinorVersion(_ctx.stringValue("DescribeDBMiniEngineVersionsResponse.MinorVersionItems["+ i +"].MinorVersion"));
+			minorVersionItemsItem.setCommunityMinorVersion(_ctx.stringValue("DescribeDBMiniEngineVersionsResponse.MinorVersionItems["+ i +"].CommunityMinorVersion"));
+			minorVersionItemsItem.setTag(_ctx.stringValue("DescribeDBMiniEngineVersionsResponse.MinorVersionItems["+ i +"].Tag"));
 
 			minorVersionItems.add(minorVersionItemsItem);
 		}

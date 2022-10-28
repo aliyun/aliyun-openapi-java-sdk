@@ -29,6 +29,8 @@ public class DescribeParameterGroupResponse extends AcsResponse {
 
 	private List<ParameterGroup> paramGroup;
 
+	private List<RelatedCustinsInfoItem> relatedCustinsInfo;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -43,6 +45,14 @@ public class DescribeParameterGroupResponse extends AcsResponse {
 
 	public void setParamGroup(List<ParameterGroup> paramGroup) {
 		this.paramGroup = paramGroup;
+	}
+
+	public List<RelatedCustinsInfoItem> getRelatedCustinsInfo() {
+		return this.relatedCustinsInfo;
+	}
+
+	public void setRelatedCustinsInfo(List<RelatedCustinsInfoItem> relatedCustinsInfo) {
+		this.relatedCustinsInfo = relatedCustinsInfo;
 	}
 
 	public static class ParameterGroup {
@@ -178,6 +188,29 @@ public class DescribeParameterGroupResponse extends AcsResponse {
 			public void setParamValue(String paramValue) {
 				this.paramValue = paramValue;
 			}
+		}
+	}
+
+	public static class RelatedCustinsInfoItem {
+
+		private String dBInstanceName;
+
+		private String appliedTime;
+
+		public String getDBInstanceName() {
+			return this.dBInstanceName;
+		}
+
+		public void setDBInstanceName(String dBInstanceName) {
+			this.dBInstanceName = dBInstanceName;
+		}
+
+		public String getAppliedTime() {
+			return this.appliedTime;
+		}
+
+		public void setAppliedTime(String appliedTime) {
+			this.appliedTime = appliedTime;
 		}
 	}
 

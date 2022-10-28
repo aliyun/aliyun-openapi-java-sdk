@@ -30,6 +30,8 @@ public class CopyDatabaseResponse extends AcsResponse {
 
 	private String dBStatus;
 
+	private String requestId;
+
 	public String getDBName() {
 		return this.dBName;
 	}
@@ -52,6 +54,14 @@ public class CopyDatabaseResponse extends AcsResponse {
 
 	public void setDBStatus(String dBStatus) {
 		this.dBStatus = dBStatus;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

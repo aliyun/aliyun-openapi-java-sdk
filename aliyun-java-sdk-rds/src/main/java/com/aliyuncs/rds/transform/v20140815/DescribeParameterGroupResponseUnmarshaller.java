@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.rds.model.v20140815.DescribeParameterGroupResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeParameterGroupResponse.ParameterGroup;
 import com.aliyuncs.rds.model.v20140815.DescribeParameterGroupResponse.ParameterGroup.ParameterDetail;
+import com.aliyuncs.rds.model.v20140815.DescribeParameterGroupResponse.RelatedCustinsInfoItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -56,6 +57,16 @@ public class DescribeParameterGroupResponseUnmarshaller {
 			paramGroup.add(parameterGroup);
 		}
 		describeParameterGroupResponse.setParamGroup(paramGroup);
+
+		List<RelatedCustinsInfoItem> relatedCustinsInfo = new ArrayList<RelatedCustinsInfoItem>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeParameterGroupResponse.RelatedCustinsInfo.Length"); i++) {
+			RelatedCustinsInfoItem relatedCustinsInfoItem = new RelatedCustinsInfoItem();
+			relatedCustinsInfoItem.setDBInstanceName(_ctx.stringValue("DescribeParameterGroupResponse.RelatedCustinsInfo["+ i +"].DBInstanceName"));
+			relatedCustinsInfoItem.setAppliedTime(_ctx.stringValue("DescribeParameterGroupResponse.RelatedCustinsInfo["+ i +"].AppliedTime"));
+
+			relatedCustinsInfo.add(relatedCustinsInfoItem);
+		}
+		describeParameterGroupResponse.setRelatedCustinsInfo(relatedCustinsInfo);
 	 
 	 	return describeParameterGroupResponse;
 	}
