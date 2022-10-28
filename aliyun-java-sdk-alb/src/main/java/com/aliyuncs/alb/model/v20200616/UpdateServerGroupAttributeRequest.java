@@ -92,8 +92,14 @@ public class UpdateServerGroupAttributeRequest extends RpcAcsRequest<UpdateServe
 				putQueryParameter("HealthCheckConfig.HealthCheckProtocol" , healthCheckConfig.getHealthCheckProtocol());
 				putQueryParameter("HealthCheckConfig.UnhealthyThreshold" , healthCheckConfig.getUnhealthyThreshold());
 				putQueryParameter("HealthCheckConfig.HealthyThreshold" , healthCheckConfig.getHealthyThreshold());
+				putQueryParameter("HealthCheckConfig.HealthCheckTcpFastCloseEnabled" , healthCheckConfig.getHealthCheckTcpFastCloseEnabled());
 				putQueryParameter("HealthCheckConfig.HealthCheckPath" , healthCheckConfig.getHealthCheckPath());
 				putQueryParameter("HealthCheckConfig.HealthCheckInterval" , healthCheckConfig.getHealthCheckInterval());
+				if (healthCheckConfig.getHealthCheckHttpCodes() != null) {
+					for (int depth1 = 0; depth1 < healthCheckConfig.getHealthCheckHttpCodes().size(); depth1++) {
+						putQueryParameter("HealthCheckConfig.HealthCheckHttpCodes." + (depth1 + 1) , healthCheckConfig.getHealthCheckHttpCodes().get(depth1));
+					}
+				}
 				putQueryParameter("HealthCheckConfig.HealthCheckHttpVersion" , healthCheckConfig.getHealthCheckHttpVersion());
 				putQueryParameter("HealthCheckConfig.HealthCheckConnectPort" , healthCheckConfig.getHealthCheckConnectPort());
 		}	
@@ -176,9 +182,13 @@ public class UpdateServerGroupAttributeRequest extends RpcAcsRequest<UpdateServe
 
 		private Integer healthyThreshold;
 
+		private Boolean healthCheckTcpFastCloseEnabled;
+
 		private String healthCheckPath;
 
 		private Integer healthCheckInterval;
+
+		private List<String> healthCheckHttpCodes;
 
 		private String healthCheckHttpVersion;
 
@@ -248,6 +258,14 @@ public class UpdateServerGroupAttributeRequest extends RpcAcsRequest<UpdateServe
 			this.healthyThreshold = healthyThreshold;
 		}
 
+		public Boolean getHealthCheckTcpFastCloseEnabled() {
+			return this.healthCheckTcpFastCloseEnabled;
+		}
+
+		public void setHealthCheckTcpFastCloseEnabled(Boolean healthCheckTcpFastCloseEnabled) {
+			this.healthCheckTcpFastCloseEnabled = healthCheckTcpFastCloseEnabled;
+		}
+
 		public String getHealthCheckPath() {
 			return this.healthCheckPath;
 		}
@@ -262,6 +280,14 @@ public class UpdateServerGroupAttributeRequest extends RpcAcsRequest<UpdateServe
 
 		public void setHealthCheckInterval(Integer healthCheckInterval) {
 			this.healthCheckInterval = healthCheckInterval;
+		}
+
+		public List<String> getHealthCheckHttpCodes() {
+			return this.healthCheckHttpCodes;
+		}
+
+		public void setHealthCheckHttpCodes(List<String> healthCheckHttpCodes) {
+			this.healthCheckHttpCodes = healthCheckHttpCodes;
 		}
 
 		public String getHealthCheckHttpVersion() {

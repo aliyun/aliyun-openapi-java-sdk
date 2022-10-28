@@ -50,6 +50,8 @@ public class ListListenersResponseUnmarshaller {
 			listener.setListenerProtocol(_ctx.stringValue("ListListenersResponse.Listeners["+ i +"].ListenerProtocol"));
 			listener.setListenerStatus(_ctx.stringValue("ListListenersResponse.Listeners["+ i +"].ListenerStatus"));
 			listener.setLoadBalancerId(_ctx.stringValue("ListListenersResponse.Listeners["+ i +"].LoadBalancerId"));
+			listener.setServiceManagedEnabled(_ctx.booleanValue("ListListenersResponse.Listeners["+ i +"].ServiceManagedEnabled"));
+			listener.setServiceManagedMode(_ctx.stringValue("ListListenersResponse.Listeners["+ i +"].ServiceManagedMode"));
 			listener.setRequestTimeout(_ctx.integerValue("ListListenersResponse.Listeners["+ i +"].RequestTimeout"));
 			listener.setSecurityPolicyId(_ctx.stringValue("ListListenersResponse.Listeners["+ i +"].SecurityPolicyId"));
 
@@ -82,6 +84,8 @@ public class ListListenersResponseUnmarshaller {
 			xForwardedForConfig.setXForwardedForProtoEnabled(_ctx.booleanValue("ListListenersResponse.Listeners["+ i +"].XForwardedForConfig.XForwardedForProtoEnabled"));
 			xForwardedForConfig.setXForwardedForSLBIdEnabled(_ctx.booleanValue("ListListenersResponse.Listeners["+ i +"].XForwardedForConfig.XForwardedForSLBIdEnabled"));
 			xForwardedForConfig.setXForwardedForSLBPortEnabled(_ctx.booleanValue("ListListenersResponse.Listeners["+ i +"].XForwardedForConfig.XForwardedForSLBPortEnabled"));
+			xForwardedForConfig.setXForwardedForClientSourceIpsEnabled(_ctx.booleanValue("ListListenersResponse.Listeners["+ i +"].XForwardedForConfig.XForwardedForClientSourceIpsEnabled"));
+			xForwardedForConfig.setXForwardedForClientSourceIpsTrusted(_ctx.stringValue("ListListenersResponse.Listeners["+ i +"].XForwardedForConfig.XForwardedForClientSourceIpsTrusted"));
 			listener.setXForwardedForConfig(xForwardedForConfig);
 
 			List<DefaultAction> defaultActions = new ArrayList<DefaultAction>();

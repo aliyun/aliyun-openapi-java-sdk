@@ -95,6 +95,10 @@ public class ListListenersResponse extends AcsResponse {
 
 		private String loadBalancerId;
 
+		private Boolean serviceManagedEnabled;
+
+		private String serviceManagedMode;
+
 		private Integer requestTimeout;
 
 		private String securityPolicyId;
@@ -177,6 +181,22 @@ public class ListListenersResponse extends AcsResponse {
 
 		public void setLoadBalancerId(String loadBalancerId) {
 			this.loadBalancerId = loadBalancerId;
+		}
+
+		public Boolean getServiceManagedEnabled() {
+			return this.serviceManagedEnabled;
+		}
+
+		public void setServiceManagedEnabled(Boolean serviceManagedEnabled) {
+			this.serviceManagedEnabled = serviceManagedEnabled;
+		}
+
+		public String getServiceManagedMode() {
+			return this.serviceManagedMode;
+		}
+
+		public void setServiceManagedMode(String serviceManagedMode) {
+			this.serviceManagedMode = serviceManagedMode;
 		}
 
 		public Integer getRequestTimeout() {
@@ -383,6 +403,10 @@ public class ListListenersResponse extends AcsResponse {
 
 			private Boolean xForwardedForSLBPortEnabled;
 
+			private Boolean xForwardedForClientSourceIpsEnabled;
+
+			private String xForwardedForClientSourceIpsTrusted;
+
 			public String getXForwardedForClientCertClientVerifyAlias() {
 				return this.xForwardedForClientCertClientVerifyAlias;
 			}
@@ -485,6 +509,22 @@ public class ListListenersResponse extends AcsResponse {
 
 			public void setXForwardedForSLBPortEnabled(Boolean xForwardedForSLBPortEnabled) {
 				this.xForwardedForSLBPortEnabled = xForwardedForSLBPortEnabled;
+			}
+
+			public Boolean getXForwardedForClientSourceIpsEnabled() {
+				return this.xForwardedForClientSourceIpsEnabled;
+			}
+
+			public void setXForwardedForClientSourceIpsEnabled(Boolean xForwardedForClientSourceIpsEnabled) {
+				this.xForwardedForClientSourceIpsEnabled = xForwardedForClientSourceIpsEnabled;
+			}
+
+			public String getXForwardedForClientSourceIpsTrusted() {
+				return this.xForwardedForClientSourceIpsTrusted;
+			}
+
+			public void setXForwardedForClientSourceIpsTrusted(String xForwardedForClientSourceIpsTrusted) {
+				this.xForwardedForClientSourceIpsTrusted = xForwardedForClientSourceIpsTrusted;
 			}
 		}
 	}

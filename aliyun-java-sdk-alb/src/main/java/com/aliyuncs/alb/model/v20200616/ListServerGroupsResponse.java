@@ -93,6 +93,10 @@ public class ListServerGroupsResponse extends AcsResponse {
 
 		private String vpcId;
 
+		private Boolean serviceManagedEnabled;
+
+		private String serviceManagedMode;
+
 		private Boolean configManagedEnabled;
 
 		private Boolean upstreamKeepaliveEnabled;
@@ -105,9 +109,17 @@ public class ListServerGroupsResponse extends AcsResponse {
 
 		private List<Tag> tags;
 
+		private List<String> relatedLoadBalancerIds;
+
+		private List<String> relatedListenerIds;
+
+		private List<String> relatedRuleIds;
+
 		private HealthCheckConfig healthCheckConfig;
 
 		private StickySessionConfig stickySessionConfig;
+
+		private UchConfig uchConfig;
 
 		public String getBizProtocol() {
 			return this.protocol;
@@ -173,6 +185,22 @@ public class ListServerGroupsResponse extends AcsResponse {
 			this.vpcId = vpcId;
 		}
 
+		public Boolean getServiceManagedEnabled() {
+			return this.serviceManagedEnabled;
+		}
+
+		public void setServiceManagedEnabled(Boolean serviceManagedEnabled) {
+			this.serviceManagedEnabled = serviceManagedEnabled;
+		}
+
+		public String getServiceManagedMode() {
+			return this.serviceManagedMode;
+		}
+
+		public void setServiceManagedMode(String serviceManagedMode) {
+			this.serviceManagedMode = serviceManagedMode;
+		}
+
 		public Boolean getConfigManagedEnabled() {
 			return this.configManagedEnabled;
 		}
@@ -221,6 +249,30 @@ public class ListServerGroupsResponse extends AcsResponse {
 			this.tags = tags;
 		}
 
+		public List<String> getRelatedLoadBalancerIds() {
+			return this.relatedLoadBalancerIds;
+		}
+
+		public void setRelatedLoadBalancerIds(List<String> relatedLoadBalancerIds) {
+			this.relatedLoadBalancerIds = relatedLoadBalancerIds;
+		}
+
+		public List<String> getRelatedListenerIds() {
+			return this.relatedListenerIds;
+		}
+
+		public void setRelatedListenerIds(List<String> relatedListenerIds) {
+			this.relatedListenerIds = relatedListenerIds;
+		}
+
+		public List<String> getRelatedRuleIds() {
+			return this.relatedRuleIds;
+		}
+
+		public void setRelatedRuleIds(List<String> relatedRuleIds) {
+			this.relatedRuleIds = relatedRuleIds;
+		}
+
 		public HealthCheckConfig getHealthCheckConfig() {
 			return this.healthCheckConfig;
 		}
@@ -235,6 +287,14 @@ public class ListServerGroupsResponse extends AcsResponse {
 
 		public void setStickySessionConfig(StickySessionConfig stickySessionConfig) {
 			this.stickySessionConfig = stickySessionConfig;
+		}
+
+		public UchConfig getUchConfig() {
+			return this.uchConfig;
+		}
+
+		public void setUchConfig(UchConfig uchConfig) {
+			this.uchConfig = uchConfig;
 		}
 
 		public static class Tag {
@@ -283,6 +343,10 @@ public class ListServerGroupsResponse extends AcsResponse {
 			private Integer healthyThreshold;
 
 			private Integer unhealthyThreshold;
+
+			private Boolean healthCheckTcpFastCloseEnabled;
+
+			private List<String> healthCheckHttpCodes;
 
 			private List<String> healthCheckCodes;
 
@@ -374,6 +438,22 @@ public class ListServerGroupsResponse extends AcsResponse {
 				this.unhealthyThreshold = unhealthyThreshold;
 			}
 
+			public Boolean getHealthCheckTcpFastCloseEnabled() {
+				return this.healthCheckTcpFastCloseEnabled;
+			}
+
+			public void setHealthCheckTcpFastCloseEnabled(Boolean healthCheckTcpFastCloseEnabled) {
+				this.healthCheckTcpFastCloseEnabled = healthCheckTcpFastCloseEnabled;
+			}
+
+			public List<String> getHealthCheckHttpCodes() {
+				return this.healthCheckHttpCodes;
+			}
+
+			public void setHealthCheckHttpCodes(List<String> healthCheckHttpCodes) {
+				this.healthCheckHttpCodes = healthCheckHttpCodes;
+			}
+
 			public List<String> getHealthCheckCodes() {
 				return this.healthCheckCodes;
 			}
@@ -423,6 +503,29 @@ public class ListServerGroupsResponse extends AcsResponse {
 
 			public void setStickySessionType(String stickySessionType) {
 				this.stickySessionType = stickySessionType;
+			}
+		}
+
+		public static class UchConfig {
+
+			private String type;
+
+			private String value;
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
 			}
 		}
 	}

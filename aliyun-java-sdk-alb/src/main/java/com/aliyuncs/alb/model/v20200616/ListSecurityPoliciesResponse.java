@@ -85,6 +85,10 @@ public class ListSecurityPoliciesResponse extends AcsResponse {
 
 		private String securityPolicyStatus;
 
+		private Boolean serviceManagedEnabled;
+
+		private String serviceManagedMode;
+
 		private List<String> ciphers;
 
 		private List<String> tLSVersions;
@@ -119,6 +123,22 @@ public class ListSecurityPoliciesResponse extends AcsResponse {
 
 		public void setSecurityPolicyStatus(String securityPolicyStatus) {
 			this.securityPolicyStatus = securityPolicyStatus;
+		}
+
+		public Boolean getServiceManagedEnabled() {
+			return this.serviceManagedEnabled;
+		}
+
+		public void setServiceManagedEnabled(Boolean serviceManagedEnabled) {
+			this.serviceManagedEnabled = serviceManagedEnabled;
+		}
+
+		public String getServiceManagedMode() {
+			return this.serviceManagedMode;
+		}
+
+		public void setServiceManagedMode(String serviceManagedMode) {
+			this.serviceManagedMode = serviceManagedMode;
 		}
 
 		public List<String> getCiphers() {

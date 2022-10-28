@@ -21,6 +21,7 @@ import com.aliyuncs.alb.model.v20200616.GetListenerAttributeResponse;
 import com.aliyuncs.alb.model.v20200616.GetListenerAttributeResponse.AclConfig;
 import com.aliyuncs.alb.model.v20200616.GetListenerAttributeResponse.AclConfig.AclRelation;
 import com.aliyuncs.alb.model.v20200616.GetListenerAttributeResponse.Certificate;
+import com.aliyuncs.alb.model.v20200616.GetListenerAttributeResponse.Certificate1;
 import com.aliyuncs.alb.model.v20200616.GetListenerAttributeResponse.DefaultAction;
 import com.aliyuncs.alb.model.v20200616.GetListenerAttributeResponse.DefaultAction.ForwardGroupConfig;
 import com.aliyuncs.alb.model.v20200616.GetListenerAttributeResponse.DefaultAction.ForwardGroupConfig.ServerGroupTuple;
@@ -39,6 +40,8 @@ public class GetListenerAttributeResponseUnmarshaller {
 		getListenerAttributeResponse.setCaEnabled(_ctx.booleanValue("GetListenerAttributeResponse.CaEnabled"));
 		getListenerAttributeResponse.setGzipEnabled(_ctx.booleanValue("GetListenerAttributeResponse.GzipEnabled"));
 		getListenerAttributeResponse.setHttp2Enabled(_ctx.booleanValue("GetListenerAttributeResponse.Http2Enabled"));
+		getListenerAttributeResponse.setServiceManagedEnabled(_ctx.booleanValue("GetListenerAttributeResponse.ServiceManagedEnabled"));
+		getListenerAttributeResponse.setServiceManagedMode(_ctx.stringValue("GetListenerAttributeResponse.ServiceManagedMode"));
 		getListenerAttributeResponse.setIdleTimeout(_ctx.integerValue("GetListenerAttributeResponse.IdleTimeout"));
 		getListenerAttributeResponse.setListenerDescription(_ctx.stringValue("GetListenerAttributeResponse.ListenerDescription"));
 		getListenerAttributeResponse.setListenerId(_ctx.stringValue("GetListenerAttributeResponse.ListenerId"));
@@ -92,6 +95,8 @@ public class GetListenerAttributeResponseUnmarshaller {
 		xForwardedForConfig.setXForwardedForProtoEnabled(_ctx.booleanValue("GetListenerAttributeResponse.XForwardedForConfig.XForwardedForProtoEnabled"));
 		xForwardedForConfig.setXForwardedForSLBIdEnabled(_ctx.booleanValue("GetListenerAttributeResponse.XForwardedForConfig.XForwardedForSLBIdEnabled"));
 		xForwardedForConfig.setXForwardedForSLBPortEnabled(_ctx.booleanValue("GetListenerAttributeResponse.XForwardedForConfig.XForwardedForSLBPortEnabled"));
+		xForwardedForConfig.setXForwardedForClientSourceIpsEnabled(_ctx.booleanValue("GetListenerAttributeResponse.XForwardedForConfig.XForwardedForClientSourceIpsEnabled"));
+		xForwardedForConfig.setXForwardedForClientSourceIpsTrusted(_ctx.stringValue("GetListenerAttributeResponse.XForwardedForConfig.XForwardedForClientSourceIpsTrusted"));
 		getListenerAttributeResponse.setXForwardedForConfig(xForwardedForConfig);
 
 		List<Certificate> certificates = new ArrayList<Certificate>();
@@ -102,6 +107,17 @@ public class GetListenerAttributeResponseUnmarshaller {
 			certificates.add(certificate);
 		}
 		getListenerAttributeResponse.setCertificates(certificates);
+
+		List<Certificate1> caCertificates = new ArrayList<Certificate1>();
+		for (int i = 0; i < _ctx.lengthValue("GetListenerAttributeResponse.CaCertificates.Length"); i++) {
+			Certificate1 certificate1 = new Certificate1();
+			certificate1.setCertificateId(_ctx.stringValue("GetListenerAttributeResponse.CaCertificates["+ i +"].CertificateId"));
+			certificate1.setStatus(_ctx.stringValue("GetListenerAttributeResponse.CaCertificates["+ i +"].Status"));
+			certificate1.setIsDefault(_ctx.booleanValue("GetListenerAttributeResponse.CaCertificates["+ i +"].IsDefault"));
+
+			caCertificates.add(certificate1);
+		}
+		getListenerAttributeResponse.setCaCertificates(caCertificates);
 
 		List<DefaultAction> defaultActions = new ArrayList<DefaultAction>();
 		for (int i = 0; i < _ctx.lengthValue("GetListenerAttributeResponse.DefaultActions.Length"); i++) {
