@@ -107,6 +107,8 @@ public class ListSQLReviewOriginSQLResponse extends AcsResponse {
 
 		private String sQLReviewQueryKey;
 
+		private String sQLName;
+
 		public Long getSQLId() {
 			return this.sQLId;
 		}
@@ -185,6 +187,14 @@ public class ListSQLReviewOriginSQLResponse extends AcsResponse {
 
 		public void setSQLReviewQueryKey(String sQLReviewQueryKey) {
 			this.sQLReviewQueryKey = sQLReviewQueryKey;
+		}
+
+		public String getSQLName() {
+			return this.sQLName;
+		}
+
+		public void setSQLName(String sQLName) {
+			this.sQLName = sQLName;
 		}
 	}
 

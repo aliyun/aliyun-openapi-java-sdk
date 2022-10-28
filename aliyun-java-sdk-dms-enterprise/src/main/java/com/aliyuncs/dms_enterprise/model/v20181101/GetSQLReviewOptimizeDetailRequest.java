@@ -25,9 +25,9 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class GetSQLReviewOptimizeDetailRequest extends RpcAcsRequest<GetSQLReviewOptimizeDetailResponse> {
 	   
 
-	private String sQLReviewQueryKey;
-
 	private Long tid;
+
+	private String sQLReviewQueryKey;
 	public GetSQLReviewOptimizeDetailRequest() {
 		super("dms-enterprise", "2018-11-01", "GetSQLReviewOptimizeDetail", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -35,17 +35,6 @@ public class GetSQLReviewOptimizeDetailRequest extends RpcAcsRequest<GetSQLRevie
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getSQLReviewQueryKey() {
-		return this.sQLReviewQueryKey;
-	}
-
-	public void setSQLReviewQueryKey(String sQLReviewQueryKey) {
-		this.sQLReviewQueryKey = sQLReviewQueryKey;
-		if(sQLReviewQueryKey != null){
-			putQueryParameter("SQLReviewQueryKey", sQLReviewQueryKey);
-		}
 	}
 
 	public Long getTid() {
@@ -56,6 +45,17 @@ public class GetSQLReviewOptimizeDetailRequest extends RpcAcsRequest<GetSQLRevie
 		this.tid = tid;
 		if(tid != null){
 			putQueryParameter("Tid", tid.toString());
+		}
+	}
+
+	public String getSQLReviewQueryKey() {
+		return this.sQLReviewQueryKey;
+	}
+
+	public void setSQLReviewQueryKey(String sQLReviewQueryKey) {
+		this.sQLReviewQueryKey = sQLReviewQueryKey;
+		if(sQLReviewQueryKey != null){
+			putQueryParameter("SQLReviewQueryKey", sQLReviewQueryKey);
 		}
 	}
 

@@ -58,6 +58,7 @@ public class ListInstancesResponseUnmarshaller {
 			instance.setInstanceAlias(_ctx.stringValue("ListInstancesResponse.InstanceList["+ i +"].InstanceAlias"));
 			instance.setDdlOnline(_ctx.integerValue("ListInstancesResponse.InstanceList["+ i +"].DdlOnline"));
 			instance.setEcsRegion(_ctx.stringValue("ListInstancesResponse.InstanceList["+ i +"].EcsRegion"));
+			instance.setSellSitd(_ctx.booleanValue("ListInstancesResponse.InstanceList["+ i +"].SellSitd"));
 
 			List<String> ownerIdList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListInstancesResponse.InstanceList["+ i +"].OwnerIdList.Length"); j++) {

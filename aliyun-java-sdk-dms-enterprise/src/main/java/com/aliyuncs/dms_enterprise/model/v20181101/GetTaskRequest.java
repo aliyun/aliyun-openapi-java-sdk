@@ -25,9 +25,9 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class GetTaskRequest extends RpcAcsRequest<GetTaskResponse> {
 	   
 
-	private Long nodeId;
-
 	private Long tid;
+
+	private Long nodeId;
 	public GetTaskRequest() {
 		super("dms-enterprise", "2018-11-01", "GetTask", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -35,17 +35,6 @@ public class GetTaskRequest extends RpcAcsRequest<GetTaskResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getNodeId() {
-		return this.nodeId;
-	}
-
-	public void setNodeId(Long nodeId) {
-		this.nodeId = nodeId;
-		if(nodeId != null){
-			putQueryParameter("NodeId", nodeId.toString());
-		}
 	}
 
 	public Long getTid() {
@@ -56,6 +45,17 @@ public class GetTaskRequest extends RpcAcsRequest<GetTaskResponse> {
 		this.tid = tid;
 		if(tid != null){
 			putQueryParameter("Tid", tid.toString());
+		}
+	}
+
+	public Long getNodeId() {
+		return this.nodeId;
+	}
+
+	public void setNodeId(Long nodeId) {
+		this.nodeId = nodeId;
+		if(nodeId != null){
+			putQueryParameter("NodeId", nodeId.toString());
 		}
 	}
 

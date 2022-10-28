@@ -55,6 +55,7 @@ public class GetInstanceResponseUnmarshaller {
 		instance.setInstanceAlias(_ctx.stringValue("GetInstanceResponse.Instance.InstanceAlias"));
 		instance.setDdlOnline(_ctx.integerValue("GetInstanceResponse.Instance.DdlOnline"));
 		instance.setEcsRegion(_ctx.stringValue("GetInstanceResponse.Instance.EcsRegion"));
+		instance.setSellSitd(_ctx.stringValue("GetInstanceResponse.Instance.SellSitd"));
 
 		List<String> ownerIdList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetInstanceResponse.Instance.OwnerIdList.Length"); i++) {

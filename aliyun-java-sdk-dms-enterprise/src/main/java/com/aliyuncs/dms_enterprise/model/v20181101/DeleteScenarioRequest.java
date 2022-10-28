@@ -25,9 +25,9 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class DeleteScenarioRequest extends RpcAcsRequest<DeleteScenarioResponse> {
 	   
 
-	private Long scenarioId;
-
 	private Long tid;
+
+	private Long scenarioId;
 	public DeleteScenarioRequest() {
 		super("dms-enterprise", "2018-11-01", "DeleteScenario", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -35,17 +35,6 @@ public class DeleteScenarioRequest extends RpcAcsRequest<DeleteScenarioResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getScenarioId() {
-		return this.scenarioId;
-	}
-
-	public void setScenarioId(Long scenarioId) {
-		this.scenarioId = scenarioId;
-		if(scenarioId != null){
-			putQueryParameter("ScenarioId", scenarioId.toString());
-		}
 	}
 
 	public Long getTid() {
@@ -56,6 +45,17 @@ public class DeleteScenarioRequest extends RpcAcsRequest<DeleteScenarioResponse>
 		this.tid = tid;
 		if(tid != null){
 			putQueryParameter("Tid", tid.toString());
+		}
+	}
+
+	public Long getScenarioId() {
+		return this.scenarioId;
+	}
+
+	public void setScenarioId(Long scenarioId) {
+		this.scenarioId = scenarioId;
+		if(scenarioId != null){
+			putQueryParameter("ScenarioId", scenarioId.toString());
 		}
 	}
 

@@ -37,7 +37,11 @@ public class RegisterInstanceRequest extends RpcAcsRequest<RegisterInstanceRespo
 
 	private String sid;
 
+	private String enableSellSitd;
+
 	private String dataLinkName;
+
+	private String templateType;
 
 	private String instanceSource;
 
@@ -56,6 +60,8 @@ public class RegisterInstanceRequest extends RpcAcsRequest<RegisterInstanceRespo
 	private String databasePassword;
 
 	private String instanceAlias;
+
+	private Long templateId;
 
 	private String databaseUser;
 
@@ -143,6 +149,17 @@ public class RegisterInstanceRequest extends RpcAcsRequest<RegisterInstanceRespo
 		}
 	}
 
+	public String getEnableSellSitd() {
+		return this.enableSellSitd;
+	}
+
+	public void setEnableSellSitd(String enableSellSitd) {
+		this.enableSellSitd = enableSellSitd;
+		if(enableSellSitd != null){
+			putQueryParameter("EnableSellSitd", enableSellSitd);
+		}
+	}
+
 	public String getDataLinkName() {
 		return this.dataLinkName;
 	}
@@ -151,6 +168,17 @@ public class RegisterInstanceRequest extends RpcAcsRequest<RegisterInstanceRespo
 		this.dataLinkName = dataLinkName;
 		if(dataLinkName != null){
 			putQueryParameter("DataLinkName", dataLinkName);
+		}
+	}
+
+	public String getTemplateType() {
+		return this.templateType;
+	}
+
+	public void setTemplateType(String templateType) {
+		this.templateType = templateType;
+		if(templateType != null){
+			putQueryParameter("TemplateType", templateType);
 		}
 	}
 
@@ -250,6 +278,17 @@ public class RegisterInstanceRequest extends RpcAcsRequest<RegisterInstanceRespo
 		this.instanceAlias = instanceAlias;
 		if(instanceAlias != null){
 			putQueryParameter("InstanceAlias", instanceAlias);
+		}
+	}
+
+	public Long getTemplateId() {
+		return this.templateId;
+	}
+
+	public void setTemplateId(Long templateId) {
+		this.templateId = templateId;
+		if(templateId != null){
+			putQueryParameter("TemplateId", templateId.toString());
 		}
 	}
 

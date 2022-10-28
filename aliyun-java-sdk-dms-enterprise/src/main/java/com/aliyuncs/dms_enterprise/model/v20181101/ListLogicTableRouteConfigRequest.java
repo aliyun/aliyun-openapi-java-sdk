@@ -25,9 +25,9 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class ListLogicTableRouteConfigRequest extends RpcAcsRequest<ListLogicTableRouteConfigResponse> {
 	   
 
-	private Long tableId;
-
 	private Long tid;
+
+	private Long tableId;
 	public ListLogicTableRouteConfigRequest() {
 		super("dms-enterprise", "2018-11-01", "ListLogicTableRouteConfig", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -35,17 +35,6 @@ public class ListLogicTableRouteConfigRequest extends RpcAcsRequest<ListLogicTab
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getTableId() {
-		return this.tableId;
-	}
-
-	public void setTableId(Long tableId) {
-		this.tableId = tableId;
-		if(tableId != null){
-			putQueryParameter("TableId", tableId.toString());
-		}
 	}
 
 	public Long getTid() {
@@ -56,6 +45,17 @@ public class ListLogicTableRouteConfigRequest extends RpcAcsRequest<ListLogicTab
 		this.tid = tid;
 		if(tid != null){
 			putQueryParameter("Tid", tid.toString());
+		}
+	}
+
+	public Long getTableId() {
+		return this.tableId;
+	}
+
+	public void setTableId(Long tableId) {
+		this.tableId = tableId;
+		if(tableId != null){
+			putQueryParameter("TableId", tableId.toString());
 		}
 	}
 

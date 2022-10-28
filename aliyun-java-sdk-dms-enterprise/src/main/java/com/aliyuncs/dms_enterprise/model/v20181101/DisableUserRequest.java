@@ -25,9 +25,9 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class DisableUserRequest extends RpcAcsRequest<DisableUserResponse> {
 	   
 
-	private String uid;
-
 	private Long tid;
+
+	private String uid;
 	public DisableUserRequest() {
 		super("dms-enterprise", "2018-11-01", "DisableUser", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -35,17 +35,6 @@ public class DisableUserRequest extends RpcAcsRequest<DisableUserResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getUid() {
-		return this.uid;
-	}
-
-	public void setUid(String uid) {
-		this.uid = uid;
-		if(uid != null){
-			putQueryParameter("Uid", uid);
-		}
 	}
 
 	public Long getTid() {
@@ -56,6 +45,17 @@ public class DisableUserRequest extends RpcAcsRequest<DisableUserResponse> {
 		this.tid = tid;
 		if(tid != null){
 			putQueryParameter("Tid", tid.toString());
+		}
+	}
+
+	public String getUid() {
+		return this.uid;
+	}
+
+	public void setUid(String uid) {
+		this.uid = uid;
+		if(uid != null){
+			putQueryParameter("Uid", uid);
 		}
 	}
 

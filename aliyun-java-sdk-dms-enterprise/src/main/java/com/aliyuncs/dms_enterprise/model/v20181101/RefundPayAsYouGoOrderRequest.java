@@ -22,19 +22,30 @@ import com.aliyuncs.dms_enterprise.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteLakeHouseSpaceRequest extends RpcAcsRequest<DeleteLakeHouseSpaceResponse> {
+public class RefundPayAsYouGoOrderRequest extends RpcAcsRequest<RefundPayAsYouGoOrderResponse> {
 	   
 
-	private Long tid;
+	private String orderId;
 
-	private Long spaceId;
-	public DeleteLakeHouseSpaceRequest() {
-		super("dms-enterprise", "2018-11-01", "DeleteLakeHouseSpace", "dms-enterprise");
+	private Long tid;
+	public RefundPayAsYouGoOrderRequest() {
+		super("dms-enterprise", "2018-11-01", "RefundPayAsYouGoOrder", "dms-enterprise");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getOrderId() {
+		return this.orderId;
+	}
+
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
+		if(orderId != null){
+			putQueryParameter("OrderId", orderId);
+		}
 	}
 
 	public Long getTid() {
@@ -48,20 +59,9 @@ public class DeleteLakeHouseSpaceRequest extends RpcAcsRequest<DeleteLakeHouseSp
 		}
 	}
 
-	public Long getSpaceId() {
-		return this.spaceId;
-	}
-
-	public void setSpaceId(Long spaceId) {
-		this.spaceId = spaceId;
-		if(spaceId != null){
-			putQueryParameter("SpaceId", spaceId.toString());
-		}
-	}
-
 	@Override
-	public Class<DeleteLakeHouseSpaceResponse> getResponseClass() {
-		return DeleteLakeHouseSpaceResponse.class;
+	public Class<RefundPayAsYouGoOrderResponse> getResponseClass() {
+		return RefundPayAsYouGoOrderResponse.class;
 	}
 
 }

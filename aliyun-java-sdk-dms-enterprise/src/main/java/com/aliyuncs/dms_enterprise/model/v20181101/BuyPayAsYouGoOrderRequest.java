@@ -22,19 +22,34 @@ import com.aliyuncs.dms_enterprise.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteLakeHouseSpaceRequest extends RpcAcsRequest<DeleteLakeHouseSpaceResponse> {
+public class BuyPayAsYouGoOrderRequest extends RpcAcsRequest<BuyPayAsYouGoOrderResponse> {
 	   
+
+	private Integer insNum;
 
 	private Long tid;
 
-	private Long spaceId;
-	public DeleteLakeHouseSpaceRequest() {
-		super("dms-enterprise", "2018-11-01", "DeleteLakeHouseSpace", "dms-enterprise");
+	private String versionType;
+
+	private String commodityType;
+	public BuyPayAsYouGoOrderRequest() {
+		super("dms-enterprise", "2018-11-01", "BuyPayAsYouGoOrder", "dms-enterprise");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getInsNum() {
+		return this.insNum;
+	}
+
+	public void setInsNum(Integer insNum) {
+		this.insNum = insNum;
+		if(insNum != null){
+			putQueryParameter("InsNum", insNum.toString());
+		}
 	}
 
 	public Long getTid() {
@@ -48,20 +63,31 @@ public class DeleteLakeHouseSpaceRequest extends RpcAcsRequest<DeleteLakeHouseSp
 		}
 	}
 
-	public Long getSpaceId() {
-		return this.spaceId;
+	public String getVersionType() {
+		return this.versionType;
 	}
 
-	public void setSpaceId(Long spaceId) {
-		this.spaceId = spaceId;
-		if(spaceId != null){
-			putQueryParameter("SpaceId", spaceId.toString());
+	public void setVersionType(String versionType) {
+		this.versionType = versionType;
+		if(versionType != null){
+			putQueryParameter("VersionType", versionType);
+		}
+	}
+
+	public String getCommodityType() {
+		return this.commodityType;
+	}
+
+	public void setCommodityType(String commodityType) {
+		this.commodityType = commodityType;
+		if(commodityType != null){
+			putQueryParameter("CommodityType", commodityType);
 		}
 	}
 
 	@Override
-	public Class<DeleteLakeHouseSpaceResponse> getResponseClass() {
-		return DeleteLakeHouseSpaceResponse.class;
+	public Class<BuyPayAsYouGoOrderResponse> getResponseClass() {
+		return BuyPayAsYouGoOrderResponse.class;
 	}
 
 }
