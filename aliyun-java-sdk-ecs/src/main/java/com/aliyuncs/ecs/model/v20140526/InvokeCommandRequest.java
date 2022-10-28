@@ -38,6 +38,8 @@ public class InvokeCommandRequest extends RpcAcsRequest<InvokeCommandResponse> {
 
 	private String frequency;
 
+	private String resourceGroupId;
+
 	private String repeatMode;
 
 	private String windowsPasswordName;
@@ -118,6 +120,17 @@ public class InvokeCommandRequest extends RpcAcsRequest<InvokeCommandResponse> {
 		this.frequency = frequency;
 		if(frequency != null){
 			putQueryParameter("Frequency", frequency);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
