@@ -27,6 +27,7 @@ public class GetAppInfosResponseUnmarshaller {
 	public static GetAppInfosResponse unmarshall(GetAppInfosResponse getAppInfosResponse, UnmarshallerContext _ctx) {
 		
 		getAppInfosResponse.setRequestId(_ctx.stringValue("GetAppInfosResponse.RequestId"));
+		getAppInfosResponse.setCode(_ctx.stringValue("GetAppInfosResponse.Code"));
 
 		List<String> nonExistAppIds = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetAppInfosResponse.NonExistAppIds.Length"); i++) {
