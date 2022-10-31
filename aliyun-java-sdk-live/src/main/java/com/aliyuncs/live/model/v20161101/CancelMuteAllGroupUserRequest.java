@@ -22,16 +22,16 @@ import com.aliyuncs.live.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListMessageAppRequest extends RpcAcsRequest<ListMessageAppResponse> {
+public class CancelMuteAllGroupUserRequest extends RpcAcsRequest<CancelMuteAllGroupUserResponse> {
 	   
 
-	private Integer sortType;
+	private String groupId;
 
-	private Integer pageNum;
+	private String appId;
 
-	private Integer pageSize;
-	public ListMessageAppRequest() {
-		super("live", "2016-11-01", "ListMessageApp", "live");
+	private String operatorUserId;
+	public CancelMuteAllGroupUserRequest() {
+		super("live", "2016-11-01", "CancelMuteAllGroupUser", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,42 +39,42 @@ public class ListMessageAppRequest extends RpcAcsRequest<ListMessageAppResponse>
 		} catch (Exception e) {}
 	}
 
-	public Integer getSortType() {
-		return this.sortType;
+	public String getGroupId() {
+		return this.groupId;
 	}
 
-	public void setSortType(Integer sortType) {
-		this.sortType = sortType;
-		if(sortType != null){
-			putBodyParameter("SortType", sortType.toString());
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putBodyParameter("GroupId", groupId);
 		}
 	}
 
-	public Integer getPageNum() {
-		return this.pageNum;
+	public String getAppId() {
+		return this.appId;
 	}
 
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-		if(pageNum != null){
-			putBodyParameter("PageNum", pageNum.toString());
+	public void setAppId(String appId) {
+		this.appId = appId;
+		if(appId != null){
+			putBodyParameter("AppId", appId);
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getOperatorUserId() {
+		return this.operatorUserId;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putBodyParameter("PageSize", pageSize.toString());
+	public void setOperatorUserId(String operatorUserId) {
+		this.operatorUserId = operatorUserId;
+		if(operatorUserId != null){
+			putBodyParameter("OperatorUserId", operatorUserId);
 		}
 	}
 
 	@Override
-	public Class<ListMessageAppResponse> getResponseClass() {
-		return ListMessageAppResponse.class;
+	public Class<CancelMuteAllGroupUserResponse> getResponseClass() {
+		return CancelMuteAllGroupUserResponse.class;
 	}
 
 }

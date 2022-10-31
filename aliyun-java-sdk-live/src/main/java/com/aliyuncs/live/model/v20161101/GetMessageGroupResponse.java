@@ -57,6 +57,8 @@ public class GetMessageGroupResponse extends AcsResponse {
 
 		private Map<Object,Object> extension;
 
+		private Boolean isMuteAll;
+
 		public String getGroupId() {
 			return this.groupId;
 		}
@@ -95,6 +97,14 @@ public class GetMessageGroupResponse extends AcsResponse {
 
 		public void setExtension(Map<Object,Object> extension) {
 			this.extension = extension;
+		}
+
+		public Boolean getIsMuteAll() {
+			return this.isMuteAll;
+		}
+
+		public void setIsMuteAll(Boolean isMuteAll) {
+			this.isMuteAll = isMuteAll;
 		}
 	}
 

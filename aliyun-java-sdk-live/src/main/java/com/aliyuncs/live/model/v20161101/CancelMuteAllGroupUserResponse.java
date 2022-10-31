@@ -15,14 +15,14 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.live.transform.v20161101.SendMessageToGroupUsersResponseUnmarshaller;
+import com.aliyuncs.live.transform.v20161101.CancelMuteAllGroupUserResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SendMessageToGroupUsersResponse extends AcsResponse {
+public class CancelMuteAllGroupUserResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -46,20 +46,20 @@ public class SendMessageToGroupUsersResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String messageId;
+		private Boolean success;
 
-		public String getMessageId() {
-			return this.messageId;
+		public Boolean getSuccess() {
+			return this.success;
 		}
 
-		public void setMessageId(String messageId) {
-			this.messageId = messageId;
+		public void setSuccess(Boolean success) {
+			this.success = success;
 		}
 	}
 
 	@Override
-	public SendMessageToGroupUsersResponse getInstance(UnmarshallerContext context) {
-		return	SendMessageToGroupUsersResponseUnmarshaller.unmarshall(this, context);
+	public CancelMuteAllGroupUserResponse getInstance(UnmarshallerContext context) {
+		return	CancelMuteAllGroupUserResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

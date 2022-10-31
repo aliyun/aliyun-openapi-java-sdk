@@ -1,3 +1,6 @@
+2022-10-31 Version: 3.9.23
+- Live pre sdk test.
+
 2022-09-21 Version: 3.9.22
 - Generated 2016-11-01 for `live`.
 

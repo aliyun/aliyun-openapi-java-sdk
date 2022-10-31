@@ -15,9 +15,6 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.Map;
-import com.google.gson.Gson;
-import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.live.Endpoint;
 
@@ -25,16 +22,12 @@ import com.aliyuncs.live.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateMessageAppRequest extends RpcAcsRequest<CreateMessageAppResponse> {
+public class GetMessageUserInfoRequest extends RpcAcsRequest<GetMessageUserInfoResponse> {
 	   
 
-	@SerializedName("extension")
-	private Map<String,String> extension;
-
-	@SerializedName("appConfig")
-	private Map<String,String> appConfig;
-	public CreateMessageAppRequest() {
-		super("live", "2016-11-01", "CreateMessageApp", "live");
+	private String cloudUid;
+	public GetMessageUserInfoRequest() {
+		super("live", "2016-11-01", "GetMessageUserInfo", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -42,31 +35,20 @@ public class CreateMessageAppRequest extends RpcAcsRequest<CreateMessageAppRespo
 		} catch (Exception e) {}
 	}
 
-	public Map<String,String> getExtension() {
-		return this.extension;
+	public String getCloudUid() {
+		return this.cloudUid;
 	}
 
-	public void setExtension(Map<String,String> extension) {
-		this.extension = extension;	
-		if (extension != null) {
-			putBodyParameter("Extension" , new Gson().toJson(extension));
-		}	
-	}
-
-	public Map<String,String> getAppConfig() {
-		return this.appConfig;
-	}
-
-	public void setAppConfig(Map<String,String> appConfig) {
-		this.appConfig = appConfig;	
-		if (appConfig != null) {
-			putBodyParameter("AppConfig" , new Gson().toJson(appConfig));
-		}	
+	public void setCloudUid(String cloudUid) {
+		this.cloudUid = cloudUid;
+		if(cloudUid != null){
+			putBodyParameter("CloudUid", cloudUid);
+		}
 	}
 
 	@Override
-	public Class<CreateMessageAppResponse> getResponseClass() {
-		return CreateMessageAppResponse.class;
+	public Class<GetMessageUserInfoResponse> getResponseClass() {
+		return GetMessageUserInfoResponse.class;
 	}
 
 }

@@ -14,16 +14,15 @@
 
 package com.aliyuncs.live.model.v20161101;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.live.transform.v20161101.GetMessageAppResponseUnmarshaller;
+import com.aliyuncs.live.transform.v20161101.GetMessageUserInfoResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetMessageAppResponse extends AcsResponse {
+public class GetMessageUserInfoResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -47,60 +46,30 @@ public class GetMessageAppResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String appId;
+		private Boolean isNewIMUser;
 
-		private Long createTime;
+		private Boolean hasOrderedIM;
 
-		private Integer status;
-
-		private Map<Object,Object> appConfig;
-
-		private Map<Object,Object> extension;
-
-		public String getAppId() {
-			return this.appId;
+		public Boolean getIsNewIMUser() {
+			return this.isNewIMUser;
 		}
 
-		public void setAppId(String appId) {
-			this.appId = appId;
+		public void setIsNewIMUser(Boolean isNewIMUser) {
+			this.isNewIMUser = isNewIMUser;
 		}
 
-		public Long getCreateTime() {
-			return this.createTime;
+		public Boolean getHasOrderedIM() {
+			return this.hasOrderedIM;
 		}
 
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
-		}
-
-		public Integer getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(Integer status) {
-			this.status = status;
-		}
-
-		public Map<Object,Object> getAppConfig() {
-			return this.appConfig;
-		}
-
-		public void setAppConfig(Map<Object,Object> appConfig) {
-			this.appConfig = appConfig;
-		}
-
-		public Map<Object,Object> getExtension() {
-			return this.extension;
-		}
-
-		public void setExtension(Map<Object,Object> extension) {
-			this.extension = extension;
+		public void setHasOrderedIM(Boolean hasOrderedIM) {
+			this.hasOrderedIM = hasOrderedIM;
 		}
 	}
 
 	@Override
-	public GetMessageAppResponse getInstance(UnmarshallerContext context) {
-		return	GetMessageAppResponseUnmarshaller.unmarshall(this, context);
+	public GetMessageUserInfoResponse getInstance(UnmarshallerContext context) {
+		return	GetMessageUserInfoResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

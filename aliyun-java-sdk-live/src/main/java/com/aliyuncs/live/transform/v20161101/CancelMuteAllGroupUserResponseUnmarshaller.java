@@ -14,21 +14,21 @@
 
 package com.aliyuncs.live.transform.v20161101;
 
-import com.aliyuncs.live.model.v20161101.SendMessageToGroupResponse;
-import com.aliyuncs.live.model.v20161101.SendMessageToGroupResponse.Result;
+import com.aliyuncs.live.model.v20161101.CancelMuteAllGroupUserResponse;
+import com.aliyuncs.live.model.v20161101.CancelMuteAllGroupUserResponse.Result;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class SendMessageToGroupResponseUnmarshaller {
+public class CancelMuteAllGroupUserResponseUnmarshaller {
 
-	public static SendMessageToGroupResponse unmarshall(SendMessageToGroupResponse sendMessageToGroupResponse, UnmarshallerContext _ctx) {
+	public static CancelMuteAllGroupUserResponse unmarshall(CancelMuteAllGroupUserResponse cancelMuteAllGroupUserResponse, UnmarshallerContext _ctx) {
 		
-		sendMessageToGroupResponse.setRequestId(_ctx.stringValue("SendMessageToGroupResponse.RequestId"));
+		cancelMuteAllGroupUserResponse.setRequestId(_ctx.stringValue("CancelMuteAllGroupUserResponse.RequestId"));
 
 		Result result = new Result();
-		result.setMessageId(_ctx.stringValue("SendMessageToGroupResponse.Result.MessageId"));
-		sendMessageToGroupResponse.setResult(result);
+		result.setSuccess(_ctx.booleanValue("CancelMuteAllGroupUserResponse.Result.Success"));
+		cancelMuteAllGroupUserResponse.setResult(result);
 	 
-	 	return sendMessageToGroupResponse;
+	 	return cancelMuteAllGroupUserResponse;
 	}
 }
