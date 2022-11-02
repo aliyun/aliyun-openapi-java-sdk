@@ -1,3 +1,7 @@
+2022-11-02 Version: 1.1.5
+- ListJobs return JobType and XAttrs.
+- GetJobInfo return JobType and XAttrs.
+
 2022-09-29 Version: 1.1.4
 - Update Job Support Incremental Updating.
 

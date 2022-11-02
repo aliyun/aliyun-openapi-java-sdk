@@ -111,7 +111,11 @@ public class GetJobInfoResponse extends AcsResponse {
 
 			private String className;
 
+			private String jobType;
+
 			private Integer attemptInterval;
+
+			private String xAttrs;
 
 			private MapTaskXAttrs mapTaskXAttrs;
 
@@ -207,12 +211,28 @@ public class GetJobInfoResponse extends AcsResponse {
 				this.className = className;
 			}
 
+			public String getJobType() {
+				return this.jobType;
+			}
+
+			public void setJobType(String jobType) {
+				this.jobType = jobType;
+			}
+
 			public Integer getAttemptInterval() {
 				return this.attemptInterval;
 			}
 
 			public void setAttemptInterval(Integer attemptInterval) {
 				this.attemptInterval = attemptInterval;
+			}
+
+			public String getXAttrs() {
+				return this.xAttrs;
+			}
+
+			public void setXAttrs(String xAttrs) {
+				this.xAttrs = xAttrs;
 			}
 
 			public MapTaskXAttrs getMapTaskXAttrs() {
