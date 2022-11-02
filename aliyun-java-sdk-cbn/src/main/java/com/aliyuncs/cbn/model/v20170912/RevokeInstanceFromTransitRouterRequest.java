@@ -41,7 +41,7 @@ public class RevokeInstanceFromTransitRouterRequest extends RpcAcsRequest<Revoke
 
 	private String instanceId;
 	public RevokeInstanceFromTransitRouterRequest() {
-		super("Cbn", "2017-09-12", "RevokeInstanceFromTransitRouter");
+		super("Cbn", "2017-09-12", "RevokeInstanceFromTransitRouter", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

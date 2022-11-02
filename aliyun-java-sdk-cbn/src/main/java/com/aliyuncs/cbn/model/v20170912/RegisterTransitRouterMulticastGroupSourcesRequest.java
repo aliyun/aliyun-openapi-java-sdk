@@ -46,7 +46,7 @@ public class RegisterTransitRouterMulticastGroupSourcesRequest extends RpcAcsReq
 
 	private String vpcId;
 	public RegisterTransitRouterMulticastGroupSourcesRequest() {
-		super("Cbn", "2017-09-12", "RegisterTransitRouterMulticastGroupSources");
+		super("Cbn", "2017-09-12", "RegisterTransitRouterMulticastGroupSources", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

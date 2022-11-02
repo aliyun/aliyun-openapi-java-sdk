@@ -54,7 +54,7 @@ public class CreateTransitRouterVpcAttachmentRequest extends RpcAcsRequest<Creat
 
 	private String chargeType;
 	public CreateTransitRouterVpcAttachmentRequest() {
-		super("Cbn", "2017-09-12", "CreateTransitRouterVpcAttachment");
+		super("Cbn", "2017-09-12", "CreateTransitRouterVpcAttachment", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

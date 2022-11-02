@@ -39,7 +39,7 @@ public class EnableCenVpcFlowStatisticRequest extends RpcAcsRequest<EnableCenVpc
 
 	private Integer days;
 	public EnableCenVpcFlowStatisticRequest() {
-		super("Cbn", "2017-09-12", "EnableCenVpcFlowStatistic");
+		super("Cbn", "2017-09-12", "EnableCenVpcFlowStatistic", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

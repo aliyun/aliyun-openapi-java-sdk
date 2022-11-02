@@ -35,7 +35,7 @@ public class OpenTransitRouterServiceRequest extends RpcAcsRequest<OpenTransitRo
 
 	private Long ownerId;
 	public OpenTransitRouterServiceRequest() {
-		super("Cbn", "2017-09-12", "OpenTransitRouterService");
+		super("Cbn", "2017-09-12", "OpenTransitRouterService", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

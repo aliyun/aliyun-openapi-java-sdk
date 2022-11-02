@@ -1,3 +1,9 @@
+2022-11-02 Version: 1.0.28
+- Update ListTransitRouterPrefixListAssociation support NextHop and NextHopType filter.
+- Update ListTransitRouterPrefixListAssociation support TransitRouterRouteTableId  filter.
+- Update ListTrafficMarkingPolicies no TrafficMatchRules field in response if no TrafficMarkingPolicyId in request.
+- Update ListCenInterRegionTrafficQosPolicies no TrafficQosQueues field in response if no TrafficQosPolicyId in request.
+
 2022-10-21 Version: 1.0.27
 - Update ListTransitRouterVpnAttachments fix ResourceType .
 - Update CreateCenBandwidthPackage support service type .

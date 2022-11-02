@@ -41,7 +41,7 @@ public class EnableTransitRouterRouteTablePropagationRequest extends RpcAcsReque
 
 	private String transitRouterAttachmentId;
 	public EnableTransitRouterRouteTablePropagationRequest() {
-		super("Cbn", "2017-09-12", "EnableTransitRouterRouteTablePropagation");
+		super("Cbn", "2017-09-12", "EnableTransitRouterRouteTablePropagation", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

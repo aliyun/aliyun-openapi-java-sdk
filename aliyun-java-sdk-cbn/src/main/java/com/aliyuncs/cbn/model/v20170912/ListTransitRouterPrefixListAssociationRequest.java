@@ -35,6 +35,8 @@ public class ListTransitRouterPrefixListAssociationRequest extends RpcAcsRequest
 
 	private Long ownerUid;
 
+	private String nextHopType;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -44,8 +46,10 @@ public class ListTransitRouterPrefixListAssociationRequest extends RpcAcsRequest
 	private String transitRouterId;
 
 	private String transitRouterTableId;
+
+	private String nextHop;
 	public ListTransitRouterPrefixListAssociationRequest() {
-		super("Cbn", "2017-09-12", "ListTransitRouterPrefixListAssociation");
+		super("Cbn", "2017-09-12", "ListTransitRouterPrefixListAssociation", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -108,6 +112,17 @@ public class ListTransitRouterPrefixListAssociationRequest extends RpcAcsRequest
 		}
 	}
 
+	public String getNextHopType() {
+		return this.nextHopType;
+	}
+
+	public void setNextHopType(String nextHopType) {
+		this.nextHopType = nextHopType;
+		if(nextHopType != null){
+			putQueryParameter("NextHopType", nextHopType);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -160,6 +175,17 @@ public class ListTransitRouterPrefixListAssociationRequest extends RpcAcsRequest
 		this.transitRouterTableId = transitRouterTableId;
 		if(transitRouterTableId != null){
 			putQueryParameter("TransitRouterTableId", transitRouterTableId);
+		}
+	}
+
+	public String getNextHop() {
+		return this.nextHop;
+	}
+
+	public void setNextHop(String nextHop) {
+		this.nextHop = nextHop;
+		if(nextHop != null){
+			putQueryParameter("NextHop", nextHop);
 		}
 	}
 

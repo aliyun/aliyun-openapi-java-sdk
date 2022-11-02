@@ -56,7 +56,7 @@ public class CreateTransitRouterVpnAttachmentRequest extends RpcAcsRequest<Creat
 
 	private String vpnId;
 	public CreateTransitRouterVpnAttachmentRequest() {
-		super("Cbn", "2017-09-12", "CreateTransitRouterVpnAttachment");
+		super("Cbn", "2017-09-12", "CreateTransitRouterVpnAttachment", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -45,7 +45,7 @@ public class ListTransitRouterMulticastDomainsRequest extends RpcAcsRequest<List
 
 	private Long maxResults;
 	public ListTransitRouterMulticastDomainsRequest() {
-		super("Cbn", "2017-09-12", "ListTransitRouterMulticastDomains");
+		super("Cbn", "2017-09-12", "ListTransitRouterMulticastDomains", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

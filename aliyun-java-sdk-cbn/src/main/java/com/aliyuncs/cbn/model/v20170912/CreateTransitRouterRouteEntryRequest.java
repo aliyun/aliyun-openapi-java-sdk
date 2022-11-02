@@ -49,7 +49,7 @@ public class CreateTransitRouterRouteEntryRequest extends RpcAcsRequest<CreateTr
 
 	private String transitRouterRouteEntryName;
 	public CreateTransitRouterRouteEntryRequest() {
-		super("Cbn", "2017-09-12", "CreateTransitRouterRouteEntry");
+		super("Cbn", "2017-09-12", "CreateTransitRouterRouteEntry", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

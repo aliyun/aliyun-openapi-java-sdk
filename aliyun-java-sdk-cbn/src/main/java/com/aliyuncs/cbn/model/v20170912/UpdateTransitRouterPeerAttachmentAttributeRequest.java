@@ -51,7 +51,7 @@ public class UpdateTransitRouterPeerAttachmentAttributeRequest extends RpcAcsReq
 
 	private String cenBandwidthPackageId;
 	public UpdateTransitRouterPeerAttachmentAttributeRequest() {
-		super("Cbn", "2017-09-12", "UpdateTransitRouterPeerAttachmentAttribute");
+		super("Cbn", "2017-09-12", "UpdateTransitRouterPeerAttachmentAttribute", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

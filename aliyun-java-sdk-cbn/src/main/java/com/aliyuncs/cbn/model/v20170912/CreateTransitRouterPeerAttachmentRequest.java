@@ -57,7 +57,7 @@ public class CreateTransitRouterPeerAttachmentRequest extends RpcAcsRequest<Crea
 
 	private String peerTransitRouterId;
 	public CreateTransitRouterPeerAttachmentRequest() {
-		super("Cbn", "2017-09-12", "CreateTransitRouterPeerAttachment");
+		super("Cbn", "2017-09-12", "CreateTransitRouterPeerAttachment", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
