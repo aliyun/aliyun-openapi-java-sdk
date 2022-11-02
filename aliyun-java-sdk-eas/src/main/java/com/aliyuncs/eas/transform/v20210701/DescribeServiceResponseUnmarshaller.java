@@ -50,9 +50,12 @@ public class DescribeServiceResponseUnmarshaller {
 		describeServiceResponse.setUpdateTime(_ctx.stringValue("DescribeServiceResponse.UpdateTime"));
 		describeServiceResponse.setWeight(_ctx.integerValue("DescribeServiceResponse.Weight"));
 		describeServiceResponse.setServiceId(_ctx.stringValue("DescribeServiceResponse.ServiceId"));
+		describeServiceResponse.setServiceUid(_ctx.stringValue("DescribeServiceResponse.ServiceUid"));
 		describeServiceResponse.setAccessToken(_ctx.stringValue("DescribeServiceResponse.AccessToken"));
 		describeServiceResponse.setSource(_ctx.stringValue("DescribeServiceResponse.Source"));
 		describeServiceResponse.setExtraData(_ctx.stringValue("DescribeServiceResponse.ExtraData"));
+		describeServiceResponse.setRole(_ctx.stringValue("DescribeServiceResponse.Role"));
+		describeServiceResponse.setRoleAttrs(_ctx.stringValue("DescribeServiceResponse.RoleAttrs"));
 	 
 	 	return describeServiceResponse;
 	}

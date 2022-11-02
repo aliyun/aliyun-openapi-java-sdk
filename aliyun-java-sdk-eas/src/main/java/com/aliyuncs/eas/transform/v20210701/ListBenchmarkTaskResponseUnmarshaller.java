@@ -27,6 +27,9 @@ public class ListBenchmarkTaskResponseUnmarshaller {
 	public static ListBenchmarkTaskResponse unmarshall(ListBenchmarkTaskResponse listBenchmarkTaskResponse, UnmarshallerContext _ctx) {
 		
 		listBenchmarkTaskResponse.setRequestId(_ctx.stringValue("ListBenchmarkTaskResponse.RequestId"));
+		listBenchmarkTaskResponse.setTotalCount(_ctx.integerValue("ListBenchmarkTaskResponse.TotalCount"));
+		listBenchmarkTaskResponse.setPageNumber(_ctx.integerValue("ListBenchmarkTaskResponse.PageNumber"));
+		listBenchmarkTaskResponse.setPageSize(_ctx.integerValue("ListBenchmarkTaskResponse.PageSize"));
 
 		List<Task> tasks = new ArrayList<Task>();
 		for (int i = 0; i < _ctx.lengthValue("ListBenchmarkTaskResponse.Tasks.Length"); i++) {

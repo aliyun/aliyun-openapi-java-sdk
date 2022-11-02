@@ -133,11 +133,17 @@ public class ListResourceServicesResponse extends AcsResponse {
 
 		private String serviceId;
 
+		private String serviceUid;
+
 		private String accessToken;
 
 		private String source;
 
 		private String extraData;
+
+		private String role;
+
+		private String roleAttrs;
 
 		public String getRequestId() {
 			return this.requestId;
@@ -363,6 +369,14 @@ public class ListResourceServicesResponse extends AcsResponse {
 			this.serviceId = serviceId;
 		}
 
+		public String getServiceUid() {
+			return this.serviceUid;
+		}
+
+		public void setServiceUid(String serviceUid) {
+			this.serviceUid = serviceUid;
+		}
+
 		public String getAccessToken() {
 			return this.accessToken;
 		}
@@ -385,6 +399,22 @@ public class ListResourceServicesResponse extends AcsResponse {
 
 		public void setExtraData(String extraData) {
 			this.extraData = extraData;
+		}
+
+		public String getRole() {
+			return this.role;
+		}
+
+		public void setRole(String role) {
+			this.role = role;
+		}
+
+		public String getRoleAttrs() {
+			return this.roleAttrs;
+		}
+
+		public void setRoleAttrs(String roleAttrs) {
+			this.roleAttrs = roleAttrs;
 		}
 	}
 

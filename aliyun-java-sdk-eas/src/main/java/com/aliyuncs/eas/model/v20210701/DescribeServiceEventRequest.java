@@ -22,19 +22,23 @@ import com.aliyuncs.eas.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListBenchmarkTaskRequest extends RoaAcsRequest<ListBenchmarkTaskResponse> {
+public class DescribeServiceEventRequest extends RoaAcsRequest<DescribeServiceEventResponse> {
 	   
 
 	private String pageSize;
 
+	private String endTime;
+
 	private String serviceName;
 
-	private String pageNumber;
+	private String clusterId;
 
-	private String fileter;
-	public ListBenchmarkTaskRequest() {
-		super("eas", "2021-07-01", "ListBenchmarkTask", "eas");
-		setUriPattern("/api/v2/benchmark-tasks");
+	private String startTime;
+
+	private String pageNum;
+	public DescribeServiceEventRequest() {
+		super("eas", "2021-07-01", "DescribeServiceEvent", "eas");
+		setUriPattern("/api/v2/services/[ClusterId]/[ServiceName]/events");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -53,6 +57,17 @@ public class ListBenchmarkTaskRequest extends RoaAcsRequest<ListBenchmarkTaskRes
 		}
 	}
 
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
+	}
+
 	public String getServiceName() {
 		return this.serviceName;
 	}
@@ -60,35 +75,46 @@ public class ListBenchmarkTaskRequest extends RoaAcsRequest<ListBenchmarkTaskRes
 	public void setServiceName(String serviceName) {
 		this.serviceName = serviceName;
 		if(serviceName != null){
-			putQueryParameter("ServiceName", serviceName);
+			putPathParameter("ServiceName", serviceName);
 		}
 	}
 
-	public String getPageNumber() {
-		return this.pageNumber;
+	public String getClusterId() {
+		return this.clusterId;
 	}
 
-	public void setPageNumber(String pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber);
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putPathParameter("ClusterId", clusterId);
 		}
 	}
 
-	public String getFileter() {
-		return this.fileter;
+	public String getStartTime() {
+		return this.startTime;
 	}
 
-	public void setFileter(String fileter) {
-		this.fileter = fileter;
-		if(fileter != null){
-			putQueryParameter("Fileter", fileter);
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(String pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum);
 		}
 	}
 
 	@Override
-	public Class<ListBenchmarkTaskResponse> getResponseClass() {
-		return ListBenchmarkTaskResponse.class;
+	public Class<DescribeServiceEventResponse> getResponseClass() {
+		return DescribeServiceEventResponse.class;
 	}
 
 }

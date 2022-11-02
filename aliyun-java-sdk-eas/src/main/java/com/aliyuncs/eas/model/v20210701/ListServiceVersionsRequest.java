@@ -22,19 +22,19 @@ import com.aliyuncs.eas.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListBenchmarkTaskRequest extends RoaAcsRequest<ListBenchmarkTaskResponse> {
+public class ListServiceVersionsRequest extends RoaAcsRequest<ListServiceVersionsResponse> {
 	   
 
-	private String pageSize;
+	private Integer pageSize;
 
 	private String serviceName;
 
-	private String pageNumber;
+	private String clusterId;
 
-	private String fileter;
-	public ListBenchmarkTaskRequest() {
-		super("eas", "2021-07-01", "ListBenchmarkTask", "eas");
-		setUriPattern("/api/v2/benchmark-tasks");
+	private Integer pageNumber;
+	public ListServiceVersionsRequest() {
+		super("eas", "2021-07-01", "ListServiceVersions", "eas");
+		setUriPattern("/api/v2/services/[ClusterId]/[ServiceName]/versions");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -42,14 +42,14 @@ public class ListBenchmarkTaskRequest extends RoaAcsRequest<ListBenchmarkTaskRes
 		} catch (Exception e) {}
 	}
 
-	public String getPageSize() {
+	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
-	public void setPageSize(String pageSize) {
+	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
 		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize);
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -60,35 +60,35 @@ public class ListBenchmarkTaskRequest extends RoaAcsRequest<ListBenchmarkTaskRes
 	public void setServiceName(String serviceName) {
 		this.serviceName = serviceName;
 		if(serviceName != null){
-			putQueryParameter("ServiceName", serviceName);
+			putPathParameter("ServiceName", serviceName);
 		}
 	}
 
-	public String getPageNumber() {
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putPathParameter("ClusterId", clusterId);
+		}
+	}
+
+	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
 
-	public void setPageNumber(String pageNumber) {
+	public void setPageNumber(Integer pageNumber) {
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber);
-		}
-	}
-
-	public String getFileter() {
-		return this.fileter;
-	}
-
-	public void setFileter(String fileter) {
-		this.fileter = fileter;
-		if(fileter != null){
-			putQueryParameter("Fileter", fileter);
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
 	@Override
-	public Class<ListBenchmarkTaskResponse> getResponseClass() {
-		return ListBenchmarkTaskResponse.class;
+	public Class<ListServiceVersionsResponse> getResponseClass() {
+		return ListServiceVersionsResponse.class;
 	}
 
 }

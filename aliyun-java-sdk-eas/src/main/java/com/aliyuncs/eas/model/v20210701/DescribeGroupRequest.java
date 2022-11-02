@@ -22,44 +22,20 @@ import com.aliyuncs.eas.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeBenchmarkTaskReportRequest extends RoaAcsRequest<DescribeBenchmarkTaskReportResponse> {
+public class DescribeGroupRequest extends RoaAcsRequest<DescribeGroupResponse> {
 	   
 
-	private String reportType;
-
-	private String taskName;
-
 	private String clusterId;
-	public DescribeBenchmarkTaskReportRequest() {
-		super("eas", "2021-07-01", "DescribeBenchmarkTaskReport", "eas");
-		setUriPattern("/api/v2/benchmark-tasks/[ClusterId]/[TaskName]/report");
+
+	private String groupName;
+	public DescribeGroupRequest() {
+		super("eas", "2021-07-01", "DescribeGroup", "eas");
+		setUriPattern("/api/v2/groups/[ClusterId]/[GroupName]");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getReportType() {
-		return this.reportType;
-	}
-
-	public void setReportType(String reportType) {
-		this.reportType = reportType;
-		if(reportType != null){
-			putQueryParameter("ReportType", reportType);
-		}
-	}
-
-	public String getTaskName() {
-		return this.taskName;
-	}
-
-	public void setTaskName(String taskName) {
-		this.taskName = taskName;
-		if(taskName != null){
-			putPathParameter("TaskName", taskName);
-		}
 	}
 
 	public String getClusterId() {
@@ -73,9 +49,20 @@ public class DescribeBenchmarkTaskReportRequest extends RoaAcsRequest<DescribeBe
 		}
 	}
 
+	public String getGroupName() {
+		return this.groupName;
+	}
+
+	public void setGroupName(String groupName) {
+		this.groupName = groupName;
+		if(groupName != null){
+			putPathParameter("GroupName", groupName);
+		}
+	}
+
 	@Override
-	public Class<DescribeBenchmarkTaskReportResponse> getResponseClass() {
-		return DescribeBenchmarkTaskReportResponse.class;
+	public Class<DescribeGroupResponse> getResponseClass() {
+		return DescribeGroupResponse.class;
 	}
 
 }

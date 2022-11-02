@@ -62,9 +62,12 @@ public class ListServicesResponseUnmarshaller {
 			servicesItem.setUpdateTime(_ctx.stringValue("ListServicesResponse.Services["+ i +"].UpdateTime"));
 			servicesItem.setWeight(_ctx.integerValue("ListServicesResponse.Services["+ i +"].Weight"));
 			servicesItem.setServiceId(_ctx.stringValue("ListServicesResponse.Services["+ i +"].ServiceId"));
+			servicesItem.setServiceUid(_ctx.stringValue("ListServicesResponse.Services["+ i +"].ServiceUid"));
 			servicesItem.setAccessToken(_ctx.stringValue("ListServicesResponse.Services["+ i +"].AccessToken"));
 			servicesItem.setSource(_ctx.stringValue("ListServicesResponse.Services["+ i +"].Source"));
 			servicesItem.setExtraData(_ctx.stringValue("ListServicesResponse.Services["+ i +"].ExtraData"));
+			servicesItem.setRole(_ctx.stringValue("ListServicesResponse.Services["+ i +"].Role"));
+			servicesItem.setRoleAttrs(_ctx.stringValue("ListServicesResponse.Services["+ i +"].RoleAttrs"));
 
 			services.add(servicesItem);
 		}

@@ -22,24 +22,33 @@ import com.aliyuncs.eas.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListBenchmarkTaskRequest extends RoaAcsRequest<ListBenchmarkTaskResponse> {
+public class ListGroupsRequest extends RoaAcsRequest<ListGroupsResponse> {
 	   
+
+	private String filter;
 
 	private String pageSize;
 
-	private String serviceName;
-
 	private String pageNumber;
-
-	private String fileter;
-	public ListBenchmarkTaskRequest() {
-		super("eas", "2021-07-01", "ListBenchmarkTask", "eas");
-		setUriPattern("/api/v2/benchmark-tasks");
+	public ListGroupsRequest() {
+		super("eas", "2021-07-01", "ListGroups", "eas");
+		setUriPattern("/api/v2/groups");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getFilter() {
+		return this.filter;
+	}
+
+	public void setFilter(String filter) {
+		this.filter = filter;
+		if(filter != null){
+			putQueryParameter("Filter", filter);
+		}
 	}
 
 	public String getPageSize() {
@@ -50,17 +59,6 @@ public class ListBenchmarkTaskRequest extends RoaAcsRequest<ListBenchmarkTaskRes
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize);
-		}
-	}
-
-	public String getServiceName() {
-		return this.serviceName;
-	}
-
-	public void setServiceName(String serviceName) {
-		this.serviceName = serviceName;
-		if(serviceName != null){
-			putQueryParameter("ServiceName", serviceName);
 		}
 	}
 
@@ -75,20 +73,9 @@ public class ListBenchmarkTaskRequest extends RoaAcsRequest<ListBenchmarkTaskRes
 		}
 	}
 
-	public String getFileter() {
-		return this.fileter;
-	}
-
-	public void setFileter(String fileter) {
-		this.fileter = fileter;
-		if(fileter != null){
-			putQueryParameter("Fileter", fileter);
-		}
-	}
-
 	@Override
-	public Class<ListBenchmarkTaskResponse> getResponseClass() {
-		return ListBenchmarkTaskResponse.class;
+	public Class<ListGroupsResponse> getResponseClass() {
+		return ListGroupsResponse.class;
 	}
 
 }

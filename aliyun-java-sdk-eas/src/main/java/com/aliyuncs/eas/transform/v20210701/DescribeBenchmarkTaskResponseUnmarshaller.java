@@ -34,6 +34,7 @@ public class DescribeBenchmarkTaskResponseUnmarshaller {
 		describeBenchmarkTaskResponse.setStatus(_ctx.stringValue("DescribeBenchmarkTaskResponse.Status"));
 		describeBenchmarkTaskResponse.setReason(_ctx.stringValue("DescribeBenchmarkTaskResponse.Reason"));
 		describeBenchmarkTaskResponse.setMessage(_ctx.stringValue("DescribeBenchmarkTaskResponse.Message"));
+		describeBenchmarkTaskResponse.setEndpoint(_ctx.stringValue("DescribeBenchmarkTaskResponse.Endpoint"));
 	 
 	 	return describeBenchmarkTaskResponse;
 	}
