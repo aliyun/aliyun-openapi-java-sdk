@@ -35,7 +35,7 @@ public class AttachKeyPairRequest extends RpcAcsRequest<AttachKeyPairResponse> {
 
 	private String instanceIds;
 	public AttachKeyPairRequest() {
-		super("Ecs", "2014-05-26", "AttachKeyPair");
+		super("Ecs", "2014-05-26", "AttachKeyPair", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class DescribeDeploymentSetSupportedInstanceTypeFamilyRequest extends Rpc
 
 	private Long ownerId;
 	public DescribeDeploymentSetSupportedInstanceTypeFamilyRequest() {
-		super("Ecs", "2014-05-26", "DescribeDeploymentSetSupportedInstanceTypeFamily");
+		super("Ecs", "2014-05-26", "DescribeDeploymentSetSupportedInstanceTypeFamily", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

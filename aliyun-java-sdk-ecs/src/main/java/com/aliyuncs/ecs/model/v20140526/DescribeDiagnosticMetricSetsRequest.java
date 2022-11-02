@@ -36,7 +36,7 @@ public class DescribeDiagnosticMetricSetsRequest extends RpcAcsRequest<DescribeD
 
 	private Integer maxResults;
 	public DescribeDiagnosticMetricSetsRequest() {
-		super("Ecs", "2014-05-26", "DescribeDiagnosticMetricSets");
+		super("Ecs", "2014-05-26", "DescribeDiagnosticMetricSets", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

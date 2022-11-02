@@ -40,7 +40,7 @@ public class AssignIpv6AddressesRequest extends RpcAcsRequest<AssignIpv6Addresse
 
 	private List<String> ipv6Addresss;
 	public AssignIpv6AddressesRequest() {
-		super("Ecs", "2014-05-26", "AssignIpv6Addresses");
+		super("Ecs", "2014-05-26", "AssignIpv6Addresses", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

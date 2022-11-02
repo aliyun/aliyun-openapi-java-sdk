@@ -1,3 +1,6 @@
+2022-11-02 Version: 4.24.35
+- Support LICENSE.
+
 2022-10-28 Version: 4.24.34
 - Automatically generate sdk tasks.
 

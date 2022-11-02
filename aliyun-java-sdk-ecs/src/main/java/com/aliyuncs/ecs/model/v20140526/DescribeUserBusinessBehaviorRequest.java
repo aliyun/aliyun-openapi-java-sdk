@@ -35,7 +35,7 @@ public class DescribeUserBusinessBehaviorRequest extends RpcAcsRequest<DescribeU
 
 	private String statusKey;
 	public DescribeUserBusinessBehaviorRequest() {
-		super("Ecs", "2014-05-26", "DescribeUserBusinessBehavior");
+		super("Ecs", "2014-05-26", "DescribeUserBusinessBehavior", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

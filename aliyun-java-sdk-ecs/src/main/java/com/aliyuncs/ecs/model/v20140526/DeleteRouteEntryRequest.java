@@ -42,7 +42,7 @@ public class DeleteRouteEntryRequest extends RpcAcsRequest<DeleteRouteEntryRespo
 
 	private List<NextHopList> nextHopLists;
 	public DeleteRouteEntryRequest() {
-		super("Ecs", "2014-05-26", "DeleteRouteEntry");
+		super("Ecs", "2014-05-26", "DeleteRouteEntry", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

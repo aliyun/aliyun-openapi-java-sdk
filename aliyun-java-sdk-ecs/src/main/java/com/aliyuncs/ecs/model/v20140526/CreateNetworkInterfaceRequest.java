@@ -72,7 +72,7 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 
 	private List<String> ipv6Addresss;
 	public CreateNetworkInterfaceRequest() {
-		super("Ecs", "2014-05-26", "CreateNetworkInterface");
+		super("Ecs", "2014-05-26", "CreateNetworkInterface", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

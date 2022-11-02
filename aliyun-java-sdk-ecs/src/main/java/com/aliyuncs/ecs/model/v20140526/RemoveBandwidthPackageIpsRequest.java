@@ -40,7 +40,7 @@ public class RemoveBandwidthPackageIpsRequest extends RpcAcsRequest<RemoveBandwi
 
 	private Long ownerId;
 	public RemoveBandwidthPackageIpsRequest() {
-		super("Ecs", "2014-05-26", "RemoveBandwidthPackageIps");
+		super("Ecs", "2014-05-26", "RemoveBandwidthPackageIps", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

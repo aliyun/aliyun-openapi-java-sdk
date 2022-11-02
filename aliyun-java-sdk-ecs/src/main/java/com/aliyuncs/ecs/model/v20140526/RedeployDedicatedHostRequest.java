@@ -35,7 +35,7 @@ public class RedeployDedicatedHostRequest extends RpcAcsRequest<RedeployDedicate
 
 	private Long ownerId;
 	public RedeployDedicatedHostRequest() {
-		super("Ecs", "2014-05-26", "RedeployDedicatedHost");
+		super("Ecs", "2014-05-26", "RedeployDedicatedHost", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

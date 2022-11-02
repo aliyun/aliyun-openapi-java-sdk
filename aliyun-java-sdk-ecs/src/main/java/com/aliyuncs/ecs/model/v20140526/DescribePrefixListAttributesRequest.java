@@ -35,7 +35,7 @@ public class DescribePrefixListAttributesRequest extends RpcAcsRequest<DescribeP
 
 	private Long ownerId;
 	public DescribePrefixListAttributesRequest() {
-		super("Ecs", "2014-05-26", "DescribePrefixListAttributes");
+		super("Ecs", "2014-05-26", "DescribePrefixListAttributes", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
