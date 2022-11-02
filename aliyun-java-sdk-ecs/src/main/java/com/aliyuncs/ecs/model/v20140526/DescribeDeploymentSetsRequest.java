@@ -49,7 +49,7 @@ public class DescribeDeploymentSetsRequest extends RpcAcsRequest<DescribeDeploym
 
 	private String strategy;
 	public DescribeDeploymentSetsRequest() {
-		super("Ecs", "2014-05-26", "DescribeDeploymentSets", "ecs");
+		super("Ecs", "2014-05-26", "DescribeDeploymentSets");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

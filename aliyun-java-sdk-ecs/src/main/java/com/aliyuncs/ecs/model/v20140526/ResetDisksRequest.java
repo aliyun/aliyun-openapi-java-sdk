@@ -38,7 +38,7 @@ public class ResetDisksRequest extends RpcAcsRequest<ResetDisksResponse> {
 
 	private List<Disk> disks;
 	public ResetDisksRequest() {
-		super("Ecs", "2014-05-26", "ResetDisks", "ecs");
+		super("Ecs", "2014-05-26", "ResetDisks");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

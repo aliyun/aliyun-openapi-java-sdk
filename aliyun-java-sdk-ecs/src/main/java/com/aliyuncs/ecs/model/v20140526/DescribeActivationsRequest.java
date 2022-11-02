@@ -41,7 +41,7 @@ public class DescribeActivationsRequest extends RpcAcsRequest<DescribeActivation
 
 	private String activationId;
 	public DescribeActivationsRequest() {
-		super("Ecs", "2014-05-26", "DescribeActivations", "ecs");
+		super("Ecs", "2014-05-26", "DescribeActivations");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

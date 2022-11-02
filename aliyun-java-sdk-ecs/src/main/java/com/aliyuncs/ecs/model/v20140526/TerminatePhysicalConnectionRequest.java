@@ -39,7 +39,7 @@ public class TerminatePhysicalConnectionRequest extends RpcAcsRequest<TerminateP
 
 	private String physicalConnectionId;
 	public TerminatePhysicalConnectionRequest() {
-		super("Ecs", "2014-05-26", "TerminatePhysicalConnection", "ecs");
+		super("Ecs", "2014-05-26", "TerminatePhysicalConnection");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

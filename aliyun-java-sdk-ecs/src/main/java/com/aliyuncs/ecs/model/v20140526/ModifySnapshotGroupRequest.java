@@ -39,7 +39,7 @@ public class ModifySnapshotGroupRequest extends RpcAcsRequest<ModifySnapshotGrou
 
 	private String name;
 	public ModifySnapshotGroupRequest() {
-		super("Ecs", "2014-05-26", "ModifySnapshotGroup", "ecs");
+		super("Ecs", "2014-05-26", "ModifySnapshotGroup");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

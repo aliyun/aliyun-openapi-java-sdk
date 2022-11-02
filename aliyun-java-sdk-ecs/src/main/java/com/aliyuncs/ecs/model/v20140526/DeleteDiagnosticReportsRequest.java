@@ -28,7 +28,7 @@ public class DeleteDiagnosticReportsRequest extends RpcAcsRequest<DeleteDiagnost
 
 	private List<String> reportIdss;
 	public DeleteDiagnosticReportsRequest() {
-		super("Ecs", "2014-05-26", "DeleteDiagnosticReports", "ecs");
+		super("Ecs", "2014-05-26", "DeleteDiagnosticReports");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

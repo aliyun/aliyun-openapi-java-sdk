@@ -52,7 +52,7 @@ public class DescribeSnapshotGroupsRequest extends RpcAcsRequest<DescribeSnapsho
 
 	private List<String> statuss;
 	public DescribeSnapshotGroupsRequest() {
-		super("Ecs", "2014-05-26", "DescribeSnapshotGroups", "ecs");
+		super("Ecs", "2014-05-26", "DescribeSnapshotGroups");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
