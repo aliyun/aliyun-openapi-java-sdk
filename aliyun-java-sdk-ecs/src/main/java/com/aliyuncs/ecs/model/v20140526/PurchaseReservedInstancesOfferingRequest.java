@@ -42,6 +42,8 @@ public class PurchaseReservedInstancesOfferingRequest extends RpcAcsRequest<Purc
 
 	private List<Tag> tags;
 
+	private Integer autoRenewPeriod;
+
 	private Integer period;
 
 	private String resourceOwnerAccount;
@@ -53,6 +55,8 @@ public class PurchaseReservedInstancesOfferingRequest extends RpcAcsRequest<Purc
 	private String periodUnit;
 
 	private String offeringType;
+
+	private Boolean autoRenew;
 
 	private String zoneId;
 
@@ -159,6 +163,17 @@ public class PurchaseReservedInstancesOfferingRequest extends RpcAcsRequest<Purc
 		}	
 	}
 
+	public Integer getAutoRenewPeriod() {
+		return this.autoRenewPeriod;
+	}
+
+	public void setAutoRenewPeriod(Integer autoRenewPeriod) {
+		this.autoRenewPeriod = autoRenewPeriod;
+		if(autoRenewPeriod != null){
+			putQueryParameter("AutoRenewPeriod", autoRenewPeriod.toString());
+		}
+	}
+
 	public Integer getPeriod() {
 		return this.period;
 	}
@@ -222,6 +237,17 @@ public class PurchaseReservedInstancesOfferingRequest extends RpcAcsRequest<Purc
 		this.offeringType = offeringType;
 		if(offeringType != null){
 			putQueryParameter("OfferingType", offeringType);
+		}
+	}
+
+	public Boolean getAutoRenew() {
+		return this.autoRenew;
+	}
+
+	public void setAutoRenew(Boolean autoRenew) {
+		this.autoRenew = autoRenew;
+		if(autoRenew != null){
+			putQueryParameter("AutoRenew", autoRenew.toString());
 		}
 	}
 
