@@ -33,6 +33,8 @@ public class ListAggregateConfigRulesRequest extends RpcAcsRequest<ListAggregate
 
 	private Integer pageSize;
 
+	private String keyword;
+
 	private String complianceType;
 
 	private Integer riskLevel;
@@ -88,6 +90,17 @@ public class ListAggregateConfigRulesRequest extends RpcAcsRequest<ListAggregate
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getKeyword() {
+		return this.keyword;
+	}
+
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
+		if(keyword != null){
+			putQueryParameter("Keyword", keyword);
 		}
 	}
 

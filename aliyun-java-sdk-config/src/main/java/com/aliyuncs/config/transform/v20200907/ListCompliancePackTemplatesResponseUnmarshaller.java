@@ -44,6 +44,10 @@ public class ListCompliancePackTemplatesResponseUnmarshaller {
 			compliancePackTemplate.setAutomationHelpUrl(_ctx.stringValue("ListCompliancePackTemplatesResponse.CompliancePackTemplatesResult.CompliancePackTemplates["+ i +"].AutomationHelpUrl"));
 			compliancePackTemplate.setCompliancePackTemplateName(_ctx.stringValue("ListCompliancePackTemplatesResponse.CompliancePackTemplatesResult.CompliancePackTemplates["+ i +"].CompliancePackTemplateName"));
 			compliancePackTemplate.setCompliancePackTemplateId(_ctx.stringValue("ListCompliancePackTemplatesResponse.CompliancePackTemplatesResult.CompliancePackTemplates["+ i +"].CompliancePackTemplateId"));
+			compliancePackTemplate.setDomain(_ctx.stringValue("ListCompliancePackTemplatesResponse.CompliancePackTemplatesResult.CompliancePackTemplates["+ i +"].Domain"));
+			compliancePackTemplate.setLabels(_ctx.stringValue("ListCompliancePackTemplatesResponse.CompliancePackTemplatesResult.CompliancePackTemplates["+ i +"].Labels"));
+			compliancePackTemplate.setDeveloperType(_ctx.stringValue("ListCompliancePackTemplatesResponse.CompliancePackTemplatesResult.CompliancePackTemplates["+ i +"].DeveloperType"));
+			compliancePackTemplate.setLastUpdate(_ctx.integerValue("ListCompliancePackTemplatesResponse.CompliancePackTemplatesResult.CompliancePackTemplates["+ i +"].LastUpdate"));
 
 			List<ConfigRulesItem> configRules = new ArrayList<ConfigRulesItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListCompliancePackTemplatesResponse.CompliancePackTemplatesResult.CompliancePackTemplates["+ i +"].ConfigRules.Length"); j++) {
@@ -52,6 +56,9 @@ public class ListCompliancePackTemplatesResponseUnmarshaller {
 				configRulesItem.setManagedRuleIdentifier(_ctx.stringValue("ListCompliancePackTemplatesResponse.CompliancePackTemplatesResult.CompliancePackTemplates["+ i +"].ConfigRules["+ j +"].ManagedRuleIdentifier"));
 				configRulesItem.setManagedRuleName(_ctx.stringValue("ListCompliancePackTemplatesResponse.CompliancePackTemplatesResult.CompliancePackTemplates["+ i +"].ConfigRules["+ j +"].ManagedRuleName"));
 				configRulesItem.setRiskLevel(_ctx.integerValue("ListCompliancePackTemplatesResponse.CompliancePackTemplatesResult.CompliancePackTemplates["+ i +"].ConfigRules["+ j +"].RiskLevel"));
+				configRulesItem.setDeveloperType(_ctx.stringValue("ListCompliancePackTemplatesResponse.CompliancePackTemplatesResult.CompliancePackTemplates["+ i +"].ConfigRules["+ j +"].DeveloperType"));
+				configRulesItem.setControlId(_ctx.stringValue("ListCompliancePackTemplatesResponse.CompliancePackTemplatesResult.CompliancePackTemplates["+ i +"].ConfigRules["+ j +"].ControlId"));
+				configRulesItem.setControlDescription(_ctx.stringValue("ListCompliancePackTemplatesResponse.CompliancePackTemplatesResult.CompliancePackTemplates["+ i +"].ConfigRules["+ j +"].ControlDescription"));
 
 				List<ConfigRuleParametersItem> configRuleParameters = new ArrayList<ConfigRuleParametersItem>();
 				for (int k = 0; k < _ctx.lengthValue("ListCompliancePackTemplatesResponse.CompliancePackTemplatesResult.CompliancePackTemplates["+ i +"].ConfigRules["+ j +"].ConfigRuleParameters.Length"); k++) {

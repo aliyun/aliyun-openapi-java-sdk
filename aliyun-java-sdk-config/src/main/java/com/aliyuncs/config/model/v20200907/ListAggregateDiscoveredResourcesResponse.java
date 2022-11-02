@@ -109,6 +109,8 @@ public class ListAggregateDiscoveredResourcesResponse extends AcsResponse {
 
 			private Long resourceOwnerId;
 
+			private Long version;
+
 			public String getResourceType() {
 				return this.resourceType;
 			}
@@ -187,6 +189,14 @@ public class ListAggregateDiscoveredResourcesResponse extends AcsResponse {
 
 			public void setResourceOwnerId(Long resourceOwnerId) {
 				this.resourceOwnerId = resourceOwnerId;
+			}
+
+			public Long getVersion() {
+				return this.version;
+			}
+
+			public void setVersion(Long version) {
+				this.version = version;
 			}
 		}
 	}

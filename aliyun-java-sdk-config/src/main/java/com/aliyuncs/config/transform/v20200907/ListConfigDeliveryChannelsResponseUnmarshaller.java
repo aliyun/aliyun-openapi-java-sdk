@@ -44,6 +44,7 @@ public class ListConfigDeliveryChannelsResponseUnmarshaller {
 			deliveryChannel.setConfigurationItemChangeNotification(_ctx.booleanValue("ListConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].ConfigurationItemChangeNotification"));
 			deliveryChannel.setNonCompliantNotification(_ctx.booleanValue("ListConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].NonCompliantNotification"));
 			deliveryChannel.setAccountId(_ctx.longValue("ListConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].AccountId"));
+			deliveryChannel.setDeliverySnapshotTime(_ctx.stringValue("ListConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].DeliverySnapshotTime"));
 
 			deliveryChannels.add(deliveryChannel);
 		}

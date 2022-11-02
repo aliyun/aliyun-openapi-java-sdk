@@ -45,6 +45,7 @@ public class ListAggregateConfigDeliveryChannelsResponseUnmarshaller {
 			deliveryChannel.setNonCompliantNotification(_ctx.booleanValue("ListAggregateConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].NonCompliantNotification"));
 			deliveryChannel.setAggregatorId(_ctx.stringValue("ListAggregateConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].AggregatorId"));
 			deliveryChannel.setAccountId(_ctx.longValue("ListAggregateConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].AccountId"));
+			deliveryChannel.setDeliverySnapshotTime(_ctx.stringValue("ListAggregateConfigDeliveryChannelsResponse.DeliveryChannels["+ i +"].DeliverySnapshotTime"));
 
 			deliveryChannels.add(deliveryChannel);
 		}
