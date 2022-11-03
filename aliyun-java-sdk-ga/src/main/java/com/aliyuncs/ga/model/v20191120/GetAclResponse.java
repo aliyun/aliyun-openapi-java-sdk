@@ -35,9 +35,13 @@ public class GetAclResponse extends AcsResponse {
 
 	private String aclName;
 
+	private String resourceGroupId;
+
 	private List<AclEntriesItem> aclEntries;
 
 	private List<RelatedListenersItem> relatedListeners;
+
+	private List<TagsItem> tags;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -79,6 +83,14 @@ public class GetAclResponse extends AcsResponse {
 		this.aclName = aclName;
 	}
 
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+	}
+
 	public List<AclEntriesItem> getAclEntries() {
 		return this.aclEntries;
 	}
@@ -93,6 +105,14 @@ public class GetAclResponse extends AcsResponse {
 
 	public void setRelatedListeners(List<RelatedListenersItem> relatedListeners) {
 		this.relatedListeners = relatedListeners;
+	}
+
+	public List<TagsItem> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<TagsItem> tags) {
+		this.tags = tags;
 	}
 
 	public static class AclEntriesItem {
@@ -148,6 +168,29 @@ public class GetAclResponse extends AcsResponse {
 
 		public void setAcceleratorId(String acceleratorId) {
 			this.acceleratorId = acceleratorId;
+		}
+	}
+
+	public static class TagsItem {
+
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
 		}
 	}
 

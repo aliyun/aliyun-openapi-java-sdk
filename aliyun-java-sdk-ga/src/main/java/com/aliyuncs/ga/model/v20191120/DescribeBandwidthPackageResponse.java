@@ -57,6 +57,10 @@ public class DescribeBandwidthPackageResponse extends AcsResponse {
 
 	private Integer ratio;
 
+	private String resourceGroupId;
+
+	private List<TagsItem> tags;
+
 	private List<String> accelerators;
 
 	public String getCbnGeographicRegionIdB() {
@@ -187,12 +191,51 @@ public class DescribeBandwidthPackageResponse extends AcsResponse {
 		this.ratio = ratio;
 	}
 
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+	}
+
+	public List<TagsItem> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<TagsItem> tags) {
+		this.tags = tags;
+	}
+
 	public List<String> getAccelerators() {
 		return this.accelerators;
 	}
 
 	public void setAccelerators(List<String> accelerators) {
 		this.accelerators = accelerators;
+	}
+
+	public static class TagsItem {
+
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
 	}
 
 	@Override

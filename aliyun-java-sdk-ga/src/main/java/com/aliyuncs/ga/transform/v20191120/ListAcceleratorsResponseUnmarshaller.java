@@ -22,6 +22,7 @@ import com.aliyuncs.ga.model.v20191120.ListAcceleratorsResponse.AcceleratorsItem
 import com.aliyuncs.ga.model.v20191120.ListAcceleratorsResponse.AcceleratorsItem.BasicBandwidthPackage;
 import com.aliyuncs.ga.model.v20191120.ListAcceleratorsResponse.AcceleratorsItem.CrossDomainBandwidthPackage;
 import com.aliyuncs.ga.model.v20191120.ListAcceleratorsResponse.AcceleratorsItem.IpSetConfig;
+import com.aliyuncs.ga.model.v20191120.ListAcceleratorsResponse.AcceleratorsItem.TagsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -53,6 +54,7 @@ public class ListAcceleratorsResponseUnmarshaller {
 			acceleratorsItem.setBandwidthBillingType(_ctx.stringValue("ListAcceleratorsResponse.Accelerators["+ i +"].BandwidthBillingType"));
 			acceleratorsItem.setExpiredTime(_ctx.longValue("ListAcceleratorsResponse.Accelerators["+ i +"].ExpiredTime"));
 			acceleratorsItem.setName(_ctx.stringValue("ListAcceleratorsResponse.Accelerators["+ i +"].Name"));
+			acceleratorsItem.setResourceGroupId(_ctx.stringValue("ListAcceleratorsResponse.Accelerators["+ i +"].ResourceGroupId"));
 
 			BasicBandwidthPackage basicBandwidthPackage = new BasicBandwidthPackage();
 			basicBandwidthPackage.setBandwidth(_ctx.integerValue("ListAcceleratorsResponse.Accelerators["+ i +"].BasicBandwidthPackage.Bandwidth"));
@@ -68,6 +70,16 @@ public class ListAcceleratorsResponseUnmarshaller {
 			IpSetConfig ipSetConfig = new IpSetConfig();
 			ipSetConfig.setAccessMode(_ctx.stringValue("ListAcceleratorsResponse.Accelerators["+ i +"].IpSetConfig.AccessMode"));
 			acceleratorsItem.setIpSetConfig(ipSetConfig);
+
+			List<TagsItem> tags = new ArrayList<TagsItem>();
+			for (int j = 0; j < _ctx.lengthValue("ListAcceleratorsResponse.Accelerators["+ i +"].Tags.Length"); j++) {
+				TagsItem tagsItem = new TagsItem();
+				tagsItem.setKey(_ctx.stringValue("ListAcceleratorsResponse.Accelerators["+ i +"].Tags["+ j +"].Key"));
+				tagsItem.setValue(_ctx.stringValue("ListAcceleratorsResponse.Accelerators["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tagsItem);
+			}
+			acceleratorsItem.setTags(tags);
 
 			accelerators.add(acceleratorsItem);
 		}

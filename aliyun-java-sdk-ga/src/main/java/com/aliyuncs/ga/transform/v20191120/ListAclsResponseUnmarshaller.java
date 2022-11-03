@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ga.model.v20191120.ListAclsResponse;
 import com.aliyuncs.ga.model.v20191120.ListAclsResponse.GaAcls;
+import com.aliyuncs.ga.model.v20191120.ListAclsResponse.GaAcls.TagsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -38,6 +39,17 @@ public class ListAclsResponseUnmarshaller {
 			gaAcls.setAclName(_ctx.stringValue("ListAclsResponse.Acls["+ i +"].AclName"));
 			gaAcls.setAddressIPVersion(_ctx.stringValue("ListAclsResponse.Acls["+ i +"].AddressIPVersion"));
 			gaAcls.setAclStatus(_ctx.stringValue("ListAclsResponse.Acls["+ i +"].AclStatus"));
+			gaAcls.setResourceGroupId(_ctx.stringValue("ListAclsResponse.Acls["+ i +"].ResourceGroupId"));
+
+			List<TagsItem> tags = new ArrayList<TagsItem>();
+			for (int j = 0; j < _ctx.lengthValue("ListAclsResponse.Acls["+ i +"].Tags.Length"); j++) {
+				TagsItem tagsItem = new TagsItem();
+				tagsItem.setKey(_ctx.stringValue("ListAclsResponse.Acls["+ i +"].Tags["+ j +"].Key"));
+				tagsItem.setValue(_ctx.stringValue("ListAclsResponse.Acls["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tagsItem);
+			}
+			gaAcls.setTags(tags);
 
 			acls.add(gaAcls);
 		}

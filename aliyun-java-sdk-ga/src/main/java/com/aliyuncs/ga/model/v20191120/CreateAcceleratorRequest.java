@@ -37,6 +37,8 @@ public class CreateAcceleratorRequest extends RpcAcsRequest<CreateAcceleratorRes
 
 	private Integer duration;
 
+	private String resourceGroupId;
+
 	private Boolean autoPay;
 
 	private String bandwidthBillingType;
@@ -119,6 +121,17 @@ public class CreateAcceleratorRequest extends RpcAcsRequest<CreateAcceleratorRes
 		this.duration = duration;
 		if(duration != null){
 			putQueryParameter("Duration", duration.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

@@ -15,6 +15,7 @@
 package com.aliyuncs.ga.model.v20191120;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ga.Endpoint;
 
@@ -31,9 +32,13 @@ public class ListBandwidthPackagesRequest extends RpcAcsRequest<ListBandwidthPac
 
 	private Integer pageNumber;
 
+	private String resourceGroupId;
+
 	private Integer pageSize;
 
 	private String state;
+
+	private List<Tag> tags;
 	public ListBandwidthPackagesRequest() {
 		super("Ga", "2019-11-20", "ListBandwidthPackages", "gaplus");
 		setMethod(MethodType.POST);
@@ -76,6 +81,17 @@ public class ListBandwidthPackagesRequest extends RpcAcsRequest<ListBandwidthPac
 		}
 	}
 
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -95,6 +111,43 @@ public class ListBandwidthPackagesRequest extends RpcAcsRequest<ListBandwidthPac
 		this.state = state;
 		if(state != null){
 			putQueryParameter("State", state);
+		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+			}
+		}	
+	}
+
+	public static class Tag {
+
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
 		}
 	}
 

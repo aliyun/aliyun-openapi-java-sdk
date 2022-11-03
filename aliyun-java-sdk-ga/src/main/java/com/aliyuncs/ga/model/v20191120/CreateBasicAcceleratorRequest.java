@@ -25,8 +25,6 @@ import com.aliyuncs.ga.Endpoint;
 public class CreateBasicAcceleratorRequest extends RpcAcsRequest<CreateBasicAcceleratorResponse> {
 	   
 
-	private Boolean autoPay;
-
 	private String clientToken;
 
 	private String autoUseCoupon;
@@ -34,6 +32,10 @@ public class CreateBasicAcceleratorRequest extends RpcAcsRequest<CreateBasicAcce
 	private Integer autoRenewDuration;
 
 	private Integer duration;
+
+	private String resourceGroupId;
+
+	private Boolean autoPay;
 
 	private String bandwidthBillingType;
 
@@ -47,17 +49,6 @@ public class CreateBasicAcceleratorRequest extends RpcAcsRequest<CreateBasicAcce
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Boolean getAutoPay() {
-		return this.autoPay;
-	}
-
-	public void setAutoPay(Boolean autoPay) {
-		this.autoPay = autoPay;
-		if(autoPay != null){
-			putQueryParameter("AutoPay", autoPay.toString());
-		}
 	}
 
 	public String getClientToken() {
@@ -101,6 +92,28 @@ public class CreateBasicAcceleratorRequest extends RpcAcsRequest<CreateBasicAcce
 		this.duration = duration;
 		if(duration != null){
 			putQueryParameter("Duration", duration.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public Boolean getAutoPay() {
+		return this.autoPay;
+	}
+
+	public void setAutoPay(Boolean autoPay) {
+		this.autoPay = autoPay;
+		if(autoPay != null){
+			putQueryParameter("AutoPay", autoPay.toString());
 		}
 	}
 
