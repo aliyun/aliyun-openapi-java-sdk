@@ -15,31 +15,27 @@
 package com.aliyuncs.cas.model.v20200407;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cas.transform.v20200407.DescribePackageStateResponseUnmarshaller;
+import com.aliyuncs.cas.transform.v20200407.DecryptResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribePackageStateResponse extends AcsResponse {
+public class DecryptResponse extends AcsResponse {
 
-	private Long issuedCount;
+	private String plaintext;
 
 	private String requestId;
 
-	private Long totalCount;
+	private String certIdentifier;
 
-	private String productCode;
-
-	private Long usedCount;
-
-	public Long getIssuedCount() {
-		return this.issuedCount;
+	public String getPlaintext() {
+		return this.plaintext;
 	}
 
-	public void setIssuedCount(Long issuedCount) {
-		this.issuedCount = issuedCount;
+	public void setPlaintext(String plaintext) {
+		this.plaintext = plaintext;
 	}
 
 	public String getRequestId() {
@@ -50,33 +46,17 @@ public class DescribePackageStateResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Long getTotalCount() {
-		return this.totalCount;
+	public String getCertIdentifier() {
+		return this.certIdentifier;
 	}
 
-	public void setTotalCount(Long totalCount) {
-		this.totalCount = totalCount;
-	}
-
-	public String getProductCode() {
-		return this.productCode;
-	}
-
-	public void setProductCode(String productCode) {
-		this.productCode = productCode;
-	}
-
-	public Long getUsedCount() {
-		return this.usedCount;
-	}
-
-	public void setUsedCount(Long usedCount) {
-		this.usedCount = usedCount;
+	public void setCertIdentifier(String certIdentifier) {
+		this.certIdentifier = certIdentifier;
 	}
 
 	@Override
-	public DescribePackageStateResponse getInstance(UnmarshallerContext context) {
-		return	DescribePackageStateResponseUnmarshaller.unmarshall(this, context);
+	public DecryptResponse getInstance(UnmarshallerContext context) {
+		return	DecryptResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

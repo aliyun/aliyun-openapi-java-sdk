@@ -15,26 +15,18 @@
 package com.aliyuncs.cas.model.v20200407;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cas.transform.v20200407.CreateCertificateWithCsrRequestResponseUnmarshaller;
+import com.aliyuncs.cas.transform.v20200407.VerifyResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateCertificateWithCsrRequestResponse extends AcsResponse {
-
-	private Long orderId;
+public class VerifyResponse extends AcsResponse {
 
 	private String requestId;
 
-	public Long getOrderId() {
-		return this.orderId;
-	}
-
-	public void setOrderId(Long orderId) {
-		this.orderId = orderId;
-	}
+	private Boolean signatureValid;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,9 +36,17 @@ public class CreateCertificateWithCsrRequestResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public Boolean getSignatureValid() {
+		return this.signatureValid;
+	}
+
+	public void setSignatureValid(Boolean signatureValid) {
+		this.signatureValid = signatureValid;
+	}
+
 	@Override
-	public CreateCertificateWithCsrRequestResponse getInstance(UnmarshallerContext context) {
-		return	CreateCertificateWithCsrRequestResponseUnmarshaller.unmarshall(this, context);
+	public VerifyResponse getInstance(UnmarshallerContext context) {
+		return	VerifyResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

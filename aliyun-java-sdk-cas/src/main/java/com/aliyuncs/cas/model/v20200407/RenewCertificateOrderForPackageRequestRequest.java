@@ -22,17 +22,30 @@ import com.aliyuncs.cas.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeCertificateStateRequest extends RpcAcsRequest<DescribeCertificateStateResponse> {
+public class RenewCertificateOrderForPackageRequestRequest extends RpcAcsRequest<RenewCertificateOrderForPackageRequestResponse> {
 	   
 
+	private String csr;
+
 	private Long orderId;
-	public DescribeCertificateStateRequest() {
-		super("cas", "2020-04-07", "DescribeCertificateState");
+	public RenewCertificateOrderForPackageRequestRequest() {
+		super("cas", "2020-04-07", "RenewCertificateOrderForPackageRequest");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getCsr() {
+		return this.csr;
+	}
+
+	public void setCsr(String csr) {
+		this.csr = csr;
+		if(csr != null){
+			putQueryParameter("Csr", csr);
+		}
 	}
 
 	public Long getOrderId() {
@@ -47,8 +60,8 @@ public class DescribeCertificateStateRequest extends RpcAcsRequest<DescribeCerti
 	}
 
 	@Override
-	public Class<DescribeCertificateStateResponse> getResponseClass() {
-		return DescribeCertificateStateResponse.class;
+	public Class<RenewCertificateOrderForPackageRequestResponse> getResponseClass() {
+		return RenewCertificateOrderForPackageRequestResponse.class;
 	}
 
 }

@@ -15,31 +15,29 @@
 package com.aliyuncs.cas.model.v20200407;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cas.transform.v20200407.DescribePackageStateResponseUnmarshaller;
+import com.aliyuncs.cas.transform.v20200407.CreateWHCertificateWithExtensionResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribePackageStateResponse extends AcsResponse {
+public class CreateWHCertificateWithExtensionResponse extends AcsResponse {
 
-	private Long issuedCount;
+	private String identifier;
 
 	private String requestId;
 
-	private Long totalCount;
+	private String certificate;
 
-	private String productCode;
+	private String certificateChain;
 
-	private Long usedCount;
-
-	public Long getIssuedCount() {
-		return this.issuedCount;
+	public String getIdentifier() {
+		return this.identifier;
 	}
 
-	public void setIssuedCount(Long issuedCount) {
-		this.issuedCount = issuedCount;
+	public void setIdentifier(String identifier) {
+		this.identifier = identifier;
 	}
 
 	public String getRequestId() {
@@ -50,33 +48,25 @@ public class DescribePackageStateResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Long getTotalCount() {
-		return this.totalCount;
+	public String getCertificate() {
+		return this.certificate;
 	}
 
-	public void setTotalCount(Long totalCount) {
-		this.totalCount = totalCount;
+	public void setCertificate(String certificate) {
+		this.certificate = certificate;
 	}
 
-	public String getProductCode() {
-		return this.productCode;
+	public String getCertificateChain() {
+		return this.certificateChain;
 	}
 
-	public void setProductCode(String productCode) {
-		this.productCode = productCode;
-	}
-
-	public Long getUsedCount() {
-		return this.usedCount;
-	}
-
-	public void setUsedCount(Long usedCount) {
-		this.usedCount = usedCount;
+	public void setCertificateChain(String certificateChain) {
+		this.certificateChain = certificateChain;
 	}
 
 	@Override
-	public DescribePackageStateResponse getInstance(UnmarshallerContext context) {
-		return	DescribePackageStateResponseUnmarshaller.unmarshall(this, context);
+	public CreateWHCertificateWithExtensionResponse getInstance(UnmarshallerContext context) {
+		return	CreateWHCertificateWithExtensionResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

@@ -22,12 +22,12 @@ import com.aliyuncs.cas.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeCertificateStateRequest extends RpcAcsRequest<DescribeCertificateStateResponse> {
+public class DeletePCACertRequest extends RpcAcsRequest<DeletePCACertResponse> {
 	   
 
-	private Long orderId;
-	public DescribeCertificateStateRequest() {
-		super("cas", "2020-04-07", "DescribeCertificateState");
+	private String identifier;
+	public DeletePCACertRequest() {
+		super("cas", "2020-04-07", "DeletePCACert");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,20 +35,20 @@ public class DescribeCertificateStateRequest extends RpcAcsRequest<DescribeCerti
 		} catch (Exception e) {}
 	}
 
-	public Long getOrderId() {
-		return this.orderId;
+	public String getIdentifier() {
+		return this.identifier;
 	}
 
-	public void setOrderId(Long orderId) {
-		this.orderId = orderId;
-		if(orderId != null){
-			putQueryParameter("OrderId", orderId.toString());
+	public void setIdentifier(String identifier) {
+		this.identifier = identifier;
+		if(identifier != null){
+			putQueryParameter("Identifier", identifier);
 		}
 	}
 
 	@Override
-	public Class<DescribeCertificateStateResponse> getResponseClass() {
-		return DescribeCertificateStateResponse.class;
+	public Class<DeletePCACertResponse> getResponseClass() {
+		return DeletePCACertResponse.class;
 	}
 
 }

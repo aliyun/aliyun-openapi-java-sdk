@@ -24,15 +24,15 @@ public class DescribeCertificateStateResponseUnmarshaller {
 		
 		describeCertificateStateResponse.setRequestId(_ctx.stringValue("DescribeCertificateStateResponse.RequestId"));
 		describeCertificateStateResponse.setType(_ctx.stringValue("DescribeCertificateStateResponse.Type"));
+		describeCertificateStateResponse.setDomain(_ctx.stringValue("DescribeCertificateStateResponse.Domain"));
+		describeCertificateStateResponse.setRecordType(_ctx.stringValue("DescribeCertificateStateResponse.RecordType"));
 		describeCertificateStateResponse.setCertificate(_ctx.stringValue("DescribeCertificateStateResponse.Certificate"));
+		describeCertificateStateResponse.setRecordDomain(_ctx.stringValue("DescribeCertificateStateResponse.RecordDomain"));
 		describeCertificateStateResponse.setPrivateKey(_ctx.stringValue("DescribeCertificateStateResponse.PrivateKey"));
 		describeCertificateStateResponse.setValidateType(_ctx.stringValue("DescribeCertificateStateResponse.ValidateType"));
-		describeCertificateStateResponse.setDomain(_ctx.stringValue("DescribeCertificateStateResponse.Domain"));
-		describeCertificateStateResponse.setUri(_ctx.stringValue("DescribeCertificateStateResponse.Uri"));
-		describeCertificateStateResponse.setContent(_ctx.stringValue("DescribeCertificateStateResponse.Content"));
 		describeCertificateStateResponse.setRecordValue(_ctx.stringValue("DescribeCertificateStateResponse.RecordValue"));
-		describeCertificateStateResponse.setRecordType(_ctx.stringValue("DescribeCertificateStateResponse.RecordType"));
-		describeCertificateStateResponse.setRecordDomain(_ctx.stringValue("DescribeCertificateStateResponse.RecordDomain"));
+		describeCertificateStateResponse.setContent(_ctx.stringValue("DescribeCertificateStateResponse.Content"));
+		describeCertificateStateResponse.setUri(_ctx.stringValue("DescribeCertificateStateResponse.Uri"));
 	 
 	 	return describeCertificateStateResponse;
 	}

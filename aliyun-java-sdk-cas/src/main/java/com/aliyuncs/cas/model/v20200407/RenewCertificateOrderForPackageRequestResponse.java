@@ -15,14 +15,14 @@
 package com.aliyuncs.cas.model.v20200407;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cas.transform.v20200407.CreateCertificateWithCsrRequestResponseUnmarshaller;
+import com.aliyuncs.cas.transform.v20200407.RenewCertificateOrderForPackageRequestResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateCertificateWithCsrRequestResponse extends AcsResponse {
+public class RenewCertificateOrderForPackageRequestResponse extends AcsResponse {
 
 	private Long orderId;
 
@@ -45,8 +45,8 @@ public class CreateCertificateWithCsrRequestResponse extends AcsResponse {
 	}
 
 	@Override
-	public CreateCertificateWithCsrRequestResponse getInstance(UnmarshallerContext context) {
-		return	CreateCertificateWithCsrRequestResponseUnmarshaller.unmarshall(this, context);
+	public RenewCertificateOrderForPackageRequestResponse getInstance(UnmarshallerContext context) {
+		return	RenewCertificateOrderForPackageRequestResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

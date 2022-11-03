@@ -22,22 +22,26 @@ import com.aliyuncs.cas.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateCertificateRequestRequest extends RpcAcsRequest<CreateCertificateRequestResponse> {
+public class CreateCertificateForPackageRequestRequest extends RpcAcsRequest<CreateCertificateForPackageRequestResponse> {
 	   
 
 	private String productCode;
 
-	private String username;
+	private String csr;
 
-	private String phone;
+	private String validateType;
 
 	private String email;
 
+	private String phone;
+
+	private String companyName;
+
 	private String domain;
 
-	private String validateType;
-	public CreateCertificateRequestRequest() {
-		super("cas", "2020-04-07", "CreateCertificateRequest");
+	private String username;
+	public CreateCertificateForPackageRequestRequest() {
+		super("cas", "2020-04-07", "CreateCertificateForPackageRequest");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -56,47 +60,14 @@ public class CreateCertificateRequestRequest extends RpcAcsRequest<CreateCertifi
 		}
 	}
 
-	public String getUsername() {
-		return this.username;
+	public String getCsr() {
+		return this.csr;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
-		if(username != null){
-			putQueryParameter("Username", username);
-		}
-	}
-
-	public String getPhone() {
-		return this.phone;
-	}
-
-	public void setPhone(String phone) {
-		this.phone = phone;
-		if(phone != null){
-			putQueryParameter("Phone", phone);
-		}
-	}
-
-	public String getEmail() {
-		return this.email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-		if(email != null){
-			putQueryParameter("Email", email);
-		}
-	}
-
-	public String getDomain() {
-		return this.domain;
-	}
-
-	public void setDomain(String domain) {
-		this.domain = domain;
-		if(domain != null){
-			putQueryParameter("Domain", domain);
+	public void setCsr(String csr) {
+		this.csr = csr;
+		if(csr != null){
+			putQueryParameter("Csr", csr);
 		}
 	}
 
@@ -111,9 +82,64 @@ public class CreateCertificateRequestRequest extends RpcAcsRequest<CreateCertifi
 		}
 	}
 
+	public String getEmail() {
+		return this.email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+		if(email != null){
+			putQueryParameter("Email", email);
+		}
+	}
+
+	public String getPhone() {
+		return this.phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+		if(phone != null){
+			putQueryParameter("Phone", phone);
+		}
+	}
+
+	public String getCompanyName() {
+		return this.companyName;
+	}
+
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
+		if(companyName != null){
+			putQueryParameter("CompanyName", companyName);
+		}
+	}
+
+	public String getDomain() {
+		return this.domain;
+	}
+
+	public void setDomain(String domain) {
+		this.domain = domain;
+		if(domain != null){
+			putQueryParameter("Domain", domain);
+		}
+	}
+
+	public String getUsername() {
+		return this.username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+		if(username != null){
+			putQueryParameter("Username", username);
+		}
+	}
+
 	@Override
-	public Class<CreateCertificateRequestResponse> getResponseClass() {
-		return CreateCertificateRequestResponse.class;
+	public Class<CreateCertificateForPackageRequestResponse> getResponseClass() {
+		return CreateCertificateForPackageRequestResponse.class;
 	}
 
 }

@@ -22,12 +22,12 @@ import com.aliyuncs.cas.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeCertificateStateRequest extends RpcAcsRequest<DescribeCertificateStateResponse> {
+public class CancelCertificateForPackageRequestRequest extends RpcAcsRequest<CancelCertificateForPackageRequestResponse> {
 	   
 
 	private Long orderId;
-	public DescribeCertificateStateRequest() {
-		super("cas", "2020-04-07", "DescribeCertificateState");
+	public CancelCertificateForPackageRequestRequest() {
+		super("cas", "2020-04-07", "CancelCertificateForPackageRequest");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -47,8 +47,8 @@ public class DescribeCertificateStateRequest extends RpcAcsRequest<DescribeCerti
 	}
 
 	@Override
-	public Class<DescribeCertificateStateResponse> getResponseClass() {
-		return DescribeCertificateStateResponse.class;
+	public Class<CancelCertificateForPackageRequestResponse> getResponseClass() {
+		return CancelCertificateForPackageRequestResponse.class;
 	}
 
 }

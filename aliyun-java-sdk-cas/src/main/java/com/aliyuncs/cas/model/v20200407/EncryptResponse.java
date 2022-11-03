@@ -15,31 +15,27 @@
 package com.aliyuncs.cas.model.v20200407;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cas.transform.v20200407.DescribePackageStateResponseUnmarshaller;
+import com.aliyuncs.cas.transform.v20200407.EncryptResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribePackageStateResponse extends AcsResponse {
+public class EncryptResponse extends AcsResponse {
 
-	private Long issuedCount;
+	private String certIdentifier;
 
 	private String requestId;
 
-	private Long totalCount;
+	private String ciphertextBlob;
 
-	private String productCode;
-
-	private Long usedCount;
-
-	public Long getIssuedCount() {
-		return this.issuedCount;
+	public String getCertIdentifier() {
+		return this.certIdentifier;
 	}
 
-	public void setIssuedCount(Long issuedCount) {
-		this.issuedCount = issuedCount;
+	public void setCertIdentifier(String certIdentifier) {
+		this.certIdentifier = certIdentifier;
 	}
 
 	public String getRequestId() {
@@ -50,33 +46,17 @@ public class DescribePackageStateResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Long getTotalCount() {
-		return this.totalCount;
+	public String getCiphertextBlob() {
+		return this.ciphertextBlob;
 	}
 
-	public void setTotalCount(Long totalCount) {
-		this.totalCount = totalCount;
-	}
-
-	public String getProductCode() {
-		return this.productCode;
-	}
-
-	public void setProductCode(String productCode) {
-		this.productCode = productCode;
-	}
-
-	public Long getUsedCount() {
-		return this.usedCount;
-	}
-
-	public void setUsedCount(Long usedCount) {
-		this.usedCount = usedCount;
+	public void setCiphertextBlob(String ciphertextBlob) {
+		this.ciphertextBlob = ciphertextBlob;
 	}
 
 	@Override
-	public DescribePackageStateResponse getInstance(UnmarshallerContext context) {
-		return	DescribePackageStateResponseUnmarshaller.unmarshall(this, context);
+	public EncryptResponse getInstance(UnmarshallerContext context) {
+		return	EncryptResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
