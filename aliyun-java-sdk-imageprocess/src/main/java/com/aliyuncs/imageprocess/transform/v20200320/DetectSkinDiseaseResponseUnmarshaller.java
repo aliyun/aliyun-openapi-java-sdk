@@ -28,6 +28,10 @@ public class DetectSkinDiseaseResponseUnmarshaller {
 
 		Data data = new Data();
 		data.setResults(_ctx.mapValue("DetectSkinDiseaseResponse.Data.Results"));
+		data.setResultsEnglish(_ctx.mapValue("DetectSkinDiseaseResponse.Data.ResultsEnglish"));
+		data.setBodyPart(_ctx.stringValue("DetectSkinDiseaseResponse.Data.BodyPart"));
+		data.setImageQuality(_ctx.floatValue("DetectSkinDiseaseResponse.Data.ImageQuality"));
+		data.setImageType(_ctx.stringValue("DetectSkinDiseaseResponse.Data.ImageType"));
 		detectSkinDiseaseResponse.setData(data);
 	 
 	 	return detectSkinDiseaseResponse;
