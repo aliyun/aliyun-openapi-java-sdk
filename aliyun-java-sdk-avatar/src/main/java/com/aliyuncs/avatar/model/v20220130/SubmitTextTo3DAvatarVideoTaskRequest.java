@@ -116,6 +116,9 @@ public class SubmitTextTo3DAvatarVideoTaskRequest extends RpcAcsRequest<SubmitTe
 		@SerializedName("IsAlpha")
 		private Boolean isAlpha;
 
+		@SerializedName("BackgroundImageUrl")
+		private String backgroundImageUrl;
+
 		@SerializedName("IsSubtitles")
 		private Boolean isSubtitles;
 
@@ -128,6 +131,14 @@ public class SubmitTextTo3DAvatarVideoTaskRequest extends RpcAcsRequest<SubmitTe
 
 		public void setIsAlpha(Boolean isAlpha) {
 			this.isAlpha = isAlpha;
+		}
+
+		public String getBackgroundImageUrl() {
+			return this.backgroundImageUrl;
+		}
+
+		public void setBackgroundImageUrl(String backgroundImageUrl) {
+			this.backgroundImageUrl = backgroundImageUrl;
 		}
 
 		public Boolean getIsSubtitles() {
