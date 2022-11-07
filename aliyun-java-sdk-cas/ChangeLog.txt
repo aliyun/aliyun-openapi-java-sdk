@@ -1,3 +1,6 @@
+2022-11-07 Version: 1.0.9
+- Support encrypt and decrypt.
+
 2022-11-03 Version: 1.0.8
 - Support encrypt and decrypt.
 

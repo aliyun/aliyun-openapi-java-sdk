@@ -29,6 +29,8 @@ public class CreateWHCertificateWithExtensionRequest extends RpcAcsRequest<Creat
 
 	private String countryCode;
 
+	private Long immediately;
+
 	private String commonName;
 
 	private String certType;
@@ -84,6 +86,17 @@ public class CreateWHCertificateWithExtensionRequest extends RpcAcsRequest<Creat
 		this.countryCode = countryCode;
 		if(countryCode != null){
 			putQueryParameter("CountryCode", countryCode);
+		}
+	}
+
+	public Long getImmediately() {
+		return this.immediately;
+	}
+
+	public void setImmediately(Long immediately) {
+		this.immediately = immediately;
+		if(immediately != null){
+			putQueryParameter("Immediately", immediately.toString());
 		}
 	}
 

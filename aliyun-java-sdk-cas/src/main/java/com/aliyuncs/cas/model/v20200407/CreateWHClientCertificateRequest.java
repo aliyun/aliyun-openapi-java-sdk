@@ -25,23 +25,39 @@ import com.aliyuncs.cas.Endpoint;
 public class CreateWHClientCertificateRequest extends RpcAcsRequest<CreateWHClientCertificateResponse> {
 	   
 
+	private String country;
+
 	private String csr;
+
+	private Long immediately;
+
+	private Long years;
 
 	private String commonName;
 
 	private String sanValue;
 
+	private String state;
+
 	private String algorithm;
+
+	private Long months;
 
 	private Long afterTime;
 
+	private String locality;
+
 	private Long sanType;
+
+	private String organization;
 
 	private Long days;
 
 	private Long beforeTime;
 
 	private String parentIdentifier;
+
+	private String organizationUnit;
 	public CreateWHClientCertificateRequest() {
 		super("cas", "2020-04-07", "CreateWHClientCertificate");
 		setMethod(MethodType.POST);
@@ -49,6 +65,17 @@ public class CreateWHClientCertificateRequest extends RpcAcsRequest<CreateWHClie
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getCountry() {
+		return this.country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
+		if(country != null){
+			putQueryParameter("Country", country);
+		}
 	}
 
 	public String getCsr() {
@@ -59,6 +86,28 @@ public class CreateWHClientCertificateRequest extends RpcAcsRequest<CreateWHClie
 		this.csr = csr;
 		if(csr != null){
 			putQueryParameter("Csr", csr);
+		}
+	}
+
+	public Long getImmediately() {
+		return this.immediately;
+	}
+
+	public void setImmediately(Long immediately) {
+		this.immediately = immediately;
+		if(immediately != null){
+			putQueryParameter("Immediately", immediately.toString());
+		}
+	}
+
+	public Long getYears() {
+		return this.years;
+	}
+
+	public void setYears(Long years) {
+		this.years = years;
+		if(years != null){
+			putQueryParameter("Years", years.toString());
 		}
 	}
 
@@ -84,6 +133,17 @@ public class CreateWHClientCertificateRequest extends RpcAcsRequest<CreateWHClie
 		}
 	}
 
+	public String getState() {
+		return this.state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+		if(state != null){
+			putQueryParameter("State", state);
+		}
+	}
+
 	public String getAlgorithm() {
 		return this.algorithm;
 	}
@@ -92,6 +152,17 @@ public class CreateWHClientCertificateRequest extends RpcAcsRequest<CreateWHClie
 		this.algorithm = algorithm;
 		if(algorithm != null){
 			putQueryParameter("Algorithm", algorithm);
+		}
+	}
+
+	public Long getMonths() {
+		return this.months;
+	}
+
+	public void setMonths(Long months) {
+		this.months = months;
+		if(months != null){
+			putQueryParameter("Months", months.toString());
 		}
 	}
 
@@ -106,6 +177,17 @@ public class CreateWHClientCertificateRequest extends RpcAcsRequest<CreateWHClie
 		}
 	}
 
+	public String getLocality() {
+		return this.locality;
+	}
+
+	public void setLocality(String locality) {
+		this.locality = locality;
+		if(locality != null){
+			putQueryParameter("Locality", locality);
+		}
+	}
+
 	public Long getSanType() {
 		return this.sanType;
 	}
@@ -114,6 +196,17 @@ public class CreateWHClientCertificateRequest extends RpcAcsRequest<CreateWHClie
 		this.sanType = sanType;
 		if(sanType != null){
 			putQueryParameter("SanType", sanType.toString());
+		}
+	}
+
+	public String getOrganization() {
+		return this.organization;
+	}
+
+	public void setOrganization(String organization) {
+		this.organization = organization;
+		if(organization != null){
+			putQueryParameter("Organization", organization);
 		}
 	}
 
@@ -147,6 +240,17 @@ public class CreateWHClientCertificateRequest extends RpcAcsRequest<CreateWHClie
 		this.parentIdentifier = parentIdentifier;
 		if(parentIdentifier != null){
 			putQueryParameter("ParentIdentifier", parentIdentifier);
+		}
+	}
+
+	public String getOrganizationUnit() {
+		return this.organizationUnit;
+	}
+
+	public void setOrganizationUnit(String organizationUnit) {
+		this.organizationUnit = organizationUnit;
+		if(organizationUnit != null){
+			putQueryParameter("OrganizationUnit", organizationUnit);
 		}
 	}
 
