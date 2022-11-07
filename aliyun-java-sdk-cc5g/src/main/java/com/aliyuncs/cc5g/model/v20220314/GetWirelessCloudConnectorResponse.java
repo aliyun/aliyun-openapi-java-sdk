@@ -49,6 +49,8 @@ public class GetWirelessCloudConnectorResponse extends AcsResponse {
 
 	private String businessType;
 
+	private String wirelessCloudConnectorGroupId;
+
 	private String serviceType;
 
 	private List<NetLink> netLinks;
@@ -149,6 +151,14 @@ public class GetWirelessCloudConnectorResponse extends AcsResponse {
 
 	public void setBusinessType(String businessType) {
 		this.businessType = businessType;
+	}
+
+	public String getWirelessCloudConnectorGroupId() {
+		return this.wirelessCloudConnectorGroupId;
+	}
+
+	public void setWirelessCloudConnectorGroupId(String wirelessCloudConnectorGroupId) {
+		this.wirelessCloudConnectorGroupId = wirelessCloudConnectorGroupId;
 	}
 
 	public String getServiceType() {

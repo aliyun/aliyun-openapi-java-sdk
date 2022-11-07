@@ -38,6 +38,7 @@ public class GetWirelessCloudConnectorResponseUnmarshaller {
 		getWirelessCloudConnectorResponse.setCardCount(_ctx.stringValue("GetWirelessCloudConnectorResponse.CardCount"));
 		getWirelessCloudConnectorResponse.setCreateTime(_ctx.stringValue("GetWirelessCloudConnectorResponse.CreateTime"));
 		getWirelessCloudConnectorResponse.setBusinessType(_ctx.stringValue("GetWirelessCloudConnectorResponse.BusinessType"));
+		getWirelessCloudConnectorResponse.setWirelessCloudConnectorGroupId(_ctx.stringValue("GetWirelessCloudConnectorResponse.WirelessCloudConnectorGroupId"));
 		getWirelessCloudConnectorResponse.setServiceType(_ctx.stringValue("GetWirelessCloudConnectorResponse.ServiceType"));
 
 		List<String> features = new ArrayList<String>();
