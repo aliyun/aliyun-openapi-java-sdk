@@ -46,6 +46,12 @@ public class ListOpsItemsResponseUnmarshaller {
 			opsItem.setPriority(_ctx.integerValue("ListOpsItemsResponse.OpsItems["+ i +"].Priority"));
 			opsItem.setTags(_ctx.mapValue("ListOpsItemsResponse.OpsItems["+ i +"].Tags"));
 
+			List<String> resources = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("ListOpsItemsResponse.OpsItems["+ i +"].Resources.Length"); j++) {
+				resources.add(_ctx.stringValue("ListOpsItemsResponse.OpsItems["+ i +"].Resources["+ j +"]"));
+			}
+			opsItem.setResources(resources);
+
 			opsItems.add(opsItem);
 		}
 		listOpsItemsResponse.setOpsItems(opsItems);

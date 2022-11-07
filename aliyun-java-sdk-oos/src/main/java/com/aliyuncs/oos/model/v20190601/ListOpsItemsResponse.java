@@ -98,6 +98,8 @@ public class ListOpsItemsResponse extends AcsResponse {
 
 		private Map<Object,Object> tags;
 
+		private List<String> resources;
+
 		public String getOpsItemId() {
 			return this.opsItemId;
 		}
@@ -176,6 +178,14 @@ public class ListOpsItemsResponse extends AcsResponse {
 
 		public void setTags(Map<Object,Object> tags) {
 			this.tags = tags;
+		}
+
+		public List<String> getResources() {
+			return this.resources;
+		}
+
+		public void setResources(List<String> resources) {
+			this.resources = resources;
 		}
 	}
 

@@ -25,6 +25,8 @@ import com.aliyuncs.oos.Endpoint;
 public class ListApplicationGroupsRequest extends RpcAcsRequest<ListApplicationGroupsResponse> {
 	   
 
+	private String resourceProduct;
+
 	private String nextToken;
 
 	private String resourceId;
@@ -45,6 +47,17 @@ public class ListApplicationGroupsRequest extends RpcAcsRequest<ListApplicationG
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getResourceProduct() {
+		return this.resourceProduct;
+	}
+
+	public void setResourceProduct(String resourceProduct) {
+		this.resourceProduct = resourceProduct;
+		if(resourceProduct != null){
+			putQueryParameter("ResourceProduct", resourceProduct);
+		}
 	}
 
 	public String getNextToken() {

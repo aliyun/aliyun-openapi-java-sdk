@@ -1,3 +1,9 @@
+2022-11-07 Version: 1.5.9
+- Update StartExecution add Parameter TemplateURL.
+   Update StartExecution Parameter TemplateName to optional.
+   Update ValidateTemplateContent add Parameter TemplateURL.
+   Update ValidateTemplateContent Parameter TemplateConten to optional.
+
 2022-10-12 Version: 1.5.8
 - Add Force Option for DeleteApplication API.
 

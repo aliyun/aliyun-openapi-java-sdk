@@ -31,6 +31,8 @@ public class StartExecutionRequest extends RpcAcsRequest<StartExecutionResponse>
 
 	private String description;
 
+	private String templateURL;
+
 	private String mode;
 
 	private String resourceGroupId;
@@ -78,6 +80,17 @@ public class StartExecutionRequest extends RpcAcsRequest<StartExecutionResponse>
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getTemplateURL() {
+		return this.templateURL;
+	}
+
+	public void setTemplateURL(String templateURL) {
+		this.templateURL = templateURL;
+		if(templateURL != null){
+			putQueryParameter("TemplateURL", templateURL);
 		}
 	}
 
