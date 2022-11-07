@@ -38,6 +38,8 @@ public class CreateSnapshotGroupRequest extends RpcAcsRequest<CreateSnapshotGrou
 
 	private Integer instantAccessRetentionDays;
 
+	private String storageLocationArn;
+
 	private List<String> diskIds;
 
 	private List<Tag> tags;
@@ -125,6 +127,17 @@ public class CreateSnapshotGroupRequest extends RpcAcsRequest<CreateSnapshotGrou
 		this.instantAccessRetentionDays = instantAccessRetentionDays;
 		if(instantAccessRetentionDays != null){
 			putQueryParameter("InstantAccessRetentionDays", instantAccessRetentionDays.toString());
+		}
+	}
+
+	public String getStorageLocationArn() {
+		return this.storageLocationArn;
+	}
+
+	public void setStorageLocationArn(String storageLocationArn) {
+		this.storageLocationArn = storageLocationArn;
+		if(storageLocationArn != null){
+			putQueryParameter("StorageLocationArn", storageLocationArn);
 		}
 	}
 

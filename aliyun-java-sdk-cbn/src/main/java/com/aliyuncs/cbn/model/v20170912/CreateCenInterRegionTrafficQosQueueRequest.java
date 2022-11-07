@@ -48,7 +48,7 @@ public class CreateCenInterRegionTrafficQosQueueRequest extends RpcAcsRequest<Cr
 
 	private String qosQueueDescription;
 	public CreateCenInterRegionTrafficQosQueueRequest() {
-		super("Cbn", "2017-09-12", "CreateCenInterRegionTrafficQosQueue");
+		super("Cbn", "2017-09-12", "CreateCenInterRegionTrafficQosQueue", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -24,23 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ModifySystemRuleResponse extends AcsResponse {
 
-	private String code;
-
 	private String message;
 
 	private String requestId;
 
+	private String code;
+
 	private Boolean success;
 
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -56,6 +48,14 @@ public class ModifySystemRuleResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Boolean getSuccess() {
@@ -76,29 +76,13 @@ public class ModifySystemRuleResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Float threshold;
-
-		private Boolean enable;
-
 		private Integer metricType;
+
+		private Float threshold;
 
 		private Long ruleId;
 
-		public Float getThreshold() {
-			return this.threshold;
-		}
-
-		public void setThreshold(Float threshold) {
-			this.threshold = threshold;
-		}
-
-		public Boolean getEnable() {
-			return this.enable;
-		}
-
-		public void setEnable(Boolean enable) {
-			this.enable = enable;
-		}
+		private Boolean enable;
 
 		public Integer getMetricType() {
 			return this.metricType;
@@ -108,12 +92,28 @@ public class ModifySystemRuleResponse extends AcsResponse {
 			this.metricType = metricType;
 		}
 
+		public Float getThreshold() {
+			return this.threshold;
+		}
+
+		public void setThreshold(Float threshold) {
+			this.threshold = threshold;
+		}
+
 		public Long getRuleId() {
 			return this.ruleId;
 		}
 
 		public void setRuleId(Long ruleId) {
 			this.ruleId = ruleId;
+		}
+
+		public Boolean getEnable() {
+			return this.enable;
+		}
+
+		public void setEnable(Boolean enable) {
+			this.enable = enable;
 		}
 	}
 

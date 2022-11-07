@@ -38,8 +38,6 @@ public class ListSearchLogRequest extends RoaAcsRequest<ListSearchLogResponse> {
 	private Integer page;
 
 	private String type;
-
-	private String body;
 	public ListSearchLogRequest() {
 		super("elasticsearch", "2017-06-13", "ListSearchLog", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/search-log");
@@ -124,17 +122,6 @@ public class ListSearchLogRequest extends RoaAcsRequest<ListSearchLogResponse> {
 		this.type = type;
 		if(type != null){
 			putQueryParameter("type", type);
-		}
-	}
-
-	public String getBody() {
-		return this.body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
-		if(body != null){
-			putBodyParameter("body", body);
 		}
 	}
 

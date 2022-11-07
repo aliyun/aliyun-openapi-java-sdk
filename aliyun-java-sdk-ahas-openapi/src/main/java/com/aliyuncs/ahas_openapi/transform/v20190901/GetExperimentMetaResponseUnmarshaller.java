@@ -26,13 +26,13 @@ public class GetExperimentMetaResponseUnmarshaller {
 	public static GetExperimentMetaResponse unmarshall(GetExperimentMetaResponse getExperimentMetaResponse, UnmarshallerContext _ctx) {
 		
 		getExperimentMetaResponse.setRequestId(_ctx.stringValue("GetExperimentMetaResponse.RequestId"));
-		getExperimentMetaResponse.setCode(_ctx.stringValue("GetExperimentMetaResponse.Code"));
 		getExperimentMetaResponse.setMessage(_ctx.stringValue("GetExperimentMetaResponse.Message"));
-		getExperimentMetaResponse.setSuccess(_ctx.booleanValue("GetExperimentMetaResponse.Success"));
-		getExperimentMetaResponse.setExperimentId(_ctx.stringValue("GetExperimentMetaResponse.ExperimentId"));
-		getExperimentMetaResponse.setName(_ctx.stringValue("GetExperimentMetaResponse.Name"));
-		getExperimentMetaResponse.setCreateTime(_ctx.stringValue("GetExperimentMetaResponse.CreateTime"));
 		getExperimentMetaResponse.setState(_ctx.stringValue("GetExperimentMetaResponse.State"));
+		getExperimentMetaResponse.setExperimentId(_ctx.stringValue("GetExperimentMetaResponse.ExperimentId"));
+		getExperimentMetaResponse.setCreateTime(_ctx.stringValue("GetExperimentMetaResponse.CreateTime"));
+		getExperimentMetaResponse.setCode(_ctx.stringValue("GetExperimentMetaResponse.Code"));
+		getExperimentMetaResponse.setSuccess(_ctx.booleanValue("GetExperimentMetaResponse.Success"));
+		getExperimentMetaResponse.setName(_ctx.stringValue("GetExperimentMetaResponse.Name"));
 
 		List<String> tags = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetExperimentMetaResponse.Tags.Length"); i++) {

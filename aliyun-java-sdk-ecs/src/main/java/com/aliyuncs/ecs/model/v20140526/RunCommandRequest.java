@@ -44,6 +44,8 @@ public class RunCommandRequest extends RpcAcsRequest<RunCommandResponse> {
 
 	private String frequency;
 
+	private String resourceGroupId;
+
 	private String contentEncoding;
 
 	private String repeatMode;
@@ -167,6 +169,17 @@ public class RunCommandRequest extends RpcAcsRequest<RunCommandResponse> {
 		this.frequency = frequency;
 		if(frequency != null){
 			putQueryParameter("Frequency", frequency);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

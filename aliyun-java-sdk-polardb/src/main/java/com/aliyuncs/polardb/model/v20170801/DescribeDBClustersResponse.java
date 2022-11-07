@@ -91,6 +91,8 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 		private String storagePayType;
 
+		private String serverlessType;
+
 		private String dBNodeClass;
 
 		private String dBType;
@@ -181,6 +183,14 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 		public void setStoragePayType(String storagePayType) {
 			this.storagePayType = storagePayType;
+		}
+
+		public String getServerlessType() {
+			return this.serverlessType;
+		}
+
+		public void setServerlessType(String serverlessType) {
+			this.serverlessType = serverlessType;
 		}
 
 		public String getDBNodeClass() {

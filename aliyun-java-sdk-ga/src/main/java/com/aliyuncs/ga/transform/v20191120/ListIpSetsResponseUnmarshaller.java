@@ -37,6 +37,7 @@ public class ListIpSetsResponseUnmarshaller {
 			ipSetsItem.setAccelerateRegionId(_ctx.stringValue("ListIpSetsResponse.IpSets["+ i +"].AccelerateRegionId"));
 			ipSetsItem.setIpVersion(_ctx.stringValue("ListIpSetsResponse.IpSets["+ i +"].IpVersion"));
 			ipSetsItem.setBandwidth(_ctx.integerValue("ListIpSetsResponse.IpSets["+ i +"].Bandwidth"));
+			ipSetsItem.setIspType(_ctx.stringValue("ListIpSetsResponse.IpSets["+ i +"].IspType"));
 			ipSetsItem.setState(_ctx.stringValue("ListIpSetsResponse.IpSets["+ i +"].State"));
 			ipSetsItem.setIpSetId(_ctx.stringValue("ListIpSetsResponse.IpSets["+ i +"].IpSetId"));
 

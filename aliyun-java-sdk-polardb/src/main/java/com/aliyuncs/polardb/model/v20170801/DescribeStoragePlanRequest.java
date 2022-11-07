@@ -39,7 +39,7 @@ public class DescribeStoragePlanRequest extends RpcAcsRequest<DescribeStoragePla
 
 	private Long ownerId;
 	public DescribeStoragePlanRequest() {
-		super("polardb", "2017-08-01", "DescribeStoragePlan");
+		super("polardb", "2017-08-01", "DescribeStoragePlan", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

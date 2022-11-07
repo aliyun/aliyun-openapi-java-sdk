@@ -27,21 +27,21 @@ public class ListExperimentMetasResponseUnmarshaller {
 	public static ListExperimentMetasResponse unmarshall(ListExperimentMetasResponse listExperimentMetasResponse, UnmarshallerContext _ctx) {
 		
 		listExperimentMetasResponse.setRequestId(_ctx.stringValue("ListExperimentMetasResponse.RequestId"));
-		listExperimentMetasResponse.setCode(_ctx.stringValue("ListExperimentMetasResponse.Code"));
-		listExperimentMetasResponse.setCurrentPage(_ctx.integerValue("ListExperimentMetasResponse.CurrentPage"));
+		listExperimentMetasResponse.setPages(_ctx.integerValue("ListExperimentMetasResponse.Pages"));
 		listExperimentMetasResponse.setMessage(_ctx.stringValue("ListExperimentMetasResponse.Message"));
 		listExperimentMetasResponse.setPageSize(_ctx.integerValue("ListExperimentMetasResponse.PageSize"));
-		listExperimentMetasResponse.setPages(_ctx.integerValue("ListExperimentMetasResponse.Pages"));
-		listExperimentMetasResponse.setSuccess(_ctx.booleanValue("ListExperimentMetasResponse.Success"));
+		listExperimentMetasResponse.setCurrentPage(_ctx.integerValue("ListExperimentMetasResponse.CurrentPage"));
 		listExperimentMetasResponse.setTotal(_ctx.integerValue("ListExperimentMetasResponse.Total"));
+		listExperimentMetasResponse.setCode(_ctx.stringValue("ListExperimentMetasResponse.Code"));
+		listExperimentMetasResponse.setSuccess(_ctx.booleanValue("ListExperimentMetasResponse.Success"));
 
 		List<ContentItem> content = new ArrayList<ContentItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListExperimentMetasResponse.Content.Length"); i++) {
 			ContentItem contentItem = new ContentItem();
+			contentItem.setState(_ctx.stringValue("ListExperimentMetasResponse.Content["+ i +"].State"));
+			contentItem.setCreateTime(_ctx.longValue("ListExperimentMetasResponse.Content["+ i +"].CreateTime"));
 			contentItem.setExperimentId(_ctx.stringValue("ListExperimentMetasResponse.Content["+ i +"].ExperimentId"));
 			contentItem.setName(_ctx.stringValue("ListExperimentMetasResponse.Content["+ i +"].Name"));
-			contentItem.setCreateTime(_ctx.longValue("ListExperimentMetasResponse.Content["+ i +"].CreateTime"));
-			contentItem.setState(_ctx.stringValue("ListExperimentMetasResponse.Content["+ i +"].State"));
 
 			List<String> tags = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListExperimentMetasResponse.Content["+ i +"].Tags.Length"); j++) {

@@ -41,6 +41,8 @@ public class CreateConfigDeliveryChannelRequest extends RpcAcsRequest<CreateConf
 
 	private String deliveryChannelName;
 
+	private String deliverySnapshotTime;
+
 	private String oversizedDataOSSTargetArn;
 
 	private String deliveryChannelType;
@@ -138,6 +140,17 @@ public class CreateConfigDeliveryChannelRequest extends RpcAcsRequest<CreateConf
 		this.deliveryChannelName = deliveryChannelName;
 		if(deliveryChannelName != null){
 			putQueryParameter("DeliveryChannelName", deliveryChannelName);
+		}
+	}
+
+	public String getDeliverySnapshotTime() {
+		return this.deliverySnapshotTime;
+	}
+
+	public void setDeliverySnapshotTime(String deliverySnapshotTime) {
+		this.deliverySnapshotTime = deliverySnapshotTime;
+		if(deliverySnapshotTime != null){
+			putQueryParameter("DeliverySnapshotTime", deliverySnapshotTime);
 		}
 	}
 

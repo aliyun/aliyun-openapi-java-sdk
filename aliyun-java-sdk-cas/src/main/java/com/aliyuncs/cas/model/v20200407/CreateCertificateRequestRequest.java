@@ -27,17 +27,17 @@ public class CreateCertificateRequestRequest extends RpcAcsRequest<CreateCertifi
 
 	private String productCode;
 
-	private String validateType;
-
-	private String email;
+	private String username;
 
 	private String phone;
 
+	private String email;
+
 	private String domain;
 
-	private String username;
+	private String validateType;
 	public CreateCertificateRequestRequest() {
-		super("cas", "2020-04-07", "CreateCertificateRequest", "cas-pack");
+		super("cas", "2020-04-07", "CreateCertificateRequest");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -56,25 +56,14 @@ public class CreateCertificateRequestRequest extends RpcAcsRequest<CreateCertifi
 		}
 	}
 
-	public String getValidateType() {
-		return this.validateType;
+	public String getUsername() {
+		return this.username;
 	}
 
-	public void setValidateType(String validateType) {
-		this.validateType = validateType;
-		if(validateType != null){
-			putQueryParameter("ValidateType", validateType);
-		}
-	}
-
-	public String getEmail() {
-		return this.email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-		if(email != null){
-			putQueryParameter("Email", email);
+	public void setUsername(String username) {
+		this.username = username;
+		if(username != null){
+			putQueryParameter("Username", username);
 		}
 	}
 
@@ -89,6 +78,17 @@ public class CreateCertificateRequestRequest extends RpcAcsRequest<CreateCertifi
 		}
 	}
 
+	public String getEmail() {
+		return this.email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+		if(email != null){
+			putQueryParameter("Email", email);
+		}
+	}
+
 	public String getDomain() {
 		return this.domain;
 	}
@@ -100,14 +100,14 @@ public class CreateCertificateRequestRequest extends RpcAcsRequest<CreateCertifi
 		}
 	}
 
-	public String getUsername() {
-		return this.username;
+	public String getValidateType() {
+		return this.validateType;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
-		if(username != null){
-			putQueryParameter("Username", username);
+	public void setValidateType(String validateType) {
+		this.validateType = validateType;
+		if(validateType != null){
+			putQueryParameter("ValidateType", validateType);
 		}
 	}
 

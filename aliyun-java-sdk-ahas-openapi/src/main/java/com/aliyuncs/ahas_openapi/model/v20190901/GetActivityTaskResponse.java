@@ -25,36 +25,52 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetActivityTaskResponse extends AcsResponse {
 
-	private String activityId;
+	private String phase;
+
+	private Long endTime;
+
+	private String requestId;
 
 	private String activityName;
 
-	private Long endTime;
+	private String state;
+
+	private String activityId;
 
 	private String experimentTaskId;
 
 	private Integer httpStatusCode;
 
-	private String phase;
-
-	private String requestId;
-
-	private String runResult;
-
 	private Long startTime;
 
-	private String state;
+	private String runResult;
 
 	private Boolean success;
 
 	private List<HostsItem> hosts;
 
-	public String getActivityId() {
-		return this.activityId;
+	public String getPhase() {
+		return this.phase;
 	}
 
-	public void setActivityId(String activityId) {
-		this.activityId = activityId;
+	public void setPhase(String phase) {
+		this.phase = phase;
+	}
+
+	public Long getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(Long endTime) {
+		this.endTime = endTime;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getActivityName() {
@@ -65,12 +81,20 @@ public class GetActivityTaskResponse extends AcsResponse {
 		this.activityName = activityName;
 	}
 
-	public Long getEndTime() {
-		return this.endTime;
+	public String getState() {
+		return this.state;
 	}
 
-	public void setEndTime(Long endTime) {
-		this.endTime = endTime;
+	public void setState(String state) {
+		this.state = state;
+	}
+
+	public String getActivityId() {
+		return this.activityId;
+	}
+
+	public void setActivityId(String activityId) {
+		this.activityId = activityId;
 	}
 
 	public String getExperimentTaskId() {
@@ -89,30 +113,6 @@ public class GetActivityTaskResponse extends AcsResponse {
 		this.httpStatusCode = httpStatusCode;
 	}
 
-	public String getPhase() {
-		return this.phase;
-	}
-
-	public void setPhase(String phase) {
-		this.phase = phase;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getRunResult() {
-		return this.runResult;
-	}
-
-	public void setRunResult(String runResult) {
-		this.runResult = runResult;
-	}
-
 	public Long getStartTime() {
 		return this.startTime;
 	}
@@ -121,12 +121,12 @@ public class GetActivityTaskResponse extends AcsResponse {
 		this.startTime = startTime;
 	}
 
-	public String getState() {
-		return this.state;
+	public String getRunResult() {
+		return this.runResult;
 	}
 
-	public void setState(String state) {
-		this.state = state;
+	public void setRunResult(String runResult) {
+		this.runResult = runResult;
 	}
 
 	public Boolean getSuccess() {
@@ -147,30 +147,30 @@ public class GetActivityTaskResponse extends AcsResponse {
 
 	public static class HostsItem {
 
-		private String data;
+		private String hostIp;
 
 		private Long endTime;
 
+		private Long startTime;
+
+		private String data;
+
 		private String errorMessage;
 
-		private String hostIp;
+		private String expId;
 
 		private String result;
-
-		private Long startTime;
 
 		private String state;
 
 		private String taskId;
 
-		private String expId;
-
-		public String getData() {
-			return this.data;
+		public String getHostIp() {
+			return this.hostIp;
 		}
 
-		public void setData(String data) {
-			this.data = data;
+		public void setHostIp(String hostIp) {
+			this.hostIp = hostIp;
 		}
 
 		public Long getEndTime() {
@@ -181,6 +181,22 @@ public class GetActivityTaskResponse extends AcsResponse {
 			this.endTime = endTime;
 		}
 
+		public Long getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(Long startTime) {
+			this.startTime = startTime;
+		}
+
+		public String getData() {
+			return this.data;
+		}
+
+		public void setData(String data) {
+			this.data = data;
+		}
+
 		public String getErrorMessage() {
 			return this.errorMessage;
 		}
@@ -189,12 +205,12 @@ public class GetActivityTaskResponse extends AcsResponse {
 			this.errorMessage = errorMessage;
 		}
 
-		public String getHostIp() {
-			return this.hostIp;
+		public String getExpId() {
+			return this.expId;
 		}
 
-		public void setHostIp(String hostIp) {
-			this.hostIp = hostIp;
+		public void setExpId(String expId) {
+			this.expId = expId;
 		}
 
 		public String getResult() {
@@ -203,14 +219,6 @@ public class GetActivityTaskResponse extends AcsResponse {
 
 		public void setResult(String result) {
 			this.result = result;
-		}
-
-		public Long getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(Long startTime) {
-			this.startTime = startTime;
 		}
 
 		public String getState() {
@@ -227,14 +235,6 @@ public class GetActivityTaskResponse extends AcsResponse {
 
 		public void setTaskId(String taskId) {
 			this.taskId = taskId;
-		}
-
-		public String getExpId() {
-			return this.expId;
-		}
-
-		public void setExpId(String expId) {
-			this.expId = expId;
 		}
 	}
 

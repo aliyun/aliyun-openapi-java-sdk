@@ -24,35 +24,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCertificateStateResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String type;
 
+	private String domain;
+
+	private String recordType;
+
 	private String certificate;
+
+	private String requestId;
+
+	private String recordDomain;
 
 	private String privateKey;
 
 	private String validateType;
 
-	private String domain;
-
-	private String uri;
+	private String recordValue;
 
 	private String content;
 
-	private String recordValue;
-
-	private String recordType;
-
-	private String recordDomain;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String uri;
 
 	public String getType() {
 		return this.type;
@@ -62,12 +54,44 @@ public class DescribeCertificateStateResponse extends AcsResponse {
 		this.type = type;
 	}
 
+	public String getDomain() {
+		return this.domain;
+	}
+
+	public void setDomain(String domain) {
+		this.domain = domain;
+	}
+
+	public String getRecordType() {
+		return this.recordType;
+	}
+
+	public void setRecordType(String recordType) {
+		this.recordType = recordType;
+	}
+
 	public String getCertificate() {
 		return this.certificate;
 	}
 
 	public void setCertificate(String certificate) {
 		this.certificate = certificate;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getRecordDomain() {
+		return this.recordDomain;
+	}
+
+	public void setRecordDomain(String recordDomain) {
+		this.recordDomain = recordDomain;
 	}
 
 	public String getPrivateKey() {
@@ -86,20 +110,12 @@ public class DescribeCertificateStateResponse extends AcsResponse {
 		this.validateType = validateType;
 	}
 
-	public String getDomain() {
-		return this.domain;
+	public String getRecordValue() {
+		return this.recordValue;
 	}
 
-	public void setDomain(String domain) {
-		this.domain = domain;
-	}
-
-	public String getUri() {
-		return this.uri;
-	}
-
-	public void setUri(String uri) {
-		this.uri = uri;
+	public void setRecordValue(String recordValue) {
+		this.recordValue = recordValue;
 	}
 
 	public String getContent() {
@@ -110,28 +126,12 @@ public class DescribeCertificateStateResponse extends AcsResponse {
 		this.content = content;
 	}
 
-	public String getRecordValue() {
-		return this.recordValue;
+	public String getUri() {
+		return this.uri;
 	}
 
-	public void setRecordValue(String recordValue) {
-		this.recordValue = recordValue;
-	}
-
-	public String getRecordType() {
-		return this.recordType;
-	}
-
-	public void setRecordType(String recordType) {
-		this.recordType = recordType;
-	}
-
-	public String getRecordDomain() {
-		return this.recordDomain;
-	}
-
-	public void setRecordDomain(String recordDomain) {
-		this.recordDomain = recordDomain;
+	public void setUri(String uri) {
+		this.uri = uri;
 	}
 
 	@Override

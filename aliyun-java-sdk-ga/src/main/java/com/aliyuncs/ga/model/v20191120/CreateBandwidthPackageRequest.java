@@ -37,6 +37,8 @@ public class CreateBandwidthPackageRequest extends RpcAcsRequest<CreateBandwidth
 
 	private String duration;
 
+	private String resourceGroupId;
+
 	private Boolean autoPay;
 
 	private Integer bandwidth;
@@ -126,6 +128,17 @@ public class CreateBandwidthPackageRequest extends RpcAcsRequest<CreateBandwidth
 		this.duration = duration;
 		if(duration != null){
 			putQueryParameter("Duration", duration);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

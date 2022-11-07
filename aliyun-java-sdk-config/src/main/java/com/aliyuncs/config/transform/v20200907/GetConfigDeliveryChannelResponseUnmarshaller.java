@@ -39,6 +39,7 @@ public class GetConfigDeliveryChannelResponseUnmarshaller {
 		deliveryChannel.setConfigurationItemChangeNotification(_ctx.booleanValue("GetConfigDeliveryChannelResponse.DeliveryChannel.ConfigurationItemChangeNotification"));
 		deliveryChannel.setNonCompliantNotification(_ctx.booleanValue("GetConfigDeliveryChannelResponse.DeliveryChannel.NonCompliantNotification"));
 		deliveryChannel.setAccountId(_ctx.longValue("GetConfigDeliveryChannelResponse.DeliveryChannel.AccountId"));
+		deliveryChannel.setDeliverySnapshotTime(_ctx.stringValue("GetConfigDeliveryChannelResponse.DeliveryChannel.DeliverySnapshotTime"));
 		getConfigDeliveryChannelResponse.setDeliveryChannel(deliveryChannel);
 	 
 	 	return getConfigDeliveryChannelResponse;

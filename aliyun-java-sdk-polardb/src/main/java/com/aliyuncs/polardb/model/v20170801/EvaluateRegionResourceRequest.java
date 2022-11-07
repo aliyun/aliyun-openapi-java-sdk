@@ -51,7 +51,7 @@ public class EvaluateRegionResourceRequest extends RpcAcsRequest<EvaluateRegionR
 
 	private String zoneId;
 	public EvaluateRegionResourceRequest() {
-		super("polardb", "2017-08-01", "EvaluateRegionResource");
+		super("polardb", "2017-08-01", "EvaluateRegionResource", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

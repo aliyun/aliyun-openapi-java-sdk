@@ -35,6 +35,8 @@ public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardin
 
 	private List<ReplicaSet> replicaSets;
 
+	private String storageType;
+
 	private String resourceGroupId;
 
 	private String securityToken;
@@ -142,6 +144,17 @@ public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardin
 				putQueryParameter("ReplicaSet." + (depth1 + 1) + ".Class" , replicaSets.get(depth1).get_Class());
 			}
 		}	
+	}
+
+	public String getStorageType() {
+		return this.storageType;
+	}
+
+	public void setStorageType(String storageType) {
+		this.storageType = storageType;
+		if(storageType != null){
+			putQueryParameter("StorageType", storageType);
+		}
 	}
 
 	public String getResourceGroupId() {

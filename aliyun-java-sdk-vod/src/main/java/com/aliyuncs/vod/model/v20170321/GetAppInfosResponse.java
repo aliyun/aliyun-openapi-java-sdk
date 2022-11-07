@@ -27,6 +27,8 @@ public class GetAppInfosResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String code;
+
 	private List<AppInfo> appInfoList;
 
 	private List<String> nonExistAppIds;
@@ -37,6 +39,14 @@ public class GetAppInfosResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public List<AppInfo> getAppInfoList() {

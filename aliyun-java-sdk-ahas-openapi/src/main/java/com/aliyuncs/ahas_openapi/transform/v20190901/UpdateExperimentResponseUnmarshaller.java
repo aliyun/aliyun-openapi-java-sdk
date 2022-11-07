@@ -23,9 +23,9 @@ public class UpdateExperimentResponseUnmarshaller {
 	public static UpdateExperimentResponse unmarshall(UpdateExperimentResponse updateExperimentResponse, UnmarshallerContext _ctx) {
 		
 		updateExperimentResponse.setRequestId(_ctx.stringValue("UpdateExperimentResponse.RequestId"));
-		updateExperimentResponse.setCode(_ctx.stringValue("UpdateExperimentResponse.Code"));
-		updateExperimentResponse.setHttpStatusCode(_ctx.integerValue("UpdateExperimentResponse.HttpStatusCode"));
 		updateExperimentResponse.setMessage(_ctx.stringValue("UpdateExperimentResponse.Message"));
+		updateExperimentResponse.setHttpStatusCode(_ctx.integerValue("UpdateExperimentResponse.HttpStatusCode"));
+		updateExperimentResponse.setCode(_ctx.stringValue("UpdateExperimentResponse.Code"));
 		updateExperimentResponse.setSuccess(_ctx.booleanValue("UpdateExperimentResponse.Success"));
 	 
 	 	return updateExperimentResponse;

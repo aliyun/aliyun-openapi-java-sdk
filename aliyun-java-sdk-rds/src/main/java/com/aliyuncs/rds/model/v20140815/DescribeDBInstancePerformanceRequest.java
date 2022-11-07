@@ -31,6 +31,8 @@ public class DescribeDBInstancePerformanceRequest extends RpcAcsRequest<Describe
 
 	private String dBInstanceId;
 
+	private String nodeId;
+
 	private String key;
 
 	private String endTime;
@@ -73,6 +75,17 @@ public class DescribeDBInstancePerformanceRequest extends RpcAcsRequest<Describe
 		this.dBInstanceId = dBInstanceId;
 		if(dBInstanceId != null){
 			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getNodeId() {
+		return this.nodeId;
+	}
+
+	public void setNodeId(String nodeId) {
+		this.nodeId = nodeId;
+		if(nodeId != null){
+			putQueryParameter("NodeId", nodeId);
 		}
 	}
 

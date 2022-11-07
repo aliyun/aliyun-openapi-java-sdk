@@ -26,8 +26,6 @@ public class DescribeElasticsearchHealthRequest extends RoaAcsRequest<DescribeEl
 	   
 
 	private String instanceId;
-
-	private String body;
 	public DescribeElasticsearchHealthRequest() {
 		super("elasticsearch", "2017-06-13", "DescribeElasticsearchHealth", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/elasticsearch-health");
@@ -46,17 +44,6 @@ public class DescribeElasticsearchHealthRequest extends RoaAcsRequest<DescribeEl
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putPathParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getBody() {
-		return this.body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
-		if(body != null){
-			putBodyParameter("body", body);
 		}
 	}
 

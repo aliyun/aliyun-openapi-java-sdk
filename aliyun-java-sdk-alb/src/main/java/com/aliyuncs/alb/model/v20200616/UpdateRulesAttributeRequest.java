@@ -210,6 +210,32 @@ public class UpdateRulesAttributeRequest extends RpcAcsRequest<UpdateRulesAttrib
 										if (rules.get(depth1).getRuleActions().get(depth2).getTrafficLimitConfig() != null) {
 											
 												putQueryParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".TrafficLimitConfig.QPS" , rules.get(depth1).getRuleActions().get(depth2).getTrafficLimitConfig().getQPS());
+												putQueryParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".TrafficLimitConfig.PerIpQps" , rules.get(depth1).getRuleActions().get(depth2).getTrafficLimitConfig().getPerIpQps());
+										}
+										if (rules.get(depth1).getRuleActions().get(depth2).getCorsConfig() != null) {
+											
+												putQueryParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".CorsConfig.AllowCredentials" , rules.get(depth1).getRuleActions().get(depth2).getCorsConfig().getAllowCredentials());
+												if (rules.get(depth1).getRuleActions().get(depth2).getCorsConfig().getAllowOrigin() != null) {
+													for (int depth3 = 0; depth3 < rules.get(depth1).getRuleActions().get(depth2).getCorsConfig().getAllowOrigin().size(); depth3++) {
+														putQueryParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".CorsConfig.AllowOrigin." + (depth3 + 1) , rules.get(depth1).getRuleActions().get(depth2).getCorsConfig().getAllowOrigin().get(depth3));
+													}
+												}
+												putQueryParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".CorsConfig.MaxAge" , rules.get(depth1).getRuleActions().get(depth2).getCorsConfig().getMaxAge());
+												if (rules.get(depth1).getRuleActions().get(depth2).getCorsConfig().getAllowMethods() != null) {
+													for (int depth3 = 0; depth3 < rules.get(depth1).getRuleActions().get(depth2).getCorsConfig().getAllowMethods().size(); depth3++) {
+														putQueryParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".CorsConfig.AllowMethods." + (depth3 + 1) , rules.get(depth1).getRuleActions().get(depth2).getCorsConfig().getAllowMethods().get(depth3));
+													}
+												}
+												if (rules.get(depth1).getRuleActions().get(depth2).getCorsConfig().getAllowHeaders() != null) {
+													for (int depth3 = 0; depth3 < rules.get(depth1).getRuleActions().get(depth2).getCorsConfig().getAllowHeaders().size(); depth3++) {
+														putQueryParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".CorsConfig.AllowHeaders." + (depth3 + 1) , rules.get(depth1).getRuleActions().get(depth2).getCorsConfig().getAllowHeaders().get(depth3));
+													}
+												}
+												if (rules.get(depth1).getRuleActions().get(depth2).getCorsConfig().getExposeHeaders() != null) {
+													for (int depth3 = 0; depth3 < rules.get(depth1).getRuleActions().get(depth2).getCorsConfig().getExposeHeaders().size(); depth3++) {
+														putQueryParameter("Rules." + (depth1 + 1) + ".RuleActions." + (depth2 + 1) + ".CorsConfig.ExposeHeaders." + (depth3 + 1) , rules.get(depth1).getRuleActions().get(depth2).getCorsConfig().getExposeHeaders().get(depth3));
+													}
+												}
 										}
 										if (rules.get(depth1).getRuleActions().get(depth2).getRedirectConfig() != null) {
 											
@@ -599,6 +625,8 @@ public class UpdateRulesAttributeRequest extends RpcAcsRequest<UpdateRulesAttrib
 
 			private TrafficLimitConfig trafficLimitConfig;
 
+			private CorsConfig corsConfig;
+
 			private RedirectConfig redirectConfig;
 
 			private String type;
@@ -653,6 +681,14 @@ public class UpdateRulesAttributeRequest extends RpcAcsRequest<UpdateRulesAttrib
 
 			public void setTrafficLimitConfig(TrafficLimitConfig trafficLimitConfig) {
 				this.trafficLimitConfig = trafficLimitConfig;
+			}
+
+			public CorsConfig getCorsConfig() {
+				return this.corsConfig;
+			}
+
+			public void setCorsConfig(CorsConfig corsConfig) {
+				this.corsConfig = corsConfig;
 			}
 
 			public RedirectConfig getRedirectConfig() {
@@ -898,12 +934,85 @@ public class UpdateRulesAttributeRequest extends RpcAcsRequest<UpdateRulesAttrib
 
 				private Integer qPS;
 
+				private Integer perIpQps;
+
 				public Integer getQPS() {
 					return this.qPS;
 				}
 
 				public void setQPS(Integer qPS) {
 					this.qPS = qPS;
+				}
+
+				public Integer getPerIpQps() {
+					return this.perIpQps;
+				}
+
+				public void setPerIpQps(Integer perIpQps) {
+					this.perIpQps = perIpQps;
+				}
+			}
+
+			public static class CorsConfig {
+
+				private String allowCredentials;
+
+				private List<String> allowOrigin;
+
+				private Long maxAge;
+
+				private List<String> allowMethods;
+
+				private List<String> allowHeaders;
+
+				private List<String> exposeHeaders;
+
+				public String getAllowCredentials() {
+					return this.allowCredentials;
+				}
+
+				public void setAllowCredentials(String allowCredentials) {
+					this.allowCredentials = allowCredentials;
+				}
+
+				public List<String> getAllowOrigin() {
+					return this.allowOrigin;
+				}
+
+				public void setAllowOrigin(List<String> allowOrigin) {
+					this.allowOrigin = allowOrigin;
+				}
+
+				public Long getMaxAge() {
+					return this.maxAge;
+				}
+
+				public void setMaxAge(Long maxAge) {
+					this.maxAge = maxAge;
+				}
+
+				public List<String> getAllowMethods() {
+					return this.allowMethods;
+				}
+
+				public void setAllowMethods(List<String> allowMethods) {
+					this.allowMethods = allowMethods;
+				}
+
+				public List<String> getAllowHeaders() {
+					return this.allowHeaders;
+				}
+
+				public void setAllowHeaders(List<String> allowHeaders) {
+					this.allowHeaders = allowHeaders;
+				}
+
+				public List<String> getExposeHeaders() {
+					return this.exposeHeaders;
+				}
+
+				public void setExposeHeaders(List<String> exposeHeaders) {
+					this.exposeHeaders = exposeHeaders;
 				}
 			}
 

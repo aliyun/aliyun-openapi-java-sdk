@@ -33,8 +33,6 @@ public class CreateOpsItemRequest extends RpcAcsRequest<CreateOpsItemResponse> {
 
 	private String title;
 
-	private String type;
-
 	private String resourceGroupId;
 
 	private String severity;
@@ -43,7 +41,7 @@ public class CreateOpsItemRequest extends RpcAcsRequest<CreateOpsItemResponse> {
 
 	private String resources;
 
-	private String priority;
+	private Integer priority;
 
 	private String dedupString;
 
@@ -103,17 +101,6 @@ public class CreateOpsItemRequest extends RpcAcsRequest<CreateOpsItemResponse> {
 		}
 	}
 
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
-		}
-	}
-
 	public String getResourceGroupId() {
 		return this.resourceGroupId;
 	}
@@ -158,14 +145,14 @@ public class CreateOpsItemRequest extends RpcAcsRequest<CreateOpsItemResponse> {
 		}
 	}
 
-	public String getPriority() {
+	public Integer getPriority() {
 		return this.priority;
 	}
 
-	public void setPriority(String priority) {
+	public void setPriority(Integer priority) {
 		this.priority = priority;
 		if(priority != null){
-			putQueryParameter("Priority", priority);
+			putQueryParameter("Priority", priority.toString());
 		}
 	}
 

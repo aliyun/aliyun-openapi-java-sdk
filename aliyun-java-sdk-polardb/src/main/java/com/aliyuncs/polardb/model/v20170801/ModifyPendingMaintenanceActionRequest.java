@@ -41,7 +41,7 @@ public class ModifyPendingMaintenanceActionRequest extends RpcAcsRequest<ModifyP
 
 	private String ids;
 	public ModifyPendingMaintenanceActionRequest() {
-		super("polardb", "2017-08-01", "ModifyPendingMaintenanceAction");
+		super("polardb", "2017-08-01", "ModifyPendingMaintenanceAction", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

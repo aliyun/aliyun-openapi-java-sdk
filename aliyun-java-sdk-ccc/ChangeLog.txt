@@ -1,3 +1,6 @@
+2022-10-14 Version: 2.6.8
+- Supported releaseReason for GetCallDetailRecord and ListCallDetailRecords.
+
 2022-08-24 Version: 2.6.6
 - Supported legacy api.
 

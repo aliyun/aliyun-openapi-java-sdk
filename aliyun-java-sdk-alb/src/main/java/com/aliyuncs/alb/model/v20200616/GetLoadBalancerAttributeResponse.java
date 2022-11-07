@@ -29,6 +29,8 @@ public class GetLoadBalancerAttributeResponse extends AcsResponse {
 
 	private String addressType;
 
+	private Integer bandwidthCapacity;
+
 	private String bandwidthPackageId;
 
 	private String createTime;
@@ -43,6 +45,10 @@ public class GetLoadBalancerAttributeResponse extends AcsResponse {
 
 	private String loadBalancerName;
 
+	private Boolean serviceManagedEnabled;
+
+	private String serviceManagedMode;
+
 	private String loadBalancerStatus;
 
 	private String regionId;
@@ -53,6 +59,8 @@ public class GetLoadBalancerAttributeResponse extends AcsResponse {
 
 	private String vpcId;
 
+	private Boolean configManagedEnabled;
+
 	private String addressIpVersion;
 
 	private String ipv6AddressType;
@@ -62,6 +70,8 @@ public class GetLoadBalancerAttributeResponse extends AcsResponse {
 	private List<Tag> tags;
 
 	private List<ZoneMapping> zoneMappings;
+
+	private List<String> featureLabels;
 
 	private AccessLogConfig accessLogConfig;
 
@@ -85,6 +95,14 @@ public class GetLoadBalancerAttributeResponse extends AcsResponse {
 
 	public void setAddressType(String addressType) {
 		this.addressType = addressType;
+	}
+
+	public Integer getBandwidthCapacity() {
+		return this.bandwidthCapacity;
+	}
+
+	public void setBandwidthCapacity(Integer bandwidthCapacity) {
+		this.bandwidthCapacity = bandwidthCapacity;
 	}
 
 	public String getBandwidthPackageId() {
@@ -143,6 +161,22 @@ public class GetLoadBalancerAttributeResponse extends AcsResponse {
 		this.loadBalancerName = loadBalancerName;
 	}
 
+	public Boolean getServiceManagedEnabled() {
+		return this.serviceManagedEnabled;
+	}
+
+	public void setServiceManagedEnabled(Boolean serviceManagedEnabled) {
+		this.serviceManagedEnabled = serviceManagedEnabled;
+	}
+
+	public String getServiceManagedMode() {
+		return this.serviceManagedMode;
+	}
+
+	public void setServiceManagedMode(String serviceManagedMode) {
+		this.serviceManagedMode = serviceManagedMode;
+	}
+
 	public String getLoadBalancerStatus() {
 		return this.loadBalancerStatus;
 	}
@@ -183,6 +217,14 @@ public class GetLoadBalancerAttributeResponse extends AcsResponse {
 		this.vpcId = vpcId;
 	}
 
+	public Boolean getConfigManagedEnabled() {
+		return this.configManagedEnabled;
+	}
+
+	public void setConfigManagedEnabled(Boolean configManagedEnabled) {
+		this.configManagedEnabled = configManagedEnabled;
+	}
+
 	public String getAddressIpVersion() {
 		return this.addressIpVersion;
 	}
@@ -221,6 +263,14 @@ public class GetLoadBalancerAttributeResponse extends AcsResponse {
 
 	public void setZoneMappings(List<ZoneMapping> zoneMappings) {
 		this.zoneMappings = zoneMappings;
+	}
+
+	public List<String> getFeatureLabels() {
+		return this.featureLabels;
+	}
+
+	public void setFeatureLabels(List<String> featureLabels) {
+		this.featureLabels = featureLabels;
 	}
 
 	public AccessLogConfig getAccessLogConfig() {
@@ -339,6 +389,12 @@ public class GetLoadBalancerAttributeResponse extends AcsResponse {
 
 			private String ipv6Address;
 
+			private String intranetAddress;
+
+			private String allocationId;
+
+			private String eipType;
+
 			public String getAddress() {
 				return this.address;
 			}
@@ -353,6 +409,30 @@ public class GetLoadBalancerAttributeResponse extends AcsResponse {
 
 			public void setIpv6Address(String ipv6Address) {
 				this.ipv6Address = ipv6Address;
+			}
+
+			public String getIntranetAddress() {
+				return this.intranetAddress;
+			}
+
+			public void setIntranetAddress(String intranetAddress) {
+				this.intranetAddress = intranetAddress;
+			}
+
+			public String getAllocationId() {
+				return this.allocationId;
+			}
+
+			public void setAllocationId(String allocationId) {
+				this.allocationId = allocationId;
+			}
+
+			public String getEipType() {
+				return this.eipType;
+			}
+
+			public void setEipType(String eipType) {
+				this.eipType = eipType;
 			}
 		}
 	}
@@ -405,7 +485,27 @@ public class GetLoadBalancerAttributeResponse extends AcsResponse {
 
 	public static class LoadBalancerBillingConfig {
 
+		private Integer internetBandwidth;
+
+		private String internetChargeType;
+
 		private String payType;
+
+		public Integer getInternetBandwidth() {
+			return this.internetBandwidth;
+		}
+
+		public void setInternetBandwidth(Integer internetBandwidth) {
+			this.internetBandwidth = internetBandwidth;
+		}
+
+		public String getInternetChargeType() {
+			return this.internetChargeType;
+		}
+
+		public void setInternetChargeType(String internetChargeType) {
+			this.internetChargeType = internetChargeType;
+		}
 
 		public String getPayType() {
 			return this.payType;

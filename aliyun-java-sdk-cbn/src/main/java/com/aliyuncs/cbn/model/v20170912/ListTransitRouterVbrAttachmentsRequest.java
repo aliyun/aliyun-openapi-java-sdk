@@ -43,7 +43,7 @@ public class ListTransitRouterVbrAttachmentsRequest extends RpcAcsRequest<ListTr
 
 	private Integer maxResults;
 	public ListTransitRouterVbrAttachmentsRequest() {
-		super("Cbn", "2017-09-12", "ListTransitRouterVbrAttachments");
+		super("Cbn", "2017-09-12", "ListTransitRouterVbrAttachments", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

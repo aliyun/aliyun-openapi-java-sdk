@@ -30,8 +30,6 @@ public class GetTransferableNodesRequest extends RoaAcsRequest<GetTransferableNo
 	private String nodeType;
 
 	private Integer count;
-
-	private String body;
 	public GetTransferableNodesRequest() {
 		super("elasticsearch", "2017-06-13", "GetTransferableNodes", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/transferable-nodes");
@@ -72,17 +70,6 @@ public class GetTransferableNodesRequest extends RoaAcsRequest<GetTransferableNo
 		this.count = count;
 		if(count != null){
 			putQueryParameter("count", count.toString());
-		}
-	}
-
-	public String getBody() {
-		return this.body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
-		if(body != null){
-			putBodyParameter("body", body);
 		}
 	}
 

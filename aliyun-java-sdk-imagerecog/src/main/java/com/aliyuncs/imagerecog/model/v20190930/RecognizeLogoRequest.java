@@ -28,7 +28,7 @@ public class RecognizeLogoRequest extends RpcAcsRequest<RecognizeLogoResponse> {
 
 	private List<Tasks> taskss;
 	public RecognizeLogoRequest() {
-		super("imagerecog", "2019-09-30", "RecognizeLogo", "imagerecog");
+		super("imagerecog", "2019-09-30", "RecognizeLogo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

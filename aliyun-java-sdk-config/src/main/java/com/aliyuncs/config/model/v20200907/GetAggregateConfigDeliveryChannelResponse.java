@@ -74,6 +74,8 @@ public class GetAggregateConfigDeliveryChannelResponse extends AcsResponse {
 
 		private String accountId;
 
+		private String deliverySnapshotTime;
+
 		public Integer getStatus() {
 			return this.status;
 		}
@@ -184,6 +186,14 @@ public class GetAggregateConfigDeliveryChannelResponse extends AcsResponse {
 
 		public void setAccountId(String accountId) {
 			this.accountId = accountId;
+		}
+
+		public String getDeliverySnapshotTime() {
+			return this.deliverySnapshotTime;
+		}
+
+		public void setDeliverySnapshotTime(String deliverySnapshotTime) {
+			this.deliverySnapshotTime = deliverySnapshotTime;
 		}
 	}
 

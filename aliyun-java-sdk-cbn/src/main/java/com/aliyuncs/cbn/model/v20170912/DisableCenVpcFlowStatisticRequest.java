@@ -37,7 +37,7 @@ public class DisableCenVpcFlowStatisticRequest extends RpcAcsRequest<DisableCenV
 
 	private Long ownerId;
 	public DisableCenVpcFlowStatisticRequest() {
-		super("Cbn", "2017-09-12", "DisableCenVpcFlowStatistic");
+		super("Cbn", "2017-09-12", "DisableCenVpcFlowStatistic", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

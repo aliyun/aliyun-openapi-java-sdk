@@ -42,6 +42,8 @@ public class GetBasicEndpointGroupResponse extends AcsResponse {
 
 	private String state;
 
+	private String endpointSubAddress;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -112,6 +114,14 @@ public class GetBasicEndpointGroupResponse extends AcsResponse {
 
 	public void setState(String state) {
 		this.state = state;
+	}
+
+	public String getEndpointSubAddress() {
+		return this.endpointSubAddress;
+	}
+
+	public void setEndpointSubAddress(String endpointSubAddress) {
+		this.endpointSubAddress = endpointSubAddress;
 	}
 
 	@Override

@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateEaiResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String elasticAcceleratedInstanceId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getElasticAcceleratedInstanceId() {
 		return this.elasticAcceleratedInstanceId;
@@ -42,6 +34,14 @@ public class CreateEaiResponse extends AcsResponse {
 
 	public void setElasticAcceleratedInstanceId(String elasticAcceleratedInstanceId) {
 		this.elasticAcceleratedInstanceId = elasticAcceleratedInstanceId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

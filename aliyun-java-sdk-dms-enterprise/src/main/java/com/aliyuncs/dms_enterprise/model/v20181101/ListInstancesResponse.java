@@ -131,6 +131,8 @@ public class ListInstancesResponse extends AcsResponse {
 
 		private String ecsRegion;
 
+		private Boolean sellSitd;
+
 		private List<String> ownerIdList;
 
 		private List<String> ownerNameList;
@@ -311,6 +313,14 @@ public class ListInstancesResponse extends AcsResponse {
 
 		public void setEcsRegion(String ecsRegion) {
 			this.ecsRegion = ecsRegion;
+		}
+
+		public Boolean getSellSitd() {
+			return this.sellSitd;
+		}
+
+		public void setSellSitd(Boolean sellSitd) {
+			this.sellSitd = sellSitd;
 		}
 
 		public List<String> getOwnerIdList() {

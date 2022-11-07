@@ -37,6 +37,7 @@ public class ListListenerCertificatesResponseUnmarshaller {
 			certificatesItem.setCertificateId(_ctx.stringValue("ListListenerCertificatesResponse.Certificates["+ i +"].CertificateId"));
 			certificatesItem.setIsDefault(_ctx.booleanValue("ListListenerCertificatesResponse.Certificates["+ i +"].IsDefault"));
 			certificatesItem.setDomain(_ctx.stringValue("ListListenerCertificatesResponse.Certificates["+ i +"].Domain"));
+			certificatesItem.setState(_ctx.stringValue("ListListenerCertificatesResponse.Certificates["+ i +"].State"));
 
 			certificates.add(certificatesItem);
 		}

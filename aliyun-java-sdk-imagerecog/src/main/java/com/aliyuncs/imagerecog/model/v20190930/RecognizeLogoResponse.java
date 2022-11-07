@@ -59,19 +59,11 @@ public class RecognizeLogoResponse extends AcsResponse {
 
 		public static class Element {
 
-			private String taskId;
-
 			private String imageURL;
 
+			private String taskId;
+
 			private List<Result> results;
-
-			public String getTaskId() {
-				return this.taskId;
-			}
-
-			public void setTaskId(String taskId) {
-				this.taskId = taskId;
-			}
 
 			public String getImageURL() {
 				return this.imageURL;
@@ -79,6 +71,14 @@ public class RecognizeLogoResponse extends AcsResponse {
 
 			public void setImageURL(String imageURL) {
 				this.imageURL = imageURL;
+			}
+
+			public String getTaskId() {
+				return this.taskId;
+			}
+
+			public void setTaskId(String taskId) {
+				this.taskId = taskId;
 			}
 
 			public List<Result> getResults() {
@@ -91,21 +91,13 @@ public class RecognizeLogoResponse extends AcsResponse {
 
 			public static class Result {
 
-				private String label;
-
 				private String suggestion;
+
+				private String label;
 
 				private Float rate;
 
 				private List<LogoData> logosData;
-
-				public String getLabel() {
-					return this.label;
-				}
-
-				public void setLabel(String label) {
-					this.label = label;
-				}
 
 				public String getSuggestion() {
 					return this.suggestion;
@@ -113,6 +105,14 @@ public class RecognizeLogoResponse extends AcsResponse {
 
 				public void setSuggestion(String suggestion) {
 					this.suggestion = suggestion;
+				}
+
+				public String getLabel() {
+					return this.label;
+				}
+
+				public void setLabel(String label) {
+					this.label = label;
 				}
 
 				public Float getRate() {
@@ -133,25 +133,17 @@ public class RecognizeLogoResponse extends AcsResponse {
 
 				public static class LogoData {
 
-					private String name;
-
 					private String type;
-
-					private Float x;
-
-					private Float y;
-
-					private Float h;
 
 					private Float w;
 
-					public String getName() {
-						return this.name;
-					}
+					private Float h;
 
-					public void setName(String name) {
-						this.name = name;
-					}
+					private Float y;
+
+					private String name;
+
+					private Float x;
 
 					public String getType() {
 						return this.type;
@@ -161,20 +153,12 @@ public class RecognizeLogoResponse extends AcsResponse {
 						this.type = type;
 					}
 
-					public Float getX() {
-						return this.x;
+					public Float getW() {
+						return this.w;
 					}
 
-					public void setX(Float x) {
-						this.x = x;
-					}
-
-					public Float getY() {
-						return this.y;
-					}
-
-					public void setY(Float y) {
-						this.y = y;
+					public void setW(Float w) {
+						this.w = w;
 					}
 
 					public Float getH() {
@@ -185,12 +169,28 @@ public class RecognizeLogoResponse extends AcsResponse {
 						this.h = h;
 					}
 
-					public Float getW() {
-						return this.w;
+					public Float getY() {
+						return this.y;
 					}
 
-					public void setW(Float w) {
-						this.w = w;
+					public void setY(Float y) {
+						this.y = y;
+					}
+
+					public String getName() {
+						return this.name;
+					}
+
+					public void setName(String name) {
+						this.name = name;
+					}
+
+					public Float getX() {
+						return this.x;
+					}
+
+					public void setX(Float x) {
+						this.x = x;
 					}
 				}
 			}

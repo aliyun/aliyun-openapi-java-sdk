@@ -35,7 +35,7 @@ public class DescribeDBClusterAccessWhitelistRequest extends RpcAcsRequest<Descr
 
 	private Long ownerId;
 	public DescribeDBClusterAccessWhitelistRequest() {
-		super("polardb", "2017-08-01", "DescribeDBClusterAccessWhitelist");
+		super("polardb", "2017-08-01", "DescribeDBClusterAccessWhitelist", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

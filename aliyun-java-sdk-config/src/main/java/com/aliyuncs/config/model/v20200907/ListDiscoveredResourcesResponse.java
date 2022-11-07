@@ -107,6 +107,8 @@ public class ListDiscoveredResourcesResponse extends AcsResponse {
 
 			private String resourceStatus;
 
+			private Long version;
+
 			public String getResourceType() {
 				return this.resourceType;
 			}
@@ -177,6 +179,14 @@ public class ListDiscoveredResourcesResponse extends AcsResponse {
 
 			public void setResourceStatus(String resourceStatus) {
 				this.resourceStatus = resourceStatus;
+			}
+
+			public Long getVersion() {
+				return this.version;
+			}
+
+			public void setVersion(Long version) {
+				this.version = version;
 			}
 		}
 	}

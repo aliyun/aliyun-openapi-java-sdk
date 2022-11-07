@@ -113,6 +113,8 @@ public class ListAlertEventsResponse extends AcsResponse {
 
 			private String labels;
 
+			private String handlerName;
+
 			private List<AlarmsItem> alarms;
 
 			public String getAlertName() {
@@ -209,6 +211,14 @@ public class ListAlertEventsResponse extends AcsResponse {
 
 			public void setLabels(String labels) {
 				this.labels = labels;
+			}
+
+			public String getHandlerName() {
+				return this.handlerName;
+			}
+
+			public void setHandlerName(String handlerName) {
+				this.handlerName = handlerName;
 			}
 
 			public List<AlarmsItem> getAlarms() {

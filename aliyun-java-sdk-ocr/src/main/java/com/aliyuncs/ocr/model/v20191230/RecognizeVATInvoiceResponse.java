@@ -107,6 +107,8 @@ public class RecognizeVATInvoiceResponse extends AcsResponse {
 
 			private List<Float> payeeRegisterNoes;
 
+			private List<Integer> itemNames;
+
 			public List<Float> getPayerRegisterNoes() {
 				return this.payerRegisterNoes;
 			}
@@ -258,6 +260,14 @@ public class RecognizeVATInvoiceResponse extends AcsResponse {
 			public void setPayeeRegisterNoes(List<Float> payeeRegisterNoes) {
 				this.payeeRegisterNoes = payeeRegisterNoes;
 			}
+
+			public List<Integer> getItemNames() {
+				return this.itemNames;
+			}
+
+			public void setItemNames(List<Integer> itemNames) {
+				this.itemNames = itemNames;
+			}
 		}
 
 		public static class Content {
@@ -299,6 +309,8 @@ public class RecognizeVATInvoiceResponse extends AcsResponse {
 			private String payeeAddress;
 
 			private String invoiceCode;
+
+			private List<String> itemName;
 
 			public String getPayerAddress() {
 				return this.payerAddress;
@@ -450,6 +462,14 @@ public class RecognizeVATInvoiceResponse extends AcsResponse {
 
 			public void setInvoiceCode(String invoiceCode) {
 				this.invoiceCode = invoiceCode;
+			}
+
+			public List<String> getItemName() {
+				return this.itemName;
+			}
+
+			public void setItemName(List<String> itemName) {
+				this.itemName = itemName;
 			}
 		}
 	}

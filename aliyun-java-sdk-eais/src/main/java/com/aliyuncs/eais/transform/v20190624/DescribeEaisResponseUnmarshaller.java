@@ -29,29 +29,33 @@ public class DescribeEaisResponseUnmarshaller {
 		
 		describeEaisResponse.setRequestId(_ctx.stringValue("DescribeEaisResponse.RequestId"));
 		describeEaisResponse.setPageNumber(_ctx.integerValue("DescribeEaisResponse.PageNumber"));
-		describeEaisResponse.setTotalCount(_ctx.integerValue("DescribeEaisResponse.TotalCount"));
 		describeEaisResponse.setPageSize(_ctx.integerValue("DescribeEaisResponse.PageSize"));
+		describeEaisResponse.setTotalCount(_ctx.integerValue("DescribeEaisResponse.TotalCount"));
 
 		List<Instance> instances = new ArrayList<Instance>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeEaisResponse.Instances.Length"); i++) {
 			Instance instance = new Instance();
-			instance.setRegionId(_ctx.stringValue("DescribeEaisResponse.Instances["+ i +"].RegionId"));
-			instance.setZoneId(_ctx.stringValue("DescribeEaisResponse.Instances["+ i +"].ZoneId"));
-			instance.setCreationTime(_ctx.stringValue("DescribeEaisResponse.Instances["+ i +"].CreationTime"));
-			instance.setInstanceName(_ctx.stringValue("DescribeEaisResponse.Instances["+ i +"].InstanceName"));
-			instance.setDescription(_ctx.stringValue("DescribeEaisResponse.Instances["+ i +"].Description"));
 			instance.setStatus(_ctx.stringValue("DescribeEaisResponse.Instances["+ i +"].Status"));
-			instance.setElasticAcceleratedInstanceId(_ctx.stringValue("DescribeEaisResponse.Instances["+ i +"].ElasticAcceleratedInstanceId"));
-			instance.setClientInstanceId(_ctx.stringValue("DescribeEaisResponse.Instances["+ i +"].ClientInstanceId"));
-			instance.setInstanceType(_ctx.stringValue("DescribeEaisResponse.Instances["+ i +"].InstanceType"));
-			instance.setClientInstanceType(_ctx.stringValue("DescribeEaisResponse.Instances["+ i +"].ClientInstanceType"));
+			instance.setCreationTime(_ctx.stringValue("DescribeEaisResponse.Instances["+ i +"].CreationTime"));
 			instance.setClientInstanceName(_ctx.stringValue("DescribeEaisResponse.Instances["+ i +"].ClientInstanceName"));
+			instance.setDescription(_ctx.stringValue("DescribeEaisResponse.Instances["+ i +"].Description"));
+			instance.setElasticAcceleratedInstanceId(_ctx.stringValue("DescribeEaisResponse.Instances["+ i +"].ElasticAcceleratedInstanceId"));
+			instance.setInstanceName(_ctx.stringValue("DescribeEaisResponse.Instances["+ i +"].InstanceName"));
+			instance.setClientInstanceType(_ctx.stringValue("DescribeEaisResponse.Instances["+ i +"].ClientInstanceType"));
+			instance.setClientInstanceId(_ctx.stringValue("DescribeEaisResponse.Instances["+ i +"].ClientInstanceId"));
+			instance.setZoneId(_ctx.stringValue("DescribeEaisResponse.Instances["+ i +"].ZoneId"));
+			instance.setInstanceType(_ctx.stringValue("DescribeEaisResponse.Instances["+ i +"].InstanceType"));
+			instance.setRegionId(_ctx.stringValue("DescribeEaisResponse.Instances["+ i +"].RegionId"));
+			instance.setCategory(_ctx.stringValue("DescribeEaisResponse.Instances["+ i +"].Category"));
+			instance.setJupyterUrl(_ctx.stringValue("DescribeEaisResponse.Instances["+ i +"].JupyterUrl"));
+			instance.setVSwitchId(_ctx.stringValue("DescribeEaisResponse.Instances["+ i +"].VSwitchId"));
+			instance.setSecurityGroupId(_ctx.stringValue("DescribeEaisResponse.Instances["+ i +"].SecurityGroupId"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeEaisResponse.Instances["+ i +"].Tags.Length"); j++) {
 				Tag tag = new Tag();
-				tag.setTagValue(_ctx.stringValue("DescribeEaisResponse.Instances["+ i +"].Tags["+ j +"].TagValue"));
 				tag.setTagKey(_ctx.stringValue("DescribeEaisResponse.Instances["+ i +"].Tags["+ j +"].TagKey"));
+				tag.setTagValue(_ctx.stringValue("DescribeEaisResponse.Instances["+ i +"].Tags["+ j +"].TagValue"));
 
 				tags.add(tag);
 			}

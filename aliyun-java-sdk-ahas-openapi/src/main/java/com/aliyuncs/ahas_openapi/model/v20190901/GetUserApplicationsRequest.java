@@ -25,9 +25,9 @@ import com.aliyuncs.ahas_openapi.Endpoint;
 public class GetUserApplicationsRequest extends RpcAcsRequest<GetUserApplicationsResponse> {
 	   
 
-	private String namespace;
-
 	private String ahasRegionId;
+
+	private String namespace;
 	public GetUserApplicationsRequest() {
 		super("ahas-openapi", "2019-09-01", "GetUserApplications", "ahas");
 		setMethod(MethodType.POST);
@@ -35,17 +35,6 @@ public class GetUserApplicationsRequest extends RpcAcsRequest<GetUserApplication
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getNamespace() {
-		return this.namespace;
-	}
-
-	public void setNamespace(String namespace) {
-		this.namespace = namespace;
-		if(namespace != null){
-			putQueryParameter("Namespace", namespace);
-		}
 	}
 
 	public String getAhasRegionId() {
@@ -56,6 +45,17 @@ public class GetUserApplicationsRequest extends RpcAcsRequest<GetUserApplication
 		this.ahasRegionId = ahasRegionId;
 		if(ahasRegionId != null){
 			putQueryParameter("AhasRegionId", ahasRegionId);
+		}
+	}
+
+	public String getNamespace() {
+		return this.namespace;
+	}
+
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+		if(namespace != null){
+			putQueryParameter("Namespace", namespace);
 		}
 	}
 

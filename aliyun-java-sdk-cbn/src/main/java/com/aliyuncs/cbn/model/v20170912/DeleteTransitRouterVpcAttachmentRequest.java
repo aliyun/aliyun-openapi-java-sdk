@@ -39,7 +39,7 @@ public class DeleteTransitRouterVpcAttachmentRequest extends RpcAcsRequest<Delet
 
 	private String transitRouterAttachmentId;
 	public DeleteTransitRouterVpcAttachmentRequest() {
-		super("Cbn", "2017-09-12", "DeleteTransitRouterVpcAttachment");
+		super("Cbn", "2017-09-12", "DeleteTransitRouterVpcAttachment", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

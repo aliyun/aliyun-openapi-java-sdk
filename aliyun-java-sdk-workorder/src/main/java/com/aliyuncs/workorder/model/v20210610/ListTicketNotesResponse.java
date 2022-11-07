@@ -27,9 +27,9 @@ public class ListTicketNotesResponse extends AcsResponse {
 
 	private Integer code;
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private Boolean success;
 
@@ -43,20 +43,20 @@ public class ListTicketNotesResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Boolean getSuccess() {
@@ -77,19 +77,29 @@ public class ListTicketNotesResponse extends AcsResponse {
 
 	public static class DataItem {
 
+		private Integer type;
+
 		private Integer status;
 
-		private Long createTime;
-
-		private Integer type;
+		private String tip;
 
 		private Long dialogId;
 
-		private String tip;
+		private Long createTime;
+
+		private List<AttachmentsItem> attachments;
 
 		private Dialog dialog;
 
 		private User user;
+
+		public Integer getType() {
+			return this.type;
+		}
+
+		public void setType(Integer type) {
+			this.type = type;
+		}
 
 		public Integer getStatus() {
 			return this.status;
@@ -99,20 +109,12 @@ public class ListTicketNotesResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public Long getCreateTime() {
-			return this.createTime;
+		public String getTip() {
+			return this.tip;
 		}
 
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
-		}
-
-		public Integer getType() {
-			return this.type;
-		}
-
-		public void setType(Integer type) {
-			this.type = type;
+		public void setTip(String tip) {
+			this.tip = tip;
 		}
 
 		public Long getDialogId() {
@@ -123,12 +125,20 @@ public class ListTicketNotesResponse extends AcsResponse {
 			this.dialogId = dialogId;
 		}
 
-		public String getTip() {
-			return this.tip;
+		public Long getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setTip(String tip) {
-			this.tip = tip;
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
+		}
+
+		public List<AttachmentsItem> getAttachments() {
+			return this.attachments;
+		}
+
+		public void setAttachments(List<AttachmentsItem> attachments) {
+			this.attachments = attachments;
 		}
 
 		public Dialog getDialog() {
@@ -147,34 +157,11 @@ public class ListTicketNotesResponse extends AcsResponse {
 			this.user = user;
 		}
 
-		public static class Dialog {
-
-			private String content;
-
-			private String schema;
-
-			public String getContent() {
-				return this.content;
-			}
-
-			public void setContent(String content) {
-				this.content = content;
-			}
-
-			public String getSchema() {
-				return this.schema;
-			}
-
-			public void setSchema(String schema) {
-				this.schema = schema;
-			}
-		}
-
-		public static class User {
+		public static class AttachmentsItem {
 
 			private String name;
 
-			private Integer role;
+			private String url;
 
 			public String getName() {
 				return this.name;
@@ -184,12 +171,58 @@ public class ListTicketNotesResponse extends AcsResponse {
 				this.name = name;
 			}
 
+			public String getUrl() {
+				return this.url;
+			}
+
+			public void setUrl(String url) {
+				this.url = url;
+			}
+		}
+
+		public static class Dialog {
+
+			private String schema;
+
+			private String content;
+
+			public String getSchema() {
+				return this.schema;
+			}
+
+			public void setSchema(String schema) {
+				this.schema = schema;
+			}
+
+			public String getContent() {
+				return this.content;
+			}
+
+			public void setContent(String content) {
+				this.content = content;
+			}
+		}
+
+		public static class User {
+
+			private Integer role;
+
+			private String name;
+
 			public Integer getRole() {
 				return this.role;
 			}
 
 			public void setRole(Integer role) {
 				this.role = role;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
 			}
 		}
 	}

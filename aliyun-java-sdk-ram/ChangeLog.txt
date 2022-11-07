@@ -1,3 +1,6 @@
+2022-11-02 Version: 3.3.1
+- Support LICENSE.
+
 2021-07-26 Version: 3.3.0
 - RAM group support GroupId.
 

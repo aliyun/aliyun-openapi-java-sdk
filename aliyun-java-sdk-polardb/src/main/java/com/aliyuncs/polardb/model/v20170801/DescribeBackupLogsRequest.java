@@ -45,7 +45,7 @@ public class DescribeBackupLogsRequest extends RpcAcsRequest<DescribeBackupLogsR
 
 	private Long ownerId;
 	public DescribeBackupLogsRequest() {
-		super("polardb", "2017-08-01", "DescribeBackupLogs");
+		super("polardb", "2017-08-01", "DescribeBackupLogs", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

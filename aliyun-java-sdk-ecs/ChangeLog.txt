@@ -1,3 +1,33 @@
+2022-11-03 Version: 4.24.39
+- Automatically generate sdk tasks.
+
+2022-11-02 Version: 4.24.38
+- Automatically generate sdk tasks.
+
+2022-11-02 Version: 4.24.37
+- Automatically generate sdk tasks.
+
+2022-11-02 Version: 4.24.36
+- Support LICENSE.
+
+2022-11-02 Version: 4.24.35
+- Support LICENSE.
+
+2022-10-28 Version: 4.24.34
+- Automatically generate sdk tasks.
+
+2022-10-27 Version: 4.24.33
+- Automatically generate sdk tasks.
+
+2022-10-27 Version: 4.24.32
+- Automatically generate sdk tasks.
+
+2022-10-19 Version: 4.24.31
+- Automatically generate sdk tasks.
+
+2022-10-14 Version: 4.24.30
+- Add GPUMemorySize to DescribeInstanceTypes api.
+
 2022-09-21 Version: 4.24.29
 - Automatically generate sdk tasks.
 

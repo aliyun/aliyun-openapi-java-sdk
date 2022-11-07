@@ -99,6 +99,16 @@ public class DescribeAccountsResponse extends AcsResponse {
 
 		private String accountName;
 
+		private String validUntil;
+
+		private String createDB;
+
+		private String replication;
+
+		private String createRole;
+
+		private String bypassRLS;
+
 		private List<DatabasePrivilege> databasePrivileges;
 
 		public String getAccountStatus() {
@@ -147,6 +157,46 @@ public class DescribeAccountsResponse extends AcsResponse {
 
 		public void setAccountName(String accountName) {
 			this.accountName = accountName;
+		}
+
+		public String getValidUntil() {
+			return this.validUntil;
+		}
+
+		public void setValidUntil(String validUntil) {
+			this.validUntil = validUntil;
+		}
+
+		public String getCreateDB() {
+			return this.createDB;
+		}
+
+		public void setCreateDB(String createDB) {
+			this.createDB = createDB;
+		}
+
+		public String getReplication() {
+			return this.replication;
+		}
+
+		public void setReplication(String replication) {
+			this.replication = replication;
+		}
+
+		public String getCreateRole() {
+			return this.createRole;
+		}
+
+		public void setCreateRole(String createRole) {
+			this.createRole = createRole;
+		}
+
+		public String getBypassRLS() {
+			return this.bypassRLS;
+		}
+
+		public void setBypassRLS(String bypassRLS) {
+			this.bypassRLS = bypassRLS;
 		}
 
 		public List<DatabasePrivilege> getDatabasePrivileges() {

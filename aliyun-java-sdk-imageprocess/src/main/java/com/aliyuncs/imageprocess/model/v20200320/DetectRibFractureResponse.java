@@ -27,6 +27,10 @@ public class DetectRibFractureResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String code;
+
+	private String message;
+
 	private Data data;
 
 	public String getRequestId() {
@@ -35,6 +39,22 @@ public class DetectRibFractureResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Data getData() {
@@ -89,26 +109,26 @@ public class DetectRibFractureResponse extends AcsResponse {
 
 		public static class DetectionsItem {
 
-			private String fractureCategory;
+			private Integer fractureId;
 
 			private Float fractureConfidence;
+
+			private String fractureCategory;
 
 			private String fractureLocation;
 
 			private Long fractureSegment;
 
-			private Integer fractureId;
+			private List<Integer> coordinates;
 
 			private List<Integer> coordinateImage;
 
-			private List<Integer> coordinates;
-
-			public String getFractureCategory() {
-				return this.fractureCategory;
+			public Integer getFractureId() {
+				return this.fractureId;
 			}
 
-			public void setFractureCategory(String fractureCategory) {
-				this.fractureCategory = fractureCategory;
+			public void setFractureId(Integer fractureId) {
+				this.fractureId = fractureId;
 			}
 
 			public Float getFractureConfidence() {
@@ -117,6 +137,14 @@ public class DetectRibFractureResponse extends AcsResponse {
 
 			public void setFractureConfidence(Float fractureConfidence) {
 				this.fractureConfidence = fractureConfidence;
+			}
+
+			public String getFractureCategory() {
+				return this.fractureCategory;
+			}
+
+			public void setFractureCategory(String fractureCategory) {
+				this.fractureCategory = fractureCategory;
 			}
 
 			public String getFractureLocation() {
@@ -135,12 +163,12 @@ public class DetectRibFractureResponse extends AcsResponse {
 				this.fractureSegment = fractureSegment;
 			}
 
-			public Integer getFractureId() {
-				return this.fractureId;
+			public List<Integer> getCoordinates() {
+				return this.coordinates;
 			}
 
-			public void setFractureId(Integer fractureId) {
-				this.fractureId = fractureId;
+			public void setCoordinates(List<Integer> coordinates) {
+				this.coordinates = coordinates;
 			}
 
 			public List<Integer> getCoordinateImage() {
@@ -149,14 +177,6 @@ public class DetectRibFractureResponse extends AcsResponse {
 
 			public void setCoordinateImage(List<Integer> coordinateImage) {
 				this.coordinateImage = coordinateImage;
-			}
-
-			public List<Integer> getCoordinates() {
-				return this.coordinates;
-			}
-
-			public void setCoordinates(List<Integer> coordinates) {
-				this.coordinates = coordinates;
 			}
 		}
 	}

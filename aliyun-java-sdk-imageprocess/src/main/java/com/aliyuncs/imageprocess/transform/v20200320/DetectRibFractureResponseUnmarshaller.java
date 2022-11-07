@@ -28,6 +28,8 @@ public class DetectRibFractureResponseUnmarshaller {
 	public static DetectRibFractureResponse unmarshall(DetectRibFractureResponse detectRibFractureResponse, UnmarshallerContext _ctx) {
 		
 		detectRibFractureResponse.setRequestId(_ctx.stringValue("DetectRibFractureResponse.RequestId"));
+		detectRibFractureResponse.setCode(_ctx.stringValue("DetectRibFractureResponse.Code"));
+		detectRibFractureResponse.setMessage(_ctx.stringValue("DetectRibFractureResponse.Message"));
 
 		Data data = new Data();
 		data.setResultURL(_ctx.stringValue("DetectRibFractureResponse.Data.ResultURL"));
@@ -47,23 +49,23 @@ public class DetectRibFractureResponseUnmarshaller {
 		List<DetectionsItem> detections = new ArrayList<DetectionsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DetectRibFractureResponse.Data.Detections.Length"); i++) {
 			DetectionsItem detectionsItem = new DetectionsItem();
-			detectionsItem.setFractureCategory(_ctx.stringValue("DetectRibFractureResponse.Data.Detections["+ i +"].FractureCategory"));
+			detectionsItem.setFractureId(_ctx.integerValue("DetectRibFractureResponse.Data.Detections["+ i +"].FractureId"));
 			detectionsItem.setFractureConfidence(_ctx.floatValue("DetectRibFractureResponse.Data.Detections["+ i +"].FractureConfidence"));
+			detectionsItem.setFractureCategory(_ctx.stringValue("DetectRibFractureResponse.Data.Detections["+ i +"].FractureCategory"));
 			detectionsItem.setFractureLocation(_ctx.stringValue("DetectRibFractureResponse.Data.Detections["+ i +"].FractureLocation"));
 			detectionsItem.setFractureSegment(_ctx.longValue("DetectRibFractureResponse.Data.Detections["+ i +"].FractureSegment"));
-			detectionsItem.setFractureId(_ctx.integerValue("DetectRibFractureResponse.Data.Detections["+ i +"].FractureId"));
-
-			List<Integer> coordinateImage = new ArrayList<Integer>();
-			for (int j = 0; j < _ctx.lengthValue("DetectRibFractureResponse.Data.Detections["+ i +"].CoordinateImage.Length"); j++) {
-				coordinateImage.add(_ctx.integerValue("DetectRibFractureResponse.Data.Detections["+ i +"].CoordinateImage["+ j +"]"));
-			}
-			detectionsItem.setCoordinateImage(coordinateImage);
 
 			List<Integer> coordinates = new ArrayList<Integer>();
 			for (int j = 0; j < _ctx.lengthValue("DetectRibFractureResponse.Data.Detections["+ i +"].Coordinates.Length"); j++) {
 				coordinates.add(_ctx.integerValue("DetectRibFractureResponse.Data.Detections["+ i +"].Coordinates["+ j +"]"));
 			}
 			detectionsItem.setCoordinates(coordinates);
+
+			List<Integer> coordinateImage = new ArrayList<Integer>();
+			for (int j = 0; j < _ctx.lengthValue("DetectRibFractureResponse.Data.Detections["+ i +"].CoordinateImage.Length"); j++) {
+				coordinateImage.add(_ctx.integerValue("DetectRibFractureResponse.Data.Detections["+ i +"].CoordinateImage["+ j +"]"));
+			}
+			detectionsItem.setCoordinateImage(coordinateImage);
 
 			detections.add(detectionsItem);
 		}

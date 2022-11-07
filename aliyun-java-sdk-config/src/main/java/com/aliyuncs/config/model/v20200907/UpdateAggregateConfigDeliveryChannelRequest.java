@@ -43,6 +43,8 @@ public class UpdateAggregateConfigDeliveryChannelRequest extends RpcAcsRequest<U
 
 	private String deliveryChannelName;
 
+	private String deliverySnapshotTime;
+
 	private String deliveryChannelId;
 
 	private String oversizedDataOSSTargetArn;
@@ -153,6 +155,17 @@ public class UpdateAggregateConfigDeliveryChannelRequest extends RpcAcsRequest<U
 		this.deliveryChannelName = deliveryChannelName;
 		if(deliveryChannelName != null){
 			putQueryParameter("DeliveryChannelName", deliveryChannelName);
+		}
+	}
+
+	public String getDeliverySnapshotTime() {
+		return this.deliverySnapshotTime;
+	}
+
+	public void setDeliverySnapshotTime(String deliverySnapshotTime) {
+		this.deliverySnapshotTime = deliverySnapshotTime;
+		if(deliverySnapshotTime != null){
+			putQueryParameter("DeliverySnapshotTime", deliverySnapshotTime);
 		}
 	}
 

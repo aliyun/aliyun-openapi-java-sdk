@@ -34,6 +34,8 @@ public class SendFileRequest extends RpcAcsRequest<SendFileResponse> {
 
 	private String content;
 
+	private String resourceGroupId;
+
 	private String fileOwner;
 
 	private Boolean overwrite;
@@ -105,6 +107,17 @@ public class SendFileRequest extends RpcAcsRequest<SendFileResponse> {
 		this.content = content;
 		if(content != null){
 			putQueryParameter("Content", content);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

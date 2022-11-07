@@ -25,35 +25,24 @@ import com.aliyuncs.cas.Endpoint;
 public class CreateCertificateWithCsrRequestRequest extends RpcAcsRequest<CreateCertificateWithCsrRequestResponse> {
 	   
 
-	private String productCode;
-
 	private String csr;
 
-	private String validateType;
+	private String productCode;
 
-	private String email;
+	private String username;
 
 	private String phone;
 
-	private String username;
+	private String email;
+
+	private String validateType;
 	public CreateCertificateWithCsrRequestRequest() {
-		super("cas", "2020-04-07", "CreateCertificateWithCsrRequest", "cas-pack");
+		super("cas", "2020-04-07", "CreateCertificateWithCsrRequest");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getProductCode() {
-		return this.productCode;
-	}
-
-	public void setProductCode(String productCode) {
-		this.productCode = productCode;
-		if(productCode != null){
-			putQueryParameter("ProductCode", productCode);
-		}
 	}
 
 	public String getCsr() {
@@ -67,25 +56,25 @@ public class CreateCertificateWithCsrRequestRequest extends RpcAcsRequest<Create
 		}
 	}
 
-	public String getValidateType() {
-		return this.validateType;
+	public String getProductCode() {
+		return this.productCode;
 	}
 
-	public void setValidateType(String validateType) {
-		this.validateType = validateType;
-		if(validateType != null){
-			putQueryParameter("ValidateType", validateType);
+	public void setProductCode(String productCode) {
+		this.productCode = productCode;
+		if(productCode != null){
+			putQueryParameter("ProductCode", productCode);
 		}
 	}
 
-	public String getEmail() {
-		return this.email;
+	public String getUsername() {
+		return this.username;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
-		if(email != null){
-			putQueryParameter("Email", email);
+	public void setUsername(String username) {
+		this.username = username;
+		if(username != null){
+			putQueryParameter("Username", username);
 		}
 	}
 
@@ -100,14 +89,25 @@ public class CreateCertificateWithCsrRequestRequest extends RpcAcsRequest<Create
 		}
 	}
 
-	public String getUsername() {
-		return this.username;
+	public String getEmail() {
+		return this.email;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
-		if(username != null){
-			putQueryParameter("Username", username);
+	public void setEmail(String email) {
+		this.email = email;
+		if(email != null){
+			putQueryParameter("Email", email);
+		}
+	}
+
+	public String getValidateType() {
+		return this.validateType;
+	}
+
+	public void setValidateType(String validateType) {
+		this.validateType = validateType;
+		if(validateType != null){
+			putQueryParameter("ValidateType", validateType);
 		}
 	}
 

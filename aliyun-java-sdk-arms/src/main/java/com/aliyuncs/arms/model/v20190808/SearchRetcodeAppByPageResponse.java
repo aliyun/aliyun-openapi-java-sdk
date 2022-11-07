@@ -107,6 +107,8 @@ public class SearchRetcodeAppByPageResponse extends AcsResponse {
 
 			private String regionId;
 
+			private String nickName;
+
 			public String getType() {
 				return this.type;
 			}
@@ -177,6 +179,14 @@ public class SearchRetcodeAppByPageResponse extends AcsResponse {
 
 			public void setRegionId(String regionId) {
 				this.regionId = regionId;
+			}
+
+			public String getNickName() {
+				return this.nickName;
+			}
+
+			public void setNickName(String nickName) {
+				this.nickName = nickName;
 			}
 		}
 	}

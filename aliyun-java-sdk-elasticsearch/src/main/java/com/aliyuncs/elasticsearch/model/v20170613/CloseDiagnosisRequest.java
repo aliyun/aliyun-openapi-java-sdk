@@ -30,8 +30,6 @@ public class CloseDiagnosisRequest extends RoaAcsRequest<CloseDiagnosisResponse>
 	private String clientToken;
 
 	private String lang;
-
-	private String body;
 	public CloseDiagnosisRequest() {
 		super("elasticsearch", "2017-06-13", "CloseDiagnosis", "elasticsearch");
 		setUriPattern("/openapi/diagnosis/instances/[InstanceId]/actions/close-diagnosis");
@@ -72,17 +70,6 @@ public class CloseDiagnosisRequest extends RoaAcsRequest<CloseDiagnosisResponse>
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("lang", lang);
-		}
-	}
-
-	public String getBody() {
-		return this.body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
-		if(body != null){
-			putBodyParameter("body", body);
 		}
 	}
 

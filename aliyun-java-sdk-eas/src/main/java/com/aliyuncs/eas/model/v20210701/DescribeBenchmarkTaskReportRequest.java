@@ -25,6 +25,8 @@ import com.aliyuncs.eas.Endpoint;
 public class DescribeBenchmarkTaskReportRequest extends RoaAcsRequest<DescribeBenchmarkTaskReportResponse> {
 	   
 
+	private String reportType;
+
 	private String taskName;
 
 	private String clusterId;
@@ -36,6 +38,17 @@ public class DescribeBenchmarkTaskReportRequest extends RoaAcsRequest<DescribeBe
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getReportType() {
+		return this.reportType;
+	}
+
+	public void setReportType(String reportType) {
+		this.reportType = reportType;
+		if(reportType != null){
+			putQueryParameter("ReportType", reportType);
+		}
 	}
 
 	public String getTaskName() {

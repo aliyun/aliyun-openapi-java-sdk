@@ -24,12 +24,14 @@ public class DetectCovid19CadResponseUnmarshaller {
 	public static DetectCovid19CadResponse unmarshall(DetectCovid19CadResponse detectCovid19CadResponse, UnmarshallerContext _ctx) {
 		
 		detectCovid19CadResponse.setRequestId(_ctx.stringValue("DetectCovid19CadResponse.RequestId"));
+		detectCovid19CadResponse.setCode(_ctx.stringValue("DetectCovid19CadResponse.Code"));
+		detectCovid19CadResponse.setMessage(_ctx.stringValue("DetectCovid19CadResponse.Message"));
 
 		Data data = new Data();
-		data.setNewProbability(_ctx.stringValue("DetectCovid19CadResponse.Data.NewProbability"));
 		data.setNormalProbability(_ctx.stringValue("DetectCovid19CadResponse.Data.NormalProbability"));
-		data.setOtherProbability(_ctx.stringValue("DetectCovid19CadResponse.Data.OtherProbability"));
+		data.setNewProbability(_ctx.stringValue("DetectCovid19CadResponse.Data.NewProbability"));
 		data.setLesionRatio(_ctx.stringValue("DetectCovid19CadResponse.Data.LesionRatio"));
+		data.setOtherProbability(_ctx.stringValue("DetectCovid19CadResponse.Data.OtherProbability"));
 		data.setMask(_ctx.stringValue("DetectCovid19CadResponse.Data.Mask"));
 		detectCovid19CadResponse.setData(data);
 	 

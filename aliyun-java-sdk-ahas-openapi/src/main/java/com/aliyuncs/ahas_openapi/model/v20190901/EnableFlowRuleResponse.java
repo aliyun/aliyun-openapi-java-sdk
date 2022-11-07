@@ -76,64 +76,48 @@ public class EnableFlowRuleResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String appName;
-
-		private Float clusterEstimatedMaxQps;
-
-		private Integer clusterFallbackStrategy;
+		private String refResource;
 
 		private Integer clusterFallbackThreshold;
 
-		private Boolean clusterMode;
+		private String namespace;
 
-		private Integer clusterThresholdType;
-
-		private Integer controlBehavior;
-
-		private Float threshold;
-
-		private Boolean enable;
+		private Integer statDurationMs;
 
 		private String limitOrigin;
 
-		private Integer maxQueueingTimeMs;
+		private Integer clusterThresholdType;
 
-		private String namespace;
-
-		private String refResource;
+		private Long ruleId;
 
 		private Integer relationStrategy;
 
 		private String resource;
 
-		private Long ruleId;
+		private String appName;
 
-		private Integer statDurationMs;
+		private Integer maxQueueingTimeMs;
+
+		private Integer controlBehavior;
+
+		private Float clusterEstimatedMaxQps;
 
 		private Integer warmUpPeriodSec;
 
-		public String getAppName() {
-			return this.appName;
+		private Integer clusterFallbackStrategy;
+
+		private Float threshold;
+
+		private Boolean clusterMode;
+
+		private Boolean enable;
+
+		public String getRefResource() {
+			return this.refResource;
 		}
 
-		public void setAppName(String appName) {
-			this.appName = appName;
-		}
-
-		public Float getClusterEstimatedMaxQps() {
-			return this.clusterEstimatedMaxQps;
-		}
-
-		public void setClusterEstimatedMaxQps(Float clusterEstimatedMaxQps) {
-			this.clusterEstimatedMaxQps = clusterEstimatedMaxQps;
-		}
-
-		public Integer getClusterFallbackStrategy() {
-			return this.clusterFallbackStrategy;
-		}
-
-		public void setClusterFallbackStrategy(Integer clusterFallbackStrategy) {
-			this.clusterFallbackStrategy = clusterFallbackStrategy;
+		public void setRefResource(String refResource) {
+			this.refResource = refResource;
 		}
 
 		public Integer getClusterFallbackThreshold() {
@@ -144,44 +128,20 @@ public class EnableFlowRuleResponse extends AcsResponse {
 			this.clusterFallbackThreshold = clusterFallbackThreshold;
 		}
 
-		public Boolean getClusterMode() {
-			return this.clusterMode;
+		public String getNamespace() {
+			return this.namespace;
 		}
 
-		public void setClusterMode(Boolean clusterMode) {
-			this.clusterMode = clusterMode;
+		public void setNamespace(String namespace) {
+			this.namespace = namespace;
 		}
 
-		public Integer getClusterThresholdType() {
-			return this.clusterThresholdType;
+		public Integer getStatDurationMs() {
+			return this.statDurationMs;
 		}
 
-		public void setClusterThresholdType(Integer clusterThresholdType) {
-			this.clusterThresholdType = clusterThresholdType;
-		}
-
-		public Integer getControlBehavior() {
-			return this.controlBehavior;
-		}
-
-		public void setControlBehavior(Integer controlBehavior) {
-			this.controlBehavior = controlBehavior;
-		}
-
-		public Float getThreshold() {
-			return this.threshold;
-		}
-
-		public void setThreshold(Float threshold) {
-			this.threshold = threshold;
-		}
-
-		public Boolean getEnable() {
-			return this.enable;
-		}
-
-		public void setEnable(Boolean enable) {
-			this.enable = enable;
+		public void setStatDurationMs(Integer statDurationMs) {
+			this.statDurationMs = statDurationMs;
 		}
 
 		public String getLimitOrigin() {
@@ -192,28 +152,20 @@ public class EnableFlowRuleResponse extends AcsResponse {
 			this.limitOrigin = limitOrigin;
 		}
 
-		public Integer getMaxQueueingTimeMs() {
-			return this.maxQueueingTimeMs;
+		public Integer getClusterThresholdType() {
+			return this.clusterThresholdType;
 		}
 
-		public void setMaxQueueingTimeMs(Integer maxQueueingTimeMs) {
-			this.maxQueueingTimeMs = maxQueueingTimeMs;
+		public void setClusterThresholdType(Integer clusterThresholdType) {
+			this.clusterThresholdType = clusterThresholdType;
 		}
 
-		public String getNamespace() {
-			return this.namespace;
+		public Long getRuleId() {
+			return this.ruleId;
 		}
 
-		public void setNamespace(String namespace) {
-			this.namespace = namespace;
-		}
-
-		public String getRefResource() {
-			return this.refResource;
-		}
-
-		public void setRefResource(String refResource) {
-			this.refResource = refResource;
+		public void setRuleId(Long ruleId) {
+			this.ruleId = ruleId;
 		}
 
 		public Integer getRelationStrategy() {
@@ -232,20 +184,36 @@ public class EnableFlowRuleResponse extends AcsResponse {
 			this.resource = resource;
 		}
 
-		public Long getRuleId() {
-			return this.ruleId;
+		public String getAppName() {
+			return this.appName;
 		}
 
-		public void setRuleId(Long ruleId) {
-			this.ruleId = ruleId;
+		public void setAppName(String appName) {
+			this.appName = appName;
 		}
 
-		public Integer getStatDurationMs() {
-			return this.statDurationMs;
+		public Integer getMaxQueueingTimeMs() {
+			return this.maxQueueingTimeMs;
 		}
 
-		public void setStatDurationMs(Integer statDurationMs) {
-			this.statDurationMs = statDurationMs;
+		public void setMaxQueueingTimeMs(Integer maxQueueingTimeMs) {
+			this.maxQueueingTimeMs = maxQueueingTimeMs;
+		}
+
+		public Integer getControlBehavior() {
+			return this.controlBehavior;
+		}
+
+		public void setControlBehavior(Integer controlBehavior) {
+			this.controlBehavior = controlBehavior;
+		}
+
+		public Float getClusterEstimatedMaxQps() {
+			return this.clusterEstimatedMaxQps;
+		}
+
+		public void setClusterEstimatedMaxQps(Float clusterEstimatedMaxQps) {
+			this.clusterEstimatedMaxQps = clusterEstimatedMaxQps;
 		}
 
 		public Integer getWarmUpPeriodSec() {
@@ -254,6 +222,38 @@ public class EnableFlowRuleResponse extends AcsResponse {
 
 		public void setWarmUpPeriodSec(Integer warmUpPeriodSec) {
 			this.warmUpPeriodSec = warmUpPeriodSec;
+		}
+
+		public Integer getClusterFallbackStrategy() {
+			return this.clusterFallbackStrategy;
+		}
+
+		public void setClusterFallbackStrategy(Integer clusterFallbackStrategy) {
+			this.clusterFallbackStrategy = clusterFallbackStrategy;
+		}
+
+		public Float getThreshold() {
+			return this.threshold;
+		}
+
+		public void setThreshold(Float threshold) {
+			this.threshold = threshold;
+		}
+
+		public Boolean getClusterMode() {
+			return this.clusterMode;
+		}
+
+		public void setClusterMode(Boolean clusterMode) {
+			this.clusterMode = clusterMode;
+		}
+
+		public Boolean getEnable() {
+			return this.enable;
+		}
+
+		public void setEnable(Boolean enable) {
+			this.enable = enable;
 		}
 	}
 

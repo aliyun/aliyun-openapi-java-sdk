@@ -34,6 +34,9 @@ public class StartInstanceRequest extends RpcAcsRequest<StartInstanceResponse> {
 	@SerializedName("channel")
 	private Channel channel;
 
+	@SerializedName("commandRequest")
+	private CommandRequest commandRequest;
+
 	private String user;
 	public StartInstanceRequest() {
 		super("avatar", "2022-01-30", "StartInstance");
@@ -73,6 +76,17 @@ public class StartInstanceRequest extends RpcAcsRequest<StartInstanceResponse> {
 		}	
 	}
 
+	public CommandRequest getCommandRequest() {
+		return this.commandRequest;
+	}
+
+	public void setCommandRequest(CommandRequest commandRequest) {
+		this.commandRequest = commandRequest;	
+		if (commandRequest != null) {
+			putQueryParameter("CommandRequest" , new Gson().toJson(commandRequest));
+		}	
+	}
+
 	public String getUser() {
 		return this.user;
 	}
@@ -106,6 +120,20 @@ public class StartInstanceRequest extends RpcAcsRequest<StartInstanceResponse> {
 
 		public void setReqConfig(Map<String,String> reqConfig) {
 			this.reqConfig = reqConfig;
+		}
+	}
+
+	public static class CommandRequest {
+
+		@SerializedName("AlphaSwitch")
+		private Boolean alphaSwitch;
+
+		public Boolean getAlphaSwitch() {
+			return this.alphaSwitch;
+		}
+
+		public void setAlphaSwitch(Boolean alphaSwitch) {
+			this.alphaSwitch = alphaSwitch;
 		}
 	}
 

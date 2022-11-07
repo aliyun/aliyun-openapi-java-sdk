@@ -103,6 +103,10 @@ public class DescribeDBMiniEngineVersionsResponse extends AcsResponse {
 
 		private String minorVersion;
 
+		private String communityMinorVersion;
+
+		private String tag;
+
 		public String getReleaseNote() {
 			return this.releaseNote;
 		}
@@ -165,6 +169,22 @@ public class DescribeDBMiniEngineVersionsResponse extends AcsResponse {
 
 		public void setMinorVersion(String minorVersion) {
 			this.minorVersion = minorVersion;
+		}
+
+		public String getCommunityMinorVersion() {
+			return this.communityMinorVersion;
+		}
+
+		public void setCommunityMinorVersion(String communityMinorVersion) {
+			this.communityMinorVersion = communityMinorVersion;
+		}
+
+		public String getTag() {
+			return this.tag;
+		}
+
+		public void setTag(String tag) {
+			this.tag = tag;
 		}
 	}
 

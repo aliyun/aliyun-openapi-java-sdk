@@ -24,8 +24,8 @@ public class DeleteDegradeRuleResponseUnmarshaller {
 	public static DeleteDegradeRuleResponse unmarshall(DeleteDegradeRuleResponse deleteDegradeRuleResponse, UnmarshallerContext _ctx) {
 		
 		deleteDegradeRuleResponse.setRequestId(_ctx.stringValue("DeleteDegradeRuleResponse.RequestId"));
-		deleteDegradeRuleResponse.setCode(_ctx.stringValue("DeleteDegradeRuleResponse.Code"));
 		deleteDegradeRuleResponse.setMessage(_ctx.stringValue("DeleteDegradeRuleResponse.Message"));
+		deleteDegradeRuleResponse.setCode(_ctx.stringValue("DeleteDegradeRuleResponse.Code"));
 		deleteDegradeRuleResponse.setSuccess(_ctx.booleanValue("DeleteDegradeRuleResponse.Success"));
 
 		Data data = new Data();

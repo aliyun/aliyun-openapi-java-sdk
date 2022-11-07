@@ -30,6 +30,7 @@ public class DescribeIpSetResponseUnmarshaller {
 		describeIpSetResponse.setIpVersion(_ctx.stringValue("DescribeIpSetResponse.IpVersion"));
 		describeIpSetResponse.setState(_ctx.stringValue("DescribeIpSetResponse.State"));
 		describeIpSetResponse.setBandwidth(_ctx.integerValue("DescribeIpSetResponse.Bandwidth"));
+		describeIpSetResponse.setIspType(_ctx.stringValue("DescribeIpSetResponse.IspType"));
 		describeIpSetResponse.setAccelerateRegionId(_ctx.stringValue("DescribeIpSetResponse.AccelerateRegionId"));
 		describeIpSetResponse.setAcceleratorId(_ctx.stringValue("DescribeIpSetResponse.AcceleratorId"));
 

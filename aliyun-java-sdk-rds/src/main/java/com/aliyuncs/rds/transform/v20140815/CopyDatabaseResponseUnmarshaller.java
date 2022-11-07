@@ -22,6 +22,7 @@ public class CopyDatabaseResponseUnmarshaller {
 
 	public static CopyDatabaseResponse unmarshall(CopyDatabaseResponse copyDatabaseResponse, UnmarshallerContext _ctx) {
 		
+		copyDatabaseResponse.setRequestId(_ctx.stringValue("CopyDatabaseResponse.RequestId"));
 		copyDatabaseResponse.setDBName(_ctx.stringValue("CopyDatabaseResponse.DBName"));
 		copyDatabaseResponse.setTaskId(_ctx.stringValue("CopyDatabaseResponse.TaskId"));
 		copyDatabaseResponse.setDBStatus(_ctx.stringValue("CopyDatabaseResponse.DBStatus"));

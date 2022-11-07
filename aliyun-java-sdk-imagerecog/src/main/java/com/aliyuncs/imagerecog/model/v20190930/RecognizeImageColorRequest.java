@@ -25,27 +25,16 @@ import com.aliyuncs.imagerecog.Endpoint;
 public class RecognizeImageColorRequest extends RpcAcsRequest<RecognizeImageColorResponse> {
 	   
 
-	private String url;
-
 	private Integer colorCount;
+
+	private String url;
 	public RecognizeImageColorRequest() {
-		super("imagerecog", "2019-09-30", "RecognizeImageColor", "imagerecog");
+		super("imagerecog", "2019-09-30", "RecognizeImageColor");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getUrl() {
-		return this.url;
-	}
-
-	public void setUrl(String url) {
-		this.url = url;
-		if(url != null){
-			putBodyParameter("Url", url);
-		}
 	}
 
 	public Integer getColorCount() {
@@ -56,6 +45,17 @@ public class RecognizeImageColorRequest extends RpcAcsRequest<RecognizeImageColo
 		this.colorCount = colorCount;
 		if(colorCount != null){
 			putBodyParameter("ColorCount", colorCount.toString());
+		}
+	}
+
+	public String getUrl() {
+		return this.url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+		if(url != null){
+			putBodyParameter("Url", url);
 		}
 	}
 

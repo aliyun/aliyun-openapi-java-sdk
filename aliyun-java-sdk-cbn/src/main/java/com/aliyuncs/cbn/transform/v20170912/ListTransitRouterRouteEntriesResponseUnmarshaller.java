@@ -43,6 +43,8 @@ public class ListTransitRouterRouteEntriesResponseUnmarshaller {
 			transitRouterRouteEntry.setTransitRouterRouteEntryNextHopType(_ctx.stringValue("ListTransitRouterRouteEntriesResponse.TransitRouterRouteEntries["+ i +"].TransitRouterRouteEntryNextHopType"));
 			transitRouterRouteEntry.setTransitRouterRouteEntryNextHopId(_ctx.stringValue("ListTransitRouterRouteEntriesResponse.TransitRouterRouteEntries["+ i +"].TransitRouterRouteEntryNextHopId"));
 			transitRouterRouteEntry.setTransitRouterRouteEntryDescription(_ctx.stringValue("ListTransitRouterRouteEntriesResponse.TransitRouterRouteEntries["+ i +"].TransitRouterRouteEntryDescription"));
+			transitRouterRouteEntry.setOperationalMode(_ctx.booleanValue("ListTransitRouterRouteEntriesResponse.TransitRouterRouteEntries["+ i +"].OperationalMode"));
+			transitRouterRouteEntry.setTag(_ctx.stringValue("ListTransitRouterRouteEntriesResponse.TransitRouterRouteEntries["+ i +"].Tag"));
 
 			transitRouterRouteEntries.add(transitRouterRouteEntry);
 		}

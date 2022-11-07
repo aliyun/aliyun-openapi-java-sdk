@@ -73,6 +73,10 @@ public class ListClassesResponse extends AcsResponse {
 
 		private String maxIOMBPS;
 
+		private String encryptedMemory;
+
+		private String instructionSetArch;
+
 		public String getMaxIOPS() {
 			return this.maxIOPS;
 		}
@@ -135,6 +139,22 @@ public class ListClassesResponse extends AcsResponse {
 
 		public void setMaxIOMBPS(String maxIOMBPS) {
 			this.maxIOMBPS = maxIOMBPS;
+		}
+
+		public String getEncryptedMemory() {
+			return this.encryptedMemory;
+		}
+
+		public void setEncryptedMemory(String encryptedMemory) {
+			this.encryptedMemory = encryptedMemory;
+		}
+
+		public String getInstructionSetArch() {
+			return this.instructionSetArch;
+		}
+
+		public void setInstructionSetArch(String instructionSetArch) {
+			this.instructionSetArch = instructionSetArch;
 		}
 	}
 

@@ -75,6 +75,8 @@ public class ListAggregateConfigDeliveryChannelsResponse extends AcsResponse {
 
 		private Long accountId;
 
+		private String deliverySnapshotTime;
+
 		public Integer getStatus() {
 			return this.status;
 		}
@@ -185,6 +187,14 @@ public class ListAggregateConfigDeliveryChannelsResponse extends AcsResponse {
 
 		public void setAccountId(Long accountId) {
 			this.accountId = accountId;
+		}
+
+		public String getDeliverySnapshotTime() {
+			return this.deliverySnapshotTime;
+		}
+
+		public void setDeliverySnapshotTime(String deliverySnapshotTime) {
+			this.deliverySnapshotTime = deliverySnapshotTime;
 		}
 	}
 

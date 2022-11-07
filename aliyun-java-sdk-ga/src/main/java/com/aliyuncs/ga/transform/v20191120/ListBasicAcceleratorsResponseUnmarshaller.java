@@ -21,6 +21,7 @@ import com.aliyuncs.ga.model.v20191120.ListBasicAcceleratorsResponse;
 import com.aliyuncs.ga.model.v20191120.ListBasicAcceleratorsResponse.AcceleratorsItem;
 import com.aliyuncs.ga.model.v20191120.ListBasicAcceleratorsResponse.AcceleratorsItem.BasicBandwidthPackage;
 import com.aliyuncs.ga.model.v20191120.ListBasicAcceleratorsResponse.AcceleratorsItem.CrossDomainBandwidthPackage;
+import com.aliyuncs.ga.model.v20191120.ListBasicAcceleratorsResponse.AcceleratorsItem.TagsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -47,6 +48,8 @@ public class ListBasicAcceleratorsResponseUnmarshaller {
 			acceleratorsItem.setName(_ctx.stringValue("ListBasicAcceleratorsResponse.Accelerators["+ i +"].Name"));
 			acceleratorsItem.setBasicEndpointGroupId(_ctx.stringValue("ListBasicAcceleratorsResponse.Accelerators["+ i +"].BasicEndpointGroupId"));
 			acceleratorsItem.setBasicIpSetId(_ctx.stringValue("ListBasicAcceleratorsResponse.Accelerators["+ i +"].BasicIpSetId"));
+			acceleratorsItem.setBandwidthBillingType(_ctx.stringValue("ListBasicAcceleratorsResponse.Accelerators["+ i +"].BandwidthBillingType"));
+			acceleratorsItem.setResourceGroupId(_ctx.stringValue("ListBasicAcceleratorsResponse.Accelerators["+ i +"].ResourceGroupId"));
 
 			BasicBandwidthPackage basicBandwidthPackage = new BasicBandwidthPackage();
 			basicBandwidthPackage.setBandwidth(_ctx.integerValue("ListBasicAcceleratorsResponse.Accelerators["+ i +"].BasicBandwidthPackage.Bandwidth"));
@@ -58,6 +61,16 @@ public class ListBasicAcceleratorsResponseUnmarshaller {
 			crossDomainBandwidthPackage.setBandwidth(_ctx.integerValue("ListBasicAcceleratorsResponse.Accelerators["+ i +"].CrossDomainBandwidthPackage.Bandwidth"));
 			crossDomainBandwidthPackage.setInstanceId(_ctx.stringValue("ListBasicAcceleratorsResponse.Accelerators["+ i +"].CrossDomainBandwidthPackage.InstanceId"));
 			acceleratorsItem.setCrossDomainBandwidthPackage(crossDomainBandwidthPackage);
+
+			List<TagsItem> tags = new ArrayList<TagsItem>();
+			for (int j = 0; j < _ctx.lengthValue("ListBasicAcceleratorsResponse.Accelerators["+ i +"].Tags.Length"); j++) {
+				TagsItem tagsItem = new TagsItem();
+				tagsItem.setKey(_ctx.stringValue("ListBasicAcceleratorsResponse.Accelerators["+ i +"].Tags["+ j +"].Key"));
+				tagsItem.setValue(_ctx.stringValue("ListBasicAcceleratorsResponse.Accelerators["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tagsItem);
+			}
+			acceleratorsItem.setTags(tags);
 
 			accelerators.add(acceleratorsItem);
 		}

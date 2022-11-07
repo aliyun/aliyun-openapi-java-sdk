@@ -41,6 +41,8 @@ public class CreateUploadImageRequest extends RpcAcsRequest<CreateUploadImageRes
 
 	private String tags;
 
+	private String originalFileName;
+
 	private String appId;
 	public CreateUploadImageRequest() {
 		super("vod", "2017-03-21", "CreateUploadImage", "vod");
@@ -136,6 +138,17 @@ public class CreateUploadImageRequest extends RpcAcsRequest<CreateUploadImageRes
 		this.tags = tags;
 		if(tags != null){
 			putQueryParameter("Tags", tags);
+		}
+	}
+
+	public String getOriginalFileName() {
+		return this.originalFileName;
+	}
+
+	public void setOriginalFileName(String originalFileName) {
+		this.originalFileName = originalFileName;
+		if(originalFileName != null){
+			putQueryParameter("OriginalFileName", originalFileName);
 		}
 	}
 

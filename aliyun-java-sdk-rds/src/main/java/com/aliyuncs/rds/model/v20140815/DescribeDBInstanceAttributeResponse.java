@@ -207,6 +207,8 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		private String kindCode;
 
+		private String instructionSetArch;
+
 		private List<SlaveZone> slaveZones;
 
 		private List<ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
@@ -855,6 +857,14 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		public void setKindCode(String kindCode) {
 			this.kindCode = kindCode;
+		}
+
+		public String getInstructionSetArch() {
+			return this.instructionSetArch;
+		}
+
+		public void setInstructionSetArch(String instructionSetArch) {
+			this.instructionSetArch = instructionSetArch;
 		}
 
 		public List<SlaveZone> getSlaveZones() {

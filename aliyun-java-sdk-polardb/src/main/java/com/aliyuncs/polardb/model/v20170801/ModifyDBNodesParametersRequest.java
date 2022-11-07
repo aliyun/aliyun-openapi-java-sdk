@@ -47,7 +47,7 @@ public class ModifyDBNodesParametersRequest extends RpcAcsRequest<ModifyDBNodesP
 
 	private Boolean fromTimeService;
 	public ModifyDBNodesParametersRequest() {
-		super("polardb", "2017-08-01", "ModifyDBNodesParameters");
+		super("polardb", "2017-08-01", "ModifyDBNodesParameters", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

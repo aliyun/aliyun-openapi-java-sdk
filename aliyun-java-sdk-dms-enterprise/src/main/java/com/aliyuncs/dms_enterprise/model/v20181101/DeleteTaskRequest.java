@@ -25,9 +25,9 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class DeleteTaskRequest extends RpcAcsRequest<DeleteTaskResponse> {
 	   
 
-	private String nodeId;
-
 	private Long tid;
+
+	private String nodeId;
 	public DeleteTaskRequest() {
 		super("dms-enterprise", "2018-11-01", "DeleteTask", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -35,17 +35,6 @@ public class DeleteTaskRequest extends RpcAcsRequest<DeleteTaskResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getNodeId() {
-		return this.nodeId;
-	}
-
-	public void setNodeId(String nodeId) {
-		this.nodeId = nodeId;
-		if(nodeId != null){
-			putQueryParameter("NodeId", nodeId);
-		}
 	}
 
 	public Long getTid() {
@@ -56,6 +45,17 @@ public class DeleteTaskRequest extends RpcAcsRequest<DeleteTaskResponse> {
 		this.tid = tid;
 		if(tid != null){
 			putQueryParameter("Tid", tid.toString());
+		}
+	}
+
+	public String getNodeId() {
+		return this.nodeId;
+	}
+
+	public void setNodeId(String nodeId) {
+		this.nodeId = nodeId;
+		if(nodeId != null){
+			putQueryParameter("NodeId", nodeId);
 		}
 	}
 

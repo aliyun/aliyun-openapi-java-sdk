@@ -101,6 +101,14 @@ public class ListHealthCheckTemplatesResponse extends AcsResponse {
 
 		private Integer unhealthyThreshold;
 
+		private Boolean healthCheckTcpFastCloseEnabled;
+
+		private Boolean serviceManagedEnabled;
+
+		private String serviceManagedMode;
+
+		private List<String> healthCheckHttpCodes;
+
 		private List<String> healthCheckCodes;
 
 		public Integer getHealthCheckConnectPort() {
@@ -197,6 +205,38 @@ public class ListHealthCheckTemplatesResponse extends AcsResponse {
 
 		public void setUnhealthyThreshold(Integer unhealthyThreshold) {
 			this.unhealthyThreshold = unhealthyThreshold;
+		}
+
+		public Boolean getHealthCheckTcpFastCloseEnabled() {
+			return this.healthCheckTcpFastCloseEnabled;
+		}
+
+		public void setHealthCheckTcpFastCloseEnabled(Boolean healthCheckTcpFastCloseEnabled) {
+			this.healthCheckTcpFastCloseEnabled = healthCheckTcpFastCloseEnabled;
+		}
+
+		public Boolean getServiceManagedEnabled() {
+			return this.serviceManagedEnabled;
+		}
+
+		public void setServiceManagedEnabled(Boolean serviceManagedEnabled) {
+			this.serviceManagedEnabled = serviceManagedEnabled;
+		}
+
+		public String getServiceManagedMode() {
+			return this.serviceManagedMode;
+		}
+
+		public void setServiceManagedMode(String serviceManagedMode) {
+			this.serviceManagedMode = serviceManagedMode;
+		}
+
+		public List<String> getHealthCheckHttpCodes() {
+			return this.healthCheckHttpCodes;
+		}
+
+		public void setHealthCheckHttpCodes(List<String> healthCheckHttpCodes) {
+			this.healthCheckHttpCodes = healthCheckHttpCodes;
 		}
 
 		public List<String> getHealthCheckCodes() {

@@ -24,23 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateIsolationRuleResponse extends AcsResponse {
 
-	private String code;
-
 	private String message;
 
 	private String requestId;
 
+	private String code;
+
 	private Boolean success;
 
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -56,6 +48,14 @@ public class CreateIsolationRuleResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Boolean getSuccess() {
@@ -76,71 +76,23 @@ public class CreateIsolationRuleResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String appName;
-
-		private Float threshold;
-
-		private Boolean enable;
-
-		private String limitOrigin;
-
-		private String namespace;
-
-		private String refResource;
-
 		private Integer relationStrategy;
 
 		private String resource;
 
+		private String appName;
+
+		private String refResource;
+
+		private String namespace;
+
+		private String limitOrigin;
+
+		private Float threshold;
+
 		private Long ruleId;
 
-		public String getAppName() {
-			return this.appName;
-		}
-
-		public void setAppName(String appName) {
-			this.appName = appName;
-		}
-
-		public Float getThreshold() {
-			return this.threshold;
-		}
-
-		public void setThreshold(Float threshold) {
-			this.threshold = threshold;
-		}
-
-		public Boolean getEnable() {
-			return this.enable;
-		}
-
-		public void setEnable(Boolean enable) {
-			this.enable = enable;
-		}
-
-		public String getLimitOrigin() {
-			return this.limitOrigin;
-		}
-
-		public void setLimitOrigin(String limitOrigin) {
-			this.limitOrigin = limitOrigin;
-		}
-
-		public String getNamespace() {
-			return this.namespace;
-		}
-
-		public void setNamespace(String namespace) {
-			this.namespace = namespace;
-		}
-
-		public String getRefResource() {
-			return this.refResource;
-		}
-
-		public void setRefResource(String refResource) {
-			this.refResource = refResource;
-		}
+		private Boolean enable;
 
 		public Integer getRelationStrategy() {
 			return this.relationStrategy;
@@ -158,12 +110,60 @@ public class CreateIsolationRuleResponse extends AcsResponse {
 			this.resource = resource;
 		}
 
+		public String getAppName() {
+			return this.appName;
+		}
+
+		public void setAppName(String appName) {
+			this.appName = appName;
+		}
+
+		public String getRefResource() {
+			return this.refResource;
+		}
+
+		public void setRefResource(String refResource) {
+			this.refResource = refResource;
+		}
+
+		public String getNamespace() {
+			return this.namespace;
+		}
+
+		public void setNamespace(String namespace) {
+			this.namespace = namespace;
+		}
+
+		public String getLimitOrigin() {
+			return this.limitOrigin;
+		}
+
+		public void setLimitOrigin(String limitOrigin) {
+			this.limitOrigin = limitOrigin;
+		}
+
+		public Float getThreshold() {
+			return this.threshold;
+		}
+
+		public void setThreshold(Float threshold) {
+			this.threshold = threshold;
+		}
+
 		public Long getRuleId() {
 			return this.ruleId;
 		}
 
 		public void setRuleId(Long ruleId) {
 			this.ruleId = ruleId;
+		}
+
+		public Boolean getEnable() {
+			return this.enable;
+		}
+
+		public void setEnable(Boolean enable) {
+			this.enable = enable;
 		}
 	}
 

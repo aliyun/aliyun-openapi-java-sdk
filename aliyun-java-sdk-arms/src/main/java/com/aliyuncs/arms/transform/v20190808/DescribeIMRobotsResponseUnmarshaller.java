@@ -43,6 +43,7 @@ public class DescribeIMRobotsResponseUnmarshaller {
 			iMRobots.setRobotAddr(_ctx.stringValue("DescribeIMRobotsResponse.PageBean.AlertIMRobots["+ i +"].RobotAddr"));
 			iMRobots.setDailyNoc(_ctx.booleanValue("DescribeIMRobotsResponse.PageBean.AlertIMRobots["+ i +"].DailyNoc"));
 			iMRobots.setDailyNocTime(_ctx.stringValue("DescribeIMRobotsResponse.PageBean.AlertIMRobots["+ i +"].DailyNocTime"));
+			iMRobots.setDingSignKey(_ctx.stringValue("DescribeIMRobotsResponse.PageBean.AlertIMRobots["+ i +"].DingSignKey"));
 
 			alertIMRobots.add(iMRobots);
 		}

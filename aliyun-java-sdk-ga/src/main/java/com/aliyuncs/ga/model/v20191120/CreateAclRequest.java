@@ -35,6 +35,8 @@ public class CreateAclRequest extends RpcAcsRequest<CreateAclResponse> {
 	private List<AclEntries> aclEntriess;
 
 	private String addressIPVersion;
+
+	private String resourceGroupId;
 	public CreateAclRequest() {
 		super("Ga", "2019-11-20", "CreateAcl", "gaplus");
 		setMethod(MethodType.POST);
@@ -99,6 +101,17 @@ public class CreateAclRequest extends RpcAcsRequest<CreateAclResponse> {
 		this.addressIPVersion = addressIPVersion;
 		if(addressIPVersion != null){
 			putQueryParameter("AddressIPVersion", addressIPVersion);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

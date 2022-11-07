@@ -32,7 +32,11 @@ public class CreateUnionTaskRequest extends RpcAcsRequest<CreateUnionTaskRespons
 
 	private String channel;
 
+	private Long chargePloy;
+
 	private String startTime;
+
+	private String anchorId;
 
 	private String contentUrl;
 
@@ -56,6 +60,8 @@ public class CreateUnionTaskRequest extends RpcAcsRequest<CreateUnionTaskRespons
 
 	private String brandUserNick;
 
+	private Long optimizationSwitch;
+
 	private Long proxyUserId;
 
 	@SerializedName("mediaIdWhiteList")
@@ -68,11 +74,13 @@ public class CreateUnionTaskRequest extends RpcAcsRequest<CreateUnionTaskRespons
 
 	private String name;
 
+	private Long chargeType;
+
 	private Long quotaDay;
 
 	private String channelId;
 	public CreateUnionTaskRequest() {
-		super("UniMkt", "2018-12-12", "CreateUnionTask", "1.0.0");
+		super("UniMkt", "2018-12-12", "CreateUnionTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -102,6 +110,17 @@ public class CreateUnionTaskRequest extends RpcAcsRequest<CreateUnionTaskRespons
 		}
 	}
 
+	public Long getChargePloy() {
+		return this.chargePloy;
+	}
+
+	public void setChargePloy(Long chargePloy) {
+		this.chargePloy = chargePloy;
+		if(chargePloy != null){
+			putQueryParameter("ChargePloy", chargePloy.toString());
+		}
+	}
+
 	public String getStartTime() {
 		return this.startTime;
 	}
@@ -110,6 +129,17 @@ public class CreateUnionTaskRequest extends RpcAcsRequest<CreateUnionTaskRespons
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getAnchorId() {
+		return this.anchorId;
+	}
+
+	public void setAnchorId(String anchorId) {
+		this.anchorId = anchorId;
+		if(anchorId != null){
+			putQueryParameter("AnchorId", anchorId);
 		}
 	}
 
@@ -234,6 +264,17 @@ public class CreateUnionTaskRequest extends RpcAcsRequest<CreateUnionTaskRespons
 		}
 	}
 
+	public Long getOptimizationSwitch() {
+		return this.optimizationSwitch;
+	}
+
+	public void setOptimizationSwitch(Long optimizationSwitch) {
+		this.optimizationSwitch = optimizationSwitch;
+		if(optimizationSwitch != null){
+			putQueryParameter("OptimizationSwitch", optimizationSwitch.toString());
+		}
+	}
+
 	public Long getProxyUserId() {
 		return this.proxyUserId;
 	}
@@ -286,6 +327,17 @@ public class CreateUnionTaskRequest extends RpcAcsRequest<CreateUnionTaskRespons
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
+		}
+	}
+
+	public Long getChargeType() {
+		return this.chargeType;
+	}
+
+	public void setChargeType(Long chargeType) {
+		this.chargeType = chargeType;
+		if(chargeType != null){
+			putQueryParameter("ChargeType", chargeType.toString());
 		}
 	}
 

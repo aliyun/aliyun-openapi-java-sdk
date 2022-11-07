@@ -87,6 +87,10 @@ public class ListAclsResponse extends AcsResponse {
 
 		private String resourceGroupId;
 
+		private Boolean serviceManagedEnabled;
+
+		private String serviceManagedMode;
+
 		private Boolean configManagedEnabled;
 
 		public String getAclId() {
@@ -127,6 +131,22 @@ public class ListAclsResponse extends AcsResponse {
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public Boolean getServiceManagedEnabled() {
+			return this.serviceManagedEnabled;
+		}
+
+		public void setServiceManagedEnabled(Boolean serviceManagedEnabled) {
+			this.serviceManagedEnabled = serviceManagedEnabled;
+		}
+
+		public String getServiceManagedMode() {
+			return this.serviceManagedMode;
+		}
+
+		public void setServiceManagedMode(String serviceManagedMode) {
+			this.serviceManagedMode = serviceManagedMode;
 		}
 
 		public Boolean getConfigManagedEnabled() {

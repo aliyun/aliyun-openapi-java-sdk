@@ -39,7 +39,7 @@ public class DeleteTransitRouterRouteTableRequest extends RpcAcsRequest<DeleteTr
 
 	private Long ownerId;
 	public DeleteTransitRouterRouteTableRequest() {
-		super("Cbn", "2017-09-12", "DeleteTransitRouterRouteTable");
+		super("Cbn", "2017-09-12", "DeleteTransitRouterRouteTable", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

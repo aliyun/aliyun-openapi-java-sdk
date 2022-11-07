@@ -36,6 +36,8 @@ public class CopySnapshotRequest extends RpcAcsRequest<CopySnapshotResponse> {
 
 	private List<Tag> tags;
 
+	private List<Arn> arns;
+
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
@@ -44,7 +46,11 @@ public class CopySnapshotRequest extends RpcAcsRequest<CopySnapshotResponse> {
 
 	private String destinationSnapshotDescription;
 
+	private Boolean encrypted;
+
 	private Integer retentionDays;
+
+	private String kMSKeyId;
 	public CopySnapshotRequest() {
 		super("Ecs", "2014-05-26", "CopySnapshot");
 		setMethod(MethodType.POST);
@@ -112,6 +118,21 @@ public class CopySnapshotRequest extends RpcAcsRequest<CopySnapshotResponse> {
 		}	
 	}
 
+	public List<Arn> getArns() {
+		return this.arns;
+	}
+
+	public void setArns(List<Arn> arns) {
+		this.arns = arns;	
+		if (arns != null) {
+			for (int depth1 = 0; depth1 < arns.size(); depth1++) {
+				putQueryParameter("Arn." + (depth1 + 1) + ".RoleType" , arns.get(depth1).getRoleType());
+				putQueryParameter("Arn." + (depth1 + 1) + ".Rolearn" , arns.get(depth1).getRolearn());
+				putQueryParameter("Arn." + (depth1 + 1) + ".AssumeRoleFor" , arns.get(depth1).getAssumeRoleFor());
+			}
+		}	
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -156,6 +177,17 @@ public class CopySnapshotRequest extends RpcAcsRequest<CopySnapshotResponse> {
 		}
 	}
 
+	public Boolean getEncrypted() {
+		return this.encrypted;
+	}
+
+	public void setEncrypted(Boolean encrypted) {
+		this.encrypted = encrypted;
+		if(encrypted != null){
+			putQueryParameter("Encrypted", encrypted.toString());
+		}
+	}
+
 	public Integer getRetentionDays() {
 		return this.retentionDays;
 	}
@@ -164,6 +196,17 @@ public class CopySnapshotRequest extends RpcAcsRequest<CopySnapshotResponse> {
 		this.retentionDays = retentionDays;
 		if(retentionDays != null){
 			putQueryParameter("RetentionDays", retentionDays.toString());
+		}
+	}
+
+	public String getKMSKeyId() {
+		return this.kMSKeyId;
+	}
+
+	public void setKMSKeyId(String kMSKeyId) {
+		this.kMSKeyId = kMSKeyId;
+		if(kMSKeyId != null){
+			putQueryParameter("KMSKeyId", kMSKeyId);
 		}
 	}
 
@@ -187,6 +230,39 @@ public class CopySnapshotRequest extends RpcAcsRequest<CopySnapshotResponse> {
 
 		public void setValue(String value) {
 			this.value = value;
+		}
+	}
+
+	public static class Arn {
+
+		private String roleType;
+
+		private String rolearn;
+
+		private Long assumeRoleFor;
+
+		public String getRoleType() {
+			return this.roleType;
+		}
+
+		public void setRoleType(String roleType) {
+			this.roleType = roleType;
+		}
+
+		public String getRolearn() {
+			return this.rolearn;
+		}
+
+		public void setRolearn(String rolearn) {
+			this.rolearn = rolearn;
+		}
+
+		public Long getAssumeRoleFor() {
+			return this.assumeRoleFor;
+		}
+
+		public void setAssumeRoleFor(Long assumeRoleFor) {
+			this.assumeRoleFor = assumeRoleFor;
 		}
 	}
 

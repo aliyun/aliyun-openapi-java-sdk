@@ -27,7 +27,7 @@ public class GetDeliveryTypeConfigListRequest extends RpcAcsRequest<GetDeliveryT
 
 	private String accountType;
 	public GetDeliveryTypeConfigListRequest() {
-		super("UniMkt", "2018-12-12", "GetDeliveryTypeConfigList", "1.0.0");
+		super("UniMkt", "2018-12-12", "GetDeliveryTypeConfigList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

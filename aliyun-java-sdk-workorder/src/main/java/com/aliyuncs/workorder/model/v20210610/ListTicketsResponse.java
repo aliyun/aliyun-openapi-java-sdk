@@ -25,9 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListTicketsResponse extends AcsResponse {
 
-	private Integer code;
-
 	private String requestId;
+
+	private Boolean success;
+
+	private Integer code;
 
 	private String message;
 
@@ -37,17 +39,7 @@ public class ListTicketsResponse extends AcsResponse {
 
 	private Long totalCount;
 
-	private Boolean success;
-
 	private List<DataItem> data;
-
-	public Integer getCode() {
-		return this.code;
-	}
-
-	public void setCode(Integer code) {
-		this.code = code;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -55,6 +47,22 @@ public class ListTicketsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public Integer getCode() {
+		return this.code;
+	}
+
+	public void setCode(Integer code) {
+		this.code = code;
 	}
 
 	public String getMessage() {
@@ -89,14 +97,6 @@ public class ListTicketsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public List<DataItem> getData() {
 		return this.data;
 	}
@@ -107,19 +107,11 @@ public class ListTicketsResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private String title;
-
 		private String ticketId;
 
+		private String title;
+
 		private Status status;
-
-		public String getTitle() {
-			return this.title;
-		}
-
-		public void setTitle(String title) {
-			this.title = title;
-		}
 
 		public String getTicketId() {
 			return this.ticketId;
@@ -127,6 +119,14 @@ public class ListTicketsResponse extends AcsResponse {
 
 		public void setTicketId(String ticketId) {
 			this.ticketId = ticketId;
+		}
+
+		public String getTitle() {
+			return this.title;
+		}
+
+		public void setTitle(String title) {
+			this.title = title;
 		}
 
 		public Status getStatus() {

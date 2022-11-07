@@ -37,7 +37,7 @@ public class ModifyDBClusterDeletionRequest extends RpcAcsRequest<ModifyDBCluste
 
 	private Long ownerId;
 	public ModifyDBClusterDeletionRequest() {
-		super("polardb", "2017-08-01", "ModifyDBClusterDeletion");
+		super("polardb", "2017-08-01", "ModifyDBClusterDeletion", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

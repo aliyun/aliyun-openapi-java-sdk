@@ -47,6 +47,7 @@ public class ListTransitRouterMulticastGroupsResponseUnmarshaller {
 			transitRouterMulticastGroup.setResourceType(_ctx.stringValue("ListTransitRouterMulticastGroupsResponse.TransitRouterMulticastGroups["+ i +"].ResourceType"));
 			transitRouterMulticastGroup.setResourceOwnerId(_ctx.longValue("ListTransitRouterMulticastGroupsResponse.TransitRouterMulticastGroups["+ i +"].ResourceOwnerId"));
 			transitRouterMulticastGroup.setResourceId(_ctx.stringValue("ListTransitRouterMulticastGroupsResponse.TransitRouterMulticastGroups["+ i +"].ResourceId"));
+			transitRouterMulticastGroup.setConnectPeerId(_ctx.stringValue("ListTransitRouterMulticastGroupsResponse.TransitRouterMulticastGroups["+ i +"].ConnectPeerId"));
 
 			transitRouterMulticastGroups.add(transitRouterMulticastGroup);
 		}

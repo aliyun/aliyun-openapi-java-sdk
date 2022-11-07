@@ -117,6 +117,7 @@ public class ListSkillGroupSummaryReportsSinceMidnightResponseUnmarshaller {
 			outbound.setSatisfactionSurveysResponded(_ctx.longValue("ListSkillGroupSummaryReportsSinceMidnightResponse.PagedSkillGroupSummaryReport.List["+ i +"].Outbound.SatisfactionSurveysResponded"));
 			outbound.setMaxTalkTime(_ctx.longValue("ListSkillGroupSummaryReportsSinceMidnightResponse.PagedSkillGroupSummaryReport.List["+ i +"].Outbound.MaxTalkTime"));
 			outbound.setAverageDialingTime(_ctx.longValue("ListSkillGroupSummaryReportsSinceMidnightResponse.PagedSkillGroupSummaryReport.List["+ i +"].Outbound.AverageDialingTime"));
+			outbound.setCallsServiceLevel30(_ctx.stringValue("ListSkillGroupSummaryReportsSinceMidnightResponse.PagedSkillGroupSummaryReport.List["+ i +"].Outbound.CallsServiceLevel30"));
 			skillGroupSummaryReport.setOutbound(outbound);
 
 			list.add(skillGroupSummaryReport);

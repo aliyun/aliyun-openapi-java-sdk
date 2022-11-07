@@ -1,3 +1,7 @@
+2022-10-28 Version: 1.40.0
+- Support BuyPayAsYouGoOrder, RefundPayAsYouGoOrder, ListEffectiveOrders, ListClassificationTemplates.
+- Modify RegisterInstance, UpdateInstance, ListInstances, GetInstance, GetApprovalDetail.
+
 2022-09-19 Version: 1.39.0
 - Supported UpdateTaskConfig, ListTaskFlowConstants, UpdateTaskFlowConstants, CheckServiceLinkedRoleForDeleting, ResumeTaskFlowInstance, ListServerGroups, ListTaskFlowsByPage, UpdateTaskContent, UpdateScenario, ListScenarios, DeleteScenario, CreateScenario, BackFill, UpdateTaskTimeVariables, UpdateTaskFlowTimeVariables, ListTaskFlowTimeVariables, UpdateTaskFlowCooperators, GetRuleNumLimitOfSLA, GetIntervalLimitOfSLA, UpdateSLARules, ListDefaultSLARules, ListSLARules, MoveTaskFlowToScenario, ListServers, ListTaskFlowInstance, UpdateTaskName, ListTaskFlowCooperators, GetTaskFlowNotification, UpdateTaskOutput, GetTask, UpdateTaskFlowNotification, DeleteTaskFlowEdgesByCondition, ListTaskFlowEdgesByCondition, UpdateTaskFlowEdges, AddTaskFlowEdges, GetTaskFlowGraph, UpdateTaskFlowRelations, UpdateTaskFlowNameAndDesc, UpdateTaskFlowOwner, UpdateTaskFlowSchedule, ListTasksInTaskFlow, PublishAndDeployTaskFlow, StopTaskFlowInstance, SuspendTaskFlowInstance, ReRunTaskFlowInstance, MakeTaskFlowInstanceSuccess, DeleteTask, CreateTask, CreateTaskFlow API.
 

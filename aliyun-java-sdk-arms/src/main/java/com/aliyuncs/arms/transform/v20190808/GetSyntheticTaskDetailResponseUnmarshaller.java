@@ -19,9 +19,11 @@ import java.util.List;
 
 import com.aliyuncs.arms.model.v20190808.GetSyntheticTaskDetailResponse;
 import com.aliyuncs.arms.model.v20190808.GetSyntheticTaskDetailResponse.TaskDetail;
+import com.aliyuncs.arms.model.v20190808.GetSyntheticTaskDetailResponse.TaskDetail.CommonParam;
+import com.aliyuncs.arms.model.v20190808.GetSyntheticTaskDetailResponse.TaskDetail.CommonParam.AlertListItem;
 import com.aliyuncs.arms.model.v20190808.GetSyntheticTaskDetailResponse.TaskDetail.Download;
 import com.aliyuncs.arms.model.v20190808.GetSyntheticTaskDetailResponse.TaskDetail.ExtendInterval;
-import com.aliyuncs.arms.model.v20190808.GetSyntheticTaskDetailResponse.TaskDetail.MinotorListItem;
+import com.aliyuncs.arms.model.v20190808.GetSyntheticTaskDetailResponse.TaskDetail.MonitorListItem;
 import com.aliyuncs.arms.model.v20190808.GetSyntheticTaskDetailResponse.TaskDetail.Nav;
 import com.aliyuncs.arms.model.v20190808.GetSyntheticTaskDetailResponse.TaskDetail.Net;
 import com.aliyuncs.arms.model.v20190808.GetSyntheticTaskDetailResponse.TaskDetail.Protocol;
@@ -47,6 +49,7 @@ public class GetSyntheticTaskDetailResponseUnmarshaller {
 		taskDetail.setIntervalTime(_ctx.longValue("GetSyntheticTaskDetailResponse.TaskDetail.IntervalTime"));
 		taskDetail.setIntervalType(_ctx.longValue("GetSyntheticTaskDetailResponse.TaskDetail.IntervalType"));
 		taskDetail.setIpType(_ctx.longValue("GetSyntheticTaskDetailResponse.TaskDetail.IpType"));
+		taskDetail.setMonitorListString(_ctx.stringValue("GetSyntheticTaskDetailResponse.TaskDetail.MonitorListString"));
 
 		ExtendInterval extendInterval = new ExtendInterval();
 		extendInterval.setStartTime(_ctx.stringValue("GetSyntheticTaskDetailResponse.TaskDetail.ExtendInterval.StartTime"));
@@ -95,6 +98,7 @@ public class GetSyntheticTaskDetailResponseUnmarshaller {
 		net.setNetDnsNs(_ctx.stringValue("GetSyntheticTaskDetailResponse.TaskDetail.Net.NetDnsNs"));
 		net.setNetDigSwitch(_ctx.longValue("GetSyntheticTaskDetailResponse.TaskDetail.Net.NetDigSwitch"));
 		net.setNetDnsServer(_ctx.longValue("GetSyntheticTaskDetailResponse.TaskDetail.Net.NetDnsServer"));
+		net.setNetDnsTimeout(_ctx.stringValue("GetSyntheticTaskDetailResponse.TaskDetail.Net.NetDnsTimeout"));
 		taskDetail.setNet(net);
 
 		Nav nav = new Nav();
@@ -169,17 +173,38 @@ public class GetSyntheticTaskDetailResponseUnmarshaller {
 		protocol.setRequestContent(requestContent);
 		taskDetail.setBizProtocol(protocol);
 
-		List<MinotorListItem> minotorList = new ArrayList<MinotorListItem>();
-		for (int i = 0; i < _ctx.lengthValue("GetSyntheticTaskDetailResponse.TaskDetail.MinotorList.Length"); i++) {
-			MinotorListItem minotorListItem = new MinotorListItem();
-			minotorListItem.setCityCode(_ctx.longValue("GetSyntheticTaskDetailResponse.TaskDetail.MinotorList["+ i +"].CityCode"));
-			minotorListItem.setNetServiceId(_ctx.longValue("GetSyntheticTaskDetailResponse.TaskDetail.MinotorList["+ i +"].NetServiceId"));
-			minotorListItem.setMonitorType(_ctx.longValue("GetSyntheticTaskDetailResponse.TaskDetail.MinotorList["+ i +"].MonitorType"));
-			minotorListItem.setSendCount(_ctx.longValue("GetSyntheticTaskDetailResponse.TaskDetail.MinotorList["+ i +"].SendCount"));
+		CommonParam commonParam = new CommonParam();
+		commonParam.setAlarmFlag(_ctx.longValue("GetSyntheticTaskDetailResponse.TaskDetail.CommonParam.AlarmFlag"));
+		commonParam.setAlertPolicyId(_ctx.stringValue("GetSyntheticTaskDetailResponse.TaskDetail.CommonParam.AlertPolicyId"));
+		commonParam.setAlertNotifierId(_ctx.stringValue("GetSyntheticTaskDetailResponse.TaskDetail.CommonParam.AlertNotifierId"));
+		commonParam.setStartExecutionTime(_ctx.stringValue("GetSyntheticTaskDetailResponse.TaskDetail.CommonParam.StartExecutionTime"));
+		commonParam.setMonitorSamples(_ctx.stringValue("GetSyntheticTaskDetailResponse.TaskDetail.CommonParam.MonitorSamples"));
 
-			minotorList.add(minotorListItem);
+		List<AlertListItem> alertList = new ArrayList<AlertListItem>();
+		for (int i = 0; i < _ctx.lengthValue("GetSyntheticTaskDetailResponse.TaskDetail.CommonParam.AlertList.Length"); i++) {
+			AlertListItem alertListItem = new AlertListItem();
+			alertListItem.setName(_ctx.stringValue("GetSyntheticTaskDetailResponse.TaskDetail.CommonParam.AlertList["+ i +"].Name"));
+			alertListItem.setGeneralAlert(_ctx.stringValue("GetSyntheticTaskDetailResponse.TaskDetail.CommonParam.AlertList["+ i +"].GeneralAlert"));
+			alertListItem.setSeriousAlert(_ctx.stringValue("GetSyntheticTaskDetailResponse.TaskDetail.CommonParam.AlertList["+ i +"].SeriousAlert"));
+			alertListItem.setIsCritical(_ctx.stringValue("GetSyntheticTaskDetailResponse.TaskDetail.CommonParam.AlertList["+ i +"].IsCritical"));
+			alertListItem.setSymbols(_ctx.stringValue("GetSyntheticTaskDetailResponse.TaskDetail.CommonParam.AlertList["+ i +"].Symbols"));
+
+			alertList.add(alertListItem);
 		}
-		taskDetail.setMinotorList(minotorList);
+		commonParam.setAlertList(alertList);
+		taskDetail.setCommonParam(commonParam);
+
+		List<MonitorListItem> monitorList = new ArrayList<MonitorListItem>();
+		for (int i = 0; i < _ctx.lengthValue("GetSyntheticTaskDetailResponse.TaskDetail.MonitorList.Length"); i++) {
+			MonitorListItem monitorListItem = new MonitorListItem();
+			monitorListItem.setCityCode(_ctx.longValue("GetSyntheticTaskDetailResponse.TaskDetail.MonitorList["+ i +"].CityCode"));
+			monitorListItem.setNetServiceId(_ctx.longValue("GetSyntheticTaskDetailResponse.TaskDetail.MonitorList["+ i +"].NetServiceId"));
+			monitorListItem.setMonitorType(_ctx.longValue("GetSyntheticTaskDetailResponse.TaskDetail.MonitorList["+ i +"].MonitorType"));
+			monitorListItem.setSendCount(_ctx.longValue("GetSyntheticTaskDetailResponse.TaskDetail.MonitorList["+ i +"].SendCount"));
+
+			monitorList.add(monitorListItem);
+		}
+		taskDetail.setMonitorList(monitorList);
 		getSyntheticTaskDetailResponse.setTaskDetail(taskDetail);
 	 
 	 	return getSyntheticTaskDetailResponse;

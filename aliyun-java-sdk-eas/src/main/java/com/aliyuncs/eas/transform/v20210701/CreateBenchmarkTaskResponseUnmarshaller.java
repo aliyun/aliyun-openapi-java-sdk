@@ -23,7 +23,7 @@ public class CreateBenchmarkTaskResponseUnmarshaller {
 	public static CreateBenchmarkTaskResponse unmarshall(CreateBenchmarkTaskResponse createBenchmarkTaskResponse, UnmarshallerContext _ctx) {
 		
 		createBenchmarkTaskResponse.setRequestId(_ctx.stringValue("CreateBenchmarkTaskResponse.RequestId"));
-		createBenchmarkTaskResponse.setName(_ctx.stringValue("CreateBenchmarkTaskResponse.Name"));
+		createBenchmarkTaskResponse.setTaskName(_ctx.stringValue("CreateBenchmarkTaskResponse.TaskName"));
 		createBenchmarkTaskResponse.setRegion(_ctx.stringValue("CreateBenchmarkTaskResponse.Region"));
 		createBenchmarkTaskResponse.setMessage(_ctx.stringValue("CreateBenchmarkTaskResponse.Message"));
 	 

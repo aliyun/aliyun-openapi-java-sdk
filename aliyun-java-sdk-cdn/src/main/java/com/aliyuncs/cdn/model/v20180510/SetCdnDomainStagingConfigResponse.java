@@ -14,6 +14,7 @@
 
 package com.aliyuncs.cdn.model.v20180510;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.cdn.transform.v20180510.SetCdnDomainStagingConfigResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -26,6 +27,8 @@ public class SetCdnDomainStagingConfigResponse extends AcsResponse {
 
 	private String requestId;
 
+	private List<DomainConfigModel> domainConfigList;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -34,8 +37,54 @@ public class SetCdnDomainStagingConfigResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public List<DomainConfigModel> getDomainConfigList() {
+		return this.domainConfigList;
+	}
+
+	public void setDomainConfigList(List<DomainConfigModel> domainConfigList) {
+		this.domainConfigList = domainConfigList;
+	}
+
+	public static class DomainConfigModel {
+
+		private Long configId;
+
+		private String domainName;
+
+		private String functionName;
+
+		public Long getConfigId() {
+			return this.configId;
+		}
+
+		public void setConfigId(Long configId) {
+			this.configId = configId;
+		}
+
+		public String getDomainName() {
+			return this.domainName;
+		}
+
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
+		}
+
+		public String getFunctionName() {
+			return this.functionName;
+		}
+
+		public void setFunctionName(String functionName) {
+			this.functionName = functionName;
+		}
+	}
+
 	@Override
 	public SetCdnDomainStagingConfigResponse getInstance(UnmarshallerContext context) {
 		return	SetCdnDomainStagingConfigResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

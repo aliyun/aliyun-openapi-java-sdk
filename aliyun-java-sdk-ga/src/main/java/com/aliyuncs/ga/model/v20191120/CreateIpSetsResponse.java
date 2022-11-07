@@ -63,6 +63,8 @@ public class CreateIpSetsResponse extends AcsResponse {
 
 		private String ipSetId;
 
+		private String ispType;
+
 		private List<String> ipList;
 
 		public String getAccelerateRegionId() {
@@ -87,6 +89,14 @@ public class CreateIpSetsResponse extends AcsResponse {
 
 		public void setIpSetId(String ipSetId) {
 			this.ipSetId = ipSetId;
+		}
+
+		public String getIspType() {
+			return this.ispType;
+		}
+
+		public void setIspType(String ispType) {
+			this.ispType = ispType;
 		}
 
 		public List<String> getIpList() {

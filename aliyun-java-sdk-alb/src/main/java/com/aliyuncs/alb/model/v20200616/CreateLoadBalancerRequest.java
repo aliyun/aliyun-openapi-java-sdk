@@ -103,6 +103,9 @@ public class CreateLoadBalancerRequest extends RpcAcsRequest<CreateLoadBalancerR
 		this.loadBalancerBillingConfig = loadBalancerBillingConfig;	
 		if (loadBalancerBillingConfig != null) {
 			
+				putQueryParameter("LoadBalancerBillingConfig.BandwidthPackageId" , loadBalancerBillingConfig.getBandwidthPackageId());
+				putQueryParameter("LoadBalancerBillingConfig.InternetChargeType" , loadBalancerBillingConfig.getInternetChargeType());
+				putQueryParameter("LoadBalancerBillingConfig.InternetBandwidth" , loadBalancerBillingConfig.getInternetBandwidth());
 				putQueryParameter("LoadBalancerBillingConfig.PayType" , loadBalancerBillingConfig.getPayType());
 		}	
 	}
@@ -195,7 +198,9 @@ public class CreateLoadBalancerRequest extends RpcAcsRequest<CreateLoadBalancerR
 				if (zoneMappings.get(depth1) != null) {
 					
 						putQueryParameter("ZoneMappings." + (depth1 + 1) + ".VSwitchId" , zoneMappings.get(depth1).getVSwitchId());
+						putQueryParameter("ZoneMappings." + (depth1 + 1) + ".EipType" , zoneMappings.get(depth1).getEipType());
 						putQueryParameter("ZoneMappings." + (depth1 + 1) + ".ZoneId" , zoneMappings.get(depth1).getZoneId());
+						putQueryParameter("ZoneMappings." + (depth1 + 1) + ".AllocationId" , zoneMappings.get(depth1).getAllocationId());
 				}
 			}
 		}	
@@ -237,7 +242,37 @@ public class CreateLoadBalancerRequest extends RpcAcsRequest<CreateLoadBalancerR
 
 	public static class LoadBalancerBillingConfig {
 
+		private String bandwidthPackageId;
+
+		private String internetChargeType;
+
+		private Integer internetBandwidth;
+
 		private String payType;
+
+		public String getBandwidthPackageId() {
+			return this.bandwidthPackageId;
+		}
+
+		public void setBandwidthPackageId(String bandwidthPackageId) {
+			this.bandwidthPackageId = bandwidthPackageId;
+		}
+
+		public String getInternetChargeType() {
+			return this.internetChargeType;
+		}
+
+		public void setInternetChargeType(String internetChargeType) {
+			this.internetChargeType = internetChargeType;
+		}
+
+		public Integer getInternetBandwidth() {
+			return this.internetBandwidth;
+		}
+
+		public void setInternetBandwidth(Integer internetBandwidth) {
+			this.internetBandwidth = internetBandwidth;
+		}
 
 		public String getPayType() {
 			return this.payType;
@@ -252,7 +287,11 @@ public class CreateLoadBalancerRequest extends RpcAcsRequest<CreateLoadBalancerR
 
 		private String vSwitchId;
 
+		private String eipType;
+
 		private String zoneId;
+
+		private String allocationId;
 
 		public String getVSwitchId() {
 			return this.vSwitchId;
@@ -262,12 +301,28 @@ public class CreateLoadBalancerRequest extends RpcAcsRequest<CreateLoadBalancerR
 			this.vSwitchId = vSwitchId;
 		}
 
+		public String getEipType() {
+			return this.eipType;
+		}
+
+		public void setEipType(String eipType) {
+			this.eipType = eipType;
+		}
+
 		public String getZoneId() {
 			return this.zoneId;
 		}
 
 		public void setZoneId(String zoneId) {
 			this.zoneId = zoneId;
+		}
+
+		public String getAllocationId() {
+			return this.allocationId;
+		}
+
+		public void setAllocationId(String allocationId) {
+			this.allocationId = allocationId;
 		}
 	}
 

@@ -35,6 +35,8 @@ public class DescribeSecretsRequest extends RpcAcsRequest<DescribeSecretsRespons
 
 	private Long pageSize;
 
+	private String dbInstanceId;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -103,6 +105,17 @@ public class DescribeSecretsRequest extends RpcAcsRequest<DescribeSecretsRespons
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getDbInstanceId() {
+		return this.dbInstanceId;
+	}
+
+	public void setDbInstanceId(String dbInstanceId) {
+		this.dbInstanceId = dbInstanceId;
+		if(dbInstanceId != null){
+			putQueryParameter("DbInstanceId", dbInstanceId);
 		}
 	}
 

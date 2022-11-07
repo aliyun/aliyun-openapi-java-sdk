@@ -99,6 +99,14 @@ public class ListCompliancePackTemplatesResponse extends AcsResponse {
 
 			private String compliancePackTemplateId;
 
+			private String domain;
+
+			private String labels;
+
+			private String developerType;
+
+			private Integer lastUpdate;
+
 			private List<ConfigRulesItem> configRules;
 
 			public Integer getRiskLevel() {
@@ -141,6 +149,38 @@ public class ListCompliancePackTemplatesResponse extends AcsResponse {
 				this.compliancePackTemplateId = compliancePackTemplateId;
 			}
 
+			public String getDomain() {
+				return this.domain;
+			}
+
+			public void setDomain(String domain) {
+				this.domain = domain;
+			}
+
+			public String getLabels() {
+				return this.labels;
+			}
+
+			public void setLabels(String labels) {
+				this.labels = labels;
+			}
+
+			public String getDeveloperType() {
+				return this.developerType;
+			}
+
+			public void setDeveloperType(String developerType) {
+				this.developerType = developerType;
+			}
+
+			public Integer getLastUpdate() {
+				return this.lastUpdate;
+			}
+
+			public void setLastUpdate(Integer lastUpdate) {
+				this.lastUpdate = lastUpdate;
+			}
+
 			public List<ConfigRulesItem> getConfigRules() {
 				return this.configRules;
 			}
@@ -158,6 +198,12 @@ public class ListCompliancePackTemplatesResponse extends AcsResponse {
 				private String managedRuleName;
 
 				private Integer riskLevel;
+
+				private String developerType;
+
+				private String controlId;
+
+				private String controlDescription;
 
 				private List<ConfigRuleParametersItem> configRuleParameters;
 
@@ -191,6 +237,30 @@ public class ListCompliancePackTemplatesResponse extends AcsResponse {
 
 				public void setRiskLevel(Integer riskLevel) {
 					this.riskLevel = riskLevel;
+				}
+
+				public String getDeveloperType() {
+					return this.developerType;
+				}
+
+				public void setDeveloperType(String developerType) {
+					this.developerType = developerType;
+				}
+
+				public String getControlId() {
+					return this.controlId;
+				}
+
+				public void setControlId(String controlId) {
+					this.controlId = controlId;
+				}
+
+				public String getControlDescription() {
+					return this.controlDescription;
+				}
+
+				public void setControlDescription(String controlDescription) {
+					this.controlDescription = controlDescription;
 				}
 
 				public List<ConfigRuleParametersItem> getConfigRuleParameters() {

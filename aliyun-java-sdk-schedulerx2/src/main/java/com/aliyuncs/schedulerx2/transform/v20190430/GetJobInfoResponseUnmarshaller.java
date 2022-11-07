@@ -51,7 +51,9 @@ public class GetJobInfoResponseUnmarshaller {
 		jobConfigInfo.setContent(_ctx.stringValue("GetJobInfoResponse.Data.JobConfigInfo.Content"));
 		jobConfigInfo.setJarUrl(_ctx.stringValue("GetJobInfoResponse.Data.JobConfigInfo.JarUrl"));
 		jobConfigInfo.setClassName(_ctx.stringValue("GetJobInfoResponse.Data.JobConfigInfo.ClassName"));
+		jobConfigInfo.setJobType(_ctx.stringValue("GetJobInfoResponse.Data.JobConfigInfo.JobType"));
 		jobConfigInfo.setAttemptInterval(_ctx.integerValue("GetJobInfoResponse.Data.JobConfigInfo.AttemptInterval"));
+		jobConfigInfo.setXAttrs(_ctx.stringValue("GetJobInfoResponse.Data.JobConfigInfo.XAttrs"));
 
 		MapTaskXAttrs mapTaskXAttrs = new MapTaskXAttrs();
 		mapTaskXAttrs.setTaskMaxAttempt(_ctx.integerValue("GetJobInfoResponse.Data.JobConfigInfo.MapTaskXAttrs.TaskMaxAttempt"));

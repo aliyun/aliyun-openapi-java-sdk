@@ -46,6 +46,15 @@ public class ListHealthCheckTemplatesResponseUnmarshaller {
 			healthCheckTemplate.setHealthCheckTimeout(_ctx.integerValue("ListHealthCheckTemplatesResponse.HealthCheckTemplates["+ i +"].HealthCheckTimeout"));
 			healthCheckTemplate.setHealthyThreshold(_ctx.integerValue("ListHealthCheckTemplatesResponse.HealthCheckTemplates["+ i +"].HealthyThreshold"));
 			healthCheckTemplate.setUnhealthyThreshold(_ctx.integerValue("ListHealthCheckTemplatesResponse.HealthCheckTemplates["+ i +"].UnhealthyThreshold"));
+			healthCheckTemplate.setHealthCheckTcpFastCloseEnabled(_ctx.booleanValue("ListHealthCheckTemplatesResponse.HealthCheckTemplates["+ i +"].HealthCheckTcpFastCloseEnabled"));
+			healthCheckTemplate.setServiceManagedEnabled(_ctx.booleanValue("ListHealthCheckTemplatesResponse.HealthCheckTemplates["+ i +"].ServiceManagedEnabled"));
+			healthCheckTemplate.setServiceManagedMode(_ctx.stringValue("ListHealthCheckTemplatesResponse.HealthCheckTemplates["+ i +"].ServiceManagedMode"));
+
+			List<String> healthCheckHttpCodes = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("ListHealthCheckTemplatesResponse.HealthCheckTemplates["+ i +"].HealthCheckHttpCodes.Length"); j++) {
+				healthCheckHttpCodes.add(_ctx.stringValue("ListHealthCheckTemplatesResponse.HealthCheckTemplates["+ i +"].HealthCheckHttpCodes["+ j +"]"));
+			}
+			healthCheckTemplate.setHealthCheckHttpCodes(healthCheckHttpCodes);
 
 			List<String> healthCheckCodes = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListHealthCheckTemplatesResponse.HealthCheckTemplates["+ i +"].HealthCheckCodes.Length"); j++) {

@@ -36,6 +36,8 @@ public class DescribeInvocationsRequest extends RpcAcsRequest<DescribeInvocation
 
 	private Long pageNumber;
 
+	private String resourceGroupId;
+
 	private String contentEncoding;
 
 	private String repeatMode;
@@ -120,6 +122,17 @@ public class DescribeInvocationsRequest extends RpcAcsRequest<DescribeInvocation
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

@@ -24,15 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribePackageStateResponse extends AcsResponse {
 
+	private Long issuedCount;
+
 	private String requestId;
 
 	private Long totalCount;
 
+	private String productCode;
+
 	private Long usedCount;
 
-	private Long issuedCount;
+	public Long getIssuedCount() {
+		return this.issuedCount;
+	}
 
-	private String productCode;
+	public void setIssuedCount(Long issuedCount) {
+		this.issuedCount = issuedCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -50,28 +58,20 @@ public class DescribePackageStateResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Long getUsedCount() {
-		return this.usedCount;
-	}
-
-	public void setUsedCount(Long usedCount) {
-		this.usedCount = usedCount;
-	}
-
-	public Long getIssuedCount() {
-		return this.issuedCount;
-	}
-
-	public void setIssuedCount(Long issuedCount) {
-		this.issuedCount = issuedCount;
-	}
-
 	public String getProductCode() {
 		return this.productCode;
 	}
 
 	public void setProductCode(String productCode) {
 		this.productCode = productCode;
+	}
+
+	public Long getUsedCount() {
+		return this.usedCount;
+	}
+
+	public void setUsedCount(Long usedCount) {
+		this.usedCount = usedCount;
 	}
 
 	@Override

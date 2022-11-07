@@ -35,7 +35,7 @@ public class DescribeCenVpcFlowStatisticSwitchRequest extends RpcAcsRequest<Desc
 
 	private Long ownerId;
 	public DescribeCenVpcFlowStatisticSwitchRequest() {
-		super("Cbn", "2017-09-12", "DescribeCenVpcFlowStatisticSwitch");
+		super("Cbn", "2017-09-12", "DescribeCenVpcFlowStatisticSwitch", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

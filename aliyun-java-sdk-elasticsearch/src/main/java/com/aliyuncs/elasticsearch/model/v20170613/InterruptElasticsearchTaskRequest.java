@@ -28,8 +28,6 @@ public class InterruptElasticsearchTaskRequest extends RoaAcsRequest<InterruptEl
 	private String instanceId;
 
 	private String clientToken;
-
-	private String body;
 	public InterruptElasticsearchTaskRequest() {
 		super("elasticsearch", "2017-06-13", "InterruptElasticsearchTask", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/actions/interrupt");
@@ -59,17 +57,6 @@ public class InterruptElasticsearchTaskRequest extends RoaAcsRequest<InterruptEl
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("clientToken", clientToken);
-		}
-	}
-
-	public String getBody() {
-		return this.body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
-		if(body != null){
-			putBodyParameter("body", body);
 		}
 	}
 

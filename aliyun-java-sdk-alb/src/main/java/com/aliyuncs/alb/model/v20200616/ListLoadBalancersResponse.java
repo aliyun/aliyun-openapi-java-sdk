@@ -81,11 +81,17 @@ public class ListLoadBalancersResponse extends AcsResponse {
 
 		private String addressType;
 
+		private Integer bandwidthCapacity;
+
 		private String bandwidthPackageId;
 
 		private String createTime;
 
 		private String dNSName;
+
+		private Boolean serviceManagedEnabled;
+
+		private String serviceManagedMode;
 
 		private String loadBalancerBussinessStatus;
 
@@ -100,6 +106,8 @@ public class ListLoadBalancersResponse extends AcsResponse {
 		private String resourceGroupId;
 
 		private String vpcId;
+
+		private Boolean configManagedEnabled;
 
 		private String addressIpVersion;
 
@@ -133,6 +141,14 @@ public class ListLoadBalancersResponse extends AcsResponse {
 			this.addressType = addressType;
 		}
 
+		public Integer getBandwidthCapacity() {
+			return this.bandwidthCapacity;
+		}
+
+		public void setBandwidthCapacity(Integer bandwidthCapacity) {
+			this.bandwidthCapacity = bandwidthCapacity;
+		}
+
 		public String getBandwidthPackageId() {
 			return this.bandwidthPackageId;
 		}
@@ -155,6 +171,22 @@ public class ListLoadBalancersResponse extends AcsResponse {
 
 		public void setDNSName(String dNSName) {
 			this.dNSName = dNSName;
+		}
+
+		public Boolean getServiceManagedEnabled() {
+			return this.serviceManagedEnabled;
+		}
+
+		public void setServiceManagedEnabled(Boolean serviceManagedEnabled) {
+			this.serviceManagedEnabled = serviceManagedEnabled;
+		}
+
+		public String getServiceManagedMode() {
+			return this.serviceManagedMode;
+		}
+
+		public void setServiceManagedMode(String serviceManagedMode) {
+			this.serviceManagedMode = serviceManagedMode;
 		}
 
 		public String getLoadBalancerBussinessStatus() {
@@ -211,6 +243,14 @@ public class ListLoadBalancersResponse extends AcsResponse {
 
 		public void setVpcId(String vpcId) {
 			this.vpcId = vpcId;
+		}
+
+		public Boolean getConfigManagedEnabled() {
+			return this.configManagedEnabled;
+		}
+
+		public void setConfigManagedEnabled(Boolean configManagedEnabled) {
+			this.configManagedEnabled = configManagedEnabled;
 		}
 
 		public String getAddressIpVersion() {
@@ -371,7 +411,27 @@ public class ListLoadBalancersResponse extends AcsResponse {
 
 		public static class LoadBalancerBillingConfig {
 
+			private Integer internetBandwidth;
+
+			private String internetChargeType;
+
 			private String payType;
+
+			public Integer getInternetBandwidth() {
+				return this.internetBandwidth;
+			}
+
+			public void setInternetBandwidth(Integer internetBandwidth) {
+				this.internetBandwidth = internetBandwidth;
+			}
+
+			public String getInternetChargeType() {
+				return this.internetChargeType;
+			}
+
+			public void setInternetChargeType(String internetChargeType) {
+				this.internetChargeType = internetChargeType;
+			}
 
 			public String getPayType() {
 				return this.payType;

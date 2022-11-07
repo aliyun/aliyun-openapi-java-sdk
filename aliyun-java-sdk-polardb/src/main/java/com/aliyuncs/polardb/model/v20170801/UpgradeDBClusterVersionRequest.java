@@ -47,7 +47,7 @@ public class UpgradeDBClusterVersionRequest extends RpcAcsRequest<UpgradeDBClust
 
 	private Boolean fromTimeService;
 	public UpgradeDBClusterVersionRequest() {
-		super("polardb", "2017-08-01", "UpgradeDBClusterVersion");
+		super("polardb", "2017-08-01", "UpgradeDBClusterVersion", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

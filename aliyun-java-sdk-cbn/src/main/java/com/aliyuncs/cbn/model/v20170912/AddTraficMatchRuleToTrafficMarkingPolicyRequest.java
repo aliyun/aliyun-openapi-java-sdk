@@ -42,7 +42,7 @@ public class AddTraficMatchRuleToTrafficMarkingPolicyRequest extends RpcAcsReque
 
 	private Long ownerId;
 	public AddTraficMatchRuleToTrafficMarkingPolicyRequest() {
-		super("Cbn", "2017-09-12", "AddTraficMatchRuleToTrafficMarkingPolicy");
+		super("Cbn", "2017-09-12", "AddTraficMatchRuleToTrafficMarkingPolicy", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

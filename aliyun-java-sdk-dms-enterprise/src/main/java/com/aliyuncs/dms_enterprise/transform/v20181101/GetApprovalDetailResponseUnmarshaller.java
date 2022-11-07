@@ -41,6 +41,7 @@ public class GetApprovalDetailResponseUnmarshaller {
 		approvalDetail.setAuditId(_ctx.longValue("GetApprovalDetailResponse.ApprovalDetail.AuditId"));
 		approvalDetail.setOrderId(_ctx.longValue("GetApprovalDetailResponse.ApprovalDetail.OrderId"));
 		approvalDetail.setWorkflowInsCode(_ctx.stringValue("GetApprovalDetailResponse.ApprovalDetail.WorkflowInsCode"));
+		approvalDetail.setTemplateId(_ctx.longValue("GetApprovalDetailResponse.ApprovalDetail.TemplateId"));
 
 		List<String> reasonList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetApprovalDetailResponse.ApprovalDetail.ReasonList.Length"); i++) {

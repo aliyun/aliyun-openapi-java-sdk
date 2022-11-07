@@ -41,7 +41,7 @@ public class QueryTenantBizConfigRequest extends RpcAcsRequest<QueryTenantBizCon
 
 	private String originSiteUserId;
 	public QueryTenantBizConfigRequest() {
-		super("UniMkt", "2018-12-12", "QueryTenantBizConfig", "1.0.0");
+		super("UniMkt", "2018-12-12", "QueryTenantBizConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

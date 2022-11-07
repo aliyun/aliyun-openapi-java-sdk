@@ -15,6 +15,7 @@
 package com.aliyuncs.workorder.model.v20210610;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.workorder.Endpoint;
 
@@ -26,6 +27,8 @@ public class ReplyTicketRequest extends RpcAcsRequest<ReplyTicketResponse> {
 	   
 
 	private String content;
+
+	private List<String> fileNameList;
 
 	private Boolean encrypt;
 
@@ -48,6 +51,24 @@ public class ReplyTicketRequest extends RpcAcsRequest<ReplyTicketResponse> {
 		if(content != null){
 			putBodyParameter("Content", content);
 		}
+	}
+
+	public List<String> getFileNameList() {
+		return this.fileNameList;
+	}
+
+	public void setFileNameList(List<String> fileNameList) {
+		this.fileNameList = fileNameList;	
+		if (fileNameList != null) {
+			String fileNameListArrVal = "";
+			for(int depth1 = 0; depth1 < fileNameList.size(); depth1++) {
+				fileNameListArrVal += fileNameList.get(depth1) + ",";
+			}
+			if (fileNameListArrVal.length() > 0) {
+				fileNameListArrVal = fileNameListArrVal.substring(0, fileNameListArrVal.length() - 1);
+			}
+			putQueryParameter("FileNameList" , fileNameListArrVal);
+		}	
 	}
 
 	public Boolean getEncrypt() {

@@ -35,8 +35,8 @@ public class ListProductsResponseUnmarshaller {
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListProductsResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setDirectoryName(_ctx.stringValue("ListProductsResponse.Data["+ i +"].DirectoryName"));
 			dataItem.setDirectoryId(_ctx.longValue("ListProductsResponse.Data["+ i +"].DirectoryId"));
+			dataItem.setDirectoryName(_ctx.stringValue("ListProductsResponse.Data["+ i +"].DirectoryName"));
 
 			List<ProductListItem> productList = new ArrayList<ProductListItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListProductsResponse.Data["+ i +"].ProductList.Length"); j++) {

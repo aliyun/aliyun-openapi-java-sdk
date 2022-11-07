@@ -29,6 +29,7 @@ public class DescribePhoneNumberOnlineTimeResponseUnmarshaller {
 
 		Data data = new Data();
 		data.setVerifyResult(_ctx.stringValue("DescribePhoneNumberOnlineTimeResponse.Data.VerifyResult"));
+		data.setCarrierCode(_ctx.stringValue("DescribePhoneNumberOnlineTimeResponse.Data.CarrierCode"));
 		describePhoneNumberOnlineTimeResponse.setData(data);
 	 
 	 	return describePhoneNumberOnlineTimeResponse;

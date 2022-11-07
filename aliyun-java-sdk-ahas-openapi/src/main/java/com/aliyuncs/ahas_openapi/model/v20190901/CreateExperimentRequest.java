@@ -37,6 +37,8 @@ public class CreateExperimentRequest extends RpcAcsRequest<CreateExperimentRespo
 	private String nameSpace;
 
 	private String definition;
+
+	private List<String> workspacess;
 	public CreateExperimentRequest() {
 		super("ahas-openapi", "2019-09-01", "CreateExperiment", "ahas");
 		setMethod(MethodType.POST);
@@ -112,6 +114,19 @@ public class CreateExperimentRequest extends RpcAcsRequest<CreateExperimentRespo
 		if(definition != null){
 			putQueryParameter("Definition", definition);
 		}
+	}
+
+	public List<String> getWorkspacess() {
+		return this.workspacess;
+	}
+
+	public void setWorkspacess(List<String> workspacess) {
+		this.workspacess = workspacess;	
+		if (workspacess != null) {
+			for (int i = 0; i < workspacess.size(); i++) {
+				putQueryParameter("Workspaces." + (i + 1) , workspacess.get(i));
+			}
+		}	
 	}
 
 	@Override

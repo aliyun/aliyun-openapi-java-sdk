@@ -25,9 +25,9 @@ import com.aliyuncs.dataworks_public.Endpoint;
 public class DeleteProjectMemberRequest extends RpcAcsRequest<DeleteProjectMemberResponse> {
 	   
 
-	private Long projectId;
-
 	private String userId;
+
+	private Long projectId;
 	public DeleteProjectMemberRequest() {
 		super("dataworks-public", "2020-05-18", "DeleteProjectMember");
 		setMethod(MethodType.POST);
@@ -35,17 +35,6 @@ public class DeleteProjectMemberRequest extends RpcAcsRequest<DeleteProjectMembe
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getProjectId() {
-		return this.projectId;
-	}
-
-	public void setProjectId(Long projectId) {
-		this.projectId = projectId;
-		if(projectId != null){
-			putQueryParameter("ProjectId", projectId.toString());
-		}
 	}
 
 	public String getUserId() {
@@ -56,6 +45,17 @@ public class DeleteProjectMemberRequest extends RpcAcsRequest<DeleteProjectMembe
 		this.userId = userId;
 		if(userId != null){
 			putQueryParameter("UserId", userId);
+		}
+	}
+
+	public Long getProjectId() {
+		return this.projectId;
+	}
+
+	public void setProjectId(Long projectId) {
+		this.projectId = projectId;
+		if(projectId != null){
+			putQueryParameter("ProjectId", projectId.toString());
 		}
 	}
 

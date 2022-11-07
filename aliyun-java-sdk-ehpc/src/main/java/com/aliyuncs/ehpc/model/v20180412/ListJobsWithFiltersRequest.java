@@ -46,6 +46,8 @@ public class ListJobsWithFiltersRequest extends RpcAcsRequest<ListJobsWithFilter
 
 	private String createTimeEnd;
 
+	private Boolean async;
+
 	private List<String> nodes;
 
 	private List<String> queues;
@@ -169,6 +171,17 @@ public class ListJobsWithFiltersRequest extends RpcAcsRequest<ListJobsWithFilter
 		this.createTimeEnd = createTimeEnd;
 		if(createTimeEnd != null){
 			putQueryParameter("CreateTimeEnd", createTimeEnd);
+		}
+	}
+
+	public Boolean getAsync() {
+		return this.async;
+	}
+
+	public void setAsync(Boolean async) {
+		this.async = async;
+		if(async != null){
+			putQueryParameter("Async", async.toString());
 		}
 	}
 

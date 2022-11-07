@@ -31,6 +31,10 @@ public class GetListenerAttributeResponse extends AcsResponse {
 
 	private Boolean http2Enabled;
 
+	private Boolean serviceManagedEnabled;
+
+	private String serviceManagedMode;
+
 	private Integer idleTimeout;
 
 	private String listenerDescription;
@@ -52,6 +56,8 @@ public class GetListenerAttributeResponse extends AcsResponse {
 	private String securityPolicyId;
 
 	private List<Certificate> certificates;
+
+	private List<Certificate1> caCertificates;
 
 	private List<DefaultAction> defaultActions;
 
@@ -85,6 +91,22 @@ public class GetListenerAttributeResponse extends AcsResponse {
 
 	public void setHttp2Enabled(Boolean http2Enabled) {
 		this.http2Enabled = http2Enabled;
+	}
+
+	public Boolean getServiceManagedEnabled() {
+		return this.serviceManagedEnabled;
+	}
+
+	public void setServiceManagedEnabled(Boolean serviceManagedEnabled) {
+		this.serviceManagedEnabled = serviceManagedEnabled;
+	}
+
+	public String getServiceManagedMode() {
+		return this.serviceManagedMode;
+	}
+
+	public void setServiceManagedMode(String serviceManagedMode) {
+		this.serviceManagedMode = serviceManagedMode;
 	}
 
 	public Integer getIdleTimeout() {
@@ -175,6 +197,14 @@ public class GetListenerAttributeResponse extends AcsResponse {
 		this.certificates = certificates;
 	}
 
+	public List<Certificate1> getCaCertificates() {
+		return this.caCertificates;
+	}
+
+	public void setCaCertificates(List<Certificate1> caCertificates) {
+		this.caCertificates = caCertificates;
+	}
+
 	public List<DefaultAction> getDefaultActions() {
 		return this.defaultActions;
 	}
@@ -225,6 +255,39 @@ public class GetListenerAttributeResponse extends AcsResponse {
 
 		public void setCertificateId(String certificateId) {
 			this.certificateId = certificateId;
+		}
+	}
+
+	public static class Certificate1 {
+
+		private String certificateId;
+
+		private String status;
+
+		private Boolean isDefault;
+
+		public String getCertificateId() {
+			return this.certificateId;
+		}
+
+		public void setCertificateId(String certificateId) {
+			this.certificateId = certificateId;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public Boolean getIsDefault() {
+			return this.isDefault;
+		}
+
+		public void setIsDefault(Boolean isDefault) {
+			this.isDefault = isDefault;
 		}
 	}
 
@@ -430,6 +493,10 @@ public class GetListenerAttributeResponse extends AcsResponse {
 
 		private Boolean xForwardedForSLBPortEnabled;
 
+		private Boolean xForwardedForClientSourceIpsEnabled;
+
+		private String xForwardedForClientSourceIpsTrusted;
+
 		public String getXForwardedForClientCertClientVerifyAlias() {
 			return this.xForwardedForClientCertClientVerifyAlias;
 		}
@@ -532,6 +599,22 @@ public class GetListenerAttributeResponse extends AcsResponse {
 
 		public void setXForwardedForSLBPortEnabled(Boolean xForwardedForSLBPortEnabled) {
 			this.xForwardedForSLBPortEnabled = xForwardedForSLBPortEnabled;
+		}
+
+		public Boolean getXForwardedForClientSourceIpsEnabled() {
+			return this.xForwardedForClientSourceIpsEnabled;
+		}
+
+		public void setXForwardedForClientSourceIpsEnabled(Boolean xForwardedForClientSourceIpsEnabled) {
+			this.xForwardedForClientSourceIpsEnabled = xForwardedForClientSourceIpsEnabled;
+		}
+
+		public String getXForwardedForClientSourceIpsTrusted() {
+			return this.xForwardedForClientSourceIpsTrusted;
+		}
+
+		public void setXForwardedForClientSourceIpsTrusted(String xForwardedForClientSourceIpsTrusted) {
+			this.xForwardedForClientSourceIpsTrusted = xForwardedForClientSourceIpsTrusted;
 		}
 	}
 

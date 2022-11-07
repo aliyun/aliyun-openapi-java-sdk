@@ -74,6 +74,8 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 
 	private String backupLog;
 
+	private Boolean enableIncrementDataBackup;
+
 	private DuplicationLocation duplicationLocation;
 
 	public Integer getLogBackupRetentionPeriod() {
@@ -274,6 +276,14 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 
 	public void setBackupLog(String backupLog) {
 		this.backupLog = backupLog;
+	}
+
+	public Boolean getEnableIncrementDataBackup() {
+		return this.enableIncrementDataBackup;
+	}
+
+	public void setEnableIncrementDataBackup(Boolean enableIncrementDataBackup) {
+		this.enableIncrementDataBackup = enableIncrementDataBackup;
 	}
 
 	public DuplicationLocation getDuplicationLocation() {

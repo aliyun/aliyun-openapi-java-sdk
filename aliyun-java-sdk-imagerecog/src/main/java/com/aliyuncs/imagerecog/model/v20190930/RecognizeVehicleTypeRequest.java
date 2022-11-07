@@ -27,7 +27,7 @@ public class RecognizeVehicleTypeRequest extends RpcAcsRequest<RecognizeVehicleT
 
 	private String imageURL;
 	public RecognizeVehicleTypeRequest() {
-		super("imagerecog", "2019-09-30", "RecognizeVehicleType", "imagerecog");
+		super("imagerecog", "2019-09-30", "RecognizeVehicleType");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

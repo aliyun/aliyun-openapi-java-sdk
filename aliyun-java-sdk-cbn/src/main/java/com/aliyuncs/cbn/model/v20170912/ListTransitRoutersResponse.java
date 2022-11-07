@@ -99,6 +99,8 @@ public class ListTransitRoutersResponse extends AcsResponse {
 
 		private Boolean supportMulticast;
 
+		private List<TransitRouterCidrListItem> transitRouterCidrList;
+
 		public String getCreationTime() {
 			return this.creationTime;
 		}
@@ -185,6 +187,67 @@ public class ListTransitRoutersResponse extends AcsResponse {
 
 		public void setSupportMulticast(Boolean supportMulticast) {
 			this.supportMulticast = supportMulticast;
+		}
+
+		public List<TransitRouterCidrListItem> getTransitRouterCidrList() {
+			return this.transitRouterCidrList;
+		}
+
+		public void setTransitRouterCidrList(List<TransitRouterCidrListItem> transitRouterCidrList) {
+			this.transitRouterCidrList = transitRouterCidrList;
+		}
+
+		public static class TransitRouterCidrListItem {
+
+			private String cidr;
+
+			private String name;
+
+			private String description;
+
+			private String transitRouterCidrId;
+
+			private Boolean publishCidrRoute;
+
+			public String getCidr() {
+				return this.cidr;
+			}
+
+			public void setCidr(String cidr) {
+				this.cidr = cidr;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
+			}
+
+			public String getTransitRouterCidrId() {
+				return this.transitRouterCidrId;
+			}
+
+			public void setTransitRouterCidrId(String transitRouterCidrId) {
+				this.transitRouterCidrId = transitRouterCidrId;
+			}
+
+			public Boolean getPublishCidrRoute() {
+				return this.publishCidrRoute;
+			}
+
+			public void setPublishCidrRoute(Boolean publishCidrRoute) {
+				this.publishCidrRoute = publishCidrRoute;
+			}
 		}
 	}
 

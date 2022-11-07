@@ -30,6 +30,8 @@ public class QueryRunningInstanceRequest extends RpcAcsRequest<QueryRunningInsta
 	private App app;
 
 	private Long tenantId;
+
+	private String sessionId;
 	public QueryRunningInstanceRequest() {
 		super("avatar", "2022-01-30", "QueryRunningInstance");
 		setMethod(MethodType.POST);
@@ -54,6 +56,17 @@ public class QueryRunningInstanceRequest extends RpcAcsRequest<QueryRunningInsta
 		this.tenantId = tenantId;
 		if(tenantId != null){
 			putQueryParameter("TenantId", tenantId.toString());
+		}
+	}
+
+	public String getSessionId() {
+		return this.sessionId;
+	}
+
+	public void setSessionId(String sessionId) {
+		this.sessionId = sessionId;
+		if(sessionId != null){
+			putQueryParameter("SessionId", sessionId);
 		}
 	}
 

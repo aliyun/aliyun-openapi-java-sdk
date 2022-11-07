@@ -23,10 +23,10 @@ public class DescribePackageStateResponseUnmarshaller {
 	public static DescribePackageStateResponse unmarshall(DescribePackageStateResponse describePackageStateResponse, UnmarshallerContext _ctx) {
 		
 		describePackageStateResponse.setRequestId(_ctx.stringValue("DescribePackageStateResponse.RequestId"));
-		describePackageStateResponse.setTotalCount(_ctx.longValue("DescribePackageStateResponse.TotalCount"));
-		describePackageStateResponse.setUsedCount(_ctx.longValue("DescribePackageStateResponse.UsedCount"));
 		describePackageStateResponse.setIssuedCount(_ctx.longValue("DescribePackageStateResponse.IssuedCount"));
+		describePackageStateResponse.setTotalCount(_ctx.longValue("DescribePackageStateResponse.TotalCount"));
 		describePackageStateResponse.setProductCode(_ctx.stringValue("DescribePackageStateResponse.ProductCode"));
+		describePackageStateResponse.setUsedCount(_ctx.longValue("DescribePackageStateResponse.UsedCount"));
 	 
 	 	return describePackageStateResponse;
 	}

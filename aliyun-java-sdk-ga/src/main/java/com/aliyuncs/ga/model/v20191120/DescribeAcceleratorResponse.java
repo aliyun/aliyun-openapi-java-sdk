@@ -14,6 +14,7 @@
 
 package com.aliyuncs.ga.model.v20191120;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ga.transform.v20191120.DescribeAcceleratorResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -51,6 +52,14 @@ public class DescribeAcceleratorResponse extends AcsResponse {
 	private String spec;
 
 	private String acceleratorId;
+
+	private String bandwidthBillingType;
+
+	private String crossPrivateState;
+
+	private String resourceGroupId;
+
+	private List<TagsItem> tags;
 
 	private CrossDomainBandwidthPackage crossDomainBandwidthPackage;
 
@@ -170,6 +179,38 @@ public class DescribeAcceleratorResponse extends AcsResponse {
 		this.acceleratorId = acceleratorId;
 	}
 
+	public String getBandwidthBillingType() {
+		return this.bandwidthBillingType;
+	}
+
+	public void setBandwidthBillingType(String bandwidthBillingType) {
+		this.bandwidthBillingType = bandwidthBillingType;
+	}
+
+	public String getCrossPrivateState() {
+		return this.crossPrivateState;
+	}
+
+	public void setCrossPrivateState(String crossPrivateState) {
+		this.crossPrivateState = crossPrivateState;
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+	}
+
+	public List<TagsItem> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<TagsItem> tags) {
+		this.tags = tags;
+	}
+
 	public CrossDomainBandwidthPackage getCrossDomainBandwidthPackage() {
 		return this.crossDomainBandwidthPackage;
 	}
@@ -192,6 +233,29 @@ public class DescribeAcceleratorResponse extends AcsResponse {
 
 	public void setIpSetConfig(IpSetConfig ipSetConfig) {
 		this.ipSetConfig = ipSetConfig;
+	}
+
+	public static class TagsItem {
+
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
 	}
 
 	public static class CrossDomainBandwidthPackage {

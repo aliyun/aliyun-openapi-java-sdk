@@ -41,6 +41,7 @@ public class ListResourceInstancesResponseUnmarshaller {
 			instancesItem.setInstanceCpuCount(_ctx.integerValue("ListResourceInstancesResponse.Instances["+ i +"].InstanceCpuCount"));
 			instancesItem.setInstanceGpuCount(_ctx.integerValue("ListResourceInstancesResponse.Instances["+ i +"].InstanceGpuCount"));
 			instancesItem.setInstanceMemory(_ctx.stringValue("ListResourceInstancesResponse.Instances["+ i +"].InstanceMemory"));
+			instancesItem.setInstanceGpuMemory(_ctx.stringValue("ListResourceInstancesResponse.Instances["+ i +"].InstanceGpuMemory"));
 			instancesItem.setInstanceUsedCpu(_ctx.floatValue("ListResourceInstancesResponse.Instances["+ i +"].InstanceUsedCpu"));
 			instancesItem.setInstanceUsedGpu(_ctx.integerValue("ListResourceInstancesResponse.Instances["+ i +"].InstanceUsedGpu"));
 			instancesItem.setInstanceUsedMemory(_ctx.stringValue("ListResourceInstancesResponse.Instances["+ i +"].InstanceUsedMemory"));
@@ -49,6 +50,9 @@ public class ListResourceInstancesResponseUnmarshaller {
 			instancesItem.setChargeType(_ctx.stringValue("ListResourceInstancesResponse.Instances["+ i +"].ChargeType"));
 			instancesItem.setExpiredTime(_ctx.stringValue("ListResourceInstancesResponse.Instances["+ i +"].ExpiredTime"));
 			instancesItem.setAutoRenewal(_ctx.booleanValue("ListResourceInstancesResponse.Instances["+ i +"].AutoRenewal"));
+			instancesItem.setArch(_ctx.stringValue("ListResourceInstancesResponse.Instances["+ i +"].Arch"));
+			instancesItem.setRegion(_ctx.stringValue("ListResourceInstancesResponse.Instances["+ i +"].Region"));
+			instancesItem.setZone(_ctx.stringValue("ListResourceInstancesResponse.Instances["+ i +"].Zone"));
 
 			instances.add(instancesItem);
 		}

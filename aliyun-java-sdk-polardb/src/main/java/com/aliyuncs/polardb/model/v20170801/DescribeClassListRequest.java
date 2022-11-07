@@ -39,7 +39,7 @@ public class DescribeClassListRequest extends RpcAcsRequest<DescribeClassListRes
 
 	private String orderType;
 	public DescribeClassListRequest() {
-		super("polardb", "2017-08-01", "DescribeClassList");
+		super("polardb", "2017-08-01", "DescribeClassList", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

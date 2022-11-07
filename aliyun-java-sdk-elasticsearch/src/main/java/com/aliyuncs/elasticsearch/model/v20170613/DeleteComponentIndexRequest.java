@@ -28,8 +28,6 @@ public class DeleteComponentIndexRequest extends RoaAcsRequest<DeleteComponentIn
 	private String instanceId;
 
 	private String name;
-
-	private String body;
 	public DeleteComponentIndexRequest() {
 		super("elasticsearch", "2017-06-13", "DeleteComponentIndex", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/component-index/[name]");
@@ -59,17 +57,6 @@ public class DeleteComponentIndexRequest extends RoaAcsRequest<DeleteComponentIn
 		this.name = name;
 		if(name != null){
 			putPathParameter("name", name);
-		}
-	}
-
-	public String getBody() {
-		return this.body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
-		if(body != null){
-			putBodyParameter("body", body);
 		}
 	}
 

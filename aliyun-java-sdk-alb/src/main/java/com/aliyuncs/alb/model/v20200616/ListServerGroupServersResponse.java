@@ -93,6 +93,8 @@ public class ListServerGroupServersResponse extends AcsResponse {
 
 		private String serverGroupId;
 
+		private Boolean remoteIpEnabled;
+
 		public String getDescription() {
 			return this.description;
 		}
@@ -155,6 +157,14 @@ public class ListServerGroupServersResponse extends AcsResponse {
 
 		public void setServerGroupId(String serverGroupId) {
 			this.serverGroupId = serverGroupId;
+		}
+
+		public Boolean getRemoteIpEnabled() {
+			return this.remoteIpEnabled;
+		}
+
+		public void setRemoteIpEnabled(Boolean remoteIpEnabled) {
+			this.remoteIpEnabled = remoteIpEnabled;
 		}
 	}
 

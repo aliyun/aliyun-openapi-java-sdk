@@ -14,10 +14,14 @@
 
 package com.aliyuncs.ga.transform.v20191120;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.ga.model.v20191120.DescribeAcceleratorResponse;
 import com.aliyuncs.ga.model.v20191120.DescribeAcceleratorResponse.BasicBandwidthPackage;
 import com.aliyuncs.ga.model.v20191120.DescribeAcceleratorResponse.CrossDomainBandwidthPackage;
 import com.aliyuncs.ga.model.v20191120.DescribeAcceleratorResponse.IpSetConfig;
+import com.aliyuncs.ga.model.v20191120.DescribeAcceleratorResponse.TagsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -39,6 +43,9 @@ public class DescribeAcceleratorResponseUnmarshaller {
 		describeAcceleratorResponse.setRegionId(_ctx.stringValue("DescribeAcceleratorResponse.RegionId"));
 		describeAcceleratorResponse.setSpec(_ctx.stringValue("DescribeAcceleratorResponse.Spec"));
 		describeAcceleratorResponse.setAcceleratorId(_ctx.stringValue("DescribeAcceleratorResponse.AcceleratorId"));
+		describeAcceleratorResponse.setBandwidthBillingType(_ctx.stringValue("DescribeAcceleratorResponse.BandwidthBillingType"));
+		describeAcceleratorResponse.setCrossPrivateState(_ctx.stringValue("DescribeAcceleratorResponse.CrossPrivateState"));
+		describeAcceleratorResponse.setResourceGroupId(_ctx.stringValue("DescribeAcceleratorResponse.ResourceGroupId"));
 
 		CrossDomainBandwidthPackage crossDomainBandwidthPackage = new CrossDomainBandwidthPackage();
 		crossDomainBandwidthPackage.setBandwidth(_ctx.integerValue("DescribeAcceleratorResponse.CrossDomainBandwidthPackage.Bandwidth"));
@@ -54,6 +61,16 @@ public class DescribeAcceleratorResponseUnmarshaller {
 		IpSetConfig ipSetConfig = new IpSetConfig();
 		ipSetConfig.setAccessMode(_ctx.stringValue("DescribeAcceleratorResponse.IpSetConfig.AccessMode"));
 		describeAcceleratorResponse.setIpSetConfig(ipSetConfig);
+
+		List<TagsItem> tags = new ArrayList<TagsItem>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeAcceleratorResponse.Tags.Length"); i++) {
+			TagsItem tagsItem = new TagsItem();
+			tagsItem.setKey(_ctx.stringValue("DescribeAcceleratorResponse.Tags["+ i +"].Key"));
+			tagsItem.setValue(_ctx.stringValue("DescribeAcceleratorResponse.Tags["+ i +"].Value"));
+
+			tags.add(tagsItem);
+		}
+		describeAcceleratorResponse.setTags(tags);
 	 
 	 	return describeAcceleratorResponse;
 	}

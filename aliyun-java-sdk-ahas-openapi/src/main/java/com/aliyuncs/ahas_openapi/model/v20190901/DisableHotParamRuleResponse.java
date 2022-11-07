@@ -77,38 +77,54 @@ public class DisableHotParamRuleResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String appName;
+		private Integer paramIdx;
+
+		private String namespace;
+
+		private Long statDurationSec;
 
 		private Integer burstCount;
 
-		private Integer controlBehavior;
+		private Long ruleId;
 
-		private Boolean enable;
+		private String appName;
+
+		private String resource;
+
+		private Integer controlBehavior;
 
 		private Integer maxQueueingTimeMs;
 
 		private Integer metricType;
 
-		private String namespace;
-
-		private Integer paramIdx;
-
-		private String resource;
-
-		private Long ruleId;
-
-		private Long statDurationSec;
-
 		private Float threshold;
+
+		private Boolean enable;
 
 		private List<ParamFlowItemListItem> paramFlowItemList;
 
-		public String getAppName() {
-			return this.appName;
+		public Integer getParamIdx() {
+			return this.paramIdx;
 		}
 
-		public void setAppName(String appName) {
-			this.appName = appName;
+		public void setParamIdx(Integer paramIdx) {
+			this.paramIdx = paramIdx;
+		}
+
+		public String getNamespace() {
+			return this.namespace;
+		}
+
+		public void setNamespace(String namespace) {
+			this.namespace = namespace;
+		}
+
+		public Long getStatDurationSec() {
+			return this.statDurationSec;
+		}
+
+		public void setStatDurationSec(Long statDurationSec) {
+			this.statDurationSec = statDurationSec;
 		}
 
 		public Integer getBurstCount() {
@@ -119,20 +135,36 @@ public class DisableHotParamRuleResponse extends AcsResponse {
 			this.burstCount = burstCount;
 		}
 
+		public Long getRuleId() {
+			return this.ruleId;
+		}
+
+		public void setRuleId(Long ruleId) {
+			this.ruleId = ruleId;
+		}
+
+		public String getAppName() {
+			return this.appName;
+		}
+
+		public void setAppName(String appName) {
+			this.appName = appName;
+		}
+
+		public String getResource() {
+			return this.resource;
+		}
+
+		public void setResource(String resource) {
+			this.resource = resource;
+		}
+
 		public Integer getControlBehavior() {
 			return this.controlBehavior;
 		}
 
 		public void setControlBehavior(Integer controlBehavior) {
 			this.controlBehavior = controlBehavior;
-		}
-
-		public Boolean getEnable() {
-			return this.enable;
-		}
-
-		public void setEnable(Boolean enable) {
-			this.enable = enable;
 		}
 
 		public Integer getMaxQueueingTimeMs() {
@@ -151,52 +183,20 @@ public class DisableHotParamRuleResponse extends AcsResponse {
 			this.metricType = metricType;
 		}
 
-		public String getNamespace() {
-			return this.namespace;
-		}
-
-		public void setNamespace(String namespace) {
-			this.namespace = namespace;
-		}
-
-		public Integer getParamIdx() {
-			return this.paramIdx;
-		}
-
-		public void setParamIdx(Integer paramIdx) {
-			this.paramIdx = paramIdx;
-		}
-
-		public String getResource() {
-			return this.resource;
-		}
-
-		public void setResource(String resource) {
-			this.resource = resource;
-		}
-
-		public Long getRuleId() {
-			return this.ruleId;
-		}
-
-		public void setRuleId(Long ruleId) {
-			this.ruleId = ruleId;
-		}
-
-		public Long getStatDurationSec() {
-			return this.statDurationSec;
-		}
-
-		public void setStatDurationSec(Long statDurationSec) {
-			this.statDurationSec = statDurationSec;
-		}
-
 		public Float getThreshold() {
 			return this.threshold;
 		}
 
 		public void setThreshold(Float threshold) {
 			this.threshold = threshold;
+		}
+
+		public Boolean getEnable() {
+			return this.enable;
+		}
+
+		public void setEnable(Boolean enable) {
+			this.enable = enable;
 		}
 
 		public List<ParamFlowItemListItem> getParamFlowItemList() {
@@ -209,19 +209,11 @@ public class DisableHotParamRuleResponse extends AcsResponse {
 
 		public static class ParamFlowItemListItem {
 
-			private String itemType;
-
 			private String itemValue;
 
 			private Float threshold;
 
-			public String getItemType() {
-				return this.itemType;
-			}
-
-			public void setItemType(String itemType) {
-				this.itemType = itemType;
-			}
+			private String itemType;
 
 			public String getItemValue() {
 				return this.itemValue;
@@ -237,6 +229,14 @@ public class DisableHotParamRuleResponse extends AcsResponse {
 
 			public void setThreshold(Float threshold) {
 				this.threshold = threshold;
+			}
+
+			public String getItemType() {
+				return this.itemType;
+			}
+
+			public void setItemType(String itemType) {
+				this.itemType = itemType;
 			}
 		}
 	}

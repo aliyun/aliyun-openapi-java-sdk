@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.ga.model.v20191120.DescribeBandwidthPackageResponse;
+import com.aliyuncs.ga.model.v20191120.DescribeBandwidthPackageResponse.TagsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -41,12 +42,23 @@ public class DescribeBandwidthPackageResponseUnmarshaller {
 		describeBandwidthPackageResponse.setRegionId(_ctx.stringValue("DescribeBandwidthPackageResponse.RegionId"));
 		describeBandwidthPackageResponse.setBillingType(_ctx.stringValue("DescribeBandwidthPackageResponse.BillingType"));
 		describeBandwidthPackageResponse.setRatio(_ctx.integerValue("DescribeBandwidthPackageResponse.Ratio"));
+		describeBandwidthPackageResponse.setResourceGroupId(_ctx.stringValue("DescribeBandwidthPackageResponse.ResourceGroupId"));
 
 		List<String> accelerators = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeBandwidthPackageResponse.Accelerators.Length"); i++) {
 			accelerators.add(_ctx.stringValue("DescribeBandwidthPackageResponse.Accelerators["+ i +"]"));
 		}
 		describeBandwidthPackageResponse.setAccelerators(accelerators);
+
+		List<TagsItem> tags = new ArrayList<TagsItem>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeBandwidthPackageResponse.Tags.Length"); i++) {
+			TagsItem tagsItem = new TagsItem();
+			tagsItem.setKey(_ctx.stringValue("DescribeBandwidthPackageResponse.Tags["+ i +"].Key"));
+			tagsItem.setValue(_ctx.stringValue("DescribeBandwidthPackageResponse.Tags["+ i +"].Value"));
+
+			tags.add(tagsItem);
+		}
+		describeBandwidthPackageResponse.setTags(tags);
 	 
 	 	return describeBandwidthPackageResponse;
 	}

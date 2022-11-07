@@ -67,6 +67,7 @@ public class DescribeInstanceTypesResponseUnmarshaller {
 			instanceType.setNetworkEncryptionSupport(_ctx.booleanValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].NetworkEncryptionSupport"));
 			instanceType.setInstanceCategory(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].InstanceCategory"));
 			instanceType.setCpuArchitecture(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].CpuArchitecture"));
+			instanceType.setGPUMemorySize(_ctx.floatValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].GPUMemorySize"));
 
 			instanceTypes.add(instanceType);
 		}

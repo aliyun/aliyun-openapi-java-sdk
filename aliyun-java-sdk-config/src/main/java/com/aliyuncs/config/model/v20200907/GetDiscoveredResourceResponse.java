@@ -68,6 +68,8 @@ public class GetDiscoveredResourceResponse extends AcsResponse {
 
 		private String resourceStatus;
 
+		private Long version;
+
 		public String getAvailabilityZone() {
 			return this.availabilityZone;
 		}
@@ -154,6 +156,14 @@ public class GetDiscoveredResourceResponse extends AcsResponse {
 
 		public void setResourceStatus(String resourceStatus) {
 			this.resourceStatus = resourceStatus;
+		}
+
+		public Long getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(Long version) {
+			this.version = version;
 		}
 	}
 

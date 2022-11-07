@@ -59,7 +59,7 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 
 	private String dataLevel1BackupTime;
 	public ModifyBackupPolicyRequest() {
-		super("polardb", "2017-08-01", "ModifyBackupPolicy");
+		super("polardb", "2017-08-01", "ModifyBackupPolicy", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

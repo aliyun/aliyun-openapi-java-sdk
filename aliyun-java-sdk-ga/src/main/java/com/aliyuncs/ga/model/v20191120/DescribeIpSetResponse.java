@@ -35,6 +35,8 @@ public class DescribeIpSetResponse extends AcsResponse {
 
 	private Integer bandwidth;
 
+	private String ispType;
+
 	private String accelerateRegionId;
 
 	private String acceleratorId;
@@ -79,6 +81,14 @@ public class DescribeIpSetResponse extends AcsResponse {
 
 	public void setBandwidth(Integer bandwidth) {
 		this.bandwidth = bandwidth;
+	}
+
+	public String getIspType() {
+		return this.ispType;
+	}
+
+	public void setIspType(String ispType) {
+		this.ispType = ispType;
 	}
 
 	public String getAccelerateRegionId() {

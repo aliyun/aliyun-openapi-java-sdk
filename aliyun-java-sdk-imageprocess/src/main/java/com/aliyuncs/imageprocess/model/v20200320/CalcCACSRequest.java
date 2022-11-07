@@ -28,13 +28,13 @@ public class CalcCACSRequest extends RpcAcsRequest<CalcCACSResponse> {
 
 	private String dataSourceType;
 
+	private String orgName;
+
 	private String dataFormat;
 
 	private List<URLList> uRLLists;
 
 	private String orgId;
-
-	private String orgName;
 	public CalcCACSRequest() {
 		super("imageprocess", "2020-03-20", "CalcCACS", "imageprocess");
 		setMethod(MethodType.POST);
@@ -52,6 +52,17 @@ public class CalcCACSRequest extends RpcAcsRequest<CalcCACSResponse> {
 		this.dataSourceType = dataSourceType;
 		if(dataSourceType != null){
 			putBodyParameter("DataSourceType", dataSourceType);
+		}
+	}
+
+	public String getOrgName() {
+		return this.orgName;
+	}
+
+	public void setOrgName(String orgName) {
+		this.orgName = orgName;
+		if(orgName != null){
+			putBodyParameter("OrgName", orgName);
 		}
 	}
 
@@ -87,17 +98,6 @@ public class CalcCACSRequest extends RpcAcsRequest<CalcCACSResponse> {
 		this.orgId = orgId;
 		if(orgId != null){
 			putBodyParameter("OrgId", orgId);
-		}
-	}
-
-	public String getOrgName() {
-		return this.orgName;
-	}
-
-	public void setOrgName(String orgName) {
-		this.orgName = orgName;
-		if(orgName != null){
-			putBodyParameter("OrgName", orgName);
 		}
 	}
 

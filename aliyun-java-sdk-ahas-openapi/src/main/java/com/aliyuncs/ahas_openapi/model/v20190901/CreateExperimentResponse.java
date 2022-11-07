@@ -24,17 +24,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateExperimentResponse extends AcsResponse {
 
+	private String requestId;
+
 	private String message;
+
+	private String experimentId;
 
 	private Integer httpStatusCode;
 
-	private String requestId;
+	private String code;
 
 	private Boolean success;
 
-	private String code;
+	public String getRequestId() {
+		return this.requestId;
+	}
 
-	private String experimentId;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public String getMessage() {
 		return this.message;
@@ -42,6 +50,14 @@ public class CreateExperimentResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getExperimentId() {
+		return this.experimentId;
+	}
+
+	public void setExperimentId(String experimentId) {
+		this.experimentId = experimentId;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -52,22 +68,6 @@ public class CreateExperimentResponse extends AcsResponse {
 		this.httpStatusCode = httpStatusCode;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public String getCode() {
 		return this.code;
 	}
@@ -76,12 +76,12 @@ public class CreateExperimentResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getExperimentId() {
-		return this.experimentId;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setExperimentId(String experimentId) {
-		this.experimentId = experimentId;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

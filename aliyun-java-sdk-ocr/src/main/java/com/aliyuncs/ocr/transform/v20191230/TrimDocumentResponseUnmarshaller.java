@@ -24,6 +24,8 @@ public class TrimDocumentResponseUnmarshaller {
 	public static TrimDocumentResponse unmarshall(TrimDocumentResponse trimDocumentResponse, UnmarshallerContext _ctx) {
 		
 		trimDocumentResponse.setRequestId(_ctx.stringValue("TrimDocumentResponse.RequestId"));
+		trimDocumentResponse.setCode(_ctx.stringValue("TrimDocumentResponse.Code"));
+		trimDocumentResponse.setMessage(_ctx.stringValue("TrimDocumentResponse.Message"));
 
 		Data data = new Data();
 		data.setContent(_ctx.stringValue("TrimDocumentResponse.Data.Content"));

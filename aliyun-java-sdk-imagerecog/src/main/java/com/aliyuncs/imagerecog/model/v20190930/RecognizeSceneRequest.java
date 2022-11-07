@@ -27,7 +27,7 @@ public class RecognizeSceneRequest extends RpcAcsRequest<RecognizeSceneResponse>
 
 	private String imageURL;
 	public RecognizeSceneRequest() {
-		super("imagerecog", "2019-09-30", "RecognizeScene", "imagerecog");
+		super("imagerecog", "2019-09-30", "RecognizeScene");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

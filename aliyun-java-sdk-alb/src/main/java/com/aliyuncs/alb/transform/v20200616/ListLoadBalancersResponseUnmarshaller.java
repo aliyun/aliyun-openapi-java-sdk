@@ -42,9 +42,12 @@ public class ListLoadBalancersResponseUnmarshaller {
 			LoadBalancer loadBalancer = new LoadBalancer();
 			loadBalancer.setAddressAllocatedMode(_ctx.stringValue("ListLoadBalancersResponse.LoadBalancers["+ i +"].AddressAllocatedMode"));
 			loadBalancer.setAddressType(_ctx.stringValue("ListLoadBalancersResponse.LoadBalancers["+ i +"].AddressType"));
+			loadBalancer.setBandwidthCapacity(_ctx.integerValue("ListLoadBalancersResponse.LoadBalancers["+ i +"].BandwidthCapacity"));
 			loadBalancer.setBandwidthPackageId(_ctx.stringValue("ListLoadBalancersResponse.LoadBalancers["+ i +"].BandwidthPackageId"));
 			loadBalancer.setCreateTime(_ctx.stringValue("ListLoadBalancersResponse.LoadBalancers["+ i +"].CreateTime"));
 			loadBalancer.setDNSName(_ctx.stringValue("ListLoadBalancersResponse.LoadBalancers["+ i +"].DNSName"));
+			loadBalancer.setServiceManagedEnabled(_ctx.booleanValue("ListLoadBalancersResponse.LoadBalancers["+ i +"].ServiceManagedEnabled"));
+			loadBalancer.setServiceManagedMode(_ctx.stringValue("ListLoadBalancersResponse.LoadBalancers["+ i +"].ServiceManagedMode"));
 			loadBalancer.setLoadBalancerBussinessStatus(_ctx.stringValue("ListLoadBalancersResponse.LoadBalancers["+ i +"].LoadBalancerBussinessStatus"));
 			loadBalancer.setLoadBalancerEdition(_ctx.stringValue("ListLoadBalancersResponse.LoadBalancers["+ i +"].LoadBalancerEdition"));
 			loadBalancer.setLoadBalancerId(_ctx.stringValue("ListLoadBalancersResponse.LoadBalancers["+ i +"].LoadBalancerId"));
@@ -52,6 +55,7 @@ public class ListLoadBalancersResponseUnmarshaller {
 			loadBalancer.setLoadBalancerStatus(_ctx.stringValue("ListLoadBalancersResponse.LoadBalancers["+ i +"].LoadBalancerStatus"));
 			loadBalancer.setResourceGroupId(_ctx.stringValue("ListLoadBalancersResponse.LoadBalancers["+ i +"].ResourceGroupId"));
 			loadBalancer.setVpcId(_ctx.stringValue("ListLoadBalancersResponse.LoadBalancers["+ i +"].VpcId"));
+			loadBalancer.setConfigManagedEnabled(_ctx.booleanValue("ListLoadBalancersResponse.LoadBalancers["+ i +"].ConfigManagedEnabled"));
 			loadBalancer.setAddressIpVersion(_ctx.stringValue("ListLoadBalancersResponse.LoadBalancers["+ i +"].AddressIpVersion"));
 			loadBalancer.setIpv6AddressType(_ctx.stringValue("ListLoadBalancersResponse.LoadBalancers["+ i +"].Ipv6AddressType"));
 
@@ -66,6 +70,8 @@ public class ListLoadBalancersResponseUnmarshaller {
 			loadBalancer.setDeletionProtectionConfig(deletionProtectionConfig);
 
 			LoadBalancerBillingConfig loadBalancerBillingConfig = new LoadBalancerBillingConfig();
+			loadBalancerBillingConfig.setInternetBandwidth(_ctx.integerValue("ListLoadBalancersResponse.LoadBalancers["+ i +"].LoadBalancerBillingConfig.InternetBandwidth"));
+			loadBalancerBillingConfig.setInternetChargeType(_ctx.stringValue("ListLoadBalancersResponse.LoadBalancers["+ i +"].LoadBalancerBillingConfig.InternetChargeType"));
 			loadBalancerBillingConfig.setPayType(_ctx.stringValue("ListLoadBalancersResponse.LoadBalancers["+ i +"].LoadBalancerBillingConfig.PayType"));
 			loadBalancer.setLoadBalancerBillingConfig(loadBalancerBillingConfig);
 

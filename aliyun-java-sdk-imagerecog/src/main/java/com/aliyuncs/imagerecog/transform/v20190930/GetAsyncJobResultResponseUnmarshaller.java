@@ -27,10 +27,10 @@ public class GetAsyncJobResultResponseUnmarshaller {
 
 		Data data = new Data();
 		data.setStatus(_ctx.stringValue("GetAsyncJobResultResponse.Data.Status"));
-		data.setErrorCode(_ctx.stringValue("GetAsyncJobResultResponse.Data.ErrorCode"));
 		data.setErrorMessage(_ctx.stringValue("GetAsyncJobResultResponse.Data.ErrorMessage"));
-		data.setJobId(_ctx.stringValue("GetAsyncJobResultResponse.Data.JobId"));
 		data.setResult(_ctx.stringValue("GetAsyncJobResultResponse.Data.Result"));
+		data.setErrorCode(_ctx.stringValue("GetAsyncJobResultResponse.Data.ErrorCode"));
+		data.setJobId(_ctx.stringValue("GetAsyncJobResultResponse.Data.JobId"));
 		getAsyncJobResultResponse.setData(data);
 	 
 	 	return getAsyncJobResultResponse;

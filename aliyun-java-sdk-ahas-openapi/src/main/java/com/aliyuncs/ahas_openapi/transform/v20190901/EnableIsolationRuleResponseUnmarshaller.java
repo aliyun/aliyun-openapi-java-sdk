@@ -24,20 +24,20 @@ public class EnableIsolationRuleResponseUnmarshaller {
 	public static EnableIsolationRuleResponse unmarshall(EnableIsolationRuleResponse enableIsolationRuleResponse, UnmarshallerContext _ctx) {
 		
 		enableIsolationRuleResponse.setRequestId(_ctx.stringValue("EnableIsolationRuleResponse.RequestId"));
-		enableIsolationRuleResponse.setCode(_ctx.stringValue("EnableIsolationRuleResponse.Code"));
 		enableIsolationRuleResponse.setMessage(_ctx.stringValue("EnableIsolationRuleResponse.Message"));
+		enableIsolationRuleResponse.setCode(_ctx.stringValue("EnableIsolationRuleResponse.Code"));
 		enableIsolationRuleResponse.setSuccess(_ctx.booleanValue("EnableIsolationRuleResponse.Success"));
 
 		Data data = new Data();
-		data.setAppName(_ctx.stringValue("EnableIsolationRuleResponse.Data.AppName"));
-		data.setThreshold(_ctx.floatValue("EnableIsolationRuleResponse.Data.Threshold"));
-		data.setEnable(_ctx.booleanValue("EnableIsolationRuleResponse.Data.Enable"));
-		data.setLimitOrigin(_ctx.stringValue("EnableIsolationRuleResponse.Data.LimitOrigin"));
-		data.setNamespace(_ctx.stringValue("EnableIsolationRuleResponse.Data.Namespace"));
-		data.setRefResource(_ctx.stringValue("EnableIsolationRuleResponse.Data.RefResource"));
 		data.setRelationStrategy(_ctx.integerValue("EnableIsolationRuleResponse.Data.RelationStrategy"));
 		data.setResource(_ctx.stringValue("EnableIsolationRuleResponse.Data.Resource"));
+		data.setAppName(_ctx.stringValue("EnableIsolationRuleResponse.Data.AppName"));
+		data.setRefResource(_ctx.stringValue("EnableIsolationRuleResponse.Data.RefResource"));
+		data.setNamespace(_ctx.stringValue("EnableIsolationRuleResponse.Data.Namespace"));
+		data.setLimitOrigin(_ctx.stringValue("EnableIsolationRuleResponse.Data.LimitOrigin"));
+		data.setThreshold(_ctx.floatValue("EnableIsolationRuleResponse.Data.Threshold"));
 		data.setRuleId(_ctx.longValue("EnableIsolationRuleResponse.Data.RuleId"));
+		data.setEnable(_ctx.booleanValue("EnableIsolationRuleResponse.Data.Enable"));
 		enableIsolationRuleResponse.setData(data);
 	 
 	 	return enableIsolationRuleResponse;

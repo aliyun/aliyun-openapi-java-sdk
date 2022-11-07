@@ -27,29 +27,29 @@ public class GetActivityTaskResponseUnmarshaller {
 	public static GetActivityTaskResponse unmarshall(GetActivityTaskResponse getActivityTaskResponse, UnmarshallerContext _ctx) {
 		
 		getActivityTaskResponse.setRequestId(_ctx.stringValue("GetActivityTaskResponse.RequestId"));
-		getActivityTaskResponse.setActivityId(_ctx.stringValue("GetActivityTaskResponse.ActivityId"));
-		getActivityTaskResponse.setActivityName(_ctx.stringValue("GetActivityTaskResponse.ActivityName"));
+		getActivityTaskResponse.setPhase(_ctx.stringValue("GetActivityTaskResponse.Phase"));
 		getActivityTaskResponse.setEndTime(_ctx.longValue("GetActivityTaskResponse.EndTime"));
+		getActivityTaskResponse.setActivityName(_ctx.stringValue("GetActivityTaskResponse.ActivityName"));
+		getActivityTaskResponse.setState(_ctx.stringValue("GetActivityTaskResponse.State"));
+		getActivityTaskResponse.setActivityId(_ctx.stringValue("GetActivityTaskResponse.ActivityId"));
 		getActivityTaskResponse.setExperimentTaskId(_ctx.stringValue("GetActivityTaskResponse.ExperimentTaskId"));
 		getActivityTaskResponse.setHttpStatusCode(_ctx.integerValue("GetActivityTaskResponse.HttpStatusCode"));
-		getActivityTaskResponse.setPhase(_ctx.stringValue("GetActivityTaskResponse.Phase"));
-		getActivityTaskResponse.setRunResult(_ctx.stringValue("GetActivityTaskResponse.RunResult"));
 		getActivityTaskResponse.setStartTime(_ctx.longValue("GetActivityTaskResponse.StartTime"));
-		getActivityTaskResponse.setState(_ctx.stringValue("GetActivityTaskResponse.State"));
+		getActivityTaskResponse.setRunResult(_ctx.stringValue("GetActivityTaskResponse.RunResult"));
 		getActivityTaskResponse.setSuccess(_ctx.booleanValue("GetActivityTaskResponse.Success"));
 
 		List<HostsItem> hosts = new ArrayList<HostsItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetActivityTaskResponse.Hosts.Length"); i++) {
 			HostsItem hostsItem = new HostsItem();
-			hostsItem.setData(_ctx.stringValue("GetActivityTaskResponse.Hosts["+ i +"].Data"));
-			hostsItem.setEndTime(_ctx.longValue("GetActivityTaskResponse.Hosts["+ i +"].EndTime"));
-			hostsItem.setErrorMessage(_ctx.stringValue("GetActivityTaskResponse.Hosts["+ i +"].ErrorMessage"));
 			hostsItem.setHostIp(_ctx.stringValue("GetActivityTaskResponse.Hosts["+ i +"].HostIp"));
-			hostsItem.setResult(_ctx.stringValue("GetActivityTaskResponse.Hosts["+ i +"].Result"));
+			hostsItem.setEndTime(_ctx.longValue("GetActivityTaskResponse.Hosts["+ i +"].EndTime"));
 			hostsItem.setStartTime(_ctx.longValue("GetActivityTaskResponse.Hosts["+ i +"].StartTime"));
+			hostsItem.setData(_ctx.stringValue("GetActivityTaskResponse.Hosts["+ i +"].Data"));
+			hostsItem.setErrorMessage(_ctx.stringValue("GetActivityTaskResponse.Hosts["+ i +"].ErrorMessage"));
+			hostsItem.setExpId(_ctx.stringValue("GetActivityTaskResponse.Hosts["+ i +"].ExpId"));
+			hostsItem.setResult(_ctx.stringValue("GetActivityTaskResponse.Hosts["+ i +"].Result"));
 			hostsItem.setState(_ctx.stringValue("GetActivityTaskResponse.Hosts["+ i +"].State"));
 			hostsItem.setTaskId(_ctx.stringValue("GetActivityTaskResponse.Hosts["+ i +"].TaskId"));
-			hostsItem.setExpId(_ctx.stringValue("GetActivityTaskResponse.Hosts["+ i +"].ExpId"));
 
 			hosts.add(hostsItem);
 		}

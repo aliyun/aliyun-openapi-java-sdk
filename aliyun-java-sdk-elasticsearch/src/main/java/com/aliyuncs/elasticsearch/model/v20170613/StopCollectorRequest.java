@@ -27,8 +27,6 @@ public class StopCollectorRequest extends RoaAcsRequest<StopCollectorResponse> {
 
 	private String clientToken;
 
-	private String body;
-
 	private String resId;
 	public StopCollectorRequest() {
 		super("elasticsearch", "2017-06-13", "StopCollector", "elasticsearch");
@@ -48,17 +46,6 @@ public class StopCollectorRequest extends RoaAcsRequest<StopCollectorResponse> {
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public String getBody() {
-		return this.body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
-		if(body != null){
-			putBodyParameter("body", body);
 		}
 	}
 

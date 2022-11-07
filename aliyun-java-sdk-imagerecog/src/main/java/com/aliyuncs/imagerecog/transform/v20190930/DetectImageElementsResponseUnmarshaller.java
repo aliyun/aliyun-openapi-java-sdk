@@ -35,11 +35,11 @@ public class DetectImageElementsResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DetectImageElementsResponse.Data.Elements.Length"); i++) {
 			Element element = new Element();
 			element.setType(_ctx.stringValue("DetectImageElementsResponse.Data.Elements["+ i +"].Type"));
-			element.setX(_ctx.integerValue("DetectImageElementsResponse.Data.Elements["+ i +"].X"));
-			element.setY(_ctx.integerValue("DetectImageElementsResponse.Data.Elements["+ i +"].Y"));
 			element.setWidth(_ctx.integerValue("DetectImageElementsResponse.Data.Elements["+ i +"].Width"));
 			element.setHeight(_ctx.integerValue("DetectImageElementsResponse.Data.Elements["+ i +"].Height"));
+			element.setY(_ctx.integerValue("DetectImageElementsResponse.Data.Elements["+ i +"].Y"));
 			element.setScore(_ctx.floatValue("DetectImageElementsResponse.Data.Elements["+ i +"].Score"));
+			element.setX(_ctx.integerValue("DetectImageElementsResponse.Data.Elements["+ i +"].X"));
 
 			elements.add(element);
 		}

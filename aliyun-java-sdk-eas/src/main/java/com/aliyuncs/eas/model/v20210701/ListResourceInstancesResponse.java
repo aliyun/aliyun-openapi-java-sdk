@@ -91,6 +91,8 @@ public class ListResourceInstancesResponse extends AcsResponse {
 
 		private String instanceMemory;
 
+		private String instanceGpuMemory;
+
 		private Float instanceUsedCpu;
 
 		private Integer instanceUsedGpu;
@@ -106,6 +108,12 @@ public class ListResourceInstancesResponse extends AcsResponse {
 		private String expiredTime;
 
 		private Boolean autoRenewal;
+
+		private String arch;
+
+		private String region;
+
+		private String zone;
 
 		public String getInstanceId() {
 			return this.instanceId;
@@ -161,6 +169,14 @@ public class ListResourceInstancesResponse extends AcsResponse {
 
 		public void setInstanceMemory(String instanceMemory) {
 			this.instanceMemory = instanceMemory;
+		}
+
+		public String getInstanceGpuMemory() {
+			return this.instanceGpuMemory;
+		}
+
+		public void setInstanceGpuMemory(String instanceGpuMemory) {
+			this.instanceGpuMemory = instanceGpuMemory;
 		}
 
 		public Float getInstanceUsedCpu() {
@@ -225,6 +241,30 @@ public class ListResourceInstancesResponse extends AcsResponse {
 
 		public void setAutoRenewal(Boolean autoRenewal) {
 			this.autoRenewal = autoRenewal;
+		}
+
+		public String getArch() {
+			return this.arch;
+		}
+
+		public void setArch(String arch) {
+			this.arch = arch;
+		}
+
+		public String getRegion() {
+			return this.region;
+		}
+
+		public void setRegion(String region) {
+			this.region = region;
+		}
+
+		public String getZone() {
+			return this.zone;
+		}
+
+		public void setZone(String zone) {
+			this.zone = zone;
 		}
 	}
 

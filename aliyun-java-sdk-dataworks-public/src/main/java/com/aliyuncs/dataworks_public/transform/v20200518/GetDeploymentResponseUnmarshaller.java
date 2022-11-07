@@ -14,8 +14,12 @@
 
 package com.aliyuncs.dataworks_public.transform.v20200518;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.dataworks_public.model.v20200518.GetDeploymentResponse;
 import com.aliyuncs.dataworks_public.model.v20200518.GetDeploymentResponse.Data;
+import com.aliyuncs.dataworks_public.model.v20200518.GetDeploymentResponse.Data.DeployedItem;
 import com.aliyuncs.dataworks_public.model.v20200518.GetDeploymentResponse.Data.Deployment;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -44,6 +48,17 @@ public class GetDeploymentResponseUnmarshaller {
 		deployment.setExecuteTime(_ctx.longValue("GetDeploymentResponse.Data.Deployment.ExecuteTime"));
 		deployment.setName(_ctx.stringValue("GetDeploymentResponse.Data.Deployment.Name"));
 		data.setDeployment(deployment);
+
+		List<DeployedItem> deployedItems = new ArrayList<DeployedItem>();
+		for (int i = 0; i < _ctx.lengthValue("GetDeploymentResponse.Data.DeployedItems.Length"); i++) {
+			DeployedItem deployedItem = new DeployedItem();
+			deployedItem.setFileId(_ctx.longValue("GetDeploymentResponse.Data.DeployedItems["+ i +"].FileId"));
+			deployedItem.setFileVersion(_ctx.longValue("GetDeploymentResponse.Data.DeployedItems["+ i +"].FileVersion"));
+			deployedItem.setStatus(_ctx.integerValue("GetDeploymentResponse.Data.DeployedItems["+ i +"].Status"));
+
+			deployedItems.add(deployedItem);
+		}
+		data.setDeployedItems(deployedItems);
 		getDeploymentResponse.setData(data);
 	 
 	 	return getDeploymentResponse;

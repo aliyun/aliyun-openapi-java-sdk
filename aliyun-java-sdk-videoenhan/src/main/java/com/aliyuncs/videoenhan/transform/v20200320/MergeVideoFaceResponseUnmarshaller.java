@@ -24,6 +24,8 @@ public class MergeVideoFaceResponseUnmarshaller {
 	public static MergeVideoFaceResponse unmarshall(MergeVideoFaceResponse mergeVideoFaceResponse, UnmarshallerContext _ctx) {
 		
 		mergeVideoFaceResponse.setRequestId(_ctx.stringValue("MergeVideoFaceResponse.RequestId"));
+		mergeVideoFaceResponse.setCode(_ctx.stringValue("MergeVideoFaceResponse.Code"));
+		mergeVideoFaceResponse.setMessage(_ctx.stringValue("MergeVideoFaceResponse.Message"));
 
 		Data data = new Data();
 		data.setVideoURL(_ctx.stringValue("MergeVideoFaceResponse.Data.VideoURL"));

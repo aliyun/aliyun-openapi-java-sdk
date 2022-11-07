@@ -41,8 +41,6 @@ public class ListActionRecordsRequest extends RoaAcsRequest<ListActionRecordsRes
 
 	private Integer startTime;
 
-	private String body;
-
 	private String userId;
 	public ListActionRecordsRequest() {
 		super("elasticsearch", "2017-06-13", "ListActionRecords", "elasticsearch");
@@ -139,17 +137,6 @@ public class ListActionRecordsRequest extends RoaAcsRequest<ListActionRecordsRes
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("startTime", startTime.toString());
-		}
-	}
-
-	public String getBody() {
-		return this.body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
-		if(body != null){
-			putBodyParameter("body", body);
 		}
 	}
 

@@ -30,6 +30,8 @@ public class RenewReservedInstancesRequest extends RpcAcsRequest<RenewReservedIn
 
 	private String clientToken;
 
+	private Integer autoRenewPeriod;
+
 	private Integer period;
 
 	private String resourceOwnerAccount;
@@ -41,6 +43,8 @@ public class RenewReservedInstancesRequest extends RpcAcsRequest<RenewReservedIn
 	private String periodUnit;
 
 	private List<String> reservedInstanceIds;
+
+	private Boolean autoRenew;
 	public RenewReservedInstancesRequest() {
 		super("Ecs", "2014-05-26", "RenewReservedInstances");
 		setMethod(MethodType.POST);
@@ -69,6 +73,17 @@ public class RenewReservedInstancesRequest extends RpcAcsRequest<RenewReservedIn
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public Integer getAutoRenewPeriod() {
+		return this.autoRenewPeriod;
+	}
+
+	public void setAutoRenewPeriod(Integer autoRenewPeriod) {
+		this.autoRenewPeriod = autoRenewPeriod;
+		if(autoRenewPeriod != null){
+			putQueryParameter("AutoRenewPeriod", autoRenewPeriod.toString());
 		}
 	}
 
@@ -138,6 +153,17 @@ public class RenewReservedInstancesRequest extends RpcAcsRequest<RenewReservedIn
 				putQueryParameter("ReservedInstanceId." + (i + 1) , reservedInstanceIds.get(i));
 			}
 		}	
+	}
+
+	public Boolean getAutoRenew() {
+		return this.autoRenew;
+	}
+
+	public void setAutoRenew(Boolean autoRenew) {
+		this.autoRenew = autoRenew;
+		if(autoRenew != null){
+			putQueryParameter("AutoRenew", autoRenew.toString());
+		}
 	}
 
 	@Override

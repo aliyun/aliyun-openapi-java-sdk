@@ -1,3 +1,6 @@
+2022-10-09 Version: 2.8.24
+- Modify ListRetcodeApps.
+
 2022-09-05 Version: 2.8.23
 - Update sdk.
 

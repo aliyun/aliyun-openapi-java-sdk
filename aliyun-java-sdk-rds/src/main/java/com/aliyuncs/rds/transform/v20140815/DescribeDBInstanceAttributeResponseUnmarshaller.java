@@ -116,6 +116,7 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 			dBInstanceAttribute.setEngine(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].Engine"));
 			dBInstanceAttribute.setDeletionProtection(_ctx.booleanValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DeletionProtection"));
 			dBInstanceAttribute.setKindCode(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].kindCode"));
+			dBInstanceAttribute.setInstructionSetArch(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].InstructionSetArch"));
 
 			Extra extra = new Extra();
 			extra.setReplicaGroupStatus(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].Extra.ReplicaGroupStatus"));

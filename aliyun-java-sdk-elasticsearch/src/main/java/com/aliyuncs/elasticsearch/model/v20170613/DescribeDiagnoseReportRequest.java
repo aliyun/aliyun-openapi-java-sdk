@@ -30,8 +30,6 @@ public class DescribeDiagnoseReportRequest extends RoaAcsRequest<DescribeDiagnos
 	private String reportId;
 
 	private String lang;
-
-	private String body;
 	public DescribeDiagnoseReportRequest() {
 		super("elasticsearch", "2017-06-13", "DescribeDiagnoseReport", "elasticsearch");
 		setUriPattern("/openapi/diagnosis/instances/[InstanceId]/reports/[ReportId]");
@@ -72,17 +70,6 @@ public class DescribeDiagnoseReportRequest extends RoaAcsRequest<DescribeDiagnos
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("lang", lang);
-		}
-	}
-
-	public String getBody() {
-		return this.body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
-		if(body != null){
-			putBodyParameter("body", body);
 		}
 	}
 

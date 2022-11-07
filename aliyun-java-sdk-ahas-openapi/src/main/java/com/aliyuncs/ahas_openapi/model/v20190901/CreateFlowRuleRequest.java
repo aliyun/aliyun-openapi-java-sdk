@@ -25,23 +25,25 @@ import com.aliyuncs.ahas_openapi.Endpoint;
 public class CreateFlowRuleRequest extends RpcAcsRequest<CreateFlowRuleResponse> {
 	   
 
-	private String refResource;
-
-	private Integer warmUpPeriodSec;
-
 	private Integer controlBehavior;
-
-	private String resource;
 
 	private Float threshold;
 
 	private String ahasRegionId;
 
-	private String limitOrigin;
-
 	private String appName;
 
 	private Boolean enable;
+
+	private String refResource;
+
+	private Integer warmUpPeriodSec;
+
+	private String resource;
+
+	private Integer thresholdMode;
+
+	private String limitOrigin;
 
 	private String namespace;
 
@@ -57,28 +59,6 @@ public class CreateFlowRuleRequest extends RpcAcsRequest<CreateFlowRuleResponse>
 		} catch (Exception e) {}
 	}
 
-	public String getRefResource() {
-		return this.refResource;
-	}
-
-	public void setRefResource(String refResource) {
-		this.refResource = refResource;
-		if(refResource != null){
-			putQueryParameter("RefResource", refResource);
-		}
-	}
-
-	public Integer getWarmUpPeriodSec() {
-		return this.warmUpPeriodSec;
-	}
-
-	public void setWarmUpPeriodSec(Integer warmUpPeriodSec) {
-		this.warmUpPeriodSec = warmUpPeriodSec;
-		if(warmUpPeriodSec != null){
-			putQueryParameter("WarmUpPeriodSec", warmUpPeriodSec.toString());
-		}
-	}
-
 	public Integer getControlBehavior() {
 		return this.controlBehavior;
 	}
@@ -87,17 +67,6 @@ public class CreateFlowRuleRequest extends RpcAcsRequest<CreateFlowRuleResponse>
 		this.controlBehavior = controlBehavior;
 		if(controlBehavior != null){
 			putQueryParameter("ControlBehavior", controlBehavior.toString());
-		}
-	}
-
-	public String getResource() {
-		return this.resource;
-	}
-
-	public void setResource(String resource) {
-		this.resource = resource;
-		if(resource != null){
-			putQueryParameter("Resource", resource);
 		}
 	}
 
@@ -123,17 +92,6 @@ public class CreateFlowRuleRequest extends RpcAcsRequest<CreateFlowRuleResponse>
 		}
 	}
 
-	public String getLimitOrigin() {
-		return this.limitOrigin;
-	}
-
-	public void setLimitOrigin(String limitOrigin) {
-		this.limitOrigin = limitOrigin;
-		if(limitOrigin != null){
-			putQueryParameter("LimitOrigin", limitOrigin);
-		}
-	}
-
 	public String getAppName() {
 		return this.appName;
 	}
@@ -153,6 +111,61 @@ public class CreateFlowRuleRequest extends RpcAcsRequest<CreateFlowRuleResponse>
 		this.enable = enable;
 		if(enable != null){
 			putQueryParameter("Enable", enable.toString());
+		}
+	}
+
+	public String getRefResource() {
+		return this.refResource;
+	}
+
+	public void setRefResource(String refResource) {
+		this.refResource = refResource;
+		if(refResource != null){
+			putQueryParameter("RefResource", refResource);
+		}
+	}
+
+	public Integer getWarmUpPeriodSec() {
+		return this.warmUpPeriodSec;
+	}
+
+	public void setWarmUpPeriodSec(Integer warmUpPeriodSec) {
+		this.warmUpPeriodSec = warmUpPeriodSec;
+		if(warmUpPeriodSec != null){
+			putQueryParameter("WarmUpPeriodSec", warmUpPeriodSec.toString());
+		}
+	}
+
+	public String getResource() {
+		return this.resource;
+	}
+
+	public void setResource(String resource) {
+		this.resource = resource;
+		if(resource != null){
+			putQueryParameter("Resource", resource);
+		}
+	}
+
+	public Integer getThresholdMode() {
+		return this.thresholdMode;
+	}
+
+	public void setThresholdMode(Integer thresholdMode) {
+		this.thresholdMode = thresholdMode;
+		if(thresholdMode != null){
+			putQueryParameter("ThresholdMode", thresholdMode.toString());
+		}
+	}
+
+	public String getLimitOrigin() {
+		return this.limitOrigin;
+	}
+
+	public void setLimitOrigin(String limitOrigin) {
+		this.limitOrigin = limitOrigin;
+		if(limitOrigin != null){
+			putQueryParameter("LimitOrigin", limitOrigin);
 		}
 	}
 

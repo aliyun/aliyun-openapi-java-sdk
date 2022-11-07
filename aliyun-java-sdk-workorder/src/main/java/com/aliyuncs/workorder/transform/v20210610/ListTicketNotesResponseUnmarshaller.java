@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.workorder.model.v20210610.ListTicketNotesResponse;
 import com.aliyuncs.workorder.model.v20210610.ListTicketNotesResponse.DataItem;
+import com.aliyuncs.workorder.model.v20210610.ListTicketNotesResponse.DataItem.AttachmentsItem;
 import com.aliyuncs.workorder.model.v20210610.ListTicketNotesResponse.DataItem.Dialog;
 import com.aliyuncs.workorder.model.v20210610.ListTicketNotesResponse.DataItem.User;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -36,21 +37,31 @@ public class ListTicketNotesResponseUnmarshaller {
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListTicketNotesResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setStatus(_ctx.integerValue("ListTicketNotesResponse.Data["+ i +"].Status"));
-			dataItem.setCreateTime(_ctx.longValue("ListTicketNotesResponse.Data["+ i +"].CreateTime"));
 			dataItem.setType(_ctx.integerValue("ListTicketNotesResponse.Data["+ i +"].Type"));
-			dataItem.setDialogId(_ctx.longValue("ListTicketNotesResponse.Data["+ i +"].DialogId"));
+			dataItem.setStatus(_ctx.integerValue("ListTicketNotesResponse.Data["+ i +"].Status"));
 			dataItem.setTip(_ctx.stringValue("ListTicketNotesResponse.Data["+ i +"].Tip"));
+			dataItem.setDialogId(_ctx.longValue("ListTicketNotesResponse.Data["+ i +"].DialogId"));
+			dataItem.setCreateTime(_ctx.longValue("ListTicketNotesResponse.Data["+ i +"].CreateTime"));
 
 			Dialog dialog = new Dialog();
-			dialog.setContent(_ctx.stringValue("ListTicketNotesResponse.Data["+ i +"].Dialog.Content"));
 			dialog.setSchema(_ctx.stringValue("ListTicketNotesResponse.Data["+ i +"].Dialog.Schema"));
+			dialog.setContent(_ctx.stringValue("ListTicketNotesResponse.Data["+ i +"].Dialog.Content"));
 			dataItem.setDialog(dialog);
 
 			User user = new User();
-			user.setName(_ctx.stringValue("ListTicketNotesResponse.Data["+ i +"].User.Name"));
 			user.setRole(_ctx.integerValue("ListTicketNotesResponse.Data["+ i +"].User.Role"));
+			user.setName(_ctx.stringValue("ListTicketNotesResponse.Data["+ i +"].User.Name"));
 			dataItem.setUser(user);
+
+			List<AttachmentsItem> attachments = new ArrayList<AttachmentsItem>();
+			for (int j = 0; j < _ctx.lengthValue("ListTicketNotesResponse.Data["+ i +"].Attachments.Length"); j++) {
+				AttachmentsItem attachmentsItem = new AttachmentsItem();
+				attachmentsItem.setName(_ctx.stringValue("ListTicketNotesResponse.Data["+ i +"].Attachments["+ j +"].Name"));
+				attachmentsItem.setUrl(_ctx.stringValue("ListTicketNotesResponse.Data["+ i +"].Attachments["+ j +"].Url"));
+
+				attachments.add(attachmentsItem);
+			}
+			dataItem.setAttachments(attachments);
 
 			data.add(dataItem);
 		}

@@ -25,11 +25,11 @@ import com.aliyuncs.imageprocess.Endpoint;
 public class DetectSkinDiseaseRequest extends RpcAcsRequest<DetectSkinDiseaseResponse> {
 	   
 
+	private String orgName;
+
 	private String url;
 
 	private String orgId;
-
-	private String orgName;
 	public DetectSkinDiseaseRequest() {
 		super("imageprocess", "2020-03-20", "DetectSkinDisease", "imageprocess");
 		setMethod(MethodType.POST);
@@ -37,6 +37,17 @@ public class DetectSkinDiseaseRequest extends RpcAcsRequest<DetectSkinDiseaseRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getOrgName() {
+		return this.orgName;
+	}
+
+	public void setOrgName(String orgName) {
+		this.orgName = orgName;
+		if(orgName != null){
+			putBodyParameter("OrgName", orgName);
+		}
 	}
 
 	public String getUrl() {
@@ -58,17 +69,6 @@ public class DetectSkinDiseaseRequest extends RpcAcsRequest<DetectSkinDiseaseRes
 		this.orgId = orgId;
 		if(orgId != null){
 			putBodyParameter("OrgId", orgId);
-		}
-	}
-
-	public String getOrgName() {
-		return this.orgName;
-	}
-
-	public void setOrgName(String orgName) {
-		this.orgName = orgName;
-		if(orgName != null){
-			putBodyParameter("OrgName", orgName);
 		}
 	}
 

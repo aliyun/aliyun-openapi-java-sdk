@@ -40,6 +40,8 @@ public class ListClassesResponseUnmarshaller {
 			classList.setClassCode(_ctx.stringValue("ListClassesResponse.Items["+ i +"].ClassCode"));
 			classList.setClassGroup(_ctx.stringValue("ListClassesResponse.Items["+ i +"].ClassGroup"));
 			classList.setMaxIOMBPS(_ctx.stringValue("ListClassesResponse.Items["+ i +"].MaxIOMBPS"));
+			classList.setEncryptedMemory(_ctx.stringValue("ListClassesResponse.Items["+ i +"].EncryptedMemory"));
+			classList.setInstructionSetArch(_ctx.stringValue("ListClassesResponse.Items["+ i +"].InstructionSetArch"));
 
 			items.add(classList);
 		}

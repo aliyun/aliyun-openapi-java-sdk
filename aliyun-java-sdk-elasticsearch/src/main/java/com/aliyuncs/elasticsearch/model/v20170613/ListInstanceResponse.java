@@ -86,6 +86,8 @@ public class ListInstanceResponse extends AcsResponse {
 
 		private String instanceId;
 
+		private String vpcInstanceId;
+
 		private List<Tag> tags;
 
 		private List<Map<Object,Object>> extendConfigs;
@@ -212,6 +214,14 @@ public class ListInstanceResponse extends AcsResponse {
 
 		public void setInstanceId(String instanceId) {
 			this.instanceId = instanceId;
+		}
+
+		public String getVpcInstanceId() {
+			return this.vpcInstanceId;
+		}
+
+		public void setVpcInstanceId(String vpcInstanceId) {
+			this.vpcInstanceId = vpcInstanceId;
 		}
 
 		public List<Tag> getTags() {
@@ -536,6 +546,8 @@ public class ListInstanceResponse extends AcsResponse {
 
 			private String diskType;
 
+			private String performanceLevel;
+
 			public String getSpec() {
 				return this.spec;
 			}
@@ -566,6 +578,14 @@ public class ListInstanceResponse extends AcsResponse {
 
 			public void setDiskType(String diskType) {
 				this.diskType = diskType;
+			}
+
+			public String getPerformanceLevel() {
+				return this.performanceLevel;
+			}
+
+			public void setPerformanceLevel(String performanceLevel) {
+				this.performanceLevel = performanceLevel;
 			}
 		}
 	}

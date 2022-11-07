@@ -35,6 +35,7 @@ public class CreateIpSetsResponseUnmarshaller {
 			gaIpSet.setAccelerateRegionId(_ctx.stringValue("CreateIpSetsResponse.IpSets["+ i +"].AccelerateRegionId"));
 			gaIpSet.setBandwidth(_ctx.integerValue("CreateIpSetsResponse.IpSets["+ i +"].Bandwidth"));
 			gaIpSet.setIpSetId(_ctx.stringValue("CreateIpSetsResponse.IpSets["+ i +"].IpSetId"));
+			gaIpSet.setIspType(_ctx.stringValue("CreateIpSetsResponse.IpSets["+ i +"].IspType"));
 
 			List<String> ipList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("CreateIpSetsResponse.IpSets["+ i +"].IpList.Length"); j++) {

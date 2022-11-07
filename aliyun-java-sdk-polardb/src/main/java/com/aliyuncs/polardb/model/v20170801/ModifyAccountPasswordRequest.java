@@ -39,7 +39,7 @@ public class ModifyAccountPasswordRequest extends RpcAcsRequest<ModifyAccountPas
 
 	private Long ownerId;
 	public ModifyAccountPasswordRequest() {
-		super("polardb", "2017-08-01", "ModifyAccountPassword");
+		super("polardb", "2017-08-01", "ModifyAccountPassword", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

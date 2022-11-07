@@ -32,6 +32,10 @@ public class ShrinkNodeRequest extends RoaAcsRequest<ShrinkNodeResponse> {
 	private String nodeType;
 
 	private String clientToken;
+
+	private Integer count;
+
+	private String body;
 	public ShrinkNodeRequest() {
 		super("elasticsearch", "2017-06-13", "ShrinkNode", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/actions/shrink");
@@ -83,6 +87,28 @@ public class ShrinkNodeRequest extends RoaAcsRequest<ShrinkNodeResponse> {
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("clientToken", clientToken);
+		}
+	}
+
+	public Integer getCount() {
+		return this.count;
+	}
+
+	public void setCount(Integer count) {
+		this.count = count;
+		if(count != null){
+			putQueryParameter("count", count.toString());
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

@@ -34,11 +34,17 @@ public class InvokeCommandRequest extends RpcAcsRequest<InvokeCommandResponse> {
 
 	private String commandId;
 
+	private Long timeout;
+
 	private String frequency;
+
+	private String resourceGroupId;
 
 	private String repeatMode;
 
 	private String windowsPasswordName;
+
+	private List<Tag> tags;
 
 	private Boolean timed;
 
@@ -97,6 +103,17 @@ public class InvokeCommandRequest extends RpcAcsRequest<InvokeCommandResponse> {
 		}
 	}
 
+	public Long getTimeout() {
+		return this.timeout;
+	}
+
+	public void setTimeout(Long timeout) {
+		this.timeout = timeout;
+		if(timeout != null){
+			putQueryParameter("Timeout", timeout.toString());
+		}
+	}
+
 	public String getFrequency() {
 		return this.frequency;
 	}
@@ -105,6 +122,17 @@ public class InvokeCommandRequest extends RpcAcsRequest<InvokeCommandResponse> {
 		this.frequency = frequency;
 		if(frequency != null){
 			putQueryParameter("Frequency", frequency);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
@@ -128,6 +156,20 @@ public class InvokeCommandRequest extends RpcAcsRequest<InvokeCommandResponse> {
 		if(windowsPasswordName != null){
 			putQueryParameter("WindowsPasswordName", windowsPasswordName);
 		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+			}
+		}	
 	}
 
 	public Boolean getTimed() {
@@ -217,6 +259,29 @@ public class InvokeCommandRequest extends RpcAcsRequest<InvokeCommandResponse> {
 		this.username = username;
 		if(username != null){
 			putQueryParameter("Username", username);
+		}
+	}
+
+	public static class Tag {
+
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
 		}
 	}
 

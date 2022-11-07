@@ -28,8 +28,6 @@ public class UpdateBlackIpsRequest extends RoaAcsRequest<UpdateBlackIpsResponse>
 	private String instanceId;
 
 	private String clientToken;
-
-	private String body;
 	public UpdateBlackIpsRequest() {
 		super("elasticsearch", "2017-06-13", "UpdateBlackIps", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/black-ips");
@@ -59,17 +57,6 @@ public class UpdateBlackIpsRequest extends RoaAcsRequest<UpdateBlackIpsResponse>
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("clientToken", clientToken);
-		}
-	}
-
-	public String getBody() {
-		return this.body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
-		if(body != null){
-			putBodyParameter("body", body);
 		}
 	}
 

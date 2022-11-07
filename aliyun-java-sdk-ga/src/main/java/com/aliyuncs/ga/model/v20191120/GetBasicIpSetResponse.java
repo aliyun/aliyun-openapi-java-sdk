@@ -28,7 +28,7 @@ public class GetBasicIpSetResponse extends AcsResponse {
 
 	private String accelerateRegionId;
 
-	private Integer bandwidth;
+	private Long bandwidth;
 
 	private String ipSetId;
 
@@ -58,11 +58,11 @@ public class GetBasicIpSetResponse extends AcsResponse {
 		this.accelerateRegionId = accelerateRegionId;
 	}
 
-	public Integer getBandwidth() {
+	public Long getBandwidth() {
 		return this.bandwidth;
 	}
 
-	public void setBandwidth(Integer bandwidth) {
+	public void setBandwidth(Long bandwidth) {
 		this.bandwidth = bandwidth;
 	}
 

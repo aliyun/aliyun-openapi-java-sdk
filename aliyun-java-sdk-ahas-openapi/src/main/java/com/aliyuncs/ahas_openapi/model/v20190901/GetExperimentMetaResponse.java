@@ -25,30 +25,30 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetExperimentMetaResponse extends AcsResponse {
 
-	private String code;
+	private String requestId;
 
 	private String message;
 
-	private String requestId;
-
-	private Boolean success;
+	private String state;
 
 	private String experimentId;
 
-	private String name;
-
 	private String createTime;
 
-	private String state;
+	private String code;
+
+	private Boolean success;
+
+	private String name;
 
 	private List<String> tags;
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -59,20 +59,12 @@ public class GetExperimentMetaResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getState() {
+		return this.state;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setState(String state) {
+		this.state = state;
 	}
 
 	public String getExperimentId() {
@@ -83,14 +75,6 @@ public class GetExperimentMetaResponse extends AcsResponse {
 		this.experimentId = experimentId;
 	}
 
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
 	public String getCreateTime() {
 		return this.createTime;
 	}
@@ -99,12 +83,28 @@ public class GetExperimentMetaResponse extends AcsResponse {
 		this.createTime = createTime;
 	}
 
-	public String getState() {
-		return this.state;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setState(String state) {
-		this.state = state;
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public List<String> getTags() {

@@ -23,10 +23,10 @@ public class ExecuteExperimentResponseUnmarshaller {
 	public static ExecuteExperimentResponse unmarshall(ExecuteExperimentResponse executeExperimentResponse, UnmarshallerContext _ctx) {
 		
 		executeExperimentResponse.setRequestId(_ctx.stringValue("ExecuteExperimentResponse.RequestId"));
-		executeExperimentResponse.setCode(_ctx.stringValue("ExecuteExperimentResponse.Code"));
-		executeExperimentResponse.setMessage(_ctx.stringValue("ExecuteExperimentResponse.Message"));
-		executeExperimentResponse.setSuccess(_ctx.booleanValue("ExecuteExperimentResponse.Success"));
 		executeExperimentResponse.setTaskId(_ctx.stringValue("ExecuteExperimentResponse.TaskId"));
+		executeExperimentResponse.setMessage(_ctx.stringValue("ExecuteExperimentResponse.Message"));
+		executeExperimentResponse.setCode(_ctx.stringValue("ExecuteExperimentResponse.Code"));
+		executeExperimentResponse.setSuccess(_ctx.booleanValue("ExecuteExperimentResponse.Success"));
 	 
 	 	return executeExperimentResponse;
 	}

@@ -43,7 +43,7 @@ public class ListTransitRouterVpnAttachmentsRequest extends RpcAcsRequest<ListTr
 
 	private Integer maxResults;
 	public ListTransitRouterVpnAttachmentsRequest() {
-		super("Cbn", "2017-09-12", "ListTransitRouterVpnAttachments");
+		super("Cbn", "2017-09-12", "ListTransitRouterVpnAttachments", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

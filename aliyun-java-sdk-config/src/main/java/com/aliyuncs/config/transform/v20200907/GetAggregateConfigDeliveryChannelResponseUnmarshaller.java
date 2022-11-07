@@ -40,6 +40,7 @@ public class GetAggregateConfigDeliveryChannelResponseUnmarshaller {
 		deliveryChannel.setNonCompliantNotification(_ctx.booleanValue("GetAggregateConfigDeliveryChannelResponse.DeliveryChannel.NonCompliantNotification"));
 		deliveryChannel.setAggregatorId(_ctx.stringValue("GetAggregateConfigDeliveryChannelResponse.DeliveryChannel.AggregatorId"));
 		deliveryChannel.setAccountId(_ctx.stringValue("GetAggregateConfigDeliveryChannelResponse.DeliveryChannel.AccountId"));
+		deliveryChannel.setDeliverySnapshotTime(_ctx.stringValue("GetAggregateConfigDeliveryChannelResponse.DeliveryChannel.DeliverySnapshotTime"));
 		getAggregateConfigDeliveryChannelResponse.setDeliveryChannel(deliveryChannel);
 	 
 	 	return getAggregateConfigDeliveryChannelResponse;

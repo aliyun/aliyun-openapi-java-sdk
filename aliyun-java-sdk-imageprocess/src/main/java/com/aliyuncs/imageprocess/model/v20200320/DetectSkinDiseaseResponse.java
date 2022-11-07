@@ -49,12 +49,52 @@ public class DetectSkinDiseaseResponse extends AcsResponse {
 
 		private Map<Object,Object> results;
 
+		private Map<Object,Object> resultsEnglish;
+
+		private String bodyPart;
+
+		private Float imageQuality;
+
+		private String imageType;
+
 		public Map<Object,Object> getResults() {
 			return this.results;
 		}
 
 		public void setResults(Map<Object,Object> results) {
 			this.results = results;
+		}
+
+		public Map<Object,Object> getResultsEnglish() {
+			return this.resultsEnglish;
+		}
+
+		public void setResultsEnglish(Map<Object,Object> resultsEnglish) {
+			this.resultsEnglish = resultsEnglish;
+		}
+
+		public String getBodyPart() {
+			return this.bodyPart;
+		}
+
+		public void setBodyPart(String bodyPart) {
+			this.bodyPart = bodyPart;
+		}
+
+		public Float getImageQuality() {
+			return this.imageQuality;
+		}
+
+		public void setImageQuality(Float imageQuality) {
+			this.imageQuality = imageQuality;
+		}
+
+		public String getImageType() {
+			return this.imageType;
+		}
+
+		public void setImageType(String imageType) {
+			this.imageType = imageType;
 		}
 	}
 

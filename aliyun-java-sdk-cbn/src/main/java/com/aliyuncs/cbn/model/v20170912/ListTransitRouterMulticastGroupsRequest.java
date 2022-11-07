@@ -34,6 +34,8 @@ public class ListTransitRouterMulticastGroupsRequest extends RpcAcsRequest<ListT
 
 	private String transitRouterMulticastDomainId;
 
+	private List<String> connectPeerIdss;
+
 	private String nextToken;
 
 	private String groupIpAddress;
@@ -54,7 +56,7 @@ public class ListTransitRouterMulticastGroupsRequest extends RpcAcsRequest<ListT
 
 	private Long maxResults;
 	public ListTransitRouterMulticastGroupsRequest() {
-		super("Cbn", "2017-09-12", "ListTransitRouterMulticastGroups");
+		super("Cbn", "2017-09-12", "ListTransitRouterMulticastGroups", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -106,6 +108,19 @@ public class ListTransitRouterMulticastGroupsRequest extends RpcAcsRequest<ListT
 		if(transitRouterMulticastDomainId != null){
 			putQueryParameter("TransitRouterMulticastDomainId", transitRouterMulticastDomainId);
 		}
+	}
+
+	public List<String> getConnectPeerIdss() {
+		return this.connectPeerIdss;
+	}
+
+	public void setConnectPeerIdss(List<String> connectPeerIdss) {
+		this.connectPeerIdss = connectPeerIdss;	
+		if (connectPeerIdss != null) {
+			for (int i = 0; i < connectPeerIdss.size(); i++) {
+				putQueryParameter("ConnectPeerIds." + (i + 1) , connectPeerIdss.get(i));
+			}
+		}	
 	}
 
 	public String getNextToken() {

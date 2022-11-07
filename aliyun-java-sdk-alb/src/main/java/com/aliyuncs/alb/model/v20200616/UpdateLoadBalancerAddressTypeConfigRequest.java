@@ -88,6 +88,7 @@ public class UpdateLoadBalancerAddressTypeConfigRequest extends RpcAcsRequest<Up
 				if (zoneMappings.get(depth1) != null) {
 					
 						putQueryParameter("ZoneMappings." + (depth1 + 1) + ".VSwitchId" , zoneMappings.get(depth1).getVSwitchId());
+						putQueryParameter("ZoneMappings." + (depth1 + 1) + ".EipType" , zoneMappings.get(depth1).getEipType());
 						putQueryParameter("ZoneMappings." + (depth1 + 1) + ".ZoneId" , zoneMappings.get(depth1).getZoneId());
 						putQueryParameter("ZoneMappings." + (depth1 + 1) + ".AllocationId" , zoneMappings.get(depth1).getAllocationId());
 				}
@@ -110,6 +111,8 @@ public class UpdateLoadBalancerAddressTypeConfigRequest extends RpcAcsRequest<Up
 
 		private String vSwitchId;
 
+		private String eipType;
+
 		private String zoneId;
 
 		private String allocationId;
@@ -120,6 +123,14 @@ public class UpdateLoadBalancerAddressTypeConfigRequest extends RpcAcsRequest<Up
 
 		public void setVSwitchId(String vSwitchId) {
 			this.vSwitchId = vSwitchId;
+		}
+
+		public String getEipType() {
+			return this.eipType;
+		}
+
+		public void setEipType(String eipType) {
+			this.eipType = eipType;
 		}
 
 		public String getZoneId() {

@@ -697,6 +697,8 @@ public class ListSkillGroupSummaryReportsSinceMidnightResponse extends AcsRespon
 
 				private Long averageDialingTime;
 
+				private String callsServiceLevel30;
+
 				public Long getTotalTalkTime() {
 					return this.totalTalkTime;
 				}
@@ -815,6 +817,14 @@ public class ListSkillGroupSummaryReportsSinceMidnightResponse extends AcsRespon
 
 				public void setAverageDialingTime(Long averageDialingTime) {
 					this.averageDialingTime = averageDialingTime;
+				}
+
+				public String getCallsServiceLevel30() {
+					return this.callsServiceLevel30;
+				}
+
+				public void setCallsServiceLevel30(String callsServiceLevel30) {
+					this.callsServiceLevel30 = callsServiceLevel30;
 				}
 			}
 		}

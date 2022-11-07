@@ -31,6 +31,8 @@ public class ListServicesRequest extends RoaAcsRequest<ListServicesResponse> {
 
 	private String sort;
 
+	private String groupName;
+
 	private Integer pageNumber;
 
 	private String order;
@@ -74,6 +76,17 @@ public class ListServicesRequest extends RoaAcsRequest<ListServicesResponse> {
 		this.sort = sort;
 		if(sort != null){
 			putQueryParameter("Sort", sort);
+		}
+	}
+
+	public String getGroupName() {
+		return this.groupName;
+	}
+
+	public void setGroupName(String groupName) {
+		this.groupName = groupName;
+		if(groupName != null){
+			putQueryParameter("GroupName", groupName);
 		}
 	}
 

@@ -39,6 +39,7 @@ public class GetApplicationGroupResponseUnmarshaller {
 		applicationGroup.setStatus(_ctx.stringValue("GetApplicationGroupResponse.ApplicationGroup.Status"));
 		applicationGroup.setStatusReason(_ctx.stringValue("GetApplicationGroupResponse.ApplicationGroup.StatusReason"));
 		applicationGroup.setDeployOutputs(_ctx.stringValue("GetApplicationGroupResponse.ApplicationGroup.DeployOutputs"));
+		applicationGroup.setProgress(_ctx.stringValue("GetApplicationGroupResponse.ApplicationGroup.Progress"));
 		getApplicationGroupResponse.setApplicationGroup(applicationGroup);
 	 
 	 	return getApplicationGroupResponse;

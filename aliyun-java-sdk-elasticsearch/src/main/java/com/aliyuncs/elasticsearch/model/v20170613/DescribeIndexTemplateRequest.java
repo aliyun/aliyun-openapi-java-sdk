@@ -27,8 +27,6 @@ public class DescribeIndexTemplateRequest extends RoaAcsRequest<DescribeIndexTem
 
 	private String instanceId;
 
-	private String body;
-
 	private String indexTemplate;
 	public DescribeIndexTemplateRequest() {
 		super("elasticsearch", "2017-06-13", "DescribeIndexTemplate", "elasticsearch");
@@ -48,17 +46,6 @@ public class DescribeIndexTemplateRequest extends RoaAcsRequest<DescribeIndexTem
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putPathParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getBody() {
-		return this.body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
-		if(body != null){
-			putBodyParameter("body", body);
 		}
 	}
 

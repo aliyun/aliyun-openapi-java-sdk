@@ -30,8 +30,6 @@ public class RolloverDataStreamRequest extends RoaAcsRequest<RolloverDataStreamR
 	private String instanceId;
 
 	private String clientToken;
-
-	private String body;
 	public RolloverDataStreamRequest() {
 		super("elasticsearch", "2017-06-13", "RolloverDataStream", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/data-streams/[DataStream]/rollover");
@@ -72,17 +70,6 @@ public class RolloverDataStreamRequest extends RoaAcsRequest<RolloverDataStreamR
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public String getBody() {
-		return this.body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
-		if(body != null){
-			putBodyParameter("body", body);
 		}
 	}
 

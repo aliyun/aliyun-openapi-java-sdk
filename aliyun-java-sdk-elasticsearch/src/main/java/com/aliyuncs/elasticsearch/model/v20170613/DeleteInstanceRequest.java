@@ -30,8 +30,6 @@ public class DeleteInstanceRequest extends RoaAcsRequest<DeleteInstanceResponse>
 	private String clientToken;
 
 	private String deleteType;
-
-	private String body;
 	public DeleteInstanceRequest() {
 		super("elasticsearch", "2017-06-13", "DeleteInstance", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]");
@@ -72,17 +70,6 @@ public class DeleteInstanceRequest extends RoaAcsRequest<DeleteInstanceResponse>
 		this.deleteType = deleteType;
 		if(deleteType != null){
 			putQueryParameter("deleteType", deleteType);
-		}
-	}
-
-	public String getBody() {
-		return this.body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
-		if(body != null){
-			putBodyParameter("body", body);
 		}
 	}
 

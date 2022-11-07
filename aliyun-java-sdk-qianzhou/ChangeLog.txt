@@ -1,0 +1,6 @@
+2022-11-02 Version: 1.0.1
+- Supported deprecated k8s api.
+
+2022-11-02 Version: 1.0.0
+- Supported deprecated k8s api.
+

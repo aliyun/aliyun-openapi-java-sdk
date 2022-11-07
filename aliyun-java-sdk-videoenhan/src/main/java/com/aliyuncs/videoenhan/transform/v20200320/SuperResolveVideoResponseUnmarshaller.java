@@ -24,6 +24,8 @@ public class SuperResolveVideoResponseUnmarshaller {
 	public static SuperResolveVideoResponse unmarshall(SuperResolveVideoResponse superResolveVideoResponse, UnmarshallerContext _ctx) {
 		
 		superResolveVideoResponse.setRequestId(_ctx.stringValue("SuperResolveVideoResponse.RequestId"));
+		superResolveVideoResponse.setCode(_ctx.stringValue("SuperResolveVideoResponse.Code"));
+		superResolveVideoResponse.setMessage(_ctx.stringValue("SuperResolveVideoResponse.Message"));
 
 		Data data = new Data();
 		data.setVideoUrl(_ctx.stringValue("SuperResolveVideoResponse.Data.VideoUrl"));

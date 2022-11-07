@@ -33,6 +33,8 @@ public class DeleteSecretRequest extends RpcAcsRequest<DeleteSecretResponse> {
 
 	private String engine;
 
+	private String dbInstanceId;
+
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
@@ -88,6 +90,17 @@ public class DeleteSecretRequest extends RpcAcsRequest<DeleteSecretResponse> {
 		this.engine = engine;
 		if(engine != null){
 			putQueryParameter("Engine", engine);
+		}
+	}
+
+	public String getDbInstanceId() {
+		return this.dbInstanceId;
+	}
+
+	public void setDbInstanceId(String dbInstanceId) {
+		this.dbInstanceId = dbInstanceId;
+		if(dbInstanceId != null){
+			putQueryParameter("DbInstanceId", dbInstanceId);
 		}
 	}
 
