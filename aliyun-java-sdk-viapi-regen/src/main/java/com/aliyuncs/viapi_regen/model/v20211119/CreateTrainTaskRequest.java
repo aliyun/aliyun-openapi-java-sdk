@@ -29,15 +29,15 @@ public class CreateTrainTaskRequest extends RpcAcsRequest<CreateTrainTaskRespons
 
 	private String trainMode;
 
+	private String datasetIds;
+
 	private Long preTrainTaskId;
 
 	private String advancedParameters;
 
-	private Long labelId;
-
 	private String name;
 
-	private Long datasetId;
+	private String labelIds;
 
 	private Long workspaceId;
 	public CreateTrainTaskRequest() {
@@ -71,6 +71,17 @@ public class CreateTrainTaskRequest extends RpcAcsRequest<CreateTrainTaskRespons
 		}
 	}
 
+	public String getDatasetIds() {
+		return this.datasetIds;
+	}
+
+	public void setDatasetIds(String datasetIds) {
+		this.datasetIds = datasetIds;
+		if(datasetIds != null){
+			putBodyParameter("DatasetIds", datasetIds);
+		}
+	}
+
 	public Long getPreTrainTaskId() {
 		return this.preTrainTaskId;
 	}
@@ -93,17 +104,6 @@ public class CreateTrainTaskRequest extends RpcAcsRequest<CreateTrainTaskRespons
 		}
 	}
 
-	public Long getLabelId() {
-		return this.labelId;
-	}
-
-	public void setLabelId(Long labelId) {
-		this.labelId = labelId;
-		if(labelId != null){
-			putBodyParameter("LabelId", labelId.toString());
-		}
-	}
-
 	public String getName() {
 		return this.name;
 	}
@@ -115,14 +115,14 @@ public class CreateTrainTaskRequest extends RpcAcsRequest<CreateTrainTaskRespons
 		}
 	}
 
-	public Long getDatasetId() {
-		return this.datasetId;
+	public String getLabelIds() {
+		return this.labelIds;
 	}
 
-	public void setDatasetId(Long datasetId) {
-		this.datasetId = datasetId;
-		if(datasetId != null){
-			putBodyParameter("DatasetId", datasetId.toString());
+	public void setLabelIds(String labelIds) {
+		this.labelIds = labelIds;
+		if(labelIds != null){
+			putBodyParameter("LabelIds", labelIds);
 		}
 	}
 

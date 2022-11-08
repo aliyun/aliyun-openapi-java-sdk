@@ -31,6 +31,8 @@ public class ListLabelsetDatasRequest extends RpcAcsRequest<ListLabelsetDatasRes
 
 	private Long currentPage;
 
+	private Boolean isAbandon;
+
 	private Long labelId;
 
 	private String name;
@@ -75,6 +77,17 @@ public class ListLabelsetDatasRequest extends RpcAcsRequest<ListLabelsetDatasRes
 		this.currentPage = currentPage;
 		if(currentPage != null){
 			putBodyParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public Boolean getIsAbandon() {
+		return this.isAbandon;
+	}
+
+	public void setIsAbandon(Boolean isAbandon) {
+		this.isAbandon = isAbandon;
+		if(isAbandon != null){
+			putBodyParameter("IsAbandon", isAbandon.toString());
 		}
 	}
 
