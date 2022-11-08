@@ -33,7 +33,11 @@ public class ListOrderConsumeStatisticRecordsRequest extends RpcAcsRequest<ListO
 
 	private Integer pageSize;
 
+	private String serviceCode;
+
 	private String statisticTimeMax;
+
+	private String applicationExternalId;
 	public ListOrderConsumeStatisticRecordsRequest() {
 		super("idaas-doraemon", "2021-05-20", "ListOrderConsumeStatisticRecords");
 		setMethod(MethodType.POST);
@@ -87,6 +91,17 @@ public class ListOrderConsumeStatisticRecordsRequest extends RpcAcsRequest<ListO
 		}
 	}
 
+	public String getServiceCode() {
+		return this.serviceCode;
+	}
+
+	public void setServiceCode(String serviceCode) {
+		this.serviceCode = serviceCode;
+		if(serviceCode != null){
+			putQueryParameter("ServiceCode", serviceCode);
+		}
+	}
+
 	public String getStatisticTimeMax() {
 		return this.statisticTimeMax;
 	}
@@ -95,6 +110,17 @@ public class ListOrderConsumeStatisticRecordsRequest extends RpcAcsRequest<ListO
 		this.statisticTimeMax = statisticTimeMax;
 		if(statisticTimeMax != null){
 			putQueryParameter("StatisticTimeMax", statisticTimeMax);
+		}
+	}
+
+	public String getApplicationExternalId() {
+		return this.applicationExternalId;
+	}
+
+	public void setApplicationExternalId(String applicationExternalId) {
+		this.applicationExternalId = applicationExternalId;
+		if(applicationExternalId != null){
+			putQueryParameter("ApplicationExternalId", applicationExternalId);
 		}
 	}
 
