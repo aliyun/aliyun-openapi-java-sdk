@@ -1,3 +1,6 @@
+2022-11-10 Version: 1.0.22
+- Release RecognizeVATInvoice.
+
 2022-10-17 Version: 1.0.21
 - Release RecognizeVATInvoice.
 
