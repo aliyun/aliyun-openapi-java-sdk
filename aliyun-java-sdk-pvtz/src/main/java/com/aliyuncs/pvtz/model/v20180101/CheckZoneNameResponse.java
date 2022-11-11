@@ -26,9 +26,9 @@ public class CheckZoneNameResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
-
 	private Boolean check;
+
+	private Boolean success;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,20 +38,20 @@ public class CheckZoneNameResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public Boolean getCheck() {
 		return this.check;
 	}
 
 	public void setCheck(Boolean check) {
 		this.check = check;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

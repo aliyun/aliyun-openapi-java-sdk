@@ -15,18 +15,16 @@
 package com.aliyuncs.pvtz.model.v20180101;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.pvtz.transform.v20180101.DescribeUserServiceStatusResponseUnmarshaller;
+import com.aliyuncs.pvtz.transform.v20180101.UpdateResolverRuleResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeUserServiceStatusResponse extends AcsResponse {
+public class UpdateResolverRuleResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String status;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,16 +34,13 @@ public class DescribeUserServiceStatusResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
+	@Override
+	public UpdateResolverRuleResponse getInstance(UnmarshallerContext context) {
+		return	UpdateResolverRuleResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
-	public DescribeUserServiceStatusResponse getInstance(UnmarshallerContext context) {
-		return	DescribeUserServiceStatusResponseUnmarshaller.unmarshall(this, context);
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

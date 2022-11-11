@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeStatisticSummaryResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Long totalCount;
+
+	private String requestId;
 
 	private List<ZoneRequestTop> zoneRequestTops;
 
 	private List<VpcRequestTop> vpcRequestTops;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Long getTotalCount() {
 		return this.totalCount;
@@ -47,6 +39,14 @@ public class DescribeStatisticSummaryResponse extends AcsResponse {
 
 	public void setTotalCount(Long totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<ZoneRequestTop> getZoneRequestTops() {
@@ -67,19 +67,11 @@ public class DescribeStatisticSummaryResponse extends AcsResponse {
 
 	public static class ZoneRequestTop {
 
-		private String zoneName;
-
 		private Long requestCount;
 
+		private String zoneName;
+
 		private String bizType;
-
-		public String getZoneName() {
-			return this.zoneName;
-		}
-
-		public void setZoneName(String zoneName) {
-			this.zoneName = zoneName;
-		}
 
 		public Long getRequestCount() {
 			return this.requestCount;
@@ -87,6 +79,14 @@ public class DescribeStatisticSummaryResponse extends AcsResponse {
 
 		public void setRequestCount(Long requestCount) {
 			this.requestCount = requestCount;
+		}
+
+		public String getZoneName() {
+			return this.zoneName;
+		}
+
+		public void setZoneName(String zoneName) {
+			this.zoneName = zoneName;
 		}
 
 		public String getBizType() {
@@ -100,23 +100,15 @@ public class DescribeStatisticSummaryResponse extends AcsResponse {
 
 	public static class VpcRequestTop {
 
-		private String regionId;
-
 		private String vpcId;
+
+		private String regionName;
 
 		private String tunnelId;
 
 		private Long requestCount;
 
-		private String regionName;
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
+		private String regionId;
 
 		public String getVpcId() {
 			return this.vpcId;
@@ -124,6 +116,14 @@ public class DescribeStatisticSummaryResponse extends AcsResponse {
 
 		public void setVpcId(String vpcId) {
 			this.vpcId = vpcId;
+		}
+
+		public String getRegionName() {
+			return this.regionName;
+		}
+
+		public void setRegionName(String regionName) {
+			this.regionName = regionName;
 		}
 
 		public String getTunnelId() {
@@ -142,12 +142,12 @@ public class DescribeStatisticSummaryResponse extends AcsResponse {
 			this.requestCount = requestCount;
 		}
 
-		public String getRegionName() {
-			return this.regionName;
+		public String getRegionId() {
+			return this.regionId;
 		}
 
-		public void setRegionName(String regionName) {
-			this.regionName = regionName;
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 	}
 

@@ -22,30 +22,19 @@ import com.aliyuncs.pvtz.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeUserServiceStatusRequest extends RpcAcsRequest<DescribeUserServiceStatusResponse> {
+public class DescribeResolverRuleRequest extends RpcAcsRequest<DescribeResolverRuleResponse> {
 	   
 
-	private String userClientIp;
-
 	private String lang;
-	public DescribeUserServiceStatusRequest() {
-		super("pvtz", "2018-01-01", "DescribeUserServiceStatus", "pvtz");
+
+	private String ruleId;
+	public DescribeResolverRuleRequest() {
+		super("pvtz", "2018-01-01", "DescribeResolverRule", "pvtz");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getUserClientIp() {
-		return this.userClientIp;
-	}
-
-	public void setUserClientIp(String userClientIp) {
-		this.userClientIp = userClientIp;
-		if(userClientIp != null){
-			putQueryParameter("UserClientIp", userClientIp);
-		}
 	}
 
 	public String getLang() {
@@ -59,9 +48,20 @@ public class DescribeUserServiceStatusRequest extends RpcAcsRequest<DescribeUser
 		}
 	}
 
+	public String getRuleId() {
+		return this.ruleId;
+	}
+
+	public void setRuleId(String ruleId) {
+		this.ruleId = ruleId;
+		if(ruleId != null){
+			putQueryParameter("RuleId", ruleId);
+		}
+	}
+
 	@Override
-	public Class<DescribeUserServiceStatusResponse> getResponseClass() {
-		return DescribeUserServiceStatusResponse.class;
+	public Class<DescribeResolverRuleResponse> getResponseClass() {
+		return DescribeResolverRuleResponse.class;
 	}
 
 }

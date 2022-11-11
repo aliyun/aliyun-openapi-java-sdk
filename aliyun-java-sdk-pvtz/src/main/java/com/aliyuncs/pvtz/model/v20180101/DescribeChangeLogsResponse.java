@@ -25,17 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeChangeLogsResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Integer totalItems;
-
-	private Integer totalPages;
-
 	private Integer pageSize;
+
+	private String requestId;
 
 	private Integer pageNumber;
 
+	private Integer totalPages;
+
+	private Integer totalItems;
+
 	private List<ChangeLog> changeLogs;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,12 +53,12 @@ public class DescribeChangeLogsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getTotalItems() {
-		return this.totalItems;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setTotalItems(Integer totalItems) {
-		this.totalItems = totalItems;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public Integer getTotalPages() {
@@ -61,20 +69,12 @@ public class DescribeChangeLogsResponse extends AcsResponse {
 		this.totalPages = totalPages;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalItems() {
+		return this.totalItems;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setTotalItems(Integer totalItems) {
+		this.totalItems = totalItems;
 	}
 
 	public List<ChangeLog> getChangeLogs() {
@@ -87,46 +87,30 @@ public class DescribeChangeLogsResponse extends AcsResponse {
 
 	public static class ChangeLog {
 
-		private String operTime;
-
-		private String operAction;
-
-		private String operObject;
+		private Long operTimestamp;
 
 		private String entityId;
 
-		private String entityName;
+		private String operObject;
+
+		private String operTime;
 
 		private String operIp;
 
-		private Long operTimestamp;
-
-		private Long id;
+		private String operAction;
 
 		private String content;
 
-		public String getOperTime() {
-			return this.operTime;
+		private String entityName;
+
+		private Long id;
+
+		public Long getOperTimestamp() {
+			return this.operTimestamp;
 		}
 
-		public void setOperTime(String operTime) {
-			this.operTime = operTime;
-		}
-
-		public String getOperAction() {
-			return this.operAction;
-		}
-
-		public void setOperAction(String operAction) {
-			this.operAction = operAction;
-		}
-
-		public String getOperObject() {
-			return this.operObject;
-		}
-
-		public void setOperObject(String operObject) {
-			this.operObject = operObject;
+		public void setOperTimestamp(Long operTimestamp) {
+			this.operTimestamp = operTimestamp;
 		}
 
 		public String getEntityId() {
@@ -137,12 +121,20 @@ public class DescribeChangeLogsResponse extends AcsResponse {
 			this.entityId = entityId;
 		}
 
-		public String getEntityName() {
-			return this.entityName;
+		public String getOperObject() {
+			return this.operObject;
 		}
 
-		public void setEntityName(String entityName) {
-			this.entityName = entityName;
+		public void setOperObject(String operObject) {
+			this.operObject = operObject;
+		}
+
+		public String getOperTime() {
+			return this.operTime;
+		}
+
+		public void setOperTime(String operTime) {
+			this.operTime = operTime;
 		}
 
 		public String getOperIp() {
@@ -153,20 +145,12 @@ public class DescribeChangeLogsResponse extends AcsResponse {
 			this.operIp = operIp;
 		}
 
-		public Long getOperTimestamp() {
-			return this.operTimestamp;
+		public String getOperAction() {
+			return this.operAction;
 		}
 
-		public void setOperTimestamp(Long operTimestamp) {
-			this.operTimestamp = operTimestamp;
-		}
-
-		public Long getId() {
-			return this.id;
-		}
-
-		public void setId(Long id) {
-			this.id = id;
+		public void setOperAction(String operAction) {
+			this.operAction = operAction;
 		}
 
 		public String getContent() {
@@ -175,6 +159,22 @@ public class DescribeChangeLogsResponse extends AcsResponse {
 
 		public void setContent(String content) {
 			this.content = content;
+		}
+
+		public String getEntityName() {
+			return this.entityName;
+		}
+
+		public void setEntityName(String entityName) {
+			this.entityName = entityName;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
 		}
 	}
 

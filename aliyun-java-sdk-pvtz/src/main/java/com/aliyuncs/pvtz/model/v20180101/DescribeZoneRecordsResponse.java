@@ -25,17 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeZoneRecordsResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Integer totalItems;
-
-	private Integer totalPages;
-
 	private Integer pageSize;
+
+	private String requestId;
 
 	private Integer pageNumber;
 
+	private Integer totalPages;
+
+	private Integer totalItems;
+
 	private List<Record> records;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,12 +53,12 @@ public class DescribeZoneRecordsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getTotalItems() {
-		return this.totalItems;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setTotalItems(Integer totalItems) {
-		this.totalItems = totalItems;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public Integer getTotalPages() {
@@ -61,20 +69,12 @@ public class DescribeZoneRecordsResponse extends AcsResponse {
 		this.totalPages = totalPages;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalItems() {
+		return this.totalItems;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setTotalItems(Integer totalItems) {
+		this.totalItems = totalItems;
 	}
 
 	public List<Record> getRecords() {
@@ -87,23 +87,63 @@ public class DescribeZoneRecordsResponse extends AcsResponse {
 
 	public static class Record {
 
+		private String status;
+
+		private String type;
+
+		private String value;
+
+		private Integer ttl;
+
+		private String remark;
+
 		private Long recordId;
 
 		private String rr;
 
-		private String type;
-
-		private Integer ttl;
-
 		private Integer priority;
-
-		private String value;
-
-		private String status;
 
 		private String regionId;
 
-		private String remark;
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public Integer getTtl() {
+			return this.ttl;
+		}
+
+		public void setTtl(Integer ttl) {
+			this.ttl = ttl;
+		}
+
+		public String getRemark() {
+			return this.remark;
+		}
+
+		public void setRemark(String remark) {
+			this.remark = remark;
+		}
 
 		public Long getRecordId() {
 			return this.recordId;
@@ -121,22 +161,6 @@ public class DescribeZoneRecordsResponse extends AcsResponse {
 			this.rr = rr;
 		}
 
-		public String getType() {
-			return this.type;
-		}
-
-		public void setType(String type) {
-			this.type = type;
-		}
-
-		public Integer getTtl() {
-			return this.ttl;
-		}
-
-		public void setTtl(Integer ttl) {
-			this.ttl = ttl;
-		}
-
 		public Integer getPriority() {
 			return this.priority;
 		}
@@ -145,36 +169,12 @@ public class DescribeZoneRecordsResponse extends AcsResponse {
 			this.priority = priority;
 		}
 
-		public String getValue() {
-			return this.value;
-		}
-
-		public void setValue(String value) {
-			this.value = value;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
 		public String getRegionId() {
 			return this.regionId;
 		}
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
-		}
-
-		public String getRemark() {
-			return this.remark;
-		}
-
-		public void setRemark(String remark) {
-			this.remark = remark;
 		}
 	}
 

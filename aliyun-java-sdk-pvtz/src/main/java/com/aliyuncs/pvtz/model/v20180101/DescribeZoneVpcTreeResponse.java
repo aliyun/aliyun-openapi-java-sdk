@@ -47,40 +47,44 @@ public class DescribeZoneVpcTreeResponse extends AcsResponse {
 
 	public static class Zone {
 
-		private String zoneId;
+		private String updateTime;
 
-		private String zoneName;
+		private String zoneType;
 
 		private String remark;
 
-		private Integer recordCount;
-
 		private String createTime;
 
-		private Long createTimestamp;
+		private Integer recordCount;
 
-		private String updateTime;
+		private String zoneName;
 
 		private Long updateTimestamp;
 
+		private String zoneId;
+
+		private String zoneTag;
+
 		private Boolean isPtr;
+
+		private Long createTimestamp;
 
 		private List<Vpc> vpcs;
 
-		public String getZoneId() {
-			return this.zoneId;
+		public String getUpdateTime() {
+			return this.updateTime;
 		}
 
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
+		public void setUpdateTime(String updateTime) {
+			this.updateTime = updateTime;
 		}
 
-		public String getZoneName() {
-			return this.zoneName;
+		public String getZoneType() {
+			return this.zoneType;
 		}
 
-		public void setZoneName(String zoneName) {
-			this.zoneName = zoneName;
+		public void setZoneType(String zoneType) {
+			this.zoneType = zoneType;
 		}
 
 		public String getRemark() {
@@ -91,14 +95,6 @@ public class DescribeZoneVpcTreeResponse extends AcsResponse {
 			this.remark = remark;
 		}
 
-		public Integer getRecordCount() {
-			return this.recordCount;
-		}
-
-		public void setRecordCount(Integer recordCount) {
-			this.recordCount = recordCount;
-		}
-
 		public String getCreateTime() {
 			return this.createTime;
 		}
@@ -107,20 +103,20 @@ public class DescribeZoneVpcTreeResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public Long getCreateTimestamp() {
-			return this.createTimestamp;
+		public Integer getRecordCount() {
+			return this.recordCount;
 		}
 
-		public void setCreateTimestamp(Long createTimestamp) {
-			this.createTimestamp = createTimestamp;
+		public void setRecordCount(Integer recordCount) {
+			this.recordCount = recordCount;
 		}
 
-		public String getUpdateTime() {
-			return this.updateTime;
+		public String getZoneName() {
+			return this.zoneName;
 		}
 
-		public void setUpdateTime(String updateTime) {
-			this.updateTime = updateTime;
+		public void setZoneName(String zoneName) {
+			this.zoneName = zoneName;
 		}
 
 		public Long getUpdateTimestamp() {
@@ -131,12 +127,36 @@ public class DescribeZoneVpcTreeResponse extends AcsResponse {
 			this.updateTimestamp = updateTimestamp;
 		}
 
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public String getZoneTag() {
+			return this.zoneTag;
+		}
+
+		public void setZoneTag(String zoneTag) {
+			this.zoneTag = zoneTag;
+		}
+
 		public Boolean getIsPtr() {
 			return this.isPtr;
 		}
 
 		public void setIsPtr(Boolean isPtr) {
 			this.isPtr = isPtr;
+		}
+
+		public Long getCreateTimestamp() {
+			return this.createTimestamp;
+		}
+
+		public void setCreateTimestamp(Long createTimestamp) {
+			this.createTimestamp = createTimestamp;
 		}
 
 		public List<Vpc> getVpcs() {
@@ -149,28 +169,20 @@ public class DescribeZoneVpcTreeResponse extends AcsResponse {
 
 		public static class Vpc {
 
-			private String regionId;
-
-			private String regionName;
+			private String vpcName;
 
 			private String vpcId;
 
-			private String vpcName;
+			private String regionName;
 
-			public String getRegionId() {
-				return this.regionId;
+			private String regionId;
+
+			public String getVpcName() {
+				return this.vpcName;
 			}
 
-			public void setRegionId(String regionId) {
-				this.regionId = regionId;
-			}
-
-			public String getRegionName() {
-				return this.regionName;
-			}
-
-			public void setRegionName(String regionName) {
-				this.regionName = regionName;
+			public void setVpcName(String vpcName) {
+				this.vpcName = vpcName;
 			}
 
 			public String getVpcId() {
@@ -181,12 +193,20 @@ public class DescribeZoneVpcTreeResponse extends AcsResponse {
 				this.vpcId = vpcId;
 			}
 
-			public String getVpcName() {
-				return this.vpcName;
+			public String getRegionName() {
+				return this.regionName;
 			}
 
-			public void setVpcName(String vpcName) {
-				this.vpcName = vpcName;
+			public void setRegionName(String regionName) {
+				this.regionName = regionName;
+			}
+
+			public String getRegionId() {
+				return this.regionId;
+			}
+
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
 			}
 		}
 	}

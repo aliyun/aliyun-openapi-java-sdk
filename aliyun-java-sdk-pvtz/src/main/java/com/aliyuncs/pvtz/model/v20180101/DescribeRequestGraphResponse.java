@@ -49,9 +49,9 @@ public class DescribeRequestGraphResponse extends AcsResponse {
 
 		private String time;
 
-		private Long timestamp;
-
 		private Long requestCount;
+
+		private Long timestamp;
 
 		public String getTime() {
 			return this.time;
@@ -61,20 +61,20 @@ public class DescribeRequestGraphResponse extends AcsResponse {
 			this.time = time;
 		}
 
-		public Long getTimestamp() {
-			return this.timestamp;
-		}
-
-		public void setTimestamp(Long timestamp) {
-			this.timestamp = timestamp;
-		}
-
 		public Long getRequestCount() {
 			return this.requestCount;
 		}
 
 		public void setRequestCount(Long requestCount) {
 			this.requestCount = requestCount;
+		}
+
+		public Long getTimestamp() {
+			return this.timestamp;
+		}
+
+		public void setTimestamp(Long timestamp) {
+			this.timestamp = timestamp;
 		}
 	}
 

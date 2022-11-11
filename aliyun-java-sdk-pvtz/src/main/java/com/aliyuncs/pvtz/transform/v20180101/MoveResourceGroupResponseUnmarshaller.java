@@ -14,17 +14,16 @@
 
 package com.aliyuncs.pvtz.transform.v20180101;
 
-import com.aliyuncs.pvtz.model.v20180101.DescribeUserServiceStatusResponse;
+import com.aliyuncs.pvtz.model.v20180101.MoveResourceGroupResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class DescribeUserServiceStatusResponseUnmarshaller {
+public class MoveResourceGroupResponseUnmarshaller {
 
-	public static DescribeUserServiceStatusResponse unmarshall(DescribeUserServiceStatusResponse describeUserServiceStatusResponse, UnmarshallerContext _ctx) {
+	public static MoveResourceGroupResponse unmarshall(MoveResourceGroupResponse moveResourceGroupResponse, UnmarshallerContext _ctx) {
 		
-		describeUserServiceStatusResponse.setRequestId(_ctx.stringValue("DescribeUserServiceStatusResponse.RequestId"));
-		describeUserServiceStatusResponse.setStatus(_ctx.stringValue("DescribeUserServiceStatusResponse.Status"));
+		moveResourceGroupResponse.setRequestId(_ctx.stringValue("MoveResourceGroupResponse.RequestId"));
 	 
-	 	return describeUserServiceStatusResponse;
+	 	return moveResourceGroupResponse;
 	}
 }

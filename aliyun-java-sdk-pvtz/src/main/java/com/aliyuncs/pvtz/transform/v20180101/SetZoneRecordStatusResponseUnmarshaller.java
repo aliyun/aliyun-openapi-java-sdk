@@ -23,8 +23,8 @@ public class SetZoneRecordStatusResponseUnmarshaller {
 	public static SetZoneRecordStatusResponse unmarshall(SetZoneRecordStatusResponse setZoneRecordStatusResponse, UnmarshallerContext _ctx) {
 		
 		setZoneRecordStatusResponse.setRequestId(_ctx.stringValue("SetZoneRecordStatusResponse.RequestId"));
-		setZoneRecordStatusResponse.setRecordId(_ctx.longValue("SetZoneRecordStatusResponse.RecordId"));
 		setZoneRecordStatusResponse.setStatus(_ctx.stringValue("SetZoneRecordStatusResponse.Status"));
+		setZoneRecordStatusResponse.setRecordId(_ctx.longValue("SetZoneRecordStatusResponse.RecordId"));
 	 
 	 	return setZoneRecordStatusResponse;
 	}

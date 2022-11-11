@@ -27,6 +27,8 @@ public class AddZoneRecordRequest extends RpcAcsRequest<AddZoneRecordResponse> {
 
 	private String rr;
 
+	private String remark;
+
 	private String type;
 
 	private Integer priority;
@@ -57,6 +59,17 @@ public class AddZoneRecordRequest extends RpcAcsRequest<AddZoneRecordResponse> {
 		this.rr = rr;
 		if(rr != null){
 			putQueryParameter("Rr", rr);
+		}
+	}
+
+	public String getRemark() {
+		return this.remark;
+	}
+
+	public void setRemark(String remark) {
+		this.remark = remark;
+		if(remark != null){
+			putQueryParameter("Remark", remark);
 		}
 	}
 

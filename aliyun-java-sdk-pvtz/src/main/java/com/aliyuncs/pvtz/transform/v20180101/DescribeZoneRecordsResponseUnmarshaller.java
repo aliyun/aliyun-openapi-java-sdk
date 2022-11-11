@@ -27,23 +27,23 @@ public class DescribeZoneRecordsResponseUnmarshaller {
 	public static DescribeZoneRecordsResponse unmarshall(DescribeZoneRecordsResponse describeZoneRecordsResponse, UnmarshallerContext _ctx) {
 		
 		describeZoneRecordsResponse.setRequestId(_ctx.stringValue("DescribeZoneRecordsResponse.RequestId"));
-		describeZoneRecordsResponse.setTotalItems(_ctx.integerValue("DescribeZoneRecordsResponse.TotalItems"));
-		describeZoneRecordsResponse.setTotalPages(_ctx.integerValue("DescribeZoneRecordsResponse.TotalPages"));
 		describeZoneRecordsResponse.setPageSize(_ctx.integerValue("DescribeZoneRecordsResponse.PageSize"));
 		describeZoneRecordsResponse.setPageNumber(_ctx.integerValue("DescribeZoneRecordsResponse.PageNumber"));
+		describeZoneRecordsResponse.setTotalPages(_ctx.integerValue("DescribeZoneRecordsResponse.TotalPages"));
+		describeZoneRecordsResponse.setTotalItems(_ctx.integerValue("DescribeZoneRecordsResponse.TotalItems"));
 
 		List<Record> records = new ArrayList<Record>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeZoneRecordsResponse.Records.Length"); i++) {
 			Record record = new Record();
+			record.setStatus(_ctx.stringValue("DescribeZoneRecordsResponse.Records["+ i +"].Status"));
+			record.setType(_ctx.stringValue("DescribeZoneRecordsResponse.Records["+ i +"].Type"));
+			record.setValue(_ctx.stringValue("DescribeZoneRecordsResponse.Records["+ i +"].Value"));
+			record.setTtl(_ctx.integerValue("DescribeZoneRecordsResponse.Records["+ i +"].Ttl"));
+			record.setRemark(_ctx.stringValue("DescribeZoneRecordsResponse.Records["+ i +"].Remark"));
 			record.setRecordId(_ctx.longValue("DescribeZoneRecordsResponse.Records["+ i +"].RecordId"));
 			record.setRr(_ctx.stringValue("DescribeZoneRecordsResponse.Records["+ i +"].Rr"));
-			record.setType(_ctx.stringValue("DescribeZoneRecordsResponse.Records["+ i +"].Type"));
-			record.setTtl(_ctx.integerValue("DescribeZoneRecordsResponse.Records["+ i +"].Ttl"));
 			record.setPriority(_ctx.integerValue("DescribeZoneRecordsResponse.Records["+ i +"].Priority"));
-			record.setValue(_ctx.stringValue("DescribeZoneRecordsResponse.Records["+ i +"].Value"));
-			record.setStatus(_ctx.stringValue("DescribeZoneRecordsResponse.Records["+ i +"].Status"));
 			record.setRegionId(_ctx.stringValue("DescribeZoneRecordsResponse.Records["+ i +"].RegionId"));
-			record.setRemark(_ctx.stringValue("DescribeZoneRecordsResponse.Records["+ i +"].Remark"));
 
 			records.add(record);
 		}

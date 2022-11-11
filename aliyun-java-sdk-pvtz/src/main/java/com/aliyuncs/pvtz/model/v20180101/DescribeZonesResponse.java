@@ -25,17 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeZonesResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Integer totalItems;
-
-	private Integer totalPages;
-
 	private Integer pageSize;
+
+	private String requestId;
 
 	private Integer pageNumber;
 
+	private Integer totalPages;
+
+	private Integer totalItems;
+
 	private List<Zone> zones;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,12 +53,12 @@ public class DescribeZonesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getTotalItems() {
-		return this.totalItems;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setTotalItems(Integer totalItems) {
-		this.totalItems = totalItems;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public Integer getTotalPages() {
@@ -61,20 +69,12 @@ public class DescribeZonesResponse extends AcsResponse {
 		this.totalPages = totalPages;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getTotalItems() {
+		return this.totalItems;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setTotalItems(Integer totalItems) {
+		this.totalItems = totalItems;
 	}
 
 	public List<Zone> getZones() {
@@ -87,42 +87,48 @@ public class DescribeZonesResponse extends AcsResponse {
 
 	public static class Zone {
 
-		private String zoneId;
+		private String updateTime;
 
-		private String zoneName;
+		private String zoneType;
 
 		private String remark;
 
-		private Integer recordCount;
-
 		private String createTime;
 
-		private Long createTimestamp;
+		private Integer recordCount;
 
-		private String updateTime;
-
-		private Long updateTimestamp;
-
-		private Boolean isPtr;
+		private String zoneName;
 
 		private String proxyPattern;
 
+		private Long updateTimestamp;
+
 		private String resourceGroupId;
 
-		public String getZoneId() {
-			return this.zoneId;
+		private String zoneId;
+
+		private String zoneTag;
+
+		private Boolean isPtr;
+
+		private Long createTimestamp;
+
+		private List<ResourceTag> resourceTags;
+
+		public String getUpdateTime() {
+			return this.updateTime;
 		}
 
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
+		public void setUpdateTime(String updateTime) {
+			this.updateTime = updateTime;
 		}
 
-		public String getZoneName() {
-			return this.zoneName;
+		public String getZoneType() {
+			return this.zoneType;
 		}
 
-		public void setZoneName(String zoneName) {
-			this.zoneName = zoneName;
+		public void setZoneType(String zoneType) {
+			this.zoneType = zoneType;
 		}
 
 		public String getRemark() {
@@ -133,14 +139,6 @@ public class DescribeZonesResponse extends AcsResponse {
 			this.remark = remark;
 		}
 
-		public Integer getRecordCount() {
-			return this.recordCount;
-		}
-
-		public void setRecordCount(Integer recordCount) {
-			this.recordCount = recordCount;
-		}
-
 		public String getCreateTime() {
 			return this.createTime;
 		}
@@ -149,36 +147,20 @@ public class DescribeZonesResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public Long getCreateTimestamp() {
-			return this.createTimestamp;
+		public Integer getRecordCount() {
+			return this.recordCount;
 		}
 
-		public void setCreateTimestamp(Long createTimestamp) {
-			this.createTimestamp = createTimestamp;
+		public void setRecordCount(Integer recordCount) {
+			this.recordCount = recordCount;
 		}
 
-		public String getUpdateTime() {
-			return this.updateTime;
+		public String getZoneName() {
+			return this.zoneName;
 		}
 
-		public void setUpdateTime(String updateTime) {
-			this.updateTime = updateTime;
-		}
-
-		public Long getUpdateTimestamp() {
-			return this.updateTimestamp;
-		}
-
-		public void setUpdateTimestamp(Long updateTimestamp) {
-			this.updateTimestamp = updateTimestamp;
-		}
-
-		public Boolean getIsPtr() {
-			return this.isPtr;
-		}
-
-		public void setIsPtr(Boolean isPtr) {
-			this.isPtr = isPtr;
+		public void setZoneName(String zoneName) {
+			this.zoneName = zoneName;
 		}
 
 		public String getProxyPattern() {
@@ -189,12 +171,83 @@ public class DescribeZonesResponse extends AcsResponse {
 			this.proxyPattern = proxyPattern;
 		}
 
+		public Long getUpdateTimestamp() {
+			return this.updateTimestamp;
+		}
+
+		public void setUpdateTimestamp(Long updateTimestamp) {
+			this.updateTimestamp = updateTimestamp;
+		}
+
 		public String getResourceGroupId() {
 			return this.resourceGroupId;
 		}
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public String getZoneTag() {
+			return this.zoneTag;
+		}
+
+		public void setZoneTag(String zoneTag) {
+			this.zoneTag = zoneTag;
+		}
+
+		public Boolean getIsPtr() {
+			return this.isPtr;
+		}
+
+		public void setIsPtr(Boolean isPtr) {
+			this.isPtr = isPtr;
+		}
+
+		public Long getCreateTimestamp() {
+			return this.createTimestamp;
+		}
+
+		public void setCreateTimestamp(Long createTimestamp) {
+			this.createTimestamp = createTimestamp;
+		}
+
+		public List<ResourceTag> getResourceTags() {
+			return this.resourceTags;
+		}
+
+		public void setResourceTags(List<ResourceTag> resourceTags) {
+			this.resourceTags = resourceTags;
+		}
+
+		public static class ResourceTag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 	}
 

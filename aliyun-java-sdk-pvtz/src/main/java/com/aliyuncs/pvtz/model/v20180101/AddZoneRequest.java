@@ -31,7 +31,9 @@ public class AddZoneRequest extends RpcAcsRequest<AddZoneResponse> {
 
 	private String resourceGroupId;
 
-	private String userClientIp;
+	private String zoneTag;
+
+	private String zoneType;
 
 	private String lang;
 	public AddZoneRequest() {
@@ -76,14 +78,25 @@ public class AddZoneRequest extends RpcAcsRequest<AddZoneResponse> {
 		}
 	}
 
-	public String getUserClientIp() {
-		return this.userClientIp;
+	public String getZoneTag() {
+		return this.zoneTag;
 	}
 
-	public void setUserClientIp(String userClientIp) {
-		this.userClientIp = userClientIp;
-		if(userClientIp != null){
-			putQueryParameter("UserClientIp", userClientIp);
+	public void setZoneTag(String zoneTag) {
+		this.zoneTag = zoneTag;
+		if(zoneTag != null){
+			putQueryParameter("ZoneTag", zoneTag);
+		}
+	}
+
+	public String getZoneType() {
+		return this.zoneType;
+	}
+
+	public void setZoneType(String zoneType) {
+		this.zoneType = zoneType;
+		if(zoneType != null){
+			putQueryParameter("ZoneType", zoneType);
 		}
 	}
 

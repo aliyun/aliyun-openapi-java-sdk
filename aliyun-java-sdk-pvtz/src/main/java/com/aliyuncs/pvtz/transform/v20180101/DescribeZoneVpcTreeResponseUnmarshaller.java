@@ -32,23 +32,25 @@ public class DescribeZoneVpcTreeResponseUnmarshaller {
 		List<Zone> zones = new ArrayList<Zone>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeZoneVpcTreeResponse.Zones.Length"); i++) {
 			Zone zone = new Zone();
-			zone.setZoneId(_ctx.stringValue("DescribeZoneVpcTreeResponse.Zones["+ i +"].ZoneId"));
-			zone.setZoneName(_ctx.stringValue("DescribeZoneVpcTreeResponse.Zones["+ i +"].ZoneName"));
-			zone.setRemark(_ctx.stringValue("DescribeZoneVpcTreeResponse.Zones["+ i +"].Remark"));
-			zone.setRecordCount(_ctx.integerValue("DescribeZoneVpcTreeResponse.Zones["+ i +"].RecordCount"));
-			zone.setCreateTime(_ctx.stringValue("DescribeZoneVpcTreeResponse.Zones["+ i +"].CreateTime"));
-			zone.setCreateTimestamp(_ctx.longValue("DescribeZoneVpcTreeResponse.Zones["+ i +"].CreateTimestamp"));
 			zone.setUpdateTime(_ctx.stringValue("DescribeZoneVpcTreeResponse.Zones["+ i +"].UpdateTime"));
+			zone.setZoneType(_ctx.stringValue("DescribeZoneVpcTreeResponse.Zones["+ i +"].ZoneType"));
+			zone.setRemark(_ctx.stringValue("DescribeZoneVpcTreeResponse.Zones["+ i +"].Remark"));
+			zone.setCreateTime(_ctx.stringValue("DescribeZoneVpcTreeResponse.Zones["+ i +"].CreateTime"));
+			zone.setRecordCount(_ctx.integerValue("DescribeZoneVpcTreeResponse.Zones["+ i +"].RecordCount"));
+			zone.setZoneName(_ctx.stringValue("DescribeZoneVpcTreeResponse.Zones["+ i +"].ZoneName"));
 			zone.setUpdateTimestamp(_ctx.longValue("DescribeZoneVpcTreeResponse.Zones["+ i +"].UpdateTimestamp"));
+			zone.setZoneId(_ctx.stringValue("DescribeZoneVpcTreeResponse.Zones["+ i +"].ZoneId"));
+			zone.setZoneTag(_ctx.stringValue("DescribeZoneVpcTreeResponse.Zones["+ i +"].ZoneTag"));
 			zone.setIsPtr(_ctx.booleanValue("DescribeZoneVpcTreeResponse.Zones["+ i +"].IsPtr"));
+			zone.setCreateTimestamp(_ctx.longValue("DescribeZoneVpcTreeResponse.Zones["+ i +"].CreateTimestamp"));
 
 			List<Vpc> vpcs = new ArrayList<Vpc>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeZoneVpcTreeResponse.Zones["+ i +"].Vpcs.Length"); j++) {
 				Vpc vpc = new Vpc();
-				vpc.setRegionId(_ctx.stringValue("DescribeZoneVpcTreeResponse.Zones["+ i +"].Vpcs["+ j +"].RegionId"));
-				vpc.setRegionName(_ctx.stringValue("DescribeZoneVpcTreeResponse.Zones["+ i +"].Vpcs["+ j +"].RegionName"));
-				vpc.setVpcId(_ctx.stringValue("DescribeZoneVpcTreeResponse.Zones["+ i +"].Vpcs["+ j +"].VpcId"));
 				vpc.setVpcName(_ctx.stringValue("DescribeZoneVpcTreeResponse.Zones["+ i +"].Vpcs["+ j +"].VpcName"));
+				vpc.setVpcId(_ctx.stringValue("DescribeZoneVpcTreeResponse.Zones["+ i +"].Vpcs["+ j +"].VpcId"));
+				vpc.setRegionName(_ctx.stringValue("DescribeZoneVpcTreeResponse.Zones["+ i +"].Vpcs["+ j +"].RegionName"));
+				vpc.setRegionId(_ctx.stringValue("DescribeZoneVpcTreeResponse.Zones["+ i +"].Vpcs["+ j +"].RegionId"));
 
 				vpcs.add(vpc);
 			}

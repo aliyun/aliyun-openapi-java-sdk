@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.pvtz.model.v20180101.DescribeZonesResponse;
 import com.aliyuncs.pvtz.model.v20180101.DescribeZonesResponse.Zone;
+import com.aliyuncs.pvtz.model.v20180101.DescribeZonesResponse.Zone.ResourceTag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -27,25 +28,37 @@ public class DescribeZonesResponseUnmarshaller {
 	public static DescribeZonesResponse unmarshall(DescribeZonesResponse describeZonesResponse, UnmarshallerContext _ctx) {
 		
 		describeZonesResponse.setRequestId(_ctx.stringValue("DescribeZonesResponse.RequestId"));
-		describeZonesResponse.setTotalItems(_ctx.integerValue("DescribeZonesResponse.TotalItems"));
-		describeZonesResponse.setTotalPages(_ctx.integerValue("DescribeZonesResponse.TotalPages"));
 		describeZonesResponse.setPageSize(_ctx.integerValue("DescribeZonesResponse.PageSize"));
 		describeZonesResponse.setPageNumber(_ctx.integerValue("DescribeZonesResponse.PageNumber"));
+		describeZonesResponse.setTotalPages(_ctx.integerValue("DescribeZonesResponse.TotalPages"));
+		describeZonesResponse.setTotalItems(_ctx.integerValue("DescribeZonesResponse.TotalItems"));
 
 		List<Zone> zones = new ArrayList<Zone>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeZonesResponse.Zones.Length"); i++) {
 			Zone zone = new Zone();
-			zone.setZoneId(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].ZoneId"));
-			zone.setZoneName(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].ZoneName"));
-			zone.setRemark(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].Remark"));
-			zone.setRecordCount(_ctx.integerValue("DescribeZonesResponse.Zones["+ i +"].RecordCount"));
-			zone.setCreateTime(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].CreateTime"));
-			zone.setCreateTimestamp(_ctx.longValue("DescribeZonesResponse.Zones["+ i +"].CreateTimestamp"));
 			zone.setUpdateTime(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].UpdateTime"));
-			zone.setUpdateTimestamp(_ctx.longValue("DescribeZonesResponse.Zones["+ i +"].UpdateTimestamp"));
-			zone.setIsPtr(_ctx.booleanValue("DescribeZonesResponse.Zones["+ i +"].IsPtr"));
+			zone.setZoneType(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].ZoneType"));
+			zone.setRemark(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].Remark"));
+			zone.setCreateTime(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].CreateTime"));
+			zone.setRecordCount(_ctx.integerValue("DescribeZonesResponse.Zones["+ i +"].RecordCount"));
+			zone.setZoneName(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].ZoneName"));
 			zone.setProxyPattern(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].ProxyPattern"));
+			zone.setUpdateTimestamp(_ctx.longValue("DescribeZonesResponse.Zones["+ i +"].UpdateTimestamp"));
 			zone.setResourceGroupId(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].ResourceGroupId"));
+			zone.setZoneId(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].ZoneId"));
+			zone.setZoneTag(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].ZoneTag"));
+			zone.setIsPtr(_ctx.booleanValue("DescribeZonesResponse.Zones["+ i +"].IsPtr"));
+			zone.setCreateTimestamp(_ctx.longValue("DescribeZonesResponse.Zones["+ i +"].CreateTimestamp"));
+
+			List<ResourceTag> resourceTags = new ArrayList<ResourceTag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeZonesResponse.Zones["+ i +"].ResourceTags.Length"); j++) {
+				ResourceTag resourceTag = new ResourceTag();
+				resourceTag.setKey(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].ResourceTags["+ j +"].Key"));
+				resourceTag.setValue(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].ResourceTags["+ j +"].Value"));
+
+				resourceTags.add(resourceTag);
+			}
+			zone.setResourceTags(resourceTags);
 
 			zones.add(zone);
 		}
