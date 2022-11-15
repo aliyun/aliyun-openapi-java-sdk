@@ -1,3 +1,6 @@
+2022-11-15 Version: 3.0.8
+- Add renew and modify instance pay type api.
+
 2022-10-19 Version: 3.0.7
 - Update Lindorm OpenAPI.
 

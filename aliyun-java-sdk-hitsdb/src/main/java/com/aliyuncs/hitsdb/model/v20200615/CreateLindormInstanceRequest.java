@@ -37,6 +37,8 @@ public class CreateLindormInstanceRequest extends RpcAcsRequest<CreateLindormIns
 
 	private Integer tsdbNum;
 
+	private String primaryVSwitchId;
+
 	private Integer solrNum;
 
 	private String instanceStorage;
@@ -58,6 +60,8 @@ public class CreateLindormInstanceRequest extends RpcAcsRequest<CreateLindormIns
 	private String multiZoneCombination;
 
 	private String tsdbSpec;
+
+	private String primaryZoneId;
 
 	private String filestoreSpec;
 
@@ -168,6 +172,17 @@ public class CreateLindormInstanceRequest extends RpcAcsRequest<CreateLindormIns
 		this.tsdbNum = tsdbNum;
 		if(tsdbNum != null){
 			putQueryParameter("TsdbNum", tsdbNum.toString());
+		}
+	}
+
+	public String getPrimaryVSwitchId() {
+		return this.primaryVSwitchId;
+	}
+
+	public void setPrimaryVSwitchId(String primaryVSwitchId) {
+		this.primaryVSwitchId = primaryVSwitchId;
+		if(primaryVSwitchId != null){
+			putQueryParameter("PrimaryVSwitchId", primaryVSwitchId);
 		}
 	}
 
@@ -289,6 +304,17 @@ public class CreateLindormInstanceRequest extends RpcAcsRequest<CreateLindormIns
 		this.tsdbSpec = tsdbSpec;
 		if(tsdbSpec != null){
 			putQueryParameter("TsdbSpec", tsdbSpec);
+		}
+	}
+
+	public String getPrimaryZoneId() {
+		return this.primaryZoneId;
+	}
+
+	public void setPrimaryZoneId(String primaryZoneId) {
+		this.primaryZoneId = primaryZoneId;
+		if(primaryZoneId != null){
+			putQueryParameter("PrimaryZoneId", primaryZoneId);
 		}
 	}
 
