@@ -28,6 +28,8 @@ public class ReplaceBandwidthPackageRequest extends RpcAcsRequest<ReplaceBandwid
 	private String bandwidthPackageId;
 
 	private String targetBandwidthPackageId;
+
+	private String acceleratorId;
 	public ReplaceBandwidthPackageRequest() {
 		super("Ga", "2019-11-20", "ReplaceBandwidthPackage", "gaplus");
 		setMethod(MethodType.POST);
@@ -56,6 +58,17 @@ public class ReplaceBandwidthPackageRequest extends RpcAcsRequest<ReplaceBandwid
 		this.targetBandwidthPackageId = targetBandwidthPackageId;
 		if(targetBandwidthPackageId != null){
 			putQueryParameter("TargetBandwidthPackageId", targetBandwidthPackageId);
+		}
+	}
+
+	public String getAcceleratorId() {
+		return this.acceleratorId;
+	}
+
+	public void setAcceleratorId(String acceleratorId) {
+		this.acceleratorId = acceleratorId;
+		if(acceleratorId != null){
+			putQueryParameter("AcceleratorId", acceleratorId);
 		}
 	}
 
