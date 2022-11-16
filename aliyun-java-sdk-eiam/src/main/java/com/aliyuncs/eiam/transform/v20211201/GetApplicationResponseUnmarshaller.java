@@ -40,6 +40,9 @@ public class GetApplicationResponseUnmarshaller {
 		application.setUpdateTime(_ctx.longValue("GetApplicationResponse.Application.UpdateTime"));
 		application.setAuthorizationType(_ctx.stringValue("GetApplicationResponse.Application.AuthorizationType"));
 		application.setApiInvokeStatus(_ctx.stringValue("GetApplicationResponse.Application.ApiInvokeStatus"));
+		application.setServiceManaged(_ctx.booleanValue("GetApplicationResponse.Application.ServiceManaged"));
+		application.setManagedServiceCode(_ctx.stringValue("GetApplicationResponse.Application.ManagedServiceCode"));
+		application.setApplicationTemplateId(_ctx.stringValue("GetApplicationResponse.Application.ApplicationTemplateId"));
 		getApplicationResponse.setApplication(application);
 	 
 	 	return getApplicationResponse;

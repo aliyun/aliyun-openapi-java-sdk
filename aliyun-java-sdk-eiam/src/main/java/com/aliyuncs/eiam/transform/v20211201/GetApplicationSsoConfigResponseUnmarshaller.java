@@ -71,6 +71,12 @@ public class GetApplicationSsoConfigResponseUnmarshaller {
 		}
 		oidcSsoConfig.setRedirectUris(redirectUris);
 
+		List<String> postLogoutRedirectUris = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("GetApplicationSsoConfigResponse.ApplicationSsoConfig.OidcSsoConfig.PostLogoutRedirectUris.Length"); i++) {
+			postLogoutRedirectUris.add(_ctx.stringValue("GetApplicationSsoConfigResponse.ApplicationSsoConfig.OidcSsoConfig.PostLogoutRedirectUris["+ i +"]"));
+		}
+		oidcSsoConfig.setPostLogoutRedirectUris(postLogoutRedirectUris);
+
 		List<String> grantTypes = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetApplicationSsoConfigResponse.ApplicationSsoConfig.OidcSsoConfig.GrantTypes.Length"); i++) {
 			grantTypes.add(_ctx.stringValue("GetApplicationSsoConfigResponse.ApplicationSsoConfig.OidcSsoConfig.GrantTypes["+ i +"]"));
@@ -116,6 +122,7 @@ public class GetApplicationSsoConfigResponseUnmarshaller {
 		protocolEndpointDomain.setOauth2TokenEndpoint(_ctx.stringValue("GetApplicationSsoConfigResponse.ApplicationSsoConfig.ProtocolEndpointDomain.Oauth2TokenEndpoint"));
 		protocolEndpointDomain.setOauth2DeviceAuthorizationEndpoint(_ctx.stringValue("GetApplicationSsoConfigResponse.ApplicationSsoConfig.ProtocolEndpointDomain.Oauth2DeviceAuthorizationEndpoint"));
 		protocolEndpointDomain.setOauth2UserinfoEndpoint(_ctx.stringValue("GetApplicationSsoConfigResponse.ApplicationSsoConfig.ProtocolEndpointDomain.Oauth2UserinfoEndpoint"));
+		protocolEndpointDomain.setOidcLogoutEndpoint(_ctx.stringValue("GetApplicationSsoConfigResponse.ApplicationSsoConfig.ProtocolEndpointDomain.OidcLogoutEndpoint"));
 		applicationSsoConfig.setProtocolEndpointDomain(protocolEndpointDomain);
 		getApplicationSsoConfigResponse.setApplicationSsoConfig(applicationSsoConfig);
 	 

@@ -59,6 +59,7 @@ public class GetUserResponseUnmarshaller {
 		user.setLocked(_ctx.booleanValue("GetUserResponse.User.Locked"));
 		user.setPrimaryOrganizationalUnitId(_ctx.stringValue("GetUserResponse.User.PrimaryOrganizationalUnitId"));
 		user.setExtensionAttributes(_ctx.mapValue("GetUserResponse.User.ExtensionAttributes"));
+		user.setPasswordExpireTime(_ctx.longValue("GetUserResponse.User.PasswordExpireTime"));
 
 		List<OrganizationalUnit> organizationalUnits = new ArrayList<OrganizationalUnit>();
 		for (int i = 0; i < _ctx.lengthValue("GetUserResponse.User.OrganizationalUnits.Length"); i++) {

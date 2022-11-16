@@ -96,12 +96,6 @@ public class SetApplicationSsoConfigRequest extends RpcAcsRequest<SetApplication
 		if (oidcSsoConfig != null) {
 			
 				putQueryParameter("OidcSsoConfig.CodeEffectiveTime" , oidcSsoConfig.getCodeEffectiveTime());
-				putQueryParameter("OidcSsoConfig.IdTokenEffectiveTime" , oidcSsoConfig.getIdTokenEffectiveTime());
-				if (oidcSsoConfig.getPkceChallengeMethods() != null) {
-					for (int depth1 = 0; depth1 < oidcSsoConfig.getPkceChallengeMethods().size(); depth1++) {
-						putQueryParameter("OidcSsoConfig.PkceChallengeMethods." + (depth1 + 1) , oidcSsoConfig.getPkceChallengeMethods().get(depth1));
-					}
-				}
 				if (oidcSsoConfig.getResponseTypes() != null) {
 					for (int depth1 = 0; depth1 < oidcSsoConfig.getResponseTypes().size(); depth1++) {
 						putQueryParameter("OidcSsoConfig.ResponseTypes." + (depth1 + 1) , oidcSsoConfig.getResponseTypes().get(depth1));
@@ -113,7 +107,23 @@ public class SetApplicationSsoConfigRequest extends RpcAcsRequest<SetApplication
 					}
 				}
 				putQueryParameter("OidcSsoConfig.RefreshTokenEffective" , oidcSsoConfig.getRefreshTokenEffective());
+				if (oidcSsoConfig.getGrantTypes() != null) {
+					for (int depth1 = 0; depth1 < oidcSsoConfig.getGrantTypes().size(); depth1++) {
+						putQueryParameter("OidcSsoConfig.GrantTypes." + (depth1 + 1) , oidcSsoConfig.getGrantTypes().get(depth1));
+					}
+				}
+				putQueryParameter("OidcSsoConfig.IdTokenEffectiveTime" , oidcSsoConfig.getIdTokenEffectiveTime());
+				if (oidcSsoConfig.getPkceChallengeMethods() != null) {
+					for (int depth1 = 0; depth1 < oidcSsoConfig.getPkceChallengeMethods().size(); depth1++) {
+						putQueryParameter("OidcSsoConfig.PkceChallengeMethods." + (depth1 + 1) , oidcSsoConfig.getPkceChallengeMethods().get(depth1));
+					}
+				}
 				putQueryParameter("OidcSsoConfig.AccessTokenEffectiveTime" , oidcSsoConfig.getAccessTokenEffectiveTime());
+				if (oidcSsoConfig.getPostLogoutRedirectUris() != null) {
+					for (int depth1 = 0; depth1 < oidcSsoConfig.getPostLogoutRedirectUris().size(); depth1++) {
+						putQueryParameter("OidcSsoConfig.PostLogoutRedirectUris." + (depth1 + 1) , oidcSsoConfig.getPostLogoutRedirectUris().get(depth1));
+					}
+				}
 				if (oidcSsoConfig.getCustomClaims() != null) {
 					for (int depth1 = 0; depth1 < oidcSsoConfig.getCustomClaims().size(); depth1++) {
 						if (oidcSsoConfig.getCustomClaims().get(depth1) != null) {
@@ -128,11 +138,6 @@ public class SetApplicationSsoConfigRequest extends RpcAcsRequest<SetApplication
 				if (oidcSsoConfig.getRedirectUris() != null) {
 					for (int depth1 = 0; depth1 < oidcSsoConfig.getRedirectUris().size(); depth1++) {
 						putQueryParameter("OidcSsoConfig.RedirectUris." + (depth1 + 1) , oidcSsoConfig.getRedirectUris().get(depth1));
-					}
-				}
-				if (oidcSsoConfig.getGrantTypes() != null) {
-					for (int depth1 = 0; depth1 < oidcSsoConfig.getGrantTypes().size(); depth1++) {
-						putQueryParameter("OidcSsoConfig.GrantTypes." + (depth1 + 1) , oidcSsoConfig.getGrantTypes().get(depth1));
 					}
 				}
 		}	
@@ -168,17 +173,21 @@ public class SetApplicationSsoConfigRequest extends RpcAcsRequest<SetApplication
 
 		private Long codeEffectiveTime;
 
-		private Long idTokenEffectiveTime;
-
-		private List<String> pkceChallengeMethods;
-
 		private List<String> responseTypes;
 
 		private List<String> grantScopes;
 
 		private Long refreshTokenEffective;
 
+		private List<String> grantTypes;
+
+		private Long idTokenEffectiveTime;
+
+		private List<String> pkceChallengeMethods;
+
 		private Long accessTokenEffectiveTime;
+
+		private List<String> postLogoutRedirectUris;
 
 		private List<CustomClaimsItem> customClaims;
 
@@ -188,30 +197,12 @@ public class SetApplicationSsoConfigRequest extends RpcAcsRequest<SetApplication
 
 		private List<String> redirectUris;
 
-		private List<String> grantTypes;
-
 		public Long getCodeEffectiveTime() {
 			return this.codeEffectiveTime;
 		}
 
 		public void setCodeEffectiveTime(Long codeEffectiveTime) {
 			this.codeEffectiveTime = codeEffectiveTime;
-		}
-
-		public Long getIdTokenEffectiveTime() {
-			return this.idTokenEffectiveTime;
-		}
-
-		public void setIdTokenEffectiveTime(Long idTokenEffectiveTime) {
-			this.idTokenEffectiveTime = idTokenEffectiveTime;
-		}
-
-		public List<String> getPkceChallengeMethods() {
-			return this.pkceChallengeMethods;
-		}
-
-		public void setPkceChallengeMethods(List<String> pkceChallengeMethods) {
-			this.pkceChallengeMethods = pkceChallengeMethods;
 		}
 
 		public List<String> getResponseTypes() {
@@ -238,12 +229,44 @@ public class SetApplicationSsoConfigRequest extends RpcAcsRequest<SetApplication
 			this.refreshTokenEffective = refreshTokenEffective;
 		}
 
+		public List<String> getGrantTypes() {
+			return this.grantTypes;
+		}
+
+		public void setGrantTypes(List<String> grantTypes) {
+			this.grantTypes = grantTypes;
+		}
+
+		public Long getIdTokenEffectiveTime() {
+			return this.idTokenEffectiveTime;
+		}
+
+		public void setIdTokenEffectiveTime(Long idTokenEffectiveTime) {
+			this.idTokenEffectiveTime = idTokenEffectiveTime;
+		}
+
+		public List<String> getPkceChallengeMethods() {
+			return this.pkceChallengeMethods;
+		}
+
+		public void setPkceChallengeMethods(List<String> pkceChallengeMethods) {
+			this.pkceChallengeMethods = pkceChallengeMethods;
+		}
+
 		public Long getAccessTokenEffectiveTime() {
 			return this.accessTokenEffectiveTime;
 		}
 
 		public void setAccessTokenEffectiveTime(Long accessTokenEffectiveTime) {
 			this.accessTokenEffectiveTime = accessTokenEffectiveTime;
+		}
+
+		public List<String> getPostLogoutRedirectUris() {
+			return this.postLogoutRedirectUris;
+		}
+
+		public void setPostLogoutRedirectUris(List<String> postLogoutRedirectUris) {
+			this.postLogoutRedirectUris = postLogoutRedirectUris;
 		}
 
 		public List<CustomClaimsItem> getCustomClaims() {
@@ -276,14 +299,6 @@ public class SetApplicationSsoConfigRequest extends RpcAcsRequest<SetApplication
 
 		public void setRedirectUris(List<String> redirectUris) {
 			this.redirectUris = redirectUris;
-		}
-
-		public List<String> getGrantTypes() {
-			return this.grantTypes;
-		}
-
-		public void setGrantTypes(List<String> grantTypes) {
-			this.grantTypes = grantTypes;
 		}
 
 		public static class CustomClaimsItem {

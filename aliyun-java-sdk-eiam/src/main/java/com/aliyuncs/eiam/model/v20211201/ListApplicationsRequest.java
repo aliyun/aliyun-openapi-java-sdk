@@ -30,6 +30,8 @@ public class ListApplicationsRequest extends RpcAcsRequest<ListApplicationsRespo
 
 	private Long pageSize;
 
+	private String authorizationType;
+
 	private String applicationName;
 
 	private List<String> applicationIds;
@@ -62,6 +64,17 @@ public class ListApplicationsRequest extends RpcAcsRequest<ListApplicationsRespo
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getAuthorizationType() {
+		return this.authorizationType;
+	}
+
+	public void setAuthorizationType(String authorizationType) {
+		this.authorizationType = authorizationType;
+		if(authorizationType != null){
+			putQueryParameter("AuthorizationType", authorizationType);
 		}
 	}
 

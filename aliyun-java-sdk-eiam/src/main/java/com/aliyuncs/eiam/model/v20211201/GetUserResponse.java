@@ -104,6 +104,8 @@ public class GetUserResponse extends AcsResponse {
 
 		private Map<Object,Object> extensionAttributes;
 
+		private Long passwordExpireTime;
+
 		private List<OrganizationalUnit> organizationalUnits;
 
 		public String getUserId() {
@@ -328,6 +330,14 @@ public class GetUserResponse extends AcsResponse {
 
 		public void setExtensionAttributes(Map<Object,Object> extensionAttributes) {
 			this.extensionAttributes = extensionAttributes;
+		}
+
+		public Long getPasswordExpireTime() {
+			return this.passwordExpireTime;
+		}
+
+		public void setPasswordExpireTime(Long passwordExpireTime) {
+			this.passwordExpireTime = passwordExpireTime;
 		}
 
 		public List<OrganizationalUnit> getOrganizationalUnits() {

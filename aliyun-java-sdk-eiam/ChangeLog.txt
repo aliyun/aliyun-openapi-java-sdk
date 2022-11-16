@@ -1,3 +1,6 @@
+2022-11-16 Version: 1.0.3
+- GetApplication API supported return ApplicationTemplateId field.
+
 2022-08-18 Version: 1.0.2
 - Support Application authorization manage.
 - Support User and Organizational Unit resource query operation.
