@@ -961,6 +961,8 @@ public class DescribeLoadBalancerListenersResponse extends AcsResponse {
 
 			private String healthCheck;
 
+			private String proxyProtocolV2Enabled;
+
 			private List<PortRange> portRanges;
 
 			public String getHealthCheckHttpCode() {
@@ -1105,6 +1107,14 @@ public class DescribeLoadBalancerListenersResponse extends AcsResponse {
 
 			public void setHealthCheck(String healthCheck) {
 				this.healthCheck = healthCheck;
+			}
+
+			public String getProxyProtocolV2Enabled() {
+				return this.proxyProtocolV2Enabled;
+			}
+
+			public void setProxyProtocolV2Enabled(String proxyProtocolV2Enabled) {
+				this.proxyProtocolV2Enabled = proxyProtocolV2Enabled;
 			}
 
 			public List<PortRange> getPortRanges() {
@@ -1370,6 +1380,8 @@ public class DescribeLoadBalancerListenersResponse extends AcsResponse {
 
 			private String healthCheck;
 
+			private String proxyProtocolV2Enabled;
+
 			private List<PortRange2> portRanges1;
 
 			public String getHealthCheckHttpCode() {
@@ -1514,6 +1526,14 @@ public class DescribeLoadBalancerListenersResponse extends AcsResponse {
 
 			public void setHealthCheck(String healthCheck) {
 				this.healthCheck = healthCheck;
+			}
+
+			public String getProxyProtocolV2Enabled() {
+				return this.proxyProtocolV2Enabled;
+			}
+
+			public void setProxyProtocolV2Enabled(String proxyProtocolV2Enabled) {
+				this.proxyProtocolV2Enabled = proxyProtocolV2Enabled;
 			}
 
 			public List<PortRange2> getPortRanges1() {

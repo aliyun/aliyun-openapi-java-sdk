@@ -36,6 +36,7 @@ public class DescribeMasterSlaveServerGroupsResponseUnmarshaller {
 			masterSlaveServerGroup.setServiceManagedMode(_ctx.stringValue("DescribeMasterSlaveServerGroupsResponse.MasterSlaveServerGroups["+ i +"].ServiceManagedMode"));
 			masterSlaveServerGroup.setMasterSlaveServerGroupId(_ctx.stringValue("DescribeMasterSlaveServerGroupsResponse.MasterSlaveServerGroups["+ i +"].MasterSlaveServerGroupId"));
 			masterSlaveServerGroup.setMasterSlaveServerGroupName(_ctx.stringValue("DescribeMasterSlaveServerGroupsResponse.MasterSlaveServerGroups["+ i +"].MasterSlaveServerGroupName"));
+			masterSlaveServerGroup.setCreateTime(_ctx.stringValue("DescribeMasterSlaveServerGroupsResponse.MasterSlaveServerGroups["+ i +"].CreateTime"));
 
 			AssociatedObjects associatedObjects = new AssociatedObjects();
 

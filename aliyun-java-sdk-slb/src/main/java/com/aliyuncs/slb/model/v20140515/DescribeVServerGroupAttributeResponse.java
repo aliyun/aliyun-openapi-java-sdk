@@ -35,6 +35,8 @@ public class DescribeVServerGroupAttributeResponse extends AcsResponse {
 
 	private String loadBalancerId;
 
+	private String createTime;
+
 	private List<BackendServer> backendServers;
 
 	public String getServiceManagedMode() {
@@ -75,6 +77,14 @@ public class DescribeVServerGroupAttributeResponse extends AcsResponse {
 
 	public void setLoadBalancerId(String loadBalancerId) {
 		this.loadBalancerId = loadBalancerId;
+	}
+
+	public String getCreateTime() {
+		return this.createTime;
+	}
+
+	public void setCreateTime(String createTime) {
+		this.createTime = createTime;
 	}
 
 	public List<BackendServer> getBackendServers() {

@@ -31,6 +31,7 @@ public class DescribeVServerGroupAttributeResponseUnmarshaller {
 		describeVServerGroupAttributeResponse.setVServerGroupId(_ctx.stringValue("DescribeVServerGroupAttributeResponse.VServerGroupId"));
 		describeVServerGroupAttributeResponse.setVServerGroupName(_ctx.stringValue("DescribeVServerGroupAttributeResponse.VServerGroupName"));
 		describeVServerGroupAttributeResponse.setLoadBalancerId(_ctx.stringValue("DescribeVServerGroupAttributeResponse.LoadBalancerId"));
+		describeVServerGroupAttributeResponse.setCreateTime(_ctx.stringValue("DescribeVServerGroupAttributeResponse.CreateTime"));
 
 		List<BackendServer> backendServers = new ArrayList<BackendServer>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeVServerGroupAttributeResponse.BackendServers.Length"); i++) {

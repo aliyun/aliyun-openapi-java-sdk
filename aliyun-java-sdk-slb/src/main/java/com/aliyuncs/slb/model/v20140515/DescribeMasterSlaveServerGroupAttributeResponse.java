@@ -35,6 +35,8 @@ public class DescribeMasterSlaveServerGroupAttributeResponse extends AcsResponse
 
 	private String masterSlaveServerGroupId;
 
+	private String createTime;
+
 	private List<MasterSlaveBackendServer> masterSlaveBackendServers;
 
 	public String getServiceManagedMode() {
@@ -75,6 +77,14 @@ public class DescribeMasterSlaveServerGroupAttributeResponse extends AcsResponse
 
 	public void setMasterSlaveServerGroupId(String masterSlaveServerGroupId) {
 		this.masterSlaveServerGroupId = masterSlaveServerGroupId;
+	}
+
+	public String getCreateTime() {
+		return this.createTime;
+	}
+
+	public void setCreateTime(String createTime) {
+		this.createTime = createTime;
 	}
 
 	public List<MasterSlaveBackendServer> getMasterSlaveBackendServers() {

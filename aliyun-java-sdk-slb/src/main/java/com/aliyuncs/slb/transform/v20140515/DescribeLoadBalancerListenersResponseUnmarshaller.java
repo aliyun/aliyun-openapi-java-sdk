@@ -151,6 +151,7 @@ public class DescribeLoadBalancerListenersResponseUnmarshaller {
 			tCPListenerConfig.setConnectionDrain(_ctx.stringValue("DescribeLoadBalancerListenersResponse.Listeners["+ i +"].TCPListenerConfig.ConnectionDrain"));
 			tCPListenerConfig.setHealthCheckMethod(_ctx.stringValue("DescribeLoadBalancerListenersResponse.Listeners["+ i +"].TCPListenerConfig.HealthCheckMethod"));
 			tCPListenerConfig.setHealthCheck(_ctx.stringValue("DescribeLoadBalancerListenersResponse.Listeners["+ i +"].TCPListenerConfig.HealthCheck"));
+			tCPListenerConfig.setProxyProtocolV2Enabled(_ctx.stringValue("DescribeLoadBalancerListenersResponse.Listeners["+ i +"].TCPListenerConfig.ProxyProtocolV2Enabled"));
 
 			List<PortRange> portRanges = new ArrayList<PortRange>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeLoadBalancerListenersResponse.Listeners["+ i +"].TCPListenerConfig.PortRanges.Length"); j++) {
@@ -204,6 +205,7 @@ public class DescribeLoadBalancerListenersResponseUnmarshaller {
 			uDPListenerConfig.setHealthCheckReq(_ctx.stringValue("DescribeLoadBalancerListenersResponse.Listeners["+ i +"].UDPListenerConfig.HealthCheckReq"));
 			uDPListenerConfig.setHealthCheckMethod(_ctx.stringValue("DescribeLoadBalancerListenersResponse.Listeners["+ i +"].UDPListenerConfig.HealthCheckMethod"));
 			uDPListenerConfig.setHealthCheck(_ctx.stringValue("DescribeLoadBalancerListenersResponse.Listeners["+ i +"].UDPListenerConfig.HealthCheck"));
+			uDPListenerConfig.setProxyProtocolV2Enabled(_ctx.stringValue("DescribeLoadBalancerListenersResponse.Listeners["+ i +"].UDPListenerConfig.ProxyProtocolV2Enabled"));
 
 			List<PortRange2> portRanges1 = new ArrayList<PortRange2>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeLoadBalancerListenersResponse.Listeners["+ i +"].UDPListenerConfig.PortRanges.Length"); j++) {

@@ -31,6 +31,7 @@ public class DescribeMasterSlaveServerGroupAttributeResponseUnmarshaller {
 		describeMasterSlaveServerGroupAttributeResponse.setLoadBalancerId(_ctx.stringValue("DescribeMasterSlaveServerGroupAttributeResponse.LoadBalancerId"));
 		describeMasterSlaveServerGroupAttributeResponse.setMasterSlaveServerGroupName(_ctx.stringValue("DescribeMasterSlaveServerGroupAttributeResponse.MasterSlaveServerGroupName"));
 		describeMasterSlaveServerGroupAttributeResponse.setMasterSlaveServerGroupId(_ctx.stringValue("DescribeMasterSlaveServerGroupAttributeResponse.MasterSlaveServerGroupId"));
+		describeMasterSlaveServerGroupAttributeResponse.setCreateTime(_ctx.stringValue("DescribeMasterSlaveServerGroupAttributeResponse.CreateTime"));
 
 		List<MasterSlaveBackendServer> masterSlaveBackendServers = new ArrayList<MasterSlaveBackendServer>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeMasterSlaveServerGroupAttributeResponse.MasterSlaveBackendServers.Length"); i++) {

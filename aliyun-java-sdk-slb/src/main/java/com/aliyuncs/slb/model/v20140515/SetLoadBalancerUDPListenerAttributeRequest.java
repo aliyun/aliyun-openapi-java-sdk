@@ -51,6 +51,8 @@ public class SetLoadBalancerUDPListenerAttributeRequest extends RpcAcsRequest<Se
 
 	private Boolean proxyProtocolV2Enabled;
 
+	private String healthCheckSwitch;
+
 	private Integer healthCheckConnectTimeout;
 
 	private String description;
@@ -221,6 +223,17 @@ public class SetLoadBalancerUDPListenerAttributeRequest extends RpcAcsRequest<Se
 		this.proxyProtocolV2Enabled = proxyProtocolV2Enabled;
 		if(proxyProtocolV2Enabled != null){
 			putQueryParameter("ProxyProtocolV2Enabled", proxyProtocolV2Enabled.toString());
+		}
+	}
+
+	public String getHealthCheckSwitch() {
+		return this.healthCheckSwitch;
+	}
+
+	public void setHealthCheckSwitch(String healthCheckSwitch) {
+		this.healthCheckSwitch = healthCheckSwitch;
+		if(healthCheckSwitch != null){
+			putQueryParameter("HealthCheckSwitch", healthCheckSwitch);
 		}
 	}
 

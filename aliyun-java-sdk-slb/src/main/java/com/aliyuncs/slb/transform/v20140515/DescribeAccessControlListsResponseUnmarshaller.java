@@ -41,6 +41,7 @@ public class DescribeAccessControlListsResponseUnmarshaller {
 			acl.setAddressIPVersion(_ctx.stringValue("DescribeAccessControlListsResponse.Acls["+ i +"].AddressIPVersion"));
 			acl.setAclName(_ctx.stringValue("DescribeAccessControlListsResponse.Acls["+ i +"].AclName"));
 			acl.setResourceGroupId(_ctx.stringValue("DescribeAccessControlListsResponse.Acls["+ i +"].ResourceGroupId"));
+			acl.setCreateTime(_ctx.stringValue("DescribeAccessControlListsResponse.Acls["+ i +"].CreateTime"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeAccessControlListsResponse.Acls["+ i +"].Tags.Length"); j++) {

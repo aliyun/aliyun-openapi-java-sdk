@@ -53,6 +53,8 @@ public class DescribeMasterSlaveServerGroupsResponse extends AcsResponse {
 
 		private String masterSlaveServerGroupName;
 
+		private String createTime;
+
 		private AssociatedObjects associatedObjects;
 
 		public String getServiceManagedMode() {
@@ -77,6 +79,14 @@ public class DescribeMasterSlaveServerGroupsResponse extends AcsResponse {
 
 		public void setMasterSlaveServerGroupName(String masterSlaveServerGroupName) {
 			this.masterSlaveServerGroupName = masterSlaveServerGroupName;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
 		public AssociatedObjects getAssociatedObjects() {

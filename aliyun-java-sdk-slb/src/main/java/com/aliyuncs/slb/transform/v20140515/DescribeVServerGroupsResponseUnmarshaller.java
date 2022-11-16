@@ -38,6 +38,7 @@ public class DescribeVServerGroupsResponseUnmarshaller {
 			vServerGroup.setServiceManagedMode(_ctx.stringValue("DescribeVServerGroupsResponse.VServerGroups["+ i +"].ServiceManagedMode"));
 			vServerGroup.setVServerGroupName(_ctx.stringValue("DescribeVServerGroupsResponse.VServerGroups["+ i +"].VServerGroupName"));
 			vServerGroup.setServerCount(_ctx.longValue("DescribeVServerGroupsResponse.VServerGroups["+ i +"].ServerCount"));
+			vServerGroup.setCreateTime(_ctx.stringValue("DescribeVServerGroupsResponse.VServerGroups["+ i +"].CreateTime"));
 
 			AssociatedObjects associatedObjects = new AssociatedObjects();
 

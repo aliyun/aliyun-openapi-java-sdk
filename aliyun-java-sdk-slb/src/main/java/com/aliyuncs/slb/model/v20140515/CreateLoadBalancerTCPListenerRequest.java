@@ -57,6 +57,8 @@ public class CreateLoadBalancerTCPListenerRequest extends RpcAcsRequest<CreateLo
 
 	private String connectionDrain;
 
+	private String healthCheckSwitch;
+
 	private Integer healthCheckConnectTimeout;
 
 	private String description;
@@ -264,6 +266,17 @@ public class CreateLoadBalancerTCPListenerRequest extends RpcAcsRequest<CreateLo
 		this.connectionDrain = connectionDrain;
 		if(connectionDrain != null){
 			putQueryParameter("ConnectionDrain", connectionDrain);
+		}
+	}
+
+	public String getHealthCheckSwitch() {
+		return this.healthCheckSwitch;
+	}
+
+	public void setHealthCheckSwitch(String healthCheckSwitch) {
+		this.healthCheckSwitch = healthCheckSwitch;
+		if(healthCheckSwitch != null){
+			putQueryParameter("HealthCheckSwitch", healthCheckSwitch);
 		}
 	}
 

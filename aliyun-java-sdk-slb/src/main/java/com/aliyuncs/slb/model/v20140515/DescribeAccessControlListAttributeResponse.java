@@ -37,6 +37,8 @@ public class DescribeAccessControlListAttributeResponse extends AcsResponse {
 
 	private String aclName;
 
+	private String createTime;
+
 	private List<AclEntry> aclEntrys;
 
 	private List<RelatedListener> relatedListeners;
@@ -87,6 +89,14 @@ public class DescribeAccessControlListAttributeResponse extends AcsResponse {
 
 	public void setAclName(String aclName) {
 		this.aclName = aclName;
+	}
+
+	public String getCreateTime() {
+		return this.createTime;
+	}
+
+	public void setCreateTime(String createTime) {
+		this.createTime = createTime;
 	}
 
 	public List<AclEntry> getAclEntrys() {

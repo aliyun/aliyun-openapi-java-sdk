@@ -55,6 +55,8 @@ public class DescribeVServerGroupsResponse extends AcsResponse {
 
 		private Long serverCount;
 
+		private String createTime;
+
 		private AssociatedObjects associatedObjects;
 
 		public String getVServerGroupId() {
@@ -87,6 +89,14 @@ public class DescribeVServerGroupsResponse extends AcsResponse {
 
 		public void setServerCount(Long serverCount) {
 			this.serverCount = serverCount;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
 		public AssociatedObjects getAssociatedObjects() {

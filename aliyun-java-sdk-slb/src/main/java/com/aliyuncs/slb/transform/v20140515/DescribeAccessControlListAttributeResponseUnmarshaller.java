@@ -33,6 +33,7 @@ public class DescribeAccessControlListAttributeResponseUnmarshaller {
 		describeAccessControlListAttributeResponse.setAddressIPVersion(_ctx.stringValue("DescribeAccessControlListAttributeResponse.AddressIPVersion"));
 		describeAccessControlListAttributeResponse.setResourceGroupId(_ctx.stringValue("DescribeAccessControlListAttributeResponse.ResourceGroupId"));
 		describeAccessControlListAttributeResponse.setAclName(_ctx.stringValue("DescribeAccessControlListAttributeResponse.AclName"));
+		describeAccessControlListAttributeResponse.setCreateTime(_ctx.stringValue("DescribeAccessControlListAttributeResponse.CreateTime"));
 
 		List<AclEntry> aclEntrys = new ArrayList<AclEntry>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAccessControlListAttributeResponse.AclEntrys.Length"); i++) {
