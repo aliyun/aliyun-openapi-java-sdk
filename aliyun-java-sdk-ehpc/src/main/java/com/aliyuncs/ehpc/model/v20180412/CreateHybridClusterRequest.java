@@ -42,6 +42,8 @@ public class CreateHybridClusterRequest extends RpcAcsRequest<CreateHybridCluste
 
 	private String password;
 
+	private WinAdPar winAdPar;
+
 	private Float computeSpotPriceLimit;
 
 	private String onPremiseVolumeLocalPath;
@@ -74,6 +76,8 @@ public class CreateHybridClusterRequest extends RpcAcsRequest<CreateHybridCluste
 
 	private String ecsOrderComputeInstanceType;
 
+	private OpenldapPar openldapPar;
+
 	private String jobQueue;
 
 	private String volumeType;
@@ -89,6 +93,8 @@ public class CreateHybridClusterRequest extends RpcAcsRequest<CreateHybridCluste
 	private String osTag;
 
 	private List<Nodes> nodess;
+
+	private String plugin;
 
 	private List<Application> applications;
 
@@ -194,6 +200,21 @@ public class CreateHybridClusterRequest extends RpcAcsRequest<CreateHybridCluste
 		if(password != null){
 			putQueryParameter("Password", password);
 		}
+	}
+
+	public WinAdPar getWinAdPar() {
+		return this.winAdPar;
+	}
+
+	public void setWinAdPar(WinAdPar winAdPar) {
+		this.winAdPar = winAdPar;	
+		if (winAdPar != null) {
+			
+				putQueryParameter("WinAdPar.AdUser" , winAdPar.getAdUser());
+				putQueryParameter("WinAdPar.AdUserPasswd" , winAdPar.getAdUserPasswd());
+				putQueryParameter("WinAdPar.AdIp" , winAdPar.getAdIp());
+				putQueryParameter("WinAdPar.AdDc" , winAdPar.getAdDc());
+		}	
 	}
 
 	public Float getComputeSpotPriceLimit() {
@@ -375,6 +396,19 @@ public class CreateHybridClusterRequest extends RpcAcsRequest<CreateHybridCluste
 		}
 	}
 
+	public OpenldapPar getOpenldapPar() {
+		return this.openldapPar;
+	}
+
+	public void setOpenldapPar(OpenldapPar openldapPar) {
+		this.openldapPar = openldapPar;	
+		if (openldapPar != null) {
+			
+				putQueryParameter("OpenldapPar.BaseDn" , openldapPar.getBaseDn());
+				putQueryParameter("OpenldapPar.LdapServerIp" , openldapPar.getLdapServerIp());
+		}	
+	}
+
 	public String getJobQueue() {
 		return this.jobQueue;
 	}
@@ -470,6 +504,17 @@ public class CreateHybridClusterRequest extends RpcAcsRequest<CreateHybridCluste
 		}	
 	}
 
+	public String getPlugin() {
+		return this.plugin;
+	}
+
+	public void setPlugin(String plugin) {
+		this.plugin = plugin;
+		if(plugin != null){
+			putQueryParameter("Plugin", plugin);
+		}
+	}
+
 	public List<Application> getApplications() {
 		return this.applications;
 	}
@@ -527,6 +572,49 @@ public class CreateHybridClusterRequest extends RpcAcsRequest<CreateHybridCluste
 		}
 	}
 
+	public static class WinAdPar {
+
+		private String adUser;
+
+		private String adUserPasswd;
+
+		private String adIp;
+
+		private String adDc;
+
+		public String getAdUser() {
+			return this.adUser;
+		}
+
+		public void setAdUser(String adUser) {
+			this.adUser = adUser;
+		}
+
+		public String getAdUserPasswd() {
+			return this.adUserPasswd;
+		}
+
+		public void setAdUserPasswd(String adUserPasswd) {
+			this.adUserPasswd = adUserPasswd;
+		}
+
+		public String getAdIp() {
+			return this.adIp;
+		}
+
+		public void setAdIp(String adIp) {
+			this.adIp = adIp;
+		}
+
+		public String getAdDc() {
+			return this.adDc;
+		}
+
+		public void setAdDc(String adDc) {
+			this.adDc = adDc;
+		}
+	}
+
 	public static class PostInstallScript {
 
 		private String args;
@@ -547,6 +635,29 @@ public class CreateHybridClusterRequest extends RpcAcsRequest<CreateHybridCluste
 
 		public void setUrl(String url) {
 			this.url = url;
+		}
+	}
+
+	public static class OpenldapPar {
+
+		private String baseDn;
+
+		private String ldapServerIp;
+
+		public String getBaseDn() {
+			return this.baseDn;
+		}
+
+		public void setBaseDn(String baseDn) {
+			this.baseDn = baseDn;
+		}
+
+		public String getLdapServerIp() {
+			return this.ldapServerIp;
+		}
+
+		public void setLdapServerIp(String ldapServerIp) {
+			this.ldapServerIp = ldapServerIp;
 		}
 	}
 

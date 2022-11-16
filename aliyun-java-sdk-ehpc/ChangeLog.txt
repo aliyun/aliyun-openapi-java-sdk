@@ -1,3 +1,8 @@
+2022-11-16 Version: 1.14.11
+- RunasUserPassword is not required in CreateJobFile.
+- RunasUserPassword not required in SubmitJob.
+- Add new api GetJobLog.
+
 2022-10-27 Version: 1.14.10
 - ListNodesByQueue and ListJobsWithFilters add Async.
 
