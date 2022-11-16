@@ -36,7 +36,7 @@ public class VerifyOwnerInfoRequest extends RpcAcsRequest<VerifyOwnerInfoRespons
 
 	private String cardType;
 	public VerifyOwnerInfoRequest() {
-		super("Copyright", "2019-01-23", "VerifyOwnerInfo");
+		super("Copyright", "2019-01-23", "VerifyOwnerInfo", "swcopyright");
 		setMethod(MethodType.POST);
 	}
 

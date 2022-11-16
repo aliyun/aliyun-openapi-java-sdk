@@ -28,7 +28,7 @@ public class GetStampFileUrlRequest extends RpcAcsRequest<GetStampFileUrlRespons
 
 	private String bizId;
 	public GetStampFileUrlRequest() {
-		super("Copyright", "2019-01-23", "GetStampFileUrl");
+		super("Copyright", "2019-01-23", "GetStampFileUrl", "swcopyright");
 		setMethod(MethodType.POST);
 	}
 

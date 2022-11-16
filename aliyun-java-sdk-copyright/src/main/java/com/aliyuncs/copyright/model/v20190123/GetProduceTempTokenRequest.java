@@ -26,7 +26,7 @@ public class GetProduceTempTokenRequest extends RpcAcsRequest<GetProduceTempToke
 
 	private String bizId;
 	public GetProduceTempTokenRequest() {
-		super("Copyright", "2019-01-23", "GetProduceTempToken");
+		super("Copyright", "2019-01-23", "GetProduceTempToken", "swcopyright");
 		setMethod(MethodType.POST);
 	}
 

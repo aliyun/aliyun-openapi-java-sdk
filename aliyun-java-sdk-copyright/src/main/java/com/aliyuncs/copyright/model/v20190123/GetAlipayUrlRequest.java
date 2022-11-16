@@ -32,7 +32,7 @@ public class GetAlipayUrlRequest extends RpcAcsRequest<GetAlipayUrlResponse> {
 
 	private String returnUrl;
 	public GetAlipayUrlRequest() {
-		super("Copyright", "2019-01-23", "GetAlipayUrl");
+		super("Copyright", "2019-01-23", "GetAlipayUrl", "swcopyright");
 		setMethod(MethodType.GET);
 	}
 

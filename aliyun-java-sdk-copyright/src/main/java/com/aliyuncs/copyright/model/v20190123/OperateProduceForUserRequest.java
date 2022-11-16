@@ -32,7 +32,7 @@ public class OperateProduceForUserRequest extends RpcAcsRequest<OperateProduceFo
 
 	private String operateType;
 	public OperateProduceForUserRequest() {
-		super("Copyright", "2019-01-23", "OperateProduceForUser");
+		super("Copyright", "2019-01-23", "OperateProduceForUser", "swcopyright");
 		setMethod(MethodType.POST);
 	}
 

@@ -26,7 +26,7 @@ public class GetPatentTicketsInfoRequest extends RpcAcsRequest<GetPatentTicketsI
 
 	private String applyNumber;
 	public GetPatentTicketsInfoRequest() {
-		super("Copyright", "2019-01-23", "GetPatentTicketsInfo");
+		super("Copyright", "2019-01-23", "GetPatentTicketsInfo", "swcopyright");
 		setMethod(MethodType.GET);
 	}
 

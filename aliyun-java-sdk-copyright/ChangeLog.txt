@@ -1,3 +1,6 @@
+2022-11-16 Version: 1.0.10
+- Generated 2019-01-23 for `Copyright`.
+
 2022-03-23 Version: 1.0.9
 - Generated 2019-01-23 for `Copyright`.
 

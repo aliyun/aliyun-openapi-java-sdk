@@ -26,7 +26,7 @@ public class DeleteDownloadTicketsRequest extends RpcAcsRequest<DeleteDownloadTi
 
 	private Long downloadId;
 	public DeleteDownloadTicketsRequest() {
-		super("Copyright", "2019-01-23", "DeleteDownloadTickets");
+		super("Copyright", "2019-01-23", "DeleteDownloadTickets", "swcopyright");
 		setMethod(MethodType.POST);
 	}
 

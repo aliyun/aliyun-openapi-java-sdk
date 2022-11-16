@@ -26,7 +26,7 @@ public class QuerySupplementInfoListRequest extends RpcAcsRequest<QuerySupplemen
 
 	private String bizId;
 	public QuerySupplementInfoListRequest() {
-		super("Copyright", "2019-01-23", "QuerySupplementInfoList");
+		super("Copyright", "2019-01-23", "QuerySupplementInfoList", "swcopyright");
 		setMethod(MethodType.POST);
 	}
 

@@ -38,7 +38,7 @@ public class GetAllPatentListRequest extends RpcAcsRequest<GetAllPatentListRespo
 
 	private String keyword;
 	public GetAllPatentListRequest() {
-		super("Copyright", "2019-01-23", "GetAllPatentList");
+		super("Copyright", "2019-01-23", "GetAllPatentList", "swcopyright");
 		setMethod(MethodType.POST);
 	}
 

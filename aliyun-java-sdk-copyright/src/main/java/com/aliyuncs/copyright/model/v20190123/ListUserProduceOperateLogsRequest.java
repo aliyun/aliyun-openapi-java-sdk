@@ -32,7 +32,7 @@ public class ListUserProduceOperateLogsRequest extends RpcAcsRequest<ListUserPro
 
 	private Integer pageSize;
 	public ListUserProduceOperateLogsRequest() {
-		super("Copyright", "2019-01-23", "ListUserProduceOperateLogs");
+		super("Copyright", "2019-01-23", "ListUserProduceOperateLogs", "swcopyright");
 		setMethod(MethodType.GET);
 	}
 

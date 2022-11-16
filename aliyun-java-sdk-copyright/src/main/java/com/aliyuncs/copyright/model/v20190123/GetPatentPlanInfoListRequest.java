@@ -28,9 +28,11 @@ public class GetPatentPlanInfoListRequest extends RpcAcsRequest<GetPatentPlanInf
 
 	private Integer pageSize;
 
+	private String planName;
+
 	private String keyword;
 	public GetPatentPlanInfoListRequest() {
-		super("Copyright", "2019-01-23", "GetPatentPlanInfoList");
+		super("Copyright", "2019-01-23", "GetPatentPlanInfoList", "swcopyright");
 		setMethod(MethodType.POST);
 	}
 
@@ -53,6 +55,17 @@ public class GetPatentPlanInfoListRequest extends RpcAcsRequest<GetPatentPlanInf
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getPlanName() {
+		return this.planName;
+	}
+
+	public void setPlanName(String planName) {
+		this.planName = planName;
+		if(planName != null){
+			putQueryParameter("PlanName", planName);
 		}
 	}
 

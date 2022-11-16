@@ -26,7 +26,7 @@ public class DeletePatentContactRequest extends RpcAcsRequest<DeletePatentContac
 
 	private Long id;
 	public DeletePatentContactRequest() {
-		super("Copyright", "2019-01-23", "DeletePatentContact");
+		super("Copyright", "2019-01-23", "DeletePatentContact", "swcopyright");
 		setMethod(MethodType.POST);
 	}
 

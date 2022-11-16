@@ -28,7 +28,7 @@ public class DeletePatentPlanDetailRequest extends RpcAcsRequest<DeletePatentPla
 
 	private String planId;
 	public DeletePatentPlanDetailRequest() {
-		super("Copyright", "2019-01-23", "DeletePatentPlanDetail");
+		super("Copyright", "2019-01-23", "DeletePatentPlanDetail", "swcopyright");
 		setMethod(MethodType.POST);
 	}
 

@@ -28,7 +28,7 @@ public class BatchAsynchronousAddRequest extends RpcAcsRequest<BatchAsynchronous
 
 	private String planId;
 	public BatchAsynchronousAddRequest() {
-		super("Copyright", "2019-01-23", "BatchAsynchronousAdd");
+		super("Copyright", "2019-01-23", "BatchAsynchronousAdd", "swcopyright");
 		setMethod(MethodType.POST);
 	}
 

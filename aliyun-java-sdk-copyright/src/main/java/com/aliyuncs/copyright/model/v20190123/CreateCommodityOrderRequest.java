@@ -52,7 +52,7 @@ public class CreateCommodityOrderRequest extends RpcAcsRequest<CreateCommodityOr
 
 	private String orderType;
 	public CreateCommodityOrderRequest() {
-		super("Copyright", "2019-01-23", "CreateCommodityOrder");
+		super("Copyright", "2019-01-23", "CreateCommodityOrder", "swcopyright");
 		setMethod(MethodType.POST);
 	}
 

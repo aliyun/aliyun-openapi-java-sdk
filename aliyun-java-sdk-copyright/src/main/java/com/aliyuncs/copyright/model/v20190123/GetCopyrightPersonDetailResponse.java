@@ -104,6 +104,8 @@ public class GetCopyrightPersonDetailResponse extends AcsResponse {
 
 		private String province;
 
+		private String contactPerson;
+
 		public String getLegalPersonType() {
 			return this.legalPersonType;
 		}
@@ -294,6 +296,14 @@ public class GetCopyrightPersonDetailResponse extends AcsResponse {
 
 		public void setProvince(String province) {
 			this.province = province;
+		}
+
+		public String getContactPerson() {
+			return this.contactPerson;
+		}
+
+		public void setContactPerson(String contactPerson) {
+			this.contactPerson = contactPerson;
 		}
 	}
 

@@ -26,7 +26,7 @@ public class ExportPatentPlanDetailRequest extends RpcAcsRequest<ExportPatentPla
 
 	private Long planId;
 	public ExportPatentPlanDetailRequest() {
-		super("Copyright", "2019-01-23", "ExportPatentPlanDetail");
+		super("Copyright", "2019-01-23", "ExportPatentPlanDetail", "swcopyright");
 		setMethod(MethodType.GET);
 	}
 

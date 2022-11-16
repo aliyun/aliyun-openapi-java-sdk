@@ -38,6 +38,7 @@ public class DescribeUserProduceResponseUnmarshaller {
 		describeUserProduceResponse.setErrorCode(_ctx.stringValue("DescribeUserProduceResponse.ErrorCode"));
 		describeUserProduceResponse.setErrorMsg(_ctx.stringValue("DescribeUserProduceResponse.ErrorMsg"));
 		describeUserProduceResponse.setOrderId(_ctx.stringValue("DescribeUserProduceResponse.OrderId"));
+		describeUserProduceResponse.setOrderInstanceId(_ctx.stringValue("DescribeUserProduceResponse.OrderInstanceId"));
 	 
 	 	return describeUserProduceResponse;
 	}

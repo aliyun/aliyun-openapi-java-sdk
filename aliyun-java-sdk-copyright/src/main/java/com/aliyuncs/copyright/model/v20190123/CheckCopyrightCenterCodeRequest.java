@@ -30,7 +30,7 @@ public class CheckCopyrightCenterCodeRequest extends RpcAcsRequest<CheckCopyrigh
 
 	private String bizId;
 	public CheckCopyrightCenterCodeRequest() {
-		super("Copyright", "2019-01-23", "CheckCopyrightCenterCode");
+		super("Copyright", "2019-01-23", "CheckCopyrightCenterCode", "swcopyright");
 		setMethod(MethodType.POST);
 	}
 

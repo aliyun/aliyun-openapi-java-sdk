@@ -26,7 +26,7 @@ public class GetUpgradeWorkRequest extends RpcAcsRequest<GetUpgradeWorkResponse>
 
 	private Long workId;
 	public GetUpgradeWorkRequest() {
-		super("Copyright", "2019-01-23", "GetUpgradeWork");
+		super("Copyright", "2019-01-23", "GetUpgradeWork", "swcopyright");
 		setMethod(MethodType.POST);
 	}
 

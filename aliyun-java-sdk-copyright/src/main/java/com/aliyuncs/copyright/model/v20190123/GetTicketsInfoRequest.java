@@ -26,7 +26,7 @@ public class GetTicketsInfoRequest extends RpcAcsRequest<GetTicketsInfoResponse>
 
 	private String bizId;
 	public GetTicketsInfoRequest() {
-		super("Copyright", "2019-01-23", "GetTicketsInfo");
+		super("Copyright", "2019-01-23", "GetTicketsInfo", "swcopyright");
 		setMethod(MethodType.POST);
 	}
 

@@ -125,6 +125,8 @@ public class ListUserProducesResponse extends AcsResponse {
 
 		private String modifyTime;
 
+		private String orderInstanceId;
+
 		public Integer getStatus() {
 			return this.status;
 		}
@@ -235,6 +237,14 @@ public class ListUserProducesResponse extends AcsResponse {
 
 		public void setModifyTime(String modifyTime) {
 			this.modifyTime = modifyTime;
+		}
+
+		public String getOrderInstanceId() {
+			return this.orderInstanceId;
+		}
+
+		public void setOrderInstanceId(String orderInstanceId) {
+			this.orderInstanceId = orderInstanceId;
 		}
 	}
 

@@ -28,7 +28,7 @@ public class GetUpdateSaleInfoRequest extends RpcAcsRequest<GetUpdateSaleInfoRes
 
 	private String bizId;
 	public GetUpdateSaleInfoRequest() {
-		super("Copyright", "2019-01-23", "GetUpdateSaleInfo");
+		super("Copyright", "2019-01-23", "GetUpdateSaleInfo", "swcopyright");
 		setMethod(MethodType.POST);
 	}
 

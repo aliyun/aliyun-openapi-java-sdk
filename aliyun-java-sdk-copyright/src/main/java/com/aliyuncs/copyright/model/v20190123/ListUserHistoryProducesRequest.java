@@ -44,7 +44,7 @@ public class ListUserHistoryProducesRequest extends RpcAcsRequest<ListUserHistor
 
 	private Integer status;
 	public ListUserHistoryProducesRequest() {
-		super("Copyright", "2019-01-23", "ListUserHistoryProduces");
+		super("Copyright", "2019-01-23", "ListUserHistoryProduces", "swcopyright");
 		setMethod(MethodType.POST);
 	}
 

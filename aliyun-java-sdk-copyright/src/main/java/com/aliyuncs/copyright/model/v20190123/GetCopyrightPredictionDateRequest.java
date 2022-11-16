@@ -26,7 +26,7 @@ public class GetCopyrightPredictionDateRequest extends RpcAcsRequest<GetCopyrigh
 
 	private String bizId;
 	public GetCopyrightPredictionDateRequest() {
-		super("Copyright", "2019-01-23", "GetCopyrightPredictionDate");
+		super("Copyright", "2019-01-23", "GetCopyrightPredictionDate", "swcopyright");
 		setMethod(MethodType.POST);
 	}
 

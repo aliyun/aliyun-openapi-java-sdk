@@ -26,7 +26,7 @@ public class GetPatentOverviewInfoRequest extends RpcAcsRequest<GetPatentOvervie
 
 	private String userType;
 	public GetPatentOverviewInfoRequest() {
-		super("Copyright", "2019-01-23", "GetPatentOverviewInfo");
+		super("Copyright", "2019-01-23", "GetPatentOverviewInfo", "swcopyright");
 		setMethod(MethodType.GET);
 	}
 

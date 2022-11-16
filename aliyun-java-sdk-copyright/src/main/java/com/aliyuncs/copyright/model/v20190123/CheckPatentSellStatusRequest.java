@@ -26,7 +26,7 @@ public class CheckPatentSellStatusRequest extends RpcAcsRequest<CheckPatentSellS
 
 	private String applyNumber;
 	public CheckPatentSellStatusRequest() {
-		super("Copyright", "2019-01-23", "CheckPatentSellStatus");
+		super("Copyright", "2019-01-23", "CheckPatentSellStatus", "swcopyright");
 		setMethod(MethodType.GET);
 	}
 

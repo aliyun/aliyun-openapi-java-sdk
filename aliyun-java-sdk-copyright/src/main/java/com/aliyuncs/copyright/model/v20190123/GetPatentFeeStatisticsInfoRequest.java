@@ -30,7 +30,7 @@ public class GetPatentFeeStatisticsInfoRequest extends RpcAcsRequest<GetPatentFe
 
 	private Long endDate;
 	public GetPatentFeeStatisticsInfoRequest() {
-		super("Copyright", "2019-01-23", "GetPatentFeeStatisticsInfo");
+		super("Copyright", "2019-01-23", "GetPatentFeeStatisticsInfo", "swcopyright");
 		setMethod(MethodType.GET);
 	}
 

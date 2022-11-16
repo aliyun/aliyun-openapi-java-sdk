@@ -28,7 +28,7 @@ public class DeletePatentRecycleRequest extends RpcAcsRequest<DeletePatentRecycl
 
 	private Long recycleId;
 	public DeletePatentRecycleRequest() {
-		super("Copyright", "2019-01-23", "DeletePatentRecycle");
+		super("Copyright", "2019-01-23", "DeletePatentRecycle", "swcopyright");
 		setMethod(MethodType.POST);
 	}
 

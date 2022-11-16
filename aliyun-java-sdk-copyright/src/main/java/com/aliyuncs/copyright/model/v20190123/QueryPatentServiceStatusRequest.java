@@ -26,7 +26,7 @@ public class QueryPatentServiceStatusRequest extends RpcAcsRequest<QueryPatentSe
 
 	private String applyNumber;
 	public QueryPatentServiceStatusRequest() {
-		super("Copyright", "2019-01-23", "QueryPatentServiceStatus");
+		super("Copyright", "2019-01-23", "QueryPatentServiceStatus", "swcopyright");
 		setMethod(MethodType.GET);
 	}
 

@@ -34,7 +34,7 @@ public class CreateDownloadTaskRequest extends RpcAcsRequest<CreateDownloadTaskR
 
 	private String name;
 	public CreateDownloadTaskRequest() {
-		super("Copyright", "2019-01-23", "CreateDownloadTask");
+		super("Copyright", "2019-01-23", "CreateDownloadTask", "swcopyright");
 		setMethod(MethodType.POST);
 	}
 

@@ -26,7 +26,7 @@ public class GetCopyrightHistoryListRequest extends RpcAcsRequest<GetCopyrightHi
 
 	private String bizId;
 	public GetCopyrightHistoryListRequest() {
-		super("Copyright", "2019-01-23", "GetCopyrightHistoryList");
+		super("Copyright", "2019-01-23", "GetCopyrightHistoryList", "swcopyright");
 		setMethod(MethodType.POST);
 	}
 

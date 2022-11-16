@@ -26,7 +26,7 @@ public class GetCacheCheckAddParamRequest extends RpcAcsRequest<GetCacheCheckAdd
 
 	private String cacheKey;
 	public GetCacheCheckAddParamRequest() {
-		super("Copyright", "2019-01-23", "GetCacheCheckAddParam");
+		super("Copyright", "2019-01-23", "GetCacheCheckAddParam", "swcopyright");
 		setMethod(MethodType.POST);
 	}
 

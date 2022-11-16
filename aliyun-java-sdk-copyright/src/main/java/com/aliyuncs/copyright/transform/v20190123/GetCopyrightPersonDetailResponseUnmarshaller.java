@@ -51,6 +51,7 @@ public class GetCopyrightPersonDetailResponseUnmarshaller {
 		data.setOwnerType(_ctx.integerValue("GetCopyrightPersonDetailResponse.Data.OwnerType"));
 		data.setPersonId(_ctx.stringValue("GetCopyrightPersonDetailResponse.Data.PersonId"));
 		data.setProvince(_ctx.stringValue("GetCopyrightPersonDetailResponse.Data.Province"));
+		data.setContactPerson(_ctx.stringValue("GetCopyrightPersonDetailResponse.Data.ContactPerson"));
 		getCopyrightPersonDetailResponse.setData(data);
 	 
 	 	return getCopyrightPersonDetailResponse;

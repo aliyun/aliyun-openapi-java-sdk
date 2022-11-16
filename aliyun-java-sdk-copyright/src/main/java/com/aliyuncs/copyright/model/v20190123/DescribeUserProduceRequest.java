@@ -30,7 +30,7 @@ public class DescribeUserProduceRequest extends RpcAcsRequest<DescribeUserProduc
 
 	private String bizId;
 	public DescribeUserProduceRequest() {
-		super("Copyright", "2019-01-23", "DescribeUserProduce");
+		super("Copyright", "2019-01-23", "DescribeUserProduce", "swcopyright");
 		setMethod(MethodType.POST);
 	}
 

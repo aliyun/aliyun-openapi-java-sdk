@@ -26,7 +26,7 @@ public class GetPatentPlanInfoRequest extends RpcAcsRequest<GetPatentPlanInfoRes
 
 	private Long planId;
 	public GetPatentPlanInfoRequest() {
-		super("Copyright", "2019-01-23", "GetPatentPlanInfo");
+		super("Copyright", "2019-01-23", "GetPatentPlanInfo", "swcopyright");
 		setMethod(MethodType.POST);
 	}
 
