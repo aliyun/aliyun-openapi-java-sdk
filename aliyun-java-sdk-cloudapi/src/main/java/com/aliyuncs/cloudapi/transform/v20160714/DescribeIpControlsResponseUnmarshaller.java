@@ -27,19 +27,19 @@ public class DescribeIpControlsResponseUnmarshaller {
 	public static DescribeIpControlsResponse unmarshall(DescribeIpControlsResponse describeIpControlsResponse, UnmarshallerContext _ctx) {
 		
 		describeIpControlsResponse.setRequestId(_ctx.stringValue("DescribeIpControlsResponse.RequestId"));
-		describeIpControlsResponse.setTotalCount(_ctx.integerValue("DescribeIpControlsResponse.TotalCount"));
-		describeIpControlsResponse.setPageSize(_ctx.integerValue("DescribeIpControlsResponse.PageSize"));
 		describeIpControlsResponse.setPageNumber(_ctx.integerValue("DescribeIpControlsResponse.PageNumber"));
+		describeIpControlsResponse.setPageSize(_ctx.integerValue("DescribeIpControlsResponse.PageSize"));
+		describeIpControlsResponse.setTotalCount(_ctx.integerValue("DescribeIpControlsResponse.TotalCount"));
 
 		List<IpControlInfo> ipControlInfos = new ArrayList<IpControlInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeIpControlsResponse.IpControlInfos.Length"); i++) {
 			IpControlInfo ipControlInfo = new IpControlInfo();
 			ipControlInfo.setIpControlId(_ctx.stringValue("DescribeIpControlsResponse.IpControlInfos["+ i +"].IpControlId"));
-			ipControlInfo.setIpControlName(_ctx.stringValue("DescribeIpControlsResponse.IpControlInfos["+ i +"].IpControlName"));
 			ipControlInfo.setIpControlType(_ctx.stringValue("DescribeIpControlsResponse.IpControlInfos["+ i +"].IpControlType"));
+			ipControlInfo.setModifiedTime(_ctx.stringValue("DescribeIpControlsResponse.IpControlInfos["+ i +"].ModifiedTime"));
+			ipControlInfo.setIpControlName(_ctx.stringValue("DescribeIpControlsResponse.IpControlInfos["+ i +"].IpControlName"));
 			ipControlInfo.setDescription(_ctx.stringValue("DescribeIpControlsResponse.IpControlInfos["+ i +"].Description"));
 			ipControlInfo.setCreateTime(_ctx.stringValue("DescribeIpControlsResponse.IpControlInfos["+ i +"].CreateTime"));
-			ipControlInfo.setModifiedTime(_ctx.stringValue("DescribeIpControlsResponse.IpControlInfos["+ i +"].ModifiedTime"));
 			ipControlInfo.setRegionId(_ctx.stringValue("DescribeIpControlsResponse.IpControlInfos["+ i +"].RegionId"));
 
 			ipControlInfos.add(ipControlInfo);

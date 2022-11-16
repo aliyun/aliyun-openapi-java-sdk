@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeHistoryApisResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageNumber;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageSize;
 
-	private Integer pageNumber;
+	private Integer totalCount;
 
 	private List<ApiHisItem> apiHisItems;
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeHistoryApisResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageSize() {
@@ -59,12 +59,12 @@ public class DescribeHistoryApisResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<ApiHisItem> getApiHisItems() {
@@ -77,48 +77,32 @@ public class DescribeHistoryApisResponse extends AcsResponse {
 
 	public static class ApiHisItem {
 
-		private String regionId;
+		private String status;
 
 		private String apiId;
 
-		private String apiName;
+		private String description;
+
+		private String groupName;
 
 		private String groupId;
 
-		private String groupName;
+		private String deployedTime;
 
 		private String stageName;
 
 		private String historyVersion;
 
-		private String status;
+		private String apiName;
 
-		private String description;
+		private String regionId;
 
-		private String deployedTime;
-
-		public String getBizRegionId() {
-			return this.regionId;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setBizRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		/**
-		 * @deprecated use getBizRegionId instead of this.
-		 */
-		@Deprecated
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		/**
-		 * @deprecated use setBizRegionId instead of this.
-		 */
-		@Deprecated
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getApiId() {
@@ -129,12 +113,20 @@ public class DescribeHistoryApisResponse extends AcsResponse {
 			this.apiId = apiId;
 		}
 
-		public String getApiName() {
-			return this.apiName;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setApiName(String apiName) {
-			this.apiName = apiName;
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getGroupName() {
+			return this.groupName;
+		}
+
+		public void setGroupName(String groupName) {
+			this.groupName = groupName;
 		}
 
 		public String getGroupId() {
@@ -145,12 +137,12 @@ public class DescribeHistoryApisResponse extends AcsResponse {
 			this.groupId = groupId;
 		}
 
-		public String getGroupName() {
-			return this.groupName;
+		public String getDeployedTime() {
+			return this.deployedTime;
 		}
 
-		public void setGroupName(String groupName) {
-			this.groupName = groupName;
+		public void setDeployedTime(String deployedTime) {
+			this.deployedTime = deployedTime;
 		}
 
 		public String getStageName() {
@@ -169,28 +161,20 @@ public class DescribeHistoryApisResponse extends AcsResponse {
 			this.historyVersion = historyVersion;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getApiName() {
+			return this.apiName;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setApiName(String apiName) {
+			this.apiName = apiName;
 		}
 
-		public String getDescription() {
-			return this.description;
+		public String getRegionId() {
+			return this.regionId;
 		}
 
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getDeployedTime() {
-			return this.deployedTime;
-		}
-
-		public void setDeployedTime(String deployedTime) {
-			this.deployedTime = deployedTime;
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 	}
 

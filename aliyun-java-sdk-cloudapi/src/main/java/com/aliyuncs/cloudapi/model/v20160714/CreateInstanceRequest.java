@@ -23,15 +23,7 @@ import com.aliyuncs.cloudapi.Endpoint;
  * @version 
  */
 public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse> {
-	
-	public CreateInstanceRequest() {
-		super("CloudAPI", "2016-07-14", "CreateInstance", "apigateway");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Boolean autoPay;
 
@@ -50,6 +42,14 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 	private String chargeType;
 
 	private String pricingCycle;
+	public CreateInstanceRequest() {
+		super("CloudAPI", "2016-07-14", "CreateInstance", "apigateway");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Boolean getAutoPay() {
 		return this.autoPay;

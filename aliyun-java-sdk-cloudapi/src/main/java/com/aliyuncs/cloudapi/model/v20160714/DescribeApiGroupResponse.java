@@ -25,41 +25,117 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeApiGroupResponse extends AcsResponse {
 
+	private String status;
+
+	private String compatibleFlags;
+
+	private String basePath;
+
+	private String ipv6Status;
+
+	private String userLogConfig;
+
+	private String customerConfigs;
+
 	private String requestId;
-
-	private String groupId;
-
-	private String groupName;
-
-	private String subDomain;
 
 	private String description;
 
+	private String httpsPolicy;
+
+	private String subDomain;
+
 	private String createdTime;
 
-	private String modifiedTime;
+	private String rpcPattern;
 
-	private String regionId;
+	private String defaultDomain;
 
-	private String status;
+	private String cmsMonitorGroup;
 
 	private String billingStatus;
 
-	private String illegalStatus;
-
 	private Integer trafficLimit;
+
+	private String passthroughHeaders;
+
+	private String instanceId;
 
 	private String vpcDomain;
 
 	private String instanceType;
 
-	private String instanceId;
+	private String customTraceConfig;
 
-	private String httpsPolicy;
+	private String regionId;
+
+	private String modifiedTime;
+
+	private String groupId;
+
+	private String groupName;
+
+	private String classicVpcSubDomain;
+
+	private String illegalStatus;
+
+	private String instanceVipList;
+
+	private String vpcSlbIntranetDomain;
+
+	private Boolean cloudMarketCommodity;
 
 	private List<DomainItem> customDomains;
 
 	private List<StageInfo> stageItems;
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public String getCompatibleFlags() {
+		return this.compatibleFlags;
+	}
+
+	public void setCompatibleFlags(String compatibleFlags) {
+		this.compatibleFlags = compatibleFlags;
+	}
+
+	public String getBasePath() {
+		return this.basePath;
+	}
+
+	public void setBasePath(String basePath) {
+		this.basePath = basePath;
+	}
+
+	public String getIpv6Status() {
+		return this.ipv6Status;
+	}
+
+	public void setIpv6Status(String ipv6Status) {
+		this.ipv6Status = ipv6Status;
+	}
+
+	public String getUserLogConfig() {
+		return this.userLogConfig;
+	}
+
+	public void setUserLogConfig(String userLogConfig) {
+		this.userLogConfig = userLogConfig;
+	}
+
+	public String getCustomerConfigs() {
+		return this.customerConfigs;
+	}
+
+	public void setCustomerConfigs(String customerConfigs) {
+		this.customerConfigs = customerConfigs;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,30 +143,6 @@ public class DescribeApiGroupResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getGroupId() {
-		return this.groupId;
-	}
-
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-	}
-
-	public String getGroupName() {
-		return this.groupName;
-	}
-
-	public void setGroupName(String groupName) {
-		this.groupName = groupName;
-	}
-
-	public String getSubDomain() {
-		return this.subDomain;
-	}
-
-	public void setSubDomain(String subDomain) {
-		this.subDomain = subDomain;
 	}
 
 	public String getDescription() {
@@ -101,6 +153,22 @@ public class DescribeApiGroupResponse extends AcsResponse {
 		this.description = description;
 	}
 
+	public String getHttpsPolicy() {
+		return this.httpsPolicy;
+	}
+
+	public void setHttpsPolicy(String httpsPolicy) {
+		this.httpsPolicy = httpsPolicy;
+	}
+
+	public String getSubDomain() {
+		return this.subDomain;
+	}
+
+	public void setSubDomain(String subDomain) {
+		this.subDomain = subDomain;
+	}
+
 	public String getCreatedTime() {
 		return this.createdTime;
 	}
@@ -109,44 +177,28 @@ public class DescribeApiGroupResponse extends AcsResponse {
 		this.createdTime = createdTime;
 	}
 
-	public String getModifiedTime() {
-		return this.modifiedTime;
+	public String getRpcPattern() {
+		return this.rpcPattern;
 	}
 
-	public void setModifiedTime(String modifiedTime) {
-		this.modifiedTime = modifiedTime;
+	public void setRpcPattern(String rpcPattern) {
+		this.rpcPattern = rpcPattern;
 	}
 
-	public String getBizRegionId() {
-		return this.regionId;
+	public String getDefaultDomain() {
+		return this.defaultDomain;
 	}
 
-	public void setBizRegionId(String regionId) {
-		this.regionId = regionId;
+	public void setDefaultDomain(String defaultDomain) {
+		this.defaultDomain = defaultDomain;
 	}
 
-	/**
-	 * @deprecated use getBizRegionId instead of this.
-	 */
-	@Deprecated
-	public String getRegionId() {
-		return this.regionId;
+	public String getCmsMonitorGroup() {
+		return this.cmsMonitorGroup;
 	}
 
-	/**
-	 * @deprecated use setBizRegionId instead of this.
-	 */
-	@Deprecated
-	public void setRegionId(String regionId) {
-		this.regionId = regionId;
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
+	public void setCmsMonitorGroup(String cmsMonitorGroup) {
+		this.cmsMonitorGroup = cmsMonitorGroup;
 	}
 
 	public String getBillingStatus() {
@@ -157,20 +209,28 @@ public class DescribeApiGroupResponse extends AcsResponse {
 		this.billingStatus = billingStatus;
 	}
 
-	public String getIllegalStatus() {
-		return this.illegalStatus;
-	}
-
-	public void setIllegalStatus(String illegalStatus) {
-		this.illegalStatus = illegalStatus;
-	}
-
 	public Integer getTrafficLimit() {
 		return this.trafficLimit;
 	}
 
 	public void setTrafficLimit(Integer trafficLimit) {
 		this.trafficLimit = trafficLimit;
+	}
+
+	public String getPassthroughHeaders() {
+		return this.passthroughHeaders;
+	}
+
+	public void setPassthroughHeaders(String passthroughHeaders) {
+		this.passthroughHeaders = passthroughHeaders;
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
 	}
 
 	public String getVpcDomain() {
@@ -189,20 +249,84 @@ public class DescribeApiGroupResponse extends AcsResponse {
 		this.instanceType = instanceType;
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getCustomTraceConfig() {
+		return this.customTraceConfig;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
+	public void setCustomTraceConfig(String customTraceConfig) {
+		this.customTraceConfig = customTraceConfig;
 	}
 
-	public String getHttpsPolicy() {
-		return this.httpsPolicy;
+	public String getRegionId() {
+		return this.regionId;
 	}
 
-	public void setHttpsPolicy(String httpsPolicy) {
-		this.httpsPolicy = httpsPolicy;
+	public void setRegionId(String regionId) {
+		this.regionId = regionId;
+	}
+
+	public String getModifiedTime() {
+		return this.modifiedTime;
+	}
+
+	public void setModifiedTime(String modifiedTime) {
+		this.modifiedTime = modifiedTime;
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+	}
+
+	public String getGroupName() {
+		return this.groupName;
+	}
+
+	public void setGroupName(String groupName) {
+		this.groupName = groupName;
+	}
+
+	public String getClassicVpcSubDomain() {
+		return this.classicVpcSubDomain;
+	}
+
+	public void setClassicVpcSubDomain(String classicVpcSubDomain) {
+		this.classicVpcSubDomain = classicVpcSubDomain;
+	}
+
+	public String getIllegalStatus() {
+		return this.illegalStatus;
+	}
+
+	public void setIllegalStatus(String illegalStatus) {
+		this.illegalStatus = illegalStatus;
+	}
+
+	public String getInstanceVipList() {
+		return this.instanceVipList;
+	}
+
+	public void setInstanceVipList(String instanceVipList) {
+		this.instanceVipList = instanceVipList;
+	}
+
+	public String getVpcSlbIntranetDomain() {
+		return this.vpcSlbIntranetDomain;
+	}
+
+	public void setVpcSlbIntranetDomain(String vpcSlbIntranetDomain) {
+		this.vpcSlbIntranetDomain = vpcSlbIntranetDomain;
+	}
+
+	public Boolean getCloudMarketCommodity() {
+		return this.cloudMarketCommodity;
+	}
+
+	public void setCloudMarketCommodity(Boolean cloudMarketCommodity) {
+		this.cloudMarketCommodity = cloudMarketCommodity;
 	}
 
 	public List<DomainItem> getCustomDomains() {
@@ -223,60 +347,38 @@ public class DescribeApiGroupResponse extends AcsResponse {
 
 	public static class DomainItem {
 
-		private String domainName;
-
-		private String certificateId;
-
-		private String certificateName;
-
-		private String domainCNAMEStatus;
-
-		private String domainBindingStatus;
+		private String bindStageName;
 
 		private String domainLegalStatus;
 
-		private String domainWebSocketStatus;
+		private String certificateName;
+
+		private String customDomainType;
+
+		private String domainCNAMEStatus;
+
+		private String wildcardDomainPatterns;
+
+		private String domainBindingStatus;
+
+		private String domainName;
 
 		private String domainRemark;
 
-		public String getDomainName() {
-			return this.domainName;
+		private String domainWebSocketStatus;
+
+		private String certificateId;
+
+		private Boolean isHttpRedirectToHttps;
+
+		private String wssEnable;
+
+		public String getBindStageName() {
+			return this.bindStageName;
 		}
 
-		public void setDomainName(String domainName) {
-			this.domainName = domainName;
-		}
-
-		public String getCertificateId() {
-			return this.certificateId;
-		}
-
-		public void setCertificateId(String certificateId) {
-			this.certificateId = certificateId;
-		}
-
-		public String getCertificateName() {
-			return this.certificateName;
-		}
-
-		public void setCertificateName(String certificateName) {
-			this.certificateName = certificateName;
-		}
-
-		public String getDomainCNAMEStatus() {
-			return this.domainCNAMEStatus;
-		}
-
-		public void setDomainCNAMEStatus(String domainCNAMEStatus) {
-			this.domainCNAMEStatus = domainCNAMEStatus;
-		}
-
-		public String getDomainBindingStatus() {
-			return this.domainBindingStatus;
-		}
-
-		public void setDomainBindingStatus(String domainBindingStatus) {
-			this.domainBindingStatus = domainBindingStatus;
+		public void setBindStageName(String bindStageName) {
+			this.bindStageName = bindStageName;
 		}
 
 		public String getDomainLegalStatus() {
@@ -287,12 +389,52 @@ public class DescribeApiGroupResponse extends AcsResponse {
 			this.domainLegalStatus = domainLegalStatus;
 		}
 
-		public String getDomainWebSocketStatus() {
-			return this.domainWebSocketStatus;
+		public String getCertificateName() {
+			return this.certificateName;
 		}
 
-		public void setDomainWebSocketStatus(String domainWebSocketStatus) {
-			this.domainWebSocketStatus = domainWebSocketStatus;
+		public void setCertificateName(String certificateName) {
+			this.certificateName = certificateName;
+		}
+
+		public String getCustomDomainType() {
+			return this.customDomainType;
+		}
+
+		public void setCustomDomainType(String customDomainType) {
+			this.customDomainType = customDomainType;
+		}
+
+		public String getDomainCNAMEStatus() {
+			return this.domainCNAMEStatus;
+		}
+
+		public void setDomainCNAMEStatus(String domainCNAMEStatus) {
+			this.domainCNAMEStatus = domainCNAMEStatus;
+		}
+
+		public String getWildcardDomainPatterns() {
+			return this.wildcardDomainPatterns;
+		}
+
+		public void setWildcardDomainPatterns(String wildcardDomainPatterns) {
+			this.wildcardDomainPatterns = wildcardDomainPatterns;
+		}
+
+		public String getDomainBindingStatus() {
+			return this.domainBindingStatus;
+		}
+
+		public void setDomainBindingStatus(String domainBindingStatus) {
+			this.domainBindingStatus = domainBindingStatus;
+		}
+
+		public String getDomainName() {
+			return this.domainName;
+		}
+
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
 		}
 
 		public String getDomainRemark() {
@@ -301,6 +443,38 @@ public class DescribeApiGroupResponse extends AcsResponse {
 
 		public void setDomainRemark(String domainRemark) {
 			this.domainRemark = domainRemark;
+		}
+
+		public String getDomainWebSocketStatus() {
+			return this.domainWebSocketStatus;
+		}
+
+		public void setDomainWebSocketStatus(String domainWebSocketStatus) {
+			this.domainWebSocketStatus = domainWebSocketStatus;
+		}
+
+		public String getCertificateId() {
+			return this.certificateId;
+		}
+
+		public void setCertificateId(String certificateId) {
+			this.certificateId = certificateId;
+		}
+
+		public Boolean getIsHttpRedirectToHttps() {
+			return this.isHttpRedirectToHttps;
+		}
+
+		public void setIsHttpRedirectToHttps(Boolean isHttpRedirectToHttps) {
+			this.isHttpRedirectToHttps = isHttpRedirectToHttps;
+		}
+
+		public String getWssEnable() {
+			return this.wssEnable;
+		}
+
+		public void setWssEnable(String wssEnable) {
+			this.wssEnable = wssEnable;
 		}
 	}
 

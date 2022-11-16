@@ -27,20 +27,20 @@ public class DescribeSignaturesResponseUnmarshaller {
 	public static DescribeSignaturesResponse unmarshall(DescribeSignaturesResponse describeSignaturesResponse, UnmarshallerContext _ctx) {
 		
 		describeSignaturesResponse.setRequestId(_ctx.stringValue("DescribeSignaturesResponse.RequestId"));
-		describeSignaturesResponse.setTotalCount(_ctx.integerValue("DescribeSignaturesResponse.TotalCount"));
-		describeSignaturesResponse.setPageSize(_ctx.integerValue("DescribeSignaturesResponse.PageSize"));
 		describeSignaturesResponse.setPageNumber(_ctx.integerValue("DescribeSignaturesResponse.PageNumber"));
+		describeSignaturesResponse.setPageSize(_ctx.integerValue("DescribeSignaturesResponse.PageSize"));
+		describeSignaturesResponse.setTotalCount(_ctx.integerValue("DescribeSignaturesResponse.TotalCount"));
 
 		List<SignatureInfo> signatureInfos = new ArrayList<SignatureInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSignaturesResponse.SignatureInfos.Length"); i++) {
 			SignatureInfo signatureInfo = new SignatureInfo();
-			signatureInfo.setRegionId(_ctx.stringValue("DescribeSignaturesResponse.SignatureInfos["+ i +"].RegionId"));
+			signatureInfo.setModifiedTime(_ctx.stringValue("DescribeSignaturesResponse.SignatureInfos["+ i +"].ModifiedTime"));
 			signatureInfo.setSignatureId(_ctx.stringValue("DescribeSignaturesResponse.SignatureInfos["+ i +"].SignatureId"));
+			signatureInfo.setSignatureSecret(_ctx.stringValue("DescribeSignaturesResponse.SignatureInfos["+ i +"].SignatureSecret"));
 			signatureInfo.setSignatureName(_ctx.stringValue("DescribeSignaturesResponse.SignatureInfos["+ i +"].SignatureName"));
 			signatureInfo.setSignatureKey(_ctx.stringValue("DescribeSignaturesResponse.SignatureInfos["+ i +"].SignatureKey"));
-			signatureInfo.setSignatureSecret(_ctx.stringValue("DescribeSignaturesResponse.SignatureInfos["+ i +"].SignatureSecret"));
 			signatureInfo.setCreatedTime(_ctx.stringValue("DescribeSignaturesResponse.SignatureInfos["+ i +"].CreatedTime"));
-			signatureInfo.setModifiedTime(_ctx.stringValue("DescribeSignaturesResponse.SignatureInfos["+ i +"].ModifiedTime"));
+			signatureInfo.setRegionId(_ctx.stringValue("DescribeSignaturesResponse.SignatureInfos["+ i +"].RegionId"));
 
 			signatureInfos.add(signatureInfo);
 		}

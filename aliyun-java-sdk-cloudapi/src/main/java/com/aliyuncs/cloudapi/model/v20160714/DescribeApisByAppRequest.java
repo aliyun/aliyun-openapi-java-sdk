@@ -23,23 +23,55 @@ import com.aliyuncs.cloudapi.Endpoint;
  * @version 
  */
 public class DescribeApisByAppRequest extends RpcAcsRequest<DescribeApisByAppResponse> {
-	
+	   
+
+	private String method;
+
+	private String description;
+
+	private Integer pageNumber;
+
+	private String path;
+
+	private String apiName;
+
+	private String securityToken;
+
+	private Long appId;
+
+	private String apiUid;
+
+	private Integer pageSize;
 	public DescribeApisByAppRequest() {
 		super("CloudAPI", "2016-07-14", "DescribeApisByApp", "apigateway");
-		setSysMethod(MethodType.POST);
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private Integer pageNumber;
+	public String getBizMethod() {
+		return this.method;
+	}
 
-	private String securityToken;
+	public void setBizMethod(String method) {
+		this.method = method;
+		if(method != null){
+			putQueryParameter("Method", method);
+		}
+	}
 
-	private Long appId;
+	public String getDescription() {
+		return this.description;
+	}
 
-	private Integer pageSize;
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
 
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -52,29 +84,32 @@ public class DescribeApisByAppRequest extends RpcAcsRequest<DescribeApisByAppRes
 		}
 	}
 
-	public String getBizSecurityToken() {
-		return this.securityToken;
+	public String getPath() {
+		return this.path;
 	}
 
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setPath(String path) {
+		this.path = path;
+		if(path != null){
+			putQueryParameter("Path", path);
 		}
 	}
 
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
+	public String getApiName() {
+		return this.apiName;
+	}
+
+	public void setApiName(String apiName) {
+		this.apiName = apiName;
+		if(apiName != null){
+			putQueryParameter("ApiName", apiName);
+		}
+	}
+
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){
@@ -90,6 +125,17 @@ public class DescribeApisByAppRequest extends RpcAcsRequest<DescribeApisByAppRes
 		this.appId = appId;
 		if(appId != null){
 			putQueryParameter("AppId", appId.toString());
+		}
+	}
+
+	public String getApiUid() {
+		return this.apiUid;
+	}
+
+	public void setApiUid(String apiUid) {
+		this.apiUid = apiUid;
+		if(apiUid != null){
+			putQueryParameter("ApiUid", apiUid);
 		}
 	}
 

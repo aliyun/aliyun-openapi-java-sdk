@@ -23,11 +23,11 @@ public class DescribeAppResponseUnmarshaller {
 	public static DescribeAppResponse unmarshall(DescribeAppResponse describeAppResponse, UnmarshallerContext _ctx) {
 		
 		describeAppResponse.setRequestId(_ctx.stringValue("DescribeAppResponse.RequestId"));
-		describeAppResponse.setAppId(_ctx.longValue("DescribeAppResponse.AppId"));
 		describeAppResponse.setAppName(_ctx.stringValue("DescribeAppResponse.AppName"));
-		describeAppResponse.setDescription(_ctx.stringValue("DescribeAppResponse.Description"));
-		describeAppResponse.setCreatedTime(_ctx.stringValue("DescribeAppResponse.CreatedTime"));
 		describeAppResponse.setModifiedTime(_ctx.stringValue("DescribeAppResponse.ModifiedTime"));
+		describeAppResponse.setDescription(_ctx.stringValue("DescribeAppResponse.Description"));
+		describeAppResponse.setAppId(_ctx.longValue("DescribeAppResponse.AppId"));
+		describeAppResponse.setCreatedTime(_ctx.stringValue("DescribeAppResponse.CreatedTime"));
 	 
 	 	return describeAppResponse;
 	}

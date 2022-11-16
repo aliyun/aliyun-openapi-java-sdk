@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDeployedApisResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageNumber;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageSize;
 
-	private Integer pageNumber;
+	private Integer totalCount;
 
 	private List<DeployedApiItem> deployedApis;
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeDeployedApisResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageSize() {
@@ -59,12 +59,12 @@ public class DescribeDeployedApisResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<DeployedApiItem> getDeployedApis() {
@@ -77,46 +77,34 @@ public class DescribeDeployedApisResponse extends AcsResponse {
 
 	public static class DeployedApiItem {
 
-		private String regionId;
+		private String visibility;
 
 		private String apiId;
 
-		private String apiName;
-
-		private String groupId;
+		private String description;
 
 		private String groupName;
 
-		private String stageName;
-
-		private String visibility;
-
-		private String description;
+		private String groupId;
 
 		private String deployedTime;
 
-		public String getBizRegionId() {
-			return this.regionId;
+		private String stageName;
+
+		private String apiName;
+
+		private String regionId;
+
+		private String apiPath;
+
+		private String apiMethod;
+
+		public String getVisibility() {
+			return this.visibility;
 		}
 
-		public void setBizRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		/**
-		 * @deprecated use getBizRegionId instead of this.
-		 */
-		@Deprecated
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		/**
-		 * @deprecated use setBizRegionId instead of this.
-		 */
-		@Deprecated
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setVisibility(String visibility) {
+			this.visibility = visibility;
 		}
 
 		public String getApiId() {
@@ -127,20 +115,12 @@ public class DescribeDeployedApisResponse extends AcsResponse {
 			this.apiId = apiId;
 		}
 
-		public String getApiName() {
-			return this.apiName;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setApiName(String apiName) {
-			this.apiName = apiName;
-		}
-
-		public String getGroupId() {
-			return this.groupId;
-		}
-
-		public void setGroupId(String groupId) {
-			this.groupId = groupId;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getGroupName() {
@@ -151,28 +131,12 @@ public class DescribeDeployedApisResponse extends AcsResponse {
 			this.groupName = groupName;
 		}
 
-		public String getStageName() {
-			return this.stageName;
+		public String getGroupId() {
+			return this.groupId;
 		}
 
-		public void setStageName(String stageName) {
-			this.stageName = stageName;
-		}
-
-		public String getVisibility() {
-			return this.visibility;
-		}
-
-		public void setVisibility(String visibility) {
-			this.visibility = visibility;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
+		public void setGroupId(String groupId) {
+			this.groupId = groupId;
 		}
 
 		public String getDeployedTime() {
@@ -181,6 +145,46 @@ public class DescribeDeployedApisResponse extends AcsResponse {
 
 		public void setDeployedTime(String deployedTime) {
 			this.deployedTime = deployedTime;
+		}
+
+		public String getStageName() {
+			return this.stageName;
+		}
+
+		public void setStageName(String stageName) {
+			this.stageName = stageName;
+		}
+
+		public String getApiName() {
+			return this.apiName;
+		}
+
+		public void setApiName(String apiName) {
+			this.apiName = apiName;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getApiPath() {
+			return this.apiPath;
+		}
+
+		public void setApiPath(String apiPath) {
+			this.apiPath = apiPath;
+		}
+
+		public String getApiMethod() {
+			return this.apiMethod;
+		}
+
+		public void setApiMethod(String apiMethod) {
+			this.apiMethod = apiMethod;
 		}
 	}
 

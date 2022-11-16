@@ -23,23 +23,29 @@ import com.aliyuncs.cloudapi.Endpoint;
  * @version 
  */
 public class ImportSwaggerRequest extends RpcAcsRequest<ImportSwaggerResponse> {
-	
-	public ImportSwaggerRequest() {
-		super("CloudAPI", "2016-07-14", "ImportSwagger", "apigateway");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String dataFormat;
+
+	private Boolean dryRun;
 
 	private String data;
 
 	private String groupId;
 
+	private String globalCondition;
+
+	private String securityToken;
+
 	private Boolean overwrite;
+	public ImportSwaggerRequest() {
+		super("CloudAPI", "2016-07-14", "ImportSwagger", "apigateway");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getDataFormat() {
 		return this.dataFormat;
@@ -49,6 +55,17 @@ public class ImportSwaggerRequest extends RpcAcsRequest<ImportSwaggerResponse> {
 		this.dataFormat = dataFormat;
 		if(dataFormat != null){
 			putQueryParameter("DataFormat", dataFormat);
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 
@@ -71,6 +88,28 @@ public class ImportSwaggerRequest extends RpcAcsRequest<ImportSwaggerResponse> {
 		this.groupId = groupId;
 		if(groupId != null){
 			putQueryParameter("GroupId", groupId);
+		}
+	}
+
+	public String getGlobalCondition() {
+		return this.globalCondition;
+	}
+
+	public void setGlobalCondition(String globalCondition) {
+		this.globalCondition = globalCondition;
+		if(globalCondition != null){
+			putQueryParameter("GlobalCondition", globalCondition);
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

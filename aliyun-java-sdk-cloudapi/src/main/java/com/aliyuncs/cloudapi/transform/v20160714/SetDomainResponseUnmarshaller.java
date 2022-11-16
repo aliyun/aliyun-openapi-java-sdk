@@ -23,13 +23,13 @@ public class SetDomainResponseUnmarshaller {
 	public static SetDomainResponse unmarshall(SetDomainResponse setDomainResponse, UnmarshallerContext _ctx) {
 		
 		setDomainResponse.setRequestId(_ctx.stringValue("SetDomainResponse.RequestId"));
-		setDomainResponse.setGroupId(_ctx.stringValue("SetDomainResponse.GroupId"));
-		setDomainResponse.setDomainName(_ctx.stringValue("SetDomainResponse.DomainName"));
-		setDomainResponse.setSubDomain(_ctx.stringValue("SetDomainResponse.SubDomain"));
-		setDomainResponse.setDomainBindingStatus(_ctx.stringValue("SetDomainResponse.DomainBindingStatus"));
 		setDomainResponse.setDomainLegalStatus(_ctx.stringValue("SetDomainResponse.DomainLegalStatus"));
-		setDomainResponse.setDomainWebSocketStatus(_ctx.stringValue("SetDomainResponse.DomainWebSocketStatus"));
+		setDomainResponse.setGroupId(_ctx.stringValue("SetDomainResponse.GroupId"));
+		setDomainResponse.setSubDomain(_ctx.stringValue("SetDomainResponse.SubDomain"));
+		setDomainResponse.setDomainName(_ctx.stringValue("SetDomainResponse.DomainName"));
+		setDomainResponse.setDomainBindingStatus(_ctx.stringValue("SetDomainResponse.DomainBindingStatus"));
 		setDomainResponse.setDomainRemark(_ctx.stringValue("SetDomainResponse.DomainRemark"));
+		setDomainResponse.setDomainWebSocketStatus(_ctx.stringValue("SetDomainResponse.DomainWebSocketStatus"));
 	 
 	 	return setDomainResponse;
 	}

@@ -23,10 +23,11 @@ public class ModifyApiGroupResponseUnmarshaller {
 	public static ModifyApiGroupResponse unmarshall(ModifyApiGroupResponse modifyApiGroupResponse, UnmarshallerContext _ctx) {
 		
 		modifyApiGroupResponse.setRequestId(_ctx.stringValue("ModifyApiGroupResponse.RequestId"));
+		modifyApiGroupResponse.setBasePath(_ctx.stringValue("ModifyApiGroupResponse.BasePath"));
 		modifyApiGroupResponse.setGroupId(_ctx.stringValue("ModifyApiGroupResponse.GroupId"));
 		modifyApiGroupResponse.setGroupName(_ctx.stringValue("ModifyApiGroupResponse.GroupName"));
-		modifyApiGroupResponse.setSubDomain(_ctx.stringValue("ModifyApiGroupResponse.SubDomain"));
 		modifyApiGroupResponse.setDescription(_ctx.stringValue("ModifyApiGroupResponse.Description"));
+		modifyApiGroupResponse.setSubDomain(_ctx.stringValue("ModifyApiGroupResponse.SubDomain"));
 	 
 	 	return modifyApiGroupResponse;
 	}

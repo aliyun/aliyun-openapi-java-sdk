@@ -25,6 +25,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribePurchasedApiGroupResponse extends AcsResponse {
 
+	private String status;
+
+	private String purchasedTime;
+
 	private String requestId;
 
 	private String groupId;
@@ -33,13 +37,25 @@ public class DescribePurchasedApiGroupResponse extends AcsResponse {
 
 	private String description;
 
-	private String purchasedTime;
-
 	private String regionId;
 
-	private String status;
-
 	private List<DomainItem> domains;
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public String getPurchasedTime() {
+		return this.purchasedTime;
+	}
+
+	public void setPurchasedTime(String purchasedTime) {
+		this.purchasedTime = purchasedTime;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -73,44 +89,12 @@ public class DescribePurchasedApiGroupResponse extends AcsResponse {
 		this.description = description;
 	}
 
-	public String getPurchasedTime() {
-		return this.purchasedTime;
-	}
-
-	public void setPurchasedTime(String purchasedTime) {
-		this.purchasedTime = purchasedTime;
-	}
-
-	public String getBizRegionId() {
-		return this.regionId;
-	}
-
-	public void setBizRegionId(String regionId) {
-		this.regionId = regionId;
-	}
-
-	/**
-	 * @deprecated use getBizRegionId instead of this.
-	 */
-	@Deprecated
 	public String getRegionId() {
 		return this.regionId;
 	}
 
-	/**
-	 * @deprecated use setBizRegionId instead of this.
-	 */
-	@Deprecated
 	public void setRegionId(String regionId) {
 		this.regionId = regionId;
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
 	}
 
 	public List<DomainItem> getDomains() {

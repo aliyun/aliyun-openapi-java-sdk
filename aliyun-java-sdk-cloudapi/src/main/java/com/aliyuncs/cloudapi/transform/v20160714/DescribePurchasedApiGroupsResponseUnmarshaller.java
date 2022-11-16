@@ -27,23 +27,23 @@ public class DescribePurchasedApiGroupsResponseUnmarshaller {
 	public static DescribePurchasedApiGroupsResponse unmarshall(DescribePurchasedApiGroupsResponse describePurchasedApiGroupsResponse, UnmarshallerContext _ctx) {
 		
 		describePurchasedApiGroupsResponse.setRequestId(_ctx.stringValue("DescribePurchasedApiGroupsResponse.RequestId"));
-		describePurchasedApiGroupsResponse.setTotalCount(_ctx.integerValue("DescribePurchasedApiGroupsResponse.TotalCount"));
-		describePurchasedApiGroupsResponse.setPageSize(_ctx.integerValue("DescribePurchasedApiGroupsResponse.PageSize"));
 		describePurchasedApiGroupsResponse.setPageNumber(_ctx.integerValue("DescribePurchasedApiGroupsResponse.PageNumber"));
+		describePurchasedApiGroupsResponse.setPageSize(_ctx.integerValue("DescribePurchasedApiGroupsResponse.PageSize"));
+		describePurchasedApiGroupsResponse.setTotalCount(_ctx.integerValue("DescribePurchasedApiGroupsResponse.TotalCount"));
 
 		List<PurchasedApiGroupAttribute> purchasedApiGroupAttributes = new ArrayList<PurchasedApiGroupAttribute>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePurchasedApiGroupsResponse.PurchasedApiGroupAttributes.Length"); i++) {
 			PurchasedApiGroupAttribute purchasedApiGroupAttribute = new PurchasedApiGroupAttribute();
-			purchasedApiGroupAttribute.setGroupId(_ctx.stringValue("DescribePurchasedApiGroupsResponse.PurchasedApiGroupAttributes["+ i +"].GroupId"));
-			purchasedApiGroupAttribute.setGroupName(_ctx.stringValue("DescribePurchasedApiGroupsResponse.PurchasedApiGroupAttributes["+ i +"].GroupName"));
-			purchasedApiGroupAttribute.setDescription(_ctx.stringValue("DescribePurchasedApiGroupsResponse.PurchasedApiGroupAttributes["+ i +"].Description"));
+			purchasedApiGroupAttribute.setStatus(_ctx.stringValue("DescribePurchasedApiGroupsResponse.PurchasedApiGroupAttributes["+ i +"].Status"));
 			purchasedApiGroupAttribute.setPurchasedTime(_ctx.stringValue("DescribePurchasedApiGroupsResponse.PurchasedApiGroupAttributes["+ i +"].PurchasedTime"));
 			purchasedApiGroupAttribute.setExpireTime(_ctx.stringValue("DescribePurchasedApiGroupsResponse.PurchasedApiGroupAttributes["+ i +"].ExpireTime"));
-			purchasedApiGroupAttribute.setRegionId(_ctx.stringValue("DescribePurchasedApiGroupsResponse.PurchasedApiGroupAttributes["+ i +"].RegionId"));
-			purchasedApiGroupAttribute.setBillingType(_ctx.stringValue("DescribePurchasedApiGroupsResponse.PurchasedApiGroupAttributes["+ i +"].BillingType"));
+			purchasedApiGroupAttribute.setDescription(_ctx.stringValue("DescribePurchasedApiGroupsResponse.PurchasedApiGroupAttributes["+ i +"].Description"));
+			purchasedApiGroupAttribute.setGroupName(_ctx.stringValue("DescribePurchasedApiGroupsResponse.PurchasedApiGroupAttributes["+ i +"].GroupName"));
+			purchasedApiGroupAttribute.setGroupId(_ctx.stringValue("DescribePurchasedApiGroupsResponse.PurchasedApiGroupAttributes["+ i +"].GroupId"));
 			purchasedApiGroupAttribute.setInvokeTimesMax(_ctx.longValue("DescribePurchasedApiGroupsResponse.PurchasedApiGroupAttributes["+ i +"].InvokeTimesMax"));
 			purchasedApiGroupAttribute.setInvokeTimesNow(_ctx.longValue("DescribePurchasedApiGroupsResponse.PurchasedApiGroupAttributes["+ i +"].InvokeTimesNow"));
-			purchasedApiGroupAttribute.setStatus(_ctx.stringValue("DescribePurchasedApiGroupsResponse.PurchasedApiGroupAttributes["+ i +"].Status"));
+			purchasedApiGroupAttribute.setBillingType(_ctx.stringValue("DescribePurchasedApiGroupsResponse.PurchasedApiGroupAttributes["+ i +"].BillingType"));
+			purchasedApiGroupAttribute.setRegionId(_ctx.stringValue("DescribePurchasedApiGroupsResponse.PurchasedApiGroupAttributes["+ i +"].RegionId"));
 
 			purchasedApiGroupAttributes.add(purchasedApiGroupAttribute);
 		}

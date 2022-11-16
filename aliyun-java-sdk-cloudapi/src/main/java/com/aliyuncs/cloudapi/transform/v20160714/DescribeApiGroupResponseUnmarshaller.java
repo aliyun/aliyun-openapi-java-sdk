@@ -28,33 +28,52 @@ public class DescribeApiGroupResponseUnmarshaller {
 	public static DescribeApiGroupResponse unmarshall(DescribeApiGroupResponse describeApiGroupResponse, UnmarshallerContext _ctx) {
 		
 		describeApiGroupResponse.setRequestId(_ctx.stringValue("DescribeApiGroupResponse.RequestId"));
-		describeApiGroupResponse.setGroupId(_ctx.stringValue("DescribeApiGroupResponse.GroupId"));
-		describeApiGroupResponse.setGroupName(_ctx.stringValue("DescribeApiGroupResponse.GroupName"));
-		describeApiGroupResponse.setSubDomain(_ctx.stringValue("DescribeApiGroupResponse.SubDomain"));
-		describeApiGroupResponse.setDescription(_ctx.stringValue("DescribeApiGroupResponse.Description"));
-		describeApiGroupResponse.setCreatedTime(_ctx.stringValue("DescribeApiGroupResponse.CreatedTime"));
-		describeApiGroupResponse.setModifiedTime(_ctx.stringValue("DescribeApiGroupResponse.ModifiedTime"));
-		describeApiGroupResponse.setRegionId(_ctx.stringValue("DescribeApiGroupResponse.RegionId"));
 		describeApiGroupResponse.setStatus(_ctx.stringValue("DescribeApiGroupResponse.Status"));
+		describeApiGroupResponse.setCompatibleFlags(_ctx.stringValue("DescribeApiGroupResponse.CompatibleFlags"));
+		describeApiGroupResponse.setBasePath(_ctx.stringValue("DescribeApiGroupResponse.BasePath"));
+		describeApiGroupResponse.setIpv6Status(_ctx.stringValue("DescribeApiGroupResponse.Ipv6Status"));
+		describeApiGroupResponse.setUserLogConfig(_ctx.stringValue("DescribeApiGroupResponse.UserLogConfig"));
+		describeApiGroupResponse.setCustomerConfigs(_ctx.stringValue("DescribeApiGroupResponse.CustomerConfigs"));
+		describeApiGroupResponse.setDescription(_ctx.stringValue("DescribeApiGroupResponse.Description"));
+		describeApiGroupResponse.setHttpsPolicy(_ctx.stringValue("DescribeApiGroupResponse.HttpsPolicy"));
+		describeApiGroupResponse.setSubDomain(_ctx.stringValue("DescribeApiGroupResponse.SubDomain"));
+		describeApiGroupResponse.setCreatedTime(_ctx.stringValue("DescribeApiGroupResponse.CreatedTime"));
+		describeApiGroupResponse.setRpcPattern(_ctx.stringValue("DescribeApiGroupResponse.RpcPattern"));
+		describeApiGroupResponse.setDefaultDomain(_ctx.stringValue("DescribeApiGroupResponse.DefaultDomain"));
+		describeApiGroupResponse.setCmsMonitorGroup(_ctx.stringValue("DescribeApiGroupResponse.CmsMonitorGroup"));
 		describeApiGroupResponse.setBillingStatus(_ctx.stringValue("DescribeApiGroupResponse.BillingStatus"));
-		describeApiGroupResponse.setIllegalStatus(_ctx.stringValue("DescribeApiGroupResponse.IllegalStatus"));
 		describeApiGroupResponse.setTrafficLimit(_ctx.integerValue("DescribeApiGroupResponse.TrafficLimit"));
+		describeApiGroupResponse.setPassthroughHeaders(_ctx.stringValue("DescribeApiGroupResponse.PassthroughHeaders"));
+		describeApiGroupResponse.setInstanceId(_ctx.stringValue("DescribeApiGroupResponse.InstanceId"));
 		describeApiGroupResponse.setVpcDomain(_ctx.stringValue("DescribeApiGroupResponse.VpcDomain"));
 		describeApiGroupResponse.setInstanceType(_ctx.stringValue("DescribeApiGroupResponse.InstanceType"));
-		describeApiGroupResponse.setInstanceId(_ctx.stringValue("DescribeApiGroupResponse.InstanceId"));
-		describeApiGroupResponse.setHttpsPolicy(_ctx.stringValue("DescribeApiGroupResponse.HttpsPolicy"));
+		describeApiGroupResponse.setCustomTraceConfig(_ctx.stringValue("DescribeApiGroupResponse.CustomTraceConfig"));
+		describeApiGroupResponse.setRegionId(_ctx.stringValue("DescribeApiGroupResponse.RegionId"));
+		describeApiGroupResponse.setModifiedTime(_ctx.stringValue("DescribeApiGroupResponse.ModifiedTime"));
+		describeApiGroupResponse.setGroupId(_ctx.stringValue("DescribeApiGroupResponse.GroupId"));
+		describeApiGroupResponse.setGroupName(_ctx.stringValue("DescribeApiGroupResponse.GroupName"));
+		describeApiGroupResponse.setClassicVpcSubDomain(_ctx.stringValue("DescribeApiGroupResponse.ClassicVpcSubDomain"));
+		describeApiGroupResponse.setIllegalStatus(_ctx.stringValue("DescribeApiGroupResponse.IllegalStatus"));
+		describeApiGroupResponse.setInstanceVipList(_ctx.stringValue("DescribeApiGroupResponse.InstanceVipList"));
+		describeApiGroupResponse.setVpcSlbIntranetDomain(_ctx.stringValue("DescribeApiGroupResponse.VpcSlbIntranetDomain"));
+		describeApiGroupResponse.setCloudMarketCommodity(_ctx.booleanValue("DescribeApiGroupResponse.CloudMarketCommodity"));
 
 		List<DomainItem> customDomains = new ArrayList<DomainItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeApiGroupResponse.CustomDomains.Length"); i++) {
 			DomainItem domainItem = new DomainItem();
-			domainItem.setDomainName(_ctx.stringValue("DescribeApiGroupResponse.CustomDomains["+ i +"].DomainName"));
-			domainItem.setCertificateId(_ctx.stringValue("DescribeApiGroupResponse.CustomDomains["+ i +"].CertificateId"));
-			domainItem.setCertificateName(_ctx.stringValue("DescribeApiGroupResponse.CustomDomains["+ i +"].CertificateName"));
-			domainItem.setDomainCNAMEStatus(_ctx.stringValue("DescribeApiGroupResponse.CustomDomains["+ i +"].DomainCNAMEStatus"));
-			domainItem.setDomainBindingStatus(_ctx.stringValue("DescribeApiGroupResponse.CustomDomains["+ i +"].DomainBindingStatus"));
+			domainItem.setBindStageName(_ctx.stringValue("DescribeApiGroupResponse.CustomDomains["+ i +"].BindStageName"));
 			domainItem.setDomainLegalStatus(_ctx.stringValue("DescribeApiGroupResponse.CustomDomains["+ i +"].DomainLegalStatus"));
-			domainItem.setDomainWebSocketStatus(_ctx.stringValue("DescribeApiGroupResponse.CustomDomains["+ i +"].DomainWebSocketStatus"));
+			domainItem.setCertificateName(_ctx.stringValue("DescribeApiGroupResponse.CustomDomains["+ i +"].CertificateName"));
+			domainItem.setCustomDomainType(_ctx.stringValue("DescribeApiGroupResponse.CustomDomains["+ i +"].CustomDomainType"));
+			domainItem.setDomainCNAMEStatus(_ctx.stringValue("DescribeApiGroupResponse.CustomDomains["+ i +"].DomainCNAMEStatus"));
+			domainItem.setWildcardDomainPatterns(_ctx.stringValue("DescribeApiGroupResponse.CustomDomains["+ i +"].WildcardDomainPatterns"));
+			domainItem.setDomainBindingStatus(_ctx.stringValue("DescribeApiGroupResponse.CustomDomains["+ i +"].DomainBindingStatus"));
+			domainItem.setDomainName(_ctx.stringValue("DescribeApiGroupResponse.CustomDomains["+ i +"].DomainName"));
 			domainItem.setDomainRemark(_ctx.stringValue("DescribeApiGroupResponse.CustomDomains["+ i +"].DomainRemark"));
+			domainItem.setDomainWebSocketStatus(_ctx.stringValue("DescribeApiGroupResponse.CustomDomains["+ i +"].DomainWebSocketStatus"));
+			domainItem.setCertificateId(_ctx.stringValue("DescribeApiGroupResponse.CustomDomains["+ i +"].CertificateId"));
+			domainItem.setIsHttpRedirectToHttps(_ctx.booleanValue("DescribeApiGroupResponse.CustomDomains["+ i +"].IsHttpRedirectToHttps"));
+			domainItem.setWssEnable(_ctx.stringValue("DescribeApiGroupResponse.CustomDomains["+ i +"].WssEnable"));
 
 			customDomains.add(domainItem);
 		}

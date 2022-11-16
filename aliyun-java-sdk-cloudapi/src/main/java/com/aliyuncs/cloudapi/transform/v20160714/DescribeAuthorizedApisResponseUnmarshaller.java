@@ -27,24 +27,24 @@ public class DescribeAuthorizedApisResponseUnmarshaller {
 	public static DescribeAuthorizedApisResponse unmarshall(DescribeAuthorizedApisResponse describeAuthorizedApisResponse, UnmarshallerContext _ctx) {
 		
 		describeAuthorizedApisResponse.setRequestId(_ctx.stringValue("DescribeAuthorizedApisResponse.RequestId"));
-		describeAuthorizedApisResponse.setTotalCount(_ctx.integerValue("DescribeAuthorizedApisResponse.TotalCount"));
-		describeAuthorizedApisResponse.setPageSize(_ctx.integerValue("DescribeAuthorizedApisResponse.PageSize"));
 		describeAuthorizedApisResponse.setPageNumber(_ctx.integerValue("DescribeAuthorizedApisResponse.PageNumber"));
+		describeAuthorizedApisResponse.setPageSize(_ctx.integerValue("DescribeAuthorizedApisResponse.PageSize"));
+		describeAuthorizedApisResponse.setTotalCount(_ctx.integerValue("DescribeAuthorizedApisResponse.TotalCount"));
 
 		List<AuthorizedApi> authorizedApis = new ArrayList<AuthorizedApi>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAuthorizedApisResponse.AuthorizedApis.Length"); i++) {
 			AuthorizedApi authorizedApi = new AuthorizedApi();
-			authorizedApi.setRegionId(_ctx.stringValue("DescribeAuthorizedApisResponse.AuthorizedApis["+ i +"].RegionId"));
-			authorizedApi.setGroupId(_ctx.stringValue("DescribeAuthorizedApisResponse.AuthorizedApis["+ i +"].GroupId"));
-			authorizedApi.setGroupName(_ctx.stringValue("DescribeAuthorizedApisResponse.AuthorizedApis["+ i +"].GroupName"));
-			authorizedApi.setStageName(_ctx.stringValue("DescribeAuthorizedApisResponse.AuthorizedApis["+ i +"].StageName"));
-			authorizedApi.setOperator(_ctx.stringValue("DescribeAuthorizedApisResponse.AuthorizedApis["+ i +"].Operator"));
 			authorizedApi.setApiId(_ctx.stringValue("DescribeAuthorizedApisResponse.AuthorizedApis["+ i +"].ApiId"));
-			authorizedApi.setApiName(_ctx.stringValue("DescribeAuthorizedApisResponse.AuthorizedApis["+ i +"].ApiName"));
 			authorizedApi.setAuthorizationSource(_ctx.stringValue("DescribeAuthorizedApisResponse.AuthorizedApis["+ i +"].AuthorizationSource"));
-			authorizedApi.setDescription(_ctx.stringValue("DescribeAuthorizedApisResponse.AuthorizedApis["+ i +"].Description"));
-			authorizedApi.setAuthorizedTime(_ctx.stringValue("DescribeAuthorizedApisResponse.AuthorizedApis["+ i +"].AuthorizedTime"));
 			authorizedApi.setAuthVaildTime(_ctx.stringValue("DescribeAuthorizedApisResponse.AuthorizedApis["+ i +"].AuthVaildTime"));
+			authorizedApi.setDescription(_ctx.stringValue("DescribeAuthorizedApisResponse.AuthorizedApis["+ i +"].Description"));
+			authorizedApi.setGroupName(_ctx.stringValue("DescribeAuthorizedApisResponse.AuthorizedApis["+ i +"].GroupName"));
+			authorizedApi.setGroupId(_ctx.stringValue("DescribeAuthorizedApisResponse.AuthorizedApis["+ i +"].GroupId"));
+			authorizedApi.setAuthorizedTime(_ctx.stringValue("DescribeAuthorizedApisResponse.AuthorizedApis["+ i +"].AuthorizedTime"));
+			authorizedApi.setOperator(_ctx.stringValue("DescribeAuthorizedApisResponse.AuthorizedApis["+ i +"].Operator"));
+			authorizedApi.setStageName(_ctx.stringValue("DescribeAuthorizedApisResponse.AuthorizedApis["+ i +"].StageName"));
+			authorizedApi.setApiName(_ctx.stringValue("DescribeAuthorizedApisResponse.AuthorizedApis["+ i +"].ApiName"));
+			authorizedApi.setRegionId(_ctx.stringValue("DescribeAuthorizedApisResponse.AuthorizedApis["+ i +"].RegionId"));
 
 			authorizedApis.add(authorizedApi);
 		}

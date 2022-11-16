@@ -24,46 +24,38 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDomainResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String groupId;
+	private String certificatePrivateKey;
 
 	private String domainName;
 
-	private String subDomain;
-
-	private String certificateId;
-
-	private String certificateName;
-
-	private String certificateBody;
-
-	private String certificatePrivateKey;
-
 	private String domainBindingStatus;
-
-	private String domainCNAMEStatus;
-
-	private String domainLegalStatus;
-
-	private String domainWebSocketStatus;
 
 	private String domainRemark;
 
-	public String getRequestId() {
-		return this.requestId;
+	private String certificateId;
+
+	private String domainWebSocketStatus;
+
+	private String requestId;
+
+	private String certificateName;
+
+	private String domainLegalStatus;
+
+	private String groupId;
+
+	private String certificateBody;
+
+	private String subDomain;
+
+	private String domainCNAMEStatus;
+
+	public String getCertificatePrivateKey() {
+		return this.certificatePrivateKey;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getGroupId() {
-		return this.groupId;
-	}
-
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
+	public void setCertificatePrivateKey(String certificatePrivateKey) {
+		this.certificatePrivateKey = certificatePrivateKey;
 	}
 
 	public String getDomainName() {
@@ -74,12 +66,20 @@ public class DescribeDomainResponse extends AcsResponse {
 		this.domainName = domainName;
 	}
 
-	public String getSubDomain() {
-		return this.subDomain;
+	public String getDomainBindingStatus() {
+		return this.domainBindingStatus;
 	}
 
-	public void setSubDomain(String subDomain) {
-		this.subDomain = subDomain;
+	public void setDomainBindingStatus(String domainBindingStatus) {
+		this.domainBindingStatus = domainBindingStatus;
+	}
+
+	public String getDomainRemark() {
+		return this.domainRemark;
+	}
+
+	public void setDomainRemark(String domainRemark) {
+		this.domainRemark = domainRemark;
 	}
 
 	public String getCertificateId() {
@@ -90,44 +90,28 @@ public class DescribeDomainResponse extends AcsResponse {
 		this.certificateId = certificateId;
 	}
 
+	public String getDomainWebSocketStatus() {
+		return this.domainWebSocketStatus;
+	}
+
+	public void setDomainWebSocketStatus(String domainWebSocketStatus) {
+		this.domainWebSocketStatus = domainWebSocketStatus;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public String getCertificateName() {
 		return this.certificateName;
 	}
 
 	public void setCertificateName(String certificateName) {
 		this.certificateName = certificateName;
-	}
-
-	public String getCertificateBody() {
-		return this.certificateBody;
-	}
-
-	public void setCertificateBody(String certificateBody) {
-		this.certificateBody = certificateBody;
-	}
-
-	public String getCertificatePrivateKey() {
-		return this.certificatePrivateKey;
-	}
-
-	public void setCertificatePrivateKey(String certificatePrivateKey) {
-		this.certificatePrivateKey = certificatePrivateKey;
-	}
-
-	public String getDomainBindingStatus() {
-		return this.domainBindingStatus;
-	}
-
-	public void setDomainBindingStatus(String domainBindingStatus) {
-		this.domainBindingStatus = domainBindingStatus;
-	}
-
-	public String getDomainCNAMEStatus() {
-		return this.domainCNAMEStatus;
-	}
-
-	public void setDomainCNAMEStatus(String domainCNAMEStatus) {
-		this.domainCNAMEStatus = domainCNAMEStatus;
 	}
 
 	public String getDomainLegalStatus() {
@@ -138,20 +122,36 @@ public class DescribeDomainResponse extends AcsResponse {
 		this.domainLegalStatus = domainLegalStatus;
 	}
 
-	public String getDomainWebSocketStatus() {
-		return this.domainWebSocketStatus;
+	public String getGroupId() {
+		return this.groupId;
 	}
 
-	public void setDomainWebSocketStatus(String domainWebSocketStatus) {
-		this.domainWebSocketStatus = domainWebSocketStatus;
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
 	}
 
-	public String getDomainRemark() {
-		return this.domainRemark;
+	public String getCertificateBody() {
+		return this.certificateBody;
 	}
 
-	public void setDomainRemark(String domainRemark) {
-		this.domainRemark = domainRemark;
+	public void setCertificateBody(String certificateBody) {
+		this.certificateBody = certificateBody;
+	}
+
+	public String getSubDomain() {
+		return this.subDomain;
+	}
+
+	public void setSubDomain(String subDomain) {
+		this.subDomain = subDomain;
+	}
+
+	public String getDomainCNAMEStatus() {
+		return this.domainCNAMEStatus;
+	}
+
+	public void setDomainCNAMEStatus(String domainCNAMEStatus) {
+		this.domainCNAMEStatus = domainCNAMEStatus;
 	}
 
 	@Override

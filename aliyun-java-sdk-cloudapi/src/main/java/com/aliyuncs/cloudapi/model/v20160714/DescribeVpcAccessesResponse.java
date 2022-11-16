@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeVpcAccessesResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageNumber;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageSize;
 
-	private Integer pageNumber;
+	private Integer totalCount;
 
 	private List<VpcAccessAttribute> vpcAccessAttributes;
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeVpcAccessesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageSize() {
@@ -59,12 +59,12 @@ public class DescribeVpcAccessesResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<VpcAccessAttribute> getVpcAccessAttributes() {
@@ -79,15 +79,21 @@ public class DescribeVpcAccessesResponse extends AcsResponse {
 
 		private String vpcId;
 
-		private String instanceId;
+		private String description;
 
-		private String createdTime;
+		private String instanceId;
 
 		private Integer port;
 
+		private String name;
+
+		private String createdTime;
+
 		private String regionId;
 
-		private String name;
+		private String vpcAccessId;
+
+		private String vpcTargetHostName;
 
 		public String getVpcId() {
 			return this.vpcId;
@@ -95,6 +101,14 @@ public class DescribeVpcAccessesResponse extends AcsResponse {
 
 		public void setVpcId(String vpcId) {
 			this.vpcId = vpcId;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getInstanceId() {
@@ -105,14 +119,6 @@ public class DescribeVpcAccessesResponse extends AcsResponse {
 			this.instanceId = instanceId;
 		}
 
-		public String getCreatedTime() {
-			return this.createdTime;
-		}
-
-		public void setCreatedTime(String createdTime) {
-			this.createdTime = createdTime;
-		}
-
 		public Integer getPort() {
 			return this.port;
 		}
@@ -121,36 +127,44 @@ public class DescribeVpcAccessesResponse extends AcsResponse {
 			this.port = port;
 		}
 
-		public String getBizRegionId() {
-			return this.regionId;
-		}
-
-		public void setBizRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		/**
-		 * @deprecated use getBizRegionId instead of this.
-		 */
-		@Deprecated
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		/**
-		 * @deprecated use setBizRegionId instead of this.
-		 */
-		@Deprecated
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
 		public String getName() {
 			return this.name;
 		}
 
 		public void setName(String name) {
 			this.name = name;
+		}
+
+		public String getCreatedTime() {
+			return this.createdTime;
+		}
+
+		public void setCreatedTime(String createdTime) {
+			this.createdTime = createdTime;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getVpcAccessId() {
+			return this.vpcAccessId;
+		}
+
+		public void setVpcAccessId(String vpcAccessId) {
+			this.vpcAccessId = vpcAccessId;
+		}
+
+		public String getVpcTargetHostName() {
+			return this.vpcTargetHostName;
+		}
+
+		public void setVpcTargetHostName(String vpcTargetHostName) {
+			this.vpcTargetHostName = vpcTargetHostName;
 		}
 	}
 

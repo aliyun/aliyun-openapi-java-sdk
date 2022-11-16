@@ -32,8 +32,8 @@ public class DescribeTrafficControlsByApiResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeTrafficControlsByApiResponse.TrafficControlItems.Length"); i++) {
 			TrafficControlItem trafficControlItem = new TrafficControlItem();
 			trafficControlItem.setTrafficControlItemId(_ctx.stringValue("DescribeTrafficControlsByApiResponse.TrafficControlItems["+ i +"].TrafficControlItemId"));
-			trafficControlItem.setTrafficControlItemName(_ctx.stringValue("DescribeTrafficControlsByApiResponse.TrafficControlItems["+ i +"].TrafficControlItemName"));
 			trafficControlItem.setBoundTime(_ctx.stringValue("DescribeTrafficControlsByApiResponse.TrafficControlItems["+ i +"].BoundTime"));
+			trafficControlItem.setTrafficControlItemName(_ctx.stringValue("DescribeTrafficControlsByApiResponse.TrafficControlItems["+ i +"].TrafficControlItemName"));
 
 			trafficControlItems.add(trafficControlItem);
 		}

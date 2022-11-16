@@ -27,22 +27,24 @@ public class DescribeApisResponseUnmarshaller {
 	public static DescribeApisResponse unmarshall(DescribeApisResponse describeApisResponse, UnmarshallerContext _ctx) {
 		
 		describeApisResponse.setRequestId(_ctx.stringValue("DescribeApisResponse.RequestId"));
-		describeApisResponse.setTotalCount(_ctx.integerValue("DescribeApisResponse.TotalCount"));
-		describeApisResponse.setPageSize(_ctx.integerValue("DescribeApisResponse.PageSize"));
 		describeApisResponse.setPageNumber(_ctx.integerValue("DescribeApisResponse.PageNumber"));
+		describeApisResponse.setPageSize(_ctx.integerValue("DescribeApisResponse.PageSize"));
+		describeApisResponse.setTotalCount(_ctx.integerValue("DescribeApisResponse.TotalCount"));
 
 		List<ApiSummary> apiSummarys = new ArrayList<ApiSummary>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeApisResponse.ApiSummarys.Length"); i++) {
 			ApiSummary apiSummary = new ApiSummary();
-			apiSummary.setRegionId(_ctx.stringValue("DescribeApisResponse.ApiSummarys["+ i +"].RegionId"));
-			apiSummary.setGroupId(_ctx.stringValue("DescribeApisResponse.ApiSummarys["+ i +"].GroupId"));
-			apiSummary.setGroupName(_ctx.stringValue("DescribeApisResponse.ApiSummarys["+ i +"].GroupName"));
-			apiSummary.setApiId(_ctx.stringValue("DescribeApisResponse.ApiSummarys["+ i +"].ApiId"));
-			apiSummary.setApiName(_ctx.stringValue("DescribeApisResponse.ApiSummarys["+ i +"].ApiName"));
 			apiSummary.setVisibility(_ctx.stringValue("DescribeApisResponse.ApiSummarys["+ i +"].Visibility"));
-			apiSummary.setDescription(_ctx.stringValue("DescribeApisResponse.ApiSummarys["+ i +"].Description"));
-			apiSummary.setCreatedTime(_ctx.stringValue("DescribeApisResponse.ApiSummarys["+ i +"].CreatedTime"));
+			apiSummary.setApiId(_ctx.stringValue("DescribeApisResponse.ApiSummarys["+ i +"].ApiId"));
 			apiSummary.setModifiedTime(_ctx.stringValue("DescribeApisResponse.ApiSummarys["+ i +"].ModifiedTime"));
+			apiSummary.setDescription(_ctx.stringValue("DescribeApisResponse.ApiSummarys["+ i +"].Description"));
+			apiSummary.setGroupName(_ctx.stringValue("DescribeApisResponse.ApiSummarys["+ i +"].GroupName"));
+			apiSummary.setGroupId(_ctx.stringValue("DescribeApisResponse.ApiSummarys["+ i +"].GroupId"));
+			apiSummary.setCreatedTime(_ctx.stringValue("DescribeApisResponse.ApiSummarys["+ i +"].CreatedTime"));
+			apiSummary.setApiName(_ctx.stringValue("DescribeApisResponse.ApiSummarys["+ i +"].ApiName"));
+			apiSummary.setRegionId(_ctx.stringValue("DescribeApisResponse.ApiSummarys["+ i +"].RegionId"));
+			apiSummary.setApiPath(_ctx.stringValue("DescribeApisResponse.ApiSummarys["+ i +"].ApiPath"));
+			apiSummary.setApiMethod(_ctx.stringValue("DescribeApisResponse.ApiSummarys["+ i +"].ApiMethod"));
 
 			apiSummarys.add(apiSummary);
 		}

@@ -23,29 +23,29 @@ import com.aliyuncs.cloudapi.Endpoint;
  * @version 
  */
 public class DescribeApiHistoriesRequest extends RpcAcsRequest<DescribeApiHistoriesResponse> {
-	
-	public DescribeApiHistoriesRequest() {
-		super("CloudAPI", "2016-07-14", "DescribeApiHistories", "apigateway");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String stageName;
 
 	private String groupId;
 
-	private String pageNumber;
+	private Integer pageNumber;
 
 	private String apiName;
 
 	private String securityToken;
 
-	private String pageSize;
+	private Integer pageSize;
 
 	private String apiId;
+	public DescribeApiHistoriesRequest() {
+		super("CloudAPI", "2016-07-14", "DescribeApiHistories", "apigateway");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getStageName() {
 		return this.stageName;
@@ -69,14 +69,14 @@ public class DescribeApiHistoriesRequest extends RpcAcsRequest<DescribeApiHistor
 		}
 	}
 
-	public String getPageNumber() {
+	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
 
-	public void setPageNumber(String pageNumber) {
+	public void setPageNumber(Integer pageNumber) {
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber);
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
@@ -91,29 +91,10 @@ public class DescribeApiHistoriesRequest extends RpcAcsRequest<DescribeApiHistor
 		}
 	}
 
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){
@@ -121,14 +102,14 @@ public class DescribeApiHistoriesRequest extends RpcAcsRequest<DescribeApiHistor
 		}
 	}
 
-	public String getPageSize() {
+	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
-	public void setPageSize(String pageSize) {
+	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
 		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize);
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

@@ -23,15 +23,7 @@ import com.aliyuncs.cloudapi.Endpoint;
  * @version 
  */
 public class DeleteApiStageVariableRequest extends RpcAcsRequest<DeleteApiStageVariableResponse> {
-	
-	public DeleteApiStageVariableRequest() {
-		super("CloudAPI", "2016-07-14", "DeleteApiStageVariable", "apigateway");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String groupId;
 
@@ -40,6 +32,14 @@ public class DeleteApiStageVariableRequest extends RpcAcsRequest<DeleteApiStageV
 	private String variableName;
 
 	private String stageId;
+	public DeleteApiStageVariableRequest() {
+		super("CloudAPI", "2016-07-14", "DeleteApiStageVariable", "apigateway");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getGroupId() {
 		return this.groupId;
@@ -52,29 +52,10 @@ public class DeleteApiStageVariableRequest extends RpcAcsRequest<DeleteApiStageV
 		}
 	}
 
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){

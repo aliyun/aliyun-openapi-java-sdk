@@ -31,9 +31,9 @@ public class DescribeSignaturesByApiResponseUnmarshaller {
 		List<SignatureItem> signatures = new ArrayList<SignatureItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSignaturesByApiResponse.Signatures.Length"); i++) {
 			SignatureItem signatureItem = new SignatureItem();
+			signatureItem.setBoundTime(_ctx.stringValue("DescribeSignaturesByApiResponse.Signatures["+ i +"].BoundTime"));
 			signatureItem.setSignatureId(_ctx.stringValue("DescribeSignaturesByApiResponse.Signatures["+ i +"].SignatureId"));
 			signatureItem.setSignatureName(_ctx.stringValue("DescribeSignaturesByApiResponse.Signatures["+ i +"].SignatureName"));
-			signatureItem.setBoundTime(_ctx.stringValue("DescribeSignaturesByApiResponse.Signatures["+ i +"].BoundTime"));
 
 			signatures.add(signatureItem);
 		}

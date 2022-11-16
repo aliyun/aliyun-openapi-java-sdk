@@ -23,15 +23,7 @@ import com.aliyuncs.cloudapi.Endpoint;
  * @version 
  */
 public class RemoveApisAuthoritiesRequest extends RpcAcsRequest<RemoveApisAuthoritiesResponse> {
-	
-	public RemoveApisAuthoritiesRequest() {
-		super("CloudAPI", "2016-07-14", "RemoveApisAuthorities", "apigateway");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String stageName;
 
@@ -44,6 +36,14 @@ public class RemoveApisAuthoritiesRequest extends RpcAcsRequest<RemoveApisAuthor
 	private Long appId;
 
 	private String apiIds;
+	public RemoveApisAuthoritiesRequest() {
+		super("CloudAPI", "2016-07-14", "RemoveApisAuthorities", "apigateway");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getStageName() {
 		return this.stageName;
@@ -78,29 +78,10 @@ public class RemoveApisAuthoritiesRequest extends RpcAcsRequest<RemoveApisAuthor
 		}
 	}
 
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){

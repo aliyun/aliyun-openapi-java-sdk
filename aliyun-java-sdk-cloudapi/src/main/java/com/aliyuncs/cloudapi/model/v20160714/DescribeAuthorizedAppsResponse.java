@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAuthorizedAppsResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageNumber;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageSize;
 
-	private Integer pageNumber;
+	private Integer totalCount;
 
 	private List<AuthorizedApp> authorizedApps;
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeAuthorizedAppsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageSize() {
@@ -59,12 +59,12 @@ public class DescribeAuthorizedAppsResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<AuthorizedApp> getAuthorizedApps() {
@@ -77,37 +77,21 @@ public class DescribeAuthorizedAppsResponse extends AcsResponse {
 
 	public static class AuthorizedApp {
 
-		private String stageName;
-
-		private Long appId;
-
 		private String appName;
 
-		private String operator;
-
 		private String authorizationSource;
+
+		private String authVaildTime;
 
 		private String description;
 
 		private String authorizedTime;
 
-		private String authVaildTime;
+		private Long appId;
 
-		public String getStageName() {
-			return this.stageName;
-		}
+		private String stageName;
 
-		public void setStageName(String stageName) {
-			this.stageName = stageName;
-		}
-
-		public Long getAppId() {
-			return this.appId;
-		}
-
-		public void setAppId(Long appId) {
-			this.appId = appId;
-		}
+		private String operator;
 
 		public String getAppName() {
 			return this.appName;
@@ -117,20 +101,20 @@ public class DescribeAuthorizedAppsResponse extends AcsResponse {
 			this.appName = appName;
 		}
 
-		public String getOperator() {
-			return this.operator;
-		}
-
-		public void setOperator(String operator) {
-			this.operator = operator;
-		}
-
 		public String getAuthorizationSource() {
 			return this.authorizationSource;
 		}
 
 		public void setAuthorizationSource(String authorizationSource) {
 			this.authorizationSource = authorizationSource;
+		}
+
+		public String getAuthVaildTime() {
+			return this.authVaildTime;
+		}
+
+		public void setAuthVaildTime(String authVaildTime) {
+			this.authVaildTime = authVaildTime;
 		}
 
 		public String getDescription() {
@@ -149,12 +133,28 @@ public class DescribeAuthorizedAppsResponse extends AcsResponse {
 			this.authorizedTime = authorizedTime;
 		}
 
-		public String getAuthVaildTime() {
-			return this.authVaildTime;
+		public Long getAppId() {
+			return this.appId;
 		}
 
-		public void setAuthVaildTime(String authVaildTime) {
-			this.authVaildTime = authVaildTime;
+		public void setAppId(Long appId) {
+			this.appId = appId;
+		}
+
+		public String getStageName() {
+			return this.stageName;
+		}
+
+		public void setStageName(String stageName) {
+			this.stageName = stageName;
+		}
+
+		public String getOperator() {
+			return this.operator;
+		}
+
+		public void setOperator(String operator) {
+			this.operator = operator;
 		}
 	}
 

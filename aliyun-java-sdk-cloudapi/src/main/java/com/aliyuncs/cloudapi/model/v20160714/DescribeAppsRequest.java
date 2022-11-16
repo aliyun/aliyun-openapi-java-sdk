@@ -23,49 +23,52 @@ import com.aliyuncs.cloudapi.Endpoint;
  * @version 
  */
 public class DescribeAppsRequest extends RpcAcsRequest<DescribeAppsResponse> {
-	
-	public DescribeAppsRequest() {
-		super("CloudAPI", "2016-07-14", "DescribeApps", "apigateway");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
+
+	private Long appOwner;
+
+	private Integer pageNumber;
 
 	private String securityToken;
 
 	private Long appId;
 
 	private Integer pageSize;
-
-	private Long appOwner;
-
-	private Integer pageNumber;
-
-	public String getBizSecurityToken() {
-		return this.securityToken;
+	public DescribeAppsRequest() {
+		super("CloudAPI", "2016-07-14", "DescribeApps", "apigateway");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public Long getAppOwner() {
+		return this.appOwner;
+	}
+
+	public void setAppOwner(Long appOwner) {
+		this.appOwner = appOwner;
+		if(appOwner != null){
+			putQueryParameter("AppOwner", appOwner.toString());
 		}
 	}
 
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){
@@ -92,28 +95,6 @@ public class DescribeAppsRequest extends RpcAcsRequest<DescribeAppsResponse> {
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public Long getAppOwner() {
-		return this.appOwner;
-	}
-
-	public void setAppOwner(Long appOwner) {
-		this.appOwner = appOwner;
-		if(appOwner != null){
-			putQueryParameter("AppOwner", appOwner.toString());
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

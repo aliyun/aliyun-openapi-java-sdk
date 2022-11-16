@@ -23,17 +23,13 @@ import com.aliyuncs.cloudapi.Endpoint;
  * @version 
  */
 public class SetVpcAccessRequest extends RpcAcsRequest<SetVpcAccessResponse> {
-	
-	public SetVpcAccessRequest() {
-		super("CloudAPI", "2016-07-14", "SetVpcAccess", "apigateway");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
+
+	private String description;
 
 	private String instanceId;
+
+	private String vpcTargetHostName;
 
 	private String securityToken;
 
@@ -42,6 +38,25 @@ public class SetVpcAccessRequest extends RpcAcsRequest<SetVpcAccessResponse> {
 	private String vpcId;
 
 	private String name;
+	public SetVpcAccessRequest() {
+		super("CloudAPI", "2016-07-14", "SetVpcAccess", "apigateway");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
 
 	public String getInstanceId() {
 		return this.instanceId;
@@ -54,29 +69,21 @@ public class SetVpcAccessRequest extends RpcAcsRequest<SetVpcAccessResponse> {
 		}
 	}
 
-	public String getBizSecurityToken() {
-		return this.securityToken;
+	public String getVpcTargetHostName() {
+		return this.vpcTargetHostName;
 	}
 
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setVpcTargetHostName(String vpcTargetHostName) {
+		this.vpcTargetHostName = vpcTargetHostName;
+		if(vpcTargetHostName != null){
+			putQueryParameter("VpcTargetHostName", vpcTargetHostName);
 		}
 	}
 
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){

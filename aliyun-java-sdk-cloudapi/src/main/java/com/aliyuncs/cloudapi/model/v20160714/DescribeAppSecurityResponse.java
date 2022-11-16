@@ -24,17 +24,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAppSecurityResponse extends AcsResponse {
 
+	private String appSecret;
+
 	private String requestId;
 
 	private String appKey;
 
-	private String appSecret;
-
-	private String createdTime;
-
 	private String modifiedTime;
 
 	private String appCode;
+
+	private String createdTime;
+
+	public String getAppSecret() {
+		return this.appSecret;
+	}
+
+	public void setAppSecret(String appSecret) {
+		this.appSecret = appSecret;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -52,22 +60,6 @@ public class DescribeAppSecurityResponse extends AcsResponse {
 		this.appKey = appKey;
 	}
 
-	public String getAppSecret() {
-		return this.appSecret;
-	}
-
-	public void setAppSecret(String appSecret) {
-		this.appSecret = appSecret;
-	}
-
-	public String getCreatedTime() {
-		return this.createdTime;
-	}
-
-	public void setCreatedTime(String createdTime) {
-		this.createdTime = createdTime;
-	}
-
 	public String getModifiedTime() {
 		return this.modifiedTime;
 	}
@@ -82,6 +74,14 @@ public class DescribeAppSecurityResponse extends AcsResponse {
 
 	public void setAppCode(String appCode) {
 		this.appCode = appCode;
+	}
+
+	public String getCreatedTime() {
+		return this.createdTime;
+	}
+
+	public void setCreatedTime(String createdTime) {
+		this.createdTime = createdTime;
 	}
 
 	@Override

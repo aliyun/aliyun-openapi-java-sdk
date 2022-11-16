@@ -23,21 +23,27 @@ import com.aliyuncs.cloudapi.Endpoint;
  * @version 
  */
 public class SetDomainRequest extends RpcAcsRequest<SetDomainResponse> {
-	
-	public SetDomainRequest() {
-		super("CloudAPI", "2016-07-14", "SetDomain", "apigateway");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String groupId;
 
 	private String domainName;
 
-	private String securityToken;
+	private Boolean isHttpRedirectToHttps;
+
+	private String customDomainType;
+
+	private String bindStageName;
+
+	private Boolean isForce;
+	public SetDomainRequest() {
+		super("CloudAPI", "2016-07-14", "SetDomain", "apigateway");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getGroupId() {
 		return this.groupId;
@@ -61,33 +67,47 @@ public class SetDomainRequest extends RpcAcsRequest<SetDomainResponse> {
 		}
 	}
 
-	public String getBizSecurityToken() {
-		return this.securityToken;
+	public Boolean getIsHttpRedirectToHttps() {
+		return this.isHttpRedirectToHttps;
 	}
 
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setIsHttpRedirectToHttps(Boolean isHttpRedirectToHttps) {
+		this.isHttpRedirectToHttps = isHttpRedirectToHttps;
+		if(isHttpRedirectToHttps != null){
+			putQueryParameter("IsHttpRedirectToHttps", isHttpRedirectToHttps.toString());
 		}
 	}
 
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public String getSecurityToken() {
-		return this.securityToken;
+	public String getCustomDomainType() {
+		return this.customDomainType;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setCustomDomainType(String customDomainType) {
+		this.customDomainType = customDomainType;
+		if(customDomainType != null){
+			putQueryParameter("CustomDomainType", customDomainType);
+		}
+	}
+
+	public String getBindStageName() {
+		return this.bindStageName;
+	}
+
+	public void setBindStageName(String bindStageName) {
+		this.bindStageName = bindStageName;
+		if(bindStageName != null){
+			putQueryParameter("BindStageName", bindStageName);
+		}
+	}
+
+	public Boolean getIsForce() {
+		return this.isForce;
+	}
+
+	public void setIsForce(Boolean isForce) {
+		this.isForce = isForce;
+		if(isForce != null){
+			putQueryParameter("IsForce", isForce.toString());
 		}
 	}
 

@@ -23,15 +23,7 @@ import com.aliyuncs.cloudapi.Endpoint;
  * @version 
  */
 public class ModifyApiRequest extends RpcAcsRequest<ModifyApiResponse> {
-	
-	public ModifyApiRequest() {
-		super("CloudAPI", "2016-07-14", "ModifyApi", "apigateway");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String webSocketApiType;
 
@@ -42,6 +34,8 @@ public class ModifyApiRequest extends RpcAcsRequest<ModifyApiResponse> {
 	private String description;
 
 	private Boolean disableInternet;
+
+	private String backendId;
 
 	private String constantParameters;
 
@@ -77,6 +71,8 @@ public class ModifyApiRequest extends RpcAcsRequest<ModifyApiResponse> {
 
 	private String resultSample;
 
+	private Boolean backendEnable;
+
 	private Boolean forceNonceCheck;
 
 	private String requestConfig;
@@ -84,6 +80,14 @@ public class ModifyApiRequest extends RpcAcsRequest<ModifyApiResponse> {
 	private String resultBodyModel;
 
 	private String apiId;
+	public ModifyApiRequest() {
+		super("CloudAPI", "2016-07-14", "ModifyApi", "apigateway");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getWebSocketApiType() {
 		return this.webSocketApiType;
@@ -137,6 +141,17 @@ public class ModifyApiRequest extends RpcAcsRequest<ModifyApiResponse> {
 		this.disableInternet = disableInternet;
 		if(disableInternet != null){
 			putQueryParameter("DisableInternet", disableInternet.toString());
+		}
+	}
+
+	public String getBackendId() {
+		return this.backendId;
+	}
+
+	public void setBackendId(String backendId) {
+		this.backendId = backendId;
+		if(backendId != null){
+			putQueryParameter("BackendId", backendId);
 		}
 	}
 
@@ -217,29 +232,10 @@ public class ModifyApiRequest extends RpcAcsRequest<ModifyApiResponse> {
 		}
 	}
 
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){
@@ -343,6 +339,17 @@ public class ModifyApiRequest extends RpcAcsRequest<ModifyApiResponse> {
 		this.resultSample = resultSample;
 		if(resultSample != null){
 			putQueryParameter("ResultSample", resultSample);
+		}
+	}
+
+	public Boolean getBackendEnable() {
+		return this.backendEnable;
+	}
+
+	public void setBackendEnable(Boolean backendEnable) {
+		this.backendEnable = backendEnable;
+		if(backendEnable != null){
+			putQueryParameter("BackendEnable", backendEnable.toString());
 		}
 	}
 

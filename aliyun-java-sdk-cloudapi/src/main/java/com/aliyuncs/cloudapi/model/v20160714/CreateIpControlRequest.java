@@ -24,15 +24,7 @@ import com.aliyuncs.cloudapi.Endpoint;
  * @version 
  */
 public class CreateIpControlRequest extends RpcAcsRequest<CreateIpControlResponse> {
-	
-	public CreateIpControlRequest() {
-		super("CloudAPI", "2016-07-14", "CreateIpControl", "apigateway");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String ipControlName;
 
@@ -43,6 +35,14 @@ public class CreateIpControlRequest extends RpcAcsRequest<CreateIpControlRespons
 	private String securityToken;
 
 	private String ipControlType;
+	public CreateIpControlRequest() {
+		super("CloudAPI", "2016-07-14", "CreateIpControl", "apigateway");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getIpControlName() {
 		return this.ipControlName;
@@ -80,29 +80,10 @@ public class CreateIpControlRequest extends RpcAcsRequest<CreateIpControlRespons
 		}
 	}
 
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){

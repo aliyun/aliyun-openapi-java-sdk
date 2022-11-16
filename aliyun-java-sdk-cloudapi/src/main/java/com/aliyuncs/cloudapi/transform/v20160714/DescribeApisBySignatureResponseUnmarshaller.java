@@ -27,22 +27,22 @@ public class DescribeApisBySignatureResponseUnmarshaller {
 	public static DescribeApisBySignatureResponse unmarshall(DescribeApisBySignatureResponse describeApisBySignatureResponse, UnmarshallerContext _ctx) {
 		
 		describeApisBySignatureResponse.setRequestId(_ctx.stringValue("DescribeApisBySignatureResponse.RequestId"));
-		describeApisBySignatureResponse.setTotalCount(_ctx.integerValue("DescribeApisBySignatureResponse.TotalCount"));
-		describeApisBySignatureResponse.setPageSize(_ctx.integerValue("DescribeApisBySignatureResponse.PageSize"));
 		describeApisBySignatureResponse.setPageNumber(_ctx.integerValue("DescribeApisBySignatureResponse.PageNumber"));
+		describeApisBySignatureResponse.setPageSize(_ctx.integerValue("DescribeApisBySignatureResponse.PageSize"));
+		describeApisBySignatureResponse.setTotalCount(_ctx.integerValue("DescribeApisBySignatureResponse.TotalCount"));
 
 		List<ApiInfo> apiInfos = new ArrayList<ApiInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeApisBySignatureResponse.ApiInfos.Length"); i++) {
 			ApiInfo apiInfo = new ApiInfo();
-			apiInfo.setRegionId(_ctx.stringValue("DescribeApisBySignatureResponse.ApiInfos["+ i +"].RegionId"));
-			apiInfo.setGroupId(_ctx.stringValue("DescribeApisBySignatureResponse.ApiInfos["+ i +"].GroupId"));
-			apiInfo.setGroupName(_ctx.stringValue("DescribeApisBySignatureResponse.ApiInfos["+ i +"].GroupName"));
-			apiInfo.setStageName(_ctx.stringValue("DescribeApisBySignatureResponse.ApiInfos["+ i +"].StageName"));
-			apiInfo.setApiId(_ctx.stringValue("DescribeApisBySignatureResponse.ApiInfos["+ i +"].ApiId"));
-			apiInfo.setApiName(_ctx.stringValue("DescribeApisBySignatureResponse.ApiInfos["+ i +"].ApiName"));
-			apiInfo.setDescription(_ctx.stringValue("DescribeApisBySignatureResponse.ApiInfos["+ i +"].Description"));
-			apiInfo.setVisibility(_ctx.stringValue("DescribeApisBySignatureResponse.ApiInfos["+ i +"].Visibility"));
 			apiInfo.setBoundTime(_ctx.stringValue("DescribeApisBySignatureResponse.ApiInfos["+ i +"].BoundTime"));
+			apiInfo.setVisibility(_ctx.stringValue("DescribeApisBySignatureResponse.ApiInfos["+ i +"].Visibility"));
+			apiInfo.setApiId(_ctx.stringValue("DescribeApisBySignatureResponse.ApiInfos["+ i +"].ApiId"));
+			apiInfo.setDescription(_ctx.stringValue("DescribeApisBySignatureResponse.ApiInfos["+ i +"].Description"));
+			apiInfo.setGroupName(_ctx.stringValue("DescribeApisBySignatureResponse.ApiInfos["+ i +"].GroupName"));
+			apiInfo.setGroupId(_ctx.stringValue("DescribeApisBySignatureResponse.ApiInfos["+ i +"].GroupId"));
+			apiInfo.setStageName(_ctx.stringValue("DescribeApisBySignatureResponse.ApiInfos["+ i +"].StageName"));
+			apiInfo.setApiName(_ctx.stringValue("DescribeApisBySignatureResponse.ApiInfos["+ i +"].ApiName"));
+			apiInfo.setRegionId(_ctx.stringValue("DescribeApisBySignatureResponse.ApiInfos["+ i +"].RegionId"));
 
 			apiInfos.add(apiInfo);
 		}

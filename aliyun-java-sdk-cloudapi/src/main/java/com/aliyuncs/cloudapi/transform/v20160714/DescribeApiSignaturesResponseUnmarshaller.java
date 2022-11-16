@@ -27,18 +27,18 @@ public class DescribeApiSignaturesResponseUnmarshaller {
 	public static DescribeApiSignaturesResponse unmarshall(DescribeApiSignaturesResponse describeApiSignaturesResponse, UnmarshallerContext _ctx) {
 		
 		describeApiSignaturesResponse.setRequestId(_ctx.stringValue("DescribeApiSignaturesResponse.RequestId"));
-		describeApiSignaturesResponse.setTotalCount(_ctx.integerValue("DescribeApiSignaturesResponse.TotalCount"));
-		describeApiSignaturesResponse.setPageSize(_ctx.integerValue("DescribeApiSignaturesResponse.PageSize"));
 		describeApiSignaturesResponse.setPageNumber(_ctx.integerValue("DescribeApiSignaturesResponse.PageNumber"));
+		describeApiSignaturesResponse.setPageSize(_ctx.integerValue("DescribeApiSignaturesResponse.PageSize"));
+		describeApiSignaturesResponse.setTotalCount(_ctx.integerValue("DescribeApiSignaturesResponse.TotalCount"));
 
 		List<ApiSignatureItem> apiSignatures = new ArrayList<ApiSignatureItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeApiSignaturesResponse.ApiSignatures.Length"); i++) {
 			ApiSignatureItem apiSignatureItem = new ApiSignatureItem();
+			apiSignatureItem.setBoundTime(_ctx.stringValue("DescribeApiSignaturesResponse.ApiSignatures["+ i +"].BoundTime"));
 			apiSignatureItem.setApiId(_ctx.stringValue("DescribeApiSignaturesResponse.ApiSignatures["+ i +"].ApiId"));
-			apiSignatureItem.setApiName(_ctx.stringValue("DescribeApiSignaturesResponse.ApiSignatures["+ i +"].ApiName"));
 			apiSignatureItem.setSignatureId(_ctx.stringValue("DescribeApiSignaturesResponse.ApiSignatures["+ i +"].SignatureId"));
 			apiSignatureItem.setSignatureName(_ctx.stringValue("DescribeApiSignaturesResponse.ApiSignatures["+ i +"].SignatureName"));
-			apiSignatureItem.setBoundTime(_ctx.stringValue("DescribeApiSignaturesResponse.ApiSignatures["+ i +"].BoundTime"));
+			apiSignatureItem.setApiName(_ctx.stringValue("DescribeApiSignaturesResponse.ApiSignatures["+ i +"].ApiName"));
 
 			apiSignatures.add(apiSignatureItem);
 		}

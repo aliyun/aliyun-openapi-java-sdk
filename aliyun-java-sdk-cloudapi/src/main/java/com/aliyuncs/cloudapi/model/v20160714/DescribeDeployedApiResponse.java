@@ -25,41 +25,41 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDeployedApiResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String regionId;
-
-	private String groupId;
-
-	private String groupName;
-
-	private String stageName;
-
 	private String apiId;
-
-	private String apiName;
-
-	private String description;
-
-	private String visibility;
-
-	private String authType;
 
 	private String resultType;
 
-	private String resultSample;
-
-	private String failResultSample;
-
-	private String deployedTime;
-
-	private String allowSignatureMethod;
+	private Boolean disableInternet;
 
 	private String resultBodyModel;
 
+	private String resultSample;
+
+	private String allowSignatureMethod;
+
+	private String regionId;
+
 	private Boolean forceNonceCheck;
 
-	private Boolean disableInternet;
+	private String visibility;
+
+	private String failResultSample;
+
+	private String authType;
+
+	private String requestId;
+
+	private String description;
+
+	private String groupName;
+
+	private String groupId;
+
+	private String deployedTime;
+
+	private String stageName;
+
+	private String apiName;
 
 	private List<ErrorCodeSample> errorCodeSamples;
 
@@ -83,100 +83,12 @@ public class DescribeDeployedApiResponse extends AcsResponse {
 
 	private OpenIdConnectConfig openIdConnectConfig;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getBizRegionId() {
-		return this.regionId;
-	}
-
-	public void setBizRegionId(String regionId) {
-		this.regionId = regionId;
-	}
-
-	/**
-	 * @deprecated use getBizRegionId instead of this.
-	 */
-	@Deprecated
-	public String getRegionId() {
-		return this.regionId;
-	}
-
-	/**
-	 * @deprecated use setBizRegionId instead of this.
-	 */
-	@Deprecated
-	public void setRegionId(String regionId) {
-		this.regionId = regionId;
-	}
-
-	public String getGroupId() {
-		return this.groupId;
-	}
-
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-	}
-
-	public String getGroupName() {
-		return this.groupName;
-	}
-
-	public void setGroupName(String groupName) {
-		this.groupName = groupName;
-	}
-
-	public String getStageName() {
-		return this.stageName;
-	}
-
-	public void setStageName(String stageName) {
-		this.stageName = stageName;
-	}
-
 	public String getApiId() {
 		return this.apiId;
 	}
 
 	public void setApiId(String apiId) {
 		this.apiId = apiId;
-	}
-
-	public String getApiName() {
-		return this.apiName;
-	}
-
-	public void setApiName(String apiName) {
-		this.apiName = apiName;
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public String getVisibility() {
-		return this.visibility;
-	}
-
-	public void setVisibility(String visibility) {
-		this.visibility = visibility;
-	}
-
-	public String getAuthType() {
-		return this.authType;
-	}
-
-	public void setAuthType(String authType) {
-		this.authType = authType;
 	}
 
 	public String getResultType() {
@@ -187,36 +99,12 @@ public class DescribeDeployedApiResponse extends AcsResponse {
 		this.resultType = resultType;
 	}
 
-	public String getResultSample() {
-		return this.resultSample;
+	public Boolean getDisableInternet() {
+		return this.disableInternet;
 	}
 
-	public void setResultSample(String resultSample) {
-		this.resultSample = resultSample;
-	}
-
-	public String getFailResultSample() {
-		return this.failResultSample;
-	}
-
-	public void setFailResultSample(String failResultSample) {
-		this.failResultSample = failResultSample;
-	}
-
-	public String getDeployedTime() {
-		return this.deployedTime;
-	}
-
-	public void setDeployedTime(String deployedTime) {
-		this.deployedTime = deployedTime;
-	}
-
-	public String getAllowSignatureMethod() {
-		return this.allowSignatureMethod;
-	}
-
-	public void setAllowSignatureMethod(String allowSignatureMethod) {
-		this.allowSignatureMethod = allowSignatureMethod;
+	public void setDisableInternet(Boolean disableInternet) {
+		this.disableInternet = disableInternet;
 	}
 
 	public String getResultBodyModel() {
@@ -227,6 +115,30 @@ public class DescribeDeployedApiResponse extends AcsResponse {
 		this.resultBodyModel = resultBodyModel;
 	}
 
+	public String getResultSample() {
+		return this.resultSample;
+	}
+
+	public void setResultSample(String resultSample) {
+		this.resultSample = resultSample;
+	}
+
+	public String getAllowSignatureMethod() {
+		return this.allowSignatureMethod;
+	}
+
+	public void setAllowSignatureMethod(String allowSignatureMethod) {
+		this.allowSignatureMethod = allowSignatureMethod;
+	}
+
+	public String getRegionId() {
+		return this.regionId;
+	}
+
+	public void setRegionId(String regionId) {
+		this.regionId = regionId;
+	}
+
 	public Boolean getForceNonceCheck() {
 		return this.forceNonceCheck;
 	}
@@ -235,12 +147,84 @@ public class DescribeDeployedApiResponse extends AcsResponse {
 		this.forceNonceCheck = forceNonceCheck;
 	}
 
-	public Boolean getDisableInternet() {
-		return this.disableInternet;
+	public String getVisibility() {
+		return this.visibility;
 	}
 
-	public void setDisableInternet(Boolean disableInternet) {
-		this.disableInternet = disableInternet;
+	public void setVisibility(String visibility) {
+		this.visibility = visibility;
+	}
+
+	public String getFailResultSample() {
+		return this.failResultSample;
+	}
+
+	public void setFailResultSample(String failResultSample) {
+		this.failResultSample = failResultSample;
+	}
+
+	public String getAuthType() {
+		return this.authType;
+	}
+
+	public void setAuthType(String authType) {
+		this.authType = authType;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getGroupName() {
+		return this.groupName;
+	}
+
+	public void setGroupName(String groupName) {
+		this.groupName = groupName;
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+	}
+
+	public String getDeployedTime() {
+		return this.deployedTime;
+	}
+
+	public void setDeployedTime(String deployedTime) {
+		this.deployedTime = deployedTime;
+	}
+
+	public String getStageName() {
+		return this.stageName;
+	}
+
+	public void setStageName(String stageName) {
+		this.stageName = stageName;
+	}
+
+	public String getApiName() {
+		return this.apiName;
+	}
+
+	public void setApiName(String apiName) {
+		this.apiName = apiName;
 	}
 
 	public List<ErrorCodeSample> getErrorCodeSamples() {
@@ -366,44 +350,28 @@ public class DescribeDeployedApiResponse extends AcsResponse {
 
 	public static class ResultDescription {
 
-		private String id;
-
-		private String pid;
-
-		private Boolean hasChild;
+		private String type;
 
 		private String key;
 
-		private String name;
-
-		private Boolean mandatory;
-
-		private String type;
+		private Boolean hasChild;
 
 		private String description;
 
-		public String getId() {
-			return this.id;
+		private String pid;
+
+		private Boolean mandatory;
+
+		private String name;
+
+		private String id;
+
+		public String getType() {
+			return this.type;
 		}
 
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getPid() {
-			return this.pid;
-		}
-
-		public void setPid(String pid) {
-			this.pid = pid;
-		}
-
-		public Boolean getHasChild() {
-			return this.hasChild;
-		}
-
-		public void setHasChild(Boolean hasChild) {
-			this.hasChild = hasChild;
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public String getKey() {
@@ -414,12 +382,28 @@ public class DescribeDeployedApiResponse extends AcsResponse {
 			this.key = key;
 		}
 
-		public String getName() {
-			return this.name;
+		public Boolean getHasChild() {
+			return this.hasChild;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+		public void setHasChild(Boolean hasChild) {
+			this.hasChild = hasChild;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getPid() {
+			return this.pid;
+		}
+
+		public void setPid(String pid) {
+			this.pid = pid;
 		}
 
 		public Boolean getMandatory() {
@@ -430,58 +414,34 @@ public class DescribeDeployedApiResponse extends AcsResponse {
 			this.mandatory = mandatory;
 		}
 
-		public String getType() {
-			return this.type;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setType(String type) {
-			this.type = type;
+		public void setName(String name) {
+			this.name = name;
 		}
 
-		public String getDescription() {
-			return this.description;
+		public String getId() {
+			return this.id;
 		}
 
-		public void setDescription(String description) {
-			this.description = description;
+		public void setId(String id) {
+			this.id = id;
 		}
 	}
 
 	public static class SystemParameter {
 
-		private String parameterName;
-
-		private String serviceParameterName;
-
-		private String location;
-
 		private String demoValue;
 
 		private String description;
 
-		public String getParameterName() {
-			return this.parameterName;
-		}
+		private String parameterName;
 
-		public void setParameterName(String parameterName) {
-			this.parameterName = parameterName;
-		}
+		private String location;
 
-		public String getServiceParameterName() {
-			return this.serviceParameterName;
-		}
-
-		public void setServiceParameterName(String serviceParameterName) {
-			this.serviceParameterName = serviceParameterName;
-		}
-
-		public String getLocation() {
-			return this.location;
-		}
-
-		public void setLocation(String location) {
-			this.location = location;
-		}
+		private String serviceParameterName;
 
 		public String getDemoValue() {
 			return this.demoValue;
@@ -497,44 +457,44 @@ public class DescribeDeployedApiResponse extends AcsResponse {
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public String getParameterName() {
+			return this.parameterName;
+		}
+
+		public void setParameterName(String parameterName) {
+			this.parameterName = parameterName;
+		}
+
+		public String getLocation() {
+			return this.location;
+		}
+
+		public void setLocation(String location) {
+			this.location = location;
+		}
+
+		public String getServiceParameterName() {
+			return this.serviceParameterName;
+		}
+
+		public void setServiceParameterName(String serviceParameterName) {
+			this.serviceParameterName = serviceParameterName;
 		}
 	}
 
 	public static class CustomSystemParameter {
 
-		private String parameterName;
-
-		private String serviceParameterName;
-
-		private String location;
-
 		private String demoValue;
 
 		private String description;
 
-		public String getParameterName() {
-			return this.parameterName;
-		}
+		private String parameterName;
 
-		public void setParameterName(String parameterName) {
-			this.parameterName = parameterName;
-		}
+		private String location;
 
-		public String getServiceParameterName() {
-			return this.serviceParameterName;
-		}
-
-		public void setServiceParameterName(String serviceParameterName) {
-			this.serviceParameterName = serviceParameterName;
-		}
-
-		public String getLocation() {
-			return this.location;
-		}
-
-		public void setLocation(String location) {
-			this.location = location;
-		}
+		private String serviceParameterName;
 
 		public String getDemoValue() {
 			return this.demoValue;
@@ -551,17 +511,57 @@ public class DescribeDeployedApiResponse extends AcsResponse {
 		public void setDescription(String description) {
 			this.description = description;
 		}
+
+		public String getParameterName() {
+			return this.parameterName;
+		}
+
+		public void setParameterName(String parameterName) {
+			this.parameterName = parameterName;
+		}
+
+		public String getLocation() {
+			return this.location;
+		}
+
+		public void setLocation(String location) {
+			this.location = location;
+		}
+
+		public String getServiceParameterName() {
+			return this.serviceParameterName;
+		}
+
+		public void setServiceParameterName(String serviceParameterName) {
+			this.serviceParameterName = serviceParameterName;
+		}
 	}
 
 	public static class ConstantParameter {
+
+		private String description;
+
+		private String location;
 
 		private String serviceParameterName;
 
 		private String constantValue;
 
-		private String location;
+		public String getDescription() {
+			return this.description;
+		}
 
-		private String description;
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getLocation() {
+			return this.location;
+		}
+
+		public void setLocation(String location) {
+			this.location = location;
+		}
 
 		public String getServiceParameterName() {
 			return this.serviceParameterName;
@@ -578,104 +578,50 @@ public class DescribeDeployedApiResponse extends AcsResponse {
 		public void setConstantValue(String constantValue) {
 			this.constantValue = constantValue;
 		}
-
-		public String getLocation() {
-			return this.location;
-		}
-
-		public void setLocation(String location) {
-			this.location = location;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
 	}
 
 	public static class RequestParameter {
 
-		private String apiParameterName;
-
-		private String location;
-
-		private String parameterType;
-
-		private String required;
-
-		private String defaultValue;
-
-		private String demoValue;
+		private String jsonScheme;
 
 		private Long maxValue;
 
+		private String arrayItemsType;
+
 		private Long minValue;
-
-		private Long maxLength;
-
-		private Long minLength;
-
-		private String regularExpression;
-
-		private String jsonScheme;
-
-		private String enumValue;
 
 		private String docShow;
 
-		private Integer docOrder;
+		private Long maxLength;
+
+		private String defaultValue;
+
+		private String apiParameterName;
+
+		private String enumValue;
+
+		private String demoValue;
+
+		private String required;
 
 		private String description;
 
-		public String getApiParameterName() {
-			return this.apiParameterName;
+		private String parameterType;
+
+		private String regularExpression;
+
+		private Long minLength;
+
+		private Integer docOrder;
+
+		private String location;
+
+		public String getJsonScheme() {
+			return this.jsonScheme;
 		}
 
-		public void setApiParameterName(String apiParameterName) {
-			this.apiParameterName = apiParameterName;
-		}
-
-		public String getLocation() {
-			return this.location;
-		}
-
-		public void setLocation(String location) {
-			this.location = location;
-		}
-
-		public String getParameterType() {
-			return this.parameterType;
-		}
-
-		public void setParameterType(String parameterType) {
-			this.parameterType = parameterType;
-		}
-
-		public String getRequired() {
-			return this.required;
-		}
-
-		public void setRequired(String required) {
-			this.required = required;
-		}
-
-		public String getDefaultValue() {
-			return this.defaultValue;
-		}
-
-		public void setDefaultValue(String defaultValue) {
-			this.defaultValue = defaultValue;
-		}
-
-		public String getDemoValue() {
-			return this.demoValue;
-		}
-
-		public void setDemoValue(String demoValue) {
-			this.demoValue = demoValue;
+		public void setJsonScheme(String jsonScheme) {
+			this.jsonScheme = jsonScheme;
 		}
 
 		public Long getMaxValue() {
@@ -686,52 +632,20 @@ public class DescribeDeployedApiResponse extends AcsResponse {
 			this.maxValue = maxValue;
 		}
 
+		public String getArrayItemsType() {
+			return this.arrayItemsType;
+		}
+
+		public void setArrayItemsType(String arrayItemsType) {
+			this.arrayItemsType = arrayItemsType;
+		}
+
 		public Long getMinValue() {
 			return this.minValue;
 		}
 
 		public void setMinValue(Long minValue) {
 			this.minValue = minValue;
-		}
-
-		public Long getMaxLength() {
-			return this.maxLength;
-		}
-
-		public void setMaxLength(Long maxLength) {
-			this.maxLength = maxLength;
-		}
-
-		public Long getMinLength() {
-			return this.minLength;
-		}
-
-		public void setMinLength(Long minLength) {
-			this.minLength = minLength;
-		}
-
-		public String getRegularExpression() {
-			return this.regularExpression;
-		}
-
-		public void setRegularExpression(String regularExpression) {
-			this.regularExpression = regularExpression;
-		}
-
-		public String getJsonScheme() {
-			return this.jsonScheme;
-		}
-
-		public void setJsonScheme(String jsonScheme) {
-			this.jsonScheme = jsonScheme;
-		}
-
-		public String getEnumValue() {
-			return this.enumValue;
-		}
-
-		public void setEnumValue(String enumValue) {
-			this.enumValue = enumValue;
 		}
 
 		public String getDocShow() {
@@ -742,12 +656,52 @@ public class DescribeDeployedApiResponse extends AcsResponse {
 			this.docShow = docShow;
 		}
 
-		public Integer getDocOrder() {
-			return this.docOrder;
+		public Long getMaxLength() {
+			return this.maxLength;
 		}
 
-		public void setDocOrder(Integer docOrder) {
-			this.docOrder = docOrder;
+		public void setMaxLength(Long maxLength) {
+			this.maxLength = maxLength;
+		}
+
+		public String getDefaultValue() {
+			return this.defaultValue;
+		}
+
+		public void setDefaultValue(String defaultValue) {
+			this.defaultValue = defaultValue;
+		}
+
+		public String getApiParameterName() {
+			return this.apiParameterName;
+		}
+
+		public void setApiParameterName(String apiParameterName) {
+			this.apiParameterName = apiParameterName;
+		}
+
+		public String getEnumValue() {
+			return this.enumValue;
+		}
+
+		public void setEnumValue(String enumValue) {
+			this.enumValue = enumValue;
+		}
+
+		public String getDemoValue() {
+			return this.demoValue;
+		}
+
+		public void setDemoValue(String demoValue) {
+			this.demoValue = demoValue;
+		}
+
+		public String getRequired() {
+			return this.required;
+		}
+
+		public void setRequired(String required) {
+			this.required = required;
 		}
 
 		public String getDescription() {
@@ -757,23 +711,55 @@ public class DescribeDeployedApiResponse extends AcsResponse {
 		public void setDescription(String description) {
 			this.description = description;
 		}
+
+		public String getParameterType() {
+			return this.parameterType;
+		}
+
+		public void setParameterType(String parameterType) {
+			this.parameterType = parameterType;
+		}
+
+		public String getRegularExpression() {
+			return this.regularExpression;
+		}
+
+		public void setRegularExpression(String regularExpression) {
+			this.regularExpression = regularExpression;
+		}
+
+		public Long getMinLength() {
+			return this.minLength;
+		}
+
+		public void setMinLength(Long minLength) {
+			this.minLength = minLength;
+		}
+
+		public Integer getDocOrder() {
+			return this.docOrder;
+		}
+
+		public void setDocOrder(Integer docOrder) {
+			this.docOrder = docOrder;
+		}
+
+		public String getLocation() {
+			return this.location;
+		}
+
+		public void setLocation(String location) {
+			this.location = location;
+		}
 	}
 
 	public static class ServiceParameter {
-
-		private String serviceParameterName;
 
 		private String location;
 
 		private String parameterType;
 
-		public String getServiceParameterName() {
-			return this.serviceParameterName;
-		}
-
-		public void setServiceParameterName(String serviceParameterName) {
-			this.serviceParameterName = serviceParameterName;
-		}
+		private String serviceParameterName;
 
 		public String getLocation() {
 			return this.location;
@@ -790,13 +776,6 @@ public class DescribeDeployedApiResponse extends AcsResponse {
 		public void setParameterType(String parameterType) {
 			this.parameterType = parameterType;
 		}
-	}
-
-	public static class ServiceParameterMap {
-
-		private String serviceParameterName;
-
-		private String requestParameterName;
 
 		public String getServiceParameterName() {
 			return this.serviceParameterName;
@@ -805,6 +784,13 @@ public class DescribeDeployedApiResponse extends AcsResponse {
 		public void setServiceParameterName(String serviceParameterName) {
 			this.serviceParameterName = serviceParameterName;
 		}
+	}
+
+	public static class ServiceParameterMap {
+
+		private String requestParameterName;
+
+		private String serviceParameterName;
 
 		public String getRequestParameterName() {
 			return this.requestParameterName;
@@ -813,38 +799,38 @@ public class DescribeDeployedApiResponse extends AcsResponse {
 		public void setRequestParameterName(String requestParameterName) {
 			this.requestParameterName = requestParameterName;
 		}
+
+		public String getServiceParameterName() {
+			return this.serviceParameterName;
+		}
+
+		public void setServiceParameterName(String serviceParameterName) {
+			this.serviceParameterName = serviceParameterName;
+		}
 	}
 
 	public static class RequestConfig {
 
-		private String requestProtocol;
-
-		private String requestHttpMethod;
+		private String bodyModel;
 
 		private String requestPath;
 
-		private String bodyFormat;
+		private String requestHttpMethod;
 
-		private String postBodyDescription;
+		private String bodyFormat;
 
 		private String requestMode;
 
-		private String bodyModel;
+		private String postBodyDescription;
 
-		public String getRequestProtocol() {
-			return this.requestProtocol;
+		private String requestProtocol;
+
+		public String getBodyModel() {
+			return this.bodyModel;
 		}
 
-		public void setRequestProtocol(String requestProtocol) {
-			this.requestProtocol = requestProtocol;
-		}
-
-		public String getRequestHttpMethod() {
-			return this.requestHttpMethod;
-		}
-
-		public void setRequestHttpMethod(String requestHttpMethod) {
-			this.requestHttpMethod = requestHttpMethod;
+		public void setBodyModel(String bodyModel) {
+			this.bodyModel = bodyModel;
 		}
 
 		public String getRequestPath() {
@@ -855,20 +841,20 @@ public class DescribeDeployedApiResponse extends AcsResponse {
 			this.requestPath = requestPath;
 		}
 
+		public String getRequestHttpMethod() {
+			return this.requestHttpMethod;
+		}
+
+		public void setRequestHttpMethod(String requestHttpMethod) {
+			this.requestHttpMethod = requestHttpMethod;
+		}
+
 		public String getBodyFormat() {
 			return this.bodyFormat;
 		}
 
 		public void setBodyFormat(String bodyFormat) {
 			this.bodyFormat = bodyFormat;
-		}
-
-		public String getPostBodyDescription() {
-			return this.postBodyDescription;
-		}
-
-		public void setPostBodyDescription(String postBodyDescription) {
-			this.postBodyDescription = postBodyDescription;
 		}
 
 		public String getRequestMode() {
@@ -879,34 +865,44 @@ public class DescribeDeployedApiResponse extends AcsResponse {
 			this.requestMode = requestMode;
 		}
 
-		public String getBodyModel() {
-			return this.bodyModel;
+		public String getPostBodyDescription() {
+			return this.postBodyDescription;
 		}
 
-		public void setBodyModel(String bodyModel) {
-			this.bodyModel = bodyModel;
+		public void setPostBodyDescription(String postBodyDescription) {
+			this.postBodyDescription = postBodyDescription;
+		}
+
+		public String getRequestProtocol() {
+			return this.requestProtocol;
+		}
+
+		public void setRequestProtocol(String requestProtocol) {
+			this.requestProtocol = requestProtocol;
 		}
 	}
 
 	public static class ServiceConfig {
 
-		private String serviceProtocol;
+		private String vpcId;
 
-		private String serviceAddress;
-
-		private String serviceHttpMethod;
+		private Integer mockStatusCode;
 
 		private String servicePath;
 
-		private Integer serviceTimeout;
-
 		private String mock;
 
-		private String mockResult;
+		private String serviceAddress;
 
 		private String serviceVpcEnable;
 
-		private Integer mockStatusCode;
+		private String mockResult;
+
+		private String serviceHttpMethod;
+
+		private String serviceProtocol;
+
+		private Integer serviceTimeout;
 
 		private List<MockHeader> mockHeaders;
 
@@ -914,28 +910,20 @@ public class DescribeDeployedApiResponse extends AcsResponse {
 
 		private FunctionComputeConfig functionComputeConfig;
 
-		public String getServiceProtocol() {
-			return this.serviceProtocol;
+		public String getVpcId() {
+			return this.vpcId;
 		}
 
-		public void setServiceProtocol(String serviceProtocol) {
-			this.serviceProtocol = serviceProtocol;
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
 		}
 
-		public String getServiceAddress() {
-			return this.serviceAddress;
+		public Integer getMockStatusCode() {
+			return this.mockStatusCode;
 		}
 
-		public void setServiceAddress(String serviceAddress) {
-			this.serviceAddress = serviceAddress;
-		}
-
-		public String getServiceHttpMethod() {
-			return this.serviceHttpMethod;
-		}
-
-		public void setServiceHttpMethod(String serviceHttpMethod) {
-			this.serviceHttpMethod = serviceHttpMethod;
+		public void setMockStatusCode(Integer mockStatusCode) {
+			this.mockStatusCode = mockStatusCode;
 		}
 
 		public String getServicePath() {
@@ -946,14 +934,6 @@ public class DescribeDeployedApiResponse extends AcsResponse {
 			this.servicePath = servicePath;
 		}
 
-		public Integer getServiceTimeout() {
-			return this.serviceTimeout;
-		}
-
-		public void setServiceTimeout(Integer serviceTimeout) {
-			this.serviceTimeout = serviceTimeout;
-		}
-
 		public String getMock() {
 			return this.mock;
 		}
@@ -962,12 +942,12 @@ public class DescribeDeployedApiResponse extends AcsResponse {
 			this.mock = mock;
 		}
 
-		public String getMockResult() {
-			return this.mockResult;
+		public String getServiceAddress() {
+			return this.serviceAddress;
 		}
 
-		public void setMockResult(String mockResult) {
-			this.mockResult = mockResult;
+		public void setServiceAddress(String serviceAddress) {
+			this.serviceAddress = serviceAddress;
 		}
 
 		public String getServiceVpcEnable() {
@@ -978,12 +958,36 @@ public class DescribeDeployedApiResponse extends AcsResponse {
 			this.serviceVpcEnable = serviceVpcEnable;
 		}
 
-		public Integer getMockStatusCode() {
-			return this.mockStatusCode;
+		public String getMockResult() {
+			return this.mockResult;
 		}
 
-		public void setMockStatusCode(Integer mockStatusCode) {
-			this.mockStatusCode = mockStatusCode;
+		public void setMockResult(String mockResult) {
+			this.mockResult = mockResult;
+		}
+
+		public String getServiceHttpMethod() {
+			return this.serviceHttpMethod;
+		}
+
+		public void setServiceHttpMethod(String serviceHttpMethod) {
+			this.serviceHttpMethod = serviceHttpMethod;
+		}
+
+		public String getServiceProtocol() {
+			return this.serviceProtocol;
+		}
+
+		public void setServiceProtocol(String serviceProtocol) {
+			this.serviceProtocol = serviceProtocol;
+		}
+
+		public Integer getServiceTimeout() {
+			return this.serviceTimeout;
+		}
+
+		public void setServiceTimeout(Integer serviceTimeout) {
+			this.serviceTimeout = serviceTimeout;
 		}
 
 		public List<MockHeader> getMockHeaders() {
@@ -1012,17 +1016,9 @@ public class DescribeDeployedApiResponse extends AcsResponse {
 
 		public static class MockHeader {
 
-			private String headerName;
-
 			private String headerValue;
 
-			public String getHeaderName() {
-				return this.headerName;
-			}
-
-			public void setHeaderName(String headerName) {
-				this.headerName = headerName;
-			}
+			private String headerName;
 
 			public String getHeaderValue() {
 				return this.headerValue;
@@ -1031,11 +1027,17 @@ public class DescribeDeployedApiResponse extends AcsResponse {
 			public void setHeaderValue(String headerValue) {
 				this.headerValue = headerValue;
 			}
+
+			public String getHeaderName() {
+				return this.headerName;
+			}
+
+			public void setHeaderName(String headerName) {
+				this.headerName = headerName;
+			}
 		}
 
 		public static class VpcConfig {
-
-			private String name;
 
 			private String vpcId;
 
@@ -1043,13 +1045,7 @@ public class DescribeDeployedApiResponse extends AcsResponse {
 
 			private Integer port;
 
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
+			private String name;
 
 			public String getVpcId() {
 				return this.vpcId;
@@ -1074,48 +1070,96 @@ public class DescribeDeployedApiResponse extends AcsResponse {
 			public void setPort(Integer port) {
 				this.port = port;
 			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
 		}
 
 		public static class FunctionComputeConfig {
 
-			private String regionId;
-
-			private String serviceName;
-
-			private String functionName;
+			private String fcType;
 
 			private String roleArn;
 
-			public String getBizRegionId() {
-				return this.regionId;
+			private String method;
+
+			private String fcBaseUrl;
+
+			private String contentTypeValue;
+
+			private String regionId;
+
+			private Boolean onlyBusinessPath;
+
+			private String functionName;
+
+			private String contentTypeCatagory;
+
+			private String path;
+
+			private String serviceName;
+
+			private String qualifier;
+
+			public String getFcType() {
+				return this.fcType;
 			}
 
-			public void setBizRegionId(String regionId) {
-				this.regionId = regionId;
+			public void setFcType(String fcType) {
+				this.fcType = fcType;
 			}
 
-			/**
-			 * @deprecated use getBizRegionId instead of this.
-			 */
-			@Deprecated
+			public String getRoleArn() {
+				return this.roleArn;
+			}
+
+			public void setRoleArn(String roleArn) {
+				this.roleArn = roleArn;
+			}
+
+			public String getBizMethod() {
+				return this.method;
+			}
+
+			public void setBizMethod(String method) {
+				this.method = method;
+			}
+
+			public String getFcBaseUrl() {
+				return this.fcBaseUrl;
+			}
+
+			public void setFcBaseUrl(String fcBaseUrl) {
+				this.fcBaseUrl = fcBaseUrl;
+			}
+
+			public String getContentTypeValue() {
+				return this.contentTypeValue;
+			}
+
+			public void setContentTypeValue(String contentTypeValue) {
+				this.contentTypeValue = contentTypeValue;
+			}
+
 			public String getRegionId() {
 				return this.regionId;
 			}
 
-			/**
-			 * @deprecated use setBizRegionId instead of this.
-			 */
-			@Deprecated
 			public void setRegionId(String regionId) {
 				this.regionId = regionId;
 			}
 
-			public String getServiceName() {
-				return this.serviceName;
+			public Boolean getOnlyBusinessPath() {
+				return this.onlyBusinessPath;
 			}
 
-			public void setServiceName(String serviceName) {
-				this.serviceName = serviceName;
+			public void setOnlyBusinessPath(Boolean onlyBusinessPath) {
+				this.onlyBusinessPath = onlyBusinessPath;
 			}
 
 			public String getFunctionName() {
@@ -1126,12 +1170,36 @@ public class DescribeDeployedApiResponse extends AcsResponse {
 				this.functionName = functionName;
 			}
 
-			public String getRoleArn() {
-				return this.roleArn;
+			public String getContentTypeCatagory() {
+				return this.contentTypeCatagory;
 			}
 
-			public void setRoleArn(String roleArn) {
-				this.roleArn = roleArn;
+			public void setContentTypeCatagory(String contentTypeCatagory) {
+				this.contentTypeCatagory = contentTypeCatagory;
+			}
+
+			public String getPath() {
+				return this.path;
+			}
+
+			public void setPath(String path) {
+				this.path = path;
+			}
+
+			public String getServiceName() {
+				return this.serviceName;
+			}
+
+			public void setServiceName(String serviceName) {
+				this.serviceName = serviceName;
+			}
+
+			public String getQualifier() {
+				return this.qualifier;
+			}
+
+			public void setQualifier(String qualifier) {
+				this.qualifier = qualifier;
 			}
 		}
 	}

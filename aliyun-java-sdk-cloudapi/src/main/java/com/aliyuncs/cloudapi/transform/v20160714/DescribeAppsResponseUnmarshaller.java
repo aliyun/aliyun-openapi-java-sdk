@@ -27,16 +27,16 @@ public class DescribeAppsResponseUnmarshaller {
 	public static DescribeAppsResponse unmarshall(DescribeAppsResponse describeAppsResponse, UnmarshallerContext _ctx) {
 		
 		describeAppsResponse.setRequestId(_ctx.stringValue("DescribeAppsResponse.RequestId"));
-		describeAppsResponse.setTotalCount(_ctx.integerValue("DescribeAppsResponse.TotalCount"));
-		describeAppsResponse.setPageSize(_ctx.integerValue("DescribeAppsResponse.PageSize"));
 		describeAppsResponse.setPageNumber(_ctx.integerValue("DescribeAppsResponse.PageNumber"));
+		describeAppsResponse.setPageSize(_ctx.integerValue("DescribeAppsResponse.PageSize"));
+		describeAppsResponse.setTotalCount(_ctx.integerValue("DescribeAppsResponse.TotalCount"));
 
 		List<AppItem> apps = new ArrayList<AppItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAppsResponse.Apps.Length"); i++) {
 			AppItem appItem = new AppItem();
-			appItem.setAppId(_ctx.longValue("DescribeAppsResponse.Apps["+ i +"].AppId"));
 			appItem.setAppName(_ctx.stringValue("DescribeAppsResponse.Apps["+ i +"].AppName"));
 			appItem.setDescription(_ctx.stringValue("DescribeAppsResponse.Apps["+ i +"].Description"));
+			appItem.setAppId(_ctx.longValue("DescribeAppsResponse.Apps["+ i +"].AppId"));
 
 			apps.add(appItem);
 		}

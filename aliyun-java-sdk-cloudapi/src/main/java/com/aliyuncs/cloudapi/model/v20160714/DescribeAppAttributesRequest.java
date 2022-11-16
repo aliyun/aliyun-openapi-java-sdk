@@ -24,17 +24,7 @@ import com.aliyuncs.cloudapi.Endpoint;
  * @version 
  */
 public class DescribeAppAttributesRequest extends RpcAcsRequest<DescribeAppAttributesResponse> {
-	
-	public DescribeAppAttributesRequest() {
-		super("CloudAPI", "2016-07-14", "DescribeAppAttributes", "apigateway");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
-
-	private Boolean enableTagAuth;
+	   
 
 	private Integer pageNumber;
 
@@ -42,21 +32,26 @@ public class DescribeAppAttributesRequest extends RpcAcsRequest<DescribeAppAttri
 
 	private String securityToken;
 
-	private Long appId;
-
 	private Integer pageSize;
 
 	private List<Tag> tags;
 
-	public Boolean getEnableTagAuth() {
-		return this.enableTagAuth;
-	}
+	private String sort;
 
-	public void setEnableTagAuth(Boolean enableTagAuth) {
-		this.enableTagAuth = enableTagAuth;
-		if(enableTagAuth != null){
-			putQueryParameter("EnableTagAuth", enableTagAuth.toString());
-		}
+	private Boolean enableTagAuth;
+
+	private Long appId;
+
+	private String appCode;
+
+	private String appKey;
+	public DescribeAppAttributesRequest() {
+		super("CloudAPI", "2016-07-14", "DescribeAppAttributes", "apigateway");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Integer getPageNumber() {
@@ -81,44 +76,14 @@ public class DescribeAppAttributesRequest extends RpcAcsRequest<DescribeAppAttri
 		}
 	}
 
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public Long getAppId() {
-		return this.appId;
-	}
-
-	public void setAppId(Long appId) {
-		this.appId = appId;
-		if(appId != null){
-			putQueryParameter("AppId", appId.toString());
 		}
 	}
 
@@ -145,6 +110,61 @@ public class DescribeAppAttributesRequest extends RpcAcsRequest<DescribeAppAttri
 				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
+	}
+
+	public String getSort() {
+		return this.sort;
+	}
+
+	public void setSort(String sort) {
+		this.sort = sort;
+		if(sort != null){
+			putQueryParameter("Sort", sort);
+		}
+	}
+
+	public Boolean getEnableTagAuth() {
+		return this.enableTagAuth;
+	}
+
+	public void setEnableTagAuth(Boolean enableTagAuth) {
+		this.enableTagAuth = enableTagAuth;
+		if(enableTagAuth != null){
+			putQueryParameter("EnableTagAuth", enableTagAuth.toString());
+		}
+	}
+
+	public Long getAppId() {
+		return this.appId;
+	}
+
+	public void setAppId(Long appId) {
+		this.appId = appId;
+		if(appId != null){
+			putQueryParameter("AppId", appId.toString());
+		}
+	}
+
+	public String getAppCode() {
+		return this.appCode;
+	}
+
+	public void setAppCode(String appCode) {
+		this.appCode = appCode;
+		if(appCode != null){
+			putQueryParameter("AppCode", appCode);
+		}
+	}
+
+	public String getAppKey() {
+		return this.appKey;
+	}
+
+	public void setAppKey(String appKey) {
+		this.appKey = appKey;
+		if(appKey != null){
+			putQueryParameter("AppKey", appKey);
+		}
 	}
 
 	public static class Tag {

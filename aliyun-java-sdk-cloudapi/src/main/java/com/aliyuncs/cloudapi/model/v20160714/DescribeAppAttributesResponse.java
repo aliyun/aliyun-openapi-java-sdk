@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAppAttributesResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageNumber;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageSize;
 
-	private Integer pageNumber;
+	private Integer totalCount;
 
 	private List<AppAttribute> apps;
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeAppAttributesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageSize() {
@@ -59,12 +59,12 @@ public class DescribeAppAttributesResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<AppAttribute> getApps() {
@@ -77,23 +77,17 @@ public class DescribeAppAttributesResponse extends AcsResponse {
 
 	public static class AppAttribute {
 
-		private Long appId;
-
 		private String appName;
+
+		private String modifiedTime;
 
 		private String description;
 
 		private String createdTime;
 
-		private String modifiedTime;
+		private Long appId;
 
-		public Long getAppId() {
-			return this.appId;
-		}
-
-		public void setAppId(Long appId) {
-			this.appId = appId;
-		}
+		private List<TagInfo> tags;
 
 		public String getAppName() {
 			return this.appName;
@@ -101,6 +95,14 @@ public class DescribeAppAttributesResponse extends AcsResponse {
 
 		public void setAppName(String appName) {
 			this.appName = appName;
+		}
+
+		public String getModifiedTime() {
+			return this.modifiedTime;
+		}
+
+		public void setModifiedTime(String modifiedTime) {
+			this.modifiedTime = modifiedTime;
 		}
 
 		public String getDescription() {
@@ -119,12 +121,43 @@ public class DescribeAppAttributesResponse extends AcsResponse {
 			this.createdTime = createdTime;
 		}
 
-		public String getModifiedTime() {
-			return this.modifiedTime;
+		public Long getAppId() {
+			return this.appId;
 		}
 
-		public void setModifiedTime(String modifiedTime) {
-			this.modifiedTime = modifiedTime;
+		public void setAppId(Long appId) {
+			this.appId = appId;
+		}
+
+		public List<TagInfo> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<TagInfo> tags) {
+			this.tags = tags;
+		}
+
+		public static class TagInfo {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 	}
 

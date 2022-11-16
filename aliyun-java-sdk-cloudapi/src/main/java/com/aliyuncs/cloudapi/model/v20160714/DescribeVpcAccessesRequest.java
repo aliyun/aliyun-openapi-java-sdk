@@ -23,21 +23,31 @@ import com.aliyuncs.cloudapi.Endpoint;
  * @version 
  */
 public class DescribeVpcAccessesRequest extends RpcAcsRequest<DescribeVpcAccessesResponse> {
-	
+	   
+
+	private Integer pageNumber;
+
+	private String instanceId;
+
+	private String securityToken;
+
+	private String port;
+
+	private String vpcId;
+
+	private Integer pageSize;
+
+	private String name;
+
+	private String vpcAccessId;
 	public DescribeVpcAccessesRequest() {
 		super("CloudAPI", "2016-07-14", "DescribeVpcAccesses", "apigateway");
-		setSysMethod(MethodType.POST);
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private Integer pageNumber;
-
-	private String securityToken;
-
-	private Integer pageSize;
 
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -50,33 +60,47 @@ public class DescribeVpcAccessesRequest extends RpcAcsRequest<DescribeVpcAccesse
 		}
 	}
 
-	public String getBizSecurityToken() {
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	public void setBizSecurityToken(String securityToken) {
+	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public String getSecurityToken() {
-		return this.securityToken;
+	public String getPort() {
+		return this.port;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setPort(String port) {
+		this.port = port;
+		if(port != null){
+			putQueryParameter("Port", port);
+		}
+	}
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
 		}
 	}
 
@@ -88,6 +112,28 @@ public class DescribeVpcAccessesRequest extends RpcAcsRequest<DescribeVpcAccesse
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getVpcAccessId() {
+		return this.vpcAccessId;
+	}
+
+	public void setVpcAccessId(String vpcAccessId) {
+		this.vpcAccessId = vpcAccessId;
+		if(vpcAccessId != null){
+			putQueryParameter("VpcAccessId", vpcAccessId);
 		}
 	}
 

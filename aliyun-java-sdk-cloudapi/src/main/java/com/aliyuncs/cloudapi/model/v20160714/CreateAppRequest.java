@@ -24,23 +24,31 @@ import com.aliyuncs.cloudapi.Endpoint;
  * @version 
  */
 public class CreateAppRequest extends RpcAcsRequest<CreateAppResponse> {
-	
-	public CreateAppRequest() {
-		super("CloudAPI", "2016-07-14", "CreateApp", "apigateway");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String description;
+
+	private String source;
 
 	private String appName;
 
 	private String securityToken;
 
+	private String appSecret;
+
+	private String appKey;
+
+	private String appCode;
+
 	private List<Tag> tags;
+	public CreateAppRequest() {
+		super("CloudAPI", "2016-07-14", "CreateApp", "apigateway");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getDescription() {
 		return this.description;
@@ -50,6 +58,17 @@ public class CreateAppRequest extends RpcAcsRequest<CreateAppResponse> {
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+		if(source != null){
+			putQueryParameter("Source", source);
 		}
 	}
 
@@ -64,33 +83,47 @@ public class CreateAppRequest extends RpcAcsRequest<CreateAppResponse> {
 		}
 	}
 
-	public String getBizSecurityToken() {
+	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	public void setBizSecurityToken(String securityToken) {
+	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public String getSecurityToken() {
-		return this.securityToken;
+	public String getAppSecret() {
+		return this.appSecret;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setAppSecret(String appSecret) {
+		this.appSecret = appSecret;
+		if(appSecret != null){
+			putQueryParameter("AppSecret", appSecret);
+		}
+	}
+
+	public String getAppKey() {
+		return this.appKey;
+	}
+
+	public void setAppKey(String appKey) {
+		this.appKey = appKey;
+		if(appKey != null){
+			putQueryParameter("AppKey", appKey);
+		}
+	}
+
+	public String getAppCode() {
+		return this.appCode;
+	}
+
+	public void setAppCode(String appCode) {
+		this.appCode = appCode;
+		if(appCode != null){
+			putQueryParameter("AppCode", appCode);
 		}
 	}
 

@@ -49,9 +49,9 @@ public class DescribeTrafficControlsByApiResponse extends AcsResponse {
 
 		private String trafficControlItemId;
 
-		private String trafficControlItemName;
-
 		private String boundTime;
+
+		private String trafficControlItemName;
 
 		public String getTrafficControlItemId() {
 			return this.trafficControlItemId;
@@ -61,20 +61,20 @@ public class DescribeTrafficControlsByApiResponse extends AcsResponse {
 			this.trafficControlItemId = trafficControlItemId;
 		}
 
-		public String getTrafficControlItemName() {
-			return this.trafficControlItemName;
-		}
-
-		public void setTrafficControlItemName(String trafficControlItemName) {
-			this.trafficControlItemName = trafficControlItemName;
-		}
-
 		public String getBoundTime() {
 			return this.boundTime;
 		}
 
 		public void setBoundTime(String boundTime) {
 			this.boundTime = boundTime;
+		}
+
+		public String getTrafficControlItemName() {
+			return this.trafficControlItemName;
+		}
+
+		public void setTrafficControlItemName(String trafficControlItemName) {
+			this.trafficControlItemName = trafficControlItemName;
 		}
 	}
 

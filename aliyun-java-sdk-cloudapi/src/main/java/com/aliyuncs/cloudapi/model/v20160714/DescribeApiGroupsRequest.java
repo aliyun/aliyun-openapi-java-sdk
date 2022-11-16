@@ -24,17 +24,11 @@ import com.aliyuncs.cloudapi.Endpoint;
  * @version 
  */
 public class DescribeApiGroupsRequest extends RpcAcsRequest<DescribeApiGroupsResponse> {
-	
-	public DescribeApiGroupsRequest() {
-		super("CloudAPI", "2016-07-14", "DescribeApiGroups", "apigateway");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String groupId;
+
+	private String sort;
 
 	private Boolean enableTagAuth;
 
@@ -42,11 +36,21 @@ public class DescribeApiGroupsRequest extends RpcAcsRequest<DescribeApiGroupsRes
 
 	private Integer pageNumber;
 
+	private String instanceId;
+
 	private String securityToken;
 
 	private Integer pageSize;
 
 	private List<Tag> tags;
+	public DescribeApiGroupsRequest() {
+		super("CloudAPI", "2016-07-14", "DescribeApiGroups", "apigateway");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getGroupId() {
 		return this.groupId;
@@ -56,6 +60,17 @@ public class DescribeApiGroupsRequest extends RpcAcsRequest<DescribeApiGroupsRes
 		this.groupId = groupId;
 		if(groupId != null){
 			putQueryParameter("GroupId", groupId);
+		}
+	}
+
+	public String getSort() {
+		return this.sort;
+	}
+
+	public void setSort(String sort) {
+		this.sort = sort;
+		if(sort != null){
+			putQueryParameter("Sort", sort);
 		}
 	}
 
@@ -92,29 +107,21 @@ public class DescribeApiGroupsRequest extends RpcAcsRequest<DescribeApiGroupsRes
 		}
 	}
 
-	public String getBizSecurityToken() {
-		return this.securityToken;
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){

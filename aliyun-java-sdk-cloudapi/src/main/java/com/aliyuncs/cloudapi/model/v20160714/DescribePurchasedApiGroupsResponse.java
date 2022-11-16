@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribePurchasedApiGroupsResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageNumber;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageSize;
 
-	private Integer pageNumber;
+	private Integer totalCount;
 
 	private List<PurchasedApiGroupAttribute> purchasedApiGroupAttributes;
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribePurchasedApiGroupsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageSize() {
@@ -59,12 +59,12 @@ public class DescribePurchasedApiGroupsResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<PurchasedApiGroupAttribute> getPurchasedApiGroupAttributes() {
@@ -77,48 +77,32 @@ public class DescribePurchasedApiGroupsResponse extends AcsResponse {
 
 	public static class PurchasedApiGroupAttribute {
 
-		private String groupId;
-
-		private String groupName;
-
-		private String description;
+		private String status;
 
 		private String purchasedTime;
 
 		private String expireTime;
 
-		private String regionId;
+		private String description;
 
-		private String billingType;
+		private String groupName;
+
+		private String groupId;
 
 		private Long invokeTimesMax;
 
 		private Long invokeTimesNow;
 
-		private String status;
+		private String billingType;
 
-		public String getGroupId() {
-			return this.groupId;
+		private String regionId;
+
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setGroupId(String groupId) {
-			this.groupId = groupId;
-		}
-
-		public String getGroupName() {
-			return this.groupName;
-		}
-
-		public void setGroupName(String groupName) {
-			this.groupName = groupName;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getPurchasedTime() {
@@ -137,36 +121,28 @@ public class DescribePurchasedApiGroupsResponse extends AcsResponse {
 			this.expireTime = expireTime;
 		}
 
-		public String getBizRegionId() {
-			return this.regionId;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setBizRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
-		/**
-		 * @deprecated use getBizRegionId instead of this.
-		 */
-		@Deprecated
-		public String getRegionId() {
-			return this.regionId;
+		public String getGroupName() {
+			return this.groupName;
 		}
 
-		/**
-		 * @deprecated use setBizRegionId instead of this.
-		 */
-		@Deprecated
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setGroupName(String groupName) {
+			this.groupName = groupName;
 		}
 
-		public String getBillingType() {
-			return this.billingType;
+		public String getGroupId() {
+			return this.groupId;
 		}
 
-		public void setBillingType(String billingType) {
-			this.billingType = billingType;
+		public void setGroupId(String groupId) {
+			this.groupId = groupId;
 		}
 
 		public Long getInvokeTimesMax() {
@@ -185,12 +161,20 @@ public class DescribePurchasedApiGroupsResponse extends AcsResponse {
 			this.invokeTimesNow = invokeTimesNow;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getBillingType() {
+			return this.billingType;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setBillingType(String billingType) {
+			this.billingType = billingType;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 	}
 

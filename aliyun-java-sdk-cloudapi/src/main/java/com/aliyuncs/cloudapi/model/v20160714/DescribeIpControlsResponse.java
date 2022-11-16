@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeIpControlsResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageNumber;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageSize;
 
-	private Integer pageNumber;
+	private Integer totalCount;
 
 	private List<IpControlInfo> ipControlInfos;
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeIpControlsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageSize() {
@@ -59,12 +59,12 @@ public class DescribeIpControlsResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<IpControlInfo> getIpControlInfos() {
@@ -79,15 +79,15 @@ public class DescribeIpControlsResponse extends AcsResponse {
 
 		private String ipControlId;
 
-		private String ipControlName;
-
 		private String ipControlType;
+
+		private String modifiedTime;
+
+		private String ipControlName;
 
 		private String description;
 
 		private String createTime;
-
-		private String modifiedTime;
 
 		private String regionId;
 
@@ -99,20 +99,28 @@ public class DescribeIpControlsResponse extends AcsResponse {
 			this.ipControlId = ipControlId;
 		}
 
-		public String getIpControlName() {
-			return this.ipControlName;
-		}
-
-		public void setIpControlName(String ipControlName) {
-			this.ipControlName = ipControlName;
-		}
-
 		public String getIpControlType() {
 			return this.ipControlType;
 		}
 
 		public void setIpControlType(String ipControlType) {
 			this.ipControlType = ipControlType;
+		}
+
+		public String getModifiedTime() {
+			return this.modifiedTime;
+		}
+
+		public void setModifiedTime(String modifiedTime) {
+			this.modifiedTime = modifiedTime;
+		}
+
+		public String getIpControlName() {
+			return this.ipControlName;
+		}
+
+		public void setIpControlName(String ipControlName) {
+			this.ipControlName = ipControlName;
 		}
 
 		public String getDescription() {
@@ -131,34 +139,10 @@ public class DescribeIpControlsResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getModifiedTime() {
-			return this.modifiedTime;
-		}
-
-		public void setModifiedTime(String modifiedTime) {
-			this.modifiedTime = modifiedTime;
-		}
-
-		public String getBizRegionId() {
-			return this.regionId;
-		}
-
-		public void setBizRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		/**
-		 * @deprecated use getBizRegionId instead of this.
-		 */
-		@Deprecated
 		public String getRegionId() {
 			return this.regionId;
 		}
 
-		/**
-		 * @deprecated use setBizRegionId instead of this.
-		 */
-		@Deprecated
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
 		}

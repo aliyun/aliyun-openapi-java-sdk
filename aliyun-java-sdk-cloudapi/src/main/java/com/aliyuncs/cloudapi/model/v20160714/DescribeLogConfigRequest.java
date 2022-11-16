@@ -23,19 +23,19 @@ import com.aliyuncs.cloudapi.Endpoint;
  * @version 
  */
 public class DescribeLogConfigRequest extends RpcAcsRequest<DescribeLogConfigResponse> {
-	
+	   
+
+	private String logType;
+
+	private String securityToken;
 	public DescribeLogConfigRequest() {
 		super("CloudAPI", "2016-07-14", "DescribeLogConfig", "apigateway");
-		setSysMethod(MethodType.POST);
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String logType;
-
-	private String securityToken;
 
 	public String getLogType() {
 		return this.logType;
@@ -48,29 +48,10 @@ public class DescribeLogConfigRequest extends RpcAcsRequest<DescribeLogConfigRes
 		}
 	}
 
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){

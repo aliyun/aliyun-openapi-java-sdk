@@ -47,11 +47,19 @@ public class DescribeSignaturesByApiResponse extends AcsResponse {
 
 	public static class SignatureItem {
 
+		private String boundTime;
+
 		private String signatureId;
 
 		private String signatureName;
 
-		private String boundTime;
+		public String getBoundTime() {
+			return this.boundTime;
+		}
+
+		public void setBoundTime(String boundTime) {
+			this.boundTime = boundTime;
+		}
 
 		public String getSignatureId() {
 			return this.signatureId;
@@ -67,14 +75,6 @@ public class DescribeSignaturesByApiResponse extends AcsResponse {
 
 		public void setSignatureName(String signatureName) {
 			this.signatureName = signatureName;
-		}
-
-		public String getBoundTime() {
-			return this.boundTime;
-		}
-
-		public void setBoundTime(String boundTime) {
-			this.boundTime = boundTime;
 		}
 	}
 

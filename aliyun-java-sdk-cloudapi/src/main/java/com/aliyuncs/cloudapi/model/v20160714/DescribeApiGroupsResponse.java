@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeApiGroupsResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageNumber;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageSize;
 
-	private Integer pageNumber;
+	private Integer totalCount;
 
 	private List<ApiGroupAttribute> apiGroupAttributes;
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeApiGroupsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageSize() {
@@ -59,12 +59,12 @@ public class DescribeApiGroupsResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<ApiGroupAttribute> getApiGroupAttributes() {
@@ -77,110 +77,42 @@ public class DescribeApiGroupsResponse extends AcsResponse {
 
 	public static class ApiGroupAttribute {
 
-		private String groupId;
-
-		private String groupName;
-
-		private String subDomain;
-
-		private String description;
-
-		private String createdTime;
-
-		private String modifiedTime;
-
-		private String regionId;
-
-		private Integer trafficLimit;
+		private String basePath;
 
 		private String billingStatus;
 
-		private String illegalStatus;
+		private Integer trafficLimit;
 
 		private String instanceId;
 
 		private String instanceType;
 
+		private String regionId;
+
+		private String modifiedTime;
+
+		private String groupId;
+
+		private String groupName;
+
+		private String description;
+
+		private String illegalStatus;
+
 		private String httpsPolicy;
 
-		public String getGroupId() {
-			return this.groupId;
+		private String subDomain;
+
+		private String createdTime;
+
+		private List<TagInfo> tags;
+
+		public String getBasePath() {
+			return this.basePath;
 		}
 
-		public void setGroupId(String groupId) {
-			this.groupId = groupId;
-		}
-
-		public String getGroupName() {
-			return this.groupName;
-		}
-
-		public void setGroupName(String groupName) {
-			this.groupName = groupName;
-		}
-
-		public String getSubDomain() {
-			return this.subDomain;
-		}
-
-		public void setSubDomain(String subDomain) {
-			this.subDomain = subDomain;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getCreatedTime() {
-			return this.createdTime;
-		}
-
-		public void setCreatedTime(String createdTime) {
-			this.createdTime = createdTime;
-		}
-
-		public String getModifiedTime() {
-			return this.modifiedTime;
-		}
-
-		public void setModifiedTime(String modifiedTime) {
-			this.modifiedTime = modifiedTime;
-		}
-
-		public String getBizRegionId() {
-			return this.regionId;
-		}
-
-		public void setBizRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		/**
-		 * @deprecated use getBizRegionId instead of this.
-		 */
-		@Deprecated
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		/**
-		 * @deprecated use setBizRegionId instead of this.
-		 */
-		@Deprecated
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public Integer getTrafficLimit() {
-			return this.trafficLimit;
-		}
-
-		public void setTrafficLimit(Integer trafficLimit) {
-			this.trafficLimit = trafficLimit;
+		public void setBasePath(String basePath) {
+			this.basePath = basePath;
 		}
 
 		public String getBillingStatus() {
@@ -191,12 +123,12 @@ public class DescribeApiGroupsResponse extends AcsResponse {
 			this.billingStatus = billingStatus;
 		}
 
-		public String getIllegalStatus() {
-			return this.illegalStatus;
+		public Integer getTrafficLimit() {
+			return this.trafficLimit;
 		}
 
-		public void setIllegalStatus(String illegalStatus) {
-			this.illegalStatus = illegalStatus;
+		public void setTrafficLimit(Integer trafficLimit) {
+			this.trafficLimit = trafficLimit;
 		}
 
 		public String getInstanceId() {
@@ -215,12 +147,107 @@ public class DescribeApiGroupsResponse extends AcsResponse {
 			this.instanceType = instanceType;
 		}
 
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getModifiedTime() {
+			return this.modifiedTime;
+		}
+
+		public void setModifiedTime(String modifiedTime) {
+			this.modifiedTime = modifiedTime;
+		}
+
+		public String getGroupId() {
+			return this.groupId;
+		}
+
+		public void setGroupId(String groupId) {
+			this.groupId = groupId;
+		}
+
+		public String getGroupName() {
+			return this.groupName;
+		}
+
+		public void setGroupName(String groupName) {
+			this.groupName = groupName;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getIllegalStatus() {
+			return this.illegalStatus;
+		}
+
+		public void setIllegalStatus(String illegalStatus) {
+			this.illegalStatus = illegalStatus;
+		}
+
 		public String getHttpsPolicy() {
 			return this.httpsPolicy;
 		}
 
 		public void setHttpsPolicy(String httpsPolicy) {
 			this.httpsPolicy = httpsPolicy;
+		}
+
+		public String getSubDomain() {
+			return this.subDomain;
+		}
+
+		public void setSubDomain(String subDomain) {
+			this.subDomain = subDomain;
+		}
+
+		public String getCreatedTime() {
+			return this.createdTime;
+		}
+
+		public void setCreatedTime(String createdTime) {
+			this.createdTime = createdTime;
+		}
+
+		public List<TagInfo> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<TagInfo> tags) {
+			this.tags = tags;
+		}
+
+		public static class TagInfo {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 	}
 

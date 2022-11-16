@@ -27,22 +27,24 @@ public class DescribeDeployedApisResponseUnmarshaller {
 	public static DescribeDeployedApisResponse unmarshall(DescribeDeployedApisResponse describeDeployedApisResponse, UnmarshallerContext _ctx) {
 		
 		describeDeployedApisResponse.setRequestId(_ctx.stringValue("DescribeDeployedApisResponse.RequestId"));
-		describeDeployedApisResponse.setTotalCount(_ctx.integerValue("DescribeDeployedApisResponse.TotalCount"));
-		describeDeployedApisResponse.setPageSize(_ctx.integerValue("DescribeDeployedApisResponse.PageSize"));
 		describeDeployedApisResponse.setPageNumber(_ctx.integerValue("DescribeDeployedApisResponse.PageNumber"));
+		describeDeployedApisResponse.setPageSize(_ctx.integerValue("DescribeDeployedApisResponse.PageSize"));
+		describeDeployedApisResponse.setTotalCount(_ctx.integerValue("DescribeDeployedApisResponse.TotalCount"));
 
 		List<DeployedApiItem> deployedApis = new ArrayList<DeployedApiItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDeployedApisResponse.DeployedApis.Length"); i++) {
 			DeployedApiItem deployedApiItem = new DeployedApiItem();
-			deployedApiItem.setRegionId(_ctx.stringValue("DescribeDeployedApisResponse.DeployedApis["+ i +"].RegionId"));
-			deployedApiItem.setApiId(_ctx.stringValue("DescribeDeployedApisResponse.DeployedApis["+ i +"].ApiId"));
-			deployedApiItem.setApiName(_ctx.stringValue("DescribeDeployedApisResponse.DeployedApis["+ i +"].ApiName"));
-			deployedApiItem.setGroupId(_ctx.stringValue("DescribeDeployedApisResponse.DeployedApis["+ i +"].GroupId"));
-			deployedApiItem.setGroupName(_ctx.stringValue("DescribeDeployedApisResponse.DeployedApis["+ i +"].GroupName"));
-			deployedApiItem.setStageName(_ctx.stringValue("DescribeDeployedApisResponse.DeployedApis["+ i +"].StageName"));
 			deployedApiItem.setVisibility(_ctx.stringValue("DescribeDeployedApisResponse.DeployedApis["+ i +"].Visibility"));
+			deployedApiItem.setApiId(_ctx.stringValue("DescribeDeployedApisResponse.DeployedApis["+ i +"].ApiId"));
 			deployedApiItem.setDescription(_ctx.stringValue("DescribeDeployedApisResponse.DeployedApis["+ i +"].Description"));
+			deployedApiItem.setGroupName(_ctx.stringValue("DescribeDeployedApisResponse.DeployedApis["+ i +"].GroupName"));
+			deployedApiItem.setGroupId(_ctx.stringValue("DescribeDeployedApisResponse.DeployedApis["+ i +"].GroupId"));
 			deployedApiItem.setDeployedTime(_ctx.stringValue("DescribeDeployedApisResponse.DeployedApis["+ i +"].DeployedTime"));
+			deployedApiItem.setStageName(_ctx.stringValue("DescribeDeployedApisResponse.DeployedApis["+ i +"].StageName"));
+			deployedApiItem.setApiName(_ctx.stringValue("DescribeDeployedApisResponse.DeployedApis["+ i +"].ApiName"));
+			deployedApiItem.setRegionId(_ctx.stringValue("DescribeDeployedApisResponse.DeployedApis["+ i +"].RegionId"));
+			deployedApiItem.setApiPath(_ctx.stringValue("DescribeDeployedApisResponse.DeployedApis["+ i +"].ApiPath"));
+			deployedApiItem.setApiMethod(_ctx.stringValue("DescribeDeployedApisResponse.DeployedApis["+ i +"].ApiMethod"));
 
 			deployedApis.add(deployedApiItem);
 		}

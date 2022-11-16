@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeApisByAppResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageNumber;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageSize;
 
-	private Integer pageNumber;
+	private Integer totalCount;
 
 	private List<AppApiRelationInfo> appApiRelationInfos;
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeApisByAppResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageSize() {
@@ -59,12 +59,12 @@ public class DescribeApisByAppResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<AppApiRelationInfo> getAppApiRelationInfos() {
@@ -77,81 +77,31 @@ public class DescribeApisByAppResponse extends AcsResponse {
 
 	public static class AppApiRelationInfo {
 
-		private String regionId;
-
-		private String groupId;
-
-		private String groupName;
-
-		private String stageName;
-
-		private String operator;
-
 		private String apiId;
-
-		private String apiName;
 
 		private String authorizationSource;
 
+		private String authVaildTime;
+
 		private String description;
+
+		private String groupName;
+
+		private String groupId;
+
+		private String operator;
+
+		private String stageName;
 
 		private String createdTime;
 
-		public String getBizRegionId() {
-			return this.regionId;
-		}
+		private String apiName;
 
-		public void setBizRegionId(String regionId) {
-			this.regionId = regionId;
-		}
+		private String regionId;
 
-		/**
-		 * @deprecated use getBizRegionId instead of this.
-		 */
-		@Deprecated
-		public String getRegionId() {
-			return this.regionId;
-		}
+		private String path;
 
-		/**
-		 * @deprecated use setBizRegionId instead of this.
-		 */
-		@Deprecated
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getGroupId() {
-			return this.groupId;
-		}
-
-		public void setGroupId(String groupId) {
-			this.groupId = groupId;
-		}
-
-		public String getGroupName() {
-			return this.groupName;
-		}
-
-		public void setGroupName(String groupName) {
-			this.groupName = groupName;
-		}
-
-		public String getStageName() {
-			return this.stageName;
-		}
-
-		public void setStageName(String stageName) {
-			this.stageName = stageName;
-		}
-
-		public String getOperator() {
-			return this.operator;
-		}
-
-		public void setOperator(String operator) {
-			this.operator = operator;
-		}
+		private String method;
 
 		public String getApiId() {
 			return this.apiId;
@@ -159,14 +109,6 @@ public class DescribeApisByAppResponse extends AcsResponse {
 
 		public void setApiId(String apiId) {
 			this.apiId = apiId;
-		}
-
-		public String getApiName() {
-			return this.apiName;
-		}
-
-		public void setApiName(String apiName) {
-			this.apiName = apiName;
 		}
 
 		public String getAuthorizationSource() {
@@ -177,6 +119,14 @@ public class DescribeApisByAppResponse extends AcsResponse {
 			this.authorizationSource = authorizationSource;
 		}
 
+		public String getAuthVaildTime() {
+			return this.authVaildTime;
+		}
+
+		public void setAuthVaildTime(String authVaildTime) {
+			this.authVaildTime = authVaildTime;
+		}
+
 		public String getDescription() {
 			return this.description;
 		}
@@ -185,12 +135,76 @@ public class DescribeApisByAppResponse extends AcsResponse {
 			this.description = description;
 		}
 
+		public String getGroupName() {
+			return this.groupName;
+		}
+
+		public void setGroupName(String groupName) {
+			this.groupName = groupName;
+		}
+
+		public String getGroupId() {
+			return this.groupId;
+		}
+
+		public void setGroupId(String groupId) {
+			this.groupId = groupId;
+		}
+
+		public String getOperator() {
+			return this.operator;
+		}
+
+		public void setOperator(String operator) {
+			this.operator = operator;
+		}
+
+		public String getStageName() {
+			return this.stageName;
+		}
+
+		public void setStageName(String stageName) {
+			this.stageName = stageName;
+		}
+
 		public String getCreatedTime() {
 			return this.createdTime;
 		}
 
 		public void setCreatedTime(String createdTime) {
 			this.createdTime = createdTime;
+		}
+
+		public String getApiName() {
+			return this.apiName;
+		}
+
+		public void setApiName(String apiName) {
+			this.apiName = apiName;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getPath() {
+			return this.path;
+		}
+
+		public void setPath(String path) {
+			this.path = path;
+		}
+
+		public String getBizMethod() {
+			return this.method;
+		}
+
+		public void setBizMethod(String method) {
+			this.method = method;
 		}
 	}
 

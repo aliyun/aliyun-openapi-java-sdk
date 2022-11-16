@@ -18,6 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.cloudapi.model.v20160714.ImportSwaggerResponse;
+import com.aliyuncs.cloudapi.model.v20160714.ImportSwaggerResponse.ApiImportModelFailed;
+import com.aliyuncs.cloudapi.model.v20160714.ImportSwaggerResponse.ApiImportModelSuccess;
 import com.aliyuncs.cloudapi.model.v20160714.ImportSwaggerResponse.ApiImportSwaggerFailed;
 import com.aliyuncs.cloudapi.model.v20160714.ImportSwaggerResponse.ApiImportSwaggerSuccess;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -34,8 +36,8 @@ public class ImportSwaggerResponseUnmarshaller {
 			ApiImportSwaggerSuccess apiImportSwaggerSuccess = new ApiImportSwaggerSuccess();
 			apiImportSwaggerSuccess.setPath(_ctx.stringValue("ImportSwaggerResponse.Success["+ i +"].Path"));
 			apiImportSwaggerSuccess.setHttpMethod(_ctx.stringValue("ImportSwaggerResponse.Success["+ i +"].HttpMethod"));
-			apiImportSwaggerSuccess.setApiUid(_ctx.stringValue("ImportSwaggerResponse.Success["+ i +"].ApiUid"));
 			apiImportSwaggerSuccess.setApiOperation(_ctx.stringValue("ImportSwaggerResponse.Success["+ i +"].ApiOperation"));
+			apiImportSwaggerSuccess.setApiUid(_ctx.stringValue("ImportSwaggerResponse.Success["+ i +"].ApiUid"));
 
 			success.add(apiImportSwaggerSuccess);
 		}
@@ -51,6 +53,29 @@ public class ImportSwaggerResponseUnmarshaller {
 			failed.add(apiImportSwaggerFailed);
 		}
 		importSwaggerResponse.setFailed(failed);
+
+		List<ApiImportModelFailed> modelFailed = new ArrayList<ApiImportModelFailed>();
+		for (int i = 0; i < _ctx.lengthValue("ImportSwaggerResponse.ModelFailed.Length"); i++) {
+			ApiImportModelFailed apiImportModelFailed = new ApiImportModelFailed();
+			apiImportModelFailed.setErrorMsg(_ctx.stringValue("ImportSwaggerResponse.ModelFailed["+ i +"].ErrorMsg"));
+			apiImportModelFailed.setModelName(_ctx.stringValue("ImportSwaggerResponse.ModelFailed["+ i +"].ModelName"));
+			apiImportModelFailed.setGroupId(_ctx.stringValue("ImportSwaggerResponse.ModelFailed["+ i +"].GroupId"));
+
+			modelFailed.add(apiImportModelFailed);
+		}
+		importSwaggerResponse.setModelFailed(modelFailed);
+
+		List<ApiImportModelSuccess> modelSuccess = new ArrayList<ApiImportModelSuccess>();
+		for (int i = 0; i < _ctx.lengthValue("ImportSwaggerResponse.ModelSuccess.Length"); i++) {
+			ApiImportModelSuccess apiImportModelSuccess = new ApiImportModelSuccess();
+			apiImportModelSuccess.setModelUid(_ctx.stringValue("ImportSwaggerResponse.ModelSuccess["+ i +"].ModelUid"));
+			apiImportModelSuccess.setModelName(_ctx.stringValue("ImportSwaggerResponse.ModelSuccess["+ i +"].ModelName"));
+			apiImportModelSuccess.setGroupId(_ctx.stringValue("ImportSwaggerResponse.ModelSuccess["+ i +"].GroupId"));
+			apiImportModelSuccess.setModelOperation(_ctx.stringValue("ImportSwaggerResponse.ModelSuccess["+ i +"].ModelOperation"));
+
+			modelSuccess.add(apiImportModelSuccess);
+		}
+		importSwaggerResponse.setModelSuccess(modelSuccess);
 	 
 	 	return importSwaggerResponse;
 	}

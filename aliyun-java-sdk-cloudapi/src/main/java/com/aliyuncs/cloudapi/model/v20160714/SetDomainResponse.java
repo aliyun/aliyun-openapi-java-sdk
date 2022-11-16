@@ -26,19 +26,19 @@ public class SetDomainResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String groupId;
+	private String domainLegalStatus;
 
-	private String domainName;
+	private String groupId;
 
 	private String subDomain;
 
+	private String domainName;
+
 	private String domainBindingStatus;
 
-	private String domainLegalStatus;
+	private String domainRemark;
 
 	private String domainWebSocketStatus;
-
-	private String domainRemark;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -46,38 +46,6 @@ public class SetDomainResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getGroupId() {
-		return this.groupId;
-	}
-
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-	}
-
-	public String getSubDomain() {
-		return this.subDomain;
-	}
-
-	public void setSubDomain(String subDomain) {
-		this.subDomain = subDomain;
-	}
-
-	public String getDomainBindingStatus() {
-		return this.domainBindingStatus;
-	}
-
-	public void setDomainBindingStatus(String domainBindingStatus) {
-		this.domainBindingStatus = domainBindingStatus;
 	}
 
 	public String getDomainLegalStatus() {
@@ -88,12 +56,36 @@ public class SetDomainResponse extends AcsResponse {
 		this.domainLegalStatus = domainLegalStatus;
 	}
 
-	public String getDomainWebSocketStatus() {
-		return this.domainWebSocketStatus;
+	public String getGroupId() {
+		return this.groupId;
 	}
 
-	public void setDomainWebSocketStatus(String domainWebSocketStatus) {
-		this.domainWebSocketStatus = domainWebSocketStatus;
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+	}
+
+	public String getSubDomain() {
+		return this.subDomain;
+	}
+
+	public void setSubDomain(String subDomain) {
+		this.subDomain = subDomain;
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+	}
+
+	public String getDomainBindingStatus() {
+		return this.domainBindingStatus;
+	}
+
+	public void setDomainBindingStatus(String domainBindingStatus) {
+		this.domainBindingStatus = domainBindingStatus;
 	}
 
 	public String getDomainRemark() {
@@ -102,6 +94,14 @@ public class SetDomainResponse extends AcsResponse {
 
 	public void setDomainRemark(String domainRemark) {
 		this.domainRemark = domainRemark;
+	}
+
+	public String getDomainWebSocketStatus() {
+		return this.domainWebSocketStatus;
+	}
+
+	public void setDomainWebSocketStatus(String domainWebSocketStatus) {
+		this.domainWebSocketStatus = domainWebSocketStatus;
 	}
 
 	@Override

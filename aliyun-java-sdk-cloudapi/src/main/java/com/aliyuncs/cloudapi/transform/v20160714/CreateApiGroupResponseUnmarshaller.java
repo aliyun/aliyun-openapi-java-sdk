@@ -23,13 +23,14 @@ public class CreateApiGroupResponseUnmarshaller {
 	public static CreateApiGroupResponse unmarshall(CreateApiGroupResponse createApiGroupResponse, UnmarshallerContext _ctx) {
 		
 		createApiGroupResponse.setRequestId(_ctx.stringValue("CreateApiGroupResponse.RequestId"));
-		createApiGroupResponse.setGroupId(_ctx.stringValue("CreateApiGroupResponse.GroupId"));
-		createApiGroupResponse.setGroupName(_ctx.stringValue("CreateApiGroupResponse.GroupName"));
-		createApiGroupResponse.setSubDomain(_ctx.stringValue("CreateApiGroupResponse.SubDomain"));
-		createApiGroupResponse.setDescription(_ctx.stringValue("CreateApiGroupResponse.Description"));
-		createApiGroupResponse.setInstanceId(_ctx.stringValue("CreateApiGroupResponse.InstanceId"));
-		createApiGroupResponse.setInstanceType(_ctx.stringValue("CreateApiGroupResponse.InstanceType"));
 		createApiGroupResponse.setTagStatus(_ctx.booleanValue("CreateApiGroupResponse.TagStatus"));
+		createApiGroupResponse.setBasePath(_ctx.stringValue("CreateApiGroupResponse.BasePath"));
+		createApiGroupResponse.setDescription(_ctx.stringValue("CreateApiGroupResponse.Description"));
+		createApiGroupResponse.setGroupName(_ctx.stringValue("CreateApiGroupResponse.GroupName"));
+		createApiGroupResponse.setGroupId(_ctx.stringValue("CreateApiGroupResponse.GroupId"));
+		createApiGroupResponse.setInstanceId(_ctx.stringValue("CreateApiGroupResponse.InstanceId"));
+		createApiGroupResponse.setSubDomain(_ctx.stringValue("CreateApiGroupResponse.SubDomain"));
+		createApiGroupResponse.setInstanceType(_ctx.stringValue("CreateApiGroupResponse.InstanceType"));
 	 
 	 	return createApiGroupResponse;
 	}

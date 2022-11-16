@@ -27,21 +27,21 @@ public class DescribeAuthorizedAppsResponseUnmarshaller {
 	public static DescribeAuthorizedAppsResponse unmarshall(DescribeAuthorizedAppsResponse describeAuthorizedAppsResponse, UnmarshallerContext _ctx) {
 		
 		describeAuthorizedAppsResponse.setRequestId(_ctx.stringValue("DescribeAuthorizedAppsResponse.RequestId"));
-		describeAuthorizedAppsResponse.setTotalCount(_ctx.integerValue("DescribeAuthorizedAppsResponse.TotalCount"));
-		describeAuthorizedAppsResponse.setPageSize(_ctx.integerValue("DescribeAuthorizedAppsResponse.PageSize"));
 		describeAuthorizedAppsResponse.setPageNumber(_ctx.integerValue("DescribeAuthorizedAppsResponse.PageNumber"));
+		describeAuthorizedAppsResponse.setPageSize(_ctx.integerValue("DescribeAuthorizedAppsResponse.PageSize"));
+		describeAuthorizedAppsResponse.setTotalCount(_ctx.integerValue("DescribeAuthorizedAppsResponse.TotalCount"));
 
 		List<AuthorizedApp> authorizedApps = new ArrayList<AuthorizedApp>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAuthorizedAppsResponse.AuthorizedApps.Length"); i++) {
 			AuthorizedApp authorizedApp = new AuthorizedApp();
-			authorizedApp.setStageName(_ctx.stringValue("DescribeAuthorizedAppsResponse.AuthorizedApps["+ i +"].StageName"));
-			authorizedApp.setAppId(_ctx.longValue("DescribeAuthorizedAppsResponse.AuthorizedApps["+ i +"].AppId"));
 			authorizedApp.setAppName(_ctx.stringValue("DescribeAuthorizedAppsResponse.AuthorizedApps["+ i +"].AppName"));
-			authorizedApp.setOperator(_ctx.stringValue("DescribeAuthorizedAppsResponse.AuthorizedApps["+ i +"].Operator"));
 			authorizedApp.setAuthorizationSource(_ctx.stringValue("DescribeAuthorizedAppsResponse.AuthorizedApps["+ i +"].AuthorizationSource"));
+			authorizedApp.setAuthVaildTime(_ctx.stringValue("DescribeAuthorizedAppsResponse.AuthorizedApps["+ i +"].AuthVaildTime"));
 			authorizedApp.setDescription(_ctx.stringValue("DescribeAuthorizedAppsResponse.AuthorizedApps["+ i +"].Description"));
 			authorizedApp.setAuthorizedTime(_ctx.stringValue("DescribeAuthorizedAppsResponse.AuthorizedApps["+ i +"].AuthorizedTime"));
-			authorizedApp.setAuthVaildTime(_ctx.stringValue("DescribeAuthorizedAppsResponse.AuthorizedApps["+ i +"].AuthVaildTime"));
+			authorizedApp.setAppId(_ctx.longValue("DescribeAuthorizedAppsResponse.AuthorizedApps["+ i +"].AppId"));
+			authorizedApp.setStageName(_ctx.stringValue("DescribeAuthorizedAppsResponse.AuthorizedApps["+ i +"].StageName"));
+			authorizedApp.setOperator(_ctx.stringValue("DescribeAuthorizedAppsResponse.AuthorizedApps["+ i +"].Operator"));
 
 			authorizedApps.add(authorizedApp);
 		}

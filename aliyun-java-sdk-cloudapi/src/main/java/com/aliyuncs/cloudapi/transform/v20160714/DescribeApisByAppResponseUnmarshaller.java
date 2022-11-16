@@ -27,23 +27,26 @@ public class DescribeApisByAppResponseUnmarshaller {
 	public static DescribeApisByAppResponse unmarshall(DescribeApisByAppResponse describeApisByAppResponse, UnmarshallerContext _ctx) {
 		
 		describeApisByAppResponse.setRequestId(_ctx.stringValue("DescribeApisByAppResponse.RequestId"));
-		describeApisByAppResponse.setTotalCount(_ctx.integerValue("DescribeApisByAppResponse.TotalCount"));
-		describeApisByAppResponse.setPageSize(_ctx.integerValue("DescribeApisByAppResponse.PageSize"));
 		describeApisByAppResponse.setPageNumber(_ctx.integerValue("DescribeApisByAppResponse.PageNumber"));
+		describeApisByAppResponse.setPageSize(_ctx.integerValue("DescribeApisByAppResponse.PageSize"));
+		describeApisByAppResponse.setTotalCount(_ctx.integerValue("DescribeApisByAppResponse.TotalCount"));
 
 		List<AppApiRelationInfo> appApiRelationInfos = new ArrayList<AppApiRelationInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeApisByAppResponse.AppApiRelationInfos.Length"); i++) {
 			AppApiRelationInfo appApiRelationInfo = new AppApiRelationInfo();
-			appApiRelationInfo.setRegionId(_ctx.stringValue("DescribeApisByAppResponse.AppApiRelationInfos["+ i +"].RegionId"));
-			appApiRelationInfo.setGroupId(_ctx.stringValue("DescribeApisByAppResponse.AppApiRelationInfos["+ i +"].GroupId"));
-			appApiRelationInfo.setGroupName(_ctx.stringValue("DescribeApisByAppResponse.AppApiRelationInfos["+ i +"].GroupName"));
-			appApiRelationInfo.setStageName(_ctx.stringValue("DescribeApisByAppResponse.AppApiRelationInfos["+ i +"].StageName"));
-			appApiRelationInfo.setOperator(_ctx.stringValue("DescribeApisByAppResponse.AppApiRelationInfos["+ i +"].Operator"));
 			appApiRelationInfo.setApiId(_ctx.stringValue("DescribeApisByAppResponse.AppApiRelationInfos["+ i +"].ApiId"));
-			appApiRelationInfo.setApiName(_ctx.stringValue("DescribeApisByAppResponse.AppApiRelationInfos["+ i +"].ApiName"));
 			appApiRelationInfo.setAuthorizationSource(_ctx.stringValue("DescribeApisByAppResponse.AppApiRelationInfos["+ i +"].AuthorizationSource"));
+			appApiRelationInfo.setAuthVaildTime(_ctx.stringValue("DescribeApisByAppResponse.AppApiRelationInfos["+ i +"].AuthVaildTime"));
 			appApiRelationInfo.setDescription(_ctx.stringValue("DescribeApisByAppResponse.AppApiRelationInfos["+ i +"].Description"));
+			appApiRelationInfo.setGroupName(_ctx.stringValue("DescribeApisByAppResponse.AppApiRelationInfos["+ i +"].GroupName"));
+			appApiRelationInfo.setGroupId(_ctx.stringValue("DescribeApisByAppResponse.AppApiRelationInfos["+ i +"].GroupId"));
+			appApiRelationInfo.setOperator(_ctx.stringValue("DescribeApisByAppResponse.AppApiRelationInfos["+ i +"].Operator"));
+			appApiRelationInfo.setStageName(_ctx.stringValue("DescribeApisByAppResponse.AppApiRelationInfos["+ i +"].StageName"));
 			appApiRelationInfo.setCreatedTime(_ctx.stringValue("DescribeApisByAppResponse.AppApiRelationInfos["+ i +"].CreatedTime"));
+			appApiRelationInfo.setApiName(_ctx.stringValue("DescribeApisByAppResponse.AppApiRelationInfos["+ i +"].ApiName"));
+			appApiRelationInfo.setRegionId(_ctx.stringValue("DescribeApisByAppResponse.AppApiRelationInfos["+ i +"].RegionId"));
+			appApiRelationInfo.setPath(_ctx.stringValue("DescribeApisByAppResponse.AppApiRelationInfos["+ i +"].Path"));
+			appApiRelationInfo.setBizMethod(_ctx.stringValue("DescribeApisByAppResponse.AppApiRelationInfos["+ i +"].Method"));
 
 			appApiRelationInfos.add(appApiRelationInfo);
 		}

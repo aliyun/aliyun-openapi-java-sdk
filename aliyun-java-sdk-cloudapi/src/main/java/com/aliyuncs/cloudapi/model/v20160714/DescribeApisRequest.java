@@ -24,67 +24,40 @@ import com.aliyuncs.cloudapi.Endpoint;
  * @version 
  */
 public class DescribeApisRequest extends RpcAcsRequest<DescribeApisResponse> {
-	
-	public DescribeApisRequest() {
-		super("CloudAPI", "2016-07-14", "DescribeApis", "apigateway");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
-
-	private String visibility;
-
-	private String groupId;
-
-	private Boolean enableTagAuth;
+	   
 
 	private Integer pageNumber;
 
-	private String apiName;
-
-	private String catalogId;
-
 	private String securityToken;
+
+	private Boolean unDeployed;
 
 	private Integer pageSize;
 
 	private List<Tag> tags;
 
+	private String apiMethod;
+
+	private String visibility;
+
+	private String groupId;
+
+	private String apiPath;
+
+	private Boolean enableTagAuth;
+
+	private String apiName;
+
+	private String catalogId;
+
 	private String apiId;
-
-	public String getVisibility() {
-		return this.visibility;
-	}
-
-	public void setVisibility(String visibility) {
-		this.visibility = visibility;
-		if(visibility != null){
-			putQueryParameter("Visibility", visibility);
-		}
-	}
-
-	public String getGroupId() {
-		return this.groupId;
-	}
-
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putQueryParameter("GroupId", groupId);
-		}
-	}
-
-	public Boolean getEnableTagAuth() {
-		return this.enableTagAuth;
-	}
-
-	public void setEnableTagAuth(Boolean enableTagAuth) {
-		this.enableTagAuth = enableTagAuth;
-		if(enableTagAuth != null){
-			putQueryParameter("EnableTagAuth", enableTagAuth.toString());
-		}
+	public DescribeApisRequest() {
+		super("CloudAPI", "2016-07-14", "DescribeApis", "apigateway");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Integer getPageNumber() {
@@ -98,55 +71,25 @@ public class DescribeApisRequest extends RpcAcsRequest<DescribeApisResponse> {
 		}
 	}
 
-	public String getApiName() {
-		return this.apiName;
-	}
-
-	public void setApiName(String apiName) {
-		this.apiName = apiName;
-		if(apiName != null){
-			putQueryParameter("ApiName", apiName);
-		}
-	}
-
-	public String getCatalogId() {
-		return this.catalogId;
-	}
-
-	public void setCatalogId(String catalogId) {
-		this.catalogId = catalogId;
-		if(catalogId != null){
-			putQueryParameter("CatalogId", catalogId);
-		}
-	}
-
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public Boolean getUnDeployed() {
+		return this.unDeployed;
+	}
+
+	public void setUnDeployed(Boolean unDeployed) {
+		this.unDeployed = unDeployed;
+		if(unDeployed != null){
+			putQueryParameter("UnDeployed", unDeployed.toString());
 		}
 	}
 
@@ -173,6 +116,83 @@ public class DescribeApisRequest extends RpcAcsRequest<DescribeApisResponse> {
 				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
+	}
+
+	public String getApiMethod() {
+		return this.apiMethod;
+	}
+
+	public void setApiMethod(String apiMethod) {
+		this.apiMethod = apiMethod;
+		if(apiMethod != null){
+			putQueryParameter("ApiMethod", apiMethod);
+		}
+	}
+
+	public String getVisibility() {
+		return this.visibility;
+	}
+
+	public void setVisibility(String visibility) {
+		this.visibility = visibility;
+		if(visibility != null){
+			putQueryParameter("Visibility", visibility);
+		}
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
+		}
+	}
+
+	public String getApiPath() {
+		return this.apiPath;
+	}
+
+	public void setApiPath(String apiPath) {
+		this.apiPath = apiPath;
+		if(apiPath != null){
+			putQueryParameter("ApiPath", apiPath);
+		}
+	}
+
+	public Boolean getEnableTagAuth() {
+		return this.enableTagAuth;
+	}
+
+	public void setEnableTagAuth(Boolean enableTagAuth) {
+		this.enableTagAuth = enableTagAuth;
+		if(enableTagAuth != null){
+			putQueryParameter("EnableTagAuth", enableTagAuth.toString());
+		}
+	}
+
+	public String getApiName() {
+		return this.apiName;
+	}
+
+	public void setApiName(String apiName) {
+		this.apiName = apiName;
+		if(apiName != null){
+			putQueryParameter("ApiName", apiName);
+		}
+	}
+
+	public String getCatalogId() {
+		return this.catalogId;
+	}
+
+	public void setCatalogId(String catalogId) {
+		this.catalogId = catalogId;
+		if(catalogId != null){
+			putQueryParameter("CatalogId", catalogId);
+		}
 	}
 
 	public String getApiId() {

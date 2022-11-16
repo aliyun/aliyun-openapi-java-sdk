@@ -27,12 +27,12 @@ public class DescribePurchasedApiGroupResponseUnmarshaller {
 	public static DescribePurchasedApiGroupResponse unmarshall(DescribePurchasedApiGroupResponse describePurchasedApiGroupResponse, UnmarshallerContext _ctx) {
 		
 		describePurchasedApiGroupResponse.setRequestId(_ctx.stringValue("DescribePurchasedApiGroupResponse.RequestId"));
+		describePurchasedApiGroupResponse.setStatus(_ctx.stringValue("DescribePurchasedApiGroupResponse.Status"));
+		describePurchasedApiGroupResponse.setPurchasedTime(_ctx.stringValue("DescribePurchasedApiGroupResponse.PurchasedTime"));
 		describePurchasedApiGroupResponse.setGroupId(_ctx.stringValue("DescribePurchasedApiGroupResponse.GroupId"));
 		describePurchasedApiGroupResponse.setGroupName(_ctx.stringValue("DescribePurchasedApiGroupResponse.GroupName"));
 		describePurchasedApiGroupResponse.setDescription(_ctx.stringValue("DescribePurchasedApiGroupResponse.Description"));
-		describePurchasedApiGroupResponse.setPurchasedTime(_ctx.stringValue("DescribePurchasedApiGroupResponse.PurchasedTime"));
 		describePurchasedApiGroupResponse.setRegionId(_ctx.stringValue("DescribePurchasedApiGroupResponse.RegionId"));
-		describePurchasedApiGroupResponse.setStatus(_ctx.stringValue("DescribePurchasedApiGroupResponse.Status"));
 
 		List<DomainItem> domains = new ArrayList<DomainItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePurchasedApiGroupResponse.Domains.Length"); i++) {

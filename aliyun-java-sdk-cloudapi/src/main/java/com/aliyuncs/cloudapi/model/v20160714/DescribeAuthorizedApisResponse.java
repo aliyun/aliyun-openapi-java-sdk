@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAuthorizedApisResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageNumber;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageSize;
 
-	private Integer pageNumber;
+	private Integer totalCount;
 
 	private List<AuthorizedApi> authorizedApis;
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeAuthorizedApisResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageSize() {
@@ -59,12 +59,12 @@ public class DescribeAuthorizedApisResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<AuthorizedApi> getAuthorizedApis() {
@@ -77,83 +77,27 @@ public class DescribeAuthorizedApisResponse extends AcsResponse {
 
 	public static class AuthorizedApi {
 
-		private String regionId;
-
-		private String groupId;
-
-		private String groupName;
-
-		private String stageName;
-
-		private String operator;
-
 		private String apiId;
-
-		private String apiName;
 
 		private String authorizationSource;
 
+		private String authVaildTime;
+
 		private String description;
+
+		private String groupName;
+
+		private String groupId;
 
 		private String authorizedTime;
 
-		private String authVaildTime;
+		private String operator;
 
-		public String getBizRegionId() {
-			return this.regionId;
-		}
+		private String stageName;
 
-		public void setBizRegionId(String regionId) {
-			this.regionId = regionId;
-		}
+		private String apiName;
 
-		/**
-		 * @deprecated use getBizRegionId instead of this.
-		 */
-		@Deprecated
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		/**
-		 * @deprecated use setBizRegionId instead of this.
-		 */
-		@Deprecated
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getGroupId() {
-			return this.groupId;
-		}
-
-		public void setGroupId(String groupId) {
-			this.groupId = groupId;
-		}
-
-		public String getGroupName() {
-			return this.groupName;
-		}
-
-		public void setGroupName(String groupName) {
-			this.groupName = groupName;
-		}
-
-		public String getStageName() {
-			return this.stageName;
-		}
-
-		public void setStageName(String stageName) {
-			this.stageName = stageName;
-		}
-
-		public String getOperator() {
-			return this.operator;
-		}
-
-		public void setOperator(String operator) {
-			this.operator = operator;
-		}
+		private String regionId;
 
 		public String getApiId() {
 			return this.apiId;
@@ -161,14 +105,6 @@ public class DescribeAuthorizedApisResponse extends AcsResponse {
 
 		public void setApiId(String apiId) {
 			this.apiId = apiId;
-		}
-
-		public String getApiName() {
-			return this.apiName;
-		}
-
-		public void setApiName(String apiName) {
-			this.apiName = apiName;
 		}
 
 		public String getAuthorizationSource() {
@@ -179,12 +115,36 @@ public class DescribeAuthorizedApisResponse extends AcsResponse {
 			this.authorizationSource = authorizationSource;
 		}
 
+		public String getAuthVaildTime() {
+			return this.authVaildTime;
+		}
+
+		public void setAuthVaildTime(String authVaildTime) {
+			this.authVaildTime = authVaildTime;
+		}
+
 		public String getDescription() {
 			return this.description;
 		}
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public String getGroupName() {
+			return this.groupName;
+		}
+
+		public void setGroupName(String groupName) {
+			this.groupName = groupName;
+		}
+
+		public String getGroupId() {
+			return this.groupId;
+		}
+
+		public void setGroupId(String groupId) {
+			this.groupId = groupId;
 		}
 
 		public String getAuthorizedTime() {
@@ -195,12 +155,36 @@ public class DescribeAuthorizedApisResponse extends AcsResponse {
 			this.authorizedTime = authorizedTime;
 		}
 
-		public String getAuthVaildTime() {
-			return this.authVaildTime;
+		public String getOperator() {
+			return this.operator;
 		}
 
-		public void setAuthVaildTime(String authVaildTime) {
-			this.authVaildTime = authVaildTime;
+		public void setOperator(String operator) {
+			this.operator = operator;
+		}
+
+		public String getStageName() {
+			return this.stageName;
+		}
+
+		public void setStageName(String stageName) {
+			this.stageName = stageName;
+		}
+
+		public String getApiName() {
+			return this.apiName;
+		}
+
+		public void setApiName(String apiName) {
+			this.apiName = apiName;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 	}
 

@@ -24,17 +24,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAppResponse extends AcsResponse {
 
+	private String appName;
+
 	private String requestId;
 
-	private Long appId;
-
-	private String appName;
+	private String modifiedTime;
 
 	private String description;
 
+	private Long appId;
+
 	private String createdTime;
 
-	private String modifiedTime;
+	public String getAppName() {
+		return this.appName;
+	}
+
+	public void setAppName(String appName) {
+		this.appName = appName;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,20 +52,12 @@ public class DescribeAppResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Long getAppId() {
-		return this.appId;
+	public String getModifiedTime() {
+		return this.modifiedTime;
 	}
 
-	public void setAppId(Long appId) {
-		this.appId = appId;
-	}
-
-	public String getAppName() {
-		return this.appName;
-	}
-
-	public void setAppName(String appName) {
-		this.appName = appName;
+	public void setModifiedTime(String modifiedTime) {
+		this.modifiedTime = modifiedTime;
 	}
 
 	public String getDescription() {
@@ -68,20 +68,20 @@ public class DescribeAppResponse extends AcsResponse {
 		this.description = description;
 	}
 
+	public Long getAppId() {
+		return this.appId;
+	}
+
+	public void setAppId(Long appId) {
+		this.appId = appId;
+	}
+
 	public String getCreatedTime() {
 		return this.createdTime;
 	}
 
 	public void setCreatedTime(String createdTime) {
 		this.createdTime = createdTime;
-	}
-
-	public String getModifiedTime() {
-		return this.modifiedTime;
-	}
-
-	public void setModifiedTime(String modifiedTime) {
-		this.modifiedTime = modifiedTime;
 	}
 
 	@Override

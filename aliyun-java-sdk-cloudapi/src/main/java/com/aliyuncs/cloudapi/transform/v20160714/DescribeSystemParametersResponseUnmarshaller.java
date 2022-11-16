@@ -31,10 +31,10 @@ public class DescribeSystemParametersResponseUnmarshaller {
 		List<SystemParamItem> systemParams = new ArrayList<SystemParamItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSystemParametersResponse.SystemParams.Length"); i++) {
 			SystemParamItem systemParamItem = new SystemParamItem();
-			systemParamItem.setParamName(_ctx.stringValue("DescribeSystemParametersResponse.SystemParams["+ i +"].ParamName"));
-			systemParamItem.setParamType(_ctx.stringValue("DescribeSystemParametersResponse.SystemParams["+ i +"].ParamType"));
 			systemParamItem.setDemoValue(_ctx.stringValue("DescribeSystemParametersResponse.SystemParams["+ i +"].DemoValue"));
 			systemParamItem.setDescription(_ctx.stringValue("DescribeSystemParametersResponse.SystemParams["+ i +"].Description"));
+			systemParamItem.setParamName(_ctx.stringValue("DescribeSystemParametersResponse.SystemParams["+ i +"].ParamName"));
+			systemParamItem.setParamType(_ctx.stringValue("DescribeSystemParametersResponse.SystemParams["+ i +"].ParamType"));
 
 			systemParams.add(systemParamItem);
 		}

@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSignaturesResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageNumber;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageSize;
 
-	private Integer pageNumber;
+	private Integer totalCount;
 
 	private List<SignatureInfo> signatureInfos;
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeSignaturesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageSize() {
@@ -59,12 +59,12 @@ public class DescribeSignaturesResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<SignatureInfo> getSignatureInfos() {
@@ -77,42 +77,26 @@ public class DescribeSignaturesResponse extends AcsResponse {
 
 	public static class SignatureInfo {
 
-		private String regionId;
+		private String modifiedTime;
 
 		private String signatureId;
+
+		private String signatureSecret;
 
 		private String signatureName;
 
 		private String signatureKey;
 
-		private String signatureSecret;
-
 		private String createdTime;
 
-		private String modifiedTime;
+		private String regionId;
 
-		public String getBizRegionId() {
-			return this.regionId;
+		public String getModifiedTime() {
+			return this.modifiedTime;
 		}
 
-		public void setBizRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		/**
-		 * @deprecated use getBizRegionId instead of this.
-		 */
-		@Deprecated
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		/**
-		 * @deprecated use setBizRegionId instead of this.
-		 */
-		@Deprecated
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setModifiedTime(String modifiedTime) {
+			this.modifiedTime = modifiedTime;
 		}
 
 		public String getSignatureId() {
@@ -121,6 +105,14 @@ public class DescribeSignaturesResponse extends AcsResponse {
 
 		public void setSignatureId(String signatureId) {
 			this.signatureId = signatureId;
+		}
+
+		public String getSignatureSecret() {
+			return this.signatureSecret;
+		}
+
+		public void setSignatureSecret(String signatureSecret) {
+			this.signatureSecret = signatureSecret;
 		}
 
 		public String getSignatureName() {
@@ -139,14 +131,6 @@ public class DescribeSignaturesResponse extends AcsResponse {
 			this.signatureKey = signatureKey;
 		}
 
-		public String getSignatureSecret() {
-			return this.signatureSecret;
-		}
-
-		public void setSignatureSecret(String signatureSecret) {
-			this.signatureSecret = signatureSecret;
-		}
-
 		public String getCreatedTime() {
 			return this.createdTime;
 		}
@@ -155,12 +139,12 @@ public class DescribeSignaturesResponse extends AcsResponse {
 			this.createdTime = createdTime;
 		}
 
-		public String getModifiedTime() {
-			return this.modifiedTime;
+		public String getRegionId() {
+			return this.regionId;
 		}
 
-		public void setModifiedTime(String modifiedTime) {
-			this.modifiedTime = modifiedTime;
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 	}
 

@@ -27,18 +27,18 @@ public class DescribeApiTrafficControlsResponseUnmarshaller {
 	public static DescribeApiTrafficControlsResponse unmarshall(DescribeApiTrafficControlsResponse describeApiTrafficControlsResponse, UnmarshallerContext _ctx) {
 		
 		describeApiTrafficControlsResponse.setRequestId(_ctx.stringValue("DescribeApiTrafficControlsResponse.RequestId"));
-		describeApiTrafficControlsResponse.setTotalCount(_ctx.integerValue("DescribeApiTrafficControlsResponse.TotalCount"));
-		describeApiTrafficControlsResponse.setPageSize(_ctx.integerValue("DescribeApiTrafficControlsResponse.PageSize"));
 		describeApiTrafficControlsResponse.setPageNumber(_ctx.integerValue("DescribeApiTrafficControlsResponse.PageNumber"));
+		describeApiTrafficControlsResponse.setPageSize(_ctx.integerValue("DescribeApiTrafficControlsResponse.PageSize"));
+		describeApiTrafficControlsResponse.setTotalCount(_ctx.integerValue("DescribeApiTrafficControlsResponse.TotalCount"));
 
 		List<ApiTrafficControlItem> apiTrafficControls = new ArrayList<ApiTrafficControlItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeApiTrafficControlsResponse.ApiTrafficControls.Length"); i++) {
 			ApiTrafficControlItem apiTrafficControlItem = new ApiTrafficControlItem();
+			apiTrafficControlItem.setBoundTime(_ctx.stringValue("DescribeApiTrafficControlsResponse.ApiTrafficControls["+ i +"].BoundTime"));
 			apiTrafficControlItem.setApiId(_ctx.stringValue("DescribeApiTrafficControlsResponse.ApiTrafficControls["+ i +"].ApiId"));
-			apiTrafficControlItem.setApiName(_ctx.stringValue("DescribeApiTrafficControlsResponse.ApiTrafficControls["+ i +"].ApiName"));
 			apiTrafficControlItem.setTrafficControlId(_ctx.stringValue("DescribeApiTrafficControlsResponse.ApiTrafficControls["+ i +"].TrafficControlId"));
 			apiTrafficControlItem.setTrafficControlName(_ctx.stringValue("DescribeApiTrafficControlsResponse.ApiTrafficControls["+ i +"].TrafficControlName"));
-			apiTrafficControlItem.setBoundTime(_ctx.stringValue("DescribeApiTrafficControlsResponse.ApiTrafficControls["+ i +"].BoundTime"));
+			apiTrafficControlItem.setApiName(_ctx.stringValue("DescribeApiTrafficControlsResponse.ApiTrafficControls["+ i +"].ApiName"));
 
 			apiTrafficControls.add(apiTrafficControlItem);
 		}

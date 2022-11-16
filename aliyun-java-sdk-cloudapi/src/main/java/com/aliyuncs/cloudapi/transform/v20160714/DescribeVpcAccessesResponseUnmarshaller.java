@@ -27,19 +27,22 @@ public class DescribeVpcAccessesResponseUnmarshaller {
 	public static DescribeVpcAccessesResponse unmarshall(DescribeVpcAccessesResponse describeVpcAccessesResponse, UnmarshallerContext _ctx) {
 		
 		describeVpcAccessesResponse.setRequestId(_ctx.stringValue("DescribeVpcAccessesResponse.RequestId"));
-		describeVpcAccessesResponse.setTotalCount(_ctx.integerValue("DescribeVpcAccessesResponse.TotalCount"));
-		describeVpcAccessesResponse.setPageSize(_ctx.integerValue("DescribeVpcAccessesResponse.PageSize"));
 		describeVpcAccessesResponse.setPageNumber(_ctx.integerValue("DescribeVpcAccessesResponse.PageNumber"));
+		describeVpcAccessesResponse.setPageSize(_ctx.integerValue("DescribeVpcAccessesResponse.PageSize"));
+		describeVpcAccessesResponse.setTotalCount(_ctx.integerValue("DescribeVpcAccessesResponse.TotalCount"));
 
 		List<VpcAccessAttribute> vpcAccessAttributes = new ArrayList<VpcAccessAttribute>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeVpcAccessesResponse.VpcAccessAttributes.Length"); i++) {
 			VpcAccessAttribute vpcAccessAttribute = new VpcAccessAttribute();
 			vpcAccessAttribute.setVpcId(_ctx.stringValue("DescribeVpcAccessesResponse.VpcAccessAttributes["+ i +"].VpcId"));
+			vpcAccessAttribute.setDescription(_ctx.stringValue("DescribeVpcAccessesResponse.VpcAccessAttributes["+ i +"].Description"));
 			vpcAccessAttribute.setInstanceId(_ctx.stringValue("DescribeVpcAccessesResponse.VpcAccessAttributes["+ i +"].InstanceId"));
-			vpcAccessAttribute.setCreatedTime(_ctx.stringValue("DescribeVpcAccessesResponse.VpcAccessAttributes["+ i +"].CreatedTime"));
 			vpcAccessAttribute.setPort(_ctx.integerValue("DescribeVpcAccessesResponse.VpcAccessAttributes["+ i +"].Port"));
-			vpcAccessAttribute.setRegionId(_ctx.stringValue("DescribeVpcAccessesResponse.VpcAccessAttributes["+ i +"].RegionId"));
 			vpcAccessAttribute.setName(_ctx.stringValue("DescribeVpcAccessesResponse.VpcAccessAttributes["+ i +"].Name"));
+			vpcAccessAttribute.setCreatedTime(_ctx.stringValue("DescribeVpcAccessesResponse.VpcAccessAttributes["+ i +"].CreatedTime"));
+			vpcAccessAttribute.setRegionId(_ctx.stringValue("DescribeVpcAccessesResponse.VpcAccessAttributes["+ i +"].RegionId"));
+			vpcAccessAttribute.setVpcAccessId(_ctx.stringValue("DescribeVpcAccessesResponse.VpcAccessAttributes["+ i +"].VpcAccessId"));
+			vpcAccessAttribute.setVpcTargetHostName(_ctx.stringValue("DescribeVpcAccessesResponse.VpcAccessAttributes["+ i +"].VpcTargetHostName"));
 
 			vpcAccessAttributes.add(vpcAccessAttribute);
 		}

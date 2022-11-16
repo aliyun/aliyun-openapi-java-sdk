@@ -23,18 +23,18 @@ public class DescribeDomainResponseUnmarshaller {
 	public static DescribeDomainResponse unmarshall(DescribeDomainResponse describeDomainResponse, UnmarshallerContext _ctx) {
 		
 		describeDomainResponse.setRequestId(_ctx.stringValue("DescribeDomainResponse.RequestId"));
-		describeDomainResponse.setGroupId(_ctx.stringValue("DescribeDomainResponse.GroupId"));
-		describeDomainResponse.setDomainName(_ctx.stringValue("DescribeDomainResponse.DomainName"));
-		describeDomainResponse.setSubDomain(_ctx.stringValue("DescribeDomainResponse.SubDomain"));
-		describeDomainResponse.setCertificateId(_ctx.stringValue("DescribeDomainResponse.CertificateId"));
-		describeDomainResponse.setCertificateName(_ctx.stringValue("DescribeDomainResponse.CertificateName"));
-		describeDomainResponse.setCertificateBody(_ctx.stringValue("DescribeDomainResponse.CertificateBody"));
 		describeDomainResponse.setCertificatePrivateKey(_ctx.stringValue("DescribeDomainResponse.CertificatePrivateKey"));
+		describeDomainResponse.setDomainName(_ctx.stringValue("DescribeDomainResponse.DomainName"));
 		describeDomainResponse.setDomainBindingStatus(_ctx.stringValue("DescribeDomainResponse.DomainBindingStatus"));
-		describeDomainResponse.setDomainCNAMEStatus(_ctx.stringValue("DescribeDomainResponse.DomainCNAMEStatus"));
-		describeDomainResponse.setDomainLegalStatus(_ctx.stringValue("DescribeDomainResponse.DomainLegalStatus"));
-		describeDomainResponse.setDomainWebSocketStatus(_ctx.stringValue("DescribeDomainResponse.DomainWebSocketStatus"));
 		describeDomainResponse.setDomainRemark(_ctx.stringValue("DescribeDomainResponse.DomainRemark"));
+		describeDomainResponse.setCertificateId(_ctx.stringValue("DescribeDomainResponse.CertificateId"));
+		describeDomainResponse.setDomainWebSocketStatus(_ctx.stringValue("DescribeDomainResponse.DomainWebSocketStatus"));
+		describeDomainResponse.setCertificateName(_ctx.stringValue("DescribeDomainResponse.CertificateName"));
+		describeDomainResponse.setDomainLegalStatus(_ctx.stringValue("DescribeDomainResponse.DomainLegalStatus"));
+		describeDomainResponse.setGroupId(_ctx.stringValue("DescribeDomainResponse.GroupId"));
+		describeDomainResponse.setCertificateBody(_ctx.stringValue("DescribeDomainResponse.CertificateBody"));
+		describeDomainResponse.setSubDomain(_ctx.stringValue("DescribeDomainResponse.SubDomain"));
+		describeDomainResponse.setDomainCNAMEStatus(_ctx.stringValue("DescribeDomainResponse.DomainCNAMEStatus"));
 	 
 	 	return describeDomainResponse;
 	}

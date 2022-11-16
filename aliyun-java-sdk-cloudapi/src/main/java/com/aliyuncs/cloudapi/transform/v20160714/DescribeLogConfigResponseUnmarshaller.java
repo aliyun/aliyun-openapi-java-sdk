@@ -31,10 +31,10 @@ public class DescribeLogConfigResponseUnmarshaller {
 		List<LogInfo> logInfos = new ArrayList<LogInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLogConfigResponse.LogInfos.Length"); i++) {
 			LogInfo logInfo = new LogInfo();
-			logInfo.setRegionId(_ctx.stringValue("DescribeLogConfigResponse.LogInfos["+ i +"].RegionId"));
-			logInfo.setSlsProject(_ctx.stringValue("DescribeLogConfigResponse.LogInfos["+ i +"].SlsProject"));
 			logInfo.setSlsLogStore(_ctx.stringValue("DescribeLogConfigResponse.LogInfos["+ i +"].SlsLogStore"));
 			logInfo.setLogType(_ctx.stringValue("DescribeLogConfigResponse.LogInfos["+ i +"].LogType"));
+			logInfo.setSlsProject(_ctx.stringValue("DescribeLogConfigResponse.LogInfos["+ i +"].SlsProject"));
+			logInfo.setRegionId(_ctx.stringValue("DescribeLogConfigResponse.LogInfos["+ i +"].RegionId"));
 
 			logInfos.add(logInfo);
 		}

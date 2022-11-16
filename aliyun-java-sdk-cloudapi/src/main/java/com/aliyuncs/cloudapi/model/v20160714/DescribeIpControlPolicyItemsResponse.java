@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeIpControlPolicyItemsResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer pageNumber;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer pageSize;
 
-	private Integer pageNumber;
+	private Integer totalCount;
 
 	private List<IpControlPolicyItem> ipControlPolicyItems;
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeIpControlPolicyItemsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public Integer getPageSize() {
@@ -59,12 +59,12 @@ public class DescribeIpControlPolicyItemsResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<IpControlPolicyItem> getIpControlPolicyItems() {
@@ -77,30 +77,22 @@ public class DescribeIpControlPolicyItemsResponse extends AcsResponse {
 
 	public static class IpControlPolicyItem {
 
-		private String appId;
-
-		private String cidrIp;
+		private String modifiedTime;
 
 		private String policyItemId;
 
+		private String cidrIp;
+
 		private String createTime;
 
-		private String modifiedTime;
+		private String appId;
 
-		public String getAppId() {
-			return this.appId;
+		public String getModifiedTime() {
+			return this.modifiedTime;
 		}
 
-		public void setAppId(String appId) {
-			this.appId = appId;
-		}
-
-		public String getCidrIp() {
-			return this.cidrIp;
-		}
-
-		public void setCidrIp(String cidrIp) {
-			this.cidrIp = cidrIp;
+		public void setModifiedTime(String modifiedTime) {
+			this.modifiedTime = modifiedTime;
 		}
 
 		public String getPolicyItemId() {
@@ -111,6 +103,14 @@ public class DescribeIpControlPolicyItemsResponse extends AcsResponse {
 			this.policyItemId = policyItemId;
 		}
 
+		public String getCidrIp() {
+			return this.cidrIp;
+		}
+
+		public void setCidrIp(String cidrIp) {
+			this.cidrIp = cidrIp;
+		}
+
 		public String getCreateTime() {
 			return this.createTime;
 		}
@@ -119,12 +119,12 @@ public class DescribeIpControlPolicyItemsResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getModifiedTime() {
-			return this.modifiedTime;
+		public String getAppId() {
+			return this.appId;
 		}
 
-		public void setModifiedTime(String modifiedTime) {
-			this.modifiedTime = modifiedTime;
+		public void setAppId(String appId) {
+			this.appId = appId;
 		}
 	}
 

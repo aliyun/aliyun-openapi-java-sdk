@@ -31,8 +31,8 @@ public class DescribeApiQpsDataResponseUnmarshaller {
 		List<MonitorItem> callSuccesses = new ArrayList<MonitorItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeApiQpsDataResponse.CallSuccesses.Length"); i++) {
 			MonitorItem monitorItem = new MonitorItem();
-			monitorItem.setItemTime(_ctx.stringValue("DescribeApiQpsDataResponse.CallSuccesses["+ i +"].ItemTime"));
 			monitorItem.setItemValue(_ctx.stringValue("DescribeApiQpsDataResponse.CallSuccesses["+ i +"].ItemValue"));
+			monitorItem.setItemTime(_ctx.stringValue("DescribeApiQpsDataResponse.CallSuccesses["+ i +"].ItemTime"));
 
 			callSuccesses.add(monitorItem);
 		}
@@ -40,11 +40,11 @@ public class DescribeApiQpsDataResponseUnmarshaller {
 
 		List<MonitorItem> callFails = new ArrayList<MonitorItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeApiQpsDataResponse.CallFails.Length"); i++) {
-			MonitorItem monitorItem_ = new MonitorItem();
-			monitorItem_.setItemTime(_ctx.stringValue("DescribeApiQpsDataResponse.CallFails["+ i +"].ItemTime"));
-			monitorItem_.setItemValue(_ctx.stringValue("DescribeApiQpsDataResponse.CallFails["+ i +"].ItemValue"));
+			MonitorItem monitorItem1 = new MonitorItem();
+			monitorItem1.setItemValue(_ctx.stringValue("DescribeApiQpsDataResponse.CallFails["+ i +"].ItemValue"));
+			monitorItem1.setItemTime(_ctx.stringValue("DescribeApiQpsDataResponse.CallFails["+ i +"].ItemTime"));
 
-			callFails.add(monitorItem_);
+			callFails.add(monitorItem1);
 		}
 		describeApiQpsDataResponse.setCallFails(callFails);
 	 

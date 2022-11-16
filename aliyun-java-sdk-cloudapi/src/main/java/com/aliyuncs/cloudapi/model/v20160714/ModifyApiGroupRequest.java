@@ -24,34 +24,61 @@ import com.aliyuncs.cloudapi.Endpoint;
  * @version 
  */
 public class ModifyApiGroupRequest extends RpcAcsRequest<ModifyApiGroupResponse> {
-	
+	   
+
+	private String defaultDomain;
+
+	private String basePath;
+
+	private String description;
+
+	private String securityToken;
+
+	private String rpcPattern;
+
+	private String userLogConfig;
+
+	private List<Tag> tags;
+
+	private String customerConfigs;
+
+	private String groupId;
+
+	private String groupName;
+
+	private String passthroughHeaders;
+
+	private String compatibleFlags;
+
+	private String customTraceConfig;
 	public ModifyApiGroupRequest() {
 		super("CloudAPI", "2016-07-14", "ModifyApiGroup", "apigateway");
-		setSysMethod(MethodType.POST);
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private String groupId;
-
-	private String description;
-
-	private String groupName;
-
-	private String securityToken;
-
-	private List<Tag> tags;
-
-	public String getGroupId() {
-		return this.groupId;
+	public String getDefaultDomain() {
+		return this.defaultDomain;
 	}
 
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putQueryParameter("GroupId", groupId);
+	public void setDefaultDomain(String defaultDomain) {
+		this.defaultDomain = defaultDomain;
+		if(defaultDomain != null){
+			putQueryParameter("DefaultDomain", defaultDomain);
+		}
+	}
+
+	public String getBasePath() {
+		return this.basePath;
+	}
+
+	public void setBasePath(String basePath) {
+		this.basePath = basePath;
+		if(basePath != null){
+			putQueryParameter("BasePath", basePath);
 		}
 	}
 
@@ -66,44 +93,36 @@ public class ModifyApiGroupRequest extends RpcAcsRequest<ModifyApiGroupResponse>
 		}
 	}
 
-	public String getGroupName() {
-		return this.groupName;
-	}
-
-	public void setGroupName(String groupName) {
-		this.groupName = groupName;
-		if(groupName != null){
-			putQueryParameter("GroupName", groupName);
-		}
-	}
-
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getRpcPattern() {
+		return this.rpcPattern;
+	}
+
+	public void setRpcPattern(String rpcPattern) {
+		this.rpcPattern = rpcPattern;
+		if(rpcPattern != null){
+			putQueryParameter("RpcPattern", rpcPattern);
+		}
+	}
+
+	public String getUserLogConfig() {
+		return this.userLogConfig;
+	}
+
+	public void setUserLogConfig(String userLogConfig) {
+		this.userLogConfig = userLogConfig;
+		if(userLogConfig != null){
+			putQueryParameter("UserLogConfig", userLogConfig);
 		}
 	}
 
@@ -119,6 +138,72 @@ public class ModifyApiGroupRequest extends RpcAcsRequest<ModifyApiGroupResponse>
 				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
+	}
+
+	public String getCustomerConfigs() {
+		return this.customerConfigs;
+	}
+
+	public void setCustomerConfigs(String customerConfigs) {
+		this.customerConfigs = customerConfigs;
+		if(customerConfigs != null){
+			putQueryParameter("CustomerConfigs", customerConfigs);
+		}
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
+		}
+	}
+
+	public String getGroupName() {
+		return this.groupName;
+	}
+
+	public void setGroupName(String groupName) {
+		this.groupName = groupName;
+		if(groupName != null){
+			putQueryParameter("GroupName", groupName);
+		}
+	}
+
+	public String getPassthroughHeaders() {
+		return this.passthroughHeaders;
+	}
+
+	public void setPassthroughHeaders(String passthroughHeaders) {
+		this.passthroughHeaders = passthroughHeaders;
+		if(passthroughHeaders != null){
+			putQueryParameter("PassthroughHeaders", passthroughHeaders);
+		}
+	}
+
+	public String getCompatibleFlags() {
+		return this.compatibleFlags;
+	}
+
+	public void setCompatibleFlags(String compatibleFlags) {
+		this.compatibleFlags = compatibleFlags;
+		if(compatibleFlags != null){
+			putQueryParameter("CompatibleFlags", compatibleFlags);
+		}
+	}
+
+	public String getCustomTraceConfig() {
+		return this.customTraceConfig;
+	}
+
+	public void setCustomTraceConfig(String customTraceConfig) {
+		this.customTraceConfig = customTraceConfig;
+		if(customTraceConfig != null){
+			putQueryParameter("CustomTraceConfig", customTraceConfig);
+		}
 	}
 
 	public static class Tag {

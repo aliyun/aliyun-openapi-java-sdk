@@ -23,19 +23,19 @@ import com.aliyuncs.cloudapi.Endpoint;
  * @version 
  */
 public class CreateIntranetDomainRequest extends RpcAcsRequest<CreateIntranetDomainResponse> {
-	
+	   
+
+	private String groupId;
+
+	private String securityToken;
 	public CreateIntranetDomainRequest() {
 		super("CloudAPI", "2016-07-14", "CreateIntranetDomain", "apigateway");
-		setSysMethod(MethodType.POST);
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String groupId;
-
-	private String securityToken;
 
 	public String getGroupId() {
 		return this.groupId;
@@ -48,29 +48,10 @@ public class CreateIntranetDomainRequest extends RpcAcsRequest<CreateIntranetDom
 		}
 	}
 
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){

@@ -23,23 +23,25 @@ import com.aliyuncs.cloudapi.Endpoint;
  * @version 
  */
 public class RemoveVpcAccessRequest extends RpcAcsRequest<RemoveVpcAccessResponse> {
-	
-	public RemoveVpcAccessRequest() {
-		super("CloudAPI", "2016-07-14", "RemoveVpcAccess", "apigateway");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String instanceId;
+
+	private Boolean needBatchWork;
 
 	private String securityToken;
 
 	private Integer port;
 
 	private String vpcId;
+	public RemoveVpcAccessRequest() {
+		super("CloudAPI", "2016-07-14", "RemoveVpcAccess", "apigateway");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getInstanceId() {
 		return this.instanceId;
@@ -52,29 +54,21 @@ public class RemoveVpcAccessRequest extends RpcAcsRequest<RemoveVpcAccessRespons
 		}
 	}
 
-	public String getBizSecurityToken() {
-		return this.securityToken;
+	public Boolean getNeedBatchWork() {
+		return this.needBatchWork;
 	}
 
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setNeedBatchWork(Boolean needBatchWork) {
+		this.needBatchWork = needBatchWork;
+		if(needBatchWork != null){
+			putQueryParameter("NeedBatchWork", needBatchWork.toString());
 		}
 	}
 
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){
