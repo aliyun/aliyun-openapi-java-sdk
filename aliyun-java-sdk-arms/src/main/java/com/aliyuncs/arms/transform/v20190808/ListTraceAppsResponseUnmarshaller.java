@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.arms.model.v20190808.ListTraceAppsResponse;
 import com.aliyuncs.arms.model.v20190808.ListTraceAppsResponse.TraceApp;
+import com.aliyuncs.arms.model.v20190808.ListTraceAppsResponse.TraceApp.TagsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -49,6 +50,16 @@ public class ListTraceAppsResponseUnmarshaller {
 				labels.add(_ctx.stringValue("ListTraceAppsResponse.TraceApps["+ i +"].Labels["+ j +"]"));
 			}
 			traceApp.setLabels(labels);
+
+			List<TagsItem> tags = new ArrayList<TagsItem>();
+			for (int j = 0; j < _ctx.lengthValue("ListTraceAppsResponse.TraceApps["+ i +"].Tags.Length"); j++) {
+				TagsItem tagsItem = new TagsItem();
+				tagsItem.setTagKey(_ctx.stringValue("ListTraceAppsResponse.TraceApps["+ i +"].Tags["+ j +"].TagKey"));
+				tagsItem.setTagValue(_ctx.stringValue("ListTraceAppsResponse.TraceApps["+ i +"].Tags["+ j +"].TagValue"));
+
+				tags.add(tagsItem);
+			}
+			traceApp.setTags(tags);
 
 			traceApps.add(traceApp);
 		}
