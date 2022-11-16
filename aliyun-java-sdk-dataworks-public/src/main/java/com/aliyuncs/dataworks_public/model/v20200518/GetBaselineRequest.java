@@ -22,14 +22,14 @@ import com.aliyuncs.dataworks_public.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListCurrentUsageForResourceGroupRequest extends RpcAcsRequest<ListCurrentUsageForResourceGroupResponse> {
+public class GetBaselineRequest extends RpcAcsRequest<GetBaselineResponse> {
 	   
 
-	private String projectEnv;
+	private Long projectId;
 
-	private String resourceGroupIdentifier;
-	public ListCurrentUsageForResourceGroupRequest() {
-		super("dataworks-public", "2020-05-18", "ListCurrentUsageForResourceGroup");
+	private Long baselineId;
+	public GetBaselineRequest() {
+		super("dataworks-public", "2020-05-18", "GetBaseline");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +37,31 @@ public class ListCurrentUsageForResourceGroupRequest extends RpcAcsRequest<ListC
 		} catch (Exception e) {}
 	}
 
-	public String getProjectEnv() {
-		return this.projectEnv;
+	public Long getProjectId() {
+		return this.projectId;
 	}
 
-	public void setProjectEnv(String projectEnv) {
-		this.projectEnv = projectEnv;
-		if(projectEnv != null){
-			putBodyParameter("ProjectEnv", projectEnv);
+	public void setProjectId(Long projectId) {
+		this.projectId = projectId;
+		if(projectId != null){
+			putBodyParameter("ProjectId", projectId.toString());
 		}
 	}
 
-	public String getResourceGroupIdentifier() {
-		return this.resourceGroupIdentifier;
+	public Long getBaselineId() {
+		return this.baselineId;
 	}
 
-	public void setResourceGroupIdentifier(String resourceGroupIdentifier) {
-		this.resourceGroupIdentifier = resourceGroupIdentifier;
-		if(resourceGroupIdentifier != null){
-			putBodyParameter("ResourceGroupIdentifier", resourceGroupIdentifier);
+	public void setBaselineId(Long baselineId) {
+		this.baselineId = baselineId;
+		if(baselineId != null){
+			putBodyParameter("BaselineId", baselineId.toString());
 		}
 	}
 
 	@Override
-	public Class<ListCurrentUsageForResourceGroupResponse> getResponseClass() {
-		return ListCurrentUsageForResourceGroupResponse.class;
+	public Class<GetBaselineResponse> getResponseClass() {
+		return GetBaselineResponse.class;
 	}
 
 }

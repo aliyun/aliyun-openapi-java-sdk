@@ -25,15 +25,15 @@ import com.aliyuncs.dataworks_public.Endpoint;
 public class ListDataServiceGroupsRequest extends RpcAcsRequest<ListDataServiceGroupsResponse> {
 	   
 
+	private String groupNameKeyword;
+
+	private Integer pageNumber;
+
 	private Integer pageSize;
 
 	private Long tenantId;
 
 	private Long projectId;
-
-	private String groupNameKeyword;
-
-	private Integer pageNumber;
 	public ListDataServiceGroupsRequest() {
 		super("dataworks-public", "2020-05-18", "ListDataServiceGroups");
 		setMethod(MethodType.POST);
@@ -41,6 +41,28 @@ public class ListDataServiceGroupsRequest extends RpcAcsRequest<ListDataServiceG
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getGroupNameKeyword() {
+		return this.groupNameKeyword;
+	}
+
+	public void setGroupNameKeyword(String groupNameKeyword) {
+		this.groupNameKeyword = groupNameKeyword;
+		if(groupNameKeyword != null){
+			putBodyParameter("GroupNameKeyword", groupNameKeyword);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putBodyParameter("PageNumber", pageNumber.toString());
+		}
 	}
 
 	public Integer getPageSize() {
@@ -73,28 +95,6 @@ public class ListDataServiceGroupsRequest extends RpcAcsRequest<ListDataServiceG
 		this.projectId = projectId;
 		if(projectId != null){
 			putBodyParameter("ProjectId", projectId.toString());
-		}
-	}
-
-	public String getGroupNameKeyword() {
-		return this.groupNameKeyword;
-	}
-
-	public void setGroupNameKeyword(String groupNameKeyword) {
-		this.groupNameKeyword = groupNameKeyword;
-		if(groupNameKeyword != null){
-			putBodyParameter("GroupNameKeyword", groupNameKeyword);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putBodyParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

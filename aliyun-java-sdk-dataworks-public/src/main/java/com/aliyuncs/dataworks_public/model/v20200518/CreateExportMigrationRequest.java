@@ -25,15 +25,15 @@ import com.aliyuncs.dataworks_public.Endpoint;
 public class CreateExportMigrationRequest extends RpcAcsRequest<CreateExportMigrationResponse> {
 	   
 
+	private Long incrementalSince;
+
+	private String description;
+
 	private String exportObjectStatus;
 
 	private String exportMode;
 
-	private Long incrementalSince;
-
 	private String name;
-
-	private String description;
 
 	private Long projectId;
 	public CreateExportMigrationRequest() {
@@ -43,6 +43,28 @@ public class CreateExportMigrationRequest extends RpcAcsRequest<CreateExportMigr
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getIncrementalSince() {
+		return this.incrementalSince;
+	}
+
+	public void setIncrementalSince(Long incrementalSince) {
+		this.incrementalSince = incrementalSince;
+		if(incrementalSince != null){
+			putBodyParameter("IncrementalSince", incrementalSince.toString());
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putBodyParameter("Description", description);
+		}
 	}
 
 	public String getExportObjectStatus() {
@@ -67,17 +89,6 @@ public class CreateExportMigrationRequest extends RpcAcsRequest<CreateExportMigr
 		}
 	}
 
-	public Long getIncrementalSince() {
-		return this.incrementalSince;
-	}
-
-	public void setIncrementalSince(Long incrementalSince) {
-		this.incrementalSince = incrementalSince;
-		if(incrementalSince != null){
-			putBodyParameter("IncrementalSince", incrementalSince.toString());
-		}
-	}
-
 	public String getName() {
 		return this.name;
 	}
@@ -86,17 +97,6 @@ public class CreateExportMigrationRequest extends RpcAcsRequest<CreateExportMigr
 		this.name = name;
 		if(name != null){
 			putBodyParameter("Name", name);
-		}
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putBodyParameter("Description", description);
 		}
 	}
 

@@ -27,11 +27,11 @@ public class CreateTableThemeRequest extends RpcAcsRequest<CreateTableThemeRespo
 
 	private Integer level;
 
+	private Long parentId;
+
 	private String name;
 
 	private Long projectId;
-
-	private Long parentId;
 	public CreateTableThemeRequest() {
 		super("dataworks-public", "2020-05-18", "CreateTableTheme");
 		setMethod(MethodType.POST);
@@ -49,6 +49,17 @@ public class CreateTableThemeRequest extends RpcAcsRequest<CreateTableThemeRespo
 		this.level = level;
 		if(level != null){
 			putQueryParameter("Level", level.toString());
+		}
+	}
+
+	public Long getParentId() {
+		return this.parentId;
+	}
+
+	public void setParentId(Long parentId) {
+		this.parentId = parentId;
+		if(parentId != null){
+			putQueryParameter("ParentId", parentId.toString());
 		}
 	}
 
@@ -71,17 +82,6 @@ public class CreateTableThemeRequest extends RpcAcsRequest<CreateTableThemeRespo
 		this.projectId = projectId;
 		if(projectId != null){
 			putQueryParameter("ProjectId", projectId.toString());
-		}
-	}
-
-	public Long getParentId() {
-		return this.parentId;
-	}
-
-	public void setParentId(Long parentId) {
-		this.parentId = parentId;
-		if(parentId != null){
-			putQueryParameter("ParentId", parentId.toString());
 		}
 	}
 

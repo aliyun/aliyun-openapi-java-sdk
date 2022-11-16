@@ -28,13 +28,13 @@ public class TestDataServiceApiRequest extends RpcAcsRequest<TestDataServiceApiR
 
 	private List<PathParams> pathParamss;
 
-	private String bodyContent;
-
-	private List<BodyParams> bodyParamss;
-
 	private List<QueryParam> queryParams;
 
 	private List<HeadParams> headParamss;
+
+	private String bodyContent;
+
+	private List<BodyParams> bodyParamss;
 
 	private Long apiId;
 	public TestDataServiceApiRequest() {
@@ -56,31 +56,6 @@ public class TestDataServiceApiRequest extends RpcAcsRequest<TestDataServiceApiR
 			for (int depth1 = 0; depth1 < pathParamss.size(); depth1++) {
 				putBodyParameter("PathParams." + (depth1 + 1) + ".ParamKey" , pathParamss.get(depth1).getParamKey());
 				putBodyParameter("PathParams." + (depth1 + 1) + ".ParamValue" , pathParamss.get(depth1).getParamValue());
-			}
-		}	
-	}
-
-	public String getBodyContent() {
-		return this.bodyContent;
-	}
-
-	public void setBodyContent(String bodyContent) {
-		this.bodyContent = bodyContent;
-		if(bodyContent != null){
-			putBodyParameter("BodyContent", bodyContent);
-		}
-	}
-
-	public List<BodyParams> getBodyParamss() {
-		return this.bodyParamss;
-	}
-
-	public void setBodyParamss(List<BodyParams> bodyParamss) {
-		this.bodyParamss = bodyParamss;	
-		if (bodyParamss != null) {
-			for (int depth1 = 0; depth1 < bodyParamss.size(); depth1++) {
-				putBodyParameter("BodyParams." + (depth1 + 1) + ".ParamKey" , bodyParamss.get(depth1).getParamKey());
-				putBodyParameter("BodyParams." + (depth1 + 1) + ".ParamValue" , bodyParamss.get(depth1).getParamValue());
 			}
 		}	
 	}
@@ -113,6 +88,31 @@ public class TestDataServiceApiRequest extends RpcAcsRequest<TestDataServiceApiR
 		}	
 	}
 
+	public String getBodyContent() {
+		return this.bodyContent;
+	}
+
+	public void setBodyContent(String bodyContent) {
+		this.bodyContent = bodyContent;
+		if(bodyContent != null){
+			putBodyParameter("BodyContent", bodyContent);
+		}
+	}
+
+	public List<BodyParams> getBodyParamss() {
+		return this.bodyParamss;
+	}
+
+	public void setBodyParamss(List<BodyParams> bodyParamss) {
+		this.bodyParamss = bodyParamss;	
+		if (bodyParamss != null) {
+			for (int depth1 = 0; depth1 < bodyParamss.size(); depth1++) {
+				putBodyParameter("BodyParams." + (depth1 + 1) + ".ParamKey" , bodyParamss.get(depth1).getParamKey());
+				putBodyParameter("BodyParams." + (depth1 + 1) + ".ParamValue" , bodyParamss.get(depth1).getParamValue());
+			}
+		}	
+	}
+
 	public Long getApiId() {
 		return this.apiId;
 	}
@@ -125,29 +125,6 @@ public class TestDataServiceApiRequest extends RpcAcsRequest<TestDataServiceApiR
 	}
 
 	public static class PathParams {
-
-		private String paramKey;
-
-		private String paramValue;
-
-		public String getParamKey() {
-			return this.paramKey;
-		}
-
-		public void setParamKey(String paramKey) {
-			this.paramKey = paramKey;
-		}
-
-		public String getParamValue() {
-			return this.paramValue;
-		}
-
-		public void setParamValue(String paramValue) {
-			this.paramValue = paramValue;
-		}
-	}
-
-	public static class BodyParams {
 
 		private String paramKey;
 
@@ -194,6 +171,29 @@ public class TestDataServiceApiRequest extends RpcAcsRequest<TestDataServiceApiR
 	}
 
 	public static class HeadParams {
+
+		private String paramKey;
+
+		private String paramValue;
+
+		public String getParamKey() {
+			return this.paramKey;
+		}
+
+		public void setParamKey(String paramKey) {
+			this.paramKey = paramKey;
+		}
+
+		public String getParamValue() {
+			return this.paramValue;
+		}
+
+		public void setParamValue(String paramValue) {
+			this.paramValue = paramValue;
+		}
+	}
+
+	public static class BodyParams {
 
 		private String paramKey;
 

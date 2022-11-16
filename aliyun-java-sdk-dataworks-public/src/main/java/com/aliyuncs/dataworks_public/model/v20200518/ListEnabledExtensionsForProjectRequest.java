@@ -22,44 +22,42 @@ import com.aliyuncs.dataworks_public.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetDISyncTaskMetricInfoRequest extends RpcAcsRequest<GetDISyncTaskMetricInfoResponse> {
+public class ListEnabledExtensionsForProjectRequest extends RpcAcsRequest<ListEnabledExtensionsForProjectResponse> {
 	   
 
-	private Long endDate;
+	private String eventCode;
 
-	private Long startDate;
+	private String fileType;
 
 	private Long projectId;
-
-	private Long fileId;
-	public GetDISyncTaskMetricInfoRequest() {
-		super("dataworks-public", "2020-05-18", "GetDISyncTaskMetricInfo");
-		setMethod(MethodType.GET);
+	public ListEnabledExtensionsForProjectRequest() {
+		super("dataworks-public", "2020-05-18", "ListEnabledExtensionsForProject");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public Long getEndDate() {
-		return this.endDate;
+	public String getEventCode() {
+		return this.eventCode;
 	}
 
-	public void setEndDate(Long endDate) {
-		this.endDate = endDate;
-		if(endDate != null){
-			putQueryParameter("EndDate", endDate.toString());
+	public void setEventCode(String eventCode) {
+		this.eventCode = eventCode;
+		if(eventCode != null){
+			putBodyParameter("EventCode", eventCode);
 		}
 	}
 
-	public Long getStartDate() {
-		return this.startDate;
+	public String getFileType() {
+		return this.fileType;
 	}
 
-	public void setStartDate(Long startDate) {
-		this.startDate = startDate;
-		if(startDate != null){
-			putQueryParameter("StartDate", startDate.toString());
+	public void setFileType(String fileType) {
+		this.fileType = fileType;
+		if(fileType != null){
+			putBodyParameter("FileType", fileType);
 		}
 	}
 
@@ -70,24 +68,13 @@ public class GetDISyncTaskMetricInfoRequest extends RpcAcsRequest<GetDISyncTaskM
 	public void setProjectId(Long projectId) {
 		this.projectId = projectId;
 		if(projectId != null){
-			putQueryParameter("ProjectId", projectId.toString());
-		}
-	}
-
-	public Long getFileId() {
-		return this.fileId;
-	}
-
-	public void setFileId(Long fileId) {
-		this.fileId = fileId;
-		if(fileId != null){
-			putQueryParameter("FileId", fileId.toString());
+			putBodyParameter("ProjectId", projectId.toString());
 		}
 	}
 
 	@Override
-	public Class<GetDISyncTaskMetricInfoResponse> getResponseClass() {
-		return GetDISyncTaskMetricInfoResponse.class;
+	public Class<ListEnabledExtensionsForProjectResponse> getResponseClass() {
+		return ListEnabledExtensionsForProjectResponse.class;
 	}
 
 }

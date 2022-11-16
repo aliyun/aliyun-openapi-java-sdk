@@ -27,9 +27,9 @@ public class CreateDataServiceApiAuthorityRequest extends RpcAcsRequest<CreateDa
 
 	private Long authorizedProjectId;
 
-	private Long tenantId;
-
 	private Long endTime;
+
+	private Long tenantId;
 
 	private Long projectId;
 
@@ -54,17 +54,6 @@ public class CreateDataServiceApiAuthorityRequest extends RpcAcsRequest<CreateDa
 		}
 	}
 
-	public Long getTenantId() {
-		return this.tenantId;
-	}
-
-	public void setTenantId(Long tenantId) {
-		this.tenantId = tenantId;
-		if(tenantId != null){
-			putBodyParameter("TenantId", tenantId.toString());
-		}
-	}
-
 	public Long getEndTime() {
 		return this.endTime;
 	}
@@ -73,6 +62,17 @@ public class CreateDataServiceApiAuthorityRequest extends RpcAcsRequest<CreateDa
 		this.endTime = endTime;
 		if(endTime != null){
 			putBodyParameter("EndTime", endTime.toString());
+		}
+	}
+
+	public Long getTenantId() {
+		return this.tenantId;
+	}
+
+	public void setTenantId(Long tenantId) {
+		this.tenantId = tenantId;
+		if(tenantId != null){
+			putBodyParameter("TenantId", tenantId.toString());
 		}
 	}
 

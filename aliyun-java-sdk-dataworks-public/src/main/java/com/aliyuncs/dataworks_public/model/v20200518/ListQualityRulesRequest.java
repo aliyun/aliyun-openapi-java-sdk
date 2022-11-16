@@ -27,11 +27,11 @@ public class ListQualityRulesRequest extends RpcAcsRequest<ListQualityRulesRespo
 
 	private String projectName;
 
-	private Integer pageSize;
-
 	private Long entityId;
 
 	private Integer pageNumber;
+
+	private Integer pageSize;
 	public ListQualityRulesRequest() {
 		super("dataworks-public", "2020-05-18", "ListQualityRules");
 		setMethod(MethodType.POST);
@@ -49,17 +49,6 @@ public class ListQualityRulesRequest extends RpcAcsRequest<ListQualityRulesRespo
 		this.projectName = projectName;
 		if(projectName != null){
 			putBodyParameter("ProjectName", projectName);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putBodyParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -82,6 +71,17 @@ public class ListQualityRulesRequest extends RpcAcsRequest<ListQualityRulesRespo
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putBodyParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putBodyParameter("PageSize", pageSize.toString());
 		}
 	}
 

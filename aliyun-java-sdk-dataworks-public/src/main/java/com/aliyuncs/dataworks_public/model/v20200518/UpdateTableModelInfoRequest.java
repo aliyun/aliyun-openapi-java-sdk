@@ -25,13 +25,13 @@ import com.aliyuncs.dataworks_public.Endpoint;
 public class UpdateTableModelInfoRequest extends RpcAcsRequest<UpdateTableModelInfoResponse> {
 	   
 
+	private Integer levelType;
+
 	private Long secondLevelThemeId;
 
 	private String tableGuid;
 
 	private Long levelId;
-
-	private Integer levelType;
 
 	private Long firstLevelThemeId;
 	public UpdateTableModelInfoRequest() {
@@ -41,6 +41,17 @@ public class UpdateTableModelInfoRequest extends RpcAcsRequest<UpdateTableModelI
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getLevelType() {
+		return this.levelType;
+	}
+
+	public void setLevelType(Integer levelType) {
+		this.levelType = levelType;
+		if(levelType != null){
+			putQueryParameter("LevelType", levelType.toString());
+		}
 	}
 
 	public Long getSecondLevelThemeId() {
@@ -73,17 +84,6 @@ public class UpdateTableModelInfoRequest extends RpcAcsRequest<UpdateTableModelI
 		this.levelId = levelId;
 		if(levelId != null){
 			putQueryParameter("LevelId", levelId.toString());
-		}
-	}
-
-	public Integer getLevelType() {
-		return this.levelType;
-	}
-
-	public void setLevelType(Integer levelType) {
-		this.levelType = levelType;
-		if(levelType != null){
-			putQueryParameter("LevelType", levelType.toString());
 		}
 	}
 

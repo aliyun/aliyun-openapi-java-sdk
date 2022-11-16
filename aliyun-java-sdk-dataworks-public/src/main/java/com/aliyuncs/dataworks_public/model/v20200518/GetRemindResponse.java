@@ -125,6 +125,8 @@ public class GetRemindResponse extends AcsResponse {
 
 		private List<String> alertMethods;
 
+		private List<String> webhooks;
+
 		public Integer getMaxAlertTimes() {
 			return this.maxAlertTimes;
 		}
@@ -275,6 +277,14 @@ public class GetRemindResponse extends AcsResponse {
 
 		public void setAlertMethods(List<String> alertMethods) {
 			this.alertMethods = alertMethods;
+		}
+
+		public List<String> getWebhooks() {
+			return this.webhooks;
+		}
+
+		public void setWebhooks(List<String> webhooks) {
+			this.webhooks = webhooks;
 		}
 
 		public static class RobotsItem {

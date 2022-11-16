@@ -27,15 +27,15 @@ public class ListQualityResultsByRuleRequest extends RpcAcsRequest<ListQualityRe
 
 	private String projectName;
 
+	private String startDate;
+
+	private Integer pageNumber;
+
 	private String endDate;
 
 	private Integer pageSize;
 
 	private Integer ruleId;
-
-	private String startDate;
-
-	private Integer pageNumber;
 	public ListQualityResultsByRuleRequest() {
 		super("dataworks-public", "2020-05-18", "ListQualityResultsByRule");
 		setMethod(MethodType.POST);
@@ -53,6 +53,28 @@ public class ListQualityResultsByRuleRequest extends RpcAcsRequest<ListQualityRe
 		this.projectName = projectName;
 		if(projectName != null){
 			putBodyParameter("ProjectName", projectName);
+		}
+	}
+
+	public String getStartDate() {
+		return this.startDate;
+	}
+
+	public void setStartDate(String startDate) {
+		this.startDate = startDate;
+		if(startDate != null){
+			putBodyParameter("StartDate", startDate);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putBodyParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
@@ -86,28 +108,6 @@ public class ListQualityResultsByRuleRequest extends RpcAcsRequest<ListQualityRe
 		this.ruleId = ruleId;
 		if(ruleId != null){
 			putBodyParameter("RuleId", ruleId.toString());
-		}
-	}
-
-	public String getStartDate() {
-		return this.startDate;
-	}
-
-	public void setStartDate(String startDate) {
-		this.startDate = startDate;
-		if(startDate != null){
-			putBodyParameter("StartDate", startDate);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putBodyParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

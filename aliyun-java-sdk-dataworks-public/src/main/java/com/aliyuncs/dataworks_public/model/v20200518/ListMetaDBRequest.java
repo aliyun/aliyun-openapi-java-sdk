@@ -27,11 +27,11 @@ public class ListMetaDBRequest extends RpcAcsRequest<ListMetaDBResponse> {
 
 	private String dataSourceType;
 
-	private Integer pageSize;
-
 	private String clusterId;
 
 	private Integer pageNum;
+
+	private Integer pageSize;
 
 	private Long projectId;
 	public ListMetaDBRequest() {
@@ -54,17 +54,6 @@ public class ListMetaDBRequest extends RpcAcsRequest<ListMetaDBResponse> {
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	public String getClusterId() {
 		return this.clusterId;
 	}
@@ -84,6 +73,17 @@ public class ListMetaDBRequest extends RpcAcsRequest<ListMetaDBResponse> {
 		this.pageNum = pageNum;
 		if(pageNum != null){
 			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

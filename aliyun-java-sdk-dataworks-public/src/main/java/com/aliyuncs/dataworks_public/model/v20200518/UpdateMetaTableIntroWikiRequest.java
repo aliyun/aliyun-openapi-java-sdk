@@ -25,9 +25,9 @@ import com.aliyuncs.dataworks_public.Endpoint;
 public class UpdateMetaTableIntroWikiRequest extends RpcAcsRequest<UpdateMetaTableIntroWikiResponse> {
 	   
 
-	private String tableGuid;
-
 	private String content;
+
+	private String tableGuid;
 	public UpdateMetaTableIntroWikiRequest() {
 		super("dataworks-public", "2020-05-18", "UpdateMetaTableIntroWiki");
 		setMethod(MethodType.POST);
@@ -35,17 +35,6 @@ public class UpdateMetaTableIntroWikiRequest extends RpcAcsRequest<UpdateMetaTab
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getTableGuid() {
-		return this.tableGuid;
-	}
-
-	public void setTableGuid(String tableGuid) {
-		this.tableGuid = tableGuid;
-		if(tableGuid != null){
-			putQueryParameter("TableGuid", tableGuid);
-		}
 	}
 
 	public String getContent() {
@@ -56,6 +45,17 @@ public class UpdateMetaTableIntroWikiRequest extends RpcAcsRequest<UpdateMetaTab
 		this.content = content;
 		if(content != null){
 			putBodyParameter("Content", content);
+		}
+	}
+
+	public String getTableGuid() {
+		return this.tableGuid;
+	}
+
+	public void setTableGuid(String tableGuid) {
+		this.tableGuid = tableGuid;
+		if(tableGuid != null){
+			putQueryParameter("TableGuid", tableGuid);
 		}
 	}
 

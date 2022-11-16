@@ -27,15 +27,15 @@ public class GetMetaDBTableListRequest extends RpcAcsRequest<GetMetaDBTableListR
 
 	private String dataSourceType;
 
+	private String clusterId;
+
+	private Integer pageNumber;
+
 	private String databaseName;
 
 	private Integer pageSize;
 
-	private String clusterId;
-
 	private String appGuid;
-
-	private Integer pageNumber;
 	public GetMetaDBTableListRequest() {
 		super("dataworks-public", "2020-05-18", "GetMetaDBTableList");
 		setMethod(MethodType.POST);
@@ -53,6 +53,28 @@ public class GetMetaDBTableListRequest extends RpcAcsRequest<GetMetaDBTableListR
 		this.dataSourceType = dataSourceType;
 		if(dataSourceType != null){
 			putQueryParameter("DataSourceType", dataSourceType);
+		}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
@@ -78,17 +100,6 @@ public class GetMetaDBTableListRequest extends RpcAcsRequest<GetMetaDBTableListR
 		}
 	}
 
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
-		}
-	}
-
 	public String getAppGuid() {
 		return this.appGuid;
 	}
@@ -97,17 +108,6 @@ public class GetMetaDBTableListRequest extends RpcAcsRequest<GetMetaDBTableListR
 		this.appGuid = appGuid;
 		if(appGuid != null){
 			putQueryParameter("AppGuid", appGuid);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

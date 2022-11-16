@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.dataworks_public.model.v20200518.ListResourceGroupsResponse;
 import com.aliyuncs.dataworks_public.model.v20200518.ListResourceGroupsResponse.DataItem;
+import com.aliyuncs.dataworks_public.model.v20200518.ListResourceGroupsResponse.DataItem.Tag;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -49,6 +50,17 @@ public class ListResourceGroupsResponseUnmarshaller {
 			dataItem.setName(_ctx.stringValue("ListResourceGroupsResponse.Data["+ i +"].Name"));
 			dataItem.setId(_ctx.longValue("ListResourceGroupsResponse.Data["+ i +"].Id"));
 			dataItem.setTenantId(_ctx.longValue("ListResourceGroupsResponse.Data["+ i +"].TenantId"));
+			dataItem.setResourceManagerResourceGroupId(_ctx.stringValue("ListResourceGroupsResponse.Data["+ i +"].ResourceManagerResourceGroupId"));
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("ListResourceGroupsResponse.Data["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("ListResourceGroupsResponse.Data["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("ListResourceGroupsResponse.Data["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			dataItem.setTags(tags);
 
 			data.add(dataItem);
 		}

@@ -29,6 +29,20 @@ public class CreateDataServiceApiRequest extends RpcAcsRequest<CreateDataService
 
 	private Integer requestMethod;
 
+	private String apiDescription;
+
+	private Integer timeout;
+
+	private Long folderId;
+
+	private Long tenantId;
+
+	private String protocols;
+
+	private Long projectId;
+
+	private Integer responseContentType;
+
 	private String groupId;
 
 	private String apiPath;
@@ -39,23 +53,9 @@ public class CreateDataServiceApiRequest extends RpcAcsRequest<CreateDataService
 
 	private Integer visibleRange;
 
-	private String apiDescription;
-
-	private Integer timeout;
-
-	private Long folderId;
-
 	private String registrationDetails;
 
 	private String apiName;
-
-	private Long tenantId;
-
-	private String protocols;
-
-	private Long projectId;
-
-	private Integer responseContentType;
 	public CreateDataServiceApiRequest() {
 		super("dataworks-public", "2020-05-18", "CreateDataServiceApi");
 		setMethod(MethodType.POST);
@@ -84,6 +84,83 @@ public class CreateDataServiceApiRequest extends RpcAcsRequest<CreateDataService
 		this.requestMethod = requestMethod;
 		if(requestMethod != null){
 			putBodyParameter("RequestMethod", requestMethod.toString());
+		}
+	}
+
+	public String getApiDescription() {
+		return this.apiDescription;
+	}
+
+	public void setApiDescription(String apiDescription) {
+		this.apiDescription = apiDescription;
+		if(apiDescription != null){
+			putBodyParameter("ApiDescription", apiDescription);
+		}
+	}
+
+	public Integer getTimeout() {
+		return this.timeout;
+	}
+
+	public void setTimeout(Integer timeout) {
+		this.timeout = timeout;
+		if(timeout != null){
+			putBodyParameter("Timeout", timeout.toString());
+		}
+	}
+
+	public Long getFolderId() {
+		return this.folderId;
+	}
+
+	public void setFolderId(Long folderId) {
+		this.folderId = folderId;
+		if(folderId != null){
+			putBodyParameter("FolderId", folderId.toString());
+		}
+	}
+
+	public Long getTenantId() {
+		return this.tenantId;
+	}
+
+	public void setTenantId(Long tenantId) {
+		this.tenantId = tenantId;
+		if(tenantId != null){
+			putBodyParameter("TenantId", tenantId.toString());
+		}
+	}
+
+	public String getProtocols() {
+		return this.protocols;
+	}
+
+	public void setProtocols(String protocols) {
+		this.protocols = protocols;
+		if(protocols != null){
+			putBodyParameter("Protocols", protocols);
+		}
+	}
+
+	public Long getProjectId() {
+		return this.projectId;
+	}
+
+	public void setProjectId(Long projectId) {
+		this.projectId = projectId;
+		if(projectId != null){
+			putBodyParameter("ProjectId", projectId.toString());
+		}
+	}
+
+	public Integer getResponseContentType() {
+		return this.responseContentType;
+	}
+
+	public void setResponseContentType(Integer responseContentType) {
+		this.responseContentType = responseContentType;
+		if(responseContentType != null){
+			putBodyParameter("ResponseContentType", responseContentType.toString());
 		}
 	}
 
@@ -142,39 +219,6 @@ public class CreateDataServiceApiRequest extends RpcAcsRequest<CreateDataService
 		}
 	}
 
-	public String getApiDescription() {
-		return this.apiDescription;
-	}
-
-	public void setApiDescription(String apiDescription) {
-		this.apiDescription = apiDescription;
-		if(apiDescription != null){
-			putBodyParameter("ApiDescription", apiDescription);
-		}
-	}
-
-	public Integer getTimeout() {
-		return this.timeout;
-	}
-
-	public void setTimeout(Integer timeout) {
-		this.timeout = timeout;
-		if(timeout != null){
-			putBodyParameter("Timeout", timeout.toString());
-		}
-	}
-
-	public Long getFolderId() {
-		return this.folderId;
-	}
-
-	public void setFolderId(Long folderId) {
-		this.folderId = folderId;
-		if(folderId != null){
-			putBodyParameter("FolderId", folderId.toString());
-		}
-	}
-
 	public String getRegistrationDetails() {
 		return this.registrationDetails;
 	}
@@ -194,50 +238,6 @@ public class CreateDataServiceApiRequest extends RpcAcsRequest<CreateDataService
 		this.apiName = apiName;
 		if(apiName != null){
 			putBodyParameter("ApiName", apiName);
-		}
-	}
-
-	public Long getTenantId() {
-		return this.tenantId;
-	}
-
-	public void setTenantId(Long tenantId) {
-		this.tenantId = tenantId;
-		if(tenantId != null){
-			putBodyParameter("TenantId", tenantId.toString());
-		}
-	}
-
-	public String getProtocols() {
-		return this.protocols;
-	}
-
-	public void setProtocols(String protocols) {
-		this.protocols = protocols;
-		if(protocols != null){
-			putBodyParameter("Protocols", protocols);
-		}
-	}
-
-	public Long getProjectId() {
-		return this.projectId;
-	}
-
-	public void setProjectId(Long projectId) {
-		this.projectId = projectId;
-		if(projectId != null){
-			putBodyParameter("ProjectId", projectId.toString());
-		}
-	}
-
-	public Integer getResponseContentType() {
-		return this.responseContentType;
-	}
-
-	public void setResponseContentType(Integer responseContentType) {
-		this.responseContentType = responseContentType;
-		if(responseContentType != null){
-			putBodyParameter("ResponseContentType", responseContentType.toString());
 		}
 	}
 

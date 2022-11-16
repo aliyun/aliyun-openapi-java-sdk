@@ -25,11 +25,11 @@ import com.aliyuncs.dataworks_public.Endpoint;
 public class UpdateWorkbenchEventResultRequest extends RpcAcsRequest<UpdateWorkbenchEventResultResponse> {
 	   
 
-	private String checkResultTip;
-
 	private String checkResult;
 
 	private String messageId;
+
+	private String checkResultTip;
 
 	private String extensionCode;
 	public UpdateWorkbenchEventResultRequest() {
@@ -39,17 +39,6 @@ public class UpdateWorkbenchEventResultRequest extends RpcAcsRequest<UpdateWorkb
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getCheckResultTip() {
-		return this.checkResultTip;
-	}
-
-	public void setCheckResultTip(String checkResultTip) {
-		this.checkResultTip = checkResultTip;
-		if(checkResultTip != null){
-			putQueryParameter("CheckResultTip", checkResultTip);
-		}
 	}
 
 	public String getCheckResult() {
@@ -71,6 +60,17 @@ public class UpdateWorkbenchEventResultRequest extends RpcAcsRequest<UpdateWorkb
 		this.messageId = messageId;
 		if(messageId != null){
 			putQueryParameter("MessageId", messageId);
+		}
+	}
+
+	public String getCheckResultTip() {
+		return this.checkResultTip;
+	}
+
+	public void setCheckResultTip(String checkResultTip) {
+		this.checkResultTip = checkResultTip;
+		if(checkResultTip != null){
+			putQueryParameter("CheckResultTip", checkResultTip);
 		}
 	}
 

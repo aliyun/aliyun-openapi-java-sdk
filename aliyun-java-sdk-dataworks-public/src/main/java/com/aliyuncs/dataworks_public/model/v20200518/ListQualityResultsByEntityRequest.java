@@ -27,15 +27,15 @@ public class ListQualityResultsByEntityRequest extends RpcAcsRequest<ListQuality
 
 	private String projectName;
 
-	private String endDate;
-
-	private Integer pageSize;
-
 	private Integer entityId;
 
 	private String startDate;
 
 	private Integer pageNumber;
+
+	private String endDate;
+
+	private Integer pageSize;
 	public ListQualityResultsByEntityRequest() {
 		super("dataworks-public", "2020-05-18", "ListQualityResultsByEntity");
 		setMethod(MethodType.POST);
@@ -53,28 +53,6 @@ public class ListQualityResultsByEntityRequest extends RpcAcsRequest<ListQuality
 		this.projectName = projectName;
 		if(projectName != null){
 			putBodyParameter("ProjectName", projectName);
-		}
-	}
-
-	public String getEndDate() {
-		return this.endDate;
-	}
-
-	public void setEndDate(String endDate) {
-		this.endDate = endDate;
-		if(endDate != null){
-			putBodyParameter("EndDate", endDate);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putBodyParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -108,6 +86,28 @@ public class ListQualityResultsByEntityRequest extends RpcAcsRequest<ListQuality
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putBodyParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getEndDate() {
+		return this.endDate;
+	}
+
+	public void setEndDate(String endDate) {
+		this.endDate = endDate;
+		if(endDate != null){
+			putBodyParameter("EndDate", endDate);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putBodyParameter("PageSize", pageSize.toString());
 		}
 	}
 

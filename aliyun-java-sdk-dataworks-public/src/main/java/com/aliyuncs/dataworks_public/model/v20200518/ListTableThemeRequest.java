@@ -25,13 +25,13 @@ import com.aliyuncs.dataworks_public.Endpoint;
 public class ListTableThemeRequest extends RpcAcsRequest<ListTableThemeResponse> {
 	   
 
-	private Integer pageSize;
-
 	private Integer pageNum;
 
-	private Long projectId;
-
 	private Long parentId;
+
+	private Integer pageSize;
+
+	private Long projectId;
 	public ListTableThemeRequest() {
 		super("dataworks-public", "2020-05-18", "ListTableTheme");
 		setMethod(MethodType.GET);
@@ -39,17 +39,6 @@ public class ListTableThemeRequest extends RpcAcsRequest<ListTableThemeResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
 	}
 
 	public Integer getPageNum() {
@@ -63,17 +52,6 @@ public class ListTableThemeRequest extends RpcAcsRequest<ListTableThemeResponse>
 		}
 	}
 
-	public Long getProjectId() {
-		return this.projectId;
-	}
-
-	public void setProjectId(Long projectId) {
-		this.projectId = projectId;
-		if(projectId != null){
-			putQueryParameter("ProjectId", projectId.toString());
-		}
-	}
-
 	public Long getParentId() {
 		return this.parentId;
 	}
@@ -82,6 +60,28 @@ public class ListTableThemeRequest extends RpcAcsRequest<ListTableThemeResponse>
 		this.parentId = parentId;
 		if(parentId != null){
 			putQueryParameter("ParentId", parentId.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Long getProjectId() {
+		return this.projectId;
+	}
+
+	public void setProjectId(Long projectId) {
+		this.projectId = projectId;
+		if(projectId != null){
+			putQueryParameter("ProjectId", projectId.toString());
 		}
 	}
 

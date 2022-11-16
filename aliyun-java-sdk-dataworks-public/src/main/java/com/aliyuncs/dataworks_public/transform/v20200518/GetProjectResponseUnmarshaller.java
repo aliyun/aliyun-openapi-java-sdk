@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.dataworks_public.model.v20200518.GetProjectResponse;
 import com.aliyuncs.dataworks_public.model.v20200518.GetProjectResponse.Data;
+import com.aliyuncs.dataworks_public.model.v20200518.GetProjectResponse.Data.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -58,12 +59,23 @@ public class GetProjectResponseUnmarshaller {
 		data.setUseProxyOdpsAccount(_ctx.booleanValue("GetProjectResponse.Data.UseProxyOdpsAccount"));
 		data.setGmtCreate(_ctx.stringValue("GetProjectResponse.Data.GmtCreate"));
 		data.setTenantId(_ctx.longValue("GetProjectResponse.Data.TenantId"));
+		data.setResourceManagerResourceGroupId(_ctx.stringValue("GetProjectResponse.Data.ResourceManagerResourceGroupId"));
 
 		List<String> envTypes = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetProjectResponse.Data.EnvTypes.Length"); i++) {
 			envTypes.add(_ctx.stringValue("GetProjectResponse.Data.EnvTypes["+ i +"]"));
 		}
 		data.setEnvTypes(envTypes);
+
+		List<Tag> tags = new ArrayList<Tag>();
+		for (int i = 0; i < _ctx.lengthValue("GetProjectResponse.Data.Tags.Length"); i++) {
+			Tag tag = new Tag();
+			tag.setKey(_ctx.stringValue("GetProjectResponse.Data.Tags["+ i +"].Key"));
+			tag.setValue(_ctx.stringValue("GetProjectResponse.Data.Tags["+ i +"].Value"));
+
+			tags.add(tag);
+		}
+		data.setTags(tags);
 		getProjectResponse.setData(data);
 	 
 	 	return getProjectResponse;

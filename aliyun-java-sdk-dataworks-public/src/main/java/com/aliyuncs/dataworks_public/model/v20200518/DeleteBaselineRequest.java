@@ -22,56 +22,19 @@ import com.aliyuncs.dataworks_public.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListTableLevelRequest extends RpcAcsRequest<ListTableLevelResponse> {
+public class DeleteBaselineRequest extends RpcAcsRequest<DeleteBaselineResponse> {
 	   
 
-	private Integer levelType;
-
-	private Integer pageNum;
-
-	private Integer pageSize;
-
 	private Long projectId;
-	public ListTableLevelRequest() {
-		super("dataworks-public", "2020-05-18", "ListTableLevel");
-		setMethod(MethodType.GET);
+
+	private Long baselineId;
+	public DeleteBaselineRequest() {
+		super("dataworks-public", "2020-05-18", "DeleteBaseline");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getLevelType() {
-		return this.levelType;
-	}
-
-	public void setLevelType(Integer levelType) {
-		this.levelType = levelType;
-		if(levelType != null){
-			putQueryParameter("LevelType", levelType.toString());
-		}
-	}
-
-	public Integer getPageNum() {
-		return this.pageNum;
-	}
-
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-		if(pageNum != null){
-			putQueryParameter("PageNum", pageNum.toString());
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
 	}
 
 	public Long getProjectId() {
@@ -81,13 +44,24 @@ public class ListTableLevelRequest extends RpcAcsRequest<ListTableLevelResponse>
 	public void setProjectId(Long projectId) {
 		this.projectId = projectId;
 		if(projectId != null){
-			putQueryParameter("ProjectId", projectId.toString());
+			putBodyParameter("ProjectId", projectId.toString());
+		}
+	}
+
+	public Long getBaselineId() {
+		return this.baselineId;
+	}
+
+	public void setBaselineId(Long baselineId) {
+		this.baselineId = baselineId;
+		if(baselineId != null){
+			putBodyParameter("BaselineId", baselineId.toString());
 		}
 	}
 
 	@Override
-	public Class<ListTableLevelResponse> getResponseClass() {
-		return ListTableLevelResponse.class;
+	public Class<DeleteBaselineResponse> getResponseClass() {
+		return DeleteBaselineResponse.class;
 	}
 
 }

@@ -25,9 +25,19 @@ import com.aliyuncs.dataworks_public.Endpoint;
 public class CreateRemindRequest extends RpcAcsRequest<CreateRemindResponse> {
 	   
 
-	private String dndEnd;
-
 	private String alertUnit;
+
+	private String robotUrls;
+
+	private String bizProcessIds;
+
+	private String remindType;
+
+	private String baselineIds;
+
+	private Long projectId;
+
+	private String dndEnd;
 
 	private String remindUnit;
 
@@ -35,23 +45,15 @@ public class CreateRemindRequest extends RpcAcsRequest<CreateRemindResponse> {
 
 	private String alertMethods;
 
-	private String robotUrls;
-
 	private Integer maxAlertTimes;
-
-	private String bizProcessIds;
-
-	private String remindType;
 
 	private String alertTargets;
 
-	private String baselineIds;
+	private String webhooks;
 
 	private String detail;
 
 	private String remindName;
-
-	private Long projectId;
 
 	private String nodeIds;
 	public CreateRemindRequest() {
@@ -63,17 +65,6 @@ public class CreateRemindRequest extends RpcAcsRequest<CreateRemindResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getDndEnd() {
-		return this.dndEnd;
-	}
-
-	public void setDndEnd(String dndEnd) {
-		this.dndEnd = dndEnd;
-		if(dndEnd != null){
-			putBodyParameter("DndEnd", dndEnd);
-		}
-	}
-
 	public String getAlertUnit() {
 		return this.alertUnit;
 	}
@@ -82,6 +73,72 @@ public class CreateRemindRequest extends RpcAcsRequest<CreateRemindResponse> {
 		this.alertUnit = alertUnit;
 		if(alertUnit != null){
 			putBodyParameter("AlertUnit", alertUnit);
+		}
+	}
+
+	public String getRobotUrls() {
+		return this.robotUrls;
+	}
+
+	public void setRobotUrls(String robotUrls) {
+		this.robotUrls = robotUrls;
+		if(robotUrls != null){
+			putBodyParameter("RobotUrls", robotUrls);
+		}
+	}
+
+	public String getBizProcessIds() {
+		return this.bizProcessIds;
+	}
+
+	public void setBizProcessIds(String bizProcessIds) {
+		this.bizProcessIds = bizProcessIds;
+		if(bizProcessIds != null){
+			putBodyParameter("BizProcessIds", bizProcessIds);
+		}
+	}
+
+	public String getRemindType() {
+		return this.remindType;
+	}
+
+	public void setRemindType(String remindType) {
+		this.remindType = remindType;
+		if(remindType != null){
+			putBodyParameter("RemindType", remindType);
+		}
+	}
+
+	public String getBaselineIds() {
+		return this.baselineIds;
+	}
+
+	public void setBaselineIds(String baselineIds) {
+		this.baselineIds = baselineIds;
+		if(baselineIds != null){
+			putBodyParameter("BaselineIds", baselineIds);
+		}
+	}
+
+	public Long getProjectId() {
+		return this.projectId;
+	}
+
+	public void setProjectId(Long projectId) {
+		this.projectId = projectId;
+		if(projectId != null){
+			putBodyParameter("ProjectId", projectId.toString());
+		}
+	}
+
+	public String getDndEnd() {
+		return this.dndEnd;
+	}
+
+	public void setDndEnd(String dndEnd) {
+		this.dndEnd = dndEnd;
+		if(dndEnd != null){
+			putBodyParameter("DndEnd", dndEnd);
 		}
 	}
 
@@ -118,17 +175,6 @@ public class CreateRemindRequest extends RpcAcsRequest<CreateRemindResponse> {
 		}
 	}
 
-	public String getRobotUrls() {
-		return this.robotUrls;
-	}
-
-	public void setRobotUrls(String robotUrls) {
-		this.robotUrls = robotUrls;
-		if(robotUrls != null){
-			putBodyParameter("RobotUrls", robotUrls);
-		}
-	}
-
 	public Integer getMaxAlertTimes() {
 		return this.maxAlertTimes;
 	}
@@ -137,28 +183,6 @@ public class CreateRemindRequest extends RpcAcsRequest<CreateRemindResponse> {
 		this.maxAlertTimes = maxAlertTimes;
 		if(maxAlertTimes != null){
 			putBodyParameter("MaxAlertTimes", maxAlertTimes.toString());
-		}
-	}
-
-	public String getBizProcessIds() {
-		return this.bizProcessIds;
-	}
-
-	public void setBizProcessIds(String bizProcessIds) {
-		this.bizProcessIds = bizProcessIds;
-		if(bizProcessIds != null){
-			putBodyParameter("BizProcessIds", bizProcessIds);
-		}
-	}
-
-	public String getRemindType() {
-		return this.remindType;
-	}
-
-	public void setRemindType(String remindType) {
-		this.remindType = remindType;
-		if(remindType != null){
-			putBodyParameter("RemindType", remindType);
 		}
 	}
 
@@ -173,14 +197,14 @@ public class CreateRemindRequest extends RpcAcsRequest<CreateRemindResponse> {
 		}
 	}
 
-	public String getBaselineIds() {
-		return this.baselineIds;
+	public String getWebhooks() {
+		return this.webhooks;
 	}
 
-	public void setBaselineIds(String baselineIds) {
-		this.baselineIds = baselineIds;
-		if(baselineIds != null){
-			putBodyParameter("BaselineIds", baselineIds);
+	public void setWebhooks(String webhooks) {
+		this.webhooks = webhooks;
+		if(webhooks != null){
+			putBodyParameter("Webhooks", webhooks);
 		}
 	}
 
@@ -203,17 +227,6 @@ public class CreateRemindRequest extends RpcAcsRequest<CreateRemindResponse> {
 		this.remindName = remindName;
 		if(remindName != null){
 			putBodyParameter("RemindName", remindName);
-		}
-	}
-
-	public Long getProjectId() {
-		return this.projectId;
-	}
-
-	public void setProjectId(Long projectId) {
-		this.projectId = projectId;
-		if(projectId != null){
-			putBodyParameter("ProjectId", projectId.toString());
 		}
 	}
 

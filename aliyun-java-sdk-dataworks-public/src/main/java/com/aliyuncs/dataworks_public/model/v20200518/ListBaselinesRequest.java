@@ -22,20 +22,28 @@ import com.aliyuncs.dataworks_public.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListMigrationsRequest extends RpcAcsRequest<ListMigrationsResponse> {
+public class ListBaselinesRequest extends RpcAcsRequest<ListBaselinesResponse> {
 	   
 
 	private String owner;
 
+	private String searchText;
+
+	private String projectEnv;
+
+	private String priority;
+
 	private Integer pageNumber;
+
+	private Boolean enable;
 
 	private Integer pageSize;
 
-	private String migrationType;
-
 	private Long projectId;
-	public ListMigrationsRequest() {
-		super("dataworks-public", "2020-05-18", "ListMigrations");
+
+	private String baselineTypes;
+	public ListBaselinesRequest() {
+		super("dataworks-public", "2020-05-18", "ListBaselines");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -54,6 +62,39 @@ public class ListMigrationsRequest extends RpcAcsRequest<ListMigrationsResponse>
 		}
 	}
 
+	public String getSearchText() {
+		return this.searchText;
+	}
+
+	public void setSearchText(String searchText) {
+		this.searchText = searchText;
+		if(searchText != null){
+			putBodyParameter("SearchText", searchText);
+		}
+	}
+
+	public String getProjectEnv() {
+		return this.projectEnv;
+	}
+
+	public void setProjectEnv(String projectEnv) {
+		this.projectEnv = projectEnv;
+		if(projectEnv != null){
+			putBodyParameter("ProjectEnv", projectEnv);
+		}
+	}
+
+	public String getPriority() {
+		return this.priority;
+	}
+
+	public void setPriority(String priority) {
+		this.priority = priority;
+		if(priority != null){
+			putBodyParameter("Priority", priority);
+		}
+	}
+
 	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
@@ -62,6 +103,17 @@ public class ListMigrationsRequest extends RpcAcsRequest<ListMigrationsResponse>
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putBodyParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Boolean getEnable() {
+		return this.enable;
+	}
+
+	public void setEnable(Boolean enable) {
+		this.enable = enable;
+		if(enable != null){
+			putBodyParameter("Enable", enable.toString());
 		}
 	}
 
@@ -76,17 +128,6 @@ public class ListMigrationsRequest extends RpcAcsRequest<ListMigrationsResponse>
 		}
 	}
 
-	public String getMigrationType() {
-		return this.migrationType;
-	}
-
-	public void setMigrationType(String migrationType) {
-		this.migrationType = migrationType;
-		if(migrationType != null){
-			putBodyParameter("MigrationType", migrationType);
-		}
-	}
-
 	public Long getProjectId() {
 		return this.projectId;
 	}
@@ -98,9 +139,20 @@ public class ListMigrationsRequest extends RpcAcsRequest<ListMigrationsResponse>
 		}
 	}
 
+	public String getBaselineTypes() {
+		return this.baselineTypes;
+	}
+
+	public void setBaselineTypes(String baselineTypes) {
+		this.baselineTypes = baselineTypes;
+		if(baselineTypes != null){
+			putBodyParameter("BaselineTypes", baselineTypes);
+		}
+	}
+
 	@Override
-	public Class<ListMigrationsResponse> getResponseClass() {
-		return ListMigrationsResponse.class;
+	public Class<ListBaselinesResponse> getResponseClass() {
+		return ListBaselinesResponse.class;
 	}
 
 }

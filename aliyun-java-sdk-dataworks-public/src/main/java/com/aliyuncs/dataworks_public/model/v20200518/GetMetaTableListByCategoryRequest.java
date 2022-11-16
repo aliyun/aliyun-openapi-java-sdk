@@ -25,9 +25,9 @@ import com.aliyuncs.dataworks_public.Endpoint;
 public class GetMetaTableListByCategoryRequest extends RpcAcsRequest<GetMetaTableListByCategoryResponse> {
 	   
 
-	private Integer pageSize;
-
 	private Integer pageNumber;
+
+	private Integer pageSize;
 
 	private Long categoryId;
 	public GetMetaTableListByCategoryRequest() {
@@ -39,17 +39,6 @@ public class GetMetaTableListByCategoryRequest extends RpcAcsRequest<GetMetaTabl
 		} catch (Exception e) {}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
@@ -58,6 +47,17 @@ public class GetMetaTableListByCategoryRequest extends RpcAcsRequest<GetMetaTabl
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

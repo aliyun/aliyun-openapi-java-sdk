@@ -27,13 +27,13 @@ public class CreateDataServiceFolderRequest extends RpcAcsRequest<CreateDataServ
 
 	private String groupId;
 
-	private Long tenantId;
-
 	private String folderName;
 
-	private Long projectId;
-
 	private Long parentId;
+
+	private Long tenantId;
+
+	private Long projectId;
 	public CreateDataServiceFolderRequest() {
 		super("dataworks-public", "2020-05-18", "CreateDataServiceFolder");
 		setMethod(MethodType.POST);
@@ -54,17 +54,6 @@ public class CreateDataServiceFolderRequest extends RpcAcsRequest<CreateDataServ
 		}
 	}
 
-	public Long getTenantId() {
-		return this.tenantId;
-	}
-
-	public void setTenantId(Long tenantId) {
-		this.tenantId = tenantId;
-		if(tenantId != null){
-			putBodyParameter("TenantId", tenantId.toString());
-		}
-	}
-
 	public String getFolderName() {
 		return this.folderName;
 	}
@@ -76,17 +65,6 @@ public class CreateDataServiceFolderRequest extends RpcAcsRequest<CreateDataServ
 		}
 	}
 
-	public Long getProjectId() {
-		return this.projectId;
-	}
-
-	public void setProjectId(Long projectId) {
-		this.projectId = projectId;
-		if(projectId != null){
-			putBodyParameter("ProjectId", projectId.toString());
-		}
-	}
-
 	public Long getParentId() {
 		return this.parentId;
 	}
@@ -95,6 +73,28 @@ public class CreateDataServiceFolderRequest extends RpcAcsRequest<CreateDataServ
 		this.parentId = parentId;
 		if(parentId != null){
 			putBodyParameter("ParentId", parentId.toString());
+		}
+	}
+
+	public Long getTenantId() {
+		return this.tenantId;
+	}
+
+	public void setTenantId(Long tenantId) {
+		this.tenantId = tenantId;
+		if(tenantId != null){
+			putBodyParameter("TenantId", tenantId.toString());
+		}
+	}
+
+	public Long getProjectId() {
+		return this.projectId;
+	}
+
+	public void setProjectId(Long projectId) {
+		this.projectId = projectId;
+		if(projectId != null){
+			putBodyParameter("ProjectId", projectId.toString());
 		}
 	}
 

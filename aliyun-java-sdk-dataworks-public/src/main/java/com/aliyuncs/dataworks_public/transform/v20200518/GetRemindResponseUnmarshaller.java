@@ -63,6 +63,12 @@ public class GetRemindResponseUnmarshaller {
 		}
 		data.setAlertMethods(alertMethods);
 
+		List<String> webhooks = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("GetRemindResponse.Data.Webhooks.Length"); i++) {
+			webhooks.add(_ctx.stringValue("GetRemindResponse.Data.Webhooks["+ i +"]"));
+		}
+		data.setWebhooks(webhooks);
+
 		List<RobotsItem> robots = new ArrayList<RobotsItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetRemindResponse.Data.Robots.Length"); i++) {
 			RobotsItem robotsItem = new RobotsItem();
