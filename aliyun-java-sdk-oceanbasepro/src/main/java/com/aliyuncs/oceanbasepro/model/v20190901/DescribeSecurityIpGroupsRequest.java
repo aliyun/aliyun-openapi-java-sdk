@@ -16,6 +16,7 @@ package com.aliyuncs.oceanbasepro.model.v20190901;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.oceanbasepro.Endpoint;
 
 /**
  * @author auto create
@@ -26,8 +27,12 @@ public class DescribeSecurityIpGroupsRequest extends RpcAcsRequest<DescribeSecur
 
 	private String instanceId;
 	public DescribeSecurityIpGroupsRequest() {
-		super("OceanBasePro", "2019-09-01", "DescribeSecurityIpGroups");
+		super("OceanBasePro", "2019-09-01", "DescribeSecurityIpGroups", "oceanbase");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getInstanceId() {

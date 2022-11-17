@@ -19,6 +19,7 @@ import java.util.List;
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.oceanbasepro.Endpoint;
 
 /**
  * @author auto create
@@ -52,8 +53,12 @@ public class CreateOmsOpenAPIProjectRequest extends RpcAcsRequest<CreateOmsOpenA
 	@SerializedName("labelIds")
 	private List<String> labelIds;
 	public CreateOmsOpenAPIProjectRequest() {
-		super("OceanBasePro", "2019-09-01", "CreateOmsOpenAPIProject");
+		super("OceanBasePro", "2019-09-01", "CreateOmsOpenAPIProject", "oceanbase");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public DestConfig getDestConfig() {

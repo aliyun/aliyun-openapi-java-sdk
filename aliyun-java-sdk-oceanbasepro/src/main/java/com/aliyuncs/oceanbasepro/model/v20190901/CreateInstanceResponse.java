@@ -14,7 +14,6 @@
 
 package com.aliyuncs.oceanbasepro.model.v20190901;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.oceanbasepro.transform.v20190901.CreateInstanceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -27,7 +26,7 @@ public class CreateInstanceResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<DataItem> data;
+	private Data data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,15 +36,15 @@ public class CreateInstanceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<DataItem> getData() {
+	public Data getData() {
 		return this.data;
 	}
 
-	public void setData(List<DataItem> data) {
+	public void setData(Data data) {
 		this.data = data;
 	}
 
-	public static class DataItem {
+	public static class Data {
 
 		private String instanceId;
 

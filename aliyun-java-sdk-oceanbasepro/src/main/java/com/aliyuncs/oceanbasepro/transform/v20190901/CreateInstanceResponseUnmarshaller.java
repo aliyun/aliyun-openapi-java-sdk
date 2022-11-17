@@ -14,11 +14,8 @@
 
 package com.aliyuncs.oceanbasepro.transform.v20190901;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.aliyuncs.oceanbasepro.model.v20190901.CreateInstanceResponse;
-import com.aliyuncs.oceanbasepro.model.v20190901.CreateInstanceResponse.DataItem;
+import com.aliyuncs.oceanbasepro.model.v20190901.CreateInstanceResponse.Data;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -28,15 +25,10 @@ public class CreateInstanceResponseUnmarshaller {
 		
 		createInstanceResponse.setRequestId(_ctx.stringValue("CreateInstanceResponse.RequestId"));
 
-		List<DataItem> data = new ArrayList<DataItem>();
-		for (int i = 0; i < _ctx.lengthValue("CreateInstanceResponse.Data.Length"); i++) {
-			DataItem dataItem = new DataItem();
-			dataItem.setInstanceId(_ctx.stringValue("CreateInstanceResponse.Data["+ i +"].InstanceId"));
-			dataItem.setOrderId(_ctx.stringValue("CreateInstanceResponse.Data["+ i +"].OrderId"));
-			dataItem.setResourceGroupId(_ctx.stringValue("CreateInstanceResponse.Data["+ i +"].ResourceGroupId"));
-
-			data.add(dataItem);
-		}
+		Data data = new Data();
+		data.setInstanceId(_ctx.stringValue("CreateInstanceResponse.Data.InstanceId"));
+		data.setOrderId(_ctx.stringValue("CreateInstanceResponse.Data.OrderId"));
+		data.setResourceGroupId(_ctx.stringValue("CreateInstanceResponse.Data.ResourceGroupId"));
 		createInstanceResponse.setData(data);
 	 
 	 	return createInstanceResponse;

@@ -16,6 +16,7 @@ package com.aliyuncs.oceanbasepro.model.v20190901;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.oceanbasepro.Endpoint;
 
 /**
  * @author auto create
@@ -56,8 +57,12 @@ public class DescribeAnomalySQLListRequest extends RpcAcsRequest<DescribeAnomaly
 
 	private String acceptLanguage;
 	public DescribeAnomalySQLListRequest() {
-		super("OceanBasePro", "2019-09-01", "DescribeAnomalySQLList");
+		super("OceanBasePro", "2019-09-01", "DescribeAnomalySQLList", "oceanbase");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getStartTime() {
