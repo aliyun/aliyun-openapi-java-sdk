@@ -33,15 +33,24 @@ public class ListApplicationResponseUnmarshaller {
 		List<Application> applicationList = new ArrayList<Application>();
 		for (int i = 0; i < _ctx.lengthValue("ListApplicationResponse.ApplicationList.Length"); i++) {
 			Application application = new Application();
-			application.setClusterType(_ctx.integerValue("ListApplicationResponse.ApplicationList["+ i +"].ClusterType"));
 			application.setAppId(_ctx.stringValue("ListApplicationResponse.ApplicationList["+ i +"].AppId"));
-			application.setResourceGroupId(_ctx.stringValue("ListApplicationResponse.ApplicationList["+ i +"].ResourceGroupId"));
-			application.setApplicationType(_ctx.stringValue("ListApplicationResponse.ApplicationList["+ i +"].ApplicationType"));
-			application.setName(_ctx.stringValue("ListApplicationResponse.ApplicationList["+ i +"].Name"));
-			application.setRunningInstanceCount(_ctx.integerValue("ListApplicationResponse.ApplicationList["+ i +"].RunningInstanceCount"));
-			application.setBuildPackageId(_ctx.longValue("ListApplicationResponse.ApplicationList["+ i +"].BuildPackageId"));
-			application.setClusterId(_ctx.stringValue("ListApplicationResponse.ApplicationList["+ i +"].ClusterId"));
 			application.setRegionId(_ctx.stringValue("ListApplicationResponse.ApplicationList["+ i +"].RegionId"));
+			application.setName(_ctx.stringValue("ListApplicationResponse.ApplicationList["+ i +"].Name"));
+			application.setInstances(_ctx.integerValue("ListApplicationResponse.ApplicationList["+ i +"].Instances"));
+			application.setPort(_ctx.integerValue("ListApplicationResponse.ApplicationList["+ i +"].Port"));
+			application.setState(_ctx.stringValue("ListApplicationResponse.ApplicationList["+ i +"].State"));
+			application.setCreateTime(_ctx.longValue("ListApplicationResponse.ApplicationList["+ i +"].CreateTime"));
+			application.setSlbIp(_ctx.stringValue("ListApplicationResponse.ApplicationList["+ i +"].SlbIp"));
+			application.setSlbPort(_ctx.integerValue("ListApplicationResponse.ApplicationList["+ i +"].SlbPort"));
+			application.setSlbListenerPort(_ctx.integerValue("ListApplicationResponse.ApplicationList["+ i +"].SlbListenerPort"));
+			application.setExtSlbListenerPort(_ctx.integerValue("ListApplicationResponse.ApplicationList["+ i +"].ExtSlbListenerPort"));
+			application.setBuildPackageId(_ctx.longValue("ListApplicationResponse.ApplicationList["+ i +"].BuildPackageId"));
+			application.setExtSlbIp(_ctx.stringValue("ListApplicationResponse.ApplicationList["+ i +"].ExtSlbIp"));
+			application.setApplicationType(_ctx.stringValue("ListApplicationResponse.ApplicationList["+ i +"].ApplicationType"));
+			application.setClusterType(_ctx.integerValue("ListApplicationResponse.ApplicationList["+ i +"].ClusterType"));
+			application.setRunningInstanceCount(_ctx.integerValue("ListApplicationResponse.ApplicationList["+ i +"].RunningInstanceCount"));
+			application.setClusterId(_ctx.stringValue("ListApplicationResponse.ApplicationList["+ i +"].ClusterId"));
+			application.setResourceGroupId(_ctx.stringValue("ListApplicationResponse.ApplicationList["+ i +"].ResourceGroupId"));
 
 			applicationList.add(application);
 		}

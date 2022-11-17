@@ -91,6 +91,10 @@ public class ListSlbResponse extends AcsResponse {
 
 		private String slbStatus;
 
+		private String tags;
+
+		private Boolean reusable;
+
 		public String getSlbId() {
 			return this.slbId;
 		}
@@ -185,6 +189,22 @@ public class ListSlbResponse extends AcsResponse {
 
 		public void setSlbStatus(String slbStatus) {
 			this.slbStatus = slbStatus;
+		}
+
+		public String getTags() {
+			return this.tags;
+		}
+
+		public void setTags(String tags) {
+			this.tags = tags;
+		}
+
+		public Boolean getReusable() {
+			return this.reusable;
+		}
+
+		public void setReusable(Boolean reusable) {
+			this.reusable = reusable;
 		}
 	}
 

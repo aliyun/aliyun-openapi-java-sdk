@@ -1,3 +1,6 @@
+2022-11-17 Version: 3.26.12
+- Modify InsertK8sApplication API.
+
 2022-08-17 Version: 3.26.11
 - DeleteK8sApplication add params force.
 

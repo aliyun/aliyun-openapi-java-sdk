@@ -32,6 +32,8 @@ public class GetK8sClusterRequest extends RoaAcsRequest<GetK8sClusterResponse> {
 	private Integer pageSize;
 
 	private Integer currentPage;
+
+	private String subClusterType;
 	public GetK8sClusterRequest() {
 		super("Edas", "2017-08-01", "GetK8sCluster", "Edas");
 		setUriPattern("/pop/v5/k8s_clusters");
@@ -83,6 +85,17 @@ public class GetK8sClusterRequest extends RoaAcsRequest<GetK8sClusterResponse> {
 		this.currentPage = currentPage;
 		if(currentPage != null){
 			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public String getSubClusterType() {
+		return this.subClusterType;
+	}
+
+	public void setSubClusterType(String subClusterType) {
+		this.subClusterType = subClusterType;
+		if(subClusterType != null){
+			putQueryParameter("SubClusterType", subClusterType);
 		}
 	}
 

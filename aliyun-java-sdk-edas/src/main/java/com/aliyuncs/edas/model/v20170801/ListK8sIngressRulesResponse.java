@@ -15,7 +15,6 @@
 package com.aliyuncs.edas.model.v20170801;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.edas.transform.v20170801.ListK8sIngressRulesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -126,9 +125,17 @@ public class ListK8sIngressRulesResponse extends AcsResponse {
 
 			private String ingressType;
 
-			private Boolean newDashboard;
+			private String officalBasicUrl;
 
-			private Map<Object,Object> newDashboardUrls;
+			private String officalRequestUrl;
+
+			private String mseGatewayId;
+
+			private String mseGatewayName;
+
+			private String annotations;
+
+			private String labels;
 
 			private List<RulesItem> rules;
 
@@ -196,20 +203,52 @@ public class ListK8sIngressRulesResponse extends AcsResponse {
 				this.ingressType = ingressType;
 			}
 
-			public Boolean getNewDashboard() {
-				return this.newDashboard;
+			public String getOfficalBasicUrl() {
+				return this.officalBasicUrl;
 			}
 
-			public void setNewDashboard(Boolean newDashboard) {
-				this.newDashboard = newDashboard;
+			public void setOfficalBasicUrl(String officalBasicUrl) {
+				this.officalBasicUrl = officalBasicUrl;
 			}
 
-			public Map<Object,Object> getNewDashboardUrls() {
-				return this.newDashboardUrls;
+			public String getOfficalRequestUrl() {
+				return this.officalRequestUrl;
 			}
 
-			public void setNewDashboardUrls(Map<Object,Object> newDashboardUrls) {
-				this.newDashboardUrls = newDashboardUrls;
+			public void setOfficalRequestUrl(String officalRequestUrl) {
+				this.officalRequestUrl = officalRequestUrl;
+			}
+
+			public String getMseGatewayId() {
+				return this.mseGatewayId;
+			}
+
+			public void setMseGatewayId(String mseGatewayId) {
+				this.mseGatewayId = mseGatewayId;
+			}
+
+			public String getMseGatewayName() {
+				return this.mseGatewayName;
+			}
+
+			public void setMseGatewayName(String mseGatewayName) {
+				this.mseGatewayName = mseGatewayName;
+			}
+
+			public String getAnnotations() {
+				return this.annotations;
+			}
+
+			public void setAnnotations(String annotations) {
+				this.annotations = annotations;
+			}
+
+			public String getLabels() {
+				return this.labels;
+			}
+
+			public void setLabels(String labels) {
+				this.labels = labels;
 			}
 
 			public List<RulesItem> getRules() {

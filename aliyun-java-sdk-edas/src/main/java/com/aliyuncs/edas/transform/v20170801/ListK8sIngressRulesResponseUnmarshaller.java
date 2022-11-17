@@ -23,7 +23,6 @@ import com.aliyuncs.edas.model.v20170801.ListK8sIngressRulesResponse.DataItem.In
 import com.aliyuncs.edas.model.v20170801.ListK8sIngressRulesResponse.DataItem.IngressConfsItem.RulesItem;
 import com.aliyuncs.edas.model.v20170801.ListK8sIngressRulesResponse.DataItem.IngressConfsItem.RulesItem.PathsItem;
 import com.aliyuncs.edas.model.v20170801.ListK8sIngressRulesResponse.DataItem.IngressConfsItem.RulesItem.PathsItem.Backend;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -53,8 +52,12 @@ public class ListK8sIngressRulesResponseUnmarshaller {
 				ingressConfsItem.setDashboardUrl(_ctx.stringValue("ListK8sIngressRulesResponse.Data["+ i +"].IngressConfs["+ j +"].DashboardUrl"));
 				ingressConfsItem.setAlbId(_ctx.stringValue("ListK8sIngressRulesResponse.Data["+ i +"].IngressConfs["+ j +"].AlbId"));
 				ingressConfsItem.setIngressType(_ctx.stringValue("ListK8sIngressRulesResponse.Data["+ i +"].IngressConfs["+ j +"].IngressType"));
-				ingressConfsItem.setNewDashboard(_ctx.booleanValue("ListK8sIngressRulesResponse.Data["+ i +"].IngressConfs["+ j +"].NewDashboard"));
-				ingressConfsItem.setNewDashboardUrls(_ctx.mapValue("ListK8sIngressRulesResponse.Data["+ i +"].IngressConfs["+ j +"].NewDashboardUrls"));
+				ingressConfsItem.setOfficalBasicUrl(_ctx.stringValue("ListK8sIngressRulesResponse.Data["+ i +"].IngressConfs["+ j +"].OfficalBasicUrl"));
+				ingressConfsItem.setOfficalRequestUrl(_ctx.stringValue("ListK8sIngressRulesResponse.Data["+ i +"].IngressConfs["+ j +"].OfficalRequestUrl"));
+				ingressConfsItem.setMseGatewayId(_ctx.stringValue("ListK8sIngressRulesResponse.Data["+ i +"].IngressConfs["+ j +"].MseGatewayId"));
+				ingressConfsItem.setMseGatewayName(_ctx.stringValue("ListK8sIngressRulesResponse.Data["+ i +"].IngressConfs["+ j +"].MseGatewayName"));
+				ingressConfsItem.setAnnotations(_ctx.stringValue("ListK8sIngressRulesResponse.Data["+ i +"].IngressConfs["+ j +"].Annotations"));
+				ingressConfsItem.setLabels(_ctx.stringValue("ListK8sIngressRulesResponse.Data["+ i +"].IngressConfs["+ j +"].Labels"));
 
 				List<RulesItem> rules = new ArrayList<RulesItem>();
 				for (int k = 0; k < _ctx.lengthValue("ListK8sIngressRulesResponse.Data["+ i +"].IngressConfs["+ j +"].Rules.Length"); k++) {

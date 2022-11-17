@@ -45,6 +45,8 @@ public class ListSlbResponseUnmarshaller {
 			slbEntity.setAddress(_ctx.stringValue("ListSlbResponse.SlbList["+ i +"].Address"));
 			slbEntity.setSlbName(_ctx.stringValue("ListSlbResponse.SlbList["+ i +"].SlbName"));
 			slbEntity.setSlbStatus(_ctx.stringValue("ListSlbResponse.SlbList["+ i +"].SlbStatus"));
+			slbEntity.setTags(_ctx.stringValue("ListSlbResponse.SlbList["+ i +"].Tags"));
+			slbEntity.setReusable(_ctx.booleanValue("ListSlbResponse.SlbList["+ i +"].Reusable"));
 
 			slbList.add(slbEntity);
 		}

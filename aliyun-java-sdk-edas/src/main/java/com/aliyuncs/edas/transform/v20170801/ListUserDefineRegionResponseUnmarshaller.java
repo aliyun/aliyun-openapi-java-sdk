@@ -40,6 +40,8 @@ public class ListUserDefineRegionResponseUnmarshaller {
 			userDefineRegionEntity.setUserId(_ctx.stringValue("ListUserDefineRegionResponse.UserDefineRegionList["+ i +"].UserId"));
 			userDefineRegionEntity.setId(_ctx.longValue("ListUserDefineRegionResponse.UserDefineRegionList["+ i +"].Id"));
 			userDefineRegionEntity.setRegionId(_ctx.stringValue("ListUserDefineRegionResponse.UserDefineRegionList["+ i +"].RegionId"));
+			userDefineRegionEntity.setMseInstanceId(_ctx.stringValue("ListUserDefineRegionResponse.UserDefineRegionList["+ i +"].MseInstanceId"));
+			userDefineRegionEntity.setRegistryType(_ctx.stringValue("ListUserDefineRegionResponse.UserDefineRegionList["+ i +"].RegistryType"));
 
 			userDefineRegionList.add(userDefineRegionEntity);
 		}

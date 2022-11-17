@@ -81,6 +81,10 @@ public class ListUserDefineRegionResponse extends AcsResponse {
 
 		private String regionId;
 
+		private String mseInstanceId;
+
+		private String registryType;
+
 		public String getBelongRegion() {
 			return this.belongRegion;
 		}
@@ -135,6 +139,22 @@ public class ListUserDefineRegionResponse extends AcsResponse {
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
+		}
+
+		public String getMseInstanceId() {
+			return this.mseInstanceId;
+		}
+
+		public void setMseInstanceId(String mseInstanceId) {
+			this.mseInstanceId = mseInstanceId;
+		}
+
+		public String getRegistryType() {
+			return this.registryType;
+		}
+
+		public void setRegistryType(String registryType) {
+			this.registryType = registryType;
 		}
 	}
 

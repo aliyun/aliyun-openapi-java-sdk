@@ -29,6 +29,8 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 
 	private String intranetSlbId;
 
+	private Integer requestsEphemeralStorage;
+
 	private String envs;
 
 	private String annotations;
@@ -63,6 +65,8 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 
 	private Boolean useBodyEncoding;
 
+	private Integer limitEphemeralStorage;
+
 	private Integer losslessRuleFuncType;
 
 	private String emptyDirs;
@@ -70,6 +74,8 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 	private String packageType;
 
 	private Boolean losslessRuleRelated;
+
+	private String secretName;
 
 	private String runtimeClassName;
 
@@ -159,6 +165,8 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 
 	private String namespace;
 
+	private String containerRegistryId;
+
 	private String appTemplateName;
 
 	private String applicationDescription;
@@ -197,6 +205,17 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 		this.intranetSlbId = intranetSlbId;
 		if(intranetSlbId != null){
 			putQueryParameter("IntranetSlbId", intranetSlbId);
+		}
+	}
+
+	public Integer getRequestsEphemeralStorage() {
+		return this.requestsEphemeralStorage;
+	}
+
+	public void setRequestsEphemeralStorage(Integer requestsEphemeralStorage) {
+		this.requestsEphemeralStorage = requestsEphemeralStorage;
+		if(requestsEphemeralStorage != null){
+			putQueryParameter("RequestsEphemeralStorage", requestsEphemeralStorage.toString());
 		}
 	}
 
@@ -387,6 +406,17 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 		}
 	}
 
+	public Integer getLimitEphemeralStorage() {
+		return this.limitEphemeralStorage;
+	}
+
+	public void setLimitEphemeralStorage(Integer limitEphemeralStorage) {
+		this.limitEphemeralStorage = limitEphemeralStorage;
+		if(limitEphemeralStorage != null){
+			putQueryParameter("LimitEphemeralStorage", limitEphemeralStorage.toString());
+		}
+	}
+
 	public Integer getLosslessRuleFuncType() {
 		return this.losslessRuleFuncType;
 	}
@@ -428,6 +458,17 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 		this.losslessRuleRelated = losslessRuleRelated;
 		if(losslessRuleRelated != null){
 			putQueryParameter("LosslessRuleRelated", losslessRuleRelated.toString());
+		}
+	}
+
+	public String getSecretName() {
+		return this.secretName;
+	}
+
+	public void setSecretName(String secretName) {
+		this.secretName = secretName;
+		if(secretName != null){
+			putQueryParameter("SecretName", secretName);
 		}
 	}
 
@@ -912,6 +953,17 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 		this.namespace = namespace;
 		if(namespace != null){
 			putQueryParameter("Namespace", namespace);
+		}
+	}
+
+	public String getContainerRegistryId() {
+		return this.containerRegistryId;
+	}
+
+	public void setContainerRegistryId(String containerRegistryId) {
+		this.containerRegistryId = containerRegistryId;
+		if(containerRegistryId != null){
+			putQueryParameter("ContainerRegistryId", containerRegistryId);
 		}
 	}
 

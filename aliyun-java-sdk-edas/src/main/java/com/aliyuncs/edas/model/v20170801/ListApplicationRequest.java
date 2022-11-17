@@ -27,6 +27,8 @@ public class ListApplicationRequest extends RoaAcsRequest<ListApplicationRespons
 
 	private String resourceGroupId;
 
+	private String appIds;
+
 	private String appName;
 
 	private String logicalRegionId;
@@ -52,6 +54,17 @@ public class ListApplicationRequest extends RoaAcsRequest<ListApplicationRespons
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getAppIds() {
+		return this.appIds;
+	}
+
+	public void setAppIds(String appIds) {
+		this.appIds = appIds;
+		if(appIds != null){
+			putQueryParameter("AppIds", appIds);
 		}
 	}
 

@@ -131,6 +131,8 @@ public class GetK8sApplicationResponse extends AcsResponse {
 
 			private String env;
 
+			private String envFrom;
+
 			private List<ComponentsItem> components;
 
 			public String getEnv() {
@@ -139,6 +141,14 @@ public class GetK8sApplicationResponse extends AcsResponse {
 
 			public void setEnv(String env) {
 				this.env = env;
+			}
+
+			public String getEnvFrom() {
+				return this.envFrom;
+			}
+
+			public void setEnvFrom(String envFrom) {
+				this.envFrom = envFrom;
 			}
 
 			public List<ComponentsItem> getComponents() {
@@ -297,6 +307,14 @@ public class GetK8sApplicationResponse extends AcsResponse {
 			private String developType;
 
 			private String slbInfo;
+
+			private String annotations;
+
+			private String labels;
+
+			private String limitEphemeralStorage;
+
+			private String requestEphemeralStorage;
 
 			private List<Env> envList;
 
@@ -460,6 +478,38 @@ public class GetK8sApplicationResponse extends AcsResponse {
 
 			public void setSlbInfo(String slbInfo) {
 				this.slbInfo = slbInfo;
+			}
+
+			public String getAnnotations() {
+				return this.annotations;
+			}
+
+			public void setAnnotations(String annotations) {
+				this.annotations = annotations;
+			}
+
+			public String getLabels() {
+				return this.labels;
+			}
+
+			public void setLabels(String labels) {
+				this.labels = labels;
+			}
+
+			public String getLimitEphemeralStorage() {
+				return this.limitEphemeralStorage;
+			}
+
+			public void setLimitEphemeralStorage(String limitEphemeralStorage) {
+				this.limitEphemeralStorage = limitEphemeralStorage;
+			}
+
+			public String getRequestEphemeralStorage() {
+				return this.requestEphemeralStorage;
+			}
+
+			public void setRequestEphemeralStorage(String requestEphemeralStorage) {
+				this.requestEphemeralStorage = requestEphemeralStorage;
 			}
 
 			public List<Env> getEnvList() {

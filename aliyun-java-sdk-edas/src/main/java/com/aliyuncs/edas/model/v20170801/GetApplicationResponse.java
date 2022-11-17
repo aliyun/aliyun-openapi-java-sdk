@@ -136,6 +136,8 @@ public class GetApplicationResponse extends AcsResponse {
 
 		private Boolean enablePortCheck;
 
+		private String appPhase;
+
 		public String getExtSlbIp() {
 			return this.extSlbIp;
 		}
@@ -375,6 +377,14 @@ public class GetApplicationResponse extends AcsResponse {
 		public void setEnablePortCheck(Boolean enablePortCheck) {
 			this.enablePortCheck = enablePortCheck;
 		}
+
+		public String getAppPhase() {
+			return this.appPhase;
+		}
+
+		public void setAppPhase(String appPhase) {
+			this.appPhase = appPhase;
+		}
 	}
 
 	public static class Application {
@@ -438,6 +448,8 @@ public class GetApplicationResponse extends AcsResponse {
 		private Boolean enableUrlCheck;
 
 		private Boolean enablePortCheck;
+
+		private String appPhase;
 
 		public String getExtSlbIp() {
 			return this.extSlbIp;
@@ -677,6 +689,14 @@ public class GetApplicationResponse extends AcsResponse {
 
 		public void setEnablePortCheck(Boolean enablePortCheck) {
 			this.enablePortCheck = enablePortCheck;
+		}
+
+		public String getAppPhase() {
+			return this.appPhase;
+		}
+
+		public void setAppPhase(String appPhase) {
+			this.appPhase = appPhase;
 		}
 	}
 

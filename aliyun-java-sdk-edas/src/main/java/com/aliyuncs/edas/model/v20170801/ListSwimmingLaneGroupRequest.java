@@ -26,6 +26,8 @@ public class ListSwimmingLaneGroupRequest extends RoaAcsRequest<ListSwimmingLane
 	   
 
 	private String logicalRegionId;
+
+	private Integer groupId;
 	public ListSwimmingLaneGroupRequest() {
 		super("Edas", "2017-08-01", "ListSwimmingLaneGroup", "Edas");
 		setUriPattern("/pop/v5/trafficmgnt/swimming_lane_groups");
@@ -44,6 +46,17 @@ public class ListSwimmingLaneGroupRequest extends RoaAcsRequest<ListSwimmingLane
 		this.logicalRegionId = logicalRegionId;
 		if(logicalRegionId != null){
 			putQueryParameter("LogicalRegionId", logicalRegionId);
+		}
+	}
+
+	public Integer getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(Integer groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId.toString());
 		}
 	}
 

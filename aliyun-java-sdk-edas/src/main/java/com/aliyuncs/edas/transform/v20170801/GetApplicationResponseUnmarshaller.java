@@ -59,6 +59,7 @@ public class GetApplicationResponseUnmarshaller {
 		applcation.setSlbName(_ctx.stringValue("GetApplicationResponse.Applcation.SlbName"));
 		applcation.setEnableUrlCheck(_ctx.booleanValue("GetApplicationResponse.Applcation.EnableUrlCheck"));
 		applcation.setEnablePortCheck(_ctx.booleanValue("GetApplicationResponse.Applcation.EnablePortCheck"));
+		applcation.setAppPhase(_ctx.stringValue("GetApplicationResponse.Applcation.AppPhase"));
 		getApplicationResponse.setApplcation(applcation);
 
 		Application application = new Application();
@@ -92,6 +93,7 @@ public class GetApplicationResponseUnmarshaller {
 		application.setSlbName(_ctx.stringValue("GetApplicationResponse.Application.SlbName"));
 		application.setEnableUrlCheck(_ctx.booleanValue("GetApplicationResponse.Application.EnableUrlCheck"));
 		application.setEnablePortCheck(_ctx.booleanValue("GetApplicationResponse.Application.EnablePortCheck"));
+		application.setAppPhase(_ctx.stringValue("GetApplicationResponse.Application.AppPhase"));
 		getApplicationResponse.setApplication(application);
 	 
 	 	return getApplicationResponse;

@@ -71,6 +71,10 @@ public class GetK8sApplicationResponseUnmarshaller {
 		app.setClusterId(_ctx.stringValue("GetK8sApplicationResponse.Applcation.App.ClusterId"));
 		app.setDevelopType(_ctx.stringValue("GetK8sApplicationResponse.Applcation.App.DevelopType"));
 		app.setSlbInfo(_ctx.stringValue("GetK8sApplicationResponse.Applcation.App.SlbInfo"));
+		app.setAnnotations(_ctx.stringValue("GetK8sApplicationResponse.Applcation.App.Annotations"));
+		app.setLabels(_ctx.stringValue("GetK8sApplicationResponse.Applcation.App.Labels"));
+		app.setLimitEphemeralStorage(_ctx.stringValue("GetK8sApplicationResponse.Applcation.App.LimitEphemeralStorage"));
+		app.setRequestEphemeralStorage(_ctx.stringValue("GetK8sApplicationResponse.Applcation.App.RequestEphemeralStorage"));
 
 		List<String> cmdArgs = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetK8sApplicationResponse.Applcation.App.CmdArgs.Length"); i++) {
@@ -119,6 +123,7 @@ public class GetK8sApplicationResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("GetK8sApplicationResponse.Applcation.DeployGroups.Length"); i++) {
 			DeployGroup deployGroup = new DeployGroup();
 			deployGroup.setEnv(_ctx.stringValue("GetK8sApplicationResponse.Applcation.DeployGroups["+ i +"].Env"));
+			deployGroup.setEnvFrom(_ctx.stringValue("GetK8sApplicationResponse.Applcation.DeployGroups["+ i +"].EnvFrom"));
 
 			List<ComponentsItem> components = new ArrayList<ComponentsItem>();
 			for (int j = 0; j < _ctx.lengthValue("GetK8sApplicationResponse.Applcation.DeployGroups["+ i +"].Components.Length"); j++) {
