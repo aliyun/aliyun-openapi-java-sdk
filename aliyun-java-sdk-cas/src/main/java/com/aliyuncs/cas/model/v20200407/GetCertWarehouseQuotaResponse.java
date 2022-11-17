@@ -15,29 +15,27 @@
 package com.aliyuncs.cas.model.v20200407;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cas.transform.v20200407.CreateWHCertificateWithExtensionResponseUnmarshaller;
+import com.aliyuncs.cas.transform.v20200407.GetCertWarehouseQuotaResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateWHCertificateWithExtensionResponse extends AcsResponse {
+public class GetCertWarehouseQuotaResponse extends AcsResponse {
 
-	private String identifier;
+	private Long totalQuota;
 
 	private String requestId;
 
-	private String certificate;
+	private Long useCount;
 
-	private String certificateChain;
-
-	public String getIdentifier() {
-		return this.identifier;
+	public Long getTotalQuota() {
+		return this.totalQuota;
 	}
 
-	public void setIdentifier(String identifier) {
-		this.identifier = identifier;
+	public void setTotalQuota(Long totalQuota) {
+		this.totalQuota = totalQuota;
 	}
 
 	public String getRequestId() {
@@ -48,25 +46,17 @@ public class CreateWHCertificateWithExtensionResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getCertificate() {
-		return this.certificate;
+	public Long getUseCount() {
+		return this.useCount;
 	}
 
-	public void setCertificate(String certificate) {
-		this.certificate = certificate;
-	}
-
-	public String getCertificateChain() {
-		return this.certificateChain;
-	}
-
-	public void setCertificateChain(String certificateChain) {
-		this.certificateChain = certificateChain;
+	public void setUseCount(Long useCount) {
+		this.useCount = useCount;
 	}
 
 	@Override
-	public CreateWHCertificateWithExtensionResponse getInstance(UnmarshallerContext context) {
-		return	CreateWHCertificateWithExtensionResponseUnmarshaller.unmarshall(this, context);
+	public GetCertWarehouseQuotaResponse getInstance(UnmarshallerContext context) {
+		return	GetCertWarehouseQuotaResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

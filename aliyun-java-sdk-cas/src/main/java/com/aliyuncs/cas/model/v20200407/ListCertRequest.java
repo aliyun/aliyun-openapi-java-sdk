@@ -25,13 +25,15 @@ import com.aliyuncs.cas.Endpoint;
 public class ListCertRequest extends RpcAcsRequest<ListCertResponse> {
 	   
 
+	private Long warehouseId;
+
+	private String sourceType;
+
+	private String keyWord;
+
 	private Long showSize;
 
 	private Long currentPage;
-
-	private Long warehouseId;
-
-	private String keyWord;
 
 	private String status;
 	public ListCertRequest() {
@@ -41,6 +43,39 @@ public class ListCertRequest extends RpcAcsRequest<ListCertResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getWarehouseId() {
+		return this.warehouseId;
+	}
+
+	public void setWarehouseId(Long warehouseId) {
+		this.warehouseId = warehouseId;
+		if(warehouseId != null){
+			putQueryParameter("WarehouseId", warehouseId.toString());
+		}
+	}
+
+	public String getSourceType() {
+		return this.sourceType;
+	}
+
+	public void setSourceType(String sourceType) {
+		this.sourceType = sourceType;
+		if(sourceType != null){
+			putQueryParameter("SourceType", sourceType);
+		}
+	}
+
+	public String getKeyWord() {
+		return this.keyWord;
+	}
+
+	public void setKeyWord(String keyWord) {
+		this.keyWord = keyWord;
+		if(keyWord != null){
+			putQueryParameter("KeyWord", keyWord);
+		}
 	}
 
 	public Long getShowSize() {
@@ -62,28 +97,6 @@ public class ListCertRequest extends RpcAcsRequest<ListCertResponse> {
 		this.currentPage = currentPage;
 		if(currentPage != null){
 			putQueryParameter("CurrentPage", currentPage.toString());
-		}
-	}
-
-	public Long getWarehouseId() {
-		return this.warehouseId;
-	}
-
-	public void setWarehouseId(Long warehouseId) {
-		this.warehouseId = warehouseId;
-		if(warehouseId != null){
-			putQueryParameter("WarehouseId", warehouseId.toString());
-		}
-	}
-
-	public String getKeyWord() {
-		return this.keyWord;
-	}
-
-	public void setKeyWord(String keyWord) {
-		this.keyWord = keyWord;
-		if(keyWord != null){
-			putQueryParameter("KeyWord", keyWord);
 		}
 	}
 

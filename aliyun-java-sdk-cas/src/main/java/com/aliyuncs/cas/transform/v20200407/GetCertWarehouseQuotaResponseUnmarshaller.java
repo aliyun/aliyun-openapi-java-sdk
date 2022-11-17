@@ -14,17 +14,18 @@
 
 package com.aliyuncs.cas.transform.v20200407;
 
-import com.aliyuncs.cas.model.v20200407.UploadPCACertResponse;
+import com.aliyuncs.cas.model.v20200407.GetCertWarehouseQuotaResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class UploadPCACertResponseUnmarshaller {
+public class GetCertWarehouseQuotaResponseUnmarshaller {
 
-	public static UploadPCACertResponse unmarshall(UploadPCACertResponse uploadPCACertResponse, UnmarshallerContext _ctx) {
+	public static GetCertWarehouseQuotaResponse unmarshall(GetCertWarehouseQuotaResponse getCertWarehouseQuotaResponse, UnmarshallerContext _ctx) {
 		
-		uploadPCACertResponse.setRequestId(_ctx.stringValue("UploadPCACertResponse.RequestId"));
-		uploadPCACertResponse.setIdentifier(_ctx.stringValue("UploadPCACertResponse.Identifier"));
+		getCertWarehouseQuotaResponse.setRequestId(_ctx.stringValue("GetCertWarehouseQuotaResponse.RequestId"));
+		getCertWarehouseQuotaResponse.setTotalQuota(_ctx.longValue("GetCertWarehouseQuotaResponse.TotalQuota"));
+		getCertWarehouseQuotaResponse.setUseCount(_ctx.longValue("GetCertWarehouseQuotaResponse.UseCount"));
 	 
-	 	return uploadPCACertResponse;
+	 	return getCertWarehouseQuotaResponse;
 	}
 }

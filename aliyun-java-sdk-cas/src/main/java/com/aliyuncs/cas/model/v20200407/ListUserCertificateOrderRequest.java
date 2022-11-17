@@ -25,11 +25,11 @@ import com.aliyuncs.cas.Endpoint;
 public class ListUserCertificateOrderRequest extends RpcAcsRequest<ListUserCertificateOrderResponse> {
 	   
 
-	private String keyword;
-
 	private Long showSize;
 
 	private Long currentPage;
+
+	private String keyword;
 
 	private String status;
 
@@ -41,17 +41,6 @@ public class ListUserCertificateOrderRequest extends RpcAcsRequest<ListUserCerti
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getKeyword() {
-		return this.keyword;
-	}
-
-	public void setKeyword(String keyword) {
-		this.keyword = keyword;
-		if(keyword != null){
-			putQueryParameter("Keyword", keyword);
-		}
 	}
 
 	public Long getShowSize() {
@@ -73,6 +62,17 @@ public class ListUserCertificateOrderRequest extends RpcAcsRequest<ListUserCerti
 		this.currentPage = currentPage;
 		if(currentPage != null){
 			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public String getKeyword() {
+		return this.keyword;
+	}
+
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
+		if(keyword != null){
+			putQueryParameter("Keyword", keyword);
 		}
 	}
 

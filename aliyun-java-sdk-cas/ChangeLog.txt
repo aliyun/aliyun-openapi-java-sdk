@@ -1,3 +1,6 @@
+2022-11-17 Version: 1.0.11
+- Support GetCertWarehouseQuota.
+
 2022-11-07 Version: 1.0.9
 - Support encrypt and decrypt.
 

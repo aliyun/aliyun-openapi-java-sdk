@@ -115,6 +115,38 @@ public class ListUserCertificateOrderResponse extends AcsResponse {
 
 		private Long wildDomainCount;
 
+		private Long certificateId;
+
+		private String name;
+
+		private String commonName;
+
+		private String fingerprint;
+
+		private String sha2;
+
+		private String serialNo;
+
+		private String issuer;
+
+		private String orgName;
+
+		private String province;
+
+		private String city;
+
+		private String country;
+
+		private String sans;
+
+		private Boolean expired;
+
+		private Boolean upload;
+
+		private String startDate;
+
+		private String endDate;
+
 		public String getAlgorithm() {
 			return this.algorithm;
 		}
@@ -265,6 +297,134 @@ public class ListUserCertificateOrderResponse extends AcsResponse {
 
 		public void setWildDomainCount(Long wildDomainCount) {
 			this.wildDomainCount = wildDomainCount;
+		}
+
+		public Long getCertificateId() {
+			return this.certificateId;
+		}
+
+		public void setCertificateId(Long certificateId) {
+			this.certificateId = certificateId;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getCommonName() {
+			return this.commonName;
+		}
+
+		public void setCommonName(String commonName) {
+			this.commonName = commonName;
+		}
+
+		public String getFingerprint() {
+			return this.fingerprint;
+		}
+
+		public void setFingerprint(String fingerprint) {
+			this.fingerprint = fingerprint;
+		}
+
+		public String getSha2() {
+			return this.sha2;
+		}
+
+		public void setSha2(String sha2) {
+			this.sha2 = sha2;
+		}
+
+		public String getSerialNo() {
+			return this.serialNo;
+		}
+
+		public void setSerialNo(String serialNo) {
+			this.serialNo = serialNo;
+		}
+
+		public String getIssuer() {
+			return this.issuer;
+		}
+
+		public void setIssuer(String issuer) {
+			this.issuer = issuer;
+		}
+
+		public String getOrgName() {
+			return this.orgName;
+		}
+
+		public void setOrgName(String orgName) {
+			this.orgName = orgName;
+		}
+
+		public String getProvince() {
+			return this.province;
+		}
+
+		public void setProvince(String province) {
+			this.province = province;
+		}
+
+		public String getCity() {
+			return this.city;
+		}
+
+		public void setCity(String city) {
+			this.city = city;
+		}
+
+		public String getCountry() {
+			return this.country;
+		}
+
+		public void setCountry(String country) {
+			this.country = country;
+		}
+
+		public String getSans() {
+			return this.sans;
+		}
+
+		public void setSans(String sans) {
+			this.sans = sans;
+		}
+
+		public Boolean getExpired() {
+			return this.expired;
+		}
+
+		public void setExpired(Boolean expired) {
+			this.expired = expired;
+		}
+
+		public Boolean getUpload() {
+			return this.upload;
+		}
+
+		public void setUpload(Boolean upload) {
+			this.upload = upload;
+		}
+
+		public String getStartDate() {
+			return this.startDate;
+		}
+
+		public void setStartDate(String startDate) {
+			this.startDate = startDate;
+		}
+
+		public String getEndDate() {
+			return this.endDate;
+		}
+
+		public void setEndDate(String endDate) {
+			this.endDate = endDate;
 		}
 	}
 

@@ -53,6 +53,22 @@ public class ListUserCertificateOrderResponseUnmarshaller {
 			certificateOrderListItem.setStatus(_ctx.stringValue("ListUserCertificateOrderResponse.CertificateOrderList["+ i +"].Status"));
 			certificateOrderListItem.setTrusteeStatus(_ctx.stringValue("ListUserCertificateOrderResponse.CertificateOrderList["+ i +"].TrusteeStatus"));
 			certificateOrderListItem.setWildDomainCount(_ctx.longValue("ListUserCertificateOrderResponse.CertificateOrderList["+ i +"].WildDomainCount"));
+			certificateOrderListItem.setCertificateId(_ctx.longValue("ListUserCertificateOrderResponse.CertificateOrderList["+ i +"].CertificateId"));
+			certificateOrderListItem.setName(_ctx.stringValue("ListUserCertificateOrderResponse.CertificateOrderList["+ i +"].Name"));
+			certificateOrderListItem.setCommonName(_ctx.stringValue("ListUserCertificateOrderResponse.CertificateOrderList["+ i +"].CommonName"));
+			certificateOrderListItem.setFingerprint(_ctx.stringValue("ListUserCertificateOrderResponse.CertificateOrderList["+ i +"].Fingerprint"));
+			certificateOrderListItem.setSha2(_ctx.stringValue("ListUserCertificateOrderResponse.CertificateOrderList["+ i +"].Sha2"));
+			certificateOrderListItem.setSerialNo(_ctx.stringValue("ListUserCertificateOrderResponse.CertificateOrderList["+ i +"].SerialNo"));
+			certificateOrderListItem.setIssuer(_ctx.stringValue("ListUserCertificateOrderResponse.CertificateOrderList["+ i +"].Issuer"));
+			certificateOrderListItem.setOrgName(_ctx.stringValue("ListUserCertificateOrderResponse.CertificateOrderList["+ i +"].OrgName"));
+			certificateOrderListItem.setProvince(_ctx.stringValue("ListUserCertificateOrderResponse.CertificateOrderList["+ i +"].Province"));
+			certificateOrderListItem.setCity(_ctx.stringValue("ListUserCertificateOrderResponse.CertificateOrderList["+ i +"].City"));
+			certificateOrderListItem.setCountry(_ctx.stringValue("ListUserCertificateOrderResponse.CertificateOrderList["+ i +"].Country"));
+			certificateOrderListItem.setSans(_ctx.stringValue("ListUserCertificateOrderResponse.CertificateOrderList["+ i +"].Sans"));
+			certificateOrderListItem.setExpired(_ctx.booleanValue("ListUserCertificateOrderResponse.CertificateOrderList["+ i +"].Expired"));
+			certificateOrderListItem.setUpload(_ctx.booleanValue("ListUserCertificateOrderResponse.CertificateOrderList["+ i +"].Upload"));
+			certificateOrderListItem.setStartDate(_ctx.stringValue("ListUserCertificateOrderResponse.CertificateOrderList["+ i +"].StartDate"));
+			certificateOrderListItem.setEndDate(_ctx.stringValue("ListUserCertificateOrderResponse.CertificateOrderList["+ i +"].EndDate"));
 
 			certificateOrderList.add(certificateOrderListItem);
 		}

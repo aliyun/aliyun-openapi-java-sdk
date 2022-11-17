@@ -26,12 +26,22 @@ public class UploadPCACertResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String identifier;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getIdentifier() {
+		return this.identifier;
+	}
+
+	public void setIdentifier(String identifier) {
+		this.identifier = identifier;
 	}
 
 	@Override
