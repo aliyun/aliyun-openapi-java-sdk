@@ -50,6 +50,8 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 
 	private String architecture;
 
+	private String detectionStrategy;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -207,6 +209,17 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 		this.architecture = architecture;
 		if(architecture != null){
 			putQueryParameter("Architecture", architecture);
+		}
+	}
+
+	public String getDetectionStrategy() {
+		return this.detectionStrategy;
+	}
+
+	public void setDetectionStrategy(String detectionStrategy) {
+		this.detectionStrategy = detectionStrategy;
+		if(detectionStrategy != null){
+			putQueryParameter("DetectionStrategy", detectionStrategy);
 		}
 	}
 

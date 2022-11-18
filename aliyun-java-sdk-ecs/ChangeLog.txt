@@ -1,3 +1,7 @@
+2022-11-18 Version: 4.24.40
+- Supported PRICE PRICING_PLAN_RESULT_NOT_FOUND error code for CreateCapacityReservation CreateElasticityAssurance.
+- Image check supported in CreateImage .
+
 2022-11-03 Version: 4.24.39
 - Automatically generate sdk tasks.
 
