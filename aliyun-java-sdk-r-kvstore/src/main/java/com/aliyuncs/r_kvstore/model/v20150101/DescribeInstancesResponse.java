@@ -155,6 +155,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private String editionType;
 
+		private String readOnlyCount;
+
 		private List<Tag> tags;
 
 		public String getVpcId() {
@@ -467,6 +469,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setEditionType(String editionType) {
 			this.editionType = editionType;
+		}
+
+		public String getReadOnlyCount() {
+			return this.readOnlyCount;
+		}
+
+		public void setReadOnlyCount(String readOnlyCount) {
+			this.readOnlyCount = readOnlyCount;
 		}
 
 		public List<Tag> getTags() {

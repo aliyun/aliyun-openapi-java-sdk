@@ -52,6 +52,8 @@ public class CreateTairInstanceResponse extends AcsResponse {
 
 	private String taskId;
 
+	private Long orderId;
+
 	public Long getQPS() {
 		return this.qPS;
 	}
@@ -162,6 +164,14 @@ public class CreateTairInstanceResponse extends AcsResponse {
 
 	public void setTaskId(String taskId) {
 		this.taskId = taskId;
+	}
+
+	public Long getOrderId() {
+		return this.orderId;
+	}
+
+	public void setOrderId(Long orderId) {
+		this.orderId = orderId;
 	}
 
 	@Override

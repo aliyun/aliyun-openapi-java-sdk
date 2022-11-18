@@ -41,6 +41,8 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 
 	private String businessInfo;
 
+	private Integer shardCount;
+
 	private Boolean autoPay;
 
 	private String majorVersion;
@@ -52,6 +54,8 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 	private Long ownerId;
 
 	private String instanceId;
+
+	private Integer readOnlyCount;
 
 	private Boolean forceUpgrade;
 
@@ -153,6 +157,17 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 		}
 	}
 
+	public Integer getShardCount() {
+		return this.shardCount;
+	}
+
+	public void setShardCount(Integer shardCount) {
+		this.shardCount = shardCount;
+		if(shardCount != null){
+			putQueryParameter("ShardCount", shardCount.toString());
+		}
+	}
+
 	public Boolean getAutoPay() {
 		return this.autoPay;
 	}
@@ -216,6 +231,17 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public Integer getReadOnlyCount() {
+		return this.readOnlyCount;
+	}
+
+	public void setReadOnlyCount(Integer readOnlyCount) {
+		this.readOnlyCount = readOnlyCount;
+		if(readOnlyCount != null){
+			putQueryParameter("ReadOnlyCount", readOnlyCount.toString());
 		}
 	}
 

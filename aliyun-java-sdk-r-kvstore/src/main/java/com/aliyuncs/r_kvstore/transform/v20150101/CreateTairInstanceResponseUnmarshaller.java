@@ -36,6 +36,7 @@ public class CreateTairInstanceResponseUnmarshaller {
 		createTairInstanceResponse.setZoneId(_ctx.stringValue("CreateTairInstanceResponse.ZoneId"));
 		createTairInstanceResponse.setInstanceStatus(_ctx.stringValue("CreateTairInstanceResponse.InstanceStatus"));
 		createTairInstanceResponse.setTaskId(_ctx.stringValue("CreateTairInstanceResponse.TaskId"));
+		createTairInstanceResponse.setOrderId(_ctx.longValue("CreateTairInstanceResponse.OrderId"));
 	 
 	 	return createTairInstanceResponse;
 	}

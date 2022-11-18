@@ -54,13 +54,15 @@ public class DescribeInstanceAttributeResponseUnmarshaller {
 			dBInstanceAttribute.setInstanceName(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].InstanceName"));
 			dBInstanceAttribute.setSecurityIPList(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].SecurityIPList"));
 			dBInstanceAttribute.setShardCount(_ctx.integerValue("DescribeInstanceAttributeResponse.Instances["+ i +"].ShardCount"));
+			dBInstanceAttribute.setReadOnlyCount(_ctx.integerValue("DescribeInstanceAttributeResponse.Instances["+ i +"].ReadOnlyCount"));
 			dBInstanceAttribute.setGlobalInstanceId(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].GlobalInstanceId"));
 			dBInstanceAttribute.setQPS(_ctx.longValue("DescribeInstanceAttributeResponse.Instances["+ i +"].QPS"));
 			dBInstanceAttribute.setAuditLogRetention(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].AuditLogRetention"));
 			dBInstanceAttribute.setZoneType(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].ZoneType"));
 			dBInstanceAttribute.setMaintainStartTime(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].MaintainStartTime"));
-			dBInstanceAttribute.setInstanceClass(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].InstanceClass"));
 			dBInstanceAttribute.setMaintainEndTime(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].MaintainEndTime"));
+			dBInstanceAttribute.setInstanceClass(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].InstanceClass"));
+			dBInstanceAttribute.setRealInstanceClass(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].RealInstanceClass"));
 			dBInstanceAttribute.setInstanceId(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].InstanceId"));
 			dBInstanceAttribute.setInstanceType(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].InstanceType"));
 			dBInstanceAttribute.setHasRenewChangeOrder(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].HasRenewChangeOrder"));

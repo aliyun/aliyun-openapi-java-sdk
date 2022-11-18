@@ -46,8 +46,6 @@ public class AddShardingNodeRequest extends RpcAcsRequest<AddShardingNodeRespons
 	private Long ownerId;
 
 	private String instanceId;
-
-	private String shardClass;
 	public AddShardingNodeRequest() {
 		super("R-kvstore", "2015-01-01", "AddShardingNode", "redisa");
 		setMethod(MethodType.POST);
@@ -175,17 +173,6 @@ public class AddShardingNodeRequest extends RpcAcsRequest<AddShardingNodeRespons
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getShardClass() {
-		return this.shardClass;
-	}
-
-	public void setShardClass(String shardClass) {
-		this.shardClass = shardClass;
-		if(shardClass != null){
-			putQueryParameter("ShardClass", shardClass);
 		}
 	}
 

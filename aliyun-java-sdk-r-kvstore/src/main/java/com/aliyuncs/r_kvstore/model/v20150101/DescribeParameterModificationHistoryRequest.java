@@ -22,36 +22,30 @@ import com.aliyuncs.r_kvstore.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyNodeSpecRequest extends RpcAcsRequest<ModifyNodeSpecResponse> {
+public class DescribeParameterModificationHistoryRequest extends RpcAcsRequest<DescribeParameterModificationHistoryResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String couponNo;
-
-	private String instanceClass;
-
-	private String switchTimeMode;
+	private String startTime;
 
 	private String securityToken;
 
+	private String parameterName;
+
 	private String nodeId;
-
-	private String businessInfo;
-
-	private Boolean autoPay;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
+	private String endTime;
+
 	private Long ownerId;
 
 	private String instanceId;
-
-	private String orderType;
-	public ModifyNodeSpecRequest() {
-		super("R-kvstore", "2015-01-01", "ModifyNodeSpec", "redisa");
+	public DescribeParameterModificationHistoryRequest() {
+		super("R-kvstore", "2015-01-01", "DescribeParameterModificationHistory", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -70,36 +64,14 @@ public class ModifyNodeSpecRequest extends RpcAcsRequest<ModifyNodeSpecResponse>
 		}
 	}
 
-	public String getCouponNo() {
-		return this.couponNo;
+	public String getStartTime() {
+		return this.startTime;
 	}
 
-	public void setCouponNo(String couponNo) {
-		this.couponNo = couponNo;
-		if(couponNo != null){
-			putQueryParameter("CouponNo", couponNo);
-		}
-	}
-
-	public String getInstanceClass() {
-		return this.instanceClass;
-	}
-
-	public void setInstanceClass(String instanceClass) {
-		this.instanceClass = instanceClass;
-		if(instanceClass != null){
-			putQueryParameter("InstanceClass", instanceClass);
-		}
-	}
-
-	public String getSwitchTimeMode() {
-		return this.switchTimeMode;
-	}
-
-	public void setSwitchTimeMode(String switchTimeMode) {
-		this.switchTimeMode = switchTimeMode;
-		if(switchTimeMode != null){
-			putQueryParameter("SwitchTimeMode", switchTimeMode);
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
 		}
 	}
 
@@ -114,6 +86,17 @@ public class ModifyNodeSpecRequest extends RpcAcsRequest<ModifyNodeSpecResponse>
 		}
 	}
 
+	public String getParameterName() {
+		return this.parameterName;
+	}
+
+	public void setParameterName(String parameterName) {
+		this.parameterName = parameterName;
+		if(parameterName != null){
+			putQueryParameter("ParameterName", parameterName);
+		}
+	}
+
 	public String getNodeId() {
 		return this.nodeId;
 	}
@@ -122,28 +105,6 @@ public class ModifyNodeSpecRequest extends RpcAcsRequest<ModifyNodeSpecResponse>
 		this.nodeId = nodeId;
 		if(nodeId != null){
 			putQueryParameter("NodeId", nodeId);
-		}
-	}
-
-	public String getBusinessInfo() {
-		return this.businessInfo;
-	}
-
-	public void setBusinessInfo(String businessInfo) {
-		this.businessInfo = businessInfo;
-		if(businessInfo != null){
-			putQueryParameter("BusinessInfo", businessInfo);
-		}
-	}
-
-	public Boolean getAutoPay() {
-		return this.autoPay;
-	}
-
-	public void setAutoPay(Boolean autoPay) {
-		this.autoPay = autoPay;
-		if(autoPay != null){
-			putQueryParameter("AutoPay", autoPay.toString());
 		}
 	}
 
@@ -169,6 +130,17 @@ public class ModifyNodeSpecRequest extends RpcAcsRequest<ModifyNodeSpecResponse>
 		}
 	}
 
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -191,20 +163,9 @@ public class ModifyNodeSpecRequest extends RpcAcsRequest<ModifyNodeSpecResponse>
 		}
 	}
 
-	public String getOrderType() {
-		return this.orderType;
-	}
-
-	public void setOrderType(String orderType) {
-		this.orderType = orderType;
-		if(orderType != null){
-			putQueryParameter("OrderType", orderType);
-		}
-	}
-
 	@Override
-	public Class<ModifyNodeSpecResponse> getResponseClass() {
-		return ModifyNodeSpecResponse.class;
+	public Class<DescribeParameterModificationHistoryResponse> getResponseClass() {
+		return DescribeParameterModificationHistoryResponse.class;
 	}
 
 }

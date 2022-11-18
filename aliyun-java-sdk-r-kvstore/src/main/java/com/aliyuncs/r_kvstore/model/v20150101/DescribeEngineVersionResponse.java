@@ -44,6 +44,8 @@ public class DescribeEngineVersionResponse extends AcsResponse {
 
 	private String minorVersion;
 
+	private Boolean isRedisCompatibleVersion;
+
 	public Boolean getIsLatestVersion() {
 		return this.isLatestVersion;
 	}
@@ -122,6 +124,14 @@ public class DescribeEngineVersionResponse extends AcsResponse {
 
 	public void setMinorVersion(String minorVersion) {
 		this.minorVersion = minorVersion;
+	}
+
+	public Boolean getIsRedisCompatibleVersion() {
+		return this.isRedisCompatibleVersion;
+	}
+
+	public void setIsRedisCompatibleVersion(Boolean isRedisCompatibleVersion) {
+		this.isRedisCompatibleVersion = isRedisCompatibleVersion;
 	}
 
 	@Override

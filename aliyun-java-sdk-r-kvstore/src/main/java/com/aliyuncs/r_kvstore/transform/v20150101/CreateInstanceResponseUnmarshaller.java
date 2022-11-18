@@ -43,6 +43,7 @@ public class CreateInstanceResponseUnmarshaller {
 		createInstanceResponse.setInstanceStatus(_ctx.stringValue("CreateInstanceResponse.InstanceStatus"));
 		createInstanceResponse.setPrivateIpAddr(_ctx.stringValue("CreateInstanceResponse.PrivateIpAddr"));
 		createInstanceResponse.setUserName(_ctx.stringValue("CreateInstanceResponse.UserName"));
+		createInstanceResponse.setOrderId(_ctx.longValue("CreateInstanceResponse.OrderId"));
 	 
 	 	return createInstanceResponse;
 	}
