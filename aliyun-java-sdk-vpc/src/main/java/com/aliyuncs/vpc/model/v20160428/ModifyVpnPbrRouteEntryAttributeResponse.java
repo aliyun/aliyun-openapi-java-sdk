@@ -15,18 +15,16 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.vpc.transform.v20160428.CreatePhysicalConnectionOccupancyOrderResponseUnmarshaller;
+import com.aliyuncs.vpc.transform.v20160428.ModifyVpnPbrRouteEntryAttributeResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreatePhysicalConnectionOccupancyOrderResponse extends AcsResponse {
+public class ModifyVpnPbrRouteEntryAttributeResponse extends AcsResponse {
 
 	private String requestId;
-
-	private Data data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,29 +34,13 @@ public class CreatePhysicalConnectionOccupancyOrderResponse extends AcsResponse 
 		this.requestId = requestId;
 	}
 
-	public Data getData() {
-		return this.data;
-	}
-
-	public void setData(Data data) {
-		this.data = data;
-	}
-
-	public static class Data {
-
-		private String orderId;
-
-		public String getOrderId() {
-			return this.orderId;
-		}
-
-		public void setOrderId(String orderId) {
-			this.orderId = orderId;
-		}
+	@Override
+	public ModifyVpnPbrRouteEntryAttributeResponse getInstance(UnmarshallerContext context) {
+		return	ModifyVpnPbrRouteEntryAttributeResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
-	public CreatePhysicalConnectionOccupancyOrderResponse getInstance(UnmarshallerContext context) {
-		return	CreatePhysicalConnectionOccupancyOrderResponseUnmarshaller.unmarshall(this, context);
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

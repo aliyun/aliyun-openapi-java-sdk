@@ -15,6 +15,7 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vpc.Endpoint;
 
@@ -38,6 +39,8 @@ public class CreateFlowLogRequest extends RpcAcsRequest<CreateFlowLogResponse> {
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
+
+	private List<String> trafficPaths;
 
 	private Integer aggregationInterval;
 
@@ -132,6 +135,19 @@ public class CreateFlowLogRequest extends RpcAcsRequest<CreateFlowLogResponse> {
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
 		}
+	}
+
+	public List<String> getTrafficPaths() {
+		return this.trafficPaths;
+	}
+
+	public void setTrafficPaths(List<String> trafficPaths) {
+		this.trafficPaths = trafficPaths;	
+		if (trafficPaths != null) {
+			for (int i = 0; i < trafficPaths.size(); i++) {
+				putQueryParameter("TrafficPath." + (i + 1) , trafficPaths.get(i));
+			}
+		}	
 	}
 
 	public Integer getAggregationInterval() {

@@ -15,6 +15,7 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vpc.Endpoint;
 
@@ -24,6 +25,8 @@ import com.aliyuncs.vpc.Endpoint;
  */
 public class DescribeRouteEntryListRequest extends RpcAcsRequest<DescribeRouteEntryListResponse> {
 	   
+
+	private List<String> destCidrBlockLists;
 
 	private Long resourceOwnerId;
 
@@ -51,6 +54,8 @@ public class DescribeRouteEntryListRequest extends RpcAcsRequest<DescribeRouteEn
 
 	private Integer maxResult;
 
+	private String serviceType;
+
 	private String routeEntryId;
 	public DescribeRouteEntryListRequest() {
 		super("Vpc", "2016-04-28", "DescribeRouteEntryList", "vpc");
@@ -59,6 +64,19 @@ public class DescribeRouteEntryListRequest extends RpcAcsRequest<DescribeRouteEn
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public List<String> getDestCidrBlockLists() {
+		return this.destCidrBlockLists;
+	}
+
+	public void setDestCidrBlockLists(List<String> destCidrBlockLists) {
+		this.destCidrBlockLists = destCidrBlockLists;	
+		if (destCidrBlockLists != null) {
+			for (int i = 0; i < destCidrBlockLists.size(); i++) {
+				putQueryParameter("DestCidrBlockList." + (i + 1) , destCidrBlockLists.get(i));
+			}
+		}	
 	}
 
 	public Long getResourceOwnerId() {
@@ -201,6 +219,17 @@ public class DescribeRouteEntryListRequest extends RpcAcsRequest<DescribeRouteEn
 		this.maxResult = maxResult;
 		if(maxResult != null){
 			putQueryParameter("MaxResult", maxResult.toString());
+		}
+	}
+
+	public String getServiceType() {
+		return this.serviceType;
+	}
+
+	public void setServiceType(String serviceType) {
+		this.serviceType = serviceType;
+		if(serviceType != null){
+			putQueryParameter("ServiceType", serviceType);
 		}
 	}
 

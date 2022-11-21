@@ -41,6 +41,7 @@ public class DescribeVpnPbrRouteEntriesResponseUnmarshaller {
 			vpnPbrRouteEntry.setCreateTime(_ctx.longValue("DescribeVpnPbrRouteEntriesResponse.VpnPbrRouteEntries["+ i +"].CreateTime"));
 			vpnPbrRouteEntry.setVpnInstanceId(_ctx.stringValue("DescribeVpnPbrRouteEntriesResponse.VpnPbrRouteEntries["+ i +"].VpnInstanceId"));
 			vpnPbrRouteEntry.setRouteSource(_ctx.stringValue("DescribeVpnPbrRouteEntriesResponse.VpnPbrRouteEntries["+ i +"].RouteSource"));
+			vpnPbrRouteEntry.setPriority(_ctx.integerValue("DescribeVpnPbrRouteEntriesResponse.VpnPbrRouteEntries["+ i +"].Priority"));
 
 			vpnPbrRouteEntries.add(vpnPbrRouteEntry);
 		}

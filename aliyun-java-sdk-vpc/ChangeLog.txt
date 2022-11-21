@@ -1,3 +1,11 @@
+2022-11-21 Version: 3.2.8
+- ResponseLog true.
+- Support bandwidth.
+- Fix error code translation error.
+- Repair error code English translation.
+- Changes the param NextToken of ListDhcpOptionsSet to optional in API docs.
+- Fixed CreateVpcPrefixList paramer name invalid.
+
 2022-09-20 Version: 3.2.7
 - DescribeSnatTableEntries DescribeSnatTableEntries ListFullnatEntries support query --by natGatewayId.
 

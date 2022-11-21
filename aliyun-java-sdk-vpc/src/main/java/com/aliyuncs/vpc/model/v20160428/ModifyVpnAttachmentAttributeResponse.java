@@ -382,6 +382,8 @@ public class ModifyVpnAttachmentAttributeResponse extends AcsResponse {
 
 		private Integer retry;
 
+		private String policy;
+
 		public String getEnable() {
 			return this.enable;
 		}
@@ -420,6 +422,14 @@ public class ModifyVpnAttachmentAttributeResponse extends AcsResponse {
 
 		public void setRetry(Integer retry) {
 			this.retry = retry;
+		}
+
+		public String getPolicy() {
+			return this.policy;
+		}
+
+		public void setPolicy(String policy) {
+			this.policy = policy;
 		}
 	}
 

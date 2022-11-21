@@ -117,6 +117,8 @@ public class DescribeVpnConnectionsResponse extends AcsResponse {
 
 		private Boolean crossAccountAuthorized;
 
+		private String internetIp;
+
 		private IkeConfig ikeConfig;
 
 		private IpsecConfig ipsecConfig;
@@ -283,6 +285,14 @@ public class DescribeVpnConnectionsResponse extends AcsResponse {
 
 		public void setCrossAccountAuthorized(Boolean crossAccountAuthorized) {
 			this.crossAccountAuthorized = crossAccountAuthorized;
+		}
+
+		public String getInternetIp() {
+			return this.internetIp;
+		}
+
+		public void setInternetIp(String internetIp) {
+			this.internetIp = internetIp;
 		}
 
 		public IkeConfig getIkeConfig() {

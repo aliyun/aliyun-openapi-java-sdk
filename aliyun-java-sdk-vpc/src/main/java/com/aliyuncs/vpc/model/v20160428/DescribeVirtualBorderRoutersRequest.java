@@ -32,6 +32,8 @@ public class DescribeVirtualBorderRoutersRequest extends RpcAcsRequest<DescribeV
 
 	private Integer pageSize;
 
+	private Boolean includeCrossAccountVbr;
+
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
@@ -76,6 +78,17 @@ public class DescribeVirtualBorderRoutersRequest extends RpcAcsRequest<DescribeV
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Boolean getIncludeCrossAccountVbr() {
+		return this.includeCrossAccountVbr;
+	}
+
+	public void setIncludeCrossAccountVbr(Boolean includeCrossAccountVbr) {
+		this.includeCrossAccountVbr = includeCrossAccountVbr;
+		if(includeCrossAccountVbr != null){
+			putQueryParameter("IncludeCrossAccountVbr", includeCrossAccountVbr.toString());
 		}
 	}
 

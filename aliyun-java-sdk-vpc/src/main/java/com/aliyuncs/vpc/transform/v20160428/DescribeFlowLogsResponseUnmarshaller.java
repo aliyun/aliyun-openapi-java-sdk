@@ -48,6 +48,13 @@ public class DescribeFlowLogsResponseUnmarshaller {
 			flowLog.setFlowLogId(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].FlowLogId"));
 			flowLog.setBusinessStatus(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].BusinessStatus"));
 			flowLog.setAggregationInterval(_ctx.integerValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].AggregationInterval"));
+			flowLog.setServiceType(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].ServiceType"));
+
+			List<String> trafficPath = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].TrafficPath.Length"); j++) {
+				trafficPath.add(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].TrafficPath["+ j +"]"));
+			}
+			flowLog.setTrafficPath(trafficPath);
 
 			flowLogs.add(flowLog);
 		}

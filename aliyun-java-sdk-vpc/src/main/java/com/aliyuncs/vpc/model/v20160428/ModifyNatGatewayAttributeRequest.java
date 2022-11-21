@@ -40,6 +40,8 @@ public class ModifyNatGatewayAttributeRequest extends RpcAcsRequest<ModifyNatGat
 	private Long ownerId;
 
 	private String name;
+
+	private String eipBindMode;
 	public ModifyNatGatewayAttributeRequest() {
 		super("Vpc", "2016-04-28", "ModifyNatGatewayAttribute", "vpc");
 		setMethod(MethodType.POST);
@@ -134,6 +136,17 @@ public class ModifyNatGatewayAttributeRequest extends RpcAcsRequest<ModifyNatGat
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getEipBindMode() {
+		return this.eipBindMode;
+	}
+
+	public void setEipBindMode(String eipBindMode) {
+		this.eipBindMode = eipBindMode;
+		if(eipBindMode != null){
+			putQueryParameter("EipBindMode", eipBindMode);
 		}
 	}
 

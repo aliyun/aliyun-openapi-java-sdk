@@ -97,6 +97,8 @@ public class ListPrefixListsResponse extends AcsResponse {
 
 		private String prefixListStatus;
 
+		private String regionId;
+
 		private List<String> cidrBlocks;
 
 		public String getPrefixListId() {
@@ -177,6 +179,14 @@ public class ListPrefixListsResponse extends AcsResponse {
 
 		public void setPrefixListStatus(String prefixListStatus) {
 			this.prefixListStatus = prefixListStatus;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
 		public List<String> getCidrBlocks() {

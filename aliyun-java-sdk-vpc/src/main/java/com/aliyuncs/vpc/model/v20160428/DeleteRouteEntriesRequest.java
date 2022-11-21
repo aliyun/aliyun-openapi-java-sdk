@@ -15,6 +15,7 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vpc.Endpoint;
 
@@ -22,7 +23,7 @@ import com.aliyuncs.vpc.Endpoint;
  * @author auto create
  * @version 
  */
-public class UnassociateVpcCidrBlockRequest extends RpcAcsRequest<UnassociateVpcCidrBlockResponse> {
+public class DeleteRouteEntriesRequest extends RpcAcsRequest<DeleteRouteEntriesResponse> {
 	   
 
 	private Long resourceOwnerId;
@@ -33,13 +34,9 @@ public class UnassociateVpcCidrBlockRequest extends RpcAcsRequest<UnassociateVpc
 
 	private Long ownerId;
 
-	private String iPv6CidrBlock;
-
-	private String secondaryCidrBlock;
-
-	private String vpcId;
-	public UnassociateVpcCidrBlockRequest() {
-		super("Vpc", "2016-04-28", "UnassociateVpcCidrBlock", "vpc");
+	private List<RouteEntries> routeEntriess;
+	public DeleteRouteEntriesRequest() {
+		super("Vpc", "2016-04-28", "DeleteRouteEntries", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -91,42 +88,68 @@ public class UnassociateVpcCidrBlockRequest extends RpcAcsRequest<UnassociateVpc
 		}
 	}
 
-	public String getIPv6CidrBlock() {
-		return this.iPv6CidrBlock;
+	public List<RouteEntries> getRouteEntriess() {
+		return this.routeEntriess;
 	}
 
-	public void setIPv6CidrBlock(String iPv6CidrBlock) {
-		this.iPv6CidrBlock = iPv6CidrBlock;
-		if(iPv6CidrBlock != null){
-			putQueryParameter("IPv6CidrBlock", iPv6CidrBlock);
+	public void setRouteEntriess(List<RouteEntries> routeEntriess) {
+		this.routeEntriess = routeEntriess;	
+		if (routeEntriess != null) {
+			for (int depth1 = 0; depth1 < routeEntriess.size(); depth1++) {
+				putQueryParameter("RouteEntries." + (depth1 + 1) + ".RouteTableId" , routeEntriess.get(depth1).getRouteTableId());
+				putQueryParameter("RouteEntries." + (depth1 + 1) + ".RouteEntryId" , routeEntriess.get(depth1).getRouteEntryId());
+				putQueryParameter("RouteEntries." + (depth1 + 1) + ".DstCidrBlock" , routeEntriess.get(depth1).getDstCidrBlock());
+				putQueryParameter("RouteEntries." + (depth1 + 1) + ".NextHop" , routeEntriess.get(depth1).getNextHop());
+			}
+		}	
+	}
+
+	public static class RouteEntries {
+
+		private String routeTableId;
+
+		private String routeEntryId;
+
+		private String dstCidrBlock;
+
+		private String nextHop;
+
+		public String getRouteTableId() {
+			return this.routeTableId;
 		}
-	}
 
-	public String getSecondaryCidrBlock() {
-		return this.secondaryCidrBlock;
-	}
-
-	public void setSecondaryCidrBlock(String secondaryCidrBlock) {
-		this.secondaryCidrBlock = secondaryCidrBlock;
-		if(secondaryCidrBlock != null){
-			putQueryParameter("SecondaryCidrBlock", secondaryCidrBlock);
+		public void setRouteTableId(String routeTableId) {
+			this.routeTableId = routeTableId;
 		}
-	}
 
-	public String getVpcId() {
-		return this.vpcId;
-	}
+		public String getRouteEntryId() {
+			return this.routeEntryId;
+		}
 
-	public void setVpcId(String vpcId) {
-		this.vpcId = vpcId;
-		if(vpcId != null){
-			putQueryParameter("VpcId", vpcId);
+		public void setRouteEntryId(String routeEntryId) {
+			this.routeEntryId = routeEntryId;
+		}
+
+		public String getDstCidrBlock() {
+			return this.dstCidrBlock;
+		}
+
+		public void setDstCidrBlock(String dstCidrBlock) {
+			this.dstCidrBlock = dstCidrBlock;
+		}
+
+		public String getNextHop() {
+			return this.nextHop;
+		}
+
+		public void setNextHop(String nextHop) {
+			this.nextHop = nextHop;
 		}
 	}
 
 	@Override
-	public Class<UnassociateVpcCidrBlockResponse> getResponseClass() {
-		return UnassociateVpcCidrBlockResponse.class;
+	public Class<DeleteRouteEntriesResponse> getResponseClass() {
+		return DeleteRouteEntriesResponse.class;
 	}
 
 }

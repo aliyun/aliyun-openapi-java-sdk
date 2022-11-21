@@ -32,6 +32,7 @@ public class CreateVpnPbrRouteEntryResponseUnmarshaller {
 		createVpnPbrRouteEntryResponse.setOverlayMode(_ctx.stringValue("CreateVpnPbrRouteEntryResponse.OverlayMode"));
 		createVpnPbrRouteEntryResponse.setRouteSource(_ctx.stringValue("CreateVpnPbrRouteEntryResponse.RouteSource"));
 		createVpnPbrRouteEntryResponse.setVpnInstanceId(_ctx.stringValue("CreateVpnPbrRouteEntryResponse.VpnInstanceId"));
+		createVpnPbrRouteEntryResponse.setPriority(_ctx.integerValue("CreateVpnPbrRouteEntryResponse.Priority"));
 	 
 	 	return createVpnPbrRouteEntryResponse;
 	}

@@ -22,24 +22,14 @@ import com.aliyuncs.vpc.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyBgpGroupAttributeRequest extends RpcAcsRequest<ModifyBgpGroupAttributeResponse> {
+public class GetVpcRouteEntrySummaryRequest extends RpcAcsRequest<GetVpcRouteEntrySummaryResponse> {
 	   
-
-	private String authKey;
 
 	private Long resourceOwnerId;
 
-	private String clientToken;
+	private String routeEntryType;
 
-	private String bgpGroupId;
-
-	private String description;
-
-	private Long peerAsn;
-
-	private Boolean isFakeAsn;
-
-	private Boolean clearAuthKey;
+	private String routeTableId;
 
 	private String resourceOwnerAccount;
 
@@ -47,25 +37,14 @@ public class ModifyBgpGroupAttributeRequest extends RpcAcsRequest<ModifyBgpGroup
 
 	private Long ownerId;
 
-	private String name;
-	public ModifyBgpGroupAttributeRequest() {
-		super("Vpc", "2016-04-28", "ModifyBgpGroupAttribute", "vpc");
+	private String vpcId;
+	public GetVpcRouteEntrySummaryRequest() {
+		super("Vpc", "2016-04-28", "GetVpcRouteEntrySummary", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getAuthKey() {
-		return this.authKey;
-	}
-
-	public void setAuthKey(String authKey) {
-		this.authKey = authKey;
-		if(authKey != null){
-			putQueryParameter("AuthKey", authKey);
-		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -79,69 +58,25 @@ public class ModifyBgpGroupAttributeRequest extends RpcAcsRequest<ModifyBgpGroup
 		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
+	public String getRouteEntryType() {
+		return this.routeEntryType;
 	}
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
+	public void setRouteEntryType(String routeEntryType) {
+		this.routeEntryType = routeEntryType;
+		if(routeEntryType != null){
+			putQueryParameter("RouteEntryType", routeEntryType);
 		}
 	}
 
-	public String getBgpGroupId() {
-		return this.bgpGroupId;
+	public String getRouteTableId() {
+		return this.routeTableId;
 	}
 
-	public void setBgpGroupId(String bgpGroupId) {
-		this.bgpGroupId = bgpGroupId;
-		if(bgpGroupId != null){
-			putQueryParameter("BgpGroupId", bgpGroupId);
-		}
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
-		}
-	}
-
-	public Long getPeerAsn() {
-		return this.peerAsn;
-	}
-
-	public void setPeerAsn(Long peerAsn) {
-		this.peerAsn = peerAsn;
-		if(peerAsn != null){
-			putQueryParameter("PeerAsn", peerAsn.toString());
-		}
-	}
-
-	public Boolean getIsFakeAsn() {
-		return this.isFakeAsn;
-	}
-
-	public void setIsFakeAsn(Boolean isFakeAsn) {
-		this.isFakeAsn = isFakeAsn;
-		if(isFakeAsn != null){
-			putQueryParameter("IsFakeAsn", isFakeAsn.toString());
-		}
-	}
-
-	public Boolean getClearAuthKey() {
-		return this.clearAuthKey;
-	}
-
-	public void setClearAuthKey(Boolean clearAuthKey) {
-		this.clearAuthKey = clearAuthKey;
-		if(clearAuthKey != null){
-			putQueryParameter("ClearAuthKey", clearAuthKey.toString());
+	public void setRouteTableId(String routeTableId) {
+		this.routeTableId = routeTableId;
+		if(routeTableId != null){
+			putQueryParameter("RouteTableId", routeTableId);
 		}
 	}
 
@@ -178,20 +113,20 @@ public class ModifyBgpGroupAttributeRequest extends RpcAcsRequest<ModifyBgpGroup
 		}
 	}
 
-	public String getName() {
-		return this.name;
+	public String getVpcId() {
+		return this.vpcId;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
 		}
 	}
 
 	@Override
-	public Class<ModifyBgpGroupAttributeResponse> getResponseClass() {
-		return ModifyBgpGroupAttributeResponse.class;
+	public Class<GetVpcRouteEntrySummaryResponse> getResponseClass() {
+		return GetVpcRouteEntrySummaryResponse.class;
 	}
 
 }

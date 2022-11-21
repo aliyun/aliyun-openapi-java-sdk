@@ -58,6 +58,7 @@ public class DescribeVpnConnectionsResponseUnmarshaller {
 			vpnConnection.setTransitRouterId(_ctx.stringValue("DescribeVpnConnectionsResponse.VpnConnections["+ i +"].TransitRouterId"));
 			vpnConnection.setTransitRouterName(_ctx.stringValue("DescribeVpnConnectionsResponse.VpnConnections["+ i +"].TransitRouterName"));
 			vpnConnection.setCrossAccountAuthorized(_ctx.booleanValue("DescribeVpnConnectionsResponse.VpnConnections["+ i +"].CrossAccountAuthorized"));
+			vpnConnection.setInternetIp(_ctx.stringValue("DescribeVpnConnectionsResponse.VpnConnections["+ i +"].InternetIp"));
 
 			IkeConfig ikeConfig = new IkeConfig();
 			ikeConfig.setRemoteId(_ctx.stringValue("DescribeVpnConnectionsResponse.VpnConnections["+ i +"].IkeConfig.RemoteId"));

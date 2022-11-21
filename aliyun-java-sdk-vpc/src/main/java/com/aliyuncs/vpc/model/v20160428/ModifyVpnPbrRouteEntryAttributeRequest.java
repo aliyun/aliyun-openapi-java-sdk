@@ -22,7 +22,7 @@ import com.aliyuncs.vpc.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateVpnPbrRouteEntryRequest extends RpcAcsRequest<CreateVpnPbrRouteEntryResponse> {
+public class ModifyVpnPbrRouteEntryAttributeRequest extends RpcAcsRequest<ModifyVpnPbrRouteEntryAttributeResponse> {
 	   
 
 	private String routeSource;
@@ -31,9 +31,9 @@ public class CreateVpnPbrRouteEntryRequest extends RpcAcsRequest<CreateVpnPbrRou
 
 	private String clientToken;
 
-	private String description;
+	private Integer newWeight;
 
-	private Boolean publishVpc;
+	private Integer newPriority;
 
 	private String resourceOwnerAccount;
 
@@ -50,10 +50,8 @@ public class CreateVpnPbrRouteEntryRequest extends RpcAcsRequest<CreateVpnPbrRou
 	private String routeDest;
 
 	private String nextHop;
-
-	private String overlayMode;
-	public CreateVpnPbrRouteEntryRequest() {
-		super("Vpc", "2016-04-28", "CreateVpnPbrRouteEntry", "vpc");
+	public ModifyVpnPbrRouteEntryAttributeRequest() {
+		super("Vpc", "2016-04-28", "ModifyVpnPbrRouteEntryAttribute", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -94,25 +92,25 @@ public class CreateVpnPbrRouteEntryRequest extends RpcAcsRequest<CreateVpnPbrRou
 		}
 	}
 
-	public String getDescription() {
-		return this.description;
+	public Integer getNewWeight() {
+		return this.newWeight;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
+	public void setNewWeight(Integer newWeight) {
+		this.newWeight = newWeight;
+		if(newWeight != null){
+			putQueryParameter("NewWeight", newWeight.toString());
 		}
 	}
 
-	public Boolean getPublishVpc() {
-		return this.publishVpc;
+	public Integer getNewPriority() {
+		return this.newPriority;
 	}
 
-	public void setPublishVpc(Boolean publishVpc) {
-		this.publishVpc = publishVpc;
-		if(publishVpc != null){
-			putQueryParameter("PublishVpc", publishVpc.toString());
+	public void setNewPriority(Integer newPriority) {
+		this.newPriority = newPriority;
+		if(newPriority != null){
+			putQueryParameter("NewPriority", newPriority.toString());
 		}
 	}
 
@@ -204,20 +202,9 @@ public class CreateVpnPbrRouteEntryRequest extends RpcAcsRequest<CreateVpnPbrRou
 		}
 	}
 
-	public String getOverlayMode() {
-		return this.overlayMode;
-	}
-
-	public void setOverlayMode(String overlayMode) {
-		this.overlayMode = overlayMode;
-		if(overlayMode != null){
-			putQueryParameter("OverlayMode", overlayMode);
-		}
-	}
-
 	@Override
-	public Class<CreateVpnPbrRouteEntryResponse> getResponseClass() {
-		return CreateVpnPbrRouteEntryResponse.class;
+	public Class<ModifyVpnPbrRouteEntryAttributeResponse> getResponseClass() {
+		return ModifyVpnPbrRouteEntryAttributeResponse.class;
 	}
 
 }

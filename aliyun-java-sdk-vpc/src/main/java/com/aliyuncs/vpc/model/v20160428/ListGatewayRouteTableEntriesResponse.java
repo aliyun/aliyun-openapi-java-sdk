@@ -79,6 +79,8 @@ public class ListGatewayRouteTableEntriesResponse extends AcsResponse {
 
 		private String name;
 
+		private List<NextHop> nextHops;
+
 		public String getStatus() {
 			return this.status;
 		}
@@ -125,6 +127,57 @@ public class ListGatewayRouteTableEntriesResponse extends AcsResponse {
 
 		public void setName(String name) {
 			this.name = name;
+		}
+
+		public List<NextHop> getNextHops() {
+			return this.nextHops;
+		}
+
+		public void setNextHops(List<NextHop> nextHops) {
+			this.nextHops = nextHops;
+		}
+
+		public static class NextHop {
+
+			private String nextHopId;
+
+			private String nextHopType;
+
+			private String weight;
+
+			private String enabled;
+
+			public String getNextHopId() {
+				return this.nextHopId;
+			}
+
+			public void setNextHopId(String nextHopId) {
+				this.nextHopId = nextHopId;
+			}
+
+			public String getNextHopType() {
+				return this.nextHopType;
+			}
+
+			public void setNextHopType(String nextHopType) {
+				this.nextHopType = nextHopType;
+			}
+
+			public String getWeight() {
+				return this.weight;
+			}
+
+			public void setWeight(String weight) {
+				this.weight = weight;
+			}
+
+			public String getEnabled() {
+				return this.enabled;
+			}
+
+			public void setEnabled(String enabled) {
+				this.enabled = enabled;
+			}
 		}
 	}
 

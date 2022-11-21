@@ -113,6 +113,10 @@ public class DescribeFlowLogsResponse extends AcsResponse {
 
 		private Integer aggregationInterval;
 
+		private String serviceType;
+
+		private List<String> trafficPath;
+
 		public String getStatus() {
 			return this.status;
 		}
@@ -215,6 +219,22 @@ public class DescribeFlowLogsResponse extends AcsResponse {
 
 		public void setAggregationInterval(Integer aggregationInterval) {
 			this.aggregationInterval = aggregationInterval;
+		}
+
+		public String getServiceType() {
+			return this.serviceType;
+		}
+
+		public void setServiceType(String serviceType) {
+			this.serviceType = serviceType;
+		}
+
+		public List<String> getTrafficPath() {
+			return this.trafficPath;
+		}
+
+		public void setTrafficPath(List<String> trafficPath) {
+			this.trafficPath = trafficPath;
 		}
 	}
 

@@ -44,6 +44,8 @@ public class CreateVpnPbrRouteEntryResponse extends AcsResponse {
 
 	private String vpnInstanceId;
 
+	private Integer priority;
+
 	public String getNextHop() {
 		return this.nextHop;
 	}
@@ -122,6 +124,14 @@ public class CreateVpnPbrRouteEntryResponse extends AcsResponse {
 
 	public void setVpnInstanceId(String vpnInstanceId) {
 		this.vpnInstanceId = vpnInstanceId;
+	}
+
+	public Integer getPriority() {
+		return this.priority;
+	}
+
+	public void setPriority(Integer priority) {
+		this.priority = priority;
 	}
 
 	@Override

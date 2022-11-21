@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.vpc.model.v20160428.ListGatewayRouteTableEntriesResponse;
 import com.aliyuncs.vpc.model.v20160428.ListGatewayRouteTableEntriesResponse.GatewayRouteEntryModelsItem;
+import com.aliyuncs.vpc.model.v20160428.ListGatewayRouteTableEntriesResponse.GatewayRouteEntryModelsItem.NextHop;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -39,6 +40,18 @@ public class ListGatewayRouteTableEntriesResponseUnmarshaller {
 			gatewayRouteEntryModelsItem.setNextHopType(_ctx.stringValue("ListGatewayRouteTableEntriesResponse.GatewayRouteEntryModels["+ i +"].NextHopType"));
 			gatewayRouteEntryModelsItem.setDestinationCidrBlock(_ctx.stringValue("ListGatewayRouteTableEntriesResponse.GatewayRouteEntryModels["+ i +"].DestinationCidrBlock"));
 			gatewayRouteEntryModelsItem.setName(_ctx.stringValue("ListGatewayRouteTableEntriesResponse.GatewayRouteEntryModels["+ i +"].Name"));
+
+			List<NextHop> nextHops = new ArrayList<NextHop>();
+			for (int j = 0; j < _ctx.lengthValue("ListGatewayRouteTableEntriesResponse.GatewayRouteEntryModels["+ i +"].NextHops.Length"); j++) {
+				NextHop nextHop = new NextHop();
+				nextHop.setNextHopId(_ctx.stringValue("ListGatewayRouteTableEntriesResponse.GatewayRouteEntryModels["+ i +"].NextHops["+ j +"].NextHopId"));
+				nextHop.setNextHopType(_ctx.stringValue("ListGatewayRouteTableEntriesResponse.GatewayRouteEntryModels["+ i +"].NextHops["+ j +"].NextHopType"));
+				nextHop.setWeight(_ctx.stringValue("ListGatewayRouteTableEntriesResponse.GatewayRouteEntryModels["+ i +"].NextHops["+ j +"].Weight"));
+				nextHop.setEnabled(_ctx.stringValue("ListGatewayRouteTableEntriesResponse.GatewayRouteEntryModels["+ i +"].NextHops["+ j +"].Enabled"));
+
+				nextHops.add(nextHop);
+			}
+			gatewayRouteEntryModelsItem.setNextHops(nextHops);
 
 			gatewayRouteEntryModels.add(gatewayRouteEntryModelsItem);
 		}

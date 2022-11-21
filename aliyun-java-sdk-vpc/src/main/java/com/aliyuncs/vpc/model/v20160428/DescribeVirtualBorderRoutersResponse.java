@@ -141,6 +141,8 @@ public class DescribeVirtualBorderRoutersResponse extends AcsResponse {
 
 		private String physicalConnectionId;
 
+		private Integer bandwidth;
+
 		private List<AssociatedPhysicalConnection> associatedPhysicalConnections;
 
 		private List<AssociatedCen> associatedCens;
@@ -399,6 +401,14 @@ public class DescribeVirtualBorderRoutersResponse extends AcsResponse {
 
 		public void setPhysicalConnectionId(String physicalConnectionId) {
 			this.physicalConnectionId = physicalConnectionId;
+		}
+
+		public Integer getBandwidth() {
+			return this.bandwidth;
+		}
+
+		public void setBandwidth(Integer bandwidth) {
+			this.bandwidth = bandwidth;
 		}
 
 		public List<AssociatedPhysicalConnection> getAssociatedPhysicalConnections() {

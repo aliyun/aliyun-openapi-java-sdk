@@ -69,6 +69,7 @@ public class ModifyVpnAttachmentAttributeResponseUnmarshaller {
 		vcoHealthCheck.setDip(_ctx.stringValue("ModifyVpnAttachmentAttributeResponse.VcoHealthCheck.Dip"));
 		vcoHealthCheck.setInterval(_ctx.integerValue("ModifyVpnAttachmentAttributeResponse.VcoHealthCheck.Interval"));
 		vcoHealthCheck.setRetry(_ctx.integerValue("ModifyVpnAttachmentAttributeResponse.VcoHealthCheck.Retry"));
+		vcoHealthCheck.setPolicy(_ctx.stringValue("ModifyVpnAttachmentAttributeResponse.VcoHealthCheck.Policy"));
 		modifyVpnAttachmentAttributeResponse.setVcoHealthCheck(vcoHealthCheck);
 
 		VpnBgpConfig vpnBgpConfig = new VpnBgpConfig();

@@ -40,6 +40,7 @@ public class GetVpcPrefixListAssociationsResponseUnmarshaller {
 			prefixListAssociations.setOwnerId(_ctx.stringValue("GetVpcPrefixListAssociationsResponse.PrefixListAssociation["+ i +"].OwnerId"));
 			prefixListAssociations.setStatus(_ctx.stringValue("GetVpcPrefixListAssociationsResponse.PrefixListAssociation["+ i +"].Status"));
 			prefixListAssociations.setReason(_ctx.stringValue("GetVpcPrefixListAssociationsResponse.PrefixListAssociation["+ i +"].Reason"));
+			prefixListAssociations.setRegionId(_ctx.stringValue("GetVpcPrefixListAssociationsResponse.PrefixListAssociation["+ i +"].RegionId"));
 
 			prefixListAssociation.add(prefixListAssociations);
 		}
