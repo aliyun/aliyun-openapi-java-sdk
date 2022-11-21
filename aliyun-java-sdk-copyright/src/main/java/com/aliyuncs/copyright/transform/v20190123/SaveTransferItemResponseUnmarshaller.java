@@ -48,6 +48,10 @@ public class SaveTransferItemResponseUnmarshaller {
 		module.setTranHash(_ctx.stringValue("SaveTransferItemResponse.Module.TranHash"));
 		module.setItemId(_ctx.integerValue("SaveTransferItemResponse.Module.ItemId"));
 		module.setUserId(_ctx.integerValue("SaveTransferItemResponse.Module.UserId"));
+		module.setNo(_ctx.stringValue("SaveTransferItemResponse.Module.No"));
+		module.setAddress(_ctx.stringValue("SaveTransferItemResponse.Module.Address"));
+		module.setShardId(_ctx.longValue("SaveTransferItemResponse.Module.ShardId"));
+		module.setShardKey(_ctx.stringValue("SaveTransferItemResponse.Module.ShardKey"));
 		saveTransferItemResponse.setModule(module);
 	 
 	 	return saveTransferItemResponse;

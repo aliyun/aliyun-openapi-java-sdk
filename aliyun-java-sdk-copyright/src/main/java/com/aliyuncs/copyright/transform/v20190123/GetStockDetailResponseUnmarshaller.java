@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.copyright.model.v20190123.GetStockDetailResponse;
 import com.aliyuncs.copyright.model.v20190123.GetStockDetailResponse.Module;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -48,6 +49,11 @@ public class GetStockDetailResponseUnmarshaller {
 		module.setTranHash(_ctx.stringValue("GetStockDetailResponse.Module.TranHash"));
 		module.setItemId(_ctx.integerValue("GetStockDetailResponse.Module.ItemId"));
 		module.setUserId(_ctx.integerValue("GetStockDetailResponse.Module.UserId"));
+		module.setNo(_ctx.stringValue("GetStockDetailResponse.Module.No"));
+		module.setAddress(_ctx.stringValue("GetStockDetailResponse.Module.Address"));
+		module.setShardId(_ctx.longValue("GetStockDetailResponse.Module.ShardId"));
+		module.setShardKey(_ctx.stringValue("GetStockDetailResponse.Module.ShardKey"));
+		module.setDetail(_ctx.mapValue("GetStockDetailResponse.Module.Detail"));
 		getStockDetailResponse.setModule(module);
 	 
 	 	return getStockDetailResponse;

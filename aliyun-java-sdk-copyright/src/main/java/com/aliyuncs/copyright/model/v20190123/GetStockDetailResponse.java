@@ -15,6 +15,7 @@
 package com.aliyuncs.copyright.model.v20190123;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.copyright.transform.v20190123.GetStockDetailResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -147,6 +148,16 @@ public class GetStockDetailResponse extends AcsResponse {
 
 		private Integer userId;
 
+		private String no;
+
+		private String address;
+
+		private Long shardId;
+
+		private String shardKey;
+
+		private Map<Object,Object> detail;
+
 		public Integer getStockId() {
 			return this.stockId;
 		}
@@ -185,6 +196,46 @@ public class GetStockDetailResponse extends AcsResponse {
 
 		public void setUserId(Integer userId) {
 			this.userId = userId;
+		}
+
+		public String getNo() {
+			return this.no;
+		}
+
+		public void setNo(String no) {
+			this.no = no;
+		}
+
+		public String getAddress() {
+			return this.address;
+		}
+
+		public void setAddress(String address) {
+			this.address = address;
+		}
+
+		public Long getShardId() {
+			return this.shardId;
+		}
+
+		public void setShardId(Long shardId) {
+			this.shardId = shardId;
+		}
+
+		public String getShardKey() {
+			return this.shardKey;
+		}
+
+		public void setShardKey(String shardKey) {
+			this.shardKey = shardKey;
+		}
+
+		public Map<Object,Object> getDetail() {
+			return this.detail;
+		}
+
+		public void setDetail(Map<Object,Object> detail) {
+			this.detail = detail;
 		}
 	}
 
