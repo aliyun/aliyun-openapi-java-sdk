@@ -474,7 +474,7 @@ public class DefaultAcsClientTest {
 
     @SuppressWarnings({"unchecked", "rawtypes", "deprecation"})
     @Test
-    public void testDoActionEndpointTestabilityException() throws ClientException, IOException,
+    public void testDoActionEndpointTestabilityException1() throws ClientException, IOException,
             IllegalArgumentException, IllegalAccessException, NoSuchFieldException, SecurityException {
         Credential credential = mock(Credential.class);
         when(credential.getSecurityToken()).thenReturn(null);
@@ -492,7 +492,8 @@ public class DefaultAcsClientTest {
     }
 
     @Test
-    public void doActionTest() throws ClientException {
+    public void testDoActionEndpointTestabilityException2() throws ClientException,
+            IllegalArgumentException, SecurityException {
         System.setProperty("alibabacloud.accessKeyId", "test");
         System.setProperty("alibabacloud.accessKeyIdSecret", "test");
         DefaultAcsClient client = new DefaultAcsClient("test");
@@ -504,22 +505,32 @@ public class DefaultAcsClientTest {
         thrown.expect(ClientException.class);
         thrown.expectMessage(ErrorCodeConstant.SDK_ENDPOINT_TESTABILITY + " : " + endPoint);
         client.doAction(request);
+    }
 
+    @Test
+    public void testDoAction() throws ClientException, NoSuchFieldException, IllegalAccessException, IOException {
+        DefaultAcsClient client = initDefaultAcsClient();
+        AcsRequest request = initRequest(DescribeEndpointsResponse.class);
         HttpResponse response = mock(HttpResponse.class);
-        AcsRequest req = mock(AcsRequest.class);
-        Mockito.doReturn(response).when(client).doAction(req);
-        when(response.isSuccess()).thenReturn(false);
-        when(response.getHttpContentType()).thenReturn(FormatType.XML);
-        when(response.getHttpContentString()).thenReturn(makeAcsErrorXML("", "", "500", "ServerException", ""));
+        Mockito.doReturn(new ProductDomain("test", "test")).when(request).getSysProductDomain();
+        Mockito.doReturn(response).when(getHttpClient(client)).syncInvoke((HttpRequest) isNull());
+        when(response.isSuccess()).thenReturn(true);
+        when(response.getStatus()).thenReturn(200);
+        when(response.getHttpContentType()).thenReturn(FormatType.JSON);
+        when(response.getHttpContentString()).thenReturn("{\"RequestId\": \"123\"}");
         HttpResponse resp = client.doAction(request);
         Assert.assertNotNull(resp);
-        Assert.assertEquals(500, resp.getStatus());
-        when(response.isSuccess()).thenReturn(true);
-        when(response.getHttpContentType()).thenReturn(FormatType.XML);
-        when(response.getHttpContentString()).thenReturn(makeAcsErrorXML("", "", "200", "Succeed", ""));
-        resp = client.doAction(request);
-        Assert.assertNotNull(resp);
         Assert.assertEquals(200, resp.getStatus());
+        Assert.assertEquals("{\"RequestId\": \"123\"}", resp.getHttpContentString());
+
+        when(response.isSuccess()).thenReturn(false);
+        when(response.getStatus()).thenReturn(500);
+        when(response.getHttpContentType()).thenReturn(FormatType.XML);
+        when(response.getHttpContentString()).thenReturn(makeAcsErrorXML("", "", "500", "ServerException", ""));
+        client.doAction(request);
+        Assert.assertNotNull(resp);
+        Assert.assertEquals(500, resp.getStatus());
+        Assert.assertEquals("<Error><RequestId></RequestId><HostId></HostId><Code>500</Code><Message><![CDATA[ServerException]]></Message><Recommend><![CDATA[]]></Recommend></Error>", resp.getHttpContentString());
     }
 
     @SuppressWarnings({"unchecked", "rawtypes"})

@@ -357,6 +357,9 @@ public class DefaultAcsClient implements IAcsClient {
                     .coordinate(coordinate)
                     .retriesAttempted(retriesAttempted)
                     .build();
+            if (retryPolicy.enableAliyunThrottlingControl()) {
+                request.putHeaderParameter("x-sdk-throttling-control", "enable");
+            }
             while (retryPolicy.shouldRetry(context)) {
                 TimeUnit.MILLISECONDS.sleep(retryPolicy.getBackoffDelay(context));
                 HttpRequest httpRequest = request.signRequest(signer, credentials, format, domain);
