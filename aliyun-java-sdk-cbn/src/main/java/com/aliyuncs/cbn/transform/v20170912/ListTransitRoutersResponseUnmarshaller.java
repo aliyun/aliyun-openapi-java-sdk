@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.cbn.model.v20170912.ListTransitRoutersResponse;
 import com.aliyuncs.cbn.model.v20170912.ListTransitRoutersResponse.TransitRouter;
+import com.aliyuncs.cbn.model.v20170912.ListTransitRoutersResponse.TransitRouter.Tag;
 import com.aliyuncs.cbn.model.v20170912.ListTransitRoutersResponse.TransitRouter.TransitRouterCidrListItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -59,6 +60,16 @@ public class ListTransitRoutersResponseUnmarshaller {
 				transitRouterCidrList.add(transitRouterCidrListItem);
 			}
 			transitRouter.setTransitRouterCidrList(transitRouterCidrList);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("ListTransitRoutersResponse.TransitRouters["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("ListTransitRoutersResponse.TransitRouters["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("ListTransitRoutersResponse.TransitRouters["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			transitRouter.setTags(tags);
 
 			transitRouters.add(transitRouter);
 		}

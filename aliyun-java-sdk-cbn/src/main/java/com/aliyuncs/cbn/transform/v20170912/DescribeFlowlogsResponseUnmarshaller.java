@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.cbn.model.v20170912.DescribeFlowlogsResponse;
 import com.aliyuncs.cbn.model.v20170912.DescribeFlowlogsResponse.FlowLog;
+import com.aliyuncs.cbn.model.v20170912.DescribeFlowlogsResponse.FlowLog.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -47,6 +48,16 @@ public class DescribeFlowlogsResponseUnmarshaller {
 			flowLog.setPeerRegionId(_ctx.stringValue("DescribeFlowlogsResponse.FlowLogs["+ i +"].PeerRegionId"));
 			flowLog.setTransitRouterAttachmentId(_ctx.stringValue("DescribeFlowlogsResponse.FlowLogs["+ i +"].TransitRouterAttachmentId"));
 			flowLog.setInterval(_ctx.longValue("DescribeFlowlogsResponse.FlowLogs["+ i +"].Interval"));
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeFlowlogsResponse.FlowLogs["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("DescribeFlowlogsResponse.FlowLogs["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("DescribeFlowlogsResponse.FlowLogs["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			flowLog.setTags(tags);
 
 			flowLogs.add(flowLog);
 		}

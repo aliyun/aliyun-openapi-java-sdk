@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.cbn.model.v20170912.ListTransitRouterPeerAttachmentsResponse;
 import com.aliyuncs.cbn.model.v20170912.ListTransitRouterPeerAttachmentsResponse.TransitRouterAttachment;
+import com.aliyuncs.cbn.model.v20170912.ListTransitRouterPeerAttachmentsResponse.TransitRouterAttachment.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -51,6 +52,16 @@ public class ListTransitRouterPeerAttachmentsResponseUnmarshaller {
 			transitRouterAttachment.setPeerTransitRouterOwnerId(_ctx.longValue("ListTransitRouterPeerAttachmentsResponse.TransitRouterAttachments["+ i +"].PeerTransitRouterOwnerId"));
 			transitRouterAttachment.setAutoPublishRouteEnabled(_ctx.booleanValue("ListTransitRouterPeerAttachmentsResponse.TransitRouterAttachments["+ i +"].AutoPublishRouteEnabled"));
 			transitRouterAttachment.setTransitRouterAttachmentName(_ctx.stringValue("ListTransitRouterPeerAttachmentsResponse.TransitRouterAttachments["+ i +"].TransitRouterAttachmentName"));
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("ListTransitRouterPeerAttachmentsResponse.TransitRouterAttachments["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("ListTransitRouterPeerAttachmentsResponse.TransitRouterAttachments["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("ListTransitRouterPeerAttachmentsResponse.TransitRouterAttachments["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			transitRouterAttachment.setTags(tags);
 
 			transitRouterAttachments.add(transitRouterAttachment);
 		}

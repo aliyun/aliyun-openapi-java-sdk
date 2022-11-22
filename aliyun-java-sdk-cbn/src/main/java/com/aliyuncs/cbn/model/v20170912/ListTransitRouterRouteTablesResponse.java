@@ -89,6 +89,8 @@ public class ListTransitRouterRouteTablesResponse extends AcsResponse {
 
 		private String transitRouterRouteTableDescription;
 
+		private List<Tag> tags;
+
 		public String getTransitRouterRouteTableStatus() {
 			return this.transitRouterRouteTableStatus;
 		}
@@ -135,6 +137,37 @@ public class ListTransitRouterRouteTablesResponse extends AcsResponse {
 
 		public void setTransitRouterRouteTableDescription(String transitRouterRouteTableDescription) {
 			this.transitRouterRouteTableDescription = transitRouterRouteTableDescription;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
+		public static class Tag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 	}
 

@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.cbn.model.v20170912.ListTransitRouterMulticastDomainsResponse;
 import com.aliyuncs.cbn.model.v20170912.ListTransitRouterMulticastDomainsResponse.TransitRouterMulticastDomain;
+import com.aliyuncs.cbn.model.v20170912.ListTransitRouterMulticastDomainsResponse.TransitRouterMulticastDomain.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -38,6 +39,16 @@ public class ListTransitRouterMulticastDomainsResponseUnmarshaller {
 			transitRouterMulticastDomain.setTransitRouterMulticastDomainName(_ctx.stringValue("ListTransitRouterMulticastDomainsResponse.TransitRouterMulticastDomains["+ i +"].TransitRouterMulticastDomainName"));
 			transitRouterMulticastDomain.setTransitRouterMulticastDomainDescription(_ctx.stringValue("ListTransitRouterMulticastDomainsResponse.TransitRouterMulticastDomains["+ i +"].TransitRouterMulticastDomainDescription"));
 			transitRouterMulticastDomain.setStatus(_ctx.stringValue("ListTransitRouterMulticastDomainsResponse.TransitRouterMulticastDomains["+ i +"].Status"));
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("ListTransitRouterMulticastDomainsResponse.TransitRouterMulticastDomains["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("ListTransitRouterMulticastDomainsResponse.TransitRouterMulticastDomains["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("ListTransitRouterMulticastDomainsResponse.TransitRouterMulticastDomains["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			transitRouterMulticastDomain.setTags(tags);
 
 			transitRouterMulticastDomains.add(transitRouterMulticastDomain);
 		}

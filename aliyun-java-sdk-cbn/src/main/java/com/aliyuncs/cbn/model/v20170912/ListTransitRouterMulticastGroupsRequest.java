@@ -34,8 +34,6 @@ public class ListTransitRouterMulticastGroupsRequest extends RpcAcsRequest<ListT
 
 	private String transitRouterMulticastDomainId;
 
-	private List<String> connectPeerIdss;
-
 	private String nextToken;
 
 	private String groupIpAddress;
@@ -108,19 +106,6 @@ public class ListTransitRouterMulticastGroupsRequest extends RpcAcsRequest<ListT
 		if(transitRouterMulticastDomainId != null){
 			putQueryParameter("TransitRouterMulticastDomainId", transitRouterMulticastDomainId);
 		}
-	}
-
-	public List<String> getConnectPeerIdss() {
-		return this.connectPeerIdss;
-	}
-
-	public void setConnectPeerIdss(List<String> connectPeerIdss) {
-		this.connectPeerIdss = connectPeerIdss;	
-		if (connectPeerIdss != null) {
-			for (int i = 0; i < connectPeerIdss.size(); i++) {
-				putQueryParameter("ConnectPeerIds." + (i + 1) , connectPeerIdss.get(i));
-			}
-		}	
 	}
 
 	public String getNextToken() {

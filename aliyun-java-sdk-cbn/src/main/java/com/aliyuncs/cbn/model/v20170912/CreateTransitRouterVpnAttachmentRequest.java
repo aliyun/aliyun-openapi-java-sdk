@@ -36,6 +36,8 @@ public class CreateTransitRouterVpnAttachmentRequest extends RpcAcsRequest<Creat
 
 	private List<Zone> zones;
 
+	private List<Tag> tags;
+
 	private Boolean autoPublishRouteEnabled;
 
 	private Boolean dryRun;
@@ -117,6 +119,20 @@ public class CreateTransitRouterVpnAttachmentRequest extends RpcAcsRequest<Creat
 		if (zones != null) {
 			for (int depth1 = 0; depth1 < zones.size(); depth1++) {
 				putQueryParameter("Zone." + (depth1 + 1) + ".ZoneId" , zones.get(depth1).getZoneId());
+			}
+		}	
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
 	}
@@ -241,6 +257,29 @@ public class CreateTransitRouterVpnAttachmentRequest extends RpcAcsRequest<Creat
 
 		public void setZoneId(String zoneId) {
 			this.zoneId = zoneId;
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

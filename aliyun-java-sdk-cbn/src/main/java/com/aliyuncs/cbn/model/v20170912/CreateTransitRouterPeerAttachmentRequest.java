@@ -15,6 +15,7 @@
 package com.aliyuncs.cbn.model.v20170912;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cbn.Endpoint;
 
@@ -34,6 +35,8 @@ public class CreateTransitRouterPeerAttachmentRequest extends RpcAcsRequest<Crea
 	private String cenId;
 
 	private String transitRouterAttachmentName;
+
+	private List<Tag> tags;
 
 	private Boolean autoPublishRouteEnabled;
 
@@ -118,6 +121,20 @@ public class CreateTransitRouterPeerAttachmentRequest extends RpcAcsRequest<Crea
 		if(transitRouterAttachmentName != null){
 			putQueryParameter("TransitRouterAttachmentName", transitRouterAttachmentName);
 		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
 	}
 
 	public Boolean getAutoPublishRouteEnabled() {
@@ -238,6 +255,29 @@ public class CreateTransitRouterPeerAttachmentRequest extends RpcAcsRequest<Crea
 		this.peerTransitRouterId = peerTransitRouterId;
 		if(peerTransitRouterId != null){
 			putQueryParameter("PeerTransitRouterId", peerTransitRouterId);
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 
