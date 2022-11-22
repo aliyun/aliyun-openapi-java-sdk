@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceAttributeResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceAttributeResponse.DBInstanceAttribute;
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceAttributeResponse.DBInstanceAttribute.BabelfishConfig;
+import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceAttributeResponse.DBInstanceAttribute.DBClusterNode;
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceAttributeResponse.DBInstanceAttribute.Extra;
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceAttributeResponse.DBInstanceAttribute.ReadOnlyDBInstanceId;
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceAttributeResponse.DBInstanceAttribute.ServerlessConfig;
@@ -159,6 +160,19 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 				readOnlyDBInstanceIds.add(readOnlyDBInstanceId);
 			}
 			dBInstanceAttribute.setReadOnlyDBInstanceIds(readOnlyDBInstanceIds);
+
+			List<DBClusterNode> dBClusterNodes = new ArrayList<DBClusterNode>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBClusterNodes.Length"); j++) {
+				DBClusterNode dBClusterNode = new DBClusterNode();
+				dBClusterNode.setNodeRegionId(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBClusterNodes["+ j +"].NodeRegionId"));
+				dBClusterNode.setNodeZoneId(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBClusterNodes["+ j +"].NodeZoneId"));
+				dBClusterNode.setNodeId(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBClusterNodes["+ j +"].NodeId"));
+				dBClusterNode.setNodeRole(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBClusterNodes["+ j +"].NodeRole"));
+				dBClusterNode.setClassCode(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBClusterNodes["+ j +"].ClassCode"));
+
+				dBClusterNodes.add(dBClusterNode);
+			}
+			dBInstanceAttribute.setDBClusterNodes(dBClusterNodes);
 
 			items.add(dBInstanceAttribute);
 		}

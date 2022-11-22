@@ -213,6 +213,8 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		private List<ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
 
+		private List<DBClusterNode> dBClusterNodes;
+
 		private Extra extra;
 
 		private ServerlessConfig serverlessConfig;
@@ -883,6 +885,14 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 			this.readOnlyDBInstanceIds = readOnlyDBInstanceIds;
 		}
 
+		public List<DBClusterNode> getDBClusterNodes() {
+			return this.dBClusterNodes;
+		}
+
+		public void setDBClusterNodes(List<DBClusterNode> dBClusterNodes) {
+			this.dBClusterNodes = dBClusterNodes;
+		}
+
 		public Extra getExtra() {
 			return this.extra;
 		}
@@ -930,6 +940,59 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 			public void setDBInstanceId(String dBInstanceId) {
 				this.dBInstanceId = dBInstanceId;
+			}
+		}
+
+		public static class DBClusterNode {
+
+			private String nodeRegionId;
+
+			private String nodeZoneId;
+
+			private String nodeId;
+
+			private String nodeRole;
+
+			private String classCode;
+
+			public String getNodeRegionId() {
+				return this.nodeRegionId;
+			}
+
+			public void setNodeRegionId(String nodeRegionId) {
+				this.nodeRegionId = nodeRegionId;
+			}
+
+			public String getNodeZoneId() {
+				return this.nodeZoneId;
+			}
+
+			public void setNodeZoneId(String nodeZoneId) {
+				this.nodeZoneId = nodeZoneId;
+			}
+
+			public String getNodeId() {
+				return this.nodeId;
+			}
+
+			public void setNodeId(String nodeId) {
+				this.nodeId = nodeId;
+			}
+
+			public String getNodeRole() {
+				return this.nodeRole;
+			}
+
+			public void setNodeRole(String nodeRole) {
+				this.nodeRole = nodeRole;
+			}
+
+			public String getClassCode() {
+				return this.classCode;
+			}
+
+			public void setClassCode(String classCode) {
+				this.classCode = classCode;
 			}
 		}
 

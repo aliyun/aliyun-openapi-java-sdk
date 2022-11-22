@@ -22,36 +22,26 @@ import com.aliyuncs.rds.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyDBInstanceTDERequest extends RpcAcsRequest<ModifyDBInstanceTDEResponse> {
+public class DeleteDBNodesRequest extends RpcAcsRequest<DeleteDBNodesResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String certificate;
+	private String dBNodeId;
 
-	private String privateKey;
-
-	private String passWord;
+	private String clientToken;
 
 	private String dBInstanceId;
+
+	private String sourceBiz;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private Boolean isRotate;
-
-	private String encryptionKey;
-
 	private Long ownerId;
-
-	private String dBName;
-
-	private String roleArn;
-
-	private String tDEStatus;
-	public ModifyDBInstanceTDERequest() {
-		super("Rds", "2014-08-15", "ModifyDBInstanceTDE", "rds");
+	public DeleteDBNodesRequest() {
+		super("Rds", "2014-08-15", "DeleteDBNodes", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -70,36 +60,25 @@ public class ModifyDBInstanceTDERequest extends RpcAcsRequest<ModifyDBInstanceTD
 		}
 	}
 
-	public String getCertificate() {
-		return this.certificate;
+	public String getDBNodeId() {
+		return this.dBNodeId;
 	}
 
-	public void setCertificate(String certificate) {
-		this.certificate = certificate;
-		if(certificate != null){
-			putQueryParameter("Certificate", certificate);
+	public void setDBNodeId(String dBNodeId) {
+		this.dBNodeId = dBNodeId;
+		if(dBNodeId != null){
+			putQueryParameter("DBNodeId", dBNodeId);
 		}
 	}
 
-	public String getPrivateKey() {
-		return this.privateKey;
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setPrivateKey(String privateKey) {
-		this.privateKey = privateKey;
-		if(privateKey != null){
-			putQueryParameter("PrivateKey", privateKey);
-		}
-	}
-
-	public String getPassWord() {
-		return this.passWord;
-	}
-
-	public void setPassWord(String passWord) {
-		this.passWord = passWord;
-		if(passWord != null){
-			putQueryParameter("PassWord", passWord);
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -111,6 +90,17 @@ public class ModifyDBInstanceTDERequest extends RpcAcsRequest<ModifyDBInstanceTD
 		this.dBInstanceId = dBInstanceId;
 		if(dBInstanceId != null){
 			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getSourceBiz() {
+		return this.sourceBiz;
+	}
+
+	public void setSourceBiz(String sourceBiz) {
+		this.sourceBiz = sourceBiz;
+		if(sourceBiz != null){
+			putQueryParameter("SourceBiz", sourceBiz);
 		}
 	}
 
@@ -136,28 +126,6 @@ public class ModifyDBInstanceTDERequest extends RpcAcsRequest<ModifyDBInstanceTD
 		}
 	}
 
-	public Boolean getIsRotate() {
-		return this.isRotate;
-	}
-
-	public void setIsRotate(Boolean isRotate) {
-		this.isRotate = isRotate;
-		if(isRotate != null){
-			putQueryParameter("IsRotate", isRotate.toString());
-		}
-	}
-
-	public String getEncryptionKey() {
-		return this.encryptionKey;
-	}
-
-	public void setEncryptionKey(String encryptionKey) {
-		this.encryptionKey = encryptionKey;
-		if(encryptionKey != null){
-			putQueryParameter("EncryptionKey", encryptionKey);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -169,42 +137,9 @@ public class ModifyDBInstanceTDERequest extends RpcAcsRequest<ModifyDBInstanceTD
 		}
 	}
 
-	public String getDBName() {
-		return this.dBName;
-	}
-
-	public void setDBName(String dBName) {
-		this.dBName = dBName;
-		if(dBName != null){
-			putQueryParameter("DBName", dBName);
-		}
-	}
-
-	public String getRoleArn() {
-		return this.roleArn;
-	}
-
-	public void setRoleArn(String roleArn) {
-		this.roleArn = roleArn;
-		if(roleArn != null){
-			putQueryParameter("RoleArn", roleArn);
-		}
-	}
-
-	public String getTDEStatus() {
-		return this.tDEStatus;
-	}
-
-	public void setTDEStatus(String tDEStatus) {
-		this.tDEStatus = tDEStatus;
-		if(tDEStatus != null){
-			putQueryParameter("TDEStatus", tDEStatus);
-		}
-	}
-
 	@Override
-	public Class<ModifyDBInstanceTDEResponse> getResponseClass() {
-		return ModifyDBInstanceTDEResponse.class;
+	public Class<DeleteDBNodesResponse> getResponseClass() {
+		return DeleteDBNodesResponse.class;
 	}
 
 }

@@ -61,6 +61,8 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 
 	private String payType;
 
+	private String dBNode;
+
 	private String orderType;
 	public DescribePriceRequest() {
 		super("Rds", "2014-08-15", "DescribePrice", "rds");
@@ -266,6 +268,17 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 		this.payType = payType;
 		if(payType != null){
 			putQueryParameter("PayType", payType);
+		}
+	}
+
+	public String getDBNode() {
+		return this.dBNode;
+	}
+
+	public void setDBNode(String dBNode) {
+		this.dBNode = dBNode;
+		if(dBNode != null){
+			putQueryParameter("DBNode", dBNode);
 		}
 	}
 
