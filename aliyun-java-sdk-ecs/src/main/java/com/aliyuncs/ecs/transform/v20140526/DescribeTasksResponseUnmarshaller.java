@@ -41,6 +41,7 @@ public class DescribeTasksResponseUnmarshaller {
 			task.setSupportCancel(_ctx.stringValue("DescribeTasksResponse.TaskSet["+ i +"].SupportCancel"));
 			task.setTaskId(_ctx.stringValue("DescribeTasksResponse.TaskSet["+ i +"].TaskId"));
 			task.setTaskAction(_ctx.stringValue("DescribeTasksResponse.TaskSet["+ i +"].TaskAction"));
+			task.setResourceId(_ctx.stringValue("DescribeTasksResponse.TaskSet["+ i +"].ResourceId"));
 
 			taskSet.add(task);
 		}

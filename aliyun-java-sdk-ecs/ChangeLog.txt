@@ -1,3 +1,9 @@
+2022-11-23 Version: 4.24.41
+- Add and optimize error code.
+- Support issue occurrence time.
+- Fixed bug for shared encrypted image created instance limit zoneId error code.
+- DescribeTasks add ResourceIds Parameter.
+
 2022-11-18 Version: 4.24.40
 - Supported PRICE PRICING_PLAN_RESULT_NOT_FOUND error code for CreateCapacityReservation CreateElasticityAssurance.
 - Image check supported in CreateImage .

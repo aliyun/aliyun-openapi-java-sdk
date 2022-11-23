@@ -99,6 +99,8 @@ public class DescribeTasksResponse extends AcsResponse {
 
 		private String taskAction;
 
+		private String resourceId;
+
 		public String getCreationTime() {
 			return this.creationTime;
 		}
@@ -145,6 +147,14 @@ public class DescribeTasksResponse extends AcsResponse {
 
 		public void setTaskAction(String taskAction) {
 			this.taskAction = taskAction;
+		}
+
+		public String getResourceId() {
+			return this.resourceId;
+		}
+
+		public void setResourceId(String resourceId) {
+			this.resourceId = resourceId;
 		}
 	}
 
