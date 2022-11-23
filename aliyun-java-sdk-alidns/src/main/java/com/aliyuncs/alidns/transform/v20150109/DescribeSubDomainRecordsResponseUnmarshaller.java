@@ -45,6 +45,7 @@ public class DescribeSubDomainRecordsResponseUnmarshaller {
 			record.setRR(_ctx.stringValue("DescribeSubDomainRecordsResponse.DomainRecords["+ i +"].RR"));
 			record.setDomainName(_ctx.stringValue("DescribeSubDomainRecordsResponse.DomainRecords["+ i +"].DomainName"));
 			record.setLocked(_ctx.booleanValue("DescribeSubDomainRecordsResponse.DomainRecords["+ i +"].Locked"));
+			record.setRemark(_ctx.stringValue("DescribeSubDomainRecordsResponse.DomainRecords["+ i +"].Remark"));
 
 			domainRecords.add(record);
 		}

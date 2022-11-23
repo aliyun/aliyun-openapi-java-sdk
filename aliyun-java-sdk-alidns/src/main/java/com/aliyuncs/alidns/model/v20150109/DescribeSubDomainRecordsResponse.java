@@ -99,6 +99,8 @@ public class DescribeSubDomainRecordsResponse extends AcsResponse {
 
 		private Boolean locked;
 
+		private String remark;
+
 		public String getStatus() {
 			return this.status;
 		}
@@ -185,6 +187,14 @@ public class DescribeSubDomainRecordsResponse extends AcsResponse {
 
 		public void setLocked(Boolean locked) {
 			this.locked = locked;
+		}
+
+		public String getRemark() {
+			return this.remark;
+		}
+
+		public void setRemark(String remark) {
+			this.remark = remark;
 		}
 	}
 

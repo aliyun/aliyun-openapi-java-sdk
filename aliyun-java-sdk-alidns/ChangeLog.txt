@@ -1,3 +1,6 @@
+2022-11-23 Version: 3.0.1
+- Api DescribeSubDomainRecords add Remark field.
+
 2022-08-18 Version: 3.0.0
 - Bump version.
 
