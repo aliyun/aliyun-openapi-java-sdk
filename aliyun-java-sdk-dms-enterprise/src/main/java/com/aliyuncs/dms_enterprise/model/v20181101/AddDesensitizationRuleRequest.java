@@ -27,17 +27,17 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class AddDesensitizationRuleRequest extends RpcAcsRequest<AddDesensitizationRuleResponse> {
 	   
 
-	private String ruleDescription;
-
 	private List<Map<String,String>> functionParams;
-
-	private String ruleType;
 
 	private String ruleName;
 
-	private String functionType;
-
 	private Long tid;
+
+	private String ruleDescription;
+
+	private String ruleType;
+
+	private String functionType;
 	public AddDesensitizationRuleRequest() {
 		super("dms-enterprise", "2018-11-01", "AddDesensitizationRule", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -45,17 +45,6 @@ public class AddDesensitizationRuleRequest extends RpcAcsRequest<AddDesensitizat
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getRuleDescription() {
-		return this.ruleDescription;
-	}
-
-	public void setRuleDescription(String ruleDescription) {
-		this.ruleDescription = ruleDescription;
-		if(ruleDescription != null){
-			putQueryParameter("RuleDescription", ruleDescription);
-		}
 	}
 
 	public List<Map<String,String>> getFunctionParams() {
@@ -75,17 +64,6 @@ public class AddDesensitizationRuleRequest extends RpcAcsRequest<AddDesensitizat
 		}	
 	}
 
-	public String getRuleType() {
-		return this.ruleType;
-	}
-
-	public void setRuleType(String ruleType) {
-		this.ruleType = ruleType;
-		if(ruleType != null){
-			putQueryParameter("RuleType", ruleType);
-		}
-	}
-
 	public String getRuleName() {
 		return this.ruleName;
 	}
@@ -97,17 +75,6 @@ public class AddDesensitizationRuleRequest extends RpcAcsRequest<AddDesensitizat
 		}
 	}
 
-	public String getFunctionType() {
-		return this.functionType;
-	}
-
-	public void setFunctionType(String functionType) {
-		this.functionType = functionType;
-		if(functionType != null){
-			putQueryParameter("FunctionType", functionType);
-		}
-	}
-
 	public Long getTid() {
 		return this.tid;
 	}
@@ -116,6 +83,39 @@ public class AddDesensitizationRuleRequest extends RpcAcsRequest<AddDesensitizat
 		this.tid = tid;
 		if(tid != null){
 			putQueryParameter("Tid", tid.toString());
+		}
+	}
+
+	public String getRuleDescription() {
+		return this.ruleDescription;
+	}
+
+	public void setRuleDescription(String ruleDescription) {
+		this.ruleDescription = ruleDescription;
+		if(ruleDescription != null){
+			putQueryParameter("RuleDescription", ruleDescription);
+		}
+	}
+
+	public String getRuleType() {
+		return this.ruleType;
+	}
+
+	public void setRuleType(String ruleType) {
+		this.ruleType = ruleType;
+		if(ruleType != null){
+			putQueryParameter("RuleType", ruleType);
+		}
+	}
+
+	public String getFunctionType() {
+		return this.functionType;
+	}
+
+	public void setFunctionType(String functionType) {
+		this.functionType = functionType;
+		if(functionType != null){
+			putQueryParameter("FunctionType", functionType);
 		}
 	}
 

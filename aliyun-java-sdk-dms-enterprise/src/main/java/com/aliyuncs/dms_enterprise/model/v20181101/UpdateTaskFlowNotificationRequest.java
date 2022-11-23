@@ -31,9 +31,9 @@ public class UpdateTaskFlowNotificationRequest extends RpcAcsRequest<UpdateTaskF
 
 	private Boolean dagNotificationFail;
 
-	private Boolean dagNotificationSuccess;
-
 	private Boolean dagNotificationSla;
+
+	private Boolean dagNotificationSuccess;
 	public UpdateTaskFlowNotificationRequest() {
 		super("dms-enterprise", "2018-11-01", "UpdateTaskFlowNotification", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -76,17 +76,6 @@ public class UpdateTaskFlowNotificationRequest extends RpcAcsRequest<UpdateTaskF
 		}
 	}
 
-	public Boolean getDagNotificationSuccess() {
-		return this.dagNotificationSuccess;
-	}
-
-	public void setDagNotificationSuccess(Boolean dagNotificationSuccess) {
-		this.dagNotificationSuccess = dagNotificationSuccess;
-		if(dagNotificationSuccess != null){
-			putQueryParameter("DagNotificationSuccess", dagNotificationSuccess.toString());
-		}
-	}
-
 	public Boolean getDagNotificationSla() {
 		return this.dagNotificationSla;
 	}
@@ -95,6 +84,17 @@ public class UpdateTaskFlowNotificationRequest extends RpcAcsRequest<UpdateTaskF
 		this.dagNotificationSla = dagNotificationSla;
 		if(dagNotificationSla != null){
 			putQueryParameter("DagNotificationSla", dagNotificationSla.toString());
+		}
+	}
+
+	public Boolean getDagNotificationSuccess() {
+		return this.dagNotificationSuccess;
+	}
+
+	public void setDagNotificationSuccess(Boolean dagNotificationSuccess) {
+		this.dagNotificationSuccess = dagNotificationSuccess;
+		if(dagNotificationSuccess != null){
+			putQueryParameter("DagNotificationSuccess", dagNotificationSuccess.toString());
 		}
 	}
 

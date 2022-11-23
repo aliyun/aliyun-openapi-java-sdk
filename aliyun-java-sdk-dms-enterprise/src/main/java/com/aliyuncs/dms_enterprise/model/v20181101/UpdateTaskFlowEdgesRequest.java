@@ -28,12 +28,12 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class UpdateTaskFlowEdgesRequest extends RpcAcsRequest<UpdateTaskFlowEdgesResponse> {
 	   
 
-	@SerializedName("edges")
-	private List<Edges> edges;
-
 	private Long dagId;
 
 	private Long tid;
+
+	@SerializedName("edges")
+	private List<Edges> edges;
 	public UpdateTaskFlowEdgesRequest() {
 		super("dms-enterprise", "2018-11-01", "UpdateTaskFlowEdges", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -41,17 +41,6 @@ public class UpdateTaskFlowEdgesRequest extends RpcAcsRequest<UpdateTaskFlowEdge
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public List<Edges> getEdges() {
-		return this.edges;
-	}
-
-	public void setEdges(List<Edges> edges) {
-		this.edges = edges;	
-		if (edges != null) {
-			putQueryParameter("Edges" , new Gson().toJson(edges));
-		}	
 	}
 
 	public Long getDagId() {
@@ -74,6 +63,17 @@ public class UpdateTaskFlowEdgesRequest extends RpcAcsRequest<UpdateTaskFlowEdge
 		if(tid != null){
 			putQueryParameter("Tid", tid.toString());
 		}
+	}
+
+	public List<Edges> getEdges() {
+		return this.edges;
+	}
+
+	public void setEdges(List<Edges> edges) {
+		this.edges = edges;	
+		if (edges != null) {
+			putQueryParameter("Edges" , new Gson().toJson(edges));
+		}	
 	}
 
 	public static class Edges {

@@ -27,12 +27,12 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class ListSQLReviewOriginSQLRequest extends RpcAcsRequest<ListSQLReviewOriginSQLResponse> {
 	   
 
+	private Long tid;
+
 	private Long orderId;
 
 	@SerializedName("orderActionDetail")
 	private OrderActionDetail orderActionDetail;
-
-	private Long tid;
 	public ListSQLReviewOriginSQLRequest() {
 		super("dms-enterprise", "2018-11-01", "ListSQLReviewOriginSQL", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -40,6 +40,17 @@ public class ListSQLReviewOriginSQLRequest extends RpcAcsRequest<ListSQLReviewOr
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getTid() {
+		return this.tid;
+	}
+
+	public void setTid(Long tid) {
+		this.tid = tid;
+		if(tid != null){
+			putQueryParameter("Tid", tid.toString());
+		}
 	}
 
 	public Long getOrderId() {
@@ -62,17 +73,6 @@ public class ListSQLReviewOriginSQLRequest extends RpcAcsRequest<ListSQLReviewOr
 		if (orderActionDetail != null) {
 			putQueryParameter("OrderActionDetail" , new Gson().toJson(orderActionDetail));
 		}	
-	}
-
-	public Long getTid() {
-		return this.tid;
-	}
-
-	public void setTid(Long tid) {
-		this.tid = tid;
-		if(tid != null){
-			putQueryParameter("Tid", tid.toString());
-		}
 	}
 
 	public static class OrderActionDetail {

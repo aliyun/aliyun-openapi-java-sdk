@@ -28,12 +28,12 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class UpdateTaskFlowConstantsRequest extends RpcAcsRequest<UpdateTaskFlowConstantsResponse> {
 	   
 
-	@SerializedName("dagConstants")
-	private List<DagConstants> dagConstants;
-
 	private Long dagId;
 
 	private Long tid;
+
+	@SerializedName("dagConstants")
+	private List<DagConstants> dagConstants;
 	public UpdateTaskFlowConstantsRequest() {
 		super("dms-enterprise", "2018-11-01", "UpdateTaskFlowConstants", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -41,17 +41,6 @@ public class UpdateTaskFlowConstantsRequest extends RpcAcsRequest<UpdateTaskFlow
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public List<DagConstants> getDagConstants() {
-		return this.dagConstants;
-	}
-
-	public void setDagConstants(List<DagConstants> dagConstants) {
-		this.dagConstants = dagConstants;	
-		if (dagConstants != null) {
-			putQueryParameter("DagConstants" , new Gson().toJson(dagConstants));
-		}	
 	}
 
 	public Long getDagId() {
@@ -74,6 +63,17 @@ public class UpdateTaskFlowConstantsRequest extends RpcAcsRequest<UpdateTaskFlow
 		if(tid != null){
 			putQueryParameter("Tid", tid.toString());
 		}
+	}
+
+	public List<DagConstants> getDagConstants() {
+		return this.dagConstants;
+	}
+
+	public void setDagConstants(List<DagConstants> dagConstants) {
+		this.dagConstants = dagConstants;	
+		if (dagConstants != null) {
+			putQueryParameter("DagConstants" , new Gson().toJson(dagConstants));
+		}	
 	}
 
 	public static class DagConstants {

@@ -25,9 +25,9 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class RefundPayAsYouGoOrderRequest extends RpcAcsRequest<RefundPayAsYouGoOrderResponse> {
 	   
 
-	private String orderId;
-
 	private Long tid;
+
+	private String orderId;
 	public RefundPayAsYouGoOrderRequest() {
 		super("dms-enterprise", "2018-11-01", "RefundPayAsYouGoOrder", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -35,17 +35,6 @@ public class RefundPayAsYouGoOrderRequest extends RpcAcsRequest<RefundPayAsYouGo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getOrderId() {
-		return this.orderId;
-	}
-
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-		if(orderId != null){
-			putQueryParameter("OrderId", orderId);
-		}
 	}
 
 	public Long getTid() {
@@ -56,6 +45,17 @@ public class RefundPayAsYouGoOrderRequest extends RpcAcsRequest<RefundPayAsYouGo
 		this.tid = tid;
 		if(tid != null){
 			putQueryParameter("Tid", tid.toString());
+		}
+	}
+
+	public String getOrderId() {
+		return this.orderId;
+	}
+
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
+		if(orderId != null){
+			putQueryParameter("OrderId", orderId);
 		}
 	}
 

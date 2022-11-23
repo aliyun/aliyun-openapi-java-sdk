@@ -87,6 +87,8 @@ public class ListStandardGroupsResponse extends AcsResponse {
 
 		private String groupMode;
 
+		private Long groupId;
+
 		public String getGroupName() {
 			return this.groupName;
 		}
@@ -125,6 +127,14 @@ public class ListStandardGroupsResponse extends AcsResponse {
 
 		public void setGroupMode(String groupMode) {
 			this.groupMode = groupMode;
+		}
+
+		public Long getGroupId() {
+			return this.groupId;
+		}
+
+		public void setGroupId(Long groupId) {
+			this.groupId = groupId;
 		}
 	}
 

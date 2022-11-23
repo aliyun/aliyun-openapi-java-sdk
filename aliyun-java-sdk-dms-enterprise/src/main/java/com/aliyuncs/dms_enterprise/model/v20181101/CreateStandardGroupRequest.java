@@ -27,9 +27,9 @@ public class CreateStandardGroupRequest extends RpcAcsRequest<CreateStandardGrou
 
 	private String description;
 
-	private String groupName;
-
 	private Long tid;
+
+	private String groupName;
 
 	private String dbType;
 	public CreateStandardGroupRequest() {
@@ -52,17 +52,6 @@ public class CreateStandardGroupRequest extends RpcAcsRequest<CreateStandardGrou
 		}
 	}
 
-	public String getGroupName() {
-		return this.groupName;
-	}
-
-	public void setGroupName(String groupName) {
-		this.groupName = groupName;
-		if(groupName != null){
-			putQueryParameter("GroupName", groupName);
-		}
-	}
-
 	public Long getTid() {
 		return this.tid;
 	}
@@ -71,6 +60,17 @@ public class CreateStandardGroupRequest extends RpcAcsRequest<CreateStandardGrou
 		this.tid = tid;
 		if(tid != null){
 			putQueryParameter("Tid", tid.toString());
+		}
+	}
+
+	public String getGroupName() {
+		return this.groupName;
+	}
+
+	public void setGroupName(String groupName) {
+		this.groupName = groupName;
+		if(groupName != null){
+			putQueryParameter("GroupName", groupName);
 		}
 	}
 

@@ -22,18 +22,14 @@ import com.aliyuncs.dms_enterprise.Endpoint;
  * @author auto create
  * @version 
  */
-public class ExecuteScriptRequest extends RpcAcsRequest<ExecuteScriptResponse> {
+public class GetOrderAttachmentFileRequest extends RpcAcsRequest<GetOrderAttachmentFileResponse> {
 	   
 
 	private Long tid;
 
-	private String script;
-
-	private Integer dbId;
-
-	private Boolean logic;
-	public ExecuteScriptRequest() {
-		super("dms-enterprise", "2018-11-01", "ExecuteScript", "dms-enterprise");
+	private Long orderId;
+	public GetOrderAttachmentFileRequest() {
+		super("dms-enterprise", "2018-11-01", "GetOrderAttachmentFile", "dms-enterprise");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -52,42 +48,20 @@ public class ExecuteScriptRequest extends RpcAcsRequest<ExecuteScriptResponse> {
 		}
 	}
 
-	public String getScript() {
-		return this.script;
+	public Long getOrderId() {
+		return this.orderId;
 	}
 
-	public void setScript(String script) {
-		this.script = script;
-		if(script != null){
-			putQueryParameter("Script", script);
-		}
-	}
-
-	public Integer getDbId() {
-		return this.dbId;
-	}
-
-	public void setDbId(Integer dbId) {
-		this.dbId = dbId;
-		if(dbId != null){
-			putQueryParameter("DbId", dbId.toString());
-		}
-	}
-
-	public Boolean getLogic() {
-		return this.logic;
-	}
-
-	public void setLogic(Boolean logic) {
-		this.logic = logic;
-		if(logic != null){
-			putQueryParameter("Logic", logic.toString());
+	public void setOrderId(Long orderId) {
+		this.orderId = orderId;
+		if(orderId != null){
+			putQueryParameter("OrderId", orderId.toString());
 		}
 	}
 
 	@Override
-	public Class<ExecuteScriptResponse> getResponseClass() {
-		return ExecuteScriptResponse.class;
+	public Class<GetOrderAttachmentFileResponse> getResponseClass() {
+		return GetOrderAttachmentFileResponse.class;
 	}
 
 }

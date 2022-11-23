@@ -27,11 +27,11 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class ExecuteDataExportRequest extends RpcAcsRequest<ExecuteDataExportResponse> {
 	   
 
-	private Long orderId;
-
 	private Long tid;
 
 	private Map<Object,Object> actionDetail;
+
+	private Long orderId;
 	public ExecuteDataExportRequest() {
 		super("dms-enterprise", "2018-11-01", "ExecuteDataExport", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -39,17 +39,6 @@ public class ExecuteDataExportRequest extends RpcAcsRequest<ExecuteDataExportRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getOrderId() {
-		return this.orderId;
-	}
-
-	public void setOrderId(Long orderId) {
-		this.orderId = orderId;
-		if(orderId != null){
-			putQueryParameter("OrderId", orderId.toString());
-		}
 	}
 
 	public Long getTid() {
@@ -71,6 +60,17 @@ public class ExecuteDataExportRequest extends RpcAcsRequest<ExecuteDataExportRes
 		this.actionDetail = actionDetail;
 		if(actionDetail != null){
 			putQueryParameter("ActionDetail", new Gson().toJson(actionDetail));
+		}
+	}
+
+	public Long getOrderId() {
+		return this.orderId;
+	}
+
+	public void setOrderId(Long orderId) {
+		this.orderId = orderId;
+		if(orderId != null){
+			putQueryParameter("OrderId", orderId.toString());
 		}
 	}
 

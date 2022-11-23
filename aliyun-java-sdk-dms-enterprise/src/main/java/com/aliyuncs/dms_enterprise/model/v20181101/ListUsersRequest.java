@@ -33,9 +33,9 @@ public class ListUsersRequest extends RpcAcsRequest<ListUsersResponse> {
 
 	private Integer pageNumber;
 
-	private String userState;
-
 	private Integer pageSize;
+
+	private String userState;
 	public ListUsersRequest() {
 		super("dms-enterprise", "2018-11-01", "ListUsers", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -89,17 +89,6 @@ public class ListUsersRequest extends RpcAcsRequest<ListUsersResponse> {
 		}
 	}
 
-	public String getUserState() {
-		return this.userState;
-	}
-
-	public void setUserState(String userState) {
-		this.userState = userState;
-		if(userState != null){
-			putQueryParameter("UserState", userState);
-		}
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -108,6 +97,17 @@ public class ListUsersRequest extends RpcAcsRequest<ListUsersResponse> {
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getUserState() {
+		return this.userState;
+	}
+
+	public void setUserState(String userState) {
+		this.userState = userState;
+		if(userState != null){
+			putQueryParameter("UserState", userState);
 		}
 	}
 

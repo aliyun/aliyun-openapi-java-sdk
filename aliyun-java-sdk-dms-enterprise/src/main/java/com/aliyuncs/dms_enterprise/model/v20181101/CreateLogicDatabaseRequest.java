@@ -30,10 +30,10 @@ public class CreateLogicDatabaseRequest extends RpcAcsRequest<CreateLogicDatabas
 
 	private Long tid;
 
+	private String alias;
+
 	@SerializedName("databaseIds")
 	private List<Long> databaseIds;
-
-	private String alias;
 	public CreateLogicDatabaseRequest() {
 		super("dms-enterprise", "2018-11-01", "CreateLogicDatabase", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -54,17 +54,6 @@ public class CreateLogicDatabaseRequest extends RpcAcsRequest<CreateLogicDatabas
 		}
 	}
 
-	public List<Long> getDatabaseIds() {
-		return this.databaseIds;
-	}
-
-	public void setDatabaseIds(List<Long> databaseIds) {
-		this.databaseIds = databaseIds;	
-		if (databaseIds != null) {
-			putQueryParameter("DatabaseIds" , new Gson().toJson(databaseIds));
-		}	
-	}
-
 	public String getAlias() {
 		return this.alias;
 	}
@@ -74,6 +63,17 @@ public class CreateLogicDatabaseRequest extends RpcAcsRequest<CreateLogicDatabas
 		if(alias != null){
 			putQueryParameter("Alias", alias);
 		}
+	}
+
+	public List<Long> getDatabaseIds() {
+		return this.databaseIds;
+	}
+
+	public void setDatabaseIds(List<Long> databaseIds) {
+		this.databaseIds = databaseIds;	
+		if (databaseIds != null) {
+			putQueryParameter("DatabaseIds" , new Gson().toJson(databaseIds));
+		}	
 	}
 
 	@Override

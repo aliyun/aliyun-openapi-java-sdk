@@ -25,15 +25,15 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class GetStructSyncJobAnalyzeResultRequest extends RpcAcsRequest<GetStructSyncJobAnalyzeResultResponse> {
 	   
 
-	private Long orderId;
-
-	private String compareType;
-
 	private Long pageNumber;
 
 	private Long tid;
 
 	private Long pageSize;
+
+	private Long orderId;
+
+	private String compareType;
 	public GetStructSyncJobAnalyzeResultRequest() {
 		super("dms-enterprise", "2018-11-01", "GetStructSyncJobAnalyzeResult", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -41,28 +41,6 @@ public class GetStructSyncJobAnalyzeResultRequest extends RpcAcsRequest<GetStruc
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getOrderId() {
-		return this.orderId;
-	}
-
-	public void setOrderId(Long orderId) {
-		this.orderId = orderId;
-		if(orderId != null){
-			putQueryParameter("OrderId", orderId.toString());
-		}
-	}
-
-	public String getCompareType() {
-		return this.compareType;
-	}
-
-	public void setCompareType(String compareType) {
-		this.compareType = compareType;
-		if(compareType != null){
-			putQueryParameter("CompareType", compareType);
-		}
 	}
 
 	public Long getPageNumber() {
@@ -95,6 +73,28 @@ public class GetStructSyncJobAnalyzeResultRequest extends RpcAcsRequest<GetStruc
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Long getOrderId() {
+		return this.orderId;
+	}
+
+	public void setOrderId(Long orderId) {
+		this.orderId = orderId;
+		if(orderId != null){
+			putQueryParameter("OrderId", orderId.toString());
+		}
+	}
+
+	public String getCompareType() {
+		return this.compareType;
+	}
+
+	public void setCompareType(String compareType) {
+		this.compareType = compareType;
+		if(compareType != null){
+			putQueryParameter("CompareType", compareType);
 		}
 	}
 

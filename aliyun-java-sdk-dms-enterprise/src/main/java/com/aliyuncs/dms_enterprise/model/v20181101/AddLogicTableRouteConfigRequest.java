@@ -25,13 +25,13 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class AddLogicTableRouteConfigRequest extends RpcAcsRequest<AddLogicTableRouteConfigResponse> {
 	   
 
-	private String routeKey;
-
 	private Long tid;
 
-	private String routeExpr;
-
 	private Long tableId;
+
+	private String routeKey;
+
+	private String routeExpr;
 	public AddLogicTableRouteConfigRequest() {
 		super("dms-enterprise", "2018-11-01", "AddLogicTableRouteConfig", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -39,17 +39,6 @@ public class AddLogicTableRouteConfigRequest extends RpcAcsRequest<AddLogicTable
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getRouteKey() {
-		return this.routeKey;
-	}
-
-	public void setRouteKey(String routeKey) {
-		this.routeKey = routeKey;
-		if(routeKey != null){
-			putQueryParameter("RouteKey", routeKey);
-		}
 	}
 
 	public Long getTid() {
@@ -63,17 +52,6 @@ public class AddLogicTableRouteConfigRequest extends RpcAcsRequest<AddLogicTable
 		}
 	}
 
-	public String getRouteExpr() {
-		return this.routeExpr;
-	}
-
-	public void setRouteExpr(String routeExpr) {
-		this.routeExpr = routeExpr;
-		if(routeExpr != null){
-			putQueryParameter("RouteExpr", routeExpr);
-		}
-	}
-
 	public Long getTableId() {
 		return this.tableId;
 	}
@@ -82,6 +60,28 @@ public class AddLogicTableRouteConfigRequest extends RpcAcsRequest<AddLogicTable
 		this.tableId = tableId;
 		if(tableId != null){
 			putQueryParameter("TableId", tableId.toString());
+		}
+	}
+
+	public String getRouteKey() {
+		return this.routeKey;
+	}
+
+	public void setRouteKey(String routeKey) {
+		this.routeKey = routeKey;
+		if(routeKey != null){
+			putQueryParameter("RouteKey", routeKey);
+		}
+	}
+
+	public String getRouteExpr() {
+		return this.routeExpr;
+	}
+
+	public void setRouteExpr(String routeExpr) {
+		this.routeExpr = routeExpr;
+		if(routeExpr != null){
+			putQueryParameter("RouteExpr", routeExpr);
 		}
 	}
 

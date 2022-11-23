@@ -29,9 +29,9 @@ public class GetInstanceRequest extends RpcAcsRequest<GetInstanceResponse> {
 
 	private String sid;
 
-	private Integer port;
-
 	private String host;
+
+	private Integer port;
 	public GetInstanceRequest() {
 		super("dms-enterprise", "2018-11-01", "GetInstance", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -63,17 +63,6 @@ public class GetInstanceRequest extends RpcAcsRequest<GetInstanceResponse> {
 		}
 	}
 
-	public Integer getPort() {
-		return this.port;
-	}
-
-	public void setPort(Integer port) {
-		this.port = port;
-		if(port != null){
-			putQueryParameter("Port", port.toString());
-		}
-	}
-
 	public String getHost() {
 		return this.host;
 	}
@@ -82,6 +71,17 @@ public class GetInstanceRequest extends RpcAcsRequest<GetInstanceResponse> {
 		this.host = host;
 		if(host != null){
 			putQueryParameter("Host", host);
+		}
+	}
+
+	public Integer getPort() {
+		return this.port;
+	}
+
+	public void setPort(Integer port) {
+		this.port = port;
+		if(port != null){
+			putQueryParameter("Port", port.toString());
 		}
 	}
 

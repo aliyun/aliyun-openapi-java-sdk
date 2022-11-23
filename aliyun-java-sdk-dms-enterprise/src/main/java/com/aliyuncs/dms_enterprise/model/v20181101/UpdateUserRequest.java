@@ -27,17 +27,17 @@ public class UpdateUserRequest extends RpcAcsRequest<UpdateUserResponse> {
 
 	private String roleNames;
 
-	private Long maxResultCount;
-
 	private Long maxExecuteCount;
 
 	private String userNick;
 
-	private String mobile;
-
 	private Long tid;
 
 	private Long uid;
+
+	private Long maxResultCount;
+
+	private String mobile;
 	public UpdateUserRequest() {
 		super("dms-enterprise", "2018-11-01", "UpdateUser", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -55,17 +55,6 @@ public class UpdateUserRequest extends RpcAcsRequest<UpdateUserResponse> {
 		this.roleNames = roleNames;
 		if(roleNames != null){
 			putQueryParameter("RoleNames", roleNames);
-		}
-	}
-
-	public Long getMaxResultCount() {
-		return this.maxResultCount;
-	}
-
-	public void setMaxResultCount(Long maxResultCount) {
-		this.maxResultCount = maxResultCount;
-		if(maxResultCount != null){
-			putQueryParameter("MaxResultCount", maxResultCount.toString());
 		}
 	}
 
@@ -91,17 +80,6 @@ public class UpdateUserRequest extends RpcAcsRequest<UpdateUserResponse> {
 		}
 	}
 
-	public String getMobile() {
-		return this.mobile;
-	}
-
-	public void setMobile(String mobile) {
-		this.mobile = mobile;
-		if(mobile != null){
-			putQueryParameter("Mobile", mobile);
-		}
-	}
-
 	public Long getTid() {
 		return this.tid;
 	}
@@ -121,6 +99,28 @@ public class UpdateUserRequest extends RpcAcsRequest<UpdateUserResponse> {
 		this.uid = uid;
 		if(uid != null){
 			putQueryParameter("Uid", uid.toString());
+		}
+	}
+
+	public Long getMaxResultCount() {
+		return this.maxResultCount;
+	}
+
+	public void setMaxResultCount(Long maxResultCount) {
+		this.maxResultCount = maxResultCount;
+		if(maxResultCount != null){
+			putQueryParameter("MaxResultCount", maxResultCount.toString());
+		}
+	}
+
+	public String getMobile() {
+		return this.mobile;
+	}
+
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+		if(mobile != null){
+			putQueryParameter("Mobile", mobile);
 		}
 	}
 

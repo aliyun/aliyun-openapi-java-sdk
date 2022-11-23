@@ -29,9 +29,9 @@ public class ListDatabasesRequest extends RpcAcsRequest<ListDatabasesResponse> {
 
 	private Integer pageNumber;
 
-	private String instanceId;
-
 	private Integer pageSize;
+
+	private String instanceId;
 	public ListDatabasesRequest() {
 		super("dms-enterprise", "2018-11-01", "ListDatabases", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -63,17 +63,6 @@ public class ListDatabasesRequest extends RpcAcsRequest<ListDatabasesResponse> {
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -82,6 +71,17 @@ public class ListDatabasesRequest extends RpcAcsRequest<ListDatabasesResponse> {
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

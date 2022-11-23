@@ -29,8 +29,6 @@ public class ListInstanceLoginAuditLogRequest extends RpcAcsRequest<ListInstance
 
 	private String opUserName;
 
-	private String endTime;
-
 	private String startTime;
 
 	private Integer pageNumber;
@@ -38,6 +36,8 @@ public class ListInstanceLoginAuditLogRequest extends RpcAcsRequest<ListInstance
 	private Long tid;
 
 	private Integer pageSize;
+
+	private String endTime;
 	public ListInstanceLoginAuditLogRequest() {
 		super("dms-enterprise", "2018-11-01", "ListInstanceLoginAuditLog", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -66,17 +66,6 @@ public class ListInstanceLoginAuditLogRequest extends RpcAcsRequest<ListInstance
 		this.opUserName = opUserName;
 		if(opUserName != null){
 			putQueryParameter("OpUserName", opUserName);
-		}
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
 		}
 	}
 
@@ -121,6 +110,17 @@ public class ListInstanceLoginAuditLogRequest extends RpcAcsRequest<ListInstance
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
 		}
 	}
 

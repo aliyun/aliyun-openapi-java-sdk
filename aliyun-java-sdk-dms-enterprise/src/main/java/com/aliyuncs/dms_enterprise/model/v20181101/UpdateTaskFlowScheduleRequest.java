@@ -35,13 +35,13 @@ public class UpdateTaskFlowScheduleRequest extends RpcAcsRequest<UpdateTaskFlowS
 
 	private Long tid;
 
-	private Boolean scheduleSwitch;
-
-	private String cronEndDate;
-
 	private String timeZoneId;
 
 	private String cronBeginDate;
+
+	private Boolean scheduleSwitch;
+
+	private String cronEndDate;
 
 	private String scheduleParam;
 	public UpdateTaskFlowScheduleRequest() {
@@ -108,28 +108,6 @@ public class UpdateTaskFlowScheduleRequest extends RpcAcsRequest<UpdateTaskFlowS
 		}
 	}
 
-	public Boolean getScheduleSwitch() {
-		return this.scheduleSwitch;
-	}
-
-	public void setScheduleSwitch(Boolean scheduleSwitch) {
-		this.scheduleSwitch = scheduleSwitch;
-		if(scheduleSwitch != null){
-			putQueryParameter("ScheduleSwitch", scheduleSwitch.toString());
-		}
-	}
-
-	public String getCronEndDate() {
-		return this.cronEndDate;
-	}
-
-	public void setCronEndDate(String cronEndDate) {
-		this.cronEndDate = cronEndDate;
-		if(cronEndDate != null){
-			putQueryParameter("CronEndDate", cronEndDate);
-		}
-	}
-
 	public String getTimeZoneId() {
 		return this.timeZoneId;
 	}
@@ -149,6 +127,28 @@ public class UpdateTaskFlowScheduleRequest extends RpcAcsRequest<UpdateTaskFlowS
 		this.cronBeginDate = cronBeginDate;
 		if(cronBeginDate != null){
 			putQueryParameter("CronBeginDate", cronBeginDate);
+		}
+	}
+
+	public Boolean getScheduleSwitch() {
+		return this.scheduleSwitch;
+	}
+
+	public void setScheduleSwitch(Boolean scheduleSwitch) {
+		this.scheduleSwitch = scheduleSwitch;
+		if(scheduleSwitch != null){
+			putQueryParameter("ScheduleSwitch", scheduleSwitch.toString());
+		}
+	}
+
+	public String getCronEndDate() {
+		return this.cronEndDate;
+	}
+
+	public void setCronEndDate(String cronEndDate) {
+		this.cronEndDate = cronEndDate;
+		if(cronEndDate != null){
+			putQueryParameter("CronEndDate", cronEndDate);
 		}
 	}
 

@@ -25,11 +25,11 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class UpdateTaskTimeVariablesRequest extends RpcAcsRequest<UpdateTaskTimeVariablesResponse> {
 	   
 
-	private String timeVariables;
-
 	private Long tid;
 
 	private String nodeId;
+
+	private String timeVariables;
 	public UpdateTaskTimeVariablesRequest() {
 		super("dms-enterprise", "2018-11-01", "UpdateTaskTimeVariables", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -37,17 +37,6 @@ public class UpdateTaskTimeVariablesRequest extends RpcAcsRequest<UpdateTaskTime
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getTimeVariables() {
-		return this.timeVariables;
-	}
-
-	public void setTimeVariables(String timeVariables) {
-		this.timeVariables = timeVariables;
-		if(timeVariables != null){
-			putQueryParameter("TimeVariables", timeVariables);
-		}
 	}
 
 	public Long getTid() {
@@ -69,6 +58,17 @@ public class UpdateTaskTimeVariablesRequest extends RpcAcsRequest<UpdateTaskTime
 		this.nodeId = nodeId;
 		if(nodeId != null){
 			putQueryParameter("NodeId", nodeId);
+		}
+	}
+
+	public String getTimeVariables() {
+		return this.timeVariables;
+	}
+
+	public void setTimeVariables(String timeVariables) {
+		this.timeVariables = timeVariables;
+		if(timeVariables != null){
+			putQueryParameter("TimeVariables", timeVariables);
 		}
 	}
 

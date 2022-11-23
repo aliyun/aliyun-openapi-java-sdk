@@ -25,25 +25,25 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class RevokeUserPermissionRequest extends RpcAcsRequest<RevokeUserPermissionResponse> {
 	   
 
+	private String userId;
+
+	private Long tid;
+
+	private String tableId;
+
+	private String tableName;
+
 	private String permTypes;
 
 	private String userAccessId;
 
 	private String dsType;
 
-	private String userId;
-
-	private Long tid;
-
 	private Long instanceId;
 
 	private String dbId;
 
-	private String tableId;
-
 	private Boolean logic;
-
-	private String tableName;
 	public RevokeUserPermissionRequest() {
 		super("dms-enterprise", "2018-11-01", "RevokeUserPermission", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -51,6 +51,50 @@ public class RevokeUserPermissionRequest extends RpcAcsRequest<RevokeUserPermiss
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getUserId() {
+		return this.userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+		if(userId != null){
+			putQueryParameter("UserId", userId);
+		}
+	}
+
+	public Long getTid() {
+		return this.tid;
+	}
+
+	public void setTid(Long tid) {
+		this.tid = tid;
+		if(tid != null){
+			putQueryParameter("Tid", tid.toString());
+		}
+	}
+
+	public String getTableId() {
+		return this.tableId;
+	}
+
+	public void setTableId(String tableId) {
+		this.tableId = tableId;
+		if(tableId != null){
+			putQueryParameter("TableId", tableId);
+		}
+	}
+
+	public String getTableName() {
+		return this.tableName;
+	}
+
+	public void setTableName(String tableName) {
+		this.tableName = tableName;
+		if(tableName != null){
+			putQueryParameter("TableName", tableName);
+		}
 	}
 
 	public String getPermTypes() {
@@ -86,28 +130,6 @@ public class RevokeUserPermissionRequest extends RpcAcsRequest<RevokeUserPermiss
 		}
 	}
 
-	public String getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId);
-		}
-	}
-
-	public Long getTid() {
-		return this.tid;
-	}
-
-	public void setTid(Long tid) {
-		this.tid = tid;
-		if(tid != null){
-			putQueryParameter("Tid", tid.toString());
-		}
-	}
-
 	public Long getInstanceId() {
 		return this.instanceId;
 	}
@@ -130,17 +152,6 @@ public class RevokeUserPermissionRequest extends RpcAcsRequest<RevokeUserPermiss
 		}
 	}
 
-	public String getTableId() {
-		return this.tableId;
-	}
-
-	public void setTableId(String tableId) {
-		this.tableId = tableId;
-		if(tableId != null){
-			putQueryParameter("TableId", tableId);
-		}
-	}
-
 	public Boolean getLogic() {
 		return this.logic;
 	}
@@ -149,17 +160,6 @@ public class RevokeUserPermissionRequest extends RpcAcsRequest<RevokeUserPermiss
 		this.logic = logic;
 		if(logic != null){
 			putQueryParameter("Logic", logic.toString());
-		}
-	}
-
-	public String getTableName() {
-		return this.tableName;
-	}
-
-	public void setTableName(String tableName) {
-		this.tableName = tableName;
-		if(tableName != null){
-			putQueryParameter("TableName", tableName);
 		}
 	}
 

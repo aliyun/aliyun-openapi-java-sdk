@@ -1,3 +1,6 @@
+2022-11-23 Version: 1.41.0
+- Supported GetDataCronClearConfig,GetDataCorrectRollbackFile,GetOrderAttachmentFile API.
+
 2022-10-28 Version: 1.40.0
 - Support BuyPayAsYouGoOrder, RefundPayAsYouGoOrder, ListEffectiveOrders, ListClassificationTemplates.
 - Modify RegisterInstance, UpdateInstance, ListInstances, GetInstance, GetApprovalDetail.

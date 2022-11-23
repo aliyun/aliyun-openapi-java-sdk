@@ -25,11 +25,11 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class ChangeLhDagOwnerRequest extends RpcAcsRequest<ChangeLhDagOwnerResponse> {
 	   
 
-	private Long ownerUserId;
-
 	private Long dagId;
 
 	private Long tid;
+
+	private Long ownerUserId;
 	public ChangeLhDagOwnerRequest() {
 		super("dms-enterprise", "2018-11-01", "ChangeLhDagOwner", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -37,17 +37,6 @@ public class ChangeLhDagOwnerRequest extends RpcAcsRequest<ChangeLhDagOwnerRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getOwnerUserId() {
-		return this.ownerUserId;
-	}
-
-	public void setOwnerUserId(Long ownerUserId) {
-		this.ownerUserId = ownerUserId;
-		if(ownerUserId != null){
-			putQueryParameter("OwnerUserId", ownerUserId.toString());
-		}
 	}
 
 	public Long getDagId() {
@@ -69,6 +58,17 @@ public class ChangeLhDagOwnerRequest extends RpcAcsRequest<ChangeLhDagOwnerRespo
 		this.tid = tid;
 		if(tid != null){
 			putQueryParameter("Tid", tid.toString());
+		}
+	}
+
+	public Long getOwnerUserId() {
+		return this.ownerUserId;
+	}
+
+	public void setOwnerUserId(Long ownerUserId) {
+		this.ownerUserId = ownerUserId;
+		if(ownerUserId != null){
+			putQueryParameter("OwnerUserId", ownerUserId.toString());
 		}
 	}
 

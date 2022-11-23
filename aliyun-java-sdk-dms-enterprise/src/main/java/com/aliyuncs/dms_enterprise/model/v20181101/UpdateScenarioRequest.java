@@ -29,9 +29,9 @@ public class UpdateScenarioRequest extends RpcAcsRequest<UpdateScenarioResponse>
 
 	private Long tid;
 
-	private String scenarioName;
-
 	private String scenarioId;
+
+	private String scenarioName;
 	public UpdateScenarioRequest() {
 		super("dms-enterprise", "2018-11-01", "UpdateScenario", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -63,17 +63,6 @@ public class UpdateScenarioRequest extends RpcAcsRequest<UpdateScenarioResponse>
 		}
 	}
 
-	public String getScenarioName() {
-		return this.scenarioName;
-	}
-
-	public void setScenarioName(String scenarioName) {
-		this.scenarioName = scenarioName;
-		if(scenarioName != null){
-			putQueryParameter("ScenarioName", scenarioName);
-		}
-	}
-
 	public String getScenarioId() {
 		return this.scenarioId;
 	}
@@ -82,6 +71,17 @@ public class UpdateScenarioRequest extends RpcAcsRequest<UpdateScenarioResponse>
 		this.scenarioId = scenarioId;
 		if(scenarioId != null){
 			putQueryParameter("ScenarioId", scenarioId);
+		}
+	}
+
+	public String getScenarioName() {
+		return this.scenarioName;
+	}
+
+	public void setScenarioName(String scenarioName) {
+		this.scenarioName = scenarioName;
+		if(scenarioName != null){
+			putQueryParameter("ScenarioName", scenarioName);
 		}
 	}
 

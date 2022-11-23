@@ -25,21 +25,21 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class CreateTaskRequest extends RpcAcsRequest<CreateTaskResponse> {
 	   
 
-	private String timeVariables;
-
 	private String nodeType;
 
 	private Long dagId;
 
 	private Long tid;
 
-	private String nodeName;
-
 	private String nodeContent;
 
 	private String nodeOutput;
 
 	private String graphParam;
+
+	private String timeVariables;
+
+	private String nodeName;
 	public CreateTaskRequest() {
 		super("dms-enterprise", "2018-11-01", "CreateTask", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -47,17 +47,6 @@ public class CreateTaskRequest extends RpcAcsRequest<CreateTaskResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getTimeVariables() {
-		return this.timeVariables;
-	}
-
-	public void setTimeVariables(String timeVariables) {
-		this.timeVariables = timeVariables;
-		if(timeVariables != null){
-			putQueryParameter("TimeVariables", timeVariables);
-		}
 	}
 
 	public String getNodeType() {
@@ -93,17 +82,6 @@ public class CreateTaskRequest extends RpcAcsRequest<CreateTaskResponse> {
 		}
 	}
 
-	public String getNodeName() {
-		return this.nodeName;
-	}
-
-	public void setNodeName(String nodeName) {
-		this.nodeName = nodeName;
-		if(nodeName != null){
-			putQueryParameter("NodeName", nodeName);
-		}
-	}
-
 	public String getNodeContent() {
 		return this.nodeContent;
 	}
@@ -134,6 +112,28 @@ public class CreateTaskRequest extends RpcAcsRequest<CreateTaskResponse> {
 		this.graphParam = graphParam;
 		if(graphParam != null){
 			putQueryParameter("GraphParam", graphParam);
+		}
+	}
+
+	public String getTimeVariables() {
+		return this.timeVariables;
+	}
+
+	public void setTimeVariables(String timeVariables) {
+		this.timeVariables = timeVariables;
+		if(timeVariables != null){
+			putQueryParameter("TimeVariables", timeVariables);
+		}
+	}
+
+	public String getNodeName() {
+		return this.nodeName;
+	}
+
+	public void setNodeName(String nodeName) {
+		this.nodeName = nodeName;
+		if(nodeName != null){
+			putQueryParameter("NodeName", nodeName);
 		}
 	}
 

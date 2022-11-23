@@ -25,15 +25,15 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class GetDatabaseRequest extends RpcAcsRequest<GetDatabaseResponse> {
 	   
 
-	private String schemaName;
-
 	private Long tid;
 
 	private String sid;
 
-	private Integer port;
-
 	private String host;
+
+	private String schemaName;
+
+	private Integer port;
 	public GetDatabaseRequest() {
 		super("dms-enterprise", "2018-11-01", "GetDatabase", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -41,17 +41,6 @@ public class GetDatabaseRequest extends RpcAcsRequest<GetDatabaseResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getSchemaName() {
-		return this.schemaName;
-	}
-
-	public void setSchemaName(String schemaName) {
-		this.schemaName = schemaName;
-		if(schemaName != null){
-			putQueryParameter("SchemaName", schemaName);
-		}
 	}
 
 	public Long getTid() {
@@ -76,17 +65,6 @@ public class GetDatabaseRequest extends RpcAcsRequest<GetDatabaseResponse> {
 		}
 	}
 
-	public Integer getPort() {
-		return this.port;
-	}
-
-	public void setPort(Integer port) {
-		this.port = port;
-		if(port != null){
-			putQueryParameter("Port", port.toString());
-		}
-	}
-
 	public String getHost() {
 		return this.host;
 	}
@@ -95,6 +73,28 @@ public class GetDatabaseRequest extends RpcAcsRequest<GetDatabaseResponse> {
 		this.host = host;
 		if(host != null){
 			putQueryParameter("Host", host);
+		}
+	}
+
+	public String getSchemaName() {
+		return this.schemaName;
+	}
+
+	public void setSchemaName(String schemaName) {
+		this.schemaName = schemaName;
+		if(schemaName != null){
+			putQueryParameter("SchemaName", schemaName);
+		}
+	}
+
+	public Integer getPort() {
+		return this.port;
+	}
+
+	public void setPort(Integer port) {
+		this.port = port;
+		if(port != null){
+			putQueryParameter("Port", port.toString());
 		}
 	}
 

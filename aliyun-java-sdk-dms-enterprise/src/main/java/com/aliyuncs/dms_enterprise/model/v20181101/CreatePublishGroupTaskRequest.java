@@ -25,17 +25,17 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class CreatePublishGroupTaskRequest extends RpcAcsRequest<CreatePublishGroupTaskResponse> {
 	   
 
-	private Long orderId;
-
 	private Long tid;
-
-	private Integer dbId;
 
 	private String planTime;
 
-	private Boolean logic;
-
 	private String publishStrategy;
+
+	private Long orderId;
+
+	private Integer dbId;
+
+	private Boolean logic;
 	public CreatePublishGroupTaskRequest() {
 		super("dms-enterprise", "2018-11-01", "CreatePublishGroupTask", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -43,17 +43,6 @@ public class CreatePublishGroupTaskRequest extends RpcAcsRequest<CreatePublishGr
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getOrderId() {
-		return this.orderId;
-	}
-
-	public void setOrderId(Long orderId) {
-		this.orderId = orderId;
-		if(orderId != null){
-			putQueryParameter("OrderId", orderId.toString());
-		}
 	}
 
 	public Long getTid() {
@@ -64,17 +53,6 @@ public class CreatePublishGroupTaskRequest extends RpcAcsRequest<CreatePublishGr
 		this.tid = tid;
 		if(tid != null){
 			putQueryParameter("Tid", tid.toString());
-		}
-	}
-
-	public Integer getDbId() {
-		return this.dbId;
-	}
-
-	public void setDbId(Integer dbId) {
-		this.dbId = dbId;
-		if(dbId != null){
-			putQueryParameter("DbId", dbId.toString());
 		}
 	}
 
@@ -89,17 +67,6 @@ public class CreatePublishGroupTaskRequest extends RpcAcsRequest<CreatePublishGr
 		}
 	}
 
-	public Boolean getLogic() {
-		return this.logic;
-	}
-
-	public void setLogic(Boolean logic) {
-		this.logic = logic;
-		if(logic != null){
-			putQueryParameter("Logic", logic.toString());
-		}
-	}
-
 	public String getPublishStrategy() {
 		return this.publishStrategy;
 	}
@@ -108,6 +75,39 @@ public class CreatePublishGroupTaskRequest extends RpcAcsRequest<CreatePublishGr
 		this.publishStrategy = publishStrategy;
 		if(publishStrategy != null){
 			putQueryParameter("PublishStrategy", publishStrategy);
+		}
+	}
+
+	public Long getOrderId() {
+		return this.orderId;
+	}
+
+	public void setOrderId(Long orderId) {
+		this.orderId = orderId;
+		if(orderId != null){
+			putQueryParameter("OrderId", orderId.toString());
+		}
+	}
+
+	public Integer getDbId() {
+		return this.dbId;
+	}
+
+	public void setDbId(Integer dbId) {
+		this.dbId = dbId;
+		if(dbId != null){
+			putQueryParameter("DbId", dbId.toString());
+		}
+	}
+
+	public Boolean getLogic() {
+		return this.logic;
+	}
+
+	public void setLogic(Boolean logic) {
+		this.logic = logic;
+		if(logic != null){
+			putQueryParameter("Logic", logic.toString());
 		}
 	}
 

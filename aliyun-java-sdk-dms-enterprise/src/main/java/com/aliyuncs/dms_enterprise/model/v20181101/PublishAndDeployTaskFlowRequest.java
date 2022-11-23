@@ -25,11 +25,11 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class PublishAndDeployTaskFlowRequest extends RpcAcsRequest<PublishAndDeployTaskFlowResponse> {
 	   
 
-	private String versionComments;
-
 	private Long dagId;
 
 	private Long tid;
+
+	private String versionComments;
 	public PublishAndDeployTaskFlowRequest() {
 		super("dms-enterprise", "2018-11-01", "PublishAndDeployTaskFlow", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -37,17 +37,6 @@ public class PublishAndDeployTaskFlowRequest extends RpcAcsRequest<PublishAndDep
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getVersionComments() {
-		return this.versionComments;
-	}
-
-	public void setVersionComments(String versionComments) {
-		this.versionComments = versionComments;
-		if(versionComments != null){
-			putQueryParameter("VersionComments", versionComments);
-		}
 	}
 
 	public Long getDagId() {
@@ -69,6 +58,17 @@ public class PublishAndDeployTaskFlowRequest extends RpcAcsRequest<PublishAndDep
 		this.tid = tid;
 		if(tid != null){
 			putQueryParameter("Tid", tid.toString());
+		}
+	}
+
+	public String getVersionComments() {
+		return this.versionComments;
+	}
+
+	public void setVersionComments(String versionComments) {
+		this.versionComments = versionComments;
+		if(versionComments != null){
+			putQueryParameter("VersionComments", versionComments);
 		}
 	}
 

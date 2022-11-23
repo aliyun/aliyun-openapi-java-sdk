@@ -27,23 +27,23 @@ public class ListSensitiveDataAuditLogRequest extends RpcAcsRequest<ListSensitiv
 
 	private String opUserName;
 
-	private String endTime;
-
 	private String startTime;
-
-	private String columnName;
 
 	private Integer pageNumber;
 
 	private Long tid;
-
-	private String dbName;
 
 	private Integer pageSize;
 
 	private String moduleName;
 
 	private String tableName;
+
+	private String endTime;
+
+	private String columnName;
+
+	private String dbName;
 	public ListSensitiveDataAuditLogRequest() {
 		super("dms-enterprise", "2018-11-01", "ListSensitiveDataAuditLog", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -64,17 +64,6 @@ public class ListSensitiveDataAuditLogRequest extends RpcAcsRequest<ListSensitiv
 		}
 	}
 
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
 	public String getStartTime() {
 		return this.startTime;
 	}
@@ -83,17 +72,6 @@ public class ListSensitiveDataAuditLogRequest extends RpcAcsRequest<ListSensitiv
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public String getColumnName() {
-		return this.columnName;
-	}
-
-	public void setColumnName(String columnName) {
-		this.columnName = columnName;
-		if(columnName != null){
-			putQueryParameter("ColumnName", columnName);
 		}
 	}
 
@@ -116,17 +94,6 @@ public class ListSensitiveDataAuditLogRequest extends RpcAcsRequest<ListSensitiv
 		this.tid = tid;
 		if(tid != null){
 			putQueryParameter("Tid", tid.toString());
-		}
-	}
-
-	public String getDbName() {
-		return this.dbName;
-	}
-
-	public void setDbName(String dbName) {
-		this.dbName = dbName;
-		if(dbName != null){
-			putQueryParameter("DbName", dbName);
 		}
 	}
 
@@ -160,6 +127,39 @@ public class ListSensitiveDataAuditLogRequest extends RpcAcsRequest<ListSensitiv
 		this.tableName = tableName;
 		if(tableName != null){
 			putQueryParameter("TableName", tableName);
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public String getColumnName() {
+		return this.columnName;
+	}
+
+	public void setColumnName(String columnName) {
+		this.columnName = columnName;
+		if(columnName != null){
+			putQueryParameter("ColumnName", columnName);
+		}
+	}
+
+	public String getDbName() {
+		return this.dbName;
+	}
+
+	public void setDbName(String dbName) {
+		this.dbName = dbName;
+		if(dbName != null){
+			putQueryParameter("DbName", dbName);
 		}
 	}
 

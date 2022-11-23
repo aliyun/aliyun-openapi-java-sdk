@@ -31,9 +31,9 @@ public class CreateProxyAccessRequest extends RpcAcsRequest<CreateProxyAccessRes
 
 	private Long tid;
 
-	private String indepPassword;
-
 	private Long proxyId;
+
+	private String indepPassword;
 	public CreateProxyAccessRequest() {
 		super("dms-enterprise", "2018-11-01", "CreateProxyAccess", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -76,17 +76,6 @@ public class CreateProxyAccessRequest extends RpcAcsRequest<CreateProxyAccessRes
 		}
 	}
 
-	public String getIndepPassword() {
-		return this.indepPassword;
-	}
-
-	public void setIndepPassword(String indepPassword) {
-		this.indepPassword = indepPassword;
-		if(indepPassword != null){
-			putQueryParameter("IndepPassword", indepPassword);
-		}
-	}
-
 	public Long getProxyId() {
 		return this.proxyId;
 	}
@@ -95,6 +84,17 @@ public class CreateProxyAccessRequest extends RpcAcsRequest<CreateProxyAccessRes
 		this.proxyId = proxyId;
 		if(proxyId != null){
 			putQueryParameter("ProxyId", proxyId.toString());
+		}
+	}
+
+	public String getIndepPassword() {
+		return this.indepPassword;
+	}
+
+	public void setIndepPassword(String indepPassword) {
+		this.indepPassword = indepPassword;
+		if(indepPassword != null){
+			putQueryParameter("IndepPassword", indepPassword);
 		}
 	}
 

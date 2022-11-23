@@ -25,9 +25,9 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class GetLhSpaceByNameRequest extends RpcAcsRequest<GetLhSpaceByNameResponse> {
 	   
 
-	private String spaceName;
-
 	private Long tid;
+
+	private String spaceName;
 	public GetLhSpaceByNameRequest() {
 		super("dms-enterprise", "2018-11-01", "GetLhSpaceByName", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -35,17 +35,6 @@ public class GetLhSpaceByNameRequest extends RpcAcsRequest<GetLhSpaceByNameRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getSpaceName() {
-		return this.spaceName;
-	}
-
-	public void setSpaceName(String spaceName) {
-		this.spaceName = spaceName;
-		if(spaceName != null){
-			putQueryParameter("SpaceName", spaceName);
-		}
 	}
 
 	public Long getTid() {
@@ -56,6 +45,17 @@ public class GetLhSpaceByNameRequest extends RpcAcsRequest<GetLhSpaceByNameRespo
 		this.tid = tid;
 		if(tid != null){
 			putQueryParameter("Tid", tid.toString());
+		}
+	}
+
+	public String getSpaceName() {
+		return this.spaceName;
+	}
+
+	public void setSpaceName(String spaceName) {
+		this.spaceName = spaceName;
+		if(spaceName != null){
+			putQueryParameter("SpaceName", spaceName);
 		}
 	}
 

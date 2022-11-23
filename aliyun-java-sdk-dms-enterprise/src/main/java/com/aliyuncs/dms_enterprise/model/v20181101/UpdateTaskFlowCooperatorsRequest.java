@@ -30,10 +30,10 @@ public class UpdateTaskFlowCooperatorsRequest extends RpcAcsRequest<UpdateTaskFl
 
 	private Long dagId;
 
+	private Long tid;
+
 	@SerializedName("cooperatorIds")
 	private List<String> cooperatorIds;
-
-	private Long tid;
 	public UpdateTaskFlowCooperatorsRequest() {
 		super("dms-enterprise", "2018-11-01", "UpdateTaskFlowCooperators", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -54,17 +54,6 @@ public class UpdateTaskFlowCooperatorsRequest extends RpcAcsRequest<UpdateTaskFl
 		}
 	}
 
-	public List<String> getCooperatorIds() {
-		return this.cooperatorIds;
-	}
-
-	public void setCooperatorIds(List<String> cooperatorIds) {
-		this.cooperatorIds = cooperatorIds;	
-		if (cooperatorIds != null) {
-			putQueryParameter("CooperatorIds" , new Gson().toJson(cooperatorIds));
-		}	
-	}
-
 	public Long getTid() {
 		return this.tid;
 	}
@@ -74,6 +63,17 @@ public class UpdateTaskFlowCooperatorsRequest extends RpcAcsRequest<UpdateTaskFl
 		if(tid != null){
 			putQueryParameter("Tid", tid.toString());
 		}
+	}
+
+	public List<String> getCooperatorIds() {
+		return this.cooperatorIds;
+	}
+
+	public void setCooperatorIds(List<String> cooperatorIds) {
+		this.cooperatorIds = cooperatorIds;	
+		if (cooperatorIds != null) {
+			putQueryParameter("CooperatorIds" , new Gson().toJson(cooperatorIds));
+		}	
 	}
 
 	@Override

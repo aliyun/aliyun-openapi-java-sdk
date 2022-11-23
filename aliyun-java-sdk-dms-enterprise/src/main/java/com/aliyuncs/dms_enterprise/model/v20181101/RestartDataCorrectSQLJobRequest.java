@@ -25,13 +25,13 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class RestartDataCorrectSQLJobRequest extends RpcAcsRequest<RestartDataCorrectSQLJobResponse> {
 	   
 
-	private Long orderId;
-
 	private String type;
 
 	private Long tid;
 
 	private Long jobId;
+
+	private Long orderId;
 	public RestartDataCorrectSQLJobRequest() {
 		super("dms-enterprise", "2018-11-01", "RestartDataCorrectSQLJob", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -39,17 +39,6 @@ public class RestartDataCorrectSQLJobRequest extends RpcAcsRequest<RestartDataCo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getOrderId() {
-		return this.orderId;
-	}
-
-	public void setOrderId(Long orderId) {
-		this.orderId = orderId;
-		if(orderId != null){
-			putQueryParameter("OrderId", orderId.toString());
-		}
 	}
 
 	public String getType() {
@@ -82,6 +71,17 @@ public class RestartDataCorrectSQLJobRequest extends RpcAcsRequest<RestartDataCo
 		this.jobId = jobId;
 		if(jobId != null){
 			putQueryParameter("JobId", jobId.toString());
+		}
+	}
+
+	public Long getOrderId() {
+		return this.orderId;
+	}
+
+	public void setOrderId(Long orderId) {
+		this.orderId = orderId;
+		if(orderId != null){
+			putQueryParameter("OrderId", orderId.toString());
 		}
 	}
 

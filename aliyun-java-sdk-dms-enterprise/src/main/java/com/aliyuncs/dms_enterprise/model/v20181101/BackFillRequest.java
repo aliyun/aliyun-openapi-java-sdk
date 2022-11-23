@@ -28,26 +28,26 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class BackFillRequest extends RpcAcsRequest<BackFillResponse> {
 	   
 
-	private String backFillDateBegin;
-
-	private String backFillDate;
-
 	private Long dagId;
 
 	private Long tid;
 
 	private Boolean isTriggerSubTree;
 
-	private Boolean asc;
-
 	private String backFillDateEnd;
-
-	private Integer interval;
 
 	private Long historyDagId;
 
 	@SerializedName("startNodeIds")
 	private List<Long> startNodeIds;
+
+	private String backFillDateBegin;
+
+	private String backFillDate;
+
+	private Boolean asc;
+
+	private Integer interval;
 	public BackFillRequest() {
 		super("dms-enterprise", "2018-11-01", "BackFill", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -55,28 +55,6 @@ public class BackFillRequest extends RpcAcsRequest<BackFillResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getBackFillDateBegin() {
-		return this.backFillDateBegin;
-	}
-
-	public void setBackFillDateBegin(String backFillDateBegin) {
-		this.backFillDateBegin = backFillDateBegin;
-		if(backFillDateBegin != null){
-			putQueryParameter("BackFillDateBegin", backFillDateBegin);
-		}
-	}
-
-	public String getBackFillDate() {
-		return this.backFillDate;
-	}
-
-	public void setBackFillDate(String backFillDate) {
-		this.backFillDate = backFillDate;
-		if(backFillDate != null){
-			putQueryParameter("BackFillDate", backFillDate);
-		}
 	}
 
 	public Long getDagId() {
@@ -112,17 +90,6 @@ public class BackFillRequest extends RpcAcsRequest<BackFillResponse> {
 		}
 	}
 
-	public Boolean getAsc() {
-		return this.asc;
-	}
-
-	public void setAsc(Boolean asc) {
-		this.asc = asc;
-		if(asc != null){
-			putQueryParameter("Asc", asc.toString());
-		}
-	}
-
 	public String getBackFillDateEnd() {
 		return this.backFillDateEnd;
 	}
@@ -131,17 +98,6 @@ public class BackFillRequest extends RpcAcsRequest<BackFillResponse> {
 		this.backFillDateEnd = backFillDateEnd;
 		if(backFillDateEnd != null){
 			putQueryParameter("BackFillDateEnd", backFillDateEnd);
-		}
-	}
-
-	public Integer getInterval() {
-		return this.interval;
-	}
-
-	public void setInterval(Integer interval) {
-		this.interval = interval;
-		if(interval != null){
-			putQueryParameter("Interval", interval.toString());
 		}
 	}
 
@@ -165,6 +121,50 @@ public class BackFillRequest extends RpcAcsRequest<BackFillResponse> {
 		if (startNodeIds != null) {
 			putQueryParameter("StartNodeIds" , new Gson().toJson(startNodeIds));
 		}	
+	}
+
+	public String getBackFillDateBegin() {
+		return this.backFillDateBegin;
+	}
+
+	public void setBackFillDateBegin(String backFillDateBegin) {
+		this.backFillDateBegin = backFillDateBegin;
+		if(backFillDateBegin != null){
+			putQueryParameter("BackFillDateBegin", backFillDateBegin);
+		}
+	}
+
+	public String getBackFillDate() {
+		return this.backFillDate;
+	}
+
+	public void setBackFillDate(String backFillDate) {
+		this.backFillDate = backFillDate;
+		if(backFillDate != null){
+			putQueryParameter("BackFillDate", backFillDate);
+		}
+	}
+
+	public Boolean getAsc() {
+		return this.asc;
+	}
+
+	public void setAsc(Boolean asc) {
+		this.asc = asc;
+		if(asc != null){
+			putQueryParameter("Asc", asc.toString());
+		}
+	}
+
+	public Integer getInterval() {
+		return this.interval;
+	}
+
+	public void setInterval(Integer interval) {
+		this.interval = interval;
+		if(interval != null){
+			putQueryParameter("Interval", interval.toString());
+		}
 	}
 
 	@Override

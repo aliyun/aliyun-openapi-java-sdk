@@ -25,13 +25,13 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class BuyPayAsYouGoOrderRequest extends RpcAcsRequest<BuyPayAsYouGoOrderResponse> {
 	   
 
-	private Integer insNum;
-
 	private Long tid;
 
-	private String versionType;
-
 	private String commodityType;
+
+	private Integer insNum;
+
+	private String versionType;
 	public BuyPayAsYouGoOrderRequest() {
 		super("dms-enterprise", "2018-11-01", "BuyPayAsYouGoOrder", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -39,17 +39,6 @@ public class BuyPayAsYouGoOrderRequest extends RpcAcsRequest<BuyPayAsYouGoOrderR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getInsNum() {
-		return this.insNum;
-	}
-
-	public void setInsNum(Integer insNum) {
-		this.insNum = insNum;
-		if(insNum != null){
-			putQueryParameter("InsNum", insNum.toString());
-		}
 	}
 
 	public Long getTid() {
@@ -63,17 +52,6 @@ public class BuyPayAsYouGoOrderRequest extends RpcAcsRequest<BuyPayAsYouGoOrderR
 		}
 	}
 
-	public String getVersionType() {
-		return this.versionType;
-	}
-
-	public void setVersionType(String versionType) {
-		this.versionType = versionType;
-		if(versionType != null){
-			putQueryParameter("VersionType", versionType);
-		}
-	}
-
 	public String getCommodityType() {
 		return this.commodityType;
 	}
@@ -82,6 +60,28 @@ public class BuyPayAsYouGoOrderRequest extends RpcAcsRequest<BuyPayAsYouGoOrderR
 		this.commodityType = commodityType;
 		if(commodityType != null){
 			putQueryParameter("CommodityType", commodityType);
+		}
+	}
+
+	public Integer getInsNum() {
+		return this.insNum;
+	}
+
+	public void setInsNum(Integer insNum) {
+		this.insNum = insNum;
+		if(insNum != null){
+			putQueryParameter("InsNum", insNum.toString());
+		}
+	}
+
+	public String getVersionType() {
+		return this.versionType;
+	}
+
+	public void setVersionType(String versionType) {
+		this.versionType = versionType;
+		if(versionType != null){
+			putQueryParameter("VersionType", versionType);
 		}
 	}
 

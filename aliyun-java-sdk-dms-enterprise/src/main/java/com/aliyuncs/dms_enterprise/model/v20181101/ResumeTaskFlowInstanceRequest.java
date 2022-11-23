@@ -25,11 +25,11 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class ResumeTaskFlowInstanceRequest extends RpcAcsRequest<ResumeTaskFlowInstanceResponse> {
 	   
 
-	private String dagVersion;
-
 	private Long dagId;
 
 	private Long tid;
+
+	private String dagVersion;
 
 	private Long dagInstanceId;
 	public ResumeTaskFlowInstanceRequest() {
@@ -39,17 +39,6 @@ public class ResumeTaskFlowInstanceRequest extends RpcAcsRequest<ResumeTaskFlowI
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getDagVersion() {
-		return this.dagVersion;
-	}
-
-	public void setDagVersion(String dagVersion) {
-		this.dagVersion = dagVersion;
-		if(dagVersion != null){
-			putQueryParameter("DagVersion", dagVersion);
-		}
 	}
 
 	public Long getDagId() {
@@ -71,6 +60,17 @@ public class ResumeTaskFlowInstanceRequest extends RpcAcsRequest<ResumeTaskFlowI
 		this.tid = tid;
 		if(tid != null){
 			putQueryParameter("Tid", tid.toString());
+		}
+	}
+
+	public String getDagVersion() {
+		return this.dagVersion;
+	}
+
+	public void setDagVersion(String dagVersion) {
+		this.dagVersion = dagVersion;
+		if(dagVersion != null){
+			putQueryParameter("DagVersion", dagVersion);
 		}
 	}
 

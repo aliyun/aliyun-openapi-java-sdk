@@ -32,10 +32,10 @@ public class DeleteLhMembersRequest extends RpcAcsRequest<DeleteLhMembersRespons
 
 	private Integer objectType;
 
-	private Long objectId;
-
 	@SerializedName("memberIds")
 	private List<Integer> memberIds;
+
+	private Long objectId;
 	public DeleteLhMembersRequest() {
 		super("dms-enterprise", "2018-11-01", "DeleteLhMembers", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -67,17 +67,6 @@ public class DeleteLhMembersRequest extends RpcAcsRequest<DeleteLhMembersRespons
 		}
 	}
 
-	public Long getObjectId() {
-		return this.objectId;
-	}
-
-	public void setObjectId(Long objectId) {
-		this.objectId = objectId;
-		if(objectId != null){
-			putQueryParameter("ObjectId", objectId.toString());
-		}
-	}
-
 	public List<Integer> getMemberIds() {
 		return this.memberIds;
 	}
@@ -87,6 +76,17 @@ public class DeleteLhMembersRequest extends RpcAcsRequest<DeleteLhMembersRespons
 		if (memberIds != null) {
 			putQueryParameter("MemberIds" , new Gson().toJson(memberIds));
 		}	
+	}
+
+	public Long getObjectId() {
+		return this.objectId;
+	}
+
+	public void setObjectId(Long objectId) {
+		this.objectId = objectId;
+		if(objectId != null){
+			putQueryParameter("ObjectId", objectId.toString());
+		}
 	}
 
 	@Override

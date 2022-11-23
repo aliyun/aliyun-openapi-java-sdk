@@ -27,9 +27,9 @@ public class UpdateTaskNameRequest extends RpcAcsRequest<UpdateTaskNameResponse>
 
 	private Long tid;
 
-	private String nodeName;
-
 	private String nodeId;
+
+	private String nodeName;
 	public UpdateTaskNameRequest() {
 		super("dms-enterprise", "2018-11-01", "UpdateTaskName", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -50,17 +50,6 @@ public class UpdateTaskNameRequest extends RpcAcsRequest<UpdateTaskNameResponse>
 		}
 	}
 
-	public String getNodeName() {
-		return this.nodeName;
-	}
-
-	public void setNodeName(String nodeName) {
-		this.nodeName = nodeName;
-		if(nodeName != null){
-			putQueryParameter("NodeName", nodeName);
-		}
-	}
-
 	public String getNodeId() {
 		return this.nodeId;
 	}
@@ -69,6 +58,17 @@ public class UpdateTaskNameRequest extends RpcAcsRequest<UpdateTaskNameResponse>
 		this.nodeId = nodeId;
 		if(nodeId != null){
 			putQueryParameter("NodeId", nodeId);
+		}
+	}
+
+	public String getNodeName() {
+		return this.nodeName;
+	}
+
+	public void setNodeName(String nodeName) {
+		this.nodeName = nodeName;
+		if(nodeName != null){
+			putQueryParameter("NodeName", nodeName);
 		}
 	}
 
