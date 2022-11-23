@@ -15,25 +15,35 @@
 package com.aliyuncs.market.model.v20151101;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.market.transform.v20151101.CreateRateResponseUnmarshaller;
+import com.aliyuncs.market.transform.v20151101.AutoRenewInstanceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateRateResponse extends AcsResponse {
+public class AutoRenewInstanceResponse extends AcsResponse {
 
-	private Long id;
+	private Boolean success;
+
+	private Boolean data;
 
 	private String requestId;
 
-	public Long getId() {
-		return this.id;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public Boolean getData() {
+		return this.data;
+	}
+
+	public void setData(Boolean data) {
+		this.data = data;
 	}
 
 	public String getRequestId() {
@@ -45,7 +55,12 @@ public class CreateRateResponse extends AcsResponse {
 	}
 
 	@Override
-	public CreateRateResponse getInstance(UnmarshallerContext context) {
-		return	CreateRateResponseUnmarshaller.unmarshall(this, context);
+	public AutoRenewInstanceResponse getInstance(UnmarshallerContext context) {
+		return	AutoRenewInstanceResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

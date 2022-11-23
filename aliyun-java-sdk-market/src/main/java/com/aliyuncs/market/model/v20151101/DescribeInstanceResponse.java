@@ -59,6 +59,8 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 	private String supplierName;
 
+	private String autoRenewal;
+
 	private List<Module> modules;
 
 	private RelationalData relationalData;
@@ -197,6 +199,14 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 	public void setSupplierName(String supplierName) {
 		this.supplierName = supplierName;
+	}
+
+	public String getAutoRenewal() {
+		return this.autoRenewal;
+	}
+
+	public void setAutoRenewal(String autoRenewal) {
+		this.autoRenewal = autoRenewal;
 	}
 
 	public List<Module> getModules() {

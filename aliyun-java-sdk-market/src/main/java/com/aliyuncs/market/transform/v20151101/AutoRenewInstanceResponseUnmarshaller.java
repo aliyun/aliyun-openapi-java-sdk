@@ -14,17 +14,18 @@
 
 package com.aliyuncs.market.transform.v20151101;
 
-import com.aliyuncs.market.model.v20151101.CreateRateResponse;
+import com.aliyuncs.market.model.v20151101.AutoRenewInstanceResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CreateRateResponseUnmarshaller {
+public class AutoRenewInstanceResponseUnmarshaller {
 
-	public static CreateRateResponse unmarshall(CreateRateResponse createRateResponse, UnmarshallerContext _ctx) {
+	public static AutoRenewInstanceResponse unmarshall(AutoRenewInstanceResponse autoRenewInstanceResponse, UnmarshallerContext _ctx) {
 		
-		createRateResponse.setRequestId(_ctx.stringValue("CreateRateResponse.RequestId"));
-		createRateResponse.setId(_ctx.longValue("CreateRateResponse.Id"));
+		autoRenewInstanceResponse.setRequestId(_ctx.stringValue("AutoRenewInstanceResponse.RequestId"));
+		autoRenewInstanceResponse.setSuccess(_ctx.booleanValue("AutoRenewInstanceResponse.Success"));
+		autoRenewInstanceResponse.setData(_ctx.booleanValue("AutoRenewInstanceResponse.Data"));
 	 
-	 	return createRateResponse;
+	 	return autoRenewInstanceResponse;
 	}
 }
