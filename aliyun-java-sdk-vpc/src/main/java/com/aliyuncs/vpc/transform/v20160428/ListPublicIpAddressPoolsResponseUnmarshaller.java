@@ -46,6 +46,8 @@ public class ListPublicIpAddressPoolsResponseUnmarshaller {
 			publicIpAddressPool.setUsedIpNum(_ctx.integerValue("ListPublicIpAddressPoolsResponse.PublicIpAddressPoolList["+ i +"].UsedIpNum"));
 			publicIpAddressPool.setIpAddressRemaining(_ctx.booleanValue("ListPublicIpAddressPoolsResponse.PublicIpAddressPoolList["+ i +"].IpAddressRemaining"));
 			publicIpAddressPool.setUserType(_ctx.booleanValue("ListPublicIpAddressPoolsResponse.PublicIpAddressPoolList["+ i +"].UserType"));
+			publicIpAddressPool.setOwnerId(_ctx.longValue("ListPublicIpAddressPoolsResponse.PublicIpAddressPoolList["+ i +"].OwnerId"));
+			publicIpAddressPool.setShareType(_ctx.stringValue("ListPublicIpAddressPoolsResponse.PublicIpAddressPoolList["+ i +"].ShareType"));
 
 			List<PublicIpCidrBlock> publicIpCidrBlockList = new ArrayList<PublicIpCidrBlock>();
 			for (int j = 0; j < _ctx.lengthValue("ListPublicIpAddressPoolsResponse.PublicIpAddressPoolList["+ i +"].PublicIpCidrBlockList.Length"); j++) {

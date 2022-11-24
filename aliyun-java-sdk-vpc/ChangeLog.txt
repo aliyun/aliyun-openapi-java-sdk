@@ -1,3 +1,7 @@
+2022-11-24 Version: 3.2.9
+- Supported OwnerId for ListPublicIpAddressPools.
+- Supported ShareType for ListPublicIpAddressPools.
+
 2022-11-21 Version: 3.2.8
 - ResponseLog true.
 - Support bandwidth.

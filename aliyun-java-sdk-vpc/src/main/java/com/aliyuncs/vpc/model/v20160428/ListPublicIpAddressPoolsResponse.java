@@ -99,6 +99,10 @@ public class ListPublicIpAddressPoolsResponse extends AcsResponse {
 
 		private Boolean userType;
 
+		private Long ownerId;
+
+		private String shareType;
+
 		private List<PublicIpCidrBlock> publicIpCidrBlockList;
 
 		public String getPublicIpAddressPoolId() {
@@ -187,6 +191,22 @@ public class ListPublicIpAddressPoolsResponse extends AcsResponse {
 
 		public void setUserType(Boolean userType) {
 			this.userType = userType;
+		}
+
+		public Long getOwnerId() {
+			return this.ownerId;
+		}
+
+		public void setOwnerId(Long ownerId) {
+			this.ownerId = ownerId;
+		}
+
+		public String getShareType() {
+			return this.shareType;
+		}
+
+		public void setShareType(String shareType) {
+			this.shareType = shareType;
 		}
 
 		public List<PublicIpCidrBlock> getPublicIpCidrBlockList() {
