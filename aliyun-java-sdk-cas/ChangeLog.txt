@@ -1,3 +1,6 @@
+2022-11-24 Version: 1.0.12
+- Support deleteCertificate.
+
 2022-11-17 Version: 1.0.11
 - Support GetCertWarehouseQuota.
 
