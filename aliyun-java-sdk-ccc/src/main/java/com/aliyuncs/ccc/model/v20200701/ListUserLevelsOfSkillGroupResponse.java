@@ -135,6 +135,8 @@ public class ListUserLevelsOfSkillGroupResponse extends AcsResponse {
 
 			private String roleId;
 
+			private String ramId;
+
 			public String getDisplayName() {
 				return this.displayName;
 			}
@@ -197,6 +199,14 @@ public class ListUserLevelsOfSkillGroupResponse extends AcsResponse {
 
 			public void setRoleId(String roleId) {
 				this.roleId = roleId;
+			}
+
+			public String getRamId() {
+				return this.ramId;
+			}
+
+			public void setRamId(String ramId) {
+				this.ramId = ramId;
 			}
 		}
 	}

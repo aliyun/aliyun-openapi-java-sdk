@@ -159,6 +159,10 @@ public class ListSkillGroupStatesResponse extends AcsResponse {
 
 			private Long outboundScenarioReadyAgents;
 
+			private Long inboundTalkingAgents;
+
+			private Long outboundTalkingAgents;
+
 			public Long getWorkingAgents() {
 				return this.workingAgents;
 			}
@@ -277,6 +281,22 @@ public class ListSkillGroupStatesResponse extends AcsResponse {
 
 			public void setOutboundScenarioReadyAgents(Long outboundScenarioReadyAgents) {
 				this.outboundScenarioReadyAgents = outboundScenarioReadyAgents;
+			}
+
+			public Long getInboundTalkingAgents() {
+				return this.inboundTalkingAgents;
+			}
+
+			public void setInboundTalkingAgents(Long inboundTalkingAgents) {
+				this.inboundTalkingAgents = inboundTalkingAgents;
+			}
+
+			public Long getOutboundTalkingAgents() {
+				return this.outboundTalkingAgents;
+			}
+
+			public void setOutboundTalkingAgents(Long outboundTalkingAgents) {
+				this.outboundTalkingAgents = outboundTalkingAgents;
 			}
 		}
 	}

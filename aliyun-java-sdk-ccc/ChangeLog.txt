@@ -1,3 +1,6 @@
+2022-11-25 Version: 2.8.0
+- Supported v2.8 .
+
 2022-10-14 Version: 2.6.8
 - Supported releaseReason for GetCallDetailRecord and ListCallDetailRecords.
 
