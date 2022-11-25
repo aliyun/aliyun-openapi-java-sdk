@@ -32,6 +32,12 @@ public class SubmitTextTo2DAvatarVideoTaskRequest extends RpcAcsRequest<SubmitTe
 	@SerializedName("videoInfo")
 	private VideoInfo videoInfo;
 
+	@SerializedName("audioInfo")
+	private AudioInfo audioInfo;
+
+	@SerializedName("avatarInfo")
+	private AvatarInfo avatarInfo;
+
 	private Long tenantId;
 
 	private String text;
@@ -61,6 +67,28 @@ public class SubmitTextTo2DAvatarVideoTaskRequest extends RpcAcsRequest<SubmitTe
 		this.videoInfo = videoInfo;	
 		if (videoInfo != null) {
 			putQueryParameter("VideoInfo" , new Gson().toJson(videoInfo));
+		}	
+	}
+
+	public AudioInfo getAudioInfo() {
+		return this.audioInfo;
+	}
+
+	public void setAudioInfo(AudioInfo audioInfo) {
+		this.audioInfo = audioInfo;	
+		if (audioInfo != null) {
+			putQueryParameter("AudioInfo" , new Gson().toJson(audioInfo));
+		}	
+	}
+
+	public AvatarInfo getAvatarInfo() {
+		return this.avatarInfo;
+	}
+
+	public void setAvatarInfo(AvatarInfo avatarInfo) {
+		this.avatarInfo = avatarInfo;	
+		if (avatarInfo != null) {
+			putQueryParameter("AvatarInfo" , new Gson().toJson(avatarInfo));
 		}	
 	}
 
@@ -116,6 +144,9 @@ public class SubmitTextTo2DAvatarVideoTaskRequest extends RpcAcsRequest<SubmitTe
 		@SerializedName("IsAlpha")
 		private Boolean isAlpha;
 
+		@SerializedName("BackgroundImageUrl")
+		private String backgroundImageUrl;
+
 		@SerializedName("IsSubtitles")
 		private Boolean isSubtitles;
 
@@ -127,12 +158,81 @@ public class SubmitTextTo2DAvatarVideoTaskRequest extends RpcAcsRequest<SubmitTe
 			this.isAlpha = isAlpha;
 		}
 
+		public String getBackgroundImageUrl() {
+			return this.backgroundImageUrl;
+		}
+
+		public void setBackgroundImageUrl(String backgroundImageUrl) {
+			this.backgroundImageUrl = backgroundImageUrl;
+		}
+
 		public Boolean getIsSubtitles() {
 			return this.isSubtitles;
 		}
 
 		public void setIsSubtitles(Boolean isSubtitles) {
 			this.isSubtitles = isSubtitles;
+		}
+	}
+
+	public static class AudioInfo {
+
+		@SerializedName("Voice")
+		private String voice;
+
+		@SerializedName("Volume")
+		private Integer volume;
+
+		@SerializedName("SpeechRate")
+		private Integer speechRate;
+
+		@SerializedName("PitchRate")
+		private Integer pitchRate;
+
+		public String getVoice() {
+			return this.voice;
+		}
+
+		public void setVoice(String voice) {
+			this.voice = voice;
+		}
+
+		public Integer getVolume() {
+			return this.volume;
+		}
+
+		public void setVolume(Integer volume) {
+			this.volume = volume;
+		}
+
+		public Integer getSpeechRate() {
+			return this.speechRate;
+		}
+
+		public void setSpeechRate(Integer speechRate) {
+			this.speechRate = speechRate;
+		}
+
+		public Integer getPitchRate() {
+			return this.pitchRate;
+		}
+
+		public void setPitchRate(Integer pitchRate) {
+			this.pitchRate = pitchRate;
+		}
+	}
+
+	public static class AvatarInfo {
+
+		@SerializedName("Code")
+		private String code;
+
+		public String getCode() {
+			return this.code;
+		}
+
+		public void setCode(String code) {
+			this.code = code;
 		}
 	}
 
