@@ -15,7 +15,6 @@
 package com.aliyuncs.cbn.model.v20170912;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cbn.Endpoint;
 
@@ -23,20 +22,18 @@ import com.aliyuncs.cbn.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateTransitRouterMulticastDomainRequest extends RpcAcsRequest<CreateTransitRouterMulticastDomainResponse> {
+public class CreateTransitRouterCidrRequest extends RpcAcsRequest<CreateTransitRouterCidrResponse> {
 	   
 
 	private Long resourceOwnerId;
 
 	private String clientToken;
 
-	private String cenId;
+	private String description;
 
-	private String transitRouterMulticastDomainDescription;
+	private String cidr;
 
-	private String transitRouterMulticastDomainName;
-
-	private List<Tag> tags;
+	private Boolean publishCidrRoute;
 
 	private Boolean dryRun;
 
@@ -47,8 +44,10 @@ public class CreateTransitRouterMulticastDomainRequest extends RpcAcsRequest<Cre
 	private Long ownerId;
 
 	private String transitRouterId;
-	public CreateTransitRouterMulticastDomainRequest() {
-		super("Cbn", "2017-09-12", "CreateTransitRouterMulticastDomain", "cbn");
+
+	private String name;
+	public CreateTransitRouterCidrRequest() {
+		super("Cbn", "2017-09-12", "CreateTransitRouterCidr", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -78,51 +77,37 @@ public class CreateTransitRouterMulticastDomainRequest extends RpcAcsRequest<Cre
 		}
 	}
 
-	public String getCenId() {
-		return this.cenId;
+	public String getDescription() {
+		return this.description;
 	}
 
-	public void setCenId(String cenId) {
-		this.cenId = cenId;
-		if(cenId != null){
-			putQueryParameter("CenId", cenId);
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
 		}
 	}
 
-	public String getTransitRouterMulticastDomainDescription() {
-		return this.transitRouterMulticastDomainDescription;
+	public String getCidr() {
+		return this.cidr;
 	}
 
-	public void setTransitRouterMulticastDomainDescription(String transitRouterMulticastDomainDescription) {
-		this.transitRouterMulticastDomainDescription = transitRouterMulticastDomainDescription;
-		if(transitRouterMulticastDomainDescription != null){
-			putQueryParameter("TransitRouterMulticastDomainDescription", transitRouterMulticastDomainDescription);
+	public void setCidr(String cidr) {
+		this.cidr = cidr;
+		if(cidr != null){
+			putQueryParameter("Cidr", cidr);
 		}
 	}
 
-	public String getTransitRouterMulticastDomainName() {
-		return this.transitRouterMulticastDomainName;
+	public Boolean getPublishCidrRoute() {
+		return this.publishCidrRoute;
 	}
 
-	public void setTransitRouterMulticastDomainName(String transitRouterMulticastDomainName) {
-		this.transitRouterMulticastDomainName = transitRouterMulticastDomainName;
-		if(transitRouterMulticastDomainName != null){
-			putQueryParameter("TransitRouterMulticastDomainName", transitRouterMulticastDomainName);
+	public void setPublishCidrRoute(Boolean publishCidrRoute) {
+		this.publishCidrRoute = publishCidrRoute;
+		if(publishCidrRoute != null){
+			putQueryParameter("PublishCidrRoute", publishCidrRoute.toString());
 		}
-	}
-
-	public List<Tag> getTags() {
-		return this.tags;
-	}
-
-	public void setTags(List<Tag> tags) {
-		this.tags = tags;	
-		if (tags != null) {
-			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
-				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
-				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
-			}
-		}	
 	}
 
 	public Boolean getDryRun() {
@@ -180,32 +165,20 @@ public class CreateTransitRouterMulticastDomainRequest extends RpcAcsRequest<Cre
 		}
 	}
 
-	public static class Tag {
+	public String getName() {
+		return this.name;
+	}
 
-		private String value;
-
-		private String key;
-
-		public String getValue() {
-			return this.value;
-		}
-
-		public void setValue(String value) {
-			this.value = value;
-		}
-
-		public String getKey() {
-			return this.key;
-		}
-
-		public void setKey(String key) {
-			this.key = key;
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 
 	@Override
-	public Class<CreateTransitRouterMulticastDomainResponse> getResponseClass() {
-		return CreateTransitRouterMulticastDomainResponse.class;
+	public Class<CreateTransitRouterCidrResponse> getResponseClass() {
+		return CreateTransitRouterCidrResponse.class;
 	}
 
 }

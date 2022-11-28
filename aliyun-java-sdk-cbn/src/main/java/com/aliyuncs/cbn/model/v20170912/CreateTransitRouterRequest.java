@@ -15,6 +15,9 @@
 package com.aliyuncs.cbn.model.v20170912;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cbn.Endpoint;
 
@@ -32,6 +35,11 @@ public class CreateTransitRouterRequest extends RpcAcsRequest<CreateTransitRoute
 	private String clientToken;
 
 	private String cenId;
+
+	@SerializedName("transitRouterCidrList")
+	private List<TransitRouterCidrList> transitRouterCidrList;
+
+	private List<Tag> tags;
 
 	private Boolean dryRun;
 
@@ -97,6 +105,31 @@ public class CreateTransitRouterRequest extends RpcAcsRequest<CreateTransitRoute
 		}
 	}
 
+	public List<TransitRouterCidrList> getTransitRouterCidrList() {
+		return this.transitRouterCidrList;
+	}
+
+	public void setTransitRouterCidrList(List<TransitRouterCidrList> transitRouterCidrList) {
+		this.transitRouterCidrList = transitRouterCidrList;	
+		if (transitRouterCidrList != null) {
+			putQueryParameter("TransitRouterCidrList" , new Gson().toJson(transitRouterCidrList));
+		}	
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
 	public Boolean getDryRun() {
 		return this.dryRun;
 	}
@@ -160,6 +193,76 @@ public class CreateTransitRouterRequest extends RpcAcsRequest<CreateTransitRoute
 		this.supportMulticast = supportMulticast;
 		if(supportMulticast != null){
 			putQueryParameter("SupportMulticast", supportMulticast.toString());
+		}
+	}
+
+	public static class TransitRouterCidrList {
+
+		@SerializedName("Name")
+		private String name;
+
+		@SerializedName("Description")
+		private String description;
+
+		@SerializedName("Cidr")
+		private String cidr;
+
+		@SerializedName("PublishCidrRoute")
+		private Boolean publishCidrRoute;
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getCidr() {
+			return this.cidr;
+		}
+
+		public void setCidr(String cidr) {
+			this.cidr = cidr;
+		}
+
+		public Boolean getPublishCidrRoute() {
+			return this.publishCidrRoute;
+		}
+
+		public void setPublishCidrRoute(Boolean publishCidrRoute) {
+			this.publishCidrRoute = publishCidrRoute;
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

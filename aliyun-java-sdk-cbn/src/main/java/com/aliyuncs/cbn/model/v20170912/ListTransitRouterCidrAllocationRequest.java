@@ -15,7 +15,6 @@
 package com.aliyuncs.cbn.model.v20170912;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cbn.Endpoint;
 
@@ -23,20 +22,20 @@ import com.aliyuncs.cbn.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateTransitRouterMulticastDomainRequest extends RpcAcsRequest<CreateTransitRouterMulticastDomainResponse> {
+public class ListTransitRouterCidrAllocationRequest extends RpcAcsRequest<ListTransitRouterCidrAllocationResponse> {
 	   
 
 	private Long resourceOwnerId;
 
 	private String clientToken;
 
-	private String cenId;
+	private String transitRouterCidrId;
 
-	private String transitRouterMulticastDomainDescription;
+	private String nextToken;
 
-	private String transitRouterMulticastDomainName;
+	private String cidr;
 
-	private List<Tag> tags;
+	private String dedicatedOwnerId;
 
 	private Boolean dryRun;
 
@@ -47,8 +46,16 @@ public class CreateTransitRouterMulticastDomainRequest extends RpcAcsRequest<Cre
 	private Long ownerId;
 
 	private String transitRouterId;
-	public CreateTransitRouterMulticastDomainRequest() {
-		super("Cbn", "2017-09-12", "CreateTransitRouterMulticastDomain", "cbn");
+
+	private String attachmentName;
+
+	private String cidrBlock;
+
+	private Integer maxResults;
+
+	private String attachmentId;
+	public ListTransitRouterCidrAllocationRequest() {
+		super("Cbn", "2017-09-12", "ListTransitRouterCidrAllocation", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -78,51 +85,48 @@ public class CreateTransitRouterMulticastDomainRequest extends RpcAcsRequest<Cre
 		}
 	}
 
-	public String getCenId() {
-		return this.cenId;
+	public String getTransitRouterCidrId() {
+		return this.transitRouterCidrId;
 	}
 
-	public void setCenId(String cenId) {
-		this.cenId = cenId;
-		if(cenId != null){
-			putQueryParameter("CenId", cenId);
+	public void setTransitRouterCidrId(String transitRouterCidrId) {
+		this.transitRouterCidrId = transitRouterCidrId;
+		if(transitRouterCidrId != null){
+			putQueryParameter("TransitRouterCidrId", transitRouterCidrId);
 		}
 	}
 
-	public String getTransitRouterMulticastDomainDescription() {
-		return this.transitRouterMulticastDomainDescription;
+	public String getNextToken() {
+		return this.nextToken;
 	}
 
-	public void setTransitRouterMulticastDomainDescription(String transitRouterMulticastDomainDescription) {
-		this.transitRouterMulticastDomainDescription = transitRouterMulticastDomainDescription;
-		if(transitRouterMulticastDomainDescription != null){
-			putQueryParameter("TransitRouterMulticastDomainDescription", transitRouterMulticastDomainDescription);
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
 		}
 	}
 
-	public String getTransitRouterMulticastDomainName() {
-		return this.transitRouterMulticastDomainName;
+	public String getCidr() {
+		return this.cidr;
 	}
 
-	public void setTransitRouterMulticastDomainName(String transitRouterMulticastDomainName) {
-		this.transitRouterMulticastDomainName = transitRouterMulticastDomainName;
-		if(transitRouterMulticastDomainName != null){
-			putQueryParameter("TransitRouterMulticastDomainName", transitRouterMulticastDomainName);
+	public void setCidr(String cidr) {
+		this.cidr = cidr;
+		if(cidr != null){
+			putQueryParameter("Cidr", cidr);
 		}
 	}
 
-	public List<Tag> getTags() {
-		return this.tags;
+	public String getDedicatedOwnerId() {
+		return this.dedicatedOwnerId;
 	}
 
-	public void setTags(List<Tag> tags) {
-		this.tags = tags;	
-		if (tags != null) {
-			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
-				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
-				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
-			}
-		}	
+	public void setDedicatedOwnerId(String dedicatedOwnerId) {
+		this.dedicatedOwnerId = dedicatedOwnerId;
+		if(dedicatedOwnerId != null){
+			putQueryParameter("DedicatedOwnerId", dedicatedOwnerId);
+		}
 	}
 
 	public Boolean getDryRun() {
@@ -180,32 +184,53 @@ public class CreateTransitRouterMulticastDomainRequest extends RpcAcsRequest<Cre
 		}
 	}
 
-	public static class Tag {
+	public String getAttachmentName() {
+		return this.attachmentName;
+	}
 
-		private String value;
-
-		private String key;
-
-		public String getValue() {
-			return this.value;
+	public void setAttachmentName(String attachmentName) {
+		this.attachmentName = attachmentName;
+		if(attachmentName != null){
+			putQueryParameter("AttachmentName", attachmentName);
 		}
+	}
 
-		public void setValue(String value) {
-			this.value = value;
+	public String getCidrBlock() {
+		return this.cidrBlock;
+	}
+
+	public void setCidrBlock(String cidrBlock) {
+		this.cidrBlock = cidrBlock;
+		if(cidrBlock != null){
+			putQueryParameter("CidrBlock", cidrBlock);
 		}
+	}
 
-		public String getKey() {
-			return this.key;
+	public Integer getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
+		if(maxResults != null){
+			putQueryParameter("MaxResults", maxResults.toString());
 		}
+	}
 
-		public void setKey(String key) {
-			this.key = key;
+	public String getAttachmentId() {
+		return this.attachmentId;
+	}
+
+	public void setAttachmentId(String attachmentId) {
+		this.attachmentId = attachmentId;
+		if(attachmentId != null){
+			putQueryParameter("AttachmentId", attachmentId);
 		}
 	}
 
 	@Override
-	public Class<CreateTransitRouterMulticastDomainResponse> getResponseClass() {
-		return CreateTransitRouterMulticastDomainResponse.class;
+	public Class<ListTransitRouterCidrAllocationResponse> getResponseClass() {
+		return ListTransitRouterCidrAllocationResponse.class;
 	}
 
 }
