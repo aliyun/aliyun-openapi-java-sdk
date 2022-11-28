@@ -12,9 +12,9 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.green.model.v20170823;
+package com.aliyuncs.green.model.v20180509;
 
-import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.RoaAcsRequest;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.green.Endpoint;
 
@@ -22,14 +22,11 @@ import com.aliyuncs.green.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeOssIncrementCheckSettingRequest extends RpcAcsRequest<DescribeOssIncrementCheckSettingResponse> {
+public class FileAsyncScanV2Request extends RoaAcsRequest<FileAsyncScanV2Response> {
 	   
-
-	private String sourceIp;
-
-	private String lang;
-	public DescribeOssIncrementCheckSettingRequest() {
-		super("Green", "2017-08-23", "DescribeOssIncrementCheckSetting", "green");
+	public FileAsyncScanV2Request() {
+		super("Green", "2018-05-09", "FileAsyncScanV2");
+		setUriPattern("/green/file/asyncscanv2");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +34,9 @@ public class DescribeOssIncrementCheckSettingRequest extends RpcAcsRequest<Descr
 		} catch (Exception e) {}
 	}
 
-	public String getSourceIp() {
-		return this.sourceIp;
-	}
-
-	public void setSourceIp(String sourceIp) {
-		this.sourceIp = sourceIp;
-		if(sourceIp != null){
-			putQueryParameter("SourceIp", sourceIp);
-		}
-	}
-
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
-		}
-	}
-
 	@Override
-	public Class<DescribeOssIncrementCheckSettingResponse> getResponseClass() {
-		return DescribeOssIncrementCheckSettingResponse.class;
+	public Class<FileAsyncScanV2Response> getResponseClass() {
+		return FileAsyncScanV2Response.class;
 	}
 
 }

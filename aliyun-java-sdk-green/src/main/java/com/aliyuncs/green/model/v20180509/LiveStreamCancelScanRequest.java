@@ -27,7 +27,7 @@ public class LiveStreamCancelScanRequest extends RoaAcsRequest<LiveStreamCancelS
 
 	private String clientInfo;
 	public LiveStreamCancelScanRequest() {
-		super("Green", "2018-05-09", "LiveStreamCancelScan", "green");
+		super("Green", "2018-05-09", "LiveStreamCancelScan");
 		setUriPattern("/green/livestream/cancelscan");
 		setMethod(MethodType.POST);
 		try {

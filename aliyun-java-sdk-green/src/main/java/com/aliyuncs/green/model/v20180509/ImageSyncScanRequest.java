@@ -27,7 +27,7 @@ public class ImageSyncScanRequest extends RoaAcsRequest<ImageSyncScanResponse> {
 
 	private String clientInfo;
 	public ImageSyncScanRequest() {
-		super("Green", "2018-05-09", "ImageSyncScan", "green");
+		super("Green", "2018-05-09", "ImageSyncScan");
 		setUriPattern("/green/image/scan");
 		setMethod(MethodType.POST);
 		try {

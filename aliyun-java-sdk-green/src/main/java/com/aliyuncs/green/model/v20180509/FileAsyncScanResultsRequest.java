@@ -27,7 +27,7 @@ public class FileAsyncScanResultsRequest extends RoaAcsRequest<FileAsyncScanResu
 
 	private String clientInfo;
 	public FileAsyncScanResultsRequest() {
-		super("Green", "2018-05-09", "FileAsyncScanResults", "green");
+		super("Green", "2018-05-09", "FileAsyncScanResults");
 		setUriPattern("/green/file/results");
 		setMethod(MethodType.POST);
 		try {

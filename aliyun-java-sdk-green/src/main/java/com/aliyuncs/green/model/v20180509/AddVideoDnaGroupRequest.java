@@ -27,7 +27,7 @@ public class AddVideoDnaGroupRequest extends RoaAcsRequest<AddVideoDnaGroupRespo
 
 	private String clientInfo;
 	public AddVideoDnaGroupRequest() {
-		super("Green", "2018-05-09", "AddVideoDnaGroup", "green");
+		super("Green", "2018-05-09", "AddVideoDnaGroup");
 		setUriPattern("/green/video/dna/group/add");
 		setMethod(MethodType.POST);
 		try {

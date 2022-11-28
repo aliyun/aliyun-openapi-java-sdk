@@ -27,7 +27,7 @@ public class GetSimilarityLibraryRequest extends RoaAcsRequest<GetSimilarityLibr
 
 	private String clientInfo;
 	public GetSimilarityLibraryRequest() {
-		super("Green", "2018-05-09", "GetSimilarityLibrary", "green");
+		super("Green", "2018-05-09", "GetSimilarityLibrary");
 		setUriPattern("/green/similarity/library/get");
 		setMethod(MethodType.POST);
 		try {

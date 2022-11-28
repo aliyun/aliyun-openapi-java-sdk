@@ -12,18 +12,18 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.green.transform.v20170823;
+package com.aliyuncs.green.transform.v20180509;
 
-import com.aliyuncs.green.model.v20170823.UpdateBizTypeImageLibResponse;
+import com.aliyuncs.green.model.v20180509.FileAsyncScanV2Response;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class UpdateBizTypeImageLibResponseUnmarshaller {
+public class FileAsyncScanV2ResponseUnmarshaller {
 
-	public static UpdateBizTypeImageLibResponse unmarshall(UpdateBizTypeImageLibResponse updateBizTypeImageLibResponse, UnmarshallerContext _ctx) {
+	public static FileAsyncScanV2Response unmarshall(FileAsyncScanV2Response fileAsyncScanV2Response, UnmarshallerContext _ctx) {
 		
-		updateBizTypeImageLibResponse.setRequestId(_ctx.stringValue("UpdateBizTypeImageLibResponse.RequestId"));
+		fileAsyncScanV2Response.setRequestId(_ctx.stringValue("FileAsyncScanV2Response.requestId"));
 	 
-	 	return updateBizTypeImageLibResponse;
+	 	return fileAsyncScanV2Response;
 	}
 }

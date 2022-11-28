@@ -12,21 +12,19 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.green.model.v20170823;
+package com.aliyuncs.green.model.v20180509;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.green.transform.v20170823.ExportOpenApiRcpStatsResponseUnmarshaller;
+import com.aliyuncs.green.transform.v20180509.FileAsyncScanV2ResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ExportOpenApiRcpStatsResponse extends AcsResponse {
+public class FileAsyncScanV2Response extends AcsResponse {
 
 	private String requestId;
-
-	private String downloadUrl;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,17 +34,9 @@ public class ExportOpenApiRcpStatsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getDownloadUrl() {
-		return this.downloadUrl;
-	}
-
-	public void setDownloadUrl(String downloadUrl) {
-		this.downloadUrl = downloadUrl;
-	}
-
 	@Override
-	public ExportOpenApiRcpStatsResponse getInstance(UnmarshallerContext context) {
-		return	ExportOpenApiRcpStatsResponseUnmarshaller.unmarshall(this, context);
+	public FileAsyncScanV2Response getInstance(UnmarshallerContext context) {
+		return	FileAsyncScanV2ResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

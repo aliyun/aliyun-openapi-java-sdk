@@ -27,7 +27,7 @@ public class VoiceAsyncScanRequest extends RoaAcsRequest<VoiceAsyncScanResponse>
 
 	private String clientInfo;
 	public VoiceAsyncScanRequest() {
-		super("Green", "2018-05-09", "VoiceAsyncScan", "green");
+		super("Green", "2018-05-09", "VoiceAsyncScan");
 		setUriPattern("/green/voice/asyncscan");
 		setMethod(MethodType.POST);
 		try {

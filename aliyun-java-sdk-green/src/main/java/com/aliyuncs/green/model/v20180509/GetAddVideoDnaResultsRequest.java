@@ -27,7 +27,7 @@ public class GetAddVideoDnaResultsRequest extends RoaAcsRequest<GetAddVideoDnaRe
 
 	private String clientInfo;
 	public GetAddVideoDnaResultsRequest() {
-		super("Green", "2018-05-09", "GetAddVideoDnaResults", "green");
+		super("Green", "2018-05-09", "GetAddVideoDnaResults");
 		setUriPattern("/green/video/dna/add/results");
 		setMethod(MethodType.POST);
 		try {

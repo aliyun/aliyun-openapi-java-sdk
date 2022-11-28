@@ -27,7 +27,7 @@ public class VoiceIdentityRegisterRequest extends RoaAcsRequest<VoiceIdentityReg
 
 	private String clientInfo;
 	public VoiceIdentityRegisterRequest() {
-		super("Green", "2018-05-09", "VoiceIdentityRegister", "green");
+		super("Green", "2018-05-09", "VoiceIdentityRegister");
 		setUriPattern("/green/voice/auth/register");
 		setMethod(MethodType.POST);
 		try {

@@ -27,7 +27,7 @@ public class VideoFeedbackRequest extends RoaAcsRequest<VideoFeedbackResponse> {
 
 	private String clientInfo;
 	public VideoFeedbackRequest() {
-		super("Green", "2018-05-09", "VideoFeedback", "green");
+		super("Green", "2018-05-09", "VideoFeedback");
 		setUriPattern("/green/video/feedback");
 		setMethod(MethodType.POST);
 		try {

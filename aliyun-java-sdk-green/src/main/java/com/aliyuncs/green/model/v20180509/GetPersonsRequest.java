@@ -27,7 +27,7 @@ public class GetPersonsRequest extends RoaAcsRequest<GetPersonsResponse> {
 
 	private String clientInfo;
 	public GetPersonsRequest() {
-		super("Green", "2018-05-09", "GetPersons", "green");
+		super("Green", "2018-05-09", "GetPersons");
 		setUriPattern("/green/sface/group/persons");
 		setMethod(MethodType.POST);
 		try {

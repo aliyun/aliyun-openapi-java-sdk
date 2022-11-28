@@ -27,7 +27,7 @@ public class LiveStreamAsyncScanResultsRequest extends RoaAcsRequest<LiveStreamA
 
 	private String clientInfo;
 	public LiveStreamAsyncScanResultsRequest() {
-		super("Green", "2018-05-09", "LiveStreamAsyncScanResults", "green");
+		super("Green", "2018-05-09", "LiveStreamAsyncScanResults");
 		setUriPattern("/green/livestream/results");
 		setMethod(MethodType.POST);
 		try {

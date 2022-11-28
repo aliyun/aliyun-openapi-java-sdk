@@ -27,7 +27,7 @@ public class AddGroupsRequest extends RoaAcsRequest<AddGroupsResponse> {
 
 	private String clientInfo;
 	public AddGroupsRequest() {
-		super("Green", "2018-05-09", "AddGroups", "green");
+		super("Green", "2018-05-09", "AddGroups");
 		setUriPattern("/green/sface/person/groups/add");
 		setMethod(MethodType.POST);
 		try {

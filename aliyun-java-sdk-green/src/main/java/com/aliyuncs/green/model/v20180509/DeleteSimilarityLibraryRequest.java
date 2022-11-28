@@ -27,7 +27,7 @@ public class DeleteSimilarityLibraryRequest extends RoaAcsRequest<DeleteSimilari
 
 	private String clientInfo;
 	public DeleteSimilarityLibraryRequest() {
-		super("Green", "2018-05-09", "DeleteSimilarityLibrary", "green");
+		super("Green", "2018-05-09", "DeleteSimilarityLibrary");
 		setUriPattern("/green/similarity/library/delete");
 		setMethod(MethodType.POST);
 		try {

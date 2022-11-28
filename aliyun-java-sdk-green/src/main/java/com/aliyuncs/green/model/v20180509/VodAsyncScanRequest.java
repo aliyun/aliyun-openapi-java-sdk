@@ -27,7 +27,7 @@ public class VodAsyncScanRequest extends RoaAcsRequest<VodAsyncScanResponse> {
 
 	private String clientInfo;
 	public VodAsyncScanRequest() {
-		super("Green", "2018-05-09", "VodAsyncScan", "green");
+		super("Green", "2018-05-09", "VodAsyncScan");
 		setUriPattern("/green/vod/asyncscan");
 		setMethod(MethodType.POST);
 		try {

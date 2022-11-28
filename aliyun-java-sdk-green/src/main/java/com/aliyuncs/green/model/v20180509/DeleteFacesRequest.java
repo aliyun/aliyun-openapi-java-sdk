@@ -27,7 +27,7 @@ public class DeleteFacesRequest extends RoaAcsRequest<DeleteFacesResponse> {
 
 	private String clientInfo;
 	public DeleteFacesRequest() {
-		super("Green", "2018-05-09", "DeleteFaces", "green");
+		super("Green", "2018-05-09", "DeleteFaces");
 		setUriPattern("/green/sface/face/delete");
 		setMethod(MethodType.POST);
 		try {

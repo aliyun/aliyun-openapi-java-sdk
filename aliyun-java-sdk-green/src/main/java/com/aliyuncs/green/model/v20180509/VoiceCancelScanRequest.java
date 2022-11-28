@@ -27,7 +27,7 @@ public class VoiceCancelScanRequest extends RoaAcsRequest<VoiceCancelScanRespons
 
 	private String clientInfo;
 	public VoiceCancelScanRequest() {
-		super("Green", "2018-05-09", "VoiceCancelScan", "green");
+		super("Green", "2018-05-09", "VoiceCancelScan");
 		setUriPattern("/green/voice/cancelscan");
 		setMethod(MethodType.POST);
 		try {

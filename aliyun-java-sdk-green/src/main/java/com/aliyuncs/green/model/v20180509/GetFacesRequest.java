@@ -27,7 +27,7 @@ public class GetFacesRequest extends RoaAcsRequest<GetFacesResponse> {
 
 	private String clientInfo;
 	public GetFacesRequest() {
-		super("Green", "2018-05-09", "GetFaces", "green");
+		super("Green", "2018-05-09", "GetFaces");
 		setUriPattern("/green/sface/faces");
 		setMethod(MethodType.POST);
 		try {

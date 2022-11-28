@@ -27,7 +27,7 @@ public class SetPersonRequest extends RoaAcsRequest<SetPersonResponse> {
 
 	private String clientInfo;
 	public SetPersonRequest() {
-		super("Green", "2018-05-09", "SetPerson", "green");
+		super("Green", "2018-05-09", "SetPerson");
 		setUriPattern("/green/sface/person/update");
 		setMethod(MethodType.POST);
 		try {
