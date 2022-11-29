@@ -135,6 +135,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private String intranetSegments;
 
+		private String iPV6AclName;
+
+		private String iPV6AclId;
+
+		private String iPV6AclType;
+
+		private String iPV6AclStatus;
+
 		private List<SpecAttribute> instanceSpecAttributes;
 
 		public String getStatus() {
@@ -367,6 +375,38 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setIntranetSegments(String intranetSegments) {
 			this.intranetSegments = intranetSegments;
+		}
+
+		public String getIPV6AclName() {
+			return this.iPV6AclName;
+		}
+
+		public void setIPV6AclName(String iPV6AclName) {
+			this.iPV6AclName = iPV6AclName;
+		}
+
+		public String getIPV6AclId() {
+			return this.iPV6AclId;
+		}
+
+		public void setIPV6AclId(String iPV6AclId) {
+			this.iPV6AclId = iPV6AclId;
+		}
+
+		public String getIPV6AclType() {
+			return this.iPV6AclType;
+		}
+
+		public void setIPV6AclType(String iPV6AclType) {
+			this.iPV6AclType = iPV6AclType;
+		}
+
+		public String getIPV6AclStatus() {
+			return this.iPV6AclStatus;
+		}
+
+		public void setIPV6AclStatus(String iPV6AclStatus) {
+			this.iPV6AclStatus = iPV6AclStatus;
 		}
 
 		public List<SpecAttribute> getInstanceSpecAttributes() {

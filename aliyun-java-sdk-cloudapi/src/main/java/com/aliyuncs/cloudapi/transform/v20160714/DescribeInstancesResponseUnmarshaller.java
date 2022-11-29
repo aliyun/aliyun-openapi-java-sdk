@@ -64,6 +64,10 @@ public class DescribeInstancesResponseUnmarshaller {
 			instanceAttribute.setAclStatus(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].AclStatus"));
 			instanceAttribute.setAclId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].AclId"));
 			instanceAttribute.setIntranetSegments(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].IntranetSegments"));
+			instanceAttribute.setIPV6AclName(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].IPV6AclName"));
+			instanceAttribute.setIPV6AclId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].IPV6AclId"));
+			instanceAttribute.setIPV6AclType(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].IPV6AclType"));
+			instanceAttribute.setIPV6AclStatus(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].IPV6AclStatus"));
 
 			List<SpecAttribute> instanceSpecAttributes = new ArrayList<SpecAttribute>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstancesResponse.Instances["+ i +"].InstanceSpecAttributes.Length"); j++) {

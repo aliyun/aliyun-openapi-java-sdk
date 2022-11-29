@@ -27,6 +27,8 @@ public class CreateAccessControlListRequest extends RpcAcsRequest<CreateAccessCo
 
 	private String aclName;
 
+	private String addressIPVersion;
+
 	private String securityToken;
 	public CreateAccessControlListRequest() {
 		super("CloudAPI", "2016-07-14", "CreateAccessControlList", "apigateway");
@@ -45,6 +47,17 @@ public class CreateAccessControlListRequest extends RpcAcsRequest<CreateAccessCo
 		this.aclName = aclName;
 		if(aclName != null){
 			putQueryParameter("AclName", aclName);
+		}
+	}
+
+	public String getAddressIPVersion() {
+		return this.addressIPVersion;
+	}
+
+	public void setAddressIPVersion(String addressIPVersion) {
+		this.addressIPVersion = addressIPVersion;
+		if(addressIPVersion != null){
+			putQueryParameter("AddressIPVersion", addressIPVersion);
 		}
 	}
 

@@ -27,6 +27,8 @@ public class DisableInstanceAccessControlRequest extends RpcAcsRequest<DisableIn
 
 	private String aclId;
 
+	private String addressIPVersion;
+
 	private String instanceId;
 
 	private String securityToken;
@@ -47,6 +49,17 @@ public class DisableInstanceAccessControlRequest extends RpcAcsRequest<DisableIn
 		this.aclId = aclId;
 		if(aclId != null){
 			putQueryParameter("AclId", aclId);
+		}
+	}
+
+	public String getAddressIPVersion() {
+		return this.addressIPVersion;
+	}
+
+	public void setAddressIPVersion(String addressIPVersion) {
+		this.addressIPVersion = addressIPVersion;
+		if(addressIPVersion != null){
+			putQueryParameter("AddressIPVersion", addressIPVersion);
 		}
 	}
 

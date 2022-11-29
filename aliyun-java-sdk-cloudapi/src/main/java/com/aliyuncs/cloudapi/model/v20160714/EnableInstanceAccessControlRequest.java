@@ -27,6 +27,8 @@ public class EnableInstanceAccessControlRequest extends RpcAcsRequest<EnableInst
 
 	private String aclId;
 
+	private String addressIPVersion;
+
 	private String aclType;
 
 	private String instanceId;
@@ -49,6 +51,17 @@ public class EnableInstanceAccessControlRequest extends RpcAcsRequest<EnableInst
 		this.aclId = aclId;
 		if(aclId != null){
 			putQueryParameter("AclId", aclId);
+		}
+	}
+
+	public String getAddressIPVersion() {
+		return this.addressIPVersion;
+	}
+
+	public void setAddressIPVersion(String addressIPVersion) {
+		this.addressIPVersion = addressIPVersion;
+		if(addressIPVersion != null){
+			putQueryParameter("AddressIPVersion", addressIPVersion);
 		}
 	}
 

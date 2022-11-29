@@ -1,3 +1,8 @@
+2022-11-29 Version: 4.9.14
+- Add DescribePluginApis.
+- Modify CreateApp.
+- Modify DeleteApp.
+
 2022-11-16 Version: 4.9.13
 - Add ImportOAS.
 

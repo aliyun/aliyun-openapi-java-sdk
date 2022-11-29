@@ -27,6 +27,8 @@ public class DescribeAccessControlListsRequest extends RpcAcsRequest<DescribeAcc
 
 	private String aclName;
 
+	private String addressIPVersion;
+
 	private Integer pageNumber;
 
 	private String securityToken;
@@ -49,6 +51,17 @@ public class DescribeAccessControlListsRequest extends RpcAcsRequest<DescribeAcc
 		this.aclName = aclName;
 		if(aclName != null){
 			putQueryParameter("AclName", aclName);
+		}
+	}
+
+	public String getAddressIPVersion() {
+		return this.addressIPVersion;
+	}
+
+	public void setAddressIPVersion(String addressIPVersion) {
+		this.addressIPVersion = addressIPVersion;
+		if(addressIPVersion != null){
+			putQueryParameter("AddressIPVersion", addressIPVersion);
 		}
 	}
 
