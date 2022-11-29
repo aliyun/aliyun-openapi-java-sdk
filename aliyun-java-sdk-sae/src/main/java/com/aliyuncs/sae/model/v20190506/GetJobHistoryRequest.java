@@ -22,17 +22,17 @@ import com.aliyuncs.sae.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeConfigurationPriceRequest extends RoaAcsRequest<DescribeConfigurationPriceResponse> {
+public class GetJobHistoryRequest extends RoaAcsRequest<GetJobHistoryResponse> {
 	   
 
-	private Integer memory;
+	private String appId;
 
-	private Integer cpu;
+	private Long pageSize;
 
-	private String workload;
-	public DescribeConfigurationPriceRequest() {
-		super("sae", "2019-05-06", "DescribeConfigurationPrice", "serverless");
-		setUriPattern("/pop/v1/paas/configurationPrice");
+	private Long currentPage;
+	public GetJobHistoryRequest() {
+		super("sae", "2019-05-06", "GetJobHistory", "serverless");
+		setUriPattern("/pop/v1/sam/job/getJobHistory");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -40,42 +40,42 @@ public class DescribeConfigurationPriceRequest extends RoaAcsRequest<DescribeCon
 		} catch (Exception e) {}
 	}
 
-	public Integer getMemory() {
-		return this.memory;
+	public String getAppId() {
+		return this.appId;
 	}
 
-	public void setMemory(Integer memory) {
-		this.memory = memory;
-		if(memory != null){
-			putQueryParameter("Memory", memory.toString());
+	public void setAppId(String appId) {
+		this.appId = appId;
+		if(appId != null){
+			putQueryParameter("AppId", appId);
 		}
 	}
 
-	public Integer getCpu() {
-		return this.cpu;
+	public Long getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setCpu(Integer cpu) {
-		this.cpu = cpu;
-		if(cpu != null){
-			putQueryParameter("Cpu", cpu.toString());
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
-	public String getWorkload() {
-		return this.workload;
+	public Long getCurrentPage() {
+		return this.currentPage;
 	}
 
-	public void setWorkload(String workload) {
-		this.workload = workload;
-		if(workload != null){
-			putQueryParameter("Workload", workload);
+	public void setCurrentPage(Long currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
 		}
 	}
 
 	@Override
-	public Class<DescribeConfigurationPriceResponse> getResponseClass() {
-		return DescribeConfigurationPriceResponse.class;
+	public Class<GetJobHistoryResponse> getResponseClass() {
+		return GetJobHistoryResponse.class;
 	}
 
 }

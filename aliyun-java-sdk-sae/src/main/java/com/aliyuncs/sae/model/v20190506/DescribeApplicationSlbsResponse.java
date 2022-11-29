@@ -105,6 +105,10 @@ public class DescribeApplicationSlbsResponse extends AcsResponse {
 
 		private String intranetIp;
 
+		private Boolean internetSlbExpired;
+
+		private Boolean intranetSlbExpired;
+
 		private List<IntranetItem> intranet;
 
 		private List<InternetItem> internet;
@@ -139,6 +143,22 @@ public class DescribeApplicationSlbsResponse extends AcsResponse {
 
 		public void setIntranetIp(String intranetIp) {
 			this.intranetIp = intranetIp;
+		}
+
+		public Boolean getInternetSlbExpired() {
+			return this.internetSlbExpired;
+		}
+
+		public void setInternetSlbExpired(Boolean internetSlbExpired) {
+			this.internetSlbExpired = internetSlbExpired;
+		}
+
+		public Boolean getIntranetSlbExpired() {
+			return this.intranetSlbExpired;
+		}
+
+		public void setIntranetSlbExpired(Boolean intranetSlbExpired) {
+			this.intranetSlbExpired = intranetSlbExpired;
 		}
 
 		public List<IntranetItem> getIntranet() {

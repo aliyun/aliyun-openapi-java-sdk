@@ -22,17 +22,17 @@ import com.aliyuncs.sae.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeConfigurationPriceRequest extends RoaAcsRequest<DescribeConfigurationPriceResponse> {
+public class DescribeJobRequest extends RoaAcsRequest<DescribeJobResponse> {
 	   
 
-	private Integer memory;
+	private String jobId;
 
-	private Integer cpu;
+	private String versionId;
 
-	private String workload;
-	public DescribeConfigurationPriceRequest() {
-		super("sae", "2019-05-06", "DescribeConfigurationPrice", "serverless");
-		setUriPattern("/pop/v1/paas/configurationPrice");
+	private String appId;
+	public DescribeJobRequest() {
+		super("sae", "2019-05-06", "DescribeJob", "serverless");
+		setUriPattern("/pop/v1/sam/job/describeJob");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -40,42 +40,42 @@ public class DescribeConfigurationPriceRequest extends RoaAcsRequest<DescribeCon
 		} catch (Exception e) {}
 	}
 
-	public Integer getMemory() {
-		return this.memory;
+	public String getJobId() {
+		return this.jobId;
 	}
 
-	public void setMemory(Integer memory) {
-		this.memory = memory;
-		if(memory != null){
-			putQueryParameter("Memory", memory.toString());
+	public void setJobId(String jobId) {
+		this.jobId = jobId;
+		if(jobId != null){
+			putQueryParameter("JobId", jobId);
 		}
 	}
 
-	public Integer getCpu() {
-		return this.cpu;
+	public String getVersionId() {
+		return this.versionId;
 	}
 
-	public void setCpu(Integer cpu) {
-		this.cpu = cpu;
-		if(cpu != null){
-			putQueryParameter("Cpu", cpu.toString());
+	public void setVersionId(String versionId) {
+		this.versionId = versionId;
+		if(versionId != null){
+			putQueryParameter("VersionId", versionId);
 		}
 	}
 
-	public String getWorkload() {
-		return this.workload;
+	public String getAppId() {
+		return this.appId;
 	}
 
-	public void setWorkload(String workload) {
-		this.workload = workload;
-		if(workload != null){
-			putQueryParameter("Workload", workload);
+	public void setAppId(String appId) {
+		this.appId = appId;
+		if(appId != null){
+			putQueryParameter("AppId", appId);
 		}
 	}
 
 	@Override
-	public Class<DescribeConfigurationPriceResponse> getResponseClass() {
-		return DescribeConfigurationPriceResponse.class;
+	public Class<DescribeJobResponse> getResponseClass() {
+		return DescribeJobResponse.class;
 	}
 
 }

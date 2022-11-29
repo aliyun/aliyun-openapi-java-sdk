@@ -22,17 +22,15 @@ import com.aliyuncs.sae.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeConfigurationPriceRequest extends RoaAcsRequest<DescribeConfigurationPriceResponse> {
+public class DescribeSecretRequest extends RoaAcsRequest<DescribeSecretResponse> {
 	   
 
-	private Integer memory;
+	private String namespaceId;
 
-	private Integer cpu;
-
-	private String workload;
-	public DescribeConfigurationPriceRequest() {
-		super("sae", "2019-05-06", "DescribeConfigurationPrice", "serverless");
-		setUriPattern("/pop/v1/paas/configurationPrice");
+	private Long secretId;
+	public DescribeSecretRequest() {
+		super("sae", "2019-05-06", "DescribeSecret", "serverless");
+		setUriPattern("/pop/v1/sam/secret/secret");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -40,42 +38,31 @@ public class DescribeConfigurationPriceRequest extends RoaAcsRequest<DescribeCon
 		} catch (Exception e) {}
 	}
 
-	public Integer getMemory() {
-		return this.memory;
+	public String getNamespaceId() {
+		return this.namespaceId;
 	}
 
-	public void setMemory(Integer memory) {
-		this.memory = memory;
-		if(memory != null){
-			putQueryParameter("Memory", memory.toString());
+	public void setNamespaceId(String namespaceId) {
+		this.namespaceId = namespaceId;
+		if(namespaceId != null){
+			putQueryParameter("NamespaceId", namespaceId);
 		}
 	}
 
-	public Integer getCpu() {
-		return this.cpu;
+	public Long getSecretId() {
+		return this.secretId;
 	}
 
-	public void setCpu(Integer cpu) {
-		this.cpu = cpu;
-		if(cpu != null){
-			putQueryParameter("Cpu", cpu.toString());
-		}
-	}
-
-	public String getWorkload() {
-		return this.workload;
-	}
-
-	public void setWorkload(String workload) {
-		this.workload = workload;
-		if(workload != null){
-			putQueryParameter("Workload", workload);
+	public void setSecretId(Long secretId) {
+		this.secretId = secretId;
+		if(secretId != null){
+			putQueryParameter("SecretId", secretId.toString());
 		}
 	}
 
 	@Override
-	public Class<DescribeConfigurationPriceResponse> getResponseClass() {
-		return DescribeConfigurationPriceResponse.class;
+	public Class<DescribeSecretResponse> getResponseClass() {
+		return DescribeSecretResponse.class;
 	}
 
 }

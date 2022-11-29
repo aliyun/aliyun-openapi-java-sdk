@@ -130,6 +130,8 @@ public class DescribeNamespaceResourcesResponse extends AcsResponse {
 
 		private String jumpServerAppId;
 
+		private String jumpServerIp;
+
 		public String getVpcId() {
 			return this.vpcId;
 		}
@@ -264,6 +266,14 @@ public class DescribeNamespaceResourcesResponse extends AcsResponse {
 
 		public void setJumpServerAppId(String jumpServerAppId) {
 			this.jumpServerAppId = jumpServerAppId;
+		}
+
+		public String getJumpServerIp() {
+			return this.jumpServerIp;
+		}
+
+		public void setJumpServerIp(String jumpServerIp) {
+			this.jumpServerIp = jumpServerIp;
 		}
 	}
 

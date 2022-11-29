@@ -22,60 +22,60 @@ import com.aliyuncs.sae.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeConfigurationPriceRequest extends RoaAcsRequest<DescribeConfigurationPriceResponse> {
+public class UpdateSecretRequest extends RoaAcsRequest<UpdateSecretResponse> {
 	   
 
-	private Integer memory;
+	private String namespaceId;
 
-	private Integer cpu;
+	private Long secretId;
 
-	private String workload;
-	public DescribeConfigurationPriceRequest() {
-		super("sae", "2019-05-06", "DescribeConfigurationPrice", "serverless");
-		setUriPattern("/pop/v1/paas/configurationPrice");
-		setMethod(MethodType.GET);
+	private String secretData;
+	public UpdateSecretRequest() {
+		super("sae", "2019-05-06", "UpdateSecret", "serverless");
+		setUriPattern("/pop/v1/sam/secret/secret");
+		setMethod(MethodType.PUT);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public Integer getMemory() {
-		return this.memory;
+	public String getNamespaceId() {
+		return this.namespaceId;
 	}
 
-	public void setMemory(Integer memory) {
-		this.memory = memory;
-		if(memory != null){
-			putQueryParameter("Memory", memory.toString());
+	public void setNamespaceId(String namespaceId) {
+		this.namespaceId = namespaceId;
+		if(namespaceId != null){
+			putQueryParameter("NamespaceId", namespaceId);
 		}
 	}
 
-	public Integer getCpu() {
-		return this.cpu;
+	public Long getSecretId() {
+		return this.secretId;
 	}
 
-	public void setCpu(Integer cpu) {
-		this.cpu = cpu;
-		if(cpu != null){
-			putQueryParameter("Cpu", cpu.toString());
+	public void setSecretId(Long secretId) {
+		this.secretId = secretId;
+		if(secretId != null){
+			putQueryParameter("SecretId", secretId.toString());
 		}
 	}
 
-	public String getWorkload() {
-		return this.workload;
+	public String getSecretData() {
+		return this.secretData;
 	}
 
-	public void setWorkload(String workload) {
-		this.workload = workload;
-		if(workload != null){
-			putQueryParameter("Workload", workload);
+	public void setSecretData(String secretData) {
+		this.secretData = secretData;
+		if(secretData != null){
+			putBodyParameter("SecretData", secretData);
 		}
 	}
 
 	@Override
-	public Class<DescribeConfigurationPriceResponse> getResponseClass() {
-		return DescribeConfigurationPriceResponse.class;
+	public Class<UpdateSecretResponse> getResponseClass() {
+		return UpdateSecretResponse.class;
 	}
 
 }

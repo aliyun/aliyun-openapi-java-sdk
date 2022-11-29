@@ -1,3 +1,6 @@
+2022-11-29 Version: 1.22.0
+- Add python zip.
+
 2022-05-16 Version: 1.20.1
 - Support UpdateApplicationVswitches and DescribeComponents.
 

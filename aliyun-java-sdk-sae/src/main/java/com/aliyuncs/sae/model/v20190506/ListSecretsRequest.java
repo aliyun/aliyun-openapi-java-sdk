@@ -22,17 +22,13 @@ import com.aliyuncs.sae.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeConfigurationPriceRequest extends RoaAcsRequest<DescribeConfigurationPriceResponse> {
+public class ListSecretsRequest extends RoaAcsRequest<ListSecretsResponse> {
 	   
 
-	private Integer memory;
-
-	private Integer cpu;
-
-	private String workload;
-	public DescribeConfigurationPriceRequest() {
-		super("sae", "2019-05-06", "DescribeConfigurationPrice", "serverless");
-		setUriPattern("/pop/v1/paas/configurationPrice");
+	private String namespaceId;
+	public ListSecretsRequest() {
+		super("sae", "2019-05-06", "ListSecrets", "serverless");
+		setUriPattern("/pop/v1/sam/secret/secrets");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -40,42 +36,20 @@ public class DescribeConfigurationPriceRequest extends RoaAcsRequest<DescribeCon
 		} catch (Exception e) {}
 	}
 
-	public Integer getMemory() {
-		return this.memory;
+	public String getNamespaceId() {
+		return this.namespaceId;
 	}
 
-	public void setMemory(Integer memory) {
-		this.memory = memory;
-		if(memory != null){
-			putQueryParameter("Memory", memory.toString());
-		}
-	}
-
-	public Integer getCpu() {
-		return this.cpu;
-	}
-
-	public void setCpu(Integer cpu) {
-		this.cpu = cpu;
-		if(cpu != null){
-			putQueryParameter("Cpu", cpu.toString());
-		}
-	}
-
-	public String getWorkload() {
-		return this.workload;
-	}
-
-	public void setWorkload(String workload) {
-		this.workload = workload;
-		if(workload != null){
-			putQueryParameter("Workload", workload);
+	public void setNamespaceId(String namespaceId) {
+		this.namespaceId = namespaceId;
+		if(namespaceId != null){
+			putQueryParameter("NamespaceId", namespaceId);
 		}
 	}
 
 	@Override
-	public Class<DescribeConfigurationPriceResponse> getResponseClass() {
-		return DescribeConfigurationPriceResponse.class;
+	public Class<ListSecretsResponse> getResponseClass() {
+		return ListSecretsResponse.class;
 	}
 
 }

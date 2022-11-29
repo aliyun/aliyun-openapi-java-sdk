@@ -22,17 +22,15 @@ import com.aliyuncs.sae.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeConfigurationPriceRequest extends RoaAcsRequest<DescribeConfigurationPriceResponse> {
+public class SuspendJobRequest extends RoaAcsRequest<SuspendJobResponse> {
 	   
 
-	private Integer memory;
+	private Boolean suspend;
 
-	private Integer cpu;
-
-	private String workload;
-	public DescribeConfigurationPriceRequest() {
-		super("sae", "2019-05-06", "DescribeConfigurationPrice", "serverless");
-		setUriPattern("/pop/v1/paas/configurationPrice");
+	private String appId;
+	public SuspendJobRequest() {
+		super("sae", "2019-05-06", "SuspendJob", "serverless");
+		setUriPattern("/pop/v1/sam/job/suspendJob");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -40,42 +38,31 @@ public class DescribeConfigurationPriceRequest extends RoaAcsRequest<DescribeCon
 		} catch (Exception e) {}
 	}
 
-	public Integer getMemory() {
-		return this.memory;
+	public Boolean getSuspend() {
+		return this.suspend;
 	}
 
-	public void setMemory(Integer memory) {
-		this.memory = memory;
-		if(memory != null){
-			putQueryParameter("Memory", memory.toString());
+	public void setSuspend(Boolean suspend) {
+		this.suspend = suspend;
+		if(suspend != null){
+			putQueryParameter("Suspend", suspend.toString());
 		}
 	}
 
-	public Integer getCpu() {
-		return this.cpu;
+	public String getAppId() {
+		return this.appId;
 	}
 
-	public void setCpu(Integer cpu) {
-		this.cpu = cpu;
-		if(cpu != null){
-			putQueryParameter("Cpu", cpu.toString());
-		}
-	}
-
-	public String getWorkload() {
-		return this.workload;
-	}
-
-	public void setWorkload(String workload) {
-		this.workload = workload;
-		if(workload != null){
-			putQueryParameter("Workload", workload);
+	public void setAppId(String appId) {
+		this.appId = appId;
+		if(appId != null){
+			putQueryParameter("AppId", appId);
 		}
 	}
 
 	@Override
-	public Class<DescribeConfigurationPriceResponse> getResponseClass() {
-		return DescribeConfigurationPriceResponse.class;
+	public Class<SuspendJobResponse> getResponseClass() {
+		return SuspendJobResponse.class;
 	}
 
 }

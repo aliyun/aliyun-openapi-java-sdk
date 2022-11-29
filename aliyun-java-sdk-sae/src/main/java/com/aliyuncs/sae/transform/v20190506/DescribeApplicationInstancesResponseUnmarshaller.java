@@ -54,6 +54,7 @@ public class DescribeApplicationInstancesResponseUnmarshaller {
 			instance.setPackageVersion(_ctx.stringValue("DescribeApplicationInstancesResponse.Data.Instances["+ i +"].PackageVersion"));
 			instance.setEip(_ctx.stringValue("DescribeApplicationInstancesResponse.Data.Instances["+ i +"].Eip"));
 			instance.setFinishTimeStamp(_ctx.longValue("DescribeApplicationInstancesResponse.Data.Instances["+ i +"].FinishTimeStamp"));
+			instance.setDebugStatus(_ctx.booleanValue("DescribeApplicationInstancesResponse.Data.Instances["+ i +"].DebugStatus"));
 
 			instances.add(instance);
 		}

@@ -16,14 +16,14 @@ package com.aliyuncs.sae.model.v20190506;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.sae.transform.v20190506.DescribeApplicationConfigResponseUnmarshaller;
+import com.aliyuncs.sae.transform.v20190506.DescribeJobResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeApplicationConfigResponse extends AcsResponse {
+public class DescribeJobResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -133,11 +133,7 @@ public class DescribeApplicationConfigResponse extends AcsResponse {
 
 		private Integer replicas;
 
-		private String updateStrategy;
-
 		private Integer minReadyInstances;
-
-		private Integer minReadyInstanceRatio;
 
 		private Integer memory;
 
@@ -209,13 +205,23 @@ public class DescribeApplicationConfigResponse extends AcsResponse {
 
 		private Boolean associateEip;
 
-		private String kafkaConfigs;
+		private String triggerConfig;
+
+		private String concurrencyPolicy;
+
+		private Boolean suspend;
+
+		private Long timeout;
+
+		private Long backoffLimit;
+
+		private Boolean slice;
+
+		private String sliceEnvs;
+
+		private String refAppId;
 
 		private String programmingLanguage;
-
-		private String pvtzDiscovery;
-
-		private String microRegistration;
 
 		private String nasConfigs;
 
@@ -230,6 +236,12 @@ public class DescribeApplicationConfigResponse extends AcsResponse {
 		private List<MountDescItem> mountDesc;
 
 		private List<OssMountDesc> ossMountDescs;
+
+		private List<String> refedAppIds;
+
+		private List<String> publicWebHookUrls;
+
+		private List<String> vpcWebHookUrls;
 
 		public String getVpcId() {
 			return this.vpcId;
@@ -375,28 +387,12 @@ public class DescribeApplicationConfigResponse extends AcsResponse {
 			this.replicas = replicas;
 		}
 
-		public String getUpdateStrategy() {
-			return this.updateStrategy;
-		}
-
-		public void setUpdateStrategy(String updateStrategy) {
-			this.updateStrategy = updateStrategy;
-		}
-
 		public Integer getMinReadyInstances() {
 			return this.minReadyInstances;
 		}
 
 		public void setMinReadyInstances(Integer minReadyInstances) {
 			this.minReadyInstances = minReadyInstances;
-		}
-
-		public Integer getMinReadyInstanceRatio() {
-			return this.minReadyInstanceRatio;
-		}
-
-		public void setMinReadyInstanceRatio(Integer minReadyInstanceRatio) {
-			this.minReadyInstanceRatio = minReadyInstanceRatio;
 		}
 
 		public Integer getMemory() {
@@ -679,12 +675,68 @@ public class DescribeApplicationConfigResponse extends AcsResponse {
 			this.associateEip = associateEip;
 		}
 
-		public String getKafkaConfigs() {
-			return this.kafkaConfigs;
+		public String getTriggerConfig() {
+			return this.triggerConfig;
 		}
 
-		public void setKafkaConfigs(String kafkaConfigs) {
-			this.kafkaConfigs = kafkaConfigs;
+		public void setTriggerConfig(String triggerConfig) {
+			this.triggerConfig = triggerConfig;
+		}
+
+		public String getConcurrencyPolicy() {
+			return this.concurrencyPolicy;
+		}
+
+		public void setConcurrencyPolicy(String concurrencyPolicy) {
+			this.concurrencyPolicy = concurrencyPolicy;
+		}
+
+		public Boolean getSuspend() {
+			return this.suspend;
+		}
+
+		public void setSuspend(Boolean suspend) {
+			this.suspend = suspend;
+		}
+
+		public Long getTimeout() {
+			return this.timeout;
+		}
+
+		public void setTimeout(Long timeout) {
+			this.timeout = timeout;
+		}
+
+		public Long getBackoffLimit() {
+			return this.backoffLimit;
+		}
+
+		public void setBackoffLimit(Long backoffLimit) {
+			this.backoffLimit = backoffLimit;
+		}
+
+		public Boolean getSlice() {
+			return this.slice;
+		}
+
+		public void setSlice(Boolean slice) {
+			this.slice = slice;
+		}
+
+		public String getSliceEnvs() {
+			return this.sliceEnvs;
+		}
+
+		public void setSliceEnvs(String sliceEnvs) {
+			this.sliceEnvs = sliceEnvs;
+		}
+
+		public String getRefAppId() {
+			return this.refAppId;
+		}
+
+		public void setRefAppId(String refAppId) {
+			this.refAppId = refAppId;
 		}
 
 		public String getProgrammingLanguage() {
@@ -693,22 +745,6 @@ public class DescribeApplicationConfigResponse extends AcsResponse {
 
 		public void setProgrammingLanguage(String programmingLanguage) {
 			this.programmingLanguage = programmingLanguage;
-		}
-
-		public String getPvtzDiscovery() {
-			return this.pvtzDiscovery;
-		}
-
-		public void setPvtzDiscovery(String pvtzDiscovery) {
-			this.pvtzDiscovery = pvtzDiscovery;
-		}
-
-		public String getMicroRegistration() {
-			return this.microRegistration;
-		}
-
-		public void setMicroRegistration(String microRegistration) {
-			this.microRegistration = microRegistration;
 		}
 
 		public String getNasConfigs() {
@@ -765,6 +801,30 @@ public class DescribeApplicationConfigResponse extends AcsResponse {
 
 		public void setOssMountDescs(List<OssMountDesc> ossMountDescs) {
 			this.ossMountDescs = ossMountDescs;
+		}
+
+		public List<String> getRefedAppIds() {
+			return this.refedAppIds;
+		}
+
+		public void setRefedAppIds(List<String> refedAppIds) {
+			this.refedAppIds = refedAppIds;
+		}
+
+		public List<String> getPublicWebHookUrls() {
+			return this.publicWebHookUrls;
+		}
+
+		public void setPublicWebHookUrls(List<String> publicWebHookUrls) {
+			this.publicWebHookUrls = publicWebHookUrls;
+		}
+
+		public List<String> getVpcWebHookUrls() {
+			return this.vpcWebHookUrls;
+		}
+
+		public void setVpcWebHookUrls(List<String> vpcWebHookUrls) {
+			this.vpcWebHookUrls = vpcWebHookUrls;
 		}
 
 		public static class ConfigMapMountDescItem {
@@ -901,8 +961,8 @@ public class DescribeApplicationConfigResponse extends AcsResponse {
 	}
 
 	@Override
-	public DescribeApplicationConfigResponse getInstance(UnmarshallerContext context) {
-		return	DescribeApplicationConfigResponseUnmarshaller.unmarshall(this, context);
+	public DescribeJobResponse getInstance(UnmarshallerContext context) {
+		return	DescribeJobResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

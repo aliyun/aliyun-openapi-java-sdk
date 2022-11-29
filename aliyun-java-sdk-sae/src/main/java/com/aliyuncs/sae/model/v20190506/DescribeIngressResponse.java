@@ -119,6 +119,8 @@ public class DescribeIngressResponse extends AcsResponse {
 
 		private List<Rule> rules;
 
+		private List<Svc> svcs;
+
 		private DefaultRule defaultRule;
 
 		public String getSlbId() {
@@ -209,6 +211,14 @@ public class DescribeIngressResponse extends AcsResponse {
 			this.rules = rules;
 		}
 
+		public List<Svc> getSvcs() {
+			return this.svcs;
+		}
+
+		public void setSvcs(List<Svc> svcs) {
+			this.svcs = svcs;
+		}
+
 		public DefaultRule getDefaultRule() {
 			return this.defaultRule;
 		}
@@ -228,6 +238,8 @@ public class DescribeIngressResponse extends AcsResponse {
 			private String appId;
 
 			private String path;
+
+			private String backendProtocol;
 
 			public String getAppName() {
 				return this.appName;
@@ -268,6 +280,57 @@ public class DescribeIngressResponse extends AcsResponse {
 			public void setPath(String path) {
 				this.path = path;
 			}
+
+			public String getBackendProtocol() {
+				return this.backendProtocol;
+			}
+
+			public void setBackendProtocol(String backendProtocol) {
+				this.backendProtocol = backendProtocol;
+			}
+		}
+
+		public static class Svc {
+
+			private Long id;
+
+			private String appId;
+
+			private String backendProtocol;
+
+			private Integer backendPort;
+
+			public Long getId() {
+				return this.id;
+			}
+
+			public void setId(Long id) {
+				this.id = id;
+			}
+
+			public String getAppId() {
+				return this.appId;
+			}
+
+			public void setAppId(String appId) {
+				this.appId = appId;
+			}
+
+			public String getBackendProtocol() {
+				return this.backendProtocol;
+			}
+
+			public void setBackendProtocol(String backendProtocol) {
+				this.backendProtocol = backendProtocol;
+			}
+
+			public Integer getBackendPort() {
+				return this.backendPort;
+			}
+
+			public void setBackendPort(Integer backendPort) {
+				this.backendPort = backendPort;
+			}
 		}
 
 		public static class DefaultRule {
@@ -277,6 +340,8 @@ public class DescribeIngressResponse extends AcsResponse {
 			private String appName;
 
 			private String appId;
+
+			private String backendProtocol;
 
 			public Integer getContainerPort() {
 				return this.containerPort;
@@ -300,6 +365,14 @@ public class DescribeIngressResponse extends AcsResponse {
 
 			public void setAppId(String appId) {
 				this.appId = appId;
+			}
+
+			public String getBackendProtocol() {
+				return this.backendProtocol;
+			}
+
+			public void setBackendProtocol(String backendProtocol) {
+				this.backendProtocol = backendProtocol;
 			}
 		}
 	}

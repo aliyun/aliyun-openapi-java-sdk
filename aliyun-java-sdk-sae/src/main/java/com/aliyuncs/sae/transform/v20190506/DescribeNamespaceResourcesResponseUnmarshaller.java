@@ -48,6 +48,7 @@ public class DescribeNamespaceResourcesResponseUnmarshaller {
 		data.setNotificationExpired(_ctx.booleanValue("DescribeNamespaceResourcesResponse.Data.NotificationExpired"));
 		data.setTenantId(_ctx.stringValue("DescribeNamespaceResourcesResponse.Data.TenantId"));
 		data.setJumpServerAppId(_ctx.stringValue("DescribeNamespaceResourcesResponse.Data.JumpServerAppId"));
+		data.setJumpServerIp(_ctx.stringValue("DescribeNamespaceResourcesResponse.Data.JumpServerIp"));
 		describeNamespaceResourcesResponse.setData(data);
 	 
 	 	return describeNamespaceResourcesResponse;

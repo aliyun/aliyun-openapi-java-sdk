@@ -40,6 +40,8 @@ public class DescribeApplicationSlbsResponseUnmarshaller {
 		data.setInternetSlbId(_ctx.stringValue("DescribeApplicationSlbsResponse.Data.InternetSlbId"));
 		data.setIntranetSlbId(_ctx.stringValue("DescribeApplicationSlbsResponse.Data.IntranetSlbId"));
 		data.setIntranetIp(_ctx.stringValue("DescribeApplicationSlbsResponse.Data.IntranetIp"));
+		data.setInternetSlbExpired(_ctx.booleanValue("DescribeApplicationSlbsResponse.Data.InternetSlbExpired"));
+		data.setIntranetSlbExpired(_ctx.booleanValue("DescribeApplicationSlbsResponse.Data.IntranetSlbExpired"));
 
 		List<IntranetItem> intranet = new ArrayList<IntranetItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeApplicationSlbsResponse.Data.Intranet.Length"); i++) {
