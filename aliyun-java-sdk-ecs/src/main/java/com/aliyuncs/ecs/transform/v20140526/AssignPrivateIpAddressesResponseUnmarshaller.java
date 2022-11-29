@@ -36,6 +36,12 @@ public class AssignPrivateIpAddressesResponseUnmarshaller {
 			privateIpSet.add(_ctx.stringValue("AssignPrivateIpAddressesResponse.AssignedPrivateIpAddressesSet.PrivateIpSet["+ i +"]"));
 		}
 		assignedPrivateIpAddressesSet.setPrivateIpSet(privateIpSet);
+
+		List<String> ipv4PrefixSet = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("AssignPrivateIpAddressesResponse.AssignedPrivateIpAddressesSet.Ipv4PrefixSet.Length"); i++) {
+			ipv4PrefixSet.add(_ctx.stringValue("AssignPrivateIpAddressesResponse.AssignedPrivateIpAddressesSet.Ipv4PrefixSet["+ i +"]"));
+		}
+		assignedPrivateIpAddressesSet.setIpv4PrefixSet(ipv4PrefixSet);
 		assignPrivateIpAddressesResponse.setAssignedPrivateIpAddressesSet(assignedPrivateIpAddressesSet);
 	 
 	 	return assignPrivateIpAddressesResponse;

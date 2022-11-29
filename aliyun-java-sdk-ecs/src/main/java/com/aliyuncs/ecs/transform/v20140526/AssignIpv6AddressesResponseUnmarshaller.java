@@ -33,6 +33,12 @@ public class AssignIpv6AddressesResponseUnmarshaller {
 			ipv6Sets.add(_ctx.stringValue("AssignIpv6AddressesResponse.Ipv6Sets["+ i +"]"));
 		}
 		assignIpv6AddressesResponse.setIpv6Sets(ipv6Sets);
+
+		List<String> ipv6PrefixSets = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("AssignIpv6AddressesResponse.Ipv6PrefixSets.Length"); i++) {
+			ipv6PrefixSets.add(_ctx.stringValue("AssignIpv6AddressesResponse.Ipv6PrefixSets["+ i +"]"));
+		}
+		assignIpv6AddressesResponse.setIpv6PrefixSets(ipv6PrefixSets);
 	 
 	 	return assignIpv6AddressesResponse;
 	}

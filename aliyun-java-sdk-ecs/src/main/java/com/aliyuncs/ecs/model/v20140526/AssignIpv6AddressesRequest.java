@@ -28,6 +28,10 @@ public class AssignIpv6AddressesRequest extends RpcAcsRequest<AssignIpv6Addresse
 
 	private Long resourceOwnerId;
 
+	private List<String> ipv6Prefixs;
+
+	private Integer ipv6PrefixCount;
+
 	private String resourceOwnerAccount;
 
 	private Integer ipv6AddressCount;
@@ -56,6 +60,30 @@ public class AssignIpv6AddressesRequest extends RpcAcsRequest<AssignIpv6Addresse
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public List<String> getIpv6Prefixs() {
+		return this.ipv6Prefixs;
+	}
+
+	public void setIpv6Prefixs(List<String> ipv6Prefixs) {
+		this.ipv6Prefixs = ipv6Prefixs;	
+		if (ipv6Prefixs != null) {
+			for (int i = 0; i < ipv6Prefixs.size(); i++) {
+				putQueryParameter("Ipv6Prefix." + (i + 1) , ipv6Prefixs.get(i));
+			}
+		}	
+	}
+
+	public Integer getIpv6PrefixCount() {
+		return this.ipv6PrefixCount;
+	}
+
+	public void setIpv6PrefixCount(Integer ipv6PrefixCount) {
+		this.ipv6PrefixCount = ipv6PrefixCount;
+		if(ipv6PrefixCount != null){
+			putQueryParameter("Ipv6PrefixCount", ipv6PrefixCount.toString());
 		}
 	}
 

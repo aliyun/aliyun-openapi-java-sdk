@@ -29,6 +29,8 @@ import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.Image
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.LockReason;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.MetadataOptions;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.NetworkInterface;
+import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.NetworkInterface.Ipv4PrefixSet;
+import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.NetworkInterface.Ipv6PrefixSet;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.NetworkInterface.Ipv6Set;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.NetworkInterface.PrivateIpSet;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.Tag;
@@ -203,6 +205,24 @@ public class DescribeInstancesResponseUnmarshaller {
 					ipv6Sets.add(ipv6Set);
 				}
 				networkInterface.setIpv6Sets(ipv6Sets);
+
+				List<Ipv4PrefixSet> ipv4PrefixSets = new ArrayList<Ipv4PrefixSet>();
+				for (int k = 0; k < _ctx.lengthValue("DescribeInstancesResponse.Instances["+ i +"].NetworkInterfaces["+ j +"].Ipv4PrefixSets.Length"); k++) {
+					Ipv4PrefixSet ipv4PrefixSet = new Ipv4PrefixSet();
+					ipv4PrefixSet.setIpv4Prefix(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].NetworkInterfaces["+ j +"].Ipv4PrefixSets["+ k +"].Ipv4Prefix"));
+
+					ipv4PrefixSets.add(ipv4PrefixSet);
+				}
+				networkInterface.setIpv4PrefixSets(ipv4PrefixSets);
+
+				List<Ipv6PrefixSet> ipv6PrefixSets = new ArrayList<Ipv6PrefixSet>();
+				for (int k = 0; k < _ctx.lengthValue("DescribeInstancesResponse.Instances["+ i +"].NetworkInterfaces["+ j +"].Ipv6PrefixSets.Length"); k++) {
+					Ipv6PrefixSet ipv6PrefixSet = new Ipv6PrefixSet();
+					ipv6PrefixSet.setIpv6Prefix(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].NetworkInterfaces["+ j +"].Ipv6PrefixSets["+ k +"].Ipv6Prefix"));
+
+					ipv6PrefixSets.add(ipv6PrefixSet);
+				}
+				networkInterface.setIpv6PrefixSets(ipv6PrefixSets);
 
 				networkInterfaces.add(networkInterface);
 			}

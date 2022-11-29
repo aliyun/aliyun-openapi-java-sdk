@@ -30,11 +30,7 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 
 	private Long resourceOwnerId;
 
-	private String clientToken;
-
-	private String securityGroupId;
-
-	private String description;
+	private List<String> ipv4Prefixs;
 
 	private Integer secondaryPrivateIpAddressCount;
 
@@ -42,35 +38,47 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 
 	private String resourceGroupId;
 
-	private String instanceType;
-
 	private List<Tag> tags;
 
 	private String networkInterfaceName;
 
 	private Boolean visible;
 
-	private String resourceOwnerAccount;
-
 	private Integer ipv6AddressCount;
 
-	private String ownerAccount;
-
-	private Integer queuePairNumber;
-
 	private Long ownerId;
-
-	private List<String> securityGroupIdss;
-
-	private String networkInterfaceTrafficMode;
 
 	private String vSwitchId;
 
 	private List<String> privateIpAddresss;
 
-	private String primaryIpAddress;
-
 	private List<String> ipv6Addresss;
+
+	private String clientToken;
+
+	private List<String> ipv6Prefixs;
+
+	private String securityGroupId;
+
+	private String description;
+
+	private Integer ipv6PrefixCount;
+
+	private String instanceType;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
+	private Integer queuePairNumber;
+
+	private List<String> securityGroupIdss;
+
+	private String networkInterfaceTrafficMode;
+
+	private Integer ipv4PrefixCount;
+
+	private String primaryIpAddress;
 	public CreateNetworkInterfaceRequest() {
 		super("Ecs", "2014-05-26", "CreateNetworkInterface");
 		setMethod(MethodType.POST);
@@ -102,37 +110,17 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
+	public List<String> getIpv4Prefixs() {
+		return this.ipv4Prefixs;
 	}
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public String getSecurityGroupId() {
-		return this.securityGroupId;
-	}
-
-	public void setSecurityGroupId(String securityGroupId) {
-		this.securityGroupId = securityGroupId;
-		if(securityGroupId != null){
-			putQueryParameter("SecurityGroupId", securityGroupId);
-		}
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
-		}
+	public void setIpv4Prefixs(List<String> ipv4Prefixs) {
+		this.ipv4Prefixs = ipv4Prefixs;	
+		if (ipv4Prefixs != null) {
+			for (int i = 0; i < ipv4Prefixs.size(); i++) {
+				putQueryParameter("Ipv4Prefix." + (i + 1) , ipv4Prefixs.get(i));
+			}
+		}	
 	}
 
 	public Integer getSecondaryPrivateIpAddressCount() {
@@ -165,17 +153,6 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
-	public String getInstanceType() {
-		return this.instanceType;
-	}
-
-	public void setInstanceType(String instanceType) {
-		this.instanceType = instanceType;
-		if(instanceType != null){
-			putQueryParameter("InstanceType", instanceType);
 		}
 	}
 
@@ -215,17 +192,6 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public Integer getIpv6AddressCount() {
 		return this.ipv6AddressCount;
 	}
@@ -237,28 +203,6 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public Integer getQueuePairNumber() {
-		return this.queuePairNumber;
-	}
-
-	public void setQueuePairNumber(Integer queuePairNumber) {
-		this.queuePairNumber = queuePairNumber;
-		if(queuePairNumber != null){
-			putQueryParameter("QueuePairNumber", queuePairNumber.toString());
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -267,30 +211,6 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public List<String> getSecurityGroupIdss() {
-		return this.securityGroupIdss;
-	}
-
-	public void setSecurityGroupIdss(List<String> securityGroupIdss) {
-		this.securityGroupIdss = securityGroupIdss;	
-		if (securityGroupIdss != null) {
-			for (int i = 0; i < securityGroupIdss.size(); i++) {
-				putQueryParameter("SecurityGroupIds." + (i + 1) , securityGroupIdss.get(i));
-			}
-		}	
-	}
-
-	public String getNetworkInterfaceTrafficMode() {
-		return this.networkInterfaceTrafficMode;
-	}
-
-	public void setNetworkInterfaceTrafficMode(String networkInterfaceTrafficMode) {
-		this.networkInterfaceTrafficMode = networkInterfaceTrafficMode;
-		if(networkInterfaceTrafficMode != null){
-			putQueryParameter("NetworkInterfaceTrafficMode", networkInterfaceTrafficMode);
 		}
 	}
 
@@ -318,17 +238,6 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 		}	
 	}
 
-	public String getPrimaryIpAddress() {
-		return this.primaryIpAddress;
-	}
-
-	public void setPrimaryIpAddress(String primaryIpAddress) {
-		this.primaryIpAddress = primaryIpAddress;
-		if(primaryIpAddress != null){
-			putQueryParameter("PrimaryIpAddress", primaryIpAddress);
-		}
-	}
-
 	public List<String> getIpv6Addresss() {
 		return this.ipv6Addresss;
 	}
@@ -340,6 +249,153 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 				putQueryParameter("Ipv6Address." + (i + 1) , ipv6Addresss.get(i));
 			}
 		}	
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public List<String> getIpv6Prefixs() {
+		return this.ipv6Prefixs;
+	}
+
+	public void setIpv6Prefixs(List<String> ipv6Prefixs) {
+		this.ipv6Prefixs = ipv6Prefixs;	
+		if (ipv6Prefixs != null) {
+			for (int i = 0; i < ipv6Prefixs.size(); i++) {
+				putQueryParameter("Ipv6Prefix." + (i + 1) , ipv6Prefixs.get(i));
+			}
+		}	
+	}
+
+	public String getSecurityGroupId() {
+		return this.securityGroupId;
+	}
+
+	public void setSecurityGroupId(String securityGroupId) {
+		this.securityGroupId = securityGroupId;
+		if(securityGroupId != null){
+			putQueryParameter("SecurityGroupId", securityGroupId);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public Integer getIpv6PrefixCount() {
+		return this.ipv6PrefixCount;
+	}
+
+	public void setIpv6PrefixCount(Integer ipv6PrefixCount) {
+		this.ipv6PrefixCount = ipv6PrefixCount;
+		if(ipv6PrefixCount != null){
+			putQueryParameter("Ipv6PrefixCount", ipv6PrefixCount.toString());
+		}
+	}
+
+	public String getInstanceType() {
+		return this.instanceType;
+	}
+
+	public void setInstanceType(String instanceType) {
+		this.instanceType = instanceType;
+		if(instanceType != null){
+			putQueryParameter("InstanceType", instanceType);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Integer getQueuePairNumber() {
+		return this.queuePairNumber;
+	}
+
+	public void setQueuePairNumber(Integer queuePairNumber) {
+		this.queuePairNumber = queuePairNumber;
+		if(queuePairNumber != null){
+			putQueryParameter("QueuePairNumber", queuePairNumber.toString());
+		}
+	}
+
+	public List<String> getSecurityGroupIdss() {
+		return this.securityGroupIdss;
+	}
+
+	public void setSecurityGroupIdss(List<String> securityGroupIdss) {
+		this.securityGroupIdss = securityGroupIdss;	
+		if (securityGroupIdss != null) {
+			for (int i = 0; i < securityGroupIdss.size(); i++) {
+				putQueryParameter("SecurityGroupIds." + (i + 1) , securityGroupIdss.get(i));
+			}
+		}	
+	}
+
+	public String getNetworkInterfaceTrafficMode() {
+		return this.networkInterfaceTrafficMode;
+	}
+
+	public void setNetworkInterfaceTrafficMode(String networkInterfaceTrafficMode) {
+		this.networkInterfaceTrafficMode = networkInterfaceTrafficMode;
+		if(networkInterfaceTrafficMode != null){
+			putQueryParameter("NetworkInterfaceTrafficMode", networkInterfaceTrafficMode);
+		}
+	}
+
+	public Integer getIpv4PrefixCount() {
+		return this.ipv4PrefixCount;
+	}
+
+	public void setIpv4PrefixCount(Integer ipv4PrefixCount) {
+		this.ipv4PrefixCount = ipv4PrefixCount;
+		if(ipv4PrefixCount != null){
+			putQueryParameter("Ipv4PrefixCount", ipv4PrefixCount.toString());
+		}
+	}
+
+	public String getPrimaryIpAddress() {
+		return this.primaryIpAddress;
+	}
+
+	public void setPrimaryIpAddress(String primaryIpAddress) {
+		this.primaryIpAddress = primaryIpAddress;
+		if(primaryIpAddress != null){
+			putQueryParameter("PrimaryIpAddress", primaryIpAddress);
+		}
 	}
 
 	public static class Tag {

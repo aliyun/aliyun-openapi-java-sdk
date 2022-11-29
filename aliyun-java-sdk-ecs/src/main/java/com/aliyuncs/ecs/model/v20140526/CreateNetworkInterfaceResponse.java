@@ -61,6 +61,10 @@ public class CreateNetworkInterfaceResponse extends AcsResponse {
 
 	private List<Ipv6Set> ipv6Sets;
 
+	private List<Ipv4PrefixSet> ipv4PrefixSets;
+
+	private List<Ipv6PrefixSet> ipv6PrefixSets;
+
 	private List<String> securityGroupIds;
 
 	public String getStatus() {
@@ -207,6 +211,22 @@ public class CreateNetworkInterfaceResponse extends AcsResponse {
 		this.ipv6Sets = ipv6Sets;
 	}
 
+	public List<Ipv4PrefixSet> getIpv4PrefixSets() {
+		return this.ipv4PrefixSets;
+	}
+
+	public void setIpv4PrefixSets(List<Ipv4PrefixSet> ipv4PrefixSets) {
+		this.ipv4PrefixSets = ipv4PrefixSets;
+	}
+
+	public List<Ipv6PrefixSet> getIpv6PrefixSets() {
+		return this.ipv6PrefixSets;
+	}
+
+	public void setIpv6PrefixSets(List<Ipv6PrefixSet> ipv6PrefixSets) {
+		this.ipv6PrefixSets = ipv6PrefixSets;
+	}
+
 	public List<String> getSecurityGroupIds() {
 		return this.securityGroupIds;
 	}
@@ -271,6 +291,32 @@ public class CreateNetworkInterfaceResponse extends AcsResponse {
 
 		public void setIpv6Address(String ipv6Address) {
 			this.ipv6Address = ipv6Address;
+		}
+	}
+
+	public static class Ipv4PrefixSet {
+
+		private String ipv4Prefix;
+
+		public String getIpv4Prefix() {
+			return this.ipv4Prefix;
+		}
+
+		public void setIpv4Prefix(String ipv4Prefix) {
+			this.ipv4Prefix = ipv4Prefix;
+		}
+	}
+
+	public static class Ipv6PrefixSet {
+
+		private String ipv6Prefix;
+
+		public String getIpv6Prefix() {
+			return this.ipv6Prefix;
+		}
+
+		public void setIpv6Prefix(String ipv6Prefix) {
+			this.ipv6Prefix = ipv6Prefix;
 		}
 	}
 
