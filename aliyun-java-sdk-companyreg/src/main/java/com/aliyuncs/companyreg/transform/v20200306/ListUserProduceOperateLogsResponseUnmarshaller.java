@@ -43,6 +43,7 @@ public class ListUserProduceOperateLogsResponseUnmarshaller {
 			opateLogs.setBizStatus(_ctx.integerValue("ListUserProduceOperateLogsResponse.Data["+ i +"].BizStatus"));
 			opateLogs.setToBizStatus(_ctx.integerValue("ListUserProduceOperateLogsResponse.Data["+ i +"].ToBizStatus"));
 			opateLogs.setBizType(_ctx.stringValue("ListUserProduceOperateLogsResponse.Data["+ i +"].BizType"));
+			opateLogs.setNote(_ctx.stringValue("ListUserProduceOperateLogsResponse.Data["+ i +"].Note"));
 
 			data.add(opateLogs);
 		}

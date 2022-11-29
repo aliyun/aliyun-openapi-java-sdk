@@ -46,6 +46,7 @@ public class ListUserIntentionsResponseUnmarshaller {
 			intention.setArea(_ctx.stringValue("ListUserIntentionsResponse.Data["+ i +"].Area"));
 			intention.setReason(_ctx.stringValue("ListUserIntentionsResponse.Data["+ i +"].Reason"));
 			intention.setBizType(_ctx.stringValue("ListUserIntentionsResponse.Data["+ i +"].BizType"));
+			intention.setExt(_ctx.stringValue("ListUserIntentionsResponse.Data["+ i +"].Ext"));
 
 			data.add(intention);
 		}

@@ -109,6 +109,8 @@ public class ListUserIntentionsResponse extends AcsResponse {
 
 		private String bizType;
 
+		private String ext;
+
 		public Integer getStatus() {
 			return this.status;
 		}
@@ -195,6 +197,14 @@ public class ListUserIntentionsResponse extends AcsResponse {
 
 		public void setBizType(String bizType) {
 			this.bizType = bizType;
+		}
+
+		public String getExt() {
+			return this.ext;
+		}
+
+		public void setExt(String ext) {
+			this.ext = ext;
 		}
 	}
 

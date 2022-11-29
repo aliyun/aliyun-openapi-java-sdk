@@ -37,6 +37,8 @@ public class ListUserIntentionsRequest extends RpcAcsRequest<ListUserIntentionsR
 
 	private String bizType;
 
+	private Boolean withExtInfo;
+
 	private Integer pageSize;
 
 	private String sortOrder;
@@ -114,6 +116,17 @@ public class ListUserIntentionsRequest extends RpcAcsRequest<ListUserIntentionsR
 		this.bizType = bizType;
 		if(bizType != null){
 			putQueryParameter("BizType", bizType);
+		}
+	}
+
+	public Boolean getWithExtInfo() {
+		return this.withExtInfo;
+	}
+
+	public void setWithExtInfo(Boolean withExtInfo) {
+		this.withExtInfo = withExtInfo;
+		if(withExtInfo != null){
+			putQueryParameter("WithExtInfo", withExtInfo.toString());
 		}
 	}
 
