@@ -29,6 +29,9 @@ public class DescribeARMServerInstancesResponseUnmarshaller {
 	public static DescribeARMServerInstancesResponse unmarshall(DescribeARMServerInstancesResponse describeARMServerInstancesResponse, UnmarshallerContext _ctx) {
 		
 		describeARMServerInstancesResponse.setRequestId(_ctx.stringValue("DescribeARMServerInstancesResponse.RequestId"));
+		describeARMServerInstancesResponse.setPageNumber(_ctx.integerValue("DescribeARMServerInstancesResponse.PageNumber"));
+		describeARMServerInstancesResponse.setPageSize(_ctx.integerValue("DescribeARMServerInstancesResponse.PageSize"));
+		describeARMServerInstancesResponse.setTotalCount(_ctx.integerValue("DescribeARMServerInstancesResponse.TotalCount"));
 
 		List<ServersItem> servers = new ArrayList<ServersItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeARMServerInstancesResponse.Servers.Length"); i++) {
