@@ -36,6 +36,8 @@ public class CreateCompliancePackRequest extends RpcAcsRequest<CreateComplianceP
 
 	private String description;
 
+	private Boolean defaultEnable;
+
 	@SerializedName("configRules")
 	private List<ConfigRules> configRules;
 
@@ -90,6 +92,17 @@ public class CreateCompliancePackRequest extends RpcAcsRequest<CreateComplianceP
 		this.description = description;
 		if(description != null){
 			putBodyParameter("Description", description);
+		}
+	}
+
+	public Boolean getDefaultEnable() {
+		return this.defaultEnable;
+	}
+
+	public void setDefaultEnable(Boolean defaultEnable) {
+		this.defaultEnable = defaultEnable;
+		if(defaultEnable != null){
+			putBodyParameter("DefaultEnable", defaultEnable.toString());
 		}
 	}
 

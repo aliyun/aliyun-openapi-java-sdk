@@ -205,6 +205,8 @@ public class ListCompliancePackTemplatesResponse extends AcsResponse {
 
 				private String controlDescription;
 
+				private Boolean defaultEnable;
+
 				private List<ConfigRuleParametersItem> configRuleParameters;
 
 				public String getDescription() {
@@ -261,6 +263,14 @@ public class ListCompliancePackTemplatesResponse extends AcsResponse {
 
 				public void setControlDescription(String controlDescription) {
 					this.controlDescription = controlDescription;
+				}
+
+				public Boolean getDefaultEnable() {
+					return this.defaultEnable;
+				}
+
+				public void setDefaultEnable(Boolean defaultEnable) {
+					this.defaultEnable = defaultEnable;
 				}
 
 				public List<ConfigRuleParametersItem> getConfigRuleParameters() {

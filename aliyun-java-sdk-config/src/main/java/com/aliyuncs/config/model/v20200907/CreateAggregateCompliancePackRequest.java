@@ -38,6 +38,8 @@ public class CreateAggregateCompliancePackRequest extends RpcAcsRequest<CreateAg
 
 	private String aggregatorId;
 
+	private Boolean defaultEnable;
+
 	@SerializedName("configRules")
 	private List<ConfigRules> configRules;
 
@@ -103,6 +105,17 @@ public class CreateAggregateCompliancePackRequest extends RpcAcsRequest<CreateAg
 		this.aggregatorId = aggregatorId;
 		if(aggregatorId != null){
 			putBodyParameter("AggregatorId", aggregatorId);
+		}
+	}
+
+	public Boolean getDefaultEnable() {
+		return this.defaultEnable;
+	}
+
+	public void setDefaultEnable(Boolean defaultEnable) {
+		this.defaultEnable = defaultEnable;
+		if(defaultEnable != null){
+			putBodyParameter("DefaultEnable", defaultEnable.toString());
 		}
 	}
 

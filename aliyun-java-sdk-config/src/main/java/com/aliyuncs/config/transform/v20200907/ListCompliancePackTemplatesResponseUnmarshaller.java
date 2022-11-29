@@ -59,6 +59,7 @@ public class ListCompliancePackTemplatesResponseUnmarshaller {
 				configRulesItem.setDeveloperType(_ctx.stringValue("ListCompliancePackTemplatesResponse.CompliancePackTemplatesResult.CompliancePackTemplates["+ i +"].ConfigRules["+ j +"].DeveloperType"));
 				configRulesItem.setControlId(_ctx.stringValue("ListCompliancePackTemplatesResponse.CompliancePackTemplatesResult.CompliancePackTemplates["+ i +"].ConfigRules["+ j +"].ControlId"));
 				configRulesItem.setControlDescription(_ctx.stringValue("ListCompliancePackTemplatesResponse.CompliancePackTemplatesResult.CompliancePackTemplates["+ i +"].ConfigRules["+ j +"].ControlDescription"));
+				configRulesItem.setDefaultEnable(_ctx.booleanValue("ListCompliancePackTemplatesResponse.CompliancePackTemplatesResult.CompliancePackTemplates["+ i +"].ConfigRules["+ j +"].DefaultEnable"));
 
 				List<ConfigRuleParametersItem> configRuleParameters = new ArrayList<ConfigRuleParametersItem>();
 				for (int k = 0; k < _ctx.lengthValue("ListCompliancePackTemplatesResponse.CompliancePackTemplatesResult.CompliancePackTemplates["+ i +"].ConfigRules["+ j +"].ConfigRuleParameters.Length"); k++) {

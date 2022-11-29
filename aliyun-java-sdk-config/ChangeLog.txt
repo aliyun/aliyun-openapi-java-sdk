@@ -1,3 +1,6 @@
+2022-11-29 Version: 2.2.2
+- Support ListRemediationExecutions.
+
 2022-11-02 Version: 2.2.1
 - Fix ListManagedRules bugs.
 

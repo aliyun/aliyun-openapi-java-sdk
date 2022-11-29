@@ -32,7 +32,7 @@ public class ListCompliancePackTemplatesRequest extends RpcAcsRequest<ListCompli
 	private Integer pageSize;
 	public ListCompliancePackTemplatesRequest() {
 		super("Config", "2020-09-07", "ListCompliancePackTemplates");
-		setMethod(MethodType.GET);
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
