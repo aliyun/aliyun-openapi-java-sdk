@@ -32,6 +32,9 @@ public class SubmitTextTo3DAvatarVideoTaskRequest extends RpcAcsRequest<SubmitTe
 	@SerializedName("videoInfo")
 	private VideoInfo videoInfo;
 
+	@SerializedName("avatarInfo")
+	private AvatarInfo avatarInfo;
+
 	private Long tenantId;
 
 	private String text;
@@ -61,6 +64,17 @@ public class SubmitTextTo3DAvatarVideoTaskRequest extends RpcAcsRequest<SubmitTe
 		this.videoInfo = videoInfo;	
 		if (videoInfo != null) {
 			putQueryParameter("VideoInfo" , new Gson().toJson(videoInfo));
+		}	
+	}
+
+	public AvatarInfo getAvatarInfo() {
+		return this.avatarInfo;
+	}
+
+	public void setAvatarInfo(AvatarInfo avatarInfo) {
+		this.avatarInfo = avatarInfo;	
+		if (avatarInfo != null) {
+			putQueryParameter("AvatarInfo" , new Gson().toJson(avatarInfo));
 		}	
 	}
 
@@ -125,6 +139,9 @@ public class SubmitTextTo3DAvatarVideoTaskRequest extends RpcAcsRequest<SubmitTe
 		@SerializedName("Resolution")
 		private Integer resolution;
 
+		@SerializedName("AlphaFormat")
+		private Integer alphaFormat;
+
 		public Boolean getIsAlpha() {
 			return this.isAlpha;
 		}
@@ -155,6 +172,39 @@ public class SubmitTextTo3DAvatarVideoTaskRequest extends RpcAcsRequest<SubmitTe
 
 		public void setResolution(Integer resolution) {
 			this.resolution = resolution;
+		}
+
+		public Integer getAlphaFormat() {
+			return this.alphaFormat;
+		}
+
+		public void setAlphaFormat(Integer alphaFormat) {
+			this.alphaFormat = alphaFormat;
+		}
+	}
+
+	public static class AvatarInfo {
+
+		@SerializedName("Locate")
+		private Integer locate;
+
+		@SerializedName("Angle")
+		private Integer angle;
+
+		public Integer getLocate() {
+			return this.locate;
+		}
+
+		public void setLocate(Integer locate) {
+			this.locate = locate;
+		}
+
+		public Integer getAngle() {
+			return this.angle;
+		}
+
+		public void setAngle(Integer angle) {
+			this.angle = angle;
 		}
 	}
 
