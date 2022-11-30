@@ -27,7 +27,7 @@ public class GetVideoTaskInfoResponseUnmarshaller {
 		getVideoTaskInfoResponse.setRequestId(_ctx.stringValue("GetVideoTaskInfoResponse.RequestId"));
 		getVideoTaskInfoResponse.setCode(_ctx.stringValue("GetVideoTaskInfoResponse.Code"));
 		getVideoTaskInfoResponse.setMessage(_ctx.stringValue("GetVideoTaskInfoResponse.Message"));
-		getVideoTaskInfoResponse.setSuccess(_ctx.stringValue("GetVideoTaskInfoResponse.Success"));
+		getVideoTaskInfoResponse.setSuccess(_ctx.booleanValue("GetVideoTaskInfoResponse.Success"));
 
 		Data data = new Data();
 		data.setTaskUuid(_ctx.stringValue("GetVideoTaskInfoResponse.Data.TaskUuid"));

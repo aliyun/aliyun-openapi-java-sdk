@@ -1,3 +1,6 @@
+2022-11-30 Version: 1.0.11
+- SubmitTextTo2DAvatarVideoTask add new params.
+
 2022-11-29 Version: 1.0.10
 - SubmitTextTo2DAvatarVideoTask add new params.
 

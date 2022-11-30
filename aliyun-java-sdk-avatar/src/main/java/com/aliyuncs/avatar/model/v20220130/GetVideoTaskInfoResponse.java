@@ -30,7 +30,7 @@ public class GetVideoTaskInfoResponse extends AcsResponse {
 
 	private String message;
 
-	private String success;
+	private Boolean success;
 
 	private Data data;
 
@@ -58,11 +58,11 @@ public class GetVideoTaskInfoResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getSuccess() {
+	public Boolean getSuccess() {
 		return this.success;
 	}
 
-	public void setSuccess(String success) {
+	public void setSuccess(Boolean success) {
 		this.success = success;
 	}
 
