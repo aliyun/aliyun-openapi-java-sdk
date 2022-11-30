@@ -1,3 +1,6 @@
+2022-11-30 Version: 1.0.10
+- Release MergeVideoModelFace.
+
 2022-10-17 Version: 1.0.9
 - Release MergeVideoModelFace.
 
