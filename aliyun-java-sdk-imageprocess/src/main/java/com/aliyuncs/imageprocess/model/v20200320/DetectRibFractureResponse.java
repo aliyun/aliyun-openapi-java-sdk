@@ -119,6 +119,8 @@ public class DetectRibFractureResponse extends AcsResponse {
 
 			private Long fractureSegment;
 
+			private String fracSOPInstanceUID;
+
 			private List<Integer> coordinates;
 
 			private List<Integer> coordinateImage;
@@ -161,6 +163,14 @@ public class DetectRibFractureResponse extends AcsResponse {
 
 			public void setFractureSegment(Long fractureSegment) {
 				this.fractureSegment = fractureSegment;
+			}
+
+			public String getFracSOPInstanceUID() {
+				return this.fracSOPInstanceUID;
+			}
+
+			public void setFracSOPInstanceUID(String fracSOPInstanceUID) {
+				this.fracSOPInstanceUID = fracSOPInstanceUID;
 			}
 
 			public List<Integer> getCoordinates() {

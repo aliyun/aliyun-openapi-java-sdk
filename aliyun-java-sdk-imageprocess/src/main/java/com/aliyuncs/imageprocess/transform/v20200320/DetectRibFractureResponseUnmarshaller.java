@@ -54,6 +54,7 @@ public class DetectRibFractureResponseUnmarshaller {
 			detectionsItem.setFractureCategory(_ctx.stringValue("DetectRibFractureResponse.Data.Detections["+ i +"].FractureCategory"));
 			detectionsItem.setFractureLocation(_ctx.stringValue("DetectRibFractureResponse.Data.Detections["+ i +"].FractureLocation"));
 			detectionsItem.setFractureSegment(_ctx.longValue("DetectRibFractureResponse.Data.Detections["+ i +"].FractureSegment"));
+			detectionsItem.setFracSOPInstanceUID(_ctx.stringValue("DetectRibFractureResponse.Data.Detections["+ i +"].FracSOPInstanceUID"));
 
 			List<Integer> coordinates = new ArrayList<Integer>();
 			for (int j = 0; j < _ctx.lengthValue("DetectRibFractureResponse.Data.Detections["+ i +"].Coordinates.Length"); j++) {
