@@ -81,9 +81,21 @@ public class DescribeTenantResponse extends AcsResponse {
 
 		private String masterIntranetAddressZone;
 
+		private String payType;
+
+		private String instanceType;
+
+		private String series;
+
+		private String diskType;
+
+		private Boolean enableReadWriteSplit;
+
 		private List<TenantConnectionsItem> tenantConnections;
 
 		private List<TenantZonesItem> tenantZones;
+
+		private List<String> availableZones;
 
 		private TenantResource tenantResource;
 
@@ -223,6 +235,46 @@ public class DescribeTenantResponse extends AcsResponse {
 			this.masterIntranetAddressZone = masterIntranetAddressZone;
 		}
 
+		public String getPayType() {
+			return this.payType;
+		}
+
+		public void setPayType(String payType) {
+			this.payType = payType;
+		}
+
+		public String getInstanceType() {
+			return this.instanceType;
+		}
+
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
+		}
+
+		public String getSeries() {
+			return this.series;
+		}
+
+		public void setSeries(String series) {
+			this.series = series;
+		}
+
+		public String getDiskType() {
+			return this.diskType;
+		}
+
+		public void setDiskType(String diskType) {
+			this.diskType = diskType;
+		}
+
+		public Boolean getEnableReadWriteSplit() {
+			return this.enableReadWriteSplit;
+		}
+
+		public void setEnableReadWriteSplit(Boolean enableReadWriteSplit) {
+			this.enableReadWriteSplit = enableReadWriteSplit;
+		}
+
 		public List<TenantConnectionsItem> getTenantConnections() {
 			return this.tenantConnections;
 		}
@@ -237,6 +289,14 @@ public class DescribeTenantResponse extends AcsResponse {
 
 		public void setTenantZones(List<TenantZonesItem> tenantZones) {
 			this.tenantZones = tenantZones;
+		}
+
+		public List<String> getAvailableZones() {
+			return this.availableZones;
+		}
+
+		public void setAvailableZones(List<String> availableZones) {
+			this.availableZones = availableZones;
 		}
 
 		public TenantResource getTenantResource() {
@@ -270,6 +330,10 @@ public class DescribeTenantResponse extends AcsResponse {
 			private String intranetAddressStatus;
 
 			private String internetAddressStatus;
+
+			private Boolean transactionSplit;
+
+			private String addressType;
 
 			private List<String> connectionZones;
 
@@ -359,6 +423,22 @@ public class DescribeTenantResponse extends AcsResponse {
 
 			public void setInternetAddressStatus(String internetAddressStatus) {
 				this.internetAddressStatus = internetAddressStatus;
+			}
+
+			public Boolean getTransactionSplit() {
+				return this.transactionSplit;
+			}
+
+			public void setTransactionSplit(Boolean transactionSplit) {
+				this.transactionSplit = transactionSplit;
+			}
+
+			public String getAddressType() {
+				return this.addressType;
+			}
+
+			public void setAddressType(String addressType) {
+				this.addressType = addressType;
 			}
 
 			public List<String> getConnectionZones() {

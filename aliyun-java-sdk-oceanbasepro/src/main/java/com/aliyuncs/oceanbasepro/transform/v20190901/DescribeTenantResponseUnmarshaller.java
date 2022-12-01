@@ -52,6 +52,17 @@ public class DescribeTenantResponseUnmarshaller {
 		tenant.setCollation(_ctx.stringValue("DescribeTenantResponse.Tenant.Collation"));
 		tenant.setPrimaryZoneDeployType(_ctx.stringValue("DescribeTenantResponse.Tenant.PrimaryZoneDeployType"));
 		tenant.setMasterIntranetAddressZone(_ctx.stringValue("DescribeTenantResponse.Tenant.MasterIntranetAddressZone"));
+		tenant.setPayType(_ctx.stringValue("DescribeTenantResponse.Tenant.PayType"));
+		tenant.setInstanceType(_ctx.stringValue("DescribeTenantResponse.Tenant.InstanceType"));
+		tenant.setSeries(_ctx.stringValue("DescribeTenantResponse.Tenant.Series"));
+		tenant.setDiskType(_ctx.stringValue("DescribeTenantResponse.Tenant.DiskType"));
+		tenant.setEnableReadWriteSplit(_ctx.booleanValue("DescribeTenantResponse.Tenant.EnableReadWriteSplit"));
+
+		List<String> availableZones = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeTenantResponse.Tenant.AvailableZones.Length"); i++) {
+			availableZones.add(_ctx.stringValue("DescribeTenantResponse.Tenant.AvailableZones["+ i +"]"));
+		}
+		tenant.setAvailableZones(availableZones);
 
 		TenantResource tenantResource = new TenantResource();
 		tenantResource.setUnitNum(_ctx.integerValue("DescribeTenantResponse.Tenant.TenantResource.UnitNum"));
@@ -87,6 +98,8 @@ public class DescribeTenantResponseUnmarshaller {
 			tenantConnectionsItem.setIntranetAddressSlaveZoneId(_ctx.stringValue("DescribeTenantResponse.Tenant.TenantConnections["+ i +"].IntranetAddressSlaveZoneId"));
 			tenantConnectionsItem.setIntranetAddressStatus(_ctx.stringValue("DescribeTenantResponse.Tenant.TenantConnections["+ i +"].IntranetAddressStatus"));
 			tenantConnectionsItem.setInternetAddressStatus(_ctx.stringValue("DescribeTenantResponse.Tenant.TenantConnections["+ i +"].InternetAddressStatus"));
+			tenantConnectionsItem.setTransactionSplit(_ctx.booleanValue("DescribeTenantResponse.Tenant.TenantConnections["+ i +"].TransactionSplit"));
+			tenantConnectionsItem.setAddressType(_ctx.stringValue("DescribeTenantResponse.Tenant.TenantConnections["+ i +"].AddressType"));
 
 			List<String> connectionZones = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeTenantResponse.Tenant.TenantConnections["+ i +"].ConnectionZones.Length"); j++) {

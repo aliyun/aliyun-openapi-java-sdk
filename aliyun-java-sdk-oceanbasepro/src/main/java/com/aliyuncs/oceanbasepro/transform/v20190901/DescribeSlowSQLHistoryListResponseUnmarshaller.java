@@ -67,9 +67,9 @@ public class DescribeSlowSQLHistoryListResponseUnmarshaller {
 			listItem.setConcurrencyWaitTime(_ctx.doubleValue("DescribeSlowSQLHistoryListResponse.SlowSQLHistoryList.List["+ i +"].ConcurrencyWaitTime"));
 			listItem.setCpuTime(_ctx.doubleValue("DescribeSlowSQLHistoryListResponse.SlowSQLHistoryList.List["+ i +"].CpuTime"));
 			listItem.setDecodeTime(_ctx.doubleValue("DescribeSlowSQLHistoryListResponse.SlowSQLHistoryList.List["+ i +"].DecodeTime"));
-			listItem.setNetwaitTime(_ctx.doubleValue("DescribeSlowSQLHistoryListResponse.SlowSQLHistoryList.List["+ i +"].NetwaitTime"));
+			listItem.setNetWaitTime(_ctx.doubleValue("DescribeSlowSQLHistoryListResponse.SlowSQLHistoryList.List["+ i +"].NetWaitTime"));
 			listItem.setIOWaitTime(_ctx.doubleValue("DescribeSlowSQLHistoryListResponse.SlowSQLHistoryList.List["+ i +"].IOWaitTime"));
-			listItem.setGetplanTime(_ctx.doubleValue("DescribeSlowSQLHistoryListResponse.SlowSQLHistoryList.List["+ i +"].GetplanTime"));
+			listItem.setGetPlanTime(_ctx.doubleValue("DescribeSlowSQLHistoryListResponse.SlowSQLHistoryList.List["+ i +"].GetPlanTime"));
 			listItem.setMaxElapsedTime(_ctx.doubleValue("DescribeSlowSQLHistoryListResponse.SlowSQLHistoryList.List["+ i +"].MaxElapsedTime"));
 			listItem.setTotalWaitTime(_ctx.doubleValue("DescribeSlowSQLHistoryListResponse.SlowSQLHistoryList.List["+ i +"].TotalWaitTime"));
 			listItem.setScheduleTime(_ctx.doubleValue("DescribeSlowSQLHistoryListResponse.SlowSQLHistoryList.List["+ i +"].ScheduleTime"));

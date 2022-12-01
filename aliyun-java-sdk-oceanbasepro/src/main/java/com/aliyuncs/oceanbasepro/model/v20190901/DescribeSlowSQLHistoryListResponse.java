@@ -133,11 +133,11 @@ public class DescribeSlowSQLHistoryListResponse extends AcsResponse {
 
 			private Double decodeTime;
 
-			private Double netwaitTime;
+			private Double netWaitTime;
 
 			private Double iOWaitTime;
 
-			private Double getplanTime;
+			private Double getPlanTime;
 
 			private Double maxElapsedTime;
 
@@ -405,12 +405,12 @@ public class DescribeSlowSQLHistoryListResponse extends AcsResponse {
 				this.decodeTime = decodeTime;
 			}
 
-			public Double getNetwaitTime() {
-				return this.netwaitTime;
+			public Double getNetWaitTime() {
+				return this.netWaitTime;
 			}
 
-			public void setNetwaitTime(Double netwaitTime) {
-				this.netwaitTime = netwaitTime;
+			public void setNetWaitTime(Double netWaitTime) {
+				this.netWaitTime = netWaitTime;
 			}
 
 			public Double getIOWaitTime() {
@@ -421,12 +421,12 @@ public class DescribeSlowSQLHistoryListResponse extends AcsResponse {
 				this.iOWaitTime = iOWaitTime;
 			}
 
-			public Double getGetplanTime() {
-				return this.getplanTime;
+			public Double getGetPlanTime() {
+				return this.getPlanTime;
 			}
 
-			public void setGetplanTime(Double getplanTime) {
-				this.getplanTime = getplanTime;
+			public void setGetPlanTime(Double getPlanTime) {
+				this.getPlanTime = getPlanTime;
 			}
 
 			public Double getMaxElapsedTime() {
