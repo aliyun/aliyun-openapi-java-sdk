@@ -47,21 +47,37 @@ public class ListABTestMetricsResponse extends AcsResponse {
 
 	public static class ResultItem {
 
+		private Float zeroHitRate;
+
+		private Float ctr;
+
 		private String experimentName;
 
 		private String date;
 
-		private Integer pv;
+		private Integer ipvUv;
 
 		private Integer ipv;
 
 		private Integer uv;
 
-		private Integer ipvUv;
+		private Integer pv;
 
-		private Float ctr;
+		public Float getZeroHitRate() {
+			return this.zeroHitRate;
+		}
 
-		private Float zeroHitRate;
+		public void setZeroHitRate(Float zeroHitRate) {
+			this.zeroHitRate = zeroHitRate;
+		}
+
+		public Float getCtr() {
+			return this.ctr;
+		}
+
+		public void setCtr(Float ctr) {
+			this.ctr = ctr;
+		}
 
 		public String getExperimentName() {
 			return this.experimentName;
@@ -79,12 +95,12 @@ public class ListABTestMetricsResponse extends AcsResponse {
 			this.date = date;
 		}
 
-		public Integer getPv() {
-			return this.pv;
+		public Integer getIpvUv() {
+			return this.ipvUv;
 		}
 
-		public void setPv(Integer pv) {
-			this.pv = pv;
+		public void setIpvUv(Integer ipvUv) {
+			this.ipvUv = ipvUv;
 		}
 
 		public Integer getIpv() {
@@ -103,28 +119,12 @@ public class ListABTestMetricsResponse extends AcsResponse {
 			this.uv = uv;
 		}
 
-		public Integer getIpvUv() {
-			return this.ipvUv;
+		public Integer getPv() {
+			return this.pv;
 		}
 
-		public void setIpvUv(Integer ipvUv) {
-			this.ipvUv = ipvUv;
-		}
-
-		public Float getCtr() {
-			return this.ctr;
-		}
-
-		public void setCtr(Float ctr) {
-			this.ctr = ctr;
-		}
-
-		public Float getZeroHitRate() {
-			return this.zeroHitRate;
-		}
-
-		public void setZeroHitRate(Float zeroHitRate) {
-			this.zeroHitRate = zeroHitRate;
+		public void setPv(Integer pv) {
+			this.pv = pv;
 		}
 	}
 

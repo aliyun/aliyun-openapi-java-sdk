@@ -33,7 +33,7 @@ public class ListABTestFixedFlowDividersRequest extends RoaAcsRequest<ListABTest
 
 	private String appGroupIdentity;
 	public ListABTestFixedFlowDividersRequest() {
-		super("OpenSearch", "2017-12-25", "ListABTestFixedFlowDividers", "opensearch");
+		super("OpenSearch", "2017-12-25", "ListABTestFixedFlowDividers");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/scenes/[sceneId]/groups/[groupId]/experiments/[experimentId]/fixed-flow-dividers");
 		setMethod(MethodType.GET);
 		try {

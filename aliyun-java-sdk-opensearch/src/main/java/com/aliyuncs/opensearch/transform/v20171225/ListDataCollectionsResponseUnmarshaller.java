@@ -26,21 +26,21 @@ public class ListDataCollectionsResponseUnmarshaller {
 
 	public static ListDataCollectionsResponse unmarshall(ListDataCollectionsResponse listDataCollectionsResponse, UnmarshallerContext _ctx) {
 		
-		listDataCollectionsResponse.setRequestId(_ctx.stringValue("ListDataCollectionsResponse.requestId"));
 		listDataCollectionsResponse.setTotalCount(_ctx.integerValue("ListDataCollectionsResponse.totalCount"));
+		listDataCollectionsResponse.setRequestId(_ctx.stringValue("ListDataCollectionsResponse.requestId"));
 
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListDataCollectionsResponse.result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setId(_ctx.stringValue("ListDataCollectionsResponse.result["+ i +"].id"));
-			resultItem.setName(_ctx.stringValue("ListDataCollectionsResponse.result["+ i +"].name"));
-			resultItem.setType(_ctx.stringValue("ListDataCollectionsResponse.result["+ i +"].type"));
-			resultItem.setStatus(_ctx.integerValue("ListDataCollectionsResponse.result["+ i +"].status"));
-			resultItem.setDataCollectionType(_ctx.stringValue("ListDataCollectionsResponse.result["+ i +"].dataCollectionType"));
-			resultItem.setIndustryName(_ctx.stringValue("ListDataCollectionsResponse.result["+ i +"].industryName"));
 			resultItem.setCreated(_ctx.integerValue("ListDataCollectionsResponse.result["+ i +"].created"));
+			resultItem.setDataCollectionType(_ctx.stringValue("ListDataCollectionsResponse.result["+ i +"].dataCollectionType"));
+			resultItem.setType(_ctx.stringValue("ListDataCollectionsResponse.result["+ i +"].type"));
+			resultItem.setIndustryName(_ctx.stringValue("ListDataCollectionsResponse.result["+ i +"].industryName"));
+			resultItem.setStatus(_ctx.integerValue("ListDataCollectionsResponse.result["+ i +"].status"));
 			resultItem.setUpdated(_ctx.integerValue("ListDataCollectionsResponse.result["+ i +"].updated"));
+			resultItem.setName(_ctx.stringValue("ListDataCollectionsResponse.result["+ i +"].name"));
 			resultItem.setSundialId(_ctx.stringValue("ListDataCollectionsResponse.result["+ i +"].sundialId"));
+			resultItem.setId(_ctx.stringValue("ListDataCollectionsResponse.result["+ i +"].id"));
 
 			result.add(resultItem);
 		}

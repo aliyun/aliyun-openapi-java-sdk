@@ -91,32 +91,32 @@ public class DescribeAppGroupDataReportResponse extends AcsResponse {
 
 			public static class Message {
 
-				private String clientIp;
+				private Integer eventId;
 
 				private String arg3;
 
-				private String userId;
-
-				private String args;
-
 				private String arg1;
-
-				private String sdkType;
-
-				private String sessionId;
-
-				private Integer eventId;
 
 				private String sdkVersion;
 
+				private String userId;
+
 				private String page;
 
-				public String getClientIp() {
-					return this.clientIp;
+				private String args;
+
+				private String sessionId;
+
+				private String sdkType;
+
+				private String clientIp;
+
+				public Integer getEventId() {
+					return this.eventId;
 				}
 
-				public void setClientIp(String clientIp) {
-					this.clientIp = clientIp;
+				public void setEventId(Integer eventId) {
+					this.eventId = eventId;
 				}
 
 				public String getArg3() {
@@ -127,52 +127,12 @@ public class DescribeAppGroupDataReportResponse extends AcsResponse {
 					this.arg3 = arg3;
 				}
 
-				public String getUserId() {
-					return this.userId;
-				}
-
-				public void setUserId(String userId) {
-					this.userId = userId;
-				}
-
-				public String getArgs() {
-					return this.args;
-				}
-
-				public void setArgs(String args) {
-					this.args = args;
-				}
-
 				public String getArg1() {
 					return this.arg1;
 				}
 
 				public void setArg1(String arg1) {
 					this.arg1 = arg1;
-				}
-
-				public String getSdkType() {
-					return this.sdkType;
-				}
-
-				public void setSdkType(String sdkType) {
-					this.sdkType = sdkType;
-				}
-
-				public String getSessionId() {
-					return this.sessionId;
-				}
-
-				public void setSessionId(String sessionId) {
-					this.sessionId = sessionId;
-				}
-
-				public Integer getEventId() {
-					return this.eventId;
-				}
-
-				public void setEventId(Integer eventId) {
-					this.eventId = eventId;
 				}
 
 				public String getSdkVersion() {
@@ -183,12 +143,52 @@ public class DescribeAppGroupDataReportResponse extends AcsResponse {
 					this.sdkVersion = sdkVersion;
 				}
 
+				public String getUserId() {
+					return this.userId;
+				}
+
+				public void setUserId(String userId) {
+					this.userId = userId;
+				}
+
 				public String getPage() {
 					return this.page;
 				}
 
 				public void setPage(String page) {
 					this.page = page;
+				}
+
+				public String getArgs() {
+					return this.args;
+				}
+
+				public void setArgs(String args) {
+					this.args = args;
+				}
+
+				public String getSessionId() {
+					return this.sessionId;
+				}
+
+				public void setSessionId(String sessionId) {
+					this.sessionId = sessionId;
+				}
+
+				public String getSdkType() {
+					return this.sdkType;
+				}
+
+				public void setSdkType(String sdkType) {
+					this.sdkType = sdkType;
+				}
+
+				public String getClientIp() {
+					return this.clientIp;
+				}
+
+				public void setClientIp(String clientIp) {
+					this.clientIp = clientIp;
 				}
 			}
 		}

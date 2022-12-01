@@ -37,7 +37,7 @@ public class ListAppGroupErrorsRequest extends RoaAcsRequest<ListAppGroupErrorsR
 
 	private Integer pageNumber;
 	public ListAppGroupErrorsRequest() {
-		super("OpenSearch", "2017-12-25", "ListAppGroupErrors", "opensearch");
+		super("OpenSearch", "2017-12-25", "ListAppGroupErrors");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/errors");
 		setMethod(MethodType.GET);
 		try {

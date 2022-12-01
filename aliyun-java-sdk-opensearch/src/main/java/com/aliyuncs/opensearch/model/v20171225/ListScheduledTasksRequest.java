@@ -33,7 +33,7 @@ public class ListScheduledTasksRequest extends RoaAcsRequest<ListScheduledTasksR
 
 	private Integer pageNumber;
 	public ListScheduledTasksRequest() {
-		super("OpenSearch", "2017-12-25", "ListScheduledTasks", "opensearch");
+		super("OpenSearch", "2017-12-25", "ListScheduledTasks");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/scheduled-tasks");
 		setMethod(MethodType.GET);
 		try {

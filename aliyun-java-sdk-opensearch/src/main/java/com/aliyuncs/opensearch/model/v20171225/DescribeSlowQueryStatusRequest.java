@@ -27,7 +27,7 @@ public class DescribeSlowQueryStatusRequest extends RoaAcsRequest<DescribeSlowQu
 
 	private String appGroupIdentity;
 	public DescribeSlowQueryStatusRequest() {
-		super("OpenSearch", "2017-12-25", "DescribeSlowQueryStatus", "opensearch");
+		super("OpenSearch", "2017-12-25", "DescribeSlowQueryStatus");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/optimizers/slow-query");
 		setMethod(MethodType.GET);
 		try {

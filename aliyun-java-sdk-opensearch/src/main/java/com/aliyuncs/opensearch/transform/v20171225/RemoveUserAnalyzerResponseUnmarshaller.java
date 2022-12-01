@@ -23,8 +23,8 @@ public class RemoveUserAnalyzerResponseUnmarshaller {
 
 	public static RemoveUserAnalyzerResponse unmarshall(RemoveUserAnalyzerResponse removeUserAnalyzerResponse, UnmarshallerContext _ctx) {
 		
-		removeUserAnalyzerResponse.setRequestId(_ctx.stringValue("RemoveUserAnalyzerResponse.requestId"));
 		removeUserAnalyzerResponse.setResult(_ctx.mapValue("RemoveUserAnalyzerResponse.result"));
+		removeUserAnalyzerResponse.setRequestId(_ctx.stringValue("RemoveUserAnalyzerResponse.requestId"));
 	 
 	 	return removeUserAnalyzerResponse;
 	}

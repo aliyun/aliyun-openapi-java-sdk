@@ -31,7 +31,7 @@ public class ListDataCollectionsRequest extends RoaAcsRequest<ListDataCollection
 
 	private Integer pageNumber;
 	public ListDataCollectionsRequest() {
-		super("OpenSearch", "2017-12-25", "ListDataCollections", "opensearch");
+		super("OpenSearch", "2017-12-25", "ListDataCollections");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/data-collections");
 		setMethod(MethodType.GET);
 		try {

@@ -25,7 +25,7 @@ import com.aliyuncs.opensearch.Endpoint;
 public class ListRamRolesRequest extends RoaAcsRequest<ListRamRolesResponse> {
 	   
 	public ListRamRolesRequest() {
-		super("OpenSearch", "2017-12-25", "ListRamRoles", "opensearch");
+		super("OpenSearch", "2017-12-25", "ListRamRoles");
 		setUriPattern("/v4/openapi/assist/ram/roles");
 		setMethod(MethodType.GET);
 		try {

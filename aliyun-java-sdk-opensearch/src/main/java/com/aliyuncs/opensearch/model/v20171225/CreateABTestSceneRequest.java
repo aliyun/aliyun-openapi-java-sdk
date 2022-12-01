@@ -27,7 +27,7 @@ public class CreateABTestSceneRequest extends RoaAcsRequest<CreateABTestSceneRes
 
 	private String appGroupIdentity;
 	public CreateABTestSceneRequest() {
-		super("OpenSearch", "2017-12-25", "CreateABTestScene", "opensearch");
+		super("OpenSearch", "2017-12-25", "CreateABTestScene");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/scenes");
 		setMethod(MethodType.POST);
 		try {

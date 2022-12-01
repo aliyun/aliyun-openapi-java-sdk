@@ -35,7 +35,7 @@ public class ListAppGroupMetricsRequest extends RoaAcsRequest<ListAppGroupMetric
 
 	private String appGroupIdentity;
 	public ListAppGroupMetricsRequest() {
-		super("OpenSearch", "2017-12-25", "ListAppGroupMetrics", "opensearch");
+		super("OpenSearch", "2017-12-25", "ListAppGroupMetrics");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/metrics");
 		setMethod(MethodType.GET);
 		try {

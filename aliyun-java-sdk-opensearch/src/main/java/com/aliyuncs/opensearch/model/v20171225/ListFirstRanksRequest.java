@@ -29,7 +29,7 @@ public class ListFirstRanksRequest extends RoaAcsRequest<ListFirstRanksResponse>
 
 	private String appGroupIdentity;
 	public ListFirstRanksRequest() {
-		super("OpenSearch", "2017-12-25", "ListFirstRanks", "opensearch");
+		super("OpenSearch", "2017-12-25", "ListFirstRanks");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/apps/[appId]/first-ranks");
 		setMethod(MethodType.GET);
 		try {

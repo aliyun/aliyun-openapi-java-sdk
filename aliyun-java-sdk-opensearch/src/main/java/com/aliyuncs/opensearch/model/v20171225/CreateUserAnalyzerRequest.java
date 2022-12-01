@@ -25,7 +25,7 @@ import com.aliyuncs.opensearch.Endpoint;
 public class CreateUserAnalyzerRequest extends RoaAcsRequest<CreateUserAnalyzerResponse> {
 	   
 	public CreateUserAnalyzerRequest() {
-		super("OpenSearch", "2017-12-25", "CreateUserAnalyzer", "opensearch");
+		super("OpenSearch", "2017-12-25", "CreateUserAnalyzer");
 		setUriPattern("/v4/openapi/user-analyzers");
 		setMethod(MethodType.POST);
 		try {

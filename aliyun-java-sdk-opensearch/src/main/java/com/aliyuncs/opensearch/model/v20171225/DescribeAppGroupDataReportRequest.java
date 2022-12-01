@@ -31,7 +31,7 @@ public class DescribeAppGroupDataReportRequest extends RoaAcsRequest<DescribeApp
 
 	private String appGroupIdentity;
 	public DescribeAppGroupDataReportRequest() {
-		super("OpenSearch", "2017-12-25", "DescribeAppGroupDataReport", "opensearch");
+		super("OpenSearch", "2017-12-25", "DescribeAppGroupDataReport");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/data-report");
 		setMethod(MethodType.GET);
 		try {

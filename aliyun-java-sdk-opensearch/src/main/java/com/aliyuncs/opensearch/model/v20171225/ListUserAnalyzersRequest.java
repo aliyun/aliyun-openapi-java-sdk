@@ -29,7 +29,7 @@ public class ListUserAnalyzersRequest extends RoaAcsRequest<ListUserAnalyzersRes
 
 	private Integer pageNumber;
 	public ListUserAnalyzersRequest() {
-		super("OpenSearch", "2017-12-25", "ListUserAnalyzers", "opensearch");
+		super("OpenSearch", "2017-12-25", "ListUserAnalyzers");
 		setUriPattern("/v4/openapi/user-analyzers");
 		setMethod(MethodType.GET);
 		try {

@@ -49,9 +49,9 @@ public class ListQueryProcessorNersResponse extends AcsResponse {
 
 		private String tag;
 
-		private String priority;
-
 		private Integer order;
+
+		private String priority;
 
 		private String label;
 
@@ -63,20 +63,20 @@ public class ListQueryProcessorNersResponse extends AcsResponse {
 			this.tag = tag;
 		}
 
-		public String getPriority() {
-			return this.priority;
-		}
-
-		public void setPriority(String priority) {
-			this.priority = priority;
-		}
-
 		public Integer getOrder() {
 			return this.order;
 		}
 
 		public void setOrder(Integer order) {
 			this.order = order;
+		}
+
+		public String getPriority() {
+			return this.priority;
+		}
+
+		public void setPriority(String priority) {
+			this.priority = priority;
 		}
 
 		public String getLabel() {

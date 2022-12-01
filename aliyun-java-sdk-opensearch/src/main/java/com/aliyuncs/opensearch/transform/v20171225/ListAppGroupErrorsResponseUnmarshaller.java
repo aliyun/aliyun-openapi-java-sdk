@@ -26,8 +26,8 @@ public class ListAppGroupErrorsResponseUnmarshaller {
 
 	public static ListAppGroupErrorsResponse unmarshall(ListAppGroupErrorsResponse listAppGroupErrorsResponse, UnmarshallerContext _ctx) {
 		
-		listAppGroupErrorsResponse.setRequestId(_ctx.stringValue("ListAppGroupErrorsResponse.requestId"));
 		listAppGroupErrorsResponse.setTotalCount(_ctx.longValue("ListAppGroupErrorsResponse.totalCount"));
+		listAppGroupErrorsResponse.setRequestId(_ctx.stringValue("ListAppGroupErrorsResponse.requestId"));
 
 		List<Map<Object, Object>> result = _ctx.listMapValue("ListAppGroupErrorsResponse.result");
 		listAppGroupErrorsResponse.setResult(result);

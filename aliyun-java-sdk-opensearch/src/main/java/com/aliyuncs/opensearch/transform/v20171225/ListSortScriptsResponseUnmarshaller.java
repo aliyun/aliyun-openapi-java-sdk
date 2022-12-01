@@ -31,12 +31,12 @@ public class ListSortScriptsResponseUnmarshaller {
 		List<ScriptInfo> result = new ArrayList<ScriptInfo>();
 		for (int i = 0; i < _ctx.lengthValue("ListSortScriptsResponse.result.Length"); i++) {
 			ScriptInfo scriptInfo = new ScriptInfo();
-			scriptInfo.setScriptName(_ctx.stringValue("ListSortScriptsResponse.result["+ i +"].scriptName"));
 			scriptInfo.setType(_ctx.stringValue("ListSortScriptsResponse.result["+ i +"].type"));
 			scriptInfo.setScope(_ctx.stringValue("ListSortScriptsResponse.result["+ i +"].scope"));
-			scriptInfo.setStatus(_ctx.stringValue("ListSortScriptsResponse.result["+ i +"].status"));
 			scriptInfo.setCreateTime(_ctx.stringValue("ListSortScriptsResponse.result["+ i +"].createTime"));
+			scriptInfo.setStatus(_ctx.stringValue("ListSortScriptsResponse.result["+ i +"].status"));
 			scriptInfo.setModifyTime(_ctx.stringValue("ListSortScriptsResponse.result["+ i +"].modifyTime"));
+			scriptInfo.setScriptName(_ctx.stringValue("ListSortScriptsResponse.result["+ i +"].scriptName"));
 
 			result.add(scriptInfo);
 		}

@@ -27,7 +27,7 @@ public class ReplaceAppGroupCommodityCodeRequest extends RoaAcsRequest<ReplaceAp
 
 	private String appGroupIdentity;
 	public ReplaceAppGroupCommodityCodeRequest() {
-		super("OpenSearch", "2017-12-25", "ReplaceAppGroupCommodityCode", "opensearch");
+		super("OpenSearch", "2017-12-25", "ReplaceAppGroupCommodityCode");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/actions/to-instance-typed");
 		setMethod(MethodType.POST);
 		try {

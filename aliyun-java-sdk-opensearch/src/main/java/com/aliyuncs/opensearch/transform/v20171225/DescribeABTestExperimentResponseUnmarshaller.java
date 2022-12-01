@@ -27,12 +27,12 @@ public class DescribeABTestExperimentResponseUnmarshaller {
 		describeABTestExperimentResponse.setRequestId(_ctx.stringValue("DescribeABTestExperimentResponse.requestId"));
 
 		Result result = new Result();
-		result.setId(_ctx.stringValue("DescribeABTestExperimentResponse.result.id"));
-		result.setName(_ctx.stringValue("DescribeABTestExperimentResponse.result.name"));
 		result.setCreated(_ctx.integerValue("DescribeABTestExperimentResponse.result.created"));
-		result.setUpdated(_ctx.integerValue("DescribeABTestExperimentResponse.result.updated"));
-		result.setOnline(_ctx.booleanValue("DescribeABTestExperimentResponse.result.online"));
 		result.setTraffic(_ctx.integerValue("DescribeABTestExperimentResponse.result.traffic"));
+		result.setOnline(_ctx.booleanValue("DescribeABTestExperimentResponse.result.online"));
+		result.setName(_ctx.stringValue("DescribeABTestExperimentResponse.result.name"));
+		result.setUpdated(_ctx.integerValue("DescribeABTestExperimentResponse.result.updated"));
+		result.setId(_ctx.stringValue("DescribeABTestExperimentResponse.result.id"));
 
 		Params params = new Params();
 		params.setFirst_formula_name(_ctx.stringValue("DescribeABTestExperimentResponse.result.params.first_formula_name"));

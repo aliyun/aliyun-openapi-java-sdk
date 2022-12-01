@@ -29,7 +29,7 @@ public class GetModelReportRequest extends RoaAcsRequest<GetModelReportResponse>
 
 	private String appGroupIdentity;
 	public GetModelReportRequest() {
-		super("OpenSearch", "2017-12-25", "GetModelReport", "opensearch");
+		super("OpenSearch", "2017-12-25", "GetModelReport");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/algorithm/models/[modelName]/report");
 		setMethod(MethodType.GET);
 		try {

@@ -29,7 +29,7 @@ public class DescribeModelRequest extends RoaAcsRequest<DescribeModelResponse> {
 
 	private String appGroupIdentity;
 	public DescribeModelRequest() {
-		super("OpenSearch", "2017-12-25", "DescribeModel", "opensearch");
+		super("OpenSearch", "2017-12-25", "DescribeModel");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/algorithm/models/[modelName]");
 		setMethod(MethodType.GET);
 		try {

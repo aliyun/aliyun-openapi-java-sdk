@@ -29,7 +29,7 @@ public class DescribeAppRequest extends RoaAcsRequest<DescribeAppResponse> {
 
 	private String appGroupIdentity;
 	public DescribeAppRequest() {
-		super("OpenSearch", "2017-12-25", "DescribeApp", "opensearch");
+		super("OpenSearch", "2017-12-25", "DescribeApp");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/apps/[appId]");
 		setMethod(MethodType.GET);
 		try {

@@ -23,8 +23,8 @@ public class TrainModelResponseUnmarshaller {
 
 	public static TrainModelResponse unmarshall(TrainModelResponse trainModelResponse, UnmarshallerContext _ctx) {
 		
-		trainModelResponse.setRequestId(_ctx.stringValue("TrainModelResponse.requestId"));
 		trainModelResponse.setResult(_ctx.mapValue("TrainModelResponse.result"));
+		trainModelResponse.setRequestId(_ctx.stringValue("TrainModelResponse.requestId"));
 	 
 	 	return trainModelResponse;
 	}

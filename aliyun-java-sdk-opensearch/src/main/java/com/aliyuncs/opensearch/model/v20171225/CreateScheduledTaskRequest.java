@@ -27,7 +27,7 @@ public class CreateScheduledTaskRequest extends RoaAcsRequest<CreateScheduledTas
 
 	private String appGroupIdentity;
 	public CreateScheduledTaskRequest() {
-		super("OpenSearch", "2017-12-25", "CreateScheduledTask", "opensearch");
+		super("OpenSearch", "2017-12-25", "CreateScheduledTask");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/scheduled-tasks");
 		setMethod(MethodType.POST);
 		try {

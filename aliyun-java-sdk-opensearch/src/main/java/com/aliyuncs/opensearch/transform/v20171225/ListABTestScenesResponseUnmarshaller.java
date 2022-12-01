@@ -31,11 +31,11 @@ public class ListABTestScenesResponseUnmarshaller {
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListABTestScenesResponse.result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setId(_ctx.stringValue("ListABTestScenesResponse.result["+ i +"].id"));
-			resultItem.setName(_ctx.stringValue("ListABTestScenesResponse.result["+ i +"].name"));
-			resultItem.setStatus(_ctx.integerValue("ListABTestScenesResponse.result["+ i +"].status"));
 			resultItem.setCreated(_ctx.integerValue("ListABTestScenesResponse.result["+ i +"].created"));
+			resultItem.setStatus(_ctx.integerValue("ListABTestScenesResponse.result["+ i +"].status"));
 			resultItem.setUpdated(_ctx.integerValue("ListABTestScenesResponse.result["+ i +"].updated"));
+			resultItem.setName(_ctx.stringValue("ListABTestScenesResponse.result["+ i +"].name"));
+			resultItem.setId(_ctx.stringValue("ListABTestScenesResponse.result["+ i +"].id"));
 
 			List<String> values = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListABTestScenesResponse.result["+ i +"].values.Length"); j++) {

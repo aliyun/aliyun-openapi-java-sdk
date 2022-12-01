@@ -29,7 +29,7 @@ public class DeleteModelRequest extends RoaAcsRequest<DeleteModelResponse> {
 
 	private String appGroupIdentity;
 	public DeleteModelRequest() {
-		super("OpenSearch", "2017-12-25", "DeleteModel", "opensearch");
+		super("OpenSearch", "2017-12-25", "DeleteModel");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/algorithm/models/[modelName]");
 		setMethod(MethodType.DELETE);
 		try {

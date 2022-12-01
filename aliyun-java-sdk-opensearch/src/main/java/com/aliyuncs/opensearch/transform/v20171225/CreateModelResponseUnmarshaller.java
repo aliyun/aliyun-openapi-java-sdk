@@ -23,8 +23,8 @@ public class CreateModelResponseUnmarshaller {
 
 	public static CreateModelResponse unmarshall(CreateModelResponse createModelResponse, UnmarshallerContext _ctx) {
 		
-		createModelResponse.setRequestId(_ctx.stringValue("CreateModelResponse.requestId"));
 		createModelResponse.setResult(_ctx.mapValue("CreateModelResponse.result"));
+		createModelResponse.setRequestId(_ctx.stringValue("CreateModelResponse.requestId"));
 	 
 	 	return createModelResponse;
 	}

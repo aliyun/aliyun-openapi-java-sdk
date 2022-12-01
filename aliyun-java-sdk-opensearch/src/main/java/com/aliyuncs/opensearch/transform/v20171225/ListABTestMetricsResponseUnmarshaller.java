@@ -31,14 +31,14 @@ public class ListABTestMetricsResponseUnmarshaller {
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListABTestMetricsResponse.result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
+			resultItem.setZeroHitRate(_ctx.floatValue("ListABTestMetricsResponse.result["+ i +"].zeroHitRate"));
+			resultItem.setCtr(_ctx.floatValue("ListABTestMetricsResponse.result["+ i +"].ctr"));
 			resultItem.setExperimentName(_ctx.stringValue("ListABTestMetricsResponse.result["+ i +"].experimentName"));
 			resultItem.setDate(_ctx.stringValue("ListABTestMetricsResponse.result["+ i +"].date"));
-			resultItem.setPv(_ctx.integerValue("ListABTestMetricsResponse.result["+ i +"].pv"));
+			resultItem.setIpvUv(_ctx.integerValue("ListABTestMetricsResponse.result["+ i +"].ipvUv"));
 			resultItem.setIpv(_ctx.integerValue("ListABTestMetricsResponse.result["+ i +"].ipv"));
 			resultItem.setUv(_ctx.integerValue("ListABTestMetricsResponse.result["+ i +"].uv"));
-			resultItem.setIpvUv(_ctx.integerValue("ListABTestMetricsResponse.result["+ i +"].ipvUv"));
-			resultItem.setCtr(_ctx.floatValue("ListABTestMetricsResponse.result["+ i +"].ctr"));
-			resultItem.setZeroHitRate(_ctx.floatValue("ListABTestMetricsResponse.result["+ i +"].zeroHitRate"));
+			resultItem.setPv(_ctx.integerValue("ListABTestMetricsResponse.result["+ i +"].pv"));
 
 			result.add(resultItem);
 		}

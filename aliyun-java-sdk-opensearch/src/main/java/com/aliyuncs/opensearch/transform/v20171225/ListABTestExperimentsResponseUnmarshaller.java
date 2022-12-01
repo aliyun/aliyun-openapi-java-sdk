@@ -32,13 +32,13 @@ public class ListABTestExperimentsResponseUnmarshaller {
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListABTestExperimentsResponse.result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setId(_ctx.stringValue("ListABTestExperimentsResponse.result["+ i +"].id"));
-			resultItem.setName(_ctx.stringValue("ListABTestExperimentsResponse.result["+ i +"].name"));
-			resultItem.setParams(_ctx.mapValue("ListABTestExperimentsResponse.result["+ i +"].params"));
 			resultItem.setCreated(_ctx.integerValue("ListABTestExperimentsResponse.result["+ i +"].created"));
-			resultItem.setUpdated(_ctx.integerValue("ListABTestExperimentsResponse.result["+ i +"].updated"));
-			resultItem.setOnline(_ctx.booleanValue("ListABTestExperimentsResponse.result["+ i +"].online"));
+			resultItem.setParams(_ctx.mapValue("ListABTestExperimentsResponse.result["+ i +"].params"));
 			resultItem.setTraffic(_ctx.integerValue("ListABTestExperimentsResponse.result["+ i +"].traffic"));
+			resultItem.setOnline(_ctx.booleanValue("ListABTestExperimentsResponse.result["+ i +"].online"));
+			resultItem.setName(_ctx.stringValue("ListABTestExperimentsResponse.result["+ i +"].name"));
+			resultItem.setUpdated(_ctx.integerValue("ListABTestExperimentsResponse.result["+ i +"].updated"));
+			resultItem.setId(_ctx.stringValue("ListABTestExperimentsResponse.result["+ i +"].id"));
 
 			result.add(resultItem);
 		}

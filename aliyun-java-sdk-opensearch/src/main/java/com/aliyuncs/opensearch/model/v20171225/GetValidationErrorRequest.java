@@ -29,7 +29,7 @@ public class GetValidationErrorRequest extends RoaAcsRequest<GetValidationErrorR
 
 	private String errorCode;
 	public GetValidationErrorRequest() {
-		super("OpenSearch", "2017-12-25", "GetValidationError", "opensearch");
+		super("OpenSearch", "2017-12-25", "GetValidationError");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/algorithm/data/validation-error");
 		setMethod(MethodType.GET);
 		try {

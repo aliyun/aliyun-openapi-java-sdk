@@ -33,7 +33,7 @@ public class UpdateABTestFixedFlowDividersRequest extends RoaAcsRequest<UpdateAB
 
 	private String appGroupIdentity;
 	public UpdateABTestFixedFlowDividersRequest() {
-		super("OpenSearch", "2017-12-25", "UpdateABTestFixedFlowDividers", "opensearch");
+		super("OpenSearch", "2017-12-25", "UpdateABTestFixedFlowDividers");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/scenes/[sceneId]/groups/[groupId]/experiments/[experimentId]/fixed-flow-dividers");
 		setMethod(MethodType.PUT);
 		try {

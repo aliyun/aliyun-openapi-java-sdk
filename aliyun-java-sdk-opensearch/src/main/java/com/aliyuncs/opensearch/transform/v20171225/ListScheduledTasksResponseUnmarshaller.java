@@ -26,8 +26,8 @@ public class ListScheduledTasksResponseUnmarshaller {
 
 	public static ListScheduledTasksResponse unmarshall(ListScheduledTasksResponse listScheduledTasksResponse, UnmarshallerContext _ctx) {
 		
-		listScheduledTasksResponse.setRequestId(_ctx.stringValue("ListScheduledTasksResponse.requestId"));
 		listScheduledTasksResponse.setTotalCount(_ctx.longValue("ListScheduledTasksResponse.totalCount"));
+		listScheduledTasksResponse.setRequestId(_ctx.stringValue("ListScheduledTasksResponse.requestId"));
 
 		List<Map<Object, Object>> result = _ctx.listMapValue("ListScheduledTasksResponse.result");
 		listScheduledTasksResponse.setResult(result);

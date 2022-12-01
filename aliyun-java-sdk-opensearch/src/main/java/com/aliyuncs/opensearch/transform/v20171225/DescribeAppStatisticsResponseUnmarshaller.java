@@ -23,8 +23,8 @@ public class DescribeAppStatisticsResponseUnmarshaller {
 
 	public static DescribeAppStatisticsResponse unmarshall(DescribeAppStatisticsResponse describeAppStatisticsResponse, UnmarshallerContext _ctx) {
 		
-		describeAppStatisticsResponse.setRequestId(_ctx.stringValue("DescribeAppStatisticsResponse.requestId"));
 		describeAppStatisticsResponse.setResult(_ctx.mapValue("DescribeAppStatisticsResponse.result"));
+		describeAppStatisticsResponse.setRequestId(_ctx.stringValue("DescribeAppStatisticsResponse.requestId"));
 	 
 	 	return describeAppStatisticsResponse;
 	}

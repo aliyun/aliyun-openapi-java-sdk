@@ -29,7 +29,7 @@ public class RemoveDataCollectionRequest extends RoaAcsRequest<RemoveDataCollect
 
 	private String appGroupIdentity;
 	public RemoveDataCollectionRequest() {
-		super("OpenSearch", "2017-12-25", "RemoveDataCollection", "opensearch");
+		super("OpenSearch", "2017-12-25", "RemoveDataCollection");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/data-collections/[dataCollectionIdentity]");
 		setMethod(MethodType.DELETE);
 		try {

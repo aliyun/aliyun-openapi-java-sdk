@@ -39,16 +39,16 @@ public class DescribeAppGroupDataReportResponseUnmarshaller {
 			receivedSampleItem.setReceivedTimeMs(_ctx.longValue("DescribeAppGroupDataReportResponse.result.receivedSample["+ i +"].receivedTimeMs"));
 
 			Message message = new Message();
-			message.setClientIp(_ctx.stringValue("DescribeAppGroupDataReportResponse.result.receivedSample["+ i +"].message.clientIp"));
-			message.setArg3(_ctx.stringValue("DescribeAppGroupDataReportResponse.result.receivedSample["+ i +"].message.arg3"));
-			message.setUserId(_ctx.stringValue("DescribeAppGroupDataReportResponse.result.receivedSample["+ i +"].message.userId"));
-			message.setArgs(_ctx.stringValue("DescribeAppGroupDataReportResponse.result.receivedSample["+ i +"].message.args"));
-			message.setArg1(_ctx.stringValue("DescribeAppGroupDataReportResponse.result.receivedSample["+ i +"].message.arg1"));
-			message.setSdkType(_ctx.stringValue("DescribeAppGroupDataReportResponse.result.receivedSample["+ i +"].message.sdkType"));
-			message.setSessionId(_ctx.stringValue("DescribeAppGroupDataReportResponse.result.receivedSample["+ i +"].message.sessionId"));
 			message.setEventId(_ctx.integerValue("DescribeAppGroupDataReportResponse.result.receivedSample["+ i +"].message.eventId"));
+			message.setArg3(_ctx.stringValue("DescribeAppGroupDataReportResponse.result.receivedSample["+ i +"].message.arg3"));
+			message.setArg1(_ctx.stringValue("DescribeAppGroupDataReportResponse.result.receivedSample["+ i +"].message.arg1"));
 			message.setSdkVersion(_ctx.stringValue("DescribeAppGroupDataReportResponse.result.receivedSample["+ i +"].message.sdkVersion"));
+			message.setUserId(_ctx.stringValue("DescribeAppGroupDataReportResponse.result.receivedSample["+ i +"].message.userId"));
 			message.setPage(_ctx.stringValue("DescribeAppGroupDataReportResponse.result.receivedSample["+ i +"].message.page"));
+			message.setArgs(_ctx.stringValue("DescribeAppGroupDataReportResponse.result.receivedSample["+ i +"].message.args"));
+			message.setSessionId(_ctx.stringValue("DescribeAppGroupDataReportResponse.result.receivedSample["+ i +"].message.sessionId"));
+			message.setSdkType(_ctx.stringValue("DescribeAppGroupDataReportResponse.result.receivedSample["+ i +"].message.sdkType"));
+			message.setClientIp(_ctx.stringValue("DescribeAppGroupDataReportResponse.result.receivedSample["+ i +"].message.clientIp"));
 			receivedSampleItem.setMessage(message);
 
 			receivedSample.add(receivedSampleItem);

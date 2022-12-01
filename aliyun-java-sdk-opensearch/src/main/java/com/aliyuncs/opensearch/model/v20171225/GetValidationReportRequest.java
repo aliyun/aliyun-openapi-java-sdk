@@ -29,7 +29,7 @@ public class GetValidationReportRequest extends RoaAcsRequest<GetValidationRepor
 
 	private String appGroupIdentity;
 	public GetValidationReportRequest() {
-		super("OpenSearch", "2017-12-25", "GetValidationReport", "opensearch");
+		super("OpenSearch", "2017-12-25", "GetValidationReport");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/algorithm/data/validation-report");
 		setMethod(MethodType.GET);
 		try {

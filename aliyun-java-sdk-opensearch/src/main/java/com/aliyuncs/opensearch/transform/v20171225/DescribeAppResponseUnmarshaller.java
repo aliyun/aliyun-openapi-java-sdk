@@ -33,16 +33,16 @@ public class DescribeAppResponseUnmarshaller {
 		describeAppResponse.setRequestId(_ctx.stringValue("DescribeAppResponse.requestId"));
 
 		Result result = new Result();
-		result.setId(_ctx.stringValue("DescribeAppResponse.result.id"));
+		result.setCreated(_ctx.integerValue("DescribeAppResponse.result.created"));
+		result.setClusterName(_ctx.stringValue("DescribeAppResponse.result.clusterName"));
+		result.setAutoSwitch(_ctx.booleanValue("DescribeAppResponse.result.autoSwitch"));
+		result.setAlgoDeploymentId(_ctx.integerValue("DescribeAppResponse.result.algoDeploymentId"));
+		result.setType(_ctx.stringValue("DescribeAppResponse.result.type"));
 		result.setDescription(_ctx.stringValue("DescribeAppResponse.result.description"));
 		result.setStatus(_ctx.stringValue("DescribeAppResponse.result.status"));
-		result.setType(_ctx.stringValue("DescribeAppResponse.result.type"));
-		result.setClusterName(_ctx.stringValue("DescribeAppResponse.result.clusterName"));
-		result.setAlgoDeploymentId(_ctx.integerValue("DescribeAppResponse.result.algoDeploymentId"));
-		result.setCreated(_ctx.integerValue("DescribeAppResponse.result.created"));
-		result.setAutoSwitch(_ctx.booleanValue("DescribeAppResponse.result.autoSwitch"));
-		result.setProgressPercent(_ctx.integerValue("DescribeAppResponse.result.progressPercent"));
 		result.setSchema(_ctx.mapValue("DescribeAppResponse.result.schema"));
+		result.setProgressPercent(_ctx.integerValue("DescribeAppResponse.result.progressPercent"));
+		result.setId(_ctx.stringValue("DescribeAppResponse.result.id"));
 
 		List<String> fetchFields = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAppResponse.result.fetchFields.Length"); i++) {
@@ -51,17 +51,23 @@ public class DescribeAppResponseUnmarshaller {
 		result.setFetchFields(fetchFields);
 
 		Quota quota = new Quota();
+		quota.setSpec(_ctx.stringValue("DescribeAppResponse.result.quota.spec"));
+		quota.setQps(_ctx.integerValue("DescribeAppResponse.result.quota.qps"));
 		quota.setDocSize(_ctx.integerValue("DescribeAppResponse.result.quota.docSize"));
 		quota.setComputeResource(_ctx.integerValue("DescribeAppResponse.result.quota.computeResource"));
-		quota.setQps(_ctx.integerValue("DescribeAppResponse.result.quota.qps"));
-		quota.setSpec(_ctx.stringValue("DescribeAppResponse.result.quota.spec"));
 		result.setQuota(quota);
 
 		Domain domain = new Domain();
-		domain.setName(_ctx.stringValue("DescribeAppResponse.result.domain.name"));
 		domain.setCategory(_ctx.stringValue("DescribeAppResponse.result.domain.category"));
+		domain.setName(_ctx.stringValue("DescribeAppResponse.result.domain.name"));
 
 		Functions functions = new Functions();
+
+		List<String> service = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeAppResponse.result.domain.functions.service.Length"); i++) {
+			service.add(_ctx.stringValue("DescribeAppResponse.result.domain.functions.service["+ i +"]"));
+		}
+		functions.setService(service);
 
 		List<String> qp = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAppResponse.result.domain.functions.qp.Length"); i++) {
@@ -74,12 +80,6 @@ public class DescribeAppResponseUnmarshaller {
 			algo.add(_ctx.stringValue("DescribeAppResponse.result.domain.functions.algo["+ i +"]"));
 		}
 		functions.setAlgo(algo);
-
-		List<String> service = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeAppResponse.result.domain.functions.service.Length"); i++) {
-			service.add(_ctx.stringValue("DescribeAppResponse.result.domain.functions.service["+ i +"]"));
-		}
-		functions.setService(service);
 		domain.setFunctions(functions);
 		result.setDomain(domain);
 		describeAppResponse.setResult(result);

@@ -26,10 +26,10 @@ public class ListSlowQueryQueriesResponseUnmarshaller {
 		listSlowQueryQueriesResponse.setRequestId(_ctx.stringValue("ListSlowQueryQueriesResponse.requestId"));
 
 		Result result = new Result();
-		result.setStart(_ctx.integerValue("ListSlowQueryQueriesResponse.result.start"));
-		result.setEnd(_ctx.integerValue("ListSlowQueryQueriesResponse.result.end"));
 		result.setIndex(_ctx.integerValue("ListSlowQueryQueriesResponse.result.index"));
 		result.setAppQuery(_ctx.stringValue("ListSlowQueryQueriesResponse.result.appQuery"));
+		result.setStart(_ctx.integerValue("ListSlowQueryQueriesResponse.result.start"));
+		result.setEnd(_ctx.integerValue("ListSlowQueryQueriesResponse.result.end"));
 		listSlowQueryQueriesResponse.setResult(result);
 	 
 	 	return listSlowQueryQueriesResponse;

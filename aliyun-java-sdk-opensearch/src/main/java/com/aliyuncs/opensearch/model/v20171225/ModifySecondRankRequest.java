@@ -33,7 +33,7 @@ public class ModifySecondRankRequest extends RoaAcsRequest<ModifySecondRankRespo
 
 	private String appGroupIdentity;
 	public ModifySecondRankRequest() {
-		super("OpenSearch", "2017-12-25", "ModifySecondRank", "opensearch");
+		super("OpenSearch", "2017-12-25", "ModifySecondRank");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/apps/[appId]/second-ranks/[name]");
 		setMethod(MethodType.PUT);
 		try {

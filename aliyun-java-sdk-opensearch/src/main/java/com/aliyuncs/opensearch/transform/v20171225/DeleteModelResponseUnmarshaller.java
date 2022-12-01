@@ -22,8 +22,8 @@ public class DeleteModelResponseUnmarshaller {
 
 	public static DeleteModelResponse unmarshall(DeleteModelResponse deleteModelResponse, UnmarshallerContext _ctx) {
 		
-		deleteModelResponse.setRequestId(_ctx.stringValue("DeleteModelResponse.requestId"));
 		deleteModelResponse.setResult(_ctx.stringValue("DeleteModelResponse.result"));
+		deleteModelResponse.setRequestId(_ctx.stringValue("DeleteModelResponse.requestId"));
 	 
 	 	return deleteModelResponse;
 	}

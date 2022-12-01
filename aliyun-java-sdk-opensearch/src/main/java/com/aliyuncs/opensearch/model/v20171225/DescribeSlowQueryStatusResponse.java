@@ -48,9 +48,9 @@ public class DescribeSlowQueryStatusResponse extends AcsResponse {
 
 		private String region;
 
-		private String appGroupId;
-
 		private String status;
+
+		private String appGroupId;
 
 		public String getRegion() {
 			return this.region;
@@ -60,20 +60,20 @@ public class DescribeSlowQueryStatusResponse extends AcsResponse {
 			this.region = region;
 		}
 
-		public String getAppGroupId() {
-			return this.appGroupId;
-		}
-
-		public void setAppGroupId(String appGroupId) {
-			this.appGroupId = appGroupId;
-		}
-
 		public String getStatus() {
 			return this.status;
 		}
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public String getAppGroupId() {
+			return this.appGroupId;
+		}
+
+		public void setAppGroupId(String appGroupId) {
+			this.appGroupId = appGroupId;
 		}
 	}
 

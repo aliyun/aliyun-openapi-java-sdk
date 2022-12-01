@@ -23,8 +23,8 @@ public class DescribeModelResponseUnmarshaller {
 
 	public static DescribeModelResponse unmarshall(DescribeModelResponse describeModelResponse, UnmarshallerContext _ctx) {
 		
-		describeModelResponse.setRequestId(_ctx.stringValue("DescribeModelResponse.requestId"));
 		describeModelResponse.setResult(_ctx.mapValue("DescribeModelResponse.result"));
+		describeModelResponse.setRequestId(_ctx.stringValue("DescribeModelResponse.requestId"));
 	 
 	 	return describeModelResponse;
 	}

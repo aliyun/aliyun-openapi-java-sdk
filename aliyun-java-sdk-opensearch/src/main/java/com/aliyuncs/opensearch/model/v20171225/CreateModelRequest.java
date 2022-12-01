@@ -27,7 +27,7 @@ public class CreateModelRequest extends RoaAcsRequest<CreateModelResponse> {
 
 	private String appGroupIdentity;
 	public CreateModelRequest() {
-		super("OpenSearch", "2017-12-25", "CreateModel", "opensearch");
+		super("OpenSearch", "2017-12-25", "CreateModel");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/algorithm/models");
 		setMethod(MethodType.POST);
 		try {

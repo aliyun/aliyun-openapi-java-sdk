@@ -27,13 +27,13 @@ public class CreateABTestExperimentResponseUnmarshaller {
 		createABTestExperimentResponse.setRequestId(_ctx.stringValue("CreateABTestExperimentResponse.requestId"));
 
 		Result result = new Result();
-		result.setId(_ctx.stringValue("CreateABTestExperimentResponse.result.id"));
-		result.setName(_ctx.stringValue("CreateABTestExperimentResponse.result.name"));
-		result.setParams(_ctx.mapValue("CreateABTestExperimentResponse.result.params"));
 		result.setCreated(_ctx.integerValue("CreateABTestExperimentResponse.result.created"));
-		result.setUpdated(_ctx.integerValue("CreateABTestExperimentResponse.result.updated"));
-		result.setOnline(_ctx.booleanValue("CreateABTestExperimentResponse.result.online"));
+		result.setParams(_ctx.mapValue("CreateABTestExperimentResponse.result.params"));
 		result.setTraffic(_ctx.integerValue("CreateABTestExperimentResponse.result.traffic"));
+		result.setOnline(_ctx.booleanValue("CreateABTestExperimentResponse.result.online"));
+		result.setName(_ctx.stringValue("CreateABTestExperimentResponse.result.name"));
+		result.setUpdated(_ctx.integerValue("CreateABTestExperimentResponse.result.updated"));
+		result.setId(_ctx.stringValue("CreateABTestExperimentResponse.result.id"));
 		createABTestExperimentResponse.setResult(result);
 	 
 	 	return createABTestExperimentResponse;

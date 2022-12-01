@@ -26,15 +26,15 @@ public class DescribeDataCollctionResponseUnmarshaller {
 		describeDataCollctionResponse.setRequestId(_ctx.stringValue("DescribeDataCollctionResponse.requestId"));
 
 		Result result = new Result();
-		result.setId(_ctx.stringValue("DescribeDataCollctionResponse.result.id"));
-		result.setName(_ctx.stringValue("DescribeDataCollctionResponse.result.name"));
-		result.setType(_ctx.stringValue("DescribeDataCollctionResponse.result.type"));
-		result.setStatus(_ctx.integerValue("DescribeDataCollctionResponse.result.status"));
-		result.setDataCollectionType(_ctx.stringValue("DescribeDataCollctionResponse.result.dataCollectionType"));
-		result.setIndustryName(_ctx.stringValue("DescribeDataCollctionResponse.result.industryName"));
 		result.setCreated(_ctx.integerValue("DescribeDataCollctionResponse.result.created"));
+		result.setDataCollectionType(_ctx.stringValue("DescribeDataCollctionResponse.result.dataCollectionType"));
+		result.setType(_ctx.stringValue("DescribeDataCollctionResponse.result.type"));
+		result.setIndustryName(_ctx.stringValue("DescribeDataCollctionResponse.result.industryName"));
+		result.setStatus(_ctx.integerValue("DescribeDataCollctionResponse.result.status"));
 		result.setUpdated(_ctx.integerValue("DescribeDataCollctionResponse.result.updated"));
+		result.setName(_ctx.stringValue("DescribeDataCollctionResponse.result.name"));
 		result.setSundialId(_ctx.stringValue("DescribeDataCollctionResponse.result.sundialId"));
+		result.setId(_ctx.stringValue("DescribeDataCollctionResponse.result.id"));
 		describeDataCollctionResponse.setResult(result);
 	 
 	 	return describeDataCollctionResponse;

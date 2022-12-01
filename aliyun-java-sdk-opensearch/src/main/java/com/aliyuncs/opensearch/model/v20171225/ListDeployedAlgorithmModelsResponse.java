@@ -47,31 +47,23 @@ public class ListDeployedAlgorithmModelsResponse extends AcsResponse {
 
 	public static class ResultItem {
 
-		private String id;
-
 		private String appGroupName;
-
-		private String scene;
-
-		private String desc;
-
-		private String gmtCreate;
 
 		private String gmtModified;
 
 		private String status;
 
+		private String scene;
+
+		private String gmtCreate;
+
+		private String id;
+
+		private String desc;
+
 		private List<ModelsItem> models;
 
 		private List<String> apps;
-
-		public String getId() {
-			return this.id;
-		}
-
-		public void setId(String id) {
-			this.id = id;
-		}
 
 		public String getAppGroupName() {
 			return this.appGroupName;
@@ -79,30 +71,6 @@ public class ListDeployedAlgorithmModelsResponse extends AcsResponse {
 
 		public void setAppGroupName(String appGroupName) {
 			this.appGroupName = appGroupName;
-		}
-
-		public String getScene() {
-			return this.scene;
-		}
-
-		public void setScene(String scene) {
-			this.scene = scene;
-		}
-
-		public String getDesc() {
-			return this.desc;
-		}
-
-		public void setDesc(String desc) {
-			this.desc = desc;
-		}
-
-		public String getGmtCreate() {
-			return this.gmtCreate;
-		}
-
-		public void setGmtCreate(String gmtCreate) {
-			this.gmtCreate = gmtCreate;
 		}
 
 		public String getGmtModified() {
@@ -119,6 +87,38 @@ public class ListDeployedAlgorithmModelsResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public String getScene() {
+			return this.scene;
+		}
+
+		public void setScene(String scene) {
+			this.scene = scene;
+		}
+
+		public String getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(String gmtCreate) {
+			this.gmtCreate = gmtCreate;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
+
+		public String getDesc() {
+			return this.desc;
+		}
+
+		public void setDesc(String desc) {
+			this.desc = desc;
 		}
 
 		public List<ModelsItem> getModels() {
@@ -141,15 +141,15 @@ public class ListDeployedAlgorithmModelsResponse extends AcsResponse {
 
 			private String modelName;
 
+			private Integer projectId;
+
 			private Integer modelId;
 
-			private Integer progress;
+			private String algorithmType;
 
 			private String status;
 
-			private Integer projectId;
-
-			private String algorithmType;
+			private Integer progress;
 
 			public String getModelName() {
 				return this.modelName;
@@ -157,30 +157,6 @@ public class ListDeployedAlgorithmModelsResponse extends AcsResponse {
 
 			public void setModelName(String modelName) {
 				this.modelName = modelName;
-			}
-
-			public Integer getModelId() {
-				return this.modelId;
-			}
-
-			public void setModelId(Integer modelId) {
-				this.modelId = modelId;
-			}
-
-			public Integer getProgress() {
-				return this.progress;
-			}
-
-			public void setProgress(Integer progress) {
-				this.progress = progress;
-			}
-
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
 			}
 
 			public Integer getProjectId() {
@@ -191,12 +167,36 @@ public class ListDeployedAlgorithmModelsResponse extends AcsResponse {
 				this.projectId = projectId;
 			}
 
+			public Integer getModelId() {
+				return this.modelId;
+			}
+
+			public void setModelId(Integer modelId) {
+				this.modelId = modelId;
+			}
+
 			public String getAlgorithmType() {
 				return this.algorithmType;
 			}
 
 			public void setAlgorithmType(String algorithmType) {
 				this.algorithmType = algorithmType;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public Integer getProgress() {
+				return this.progress;
+			}
+
+			public void setProgress(Integer progress) {
+				this.progress = progress;
 			}
 		}
 	}

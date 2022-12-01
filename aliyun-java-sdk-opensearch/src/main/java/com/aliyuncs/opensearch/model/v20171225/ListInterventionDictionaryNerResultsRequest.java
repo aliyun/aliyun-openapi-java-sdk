@@ -29,7 +29,7 @@ public class ListInterventionDictionaryNerResultsRequest extends RoaAcsRequest<L
 
 	private String name;
 	public ListInterventionDictionaryNerResultsRequest() {
-		super("OpenSearch", "2017-12-25", "ListInterventionDictionaryNerResults", "opensearch");
+		super("OpenSearch", "2017-12-25", "ListInterventionDictionaryNerResults");
 		setUriPattern("/v4/openapi/intervention-dictionaries/[name]/ner-results");
 		setMethod(MethodType.GET);
 		try {

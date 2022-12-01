@@ -31,7 +31,7 @@ public class ListABTestMetricsRequest extends RoaAcsRequest<ListABTestMetricsRes
 
 	private String appGroupIdentity;
 	public ListABTestMetricsRequest() {
-		super("OpenSearch", "2017-12-25", "ListABTestMetrics", "opensearch");
+		super("OpenSearch", "2017-12-25", "ListABTestMetrics");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/scenes/[sceneId]/groups/[groupId]/metrics");
 		setMethod(MethodType.GET);
 		try {

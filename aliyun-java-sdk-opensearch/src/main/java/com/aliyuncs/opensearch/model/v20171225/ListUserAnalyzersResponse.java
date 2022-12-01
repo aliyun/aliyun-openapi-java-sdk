@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListUserAnalyzersResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
 
+	private String requestId;
+
 	private List<ResultItem> result;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -45,6 +37,14 @@ public class ListUserAnalyzersResponse extends AcsResponse {
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<ResultItem> getResult() {
@@ -57,42 +57,26 @@ public class ListUserAnalyzersResponse extends AcsResponse {
 
 	public static class ResultItem {
 
-		private String id;
-
-		private String name;
-
-		private String business;
+		private Integer created;
 
 		private Boolean available;
 
-		private Integer created;
+		private String name;
 
 		private Integer updated;
 
+		private String id;
+
+		private String business;
+
 		private List<DictsItem> dicts;
 
-		public String getId() {
-			return this.id;
+		public Integer getCreated() {
+			return this.created;
 		}
 
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getBusiness() {
-			return this.business;
-		}
-
-		public void setBusiness(String business) {
-			this.business = business;
+		public void setCreated(Integer created) {
+			this.created = created;
 		}
 
 		public Boolean getAvailable() {
@@ -103,12 +87,12 @@ public class ListUserAnalyzersResponse extends AcsResponse {
 			this.available = available;
 		}
 
-		public Integer getCreated() {
-			return this.created;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setCreated(Integer created) {
-			this.created = created;
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public Integer getUpdated() {
@@ -117,6 +101,22 @@ public class ListUserAnalyzersResponse extends AcsResponse {
 
 		public void setUpdated(Integer updated) {
 			this.updated = updated;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
+
+		public String getBusiness() {
+			return this.business;
+		}
+
+		public void setBusiness(String business) {
+			this.business = business;
 		}
 
 		public List<DictsItem> getDicts() {
@@ -129,26 +129,34 @@ public class ListUserAnalyzersResponse extends AcsResponse {
 
 		public static class DictsItem {
 
-			private String id;
+			private Integer created;
+
+			private Integer entriesCount;
 
 			private String type;
 
 			private Integer entriesLimit;
 
-			private Integer entriesCount;
-
 			private Boolean available;
-
-			private Integer created;
 
 			private Integer updated;
 
-			public String getId() {
-				return this.id;
+			private String id;
+
+			public Integer getCreated() {
+				return this.created;
 			}
 
-			public void setId(String id) {
-				this.id = id;
+			public void setCreated(Integer created) {
+				this.created = created;
+			}
+
+			public Integer getEntriesCount() {
+				return this.entriesCount;
+			}
+
+			public void setEntriesCount(Integer entriesCount) {
+				this.entriesCount = entriesCount;
 			}
 
 			public String getType() {
@@ -167,14 +175,6 @@ public class ListUserAnalyzersResponse extends AcsResponse {
 				this.entriesLimit = entriesLimit;
 			}
 
-			public Integer getEntriesCount() {
-				return this.entriesCount;
-			}
-
-			public void setEntriesCount(Integer entriesCount) {
-				this.entriesCount = entriesCount;
-			}
-
 			public Boolean getAvailable() {
 				return this.available;
 			}
@@ -183,20 +183,20 @@ public class ListUserAnalyzersResponse extends AcsResponse {
 				this.available = available;
 			}
 
-			public Integer getCreated() {
-				return this.created;
-			}
-
-			public void setCreated(Integer created) {
-				this.created = created;
-			}
-
 			public Integer getUpdated() {
 				return this.updated;
 			}
 
 			public void setUpdated(Integer updated) {
 				this.updated = updated;
+			}
+
+			public String getId() {
+				return this.id;
+			}
+
+			public void setId(String id) {
+				this.id = id;
 			}
 		}
 	}

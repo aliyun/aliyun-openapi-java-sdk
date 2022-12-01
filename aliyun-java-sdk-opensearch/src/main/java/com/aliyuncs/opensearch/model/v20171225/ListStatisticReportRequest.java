@@ -41,7 +41,7 @@ public class ListStatisticReportRequest extends RoaAcsRequest<ListStatisticRepor
 
 	private Integer pageNumber;
 	public ListStatisticReportRequest() {
-		super("OpenSearch", "2017-12-25", "ListStatisticReport", "opensearch");
+		super("OpenSearch", "2017-12-25", "ListStatisticReport");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/statistic-report/[moduleName]");
 		setMethod(MethodType.GET);
 		try {

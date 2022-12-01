@@ -33,7 +33,7 @@ public class UpdateABTestExperimentRequest extends RoaAcsRequest<UpdateABTestExp
 
 	private String appGroupIdentity;
 	public UpdateABTestExperimentRequest() {
-		super("OpenSearch", "2017-12-25", "UpdateABTestExperiment", "opensearch");
+		super("OpenSearch", "2017-12-25", "UpdateABTestExperiment");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/scenes/[sceneId]/groups/[groupId]/experiments/[experimentId]");
 		setMethod(MethodType.PUT);
 		try {

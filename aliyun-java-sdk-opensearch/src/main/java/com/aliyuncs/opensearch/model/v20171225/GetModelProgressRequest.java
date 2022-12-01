@@ -29,7 +29,7 @@ public class GetModelProgressRequest extends RoaAcsRequest<GetModelProgressRespo
 
 	private String appGroupIdentity;
 	public GetModelProgressRequest() {
-		super("OpenSearch", "2017-12-25", "GetModelProgress", "opensearch");
+		super("OpenSearch", "2017-12-25", "GetModelProgress");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/algorithm/models/[modelName]/progress");
 		setMethod(MethodType.GET);
 		try {

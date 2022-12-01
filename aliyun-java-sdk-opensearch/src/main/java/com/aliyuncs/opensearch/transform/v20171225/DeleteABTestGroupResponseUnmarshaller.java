@@ -23,8 +23,8 @@ public class DeleteABTestGroupResponseUnmarshaller {
 
 	public static DeleteABTestGroupResponse unmarshall(DeleteABTestGroupResponse deleteABTestGroupResponse, UnmarshallerContext _ctx) {
 		
-		deleteABTestGroupResponse.setRequestId(_ctx.stringValue("DeleteABTestGroupResponse.requestId"));
 		deleteABTestGroupResponse.setResult(_ctx.mapValue("DeleteABTestGroupResponse.result"));
+		deleteABTestGroupResponse.setRequestId(_ctx.stringValue("DeleteABTestGroupResponse.requestId"));
 	 
 	 	return deleteABTestGroupResponse;
 	}

@@ -23,8 +23,8 @@ public class RemoveSecondRankResponseUnmarshaller {
 
 	public static RemoveSecondRankResponse unmarshall(RemoveSecondRankResponse removeSecondRankResponse, UnmarshallerContext _ctx) {
 		
-		removeSecondRankResponse.setRequestId(_ctx.stringValue("RemoveSecondRankResponse.requestId"));
 		removeSecondRankResponse.setResult(_ctx.mapValue("RemoveSecondRankResponse.result"));
+		removeSecondRankResponse.setRequestId(_ctx.stringValue("RemoveSecondRankResponse.requestId"));
 	 
 	 	return removeSecondRankResponse;
 	}

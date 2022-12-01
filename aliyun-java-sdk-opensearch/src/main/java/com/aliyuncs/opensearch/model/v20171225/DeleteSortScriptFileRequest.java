@@ -33,7 +33,7 @@ public class DeleteSortScriptFileRequest extends RoaAcsRequest<DeleteSortScriptF
 
 	private String appGroupIdentity;
 	public DeleteSortScriptFileRequest() {
-		super("OpenSearch", "2017-12-25", "DeleteSortScriptFile", "opensearch");
+		super("OpenSearch", "2017-12-25", "DeleteSortScriptFile");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/apps/[appVersionId]/sort-scripts/[scriptName]/files/src/[fileName]");
 		setMethod(MethodType.DELETE);
 		try {

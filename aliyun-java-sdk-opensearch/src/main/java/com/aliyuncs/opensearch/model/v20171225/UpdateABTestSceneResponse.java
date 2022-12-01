@@ -47,34 +47,26 @@ public class UpdateABTestSceneResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String id;
-
-		private String name;
+		private Integer created;
 
 		private Map<Object,Object> params;
 
-		private Integer created;
-
-		private Integer updated;
+		private Integer traffic;
 
 		private Boolean online;
 
-		private Integer traffic;
+		private String name;
 
-		public String getId() {
-			return this.id;
+		private Integer updated;
+
+		private String id;
+
+		public Integer getCreated() {
+			return this.created;
 		}
 
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
+		public void setCreated(Integer created) {
+			this.created = created;
 		}
 
 		public Map<Object,Object> getParams() {
@@ -85,20 +77,12 @@ public class UpdateABTestSceneResponse extends AcsResponse {
 			this.params = params;
 		}
 
-		public Integer getCreated() {
-			return this.created;
+		public Integer getTraffic() {
+			return this.traffic;
 		}
 
-		public void setCreated(Integer created) {
-			this.created = created;
-		}
-
-		public Integer getUpdated() {
-			return this.updated;
-		}
-
-		public void setUpdated(Integer updated) {
-			this.updated = updated;
+		public void setTraffic(Integer traffic) {
+			this.traffic = traffic;
 		}
 
 		public Boolean getOnline() {
@@ -109,12 +93,28 @@ public class UpdateABTestSceneResponse extends AcsResponse {
 			this.online = online;
 		}
 
-		public Integer getTraffic() {
-			return this.traffic;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setTraffic(Integer traffic) {
-			this.traffic = traffic;
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public Integer getUpdated() {
+			return this.updated;
+		}
+
+		public void setUpdated(Integer updated) {
+			this.updated = updated;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
 		}
 	}
 

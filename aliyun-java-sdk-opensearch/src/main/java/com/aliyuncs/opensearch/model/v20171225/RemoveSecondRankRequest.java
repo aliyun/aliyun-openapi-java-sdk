@@ -31,7 +31,7 @@ public class RemoveSecondRankRequest extends RoaAcsRequest<RemoveSecondRankRespo
 
 	private String appGroupIdentity;
 	public RemoveSecondRankRequest() {
-		super("OpenSearch", "2017-12-25", "RemoveSecondRank", "opensearch");
+		super("OpenSearch", "2017-12-25", "RemoveSecondRank");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/apps/[appId]/second-ranks/[name]");
 		setMethod(MethodType.DELETE);
 		try {

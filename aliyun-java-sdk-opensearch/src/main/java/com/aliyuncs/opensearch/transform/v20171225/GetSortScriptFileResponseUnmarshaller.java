@@ -27,9 +27,9 @@ public class GetSortScriptFileResponseUnmarshaller {
 
 		Result result = new Result();
 		result.setContent(_ctx.stringValue("GetSortScriptFileResponse.result.content"));
-		result.setVersion(_ctx.longValue("GetSortScriptFileResponse.result.version"));
 		result.setCreateTime(_ctx.stringValue("GetSortScriptFileResponse.result.createTime"));
 		result.setModifyTime(_ctx.stringValue("GetSortScriptFileResponse.result.modifyTime"));
+		result.setVersion(_ctx.longValue("GetSortScriptFileResponse.result.version"));
 		getSortScriptFileResponse.setResult(result);
 	 
 	 	return getSortScriptFileResponse;

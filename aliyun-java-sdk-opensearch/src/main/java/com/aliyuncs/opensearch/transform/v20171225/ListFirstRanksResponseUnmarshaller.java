@@ -32,17 +32,17 @@ public class ListFirstRanksResponseUnmarshaller {
 		List<FirstRankItem> result = new ArrayList<FirstRankItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListFirstRanksResponse.result.Length"); i++) {
 			FirstRankItem firstRankItem = new FirstRankItem();
-			firstRankItem.setName(_ctx.stringValue("ListFirstRanksResponse.result["+ i +"].name"));
-			firstRankItem.setDescription(_ctx.stringValue("ListFirstRanksResponse.result["+ i +"].description"));
-			firstRankItem.setActive(_ctx.booleanValue("ListFirstRanksResponse.result["+ i +"].active"));
 			firstRankItem.setCreated(_ctx.integerValue("ListFirstRanksResponse.result["+ i +"].created"));
+			firstRankItem.setActive(_ctx.booleanValue("ListFirstRanksResponse.result["+ i +"].active"));
+			firstRankItem.setDescription(_ctx.stringValue("ListFirstRanksResponse.result["+ i +"].description"));
 			firstRankItem.setUpdated(_ctx.integerValue("ListFirstRanksResponse.result["+ i +"].updated"));
+			firstRankItem.setName(_ctx.stringValue("ListFirstRanksResponse.result["+ i +"].name"));
 
 			List<MetaItem> meta = new ArrayList<MetaItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListFirstRanksResponse.result["+ i +"].meta.Length"); j++) {
 				MetaItem metaItem = new MetaItem();
-				metaItem.setAttribute(_ctx.stringValue("ListFirstRanksResponse.result["+ i +"].meta["+ j +"].attribute"));
 				metaItem.setArg(_ctx.stringValue("ListFirstRanksResponse.result["+ i +"].meta["+ j +"].arg"));
+				metaItem.setAttribute(_ctx.stringValue("ListFirstRanksResponse.result["+ i +"].meta["+ j +"].attribute"));
 				metaItem.setWeight(_ctx.integerValue("ListFirstRanksResponse.result["+ i +"].meta["+ j +"].weight"));
 
 				meta.add(metaItem);

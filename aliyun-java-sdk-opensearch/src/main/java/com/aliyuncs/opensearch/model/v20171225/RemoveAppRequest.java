@@ -29,7 +29,7 @@ public class RemoveAppRequest extends RoaAcsRequest<RemoveAppResponse> {
 
 	private String appGroupIdentity;
 	public RemoveAppRequest() {
-		super("OpenSearch", "2017-12-25", "RemoveApp", "opensearch");
+		super("OpenSearch", "2017-12-25", "RemoveApp");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/apps/[appId]");
 		setMethod(MethodType.DELETE);
 		try {

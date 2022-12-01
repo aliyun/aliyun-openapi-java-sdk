@@ -33,7 +33,7 @@ public class ModifyQueryProcessorRequest extends RoaAcsRequest<ModifyQueryProces
 
 	private String appGroupIdentity;
 	public ModifyQueryProcessorRequest() {
-		super("OpenSearch", "2017-12-25", "ModifyQueryProcessor", "opensearch");
+		super("OpenSearch", "2017-12-25", "ModifyQueryProcessor");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/apps/[appId]/query-processors/[name]");
 		setMethod(MethodType.PUT);
 		try {

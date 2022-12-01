@@ -29,7 +29,7 @@ public class ModifyModelRequest extends RoaAcsRequest<ModifyModelResponse> {
 
 	private String appGroupIdentity;
 	public ModifyModelRequest() {
-		super("OpenSearch", "2017-12-25", "ModifyModel", "opensearch");
+		super("OpenSearch", "2017-12-25", "ModifyModel");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/algorithm/models/[modelName]");
 		setMethod(MethodType.PUT);
 		try {

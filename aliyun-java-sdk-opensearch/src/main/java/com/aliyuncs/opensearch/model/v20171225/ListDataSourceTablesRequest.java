@@ -29,7 +29,7 @@ public class ListDataSourceTablesRequest extends RoaAcsRequest<ListDataSourceTab
 
 	private String params;
 	public ListDataSourceTablesRequest() {
-		super("OpenSearch", "2017-12-25", "ListDataSourceTables", "opensearch");
+		super("OpenSearch", "2017-12-25", "ListDataSourceTables");
 		setUriPattern("/v4/openapi/assist/data-sources/[dataSourceType]/tables");
 		setMethod(MethodType.GET);
 		try {

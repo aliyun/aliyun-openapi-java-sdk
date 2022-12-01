@@ -25,7 +25,7 @@ import com.aliyuncs.opensearch.Endpoint;
 public class CreateInterventionDictionaryRequest extends RoaAcsRequest<CreateInterventionDictionaryResponse> {
 	   
 	public CreateInterventionDictionaryRequest() {
-		super("OpenSearch", "2017-12-25", "CreateInterventionDictionary", "opensearch");
+		super("OpenSearch", "2017-12-25", "CreateInterventionDictionary");
 		setUriPattern("/v4/openapi/intervention-dictionaries");
 		setMethod(MethodType.POST);
 		try {

@@ -31,7 +31,7 @@ public class RemoveQueryProcessorRequest extends RoaAcsRequest<RemoveQueryProces
 
 	private String appGroupIdentity;
 	public RemoveQueryProcessorRequest() {
-		super("OpenSearch", "2017-12-25", "RemoveQueryProcessor", "opensearch");
+		super("OpenSearch", "2017-12-25", "RemoveQueryProcessor");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/apps/[appId]/query-processors/[name]");
 		setMethod(MethodType.DELETE);
 		try {

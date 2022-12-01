@@ -49,11 +49,11 @@ public class ListInterventionDictionaryNerResultsResponse extends AcsResponse {
 
 		private String tag;
 
-		private String tagLabel;
-
 		private String token;
 
 		private Integer order;
+
+		private String tagLabel;
 
 		public String getTag() {
 			return this.tag;
@@ -61,14 +61,6 @@ public class ListInterventionDictionaryNerResultsResponse extends AcsResponse {
 
 		public void setTag(String tag) {
 			this.tag = tag;
-		}
-
-		public String getTagLabel() {
-			return this.tagLabel;
-		}
-
-		public void setTagLabel(String tagLabel) {
-			this.tagLabel = tagLabel;
 		}
 
 		public String getToken() {
@@ -85,6 +77,14 @@ public class ListInterventionDictionaryNerResultsResponse extends AcsResponse {
 
 		public void setOrder(Integer order) {
 			this.order = order;
+		}
+
+		public String getTagLabel() {
+			return this.tagLabel;
+		}
+
+		public void setTagLabel(String tagLabel) {
+			this.tagLabel = tagLabel;
 		}
 	}
 

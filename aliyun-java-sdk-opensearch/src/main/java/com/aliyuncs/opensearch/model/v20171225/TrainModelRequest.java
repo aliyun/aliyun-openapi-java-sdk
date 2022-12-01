@@ -29,7 +29,7 @@ public class TrainModelRequest extends RoaAcsRequest<TrainModelResponse> {
 
 	private String appGroupIdentity;
 	public TrainModelRequest() {
-		super("OpenSearch", "2017-12-25", "TrainModel", "opensearch");
+		super("OpenSearch", "2017-12-25", "TrainModel");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/algorithm/models/[modelName]/actions/train");
 		setMethod(MethodType.POST);
 		try {

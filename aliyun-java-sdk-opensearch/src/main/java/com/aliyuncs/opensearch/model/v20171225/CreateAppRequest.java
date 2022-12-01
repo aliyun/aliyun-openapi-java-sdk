@@ -29,7 +29,7 @@ public class CreateAppRequest extends RoaAcsRequest<CreateAppResponse> {
 
 	private String appGroupIdentity;
 	public CreateAppRequest() {
-		super("OpenSearch", "2017-12-25", "CreateApp", "opensearch");
+		super("OpenSearch", "2017-12-25", "CreateApp");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/apps");
 		setMethod(MethodType.POST);
 		try {

@@ -32,8 +32,8 @@ public class ListQueryProcessorNersResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("ListQueryProcessorNersResponse.result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
 			resultItem.setTag(_ctx.stringValue("ListQueryProcessorNersResponse.result["+ i +"].tag"));
-			resultItem.setPriority(_ctx.stringValue("ListQueryProcessorNersResponse.result["+ i +"].priority"));
 			resultItem.setOrder(_ctx.integerValue("ListQueryProcessorNersResponse.result["+ i +"].order"));
+			resultItem.setPriority(_ctx.stringValue("ListQueryProcessorNersResponse.result["+ i +"].priority"));
 			resultItem.setLabel(_ctx.stringValue("ListQueryProcessorNersResponse.result["+ i +"].label"));
 
 			result.add(resultItem);

@@ -25,7 +25,7 @@ import com.aliyuncs.opensearch.Endpoint;
 public class CreateAppGroupRequest extends RoaAcsRequest<CreateAppGroupResponse> {
 	   
 	public CreateAppGroupRequest() {
-		super("OpenSearch", "2017-12-25", "CreateAppGroup", "opensearch");
+		super("OpenSearch", "2017-12-25", "CreateAppGroup");
 		setUriPattern("/v4/openapi/app-groups");
 		setMethod(MethodType.POST);
 		try {

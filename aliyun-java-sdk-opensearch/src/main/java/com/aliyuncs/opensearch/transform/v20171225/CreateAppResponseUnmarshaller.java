@@ -23,8 +23,8 @@ public class CreateAppResponseUnmarshaller {
 
 	public static CreateAppResponse unmarshall(CreateAppResponse createAppResponse, UnmarshallerContext _ctx) {
 		
-		createAppResponse.setRequestId(_ctx.stringValue("CreateAppResponse.requestId"));
 		createAppResponse.setResult(_ctx.mapValue("CreateAppResponse.result"));
+		createAppResponse.setRequestId(_ctx.stringValue("CreateAppResponse.requestId"));
 	 
 	 	return createAppResponse;
 	}

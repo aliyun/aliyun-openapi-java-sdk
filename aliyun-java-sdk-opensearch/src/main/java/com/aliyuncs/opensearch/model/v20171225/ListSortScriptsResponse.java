@@ -47,25 +47,17 @@ public class ListSortScriptsResponse extends AcsResponse {
 
 	public static class ScriptInfo {
 
-		private String scriptName;
-
 		private String type;
 
 		private String scope;
 
-		private String status;
-
 		private String createTime;
+
+		private String status;
 
 		private String modifyTime;
 
-		public String getScriptName() {
-			return this.scriptName;
-		}
-
-		public void setScriptName(String scriptName) {
-			this.scriptName = scriptName;
-		}
+		private String scriptName;
 
 		public String getType() {
 			return this.type;
@@ -83,14 +75,6 @@ public class ListSortScriptsResponse extends AcsResponse {
 			this.scope = scope;
 		}
 
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
 		public String getCreateTime() {
 			return this.createTime;
 		}
@@ -99,12 +83,28 @@ public class ListSortScriptsResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
 		public String getModifyTime() {
 			return this.modifyTime;
 		}
 
 		public void setModifyTime(String modifyTime) {
 			this.modifyTime = modifyTime;
+		}
+
+		public String getScriptName() {
+			return this.scriptName;
+		}
+
+		public void setScriptName(String scriptName) {
+			this.scriptName = scriptName;
 		}
 	}
 

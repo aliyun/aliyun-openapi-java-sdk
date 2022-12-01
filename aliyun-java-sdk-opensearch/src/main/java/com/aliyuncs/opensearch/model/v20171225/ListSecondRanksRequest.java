@@ -29,7 +29,7 @@ public class ListSecondRanksRequest extends RoaAcsRequest<ListSecondRanksRespons
 
 	private String appGroupIdentity;
 	public ListSecondRanksRequest() {
-		super("OpenSearch", "2017-12-25", "ListSecondRanks", "opensearch");
+		super("OpenSearch", "2017-12-25", "ListSecondRanks");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/apps/[appId]/second-ranks");
 		setMethod(MethodType.GET);
 		try {

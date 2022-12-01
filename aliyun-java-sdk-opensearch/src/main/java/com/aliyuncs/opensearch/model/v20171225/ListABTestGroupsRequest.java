@@ -29,7 +29,7 @@ public class ListABTestGroupsRequest extends RoaAcsRequest<ListABTestGroupsRespo
 
 	private String appGroupIdentity;
 	public ListABTestGroupsRequest() {
-		super("OpenSearch", "2017-12-25", "ListABTestGroups", "opensearch");
+		super("OpenSearch", "2017-12-25", "ListABTestGroups");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/scenes/[sceneId]/groups");
 		setMethod(MethodType.GET);
 		try {

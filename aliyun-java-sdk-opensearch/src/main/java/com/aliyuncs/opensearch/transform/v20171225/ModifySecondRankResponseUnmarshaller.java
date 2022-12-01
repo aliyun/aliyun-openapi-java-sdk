@@ -26,15 +26,15 @@ public class ModifySecondRankResponseUnmarshaller {
 		modifySecondRankResponse.setRequestId(_ctx.stringValue("ModifySecondRankResponse.requestId"));
 
 		Result result = new Result();
-		result.setId(_ctx.stringValue("ModifySecondRankResponse.result.id"));
-		result.setName(_ctx.stringValue("ModifySecondRankResponse.result.name"));
-		result.setMeta(_ctx.stringValue("ModifySecondRankResponse.result.meta"));
-		result.setActive(_ctx.booleanValue("ModifySecondRankResponse.result.active"));
-		result.setDescription(_ctx.stringValue("ModifySecondRankResponse.result.description"));
 		result.setCreated(_ctx.integerValue("ModifySecondRankResponse.result.created"));
-		result.setUpdated(_ctx.integerValue("ModifySecondRankResponse.result.updated"));
+		result.setActive(_ctx.booleanValue("ModifySecondRankResponse.result.active"));
 		result.setIsDefault(_ctx.stringValue("ModifySecondRankResponse.result.isDefault"));
 		result.setIsSys(_ctx.stringValue("ModifySecondRankResponse.result.isSys"));
+		result.setDescription(_ctx.stringValue("ModifySecondRankResponse.result.description"));
+		result.setUpdated(_ctx.integerValue("ModifySecondRankResponse.result.updated"));
+		result.setName(_ctx.stringValue("ModifySecondRankResponse.result.name"));
+		result.setMeta(_ctx.stringValue("ModifySecondRankResponse.result.meta"));
+		result.setId(_ctx.stringValue("ModifySecondRankResponse.result.id"));
 		modifySecondRankResponse.setResult(result);
 	 
 	 	return modifySecondRankResponse;

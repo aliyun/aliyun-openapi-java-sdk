@@ -31,10 +31,10 @@ public class ListRamRolesResponseUnmarshaller {
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListRamRolesResponse.result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setName(_ctx.stringValue("ListRamRolesResponse.result["+ i +"].name"));
-			resultItem.setService(_ctx.stringValue("ListRamRolesResponse.result["+ i +"].service"));
 			resultItem.setTemplate_id(_ctx.stringValue("ListRamRolesResponse.result["+ i +"].template_id"));
+			resultItem.setService(_ctx.stringValue("ListRamRolesResponse.result["+ i +"].service"));
 			resultItem.setAssumed(_ctx.booleanValue("ListRamRolesResponse.result["+ i +"].assumed"));
+			resultItem.setName(_ctx.stringValue("ListRamRolesResponse.result["+ i +"].name"));
 
 			result.add(resultItem);
 		}

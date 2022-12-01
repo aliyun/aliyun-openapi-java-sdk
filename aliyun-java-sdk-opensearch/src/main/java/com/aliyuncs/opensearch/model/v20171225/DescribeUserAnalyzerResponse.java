@@ -25,17 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeUserAnalyzerResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Map<Object,Object> result;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public Map<Object,Object> getResult() {
 		return this.result;
@@ -43,6 +35,14 @@ public class DescribeUserAnalyzerResponse extends AcsResponse {
 
 	public void setResult(Map<Object,Object> result) {
 		this.result = result;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

@@ -31,7 +31,7 @@ public class ListDeployedAlgorithmModelsRequest extends RoaAcsRequest<ListDeploy
 
 	private String appGroupIdentity;
 	public ListDeployedAlgorithmModelsRequest() {
-		super("OpenSearch", "2017-12-25", "ListDeployedAlgorithmModels", "opensearch");
+		super("OpenSearch", "2017-12-25", "ListDeployedAlgorithmModels");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/deployed-algorithm-models");
 		setMethod(MethodType.GET);
 		try {

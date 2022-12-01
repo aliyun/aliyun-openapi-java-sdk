@@ -31,7 +31,7 @@ public class UpdateABTestGroupRequest extends RoaAcsRequest<UpdateABTestGroupRes
 
 	private String appGroupIdentity;
 	public UpdateABTestGroupRequest() {
-		super("OpenSearch", "2017-12-25", "UpdateABTestGroup", "opensearch");
+		super("OpenSearch", "2017-12-25", "UpdateABTestGroup");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/scenes/[sceneId]/groups/[groupId]");
 		setMethod(MethodType.PUT);
 		try {

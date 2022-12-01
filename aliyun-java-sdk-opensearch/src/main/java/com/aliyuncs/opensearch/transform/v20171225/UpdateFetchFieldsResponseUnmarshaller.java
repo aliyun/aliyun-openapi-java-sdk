@@ -22,8 +22,8 @@ public class UpdateFetchFieldsResponseUnmarshaller {
 
 	public static UpdateFetchFieldsResponse unmarshall(UpdateFetchFieldsResponse updateFetchFieldsResponse, UnmarshallerContext _ctx) {
 		
-		updateFetchFieldsResponse.setRequestId(_ctx.stringValue("UpdateFetchFieldsResponse.requestId"));
 		updateFetchFieldsResponse.setResult(_ctx.booleanValue("UpdateFetchFieldsResponse.result"));
+		updateFetchFieldsResponse.setRequestId(_ctx.stringValue("UpdateFetchFieldsResponse.requestId"));
 	 
 	 	return updateFetchFieldsResponse;
 	}

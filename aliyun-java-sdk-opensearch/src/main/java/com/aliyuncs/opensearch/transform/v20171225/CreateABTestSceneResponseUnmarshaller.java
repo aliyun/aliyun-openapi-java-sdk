@@ -29,11 +29,11 @@ public class CreateABTestSceneResponseUnmarshaller {
 		createABTestSceneResponse.setRequestId(_ctx.stringValue("CreateABTestSceneResponse.requestId"));
 
 		Result result = new Result();
-		result.setId(_ctx.stringValue("CreateABTestSceneResponse.result.id"));
-		result.setName(_ctx.stringValue("CreateABTestSceneResponse.result.name"));
-		result.setStatus(_ctx.integerValue("CreateABTestSceneResponse.result.status"));
 		result.setCreated(_ctx.integerValue("CreateABTestSceneResponse.result.created"));
+		result.setStatus(_ctx.integerValue("CreateABTestSceneResponse.result.status"));
 		result.setUpdated(_ctx.integerValue("CreateABTestSceneResponse.result.updated"));
+		result.setName(_ctx.stringValue("CreateABTestSceneResponse.result.name"));
+		result.setId(_ctx.stringValue("CreateABTestSceneResponse.result.id"));
 
 		List<String> values = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("CreateABTestSceneResponse.result.values.Length"); i++) {

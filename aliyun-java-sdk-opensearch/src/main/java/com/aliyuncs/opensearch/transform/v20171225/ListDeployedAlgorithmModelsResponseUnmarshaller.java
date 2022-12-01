@@ -32,13 +32,13 @@ public class ListDeployedAlgorithmModelsResponseUnmarshaller {
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListDeployedAlgorithmModelsResponse.result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setId(_ctx.stringValue("ListDeployedAlgorithmModelsResponse.result["+ i +"].id"));
 			resultItem.setAppGroupName(_ctx.stringValue("ListDeployedAlgorithmModelsResponse.result["+ i +"].appGroupName"));
-			resultItem.setScene(_ctx.stringValue("ListDeployedAlgorithmModelsResponse.result["+ i +"].scene"));
-			resultItem.setDesc(_ctx.stringValue("ListDeployedAlgorithmModelsResponse.result["+ i +"].desc"));
-			resultItem.setGmtCreate(_ctx.stringValue("ListDeployedAlgorithmModelsResponse.result["+ i +"].gmtCreate"));
 			resultItem.setGmtModified(_ctx.stringValue("ListDeployedAlgorithmModelsResponse.result["+ i +"].gmtModified"));
 			resultItem.setStatus(_ctx.stringValue("ListDeployedAlgorithmModelsResponse.result["+ i +"].status"));
+			resultItem.setScene(_ctx.stringValue("ListDeployedAlgorithmModelsResponse.result["+ i +"].scene"));
+			resultItem.setGmtCreate(_ctx.stringValue("ListDeployedAlgorithmModelsResponse.result["+ i +"].gmtCreate"));
+			resultItem.setId(_ctx.stringValue("ListDeployedAlgorithmModelsResponse.result["+ i +"].id"));
+			resultItem.setDesc(_ctx.stringValue("ListDeployedAlgorithmModelsResponse.result["+ i +"].desc"));
 
 			List<String> apps = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListDeployedAlgorithmModelsResponse.result["+ i +"].apps.Length"); j++) {
@@ -50,11 +50,11 @@ public class ListDeployedAlgorithmModelsResponseUnmarshaller {
 			for (int j = 0; j < _ctx.lengthValue("ListDeployedAlgorithmModelsResponse.result["+ i +"].models.Length"); j++) {
 				ModelsItem modelsItem = new ModelsItem();
 				modelsItem.setModelName(_ctx.stringValue("ListDeployedAlgorithmModelsResponse.result["+ i +"].models["+ j +"].modelName"));
-				modelsItem.setModelId(_ctx.integerValue("ListDeployedAlgorithmModelsResponse.result["+ i +"].models["+ j +"].modelId"));
-				modelsItem.setProgress(_ctx.integerValue("ListDeployedAlgorithmModelsResponse.result["+ i +"].models["+ j +"].progress"));
-				modelsItem.setStatus(_ctx.stringValue("ListDeployedAlgorithmModelsResponse.result["+ i +"].models["+ j +"].status"));
 				modelsItem.setProjectId(_ctx.integerValue("ListDeployedAlgorithmModelsResponse.result["+ i +"].models["+ j +"].projectId"));
+				modelsItem.setModelId(_ctx.integerValue("ListDeployedAlgorithmModelsResponse.result["+ i +"].models["+ j +"].modelId"));
 				modelsItem.setAlgorithmType(_ctx.stringValue("ListDeployedAlgorithmModelsResponse.result["+ i +"].models["+ j +"].algorithmType"));
+				modelsItem.setStatus(_ctx.stringValue("ListDeployedAlgorithmModelsResponse.result["+ i +"].models["+ j +"].status"));
+				modelsItem.setProgress(_ctx.integerValue("ListDeployedAlgorithmModelsResponse.result["+ i +"].models["+ j +"].progress"));
 
 				models.add(modelsItem);
 			}

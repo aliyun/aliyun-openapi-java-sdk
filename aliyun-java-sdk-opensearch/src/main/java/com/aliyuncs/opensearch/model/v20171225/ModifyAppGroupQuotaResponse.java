@@ -46,68 +46,60 @@ public class ModifyAppGroupQuotaResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String id;
-
-		private String name;
+		private Integer created;
 
 		private String currentVersion;
 
-		private Integer switchedTime;
-
-		private Integer chargingWay;
+		private Integer pendingSecondRankAlgoDeploymentId;
 
 		private String type;
 
-		private String projectId;
-
-		private String chargeType;
-
-		private String expireOn;
-
-		private String instanceId;
-
-		private String commodityCode;
-
-		private String processingOrderId;
-
-		private Integer firstRankAlgoDeploymentId;
-
-		private Integer secondRankAlgoDeploymentId;
-
-		private Integer pendingSecondRankAlgoDeploymentId;
-
-		private String description;
-
-		private Integer produced;
-
-		private Integer lockedByExpiration;
-
-		private Integer hasPendingQuotaReviewTask;
-
-		private Integer created;
-
-		private Integer updated;
-
-		private String status;
+		private Integer chargingWay;
 
 		private String lockMode;
 
+		private String status;
+
+		private Integer updated;
+
+		private String chargeType;
+
+		private String id;
+
+		private Integer hasPendingQuotaReviewTask;
+
+		private String projectId;
+
+		private Integer secondRankAlgoDeploymentId;
+
+		private String commodityCode;
+
+		private Integer switchedTime;
+
+		private String expireOn;
+
+		private String description;
+
+		private Integer firstRankAlgoDeploymentId;
+
+		private Integer lockedByExpiration;
+
+		private Integer produced;
+
+		private String name;
+
+		private String processingOrderId;
+
+		private String instanceId;
+
 		private Quota quota;
 
-		public String getId() {
-			return this.id;
+		public Integer getCreated() {
+			return this.created;
 		}
 
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
+		public void setCreated(Integer created) {
+			this.created = created;
 		}
 
 		public String getCurrentVersion() {
@@ -118,20 +110,12 @@ public class ModifyAppGroupQuotaResponse extends AcsResponse {
 			this.currentVersion = currentVersion;
 		}
 
-		public Integer getSwitchedTime() {
-			return this.switchedTime;
+		public Integer getPendingSecondRankAlgoDeploymentId() {
+			return this.pendingSecondRankAlgoDeploymentId;
 		}
 
-		public void setSwitchedTime(Integer switchedTime) {
-			this.switchedTime = switchedTime;
-		}
-
-		public Integer getChargingWay() {
-			return this.chargingWay;
-		}
-
-		public void setChargingWay(Integer chargingWay) {
-			this.chargingWay = chargingWay;
+		public void setPendingSecondRankAlgoDeploymentId(Integer pendingSecondRankAlgoDeploymentId) {
+			this.pendingSecondRankAlgoDeploymentId = pendingSecondRankAlgoDeploymentId;
 		}
 
 		public String getType() {
@@ -142,124 +126,20 @@ public class ModifyAppGroupQuotaResponse extends AcsResponse {
 			this.type = type;
 		}
 
-		public String getProjectId() {
-			return this.projectId;
+		public Integer getChargingWay() {
+			return this.chargingWay;
 		}
 
-		public void setProjectId(String projectId) {
-			this.projectId = projectId;
+		public void setChargingWay(Integer chargingWay) {
+			this.chargingWay = chargingWay;
 		}
 
-		public String getChargeType() {
-			return this.chargeType;
+		public String getLockMode() {
+			return this.lockMode;
 		}
 
-		public void setChargeType(String chargeType) {
-			this.chargeType = chargeType;
-		}
-
-		public String getExpireOn() {
-			return this.expireOn;
-		}
-
-		public void setExpireOn(String expireOn) {
-			this.expireOn = expireOn;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getCommodityCode() {
-			return this.commodityCode;
-		}
-
-		public void setCommodityCode(String commodityCode) {
-			this.commodityCode = commodityCode;
-		}
-
-		public String getProcessingOrderId() {
-			return this.processingOrderId;
-		}
-
-		public void setProcessingOrderId(String processingOrderId) {
-			this.processingOrderId = processingOrderId;
-		}
-
-		public Integer getFirstRankAlgoDeploymentId() {
-			return this.firstRankAlgoDeploymentId;
-		}
-
-		public void setFirstRankAlgoDeploymentId(Integer firstRankAlgoDeploymentId) {
-			this.firstRankAlgoDeploymentId = firstRankAlgoDeploymentId;
-		}
-
-		public Integer getSecondRankAlgoDeploymentId() {
-			return this.secondRankAlgoDeploymentId;
-		}
-
-		public void setSecondRankAlgoDeploymentId(Integer secondRankAlgoDeploymentId) {
-			this.secondRankAlgoDeploymentId = secondRankAlgoDeploymentId;
-		}
-
-		public Integer getPendingSecondRankAlgoDeploymentId() {
-			return this.pendingSecondRankAlgoDeploymentId;
-		}
-
-		public void setPendingSecondRankAlgoDeploymentId(Integer pendingSecondRankAlgoDeploymentId) {
-			this.pendingSecondRankAlgoDeploymentId = pendingSecondRankAlgoDeploymentId;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public Integer getProduced() {
-			return this.produced;
-		}
-
-		public void setProduced(Integer produced) {
-			this.produced = produced;
-		}
-
-		public Integer getLockedByExpiration() {
-			return this.lockedByExpiration;
-		}
-
-		public void setLockedByExpiration(Integer lockedByExpiration) {
-			this.lockedByExpiration = lockedByExpiration;
-		}
-
-		public Integer getHasPendingQuotaReviewTask() {
-			return this.hasPendingQuotaReviewTask;
-		}
-
-		public void setHasPendingQuotaReviewTask(Integer hasPendingQuotaReviewTask) {
-			this.hasPendingQuotaReviewTask = hasPendingQuotaReviewTask;
-		}
-
-		public Integer getCreated() {
-			return this.created;
-		}
-
-		public void setCreated(Integer created) {
-			this.created = created;
-		}
-
-		public Integer getUpdated() {
-			return this.updated;
-		}
-
-		public void setUpdated(Integer updated) {
-			this.updated = updated;
+		public void setLockMode(String lockMode) {
+			this.lockMode = lockMode;
 		}
 
 		public String getStatus() {
@@ -270,12 +150,132 @@ public class ModifyAppGroupQuotaResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getLockMode() {
-			return this.lockMode;
+		public Integer getUpdated() {
+			return this.updated;
 		}
 
-		public void setLockMode(String lockMode) {
-			this.lockMode = lockMode;
+		public void setUpdated(Integer updated) {
+			this.updated = updated;
+		}
+
+		public String getChargeType() {
+			return this.chargeType;
+		}
+
+		public void setChargeType(String chargeType) {
+			this.chargeType = chargeType;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
+
+		public Integer getHasPendingQuotaReviewTask() {
+			return this.hasPendingQuotaReviewTask;
+		}
+
+		public void setHasPendingQuotaReviewTask(Integer hasPendingQuotaReviewTask) {
+			this.hasPendingQuotaReviewTask = hasPendingQuotaReviewTask;
+		}
+
+		public String getProjectId() {
+			return this.projectId;
+		}
+
+		public void setProjectId(String projectId) {
+			this.projectId = projectId;
+		}
+
+		public Integer getSecondRankAlgoDeploymentId() {
+			return this.secondRankAlgoDeploymentId;
+		}
+
+		public void setSecondRankAlgoDeploymentId(Integer secondRankAlgoDeploymentId) {
+			this.secondRankAlgoDeploymentId = secondRankAlgoDeploymentId;
+		}
+
+		public String getCommodityCode() {
+			return this.commodityCode;
+		}
+
+		public void setCommodityCode(String commodityCode) {
+			this.commodityCode = commodityCode;
+		}
+
+		public Integer getSwitchedTime() {
+			return this.switchedTime;
+		}
+
+		public void setSwitchedTime(Integer switchedTime) {
+			this.switchedTime = switchedTime;
+		}
+
+		public String getExpireOn() {
+			return this.expireOn;
+		}
+
+		public void setExpireOn(String expireOn) {
+			this.expireOn = expireOn;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public Integer getFirstRankAlgoDeploymentId() {
+			return this.firstRankAlgoDeploymentId;
+		}
+
+		public void setFirstRankAlgoDeploymentId(Integer firstRankAlgoDeploymentId) {
+			this.firstRankAlgoDeploymentId = firstRankAlgoDeploymentId;
+		}
+
+		public Integer getLockedByExpiration() {
+			return this.lockedByExpiration;
+		}
+
+		public void setLockedByExpiration(Integer lockedByExpiration) {
+			this.lockedByExpiration = lockedByExpiration;
+		}
+
+		public Integer getProduced() {
+			return this.produced;
+		}
+
+		public void setProduced(Integer produced) {
+			this.produced = produced;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getProcessingOrderId() {
+			return this.processingOrderId;
+		}
+
+		public void setProcessingOrderId(String processingOrderId) {
+			this.processingOrderId = processingOrderId;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public Quota getQuota() {
@@ -288,11 +288,19 @@ public class ModifyAppGroupQuotaResponse extends AcsResponse {
 
 		public static class Quota {
 
+			private String spec;
+
 			private Integer docSize;
 
 			private Integer computeResource;
 
-			private String spec;
+			public String getSpec() {
+				return this.spec;
+			}
+
+			public void setSpec(String spec) {
+				this.spec = spec;
+			}
 
 			public Integer getDocSize() {
 				return this.docSize;
@@ -308,14 +316,6 @@ public class ModifyAppGroupQuotaResponse extends AcsResponse {
 
 			public void setComputeResource(Integer computeResource) {
 				this.computeResource = computeResource;
-			}
-
-			public String getSpec() {
-				return this.spec;
-			}
-
-			public void setSpec(String spec) {
-				this.spec = spec;
 			}
 		}
 	}

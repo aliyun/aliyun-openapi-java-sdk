@@ -27,13 +27,13 @@ public class UpdateABTestSceneResponseUnmarshaller {
 		updateABTestSceneResponse.setRequestId(_ctx.stringValue("UpdateABTestSceneResponse.requestId"));
 
 		Result result = new Result();
-		result.setId(_ctx.stringValue("UpdateABTestSceneResponse.result.id"));
-		result.setName(_ctx.stringValue("UpdateABTestSceneResponse.result.name"));
-		result.setParams(_ctx.mapValue("UpdateABTestSceneResponse.result.params"));
 		result.setCreated(_ctx.integerValue("UpdateABTestSceneResponse.result.created"));
-		result.setUpdated(_ctx.integerValue("UpdateABTestSceneResponse.result.updated"));
-		result.setOnline(_ctx.booleanValue("UpdateABTestSceneResponse.result.online"));
+		result.setParams(_ctx.mapValue("UpdateABTestSceneResponse.result.params"));
 		result.setTraffic(_ctx.integerValue("UpdateABTestSceneResponse.result.traffic"));
+		result.setOnline(_ctx.booleanValue("UpdateABTestSceneResponse.result.online"));
+		result.setName(_ctx.stringValue("UpdateABTestSceneResponse.result.name"));
+		result.setUpdated(_ctx.integerValue("UpdateABTestSceneResponse.result.updated"));
+		result.setId(_ctx.stringValue("UpdateABTestSceneResponse.result.id"));
 		updateABTestSceneResponse.setResult(result);
 	 
 	 	return updateABTestSceneResponse;

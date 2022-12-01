@@ -33,7 +33,7 @@ public class ListUserAnalyzerEntriesRequest extends RoaAcsRequest<ListUserAnalyz
 
 	private Integer pageNumber;
 	public ListUserAnalyzerEntriesRequest() {
-		super("OpenSearch", "2017-12-25", "ListUserAnalyzerEntries", "opensearch");
+		super("OpenSearch", "2017-12-25", "ListUserAnalyzerEntries");
 		setUriPattern("/v4/openapi/user-analyzers/[name]/entries");
 		setMethod(MethodType.GET);
 		try {

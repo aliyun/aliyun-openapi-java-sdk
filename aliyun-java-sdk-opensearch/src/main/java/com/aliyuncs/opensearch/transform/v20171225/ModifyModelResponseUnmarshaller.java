@@ -22,8 +22,8 @@ public class ModifyModelResponseUnmarshaller {
 
 	public static ModifyModelResponse unmarshall(ModifyModelResponse modifyModelResponse, UnmarshallerContext _ctx) {
 		
-		modifyModelResponse.setRequestId(_ctx.stringValue("ModifyModelResponse.requestId"));
 		modifyModelResponse.setResult(_ctx.stringValue("ModifyModelResponse.result"));
+		modifyModelResponse.setRequestId(_ctx.stringValue("ModifyModelResponse.requestId"));
 	 
 	 	return modifyModelResponse;
 	}

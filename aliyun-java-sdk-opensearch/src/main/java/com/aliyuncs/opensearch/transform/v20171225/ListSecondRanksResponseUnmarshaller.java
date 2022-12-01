@@ -26,21 +26,21 @@ public class ListSecondRanksResponseUnmarshaller {
 
 	public static ListSecondRanksResponse unmarshall(ListSecondRanksResponse listSecondRanksResponse, UnmarshallerContext _ctx) {
 		
-		listSecondRanksResponse.setRequestId(_ctx.stringValue("ListSecondRanksResponse.requestId"));
 		listSecondRanksResponse.setTotalCount(_ctx.integerValue("ListSecondRanksResponse.totalCount"));
+		listSecondRanksResponse.setRequestId(_ctx.stringValue("ListSecondRanksResponse.requestId"));
 
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListSecondRanksResponse.result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setId(_ctx.stringValue("ListSecondRanksResponse.result["+ i +"].id"));
-			resultItem.setName(_ctx.stringValue("ListSecondRanksResponse.result["+ i +"].name"));
-			resultItem.setMeta(_ctx.stringValue("ListSecondRanksResponse.result["+ i +"].meta"));
-			resultItem.setActive(_ctx.booleanValue("ListSecondRanksResponse.result["+ i +"].active"));
-			resultItem.setDescription(_ctx.stringValue("ListSecondRanksResponse.result["+ i +"].description"));
 			resultItem.setCreated(_ctx.integerValue("ListSecondRanksResponse.result["+ i +"].created"));
-			resultItem.setUpdated(_ctx.integerValue("ListSecondRanksResponse.result["+ i +"].updated"));
+			resultItem.setActive(_ctx.booleanValue("ListSecondRanksResponse.result["+ i +"].active"));
 			resultItem.setIsDefault(_ctx.stringValue("ListSecondRanksResponse.result["+ i +"].isDefault"));
 			resultItem.setIsSys(_ctx.stringValue("ListSecondRanksResponse.result["+ i +"].isSys"));
+			resultItem.setDescription(_ctx.stringValue("ListSecondRanksResponse.result["+ i +"].description"));
+			resultItem.setUpdated(_ctx.integerValue("ListSecondRanksResponse.result["+ i +"].updated"));
+			resultItem.setName(_ctx.stringValue("ListSecondRanksResponse.result["+ i +"].name"));
+			resultItem.setMeta(_ctx.stringValue("ListSecondRanksResponse.result["+ i +"].meta"));
+			resultItem.setId(_ctx.stringValue("ListSecondRanksResponse.result["+ i +"].id"));
 
 			result.add(resultItem);
 		}

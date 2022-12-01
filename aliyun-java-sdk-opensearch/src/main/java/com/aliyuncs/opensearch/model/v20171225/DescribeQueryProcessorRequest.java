@@ -31,7 +31,7 @@ public class DescribeQueryProcessorRequest extends RoaAcsRequest<DescribeQueryPr
 
 	private String appGroupIdentity;
 	public DescribeQueryProcessorRequest() {
-		super("OpenSearch", "2017-12-25", "DescribeQueryProcessor", "opensearch");
+		super("OpenSearch", "2017-12-25", "DescribeQueryProcessor");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/apps/[appId]/query-processors/[name]");
 		setMethod(MethodType.GET);
 		try {

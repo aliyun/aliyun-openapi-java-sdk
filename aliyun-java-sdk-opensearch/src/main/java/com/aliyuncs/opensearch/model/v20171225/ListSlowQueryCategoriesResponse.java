@@ -46,19 +46,11 @@ public class ListSlowQueryCategoriesResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String analyzeStatus;
-
 		private Integer start;
 
+		private String analyzeStatus;
+
 		private Integer end;
-
-		public String getAnalyzeStatus() {
-			return this.analyzeStatus;
-		}
-
-		public void setAnalyzeStatus(String analyzeStatus) {
-			this.analyzeStatus = analyzeStatus;
-		}
 
 		public Integer getStart() {
 			return this.start;
@@ -66,6 +58,14 @@ public class ListSlowQueryCategoriesResponse extends AcsResponse {
 
 		public void setStart(Integer start) {
 			this.start = start;
+		}
+
+		public String getAnalyzeStatus() {
+			return this.analyzeStatus;
+		}
+
+		public void setAnalyzeStatus(String analyzeStatus) {
+			this.analyzeStatus = analyzeStatus;
 		}
 
 		public Integer getEnd() {

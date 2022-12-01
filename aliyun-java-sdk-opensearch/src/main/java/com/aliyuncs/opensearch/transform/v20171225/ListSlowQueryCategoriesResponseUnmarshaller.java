@@ -26,8 +26,8 @@ public class ListSlowQueryCategoriesResponseUnmarshaller {
 		listSlowQueryCategoriesResponse.setRequestId(_ctx.stringValue("ListSlowQueryCategoriesResponse.requestId"));
 
 		Result result = new Result();
-		result.setAnalyzeStatus(_ctx.stringValue("ListSlowQueryCategoriesResponse.result.analyzeStatus"));
 		result.setStart(_ctx.integerValue("ListSlowQueryCategoriesResponse.result.start"));
+		result.setAnalyzeStatus(_ctx.stringValue("ListSlowQueryCategoriesResponse.result.analyzeStatus"));
 		result.setEnd(_ctx.integerValue("ListSlowQueryCategoriesResponse.result.end"));
 		listSlowQueryCategoriesResponse.setResult(result);
 	 

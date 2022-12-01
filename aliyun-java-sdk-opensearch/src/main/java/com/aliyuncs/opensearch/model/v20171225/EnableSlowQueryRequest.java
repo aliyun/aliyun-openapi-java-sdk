@@ -27,7 +27,7 @@ public class EnableSlowQueryRequest extends RoaAcsRequest<EnableSlowQueryRespons
 
 	private String appGroupIdentity;
 	public EnableSlowQueryRequest() {
-		super("OpenSearch", "2017-12-25", "EnableSlowQuery", "opensearch");
+		super("OpenSearch", "2017-12-25", "EnableSlowQuery");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/optimizers/slow-query/actions/enable");
 		setMethod(MethodType.POST);
 		try {

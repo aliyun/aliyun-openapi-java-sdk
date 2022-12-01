@@ -31,7 +31,7 @@ public class UpdateSortScriptRequest extends RoaAcsRequest<UpdateSortScriptRespo
 
 	private String appGroupIdentity;
 	public UpdateSortScriptRequest() {
-		super("OpenSearch", "2017-12-25", "UpdateSortScript", "opensearch");
+		super("OpenSearch", "2017-12-25", "UpdateSortScript");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/apps/[appVersionId]/sort-scripts/[scriptName]");
 		setMethod(MethodType.PUT);
 		try {

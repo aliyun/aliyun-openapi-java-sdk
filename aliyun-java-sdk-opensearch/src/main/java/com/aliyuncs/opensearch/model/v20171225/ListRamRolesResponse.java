@@ -47,20 +47,20 @@ public class ListRamRolesResponse extends AcsResponse {
 
 	public static class ResultItem {
 
-		private String name;
+		private String template_id;
 
 		private String service;
 
-		private String template_id;
-
 		private Boolean assumed;
 
-		public String getName() {
-			return this.name;
+		private String name;
+
+		public String getTemplate_id() {
+			return this.template_id;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+		public void setTemplate_id(String template_id) {
+			this.template_id = template_id;
 		}
 
 		public String getService() {
@@ -71,20 +71,20 @@ public class ListRamRolesResponse extends AcsResponse {
 			this.service = service;
 		}
 
-		public String getTemplate_id() {
-			return this.template_id;
-		}
-
-		public void setTemplate_id(String template_id) {
-			this.template_id = template_id;
-		}
-
 		public Boolean getAssumed() {
 			return this.assumed;
 		}
 
 		public void setAssumed(Boolean assumed) {
 			this.assumed = assumed;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 	}
 

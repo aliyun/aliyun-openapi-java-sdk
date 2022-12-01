@@ -47,21 +47,13 @@ public class RemoveFirstRankResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String name;
-
 		private String description;
 
 		private Boolean active;
 
+		private String name;
+
 		private List<MetaItem> meta;
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
 
 		public String getDescription() {
 			return this.description;
@@ -79,6 +71,14 @@ public class RemoveFirstRankResponse extends AcsResponse {
 			this.active = active;
 		}
 
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
 		public List<MetaItem> getMeta() {
 			return this.meta;
 		}
@@ -89,19 +89,11 @@ public class RemoveFirstRankResponse extends AcsResponse {
 
 		public static class MetaItem {
 
-			private String attribute;
-
 			private String arg;
 
+			private String attribute;
+
 			private Float weight;
-
-			public String getAttribute() {
-				return this.attribute;
-			}
-
-			public void setAttribute(String attribute) {
-				this.attribute = attribute;
-			}
 
 			public String getArg() {
 				return this.arg;
@@ -109,6 +101,14 @@ public class RemoveFirstRankResponse extends AcsResponse {
 
 			public void setArg(String arg) {
 				this.arg = arg;
+			}
+
+			public String getAttribute() {
+				return this.attribute;
+			}
+
+			public void setAttribute(String attribute) {
+				this.attribute = attribute;
 			}
 
 			public Float getWeight() {

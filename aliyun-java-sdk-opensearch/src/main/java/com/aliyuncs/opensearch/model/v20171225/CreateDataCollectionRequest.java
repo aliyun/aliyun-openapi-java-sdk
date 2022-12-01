@@ -27,7 +27,7 @@ public class CreateDataCollectionRequest extends RoaAcsRequest<CreateDataCollect
 
 	private String appGroupIdentity;
 	public CreateDataCollectionRequest() {
-		super("OpenSearch", "2017-12-25", "CreateDataCollection", "opensearch");
+		super("OpenSearch", "2017-12-25", "CreateDataCollection");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/data-collections");
 		setMethod(MethodType.POST);
 		try {

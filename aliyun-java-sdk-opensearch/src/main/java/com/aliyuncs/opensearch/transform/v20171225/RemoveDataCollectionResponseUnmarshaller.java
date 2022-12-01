@@ -22,8 +22,8 @@ public class RemoveDataCollectionResponseUnmarshaller {
 
 	public static RemoveDataCollectionResponse unmarshall(RemoveDataCollectionResponse removeDataCollectionResponse, UnmarshallerContext _ctx) {
 		
-		removeDataCollectionResponse.setRequestId(_ctx.stringValue("RemoveDataCollectionResponse.requestId"));
 		removeDataCollectionResponse.setResult(_ctx.stringValue("RemoveDataCollectionResponse.result"));
+		removeDataCollectionResponse.setRequestId(_ctx.stringValue("RemoveDataCollectionResponse.requestId"));
 	 
 	 	return removeDataCollectionResponse;
 	}

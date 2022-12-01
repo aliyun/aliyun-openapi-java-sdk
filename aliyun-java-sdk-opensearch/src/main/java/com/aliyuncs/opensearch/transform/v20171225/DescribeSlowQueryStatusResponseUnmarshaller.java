@@ -27,8 +27,8 @@ public class DescribeSlowQueryStatusResponseUnmarshaller {
 
 		Result result = new Result();
 		result.setRegion(_ctx.stringValue("DescribeSlowQueryStatusResponse.result.region"));
-		result.setAppGroupId(_ctx.stringValue("DescribeSlowQueryStatusResponse.result.appGroupId"));
 		result.setStatus(_ctx.stringValue("DescribeSlowQueryStatusResponse.result.status"));
+		result.setAppGroupId(_ctx.stringValue("DescribeSlowQueryStatusResponse.result.appGroupId"));
 		describeSlowQueryStatusResponse.setResult(result);
 	 
 	 	return describeSlowQueryStatusResponse;

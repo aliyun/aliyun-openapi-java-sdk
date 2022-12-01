@@ -29,7 +29,7 @@ public class RemoveScheduledTaskRequest extends RoaAcsRequest<RemoveScheduledTas
 
 	private String taskId;
 	public RemoveScheduledTaskRequest() {
-		super("OpenSearch", "2017-12-25", "RemoveScheduledTask", "opensearch");
+		super("OpenSearch", "2017-12-25", "RemoveScheduledTask");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/scheduled-tasks/[taskId]");
 		setMethod(MethodType.DELETE);
 		try {

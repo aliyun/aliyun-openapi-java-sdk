@@ -31,7 +31,7 @@ public class RemoveFirstRankRequest extends RoaAcsRequest<RemoveFirstRankRespons
 
 	private String appGroupIdentity;
 	public RemoveFirstRankRequest() {
-		super("OpenSearch", "2017-12-25", "RemoveFirstRank", "opensearch");
+		super("OpenSearch", "2017-12-25", "RemoveFirstRank");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/apps/[appId]/first-ranks/[name]");
 		setMethod(MethodType.DELETE);
 		try {

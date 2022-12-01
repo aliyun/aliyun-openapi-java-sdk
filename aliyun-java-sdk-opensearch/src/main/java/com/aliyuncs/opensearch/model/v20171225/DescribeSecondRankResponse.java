@@ -46,30 +46,70 @@ public class DescribeSecondRankResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String id;
-
-		private String name;
-
-		private String meta;
-
-		private Boolean active;
-
-		private String description;
-
 		private Integer created;
 
-		private Integer updated;
+		private Boolean active;
 
 		private String isDefault;
 
 		private String isSys;
 
-		public String getId() {
-			return this.id;
+		private String description;
+
+		private Integer updated;
+
+		private String name;
+
+		private String meta;
+
+		private String id;
+
+		public Integer getCreated() {
+			return this.created;
 		}
 
-		public void setId(String id) {
-			this.id = id;
+		public void setCreated(Integer created) {
+			this.created = created;
+		}
+
+		public Boolean getActive() {
+			return this.active;
+		}
+
+		public void setActive(Boolean active) {
+			this.active = active;
+		}
+
+		public String getIsDefault() {
+			return this.isDefault;
+		}
+
+		public void setIsDefault(String isDefault) {
+			this.isDefault = isDefault;
+		}
+
+		public String getIsSys() {
+			return this.isSys;
+		}
+
+		public void setIsSys(String isSys) {
+			this.isSys = isSys;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public Integer getUpdated() {
+			return this.updated;
+		}
+
+		public void setUpdated(Integer updated) {
+			this.updated = updated;
 		}
 
 		public String getName() {
@@ -88,52 +128,12 @@ public class DescribeSecondRankResponse extends AcsResponse {
 			this.meta = meta;
 		}
 
-		public Boolean getActive() {
-			return this.active;
+		public String getId() {
+			return this.id;
 		}
 
-		public void setActive(Boolean active) {
-			this.active = active;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public Integer getCreated() {
-			return this.created;
-		}
-
-		public void setCreated(Integer created) {
-			this.created = created;
-		}
-
-		public Integer getUpdated() {
-			return this.updated;
-		}
-
-		public void setUpdated(Integer updated) {
-			this.updated = updated;
-		}
-
-		public String getIsDefault() {
-			return this.isDefault;
-		}
-
-		public void setIsDefault(String isDefault) {
-			this.isDefault = isDefault;
-		}
-
-		public String getIsSys() {
-			return this.isSys;
-		}
-
-		public void setIsSys(String isSys) {
-			this.isSys = isSys;
+		public void setId(String id) {
+			this.id = id;
 		}
 	}
 

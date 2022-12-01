@@ -29,7 +29,7 @@ public class ListSortScriptsRequest extends RoaAcsRequest<ListSortScriptsRespons
 
 	private String appGroupIdentity;
 	public ListSortScriptsRequest() {
-		super("OpenSearch", "2017-12-25", "ListSortScripts", "opensearch");
+		super("OpenSearch", "2017-12-25", "ListSortScripts");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/apps/[appVersionId]/sort-scripts");
 		setMethod(MethodType.GET);
 		try {

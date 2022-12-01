@@ -27,7 +27,7 @@ public class ModifyAppGroupRequest extends RoaAcsRequest<ModifyAppGroupResponse>
 
 	private String appGroupIdentity;
 	public ModifyAppGroupRequest() {
-		super("OpenSearch", "2017-12-25", "ModifyAppGroup", "opensearch");
+		super("OpenSearch", "2017-12-25", "ModifyAppGroup");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]");
 		setMethod(MethodType.PUT);
 		try {

@@ -29,7 +29,7 @@ public class DeleteABTestSceneRequest extends RoaAcsRequest<DeleteABTestSceneRes
 
 	private String appGroupIdentity;
 	public DeleteABTestSceneRequest() {
-		super("OpenSearch", "2017-12-25", "DeleteABTestScene", "opensearch");
+		super("OpenSearch", "2017-12-25", "DeleteABTestScene");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/scenes/[sceneId]");
 		setMethod(MethodType.DELETE);
 		try {

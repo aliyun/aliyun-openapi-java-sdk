@@ -27,7 +27,7 @@ public class ListQueryProcessorNersRequest extends RoaAcsRequest<ListQueryProces
 
 	private String domain;
 	public ListQueryProcessorNersRequest() {
-		super("OpenSearch", "2017-12-25", "ListQueryProcessorNers", "opensearch");
+		super("OpenSearch", "2017-12-25", "ListQueryProcessorNers");
 		setUriPattern("/v4/openapi/query-processor/ner/default-priorities");
 		setMethod(MethodType.GET);
 		try {

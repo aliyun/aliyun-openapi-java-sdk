@@ -31,7 +31,7 @@ public class ListQueryProcessorsRequest extends RoaAcsRequest<ListQueryProcessor
 
 	private String appGroupIdentity;
 	public ListQueryProcessorsRequest() {
-		super("OpenSearch", "2017-12-25", "ListQueryProcessors", "opensearch");
+		super("OpenSearch", "2017-12-25", "ListQueryProcessors");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/apps/[appId]/query-processors");
 		setMethod(MethodType.GET);
 		try {

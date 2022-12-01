@@ -27,7 +27,7 @@ public class StartSlowQueryAnalyzerRequest extends RoaAcsRequest<StartSlowQueryA
 
 	private String appGroupIdentity;
 	public StartSlowQueryAnalyzerRequest() {
-		super("OpenSearch", "2017-12-25", "StartSlowQueryAnalyzer", "opensearch");
+		super("OpenSearch", "2017-12-25", "StartSlowQueryAnalyzer");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/optimizers/slow-query/actions/run");
 		setMethod(MethodType.POST);
 		try {

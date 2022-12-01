@@ -30,11 +30,11 @@ public class DescribeQueryProcessorResponseUnmarshaller {
 		describeQueryProcessorResponse.setRequestId(_ctx.stringValue("DescribeQueryProcessorResponse.requestId"));
 
 		Result result = new Result();
-		result.setName(_ctx.stringValue("DescribeQueryProcessorResponse.result.name"));
-		result.setActive(_ctx.booleanValue("DescribeQueryProcessorResponse.result.active"));
-		result.setDomain(_ctx.stringValue("DescribeQueryProcessorResponse.result.domain"));
 		result.setCreated(_ctx.integerValue("DescribeQueryProcessorResponse.result.created"));
+		result.setActive(_ctx.booleanValue("DescribeQueryProcessorResponse.result.active"));
 		result.setUpdated(_ctx.integerValue("DescribeQueryProcessorResponse.result.updated"));
+		result.setName(_ctx.stringValue("DescribeQueryProcessorResponse.result.name"));
+		result.setDomain(_ctx.stringValue("DescribeQueryProcessorResponse.result.domain"));
 
 		List<String> indexes = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeQueryProcessorResponse.result.indexes.Length"); i++) {

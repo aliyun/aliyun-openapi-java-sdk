@@ -29,7 +29,7 @@ public class ModifyScheduledTaskRequest extends RoaAcsRequest<ModifyScheduledTas
 
 	private String taskId;
 	public ModifyScheduledTaskRequest() {
-		super("OpenSearch", "2017-12-25", "ModifyScheduledTask", "opensearch");
+		super("OpenSearch", "2017-12-25", "ModifyScheduledTask");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/scheduled-tasks/[taskId]");
 		setMethod(MethodType.PUT);
 		try {
