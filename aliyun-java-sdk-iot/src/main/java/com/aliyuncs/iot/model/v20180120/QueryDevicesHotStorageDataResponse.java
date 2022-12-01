@@ -16,14 +16,14 @@ package com.aliyuncs.iot.model.v20180120;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.iot.transform.v20180120.BatchGetDeviceBindStatusResponseUnmarshaller;
+import com.aliyuncs.iot.transform.v20180120.QueryDevicesHotStorageDataResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class BatchGetDeviceBindStatusResponse extends AcsResponse {
+public class QueryDevicesHotStorageDataResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -33,7 +33,7 @@ public class BatchGetDeviceBindStatusResponse extends AcsResponse {
 
 	private String errorMessage;
 
-	private List<DeviceStatus> data;
+	private Data data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,54 +67,72 @@ public class BatchGetDeviceBindStatusResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public List<DeviceStatus> getData() {
+	public Data getData() {
 		return this.data;
 	}
 
-	public void setData(List<DeviceStatus> data) {
+	public void setData(Data data) {
 		this.data = data;
 	}
 
-	public static class DeviceStatus {
+	public static class Data {
 
-		private String iotId;
+		private Boolean nextValid;
 
-		private Integer bindStatus;
+		private String nextPageToken;
 
-		private String instanceId;
+		private List<PropertyInfo> list;
 
-		public String getIotId() {
-			return this.iotId;
+		public Boolean getNextValid() {
+			return this.nextValid;
 		}
 
-		public void setIotId(String iotId) {
-			this.iotId = iotId;
+		public void setNextValid(Boolean nextValid) {
+			this.nextValid = nextValid;
 		}
 
-		public Integer getBindStatus() {
-			return this.bindStatus;
+		public String getNextPageToken() {
+			return this.nextPageToken;
 		}
 
-		public void setBindStatus(Integer bindStatus) {
-			this.bindStatus = bindStatus;
+		public void setNextPageToken(String nextPageToken) {
+			this.nextPageToken = nextPageToken;
 		}
 
-		public String getInstanceId() {
-			return this.instanceId;
+		public List<PropertyInfo> getList() {
+			return this.list;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
+		public void setList(List<PropertyInfo> list) {
+			this.list = list;
+		}
+
+		public static class PropertyInfo {
+
+			private String time;
+
+			private String value;
+
+			public String getTime() {
+				return this.time;
+			}
+
+			public void setTime(String time) {
+				this.time = time;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 	}
 
 	@Override
-	public BatchGetDeviceBindStatusResponse getInstance(UnmarshallerContext context) {
-		return	BatchGetDeviceBindStatusResponseUnmarshaller.unmarshall(this, context);
-	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
+	public QueryDevicesHotStorageDataResponse getInstance(UnmarshallerContext context) {
+		return	QueryDevicesHotStorageDataResponseUnmarshaller.unmarshall(this, context);
 	}
 }

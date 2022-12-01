@@ -36,6 +36,7 @@ public class BatchGetDeviceBindStatusResponseUnmarshaller {
 			DeviceStatus deviceStatus = new DeviceStatus();
 			deviceStatus.setIotId(_ctx.stringValue("BatchGetDeviceBindStatusResponse.Data["+ i +"].IotId"));
 			deviceStatus.setBindStatus(_ctx.integerValue("BatchGetDeviceBindStatusResponse.Data["+ i +"].BindStatus"));
+			deviceStatus.setInstanceId(_ctx.stringValue("BatchGetDeviceBindStatusResponse.Data["+ i +"].InstanceId"));
 
 			data.add(deviceStatus);
 		}

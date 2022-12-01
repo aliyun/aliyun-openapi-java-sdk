@@ -1,3 +1,6 @@
+2022-12-01 Version: 7.46.0
+- Storage open Api.
+
 2022-10-27 Version: 7.45.0
 - Iot_20180120 Old sdk.
 
