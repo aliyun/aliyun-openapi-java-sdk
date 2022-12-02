@@ -27,8 +27,6 @@ public class MergeVideoModelFaceRequest extends RpcAcsRequest<MergeVideoModelFac
 
 	private String faceImageURL;
 
-	private String userId;
-
 	private String templateId;
 	public MergeVideoModelFaceRequest() {
 		super("videoenhan", "2020-03-20", "MergeVideoModelFace", "videoenhan");
@@ -47,17 +45,6 @@ public class MergeVideoModelFaceRequest extends RpcAcsRequest<MergeVideoModelFac
 		this.faceImageURL = faceImageURL;
 		if(faceImageURL != null){
 			putBodyParameter("FaceImageURL", faceImageURL);
-		}
-	}
-
-	public String getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putBodyParameter("UserId", userId);
 		}
 	}
 

@@ -25,8 +25,6 @@ import com.aliyuncs.videoenhan.Endpoint;
 public class AddFaceVideoTemplateRequest extends RpcAcsRequest<AddFaceVideoTemplateResponse> {
 	   
 
-	private String userId;
-
 	private String videoURL;
 	public AddFaceVideoTemplateRequest() {
 		super("videoenhan", "2020-03-20", "AddFaceVideoTemplate", "videoenhan");
@@ -35,17 +33,6 @@ public class AddFaceVideoTemplateRequest extends RpcAcsRequest<AddFaceVideoTempl
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putBodyParameter("UserId", userId);
-		}
 	}
 
 	public String getVideoURL() {

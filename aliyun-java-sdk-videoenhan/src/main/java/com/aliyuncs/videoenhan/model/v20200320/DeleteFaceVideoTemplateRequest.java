@@ -25,8 +25,6 @@ import com.aliyuncs.videoenhan.Endpoint;
 public class DeleteFaceVideoTemplateRequest extends RpcAcsRequest<DeleteFaceVideoTemplateResponse> {
 	   
 
-	private String userId;
-
 	private String templateId;
 	public DeleteFaceVideoTemplateRequest() {
 		super("videoenhan", "2020-03-20", "DeleteFaceVideoTemplate", "videoenhan");
@@ -35,17 +33,6 @@ public class DeleteFaceVideoTemplateRequest extends RpcAcsRequest<DeleteFaceVide
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putBodyParameter("UserId", userId);
-		}
 	}
 
 	public String getTemplateId() {
