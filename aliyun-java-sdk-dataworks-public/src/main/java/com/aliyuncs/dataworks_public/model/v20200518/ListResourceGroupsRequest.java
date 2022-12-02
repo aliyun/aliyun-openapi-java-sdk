@@ -33,6 +33,8 @@ public class ListResourceGroupsRequest extends RpcAcsRequest<ListResourceGroupsR
 	@SerializedName("tags")
 	private List<Tags> tags;
 
+	private String typeNames;
+
 	private String resourceManagerResourceGroupId;
 
 	private Integer resourceGroupType;
@@ -67,6 +69,17 @@ public class ListResourceGroupsRequest extends RpcAcsRequest<ListResourceGroupsR
 		if (tags != null) {
 			putQueryParameter("Tags" , new Gson().toJson(tags));
 		}	
+	}
+
+	public String getTypeNames() {
+		return this.typeNames;
+	}
+
+	public void setTypeNames(String typeNames) {
+		this.typeNames = typeNames;
+		if(typeNames != null){
+			putQueryParameter("TypeNames", typeNames);
+		}
 	}
 
 	public String getResourceManagerResourceGroupId() {

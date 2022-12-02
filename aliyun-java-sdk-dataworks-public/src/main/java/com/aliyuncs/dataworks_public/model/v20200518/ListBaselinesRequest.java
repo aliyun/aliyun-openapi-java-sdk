@@ -29,8 +29,6 @@ public class ListBaselinesRequest extends RpcAcsRequest<ListBaselinesResponse> {
 
 	private String searchText;
 
-	private String projectEnv;
-
 	private String priority;
 
 	private Integer pageNumber;
@@ -70,17 +68,6 @@ public class ListBaselinesRequest extends RpcAcsRequest<ListBaselinesResponse> {
 		this.searchText = searchText;
 		if(searchText != null){
 			putBodyParameter("SearchText", searchText);
-		}
-	}
-
-	public String getProjectEnv() {
-		return this.projectEnv;
-	}
-
-	public void setProjectEnv(String projectEnv) {
-		this.projectEnv = projectEnv;
-		if(projectEnv != null){
-			putBodyParameter("ProjectEnv", projectEnv);
 		}
 	}
 
