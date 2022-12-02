@@ -25,8 +25,6 @@ import com.aliyuncs.facebody.Endpoint;
 public class QueryFaceImageTemplateRequest extends RpcAcsRequest<QueryFaceImageTemplateResponse> {
 	   
 
-	private String userId;
-
 	private String templateId;
 	public QueryFaceImageTemplateRequest() {
 		super("facebody", "2019-12-30", "QueryFaceImageTemplate", "facebody");
@@ -35,17 +33,6 @@ public class QueryFaceImageTemplateRequest extends RpcAcsRequest<QueryFaceImageT
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId);
-		}
 	}
 
 	public String getTemplateId() {

@@ -25,8 +25,6 @@ import com.aliyuncs.facebody.Endpoint;
 public class AddFaceImageTemplateRequest extends RpcAcsRequest<AddFaceImageTemplateResponse> {
 	   
 
-	private String userId;
-
 	private String imageURL;
 	public AddFaceImageTemplateRequest() {
 		super("facebody", "2019-12-30", "AddFaceImageTemplate", "facebody");
@@ -35,17 +33,6 @@ public class AddFaceImageTemplateRequest extends RpcAcsRequest<AddFaceImageTempl
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putBodyParameter("UserId", userId);
-		}
 	}
 
 	public String getImageURL() {

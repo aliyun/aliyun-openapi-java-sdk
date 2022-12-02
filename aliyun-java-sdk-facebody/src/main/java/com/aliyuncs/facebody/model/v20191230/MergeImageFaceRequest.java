@@ -25,8 +25,6 @@ import com.aliyuncs.facebody.Endpoint;
 public class MergeImageFaceRequest extends RpcAcsRequest<MergeImageFaceResponse> {
 	   
 
-	private String userId;
-
 	private String templateId;
 
 	private String imageURL;
@@ -37,17 +35,6 @@ public class MergeImageFaceRequest extends RpcAcsRequest<MergeImageFaceResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putBodyParameter("UserId", userId);
-		}
 	}
 
 	public String getTemplateId() {
