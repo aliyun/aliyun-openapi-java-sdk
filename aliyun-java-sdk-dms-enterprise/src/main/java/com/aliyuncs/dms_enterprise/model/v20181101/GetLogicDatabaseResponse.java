@@ -95,6 +95,8 @@ public class GetLogicDatabaseResponse extends AcsResponse {
 
 		private List<String> ownerNameList;
 
+		private List<Long> databaseIds;
+
 		public String getDatabaseId() {
 			return this.databaseId;
 		}
@@ -165,6 +167,14 @@ public class GetLogicDatabaseResponse extends AcsResponse {
 
 		public void setOwnerNameList(List<String> ownerNameList) {
 			this.ownerNameList = ownerNameList;
+		}
+
+		public List<Long> getDatabaseIds() {
+			return this.databaseIds;
+		}
+
+		public void setDatabaseIds(List<Long> databaseIds) {
+			this.databaseIds = databaseIds;
 		}
 	}
 

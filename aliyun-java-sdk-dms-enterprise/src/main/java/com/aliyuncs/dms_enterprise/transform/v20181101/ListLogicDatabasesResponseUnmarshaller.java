@@ -55,6 +55,12 @@ public class ListLogicDatabasesResponseUnmarshaller {
 			}
 			logicDatabase.setOwnerNameList(ownerNameList);
 
+			List<Long> databaseIds = new ArrayList<Long>();
+			for (int j = 0; j < _ctx.lengthValue("ListLogicDatabasesResponse.LogicDatabaseList["+ i +"].DatabaseIds.Length"); j++) {
+				databaseIds.add(_ctx.longValue("ListLogicDatabasesResponse.LogicDatabaseList["+ i +"].DatabaseIds["+ j +"]"));
+			}
+			logicDatabase.setDatabaseIds(databaseIds);
+
 			logicDatabaseList.add(logicDatabase);
 		}
 		listLogicDatabasesResponse.setLogicDatabaseList(logicDatabaseList);
