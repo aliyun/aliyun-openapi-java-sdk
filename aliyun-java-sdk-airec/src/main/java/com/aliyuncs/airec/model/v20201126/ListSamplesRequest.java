@@ -27,11 +27,11 @@ public class ListSamplesRequest extends RoaAcsRequest<ListSamplesResponse> {
 
 	private String instanceId;
 
-	private Integer size;
+	private Long size;
 
 	private String sampleId;
 
-	private Integer page;
+	private Long page;
 	public ListSamplesRequest() {
 		super("Airec", "2020-11-26", "ListSamples", "airec");
 		setUriPattern("/v2/openapi/instances/[instanceId]/samples");
@@ -53,11 +53,11 @@ public class ListSamplesRequest extends RoaAcsRequest<ListSamplesResponse> {
 		}
 	}
 
-	public Integer getSize() {
+	public Long getSize() {
 		return this.size;
 	}
 
-	public void setSize(Integer size) {
+	public void setSize(Long size) {
 		this.size = size;
 		if(size != null){
 			putQueryParameter("size", size.toString());
@@ -75,11 +75,11 @@ public class ListSamplesRequest extends RoaAcsRequest<ListSamplesResponse> {
 		}
 	}
 
-	public Integer getPage() {
+	public Long getPage() {
 		return this.page;
 	}
 
-	public void setPage(Integer page) {
+	public void setPage(Long page) {
 		this.page = page;
 		if(page != null){
 			putQueryParameter("page", page.toString());

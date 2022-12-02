@@ -33,11 +33,11 @@ public class ListRulesRequest extends RoaAcsRequest<ListRulesResponse> {
 
 	private String sceneId;
 
-	private Integer endTime;
+	private Long endTime;
 
 	private Integer page;
 
-	private Integer startTime;
+	private Long startTime;
 
 	private String status;
 	public ListRulesRequest() {
@@ -94,11 +94,11 @@ public class ListRulesRequest extends RoaAcsRequest<ListRulesResponse> {
 		}
 	}
 
-	public Integer getEndTime() {
+	public Long getEndTime() {
 		return this.endTime;
 	}
 
-	public void setEndTime(Integer endTime) {
+	public void setEndTime(Long endTime) {
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("endTime", endTime.toString());
@@ -116,11 +116,11 @@ public class ListRulesRequest extends RoaAcsRequest<ListRulesResponse> {
 		}
 	}
 
-	public Integer getStartTime() {
+	public Long getStartTime() {
 		return this.startTime;
 	}
 
-	public void setStartTime(Integer startTime) {
+	public void setStartTime(Long startTime) {
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("startTime", startTime.toString());

@@ -22,47 +22,34 @@ import com.aliyuncs.airec.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListDataDiagnoseReportsRequest extends RoaAcsRequest<ListDataDiagnoseReportsResponse> {
+public class CreateUmengTokenRequest extends RoaAcsRequest<CreateUmengTokenResponse> {
 	   
 
-	private String instanceId;
-
-	private Long taskCreateTime;
-	public ListDataDiagnoseReportsRequest() {
-		super("Airec", "2020-11-26", "ListDataDiagnoseReports", "airec");
-		setUriPattern("/v2/openapi/instances/[instanceId]/data-diagnose-reports");
-		setMethod(MethodType.GET);
+	private String code;
+	public CreateUmengTokenRequest() {
+		super("Airec", "2020-11-26", "CreateUmengToken", "airec");
+		setUriPattern("/v2/openapi/umeng/token");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putPathParameter("instanceId", instanceId);
-		}
-	}
-
-	public Long getTaskCreateTime() {
-		return this.taskCreateTime;
-	}
-
-	public void setTaskCreateTime(Long taskCreateTime) {
-		this.taskCreateTime = taskCreateTime;
-		if(taskCreateTime != null){
-			putQueryParameter("taskCreateTime", taskCreateTime.toString());
+	public void setCode(String code) {
+		this.code = code;
+		if(code != null){
+			putQueryParameter("code", code);
 		}
 	}
 
 	@Override
-	public Class<ListDataDiagnoseReportsResponse> getResponseClass() {
-		return ListDataDiagnoseReportsResponse.class;
+	public Class<CreateUmengTokenResponse> getResponseClass() {
+		return CreateUmengTokenResponse.class;
 	}
 
 }

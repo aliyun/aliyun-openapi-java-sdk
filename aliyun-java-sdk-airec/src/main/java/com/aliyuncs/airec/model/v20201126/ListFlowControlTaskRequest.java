@@ -22,35 +22,26 @@ import com.aliyuncs.airec.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListDashboardMetricsFlowsRequest extends RoaAcsRequest<ListDashboardMetricsFlowsResponse> {
+public class ListFlowControlTaskRequest extends RoaAcsRequest<ListFlowControlTaskResponse> {
 	   
-
-	private String metricType;
 
 	private String instanceId;
 
-	private Long endTime;
+	private Integer size;
 
-	private Long startTime;
-	public ListDashboardMetricsFlowsRequest() {
-		super("Airec", "2020-11-26", "ListDashboardMetricsFlows", "airec");
-		setUriPattern("/v2/openapi/instances/[instanceId]/dashboard/metrics/flows");
+	private Integer page;
+
+	private String taskId;
+
+	private String status;
+	public ListFlowControlTaskRequest() {
+		super("Airec", "2020-11-26", "ListFlowControlTask", "airec");
+		setUriPattern("/v2/openapi/instances/[instanceId]/flowControlTasks");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getMetricType() {
-		return this.metricType;
-	}
-
-	public void setMetricType(String metricType) {
-		this.metricType = metricType;
-		if(metricType != null){
-			putQueryParameter("metricType", metricType);
-		}
 	}
 
 	public String getInstanceId() {
@@ -64,31 +55,53 @@ public class ListDashboardMetricsFlowsRequest extends RoaAcsRequest<ListDashboar
 		}
 	}
 
-	public Long getEndTime() {
-		return this.endTime;
+	public Integer getSize() {
+		return this.size;
 	}
 
-	public void setEndTime(Long endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("endTime", endTime.toString());
+	public void setSize(Integer size) {
+		this.size = size;
+		if(size != null){
+			putQueryParameter("size", size.toString());
 		}
 	}
 
-	public Long getStartTime() {
-		return this.startTime;
+	public Integer getPage() {
+		return this.page;
 	}
 
-	public void setStartTime(Long startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("startTime", startTime.toString());
+	public void setPage(Integer page) {
+		this.page = page;
+		if(page != null){
+			putQueryParameter("page", page.toString());
+		}
+	}
+
+	public String getTaskId() {
+		return this.taskId;
+	}
+
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+		if(taskId != null){
+			putQueryParameter("taskId", taskId);
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("status", status);
 		}
 	}
 
 	@Override
-	public Class<ListDashboardMetricsFlowsResponse> getResponseClass() {
-		return ListDashboardMetricsFlowsResponse.class;
+	public Class<ListFlowControlTaskResponse> getResponseClass() {
+		return ListFlowControlTaskResponse.class;
 	}
 
 }

@@ -22,21 +22,21 @@ import com.aliyuncs.airec.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeSyncReportDetailRequest extends RoaAcsRequest<DescribeSyncReportDetailResponse> {
+public class ListFlowControlTaskItemReportsRequest extends RoaAcsRequest<ListFlowControlTaskItemReportsResponse> {
 	   
 
 	private String instanceId;
 
-	private String levelType;
+	private String selectTimeType;
 
-	private Long endTime;
+	private String count;
 
-	private Long startTime;
+	private String selectType;
 
-	private String type;
-	public DescribeSyncReportDetailRequest() {
-		super("Airec", "2020-11-26", "DescribeSyncReportDetail", "airec");
-		setUriPattern("/v2/openapi/instances/[instanceId]/sync-reports/detail");
+	private String taskId;
+	public ListFlowControlTaskItemReportsRequest() {
+		super("Airec", "2020-11-26", "ListFlowControlTaskItemReports", "airec");
+		setUriPattern("/v2/openapi/instances/[instanceId]/flowControlTasks/[taskId]/itemReports");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -55,53 +55,53 @@ public class DescribeSyncReportDetailRequest extends RoaAcsRequest<DescribeSyncR
 		}
 	}
 
-	public String getLevelType() {
-		return this.levelType;
+	public String getSelectTimeType() {
+		return this.selectTimeType;
 	}
 
-	public void setLevelType(String levelType) {
-		this.levelType = levelType;
-		if(levelType != null){
-			putQueryParameter("levelType", levelType);
+	public void setSelectTimeType(String selectTimeType) {
+		this.selectTimeType = selectTimeType;
+		if(selectTimeType != null){
+			putQueryParameter("selectTimeType", selectTimeType);
 		}
 	}
 
-	public Long getEndTime() {
-		return this.endTime;
+	public String getCount() {
+		return this.count;
 	}
 
-	public void setEndTime(Long endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("endTime", endTime.toString());
+	public void setCount(String count) {
+		this.count = count;
+		if(count != null){
+			putQueryParameter("count", count);
 		}
 	}
 
-	public Long getStartTime() {
-		return this.startTime;
+	public String getSelectType() {
+		return this.selectType;
 	}
 
-	public void setStartTime(Long startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("startTime", startTime.toString());
+	public void setSelectType(String selectType) {
+		this.selectType = selectType;
+		if(selectType != null){
+			putQueryParameter("selectType", selectType);
 		}
 	}
 
-	public String getType() {
-		return this.type;
+	public String getTaskId() {
+		return this.taskId;
 	}
 
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("type", type);
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+		if(taskId != null){
+			putPathParameter("taskId", taskId);
 		}
 	}
 
 	@Override
-	public Class<DescribeSyncReportDetailResponse> getResponseClass() {
-		return DescribeSyncReportDetailResponse.class;
+	public Class<ListFlowControlTaskItemReportsResponse> getResponseClass() {
+		return ListFlowControlTaskItemReportsResponse.class;
 	}
 
 }

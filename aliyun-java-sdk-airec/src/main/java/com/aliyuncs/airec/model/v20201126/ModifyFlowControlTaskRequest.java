@@ -22,35 +22,22 @@ import com.aliyuncs.airec.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListDashboardMetricsFlowsRequest extends RoaAcsRequest<ListDashboardMetricsFlowsResponse> {
+public class ModifyFlowControlTaskRequest extends RoaAcsRequest<ModifyFlowControlTaskResponse> {
 	   
-
-	private String metricType;
 
 	private String instanceId;
 
-	private Long endTime;
+	private String body;
 
-	private Long startTime;
-	public ListDashboardMetricsFlowsRequest() {
-		super("Airec", "2020-11-26", "ListDashboardMetricsFlows", "airec");
-		setUriPattern("/v2/openapi/instances/[instanceId]/dashboard/metrics/flows");
-		setMethod(MethodType.GET);
+	private String taskId;
+	public ModifyFlowControlTaskRequest() {
+		super("Airec", "2020-11-26", "ModifyFlowControlTask", "airec");
+		setUriPattern("/v2/openapi/instances/[instanceId]/flowControlTasks/[taskId]");
+		setMethod(MethodType.PUT);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getMetricType() {
-		return this.metricType;
-	}
-
-	public void setMetricType(String metricType) {
-		this.metricType = metricType;
-		if(metricType != null){
-			putQueryParameter("metricType", metricType);
-		}
 	}
 
 	public String getInstanceId() {
@@ -64,31 +51,31 @@ public class ListDashboardMetricsFlowsRequest extends RoaAcsRequest<ListDashboar
 		}
 	}
 
-	public Long getEndTime() {
-		return this.endTime;
+	public String getBody() {
+		return this.body;
 	}
 
-	public void setEndTime(Long endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("endTime", endTime.toString());
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 
-	public Long getStartTime() {
-		return this.startTime;
+	public String getTaskId() {
+		return this.taskId;
 	}
 
-	public void setStartTime(Long startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("startTime", startTime.toString());
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+		if(taskId != null){
+			putPathParameter("taskId", taskId);
 		}
 	}
 
 	@Override
-	public Class<ListDashboardMetricsFlowsResponse> getResponseClass() {
-		return ListDashboardMetricsFlowsResponse.class;
+	public Class<ModifyFlowControlTaskResponse> getResponseClass() {
+		return ModifyFlowControlTaskResponse.class;
 	}
 
 }

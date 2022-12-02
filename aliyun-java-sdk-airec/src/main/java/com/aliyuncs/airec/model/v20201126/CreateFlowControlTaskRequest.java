@@ -22,35 +22,20 @@ import com.aliyuncs.airec.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListDashboardMetricsFlowsRequest extends RoaAcsRequest<ListDashboardMetricsFlowsResponse> {
+public class CreateFlowControlTaskRequest extends RoaAcsRequest<CreateFlowControlTaskResponse> {
 	   
-
-	private String metricType;
 
 	private String instanceId;
 
-	private Long endTime;
-
-	private Long startTime;
-	public ListDashboardMetricsFlowsRequest() {
-		super("Airec", "2020-11-26", "ListDashboardMetricsFlows", "airec");
-		setUriPattern("/v2/openapi/instances/[instanceId]/dashboard/metrics/flows");
-		setMethod(MethodType.GET);
+	private Boolean dryRun;
+	public CreateFlowControlTaskRequest() {
+		super("Airec", "2020-11-26", "CreateFlowControlTask", "airec");
+		setUriPattern("/v2/openapi/instances/[instanceId]/flowControlTasks");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getMetricType() {
-		return this.metricType;
-	}
-
-	public void setMetricType(String metricType) {
-		this.metricType = metricType;
-		if(metricType != null){
-			putQueryParameter("metricType", metricType);
-		}
 	}
 
 	public String getInstanceId() {
@@ -64,31 +49,20 @@ public class ListDashboardMetricsFlowsRequest extends RoaAcsRequest<ListDashboar
 		}
 	}
 
-	public Long getEndTime() {
-		return this.endTime;
+	public Boolean getDryRun() {
+		return this.dryRun;
 	}
 
-	public void setEndTime(Long endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("endTime", endTime.toString());
-		}
-	}
-
-	public Long getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(Long startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("startTime", startTime.toString());
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("dryRun", dryRun.toString());
 		}
 	}
 
 	@Override
-	public Class<ListDashboardMetricsFlowsResponse> getResponseClass() {
-		return ListDashboardMetricsFlowsResponse.class;
+	public Class<CreateFlowControlTaskResponse> getResponseClass() {
+		return CreateFlowControlTaskResponse.class;
 	}
 
 }

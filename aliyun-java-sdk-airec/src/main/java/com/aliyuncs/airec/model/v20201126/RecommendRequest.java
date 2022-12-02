@@ -33,6 +33,8 @@ public class RecommendRequest extends RoaAcsRequest<RecommendResponse> {
 
 	private String userId;
 
+	private String filter;
+
 	private String serviceType;
 
 	private String instanceId;
@@ -97,6 +99,17 @@ public class RecommendRequest extends RoaAcsRequest<RecommendResponse> {
 		this.userId = userId;
 		if(userId != null){
 			putQueryParameter("userId", userId);
+		}
+	}
+
+	public String getFilter() {
+		return this.filter;
+	}
+
+	public void setFilter(String filter) {
+		this.filter = filter;
+		if(filter != null){
+			putQueryParameter("filter", filter);
 		}
 	}
 

@@ -40,6 +40,8 @@ public class RecommendResponseUnmarshaller {
 			resultItem.setItemType(_ctx.stringValue("RecommendResponse.result["+ i +"].itemType"));
 			resultItem.setTraceInfo(_ctx.stringValue("RecommendResponse.result["+ i +"].traceInfo"));
 			resultItem.setWeight(_ctx.floatValue("RecommendResponse.result["+ i +"].weight"));
+			resultItem.setFlowWeight(_ctx.doubleValue("RecommendResponse.result["+ i +"].flowWeight"));
+			resultItem.setMessage(_ctx.stringValue("RecommendResponse.result["+ i +"].message"));
 
 			result.add(resultItem);
 		}

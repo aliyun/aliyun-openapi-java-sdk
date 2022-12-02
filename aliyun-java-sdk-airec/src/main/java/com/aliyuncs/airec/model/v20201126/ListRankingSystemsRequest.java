@@ -27,13 +27,13 @@ public class ListRankingSystemsRequest extends RoaAcsRequest<ListRankingSystemsR
 
 	private String instanceId;
 
-	private Integer size;
+	private Long size;
 
 	private String name;
 
 	private String deployStatus;
 
-	private Integer page;
+	private Long page;
 	public ListRankingSystemsRequest() {
 		super("Airec", "2020-11-26", "ListRankingSystems", "airec");
 		setUriPattern("/v2/openapi/instances/[instanceId]/ranking-systems");
@@ -55,11 +55,11 @@ public class ListRankingSystemsRequest extends RoaAcsRequest<ListRankingSystemsR
 		}
 	}
 
-	public Integer getSize() {
+	public Long getSize() {
 		return this.size;
 	}
 
-	public void setSize(Integer size) {
+	public void setSize(Long size) {
 		this.size = size;
 		if(size != null){
 			putQueryParameter("size", size.toString());
@@ -88,11 +88,11 @@ public class ListRankingSystemsRequest extends RoaAcsRequest<ListRankingSystemsR
 		}
 	}
 
-	public Integer getPage() {
+	public Long getPage() {
 		return this.page;
 	}
 
-	public void setPage(Integer page) {
+	public void setPage(Long page) {
 		this.page = page;
 		if(page != null){
 			putQueryParameter("page", page.toString());
