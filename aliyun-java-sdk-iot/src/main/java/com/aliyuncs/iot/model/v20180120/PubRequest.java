@@ -40,7 +40,11 @@ public class PubRequest extends RpcAcsRequest<PubResponse> {
 
 	private String topicFullName;
 
+	private Integer payloadFormatIndicator;
+
 	private String productKey;
+
+	private String contentType;
 
 	private String deviceName;
 	public PubRequest() {
@@ -132,6 +136,17 @@ public class PubRequest extends RpcAcsRequest<PubResponse> {
 		}
 	}
 
+	public Integer getPayloadFormatIndicator() {
+		return this.payloadFormatIndicator;
+	}
+
+	public void setPayloadFormatIndicator(Integer payloadFormatIndicator) {
+		this.payloadFormatIndicator = payloadFormatIndicator;
+		if(payloadFormatIndicator != null){
+			putQueryParameter("PayloadFormatIndicator", payloadFormatIndicator.toString());
+		}
+	}
+
 	public String getProductKey() {
 		return this.productKey;
 	}
@@ -140,6 +155,17 @@ public class PubRequest extends RpcAcsRequest<PubResponse> {
 		this.productKey = productKey;
 		if(productKey != null){
 			putQueryParameter("ProductKey", productKey);
+		}
+	}
+
+	public String getContentType() {
+		return this.contentType;
+	}
+
+	public void setContentType(String contentType) {
+		this.contentType = contentType;
+		if(contentType != null){
+			putQueryParameter("ContentType", contentType);
 		}
 	}
 
