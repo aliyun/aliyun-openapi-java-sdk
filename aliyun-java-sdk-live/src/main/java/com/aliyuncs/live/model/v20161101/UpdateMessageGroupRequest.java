@@ -15,6 +15,9 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.Map;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.live.Endpoint;
 
@@ -22,16 +25,17 @@ import com.aliyuncs.live.Endpoint;
  * @author auto create
  * @version 
  */
-public class CancelMuteAllGroupUserRequest extends RpcAcsRequest<CancelMuteAllGroupUserResponse> {
+public class UpdateMessageGroupRequest extends RpcAcsRequest<UpdateMessageGroupResponse> {
 	   
 
-	private String operatorUserId;
+	@SerializedName("extension")
+	private Map<String,String> extension;
 
 	private String groupId;
 
 	private String appId;
-	public CancelMuteAllGroupUserRequest() {
-		super("live", "2016-11-01", "CancelMuteAllGroupUser", "live");
+	public UpdateMessageGroupRequest() {
+		super("live", "2016-11-01", "UpdateMessageGroup", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,15 +43,15 @@ public class CancelMuteAllGroupUserRequest extends RpcAcsRequest<CancelMuteAllGr
 		} catch (Exception e) {}
 	}
 
-	public String getOperatorUserId() {
-		return this.operatorUserId;
+	public Map<String,String> getExtension() {
+		return this.extension;
 	}
 
-	public void setOperatorUserId(String operatorUserId) {
-		this.operatorUserId = operatorUserId;
-		if(operatorUserId != null){
-			putBodyParameter("OperatorUserId", operatorUserId);
-		}
+	public void setExtension(Map<String,String> extension) {
+		this.extension = extension;	
+		if (extension != null) {
+			putBodyParameter("Extension" , new Gson().toJson(extension));
+		}	
 	}
 
 	public String getGroupId() {
@@ -73,8 +77,8 @@ public class CancelMuteAllGroupUserRequest extends RpcAcsRequest<CancelMuteAllGr
 	}
 
 	@Override
-	public Class<CancelMuteAllGroupUserResponse> getResponseClass() {
-		return CancelMuteAllGroupUserResponse.class;
+	public Class<UpdateMessageGroupResponse> getResponseClass() {
+		return UpdateMessageGroupResponse.class;
 	}
 
 }

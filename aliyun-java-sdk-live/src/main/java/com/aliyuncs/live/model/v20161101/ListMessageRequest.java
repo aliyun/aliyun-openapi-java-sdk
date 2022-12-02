@@ -27,13 +27,15 @@ public class ListMessageRequest extends RpcAcsRequest<ListMessageResponse> {
 
 	private Integer sortType;
 
-	private String groupId;
-
 	private Integer type;
 
 	private Integer pageNum;
 
 	private Integer pageSize;
+
+	private String groupId;
+
+	private String appId;
 	public ListMessageRequest() {
 		super("live", "2016-11-01", "ListMessage", "live");
 		setMethod(MethodType.POST);
@@ -51,17 +53,6 @@ public class ListMessageRequest extends RpcAcsRequest<ListMessageResponse> {
 		this.sortType = sortType;
 		if(sortType != null){
 			putBodyParameter("SortType", sortType.toString());
-		}
-	}
-
-	public String getGroupId() {
-		return this.groupId;
-	}
-
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putBodyParameter("GroupId", groupId);
 		}
 	}
 
@@ -95,6 +86,28 @@ public class ListMessageRequest extends RpcAcsRequest<ListMessageResponse> {
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putBodyParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putBodyParameter("GroupId", groupId);
+		}
+	}
+
+	public String getAppId() {
+		return this.appId;
+	}
+
+	public void setAppId(String appId) {
+		this.appId = appId;
+		if(appId != null){
+			putBodyParameter("AppId", appId);
 		}
 	}
 

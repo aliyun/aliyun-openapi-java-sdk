@@ -22,43 +22,17 @@ import com.aliyuncs.live.Endpoint;
  * @author auto create
  * @version 
  */
-public class CancelMuteAllGroupUserRequest extends RpcAcsRequest<CancelMuteAllGroupUserResponse> {
+public class GetMessageAppRequest extends RpcAcsRequest<GetMessageAppResponse> {
 	   
 
-	private String operatorUserId;
-
-	private String groupId;
-
 	private String appId;
-	public CancelMuteAllGroupUserRequest() {
-		super("live", "2016-11-01", "CancelMuteAllGroupUser", "live");
+	public GetMessageAppRequest() {
+		super("live", "2016-11-01", "GetMessageApp", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getOperatorUserId() {
-		return this.operatorUserId;
-	}
-
-	public void setOperatorUserId(String operatorUserId) {
-		this.operatorUserId = operatorUserId;
-		if(operatorUserId != null){
-			putBodyParameter("OperatorUserId", operatorUserId);
-		}
-	}
-
-	public String getGroupId() {
-		return this.groupId;
-	}
-
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putBodyParameter("GroupId", groupId);
-		}
 	}
 
 	public String getAppId() {
@@ -73,8 +47,8 @@ public class CancelMuteAllGroupUserRequest extends RpcAcsRequest<CancelMuteAllGr
 	}
 
 	@Override
-	public Class<CancelMuteAllGroupUserResponse> getResponseClass() {
-		return CancelMuteAllGroupUserResponse.class;
+	public Class<GetMessageAppResponse> getResponseClass() {
+		return GetMessageAppResponse.class;
 	}
 
 }

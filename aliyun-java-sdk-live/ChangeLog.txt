@@ -1,3 +1,6 @@
+2022-12-02 Version: 3.9.24
+- Support live interaction and message.
+
 2022-10-31 Version: 3.9.23
 - Live pre sdk test.
 

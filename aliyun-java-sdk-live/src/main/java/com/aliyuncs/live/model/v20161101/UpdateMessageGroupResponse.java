@@ -15,14 +15,14 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.live.transform.v20161101.CloseMessageGroupResponseUnmarshaller;
+import com.aliyuncs.live.transform.v20161101.UpdateMessageGroupResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CloseMessageGroupResponse extends AcsResponse {
+public class UpdateMessageGroupResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -58,8 +58,8 @@ public class CloseMessageGroupResponse extends AcsResponse {
 	}
 
 	@Override
-	public CloseMessageGroupResponse getInstance(UnmarshallerContext context) {
-		return	CloseMessageGroupResponseUnmarshaller.unmarshall(this, context);
+	public UpdateMessageGroupResponse getInstance(UnmarshallerContext context) {
+		return	UpdateMessageGroupResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

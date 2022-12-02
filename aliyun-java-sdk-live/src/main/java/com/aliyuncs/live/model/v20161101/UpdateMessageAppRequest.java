@@ -15,6 +15,9 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.Map;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.live.Endpoint;
 
@@ -22,16 +25,20 @@ import com.aliyuncs.live.Endpoint;
  * @author auto create
  * @version 
  */
-public class CancelMuteAllGroupUserRequest extends RpcAcsRequest<CancelMuteAllGroupUserResponse> {
+public class UpdateMessageAppRequest extends RpcAcsRequest<UpdateMessageAppResponse> {
 	   
 
-	private String operatorUserId;
+	@SerializedName("extension")
+	private Map<String,String> extension;
 
-	private String groupId;
+	@SerializedName("appConfig")
+	private Map<String,String> appConfig;
+
+	private String appName;
 
 	private String appId;
-	public CancelMuteAllGroupUserRequest() {
-		super("live", "2016-11-01", "CancelMuteAllGroupUser", "live");
+	public UpdateMessageAppRequest() {
+		super("live", "2016-11-01", "UpdateMessageApp", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,25 +46,36 @@ public class CancelMuteAllGroupUserRequest extends RpcAcsRequest<CancelMuteAllGr
 		} catch (Exception e) {}
 	}
 
-	public String getOperatorUserId() {
-		return this.operatorUserId;
+	public Map<String,String> getExtension() {
+		return this.extension;
 	}
 
-	public void setOperatorUserId(String operatorUserId) {
-		this.operatorUserId = operatorUserId;
-		if(operatorUserId != null){
-			putBodyParameter("OperatorUserId", operatorUserId);
-		}
+	public void setExtension(Map<String,String> extension) {
+		this.extension = extension;	
+		if (extension != null) {
+			putBodyParameter("Extension" , new Gson().toJson(extension));
+		}	
 	}
 
-	public String getGroupId() {
-		return this.groupId;
+	public Map<String,String> getAppConfig() {
+		return this.appConfig;
 	}
 
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putBodyParameter("GroupId", groupId);
+	public void setAppConfig(Map<String,String> appConfig) {
+		this.appConfig = appConfig;	
+		if (appConfig != null) {
+			putBodyParameter("AppConfig" , new Gson().toJson(appConfig));
+		}	
+	}
+
+	public String getAppName() {
+		return this.appName;
+	}
+
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putBodyParameter("AppName", appName);
 		}
 	}
 
@@ -73,8 +91,8 @@ public class CancelMuteAllGroupUserRequest extends RpcAcsRequest<CancelMuteAllGr
 	}
 
 	@Override
-	public Class<CancelMuteAllGroupUserResponse> getResponseClass() {
-		return CancelMuteAllGroupUserResponse.class;
+	public Class<UpdateMessageAppResponse> getResponseClass() {
+		return UpdateMessageAppResponse.class;
 	}
 
 }

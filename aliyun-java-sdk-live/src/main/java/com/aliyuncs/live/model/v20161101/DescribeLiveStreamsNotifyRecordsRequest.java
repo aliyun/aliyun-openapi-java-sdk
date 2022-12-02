@@ -22,16 +22,18 @@ import com.aliyuncs.live.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeDomainUsageDataRequest extends RpcAcsRequest<DescribeDomainUsageDataResponse> {
+public class DescribeLiveStreamsNotifyRecordsRequest extends RpcAcsRequest<DescribeLiveStreamsNotifyRecordsResponse> {
 	   
 
 	private String startTime;
 
-	private String type;
+	private Integer pageNumber;
 
-	private String dataProtocol;
+	private String appName;
 
-	private String area;
+	private Integer pageSize;
+
+	private String streamName;
 
 	private String domainName;
 
@@ -39,11 +41,9 @@ public class DescribeDomainUsageDataRequest extends RpcAcsRequest<DescribeDomain
 
 	private Long ownerId;
 
-	private String field;
-
-	private String interval;
-	public DescribeDomainUsageDataRequest() {
-		super("live", "2016-11-01", "DescribeDomainUsageData", "live");
+	private String status;
+	public DescribeLiveStreamsNotifyRecordsRequest() {
+		super("live", "2016-11-01", "DescribeLiveStreamsNotifyRecords", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -62,36 +62,47 @@ public class DescribeDomainUsageDataRequest extends RpcAcsRequest<DescribeDomain
 		}
 	}
 
-	public String getType() {
-		return this.type;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
-	public String getDataProtocol() {
-		return this.dataProtocol;
+	public String getAppName() {
+		return this.appName;
 	}
 
-	public void setDataProtocol(String dataProtocol) {
-		this.dataProtocol = dataProtocol;
-		if(dataProtocol != null){
-			putQueryParameter("DataProtocol", dataProtocol);
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putQueryParameter("AppName", appName);
 		}
 	}
 
-	public String getArea() {
-		return this.area;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setArea(String area) {
-		this.area = area;
-		if(area != null){
-			putQueryParameter("Area", area);
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getStreamName() {
+		return this.streamName;
+	}
+
+	public void setStreamName(String streamName) {
+		this.streamName = streamName;
+		if(streamName != null){
+			putQueryParameter("StreamName", streamName);
 		}
 	}
 
@@ -128,31 +139,20 @@ public class DescribeDomainUsageDataRequest extends RpcAcsRequest<DescribeDomain
 		}
 	}
 
-	public String getField() {
-		return this.field;
+	public String getStatus() {
+		return this.status;
 	}
 
-	public void setField(String field) {
-		this.field = field;
-		if(field != null){
-			putQueryParameter("Field", field);
-		}
-	}
-
-	public String getInterval() {
-		return this.interval;
-	}
-
-	public void setInterval(String interval) {
-		this.interval = interval;
-		if(interval != null){
-			putQueryParameter("Interval", interval);
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
 		}
 	}
 
 	@Override
-	public Class<DescribeDomainUsageDataResponse> getResponseClass() {
-		return DescribeDomainUsageDataResponse.class;
+	public Class<DescribeLiveStreamsNotifyRecordsResponse> getResponseClass() {
+		return DescribeLiveStreamsNotifyRecordsResponse.class;
 	}
 
 }

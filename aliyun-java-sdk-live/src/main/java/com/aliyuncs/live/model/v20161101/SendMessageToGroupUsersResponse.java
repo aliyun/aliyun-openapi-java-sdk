@@ -15,14 +15,14 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.live.transform.v20161101.GetMessageUserInfoResponseUnmarshaller;
+import com.aliyuncs.live.transform.v20161101.SendMessageToGroupUsersResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetMessageUserInfoResponse extends AcsResponse {
+public class SendMessageToGroupUsersResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -46,30 +46,20 @@ public class GetMessageUserInfoResponse extends AcsResponse {
 
 	public static class Result {
 
-		private Boolean isNewIMUser;
+		private String messageId;
 
-		private Boolean hasOrderedIM;
-
-		public Boolean getIsNewIMUser() {
-			return this.isNewIMUser;
+		public String getMessageId() {
+			return this.messageId;
 		}
 
-		public void setIsNewIMUser(Boolean isNewIMUser) {
-			this.isNewIMUser = isNewIMUser;
-		}
-
-		public Boolean getHasOrderedIM() {
-			return this.hasOrderedIM;
-		}
-
-		public void setHasOrderedIM(Boolean hasOrderedIM) {
-			this.hasOrderedIM = hasOrderedIM;
+		public void setMessageId(String messageId) {
+			this.messageId = messageId;
 		}
 	}
 
 	@Override
-	public GetMessageUserInfoResponse getInstance(UnmarshallerContext context) {
-		return	GetMessageUserInfoResponseUnmarshaller.unmarshall(this, context);
+	public SendMessageToGroupUsersResponse getInstance(UnmarshallerContext context) {
+		return	SendMessageToGroupUsersResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

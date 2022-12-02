@@ -22,16 +22,20 @@ import com.aliyuncs.live.Endpoint;
  * @author auto create
  * @version 
  */
-public class CancelMuteAllGroupUserRequest extends RpcAcsRequest<CancelMuteAllGroupUserResponse> {
+public class QueryMessageAppRequest extends RpcAcsRequest<QueryMessageAppResponse> {
 	   
 
-	private String operatorUserId;
+	private Integer sortType;
 
-	private String groupId;
+	private Integer pageNum;
+
+	private String appName;
+
+	private Integer pageSize;
 
 	private String appId;
-	public CancelMuteAllGroupUserRequest() {
-		super("live", "2016-11-01", "CancelMuteAllGroupUser", "live");
+	public QueryMessageAppRequest() {
+		super("live", "2016-11-01", "QueryMessageApp", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,25 +43,47 @@ public class CancelMuteAllGroupUserRequest extends RpcAcsRequest<CancelMuteAllGr
 		} catch (Exception e) {}
 	}
 
-	public String getOperatorUserId() {
-		return this.operatorUserId;
+	public Integer getSortType() {
+		return this.sortType;
 	}
 
-	public void setOperatorUserId(String operatorUserId) {
-		this.operatorUserId = operatorUserId;
-		if(operatorUserId != null){
-			putBodyParameter("OperatorUserId", operatorUserId);
+	public void setSortType(Integer sortType) {
+		this.sortType = sortType;
+		if(sortType != null){
+			putBodyParameter("SortType", sortType.toString());
 		}
 	}
 
-	public String getGroupId() {
-		return this.groupId;
+	public Integer getPageNum() {
+		return this.pageNum;
 	}
 
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putBodyParameter("GroupId", groupId);
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putBodyParameter("PageNum", pageNum.toString());
+		}
+	}
+
+	public String getAppName() {
+		return this.appName;
+	}
+
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putBodyParameter("AppName", appName);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putBodyParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -73,8 +99,8 @@ public class CancelMuteAllGroupUserRequest extends RpcAcsRequest<CancelMuteAllGr
 	}
 
 	@Override
-	public Class<CancelMuteAllGroupUserResponse> getResponseClass() {
-		return CancelMuteAllGroupUserResponse.class;
+	public Class<QueryMessageAppResponse> getResponseClass() {
+		return QueryMessageAppResponse.class;
 	}
 
 }

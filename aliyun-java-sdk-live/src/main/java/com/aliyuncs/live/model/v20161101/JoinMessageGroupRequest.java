@@ -25,15 +25,15 @@ import com.aliyuncs.live.Endpoint;
 public class JoinMessageGroupRequest extends RpcAcsRequest<JoinMessageGroupResponse> {
 	   
 
+	private String userId;
+
+	private Integer broadCastType;
+
 	private Boolean broadCastStatistics;
 
 	private String groupId;
 
-	private String userId;
-
 	private String appId;
-
-	private Integer broadCastType;
 	public JoinMessageGroupRequest() {
 		super("live", "2016-11-01", "JoinMessageGroup", "live");
 		setMethod(MethodType.POST);
@@ -41,6 +41,28 @@ public class JoinMessageGroupRequest extends RpcAcsRequest<JoinMessageGroupRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getUserId() {
+		return this.userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+		if(userId != null){
+			putBodyParameter("UserId", userId);
+		}
+	}
+
+	public Integer getBroadCastType() {
+		return this.broadCastType;
+	}
+
+	public void setBroadCastType(Integer broadCastType) {
+		this.broadCastType = broadCastType;
+		if(broadCastType != null){
+			putBodyParameter("BroadCastType", broadCastType.toString());
+		}
 	}
 
 	public Boolean getBroadCastStatistics() {
@@ -65,17 +87,6 @@ public class JoinMessageGroupRequest extends RpcAcsRequest<JoinMessageGroupRespo
 		}
 	}
 
-	public String getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putBodyParameter("UserId", userId);
-		}
-	}
-
 	public String getAppId() {
 		return this.appId;
 	}
@@ -84,17 +95,6 @@ public class JoinMessageGroupRequest extends RpcAcsRequest<JoinMessageGroupRespo
 		this.appId = appId;
 		if(appId != null){
 			putBodyParameter("AppId", appId);
-		}
-	}
-
-	public Integer getBroadCastType() {
-		return this.broadCastType;
-	}
-
-	public void setBroadCastType(Integer broadCastType) {
-		this.broadCastType = broadCastType;
-		if(broadCastType != null){
-			putBodyParameter("BroadCastType", broadCastType.toString());
 		}
 	}
 

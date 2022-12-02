@@ -22,12 +22,14 @@ import com.aliyuncs.live.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetMessageUserInfoRequest extends RpcAcsRequest<GetMessageUserInfoResponse> {
+public class DeleteLiveSnapshotNotifyConfigRequest extends RpcAcsRequest<DeleteLiveSnapshotNotifyConfigResponse> {
 	   
 
-	private String cloudUid;
-	public GetMessageUserInfoRequest() {
-		super("live", "2016-11-01", "GetMessageUserInfo", "live");
+	private String domainName;
+
+	private Long ownerId;
+	public DeleteLiveSnapshotNotifyConfigRequest() {
+		super("live", "2016-11-01", "DeleteLiveSnapshotNotifyConfig", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,20 +37,31 @@ public class GetMessageUserInfoRequest extends RpcAcsRequest<GetMessageUserInfoR
 		} catch (Exception e) {}
 	}
 
-	public String getCloudUid() {
-		return this.cloudUid;
+	public String getDomainName() {
+		return this.domainName;
 	}
 
-	public void setCloudUid(String cloudUid) {
-		this.cloudUid = cloudUid;
-		if(cloudUid != null){
-			putBodyParameter("CloudUid", cloudUid);
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
 	@Override
-	public Class<GetMessageUserInfoResponse> getResponseClass() {
-		return GetMessageUserInfoResponse.class;
+	public Class<DeleteLiveSnapshotNotifyConfigResponse> getResponseClass() {
+		return DeleteLiveSnapshotNotifyConfigResponse.class;
 	}
 
 }

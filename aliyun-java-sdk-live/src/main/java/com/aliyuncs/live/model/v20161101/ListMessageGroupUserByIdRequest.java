@@ -15,6 +15,7 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.live.Endpoint;
 
@@ -22,16 +23,16 @@ import com.aliyuncs.live.Endpoint;
  * @author auto create
  * @version 
  */
-public class CancelMuteAllGroupUserRequest extends RpcAcsRequest<CancelMuteAllGroupUserResponse> {
+public class ListMessageGroupUserByIdRequest extends RpcAcsRequest<ListMessageGroupUserByIdResponse> {
 	   
 
-	private String operatorUserId;
+	private List<String> userIdList;
 
 	private String groupId;
 
 	private String appId;
-	public CancelMuteAllGroupUserRequest() {
-		super("live", "2016-11-01", "CancelMuteAllGroupUser", "live");
+	public ListMessageGroupUserByIdRequest() {
+		super("live", "2016-11-01", "ListMessageGroupUserById", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,15 +40,22 @@ public class CancelMuteAllGroupUserRequest extends RpcAcsRequest<CancelMuteAllGr
 		} catch (Exception e) {}
 	}
 
-	public String getOperatorUserId() {
-		return this.operatorUserId;
+	public List<String> getUserIdList() {
+		return this.userIdList;
 	}
 
-	public void setOperatorUserId(String operatorUserId) {
-		this.operatorUserId = operatorUserId;
-		if(operatorUserId != null){
-			putBodyParameter("OperatorUserId", operatorUserId);
-		}
+	public void setUserIdList(List<String> userIdList) {
+		this.userIdList = userIdList;	
+		if (userIdList != null) {
+			String userIdListArrVal = "";
+			for(int depth1 = 0; depth1 < userIdList.size(); depth1++) {
+				userIdListArrVal += userIdList.get(depth1) + ",";
+			}
+			if (userIdListArrVal.length() > 0) {
+				userIdListArrVal = userIdListArrVal.substring(0, userIdListArrVal.length() - 1);
+			}
+			putBodyParameter("UserIdList" , userIdListArrVal);
+		}	
 	}
 
 	public String getGroupId() {
@@ -73,8 +81,8 @@ public class CancelMuteAllGroupUserRequest extends RpcAcsRequest<CancelMuteAllGr
 	}
 
 	@Override
-	public Class<CancelMuteAllGroupUserResponse> getResponseClass() {
-		return CancelMuteAllGroupUserResponse.class;
+	public Class<ListMessageGroupUserByIdResponse> getResponseClass() {
+		return ListMessageGroupUserByIdResponse.class;
 	}
 
 }

@@ -27,13 +27,13 @@ public class DescribeDomainUsageDataResponse extends AcsResponse {
 
 	private String endTime;
 
+	private String type;
+
 	private String startTime;
 
 	private String requestId;
 
 	private String area;
-
-	private String field;
 
 	private String domainName;
 
@@ -47,6 +47,14 @@ public class DescribeDomainUsageDataResponse extends AcsResponse {
 
 	public void setEndTime(String endTime) {
 		this.endTime = endTime;
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
 	}
 
 	public String getStartTime() {
@@ -71,14 +79,6 @@ public class DescribeDomainUsageDataResponse extends AcsResponse {
 
 	public void setArea(String area) {
 		this.area = area;
-	}
-
-	public String getField() {
-		return this.field;
-	}
-
-	public void setField(String field) {
-		this.field = field;
 	}
 
 	public String getDomainName() {

@@ -27,15 +27,13 @@ public class ListMessageGroupUserRequest extends RpcAcsRequest<ListMessageGroupU
 
 	private Integer sortType;
 
-	private String groupId;
-
-	private Integer type;
-
 	private Integer pageNum;
 
-	private String appId;
-
 	private Integer pageSize;
+
+	private String groupId;
+
+	private String appId;
 	public ListMessageGroupUserRequest() {
 		super("live", "2016-11-01", "ListMessageGroupUser", "live");
 		setMethod(MethodType.POST);
@@ -56,28 +54,6 @@ public class ListMessageGroupUserRequest extends RpcAcsRequest<ListMessageGroupU
 		}
 	}
 
-	public String getGroupId() {
-		return this.groupId;
-	}
-
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putBodyParameter("GroupId", groupId);
-		}
-	}
-
-	public Integer getType() {
-		return this.type;
-	}
-
-	public void setType(Integer type) {
-		this.type = type;
-		if(type != null){
-			putBodyParameter("Type", type.toString());
-		}
-	}
-
 	public Integer getPageNum() {
 		return this.pageNum;
 	}
@@ -89,17 +65,6 @@ public class ListMessageGroupUserRequest extends RpcAcsRequest<ListMessageGroupU
 		}
 	}
 
-	public String getAppId() {
-		return this.appId;
-	}
-
-	public void setAppId(String appId) {
-		this.appId = appId;
-		if(appId != null){
-			putBodyParameter("AppId", appId);
-		}
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -108,6 +73,28 @@ public class ListMessageGroupUserRequest extends RpcAcsRequest<ListMessageGroupU
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putBodyParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putBodyParameter("GroupId", groupId);
+		}
+	}
+
+	public String getAppId() {
+		return this.appId;
+	}
+
+	public void setAppId(String appId) {
+		this.appId = appId;
+		if(appId != null){
+			putBodyParameter("AppId", appId);
 		}
 	}
 

@@ -14,21 +14,21 @@
 
 package com.aliyuncs.live.transform.v20161101;
 
-import com.aliyuncs.live.model.v20161101.CloseMessageGroupResponse;
-import com.aliyuncs.live.model.v20161101.CloseMessageGroupResponse.Result;
+import com.aliyuncs.live.model.v20161101.SendMessageToGroupResponse;
+import com.aliyuncs.live.model.v20161101.SendMessageToGroupResponse.Result;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CloseMessageGroupResponseUnmarshaller {
+public class SendMessageToGroupResponseUnmarshaller {
 
-	public static CloseMessageGroupResponse unmarshall(CloseMessageGroupResponse closeMessageGroupResponse, UnmarshallerContext _ctx) {
+	public static SendMessageToGroupResponse unmarshall(SendMessageToGroupResponse sendMessageToGroupResponse, UnmarshallerContext _ctx) {
 		
-		closeMessageGroupResponse.setRequestId(_ctx.stringValue("CloseMessageGroupResponse.RequestId"));
+		sendMessageToGroupResponse.setRequestId(_ctx.stringValue("SendMessageToGroupResponse.RequestId"));
 
 		Result result = new Result();
-		result.setSuccess(_ctx.booleanValue("CloseMessageGroupResponse.Result.Success"));
-		closeMessageGroupResponse.setResult(result);
+		result.setMessageId(_ctx.stringValue("SendMessageToGroupResponse.Result.MessageId"));
+		sendMessageToGroupResponse.setResult(result);
 	 
-	 	return closeMessageGroupResponse;
+	 	return sendMessageToGroupResponse;
 	}
 }

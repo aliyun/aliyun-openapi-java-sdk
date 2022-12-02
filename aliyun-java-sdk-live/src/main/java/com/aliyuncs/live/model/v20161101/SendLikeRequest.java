@@ -22,16 +22,20 @@ import com.aliyuncs.live.Endpoint;
  * @author auto create
  * @version 
  */
-public class CancelMuteAllGroupUserRequest extends RpcAcsRequest<CancelMuteAllGroupUserResponse> {
+public class SendLikeRequest extends RpcAcsRequest<SendLikeResponse> {
 	   
 
 	private String operatorUserId;
 
+	private Integer broadCastType;
+
 	private String groupId;
 
+	private String count;
+
 	private String appId;
-	public CancelMuteAllGroupUserRequest() {
-		super("live", "2016-11-01", "CancelMuteAllGroupUser", "live");
+	public SendLikeRequest() {
+		super("live", "2016-11-01", "SendLike", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -50,6 +54,17 @@ public class CancelMuteAllGroupUserRequest extends RpcAcsRequest<CancelMuteAllGr
 		}
 	}
 
+	public Integer getBroadCastType() {
+		return this.broadCastType;
+	}
+
+	public void setBroadCastType(Integer broadCastType) {
+		this.broadCastType = broadCastType;
+		if(broadCastType != null){
+			putBodyParameter("BroadCastType", broadCastType.toString());
+		}
+	}
+
 	public String getGroupId() {
 		return this.groupId;
 	}
@@ -58,6 +73,17 @@ public class CancelMuteAllGroupUserRequest extends RpcAcsRequest<CancelMuteAllGr
 		this.groupId = groupId;
 		if(groupId != null){
 			putBodyParameter("GroupId", groupId);
+		}
+	}
+
+	public String getCount() {
+		return this.count;
+	}
+
+	public void setCount(String count) {
+		this.count = count;
+		if(count != null){
+			putBodyParameter("Count", count);
 		}
 	}
 
@@ -73,8 +99,8 @@ public class CancelMuteAllGroupUserRequest extends RpcAcsRequest<CancelMuteAllGr
 	}
 
 	@Override
-	public Class<CancelMuteAllGroupUserResponse> getResponseClass() {
-		return CancelMuteAllGroupUserResponse.class;
+	public Class<SendLikeResponse> getResponseClass() {
+		return SendLikeResponse.class;
 	}
 
 }

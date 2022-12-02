@@ -25,11 +25,11 @@ import com.aliyuncs.live.Endpoint;
 public class GetMessageTokenRequest extends RpcAcsRequest<GetMessageTokenResponse> {
 	   
 
-	private String deviceId;
-
 	private String userId;
 
 	private String deviceType;
+
+	private String deviceId;
 
 	private String appId;
 	public GetMessageTokenRequest() {
@@ -39,17 +39,6 @@ public class GetMessageTokenRequest extends RpcAcsRequest<GetMessageTokenRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getDeviceId() {
-		return this.deviceId;
-	}
-
-	public void setDeviceId(String deviceId) {
-		this.deviceId = deviceId;
-		if(deviceId != null){
-			putBodyParameter("DeviceId", deviceId);
-		}
 	}
 
 	public String getUserId() {
@@ -71,6 +60,17 @@ public class GetMessageTokenRequest extends RpcAcsRequest<GetMessageTokenRespons
 		this.deviceType = deviceType;
 		if(deviceType != null){
 			putBodyParameter("DeviceType", deviceType);
+		}
+	}
+
+	public String getDeviceId() {
+		return this.deviceId;
+	}
+
+	public void setDeviceId(String deviceId) {
+		this.deviceId = deviceId;
+		if(deviceId != null){
+			putBodyParameter("DeviceId", deviceId);
 		}
 	}
 

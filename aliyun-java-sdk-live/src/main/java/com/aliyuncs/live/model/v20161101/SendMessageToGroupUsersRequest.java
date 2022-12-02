@@ -22,14 +22,10 @@ import com.aliyuncs.live.Endpoint;
  * @author auto create
  * @version 
  */
-public class CloseMessageGroupRequest extends RpcAcsRequest<CloseMessageGroupResponse> {
+public class SendMessageToGroupUsersRequest extends RpcAcsRequest<SendMessageToGroupUsersResponse> {
 	   
-
-	private String groupId;
-
-	private String appId;
-	public CloseMessageGroupRequest() {
-		super("live", "2016-11-01", "CloseMessageGroup", "live");
+	public SendMessageToGroupUsersRequest() {
+		super("live", "2016-11-01", "SendMessageToGroupUsers", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +33,9 @@ public class CloseMessageGroupRequest extends RpcAcsRequest<CloseMessageGroupRes
 		} catch (Exception e) {}
 	}
 
-	public String getGroupId() {
-		return this.groupId;
-	}
-
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putBodyParameter("GroupId", groupId);
-		}
-	}
-
-	public String getAppId() {
-		return this.appId;
-	}
-
-	public void setAppId(String appId) {
-		this.appId = appId;
-		if(appId != null){
-			putBodyParameter("AppId", appId);
-		}
-	}
-
 	@Override
-	public Class<CloseMessageGroupResponse> getResponseClass() {
-		return CloseMessageGroupResponse.class;
+	public Class<SendMessageToGroupUsersResponse> getResponseClass() {
+		return SendMessageToGroupUsersResponse.class;
 	}
 
 }
