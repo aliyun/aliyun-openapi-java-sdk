@@ -15,6 +15,9 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.live.Endpoint;
 
@@ -24,6 +27,19 @@ import com.aliyuncs.live.Endpoint;
  */
 public class SendMessageToGroupUsersRequest extends RpcAcsRequest<SendMessageToGroupUsersResponse> {
 	   
+
+	private String data;
+
+	private Integer type;
+
+	private String operatorUserId;
+
+	@SerializedName("receiverIdList")
+	private List<String> receiverIdList;
+
+	private String groupId;
+
+	private String appId;
 	public SendMessageToGroupUsersRequest() {
 		super("live", "2016-11-01", "SendMessageToGroupUsers", "live");
 		setMethod(MethodType.POST);
@@ -31,6 +47,72 @@ public class SendMessageToGroupUsersRequest extends RpcAcsRequest<SendMessageToG
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+		if(data != null){
+			putBodyParameter("Data", data);
+		}
+	}
+
+	public Integer getType() {
+		return this.type;
+	}
+
+	public void setType(Integer type) {
+		this.type = type;
+		if(type != null){
+			putBodyParameter("Type", type.toString());
+		}
+	}
+
+	public String getOperatorUserId() {
+		return this.operatorUserId;
+	}
+
+	public void setOperatorUserId(String operatorUserId) {
+		this.operatorUserId = operatorUserId;
+		if(operatorUserId != null){
+			putBodyParameter("OperatorUserId", operatorUserId);
+		}
+	}
+
+	public List<String> getReceiverIdList() {
+		return this.receiverIdList;
+	}
+
+	public void setReceiverIdList(List<String> receiverIdList) {
+		this.receiverIdList = receiverIdList;	
+		if (receiverIdList != null) {
+			putBodyParameter("ReceiverIdList" , new Gson().toJson(receiverIdList));
+		}	
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putBodyParameter("GroupId", groupId);
+		}
+	}
+
+	public String getAppId() {
+		return this.appId;
+	}
+
+	public void setAppId(String appId) {
+		this.appId = appId;
+		if(appId != null){
+			putBodyParameter("AppId", appId);
+		}
 	}
 
 	@Override
