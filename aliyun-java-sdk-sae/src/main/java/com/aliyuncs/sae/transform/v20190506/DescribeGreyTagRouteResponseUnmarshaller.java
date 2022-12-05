@@ -19,8 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.sae.model.v20190506.DescribeGreyTagRouteResponse;
 import com.aliyuncs.sae.model.v20190506.DescribeGreyTagRouteResponse.Data;
-import com.aliyuncs.sae.model.v20190506.DescribeGreyTagRouteResponse.Data.AlbRule;
-import com.aliyuncs.sae.model.v20190506.DescribeGreyTagRouteResponse.Data.AlbRule.Scrulesitem2;
 import com.aliyuncs.sae.model.v20190506.DescribeGreyTagRouteResponse.Data.DubboRule;
 import com.aliyuncs.sae.model.v20190506.DescribeGreyTagRouteResponse.Data.DubboRule.Item;
 import com.aliyuncs.sae.model.v20190506.DescribeGreyTagRouteResponse.Data.ScRule;
@@ -72,32 +70,6 @@ public class DescribeGreyTagRouteResponseUnmarshaller {
 		}
 		data.setScRules(scRules);
 
-		List<AlbRule> albRules = new ArrayList<AlbRule>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeGreyTagRouteResponse.Data.AlbRules.Length"); i++) {
-			AlbRule albRule = new AlbRule();
-			albRule.setServiceId(_ctx.stringValue("DescribeGreyTagRouteResponse.Data.AlbRules["+ i +"].serviceId"));
-			albRule.setIngressId(_ctx.stringValue("DescribeGreyTagRouteResponse.Data.AlbRules["+ i +"].ingressId"));
-			albRule.setCondition(_ctx.stringValue("DescribeGreyTagRouteResponse.Data.AlbRules["+ i +"].condition"));
-
-			List<Scrulesitem2> items1 = new ArrayList<Scrulesitem2>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeGreyTagRouteResponse.Data.AlbRules["+ i +"].items.Length"); j++) {
-				Scrulesitem2 scrulesitem2 = new Scrulesitem2();
-				scrulesitem2.setType(_ctx.stringValue("DescribeGreyTagRouteResponse.Data.AlbRules["+ i +"].items["+ j +"].type"));
-				scrulesitem2.setName(_ctx.stringValue("DescribeGreyTagRouteResponse.Data.AlbRules["+ i +"].items["+ j +"].name"));
-				scrulesitem2.setOperator(_ctx.stringValue("DescribeGreyTagRouteResponse.Data.AlbRules["+ i +"].items["+ j +"].operator"));
-				scrulesitem2.setValue(_ctx.stringValue("DescribeGreyTagRouteResponse.Data.AlbRules["+ i +"].items["+ j +"].value"));
-				scrulesitem2.setCond(_ctx.stringValue("DescribeGreyTagRouteResponse.Data.AlbRules["+ i +"].items["+ j +"].cond"));
-				scrulesitem2.setIndex(_ctx.integerValue("DescribeGreyTagRouteResponse.Data.AlbRules["+ i +"].items["+ j +"].index"));
-				scrulesitem2.setExpr(_ctx.stringValue("DescribeGreyTagRouteResponse.Data.AlbRules["+ i +"].items["+ j +"].expr"));
-
-				items1.add(scrulesitem2);
-			}
-			albRule.setItems1(items1);
-
-			albRules.add(albRule);
-		}
-		data.setAlbRules(albRules);
-
 		List<DubboRule> dubboRules = new ArrayList<DubboRule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeGreyTagRouteResponse.Data.DubboRules.Length"); i++) {
 			DubboRule dubboRule = new DubboRule();
@@ -107,7 +79,7 @@ public class DescribeGreyTagRouteResponseUnmarshaller {
 			dubboRule.setMethodName(_ctx.stringValue("DescribeGreyTagRouteResponse.Data.DubboRules["+ i +"].methodName"));
 			dubboRule.setCondition(_ctx.stringValue("DescribeGreyTagRouteResponse.Data.DubboRules["+ i +"].condition"));
 
-			List<Item> items3 = new ArrayList<Item>();
+			List<Item> items1 = new ArrayList<Item>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeGreyTagRouteResponse.Data.DubboRules["+ i +"].items.Length"); j++) {
 				Item item = new Item();
 				item.setIndex(_ctx.integerValue("DescribeGreyTagRouteResponse.Data.DubboRules["+ i +"].items["+ j +"].index"));
@@ -118,9 +90,9 @@ public class DescribeGreyTagRouteResponseUnmarshaller {
 				item.setType(_ctx.stringValue("DescribeGreyTagRouteResponse.Data.DubboRules["+ i +"].items["+ j +"].type"));
 				item.setName(_ctx.stringValue("DescribeGreyTagRouteResponse.Data.DubboRules["+ i +"].items["+ j +"].name"));
 
-				items3.add(item);
+				items1.add(item);
 			}
-			dubboRule.setItems3(items3);
+			dubboRule.setItems1(items1);
 
 			dubboRules.add(dubboRule);
 		}

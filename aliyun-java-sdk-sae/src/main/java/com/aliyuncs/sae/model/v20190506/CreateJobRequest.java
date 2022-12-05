@@ -41,13 +41,9 @@ public class CreateJobRequest extends RoaAcsRequest<CreateJobResponse> {
 
 	private String envs;
 
-	private String phpArmsConfigLocation;
-
 	private String programmingLanguage;
 
 	private String customHostAlias;
-
-	private Boolean deploy;
 
 	private String jarStartOptions;
 
@@ -77,8 +73,6 @@ public class CreateJobRequest extends RoaAcsRequest<CreateJobResponse> {
 
 	private String postStart;
 
-	private Boolean associateEip;
-
 	private String webContainer;
 
 	private Integer memory;
@@ -89,13 +83,9 @@ public class CreateJobRequest extends RoaAcsRequest<CreateJobResponse> {
 
 	private String acrAssumeRoleArn;
 
-	private String readiness;
-
 	private String timezone;
 
 	private String ossAkId;
-
-	private String liveness;
 
 	private String securityGroupId;
 
@@ -128,6 +118,8 @@ public class CreateJobRequest extends RoaAcsRequest<CreateJobResponse> {
 	private String jdk;
 
 	private String appDescription;
+
+	private String acrInstanceId;
 
 	private String vpcId;
 
@@ -236,17 +228,6 @@ public class CreateJobRequest extends RoaAcsRequest<CreateJobResponse> {
 		}
 	}
 
-	public String getPhpArmsConfigLocation() {
-		return this.phpArmsConfigLocation;
-	}
-
-	public void setPhpArmsConfigLocation(String phpArmsConfigLocation) {
-		this.phpArmsConfigLocation = phpArmsConfigLocation;
-		if(phpArmsConfigLocation != null){
-			putQueryParameter("PhpArmsConfigLocation", phpArmsConfigLocation);
-		}
-	}
-
 	public String getProgrammingLanguage() {
 		return this.programmingLanguage;
 	}
@@ -266,17 +247,6 @@ public class CreateJobRequest extends RoaAcsRequest<CreateJobResponse> {
 		this.customHostAlias = customHostAlias;
 		if(customHostAlias != null){
 			putQueryParameter("CustomHostAlias", customHostAlias);
-		}
-	}
-
-	public Boolean getDeploy() {
-		return this.deploy;
-	}
-
-	public void setDeploy(Boolean deploy) {
-		this.deploy = deploy;
-		if(deploy != null){
-			putQueryParameter("Deploy", deploy.toString());
 		}
 	}
 
@@ -434,17 +404,6 @@ public class CreateJobRequest extends RoaAcsRequest<CreateJobResponse> {
 		}
 	}
 
-	public Boolean getAssociateEip() {
-		return this.associateEip;
-	}
-
-	public void setAssociateEip(Boolean associateEip) {
-		this.associateEip = associateEip;
-		if(associateEip != null){
-			putBodyParameter("AssociateEip", associateEip.toString());
-		}
-	}
-
 	public String getWebContainer() {
 		return this.webContainer;
 	}
@@ -500,17 +459,6 @@ public class CreateJobRequest extends RoaAcsRequest<CreateJobResponse> {
 		}
 	}
 
-	public String getReadiness() {
-		return this.readiness;
-	}
-
-	public void setReadiness(String readiness) {
-		this.readiness = readiness;
-		if(readiness != null){
-			putQueryParameter("Readiness", readiness);
-		}
-	}
-
 	public String getTimezone() {
 		return this.timezone;
 	}
@@ -530,17 +478,6 @@ public class CreateJobRequest extends RoaAcsRequest<CreateJobResponse> {
 		this.ossAkId = ossAkId;
 		if(ossAkId != null){
 			putBodyParameter("OssAkId", ossAkId);
-		}
-	}
-
-	public String getLiveness() {
-		return this.liveness;
-	}
-
-	public void setLiveness(String liveness) {
-		this.liveness = liveness;
-		if(liveness != null){
-			putQueryParameter("Liveness", liveness);
 		}
 	}
 
@@ -717,6 +654,17 @@ public class CreateJobRequest extends RoaAcsRequest<CreateJobResponse> {
 		this.appDescription = appDescription;
 		if(appDescription != null){
 			putQueryParameter("AppDescription", appDescription);
+		}
+	}
+
+	public String getAcrInstanceId() {
+		return this.acrInstanceId;
+	}
+
+	public void setAcrInstanceId(String acrInstanceId) {
+		this.acrInstanceId = acrInstanceId;
+		if(acrInstanceId != null){
+			putBodyParameter("AcrInstanceId", acrInstanceId);
 		}
 	}
 

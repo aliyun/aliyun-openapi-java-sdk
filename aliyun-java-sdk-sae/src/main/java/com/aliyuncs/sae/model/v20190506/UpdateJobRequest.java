@@ -22,32 +22,30 @@ import com.aliyuncs.sae.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationResponse> {
+public class UpdateJobRequest extends RoaAcsRequest<UpdateJobResponse> {
 	   
 
 	private String nasId;
 
 	private String jarStartArgs;
 
-	private String ossAkSecret;
+	private String concurrencyPolicy;
 
-	private String nasConfigs;
+	private String triggerConfig;
+
+	private String ossAkSecret;
 
 	private String mountHost;
 
-	private Integer batchWaitTime;
-
 	private String envs;
 
-	private String phpArmsConfigLocation;
+	private String programmingLanguage;
 
 	private String customHostAlias;
 
-	private String deploy;
-
 	private String jarStartOptions;
 
-	private String pvtzDiscoverySvc;
+	private Boolean slice;
 
 	private String configMapMountDesc;
 
@@ -59,41 +57,27 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 
 	private String python;
 
-	private String updateStrategy;
-
-	private String changeOrderDesc;
-
-	private Integer minReadyInstanceRatio;
-
-	private Boolean autoEnableApplicationScalingRule;
+	private Long backoffLimit;
 
 	private String postStart;
 
-	private Boolean associateEip;
-
 	private String webContainer;
 
-	private String enableAhas;
-
 	private String slsConfigs;
-
-	private String kafkaConfigs;
 
 	private String commandArgs;
 
 	private String acrAssumeRoleArn;
 
-	private String readiness;
-
 	private String timezone;
 
 	private String ossAkId;
 
-	private String liveness;
-
 	private String packageVersion;
 
 	private String tomcatConfig;
+
+	private Long timeout;
 
 	private String warStartOptions;
 
@@ -105,9 +89,9 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 
 	private String phpConfig;
 
-	private String microRegistration;
+	private String sliceEnvs;
 
-	private Boolean enableGreyTagRoute;
+	private String replicas;
 
 	private String command;
 
@@ -115,20 +99,22 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 
 	private String jdk;
 
-	private Integer minReadyInstances;
-
 	private String acrInstanceId;
 
 	private String appId;
 
 	private String imageUrl;
 
+	private String php;
+
+	private String refAppId;
+
 	private String pythonModules;
 
 	private String phpConfigLocation;
-	public DeployApplicationRequest() {
-		super("sae", "2019-05-06", "DeployApplication", "serverless");
-		setUriPattern("/pop/v1/sam/app/deployApplication");
+	public UpdateJobRequest() {
+		super("sae", "2019-05-06", "UpdateJob", "serverless");
+		setUriPattern("/pop/v1/sam/job/updateJob");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -158,6 +144,28 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		}
 	}
 
+	public String getConcurrencyPolicy() {
+		return this.concurrencyPolicy;
+	}
+
+	public void setConcurrencyPolicy(String concurrencyPolicy) {
+		this.concurrencyPolicy = concurrencyPolicy;
+		if(concurrencyPolicy != null){
+			putQueryParameter("ConcurrencyPolicy", concurrencyPolicy);
+		}
+	}
+
+	public String getTriggerConfig() {
+		return this.triggerConfig;
+	}
+
+	public void setTriggerConfig(String triggerConfig) {
+		this.triggerConfig = triggerConfig;
+		if(triggerConfig != null){
+			putQueryParameter("TriggerConfig", triggerConfig);
+		}
+	}
+
 	public String getOssAkSecret() {
 		return this.ossAkSecret;
 	}
@@ -166,17 +174,6 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		this.ossAkSecret = ossAkSecret;
 		if(ossAkSecret != null){
 			putBodyParameter("OssAkSecret", ossAkSecret);
-		}
-	}
-
-	public String getNasConfigs() {
-		return this.nasConfigs;
-	}
-
-	public void setNasConfigs(String nasConfigs) {
-		this.nasConfigs = nasConfigs;
-		if(nasConfigs != null){
-			putQueryParameter("NasConfigs", nasConfigs);
 		}
 	}
 
@@ -191,17 +188,6 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		}
 	}
 
-	public Integer getBatchWaitTime() {
-		return this.batchWaitTime;
-	}
-
-	public void setBatchWaitTime(Integer batchWaitTime) {
-		this.batchWaitTime = batchWaitTime;
-		if(batchWaitTime != null){
-			putQueryParameter("BatchWaitTime", batchWaitTime.toString());
-		}
-	}
-
 	public String getEnvs() {
 		return this.envs;
 	}
@@ -213,14 +199,14 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		}
 	}
 
-	public String getPhpArmsConfigLocation() {
-		return this.phpArmsConfigLocation;
+	public String getProgrammingLanguage() {
+		return this.programmingLanguage;
 	}
 
-	public void setPhpArmsConfigLocation(String phpArmsConfigLocation) {
-		this.phpArmsConfigLocation = phpArmsConfigLocation;
-		if(phpArmsConfigLocation != null){
-			putQueryParameter("PhpArmsConfigLocation", phpArmsConfigLocation);
+	public void setProgrammingLanguage(String programmingLanguage) {
+		this.programmingLanguage = programmingLanguage;
+		if(programmingLanguage != null){
+			putQueryParameter("ProgrammingLanguage", programmingLanguage);
 		}
 	}
 
@@ -235,17 +221,6 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		}
 	}
 
-	public String getDeploy() {
-		return this.deploy;
-	}
-
-	public void setDeploy(String deploy) {
-		this.deploy = deploy;
-		if(deploy != null){
-			putQueryParameter("Deploy", deploy);
-		}
-	}
-
 	public String getJarStartOptions() {
 		return this.jarStartOptions;
 	}
@@ -257,14 +232,14 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		}
 	}
 
-	public String getPvtzDiscoverySvc() {
-		return this.pvtzDiscoverySvc;
+	public Boolean getSlice() {
+		return this.slice;
 	}
 
-	public void setPvtzDiscoverySvc(String pvtzDiscoverySvc) {
-		this.pvtzDiscoverySvc = pvtzDiscoverySvc;
-		if(pvtzDiscoverySvc != null){
-			putQueryParameter("PvtzDiscoverySvc", pvtzDiscoverySvc);
+	public void setSlice(Boolean slice) {
+		this.slice = slice;
+		if(slice != null){
+			putQueryParameter("Slice", slice.toString());
 		}
 	}
 
@@ -323,47 +298,14 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		}
 	}
 
-	public String getUpdateStrategy() {
-		return this.updateStrategy;
+	public Long getBackoffLimit() {
+		return this.backoffLimit;
 	}
 
-	public void setUpdateStrategy(String updateStrategy) {
-		this.updateStrategy = updateStrategy;
-		if(updateStrategy != null){
-			putQueryParameter("UpdateStrategy", updateStrategy);
-		}
-	}
-
-	public String getChangeOrderDesc() {
-		return this.changeOrderDesc;
-	}
-
-	public void setChangeOrderDesc(String changeOrderDesc) {
-		this.changeOrderDesc = changeOrderDesc;
-		if(changeOrderDesc != null){
-			putQueryParameter("ChangeOrderDesc", changeOrderDesc);
-		}
-	}
-
-	public Integer getMinReadyInstanceRatio() {
-		return this.minReadyInstanceRatio;
-	}
-
-	public void setMinReadyInstanceRatio(Integer minReadyInstanceRatio) {
-		this.minReadyInstanceRatio = minReadyInstanceRatio;
-		if(minReadyInstanceRatio != null){
-			putQueryParameter("MinReadyInstanceRatio", minReadyInstanceRatio.toString());
-		}
-	}
-
-	public Boolean getAutoEnableApplicationScalingRule() {
-		return this.autoEnableApplicationScalingRule;
-	}
-
-	public void setAutoEnableApplicationScalingRule(Boolean autoEnableApplicationScalingRule) {
-		this.autoEnableApplicationScalingRule = autoEnableApplicationScalingRule;
-		if(autoEnableApplicationScalingRule != null){
-			putQueryParameter("AutoEnableApplicationScalingRule", autoEnableApplicationScalingRule.toString());
+	public void setBackoffLimit(Long backoffLimit) {
+		this.backoffLimit = backoffLimit;
+		if(backoffLimit != null){
+			putQueryParameter("BackoffLimit", backoffLimit.toString());
 		}
 	}
 
@@ -378,17 +320,6 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		}
 	}
 
-	public Boolean getAssociateEip() {
-		return this.associateEip;
-	}
-
-	public void setAssociateEip(Boolean associateEip) {
-		this.associateEip = associateEip;
-		if(associateEip != null){
-			putBodyParameter("AssociateEip", associateEip.toString());
-		}
-	}
-
 	public String getWebContainer() {
 		return this.webContainer;
 	}
@@ -400,17 +331,6 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		}
 	}
 
-	public String getEnableAhas() {
-		return this.enableAhas;
-	}
-
-	public void setEnableAhas(String enableAhas) {
-		this.enableAhas = enableAhas;
-		if(enableAhas != null){
-			putQueryParameter("EnableAhas", enableAhas);
-		}
-	}
-
 	public String getSlsConfigs() {
 		return this.slsConfigs;
 	}
@@ -419,17 +339,6 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		this.slsConfigs = slsConfigs;
 		if(slsConfigs != null){
 			putQueryParameter("SlsConfigs", slsConfigs);
-		}
-	}
-
-	public String getKafkaConfigs() {
-		return this.kafkaConfigs;
-	}
-
-	public void setKafkaConfigs(String kafkaConfigs) {
-		this.kafkaConfigs = kafkaConfigs;
-		if(kafkaConfigs != null){
-			putQueryParameter("KafkaConfigs", kafkaConfigs);
 		}
 	}
 
@@ -455,17 +364,6 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		}
 	}
 
-	public String getReadiness() {
-		return this.readiness;
-	}
-
-	public void setReadiness(String readiness) {
-		this.readiness = readiness;
-		if(readiness != null){
-			putQueryParameter("Readiness", readiness);
-		}
-	}
-
 	public String getTimezone() {
 		return this.timezone;
 	}
@@ -488,17 +386,6 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		}
 	}
 
-	public String getLiveness() {
-		return this.liveness;
-	}
-
-	public void setLiveness(String liveness) {
-		this.liveness = liveness;
-		if(liveness != null){
-			putQueryParameter("Liveness", liveness);
-		}
-	}
-
 	public String getPackageVersion() {
 		return this.packageVersion;
 	}
@@ -518,6 +405,17 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		this.tomcatConfig = tomcatConfig;
 		if(tomcatConfig != null){
 			putQueryParameter("TomcatConfig", tomcatConfig);
+		}
+	}
+
+	public Long getTimeout() {
+		return this.timeout;
+	}
+
+	public void setTimeout(Long timeout) {
+		this.timeout = timeout;
+		if(timeout != null){
+			putQueryParameter("Timeout", timeout.toString());
 		}
 	}
 
@@ -576,25 +474,25 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		}
 	}
 
-	public String getMicroRegistration() {
-		return this.microRegistration;
+	public String getSliceEnvs() {
+		return this.sliceEnvs;
 	}
 
-	public void setMicroRegistration(String microRegistration) {
-		this.microRegistration = microRegistration;
-		if(microRegistration != null){
-			putQueryParameter("MicroRegistration", microRegistration);
+	public void setSliceEnvs(String sliceEnvs) {
+		this.sliceEnvs = sliceEnvs;
+		if(sliceEnvs != null){
+			putQueryParameter("SliceEnvs", sliceEnvs);
 		}
 	}
 
-	public Boolean getEnableGreyTagRoute() {
-		return this.enableGreyTagRoute;
+	public String getReplicas() {
+		return this.replicas;
 	}
 
-	public void setEnableGreyTagRoute(Boolean enableGreyTagRoute) {
-		this.enableGreyTagRoute = enableGreyTagRoute;
-		if(enableGreyTagRoute != null){
-			putQueryParameter("EnableGreyTagRoute", enableGreyTagRoute.toString());
+	public void setReplicas(String replicas) {
+		this.replicas = replicas;
+		if(replicas != null){
+			putQueryParameter("Replicas", replicas);
 		}
 	}
 
@@ -631,17 +529,6 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		}
 	}
 
-	public Integer getMinReadyInstances() {
-		return this.minReadyInstances;
-	}
-
-	public void setMinReadyInstances(Integer minReadyInstances) {
-		this.minReadyInstances = minReadyInstances;
-		if(minReadyInstances != null){
-			putQueryParameter("MinReadyInstances", minReadyInstances.toString());
-		}
-	}
-
 	public String getAcrInstanceId() {
 		return this.acrInstanceId;
 	}
@@ -675,6 +562,28 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		}
 	}
 
+	public String getPhp() {
+		return this.php;
+	}
+
+	public void setPhp(String php) {
+		this.php = php;
+		if(php != null){
+			putBodyParameter("Php", php);
+		}
+	}
+
+	public String getRefAppId() {
+		return this.refAppId;
+	}
+
+	public void setRefAppId(String refAppId) {
+		this.refAppId = refAppId;
+		if(refAppId != null){
+			putQueryParameter("RefAppId", refAppId);
+		}
+	}
+
 	public String getPythonModules() {
 		return this.pythonModules;
 	}
@@ -698,8 +607,8 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 	}
 
 	@Override
-	public Class<DeployApplicationResponse> getResponseClass() {
-		return DeployApplicationResponse.class;
+	public Class<UpdateJobResponse> getResponseClass() {
+		return UpdateJobResponse.class;
 	}
 
 }

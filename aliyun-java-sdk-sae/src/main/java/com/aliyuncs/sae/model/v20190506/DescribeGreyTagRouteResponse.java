@@ -111,8 +111,6 @@ public class DescribeGreyTagRouteResponse extends AcsResponse {
 
 		private List<ScRule> scRules;
 
-		private List<AlbRule> albRules;
-
 		private List<DubboRule> dubboRules;
 
 		public Long getGreyTagRouteId() {
@@ -169,14 +167,6 @@ public class DescribeGreyTagRouteResponse extends AcsResponse {
 
 		public void setScRules(List<ScRule> scRules) {
 			this.scRules = scRules;
-		}
-
-		public List<AlbRule> getAlbRules() {
-			return this.albRules;
-		}
-
-		public void setAlbRules(List<AlbRule> albRules) {
-			this.albRules = albRules;
 		}
 
 		public List<DubboRule> getDubboRules() {
@@ -293,122 +283,6 @@ public class DescribeGreyTagRouteResponse extends AcsResponse {
 			}
 		}
 
-		public static class AlbRule {
-
-			private String serviceId;
-
-			private String ingressId;
-
-			private String condition;
-
-			private List<Scrulesitem2> items1;
-
-			public String getServiceId() {
-				return this.serviceId;
-			}
-
-			public void setServiceId(String serviceId) {
-				this.serviceId = serviceId;
-			}
-
-			public String getIngressId() {
-				return this.ingressId;
-			}
-
-			public void setIngressId(String ingressId) {
-				this.ingressId = ingressId;
-			}
-
-			public String getCondition() {
-				return this.condition;
-			}
-
-			public void setCondition(String condition) {
-				this.condition = condition;
-			}
-
-			public List<Scrulesitem2> getItems1() {
-				return this.items1;
-			}
-
-			public void setItems1(List<Scrulesitem2> items1) {
-				this.items1 = items1;
-			}
-
-			public static class Scrulesitem2 {
-
-				private String type;
-
-				private String name;
-
-				private String operator;
-
-				private String value;
-
-				private String cond;
-
-				private Integer index;
-
-				private String expr;
-
-				public String getType() {
-					return this.type;
-				}
-
-				public void setType(String type) {
-					this.type = type;
-				}
-
-				public String getName() {
-					return this.name;
-				}
-
-				public void setName(String name) {
-					this.name = name;
-				}
-
-				public String getOperator() {
-					return this.operator;
-				}
-
-				public void setOperator(String operator) {
-					this.operator = operator;
-				}
-
-				public String getValue() {
-					return this.value;
-				}
-
-				public void setValue(String value) {
-					this.value = value;
-				}
-
-				public String getCond() {
-					return this.cond;
-				}
-
-				public void setCond(String cond) {
-					this.cond = cond;
-				}
-
-				public Integer getIndex() {
-					return this.index;
-				}
-
-				public void setIndex(Integer index) {
-					this.index = index;
-				}
-
-				public String getExpr() {
-					return this.expr;
-				}
-
-				public void setExpr(String expr) {
-					this.expr = expr;
-				}
-			}
-		}
-
 		public static class DubboRule {
 
 			private String serviceName;
@@ -421,7 +295,7 @@ public class DescribeGreyTagRouteResponse extends AcsResponse {
 
 			private String condition;
 
-			private List<Item> items3;
+			private List<Item> items1;
 
 			public String getServiceName() {
 				return this.serviceName;
@@ -463,12 +337,12 @@ public class DescribeGreyTagRouteResponse extends AcsResponse {
 				this.condition = condition;
 			}
 
-			public List<Item> getItems3() {
-				return this.items3;
+			public List<Item> getItems1() {
+				return this.items1;
 			}
 
-			public void setItems3(List<Item> items3) {
-				this.items3 = items3;
+			public void setItems1(List<Item> items1) {
+				this.items1 = items1;
 			}
 
 			public static class Item {

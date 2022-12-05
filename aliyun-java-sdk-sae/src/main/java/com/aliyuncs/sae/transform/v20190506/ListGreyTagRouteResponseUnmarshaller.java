@@ -20,10 +20,8 @@ import java.util.List;
 import com.aliyuncs.sae.model.v20190506.ListGreyTagRouteResponse;
 import com.aliyuncs.sae.model.v20190506.ListGreyTagRouteResponse.Data;
 import com.aliyuncs.sae.model.v20190506.ListGreyTagRouteResponse.Data.ResultItem;
-import com.aliyuncs.sae.model.v20190506.ListGreyTagRouteResponse.Data.ResultItem.AlbRule;
-import com.aliyuncs.sae.model.v20190506.ListGreyTagRouteResponse.Data.ResultItem.AlbRule.Item2;
 import com.aliyuncs.sae.model.v20190506.ListGreyTagRouteResponse.Data.ResultItem.DubboRule;
-import com.aliyuncs.sae.model.v20190506.ListGreyTagRouteResponse.Data.ResultItem.DubboRule.Item4;
+import com.aliyuncs.sae.model.v20190506.ListGreyTagRouteResponse.Data.ResultItem.DubboRule.Item2;
 import com.aliyuncs.sae.model.v20190506.ListGreyTagRouteResponse.Data.ResultItem.ScRule;
 import com.aliyuncs.sae.model.v20190506.ListGreyTagRouteResponse.Data.ResultItem.ScRule.Item;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -79,32 +77,6 @@ public class ListGreyTagRouteResponseUnmarshaller {
 			}
 			resultItem.setScRules(scRules);
 
-			List<AlbRule> albRules = new ArrayList<AlbRule>();
-			for (int j = 0; j < _ctx.lengthValue("ListGreyTagRouteResponse.Data.Result["+ i +"].AlbRules.Length"); j++) {
-				AlbRule albRule = new AlbRule();
-				albRule.setServiceId(_ctx.stringValue("ListGreyTagRouteResponse.Data.Result["+ i +"].AlbRules["+ j +"].serviceId"));
-				albRule.setIngressId(_ctx.stringValue("ListGreyTagRouteResponse.Data.Result["+ i +"].AlbRules["+ j +"].ingressId"));
-				albRule.setCondition(_ctx.stringValue("ListGreyTagRouteResponse.Data.Result["+ i +"].AlbRules["+ j +"].condition"));
-
-				List<Item2> items1 = new ArrayList<Item2>();
-				for (int k = 0; k < _ctx.lengthValue("ListGreyTagRouteResponse.Data.Result["+ i +"].AlbRules["+ j +"].items.Length"); k++) {
-					Item2 item2 = new Item2();
-					item2.setType(_ctx.stringValue("ListGreyTagRouteResponse.Data.Result["+ i +"].AlbRules["+ j +"].items["+ k +"].type"));
-					item2.setName(_ctx.stringValue("ListGreyTagRouteResponse.Data.Result["+ i +"].AlbRules["+ j +"].items["+ k +"].name"));
-					item2.setOperator(_ctx.stringValue("ListGreyTagRouteResponse.Data.Result["+ i +"].AlbRules["+ j +"].items["+ k +"].operator"));
-					item2.setValue(_ctx.stringValue("ListGreyTagRouteResponse.Data.Result["+ i +"].AlbRules["+ j +"].items["+ k +"].value"));
-					item2.setCond(_ctx.stringValue("ListGreyTagRouteResponse.Data.Result["+ i +"].AlbRules["+ j +"].items["+ k +"].cond"));
-					item2.setIndex(_ctx.integerValue("ListGreyTagRouteResponse.Data.Result["+ i +"].AlbRules["+ j +"].items["+ k +"].index"));
-					item2.setExpr(_ctx.stringValue("ListGreyTagRouteResponse.Data.Result["+ i +"].AlbRules["+ j +"].items["+ k +"].expr"));
-
-					items1.add(item2);
-				}
-				albRule.setItems1(items1);
-
-				albRules.add(albRule);
-			}
-			resultItem.setAlbRules(albRules);
-
 			List<DubboRule> dubboRules = new ArrayList<DubboRule>();
 			for (int j = 0; j < _ctx.lengthValue("ListGreyTagRouteResponse.Data.Result["+ i +"].DubboRules.Length"); j++) {
 				DubboRule dubboRule = new DubboRule();
@@ -114,20 +86,20 @@ public class ListGreyTagRouteResponseUnmarshaller {
 				dubboRule.setMethodName(_ctx.stringValue("ListGreyTagRouteResponse.Data.Result["+ i +"].DubboRules["+ j +"].methodName"));
 				dubboRule.setCondition(_ctx.stringValue("ListGreyTagRouteResponse.Data.Result["+ i +"].DubboRules["+ j +"].condition"));
 
-				List<Item4> items3 = new ArrayList<Item4>();
+				List<Item2> items1 = new ArrayList<Item2>();
 				for (int k = 0; k < _ctx.lengthValue("ListGreyTagRouteResponse.Data.Result["+ i +"].DubboRules["+ j +"].items.Length"); k++) {
-					Item4 item4 = new Item4();
-					item4.setIndex(_ctx.integerValue("ListGreyTagRouteResponse.Data.Result["+ i +"].DubboRules["+ j +"].items["+ k +"].index"));
-					item4.setExpr(_ctx.stringValue("ListGreyTagRouteResponse.Data.Result["+ i +"].DubboRules["+ j +"].items["+ k +"].expr"));
-					item4.setOperator(_ctx.stringValue("ListGreyTagRouteResponse.Data.Result["+ i +"].DubboRules["+ j +"].items["+ k +"].operator"));
-					item4.setValue(_ctx.stringValue("ListGreyTagRouteResponse.Data.Result["+ i +"].DubboRules["+ j +"].items["+ k +"].value"));
-					item4.setCond(_ctx.stringValue("ListGreyTagRouteResponse.Data.Result["+ i +"].DubboRules["+ j +"].items["+ k +"].cond"));
-					item4.setType(_ctx.stringValue("ListGreyTagRouteResponse.Data.Result["+ i +"].DubboRules["+ j +"].items["+ k +"].type"));
-					item4.setName(_ctx.stringValue("ListGreyTagRouteResponse.Data.Result["+ i +"].DubboRules["+ j +"].items["+ k +"].name"));
+					Item2 item2 = new Item2();
+					item2.setIndex(_ctx.integerValue("ListGreyTagRouteResponse.Data.Result["+ i +"].DubboRules["+ j +"].items["+ k +"].index"));
+					item2.setExpr(_ctx.stringValue("ListGreyTagRouteResponse.Data.Result["+ i +"].DubboRules["+ j +"].items["+ k +"].expr"));
+					item2.setOperator(_ctx.stringValue("ListGreyTagRouteResponse.Data.Result["+ i +"].DubboRules["+ j +"].items["+ k +"].operator"));
+					item2.setValue(_ctx.stringValue("ListGreyTagRouteResponse.Data.Result["+ i +"].DubboRules["+ j +"].items["+ k +"].value"));
+					item2.setCond(_ctx.stringValue("ListGreyTagRouteResponse.Data.Result["+ i +"].DubboRules["+ j +"].items["+ k +"].cond"));
+					item2.setType(_ctx.stringValue("ListGreyTagRouteResponse.Data.Result["+ i +"].DubboRules["+ j +"].items["+ k +"].type"));
+					item2.setName(_ctx.stringValue("ListGreyTagRouteResponse.Data.Result["+ i +"].DubboRules["+ j +"].items["+ k +"].name"));
 
-					items3.add(item4);
+					items1.add(item2);
 				}
-				dubboRule.setItems3(items3);
+				dubboRule.setItems1(items1);
 
 				dubboRules.add(dubboRule);
 			}

@@ -45,6 +45,7 @@ public class ListIngressesResponseUnmarshaller {
 			ingress.setListenerPort(_ctx.stringValue("ListIngressesResponse.Data.IngressList["+ i +"].ListenerPort"));
 			ingress.setSlbType(_ctx.stringValue("ListIngressesResponse.Data.IngressList["+ i +"].SlbType"));
 			ingress.setCertId(_ctx.stringValue("ListIngressesResponse.Data.IngressList["+ i +"].CertId"));
+			ingress.setCertIds(_ctx.stringValue("ListIngressesResponse.Data.IngressList["+ i +"].CertIds"));
 			ingress.setName(_ctx.stringValue("ListIngressesResponse.Data.IngressList["+ i +"].Name"));
 			ingress.setId(_ctx.longValue("ListIngressesResponse.Data.IngressList["+ i +"].Id"));
 			ingress.setLoadBalanceType(_ctx.stringValue("ListIngressesResponse.Data.IngressList["+ i +"].LoadBalanceType"));

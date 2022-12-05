@@ -27,8 +27,6 @@ public class DescribeJobRequest extends RoaAcsRequest<DescribeJobResponse> {
 
 	private String jobId;
 
-	private String versionId;
-
 	private String appId;
 	public DescribeJobRequest() {
 		super("sae", "2019-05-06", "DescribeJob", "serverless");
@@ -48,17 +46,6 @@ public class DescribeJobRequest extends RoaAcsRequest<DescribeJobResponse> {
 		this.jobId = jobId;
 		if(jobId != null){
 			putQueryParameter("JobId", jobId);
-		}
-	}
-
-	public String getVersionId() {
-		return this.versionId;
-	}
-
-	public void setVersionId(String versionId) {
-		this.versionId = versionId;
-		if(versionId != null){
-			putQueryParameter("VersionId", versionId);
 		}
 	}
 

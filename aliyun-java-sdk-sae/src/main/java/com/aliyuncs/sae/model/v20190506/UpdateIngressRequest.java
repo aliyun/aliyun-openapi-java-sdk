@@ -37,6 +37,8 @@ public class UpdateIngressRequest extends RoaAcsRequest<UpdateIngressResponse> {
 
 	private String certId;
 
+	private String certIds;
+
 	private String listenerProtocol;
 
 	private String defaultRule;
@@ -113,6 +115,17 @@ public class UpdateIngressRequest extends RoaAcsRequest<UpdateIngressResponse> {
 		this.certId = certId;
 		if(certId != null){
 			putQueryParameter("CertId", certId);
+		}
+	}
+
+	public String getCertIds() {
+		return this.certIds;
+	}
+
+	public void setCertIds(String certIds) {
+		this.certIds = certIds;
+		if(certIds != null){
+			putQueryParameter("CertIds", certIds);
 		}
 	}
 

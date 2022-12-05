@@ -121,6 +121,8 @@ public class ListIngressesResponse extends AcsResponse {
 
 			private String certId;
 
+			private String certIds;
+
 			private String name;
 
 			private Long id;
@@ -175,6 +177,14 @@ public class ListIngressesResponse extends AcsResponse {
 
 			public void setCertId(String certId) {
 				this.certId = certId;
+			}
+
+			public String getCertIds() {
+				return this.certIds;
+			}
+
+			public void setCertIds(String certIds) {
+				this.certIds = certIds;
 			}
 
 			public String getName() {
