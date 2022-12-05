@@ -1,3 +1,6 @@
+2022-12-05 Version: 3.9.26
+- Add list live message interface.
+
 2022-12-04 Version: 3.9.25
 - Support live interaction and message.
 

@@ -32,6 +32,8 @@ public class ListMessageGroupRequest extends RpcAcsRequest<ListMessageGroupRespo
 	private String userId;
 
 	private Integer pageSize;
+
+	private String appId;
 	public ListMessageGroupRequest() {
 		super("live", "2016-11-01", "ListMessageGroup", "live");
 		setMethod(MethodType.POST);
@@ -82,6 +84,17 @@ public class ListMessageGroupRequest extends RpcAcsRequest<ListMessageGroupRespo
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putBodyParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getAppId() {
+		return this.appId;
+	}
+
+	public void setAppId(String appId) {
+		this.appId = appId;
+		if(appId != null){
+			putBodyParameter("AppId", appId);
 		}
 	}
 

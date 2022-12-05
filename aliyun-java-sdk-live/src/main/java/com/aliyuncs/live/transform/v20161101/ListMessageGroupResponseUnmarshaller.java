@@ -38,6 +38,7 @@ public class ListMessageGroupResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("ListMessageGroupResponse.Result.GroupList.Length"); i++) {
 			GroupListItem groupListItem = new GroupListItem();
 			groupListItem.setGroupId(_ctx.stringValue("ListMessageGroupResponse.Result.GroupList["+ i +"].GroupId"));
+			groupListItem.setAppId(_ctx.stringValue("ListMessageGroupResponse.Result.GroupList["+ i +"].AppId"));
 			groupListItem.setCreateTime(_ctx.longValue("ListMessageGroupResponse.Result.GroupList["+ i +"].CreateTime"));
 			groupListItem.setStatus(_ctx.integerValue("ListMessageGroupResponse.Result.GroupList["+ i +"].Status"));
 			groupListItem.setCreatorId(_ctx.stringValue("ListMessageGroupResponse.Result.GroupList["+ i +"].CreatorId"));

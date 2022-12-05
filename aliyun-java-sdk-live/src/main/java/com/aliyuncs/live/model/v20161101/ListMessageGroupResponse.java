@@ -82,6 +82,8 @@ public class ListMessageGroupResponse extends AcsResponse {
 
 			private String groupId;
 
+			private String appId;
+
 			private Long createTime;
 
 			private Integer status;
@@ -96,6 +98,14 @@ public class ListMessageGroupResponse extends AcsResponse {
 
 			public void setGroupId(String groupId) {
 				this.groupId = groupId;
+			}
+
+			public String getAppId() {
+				return this.appId;
+			}
+
+			public void setAppId(String appId) {
+				this.appId = appId;
 			}
 
 			public Long getCreateTime() {
