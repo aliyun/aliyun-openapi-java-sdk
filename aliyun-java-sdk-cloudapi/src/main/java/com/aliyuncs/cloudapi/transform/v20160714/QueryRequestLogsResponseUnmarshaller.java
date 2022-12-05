@@ -52,7 +52,7 @@ public class QueryRequestLogsResponseUnmarshaller {
 			requestLog.setResponseSize(_ctx.stringValue("QueryRequestLogsResponse.RequestLogs["+ i +"].ResponseSize"));
 			requestLog.setRegion(_ctx.stringValue("QueryRequestLogsResponse.RequestLogs["+ i +"].Region"));
 			requestLog.setStatusCode(_ctx.stringValue("QueryRequestLogsResponse.RequestLogs["+ i +"].StatusCode"));
-			requestLog.setClientIp(_ctx.integerValue("QueryRequestLogsResponse.RequestLogs["+ i +"].ClientIp"));
+			requestLog.setClientIp(_ctx.stringValue("QueryRequestLogsResponse.RequestLogs["+ i +"].ClientIp"));
 			requestLog.setServiceLatency(_ctx.stringValue("QueryRequestLogsResponse.RequestLogs["+ i +"].ServiceLatency"));
 			requestLog.setRequestTime(_ctx.stringValue("QueryRequestLogsResponse.RequestLogs["+ i +"].RequestTime"));
 			requestLog.setException(_ctx.stringValue("QueryRequestLogsResponse.RequestLogs["+ i +"].Exception"));

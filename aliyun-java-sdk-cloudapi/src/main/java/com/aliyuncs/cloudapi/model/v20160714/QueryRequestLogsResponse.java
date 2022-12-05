@@ -89,7 +89,7 @@ public class QueryRequestLogsResponse extends AcsResponse {
 
 		private String statusCode;
 
-		private Integer clientIp;
+		private String clientIp;
 
 		private String serviceLatency;
 
@@ -285,11 +285,11 @@ public class QueryRequestLogsResponse extends AcsResponse {
 			this.statusCode = statusCode;
 		}
 
-		public Integer getClientIp() {
+		public String getClientIp() {
 			return this.clientIp;
 		}
 
-		public void setClientIp(Integer clientIp) {
+		public void setClientIp(String clientIp) {
 			this.clientIp = clientIp;
 		}
 
