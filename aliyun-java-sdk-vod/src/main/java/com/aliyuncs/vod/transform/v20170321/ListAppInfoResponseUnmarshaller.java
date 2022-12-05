@@ -40,6 +40,7 @@ public class ListAppInfoResponseUnmarshaller {
 			appInfo.setDescription(_ctx.stringValue("ListAppInfoResponse.AppInfoList["+ i +"].Description"));
 			appInfo.setAppId(_ctx.stringValue("ListAppInfoResponse.AppInfoList["+ i +"].AppId"));
 			appInfo.setModificationTime(_ctx.stringValue("ListAppInfoResponse.AppInfoList["+ i +"].ModificationTime"));
+			appInfo.setRegionId(_ctx.stringValue("ListAppInfoResponse.AppInfoList["+ i +"].RegionId"));
 
 			List<TagsItem> tags = new ArrayList<TagsItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListAppInfoResponse.AppInfoList["+ i +"].Tags.Length"); j++) {

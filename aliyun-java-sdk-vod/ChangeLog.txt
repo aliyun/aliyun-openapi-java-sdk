@@ -1,3 +1,7 @@
+2022-12-05 Version: 2.16.13
+- Add API DescribeVodDomainSrcBpsData.
+- Add API DescribeVodDomainSrcTrafficData.
+
 2022-10-28 Version: 2.16.12
 - Modify UpdateAppInfo api.
 - Modify GetAppInfos api.

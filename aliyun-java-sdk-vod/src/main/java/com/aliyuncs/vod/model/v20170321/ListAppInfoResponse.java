@@ -71,6 +71,8 @@ public class ListAppInfoResponse extends AcsResponse {
 
 		private String modificationTime;
 
+		private String regionId;
+
 		private List<TagsItem> tags;
 
 		public String getType() {
@@ -127,6 +129,14 @@ public class ListAppInfoResponse extends AcsResponse {
 
 		public void setModificationTime(String modificationTime) {
 			this.modificationTime = modificationTime;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
 		public List<TagsItem> getTags() {
