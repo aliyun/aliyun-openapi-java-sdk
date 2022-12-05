@@ -485,6 +485,8 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 		private String sccMode;
 
+		private String serverWeight;
+
 		public String getCreationTime() {
 			return this.creationTime;
 		}
@@ -595,6 +597,14 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 		public void setSccMode(String sccMode) {
 			this.sccMode = sccMode;
+		}
+
+		public String getServerWeight() {
+			return this.serverWeight;
+		}
+
+		public void setServerWeight(String serverWeight) {
+			this.serverWeight = serverWeight;
 		}
 	}
 

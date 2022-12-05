@@ -32,6 +32,8 @@ public class DescribeDBClustersRequest extends RpcAcsRequest<DescribeDBClustersR
 
 	private String dBClusterStatus;
 
+	private String connectionString;
+
 	private Integer recentExpirationInterval;
 
 	private Integer pageNumber;
@@ -55,6 +57,8 @@ public class DescribeDBClustersRequest extends RpcAcsRequest<DescribeDBClustersR
 	private Long ownerId;
 
 	private String dBType;
+
+	private String dBVersion;
 
 	private String payType;
 
@@ -98,6 +102,17 @@ public class DescribeDBClustersRequest extends RpcAcsRequest<DescribeDBClustersR
 		this.dBClusterStatus = dBClusterStatus;
 		if(dBClusterStatus != null){
 			putQueryParameter("DBClusterStatus", dBClusterStatus);
+		}
+	}
+
+	public String getConnectionString() {
+		return this.connectionString;
+	}
+
+	public void setConnectionString(String connectionString) {
+		this.connectionString = connectionString;
+		if(connectionString != null){
+			putQueryParameter("ConnectionString", connectionString);
 		}
 	}
 
@@ -233,6 +248,17 @@ public class DescribeDBClustersRequest extends RpcAcsRequest<DescribeDBClustersR
 		this.dBType = dBType;
 		if(dBType != null){
 			putQueryParameter("DBType", dBType);
+		}
+	}
+
+	public String getDBVersion() {
+		return this.dBVersion;
+	}
+
+	public void setDBVersion(String dBVersion) {
+		this.dBVersion = dBVersion;
+		if(dBVersion != null){
+			putQueryParameter("DBVersion", dBVersion);
 		}
 	}
 

@@ -22,18 +22,16 @@ import com.aliyuncs.polardb.Endpoint;
  * @author auto create
  * @version 
  */
-public class SwitchOverGlobalDatabaseNetworkRequest extends RpcAcsRequest<SwitchOverGlobalDatabaseNetworkResponse> {
+public class ModifyGlobalSecurityIPGroupRelationRequest extends RpcAcsRequest<ModifyGlobalSecurityIPGroupRelationResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private Boolean forced;
-
 	private String resourceGroupId;
 
-	private String securityToken;
+	private String globalSecurityGroupId;
 
-	private String gDNId;
+	private String securityToken;
 
 	private String resourceOwnerAccount;
 
@@ -42,8 +40,8 @@ public class SwitchOverGlobalDatabaseNetworkRequest extends RpcAcsRequest<Switch
 	private String ownerAccount;
 
 	private Long ownerId;
-	public SwitchOverGlobalDatabaseNetworkRequest() {
-		super("polardb", "2017-08-01", "SwitchOverGlobalDatabaseNetwork", "polardb");
+	public ModifyGlobalSecurityIPGroupRelationRequest() {
+		super("polardb", "2017-08-01", "ModifyGlobalSecurityIPGroupRelation", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -62,17 +60,6 @@ public class SwitchOverGlobalDatabaseNetworkRequest extends RpcAcsRequest<Switch
 		}
 	}
 
-	public Boolean getForced() {
-		return this.forced;
-	}
-
-	public void setForced(Boolean forced) {
-		this.forced = forced;
-		if(forced != null){
-			putQueryParameter("Forced", forced.toString());
-		}
-	}
-
 	public String getResourceGroupId() {
 		return this.resourceGroupId;
 	}
@@ -84,6 +71,17 @@ public class SwitchOverGlobalDatabaseNetworkRequest extends RpcAcsRequest<Switch
 		}
 	}
 
+	public String getGlobalSecurityGroupId() {
+		return this.globalSecurityGroupId;
+	}
+
+	public void setGlobalSecurityGroupId(String globalSecurityGroupId) {
+		this.globalSecurityGroupId = globalSecurityGroupId;
+		if(globalSecurityGroupId != null){
+			putQueryParameter("GlobalSecurityGroupId", globalSecurityGroupId);
+		}
+	}
+
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
@@ -92,17 +90,6 @@ public class SwitchOverGlobalDatabaseNetworkRequest extends RpcAcsRequest<Switch
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getGDNId() {
-		return this.gDNId;
-	}
-
-	public void setGDNId(String gDNId) {
-		this.gDNId = gDNId;
-		if(gDNId != null){
-			putQueryParameter("GDNId", gDNId);
 		}
 	}
 
@@ -151,8 +138,8 @@ public class SwitchOverGlobalDatabaseNetworkRequest extends RpcAcsRequest<Switch
 	}
 
 	@Override
-	public Class<SwitchOverGlobalDatabaseNetworkResponse> getResponseClass() {
-		return SwitchOverGlobalDatabaseNetworkResponse.class;
+	public Class<ModifyGlobalSecurityIPGroupRelationResponse> getResponseClass() {
+		return ModifyGlobalSecurityIPGroupRelationResponse.class;
 	}
 
 }

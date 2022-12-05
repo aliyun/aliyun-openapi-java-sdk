@@ -86,6 +86,7 @@ public class DescribeDBClusterAttributeResponseUnmarshaller {
 			dBNode.setAddedCpuCores(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].AddedCpuCores"));
 			dBNode.setMasterId(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].MasterId"));
 			dBNode.setSccMode(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].SccMode"));
+			dBNode.setServerWeight(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].ServerWeight"));
 
 			dBNodes.add(dBNode);
 		}

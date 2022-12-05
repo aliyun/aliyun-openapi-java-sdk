@@ -47,6 +47,8 @@ public class DescribeDBClusterMigrationResponse extends AcsResponse {
 
 	private String dtsInstanceId;
 
+	private String srcDbType;
+
 	private List<DBClusterEndpoint> dBClusterEndpointList;
 
 	private List<RdsEndpoint> rdsEndpointList;
@@ -137,6 +139,14 @@ public class DescribeDBClusterMigrationResponse extends AcsResponse {
 
 	public void setDtsInstanceId(String dtsInstanceId) {
 		this.dtsInstanceId = dtsInstanceId;
+	}
+
+	public String getSrcDbType() {
+		return this.srcDbType;
+	}
+
+	public void setSrcDbType(String srcDbType) {
+		this.srcDbType = srcDbType;
 	}
 
 	public List<DBClusterEndpoint> getDBClusterEndpointList() {

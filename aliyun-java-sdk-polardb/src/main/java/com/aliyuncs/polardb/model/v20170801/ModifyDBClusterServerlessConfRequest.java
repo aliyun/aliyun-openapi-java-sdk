@@ -22,18 +22,18 @@ import com.aliyuncs.polardb.Endpoint;
  * @author auto create
  * @version 
  */
-public class SwitchOverGlobalDatabaseNetworkRequest extends RpcAcsRequest<SwitchOverGlobalDatabaseNetworkResponse> {
+public class ModifyDBClusterServerlessConfRequest extends RpcAcsRequest<ModifyDBClusterServerlessConfResponse> {
 	   
+
+	private String scaleRoNumMax;
 
 	private Long resourceOwnerId;
 
-	private Boolean forced;
+	private String scaleMax;
 
-	private String resourceGroupId;
+	private String secondsUntilAutoPause;
 
-	private String securityToken;
-
-	private String gDNId;
+	private String scaleMin;
 
 	private String resourceOwnerAccount;
 
@@ -42,13 +42,28 @@ public class SwitchOverGlobalDatabaseNetworkRequest extends RpcAcsRequest<Switch
 	private String ownerAccount;
 
 	private Long ownerId;
-	public SwitchOverGlobalDatabaseNetworkRequest() {
-		super("polardb", "2017-08-01", "SwitchOverGlobalDatabaseNetwork", "polardb");
+
+	private String scaleRoNumMin;
+
+	private String allowShutDown;
+	public ModifyDBClusterServerlessConfRequest() {
+		super("polardb", "2017-08-01", "ModifyDBClusterServerlessConf", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getScaleRoNumMax() {
+		return this.scaleRoNumMax;
+	}
+
+	public void setScaleRoNumMax(String scaleRoNumMax) {
+		this.scaleRoNumMax = scaleRoNumMax;
+		if(scaleRoNumMax != null){
+			putQueryParameter("ScaleRoNumMax", scaleRoNumMax);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -62,47 +77,36 @@ public class SwitchOverGlobalDatabaseNetworkRequest extends RpcAcsRequest<Switch
 		}
 	}
 
-	public Boolean getForced() {
-		return this.forced;
+	public String getScaleMax() {
+		return this.scaleMax;
 	}
 
-	public void setForced(Boolean forced) {
-		this.forced = forced;
-		if(forced != null){
-			putQueryParameter("Forced", forced.toString());
+	public void setScaleMax(String scaleMax) {
+		this.scaleMax = scaleMax;
+		if(scaleMax != null){
+			putQueryParameter("ScaleMax", scaleMax);
 		}
 	}
 
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
+	public String getSecondsUntilAutoPause() {
+		return this.secondsUntilAutoPause;
 	}
 
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
+	public void setSecondsUntilAutoPause(String secondsUntilAutoPause) {
+		this.secondsUntilAutoPause = secondsUntilAutoPause;
+		if(secondsUntilAutoPause != null){
+			putQueryParameter("SecondsUntilAutoPause", secondsUntilAutoPause);
 		}
 	}
 
-	public String getSecurityToken() {
-		return this.securityToken;
+	public String getScaleMin() {
+		return this.scaleMin;
 	}
 
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getGDNId() {
-		return this.gDNId;
-	}
-
-	public void setGDNId(String gDNId) {
-		this.gDNId = gDNId;
-		if(gDNId != null){
-			putQueryParameter("GDNId", gDNId);
+	public void setScaleMin(String scaleMin) {
+		this.scaleMin = scaleMin;
+		if(scaleMin != null){
+			putQueryParameter("ScaleMin", scaleMin);
 		}
 	}
 
@@ -150,9 +154,31 @@ public class SwitchOverGlobalDatabaseNetworkRequest extends RpcAcsRequest<Switch
 		}
 	}
 
+	public String getScaleRoNumMin() {
+		return this.scaleRoNumMin;
+	}
+
+	public void setScaleRoNumMin(String scaleRoNumMin) {
+		this.scaleRoNumMin = scaleRoNumMin;
+		if(scaleRoNumMin != null){
+			putQueryParameter("ScaleRoNumMin", scaleRoNumMin);
+		}
+	}
+
+	public String getAllowShutDown() {
+		return this.allowShutDown;
+	}
+
+	public void setAllowShutDown(String allowShutDown) {
+		this.allowShutDown = allowShutDown;
+		if(allowShutDown != null){
+			putQueryParameter("AllowShutDown", allowShutDown);
+		}
+	}
+
 	@Override
-	public Class<SwitchOverGlobalDatabaseNetworkResponse> getResponseClass() {
-		return SwitchOverGlobalDatabaseNetworkResponse.class;
+	public Class<ModifyDBClusterServerlessConfResponse> getResponseClass() {
+		return ModifyDBClusterServerlessConfResponse.class;
 	}
 
 }

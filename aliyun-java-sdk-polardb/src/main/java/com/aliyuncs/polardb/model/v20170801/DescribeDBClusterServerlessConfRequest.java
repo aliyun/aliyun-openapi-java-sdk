@@ -22,18 +22,10 @@ import com.aliyuncs.polardb.Endpoint;
  * @author auto create
  * @version 
  */
-public class SwitchOverGlobalDatabaseNetworkRequest extends RpcAcsRequest<SwitchOverGlobalDatabaseNetworkResponse> {
+public class DescribeDBClusterServerlessConfRequest extends RpcAcsRequest<DescribeDBClusterServerlessConfResponse> {
 	   
 
 	private Long resourceOwnerId;
-
-	private Boolean forced;
-
-	private String resourceGroupId;
-
-	private String securityToken;
-
-	private String gDNId;
 
 	private String resourceOwnerAccount;
 
@@ -42,8 +34,8 @@ public class SwitchOverGlobalDatabaseNetworkRequest extends RpcAcsRequest<Switch
 	private String ownerAccount;
 
 	private Long ownerId;
-	public SwitchOverGlobalDatabaseNetworkRequest() {
-		super("polardb", "2017-08-01", "SwitchOverGlobalDatabaseNetwork", "polardb");
+	public DescribeDBClusterServerlessConfRequest() {
+		super("polardb", "2017-08-01", "DescribeDBClusterServerlessConf", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -59,50 +51,6 @@ public class SwitchOverGlobalDatabaseNetworkRequest extends RpcAcsRequest<Switch
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public Boolean getForced() {
-		return this.forced;
-	}
-
-	public void setForced(Boolean forced) {
-		this.forced = forced;
-		if(forced != null){
-			putQueryParameter("Forced", forced.toString());
-		}
-	}
-
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getGDNId() {
-		return this.gDNId;
-	}
-
-	public void setGDNId(String gDNId) {
-		this.gDNId = gDNId;
-		if(gDNId != null){
-			putQueryParameter("GDNId", gDNId);
 		}
 	}
 
@@ -151,8 +99,8 @@ public class SwitchOverGlobalDatabaseNetworkRequest extends RpcAcsRequest<Switch
 	}
 
 	@Override
-	public Class<SwitchOverGlobalDatabaseNetworkResponse> getResponseClass() {
-		return SwitchOverGlobalDatabaseNetworkResponse.class;
+	public Class<DescribeDBClusterServerlessConfResponse> getResponseClass() {
+		return DescribeDBClusterServerlessConfResponse.class;
 	}
 
 }
