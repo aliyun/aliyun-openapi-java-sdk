@@ -16,8 +16,6 @@ package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
-import com.google.gson.Gson;
-import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.live.Endpoint;
 
@@ -34,7 +32,6 @@ public class SendMessageToGroupUsersRequest extends RpcAcsRequest<SendMessageToG
 
 	private String operatorUserId;
 
-	@SerializedName("receiverIdList")
 	private List<String> receiverIdList;
 
 	private String groupId;
@@ -89,7 +86,14 @@ public class SendMessageToGroupUsersRequest extends RpcAcsRequest<SendMessageToG
 	public void setReceiverIdList(List<String> receiverIdList) {
 		this.receiverIdList = receiverIdList;	
 		if (receiverIdList != null) {
-			putBodyParameter("ReceiverIdList" , new Gson().toJson(receiverIdList));
+			String receiverIdListArrVal = "";
+			for(int depth1 = 0; depth1 < receiverIdList.size(); depth1++) {
+				receiverIdListArrVal += receiverIdList.get(depth1) + ",";
+			}
+			if (receiverIdListArrVal.length() > 0) {
+				receiverIdListArrVal = receiverIdListArrVal.substring(0, receiverIdListArrVal.length() - 1);
+			}
+			putBodyParameter("ReceiverIdList" , receiverIdListArrVal);
 		}	
 	}
 
