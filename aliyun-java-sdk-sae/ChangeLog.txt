@@ -1,3 +1,6 @@
+2022-12-05 Version: 1.22.5
+- Add support for secret.
+
 2022-12-05 Version: 1.22.4
 - Add support for secret.
 

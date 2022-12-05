@@ -96,13 +96,13 @@ public class UpdateSecretResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String secretId;
+		private Long secretId;
 
-		public String getSecretId() {
+		public Long getSecretId() {
 			return this.secretId;
 		}
 
-		public void setSecretId(String secretId) {
+		public void setSecretId(Long secretId) {
 			this.secretId = secretId;
 		}
 	}

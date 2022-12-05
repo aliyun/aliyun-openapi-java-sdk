@@ -31,7 +31,7 @@ public class UpdateSecretResponseUnmarshaller {
 		updateSecretResponse.setSuccess(_ctx.booleanValue("UpdateSecretResponse.Success"));
 
 		Data data = new Data();
-		data.setSecretId(_ctx.stringValue("UpdateSecretResponse.Data.SecretId"));
+		data.setSecretId(_ctx.longValue("UpdateSecretResponse.Data.SecretId"));
 		updateSecretResponse.setData(data);
 	 
 	 	return updateSecretResponse;
