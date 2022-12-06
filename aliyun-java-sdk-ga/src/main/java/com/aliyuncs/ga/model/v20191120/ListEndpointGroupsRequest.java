@@ -15,6 +15,7 @@
 package com.aliyuncs.ga.model.v20191120;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ga.Endpoint;
 
@@ -36,6 +37,8 @@ public class ListEndpointGroupsRequest extends RpcAcsRequest<ListEndpointGroupsR
 	private Integer pageSize;
 
 	private String acceleratorId;
+
+	private List<Tag> tags;
 
 	private String endpointGroupId;
 	public ListEndpointGroupsRequest() {
@@ -113,6 +116,20 @@ public class ListEndpointGroupsRequest extends RpcAcsRequest<ListEndpointGroupsR
 		}
 	}
 
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+			}
+		}	
+	}
+
 	public String getEndpointGroupId() {
 		return this.endpointGroupId;
 	}
@@ -121,6 +138,29 @@ public class ListEndpointGroupsRequest extends RpcAcsRequest<ListEndpointGroupsR
 		this.endpointGroupId = endpointGroupId;
 		if(endpointGroupId != null){
 			putQueryParameter("EndpointGroupId", endpointGroupId);
+		}
+	}
+
+	public static class Tag {
+
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
 		}
 	}
 

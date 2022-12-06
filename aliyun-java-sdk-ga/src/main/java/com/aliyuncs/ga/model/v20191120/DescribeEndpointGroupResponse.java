@@ -75,6 +75,8 @@ public class DescribeEndpointGroupResponse extends AcsResponse {
 
 	private List<PortOverridesItem> portOverrides;
 
+	private List<TagsItem> tags;
+
 	private List<String> endpointGroupIpList;
 
 	private List<String> endpointGroupUnconfirmedIpList;
@@ -281,6 +283,14 @@ public class DescribeEndpointGroupResponse extends AcsResponse {
 		this.portOverrides = portOverrides;
 	}
 
+	public List<TagsItem> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<TagsItem> tags) {
+		this.tags = tags;
+	}
+
 	public List<String> getEndpointGroupIpList() {
 		return this.endpointGroupIpList;
 	}
@@ -398,6 +408,29 @@ public class DescribeEndpointGroupResponse extends AcsResponse {
 
 		public void setEndpointPort(Integer endpointPort) {
 			this.endpointPort = endpointPort;
+		}
+	}
+
+	public static class TagsItem {
+
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
 		}
 	}
 

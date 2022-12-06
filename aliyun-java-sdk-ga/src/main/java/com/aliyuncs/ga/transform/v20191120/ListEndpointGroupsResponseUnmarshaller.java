@@ -21,6 +21,7 @@ import com.aliyuncs.ga.model.v20191120.ListEndpointGroupsResponse;
 import com.aliyuncs.ga.model.v20191120.ListEndpointGroupsResponse.EndpointGroupsItem;
 import com.aliyuncs.ga.model.v20191120.ListEndpointGroupsResponse.EndpointGroupsItem.EndpointConfigurationsItem;
 import com.aliyuncs.ga.model.v20191120.ListEndpointGroupsResponse.EndpointGroupsItem.PortOverridesItem;
+import com.aliyuncs.ga.model.v20191120.ListEndpointGroupsResponse.EndpointGroupsItem.TagsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -96,6 +97,16 @@ public class ListEndpointGroupsResponseUnmarshaller {
 				portOverrides.add(portOverridesItem);
 			}
 			endpointGroupsItem.setPortOverrides(portOverrides);
+
+			List<TagsItem> tags = new ArrayList<TagsItem>();
+			for (int j = 0; j < _ctx.lengthValue("ListEndpointGroupsResponse.EndpointGroups["+ i +"].Tags.Length"); j++) {
+				TagsItem tagsItem = new TagsItem();
+				tagsItem.setKey(_ctx.stringValue("ListEndpointGroupsResponse.EndpointGroups["+ i +"].Tags["+ j +"].Key"));
+				tagsItem.setValue(_ctx.stringValue("ListEndpointGroupsResponse.EndpointGroups["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tagsItem);
+			}
+			endpointGroupsItem.setTags(tags);
 
 			endpointGroups.add(endpointGroupsItem);
 		}

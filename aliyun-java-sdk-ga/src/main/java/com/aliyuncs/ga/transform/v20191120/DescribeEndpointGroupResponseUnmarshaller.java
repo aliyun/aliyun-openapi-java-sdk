@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.ga.model.v20191120.DescribeEndpointGroupResponse;
 import com.aliyuncs.ga.model.v20191120.DescribeEndpointGroupResponse.EndpointConfigurationsItem;
 import com.aliyuncs.ga.model.v20191120.DescribeEndpointGroupResponse.PortOverridesItem;
+import com.aliyuncs.ga.model.v20191120.DescribeEndpointGroupResponse.TagsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -93,6 +94,16 @@ public class DescribeEndpointGroupResponseUnmarshaller {
 			portOverrides.add(portOverridesItem);
 		}
 		describeEndpointGroupResponse.setPortOverrides(portOverrides);
+
+		List<TagsItem> tags = new ArrayList<TagsItem>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeEndpointGroupResponse.Tags.Length"); i++) {
+			TagsItem tagsItem = new TagsItem();
+			tagsItem.setKey(_ctx.stringValue("DescribeEndpointGroupResponse.Tags["+ i +"].Key"));
+			tagsItem.setValue(_ctx.stringValue("DescribeEndpointGroupResponse.Tags["+ i +"].Value"));
+
+			tags.add(tagsItem);
+		}
+		describeEndpointGroupResponse.setTags(tags);
 	 
 	 	return describeEndpointGroupResponse;
 	}
