@@ -1,3 +1,6 @@
+2022-12-06 Version: 1.1.6
+- Basic endpoint support NLB.
+
 2022-11-15 Version: 1.1.5
 - Update ReplaceBandwidthPackage Api.
 
