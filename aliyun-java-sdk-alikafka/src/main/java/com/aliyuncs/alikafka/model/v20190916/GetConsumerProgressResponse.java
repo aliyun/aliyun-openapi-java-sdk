@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetConsumerProgressResponse extends AcsResponse {
 
-	private Boolean success;
-
-	private String requestId;
-
 	private Integer code;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private ConsumerProgress consumerProgress;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class GetConsumerProgressResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public ConsumerProgress getConsumerProgress() {
 		return this.consumerProgress;
 	}
@@ -77,19 +77,11 @@ public class GetConsumerProgressResponse extends AcsResponse {
 
 	public static class ConsumerProgress {
 
-		private Long totalDiff;
-
 		private Long lastTimestamp;
 
+		private Long totalDiff;
+
 		private List<TopicListItem> topicList;
-
-		public Long getTotalDiff() {
-			return this.totalDiff;
-		}
-
-		public void setTotalDiff(Long totalDiff) {
-			this.totalDiff = totalDiff;
-		}
 
 		public Long getLastTimestamp() {
 			return this.lastTimestamp;
@@ -97,6 +89,14 @@ public class GetConsumerProgressResponse extends AcsResponse {
 
 		public void setLastTimestamp(Long lastTimestamp) {
 			this.lastTimestamp = lastTimestamp;
+		}
+
+		public Long getTotalDiff() {
+			return this.totalDiff;
+		}
+
+		public void setTotalDiff(Long totalDiff) {
+			this.totalDiff = totalDiff;
 		}
 
 		public List<TopicListItem> getTopicList() {
@@ -109,21 +109,13 @@ public class GetConsumerProgressResponse extends AcsResponse {
 
 		public static class TopicListItem {
 
-			private String topic;
-
 			private Long totalDiff;
 
 			private Long lastTimestamp;
 
+			private String topic;
+
 			private List<OffsetListItem> offsetList;
-
-			public String getTopic() {
-				return this.topic;
-			}
-
-			public void setTopic(String topic) {
-				this.topic = topic;
-			}
 
 			public Long getTotalDiff() {
 				return this.totalDiff;
@@ -141,6 +133,14 @@ public class GetConsumerProgressResponse extends AcsResponse {
 				this.lastTimestamp = lastTimestamp;
 			}
 
+			public String getTopic() {
+				return this.topic;
+			}
+
+			public void setTopic(String topic) {
+				this.topic = topic;
+			}
+
 			public List<OffsetListItem> getOffsetList() {
 				return this.offsetList;
 			}
@@ -151,13 +151,21 @@ public class GetConsumerProgressResponse extends AcsResponse {
 
 			public static class OffsetListItem {
 
+				private Integer partition;
+
 				private Long brokerOffset;
 
 				private Long consumerOffset;
 
 				private Long lastTimestamp;
 
-				private Integer partition;
+				public Integer getPartition() {
+					return this.partition;
+				}
+
+				public void setPartition(Integer partition) {
+					this.partition = partition;
+				}
 
 				public Long getBrokerOffset() {
 					return this.brokerOffset;
@@ -181,14 +189,6 @@ public class GetConsumerProgressResponse extends AcsResponse {
 
 				public void setLastTimestamp(Long lastTimestamp) {
 					this.lastTimestamp = lastTimestamp;
-				}
-
-				public Integer getPartition() {
-					return this.partition;
-				}
-
-				public void setPartition(Integer partition) {
-					this.partition = partition;
 				}
 			}
 		}

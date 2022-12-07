@@ -22,17 +22,30 @@ import com.aliyuncs.alikafka.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeNodeStatusRequest extends RpcAcsRequest<DescribeNodeStatusResponse> {
+public class UpgradeInstanceVersionRequest extends RpcAcsRequest<UpgradeInstanceVersionResponse> {
 	   
 
+	private String targetVersion;
+
 	private String instanceId;
-	public DescribeNodeStatusRequest() {
-		super("alikafka", "2019-09-16", "DescribeNodeStatus", "alikafka");
+	public UpgradeInstanceVersionRequest() {
+		super("alikafka", "2019-09-16", "UpgradeInstanceVersion", "alikafka");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getTargetVersion() {
+		return this.targetVersion;
+	}
+
+	public void setTargetVersion(String targetVersion) {
+		this.targetVersion = targetVersion;
+		if(targetVersion != null){
+			putQueryParameter("TargetVersion", targetVersion);
+		}
 	}
 
 	public String getInstanceId() {
@@ -47,8 +60,8 @@ public class DescribeNodeStatusRequest extends RpcAcsRequest<DescribeNodeStatusR
 	}
 
 	@Override
-	public Class<DescribeNodeStatusResponse> getResponseClass() {
-		return DescribeNodeStatusResponse.class;
+	public Class<UpgradeInstanceVersionResponse> getResponseClass() {
+		return UpgradeInstanceVersionResponse.class;
 	}
 
 }

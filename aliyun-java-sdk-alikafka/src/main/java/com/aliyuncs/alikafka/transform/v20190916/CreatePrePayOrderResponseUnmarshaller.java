@@ -23,9 +23,9 @@ public class CreatePrePayOrderResponseUnmarshaller {
 	public static CreatePrePayOrderResponse unmarshall(CreatePrePayOrderResponse createPrePayOrderResponse, UnmarshallerContext _ctx) {
 		
 		createPrePayOrderResponse.setRequestId(_ctx.stringValue("CreatePrePayOrderResponse.RequestId"));
-		createPrePayOrderResponse.setSuccess(_ctx.booleanValue("CreatePrePayOrderResponse.Success"));
 		createPrePayOrderResponse.setCode(_ctx.integerValue("CreatePrePayOrderResponse.Code"));
 		createPrePayOrderResponse.setMessage(_ctx.stringValue("CreatePrePayOrderResponse.Message"));
+		createPrePayOrderResponse.setSuccess(_ctx.booleanValue("CreatePrePayOrderResponse.Success"));
 		createPrePayOrderResponse.setOrderId(_ctx.stringValue("CreatePrePayOrderResponse.OrderId"));
 	 
 	 	return createPrePayOrderResponse;

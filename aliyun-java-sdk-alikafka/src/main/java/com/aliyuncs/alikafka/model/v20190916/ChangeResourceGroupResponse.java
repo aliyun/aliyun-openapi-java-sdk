@@ -15,14 +15,14 @@
 package com.aliyuncs.alikafka.model.v20190916;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.alikafka.transform.v20190916.CreateSaslUserResponseUnmarshaller;
+import com.aliyuncs.alikafka.transform.v20190916.ChangeResourceGroupResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateSaslUserResponse extends AcsResponse {
+public class ChangeResourceGroupResponse extends AcsResponse {
 
 	private Integer code;
 
@@ -30,7 +30,9 @@ public class CreateSaslUserResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private Long success;
+
+	private String newResourceGroupId;
 
 	public Integer getCode() {
 		return this.code;
@@ -56,16 +58,24 @@ public class CreateSaslUserResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
+	public Long getSuccess() {
 		return this.success;
 	}
 
-	public void setSuccess(Boolean success) {
+	public void setSuccess(Long success) {
 		this.success = success;
 	}
 
+	public String getNewResourceGroupId() {
+		return this.newResourceGroupId;
+	}
+
+	public void setNewResourceGroupId(String newResourceGroupId) {
+		this.newResourceGroupId = newResourceGroupId;
+	}
+
 	@Override
-	public CreateSaslUserResponse getInstance(UnmarshallerContext context) {
-		return	CreateSaslUserResponseUnmarshaller.unmarshall(this, context);
+	public ChangeResourceGroupResponse getInstance(UnmarshallerContext context) {
+		return	ChangeResourceGroupResponseUnmarshaller.unmarshall(this, context);
 	}
 }

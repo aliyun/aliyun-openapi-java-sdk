@@ -30,6 +30,8 @@ public class GetTopicListRequest extends RpcAcsRequest<GetTopicListResponse> {
 	private String instanceId;
 
 	private String pageSize;
+
+	private String topic;
 	public GetTopicListRequest() {
 		super("alikafka", "2019-09-16", "GetTopicList", "alikafka");
 		setMethod(MethodType.POST);
@@ -69,6 +71,17 @@ public class GetTopicListRequest extends RpcAcsRequest<GetTopicListResponse> {
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize);
+		}
+	}
+
+	public String getTopic() {
+		return this.topic;
+	}
+
+	public void setTopic(String topic) {
+		this.topic = topic;
+		if(topic != null){
+			putQueryParameter("Topic", topic);
 		}
 	}
 

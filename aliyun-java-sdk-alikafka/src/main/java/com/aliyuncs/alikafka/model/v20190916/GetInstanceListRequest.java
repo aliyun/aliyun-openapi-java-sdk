@@ -28,6 +28,8 @@ public class GetInstanceListRequest extends RpcAcsRequest<GetInstanceListRespons
 
 	private String orderId;
 
+	private String resourceGroupId;
+
 	private List<String> instanceIds;
 
 	private List<Tag> tags;
@@ -48,6 +50,17 @@ public class GetInstanceListRequest extends RpcAcsRequest<GetInstanceListRespons
 		this.orderId = orderId;
 		if(orderId != null){
 			putQueryParameter("OrderId", orderId);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

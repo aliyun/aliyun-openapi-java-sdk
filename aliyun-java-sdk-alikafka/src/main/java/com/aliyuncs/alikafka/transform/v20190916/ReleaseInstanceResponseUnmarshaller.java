@@ -23,9 +23,9 @@ public class ReleaseInstanceResponseUnmarshaller {
 	public static ReleaseInstanceResponse unmarshall(ReleaseInstanceResponse releaseInstanceResponse, UnmarshallerContext _ctx) {
 		
 		releaseInstanceResponse.setRequestId(_ctx.stringValue("ReleaseInstanceResponse.RequestId"));
-		releaseInstanceResponse.setSuccess(_ctx.booleanValue("ReleaseInstanceResponse.Success"));
 		releaseInstanceResponse.setCode(_ctx.integerValue("ReleaseInstanceResponse.Code"));
 		releaseInstanceResponse.setMessage(_ctx.stringValue("ReleaseInstanceResponse.Message"));
+		releaseInstanceResponse.setSuccess(_ctx.booleanValue("ReleaseInstanceResponse.Success"));
 	 
 	 	return releaseInstanceResponse;
 	}

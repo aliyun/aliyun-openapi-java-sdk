@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAclsResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private Integer code;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private List<KafkaAclVO> kafkaAclList;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public Integer getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class DescribeAclsResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public List<KafkaAclVO> getKafkaAclList() {
 		return this.kafkaAclList;
 	}
@@ -77,25 +77,17 @@ public class DescribeAclsResponse extends AcsResponse {
 
 	public static class KafkaAclVO {
 
-		private String username;
-
 		private String aclResourceType;
-
-		private String aclResourceName;
-
-		private String aclResourcePatternType;
 
 		private String host;
 
 		private String aclOperationType;
 
-		public String getUsername() {
-			return this.username;
-		}
+		private String aclResourceName;
 
-		public void setUsername(String username) {
-			this.username = username;
-		}
+		private String aclResourcePatternType;
+
+		private String username;
 
 		public String getAclResourceType() {
 			return this.aclResourceType;
@@ -103,6 +95,22 @@ public class DescribeAclsResponse extends AcsResponse {
 
 		public void setAclResourceType(String aclResourceType) {
 			this.aclResourceType = aclResourceType;
+		}
+
+		public String getHost() {
+			return this.host;
+		}
+
+		public void setHost(String host) {
+			this.host = host;
+		}
+
+		public String getAclOperationType() {
+			return this.aclOperationType;
+		}
+
+		public void setAclOperationType(String aclOperationType) {
+			this.aclOperationType = aclOperationType;
 		}
 
 		public String getAclResourceName() {
@@ -121,20 +129,12 @@ public class DescribeAclsResponse extends AcsResponse {
 			this.aclResourcePatternType = aclResourcePatternType;
 		}
 
-		public String getHost() {
-			return this.host;
+		public String getUsername() {
+			return this.username;
 		}
 
-		public void setHost(String host) {
-			this.host = host;
-		}
-
-		public String getAclOperationType() {
-			return this.aclOperationType;
-		}
-
-		public void setAclOperationType(String aclOperationType) {
-			this.aclOperationType = aclOperationType;
+		public void setUsername(String username) {
+			this.username = username;
 		}
 	}
 

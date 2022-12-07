@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSaslUsersResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private Integer code;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private List<SaslUserVO> saslUserList;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public Integer getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class DescribeSaslUsersResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public List<SaslUserVO> getSaslUserList() {
 		return this.saslUserList;
 	}
@@ -77,18 +77,18 @@ public class DescribeSaslUsersResponse extends AcsResponse {
 
 	public static class SaslUserVO {
 
-		private String username;
+		private String type;
 
 		private String password;
 
-		private String type;
+		private String username;
 
-		public String getUsername() {
-			return this.username;
+		public String getType() {
+			return this.type;
 		}
 
-		public void setUsername(String username) {
-			this.username = username;
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public String getPassword() {
@@ -99,12 +99,12 @@ public class DescribeSaslUsersResponse extends AcsResponse {
 			this.password = password;
 		}
 
-		public String getType() {
-			return this.type;
+		public String getUsername() {
+			return this.username;
 		}
 
-		public void setType(String type) {
-			this.type = type;
+		public void setUsername(String username) {
+			this.username = username;
 		}
 	}
 

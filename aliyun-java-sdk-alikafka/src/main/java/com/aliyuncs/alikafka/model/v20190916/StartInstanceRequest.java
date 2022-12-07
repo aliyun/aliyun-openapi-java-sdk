@@ -25,6 +25,8 @@ import com.aliyuncs.alikafka.Endpoint;
 public class StartInstanceRequest extends RpcAcsRequest<StartInstanceResponse> {
 	   
 
+	private String selectedZones;
+
 	private Boolean isEipInner;
 
 	private String securityGroup;
@@ -35,7 +37,13 @@ public class StartInstanceRequest extends RpcAcsRequest<StartInstanceResponse> {
 
 	private String password;
 
+	private String notifier;
+
+	private Boolean isForceSelectedZones;
+
 	private String vSwitchId;
+
+	private String userPhoneNum;
 
 	private String instanceId;
 
@@ -43,7 +51,13 @@ public class StartInstanceRequest extends RpcAcsRequest<StartInstanceResponse> {
 
 	private String name;
 
+	private String serviceVersion;
+
 	private String zoneId;
+
+	private String kMSKeyId;
+
+	private String config;
 
 	private String username;
 	public StartInstanceRequest() {
@@ -53,6 +67,17 @@ public class StartInstanceRequest extends RpcAcsRequest<StartInstanceResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getSelectedZones() {
+		return this.selectedZones;
+	}
+
+	public void setSelectedZones(String selectedZones) {
+		this.selectedZones = selectedZones;
+		if(selectedZones != null){
+			putQueryParameter("SelectedZones", selectedZones);
+		}
 	}
 
 	public Boolean getIsEipInner() {
@@ -110,6 +135,28 @@ public class StartInstanceRequest extends RpcAcsRequest<StartInstanceResponse> {
 		}
 	}
 
+	public String getNotifier() {
+		return this.notifier;
+	}
+
+	public void setNotifier(String notifier) {
+		this.notifier = notifier;
+		if(notifier != null){
+			putQueryParameter("Notifier", notifier);
+		}
+	}
+
+	public Boolean getIsForceSelectedZones() {
+		return this.isForceSelectedZones;
+	}
+
+	public void setIsForceSelectedZones(Boolean isForceSelectedZones) {
+		this.isForceSelectedZones = isForceSelectedZones;
+		if(isForceSelectedZones != null){
+			putQueryParameter("IsForceSelectedZones", isForceSelectedZones.toString());
+		}
+	}
+
 	public String getVSwitchId() {
 		return this.vSwitchId;
 	}
@@ -118,6 +165,17 @@ public class StartInstanceRequest extends RpcAcsRequest<StartInstanceResponse> {
 		this.vSwitchId = vSwitchId;
 		if(vSwitchId != null){
 			putQueryParameter("VSwitchId", vSwitchId);
+		}
+	}
+
+	public String getUserPhoneNum() {
+		return this.userPhoneNum;
+	}
+
+	public void setUserPhoneNum(String userPhoneNum) {
+		this.userPhoneNum = userPhoneNum;
+		if(userPhoneNum != null){
+			putQueryParameter("UserPhoneNum", userPhoneNum);
 		}
 	}
 
@@ -154,6 +212,17 @@ public class StartInstanceRequest extends RpcAcsRequest<StartInstanceResponse> {
 		}
 	}
 
+	public String getServiceVersion() {
+		return this.serviceVersion;
+	}
+
+	public void setServiceVersion(String serviceVersion) {
+		this.serviceVersion = serviceVersion;
+		if(serviceVersion != null){
+			putQueryParameter("ServiceVersion", serviceVersion);
+		}
+	}
+
 	public String getZoneId() {
 		return this.zoneId;
 	}
@@ -162,6 +231,28 @@ public class StartInstanceRequest extends RpcAcsRequest<StartInstanceResponse> {
 		this.zoneId = zoneId;
 		if(zoneId != null){
 			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public String getKMSKeyId() {
+		return this.kMSKeyId;
+	}
+
+	public void setKMSKeyId(String kMSKeyId) {
+		this.kMSKeyId = kMSKeyId;
+		if(kMSKeyId != null){
+			putQueryParameter("KMSKeyId", kMSKeyId);
+		}
+	}
+
+	public String getConfig() {
+		return this.config;
+	}
+
+	public void setConfig(String config) {
+		this.config = config;
+		if(config != null){
+			putQueryParameter("Config", config);
 		}
 	}
 

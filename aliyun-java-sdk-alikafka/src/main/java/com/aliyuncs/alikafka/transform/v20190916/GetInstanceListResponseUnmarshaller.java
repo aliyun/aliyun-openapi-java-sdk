@@ -20,7 +20,7 @@ import java.util.List;
 import com.aliyuncs.alikafka.model.v20190916.GetInstanceListResponse;
 import com.aliyuncs.alikafka.model.v20190916.GetInstanceListResponse.InstanceVO;
 import com.aliyuncs.alikafka.model.v20190916.GetInstanceListResponse.InstanceVO.TagVO;
-import com.aliyuncs.alikafka.model.v20190916.GetInstanceListResponse.InstanceVO.UpgradeServiceDetailInfoVO;
+import com.aliyuncs.alikafka.model.v20190916.GetInstanceListResponse.InstanceVO.UpgradeServiceDetailInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -29,42 +29,47 @@ public class GetInstanceListResponseUnmarshaller {
 	public static GetInstanceListResponse unmarshall(GetInstanceListResponse getInstanceListResponse, UnmarshallerContext _ctx) {
 		
 		getInstanceListResponse.setRequestId(_ctx.stringValue("GetInstanceListResponse.RequestId"));
-		getInstanceListResponse.setSuccess(_ctx.booleanValue("GetInstanceListResponse.Success"));
 		getInstanceListResponse.setCode(_ctx.integerValue("GetInstanceListResponse.Code"));
 		getInstanceListResponse.setMessage(_ctx.stringValue("GetInstanceListResponse.Message"));
+		getInstanceListResponse.setSuccess(_ctx.booleanValue("GetInstanceListResponse.Success"));
 
 		List<InstanceVO> instanceList = new ArrayList<InstanceVO>();
 		for (int i = 0; i < _ctx.lengthValue("GetInstanceListResponse.InstanceList.Length"); i++) {
 			InstanceVO instanceVO = new InstanceVO();
-			instanceVO.setInstanceId(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].InstanceId"));
-			instanceVO.setRegionId(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].RegionId"));
-			instanceVO.setServiceStatus(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].ServiceStatus"));
 			instanceVO.setVpcId(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].VpcId"));
-			instanceVO.setVSwitchId(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].VSwitchId"));
-			instanceVO.setEndPoint(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].EndPoint"));
-			instanceVO.setCreateTime(_ctx.longValue("GetInstanceListResponse.InstanceList["+ i +"].CreateTime"));
-			instanceVO.setExpiredTime(_ctx.longValue("GetInstanceListResponse.InstanceList["+ i +"].ExpiredTime"));
+			instanceVO.setSpecType(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].SpecType"));
 			instanceVO.setDeployType(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].DeployType"));
-			instanceVO.setSslEndPoint(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].SslEndPoint"));
-			instanceVO.setName(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].Name"));
-			instanceVO.setIoMax(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].IoMax"));
-			instanceVO.setEipMax(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].EipMax"));
-			instanceVO.setDiskType(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].DiskType"));
+			instanceVO.setCreateTime(_ctx.longValue("GetInstanceListResponse.InstanceList["+ i +"].CreateTime"));
 			instanceVO.setDiskSize(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].DiskSize"));
+			instanceVO.setDiskType(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].DiskType"));
+			instanceVO.setSecurityGroup(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].SecurityGroup"));
+			instanceVO.setSslEndPoint(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].SslEndPoint"));
+			instanceVO.setInstanceId(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].InstanceId"));
+			instanceVO.setAllConfig(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].AllConfig"));
+			instanceVO.setServiceStatus(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].ServiceStatus"));
+			instanceVO.setEipMax(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].EipMax"));
+			instanceVO.setRegionId(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].RegionId"));
 			instanceVO.setMsgRetain(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].MsgRetain"));
+			instanceVO.setVSwitchId(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].VSwitchId"));
+			instanceVO.setExpiredTime(_ctx.longValue("GetInstanceListResponse.InstanceList["+ i +"].ExpiredTime"));
 			instanceVO.setTopicNumLimit(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].TopicNumLimit"));
 			instanceVO.setZoneId(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].ZoneId"));
+			instanceVO.setIoMax(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].IoMax"));
 			instanceVO.setPaidType(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].PaidType"));
-			instanceVO.setSpecType(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].SpecType"));
-			instanceVO.setSecurityGroup(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].SecurityGroup"));
+			instanceVO.setName(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].Name"));
+			instanceVO.setEndPoint(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].EndPoint"));
+			instanceVO.setDomainEndpoint(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].DomainEndpoint"));
+			instanceVO.setSslDomainEndpoint(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].SslDomainEndpoint"));
+			instanceVO.setSaslDomainEndpoint(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].SaslDomainEndpoint"));
+			instanceVO.setResourceGroupId(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].ResourceGroupId"));
+			instanceVO.setUsedTopicCount(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].UsedTopicCount"));
+			instanceVO.setUsedGroupCount(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].UsedGroupCount"));
+			instanceVO.setUsedPartitionCount(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].UsedPartitionCount"));
+			instanceVO.setKmsKeyId(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].KmsKeyId"));
+			instanceVO.setStandardZoneId(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].StandardZoneId"));
 
-			List<UpgradeServiceDetailInfoVO> upgradeServiceDetailInfo = new ArrayList<UpgradeServiceDetailInfoVO>();
-			for (int j = 0; j < _ctx.lengthValue("GetInstanceListResponse.InstanceList["+ i +"].UpgradeServiceDetailInfo.Length"); j++) {
-				UpgradeServiceDetailInfoVO upgradeServiceDetailInfoVO = new UpgradeServiceDetailInfoVO();
-				upgradeServiceDetailInfoVO.setCurrent2OpenSourceVersion(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].UpgradeServiceDetailInfo["+ j +"].Current2OpenSourceVersion"));
-
-				upgradeServiceDetailInfo.add(upgradeServiceDetailInfoVO);
-			}
+			UpgradeServiceDetailInfo upgradeServiceDetailInfo = new UpgradeServiceDetailInfo();
+			upgradeServiceDetailInfo.setCurrent2OpenSourceVersion(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].UpgradeServiceDetailInfo.Current2OpenSourceVersion"));
 			instanceVO.setUpgradeServiceDetailInfo(upgradeServiceDetailInfo);
 
 			List<TagVO> tags = new ArrayList<TagVO>();

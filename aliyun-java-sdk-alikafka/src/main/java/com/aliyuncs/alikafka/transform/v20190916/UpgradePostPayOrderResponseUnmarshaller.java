@@ -23,9 +23,9 @@ public class UpgradePostPayOrderResponseUnmarshaller {
 	public static UpgradePostPayOrderResponse unmarshall(UpgradePostPayOrderResponse upgradePostPayOrderResponse, UnmarshallerContext _ctx) {
 		
 		upgradePostPayOrderResponse.setRequestId(_ctx.stringValue("UpgradePostPayOrderResponse.RequestId"));
-		upgradePostPayOrderResponse.setSuccess(_ctx.booleanValue("UpgradePostPayOrderResponse.Success"));
 		upgradePostPayOrderResponse.setCode(_ctx.integerValue("UpgradePostPayOrderResponse.Code"));
 		upgradePostPayOrderResponse.setMessage(_ctx.stringValue("UpgradePostPayOrderResponse.Message"));
+		upgradePostPayOrderResponse.setSuccess(_ctx.booleanValue("UpgradePostPayOrderResponse.Success"));
 	 
 	 	return upgradePostPayOrderResponse;
 	}

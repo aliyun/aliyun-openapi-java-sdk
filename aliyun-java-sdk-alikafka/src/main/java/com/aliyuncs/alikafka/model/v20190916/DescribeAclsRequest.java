@@ -25,6 +25,8 @@ import com.aliyuncs.alikafka.Endpoint;
 public class DescribeAclsRequest extends RpcAcsRequest<DescribeAclsResponse> {
 	   
 
+	private String aclResourcePatternType;
+
 	private String aclResourceType;
 
 	private String aclResourceName;
@@ -39,6 +41,17 @@ public class DescribeAclsRequest extends RpcAcsRequest<DescribeAclsResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getAclResourcePatternType() {
+		return this.aclResourcePatternType;
+	}
+
+	public void setAclResourcePatternType(String aclResourcePatternType) {
+		this.aclResourcePatternType = aclResourcePatternType;
+		if(aclResourcePatternType != null){
+			putQueryParameter("AclResourcePatternType", aclResourcePatternType);
+		}
 	}
 
 	public String getAclResourceType() {

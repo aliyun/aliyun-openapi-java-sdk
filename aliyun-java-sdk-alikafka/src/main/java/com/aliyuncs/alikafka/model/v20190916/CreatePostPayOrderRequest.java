@@ -15,6 +15,7 @@
 package com.aliyuncs.alikafka.model.v20190916;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.alikafka.Endpoint;
 
@@ -25,19 +26,25 @@ import com.aliyuncs.alikafka.Endpoint;
 public class CreatePostPayOrderRequest extends RpcAcsRequest<CreatePostPayOrderResponse> {
 	   
 
-	private Integer diskSize;
-
 	private Integer ioMax;
+
+	private Integer eipMax;
+
+	private String specType;
+
+	private String resourceGroupId;
+
+	private List<Tag> tags;
+
+	private Integer partitionNum;
+
+	private Integer diskSize;
 
 	private String ioMaxSpec;
 
 	private String diskType;
 
 	private Integer topicQuota;
-
-	private Integer eipMax;
-
-	private String specType;
 
 	private Integer deployType;
 	public CreatePostPayOrderRequest() {
@@ -49,17 +56,6 @@ public class CreatePostPayOrderRequest extends RpcAcsRequest<CreatePostPayOrderR
 		} catch (Exception e) {}
 	}
 
-	public Integer getDiskSize() {
-		return this.diskSize;
-	}
-
-	public void setDiskSize(Integer diskSize) {
-		this.diskSize = diskSize;
-		if(diskSize != null){
-			putQueryParameter("DiskSize", diskSize.toString());
-		}
-	}
-
 	public Integer getIoMax() {
 		return this.ioMax;
 	}
@@ -68,6 +64,75 @@ public class CreatePostPayOrderRequest extends RpcAcsRequest<CreatePostPayOrderR
 		this.ioMax = ioMax;
 		if(ioMax != null){
 			putQueryParameter("IoMax", ioMax.toString());
+		}
+	}
+
+	public Integer getEipMax() {
+		return this.eipMax;
+	}
+
+	public void setEipMax(Integer eipMax) {
+		this.eipMax = eipMax;
+		if(eipMax != null){
+			putQueryParameter("EipMax", eipMax.toString());
+		}
+	}
+
+	public String getSpecType() {
+		return this.specType;
+	}
+
+	public void setSpecType(String specType) {
+		this.specType = specType;
+		if(specType != null){
+			putQueryParameter("SpecType", specType);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
+	public Integer getPartitionNum() {
+		return this.partitionNum;
+	}
+
+	public void setPartitionNum(Integer partitionNum) {
+		this.partitionNum = partitionNum;
+		if(partitionNum != null){
+			putQueryParameter("PartitionNum", partitionNum.toString());
+		}
+	}
+
+	public Integer getDiskSize() {
+		return this.diskSize;
+	}
+
+	public void setDiskSize(Integer diskSize) {
+		this.diskSize = diskSize;
+		if(diskSize != null){
+			putQueryParameter("DiskSize", diskSize.toString());
 		}
 	}
 
@@ -104,28 +169,6 @@ public class CreatePostPayOrderRequest extends RpcAcsRequest<CreatePostPayOrderR
 		}
 	}
 
-	public Integer getEipMax() {
-		return this.eipMax;
-	}
-
-	public void setEipMax(Integer eipMax) {
-		this.eipMax = eipMax;
-		if(eipMax != null){
-			putQueryParameter("EipMax", eipMax.toString());
-		}
-	}
-
-	public String getSpecType() {
-		return this.specType;
-	}
-
-	public void setSpecType(String specType) {
-		this.specType = specType;
-		if(specType != null){
-			putQueryParameter("SpecType", specType);
-		}
-	}
-
 	public Integer getDeployType() {
 		return this.deployType;
 	}
@@ -134,6 +177,29 @@ public class CreatePostPayOrderRequest extends RpcAcsRequest<CreatePostPayOrderR
 		this.deployType = deployType;
 		if(deployType != null){
 			putQueryParameter("DeployType", deployType.toString());
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

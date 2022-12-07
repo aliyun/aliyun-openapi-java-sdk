@@ -22,30 +22,17 @@ import com.aliyuncs.alikafka.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetConsumerListRequest extends RpcAcsRequest<GetConsumerListResponse> {
+public class GetQuotaTipRequest extends RpcAcsRequest<GetQuotaTipResponse> {
 	   
 
-	private String consumerId;
-
 	private String instanceId;
-	public GetConsumerListRequest() {
-		super("alikafka", "2019-09-16", "GetConsumerList", "alikafka");
+	public GetQuotaTipRequest() {
+		super("alikafka", "2019-09-16", "GetQuotaTip", "alikafka");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getConsumerId() {
-		return this.consumerId;
-	}
-
-	public void setConsumerId(String consumerId) {
-		this.consumerId = consumerId;
-		if(consumerId != null){
-			putQueryParameter("ConsumerId", consumerId);
-		}
 	}
 
 	public String getInstanceId() {
@@ -60,8 +47,8 @@ public class GetConsumerListRequest extends RpcAcsRequest<GetConsumerListRespons
 	}
 
 	@Override
-	public Class<GetConsumerListResponse> getResponseClass() {
-		return GetConsumerListResponse.class;
+	public Class<GetQuotaTipResponse> getResponseClass() {
+		return GetQuotaTipResponse.class;
 	}
 
 }

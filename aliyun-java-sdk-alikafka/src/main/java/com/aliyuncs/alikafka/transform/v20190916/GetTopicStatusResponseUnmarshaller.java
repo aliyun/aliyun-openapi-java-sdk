@@ -28,9 +28,9 @@ public class GetTopicStatusResponseUnmarshaller {
 	public static GetTopicStatusResponse unmarshall(GetTopicStatusResponse getTopicStatusResponse, UnmarshallerContext _ctx) {
 		
 		getTopicStatusResponse.setRequestId(_ctx.stringValue("GetTopicStatusResponse.RequestId"));
-		getTopicStatusResponse.setSuccess(_ctx.booleanValue("GetTopicStatusResponse.Success"));
 		getTopicStatusResponse.setCode(_ctx.integerValue("GetTopicStatusResponse.Code"));
 		getTopicStatusResponse.setMessage(_ctx.stringValue("GetTopicStatusResponse.Message"));
+		getTopicStatusResponse.setSuccess(_ctx.booleanValue("GetTopicStatusResponse.Success"));
 
 		TopicStatus topicStatus = new TopicStatus();
 		topicStatus.setTotalCount(_ctx.longValue("GetTopicStatusResponse.TopicStatus.TotalCount"));
@@ -39,11 +39,11 @@ public class GetTopicStatusResponseUnmarshaller {
 		List<OffsetTableItem> offsetTable = new ArrayList<OffsetTableItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetTopicStatusResponse.TopicStatus.OffsetTable.Length"); i++) {
 			OffsetTableItem offsetTableItem = new OffsetTableItem();
-			offsetTableItem.setMinOffset(_ctx.longValue("GetTopicStatusResponse.TopicStatus.OffsetTable["+ i +"].MinOffset"));
-			offsetTableItem.setMaxOffset(_ctx.longValue("GetTopicStatusResponse.TopicStatus.OffsetTable["+ i +"].MaxOffset"));
-			offsetTableItem.setLastUpdateTimestamp(_ctx.longValue("GetTopicStatusResponse.TopicStatus.OffsetTable["+ i +"].LastUpdateTimestamp"));
-			offsetTableItem.setTopic(_ctx.stringValue("GetTopicStatusResponse.TopicStatus.OffsetTable["+ i +"].Topic"));
 			offsetTableItem.setPartition(_ctx.integerValue("GetTopicStatusResponse.TopicStatus.OffsetTable["+ i +"].Partition"));
+			offsetTableItem.setMinOffset(_ctx.longValue("GetTopicStatusResponse.TopicStatus.OffsetTable["+ i +"].MinOffset"));
+			offsetTableItem.setLastUpdateTimestamp(_ctx.longValue("GetTopicStatusResponse.TopicStatus.OffsetTable["+ i +"].LastUpdateTimestamp"));
+			offsetTableItem.setMaxOffset(_ctx.longValue("GetTopicStatusResponse.TopicStatus.OffsetTable["+ i +"].MaxOffset"));
+			offsetTableItem.setTopic(_ctx.stringValue("GetTopicStatusResponse.TopicStatus.OffsetTable["+ i +"].Topic"));
 
 			offsetTable.add(offsetTableItem);
 		}

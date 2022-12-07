@@ -25,11 +25,11 @@ import com.aliyuncs.alikafka.Endpoint;
 public class ModifyPartitionNumRequest extends RpcAcsRequest<ModifyPartitionNumResponse> {
 	   
 
+	private Integer addPartitionNum;
+
 	private String instanceId;
 
 	private String topic;
-
-	private Integer addPartitionNum;
 	public ModifyPartitionNumRequest() {
 		super("alikafka", "2019-09-16", "ModifyPartitionNum", "alikafka");
 		setMethod(MethodType.POST);
@@ -37,6 +37,17 @@ public class ModifyPartitionNumRequest extends RpcAcsRequest<ModifyPartitionNumR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getAddPartitionNum() {
+		return this.addPartitionNum;
+	}
+
+	public void setAddPartitionNum(Integer addPartitionNum) {
+		this.addPartitionNum = addPartitionNum;
+		if(addPartitionNum != null){
+			putQueryParameter("AddPartitionNum", addPartitionNum.toString());
+		}
 	}
 
 	public String getInstanceId() {
@@ -58,17 +69,6 @@ public class ModifyPartitionNumRequest extends RpcAcsRequest<ModifyPartitionNumR
 		this.topic = topic;
 		if(topic != null){
 			putQueryParameter("Topic", topic);
-		}
-	}
-
-	public Integer getAddPartitionNum() {
-		return this.addPartitionNum;
-	}
-
-	public void setAddPartitionNum(Integer addPartitionNum) {
-		this.addPartitionNum = addPartitionNum;
-		if(addPartitionNum != null){
-			putQueryParameter("AddPartitionNum", addPartitionNum.toString());
 		}
 	}
 

@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetInstanceListResponse extends AcsResponse {
 
-	private Boolean success;
-
-	private String requestId;
-
 	private Integer code;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private List<InstanceVO> instanceList;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class GetInstanceListResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public List<InstanceVO> getInstanceList() {
 		return this.instanceList;
 	}
@@ -77,75 +77,71 @@ public class GetInstanceListResponse extends AcsResponse {
 
 	public static class InstanceVO {
 
-		private String instanceId;
-
-		private String regionId;
-
-		private Integer serviceStatus;
-
 		private String vpcId;
 
-		private String vSwitchId;
-
-		private String endPoint;
-
-		private Long createTime;
-
-		private Long expiredTime;
+		private String specType;
 
 		private Integer deployType;
 
-		private String sslEndPoint;
-
-		private String name;
-
-		private Integer ioMax;
-
-		private Integer eipMax;
-
-		private Integer diskType;
+		private Long createTime;
 
 		private Integer diskSize;
 
+		private Integer diskType;
+
+		private String securityGroup;
+
+		private String sslEndPoint;
+
+		private String instanceId;
+
+		private String allConfig;
+
+		private Integer serviceStatus;
+
+		private Integer eipMax;
+
+		private String regionId;
+
 		private Integer msgRetain;
+
+		private String vSwitchId;
+
+		private Long expiredTime;
 
 		private Integer topicNumLimit;
 
 		private String zoneId;
 
+		private Integer ioMax;
+
 		private Integer paidType;
 
-		private String specType;
+		private String name;
 
-		private String securityGroup;
+		private String endPoint;
 
-		private List<UpgradeServiceDetailInfoVO> upgradeServiceDetailInfo;
+		private String domainEndpoint;
+
+		private String sslDomainEndpoint;
+
+		private String saslDomainEndpoint;
+
+		private String resourceGroupId;
+
+		private Integer usedTopicCount;
+
+		private Integer usedGroupCount;
+
+		private Integer usedPartitionCount;
+
+		private String kmsKeyId;
+
+		private String standardZoneId;
 
 		private List<TagVO> tags;
 
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public Integer getServiceStatus() {
-			return this.serviceStatus;
-		}
-
-		public void setServiceStatus(Integer serviceStatus) {
-			this.serviceStatus = serviceStatus;
-		}
+		private UpgradeServiceDetailInfo upgradeServiceDetailInfo;
 
 		public String getVpcId() {
 			return this.vpcId;
@@ -155,36 +151,12 @@ public class GetInstanceListResponse extends AcsResponse {
 			this.vpcId = vpcId;
 		}
 
-		public String getVSwitchId() {
-			return this.vSwitchId;
+		public String getSpecType() {
+			return this.specType;
 		}
 
-		public void setVSwitchId(String vSwitchId) {
-			this.vSwitchId = vSwitchId;
-		}
-
-		public String getEndPoint() {
-			return this.endPoint;
-		}
-
-		public void setEndPoint(String endPoint) {
-			this.endPoint = endPoint;
-		}
-
-		public Long getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
-		}
-
-		public Long getExpiredTime() {
-			return this.expiredTime;
-		}
-
-		public void setExpiredTime(Long expiredTime) {
-			this.expiredTime = expiredTime;
+		public void setSpecType(String specType) {
+			this.specType = specType;
 		}
 
 		public Integer getDeployType() {
@@ -195,44 +167,12 @@ public class GetInstanceListResponse extends AcsResponse {
 			this.deployType = deployType;
 		}
 
-		public String getSslEndPoint() {
-			return this.sslEndPoint;
+		public Long getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setSslEndPoint(String sslEndPoint) {
-			this.sslEndPoint = sslEndPoint;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public Integer getIoMax() {
-			return this.ioMax;
-		}
-
-		public void setIoMax(Integer ioMax) {
-			this.ioMax = ioMax;
-		}
-
-		public Integer getEipMax() {
-			return this.eipMax;
-		}
-
-		public void setEipMax(Integer eipMax) {
-			this.eipMax = eipMax;
-		}
-
-		public Integer getDiskType() {
-			return this.diskType;
-		}
-
-		public void setDiskType(Integer diskType) {
-			this.diskType = diskType;
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
 		}
 
 		public Integer getDiskSize() {
@@ -243,12 +183,92 @@ public class GetInstanceListResponse extends AcsResponse {
 			this.diskSize = diskSize;
 		}
 
+		public Integer getDiskType() {
+			return this.diskType;
+		}
+
+		public void setDiskType(Integer diskType) {
+			this.diskType = diskType;
+		}
+
+		public String getSecurityGroup() {
+			return this.securityGroup;
+		}
+
+		public void setSecurityGroup(String securityGroup) {
+			this.securityGroup = securityGroup;
+		}
+
+		public String getSslEndPoint() {
+			return this.sslEndPoint;
+		}
+
+		public void setSslEndPoint(String sslEndPoint) {
+			this.sslEndPoint = sslEndPoint;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getAllConfig() {
+			return this.allConfig;
+		}
+
+		public void setAllConfig(String allConfig) {
+			this.allConfig = allConfig;
+		}
+
+		public Integer getServiceStatus() {
+			return this.serviceStatus;
+		}
+
+		public void setServiceStatus(Integer serviceStatus) {
+			this.serviceStatus = serviceStatus;
+		}
+
+		public Integer getEipMax() {
+			return this.eipMax;
+		}
+
+		public void setEipMax(Integer eipMax) {
+			this.eipMax = eipMax;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
 		public Integer getMsgRetain() {
 			return this.msgRetain;
 		}
 
 		public void setMsgRetain(Integer msgRetain) {
 			this.msgRetain = msgRetain;
+		}
+
+		public String getVSwitchId() {
+			return this.vSwitchId;
+		}
+
+		public void setVSwitchId(String vSwitchId) {
+			this.vSwitchId = vSwitchId;
+		}
+
+		public Long getExpiredTime() {
+			return this.expiredTime;
+		}
+
+		public void setExpiredTime(Long expiredTime) {
+			this.expiredTime = expiredTime;
 		}
 
 		public Integer getTopicNumLimit() {
@@ -267,6 +287,14 @@ public class GetInstanceListResponse extends AcsResponse {
 			this.zoneId = zoneId;
 		}
 
+		public Integer getIoMax() {
+			return this.ioMax;
+		}
+
+		public void setIoMax(Integer ioMax) {
+			this.ioMax = ioMax;
+		}
+
 		public Integer getPaidType() {
 			return this.paidType;
 		}
@@ -275,28 +303,92 @@ public class GetInstanceListResponse extends AcsResponse {
 			this.paidType = paidType;
 		}
 
-		public String getSpecType() {
-			return this.specType;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setSpecType(String specType) {
-			this.specType = specType;
+		public void setName(String name) {
+			this.name = name;
 		}
 
-		public String getSecurityGroup() {
-			return this.securityGroup;
+		public String getEndPoint() {
+			return this.endPoint;
 		}
 
-		public void setSecurityGroup(String securityGroup) {
-			this.securityGroup = securityGroup;
+		public void setEndPoint(String endPoint) {
+			this.endPoint = endPoint;
 		}
 
-		public List<UpgradeServiceDetailInfoVO> getUpgradeServiceDetailInfo() {
-			return this.upgradeServiceDetailInfo;
+		public String getDomainEndpoint() {
+			return this.domainEndpoint;
 		}
 
-		public void setUpgradeServiceDetailInfo(List<UpgradeServiceDetailInfoVO> upgradeServiceDetailInfo) {
-			this.upgradeServiceDetailInfo = upgradeServiceDetailInfo;
+		public void setDomainEndpoint(String domainEndpoint) {
+			this.domainEndpoint = domainEndpoint;
+		}
+
+		public String getSslDomainEndpoint() {
+			return this.sslDomainEndpoint;
+		}
+
+		public void setSslDomainEndpoint(String sslDomainEndpoint) {
+			this.sslDomainEndpoint = sslDomainEndpoint;
+		}
+
+		public String getSaslDomainEndpoint() {
+			return this.saslDomainEndpoint;
+		}
+
+		public void setSaslDomainEndpoint(String saslDomainEndpoint) {
+			this.saslDomainEndpoint = saslDomainEndpoint;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public Integer getUsedTopicCount() {
+			return this.usedTopicCount;
+		}
+
+		public void setUsedTopicCount(Integer usedTopicCount) {
+			this.usedTopicCount = usedTopicCount;
+		}
+
+		public Integer getUsedGroupCount() {
+			return this.usedGroupCount;
+		}
+
+		public void setUsedGroupCount(Integer usedGroupCount) {
+			this.usedGroupCount = usedGroupCount;
+		}
+
+		public Integer getUsedPartitionCount() {
+			return this.usedPartitionCount;
+		}
+
+		public void setUsedPartitionCount(Integer usedPartitionCount) {
+			this.usedPartitionCount = usedPartitionCount;
+		}
+
+		public String getKmsKeyId() {
+			return this.kmsKeyId;
+		}
+
+		public void setKmsKeyId(String kmsKeyId) {
+			this.kmsKeyId = kmsKeyId;
+		}
+
+		public String getStandardZoneId() {
+			return this.standardZoneId;
+		}
+
+		public void setStandardZoneId(String standardZoneId) {
+			this.standardZoneId = standardZoneId;
 		}
 
 		public List<TagVO> getTags() {
@@ -307,17 +399,12 @@ public class GetInstanceListResponse extends AcsResponse {
 			this.tags = tags;
 		}
 
-		public static class UpgradeServiceDetailInfoVO {
+		public UpgradeServiceDetailInfo getUpgradeServiceDetailInfo() {
+			return this.upgradeServiceDetailInfo;
+		}
 
-			private String current2OpenSourceVersion;
-
-			public String getCurrent2OpenSourceVersion() {
-				return this.current2OpenSourceVersion;
-			}
-
-			public void setCurrent2OpenSourceVersion(String current2OpenSourceVersion) {
-				this.current2OpenSourceVersion = current2OpenSourceVersion;
-			}
+		public void setUpgradeServiceDetailInfo(UpgradeServiceDetailInfo upgradeServiceDetailInfo) {
+			this.upgradeServiceDetailInfo = upgradeServiceDetailInfo;
 		}
 
 		public static class TagVO {
@@ -340,6 +427,19 @@ public class GetInstanceListResponse extends AcsResponse {
 
 			public void setValue(String value) {
 				this.value = value;
+			}
+		}
+
+		public static class UpgradeServiceDetailInfo {
+
+			private String current2OpenSourceVersion;
+
+			public String getCurrent2OpenSourceVersion() {
+				return this.current2OpenSourceVersion;
+			}
+
+			public void setCurrent2OpenSourceVersion(String current2OpenSourceVersion) {
+				this.current2OpenSourceVersion = current2OpenSourceVersion;
 			}
 		}
 	}

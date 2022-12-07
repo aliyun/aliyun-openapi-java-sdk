@@ -29,6 +29,8 @@ public class UpgradePrePayOrderRequest extends RpcAcsRequest<UpgradePrePayOrderR
 
 	private Integer ioMax;
 
+	private Boolean eipModel;
+
 	private String ioMaxSpec;
 
 	private Integer topicQuota;
@@ -38,6 +40,8 @@ public class UpgradePrePayOrderRequest extends RpcAcsRequest<UpgradePrePayOrderR
 	private String specType;
 
 	private String instanceId;
+
+	private Integer partitionNum;
 	public UpgradePrePayOrderRequest() {
 		super("alikafka", "2019-09-16", "UpgradePrePayOrder", "alikafka");
 		setMethod(MethodType.POST);
@@ -66,6 +70,17 @@ public class UpgradePrePayOrderRequest extends RpcAcsRequest<UpgradePrePayOrderR
 		this.ioMax = ioMax;
 		if(ioMax != null){
 			putQueryParameter("IoMax", ioMax.toString());
+		}
+	}
+
+	public Boolean getEipModel() {
+		return this.eipModel;
+	}
+
+	public void setEipModel(Boolean eipModel) {
+		this.eipModel = eipModel;
+		if(eipModel != null){
+			putQueryParameter("EipModel", eipModel.toString());
 		}
 	}
 
@@ -121,6 +136,17 @@ public class UpgradePrePayOrderRequest extends RpcAcsRequest<UpgradePrePayOrderR
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public Integer getPartitionNum() {
+		return this.partitionNum;
+	}
+
+	public void setPartitionNum(Integer partitionNum) {
+		this.partitionNum = partitionNum;
+		if(partitionNum != null){
+			putQueryParameter("PartitionNum", partitionNum.toString());
 		}
 	}
 

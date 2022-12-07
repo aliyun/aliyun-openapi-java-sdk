@@ -28,26 +28,26 @@ public class GetTopicListResponseUnmarshaller {
 	public static GetTopicListResponse unmarshall(GetTopicListResponse getTopicListResponse, UnmarshallerContext _ctx) {
 		
 		getTopicListResponse.setRequestId(_ctx.stringValue("GetTopicListResponse.RequestId"));
+		getTopicListResponse.setCurrentPage(_ctx.integerValue("GetTopicListResponse.CurrentPage"));
 		getTopicListResponse.setSuccess(_ctx.booleanValue("GetTopicListResponse.Success"));
 		getTopicListResponse.setCode(_ctx.integerValue("GetTopicListResponse.Code"));
 		getTopicListResponse.setMessage(_ctx.stringValue("GetTopicListResponse.Message"));
-		getTopicListResponse.setTotal(_ctx.integerValue("GetTopicListResponse.Total"));
 		getTopicListResponse.setPageSize(_ctx.integerValue("GetTopicListResponse.PageSize"));
-		getTopicListResponse.setCurrentPage(_ctx.integerValue("GetTopicListResponse.CurrentPage"));
+		getTopicListResponse.setTotal(_ctx.integerValue("GetTopicListResponse.Total"));
 
 		List<TopicVO> topicList = new ArrayList<TopicVO>();
 		for (int i = 0; i < _ctx.lengthValue("GetTopicListResponse.TopicList.Length"); i++) {
 			TopicVO topicVO = new TopicVO();
-			topicVO.setTopic(_ctx.stringValue("GetTopicListResponse.TopicList["+ i +"].Topic"));
-			topicVO.setCreateTime(_ctx.longValue("GetTopicListResponse.TopicList["+ i +"].CreateTime"));
-			topicVO.setRemark(_ctx.stringValue("GetTopicListResponse.TopicList["+ i +"].Remark"));
 			topicVO.setStatus(_ctx.integerValue("GetTopicListResponse.TopicList["+ i +"].Status"));
-			topicVO.setInstanceId(_ctx.stringValue("GetTopicListResponse.TopicList["+ i +"].InstanceId"));
-			topicVO.setRegionId(_ctx.stringValue("GetTopicListResponse.TopicList["+ i +"].RegionId"));
+			topicVO.setPartitionNum(_ctx.integerValue("GetTopicListResponse.TopicList["+ i +"].PartitionNum"));
+			topicVO.setRemark(_ctx.stringValue("GetTopicListResponse.TopicList["+ i +"].Remark"));
+			topicVO.setCreateTime(_ctx.longValue("GetTopicListResponse.TopicList["+ i +"].CreateTime"));
+			topicVO.setTopic(_ctx.stringValue("GetTopicListResponse.TopicList["+ i +"].Topic"));
 			topicVO.setStatusName(_ctx.stringValue("GetTopicListResponse.TopicList["+ i +"].StatusName"));
 			topicVO.setCompactTopic(_ctx.booleanValue("GetTopicListResponse.TopicList["+ i +"].CompactTopic"));
+			topicVO.setInstanceId(_ctx.stringValue("GetTopicListResponse.TopicList["+ i +"].InstanceId"));
 			topicVO.setLocalTopic(_ctx.booleanValue("GetTopicListResponse.TopicList["+ i +"].LocalTopic"));
-			topicVO.setPartitionNum(_ctx.integerValue("GetTopicListResponse.TopicList["+ i +"].PartitionNum"));
+			topicVO.setRegionId(_ctx.stringValue("GetTopicListResponse.TopicList["+ i +"].RegionId"));
 
 			List<TagVO> tags = new ArrayList<TagVO>();
 			for (int j = 0; j < _ctx.lengthValue("GetTopicListResponse.TopicList["+ i +"].Tags.Length"); j++) {

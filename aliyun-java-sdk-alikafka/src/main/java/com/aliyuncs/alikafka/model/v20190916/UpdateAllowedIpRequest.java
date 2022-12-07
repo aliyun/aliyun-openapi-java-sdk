@@ -33,6 +33,8 @@ public class UpdateAllowedIpRequest extends RpcAcsRequest<UpdateAllowedIpRespons
 
 	private String allowedListType;
 
+	private String description;
+
 	private String instanceId;
 	public UpdateAllowedIpRequest() {
 		super("alikafka", "2019-09-16", "UpdateAllowedIp", "alikafka");
@@ -84,6 +86,17 @@ public class UpdateAllowedIpRequest extends RpcAcsRequest<UpdateAllowedIpRespons
 		this.allowedListType = allowedListType;
 		if(allowedListType != null){
 			putQueryParameter("AllowedListType", allowedListType);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
 		}
 	}
 

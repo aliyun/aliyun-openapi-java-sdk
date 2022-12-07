@@ -14,19 +14,22 @@
 
 package com.aliyuncs.alikafka.model.v20190916;
 
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.alikafka.transform.v20190916.CreateSaslUserResponseUnmarshaller;
+import com.aliyuncs.alikafka.transform.v20190916.GetAllInstanceIdListResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateSaslUserResponse extends AcsResponse {
+public class GetAllInstanceIdListResponse extends AcsResponse {
 
 	private Integer code;
 
 	private String message;
+
+	private Map<Object,Object> instanceIds;
 
 	private String requestId;
 
@@ -48,6 +51,14 @@ public class CreateSaslUserResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public Map<Object,Object> getInstanceIds() {
+		return this.instanceIds;
+	}
+
+	public void setInstanceIds(Map<Object,Object> instanceIds) {
+		this.instanceIds = instanceIds;
+	}
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -65,7 +76,7 @@ public class CreateSaslUserResponse extends AcsResponse {
 	}
 
 	@Override
-	public CreateSaslUserResponse getInstance(UnmarshallerContext context) {
-		return	CreateSaslUserResponseUnmarshaller.unmarshall(this, context);
+	public GetAllInstanceIdListResponse getInstance(UnmarshallerContext context) {
+		return	GetAllInstanceIdListResponseUnmarshaller.unmarshall(this, context);
 	}
 }

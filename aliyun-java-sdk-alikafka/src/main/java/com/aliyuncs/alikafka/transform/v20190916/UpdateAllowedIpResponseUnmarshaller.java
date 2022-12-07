@@ -23,9 +23,9 @@ public class UpdateAllowedIpResponseUnmarshaller {
 	public static UpdateAllowedIpResponse unmarshall(UpdateAllowedIpResponse updateAllowedIpResponse, UnmarshallerContext _ctx) {
 		
 		updateAllowedIpResponse.setRequestId(_ctx.stringValue("UpdateAllowedIpResponse.RequestId"));
-		updateAllowedIpResponse.setSuccess(_ctx.booleanValue("UpdateAllowedIpResponse.Success"));
 		updateAllowedIpResponse.setCode(_ctx.integerValue("UpdateAllowedIpResponse.Code"));
 		updateAllowedIpResponse.setMessage(_ctx.stringValue("UpdateAllowedIpResponse.Message"));
+		updateAllowedIpResponse.setSuccess(_ctx.booleanValue("UpdateAllowedIpResponse.Success"));
 	 
 	 	return updateAllowedIpResponse;
 	}

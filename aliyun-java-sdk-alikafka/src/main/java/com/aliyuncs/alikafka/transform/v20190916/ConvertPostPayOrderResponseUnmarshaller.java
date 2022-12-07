@@ -23,9 +23,9 @@ public class ConvertPostPayOrderResponseUnmarshaller {
 	public static ConvertPostPayOrderResponse unmarshall(ConvertPostPayOrderResponse convertPostPayOrderResponse, UnmarshallerContext _ctx) {
 		
 		convertPostPayOrderResponse.setRequestId(_ctx.stringValue("ConvertPostPayOrderResponse.RequestId"));
-		convertPostPayOrderResponse.setSuccess(_ctx.booleanValue("ConvertPostPayOrderResponse.Success"));
 		convertPostPayOrderResponse.setCode(_ctx.integerValue("ConvertPostPayOrderResponse.Code"));
 		convertPostPayOrderResponse.setMessage(_ctx.stringValue("ConvertPostPayOrderResponse.Message"));
+		convertPostPayOrderResponse.setSuccess(_ctx.booleanValue("ConvertPostPayOrderResponse.Success"));
 		convertPostPayOrderResponse.setOrderId(_ctx.stringValue("ConvertPostPayOrderResponse.OrderId"));
 	 
 	 	return convertPostPayOrderResponse;

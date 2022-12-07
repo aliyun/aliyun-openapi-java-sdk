@@ -22,30 +22,19 @@ import com.aliyuncs.alikafka.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetConsumerListRequest extends RpcAcsRequest<GetConsumerListResponse> {
+public class UpdateInstanceConfigRequest extends RpcAcsRequest<UpdateInstanceConfigResponse> {
 	   
 
-	private String consumerId;
-
 	private String instanceId;
-	public GetConsumerListRequest() {
-		super("alikafka", "2019-09-16", "GetConsumerList", "alikafka");
+
+	private String config;
+	public UpdateInstanceConfigRequest() {
+		super("alikafka", "2019-09-16", "UpdateInstanceConfig", "alikafka");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getConsumerId() {
-		return this.consumerId;
-	}
-
-	public void setConsumerId(String consumerId) {
-		this.consumerId = consumerId;
-		if(consumerId != null){
-			putQueryParameter("ConsumerId", consumerId);
-		}
 	}
 
 	public String getInstanceId() {
@@ -59,9 +48,20 @@ public class GetConsumerListRequest extends RpcAcsRequest<GetConsumerListRespons
 		}
 	}
 
+	public String getConfig() {
+		return this.config;
+	}
+
+	public void setConfig(String config) {
+		this.config = config;
+		if(config != null){
+			putQueryParameter("Config", config);
+		}
+	}
+
 	@Override
-	public Class<GetConsumerListResponse> getResponseClass() {
-		return GetConsumerListResponse.class;
+	public Class<UpdateInstanceConfigResponse> getResponseClass() {
+		return UpdateInstanceConfigResponse.class;
 	}
 
 }

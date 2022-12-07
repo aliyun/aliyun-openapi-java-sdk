@@ -25,28 +25,28 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetTopicListResponse extends AcsResponse {
 
-	private Boolean success;
+	private Integer currentPage;
 
 	private String requestId;
+
+	private Boolean success;
 
 	private Integer code;
 
 	private String message;
 
-	private Integer total;
-
 	private Integer pageSize;
 
-	private Integer currentPage;
+	private Integer total;
 
 	private List<TopicVO> topicList;
 
-	public Boolean getSuccess() {
-		return this.success;
+	public Integer getCurrentPage() {
+		return this.currentPage;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
 	}
 
 	public String getRequestId() {
@@ -55,6 +55,14 @@ public class GetTopicListResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Integer getCode() {
@@ -73,14 +81,6 @@ public class GetTopicListResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Integer getTotal() {
-		return this.total;
-	}
-
-	public void setTotal(Integer total) {
-		this.total = total;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -89,12 +89,12 @@ public class GetTopicListResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getCurrentPage() {
-		return this.currentPage;
+	public Integer getTotal() {
+		return this.total;
 	}
 
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
+	public void setTotal(Integer total) {
+		this.total = total;
 	}
 
 	public List<TopicVO> getTopicList() {
@@ -107,42 +107,42 @@ public class GetTopicListResponse extends AcsResponse {
 
 	public static class TopicVO {
 
-		private String topic;
+		private Integer status;
 
-		private Long createTime;
+		private Integer partitionNum;
 
 		private String remark;
 
-		private Integer status;
+		private Long createTime;
 
-		private String instanceId;
-
-		private String regionId;
+		private String topic;
 
 		private String statusName;
 
 		private Boolean compactTopic;
 
+		private String instanceId;
+
 		private Boolean localTopic;
 
-		private Integer partitionNum;
+		private String regionId;
 
 		private List<TagVO> tags;
 
-		public String getTopic() {
-			return this.topic;
+		public Integer getStatus() {
+			return this.status;
 		}
 
-		public void setTopic(String topic) {
-			this.topic = topic;
+		public void setStatus(Integer status) {
+			this.status = status;
 		}
 
-		public Long getCreateTime() {
-			return this.createTime;
+		public Integer getPartitionNum() {
+			return this.partitionNum;
 		}
 
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
+		public void setPartitionNum(Integer partitionNum) {
+			this.partitionNum = partitionNum;
 		}
 
 		public String getRemark() {
@@ -153,28 +153,20 @@ public class GetTopicListResponse extends AcsResponse {
 			this.remark = remark;
 		}
 
-		public Integer getStatus() {
-			return this.status;
+		public Long getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setStatus(Integer status) {
-			this.status = status;
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
 		}
 
-		public String getInstanceId() {
-			return this.instanceId;
+		public String getTopic() {
+			return this.topic;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setTopic(String topic) {
+			this.topic = topic;
 		}
 
 		public String getStatusName() {
@@ -193,6 +185,14 @@ public class GetTopicListResponse extends AcsResponse {
 			this.compactTopic = compactTopic;
 		}
 
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
 		public Boolean getLocalTopic() {
 			return this.localTopic;
 		}
@@ -201,12 +201,12 @@ public class GetTopicListResponse extends AcsResponse {
 			this.localTopic = localTopic;
 		}
 
-		public Integer getPartitionNum() {
-			return this.partitionNum;
+		public String getRegionId() {
+			return this.regionId;
 		}
 
-		public void setPartitionNum(Integer partitionNum) {
-			this.partitionNum = partitionNum;
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
 		public List<TagVO> getTags() {

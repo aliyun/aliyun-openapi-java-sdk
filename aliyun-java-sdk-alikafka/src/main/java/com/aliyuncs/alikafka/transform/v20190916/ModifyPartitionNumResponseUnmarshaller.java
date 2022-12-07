@@ -23,9 +23,9 @@ public class ModifyPartitionNumResponseUnmarshaller {
 	public static ModifyPartitionNumResponse unmarshall(ModifyPartitionNumResponse modifyPartitionNumResponse, UnmarshallerContext _ctx) {
 		
 		modifyPartitionNumResponse.setRequestId(_ctx.stringValue("ModifyPartitionNumResponse.RequestId"));
-		modifyPartitionNumResponse.setSuccess(_ctx.booleanValue("ModifyPartitionNumResponse.Success"));
 		modifyPartitionNumResponse.setCode(_ctx.integerValue("ModifyPartitionNumResponse.Code"));
 		modifyPartitionNumResponse.setMessage(_ctx.stringValue("ModifyPartitionNumResponse.Message"));
+		modifyPartitionNumResponse.setSuccess(_ctx.booleanValue("ModifyPartitionNumResponse.Success"));
 	 
 	 	return modifyPartitionNumResponse;
 	}

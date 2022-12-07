@@ -30,6 +30,8 @@ public class TagResourcesRequest extends RpcAcsRequest<TagResourcesResponse> {
 
 	private String resourceType;
 
+	private String instanceId;
+
 	private List<Tag> tags;
 	public TagResourcesRequest() {
 		super("alikafka", "2019-09-16", "TagResources", "alikafka");
@@ -61,6 +63,17 @@ public class TagResourcesRequest extends RpcAcsRequest<TagResourcesResponse> {
 		this.resourceType = resourceType;
 		if(resourceType != null){
 			putQueryParameter("ResourceType", resourceType);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

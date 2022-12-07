@@ -23,9 +23,9 @@ public class ModifyTopicRemarkResponseUnmarshaller {
 	public static ModifyTopicRemarkResponse unmarshall(ModifyTopicRemarkResponse modifyTopicRemarkResponse, UnmarshallerContext _ctx) {
 		
 		modifyTopicRemarkResponse.setRequestId(_ctx.stringValue("ModifyTopicRemarkResponse.RequestId"));
-		modifyTopicRemarkResponse.setSuccess(_ctx.booleanValue("ModifyTopicRemarkResponse.Success"));
 		modifyTopicRemarkResponse.setCode(_ctx.integerValue("ModifyTopicRemarkResponse.Code"));
 		modifyTopicRemarkResponse.setMessage(_ctx.stringValue("ModifyTopicRemarkResponse.Message"));
+		modifyTopicRemarkResponse.setSuccess(_ctx.booleanValue("ModifyTopicRemarkResponse.Success"));
 	 
 	 	return modifyTopicRemarkResponse;
 	}

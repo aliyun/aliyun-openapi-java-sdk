@@ -22,14 +22,14 @@ import com.aliyuncs.alikafka.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetConsumerListRequest extends RpcAcsRequest<GetConsumerListResponse> {
+public class ChangeResourceGroupRequest extends RpcAcsRequest<ChangeResourceGroupResponse> {
 	   
 
-	private String consumerId;
+	private String resourceId;
 
-	private String instanceId;
-	public GetConsumerListRequest() {
-		super("alikafka", "2019-09-16", "GetConsumerList", "alikafka");
+	private String newResourceGroupId;
+	public ChangeResourceGroupRequest() {
+		super("alikafka", "2019-09-16", "ChangeResourceGroup", "alikafka");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +37,31 @@ public class GetConsumerListRequest extends RpcAcsRequest<GetConsumerListRespons
 		} catch (Exception e) {}
 	}
 
-	public String getConsumerId() {
-		return this.consumerId;
+	public String getResourceId() {
+		return this.resourceId;
 	}
 
-	public void setConsumerId(String consumerId) {
-		this.consumerId = consumerId;
-		if(consumerId != null){
-			putQueryParameter("ConsumerId", consumerId);
+	public void setResourceId(String resourceId) {
+		this.resourceId = resourceId;
+		if(resourceId != null){
+			putQueryParameter("ResourceId", resourceId);
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getNewResourceGroupId() {
+		return this.newResourceGroupId;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+	public void setNewResourceGroupId(String newResourceGroupId) {
+		this.newResourceGroupId = newResourceGroupId;
+		if(newResourceGroupId != null){
+			putQueryParameter("NewResourceGroupId", newResourceGroupId);
 		}
 	}
 
 	@Override
-	public Class<GetConsumerListResponse> getResponseClass() {
-		return GetConsumerListResponse.class;
+	public Class<ChangeResourceGroupResponse> getResponseClass() {
+		return ChangeResourceGroupResponse.class;
 	}
 
 }

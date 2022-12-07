@@ -15,14 +15,14 @@
 package com.aliyuncs.alikafka.model.v20190916;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.alikafka.transform.v20190916.CreateSaslUserResponseUnmarshaller;
+import com.aliyuncs.alikafka.transform.v20190916.UpdateInstanceConfigResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateSaslUserResponse extends AcsResponse {
+public class UpdateInstanceConfigResponse extends AcsResponse {
 
 	private Integer code;
 
@@ -65,7 +65,12 @@ public class CreateSaslUserResponse extends AcsResponse {
 	}
 
 	@Override
-	public CreateSaslUserResponse getInstance(UnmarshallerContext context) {
-		return	CreateSaslUserResponseUnmarshaller.unmarshall(this, context);
+	public UpdateInstanceConfigResponse getInstance(UnmarshallerContext context) {
+		return	UpdateInstanceConfigResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

@@ -27,19 +27,19 @@ public class DescribeAclsResponseUnmarshaller {
 	public static DescribeAclsResponse unmarshall(DescribeAclsResponse describeAclsResponse, UnmarshallerContext _ctx) {
 		
 		describeAclsResponse.setRequestId(_ctx.stringValue("DescribeAclsResponse.RequestId"));
-		describeAclsResponse.setSuccess(_ctx.booleanValue("DescribeAclsResponse.Success"));
 		describeAclsResponse.setCode(_ctx.integerValue("DescribeAclsResponse.Code"));
 		describeAclsResponse.setMessage(_ctx.stringValue("DescribeAclsResponse.Message"));
+		describeAclsResponse.setSuccess(_ctx.booleanValue("DescribeAclsResponse.Success"));
 
 		List<KafkaAclVO> kafkaAclList = new ArrayList<KafkaAclVO>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAclsResponse.KafkaAclList.Length"); i++) {
 			KafkaAclVO kafkaAclVO = new KafkaAclVO();
-			kafkaAclVO.setUsername(_ctx.stringValue("DescribeAclsResponse.KafkaAclList["+ i +"].Username"));
 			kafkaAclVO.setAclResourceType(_ctx.stringValue("DescribeAclsResponse.KafkaAclList["+ i +"].AclResourceType"));
-			kafkaAclVO.setAclResourceName(_ctx.stringValue("DescribeAclsResponse.KafkaAclList["+ i +"].AclResourceName"));
-			kafkaAclVO.setAclResourcePatternType(_ctx.stringValue("DescribeAclsResponse.KafkaAclList["+ i +"].AclResourcePatternType"));
 			kafkaAclVO.setHost(_ctx.stringValue("DescribeAclsResponse.KafkaAclList["+ i +"].Host"));
 			kafkaAclVO.setAclOperationType(_ctx.stringValue("DescribeAclsResponse.KafkaAclList["+ i +"].AclOperationType"));
+			kafkaAclVO.setAclResourceName(_ctx.stringValue("DescribeAclsResponse.KafkaAclList["+ i +"].AclResourceName"));
+			kafkaAclVO.setAclResourcePatternType(_ctx.stringValue("DescribeAclsResponse.KafkaAclList["+ i +"].AclResourcePatternType"));
+			kafkaAclVO.setUsername(_ctx.stringValue("DescribeAclsResponse.KafkaAclList["+ i +"].Username"));
 
 			kafkaAclList.add(kafkaAclVO);
 		}

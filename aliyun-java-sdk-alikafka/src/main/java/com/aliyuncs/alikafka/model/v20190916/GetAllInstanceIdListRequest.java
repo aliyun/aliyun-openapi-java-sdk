@@ -22,12 +22,10 @@ import com.aliyuncs.alikafka.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetMetaProductListRequest extends RpcAcsRequest<GetMetaProductListResponse> {
+public class GetAllInstanceIdListRequest extends RpcAcsRequest<GetAllInstanceIdListResponse> {
 	   
-
-	private String listNormal;
-	public GetMetaProductListRequest() {
-		super("alikafka", "2019-09-16", "GetMetaProductList", "alikafka");
+	public GetAllInstanceIdListRequest() {
+		super("alikafka", "2019-09-16", "GetAllInstanceIdList", "alikafka");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,20 +33,9 @@ public class GetMetaProductListRequest extends RpcAcsRequest<GetMetaProductListR
 		} catch (Exception e) {}
 	}
 
-	public String getListNormal() {
-		return this.listNormal;
-	}
-
-	public void setListNormal(String listNormal) {
-		this.listNormal = listNormal;
-		if(listNormal != null){
-			putQueryParameter("ListNormal", listNormal);
-		}
-	}
-
 	@Override
-	public Class<GetMetaProductListResponse> getResponseClass() {
-		return GetMetaProductListResponse.class;
+	public Class<GetAllInstanceIdListResponse> getResponseClass() {
+		return GetAllInstanceIdListResponse.class;
 	}
 
 }
