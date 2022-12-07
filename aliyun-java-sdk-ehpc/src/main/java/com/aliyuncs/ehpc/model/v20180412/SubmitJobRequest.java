@@ -51,6 +51,8 @@ public class SubmitJobRequest extends RpcAcsRequest<SubmitJobResponse> {
 
 	private String runasUser;
 
+	private Integer cpu;
+
 	private String clusterId;
 
 	private Boolean reRunable;
@@ -62,6 +64,8 @@ public class SubmitJobRequest extends RpcAcsRequest<SubmitJobResponse> {
 	private Integer gpu;
 
 	private Integer node;
+
+	private Boolean async;
 
 	private Integer task;
 
@@ -222,6 +226,17 @@ public class SubmitJobRequest extends RpcAcsRequest<SubmitJobResponse> {
 		}
 	}
 
+	public Integer getCpu() {
+		return this.cpu;
+	}
+
+	public void setCpu(Integer cpu) {
+		this.cpu = cpu;
+		if(cpu != null){
+			putQueryParameter("Cpu", cpu.toString());
+		}
+	}
+
 	public String getClusterId() {
 		return this.clusterId;
 	}
@@ -285,6 +300,17 @@ public class SubmitJobRequest extends RpcAcsRequest<SubmitJobResponse> {
 		this.node = node;
 		if(node != null){
 			putQueryParameter("Node", node.toString());
+		}
+	}
+
+	public Boolean getAsync() {
+		return this.async;
+	}
+
+	public void setAsync(Boolean async) {
+		this.async = async;
+		if(async != null){
+			putQueryParameter("Async", async.toString());
 		}
 	}
 
