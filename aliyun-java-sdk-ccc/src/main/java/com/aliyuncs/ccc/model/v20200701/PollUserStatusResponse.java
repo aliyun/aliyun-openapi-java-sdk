@@ -125,6 +125,8 @@ public class PollUserStatusResponse extends AcsResponse {
 
 			private String jobId;
 
+			private String callVariables;
+
 			private List<ChannelContext> channelContexts;
 
 			public String getCallType() {
@@ -149,6 +151,14 @@ public class PollUserStatusResponse extends AcsResponse {
 
 			public void setJobId(String jobId) {
 				this.jobId = jobId;
+			}
+
+			public String getCallVariables() {
+				return this.callVariables;
+			}
+
+			public void setCallVariables(String callVariables) {
+				this.callVariables = callVariables;
 			}
 
 			public List<ChannelContext> getChannelContexts() {

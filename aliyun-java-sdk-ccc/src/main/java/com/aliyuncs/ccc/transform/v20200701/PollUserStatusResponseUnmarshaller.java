@@ -47,6 +47,7 @@ public class PollUserStatusResponseUnmarshaller {
 		callContext.setCallType(_ctx.stringValue("PollUserStatusResponse.Data.CallContext.CallType"));
 		callContext.setInstanceId(_ctx.stringValue("PollUserStatusResponse.Data.CallContext.InstanceId"));
 		callContext.setJobId(_ctx.stringValue("PollUserStatusResponse.Data.CallContext.JobId"));
+		callContext.setCallVariables(_ctx.stringValue("PollUserStatusResponse.Data.CallContext.CallVariables"));
 
 		List<ChannelContext> channelContexts = new ArrayList<ChannelContext>();
 		for (int i = 0; i < _ctx.lengthValue("PollUserStatusResponse.Data.CallContext.ChannelContexts.Length"); i++) {

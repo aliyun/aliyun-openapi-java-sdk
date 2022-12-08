@@ -71,6 +71,7 @@ public class ListCallDetailRecordsResponseUnmarshaller {
 			callDetailRecord.setCalleeLocation(_ctx.stringValue("ListCallDetailRecordsResponse.Data.List["+ i +"].CalleeLocation"));
 			callDetailRecord.setEarlyMediaState(_ctx.stringValue("ListCallDetailRecordsResponse.Data.List["+ i +"].EarlyMediaState"));
 			callDetailRecord.setReleaseReason(_ctx.stringValue("ListCallDetailRecordsResponse.Data.List["+ i +"].ReleaseReason"));
+			callDetailRecord.setDialingTime(_ctx.longValue("ListCallDetailRecordsResponse.Data.List["+ i +"].DialingTime"));
 
 			list.add(callDetailRecord);
 		}

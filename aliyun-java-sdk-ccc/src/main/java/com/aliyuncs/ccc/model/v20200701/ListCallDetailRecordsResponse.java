@@ -181,6 +181,8 @@ public class ListCallDetailRecordsResponse extends AcsResponse {
 
 			private String releaseReason;
 
+			private Long dialingTime;
+
 			public String getContactDisposition() {
 				return this.contactDisposition;
 			}
@@ -427,6 +429,14 @@ public class ListCallDetailRecordsResponse extends AcsResponse {
 
 			public void setReleaseReason(String releaseReason) {
 				this.releaseReason = releaseReason;
+			}
+
+			public Long getDialingTime() {
+				return this.dialingTime;
+			}
+
+			public void setDialingTime(Long dialingTime) {
+				this.dialingTime = dialingTime;
 			}
 		}
 	}
