@@ -1,3 +1,6 @@
+2022-12-08 Version: 3.9.28
+- Add live message mute related interface.
+
 2022-12-05 Version: 3.9.27
 - Add list live message interface.
 
