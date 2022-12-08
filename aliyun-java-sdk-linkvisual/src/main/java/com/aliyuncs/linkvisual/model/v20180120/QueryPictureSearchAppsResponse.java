@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryPictureSearchAppsResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class QueryPictureSearchAppsResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -77,31 +77,15 @@ public class QueryPictureSearchAppsResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer total;
-
-		private Integer pageCount;
-
 		private Integer currentPage;
 
 		private Integer pageSize;
 
+		private Integer total;
+
+		private Integer pageCount;
+
 		private List<PageDataItem> pageData;
-
-		public Integer getTotal() {
-			return this.total;
-		}
-
-		public void setTotal(Integer total) {
-			this.total = total;
-		}
-
-		public Integer getPageCount() {
-			return this.pageCount;
-		}
-
-		public void setPageCount(Integer pageCount) {
-			this.pageCount = pageCount;
-		}
 
 		public Integer getCurrentPage() {
 			return this.currentPage;
@@ -119,6 +103,22 @@ public class QueryPictureSearchAppsResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
+		public Integer getTotal() {
+			return this.total;
+		}
+
+		public void setTotal(Integer total) {
+			this.total = total;
+		}
+
+		public Integer getPageCount() {
+			return this.pageCount;
+		}
+
+		public void setPageCount(Integer pageCount) {
+			this.pageCount = pageCount;
+		}
+
 		public List<PageDataItem> getPageData() {
 			return this.pageData;
 		}
@@ -131,17 +131,17 @@ public class QueryPictureSearchAppsResponse extends AcsResponse {
 
 			private String appInstanceId;
 
-			private String appTemplateId;
-
-			private String version;
-
-			private String name;
-
-			private Long createTime;
-
 			private Long modifiedTime;
 
 			private String description;
+
+			private String version;
+
+			private Long createTime;
+
+			private String appTemplateId;
+
+			private String name;
 
 			public String getAppInstanceId() {
 				return this.appInstanceId;
@@ -149,38 +149,6 @@ public class QueryPictureSearchAppsResponse extends AcsResponse {
 
 			public void setAppInstanceId(String appInstanceId) {
 				this.appInstanceId = appInstanceId;
-			}
-
-			public String getAppTemplateId() {
-				return this.appTemplateId;
-			}
-
-			public void setAppTemplateId(String appTemplateId) {
-				this.appTemplateId = appTemplateId;
-			}
-
-			public String getVersion() {
-				return this.version;
-			}
-
-			public void setVersion(String version) {
-				this.version = version;
-			}
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
-
-			public Long getCreateTime() {
-				return this.createTime;
-			}
-
-			public void setCreateTime(Long createTime) {
-				this.createTime = createTime;
 			}
 
 			public Long getModifiedTime() {
@@ -197,6 +165,38 @@ public class QueryPictureSearchAppsResponse extends AcsResponse {
 
 			public void setDescription(String description) {
 				this.description = description;
+			}
+
+			public String getVersion() {
+				return this.version;
+			}
+
+			public void setVersion(String version) {
+				this.version = version;
+			}
+
+			public Long getCreateTime() {
+				return this.createTime;
+			}
+
+			public void setCreateTime(Long createTime) {
+				this.createTime = createTime;
+			}
+
+			public String getAppTemplateId() {
+				return this.appTemplateId;
+			}
+
+			public void setAppTemplateId(String appTemplateId) {
+				this.appTemplateId = appTemplateId;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
 			}
 		}
 	}

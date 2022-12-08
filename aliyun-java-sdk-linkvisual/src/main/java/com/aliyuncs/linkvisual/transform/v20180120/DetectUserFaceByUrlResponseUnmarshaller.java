@@ -27,21 +27,21 @@ public class DetectUserFaceByUrlResponseUnmarshaller {
 	public static DetectUserFaceByUrlResponse unmarshall(DetectUserFaceByUrlResponse detectUserFaceByUrlResponse, UnmarshallerContext _ctx) {
 		
 		detectUserFaceByUrlResponse.setRequestId(_ctx.stringValue("DetectUserFaceByUrlResponse.RequestId"));
-		detectUserFaceByUrlResponse.setSuccess(_ctx.booleanValue("DetectUserFaceByUrlResponse.Success"));
 		detectUserFaceByUrlResponse.setCode(_ctx.stringValue("DetectUserFaceByUrlResponse.Code"));
 		detectUserFaceByUrlResponse.setErrorMessage(_ctx.stringValue("DetectUserFaceByUrlResponse.ErrorMessage"));
+		detectUserFaceByUrlResponse.setSuccess(_ctx.booleanValue("DetectUserFaceByUrlResponse.Success"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("DetectUserFaceByUrlResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setFaceProbability(_ctx.floatValue("DetectUserFaceByUrlResponse.Data["+ i +"].FaceProbability"));
-			dataItem.setAge(_ctx.integerValue("DetectUserFaceByUrlResponse.Data["+ i +"].Age"));
-			dataItem.setGender(_ctx.integerValue("DetectUserFaceByUrlResponse.Data["+ i +"].Gender"));
 			dataItem.setBlurScore(_ctx.floatValue("DetectUserFaceByUrlResponse.Data["+ i +"].BlurScore"));
-			dataItem.setPoseScore(_ctx.floatValue("DetectUserFaceByUrlResponse.Data["+ i +"].PoseScore"));
+			dataItem.setGender(_ctx.integerValue("DetectUserFaceByUrlResponse.Data["+ i +"].Gender"));
 			dataItem.setOcclusionScore(_ctx.floatValue("DetectUserFaceByUrlResponse.Data["+ i +"].OcclusionScore"));
 			dataItem.setGoodForLibrary(_ctx.booleanValue("DetectUserFaceByUrlResponse.Data["+ i +"].GoodForLibrary"));
 			dataItem.setGoodForRecognition(_ctx.booleanValue("DetectUserFaceByUrlResponse.Data["+ i +"].GoodForRecognition"));
+			dataItem.setAge(_ctx.integerValue("DetectUserFaceByUrlResponse.Data["+ i +"].Age"));
+			dataItem.setFaceProbability(_ctx.floatValue("DetectUserFaceByUrlResponse.Data["+ i +"].FaceProbability"));
+			dataItem.setPoseScore(_ctx.floatValue("DetectUserFaceByUrlResponse.Data["+ i +"].PoseScore"));
 
 			List<String> faceRects = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DetectUserFaceByUrlResponse.Data["+ i +"].FaceRects.Length"); j++) {

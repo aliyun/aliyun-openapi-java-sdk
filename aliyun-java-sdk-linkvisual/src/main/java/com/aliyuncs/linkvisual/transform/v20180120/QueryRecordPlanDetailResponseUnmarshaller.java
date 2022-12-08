@@ -29,9 +29,9 @@ public class QueryRecordPlanDetailResponseUnmarshaller {
 	public static QueryRecordPlanDetailResponse unmarshall(QueryRecordPlanDetailResponse queryRecordPlanDetailResponse, UnmarshallerContext _ctx) {
 		
 		queryRecordPlanDetailResponse.setRequestId(_ctx.stringValue("QueryRecordPlanDetailResponse.RequestId"));
-		queryRecordPlanDetailResponse.setSuccess(_ctx.booleanValue("QueryRecordPlanDetailResponse.Success"));
-		queryRecordPlanDetailResponse.setErrorMessage(_ctx.stringValue("QueryRecordPlanDetailResponse.ErrorMessage"));
 		queryRecordPlanDetailResponse.setCode(_ctx.stringValue("QueryRecordPlanDetailResponse.Code"));
+		queryRecordPlanDetailResponse.setErrorMessage(_ctx.stringValue("QueryRecordPlanDetailResponse.ErrorMessage"));
+		queryRecordPlanDetailResponse.setSuccess(_ctx.booleanValue("QueryRecordPlanDetailResponse.Success"));
 
 		Data data = new Data();
 		data.setPlanId(_ctx.stringValue("QueryRecordPlanDetailResponse.Data.PlanId"));
@@ -39,17 +39,17 @@ public class QueryRecordPlanDetailResponseUnmarshaller {
 		data.setTemplateId(_ctx.stringValue("QueryRecordPlanDetailResponse.Data.TemplateId"));
 
 		TemplateInfo templateInfo = new TemplateInfo();
-		templateInfo.setTemplateId(_ctx.stringValue("QueryRecordPlanDetailResponse.Data.TemplateInfo.TemplateId"));
-		templateInfo.setName(_ctx.stringValue("QueryRecordPlanDetailResponse.Data.TemplateInfo.Name"));
-		templateInfo.set_Default(_ctx.integerValue("QueryRecordPlanDetailResponse.Data.TemplateInfo.Default"));
 		templateInfo.setAllDay(_ctx.integerValue("QueryRecordPlanDetailResponse.Data.TemplateInfo.AllDay"));
+		templateInfo.set_Default(_ctx.integerValue("QueryRecordPlanDetailResponse.Data.TemplateInfo.Default"));
+		templateInfo.setName(_ctx.stringValue("QueryRecordPlanDetailResponse.Data.TemplateInfo.Name"));
+		templateInfo.setTemplateId(_ctx.stringValue("QueryRecordPlanDetailResponse.Data.TemplateInfo.TemplateId"));
 
 		List<TimeSectionListItem> timeSectionList = new ArrayList<TimeSectionListItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryRecordPlanDetailResponse.Data.TemplateInfo.TimeSectionList.Length"); i++) {
 			TimeSectionListItem timeSectionListItem = new TimeSectionListItem();
+			timeSectionListItem.setEnd(_ctx.integerValue("QueryRecordPlanDetailResponse.Data.TemplateInfo.TimeSectionList["+ i +"].End"));
 			timeSectionListItem.setDayOfWeek(_ctx.integerValue("QueryRecordPlanDetailResponse.Data.TemplateInfo.TimeSectionList["+ i +"].DayOfWeek"));
 			timeSectionListItem.setBegin(_ctx.integerValue("QueryRecordPlanDetailResponse.Data.TemplateInfo.TimeSectionList["+ i +"].Begin"));
-			timeSectionListItem.setEnd(_ctx.integerValue("QueryRecordPlanDetailResponse.Data.TemplateInfo.TimeSectionList["+ i +"].End"));
 
 			timeSectionList.add(timeSectionListItem);
 		}

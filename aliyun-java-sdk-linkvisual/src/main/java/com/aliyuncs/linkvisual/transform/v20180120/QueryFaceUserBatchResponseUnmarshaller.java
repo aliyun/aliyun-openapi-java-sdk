@@ -29,35 +29,35 @@ public class QueryFaceUserBatchResponseUnmarshaller {
 	public static QueryFaceUserBatchResponse unmarshall(QueryFaceUserBatchResponse queryFaceUserBatchResponse, UnmarshallerContext _ctx) {
 		
 		queryFaceUserBatchResponse.setRequestId(_ctx.stringValue("QueryFaceUserBatchResponse.RequestId"));
-		queryFaceUserBatchResponse.setSuccess(_ctx.booleanValue("QueryFaceUserBatchResponse.Success"));
-		queryFaceUserBatchResponse.setErrorMessage(_ctx.stringValue("QueryFaceUserBatchResponse.ErrorMessage"));
 		queryFaceUserBatchResponse.setCode(_ctx.stringValue("QueryFaceUserBatchResponse.Code"));
+		queryFaceUserBatchResponse.setErrorMessage(_ctx.stringValue("QueryFaceUserBatchResponse.ErrorMessage"));
+		queryFaceUserBatchResponse.setSuccess(_ctx.booleanValue("QueryFaceUserBatchResponse.Success"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryFaceUserBatchResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setUserId(_ctx.stringValue("QueryFaceUserBatchResponse.Data["+ i +"].UserId"));
-			dataItem.setCustomUserId(_ctx.stringValue("QueryFaceUserBatchResponse.Data["+ i +"].CustomUserId"));
-			dataItem.setName(_ctx.stringValue("QueryFaceUserBatchResponse.Data["+ i +"].Name"));
 			dataItem.setParams(_ctx.stringValue("QueryFaceUserBatchResponse.Data["+ i +"].Params"));
+			dataItem.setCustomUserId(_ctx.stringValue("QueryFaceUserBatchResponse.Data["+ i +"].CustomUserId"));
 			dataItem.setCreateTime(_ctx.longValue("QueryFaceUserBatchResponse.Data["+ i +"].CreateTime"));
+			dataItem.setUserId(_ctx.stringValue("QueryFaceUserBatchResponse.Data["+ i +"].UserId"));
+			dataItem.setName(_ctx.stringValue("QueryFaceUserBatchResponse.Data["+ i +"].Name"));
 			dataItem.setModifyTime(_ctx.longValue("QueryFaceUserBatchResponse.Data["+ i +"].ModifyTime"));
 
 			List<FacePicListItem> facePicList = new ArrayList<FacePicListItem>();
 			for (int j = 0; j < _ctx.lengthValue("QueryFaceUserBatchResponse.Data["+ i +"].FacePicList.Length"); j++) {
 				FacePicListItem facePicListItem = new FacePicListItem();
-				facePicListItem.setFaceMd5(_ctx.stringValue("QueryFaceUserBatchResponse.Data["+ i +"].FacePicList["+ j +"].FaceMd5"));
 				facePicListItem.setFaceUrl(_ctx.stringValue("QueryFaceUserBatchResponse.Data["+ i +"].FacePicList["+ j +"].FaceUrl"));
+				facePicListItem.setFaceMd5(_ctx.stringValue("QueryFaceUserBatchResponse.Data["+ i +"].FacePicList["+ j +"].FaceMd5"));
 
 				List<FeatureDTO> featureDTOList = new ArrayList<FeatureDTO>();
 				for (int k = 0; k < _ctx.lengthValue("QueryFaceUserBatchResponse.Data["+ i +"].FacePicList["+ j +"].FeatureDTOList.Length"); k++) {
 					FeatureDTO featureDTO = new FeatureDTO();
 					featureDTO.setAlgorithmName(_ctx.stringValue("QueryFaceUserBatchResponse.Data["+ i +"].FacePicList["+ j +"].FeatureDTOList["+ k +"].AlgorithmName"));
-					featureDTO.setAlgorithmProvider(_ctx.stringValue("QueryFaceUserBatchResponse.Data["+ i +"].FacePicList["+ j +"].FeatureDTOList["+ k +"].AlgorithmProvider"));
 					featureDTO.setAlgorithmVersion(_ctx.stringValue("QueryFaceUserBatchResponse.Data["+ i +"].FacePicList["+ j +"].FeatureDTOList["+ k +"].AlgorithmVersion"));
-					featureDTO.setFaceMd5(_ctx.stringValue("QueryFaceUserBatchResponse.Data["+ i +"].FacePicList["+ j +"].FeatureDTOList["+ k +"].FaceMd5"));
-					featureDTO.setErrorCode(_ctx.stringValue("QueryFaceUserBatchResponse.Data["+ i +"].FacePicList["+ j +"].FeatureDTOList["+ k +"].ErrorCode"));
+					featureDTO.setAlgorithmProvider(_ctx.stringValue("QueryFaceUserBatchResponse.Data["+ i +"].FacePicList["+ j +"].FeatureDTOList["+ k +"].AlgorithmProvider"));
 					featureDTO.setErrorMessage(_ctx.stringValue("QueryFaceUserBatchResponse.Data["+ i +"].FacePicList["+ j +"].FeatureDTOList["+ k +"].ErrorMessage"));
+					featureDTO.setErrorCode(_ctx.stringValue("QueryFaceUserBatchResponse.Data["+ i +"].FacePicList["+ j +"].FeatureDTOList["+ k +"].ErrorCode"));
+					featureDTO.setFaceMd5(_ctx.stringValue("QueryFaceUserBatchResponse.Data["+ i +"].FacePicList["+ j +"].FeatureDTOList["+ k +"].FaceMd5"));
 
 					featureDTOList.add(featureDTO);
 				}

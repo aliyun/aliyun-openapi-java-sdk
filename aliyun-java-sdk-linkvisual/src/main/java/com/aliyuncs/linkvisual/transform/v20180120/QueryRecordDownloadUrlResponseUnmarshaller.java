@@ -24,13 +24,13 @@ public class QueryRecordDownloadUrlResponseUnmarshaller {
 	public static QueryRecordDownloadUrlResponse unmarshall(QueryRecordDownloadUrlResponse queryRecordDownloadUrlResponse, UnmarshallerContext _ctx) {
 		
 		queryRecordDownloadUrlResponse.setRequestId(_ctx.stringValue("QueryRecordDownloadUrlResponse.RequestId"));
-		queryRecordDownloadUrlResponse.setSuccess(_ctx.booleanValue("QueryRecordDownloadUrlResponse.Success"));
 		queryRecordDownloadUrlResponse.setCode(_ctx.stringValue("QueryRecordDownloadUrlResponse.Code"));
 		queryRecordDownloadUrlResponse.setErrorMessage(_ctx.stringValue("QueryRecordDownloadUrlResponse.ErrorMessage"));
+		queryRecordDownloadUrlResponse.setSuccess(_ctx.booleanValue("QueryRecordDownloadUrlResponse.Success"));
 
 		Data data = new Data();
-		data.setUrl(_ctx.stringValue("QueryRecordDownloadUrlResponse.Data.Url"));
 		data.setStatus(_ctx.integerValue("QueryRecordDownloadUrlResponse.Data.Status"));
+		data.setUrl(_ctx.stringValue("QueryRecordDownloadUrlResponse.Data.Url"));
 		data.setProgress(_ctx.integerValue("QueryRecordDownloadUrlResponse.Data.Progress"));
 		queryRecordDownloadUrlResponse.setData(data);
 	 

@@ -23,9 +23,9 @@ public class UpdateTimeTemplateResponseUnmarshaller {
 	public static UpdateTimeTemplateResponse unmarshall(UpdateTimeTemplateResponse updateTimeTemplateResponse, UnmarshallerContext _ctx) {
 		
 		updateTimeTemplateResponse.setRequestId(_ctx.stringValue("UpdateTimeTemplateResponse.RequestId"));
-		updateTimeTemplateResponse.setSuccess(_ctx.booleanValue("UpdateTimeTemplateResponse.Success"));
-		updateTimeTemplateResponse.setErrorMessage(_ctx.stringValue("UpdateTimeTemplateResponse.ErrorMessage"));
 		updateTimeTemplateResponse.setCode(_ctx.stringValue("UpdateTimeTemplateResponse.Code"));
+		updateTimeTemplateResponse.setErrorMessage(_ctx.stringValue("UpdateTimeTemplateResponse.ErrorMessage"));
+		updateTimeTemplateResponse.setSuccess(_ctx.booleanValue("UpdateTimeTemplateResponse.Success"));
 	 
 	 	return updateTimeTemplateResponse;
 	}

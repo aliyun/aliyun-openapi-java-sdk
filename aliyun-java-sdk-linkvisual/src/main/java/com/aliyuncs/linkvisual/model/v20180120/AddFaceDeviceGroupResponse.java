@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class AddFaceDeviceGroupResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -66,6 +50,22 @@ public class AddFaceDeviceGroupResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -78,9 +78,9 @@ public class AddFaceDeviceGroupResponse extends AcsResponse {
 
 		private String deviceGroupId;
 
-		private String deviceGroupName;
-
 		private String modifiedTime;
+
+		private String deviceGroupName;
 
 		public String getDeviceGroupId() {
 			return this.deviceGroupId;
@@ -90,20 +90,20 @@ public class AddFaceDeviceGroupResponse extends AcsResponse {
 			this.deviceGroupId = deviceGroupId;
 		}
 
-		public String getDeviceGroupName() {
-			return this.deviceGroupName;
-		}
-
-		public void setDeviceGroupName(String deviceGroupName) {
-			this.deviceGroupName = deviceGroupName;
-		}
-
 		public String getModifiedTime() {
 			return this.modifiedTime;
 		}
 
 		public void setModifiedTime(String modifiedTime) {
 			this.modifiedTime = modifiedTime;
+		}
+
+		public String getDeviceGroupName() {
+			return this.deviceGroupName;
+		}
+
+		public void setDeviceGroupName(String deviceGroupName) {
+			this.deviceGroupName = deviceGroupName;
 		}
 	}
 

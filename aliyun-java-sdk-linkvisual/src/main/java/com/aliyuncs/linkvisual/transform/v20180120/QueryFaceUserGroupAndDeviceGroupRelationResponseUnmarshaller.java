@@ -24,16 +24,16 @@ public class QueryFaceUserGroupAndDeviceGroupRelationResponseUnmarshaller {
 	public static QueryFaceUserGroupAndDeviceGroupRelationResponse unmarshall(QueryFaceUserGroupAndDeviceGroupRelationResponse queryFaceUserGroupAndDeviceGroupRelationResponse, UnmarshallerContext _ctx) {
 		
 		queryFaceUserGroupAndDeviceGroupRelationResponse.setRequestId(_ctx.stringValue("QueryFaceUserGroupAndDeviceGroupRelationResponse.RequestId"));
-		queryFaceUserGroupAndDeviceGroupRelationResponse.setSuccess(_ctx.booleanValue("QueryFaceUserGroupAndDeviceGroupRelationResponse.Success"));
-		queryFaceUserGroupAndDeviceGroupRelationResponse.setErrorMessage(_ctx.stringValue("QueryFaceUserGroupAndDeviceGroupRelationResponse.ErrorMessage"));
 		queryFaceUserGroupAndDeviceGroupRelationResponse.setCode(_ctx.stringValue("QueryFaceUserGroupAndDeviceGroupRelationResponse.Code"));
+		queryFaceUserGroupAndDeviceGroupRelationResponse.setErrorMessage(_ctx.stringValue("QueryFaceUserGroupAndDeviceGroupRelationResponse.ErrorMessage"));
+		queryFaceUserGroupAndDeviceGroupRelationResponse.setSuccess(_ctx.booleanValue("QueryFaceUserGroupAndDeviceGroupRelationResponse.Success"));
 
 		Data data = new Data();
-		data.setControlId(_ctx.stringValue("QueryFaceUserGroupAndDeviceGroupRelationResponse.Data.ControlId"));
-		data.setUserGroupId(_ctx.stringValue("QueryFaceUserGroupAndDeviceGroupRelationResponse.Data.UserGroupId"));
 		data.setDeviceGroupId(_ctx.stringValue("QueryFaceUserGroupAndDeviceGroupRelationResponse.Data.DeviceGroupId"));
-		data.setControlType(_ctx.stringValue("QueryFaceUserGroupAndDeviceGroupRelationResponse.Data.ControlType"));
+		data.setControlId(_ctx.stringValue("QueryFaceUserGroupAndDeviceGroupRelationResponse.Data.ControlId"));
 		data.setModifiedTime(_ctx.stringValue("QueryFaceUserGroupAndDeviceGroupRelationResponse.Data.ModifiedTime"));
+		data.setControlType(_ctx.stringValue("QueryFaceUserGroupAndDeviceGroupRelationResponse.Data.ControlType"));
+		data.setUserGroupId(_ctx.stringValue("QueryFaceUserGroupAndDeviceGroupRelationResponse.Data.UserGroupId"));
 		queryFaceUserGroupAndDeviceGroupRelationResponse.setData(data);
 	 
 	 	return queryFaceUserGroupAndDeviceGroupRelationResponse;

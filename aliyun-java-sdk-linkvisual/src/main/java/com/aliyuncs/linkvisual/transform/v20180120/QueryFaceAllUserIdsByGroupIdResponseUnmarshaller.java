@@ -28,22 +28,22 @@ public class QueryFaceAllUserIdsByGroupIdResponseUnmarshaller {
 	public static QueryFaceAllUserIdsByGroupIdResponse unmarshall(QueryFaceAllUserIdsByGroupIdResponse queryFaceAllUserIdsByGroupIdResponse, UnmarshallerContext _ctx) {
 		
 		queryFaceAllUserIdsByGroupIdResponse.setRequestId(_ctx.stringValue("QueryFaceAllUserIdsByGroupIdResponse.RequestId"));
-		queryFaceAllUserIdsByGroupIdResponse.setSuccess(_ctx.booleanValue("QueryFaceAllUserIdsByGroupIdResponse.Success"));
-		queryFaceAllUserIdsByGroupIdResponse.setErrorMessage(_ctx.stringValue("QueryFaceAllUserIdsByGroupIdResponse.ErrorMessage"));
 		queryFaceAllUserIdsByGroupIdResponse.setCode(_ctx.stringValue("QueryFaceAllUserIdsByGroupIdResponse.Code"));
+		queryFaceAllUserIdsByGroupIdResponse.setErrorMessage(_ctx.stringValue("QueryFaceAllUserIdsByGroupIdResponse.ErrorMessage"));
+		queryFaceAllUserIdsByGroupIdResponse.setSuccess(_ctx.booleanValue("QueryFaceAllUserIdsByGroupIdResponse.Success"));
 
 		Data data = new Data();
-		data.setTotal(_ctx.integerValue("QueryFaceAllUserIdsByGroupIdResponse.Data.Total"));
 		data.setPageSize(_ctx.integerValue("QueryFaceAllUserIdsByGroupIdResponse.Data.PageSize"));
+		data.setTotal(_ctx.integerValue("QueryFaceAllUserIdsByGroupIdResponse.Data.Total"));
 		data.setPage(_ctx.integerValue("QueryFaceAllUserIdsByGroupIdResponse.Data.Page"));
 
 		List<ListItem> list = new ArrayList<ListItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryFaceAllUserIdsByGroupIdResponse.Data.List.Length"); i++) {
 			ListItem listItem = new ListItem();
-			listItem.setUserId(_ctx.stringValue("QueryFaceAllUserIdsByGroupIdResponse.Data.List["+ i +"].UserId"));
+			listItem.setParams(_ctx.stringValue("QueryFaceAllUserIdsByGroupIdResponse.Data.List["+ i +"].Params"));
 			listItem.setCustomUserId(_ctx.stringValue("QueryFaceAllUserIdsByGroupIdResponse.Data.List["+ i +"].CustomUserId"));
 			listItem.setName(_ctx.stringValue("QueryFaceAllUserIdsByGroupIdResponse.Data.List["+ i +"].Name"));
-			listItem.setParams(_ctx.stringValue("QueryFaceAllUserIdsByGroupIdResponse.Data.List["+ i +"].Params"));
+			listItem.setUserId(_ctx.stringValue("QueryFaceAllUserIdsByGroupIdResponse.Data.List["+ i +"].UserId"));
 
 			list.add(listItem);
 		}

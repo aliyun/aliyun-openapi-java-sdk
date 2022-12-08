@@ -24,15 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryFaceUserGroupAndDeviceGroupRelationResponse extends AcsResponse {
 
-	private String requestId;
+	private String code;
 
-	private Boolean success;
+	private String requestId;
 
 	private String errorMessage;
 
-	private String code;
+	private Boolean success;
 
 	private Data data;
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,14 +48,6 @@ public class QueryFaceUserGroupAndDeviceGroupRelationResponse extends AcsRespons
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public String getErrorMessage() {
@@ -58,12 +58,12 @@ public class QueryFaceUserGroupAndDeviceGroupRelationResponse extends AcsRespons
 		this.errorMessage = errorMessage;
 	}
 
-	public String getCode() {
-		return this.code;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -76,15 +76,23 @@ public class QueryFaceUserGroupAndDeviceGroupRelationResponse extends AcsRespons
 
 	public static class Data {
 
+		private String deviceGroupId;
+
 		private String controlId;
 
-		private String userGroupId;
-
-		private String deviceGroupId;
+		private String modifiedTime;
 
 		private String controlType;
 
-		private String modifiedTime;
+		private String userGroupId;
+
+		public String getDeviceGroupId() {
+			return this.deviceGroupId;
+		}
+
+		public void setDeviceGroupId(String deviceGroupId) {
+			this.deviceGroupId = deviceGroupId;
+		}
 
 		public String getControlId() {
 			return this.controlId;
@@ -94,20 +102,12 @@ public class QueryFaceUserGroupAndDeviceGroupRelationResponse extends AcsRespons
 			this.controlId = controlId;
 		}
 
-		public String getUserGroupId() {
-			return this.userGroupId;
+		public String getModifiedTime() {
+			return this.modifiedTime;
 		}
 
-		public void setUserGroupId(String userGroupId) {
-			this.userGroupId = userGroupId;
-		}
-
-		public String getDeviceGroupId() {
-			return this.deviceGroupId;
-		}
-
-		public void setDeviceGroupId(String deviceGroupId) {
-			this.deviceGroupId = deviceGroupId;
+		public void setModifiedTime(String modifiedTime) {
+			this.modifiedTime = modifiedTime;
 		}
 
 		public String getControlType() {
@@ -118,12 +118,12 @@ public class QueryFaceUserGroupAndDeviceGroupRelationResponse extends AcsRespons
 			this.controlType = controlType;
 		}
 
-		public String getModifiedTime() {
-			return this.modifiedTime;
+		public String getUserGroupId() {
+			return this.userGroupId;
 		}
 
-		public void setModifiedTime(String modifiedTime) {
-			this.modifiedTime = modifiedTime;
+		public void setUserGroupId(String userGroupId) {
+			this.userGroupId = userGroupId;
 		}
 	}
 

@@ -24,14 +24,14 @@ public class AddFaceUserGroupResponseUnmarshaller {
 	public static AddFaceUserGroupResponse unmarshall(AddFaceUserGroupResponse addFaceUserGroupResponse, UnmarshallerContext _ctx) {
 		
 		addFaceUserGroupResponse.setRequestId(_ctx.stringValue("AddFaceUserGroupResponse.RequestId"));
-		addFaceUserGroupResponse.setSuccess(_ctx.booleanValue("AddFaceUserGroupResponse.Success"));
 		addFaceUserGroupResponse.setCode(_ctx.stringValue("AddFaceUserGroupResponse.Code"));
 		addFaceUserGroupResponse.setErrorMessage(_ctx.stringValue("AddFaceUserGroupResponse.ErrorMessage"));
+		addFaceUserGroupResponse.setSuccess(_ctx.booleanValue("AddFaceUserGroupResponse.Success"));
 
 		Data data = new Data();
-		data.setUserGroupId(_ctx.stringValue("AddFaceUserGroupResponse.Data.UserGroupId"));
 		data.setUserGroupName(_ctx.stringValue("AddFaceUserGroupResponse.Data.UserGroupName"));
 		data.setModifiedTime(_ctx.stringValue("AddFaceUserGroupResponse.Data.ModifiedTime"));
+		data.setUserGroupId(_ctx.stringValue("AddFaceUserGroupResponse.Data.UserGroupId"));
 		addFaceUserGroupResponse.setData(data);
 	 
 	 	return addFaceUserGroupResponse;

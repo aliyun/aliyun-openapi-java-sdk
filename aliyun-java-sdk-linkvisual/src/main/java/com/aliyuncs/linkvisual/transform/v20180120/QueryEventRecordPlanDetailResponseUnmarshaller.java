@@ -29,29 +29,29 @@ public class QueryEventRecordPlanDetailResponseUnmarshaller {
 	public static QueryEventRecordPlanDetailResponse unmarshall(QueryEventRecordPlanDetailResponse queryEventRecordPlanDetailResponse, UnmarshallerContext _ctx) {
 		
 		queryEventRecordPlanDetailResponse.setRequestId(_ctx.stringValue("QueryEventRecordPlanDetailResponse.RequestId"));
-		queryEventRecordPlanDetailResponse.setSuccess(_ctx.booleanValue("QueryEventRecordPlanDetailResponse.Success"));
-		queryEventRecordPlanDetailResponse.setErrorMessage(_ctx.stringValue("QueryEventRecordPlanDetailResponse.ErrorMessage"));
 		queryEventRecordPlanDetailResponse.setCode(_ctx.stringValue("QueryEventRecordPlanDetailResponse.Code"));
+		queryEventRecordPlanDetailResponse.setErrorMessage(_ctx.stringValue("QueryEventRecordPlanDetailResponse.ErrorMessage"));
+		queryEventRecordPlanDetailResponse.setSuccess(_ctx.booleanValue("QueryEventRecordPlanDetailResponse.Success"));
 
 		Data data = new Data();
 		data.setPreRecordDuration(_ctx.integerValue("QueryEventRecordPlanDetailResponse.Data.PreRecordDuration"));
-		data.setRecordDuration(_ctx.integerValue("QueryEventRecordPlanDetailResponse.Data.RecordDuration"));
-		data.setPlanId(_ctx.stringValue("QueryEventRecordPlanDetailResponse.Data.PlanId"));
 		data.setName(_ctx.stringValue("QueryEventRecordPlanDetailResponse.Data.Name"));
+		data.setPlanId(_ctx.stringValue("QueryEventRecordPlanDetailResponse.Data.PlanId"));
 		data.setTemplateId(_ctx.stringValue("QueryEventRecordPlanDetailResponse.Data.TemplateId"));
+		data.setRecordDuration(_ctx.integerValue("QueryEventRecordPlanDetailResponse.Data.RecordDuration"));
 
 		TemplateInfo templateInfo = new TemplateInfo();
-		templateInfo.setTemplateId(_ctx.stringValue("QueryEventRecordPlanDetailResponse.Data.TemplateInfo.TemplateId"));
-		templateInfo.setName(_ctx.stringValue("QueryEventRecordPlanDetailResponse.Data.TemplateInfo.Name"));
-		templateInfo.set_Default(_ctx.integerValue("QueryEventRecordPlanDetailResponse.Data.TemplateInfo.Default"));
 		templateInfo.setAllDay(_ctx.integerValue("QueryEventRecordPlanDetailResponse.Data.TemplateInfo.AllDay"));
+		templateInfo.set_Default(_ctx.integerValue("QueryEventRecordPlanDetailResponse.Data.TemplateInfo.Default"));
+		templateInfo.setName(_ctx.stringValue("QueryEventRecordPlanDetailResponse.Data.TemplateInfo.Name"));
+		templateInfo.setTemplateId(_ctx.stringValue("QueryEventRecordPlanDetailResponse.Data.TemplateInfo.TemplateId"));
 
 		List<TimeSectionListItem> timeSectionList = new ArrayList<TimeSectionListItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryEventRecordPlanDetailResponse.Data.TemplateInfo.TimeSectionList.Length"); i++) {
 			TimeSectionListItem timeSectionListItem = new TimeSectionListItem();
+			timeSectionListItem.setEnd(_ctx.integerValue("QueryEventRecordPlanDetailResponse.Data.TemplateInfo.TimeSectionList["+ i +"].End"));
 			timeSectionListItem.setDayOfWeek(_ctx.integerValue("QueryEventRecordPlanDetailResponse.Data.TemplateInfo.TimeSectionList["+ i +"].DayOfWeek"));
 			timeSectionListItem.setBegin(_ctx.integerValue("QueryEventRecordPlanDetailResponse.Data.TemplateInfo.TimeSectionList["+ i +"].Begin"));
-			timeSectionListItem.setEnd(_ctx.integerValue("QueryEventRecordPlanDetailResponse.Data.TemplateInfo.TimeSectionList["+ i +"].End"));
 
 			timeSectionList.add(timeSectionListItem);
 		}

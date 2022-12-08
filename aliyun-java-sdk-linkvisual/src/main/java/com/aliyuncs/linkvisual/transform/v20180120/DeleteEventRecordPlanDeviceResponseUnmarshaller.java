@@ -23,9 +23,9 @@ public class DeleteEventRecordPlanDeviceResponseUnmarshaller {
 	public static DeleteEventRecordPlanDeviceResponse unmarshall(DeleteEventRecordPlanDeviceResponse deleteEventRecordPlanDeviceResponse, UnmarshallerContext _ctx) {
 		
 		deleteEventRecordPlanDeviceResponse.setRequestId(_ctx.stringValue("DeleteEventRecordPlanDeviceResponse.RequestId"));
-		deleteEventRecordPlanDeviceResponse.setSuccess(_ctx.booleanValue("DeleteEventRecordPlanDeviceResponse.Success"));
-		deleteEventRecordPlanDeviceResponse.setErrorMessage(_ctx.stringValue("DeleteEventRecordPlanDeviceResponse.ErrorMessage"));
 		deleteEventRecordPlanDeviceResponse.setCode(_ctx.stringValue("DeleteEventRecordPlanDeviceResponse.Code"));
+		deleteEventRecordPlanDeviceResponse.setErrorMessage(_ctx.stringValue("DeleteEventRecordPlanDeviceResponse.ErrorMessage"));
+		deleteEventRecordPlanDeviceResponse.setSuccess(_ctx.booleanValue("DeleteEventRecordPlanDeviceResponse.Success"));
 	 
 	 	return deleteEventRecordPlanDeviceResponse;
 	}

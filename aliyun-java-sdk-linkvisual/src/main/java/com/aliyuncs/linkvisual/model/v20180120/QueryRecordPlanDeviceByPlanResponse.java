@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryRecordPlanDeviceByPlanResponse extends AcsResponse {
 
-	private String requestId;
+	private String code;
 
-	private Boolean success;
+	private String requestId;
 
 	private String errorMessage;
 
-	private String code;
+	private Boolean success;
 
 	private Data data;
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class QueryRecordPlanDeviceByPlanResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public String getErrorMessage() {
@@ -59,12 +59,12 @@ public class QueryRecordPlanDeviceByPlanResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public String getCode() {
-		return this.code;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -77,15 +77,23 @@ public class QueryRecordPlanDeviceByPlanResponse extends AcsResponse {
 
 	public static class Data {
 
+		private Integer pageSize;
+
 		private Integer total;
 
 		private Integer pageCount;
 
 		private Integer page;
 
-		private Integer pageSize;
-
 		private List<ListItem> list;
+
+		public Integer getPageSize() {
+			return this.pageSize;
+		}
+
+		public void setPageSize(Integer pageSize) {
+			this.pageSize = pageSize;
+		}
 
 		public Integer getTotal() {
 			return this.total;
@@ -111,14 +119,6 @@ public class QueryRecordPlanDeviceByPlanResponse extends AcsResponse {
 			this.page = page;
 		}
 
-		public Integer getPageSize() {
-			return this.pageSize;
-		}
-
-		public void setPageSize(Integer pageSize) {
-			this.pageSize = pageSize;
-		}
-
 		public List<ListItem> getList() {
 			return this.list;
 		}
@@ -129,17 +129,9 @@ public class QueryRecordPlanDeviceByPlanResponse extends AcsResponse {
 
 		public static class ListItem {
 
-			private String iotId;
-
 			private Integer streamType;
 
-			public String getIotId() {
-				return this.iotId;
-			}
-
-			public void setIotId(String iotId) {
-				this.iotId = iotId;
-			}
+			private String iotId;
 
 			public Integer getStreamType() {
 				return this.streamType;
@@ -147,6 +139,14 @@ public class QueryRecordPlanDeviceByPlanResponse extends AcsResponse {
 
 			public void setStreamType(Integer streamType) {
 				this.streamType = streamType;
+			}
+
+			public String getIotId() {
+				return this.iotId;
+			}
+
+			public void setIotId(String iotId) {
+				this.iotId = iotId;
 			}
 		}
 	}

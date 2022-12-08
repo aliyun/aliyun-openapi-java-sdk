@@ -23,9 +23,9 @@ public class AddRecordPlanDeviceResponseUnmarshaller {
 	public static AddRecordPlanDeviceResponse unmarshall(AddRecordPlanDeviceResponse addRecordPlanDeviceResponse, UnmarshallerContext _ctx) {
 		
 		addRecordPlanDeviceResponse.setRequestId(_ctx.stringValue("AddRecordPlanDeviceResponse.RequestId"));
-		addRecordPlanDeviceResponse.setSuccess(_ctx.booleanValue("AddRecordPlanDeviceResponse.Success"));
-		addRecordPlanDeviceResponse.setErrorMessage(_ctx.stringValue("AddRecordPlanDeviceResponse.ErrorMessage"));
 		addRecordPlanDeviceResponse.setCode(_ctx.stringValue("AddRecordPlanDeviceResponse.Code"));
+		addRecordPlanDeviceResponse.setErrorMessage(_ctx.stringValue("AddRecordPlanDeviceResponse.ErrorMessage"));
+		addRecordPlanDeviceResponse.setSuccess(_ctx.booleanValue("AddRecordPlanDeviceResponse.Success"));
 	 
 	 	return addRecordPlanDeviceResponse;
 	}

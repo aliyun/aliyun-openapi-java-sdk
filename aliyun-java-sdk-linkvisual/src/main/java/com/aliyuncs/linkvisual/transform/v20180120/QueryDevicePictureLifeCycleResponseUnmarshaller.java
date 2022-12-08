@@ -24,13 +24,13 @@ public class QueryDevicePictureLifeCycleResponseUnmarshaller {
 	public static QueryDevicePictureLifeCycleResponse unmarshall(QueryDevicePictureLifeCycleResponse queryDevicePictureLifeCycleResponse, UnmarshallerContext _ctx) {
 		
 		queryDevicePictureLifeCycleResponse.setRequestId(_ctx.stringValue("QueryDevicePictureLifeCycleResponse.RequestId"));
-		queryDevicePictureLifeCycleResponse.setSuccess(_ctx.booleanValue("QueryDevicePictureLifeCycleResponse.Success"));
-		queryDevicePictureLifeCycleResponse.setErrorMessage(_ctx.stringValue("QueryDevicePictureLifeCycleResponse.ErrorMessage"));
 		queryDevicePictureLifeCycleResponse.setCode(_ctx.stringValue("QueryDevicePictureLifeCycleResponse.Code"));
+		queryDevicePictureLifeCycleResponse.setErrorMessage(_ctx.stringValue("QueryDevicePictureLifeCycleResponse.ErrorMessage"));
+		queryDevicePictureLifeCycleResponse.setSuccess(_ctx.booleanValue("QueryDevicePictureLifeCycleResponse.Success"));
 
 		Data data = new Data();
-		data.setIotId(_ctx.stringValue("QueryDevicePictureLifeCycleResponse.Data.IotId"));
 		data.setDay(_ctx.integerValue("QueryDevicePictureLifeCycleResponse.Data.Day"));
+		data.setIotId(_ctx.stringValue("QueryDevicePictureLifeCycleResponse.Data.IotId"));
 		queryDevicePictureLifeCycleResponse.setData(data);
 	 
 	 	return queryDevicePictureLifeCycleResponse;

@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DetectUserFaceByUrlResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private List<DataItem> data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class DetectUserFaceByUrlResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public List<DataItem> getData() {
 		return this.data;
 	}
@@ -77,15 +77,9 @@ public class DetectUserFaceByUrlResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private Float faceProbability;
-
-		private Integer age;
-
-		private Integer gender;
-
 		private Float blurScore;
 
-		private Float poseScore;
+		private Integer gender;
 
 		private Float occlusionScore;
 
@@ -93,33 +87,15 @@ public class DetectUserFaceByUrlResponse extends AcsResponse {
 
 		private Boolean goodForRecognition;
 
+		private Integer age;
+
+		private Float faceProbability;
+
+		private Float poseScore;
+
 		private List<String> faceRects;
 
 		private List<String> landmarks;
-
-		public Float getFaceProbability() {
-			return this.faceProbability;
-		}
-
-		public void setFaceProbability(Float faceProbability) {
-			this.faceProbability = faceProbability;
-		}
-
-		public Integer getAge() {
-			return this.age;
-		}
-
-		public void setAge(Integer age) {
-			this.age = age;
-		}
-
-		public Integer getGender() {
-			return this.gender;
-		}
-
-		public void setGender(Integer gender) {
-			this.gender = gender;
-		}
 
 		public Float getBlurScore() {
 			return this.blurScore;
@@ -129,12 +105,12 @@ public class DetectUserFaceByUrlResponse extends AcsResponse {
 			this.blurScore = blurScore;
 		}
 
-		public Float getPoseScore() {
-			return this.poseScore;
+		public Integer getGender() {
+			return this.gender;
 		}
 
-		public void setPoseScore(Float poseScore) {
-			this.poseScore = poseScore;
+		public void setGender(Integer gender) {
+			this.gender = gender;
 		}
 
 		public Float getOcclusionScore() {
@@ -159,6 +135,30 @@ public class DetectUserFaceByUrlResponse extends AcsResponse {
 
 		public void setGoodForRecognition(Boolean goodForRecognition) {
 			this.goodForRecognition = goodForRecognition;
+		}
+
+		public Integer getAge() {
+			return this.age;
+		}
+
+		public void setAge(Integer age) {
+			this.age = age;
+		}
+
+		public Float getFaceProbability() {
+			return this.faceProbability;
+		}
+
+		public void setFaceProbability(Float faceProbability) {
+			this.faceProbability = faceProbability;
+		}
+
+		public Float getPoseScore() {
+			return this.poseScore;
+		}
+
+		public void setPoseScore(Float poseScore) {
+			this.poseScore = poseScore;
 		}
 
 		public List<String> getFaceRects() {

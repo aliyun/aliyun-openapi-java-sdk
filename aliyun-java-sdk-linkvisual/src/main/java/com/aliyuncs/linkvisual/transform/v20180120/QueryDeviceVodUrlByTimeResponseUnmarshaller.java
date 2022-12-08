@@ -24,10 +24,10 @@ public class QueryDeviceVodUrlByTimeResponseUnmarshaller {
 	public static QueryDeviceVodUrlByTimeResponse unmarshall(QueryDeviceVodUrlByTimeResponse queryDeviceVodUrlByTimeResponse, UnmarshallerContext _ctx) {
 		
 		queryDeviceVodUrlByTimeResponse.setRequestId(_ctx.stringValue("QueryDeviceVodUrlByTimeResponse.RequestId"));
-		queryDeviceVodUrlByTimeResponse.setSuccess(_ctx.booleanValue("QueryDeviceVodUrlByTimeResponse.Success"));
-		queryDeviceVodUrlByTimeResponse.setErrorMessage(_ctx.stringValue("QueryDeviceVodUrlByTimeResponse.ErrorMessage"));
 		queryDeviceVodUrlByTimeResponse.setCode(_ctx.stringValue("QueryDeviceVodUrlByTimeResponse.Code"));
 		queryDeviceVodUrlByTimeResponse.setDecryptKey(_ctx.stringValue("QueryDeviceVodUrlByTimeResponse.DecryptKey"));
+		queryDeviceVodUrlByTimeResponse.setErrorMessage(_ctx.stringValue("QueryDeviceVodUrlByTimeResponse.ErrorMessage"));
+		queryDeviceVodUrlByTimeResponse.setSuccess(_ctx.booleanValue("QueryDeviceVodUrlByTimeResponse.Success"));
 
 		Data data = new Data();
 		data.setVodUrl(_ctx.stringValue("QueryDeviceVodUrlByTimeResponse.Data.VodUrl"));

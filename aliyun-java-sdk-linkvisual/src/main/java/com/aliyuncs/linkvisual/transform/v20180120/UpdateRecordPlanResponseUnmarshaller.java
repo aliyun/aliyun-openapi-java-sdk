@@ -23,9 +23,9 @@ public class UpdateRecordPlanResponseUnmarshaller {
 	public static UpdateRecordPlanResponse unmarshall(UpdateRecordPlanResponse updateRecordPlanResponse, UnmarshallerContext _ctx) {
 		
 		updateRecordPlanResponse.setRequestId(_ctx.stringValue("UpdateRecordPlanResponse.RequestId"));
-		updateRecordPlanResponse.setSuccess(_ctx.booleanValue("UpdateRecordPlanResponse.Success"));
-		updateRecordPlanResponse.setErrorMessage(_ctx.stringValue("UpdateRecordPlanResponse.ErrorMessage"));
 		updateRecordPlanResponse.setCode(_ctx.stringValue("UpdateRecordPlanResponse.Code"));
+		updateRecordPlanResponse.setErrorMessage(_ctx.stringValue("UpdateRecordPlanResponse.ErrorMessage"));
+		updateRecordPlanResponse.setSuccess(_ctx.booleanValue("UpdateRecordPlanResponse.Success"));
 	 
 	 	return updateRecordPlanResponse;
 	}

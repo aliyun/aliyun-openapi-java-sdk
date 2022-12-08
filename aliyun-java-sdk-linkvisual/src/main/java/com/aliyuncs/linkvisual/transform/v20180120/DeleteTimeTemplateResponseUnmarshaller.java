@@ -23,9 +23,9 @@ public class DeleteTimeTemplateResponseUnmarshaller {
 	public static DeleteTimeTemplateResponse unmarshall(DeleteTimeTemplateResponse deleteTimeTemplateResponse, UnmarshallerContext _ctx) {
 		
 		deleteTimeTemplateResponse.setRequestId(_ctx.stringValue("DeleteTimeTemplateResponse.RequestId"));
-		deleteTimeTemplateResponse.setSuccess(_ctx.booleanValue("DeleteTimeTemplateResponse.Success"));
-		deleteTimeTemplateResponse.setErrorMessage(_ctx.stringValue("DeleteTimeTemplateResponse.ErrorMessage"));
 		deleteTimeTemplateResponse.setCode(_ctx.stringValue("DeleteTimeTemplateResponse.Code"));
+		deleteTimeTemplateResponse.setErrorMessage(_ctx.stringValue("DeleteTimeTemplateResponse.ErrorMessage"));
+		deleteTimeTemplateResponse.setSuccess(_ctx.booleanValue("DeleteTimeTemplateResponse.Success"));
 	 
 	 	return deleteTimeTemplateResponse;
 	}

@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryCarProcessEventsResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class QueryCarProcessEventsResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -77,31 +77,15 @@ public class QueryCarProcessEventsResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer total;
-
-		private Integer pageCount;
-
 		private Integer currentPage;
 
 		private Integer pageSize;
 
+		private Integer total;
+
+		private Integer pageCount;
+
 		private List<PageDataItem> pageData;
-
-		public Integer getTotal() {
-			return this.total;
-		}
-
-		public void setTotal(Integer total) {
-			this.total = total;
-		}
-
-		public Integer getPageCount() {
-			return this.pageCount;
-		}
-
-		public void setPageCount(Integer pageCount) {
-			this.pageCount = pageCount;
-		}
 
 		public Integer getCurrentPage() {
 			return this.currentPage;
@@ -119,6 +103,22 @@ public class QueryCarProcessEventsResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
+		public Integer getTotal() {
+			return this.total;
+		}
+
+		public void setTotal(Integer total) {
+			this.total = total;
+		}
+
+		public Integer getPageCount() {
+			return this.pageCount;
+		}
+
+		public void setPageCount(Integer pageCount) {
+			this.pageCount = pageCount;
+		}
+
 		public List<PageDataItem> getPageData() {
 			return this.pageData;
 		}
@@ -129,50 +129,42 @@ public class QueryCarProcessEventsResponse extends AcsResponse {
 
 		public static class PageDataItem {
 
-			private String eventId;
-
-			private Integer eventType;
+			private String eventPicUrl;
 
 			private Long eventTime;
 
-			private String eventPicId;
+			private Integer actionType;
 
-			private String eventPicUrl;
+			private Integer confidence;
 
-			private String iotId;
+			private String subProductKey;
+
+			private String eventId;
 
 			private String subIotId;
+
+			private Integer areaIndex;
+
+			private Integer eventType;
+
+			private String eventPicId;
+
+			private String taskId;
+
+			private String subDeviceName;
+
+			private String iotId;
 
 			private String subDeviceNickName;
 
 			private String plateNo;
 
-			private String subProductKey;
-
-			private String subDeviceName;
-
-			private Integer actionType;
-
-			private Integer areaIndex;
-
-			private Integer confidence;
-
-			private String taskId;
-
-			public String getEventId() {
-				return this.eventId;
+			public String getEventPicUrl() {
+				return this.eventPicUrl;
 			}
 
-			public void setEventId(String eventId) {
-				this.eventId = eventId;
-			}
-
-			public Integer getEventType() {
-				return this.eventType;
-			}
-
-			public void setEventType(Integer eventType) {
-				this.eventType = eventType;
+			public void setEventPicUrl(String eventPicUrl) {
+				this.eventPicUrl = eventPicUrl;
 			}
 
 			public Long getEventTime() {
@@ -183,28 +175,36 @@ public class QueryCarProcessEventsResponse extends AcsResponse {
 				this.eventTime = eventTime;
 			}
 
-			public String getEventPicId() {
-				return this.eventPicId;
+			public Integer getActionType() {
+				return this.actionType;
 			}
 
-			public void setEventPicId(String eventPicId) {
-				this.eventPicId = eventPicId;
+			public void setActionType(Integer actionType) {
+				this.actionType = actionType;
 			}
 
-			public String getEventPicUrl() {
-				return this.eventPicUrl;
+			public Integer getConfidence() {
+				return this.confidence;
 			}
 
-			public void setEventPicUrl(String eventPicUrl) {
-				this.eventPicUrl = eventPicUrl;
+			public void setConfidence(Integer confidence) {
+				this.confidence = confidence;
 			}
 
-			public String getIotId() {
-				return this.iotId;
+			public String getSubProductKey() {
+				return this.subProductKey;
 			}
 
-			public void setIotId(String iotId) {
-				this.iotId = iotId;
+			public void setSubProductKey(String subProductKey) {
+				this.subProductKey = subProductKey;
+			}
+
+			public String getEventId() {
+				return this.eventId;
+			}
+
+			public void setEventId(String eventId) {
+				this.eventId = eventId;
 			}
 
 			public String getSubIotId() {
@@ -213,6 +213,54 @@ public class QueryCarProcessEventsResponse extends AcsResponse {
 
 			public void setSubIotId(String subIotId) {
 				this.subIotId = subIotId;
+			}
+
+			public Integer getAreaIndex() {
+				return this.areaIndex;
+			}
+
+			public void setAreaIndex(Integer areaIndex) {
+				this.areaIndex = areaIndex;
+			}
+
+			public Integer getEventType() {
+				return this.eventType;
+			}
+
+			public void setEventType(Integer eventType) {
+				this.eventType = eventType;
+			}
+
+			public String getEventPicId() {
+				return this.eventPicId;
+			}
+
+			public void setEventPicId(String eventPicId) {
+				this.eventPicId = eventPicId;
+			}
+
+			public String getTaskId() {
+				return this.taskId;
+			}
+
+			public void setTaskId(String taskId) {
+				this.taskId = taskId;
+			}
+
+			public String getSubDeviceName() {
+				return this.subDeviceName;
+			}
+
+			public void setSubDeviceName(String subDeviceName) {
+				this.subDeviceName = subDeviceName;
+			}
+
+			public String getIotId() {
+				return this.iotId;
+			}
+
+			public void setIotId(String iotId) {
+				this.iotId = iotId;
 			}
 
 			public String getSubDeviceNickName() {
@@ -229,54 +277,6 @@ public class QueryCarProcessEventsResponse extends AcsResponse {
 
 			public void setPlateNo(String plateNo) {
 				this.plateNo = plateNo;
-			}
-
-			public String getSubProductKey() {
-				return this.subProductKey;
-			}
-
-			public void setSubProductKey(String subProductKey) {
-				this.subProductKey = subProductKey;
-			}
-
-			public String getSubDeviceName() {
-				return this.subDeviceName;
-			}
-
-			public void setSubDeviceName(String subDeviceName) {
-				this.subDeviceName = subDeviceName;
-			}
-
-			public Integer getActionType() {
-				return this.actionType;
-			}
-
-			public void setActionType(Integer actionType) {
-				this.actionType = actionType;
-			}
-
-			public Integer getAreaIndex() {
-				return this.areaIndex;
-			}
-
-			public void setAreaIndex(Integer areaIndex) {
-				this.areaIndex = areaIndex;
-			}
-
-			public Integer getConfidence() {
-				return this.confidence;
-			}
-
-			public void setConfidence(Integer confidence) {
-				this.confidence = confidence;
-			}
-
-			public String getTaskId() {
-				return this.taskId;
-			}
-
-			public void setTaskId(String taskId) {
-				this.taskId = taskId;
 			}
 		}
 	}

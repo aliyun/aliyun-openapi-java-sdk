@@ -24,10 +24,10 @@ public class ClearFaceDeviceDBResponseUnmarshaller {
 	public static ClearFaceDeviceDBResponse unmarshall(ClearFaceDeviceDBResponse clearFaceDeviceDBResponse, UnmarshallerContext _ctx) {
 		
 		clearFaceDeviceDBResponse.setRequestId(_ctx.stringValue("ClearFaceDeviceDBResponse.RequestId"));
-		clearFaceDeviceDBResponse.setSuccess(_ctx.booleanValue("ClearFaceDeviceDBResponse.Success"));
 		clearFaceDeviceDBResponse.setCode(_ctx.stringValue("ClearFaceDeviceDBResponse.Code"));
-		clearFaceDeviceDBResponse.setErrorMessage(_ctx.stringValue("ClearFaceDeviceDBResponse.ErrorMessage"));
 		clearFaceDeviceDBResponse.setData(_ctx.mapValue("ClearFaceDeviceDBResponse.Data"));
+		clearFaceDeviceDBResponse.setErrorMessage(_ctx.stringValue("ClearFaceDeviceDBResponse.ErrorMessage"));
+		clearFaceDeviceDBResponse.setSuccess(_ctx.booleanValue("ClearFaceDeviceDBResponse.Success"));
 	 
 	 	return clearFaceDeviceDBResponse;
 	}

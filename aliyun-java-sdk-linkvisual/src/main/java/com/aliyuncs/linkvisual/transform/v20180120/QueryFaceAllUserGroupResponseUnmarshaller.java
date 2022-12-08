@@ -28,21 +28,21 @@ public class QueryFaceAllUserGroupResponseUnmarshaller {
 	public static QueryFaceAllUserGroupResponse unmarshall(QueryFaceAllUserGroupResponse queryFaceAllUserGroupResponse, UnmarshallerContext _ctx) {
 		
 		queryFaceAllUserGroupResponse.setRequestId(_ctx.stringValue("QueryFaceAllUserGroupResponse.RequestId"));
-		queryFaceAllUserGroupResponse.setSuccess(_ctx.booleanValue("QueryFaceAllUserGroupResponse.Success"));
 		queryFaceAllUserGroupResponse.setCode(_ctx.stringValue("QueryFaceAllUserGroupResponse.Code"));
 		queryFaceAllUserGroupResponse.setErrorMessage(_ctx.stringValue("QueryFaceAllUserGroupResponse.ErrorMessage"));
+		queryFaceAllUserGroupResponse.setSuccess(_ctx.booleanValue("QueryFaceAllUserGroupResponse.Success"));
 
 		Data data = new Data();
-		data.setTotal(_ctx.integerValue("QueryFaceAllUserGroupResponse.Data.Total"));
 		data.setPageNo(_ctx.integerValue("QueryFaceAllUserGroupResponse.Data.PageNo"));
 		data.setPageSize(_ctx.integerValue("QueryFaceAllUserGroupResponse.Data.PageSize"));
+		data.setTotal(_ctx.integerValue("QueryFaceAllUserGroupResponse.Data.Total"));
 
 		List<UserGroupListItem> userGroupList = new ArrayList<UserGroupListItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryFaceAllUserGroupResponse.Data.UserGroupList.Length"); i++) {
 			UserGroupListItem userGroupListItem = new UserGroupListItem();
-			userGroupListItem.setUserGroupId(_ctx.stringValue("QueryFaceAllUserGroupResponse.Data.UserGroupList["+ i +"].UserGroupId"));
 			userGroupListItem.setUserGroupName(_ctx.stringValue("QueryFaceAllUserGroupResponse.Data.UserGroupList["+ i +"].UserGroupName"));
 			userGroupListItem.setModifiedTime(_ctx.stringValue("QueryFaceAllUserGroupResponse.Data.UserGroupList["+ i +"].ModifiedTime"));
+			userGroupListItem.setUserGroupId(_ctx.stringValue("QueryFaceAllUserGroupResponse.Data.UserGroupList["+ i +"].UserGroupId"));
 
 			userGroupList.add(userGroupListItem);
 		}

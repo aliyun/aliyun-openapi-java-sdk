@@ -28,25 +28,25 @@ public class QueryRecordResponseUnmarshaller {
 	public static QueryRecordResponse unmarshall(QueryRecordResponse queryRecordResponse, UnmarshallerContext _ctx) {
 		
 		queryRecordResponse.setRequestId(_ctx.stringValue("QueryRecordResponse.RequestId"));
-		queryRecordResponse.setSuccess(_ctx.booleanValue("QueryRecordResponse.Success"));
-		queryRecordResponse.setErrorMessage(_ctx.stringValue("QueryRecordResponse.ErrorMessage"));
 		queryRecordResponse.setCode(_ctx.stringValue("QueryRecordResponse.Code"));
+		queryRecordResponse.setErrorMessage(_ctx.stringValue("QueryRecordResponse.ErrorMessage"));
+		queryRecordResponse.setSuccess(_ctx.booleanValue("QueryRecordResponse.Success"));
 
 		Data data = new Data();
-		data.setPageSize(_ctx.integerValue("QueryRecordResponse.Data.PageSize"));
 		data.setPage(_ctx.integerValue("QueryRecordResponse.Data.Page"));
+		data.setPageSize(_ctx.integerValue("QueryRecordResponse.Data.PageSize"));
 
 		List<ListItem> list = new ArrayList<ListItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryRecordResponse.Data.List.Length"); i++) {
 			ListItem listItem = new ListItem();
-			listItem.setBeginTime(_ctx.stringValue("QueryRecordResponse.Data.List["+ i +"].BeginTime"));
+			listItem.setSnapshotUrl(_ctx.stringValue("QueryRecordResponse.Data.List["+ i +"].SnapshotUrl"));
 			listItem.setEndTime(_ctx.stringValue("QueryRecordResponse.Data.List["+ i +"].EndTime"));
 			listItem.setRecordType(_ctx.integerValue("QueryRecordResponse.Data.List["+ i +"].RecordType"));
 			listItem.setStreamType(_ctx.integerValue("QueryRecordResponse.Data.List["+ i +"].StreamType"));
+			listItem.setBeginTime(_ctx.stringValue("QueryRecordResponse.Data.List["+ i +"].BeginTime"));
 			listItem.setFileName(_ctx.stringValue("QueryRecordResponse.Data.List["+ i +"].FileName"));
-			listItem.setFileSize(_ctx.integerValue("QueryRecordResponse.Data.List["+ i +"].FileSize"));
 			listItem.setVideoFrameNumber(_ctx.integerValue("QueryRecordResponse.Data.List["+ i +"].VideoFrameNumber"));
-			listItem.setSnapshotUrl(_ctx.stringValue("QueryRecordResponse.Data.List["+ i +"].SnapshotUrl"));
+			listItem.setFileSize(_ctx.integerValue("QueryRecordResponse.Data.List["+ i +"].FileSize"));
 
 			list.add(listItem);
 		}

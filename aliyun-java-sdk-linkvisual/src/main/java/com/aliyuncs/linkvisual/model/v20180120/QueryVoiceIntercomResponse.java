@@ -24,15 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryVoiceIntercomResponse extends AcsResponse {
 
-	private String requestId;
+	private String code;
 
-	private Boolean success;
+	private String requestId;
 
 	private String errorMessage;
 
-	private String code;
+	private Boolean success;
 
 	private Data data;
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,14 +48,6 @@ public class QueryVoiceIntercomResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public String getErrorMessage() {
@@ -58,12 +58,12 @@ public class QueryVoiceIntercomResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public String getCode() {
-		return this.code;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -98,17 +98,9 @@ public class QueryVoiceIntercomResponse extends AcsResponse {
 
 		public static class CryptoKey {
 
-			private String iv;
-
 			private String key;
 
-			public String getIv() {
-				return this.iv;
-			}
-
-			public void setIv(String iv) {
-				this.iv = iv;
-			}
+			private String iv;
 
 			public String getKey() {
 				return this.key;
@@ -116,6 +108,14 @@ public class QueryVoiceIntercomResponse extends AcsResponse {
 
 			public void setKey(String key) {
 				this.key = key;
+			}
+
+			public String getIv() {
+				return this.iv;
+			}
+
+			public void setIv(String iv) {
+				this.iv = iv;
 			}
 		}
 	}

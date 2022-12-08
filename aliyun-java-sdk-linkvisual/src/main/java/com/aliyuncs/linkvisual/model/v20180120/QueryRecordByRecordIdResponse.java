@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryRecordByRecordIdResponse extends AcsResponse {
 
-	private String requestId;
+	private String code;
 
-	private Boolean success;
+	private String requestId;
 
 	private String errorMessage;
 
-	private String code;
+	private Boolean success;
 
 	private List<DataItem> data;
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class QueryRecordByRecordIdResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public String getErrorMessage() {
@@ -59,12 +59,12 @@ public class QueryRecordByRecordIdResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public String getCode() {
-		return this.code;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<DataItem> getData() {
@@ -77,13 +77,21 @@ public class QueryRecordByRecordIdResponse extends AcsResponse {
 
 	public static class DataItem {
 
+		private String endTime;
+
 		private String fileName;
 
 		private String vodUrl;
 
 		private String beginTime;
 
-		private String endTime;
+		public String getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
+		}
 
 		public String getFileName() {
 			return this.fileName;
@@ -107,14 +115,6 @@ public class QueryRecordByRecordIdResponse extends AcsResponse {
 
 		public void setBeginTime(String beginTime) {
 			this.beginTime = beginTime;
-		}
-
-		public String getEndTime() {
-			return this.endTime;
-		}
-
-		public void setEndTime(String endTime) {
-			this.endTime = endTime;
 		}
 	}
 

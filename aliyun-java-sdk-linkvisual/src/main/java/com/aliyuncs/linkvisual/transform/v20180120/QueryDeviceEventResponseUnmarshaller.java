@@ -28,15 +28,15 @@ public class QueryDeviceEventResponseUnmarshaller {
 	public static QueryDeviceEventResponse unmarshall(QueryDeviceEventResponse queryDeviceEventResponse, UnmarshallerContext _ctx) {
 		
 		queryDeviceEventResponse.setRequestId(_ctx.stringValue("QueryDeviceEventResponse.RequestId"));
-		queryDeviceEventResponse.setSuccess(_ctx.booleanValue("QueryDeviceEventResponse.Success"));
-		queryDeviceEventResponse.setErrorMessage(_ctx.stringValue("QueryDeviceEventResponse.ErrorMessage"));
 		queryDeviceEventResponse.setCode(_ctx.stringValue("QueryDeviceEventResponse.Code"));
+		queryDeviceEventResponse.setErrorMessage(_ctx.stringValue("QueryDeviceEventResponse.ErrorMessage"));
+		queryDeviceEventResponse.setSuccess(_ctx.booleanValue("QueryDeviceEventResponse.Success"));
 
 		Data data = new Data();
-		data.setTotal(_ctx.integerValue("QueryDeviceEventResponse.Data.Total"));
 		data.setPageSize(_ctx.integerValue("QueryDeviceEventResponse.Data.PageSize"));
-		data.setPage(_ctx.integerValue("QueryDeviceEventResponse.Data.Page"));
 		data.setPageCount(_ctx.integerValue("QueryDeviceEventResponse.Data.PageCount"));
+		data.setTotal(_ctx.integerValue("QueryDeviceEventResponse.Data.Total"));
+		data.setPage(_ctx.integerValue("QueryDeviceEventResponse.Data.Page"));
 
 		List<ListItem> list = new ArrayList<ListItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryDeviceEventResponse.Data.List.Length"); i++) {
@@ -44,8 +44,8 @@ public class QueryDeviceEventResponseUnmarshaller {
 			listItem.setEventId(_ctx.stringValue("QueryDeviceEventResponse.Data.List["+ i +"].EventId"));
 			listItem.setEventTime(_ctx.stringValue("QueryDeviceEventResponse.Data.List["+ i +"].EventTime"));
 			listItem.setEventType(_ctx.integerValue("QueryDeviceEventResponse.Data.List["+ i +"].EventType"));
-			listItem.setEventDesc(_ctx.stringValue("QueryDeviceEventResponse.Data.List["+ i +"].EventDesc"));
 			listItem.setEventPicId(_ctx.stringValue("QueryDeviceEventResponse.Data.List["+ i +"].EventPicId"));
+			listItem.setEventDesc(_ctx.stringValue("QueryDeviceEventResponse.Data.List["+ i +"].EventDesc"));
 			listItem.setEventData(_ctx.stringValue("QueryDeviceEventResponse.Data.List["+ i +"].EventData"));
 
 			list.add(listItem);

@@ -23,9 +23,9 @@ public class AddFaceDeviceToDeviceGroupResponseUnmarshaller {
 	public static AddFaceDeviceToDeviceGroupResponse unmarshall(AddFaceDeviceToDeviceGroupResponse addFaceDeviceToDeviceGroupResponse, UnmarshallerContext _ctx) {
 		
 		addFaceDeviceToDeviceGroupResponse.setRequestId(_ctx.stringValue("AddFaceDeviceToDeviceGroupResponse.RequestId"));
-		addFaceDeviceToDeviceGroupResponse.setSuccess(_ctx.booleanValue("AddFaceDeviceToDeviceGroupResponse.Success"));
 		addFaceDeviceToDeviceGroupResponse.setCode(_ctx.stringValue("AddFaceDeviceToDeviceGroupResponse.Code"));
 		addFaceDeviceToDeviceGroupResponse.setErrorMessage(_ctx.stringValue("AddFaceDeviceToDeviceGroupResponse.ErrorMessage"));
+		addFaceDeviceToDeviceGroupResponse.setSuccess(_ctx.booleanValue("AddFaceDeviceToDeviceGroupResponse.Success"));
 	 
 	 	return addFaceDeviceToDeviceGroupResponse;
 	}

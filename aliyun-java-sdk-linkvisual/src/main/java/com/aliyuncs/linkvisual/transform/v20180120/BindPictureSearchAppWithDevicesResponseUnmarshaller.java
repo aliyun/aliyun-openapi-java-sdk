@@ -23,9 +23,9 @@ public class BindPictureSearchAppWithDevicesResponseUnmarshaller {
 	public static BindPictureSearchAppWithDevicesResponse unmarshall(BindPictureSearchAppWithDevicesResponse bindPictureSearchAppWithDevicesResponse, UnmarshallerContext _ctx) {
 		
 		bindPictureSearchAppWithDevicesResponse.setRequestId(_ctx.stringValue("BindPictureSearchAppWithDevicesResponse.RequestId"));
-		bindPictureSearchAppWithDevicesResponse.setSuccess(_ctx.booleanValue("BindPictureSearchAppWithDevicesResponse.Success"));
 		bindPictureSearchAppWithDevicesResponse.setCode(_ctx.stringValue("BindPictureSearchAppWithDevicesResponse.Code"));
 		bindPictureSearchAppWithDevicesResponse.setErrorMessage(_ctx.stringValue("BindPictureSearchAppWithDevicesResponse.ErrorMessage"));
+		bindPictureSearchAppWithDevicesResponse.setSuccess(_ctx.booleanValue("BindPictureSearchAppWithDevicesResponse.Success"));
 	 
 	 	return bindPictureSearchAppWithDevicesResponse;
 	}

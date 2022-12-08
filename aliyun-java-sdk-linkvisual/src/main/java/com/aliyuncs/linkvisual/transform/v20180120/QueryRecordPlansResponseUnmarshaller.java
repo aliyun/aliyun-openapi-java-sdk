@@ -28,15 +28,15 @@ public class QueryRecordPlansResponseUnmarshaller {
 	public static QueryRecordPlansResponse unmarshall(QueryRecordPlansResponse queryRecordPlansResponse, UnmarshallerContext _ctx) {
 		
 		queryRecordPlansResponse.setRequestId(_ctx.stringValue("QueryRecordPlansResponse.RequestId"));
-		queryRecordPlansResponse.setSuccess(_ctx.booleanValue("QueryRecordPlansResponse.Success"));
-		queryRecordPlansResponse.setErrorMessage(_ctx.stringValue("QueryRecordPlansResponse.ErrorMessage"));
 		queryRecordPlansResponse.setCode(_ctx.stringValue("QueryRecordPlansResponse.Code"));
+		queryRecordPlansResponse.setErrorMessage(_ctx.stringValue("QueryRecordPlansResponse.ErrorMessage"));
+		queryRecordPlansResponse.setSuccess(_ctx.booleanValue("QueryRecordPlansResponse.Success"));
 
 		Data data = new Data();
-		data.setTotal(_ctx.integerValue("QueryRecordPlansResponse.Data.Total"));
 		data.setPageSize(_ctx.integerValue("QueryRecordPlansResponse.Data.PageSize"));
-		data.setPage(_ctx.integerValue("QueryRecordPlansResponse.Data.Page"));
 		data.setPageCount(_ctx.integerValue("QueryRecordPlansResponse.Data.PageCount"));
+		data.setTotal(_ctx.integerValue("QueryRecordPlansResponse.Data.Total"));
+		data.setPage(_ctx.integerValue("QueryRecordPlansResponse.Data.Page"));
 
 		List<ListItem> list = new ArrayList<ListItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryRecordPlansResponse.Data.List.Length"); i++) {

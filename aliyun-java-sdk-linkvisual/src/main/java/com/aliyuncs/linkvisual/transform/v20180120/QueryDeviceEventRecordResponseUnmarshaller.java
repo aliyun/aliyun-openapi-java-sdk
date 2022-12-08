@@ -27,17 +27,17 @@ public class QueryDeviceEventRecordResponseUnmarshaller {
 	public static QueryDeviceEventRecordResponse unmarshall(QueryDeviceEventRecordResponse queryDeviceEventRecordResponse, UnmarshallerContext _ctx) {
 		
 		queryDeviceEventRecordResponse.setRequestId(_ctx.stringValue("QueryDeviceEventRecordResponse.RequestId"));
-		queryDeviceEventRecordResponse.setSuccess(_ctx.booleanValue("QueryDeviceEventRecordResponse.Success"));
-		queryDeviceEventRecordResponse.setErrorMessage(_ctx.stringValue("QueryDeviceEventRecordResponse.ErrorMessage"));
 		queryDeviceEventRecordResponse.setCode(_ctx.integerValue("QueryDeviceEventRecordResponse.Code"));
+		queryDeviceEventRecordResponse.setErrorMessage(_ctx.stringValue("QueryDeviceEventRecordResponse.ErrorMessage"));
+		queryDeviceEventRecordResponse.setSuccess(_ctx.booleanValue("QueryDeviceEventRecordResponse.Success"));
 
 		List<VodInfo> data = new ArrayList<VodInfo>();
 		for (int i = 0; i < _ctx.lengthValue("QueryDeviceEventRecordResponse.Data.Length"); i++) {
 			VodInfo vodInfo = new VodInfo();
+			vodInfo.setEndTime(_ctx.stringValue("QueryDeviceEventRecordResponse.Data["+ i +"].EndTime"));
 			vodInfo.setFileName(_ctx.stringValue("QueryDeviceEventRecordResponse.Data["+ i +"].FileName"));
 			vodInfo.setVodUrl(_ctx.stringValue("QueryDeviceEventRecordResponse.Data["+ i +"].VodUrl"));
 			vodInfo.setBeginTime(_ctx.stringValue("QueryDeviceEventRecordResponse.Data["+ i +"].BeginTime"));
-			vodInfo.setEndTime(_ctx.stringValue("QueryDeviceEventRecordResponse.Data["+ i +"].EndTime"));
 
 			data.add(vodInfo);
 		}

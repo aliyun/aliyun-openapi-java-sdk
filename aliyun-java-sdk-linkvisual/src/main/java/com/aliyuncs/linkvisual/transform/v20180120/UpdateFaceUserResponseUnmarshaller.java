@@ -23,9 +23,9 @@ public class UpdateFaceUserResponseUnmarshaller {
 	public static UpdateFaceUserResponse unmarshall(UpdateFaceUserResponse updateFaceUserResponse, UnmarshallerContext _ctx) {
 		
 		updateFaceUserResponse.setRequestId(_ctx.stringValue("UpdateFaceUserResponse.RequestId"));
-		updateFaceUserResponse.setSuccess(_ctx.booleanValue("UpdateFaceUserResponse.Success"));
-		updateFaceUserResponse.setErrorMessage(_ctx.stringValue("UpdateFaceUserResponse.ErrorMessage"));
 		updateFaceUserResponse.setCode(_ctx.stringValue("UpdateFaceUserResponse.Code"));
+		updateFaceUserResponse.setErrorMessage(_ctx.stringValue("UpdateFaceUserResponse.ErrorMessage"));
+		updateFaceUserResponse.setSuccess(_ctx.booleanValue("UpdateFaceUserResponse.Success"));
 	 
 	 	return updateFaceUserResponse;
 	}

@@ -23,10 +23,10 @@ public class QueryFaceCustomUserIdByUserIdResponseUnmarshaller {
 	public static QueryFaceCustomUserIdByUserIdResponse unmarshall(QueryFaceCustomUserIdByUserIdResponse queryFaceCustomUserIdByUserIdResponse, UnmarshallerContext _ctx) {
 		
 		queryFaceCustomUserIdByUserIdResponse.setRequestId(_ctx.stringValue("QueryFaceCustomUserIdByUserIdResponse.RequestId"));
-		queryFaceCustomUserIdByUserIdResponse.setSuccess(_ctx.booleanValue("QueryFaceCustomUserIdByUserIdResponse.Success"));
-		queryFaceCustomUserIdByUserIdResponse.setErrorMessage(_ctx.stringValue("QueryFaceCustomUserIdByUserIdResponse.ErrorMessage"));
 		queryFaceCustomUserIdByUserIdResponse.setCode(_ctx.stringValue("QueryFaceCustomUserIdByUserIdResponse.Code"));
 		queryFaceCustomUserIdByUserIdResponse.setData(_ctx.stringValue("QueryFaceCustomUserIdByUserIdResponse.Data"));
+		queryFaceCustomUserIdByUserIdResponse.setErrorMessage(_ctx.stringValue("QueryFaceCustomUserIdByUserIdResponse.ErrorMessage"));
+		queryFaceCustomUserIdByUserIdResponse.setSuccess(_ctx.booleanValue("QueryFaceCustomUserIdByUserIdResponse.Success"));
 	 
 	 	return queryFaceCustomUserIdByUserIdResponse;
 	}

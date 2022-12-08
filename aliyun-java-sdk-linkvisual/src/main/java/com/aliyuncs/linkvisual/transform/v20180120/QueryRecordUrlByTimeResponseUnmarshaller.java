@@ -23,10 +23,10 @@ public class QueryRecordUrlByTimeResponseUnmarshaller {
 	public static QueryRecordUrlByTimeResponse unmarshall(QueryRecordUrlByTimeResponse queryRecordUrlByTimeResponse, UnmarshallerContext _ctx) {
 		
 		queryRecordUrlByTimeResponse.setRequestId(_ctx.stringValue("QueryRecordUrlByTimeResponse.RequestId"));
-		queryRecordUrlByTimeResponse.setSuccess(_ctx.booleanValue("QueryRecordUrlByTimeResponse.Success"));
 		queryRecordUrlByTimeResponse.setCode(_ctx.stringValue("QueryRecordUrlByTimeResponse.Code"));
-		queryRecordUrlByTimeResponse.setErrorMessage(_ctx.stringValue("QueryRecordUrlByTimeResponse.ErrorMessage"));
 		queryRecordUrlByTimeResponse.setData(_ctx.stringValue("QueryRecordUrlByTimeResponse.Data"));
+		queryRecordUrlByTimeResponse.setErrorMessage(_ctx.stringValue("QueryRecordUrlByTimeResponse.ErrorMessage"));
+		queryRecordUrlByTimeResponse.setSuccess(_ctx.booleanValue("QueryRecordUrlByTimeResponse.Success"));
 	 
 	 	return queryRecordUrlByTimeResponse;
 	}

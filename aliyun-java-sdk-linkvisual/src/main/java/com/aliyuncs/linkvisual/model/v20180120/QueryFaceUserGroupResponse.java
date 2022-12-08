@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryFaceUserGroupResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class QueryFaceUserGroupResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -77,21 +77,13 @@ public class QueryFaceUserGroupResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer total;
-
 		private Integer pageNo;
 
 		private Integer pageSize;
 
+		private Integer total;
+
 		private List<UserGroupInfos> userGroupList;
-
-		public Integer getTotal() {
-			return this.total;
-		}
-
-		public void setTotal(Integer total) {
-			this.total = total;
-		}
 
 		public Integer getPageNo() {
 			return this.pageNo;
@@ -109,6 +101,14 @@ public class QueryFaceUserGroupResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
+		public Integer getTotal() {
+			return this.total;
+		}
+
+		public void setTotal(Integer total) {
+			this.total = total;
+		}
+
 		public List<UserGroupInfos> getUserGroupList() {
 			return this.userGroupList;
 		}
@@ -119,19 +119,11 @@ public class QueryFaceUserGroupResponse extends AcsResponse {
 
 		public static class UserGroupInfos {
 
-			private String userGroupId;
-
 			private String userGroupName;
 
 			private String modifiedTime;
 
-			public String getUserGroupId() {
-				return this.userGroupId;
-			}
-
-			public void setUserGroupId(String userGroupId) {
-				this.userGroupId = userGroupId;
-			}
+			private String userGroupId;
 
 			public String getUserGroupName() {
 				return this.userGroupName;
@@ -147,6 +139,14 @@ public class QueryFaceUserGroupResponse extends AcsResponse {
 
 			public void setModifiedTime(String modifiedTime) {
 				this.modifiedTime = modifiedTime;
+			}
+
+			public String getUserGroupId() {
+				return this.userGroupId;
+			}
+
+			public void setUserGroupId(String userGroupId) {
+				this.userGroupId = userGroupId;
 			}
 		}
 	}

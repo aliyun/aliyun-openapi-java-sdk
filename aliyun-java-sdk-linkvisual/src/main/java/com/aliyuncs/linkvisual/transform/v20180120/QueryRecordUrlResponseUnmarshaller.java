@@ -23,10 +23,10 @@ public class QueryRecordUrlResponseUnmarshaller {
 	public static QueryRecordUrlResponse unmarshall(QueryRecordUrlResponse queryRecordUrlResponse, UnmarshallerContext _ctx) {
 		
 		queryRecordUrlResponse.setRequestId(_ctx.stringValue("QueryRecordUrlResponse.RequestId"));
-		queryRecordUrlResponse.setSuccess(_ctx.booleanValue("QueryRecordUrlResponse.Success"));
-		queryRecordUrlResponse.setErrorMessage(_ctx.stringValue("QueryRecordUrlResponse.ErrorMessage"));
 		queryRecordUrlResponse.setCode(_ctx.stringValue("QueryRecordUrlResponse.Code"));
 		queryRecordUrlResponse.setData(_ctx.stringValue("QueryRecordUrlResponse.Data"));
+		queryRecordUrlResponse.setErrorMessage(_ctx.stringValue("QueryRecordUrlResponse.ErrorMessage"));
+		queryRecordUrlResponse.setSuccess(_ctx.booleanValue("QueryRecordUrlResponse.Success"));
 	 
 	 	return queryRecordUrlResponse;
 	}

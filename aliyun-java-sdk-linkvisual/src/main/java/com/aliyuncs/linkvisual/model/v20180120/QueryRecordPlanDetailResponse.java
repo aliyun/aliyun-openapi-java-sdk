@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryRecordPlanDetailResponse extends AcsResponse {
 
-	private String requestId;
+	private String code;
 
-	private Boolean success;
+	private String requestId;
 
 	private String errorMessage;
 
-	private String code;
+	private Boolean success;
 
 	private Data data;
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class QueryRecordPlanDetailResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public String getErrorMessage() {
@@ -59,12 +59,12 @@ public class QueryRecordPlanDetailResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public String getCode() {
-		return this.code;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -119,30 +119,22 @@ public class QueryRecordPlanDetailResponse extends AcsResponse {
 
 		public static class TemplateInfo {
 
-			private String templateId;
-
-			private String name;
+			private Integer allDay;
 
 			private Integer _default;
 
-			private Integer allDay;
+			private String name;
+
+			private String templateId;
 
 			private List<TimeSectionListItem> timeSectionList;
 
-			public String getTemplateId() {
-				return this.templateId;
+			public Integer getAllDay() {
+				return this.allDay;
 			}
 
-			public void setTemplateId(String templateId) {
-				this.templateId = templateId;
-			}
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
+			public void setAllDay(Integer allDay) {
+				this.allDay = allDay;
 			}
 
 			public Integer get_Default() {
@@ -153,12 +145,20 @@ public class QueryRecordPlanDetailResponse extends AcsResponse {
 				this._default = _default;
 			}
 
-			public Integer getAllDay() {
-				return this.allDay;
+			public String getName() {
+				return this.name;
 			}
 
-			public void setAllDay(Integer allDay) {
-				this.allDay = allDay;
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getTemplateId() {
+				return this.templateId;
+			}
+
+			public void setTemplateId(String templateId) {
+				this.templateId = templateId;
 			}
 
 			public List<TimeSectionListItem> getTimeSectionList() {
@@ -171,11 +171,19 @@ public class QueryRecordPlanDetailResponse extends AcsResponse {
 
 			public static class TimeSectionListItem {
 
+				private Integer end;
+
 				private Integer dayOfWeek;
 
 				private Integer begin;
 
-				private Integer end;
+				public Integer getEnd() {
+					return this.end;
+				}
+
+				public void setEnd(Integer end) {
+					this.end = end;
+				}
 
 				public Integer getDayOfWeek() {
 					return this.dayOfWeek;
@@ -191,14 +199,6 @@ public class QueryRecordPlanDetailResponse extends AcsResponse {
 
 				public void setBegin(Integer begin) {
 					this.begin = begin;
-				}
-
-				public Integer getEnd() {
-					return this.end;
-				}
-
-				public void setEnd(Integer end) {
-					this.end = end;
 				}
 			}
 		}

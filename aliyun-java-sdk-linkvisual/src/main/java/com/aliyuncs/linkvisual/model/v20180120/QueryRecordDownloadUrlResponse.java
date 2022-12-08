@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryRecordDownloadUrlResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -66,6 +50,22 @@ public class QueryRecordDownloadUrlResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -76,19 +76,11 @@ public class QueryRecordDownloadUrlResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String url;
-
 		private Integer status;
 
+		private String url;
+
 		private Integer progress;
-
-		public String getUrl() {
-			return this.url;
-		}
-
-		public void setUrl(String url) {
-			this.url = url;
-		}
 
 		public Integer getStatus() {
 			return this.status;
@@ -96,6 +88,14 @@ public class QueryRecordDownloadUrlResponse extends AcsResponse {
 
 		public void setStatus(Integer status) {
 			this.status = status;
+		}
+
+		public String getUrl() {
+			return this.url;
+		}
+
+		public void setUrl(String url) {
+			this.url = url;
 		}
 
 		public Integer getProgress() {

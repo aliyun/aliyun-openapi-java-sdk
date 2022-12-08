@@ -24,9 +24,9 @@ public class CreateLocalFileUploadJobResponseUnmarshaller {
 	public static CreateLocalFileUploadJobResponse unmarshall(CreateLocalFileUploadJobResponse createLocalFileUploadJobResponse, UnmarshallerContext _ctx) {
 		
 		createLocalFileUploadJobResponse.setRequestId(_ctx.stringValue("CreateLocalFileUploadJobResponse.RequestId"));
-		createLocalFileUploadJobResponse.setSuccess(_ctx.booleanValue("CreateLocalFileUploadJobResponse.Success"));
 		createLocalFileUploadJobResponse.setCode(_ctx.stringValue("CreateLocalFileUploadJobResponse.Code"));
 		createLocalFileUploadJobResponse.setErrorMessage(_ctx.stringValue("CreateLocalFileUploadJobResponse.ErrorMessage"));
+		createLocalFileUploadJobResponse.setSuccess(_ctx.booleanValue("CreateLocalFileUploadJobResponse.Success"));
 
 		Data data = new Data();
 		data.setJobId(_ctx.stringValue("CreateLocalFileUploadJobResponse.Data.JobId"));

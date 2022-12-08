@@ -14,42 +14,25 @@
 
 package com.aliyuncs.linkvisual.model.v20180120;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.linkvisual.transform.v20180120.ListModelVersionsByPageResponseUnmarshaller;
+import com.aliyuncs.linkvisual.transform.v20180120.DeletePictureResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListModelVersionsByPageResponse extends AcsResponse {
-
-	private String requestId;
-
-	private Boolean success;
+public class DeletePictureResponse extends AcsResponse {
 
 	private String code;
 
 	private String errorMessage;
 
-	private Map<Object,Object> data;
+	private String requestId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private Boolean success;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
+	private Data data;
 
 	public String getCode() {
 		return this.code;
@@ -67,16 +50,45 @@ public class ListModelVersionsByPageResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public Map<Object,Object> getData() {
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public Data getData() {
 		return this.data;
 	}
 
-	public void setData(Map<Object,Object> data) {
+	public void setData(Data data) {
 		this.data = data;
 	}
 
+	public static class Data {
+
+		private Integer deletedCount;
+
+		public Integer getDeletedCount() {
+			return this.deletedCount;
+		}
+
+		public void setDeletedCount(Integer deletedCount) {
+			this.deletedCount = deletedCount;
+		}
+	}
+
 	@Override
-	public ListModelVersionsByPageResponse getInstance(UnmarshallerContext context) {
-		return	ListModelVersionsByPageResponseUnmarshaller.unmarshall(this, context);
+	public DeletePictureResponse getInstance(UnmarshallerContext context) {
+		return	DeletePictureResponseUnmarshaller.unmarshall(this, context);
 	}
 }

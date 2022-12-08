@@ -24,10 +24,10 @@ public class AddFaceUserPictureResponseUnmarshaller {
 	public static AddFaceUserPictureResponse unmarshall(AddFaceUserPictureResponse addFaceUserPictureResponse, UnmarshallerContext _ctx) {
 		
 		addFaceUserPictureResponse.setRequestId(_ctx.stringValue("AddFaceUserPictureResponse.RequestId"));
-		addFaceUserPictureResponse.setSuccess(_ctx.booleanValue("AddFaceUserPictureResponse.Success"));
-		addFaceUserPictureResponse.setErrorMessage(_ctx.stringValue("AddFaceUserPictureResponse.ErrorMessage"));
 		addFaceUserPictureResponse.setCode(_ctx.stringValue("AddFaceUserPictureResponse.Code"));
 		addFaceUserPictureResponse.setData(_ctx.mapValue("AddFaceUserPictureResponse.Data"));
+		addFaceUserPictureResponse.setErrorMessage(_ctx.stringValue("AddFaceUserPictureResponse.ErrorMessage"));
+		addFaceUserPictureResponse.setSuccess(_ctx.booleanValue("AddFaceUserPictureResponse.Success"));
 	 
 	 	return addFaceUserPictureResponse;
 	}

@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryPictureSearchDevicesResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class QueryPictureSearchDevicesResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -77,31 +77,15 @@ public class QueryPictureSearchDevicesResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer total;
-
-		private Integer pageCount;
-
 		private Integer currentPage;
 
 		private Integer pageSize;
 
+		private Integer total;
+
+		private Integer pageCount;
+
 		private List<SearchData> pageData;
-
-		public Integer getTotal() {
-			return this.total;
-		}
-
-		public void setTotal(Integer total) {
-			this.total = total;
-		}
-
-		public Integer getPageCount() {
-			return this.pageCount;
-		}
-
-		public void setPageCount(Integer pageCount) {
-			this.pageCount = pageCount;
-		}
 
 		public Integer getCurrentPage() {
 			return this.currentPage;
@@ -119,6 +103,22 @@ public class QueryPictureSearchDevicesResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
+		public Integer getTotal() {
+			return this.total;
+		}
+
+		public void setTotal(Integer total) {
+			this.total = total;
+		}
+
+		public Integer getPageCount() {
+			return this.pageCount;
+		}
+
+		public void setPageCount(Integer pageCount) {
+			this.pageCount = pageCount;
+		}
+
 		public List<SearchData> getPageData() {
 			return this.pageData;
 		}
@@ -129,17 +129,9 @@ public class QueryPictureSearchDevicesResponse extends AcsResponse {
 
 		public static class SearchData {
 
-			private String iotId;
-
 			private String nickName;
 
-			public String getIotId() {
-				return this.iotId;
-			}
-
-			public void setIotId(String iotId) {
-				this.iotId = iotId;
-			}
+			private String iotId;
 
 			public String getNickName() {
 				return this.nickName;
@@ -147,6 +139,14 @@ public class QueryPictureSearchDevicesResponse extends AcsResponse {
 
 			public void setNickName(String nickName) {
 				this.nickName = nickName;
+			}
+
+			public String getIotId() {
+				return this.iotId;
+			}
+
+			public void setIotId(String iotId) {
+				this.iotId = iotId;
 			}
 		}
 	}

@@ -27,18 +27,18 @@ public class QueryDevicePictureByListResponseUnmarshaller {
 	public static QueryDevicePictureByListResponse unmarshall(QueryDevicePictureByListResponse queryDevicePictureByListResponse, UnmarshallerContext _ctx) {
 		
 		queryDevicePictureByListResponse.setRequestId(_ctx.stringValue("QueryDevicePictureByListResponse.RequestId"));
-		queryDevicePictureByListResponse.setSuccess(_ctx.booleanValue("QueryDevicePictureByListResponse.Success"));
 		queryDevicePictureByListResponse.setCode(_ctx.stringValue("QueryDevicePictureByListResponse.Code"));
 		queryDevicePictureByListResponse.setErrorMessage(_ctx.stringValue("QueryDevicePictureByListResponse.ErrorMessage"));
+		queryDevicePictureByListResponse.setSuccess(_ctx.booleanValue("QueryDevicePictureByListResponse.Success"));
 
 		List<PicData> data = new ArrayList<PicData>();
 		for (int i = 0; i < _ctx.lengthValue("QueryDevicePictureByListResponse.Data.Length"); i++) {
 			PicData picData = new PicData();
-			picData.setIotId(_ctx.stringValue("QueryDevicePictureByListResponse.Data["+ i +"].IotId"));
-			picData.setPicCreateTime(_ctx.longValue("QueryDevicePictureByListResponse.Data["+ i +"].PicCreateTime"));
 			picData.setPicId(_ctx.stringValue("QueryDevicePictureByListResponse.Data["+ i +"].PicId"));
 			picData.setPicUrl(_ctx.stringValue("QueryDevicePictureByListResponse.Data["+ i +"].PicUrl"));
+			picData.setPicCreateTime(_ctx.longValue("QueryDevicePictureByListResponse.Data["+ i +"].PicCreateTime"));
 			picData.setThumbUrl(_ctx.stringValue("QueryDevicePictureByListResponse.Data["+ i +"].ThumbUrl"));
+			picData.setIotId(_ctx.stringValue("QueryDevicePictureByListResponse.Data["+ i +"].IotId"));
 
 			data.add(picData);
 		}

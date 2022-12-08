@@ -23,10 +23,10 @@ public class TriggerRecordResponseUnmarshaller {
 	public static TriggerRecordResponse unmarshall(TriggerRecordResponse triggerRecordResponse, UnmarshallerContext _ctx) {
 		
 		triggerRecordResponse.setRequestId(_ctx.stringValue("TriggerRecordResponse.RequestId"));
-		triggerRecordResponse.setSuccess(_ctx.booleanValue("TriggerRecordResponse.Success"));
-		triggerRecordResponse.setErrorMessage(_ctx.stringValue("TriggerRecordResponse.ErrorMessage"));
 		triggerRecordResponse.setCode(_ctx.stringValue("TriggerRecordResponse.Code"));
 		triggerRecordResponse.setData(_ctx.stringValue("TriggerRecordResponse.Data"));
+		triggerRecordResponse.setErrorMessage(_ctx.stringValue("TriggerRecordResponse.ErrorMessage"));
+		triggerRecordResponse.setSuccess(_ctx.booleanValue("TriggerRecordResponse.Success"));
 	 
 	 	return triggerRecordResponse;
 	}

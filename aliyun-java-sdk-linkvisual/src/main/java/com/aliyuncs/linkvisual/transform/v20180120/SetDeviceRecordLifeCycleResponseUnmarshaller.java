@@ -23,9 +23,9 @@ public class SetDeviceRecordLifeCycleResponseUnmarshaller {
 	public static SetDeviceRecordLifeCycleResponse unmarshall(SetDeviceRecordLifeCycleResponse setDeviceRecordLifeCycleResponse, UnmarshallerContext _ctx) {
 		
 		setDeviceRecordLifeCycleResponse.setRequestId(_ctx.stringValue("SetDeviceRecordLifeCycleResponse.RequestId"));
-		setDeviceRecordLifeCycleResponse.setSuccess(_ctx.booleanValue("SetDeviceRecordLifeCycleResponse.Success"));
-		setDeviceRecordLifeCycleResponse.setErrorMessage(_ctx.stringValue("SetDeviceRecordLifeCycleResponse.ErrorMessage"));
 		setDeviceRecordLifeCycleResponse.setCode(_ctx.stringValue("SetDeviceRecordLifeCycleResponse.Code"));
+		setDeviceRecordLifeCycleResponse.setErrorMessage(_ctx.stringValue("SetDeviceRecordLifeCycleResponse.ErrorMessage"));
+		setDeviceRecordLifeCycleResponse.setSuccess(_ctx.booleanValue("SetDeviceRecordLifeCycleResponse.Success"));
 	 
 	 	return setDeviceRecordLifeCycleResponse;
 	}

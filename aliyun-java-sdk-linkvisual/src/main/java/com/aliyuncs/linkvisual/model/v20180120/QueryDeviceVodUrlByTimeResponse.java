@@ -24,41 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryDeviceVodUrlByTimeResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
-	private String errorMessage;
-
 	private String code;
 
 	private String decryptKey;
 
+	private String errorMessage;
+
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -74,6 +50,30 @@ public class QueryDeviceVodUrlByTimeResponse extends AcsResponse {
 
 	public void setDecryptKey(String decryptKey) {
 		this.decryptKey = decryptKey;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {

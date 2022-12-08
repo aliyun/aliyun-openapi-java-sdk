@@ -23,9 +23,9 @@ public class UpdatePictureSearchAppResponseUnmarshaller {
 	public static UpdatePictureSearchAppResponse unmarshall(UpdatePictureSearchAppResponse updatePictureSearchAppResponse, UnmarshallerContext _ctx) {
 		
 		updatePictureSearchAppResponse.setRequestId(_ctx.stringValue("UpdatePictureSearchAppResponse.RequestId"));
-		updatePictureSearchAppResponse.setSuccess(_ctx.booleanValue("UpdatePictureSearchAppResponse.Success"));
 		updatePictureSearchAppResponse.setCode(_ctx.stringValue("UpdatePictureSearchAppResponse.Code"));
 		updatePictureSearchAppResponse.setErrorMessage(_ctx.stringValue("UpdatePictureSearchAppResponse.ErrorMessage"));
+		updatePictureSearchAppResponse.setSuccess(_ctx.booleanValue("UpdatePictureSearchAppResponse.Success"));
 	 
 	 	return updatePictureSearchAppResponse;
 	}

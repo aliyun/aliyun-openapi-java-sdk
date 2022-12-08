@@ -28,26 +28,26 @@ public class QueryPictureSearchJobResponseUnmarshaller {
 	public static QueryPictureSearchJobResponse unmarshall(QueryPictureSearchJobResponse queryPictureSearchJobResponse, UnmarshallerContext _ctx) {
 		
 		queryPictureSearchJobResponse.setRequestId(_ctx.stringValue("QueryPictureSearchJobResponse.RequestId"));
-		queryPictureSearchJobResponse.setSuccess(_ctx.booleanValue("QueryPictureSearchJobResponse.Success"));
 		queryPictureSearchJobResponse.setCode(_ctx.stringValue("QueryPictureSearchJobResponse.Code"));
 		queryPictureSearchJobResponse.setErrorMessage(_ctx.stringValue("QueryPictureSearchJobResponse.ErrorMessage"));
+		queryPictureSearchJobResponse.setSuccess(_ctx.booleanValue("QueryPictureSearchJobResponse.Success"));
 
 		Data data = new Data();
-		data.setTotal(_ctx.integerValue("QueryPictureSearchJobResponse.Data.Total"));
-		data.setPageCount(_ctx.integerValue("QueryPictureSearchJobResponse.Data.PageCount"));
 		data.setCurrentPage(_ctx.integerValue("QueryPictureSearchJobResponse.Data.CurrentPage"));
 		data.setPageSize(_ctx.integerValue("QueryPictureSearchJobResponse.Data.PageSize"));
+		data.setTotal(_ctx.integerValue("QueryPictureSearchJobResponse.Data.Total"));
+		data.setPageCount(_ctx.integerValue("QueryPictureSearchJobResponse.Data.PageCount"));
 
 		List<PageDataItem> pageData = new ArrayList<PageDataItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryPictureSearchJobResponse.Data.PageData.Length"); i++) {
 			PageDataItem pageDataItem = new PageDataItem();
-			pageDataItem.setJobId(_ctx.stringValue("QueryPictureSearchJobResponse.Data.PageData["+ i +"].JobId"));
+			pageDataItem.setEndTime(_ctx.longValue("QueryPictureSearchJobResponse.Data.PageData["+ i +"].EndTime"));
+			pageDataItem.setStartTime(_ctx.longValue("QueryPictureSearchJobResponse.Data.PageData["+ i +"].StartTime"));
 			pageDataItem.setJobStatus(_ctx.integerValue("QueryPictureSearchJobResponse.Data.PageData["+ i +"].JobStatus"));
 			pageDataItem.setSearchPicUrl(_ctx.stringValue("QueryPictureSearchJobResponse.Data.PageData["+ i +"].SearchPicUrl"));
-			pageDataItem.setStartTime(_ctx.longValue("QueryPictureSearchJobResponse.Data.PageData["+ i +"].StartTime"));
-			pageDataItem.setEndTime(_ctx.longValue("QueryPictureSearchJobResponse.Data.PageData["+ i +"].EndTime"));
-			pageDataItem.setThreshold(_ctx.floatValue("QueryPictureSearchJobResponse.Data.PageData["+ i +"].Threshold"));
 			pageDataItem.setCreateTime(_ctx.longValue("QueryPictureSearchJobResponse.Data.PageData["+ i +"].CreateTime"));
+			pageDataItem.setJobId(_ctx.stringValue("QueryPictureSearchJobResponse.Data.PageData["+ i +"].JobId"));
+			pageDataItem.setThreshold(_ctx.floatValue("QueryPictureSearchJobResponse.Data.PageData["+ i +"].Threshold"));
 
 			pageData.add(pageDataItem);
 		}

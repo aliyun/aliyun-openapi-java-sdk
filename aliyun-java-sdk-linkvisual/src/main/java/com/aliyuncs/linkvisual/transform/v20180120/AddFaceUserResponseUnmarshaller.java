@@ -24,15 +24,15 @@ public class AddFaceUserResponseUnmarshaller {
 	public static AddFaceUserResponse unmarshall(AddFaceUserResponse addFaceUserResponse, UnmarshallerContext _ctx) {
 		
 		addFaceUserResponse.setRequestId(_ctx.stringValue("AddFaceUserResponse.RequestId"));
-		addFaceUserResponse.setSuccess(_ctx.booleanValue("AddFaceUserResponse.Success"));
-		addFaceUserResponse.setErrorMessage(_ctx.stringValue("AddFaceUserResponse.ErrorMessage"));
 		addFaceUserResponse.setCode(_ctx.stringValue("AddFaceUserResponse.Code"));
+		addFaceUserResponse.setErrorMessage(_ctx.stringValue("AddFaceUserResponse.ErrorMessage"));
+		addFaceUserResponse.setSuccess(_ctx.booleanValue("AddFaceUserResponse.Success"));
 
 		Data data = new Data();
-		data.setUserId(_ctx.stringValue("AddFaceUserResponse.Data.UserId"));
+		data.setParams(_ctx.stringValue("AddFaceUserResponse.Data.Params"));
 		data.setCustomUserId(_ctx.stringValue("AddFaceUserResponse.Data.CustomUserId"));
 		data.setName(_ctx.stringValue("AddFaceUserResponse.Data.Name"));
-		data.setParams(_ctx.stringValue("AddFaceUserResponse.Data.Params"));
+		data.setUserId(_ctx.stringValue("AddFaceUserResponse.Data.UserId"));
 		addFaceUserResponse.setData(data);
 	 
 	 	return addFaceUserResponse;

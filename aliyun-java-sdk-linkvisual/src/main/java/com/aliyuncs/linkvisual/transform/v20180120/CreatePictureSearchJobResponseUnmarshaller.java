@@ -23,10 +23,10 @@ public class CreatePictureSearchJobResponseUnmarshaller {
 	public static CreatePictureSearchJobResponse unmarshall(CreatePictureSearchJobResponse createPictureSearchJobResponse, UnmarshallerContext _ctx) {
 		
 		createPictureSearchJobResponse.setRequestId(_ctx.stringValue("CreatePictureSearchJobResponse.RequestId"));
-		createPictureSearchJobResponse.setSuccess(_ctx.booleanValue("CreatePictureSearchJobResponse.Success"));
 		createPictureSearchJobResponse.setCode(_ctx.stringValue("CreatePictureSearchJobResponse.Code"));
-		createPictureSearchJobResponse.setErrorMessage(_ctx.stringValue("CreatePictureSearchJobResponse.ErrorMessage"));
 		createPictureSearchJobResponse.setData(_ctx.stringValue("CreatePictureSearchJobResponse.Data"));
+		createPictureSearchJobResponse.setErrorMessage(_ctx.stringValue("CreatePictureSearchJobResponse.ErrorMessage"));
+		createPictureSearchJobResponse.setSuccess(_ctx.booleanValue("CreatePictureSearchJobResponse.Success"));
 	 
 	 	return createPictureSearchJobResponse;
 	}

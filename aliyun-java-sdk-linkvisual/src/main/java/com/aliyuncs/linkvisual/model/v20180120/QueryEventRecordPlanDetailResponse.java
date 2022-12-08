@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryEventRecordPlanDetailResponse extends AcsResponse {
 
-	private String requestId;
+	private String code;
 
-	private Boolean success;
+	private String requestId;
 
 	private String errorMessage;
 
-	private String code;
+	private Boolean success;
 
 	private Data data;
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class QueryEventRecordPlanDetailResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public String getErrorMessage() {
@@ -59,12 +59,12 @@ public class QueryEventRecordPlanDetailResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public String getCode() {
-		return this.code;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -79,13 +79,13 @@ public class QueryEventRecordPlanDetailResponse extends AcsResponse {
 
 		private Integer preRecordDuration;
 
-		private Integer recordDuration;
+		private String name;
 
 		private String planId;
 
-		private String name;
-
 		private String templateId;
+
+		private Integer recordDuration;
 
 		private TemplateInfo templateInfo;
 
@@ -97,12 +97,12 @@ public class QueryEventRecordPlanDetailResponse extends AcsResponse {
 			this.preRecordDuration = preRecordDuration;
 		}
 
-		public Integer getRecordDuration() {
-			return this.recordDuration;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setRecordDuration(Integer recordDuration) {
-			this.recordDuration = recordDuration;
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public String getPlanId() {
@@ -113,20 +113,20 @@ public class QueryEventRecordPlanDetailResponse extends AcsResponse {
 			this.planId = planId;
 		}
 
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
 		public String getTemplateId() {
 			return this.templateId;
 		}
 
 		public void setTemplateId(String templateId) {
 			this.templateId = templateId;
+		}
+
+		public Integer getRecordDuration() {
+			return this.recordDuration;
+		}
+
+		public void setRecordDuration(Integer recordDuration) {
+			this.recordDuration = recordDuration;
 		}
 
 		public TemplateInfo getTemplateInfo() {
@@ -139,30 +139,22 @@ public class QueryEventRecordPlanDetailResponse extends AcsResponse {
 
 		public static class TemplateInfo {
 
-			private String templateId;
-
-			private String name;
+			private Integer allDay;
 
 			private Integer _default;
 
-			private Integer allDay;
+			private String name;
+
+			private String templateId;
 
 			private List<TimeSectionListItem> timeSectionList;
 
-			public String getTemplateId() {
-				return this.templateId;
+			public Integer getAllDay() {
+				return this.allDay;
 			}
 
-			public void setTemplateId(String templateId) {
-				this.templateId = templateId;
-			}
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
+			public void setAllDay(Integer allDay) {
+				this.allDay = allDay;
 			}
 
 			public Integer get_Default() {
@@ -173,12 +165,20 @@ public class QueryEventRecordPlanDetailResponse extends AcsResponse {
 				this._default = _default;
 			}
 
-			public Integer getAllDay() {
-				return this.allDay;
+			public String getName() {
+				return this.name;
 			}
 
-			public void setAllDay(Integer allDay) {
-				this.allDay = allDay;
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getTemplateId() {
+				return this.templateId;
+			}
+
+			public void setTemplateId(String templateId) {
+				this.templateId = templateId;
 			}
 
 			public List<TimeSectionListItem> getTimeSectionList() {
@@ -191,11 +191,19 @@ public class QueryEventRecordPlanDetailResponse extends AcsResponse {
 
 			public static class TimeSectionListItem {
 
+				private Integer end;
+
 				private Integer dayOfWeek;
 
 				private Integer begin;
 
-				private Integer end;
+				public Integer getEnd() {
+					return this.end;
+				}
+
+				public void setEnd(Integer end) {
+					this.end = end;
+				}
 
 				public Integer getDayOfWeek() {
 					return this.dayOfWeek;
@@ -211,14 +219,6 @@ public class QueryEventRecordPlanDetailResponse extends AcsResponse {
 
 				public void setBegin(Integer begin) {
 					this.begin = begin;
-				}
-
-				public Integer getEnd() {
-					return this.end;
-				}
-
-				public void setEnd(Integer end) {
-					this.end = end;
 				}
 			}
 		}

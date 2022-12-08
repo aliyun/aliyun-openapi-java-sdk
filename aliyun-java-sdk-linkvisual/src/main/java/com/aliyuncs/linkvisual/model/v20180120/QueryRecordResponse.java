@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryRecordResponse extends AcsResponse {
 
-	private String requestId;
+	private String code;
 
-	private Boolean success;
+	private String requestId;
 
 	private String errorMessage;
 
-	private String code;
+	private Boolean success;
 
 	private Data data;
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class QueryRecordResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public String getErrorMessage() {
@@ -59,12 +59,12 @@ public class QueryRecordResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public String getCode() {
-		return this.code;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -77,19 +77,11 @@ public class QueryRecordResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer pageSize;
-
 		private Integer page;
 
+		private Integer pageSize;
+
 		private List<ListItem> list;
-
-		public Integer getPageSize() {
-			return this.pageSize;
-		}
-
-		public void setPageSize(Integer pageSize) {
-			this.pageSize = pageSize;
-		}
 
 		public Integer getPage() {
 			return this.page;
@@ -97,6 +89,14 @@ public class QueryRecordResponse extends AcsResponse {
 
 		public void setPage(Integer page) {
 			this.page = page;
+		}
+
+		public Integer getPageSize() {
+			return this.pageSize;
+		}
+
+		public void setPageSize(Integer pageSize) {
+			this.pageSize = pageSize;
 		}
 
 		public List<ListItem> getList() {
@@ -109,7 +109,7 @@ public class QueryRecordResponse extends AcsResponse {
 
 		public static class ListItem {
 
-			private String beginTime;
+			private String snapshotUrl;
 
 			private String endTime;
 
@@ -117,20 +117,20 @@ public class QueryRecordResponse extends AcsResponse {
 
 			private Integer streamType;
 
-			private String fileName;
+			private String beginTime;
 
-			private Integer fileSize;
+			private String fileName;
 
 			private Integer videoFrameNumber;
 
-			private String snapshotUrl;
+			private Integer fileSize;
 
-			public String getBeginTime() {
-				return this.beginTime;
+			public String getSnapshotUrl() {
+				return this.snapshotUrl;
 			}
 
-			public void setBeginTime(String beginTime) {
-				this.beginTime = beginTime;
+			public void setSnapshotUrl(String snapshotUrl) {
+				this.snapshotUrl = snapshotUrl;
 			}
 
 			public String getEndTime() {
@@ -157,20 +157,20 @@ public class QueryRecordResponse extends AcsResponse {
 				this.streamType = streamType;
 			}
 
+			public String getBeginTime() {
+				return this.beginTime;
+			}
+
+			public void setBeginTime(String beginTime) {
+				this.beginTime = beginTime;
+			}
+
 			public String getFileName() {
 				return this.fileName;
 			}
 
 			public void setFileName(String fileName) {
 				this.fileName = fileName;
-			}
-
-			public Integer getFileSize() {
-				return this.fileSize;
-			}
-
-			public void setFileSize(Integer fileSize) {
-				this.fileSize = fileSize;
 			}
 
 			public Integer getVideoFrameNumber() {
@@ -181,12 +181,12 @@ public class QueryRecordResponse extends AcsResponse {
 				this.videoFrameNumber = videoFrameNumber;
 			}
 
-			public String getSnapshotUrl() {
-				return this.snapshotUrl;
+			public Integer getFileSize() {
+				return this.fileSize;
 			}
 
-			public void setSnapshotUrl(String snapshotUrl) {
-				this.snapshotUrl = snapshotUrl;
+			public void setFileSize(Integer fileSize) {
+				this.fileSize = fileSize;
 			}
 		}
 	}

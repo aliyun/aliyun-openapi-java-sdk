@@ -28,25 +28,25 @@ public class QueryEventRecordPlansResponseUnmarshaller {
 	public static QueryEventRecordPlansResponse unmarshall(QueryEventRecordPlansResponse queryEventRecordPlansResponse, UnmarshallerContext _ctx) {
 		
 		queryEventRecordPlansResponse.setRequestId(_ctx.stringValue("QueryEventRecordPlansResponse.RequestId"));
-		queryEventRecordPlansResponse.setSuccess(_ctx.booleanValue("QueryEventRecordPlansResponse.Success"));
-		queryEventRecordPlansResponse.setErrorMessage(_ctx.stringValue("QueryEventRecordPlansResponse.ErrorMessage"));
 		queryEventRecordPlansResponse.setCode(_ctx.stringValue("QueryEventRecordPlansResponse.Code"));
+		queryEventRecordPlansResponse.setErrorMessage(_ctx.stringValue("QueryEventRecordPlansResponse.ErrorMessage"));
+		queryEventRecordPlansResponse.setSuccess(_ctx.booleanValue("QueryEventRecordPlansResponse.Success"));
 
 		Data data = new Data();
-		data.setTotal(_ctx.integerValue("QueryEventRecordPlansResponse.Data.Total"));
 		data.setPageSize(_ctx.integerValue("QueryEventRecordPlansResponse.Data.PageSize"));
-		data.setPage(_ctx.integerValue("QueryEventRecordPlansResponse.Data.Page"));
 		data.setPageCount(_ctx.integerValue("QueryEventRecordPlansResponse.Data.PageCount"));
+		data.setTotal(_ctx.integerValue("QueryEventRecordPlansResponse.Data.Total"));
+		data.setPage(_ctx.integerValue("QueryEventRecordPlansResponse.Data.Page"));
 
 		List<ListItem> list = new ArrayList<ListItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryEventRecordPlansResponse.Data.List.Length"); i++) {
 			ListItem listItem = new ListItem();
 			listItem.setEventType(_ctx.stringValue("QueryEventRecordPlansResponse.Data.List["+ i +"].EventType"));
+			listItem.setRecordDuration(_ctx.integerValue("QueryEventRecordPlansResponse.Data.List["+ i +"].RecordDuration"));
+			listItem.setPreRecordDuration(_ctx.integerValue("QueryEventRecordPlansResponse.Data.List["+ i +"].PreRecordDuration"));
 			listItem.setPlanId(_ctx.stringValue("QueryEventRecordPlansResponse.Data.List["+ i +"].PlanId"));
 			listItem.setName(_ctx.stringValue("QueryEventRecordPlansResponse.Data.List["+ i +"].Name"));
 			listItem.setTemplateId(_ctx.stringValue("QueryEventRecordPlansResponse.Data.List["+ i +"].TemplateId"));
-			listItem.setPreRecordDuration(_ctx.integerValue("QueryEventRecordPlansResponse.Data.List["+ i +"].PreRecordDuration"));
-			listItem.setRecordDuration(_ctx.integerValue("QueryEventRecordPlansResponse.Data.List["+ i +"].RecordDuration"));
 
 			list.add(listItem);
 		}

@@ -29,9 +29,9 @@ public class QueryRecordPlanDeviceByDeviceResponseUnmarshaller {
 	public static QueryRecordPlanDeviceByDeviceResponse unmarshall(QueryRecordPlanDeviceByDeviceResponse queryRecordPlanDeviceByDeviceResponse, UnmarshallerContext _ctx) {
 		
 		queryRecordPlanDeviceByDeviceResponse.setRequestId(_ctx.stringValue("QueryRecordPlanDeviceByDeviceResponse.RequestId"));
-		queryRecordPlanDeviceByDeviceResponse.setSuccess(_ctx.booleanValue("QueryRecordPlanDeviceByDeviceResponse.Success"));
-		queryRecordPlanDeviceByDeviceResponse.setErrorMessage(_ctx.stringValue("QueryRecordPlanDeviceByDeviceResponse.ErrorMessage"));
 		queryRecordPlanDeviceByDeviceResponse.setCode(_ctx.stringValue("QueryRecordPlanDeviceByDeviceResponse.Code"));
+		queryRecordPlanDeviceByDeviceResponse.setErrorMessage(_ctx.stringValue("QueryRecordPlanDeviceByDeviceResponse.ErrorMessage"));
+		queryRecordPlanDeviceByDeviceResponse.setSuccess(_ctx.booleanValue("QueryRecordPlanDeviceByDeviceResponse.Success"));
 
 		Data data = new Data();
 		data.setPlanId(_ctx.stringValue("QueryRecordPlanDeviceByDeviceResponse.Data.PlanId"));
@@ -39,17 +39,17 @@ public class QueryRecordPlanDeviceByDeviceResponseUnmarshaller {
 		data.setTemplateId(_ctx.stringValue("QueryRecordPlanDeviceByDeviceResponse.Data.TemplateId"));
 
 		TemplateInfo templateInfo = new TemplateInfo();
-		templateInfo.setTemplateId(_ctx.stringValue("QueryRecordPlanDeviceByDeviceResponse.Data.TemplateInfo.TemplateId"));
-		templateInfo.setName(_ctx.stringValue("QueryRecordPlanDeviceByDeviceResponse.Data.TemplateInfo.Name"));
-		templateInfo.set_Default(_ctx.integerValue("QueryRecordPlanDeviceByDeviceResponse.Data.TemplateInfo.Default"));
 		templateInfo.setAllDay(_ctx.integerValue("QueryRecordPlanDeviceByDeviceResponse.Data.TemplateInfo.AllDay"));
+		templateInfo.set_Default(_ctx.integerValue("QueryRecordPlanDeviceByDeviceResponse.Data.TemplateInfo.Default"));
+		templateInfo.setName(_ctx.stringValue("QueryRecordPlanDeviceByDeviceResponse.Data.TemplateInfo.Name"));
+		templateInfo.setTemplateId(_ctx.stringValue("QueryRecordPlanDeviceByDeviceResponse.Data.TemplateInfo.TemplateId"));
 
 		List<TimeSectionListItem> timeSectionList = new ArrayList<TimeSectionListItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryRecordPlanDeviceByDeviceResponse.Data.TemplateInfo.TimeSectionList.Length"); i++) {
 			TimeSectionListItem timeSectionListItem = new TimeSectionListItem();
+			timeSectionListItem.setEnd(_ctx.integerValue("QueryRecordPlanDeviceByDeviceResponse.Data.TemplateInfo.TimeSectionList["+ i +"].End"));
 			timeSectionListItem.setDayOfWeek(_ctx.integerValue("QueryRecordPlanDeviceByDeviceResponse.Data.TemplateInfo.TimeSectionList["+ i +"].DayOfWeek"));
 			timeSectionListItem.setBegin(_ctx.integerValue("QueryRecordPlanDeviceByDeviceResponse.Data.TemplateInfo.TimeSectionList["+ i +"].Begin"));
-			timeSectionListItem.setEnd(_ctx.integerValue("QueryRecordPlanDeviceByDeviceResponse.Data.TemplateInfo.TimeSectionList["+ i +"].End"));
 
 			timeSectionList.add(timeSectionListItem);
 		}

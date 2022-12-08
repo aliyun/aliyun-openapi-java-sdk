@@ -1,3 +1,6 @@
+2022-12-08 Version: 1.5.12
+- Generated 2018-01-20 for `Linkvisual`.
+
 2022-02-15 Version: 1.5.11
 - Generated 2018-01-20 for `Linkvisual`.
 

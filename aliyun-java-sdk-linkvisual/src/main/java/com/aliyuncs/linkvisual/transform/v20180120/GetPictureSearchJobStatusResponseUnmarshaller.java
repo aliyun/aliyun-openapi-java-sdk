@@ -24,18 +24,18 @@ public class GetPictureSearchJobStatusResponseUnmarshaller {
 	public static GetPictureSearchJobStatusResponse unmarshall(GetPictureSearchJobStatusResponse getPictureSearchJobStatusResponse, UnmarshallerContext _ctx) {
 		
 		getPictureSearchJobStatusResponse.setRequestId(_ctx.stringValue("GetPictureSearchJobStatusResponse.RequestId"));
-		getPictureSearchJobStatusResponse.setSuccess(_ctx.booleanValue("GetPictureSearchJobStatusResponse.Success"));
 		getPictureSearchJobStatusResponse.setCode(_ctx.stringValue("GetPictureSearchJobStatusResponse.Code"));
 		getPictureSearchJobStatusResponse.setErrorMessage(_ctx.stringValue("GetPictureSearchJobStatusResponse.ErrorMessage"));
+		getPictureSearchJobStatusResponse.setSuccess(_ctx.booleanValue("GetPictureSearchJobStatusResponse.Success"));
 
 		Data data = new Data();
-		data.setJobId(_ctx.stringValue("GetPictureSearchJobStatusResponse.Data.JobId"));
+		data.setEndTime(_ctx.longValue("GetPictureSearchJobStatusResponse.Data.EndTime"));
+		data.setStartTime(_ctx.longValue("GetPictureSearchJobStatusResponse.Data.StartTime"));
 		data.setJobStatus(_ctx.integerValue("GetPictureSearchJobStatusResponse.Data.JobStatus"));
 		data.setSearchPicUrl(_ctx.stringValue("GetPictureSearchJobStatusResponse.Data.SearchPicUrl"));
-		data.setStartTime(_ctx.longValue("GetPictureSearchJobStatusResponse.Data.StartTime"));
-		data.setEndTime(_ctx.longValue("GetPictureSearchJobStatusResponse.Data.EndTime"));
-		data.setThreshold(_ctx.floatValue("GetPictureSearchJobStatusResponse.Data.Threshold"));
 		data.setCreateTime(_ctx.longValue("GetPictureSearchJobStatusResponse.Data.CreateTime"));
+		data.setJobId(_ctx.stringValue("GetPictureSearchJobStatusResponse.Data.JobId"));
+		data.setThreshold(_ctx.floatValue("GetPictureSearchJobStatusResponse.Data.Threshold"));
 		getPictureSearchJobStatusResponse.setData(data);
 	 
 	 	return getPictureSearchJobStatusResponse;

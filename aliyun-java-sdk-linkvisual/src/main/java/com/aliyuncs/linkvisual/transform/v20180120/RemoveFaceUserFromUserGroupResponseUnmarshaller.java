@@ -23,9 +23,9 @@ public class RemoveFaceUserFromUserGroupResponseUnmarshaller {
 	public static RemoveFaceUserFromUserGroupResponse unmarshall(RemoveFaceUserFromUserGroupResponse removeFaceUserFromUserGroupResponse, UnmarshallerContext _ctx) {
 		
 		removeFaceUserFromUserGroupResponse.setRequestId(_ctx.stringValue("RemoveFaceUserFromUserGroupResponse.RequestId"));
-		removeFaceUserFromUserGroupResponse.setSuccess(_ctx.booleanValue("RemoveFaceUserFromUserGroupResponse.Success"));
 		removeFaceUserFromUserGroupResponse.setCode(_ctx.stringValue("RemoveFaceUserFromUserGroupResponse.Code"));
 		removeFaceUserFromUserGroupResponse.setErrorMessage(_ctx.stringValue("RemoveFaceUserFromUserGroupResponse.ErrorMessage"));
+		removeFaceUserFromUserGroupResponse.setSuccess(_ctx.booleanValue("RemoveFaceUserFromUserGroupResponse.Success"));
 	 
 	 	return removeFaceUserFromUserGroupResponse;
 	}

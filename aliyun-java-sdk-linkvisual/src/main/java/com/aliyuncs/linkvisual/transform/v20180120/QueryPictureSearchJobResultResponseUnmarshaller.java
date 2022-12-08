@@ -28,26 +28,26 @@ public class QueryPictureSearchJobResultResponseUnmarshaller {
 	public static QueryPictureSearchJobResultResponse unmarshall(QueryPictureSearchJobResultResponse queryPictureSearchJobResultResponse, UnmarshallerContext _ctx) {
 		
 		queryPictureSearchJobResultResponse.setRequestId(_ctx.stringValue("QueryPictureSearchJobResultResponse.RequestId"));
-		queryPictureSearchJobResultResponse.setSuccess(_ctx.booleanValue("QueryPictureSearchJobResultResponse.Success"));
 		queryPictureSearchJobResultResponse.setCode(_ctx.stringValue("QueryPictureSearchJobResultResponse.Code"));
 		queryPictureSearchJobResultResponse.setErrorMessage(_ctx.stringValue("QueryPictureSearchJobResultResponse.ErrorMessage"));
+		queryPictureSearchJobResultResponse.setSuccess(_ctx.booleanValue("QueryPictureSearchJobResultResponse.Success"));
 
 		Data data = new Data();
-		data.setTotal(_ctx.integerValue("QueryPictureSearchJobResultResponse.Data.Total"));
-		data.setPageCount(_ctx.integerValue("QueryPictureSearchJobResultResponse.Data.PageCount"));
 		data.setCurrentPage(_ctx.integerValue("QueryPictureSearchJobResultResponse.Data.CurrentPage"));
 		data.setPageSize(_ctx.integerValue("QueryPictureSearchJobResultResponse.Data.PageSize"));
+		data.setTotal(_ctx.integerValue("QueryPictureSearchJobResultResponse.Data.Total"));
+		data.setPageCount(_ctx.integerValue("QueryPictureSearchJobResultResponse.Data.PageCount"));
 
 		List<SearchData> pageData = new ArrayList<SearchData>();
 		for (int i = 0; i < _ctx.lengthValue("QueryPictureSearchJobResultResponse.Data.PageData.Length"); i++) {
 			SearchData searchData = new SearchData();
-			searchData.setVectorId(_ctx.stringValue("QueryPictureSearchJobResultResponse.Data.PageData["+ i +"].VectorId"));
-			searchData.setEventTime(_ctx.longValue("QueryPictureSearchJobResultResponse.Data.PageData["+ i +"].EventTime"));
-			searchData.setThreshold(_ctx.floatValue("QueryPictureSearchJobResultResponse.Data.PageData["+ i +"].Threshold"));
 			searchData.setPicUrl(_ctx.stringValue("QueryPictureSearchJobResultResponse.Data.PageData["+ i +"].PicUrl"));
-			searchData.setIotId(_ctx.stringValue("QueryPictureSearchJobResultResponse.Data.PageData["+ i +"].IotId"));
+			searchData.setEventTime(_ctx.longValue("QueryPictureSearchJobResultResponse.Data.PageData["+ i +"].EventTime"));
 			searchData.setGatewayIotId(_ctx.stringValue("QueryPictureSearchJobResultResponse.Data.PageData["+ i +"].GatewayIotId"));
+			searchData.setVectorId(_ctx.stringValue("QueryPictureSearchJobResultResponse.Data.PageData["+ i +"].VectorId"));
 			searchData.setDeviceNickName(_ctx.stringValue("QueryPictureSearchJobResultResponse.Data.PageData["+ i +"].DeviceNickName"));
+			searchData.setThreshold(_ctx.floatValue("QueryPictureSearchJobResultResponse.Data.PageData["+ i +"].Threshold"));
+			searchData.setIotId(_ctx.stringValue("QueryPictureSearchJobResultResponse.Data.PageData["+ i +"].IotId"));
 
 			pageData.add(searchData);
 		}

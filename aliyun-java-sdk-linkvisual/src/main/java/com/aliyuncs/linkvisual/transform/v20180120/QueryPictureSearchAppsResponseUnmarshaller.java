@@ -28,26 +28,26 @@ public class QueryPictureSearchAppsResponseUnmarshaller {
 	public static QueryPictureSearchAppsResponse unmarshall(QueryPictureSearchAppsResponse queryPictureSearchAppsResponse, UnmarshallerContext _ctx) {
 		
 		queryPictureSearchAppsResponse.setRequestId(_ctx.stringValue("QueryPictureSearchAppsResponse.RequestId"));
-		queryPictureSearchAppsResponse.setSuccess(_ctx.booleanValue("QueryPictureSearchAppsResponse.Success"));
 		queryPictureSearchAppsResponse.setCode(_ctx.stringValue("QueryPictureSearchAppsResponse.Code"));
 		queryPictureSearchAppsResponse.setErrorMessage(_ctx.stringValue("QueryPictureSearchAppsResponse.ErrorMessage"));
+		queryPictureSearchAppsResponse.setSuccess(_ctx.booleanValue("QueryPictureSearchAppsResponse.Success"));
 
 		Data data = new Data();
-		data.setTotal(_ctx.integerValue("QueryPictureSearchAppsResponse.Data.Total"));
-		data.setPageCount(_ctx.integerValue("QueryPictureSearchAppsResponse.Data.PageCount"));
 		data.setCurrentPage(_ctx.integerValue("QueryPictureSearchAppsResponse.Data.CurrentPage"));
 		data.setPageSize(_ctx.integerValue("QueryPictureSearchAppsResponse.Data.PageSize"));
+		data.setTotal(_ctx.integerValue("QueryPictureSearchAppsResponse.Data.Total"));
+		data.setPageCount(_ctx.integerValue("QueryPictureSearchAppsResponse.Data.PageCount"));
 
 		List<PageDataItem> pageData = new ArrayList<PageDataItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryPictureSearchAppsResponse.Data.PageData.Length"); i++) {
 			PageDataItem pageDataItem = new PageDataItem();
 			pageDataItem.setAppInstanceId(_ctx.stringValue("QueryPictureSearchAppsResponse.Data.PageData["+ i +"].AppInstanceId"));
-			pageDataItem.setAppTemplateId(_ctx.stringValue("QueryPictureSearchAppsResponse.Data.PageData["+ i +"].AppTemplateId"));
-			pageDataItem.setVersion(_ctx.stringValue("QueryPictureSearchAppsResponse.Data.PageData["+ i +"].Version"));
-			pageDataItem.setName(_ctx.stringValue("QueryPictureSearchAppsResponse.Data.PageData["+ i +"].Name"));
-			pageDataItem.setCreateTime(_ctx.longValue("QueryPictureSearchAppsResponse.Data.PageData["+ i +"].CreateTime"));
 			pageDataItem.setModifiedTime(_ctx.longValue("QueryPictureSearchAppsResponse.Data.PageData["+ i +"].ModifiedTime"));
 			pageDataItem.setDescription(_ctx.stringValue("QueryPictureSearchAppsResponse.Data.PageData["+ i +"].Description"));
+			pageDataItem.setVersion(_ctx.stringValue("QueryPictureSearchAppsResponse.Data.PageData["+ i +"].Version"));
+			pageDataItem.setCreateTime(_ctx.longValue("QueryPictureSearchAppsResponse.Data.PageData["+ i +"].CreateTime"));
+			pageDataItem.setAppTemplateId(_ctx.stringValue("QueryPictureSearchAppsResponse.Data.PageData["+ i +"].AppTemplateId"));
+			pageDataItem.setName(_ctx.stringValue("QueryPictureSearchAppsResponse.Data.PageData["+ i +"].Name"));
 
 			pageData.add(pageDataItem);
 		}

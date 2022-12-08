@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryFaceAllUserGroupAndDeviceGroupRelationResponse extends AcsResponse {
 
-	private String requestId;
+	private String code;
 
-	private Boolean success;
+	private String requestId;
 
 	private String errorMessage;
 
-	private String code;
+	private Boolean success;
 
 	private Data data;
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class QueryFaceAllUserGroupAndDeviceGroupRelationResponse extends AcsResp
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public String getErrorMessage() {
@@ -59,12 +59,12 @@ public class QueryFaceAllUserGroupAndDeviceGroupRelationResponse extends AcsResp
 		this.errorMessage = errorMessage;
 	}
 
-	public String getCode() {
-		return this.code;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -77,21 +77,13 @@ public class QueryFaceAllUserGroupAndDeviceGroupRelationResponse extends AcsResp
 
 	public static class Data {
 
-		private Integer total;
-
 		private Integer pageSize;
+
+		private Integer total;
 
 		private Integer page;
 
 		private List<ListItem> list;
-
-		public Integer getTotal() {
-			return this.total;
-		}
-
-		public void setTotal(Integer total) {
-			this.total = total;
-		}
 
 		public Integer getPageSize() {
 			return this.pageSize;
@@ -99,6 +91,14 @@ public class QueryFaceAllUserGroupAndDeviceGroupRelationResponse extends AcsResp
 
 		public void setPageSize(Integer pageSize) {
 			this.pageSize = pageSize;
+		}
+
+		public Integer getTotal() {
+			return this.total;
+		}
+
+		public void setTotal(Integer total) {
+			this.total = total;
 		}
 
 		public Integer getPage() {
@@ -119,15 +119,23 @@ public class QueryFaceAllUserGroupAndDeviceGroupRelationResponse extends AcsResp
 
 		public static class ListItem {
 
+			private String deviceGroupId;
+
 			private String controlId;
 
-			private String userGroupId;
-
-			private String deviceGroupId;
+			private String modifiedTime;
 
 			private String controlType;
 
-			private String modifiedTime;
+			private String userGroupId;
+
+			public String getDeviceGroupId() {
+				return this.deviceGroupId;
+			}
+
+			public void setDeviceGroupId(String deviceGroupId) {
+				this.deviceGroupId = deviceGroupId;
+			}
 
 			public String getControlId() {
 				return this.controlId;
@@ -137,20 +145,12 @@ public class QueryFaceAllUserGroupAndDeviceGroupRelationResponse extends AcsResp
 				this.controlId = controlId;
 			}
 
-			public String getUserGroupId() {
-				return this.userGroupId;
+			public String getModifiedTime() {
+				return this.modifiedTime;
 			}
 
-			public void setUserGroupId(String userGroupId) {
-				this.userGroupId = userGroupId;
-			}
-
-			public String getDeviceGroupId() {
-				return this.deviceGroupId;
-			}
-
-			public void setDeviceGroupId(String deviceGroupId) {
-				this.deviceGroupId = deviceGroupId;
+			public void setModifiedTime(String modifiedTime) {
+				this.modifiedTime = modifiedTime;
 			}
 
 			public String getControlType() {
@@ -161,12 +161,12 @@ public class QueryFaceAllUserGroupAndDeviceGroupRelationResponse extends AcsResp
 				this.controlType = controlType;
 			}
 
-			public String getModifiedTime() {
-				return this.modifiedTime;
+			public String getUserGroupId() {
+				return this.userGroupId;
 			}
 
-			public void setModifiedTime(String modifiedTime) {
-				this.modifiedTime = modifiedTime;
+			public void setUserGroupId(String userGroupId) {
+				this.userGroupId = userGroupId;
 			}
 		}
 	}
