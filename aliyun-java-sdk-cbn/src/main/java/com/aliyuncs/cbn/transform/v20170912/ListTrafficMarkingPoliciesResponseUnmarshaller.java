@@ -41,6 +41,7 @@ public class ListTrafficMarkingPoliciesResponseUnmarshaller {
 			trafficMarkingPolicy.setTrafficMarkingPolicyName(_ctx.stringValue("ListTrafficMarkingPoliciesResponse.TrafficMarkingPolicies["+ i +"].TrafficMarkingPolicyName"));
 			trafficMarkingPolicy.setPriority(_ctx.integerValue("ListTrafficMarkingPoliciesResponse.TrafficMarkingPolicies["+ i +"].Priority"));
 			trafficMarkingPolicy.setTrafficMarkingPolicyDescription(_ctx.stringValue("ListTrafficMarkingPoliciesResponse.TrafficMarkingPolicies["+ i +"].TrafficMarkingPolicyDescription"));
+			trafficMarkingPolicy.setTransitRouterId(_ctx.stringValue("ListTrafficMarkingPoliciesResponse.TrafficMarkingPolicies["+ i +"].TransitRouterId"));
 
 			List<TrafficMatchRule> trafficMatchRules = new ArrayList<TrafficMatchRule>();
 			for (int j = 0; j < _ctx.lengthValue("ListTrafficMarkingPoliciesResponse.TrafficMarkingPolicies["+ i +"].TrafficMatchRules.Length"); j++) {

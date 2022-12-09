@@ -39,6 +39,7 @@ public class ListTransitRouterMulticastDomainsResponseUnmarshaller {
 			transitRouterMulticastDomain.setTransitRouterMulticastDomainName(_ctx.stringValue("ListTransitRouterMulticastDomainsResponse.TransitRouterMulticastDomains["+ i +"].TransitRouterMulticastDomainName"));
 			transitRouterMulticastDomain.setTransitRouterMulticastDomainDescription(_ctx.stringValue("ListTransitRouterMulticastDomainsResponse.TransitRouterMulticastDomains["+ i +"].TransitRouterMulticastDomainDescription"));
 			transitRouterMulticastDomain.setStatus(_ctx.stringValue("ListTransitRouterMulticastDomainsResponse.TransitRouterMulticastDomains["+ i +"].Status"));
+			transitRouterMulticastDomain.setTransitRouterId(_ctx.stringValue("ListTransitRouterMulticastDomainsResponse.TransitRouterMulticastDomains["+ i +"].TransitRouterId"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("ListTransitRouterMulticastDomainsResponse.TransitRouterMulticastDomains["+ i +"].Tags.Length"); j++) {

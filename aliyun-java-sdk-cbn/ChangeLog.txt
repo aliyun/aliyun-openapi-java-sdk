@@ -1,3 +1,19 @@
+2022-12-09 Version: 1.0.31
+- Add ListCenChildInstanceRouteEntriesToAttachment support query VPC instance route to Vpc Attachment.
+- Add ListTransitRouterAttachmentPropagations support query TransitRouter Propagations by Attachment Id.
+- ListTransitRouterMulticastGroups: add parameter isGroupSource, isGroupMember and NetworkInterfaceIds. add response TransitRouterMulticastDomainId. 
+- ListMulticastDomains: add response TransitRouterId.
+- ListCenInterRegionTrafficQosPolicies: add response TransitRouterId and TransitRouterAttachmentId. 
+- ListTrafficMarkingPolicies: add response TransitRouterId.
+- DescribeFlowlogs: add parameter TransitRouterAttachmentId.
+- DeleteTransitRouterConnectPeer: add ErrorCode.
+- ListTransitRouterVpcAttachments: add parameter VpcId.
+- ListTransitRouterMulticastGroups: param TransitRouterMulticastDomainId Required False.
+- DeleteTransitRouterConnectAttachment: add parameter Force.
+- DeleteTransitRouterVpcAttachment : add parameter Force.
+- DeleteTransitRouterVpnAttachment : add parameter Force.
+- DeleteTransitRouterVbrAttachment : add parameter Force.
+
 2022-11-28 Version: 1.0.30
 - Add CreateTransitRouterCidr support create TR Cidr.
 - Add ModifyTransitRouterCidr support modify TR Cidr.

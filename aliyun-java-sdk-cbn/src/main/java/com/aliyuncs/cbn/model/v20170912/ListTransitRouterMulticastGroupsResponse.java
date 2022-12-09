@@ -105,6 +105,8 @@ public class ListTransitRouterMulticastGroupsResponse extends AcsResponse {
 
 		private String connectPeerId;
 
+		private String transitRouterMulticastDomainId;
+
 		public String getGroupIpAddress() {
 			return this.groupIpAddress;
 		}
@@ -215,6 +217,14 @@ public class ListTransitRouterMulticastGroupsResponse extends AcsResponse {
 
 		public void setConnectPeerId(String connectPeerId) {
 			this.connectPeerId = connectPeerId;
+		}
+
+		public String getTransitRouterMulticastDomainId() {
+			return this.transitRouterMulticastDomainId;
+		}
+
+		public void setTransitRouterMulticastDomainId(String transitRouterMulticastDomainId) {
+			this.transitRouterMulticastDomainId = transitRouterMulticastDomainId;
 		}
 	}
 

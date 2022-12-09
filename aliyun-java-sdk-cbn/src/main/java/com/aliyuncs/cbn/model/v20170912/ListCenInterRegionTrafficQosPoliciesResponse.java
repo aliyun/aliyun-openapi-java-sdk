@@ -85,6 +85,10 @@ public class ListCenInterRegionTrafficQosPoliciesResponse extends AcsResponse {
 
 		private String trafficQosPolicyDescription;
 
+		private String transitRouterId;
+
+		private String transitRouterAttachmentId;
+
 		private List<TrafficQosQueue> trafficQosQueues;
 
 		public String getTrafficQosPolicyName() {
@@ -117,6 +121,22 @@ public class ListCenInterRegionTrafficQosPoliciesResponse extends AcsResponse {
 
 		public void setTrafficQosPolicyDescription(String trafficQosPolicyDescription) {
 			this.trafficQosPolicyDescription = trafficQosPolicyDescription;
+		}
+
+		public String getTransitRouterId() {
+			return this.transitRouterId;
+		}
+
+		public void setTransitRouterId(String transitRouterId) {
+			this.transitRouterId = transitRouterId;
+		}
+
+		public String getTransitRouterAttachmentId() {
+			return this.transitRouterAttachmentId;
+		}
+
+		public void setTransitRouterAttachmentId(String transitRouterAttachmentId) {
+			this.transitRouterAttachmentId = transitRouterAttachmentId;
 		}
 
 		public List<TrafficQosQueue> getTrafficQosQueues() {

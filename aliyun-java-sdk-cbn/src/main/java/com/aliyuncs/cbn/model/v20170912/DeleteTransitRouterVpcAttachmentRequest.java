@@ -38,6 +38,8 @@ public class DeleteTransitRouterVpcAttachmentRequest extends RpcAcsRequest<Delet
 	private Long ownerId;
 
 	private String transitRouterAttachmentId;
+
+	private Boolean force;
 	public DeleteTransitRouterVpcAttachmentRequest() {
 		super("Cbn", "2017-09-12", "DeleteTransitRouterVpcAttachment", "cbn");
 		setMethod(MethodType.POST);
@@ -121,6 +123,17 @@ public class DeleteTransitRouterVpcAttachmentRequest extends RpcAcsRequest<Delet
 		this.transitRouterAttachmentId = transitRouterAttachmentId;
 		if(transitRouterAttachmentId != null){
 			putQueryParameter("TransitRouterAttachmentId", transitRouterAttachmentId);
+		}
+	}
+
+	public Boolean getForce() {
+		return this.force;
+	}
+
+	public void setForce(Boolean force) {
+		this.force = force;
+		if(force != null){
+			putQueryParameter("Force", force.toString());
 		}
 	}
 

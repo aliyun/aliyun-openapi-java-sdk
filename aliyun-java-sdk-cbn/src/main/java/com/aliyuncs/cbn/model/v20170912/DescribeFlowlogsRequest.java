@@ -50,6 +50,8 @@ public class DescribeFlowlogsRequest extends RpcAcsRequest<DescribeFlowlogsRespo
 
 	private Long ownerId;
 
+	private String transitRouterAttachmentId;
+
 	private String flowLogId;
 
 	private String flowLogName;
@@ -196,6 +198,17 @@ public class DescribeFlowlogsRequest extends RpcAcsRequest<DescribeFlowlogsRespo
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getTransitRouterAttachmentId() {
+		return this.transitRouterAttachmentId;
+	}
+
+	public void setTransitRouterAttachmentId(String transitRouterAttachmentId) {
+		this.transitRouterAttachmentId = transitRouterAttachmentId;
+		if(transitRouterAttachmentId != null){
+			putQueryParameter("TransitRouterAttachmentId", transitRouterAttachmentId);
 		}
 	}
 

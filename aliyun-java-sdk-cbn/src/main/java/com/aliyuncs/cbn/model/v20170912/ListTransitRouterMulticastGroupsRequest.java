@@ -30,9 +30,13 @@ public class ListTransitRouterMulticastGroupsRequest extends RpcAcsRequest<ListT
 
 	private String clientToken;
 
+	private List<String> networkInterfaceIdss;
+
 	private List<String> vSwitchIdss;
 
 	private String transitRouterMulticastDomainId;
+
+	private Boolean isGroupSource;
 
 	private String nextToken;
 
@@ -53,6 +57,8 @@ public class ListTransitRouterMulticastGroupsRequest extends RpcAcsRequest<ListT
 	private String transitRouterAttachmentId;
 
 	private Long maxResults;
+
+	private Boolean isGroupMember;
 	public ListTransitRouterMulticastGroupsRequest() {
 		super("Cbn", "2017-09-12", "ListTransitRouterMulticastGroups", "cbn");
 		setMethod(MethodType.POST);
@@ -84,6 +90,19 @@ public class ListTransitRouterMulticastGroupsRequest extends RpcAcsRequest<ListT
 		}
 	}
 
+	public List<String> getNetworkInterfaceIdss() {
+		return this.networkInterfaceIdss;
+	}
+
+	public void setNetworkInterfaceIdss(List<String> networkInterfaceIdss) {
+		this.networkInterfaceIdss = networkInterfaceIdss;	
+		if (networkInterfaceIdss != null) {
+			for (int i = 0; i < networkInterfaceIdss.size(); i++) {
+				putQueryParameter("NetworkInterfaceIds." + (i + 1) , networkInterfaceIdss.get(i));
+			}
+		}	
+	}
+
 	public List<String> getVSwitchIdss() {
 		return this.vSwitchIdss;
 	}
@@ -105,6 +124,17 @@ public class ListTransitRouterMulticastGroupsRequest extends RpcAcsRequest<ListT
 		this.transitRouterMulticastDomainId = transitRouterMulticastDomainId;
 		if(transitRouterMulticastDomainId != null){
 			putQueryParameter("TransitRouterMulticastDomainId", transitRouterMulticastDomainId);
+		}
+	}
+
+	public Boolean getIsGroupSource() {
+		return this.isGroupSource;
+	}
+
+	public void setIsGroupSource(Boolean isGroupSource) {
+		this.isGroupSource = isGroupSource;
+		if(isGroupSource != null){
+			putQueryParameter("IsGroupSource", isGroupSource.toString());
 		}
 	}
 
@@ -217,6 +247,17 @@ public class ListTransitRouterMulticastGroupsRequest extends RpcAcsRequest<ListT
 		this.maxResults = maxResults;
 		if(maxResults != null){
 			putQueryParameter("MaxResults", maxResults.toString());
+		}
+	}
+
+	public Boolean getIsGroupMember() {
+		return this.isGroupMember;
+	}
+
+	public void setIsGroupMember(Boolean isGroupMember) {
+		this.isGroupMember = isGroupMember;
+		if(isGroupMember != null){
+			putQueryParameter("IsGroupMember", isGroupMember.toString());
 		}
 	}
 

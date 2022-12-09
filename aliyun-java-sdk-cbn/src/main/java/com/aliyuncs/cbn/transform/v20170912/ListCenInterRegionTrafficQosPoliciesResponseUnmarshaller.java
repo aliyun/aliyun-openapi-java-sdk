@@ -39,6 +39,8 @@ public class ListCenInterRegionTrafficQosPoliciesResponseUnmarshaller {
 			trafficQosPolicy.setTrafficQosPolicyStatus(_ctx.stringValue("ListCenInterRegionTrafficQosPoliciesResponse.TrafficQosPolicies["+ i +"].TrafficQosPolicyStatus"));
 			trafficQosPolicy.setTrafficQosPolicyId(_ctx.stringValue("ListCenInterRegionTrafficQosPoliciesResponse.TrafficQosPolicies["+ i +"].TrafficQosPolicyId"));
 			trafficQosPolicy.setTrafficQosPolicyDescription(_ctx.stringValue("ListCenInterRegionTrafficQosPoliciesResponse.TrafficQosPolicies["+ i +"].TrafficQosPolicyDescription"));
+			trafficQosPolicy.setTransitRouterId(_ctx.stringValue("ListCenInterRegionTrafficQosPoliciesResponse.TrafficQosPolicies["+ i +"].TransitRouterId"));
+			trafficQosPolicy.setTransitRouterAttachmentId(_ctx.stringValue("ListCenInterRegionTrafficQosPoliciesResponse.TrafficQosPolicies["+ i +"].TransitRouterAttachmentId"));
 
 			List<TrafficQosQueue> trafficQosQueues = new ArrayList<TrafficQosQueue>();
 			for (int j = 0; j < _ctx.lengthValue("ListCenInterRegionTrafficQosPoliciesResponse.TrafficQosPolicies["+ i +"].TrafficQosQueues.Length"); j++) {

@@ -44,6 +44,8 @@ public class ListTransitRouterVpcAttachmentsRequest extends RpcAcsRequest<ListTr
 
 	private String transitRouterAttachmentId;
 
+	private String vpcId;
+
 	private Integer maxResults;
 	public ListTransitRouterVpcAttachmentsRequest() {
 		super("Cbn", "2017-09-12", "ListTransitRouterVpcAttachments", "cbn");
@@ -153,6 +155,17 @@ public class ListTransitRouterVpcAttachmentsRequest extends RpcAcsRequest<ListTr
 		this.transitRouterAttachmentId = transitRouterAttachmentId;
 		if(transitRouterAttachmentId != null){
 			putQueryParameter("TransitRouterAttachmentId", transitRouterAttachmentId);
+		}
+	}
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
 		}
 	}
 

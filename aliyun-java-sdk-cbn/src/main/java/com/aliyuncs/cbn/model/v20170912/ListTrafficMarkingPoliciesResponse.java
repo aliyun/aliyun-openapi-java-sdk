@@ -89,6 +89,8 @@ public class ListTrafficMarkingPoliciesResponse extends AcsResponse {
 
 		private String trafficMarkingPolicyDescription;
 
+		private String transitRouterId;
+
 		private List<TrafficMatchRule> trafficMatchRules;
 
 		public String getTrafficMarkingPolicyStatus() {
@@ -137,6 +139,14 @@ public class ListTrafficMarkingPoliciesResponse extends AcsResponse {
 
 		public void setTrafficMarkingPolicyDescription(String trafficMarkingPolicyDescription) {
 			this.trafficMarkingPolicyDescription = trafficMarkingPolicyDescription;
+		}
+
+		public String getTransitRouterId() {
+			return this.transitRouterId;
+		}
+
+		public void setTransitRouterId(String transitRouterId) {
+			this.transitRouterId = transitRouterId;
 		}
 
 		public List<TrafficMatchRule> getTrafficMatchRules() {
