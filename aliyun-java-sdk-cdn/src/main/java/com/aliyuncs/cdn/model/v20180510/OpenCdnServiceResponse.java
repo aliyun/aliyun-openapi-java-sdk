@@ -15,26 +15,16 @@
 package com.aliyuncs.cdn.model.v20180510;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cdn.transform.v20180510.DescribeRealtimeLogAuthorizedResponseUnmarshaller;
+import com.aliyuncs.cdn.transform.v20180510.OpenCdnServiceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeRealtimeLogAuthorizedResponse extends AcsResponse {
-
-	private String authorizedStatus;
+public class OpenCdnServiceResponse extends AcsResponse {
 
 	private String requestId;
-
-	public String getAuthorizedStatus() {
-		return this.authorizedStatus;
-	}
-
-	public void setAuthorizedStatus(String authorizedStatus) {
-		this.authorizedStatus = authorizedStatus;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,7 +35,7 @@ public class DescribeRealtimeLogAuthorizedResponse extends AcsResponse {
 	}
 
 	@Override
-	public DescribeRealtimeLogAuthorizedResponse getInstance(UnmarshallerContext context) {
-		return	DescribeRealtimeLogAuthorizedResponseUnmarshaller.unmarshall(this, context);
+	public OpenCdnServiceResponse getInstance(UnmarshallerContext context) {
+		return	OpenCdnServiceResponseUnmarshaller.unmarshall(this, context);
 	}
 }

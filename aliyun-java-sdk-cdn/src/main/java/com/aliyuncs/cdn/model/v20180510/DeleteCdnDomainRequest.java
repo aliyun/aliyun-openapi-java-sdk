@@ -25,8 +25,6 @@ import com.aliyuncs.cdn.Endpoint;
 public class DeleteCdnDomainRequest extends RpcAcsRequest<DeleteCdnDomainResponse> {
 	   
 
-	private String securityToken;
-
 	private String ownerAccount;
 
 	private String domainName;
@@ -39,17 +37,6 @@ public class DeleteCdnDomainRequest extends RpcAcsRequest<DeleteCdnDomainRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
 	}
 
 	public String getOwnerAccount() {

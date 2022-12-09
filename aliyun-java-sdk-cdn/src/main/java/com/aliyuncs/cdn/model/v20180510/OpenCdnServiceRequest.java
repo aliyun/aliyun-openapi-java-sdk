@@ -22,32 +22,21 @@ import com.aliyuncs.cdn.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeConfigGroupDetailRequest extends RpcAcsRequest<DescribeConfigGroupDetailResponse> {
+public class OpenCdnServiceRequest extends RpcAcsRequest<OpenCdnServiceResponse> {
 	   
-
-	private String configGroupName;
 
 	private Long ownerId;
 
-	private String configGroupId;
-	public DescribeConfigGroupDetailRequest() {
-		super("Cdn", "2018-05-10", "DescribeConfigGroupDetail");
+	private String securityToken;
+
+	private String internetChargeType;
+	public OpenCdnServiceRequest() {
+		super("Cdn", "2018-05-10", "OpenCdnService");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getConfigGroupName() {
-		return this.configGroupName;
-	}
-
-	public void setConfigGroupName(String configGroupName) {
-		this.configGroupName = configGroupName;
-		if(configGroupName != null){
-			putQueryParameter("ConfigGroupName", configGroupName);
-		}
 	}
 
 	public Long getOwnerId() {
@@ -61,20 +50,31 @@ public class DescribeConfigGroupDetailRequest extends RpcAcsRequest<DescribeConf
 		}
 	}
 
-	public String getConfigGroupId() {
-		return this.configGroupId;
+	public String getSecurityToken() {
+		return this.securityToken;
 	}
 
-	public void setConfigGroupId(String configGroupId) {
-		this.configGroupId = configGroupId;
-		if(configGroupId != null){
-			putQueryParameter("ConfigGroupId", configGroupId);
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getInternetChargeType() {
+		return this.internetChargeType;
+	}
+
+	public void setInternetChargeType(String internetChargeType) {
+		this.internetChargeType = internetChargeType;
+		if(internetChargeType != null){
+			putQueryParameter("InternetChargeType", internetChargeType);
 		}
 	}
 
 	@Override
-	public Class<DescribeConfigGroupDetailResponse> getResponseClass() {
-		return DescribeConfigGroupDetailResponse.class;
+	public Class<OpenCdnServiceResponse> getResponseClass() {
+		return OpenCdnServiceResponse.class;
 	}
 
 }

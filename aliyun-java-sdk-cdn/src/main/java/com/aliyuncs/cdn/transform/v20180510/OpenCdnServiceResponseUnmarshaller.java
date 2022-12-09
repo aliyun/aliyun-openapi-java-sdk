@@ -14,16 +14,16 @@
 
 package com.aliyuncs.cdn.transform.v20180510;
 
-import com.aliyuncs.cdn.model.v20180510.SetConfigOfVersionResponse;
+import com.aliyuncs.cdn.model.v20180510.OpenCdnServiceResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class SetConfigOfVersionResponseUnmarshaller {
+public class OpenCdnServiceResponseUnmarshaller {
 
-	public static SetConfigOfVersionResponse unmarshall(SetConfigOfVersionResponse setConfigOfVersionResponse, UnmarshallerContext _ctx) {
+	public static OpenCdnServiceResponse unmarshall(OpenCdnServiceResponse openCdnServiceResponse, UnmarshallerContext _ctx) {
 		
-		setConfigOfVersionResponse.setRequestId(_ctx.stringValue("SetConfigOfVersionResponse.RequestId"));
+		openCdnServiceResponse.setRequestId(_ctx.stringValue("OpenCdnServiceResponse.RequestId"));
 	 
-	 	return setConfigOfVersionResponse;
+	 	return openCdnServiceResponse;
 	}
 }
