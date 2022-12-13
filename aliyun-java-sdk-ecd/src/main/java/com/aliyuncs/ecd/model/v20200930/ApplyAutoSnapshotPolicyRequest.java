@@ -15,6 +15,7 @@
 package com.aliyuncs.ecd.model.v20200930;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecd.Endpoint;
 
@@ -22,12 +23,14 @@ import com.aliyuncs.ecd.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteDriveRequest extends RpcAcsRequest<DeleteDriveResponse> {
+public class ApplyAutoSnapshotPolicyRequest extends RpcAcsRequest<ApplyAutoSnapshotPolicyResponse> {
 	   
 
-	private String driveId;
-	public DeleteDriveRequest() {
-		super("ecd", "2020-09-30", "DeleteDrive");
+	private String policyId;
+
+	private List<String> desktopIds;
+	public ApplyAutoSnapshotPolicyRequest() {
+		super("ecd", "2020-09-30", "ApplyAutoSnapshotPolicy");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,20 +38,33 @@ public class DeleteDriveRequest extends RpcAcsRequest<DeleteDriveResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getDriveId() {
-		return this.driveId;
+	public String getPolicyId() {
+		return this.policyId;
 	}
 
-	public void setDriveId(String driveId) {
-		this.driveId = driveId;
-		if(driveId != null){
-			putQueryParameter("DriveId", driveId);
+	public void setPolicyId(String policyId) {
+		this.policyId = policyId;
+		if(policyId != null){
+			putQueryParameter("PolicyId", policyId);
 		}
 	}
 
+	public List<String> getDesktopIds() {
+		return this.desktopIds;
+	}
+
+	public void setDesktopIds(List<String> desktopIds) {
+		this.desktopIds = desktopIds;	
+		if (desktopIds != null) {
+			for (int i = 0; i < desktopIds.size(); i++) {
+				putQueryParameter("DesktopId." + (i + 1) , desktopIds.get(i));
+			}
+		}	
+	}
+
 	@Override
-	public Class<DeleteDriveResponse> getResponseClass() {
-		return DeleteDriveResponse.class;
+	public Class<ApplyAutoSnapshotPolicyResponse> getResponseClass() {
+		return ApplyAutoSnapshotPolicyResponse.class;
 	}
 
 }

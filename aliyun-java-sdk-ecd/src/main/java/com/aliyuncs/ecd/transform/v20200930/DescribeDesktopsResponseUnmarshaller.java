@@ -82,6 +82,10 @@ public class DescribeDesktopsResponseUnmarshaller {
 			desktop.setOfficeSiteVpcType(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].OfficeSiteVpcType"));
 			desktop.setPlatform(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].Platform"));
 			desktop.setSessionType(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].SessionType"));
+			desktop.setSnapshotPolicyId(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].SnapshotPolicyId"));
+			desktop.setSnapshotPolicyName(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].SnapshotPolicyName"));
+			desktop.setBindAmount(_ctx.integerValue("DescribeDesktopsResponse.Desktops["+ i +"].BindAmount"));
+			desktop.setHibernationOptionsConfigured(_ctx.booleanValue("DescribeDesktopsResponse.Desktops["+ i +"].HibernationOptionsConfigured"));
 
 			List<String> endUserIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDesktopsResponse.Desktops["+ i +"].EndUserIds.Length"); j++) {
@@ -94,6 +98,18 @@ public class DescribeDesktopsResponseUnmarshaller {
 				managementFlags.add(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].ManagementFlags["+ j +"]"));
 			}
 			desktop.setManagementFlags(managementFlags);
+
+			List<String> policyGroupIdList = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDesktopsResponse.Desktops["+ i +"].PolicyGroupIdList.Length"); j++) {
+				policyGroupIdList.add(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].PolicyGroupIdList["+ j +"]"));
+			}
+			desktop.setPolicyGroupIdList(policyGroupIdList);
+
+			List<String> policyGroupNameList = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDesktopsResponse.Desktops["+ i +"].PolicyGroupNameList.Length"); j++) {
+				policyGroupNameList.add(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].PolicyGroupNameList["+ j +"]"));
+			}
+			desktop.setPolicyGroupNameList(policyGroupNameList);
 
 			FotaUpdate fotaUpdate = new FotaUpdate();
 			fotaUpdate.setCurrentAppVersion(_ctx.stringValue("DescribeDesktopsResponse.Desktops["+ i +"].FotaUpdate.CurrentAppVersion"));

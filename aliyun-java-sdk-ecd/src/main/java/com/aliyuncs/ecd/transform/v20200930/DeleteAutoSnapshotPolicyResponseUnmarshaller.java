@@ -14,20 +14,16 @@
 
 package com.aliyuncs.ecd.transform.v20200930;
 
-import com.aliyuncs.ecd.model.v20200930.DeleteDriveResponse;
+import com.aliyuncs.ecd.model.v20200930.DeleteAutoSnapshotPolicyResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class DeleteDriveResponseUnmarshaller {
+public class DeleteAutoSnapshotPolicyResponseUnmarshaller {
 
-	public static DeleteDriveResponse unmarshall(DeleteDriveResponse deleteDriveResponse, UnmarshallerContext _ctx) {
+	public static DeleteAutoSnapshotPolicyResponse unmarshall(DeleteAutoSnapshotPolicyResponse deleteAutoSnapshotPolicyResponse, UnmarshallerContext _ctx) {
 		
-		deleteDriveResponse.setRequestId(_ctx.stringValue("DeleteDriveResponse.RequestId"));
-		deleteDriveResponse.setSuccess(_ctx.booleanValue("DeleteDriveResponse.Success"));
-		deleteDriveResponse.setCode(_ctx.stringValue("DeleteDriveResponse.Code"));
-		deleteDriveResponse.setMessage(_ctx.stringValue("DeleteDriveResponse.Message"));
-		deleteDriveResponse.setData(_ctx.booleanValue("DeleteDriveResponse.Data"));
+		deleteAutoSnapshotPolicyResponse.setRequestId(_ctx.stringValue("DeleteAutoSnapshotPolicyResponse.RequestId"));
 	 
-	 	return deleteDriveResponse;
+	 	return deleteAutoSnapshotPolicyResponse;
 	}
 }

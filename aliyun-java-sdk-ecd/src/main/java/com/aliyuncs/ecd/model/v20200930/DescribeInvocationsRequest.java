@@ -15,6 +15,7 @@
 package com.aliyuncs.ecd.model.v20200930;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecd.Endpoint;
 
@@ -27,11 +28,15 @@ public class DescribeInvocationsRequest extends RpcAcsRequest<DescribeInvocation
 
 	private String invokeStatus;
 
+	private List<String> desktopIdss;
+
 	private Boolean includeOutput;
 
 	private String nextToken;
 
 	private String contentEncoding;
+
+	private String endUserId;
 
 	private String desktopId;
 
@@ -58,6 +63,19 @@ public class DescribeInvocationsRequest extends RpcAcsRequest<DescribeInvocation
 		if(invokeStatus != null){
 			putQueryParameter("InvokeStatus", invokeStatus);
 		}
+	}
+
+	public List<String> getDesktopIdss() {
+		return this.desktopIdss;
+	}
+
+	public void setDesktopIdss(List<String> desktopIdss) {
+		this.desktopIdss = desktopIdss;	
+		if (desktopIdss != null) {
+			for (int i = 0; i < desktopIdss.size(); i++) {
+				putQueryParameter("DesktopIds." + (i + 1) , desktopIdss.get(i));
+			}
+		}	
 	}
 
 	public Boolean getIncludeOutput() {
@@ -90,6 +108,17 @@ public class DescribeInvocationsRequest extends RpcAcsRequest<DescribeInvocation
 		this.contentEncoding = contentEncoding;
 		if(contentEncoding != null){
 			putQueryParameter("ContentEncoding", contentEncoding);
+		}
+	}
+
+	public String getEndUserId() {
+		return this.endUserId;
+	}
+
+	public void setEndUserId(String endUserId) {
+		this.endUserId = endUserId;
+		if(endUserId != null){
+			putQueryParameter("EndUserId", endUserId);
 		}
 	}
 

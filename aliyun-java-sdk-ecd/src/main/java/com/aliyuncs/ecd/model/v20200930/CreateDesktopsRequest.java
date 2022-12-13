@@ -44,6 +44,8 @@ public class CreateDesktopsRequest extends RpcAcsRequest<CreateDesktopsResponse>
 
 	private List<Tag> tags;
 
+	private List<BundleModels> bundleModelss;
+
 	private Boolean volumeEncryptionEnabled;
 
 	private String desktopName;
@@ -180,6 +182,29 @@ public class CreateDesktopsRequest extends RpcAcsRequest<CreateDesktopsResponse>
 			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
 				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
 				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
+	public List<BundleModels> getBundleModelss() {
+		return this.bundleModelss;
+	}
+
+	public void setBundleModelss(List<BundleModels> bundleModelss) {
+		this.bundleModelss = bundleModelss;	
+		if (bundleModelss != null) {
+			for (int depth1 = 0; depth1 < bundleModelss.size(); depth1++) {
+				putQueryParameter("BundleModels." + (depth1 + 1) + ".VolumeEncryptionEnabled" , bundleModelss.get(depth1).getVolumeEncryptionEnabled());
+				putQueryParameter("BundleModels." + (depth1 + 1) + ".VolumeEncryptionKey" , bundleModelss.get(depth1).getVolumeEncryptionKey());
+				putQueryParameter("BundleModels." + (depth1 + 1) + ".Amount" , bundleModelss.get(depth1).getAmount());
+				putQueryParameter("BundleModels." + (depth1 + 1) + ".DesktopName" , bundleModelss.get(depth1).getDesktopName());
+				putQueryParameter("BundleModels." + (depth1 + 1) + ".Hostname" , bundleModelss.get(depth1).getHostname());
+				if (bundleModelss.get(depth1).getEndUserIdss() != null) {
+					for (int i = 0; i < bundleModelss.get(depth1).getEndUserIdss().size(); i++) {
+						putQueryParameter("BundleModels." + (depth1 + 1) + ".EndUserIds." + (i + 1) , bundleModelss.get(depth1).getEndUserIdss().get(i));
+					}
+				}
+				putQueryParameter("BundleModels." + (depth1 + 1) + ".BundleId" , bundleModelss.get(depth1).getBundleId());
 			}
 		}	
 	}
@@ -362,6 +387,79 @@ public class CreateDesktopsRequest extends RpcAcsRequest<CreateDesktopsResponse>
 
 		public void setKey(String key) {
 			this.key = key;
+		}
+	}
+
+	public static class BundleModels {
+
+		private Boolean volumeEncryptionEnabled;
+
+		private String volumeEncryptionKey;
+
+		private Integer amount;
+
+		private String desktopName;
+
+		private String hostname;
+
+		private List<String> endUserIdss;
+
+		private String bundleId;
+
+		public Boolean getVolumeEncryptionEnabled() {
+			return this.volumeEncryptionEnabled;
+		}
+
+		public void setVolumeEncryptionEnabled(Boolean volumeEncryptionEnabled) {
+			this.volumeEncryptionEnabled = volumeEncryptionEnabled;
+		}
+
+		public String getVolumeEncryptionKey() {
+			return this.volumeEncryptionKey;
+		}
+
+		public void setVolumeEncryptionKey(String volumeEncryptionKey) {
+			this.volumeEncryptionKey = volumeEncryptionKey;
+		}
+
+		public Integer getAmount() {
+			return this.amount;
+		}
+
+		public void setAmount(Integer amount) {
+			this.amount = amount;
+		}
+
+		public String getDesktopName() {
+			return this.desktopName;
+		}
+
+		public void setDesktopName(String desktopName) {
+			this.desktopName = desktopName;
+		}
+
+		public String getHostname() {
+			return this.hostname;
+		}
+
+		public void setHostname(String hostname) {
+			this.hostname = hostname;
+		}
+
+		public List<String> getEndUserIdss() {
+			return this.endUserIdss;
+		}
+
+		public void setEndUserIdss(List<String> endUserIdss) {
+			this.endUserIdss = endUserIdss;
+		}
+
+		public String getBundleId() {
+			return this.bundleId;
+		}
+
+		public void setBundleId(String bundleId) {
+			this.bundleId = bundleId;
 		}
 	}
 

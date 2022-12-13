@@ -32,6 +32,8 @@ public class DescribeBundlesRequest extends RpcAcsRequest<DescribeBundlesRespons
 
 	private String desktopTypeFamily;
 
+	private Boolean selectedBundle;
+
 	private String nextToken;
 
 	private Boolean fromDesktopGroup;
@@ -94,6 +96,17 @@ public class DescribeBundlesRequest extends RpcAcsRequest<DescribeBundlesRespons
 		this.desktopTypeFamily = desktopTypeFamily;
 		if(desktopTypeFamily != null){
 			putQueryParameter("DesktopTypeFamily", desktopTypeFamily);
+		}
+	}
+
+	public Boolean getSelectedBundle() {
+		return this.selectedBundle;
+	}
+
+	public void setSelectedBundle(Boolean selectedBundle) {
+		this.selectedBundle = selectedBundle;
+		if(selectedBundle != null){
+			putQueryParameter("SelectedBundle", selectedBundle.toString());
 		}
 	}
 

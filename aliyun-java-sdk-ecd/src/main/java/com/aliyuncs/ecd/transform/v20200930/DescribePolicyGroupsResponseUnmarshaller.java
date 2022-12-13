@@ -66,12 +66,22 @@ public class DescribePolicyGroupsResponseUnmarshaller {
 			describePolicyGroup.setRecordContent(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].RecordContent"));
 			describePolicyGroup.setRecordContentExpires(_ctx.longValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].RecordContentExpires"));
 			describePolicyGroup.setRemoteCoordinate(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].RemoteCoordinate"));
+			describePolicyGroup.setRecordingDuration(_ctx.integerValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].RecordingDuration"));
+			describePolicyGroup.setScope(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].Scope"));
+			describePolicyGroup.setRecordingAudio(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].RecordingAudio"));
+			describePolicyGroup.setInternetCommunicationProtocol(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].InternetCommunicationProtocol"));
 
 			List<String> preemptLoginUsers = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].PreemptLoginUsers.Length"); j++) {
 				preemptLoginUsers.add(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].PreemptLoginUsers["+ j +"]"));
 			}
 			describePolicyGroup.setPreemptLoginUsers(preemptLoginUsers);
+
+			List<String> scopeValue = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].ScopeValue.Length"); j++) {
+				scopeValue.add(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].ScopeValue["+ j +"]"));
+			}
+			describePolicyGroup.setScopeValue(scopeValue);
 
 			List<AuthorizeSecurityPolicyRule> authorizeSecurityPolicyRules = new ArrayList<AuthorizeSecurityPolicyRule>();
 			for (int j = 0; j < _ctx.lengthValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].AuthorizeSecurityPolicyRules.Length"); j++) {

@@ -53,6 +53,8 @@ public class ModifyDesktopsPolicyGroupResponse extends AcsResponse {
 
 		private String desktopId;
 
+		private Boolean checkResult;
+
 		public String getCode() {
 			return this.code;
 		}
@@ -75,6 +77,14 @@ public class ModifyDesktopsPolicyGroupResponse extends AcsResponse {
 
 		public void setDesktopId(String desktopId) {
 			this.desktopId = desktopId;
+		}
+
+		public Boolean getCheckResult() {
+			return this.checkResult;
+		}
+
+		public void setCheckResult(Boolean checkResult) {
+			this.checkResult = checkResult;
 		}
 	}
 

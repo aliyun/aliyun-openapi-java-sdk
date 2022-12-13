@@ -45,6 +45,8 @@ public class ExportClientEventsRequest extends RpcAcsRequest<ExportClientEventsR
 	private Integer maxResults;
 
 	private String eventType;
+
+	private String langType;
 	public ExportClientEventsRequest() {
 		super("ecd", "2020-09-30", "ExportClientEvents");
 		setMethod(MethodType.POST);
@@ -163,6 +165,17 @@ public class ExportClientEventsRequest extends RpcAcsRequest<ExportClientEventsR
 		this.eventType = eventType;
 		if(eventType != null){
 			putQueryParameter("EventType", eventType);
+		}
+	}
+
+	public String getLangType() {
+		return this.langType;
+	}
+
+	public void setLangType(String langType) {
+		this.langType = langType;
+		if(langType != null){
+			putQueryParameter("LangType", langType);
 		}
 	}
 

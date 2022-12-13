@@ -37,12 +37,17 @@ public class DescribeNetworkPackagesResponseUnmarshaller {
 			networkPackage.setExpiredTime(_ctx.stringValue("DescribeNetworkPackagesResponse.NetworkPackages["+ i +"].ExpiredTime"));
 			networkPackage.setCreateTime(_ctx.stringValue("DescribeNetworkPackagesResponse.NetworkPackages["+ i +"].CreateTime"));
 			networkPackage.setOfficeSiteId(_ctx.stringValue("DescribeNetworkPackagesResponse.NetworkPackages["+ i +"].OfficeSiteId"));
+			networkPackage.setPayType(_ctx.stringValue("DescribeNetworkPackagesResponse.NetworkPackages["+ i +"].PayType"));
 			networkPackage.setInternetChargeType(_ctx.stringValue("DescribeNetworkPackagesResponse.NetworkPackages["+ i +"].InternetChargeType"));
+			networkPackage.setReservationInternetChargeType(_ctx.stringValue("DescribeNetworkPackagesResponse.NetworkPackages["+ i +"].ReservationInternetChargeType"));
+			networkPackage.setReservationBandwidth(_ctx.integerValue("DescribeNetworkPackagesResponse.NetworkPackages["+ i +"].ReservationBandwidth"));
+			networkPackage.setReservationActiveTime(_ctx.stringValue("DescribeNetworkPackagesResponse.NetworkPackages["+ i +"].ReservationActiveTime"));
 			networkPackage.setNetworkPackageStatus(_ctx.stringValue("DescribeNetworkPackagesResponse.NetworkPackages["+ i +"].NetworkPackageStatus"));
 			networkPackage.setOfficeSiteName(_ctx.stringValue("DescribeNetworkPackagesResponse.NetworkPackages["+ i +"].OfficeSiteName"));
 			networkPackage.setOfficeSiteVpcType(_ctx.stringValue("DescribeNetworkPackagesResponse.NetworkPackages["+ i +"].OfficeSiteVpcType"));
 			networkPackage.setVpcSnatPolicy(_ctx.stringValue("DescribeNetworkPackagesResponse.NetworkPackages["+ i +"].VpcSnatPolicy"));
 			networkPackage.setQosType(_ctx.stringValue("DescribeNetworkPackagesResponse.NetworkPackages["+ i +"].QosType"));
+			networkPackage.setNgwVersion(_ctx.stringValue("DescribeNetworkPackagesResponse.NetworkPackages["+ i +"].NgwVersion"));
 
 			List<String> eipAddresses = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeNetworkPackagesResponse.NetworkPackages["+ i +"].EipAddresses.Length"); j++) {

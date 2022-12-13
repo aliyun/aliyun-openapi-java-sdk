@@ -67,7 +67,15 @@ public class DescribeNetworkPackagesResponse extends AcsResponse {
 
 		private String officeSiteId;
 
+		private String payType;
+
 		private String internetChargeType;
+
+		private String reservationInternetChargeType;
+
+		private Integer reservationBandwidth;
+
+		private String reservationActiveTime;
 
 		private String networkPackageStatus;
 
@@ -78,6 +86,8 @@ public class DescribeNetworkPackagesResponse extends AcsResponse {
 		private String vpcSnatPolicy;
 
 		private String qosType;
+
+		private String ngwVersion;
 
 		private List<String> eipAddresses;
 
@@ -121,12 +131,44 @@ public class DescribeNetworkPackagesResponse extends AcsResponse {
 			this.officeSiteId = officeSiteId;
 		}
 
+		public String getPayType() {
+			return this.payType;
+		}
+
+		public void setPayType(String payType) {
+			this.payType = payType;
+		}
+
 		public String getInternetChargeType() {
 			return this.internetChargeType;
 		}
 
 		public void setInternetChargeType(String internetChargeType) {
 			this.internetChargeType = internetChargeType;
+		}
+
+		public String getReservationInternetChargeType() {
+			return this.reservationInternetChargeType;
+		}
+
+		public void setReservationInternetChargeType(String reservationInternetChargeType) {
+			this.reservationInternetChargeType = reservationInternetChargeType;
+		}
+
+		public Integer getReservationBandwidth() {
+			return this.reservationBandwidth;
+		}
+
+		public void setReservationBandwidth(Integer reservationBandwidth) {
+			this.reservationBandwidth = reservationBandwidth;
+		}
+
+		public String getReservationActiveTime() {
+			return this.reservationActiveTime;
+		}
+
+		public void setReservationActiveTime(String reservationActiveTime) {
+			this.reservationActiveTime = reservationActiveTime;
 		}
 
 		public String getNetworkPackageStatus() {
@@ -167,6 +209,14 @@ public class DescribeNetworkPackagesResponse extends AcsResponse {
 
 		public void setQosType(String qosType) {
 			this.qosType = qosType;
+		}
+
+		public String getNgwVersion() {
+			return this.ngwVersion;
+		}
+
+		public void setNgwVersion(String ngwVersion) {
+			this.ngwVersion = ngwVersion;
 		}
 
 		public List<String> getEipAddresses() {

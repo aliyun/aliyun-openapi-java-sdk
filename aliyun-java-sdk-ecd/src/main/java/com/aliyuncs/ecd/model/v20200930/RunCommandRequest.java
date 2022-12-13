@@ -34,6 +34,8 @@ public class RunCommandRequest extends RpcAcsRequest<RunCommandResponse> {
 
 	private String contentEncoding;
 
+	private String endUserId;
+
 	private List<String> desktopIds;
 	public RunCommandRequest() {
 		super("ecd", "2020-09-30", "RunCommand");
@@ -85,6 +87,17 @@ public class RunCommandRequest extends RpcAcsRequest<RunCommandResponse> {
 		this.contentEncoding = contentEncoding;
 		if(contentEncoding != null){
 			putQueryParameter("ContentEncoding", contentEncoding);
+		}
+	}
+
+	public String getEndUserId() {
+		return this.endUserId;
+	}
+
+	public void setEndUserId(String endUserId) {
+		this.endUserId = endUserId;
+		if(endUserId != null){
+			putQueryParameter("EndUserId", endUserId);
 		}
 	}
 

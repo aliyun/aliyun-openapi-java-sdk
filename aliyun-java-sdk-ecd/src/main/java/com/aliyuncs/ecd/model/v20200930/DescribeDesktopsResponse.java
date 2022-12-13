@@ -157,6 +157,14 @@ public class DescribeDesktopsResponse extends AcsResponse {
 
 		private String sessionType;
 
+		private String snapshotPolicyId;
+
+		private String snapshotPolicyName;
+
+		private Integer bindAmount;
+
+		private Boolean hibernationOptionsConfigured;
+
 		private List<Disk> disks;
 
 		private List<Tag> tags;
@@ -166,6 +174,10 @@ public class DescribeDesktopsResponse extends AcsResponse {
 		private List<String> endUserIds;
 
 		private List<String> managementFlags;
+
+		private List<String> policyGroupIdList;
+
+		private List<String> policyGroupNameList;
 
 		private FotaUpdate fotaUpdate;
 
@@ -529,6 +541,38 @@ public class DescribeDesktopsResponse extends AcsResponse {
 			this.sessionType = sessionType;
 		}
 
+		public String getSnapshotPolicyId() {
+			return this.snapshotPolicyId;
+		}
+
+		public void setSnapshotPolicyId(String snapshotPolicyId) {
+			this.snapshotPolicyId = snapshotPolicyId;
+		}
+
+		public String getSnapshotPolicyName() {
+			return this.snapshotPolicyName;
+		}
+
+		public void setSnapshotPolicyName(String snapshotPolicyName) {
+			this.snapshotPolicyName = snapshotPolicyName;
+		}
+
+		public Integer getBindAmount() {
+			return this.bindAmount;
+		}
+
+		public void setBindAmount(Integer bindAmount) {
+			this.bindAmount = bindAmount;
+		}
+
+		public Boolean getHibernationOptionsConfigured() {
+			return this.hibernationOptionsConfigured;
+		}
+
+		public void setHibernationOptionsConfigured(Boolean hibernationOptionsConfigured) {
+			this.hibernationOptionsConfigured = hibernationOptionsConfigured;
+		}
+
 		public List<Disk> getDisks() {
 			return this.disks;
 		}
@@ -567,6 +611,22 @@ public class DescribeDesktopsResponse extends AcsResponse {
 
 		public void setManagementFlags(List<String> managementFlags) {
 			this.managementFlags = managementFlags;
+		}
+
+		public List<String> getPolicyGroupIdList() {
+			return this.policyGroupIdList;
+		}
+
+		public void setPolicyGroupIdList(List<String> policyGroupIdList) {
+			this.policyGroupIdList = policyGroupIdList;
+		}
+
+		public List<String> getPolicyGroupNameList() {
+			return this.policyGroupNameList;
+		}
+
+		public void setPolicyGroupNameList(List<String> policyGroupNameList) {
+			this.policyGroupNameList = policyGroupNameList;
 		}
 
 		public FotaUpdate getFotaUpdate() {

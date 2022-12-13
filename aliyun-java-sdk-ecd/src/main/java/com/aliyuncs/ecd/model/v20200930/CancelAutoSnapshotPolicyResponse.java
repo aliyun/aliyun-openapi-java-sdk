@@ -15,24 +15,16 @@
 package com.aliyuncs.ecd.model.v20200930;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ecd.transform.v20200930.DeleteDriveResponseUnmarshaller;
+import com.aliyuncs.ecd.transform.v20200930.CancelAutoSnapshotPolicyResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteDriveResponse extends AcsResponse {
+public class CancelAutoSnapshotPolicyResponse extends AcsResponse {
 
 	private String requestId;
-
-	private Boolean success;
-
-	private String code;
-
-	private String message;
-
-	private Boolean data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,41 +34,9 @@ public class DeleteDriveResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public Boolean getData() {
-		return this.data;
-	}
-
-	public void setData(Boolean data) {
-		this.data = data;
-	}
-
 	@Override
-	public DeleteDriveResponse getInstance(UnmarshallerContext context) {
-		return	DeleteDriveResponseUnmarshaller.unmarshall(this, context);
+	public CancelAutoSnapshotPolicyResponse getInstance(UnmarshallerContext context) {
+		return	CancelAutoSnapshotPolicyResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

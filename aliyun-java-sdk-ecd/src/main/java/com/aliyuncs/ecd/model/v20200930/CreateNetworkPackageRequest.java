@@ -40,6 +40,8 @@ public class CreateNetworkPackageRequest extends RpcAcsRequest<CreateNetworkPack
 	private Boolean autoRenew;
 
 	private String internetChargeType;
+
+	private String payType;
 	public CreateNetworkPackageRequest() {
 		super("ecd", "2020-09-30", "CreateNetworkPackage");
 		setMethod(MethodType.POST);
@@ -134,6 +136,17 @@ public class CreateNetworkPackageRequest extends RpcAcsRequest<CreateNetworkPack
 		this.internetChargeType = internetChargeType;
 		if(internetChargeType != null){
 			putQueryParameter("InternetChargeType", internetChargeType);
+		}
+	}
+
+	public String getPayType() {
+		return this.payType;
+	}
+
+	public void setPayType(String payType) {
+		this.payType = payType;
+		if(payType != null){
+			putQueryParameter("PayType", payType);
 		}
 	}
 

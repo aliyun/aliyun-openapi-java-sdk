@@ -15,6 +15,7 @@
 package com.aliyuncs.ecd.model.v20200930;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecd.Endpoint;
 
@@ -24,6 +25,8 @@ import com.aliyuncs.ecd.Endpoint;
  */
 public class DescribeUsersInGroupRequest extends RpcAcsRequest<DescribeUsersInGroupResponse> {
 	   
+
+	private List<String> endUserIdss;
 
 	private Integer connectState;
 
@@ -47,6 +50,19 @@ public class DescribeUsersInGroupRequest extends RpcAcsRequest<DescribeUsersInGr
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public List<String> getEndUserIdss() {
+		return this.endUserIdss;
+	}
+
+	public void setEndUserIdss(List<String> endUserIdss) {
+		this.endUserIdss = endUserIdss;	
+		if (endUserIdss != null) {
+			for (int i = 0; i < endUserIdss.size(); i++) {
+				putQueryParameter("EndUserIds." + (i + 1) , endUserIdss.get(i));
+			}
+		}	
 	}
 
 	public Integer getConnectState() {

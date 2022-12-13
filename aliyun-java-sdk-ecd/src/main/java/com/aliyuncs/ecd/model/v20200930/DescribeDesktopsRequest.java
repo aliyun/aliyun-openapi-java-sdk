@@ -28,9 +28,15 @@ public class DescribeDesktopsRequest extends RpcAcsRequest<DescribeDesktopsRespo
 
 	private String officeSiteId;
 
+	private String snapshotPolicyId;
+
 	private String desktopStatus;
 
+	private String desktopGroupId;
+
 	private String nextToken;
+
+	private Boolean onlyDesktopGroup;
 
 	private Boolean queryFotaUpdate;
 
@@ -57,6 +63,8 @@ public class DescribeDesktopsRequest extends RpcAcsRequest<DescribeDesktopsRespo
 	private String expiredTime;
 
 	private Integer maxResults;
+
+	private List<String> osTypess;
 
 	private String protocolType;
 
@@ -85,6 +93,17 @@ public class DescribeDesktopsRequest extends RpcAcsRequest<DescribeDesktopsRespo
 		}
 	}
 
+	public String getSnapshotPolicyId() {
+		return this.snapshotPolicyId;
+	}
+
+	public void setSnapshotPolicyId(String snapshotPolicyId) {
+		this.snapshotPolicyId = snapshotPolicyId;
+		if(snapshotPolicyId != null){
+			putQueryParameter("SnapshotPolicyId", snapshotPolicyId);
+		}
+	}
+
 	public String getDesktopStatus() {
 		return this.desktopStatus;
 	}
@@ -96,6 +115,17 @@ public class DescribeDesktopsRequest extends RpcAcsRequest<DescribeDesktopsRespo
 		}
 	}
 
+	public String getDesktopGroupId() {
+		return this.desktopGroupId;
+	}
+
+	public void setDesktopGroupId(String desktopGroupId) {
+		this.desktopGroupId = desktopGroupId;
+		if(desktopGroupId != null){
+			putQueryParameter("DesktopGroupId", desktopGroupId);
+		}
+	}
+
 	public String getNextToken() {
 		return this.nextToken;
 	}
@@ -104,6 +134,17 @@ public class DescribeDesktopsRequest extends RpcAcsRequest<DescribeDesktopsRespo
 		this.nextToken = nextToken;
 		if(nextToken != null){
 			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public Boolean getOnlyDesktopGroup() {
+		return this.onlyDesktopGroup;
+	}
+
+	public void setOnlyDesktopGroup(Boolean onlyDesktopGroup) {
+		this.onlyDesktopGroup = onlyDesktopGroup;
+		if(onlyDesktopGroup != null){
+			putQueryParameter("OnlyDesktopGroup", onlyDesktopGroup.toString());
 		}
 	}
 
@@ -257,6 +298,19 @@ public class DescribeDesktopsRequest extends RpcAcsRequest<DescribeDesktopsRespo
 		if(maxResults != null){
 			putQueryParameter("MaxResults", maxResults.toString());
 		}
+	}
+
+	public List<String> getOsTypess() {
+		return this.osTypess;
+	}
+
+	public void setOsTypess(List<String> osTypess) {
+		this.osTypess = osTypess;	
+		if (osTypess != null) {
+			for (int i = 0; i < osTypess.size(); i++) {
+				putQueryParameter("OsTypes." + (i + 1) , osTypess.get(i));
+			}
+		}	
 	}
 
 	public String getProtocolType() {

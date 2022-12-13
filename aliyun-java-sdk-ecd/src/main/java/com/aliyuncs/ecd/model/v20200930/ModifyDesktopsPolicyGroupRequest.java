@@ -26,6 +26,8 @@ import com.aliyuncs.ecd.Endpoint;
 public class ModifyDesktopsPolicyGroupRequest extends RpcAcsRequest<ModifyDesktopsPolicyGroupResponse> {
 	   
 
+	private List<String> policyGroupIdss;
+
 	private List<String> desktopIds;
 
 	private String policyGroupId;
@@ -36,6 +38,19 @@ public class ModifyDesktopsPolicyGroupRequest extends RpcAcsRequest<ModifyDeskto
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public List<String> getPolicyGroupIdss() {
+		return this.policyGroupIdss;
+	}
+
+	public void setPolicyGroupIdss(List<String> policyGroupIdss) {
+		this.policyGroupIdss = policyGroupIdss;	
+		if (policyGroupIdss != null) {
+			for (int i = 0; i < policyGroupIdss.size(); i++) {
+				putQueryParameter("PolicyGroupIds." + (i + 1) , policyGroupIdss.get(i));
+			}
+		}	
 	}
 
 	public List<String> getDesktopIds() {

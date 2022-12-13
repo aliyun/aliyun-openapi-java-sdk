@@ -91,6 +91,12 @@ public class DescribeNASFileSystemsResponse extends AcsResponse {
 
 		private Boolean encryptionEnabled;
 
+		private Boolean profileCompatible;
+
+		private String domainId;
+
+		private List<DesktopGroup> desktopGroups;
+
 		public Long getCapacity() {
 			return this.capacity;
 		}
@@ -225,6 +231,53 @@ public class DescribeNASFileSystemsResponse extends AcsResponse {
 
 		public void setEncryptionEnabled(Boolean encryptionEnabled) {
 			this.encryptionEnabled = encryptionEnabled;
+		}
+
+		public Boolean getProfileCompatible() {
+			return this.profileCompatible;
+		}
+
+		public void setProfileCompatible(Boolean profileCompatible) {
+			this.profileCompatible = profileCompatible;
+		}
+
+		public String getDomainId() {
+			return this.domainId;
+		}
+
+		public void setDomainId(String domainId) {
+			this.domainId = domainId;
+		}
+
+		public List<DesktopGroup> getDesktopGroups() {
+			return this.desktopGroups;
+		}
+
+		public void setDesktopGroups(List<DesktopGroup> desktopGroups) {
+			this.desktopGroups = desktopGroups;
+		}
+
+		public static class DesktopGroup {
+
+			private String desktopGroupId;
+
+			private String desktopGroupName;
+
+			public String getDesktopGroupId() {
+				return this.desktopGroupId;
+			}
+
+			public void setDesktopGroupId(String desktopGroupId) {
+				this.desktopGroupId = desktopGroupId;
+			}
+
+			public String getDesktopGroupName() {
+				return this.desktopGroupName;
+			}
+
+			public void setDesktopGroupName(String desktopGroupName) {
+				this.desktopGroupName = desktopGroupName;
+			}
 		}
 	}
 

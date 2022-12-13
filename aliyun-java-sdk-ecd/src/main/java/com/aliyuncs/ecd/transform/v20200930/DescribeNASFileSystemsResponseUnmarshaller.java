@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ecd.model.v20200930.DescribeNASFileSystemsResponse;
 import com.aliyuncs.ecd.model.v20200930.DescribeNASFileSystemsResponse.FileSystem;
+import com.aliyuncs.ecd.model.v20200930.DescribeNASFileSystemsResponse.FileSystem.DesktopGroup;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -49,6 +50,18 @@ public class DescribeNASFileSystemsResponseUnmarshaller {
 			fileSystem.setZoneId(_ctx.stringValue("DescribeNASFileSystemsResponse.FileSystems["+ i +"].ZoneId"));
 			fileSystem.setFileSystemStatus(_ctx.stringValue("DescribeNASFileSystemsResponse.FileSystems["+ i +"].FileSystemStatus"));
 			fileSystem.setEncryptionEnabled(_ctx.booleanValue("DescribeNASFileSystemsResponse.FileSystems["+ i +"].EncryptionEnabled"));
+			fileSystem.setProfileCompatible(_ctx.booleanValue("DescribeNASFileSystemsResponse.FileSystems["+ i +"].ProfileCompatible"));
+			fileSystem.setDomainId(_ctx.stringValue("DescribeNASFileSystemsResponse.FileSystems["+ i +"].DomainId"));
+
+			List<DesktopGroup> desktopGroups = new ArrayList<DesktopGroup>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeNASFileSystemsResponse.FileSystems["+ i +"].DesktopGroups.Length"); j++) {
+				DesktopGroup desktopGroup = new DesktopGroup();
+				desktopGroup.setDesktopGroupId(_ctx.stringValue("DescribeNASFileSystemsResponse.FileSystems["+ i +"].DesktopGroups["+ j +"].DesktopGroupId"));
+				desktopGroup.setDesktopGroupName(_ctx.stringValue("DescribeNASFileSystemsResponse.FileSystems["+ i +"].DesktopGroups["+ j +"].DesktopGroupName"));
+
+				desktopGroups.add(desktopGroup);
+			}
+			fileSystem.setDesktopGroups(desktopGroups);
 
 			fileSystems.add(fileSystem);
 		}

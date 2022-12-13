@@ -56,6 +56,7 @@ public class DescribeSuspEventsResponseUnmarshaller {
 			suspEvent.setUniqueInfo(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].UniqueInfo"));
 			suspEvent.setLevel(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].Level"));
 			suspEvent.setId(_ctx.longValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].Id"));
+			suspEvent.setDesktopGroupId(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].DesktopGroupId"));
 
 			List<Detail> details = new ArrayList<Detail>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].Details.Length"); j++) {

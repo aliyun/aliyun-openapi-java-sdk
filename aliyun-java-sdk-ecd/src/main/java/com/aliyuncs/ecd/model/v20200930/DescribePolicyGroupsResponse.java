@@ -117,6 +117,14 @@ public class DescribePolicyGroupsResponse extends AcsResponse {
 
 		private String remoteCoordinate;
 
+		private Integer recordingDuration;
+
+		private String scope;
+
+		private String recordingAudio;
+
+		private String internetCommunicationProtocol;
+
 		private List<AuthorizeSecurityPolicyRule> authorizeSecurityPolicyRules;
 
 		private List<AuthorizeAccessPolicyRule> authorizeAccessPolicyRules;
@@ -126,6 +134,8 @@ public class DescribePolicyGroupsResponse extends AcsResponse {
 		private List<UsbSupplyRedirectRuleItem> usbSupplyRedirectRule;
 
 		private List<String> preemptLoginUsers;
+
+		private List<String> scopeValue;
 
 		public String getPolicyStatus() {
 			return this.policyStatus;
@@ -367,6 +377,38 @@ public class DescribePolicyGroupsResponse extends AcsResponse {
 			this.remoteCoordinate = remoteCoordinate;
 		}
 
+		public Integer getRecordingDuration() {
+			return this.recordingDuration;
+		}
+
+		public void setRecordingDuration(Integer recordingDuration) {
+			this.recordingDuration = recordingDuration;
+		}
+
+		public String getScope() {
+			return this.scope;
+		}
+
+		public void setScope(String scope) {
+			this.scope = scope;
+		}
+
+		public String getRecordingAudio() {
+			return this.recordingAudio;
+		}
+
+		public void setRecordingAudio(String recordingAudio) {
+			this.recordingAudio = recordingAudio;
+		}
+
+		public String getInternetCommunicationProtocol() {
+			return this.internetCommunicationProtocol;
+		}
+
+		public void setInternetCommunicationProtocol(String internetCommunicationProtocol) {
+			this.internetCommunicationProtocol = internetCommunicationProtocol;
+		}
+
 		public List<AuthorizeSecurityPolicyRule> getAuthorizeSecurityPolicyRules() {
 			return this.authorizeSecurityPolicyRules;
 		}
@@ -405,6 +447,14 @@ public class DescribePolicyGroupsResponse extends AcsResponse {
 
 		public void setPreemptLoginUsers(List<String> preemptLoginUsers) {
 			this.preemptLoginUsers = preemptLoginUsers;
+		}
+
+		public List<String> getScopeValue() {
+			return this.scopeValue;
+		}
+
+		public void setScopeValue(List<String> scopeValue) {
+			this.scopeValue = scopeValue;
 		}
 
 		public static class AuthorizeSecurityPolicyRule {

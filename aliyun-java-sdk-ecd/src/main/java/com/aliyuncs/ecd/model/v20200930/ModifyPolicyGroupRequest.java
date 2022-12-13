@@ -50,6 +50,8 @@ public class ModifyPolicyGroupRequest extends RpcAcsRequest<ModifyPolicyGroupRes
 
 	private String recordingStartTime;
 
+	private Integer recordingDuration;
+
 	private List<RevokeAccessPolicyRule> revokeAccessPolicyRules;
 
 	private String watermark;
@@ -74,11 +76,17 @@ public class ModifyPolicyGroupRequest extends RpcAcsRequest<ModifyPolicyGroupRes
 
 	private String recording;
 
+	private List<String> scopeValues;
+
 	private Long recordingFps;
 
 	private String recordContent;
 
+	private String scope;
+
 	private Long recordContentExpires;
+
+	private String recordingAudio;
 
 	private String remoteCoordinate;
 
@@ -91,6 +99,8 @@ public class ModifyPolicyGroupRequest extends RpcAcsRequest<ModifyPolicyGroupRes
 	private String visualQuality;
 
 	private String recordingEndTime;
+
+	private String internetCommunicationProtocol;
 	public ModifyPolicyGroupRequest() {
 		super("ecd", "2020-09-30", "ModifyPolicyGroup");
 		setMethod(MethodType.POST);
@@ -250,6 +260,17 @@ public class ModifyPolicyGroupRequest extends RpcAcsRequest<ModifyPolicyGroupRes
 		}
 	}
 
+	public Integer getRecordingDuration() {
+		return this.recordingDuration;
+	}
+
+	public void setRecordingDuration(Integer recordingDuration) {
+		this.recordingDuration = recordingDuration;
+		if(recordingDuration != null){
+			putQueryParameter("RecordingDuration", recordingDuration.toString());
+		}
+	}
+
 	public List<RevokeAccessPolicyRule> getRevokeAccessPolicyRules() {
 		return this.revokeAccessPolicyRules;
 	}
@@ -399,6 +420,19 @@ public class ModifyPolicyGroupRequest extends RpcAcsRequest<ModifyPolicyGroupRes
 		}
 	}
 
+	public List<String> getScopeValues() {
+		return this.scopeValues;
+	}
+
+	public void setScopeValues(List<String> scopeValues) {
+		this.scopeValues = scopeValues;	
+		if (scopeValues != null) {
+			for (int i = 0; i < scopeValues.size(); i++) {
+				putQueryParameter("ScopeValue." + (i + 1) , scopeValues.get(i));
+			}
+		}	
+	}
+
 	public Long getRecordingFps() {
 		return this.recordingFps;
 	}
@@ -421,6 +455,17 @@ public class ModifyPolicyGroupRequest extends RpcAcsRequest<ModifyPolicyGroupRes
 		}
 	}
 
+	public String getScope() {
+		return this.scope;
+	}
+
+	public void setScope(String scope) {
+		this.scope = scope;
+		if(scope != null){
+			putQueryParameter("Scope", scope);
+		}
+	}
+
 	public Long getRecordContentExpires() {
 		return this.recordContentExpires;
 	}
@@ -429,6 +474,17 @@ public class ModifyPolicyGroupRequest extends RpcAcsRequest<ModifyPolicyGroupRes
 		this.recordContentExpires = recordContentExpires;
 		if(recordContentExpires != null){
 			putQueryParameter("RecordContentExpires", recordContentExpires.toString());
+		}
+	}
+
+	public String getRecordingAudio() {
+		return this.recordingAudio;
+	}
+
+	public void setRecordingAudio(String recordingAudio) {
+		this.recordingAudio = recordingAudio;
+		if(recordingAudio != null){
+			putQueryParameter("RecordingAudio", recordingAudio);
 		}
 	}
 
@@ -495,6 +551,17 @@ public class ModifyPolicyGroupRequest extends RpcAcsRequest<ModifyPolicyGroupRes
 		this.recordingEndTime = recordingEndTime;
 		if(recordingEndTime != null){
 			putQueryParameter("RecordingEndTime", recordingEndTime);
+		}
+	}
+
+	public String getInternetCommunicationProtocol() {
+		return this.internetCommunicationProtocol;
+	}
+
+	public void setInternetCommunicationProtocol(String internetCommunicationProtocol) {
+		this.internetCommunicationProtocol = internetCommunicationProtocol;
+		if(internetCommunicationProtocol != null){
+			putQueryParameter("InternetCommunicationProtocol", internetCommunicationProtocol);
 		}
 	}
 

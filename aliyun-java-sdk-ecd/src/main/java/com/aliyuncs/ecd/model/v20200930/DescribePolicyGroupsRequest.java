@@ -28,6 +28,8 @@ public class DescribePolicyGroupsRequest extends RpcAcsRequest<DescribePolicyGro
 
 	private String nextToken;
 
+	private String scope;
+
 	private Integer maxResults;
 
 	private List<String> policyGroupIds;
@@ -48,6 +50,17 @@ public class DescribePolicyGroupsRequest extends RpcAcsRequest<DescribePolicyGro
 		this.nextToken = nextToken;
 		if(nextToken != null){
 			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public String getScope() {
+		return this.scope;
+	}
+
+	public void setScope(String scope) {
+		this.scope = scope;
+		if(scope != null){
+			putQueryParameter("Scope", scope);
 		}
 	}
 

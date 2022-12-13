@@ -23,16 +23,16 @@ import com.aliyuncs.ecd.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeDrivesRequest extends RpcAcsRequest<DescribeDrivesResponse> {
+public class DeleteDevicesRequest extends RpcAcsRequest<DeleteDevicesResponse> {
 	   
 
-	private String userId;
+	private Integer clientType;
 
-	private String resourceType;
+	private List<String> deviceIdss;
 
-	private List<String> domainIdss;
-	public DescribeDrivesRequest() {
-		super("ecd", "2020-09-30", "DescribeDrives");
+	private Integer force;
+	public DeleteDevicesRequest() {
+		super("ecd", "2020-09-30", "DeleteDevices");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -40,44 +40,44 @@ public class DescribeDrivesRequest extends RpcAcsRequest<DescribeDrivesResponse>
 		} catch (Exception e) {}
 	}
 
-	public String getUserId() {
-		return this.userId;
+	public Integer getClientType() {
+		return this.clientType;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId);
+	public void setClientType(Integer clientType) {
+		this.clientType = clientType;
+		if(clientType != null){
+			putQueryParameter("ClientType", clientType.toString());
 		}
 	}
 
-	public String getResourceType() {
-		return this.resourceType;
+	public List<String> getDeviceIdss() {
+		return this.deviceIdss;
 	}
 
-	public void setResourceType(String resourceType) {
-		this.resourceType = resourceType;
-		if(resourceType != null){
-			putQueryParameter("ResourceType", resourceType);
-		}
-	}
-
-	public List<String> getDomainIdss() {
-		return this.domainIdss;
-	}
-
-	public void setDomainIdss(List<String> domainIdss) {
-		this.domainIdss = domainIdss;	
-		if (domainIdss != null) {
-			for (int i = 0; i < domainIdss.size(); i++) {
-				putQueryParameter("DomainIds." + (i + 1) , domainIdss.get(i));
+	public void setDeviceIdss(List<String> deviceIdss) {
+		this.deviceIdss = deviceIdss;	
+		if (deviceIdss != null) {
+			for (int i = 0; i < deviceIdss.size(); i++) {
+				putQueryParameter("DeviceIds." + (i + 1) , deviceIdss.get(i));
 			}
 		}	
 	}
 
+	public Integer getForce() {
+		return this.force;
+	}
+
+	public void setForce(Integer force) {
+		this.force = force;
+		if(force != null){
+			putQueryParameter("Force", force.toString());
+		}
+	}
+
 	@Override
-	public Class<DescribeDrivesResponse> getResponseClass() {
-		return DescribeDrivesResponse.class;
+	public Class<DeleteDevicesResponse> getResponseClass() {
+		return DeleteDevicesResponse.class;
 	}
 
 }

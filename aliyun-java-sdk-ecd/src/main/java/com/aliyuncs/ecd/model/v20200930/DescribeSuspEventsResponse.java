@@ -119,6 +119,8 @@ public class DescribeSuspEventsResponse extends AcsResponse {
 
 		private Long id;
 
+		private String desktopGroupId;
+
 		private List<Detail> details;
 
 		public String getDataSource() {
@@ -287,6 +289,14 @@ public class DescribeSuspEventsResponse extends AcsResponse {
 
 		public void setId(Long id) {
 			this.id = id;
+		}
+
+		public String getDesktopGroupId() {
+			return this.desktopGroupId;
+		}
+
+		public void setDesktopGroupId(String desktopGroupId) {
+			this.desktopGroupId = desktopGroupId;
 		}
 
 		public List<Detail> getDetails() {

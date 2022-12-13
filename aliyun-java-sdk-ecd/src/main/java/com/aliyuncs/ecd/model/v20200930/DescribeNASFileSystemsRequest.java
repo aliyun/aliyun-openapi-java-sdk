@@ -28,6 +28,8 @@ public class DescribeNASFileSystemsRequest extends RpcAcsRequest<DescribeNASFile
 
 	private String officeSiteId;
 
+	private Boolean matchCompatibleProfile;
+
 	private String nextToken;
 
 	private Integer maxResults;
@@ -50,6 +52,17 @@ public class DescribeNASFileSystemsRequest extends RpcAcsRequest<DescribeNASFile
 		this.officeSiteId = officeSiteId;
 		if(officeSiteId != null){
 			putQueryParameter("OfficeSiteId", officeSiteId);
+		}
+	}
+
+	public Boolean getMatchCompatibleProfile() {
+		return this.matchCompatibleProfile;
+	}
+
+	public void setMatchCompatibleProfile(Boolean matchCompatibleProfile) {
+		this.matchCompatibleProfile = matchCompatibleProfile;
+		if(matchCompatibleProfile != null){
+			putQueryParameter("MatchCompatibleProfile", matchCompatibleProfile.toString());
 		}
 	}
 

@@ -133,7 +133,15 @@ public class GetDesktopGroupDetailResponse extends AcsResponse {
 
 		private String nasFileSystemName;
 
+		private String timingStrategyInfo;
+
 		private List<TimerInfo> timerInfos;
+
+		private List<ScaleTimerInfo> scaleTimerInfos;
+
+		private List<String> policyGroupIds;
+
+		private List<String> policyGroupNames;
 
 		public Integer getStatus() {
 			return this.status;
@@ -479,12 +487,44 @@ public class GetDesktopGroupDetailResponse extends AcsResponse {
 			this.nasFileSystemName = nasFileSystemName;
 		}
 
+		public String getTimingStrategyInfo() {
+			return this.timingStrategyInfo;
+		}
+
+		public void setTimingStrategyInfo(String timingStrategyInfo) {
+			this.timingStrategyInfo = timingStrategyInfo;
+		}
+
 		public List<TimerInfo> getTimerInfos() {
 			return this.timerInfos;
 		}
 
 		public void setTimerInfos(List<TimerInfo> timerInfos) {
 			this.timerInfos = timerInfos;
+		}
+
+		public List<ScaleTimerInfo> getScaleTimerInfos() {
+			return this.scaleTimerInfos;
+		}
+
+		public void setScaleTimerInfos(List<ScaleTimerInfo> scaleTimerInfos) {
+			this.scaleTimerInfos = scaleTimerInfos;
+		}
+
+		public List<String> getPolicyGroupIds() {
+			return this.policyGroupIds;
+		}
+
+		public void setPolicyGroupIds(List<String> policyGroupIds) {
+			this.policyGroupIds = policyGroupIds;
+		}
+
+		public List<String> getPolicyGroupNames() {
+			return this.policyGroupNames;
+		}
+
+		public void setPolicyGroupNames(List<String> policyGroupNames) {
+			this.policyGroupNames = policyGroupNames;
 		}
 
 		public static class TimerInfo {
@@ -527,6 +567,69 @@ public class GetDesktopGroupDetailResponse extends AcsResponse {
 
 			public void setForced(Boolean forced) {
 				this.forced = forced;
+			}
+		}
+
+		public static class ScaleTimerInfo {
+
+			private String type;
+
+			private String cron;
+
+			private Integer loadPolicy;
+
+			private Integer minResAmount;
+
+			private Long keepDuration;
+
+			private Float ratioThreshold;
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public String getCron() {
+				return this.cron;
+			}
+
+			public void setCron(String cron) {
+				this.cron = cron;
+			}
+
+			public Integer getLoadPolicy() {
+				return this.loadPolicy;
+			}
+
+			public void setLoadPolicy(Integer loadPolicy) {
+				this.loadPolicy = loadPolicy;
+			}
+
+			public Integer getMinResAmount() {
+				return this.minResAmount;
+			}
+
+			public void setMinResAmount(Integer minResAmount) {
+				this.minResAmount = minResAmount;
+			}
+
+			public Long getKeepDuration() {
+				return this.keepDuration;
+			}
+
+			public void setKeepDuration(Long keepDuration) {
+				this.keepDuration = keepDuration;
+			}
+
+			public Float getRatioThreshold() {
+				return this.ratioThreshold;
+			}
+
+			public void setRatioThreshold(Float ratioThreshold) {
+				this.ratioThreshold = ratioThreshold;
 			}
 		}
 	}

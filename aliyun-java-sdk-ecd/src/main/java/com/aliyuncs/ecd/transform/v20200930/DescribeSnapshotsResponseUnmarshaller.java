@@ -43,9 +43,13 @@ public class DescribeSnapshotsResponseUnmarshaller {
 			snapshot.setSourceDiskSize(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].SourceDiskSize"));
 			snapshot.setSourceDiskType(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].SourceDiskType"));
 			snapshot.setDesktopId(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].DesktopId"));
+			snapshot.setDesktopName(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].DesktopName"));
+			snapshot.setDesktopStatus(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].DesktopStatus"));
+			snapshot.setCreator(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].Creator"));
+			snapshot.setProtocolType(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].ProtocolType"));
 			snapshot.setVolumeEncryptionEnabled(_ctx.booleanValue("DescribeSnapshotsResponse.Snapshots["+ i +"].VolumeEncryptionEnabled"));
 			snapshot.setVolumeEncryptionKey(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].VolumeEncryptionKey"));
-			snapshot.setProtocolType(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].ProtocolType"));
+			snapshot.setDeletionTime(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].DeletionTime"));
 
 			snapshots.add(snapshot);
 		}
