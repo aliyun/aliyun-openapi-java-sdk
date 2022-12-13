@@ -14,7 +14,6 @@
 
 package com.aliyuncs.cs.model.v20151215;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.cs.transform.v20151215.GetKubernetesTriggerResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -24,69 +23,6 @@ import com.aliyuncs.transform.UnmarshallerContext;
  * @version 
  */
 public class GetKubernetesTriggerResponse extends AcsResponse {
-
-	private List<TriggersItem> triggers;
-
-	public List<TriggersItem> getTriggers() {
-		return this.triggers;
-	}
-
-	public void setTriggers(List<TriggersItem> triggers) {
-		this.triggers = triggers;
-	}
-
-	public static class TriggersItem {
-
-		private String cluster_id;
-
-		private String project_id;
-
-		private String action;
-
-		private String id;
-
-		private String token;
-
-		public String getCluster_id() {
-			return this.cluster_id;
-		}
-
-		public void setCluster_id(String cluster_id) {
-			this.cluster_id = cluster_id;
-		}
-
-		public String getProject_id() {
-			return this.project_id;
-		}
-
-		public void setProject_id(String project_id) {
-			this.project_id = project_id;
-		}
-
-		public String getAction() {
-			return this.action;
-		}
-
-		public void setAction(String action) {
-			this.action = action;
-		}
-
-		public String getId() {
-			return this.id;
-		}
-
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getToken() {
-			return this.token;
-		}
-
-		public void setToken(String token) {
-			this.token = token;
-		}
-	}
 
 	@Override
 	public GetKubernetesTriggerResponse getInstance(UnmarshallerContext context) {

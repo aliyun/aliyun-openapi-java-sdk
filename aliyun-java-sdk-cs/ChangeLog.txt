@@ -1,3 +1,6 @@
+2022-12-13 Version: 4.8.2
+- Add DescribeSubaccountK8sClusterUserConfig.
+
 2020-09-23 Version: 4.8.1
 - Some new parameters are supported.
 

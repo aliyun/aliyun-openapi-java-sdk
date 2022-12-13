@@ -25,13 +25,7 @@ import com.aliyuncs.cs.Endpoint;
 public class CreateTemplateRequest extends RoaAcsRequest<CreateTemplateResponse> {
 	   
 
-	private String template;
-
-	private String name;
-
-	private String template_type;
-
-	private String tags;
+	private String body;
 	public CreateTemplateRequest() {
 		super("CS", "2015-12-15", "CreateTemplate");
 		setUriPattern("/templates");
@@ -42,47 +36,14 @@ public class CreateTemplateRequest extends RoaAcsRequest<CreateTemplateResponse>
 		} catch (Exception e) {}
 	}
 
-	public String getTemplate() {
-		return this.template;
+	public String getBody() {
+		return this.body;
 	}
 
-	public void setTemplate(String template) {
-		this.template = template;
-		if(template != null){
-			putBodyParameter("template", template);
-		}
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putBodyParameter("name", name);
-		}
-	}
-
-	public String getTemplate_type() {
-		return this.template_type;
-	}
-
-	public void setTemplate_type(String template_type) {
-		this.template_type = template_type;
-		if(template_type != null){
-			putBodyParameter("template_type", template_type);
-		}
-	}
-
-	public String getTags() {
-		return this.tags;
-	}
-
-	public void setTags(String tags) {
-		this.tags = tags;
-		if(tags != null){
-			putBodyParameter("tags", tags);
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

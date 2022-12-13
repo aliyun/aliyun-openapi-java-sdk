@@ -26,9 +26,9 @@ public class ScaleClusterResponse extends AcsResponse {
 
 	private String cluster_id;
 
-	private String task_id;
-
 	private String request_id;
+
+	private String task_id;
 
 	public String getCluster_id() {
 		return this.cluster_id;
@@ -36,14 +36,6 @@ public class ScaleClusterResponse extends AcsResponse {
 
 	public void setCluster_id(String cluster_id) {
 		this.cluster_id = cluster_id;
-	}
-
-	public String getTask_id() {
-		return this.task_id;
-	}
-
-	public void setTask_id(String task_id) {
-		this.task_id = task_id;
 	}
 
 	public String getRequest_id() {
@@ -54,8 +46,21 @@ public class ScaleClusterResponse extends AcsResponse {
 		this.request_id = request_id;
 	}
 
+	public String getTask_id() {
+		return this.task_id;
+	}
+
+	public void setTask_id(String task_id) {
+		this.task_id = task_id;
+	}
+
 	@Override
 	public ScaleClusterResponse getInstance(UnmarshallerContext context) {
 		return	ScaleClusterResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

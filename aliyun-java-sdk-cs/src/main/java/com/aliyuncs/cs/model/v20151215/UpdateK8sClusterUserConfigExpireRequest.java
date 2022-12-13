@@ -26,6 +26,8 @@ public class UpdateK8sClusterUserConfigExpireRequest extends RoaAcsRequest<Updat
 	   
 
 	private String clusterId;
+
+	private String body;
 	public UpdateK8sClusterUserConfigExpireRequest() {
 		super("CS", "2015-12-15", "UpdateK8sClusterUserConfigExpire");
 		setUriPattern("/k8s/[ClusterId]/user_config/expire");
@@ -44,6 +46,17 @@ public class UpdateK8sClusterUserConfigExpireRequest extends RoaAcsRequest<Updat
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putPathParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

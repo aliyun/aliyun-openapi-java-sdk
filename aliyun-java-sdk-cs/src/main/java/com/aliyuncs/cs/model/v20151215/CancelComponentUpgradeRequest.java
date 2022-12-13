@@ -25,12 +25,12 @@ import com.aliyuncs.cs.Endpoint;
 public class CancelComponentUpgradeRequest extends RoaAcsRequest<CancelComponentUpgradeResponse> {
 	   
 
-	private String componentid;
+	private String componentId;
 
-	private String clusterid;
+	private String clusterId;
 	public CancelComponentUpgradeRequest() {
 		super("CS", "2015-12-15", "CancelComponentUpgrade");
-		setUriPattern("/clusters/[clusterid]/components/[componentid]/cancel");
+		setUriPattern("/clusters/[clusterId]/components/[componentId]/cancel");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -38,25 +38,25 @@ public class CancelComponentUpgradeRequest extends RoaAcsRequest<CancelComponent
 		} catch (Exception e) {}
 	}
 
-	public String getComponentid() {
-		return this.componentid;
+	public String getComponentId() {
+		return this.componentId;
 	}
 
-	public void setComponentid(String componentid) {
-		this.componentid = componentid;
-		if(componentid != null){
-			putPathParameter("componentid", componentid);
+	public void setComponentId(String componentId) {
+		this.componentId = componentId;
+		if(componentId != null){
+			putPathParameter("componentId", componentId);
 		}
 	}
 
-	public String getClusterid() {
-		return this.clusterid;
+	public String getClusterId() {
+		return this.clusterId;
 	}
 
-	public void setClusterid(String clusterid) {
-		this.clusterid = clusterid;
-		if(clusterid != null){
-			putPathParameter("clusterid", clusterid);
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putPathParameter("clusterId", clusterId);
 		}
 	}
 

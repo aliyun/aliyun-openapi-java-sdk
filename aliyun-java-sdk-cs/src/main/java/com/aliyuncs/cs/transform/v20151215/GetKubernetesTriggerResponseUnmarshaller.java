@@ -14,11 +14,7 @@
 
 package com.aliyuncs.cs.transform.v20151215;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.aliyuncs.cs.model.v20151215.GetKubernetesTriggerResponse;
-import com.aliyuncs.cs.model.v20151215.GetKubernetesTriggerResponse.TriggersItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -26,19 +22,6 @@ public class GetKubernetesTriggerResponseUnmarshaller {
 
 	public static GetKubernetesTriggerResponse unmarshall(GetKubernetesTriggerResponse getKubernetesTriggerResponse, UnmarshallerContext _ctx) {
 		
-
-		List<TriggersItem> triggers = new ArrayList<TriggersItem>();
-		for (int i = 0; i < _ctx.lengthValue("GetKubernetesTriggerResponse.triggers.Length"); i++) {
-			TriggersItem triggersItem = new TriggersItem();
-			triggersItem.setCluster_id(_ctx.stringValue("GetKubernetesTriggerResponse.triggers["+ i +"].cluster_id"));
-			triggersItem.setProject_id(_ctx.stringValue("GetKubernetesTriggerResponse.triggers["+ i +"].project_id"));
-			triggersItem.setAction(_ctx.stringValue("GetKubernetesTriggerResponse.triggers["+ i +"].action"));
-			triggersItem.setId(_ctx.stringValue("GetKubernetesTriggerResponse.triggers["+ i +"].id"));
-			triggersItem.setToken(_ctx.stringValue("GetKubernetesTriggerResponse.triggers["+ i +"].token"));
-
-			triggers.add(triggersItem);
-		}
-		getKubernetesTriggerResponse.setTriggers(triggers);
 	 
 	 	return getKubernetesTriggerResponse;
 	}

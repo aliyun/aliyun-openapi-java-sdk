@@ -25,11 +25,17 @@ import com.aliyuncs.cs.Endpoint;
 public class DescribeClustersV1Request extends RoaAcsRequest<DescribeClustersV1Response> {
 	   
 
-	private String clusterType;
-
 	private Long page_number;
 
+	private String cluster_spec;
+
+	private String profile;
+
 	private String name;
+
+	private String region_id;
+
+	private String cluster_type;
 
 	private Long page_size;
 	public DescribeClustersV1Request() {
@@ -40,17 +46,6 @@ public class DescribeClustersV1Request extends RoaAcsRequest<DescribeClustersV1R
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getClusterType() {
-		return this.clusterType;
-	}
-
-	public void setClusterType(String clusterType) {
-		this.clusterType = clusterType;
-		if(clusterType != null){
-			putQueryParameter("ClusterType", clusterType);
-		}
 	}
 
 	public Long getPage_number() {
@@ -64,6 +59,28 @@ public class DescribeClustersV1Request extends RoaAcsRequest<DescribeClustersV1R
 		}
 	}
 
+	public String getCluster_spec() {
+		return this.cluster_spec;
+	}
+
+	public void setCluster_spec(String cluster_spec) {
+		this.cluster_spec = cluster_spec;
+		if(cluster_spec != null){
+			putQueryParameter("cluster_spec", cluster_spec);
+		}
+	}
+
+	public String getProfile() {
+		return this.profile;
+	}
+
+	public void setProfile(String profile) {
+		this.profile = profile;
+		if(profile != null){
+			putQueryParameter("profile", profile);
+		}
+	}
+
 	public String getName() {
 		return this.name;
 	}
@@ -71,7 +88,29 @@ public class DescribeClustersV1Request extends RoaAcsRequest<DescribeClustersV1R
 	public void setName(String name) {
 		this.name = name;
 		if(name != null){
-			putQueryParameter("Name", name);
+			putQueryParameter("name", name);
+		}
+	}
+
+	public String getRegion_id() {
+		return this.region_id;
+	}
+
+	public void setRegion_id(String region_id) {
+		this.region_id = region_id;
+		if(region_id != null){
+			putQueryParameter("region_id", region_id);
+		}
+	}
+
+	public String getCluster_type() {
+		return this.cluster_type;
+	}
+
+	public void setCluster_type(String cluster_type) {
+		this.cluster_type = cluster_type;
+		if(cluster_type != null){
+			putQueryParameter("cluster_type", cluster_type);
 		}
 	}
 

@@ -38,4 +38,9 @@ public class DescribeClusterV2UserKubeconfigResponse extends AcsResponse {
 	public DescribeClusterV2UserKubeconfigResponse getInstance(UnmarshallerContext context) {
 		return	DescribeClusterV2UserKubeconfigResponseUnmarshaller.unmarshall(this, context);
 	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
+	}
 }

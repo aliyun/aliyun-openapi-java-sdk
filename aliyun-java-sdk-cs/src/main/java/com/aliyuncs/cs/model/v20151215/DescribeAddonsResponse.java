@@ -26,33 +26,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAddonsResponse extends AcsResponse {
 
-	private List<ComponentGroupsItem> componentGroups;
+	private Map<Object,Object> standardComponents;
 
-	private StandardComponents standardComponents;
+	private List<ComponentGroup> componentGroups;
 
-	public List<ComponentGroupsItem> getComponentGroups() {
-		return this.componentGroups;
-	}
-
-	public void setComponentGroups(List<ComponentGroupsItem> componentGroups) {
-		this.componentGroups = componentGroups;
-	}
-
-	public StandardComponents getStandardComponents() {
+	public Map<Object,Object> getStandardComponents() {
 		return this.standardComponents;
 	}
 
-	public void setStandardComponents(StandardComponents standardComponents) {
+	public void setStandardComponents(Map<Object,Object> standardComponents) {
 		this.standardComponents = standardComponents;
 	}
 
-	public static class ComponentGroupsItem {
+	public List<ComponentGroup> getComponentGroups() {
+		return this.componentGroups;
+	}
+
+	public void setComponentGroups(List<ComponentGroup> componentGroups) {
+		this.componentGroups = componentGroups;
+	}
+
+	public static class ComponentGroup {
 
 		private String group_name;
 
-		private List<ItemsItem> items;
-
-		private List<String> _default;
+		private List<Item> items;
 
 		public String getGroup_name() {
 			return this.group_name;
@@ -62,33 +60,17 @@ public class DescribeAddonsResponse extends AcsResponse {
 			this.group_name = group_name;
 		}
 
-		public List<ItemsItem> getItems() {
+		public List<Item> getItems() {
 			return this.items;
 		}
 
-		public void setItems(List<ItemsItem> items) {
+		public void setItems(List<Item> items) {
 			this.items = items;
 		}
 
-		public List<String> get_Default() {
-			return this._default;
-		}
-
-		public void set_Default(List<String> _default) {
-			this._default = _default;
-		}
-
-		public static class ItemsItem {
+		public static class Item {
 
 			private String name;
-
-			private String description;
-
-			private Boolean disabled;
-
-			private String version;
-
-			private String required;
 
 			public String getName() {
 				return this.name;
@@ -97,51 +79,6 @@ public class DescribeAddonsResponse extends AcsResponse {
 			public void setName(String name) {
 				this.name = name;
 			}
-
-			public String getDescription() {
-				return this.description;
-			}
-
-			public void setDescription(String description) {
-				this.description = description;
-			}
-
-			public Boolean getDisabled() {
-				return this.disabled;
-			}
-
-			public void setDisabled(Boolean disabled) {
-				this.disabled = disabled;
-			}
-
-			public String getVersion() {
-				return this.version;
-			}
-
-			public void setVersion(String version) {
-				this.version = version;
-			}
-
-			public String getRequired() {
-				return this.required;
-			}
-
-			public void setRequired(String required) {
-				this.required = required;
-			}
-		}
-	}
-
-	public static class StandardComponents {
-
-		private Map<Object,Object> componentName;
-
-		public Map<Object,Object> getComponentName() {
-			return this.componentName;
-		}
-
-		public void setComponentName(Map<Object,Object> componentName) {
-			this.componentName = componentName;
 		}
 	}
 

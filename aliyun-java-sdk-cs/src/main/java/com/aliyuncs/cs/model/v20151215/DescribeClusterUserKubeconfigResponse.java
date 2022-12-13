@@ -26,6 +26,8 @@ public class DescribeClusterUserKubeconfigResponse extends AcsResponse {
 
 	private String config;
 
+	private String expiration;
+
 	public String getConfig() {
 		return this.config;
 	}
@@ -34,8 +36,21 @@ public class DescribeClusterUserKubeconfigResponse extends AcsResponse {
 		this.config = config;
 	}
 
+	public String getExpiration() {
+		return this.expiration;
+	}
+
+	public void setExpiration(String expiration) {
+		this.expiration = expiration;
+	}
+
 	@Override
 	public DescribeClusterUserKubeconfigResponse getInstance(UnmarshallerContext context) {
 		return	DescribeClusterUserKubeconfigResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

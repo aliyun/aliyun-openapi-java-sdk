@@ -28,4 +28,9 @@ public class DeleteClusterResponse extends AcsResponse {
 	public DeleteClusterResponse getInstance(UnmarshallerContext context) {
 		return	DeleteClusterResponseUnmarshaller.unmarshall(this, context);
 	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
+	}
 }

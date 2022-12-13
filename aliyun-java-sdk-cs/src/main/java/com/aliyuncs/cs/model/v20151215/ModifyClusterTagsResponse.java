@@ -28,4 +28,9 @@ public class ModifyClusterTagsResponse extends AcsResponse {
 	public ModifyClusterTagsResponse getInstance(UnmarshallerContext context) {
 		return	ModifyClusterTagsResponseUnmarshaller.unmarshall(this, context);
 	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
+	}
 }

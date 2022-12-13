@@ -24,91 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeClusterAddonUpgradeStatusResponse extends AcsResponse {
 
-	private String template;
-
-	private Boolean can_upgrade;
-
-	private Addon_info addon_info;
-
-	public String getTemplate() {
-		return this.template;
-	}
-
-	public void setTemplate(String template) {
-		this.template = template;
-	}
-
-	public Boolean getCan_upgrade() {
-		return this.can_upgrade;
-	}
-
-	public void setCan_upgrade(Boolean can_upgrade) {
-		this.can_upgrade = can_upgrade;
-	}
-
-	public Addon_info getAddon_info() {
-		return this.addon_info;
-	}
-
-	public void setAddon_info(Addon_info addon_info) {
-		this.addon_info = addon_info;
-	}
-
-	public static class Addon_info {
-
-		private String component_name;
-
-		private String message;
-
-		private String category;
-
-		private String version;
-
-		private String yaml;
-
-		public String getComponent_name() {
-			return this.component_name;
-		}
-
-		public void setComponent_name(String component_name) {
-			this.component_name = component_name;
-		}
-
-		public String getMessage() {
-			return this.message;
-		}
-
-		public void setMessage(String message) {
-			this.message = message;
-		}
-
-		public String getCategory() {
-			return this.category;
-		}
-
-		public void setCategory(String category) {
-			this.category = category;
-		}
-
-		public String getVersion() {
-			return this.version;
-		}
-
-		public void setVersion(String version) {
-			this.version = version;
-		}
-
-		public String getYaml() {
-			return this.yaml;
-		}
-
-		public void setYaml(String yaml) {
-			this.yaml = yaml;
-		}
-	}
-
 	@Override
 	public DescribeClusterAddonUpgradeStatusResponse getInstance(UnmarshallerContext context) {
 		return	DescribeClusterAddonUpgradeStatusResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

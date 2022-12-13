@@ -15,7 +15,6 @@
 package com.aliyuncs.cs.transform.v20151215;
 
 import com.aliyuncs.cs.model.v20151215.DescribeClusterAddonsVersionResponse;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -23,7 +22,6 @@ public class DescribeClusterAddonsVersionResponseUnmarshaller {
 
 	public static DescribeClusterAddonsVersionResponse unmarshall(DescribeClusterAddonsVersionResponse describeClusterAddonsVersionResponse, UnmarshallerContext _ctx) {
 		
-		describeClusterAddonsVersionResponse.setAddonsName(_ctx.mapValue("DescribeClusterAddonsVersionResponse.AddonsName"));
 	 
 	 	return describeClusterAddonsVersionResponse;
 	}

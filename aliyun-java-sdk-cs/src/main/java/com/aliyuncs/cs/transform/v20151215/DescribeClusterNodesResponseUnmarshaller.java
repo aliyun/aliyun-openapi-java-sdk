@@ -30,31 +30,32 @@ public class DescribeClusterNodesResponseUnmarshaller {
 
 		Page page = new Page();
 		page.setPage_number(_ctx.integerValue("DescribeClusterNodesResponse.page.page_number"));
-		page.setTotal_count(_ctx.integerValue("DescribeClusterNodesResponse.page.total_count"));
 		page.setPage_size(_ctx.integerValue("DescribeClusterNodesResponse.page.page_size"));
+		page.setTotal_count(_ctx.integerValue("DescribeClusterNodesResponse.page.total_count"));
 		describeClusterNodesResponse.setPage(page);
 
 		List<Node> nodes = new ArrayList<Node>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeClusterNodesResponse.nodes.Length"); i++) {
 			Node node = new Node();
-			node.setError_message(_ctx.stringValue("DescribeClusterNodesResponse.nodes["+ i +"].error_message"));
 			node.setCreation_time(_ctx.stringValue("DescribeClusterNodesResponse.nodes["+ i +"].creation_time"));
-			node.setNode_status(_ctx.stringValue("DescribeClusterNodesResponse.nodes["+ i +"].node_status"));
+			node.setError_message(_ctx.stringValue("DescribeClusterNodesResponse.nodes["+ i +"].error_message"));
+			node.setExpired_time(_ctx.stringValue("DescribeClusterNodesResponse.nodes["+ i +"].expired_time"));
+			node.setHost_name(_ctx.stringValue("DescribeClusterNodesResponse.nodes["+ i +"].host_name"));
+			node.setImage_id(_ctx.stringValue("DescribeClusterNodesResponse.nodes["+ i +"].image_id"));
+			node.setInstance_charge_type(_ctx.stringValue("DescribeClusterNodesResponse.nodes["+ i +"].instance_charge_type"));
+			node.setInstance_id(_ctx.stringValue("DescribeClusterNodesResponse.nodes["+ i +"].instance_id"));
 			node.setInstance_name(_ctx.stringValue("DescribeClusterNodesResponse.nodes["+ i +"].instance_name"));
+			node.setInstance_role(_ctx.stringValue("DescribeClusterNodesResponse.nodes["+ i +"].instance_role"));
+			node.setInstance_status(_ctx.stringValue("DescribeClusterNodesResponse.nodes["+ i +"].instance_status"));
+			node.setInstance_type(_ctx.stringValue("DescribeClusterNodesResponse.nodes["+ i +"].instance_type"));
+			node.setInstance_type_family(_ctx.stringValue("DescribeClusterNodesResponse.nodes["+ i +"].instance_type_family"));
 			node.setIs_aliyun_node(_ctx.booleanValue("DescribeClusterNodesResponse.nodes["+ i +"].is_aliyun_node"));
 			node.setNode_name(_ctx.stringValue("DescribeClusterNodesResponse.nodes["+ i +"].node_name"));
-			node.setExpired_time(_ctx.stringValue("DescribeClusterNodesResponse.nodes["+ i +"].expired_time"));
-			node.setSource(_ctx.stringValue("DescribeClusterNodesResponse.nodes["+ i +"].source"));
-			node.setInstance_type_family(_ctx.stringValue("DescribeClusterNodesResponse.nodes["+ i +"].instance_type_family"));
-			node.setInstance_id(_ctx.stringValue("DescribeClusterNodesResponse.nodes["+ i +"].instance_id"));
-			node.setInstance_charge_type(_ctx.stringValue("DescribeClusterNodesResponse.nodes["+ i +"].instance_charge_type"));
-			node.setInstance_role(_ctx.stringValue("DescribeClusterNodesResponse.nodes["+ i +"].instance_role"));
-			node.setState(_ctx.stringValue("DescribeClusterNodesResponse.nodes["+ i +"].state"));
-			node.setInstance_status(_ctx.stringValue("DescribeClusterNodesResponse.nodes["+ i +"].instance_status"));
-			node.setImage_id(_ctx.stringValue("DescribeClusterNodesResponse.nodes["+ i +"].image_id"));
+			node.setNode_status(_ctx.stringValue("DescribeClusterNodesResponse.nodes["+ i +"].node_status"));
 			node.setNodepool_id(_ctx.stringValue("DescribeClusterNodesResponse.nodes["+ i +"].nodepool_id"));
-			node.setInstance_type(_ctx.stringValue("DescribeClusterNodesResponse.nodes["+ i +"].instance_type"));
-			node.setHost_name(_ctx.stringValue("DescribeClusterNodesResponse.nodes["+ i +"].host_name"));
+			node.setSource(_ctx.stringValue("DescribeClusterNodesResponse.nodes["+ i +"].source"));
+			node.setState(_ctx.stringValue("DescribeClusterNodesResponse.nodes["+ i +"].state"));
+			node.setSpot_strategy(_ctx.stringValue("DescribeClusterNodesResponse.nodes["+ i +"].spot_strategy"));
 
 			List<String> ip_address = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeClusterNodesResponse.nodes["+ i +"].ip_address.Length"); j++) {

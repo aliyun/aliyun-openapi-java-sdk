@@ -14,7 +14,6 @@
 
 package com.aliyuncs.cs.model.v20151215;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.cs.transform.v20151215.DescribeClusterAddonsVersionResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -25,18 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeClusterAddonsVersionResponse extends AcsResponse {
 
-	private Map<Object,Object> addonsName;
-
-	public Map<Object,Object> getAddonsName() {
-		return this.addonsName;
-	}
-
-	public void setAddonsName(Map<Object,Object> addonsName) {
-		this.addonsName = addonsName;
-	}
-
 	@Override
 	public DescribeClusterAddonsVersionResponse getInstance(UnmarshallerContext context) {
 		return	DescribeClusterAddonsVersionResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

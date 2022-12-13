@@ -25,7 +25,11 @@ import com.aliyuncs.cs.Endpoint;
 public class DescribeTemplatesRequest extends RoaAcsRequest<DescribeTemplatesResponse> {
 	   
 
+	private Long page_num;
+
 	private String template_type;
+
+	private Long page_size;
 	public DescribeTemplatesRequest() {
 		super("CS", "2015-12-15", "DescribeTemplates");
 		setUriPattern("/templates");
@@ -36,6 +40,17 @@ public class DescribeTemplatesRequest extends RoaAcsRequest<DescribeTemplatesRes
 		} catch (Exception e) {}
 	}
 
+	public Long getPage_num() {
+		return this.page_num;
+	}
+
+	public void setPage_num(Long page_num) {
+		this.page_num = page_num;
+		if(page_num != null){
+			putQueryParameter("page_num", page_num.toString());
+		}
+	}
+
 	public String getTemplate_type() {
 		return this.template_type;
 	}
@@ -44,6 +59,17 @@ public class DescribeTemplatesRequest extends RoaAcsRequest<DescribeTemplatesRes
 		this.template_type = template_type;
 		if(template_type != null){
 			putQueryParameter("template_type", template_type);
+		}
+	}
+
+	public Long getPage_size() {
+		return this.page_size;
+	}
+
+	public void setPage_size(Long page_size) {
+		this.page_size = page_size;
+		if(page_size != null){
+			putQueryParameter("page_size", page_size.toString());
 		}
 	}
 

@@ -22,10 +22,11 @@ public class CreateKubernetesTriggerResponseUnmarshaller {
 
 	public static CreateKubernetesTriggerResponse unmarshall(CreateKubernetesTriggerResponse createKubernetesTriggerResponse, UnmarshallerContext _ctx) {
 		
+		createKubernetesTriggerResponse.setId(_ctx.stringValue("CreateKubernetesTriggerResponse.id"));
 		createKubernetesTriggerResponse.setCluster_id(_ctx.stringValue("CreateKubernetesTriggerResponse.cluster_id"));
 		createKubernetesTriggerResponse.setProject_id(_ctx.stringValue("CreateKubernetesTriggerResponse.project_id"));
+		createKubernetesTriggerResponse.setType(_ctx.stringValue("CreateKubernetesTriggerResponse.type"));
 		createKubernetesTriggerResponse.setAction(_ctx.stringValue("CreateKubernetesTriggerResponse.action"));
-		createKubernetesTriggerResponse.setId(_ctx.stringValue("CreateKubernetesTriggerResponse.id"));
 	 
 	 	return createKubernetesTriggerResponse;
 	}

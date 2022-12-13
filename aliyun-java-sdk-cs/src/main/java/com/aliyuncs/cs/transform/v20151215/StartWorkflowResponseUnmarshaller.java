@@ -22,6 +22,7 @@ public class StartWorkflowResponseUnmarshaller {
 
 	public static StartWorkflowResponse unmarshall(StartWorkflowResponse startWorkflowResponse, UnmarshallerContext _ctx) {
 		
+		startWorkflowResponse.setJobName(_ctx.stringValue("StartWorkflowResponse.JobName"));
 	 
 	 	return startWorkflowResponse;
 	}

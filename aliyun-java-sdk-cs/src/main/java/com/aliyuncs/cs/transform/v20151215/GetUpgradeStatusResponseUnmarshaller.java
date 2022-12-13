@@ -15,6 +15,7 @@
 package com.aliyuncs.cs.transform.v20151215;
 
 import com.aliyuncs.cs.model.v20151215.GetUpgradeStatusResponse;
+import com.aliyuncs.cs.model.v20151215.GetUpgradeStatusResponse.Upgrade_task;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -24,8 +25,13 @@ public class GetUpgradeStatusResponseUnmarshaller {
 		
 		getUpgradeStatusResponse.setError_message(_ctx.stringValue("GetUpgradeStatusResponse.error_message"));
 		getUpgradeStatusResponse.setPrecheck_report_id(_ctx.stringValue("GetUpgradeStatusResponse.precheck_report_id"));
-		getUpgradeStatusResponse.setUpgrade_step(_ctx.stringValue("GetUpgradeStatusResponse.upgrade_step"));
 		getUpgradeStatusResponse.setStatus(_ctx.stringValue("GetUpgradeStatusResponse.status"));
+		getUpgradeStatusResponse.setUpgrade_step(_ctx.stringValue("GetUpgradeStatusResponse.upgrade_step"));
+
+		Upgrade_task upgrade_task = new Upgrade_task();
+		upgrade_task.setStatus(_ctx.stringValue("GetUpgradeStatusResponse.upgrade_task.status"));
+		upgrade_task.setMessage(_ctx.stringValue("GetUpgradeStatusResponse.upgrade_task.message"));
+		getUpgradeStatusResponse.setUpgrade_task(upgrade_task);
 	 
 	 	return getUpgradeStatusResponse;
 	}

@@ -28,9 +28,11 @@ public class GetUpgradeStatusResponse extends AcsResponse {
 
 	private String precheck_report_id;
 
+	private String status;
+
 	private String upgrade_step;
 
-	private String status;
+	private Upgrade_task upgrade_task;
 
 	public String getError_message() {
 		return this.error_message;
@@ -48,14 +50,6 @@ public class GetUpgradeStatusResponse extends AcsResponse {
 		this.precheck_report_id = precheck_report_id;
 	}
 
-	public String getUpgrade_step() {
-		return this.upgrade_step;
-	}
-
-	public void setUpgrade_step(String upgrade_step) {
-		this.upgrade_step = upgrade_step;
-	}
-
 	public String getStatus() {
 		return this.status;
 	}
@@ -64,8 +58,52 @@ public class GetUpgradeStatusResponse extends AcsResponse {
 		this.status = status;
 	}
 
+	public String getUpgrade_step() {
+		return this.upgrade_step;
+	}
+
+	public void setUpgrade_step(String upgrade_step) {
+		this.upgrade_step = upgrade_step;
+	}
+
+	public Upgrade_task getUpgrade_task() {
+		return this.upgrade_task;
+	}
+
+	public void setUpgrade_task(Upgrade_task upgrade_task) {
+		this.upgrade_task = upgrade_task;
+	}
+
+	public static class Upgrade_task {
+
+		private String status;
+
+		private String message;
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getMessage() {
+			return this.message;
+		}
+
+		public void setMessage(String message) {
+			this.message = message;
+		}
+	}
+
 	@Override
 	public GetUpgradeStatusResponse getInstance(UnmarshallerContext context) {
 		return	GetUpgradeStatusResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

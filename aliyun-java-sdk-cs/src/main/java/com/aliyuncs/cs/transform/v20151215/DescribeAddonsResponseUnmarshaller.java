@@ -18,9 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.cs.model.v20151215.DescribeAddonsResponse;
-import com.aliyuncs.cs.model.v20151215.DescribeAddonsResponse.ComponentGroupsItem;
-import com.aliyuncs.cs.model.v20151215.DescribeAddonsResponse.ComponentGroupsItem.ItemsItem;
-import com.aliyuncs.cs.model.v20151215.DescribeAddonsResponse.StandardComponents;
+import com.aliyuncs.cs.model.v20151215.DescribeAddonsResponse.ComponentGroup;
+import com.aliyuncs.cs.model.v20151215.DescribeAddonsResponse.ComponentGroup.Item;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -29,36 +28,23 @@ public class DescribeAddonsResponseUnmarshaller {
 
 	public static DescribeAddonsResponse unmarshall(DescribeAddonsResponse describeAddonsResponse, UnmarshallerContext _ctx) {
 		
+		describeAddonsResponse.setStandardComponents(_ctx.mapValue("DescribeAddonsResponse.StandardComponents"));
 
-		StandardComponents standardComponents = new StandardComponents();
-		standardComponents.setComponentName(_ctx.mapValue("DescribeAddonsResponse.StandardComponents.ComponentName"));
-		describeAddonsResponse.setStandardComponents(standardComponents);
-
-		List<ComponentGroupsItem> componentGroups = new ArrayList<ComponentGroupsItem>();
+		List<ComponentGroup> componentGroups = new ArrayList<ComponentGroup>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAddonsResponse.ComponentGroups.Length"); i++) {
-			ComponentGroupsItem componentGroupsItem = new ComponentGroupsItem();
-			componentGroupsItem.setGroup_name(_ctx.stringValue("DescribeAddonsResponse.ComponentGroups["+ i +"].group_name"));
+			ComponentGroup componentGroup = new ComponentGroup();
+			componentGroup.setGroup_name(_ctx.stringValue("DescribeAddonsResponse.ComponentGroups["+ i +"].group_name"));
 
-			List<String> _default = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeAddonsResponse.ComponentGroups["+ i +"].default.Length"); j++) {
-				_default.add(_ctx.stringValue("DescribeAddonsResponse.ComponentGroups["+ i +"].default["+ j +"]"));
-			}
-			componentGroupsItem.set_Default(_default);
-
-			List<ItemsItem> items = new ArrayList<ItemsItem>();
+			List<Item> items = new ArrayList<Item>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeAddonsResponse.ComponentGroups["+ i +"].items.Length"); j++) {
-				ItemsItem itemsItem = new ItemsItem();
-				itemsItem.setName(_ctx.stringValue("DescribeAddonsResponse.ComponentGroups["+ i +"].items["+ j +"].name"));
-				itemsItem.setDescription(_ctx.stringValue("DescribeAddonsResponse.ComponentGroups["+ i +"].items["+ j +"].description"));
-				itemsItem.setDisabled(_ctx.booleanValue("DescribeAddonsResponse.ComponentGroups["+ i +"].items["+ j +"].disabled"));
-				itemsItem.setVersion(_ctx.stringValue("DescribeAddonsResponse.ComponentGroups["+ i +"].items["+ j +"].version"));
-				itemsItem.setRequired(_ctx.stringValue("DescribeAddonsResponse.ComponentGroups["+ i +"].items["+ j +"].required"));
+				Item item = new Item();
+				item.setName(_ctx.stringValue("DescribeAddonsResponse.ComponentGroups["+ i +"].items["+ j +"].name"));
 
-				items.add(itemsItem);
+				items.add(item);
 			}
-			componentGroupsItem.setItems(items);
+			componentGroup.setItems(items);
 
-			componentGroups.add(componentGroupsItem);
+			componentGroups.add(componentGroup);
 		}
 		describeAddonsResponse.setComponentGroups(componentGroups);
 	 

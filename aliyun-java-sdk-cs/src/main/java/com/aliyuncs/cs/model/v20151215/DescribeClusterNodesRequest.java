@@ -25,6 +25,8 @@ import com.aliyuncs.cs.Endpoint;
 public class DescribeClusterNodesRequest extends RoaAcsRequest<DescribeClusterNodesResponse> {
 	   
 
+	private String instanceIds;
+
 	private String pageSize;
 
 	private String clusterId;
@@ -42,6 +44,17 @@ public class DescribeClusterNodesRequest extends RoaAcsRequest<DescribeClusterNo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getInstanceIds() {
+		return this.instanceIds;
+	}
+
+	public void setInstanceIds(String instanceIds) {
+		this.instanceIds = instanceIds;
+		if(instanceIds != null){
+			putQueryParameter("instanceIds", instanceIds);
+		}
 	}
 
 	public String getPageSize() {

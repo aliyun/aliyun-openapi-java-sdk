@@ -28,4 +28,9 @@ public class UpgradeClusterAddonsResponse extends AcsResponse {
 	public UpgradeClusterAddonsResponse getInstance(UnmarshallerContext context) {
 		return	UpgradeClusterAddonsResponseUnmarshaller.unmarshall(this, context);
 	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
+	}
 }

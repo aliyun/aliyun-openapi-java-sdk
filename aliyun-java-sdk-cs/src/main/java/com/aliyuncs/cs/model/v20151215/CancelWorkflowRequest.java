@@ -26,6 +26,8 @@ public class CancelWorkflowRequest extends RoaAcsRequest<CancelWorkflowResponse>
 	   
 
 	private String workflowName;
+
+	private String body;
 	public CancelWorkflowRequest() {
 		super("CS", "2015-12-15", "CancelWorkflow");
 		setUriPattern("/gs/workflow/[workflowName]");
@@ -44,6 +46,17 @@ public class CancelWorkflowRequest extends RoaAcsRequest<CancelWorkflowResponse>
 		this.workflowName = workflowName;
 		if(workflowName != null){
 			putPathParameter("workflowName", workflowName);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 
