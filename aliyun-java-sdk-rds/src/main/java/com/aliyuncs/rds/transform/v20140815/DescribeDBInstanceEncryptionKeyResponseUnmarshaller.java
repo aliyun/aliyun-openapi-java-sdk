@@ -14,7 +14,11 @@
 
 package com.aliyuncs.rds.transform.v20140815;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceEncryptionKeyResponse;
+import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceEncryptionKeyResponse.EncryptionKeyInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -31,6 +35,25 @@ public class DescribeDBInstanceEncryptionKeyResponseUnmarshaller {
 		describeDBInstanceEncryptionKeyResponse.setKeyUsage(_ctx.stringValue("DescribeDBInstanceEncryptionKeyResponse.KeyUsage"));
 		describeDBInstanceEncryptionKeyResponse.setEncryptionKey(_ctx.stringValue("DescribeDBInstanceEncryptionKeyResponse.EncryptionKey"));
 		describeDBInstanceEncryptionKeyResponse.setCreator(_ctx.stringValue("DescribeDBInstanceEncryptionKeyResponse.Creator"));
+
+		List<EncryptionKeyInfo> encryptionKeyList = new ArrayList<EncryptionKeyInfo>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeDBInstanceEncryptionKeyResponse.EncryptionKeyList.Length"); i++) {
+			EncryptionKeyInfo encryptionKeyInfo = new EncryptionKeyInfo();
+			encryptionKeyInfo.setKeyType(_ctx.stringValue("DescribeDBInstanceEncryptionKeyResponse.EncryptionKeyList["+ i +"].KeyType"));
+			encryptionKeyInfo.setEncryptionKey(_ctx.stringValue("DescribeDBInstanceEncryptionKeyResponse.EncryptionKeyList["+ i +"].EncryptionKey"));
+			encryptionKeyInfo.setDescription(_ctx.stringValue("DescribeDBInstanceEncryptionKeyResponse.EncryptionKeyList["+ i +"].Description"));
+			encryptionKeyInfo.setKeyUsage(_ctx.stringValue("DescribeDBInstanceEncryptionKeyResponse.EncryptionKeyList["+ i +"].KeyUsage"));
+			encryptionKeyInfo.setDeleteDate(_ctx.stringValue("DescribeDBInstanceEncryptionKeyResponse.EncryptionKeyList["+ i +"].DeleteDate"));
+			encryptionKeyInfo.setCreator(_ctx.stringValue("DescribeDBInstanceEncryptionKeyResponse.EncryptionKeyList["+ i +"].Creator"));
+			encryptionKeyInfo.setEncryptionKeyStatus(_ctx.stringValue("DescribeDBInstanceEncryptionKeyResponse.EncryptionKeyList["+ i +"].EncryptionKeyStatus"));
+			encryptionKeyInfo.setOrigin(_ctx.stringValue("DescribeDBInstanceEncryptionKeyResponse.EncryptionKeyList["+ i +"].Origin"));
+			encryptionKeyInfo.setMaterialExpireTime(_ctx.stringValue("DescribeDBInstanceEncryptionKeyResponse.EncryptionKeyList["+ i +"].MaterialExpireTime"));
+			encryptionKeyInfo.setAliasName(_ctx.stringValue("DescribeDBInstanceEncryptionKeyResponse.EncryptionKeyList["+ i +"].AliasName"));
+			encryptionKeyInfo.setUsedBy(_ctx.stringValue("DescribeDBInstanceEncryptionKeyResponse.EncryptionKeyList["+ i +"].UsedBy"));
+
+			encryptionKeyList.add(encryptionKeyInfo);
+		}
+		describeDBInstanceEncryptionKeyResponse.setEncryptionKeyList(encryptionKeyList);
 	 
 	 	return describeDBInstanceEncryptionKeyResponse;
 	}

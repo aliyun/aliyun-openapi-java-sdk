@@ -135,6 +135,7 @@ public class CreateGadInstanceMemberRequest extends RpcAcsRequest<CreateGadInsta
 				putQueryParameter("UnitNode." + (depth1 + 1) + ".VpcID" , unitNodes.get(depth1).getVpcID());
 				putQueryParameter("UnitNode." + (depth1 + 1) + ".ZoneID" , unitNodes.get(depth1).getZoneID());
 				putQueryParameter("UnitNode." + (depth1 + 1) + ".DBInstanceDescription" , unitNodes.get(depth1).getDBInstanceDescription());
+				putQueryParameter("UnitNode." + (depth1 + 1) + ".DBInstanceStorageType" , unitNodes.get(depth1).getDBInstanceStorageType());
 				putQueryParameter("UnitNode." + (depth1 + 1) + ".DtsConflict" , unitNodes.get(depth1).getDtsConflict());
 			}
 		}	
@@ -167,6 +168,8 @@ public class CreateGadInstanceMemberRequest extends RpcAcsRequest<CreateGadInsta
 		private String zoneID;
 
 		private String dBInstanceDescription;
+
+		private String dBInstanceStorageType;
 
 		private String dtsConflict;
 
@@ -272,6 +275,14 @@ public class CreateGadInstanceMemberRequest extends RpcAcsRequest<CreateGadInsta
 
 		public void setDBInstanceDescription(String dBInstanceDescription) {
 			this.dBInstanceDescription = dBInstanceDescription;
+		}
+
+		public String getDBInstanceStorageType() {
+			return this.dBInstanceStorageType;
+		}
+
+		public void setDBInstanceStorageType(String dBInstanceStorageType) {
+			this.dBInstanceStorageType = dBInstanceStorageType;
 		}
 
 		public String getDtsConflict() {

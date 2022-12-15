@@ -35,6 +35,7 @@ public class DescribeSecurityGroupConfigurationResponseUnmarshaller {
 			ecsSecurityGroupRelation.setNetworkType(_ctx.stringValue("DescribeSecurityGroupConfigurationResponse.Items["+ i +"].NetworkType"));
 			ecsSecurityGroupRelation.setSecurityGroupId(_ctx.stringValue("DescribeSecurityGroupConfigurationResponse.Items["+ i +"].SecurityGroupId"));
 			ecsSecurityGroupRelation.setRegionId(_ctx.stringValue("DescribeSecurityGroupConfigurationResponse.Items["+ i +"].RegionId"));
+			ecsSecurityGroupRelation.setSecurityGroupName(_ctx.stringValue("DescribeSecurityGroupConfigurationResponse.Items["+ i +"].SecurityGroupName"));
 
 			items.add(ecsSecurityGroupRelation);
 		}
