@@ -1,3 +1,6 @@
+2022-12-15 Version: 4.8.3
+- Update DescribeSubaccountK8sClusterUserConfig.
+
 2022-12-13 Version: 4.8.2
 - Add DescribeSubaccountK8sClusterUserConfig.
 
