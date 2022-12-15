@@ -31,9 +31,13 @@ public class CreateVirtualPhysicalConnectionRequest extends RpcAcsRequest<Create
 
 	private Long vlanId;
 
+	private String vpconnUidResourceGroupId;
+
 	private String description;
 
 	private String spec;
+
+	private String resourceGroupId;
 
 	private Boolean dryRun;
 
@@ -84,6 +88,17 @@ public class CreateVirtualPhysicalConnectionRequest extends RpcAcsRequest<Create
 		}
 	}
 
+	public String getVpconnUidResourceGroupId() {
+		return this.vpconnUidResourceGroupId;
+	}
+
+	public void setVpconnUidResourceGroupId(String vpconnUidResourceGroupId) {
+		this.vpconnUidResourceGroupId = vpconnUidResourceGroupId;
+		if(vpconnUidResourceGroupId != null){
+			putQueryParameter("VpconnUidResourceGroupId", vpconnUidResourceGroupId);
+		}
+	}
+
 	public String getDescription() {
 		return this.description;
 	}
@@ -103,6 +118,17 @@ public class CreateVirtualPhysicalConnectionRequest extends RpcAcsRequest<Create
 		this.spec = spec;
 		if(spec != null){
 			putQueryParameter("Spec", spec);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

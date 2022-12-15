@@ -41,6 +41,8 @@ public class ModifyVpnAttachmentAttributeRequest extends RpcAcsRequest<ModifyVpn
 
 	private String healthCheckConfig;
 
+	private String customerGatewayId;
+
 	private String localSubnet;
 
 	private String remoteCaCert;
@@ -154,6 +156,17 @@ public class ModifyVpnAttachmentAttributeRequest extends RpcAcsRequest<ModifyVpn
 		this.healthCheckConfig = healthCheckConfig;
 		if(healthCheckConfig != null){
 			putQueryParameter("HealthCheckConfig", healthCheckConfig);
+		}
+	}
+
+	public String getCustomerGatewayId() {
+		return this.customerGatewayId;
+	}
+
+	public void setCustomerGatewayId(String customerGatewayId) {
+		this.customerGatewayId = customerGatewayId;
+		if(customerGatewayId != null){
+			putQueryParameter("CustomerGatewayId", customerGatewayId);
 		}
 	}
 

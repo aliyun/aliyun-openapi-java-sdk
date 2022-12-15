@@ -39,6 +39,8 @@ public class CreatePhysicalConnectionRequest extends RpcAcsRequest<CreatePhysica
 
 	private String type;
 
+	private String resourceGroupId;
+
 	private String redundantPhysicalConnectionId;
 
 	private String peerLocation;
@@ -137,6 +139,17 @@ public class CreatePhysicalConnectionRequest extends RpcAcsRequest<CreatePhysica
 		this.type = type;
 		if(type != null){
 			putQueryParameter("Type", type);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

@@ -68,6 +68,7 @@ public class DescribePhysicalConnectionsResponseUnmarshaller {
 			physicalConnectionType.setOrderMode(_ctx.stringValue("DescribePhysicalConnectionsResponse.PhysicalConnectionSet["+ i +"].OrderMode"));
 			physicalConnectionType.setVpconnStatus(_ctx.stringValue("DescribePhysicalConnectionsResponse.PhysicalConnectionSet["+ i +"].VpconnStatus"));
 			physicalConnectionType.setExpectSpec(_ctx.stringValue("DescribePhysicalConnectionsResponse.PhysicalConnectionSet["+ i +"].ExpectSpec"));
+			physicalConnectionType.setResourceGroupId(_ctx.stringValue("DescribePhysicalConnectionsResponse.PhysicalConnectionSet["+ i +"].ResourceGroupId"));
 
 			physicalConnectionSet.add(physicalConnectionType);
 		}

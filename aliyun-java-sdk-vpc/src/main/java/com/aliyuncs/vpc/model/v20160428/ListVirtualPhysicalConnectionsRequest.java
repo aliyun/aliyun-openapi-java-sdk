@@ -30,6 +30,8 @@ public class ListVirtualPhysicalConnectionsRequest extends RpcAcsRequest<ListVir
 
 	private String virtualPhysicalConnectionBusinessStatus;
 
+	private String resourceGroupId;
+
 	private List<String> virtualPhysicalConnectionAliUidss;
 
 	private String nextToken;
@@ -75,6 +77,17 @@ public class ListVirtualPhysicalConnectionsRequest extends RpcAcsRequest<ListVir
 		this.virtualPhysicalConnectionBusinessStatus = virtualPhysicalConnectionBusinessStatus;
 		if(virtualPhysicalConnectionBusinessStatus != null){
 			putQueryParameter("VirtualPhysicalConnectionBusinessStatus", virtualPhysicalConnectionBusinessStatus);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

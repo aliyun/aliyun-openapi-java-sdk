@@ -1,3 +1,7 @@
+2022-12-15 Version: 3.2.10
+- Supported ShareType for ListPublicIpAddressPools.
+- Supported OwnerId for ListPublicIpAddressPools.
+
 2022-11-24 Version: 3.2.9
 - Supported OwnerId for ListPublicIpAddressPools.
 - Supported ShareType for ListPublicIpAddressPools.

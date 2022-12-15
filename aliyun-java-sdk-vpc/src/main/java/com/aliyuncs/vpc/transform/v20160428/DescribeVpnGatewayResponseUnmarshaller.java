@@ -47,6 +47,7 @@ public class DescribeVpnGatewayResponseUnmarshaller {
 		describeVpnGatewayResponse.setBusinessStatus(_ctx.stringValue("DescribeVpnGatewayResponse.BusinessStatus"));
 		describeVpnGatewayResponse.setSslVpn(_ctx.stringValue("DescribeVpnGatewayResponse.SslVpn"));
 		describeVpnGatewayResponse.setName(_ctx.stringValue("DescribeVpnGatewayResponse.Name"));
+		describeVpnGatewayResponse.setNetworkType(_ctx.stringValue("DescribeVpnGatewayResponse.NetworkType"));
 
 		ReservationData reservationData = new ReservationData();
 		reservationData.setStatus(_ctx.stringValue("DescribeVpnGatewayResponse.ReservationData.Status"));

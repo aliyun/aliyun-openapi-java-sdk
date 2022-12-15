@@ -43,6 +43,8 @@ public class CreateRouterInterfaceRequest extends RpcAcsRequest<CreateRouterInte
 
 	private String spec;
 
+	private Boolean fastLinkMode;
+
 	private String oppositeInterfaceId;
 
 	private String instanceChargeType;
@@ -177,6 +179,17 @@ public class CreateRouterInterfaceRequest extends RpcAcsRequest<CreateRouterInte
 		this.spec = spec;
 		if(spec != null){
 			putQueryParameter("Spec", spec);
+		}
+	}
+
+	public Boolean getFastLinkMode() {
+		return this.fastLinkMode;
+	}
+
+	public void setFastLinkMode(Boolean fastLinkMode) {
+		this.fastLinkMode = fastLinkMode;
+		if(fastLinkMode != null){
+			putQueryParameter("FastLinkMode", fastLinkMode.toString());
 		}
 	}
 

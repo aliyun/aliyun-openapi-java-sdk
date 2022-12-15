@@ -135,6 +135,8 @@ public class ListVirtualPhysicalConnectionsResponse extends AcsResponse {
 
 		private String expectSpec;
 
+		private String resourceGroupId;
+
 		public String getType() {
 			return this.type;
 		}
@@ -365,6 +367,14 @@ public class ListVirtualPhysicalConnectionsResponse extends AcsResponse {
 
 		public void setExpectSpec(String expectSpec) {
 			this.expectSpec = expectSpec;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 	}
 
