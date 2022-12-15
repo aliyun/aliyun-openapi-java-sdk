@@ -1,3 +1,6 @@
+2022-12-15 Version: 1.8.10
+- Support requstTableQA new version.
+
 2022-12-14 Version: 1.0.21
 - Supported QA api for AliNLP version-3.
 
