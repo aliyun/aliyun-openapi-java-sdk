@@ -34,6 +34,8 @@ public class GetMetaTableOutputRequest extends RpcAcsRequest<GetMetaTableOutputR
 	private String tableGuid;
 
 	private Integer pageSize;
+
+	private String taskId;
 	public GetMetaTableOutputRequest() {
 		super("dataworks-public", "2020-05-18", "GetMetaTableOutput");
 		setMethod(MethodType.POST);
@@ -95,6 +97,17 @@ public class GetMetaTableOutputRequest extends RpcAcsRequest<GetMetaTableOutputR
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getTaskId() {
+		return this.taskId;
+	}
+
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+		if(taskId != null){
+			putQueryParameter("TaskId", taskId);
 		}
 	}
 
