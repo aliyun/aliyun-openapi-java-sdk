@@ -27,8 +27,6 @@ public class MergeVideoFaceRequest extends RpcAcsRequest<MergeVideoFaceResponse>
 
 	private String referenceURL;
 
-	private String postURL;
-
 	private String videoURL;
 	public MergeVideoFaceRequest() {
 		super("videoenhan", "2020-03-20", "MergeVideoFace", "videoenhan");
@@ -47,17 +45,6 @@ public class MergeVideoFaceRequest extends RpcAcsRequest<MergeVideoFaceResponse>
 		this.referenceURL = referenceURL;
 		if(referenceURL != null){
 			putBodyParameter("ReferenceURL", referenceURL);
-		}
-	}
-
-	public String getPostURL() {
-		return this.postURL;
-	}
-
-	public void setPostURL(String postURL) {
-		this.postURL = postURL;
-		if(postURL != null){
-			putBodyParameter("PostURL", postURL);
 		}
 	}
 
