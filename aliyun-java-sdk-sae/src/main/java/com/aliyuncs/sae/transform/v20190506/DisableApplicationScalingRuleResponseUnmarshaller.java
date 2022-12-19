@@ -24,6 +24,10 @@ public class DisableApplicationScalingRuleResponseUnmarshaller {
 		
 		disableApplicationScalingRuleResponse.setRequestId(_ctx.stringValue("DisableApplicationScalingRuleResponse.RequestId"));
 		disableApplicationScalingRuleResponse.setTraceId(_ctx.stringValue("DisableApplicationScalingRuleResponse.TraceId"));
+		disableApplicationScalingRuleResponse.setMessage(_ctx.stringValue("DisableApplicationScalingRuleResponse.Message"));
+		disableApplicationScalingRuleResponse.setErrorCode(_ctx.stringValue("DisableApplicationScalingRuleResponse.ErrorCode"));
+		disableApplicationScalingRuleResponse.setCode(_ctx.stringValue("DisableApplicationScalingRuleResponse.Code"));
+		disableApplicationScalingRuleResponse.setSuccess(_ctx.booleanValue("DisableApplicationScalingRuleResponse.Success"));
 	 
 	 	return disableApplicationScalingRuleResponse;
 	}

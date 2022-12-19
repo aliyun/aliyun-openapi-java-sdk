@@ -32,6 +32,10 @@ public class UpdateApplicationScalingRuleResponseUnmarshaller {
 		
 		updateApplicationScalingRuleResponse.setRequestId(_ctx.stringValue("UpdateApplicationScalingRuleResponse.RequestId"));
 		updateApplicationScalingRuleResponse.setTraceId(_ctx.stringValue("UpdateApplicationScalingRuleResponse.TraceId"));
+		updateApplicationScalingRuleResponse.setMessage(_ctx.stringValue("UpdateApplicationScalingRuleResponse.Message"));
+		updateApplicationScalingRuleResponse.setErrorCode(_ctx.stringValue("UpdateApplicationScalingRuleResponse.ErrorCode"));
+		updateApplicationScalingRuleResponse.setCode(_ctx.stringValue("UpdateApplicationScalingRuleResponse.Code"));
+		updateApplicationScalingRuleResponse.setSuccess(_ctx.booleanValue("UpdateApplicationScalingRuleResponse.Success"));
 
 		Data data = new Data();
 		data.setUpdateTime(_ctx.longValue("UpdateApplicationScalingRuleResponse.Data.UpdateTime"));

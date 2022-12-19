@@ -38,6 +38,10 @@ public class DescribeApplicationScalingRulesResponseUnmarshaller {
 		
 		describeApplicationScalingRulesResponse.setRequestId(_ctx.stringValue("DescribeApplicationScalingRulesResponse.RequestId"));
 		describeApplicationScalingRulesResponse.setTraceId(_ctx.stringValue("DescribeApplicationScalingRulesResponse.TraceId"));
+		describeApplicationScalingRulesResponse.setMessage(_ctx.stringValue("DescribeApplicationScalingRulesResponse.Message"));
+		describeApplicationScalingRulesResponse.setErrorCode(_ctx.stringValue("DescribeApplicationScalingRulesResponse.ErrorCode"));
+		describeApplicationScalingRulesResponse.setCode(_ctx.stringValue("DescribeApplicationScalingRulesResponse.Code"));
+		describeApplicationScalingRulesResponse.setSuccess(_ctx.booleanValue("DescribeApplicationScalingRulesResponse.Success"));
 
 		Data data = new Data();
 		data.setCurrentPage(_ctx.integerValue("DescribeApplicationScalingRulesResponse.Data.CurrentPage"));

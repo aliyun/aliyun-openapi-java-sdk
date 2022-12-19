@@ -29,6 +29,14 @@ public class UpdateApplicationScalingRuleResponse extends AcsResponse {
 
 	private String traceId;
 
+	private String message;
+
+	private String errorCode;
+
+	private String code;
+
+	private Boolean success;
+
 	private Data data;
 
 	public String getRequestId() {
@@ -45,6 +53,38 @@ public class UpdateApplicationScalingRuleResponse extends AcsResponse {
 
 	public void setTraceId(String traceId) {
 		this.traceId = traceId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
