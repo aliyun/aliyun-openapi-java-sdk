@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.privatelink.model.v20200415.ListVpcEndpointServicesByEndUserResponse;
 import com.aliyuncs.privatelink.model.v20200415.ListVpcEndpointServicesByEndUserResponse.Service;
+import com.aliyuncs.privatelink.model.v20200415.ListVpcEndpointServicesByEndUserResponse.Service.TagModel;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -28,7 +29,7 @@ public class ListVpcEndpointServicesByEndUserResponseUnmarshaller {
 		
 		listVpcEndpointServicesByEndUserResponse.setRequestId(_ctx.stringValue("ListVpcEndpointServicesByEndUserResponse.RequestId"));
 		listVpcEndpointServicesByEndUserResponse.setNextToken(_ctx.stringValue("ListVpcEndpointServicesByEndUserResponse.NextToken"));
-		listVpcEndpointServicesByEndUserResponse.setMaxResults(_ctx.stringValue("ListVpcEndpointServicesByEndUserResponse.MaxResults"));
+		listVpcEndpointServicesByEndUserResponse.setMaxResults(_ctx.integerValue("ListVpcEndpointServicesByEndUserResponse.MaxResults"));
 
 		List<Service> services = new ArrayList<Service>();
 		for (int i = 0; i < _ctx.lengthValue("ListVpcEndpointServicesByEndUserResponse.Services.Length"); i++) {
@@ -40,12 +41,24 @@ public class ListVpcEndpointServicesByEndUserResponseUnmarshaller {
 			service.setServiceType(_ctx.stringValue("ListVpcEndpointServicesByEndUserResponse.Services["+ i +"].ServiceType"));
 			service.setServiceDescription(_ctx.stringValue("ListVpcEndpointServicesByEndUserResponse.Services["+ i +"].ServiceDescription"));
 			service.setPrivateServiceName(_ctx.stringValue("ListVpcEndpointServicesByEndUserResponse.Services["+ i +"].PrivateServiceName"));
+			service.setServiceSupportIPv6(_ctx.booleanValue("ListVpcEndpointServicesByEndUserResponse.Services["+ i +"].ServiceSupportIPv6"));
+			service.setResourceGroupId(_ctx.stringValue("ListVpcEndpointServicesByEndUserResponse.Services["+ i +"].ResourceGroupId"));
 
 			List<String> zones = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListVpcEndpointServicesByEndUserResponse.Services["+ i +"].Zones.Length"); j++) {
 				zones.add(_ctx.stringValue("ListVpcEndpointServicesByEndUserResponse.Services["+ i +"].Zones["+ j +"]"));
 			}
 			service.setZones(zones);
+
+			List<TagModel> tags = new ArrayList<TagModel>();
+			for (int j = 0; j < _ctx.lengthValue("ListVpcEndpointServicesByEndUserResponse.Services["+ i +"].Tags.Length"); j++) {
+				TagModel tagModel = new TagModel();
+				tagModel.setKey(_ctx.stringValue("ListVpcEndpointServicesByEndUserResponse.Services["+ i +"].Tags["+ j +"].Key"));
+				tagModel.setValue(_ctx.stringValue("ListVpcEndpointServicesByEndUserResponse.Services["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tagModel);
+			}
+			service.setTags(tags);
 
 			services.add(service);
 		}

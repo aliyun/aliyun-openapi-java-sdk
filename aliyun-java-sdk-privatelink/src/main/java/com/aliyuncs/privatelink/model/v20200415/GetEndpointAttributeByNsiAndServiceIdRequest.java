@@ -15,7 +15,6 @@
 package com.aliyuncs.privatelink.model.v20200415;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.privatelink.Endpoint;
 
@@ -23,21 +22,20 @@ import com.aliyuncs.privatelink.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListVpcEndpointServiceUsersRequest extends RpcAcsRequest<ListVpcEndpointServiceUsersResponse> {
+public class GetEndpointAttributeByNsiAndServiceIdRequest extends RpcAcsRequest<GetEndpointAttributeByNsiAndServiceIdResponse> {
 	   
 
-	private String userListType;
-
-	private Long userId;
+	private Boolean dryRun;
 
 	private String nextToken;
 
-	private Integer maxResults;
+	private String nsiIndex;
+
+	private Long aliUid;
 
 	private String serviceId;
-	public ListVpcEndpointServiceUsersRequest() {
-		super("Privatelink", "2020-04-15", "ListVpcEndpointServiceUsers", "privatelink");
-		setProtocol(ProtocolType.HTTPS);
+	public GetEndpointAttributeByNsiAndServiceIdRequest() {
+		super("Privatelink", "2020-04-15", "GetEndpointAttributeByNsiAndServiceId", "privatelink");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -45,25 +43,14 @@ public class ListVpcEndpointServiceUsersRequest extends RpcAcsRequest<ListVpcEnd
 		} catch (Exception e) {}
 	}
 
-	public String getUserListType() {
-		return this.userListType;
+	public Boolean getDryRun() {
+		return this.dryRun;
 	}
 
-	public void setUserListType(String userListType) {
-		this.userListType = userListType;
-		if(userListType != null){
-			putQueryParameter("UserListType", userListType);
-		}
-	}
-
-	public Long getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(Long userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId.toString());
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 
@@ -78,14 +65,25 @@ public class ListVpcEndpointServiceUsersRequest extends RpcAcsRequest<ListVpcEnd
 		}
 	}
 
-	public Integer getMaxResults() {
-		return this.maxResults;
+	public String getNsiIndex() {
+		return this.nsiIndex;
 	}
 
-	public void setMaxResults(Integer maxResults) {
-		this.maxResults = maxResults;
-		if(maxResults != null){
-			putQueryParameter("MaxResults", maxResults.toString());
+	public void setNsiIndex(String nsiIndex) {
+		this.nsiIndex = nsiIndex;
+		if(nsiIndex != null){
+			putQueryParameter("NsiIndex", nsiIndex);
+		}
+	}
+
+	public Long getAliUid() {
+		return this.aliUid;
+	}
+
+	public void setAliUid(Long aliUid) {
+		this.aliUid = aliUid;
+		if(aliUid != null){
+			putQueryParameter("AliUid", aliUid.toString());
 		}
 	}
 
@@ -101,8 +99,8 @@ public class ListVpcEndpointServiceUsersRequest extends RpcAcsRequest<ListVpcEnd
 	}
 
 	@Override
-	public Class<ListVpcEndpointServiceUsersResponse> getResponseClass() {
-		return ListVpcEndpointServiceUsersResponse.class;
+	public Class<GetEndpointAttributeByNsiAndServiceIdResponse> getResponseClass() {
+		return GetEndpointAttributeByNsiAndServiceIdResponse.class;
 	}
 
 }

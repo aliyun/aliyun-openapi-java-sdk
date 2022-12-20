@@ -15,28 +15,20 @@
 package com.aliyuncs.privatelink.model.v20200415;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.privatelink.transform.v20200415.GetVpcEndpointAttributeResponseUnmarshaller;
+import com.aliyuncs.privatelink.transform.v20200415.GetEndpointAttributeByNsiAndServiceIdResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetVpcEndpointAttributeResponse extends AcsResponse {
-
-	private String payer;
-
-	private String endpointDomain;
+public class GetEndpointAttributeByNsiAndServiceIdResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String createTime;
+	private String endpointId;
 
-	private Boolean resourceOwner;
-
-	private String endpointBusinessStatus;
-
-	private String endpointDescription;
+	private String payer;
 
 	private String serviceId;
 
@@ -46,15 +38,11 @@ public class GetVpcEndpointAttributeResponse extends AcsResponse {
 
 	private String endpointName;
 
-	private Long zonePrivateIpAddressCount;
-
 	private String endpointType;
 
 	private String serviceName;
 
 	private Integer bandwidth;
-
-	private String endpointId;
 
 	private String regionId;
 
@@ -62,25 +50,9 @@ public class GetVpcEndpointAttributeResponse extends AcsResponse {
 
 	private Boolean zoneAffinityEnabled;
 
-	private String privateServiceName;
+	private Boolean resourceOwner;
 
-	private String resourceGroupId;
-
-	public String getPayer() {
-		return this.payer;
-	}
-
-	public void setPayer(String payer) {
-		this.payer = payer;
-	}
-
-	public String getEndpointDomain() {
-		return this.endpointDomain;
-	}
-
-	public void setEndpointDomain(String endpointDomain) {
-		this.endpointDomain = endpointDomain;
-	}
+	private Long zonePrivateIpAddressCount;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -90,36 +62,20 @@ public class GetVpcEndpointAttributeResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getCreateTime() {
-		return this.createTime;
+	public String getEndpointId() {
+		return this.endpointId;
 	}
 
-	public void setCreateTime(String createTime) {
-		this.createTime = createTime;
+	public void setEndpointId(String endpointId) {
+		this.endpointId = endpointId;
 	}
 
-	public Boolean getResourceOwner() {
-		return this.resourceOwner;
+	public String getPayer() {
+		return this.payer;
 	}
 
-	public void setResourceOwner(Boolean resourceOwner) {
-		this.resourceOwner = resourceOwner;
-	}
-
-	public String getEndpointBusinessStatus() {
-		return this.endpointBusinessStatus;
-	}
-
-	public void setEndpointBusinessStatus(String endpointBusinessStatus) {
-		this.endpointBusinessStatus = endpointBusinessStatus;
-	}
-
-	public String getEndpointDescription() {
-		return this.endpointDescription;
-	}
-
-	public void setEndpointDescription(String endpointDescription) {
-		this.endpointDescription = endpointDescription;
+	public void setPayer(String payer) {
+		this.payer = payer;
 	}
 
 	public String getServiceId() {
@@ -154,14 +110,6 @@ public class GetVpcEndpointAttributeResponse extends AcsResponse {
 		this.endpointName = endpointName;
 	}
 
-	public Long getZonePrivateIpAddressCount() {
-		return this.zonePrivateIpAddressCount;
-	}
-
-	public void setZonePrivateIpAddressCount(Long zonePrivateIpAddressCount) {
-		this.zonePrivateIpAddressCount = zonePrivateIpAddressCount;
-	}
-
 	public String getEndpointType() {
 		return this.endpointType;
 	}
@@ -184,14 +132,6 @@ public class GetVpcEndpointAttributeResponse extends AcsResponse {
 
 	public void setBandwidth(Integer bandwidth) {
 		this.bandwidth = bandwidth;
-	}
-
-	public String getEndpointId() {
-		return this.endpointId;
-	}
-
-	public void setEndpointId(String endpointId) {
-		this.endpointId = endpointId;
 	}
 
 	public String getRegionId() {
@@ -218,25 +158,25 @@ public class GetVpcEndpointAttributeResponse extends AcsResponse {
 		this.zoneAffinityEnabled = zoneAffinityEnabled;
 	}
 
-	public String getPrivateServiceName() {
-		return this.privateServiceName;
+	public Boolean getResourceOwner() {
+		return this.resourceOwner;
 	}
 
-	public void setPrivateServiceName(String privateServiceName) {
-		this.privateServiceName = privateServiceName;
+	public void setResourceOwner(Boolean resourceOwner) {
+		this.resourceOwner = resourceOwner;
 	}
 
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
+	public Long getZonePrivateIpAddressCount() {
+		return this.zonePrivateIpAddressCount;
 	}
 
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
+	public void setZonePrivateIpAddressCount(Long zonePrivateIpAddressCount) {
+		this.zonePrivateIpAddressCount = zonePrivateIpAddressCount;
 	}
 
 	@Override
-	public GetVpcEndpointAttributeResponse getInstance(UnmarshallerContext context) {
-		return	GetVpcEndpointAttributeResponseUnmarshaller.unmarshall(this, context);
+	public GetEndpointAttributeByNsiAndServiceIdResponse getInstance(UnmarshallerContext context) {
+		return	GetEndpointAttributeByNsiAndServiceIdResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

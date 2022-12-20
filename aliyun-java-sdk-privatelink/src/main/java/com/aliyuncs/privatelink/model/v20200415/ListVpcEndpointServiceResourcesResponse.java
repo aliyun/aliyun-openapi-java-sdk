@@ -29,7 +29,7 @@ public class ListVpcEndpointServiceResourcesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String maxResults;
+	private Integer maxResults;
 
 	private List<Resource> resources;
 
@@ -49,11 +49,11 @@ public class ListVpcEndpointServiceResourcesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getMaxResults() {
+	public Integer getMaxResults() {
 		return this.maxResults;
 	}
 
-	public void setMaxResults(String maxResults) {
+	public void setMaxResults(Integer maxResults) {
 		this.maxResults = maxResults;
 	}
 
@@ -88,6 +88,8 @@ public class ListVpcEndpointServiceResourcesResponse extends AcsResponse {
 		private Boolean autoAllocatedEnabled;
 
 		private String statusInfo;
+
+		private Boolean resourceSupportIPv6;
 
 		public String getVpcId() {
 			return this.vpcId;
@@ -175,6 +177,14 @@ public class ListVpcEndpointServiceResourcesResponse extends AcsResponse {
 
 		public void setStatusInfo(String statusInfo) {
 			this.statusInfo = statusInfo;
+		}
+
+		public Boolean getResourceSupportIPv6() {
+			return this.resourceSupportIPv6;
+		}
+
+		public void setResourceSupportIPv6(Boolean resourceSupportIPv6) {
+			this.resourceSupportIPv6 = resourceSupportIPv6;
 		}
 	}
 

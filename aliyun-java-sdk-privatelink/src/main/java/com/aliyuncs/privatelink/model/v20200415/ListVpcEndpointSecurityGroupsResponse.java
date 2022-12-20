@@ -29,7 +29,7 @@ public class ListVpcEndpointSecurityGroupsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String maxResults;
+	private Integer maxResults;
 
 	private List<SecurityGroup> securityGroups;
 
@@ -49,11 +49,11 @@ public class ListVpcEndpointSecurityGroupsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getMaxResults() {
+	public Integer getMaxResults() {
 		return this.maxResults;
 	}
 
-	public void setMaxResults(String maxResults) {
+	public void setMaxResults(Integer maxResults) {
 		this.maxResults = maxResults;
 	}
 

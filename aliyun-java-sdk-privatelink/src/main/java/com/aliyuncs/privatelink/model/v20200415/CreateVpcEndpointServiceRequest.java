@@ -33,13 +33,19 @@ public class CreateVpcEndpointServiceRequest extends RpcAcsRequest<CreateVpcEndp
 
 	private String payer;
 
+	private String resourceGroupId;
+
 	private Boolean zoneAffinityEnabled;
+
+	private List<Tag> tags;
 
 	private Boolean dryRun;
 
 	private List<Resource> resources;
 
 	private String serviceResourceType;
+
+	private Boolean serviceSupportIPv6;
 
 	private String serviceDescription;
 	public CreateVpcEndpointServiceRequest() {
@@ -85,6 +91,17 @@ public class CreateVpcEndpointServiceRequest extends RpcAcsRequest<CreateVpcEndp
 		}
 	}
 
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
 	public Boolean getZoneAffinityEnabled() {
 		return this.zoneAffinityEnabled;
 	}
@@ -94,6 +111,20 @@ public class CreateVpcEndpointServiceRequest extends RpcAcsRequest<CreateVpcEndp
 		if(zoneAffinityEnabled != null){
 			putQueryParameter("ZoneAffinityEnabled", zoneAffinityEnabled.toString());
 		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+			}
+		}	
 	}
 
 	public Boolean getDryRun() {
@@ -133,6 +164,17 @@ public class CreateVpcEndpointServiceRequest extends RpcAcsRequest<CreateVpcEndp
 		}
 	}
 
+	public Boolean getServiceSupportIPv6() {
+		return this.serviceSupportIPv6;
+	}
+
+	public void setServiceSupportIPv6(Boolean serviceSupportIPv6) {
+		this.serviceSupportIPv6 = serviceSupportIPv6;
+		if(serviceSupportIPv6 != null){
+			putQueryParameter("ServiceSupportIPv6", serviceSupportIPv6.toString());
+		}
+	}
+
 	public String getServiceDescription() {
 		return this.serviceDescription;
 	}
@@ -141,6 +183,29 @@ public class CreateVpcEndpointServiceRequest extends RpcAcsRequest<CreateVpcEndp
 		this.serviceDescription = serviceDescription;
 		if(serviceDescription != null){
 			putQueryParameter("ServiceDescription", serviceDescription);
+		}
+	}
+
+	public static class Tag {
+
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
 		}
 	}
 

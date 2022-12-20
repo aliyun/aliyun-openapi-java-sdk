@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.privatelink.model.v20200415.ListVpcEndpointsResponse;
 import com.aliyuncs.privatelink.model.v20200415.ListVpcEndpointsResponse.Endpoint;
+import com.aliyuncs.privatelink.model.v20200415.ListVpcEndpointsResponse.Endpoint.TagModel;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -28,7 +29,7 @@ public class ListVpcEndpointsResponseUnmarshaller {
 		
 		listVpcEndpointsResponse.setRequestId(_ctx.stringValue("ListVpcEndpointsResponse.RequestId"));
 		listVpcEndpointsResponse.setNextToken(_ctx.stringValue("ListVpcEndpointsResponse.NextToken"));
-		listVpcEndpointsResponse.setMaxResults(_ctx.stringValue("ListVpcEndpointsResponse.MaxResults"));
+		listVpcEndpointsResponse.setMaxResults(_ctx.integerValue("ListVpcEndpointsResponse.MaxResults"));
 
 		List<Endpoint> endpoints = new ArrayList<Endpoint>();
 		for (int i = 0; i < _ctx.lengthValue("ListVpcEndpointsResponse.Endpoints.Length"); i++) {
@@ -49,6 +50,17 @@ public class ListVpcEndpointsResponseUnmarshaller {
 			endpoint.setEndpointId(_ctx.stringValue("ListVpcEndpointsResponse.Endpoints["+ i +"].EndpointId"));
 			endpoint.setEndpointBusinessStatus(_ctx.stringValue("ListVpcEndpointsResponse.Endpoints["+ i +"].EndpointBusinessStatus"));
 			endpoint.setServiceName(_ctx.stringValue("ListVpcEndpointsResponse.Endpoints["+ i +"].ServiceName"));
+			endpoint.setResourceGroupId(_ctx.stringValue("ListVpcEndpointsResponse.Endpoints["+ i +"].ResourceGroupId"));
+
+			List<TagModel> tags = new ArrayList<TagModel>();
+			for (int j = 0; j < _ctx.lengthValue("ListVpcEndpointsResponse.Endpoints["+ i +"].Tags.Length"); j++) {
+				TagModel tagModel = new TagModel();
+				tagModel.setKey(_ctx.stringValue("ListVpcEndpointsResponse.Endpoints["+ i +"].Tags["+ j +"].Key"));
+				tagModel.setValue(_ctx.stringValue("ListVpcEndpointsResponse.Endpoints["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tagModel);
+			}
+			endpoint.setTags(tags);
 
 			endpoints.add(endpoint);
 		}

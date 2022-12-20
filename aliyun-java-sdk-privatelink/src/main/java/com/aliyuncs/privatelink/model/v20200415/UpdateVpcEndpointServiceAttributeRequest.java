@@ -36,6 +36,8 @@ public class UpdateVpcEndpointServiceAttributeRequest extends RpcAcsRequest<Upda
 
 	private Boolean dryRun;
 
+	private Boolean serviceSupportIPv6;
+
 	private String serviceDescription;
 
 	private String serviceId;
@@ -101,6 +103,17 @@ public class UpdateVpcEndpointServiceAttributeRequest extends RpcAcsRequest<Upda
 		this.dryRun = dryRun;
 		if(dryRun != null){
 			putQueryParameter("DryRun", dryRun.toString());
+		}
+	}
+
+	public Boolean getServiceSupportIPv6() {
+		return this.serviceSupportIPv6;
+	}
+
+	public void setServiceSupportIPv6(Boolean serviceSupportIPv6) {
+		this.serviceSupportIPv6 = serviceSupportIPv6;
+		if(serviceSupportIPv6 != null){
+			putQueryParameter("ServiceSupportIPv6", serviceSupportIPv6.toString());
 		}
 	}
 

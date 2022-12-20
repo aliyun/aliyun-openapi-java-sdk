@@ -28,6 +28,8 @@ public class AddUserToVpcEndpointServiceRequest extends RpcAcsRequest<AddUserToV
 
 	private String clientToken;
 
+	private String userARN;
+
 	private Long userId;
 
 	private Boolean dryRun;
@@ -51,6 +53,17 @@ public class AddUserToVpcEndpointServiceRequest extends RpcAcsRequest<AddUserToV
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getUserARN() {
+		return this.userARN;
+	}
+
+	public void setUserARN(String userARN) {
+		this.userARN = userARN;
+		if(userARN != null){
+			putQueryParameter("UserARN", userARN);
 		}
 	}
 

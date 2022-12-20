@@ -29,7 +29,7 @@ public class ListVpcEndpointZonesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String maxResults;
+	private Integer maxResults;
 
 	private List<Zone> zones;
 
@@ -49,11 +49,11 @@ public class ListVpcEndpointZonesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getMaxResults() {
+	public Integer getMaxResults() {
 		return this.maxResults;
 	}
 
-	public void setMaxResults(String maxResults) {
+	public void setMaxResults(Integer maxResults) {
 		this.maxResults = maxResults;
 	}
 
@@ -82,6 +82,12 @@ public class ListVpcEndpointZonesResponse extends AcsResponse {
 		private String zoneDomain;
 
 		private String regionId;
+
+		private Long nsiIndex;
+
+		private String nsiIndexString;
+
+		private String zoneIpv6Address;
 
 		public String getVSwitchId() {
 			return this.vSwitchId;
@@ -145,6 +151,30 @@ public class ListVpcEndpointZonesResponse extends AcsResponse {
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
+		}
+
+		public Long getNsiIndex() {
+			return this.nsiIndex;
+		}
+
+		public void setNsiIndex(Long nsiIndex) {
+			this.nsiIndex = nsiIndex;
+		}
+
+		public String getNsiIndexString() {
+			return this.nsiIndexString;
+		}
+
+		public void setNsiIndexString(String nsiIndexString) {
+			this.nsiIndexString = nsiIndexString;
+		}
+
+		public String getZoneIpv6Address() {
+			return this.zoneIpv6Address;
+		}
+
+		public void setZoneIpv6Address(String zoneIpv6Address) {
+			this.zoneIpv6Address = zoneIpv6Address;
 		}
 	}
 

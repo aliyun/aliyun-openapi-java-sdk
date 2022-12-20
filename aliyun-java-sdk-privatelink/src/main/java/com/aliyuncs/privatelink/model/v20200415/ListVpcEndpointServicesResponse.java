@@ -29,7 +29,7 @@ public class ListVpcEndpointServicesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String maxResults;
+	private Integer maxResults;
 
 	private List<Service> services;
 
@@ -49,11 +49,11 @@ public class ListVpcEndpointServicesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getMaxResults() {
+	public Integer getMaxResults() {
 		return this.maxResults;
 	}
 
-	public void setMaxResults(String maxResults) {
+	public void setMaxResults(Integer maxResults) {
 		this.maxResults = maxResults;
 	}
 
@@ -98,6 +98,12 @@ public class ListVpcEndpointServicesResponse extends AcsResponse {
 		private String serviceResourceType;
 
 		private String serviceType;
+
+		private Boolean serviceSupportIPv6;
+
+		private String resourceGroupId;
+
+		private List<TagModel> tags;
 
 		public Boolean getAutoAcceptEnabled() {
 			return this.autoAcceptEnabled;
@@ -225,6 +231,53 @@ public class ListVpcEndpointServicesResponse extends AcsResponse {
 
 		public void setServiceType(String serviceType) {
 			this.serviceType = serviceType;
+		}
+
+		public Boolean getServiceSupportIPv6() {
+			return this.serviceSupportIPv6;
+		}
+
+		public void setServiceSupportIPv6(Boolean serviceSupportIPv6) {
+			this.serviceSupportIPv6 = serviceSupportIPv6;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public List<TagModel> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<TagModel> tags) {
+			this.tags = tags;
+		}
+
+		public static class TagModel {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 	}
 

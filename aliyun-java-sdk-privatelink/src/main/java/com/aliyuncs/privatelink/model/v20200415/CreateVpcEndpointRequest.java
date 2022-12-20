@@ -31,11 +31,15 @@ public class CreateVpcEndpointRequest extends RpcAcsRequest<CreateVpcEndpointRes
 
 	private List<String> securityGroupIds;
 
+	private String resourceGroupId;
+
 	private String endpointType;
 
 	private List<Zone> zones;
 
 	private String serviceName;
+
+	private List<Tag> tags;
 
 	private Boolean dryRun;
 
@@ -84,6 +88,17 @@ public class CreateVpcEndpointRequest extends RpcAcsRequest<CreateVpcEndpointRes
 		}	
 	}
 
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
 	public String getEndpointType() {
 		return this.endpointType;
 	}
@@ -119,6 +134,20 @@ public class CreateVpcEndpointRequest extends RpcAcsRequest<CreateVpcEndpointRes
 		if(serviceName != null){
 			putQueryParameter("ServiceName", serviceName);
 		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+			}
+		}	
 	}
 
 	public Boolean getDryRun() {
@@ -228,6 +257,29 @@ public class CreateVpcEndpointRequest extends RpcAcsRequest<CreateVpcEndpointRes
 
 		public void setIp(String ip) {
 			this.ip = ip;
+		}
+	}
+
+	public static class Tag {
+
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
 		}
 	}
 

@@ -29,7 +29,7 @@ public class ListVpcEndpointConnectionsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String maxResults;
+	private Integer maxResults;
 
 	private List<Connection> connections;
 
@@ -49,11 +49,11 @@ public class ListVpcEndpointConnectionsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getMaxResults() {
+	public Integer getMaxResults() {
 		return this.maxResults;
 	}
 
-	public void setMaxResults(String maxResults) {
+	public void setMaxResults(Integer maxResults) {
 		this.maxResults = maxResults;
 	}
 
@@ -82,6 +82,8 @@ public class ListVpcEndpointConnectionsResponse extends AcsResponse {
 		private String endpointId;
 
 		private String endpointVpcId;
+
+		private String resourceGroupId;
 
 		private List<Zone> zones;
 
@@ -149,6 +151,14 @@ public class ListVpcEndpointConnectionsResponse extends AcsResponse {
 			this.endpointVpcId = endpointVpcId;
 		}
 
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
 		public List<Zone> getZones() {
 			return this.zones;
 		}
@@ -176,6 +186,10 @@ public class ListVpcEndpointConnectionsResponse extends AcsResponse {
 			private String replacedEniId;
 
 			private String statusInfo;
+
+			private Long connectionId;
+
+			private String connectionStringId;
 
 			public String getVSwitchId() {
 				return this.vSwitchId;
@@ -247,6 +261,22 @@ public class ListVpcEndpointConnectionsResponse extends AcsResponse {
 
 			public void setStatusInfo(String statusInfo) {
 				this.statusInfo = statusInfo;
+			}
+
+			public Long getConnectionId() {
+				return this.connectionId;
+			}
+
+			public void setConnectionId(Long connectionId) {
+				this.connectionId = connectionId;
+			}
+
+			public String getConnectionStringId() {
+				return this.connectionStringId;
+			}
+
+			public void setConnectionStringId(String connectionStringId) {
+				this.connectionStringId = connectionStringId;
 			}
 		}
 	}

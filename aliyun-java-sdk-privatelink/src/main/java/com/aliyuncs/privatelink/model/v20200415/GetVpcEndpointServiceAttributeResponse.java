@@ -73,6 +73,10 @@ public class GetVpcEndpointServiceAttributeResponse extends AcsResponse {
 
 	private String privateServiceName;
 
+	private Boolean serviceSupportIPv6;
+
+	private String resourceGroupId;
+
 	private List<String> zones;
 
 	public String getPayer() {
@@ -265,6 +269,22 @@ public class GetVpcEndpointServiceAttributeResponse extends AcsResponse {
 
 	public void setPrivateServiceName(String privateServiceName) {
 		this.privateServiceName = privateServiceName;
+	}
+
+	public Boolean getServiceSupportIPv6() {
+		return this.serviceSupportIPv6;
+	}
+
+	public void setServiceSupportIPv6(Boolean serviceSupportIPv6) {
+		this.serviceSupportIPv6 = serviceSupportIPv6;
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
 	}
 
 	public List<String> getZones() {

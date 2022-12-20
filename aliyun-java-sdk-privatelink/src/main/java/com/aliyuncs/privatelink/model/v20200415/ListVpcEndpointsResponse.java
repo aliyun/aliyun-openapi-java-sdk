@@ -29,7 +29,7 @@ public class ListVpcEndpointsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String maxResults;
+	private Integer maxResults;
 
 	private List<Endpoint> endpoints;
 
@@ -49,11 +49,11 @@ public class ListVpcEndpointsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getMaxResults() {
+	public Integer getMaxResults() {
 		return this.maxResults;
 	}
 
-	public void setMaxResults(String maxResults) {
+	public void setMaxResults(Integer maxResults) {
 		this.maxResults = maxResults;
 	}
 
@@ -98,6 +98,10 @@ public class ListVpcEndpointsResponse extends AcsResponse {
 		private String endpointBusinessStatus;
 
 		private String serviceName;
+
+		private String resourceGroupId;
+
+		private List<TagModel> tags;
 
 		public String getVpcId() {
 			return this.vpcId;
@@ -225,6 +229,45 @@ public class ListVpcEndpointsResponse extends AcsResponse {
 
 		public void setServiceName(String serviceName) {
 			this.serviceName = serviceName;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public List<TagModel> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<TagModel> tags) {
+			this.tags = tags;
+		}
+
+		public static class TagModel {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 	}
 

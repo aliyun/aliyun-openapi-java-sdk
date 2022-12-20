@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.privatelink.model.v20200415.ListVpcEndpointServicesResponse;
 import com.aliyuncs.privatelink.model.v20200415.ListVpcEndpointServicesResponse.Service;
+import com.aliyuncs.privatelink.model.v20200415.ListVpcEndpointServicesResponse.Service.TagModel;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -28,7 +29,7 @@ public class ListVpcEndpointServicesResponseUnmarshaller {
 		
 		listVpcEndpointServicesResponse.setRequestId(_ctx.stringValue("ListVpcEndpointServicesResponse.RequestId"));
 		listVpcEndpointServicesResponse.setNextToken(_ctx.stringValue("ListVpcEndpointServicesResponse.NextToken"));
-		listVpcEndpointServicesResponse.setMaxResults(_ctx.stringValue("ListVpcEndpointServicesResponse.MaxResults"));
+		listVpcEndpointServicesResponse.setMaxResults(_ctx.integerValue("ListVpcEndpointServicesResponse.MaxResults"));
 
 		List<Service> services = new ArrayList<Service>();
 		for (int i = 0; i < _ctx.lengthValue("ListVpcEndpointServicesResponse.Services.Length"); i++) {
@@ -49,6 +50,18 @@ public class ListVpcEndpointServicesResponseUnmarshaller {
 			service.setServiceDescription(_ctx.stringValue("ListVpcEndpointServicesResponse.Services["+ i +"].ServiceDescription"));
 			service.setServiceResourceType(_ctx.stringValue("ListVpcEndpointServicesResponse.Services["+ i +"].ServiceResourceType"));
 			service.setServiceType(_ctx.stringValue("ListVpcEndpointServicesResponse.Services["+ i +"].ServiceType"));
+			service.setServiceSupportIPv6(_ctx.booleanValue("ListVpcEndpointServicesResponse.Services["+ i +"].ServiceSupportIPv6"));
+			service.setResourceGroupId(_ctx.stringValue("ListVpcEndpointServicesResponse.Services["+ i +"].ResourceGroupId"));
+
+			List<TagModel> tags = new ArrayList<TagModel>();
+			for (int j = 0; j < _ctx.lengthValue("ListVpcEndpointServicesResponse.Services["+ i +"].Tags.Length"); j++) {
+				TagModel tagModel = new TagModel();
+				tagModel.setKey(_ctx.stringValue("ListVpcEndpointServicesResponse.Services["+ i +"].Tags["+ j +"].Key"));
+				tagModel.setValue(_ctx.stringValue("ListVpcEndpointServicesResponse.Services["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tagModel);
+			}
+			service.setTags(tags);
 
 			services.add(service);
 		}
