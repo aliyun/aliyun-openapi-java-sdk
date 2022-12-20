@@ -59,20 +59,20 @@ public class ScanImageResponse extends AcsResponse {
 
 		public static class Result {
 
-			private String taskId;
+			private String imageURL;
 
 			private String dataId;
 
-			private String imageURL;
+			private String taskId;
 
 			private List<SubResult> subResults;
 
-			public String getTaskId() {
-				return this.taskId;
+			public String getImageURL() {
+				return this.imageURL;
 			}
 
-			public void setTaskId(String taskId) {
-				this.taskId = taskId;
+			public void setImageURL(String imageURL) {
+				this.imageURL = imageURL;
 			}
 
 			public String getDataId() {
@@ -83,12 +83,12 @@ public class ScanImageResponse extends AcsResponse {
 				this.dataId = dataId;
 			}
 
-			public String getImageURL() {
-				return this.imageURL;
+			public String getTaskId() {
+				return this.taskId;
 			}
 
-			public void setImageURL(String imageURL) {
-				this.imageURL = imageURL;
+			public void setTaskId(String taskId) {
+				this.taskId = taskId;
 			}
 
 			public List<SubResult> getSubResults() {
@@ -103,21 +103,21 @@ public class ScanImageResponse extends AcsResponse {
 
 				private String suggestion;
 
-				private Float rate;
-
 				private String label;
 
 				private String scene;
 
-				private List<Frame> frames;
+				private Float rate;
 
 				private List<SfaceData> sfaceDataList;
 
 				private List<HintWordsInfo> hintWordsInfoList;
 
-				private List<LogoData> logoDataList;
-
 				private List<ProgramCodeData> programCodeDataList;
+
+				private List<Frame> frames;
+
+				private List<LogoData> logoDataList;
 
 				private List<String> oCRDataList;
 
@@ -127,14 +127,6 @@ public class ScanImageResponse extends AcsResponse {
 
 				public void setSuggestion(String suggestion) {
 					this.suggestion = suggestion;
-				}
-
-				public Float getRate() {
-					return this.rate;
-				}
-
-				public void setRate(Float rate) {
-					this.rate = rate;
 				}
 
 				public String getLabel() {
@@ -153,12 +145,12 @@ public class ScanImageResponse extends AcsResponse {
 					this.scene = scene;
 				}
 
-				public List<Frame> getFrames() {
-					return this.frames;
+				public Float getRate() {
+					return this.rate;
 				}
 
-				public void setFrames(List<Frame> frames) {
-					this.frames = frames;
+				public void setRate(Float rate) {
+					this.rate = rate;
 				}
 
 				public List<SfaceData> getSfaceDataList() {
@@ -177,20 +169,28 @@ public class ScanImageResponse extends AcsResponse {
 					this.hintWordsInfoList = hintWordsInfoList;
 				}
 
-				public List<LogoData> getLogoDataList() {
-					return this.logoDataList;
-				}
-
-				public void setLogoDataList(List<LogoData> logoDataList) {
-					this.logoDataList = logoDataList;
-				}
-
 				public List<ProgramCodeData> getProgramCodeDataList() {
 					return this.programCodeDataList;
 				}
 
 				public void setProgramCodeDataList(List<ProgramCodeData> programCodeDataList) {
 					this.programCodeDataList = programCodeDataList;
+				}
+
+				public List<Frame> getFrames() {
+					return this.frames;
+				}
+
+				public void setFrames(List<Frame> frames) {
+					this.frames = frames;
+				}
+
+				public List<LogoData> getLogoDataList() {
+					return this.logoDataList;
+				}
+
+				public void setLogoDataList(List<LogoData> logoDataList) {
+					this.logoDataList = logoDataList;
 				}
 
 				public List<String> getOCRDataList() {
@@ -201,55 +201,24 @@ public class ScanImageResponse extends AcsResponse {
 					this.oCRDataList = oCRDataList;
 				}
 
-				public static class Frame {
-
-					private Float rate;
-
-					private String uRL;
-
-					public Float getRate() {
-						return this.rate;
-					}
-
-					public void setRate(Float rate) {
-						this.rate = rate;
-					}
-
-					public String getURL() {
-						return this.uRL;
-					}
-
-					public void setURL(String uRL) {
-						this.uRL = uRL;
-					}
-				}
-
 				public static class SfaceData {
-
-					private Float x;
-
-					private Float y;
-
-					private Float height;
 
 					private Float width;
 
+					private Float height;
+
+					private Float y;
+
+					private Float x;
+
 					private List<Face> faces;
 
-					public Float getX() {
-						return this.x;
+					public Float getWidth() {
+						return this.width;
 					}
 
-					public void setX(Float x) {
-						this.x = x;
-					}
-
-					public Float getY() {
-						return this.y;
-					}
-
-					public void setY(Float y) {
-						this.y = y;
+					public void setWidth(Float width) {
+						this.width = width;
 					}
 
 					public Float getHeight() {
@@ -260,12 +229,20 @@ public class ScanImageResponse extends AcsResponse {
 						this.height = height;
 					}
 
-					public Float getWidth() {
-						return this.width;
+					public Float getY() {
+						return this.y;
 					}
 
-					public void setWidth(Float width) {
-						this.width = width;
+					public void setY(Float y) {
+						this.y = y;
+					}
+
+					public Float getX() {
+						return this.x;
+					}
+
+					public void setX(Float x) {
+						this.x = x;
 					}
 
 					public List<Face> getFaces() {
@@ -278,18 +255,18 @@ public class ScanImageResponse extends AcsResponse {
 
 					public static class Face {
 
-						private Float rate;
+						private String name;
 
 						private String id;
 
-						private String name;
+						private Float rate;
 
-						public Float getRate() {
-							return this.rate;
+						public String getName() {
+							return this.name;
 						}
 
-						public void setRate(Float rate) {
-							this.rate = rate;
+						public void setName(String name) {
+							this.name = name;
 						}
 
 						public String getId() {
@@ -300,12 +277,12 @@ public class ScanImageResponse extends AcsResponse {
 							this.id = id;
 						}
 
-						public String getName() {
-							return this.name;
+						public Float getRate() {
+							return this.rate;
 						}
 
-						public void setName(String name) {
-							this.name = name;
+						public void setRate(Float rate) {
+							this.rate = rate;
 						}
 					}
 				}
@@ -323,19 +300,85 @@ public class ScanImageResponse extends AcsResponse {
 					}
 				}
 
+				public static class ProgramCodeData {
+
+					private Float width;
+
+					private Float height;
+
+					private Float y;
+
+					private Float x;
+
+					public Float getWidth() {
+						return this.width;
+					}
+
+					public void setWidth(Float width) {
+						this.width = width;
+					}
+
+					public Float getHeight() {
+						return this.height;
+					}
+
+					public void setHeight(Float height) {
+						this.height = height;
+					}
+
+					public Float getY() {
+						return this.y;
+					}
+
+					public void setY(Float y) {
+						this.y = y;
+					}
+
+					public Float getX() {
+						return this.x;
+					}
+
+					public void setX(Float x) {
+						this.x = x;
+					}
+				}
+
+				public static class Frame {
+
+					private String uRL;
+
+					private Float rate;
+
+					public String getURL() {
+						return this.uRL;
+					}
+
+					public void setURL(String uRL) {
+						this.uRL = uRL;
+					}
+
+					public Float getRate() {
+						return this.rate;
+					}
+
+					public void setRate(Float rate) {
+						this.rate = rate;
+					}
+				}
+
 				public static class LogoData {
 
 					private String type;
 
-					private Float x;
-
-					private Float y;
+					private Float width;
 
 					private Float height;
 
-					private Float width;
+					private Float y;
 
 					private String name;
+
+					private Float x;
 
 					public String getType() {
 						return this.type;
@@ -345,20 +388,12 @@ public class ScanImageResponse extends AcsResponse {
 						this.type = type;
 					}
 
-					public Float getX() {
-						return this.x;
+					public Float getWidth() {
+						return this.width;
 					}
 
-					public void setX(Float x) {
-						this.x = x;
-					}
-
-					public Float getY() {
-						return this.y;
-					}
-
-					public void setY(Float y) {
-						this.y = y;
+					public void setWidth(Float width) {
+						this.width = width;
 					}
 
 					public Float getHeight() {
@@ -369,12 +404,12 @@ public class ScanImageResponse extends AcsResponse {
 						this.height = height;
 					}
 
-					public Float getWidth() {
-						return this.width;
+					public Float getY() {
+						return this.y;
 					}
 
-					public void setWidth(Float width) {
-						this.width = width;
+					public void setY(Float y) {
+						this.y = y;
 					}
 
 					public String getName() {
@@ -384,17 +419,6 @@ public class ScanImageResponse extends AcsResponse {
 					public void setName(String name) {
 						this.name = name;
 					}
-				}
-
-				public static class ProgramCodeData {
-
-					private Float x;
-
-					private Float y;
-
-					private Float height;
-
-					private Float width;
 
 					public Float getX() {
 						return this.x;
@@ -402,30 +426,6 @@ public class ScanImageResponse extends AcsResponse {
 
 					public void setX(Float x) {
 						this.x = x;
-					}
-
-					public Float getY() {
-						return this.y;
-					}
-
-					public void setY(Float y) {
-						this.y = y;
-					}
-
-					public Float getHeight() {
-						return this.height;
-					}
-
-					public void setHeight(Float height) {
-						this.height = height;
-					}
-
-					public Float getWidth() {
-						return this.width;
-					}
-
-					public void setWidth(Float width) {
-						this.width = width;
 					}
 				}
 			}
