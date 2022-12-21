@@ -14,6 +14,7 @@
 
 package com.aliyuncs.dms_enterprise.model.v20181101;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.dms_enterprise.transform.v20181101.AddTaskFlowEdgesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -31,6 +32,8 @@ public class AddTaskFlowEdgesResponse extends AcsResponse {
 	private String errorMessage;
 
 	private Boolean success;
+
+	private List<Long> edgeIds;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -62,6 +65,14 @@ public class AddTaskFlowEdgesResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public List<Long> getEdgeIds() {
+		return this.edgeIds;
+	}
+
+	public void setEdgeIds(List<Long> edgeIds) {
+		this.edgeIds = edgeIds;
 	}
 
 	@Override

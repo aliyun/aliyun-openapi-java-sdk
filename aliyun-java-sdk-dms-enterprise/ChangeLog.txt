@@ -1,3 +1,6 @@
+2022-12-21 Version: 1.43.0
+- Supported GetProxyAccess API.
+
 2022-12-02 Version: 1.42.0
 - Supported GetStructSyncOrderDetail OrderId param required.
 

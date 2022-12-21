@@ -14,6 +14,9 @@
 
 package com.aliyuncs.dms_enterprise.transform.v20181101;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.dms_enterprise.model.v20181101.AddTaskFlowEdgesResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -26,6 +29,12 @@ public class AddTaskFlowEdgesResponseUnmarshaller {
 		addTaskFlowEdgesResponse.setErrorCode(_ctx.stringValue("AddTaskFlowEdgesResponse.ErrorCode"));
 		addTaskFlowEdgesResponse.setErrorMessage(_ctx.stringValue("AddTaskFlowEdgesResponse.ErrorMessage"));
 		addTaskFlowEdgesResponse.setSuccess(_ctx.booleanValue("AddTaskFlowEdgesResponse.Success"));
+
+		List<Long> edgeIds = new ArrayList<Long>();
+		for (int i = 0; i < _ctx.lengthValue("AddTaskFlowEdgesResponse.EdgeIds.Length"); i++) {
+			edgeIds.add(_ctx.longValue("AddTaskFlowEdgesResponse.EdgeIds["+ i +"]"));
+		}
+		addTaskFlowEdgesResponse.setEdgeIds(edgeIds);
 	 
 	 	return addTaskFlowEdgesResponse;
 	}

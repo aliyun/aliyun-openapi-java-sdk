@@ -85,6 +85,8 @@ public class ListTaskFlowCooperatorsResponse extends AcsResponse {
 
 		private String realName;
 
+		private String userId;
+
 		public String getNickName() {
 			return this.nickName;
 		}
@@ -115,6 +117,14 @@ public class ListTaskFlowCooperatorsResponse extends AcsResponse {
 
 		public void setRealName(String realName) {
 			this.realName = realName;
+		}
+
+		public String getUserId() {
+			return this.userId;
+		}
+
+		public void setUserId(String userId) {
+			this.userId = userId;
 		}
 	}
 

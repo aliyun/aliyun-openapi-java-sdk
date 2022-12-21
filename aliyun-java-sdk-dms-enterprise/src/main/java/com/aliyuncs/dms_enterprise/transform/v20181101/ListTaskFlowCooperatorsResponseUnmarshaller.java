@@ -38,6 +38,7 @@ public class ListTaskFlowCooperatorsResponseUnmarshaller {
 			cooperator.setEmail(_ctx.stringValue("ListTaskFlowCooperatorsResponse.CooperatorList["+ i +"].Email"));
 			cooperator.setLoginName(_ctx.stringValue("ListTaskFlowCooperatorsResponse.CooperatorList["+ i +"].LoginName"));
 			cooperator.setRealName(_ctx.stringValue("ListTaskFlowCooperatorsResponse.CooperatorList["+ i +"].RealName"));
+			cooperator.setUserId(_ctx.stringValue("ListTaskFlowCooperatorsResponse.CooperatorList["+ i +"].UserId"));
 
 			cooperatorList.add(cooperator);
 		}
