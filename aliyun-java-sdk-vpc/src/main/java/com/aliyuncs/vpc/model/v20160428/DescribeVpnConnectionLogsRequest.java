@@ -22,12 +22,18 @@ import com.aliyuncs.vpc.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsResponse> {
+public class DescribeVpnConnectionLogsRequest extends RpcAcsRequest<DescribeVpnConnectionLogsResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String productType;
+	private Integer pageNumber;
+
+	private Integer minutePeriod;
+
+	private Integer pageSize;
+
+	private Integer from;
 
 	private String resourceOwnerAccount;
 
@@ -35,9 +41,11 @@ public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsRespons
 
 	private Long ownerId;
 
-	private String acceptLanguage;
-	public DescribeRegionsRequest() {
-		super("Vpc", "2016-04-28", "DescribeRegions", "vpc");
+	private String vpnConnectionId;
+
+	private Integer to;
+	public DescribeVpnConnectionLogsRequest() {
+		super("Vpc", "2016-04-28", "DescribeVpnConnectionLogs", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -56,14 +64,47 @@ public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsRespons
 		}
 	}
 
-	public String getProductType() {
-		return this.productType;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setProductType(String productType) {
-		this.productType = productType;
-		if(productType != null){
-			putQueryParameter("ProductType", productType);
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getMinutePeriod() {
+		return this.minutePeriod;
+	}
+
+	public void setMinutePeriod(Integer minutePeriod) {
+		this.minutePeriod = minutePeriod;
+		if(minutePeriod != null){
+			putQueryParameter("MinutePeriod", minutePeriod.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Integer getFrom() {
+		return this.from;
+	}
+
+	public void setFrom(Integer from) {
+		this.from = from;
+		if(from != null){
+			putQueryParameter("From", from.toString());
 		}
 	}
 
@@ -100,20 +141,31 @@ public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsRespons
 		}
 	}
 
-	public String getAcceptLanguage() {
-		return this.acceptLanguage;
+	public String getVpnConnectionId() {
+		return this.vpnConnectionId;
 	}
 
-	public void setAcceptLanguage(String acceptLanguage) {
-		this.acceptLanguage = acceptLanguage;
-		if(acceptLanguage != null){
-			putQueryParameter("AcceptLanguage", acceptLanguage);
+	public void setVpnConnectionId(String vpnConnectionId) {
+		this.vpnConnectionId = vpnConnectionId;
+		if(vpnConnectionId != null){
+			putQueryParameter("VpnConnectionId", vpnConnectionId);
+		}
+	}
+
+	public Integer getTo() {
+		return this.to;
+	}
+
+	public void setTo(Integer to) {
+		this.to = to;
+		if(to != null){
+			putQueryParameter("To", to.toString());
 		}
 	}
 
 	@Override
-	public Class<DescribeRegionsResponse> getResponseClass() {
-		return DescribeRegionsResponse.class;
+	public Class<DescribeVpnConnectionLogsResponse> getResponseClass() {
+		return DescribeVpnConnectionLogsResponse.class;
 	}
 
 }

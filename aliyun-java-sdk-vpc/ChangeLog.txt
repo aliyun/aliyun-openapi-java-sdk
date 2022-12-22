@@ -1,3 +1,10 @@
+2022-12-22 Version: 3.2.11
+- Support FlowLog Managed.
+- Add error code for DeleteFullNatEntry, ListFullNatEntries, DescribeNatGateways.
+- Change timeout for CreateFullNatEntry, DescribeNatGateways.
+- Add error code.
+- TagCode ExpressConnect.
+
 2022-12-15 Version: 3.2.10
 - Supported ShareType for ListPublicIpAddressPools.
 - Supported OwnerId for ListPublicIpAddressPools.
