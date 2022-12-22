@@ -1,3 +1,7 @@
+2022-12-22 Version: 3.2.12
+- Supported set high definition monitor log status for eip.
+- Supported batch associate eip to cloud products.
+
 2022-12-22 Version: 3.2.11
 - Support FlowLog Managed.
 - Add error code for DeleteFullNatEntry, ListFullNatEntries, DescribeNatGateways.

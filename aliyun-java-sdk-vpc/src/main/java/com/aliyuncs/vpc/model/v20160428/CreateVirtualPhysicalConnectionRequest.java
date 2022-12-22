@@ -31,8 +31,6 @@ public class CreateVirtualPhysicalConnectionRequest extends RpcAcsRequest<Create
 
 	private Long vlanId;
 
-	private String vpconnUidResourceGroupId;
-
 	private String description;
 
 	private String spec;
@@ -85,17 +83,6 @@ public class CreateVirtualPhysicalConnectionRequest extends RpcAcsRequest<Create
 		this.vlanId = vlanId;
 		if(vlanId != null){
 			putQueryParameter("VlanId", vlanId.toString());
-		}
-	}
-
-	public String getVpconnUidResourceGroupId() {
-		return this.vpconnUidResourceGroupId;
-	}
-
-	public void setVpconnUidResourceGroupId(String vpconnUidResourceGroupId) {
-		this.vpconnUidResourceGroupId = vpconnUidResourceGroupId;
-		if(vpconnUidResourceGroupId != null){
-			putQueryParameter("VpconnUidResourceGroupId", vpconnUidResourceGroupId);
 		}
 	}
 
