@@ -157,6 +157,8 @@ public class QuerySavingsPlansInstanceResponse extends AcsResponse {
 
 			private String payMode;
 
+			private String deductCycleType;
+
 			private List<Tag> tags;
 
 			public String getStatus() {
@@ -309,6 +311,14 @@ public class QuerySavingsPlansInstanceResponse extends AcsResponse {
 
 			public void setPayMode(String payMode) {
 				this.payMode = payMode;
+			}
+
+			public String getDeductCycleType() {
+				return this.deductCycleType;
+			}
+
+			public void setDeductCycleType(String deductCycleType) {
+				this.deductCycleType = deductCycleType;
 			}
 
 			public List<Tag> getTags() {

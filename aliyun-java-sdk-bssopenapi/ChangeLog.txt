@@ -1,3 +1,7 @@
+2022-12-23 Version: 1.8.3
+- Add DescribeInstanceAmortizedCostByAmortizationPeriod.
+- Add DescribeProductAmortizedCostByAmortizationPeriod.
+
 2022-12-06 Version: 1.8.2
 - Add describeCostBudgetsSummary.
 

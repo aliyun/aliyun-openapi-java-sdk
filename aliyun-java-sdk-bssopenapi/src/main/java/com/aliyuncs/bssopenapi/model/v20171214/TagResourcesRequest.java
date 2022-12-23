@@ -28,9 +28,9 @@ public class TagResourcesRequest extends RpcAcsRequest<TagResourcesResponse> {
 
 	private List<String> resourceIds;
 
-	private List<Tag> tags;
-
 	private String resourceType;
+
+	private List<Tag> tags;
 	public TagResourcesRequest() {
 		super("BssOpenApi", "2017-12-14", "TagResources");
 		setMethod(MethodType.POST);
@@ -53,6 +53,17 @@ public class TagResourcesRequest extends RpcAcsRequest<TagResourcesResponse> {
 		}	
 	}
 
+	public String getResourceType() {
+		return this.resourceType;
+	}
+
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
+		}
+	}
+
 	public List<Tag> getTags() {
 		return this.tags;
 	}
@@ -65,17 +76,6 @@ public class TagResourcesRequest extends RpcAcsRequest<TagResourcesResponse> {
 				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
-	}
-
-	public String getResourceType() {
-		return this.resourceType;
-	}
-
-	public void setResourceType(String resourceType) {
-		this.resourceType = resourceType;
-		if(resourceType != null){
-			putQueryParameter("ResourceType", resourceType);
-		}
 	}
 
 	public static class Tag {
