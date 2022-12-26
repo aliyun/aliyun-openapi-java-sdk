@@ -1,3 +1,6 @@
+2022-12-26 Version: 1.5.13
+- 增加IP协议版本配置接口.
+
 2022-12-08 Version: 1.5.12
 - Generated 2018-01-20 for `Linkvisual`.
 
