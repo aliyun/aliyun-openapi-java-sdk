@@ -1,3 +1,12 @@
+2022-12-27 Version: 4.24.44
+- CreateImage support system tag.
+- Fixed ModifyImageAttribute error code.
+- Add CreateRouteEntry ErrorCode Map.
+- Add parameter for ModifyPrepayInstanceSpec.
+- Support  networkCard.
+- Add responselog.
+- Support Attributes field in DescribeDiagnosticReportAttributes.
+
 2022-11-29 Version: 4.24.43
 - Add error code for ModifyInstanceNetworkSpec.
 - Add invalid account buying spot error code.

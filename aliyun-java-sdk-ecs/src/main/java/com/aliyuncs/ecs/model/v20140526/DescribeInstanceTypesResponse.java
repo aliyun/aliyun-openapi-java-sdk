@@ -129,6 +129,10 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 		private Float gPUMemorySize;
 
+		private Integer networkCardQuantity;
+
+		private List<NetworkCardInfo> networkCards;
+
 		public Integer getEniTotalQuantity() {
 			return this.eniTotalQuantity;
 		}
@@ -415,6 +419,35 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 		public void setGPUMemorySize(Float gPUMemorySize) {
 			this.gPUMemorySize = gPUMemorySize;
+		}
+
+		public Integer getNetworkCardQuantity() {
+			return this.networkCardQuantity;
+		}
+
+		public void setNetworkCardQuantity(Integer networkCardQuantity) {
+			this.networkCardQuantity = networkCardQuantity;
+		}
+
+		public List<NetworkCardInfo> getNetworkCards() {
+			return this.networkCards;
+		}
+
+		public void setNetworkCards(List<NetworkCardInfo> networkCards) {
+			this.networkCards = networkCards;
+		}
+
+		public static class NetworkCardInfo {
+
+			private Integer networkCardIndex;
+
+			public Integer getNetworkCardIndex() {
+				return this.networkCardIndex;
+			}
+
+			public void setNetworkCardIndex(Integer networkCardIndex) {
+				this.networkCardIndex = networkCardIndex;
+			}
 		}
 	}
 

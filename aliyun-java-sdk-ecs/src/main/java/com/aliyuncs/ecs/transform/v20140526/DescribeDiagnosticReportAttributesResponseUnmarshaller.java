@@ -38,6 +38,7 @@ public class DescribeDiagnosticReportAttributesResponseUnmarshaller {
 		describeDiagnosticReportAttributesResponse.setEndTime(_ctx.stringValue("DescribeDiagnosticReportAttributesResponse.EndTime"));
 		describeDiagnosticReportAttributesResponse.setSeverity(_ctx.stringValue("DescribeDiagnosticReportAttributesResponse.Severity"));
 		describeDiagnosticReportAttributesResponse.setMetricSetId(_ctx.stringValue("DescribeDiagnosticReportAttributesResponse.MetricSetId"));
+		describeDiagnosticReportAttributesResponse.setAttributes(_ctx.stringValue("DescribeDiagnosticReportAttributesResponse.Attributes"));
 
 		List<MetricResult> metricResults = new ArrayList<MetricResult>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDiagnosticReportAttributesResponse.MetricResults.Length"); i++) {

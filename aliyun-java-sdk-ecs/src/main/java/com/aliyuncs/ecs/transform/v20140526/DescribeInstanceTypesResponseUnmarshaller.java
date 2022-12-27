@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceTypesResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstanceTypesResponse.InstanceType;
+import com.aliyuncs.ecs.model.v20140526.DescribeInstanceTypesResponse.InstanceType.NetworkCardInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -68,6 +69,16 @@ public class DescribeInstanceTypesResponseUnmarshaller {
 			instanceType.setInstanceCategory(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].InstanceCategory"));
 			instanceType.setCpuArchitecture(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].CpuArchitecture"));
 			instanceType.setGPUMemorySize(_ctx.floatValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].GPUMemorySize"));
+			instanceType.setNetworkCardQuantity(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].NetworkCardQuantity"));
+
+			List<NetworkCardInfo> networkCards = new ArrayList<NetworkCardInfo>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].NetworkCards.Length"); j++) {
+				NetworkCardInfo networkCardInfo = new NetworkCardInfo();
+				networkCardInfo.setNetworkCardIndex(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].NetworkCards["+ j +"].NetworkCardIndex"));
+
+				networkCards.add(networkCardInfo);
+			}
+			instanceType.setNetworkCards(networkCards);
 
 			instanceTypes.add(instanceType);
 		}

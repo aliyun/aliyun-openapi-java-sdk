@@ -47,6 +47,8 @@ public class DescribeDiagnosticReportAttributesResponse extends AcsResponse {
 
 	private String metricSetId;
 
+	private String attributes;
+
 	private List<MetricResult> metricResults;
 
 	public String getRequestId() {
@@ -135,6 +137,14 @@ public class DescribeDiagnosticReportAttributesResponse extends AcsResponse {
 
 	public void setMetricSetId(String metricSetId) {
 		this.metricSetId = metricSetId;
+	}
+
+	public String getAttributes() {
+		return this.attributes;
+	}
+
+	public void setAttributes(String attributes) {
+		this.attributes = attributes;
 	}
 
 	public List<MetricResult> getMetricResults() {
