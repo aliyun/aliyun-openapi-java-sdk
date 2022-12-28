@@ -1,3 +1,6 @@
+2022-12-28 Version: 3.9.29
+- Live sdk update.
+
 2022-12-08 Version: 3.9.28
 - Add live message mute related interface.
 
