@@ -52,6 +52,25 @@ public class DescribePriceResponseUnmarshaller {
 			coupon.setIsSelected(_ctx.stringValue("DescribePriceResponse.Order.Coupons["+ i +"].IsSelected"));
 			coupon.setCouponNo(_ctx.stringValue("DescribePriceResponse.Order.Coupons["+ i +"].CouponNo"));
 			coupon.setName(_ctx.stringValue("DescribePriceResponse.Order.Coupons["+ i +"].Name"));
+			coupon.setCanPromFee(_ctx.doubleValue("DescribePriceResponse.Order.Coupons["+ i +"].CanPromFee"));
+			coupon.setPromotionOptionCode(_ctx.stringValue("DescribePriceResponse.Order.Coupons["+ i +"].PromotionOptionCode"));
+			coupon.setLackForPriceBreak(_ctx.doubleValue("DescribePriceResponse.Order.Coupons["+ i +"].LackForPriceBreak"));
+			coupon.setPriceBreakThreshold(_ctx.doubleValue("DescribePriceResponse.Order.Coupons["+ i +"].PriceBreakThreshold"));
+			coupon.setPriceBreakReduceValue(_ctx.doubleValue("DescribePriceResponse.Order.Coupons["+ i +"].PriceBreakReduceValue"));
+			coupon.setOptionCode(_ctx.stringValue("DescribePriceResponse.Order.Coupons["+ i +"].OptionCode"));
+			coupon.setActivityCategory(_ctx.stringValue("DescribePriceResponse.Order.Coupons["+ i +"].ActivityCategory"));
+
+			List<Long> promotionRuleIdList = new ArrayList<Long>();
+			for (int j = 0; j < _ctx.lengthValue("DescribePriceResponse.Order.Coupons["+ i +"].PromotionRuleIdList.Length"); j++) {
+				promotionRuleIdList.add(_ctx.longValue("DescribePriceResponse.Order.Coupons["+ i +"].PromotionRuleIdList["+ j +"]"));
+			}
+			coupon.setPromotionRuleIdList(promotionRuleIdList);
+
+			List<String> targetArticleItemCodes = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribePriceResponse.Order.Coupons["+ i +"].TargetArticleItemCodes.Length"); j++) {
+				targetArticleItemCodes.add(_ctx.stringValue("DescribePriceResponse.Order.Coupons["+ i +"].TargetArticleItemCodes["+ j +"]"));
+			}
+			coupon.setTargetArticleItemCodes(targetArticleItemCodes);
 
 			coupons.add(coupon);
 		}

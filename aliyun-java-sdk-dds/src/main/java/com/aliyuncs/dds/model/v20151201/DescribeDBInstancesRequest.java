@@ -45,6 +45,8 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 
 	private Integer pageSize;
 
+	private String dBNodeType;
+
 	private String dBInstanceId;
 
 	private String dBInstanceDescription;
@@ -186,6 +188,17 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getDBNodeType() {
+		return this.dBNodeType;
+	}
+
+	public void setDBNodeType(String dBNodeType) {
+		this.dBNodeType = dBNodeType;
+		if(dBNodeType != null){
+			putQueryParameter("DBNodeType", dBNodeType);
 		}
 	}
 

@@ -243,6 +243,24 @@ public class DescribePriceResponse extends AcsResponse {
 
 			private String name;
 
+			private Double canPromFee;
+
+			private String promotionOptionCode;
+
+			private Double lackForPriceBreak;
+
+			private Double priceBreakThreshold;
+
+			private Double priceBreakReduceValue;
+
+			private String optionCode;
+
+			private String activityCategory;
+
+			private List<Long> promotionRuleIdList;
+
+			private List<String> targetArticleItemCodes;
+
 			public String getDescription() {
 				return this.description;
 			}
@@ -273,6 +291,78 @@ public class DescribePriceResponse extends AcsResponse {
 
 			public void setName(String name) {
 				this.name = name;
+			}
+
+			public Double getCanPromFee() {
+				return this.canPromFee;
+			}
+
+			public void setCanPromFee(Double canPromFee) {
+				this.canPromFee = canPromFee;
+			}
+
+			public String getPromotionOptionCode() {
+				return this.promotionOptionCode;
+			}
+
+			public void setPromotionOptionCode(String promotionOptionCode) {
+				this.promotionOptionCode = promotionOptionCode;
+			}
+
+			public Double getLackForPriceBreak() {
+				return this.lackForPriceBreak;
+			}
+
+			public void setLackForPriceBreak(Double lackForPriceBreak) {
+				this.lackForPriceBreak = lackForPriceBreak;
+			}
+
+			public Double getPriceBreakThreshold() {
+				return this.priceBreakThreshold;
+			}
+
+			public void setPriceBreakThreshold(Double priceBreakThreshold) {
+				this.priceBreakThreshold = priceBreakThreshold;
+			}
+
+			public Double getPriceBreakReduceValue() {
+				return this.priceBreakReduceValue;
+			}
+
+			public void setPriceBreakReduceValue(Double priceBreakReduceValue) {
+				this.priceBreakReduceValue = priceBreakReduceValue;
+			}
+
+			public String getOptionCode() {
+				return this.optionCode;
+			}
+
+			public void setOptionCode(String optionCode) {
+				this.optionCode = optionCode;
+			}
+
+			public String getActivityCategory() {
+				return this.activityCategory;
+			}
+
+			public void setActivityCategory(String activityCategory) {
+				this.activityCategory = activityCategory;
+			}
+
+			public List<Long> getPromotionRuleIdList() {
+				return this.promotionRuleIdList;
+			}
+
+			public void setPromotionRuleIdList(List<Long> promotionRuleIdList) {
+				this.promotionRuleIdList = promotionRuleIdList;
+			}
+
+			public List<String> getTargetArticleItemCodes() {
+				return this.targetArticleItemCodes;
+			}
+
+			public void setTargetArticleItemCodes(List<String> targetArticleItemCodes) {
+				this.targetArticleItemCodes = targetArticleItemCodes;
 			}
 		}
 	}
