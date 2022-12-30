@@ -24,9 +24,9 @@ public class LabelPartnerUserResponseUnmarshaller {
 	public static LabelPartnerUserResponse unmarshall(LabelPartnerUserResponse labelPartnerUserResponse, UnmarshallerContext _ctx) {
 		
 		labelPartnerUserResponse.setRequestId(_ctx.stringValue("LabelPartnerUserResponse.RequestId"));
-		labelPartnerUserResponse.setSuccess(_ctx.booleanValue("LabelPartnerUserResponse.Success"));
 		labelPartnerUserResponse.setCode(_ctx.stringValue("LabelPartnerUserResponse.Code"));
 		labelPartnerUserResponse.setMessage(_ctx.stringValue("LabelPartnerUserResponse.Message"));
+		labelPartnerUserResponse.setSuccess(_ctx.booleanValue("LabelPartnerUserResponse.Success"));
 
 		Data data = new Data();
 		data.setUserPK(_ctx.longValue("LabelPartnerUserResponse.Data.UserPK"));

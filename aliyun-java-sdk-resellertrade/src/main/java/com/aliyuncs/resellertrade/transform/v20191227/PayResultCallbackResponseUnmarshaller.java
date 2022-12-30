@@ -23,10 +23,10 @@ public class PayResultCallbackResponseUnmarshaller {
 	public static PayResultCallbackResponse unmarshall(PayResultCallbackResponse payResultCallbackResponse, UnmarshallerContext _ctx) {
 		
 		payResultCallbackResponse.setRequestId(_ctx.stringValue("PayResultCallbackResponse.RequestId"));
-		payResultCallbackResponse.setSuccess(_ctx.booleanValue("PayResultCallbackResponse.Success"));
 		payResultCallbackResponse.setCode(_ctx.stringValue("PayResultCallbackResponse.Code"));
 		payResultCallbackResponse.setMessage(_ctx.stringValue("PayResultCallbackResponse.Message"));
 		payResultCallbackResponse.setData(_ctx.booleanValue("PayResultCallbackResponse.Data"));
+		payResultCallbackResponse.setSuccess(_ctx.booleanValue("PayResultCallbackResponse.Success"));
 	 
 	 	return payResultCallbackResponse;
 	}

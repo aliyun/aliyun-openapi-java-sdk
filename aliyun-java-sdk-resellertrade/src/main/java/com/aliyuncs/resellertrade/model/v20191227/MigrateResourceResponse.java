@@ -15,14 +15,14 @@
 package com.aliyuncs.resellertrade.model.v20191227;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.resellertrade.transform.v20191227.TransferResourceResponseUnmarshaller;
+import com.aliyuncs.resellertrade.transform.v20191227.MigrateResourceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class TransferResourceResponse extends AcsResponse {
+public class MigrateResourceResponse extends AcsResponse {
 
 	private String code;
 
@@ -76,16 +76,16 @@ public class TransferResourceResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String procEnv;
+		private String procEnvir;
 
 		private String content;
 
-		public String getProcEnv() {
-			return this.procEnv;
+		public String getProcEnvir() {
+			return this.procEnvir;
 		}
 
-		public void setProcEnv(String procEnv) {
-			this.procEnv = procEnv;
+		public void setProcEnvir(String procEnvir) {
+			this.procEnvir = procEnvir;
 		}
 
 		public String getContent() {
@@ -98,8 +98,8 @@ public class TransferResourceResponse extends AcsResponse {
 	}
 
 	@Override
-	public TransferResourceResponse getInstance(UnmarshallerContext context) {
-		return	TransferResourceResponseUnmarshaller.unmarshall(this, context);
+	public MigrateResourceResponse getInstance(UnmarshallerContext context) {
+		return	MigrateResourceResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

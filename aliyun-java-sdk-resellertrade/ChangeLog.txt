@@ -1,3 +1,6 @@
+2022-12-30 Version: 1.0.3
+- Update api frequency.
+
 2020-03-10 Version: 1.0.2
 - Deploy GetCustomerList Service.
 

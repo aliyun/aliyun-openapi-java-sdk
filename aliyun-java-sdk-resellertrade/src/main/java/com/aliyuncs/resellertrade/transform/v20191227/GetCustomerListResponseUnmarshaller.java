@@ -27,9 +27,9 @@ public class GetCustomerListResponseUnmarshaller {
 	public static GetCustomerListResponse unmarshall(GetCustomerListResponse getCustomerListResponse, UnmarshallerContext _ctx) {
 		
 		getCustomerListResponse.setRequestId(_ctx.stringValue("GetCustomerListResponse.RequestId"));
-		getCustomerListResponse.setSuccess(_ctx.booleanValue("GetCustomerListResponse.Success"));
 		getCustomerListResponse.setCode(_ctx.stringValue("GetCustomerListResponse.Code"));
 		getCustomerListResponse.setMessage(_ctx.stringValue("GetCustomerListResponse.Message"));
+		getCustomerListResponse.setSuccess(_ctx.booleanValue("GetCustomerListResponse.Success"));
 
 		Data data = new Data();
 		data.setTotalSize(_ctx.integerValue("GetCustomerListResponse.Data.TotalSize"));

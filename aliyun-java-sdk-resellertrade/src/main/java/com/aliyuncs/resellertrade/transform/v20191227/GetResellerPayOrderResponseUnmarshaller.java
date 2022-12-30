@@ -24,15 +24,15 @@ public class GetResellerPayOrderResponseUnmarshaller {
 	public static GetResellerPayOrderResponse unmarshall(GetResellerPayOrderResponse getResellerPayOrderResponse, UnmarshallerContext _ctx) {
 		
 		getResellerPayOrderResponse.setRequestId(_ctx.stringValue("GetResellerPayOrderResponse.RequestId"));
-		getResellerPayOrderResponse.setSuccess(_ctx.booleanValue("GetResellerPayOrderResponse.Success"));
 		getResellerPayOrderResponse.setCode(_ctx.stringValue("GetResellerPayOrderResponse.Code"));
 		getResellerPayOrderResponse.setMessage(_ctx.stringValue("GetResellerPayOrderResponse.Message"));
+		getResellerPayOrderResponse.setSuccess(_ctx.booleanValue("GetResellerPayOrderResponse.Success"));
 
 		Data data = new Data();
-		data.setOrderId(_ctx.stringValue("GetResellerPayOrderResponse.Data.OrderId"));
-		data.setOrderStatus(_ctx.stringValue("GetResellerPayOrderResponse.Data.OrderStatus"));
-		data.setBuyerId(_ctx.stringValue("GetResellerPayOrderResponse.Data.BuyerId"));
 		data.setPayAmount(_ctx.stringValue("GetResellerPayOrderResponse.Data.PayAmount"));
+		data.setOrderStatus(_ctx.stringValue("GetResellerPayOrderResponse.Data.OrderStatus"));
+		data.setOrderId(_ctx.stringValue("GetResellerPayOrderResponse.Data.OrderId"));
+		data.setBuyerId(_ctx.stringValue("GetResellerPayOrderResponse.Data.BuyerId"));
 		getResellerPayOrderResponse.setData(data);
 	 
 	 	return getResellerPayOrderResponse;
