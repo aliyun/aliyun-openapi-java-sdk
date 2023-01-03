@@ -16,18 +16,18 @@ package com.aliyuncs.arms.model.v20190808;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.arms.transform.v20190808.SearchTraceAppByNameResponseUnmarshaller;
+import com.aliyuncs.arms.transform.v20190808.GetRetcodeAppByPidResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SearchTraceAppByNameResponse extends AcsResponse {
+public class GetRetcodeAppByPidResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<TraceApp> traceApps;
+	private RetcodeApp retcodeApp;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,47 +37,27 @@ public class SearchTraceAppByNameResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<TraceApp> getTraceApps() {
-		return this.traceApps;
+	public RetcodeApp getRetcodeApp() {
+		return this.retcodeApp;
 	}
 
-	public void setTraceApps(List<TraceApp> traceApps) {
-		this.traceApps = traceApps;
+	public void setRetcodeApp(RetcodeApp retcodeApp) {
+		this.retcodeApp = retcodeApp;
 	}
 
-	public static class TraceApp {
-
-		private String type;
+	public static class RetcodeApp {
 
 		private String appName;
 
-		private Long updateTime;
+		private String retcodeAppType;
 
-		private Boolean show;
-
-		private Long createTime;
+		private String appId;
 
 		private String pid;
-
-		private Long appId;
-
-		private String userId;
-
-		private String regionId;
 
 		private String resourceGroupId;
 
 		private List<TagsItem> tags;
-
-		private List<String> labels;
-
-		public String getType() {
-			return this.type;
-		}
-
-		public void setType(String type) {
-			this.type = type;
-		}
 
 		public String getAppName() {
 			return this.appName;
@@ -87,28 +67,20 @@ public class SearchTraceAppByNameResponse extends AcsResponse {
 			this.appName = appName;
 		}
 
-		public Long getUpdateTime() {
-			return this.updateTime;
+		public String getRetcodeAppType() {
+			return this.retcodeAppType;
 		}
 
-		public void setUpdateTime(Long updateTime) {
-			this.updateTime = updateTime;
+		public void setRetcodeAppType(String retcodeAppType) {
+			this.retcodeAppType = retcodeAppType;
 		}
 
-		public Boolean getShow() {
-			return this.show;
+		public String getAppId() {
+			return this.appId;
 		}
 
-		public void setShow(Boolean show) {
-			this.show = show;
-		}
-
-		public Long getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
+		public void setAppId(String appId) {
+			this.appId = appId;
 		}
 
 		public String getPid() {
@@ -117,30 +89,6 @@ public class SearchTraceAppByNameResponse extends AcsResponse {
 
 		public void setPid(String pid) {
 			this.pid = pid;
-		}
-
-		public Long getAppId() {
-			return this.appId;
-		}
-
-		public void setAppId(Long appId) {
-			this.appId = appId;
-		}
-
-		public String getUserId() {
-			return this.userId;
-		}
-
-		public void setUserId(String userId) {
-			this.userId = userId;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
 		}
 
 		public String getResourceGroupId() {
@@ -157,14 +105,6 @@ public class SearchTraceAppByNameResponse extends AcsResponse {
 
 		public void setTags(List<TagsItem> tags) {
 			this.tags = tags;
-		}
-
-		public List<String> getLabels() {
-			return this.labels;
-		}
-
-		public void setLabels(List<String> labels) {
-			this.labels = labels;
 		}
 
 		public static class TagsItem {
@@ -192,8 +132,8 @@ public class SearchTraceAppByNameResponse extends AcsResponse {
 	}
 
 	@Override
-	public SearchTraceAppByNameResponse getInstance(UnmarshallerContext context) {
-		return	SearchTraceAppByNameResponseUnmarshaller.unmarshall(this, context);
+	public GetRetcodeAppByPidResponse getInstance(UnmarshallerContext context) {
+		return	GetRetcodeAppByPidResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

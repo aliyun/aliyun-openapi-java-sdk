@@ -22,13 +22,13 @@ import com.aliyuncs.arms.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetTraceAppRequest extends RpcAcsRequest<GetTraceAppResponse> {
+public class GetRetcodeAppByPidRequest extends RpcAcsRequest<GetRetcodeAppByPidResponse> {
 	   
 
 	private String pid;
-	public GetTraceAppRequest() {
-		super("ARMS", "2019-08-08", "GetTraceApp", "arms");
-		setMethod(MethodType.POST);
+	public GetRetcodeAppByPidRequest() {
+		super("ARMS", "2019-08-08", "GetRetcodeAppByPid", "arms");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -47,8 +47,8 @@ public class GetTraceAppRequest extends RpcAcsRequest<GetTraceAppResponse> {
 	}
 
 	@Override
-	public Class<GetTraceAppResponse> getResponseClass() {
-		return GetTraceAppResponse.class;
+	public Class<GetRetcodeAppByPidResponse> getResponseClass() {
+		return GetRetcodeAppByPidResponse.class;
 	}
 
 }

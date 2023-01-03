@@ -28,7 +28,6 @@ public class GetTraceAppResponseUnmarshaller {
 	public static GetTraceAppResponse unmarshall(GetTraceAppResponse getTraceAppResponse, UnmarshallerContext _ctx) {
 		
 		getTraceAppResponse.setRequestId(_ctx.stringValue("GetTraceAppResponse.RequestId"));
-		getTraceAppResponse.setResourceGroupId(_ctx.stringValue("GetTraceAppResponse.ResourceGroupId"));
 
 		TraceApp traceApp = new TraceApp();
 		traceApp.setType(_ctx.stringValue("GetTraceAppResponse.TraceApp.Type"));
@@ -41,6 +40,7 @@ public class GetTraceAppResponseUnmarshaller {
 		traceApp.setUserId(_ctx.stringValue("GetTraceAppResponse.TraceApp.UserId"));
 		traceApp.setRegionId(_ctx.stringValue("GetTraceAppResponse.TraceApp.RegionId"));
 		traceApp.setSource(_ctx.stringValue("GetTraceAppResponse.TraceApp.Source"));
+		traceApp.setResourceGroupId(_ctx.stringValue("GetTraceAppResponse.TraceApp.ResourceGroupId"));
 
 		List<String> labels = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetTraceAppResponse.TraceApp.Labels.Length"); i++) {
@@ -51,8 +51,8 @@ public class GetTraceAppResponseUnmarshaller {
 		List<TagsItem> tags = new ArrayList<TagsItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetTraceAppResponse.TraceApp.Tags.Length"); i++) {
 			TagsItem tagsItem = new TagsItem();
-			tagsItem.setTagKey(_ctx.stringValue("GetTraceAppResponse.TraceApp.Tags["+ i +"].TagKey"));
-			tagsItem.setTagValue(_ctx.stringValue("GetTraceAppResponse.TraceApp.Tags["+ i +"].TagValue"));
+			tagsItem.setKey(_ctx.stringValue("GetTraceAppResponse.TraceApp.Tags["+ i +"].Key"));
+			tagsItem.setValue(_ctx.stringValue("GetTraceAppResponse.TraceApp.Tags["+ i +"].Value"));
 
 			tags.add(tagsItem);
 		}

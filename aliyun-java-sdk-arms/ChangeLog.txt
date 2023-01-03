@@ -1,3 +1,6 @@
+2023-01-03 Version: 2.8.27
+- Update TraceApp and RetcodeApp related APIs.
+
 2023-01-03 Version: 2.8.26
 - Update TraceApp and RetcodeApp related APIs.
 
