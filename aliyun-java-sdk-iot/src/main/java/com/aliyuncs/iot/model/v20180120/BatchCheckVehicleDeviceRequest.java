@@ -15,6 +15,7 @@
 package com.aliyuncs.iot.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.iot.Endpoint;
 
@@ -22,40 +23,21 @@ import com.aliyuncs.iot.Endpoint;
  * @author auto create
  * @version 
  */
-public class RRpcRequest extends RpcAcsRequest<RRpcResponse> {
+public class BatchCheckVehicleDeviceRequest extends RpcAcsRequest<BatchCheckVehicleDeviceResponse> {
 	   
-
-	private Integer timeout;
 
 	private String iotInstanceId;
 
-	private String requestBase64Byte;
-
 	private String productKey;
 
-	private String contentType;
-
-	private String topic;
-
-	private String deviceName;
-	public RRpcRequest() {
-		super("Iot", "2018-01-20", "RRpc");
+	private List<DeviceList> deviceLists;
+	public BatchCheckVehicleDeviceRequest() {
+		super("Iot", "2018-01-20", "BatchCheckVehicleDevice");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getTimeout() {
-		return this.timeout;
-	}
-
-	public void setTimeout(Integer timeout) {
-		this.timeout = timeout;
-		if(timeout != null){
-			putQueryParameter("Timeout", timeout.toString());
-		}
 	}
 
 	public String getIotInstanceId() {
@@ -66,17 +48,6 @@ public class RRpcRequest extends RpcAcsRequest<RRpcResponse> {
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
 			putQueryParameter("IotInstanceId", iotInstanceId);
-		}
-	}
-
-	public String getRequestBase64Byte() {
-		return this.requestBase64Byte;
-	}
-
-	public void setRequestBase64Byte(String requestBase64Byte) {
-		this.requestBase64Byte = requestBase64Byte;
-		if(requestBase64Byte != null){
-			putQueryParameter("RequestBase64Byte", requestBase64Byte);
 		}
 	}
 
@@ -91,42 +62,57 @@ public class RRpcRequest extends RpcAcsRequest<RRpcResponse> {
 		}
 	}
 
-	public String getContentType() {
-		return this.contentType;
+	public List<DeviceList> getDeviceLists() {
+		return this.deviceLists;
 	}
 
-	public void setContentType(String contentType) {
-		this.contentType = contentType;
-		if(contentType != null){
-			putQueryParameter("ContentType", contentType);
+	public void setDeviceLists(List<DeviceList> deviceLists) {
+		this.deviceLists = deviceLists;	
+		if (deviceLists != null) {
+			for (int depth1 = 0; depth1 < deviceLists.size(); depth1++) {
+				putQueryParameter("DeviceList." + (depth1 + 1) + ".DeviceId" , deviceLists.get(depth1).getDeviceId());
+				putQueryParameter("DeviceList." + (depth1 + 1) + ".Manufacturer" , deviceLists.get(depth1).getManufacturer());
+				putQueryParameter("DeviceList." + (depth1 + 1) + ".DeviceModel" , deviceLists.get(depth1).getDeviceModel());
+			}
+		}	
+	}
+
+	public static class DeviceList {
+
+		private String deviceId;
+
+		private String manufacturer;
+
+		private String deviceModel;
+
+		public String getDeviceId() {
+			return this.deviceId;
 		}
-	}
 
-	public String getTopic() {
-		return this.topic;
-	}
-
-	public void setTopic(String topic) {
-		this.topic = topic;
-		if(topic != null){
-			putQueryParameter("Topic", topic);
+		public void setDeviceId(String deviceId) {
+			this.deviceId = deviceId;
 		}
-	}
 
-	public String getDeviceName() {
-		return this.deviceName;
-	}
+		public String getManufacturer() {
+			return this.manufacturer;
+		}
 
-	public void setDeviceName(String deviceName) {
-		this.deviceName = deviceName;
-		if(deviceName != null){
-			putQueryParameter("DeviceName", deviceName);
+		public void setManufacturer(String manufacturer) {
+			this.manufacturer = manufacturer;
+		}
+
+		public String getDeviceModel() {
+			return this.deviceModel;
+		}
+
+		public void setDeviceModel(String deviceModel) {
+			this.deviceModel = deviceModel;
 		}
 	}
 
 	@Override
-	public Class<RRpcResponse> getResponseClass() {
-		return RRpcResponse.class;
+	public Class<BatchCheckVehicleDeviceResponse> getResponseClass() {
+		return BatchCheckVehicleDeviceResponse.class;
 	}
 
 }
