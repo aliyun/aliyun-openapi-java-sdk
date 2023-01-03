@@ -25,6 +25,10 @@ import com.aliyuncs.arms.Endpoint;
 public class DescribeContactsRequest extends RpcAcsRequest<DescribeContactsResponse> {
 	   
 
+	private String contactIds;
+
+	private String verbose;
+
 	private String contactName;
 
 	private Long size;
@@ -41,6 +45,28 @@ public class DescribeContactsRequest extends RpcAcsRequest<DescribeContactsRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getContactIds() {
+		return this.contactIds;
+	}
+
+	public void setContactIds(String contactIds) {
+		this.contactIds = contactIds;
+		if(contactIds != null){
+			putQueryParameter("ContactIds", contactIds);
+		}
+	}
+
+	public String getVerbose() {
+		return this.verbose;
+	}
+
+	public void setVerbose(String verbose) {
+		this.verbose = verbose;
+		if(verbose != null){
+			putQueryParameter("Verbose", verbose);
+		}
 	}
 
 	public String getContactName() {

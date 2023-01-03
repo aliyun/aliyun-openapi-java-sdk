@@ -22,21 +22,34 @@ import com.aliyuncs.arms.Endpoint;
  * @author auto create
  * @version 
  */
-public class TurnOnSecondSwitchRequest extends RpcAcsRequest<TurnOnSecondSwitchResponse> {
+public class GetRetcodeDataByQueryRequest extends RpcAcsRequest<GetRetcodeDataByQueryResponse> {
 	   
+
+	private String query;
 
 	private String pid;
 
-	private Long releaseStartTime;
+	private Long from;
 
-	private String proxyUserId;
-	public TurnOnSecondSwitchRequest() {
-		super("ARMS", "2019-08-08", "TurnOnSecondSwitch", "arms");
-		setMethod(MethodType.GET);
+	private Long to;
+	public GetRetcodeDataByQueryRequest() {
+		super("ARMS", "2019-08-08", "GetRetcodeDataByQuery", "arms");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getQuery() {
+		return this.query;
+	}
+
+	public void setQuery(String query) {
+		this.query = query;
+		if(query != null){
+			putQueryParameter("Query", query);
+		}
 	}
 
 	public String getPid() {
@@ -50,31 +63,31 @@ public class TurnOnSecondSwitchRequest extends RpcAcsRequest<TurnOnSecondSwitchR
 		}
 	}
 
-	public Long getReleaseStartTime() {
-		return this.releaseStartTime;
+	public Long getFrom() {
+		return this.from;
 	}
 
-	public void setReleaseStartTime(Long releaseStartTime) {
-		this.releaseStartTime = releaseStartTime;
-		if(releaseStartTime != null){
-			putQueryParameter("ReleaseStartTime", releaseStartTime.toString());
+	public void setFrom(Long from) {
+		this.from = from;
+		if(from != null){
+			putQueryParameter("From", from.toString());
 		}
 	}
 
-	public String getProxyUserId() {
-		return this.proxyUserId;
+	public Long getTo() {
+		return this.to;
 	}
 
-	public void setProxyUserId(String proxyUserId) {
-		this.proxyUserId = proxyUserId;
-		if(proxyUserId != null){
-			putQueryParameter("ProxyUserId", proxyUserId);
+	public void setTo(Long to) {
+		this.to = to;
+		if(to != null){
+			putQueryParameter("To", to.toString());
 		}
 	}
 
 	@Override
-	public Class<TurnOnSecondSwitchResponse> getResponseClass() {
-		return TurnOnSecondSwitchResponse.class;
+	public Class<GetRetcodeDataByQueryResponse> getResponseClass() {
+		return GetRetcodeDataByQueryResponse.class;
 	}
 
 }

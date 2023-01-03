@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.arms.model.v20190808.SearchRetcodeAppByPageResponse;
 import com.aliyuncs.arms.model.v20190808.SearchRetcodeAppByPageResponse.PageBean;
 import com.aliyuncs.arms.model.v20190808.SearchRetcodeAppByPageResponse.PageBean.RetcodeApp;
+import com.aliyuncs.arms.model.v20190808.SearchRetcodeAppByPageResponse.PageBean.RetcodeApp.TagsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -47,6 +48,17 @@ public class SearchRetcodeAppByPageResponseUnmarshaller {
 			retcodeApp.setUserId(_ctx.stringValue("SearchRetcodeAppByPageResponse.PageBean.RetcodeApps["+ i +"].UserId"));
 			retcodeApp.setRegionId(_ctx.stringValue("SearchRetcodeAppByPageResponse.PageBean.RetcodeApps["+ i +"].RegionId"));
 			retcodeApp.setNickName(_ctx.stringValue("SearchRetcodeAppByPageResponse.PageBean.RetcodeApps["+ i +"].NickName"));
+			retcodeApp.setResourceGroupId(_ctx.stringValue("SearchRetcodeAppByPageResponse.PageBean.RetcodeApps["+ i +"].ResourceGroupId"));
+
+			List<TagsItem> tags = new ArrayList<TagsItem>();
+			for (int j = 0; j < _ctx.lengthValue("SearchRetcodeAppByPageResponse.PageBean.RetcodeApps["+ i +"].Tags.Length"); j++) {
+				TagsItem tagsItem = new TagsItem();
+				tagsItem.setKey(_ctx.stringValue("SearchRetcodeAppByPageResponse.PageBean.RetcodeApps["+ i +"].Tags["+ j +"].Key"));
+				tagsItem.setValue(_ctx.stringValue("SearchRetcodeAppByPageResponse.PageBean.RetcodeApps["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tagsItem);
+			}
+			retcodeApp.setTags(tags);
 
 			retcodeApps.add(retcodeApp);
 		}

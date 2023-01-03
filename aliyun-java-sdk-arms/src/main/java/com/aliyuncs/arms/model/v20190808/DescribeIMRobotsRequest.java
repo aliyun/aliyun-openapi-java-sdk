@@ -27,6 +27,8 @@ public class DescribeIMRobotsRequest extends RpcAcsRequest<DescribeIMRobotsRespo
 
 	private Long size;
 
+	private String robotIds;
+
 	private String robotName;
 
 	private Long page;
@@ -47,6 +49,17 @@ public class DescribeIMRobotsRequest extends RpcAcsRequest<DescribeIMRobotsRespo
 		this.size = size;
 		if(size != null){
 			putQueryParameter("Size", size.toString());
+		}
+	}
+
+	public String getRobotIds() {
+		return this.robotIds;
+	}
+
+	public void setRobotIds(String robotIds) {
+		this.robotIds = robotIds;
+		if(robotIds != null){
+			putQueryParameter("RobotIds", robotIds);
 		}
 	}
 

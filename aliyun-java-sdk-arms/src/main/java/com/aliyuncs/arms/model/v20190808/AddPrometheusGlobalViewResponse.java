@@ -50,7 +50,7 @@ public class AddPrometheusGlobalViewResponse extends AcsResponse {
 
 		private String msg;
 
-		private String info;
+		private Info info;
 
 		public Boolean getSuccess() {
 			return this.success;
@@ -68,12 +68,45 @@ public class AddPrometheusGlobalViewResponse extends AcsResponse {
 			this.msg = msg;
 		}
 
-		public String getInfo() {
+		public Info getInfo() {
 			return this.info;
 		}
 
-		public void setInfo(String info) {
+		public void setInfo(Info info) {
 			this.info = info;
+		}
+
+		public static class Info {
+
+			private String regionId;
+
+			private String globalViewClusterId;
+
+			private String failedInstances;
+
+			public String getRegionId() {
+				return this.regionId;
+			}
+
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
+			}
+
+			public String getGlobalViewClusterId() {
+				return this.globalViewClusterId;
+			}
+
+			public void setGlobalViewClusterId(String globalViewClusterId) {
+				this.globalViewClusterId = globalViewClusterId;
+			}
+
+			public String getFailedInstances() {
+				return this.failedInstances;
+			}
+
+			public void setFailedInstances(String failedInstances) {
+				this.failedInstances = failedInstances;
+			}
 		}
 	}
 

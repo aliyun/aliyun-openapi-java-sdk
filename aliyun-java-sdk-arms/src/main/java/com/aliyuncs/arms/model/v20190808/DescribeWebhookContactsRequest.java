@@ -30,6 +30,8 @@ public class DescribeWebhookContactsRequest extends RpcAcsRequest<DescribeWebhoo
 	private String webhookName;
 
 	private Long page;
+
+	private String contactIds;
 	public DescribeWebhookContactsRequest() {
 		super("ARMS", "2019-08-08", "DescribeWebhookContacts", "arms");
 		setMethod(MethodType.GET);
@@ -69,6 +71,17 @@ public class DescribeWebhookContactsRequest extends RpcAcsRequest<DescribeWebhoo
 		this.page = page;
 		if(page != null){
 			putQueryParameter("Page", page.toString());
+		}
+	}
+
+	public String getContactIds() {
+		return this.contactIds;
+	}
+
+	public void setContactIds(String contactIds) {
+		this.contactIds = contactIds;
+		if(contactIds != null){
+			putQueryParameter("ContactIds", contactIds);
 		}
 	}
 

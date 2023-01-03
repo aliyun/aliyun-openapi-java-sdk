@@ -31,6 +31,8 @@ public class ListNotificationPoliciesRequest extends RpcAcsRequest<ListNotificat
 
 	private Boolean isDetail;
 
+	private String ids;
+
 	private Long page;
 	public ListNotificationPoliciesRequest() {
 		super("ARMS", "2019-08-08", "ListNotificationPolicies", "arms");
@@ -71,6 +73,17 @@ public class ListNotificationPoliciesRequest extends RpcAcsRequest<ListNotificat
 		this.isDetail = isDetail;
 		if(isDetail != null){
 			putQueryParameter("IsDetail", isDetail.toString());
+		}
+	}
+
+	public String getIds() {
+		return this.ids;
+	}
+
+	public void setIds(String ids) {
+		this.ids = ids;
+		if(ids != null){
+			putQueryParameter("Ids", ids);
 		}
 	}
 

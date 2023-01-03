@@ -95,6 +95,10 @@ public class ListTraceAppsResponse extends AcsResponse {
 
 		private String regionId;
 
+		private String resourceGroupId;
+
+		private String source;
+
 		private List<TagsItem> tags;
 
 		private List<String> labels;
@@ -171,6 +175,22 @@ public class ListTraceAppsResponse extends AcsResponse {
 			this.regionId = regionId;
 		}
 
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getSource() {
+			return this.source;
+		}
+
+		public void setSource(String source) {
+			this.source = source;
+		}
+
 		public List<TagsItem> getTags() {
 			return this.tags;
 		}
@@ -189,24 +209,24 @@ public class ListTraceAppsResponse extends AcsResponse {
 
 		public static class TagsItem {
 
-			private String tagKey;
+			private String key;
 
-			private String tagValue;
+			private String value;
 
-			public String getTagKey() {
-				return this.tagKey;
+			public String getKey() {
+				return this.key;
 			}
 
-			public void setTagKey(String tagKey) {
-				this.tagKey = tagKey;
+			public void setKey(String key) {
+				this.key = key;
 			}
 
-			public String getTagValue() {
-				return this.tagValue;
+			public String getValue() {
+				return this.value;
 			}
 
-			public void setTagValue(String tagValue) {
-				this.tagValue = tagValue;
+			public void setValue(String value) {
+				this.value = value;
 			}
 		}
 	}

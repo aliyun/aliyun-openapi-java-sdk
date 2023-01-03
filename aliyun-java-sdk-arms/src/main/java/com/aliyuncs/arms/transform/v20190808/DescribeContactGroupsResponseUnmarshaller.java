@@ -40,6 +40,7 @@ public class DescribeContactGroupsResponseUnmarshaller {
 			ContactGroups contactGroups = new ContactGroups();
 			contactGroups.setContactGroupId(_ctx.floatValue("DescribeContactGroupsResponse.PageBean.AlertContactGroups["+ i +"].ContactGroupId"));
 			contactGroups.setContactGroupName(_ctx.stringValue("DescribeContactGroupsResponse.PageBean.AlertContactGroups["+ i +"].ContactGroupName"));
+			contactGroups.setArmsContactGroupId(_ctx.longValue("DescribeContactGroupsResponse.PageBean.AlertContactGroups["+ i +"].ArmsContactGroupId"));
 
 			List<ContactsItem> contacts = new ArrayList<ContactsItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeContactGroupsResponse.PageBean.AlertContactGroups["+ i +"].Contacts.Length"); j++) {
@@ -48,6 +49,9 @@ public class DescribeContactGroupsResponseUnmarshaller {
 				contactsItem.setContactName(_ctx.stringValue("DescribeContactGroupsResponse.PageBean.AlertContactGroups["+ i +"].Contacts["+ j +"].ContactName"));
 				contactsItem.setPhone(_ctx.stringValue("DescribeContactGroupsResponse.PageBean.AlertContactGroups["+ i +"].Contacts["+ j +"].Phone"));
 				contactsItem.setEmail(_ctx.stringValue("DescribeContactGroupsResponse.PageBean.AlertContactGroups["+ i +"].Contacts["+ j +"].Email"));
+				contactsItem.setArmsContactId(_ctx.longValue("DescribeContactGroupsResponse.PageBean.AlertContactGroups["+ i +"].Contacts["+ j +"].ArmsContactId"));
+				contactsItem.setWebhook(_ctx.stringValue("DescribeContactGroupsResponse.PageBean.AlertContactGroups["+ i +"].Contacts["+ j +"].Webhook"));
+				contactsItem.setDingRobotUrl(_ctx.stringValue("DescribeContactGroupsResponse.PageBean.AlertContactGroups["+ i +"].Contacts["+ j +"].DingRobotUrl"));
 
 				contacts.add(contactsItem);
 			}

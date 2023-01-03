@@ -27,6 +27,8 @@ public class GetTraceAppResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String resourceGroupId;
+
 	private TraceApp traceApp;
 
 	public String getRequestId() {
@@ -35,6 +37,14 @@ public class GetTraceAppResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
 	}
 
 	public TraceApp getTraceApp() {
@@ -64,6 +74,10 @@ public class GetTraceAppResponse extends AcsResponse {
 		private String userId;
 
 		private String regionId;
+
+		private String source;
+
+		private List<TagsItem> tags;
 
 		private List<String> labels;
 
@@ -139,12 +153,51 @@ public class GetTraceAppResponse extends AcsResponse {
 			this.regionId = regionId;
 		}
 
+		public String getSource() {
+			return this.source;
+		}
+
+		public void setSource(String source) {
+			this.source = source;
+		}
+
+		public List<TagsItem> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<TagsItem> tags) {
+			this.tags = tags;
+		}
+
 		public List<String> getLabels() {
 			return this.labels;
 		}
 
 		public void setLabels(List<String> labels) {
 			this.labels = labels;
+		}
+
+		public static class TagsItem {
+
+			private String tagKey;
+
+			private String tagValue;
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
+			}
 		}
 	}
 

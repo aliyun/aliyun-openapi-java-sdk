@@ -25,6 +25,10 @@ import com.aliyuncs.arms.Endpoint;
 public class InstallManagedPrometheusRequest extends RpcAcsRequest<InstallManagedPrometheusResponse> {
 	   
 
+	private String grafanaInstanceId;
+
+	private String clusterName;
+
 	private String securityGroupId;
 
 	private String clusterId;
@@ -43,6 +47,28 @@ public class InstallManagedPrometheusRequest extends RpcAcsRequest<InstallManage
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getGrafanaInstanceId() {
+		return this.grafanaInstanceId;
+	}
+
+	public void setGrafanaInstanceId(String grafanaInstanceId) {
+		this.grafanaInstanceId = grafanaInstanceId;
+		if(grafanaInstanceId != null){
+			putQueryParameter("GrafanaInstanceId", grafanaInstanceId);
+		}
+	}
+
+	public String getClusterName() {
+		return this.clusterName;
+	}
+
+	public void setClusterName(String clusterName) {
+		this.clusterName = clusterName;
+		if(clusterName != null){
+			putQueryParameter("ClusterName", clusterName);
+		}
 	}
 
 	public String getSecurityGroupId() {

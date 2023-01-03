@@ -27,6 +27,8 @@ public class GetManagedPrometheusStatusRequest extends RpcAcsRequest<GetManagedP
 
 	private String clusterType;
 
+	private String vpcId;
+
 	private String clusterId;
 	public GetManagedPrometheusStatusRequest() {
 		super("ARMS", "2019-08-08", "GetManagedPrometheusStatus", "arms");
@@ -45,6 +47,17 @@ public class GetManagedPrometheusStatusRequest extends RpcAcsRequest<GetManagedP
 		this.clusterType = clusterType;
 		if(clusterType != null){
 			putQueryParameter("ClusterType", clusterType);
+		}
+	}
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
 		}
 	}
 

@@ -14,6 +14,7 @@
 
 package com.aliyuncs.arms.model.v20190808;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.arms.transform.v20190808.CreateRetcodeAppResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -50,6 +51,10 @@ public class CreateRetcodeAppResponse extends AcsResponse {
 
 		private Long appId;
 
+		private String resourceGroupId;
+
+		private List<TagsItem> tags;
+
 		public String getPid() {
 			return this.pid;
 		}
@@ -64,6 +69,45 @@ public class CreateRetcodeAppResponse extends AcsResponse {
 
 		public void setAppId(Long appId) {
 			this.appId = appId;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public List<TagsItem> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<TagsItem> tags) {
+			this.tags = tags;
+		}
+
+		public static class TagsItem {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 	}
 

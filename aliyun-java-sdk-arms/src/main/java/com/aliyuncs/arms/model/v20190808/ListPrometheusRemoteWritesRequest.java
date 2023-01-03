@@ -22,14 +22,12 @@ import com.aliyuncs.arms.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetTraceAppRequest extends RpcAcsRequest<GetTraceAppResponse> {
+public class ListPrometheusRemoteWritesRequest extends RpcAcsRequest<ListPrometheusRemoteWritesResponse> {
 	   
 
-	private String resourceGroupId;
-
-	private String pid;
-	public GetTraceAppRequest() {
-		super("ARMS", "2019-08-08", "GetTraceApp", "arms");
+	private String clusterId;
+	public ListPrometheusRemoteWritesRequest() {
+		super("ARMS", "2019-08-08", "ListPrometheusRemoteWrites", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +35,20 @@ public class GetTraceAppRequest extends RpcAcsRequest<GetTraceAppResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
+	public String getClusterId() {
+		return this.clusterId;
 	}
 
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
-	public String getPid() {
-		return this.pid;
-	}
-
-	public void setPid(String pid) {
-		this.pid = pid;
-		if(pid != null){
-			putQueryParameter("Pid", pid);
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 
 	@Override
-	public Class<GetTraceAppResponse> getResponseClass() {
-		return GetTraceAppResponse.class;
+	public Class<ListPrometheusRemoteWritesResponse> getResponseClass() {
+		return ListPrometheusRemoteWritesResponse.class;
 	}
 
 }

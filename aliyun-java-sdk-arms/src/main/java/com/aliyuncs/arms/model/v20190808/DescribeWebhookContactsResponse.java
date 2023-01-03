@@ -94,6 +94,8 @@ public class DescribeWebhookContactsResponse extends AcsResponse {
 
 			private String webhookName;
 
+			private Long armsContactId;
+
 			private Webhook webhook;
 
 			public Float getWebhookId() {
@@ -110,6 +112,14 @@ public class DescribeWebhookContactsResponse extends AcsResponse {
 
 			public void setWebhookName(String webhookName) {
 				this.webhookName = webhookName;
+			}
+
+			public Long getArmsContactId() {
+				return this.armsContactId;
+			}
+
+			public void setArmsContactId(Long armsContactId) {
+				this.armsContactId = armsContactId;
 			}
 
 			public Webhook getWebhook() {

@@ -31,9 +31,15 @@ public class CreateOrUpdateContactRequest extends RpcAcsRequest<CreateOrUpdateCo
 
 	private String contactName;
 
+	private String resourceGroupId;
+
+	private String dingRobotUrl;
+
 	private String phone;
 
 	private String email;
+
+	private Boolean isEmailVerify;
 	public CreateOrUpdateContactRequest() {
 		super("ARMS", "2019-08-08", "CreateOrUpdateContact", "arms");
 		setMethod(MethodType.POST);
@@ -76,6 +82,28 @@ public class CreateOrUpdateContactRequest extends RpcAcsRequest<CreateOrUpdateCo
 		}
 	}
 
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getDingRobotUrl() {
+		return this.dingRobotUrl;
+	}
+
+	public void setDingRobotUrl(String dingRobotUrl) {
+		this.dingRobotUrl = dingRobotUrl;
+		if(dingRobotUrl != null){
+			putQueryParameter("DingRobotUrl", dingRobotUrl);
+		}
+	}
+
 	public String getPhone() {
 		return this.phone;
 	}
@@ -95,6 +123,17 @@ public class CreateOrUpdateContactRequest extends RpcAcsRequest<CreateOrUpdateCo
 		this.email = email;
 		if(email != null){
 			putBodyParameter("Email", email);
+		}
+	}
+
+	public Boolean getIsEmailVerify() {
+		return this.isEmailVerify;
+	}
+
+	public void setIsEmailVerify(Boolean isEmailVerify) {
+		this.isEmailVerify = isEmailVerify;
+		if(isEmailVerify != null){
+			putBodyParameter("IsEmailVerify", isEmailVerify.toString());
 		}
 	}
 

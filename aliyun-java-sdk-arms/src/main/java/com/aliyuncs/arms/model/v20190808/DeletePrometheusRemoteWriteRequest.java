@@ -22,14 +22,14 @@ import com.aliyuncs.arms.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetTraceAppRequest extends RpcAcsRequest<GetTraceAppResponse> {
+public class DeletePrometheusRemoteWriteRequest extends RpcAcsRequest<DeletePrometheusRemoteWriteResponse> {
 	   
 
-	private String resourceGroupId;
+	private String remoteWriteNames;
 
-	private String pid;
-	public GetTraceAppRequest() {
-		super("ARMS", "2019-08-08", "GetTraceApp", "arms");
+	private String clusterId;
+	public DeletePrometheusRemoteWriteRequest() {
+		super("ARMS", "2019-08-08", "DeletePrometheusRemoteWrite", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +37,31 @@ public class GetTraceAppRequest extends RpcAcsRequest<GetTraceAppResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
+	public String getRemoteWriteNames() {
+		return this.remoteWriteNames;
 	}
 
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
+	public void setRemoteWriteNames(String remoteWriteNames) {
+		this.remoteWriteNames = remoteWriteNames;
+		if(remoteWriteNames != null){
+			putQueryParameter("RemoteWriteNames", remoteWriteNames);
 		}
 	}
 
-	public String getPid() {
-		return this.pid;
+	public String getClusterId() {
+		return this.clusterId;
 	}
 
-	public void setPid(String pid) {
-		this.pid = pid;
-		if(pid != null){
-			putQueryParameter("Pid", pid);
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 
 	@Override
-	public Class<GetTraceAppResponse> getResponseClass() {
-		return GetTraceAppResponse.class;
+	public Class<DeletePrometheusRemoteWriteResponse> getResponseClass() {
+		return DeletePrometheusRemoteWriteResponse.class;
 	}
 
 }

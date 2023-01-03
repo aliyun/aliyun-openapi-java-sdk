@@ -101,6 +101,14 @@ public class DescribeContactsResponse extends AcsResponse {
 
 			private Long reissueSendNotice;
 
+			private Boolean isEmailVerify;
+
+			private Long armsContactId;
+
+			private String dingRobotUrl;
+
+			private String webhook;
+
 			public Float getContactId() {
 				return this.contactId;
 			}
@@ -147,6 +155,38 @@ public class DescribeContactsResponse extends AcsResponse {
 
 			public void setReissueSendNotice(Long reissueSendNotice) {
 				this.reissueSendNotice = reissueSendNotice;
+			}
+
+			public Boolean getIsEmailVerify() {
+				return this.isEmailVerify;
+			}
+
+			public void setIsEmailVerify(Boolean isEmailVerify) {
+				this.isEmailVerify = isEmailVerify;
+			}
+
+			public Long getArmsContactId() {
+				return this.armsContactId;
+			}
+
+			public void setArmsContactId(Long armsContactId) {
+				this.armsContactId = armsContactId;
+			}
+
+			public String getDingRobotUrl() {
+				return this.dingRobotUrl;
+			}
+
+			public void setDingRobotUrl(String dingRobotUrl) {
+				this.dingRobotUrl = dingRobotUrl;
+			}
+
+			public String getWebhook() {
+				return this.webhook;
+			}
+
+			public void setWebhook(String webhook) {
+				this.webhook = webhook;
 			}
 		}
 	}

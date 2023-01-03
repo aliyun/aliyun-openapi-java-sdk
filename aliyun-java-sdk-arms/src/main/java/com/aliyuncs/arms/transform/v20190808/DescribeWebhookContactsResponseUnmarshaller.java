@@ -41,6 +41,7 @@ public class DescribeWebhookContactsResponseUnmarshaller {
 			WebhookContactsItem webhookContactsItem = new WebhookContactsItem();
 			webhookContactsItem.setWebhookId(_ctx.floatValue("DescribeWebhookContactsResponse.PageBean.WebhookContacts["+ i +"].WebhookId"));
 			webhookContactsItem.setWebhookName(_ctx.stringValue("DescribeWebhookContactsResponse.PageBean.WebhookContacts["+ i +"].WebhookName"));
+			webhookContactsItem.setArmsContactId(_ctx.longValue("DescribeWebhookContactsResponse.PageBean.WebhookContacts["+ i +"].ArmsContactId"));
 
 			Webhook webhook = new Webhook();
 			webhook.setBizMethod(_ctx.stringValue("DescribeWebhookContactsResponse.PageBean.WebhookContacts["+ i +"].Webhook.Method"));

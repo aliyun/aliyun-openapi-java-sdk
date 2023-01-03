@@ -15,18 +15,24 @@
 package com.aliyuncs.arms.model.v20190808;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.arms.transform.v20190808.TurnOnSecondSwitchResponseUnmarshaller;
+import com.aliyuncs.arms.transform.v20190808.ListPrometheusRemoteWritesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class TurnOnSecondSwitchResponse extends AcsResponse {
+public class ListPrometheusRemoteWritesResponse extends AcsResponse {
 
 	private String requestId;
 
 	private String data;
+
+	private Boolean success;
+
+	private String message;
+
+	private Integer code;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,9 +50,33 @@ public class TurnOnSecondSwitchResponse extends AcsResponse {
 		this.data = data;
 	}
 
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public Integer getCode() {
+		return this.code;
+	}
+
+	public void setCode(Integer code) {
+		this.code = code;
+	}
+
 	@Override
-	public TurnOnSecondSwitchResponse getInstance(UnmarshallerContext context) {
-		return	TurnOnSecondSwitchResponseUnmarshaller.unmarshall(this, context);
+	public ListPrometheusRemoteWritesResponse getInstance(UnmarshallerContext context) {
+		return	ListPrometheusRemoteWritesResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

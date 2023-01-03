@@ -27,6 +27,10 @@ public class GetMultipleTraceRequest extends RpcAcsRequest<GetMultipleTraceRespo
 	   
 
 	private List<String> traceIDss;
+
+	private Long endTime;
+
+	private Long startTime;
 	public GetMultipleTraceRequest() {
 		super("ARMS", "2019-08-08", "GetMultipleTrace", "arms");
 		setMethod(MethodType.POST);
@@ -47,6 +51,28 @@ public class GetMultipleTraceRequest extends RpcAcsRequest<GetMultipleTraceRespo
 				putQueryParameter("TraceIDs." + (i + 1) , traceIDss.get(i));
 			}
 		}	
+	}
+
+	public Long getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(Long endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime.toString());
+		}
+	}
+
+	public Long getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(Long startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime.toString());
+		}
 	}
 
 	@Override

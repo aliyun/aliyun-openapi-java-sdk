@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.arms.model.v20190808.ListRetcodeAppsResponse;
 import com.aliyuncs.arms.model.v20190808.ListRetcodeAppsResponse.RetcodeApp;
+import com.aliyuncs.arms.model.v20190808.ListRetcodeAppsResponse.RetcodeApp.TagsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -36,6 +37,17 @@ public class ListRetcodeAppsResponseUnmarshaller {
 			retcodeApp.setAppId(_ctx.longValue("ListRetcodeAppsResponse.RetcodeApps["+ i +"].AppId"));
 			retcodeApp.setPid(_ctx.stringValue("ListRetcodeAppsResponse.RetcodeApps["+ i +"].Pid"));
 			retcodeApp.setNickName(_ctx.stringValue("ListRetcodeAppsResponse.RetcodeApps["+ i +"].NickName"));
+			retcodeApp.setResourceGroupId(_ctx.stringValue("ListRetcodeAppsResponse.RetcodeApps["+ i +"].ResourceGroupId"));
+
+			List<TagsItem> tags = new ArrayList<TagsItem>();
+			for (int j = 0; j < _ctx.lengthValue("ListRetcodeAppsResponse.RetcodeApps["+ i +"].Tags.Length"); j++) {
+				TagsItem tagsItem = new TagsItem();
+				tagsItem.setKey(_ctx.stringValue("ListRetcodeAppsResponse.RetcodeApps["+ i +"].Tags["+ j +"].Key"));
+				tagsItem.setValue(_ctx.stringValue("ListRetcodeAppsResponse.RetcodeApps["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tagsItem);
+			}
+			retcodeApp.setTags(tags);
 
 			retcodeApps.add(retcodeApp);
 		}

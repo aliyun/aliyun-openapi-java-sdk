@@ -27,6 +27,8 @@ public class DescribeContactGroupsRequest extends RpcAcsRequest<DescribeContactG
 
 	private Long size;
 
+	private String groupIds;
+
 	private Boolean isDetail;
 
 	private Long page;
@@ -49,6 +51,17 @@ public class DescribeContactGroupsRequest extends RpcAcsRequest<DescribeContactG
 		this.size = size;
 		if(size != null){
 			putQueryParameter("Size", size.toString());
+		}
+	}
+
+	public String getGroupIds() {
+		return this.groupIds;
+	}
+
+	public void setGroupIds(String groupIds) {
+		this.groupIds = groupIds;
+		if(groupIds != null){
+			putQueryParameter("GroupIds", groupIds);
 		}
 	}
 

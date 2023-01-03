@@ -57,6 +57,10 @@ public class ListRetcodeAppsResponse extends AcsResponse {
 
 		private String nickName;
 
+		private String resourceGroupId;
+
+		private List<TagsItem> tags;
+
 		public String getAppName() {
 			return this.appName;
 		}
@@ -95,6 +99,45 @@ public class ListRetcodeAppsResponse extends AcsResponse {
 
 		public void setNickName(String nickName) {
 			this.nickName = nickName;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public List<TagsItem> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<TagsItem> tags) {
+			this.tags = tags;
+		}
+
+		public static class TagsItem {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 	}
 

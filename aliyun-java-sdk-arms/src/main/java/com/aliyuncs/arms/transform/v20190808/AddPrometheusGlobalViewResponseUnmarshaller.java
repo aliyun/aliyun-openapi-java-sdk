@@ -16,6 +16,7 @@ package com.aliyuncs.arms.transform.v20190808;
 
 import com.aliyuncs.arms.model.v20190808.AddPrometheusGlobalViewResponse;
 import com.aliyuncs.arms.model.v20190808.AddPrometheusGlobalViewResponse.Data;
+import com.aliyuncs.arms.model.v20190808.AddPrometheusGlobalViewResponse.Data.Info;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -28,7 +29,12 @@ public class AddPrometheusGlobalViewResponseUnmarshaller {
 		Data data = new Data();
 		data.setSuccess(_ctx.booleanValue("AddPrometheusGlobalViewResponse.Data.Success"));
 		data.setMsg(_ctx.stringValue("AddPrometheusGlobalViewResponse.Data.Msg"));
-		data.setInfo(_ctx.stringValue("AddPrometheusGlobalViewResponse.Data.Info"));
+
+		Info info = new Info();
+		info.setRegionId(_ctx.stringValue("AddPrometheusGlobalViewResponse.Data.Info.RegionId"));
+		info.setGlobalViewClusterId(_ctx.stringValue("AddPrometheusGlobalViewResponse.Data.Info.GlobalViewClusterId"));
+		info.setFailedInstances(_ctx.stringValue("AddPrometheusGlobalViewResponse.Data.Info.FailedInstances"));
+		data.setInfo(info);
 		addPrometheusGlobalViewResponse.setData(data);
 	 
 	 	return addPrometheusGlobalViewResponse;

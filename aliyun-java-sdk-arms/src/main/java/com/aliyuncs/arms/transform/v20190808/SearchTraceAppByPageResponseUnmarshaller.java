@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.arms.model.v20190808.SearchTraceAppByPageResponse;
 import com.aliyuncs.arms.model.v20190808.SearchTraceAppByPageResponse.PageBean;
 import com.aliyuncs.arms.model.v20190808.SearchTraceAppByPageResponse.PageBean.TraceApp;
+import com.aliyuncs.arms.model.v20190808.SearchTraceAppByPageResponse.PageBean.TraceApp.TagsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -46,12 +47,23 @@ public class SearchTraceAppByPageResponseUnmarshaller {
 			traceApp.setAppId(_ctx.longValue("SearchTraceAppByPageResponse.PageBean.TraceApps["+ i +"].AppId"));
 			traceApp.setUserId(_ctx.stringValue("SearchTraceAppByPageResponse.PageBean.TraceApps["+ i +"].UserId"));
 			traceApp.setRegionId(_ctx.stringValue("SearchTraceAppByPageResponse.PageBean.TraceApps["+ i +"].RegionId"));
+			traceApp.setResourceGroupId(_ctx.stringValue("SearchTraceAppByPageResponse.PageBean.TraceApps["+ i +"].ResourceGroupId"));
 
 			List<String> labels = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("SearchTraceAppByPageResponse.PageBean.TraceApps["+ i +"].Labels.Length"); j++) {
 				labels.add(_ctx.stringValue("SearchTraceAppByPageResponse.PageBean.TraceApps["+ i +"].Labels["+ j +"]"));
 			}
 			traceApp.setLabels(labels);
+
+			List<TagsItem> tags = new ArrayList<TagsItem>();
+			for (int j = 0; j < _ctx.lengthValue("SearchTraceAppByPageResponse.PageBean.TraceApps["+ i +"].Tags.Length"); j++) {
+				TagsItem tagsItem = new TagsItem();
+				tagsItem.setKey(_ctx.stringValue("SearchTraceAppByPageResponse.PageBean.TraceApps["+ i +"].Tags["+ j +"].Key"));
+				tagsItem.setValue(_ctx.stringValue("SearchTraceAppByPageResponse.PageBean.TraceApps["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tagsItem);
+			}
+			traceApp.setTags(tags);
 
 			traceApps.add(traceApp);
 		}
