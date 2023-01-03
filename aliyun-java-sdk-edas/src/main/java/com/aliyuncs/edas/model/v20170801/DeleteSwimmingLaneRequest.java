@@ -25,7 +25,7 @@ import com.aliyuncs.edas.Endpoint;
 public class DeleteSwimmingLaneRequest extends RoaAcsRequest<DeleteSwimmingLaneResponse> {
 	   
 
-	private Integer laneId;
+	private Long laneId;
 	public DeleteSwimmingLaneRequest() {
 		super("Edas", "2017-08-01", "DeleteSwimmingLane", "Edas");
 		setUriPattern("/pop/v5/trafficmgnt/swimming_lanes");
@@ -36,11 +36,11 @@ public class DeleteSwimmingLaneRequest extends RoaAcsRequest<DeleteSwimmingLaneR
 		} catch (Exception e) {}
 	}
 
-	public Integer getLaneId() {
+	public Long getLaneId() {
 		return this.laneId;
 	}
 
-	public void setLaneId(Integer laneId) {
+	public void setLaneId(Long laneId) {
 		this.laneId = laneId;
 		if(laneId != null){
 			putQueryParameter("LaneId", laneId.toString());

@@ -37,7 +37,7 @@ public class InsertOrUpdateRegionRequest extends RoaAcsRequest<InsertOrUpdateReg
 
 	private String mseInstanceId;
 
-	private Integer id;
+	private Long id;
 	public InsertOrUpdateRegionRequest() {
 		super("Edas", "2017-08-01", "InsertOrUpdateRegion", "Edas");
 		setUriPattern("/pop/v5/user_region_def");
@@ -114,11 +114,11 @@ public class InsertOrUpdateRegionRequest extends RoaAcsRequest<InsertOrUpdateReg
 		}
 	}
 
-	public Integer getId() {
+	public Long getId() {
 		return this.id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 		if(id != null){
 			putQueryParameter("Id", id.toString());

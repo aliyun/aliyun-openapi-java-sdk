@@ -27,7 +27,7 @@ public class UpdateSwimmingLaneGroupRequest extends RoaAcsRequest<UpdateSwimming
 
 	private String appIds;
 
-	private Integer groupId;
+	private Long groupId;
 
 	private String name;
 
@@ -53,11 +53,11 @@ public class UpdateSwimmingLaneGroupRequest extends RoaAcsRequest<UpdateSwimming
 		}
 	}
 
-	public Integer getGroupId() {
+	public Long getGroupId() {
 		return this.groupId;
 	}
 
-	public void setGroupId(Integer groupId) {
+	public void setGroupId(Long groupId) {
 		this.groupId = groupId;
 		if(groupId != null){
 			putQueryParameter("GroupId", groupId.toString());

@@ -27,7 +27,7 @@ public class UpdateSwimmingLaneRequest extends RoaAcsRequest<UpdateSwimmingLaneR
 
 	private String appInfos;
 
-	private Integer laneId;
+	private Long laneId;
 
 	private String entryRules;
 
@@ -55,11 +55,11 @@ public class UpdateSwimmingLaneRequest extends RoaAcsRequest<UpdateSwimmingLaneR
 		}
 	}
 
-	public Integer getLaneId() {
+	public Long getLaneId() {
 		return this.laneId;
 	}
 
-	public void setLaneId(Integer laneId) {
+	public void setLaneId(Long laneId) {
 		this.laneId = laneId;
 		if(laneId != null){
 			putQueryParameter("LaneId", laneId.toString());

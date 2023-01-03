@@ -25,7 +25,7 @@ import com.aliyuncs.edas.Endpoint;
 public class ListSwimmingLaneRequest extends RoaAcsRequest<ListSwimmingLaneResponse> {
 	   
 
-	private Integer groupId;
+	private Long groupId;
 	public ListSwimmingLaneRequest() {
 		super("Edas", "2017-08-01", "ListSwimmingLane", "Edas");
 		setUriPattern("/pop/v5/trafficmgnt/swimming_lanes");
@@ -36,11 +36,11 @@ public class ListSwimmingLaneRequest extends RoaAcsRequest<ListSwimmingLaneRespo
 		} catch (Exception e) {}
 	}
 
-	public Integer getGroupId() {
+	public Long getGroupId() {
 		return this.groupId;
 	}
 
-	public void setGroupId(Integer groupId) {
+	public void setGroupId(Long groupId) {
 		this.groupId = groupId;
 		if(groupId != null){
 			putQueryParameter("GroupId", groupId.toString());

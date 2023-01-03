@@ -42,6 +42,7 @@ public class GetServiceProvidersPageResponseUnmarshaller {
 			provider.setTimeout(_ctx.stringValue("GetServiceProvidersPageResponse.Data.Content["+ i +"].Timeout"));
 			provider.setIp(_ctx.stringValue("GetServiceProvidersPageResponse.Data.Content["+ i +"].Ip"));
 			provider.setPort(_ctx.stringValue("GetServiceProvidersPageResponse.Data.Content["+ i +"].Port"));
+			provider.setIannotations(_ctx.stringValue("GetServiceProvidersPageResponse.Data.Content["+ i +"].Iannotations"));
 			provider.setSerializeType(_ctx.stringValue("GetServiceProvidersPageResponse.Data.Content["+ i +"].SerializeType"));
 
 			content.add(provider);

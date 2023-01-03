@@ -25,7 +25,7 @@ import com.aliyuncs.edas.Endpoint;
 public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationResponse> {
 	   
 
-	private Integer buildPackId;
+	private Long buildPackId;
 
 	private String componentIds;
 
@@ -33,7 +33,7 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 
 	private Integer batchWaitTime;
 
-	private Integer releaseType;
+	private Long releaseType;
 
 	private Integer batch;
 
@@ -64,11 +64,11 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		} catch (Exception e) {}
 	}
 
-	public Integer getBuildPackId() {
+	public Long getBuildPackId() {
 		return this.buildPackId;
 	}
 
-	public void setBuildPackId(Integer buildPackId) {
+	public void setBuildPackId(Long buildPackId) {
 		this.buildPackId = buildPackId;
 		if(buildPackId != null){
 			putQueryParameter("BuildPackId", buildPackId.toString());
@@ -108,11 +108,11 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		}
 	}
 
-	public Integer getReleaseType() {
+	public Long getReleaseType() {
 		return this.releaseType;
 	}
 
-	public void setReleaseType(Integer releaseType) {
+	public void setReleaseType(Long releaseType) {
 		this.releaseType = releaseType;
 		if(releaseType != null){
 			putQueryParameter("ReleaseType", releaseType.toString());
