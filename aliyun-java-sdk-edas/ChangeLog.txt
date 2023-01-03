@@ -1,3 +1,6 @@
+2023-01-03 Version: 3.26.14
+- Update UpdateApplicationScalingRule API.
+
 2023-01-03 Version: 3.26.13
 - Update UpdateApplicationScalingRule API.
 
