@@ -1,3 +1,8 @@
+2023-01-03 Version: 2.0.5
+- Supported snapshot link for DBFS.
+- Supported showing snapshot info.
+- Support for showing snapshot info.
+
 2022-12-15 Version: 2.0.4
 - Supported delete snapshots.
 - Supported auto snapshot.

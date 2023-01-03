@@ -97,6 +97,8 @@ public class GetDbfsResponse extends AcsResponse {
 
 		private List<EbsListItem> ebsList;
 
+		private SnapshotInfo snapshotInfo;
+
 		public String getStatus() {
 			return this.status;
 		}
@@ -297,6 +299,14 @@ public class GetDbfsResponse extends AcsResponse {
 			this.ebsList = ebsList;
 		}
 
+		public SnapshotInfo getSnapshotInfo() {
+			return this.snapshotInfo;
+		}
+
+		public void setSnapshotInfo(SnapshotInfo snapshotInfo) {
+			this.snapshotInfo = snapshotInfo;
+		}
+
 		public static class TagList {
 
 			private String tagValue;
@@ -363,6 +373,49 @@ public class GetDbfsResponse extends AcsResponse {
 
 			public void setSizeG(Integer sizeG) {
 				this.sizeG = sizeG;
+			}
+		}
+
+		public static class SnapshotInfo {
+
+			private Integer snapshotCount;
+
+			private String linkId;
+
+			private Long totalSize;
+
+			private String policyId;
+
+			public Integer getSnapshotCount() {
+				return this.snapshotCount;
+			}
+
+			public void setSnapshotCount(Integer snapshotCount) {
+				this.snapshotCount = snapshotCount;
+			}
+
+			public String getLinkId() {
+				return this.linkId;
+			}
+
+			public void setLinkId(String linkId) {
+				this.linkId = linkId;
+			}
+
+			public Long getTotalSize() {
+				return this.totalSize;
+			}
+
+			public void setTotalSize(Long totalSize) {
+				this.totalSize = totalSize;
+			}
+
+			public String getPolicyId() {
+				return this.policyId;
+			}
+
+			public void setPolicyId(String policyId) {
+				this.policyId = policyId;
 			}
 		}
 	}

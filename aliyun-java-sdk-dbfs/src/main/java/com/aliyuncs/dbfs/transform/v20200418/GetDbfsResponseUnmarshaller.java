@@ -21,6 +21,7 @@ import com.aliyuncs.dbfs.model.v20200418.GetDbfsResponse;
 import com.aliyuncs.dbfs.model.v20200418.GetDbfsResponse.DBFSInfo;
 import com.aliyuncs.dbfs.model.v20200418.GetDbfsResponse.DBFSInfo.EbsListItem;
 import com.aliyuncs.dbfs.model.v20200418.GetDbfsResponse.DBFSInfo.EcsListItem;
+import com.aliyuncs.dbfs.model.v20200418.GetDbfsResponse.DBFSInfo.SnapshotInfo;
 import com.aliyuncs.dbfs.model.v20200418.GetDbfsResponse.DBFSInfo.TagList;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -54,6 +55,13 @@ public class GetDbfsResponseUnmarshaller {
 		dBFSInfo.setInstanceType(_ctx.stringValue("GetDbfsResponse.DBFSInfo.InstanceType"));
 		dBFSInfo.setRaidStrip(_ctx.integerValue("GetDbfsResponse.DBFSInfo.RaidStrip"));
 		dBFSInfo.setLastFailed(_ctx.stringValue("GetDbfsResponse.DBFSInfo.LastFailed"));
+
+		SnapshotInfo snapshotInfo = new SnapshotInfo();
+		snapshotInfo.setSnapshotCount(_ctx.integerValue("GetDbfsResponse.DBFSInfo.SnapshotInfo.SnapshotCount"));
+		snapshotInfo.setLinkId(_ctx.stringValue("GetDbfsResponse.DBFSInfo.SnapshotInfo.LinkId"));
+		snapshotInfo.setTotalSize(_ctx.longValue("GetDbfsResponse.DBFSInfo.SnapshotInfo.totalSize"));
+		snapshotInfo.setPolicyId(_ctx.stringValue("GetDbfsResponse.DBFSInfo.SnapshotInfo.PolicyId"));
+		dBFSInfo.setSnapshotInfo(snapshotInfo);
 
 		List<TagList> tags = new ArrayList<TagList>();
 		for (int i = 0; i < _ctx.lengthValue("GetDbfsResponse.DBFSInfo.Tags.Length"); i++) {
