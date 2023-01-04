@@ -506,6 +506,8 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 
 			private String trunkNetworkInterfaceId;
 
+			private Integer networkCardIndex;
+
 			public Integer getDeviceIndex() {
 				return this.deviceIndex;
 			}
@@ -528,6 +530,14 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 
 			public void setTrunkNetworkInterfaceId(String trunkNetworkInterfaceId) {
 				this.trunkNetworkInterfaceId = trunkNetworkInterfaceId;
+			}
+
+			public Integer getNetworkCardIndex() {
+				return this.networkCardIndex;
+			}
+
+			public void setNetworkCardIndex(Integer networkCardIndex) {
+				this.networkCardIndex = networkCardIndex;
 			}
 		}
 	}

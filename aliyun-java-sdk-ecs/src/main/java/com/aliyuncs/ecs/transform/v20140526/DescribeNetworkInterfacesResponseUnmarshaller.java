@@ -78,6 +78,7 @@ public class DescribeNetworkInterfacesResponseUnmarshaller {
 			attachment.setDeviceIndex(_ctx.integerValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].Attachment.DeviceIndex"));
 			attachment.setInstanceId(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].Attachment.InstanceId"));
 			attachment.setTrunkNetworkInterfaceId(_ctx.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].Attachment.TrunkNetworkInterfaceId"));
+			attachment.setNetworkCardIndex(_ctx.integerValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].Attachment.NetworkCardIndex"));
 			networkInterfaceSet.setAttachment(attachment);
 
 			List<PrivateIpSet> privateIpSets = new ArrayList<PrivateIpSet>();

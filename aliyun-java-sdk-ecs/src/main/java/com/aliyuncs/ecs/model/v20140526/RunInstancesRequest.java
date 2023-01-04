@@ -1015,6 +1015,7 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 						putQueryParameter("NetworkInterface." + (depth1 + 1) + ".Ipv6Address." + (i + 1) , networkInterfaces.get(depth1).getIpv6Addresss().get(i));
 					}
 				}
+				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".NetworkCardIndex" , networkInterfaces.get(depth1).getNetworkCardIndex());
 			}
 		}	
 	}
@@ -1301,6 +1302,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 		private List<String> ipv6Addresss;
 
+		private Integer networkCardIndex;
+
 		public String getVSwitchId() {
 			return this.vSwitchId;
 		}
@@ -1395,6 +1398,14 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 		public void setIpv6Addresss(List<String> ipv6Addresss) {
 			this.ipv6Addresss = ipv6Addresss;
+		}
+
+		public Integer getNetworkCardIndex() {
+			return this.networkCardIndex;
+		}
+
+		public void setNetworkCardIndex(Integer networkCardIndex) {
+			this.networkCardIndex = networkCardIndex;
 		}
 	}
 

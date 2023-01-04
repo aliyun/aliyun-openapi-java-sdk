@@ -72,6 +72,7 @@ public class DescribeNetworkInterfaceAttributeResponseUnmarshaller {
 		attachment.setDeviceIndex(_ctx.integerValue("DescribeNetworkInterfaceAttributeResponse.Attachment.DeviceIndex"));
 		attachment.setInstanceId(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.Attachment.InstanceId"));
 		attachment.setTrunkNetworkInterfaceId(_ctx.stringValue("DescribeNetworkInterfaceAttributeResponse.Attachment.TrunkNetworkInterfaceId"));
+		attachment.setNetworkCardIndex(_ctx.integerValue("DescribeNetworkInterfaceAttributeResponse.Attachment.NetworkCardIndex"));
 
 		List<String> memberNetworkInterfaceIds = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeNetworkInterfaceAttributeResponse.Attachment.MemberNetworkInterfaceIds.Length"); i++) {
