@@ -103,6 +103,10 @@ public class DescribeClusterResponse extends AcsResponse {
 
 		private String clientVersion;
 
+		private String ramRoleName;
+
+		private String ramNodeTypes;
+
 		private List<ApplicationInfo> applications;
 
 		private List<PostInstallScriptInfo> postInstallScripts;
@@ -333,6 +337,22 @@ public class DescribeClusterResponse extends AcsResponse {
 
 		public void setClientVersion(String clientVersion) {
 			this.clientVersion = clientVersion;
+		}
+
+		public String getRamRoleName() {
+			return this.ramRoleName;
+		}
+
+		public void setRamRoleName(String ramRoleName) {
+			this.ramRoleName = ramRoleName;
+		}
+
+		public String getRamNodeTypes() {
+			return this.ramNodeTypes;
+		}
+
+		public void setRamNodeTypes(String ramNodeTypes) {
+			this.ramNodeTypes = ramNodeTypes;
 		}
 
 		public List<ApplicationInfo> getApplications() {

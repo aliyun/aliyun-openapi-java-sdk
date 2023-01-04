@@ -411,6 +411,10 @@ public class GetAutoScaleConfigResponse extends AcsResponse {
 
 			private String spotStrategy;
 
+			private Integer spotDuration;
+
+			private String spotInterruptionBehavior;
+
 			public String getHostNamePrefix() {
 				return this.hostNamePrefix;
 			}
@@ -457,6 +461,22 @@ public class GetAutoScaleConfigResponse extends AcsResponse {
 
 			public void setSpotStrategy(String spotStrategy) {
 				this.spotStrategy = spotStrategy;
+			}
+
+			public Integer getSpotDuration() {
+				return this.spotDuration;
+			}
+
+			public void setSpotDuration(Integer spotDuration) {
+				this.spotDuration = spotDuration;
+			}
+
+			public String getSpotInterruptionBehavior() {
+				return this.spotInterruptionBehavior;
+			}
+
+			public void setSpotInterruptionBehavior(String spotInterruptionBehavior) {
+				this.spotInterruptionBehavior = spotInterruptionBehavior;
 			}
 		}
 

@@ -76,6 +76,8 @@ public class GetAutoScaleConfigResponseUnmarshaller {
 				instanceTypeInfo.setSpotPriceLimit(_ctx.floatValue("GetAutoScaleConfigResponse.Queues["+ i +"].InstanceTypes["+ j +"].SpotPriceLimit"));
 				instanceTypeInfo.setInstanceType(_ctx.stringValue("GetAutoScaleConfigResponse.Queues["+ i +"].InstanceTypes["+ j +"].InstanceType"));
 				instanceTypeInfo.setSpotStrategy(_ctx.stringValue("GetAutoScaleConfigResponse.Queues["+ i +"].InstanceTypes["+ j +"].SpotStrategy"));
+				instanceTypeInfo.setSpotDuration(_ctx.integerValue("GetAutoScaleConfigResponse.Queues["+ i +"].InstanceTypes["+ j +"].SpotDuration"));
+				instanceTypeInfo.setSpotInterruptionBehavior(_ctx.stringValue("GetAutoScaleConfigResponse.Queues["+ i +"].InstanceTypes["+ j +"].SpotInterruptionBehavior"));
 
 				instanceTypes.add(instanceTypeInfo);
 			}

@@ -210,9 +210,11 @@ public class SetAutoScaleConfigRequest extends RpcAcsRequest<SetAutoScaleConfigR
 					for (int depth2 = 0; depth2 < queuess.get(depth1).getInstanceTypess().size(); depth2++) {
 						putQueryParameter("Queues." + (depth1 + 1) + ".InstanceTypes." + (depth2 + 1) + ".VSwitchId" , queuess.get(depth1).getInstanceTypess().get(depth2).getVSwitchId());
 						putQueryParameter("Queues." + (depth1 + 1) + ".InstanceTypes." + (depth2 + 1) + ".SpotStrategy" , queuess.get(depth1).getInstanceTypess().get(depth2).getSpotStrategy());
+						putQueryParameter("Queues." + (depth1 + 1) + ".InstanceTypes." + (depth2 + 1) + ".SpotInterruptionBehavior" , queuess.get(depth1).getInstanceTypess().get(depth2).getSpotInterruptionBehavior());
 						putQueryParameter("Queues." + (depth1 + 1) + ".InstanceTypes." + (depth2 + 1) + ".ZoneId" , queuess.get(depth1).getInstanceTypess().get(depth2).getZoneId());
 						putQueryParameter("Queues." + (depth1 + 1) + ".InstanceTypes." + (depth2 + 1) + ".InstanceType" , queuess.get(depth1).getInstanceTypess().get(depth2).getInstanceType());
 						putQueryParameter("Queues." + (depth1 + 1) + ".InstanceTypes." + (depth2 + 1) + ".SpotPriceLimit" , queuess.get(depth1).getInstanceTypess().get(depth2).getSpotPriceLimit());
+						putQueryParameter("Queues." + (depth1 + 1) + ".InstanceTypes." + (depth2 + 1) + ".SpotDuration" , queuess.get(depth1).getInstanceTypess().get(depth2).getSpotDuration());
 					}
 				}
 				putQueryParameter("Queues." + (depth1 + 1) + ".EnableAutoGrow" , queuess.get(depth1).getEnableAutoGrow());
@@ -453,11 +455,15 @@ public class SetAutoScaleConfigRequest extends RpcAcsRequest<SetAutoScaleConfigR
 
 			private String spotStrategy;
 
+			private String spotInterruptionBehavior;
+
 			private String zoneId;
 
 			private String instanceType;
 
 			private Float spotPriceLimit;
+
+			private Integer spotDuration;
 
 			public String getVSwitchId() {
 				return this.vSwitchId;
@@ -473,6 +479,14 @@ public class SetAutoScaleConfigRequest extends RpcAcsRequest<SetAutoScaleConfigR
 
 			public void setSpotStrategy(String spotStrategy) {
 				this.spotStrategy = spotStrategy;
+			}
+
+			public String getSpotInterruptionBehavior() {
+				return this.spotInterruptionBehavior;
+			}
+
+			public void setSpotInterruptionBehavior(String spotInterruptionBehavior) {
+				this.spotInterruptionBehavior = spotInterruptionBehavior;
 			}
 
 			public String getZoneId() {
@@ -497,6 +511,14 @@ public class SetAutoScaleConfigRequest extends RpcAcsRequest<SetAutoScaleConfigR
 
 			public void setSpotPriceLimit(Float spotPriceLimit) {
 				this.spotPriceLimit = spotPriceLimit;
+			}
+
+			public Integer getSpotDuration() {
+				return this.spotDuration;
+			}
+
+			public void setSpotDuration(Integer spotDuration) {
+				this.spotDuration = spotDuration;
 			}
 		}
 

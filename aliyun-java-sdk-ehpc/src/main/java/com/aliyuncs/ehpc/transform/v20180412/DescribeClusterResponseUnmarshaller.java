@@ -65,6 +65,8 @@ public class DescribeClusterResponseUnmarshaller {
 		clusterInfo.setLocation(_ctx.stringValue("DescribeClusterResponse.ClusterInfo.Location"));
 		clusterInfo.setId(_ctx.stringValue("DescribeClusterResponse.ClusterInfo.Id"));
 		clusterInfo.setClientVersion(_ctx.stringValue("DescribeClusterResponse.ClusterInfo.ClientVersion"));
+		clusterInfo.setRamRoleName(_ctx.stringValue("DescribeClusterResponse.ClusterInfo.RamRoleName"));
+		clusterInfo.setRamNodeTypes(_ctx.stringValue("DescribeClusterResponse.ClusterInfo.RamNodeTypes"));
 
 		EcsInfo ecsInfo = new EcsInfo();
 

@@ -15,6 +15,7 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ehpc.Endpoint;
 
@@ -29,9 +30,13 @@ public class ModifyClusterAttributesRequest extends RpcAcsRequest<ModifyClusterA
 
 	private String description;
 
+	private String ramRoleName;
+
 	private String clusterId;
 
 	private String imageOwnerAlias;
+
+	private List<String> ramNodeTypess;
 
 	private String name;
 	public ModifyClusterAttributesRequest() {
@@ -65,6 +70,17 @@ public class ModifyClusterAttributesRequest extends RpcAcsRequest<ModifyClusterA
 		}
 	}
 
+	public String getRamRoleName() {
+		return this.ramRoleName;
+	}
+
+	public void setRamRoleName(String ramRoleName) {
+		this.ramRoleName = ramRoleName;
+		if(ramRoleName != null){
+			putQueryParameter("RamRoleName", ramRoleName);
+		}
+	}
+
 	public String getClusterId() {
 		return this.clusterId;
 	}
@@ -85,6 +101,19 @@ public class ModifyClusterAttributesRequest extends RpcAcsRequest<ModifyClusterA
 		if(imageOwnerAlias != null){
 			putQueryParameter("ImageOwnerAlias", imageOwnerAlias);
 		}
+	}
+
+	public List<String> getRamNodeTypess() {
+		return this.ramNodeTypess;
+	}
+
+	public void setRamNodeTypess(List<String> ramNodeTypess) {
+		this.ramNodeTypess = ramNodeTypess;	
+		if (ramNodeTypess != null) {
+			for (int i = 0; i < ramNodeTypess.size(); i++) {
+				putQueryParameter("RamNodeTypes." + (i + 1) , ramNodeTypess.get(i));
+			}
+		}	
 	}
 
 	public String getName() {
