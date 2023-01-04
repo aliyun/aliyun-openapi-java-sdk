@@ -35,6 +35,8 @@ public class SetApplicationProvisioningConfigRequest extends RpcAcsRequest<SetAp
 	private String instanceId;
 
 	private Boolean provisionPassword;
+
+	private ScimProvisioningConfig scimProvisioningConfig;
 	public SetApplicationProvisioningConfigRequest() {
 		super("Eiam", "2021-12-01", "SetApplicationProvisioningConfig", "eiam");
 		setProtocol(ProtocolType.HTTPS);
@@ -104,6 +106,41 @@ public class SetApplicationProvisioningConfigRequest extends RpcAcsRequest<SetAp
 		}
 	}
 
+	public ScimProvisioningConfig getScimProvisioningConfig() {
+		return this.scimProvisioningConfig;
+	}
+
+	public void setScimProvisioningConfig(ScimProvisioningConfig scimProvisioningConfig) {
+		this.scimProvisioningConfig = scimProvisioningConfig;	
+		if (scimProvisioningConfig != null) {
+			
+				if (scimProvisioningConfig.getFullPushScopes() != null) {
+					for (int depth1 = 0; depth1 < scimProvisioningConfig.getFullPushScopes().size(); depth1++) {
+						putQueryParameter("ScimProvisioningConfig.FullPushScopes." + (depth1 + 1) , scimProvisioningConfig.getFullPushScopes().get(depth1));
+					}
+				}
+				if (scimProvisioningConfig.getAuthnConfiguration() != null) {
+					
+						putQueryParameter("ScimProvisioningConfig.AuthnConfiguration.AuthnMode" , scimProvisioningConfig.getAuthnConfiguration().getAuthnMode());
+						putQueryParameter("ScimProvisioningConfig.AuthnConfiguration.GrantType" , scimProvisioningConfig.getAuthnConfiguration().getGrantType());
+						if (scimProvisioningConfig.getAuthnConfiguration().getAuthnParam() != null) {
+							
+								putQueryParameter("ScimProvisioningConfig.AuthnConfiguration.AuthnParam.ClientId" , scimProvisioningConfig.getAuthnConfiguration().getAuthnParam().getClientId());
+								putQueryParameter("ScimProvisioningConfig.AuthnConfiguration.AuthnParam.ClientSecret" , scimProvisioningConfig.getAuthnConfiguration().getAuthnParam().getClientSecret());
+								putQueryParameter("ScimProvisioningConfig.AuthnConfiguration.AuthnParam.AccessToken" , scimProvisioningConfig.getAuthnConfiguration().getAuthnParam().getAccessToken());
+								putQueryParameter("ScimProvisioningConfig.AuthnConfiguration.AuthnParam.TokenEndpoint" , scimProvisioningConfig.getAuthnConfiguration().getAuthnParam().getTokenEndpoint());
+								putQueryParameter("ScimProvisioningConfig.AuthnConfiguration.AuthnParam.AuthnMethod" , scimProvisioningConfig.getAuthnConfiguration().getAuthnParam().getAuthnMethod());
+						}
+				}
+				putQueryParameter("ScimProvisioningConfig.ScimBaseUrl" , scimProvisioningConfig.getScimBaseUrl());
+				if (scimProvisioningConfig.getProvisioningActions() != null) {
+					for (int depth1 = 0; depth1 < scimProvisioningConfig.getProvisioningActions().size(); depth1++) {
+						putQueryParameter("ScimProvisioningConfig.ProvisioningActions." + (depth1 + 1) , scimProvisioningConfig.getProvisioningActions().get(depth1));
+					}
+				}
+		}	
+	}
+
 	public static class CallbackProvisioningConfig {
 
 		private List<String> listenEventScopes;
@@ -144,6 +181,135 @@ public class SetApplicationProvisioningConfigRequest extends RpcAcsRequest<SetAp
 
 		public void setEncryptKey(String encryptKey) {
 			this.encryptKey = encryptKey;
+		}
+	}
+
+	public static class ScimProvisioningConfig {
+
+		private List<String> fullPushScopes;
+
+		private AuthnConfiguration authnConfiguration;
+
+		private String scimBaseUrl;
+
+		private List<String> provisioningActions;
+
+		public List<String> getFullPushScopes() {
+			return this.fullPushScopes;
+		}
+
+		public void setFullPushScopes(List<String> fullPushScopes) {
+			this.fullPushScopes = fullPushScopes;
+		}
+
+		public AuthnConfiguration getAuthnConfiguration() {
+			return this.authnConfiguration;
+		}
+
+		public void setAuthnConfiguration(AuthnConfiguration authnConfiguration) {
+			this.authnConfiguration = authnConfiguration;
+		}
+
+		public String getScimBaseUrl() {
+			return this.scimBaseUrl;
+		}
+
+		public void setScimBaseUrl(String scimBaseUrl) {
+			this.scimBaseUrl = scimBaseUrl;
+		}
+
+		public List<String> getProvisioningActions() {
+			return this.provisioningActions;
+		}
+
+		public void setProvisioningActions(List<String> provisioningActions) {
+			this.provisioningActions = provisioningActions;
+		}
+
+		public static class AuthnConfiguration {
+
+			private String authnMode;
+
+			private String grantType;
+
+			private AuthnParam authnParam;
+
+			public String getAuthnMode() {
+				return this.authnMode;
+			}
+
+			public void setAuthnMode(String authnMode) {
+				this.authnMode = authnMode;
+			}
+
+			public String getGrantType() {
+				return this.grantType;
+			}
+
+			public void setGrantType(String grantType) {
+				this.grantType = grantType;
+			}
+
+			public AuthnParam getAuthnParam() {
+				return this.authnParam;
+			}
+
+			public void setAuthnParam(AuthnParam authnParam) {
+				this.authnParam = authnParam;
+			}
+
+			public static class AuthnParam {
+
+				private String clientId;
+
+				private String clientSecret;
+
+				private String accessToken;
+
+				private String tokenEndpoint;
+
+				private String authnMethod;
+
+				public String getClientId() {
+					return this.clientId;
+				}
+
+				public void setClientId(String clientId) {
+					this.clientId = clientId;
+				}
+
+				public String getClientSecret() {
+					return this.clientSecret;
+				}
+
+				public void setClientSecret(String clientSecret) {
+					this.clientSecret = clientSecret;
+				}
+
+				public String getAccessToken() {
+					return this.accessToken;
+				}
+
+				public void setAccessToken(String accessToken) {
+					this.accessToken = accessToken;
+				}
+
+				public String getTokenEndpoint() {
+					return this.tokenEndpoint;
+				}
+
+				public void setTokenEndpoint(String tokenEndpoint) {
+					this.tokenEndpoint = tokenEndpoint;
+				}
+
+				public String getAuthnMethod() {
+					return this.authnMethod;
+				}
+
+				public void setAuthnMethod(String authnMethod) {
+					this.authnMethod = authnMethod;
+				}
+			}
 		}
 	}
 

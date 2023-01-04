@@ -118,12 +118,14 @@ public class SetApplicationSsoConfigRequest extends RpcAcsRequest<SetApplication
 						putQueryParameter("OidcSsoConfig.PkceChallengeMethods." + (depth1 + 1) , oidcSsoConfig.getPkceChallengeMethods().get(depth1));
 					}
 				}
+				putQueryParameter("OidcSsoConfig.PasswordAuthenticationSourceId" , oidcSsoConfig.getPasswordAuthenticationSourceId());
 				putQueryParameter("OidcSsoConfig.AccessTokenEffectiveTime" , oidcSsoConfig.getAccessTokenEffectiveTime());
 				if (oidcSsoConfig.getPostLogoutRedirectUris() != null) {
 					for (int depth1 = 0; depth1 < oidcSsoConfig.getPostLogoutRedirectUris().size(); depth1++) {
 						putQueryParameter("OidcSsoConfig.PostLogoutRedirectUris." + (depth1 + 1) , oidcSsoConfig.getPostLogoutRedirectUris().get(depth1));
 					}
 				}
+				putQueryParameter("OidcSsoConfig.PasswordTotpMfaRequired" , oidcSsoConfig.getPasswordTotpMfaRequired());
 				if (oidcSsoConfig.getCustomClaims() != null) {
 					for (int depth1 = 0; depth1 < oidcSsoConfig.getCustomClaims().size(); depth1++) {
 						if (oidcSsoConfig.getCustomClaims().get(depth1) != null) {
@@ -185,9 +187,13 @@ public class SetApplicationSsoConfigRequest extends RpcAcsRequest<SetApplication
 
 		private List<String> pkceChallengeMethods;
 
+		private String passwordAuthenticationSourceId;
+
 		private Long accessTokenEffectiveTime;
 
 		private List<String> postLogoutRedirectUris;
+
+		private Boolean passwordTotpMfaRequired;
 
 		private List<CustomClaimsItem> customClaims;
 
@@ -253,6 +259,14 @@ public class SetApplicationSsoConfigRequest extends RpcAcsRequest<SetApplication
 			this.pkceChallengeMethods = pkceChallengeMethods;
 		}
 
+		public String getPasswordAuthenticationSourceId() {
+			return this.passwordAuthenticationSourceId;
+		}
+
+		public void setPasswordAuthenticationSourceId(String passwordAuthenticationSourceId) {
+			this.passwordAuthenticationSourceId = passwordAuthenticationSourceId;
+		}
+
 		public Long getAccessTokenEffectiveTime() {
 			return this.accessTokenEffectiveTime;
 		}
@@ -267,6 +281,14 @@ public class SetApplicationSsoConfigRequest extends RpcAcsRequest<SetApplication
 
 		public void setPostLogoutRedirectUris(List<String> postLogoutRedirectUris) {
 			this.postLogoutRedirectUris = postLogoutRedirectUris;
+		}
+
+		public Boolean getPasswordTotpMfaRequired() {
+			return this.passwordTotpMfaRequired;
+		}
+
+		public void setPasswordTotpMfaRequired(Boolean passwordTotpMfaRequired) {
+			this.passwordTotpMfaRequired = passwordTotpMfaRequired;
 		}
 
 		public List<CustomClaimsItem> getCustomClaims() {

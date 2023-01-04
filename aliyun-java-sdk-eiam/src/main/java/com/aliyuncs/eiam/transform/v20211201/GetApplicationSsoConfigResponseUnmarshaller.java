@@ -58,6 +58,8 @@ public class GetApplicationSsoConfigResponseUnmarshaller {
 		applicationSsoConfig.setSamlSsoConfig(samlSsoConfig);
 
 		OidcSsoConfig oidcSsoConfig = new OidcSsoConfig();
+		oidcSsoConfig.setPasswordTotpMfaRequired(_ctx.booleanValue("GetApplicationSsoConfigResponse.ApplicationSsoConfig.OidcSsoConfig.PasswordTotpMfaRequired"));
+		oidcSsoConfig.setPasswordAuthenticationSourceId(_ctx.stringValue("GetApplicationSsoConfigResponse.ApplicationSsoConfig.OidcSsoConfig.PasswordAuthenticationSourceId"));
 		oidcSsoConfig.setPkceRequired(_ctx.booleanValue("GetApplicationSsoConfigResponse.ApplicationSsoConfig.OidcSsoConfig.PkceRequired"));
 		oidcSsoConfig.setAccessTokenEffectiveTime(_ctx.longValue("GetApplicationSsoConfigResponse.ApplicationSsoConfig.OidcSsoConfig.AccessTokenEffectiveTime"));
 		oidcSsoConfig.setCodeEffectiveTime(_ctx.longValue("GetApplicationSsoConfigResponse.ApplicationSsoConfig.OidcSsoConfig.CodeEffectiveTime"));

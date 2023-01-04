@@ -20,6 +20,9 @@ import java.util.List;
 import com.aliyuncs.eiam.model.v20211201.GetApplicationProvisioningConfigResponse;
 import com.aliyuncs.eiam.model.v20211201.GetApplicationProvisioningConfigResponse.ApplicationProvisioningConfig;
 import com.aliyuncs.eiam.model.v20211201.GetApplicationProvisioningConfigResponse.ApplicationProvisioningConfig.CallbackProvisioningConfig;
+import com.aliyuncs.eiam.model.v20211201.GetApplicationProvisioningConfigResponse.ApplicationProvisioningConfig.ScimProvisioningConfig;
+import com.aliyuncs.eiam.model.v20211201.GetApplicationProvisioningConfigResponse.ApplicationProvisioningConfig.ScimProvisioningConfig.AuthnConfiguration;
+import com.aliyuncs.eiam.model.v20211201.GetApplicationProvisioningConfigResponse.ApplicationProvisioningConfig.ScimProvisioningConfig.AuthnConfiguration.AuthnParam;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -48,6 +51,35 @@ public class GetApplicationProvisioningConfigResponseUnmarshaller {
 		}
 		callbackProvisioningConfig.setListenEventScopes(listenEventScopes);
 		applicationProvisioningConfig.setCallbackProvisioningConfig(callbackProvisioningConfig);
+
+		ScimProvisioningConfig scimProvisioningConfig = new ScimProvisioningConfig();
+		scimProvisioningConfig.setScimBaseUrl(_ctx.stringValue("GetApplicationProvisioningConfigResponse.ApplicationProvisioningConfig.ScimProvisioningConfig.ScimBaseUrl"));
+
+		List<String> provisioningActions = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("GetApplicationProvisioningConfigResponse.ApplicationProvisioningConfig.ScimProvisioningConfig.ProvisioningActions.Length"); i++) {
+			provisioningActions.add(_ctx.stringValue("GetApplicationProvisioningConfigResponse.ApplicationProvisioningConfig.ScimProvisioningConfig.ProvisioningActions["+ i +"]"));
+		}
+		scimProvisioningConfig.setProvisioningActions(provisioningActions);
+
+		List<String> fullPushScopes = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("GetApplicationProvisioningConfigResponse.ApplicationProvisioningConfig.ScimProvisioningConfig.FullPushScopes.Length"); i++) {
+			fullPushScopes.add(_ctx.stringValue("GetApplicationProvisioningConfigResponse.ApplicationProvisioningConfig.ScimProvisioningConfig.FullPushScopes["+ i +"]"));
+		}
+		scimProvisioningConfig.setFullPushScopes(fullPushScopes);
+
+		AuthnConfiguration authnConfiguration = new AuthnConfiguration();
+		authnConfiguration.setAuthnMode(_ctx.stringValue("GetApplicationProvisioningConfigResponse.ApplicationProvisioningConfig.ScimProvisioningConfig.AuthnConfiguration.AuthnMode"));
+		authnConfiguration.setGrantType(_ctx.stringValue("GetApplicationProvisioningConfigResponse.ApplicationProvisioningConfig.ScimProvisioningConfig.AuthnConfiguration.GrantType"));
+
+		AuthnParam authnParam = new AuthnParam();
+		authnParam.setAccessToken(_ctx.stringValue("GetApplicationProvisioningConfigResponse.ApplicationProvisioningConfig.ScimProvisioningConfig.AuthnConfiguration.AuthnParam.AccessToken"));
+		authnParam.setTokenEndpoint(_ctx.stringValue("GetApplicationProvisioningConfigResponse.ApplicationProvisioningConfig.ScimProvisioningConfig.AuthnConfiguration.AuthnParam.TokenEndpoint"));
+		authnParam.setClientId(_ctx.stringValue("GetApplicationProvisioningConfigResponse.ApplicationProvisioningConfig.ScimProvisioningConfig.AuthnConfiguration.AuthnParam.ClientId"));
+		authnParam.setClientSecret(_ctx.stringValue("GetApplicationProvisioningConfigResponse.ApplicationProvisioningConfig.ScimProvisioningConfig.AuthnConfiguration.AuthnParam.ClientSecret"));
+		authnParam.setAuthnMethod(_ctx.stringValue("GetApplicationProvisioningConfigResponse.ApplicationProvisioningConfig.ScimProvisioningConfig.AuthnConfiguration.AuthnParam.AuthnMethod"));
+		authnConfiguration.setAuthnParam(authnParam);
+		scimProvisioningConfig.setAuthnConfiguration(authnConfiguration);
+		applicationProvisioningConfig.setScimProvisioningConfig(scimProvisioningConfig);
 		getApplicationProvisioningConfigResponse.setApplicationProvisioningConfig(applicationProvisioningConfig);
 	 
 	 	return getApplicationProvisioningConfigResponse;

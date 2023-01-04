@@ -205,6 +205,10 @@ public class GetApplicationSsoConfigResponse extends AcsResponse {
 
 		public static class OidcSsoConfig {
 
+			private Boolean passwordTotpMfaRequired;
+
+			private String passwordAuthenticationSourceId;
+
 			private Boolean pkceRequired;
 
 			private Long accessTokenEffectiveTime;
@@ -230,6 +234,22 @@ public class GetApplicationSsoConfigResponse extends AcsResponse {
 			private List<String> grantScopes;
 
 			private List<String> pkceChallengeMethods;
+
+			public Boolean getPasswordTotpMfaRequired() {
+				return this.passwordTotpMfaRequired;
+			}
+
+			public void setPasswordTotpMfaRequired(Boolean passwordTotpMfaRequired) {
+				this.passwordTotpMfaRequired = passwordTotpMfaRequired;
+			}
+
+			public String getPasswordAuthenticationSourceId() {
+				return this.passwordAuthenticationSourceId;
+			}
+
+			public void setPasswordAuthenticationSourceId(String passwordAuthenticationSourceId) {
+				this.passwordAuthenticationSourceId = passwordAuthenticationSourceId;
+			}
 
 			public Boolean getPkceRequired() {
 				return this.pkceRequired;

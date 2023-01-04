@@ -1,3 +1,6 @@
+2023-01-04 Version: 1.0.4
+- OIDC protocol application support password grant type.
+
 2022-11-16 Version: 1.0.3
 - GetApplication API supported return ApplicationTemplateId field.
 

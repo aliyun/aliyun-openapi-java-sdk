@@ -61,6 +61,8 @@ public class GetApplicationProvisioningConfigResponse extends AcsResponse {
 
 		private CallbackProvisioningConfig callbackProvisioningConfig;
 
+		private ScimProvisioningConfig scimProvisioningConfig;
+
 		public String getInstanceId() {
 			return this.instanceId;
 		}
@@ -117,6 +119,14 @@ public class GetApplicationProvisioningConfigResponse extends AcsResponse {
 			this.callbackProvisioningConfig = callbackProvisioningConfig;
 		}
 
+		public ScimProvisioningConfig getScimProvisioningConfig() {
+			return this.scimProvisioningConfig;
+		}
+
+		public void setScimProvisioningConfig(ScimProvisioningConfig scimProvisioningConfig) {
+			this.scimProvisioningConfig = scimProvisioningConfig;
+		}
+
 		public static class CallbackProvisioningConfig {
 
 			private String callbackUrl;
@@ -157,6 +167,135 @@ public class GetApplicationProvisioningConfigResponse extends AcsResponse {
 
 			public void setListenEventScopes(List<String> listenEventScopes) {
 				this.listenEventScopes = listenEventScopes;
+			}
+		}
+
+		public static class ScimProvisioningConfig {
+
+			private String scimBaseUrl;
+
+			private List<String> provisioningActions;
+
+			private List<String> fullPushScopes;
+
+			private AuthnConfiguration authnConfiguration;
+
+			public String getScimBaseUrl() {
+				return this.scimBaseUrl;
+			}
+
+			public void setScimBaseUrl(String scimBaseUrl) {
+				this.scimBaseUrl = scimBaseUrl;
+			}
+
+			public List<String> getProvisioningActions() {
+				return this.provisioningActions;
+			}
+
+			public void setProvisioningActions(List<String> provisioningActions) {
+				this.provisioningActions = provisioningActions;
+			}
+
+			public List<String> getFullPushScopes() {
+				return this.fullPushScopes;
+			}
+
+			public void setFullPushScopes(List<String> fullPushScopes) {
+				this.fullPushScopes = fullPushScopes;
+			}
+
+			public AuthnConfiguration getAuthnConfiguration() {
+				return this.authnConfiguration;
+			}
+
+			public void setAuthnConfiguration(AuthnConfiguration authnConfiguration) {
+				this.authnConfiguration = authnConfiguration;
+			}
+
+			public static class AuthnConfiguration {
+
+				private String authnMode;
+
+				private String grantType;
+
+				private AuthnParam authnParam;
+
+				public String getAuthnMode() {
+					return this.authnMode;
+				}
+
+				public void setAuthnMode(String authnMode) {
+					this.authnMode = authnMode;
+				}
+
+				public String getGrantType() {
+					return this.grantType;
+				}
+
+				public void setGrantType(String grantType) {
+					this.grantType = grantType;
+				}
+
+				public AuthnParam getAuthnParam() {
+					return this.authnParam;
+				}
+
+				public void setAuthnParam(AuthnParam authnParam) {
+					this.authnParam = authnParam;
+				}
+
+				public static class AuthnParam {
+
+					private String accessToken;
+
+					private String tokenEndpoint;
+
+					private String clientId;
+
+					private String clientSecret;
+
+					private String authnMethod;
+
+					public String getAccessToken() {
+						return this.accessToken;
+					}
+
+					public void setAccessToken(String accessToken) {
+						this.accessToken = accessToken;
+					}
+
+					public String getTokenEndpoint() {
+						return this.tokenEndpoint;
+					}
+
+					public void setTokenEndpoint(String tokenEndpoint) {
+						this.tokenEndpoint = tokenEndpoint;
+					}
+
+					public String getClientId() {
+						return this.clientId;
+					}
+
+					public void setClientId(String clientId) {
+						this.clientId = clientId;
+					}
+
+					public String getClientSecret() {
+						return this.clientSecret;
+					}
+
+					public void setClientSecret(String clientSecret) {
+						this.clientSecret = clientSecret;
+					}
+
+					public String getAuthnMethod() {
+						return this.authnMethod;
+					}
+
+					public void setAuthnMethod(String authnMethod) {
+						this.authnMethod = authnMethod;
+					}
+				}
 			}
 		}
 	}
