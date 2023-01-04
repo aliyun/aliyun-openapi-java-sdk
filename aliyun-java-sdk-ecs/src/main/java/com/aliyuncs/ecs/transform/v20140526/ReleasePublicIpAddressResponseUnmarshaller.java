@@ -23,6 +23,7 @@ public class ReleasePublicIpAddressResponseUnmarshaller {
 	public static ReleasePublicIpAddressResponse unmarshall(ReleasePublicIpAddressResponse releasePublicIpAddressResponse, UnmarshallerContext _ctx) {
 		
 		releasePublicIpAddressResponse.setRequestId(_ctx.stringValue("ReleasePublicIpAddressResponse.RequestId"));
+		releasePublicIpAddressResponse.setRemainTimes(_ctx.stringValue("ReleasePublicIpAddressResponse.RemainTimes"));
 	 
 	 	return releasePublicIpAddressResponse;
 	}

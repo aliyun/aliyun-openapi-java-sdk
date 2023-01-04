@@ -26,12 +26,22 @@ public class ReleasePublicIpAddressResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String remainTimes;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getRemainTimes() {
+		return this.remainTimes;
+	}
+
+	public void setRemainTimes(String remainTimes) {
+		this.remainTimes = remainTimes;
 	}
 
 	@Override

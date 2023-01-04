@@ -1,3 +1,6 @@
+2023-01-04 Version: 4.24.47
+- Support release nat public ip.
+
 2023-01-04 Version: 4.24.46
 - CreateSnapshot CreateDisk support system tag.
 - Supported network card index.
