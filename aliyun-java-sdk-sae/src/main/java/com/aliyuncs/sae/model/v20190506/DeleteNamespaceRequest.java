@@ -26,6 +26,8 @@ public class DeleteNamespaceRequest extends RoaAcsRequest<DeleteNamespaceRespons
 	   
 
 	private String namespaceId;
+
+	private String nameSpaceShortId;
 	public DeleteNamespaceRequest() {
 		super("sae", "2019-05-06", "DeleteNamespace", "serverless");
 		setUriPattern("/pop/v1/paas/namespace");
@@ -44,6 +46,17 @@ public class DeleteNamespaceRequest extends RoaAcsRequest<DeleteNamespaceRespons
 		this.namespaceId = namespaceId;
 		if(namespaceId != null){
 			putQueryParameter("NamespaceId", namespaceId);
+		}
+	}
+
+	public String getNameSpaceShortId() {
+		return this.nameSpaceShortId;
+	}
+
+	public void setNameSpaceShortId(String nameSpaceShortId) {
+		this.nameSpaceShortId = nameSpaceShortId;
+		if(nameSpaceShortId != null){
+			putQueryParameter("NameSpaceShortId", nameSpaceShortId);
 		}
 	}
 

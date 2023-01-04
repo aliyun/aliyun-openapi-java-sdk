@@ -21,6 +21,7 @@ import com.aliyuncs.sae.model.v20190506.DescribeIngressResponse;
 import com.aliyuncs.sae.model.v20190506.DescribeIngressResponse.Data;
 import com.aliyuncs.sae.model.v20190506.DescribeIngressResponse.Data.DefaultRule;
 import com.aliyuncs.sae.model.v20190506.DescribeIngressResponse.Data.Rule;
+import com.aliyuncs.sae.model.v20190506.DescribeIngressResponse.Data.Svc;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -42,11 +43,11 @@ public class DescribeIngressResponseUnmarshaller {
 		data.setListenerPort(_ctx.integerValue("DescribeIngressResponse.Data.ListenerPort"));
 		data.setSlbType(_ctx.stringValue("DescribeIngressResponse.Data.SlbType"));
 		data.setCertId(_ctx.stringValue("DescribeIngressResponse.Data.CertId"));
-		data.setCertIds(_ctx.stringValue("DescribeIngressResponse.Data.CertIds"));
 		data.setName(_ctx.stringValue("DescribeIngressResponse.Data.Name"));
 		data.setId(_ctx.longValue("DescribeIngressResponse.Data.Id"));
 		data.setLoadBalanceType(_ctx.stringValue("DescribeIngressResponse.Data.LoadBalanceType"));
 		data.setListenerProtocol(_ctx.stringValue("DescribeIngressResponse.Data.ListenerProtocol"));
+		data.setCertIds(_ctx.stringValue("DescribeIngressResponse.Data.CertIds"));
 
 		DefaultRule defaultRule = new DefaultRule();
 		defaultRule.setContainerPort(_ctx.integerValue("DescribeIngressResponse.Data.DefaultRule.ContainerPort"));
@@ -68,6 +69,19 @@ public class DescribeIngressResponseUnmarshaller {
 			rules.add(rule);
 		}
 		data.setRules(rules);
+
+		List<Svc> svcs = new ArrayList<Svc>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeIngressResponse.Data.Svcs.Length"); i++) {
+			Svc svc = new Svc();
+			svc.setId(_ctx.longValue("DescribeIngressResponse.Data.Svcs["+ i +"].id"));
+			svc.setAppId(_ctx.stringValue("DescribeIngressResponse.Data.Svcs["+ i +"].appId"));
+			svc.setBackendProtocol(_ctx.stringValue("DescribeIngressResponse.Data.Svcs["+ i +"].backendProtocol"));
+			svc.setBackendPort(_ctx.integerValue("DescribeIngressResponse.Data.Svcs["+ i +"].backendPort"));
+			svc.setName(_ctx.stringValue("DescribeIngressResponse.Data.Svcs["+ i +"].name"));
+
+			svcs.add(svc);
+		}
+		data.setSvcs(svcs);
 		describeIngressResponse.setData(data);
 	 
 	 	return describeIngressResponse;

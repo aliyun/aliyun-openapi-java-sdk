@@ -67,6 +67,8 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 
 	private Boolean autoEnableApplicationScalingRule;
 
+	private String packageType;
+
 	private String postStart;
 
 	private Boolean associateEip;
@@ -364,6 +366,17 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		this.autoEnableApplicationScalingRule = autoEnableApplicationScalingRule;
 		if(autoEnableApplicationScalingRule != null){
 			putQueryParameter("AutoEnableApplicationScalingRule", autoEnableApplicationScalingRule.toString());
+		}
+	}
+
+	public String getPackageType() {
+		return this.packageType;
+	}
+
+	public void setPackageType(String packageType) {
+		this.packageType = packageType;
+		if(packageType != null){
+			putQueryParameter("PackageType", packageType);
 		}
 	}
 

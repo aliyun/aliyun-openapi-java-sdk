@@ -91,6 +91,8 @@ public class UpdateJobRequest extends RoaAcsRequest<UpdateJobResponse> {
 
 	private String sliceEnvs;
 
+	private Boolean enableImageAccl;
+
 	private String replicas;
 
 	private String command;
@@ -482,6 +484,17 @@ public class UpdateJobRequest extends RoaAcsRequest<UpdateJobResponse> {
 		this.sliceEnvs = sliceEnvs;
 		if(sliceEnvs != null){
 			putQueryParameter("SliceEnvs", sliceEnvs);
+		}
+	}
+
+	public Boolean getEnableImageAccl() {
+		return this.enableImageAccl;
+	}
+
+	public void setEnableImageAccl(Boolean enableImageAccl) {
+		this.enableImageAccl = enableImageAccl;
+		if(enableImageAccl != null){
+			putBodyParameter("EnableImageAccl", enableImageAccl.toString());
 		}
 	}
 

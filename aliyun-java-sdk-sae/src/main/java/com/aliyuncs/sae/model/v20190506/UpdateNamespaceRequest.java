@@ -30,6 +30,8 @@ public class UpdateNamespaceRequest extends RoaAcsRequest<UpdateNamespaceRespons
 	private String namespaceDescription;
 
 	private String namespaceId;
+
+	private String nameSpaceShortId;
 	public UpdateNamespaceRequest() {
 		super("sae", "2019-05-06", "UpdateNamespace", "serverless");
 		setUriPattern("/pop/v1/paas/namespace");
@@ -70,6 +72,17 @@ public class UpdateNamespaceRequest extends RoaAcsRequest<UpdateNamespaceRespons
 		this.namespaceId = namespaceId;
 		if(namespaceId != null){
 			putQueryParameter("NamespaceId", namespaceId);
+		}
+	}
+
+	public String getNameSpaceShortId() {
+		return this.nameSpaceShortId;
+	}
+
+	public void setNameSpaceShortId(String nameSpaceShortId) {
+		this.nameSpaceShortId = nameSpaceShortId;
+		if(nameSpaceShortId != null){
+			putQueryParameter("NameSpaceShortId", nameSpaceShortId);
 		}
 	}
 

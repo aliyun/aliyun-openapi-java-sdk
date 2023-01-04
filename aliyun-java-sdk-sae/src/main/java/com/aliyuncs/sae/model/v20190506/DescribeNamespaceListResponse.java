@@ -117,6 +117,8 @@ public class DescribeNamespaceListResponse extends AcsResponse {
 
 		private String regionId;
 
+		private String nameSpaceShortId;
+
 		public String getVpcId() {
 			return this.vpcId;
 		}
@@ -195,6 +197,14 @@ public class DescribeNamespaceListResponse extends AcsResponse {
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
+		}
+
+		public String getNameSpaceShortId() {
+			return this.nameSpaceShortId;
+		}
+
+		public void setNameSpaceShortId(String nameSpaceShortId) {
+			this.nameSpaceShortId = nameSpaceShortId;
 		}
 	}
 

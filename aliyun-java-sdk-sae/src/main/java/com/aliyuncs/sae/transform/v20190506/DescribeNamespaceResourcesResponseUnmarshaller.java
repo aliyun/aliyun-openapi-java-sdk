@@ -49,6 +49,7 @@ public class DescribeNamespaceResourcesResponseUnmarshaller {
 		data.setTenantId(_ctx.stringValue("DescribeNamespaceResourcesResponse.Data.TenantId"));
 		data.setJumpServerAppId(_ctx.stringValue("DescribeNamespaceResourcesResponse.Data.JumpServerAppId"));
 		data.setJumpServerIp(_ctx.stringValue("DescribeNamespaceResourcesResponse.Data.JumpServerIp"));
+		data.setNameSpaceShortId(_ctx.stringValue("DescribeNamespaceResourcesResponse.Data.NameSpaceShortId"));
 		describeNamespaceResourcesResponse.setData(data);
 	 
 	 	return describeNamespaceResourcesResponse;

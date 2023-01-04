@@ -50,6 +50,7 @@ public class DescribeNamespacesResponseUnmarshaller {
 			namespace.setNamespaceName(_ctx.stringValue("DescribeNamespacesResponse.Data.Namespaces["+ i +"].NamespaceName"));
 			namespace.setTenantId(_ctx.stringValue("DescribeNamespacesResponse.Data.Namespaces["+ i +"].TenantId"));
 			namespace.setRegionId(_ctx.stringValue("DescribeNamespacesResponse.Data.Namespaces["+ i +"].RegionId"));
+			namespace.setNameSpaceShortId(_ctx.stringValue("DescribeNamespacesResponse.Data.Namespaces["+ i +"].NameSpaceShortId"));
 
 			namespaces.add(namespace);
 		}

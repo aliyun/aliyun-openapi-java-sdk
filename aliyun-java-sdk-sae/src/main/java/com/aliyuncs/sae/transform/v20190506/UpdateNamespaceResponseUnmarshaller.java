@@ -35,6 +35,7 @@ public class UpdateNamespaceResponseUnmarshaller {
 		data.setNamespaceId(_ctx.stringValue("UpdateNamespaceResponse.Data.NamespaceId"));
 		data.setNamespaceName(_ctx.stringValue("UpdateNamespaceResponse.Data.NamespaceName"));
 		data.setRegionId(_ctx.stringValue("UpdateNamespaceResponse.Data.RegionId"));
+		data.setNameSpaceShortId(_ctx.stringValue("UpdateNamespaceResponse.Data.NameSpaceShortId"));
 		updateNamespaceResponse.setData(data);
 	 
 	 	return updateNamespaceResponse;

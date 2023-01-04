@@ -35,6 +35,7 @@ public class CreateNamespaceResponseUnmarshaller {
 		data.setNamespaceId(_ctx.stringValue("CreateNamespaceResponse.Data.NamespaceId"));
 		data.setNamespaceName(_ctx.stringValue("CreateNamespaceResponse.Data.NamespaceName"));
 		data.setRegionId(_ctx.stringValue("CreateNamespaceResponse.Data.RegionId"));
+		data.setNameSpaceShortId(_ctx.stringValue("CreateNamespaceResponse.Data.NameSpaceShortId"));
 		createNamespaceResponse.setData(data);
 	 
 	 	return createNamespaceResponse;

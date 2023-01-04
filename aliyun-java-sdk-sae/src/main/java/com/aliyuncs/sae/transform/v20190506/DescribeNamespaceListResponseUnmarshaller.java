@@ -46,6 +46,7 @@ public class DescribeNamespaceListResponseUnmarshaller {
 			regionList.setCurrent(_ctx.booleanValue("DescribeNamespaceListResponse.Data["+ i +"].Current"));
 			regionList.setNamespaceName(_ctx.stringValue("DescribeNamespaceListResponse.Data["+ i +"].NamespaceName"));
 			regionList.setRegionId(_ctx.stringValue("DescribeNamespaceListResponse.Data["+ i +"].RegionId"));
+			regionList.setNameSpaceShortId(_ctx.stringValue("DescribeNamespaceListResponse.Data["+ i +"].NameSpaceShortId"));
 
 			data.add(regionList);
 		}

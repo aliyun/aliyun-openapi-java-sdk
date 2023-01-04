@@ -1,3 +1,6 @@
+2023-01-04 Version: 1.22.7
+- Update deployApplication request parameters.
+
 2022-12-19 Version: 1.22.6
 - Fixed ApplicationScalingRule related api response struct.
 
