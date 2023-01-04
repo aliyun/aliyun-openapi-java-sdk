@@ -81,6 +81,8 @@ public class ListServiceInstancesResponse extends AcsResponse {
 
 		private String updateTime;
 
+		private String name;
+
 		private String serviceInstanceId;
 
 		private String createTime;
@@ -109,6 +111,8 @@ public class ListServiceInstancesResponse extends AcsResponse {
 
 		private String serviceType;
 
+		private String payType;
+
 		private List<Tag> tags;
 
 		private Service service;
@@ -127,6 +131,14 @@ public class ListServiceInstancesResponse extends AcsResponse {
 
 		public void setUpdateTime(String updateTime) {
 			this.updateTime = updateTime;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public String getServiceInstanceId() {
@@ -239,6 +251,14 @@ public class ListServiceInstancesResponse extends AcsResponse {
 
 		public void setServiceType(String serviceType) {
 			this.serviceType = serviceType;
+		}
+
+		public String getPayType() {
+			return this.payType;
+		}
+
+		public void setPayType(String payType) {
+			this.payType = payType;
 		}
 
 		public List<Tag> getTags() {

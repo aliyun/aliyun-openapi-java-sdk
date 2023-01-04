@@ -15,7 +15,6 @@
 package com.aliyuncs.computenestsupplier.model.v20210521;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.computenestsupplier.Endpoint;
 
@@ -23,14 +22,14 @@ import com.aliyuncs.computenestsupplier.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteServiceInstancesRequest extends RpcAcsRequest<DeleteServiceInstancesResponse> {
+public class GetArtifactRequest extends RpcAcsRequest<GetArtifactResponse> {
 	   
 
-	private String clientToken;
+	private String artifactVersion;
 
-	private List<String> serviceInstanceIds;
-	public DeleteServiceInstancesRequest() {
-		super("ComputeNestSupplier", "2021-05-21", "DeleteServiceInstances");
+	private String artifactId;
+	public GetArtifactRequest() {
+		super("ComputeNestSupplier", "2021-05-21", "GetArtifact");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -38,33 +37,31 @@ public class DeleteServiceInstancesRequest extends RpcAcsRequest<DeleteServiceIn
 		} catch (Exception e) {}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
+	public String getArtifactVersion() {
+		return this.artifactVersion;
 	}
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
+	public void setArtifactVersion(String artifactVersion) {
+		this.artifactVersion = artifactVersion;
+		if(artifactVersion != null){
+			putQueryParameter("ArtifactVersion", artifactVersion);
 		}
 	}
 
-	public List<String> getServiceInstanceIds() {
-		return this.serviceInstanceIds;
+	public String getArtifactId() {
+		return this.artifactId;
 	}
 
-	public void setServiceInstanceIds(List<String> serviceInstanceIds) {
-		this.serviceInstanceIds = serviceInstanceIds;	
-		if (serviceInstanceIds != null) {
-			for (int i = 0; i < serviceInstanceIds.size(); i++) {
-				putQueryParameter("ServiceInstanceId." + (i + 1) , serviceInstanceIds.get(i));
-			}
-		}	
+	public void setArtifactId(String artifactId) {
+		this.artifactId = artifactId;
+		if(artifactId != null){
+			putQueryParameter("ArtifactId", artifactId);
+		}
 	}
 
 	@Override
-	public Class<DeleteServiceInstancesResponse> getResponseClass() {
-		return DeleteServiceInstancesResponse.class;
+	public Class<GetArtifactResponse> getResponseClass() {
+		return GetArtifactResponse.class;
 	}
 
 }

@@ -15,28 +15,16 @@
 package com.aliyuncs.computenestsupplier.model.v20210521;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.computenestsupplier.transform.v20210521.CreateServiceInstanceResponseUnmarshaller;
+import com.aliyuncs.computenestsupplier.transform.v20210521.DeleteArtifactResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateServiceInstanceResponse extends AcsResponse {
-
-	private String status;
+public class DeleteArtifactResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String serviceInstanceId;
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -46,17 +34,9 @@ public class CreateServiceInstanceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getServiceInstanceId() {
-		return this.serviceInstanceId;
-	}
-
-	public void setServiceInstanceId(String serviceInstanceId) {
-		this.serviceInstanceId = serviceInstanceId;
-	}
-
 	@Override
-	public CreateServiceInstanceResponse getInstance(UnmarshallerContext context) {
-		return	CreateServiceInstanceResponseUnmarshaller.unmarshall(this, context);
+	public DeleteArtifactResponse getInstance(UnmarshallerContext context) {
+		return	DeleteArtifactResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

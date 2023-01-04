@@ -14,16 +14,16 @@
 
 package com.aliyuncs.computenestsupplier.transform.v20210521;
 
-import com.aliyuncs.computenestsupplier.model.v20210521.ContinueDeployServiceInstanceResponse;
+import com.aliyuncs.computenestsupplier.model.v20210521.DeleteArtifactResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class ContinueDeployServiceInstanceResponseUnmarshaller {
+public class DeleteArtifactResponseUnmarshaller {
 
-	public static ContinueDeployServiceInstanceResponse unmarshall(ContinueDeployServiceInstanceResponse continueDeployServiceInstanceResponse, UnmarshallerContext _ctx) {
+	public static DeleteArtifactResponse unmarshall(DeleteArtifactResponse deleteArtifactResponse, UnmarshallerContext _ctx) {
 		
-		continueDeployServiceInstanceResponse.setRequestId(_ctx.stringValue("ContinueDeployServiceInstanceResponse.RequestId"));
+		deleteArtifactResponse.setRequestId(_ctx.stringValue("DeleteArtifactResponse.RequestId"));
 	 
-	 	return continueDeployServiceInstanceResponse;
+	 	return deleteArtifactResponse;
 	}
 }

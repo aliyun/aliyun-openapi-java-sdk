@@ -22,16 +22,14 @@ import com.aliyuncs.computenestsupplier.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetDeploymentRequest extends RpcAcsRequest<GetDeploymentResponse> {
+public class DeleteArtifactRequest extends RpcAcsRequest<DeleteArtifactResponse> {
 	   
 
-	private String clientToken;
+	private String artifactVersion;
 
-	private String deploymentVersion;
-
-	private String deploymentId;
-	public GetDeploymentRequest() {
-		super("ComputeNestSupplier", "2021-05-21", "GetDeployment");
+	private String artifactId;
+	public DeleteArtifactRequest() {
+		super("ComputeNestSupplier", "2021-05-21", "DeleteArtifact");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,42 +37,31 @@ public class GetDeploymentRequest extends RpcAcsRequest<GetDeploymentResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
+	public String getArtifactVersion() {
+		return this.artifactVersion;
 	}
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
+	public void setArtifactVersion(String artifactVersion) {
+		this.artifactVersion = artifactVersion;
+		if(artifactVersion != null){
+			putQueryParameter("ArtifactVersion", artifactVersion);
 		}
 	}
 
-	public String getDeploymentVersion() {
-		return this.deploymentVersion;
+	public String getArtifactId() {
+		return this.artifactId;
 	}
 
-	public void setDeploymentVersion(String deploymentVersion) {
-		this.deploymentVersion = deploymentVersion;
-		if(deploymentVersion != null){
-			putQueryParameter("DeploymentVersion", deploymentVersion);
-		}
-	}
-
-	public String getDeploymentId() {
-		return this.deploymentId;
-	}
-
-	public void setDeploymentId(String deploymentId) {
-		this.deploymentId = deploymentId;
-		if(deploymentId != null){
-			putQueryParameter("DeploymentId", deploymentId);
+	public void setArtifactId(String artifactId) {
+		this.artifactId = artifactId;
+		if(artifactId != null){
+			putQueryParameter("ArtifactId", artifactId);
 		}
 	}
 
 	@Override
-	public Class<GetDeploymentResponse> getResponseClass() {
-		return GetDeploymentResponse.class;
+	public Class<DeleteArtifactResponse> getResponseClass() {
+		return DeleteArtifactResponse.class;
 	}
 
 }

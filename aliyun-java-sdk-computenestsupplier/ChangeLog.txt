@@ -1,3 +1,6 @@
+2023-01-04 Version: 2.0.11
+- Public ListServiceInstances and GetServiceInstance OpenApi.
+
 2022-08-10 Version: 2.0.10
 - Modify tag parameters name.
 

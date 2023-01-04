@@ -39,6 +39,7 @@ public class ListServiceInstancesResponseUnmarshaller {
 			ServiceInstance serviceInstance = new ServiceInstance();
 			serviceInstance.setStatus(_ctx.stringValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].Status"));
 			serviceInstance.setUpdateTime(_ctx.stringValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].UpdateTime"));
+			serviceInstance.setName(_ctx.stringValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].Name"));
 			serviceInstance.setServiceInstanceId(_ctx.stringValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].ServiceInstanceId"));
 			serviceInstance.setCreateTime(_ctx.stringValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].CreateTime"));
 			serviceInstance.setUserId(_ctx.longValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].UserId"));
@@ -53,6 +54,7 @@ public class ListServiceInstancesResponseUnmarshaller {
 			serviceInstance.setSource(_ctx.stringValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].Source"));
 			serviceInstance.setEndTime(_ctx.stringValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].EndTime"));
 			serviceInstance.setServiceType(_ctx.stringValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].ServiceType"));
+			serviceInstance.setPayType(_ctx.stringValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].PayType"));
 
 			Service service = new Service();
 			service.setStatus(_ctx.stringValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].Service.Status"));

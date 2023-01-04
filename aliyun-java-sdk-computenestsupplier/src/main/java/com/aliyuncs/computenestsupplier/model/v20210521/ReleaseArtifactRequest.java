@@ -22,16 +22,12 @@ import com.aliyuncs.computenestsupplier.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteServiceRequest extends RpcAcsRequest<DeleteServiceResponse> {
+public class ReleaseArtifactRequest extends RpcAcsRequest<ReleaseArtifactResponse> {
 	   
 
-	private String clientToken;
-
-	private String serviceVersion;
-
-	private String serviceId;
-	public DeleteServiceRequest() {
-		super("ComputeNestSupplier", "2021-05-21", "DeleteService");
+	private String artifactId;
+	public ReleaseArtifactRequest() {
+		super("ComputeNestSupplier", "2021-05-21", "ReleaseArtifact");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,42 +35,20 @@ public class DeleteServiceRequest extends RpcAcsRequest<DeleteServiceResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
+	public String getArtifactId() {
+		return this.artifactId;
 	}
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public String getServiceVersion() {
-		return this.serviceVersion;
-	}
-
-	public void setServiceVersion(String serviceVersion) {
-		this.serviceVersion = serviceVersion;
-		if(serviceVersion != null){
-			putQueryParameter("ServiceVersion", serviceVersion);
-		}
-	}
-
-	public String getServiceId() {
-		return this.serviceId;
-	}
-
-	public void setServiceId(String serviceId) {
-		this.serviceId = serviceId;
-		if(serviceId != null){
-			putQueryParameter("ServiceId", serviceId);
+	public void setArtifactId(String artifactId) {
+		this.artifactId = artifactId;
+		if(artifactId != null){
+			putQueryParameter("ArtifactId", artifactId);
 		}
 	}
 
 	@Override
-	public Class<DeleteServiceResponse> getResponseClass() {
-		return DeleteServiceResponse.class;
+	public Class<ReleaseArtifactResponse> getResponseClass() {
+		return ReleaseArtifactResponse.class;
 	}
 
 }

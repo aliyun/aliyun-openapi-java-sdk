@@ -22,32 +22,17 @@ import com.aliyuncs.computenestsupplier.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListServiceInstanceUpgradeHistoryRequest extends RpcAcsRequest<ListServiceInstanceUpgradeHistoryResponse> {
+public class GetServiceInstanceRequest extends RpcAcsRequest<GetServiceInstanceResponse> {
 	   
 
-	private String nextToken;
-
 	private String serviceInstanceId;
-
-	private String maxResults;
-	public ListServiceInstanceUpgradeHistoryRequest() {
-		super("ComputeNestSupplier", "2021-05-21", "ListServiceInstanceUpgradeHistory");
+	public GetServiceInstanceRequest() {
+		super("ComputeNestSupplier", "2021-05-21", "GetServiceInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getNextToken() {
-		return this.nextToken;
-	}
-
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-		if(nextToken != null){
-			putQueryParameter("NextToken", nextToken);
-		}
 	}
 
 	public String getServiceInstanceId() {
@@ -61,20 +46,9 @@ public class ListServiceInstanceUpgradeHistoryRequest extends RpcAcsRequest<List
 		}
 	}
 
-	public String getMaxResults() {
-		return this.maxResults;
-	}
-
-	public void setMaxResults(String maxResults) {
-		this.maxResults = maxResults;
-		if(maxResults != null){
-			putQueryParameter("MaxResults", maxResults);
-		}
-	}
-
 	@Override
-	public Class<ListServiceInstanceUpgradeHistoryResponse> getResponseClass() {
-		return ListServiceInstanceUpgradeHistoryResponse.class;
+	public Class<GetServiceInstanceResponse> getResponseClass() {
+		return GetServiceInstanceResponse.class;
 	}
 
 }

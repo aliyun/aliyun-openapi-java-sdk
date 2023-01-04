@@ -15,6 +15,7 @@
 package com.aliyuncs.computenestsupplier.model.v20210521;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.computenestsupplier.Endpoint;
 
@@ -22,16 +23,16 @@ import com.aliyuncs.computenestsupplier.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListServiceInstanceLogsRequest extends RpcAcsRequest<ListServiceInstanceLogsResponse> {
+public class ListArtifactsRequest extends RpcAcsRequest<ListArtifactsResponse> {
 	   
 
 	private String nextToken;
 
-	private String serviceInstanceId;
+	private List<Filter> filters;
 
 	private String maxResults;
-	public ListServiceInstanceLogsRequest() {
-		super("ComputeNestSupplier", "2021-05-21", "ListServiceInstanceLogs");
+	public ListArtifactsRequest() {
+		super("ComputeNestSupplier", "2021-05-21", "ListArtifacts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -50,15 +51,22 @@ public class ListServiceInstanceLogsRequest extends RpcAcsRequest<ListServiceIns
 		}
 	}
 
-	public String getServiceInstanceId() {
-		return this.serviceInstanceId;
+	public List<Filter> getFilters() {
+		return this.filters;
 	}
 
-	public void setServiceInstanceId(String serviceInstanceId) {
-		this.serviceInstanceId = serviceInstanceId;
-		if(serviceInstanceId != null){
-			putQueryParameter("ServiceInstanceId", serviceInstanceId);
-		}
+	public void setFilters(List<Filter> filters) {
+		this.filters = filters;	
+		if (filters != null) {
+			for (int depth1 = 0; depth1 < filters.size(); depth1++) {
+				if (filters.get(depth1).getValuess() != null) {
+					for (int i = 0; i < filters.get(depth1).getValuess().size(); i++) {
+						putQueryParameter("Filter." + (depth1 + 1) + ".Values." + (i + 1) , filters.get(depth1).getValuess().get(i));
+					}
+				}
+				putQueryParameter("Filter." + (depth1 + 1) + ".Name" , filters.get(depth1).getName());
+			}
+		}	
 	}
 
 	public String getMaxResults() {
@@ -72,9 +80,32 @@ public class ListServiceInstanceLogsRequest extends RpcAcsRequest<ListServiceIns
 		}
 	}
 
+	public static class Filter {
+
+		private List<String> valuess;
+
+		private String name;
+
+		public List<String> getValuess() {
+			return this.valuess;
+		}
+
+		public void setValuess(List<String> valuess) {
+			this.valuess = valuess;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+	}
+
 	@Override
-	public Class<ListServiceInstanceLogsResponse> getResponseClass() {
-		return ListServiceInstanceLogsResponse.class;
+	public Class<ListArtifactsResponse> getResponseClass() {
+		return ListArtifactsResponse.class;
 	}
 
 }
