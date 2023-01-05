@@ -46,6 +46,7 @@ public class DescribeAcceleratorResponseUnmarshaller {
 		describeAcceleratorResponse.setBandwidthBillingType(_ctx.stringValue("DescribeAcceleratorResponse.BandwidthBillingType"));
 		describeAcceleratorResponse.setCrossPrivateState(_ctx.stringValue("DescribeAcceleratorResponse.CrossPrivateState"));
 		describeAcceleratorResponse.setResourceGroupId(_ctx.stringValue("DescribeAcceleratorResponse.ResourceGroupId"));
+		describeAcceleratorResponse.setCrossBorderMode(_ctx.stringValue("DescribeAcceleratorResponse.CrossBorderMode"));
 
 		CrossDomainBandwidthPackage crossDomainBandwidthPackage = new CrossDomainBandwidthPackage();
 		crossDomainBandwidthPackage.setBandwidth(_ctx.integerValue("DescribeAcceleratorResponse.CrossDomainBandwidthPackage.Bandwidth"));

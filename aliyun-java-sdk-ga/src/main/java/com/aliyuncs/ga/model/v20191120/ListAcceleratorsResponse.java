@@ -111,6 +111,8 @@ public class ListAcceleratorsResponse extends AcsResponse {
 
 		private String resourceGroupId;
 
+		private String crossBorderMode;
+
 		private List<TagsItem> tags;
 
 		private BasicBandwidthPackage basicBandwidthPackage;
@@ -253,6 +255,14 @@ public class ListAcceleratorsResponse extends AcsResponse {
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getCrossBorderMode() {
+			return this.crossBorderMode;
+		}
+
+		public void setCrossBorderMode(String crossBorderMode) {
+			this.crossBorderMode = crossBorderMode;
 		}
 
 		public List<TagsItem> getTags() {
