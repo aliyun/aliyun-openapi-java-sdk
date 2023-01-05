@@ -69,6 +69,8 @@ public class RevokeSecurityGroupEgressRequest extends RpcAcsRequest<RevokeSecuri
 	private String destCidrIp;
 
 	private Long destGroupOwnerId;
+
+	private List<String> securityGroupRuleIds;
 	public RevokeSecurityGroupEgressRequest() {
 		super("Ecs", "2014-05-26", "RevokeSecurityGroupEgress");
 		setMethod(MethodType.POST);
@@ -337,6 +339,19 @@ public class RevokeSecurityGroupEgressRequest extends RpcAcsRequest<RevokeSecuri
 		if(destGroupOwnerId != null){
 			putQueryParameter("DestGroupOwnerId", destGroupOwnerId.toString());
 		}
+	}
+
+	public List<String> getSecurityGroupRuleIds() {
+		return this.securityGroupRuleIds;
+	}
+
+	public void setSecurityGroupRuleIds(List<String> securityGroupRuleIds) {
+		this.securityGroupRuleIds = securityGroupRuleIds;	
+		if (securityGroupRuleIds != null) {
+			for (int i = 0; i < securityGroupRuleIds.size(); i++) {
+				putQueryParameter("SecurityGroupRuleId." + (i + 1) , securityGroupRuleIds.get(i));
+			}
+		}	
 	}
 
 	public static class Permissions {

@@ -107,6 +107,8 @@ public class DescribeSecurityGroupAttributeResponse extends AcsResponse {
 
 	public static class Permission {
 
+		private String securityGroupRuleId;
+
 		private String direction;
 
 		private String sourceGroupId;
@@ -152,6 +154,14 @@ public class DescribeSecurityGroupAttributeResponse extends AcsResponse {
 		private String sourceGroupName;
 
 		private String sourcePortRange;
+
+		public String getSecurityGroupRuleId() {
+			return this.securityGroupRuleId;
+		}
+
+		public void setSecurityGroupRuleId(String securityGroupRuleId) {
+			this.securityGroupRuleId = securityGroupRuleId;
+		}
 
 		public String getDirection() {
 			return this.direction;

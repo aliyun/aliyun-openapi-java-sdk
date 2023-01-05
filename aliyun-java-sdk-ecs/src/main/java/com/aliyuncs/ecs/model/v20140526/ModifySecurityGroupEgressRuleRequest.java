@@ -66,6 +66,8 @@ public class ModifySecurityGroupEgressRuleRequest extends RpcAcsRequest<ModifySe
 	private String destCidrIp;
 
 	private Long destGroupOwnerId;
+
+	private String securityGroupRuleId;
 	public ModifySecurityGroupEgressRuleRequest() {
 		super("Ecs", "2014-05-26", "ModifySecurityGroupEgressRule");
 		setMethod(MethodType.POST);
@@ -303,6 +305,17 @@ public class ModifySecurityGroupEgressRuleRequest extends RpcAcsRequest<ModifySe
 		this.destGroupOwnerId = destGroupOwnerId;
 		if(destGroupOwnerId != null){
 			putQueryParameter("DestGroupOwnerId", destGroupOwnerId.toString());
+		}
+	}
+
+	public String getSecurityGroupRuleId() {
+		return this.securityGroupRuleId;
+	}
+
+	public void setSecurityGroupRuleId(String securityGroupRuleId) {
+		this.securityGroupRuleId = securityGroupRuleId;
+		if(securityGroupRuleId != null){
+			putQueryParameter("SecurityGroupRuleId", securityGroupRuleId);
 		}
 	}
 

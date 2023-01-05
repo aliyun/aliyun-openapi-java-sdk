@@ -37,6 +37,7 @@ public class DescribeSecurityGroupAttributeResponseUnmarshaller {
 		List<Permission> permissions = new ArrayList<Permission>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSecurityGroupAttributeResponse.Permissions.Length"); i++) {
 			Permission permission = new Permission();
+			permission.setSecurityGroupRuleId(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].SecurityGroupRuleId"));
 			permission.setDirection(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].Direction"));
 			permission.setSourceGroupId(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].SourceGroupId"));
 			permission.setDestGroupOwnerAccount(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].DestGroupOwnerAccount"));

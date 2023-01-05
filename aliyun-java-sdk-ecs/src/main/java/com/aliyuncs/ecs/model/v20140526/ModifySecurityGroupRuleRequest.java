@@ -66,6 +66,8 @@ public class ModifySecurityGroupRuleRequest extends RpcAcsRequest<ModifySecurity
 	private String destCidrIp;
 
 	private String sourceGroupId;
+
+	private String securityGroupRuleId;
 	public ModifySecurityGroupRuleRequest() {
 		super("Ecs", "2014-05-26", "ModifySecurityGroupRule");
 		setMethod(MethodType.POST);
@@ -303,6 +305,17 @@ public class ModifySecurityGroupRuleRequest extends RpcAcsRequest<ModifySecurity
 		this.sourceGroupId = sourceGroupId;
 		if(sourceGroupId != null){
 			putQueryParameter("SourceGroupId", sourceGroupId);
+		}
+	}
+
+	public String getSecurityGroupRuleId() {
+		return this.securityGroupRuleId;
+	}
+
+	public void setSecurityGroupRuleId(String securityGroupRuleId) {
+		this.securityGroupRuleId = securityGroupRuleId;
+		if(securityGroupRuleId != null){
+			putQueryParameter("SecurityGroupRuleId", securityGroupRuleId);
 		}
 	}
 
