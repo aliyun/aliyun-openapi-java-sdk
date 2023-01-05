@@ -27,6 +27,8 @@ public class UpdateLiveStreamMonitorRequest extends RpcAcsRequest<UpdateLiveStre
 
 	private String monitorId;
 
+	private String monitorConfig;
+
 	private String monitorName;
 
 	private String stream;
@@ -57,6 +59,17 @@ public class UpdateLiveStreamMonitorRequest extends RpcAcsRequest<UpdateLiveStre
 		this.monitorId = monitorId;
 		if(monitorId != null){
 			putQueryParameter("MonitorId", monitorId);
+		}
+	}
+
+	public String getMonitorConfig() {
+		return this.monitorConfig;
+	}
+
+	public void setMonitorConfig(String monitorConfig) {
+		this.monitorConfig = monitorConfig;
+		if(monitorConfig != null){
+			putQueryParameter("MonitorConfig", monitorConfig);
 		}
 	}
 

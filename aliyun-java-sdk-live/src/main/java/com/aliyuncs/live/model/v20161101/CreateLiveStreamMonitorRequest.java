@@ -25,6 +25,8 @@ import com.aliyuncs.live.Endpoint;
 public class CreateLiveStreamMonitorRequest extends RpcAcsRequest<CreateLiveStreamMonitorResponse> {
 	   
 
+	private String monitorConfig;
+
 	private String monitorName;
 
 	private String stream;
@@ -45,6 +47,17 @@ public class CreateLiveStreamMonitorRequest extends RpcAcsRequest<CreateLiveStre
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getMonitorConfig() {
+		return this.monitorConfig;
+	}
+
+	public void setMonitorConfig(String monitorConfig) {
+		this.monitorConfig = monitorConfig;
+		if(monitorConfig != null){
+			putQueryParameter("MonitorConfig", monitorConfig);
+		}
 	}
 
 	public String getMonitorName() {

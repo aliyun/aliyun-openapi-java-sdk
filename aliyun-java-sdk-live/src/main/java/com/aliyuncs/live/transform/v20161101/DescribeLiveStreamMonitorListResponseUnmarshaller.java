@@ -37,6 +37,7 @@ public class DescribeLiveStreamMonitorListResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeLiveStreamMonitorListResponse.LiveStreamMonitorList.Length"); i++) {
 			LiveStreamMonitorInfo liveStreamMonitorInfo = new LiveStreamMonitorInfo();
 			liveStreamMonitorInfo.setStatus(_ctx.integerValue("DescribeLiveStreamMonitorListResponse.LiveStreamMonitorList["+ i +"].Status"));
+			liveStreamMonitorInfo.setMonitorConfig(_ctx.stringValue("DescribeLiveStreamMonitorListResponse.LiveStreamMonitorList["+ i +"].MonitorConfig"));
 			liveStreamMonitorInfo.setStartTime(_ctx.stringValue("DescribeLiveStreamMonitorListResponse.LiveStreamMonitorList["+ i +"].StartTime"));
 			liveStreamMonitorInfo.setMonitorId(_ctx.stringValue("DescribeLiveStreamMonitorListResponse.LiveStreamMonitorList["+ i +"].MonitorId"));
 			liveStreamMonitorInfo.setDomain(_ctx.stringValue("DescribeLiveStreamMonitorListResponse.LiveStreamMonitorList["+ i +"].Domain"));

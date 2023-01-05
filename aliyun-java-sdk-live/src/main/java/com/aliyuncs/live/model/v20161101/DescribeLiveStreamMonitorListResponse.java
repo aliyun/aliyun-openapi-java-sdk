@@ -59,6 +59,8 @@ public class DescribeLiveStreamMonitorListResponse extends AcsResponse {
 
 		private Integer status;
 
+		private String monitorConfig;
+
 		private String startTime;
 
 		private String monitorId;
@@ -85,6 +87,14 @@ public class DescribeLiveStreamMonitorListResponse extends AcsResponse {
 
 		public void setStatus(Integer status) {
 			this.status = status;
+		}
+
+		public String getMonitorConfig() {
+			return this.monitorConfig;
+		}
+
+		public void setMonitorConfig(String monitorConfig) {
+			this.monitorConfig = monitorConfig;
 		}
 
 		public String getStartTime() {
