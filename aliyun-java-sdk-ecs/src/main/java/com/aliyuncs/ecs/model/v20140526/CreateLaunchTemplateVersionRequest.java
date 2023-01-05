@@ -129,6 +129,8 @@ public class CreateLaunchTemplateVersionRequest extends RpcAcsRequest<CreateLaun
 	private String vpcId;
 
 	private String systemDiskDescription;
+
+	private String systemDiskEncrypted;
 	public CreateLaunchTemplateVersionRequest() {
 		super("Ecs", "2014-05-26", "CreateLaunchTemplateVersion");
 		setMethod(MethodType.POST);
@@ -738,6 +740,17 @@ public class CreateLaunchTemplateVersionRequest extends RpcAcsRequest<CreateLaun
 		this.systemDiskDescription = systemDiskDescription;
 		if(systemDiskDescription != null){
 			putQueryParameter("SystemDisk.Description", systemDiskDescription);
+		}
+	}
+
+	public String getSystemDiskEncrypted() {
+		return this.systemDiskEncrypted;
+	}
+
+	public void setSystemDiskEncrypted(String systemDiskEncrypted) {
+		this.systemDiskEncrypted = systemDiskEncrypted;
+		if(systemDiskEncrypted != null){
+			putQueryParameter("SystemDisk.Encrypted", systemDiskEncrypted);
 		}
 	}
 

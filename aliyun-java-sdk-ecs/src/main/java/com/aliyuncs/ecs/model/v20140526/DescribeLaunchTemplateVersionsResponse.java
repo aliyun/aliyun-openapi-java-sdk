@@ -251,6 +251,8 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 
 			private Boolean systemDiskBurstingEnabled;
 
+			private String systemDiskEncrypted;
+
 			private List<DataDisk> dataDisks;
 
 			private List<NetworkInterface> networkInterfaces;
@@ -585,6 +587,14 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 
 			public void setSystemDiskBurstingEnabled(Boolean systemDiskBurstingEnabled) {
 				this.systemDiskBurstingEnabled = systemDiskBurstingEnabled;
+			}
+
+			public String getSystemDiskEncrypted() {
+				return this.systemDiskEncrypted;
+			}
+
+			public void setSystemDiskEncrypted(String systemDiskEncrypted) {
+				this.systemDiskEncrypted = systemDiskEncrypted;
 			}
 
 			public List<DataDisk> getDataDisks() {

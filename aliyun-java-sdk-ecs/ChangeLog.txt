@@ -1,3 +1,9 @@
+2023-01-05 Version: 4.24.48
+- Deprecate DescribeDedicatedBlockStorageClusters API.
+- Deprecate CreateDedicatedBlockStorageCluster API.
+- Add ErrorCode to ReplaceSystemDisk API.
+- Supported SystemDiskEncrypted for DescribeLaunchTemplateVersions CreateLaunchTemplateVersion and CreateLaunchTemplate.
+
 2023-01-04 Version: 4.24.47
 - Support release nat public ip.
 

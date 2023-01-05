@@ -28,25 +28,37 @@ public class CreateDiskRequest extends RpcAcsRequest<CreateDiskResponse> {
 
 	private Long resourceOwnerId;
 
-	private String snapshotId;
-
-	private String clientToken;
-
 	private String encryptAlgorithm;
-
-	private String description;
 
 	private String diskName;
 
 	private String resourceGroupId;
 
-	private String diskCategory;
-
 	private Integer storageSetPartitionNumber;
 
-	private String multiAttach;
-
 	private List<Tag> tags;
+
+	private Long ownerId;
+
+	private Long provisionedIops;
+
+	private String instanceId;
+
+	private Integer size;
+
+	private String zoneId;
+
+	private String storageClusterId;
+
+	private String snapshotId;
+
+	private String clientToken;
+
+	private String description;
+
+	private String diskCategory;
+
+	private String multiAttach;
 
 	private String advancedFeatures;
 
@@ -58,23 +70,11 @@ public class CreateDiskRequest extends RpcAcsRequest<CreateDiskResponse> {
 
 	private String ownerAccount;
 
-	private Long ownerId;
-
 	private Boolean burstingEnabled;
-
-	private Long provisionedIops;
-
-	private String instanceId;
 
 	private String storageSetId;
 
-	private Integer size;
-
 	private Boolean encrypted;
-
-	private String zoneId;
-
-	private String storageClusterId;
 
 	private String kMSKeyId;
 	public CreateDiskRequest() {
@@ -97,28 +97,6 @@ public class CreateDiskRequest extends RpcAcsRequest<CreateDiskResponse> {
 		}
 	}
 
-	public String getSnapshotId() {
-		return this.snapshotId;
-	}
-
-	public void setSnapshotId(String snapshotId) {
-		this.snapshotId = snapshotId;
-		if(snapshotId != null){
-			putQueryParameter("SnapshotId", snapshotId);
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
 	public String getEncryptAlgorithm() {
 		return this.encryptAlgorithm;
 	}
@@ -127,17 +105,6 @@ public class CreateDiskRequest extends RpcAcsRequest<CreateDiskResponse> {
 		this.encryptAlgorithm = encryptAlgorithm;
 		if(encryptAlgorithm != null){
 			putQueryParameter("EncryptAlgorithm", encryptAlgorithm);
-		}
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
 		}
 	}
 
@@ -163,17 +130,6 @@ public class CreateDiskRequest extends RpcAcsRequest<CreateDiskResponse> {
 		}
 	}
 
-	public String getDiskCategory() {
-		return this.diskCategory;
-	}
-
-	public void setDiskCategory(String diskCategory) {
-		this.diskCategory = diskCategory;
-		if(diskCategory != null){
-			putQueryParameter("DiskCategory", diskCategory);
-		}
-	}
-
 	public Integer getStorageSetPartitionNumber() {
 		return this.storageSetPartitionNumber;
 	}
@@ -182,17 +138,6 @@ public class CreateDiskRequest extends RpcAcsRequest<CreateDiskResponse> {
 		this.storageSetPartitionNumber = storageSetPartitionNumber;
 		if(storageSetPartitionNumber != null){
 			putQueryParameter("StorageSetPartitionNumber", storageSetPartitionNumber.toString());
-		}
-	}
-
-	public String getMultiAttach() {
-		return this.multiAttach;
-	}
-
-	public void setMultiAttach(String multiAttach) {
-		this.multiAttach = multiAttach;
-		if(multiAttach != null){
-			putQueryParameter("MultiAttach", multiAttach);
 		}
 	}
 
@@ -208,6 +153,127 @@ public class CreateDiskRequest extends RpcAcsRequest<CreateDiskResponse> {
 				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Long getProvisionedIops() {
+		return this.provisionedIops;
+	}
+
+	public void setProvisionedIops(Long provisionedIops) {
+		this.provisionedIops = provisionedIops;
+		if(provisionedIops != null){
+			putQueryParameter("ProvisionedIops", provisionedIops.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public Integer getSize() {
+		return this.size;
+	}
+
+	public void setSize(Integer size) {
+		this.size = size;
+		if(size != null){
+			putQueryParameter("Size", size.toString());
+		}
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public String getStorageClusterId() {
+		return this.storageClusterId;
+	}
+
+	public void setStorageClusterId(String storageClusterId) {
+		this.storageClusterId = storageClusterId;
+		if(storageClusterId != null){
+			putQueryParameter("StorageClusterId", storageClusterId);
+		}
+	}
+
+	public String getSnapshotId() {
+		return this.snapshotId;
+	}
+
+	public void setSnapshotId(String snapshotId) {
+		this.snapshotId = snapshotId;
+		if(snapshotId != null){
+			putQueryParameter("SnapshotId", snapshotId);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getDiskCategory() {
+		return this.diskCategory;
+	}
+
+	public void setDiskCategory(String diskCategory) {
+		this.diskCategory = diskCategory;
+		if(diskCategory != null){
+			putQueryParameter("DiskCategory", diskCategory);
+		}
+	}
+
+	public String getMultiAttach() {
+		return this.multiAttach;
+	}
+
+	public void setMultiAttach(String multiAttach) {
+		this.multiAttach = multiAttach;
+		if(multiAttach != null){
+			putQueryParameter("MultiAttach", multiAttach);
+		}
 	}
 
 	public String getAdvancedFeatures() {
@@ -269,17 +335,6 @@ public class CreateDiskRequest extends RpcAcsRequest<CreateDiskResponse> {
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public Boolean getBurstingEnabled() {
 		return this.burstingEnabled;
 	}
@@ -288,28 +343,6 @@ public class CreateDiskRequest extends RpcAcsRequest<CreateDiskResponse> {
 		this.burstingEnabled = burstingEnabled;
 		if(burstingEnabled != null){
 			putQueryParameter("BurstingEnabled", burstingEnabled.toString());
-		}
-	}
-
-	public Long getProvisionedIops() {
-		return this.provisionedIops;
-	}
-
-	public void setProvisionedIops(Long provisionedIops) {
-		this.provisionedIops = provisionedIops;
-		if(provisionedIops != null){
-			putQueryParameter("ProvisionedIops", provisionedIops.toString());
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
@@ -324,17 +357,6 @@ public class CreateDiskRequest extends RpcAcsRequest<CreateDiskResponse> {
 		}
 	}
 
-	public Integer getSize() {
-		return this.size;
-	}
-
-	public void setSize(Integer size) {
-		this.size = size;
-		if(size != null){
-			putQueryParameter("Size", size.toString());
-		}
-	}
-
 	public Boolean getEncrypted() {
 		return this.encrypted;
 	}
@@ -343,28 +365,6 @@ public class CreateDiskRequest extends RpcAcsRequest<CreateDiskResponse> {
 		this.encrypted = encrypted;
 		if(encrypted != null){
 			putQueryParameter("Encrypted", encrypted.toString());
-		}
-	}
-
-	public String getZoneId() {
-		return this.zoneId;
-	}
-
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-		if(zoneId != null){
-			putQueryParameter("ZoneId", zoneId);
-		}
-	}
-
-	public String getStorageClusterId() {
-		return this.storageClusterId;
-	}
-
-	public void setStorageClusterId(String storageClusterId) {
-		this.storageClusterId = storageClusterId;
-		if(storageClusterId != null){
-			putQueryParameter("StorageClusterId", storageClusterId);
 		}
 	}
 
