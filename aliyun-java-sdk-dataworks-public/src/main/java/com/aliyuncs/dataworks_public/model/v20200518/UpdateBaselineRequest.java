@@ -30,16 +30,14 @@ public class UpdateBaselineRequest extends RpcAcsRequest<UpdateBaselineResponse>
 
 	private String owner;
 
-	private Integer alertMarginThreshold;
+	private String removeNodeIds;
 
-	private String removeTaskIds;
+	private Integer alertMarginThreshold;
 
 	@SerializedName("overtimeSettings")
 	private List<OvertimeSettings> overtimeSettings;
 
 	private Integer priority;
-
-	private String taskIds;
 
 	private Long baselineId;
 
@@ -55,6 +53,8 @@ public class UpdateBaselineRequest extends RpcAcsRequest<UpdateBaselineResponse>
 	private String baselineName;
 
 	private Long projectId;
+
+	private String nodeIds;
 	public UpdateBaselineRequest() {
 		super("dataworks-public", "2020-05-18", "UpdateBaseline");
 		setMethod(MethodType.POST);
@@ -75,6 +75,17 @@ public class UpdateBaselineRequest extends RpcAcsRequest<UpdateBaselineResponse>
 		}
 	}
 
+	public String getRemoveNodeIds() {
+		return this.removeNodeIds;
+	}
+
+	public void setRemoveNodeIds(String removeNodeIds) {
+		this.removeNodeIds = removeNodeIds;
+		if(removeNodeIds != null){
+			putBodyParameter("RemoveNodeIds", removeNodeIds);
+		}
+	}
+
 	public Integer getAlertMarginThreshold() {
 		return this.alertMarginThreshold;
 	}
@@ -83,17 +94,6 @@ public class UpdateBaselineRequest extends RpcAcsRequest<UpdateBaselineResponse>
 		this.alertMarginThreshold = alertMarginThreshold;
 		if(alertMarginThreshold != null){
 			putBodyParameter("AlertMarginThreshold", alertMarginThreshold.toString());
-		}
-	}
-
-	public String getRemoveTaskIds() {
-		return this.removeTaskIds;
-	}
-
-	public void setRemoveTaskIds(String removeTaskIds) {
-		this.removeTaskIds = removeTaskIds;
-		if(removeTaskIds != null){
-			putBodyParameter("RemoveTaskIds", removeTaskIds);
 		}
 	}
 
@@ -116,17 +116,6 @@ public class UpdateBaselineRequest extends RpcAcsRequest<UpdateBaselineResponse>
 		this.priority = priority;
 		if(priority != null){
 			putBodyParameter("Priority", priority.toString());
-		}
-	}
-
-	public String getTaskIds() {
-		return this.taskIds;
-	}
-
-	public void setTaskIds(String taskIds) {
-		this.taskIds = taskIds;
-		if(taskIds != null){
-			putBodyParameter("TaskIds", taskIds);
 		}
 	}
 
@@ -204,6 +193,17 @@ public class UpdateBaselineRequest extends RpcAcsRequest<UpdateBaselineResponse>
 		this.projectId = projectId;
 		if(projectId != null){
 			putBodyParameter("ProjectId", projectId.toString());
+		}
+	}
+
+	public String getNodeIds() {
+		return this.nodeIds;
+	}
+
+	public void setNodeIds(String nodeIds) {
+		this.nodeIds = nodeIds;
+		if(nodeIds != null){
+			putBodyParameter("NodeIds", nodeIds);
 		}
 	}
 

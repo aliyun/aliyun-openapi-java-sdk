@@ -34,13 +34,13 @@ public class CreateBaselineRequest extends RpcAcsRequest<CreateBaselineResponse>
 
 	private Integer priority;
 
-	private String taskIds;
-
 	private String baselineType;
 
 	private String baselineName;
 
 	private Long projectId;
+
+	private String nodeIds;
 	public CreateBaselineRequest() {
 		super("dataworks-public", "2020-05-18", "CreateBaseline");
 		setMethod(MethodType.POST);
@@ -97,17 +97,6 @@ public class CreateBaselineRequest extends RpcAcsRequest<CreateBaselineResponse>
 		}
 	}
 
-	public String getTaskIds() {
-		return this.taskIds;
-	}
-
-	public void setTaskIds(String taskIds) {
-		this.taskIds = taskIds;
-		if(taskIds != null){
-			putBodyParameter("TaskIds", taskIds);
-		}
-	}
-
 	public String getBaselineType() {
 		return this.baselineType;
 	}
@@ -138,6 +127,17 @@ public class CreateBaselineRequest extends RpcAcsRequest<CreateBaselineResponse>
 		this.projectId = projectId;
 		if(projectId != null){
 			putBodyParameter("ProjectId", projectId.toString());
+		}
+	}
+
+	public String getNodeIds() {
+		return this.nodeIds;
+	}
+
+	public void setNodeIds(String nodeIds) {
+		this.nodeIds = nodeIds;
+		if(nodeIds != null){
+			putBodyParameter("NodeIds", nodeIds);
 		}
 	}
 
