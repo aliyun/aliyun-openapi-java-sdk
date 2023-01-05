@@ -59,7 +59,7 @@ public class GetDbfsResponseUnmarshaller {
 		SnapshotInfo snapshotInfo = new SnapshotInfo();
 		snapshotInfo.setSnapshotCount(_ctx.integerValue("GetDbfsResponse.DBFSInfo.SnapshotInfo.SnapshotCount"));
 		snapshotInfo.setLinkId(_ctx.stringValue("GetDbfsResponse.DBFSInfo.SnapshotInfo.LinkId"));
-		snapshotInfo.setTotalSize(_ctx.longValue("GetDbfsResponse.DBFSInfo.SnapshotInfo.totalSize"));
+		snapshotInfo.setTotalSize(_ctx.longValue("GetDbfsResponse.DBFSInfo.SnapshotInfo.TotalSize"));
 		snapshotInfo.setPolicyId(_ctx.stringValue("GetDbfsResponse.DBFSInfo.SnapshotInfo.PolicyId"));
 		dBFSInfo.setSnapshotInfo(snapshotInfo);
 

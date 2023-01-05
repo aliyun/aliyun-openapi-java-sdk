@@ -26,6 +26,8 @@ public class DeleteDbfsRequest extends RpcAcsRequest<DeleteDbfsResponse> {
 	   
 
 	private String fsId;
+
+	private Boolean force;
 	public DeleteDbfsRequest() {
 		super("DBFS", "2020-04-18", "DeleteDbfs", "dbfs");
 		setMethod(MethodType.POST);
@@ -43,6 +45,17 @@ public class DeleteDbfsRequest extends RpcAcsRequest<DeleteDbfsResponse> {
 		this.fsId = fsId;
 		if(fsId != null){
 			putQueryParameter("FsId", fsId);
+		}
+	}
+
+	public Boolean getForce() {
+		return this.force;
+	}
+
+	public void setForce(Boolean force) {
+		this.force = force;
+		if(force != null){
+			putQueryParameter("Force", force.toString());
 		}
 	}
 
