@@ -1,0 +1,93 @@
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.aliyuncs.ims.model.v20190815;
+
+import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ims.Endpoint;
+
+/**
+ * @author auto create
+ * @version 
+ */
+public class UpdateGroupRequest extends RpcAcsRequest<UpdateGroupResponse> {
+	   
+
+	private String newDisplayName;
+
+	private String groupName;
+
+	private String newGroupName;
+
+	private String newComments;
+	public UpdateGroupRequest() {
+		super("Ims", "2019-08-15", "UpdateGroup");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public String getNewDisplayName() {
+		return this.newDisplayName;
+	}
+
+	public void setNewDisplayName(String newDisplayName) {
+		this.newDisplayName = newDisplayName;
+		if(newDisplayName != null){
+			putQueryParameter("NewDisplayName", newDisplayName);
+		}
+	}
+
+	public String getGroupName() {
+		return this.groupName;
+	}
+
+	public void setGroupName(String groupName) {
+		this.groupName = groupName;
+		if(groupName != null){
+			putQueryParameter("GroupName", groupName);
+		}
+	}
+
+	public String getNewGroupName() {
+		return this.newGroupName;
+	}
+
+	public void setNewGroupName(String newGroupName) {
+		this.newGroupName = newGroupName;
+		if(newGroupName != null){
+			putQueryParameter("NewGroupName", newGroupName);
+		}
+	}
+
+	public String getNewComments() {
+		return this.newComments;
+	}
+
+	public void setNewComments(String newComments) {
+		this.newComments = newComments;
+		if(newComments != null){
+			putQueryParameter("NewComments", newComments);
+		}
+	}
+
+	@Override
+	public Class<UpdateGroupResponse> getResponseClass() {
+		return UpdateGroupResponse.class;
+	}
+
+}
