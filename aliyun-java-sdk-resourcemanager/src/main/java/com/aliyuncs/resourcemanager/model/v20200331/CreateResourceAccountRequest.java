@@ -27,13 +27,15 @@ import com.aliyuncs.resourcemanager.Endpoint;
 public class CreateResourceAccountRequest extends RpcAcsRequest<CreateResourceAccountResponse> {
 	   
 
+	private List<Tag> tag;
+
 	private String accountNamePrefix;
+
+	private String resellAccountType;
 
 	private String parentFolderId;
 
 	private String displayName;
-
-	private List<Tag> tag;
 
 	private String payerAccountId;
 	public CreateResourceAccountRequest() {
@@ -46,6 +48,23 @@ public class CreateResourceAccountRequest extends RpcAcsRequest<CreateResourceAc
 		} catch (Exception e) {}
 	}
 
+	public List<Tag> getTag() {
+		return this.tag;
+	}
+
+	public void setTag(List<Tag> tag) {
+		this.tag = tag;	
+		if (tag != null) {
+			for (int depth1 = 0; depth1 < tag.size(); depth1++) {
+				if (tag.get(depth1) != null) {
+					
+						putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tag.get(depth1).getValue());
+						putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tag.get(depth1).getKey());
+				}
+			}
+		}	
+	}
+
 	public String getAccountNamePrefix() {
 		return this.accountNamePrefix;
 	}
@@ -54,6 +73,17 @@ public class CreateResourceAccountRequest extends RpcAcsRequest<CreateResourceAc
 		this.accountNamePrefix = accountNamePrefix;
 		if(accountNamePrefix != null){
 			putQueryParameter("AccountNamePrefix", accountNamePrefix);
+		}
+	}
+
+	public String getResellAccountType() {
+		return this.resellAccountType;
+	}
+
+	public void setResellAccountType(String resellAccountType) {
+		this.resellAccountType = resellAccountType;
+		if(resellAccountType != null){
+			putQueryParameter("ResellAccountType", resellAccountType);
 		}
 	}
 
@@ -77,23 +107,6 @@ public class CreateResourceAccountRequest extends RpcAcsRequest<CreateResourceAc
 		if(displayName != null){
 			putQueryParameter("DisplayName", displayName);
 		}
-	}
-
-	public List<Tag> getTag() {
-		return this.tag;
-	}
-
-	public void setTag(List<Tag> tag) {
-		this.tag = tag;	
-		if (tag != null) {
-			for (int depth1 = 0; depth1 < tag.size(); depth1++) {
-				if (tag.get(depth1) != null) {
-					
-						putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tag.get(depth1).getValue());
-						putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tag.get(depth1).getKey());
-				}
-			}
-		}	
 	}
 
 	public String getPayerAccountId() {

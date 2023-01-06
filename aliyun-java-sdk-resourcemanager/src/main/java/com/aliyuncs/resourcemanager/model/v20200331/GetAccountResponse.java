@@ -73,6 +73,8 @@ public class GetAccountResponse extends AcsResponse {
 
 		private String location;
 
+		private String emailStatus;
+
 		private List<Tag> tags;
 
 		public String getStatus() {
@@ -177,6 +179,14 @@ public class GetAccountResponse extends AcsResponse {
 
 		public void setLocation(String location) {
 			this.location = location;
+		}
+
+		public String getEmailStatus() {
+			return this.emailStatus;
+		}
+
+		public void setEmailStatus(String emailStatus) {
+			this.emailStatus = emailStatus;
 		}
 
 		public List<Tag> getTags() {
