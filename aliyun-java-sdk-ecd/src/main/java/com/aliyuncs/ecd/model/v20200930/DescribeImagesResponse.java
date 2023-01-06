@@ -93,6 +93,8 @@ public class DescribeImagesResponse extends AcsResponse {
 
 		private String sessionType;
 
+		private String updateTime;
+
 		private List<String> supportedLanguages;
 
 		public String getCreationTime() {
@@ -237,6 +239,14 @@ public class DescribeImagesResponse extends AcsResponse {
 
 		public void setSessionType(String sessionType) {
 			this.sessionType = sessionType;
+		}
+
+		public String getUpdateTime() {
+			return this.updateTime;
+		}
+
+		public void setUpdateTime(String updateTime) {
+			this.updateTime = updateTime;
 		}
 
 		public List<String> getSupportedLanguages() {

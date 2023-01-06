@@ -159,6 +159,10 @@ public class DescribeDesktopsInGroupResponse extends AcsResponse {
 
 		private String primaryEniIp;
 
+		private String protocolType;
+
+		private String fotaVersion;
+
 		private List<String> endUserIds;
 
 		private List<String> endUserNames;
@@ -293,6 +297,22 @@ public class DescribeDesktopsInGroupResponse extends AcsResponse {
 			this.primaryEniIp = primaryEniIp;
 		}
 
+		public String getProtocolType() {
+			return this.protocolType;
+		}
+
+		public void setProtocolType(String protocolType) {
+			this.protocolType = protocolType;
+		}
+
+		public String getFotaVersion() {
+			return this.fotaVersion;
+		}
+
+		public void setFotaVersion(String fotaVersion) {
+			this.fotaVersion = fotaVersion;
+		}
+
 		public List<String> getEndUserIds() {
 			return this.endUserIds;
 		}
@@ -357,6 +377,10 @@ public class DescribeDesktopsInGroupResponse extends AcsResponse {
 		private String memberEniIp;
 
 		private String primaryEniIp;
+
+		private String protocolType;
+
+		private String fotaVersion;
 
 		private List<String> endUserIds1;
 
@@ -514,6 +538,22 @@ public class DescribeDesktopsInGroupResponse extends AcsResponse {
 
 		public void setPrimaryEniIp(String primaryEniIp) {
 			this.primaryEniIp = primaryEniIp;
+		}
+
+		public String getProtocolType() {
+			return this.protocolType;
+		}
+
+		public void setProtocolType(String protocolType) {
+			this.protocolType = protocolType;
+		}
+
+		public String getFotaVersion() {
+			return this.fotaVersion;
+		}
+
+		public void setFotaVersion(String fotaVersion) {
+			this.fotaVersion = fotaVersion;
 		}
 
 		public List<String> getEndUserIds1() {

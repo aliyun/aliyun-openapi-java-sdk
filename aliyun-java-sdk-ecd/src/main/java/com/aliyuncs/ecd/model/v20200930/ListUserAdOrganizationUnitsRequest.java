@@ -26,6 +26,12 @@ public class ListUserAdOrganizationUnitsRequest extends RpcAcsRequest<ListUserAd
 	   
 
 	private String officeSiteId;
+
+	private String filter;
+
+	private String nextToken;
+
+	private Integer maxResults;
 	public ListUserAdOrganizationUnitsRequest() {
 		super("ecd", "2020-09-30", "ListUserAdOrganizationUnits");
 		setMethod(MethodType.POST);
@@ -43,6 +49,39 @@ public class ListUserAdOrganizationUnitsRequest extends RpcAcsRequest<ListUserAd
 		this.officeSiteId = officeSiteId;
 		if(officeSiteId != null){
 			putQueryParameter("OfficeSiteId", officeSiteId);
+		}
+	}
+
+	public String getFilter() {
+		return this.filter;
+	}
+
+	public void setFilter(String filter) {
+		this.filter = filter;
+		if(filter != null){
+			putQueryParameter("Filter", filter);
+		}
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public Integer getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
+		if(maxResults != null){
+			putQueryParameter("MaxResults", maxResults.toString());
 		}
 	}
 

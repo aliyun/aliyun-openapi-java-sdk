@@ -46,6 +46,8 @@ public class DescribeDesktopGroupsRequest extends RpcAcsRequest<DescribeDesktopG
 
 	private Integer maxResults;
 
+	private String protocolType;
+
 	private String policyGroupId;
 
 	private Integer status;
@@ -169,6 +171,17 @@ public class DescribeDesktopGroupsRequest extends RpcAcsRequest<DescribeDesktopG
 		this.maxResults = maxResults;
 		if(maxResults != null){
 			putQueryParameter("MaxResults", maxResults.toString());
+		}
+	}
+
+	public String getProtocolType() {
+		return this.protocolType;
+	}
+
+	public void setProtocolType(String protocolType) {
+		this.protocolType = protocolType;
+		if(protocolType != null){
+			putQueryParameter("ProtocolType", protocolType);
 		}
 	}
 

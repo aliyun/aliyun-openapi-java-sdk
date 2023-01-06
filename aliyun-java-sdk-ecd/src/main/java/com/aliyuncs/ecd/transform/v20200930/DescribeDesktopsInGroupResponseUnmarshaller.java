@@ -55,6 +55,8 @@ public class DescribeDesktopsInGroupResponseUnmarshaller {
 			paidDesktop.setDiskType(_ctx.stringValue("DescribeDesktopsInGroupResponse.PaidDesktops["+ i +"].DiskType"));
 			paidDesktop.setMemberEniIp(_ctx.stringValue("DescribeDesktopsInGroupResponse.PaidDesktops["+ i +"].MemberEniIp"));
 			paidDesktop.setPrimaryEniIp(_ctx.stringValue("DescribeDesktopsInGroupResponse.PaidDesktops["+ i +"].PrimaryEniIp"));
+			paidDesktop.setProtocolType(_ctx.stringValue("DescribeDesktopsInGroupResponse.PaidDesktops["+ i +"].ProtocolType"));
+			paidDesktop.setFotaVersion(_ctx.stringValue("DescribeDesktopsInGroupResponse.PaidDesktops["+ i +"].FotaVersion"));
 
 			List<String> endUserIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDesktopsInGroupResponse.PaidDesktops["+ i +"].EndUserIds.Length"); j++) {
@@ -100,6 +102,8 @@ public class DescribeDesktopsInGroupResponseUnmarshaller {
 			postPaidDesktop.setDiskType(_ctx.stringValue("DescribeDesktopsInGroupResponse.PostPaidDesktops["+ i +"].DiskType"));
 			postPaidDesktop.setMemberEniIp(_ctx.stringValue("DescribeDesktopsInGroupResponse.PostPaidDesktops["+ i +"].MemberEniIp"));
 			postPaidDesktop.setPrimaryEniIp(_ctx.stringValue("DescribeDesktopsInGroupResponse.PostPaidDesktops["+ i +"].PrimaryEniIp"));
+			postPaidDesktop.setProtocolType(_ctx.stringValue("DescribeDesktopsInGroupResponse.PostPaidDesktops["+ i +"].ProtocolType"));
+			postPaidDesktop.setFotaVersion(_ctx.stringValue("DescribeDesktopsInGroupResponse.PostPaidDesktops["+ i +"].FotaVersion"));
 
 			List<String> endUserIds1 = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDesktopsInGroupResponse.PostPaidDesktops["+ i +"].EndUserIds.Length"); j++) {

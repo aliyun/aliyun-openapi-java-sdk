@@ -46,6 +46,8 @@ public class DescribeBundlesRequest extends RpcAcsRequest<DescribeBundlesRespons
 
 	private Integer memorySize;
 
+	private String sessionType;
+
 	private Integer maxResults;
 
 	private Boolean checkStock;
@@ -173,6 +175,17 @@ public class DescribeBundlesRequest extends RpcAcsRequest<DescribeBundlesRespons
 		this.memorySize = memorySize;
 		if(memorySize != null){
 			putQueryParameter("MemorySize", memorySize.toString());
+		}
+	}
+
+	public String getSessionType() {
+		return this.sessionType;
+	}
+
+	public void setSessionType(String sessionType) {
+		this.sessionType = sessionType;
+		if(sessionType != null){
+			putQueryParameter("SessionType", sessionType);
 		}
 	}
 

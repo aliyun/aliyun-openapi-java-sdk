@@ -27,6 +27,8 @@ public class ListUserAdOrganizationUnitsResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String nextToken;
+
 	private List<OuName> oUNames;
 
 	public String getRequestId() {
@@ -35,6 +37,14 @@ public class ListUserAdOrganizationUnitsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
 	}
 
 	public List<OuName> getOUNames() {
@@ -51,6 +61,8 @@ public class ListUserAdOrganizationUnitsResponse extends AcsResponse {
 
 		private String oUName;
 
+		private String displayOUName;
+
 		public String getOfficeSiteId() {
 			return this.officeSiteId;
 		}
@@ -65,6 +77,14 @@ public class ListUserAdOrganizationUnitsResponse extends AcsResponse {
 
 		public void setOUName(String oUName) {
 			this.oUName = oUName;
+		}
+
+		public String getDisplayOUName() {
+			return this.displayOUName;
+		}
+
+		public void setDisplayOUName(String displayOUName) {
+			this.displayOUName = displayOUName;
 		}
 	}
 

@@ -27,12 +27,14 @@ public class ListUserAdOrganizationUnitsResponseUnmarshaller {
 	public static ListUserAdOrganizationUnitsResponse unmarshall(ListUserAdOrganizationUnitsResponse listUserAdOrganizationUnitsResponse, UnmarshallerContext _ctx) {
 		
 		listUserAdOrganizationUnitsResponse.setRequestId(_ctx.stringValue("ListUserAdOrganizationUnitsResponse.RequestId"));
+		listUserAdOrganizationUnitsResponse.setNextToken(_ctx.stringValue("ListUserAdOrganizationUnitsResponse.NextToken"));
 
 		List<OuName> oUNames = new ArrayList<OuName>();
 		for (int i = 0; i < _ctx.lengthValue("ListUserAdOrganizationUnitsResponse.OUNames.Length"); i++) {
 			OuName ouName = new OuName();
 			ouName.setOfficeSiteId(_ctx.stringValue("ListUserAdOrganizationUnitsResponse.OUNames["+ i +"].OfficeSiteId"));
 			ouName.setOUName(_ctx.stringValue("ListUserAdOrganizationUnitsResponse.OUNames["+ i +"].OUName"));
+			ouName.setDisplayOUName(_ctx.stringValue("ListUserAdOrganizationUnitsResponse.OUNames["+ i +"].DisplayOUName"));
 
 			oUNames.add(ouName);
 		}
