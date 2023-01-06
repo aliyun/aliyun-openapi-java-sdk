@@ -27,9 +27,9 @@ public class ListProductDimensionGroupsResponse extends AcsResponse {
 
 	private Integer totalCount;
 
-	private String requestId;
-
 	private String nextToken;
+
+	private String requestId;
 
 	private Integer maxResults;
 
@@ -43,20 +43,20 @@ public class ListProductDimensionGroupsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getNextToken() {
 		return this.nextToken;
 	}
 
 	public void setNextToken(String nextToken) {
 		this.nextToken = nextToken;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getMaxResults() {
@@ -77,21 +77,13 @@ public class ListProductDimensionGroupsResponse extends AcsResponse {
 
 	public static class DimensionGroupsItem {
 
-		private String groupName;
-
 		private String productCode;
 
 		private String groupCode;
 
+		private String groupName;
+
 		private List<String> dimensionKeys;
-
-		public String getGroupName() {
-			return this.groupName;
-		}
-
-		public void setGroupName(String groupName) {
-			this.groupName = groupName;
-		}
 
 		public String getProductCode() {
 			return this.productCode;
@@ -107,6 +99,14 @@ public class ListProductDimensionGroupsResponse extends AcsResponse {
 
 		public void setGroupCode(String groupCode) {
 			this.groupCode = groupCode;
+		}
+
+		public String getGroupName() {
+			return this.groupName;
+		}
+
+		public void setGroupName(String groupName) {
+			this.groupName = groupName;
 		}
 
 		public List<String> getDimensionKeys() {

@@ -23,48 +23,29 @@ import com.aliyuncs.quotas.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateQuotaApplicationRequest extends RpcAcsRequest<CreateQuotaApplicationResponse> {
+public class ListQuotaApplicationTemplatesRequest extends RpcAcsRequest<ListQuotaApplicationTemplatesResponse> {
 	   
-
-	private String reason;
 
 	private String productCode;
 
 	private String quotaActionCode;
 
-	private Float desireValue;
+	private String nextToken;
 
-	private String effectiveTime;
+	private String id;
 
 	private String quotaCategory;
 
-	private String expireTime;
-
-	private String envLanguage;
-
-	private Integer noticeType;
-
-	private String auditMode;
+	private Integer maxResults;
 
 	private List<Dimensions> dimensionss;
-	public CreateQuotaApplicationRequest() {
-		super("quotas", "2020-05-10", "CreateQuotaApplication", "quotas");
+	public ListQuotaApplicationTemplatesRequest() {
+		super("quotas", "2020-05-10", "ListQuotaApplicationTemplates", "quotas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getReason() {
-		return this.reason;
-	}
-
-	public void setReason(String reason) {
-		this.reason = reason;
-		if(reason != null){
-			putBodyParameter("Reason", reason);
-		}
 	}
 
 	public String getProductCode() {
@@ -89,25 +70,25 @@ public class CreateQuotaApplicationRequest extends RpcAcsRequest<CreateQuotaAppl
 		}
 	}
 
-	public Float getDesireValue() {
-		return this.desireValue;
+	public String getNextToken() {
+		return this.nextToken;
 	}
 
-	public void setDesireValue(Float desireValue) {
-		this.desireValue = desireValue;
-		if(desireValue != null){
-			putBodyParameter("DesireValue", desireValue.toString());
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
 		}
 	}
 
-	public String getEffectiveTime() {
-		return this.effectiveTime;
+	public String getId() {
+		return this.id;
 	}
 
-	public void setEffectiveTime(String effectiveTime) {
-		this.effectiveTime = effectiveTime;
-		if(effectiveTime != null){
-			putBodyParameter("EffectiveTime", effectiveTime);
+	public void setId(String id) {
+		this.id = id;
+		if(id != null){
+			putBodyParameter("Id", id);
 		}
 	}
 
@@ -122,47 +103,14 @@ public class CreateQuotaApplicationRequest extends RpcAcsRequest<CreateQuotaAppl
 		}
 	}
 
-	public String getExpireTime() {
-		return this.expireTime;
+	public Integer getMaxResults() {
+		return this.maxResults;
 	}
 
-	public void setExpireTime(String expireTime) {
-		this.expireTime = expireTime;
-		if(expireTime != null){
-			putBodyParameter("ExpireTime", expireTime);
-		}
-	}
-
-	public String getEnvLanguage() {
-		return this.envLanguage;
-	}
-
-	public void setEnvLanguage(String envLanguage) {
-		this.envLanguage = envLanguage;
-		if(envLanguage != null){
-			putBodyParameter("EnvLanguage", envLanguage);
-		}
-	}
-
-	public Integer getNoticeType() {
-		return this.noticeType;
-	}
-
-	public void setNoticeType(Integer noticeType) {
-		this.noticeType = noticeType;
-		if(noticeType != null){
-			putBodyParameter("NoticeType", noticeType.toString());
-		}
-	}
-
-	public String getAuditMode() {
-		return this.auditMode;
-	}
-
-	public void setAuditMode(String auditMode) {
-		this.auditMode = auditMode;
-		if(auditMode != null){
-			putBodyParameter("AuditMode", auditMode);
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
+		if(maxResults != null){
+			putBodyParameter("MaxResults", maxResults.toString());
 		}
 	}
 
@@ -204,8 +152,8 @@ public class CreateQuotaApplicationRequest extends RpcAcsRequest<CreateQuotaAppl
 	}
 
 	@Override
-	public Class<CreateQuotaApplicationResponse> getResponseClass() {
-		return CreateQuotaApplicationResponse.class;
+	public Class<ListQuotaApplicationTemplatesResponse> getResponseClass() {
+		return ListQuotaApplicationTemplatesResponse.class;
 	}
 
 }

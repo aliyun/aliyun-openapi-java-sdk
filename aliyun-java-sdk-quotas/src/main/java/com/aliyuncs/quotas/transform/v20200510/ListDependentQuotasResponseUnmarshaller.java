@@ -41,17 +41,17 @@ public class ListDependentQuotasResponseUnmarshaller {
 				DimensionsItem dimensionsItem = new DimensionsItem();
 				dimensionsItem.setDimensionKey(_ctx.stringValue("ListDependentQuotasResponse.Quotas["+ i +"].Dimensions["+ j +"].DimensionKey"));
 
-				List<String> dimensionValues = new ArrayList<String>();
-				for (int k = 0; k < _ctx.lengthValue("ListDependentQuotasResponse.Quotas["+ i +"].Dimensions["+ j +"].DimensionValues.Length"); k++) {
-					dimensionValues.add(_ctx.stringValue("ListDependentQuotasResponse.Quotas["+ i +"].Dimensions["+ j +"].DimensionValues["+ k +"]"));
-				}
-				dimensionsItem.setDimensionValues(dimensionValues);
-
 				List<String> dependentDimension = new ArrayList<String>();
 				for (int k = 0; k < _ctx.lengthValue("ListDependentQuotasResponse.Quotas["+ i +"].Dimensions["+ j +"].DependentDimension.Length"); k++) {
 					dependentDimension.add(_ctx.stringValue("ListDependentQuotasResponse.Quotas["+ i +"].Dimensions["+ j +"].DependentDimension["+ k +"]"));
 				}
 				dimensionsItem.setDependentDimension(dependentDimension);
+
+				List<String> dimensionValues = new ArrayList<String>();
+				for (int k = 0; k < _ctx.lengthValue("ListDependentQuotasResponse.Quotas["+ i +"].Dimensions["+ j +"].DimensionValues.Length"); k++) {
+					dimensionValues.add(_ctx.stringValue("ListDependentQuotasResponse.Quotas["+ i +"].Dimensions["+ j +"].DimensionValues["+ k +"]"));
+				}
+				dimensionsItem.setDimensionValues(dimensionValues);
 
 				dimensions.add(dimensionsItem);
 			}

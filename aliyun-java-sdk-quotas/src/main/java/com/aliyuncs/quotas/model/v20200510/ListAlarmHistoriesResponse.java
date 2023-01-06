@@ -25,22 +25,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListAlarmHistoriesResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer totalCount;
 
 	private String nextToken;
 
-	private Integer maxResults;
+	private String requestId;
 
-	private Integer totalCount;
+	private Integer maxResults;
 
 	private List<AlarmHistory> alarmHistories;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public String getNextToken() {
@@ -51,20 +51,20 @@ public class ListAlarmHistoriesResponse extends AcsResponse {
 		this.nextToken = nextToken;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public Integer getMaxResults() {
 		return this.maxResults;
 	}
 
 	public void setMaxResults(Integer maxResults) {
 		this.maxResults = maxResults;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public List<AlarmHistory> getAlarmHistories() {
@@ -77,31 +77,23 @@ public class ListAlarmHistoriesResponse extends AcsResponse {
 
 	public static class AlarmHistory {
 
-		private String alarmName;
-
 		private Float quotaUsage;
 
-		private String productCode;
+		private Float thresholdPercent;
 
 		private String createTime;
+
+		private String quotaActionCode;
+
+		private String alarmName;
 
 		private String notifyTarget;
 
 		private Float threshold;
 
-		private Float thresholdPercent;
-
-		private String quotaActionCode;
+		private String productCode;
 
 		private List<String> notifyChannels;
-
-		public String getAlarmName() {
-			return this.alarmName;
-		}
-
-		public void setAlarmName(String alarmName) {
-			this.alarmName = alarmName;
-		}
 
 		public Float getQuotaUsage() {
 			return this.quotaUsage;
@@ -111,12 +103,12 @@ public class ListAlarmHistoriesResponse extends AcsResponse {
 			this.quotaUsage = quotaUsage;
 		}
 
-		public String getProductCode() {
-			return this.productCode;
+		public Float getThresholdPercent() {
+			return this.thresholdPercent;
 		}
 
-		public void setProductCode(String productCode) {
-			this.productCode = productCode;
+		public void setThresholdPercent(Float thresholdPercent) {
+			this.thresholdPercent = thresholdPercent;
 		}
 
 		public String getCreateTime() {
@@ -125,6 +117,22 @@ public class ListAlarmHistoriesResponse extends AcsResponse {
 
 		public void setCreateTime(String createTime) {
 			this.createTime = createTime;
+		}
+
+		public String getQuotaActionCode() {
+			return this.quotaActionCode;
+		}
+
+		public void setQuotaActionCode(String quotaActionCode) {
+			this.quotaActionCode = quotaActionCode;
+		}
+
+		public String getAlarmName() {
+			return this.alarmName;
+		}
+
+		public void setAlarmName(String alarmName) {
+			this.alarmName = alarmName;
 		}
 
 		public String getNotifyTarget() {
@@ -143,20 +151,12 @@ public class ListAlarmHistoriesResponse extends AcsResponse {
 			this.threshold = threshold;
 		}
 
-		public Float getThresholdPercent() {
-			return this.thresholdPercent;
+		public String getProductCode() {
+			return this.productCode;
 		}
 
-		public void setThresholdPercent(Float thresholdPercent) {
-			this.thresholdPercent = thresholdPercent;
-		}
-
-		public String getQuotaActionCode() {
-			return this.quotaActionCode;
-		}
-
-		public void setQuotaActionCode(String quotaActionCode) {
-			this.quotaActionCode = quotaActionCode;
+		public void setProductCode(String productCode) {
+			this.productCode = productCode;
 		}
 
 		public List<String> getNotifyChannels() {

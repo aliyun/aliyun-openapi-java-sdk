@@ -35,15 +35,9 @@ public class ListProductQuotaDimensionsResponseUnmarshaller {
 		List<QuotaDimensionsItem> quotaDimensions = new ArrayList<QuotaDimensionsItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListProductQuotaDimensionsResponse.QuotaDimensions.Length"); i++) {
 			QuotaDimensionsItem quotaDimensionsItem = new QuotaDimensionsItem();
+			quotaDimensionsItem.setRequisite(_ctx.booleanValue("ListProductQuotaDimensionsResponse.QuotaDimensions["+ i +"].Requisite"));
 			quotaDimensionsItem.setDimensionKey(_ctx.stringValue("ListProductQuotaDimensionsResponse.QuotaDimensions["+ i +"].DimensionKey"));
 			quotaDimensionsItem.setName(_ctx.stringValue("ListProductQuotaDimensionsResponse.QuotaDimensions["+ i +"].Name"));
-			quotaDimensionsItem.setRequisite(_ctx.booleanValue("ListProductQuotaDimensionsResponse.QuotaDimensions["+ i +"].Requisite"));
-
-			List<String> dimensionValues = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("ListProductQuotaDimensionsResponse.QuotaDimensions["+ i +"].DimensionValues.Length"); j++) {
-				dimensionValues.add(_ctx.stringValue("ListProductQuotaDimensionsResponse.QuotaDimensions["+ i +"].DimensionValues["+ j +"]"));
-			}
-			quotaDimensionsItem.setDimensionValues(dimensionValues);
 
 			List<String> dependentDimensions = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListProductQuotaDimensionsResponse.QuotaDimensions["+ i +"].DependentDimensions.Length"); j++) {
@@ -51,11 +45,17 @@ public class ListProductQuotaDimensionsResponseUnmarshaller {
 			}
 			quotaDimensionsItem.setDependentDimensions(dependentDimensions);
 
+			List<String> dimensionValues = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("ListProductQuotaDimensionsResponse.QuotaDimensions["+ i +"].DimensionValues.Length"); j++) {
+				dimensionValues.add(_ctx.stringValue("ListProductQuotaDimensionsResponse.QuotaDimensions["+ i +"].DimensionValues["+ j +"]"));
+			}
+			quotaDimensionsItem.setDimensionValues(dimensionValues);
+
 			List<DimensionValueDetailItem> dimensionValueDetail = new ArrayList<DimensionValueDetailItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListProductQuotaDimensionsResponse.QuotaDimensions["+ i +"].DimensionValueDetail.Length"); j++) {
 				DimensionValueDetailItem dimensionValueDetailItem = new DimensionValueDetailItem();
-				dimensionValueDetailItem.setValue(_ctx.stringValue("ListProductQuotaDimensionsResponse.QuotaDimensions["+ i +"].DimensionValueDetail["+ j +"].Value"));
 				dimensionValueDetailItem.setName(_ctx.stringValue("ListProductQuotaDimensionsResponse.QuotaDimensions["+ i +"].DimensionValueDetail["+ j +"].Name"));
+				dimensionValueDetailItem.setValue(_ctx.stringValue("ListProductQuotaDimensionsResponse.QuotaDimensions["+ i +"].DimensionValueDetail["+ j +"].Value"));
 
 				dimensionValueDetail.add(dimensionValueDetailItem);
 			}

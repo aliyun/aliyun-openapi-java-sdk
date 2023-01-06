@@ -30,18 +30,18 @@ public class GetQuotaAlarmResponseUnmarshaller {
 		getQuotaAlarmResponse.setRequestId(_ctx.stringValue("GetQuotaAlarmResponse.RequestId"));
 
 		QuotaAlarm quotaAlarm = new QuotaAlarm();
-		quotaAlarm.setAlarmId(_ctx.stringValue("GetQuotaAlarmResponse.QuotaAlarm.AlarmId"));
-		quotaAlarm.setQuotaActionCode(_ctx.stringValue("GetQuotaAlarmResponse.QuotaAlarm.QuotaActionCode"));
-		quotaAlarm.setQuotaValue(_ctx.floatValue("GetQuotaAlarmResponse.QuotaAlarm.QuotaValue"));
 		quotaAlarm.setThresholdPercent(_ctx.floatValue("GetQuotaAlarmResponse.QuotaAlarm.ThresholdPercent"));
-		quotaAlarm.setAlarmName(_ctx.stringValue("GetQuotaAlarmResponse.QuotaAlarm.AlarmName"));
-		quotaAlarm.setProductCode(_ctx.stringValue("GetQuotaAlarmResponse.QuotaAlarm.ProductCode"));
-		quotaAlarm.setNotifyTarget(_ctx.stringValue("GetQuotaAlarmResponse.QuotaAlarm.NotifyTarget"));
-		quotaAlarm.setCreateTime(_ctx.stringValue("GetQuotaAlarmResponse.QuotaAlarm.CreateTime"));
-		quotaAlarm.setQuotaDimension(_ctx.mapValue("GetQuotaAlarmResponse.QuotaAlarm.QuotaDimension"));
-		quotaAlarm.setQuotaUsage(_ctx.floatValue("GetQuotaAlarmResponse.QuotaAlarm.QuotaUsage"));
-		quotaAlarm.setThreshold(_ctx.floatValue("GetQuotaAlarmResponse.QuotaAlarm.Threshold"));
 		quotaAlarm.setThresholdType(_ctx.stringValue("GetQuotaAlarmResponse.QuotaAlarm.ThresholdType"));
+		quotaAlarm.setQuotaDimension(_ctx.mapValue("GetQuotaAlarmResponse.QuotaAlarm.QuotaDimension"));
+		quotaAlarm.setCreateTime(_ctx.stringValue("GetQuotaAlarmResponse.QuotaAlarm.CreateTime"));
+		quotaAlarm.setQuotaActionCode(_ctx.stringValue("GetQuotaAlarmResponse.QuotaAlarm.QuotaActionCode"));
+		quotaAlarm.setAlarmName(_ctx.stringValue("GetQuotaAlarmResponse.QuotaAlarm.AlarmName"));
+		quotaAlarm.setNotifyTarget(_ctx.stringValue("GetQuotaAlarmResponse.QuotaAlarm.NotifyTarget"));
+		quotaAlarm.setQuotaUsage(_ctx.floatValue("GetQuotaAlarmResponse.QuotaAlarm.QuotaUsage"));
+		quotaAlarm.setQuotaValue(_ctx.floatValue("GetQuotaAlarmResponse.QuotaAlarm.QuotaValue"));
+		quotaAlarm.setAlarmId(_ctx.stringValue("GetQuotaAlarmResponse.QuotaAlarm.AlarmId"));
+		quotaAlarm.setThreshold(_ctx.floatValue("GetQuotaAlarmResponse.QuotaAlarm.Threshold"));
+		quotaAlarm.setProductCode(_ctx.stringValue("GetQuotaAlarmResponse.QuotaAlarm.ProductCode"));
 
 		List<String> notifyChannels = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetQuotaAlarmResponse.QuotaAlarm.NotifyChannels.Length"); i++) {

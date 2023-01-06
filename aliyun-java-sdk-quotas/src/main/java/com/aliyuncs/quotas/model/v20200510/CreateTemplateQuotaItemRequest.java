@@ -23,10 +23,8 @@ import com.aliyuncs.quotas.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateQuotaApplicationRequest extends RpcAcsRequest<CreateQuotaApplicationResponse> {
+public class CreateTemplateQuotaItemRequest extends RpcAcsRequest<CreateTemplateQuotaItemResponse> {
 	   
-
-	private String reason;
 
 	private String productCode;
 
@@ -42,29 +40,16 @@ public class CreateQuotaApplicationRequest extends RpcAcsRequest<CreateQuotaAppl
 
 	private String envLanguage;
 
-	private Integer noticeType;
-
-	private String auditMode;
+	private Long noticeType;
 
 	private List<Dimensions> dimensionss;
-	public CreateQuotaApplicationRequest() {
-		super("quotas", "2020-05-10", "CreateQuotaApplication", "quotas");
+	public CreateTemplateQuotaItemRequest() {
+		super("quotas", "2020-05-10", "CreateTemplateQuotaItem", "quotas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getReason() {
-		return this.reason;
-	}
-
-	public void setReason(String reason) {
-		this.reason = reason;
-		if(reason != null){
-			putBodyParameter("Reason", reason);
-		}
 	}
 
 	public String getProductCode() {
@@ -144,25 +129,14 @@ public class CreateQuotaApplicationRequest extends RpcAcsRequest<CreateQuotaAppl
 		}
 	}
 
-	public Integer getNoticeType() {
+	public Long getNoticeType() {
 		return this.noticeType;
 	}
 
-	public void setNoticeType(Integer noticeType) {
+	public void setNoticeType(Long noticeType) {
 		this.noticeType = noticeType;
 		if(noticeType != null){
 			putBodyParameter("NoticeType", noticeType.toString());
-		}
-	}
-
-	public String getAuditMode() {
-		return this.auditMode;
-	}
-
-	public void setAuditMode(String auditMode) {
-		this.auditMode = auditMode;
-		if(auditMode != null){
-			putBodyParameter("AuditMode", auditMode);
 		}
 	}
 
@@ -204,8 +178,8 @@ public class CreateQuotaApplicationRequest extends RpcAcsRequest<CreateQuotaAppl
 	}
 
 	@Override
-	public Class<CreateQuotaApplicationResponse> getResponseClass() {
-		return CreateQuotaApplicationResponse.class;
+	public Class<CreateTemplateQuotaItemResponse> getResponseClass() {
+		return CreateTemplateQuotaItemResponse.class;
 	}
 
 }

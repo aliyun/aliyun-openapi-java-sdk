@@ -48,70 +48,62 @@ public class GetProductQuotaResponse extends AcsResponse {
 
 	public static class Quota {
 
-		private String quotaDescription;
+		private String quotaUnit;
 
-		private Boolean consumable;
-
-		private String unadjustableDetail;
-
-		private String productCode;
+		private String quotaActionCode;
 
 		private Float totalUsage;
 
 		private String quotaType;
 
-		private Map<Object,Object> dimensions;
-
-		private String quotaUnit;
-
-		private Boolean adjustable;
-
-		private String quotaActionCode;
-
-		private String quotaName;
+		private String quotaDescription;
 
 		private String quotaArn;
 
+		private String applicableType;
+
+		private Map<Object,Object> dimensions;
+
+		private Boolean adjustable;
+
+		private String quotaName;
+
+		private String unadjustableDetail;
+
+		private Boolean consumable;
+
 		private Float totalQuota;
 
-		private String applicableType;
+		private String productCode;
+
+		private String effectiveTime;
+
+		private String expireTime;
+
+		private String quotaCategory;
 
 		private List<QuotaItemsItem> quotaItems;
 
 		private List<Float> applicableRange;
 
+		private List<Float> supportedRange;
+
 		private Period period;
 
-		public String getQuotaDescription() {
-			return this.quotaDescription;
+		public String getQuotaUnit() {
+			return this.quotaUnit;
 		}
 
-		public void setQuotaDescription(String quotaDescription) {
-			this.quotaDescription = quotaDescription;
+		public void setQuotaUnit(String quotaUnit) {
+			this.quotaUnit = quotaUnit;
 		}
 
-		public Boolean getConsumable() {
-			return this.consumable;
+		public String getQuotaActionCode() {
+			return this.quotaActionCode;
 		}
 
-		public void setConsumable(Boolean consumable) {
-			this.consumable = consumable;
-		}
-
-		public String getUnadjustableDetail() {
-			return this.unadjustableDetail;
-		}
-
-		public void setUnadjustableDetail(String unadjustableDetail) {
-			this.unadjustableDetail = unadjustableDetail;
-		}
-
-		public String getProductCode() {
-			return this.productCode;
-		}
-
-		public void setProductCode(String productCode) {
-			this.productCode = productCode;
+		public void setQuotaActionCode(String quotaActionCode) {
+			this.quotaActionCode = quotaActionCode;
 		}
 
 		public Float getTotalUsage() {
@@ -130,44 +122,12 @@ public class GetProductQuotaResponse extends AcsResponse {
 			this.quotaType = quotaType;
 		}
 
-		public Map<Object,Object> getDimensions() {
-			return this.dimensions;
+		public String getQuotaDescription() {
+			return this.quotaDescription;
 		}
 
-		public void setDimensions(Map<Object,Object> dimensions) {
-			this.dimensions = dimensions;
-		}
-
-		public String getQuotaUnit() {
-			return this.quotaUnit;
-		}
-
-		public void setQuotaUnit(String quotaUnit) {
-			this.quotaUnit = quotaUnit;
-		}
-
-		public Boolean getAdjustable() {
-			return this.adjustable;
-		}
-
-		public void setAdjustable(Boolean adjustable) {
-			this.adjustable = adjustable;
-		}
-
-		public String getQuotaActionCode() {
-			return this.quotaActionCode;
-		}
-
-		public void setQuotaActionCode(String quotaActionCode) {
-			this.quotaActionCode = quotaActionCode;
-		}
-
-		public String getQuotaName() {
-			return this.quotaName;
-		}
-
-		public void setQuotaName(String quotaName) {
-			this.quotaName = quotaName;
+		public void setQuotaDescription(String quotaDescription) {
+			this.quotaDescription = quotaDescription;
 		}
 
 		public String getQuotaArn() {
@@ -178,6 +138,54 @@ public class GetProductQuotaResponse extends AcsResponse {
 			this.quotaArn = quotaArn;
 		}
 
+		public String getApplicableType() {
+			return this.applicableType;
+		}
+
+		public void setApplicableType(String applicableType) {
+			this.applicableType = applicableType;
+		}
+
+		public Map<Object,Object> getDimensions() {
+			return this.dimensions;
+		}
+
+		public void setDimensions(Map<Object,Object> dimensions) {
+			this.dimensions = dimensions;
+		}
+
+		public Boolean getAdjustable() {
+			return this.adjustable;
+		}
+
+		public void setAdjustable(Boolean adjustable) {
+			this.adjustable = adjustable;
+		}
+
+		public String getQuotaName() {
+			return this.quotaName;
+		}
+
+		public void setQuotaName(String quotaName) {
+			this.quotaName = quotaName;
+		}
+
+		public String getUnadjustableDetail() {
+			return this.unadjustableDetail;
+		}
+
+		public void setUnadjustableDetail(String unadjustableDetail) {
+			this.unadjustableDetail = unadjustableDetail;
+		}
+
+		public Boolean getConsumable() {
+			return this.consumable;
+		}
+
+		public void setConsumable(Boolean consumable) {
+			this.consumable = consumable;
+		}
+
 		public Float getTotalQuota() {
 			return this.totalQuota;
 		}
@@ -186,12 +194,36 @@ public class GetProductQuotaResponse extends AcsResponse {
 			this.totalQuota = totalQuota;
 		}
 
-		public String getApplicableType() {
-			return this.applicableType;
+		public String getProductCode() {
+			return this.productCode;
 		}
 
-		public void setApplicableType(String applicableType) {
-			this.applicableType = applicableType;
+		public void setProductCode(String productCode) {
+			this.productCode = productCode;
+		}
+
+		public String getEffectiveTime() {
+			return this.effectiveTime;
+		}
+
+		public void setEffectiveTime(String effectiveTime) {
+			this.effectiveTime = effectiveTime;
+		}
+
+		public String getExpireTime() {
+			return this.expireTime;
+		}
+
+		public void setExpireTime(String expireTime) {
+			this.expireTime = expireTime;
+		}
+
+		public String getQuotaCategory() {
+			return this.quotaCategory;
+		}
+
+		public void setQuotaCategory(String quotaCategory) {
+			this.quotaCategory = quotaCategory;
 		}
 
 		public List<QuotaItemsItem> getQuotaItems() {
@@ -210,6 +242,14 @@ public class GetProductQuotaResponse extends AcsResponse {
 			this.applicableRange = applicableRange;
 		}
 
+		public List<Float> getSupportedRange() {
+			return this.supportedRange;
+		}
+
+		public void setSupportedRange(List<Float> supportedRange) {
+			this.supportedRange = supportedRange;
+		}
+
 		public Period getPeriod() {
 			return this.period;
 		}
@@ -220,21 +260,13 @@ public class GetProductQuotaResponse extends AcsResponse {
 
 		public static class QuotaItemsItem {
 
-			private String usage;
-
 			private String type;
 
 			private String quota;
 
 			private String quotaUnit;
 
-			public String getUsage() {
-				return this.usage;
-			}
-
-			public void setUsage(String usage) {
-				this.usage = usage;
-			}
+			private String usage;
 
 			public String getType() {
 				return this.type;
@@ -258,6 +290,14 @@ public class GetProductQuotaResponse extends AcsResponse {
 
 			public void setQuotaUnit(String quotaUnit) {
 				this.quotaUnit = quotaUnit;
+			}
+
+			public String getUsage() {
+				return this.usage;
+			}
+
+			public void setUsage(String usage) {
+				this.usage = usage;
 			}
 		}
 

@@ -53,9 +53,9 @@ public class GetProductQuotaDimensionResponse extends AcsResponse {
 
 		private List<DimensionValueDetailItem> dimensionValueDetail;
 
-		private List<String> dimensionValues;
-
 		private List<String> dependentDimensions;
+
+		private List<String> dimensionValues;
 
 		public String getDimensionKey() {
 			return this.dimensionKey;
@@ -81,14 +81,6 @@ public class GetProductQuotaDimensionResponse extends AcsResponse {
 			this.dimensionValueDetail = dimensionValueDetail;
 		}
 
-		public List<String> getDimensionValues() {
-			return this.dimensionValues;
-		}
-
-		public void setDimensionValues(List<String> dimensionValues) {
-			this.dimensionValues = dimensionValues;
-		}
-
 		public List<String> getDependentDimensions() {
 			return this.dependentDimensions;
 		}
@@ -97,19 +89,19 @@ public class GetProductQuotaDimensionResponse extends AcsResponse {
 			this.dependentDimensions = dependentDimensions;
 		}
 
-		public static class DimensionValueDetailItem {
+		public List<String> getDimensionValues() {
+			return this.dimensionValues;
+		}
 
-			private String value;
+		public void setDimensionValues(List<String> dimensionValues) {
+			this.dimensionValues = dimensionValues;
+		}
+
+		public static class DimensionValueDetailItem {
 
 			private String name;
 
-			public String getValue() {
-				return this.value;
-			}
-
-			public void setValue(String value) {
-				this.value = value;
-			}
+			private String value;
 
 			public String getName() {
 				return this.name;
@@ -117,6 +109,14 @@ public class GetProductQuotaDimensionResponse extends AcsResponse {
 
 			public void setName(String name) {
 				this.name = name;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
 			}
 		}
 	}

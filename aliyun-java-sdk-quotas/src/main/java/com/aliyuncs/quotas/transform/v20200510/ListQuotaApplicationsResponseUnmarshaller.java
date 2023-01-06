@@ -37,23 +37,23 @@ public class ListQuotaApplicationsResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("ListQuotaApplicationsResponse.QuotaApplications.Length"); i++) {
 			QuotaApplicationsItem quotaApplicationsItem = new QuotaApplicationsItem();
 			quotaApplicationsItem.setStatus(_ctx.stringValue("ListQuotaApplicationsResponse.QuotaApplications["+ i +"].Status"));
-			quotaApplicationsItem.setApplyTime(_ctx.stringValue("ListQuotaApplicationsResponse.QuotaApplications["+ i +"].ApplyTime"));
 			quotaApplicationsItem.setComment(_ctx.stringValue("ListQuotaApplicationsResponse.QuotaApplications["+ i +"].Comment"));
-			quotaApplicationsItem.setQuotaDescription(_ctx.stringValue("ListQuotaApplicationsResponse.QuotaApplications["+ i +"].QuotaDescription"));
-			quotaApplicationsItem.setProductCode(_ctx.stringValue("ListQuotaApplicationsResponse.QuotaApplications["+ i +"].ProductCode"));
-			quotaApplicationsItem.setEffectiveTime(_ctx.stringValue("ListQuotaApplicationsResponse.QuotaApplications["+ i +"].EffectiveTime"));
-			quotaApplicationsItem.setAuditReason(_ctx.stringValue("ListQuotaApplicationsResponse.QuotaApplications["+ i +"].AuditReason"));
-			quotaApplicationsItem.setQuotaUnit(_ctx.stringValue("ListQuotaApplicationsResponse.QuotaApplications["+ i +"].QuotaUnit"));
-			quotaApplicationsItem.setDimension(_ctx.mapValue("ListQuotaApplicationsResponse.QuotaApplications["+ i +"].Dimension"));
-			quotaApplicationsItem.setApproveValue(_ctx.floatValue("ListQuotaApplicationsResponse.QuotaApplications["+ i +"].ApproveValue"));
-			quotaApplicationsItem.setReason(_ctx.stringValue("ListQuotaApplicationsResponse.QuotaApplications["+ i +"].Reason"));
-			quotaApplicationsItem.setQuotaActionCode(_ctx.stringValue("ListQuotaApplicationsResponse.QuotaApplications["+ i +"].QuotaActionCode"));
-			quotaApplicationsItem.setQuotaName(_ctx.stringValue("ListQuotaApplicationsResponse.QuotaApplications["+ i +"].QuotaName"));
-			quotaApplicationsItem.setQuotaArn(_ctx.stringValue("ListQuotaApplicationsResponse.QuotaApplications["+ i +"].QuotaArn"));
-			quotaApplicationsItem.setNoticeType(_ctx.integerValue("ListQuotaApplicationsResponse.QuotaApplications["+ i +"].NoticeType"));
-			quotaApplicationsItem.setApplicationId(_ctx.stringValue("ListQuotaApplicationsResponse.QuotaApplications["+ i +"].ApplicationId"));
-			quotaApplicationsItem.setDesireValue(_ctx.floatValue("ListQuotaApplicationsResponse.QuotaApplications["+ i +"].DesireValue"));
 			quotaApplicationsItem.setExpireTime(_ctx.stringValue("ListQuotaApplicationsResponse.QuotaApplications["+ i +"].ExpireTime"));
+			quotaApplicationsItem.setQuotaUnit(_ctx.stringValue("ListQuotaApplicationsResponse.QuotaApplications["+ i +"].QuotaUnit"));
+			quotaApplicationsItem.setDesireValue(_ctx.floatValue("ListQuotaApplicationsResponse.QuotaApplications["+ i +"].DesireValue"));
+			quotaApplicationsItem.setNoticeType(_ctx.integerValue("ListQuotaApplicationsResponse.QuotaApplications["+ i +"].NoticeType"));
+			quotaApplicationsItem.setQuotaActionCode(_ctx.stringValue("ListQuotaApplicationsResponse.QuotaApplications["+ i +"].QuotaActionCode"));
+			quotaApplicationsItem.setDimension(_ctx.mapValue("ListQuotaApplicationsResponse.QuotaApplications["+ i +"].Dimension"));
+			quotaApplicationsItem.setQuotaDescription(_ctx.stringValue("ListQuotaApplicationsResponse.QuotaApplications["+ i +"].QuotaDescription"));
+			quotaApplicationsItem.setQuotaArn(_ctx.stringValue("ListQuotaApplicationsResponse.QuotaApplications["+ i +"].QuotaArn"));
+			quotaApplicationsItem.setEffectiveTime(_ctx.stringValue("ListQuotaApplicationsResponse.QuotaApplications["+ i +"].EffectiveTime"));
+			quotaApplicationsItem.setApproveValue(_ctx.floatValue("ListQuotaApplicationsResponse.QuotaApplications["+ i +"].ApproveValue"));
+			quotaApplicationsItem.setQuotaName(_ctx.stringValue("ListQuotaApplicationsResponse.QuotaApplications["+ i +"].QuotaName"));
+			quotaApplicationsItem.setApplicationId(_ctx.stringValue("ListQuotaApplicationsResponse.QuotaApplications["+ i +"].ApplicationId"));
+			quotaApplicationsItem.setAuditReason(_ctx.stringValue("ListQuotaApplicationsResponse.QuotaApplications["+ i +"].AuditReason"));
+			quotaApplicationsItem.setReason(_ctx.stringValue("ListQuotaApplicationsResponse.QuotaApplications["+ i +"].Reason"));
+			quotaApplicationsItem.setApplyTime(_ctx.stringValue("ListQuotaApplicationsResponse.QuotaApplications["+ i +"].ApplyTime"));
+			quotaApplicationsItem.setProductCode(_ctx.stringValue("ListQuotaApplicationsResponse.QuotaApplications["+ i +"].ProductCode"));
 
 			Period period = new Period();
 			period.setPeriodValue(_ctx.longValue("ListQuotaApplicationsResponse.QuotaApplications["+ i +"].Period.PeriodValue"));

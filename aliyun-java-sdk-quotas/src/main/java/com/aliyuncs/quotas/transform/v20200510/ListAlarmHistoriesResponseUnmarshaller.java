@@ -27,21 +27,21 @@ public class ListAlarmHistoriesResponseUnmarshaller {
 	public static ListAlarmHistoriesResponse unmarshall(ListAlarmHistoriesResponse listAlarmHistoriesResponse, UnmarshallerContext _ctx) {
 		
 		listAlarmHistoriesResponse.setRequestId(_ctx.stringValue("ListAlarmHistoriesResponse.RequestId"));
+		listAlarmHistoriesResponse.setTotalCount(_ctx.integerValue("ListAlarmHistoriesResponse.TotalCount"));
 		listAlarmHistoriesResponse.setNextToken(_ctx.stringValue("ListAlarmHistoriesResponse.NextToken"));
 		listAlarmHistoriesResponse.setMaxResults(_ctx.integerValue("ListAlarmHistoriesResponse.MaxResults"));
-		listAlarmHistoriesResponse.setTotalCount(_ctx.integerValue("ListAlarmHistoriesResponse.TotalCount"));
 
 		List<AlarmHistory> alarmHistories = new ArrayList<AlarmHistory>();
 		for (int i = 0; i < _ctx.lengthValue("ListAlarmHistoriesResponse.AlarmHistories.Length"); i++) {
 			AlarmHistory alarmHistory = new AlarmHistory();
-			alarmHistory.setAlarmName(_ctx.stringValue("ListAlarmHistoriesResponse.AlarmHistories["+ i +"].AlarmName"));
 			alarmHistory.setQuotaUsage(_ctx.floatValue("ListAlarmHistoriesResponse.AlarmHistories["+ i +"].QuotaUsage"));
-			alarmHistory.setProductCode(_ctx.stringValue("ListAlarmHistoriesResponse.AlarmHistories["+ i +"].ProductCode"));
+			alarmHistory.setThresholdPercent(_ctx.floatValue("ListAlarmHistoriesResponse.AlarmHistories["+ i +"].ThresholdPercent"));
 			alarmHistory.setCreateTime(_ctx.stringValue("ListAlarmHistoriesResponse.AlarmHistories["+ i +"].CreateTime"));
+			alarmHistory.setQuotaActionCode(_ctx.stringValue("ListAlarmHistoriesResponse.AlarmHistories["+ i +"].QuotaActionCode"));
+			alarmHistory.setAlarmName(_ctx.stringValue("ListAlarmHistoriesResponse.AlarmHistories["+ i +"].AlarmName"));
 			alarmHistory.setNotifyTarget(_ctx.stringValue("ListAlarmHistoriesResponse.AlarmHistories["+ i +"].NotifyTarget"));
 			alarmHistory.setThreshold(_ctx.floatValue("ListAlarmHistoriesResponse.AlarmHistories["+ i +"].Threshold"));
-			alarmHistory.setThresholdPercent(_ctx.floatValue("ListAlarmHistoriesResponse.AlarmHistories["+ i +"].ThresholdPercent"));
-			alarmHistory.setQuotaActionCode(_ctx.stringValue("ListAlarmHistoriesResponse.AlarmHistories["+ i +"].QuotaActionCode"));
+			alarmHistory.setProductCode(_ctx.stringValue("ListAlarmHistoriesResponse.AlarmHistories["+ i +"].ProductCode"));
 
 			List<String> notifyChannels = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListAlarmHistoriesResponse.AlarmHistories["+ i +"].NotifyChannels.Length"); j++) {

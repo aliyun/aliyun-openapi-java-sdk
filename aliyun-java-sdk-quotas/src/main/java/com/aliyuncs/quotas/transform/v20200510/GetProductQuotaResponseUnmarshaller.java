@@ -32,26 +32,35 @@ public class GetProductQuotaResponseUnmarshaller {
 		getProductQuotaResponse.setRequestId(_ctx.stringValue("GetProductQuotaResponse.RequestId"));
 
 		Quota quota = new Quota();
-		quota.setQuotaDescription(_ctx.stringValue("GetProductQuotaResponse.Quota.QuotaDescription"));
-		quota.setConsumable(_ctx.booleanValue("GetProductQuotaResponse.Quota.Consumable"));
-		quota.setUnadjustableDetail(_ctx.stringValue("GetProductQuotaResponse.Quota.UnadjustableDetail"));
-		quota.setProductCode(_ctx.stringValue("GetProductQuotaResponse.Quota.ProductCode"));
+		quota.setQuotaUnit(_ctx.stringValue("GetProductQuotaResponse.Quota.QuotaUnit"));
+		quota.setQuotaActionCode(_ctx.stringValue("GetProductQuotaResponse.Quota.QuotaActionCode"));
 		quota.setTotalUsage(_ctx.floatValue("GetProductQuotaResponse.Quota.TotalUsage"));
 		quota.setQuotaType(_ctx.stringValue("GetProductQuotaResponse.Quota.QuotaType"));
-		quota.setDimensions(_ctx.mapValue("GetProductQuotaResponse.Quota.Dimensions"));
-		quota.setQuotaUnit(_ctx.stringValue("GetProductQuotaResponse.Quota.QuotaUnit"));
-		quota.setAdjustable(_ctx.booleanValue("GetProductQuotaResponse.Quota.Adjustable"));
-		quota.setQuotaActionCode(_ctx.stringValue("GetProductQuotaResponse.Quota.QuotaActionCode"));
-		quota.setQuotaName(_ctx.stringValue("GetProductQuotaResponse.Quota.QuotaName"));
+		quota.setQuotaDescription(_ctx.stringValue("GetProductQuotaResponse.Quota.QuotaDescription"));
 		quota.setQuotaArn(_ctx.stringValue("GetProductQuotaResponse.Quota.QuotaArn"));
-		quota.setTotalQuota(_ctx.floatValue("GetProductQuotaResponse.Quota.TotalQuota"));
 		quota.setApplicableType(_ctx.stringValue("GetProductQuotaResponse.Quota.ApplicableType"));
+		quota.setDimensions(_ctx.mapValue("GetProductQuotaResponse.Quota.Dimensions"));
+		quota.setAdjustable(_ctx.booleanValue("GetProductQuotaResponse.Quota.Adjustable"));
+		quota.setQuotaName(_ctx.stringValue("GetProductQuotaResponse.Quota.QuotaName"));
+		quota.setUnadjustableDetail(_ctx.stringValue("GetProductQuotaResponse.Quota.UnadjustableDetail"));
+		quota.setConsumable(_ctx.booleanValue("GetProductQuotaResponse.Quota.Consumable"));
+		quota.setTotalQuota(_ctx.floatValue("GetProductQuotaResponse.Quota.TotalQuota"));
+		quota.setProductCode(_ctx.stringValue("GetProductQuotaResponse.Quota.ProductCode"));
+		quota.setEffectiveTime(_ctx.stringValue("GetProductQuotaResponse.Quota.EffectiveTime"));
+		quota.setExpireTime(_ctx.stringValue("GetProductQuotaResponse.Quota.ExpireTime"));
+		quota.setQuotaCategory(_ctx.stringValue("GetProductQuotaResponse.Quota.QuotaCategory"));
 
 		List<Float> applicableRange = new ArrayList<Float>();
 		for (int i = 0; i < _ctx.lengthValue("GetProductQuotaResponse.Quota.ApplicableRange.Length"); i++) {
 			applicableRange.add(_ctx.floatValue("GetProductQuotaResponse.Quota.ApplicableRange["+ i +"]"));
 		}
 		quota.setApplicableRange(applicableRange);
+
+		List<Float> supportedRange = new ArrayList<Float>();
+		for (int i = 0; i < _ctx.lengthValue("GetProductQuotaResponse.Quota.SupportedRange.Length"); i++) {
+			supportedRange.add(_ctx.floatValue("GetProductQuotaResponse.Quota.SupportedRange["+ i +"]"));
+		}
+		quota.setSupportedRange(supportedRange);
 
 		Period period = new Period();
 		period.setPeriodValue(_ctx.integerValue("GetProductQuotaResponse.Quota.Period.PeriodValue"));
@@ -61,10 +70,10 @@ public class GetProductQuotaResponseUnmarshaller {
 		List<QuotaItemsItem> quotaItems = new ArrayList<QuotaItemsItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetProductQuotaResponse.Quota.QuotaItems.Length"); i++) {
 			QuotaItemsItem quotaItemsItem = new QuotaItemsItem();
-			quotaItemsItem.setUsage(_ctx.stringValue("GetProductQuotaResponse.Quota.QuotaItems["+ i +"].Usage"));
 			quotaItemsItem.setType(_ctx.stringValue("GetProductQuotaResponse.Quota.QuotaItems["+ i +"].Type"));
 			quotaItemsItem.setQuota(_ctx.stringValue("GetProductQuotaResponse.Quota.QuotaItems["+ i +"].Quota"));
 			quotaItemsItem.setQuotaUnit(_ctx.stringValue("GetProductQuotaResponse.Quota.QuotaItems["+ i +"].QuotaUnit"));
+			quotaItemsItem.setUsage(_ctx.stringValue("GetProductQuotaResponse.Quota.QuotaItems["+ i +"].Usage"));
 
 			quotaItems.add(quotaItemsItem);
 		}

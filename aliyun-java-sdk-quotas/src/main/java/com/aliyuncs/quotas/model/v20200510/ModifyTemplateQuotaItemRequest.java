@@ -23,10 +23,8 @@ import com.aliyuncs.quotas.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateQuotaApplicationRequest extends RpcAcsRequest<CreateQuotaApplicationResponse> {
+public class ModifyTemplateQuotaItemRequest extends RpcAcsRequest<ModifyTemplateQuotaItemResponse> {
 	   
-
-	private String reason;
 
 	private String productCode;
 
@@ -36,35 +34,24 @@ public class CreateQuotaApplicationRequest extends RpcAcsRequest<CreateQuotaAppl
 
 	private String effectiveTime;
 
+	private String id;
+
 	private String quotaCategory;
 
 	private String expireTime;
 
 	private String envLanguage;
 
-	private Integer noticeType;
-
-	private String auditMode;
+	private Long noticeType;
 
 	private List<Dimensions> dimensionss;
-	public CreateQuotaApplicationRequest() {
-		super("quotas", "2020-05-10", "CreateQuotaApplication", "quotas");
+	public ModifyTemplateQuotaItemRequest() {
+		super("quotas", "2020-05-10", "ModifyTemplateQuotaItem", "quotas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getReason() {
-		return this.reason;
-	}
-
-	public void setReason(String reason) {
-		this.reason = reason;
-		if(reason != null){
-			putBodyParameter("Reason", reason);
-		}
 	}
 
 	public String getProductCode() {
@@ -111,6 +98,17 @@ public class CreateQuotaApplicationRequest extends RpcAcsRequest<CreateQuotaAppl
 		}
 	}
 
+	public String getId() {
+		return this.id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+		if(id != null){
+			putBodyParameter("Id", id);
+		}
+	}
+
 	public String getQuotaCategory() {
 		return this.quotaCategory;
 	}
@@ -118,7 +116,7 @@ public class CreateQuotaApplicationRequest extends RpcAcsRequest<CreateQuotaAppl
 	public void setQuotaCategory(String quotaCategory) {
 		this.quotaCategory = quotaCategory;
 		if(quotaCategory != null){
-			putBodyParameter("QuotaCategory", quotaCategory);
+			putQueryParameter("QuotaCategory", quotaCategory);
 		}
 	}
 
@@ -144,25 +142,14 @@ public class CreateQuotaApplicationRequest extends RpcAcsRequest<CreateQuotaAppl
 		}
 	}
 
-	public Integer getNoticeType() {
+	public Long getNoticeType() {
 		return this.noticeType;
 	}
 
-	public void setNoticeType(Integer noticeType) {
+	public void setNoticeType(Long noticeType) {
 		this.noticeType = noticeType;
 		if(noticeType != null){
 			putBodyParameter("NoticeType", noticeType.toString());
-		}
-	}
-
-	public String getAuditMode() {
-		return this.auditMode;
-	}
-
-	public void setAuditMode(String auditMode) {
-		this.auditMode = auditMode;
-		if(auditMode != null){
-			putBodyParameter("AuditMode", auditMode);
 		}
 	}
 
@@ -204,8 +191,8 @@ public class CreateQuotaApplicationRequest extends RpcAcsRequest<CreateQuotaAppl
 	}
 
 	@Override
-	public Class<CreateQuotaApplicationResponse> getResponseClass() {
-		return CreateQuotaApplicationResponse.class;
+	public Class<ModifyTemplateQuotaItemResponse> getResponseClass() {
+		return ModifyTemplateQuotaItemResponse.class;
 	}
 
 }

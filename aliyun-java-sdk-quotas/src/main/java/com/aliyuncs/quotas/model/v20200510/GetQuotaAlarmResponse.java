@@ -48,55 +48,31 @@ public class GetQuotaAlarmResponse extends AcsResponse {
 
 	public static class QuotaAlarm {
 
-		private String alarmId;
-
-		private String quotaActionCode;
-
-		private Float quotaValue;
-
 		private Float thresholdPercent;
-
-		private String alarmName;
-
-		private String productCode;
-
-		private String notifyTarget;
-
-		private String createTime;
-
-		private Map<Object,Object> quotaDimension;
-
-		private Float quotaUsage;
-
-		private Float threshold;
 
 		private String thresholdType;
 
+		private Map<Object,Object> quotaDimension;
+
+		private String createTime;
+
+		private String quotaActionCode;
+
+		private String alarmName;
+
+		private String notifyTarget;
+
+		private Float quotaUsage;
+
+		private Float quotaValue;
+
+		private String alarmId;
+
+		private Float threshold;
+
+		private String productCode;
+
 		private List<String> notifyChannels;
-
-		public String getAlarmId() {
-			return this.alarmId;
-		}
-
-		public void setAlarmId(String alarmId) {
-			this.alarmId = alarmId;
-		}
-
-		public String getQuotaActionCode() {
-			return this.quotaActionCode;
-		}
-
-		public void setQuotaActionCode(String quotaActionCode) {
-			this.quotaActionCode = quotaActionCode;
-		}
-
-		public Float getQuotaValue() {
-			return this.quotaValue;
-		}
-
-		public void setQuotaValue(Float quotaValue) {
-			this.quotaValue = quotaValue;
-		}
 
 		public Float getThresholdPercent() {
 			return this.thresholdPercent;
@@ -106,36 +82,12 @@ public class GetQuotaAlarmResponse extends AcsResponse {
 			this.thresholdPercent = thresholdPercent;
 		}
 
-		public String getAlarmName() {
-			return this.alarmName;
+		public String getThresholdType() {
+			return this.thresholdType;
 		}
 
-		public void setAlarmName(String alarmName) {
-			this.alarmName = alarmName;
-		}
-
-		public String getProductCode() {
-			return this.productCode;
-		}
-
-		public void setProductCode(String productCode) {
-			this.productCode = productCode;
-		}
-
-		public String getNotifyTarget() {
-			return this.notifyTarget;
-		}
-
-		public void setNotifyTarget(String notifyTarget) {
-			this.notifyTarget = notifyTarget;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
+		public void setThresholdType(String thresholdType) {
+			this.thresholdType = thresholdType;
 		}
 
 		public Map<Object,Object> getQuotaDimension() {
@@ -146,12 +98,60 @@ public class GetQuotaAlarmResponse extends AcsResponse {
 			this.quotaDimension = quotaDimension;
 		}
 
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getQuotaActionCode() {
+			return this.quotaActionCode;
+		}
+
+		public void setQuotaActionCode(String quotaActionCode) {
+			this.quotaActionCode = quotaActionCode;
+		}
+
+		public String getAlarmName() {
+			return this.alarmName;
+		}
+
+		public void setAlarmName(String alarmName) {
+			this.alarmName = alarmName;
+		}
+
+		public String getNotifyTarget() {
+			return this.notifyTarget;
+		}
+
+		public void setNotifyTarget(String notifyTarget) {
+			this.notifyTarget = notifyTarget;
+		}
+
 		public Float getQuotaUsage() {
 			return this.quotaUsage;
 		}
 
 		public void setQuotaUsage(Float quotaUsage) {
 			this.quotaUsage = quotaUsage;
+		}
+
+		public Float getQuotaValue() {
+			return this.quotaValue;
+		}
+
+		public void setQuotaValue(Float quotaValue) {
+			this.quotaValue = quotaValue;
+		}
+
+		public String getAlarmId() {
+			return this.alarmId;
+		}
+
+		public void setAlarmId(String alarmId) {
+			this.alarmId = alarmId;
 		}
 
 		public Float getThreshold() {
@@ -162,12 +162,12 @@ public class GetQuotaAlarmResponse extends AcsResponse {
 			this.threshold = threshold;
 		}
 
-		public String getThresholdType() {
-			return this.thresholdType;
+		public String getProductCode() {
+			return this.productCode;
 		}
 
-		public void setThresholdType(String thresholdType) {
-			this.thresholdType = thresholdType;
+		public void setProductCode(String productCode) {
+			this.productCode = productCode;
 		}
 
 		public List<String> getNotifyChannels() {
