@@ -24,23 +24,39 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetPtsSceneRunningStatusResponse extends AcsResponse {
 
+	private String status;
+
+	private String modifiedTime;
+
 	private String requestId;
-
-	private Boolean success;
-
-	private String code;
 
 	private String message;
 
-	private Integer httpStatusCode;
-
 	private String sceneName;
-
-	private String status;
 
 	private String createTime;
 
-	private String modifiedTime;
+	private Integer httpStatusCode;
+
+	private String code;
+
+	private Boolean success;
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public String getModifiedTime() {
+		return this.modifiedTime;
+	}
+
+	public void setModifiedTime(String modifiedTime) {
+		this.modifiedTime = modifiedTime;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -48,22 +64,6 @@ public class GetPtsSceneRunningStatusResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
 	}
 
 	public String getMessage() {
@@ -74,28 +74,12 @@ public class GetPtsSceneRunningStatusResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
-
 	public String getSceneName() {
 		return this.sceneName;
 	}
 
 	public void setSceneName(String sceneName) {
 		this.sceneName = sceneName;
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
 	}
 
 	public String getCreateTime() {
@@ -106,12 +90,28 @@ public class GetPtsSceneRunningStatusResponse extends AcsResponse {
 		this.createTime = createTime;
 	}
 
-	public String getModifiedTime() {
-		return this.modifiedTime;
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
 	}
 
-	public void setModifiedTime(String modifiedTime) {
-		this.modifiedTime = modifiedTime;
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

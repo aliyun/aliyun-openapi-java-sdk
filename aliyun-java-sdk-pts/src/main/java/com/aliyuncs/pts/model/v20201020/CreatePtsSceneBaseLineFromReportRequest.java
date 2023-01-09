@@ -29,7 +29,7 @@ public class CreatePtsSceneBaseLineFromReportRequest extends RpcAcsRequest<Creat
 
 	private String sceneId;
 	public CreatePtsSceneBaseLineFromReportRequest() {
-		super("PTS", "2020-10-20", "CreatePtsSceneBaseLineFromReport", "pts");
+		super("PTS", "2020-10-20", "CreatePtsSceneBaseLineFromReport");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

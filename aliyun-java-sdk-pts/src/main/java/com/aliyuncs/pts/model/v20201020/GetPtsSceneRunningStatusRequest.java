@@ -27,7 +27,7 @@ public class GetPtsSceneRunningStatusRequest extends RpcAcsRequest<GetPtsSceneRu
 
 	private String sceneId;
 	public GetPtsSceneRunningStatusRequest() {
-		super("PTS", "2020-10-20", "GetPtsSceneRunningStatus", "pts");
+		super("PTS", "2020-10-20", "GetPtsSceneRunningStatus");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

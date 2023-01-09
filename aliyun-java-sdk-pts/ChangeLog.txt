@@ -1,3 +1,7 @@
+2023-01-09 Version: 3.3.1
+- Supported adjust PTS scene speed.
+- Supported open PTS product.
+
 2021-03-17 Version: 3.3.0
 - Generated 2020-10-20 for `PTS`.
 

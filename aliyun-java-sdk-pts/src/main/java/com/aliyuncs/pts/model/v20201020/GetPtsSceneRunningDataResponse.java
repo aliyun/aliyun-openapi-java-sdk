@@ -25,51 +25,61 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetPtsSceneRunningDataResponse extends AcsResponse {
 
+	private Integer status;
+
 	private Long totalRequestCount;
 
-	private Long vum;
+	private Boolean hasReport;
 
-	private String requestBps;
+	private Integer concurrencyLimit;
+
+	private String message;
+
+	private String requestId;
+
+	private Long beginTime;
+
+	private Long seg90Rt;
 
 	private String responseBps;
 
-	private Long failedRequestCount;
+	private Integer totalAgents;
+
+	private String code;
+
+	private Boolean success;
+
+	private Long vum;
+
+	private Long averageRt;
+
+	private String requestBps;
 
 	private Long failedBusinessCount;
 
 	private Integer concurrency;
 
-	private Integer concurrencyLimit;
+	private Integer httpStatusCode;
+
+	private Long failedRequestCount;
 
 	private Integer tpsLimit;
 
 	private Integer aliveAgents;
 
-	private Integer totalAgents;
-
-	private Long seg90Rt;
-
-	private Long averageRt;
-
-	private Long beginTime;
-
-	private String code;
-
-	private String message;
-
-	private Integer httpStatusCode;
-
-	private Boolean success;
-
-	private String requestId;
-
-	private Integer status;
-
-	private Boolean hasReport;
+	private Integer totalRealQps;
 
 	private List<Location> agentLocation;
 
 	private List<ChainMonitorData> chainMonitorDataList;
+
+	public Integer getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(Integer status) {
+		this.status = status;
+	}
 
 	public Long getTotalRequestCount() {
 		return this.totalRequestCount;
@@ -79,20 +89,52 @@ public class GetPtsSceneRunningDataResponse extends AcsResponse {
 		this.totalRequestCount = totalRequestCount;
 	}
 
-	public Long getVum() {
-		return this.vum;
+	public Boolean getHasReport() {
+		return this.hasReport;
 	}
 
-	public void setVum(Long vum) {
-		this.vum = vum;
+	public void setHasReport(Boolean hasReport) {
+		this.hasReport = hasReport;
 	}
 
-	public String getRequestBps() {
-		return this.requestBps;
+	public Integer getConcurrencyLimit() {
+		return this.concurrencyLimit;
 	}
 
-	public void setRequestBps(String requestBps) {
-		this.requestBps = requestBps;
+	public void setConcurrencyLimit(Integer concurrencyLimit) {
+		this.concurrencyLimit = concurrencyLimit;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Long getBeginTime() {
+		return this.beginTime;
+	}
+
+	public void setBeginTime(Long beginTime) {
+		this.beginTime = beginTime;
+	}
+
+	public Long getSeg90Rt() {
+		return this.seg90Rt;
+	}
+
+	public void setSeg90Rt(Long seg90Rt) {
+		this.seg90Rt = seg90Rt;
 	}
 
 	public String getResponseBps() {
@@ -103,12 +145,52 @@ public class GetPtsSceneRunningDataResponse extends AcsResponse {
 		this.responseBps = responseBps;
 	}
 
-	public Long getFailedRequestCount() {
-		return this.failedRequestCount;
+	public Integer getTotalAgents() {
+		return this.totalAgents;
 	}
 
-	public void setFailedRequestCount(Long failedRequestCount) {
-		this.failedRequestCount = failedRequestCount;
+	public void setTotalAgents(Integer totalAgents) {
+		this.totalAgents = totalAgents;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public Long getVum() {
+		return this.vum;
+	}
+
+	public void setVum(Long vum) {
+		this.vum = vum;
+	}
+
+	public Long getAverageRt() {
+		return this.averageRt;
+	}
+
+	public void setAverageRt(Long averageRt) {
+		this.averageRt = averageRt;
+	}
+
+	public String getRequestBps() {
+		return this.requestBps;
+	}
+
+	public void setRequestBps(String requestBps) {
+		this.requestBps = requestBps;
 	}
 
 	public Long getFailedBusinessCount() {
@@ -127,12 +209,20 @@ public class GetPtsSceneRunningDataResponse extends AcsResponse {
 		this.concurrency = concurrency;
 	}
 
-	public Integer getConcurrencyLimit() {
-		return this.concurrencyLimit;
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
 	}
 
-	public void setConcurrencyLimit(Integer concurrencyLimit) {
-		this.concurrencyLimit = concurrencyLimit;
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
+
+	public Long getFailedRequestCount() {
+		return this.failedRequestCount;
+	}
+
+	public void setFailedRequestCount(Long failedRequestCount) {
+		this.failedRequestCount = failedRequestCount;
 	}
 
 	public Integer getTpsLimit() {
@@ -151,92 +241,12 @@ public class GetPtsSceneRunningDataResponse extends AcsResponse {
 		this.aliveAgents = aliveAgents;
 	}
 
-	public Integer getTotalAgents() {
-		return this.totalAgents;
+	public Integer getTotalRealQps() {
+		return this.totalRealQps;
 	}
 
-	public void setTotalAgents(Integer totalAgents) {
-		this.totalAgents = totalAgents;
-	}
-
-	public Long getSeg90Rt() {
-		return this.seg90Rt;
-	}
-
-	public void setSeg90Rt(Long seg90Rt) {
-		this.seg90Rt = seg90Rt;
-	}
-
-	public Long getAverageRt() {
-		return this.averageRt;
-	}
-
-	public void setAverageRt(Long averageRt) {
-		this.averageRt = averageRt;
-	}
-
-	public Long getBeginTime() {
-		return this.beginTime;
-	}
-
-	public void setBeginTime(Long beginTime) {
-		this.beginTime = beginTime;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(Integer status) {
-		this.status = status;
-	}
-
-	public Boolean getHasReport() {
-		return this.hasReport;
-	}
-
-	public void setHasReport(Boolean hasReport) {
-		this.hasReport = hasReport;
+	public void setTotalRealQps(Integer totalRealQps) {
+		this.totalRealQps = totalRealQps;
 	}
 
 	public List<Location> getAgentLocation() {
@@ -257,20 +267,20 @@ public class GetPtsSceneRunningDataResponse extends AcsResponse {
 
 	public static class Location {
 
-		private String province;
+		private String region;
 
 		private String isp;
 
-		private String region;
-
 		private Integer count;
 
-		public String getProvince() {
-			return this.province;
+		private String province;
+
+		public String getRegion() {
+			return this.region;
 		}
 
-		public void setProvince(String province) {
-			this.province = province;
+		public void setRegion(String region) {
+			this.region = region;
 		}
 
 		public String getIsp() {
@@ -281,14 +291,6 @@ public class GetPtsSceneRunningDataResponse extends AcsResponse {
 			this.isp = isp;
 		}
 
-		public String getRegion() {
-			return this.region;
-		}
-
-		public void setRegion(String region) {
-			this.region = region;
-		}
-
 		public Integer getCount() {
 			return this.count;
 		}
@@ -296,47 +298,47 @@ public class GetPtsSceneRunningDataResponse extends AcsResponse {
 		public void setCount(Integer count) {
 			this.count = count;
 		}
+
+		public String getProvince() {
+			return this.province;
+		}
+
+		public void setProvince(String province) {
+			this.province = province;
+		}
 	}
 
 	public static class ChainMonitorData {
 
-		private Long nodeId;
-
 		private Long timePoint;
+
+		private String apiId;
+
+		private Integer minRt;
+
+		private Float qps2XX;
+
+		private Integer maxRt;
 
 		private Integer configQps;
 
-		private Float realQps;
-
-		private Float concurrency;
-
-		private Float qps2XX;
+		private Long failedCount;
 
 		private Float failedQps;
 
 		private Integer averageRt;
 
-		private Integer maxRt;
-
-		private Integer minRt;
-
 		private Long count2XX;
 
-		private Long failedCount;
-
-		private String apiId;
+		private Float realQps;
 
 		private String apiName;
 
+		private Long nodeId;
+
+		private Float concurrency;
+
 		private CheckPointResult checkPointResult;
-
-		public Long getNodeId() {
-			return this.nodeId;
-		}
-
-		public void setNodeId(Long nodeId) {
-			this.nodeId = nodeId;
-		}
 
 		public Long getTimePoint() {
 			return this.timePoint;
@@ -344,6 +346,38 @@ public class GetPtsSceneRunningDataResponse extends AcsResponse {
 
 		public void setTimePoint(Long timePoint) {
 			this.timePoint = timePoint;
+		}
+
+		public String getApiId() {
+			return this.apiId;
+		}
+
+		public void setApiId(String apiId) {
+			this.apiId = apiId;
+		}
+
+		public Integer getMinRt() {
+			return this.minRt;
+		}
+
+		public void setMinRt(Integer minRt) {
+			this.minRt = minRt;
+		}
+
+		public Float getQps2XX() {
+			return this.qps2XX;
+		}
+
+		public void setQps2XX(Float qps2XX) {
+			this.qps2XX = qps2XX;
+		}
+
+		public Integer getMaxRt() {
+			return this.maxRt;
+		}
+
+		public void setMaxRt(Integer maxRt) {
+			this.maxRt = maxRt;
 		}
 
 		public Integer getConfigQps() {
@@ -354,28 +388,12 @@ public class GetPtsSceneRunningDataResponse extends AcsResponse {
 			this.configQps = configQps;
 		}
 
-		public Float getRealQps() {
-			return this.realQps;
+		public Long getFailedCount() {
+			return this.failedCount;
 		}
 
-		public void setRealQps(Float realQps) {
-			this.realQps = realQps;
-		}
-
-		public Float getConcurrency() {
-			return this.concurrency;
-		}
-
-		public void setConcurrency(Float concurrency) {
-			this.concurrency = concurrency;
-		}
-
-		public Float getQps2XX() {
-			return this.qps2XX;
-		}
-
-		public void setQps2XX(Float qps2XX) {
-			this.qps2XX = qps2XX;
+		public void setFailedCount(Long failedCount) {
+			this.failedCount = failedCount;
 		}
 
 		public Float getFailedQps() {
@@ -394,22 +412,6 @@ public class GetPtsSceneRunningDataResponse extends AcsResponse {
 			this.averageRt = averageRt;
 		}
 
-		public Integer getMaxRt() {
-			return this.maxRt;
-		}
-
-		public void setMaxRt(Integer maxRt) {
-			this.maxRt = maxRt;
-		}
-
-		public Integer getMinRt() {
-			return this.minRt;
-		}
-
-		public void setMinRt(Integer minRt) {
-			this.minRt = minRt;
-		}
-
 		public Long getCount2XX() {
 			return this.count2XX;
 		}
@@ -418,20 +420,12 @@ public class GetPtsSceneRunningDataResponse extends AcsResponse {
 			this.count2XX = count2XX;
 		}
 
-		public Long getFailedCount() {
-			return this.failedCount;
+		public Float getRealQps() {
+			return this.realQps;
 		}
 
-		public void setFailedCount(Long failedCount) {
-			this.failedCount = failedCount;
-		}
-
-		public String getApiId() {
-			return this.apiId;
-		}
-
-		public void setApiId(String apiId) {
-			this.apiId = apiId;
+		public void setRealQps(Float realQps) {
+			this.realQps = realQps;
 		}
 
 		public String getApiName() {
@@ -440,6 +434,22 @@ public class GetPtsSceneRunningDataResponse extends AcsResponse {
 
 		public void setApiName(String apiName) {
 			this.apiName = apiName;
+		}
+
+		public Long getNodeId() {
+			return this.nodeId;
+		}
+
+		public void setNodeId(Long nodeId) {
+			this.nodeId = nodeId;
+		}
+
+		public Float getConcurrency() {
+			return this.concurrency;
+		}
+
+		public void setConcurrency(Float concurrency) {
+			this.concurrency = concurrency;
 		}
 
 		public CheckPointResult getCheckPointResult() {
@@ -454,9 +464,9 @@ public class GetPtsSceneRunningDataResponse extends AcsResponse {
 
 			private Long succeedBusinessCount;
 
-			private Long failedBusinessCount;
-
 			private Float succeedBusinessQps;
+
+			private Long failedBusinessCount;
 
 			private Float failedBusinessQps;
 
@@ -468,20 +478,20 @@ public class GetPtsSceneRunningDataResponse extends AcsResponse {
 				this.succeedBusinessCount = succeedBusinessCount;
 			}
 
-			public Long getFailedBusinessCount() {
-				return this.failedBusinessCount;
-			}
-
-			public void setFailedBusinessCount(Long failedBusinessCount) {
-				this.failedBusinessCount = failedBusinessCount;
-			}
-
 			public Float getSucceedBusinessQps() {
 				return this.succeedBusinessQps;
 			}
 
 			public void setSucceedBusinessQps(Float succeedBusinessQps) {
 				this.succeedBusinessQps = succeedBusinessQps;
+			}
+
+			public Long getFailedBusinessCount() {
+				return this.failedBusinessCount;
+			}
+
+			public void setFailedBusinessCount(Long failedBusinessCount) {
+				this.failedBusinessCount = failedBusinessCount;
 			}
 
 			public Float getFailedBusinessQps() {

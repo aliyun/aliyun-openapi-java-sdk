@@ -26,13 +26,13 @@ public class StopPtsSceneResponse extends AcsResponse {
 
 	private String message;
 
-	private String code;
-
-	private Boolean success;
-
 	private String requestId;
 
 	private Integer httpStatusCode;
+
+	private String code;
+
+	private Boolean success;
 
 	public String getMessage() {
 		return this.message;
@@ -40,22 +40,6 @@ public class StopPtsSceneResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public String getRequestId() {
@@ -72,6 +56,22 @@ public class StopPtsSceneResponse extends AcsResponse {
 
 	public void setHttpStatusCode(Integer httpStatusCode) {
 		this.httpStatusCode = httpStatusCode;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

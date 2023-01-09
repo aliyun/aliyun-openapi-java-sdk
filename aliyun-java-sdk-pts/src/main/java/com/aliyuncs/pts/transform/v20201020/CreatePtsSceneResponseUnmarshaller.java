@@ -23,11 +23,11 @@ public class CreatePtsSceneResponseUnmarshaller {
 	public static CreatePtsSceneResponse unmarshall(CreatePtsSceneResponse createPtsSceneResponse, UnmarshallerContext _ctx) {
 		
 		createPtsSceneResponse.setRequestId(_ctx.stringValue("CreatePtsSceneResponse.RequestId"));
-		createPtsSceneResponse.setSuccess(_ctx.booleanValue("CreatePtsSceneResponse.Success"));
-		createPtsSceneResponse.setCode(_ctx.stringValue("CreatePtsSceneResponse.Code"));
+		createPtsSceneResponse.setSceneId(_ctx.stringValue("CreatePtsSceneResponse.SceneId"));
 		createPtsSceneResponse.setMessage(_ctx.stringValue("CreatePtsSceneResponse.Message"));
 		createPtsSceneResponse.setHttpStatusCode(_ctx.integerValue("CreatePtsSceneResponse.HttpStatusCode"));
-		createPtsSceneResponse.setSceneId(_ctx.stringValue("CreatePtsSceneResponse.SceneId"));
+		createPtsSceneResponse.setCode(_ctx.stringValue("CreatePtsSceneResponse.Code"));
+		createPtsSceneResponse.setSuccess(_ctx.booleanValue("CreatePtsSceneResponse.Success"));
 	 
 	 	return createPtsSceneResponse;
 	}

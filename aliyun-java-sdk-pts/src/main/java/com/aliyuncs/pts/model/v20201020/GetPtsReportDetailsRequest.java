@@ -29,7 +29,7 @@ public class GetPtsReportDetailsRequest extends RpcAcsRequest<GetPtsReportDetail
 
 	private String planId;
 	public GetPtsReportDetailsRequest() {
-		super("PTS", "2020-10-20", "GetPtsReportDetails", "pts");
+		super("PTS", "2020-10-20", "GetPtsReportDetails");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

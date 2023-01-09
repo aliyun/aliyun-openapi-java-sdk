@@ -27,19 +27,19 @@ public class GetPtsReportsBySceneIdResponseUnmarshaller {
 	public static GetPtsReportsBySceneIdResponse unmarshall(GetPtsReportsBySceneIdResponse getPtsReportsBySceneIdResponse, UnmarshallerContext _ctx) {
 		
 		getPtsReportsBySceneIdResponse.setRequestId(_ctx.stringValue("GetPtsReportsBySceneIdResponse.RequestId"));
-		getPtsReportsBySceneIdResponse.setSuccess(_ctx.booleanValue("GetPtsReportsBySceneIdResponse.Success"));
-		getPtsReportsBySceneIdResponse.setCode(_ctx.stringValue("GetPtsReportsBySceneIdResponse.Code"));
 		getPtsReportsBySceneIdResponse.setMessage(_ctx.stringValue("GetPtsReportsBySceneIdResponse.Message"));
 		getPtsReportsBySceneIdResponse.setHttpStatusCode(_ctx.integerValue("GetPtsReportsBySceneIdResponse.HttpStatusCode"));
+		getPtsReportsBySceneIdResponse.setCode(_ctx.stringValue("GetPtsReportsBySceneIdResponse.Code"));
+		getPtsReportsBySceneIdResponse.setSuccess(_ctx.booleanValue("GetPtsReportsBySceneIdResponse.Success"));
 
 		List<ReportOverView> reportOverViewList = new ArrayList<ReportOverView>();
 		for (int i = 0; i < _ctx.lengthValue("GetPtsReportsBySceneIdResponse.ReportOverViewList.Length"); i++) {
 			ReportOverView reportOverView = new ReportOverView();
-			reportOverView.setReportId(_ctx.stringValue("GetPtsReportsBySceneIdResponse.ReportOverViewList["+ i +"].ReportId"));
 			reportOverView.setReportName(_ctx.stringValue("GetPtsReportsBySceneIdResponse.ReportOverViewList["+ i +"].ReportName"));
-			reportOverView.setStartTime(_ctx.stringValue("GetPtsReportsBySceneIdResponse.ReportOverViewList["+ i +"].StartTime"));
 			reportOverView.setEndTime(_ctx.stringValue("GetPtsReportsBySceneIdResponse.ReportOverViewList["+ i +"].EndTime"));
+			reportOverView.setStartTime(_ctx.stringValue("GetPtsReportsBySceneIdResponse.ReportOverViewList["+ i +"].StartTime"));
 			reportOverView.setAgentCount(_ctx.integerValue("GetPtsReportsBySceneIdResponse.ReportOverViewList["+ i +"].AgentCount"));
+			reportOverView.setReportId(_ctx.stringValue("GetPtsReportsBySceneIdResponse.ReportOverViewList["+ i +"].ReportId"));
 			reportOverView.setVum(_ctx.longValue("GetPtsReportsBySceneIdResponse.ReportOverViewList["+ i +"].Vum"));
 
 			reportOverViewList.add(reportOverView);

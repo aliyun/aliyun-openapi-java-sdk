@@ -27,17 +27,17 @@ public class ListPtsSceneResponseUnmarshaller {
 	public static ListPtsSceneResponse unmarshall(ListPtsSceneResponse listPtsSceneResponse, UnmarshallerContext _ctx) {
 		
 		listPtsSceneResponse.setRequestId(_ctx.stringValue("ListPtsSceneResponse.RequestId"));
-		listPtsSceneResponse.setSuccess(_ctx.booleanValue("ListPtsSceneResponse.Success"));
-		listPtsSceneResponse.setCode(_ctx.stringValue("ListPtsSceneResponse.Code"));
 		listPtsSceneResponse.setMessage(_ctx.stringValue("ListPtsSceneResponse.Message"));
 		listPtsSceneResponse.setHttpStatusCode(_ctx.integerValue("ListPtsSceneResponse.HttpStatusCode"));
+		listPtsSceneResponse.setCode(_ctx.stringValue("ListPtsSceneResponse.Code"));
+		listPtsSceneResponse.setSuccess(_ctx.booleanValue("ListPtsSceneResponse.Success"));
 
 		List<SceneView> sceneViewList = new ArrayList<SceneView>();
 		for (int i = 0; i < _ctx.lengthValue("ListPtsSceneResponse.SceneViewList.Length"); i++) {
 			SceneView sceneView = new SceneView();
+			sceneView.setCreateTime(_ctx.stringValue("ListPtsSceneResponse.SceneViewList["+ i +"].CreateTime"));
 			sceneView.setSceneId(_ctx.stringValue("ListPtsSceneResponse.SceneViewList["+ i +"].SceneId"));
 			sceneView.setSceneName(_ctx.stringValue("ListPtsSceneResponse.SceneViewList["+ i +"].SceneName"));
-			sceneView.setCreateTime(_ctx.stringValue("ListPtsSceneResponse.SceneViewList["+ i +"].CreateTime"));
 
 			sceneViewList.add(sceneView);
 		}

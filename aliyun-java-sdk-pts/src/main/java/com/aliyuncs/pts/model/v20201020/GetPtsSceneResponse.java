@@ -25,17 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetPtsSceneResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
-	private String code;
-
 	private String message;
+
+	private String requestId;
 
 	private Integer httpStatusCode;
 
+	private String code;
+
+	private Boolean success;
+
 	private Scene scene;
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,12 +53,12 @@ public class GetPtsSceneResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public String getCode() {
@@ -61,20 +69,12 @@ public class GetPtsSceneResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Scene getScene() {
@@ -87,19 +87,19 @@ public class GetPtsSceneResponse extends AcsResponse {
 
 	public static class Scene {
 
-		private String sceneId;
-
-		private String sceneName;
-
-		private String createTime;
+		private String status;
 
 		private String modifiedTime;
 
-		private String status;
+		private String createTime;
 
-		private List<Relation> relationList;
+		private String sceneName;
+
+		private String sceneId;
 
 		private List<FileParameter> fileParameterList;
+
+		private List<Relation> relationList;
 
 		private List<GlobalParameter> globalParameterList;
 
@@ -107,28 +107,12 @@ public class GetPtsSceneResponse extends AcsResponse {
 
 		private AdvanceSetting advanceSetting;
 
-		public String getSceneId() {
-			return this.sceneId;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setSceneId(String sceneId) {
-			this.sceneId = sceneId;
-		}
-
-		public String getSceneName() {
-			return this.sceneName;
-		}
-
-		public void setSceneName(String sceneName) {
-			this.sceneName = sceneName;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getModifiedTime() {
@@ -139,20 +123,28 @@ public class GetPtsSceneResponse extends AcsResponse {
 			this.modifiedTime = modifiedTime;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
-		public List<Relation> getRelationList() {
-			return this.relationList;
+		public String getSceneName() {
+			return this.sceneName;
 		}
 
-		public void setRelationList(List<Relation> relationList) {
-			this.relationList = relationList;
+		public void setSceneName(String sceneName) {
+			this.sceneName = sceneName;
+		}
+
+		public String getSceneId() {
+			return this.sceneId;
+		}
+
+		public void setSceneId(String sceneId) {
+			this.sceneId = sceneId;
 		}
 
 		public List<FileParameter> getFileParameterList() {
@@ -161,6 +153,14 @@ public class GetPtsSceneResponse extends AcsResponse {
 
 		public void setFileParameterList(List<FileParameter> fileParameterList) {
 			this.fileParameterList = fileParameterList;
+		}
+
+		public List<Relation> getRelationList() {
+			return this.relationList;
+		}
+
+		public void setRelationList(List<Relation> relationList) {
+			this.relationList = relationList;
 		}
 
 		public List<GlobalParameter> getGlobalParameterList() {
@@ -187,23 +187,38 @@ public class GetPtsSceneResponse extends AcsResponse {
 			this.advanceSetting = advanceSetting;
 		}
 
-		public static class Relation {
+		public static class FileParameter {
 
-			private String relationId;
+			private String fileOssAddress;
+
+			private String fileName;
+
+			public String getFileOssAddress() {
+				return this.fileOssAddress;
+			}
+
+			public void setFileOssAddress(String fileOssAddress) {
+				this.fileOssAddress = fileOssAddress;
+			}
+
+			public String getFileName() {
+				return this.fileName;
+			}
+
+			public void setFileName(String fileName) {
+				this.fileName = fileName;
+			}
+		}
+
+		public static class Relation {
 
 			private String relationName;
 
-			private List<Api> apiList;
+			private String relationId;
 
 			private List<FileParameterExplain> fileParameterExplainList;
 
-			public String getRelationId() {
-				return this.relationId;
-			}
-
-			public void setRelationId(String relationId) {
-				this.relationId = relationId;
-			}
+			private List<Api> apiList;
 
 			public String getRelationName() {
 				return this.relationName;
@@ -213,12 +228,12 @@ public class GetPtsSceneResponse extends AcsResponse {
 				this.relationName = relationName;
 			}
 
-			public List<Api> getApiList() {
-				return this.apiList;
+			public String getRelationId() {
+				return this.relationId;
 			}
 
-			public void setApiList(List<Api> apiList) {
-				this.apiList = apiList;
+			public void setRelationId(String relationId) {
+				this.relationId = relationId;
 			}
 
 			public List<FileParameterExplain> getFileParameterExplainList() {
@@ -229,25 +244,76 @@ public class GetPtsSceneResponse extends AcsResponse {
 				this.fileParameterExplainList = fileParameterExplainList;
 			}
 
+			public List<Api> getApiList() {
+				return this.apiList;
+			}
+
+			public void setApiList(List<Api> apiList) {
+				this.apiList = apiList;
+			}
+
+			public static class FileParameterExplain {
+
+				private Boolean cycleOnce;
+
+				private String fileParamName;
+
+				private String fileName;
+
+				private Boolean baseFile;
+
+				public Boolean getCycleOnce() {
+					return this.cycleOnce;
+				}
+
+				public void setCycleOnce(Boolean cycleOnce) {
+					this.cycleOnce = cycleOnce;
+				}
+
+				public String getFileParamName() {
+					return this.fileParamName;
+				}
+
+				public void setFileParamName(String fileParamName) {
+					this.fileParamName = fileParamName;
+				}
+
+				public String getFileName() {
+					return this.fileName;
+				}
+
+				public void setFileName(String fileName) {
+					this.fileName = fileName;
+				}
+
+				public Boolean getBaseFile() {
+					return this.baseFile;
+				}
+
+				public void setBaseFile(Boolean baseFile) {
+					this.baseFile = baseFile;
+				}
+			}
+
 			public static class Api {
 
 				private String apiId;
 
-				private String apiName;
+				private Integer timeoutInSecond;
 
 				private String url;
 
 				private String method;
 
-				private Integer timeoutInSecond;
-
 				private Integer redirectCountLimit;
+
+				private String apiName;
+
+				private List<CheckPoint> checkPointList;
 
 				private List<Header> headerList;
 
 				private List<Export> exportList;
-
-				private List<CheckPoint> checkPointList;
 
 				private Body body;
 
@@ -259,12 +325,12 @@ public class GetPtsSceneResponse extends AcsResponse {
 					this.apiId = apiId;
 				}
 
-				public String getApiName() {
-					return this.apiName;
+				public Integer getTimeoutInSecond() {
+					return this.timeoutInSecond;
 				}
 
-				public void setApiName(String apiName) {
-					this.apiName = apiName;
+				public void setTimeoutInSecond(Integer timeoutInSecond) {
+					this.timeoutInSecond = timeoutInSecond;
 				}
 
 				public String getUrl() {
@@ -283,20 +349,28 @@ public class GetPtsSceneResponse extends AcsResponse {
 					this.method = method;
 				}
 
-				public Integer getTimeoutInSecond() {
-					return this.timeoutInSecond;
-				}
-
-				public void setTimeoutInSecond(Integer timeoutInSecond) {
-					this.timeoutInSecond = timeoutInSecond;
-				}
-
 				public Integer getRedirectCountLimit() {
 					return this.redirectCountLimit;
 				}
 
 				public void setRedirectCountLimit(Integer redirectCountLimit) {
 					this.redirectCountLimit = redirectCountLimit;
+				}
+
+				public String getApiName() {
+					return this.apiName;
+				}
+
+				public void setApiName(String apiName) {
+					this.apiName = apiName;
+				}
+
+				public List<CheckPoint> getCheckPointList() {
+					return this.checkPointList;
+				}
+
+				public void setCheckPointList(List<CheckPoint> checkPointList) {
+					this.checkPointList = checkPointList;
 				}
 
 				public List<Header> getHeaderList() {
@@ -315,14 +389,6 @@ public class GetPtsSceneResponse extends AcsResponse {
 					this.exportList = exportList;
 				}
 
-				public List<CheckPoint> getCheckPointList() {
-					return this.checkPointList;
-				}
-
-				public void setCheckPointList(List<CheckPoint> checkPointList) {
-					this.checkPointList = checkPointList;
-				}
-
 				public Body getBody() {
 					return this.body;
 				}
@@ -331,75 +397,7 @@ public class GetPtsSceneResponse extends AcsResponse {
 					this.body = body;
 				}
 
-				public static class Header {
-
-					private String headerName;
-
-					private String headerValue;
-
-					public String getHeaderName() {
-						return this.headerName;
-					}
-
-					public void setHeaderName(String headerName) {
-						this.headerName = headerName;
-					}
-
-					public String getHeaderValue() {
-						return this.headerValue;
-					}
-
-					public void setHeaderValue(String headerValue) {
-						this.headerValue = headerValue;
-					}
-				}
-
-				public static class Export {
-
-					private String exportName;
-
-					private String exportType;
-
-					private String exportValue;
-
-					private String count;
-
-					public String getExportName() {
-						return this.exportName;
-					}
-
-					public void setExportName(String exportName) {
-						this.exportName = exportName;
-					}
-
-					public String getExportType() {
-						return this.exportType;
-					}
-
-					public void setExportType(String exportType) {
-						this.exportType = exportType;
-					}
-
-					public String getExportValue() {
-						return this.exportValue;
-					}
-
-					public void setExportValue(String exportValue) {
-						this.exportValue = exportValue;
-					}
-
-					public String getCount() {
-						return this.count;
-					}
-
-					public void setCount(String count) {
-						this.count = count;
-					}
-				}
-
 				public static class CheckPoint {
-
-					private String checkPoint;
 
 					private String checkType;
 
@@ -407,13 +405,7 @@ public class GetPtsSceneResponse extends AcsResponse {
 
 					private String expectValue;
 
-					public String getCheckPoint() {
-						return this.checkPoint;
-					}
-
-					public void setCheckPoint(String checkPoint) {
-						this.checkPoint = checkPoint;
-					}
+					private String checkPoint;
 
 					public String getCheckType() {
 						return this.checkType;
@@ -438,21 +430,87 @@ public class GetPtsSceneResponse extends AcsResponse {
 					public void setExpectValue(String expectValue) {
 						this.expectValue = expectValue;
 					}
+
+					public String getCheckPoint() {
+						return this.checkPoint;
+					}
+
+					public void setCheckPoint(String checkPoint) {
+						this.checkPoint = checkPoint;
+					}
+				}
+
+				public static class Header {
+
+					private String headerValue;
+
+					private String headerName;
+
+					public String getHeaderValue() {
+						return this.headerValue;
+					}
+
+					public void setHeaderValue(String headerValue) {
+						this.headerValue = headerValue;
+					}
+
+					public String getHeaderName() {
+						return this.headerName;
+					}
+
+					public void setHeaderName(String headerName) {
+						this.headerName = headerName;
+					}
+				}
+
+				public static class Export {
+
+					private String exportType;
+
+					private String exportValue;
+
+					private String exportName;
+
+					private String count;
+
+					public String getExportType() {
+						return this.exportType;
+					}
+
+					public void setExportType(String exportType) {
+						this.exportType = exportType;
+					}
+
+					public String getExportValue() {
+						return this.exportValue;
+					}
+
+					public void setExportValue(String exportValue) {
+						this.exportValue = exportValue;
+					}
+
+					public String getExportName() {
+						return this.exportName;
+					}
+
+					public void setExportName(String exportName) {
+						this.exportName = exportName;
+					}
+
+					public String getCount() {
+						return this.count;
+					}
+
+					public void setCount(String count) {
+						this.count = count;
+					}
 				}
 
 				public static class Body {
 
-					private String contentType;
-
 					private String bodyValue;
 
-					public String getContentType() {
-						return this.contentType;
-					}
-
-					public void setContentType(String contentType) {
-						this.contentType = contentType;
-					}
+					private String contentType;
 
 					public String getBodyValue() {
 						return this.bodyValue;
@@ -461,73 +519,15 @@ public class GetPtsSceneResponse extends AcsResponse {
 					public void setBodyValue(String bodyValue) {
 						this.bodyValue = bodyValue;
 					}
+
+					public String getContentType() {
+						return this.contentType;
+					}
+
+					public void setContentType(String contentType) {
+						this.contentType = contentType;
+					}
 				}
-			}
-
-			public static class FileParameterExplain {
-
-				private String fileName;
-
-				private String fileParamName;
-
-				private Boolean cycleOnce;
-
-				private Boolean baseFile;
-
-				public String getFileName() {
-					return this.fileName;
-				}
-
-				public void setFileName(String fileName) {
-					this.fileName = fileName;
-				}
-
-				public String getFileParamName() {
-					return this.fileParamName;
-				}
-
-				public void setFileParamName(String fileParamName) {
-					this.fileParamName = fileParamName;
-				}
-
-				public Boolean getCycleOnce() {
-					return this.cycleOnce;
-				}
-
-				public void setCycleOnce(Boolean cycleOnce) {
-					this.cycleOnce = cycleOnce;
-				}
-
-				public Boolean getBaseFile() {
-					return this.baseFile;
-				}
-
-				public void setBaseFile(Boolean baseFile) {
-					this.baseFile = baseFile;
-				}
-			}
-		}
-
-		public static class FileParameter {
-
-			private String fileName;
-
-			private String fileOssAddress;
-
-			public String getFileName() {
-				return this.fileName;
-			}
-
-			public void setFileName(String fileName) {
-				this.fileName = fileName;
-			}
-
-			public String getFileOssAddress() {
-				return this.fileOssAddress;
-			}
-
-			public void setFileOssAddress(String fileOssAddress) {
-				this.fileOssAddress = fileOssAddress;
 			}
 		}
 
@@ -556,11 +556,17 @@ public class GetPtsSceneResponse extends AcsResponse {
 
 		public static class LoadConfig {
 
-			private String testMode;
-
 			private Integer maxRunningTime;
 
 			private Integer agentCount;
+
+			private String testMode;
+
+			private Boolean autoStep;
+
+			private Integer increment;
+
+			private Integer keepTime;
 
 			private List<ApiLoadConfig> apiLoadConfigList;
 
@@ -568,13 +574,7 @@ public class GetPtsSceneResponse extends AcsResponse {
 
 			private Configuration configuration;
 
-			public String getTestMode() {
-				return this.testMode;
-			}
-
-			public void setTestMode(String testMode) {
-				this.testMode = testMode;
-			}
+			private VpcLoadConfig vpcLoadConfig;
 
 			public Integer getMaxRunningTime() {
 				return this.maxRunningTime;
@@ -590,6 +590,38 @@ public class GetPtsSceneResponse extends AcsResponse {
 
 			public void setAgentCount(Integer agentCount) {
 				this.agentCount = agentCount;
+			}
+
+			public String getTestMode() {
+				return this.testMode;
+			}
+
+			public void setTestMode(String testMode) {
+				this.testMode = testMode;
+			}
+
+			public Boolean getAutoStep() {
+				return this.autoStep;
+			}
+
+			public void setAutoStep(Boolean autoStep) {
+				this.autoStep = autoStep;
+			}
+
+			public Integer getIncrement() {
+				return this.increment;
+			}
+
+			public void setIncrement(Integer increment) {
+				this.increment = increment;
+			}
+
+			public Integer getKeepTime() {
+				return this.keepTime;
+			}
+
+			public void setKeepTime(Integer keepTime) {
+				this.keepTime = keepTime;
 			}
 
 			public List<ApiLoadConfig> getApiLoadConfigList() {
@@ -616,11 +648,21 @@ public class GetPtsSceneResponse extends AcsResponse {
 				this.configuration = configuration;
 			}
 
+			public VpcLoadConfig getVpcLoadConfig() {
+				return this.vpcLoadConfig;
+			}
+
+			public void setVpcLoadConfig(VpcLoadConfig vpcLoadConfig) {
+				this.vpcLoadConfig = vpcLoadConfig;
+			}
+
 			public static class ApiLoadConfig {
 
 				private Integer rpsBegin;
 
 				private Integer rpsLimit;
+
+				private String apiId;
 
 				public Integer getRpsBegin() {
 					return this.rpsBegin;
@@ -637,6 +679,14 @@ public class GetPtsSceneResponse extends AcsResponse {
 				public void setRpsLimit(Integer rpsLimit) {
 					this.rpsLimit = rpsLimit;
 				}
+
+				public String getApiId() {
+					return this.apiId;
+				}
+
+				public void setApiId(String apiId) {
+					this.apiId = apiId;
+				}
 			}
 
 			public static class RelationLoadConfig {
@@ -644,6 +694,8 @@ public class GetPtsSceneResponse extends AcsResponse {
 				private Integer concurrencyBegin;
 
 				private Integer concurrencyLimit;
+
+				private String relationId;
 
 				public Integer getConcurrencyBegin() {
 					return this.concurrencyBegin;
@@ -660,17 +712,33 @@ public class GetPtsSceneResponse extends AcsResponse {
 				public void setConcurrencyLimit(Integer concurrencyLimit) {
 					this.concurrencyLimit = concurrencyLimit;
 				}
+
+				public String getRelationId() {
+					return this.relationId;
+				}
+
+				public void setRelationId(String relationId) {
+					this.relationId = relationId;
+				}
 			}
 
 			public static class Configuration {
+
+				private Integer allRpsBegin;
 
 				private Integer allConcurrencyBegin;
 
 				private Integer allConcurrencyLimit;
 
-				private Integer allRpsBegin;
-
 				private Integer allRpsLimit;
+
+				public Integer getAllRpsBegin() {
+					return this.allRpsBegin;
+				}
+
+				public void setAllRpsBegin(Integer allRpsBegin) {
+					this.allRpsBegin = allRpsBegin;
+				}
 
 				public Integer getAllConcurrencyBegin() {
 					return this.allConcurrencyBegin;
@@ -688,20 +756,55 @@ public class GetPtsSceneResponse extends AcsResponse {
 					this.allConcurrencyLimit = allConcurrencyLimit;
 				}
 
-				public Integer getAllRpsBegin() {
-					return this.allRpsBegin;
-				}
-
-				public void setAllRpsBegin(Integer allRpsBegin) {
-					this.allRpsBegin = allRpsBegin;
-				}
-
 				public Integer getAllRpsLimit() {
 					return this.allRpsLimit;
 				}
 
 				public void setAllRpsLimit(Integer allRpsLimit) {
 					this.allRpsLimit = allRpsLimit;
+				}
+			}
+
+			public static class VpcLoadConfig {
+
+				private String vpcId;
+
+				private String vSwitchId;
+
+				private String securityGroupId;
+
+				private String regionId;
+
+				public String getVpcId() {
+					return this.vpcId;
+				}
+
+				public void setVpcId(String vpcId) {
+					this.vpcId = vpcId;
+				}
+
+				public String getVSwitchId() {
+					return this.vSwitchId;
+				}
+
+				public void setVSwitchId(String vSwitchId) {
+					this.vSwitchId = vSwitchId;
+				}
+
+				public String getSecurityGroupId() {
+					return this.securityGroupId;
+				}
+
+				public void setSecurityGroupId(String securityGroupId) {
+					this.securityGroupId = securityGroupId;
+				}
+
+				public String getRegionId() {
+					return this.regionId;
+				}
+
+				public void setRegionId(String regionId) {
+					this.regionId = regionId;
 				}
 			}
 		}

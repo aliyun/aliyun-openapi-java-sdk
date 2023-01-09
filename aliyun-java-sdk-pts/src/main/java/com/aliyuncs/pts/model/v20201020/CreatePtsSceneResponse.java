@@ -24,17 +24,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreatePtsSceneResponse extends AcsResponse {
 
+	private String sceneId;
+
 	private String requestId;
-
-	private Boolean success;
-
-	private String code;
 
 	private String message;
 
 	private Integer httpStatusCode;
 
-	private String sceneId;
+	private String code;
+
+	private Boolean success;
+
+	public String getSceneId() {
+		return this.sceneId;
+	}
+
+	public void setSceneId(String sceneId) {
+		this.sceneId = sceneId;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,22 +50,6 @@ public class CreatePtsSceneResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
 	}
 
 	public String getMessage() {
@@ -76,12 +68,20 @@ public class CreatePtsSceneResponse extends AcsResponse {
 		this.httpStatusCode = httpStatusCode;
 	}
 
-	public String getSceneId() {
-		return this.sceneId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setSceneId(String sceneId) {
-		this.sceneId = sceneId;
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

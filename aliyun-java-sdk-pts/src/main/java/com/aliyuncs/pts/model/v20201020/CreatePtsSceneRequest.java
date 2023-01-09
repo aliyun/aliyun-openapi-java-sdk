@@ -27,7 +27,7 @@ public class CreatePtsSceneRequest extends RpcAcsRequest<CreatePtsSceneResponse>
 
 	private String scene;
 	public CreatePtsSceneRequest() {
-		super("PTS", "2020-10-20", "CreatePtsScene", "pts");
+		super("PTS", "2020-10-20", "CreatePtsScene");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -23,10 +23,10 @@ public class DeletePtsScenesResponseUnmarshaller {
 	public static DeletePtsScenesResponse unmarshall(DeletePtsScenesResponse deletePtsScenesResponse, UnmarshallerContext _ctx) {
 		
 		deletePtsScenesResponse.setRequestId(_ctx.stringValue("DeletePtsScenesResponse.RequestId"));
-		deletePtsScenesResponse.setSuccess(_ctx.booleanValue("DeletePtsScenesResponse.Success"));
-		deletePtsScenesResponse.setCode(_ctx.stringValue("DeletePtsScenesResponse.Code"));
 		deletePtsScenesResponse.setMessage(_ctx.stringValue("DeletePtsScenesResponse.Message"));
 		deletePtsScenesResponse.setHttpStatusCode(_ctx.integerValue("DeletePtsScenesResponse.HttpStatusCode"));
+		deletePtsScenesResponse.setCode(_ctx.stringValue("DeletePtsScenesResponse.Code"));
+		deletePtsScenesResponse.setSuccess(_ctx.booleanValue("DeletePtsScenesResponse.Success"));
 	 
 	 	return deletePtsScenesResponse;
 	}
