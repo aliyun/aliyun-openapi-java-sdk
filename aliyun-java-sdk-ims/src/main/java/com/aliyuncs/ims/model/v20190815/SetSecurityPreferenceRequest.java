@@ -31,13 +31,15 @@ public class SetSecurityPreferenceRequest extends RpcAcsRequest<SetSecurityPrefe
 
 	private Boolean allowUserToChangePassword;
 
-	private Boolean enforceMFAForLogin;
-
 	private Integer loginSessionDuration;
 
 	private Boolean allowUserToManageAccessKeys;
 
 	private Boolean allowUserToManageMFADevices;
+
+	private String operationForRiskLogin;
+
+	private String mFAOperationForLogin;
 
 	private Boolean allowUserToManagePersonalDingTalk;
 	public SetSecurityPreferenceRequest() {
@@ -82,17 +84,6 @@ public class SetSecurityPreferenceRequest extends RpcAcsRequest<SetSecurityPrefe
 		}
 	}
 
-	public Boolean getEnforceMFAForLogin() {
-		return this.enforceMFAForLogin;
-	}
-
-	public void setEnforceMFAForLogin(Boolean enforceMFAForLogin) {
-		this.enforceMFAForLogin = enforceMFAForLogin;
-		if(enforceMFAForLogin != null){
-			putQueryParameter("EnforceMFAForLogin", enforceMFAForLogin.toString());
-		}
-	}
-
 	public Integer getLoginSessionDuration() {
 		return this.loginSessionDuration;
 	}
@@ -123,6 +114,28 @@ public class SetSecurityPreferenceRequest extends RpcAcsRequest<SetSecurityPrefe
 		this.allowUserToManageMFADevices = allowUserToManageMFADevices;
 		if(allowUserToManageMFADevices != null){
 			putQueryParameter("AllowUserToManageMFADevices", allowUserToManageMFADevices.toString());
+		}
+	}
+
+	public String getOperationForRiskLogin() {
+		return this.operationForRiskLogin;
+	}
+
+	public void setOperationForRiskLogin(String operationForRiskLogin) {
+		this.operationForRiskLogin = operationForRiskLogin;
+		if(operationForRiskLogin != null){
+			putQueryParameter("OperationForRiskLogin", operationForRiskLogin);
+		}
+	}
+
+	public String getMFAOperationForLogin() {
+		return this.mFAOperationForLogin;
+	}
+
+	public void setMFAOperationForLogin(String mFAOperationForLogin) {
+		this.mFAOperationForLogin = mFAOperationForLogin;
+		if(mFAOperationForLogin != null){
+			putQueryParameter("MFAOperationForLogin", mFAOperationForLogin);
 		}
 	}
 
