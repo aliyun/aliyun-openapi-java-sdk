@@ -75,6 +75,13 @@ public class GetK8sApplicationResponseUnmarshaller {
 		app.setLabels(_ctx.stringValue("GetK8sApplicationResponse.Applcation.App.Labels"));
 		app.setLimitEphemeralStorage(_ctx.stringValue("GetK8sApplicationResponse.Applcation.App.LimitEphemeralStorage"));
 		app.setRequestEphemeralStorage(_ctx.stringValue("GetK8sApplicationResponse.Applcation.App.RequestEphemeralStorage"));
+		app.setEnableEmptyPushReject(_ctx.booleanValue("GetK8sApplicationResponse.Applcation.App.EnableEmptyPushReject"));
+		app.setEnableLosslessRule(_ctx.booleanValue("GetK8sApplicationResponse.Applcation.App.EnableLosslessRule"));
+		app.setLosslessRuleAligned(_ctx.booleanValue("GetK8sApplicationResponse.Applcation.App.LosslessRuleAligned"));
+		app.setLosslessRuleDelayTime(_ctx.integerValue("GetK8sApplicationResponse.Applcation.App.LosslessRuleDelayTime"));
+		app.setLosslessRuleFuncType(_ctx.integerValue("GetK8sApplicationResponse.Applcation.App.LosslessRuleFuncType"));
+		app.setLosslessRuleRelated(_ctx.booleanValue("GetK8sApplicationResponse.Applcation.App.LosslessRuleRelated"));
+		app.setLosslessRuleWarmupTime(_ctx.integerValue("GetK8sApplicationResponse.Applcation.App.LosslessRuleWarmupTime"));
 
 		List<String> cmdArgs = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetK8sApplicationResponse.Applcation.App.CmdArgs.Length"); i++) {

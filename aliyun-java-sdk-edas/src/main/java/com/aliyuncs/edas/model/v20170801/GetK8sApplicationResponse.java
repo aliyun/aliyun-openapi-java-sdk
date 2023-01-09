@@ -316,6 +316,20 @@ public class GetK8sApplicationResponse extends AcsResponse {
 
 			private String requestEphemeralStorage;
 
+			private Boolean enableEmptyPushReject;
+
+			private Boolean enableLosslessRule;
+
+			private Boolean losslessRuleAligned;
+
+			private Integer losslessRuleDelayTime;
+
+			private Integer losslessRuleFuncType;
+
+			private Boolean losslessRuleRelated;
+
+			private Integer losslessRuleWarmupTime;
+
 			private List<Env> envList;
 
 			private List<String> cmdArgs;
@@ -510,6 +524,62 @@ public class GetK8sApplicationResponse extends AcsResponse {
 
 			public void setRequestEphemeralStorage(String requestEphemeralStorage) {
 				this.requestEphemeralStorage = requestEphemeralStorage;
+			}
+
+			public Boolean getEnableEmptyPushReject() {
+				return this.enableEmptyPushReject;
+			}
+
+			public void setEnableEmptyPushReject(Boolean enableEmptyPushReject) {
+				this.enableEmptyPushReject = enableEmptyPushReject;
+			}
+
+			public Boolean getEnableLosslessRule() {
+				return this.enableLosslessRule;
+			}
+
+			public void setEnableLosslessRule(Boolean enableLosslessRule) {
+				this.enableLosslessRule = enableLosslessRule;
+			}
+
+			public Boolean getLosslessRuleAligned() {
+				return this.losslessRuleAligned;
+			}
+
+			public void setLosslessRuleAligned(Boolean losslessRuleAligned) {
+				this.losslessRuleAligned = losslessRuleAligned;
+			}
+
+			public Integer getLosslessRuleDelayTime() {
+				return this.losslessRuleDelayTime;
+			}
+
+			public void setLosslessRuleDelayTime(Integer losslessRuleDelayTime) {
+				this.losslessRuleDelayTime = losslessRuleDelayTime;
+			}
+
+			public Integer getLosslessRuleFuncType() {
+				return this.losslessRuleFuncType;
+			}
+
+			public void setLosslessRuleFuncType(Integer losslessRuleFuncType) {
+				this.losslessRuleFuncType = losslessRuleFuncType;
+			}
+
+			public Boolean getLosslessRuleRelated() {
+				return this.losslessRuleRelated;
+			}
+
+			public void setLosslessRuleRelated(Boolean losslessRuleRelated) {
+				this.losslessRuleRelated = losslessRuleRelated;
+			}
+
+			public Integer getLosslessRuleWarmupTime() {
+				return this.losslessRuleWarmupTime;
+			}
+
+			public void setLosslessRuleWarmupTime(Integer losslessRuleWarmupTime) {
+				this.losslessRuleWarmupTime = losslessRuleWarmupTime;
 			}
 
 			public List<Env> getEnvList() {
