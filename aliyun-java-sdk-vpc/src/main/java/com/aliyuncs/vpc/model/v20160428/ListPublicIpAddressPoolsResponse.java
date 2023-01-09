@@ -103,7 +103,11 @@ public class ListPublicIpAddressPoolsResponse extends AcsResponse {
 
 		private String shareType;
 
+		private String resourceGroupId;
+
 		private List<PublicIpCidrBlock> publicIpCidrBlockList;
+
+		private List<Tag> tags;
 
 		public String getPublicIpAddressPoolId() {
 			return this.publicIpAddressPoolId;
@@ -209,12 +213,28 @@ public class ListPublicIpAddressPoolsResponse extends AcsResponse {
 			this.shareType = shareType;
 		}
 
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
 		public List<PublicIpCidrBlock> getPublicIpCidrBlockList() {
 			return this.publicIpCidrBlockList;
 		}
 
 		public void setPublicIpCidrBlockList(List<PublicIpCidrBlock> publicIpCidrBlockList) {
 			this.publicIpCidrBlockList = publicIpCidrBlockList;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
 		}
 
 		public static class PublicIpCidrBlock {
@@ -267,6 +287,29 @@ public class ListPublicIpAddressPoolsResponse extends AcsResponse {
 
 			public void setCreationTime(String creationTime) {
 				this.creationTime = creationTime;
+			}
+		}
+
+		public static class Tag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
 			}
 		}
 	}

@@ -33,6 +33,8 @@ public class CreatePublicIpAddressPoolRequest extends RpcAcsRequest<CreatePublic
 
 	private String description;
 
+	private String resourceGroupId;
+
 	private Boolean dryRun;
 
 	private String resourceOwnerAccount;
@@ -92,6 +94,17 @@ public class CreatePublicIpAddressPoolRequest extends RpcAcsRequest<CreatePublic
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

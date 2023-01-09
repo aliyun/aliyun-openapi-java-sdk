@@ -1,3 +1,18 @@
+2023-01-09 Version: 3.2.13
+- Fix typos in ErrorCodes.
+- Add ErrorMessage translation.
+- Vpn support tag.
+- Add attachment resource for terraform.
+- Support diagnose vpn connection.
+- Change timeout and api rate limit for fullnat.
+- Add error Code.
+- Add error code dependencyViolation vSwitchCidrReservation.
+- Change input param.
+- Add errorcode  IncorrectVpcStatus for action CreateVpnRouteEntry.
+- Add errorcode FinancialLocked for action DeleteVpnConnection.
+- Support resource group and tags.
+- Support Return ResourceUid.
+
 2022-12-22 Version: 3.2.12
 - Supported set high definition monitor log status for eip.
 - Supported batch associate eip to cloud products.

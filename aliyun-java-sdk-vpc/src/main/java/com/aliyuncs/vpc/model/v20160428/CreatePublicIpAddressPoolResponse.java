@@ -28,6 +28,8 @@ public class CreatePublicIpAddressPoolResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String resourceGroupId;
+
 	public String getPulbicIpAddressPoolId() {
 		return this.pulbicIpAddressPoolId;
 	}
@@ -42,6 +44,14 @@ public class CreatePublicIpAddressPoolResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
 	}
 
 	@Override

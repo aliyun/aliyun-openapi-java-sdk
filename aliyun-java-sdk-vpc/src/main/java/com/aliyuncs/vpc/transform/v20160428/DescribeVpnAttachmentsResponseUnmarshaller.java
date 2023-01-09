@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.vpc.model.v20160428.DescribeVpnAttachmentsResponse;
 import com.aliyuncs.vpc.model.v20160428.DescribeVpnAttachmentsResponse.VpnAttachment;
+import com.aliyuncs.vpc.model.v20160428.DescribeVpnAttachmentsResponse.VpnAttachment.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -41,6 +42,16 @@ public class DescribeVpnAttachmentsResponseUnmarshaller {
 			vpnAttachment.setTransitRouterId(_ctx.stringValue("DescribeVpnAttachmentsResponse.VpnAttachments["+ i +"].TransitRouterId"));
 			vpnAttachment.setTransitRouterName(_ctx.stringValue("DescribeVpnAttachmentsResponse.VpnAttachments["+ i +"].TransitRouterName"));
 			vpnAttachment.setCrossAccountAuthorized(_ctx.booleanValue("DescribeVpnAttachmentsResponse.VpnAttachments["+ i +"].CrossAccountAuthorized"));
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeVpnAttachmentsResponse.VpnAttachments["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("DescribeVpnAttachmentsResponse.VpnAttachments["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("DescribeVpnAttachmentsResponse.VpnAttachments["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			vpnAttachment.setTags(tags);
 
 			vpnAttachments.add(vpnAttachment);
 		}

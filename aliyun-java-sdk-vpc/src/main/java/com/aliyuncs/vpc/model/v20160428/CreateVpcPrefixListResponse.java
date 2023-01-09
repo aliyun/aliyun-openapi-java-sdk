@@ -28,6 +28,8 @@ public class CreateVpcPrefixListResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String resourceGroupId;
+
 	public String getPrefixListId() {
 		return this.prefixListId;
 	}
@@ -42,6 +44,14 @@ public class CreateVpcPrefixListResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
 	}
 
 	@Override

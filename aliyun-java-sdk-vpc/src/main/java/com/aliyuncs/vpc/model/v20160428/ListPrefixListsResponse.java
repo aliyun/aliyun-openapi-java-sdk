@@ -99,6 +99,10 @@ public class ListPrefixListsResponse extends AcsResponse {
 
 		private String regionId;
 
+		private String resourceGroupId;
+
+		private List<Tag> tags;
+
 		private List<String> cidrBlocks;
 
 		public String getPrefixListId() {
@@ -189,12 +193,51 @@ public class ListPrefixListsResponse extends AcsResponse {
 			this.regionId = regionId;
 		}
 
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
 		public List<String> getCidrBlocks() {
 			return this.cidrBlocks;
 		}
 
 		public void setCidrBlocks(List<String> cidrBlocks) {
 			this.cidrBlocks = cidrBlocks;
+		}
+
+		public static class Tag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 	}
 

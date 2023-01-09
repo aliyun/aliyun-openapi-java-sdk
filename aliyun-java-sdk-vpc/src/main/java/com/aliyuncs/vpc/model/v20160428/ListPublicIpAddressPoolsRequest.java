@@ -30,6 +30,8 @@ public class ListPublicIpAddressPoolsRequest extends RpcAcsRequest<ListPublicIpA
 
 	private String isp;
 
+	private String resourceGroupId;
+
 	private String nextToken;
 
 	private Boolean dryRun;
@@ -41,6 +43,8 @@ public class ListPublicIpAddressPoolsRequest extends RpcAcsRequest<ListPublicIpA
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private List<Tags> tagss;
 
 	private String name;
 
@@ -75,6 +79,17 @@ public class ListPublicIpAddressPoolsRequest extends RpcAcsRequest<ListPublicIpA
 		this.isp = isp;
 		if(isp != null){
 			putQueryParameter("Isp", isp);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
@@ -146,6 +161,20 @@ public class ListPublicIpAddressPoolsRequest extends RpcAcsRequest<ListPublicIpA
 		}
 	}
 
+	public List<Tags> getTagss() {
+		return this.tagss;
+	}
+
+	public void setTagss(List<Tags> tagss) {
+		this.tagss = tagss;	
+		if (tagss != null) {
+			for (int depth1 = 0; depth1 < tagss.size(); depth1++) {
+				putQueryParameter("Tags." + (depth1 + 1) + ".Key" , tagss.get(depth1).getKey());
+				putQueryParameter("Tags." + (depth1 + 1) + ".Value" , tagss.get(depth1).getValue());
+			}
+		}	
+	}
+
 	public String getName() {
 		return this.name;
 	}
@@ -176,6 +205,29 @@ public class ListPublicIpAddressPoolsRequest extends RpcAcsRequest<ListPublicIpA
 		this.status = status;
 		if(status != null){
 			putQueryParameter("Status", status);
+		}
+	}
+
+	public static class Tags {
+
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
 		}
 	}
 

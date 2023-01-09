@@ -21,6 +21,7 @@ import com.aliyuncs.vpc.model.v20160428.DescribeVpnConnectionsResponse;
 import com.aliyuncs.vpc.model.v20160428.DescribeVpnConnectionsResponse.VpnConnection;
 import com.aliyuncs.vpc.model.v20160428.DescribeVpnConnectionsResponse.VpnConnection.IkeConfig;
 import com.aliyuncs.vpc.model.v20160428.DescribeVpnConnectionsResponse.VpnConnection.IpsecConfig;
+import com.aliyuncs.vpc.model.v20160428.DescribeVpnConnectionsResponse.VpnConnection.TagItem;
 import com.aliyuncs.vpc.model.v20160428.DescribeVpnConnectionsResponse.VpnConnection.VcoHealthCheck;
 import com.aliyuncs.vpc.model.v20160428.DescribeVpnConnectionsResponse.VpnConnection.VpnBgpConfig;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -98,6 +99,16 @@ public class DescribeVpnConnectionsResponseUnmarshaller {
 			vpnBgpConfig.setLocalAsn(_ctx.longValue("DescribeVpnConnectionsResponse.VpnConnections["+ i +"].VpnBgpConfig.LocalAsn"));
 			vpnBgpConfig.setAuthKey(_ctx.stringValue("DescribeVpnConnectionsResponse.VpnConnections["+ i +"].VpnBgpConfig.AuthKey"));
 			vpnConnection.setVpnBgpConfig(vpnBgpConfig);
+
+			List<TagItem> tag = new ArrayList<TagItem>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeVpnConnectionsResponse.VpnConnections["+ i +"].Tag.Length"); j++) {
+				TagItem tagItem = new TagItem();
+				tagItem.setKey(_ctx.stringValue("DescribeVpnConnectionsResponse.VpnConnections["+ i +"].Tag["+ j +"].Key"));
+				tagItem.setValue(_ctx.stringValue("DescribeVpnConnectionsResponse.VpnConnections["+ i +"].Tag["+ j +"].Value"));
+
+				tag.add(tagItem);
+			}
+			vpnConnection.setTag(tag);
 
 			vpnConnections.add(vpnConnection);
 		}

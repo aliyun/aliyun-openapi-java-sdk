@@ -24,6 +24,7 @@ public class CreatePublicIpAddressPoolResponseUnmarshaller {
 		
 		createPublicIpAddressPoolResponse.setRequestId(_ctx.stringValue("CreatePublicIpAddressPoolResponse.RequestId"));
 		createPublicIpAddressPoolResponse.setPulbicIpAddressPoolId(_ctx.stringValue("CreatePublicIpAddressPoolResponse.PulbicIpAddressPoolId"));
+		createPublicIpAddressPoolResponse.setResourceGroupId(_ctx.stringValue("CreatePublicIpAddressPoolResponse.ResourceGroupId"));
 	 
 	 	return createPublicIpAddressPoolResponse;
 	}

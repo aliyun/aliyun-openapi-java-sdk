@@ -14,7 +14,11 @@
 
 package com.aliyuncs.vpc.transform.v20160428;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.vpc.model.v20160428.DescribeCustomerGatewayResponse;
+import com.aliyuncs.vpc.model.v20160428.DescribeCustomerGatewayResponse.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -30,6 +34,16 @@ public class DescribeCustomerGatewayResponseUnmarshaller {
 		describeCustomerGatewayResponse.setCreateTime(_ctx.longValue("DescribeCustomerGatewayResponse.CreateTime"));
 		describeCustomerGatewayResponse.setName(_ctx.stringValue("DescribeCustomerGatewayResponse.Name"));
 		describeCustomerGatewayResponse.setAuthKey(_ctx.stringValue("DescribeCustomerGatewayResponse.AuthKey"));
+
+		List<Tag> tags = new ArrayList<Tag>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeCustomerGatewayResponse.Tags.Length"); i++) {
+			Tag tag = new Tag();
+			tag.setKey(_ctx.stringValue("DescribeCustomerGatewayResponse.Tags["+ i +"].Key"));
+			tag.setValue(_ctx.stringValue("DescribeCustomerGatewayResponse.Tags["+ i +"].Value"));
+
+			tags.add(tag);
+		}
+		describeCustomerGatewayResponse.setTags(tags);
 	 
 	 	return describeCustomerGatewayResponse;
 	}

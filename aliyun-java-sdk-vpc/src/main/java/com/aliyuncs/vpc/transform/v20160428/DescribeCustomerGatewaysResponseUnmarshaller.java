@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.vpc.model.v20160428.DescribeCustomerGatewaysResponse;
 import com.aliyuncs.vpc.model.v20160428.DescribeCustomerGatewaysResponse.CustomerGateway;
+import com.aliyuncs.vpc.model.v20160428.DescribeCustomerGatewaysResponse.CustomerGateway.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -41,6 +42,16 @@ public class DescribeCustomerGatewaysResponseUnmarshaller {
 			customerGateway.setCreateTime(_ctx.longValue("DescribeCustomerGatewaysResponse.CustomerGateways["+ i +"].CreateTime"));
 			customerGateway.setName(_ctx.stringValue("DescribeCustomerGatewaysResponse.CustomerGateways["+ i +"].Name"));
 			customerGateway.setAuthKey(_ctx.stringValue("DescribeCustomerGatewaysResponse.CustomerGateways["+ i +"].AuthKey"));
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeCustomerGatewaysResponse.CustomerGateways["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("DescribeCustomerGatewaysResponse.CustomerGateways["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("DescribeCustomerGatewaysResponse.CustomerGateways["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			customerGateway.setTags(tags);
 
 			customerGateways.add(customerGateway);
 		}

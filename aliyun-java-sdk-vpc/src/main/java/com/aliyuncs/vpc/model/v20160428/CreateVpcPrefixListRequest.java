@@ -32,6 +32,8 @@ public class CreateVpcPrefixListRequest extends RpcAcsRequest<CreateVpcPrefixLis
 
 	private Integer maxEntries;
 
+	private String resourceGroupId;
+
 	private String ipVersion;
 
 	private List<PrefixListEntries> prefixListEntriess;
@@ -86,6 +88,17 @@ public class CreateVpcPrefixListRequest extends RpcAcsRequest<CreateVpcPrefixLis
 		this.maxEntries = maxEntries;
 		if(maxEntries != null){
 			putQueryParameter("MaxEntries", maxEntries.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

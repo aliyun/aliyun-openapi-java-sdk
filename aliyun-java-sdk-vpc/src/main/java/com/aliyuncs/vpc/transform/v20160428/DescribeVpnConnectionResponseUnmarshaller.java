@@ -14,9 +14,13 @@
 
 package com.aliyuncs.vpc.transform.v20160428;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.vpc.model.v20160428.DescribeVpnConnectionResponse;
 import com.aliyuncs.vpc.model.v20160428.DescribeVpnConnectionResponse.IkeConfig;
 import com.aliyuncs.vpc.model.v20160428.DescribeVpnConnectionResponse.IpsecConfig;
+import com.aliyuncs.vpc.model.v20160428.DescribeVpnConnectionResponse.Tag;
 import com.aliyuncs.vpc.model.v20160428.DescribeVpnConnectionResponse.VcoHealthCheck;
 import com.aliyuncs.vpc.model.v20160428.DescribeVpnConnectionResponse.VpnBgpConfig;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -89,6 +93,16 @@ public class DescribeVpnConnectionResponseUnmarshaller {
 		vpnBgpConfig.setLocalAsn(_ctx.longValue("DescribeVpnConnectionResponse.VpnBgpConfig.LocalAsn"));
 		vpnBgpConfig.setAuthKey(_ctx.stringValue("DescribeVpnConnectionResponse.VpnBgpConfig.AuthKey"));
 		describeVpnConnectionResponse.setVpnBgpConfig(vpnBgpConfig);
+
+		List<Tag> tags = new ArrayList<Tag>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeVpnConnectionResponse.Tags.Length"); i++) {
+			Tag tag = new Tag();
+			tag.setKey(_ctx.stringValue("DescribeVpnConnectionResponse.Tags["+ i +"].Key"));
+			tag.setValue(_ctx.stringValue("DescribeVpnConnectionResponse.Tags["+ i +"].Value"));
+
+			tags.add(tag);
+		}
+		describeVpnConnectionResponse.setTags(tags);
 	 
 	 	return describeVpnConnectionResponse;
 	}

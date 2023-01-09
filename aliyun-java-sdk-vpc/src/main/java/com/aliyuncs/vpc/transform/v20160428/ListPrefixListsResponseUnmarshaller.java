@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.vpc.model.v20160428.ListPrefixListsResponse;
 import com.aliyuncs.vpc.model.v20160428.ListPrefixListsResponse.PrefixList;
+import com.aliyuncs.vpc.model.v20160428.ListPrefixListsResponse.PrefixList.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -45,12 +46,23 @@ public class ListPrefixListsResponseUnmarshaller {
 			prefixList.setOwnerId(_ctx.stringValue("ListPrefixListsResponse.PrefixLists["+ i +"].OwnerId"));
 			prefixList.setPrefixListStatus(_ctx.stringValue("ListPrefixListsResponse.PrefixLists["+ i +"].PrefixListStatus"));
 			prefixList.setRegionId(_ctx.stringValue("ListPrefixListsResponse.PrefixLists["+ i +"].RegionId"));
+			prefixList.setResourceGroupId(_ctx.stringValue("ListPrefixListsResponse.PrefixLists["+ i +"].ResourceGroupId"));
 
 			List<String> cidrBlocks = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListPrefixListsResponse.PrefixLists["+ i +"].CidrBlocks.Length"); j++) {
 				cidrBlocks.add(_ctx.stringValue("ListPrefixListsResponse.PrefixLists["+ i +"].CidrBlocks["+ j +"]"));
 			}
 			prefixList.setCidrBlocks(cidrBlocks);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("ListPrefixListsResponse.PrefixLists["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("ListPrefixListsResponse.PrefixLists["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("ListPrefixListsResponse.PrefixLists["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			prefixList.setTags(tags);
 
 			prefixLists.add(prefixList);
 		}

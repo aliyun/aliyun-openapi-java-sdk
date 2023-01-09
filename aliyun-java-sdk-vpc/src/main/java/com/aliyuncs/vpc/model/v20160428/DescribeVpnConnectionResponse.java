@@ -14,6 +14,7 @@
 
 package com.aliyuncs.vpc.model.v20160428;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.vpc.transform.v20160428.DescribeVpnConnectionResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -69,6 +70,8 @@ public class DescribeVpnConnectionResponse extends AcsResponse {
 	private String transitRouterName;
 
 	private Boolean crossAccountAuthorized;
+
+	private List<Tag> tags;
 
 	private IkeConfig ikeConfig;
 
@@ -262,6 +265,14 @@ public class DescribeVpnConnectionResponse extends AcsResponse {
 		this.crossAccountAuthorized = crossAccountAuthorized;
 	}
 
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;
+	}
+
 	public IkeConfig getIkeConfig() {
 		return this.ikeConfig;
 	}
@@ -292,6 +303,29 @@ public class DescribeVpnConnectionResponse extends AcsResponse {
 
 	public void setVpnBgpConfig(VpnBgpConfig vpnBgpConfig) {
 		this.vpnBgpConfig = vpnBgpConfig;
+	}
+
+	public static class Tag {
+
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
 	}
 
 	public static class IkeConfig {
