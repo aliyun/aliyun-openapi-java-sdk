@@ -85,6 +85,8 @@ public class ListRegionsWithAzonesResponse extends AcsResponse {
 
 		private String oversea;
 
+		private String regionShowNameEn;
+
 		private List<Azone> azoneList;
 
 		private CloudPlatformDTO cloudPlatformDTO;
@@ -119,6 +121,14 @@ public class ListRegionsWithAzonesResponse extends AcsResponse {
 
 		public void setOversea(String oversea) {
 			this.oversea = oversea;
+		}
+
+		public String getRegionShowNameEn() {
+			return this.regionShowNameEn;
+		}
+
+		public void setRegionShowNameEn(String regionShowNameEn) {
+			this.regionShowNameEn = regionShowNameEn;
 		}
 
 		public List<Azone> getAzoneList() {

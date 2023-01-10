@@ -40,6 +40,7 @@ public class ListRegionsWithAzonesResponseUnmarshaller {
 			region.setRegionCode(_ctx.stringValue("ListRegionsWithAzonesResponse.Data["+ i +"].RegionCode"));
 			region.setRegionShowNameCn(_ctx.stringValue("ListRegionsWithAzonesResponse.Data["+ i +"].RegionShowNameCn"));
 			region.setOversea(_ctx.stringValue("ListRegionsWithAzonesResponse.Data["+ i +"].Oversea"));
+			region.setRegionShowNameEn(_ctx.stringValue("ListRegionsWithAzonesResponse.Data["+ i +"].RegionShowNameEn"));
 
 			CloudPlatformDTO cloudPlatformDTO = new CloudPlatformDTO();
 			cloudPlatformDTO.setId(_ctx.longValue("ListRegionsWithAzonesResponse.Data["+ i +"].CloudPlatformDTO.Id"));
