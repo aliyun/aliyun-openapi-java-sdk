@@ -36,6 +36,8 @@ public class CreateEaiJupyterRequest extends RpcAcsRequest<CreateEaiJupyterRespo
 
 	private String vSwitchId;
 
+	private String resourceGroupId;
+
 	@SerializedName("environmentVar")
 	private List<EnvironmentVar> environmentVar;
 	public CreateEaiJupyterRequest() {
@@ -88,6 +90,17 @@ public class CreateEaiJupyterRequest extends RpcAcsRequest<CreateEaiJupyterRespo
 		this.vSwitchId = vSwitchId;
 		if(vSwitchId != null){
 			putQueryParameter("VSwitchId", vSwitchId);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

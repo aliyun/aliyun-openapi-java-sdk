@@ -29,6 +29,8 @@ public class DescribeEaisRequest extends RpcAcsRequest<DescribeEaisResponse> {
 
 	private Integer pageNumber;
 
+	private String resourceGroupId;
+
 	private String instanceName;
 
 	private Integer pageSize;
@@ -64,6 +66,17 @@ public class DescribeEaisRequest extends RpcAcsRequest<DescribeEaisResponse> {
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

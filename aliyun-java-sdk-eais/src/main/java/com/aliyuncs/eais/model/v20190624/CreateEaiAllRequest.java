@@ -33,6 +33,8 @@ public class CreateEaiAllRequest extends RpcAcsRequest<CreateEaiAllResponse> {
 
 	private String clientToken;
 
+	private String resourceGroupId;
+
 	private String clientInstanceName;
 
 	private Integer clientInternetMaxBandwidthIn;
@@ -102,6 +104,17 @@ public class CreateEaiAllRequest extends RpcAcsRequest<CreateEaiAllResponse> {
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
