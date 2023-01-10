@@ -22,56 +22,17 @@ import com.aliyuncs.das.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetPartitionsHeatmapRequest extends RpcAcsRequest<GetPartitionsHeatmapResponse> {
+public class DescribeAutoScalingConfigRequest extends RpcAcsRequest<DescribeAutoScalingConfigResponse> {
 	   
 
-	private String timeRange;
-
-	private String type;
-
-	private String consoleContext;
-
 	private String instanceId;
-	public GetPartitionsHeatmapRequest() {
-		super("DAS", "2020-01-16", "GetPartitionsHeatmap");
+	public DescribeAutoScalingConfigRequest() {
+		super("DAS", "2020-01-16", "DescribeAutoScalingConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getTimeRange() {
-		return this.timeRange;
-	}
-
-	public void setTimeRange(String timeRange) {
-		this.timeRange = timeRange;
-		if(timeRange != null){
-			putQueryParameter("TimeRange", timeRange);
-		}
-	}
-
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
-		}
-	}
-
-	public String getConsoleContext() {
-		return this.consoleContext;
-	}
-
-	public void setConsoleContext(String consoleContext) {
-		this.consoleContext = consoleContext;
-		if(consoleContext != null){
-			putQueryParameter("ConsoleContext", consoleContext);
-		}
 	}
 
 	public String getInstanceId() {
@@ -86,8 +47,8 @@ public class GetPartitionsHeatmapRequest extends RpcAcsRequest<GetPartitionsHeat
 	}
 
 	@Override
-	public Class<GetPartitionsHeatmapResponse> getResponseClass() {
-		return GetPartitionsHeatmapResponse.class;
+	public Class<DescribeAutoScalingConfigResponse> getResponseClass() {
+		return DescribeAutoScalingConfigResponse.class;
 	}
 
 }

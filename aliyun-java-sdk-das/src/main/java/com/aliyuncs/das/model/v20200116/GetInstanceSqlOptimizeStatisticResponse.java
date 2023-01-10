@@ -15,24 +15,24 @@
 package com.aliyuncs.das.model.v20200116;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.das.transform.v20200116.DeleteAutoScaleInstancePolicyResponseUnmarshaller;
+import com.aliyuncs.das.transform.v20200116.GetInstanceSqlOptimizeStatisticResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteAutoScaleInstancePolicyResponse extends AcsResponse {
+public class GetInstanceSqlOptimizeStatisticResponse extends AcsResponse {
 
 	private String code;
 
 	private String message;
 
-	private String data;
-
 	private String requestId;
 
 	private String success;
+
+	private Data data;
 
 	public String getCode() {
 		return this.code;
@@ -48,14 +48,6 @@ public class DeleteAutoScaleInstancePolicyResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
-	}
-
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
 	}
 
 	public String getRequestId() {
@@ -74,8 +66,44 @@ public class DeleteAutoScaleInstancePolicyResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public Data getData() {
+		return this.data;
+	}
+
+	public void setData(Data data) {
+		this.data = data;
+	}
+
+	public static class Data {
+
+		private Integer count;
+
+		private Double improvement;
+
+		public Integer getCount() {
+			return this.count;
+		}
+
+		public void setCount(Integer count) {
+			this.count = count;
+		}
+
+		public Double getImprovement() {
+			return this.improvement;
+		}
+
+		public void setImprovement(Double improvement) {
+			this.improvement = improvement;
+		}
+	}
+
 	@Override
-	public DeleteAutoScaleInstancePolicyResponse getInstance(UnmarshallerContext context) {
-		return	DeleteAutoScaleInstancePolicyResponseUnmarshaller.unmarshall(this, context);
+	public GetInstanceSqlOptimizeStatisticResponse getInstance(UnmarshallerContext context) {
+		return	GetInstanceSqlOptimizeStatisticResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

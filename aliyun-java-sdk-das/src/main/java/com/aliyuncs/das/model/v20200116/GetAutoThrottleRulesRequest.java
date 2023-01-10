@@ -22,45 +22,19 @@ import com.aliyuncs.das.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetPartitionsHeatmapRequest extends RpcAcsRequest<GetPartitionsHeatmapResponse> {
+public class GetAutoThrottleRulesRequest extends RpcAcsRequest<GetAutoThrottleRulesResponse> {
 	   
-
-	private String timeRange;
-
-	private String type;
 
 	private String consoleContext;
 
-	private String instanceId;
-	public GetPartitionsHeatmapRequest() {
-		super("DAS", "2020-01-16", "GetPartitionsHeatmap");
+	private String instanceIds;
+	public GetAutoThrottleRulesRequest() {
+		super("DAS", "2020-01-16", "GetAutoThrottleRules");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getTimeRange() {
-		return this.timeRange;
-	}
-
-	public void setTimeRange(String timeRange) {
-		this.timeRange = timeRange;
-		if(timeRange != null){
-			putQueryParameter("TimeRange", timeRange);
-		}
-	}
-
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
-		}
 	}
 
 	public String getConsoleContext() {
@@ -74,20 +48,20 @@ public class GetPartitionsHeatmapRequest extends RpcAcsRequest<GetPartitionsHeat
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getInstanceIds() {
+		return this.instanceIds;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+	public void setInstanceIds(String instanceIds) {
+		this.instanceIds = instanceIds;
+		if(instanceIds != null){
+			putQueryParameter("InstanceIds", instanceIds);
 		}
 	}
 
 	@Override
-	public Class<GetPartitionsHeatmapResponse> getResponseClass() {
-		return GetPartitionsHeatmapResponse.class;
+	public Class<GetAutoThrottleRulesResponse> getResponseClass() {
+		return GetAutoThrottleRulesResponse.class;
 	}
 
 }

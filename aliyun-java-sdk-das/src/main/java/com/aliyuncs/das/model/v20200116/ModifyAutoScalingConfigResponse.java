@@ -15,20 +15,18 @@
 package com.aliyuncs.das.model.v20200116;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.das.transform.v20200116.DeleteAutoScalePolicyResponseUnmarshaller;
+import com.aliyuncs.das.transform.v20200116.ModifyAutoScalingConfigResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteAutoScalePolicyResponse extends AcsResponse {
+public class ModifyAutoScalingConfigResponse extends AcsResponse {
 
 	private String code;
 
 	private String message;
-
-	private String data;
 
 	private String requestId;
 
@@ -50,14 +48,6 @@ public class DeleteAutoScalePolicyResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -75,7 +65,12 @@ public class DeleteAutoScalePolicyResponse extends AcsResponse {
 	}
 
 	@Override
-	public DeleteAutoScalePolicyResponse getInstance(UnmarshallerContext context) {
-		return	DeleteAutoScalePolicyResponseUnmarshaller.unmarshall(this, context);
+	public ModifyAutoScalingConfigResponse getInstance(UnmarshallerContext context) {
+		return	ModifyAutoScalingConfigResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

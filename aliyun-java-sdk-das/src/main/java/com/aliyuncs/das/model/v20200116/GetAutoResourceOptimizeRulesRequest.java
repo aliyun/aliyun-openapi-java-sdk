@@ -22,20 +22,14 @@ import com.aliyuncs.das.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetAutoScaleInstancePolicyListRequest extends RpcAcsRequest<GetAutoScaleInstancePolicyListResponse> {
+public class GetAutoResourceOptimizeRulesRequest extends RpcAcsRequest<GetAutoResourceOptimizeRulesResponse> {
 	   
 
 	private String consoleContext;
 
-	private String instanceId;
-
-	private String pageNo;
-
-	private String pageSize;
-
-	private String onOff;
-	public GetAutoScaleInstancePolicyListRequest() {
-		super("DAS", "2020-01-16", "GetAutoScaleInstancePolicyList");
+	private String instanceIds;
+	public GetAutoResourceOptimizeRulesRequest() {
+		super("DAS", "2020-01-16", "GetAutoResourceOptimizeRules");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -54,53 +48,20 @@ public class GetAutoScaleInstancePolicyListRequest extends RpcAcsRequest<GetAuto
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getInstanceIds() {
+		return this.instanceIds;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getPageNo() {
-		return this.pageNo;
-	}
-
-	public void setPageNo(String pageNo) {
-		this.pageNo = pageNo;
-		if(pageNo != null){
-			putQueryParameter("PageNo", pageNo);
-		}
-	}
-
-	public String getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(String pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize);
-		}
-	}
-
-	public String getOnOff() {
-		return this.onOff;
-	}
-
-	public void setOnOff(String onOff) {
-		this.onOff = onOff;
-		if(onOff != null){
-			putQueryParameter("OnOff", onOff);
+	public void setInstanceIds(String instanceIds) {
+		this.instanceIds = instanceIds;
+		if(instanceIds != null){
+			putQueryParameter("InstanceIds", instanceIds);
 		}
 	}
 
 	@Override
-	public Class<GetAutoScaleInstancePolicyListResponse> getResponseClass() {
-		return GetAutoScaleInstancePolicyListResponse.class;
+	public Class<GetAutoResourceOptimizeRulesResponse> getResponseClass() {
+		return GetAutoResourceOptimizeRulesResponse.class;
 	}
 
 }

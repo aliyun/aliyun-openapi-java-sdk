@@ -1,3 +1,6 @@
+2023-01-10 Version: 1.0.23
+- Public SetEventSubscription API.
+
 2022-05-25 Version: 1.0.19
 - Kill Redis instance all sessions api.
 

@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.das.model.v20200116.GetInstanceInspectionsResponse;
 import com.aliyuncs.das.model.v20200116.GetInstanceInspectionsResponse.Data;
 import com.aliyuncs.das.model.v20200116.GetInstanceInspectionsResponse.Data.BaseInspection;
+import com.aliyuncs.das.model.v20200116.GetInstanceInspectionsResponse.Data.BaseInspection.AutoFunction;
 import com.aliyuncs.das.model.v20200116.GetInstanceInspectionsResponse.Data.BaseInspection.Instance;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -48,6 +49,9 @@ public class GetInstanceInspectionsResponseUnmarshaller {
 			baseInspection.setScoreMap(_ctx.mapValue("GetInstanceInspectionsResponse.Data.List["+ i +"].ScoreMap"));
 			baseInspection.setGmtCreate(_ctx.longValue("GetInstanceInspectionsResponse.Data.List["+ i +"].GmtCreate"));
 			baseInspection.setScore(_ctx.integerValue("GetInstanceInspectionsResponse.Data.List["+ i +"].Score"));
+			baseInspection.setEnableDasPro(_ctx.integerValue("GetInstanceInspectionsResponse.Data.List["+ i +"].EnableDasPro"));
+			baseInspection.setState(_ctx.integerValue("GetInstanceInspectionsResponse.Data.List["+ i +"].State"));
+			baseInspection.setTaskType(_ctx.integerValue("GetInstanceInspectionsResponse.Data.List["+ i +"].TaskType"));
 
 			Instance instance = new Instance();
 			instance.setVpcId(_ctx.stringValue("GetInstanceInspectionsResponse.Data.List["+ i +"].Instance.VpcId"));
@@ -61,7 +65,20 @@ public class GetInstanceInspectionsResponseUnmarshaller {
 			instance.setInstanceId(_ctx.stringValue("GetInstanceInspectionsResponse.Data.List["+ i +"].Instance.InstanceId"));
 			instance.setNodeId(_ctx.stringValue("GetInstanceInspectionsResponse.Data.List["+ i +"].Instance.NodeId"));
 			instance.setEngineVersion(_ctx.stringValue("GetInstanceInspectionsResponse.Data.List["+ i +"].Instance.EngineVersion"));
+			instance.setInstanceAlias(_ctx.stringValue("GetInstanceInspectionsResponse.Data.List["+ i +"].Instance.InstanceAlias"));
+			instance.setCpu(_ctx.stringValue("GetInstanceInspectionsResponse.Data.List["+ i +"].Instance.Cpu"));
+			instance.setMemory(_ctx.integerValue("GetInstanceInspectionsResponse.Data.List["+ i +"].Instance.Memory"));
+			instance.setStorage(_ctx.integerValue("GetInstanceInspectionsResponse.Data.List["+ i +"].Instance.Storage"));
+			instance.setCategory(_ctx.stringValue("GetInstanceInspectionsResponse.Data.List["+ i +"].Instance.Category"));
 			baseInspection.setInstance(instance);
+
+			AutoFunction autoFunction = new AutoFunction();
+			autoFunction.setEventSubscription(_ctx.integerValue("GetInstanceInspectionsResponse.Data.List["+ i +"].AutoFunction.EventSubscription"));
+			autoFunction.setAutoIndex(_ctx.integerValue("GetInstanceInspectionsResponse.Data.List["+ i +"].AutoFunction.AutoIndex"));
+			autoFunction.setAutoLimitedSql(_ctx.integerValue("GetInstanceInspectionsResponse.Data.List["+ i +"].AutoFunction.AutoLimitedSql"));
+			autoFunction.setAutoResourceOptimize(_ctx.integerValue("GetInstanceInspectionsResponse.Data.List["+ i +"].AutoFunction.AutoResourceOptimize"));
+			autoFunction.setAutoScale(_ctx.integerValue("GetInstanceInspectionsResponse.Data.List["+ i +"].AutoFunction.AutoScale"));
+			baseInspection.setAutoFunction(autoFunction);
 
 			list.add(baseInspection);
 		}

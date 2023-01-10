@@ -14,26 +14,25 @@
 
 package com.aliyuncs.das.model.v20200116;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.das.transform.v20200116.GetEventLatencyInfoResponseUnmarshaller;
+import com.aliyuncs.das.transform.v20200116.UpdateAutoSqlOptimizeStatusResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetEventLatencyInfoResponse extends AcsResponse {
+public class UpdateAutoSqlOptimizeStatusResponse extends AcsResponse {
 
 	private String code;
 
 	private String message;
 
-	private Map<Object,Object> data;
-
 	private String requestId;
 
 	private String success;
+
+	private Data data;
 
 	public String getCode() {
 		return this.code;
@@ -49,14 +48,6 @@ public class GetEventLatencyInfoResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
-	}
-
-	public Map<Object,Object> getData() {
-		return this.data;
-	}
-
-	public void setData(Map<Object,Object> data) {
-		this.data = data;
 	}
 
 	public String getRequestId() {
@@ -75,9 +66,50 @@ public class GetEventLatencyInfoResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public Data getData() {
+		return this.data;
+	}
+
+	public void setData(Data data) {
+		this.data = data;
+	}
+
+	public static class Data {
+
+		private String success;
+
+		private String errorCode;
+
+		private String errorMsg;
+
+		public String getSuccess() {
+			return this.success;
+		}
+
+		public void setSuccess(String success) {
+			this.success = success;
+		}
+
+		public String getErrorCode() {
+			return this.errorCode;
+		}
+
+		public void setErrorCode(String errorCode) {
+			this.errorCode = errorCode;
+		}
+
+		public String getErrorMsg() {
+			return this.errorMsg;
+		}
+
+		public void setErrorMsg(String errorMsg) {
+			this.errorMsg = errorMsg;
+		}
+	}
+
 	@Override
-	public GetEventLatencyInfoResponse getInstance(UnmarshallerContext context) {
-		return	GetEventLatencyInfoResponseUnmarshaller.unmarshall(this, context);
+	public UpdateAutoSqlOptimizeStatusResponse getInstance(UnmarshallerContext context) {
+		return	UpdateAutoSqlOptimizeStatusResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

@@ -22,32 +22,19 @@ import com.aliyuncs.das.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteAutoScaleInstancePolicyRequest extends RpcAcsRequest<DeleteAutoScaleInstancePolicyResponse> {
+public class DisableAutoThrottleRulesRequest extends RpcAcsRequest<DisableAutoThrottleRulesResponse> {
 	   
-
-	private String policyUuid;
 
 	private String consoleContext;
 
-	private String instanceId;
-	public DeleteAutoScaleInstancePolicyRequest() {
-		super("DAS", "2020-01-16", "DeleteAutoScaleInstancePolicy");
+	private String instanceIds;
+	public DisableAutoThrottleRulesRequest() {
+		super("DAS", "2020-01-16", "DisableAutoThrottleRules");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getPolicyUuid() {
-		return this.policyUuid;
-	}
-
-	public void setPolicyUuid(String policyUuid) {
-		this.policyUuid = policyUuid;
-		if(policyUuid != null){
-			putQueryParameter("PolicyUuid", policyUuid);
-		}
 	}
 
 	public String getConsoleContext() {
@@ -61,20 +48,20 @@ public class DeleteAutoScaleInstancePolicyRequest extends RpcAcsRequest<DeleteAu
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getInstanceIds() {
+		return this.instanceIds;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+	public void setInstanceIds(String instanceIds) {
+		this.instanceIds = instanceIds;
+		if(instanceIds != null){
+			putQueryParameter("InstanceIds", instanceIds);
 		}
 	}
 
 	@Override
-	public Class<DeleteAutoScaleInstancePolicyResponse> getResponseClass() {
-		return DeleteAutoScaleInstancePolicyResponse.class;
+	public Class<DisableAutoThrottleRulesResponse> getResponseClass() {
+		return DisableAutoThrottleRulesResponse.class;
 	}
 
 }

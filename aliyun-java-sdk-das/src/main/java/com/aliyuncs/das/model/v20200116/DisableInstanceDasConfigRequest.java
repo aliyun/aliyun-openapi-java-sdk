@@ -22,14 +22,16 @@ import com.aliyuncs.das.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteAutoScalePolicyRequest extends RpcAcsRequest<DeleteAutoScalePolicyResponse> {
+public class DisableInstanceDasConfigRequest extends RpcAcsRequest<DisableInstanceDasConfigResponse> {
 	   
 
-	private String uuid;
+	private String instanceId;
 
-	private String consoleContext;
-	public DeleteAutoScalePolicyRequest() {
-		super("DAS", "2020-01-16", "DeleteAutoScalePolicy");
+	private String engine;
+
+	private String scaleType;
+	public DisableInstanceDasConfigRequest() {
+		super("DAS", "2020-01-16", "DisableInstanceDasConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +39,42 @@ public class DeleteAutoScalePolicyRequest extends RpcAcsRequest<DeleteAutoScaleP
 		} catch (Exception e) {}
 	}
 
-	public String getUuid() {
-		return this.uuid;
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setUuid(String uuid) {
-		this.uuid = uuid;
-		if(uuid != null){
-			putQueryParameter("Uuid", uuid);
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
-	public String getConsoleContext() {
-		return this.consoleContext;
+	public String getEngine() {
+		return this.engine;
 	}
 
-	public void setConsoleContext(String consoleContext) {
-		this.consoleContext = consoleContext;
-		if(consoleContext != null){
-			putQueryParameter("ConsoleContext", consoleContext);
+	public void setEngine(String engine) {
+		this.engine = engine;
+		if(engine != null){
+			putQueryParameter("Engine", engine);
+		}
+	}
+
+	public String getScaleType() {
+		return this.scaleType;
+	}
+
+	public void setScaleType(String scaleType) {
+		this.scaleType = scaleType;
+		if(scaleType != null){
+			putQueryParameter("ScaleType", scaleType);
 		}
 	}
 
 	@Override
-	public Class<DeleteAutoScalePolicyResponse> getResponseClass() {
-		return DeleteAutoScalePolicyResponse.class;
+	public Class<DisableInstanceDasConfigResponse> getResponseClass() {
+		return DisableInstanceDasConfigResponse.class;
 	}
 
 }
