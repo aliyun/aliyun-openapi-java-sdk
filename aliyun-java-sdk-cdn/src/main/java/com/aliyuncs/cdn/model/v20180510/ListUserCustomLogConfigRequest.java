@@ -24,8 +24,6 @@ import com.aliyuncs.cdn.Endpoint;
  */
 public class ListUserCustomLogConfigRequest extends RpcAcsRequest<ListUserCustomLogConfigResponse> {
 	   
-
-	private Long ownerId;
 	public ListUserCustomLogConfigRequest() {
 		super("Cdn", "2018-05-10", "ListUserCustomLogConfig");
 		setMethod(MethodType.GET);
@@ -33,17 +31,6 @@ public class ListUserCustomLogConfigRequest extends RpcAcsRequest<ListUserCustom
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
 	}
 
 	@Override

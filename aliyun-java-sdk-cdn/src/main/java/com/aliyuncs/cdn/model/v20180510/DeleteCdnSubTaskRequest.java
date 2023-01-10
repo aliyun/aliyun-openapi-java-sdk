@@ -24,8 +24,6 @@ import com.aliyuncs.cdn.Endpoint;
  */
 public class DeleteCdnSubTaskRequest extends RpcAcsRequest<DeleteCdnSubTaskResponse> {
 	   
-
-	private Long ownerId;
 	public DeleteCdnSubTaskRequest() {
 		super("Cdn", "2018-05-10", "DeleteCdnSubTask");
 		setMethod(MethodType.POST);
@@ -33,17 +31,6 @@ public class DeleteCdnSubTaskRequest extends RpcAcsRequest<DeleteCdnSubTaskRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
 	}
 
 	@Override

@@ -27,8 +27,6 @@ public class DeleteRealTimeLogLogstoreRequest extends RpcAcsRequest<DeleteRealTi
 
 	private String project;
 
-	private Long ownerId;
-
 	private String region;
 
 	private String logstore;
@@ -49,17 +47,6 @@ public class DeleteRealTimeLogLogstoreRequest extends RpcAcsRequest<DeleteRealTi
 		this.project = project;
 		if(project != null){
 			putQueryParameter("Project", project);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

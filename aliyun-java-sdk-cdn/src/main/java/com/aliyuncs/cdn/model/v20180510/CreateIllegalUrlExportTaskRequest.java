@@ -27,8 +27,6 @@ public class CreateIllegalUrlExportTaskRequest extends RpcAcsRequest<CreateIlleg
 
 	private String taskName;
 
-	private Long ownerId;
-
 	private String timePoint;
 	public CreateIllegalUrlExportTaskRequest() {
 		super("Cdn", "2018-05-10", "CreateIllegalUrlExportTask");
@@ -47,17 +45,6 @@ public class CreateIllegalUrlExportTaskRequest extends RpcAcsRequest<CreateIlleg
 		this.taskName = taskName;
 		if(taskName != null){
 			putQueryParameter("TaskName", taskName);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

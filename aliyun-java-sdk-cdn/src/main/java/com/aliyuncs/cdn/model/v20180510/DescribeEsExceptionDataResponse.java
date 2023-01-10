@@ -49,7 +49,7 @@ public class DescribeEsExceptionDataResponse extends AcsResponse {
 
 		private String name;
 
-		private List<String> points;
+		private List<PointsItem> points;
 
 		private List<String> columns;
 
@@ -61,11 +61,11 @@ public class DescribeEsExceptionDataResponse extends AcsResponse {
 			this.name = name;
 		}
 
-		public List<String> getPoints() {
+		public List<PointsItem> getPoints() {
 			return this.points;
 		}
 
-		public void setPoints(List<String> points) {
+		public void setPoints(List<PointsItem> points) {
 			this.points = points;
 		}
 
@@ -75,6 +75,19 @@ public class DescribeEsExceptionDataResponse extends AcsResponse {
 
 		public void setColumns(List<String> columns) {
 			this.columns = columns;
+		}
+
+		public static class PointsItem {
+
+			private List<String> points1;
+
+			public List<String> getPoints1() {
+				return this.points1;
+			}
+
+			public void setPoints1(List<String> points1) {
+				this.points1 = points1;
+			}
 		}
 	}
 

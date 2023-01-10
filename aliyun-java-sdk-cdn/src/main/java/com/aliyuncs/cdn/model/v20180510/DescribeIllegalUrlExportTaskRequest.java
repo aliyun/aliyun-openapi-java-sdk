@@ -26,8 +26,6 @@ public class DescribeIllegalUrlExportTaskRequest extends RpcAcsRequest<DescribeI
 	   
 
 	private String taskId;
-
-	private Long ownerId;
 	public DescribeIllegalUrlExportTaskRequest() {
 		super("Cdn", "2018-05-10", "DescribeIllegalUrlExportTask");
 		setMethod(MethodType.POST);
@@ -45,17 +43,6 @@ public class DescribeIllegalUrlExportTaskRequest extends RpcAcsRequest<DescribeI
 		this.taskId = taskId;
 		if(taskId != null){
 			putQueryParameter("TaskId", taskId);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

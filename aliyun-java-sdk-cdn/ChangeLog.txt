@@ -1,3 +1,6 @@
+2023-01-10 Version: 3.7.12
+- Add DescribePreloadDetailById.
+
 2022-12-27 Version: 3.7.11
 - Add ModifyCdnDomainOwner.
 
