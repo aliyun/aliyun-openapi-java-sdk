@@ -25,6 +25,8 @@ import com.aliyuncs.bssopenapi.Endpoint;
 public class SetResellerUserStatusRequest extends RpcAcsRequest<SetResellerUserStatusResponse> {
 	   
 
+	private String stopMode;
+
 	private String ownerId;
 
 	private String businessType;
@@ -37,6 +39,17 @@ public class SetResellerUserStatusRequest extends RpcAcsRequest<SetResellerUserS
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getStopMode() {
+		return this.stopMode;
+	}
+
+	public void setStopMode(String stopMode) {
+		this.stopMode = stopMode;
+		if(stopMode != null){
+			putQueryParameter("StopMode", stopMode);
+		}
 	}
 
 	public String getOwnerId() {

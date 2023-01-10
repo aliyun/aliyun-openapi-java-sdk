@@ -38,7 +38,6 @@ public class DescribeInstanceAmortizedCostByAmortizationPeriodResponseUnmarshall
 		data.setAccountName(_ctx.stringValue("DescribeInstanceAmortizedCostByAmortizationPeriodResponse.Data.AccountName"));
 		data.setMaxResults(_ctx.integerValue("DescribeInstanceAmortizedCostByAmortizationPeriodResponse.Data.MaxResults"));
 		data.setTotalCount(_ctx.integerValue("DescribeInstanceAmortizedCostByAmortizationPeriodResponse.Data.TotalCount"));
-		data.setHostId(_ctx.stringValue("DescribeInstanceAmortizedCostByAmortizationPeriodResponse.Data.HostId"));
 
 		List<Item> items = new ArrayList<Item>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceAmortizedCostByAmortizationPeriodResponse.Data.Items.Length"); i++) {

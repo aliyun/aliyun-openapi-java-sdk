@@ -1,3 +1,7 @@
+2023-01-10 Version: 1.8.4
+- Add DescribeInstanceAmortizedCostByConsumePeriod.
+- Add DescribeProductAmortizedCostByConsumePeriod.
+
 2022-12-23 Version: 1.8.3
 - Add DescribeInstanceAmortizedCostByAmortizationPeriod.
 - Add DescribeProductAmortizedCostByAmortizationPeriod.

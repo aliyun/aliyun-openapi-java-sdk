@@ -16,14 +16,14 @@ package com.aliyuncs.bssopenapi.model.v20171214;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.bssopenapi.transform.v20171214.DescribeProductAmortizedCostByAmortizationPeriodResponseUnmarshaller;
+import com.aliyuncs.bssopenapi.transform.v20171214.DescribeProductAmortizedCostByConsumePeriodResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeProductAmortizedCostByAmortizationPeriodResponse extends AcsResponse {
+public class DescribeProductAmortizedCostByConsumePeriodResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -592,8 +592,8 @@ public class DescribeProductAmortizedCostByAmortizationPeriodResponse extends Ac
 	}
 
 	@Override
-	public DescribeProductAmortizedCostByAmortizationPeriodResponse getInstance(UnmarshallerContext context) {
-		return	DescribeProductAmortizedCostByAmortizationPeriodResponseUnmarshaller.unmarshall(this, context);
+	public DescribeProductAmortizedCostByConsumePeriodResponse getInstance(UnmarshallerContext context) {
+		return	DescribeProductAmortizedCostByConsumePeriodResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

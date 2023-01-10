@@ -16,14 +16,14 @@ package com.aliyuncs.bssopenapi.model.v20171214;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.bssopenapi.transform.v20171214.DescribeProductAmortizedCostByAmortizationPeriodResponseUnmarshaller;
+import com.aliyuncs.bssopenapi.transform.v20171214.DescribeInstanceAmortizedCostByConsumePeriodResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeProductAmortizedCostByAmortizationPeriodResponse extends AcsResponse {
+public class DescribeInstanceAmortizedCostByConsumePeriodResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -139,6 +139,32 @@ public class DescribeProductAmortizedCostByAmortizationPeriodResponse extends Ac
 
 		public static class Item {
 
+			private String costUnit;
+
+			private String costUnitCode;
+
+			private String instanceID;
+
+			private String resourceGroup;
+
+			private String tag;
+
+			private String internetIP;
+
+			private String intranetIP;
+
+			private String region;
+
+			private String zone;
+
+			private String splitAccountName;
+
+			private String splitProductDetail;
+
+			private String splitItemID;
+
+			private String splitItemName;
+
 			private String consumePeriod;
 
 			private String amortizationStatus;
@@ -228,6 +254,110 @@ public class DescribeProductAmortizedCostByAmortizationPeriodResponse extends Ac
 			private Double remainingAmortizationDeductedByPrepaidCard;
 
 			private Double remainingAmortizationExpenditureAmount;
+
+			public String getCostUnit() {
+				return this.costUnit;
+			}
+
+			public void setCostUnit(String costUnit) {
+				this.costUnit = costUnit;
+			}
+
+			public String getCostUnitCode() {
+				return this.costUnitCode;
+			}
+
+			public void setCostUnitCode(String costUnitCode) {
+				this.costUnitCode = costUnitCode;
+			}
+
+			public String getInstanceID() {
+				return this.instanceID;
+			}
+
+			public void setInstanceID(String instanceID) {
+				this.instanceID = instanceID;
+			}
+
+			public String getResourceGroup() {
+				return this.resourceGroup;
+			}
+
+			public void setResourceGroup(String resourceGroup) {
+				this.resourceGroup = resourceGroup;
+			}
+
+			public String getTag() {
+				return this.tag;
+			}
+
+			public void setTag(String tag) {
+				this.tag = tag;
+			}
+
+			public String getInternetIP() {
+				return this.internetIP;
+			}
+
+			public void setInternetIP(String internetIP) {
+				this.internetIP = internetIP;
+			}
+
+			public String getIntranetIP() {
+				return this.intranetIP;
+			}
+
+			public void setIntranetIP(String intranetIP) {
+				this.intranetIP = intranetIP;
+			}
+
+			public String getRegion() {
+				return this.region;
+			}
+
+			public void setRegion(String region) {
+				this.region = region;
+			}
+
+			public String getZone() {
+				return this.zone;
+			}
+
+			public void setZone(String zone) {
+				this.zone = zone;
+			}
+
+			public String getSplitAccountName() {
+				return this.splitAccountName;
+			}
+
+			public void setSplitAccountName(String splitAccountName) {
+				this.splitAccountName = splitAccountName;
+			}
+
+			public String getSplitProductDetail() {
+				return this.splitProductDetail;
+			}
+
+			public void setSplitProductDetail(String splitProductDetail) {
+				this.splitProductDetail = splitProductDetail;
+			}
+
+			public String getSplitItemID() {
+				return this.splitItemID;
+			}
+
+			public void setSplitItemID(String splitItemID) {
+				this.splitItemID = splitItemID;
+			}
+
+			public String getSplitItemName() {
+				return this.splitItemName;
+			}
+
+			public void setSplitItemName(String splitItemName) {
+				this.splitItemName = splitItemName;
+			}
 
 			public String getConsumePeriod() {
 				return this.consumePeriod;
@@ -592,8 +722,8 @@ public class DescribeProductAmortizedCostByAmortizationPeriodResponse extends Ac
 	}
 
 	@Override
-	public DescribeProductAmortizedCostByAmortizationPeriodResponse getInstance(UnmarshallerContext context) {
-		return	DescribeProductAmortizedCostByAmortizationPeriodResponseUnmarshaller.unmarshall(this, context);
+	public DescribeInstanceAmortizedCostByConsumePeriodResponse getInstance(UnmarshallerContext context) {
+		return	DescribeInstanceAmortizedCostByConsumePeriodResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

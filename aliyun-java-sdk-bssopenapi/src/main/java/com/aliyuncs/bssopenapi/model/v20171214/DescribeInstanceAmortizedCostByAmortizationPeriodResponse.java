@@ -87,8 +87,6 @@ public class DescribeInstanceAmortizedCostByAmortizationPeriodResponse extends A
 
 		private Integer totalCount;
 
-		private String hostId;
-
 		private List<Item> items;
 
 		public String getNextToken() {
@@ -129,14 +127,6 @@ public class DescribeInstanceAmortizedCostByAmortizationPeriodResponse extends A
 
 		public void setTotalCount(Integer totalCount) {
 			this.totalCount = totalCount;
-		}
-
-		public String getHostId() {
-			return this.hostId;
-		}
-
-		public void setHostId(String hostId) {
-			this.hostId = hostId;
 		}
 
 		public List<Item> getItems() {
