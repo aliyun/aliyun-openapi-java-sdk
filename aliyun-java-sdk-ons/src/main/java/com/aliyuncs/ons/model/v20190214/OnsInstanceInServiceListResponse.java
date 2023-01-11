@@ -69,6 +69,8 @@ public class OnsInstanceInServiceListResponse extends AcsResponse {
 
 		private Integer instanceType;
 
+		private Long createTime;
+
 		private List<Tag> tags;
 
 		public Boolean getIndependentNaming() {
@@ -117,6 +119,14 @@ public class OnsInstanceInServiceListResponse extends AcsResponse {
 
 		public void setInstanceType(Integer instanceType) {
 			this.instanceType = instanceType;
+		}
+
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
 		}
 
 		public List<Tag> getTags() {
