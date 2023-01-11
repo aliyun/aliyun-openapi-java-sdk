@@ -1,0 +1,36 @@
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.aliyuncs.nlb.transform.v20220430;
+
+import com.aliyuncs.nlb.model.v20220430.GetJobStatusResponse;
+import com.aliyuncs.transform.UnmarshallerContext;
+
+
+public class GetJobStatusResponseUnmarshaller {
+
+	public static GetJobStatusResponse unmarshall(GetJobStatusResponse getJobStatusResponse, UnmarshallerContext _ctx) {
+		
+		getJobStatusResponse.setRequestId(_ctx.stringValue("GetJobStatusResponse.RequestId"));
+		getJobStatusResponse.setSuccess(_ctx.booleanValue("GetJobStatusResponse.Success"));
+		getJobStatusResponse.setCode(_ctx.stringValue("GetJobStatusResponse.Code"));
+		getJobStatusResponse.setMessage(_ctx.stringValue("GetJobStatusResponse.Message"));
+		getJobStatusResponse.setHttpStatusCode(_ctx.integerValue("GetJobStatusResponse.HttpStatusCode"));
+		getJobStatusResponse.setDynamicCode(_ctx.stringValue("GetJobStatusResponse.DynamicCode"));
+		getJobStatusResponse.setDynamicMessage(_ctx.stringValue("GetJobStatusResponse.DynamicMessage"));
+		getJobStatusResponse.setStatus(_ctx.stringValue("GetJobStatusResponse.Status"));
+	 
+	 	return getJobStatusResponse;
+	}
+}
