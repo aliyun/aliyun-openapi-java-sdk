@@ -41,6 +41,8 @@ public class CreateBandwidthPackageRequest extends RpcAcsRequest<CreateBandwidth
 
 	private Boolean autoPay;
 
+	private String promotionOptionNo;
+
 	private Integer bandwidth;
 
 	private String cbnGeographicRegionIdB;
@@ -150,6 +152,17 @@ public class CreateBandwidthPackageRequest extends RpcAcsRequest<CreateBandwidth
 		this.autoPay = autoPay;
 		if(autoPay != null){
 			putQueryParameter("AutoPay", autoPay.toString());
+		}
+	}
+
+	public String getPromotionOptionNo() {
+		return this.promotionOptionNo;
+	}
+
+	public void setPromotionOptionNo(String promotionOptionNo) {
+		this.promotionOptionNo = promotionOptionNo;
+		if(promotionOptionNo != null){
+			putQueryParameter("PromotionOptionNo", promotionOptionNo);
 		}
 	}
 

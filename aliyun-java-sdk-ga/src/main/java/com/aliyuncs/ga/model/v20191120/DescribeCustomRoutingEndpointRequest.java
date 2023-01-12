@@ -26,6 +26,8 @@ public class DescribeCustomRoutingEndpointRequest extends RpcAcsRequest<Describe
 	   
 
 	private String endpointId;
+
+	private String endpointGroup;
 	public DescribeCustomRoutingEndpointRequest() {
 		super("Ga", "2019-11-20", "DescribeCustomRoutingEndpoint", "gaplus");
 		setMethod(MethodType.POST);
@@ -43,6 +45,17 @@ public class DescribeCustomRoutingEndpointRequest extends RpcAcsRequest<Describe
 		this.endpointId = endpointId;
 		if(endpointId != null){
 			putQueryParameter("EndpointId", endpointId);
+		}
+	}
+
+	public String getEndpointGroup() {
+		return this.endpointGroup;
+	}
+
+	public void setEndpointGroup(String endpointGroup) {
+		this.endpointGroup = endpointGroup;
+		if(endpointGroup != null){
+			putQueryParameter("EndpointGroup", endpointGroup);
 		}
 	}
 

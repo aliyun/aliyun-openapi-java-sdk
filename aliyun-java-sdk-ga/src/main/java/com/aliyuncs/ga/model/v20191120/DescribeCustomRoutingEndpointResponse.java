@@ -40,6 +40,8 @@ public class DescribeCustomRoutingEndpointResponse extends AcsResponse {
 
 	private String trafficToEndpointPolicy;
 
+	private String state;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -102,6 +104,14 @@ public class DescribeCustomRoutingEndpointResponse extends AcsResponse {
 
 	public void setTrafficToEndpointPolicy(String trafficToEndpointPolicy) {
 		this.trafficToEndpointPolicy = trafficToEndpointPolicy;
+	}
+
+	public String getState() {
+		return this.state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
 	}
 
 	@Override

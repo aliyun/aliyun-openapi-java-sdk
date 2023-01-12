@@ -34,6 +34,7 @@ public class DescribeCustomRoutingEndPointTrafficPolicyResponseUnmarshaller {
 		describeCustomRoutingEndPointTrafficPolicyResponse.setEndpoint(_ctx.stringValue("DescribeCustomRoutingEndPointTrafficPolicyResponse.Endpoint"));
 		describeCustomRoutingEndPointTrafficPolicyResponse.setPolicyId(_ctx.stringValue("DescribeCustomRoutingEndPointTrafficPolicyResponse.PolicyId"));
 		describeCustomRoutingEndPointTrafficPolicyResponse.setAddress(_ctx.stringValue("DescribeCustomRoutingEndPointTrafficPolicyResponse.Address"));
+		describeCustomRoutingEndPointTrafficPolicyResponse.setState(_ctx.stringValue("DescribeCustomRoutingEndPointTrafficPolicyResponse.State"));
 
 		List<PortRangesItem> portRanges = new ArrayList<PortRangesItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCustomRoutingEndPointTrafficPolicyResponse.PortRanges.Length"); i++) {

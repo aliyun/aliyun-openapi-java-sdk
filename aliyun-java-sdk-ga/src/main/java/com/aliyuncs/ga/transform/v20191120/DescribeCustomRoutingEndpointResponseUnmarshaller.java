@@ -30,6 +30,7 @@ public class DescribeCustomRoutingEndpointResponseUnmarshaller {
 		describeCustomRoutingEndpointResponse.setType(_ctx.stringValue("DescribeCustomRoutingEndpointResponse.Type"));
 		describeCustomRoutingEndpointResponse.setEndpoint(_ctx.stringValue("DescribeCustomRoutingEndpointResponse.Endpoint"));
 		describeCustomRoutingEndpointResponse.setTrafficToEndpointPolicy(_ctx.stringValue("DescribeCustomRoutingEndpointResponse.TrafficToEndpointPolicy"));
+		describeCustomRoutingEndpointResponse.setState(_ctx.stringValue("DescribeCustomRoutingEndpointResponse.State"));
 	 
 	 	return describeCustomRoutingEndpointResponse;
 	}

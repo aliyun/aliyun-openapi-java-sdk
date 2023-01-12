@@ -41,6 +41,8 @@ public class CreateAcceleratorRequest extends RpcAcsRequest<CreateAcceleratorRes
 
 	private Boolean autoPay;
 
+	private String promotionOptionNo;
+
 	private String bandwidthBillingType;
 
 	private Boolean autoRenew;
@@ -143,6 +145,17 @@ public class CreateAcceleratorRequest extends RpcAcsRequest<CreateAcceleratorRes
 		this.autoPay = autoPay;
 		if(autoPay != null){
 			putQueryParameter("AutoPay", autoPay.toString());
+		}
+	}
+
+	public String getPromotionOptionNo() {
+		return this.promotionOptionNo;
+	}
+
+	public void setPromotionOptionNo(String promotionOptionNo) {
+		this.promotionOptionNo = promotionOptionNo;
+		if(promotionOptionNo != null){
+			putQueryParameter("PromotionOptionNo", promotionOptionNo);
 		}
 	}
 

@@ -41,6 +41,8 @@ public class DescribeCustomRoutingEndPointTrafficPolicyResponse extends AcsRespo
 
 	private String address;
 
+	private String state;
+
 	private List<PortRangesItem> portRanges;
 
 	public String getRequestId() {
@@ -105,6 +107,14 @@ public class DescribeCustomRoutingEndPointTrafficPolicyResponse extends AcsRespo
 
 	public void setAddress(String address) {
 		this.address = address;
+	}
+
+	public String getState() {
+		return this.state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
 	}
 
 	public List<PortRangesItem> getPortRanges() {

@@ -37,9 +37,15 @@ public class CreateBasicAcceleratorRequest extends RpcAcsRequest<CreateBasicAcce
 
 	private Boolean autoPay;
 
+	private Boolean dryRun;
+
+	private String promotionOptionNo;
+
 	private String bandwidthBillingType;
 
 	private Boolean autoRenew;
+
+	private String chargeType;
 
 	private String pricingCycle;
 	public CreateBasicAcceleratorRequest() {
@@ -117,6 +123,28 @@ public class CreateBasicAcceleratorRequest extends RpcAcsRequest<CreateBasicAcce
 		}
 	}
 
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
+		}
+	}
+
+	public String getPromotionOptionNo() {
+		return this.promotionOptionNo;
+	}
+
+	public void setPromotionOptionNo(String promotionOptionNo) {
+		this.promotionOptionNo = promotionOptionNo;
+		if(promotionOptionNo != null){
+			putQueryParameter("PromotionOptionNo", promotionOptionNo);
+		}
+	}
+
 	public String getBandwidthBillingType() {
 		return this.bandwidthBillingType;
 	}
@@ -136,6 +164,17 @@ public class CreateBasicAcceleratorRequest extends RpcAcsRequest<CreateBasicAcce
 		this.autoRenew = autoRenew;
 		if(autoRenew != null){
 			putQueryParameter("AutoRenew", autoRenew.toString());
+		}
+	}
+
+	public String getChargeType() {
+		return this.chargeType;
+	}
+
+	public void setChargeType(String chargeType) {
+		this.chargeType = chargeType;
+		if(chargeType != null){
+			putQueryParameter("ChargeType", chargeType);
 		}
 	}
 

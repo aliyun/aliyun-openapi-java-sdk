@@ -25,6 +25,8 @@ import com.aliyuncs.ga.Endpoint;
 public class DescribeCustomRoutingEndPointTrafficPolicyRequest extends RpcAcsRequest<DescribeCustomRoutingEndPointTrafficPolicyResponse> {
 	   
 
+	private String endpointId;
+
 	private String policyId;
 	public DescribeCustomRoutingEndPointTrafficPolicyRequest() {
 		super("Ga", "2019-11-20", "DescribeCustomRoutingEndPointTrafficPolicy", "gaplus");
@@ -33,6 +35,17 @@ public class DescribeCustomRoutingEndPointTrafficPolicyRequest extends RpcAcsReq
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getEndpointId() {
+		return this.endpointId;
+	}
+
+	public void setEndpointId(String endpointId) {
+		this.endpointId = endpointId;
+		if(endpointId != null){
+			putQueryParameter("EndpointId", endpointId);
+		}
 	}
 
 	public String getPolicyId() {

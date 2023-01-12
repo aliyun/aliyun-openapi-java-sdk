@@ -32,6 +32,7 @@ public class DescribeCustomRoutingEndpointGroupDestinationsResponseUnmarshaller 
 		describeCustomRoutingEndpointGroupDestinationsResponse.setDestinationId(_ctx.stringValue("DescribeCustomRoutingEndpointGroupDestinationsResponse.DestinationId"));
 		describeCustomRoutingEndpointGroupDestinationsResponse.setFromPort(_ctx.integerValue("DescribeCustomRoutingEndpointGroupDestinationsResponse.FromPort"));
 		describeCustomRoutingEndpointGroupDestinationsResponse.setToPort(_ctx.integerValue("DescribeCustomRoutingEndpointGroupDestinationsResponse.ToPort"));
+		describeCustomRoutingEndpointGroupDestinationsResponse.setState(_ctx.stringValue("DescribeCustomRoutingEndpointGroupDestinationsResponse.State"));
 
 		List<String> protocols = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCustomRoutingEndpointGroupDestinationsResponse.Protocols.Length"); i++) {

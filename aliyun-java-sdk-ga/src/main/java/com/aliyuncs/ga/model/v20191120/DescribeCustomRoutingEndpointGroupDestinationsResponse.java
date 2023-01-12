@@ -39,6 +39,8 @@ public class DescribeCustomRoutingEndpointGroupDestinationsResponse extends AcsR
 
 	private Integer toPort;
 
+	private String state;
+
 	private List<String> protocols;
 
 	public String getRequestId() {
@@ -95,6 +97,14 @@ public class DescribeCustomRoutingEndpointGroupDestinationsResponse extends AcsR
 
 	public void setToPort(Integer toPort) {
 		this.toPort = toPort;
+	}
+
+	public String getState() {
+		return this.state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
 	}
 
 	public List<String> getProtocols() {
