@@ -113,6 +113,8 @@ public class SearchDatabaseResponse extends AcsResponse {
 
 		private String alias;
 
+		private String catalogName;
+
 		private List<String> ownerIdList;
 
 		private List<String> ownerNameList;
@@ -219,6 +221,14 @@ public class SearchDatabaseResponse extends AcsResponse {
 
 		public void setAlias(String alias) {
 			this.alias = alias;
+		}
+
+		public String getCatalogName() {
+			return this.catalogName;
+		}
+
+		public void setCatalogName(String catalogName) {
+			this.catalogName = catalogName;
 		}
 
 		public List<String> getOwnerIdList() {

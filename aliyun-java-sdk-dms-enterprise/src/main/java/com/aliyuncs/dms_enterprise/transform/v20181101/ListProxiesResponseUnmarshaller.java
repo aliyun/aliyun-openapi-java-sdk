@@ -45,6 +45,7 @@ public class ListProxiesResponseUnmarshaller {
 			proxyListItem.setHttpsPort(_ctx.integerValue("ListProxiesResponse.ProxyList["+ i +"].HttpsPort"));
 			proxyListItem.setProtocolType(_ctx.stringValue("ListProxiesResponse.ProxyList["+ i +"].ProtocolType"));
 			proxyListItem.setProtocolPort(_ctx.integerValue("ListProxiesResponse.ProxyList["+ i +"].ProtocolPort"));
+			proxyListItem.setRegionId(_ctx.stringValue("ListProxiesResponse.ProxyList["+ i +"].RegionId"));
 
 			proxyList.add(proxyListItem);
 		}

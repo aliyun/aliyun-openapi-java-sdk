@@ -1,3 +1,7 @@
+2023-01-13 Version: 1.44.0
+- Supported GetProxy, ListProxies to return RegionId information.
+- Supported SearchDatabase to return CatalogName information.
+
 2022-12-21 Version: 1.43.0
 - Supported GetProxyAccess API.
 

@@ -99,6 +99,8 @@ public class ListProxiesResponse extends AcsResponse {
 
 		private Integer protocolPort;
 
+		private String regionId;
+
 		public Long getProxyId() {
 			return this.proxyId;
 		}
@@ -185,6 +187,14 @@ public class ListProxiesResponse extends AcsResponse {
 
 		public void setProtocolPort(Integer protocolPort) {
 			this.protocolPort = protocolPort;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 	}
 
