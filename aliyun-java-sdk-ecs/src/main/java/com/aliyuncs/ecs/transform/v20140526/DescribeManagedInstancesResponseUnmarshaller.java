@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ecs.model.v20140526.DescribeManagedInstancesResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeManagedInstancesResponse.Instance;
+import com.aliyuncs.ecs.model.v20140526.DescribeManagedInstancesResponse.Instance.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -48,6 +49,16 @@ public class DescribeManagedInstancesResponseUnmarshaller {
 			instance.setOsVersion(_ctx.stringValue("DescribeManagedInstancesResponse.Instances["+ i +"].OsVersion"));
 			instance.setInvocationCount(_ctx.longValue("DescribeManagedInstancesResponse.Instances["+ i +"].InvocationCount"));
 			instance.setMachineId(_ctx.stringValue("DescribeManagedInstancesResponse.Instances["+ i +"].MachineId"));
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeManagedInstancesResponse.Instances["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setTagKey(_ctx.stringValue("DescribeManagedInstancesResponse.Instances["+ i +"].Tags["+ j +"].TagKey"));
+				tag.setTagValue(_ctx.stringValue("DescribeManagedInstancesResponse.Instances["+ i +"].Tags["+ j +"].TagValue"));
+
+				tags.add(tag);
+			}
+			instance.setTags(tags);
 
 			instances.add(instance);
 		}

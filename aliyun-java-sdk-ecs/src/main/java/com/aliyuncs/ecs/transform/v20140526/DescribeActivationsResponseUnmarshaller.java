@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ecs.model.v20140526.DescribeActivationsResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeActivationsResponse.Activation;
+import com.aliyuncs.ecs.model.v20140526.DescribeActivationsResponse.Activation.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -44,6 +45,16 @@ public class DescribeActivationsResponseUnmarshaller {
 			activation.setIpAddressRange(_ctx.stringValue("DescribeActivationsResponse.ActivationList["+ i +"].IpAddressRange"));
 			activation.setTimeToLiveInHours(_ctx.longValue("DescribeActivationsResponse.ActivationList["+ i +"].TimeToLiveInHours"));
 			activation.setActivationId(_ctx.stringValue("DescribeActivationsResponse.ActivationList["+ i +"].ActivationId"));
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeActivationsResponse.ActivationList["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setTagKey(_ctx.stringValue("DescribeActivationsResponse.ActivationList["+ i +"].Tags["+ j +"].TagKey"));
+				tag.setTagValue(_ctx.stringValue("DescribeActivationsResponse.ActivationList["+ i +"].Tags["+ j +"].TagValue"));
+
+				tags.add(tag);
+			}
+			activation.setTags(tags);
 
 			activationList.add(activation);
 		}

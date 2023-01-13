@@ -97,6 +97,8 @@ public class DescribeActivationsResponse extends AcsResponse {
 
 		private String activationId;
 
+		private List<Tag> tags;
+
 		public String getCreationTime() {
 			return this.creationTime;
 		}
@@ -175,6 +177,37 @@ public class DescribeActivationsResponse extends AcsResponse {
 
 		public void setActivationId(String activationId) {
 			this.activationId = activationId;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
+		public static class Tag {
+
+			private String tagKey;
+
+			private String tagValue;
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
+			}
 		}
 	}
 

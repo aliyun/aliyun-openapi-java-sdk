@@ -1,3 +1,7 @@
+2023-01-13 Version: 4.24.50
+- Add nat errorCode.
+- Support tag for managed instance.
+
 2023-01-05 Version: 4.24.49
 - Deprecate DescribeDedicatedBlockStorageClusters API.
 - Deprecate CreateDedicatedBlockStorageCluster API.
