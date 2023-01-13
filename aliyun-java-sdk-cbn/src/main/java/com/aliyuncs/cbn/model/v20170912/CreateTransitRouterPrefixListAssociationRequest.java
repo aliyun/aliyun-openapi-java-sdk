@@ -49,7 +49,7 @@ public class CreateTransitRouterPrefixListAssociationRequest extends RpcAcsReque
 
 	private String nextHop;
 	public CreateTransitRouterPrefixListAssociationRequest() {
-		super("Cbn", "2017-09-12", "CreateTransitRouterPrefixListAssociation", "cbn");
+		super("Cbn", "2017-09-12", "CreateTransitRouterPrefixListAssociation");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

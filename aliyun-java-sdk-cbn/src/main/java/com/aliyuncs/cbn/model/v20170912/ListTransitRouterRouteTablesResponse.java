@@ -89,7 +89,11 @@ public class ListTransitRouterRouteTablesResponse extends AcsResponse {
 
 		private String transitRouterRouteTableDescription;
 
+		private String regionId;
+
 		private List<Tag> tags;
+
+		private RouteTableOptions routeTableOptions;
 
 		public String getTransitRouterRouteTableStatus() {
 			return this.transitRouterRouteTableStatus;
@@ -139,12 +143,28 @@ public class ListTransitRouterRouteTablesResponse extends AcsResponse {
 			this.transitRouterRouteTableDescription = transitRouterRouteTableDescription;
 		}
 
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
 		public List<Tag> getTags() {
 			return this.tags;
 		}
 
 		public void setTags(List<Tag> tags) {
 			this.tags = tags;
+		}
+
+		public RouteTableOptions getRouteTableOptions() {
+			return this.routeTableOptions;
+		}
+
+		public void setRouteTableOptions(RouteTableOptions routeTableOptions) {
+			this.routeTableOptions = routeTableOptions;
 		}
 
 		public static class Tag {
@@ -167,6 +187,19 @@ public class ListTransitRouterRouteTablesResponse extends AcsResponse {
 
 			public void setValue(String value) {
 				this.value = value;
+			}
+		}
+
+		public static class RouteTableOptions {
+
+			private String multiRegionECMP;
+
+			public String getMultiRegionECMP() {
+				return this.multiRegionECMP;
+			}
+
+			public void setMultiRegionECMP(String multiRegionECMP) {
+				this.multiRegionECMP = multiRegionECMP;
 			}
 		}
 	}

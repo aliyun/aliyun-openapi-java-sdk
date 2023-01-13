@@ -43,7 +43,7 @@ public class GrantInstanceToTransitRouterRequest extends RpcAcsRequest<GrantInst
 
 	private String orderType;
 	public GrantInstanceToTransitRouterRequest() {
-		super("Cbn", "2017-09-12", "GrantInstanceToTransitRouter", "cbn");
+		super("Cbn", "2017-09-12", "GrantInstanceToTransitRouter");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

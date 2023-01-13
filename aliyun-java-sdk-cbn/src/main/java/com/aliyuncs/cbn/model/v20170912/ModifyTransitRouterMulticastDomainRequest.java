@@ -43,7 +43,7 @@ public class ModifyTransitRouterMulticastDomainRequest extends RpcAcsRequest<Mod
 
 	private Long ownerId;
 	public ModifyTransitRouterMulticastDomainRequest() {
-		super("Cbn", "2017-09-12", "ModifyTransitRouterMulticastDomain", "cbn");
+		super("Cbn", "2017-09-12", "ModifyTransitRouterMulticastDomain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

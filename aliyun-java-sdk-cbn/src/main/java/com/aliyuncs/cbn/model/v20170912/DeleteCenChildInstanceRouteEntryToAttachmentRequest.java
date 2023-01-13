@@ -45,7 +45,7 @@ public class DeleteCenChildInstanceRouteEntryToAttachmentRequest extends RpcAcsR
 
 	private String transitRouterAttachmentId;
 	public DeleteCenChildInstanceRouteEntryToAttachmentRequest() {
-		super("Cbn", "2017-09-12", "DeleteCenChildInstanceRouteEntryToAttachment", "cbn");
+		super("Cbn", "2017-09-12", "DeleteCenChildInstanceRouteEntryToAttachment");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

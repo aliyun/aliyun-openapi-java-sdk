@@ -47,7 +47,7 @@ public class CreateTransitRouterCidrRequest extends RpcAcsRequest<CreateTransitR
 
 	private String name;
 	public CreateTransitRouterCidrRequest() {
-		super("Cbn", "2017-09-12", "CreateTransitRouterCidr", "cbn");
+		super("Cbn", "2017-09-12", "CreateTransitRouterCidr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -48,7 +48,7 @@ public class UpdateCenInterRegionTrafficQosQueueAttributeRequest extends RpcAcsR
 
 	private String qosQueueDescription;
 	public UpdateCenInterRegionTrafficQosQueueAttributeRequest() {
-		super("Cbn", "2017-09-12", "UpdateCenInterRegionTrafficQosQueueAttribute", "cbn");
+		super("Cbn", "2017-09-12", "UpdateCenInterRegionTrafficQosQueueAttribute");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

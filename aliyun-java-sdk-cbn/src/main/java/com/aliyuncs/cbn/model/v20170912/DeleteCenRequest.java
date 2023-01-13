@@ -27,15 +27,15 @@ public class DeleteCenRequest extends RpcAcsRequest<DeleteCenResponse> {
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
 	private String cenId;
+
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
 	public DeleteCenRequest() {
-		super("Cbn", "2017-09-12", "DeleteCen", "cbn");
+		super("Cbn", "2017-09-12", "DeleteCen");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -54,17 +54,6 @@ public class DeleteCenRequest extends RpcAcsRequest<DeleteCenResponse> {
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getCenId() {
 		return this.cenId;
 	}
@@ -73,6 +62,17 @@ public class DeleteCenRequest extends RpcAcsRequest<DeleteCenResponse> {
 		this.cenId = cenId;
 		if(cenId != null){
 			putQueryParameter("CenId", cenId);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 

@@ -41,7 +41,7 @@ public class DescribeGrantRulesToResourceRequest extends RpcAcsRequest<DescribeG
 
 	private Integer maxResults;
 	public DescribeGrantRulesToResourceRequest() {
-		super("Cbn", "2017-09-12", "DescribeGrantRulesToResource", "cbn");
+		super("Cbn", "2017-09-12", "DescribeGrantRulesToResource");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

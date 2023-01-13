@@ -31,6 +31,10 @@ public class ListTransitRouterRouteTablePropagationsRequest extends RpcAcsReques
 
 	private String nextToken;
 
+	private String transitRouterAttachmentResourceId;
+
+	private String transitRouterAttachmentResourceType;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -40,8 +44,10 @@ public class ListTransitRouterRouteTablePropagationsRequest extends RpcAcsReques
 	private String transitRouterAttachmentId;
 
 	private Integer maxResults;
+
+	private String status;
 	public ListTransitRouterRouteTablePropagationsRequest() {
-		super("Cbn", "2017-09-12", "ListTransitRouterRouteTablePropagations", "cbn");
+		super("Cbn", "2017-09-12", "ListTransitRouterRouteTablePropagations");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -79,6 +85,28 @@ public class ListTransitRouterRouteTablePropagationsRequest extends RpcAcsReques
 		this.nextToken = nextToken;
 		if(nextToken != null){
 			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public String getTransitRouterAttachmentResourceId() {
+		return this.transitRouterAttachmentResourceId;
+	}
+
+	public void setTransitRouterAttachmentResourceId(String transitRouterAttachmentResourceId) {
+		this.transitRouterAttachmentResourceId = transitRouterAttachmentResourceId;
+		if(transitRouterAttachmentResourceId != null){
+			putQueryParameter("TransitRouterAttachmentResourceId", transitRouterAttachmentResourceId);
+		}
+	}
+
+	public String getTransitRouterAttachmentResourceType() {
+		return this.transitRouterAttachmentResourceType;
+	}
+
+	public void setTransitRouterAttachmentResourceType(String transitRouterAttachmentResourceType) {
+		this.transitRouterAttachmentResourceType = transitRouterAttachmentResourceType;
+		if(transitRouterAttachmentResourceType != null){
+			putQueryParameter("TransitRouterAttachmentResourceType", transitRouterAttachmentResourceType);
 		}
 	}
 
@@ -134,6 +162,17 @@ public class ListTransitRouterRouteTablePropagationsRequest extends RpcAcsReques
 		this.maxResults = maxResults;
 		if(maxResults != null){
 			putQueryParameter("MaxResults", maxResults.toString());
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
 		}
 	}
 

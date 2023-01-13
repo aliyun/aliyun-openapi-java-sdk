@@ -39,7 +39,7 @@ public class ActiveFlowLogRequest extends RpcAcsRequest<ActiveFlowLogResponse> {
 
 	private String flowLogId;
 	public ActiveFlowLogRequest() {
-		super("Cbn", "2017-09-12", "ActiveFlowLog", "cbn");
+		super("Cbn", "2017-09-12", "ActiveFlowLog");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

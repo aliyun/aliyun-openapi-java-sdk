@@ -41,7 +41,7 @@ public class ModifyCenAttributeRequest extends RpcAcsRequest<ModifyCenAttributeR
 
 	private String name;
 	public ModifyCenAttributeRequest() {
-		super("Cbn", "2017-09-12", "ModifyCenAttribute", "cbn");
+		super("Cbn", "2017-09-12", "ModifyCenAttribute");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

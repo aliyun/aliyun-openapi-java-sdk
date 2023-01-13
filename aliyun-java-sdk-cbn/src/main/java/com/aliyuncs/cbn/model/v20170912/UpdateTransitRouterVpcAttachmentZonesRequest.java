@@ -44,7 +44,7 @@ public class UpdateTransitRouterVpcAttachmentZonesRequest extends RpcAcsRequest<
 
 	private String transitRouterAttachmentId;
 	public UpdateTransitRouterVpcAttachmentZonesRequest() {
-		super("Cbn", "2017-09-12", "UpdateTransitRouterVpcAttachmentZones", "cbn");
+		super("Cbn", "2017-09-12", "UpdateTransitRouterVpcAttachmentZones");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

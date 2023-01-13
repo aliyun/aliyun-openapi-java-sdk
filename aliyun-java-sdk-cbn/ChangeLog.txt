@@ -1,3 +1,19 @@
+2023-01-13 Version: 1.0.32
+- New API CreateTransitRouteTableAggregation.
+- New API DeleteTransitRouteTableAggregation.
+- New API DescribeTransitRouteTableAggregation.
+- New API DescribeTransitRouteTableAggregationDetail.
+- New API RefreshTransitRouteTableAggregation.
+- Update API CreateTransitRouterRouteTable support parameter RouteTableOptions.
+- Update API UpdateTransitRouterRouteTable support parameter RouteTableOptions.
+- Update API ListTransitRouterRouteTables support parameter RouteTableOptions and response RegionId, RouteTableOptions.
+- Update API UpdateTrafficMarkingPolicyAttribute support parameter AddTrafficMatchRules and DeleteTrafficMatchRules.
+- Update API ListTransitRouters support parameter Status, Type, TransitRouterName and FeatureFilter.
+- Update API DescribeFlowlogs support response TransitRouterAttachmentId and Interval.
+- Update API ListTransitRouterVpcAttachments support parameter OrderType, Status and response OrderType.
+- Update API ListTransitRouterRouteTableAssociations support parameter TransitRouterAttachmentResourceId, TransitRouterAttachmentResourceType and Status.
+- Update API ListTransitRouterRouteTablePropagations support parameter TransitRouterAttachmentResourceId, TransitRouterAttachmentResourceType and Status.
+
 2022-12-09 Version: 1.0.31
 - Add ListCenChildInstanceRouteEntriesToAttachment support query VPC instance route to Vpc Attachment.
 - Add ListTransitRouterAttachmentPropagations support query TransitRouter Propagations by Attachment Id.

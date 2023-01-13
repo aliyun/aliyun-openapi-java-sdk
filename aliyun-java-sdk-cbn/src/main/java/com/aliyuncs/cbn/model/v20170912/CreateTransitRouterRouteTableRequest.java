@@ -30,6 +30,8 @@ public class CreateTransitRouterRouteTableRequest extends RpcAcsRequest<CreateTr
 
 	private String clientToken;
 
+	private RouteTableOptions routeTableOptions;
+
 	private String transitRouterRouteTableDescription;
 
 	private List<Tag> tags;
@@ -46,7 +48,7 @@ public class CreateTransitRouterRouteTableRequest extends RpcAcsRequest<CreateTr
 
 	private String transitRouterId;
 	public CreateTransitRouterRouteTableRequest() {
-		super("Cbn", "2017-09-12", "CreateTransitRouterRouteTable", "cbn");
+		super("Cbn", "2017-09-12", "CreateTransitRouterRouteTable");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -74,6 +76,18 @@ public class CreateTransitRouterRouteTableRequest extends RpcAcsRequest<CreateTr
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
 		}
+	}
+
+	public RouteTableOptions getRouteTableOptions() {
+		return this.routeTableOptions;
+	}
+
+	public void setRouteTableOptions(RouteTableOptions routeTableOptions) {
+		this.routeTableOptions = routeTableOptions;	
+		if (routeTableOptions != null) {
+			
+				putQueryParameter("RouteTableOptions.MultiRegionECMP" , routeTableOptions.getMultiRegionECMP());
+		}	
 	}
 
 	public String getTransitRouterRouteTableDescription() {
@@ -164,6 +178,19 @@ public class CreateTransitRouterRouteTableRequest extends RpcAcsRequest<CreateTr
 		this.transitRouterId = transitRouterId;
 		if(transitRouterId != null){
 			putQueryParameter("TransitRouterId", transitRouterId);
+		}
+	}
+
+	public static class RouteTableOptions {
+
+		private String multiRegionECMP;
+
+		public String getMultiRegionECMP() {
+			return this.multiRegionECMP;
+		}
+
+		public void setMultiRegionECMP(String multiRegionECMP) {
+			this.multiRegionECMP = multiRegionECMP;
 		}
 	}
 

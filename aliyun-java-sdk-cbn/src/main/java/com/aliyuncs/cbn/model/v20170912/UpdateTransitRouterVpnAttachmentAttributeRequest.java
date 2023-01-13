@@ -45,7 +45,7 @@ public class UpdateTransitRouterVpnAttachmentAttributeRequest extends RpcAcsRequ
 
 	private String transitRouterAttachmentDescription;
 	public UpdateTransitRouterVpnAttachmentAttributeRequest() {
-		super("Cbn", "2017-09-12", "UpdateTransitRouterVpnAttachmentAttribute", "cbn");
+		super("Cbn", "2017-09-12", "UpdateTransitRouterVpnAttachmentAttribute");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

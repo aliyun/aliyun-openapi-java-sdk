@@ -55,7 +55,7 @@ public class ListTransitRouterCidrAllocationRequest extends RpcAcsRequest<ListTr
 
 	private String attachmentId;
 	public ListTransitRouterCidrAllocationRequest() {
-		super("Cbn", "2017-09-12", "ListTransitRouterCidrAllocation", "cbn");
+		super("Cbn", "2017-09-12", "ListTransitRouterCidrAllocation");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

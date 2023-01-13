@@ -60,7 +60,7 @@ public class ListTransitRouterMulticastGroupsRequest extends RpcAcsRequest<ListT
 
 	private Boolean isGroupMember;
 	public ListTransitRouterMulticastGroupsRequest() {
-		super("Cbn", "2017-09-12", "ListTransitRouterMulticastGroups", "cbn");
+		super("Cbn", "2017-09-12", "ListTransitRouterMulticastGroups");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

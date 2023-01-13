@@ -47,7 +47,7 @@ public class DeleteCenChildInstanceRouteEntryToCenRequest extends RpcAcsRequest<
 
 	private Long childInstanceAliUid;
 	public DeleteCenChildInstanceRouteEntryToCenRequest() {
-		super("Cbn", "2017-09-12", "DeleteCenChildInstanceRouteEntryToCen", "cbn");
+		super("Cbn", "2017-09-12", "DeleteCenChildInstanceRouteEntryToCen");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

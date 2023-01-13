@@ -103,6 +103,8 @@ public class ListTransitRouterVpcAttachmentsResponse extends AcsResponse {
 
 		private String chargeType;
 
+		private String orderType;
+
 		private List<ZoneMapping> zoneMappings;
 
 		private List<Tag> tags;
@@ -209,6 +211,14 @@ public class ListTransitRouterVpcAttachmentsResponse extends AcsResponse {
 
 		public void setChargeType(String chargeType) {
 			this.chargeType = chargeType;
+		}
+
+		public String getOrderType() {
+			return this.orderType;
+		}
+
+		public void setOrderType(String orderType) {
+			this.orderType = orderType;
 		}
 
 		public List<ZoneMapping> getZoneMappings() {

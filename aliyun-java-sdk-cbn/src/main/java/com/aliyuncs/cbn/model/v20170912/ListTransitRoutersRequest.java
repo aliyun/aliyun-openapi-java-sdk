@@ -26,9 +26,15 @@ import com.aliyuncs.cbn.Endpoint;
 public class ListTransitRoutersRequest extends RpcAcsRequest<ListTransitRoutersResponse> {
 	   
 
+	private String transitRouterName;
+
 	private Long resourceOwnerId;
 
 	private String cenId;
+
+	private List<FeatureFilter> featureFilters;
+
+	private String type;
 
 	private Integer pageNumber;
 
@@ -43,13 +49,26 @@ public class ListTransitRoutersRequest extends RpcAcsRequest<ListTransitRoutersR
 	private Long ownerId;
 
 	private String transitRouterId;
+
+	private String status;
 	public ListTransitRoutersRequest() {
-		super("Cbn", "2017-09-12", "ListTransitRouters", "cbn");
+		super("Cbn", "2017-09-12", "ListTransitRouters");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getTransitRouterName() {
+		return this.transitRouterName;
+	}
+
+	public void setTransitRouterName(String transitRouterName) {
+		this.transitRouterName = transitRouterName;
+		if(transitRouterName != null){
+			putQueryParameter("TransitRouterName", transitRouterName);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -71,6 +90,35 @@ public class ListTransitRoutersRequest extends RpcAcsRequest<ListTransitRoutersR
 		this.cenId = cenId;
 		if(cenId != null){
 			putQueryParameter("CenId", cenId);
+		}
+	}
+
+	public List<FeatureFilter> getFeatureFilters() {
+		return this.featureFilters;
+	}
+
+	public void setFeatureFilters(List<FeatureFilter> featureFilters) {
+		this.featureFilters = featureFilters;	
+		if (featureFilters != null) {
+			for (int depth1 = 0; depth1 < featureFilters.size(); depth1++) {
+				if (featureFilters.get(depth1).getValues() != null) {
+					for (int i = 0; i < featureFilters.get(depth1).getValues().size(); i++) {
+						putQueryParameter("FeatureFilter." + (depth1 + 1) + ".Value." + (i + 1) , featureFilters.get(depth1).getValues().get(i));
+					}
+				}
+				putQueryParameter("FeatureFilter." + (depth1 + 1) + ".Key" , featureFilters.get(depth1).getKey());
+			}
+		}	
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
 		}
 	}
 
@@ -151,6 +199,40 @@ public class ListTransitRoutersRequest extends RpcAcsRequest<ListTransitRoutersR
 		this.transitRouterId = transitRouterId;
 		if(transitRouterId != null){
 			putQueryParameter("TransitRouterId", transitRouterId);
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
+		}
+	}
+
+	public static class FeatureFilter {
+
+		private List<String> values;
+
+		private String key;
+
+		public List<String> getValues() {
+			return this.values;
+		}
+
+		public void setValues(List<String> values) {
+			this.values = values;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

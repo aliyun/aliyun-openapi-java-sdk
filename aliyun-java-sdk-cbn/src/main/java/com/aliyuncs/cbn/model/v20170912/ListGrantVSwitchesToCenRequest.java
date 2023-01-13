@@ -43,7 +43,7 @@ public class ListGrantVSwitchesToCenRequest extends RpcAcsRequest<ListGrantVSwit
 
 	private String zoneId;
 	public ListGrantVSwitchesToCenRequest() {
-		super("Cbn", "2017-09-12", "ListGrantVSwitchesToCen", "cbn");
+		super("Cbn", "2017-09-12", "ListGrantVSwitchesToCen");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

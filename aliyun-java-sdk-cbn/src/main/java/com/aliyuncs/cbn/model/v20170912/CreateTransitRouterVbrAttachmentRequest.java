@@ -54,7 +54,7 @@ public class CreateTransitRouterVbrAttachmentRequest extends RpcAcsRequest<Creat
 
 	private Long vbrOwnerId;
 	public CreateTransitRouterVbrAttachmentRequest() {
-		super("Cbn", "2017-09-12", "CreateTransitRouterVbrAttachment", "cbn");
+		super("Cbn", "2017-09-12", "CreateTransitRouterVbrAttachment");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

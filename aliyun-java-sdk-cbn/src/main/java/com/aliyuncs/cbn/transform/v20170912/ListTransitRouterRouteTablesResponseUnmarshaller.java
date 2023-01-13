@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.cbn.model.v20170912.ListTransitRouterRouteTablesResponse;
 import com.aliyuncs.cbn.model.v20170912.ListTransitRouterRouteTablesResponse.TransitRouterRouteTable;
+import com.aliyuncs.cbn.model.v20170912.ListTransitRouterRouteTablesResponse.TransitRouterRouteTable.RouteTableOptions;
 import com.aliyuncs.cbn.model.v20170912.ListTransitRouterRouteTablesResponse.TransitRouterRouteTable.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -41,6 +42,11 @@ public class ListTransitRouterRouteTablesResponseUnmarshaller {
 			transitRouterRouteTable.setTransitRouterRouteTableId(_ctx.stringValue("ListTransitRouterRouteTablesResponse.TransitRouterRouteTables["+ i +"].TransitRouterRouteTableId"));
 			transitRouterRouteTable.setTransitRouterRouteTableName(_ctx.stringValue("ListTransitRouterRouteTablesResponse.TransitRouterRouteTables["+ i +"].TransitRouterRouteTableName"));
 			transitRouterRouteTable.setTransitRouterRouteTableDescription(_ctx.stringValue("ListTransitRouterRouteTablesResponse.TransitRouterRouteTables["+ i +"].TransitRouterRouteTableDescription"));
+			transitRouterRouteTable.setRegionId(_ctx.stringValue("ListTransitRouterRouteTablesResponse.TransitRouterRouteTables["+ i +"].RegionId"));
+
+			RouteTableOptions routeTableOptions = new RouteTableOptions();
+			routeTableOptions.setMultiRegionECMP(_ctx.stringValue("ListTransitRouterRouteTablesResponse.TransitRouterRouteTables["+ i +"].RouteTableOptions.MultiRegionECMP"));
+			transitRouterRouteTable.setRouteTableOptions(routeTableOptions);
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("ListTransitRouterRouteTablesResponse.TransitRouterRouteTables["+ i +"].Tags.Length"); j++) {

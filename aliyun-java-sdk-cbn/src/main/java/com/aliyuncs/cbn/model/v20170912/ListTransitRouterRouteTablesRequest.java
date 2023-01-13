@@ -30,6 +30,8 @@ public class ListTransitRouterRouteTablesRequest extends RpcAcsRequest<ListTrans
 
 	private List<String> transitRouterRouteTableNamess;
 
+	private RouteTableOptions routeTableOptions;
+
 	private String transitRouterRouteTableType;
 
 	private String transitRouterRouteTableStatus;
@@ -50,7 +52,7 @@ public class ListTransitRouterRouteTablesRequest extends RpcAcsRequest<ListTrans
 
 	private Integer maxResults;
 	public ListTransitRouterRouteTablesRequest() {
-		super("Cbn", "2017-09-12", "ListTransitRouterRouteTables", "cbn");
+		super("Cbn", "2017-09-12", "ListTransitRouterRouteTables");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -79,6 +81,18 @@ public class ListTransitRouterRouteTablesRequest extends RpcAcsRequest<ListTrans
 			for (int i = 0; i < transitRouterRouteTableNamess.size(); i++) {
 				putQueryParameter("TransitRouterRouteTableNames." + (i + 1) , transitRouterRouteTableNamess.get(i));
 			}
+		}	
+	}
+
+	public RouteTableOptions getRouteTableOptions() {
+		return this.routeTableOptions;
+	}
+
+	public void setRouteTableOptions(RouteTableOptions routeTableOptions) {
+		this.routeTableOptions = routeTableOptions;	
+		if (routeTableOptions != null) {
+			
+				putQueryParameter("RouteTableOptions.MultiRegionECMP" , routeTableOptions.getMultiRegionECMP());
 		}	
 	}
 
@@ -194,6 +208,19 @@ public class ListTransitRouterRouteTablesRequest extends RpcAcsRequest<ListTrans
 		this.maxResults = maxResults;
 		if(maxResults != null){
 			putQueryParameter("MaxResults", maxResults.toString());
+		}
+	}
+
+	public static class RouteTableOptions {
+
+		private String multiRegionECMP;
+
+		public String getMultiRegionECMP() {
+			return this.multiRegionECMP;
+		}
+
+		public void setMultiRegionECMP(String multiRegionECMP) {
+			this.multiRegionECMP = multiRegionECMP;
 		}
 	}
 

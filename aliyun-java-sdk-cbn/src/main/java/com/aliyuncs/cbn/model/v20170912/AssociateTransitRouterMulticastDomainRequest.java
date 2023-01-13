@@ -44,7 +44,7 @@ public class AssociateTransitRouterMulticastDomainRequest extends RpcAcsRequest<
 
 	private String transitRouterAttachmentId;
 	public AssociateTransitRouterMulticastDomainRequest() {
-		super("Cbn", "2017-09-12", "AssociateTransitRouterMulticastDomain", "cbn");
+		super("Cbn", "2017-09-12", "AssociateTransitRouterMulticastDomain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

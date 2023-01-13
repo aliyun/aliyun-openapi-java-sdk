@@ -47,8 +47,12 @@ public class ListTransitRouterVpcAttachmentsRequest extends RpcAcsRequest<ListTr
 	private String vpcId;
 
 	private Integer maxResults;
+
+	private String orderType;
+
+	private String status;
 	public ListTransitRouterVpcAttachmentsRequest() {
-		super("Cbn", "2017-09-12", "ListTransitRouterVpcAttachments", "cbn");
+		super("Cbn", "2017-09-12", "ListTransitRouterVpcAttachments");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -177,6 +181,28 @@ public class ListTransitRouterVpcAttachmentsRequest extends RpcAcsRequest<ListTr
 		this.maxResults = maxResults;
 		if(maxResults != null){
 			putQueryParameter("MaxResults", maxResults.toString());
+		}
+	}
+
+	public String getOrderType() {
+		return this.orderType;
+	}
+
+	public void setOrderType(String orderType) {
+		this.orderType = orderType;
+		if(orderType != null){
+			putQueryParameter("OrderType", orderType);
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
 		}
 	}
 
