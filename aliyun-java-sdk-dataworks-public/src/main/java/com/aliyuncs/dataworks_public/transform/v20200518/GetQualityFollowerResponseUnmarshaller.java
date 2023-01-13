@@ -42,6 +42,8 @@ public class GetQualityFollowerResponseUnmarshaller {
 			follower.setProjectName(_ctx.stringValue("GetQualityFollowerResponse.Data["+ i +"].ProjectName"));
 			follower.setId(_ctx.longValue("GetQualityFollowerResponse.Data["+ i +"].Id"));
 			follower.setFollower(_ctx.stringValue("GetQualityFollowerResponse.Data["+ i +"].Follower"));
+			follower.setCreateTime(_ctx.longValue("GetQualityFollowerResponse.Data["+ i +"].CreateTime"));
+			follower.setModifyTime(_ctx.longValue("GetQualityFollowerResponse.Data["+ i +"].ModifyTime"));
 
 			data.add(follower);
 		}

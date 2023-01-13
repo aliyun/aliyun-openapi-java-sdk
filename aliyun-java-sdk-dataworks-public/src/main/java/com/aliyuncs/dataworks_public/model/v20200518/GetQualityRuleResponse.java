@@ -132,6 +132,8 @@ public class GetQualityRuleResponse extends AcsResponse {
 
 		private Long id;
 
+		private Boolean openSwitch;
+
 		public Integer getBlockType() {
 			return this.blockType;
 		}
@@ -314,6 +316,14 @@ public class GetQualityRuleResponse extends AcsResponse {
 
 		public void setId(Long id) {
 			this.id = id;
+		}
+
+		public Boolean getOpenSwitch() {
+			return this.openSwitch;
+		}
+
+		public void setOpenSwitch(Boolean openSwitch) {
+			this.openSwitch = openSwitch;
 		}
 	}
 
