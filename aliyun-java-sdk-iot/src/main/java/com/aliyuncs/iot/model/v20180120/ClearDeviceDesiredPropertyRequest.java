@@ -15,6 +15,7 @@
 package com.aliyuncs.iot.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.iot.Endpoint;
 
@@ -22,19 +23,36 @@ import com.aliyuncs.iot.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetThingScriptRequest extends RpcAcsRequest<GetThingScriptResponse> {
+public class ClearDeviceDesiredPropertyRequest extends RpcAcsRequest<ClearDeviceDesiredPropertyResponse> {
 	   
+
+	private String iotId;
 
 	private String iotInstanceId;
 
+	private List<String> identifiess;
+
 	private String productKey;
-	public GetThingScriptRequest() {
-		super("Iot", "2018-01-20", "GetThingScript");
+
+	private String deviceName;
+	public ClearDeviceDesiredPropertyRequest() {
+		super("Iot", "2018-01-20", "ClearDeviceDesiredProperty");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getIotId() {
+		return this.iotId;
+	}
+
+	public void setIotId(String iotId) {
+		this.iotId = iotId;
+		if(iotId != null){
+			putQueryParameter("IotId", iotId);
+		}
 	}
 
 	public String getIotInstanceId() {
@@ -48,6 +66,19 @@ public class GetThingScriptRequest extends RpcAcsRequest<GetThingScriptResponse>
 		}
 	}
 
+	public List<String> getIdentifiess() {
+		return this.identifiess;
+	}
+
+	public void setIdentifiess(List<String> identifiess) {
+		this.identifiess = identifiess;	
+		if (identifiess != null) {
+			for (int i = 0; i < identifiess.size(); i++) {
+				putBodyParameter("Identifies." + (i + 1) , identifiess.get(i));
+			}
+		}	
+	}
+
 	public String getProductKey() {
 		return this.productKey;
 	}
@@ -59,9 +90,20 @@ public class GetThingScriptRequest extends RpcAcsRequest<GetThingScriptResponse>
 		}
 	}
 
+	public String getDeviceName() {
+		return this.deviceName;
+	}
+
+	public void setDeviceName(String deviceName) {
+		this.deviceName = deviceName;
+		if(deviceName != null){
+			putQueryParameter("DeviceName", deviceName);
+		}
+	}
+
 	@Override
-	public Class<GetThingScriptResponse> getResponseClass() {
-		return GetThingScriptResponse.class;
+	public Class<ClearDeviceDesiredPropertyResponse> getResponseClass() {
+		return ClearDeviceDesiredPropertyResponse.class;
 	}
 
 }

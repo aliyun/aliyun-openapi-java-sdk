@@ -52,6 +52,8 @@ public class UpdateSubscribeRelationRequest extends RpcAcsRequest<UpdateSubscrib
 
 	private Boolean otaJobFlag;
 
+	private String subscribeFlags;
+
 	private Boolean deviceDataFlag;
 
 	private String mnsConfiguration;
@@ -206,6 +208,17 @@ public class UpdateSubscribeRelationRequest extends RpcAcsRequest<UpdateSubscrib
 		this.otaJobFlag = otaJobFlag;
 		if(otaJobFlag != null){
 			putQueryParameter("OtaJobFlag", otaJobFlag.toString());
+		}
+	}
+
+	public String getSubscribeFlags() {
+		return this.subscribeFlags;
+	}
+
+	public void setSubscribeFlags(String subscribeFlags) {
+		this.subscribeFlags = subscribeFlags;
+		if(subscribeFlags != null){
+			putQueryParameter("SubscribeFlags", subscribeFlags);
 		}
 	}
 

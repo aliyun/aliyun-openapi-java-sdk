@@ -59,6 +59,8 @@ public class QuerySubscribeRelationResponse extends AcsResponse {
 
 	private Boolean otaJobFlag;
 
+	private String subscribeFlags;
+
 	private List<String> consumerGroupIds;
 
 	public String getRequestId() {
@@ -195,6 +197,14 @@ public class QuerySubscribeRelationResponse extends AcsResponse {
 
 	public void setOtaJobFlag(Boolean otaJobFlag) {
 		this.otaJobFlag = otaJobFlag;
+	}
+
+	public String getSubscribeFlags() {
+		return this.subscribeFlags;
+	}
+
+	public void setSubscribeFlags(String subscribeFlags) {
+		this.subscribeFlags = subscribeFlags;
 	}
 
 	public List<String> getConsumerGroupIds() {
