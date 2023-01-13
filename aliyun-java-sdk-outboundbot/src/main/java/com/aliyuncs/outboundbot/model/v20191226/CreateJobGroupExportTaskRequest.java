@@ -32,7 +32,7 @@ public class CreateJobGroupExportTaskRequest extends RpcAcsRequest<CreateJobGrou
 
 	private List<String> options;
 	public CreateJobGroupExportTaskRequest() {
-		super("OutboundBot", "2019-12-26", "CreateJobGroupExportTask", "outboundbot");
+		super("OutboundBot", "2019-12-26", "CreateJobGroupExportTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

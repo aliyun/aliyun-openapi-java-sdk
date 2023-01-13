@@ -27,7 +27,7 @@ public class ApplyNumberDistrictInfoParsingResultRequest extends RpcAcsRequest<A
 
 	private String versionId;
 	public ApplyNumberDistrictInfoParsingResultRequest() {
-		super("OutboundBot", "2019-12-26", "ApplyNumberDistrictInfoParsingResult", "outboundbot");
+		super("OutboundBot", "2019-12-26", "ApplyNumberDistrictInfoParsingResult");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

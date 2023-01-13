@@ -56,6 +56,8 @@ public class ListScriptsResponseUnmarshaller {
 			script.setScriptName(_ctx.stringValue("ListScriptsResponse.Scripts.List["+ i +"].ScriptName"));
 			script.setNewBargeInEnable(_ctx.booleanValue("ListScriptsResponse.Scripts.List["+ i +"].NewBargeInEnable"));
 			script.setLongWaitEnable(_ctx.booleanValue("ListScriptsResponse.Scripts.List["+ i +"].LongWaitEnable"));
+			script.setEmotionEnable(_ctx.booleanValue("ListScriptsResponse.Scripts.List["+ i +"].EmotionEnable"));
+			script.setIsPreset(_ctx.booleanValue("ListScriptsResponse.Scripts.List["+ i +"].IsPreset"));
 
 			list.add(script);
 		}

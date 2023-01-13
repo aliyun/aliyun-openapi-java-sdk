@@ -31,7 +31,7 @@ public class ListScriptsRequest extends RpcAcsRequest<ListScriptsResponse> {
 
 	private Integer pageSize;
 	public ListScriptsRequest() {
-		super("OutboundBot", "2019-12-26", "ListScripts", "outboundbot");
+		super("OutboundBot", "2019-12-26", "ListScripts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

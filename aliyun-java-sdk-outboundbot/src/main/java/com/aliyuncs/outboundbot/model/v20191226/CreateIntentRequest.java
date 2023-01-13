@@ -37,7 +37,7 @@ public class CreateIntentRequest extends RpcAcsRequest<CreateIntentResponse> {
 
 	private String intentName;
 	public CreateIntentRequest() {
-		super("OutboundBot", "2019-12-26", "CreateIntent", "outboundbot");
+		super("OutboundBot", "2019-12-26", "CreateIntent");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

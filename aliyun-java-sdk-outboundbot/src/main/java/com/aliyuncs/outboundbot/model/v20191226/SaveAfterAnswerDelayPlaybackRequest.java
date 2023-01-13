@@ -31,7 +31,7 @@ public class SaveAfterAnswerDelayPlaybackRequest extends RpcAcsRequest<SaveAfter
 
 	private Integer afterAnswerDelayPlayback;
 	public SaveAfterAnswerDelayPlaybackRequest() {
-		super("OutboundBot", "2019-12-26", "SaveAfterAnswerDelayPlayback", "outboundbot");
+		super("OutboundBot", "2019-12-26", "SaveAfterAnswerDelayPlayback");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

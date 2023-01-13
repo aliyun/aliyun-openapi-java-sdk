@@ -31,7 +31,7 @@ public class DeleteGlobalQuestionRequest extends RpcAcsRequest<DeleteGlobalQuest
 
 	private String instanceId;
 	public DeleteGlobalQuestionRequest() {
-		super("OutboundBot", "2019-12-26", "DeleteGlobalQuestion", "outboundbot");
+		super("OutboundBot", "2019-12-26", "DeleteGlobalQuestion");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

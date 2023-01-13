@@ -28,7 +28,7 @@ public class GetSummaryInfoRequest extends RpcAcsRequest<GetSummaryInfoResponse>
 
 	private List<String> instanceIdLists;
 	public GetSummaryInfoRequest() {
-		super("OutboundBot", "2019-12-26", "GetSummaryInfo", "outboundbot");
+		super("OutboundBot", "2019-12-26", "GetSummaryInfo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -32,7 +32,7 @@ public class SuspendCallRequest extends RpcAcsRequest<SuspendCallResponse> {
 
 	private String instanceId;
 	public SuspendCallRequest() {
-		super("OutboundBot", "2019-12-26", "SuspendCall", "outboundbot");
+		super("OutboundBot", "2019-12-26", "SuspendCall");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

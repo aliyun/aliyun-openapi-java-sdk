@@ -29,7 +29,7 @@ public class SubmitBatchJobsRequest extends RpcAcsRequest<SubmitBatchJobsRespons
 
 	private String jobGroupId;
 	public SubmitBatchJobsRequest() {
-		super("OutboundBot", "2019-12-26", "SubmitBatchJobs", "outboundbot");
+		super("OutboundBot", "2019-12-26", "SubmitBatchJobs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

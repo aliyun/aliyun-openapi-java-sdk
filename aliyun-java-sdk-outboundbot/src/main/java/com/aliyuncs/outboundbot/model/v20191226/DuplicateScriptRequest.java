@@ -31,7 +31,7 @@ public class DuplicateScriptRequest extends RpcAcsRequest<DuplicateScriptRespons
 
 	private String name;
 	public DuplicateScriptRequest() {
-		super("OutboundBot", "2019-12-26", "DuplicateScript", "outboundbot");
+		super("OutboundBot", "2019-12-26", "DuplicateScript");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

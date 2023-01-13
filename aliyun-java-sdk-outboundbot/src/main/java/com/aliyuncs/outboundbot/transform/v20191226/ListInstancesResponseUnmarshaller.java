@@ -50,6 +50,7 @@ public class ListInstancesResponseUnmarshaller {
 			instance.setResourceGroupId(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].ResourceGroupId"));
 			instance.setCreatorName(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].CreatorName"));
 			instance.setMaxConcurrentConversation(_ctx.integerValue("ListInstancesResponse.Instances["+ i +"].MaxConcurrentConversation"));
+			instance.setIsPreset(_ctx.booleanValue("ListInstancesResponse.Instances["+ i +"].IsPreset"));
 
 			NluProfile nluProfile = new NluProfile();
 			nluProfile.setAccessKey(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].NluProfile.AccessKey"));

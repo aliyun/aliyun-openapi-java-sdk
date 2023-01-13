@@ -29,7 +29,7 @@ public class GetBaseStrategyPeriodRequest extends RpcAcsRequest<GetBaseStrategyP
 
 	private String entryId;
 	public GetBaseStrategyPeriodRequest() {
-		super("OutboundBot", "2019-12-26", "GetBaseStrategyPeriod", "outboundbot");
+		super("OutboundBot", "2019-12-26", "GetBaseStrategyPeriod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

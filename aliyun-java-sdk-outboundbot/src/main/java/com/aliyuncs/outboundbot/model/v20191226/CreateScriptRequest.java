@@ -38,7 +38,7 @@ public class CreateScriptRequest extends RpcAcsRequest<CreateScriptResponse> {
 
 	private String asrConfig;
 
-	private String miniPlaybackConfigListJsonString;
+	private Boolean emotionEnable;
 
 	private Boolean newBargeInEnable;
 
@@ -54,7 +54,7 @@ public class CreateScriptRequest extends RpcAcsRequest<CreateScriptResponse> {
 
 	private List<String> scriptContents;
 	public CreateScriptRequest() {
-		super("OutboundBot", "2019-12-26", "CreateScript", "outboundbot");
+		super("OutboundBot", "2019-12-26", "CreateScript");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -130,14 +130,14 @@ public class CreateScriptRequest extends RpcAcsRequest<CreateScriptResponse> {
 		}
 	}
 
-	public String getMiniPlaybackConfigListJsonString() {
-		return this.miniPlaybackConfigListJsonString;
+	public Boolean getEmotionEnable() {
+		return this.emotionEnable;
 	}
 
-	public void setMiniPlaybackConfigListJsonString(String miniPlaybackConfigListJsonString) {
-		this.miniPlaybackConfigListJsonString = miniPlaybackConfigListJsonString;
-		if(miniPlaybackConfigListJsonString != null){
-			putQueryParameter("MiniPlaybackConfigListJsonString", miniPlaybackConfigListJsonString);
+	public void setEmotionEnable(Boolean emotionEnable) {
+		this.emotionEnable = emotionEnable;
+		if(emotionEnable != null){
+			putQueryParameter("EmotionEnable", emotionEnable.toString());
 		}
 	}
 

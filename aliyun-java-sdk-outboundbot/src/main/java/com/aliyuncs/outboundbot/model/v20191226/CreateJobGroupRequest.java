@@ -48,7 +48,7 @@ public class CreateJobGroupRequest extends RpcAcsRequest<CreateJobGroupResponse>
 
 	private Long minConcurrency;
 	public CreateJobGroupRequest() {
-		super("OutboundBot", "2019-12-26", "CreateJobGroup", "outboundbot");
+		super("OutboundBot", "2019-12-26", "CreateJobGroup");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

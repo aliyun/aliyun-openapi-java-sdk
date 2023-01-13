@@ -29,7 +29,7 @@ public class ListChatbotInstancesRequest extends RpcAcsRequest<ListChatbotInstan
 
 	private Integer pageSize;
 	public ListChatbotInstancesRequest() {
-		super("OutboundBot", "2019-12-26", "ListChatbotInstances", "outboundbot");
+		super("OutboundBot", "2019-12-26", "ListChatbotInstances");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

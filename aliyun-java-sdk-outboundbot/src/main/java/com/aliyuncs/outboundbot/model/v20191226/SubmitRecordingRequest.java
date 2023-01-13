@@ -33,7 +33,7 @@ public class SubmitRecordingRequest extends RpcAcsRequest<SubmitRecordingRespons
 
 	private String taskId;
 	public SubmitRecordingRequest() {
-		super("OutboundBot", "2019-12-26", "SubmitRecording", "outboundbot");
+		super("OutboundBot", "2019-12-26", "SubmitRecording");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

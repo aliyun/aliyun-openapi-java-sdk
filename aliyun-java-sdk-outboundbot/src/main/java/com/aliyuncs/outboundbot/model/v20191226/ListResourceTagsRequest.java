@@ -31,7 +31,7 @@ public class ListResourceTagsRequest extends RpcAcsRequest<ListResourceTagsRespo
 
 	private Integer pageSize;
 	public ListResourceTagsRequest() {
-		super("OutboundBot", "2019-12-26", "ListResourceTags", "outboundbot");
+		super("OutboundBot", "2019-12-26", "ListResourceTags");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

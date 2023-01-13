@@ -31,7 +31,7 @@ public class ListOutboundCallNumbersRequest extends RpcAcsRequest<ListOutboundCa
 
 	private Integer pageSize;
 	public ListOutboundCallNumbersRequest() {
-		super("OutboundBot", "2019-12-26", "ListOutboundCallNumbers", "outboundbot");
+		super("OutboundBot", "2019-12-26", "ListOutboundCallNumbers");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

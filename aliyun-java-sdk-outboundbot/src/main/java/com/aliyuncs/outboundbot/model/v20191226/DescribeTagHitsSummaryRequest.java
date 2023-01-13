@@ -29,7 +29,7 @@ public class DescribeTagHitsSummaryRequest extends RpcAcsRequest<DescribeTagHits
 
 	private String jobGroupId;
 	public DescribeTagHitsSummaryRequest() {
-		super("OutboundBot", "2019-12-26", "DescribeTagHitsSummary", "outboundbot");
+		super("OutboundBot", "2019-12-26", "DescribeTagHitsSummary");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

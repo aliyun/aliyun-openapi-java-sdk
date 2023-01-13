@@ -33,7 +33,7 @@ public class CreateTagRequest extends RpcAcsRequest<CreateTagResponse> {
 
 	private String instanceId;
 	public CreateTagRequest() {
-		super("OutboundBot", "2019-12-26", "CreateTag", "outboundbot");
+		super("OutboundBot", "2019-12-26", "CreateTag");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

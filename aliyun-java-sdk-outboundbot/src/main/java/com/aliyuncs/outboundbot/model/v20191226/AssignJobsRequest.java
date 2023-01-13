@@ -42,7 +42,7 @@ public class AssignJobsRequest extends RpcAcsRequest<AssignJobsResponse> {
 
 	private Boolean isAsynchrony;
 	public AssignJobsRequest() {
-		super("OutboundBot", "2019-12-26", "AssignJobs", "outboundbot");
+		super("OutboundBot", "2019-12-26", "AssignJobs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

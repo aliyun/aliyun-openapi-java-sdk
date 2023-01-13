@@ -31,7 +31,7 @@ public class DescribeScriptVoiceConfigRequest extends RpcAcsRequest<DescribeScri
 
 	private String instanceId;
 	public DescribeScriptVoiceConfigRequest() {
-		super("OutboundBot", "2019-12-26", "DescribeScriptVoiceConfig", "outboundbot");
+		super("OutboundBot", "2019-12-26", "DescribeScriptVoiceConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

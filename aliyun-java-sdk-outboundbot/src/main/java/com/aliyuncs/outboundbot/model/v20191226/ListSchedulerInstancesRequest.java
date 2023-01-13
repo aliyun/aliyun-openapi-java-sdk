@@ -27,7 +27,7 @@ public class ListSchedulerInstancesRequest extends RpcAcsRequest<ListSchedulerIn
 
 	private Long instanceOwnerId;
 	public ListSchedulerInstancesRequest() {
-		super("OutboundBot", "2019-12-26", "ListSchedulerInstances", "outboundbot");
+		super("OutboundBot", "2019-12-26", "ListSchedulerInstances");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -37,7 +37,7 @@ public class ListJobsByGroupRequest extends RpcAcsRequest<ListJobsByGroupRespons
 
 	private Integer pageSize;
 	public ListJobsByGroupRequest() {
-		super("OutboundBot", "2019-12-26", "ListJobsByGroup", "outboundbot");
+		super("OutboundBot", "2019-12-26", "ListJobsByGroup");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

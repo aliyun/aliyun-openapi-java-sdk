@@ -39,7 +39,7 @@ public class DescribeTTSDemoRequest extends RpcAcsRequest<DescribeTTSDemoRespons
 
 	private Integer pitchRate;
 	public DescribeTTSDemoRequest() {
-		super("OutboundBot", "2019-12-26", "DescribeTTSDemo", "outboundbot");
+		super("OutboundBot", "2019-12-26", "DescribeTTSDemo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

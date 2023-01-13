@@ -30,7 +30,7 @@ public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
 
 	private List<Tag> tags;
 	public ListInstancesRequest() {
-		super("OutboundBot", "2019-12-26", "ListInstances", "outboundbot");
+		super("OutboundBot", "2019-12-26", "ListInstances");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

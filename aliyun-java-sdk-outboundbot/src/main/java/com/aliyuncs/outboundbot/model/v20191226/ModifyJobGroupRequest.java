@@ -52,7 +52,7 @@ public class ModifyJobGroupRequest extends RpcAcsRequest<ModifyJobGroupResponse>
 
 	private Long minConcurrency;
 	public ModifyJobGroupRequest() {
-		super("OutboundBot", "2019-12-26", "ModifyJobGroup", "outboundbot");
+		super("OutboundBot", "2019-12-26", "ModifyJobGroup");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

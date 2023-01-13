@@ -159,6 +159,10 @@ public class ListScriptsResponse extends AcsResponse {
 
 			private Boolean longWaitEnable;
 
+			private Boolean emotionEnable;
+
+			private Boolean isPreset;
+
 			public String getStatus() {
 				return this.status;
 			}
@@ -277,6 +281,22 @@ public class ListScriptsResponse extends AcsResponse {
 
 			public void setLongWaitEnable(Boolean longWaitEnable) {
 				this.longWaitEnable = longWaitEnable;
+			}
+
+			public Boolean getEmotionEnable() {
+				return this.emotionEnable;
+			}
+
+			public void setEmotionEnable(Boolean emotionEnable) {
+				this.emotionEnable = emotionEnable;
+			}
+
+			public Boolean getIsPreset() {
+				return this.isPreset;
+			}
+
+			public void setIsPreset(Boolean isPreset) {
+				this.isPreset = isPreset;
 			}
 		}
 	}

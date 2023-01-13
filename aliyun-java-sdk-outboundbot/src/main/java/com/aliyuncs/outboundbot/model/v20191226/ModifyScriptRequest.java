@@ -42,6 +42,8 @@ public class ModifyScriptRequest extends RpcAcsRequest<ModifyScriptResponse> {
 
 	private String miniPlaybackConfigListJsonString;
 
+	private Boolean emotionEnable;
+
 	private String nlsConfig;
 
 	private Boolean newBargeInEnable;
@@ -58,7 +60,7 @@ public class ModifyScriptRequest extends RpcAcsRequest<ModifyScriptResponse> {
 
 	private List<String> scriptContents;
 	public ModifyScriptRequest() {
-		super("OutboundBot", "2019-12-26", "ModifyScript", "outboundbot");
+		super("OutboundBot", "2019-12-26", "ModifyScript");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -153,6 +155,17 @@ public class ModifyScriptRequest extends RpcAcsRequest<ModifyScriptResponse> {
 		this.miniPlaybackConfigListJsonString = miniPlaybackConfigListJsonString;
 		if(miniPlaybackConfigListJsonString != null){
 			putQueryParameter("MiniPlaybackConfigListJsonString", miniPlaybackConfigListJsonString);
+		}
+	}
+
+	public Boolean getEmotionEnable() {
+		return this.emotionEnable;
+	}
+
+	public void setEmotionEnable(Boolean emotionEnable) {
+		this.emotionEnable = emotionEnable;
+		if(emotionEnable != null){
+			putQueryParameter("EmotionEnable", emotionEnable.toString());
 		}
 	}
 

@@ -29,7 +29,7 @@ public class CreateDownloadUrlRequest extends RpcAcsRequest<CreateDownloadUrlRes
 
 	private String fileId;
 	public CreateDownloadUrlRequest() {
-		super("OutboundBot", "2019-12-26", "CreateDownloadUrl", "outboundbot");
+		super("OutboundBot", "2019-12-26", "CreateDownloadUrl");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

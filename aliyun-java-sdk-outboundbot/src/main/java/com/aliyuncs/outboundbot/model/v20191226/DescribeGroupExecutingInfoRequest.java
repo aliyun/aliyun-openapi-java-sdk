@@ -29,7 +29,7 @@ public class DescribeGroupExecutingInfoRequest extends RpcAcsRequest<DescribeGro
 
 	private String jobGroupId;
 	public DescribeGroupExecutingInfoRequest() {
-		super("OutboundBot", "2019-12-26", "DescribeGroupExecutingInfo", "outboundbot");
+		super("OutboundBot", "2019-12-26", "DescribeGroupExecutingInfo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

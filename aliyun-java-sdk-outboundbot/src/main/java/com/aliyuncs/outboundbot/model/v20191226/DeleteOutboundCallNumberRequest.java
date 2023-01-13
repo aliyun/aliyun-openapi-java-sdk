@@ -29,7 +29,7 @@ public class DeleteOutboundCallNumberRequest extends RpcAcsRequest<DeleteOutboun
 
 	private String instanceId;
 	public DeleteOutboundCallNumberRequest() {
-		super("OutboundBot", "2019-12-26", "DeleteOutboundCallNumber", "outboundbot");
+		super("OutboundBot", "2019-12-26", "DeleteOutboundCallNumber");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

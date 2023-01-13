@@ -27,7 +27,7 @@ public class DescribeTenantBindNumberRequest extends RpcAcsRequest<DescribeTenan
 
 	private String number;
 	public DescribeTenantBindNumberRequest() {
-		super("OutboundBot", "2019-12-26", "DescribeTenantBindNumber", "outboundbot");
+		super("OutboundBot", "2019-12-26", "DescribeTenantBindNumber");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

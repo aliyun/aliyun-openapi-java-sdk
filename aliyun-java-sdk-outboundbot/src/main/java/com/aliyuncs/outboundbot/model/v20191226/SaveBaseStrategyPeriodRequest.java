@@ -36,7 +36,7 @@ public class SaveBaseStrategyPeriodRequest extends RpcAcsRequest<SaveBaseStrateg
 
 	private List<String> workingTimes;
 	public SaveBaseStrategyPeriodRequest() {
-		super("OutboundBot", "2019-12-26", "SaveBaseStrategyPeriod", "outboundbot");
+		super("OutboundBot", "2019-12-26", "SaveBaseStrategyPeriod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

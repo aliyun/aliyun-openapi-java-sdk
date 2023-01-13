@@ -27,7 +27,7 @@ public class GetCurrentConcurrencyRequest extends RpcAcsRequest<GetCurrentConcur
 
 	private String instanceId;
 	public GetCurrentConcurrencyRequest() {
-		super("OutboundBot", "2019-12-26", "GetCurrentConcurrency", "outboundbot");
+		super("OutboundBot", "2019-12-26", "GetCurrentConcurrency");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class DescribeJobRequest extends RpcAcsRequest<DescribeJobResponse> {
 
 	private Boolean withScript;
 	public DescribeJobRequest() {
-		super("OutboundBot", "2019-12-26", "DescribeJob", "outboundbot");
+		super("OutboundBot", "2019-12-26", "DescribeJob");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -34,6 +34,7 @@ public class DialogueResponseUnmarshaller {
 		feedback.setActionParams(_ctx.stringValue("DialogueResponse.Feedback.ActionParams"));
 		feedback.setContent(_ctx.stringValue("DialogueResponse.Feedback.Content"));
 		feedback.setInterruptible(_ctx.booleanValue("DialogueResponse.Feedback.Interruptible"));
+		feedback.setContentParams(_ctx.stringValue("DialogueResponse.Feedback.ContentParams"));
 		dialogueResponse.setFeedback(feedback);
 	 
 	 	return dialogueResponse;

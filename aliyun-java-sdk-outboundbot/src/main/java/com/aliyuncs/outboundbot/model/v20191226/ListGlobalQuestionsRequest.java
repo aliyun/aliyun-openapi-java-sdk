@@ -33,7 +33,7 @@ public class ListGlobalQuestionsRequest extends RpcAcsRequest<ListGlobalQuestion
 
 	private Integer pageSize;
 	public ListGlobalQuestionsRequest() {
-		super("OutboundBot", "2019-12-26", "ListGlobalQuestions", "outboundbot");
+		super("OutboundBot", "2019-12-26", "ListGlobalQuestions");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

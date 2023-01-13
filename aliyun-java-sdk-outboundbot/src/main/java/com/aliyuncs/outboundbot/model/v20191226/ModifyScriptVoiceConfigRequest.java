@@ -35,7 +35,7 @@ public class ModifyScriptVoiceConfigRequest extends RpcAcsRequest<ModifyScriptVo
 
 	private String scriptWaveformRelation;
 	public ModifyScriptVoiceConfigRequest() {
-		super("OutboundBot", "2019-12-26", "ModifyScriptVoiceConfig", "outboundbot");
+		super("OutboundBot", "2019-12-26", "ModifyScriptVoiceConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

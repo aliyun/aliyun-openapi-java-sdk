@@ -29,7 +29,7 @@ public class GetEmptyNumberNoMoreCallsInfoRequest extends RpcAcsRequest<GetEmpty
 
 	private String entryId;
 	public GetEmptyNumberNoMoreCallsInfoRequest() {
-		super("OutboundBot", "2019-12-26", "GetEmptyNumberNoMoreCallsInfo", "outboundbot");
+		super("OutboundBot", "2019-12-26", "GetEmptyNumberNoMoreCallsInfo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

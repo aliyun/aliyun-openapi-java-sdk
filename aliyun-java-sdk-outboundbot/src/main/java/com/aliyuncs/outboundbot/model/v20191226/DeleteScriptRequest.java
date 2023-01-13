@@ -29,7 +29,7 @@ public class DeleteScriptRequest extends RpcAcsRequest<DeleteScriptResponse> {
 
 	private String instanceId;
 	public DeleteScriptRequest() {
-		super("OutboundBot", "2019-12-26", "DeleteScript", "outboundbot");
+		super("OutboundBot", "2019-12-26", "DeleteScript");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

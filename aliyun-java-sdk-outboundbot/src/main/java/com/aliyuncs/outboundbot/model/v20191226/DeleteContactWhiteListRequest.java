@@ -31,7 +31,7 @@ public class DeleteContactWhiteListRequest extends RpcAcsRequest<DeleteContactWh
 
 	private String contactWhiteListId;
 	public DeleteContactWhiteListRequest() {
-		super("OutboundBot", "2019-12-26", "DeleteContactWhiteList", "outboundbot");
+		super("OutboundBot", "2019-12-26", "DeleteContactWhiteList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

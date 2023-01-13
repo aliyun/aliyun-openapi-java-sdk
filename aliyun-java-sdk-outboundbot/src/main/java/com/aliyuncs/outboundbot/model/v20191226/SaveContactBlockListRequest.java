@@ -32,7 +32,7 @@ public class SaveContactBlockListRequest extends RpcAcsRequest<SaveContactBlockL
 
 	private String contactBlockListsJson;
 	public SaveContactBlockListRequest() {
-		super("OutboundBot", "2019-12-26", "SaveContactBlockList", "outboundbot");
+		super("OutboundBot", "2019-12-26", "SaveContactBlockList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

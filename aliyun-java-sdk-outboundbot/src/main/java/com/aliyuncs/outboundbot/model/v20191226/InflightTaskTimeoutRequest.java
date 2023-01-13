@@ -31,7 +31,7 @@ public class InflightTaskTimeoutRequest extends RpcAcsRequest<InflightTaskTimeou
 
 	private String taskId;
 	public InflightTaskTimeoutRequest() {
-		super("OutboundBot", "2019-12-26", "InflightTaskTimeout", "outboundbot");
+		super("OutboundBot", "2019-12-26", "InflightTaskTimeout");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

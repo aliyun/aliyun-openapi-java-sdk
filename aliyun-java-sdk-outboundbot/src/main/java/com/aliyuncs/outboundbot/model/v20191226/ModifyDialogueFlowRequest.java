@@ -35,7 +35,7 @@ public class ModifyDialogueFlowRequest extends RpcAcsRequest<ModifyDialogueFlowR
 
 	private String dialogueFlowId;
 	public ModifyDialogueFlowRequest() {
-		super("OutboundBot", "2019-12-26", "ModifyDialogueFlow", "outboundbot");
+		super("OutboundBot", "2019-12-26", "ModifyDialogueFlow");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

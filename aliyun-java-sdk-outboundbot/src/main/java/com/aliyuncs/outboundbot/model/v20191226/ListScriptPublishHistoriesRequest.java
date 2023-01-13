@@ -33,7 +33,7 @@ public class ListScriptPublishHistoriesRequest extends RpcAcsRequest<ListScriptP
 
 	private Integer pageSize;
 	public ListScriptPublishHistoriesRequest() {
-		super("OutboundBot", "2019-12-26", "ListScriptPublishHistories", "outboundbot");
+		super("OutboundBot", "2019-12-26", "ListScriptPublishHistories");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

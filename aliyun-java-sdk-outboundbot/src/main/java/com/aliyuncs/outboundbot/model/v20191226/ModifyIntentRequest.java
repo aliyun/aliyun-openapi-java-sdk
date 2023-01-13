@@ -39,7 +39,7 @@ public class ModifyIntentRequest extends RpcAcsRequest<ModifyIntentResponse> {
 
 	private String intentName;
 	public ModifyIntentRequest() {
-		super("OutboundBot", "2019-12-26", "ModifyIntent", "outboundbot");
+		super("OutboundBot", "2019-12-26", "ModifyIntent");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

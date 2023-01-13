@@ -31,7 +31,7 @@ public class ModifyEmptyNumberNoMoreCallsInfoRequest extends RpcAcsRequest<Modif
 
 	private String entryId;
 	public ModifyEmptyNumberNoMoreCallsInfoRequest() {
-		super("OutboundBot", "2019-12-26", "ModifyEmptyNumberNoMoreCallsInfo", "outboundbot");
+		super("OutboundBot", "2019-12-26", "ModifyEmptyNumberNoMoreCallsInfo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

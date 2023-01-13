@@ -31,7 +31,7 @@ public class DescribeGlobalQuestionRequest extends RpcAcsRequest<DescribeGlobalQ
 
 	private String instanceId;
 	public DescribeGlobalQuestionRequest() {
-		super("OutboundBot", "2019-12-26", "DescribeGlobalQuestion", "outboundbot");
+		super("OutboundBot", "2019-12-26", "DescribeGlobalQuestion");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

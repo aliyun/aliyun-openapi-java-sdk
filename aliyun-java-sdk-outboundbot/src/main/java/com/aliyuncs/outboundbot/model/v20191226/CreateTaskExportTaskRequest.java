@@ -77,7 +77,7 @@ public class CreateTaskExportTaskRequest extends RpcAcsRequest<CreateTaskExportT
 
 	private Long recordingDurationLte;
 	public CreateTaskExportTaskRequest() {
-		super("OutboundBot", "2019-12-26", "CreateTaskExportTask", "outboundbot");
+		super("OutboundBot", "2019-12-26", "CreateTaskExportTask");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

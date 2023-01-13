@@ -29,6 +29,8 @@ public class QueryJobsWithResultRequest extends RpcAcsRequest<QueryJobsWithResul
 
 	private Boolean hasAnsweredFilter;
 
+	private String taskStatusFilter;
+
 	private Integer pageNumber;
 
 	private String queryText;
@@ -43,7 +45,7 @@ public class QueryJobsWithResultRequest extends RpcAcsRequest<QueryJobsWithResul
 
 	private String jobGroupId;
 	public QueryJobsWithResultRequest() {
-		super("OutboundBot", "2019-12-26", "QueryJobsWithResult", "outboundbot");
+		super("OutboundBot", "2019-12-26", "QueryJobsWithResult");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -70,6 +72,17 @@ public class QueryJobsWithResultRequest extends RpcAcsRequest<QueryJobsWithResul
 		this.hasAnsweredFilter = hasAnsweredFilter;
 		if(hasAnsweredFilter != null){
 			putQueryParameter("HasAnsweredFilter", hasAnsweredFilter.toString());
+		}
+	}
+
+	public String getTaskStatusFilter() {
+		return this.taskStatusFilter;
+	}
+
+	public void setTaskStatusFilter(String taskStatusFilter) {
+		this.taskStatusFilter = taskStatusFilter;
+		if(taskStatusFilter != null){
+			putQueryParameter("TaskStatusFilter", taskStatusFilter);
 		}
 	}
 

@@ -31,7 +31,7 @@ public class DescribeIntentRequest extends RpcAcsRequest<DescribeIntentResponse>
 
 	private String instanceId;
 	public DescribeIntentRequest() {
-		super("OutboundBot", "2019-12-26", "DescribeIntent", "outboundbot");
+		super("OutboundBot", "2019-12-26", "DescribeIntent");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

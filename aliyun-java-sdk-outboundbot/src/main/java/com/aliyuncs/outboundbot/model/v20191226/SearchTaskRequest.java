@@ -71,7 +71,7 @@ public class SearchTaskRequest extends RpcAcsRequest<SearchTaskResponse> {
 
 	private Long recordingDurationLte;
 	public SearchTaskRequest() {
-		super("OutboundBot", "2019-12-26", "SearchTask", "outboundbot");
+		super("OutboundBot", "2019-12-26", "SearchTask");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class ListDialogueFlowsRequest extends RpcAcsRequest<ListDialogueFlowsRes
 
 	private String instanceId;
 	public ListDialogueFlowsRequest() {
-		super("OutboundBot", "2019-12-26", "ListDialogueFlows", "outboundbot");
+		super("OutboundBot", "2019-12-26", "ListDialogueFlows");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

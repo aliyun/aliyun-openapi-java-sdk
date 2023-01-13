@@ -47,7 +47,7 @@ public class DialogueRequest extends RpcAcsRequest<DialogueResponse> {
 
 	private String actionKey;
 	public DialogueRequest() {
-		super("OutboundBot", "2019-12-26", "Dialogue", "outboundbot");
+		super("OutboundBot", "2019-12-26", "Dialogue");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class ImportScriptRequest extends RpcAcsRequest<ImportScriptResponse> {
 
 	private String instanceId;
 	public ImportScriptRequest() {
-		super("OutboundBot", "2019-12-26", "ImportScript", "outboundbot");
+		super("OutboundBot", "2019-12-26", "ImportScript");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

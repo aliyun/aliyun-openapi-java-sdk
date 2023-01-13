@@ -50,7 +50,7 @@ public class CreateBatchRepeatJobRequest extends RpcAcsRequest<CreateBatchRepeat
 
 	private Long minConcurrency;
 	public CreateBatchRepeatJobRequest() {
-		super("OutboundBot", "2019-12-26", "CreateBatchRepeatJob", "outboundbot");
+		super("OutboundBot", "2019-12-26", "CreateBatchRepeatJob");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

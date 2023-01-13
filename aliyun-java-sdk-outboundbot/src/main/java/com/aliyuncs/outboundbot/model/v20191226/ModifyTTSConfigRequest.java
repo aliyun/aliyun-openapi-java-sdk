@@ -39,7 +39,7 @@ public class ModifyTTSConfigRequest extends RpcAcsRequest<ModifyTTSConfigRespons
 
 	private String speechRate;
 	public ModifyTTSConfigRequest() {
-		super("OutboundBot", "2019-12-26", "ModifyTTSConfig", "outboundbot");
+		super("OutboundBot", "2019-12-26", "ModifyTTSConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class ListDownloadTasksRequest extends RpcAcsRequest<ListDownloadTasksRes
 
 	private Integer pageSize;
 	public ListDownloadTasksRequest() {
-		super("OutboundBot", "2019-12-26", "ListDownloadTasks", "outboundbot");
+		super("OutboundBot", "2019-12-26", "ListDownloadTasks");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

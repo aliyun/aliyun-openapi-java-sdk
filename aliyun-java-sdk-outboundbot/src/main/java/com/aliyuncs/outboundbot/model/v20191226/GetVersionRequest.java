@@ -25,7 +25,7 @@ import com.aliyuncs.outboundbot.Endpoint;
 public class GetVersionRequest extends RpcAcsRequest<GetVersionResponse> {
 	   
 	public GetVersionRequest() {
-		super("OutboundBot", "2019-12-26", "GetVersion", "outboundbot");
+		super("OutboundBot", "2019-12-26", "GetVersion");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

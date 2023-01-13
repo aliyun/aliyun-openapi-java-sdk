@@ -44,7 +44,7 @@ public class CreateBatchJobsRequest extends RpcAcsRequest<CreateBatchJobsRespons
 
 	private String scenarioId;
 	public CreateBatchJobsRequest() {
-		super("OutboundBot", "2019-12-26", "CreateBatchJobs", "outboundbot");
+		super("OutboundBot", "2019-12-26", "CreateBatchJobs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

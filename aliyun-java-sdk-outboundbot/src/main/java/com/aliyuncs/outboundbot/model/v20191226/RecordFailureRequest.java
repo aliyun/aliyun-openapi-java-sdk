@@ -41,7 +41,7 @@ public class RecordFailureRequest extends RpcAcsRequest<RecordFailureResponse> {
 
 	private String exceptionCodes;
 	public RecordFailureRequest() {
-		super("OutboundBot", "2019-12-26", "RecordFailure", "outboundbot");
+		super("OutboundBot", "2019-12-26", "RecordFailure");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

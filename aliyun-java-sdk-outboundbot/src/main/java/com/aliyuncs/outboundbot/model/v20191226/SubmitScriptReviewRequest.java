@@ -31,7 +31,7 @@ public class SubmitScriptReviewRequest extends RpcAcsRequest<SubmitScriptReviewR
 
 	private String instanceId;
 	public SubmitScriptReviewRequest() {
-		super("OutboundBot", "2019-12-26", "SubmitScriptReview", "outboundbot");
+		super("OutboundBot", "2019-12-26", "SubmitScriptReview");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

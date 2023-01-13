@@ -50,6 +50,7 @@ public class DescribeScriptResponseUnmarshaller {
 		script.setScriptName(_ctx.stringValue("DescribeScriptResponse.Script.ScriptName"));
 		script.setNewBargeInEnable(_ctx.booleanValue("DescribeScriptResponse.Script.NewBargeInEnable"));
 		script.setLongWaitEnable(_ctx.booleanValue("DescribeScriptResponse.Script.LongWaitEnable"));
+		script.setEmotionEnable(_ctx.booleanValue("DescribeScriptResponse.Script.EmotionEnable"));
 		describeScriptResponse.setScript(script);
 	 
 	 	return describeScriptResponse;

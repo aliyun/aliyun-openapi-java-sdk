@@ -35,7 +35,7 @@ public class CreateScriptWaveformRequest extends RpcAcsRequest<CreateScriptWavef
 
 	private String fileId;
 	public CreateScriptWaveformRequest() {
-		super("OutboundBot", "2019-12-26", "CreateScriptWaveform", "outboundbot");
+		super("OutboundBot", "2019-12-26", "CreateScriptWaveform");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

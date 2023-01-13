@@ -33,7 +33,7 @@ public class ModifyTagGroupsRequest extends RpcAcsRequest<ModifyTagGroupsRespons
 
 	private String tagGroups;
 	public ModifyTagGroupsRequest() {
-		super("OutboundBot", "2019-12-26", "ModifyTagGroups", "outboundbot");
+		super("OutboundBot", "2019-12-26", "ModifyTagGroups");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class GetContactBlockListRequest extends RpcAcsRequest<GetContactBlockLis
 
 	private Integer pageSize;
 	public GetContactBlockListRequest() {
-		super("OutboundBot", "2019-12-26", "GetContactBlockList", "outboundbot");
+		super("OutboundBot", "2019-12-26", "GetContactBlockList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class PublishScriptForDebugRequest extends RpcAcsRequest<PublishScriptFor
 
 	private String instanceId;
 	public PublishScriptForDebugRequest() {
-		super("OutboundBot", "2019-12-26", "PublishScriptForDebug", "outboundbot");
+		super("OutboundBot", "2019-12-26", "PublishScriptForDebug");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

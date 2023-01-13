@@ -25,7 +25,7 @@ import com.aliyuncs.outboundbot.Endpoint;
 public class GetConcurrentConversationQuotaRequest extends RpcAcsRequest<GetConcurrentConversationQuotaResponse> {
 	   
 	public GetConcurrentConversationQuotaRequest() {
-		super("OutboundBot", "2019-12-26", "GetConcurrentConversationQuota", "outboundbot");
+		super("OutboundBot", "2019-12-26", "GetConcurrentConversationQuota");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

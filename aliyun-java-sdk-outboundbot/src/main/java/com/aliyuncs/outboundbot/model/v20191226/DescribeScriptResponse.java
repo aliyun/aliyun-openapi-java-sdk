@@ -158,6 +158,8 @@ public class DescribeScriptResponse extends AcsResponse {
 
 		private Boolean longWaitEnable;
 
+		private Boolean emotionEnable;
+
 		public String getStatus() {
 			return this.status;
 		}
@@ -284,6 +286,14 @@ public class DescribeScriptResponse extends AcsResponse {
 
 		public void setLongWaitEnable(Boolean longWaitEnable) {
 			this.longWaitEnable = longWaitEnable;
+		}
+
+		public Boolean getEmotionEnable() {
+			return this.emotionEnable;
+		}
+
+		public void setEmotionEnable(Boolean emotionEnable) {
+			this.emotionEnable = emotionEnable;
 		}
 	}
 

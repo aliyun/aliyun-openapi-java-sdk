@@ -31,7 +31,7 @@ public class GetTaskByUuidRequest extends RpcAcsRequest<GetTaskByUuidResponse> {
 
 	private String taskId;
 	public GetTaskByUuidRequest() {
-		super("OutboundBot", "2019-12-26", "GetTaskByUuid", "outboundbot");
+		super("OutboundBot", "2019-12-26", "GetTaskByUuid");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

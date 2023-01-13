@@ -29,7 +29,7 @@ public class CreateInstanceBindNumberRequest extends RpcAcsRequest<CreateInstanc
 
 	private String number;
 	public CreateInstanceBindNumberRequest() {
-		super("OutboundBot", "2019-12-26", "CreateInstanceBindNumber", "outboundbot");
+		super("OutboundBot", "2019-12-26", "CreateInstanceBindNumber");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

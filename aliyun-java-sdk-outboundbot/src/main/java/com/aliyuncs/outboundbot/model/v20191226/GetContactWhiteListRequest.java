@@ -33,7 +33,7 @@ public class GetContactWhiteListRequest extends RpcAcsRequest<GetContactWhiteLis
 
 	private Integer pageSize;
 	public GetContactWhiteListRequest() {
-		super("OutboundBot", "2019-12-26", "GetContactWhiteList", "outboundbot");
+		super("OutboundBot", "2019-12-26", "GetContactWhiteList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

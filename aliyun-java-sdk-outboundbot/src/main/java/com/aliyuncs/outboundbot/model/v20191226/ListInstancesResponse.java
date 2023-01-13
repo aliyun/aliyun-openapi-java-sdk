@@ -113,6 +113,8 @@ public class ListInstancesResponse extends AcsResponse {
 
 		private Integer maxConcurrentConversation;
 
+		private Boolean isPreset;
+
 		private List<ResourceTag> resourceTags;
 
 		private NluProfile nluProfile;
@@ -219,6 +221,14 @@ public class ListInstancesResponse extends AcsResponse {
 
 		public void setMaxConcurrentConversation(Integer maxConcurrentConversation) {
 			this.maxConcurrentConversation = maxConcurrentConversation;
+		}
+
+		public Boolean getIsPreset() {
+			return this.isPreset;
+		}
+
+		public void setIsPreset(Boolean isPreset) {
+			this.isPreset = isPreset;
 		}
 
 		public List<ResourceTag> getResourceTags() {
