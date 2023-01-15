@@ -1,3 +1,6 @@
+2023-01-15 Version: 4.24.51
+- Support autoProvisioningGroup instance pattern.
+
 2023-01-13 Version: 4.24.50
 - Add nat errorCode.
 - Support tag for managed instance.

@@ -631,6 +631,29 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 				putQueryParameter("LaunchTemplateConfig." + (depth1 + 1) + ".Priority" , launchTemplateConfigs.get(depth1).getPriority());
 				putQueryParameter("LaunchTemplateConfig." + (depth1 + 1) + ".InstanceType" , launchTemplateConfigs.get(depth1).getInstanceType());
 				putQueryParameter("LaunchTemplateConfig." + (depth1 + 1) + ".WeightedCapacity" , launchTemplateConfigs.get(depth1).getWeightedCapacity());
+				putQueryParameter("LaunchTemplateConfig." + (depth1 + 1) + ".MaxQuantity" , launchTemplateConfigs.get(depth1).getMaxQuantity());
+				if (launchTemplateConfigs.get(depth1).getCoress() != null) {
+					for (int i = 0; i < launchTemplateConfigs.get(depth1).getCoress().size(); i++) {
+						putQueryParameter("LaunchTemplateConfig." + (depth1 + 1) + ".Cores." + (i + 1) , launchTemplateConfigs.get(depth1).getCoress().get(i));
+					}
+				}
+				if (launchTemplateConfigs.get(depth1).getMemoriess() != null) {
+					for (int i = 0; i < launchTemplateConfigs.get(depth1).getMemoriess().size(); i++) {
+						putQueryParameter("LaunchTemplateConfig." + (depth1 + 1) + ".Memories." + (i + 1) , launchTemplateConfigs.get(depth1).getMemoriess().get(i));
+					}
+				}
+				putQueryParameter("LaunchTemplateConfig." + (depth1 + 1) + ".InstanceFamilyLevel" , launchTemplateConfigs.get(depth1).getInstanceFamilyLevel());
+				if (launchTemplateConfigs.get(depth1).getExcludedInstanceTypess() != null) {
+					for (int i = 0; i < launchTemplateConfigs.get(depth1).getExcludedInstanceTypess().size(); i++) {
+						putQueryParameter("LaunchTemplateConfig." + (depth1 + 1) + ".ExcludedInstanceTypes." + (i + 1) , launchTemplateConfigs.get(depth1).getExcludedInstanceTypess().get(i));
+					}
+				}
+				if (launchTemplateConfigs.get(depth1).getArchitecturess() != null) {
+					for (int i = 0; i < launchTemplateConfigs.get(depth1).getArchitecturess().size(); i++) {
+						putQueryParameter("LaunchTemplateConfig." + (depth1 + 1) + ".Architectures." + (i + 1) , launchTemplateConfigs.get(depth1).getArchitecturess().get(i));
+					}
+				}
+				putQueryParameter("LaunchTemplateConfig." + (depth1 + 1) + ".BurstablePerformance" , launchTemplateConfigs.get(depth1).getBurstablePerformance());
 			}
 		}	
 	}
@@ -1043,6 +1066,20 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 
 		private Double weightedCapacity;
 
+		private Integer maxQuantity;
+
+		private List<Integer> coress;
+
+		private List<Float> memoriess;
+
+		private String instanceFamilyLevel;
+
+		private List<String> excludedInstanceTypess;
+
+		private List<String> architecturess;
+
+		private String burstablePerformance;
+
 		public String getVSwitchId() {
 			return this.vSwitchId;
 		}
@@ -1081,6 +1118,62 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 
 		public void setWeightedCapacity(Double weightedCapacity) {
 			this.weightedCapacity = weightedCapacity;
+		}
+
+		public Integer getMaxQuantity() {
+			return this.maxQuantity;
+		}
+
+		public void setMaxQuantity(Integer maxQuantity) {
+			this.maxQuantity = maxQuantity;
+		}
+
+		public List<Integer> getCoress() {
+			return this.coress;
+		}
+
+		public void setCoress(List<Integer> coress) {
+			this.coress = coress;
+		}
+
+		public List<Float> getMemoriess() {
+			return this.memoriess;
+		}
+
+		public void setMemoriess(List<Float> memoriess) {
+			this.memoriess = memoriess;
+		}
+
+		public String getInstanceFamilyLevel() {
+			return this.instanceFamilyLevel;
+		}
+
+		public void setInstanceFamilyLevel(String instanceFamilyLevel) {
+			this.instanceFamilyLevel = instanceFamilyLevel;
+		}
+
+		public List<String> getExcludedInstanceTypess() {
+			return this.excludedInstanceTypess;
+		}
+
+		public void setExcludedInstanceTypess(List<String> excludedInstanceTypess) {
+			this.excludedInstanceTypess = excludedInstanceTypess;
+		}
+
+		public List<String> getArchitecturess() {
+			return this.architecturess;
+		}
+
+		public void setArchitecturess(List<String> architecturess) {
+			this.architecturess = architecturess;
+		}
+
+		public String getBurstablePerformance() {
+			return this.burstablePerformance;
+		}
+
+		public void setBurstablePerformance(String burstablePerformance) {
+			this.burstablePerformance = burstablePerformance;
 		}
 	}
 
