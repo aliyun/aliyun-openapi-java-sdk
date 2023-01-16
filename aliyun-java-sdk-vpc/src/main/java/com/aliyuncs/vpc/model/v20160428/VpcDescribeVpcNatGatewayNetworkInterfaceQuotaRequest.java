@@ -22,55 +22,29 @@ import com.aliyuncs.vpc.Endpoint;
  * @author auto create
  * @version 
  */
-public class AddPublicIpAddressPoolCidrBlockRequest extends RpcAcsRequest<AddPublicIpAddressPoolCidrBlockResponse> {
+public class VpcDescribeVpcNatGatewayNetworkInterfaceQuotaRequest extends RpcAcsRequest<VpcDescribeVpcNatGatewayNetworkInterfaceQuotaResponse> {
 	   
-
-	private Integer cidrMask;
-
-	private String publicIpAddressPoolId;
 
 	private Long resourceOwnerId;
 
 	private String clientToken;
 
-	private Boolean dryRun;
+	private Long resourceUid;
+
+	private String natGatewayId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String cidrBlock;
-	public AddPublicIpAddressPoolCidrBlockRequest() {
-		super("Vpc", "2016-04-28", "AddPublicIpAddressPoolCidrBlock", "vpc");
+	public VpcDescribeVpcNatGatewayNetworkInterfaceQuotaRequest() {
+		super("Vpc", "2016-04-28", "VpcDescribeVpcNatGatewayNetworkInterfaceQuota", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getCidrMask() {
-		return this.cidrMask;
-	}
-
-	public void setCidrMask(Integer cidrMask) {
-		this.cidrMask = cidrMask;
-		if(cidrMask != null){
-			putQueryParameter("CidrMask", cidrMask.toString());
-		}
-	}
-
-	public String getPublicIpAddressPoolId() {
-		return this.publicIpAddressPoolId;
-	}
-
-	public void setPublicIpAddressPoolId(String publicIpAddressPoolId) {
-		this.publicIpAddressPoolId = publicIpAddressPoolId;
-		if(publicIpAddressPoolId != null){
-			putQueryParameter("PublicIpAddressPoolId", publicIpAddressPoolId);
-		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -95,14 +69,25 @@ public class AddPublicIpAddressPoolCidrBlockRequest extends RpcAcsRequest<AddPub
 		}
 	}
 
-	public Boolean getDryRun() {
-		return this.dryRun;
+	public Long getResourceUid() {
+		return this.resourceUid;
 	}
 
-	public void setDryRun(Boolean dryRun) {
-		this.dryRun = dryRun;
-		if(dryRun != null){
-			putQueryParameter("DryRun", dryRun.toString());
+	public void setResourceUid(Long resourceUid) {
+		this.resourceUid = resourceUid;
+		if(resourceUid != null){
+			putQueryParameter("ResourceUid", resourceUid.toString());
+		}
+	}
+
+	public String getNatGatewayId() {
+		return this.natGatewayId;
+	}
+
+	public void setNatGatewayId(String natGatewayId) {
+		this.natGatewayId = natGatewayId;
+		if(natGatewayId != null){
+			putQueryParameter("NatGatewayId", natGatewayId);
 		}
 	}
 
@@ -139,20 +124,9 @@ public class AddPublicIpAddressPoolCidrBlockRequest extends RpcAcsRequest<AddPub
 		}
 	}
 
-	public String getCidrBlock() {
-		return this.cidrBlock;
-	}
-
-	public void setCidrBlock(String cidrBlock) {
-		this.cidrBlock = cidrBlock;
-		if(cidrBlock != null){
-			putQueryParameter("CidrBlock", cidrBlock);
-		}
-	}
-
 	@Override
-	public Class<AddPublicIpAddressPoolCidrBlockResponse> getResponseClass() {
-		return AddPublicIpAddressPoolCidrBlockResponse.class;
+	public Class<VpcDescribeVpcNatGatewayNetworkInterfaceQuotaResponse> getResponseClass() {
+		return VpcDescribeVpcNatGatewayNetworkInterfaceQuotaResponse.class;
 	}
 
 }
