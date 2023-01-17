@@ -26,8 +26,6 @@ public class PublishStagingConfigToProductionRequest extends RpcAcsRequest<Publi
 	   
 
 	private String domainName;
-
-	private Long ownerId;
 	public PublishStagingConfigToProductionRequest() {
 		super("Cdn", "2018-05-10", "PublishStagingConfigToProduction");
 		setMethod(MethodType.POST);
@@ -45,17 +43,6 @@ public class PublishStagingConfigToProductionRequest extends RpcAcsRequest<Publi
 		this.domainName = domainName;
 		if(domainName != null){
 			putQueryParameter("DomainName", domainName);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

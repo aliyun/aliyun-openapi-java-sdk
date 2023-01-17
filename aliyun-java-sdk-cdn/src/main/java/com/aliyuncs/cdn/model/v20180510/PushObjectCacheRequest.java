@@ -33,6 +33,8 @@ public class PushObjectCacheRequest extends RpcAcsRequest<PushObjectCacheRespons
 
 	private String area;
 
+	private String withHeader;
+
 	private Long ownerId;
 	public PushObjectCacheRequest() {
 		super("Cdn", "2018-05-10", "PushObjectCache");
@@ -84,6 +86,17 @@ public class PushObjectCacheRequest extends RpcAcsRequest<PushObjectCacheRespons
 		this.area = area;
 		if(area != null){
 			putQueryParameter("Area", area);
+		}
+	}
+
+	public String getWithHeader() {
+		return this.withHeader;
+	}
+
+	public void setWithHeader(String withHeader) {
+		this.withHeader = withHeader;
+		if(withHeader != null){
+			putQueryParameter("WithHeader", withHeader);
 		}
 	}
 

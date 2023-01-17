@@ -26,8 +26,6 @@ public class DeleteFCTriggerRequest extends RpcAcsRequest<DeleteFCTriggerRespons
 	   
 
 	private String triggerARN;
-
-	private Long ownerId;
 	public DeleteFCTriggerRequest() {
 		super("Cdn", "2018-05-10", "DeleteFCTrigger");
 		setMethod(MethodType.POST);
@@ -45,17 +43,6 @@ public class DeleteFCTriggerRequest extends RpcAcsRequest<DeleteFCTriggerRespons
 		this.triggerARN = triggerARN;
 		if(triggerARN != null){
 			putQueryParameter("TriggerARN", triggerARN);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

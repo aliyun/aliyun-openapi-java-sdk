@@ -25,13 +25,11 @@ import com.aliyuncs.cdn.Endpoint;
 public class UpdateFCTriggerRequest extends RpcAcsRequest<UpdateFCTriggerResponse> {
 	   
 
-	private String notes;
-
 	private String triggerARN;
 
-	private String sourceARN;
+	private String notes;
 
-	private Long ownerId;
+	private String sourceARN;
 
 	private String roleARN;
 
@@ -45,17 +43,6 @@ public class UpdateFCTriggerRequest extends RpcAcsRequest<UpdateFCTriggerRespons
 		} catch (Exception e) {}
 	}
 
-	public String getNotes() {
-		return this.notes;
-	}
-
-	public void setNotes(String notes) {
-		this.notes = notes;
-		if(notes != null){
-			putBodyParameter("Notes", notes);
-		}
-	}
-
 	public String getTriggerARN() {
 		return this.triggerARN;
 	}
@@ -67,6 +54,17 @@ public class UpdateFCTriggerRequest extends RpcAcsRequest<UpdateFCTriggerRespons
 		}
 	}
 
+	public String getNotes() {
+		return this.notes;
+	}
+
+	public void setNotes(String notes) {
+		this.notes = notes;
+		if(notes != null){
+			putBodyParameter("Notes", notes);
+		}
+	}
+
 	public String getSourceARN() {
 		return this.sourceARN;
 	}
@@ -75,17 +73,6 @@ public class UpdateFCTriggerRequest extends RpcAcsRequest<UpdateFCTriggerRespons
 		this.sourceARN = sourceARN;
 		if(sourceARN != null){
 			putBodyParameter("SourceARN", sourceARN);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

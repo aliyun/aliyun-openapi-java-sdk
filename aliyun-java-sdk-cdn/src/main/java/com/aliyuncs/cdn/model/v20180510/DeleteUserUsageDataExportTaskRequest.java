@@ -26,8 +26,6 @@ public class DeleteUserUsageDataExportTaskRequest extends RpcAcsRequest<DeleteUs
 	   
 
 	private String taskId;
-
-	private Long ownerId;
 	public DeleteUserUsageDataExportTaskRequest() {
 		super("Cdn", "2018-05-10", "DeleteUserUsageDataExportTask");
 		setMethod(MethodType.POST);
@@ -45,17 +43,6 @@ public class DeleteUserUsageDataExportTaskRequest extends RpcAcsRequest<DeleteUs
 		this.taskId = taskId;
 		if(taskId != null){
 			putQueryParameter("TaskId", taskId);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

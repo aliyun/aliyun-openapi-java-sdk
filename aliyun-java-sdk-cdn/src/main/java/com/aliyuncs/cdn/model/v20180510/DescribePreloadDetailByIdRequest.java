@@ -22,14 +22,12 @@ import com.aliyuncs.cdn.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeCdnWafDomainRequest extends RpcAcsRequest<DescribeCdnWafDomainResponse> {
+public class DescribePreloadDetailByIdRequest extends RpcAcsRequest<DescribePreloadDetailByIdResponse> {
 	   
 
-	private String resourceGroupId;
-
-	private String domainName;
-	public DescribeCdnWafDomainRequest() {
-		super("Cdn", "2018-05-10", "DescribeCdnWafDomain");
+	private String taskId;
+	public DescribePreloadDetailByIdRequest() {
+		super("Cdn", "2018-05-10", "DescribePreloadDetailById");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +35,20 @@ public class DescribeCdnWafDomainRequest extends RpcAcsRequest<DescribeCdnWafDom
 		} catch (Exception e) {}
 	}
 
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
+	public String getTaskId() {
+		return this.taskId;
 	}
 
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+		if(taskId != null){
+			putQueryParameter("TaskId", taskId);
 		}
 	}
 
 	@Override
-	public Class<DescribeCdnWafDomainResponse> getResponseClass() {
-		return DescribeCdnWafDomainResponse.class;
+	public Class<DescribePreloadDetailByIdResponse> getResponseClass() {
+		return DescribePreloadDetailByIdResponse.class;
 	}
 
 }

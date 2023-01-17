@@ -25,19 +25,17 @@ import com.aliyuncs.cdn.Endpoint;
 public class DescribeDomainTopClientIpVisitRequest extends RpcAcsRequest<DescribeDomainTopClientIpVisitResponse> {
 	   
 
-	private String locationNameEn;
-
-	private String startTime;
+	private String domainName;
 
 	private String limit;
 
-	private String domainName;
-
 	private String endTime;
 
-	private Long ownerId;
+	private String locationNameEn;
 
 	private String sortBy;
+
+	private String startTime;
 	public DescribeDomainTopClientIpVisitRequest() {
 		super("Cdn", "2018-05-10", "DescribeDomainTopClientIpVisit");
 		setMethod(MethodType.POST);
@@ -47,25 +45,14 @@ public class DescribeDomainTopClientIpVisitRequest extends RpcAcsRequest<Describ
 		} catch (Exception e) {}
 	}
 
-	public String getLocationNameEn() {
-		return this.locationNameEn;
+	public String getDomainName() {
+		return this.domainName;
 	}
 
-	public void setLocationNameEn(String locationNameEn) {
-		this.locationNameEn = locationNameEn;
-		if(locationNameEn != null){
-			putQueryParameter("LocationNameEn", locationNameEn);
-		}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
 		}
 	}
 
@@ -80,17 +67,6 @@ public class DescribeDomainTopClientIpVisitRequest extends RpcAcsRequest<Describ
 		}
 	}
 
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
-		}
-	}
-
 	public String getEndTime() {
 		return this.endTime;
 	}
@@ -102,14 +78,14 @@ public class DescribeDomainTopClientIpVisitRequest extends RpcAcsRequest<Describ
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getLocationNameEn() {
+		return this.locationNameEn;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
+	public void setLocationNameEn(String locationNameEn) {
+		this.locationNameEn = locationNameEn;
+		if(locationNameEn != null){
+			putQueryParameter("LocationNameEn", locationNameEn);
 		}
 	}
 
@@ -121,6 +97,17 @@ public class DescribeDomainTopClientIpVisitRequest extends RpcAcsRequest<Describ
 		this.sortBy = sortBy;
 		if(sortBy != null){
 			putQueryParameter("SortBy", sortBy);
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
 		}
 	}
 

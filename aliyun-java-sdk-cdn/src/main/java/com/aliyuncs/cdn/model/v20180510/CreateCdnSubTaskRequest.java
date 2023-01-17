@@ -25,11 +25,9 @@ import com.aliyuncs.cdn.Endpoint;
 public class CreateCdnSubTaskRequest extends RpcAcsRequest<CreateCdnSubTaskResponse> {
 	   
 
-	private String domainName;
-
-	private Long ownerId;
-
 	private String reportIds;
+
+	private String domainName;
 	public CreateCdnSubTaskRequest() {
 		super("Cdn", "2018-05-10", "CreateCdnSubTask");
 		setMethod(MethodType.POST);
@@ -37,28 +35,6 @@ public class CreateCdnSubTaskRequest extends RpcAcsRequest<CreateCdnSubTaskRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putBodyParameter("DomainName", domainName);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
 	}
 
 	public String getReportIds() {
@@ -69,6 +45,17 @@ public class CreateCdnSubTaskRequest extends RpcAcsRequest<CreateCdnSubTaskRespo
 		this.reportIds = reportIds;
 		if(reportIds != null){
 			putBodyParameter("ReportIds", reportIds);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putBodyParameter("DomainName", domainName);
 		}
 	}
 

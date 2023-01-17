@@ -25,15 +25,13 @@ import com.aliyuncs.cdn.Endpoint;
 public class DescribeRealtimeDeliveryAccRequest extends RpcAcsRequest<DescribeRealtimeDeliveryAccResponse> {
 	   
 
-	private String project;
-
-	private String startTime;
-
 	private String endTime;
 
-	private Long ownerId;
+	private String project;
 
 	private String interval;
+
+	private String startTime;
 
 	private String logStore;
 	public DescribeRealtimeDeliveryAccRequest() {
@@ -43,28 +41,6 @@ public class DescribeRealtimeDeliveryAccRequest extends RpcAcsRequest<DescribeRe
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getProject() {
-		return this.project;
-	}
-
-	public void setProject(String project) {
-		this.project = project;
-		if(project != null){
-			putQueryParameter("Project", project);
-		}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
 	}
 
 	public String getEndTime() {
@@ -78,14 +54,14 @@ public class DescribeRealtimeDeliveryAccRequest extends RpcAcsRequest<DescribeRe
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getProject() {
+		return this.project;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
+	public void setProject(String project) {
+		this.project = project;
+		if(project != null){
+			putQueryParameter("Project", project);
 		}
 	}
 
@@ -97,6 +73,17 @@ public class DescribeRealtimeDeliveryAccRequest extends RpcAcsRequest<DescribeRe
 		this.interval = interval;
 		if(interval != null){
 			putQueryParameter("Interval", interval);
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
 		}
 	}
 

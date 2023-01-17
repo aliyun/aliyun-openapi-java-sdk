@@ -25,13 +25,11 @@ import com.aliyuncs.cdn.Endpoint;
 public class DescribeCdnHttpsDomainListRequest extends RpcAcsRequest<DescribeCdnHttpsDomainListResponse> {
 	   
 
-	private Integer pageNumber;
-
 	private Integer pageSize;
 
 	private String keyword;
 
-	private Long ownerId;
+	private Integer pageNumber;
 	public DescribeCdnHttpsDomainListRequest() {
 		super("Cdn", "2018-05-10", "DescribeCdnHttpsDomainList");
 		setMethod(MethodType.POST);
@@ -39,17 +37,6 @@ public class DescribeCdnHttpsDomainListRequest extends RpcAcsRequest<DescribeCdn
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
 	}
 
 	public Integer getPageSize() {
@@ -74,14 +61,14 @@ public class DescribeCdnHttpsDomainListRequest extends RpcAcsRequest<DescribeCdn
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

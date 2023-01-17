@@ -25,11 +25,9 @@ import com.aliyuncs.cdn.Endpoint;
 public class DescribeUserUsageDataExportTaskRequest extends RpcAcsRequest<DescribeUserUsageDataExportTaskResponse> {
 	   
 
-	private String pageNumber;
-
 	private String pageSize;
 
-	private Long ownerId;
+	private String pageNumber;
 	public DescribeUserUsageDataExportTaskRequest() {
 		super("Cdn", "2018-05-10", "DescribeUserUsageDataExportTask");
 		setMethod(MethodType.POST);
@@ -37,17 +35,6 @@ public class DescribeUserUsageDataExportTaskRequest extends RpcAcsRequest<Descri
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(String pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber);
-		}
 	}
 
 	public String getPageSize() {
@@ -61,14 +48,14 @@ public class DescribeUserUsageDataExportTaskRequest extends RpcAcsRequest<Descri
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
+	public void setPageNumber(String pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber);
 		}
 	}
 

@@ -25,11 +25,9 @@ import com.aliyuncs.cdn.Endpoint;
 public class ModifyCdnDomainSchdmByPropertyRequest extends RpcAcsRequest<ModifyCdnDomainSchdmByPropertyResponse> {
 	   
 
-	private String property;
-
 	private String domainName;
 
-	private Long ownerId;
+	private String property;
 	public ModifyCdnDomainSchdmByPropertyRequest() {
 		super("Cdn", "2018-05-10", "ModifyCdnDomainSchdmByProperty");
 		setMethod(MethodType.POST);
@@ -37,17 +35,6 @@ public class ModifyCdnDomainSchdmByPropertyRequest extends RpcAcsRequest<ModifyC
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getProperty() {
-		return this.property;
-	}
-
-	public void setProperty(String property) {
-		this.property = property;
-		if(property != null){
-			putQueryParameter("Property", property);
-		}
 	}
 
 	public String getDomainName() {
@@ -61,14 +48,14 @@ public class ModifyCdnDomainSchdmByPropertyRequest extends RpcAcsRequest<ModifyC
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getProperty() {
+		return this.property;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
+	public void setProperty(String property) {
+		this.property = property;
+		if(property != null){
+			putQueryParameter("Property", property);
 		}
 	}
 

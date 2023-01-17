@@ -27,8 +27,6 @@ public class ListFCTriggerRequest extends RpcAcsRequest<ListFCTriggerResponse> {
 
 	private String eventMetaVersion;
 
-	private Long ownerId;
-
 	private String eventMetaName;
 	public ListFCTriggerRequest() {
 		super("Cdn", "2018-05-10", "ListFCTrigger");
@@ -47,17 +45,6 @@ public class ListFCTriggerRequest extends RpcAcsRequest<ListFCTriggerResponse> {
 		this.eventMetaVersion = eventMetaVersion;
 		if(eventMetaVersion != null){
 			putQueryParameter("EventMetaVersion", eventMetaVersion);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

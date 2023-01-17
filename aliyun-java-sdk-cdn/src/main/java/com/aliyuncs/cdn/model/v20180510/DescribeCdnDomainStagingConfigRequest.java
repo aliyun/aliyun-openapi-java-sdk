@@ -28,8 +28,6 @@ public class DescribeCdnDomainStagingConfigRequest extends RpcAcsRequest<Describ
 	private String functionNames;
 
 	private String domainName;
-
-	private Long ownerId;
 	public DescribeCdnDomainStagingConfigRequest() {
 		super("Cdn", "2018-05-10", "DescribeCdnDomainStagingConfig");
 		setMethod(MethodType.POST);
@@ -58,17 +56,6 @@ public class DescribeCdnDomainStagingConfigRequest extends RpcAcsRequest<Describ
 		this.domainName = domainName;
 		if(domainName != null){
 			putQueryParameter("DomainName", domainName);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

@@ -25,17 +25,15 @@ import com.aliyuncs.cdn.Endpoint;
 public class AddFCTriggerRequest extends RpcAcsRequest<AddFCTriggerResponse> {
 	   
 
-	private String notes;
-
-	private String eventMetaVersion;
-
 	private String triggerARN;
+
+	private String notes;
 
 	private String sourceARN;
 
-	private Long ownerId;
-
 	private String roleARN;
+
+	private String eventMetaVersion;
 
 	private String eventMetaName;
 
@@ -49,28 +47,6 @@ public class AddFCTriggerRequest extends RpcAcsRequest<AddFCTriggerResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getNotes() {
-		return this.notes;
-	}
-
-	public void setNotes(String notes) {
-		this.notes = notes;
-		if(notes != null){
-			putBodyParameter("Notes", notes);
-		}
-	}
-
-	public String getEventMetaVersion() {
-		return this.eventMetaVersion;
-	}
-
-	public void setEventMetaVersion(String eventMetaVersion) {
-		this.eventMetaVersion = eventMetaVersion;
-		if(eventMetaVersion != null){
-			putBodyParameter("EventMetaVersion", eventMetaVersion);
-		}
-	}
-
 	public String getTriggerARN() {
 		return this.triggerARN;
 	}
@@ -79,6 +55,17 @@ public class AddFCTriggerRequest extends RpcAcsRequest<AddFCTriggerResponse> {
 		this.triggerARN = triggerARN;
 		if(triggerARN != null){
 			putQueryParameter("TriggerARN", triggerARN);
+		}
+	}
+
+	public String getNotes() {
+		return this.notes;
+	}
+
+	public void setNotes(String notes) {
+		this.notes = notes;
+		if(notes != null){
+			putBodyParameter("Notes", notes);
 		}
 	}
 
@@ -93,17 +80,6 @@ public class AddFCTriggerRequest extends RpcAcsRequest<AddFCTriggerResponse> {
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public String getRoleARN() {
 		return this.roleARN;
 	}
@@ -112,6 +88,17 @@ public class AddFCTriggerRequest extends RpcAcsRequest<AddFCTriggerResponse> {
 		this.roleARN = roleARN;
 		if(roleARN != null){
 			putBodyParameter("RoleARN", roleARN);
+		}
+	}
+
+	public String getEventMetaVersion() {
+		return this.eventMetaVersion;
+	}
+
+	public void setEventMetaVersion(String eventMetaVersion) {
+		this.eventMetaVersion = eventMetaVersion;
+		if(eventMetaVersion != null){
+			putBodyParameter("EventMetaVersion", eventMetaVersion);
 		}
 	}
 

@@ -26,8 +26,6 @@ public class DescribeCertificateInfoByIDRequest extends RpcAcsRequest<DescribeCe
 	   
 
 	private String certId;
-
-	private Long ownerId;
 	public DescribeCertificateInfoByIDRequest() {
 		super("Cdn", "2018-05-10", "DescribeCertificateInfoByID");
 		setMethod(MethodType.GET);
@@ -45,17 +43,6 @@ public class DescribeCertificateInfoByIDRequest extends RpcAcsRequest<DescribeCe
 		this.certId = certId;
 		if(certId != null){
 			putQueryParameter("CertId", certId);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

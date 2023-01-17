@@ -26,8 +26,6 @@ public class DescribeFCTriggerRequest extends RpcAcsRequest<DescribeFCTriggerRes
 	   
 
 	private String triggerARN;
-
-	private Long ownerId;
 	public DescribeFCTriggerRequest() {
 		super("Cdn", "2018-05-10", "DescribeFCTrigger");
 		setMethod(MethodType.GET);
@@ -45,17 +43,6 @@ public class DescribeFCTriggerRequest extends RpcAcsRequest<DescribeFCTriggerRes
 		this.triggerARN = triggerARN;
 		if(triggerARN != null){
 			putQueryParameter("TriggerARN", triggerARN);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
