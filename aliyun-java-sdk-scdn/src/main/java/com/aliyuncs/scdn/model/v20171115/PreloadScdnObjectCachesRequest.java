@@ -33,6 +33,8 @@ public class PreloadScdnObjectCachesRequest extends RpcAcsRequest<PreloadScdnObj
 
 	private String area;
 
+	private String withHeader;
+
 	private Long ownerId;
 	public PreloadScdnObjectCachesRequest() {
 		super("scdn", "2017-11-15", "PreloadScdnObjectCaches");
@@ -84,6 +86,17 @@ public class PreloadScdnObjectCachesRequest extends RpcAcsRequest<PreloadScdnObj
 		this.area = area;
 		if(area != null){
 			putQueryParameter("Area", area);
+		}
+	}
+
+	public String getWithHeader() {
+		return this.withHeader;
+	}
+
+	public void setWithHeader(String withHeader) {
+		this.withHeader = withHeader;
+		if(withHeader != null){
+			putQueryParameter("WithHeader", withHeader);
 		}
 	}
 

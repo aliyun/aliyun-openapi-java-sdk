@@ -1,3 +1,6 @@
+2023-01-17 Version: 2.2.9
+- Update PreloadScdnObjectCaches.
+
 2022-08-31 Version: 2.2.8
 - Support STS.
 
