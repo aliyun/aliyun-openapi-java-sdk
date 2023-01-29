@@ -25,7 +25,7 @@ import com.aliyuncs.dbfs.Endpoint;
 public class GetServiceLinkedRoleRequest extends RpcAcsRequest<GetServiceLinkedRoleResponse> {
 	   
 	public GetServiceLinkedRoleRequest() {
-		super("DBFS", "2020-04-18", "GetServiceLinkedRole", "dbfs");
+		super("DBFS", "2020-04-18", "GetServiceLinkedRole");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

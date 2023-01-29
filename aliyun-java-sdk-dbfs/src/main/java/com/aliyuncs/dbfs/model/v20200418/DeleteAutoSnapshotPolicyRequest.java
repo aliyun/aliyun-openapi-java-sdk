@@ -27,7 +27,7 @@ public class DeleteAutoSnapshotPolicyRequest extends RpcAcsRequest<DeleteAutoSna
 
 	private String policyId;
 	public DeleteAutoSnapshotPolicyRequest() {
-		super("DBFS", "2020-04-18", "DeleteAutoSnapshotPolicy", "dbfs");
+		super("DBFS", "2020-04-18", "DeleteAutoSnapshotPolicy");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

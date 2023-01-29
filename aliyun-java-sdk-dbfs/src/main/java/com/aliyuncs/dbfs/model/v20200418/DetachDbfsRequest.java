@@ -29,7 +29,7 @@ public class DetachDbfsRequest extends RpcAcsRequest<DetachDbfsResponse> {
 
 	private String fsId;
 	public DetachDbfsRequest() {
-		super("DBFS", "2020-04-18", "DetachDbfs", "dbfs");
+		super("DBFS", "2020-04-18", "DetachDbfs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

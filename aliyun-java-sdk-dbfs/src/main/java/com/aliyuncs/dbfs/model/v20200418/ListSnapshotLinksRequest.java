@@ -22,7 +22,7 @@ import com.aliyuncs.dbfs.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListAutoSnapshotPolicyAppliedDbfsRequest extends RpcAcsRequest<ListAutoSnapshotPolicyAppliedDbfsResponse> {
+public class ListSnapshotLinksRequest extends RpcAcsRequest<ListSnapshotLinksResponse> {
 	   
 
 	private String filterValue;
@@ -31,11 +31,9 @@ public class ListAutoSnapshotPolicyAppliedDbfsRequest extends RpcAcsRequest<List
 
 	private String filterKey;
 
-	private String policyId;
-
 	private Integer pageSize;
-	public ListAutoSnapshotPolicyAppliedDbfsRequest() {
-		super("DBFS", "2020-04-18", "ListAutoSnapshotPolicyAppliedDbfs");
+	public ListSnapshotLinksRequest() {
+		super("DBFS", "2020-04-18", "ListSnapshotLinks");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -76,17 +74,6 @@ public class ListAutoSnapshotPolicyAppliedDbfsRequest extends RpcAcsRequest<List
 		}
 	}
 
-	public String getPolicyId() {
-		return this.policyId;
-	}
-
-	public void setPolicyId(String policyId) {
-		this.policyId = policyId;
-		if(policyId != null){
-			putQueryParameter("PolicyId", policyId);
-		}
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -99,8 +86,8 @@ public class ListAutoSnapshotPolicyAppliedDbfsRequest extends RpcAcsRequest<List
 	}
 
 	@Override
-	public Class<ListAutoSnapshotPolicyAppliedDbfsResponse> getResponseClass() {
-		return ListAutoSnapshotPolicyAppliedDbfsResponse.class;
+	public Class<ListSnapshotLinksResponse> getResponseClass() {
+		return ListSnapshotLinksResponse.class;
 	}
 
 }

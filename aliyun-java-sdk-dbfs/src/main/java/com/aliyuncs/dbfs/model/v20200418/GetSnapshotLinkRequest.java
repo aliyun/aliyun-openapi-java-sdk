@@ -22,33 +22,33 @@ import com.aliyuncs.dbfs.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetDbfsRequest extends RpcAcsRequest<GetDbfsResponse> {
+public class GetSnapshotLinkRequest extends RpcAcsRequest<GetSnapshotLinkResponse> {
 	   
 
-	private String fsId;
-	public GetDbfsRequest() {
-		super("DBFS", "2020-04-18", "GetDbfs");
-		setMethod(MethodType.POST);
+	private String linkId;
+	public GetSnapshotLinkRequest() {
+		super("DBFS", "2020-04-18", "GetSnapshotLink");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getFsId() {
-		return this.fsId;
+	public String getLinkId() {
+		return this.linkId;
 	}
 
-	public void setFsId(String fsId) {
-		this.fsId = fsId;
-		if(fsId != null){
-			putQueryParameter("FsId", fsId);
+	public void setLinkId(String linkId) {
+		this.linkId = linkId;
+		if(linkId != null){
+			putQueryParameter("LinkId", linkId);
 		}
 	}
 
 	@Override
-	public Class<GetDbfsResponse> getResponseClass() {
-		return GetDbfsResponse.class;
+	public Class<GetSnapshotLinkResponse> getResponseClass() {
+		return GetSnapshotLinkResponse.class;
 	}
 
 }

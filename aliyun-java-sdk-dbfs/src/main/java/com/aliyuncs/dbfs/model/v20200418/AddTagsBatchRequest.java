@@ -31,7 +31,7 @@ public class AddTagsBatchRequest extends RpcAcsRequest<AddTagsBatchResponse> {
 
 	private String tags;
 	public AddTagsBatchRequest() {
-		super("DBFS", "2020-04-18", "AddTagsBatch", "dbfs");
+		super("DBFS", "2020-04-18", "AddTagsBatch");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

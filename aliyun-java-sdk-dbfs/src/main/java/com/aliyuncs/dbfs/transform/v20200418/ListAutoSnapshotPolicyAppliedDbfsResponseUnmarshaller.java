@@ -39,8 +39,8 @@ public class ListAutoSnapshotPolicyAppliedDbfsResponseUnmarshaller {
 			dbfsListItem.setStatus(_ctx.stringValue("ListAutoSnapshotPolicyAppliedDbfsResponse.DbfsList["+ i +"].Status"));
 			dbfsListItem.setSizeG(_ctx.longValue("ListAutoSnapshotPolicyAppliedDbfsResponse.DbfsList["+ i +"].SizeG"));
 			dbfsListItem.setRegionId(_ctx.stringValue("ListAutoSnapshotPolicyAppliedDbfsResponse.DbfsList["+ i +"].RegionId"));
-			dbfsListItem.setSnapshotCount(_ctx.stringValue("ListAutoSnapshotPolicyAppliedDbfsResponse.DbfsList["+ i +"].SnapshotCount"));
-			dbfsListItem.setTotalSize(_ctx.stringValue("ListAutoSnapshotPolicyAppliedDbfsResponse.DbfsList["+ i +"].TotalSize"));
+			dbfsListItem.setSnapshotCount(_ctx.integerValue("ListAutoSnapshotPolicyAppliedDbfsResponse.DbfsList["+ i +"].SnapshotCount"));
+			dbfsListItem.setTotalSize(_ctx.longValue("ListAutoSnapshotPolicyAppliedDbfsResponse.DbfsList["+ i +"].TotalSize"));
 
 			dbfsList.add(dbfsListItem);
 		}

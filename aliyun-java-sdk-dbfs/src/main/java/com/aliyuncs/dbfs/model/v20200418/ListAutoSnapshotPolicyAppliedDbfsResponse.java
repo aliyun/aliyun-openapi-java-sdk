@@ -87,9 +87,9 @@ public class ListAutoSnapshotPolicyAppliedDbfsResponse extends AcsResponse {
 
 		private String regionId;
 
-		private String snapshotCount;
+		private Integer snapshotCount;
 
-		private String totalSize;
+		private Long totalSize;
 
 		public String getFsId() {
 			return this.fsId;
@@ -131,19 +131,19 @@ public class ListAutoSnapshotPolicyAppliedDbfsResponse extends AcsResponse {
 			this.regionId = regionId;
 		}
 
-		public String getSnapshotCount() {
+		public Integer getSnapshotCount() {
 			return this.snapshotCount;
 		}
 
-		public void setSnapshotCount(String snapshotCount) {
+		public void setSnapshotCount(Integer snapshotCount) {
 			this.snapshotCount = snapshotCount;
 		}
 
-		public String getTotalSize() {
+		public Long getTotalSize() {
 			return this.totalSize;
 		}
 
-		public void setTotalSize(String totalSize) {
+		public void setTotalSize(Long totalSize) {
 			this.totalSize = totalSize;
 		}
 	}
