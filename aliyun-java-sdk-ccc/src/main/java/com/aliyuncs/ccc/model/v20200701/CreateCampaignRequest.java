@@ -31,6 +31,8 @@ public class CreateCampaignRequest extends RpcAcsRequest<CreateCampaignResponse>
 
 	private Boolean simulation;
 
+	private Boolean executingUntilTimeout;
+
 	private String endTime;
 
 	private String startTime;
@@ -93,6 +95,17 @@ public class CreateCampaignRequest extends RpcAcsRequest<CreateCampaignResponse>
 		this.simulation = simulation;
 		if(simulation != null){
 			putQueryParameter("Simulation", simulation.toString());
+		}
+	}
+
+	public Boolean getExecutingUntilTimeout() {
+		return this.executingUntilTimeout;
+	}
+
+	public void setExecutingUntilTimeout(Boolean executingUntilTimeout) {
+		this.executingUntilTimeout = executingUntilTimeout;
+		if(executingUntilTimeout != null){
+			putQueryParameter("ExecutingUntilTimeout", executingUntilTimeout.toString());
 		}
 	}
 
