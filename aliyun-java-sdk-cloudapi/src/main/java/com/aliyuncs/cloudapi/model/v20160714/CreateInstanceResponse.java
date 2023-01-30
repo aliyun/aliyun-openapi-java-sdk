@@ -24,9 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateInstanceResponse extends AcsResponse {
 
+	private Boolean tagStatus;
+
 	private String instanceId;
 
 	private String requestId;
+
+	public Boolean getTagStatus() {
+		return this.tagStatus;
+	}
+
+	public void setTagStatus(Boolean tagStatus) {
+		this.tagStatus = tagStatus;
+	}
 
 	public String getInstanceId() {
 		return this.instanceId;

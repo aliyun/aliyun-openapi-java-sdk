@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.cloudapi.model.v20160714.DescribeApisResponse;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeApisResponse.ApiSummary;
+import com.aliyuncs.cloudapi.model.v20160714.DescribeApisResponse.ApiSummary.DeployedInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -45,6 +46,17 @@ public class DescribeApisResponseUnmarshaller {
 			apiSummary.setRegionId(_ctx.stringValue("DescribeApisResponse.ApiSummarys["+ i +"].RegionId"));
 			apiSummary.setApiPath(_ctx.stringValue("DescribeApisResponse.ApiSummarys["+ i +"].ApiPath"));
 			apiSummary.setApiMethod(_ctx.stringValue("DescribeApisResponse.ApiSummarys["+ i +"].ApiMethod"));
+
+			List<DeployedInfo> deployedInfos = new ArrayList<DeployedInfo>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeApisResponse.ApiSummarys["+ i +"].DeployedInfos.Length"); j++) {
+				DeployedInfo deployedInfo = new DeployedInfo();
+				deployedInfo.setStageName(_ctx.stringValue("DescribeApisResponse.ApiSummarys["+ i +"].DeployedInfos["+ j +"].StageName"));
+				deployedInfo.setEffectiveVersion(_ctx.stringValue("DescribeApisResponse.ApiSummarys["+ i +"].DeployedInfos["+ j +"].EffectiveVersion"));
+				deployedInfo.setDeployedStatus(_ctx.stringValue("DescribeApisResponse.ApiSummarys["+ i +"].DeployedInfos["+ j +"].DeployedStatus"));
+
+				deployedInfos.add(deployedInfo);
+			}
+			apiSummary.setDeployedInfos(deployedInfos);
 
 			apiSummarys.add(apiSummary);
 		}

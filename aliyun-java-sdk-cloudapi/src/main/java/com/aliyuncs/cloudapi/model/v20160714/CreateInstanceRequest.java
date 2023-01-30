@@ -15,6 +15,7 @@
 package com.aliyuncs.cloudapi.model.v20160714;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cloudapi.Endpoint;
 
@@ -25,15 +26,17 @@ import com.aliyuncs.cloudapi.Endpoint;
 public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse> {
 	   
 
-	private Boolean autoPay;
-
 	private String instanceSpec;
 
 	private String httpsPolicy;
 
-	private String token;
-
 	private Integer duration;
+
+	private List<Tag> tags;
+
+	private Boolean autoPay;
+
+	private String token;
 
 	private String instanceName;
 
@@ -49,17 +52,6 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Boolean getAutoPay() {
-		return this.autoPay;
-	}
-
-	public void setAutoPay(Boolean autoPay) {
-		this.autoPay = autoPay;
-		if(autoPay != null){
-			putQueryParameter("AutoPay", autoPay.toString());
-		}
 	}
 
 	public String getInstanceSpec() {
@@ -84,17 +76,6 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		}
 	}
 
-	public String getToken() {
-		return this.token;
-	}
-
-	public void setToken(String token) {
-		this.token = token;
-		if(token != null){
-			putQueryParameter("Token", token);
-		}
-	}
-
 	public Integer getDuration() {
 		return this.duration;
 	}
@@ -103,6 +84,42 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		this.duration = duration;
 		if(duration != null){
 			putQueryParameter("Duration", duration.toString());
+		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
+	public Boolean getAutoPay() {
+		return this.autoPay;
+	}
+
+	public void setAutoPay(Boolean autoPay) {
+		this.autoPay = autoPay;
+		if(autoPay != null){
+			putQueryParameter("AutoPay", autoPay.toString());
+		}
+	}
+
+	public String getToken() {
+		return this.token;
+	}
+
+	public void setToken(String token) {
+		this.token = token;
+		if(token != null){
+			putQueryParameter("Token", token);
 		}
 	}
 
@@ -147,6 +164,29 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		this.pricingCycle = pricingCycle;
 		if(pricingCycle != null){
 			putQueryParameter("PricingCycle", pricingCycle);
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

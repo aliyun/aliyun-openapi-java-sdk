@@ -26,6 +26,8 @@ import com.aliyuncs.cloudapi.Endpoint;
 public class DescribeApisRequest extends RpcAcsRequest<DescribeApisResponse> {
 	   
 
+	private String stageName;
+
 	private Integer pageNumber;
 
 	private String securityToken;
@@ -58,6 +60,17 @@ public class DescribeApisRequest extends RpcAcsRequest<DescribeApisResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getStageName() {
+		return this.stageName;
+	}
+
+	public void setStageName(String stageName) {
+		this.stageName = stageName;
+		if(stageName != null){
+			putQueryParameter("StageName", stageName);
+		}
 	}
 
 	public Integer getPageNumber() {

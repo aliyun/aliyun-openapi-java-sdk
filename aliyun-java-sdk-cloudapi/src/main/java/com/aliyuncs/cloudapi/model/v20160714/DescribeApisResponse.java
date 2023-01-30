@@ -99,6 +99,8 @@ public class DescribeApisResponse extends AcsResponse {
 
 		private String apiMethod;
 
+		private List<DeployedInfo> deployedInfos;
+
 		public String getVisibility() {
 			return this.visibility;
 		}
@@ -185,6 +187,47 @@ public class DescribeApisResponse extends AcsResponse {
 
 		public void setApiMethod(String apiMethod) {
 			this.apiMethod = apiMethod;
+		}
+
+		public List<DeployedInfo> getDeployedInfos() {
+			return this.deployedInfos;
+		}
+
+		public void setDeployedInfos(List<DeployedInfo> deployedInfos) {
+			this.deployedInfos = deployedInfos;
+		}
+
+		public static class DeployedInfo {
+
+			private String stageName;
+
+			private String effectiveVersion;
+
+			private String deployedStatus;
+
+			public String getStageName() {
+				return this.stageName;
+			}
+
+			public void setStageName(String stageName) {
+				this.stageName = stageName;
+			}
+
+			public String getEffectiveVersion() {
+				return this.effectiveVersion;
+			}
+
+			public void setEffectiveVersion(String effectiveVersion) {
+				this.effectiveVersion = effectiveVersion;
+			}
+
+			public String getDeployedStatus() {
+				return this.deployedStatus;
+			}
+
+			public void setDeployedStatus(String deployedStatus) {
+				this.deployedStatus = deployedStatus;
+			}
 		}
 	}
 
