@@ -46,7 +46,7 @@ public class CreatePrefixListRequest extends RpcAcsRequest<CreatePrefixListRespo
 
 	private List<Entry> entrys;
 	public CreatePrefixListRequest() {
-		super("Ecs", "2014-05-26", "CreatePrefixList");
+		super("Ecs", "2014-05-26", "CreatePrefixList", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

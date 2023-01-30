@@ -42,7 +42,7 @@ public class ListPluginStatusRequest extends RpcAcsRequest<ListPluginStatusRespo
 
 	private String name;
 	public ListPluginStatusRequest() {
-		super("Ecs", "2014-05-26", "ListPluginStatus");
+		super("Ecs", "2014-05-26", "ListPluginStatus", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

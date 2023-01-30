@@ -69,7 +69,7 @@ public class ModifySecurityGroupEgressRuleRequest extends RpcAcsRequest<ModifySe
 
 	private String securityGroupRuleId;
 	public ModifySecurityGroupEgressRuleRequest() {
-		super("Ecs", "2014-05-26", "ModifySecurityGroupEgressRule");
+		super("Ecs", "2014-05-26", "ModifySecurityGroupEgressRule", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

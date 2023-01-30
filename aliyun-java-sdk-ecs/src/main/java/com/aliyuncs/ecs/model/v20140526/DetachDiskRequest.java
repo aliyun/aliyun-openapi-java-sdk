@@ -39,7 +39,7 @@ public class DetachDiskRequest extends RpcAcsRequest<DetachDiskResponse> {
 
 	private String instanceId;
 	public DetachDiskRequest() {
-		super("Ecs", "2014-05-26", "DetachDisk");
+		super("Ecs", "2014-05-26", "DetachDisk", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -39,7 +39,7 @@ public class ModifyElasticityAssuranceRequest extends RpcAcsRequest<ModifyElasti
 
 	private Long ownerId;
 	public ModifyElasticityAssuranceRequest() {
-		super("Ecs", "2014-05-26", "ModifyElasticityAssurance");
+		super("Ecs", "2014-05-26", "ModifyElasticityAssurance", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

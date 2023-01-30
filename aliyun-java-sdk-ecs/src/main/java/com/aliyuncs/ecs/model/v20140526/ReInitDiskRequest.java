@@ -43,7 +43,7 @@ public class ReInitDiskRequest extends RpcAcsRequest<ReInitDiskResponse> {
 
 	private Long ownerId;
 	public ReInitDiskRequest() {
-		super("Ecs", "2014-05-26", "ReInitDisk");
+		super("Ecs", "2014-05-26", "ReInitDisk", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

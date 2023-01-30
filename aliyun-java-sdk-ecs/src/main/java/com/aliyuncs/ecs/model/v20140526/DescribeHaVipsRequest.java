@@ -40,7 +40,7 @@ public class DescribeHaVipsRequest extends RpcAcsRequest<DescribeHaVipsResponse>
 
 	private List<Filter> filters;
 	public DescribeHaVipsRequest() {
-		super("Ecs", "2014-05-26", "DescribeHaVips");
+		super("Ecs", "2014-05-26", "DescribeHaVips", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,7 +35,7 @@ public class DeleteImagePipelineRequest extends RpcAcsRequest<DeleteImagePipelin
 
 	private Long ownerId;
 	public DeleteImagePipelineRequest() {
-		super("Ecs", "2014-05-26", "DeleteImagePipeline");
+		super("Ecs", "2014-05-26", "DeleteImagePipeline", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

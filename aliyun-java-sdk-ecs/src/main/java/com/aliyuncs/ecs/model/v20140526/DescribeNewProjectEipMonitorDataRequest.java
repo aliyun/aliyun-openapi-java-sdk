@@ -41,7 +41,7 @@ public class DescribeNewProjectEipMonitorDataRequest extends RpcAcsRequest<Descr
 
 	private Long ownerId;
 	public DescribeNewProjectEipMonitorDataRequest() {
-		super("Ecs", "2014-05-26", "DescribeNewProjectEipMonitorData");
+		super("Ecs", "2014-05-26", "DescribeNewProjectEipMonitorData", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -50,7 +50,7 @@ public class ReportInstancesStatusRequest extends RpcAcsRequest<ReportInstancesS
 
 	private List<String> devices;
 	public ReportInstancesStatusRequest() {
-		super("Ecs", "2014-05-26", "ReportInstancesStatus");
+		super("Ecs", "2014-05-26", "ReportInstancesStatus", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

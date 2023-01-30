@@ -42,7 +42,7 @@ public class DescribeInstanceModificationPriceRequest extends RpcAcsRequest<Desc
 
 	private String instanceId;
 	public DescribeInstanceModificationPriceRequest() {
-		super("Ecs", "2014-05-26", "DescribeInstanceModificationPrice");
+		super("Ecs", "2014-05-26", "DescribeInstanceModificationPrice", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

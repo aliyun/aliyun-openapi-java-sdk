@@ -39,7 +39,7 @@ public class ModifyDeploymentSetAttributeRequest extends RpcAcsRequest<ModifyDep
 
 	private Long ownerId;
 	public ModifyDeploymentSetAttributeRequest() {
-		super("Ecs", "2014-05-26", "ModifyDeploymentSetAttribute");
+		super("Ecs", "2014-05-26", "ModifyDeploymentSetAttribute", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

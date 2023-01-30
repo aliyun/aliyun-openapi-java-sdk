@@ -1,3 +1,6 @@
+2023-01-30 Version: 4.24.52
+- Support system tag.
+
 2023-01-15 Version: 4.24.51
 - Support autoProvisioningGroup instance pattern.
 
