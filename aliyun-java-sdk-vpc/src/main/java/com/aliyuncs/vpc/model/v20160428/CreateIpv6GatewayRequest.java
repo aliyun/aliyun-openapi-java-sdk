@@ -31,8 +31,6 @@ public class CreateIpv6GatewayRequest extends RpcAcsRequest<CreateIpv6GatewayRes
 
 	private String description;
 
-	private String spec;
-
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -81,17 +79,6 @@ public class CreateIpv6GatewayRequest extends RpcAcsRequest<CreateIpv6GatewayRes
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
-		}
-	}
-
-	public String getSpec() {
-		return this.spec;
-	}
-
-	public void setSpec(String spec) {
-		this.spec = spec;
-		if(spec != null){
-			putQueryParameter("Spec", spec);
 		}
 	}
 
