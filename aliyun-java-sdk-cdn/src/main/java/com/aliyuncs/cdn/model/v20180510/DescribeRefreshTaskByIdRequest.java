@@ -26,8 +26,6 @@ public class DescribeRefreshTaskByIdRequest extends RpcAcsRequest<DescribeRefres
 	   
 
 	private String taskId;
-
-	private Long ownerId;
 	public DescribeRefreshTaskByIdRequest() {
 		super("Cdn", "2018-05-10", "DescribeRefreshTaskById");
 		setMethod(MethodType.POST);
@@ -45,17 +43,6 @@ public class DescribeRefreshTaskByIdRequest extends RpcAcsRequest<DescribeRefres
 		this.taskId = taskId;
 		if(taskId != null){
 			putQueryParameter("TaskId", taskId);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
