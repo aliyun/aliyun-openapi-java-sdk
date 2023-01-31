@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateAsyncPredictResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Long asyncPredictId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public Long getAsyncPredictId() {
 		return this.asyncPredictId;
@@ -42,6 +34,14 @@ public class CreateAsyncPredictResponse extends AcsResponse {
 
 	public void setAsyncPredictId(Long asyncPredictId) {
 		this.asyncPredictId = asyncPredictId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

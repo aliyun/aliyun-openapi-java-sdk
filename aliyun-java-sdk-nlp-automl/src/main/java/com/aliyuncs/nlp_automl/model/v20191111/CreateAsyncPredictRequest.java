@@ -37,13 +37,17 @@ public class CreateAsyncPredictRequest extends RpcAcsRequest<CreateAsyncPredictR
 
 	private String fileContent;
 
+	private String serviceName;
+
 	private Integer modelId;
+
+	private String serviceVersion;
 
 	private String fileUrl;
 
 	private String modelVersion;
 	public CreateAsyncPredictRequest() {
-		super("nlp-automl", "2019-11-11", "CreateAsyncPredict", "nlpautoml");
+		super("nlp-automl", "2019-11-11", "CreateAsyncPredict");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -117,6 +121,17 @@ public class CreateAsyncPredictRequest extends RpcAcsRequest<CreateAsyncPredictR
 		}
 	}
 
+	public String getServiceName() {
+		return this.serviceName;
+	}
+
+	public void setServiceName(String serviceName) {
+		this.serviceName = serviceName;
+		if(serviceName != null){
+			putBodyParameter("ServiceName", serviceName);
+		}
+	}
+
 	public Integer getModelId() {
 		return this.modelId;
 	}
@@ -125,6 +140,17 @@ public class CreateAsyncPredictRequest extends RpcAcsRequest<CreateAsyncPredictR
 		this.modelId = modelId;
 		if(modelId != null){
 			putBodyParameter("ModelId", modelId.toString());
+		}
+	}
+
+	public String getServiceVersion() {
+		return this.serviceVersion;
+	}
+
+	public void setServiceVersion(String serviceVersion) {
+		this.serviceVersion = serviceVersion;
+		if(serviceVersion != null){
+			putBodyParameter("ServiceVersion", serviceVersion);
 		}
 	}
 
