@@ -1,3 +1,6 @@
+2023-02-01 Version: 1.0.14
+- SubmitTextTo2DAvatarVideoTask add new params code.
+
 2023-01-05 Version: 1.0.13
 - add QueryTimedResetOperateStatus api.
 - add CloseTimedResetOperate api.

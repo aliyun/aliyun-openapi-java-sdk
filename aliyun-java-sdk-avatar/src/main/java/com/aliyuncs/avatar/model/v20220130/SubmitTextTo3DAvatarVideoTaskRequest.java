@@ -185,11 +185,22 @@ public class SubmitTextTo3DAvatarVideoTaskRequest extends RpcAcsRequest<SubmitTe
 
 	public static class AvatarInfo {
 
+		@SerializedName("Code")
+		private String code;
+
 		@SerializedName("Locate")
 		private Integer locate;
 
 		@SerializedName("Angle")
 		private Integer angle;
+
+		public String getCode() {
+			return this.code;
+		}
+
+		public void setCode(String code) {
+			this.code = code;
+		}
 
 		public Integer getLocate() {
 			return this.locate;
