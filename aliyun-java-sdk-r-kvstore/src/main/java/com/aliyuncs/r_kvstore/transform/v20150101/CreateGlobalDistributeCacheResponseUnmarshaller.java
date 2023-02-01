@@ -23,7 +23,6 @@ public class CreateGlobalDistributeCacheResponseUnmarshaller {
 	public static CreateGlobalDistributeCacheResponse unmarshall(CreateGlobalDistributeCacheResponse createGlobalDistributeCacheResponse, UnmarshallerContext _ctx) {
 		
 		createGlobalDistributeCacheResponse.setRequestId(_ctx.stringValue("CreateGlobalDistributeCacheResponse.RequestId"));
-		createGlobalDistributeCacheResponse.setGlobalInstanceId(_ctx.stringValue("CreateGlobalDistributeCacheResponse.GlobalInstanceId"));
 	 
 	 	return createGlobalDistributeCacheResponse;
 	}

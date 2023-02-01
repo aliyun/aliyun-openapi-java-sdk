@@ -103,6 +103,8 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		private String backupMethod;
 
+		private Integer backupJobID;
+
 		public String getBackupStatus() {
 			return this.backupStatus;
 		}
@@ -205,6 +207,14 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		public void setBackupMethod(String backupMethod) {
 			this.backupMethod = backupMethod;
+		}
+
+		public Integer getBackupJobID() {
+			return this.backupJobID;
+		}
+
+		public void setBackupJobID(Integer backupJobID) {
+			this.backupJobID = backupJobID;
 		}
 	}
 

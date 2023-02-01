@@ -32,7 +32,9 @@ public class DescribeEngineVersionResponseUnmarshaller {
 		describeEngineVersionResponse.setMajorVersion(_ctx.stringValue("DescribeEngineVersionResponse.MajorVersion"));
 		describeEngineVersionResponse.setEngine(_ctx.stringValue("DescribeEngineVersionResponse.Engine"));
 		describeEngineVersionResponse.setMinorVersion(_ctx.stringValue("DescribeEngineVersionResponse.MinorVersion"));
-		describeEngineVersionResponse.setIsRedisCompatibleVersion(_ctx.booleanValue("DescribeEngineVersionResponse.IsRedisCompatibleVersion"));
+		describeEngineVersionResponse.setIsRedisCompatibleVersion(_ctx.stringValue("DescribeEngineVersionResponse.IsRedisCompatibleVersion"));
+		describeEngineVersionResponse.setIsSSLEnable(_ctx.stringValue("DescribeEngineVersionResponse.IsSSLEnable"));
+		describeEngineVersionResponse.setIsNewSSLMode(_ctx.stringValue("DescribeEngineVersionResponse.IsNewSSLMode"));
 	 
 	 	return describeEngineVersionResponse;
 	}

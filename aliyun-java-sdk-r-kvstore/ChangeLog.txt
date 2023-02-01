@@ -1,3 +1,6 @@
+2023-02-01 Version: 2.20.8
+- CreateTairInstance support dryrun.
+
 2022-11-18 Version: 2.20.7
 - Update python sdk.
 

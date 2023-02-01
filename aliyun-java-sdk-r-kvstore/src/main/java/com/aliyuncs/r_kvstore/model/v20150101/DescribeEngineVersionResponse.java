@@ -44,7 +44,11 @@ public class DescribeEngineVersionResponse extends AcsResponse {
 
 	private String minorVersion;
 
-	private Boolean isRedisCompatibleVersion;
+	private String isRedisCompatibleVersion;
+
+	private String isSSLEnable;
+
+	private String isNewSSLMode;
 
 	public Boolean getIsLatestVersion() {
 		return this.isLatestVersion;
@@ -126,12 +130,28 @@ public class DescribeEngineVersionResponse extends AcsResponse {
 		this.minorVersion = minorVersion;
 	}
 
-	public Boolean getIsRedisCompatibleVersion() {
+	public String getIsRedisCompatibleVersion() {
 		return this.isRedisCompatibleVersion;
 	}
 
-	public void setIsRedisCompatibleVersion(Boolean isRedisCompatibleVersion) {
+	public void setIsRedisCompatibleVersion(String isRedisCompatibleVersion) {
 		this.isRedisCompatibleVersion = isRedisCompatibleVersion;
+	}
+
+	public String getIsSSLEnable() {
+		return this.isSSLEnable;
+	}
+
+	public void setIsSSLEnable(String isSSLEnable) {
+		this.isSSLEnable = isSSLEnable;
+	}
+
+	public String getIsNewSSLMode() {
+		return this.isNewSSLMode;
+	}
+
+	public void setIsNewSSLMode(String isNewSSLMode) {
+		this.isNewSSLMode = isNewSSLMode;
 	}
 
 	@Override

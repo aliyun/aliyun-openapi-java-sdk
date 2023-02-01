@@ -23,6 +23,7 @@ public class DeleteShardingNodeResponseUnmarshaller {
 	public static DeleteShardingNodeResponse unmarshall(DeleteShardingNodeResponse deleteShardingNodeResponse, UnmarshallerContext _ctx) {
 		
 		deleteShardingNodeResponse.setRequestId(_ctx.stringValue("DeleteShardingNodeResponse.RequestId"));
+		deleteShardingNodeResponse.setOrderId(_ctx.stringValue("DeleteShardingNodeResponse.OrderId"));
 	 
 	 	return deleteShardingNodeResponse;
 	}
