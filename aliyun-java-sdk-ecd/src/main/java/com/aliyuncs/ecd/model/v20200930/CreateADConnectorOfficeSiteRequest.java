@@ -26,9 +26,13 @@ import com.aliyuncs.ecd.Endpoint;
 public class CreateADConnectorOfficeSiteRequest extends RpcAcsRequest<CreateADConnectorOfficeSiteResponse> {
 	   
 
+	private Boolean autoCreateUserAdDs;
+
 	private String cenId;
 
 	private List<String> subDomainDnsAddresss;
+
+	private Integer directoryUserAdType;
 
 	private Long cenOwnerId;
 
@@ -54,6 +58,8 @@ public class CreateADConnectorOfficeSiteRequest extends RpcAcsRequest<CreateADCo
 
 	private String officeSiteName;
 
+	private List<String> vSwitchIds;
+
 	private Boolean mfaEnabled;
 
 	private String domainUserName;
@@ -70,6 +76,17 @@ public class CreateADConnectorOfficeSiteRequest extends RpcAcsRequest<CreateADCo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Boolean getAutoCreateUserAdDs() {
+		return this.autoCreateUserAdDs;
+	}
+
+	public void setAutoCreateUserAdDs(Boolean autoCreateUserAdDs) {
+		this.autoCreateUserAdDs = autoCreateUserAdDs;
+		if(autoCreateUserAdDs != null){
+			putQueryParameter("AutoCreateUserAdDs", autoCreateUserAdDs.toString());
+		}
 	}
 
 	public String getCenId() {
@@ -94,6 +111,17 @@ public class CreateADConnectorOfficeSiteRequest extends RpcAcsRequest<CreateADCo
 				putQueryParameter("SubDomainDnsAddress." + (i + 1) , subDomainDnsAddresss.get(i));
 			}
 		}	
+	}
+
+	public Integer getDirectoryUserAdType() {
+		return this.directoryUserAdType;
+	}
+
+	public void setDirectoryUserAdType(Integer directoryUserAdType) {
+		this.directoryUserAdType = directoryUserAdType;
+		if(directoryUserAdType != null){
+			putQueryParameter("DirectoryUserAdType", directoryUserAdType.toString());
+		}
 	}
 
 	public Long getCenOwnerId() {
@@ -226,6 +254,19 @@ public class CreateADConnectorOfficeSiteRequest extends RpcAcsRequest<CreateADCo
 		if(officeSiteName != null){
 			putQueryParameter("OfficeSiteName", officeSiteName);
 		}
+	}
+
+	public List<String> getVSwitchIds() {
+		return this.vSwitchIds;
+	}
+
+	public void setVSwitchIds(List<String> vSwitchIds) {
+		this.vSwitchIds = vSwitchIds;	
+		if (vSwitchIds != null) {
+			for (int i = 0; i < vSwitchIds.size(); i++) {
+				putQueryParameter("VSwitchId." + (i + 1) , vSwitchIds.get(i));
+			}
+		}	
 	}
 
 	public Boolean getMfaEnabled() {

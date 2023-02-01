@@ -51,6 +51,7 @@ public class DescribeImagesResponseUnmarshaller {
 			image.setSharedCount(_ctx.integerValue("DescribeImagesResponse.Images["+ i +"].SharedCount"));
 			image.setSessionType(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].SessionType"));
 			image.setUpdateTime(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].UpdateTime"));
+			image.setPlatform(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].Platform"));
 
 			List<String> supportedLanguages = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeImagesResponse.Images["+ i +"].SupportedLanguages.Length"); j++) {

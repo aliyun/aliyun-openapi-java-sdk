@@ -38,6 +38,8 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 
 	private String imageType;
 
+	private String sessionType;
+
 	private String osType;
 
 	private String imageStatus;
@@ -121,6 +123,17 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 		this.imageType = imageType;
 		if(imageType != null){
 			putQueryParameter("ImageType", imageType);
+		}
+	}
+
+	public String getSessionType() {
+		return this.sessionType;
+	}
+
+	public void setSessionType(String sessionType) {
+		this.sessionType = sessionType;
+		if(sessionType != null){
+			putQueryParameter("SessionType", sessionType);
 		}
 	}
 

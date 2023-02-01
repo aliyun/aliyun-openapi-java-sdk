@@ -75,6 +75,8 @@ public class GetDesktopGroupDetailResponseUnmarshaller {
 		desktops.setNasFileSystemID(_ctx.stringValue("GetDesktopGroupDetailResponse.Desktops.NasFileSystemID"));
 		desktops.setNasFileSystemName(_ctx.stringValue("GetDesktopGroupDetailResponse.Desktops.NasFileSystemName"));
 		desktops.setTimingStrategyInfo(_ctx.stringValue("GetDesktopGroupDetailResponse.Desktops.TimingStrategyInfo"));
+		desktops.setBuyDesktopsCount(_ctx.integerValue("GetDesktopGroupDetailResponse.Desktops.BuyDesktopsCount"));
+		desktops.setImageId(_ctx.stringValue("GetDesktopGroupDetailResponse.Desktops.ImageId"));
 
 		List<String> policyGroupIds = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetDesktopGroupDetailResponse.Desktops.PolicyGroupIds.Length"); i++) {
@@ -106,7 +108,9 @@ public class GetDesktopGroupDetailResponseUnmarshaller {
 			scaleTimerInfo.setType(_ctx.stringValue("GetDesktopGroupDetailResponse.Desktops.ScaleTimerInfos["+ i +"].Type"));
 			scaleTimerInfo.setCron(_ctx.stringValue("GetDesktopGroupDetailResponse.Desktops.ScaleTimerInfos["+ i +"].Cron"));
 			scaleTimerInfo.setLoadPolicy(_ctx.integerValue("GetDesktopGroupDetailResponse.Desktops.ScaleTimerInfos["+ i +"].LoadPolicy"));
+			scaleTimerInfo.setBuyResAmount(_ctx.integerValue("GetDesktopGroupDetailResponse.Desktops.ScaleTimerInfos["+ i +"].BuyResAmount"));
 			scaleTimerInfo.setMinResAmount(_ctx.integerValue("GetDesktopGroupDetailResponse.Desktops.ScaleTimerInfos["+ i +"].MinResAmount"));
+			scaleTimerInfo.setMaxResAmount(_ctx.integerValue("GetDesktopGroupDetailResponse.Desktops.ScaleTimerInfos["+ i +"].MaxResAmount"));
 			scaleTimerInfo.setKeepDuration(_ctx.longValue("GetDesktopGroupDetailResponse.Desktops.ScaleTimerInfos["+ i +"].KeepDuration"));
 			scaleTimerInfo.setRatioThreshold(_ctx.floatValue("GetDesktopGroupDetailResponse.Desktops.ScaleTimerInfos["+ i +"].RatioThreshold"));
 

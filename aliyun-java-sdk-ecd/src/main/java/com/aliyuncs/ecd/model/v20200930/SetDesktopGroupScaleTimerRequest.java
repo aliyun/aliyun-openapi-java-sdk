@@ -60,6 +60,8 @@ public class SetDesktopGroupScaleTimerRequest extends RpcAcsRequest<SetDesktopGr
 				putQueryParameter("ScaleTimerInfos." + (depth1 + 1) + ".KeepDuration" , scaleTimerInfoss.get(depth1).getKeepDuration());
 				putQueryParameter("ScaleTimerInfos." + (depth1 + 1) + ".MinResAmount" , scaleTimerInfoss.get(depth1).getMinResAmount());
 				putQueryParameter("ScaleTimerInfos." + (depth1 + 1) + ".Cron" , scaleTimerInfoss.get(depth1).getCron());
+				putQueryParameter("ScaleTimerInfos." + (depth1 + 1) + ".BuyResAmount" , scaleTimerInfoss.get(depth1).getBuyResAmount());
+				putQueryParameter("ScaleTimerInfos." + (depth1 + 1) + ".MaxResAmount" , scaleTimerInfoss.get(depth1).getMaxResAmount());
 				putQueryParameter("ScaleTimerInfos." + (depth1 + 1) + ".Type" , scaleTimerInfoss.get(depth1).getType());
 				putQueryParameter("ScaleTimerInfos." + (depth1 + 1) + ".LoadPolicy" , scaleTimerInfoss.get(depth1).getLoadPolicy());
 				putQueryParameter("ScaleTimerInfos." + (depth1 + 1) + ".RatioThreshold" , scaleTimerInfoss.get(depth1).getRatioThreshold());
@@ -74,6 +76,10 @@ public class SetDesktopGroupScaleTimerRequest extends RpcAcsRequest<SetDesktopGr
 		private Integer minResAmount;
 
 		private String cron;
+
+		private Integer buyResAmount;
+
+		private Integer maxResAmount;
 
 		private String type;
 
@@ -103,6 +109,22 @@ public class SetDesktopGroupScaleTimerRequest extends RpcAcsRequest<SetDesktopGr
 
 		public void setCron(String cron) {
 			this.cron = cron;
+		}
+
+		public Integer getBuyResAmount() {
+			return this.buyResAmount;
+		}
+
+		public void setBuyResAmount(Integer buyResAmount) {
+			this.buyResAmount = buyResAmount;
+		}
+
+		public Integer getMaxResAmount() {
+			return this.maxResAmount;
+		}
+
+		public void setMaxResAmount(Integer maxResAmount) {
+			this.maxResAmount = maxResAmount;
 		}
 
 		public String getType() {

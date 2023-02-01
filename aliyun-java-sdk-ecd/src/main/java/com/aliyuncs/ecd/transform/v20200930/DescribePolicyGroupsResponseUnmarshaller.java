@@ -22,6 +22,8 @@ import com.aliyuncs.ecd.model.v20200930.DescribePolicyGroupsResponse.DescribePol
 import com.aliyuncs.ecd.model.v20200930.DescribePolicyGroupsResponse.DescribePolicyGroup.AuthorizeAccessPolicyRule;
 import com.aliyuncs.ecd.model.v20200930.DescribePolicyGroupsResponse.DescribePolicyGroup.AuthorizeSecurityPolicyRule;
 import com.aliyuncs.ecd.model.v20200930.DescribePolicyGroupsResponse.DescribePolicyGroup.ClientType;
+import com.aliyuncs.ecd.model.v20200930.DescribePolicyGroupsResponse.DescribePolicyGroup.DomainResolveRuleItem;
+import com.aliyuncs.ecd.model.v20200930.DescribePolicyGroupsResponse.DescribePolicyGroup.NetRedirectRuleItem;
 import com.aliyuncs.ecd.model.v20200930.DescribePolicyGroupsResponse.DescribePolicyGroup.UsbSupplyRedirectRuleItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -55,6 +57,7 @@ public class DescribePolicyGroupsResponseUnmarshaller {
 			describePolicyGroup.setName(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].Name"));
 			describePolicyGroup.setLocalDrive(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].LocalDrive"));
 			describePolicyGroup.setGpuAcceleration(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].GpuAcceleration"));
+			describePolicyGroup.setDomainResolveRuleType(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].DomainResolveRuleType"));
 			describePolicyGroup.setRecording(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].Recording"));
 			describePolicyGroup.setRecordingStartTime(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].RecordingStartTime"));
 			describePolicyGroup.setRecordingEndTime(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].RecordingEndTime"));
@@ -70,6 +73,13 @@ public class DescribePolicyGroupsResponseUnmarshaller {
 			describePolicyGroup.setScope(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].Scope"));
 			describePolicyGroup.setRecordingAudio(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].RecordingAudio"));
 			describePolicyGroup.setInternetCommunicationProtocol(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].InternetCommunicationProtocol"));
+			describePolicyGroup.setVideoRedirect(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].VideoRedirect"));
+			describePolicyGroup.setWatermarkTransparencyValue(_ctx.integerValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].WatermarkTransparencyValue"));
+			describePolicyGroup.setWatermarkColor(_ctx.integerValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].WatermarkColor"));
+			describePolicyGroup.setWatermarkFontSize(_ctx.integerValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].WatermarkFontSize"));
+			describePolicyGroup.setWatermarkFontStyle(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].WatermarkFontStyle"));
+			describePolicyGroup.setWatermarkDegree(_ctx.doubleValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].WatermarkDegree"));
+			describePolicyGroup.setWatermarkRowAmount(_ctx.integerValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].WatermarkRowAmount"));
 
 			List<String> preemptLoginUsers = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].PreemptLoginUsers.Length"); j++) {
@@ -132,6 +142,27 @@ public class DescribePolicyGroupsResponseUnmarshaller {
 				usbSupplyRedirectRule.add(usbSupplyRedirectRuleItem);
 			}
 			describePolicyGroup.setUsbSupplyRedirectRule(usbSupplyRedirectRule);
+
+			List<DomainResolveRuleItem> domainResolveRule = new ArrayList<DomainResolveRuleItem>();
+			for (int j = 0; j < _ctx.lengthValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].DomainResolveRule.Length"); j++) {
+				DomainResolveRuleItem domainResolveRuleItem = new DomainResolveRuleItem();
+				domainResolveRuleItem.setDomain(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].DomainResolveRule["+ j +"].Domain"));
+				domainResolveRuleItem.setPolicy(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].DomainResolveRule["+ j +"].Policy"));
+				domainResolveRuleItem.setDescription(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].DomainResolveRule["+ j +"].Description"));
+
+				domainResolveRule.add(domainResolveRuleItem);
+			}
+			describePolicyGroup.setDomainResolveRule(domainResolveRule);
+
+			List<NetRedirectRuleItem> netRedirectRule = new ArrayList<NetRedirectRuleItem>();
+			for (int j = 0; j < _ctx.lengthValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].NetRedirectRule.Length"); j++) {
+				NetRedirectRuleItem netRedirectRuleItem = new NetRedirectRuleItem();
+				netRedirectRuleItem.setDomain(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].NetRedirectRule["+ j +"].Domain"));
+				netRedirectRuleItem.setRuleType(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].NetRedirectRule["+ j +"].RuleType"));
+
+				netRedirectRule.add(netRedirectRuleItem);
+			}
+			describePolicyGroup.setNetRedirectRule(netRedirectRule);
 
 			describePolicyGroups.add(describePolicyGroup);
 		}

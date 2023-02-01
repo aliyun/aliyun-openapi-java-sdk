@@ -40,6 +40,8 @@ public class ModifyPolicyGroupRequest extends RpcAcsRequest<ModifyPolicyGroupRes
 
 	private String localDrive;
 
+	private Integer watermarkTransparencyValue;
+
 	private List<AuthorizeSecurityPolicyRule> authorizeSecurityPolicyRules;
 
 	private String clipboard;
@@ -52,11 +54,15 @@ public class ModifyPolicyGroupRequest extends RpcAcsRequest<ModifyPolicyGroupRes
 
 	private Integer recordingDuration;
 
+	private Integer watermarkColor;
+
 	private List<RevokeAccessPolicyRule> revokeAccessPolicyRules;
 
 	private String watermark;
 
 	private String cameraRedirect;
+
+	private String videoRedirect;
 
 	private String appContentProtection;
 
@@ -74,15 +80,23 @@ public class ModifyPolicyGroupRequest extends RpcAcsRequest<ModifyPolicyGroupRes
 
 	private List<UsbSupplyRedirectRule> usbSupplyRedirectRules;
 
+	private Integer watermarkFontSize;
+
 	private String recording;
 
 	private List<String> scopeValues;
 
 	private Long recordingFps;
 
+	private String watermarkFontStyle;
+
 	private String recordContent;
 
 	private String scope;
+
+	private Integer watermarkRowAmount;
+
+	private Double watermarkDegree;
 
 	private Long recordContentExpires;
 
@@ -197,6 +211,17 @@ public class ModifyPolicyGroupRequest extends RpcAcsRequest<ModifyPolicyGroupRes
 		}
 	}
 
+	public Integer getWatermarkTransparencyValue() {
+		return this.watermarkTransparencyValue;
+	}
+
+	public void setWatermarkTransparencyValue(Integer watermarkTransparencyValue) {
+		this.watermarkTransparencyValue = watermarkTransparencyValue;
+		if(watermarkTransparencyValue != null){
+			putQueryParameter("WatermarkTransparencyValue", watermarkTransparencyValue.toString());
+		}
+	}
+
 	public List<AuthorizeSecurityPolicyRule> getAuthorizeSecurityPolicyRules() {
 		return this.authorizeSecurityPolicyRules;
 	}
@@ -271,6 +296,17 @@ public class ModifyPolicyGroupRequest extends RpcAcsRequest<ModifyPolicyGroupRes
 		}
 	}
 
+	public Integer getWatermarkColor() {
+		return this.watermarkColor;
+	}
+
+	public void setWatermarkColor(Integer watermarkColor) {
+		this.watermarkColor = watermarkColor;
+		if(watermarkColor != null){
+			putQueryParameter("WatermarkColor", watermarkColor.toString());
+		}
+	}
+
 	public List<RevokeAccessPolicyRule> getRevokeAccessPolicyRules() {
 		return this.revokeAccessPolicyRules;
 	}
@@ -304,6 +340,17 @@ public class ModifyPolicyGroupRequest extends RpcAcsRequest<ModifyPolicyGroupRes
 		this.cameraRedirect = cameraRedirect;
 		if(cameraRedirect != null){
 			putQueryParameter("CameraRedirect", cameraRedirect);
+		}
+	}
+
+	public String getVideoRedirect() {
+		return this.videoRedirect;
+	}
+
+	public void setVideoRedirect(String videoRedirect) {
+		this.videoRedirect = videoRedirect;
+		if(videoRedirect != null){
+			putQueryParameter("VideoRedirect", videoRedirect);
 		}
 	}
 
@@ -409,6 +456,17 @@ public class ModifyPolicyGroupRequest extends RpcAcsRequest<ModifyPolicyGroupRes
 		}	
 	}
 
+	public Integer getWatermarkFontSize() {
+		return this.watermarkFontSize;
+	}
+
+	public void setWatermarkFontSize(Integer watermarkFontSize) {
+		this.watermarkFontSize = watermarkFontSize;
+		if(watermarkFontSize != null){
+			putQueryParameter("WatermarkFontSize", watermarkFontSize.toString());
+		}
+	}
+
 	public String getRecording() {
 		return this.recording;
 	}
@@ -444,6 +502,17 @@ public class ModifyPolicyGroupRequest extends RpcAcsRequest<ModifyPolicyGroupRes
 		}
 	}
 
+	public String getWatermarkFontStyle() {
+		return this.watermarkFontStyle;
+	}
+
+	public void setWatermarkFontStyle(String watermarkFontStyle) {
+		this.watermarkFontStyle = watermarkFontStyle;
+		if(watermarkFontStyle != null){
+			putQueryParameter("WatermarkFontStyle", watermarkFontStyle);
+		}
+	}
+
 	public String getRecordContent() {
 		return this.recordContent;
 	}
@@ -463,6 +532,28 @@ public class ModifyPolicyGroupRequest extends RpcAcsRequest<ModifyPolicyGroupRes
 		this.scope = scope;
 		if(scope != null){
 			putQueryParameter("Scope", scope);
+		}
+	}
+
+	public Integer getWatermarkRowAmount() {
+		return this.watermarkRowAmount;
+	}
+
+	public void setWatermarkRowAmount(Integer watermarkRowAmount) {
+		this.watermarkRowAmount = watermarkRowAmount;
+		if(watermarkRowAmount != null){
+			putQueryParameter("WatermarkRowAmount", watermarkRowAmount.toString());
+		}
+	}
+
+	public Double getWatermarkDegree() {
+		return this.watermarkDegree;
+	}
+
+	public void setWatermarkDegree(Double watermarkDegree) {
+		this.watermarkDegree = watermarkDegree;
+		if(watermarkDegree != null){
+			putQueryParameter("WatermarkDegree", watermarkDegree.toString());
 		}
 	}
 

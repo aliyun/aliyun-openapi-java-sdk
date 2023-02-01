@@ -37,6 +37,8 @@ public class DescribeSnapshotsRequest extends RpcAcsRequest<DescribeSnapshotsRes
 
 	private String desktopName;
 
+	private String creator;
+
 	private String sourceDiskType;
 
 	private String endTime;
@@ -116,6 +118,17 @@ public class DescribeSnapshotsRequest extends RpcAcsRequest<DescribeSnapshotsRes
 		this.desktopName = desktopName;
 		if(desktopName != null){
 			putQueryParameter("DesktopName", desktopName);
+		}
+	}
+
+	public String getCreator() {
+		return this.creator;
+	}
+
+	public void setCreator(String creator) {
+		this.creator = creator;
+		if(creator != null){
+			putQueryParameter("Creator", creator);
 		}
 	}
 

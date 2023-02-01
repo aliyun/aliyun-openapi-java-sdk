@@ -30,6 +30,8 @@ public class CreateDesktopGroupRequest extends RpcAcsRequest<CreateDesktopGroupR
 
 	private Integer allowBufferCount;
 
+	private Long groupVersion;
+
 	private Boolean allClassifyUsers;
 
 	private Integer maxDesktopsCount;
@@ -49,6 +51,8 @@ public class CreateDesktopGroupRequest extends RpcAcsRequest<CreateDesktopGroupR
 	private String periodUnit;
 
 	private Boolean profileFollowSwitch;
+
+	private Integer buyDesktopsCount;
 
 	private String policyGroupId;
 
@@ -121,6 +125,17 @@ public class CreateDesktopGroupRequest extends RpcAcsRequest<CreateDesktopGroupR
 		this.allowBufferCount = allowBufferCount;
 		if(allowBufferCount != null){
 			putQueryParameter("AllowBufferCount", allowBufferCount.toString());
+		}
+	}
+
+	public Long getGroupVersion() {
+		return this.groupVersion;
+	}
+
+	public void setGroupVersion(Long groupVersion) {
+		this.groupVersion = groupVersion;
+		if(groupVersion != null){
+			putQueryParameter("GroupVersion", groupVersion.toString());
 		}
 	}
 
@@ -231,6 +246,17 @@ public class CreateDesktopGroupRequest extends RpcAcsRequest<CreateDesktopGroupR
 		this.profileFollowSwitch = profileFollowSwitch;
 		if(profileFollowSwitch != null){
 			putQueryParameter("ProfileFollowSwitch", profileFollowSwitch.toString());
+		}
+	}
+
+	public Integer getBuyDesktopsCount() {
+		return this.buyDesktopsCount;
+	}
+
+	public void setBuyDesktopsCount(Integer buyDesktopsCount) {
+		this.buyDesktopsCount = buyDesktopsCount;
+		if(buyDesktopsCount != null){
+			putQueryParameter("BuyDesktopsCount", buyDesktopsCount.toString());
 		}
 	}
 

@@ -72,6 +72,8 @@ public class ModifyDesktopGroupRequest extends RpcAcsRequest<ModifyDesktopGroupR
 
 	private Boolean profileFollowSwitch;
 
+	private Integer buyDesktopsCount;
+
 	private String policyGroupId;
 	public ModifyDesktopGroupRequest() {
 		super("ecd", "2020-09-30", "ModifyDesktopGroup");
@@ -334,6 +336,17 @@ public class ModifyDesktopGroupRequest extends RpcAcsRequest<ModifyDesktopGroupR
 		this.profileFollowSwitch = profileFollowSwitch;
 		if(profileFollowSwitch != null){
 			putQueryParameter("ProfileFollowSwitch", profileFollowSwitch.toString());
+		}
+	}
+
+	public Integer getBuyDesktopsCount() {
+		return this.buyDesktopsCount;
+	}
+
+	public void setBuyDesktopsCount(Integer buyDesktopsCount) {
+		this.buyDesktopsCount = buyDesktopsCount;
+		if(buyDesktopsCount != null){
+			putQueryParameter("BuyDesktopsCount", buyDesktopsCount.toString());
 		}
 	}
 

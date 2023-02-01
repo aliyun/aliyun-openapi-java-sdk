@@ -95,6 +95,8 @@ public class DescribePolicyGroupsResponse extends AcsResponse {
 
 		private String gpuAcceleration;
 
+		private String domainResolveRuleType;
+
 		private String recording;
 
 		private String recordingStartTime;
@@ -125,6 +127,20 @@ public class DescribePolicyGroupsResponse extends AcsResponse {
 
 		private String internetCommunicationProtocol;
 
+		private String videoRedirect;
+
+		private Integer watermarkTransparencyValue;
+
+		private Integer watermarkColor;
+
+		private Integer watermarkFontSize;
+
+		private String watermarkFontStyle;
+
+		private Double watermarkDegree;
+
+		private Integer watermarkRowAmount;
+
 		private List<AuthorizeSecurityPolicyRule> authorizeSecurityPolicyRules;
 
 		private List<AuthorizeAccessPolicyRule> authorizeAccessPolicyRules;
@@ -132,6 +148,10 @@ public class DescribePolicyGroupsResponse extends AcsResponse {
 		private List<ClientType> clientTypes;
 
 		private List<UsbSupplyRedirectRuleItem> usbSupplyRedirectRule;
+
+		private List<DomainResolveRuleItem> domainResolveRule;
+
+		private List<NetRedirectRuleItem> netRedirectRule;
 
 		private List<String> preemptLoginUsers;
 
@@ -289,6 +309,14 @@ public class DescribePolicyGroupsResponse extends AcsResponse {
 			this.gpuAcceleration = gpuAcceleration;
 		}
 
+		public String getDomainResolveRuleType() {
+			return this.domainResolveRuleType;
+		}
+
+		public void setDomainResolveRuleType(String domainResolveRuleType) {
+			this.domainResolveRuleType = domainResolveRuleType;
+		}
+
 		public String getRecording() {
 			return this.recording;
 		}
@@ -409,6 +437,62 @@ public class DescribePolicyGroupsResponse extends AcsResponse {
 			this.internetCommunicationProtocol = internetCommunicationProtocol;
 		}
 
+		public String getVideoRedirect() {
+			return this.videoRedirect;
+		}
+
+		public void setVideoRedirect(String videoRedirect) {
+			this.videoRedirect = videoRedirect;
+		}
+
+		public Integer getWatermarkTransparencyValue() {
+			return this.watermarkTransparencyValue;
+		}
+
+		public void setWatermarkTransparencyValue(Integer watermarkTransparencyValue) {
+			this.watermarkTransparencyValue = watermarkTransparencyValue;
+		}
+
+		public Integer getWatermarkColor() {
+			return this.watermarkColor;
+		}
+
+		public void setWatermarkColor(Integer watermarkColor) {
+			this.watermarkColor = watermarkColor;
+		}
+
+		public Integer getWatermarkFontSize() {
+			return this.watermarkFontSize;
+		}
+
+		public void setWatermarkFontSize(Integer watermarkFontSize) {
+			this.watermarkFontSize = watermarkFontSize;
+		}
+
+		public String getWatermarkFontStyle() {
+			return this.watermarkFontStyle;
+		}
+
+		public void setWatermarkFontStyle(String watermarkFontStyle) {
+			this.watermarkFontStyle = watermarkFontStyle;
+		}
+
+		public Double getWatermarkDegree() {
+			return this.watermarkDegree;
+		}
+
+		public void setWatermarkDegree(Double watermarkDegree) {
+			this.watermarkDegree = watermarkDegree;
+		}
+
+		public Integer getWatermarkRowAmount() {
+			return this.watermarkRowAmount;
+		}
+
+		public void setWatermarkRowAmount(Integer watermarkRowAmount) {
+			this.watermarkRowAmount = watermarkRowAmount;
+		}
+
 		public List<AuthorizeSecurityPolicyRule> getAuthorizeSecurityPolicyRules() {
 			return this.authorizeSecurityPolicyRules;
 		}
@@ -439,6 +523,22 @@ public class DescribePolicyGroupsResponse extends AcsResponse {
 
 		public void setUsbSupplyRedirectRule(List<UsbSupplyRedirectRuleItem> usbSupplyRedirectRule) {
 			this.usbSupplyRedirectRule = usbSupplyRedirectRule;
+		}
+
+		public List<DomainResolveRuleItem> getDomainResolveRule() {
+			return this.domainResolveRule;
+		}
+
+		public void setDomainResolveRule(List<DomainResolveRuleItem> domainResolveRule) {
+			this.domainResolveRule = domainResolveRule;
+		}
+
+		public List<NetRedirectRuleItem> getNetRedirectRule() {
+			return this.netRedirectRule;
+		}
+
+		public void setNetRedirectRule(List<NetRedirectRuleItem> netRedirectRule) {
+			this.netRedirectRule = netRedirectRule;
 		}
 
 		public List<String> getPreemptLoginUsers() {
@@ -646,6 +746,62 @@ public class DescribePolicyGroupsResponse extends AcsResponse {
 
 			public void setUsbRuleType(Long usbRuleType) {
 				this.usbRuleType = usbRuleType;
+			}
+		}
+
+		public static class DomainResolveRuleItem {
+
+			private String domain;
+
+			private String policy;
+
+			private String description;
+
+			public String getDomain() {
+				return this.domain;
+			}
+
+			public void setDomain(String domain) {
+				this.domain = domain;
+			}
+
+			public String getPolicy() {
+				return this.policy;
+			}
+
+			public void setPolicy(String policy) {
+				this.policy = policy;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
+			}
+		}
+
+		public static class NetRedirectRuleItem {
+
+			private String domain;
+
+			private String ruleType;
+
+			public String getDomain() {
+				return this.domain;
+			}
+
+			public void setDomain(String domain) {
+				this.domain = domain;
+			}
+
+			public String getRuleType() {
+				return this.ruleType;
+			}
+
+			public void setRuleType(String ruleType) {
+				this.ruleType = ruleType;
 			}
 		}
 	}

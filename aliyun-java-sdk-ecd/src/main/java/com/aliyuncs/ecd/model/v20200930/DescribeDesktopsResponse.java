@@ -165,6 +165,8 @@ public class DescribeDesktopsResponse extends AcsResponse {
 
 		private Boolean hibernationOptionsConfigured;
 
+		private Boolean supportHibernation;
+
 		private List<Disk> disks;
 
 		private List<Tag> tags;
@@ -571,6 +573,14 @@ public class DescribeDesktopsResponse extends AcsResponse {
 
 		public void setHibernationOptionsConfigured(Boolean hibernationOptionsConfigured) {
 			this.hibernationOptionsConfigured = hibernationOptionsConfigured;
+		}
+
+		public Boolean getSupportHibernation() {
+			return this.supportHibernation;
+		}
+
+		public void setSupportHibernation(Boolean supportHibernation) {
+			this.supportHibernation = supportHibernation;
 		}
 
 		public List<Disk> getDisks() {

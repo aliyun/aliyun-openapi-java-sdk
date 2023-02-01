@@ -135,6 +135,10 @@ public class GetDesktopGroupDetailResponse extends AcsResponse {
 
 		private String timingStrategyInfo;
 
+		private Integer buyDesktopsCount;
+
+		private String imageId;
+
 		private List<TimerInfo> timerInfos;
 
 		private List<ScaleTimerInfo> scaleTimerInfos;
@@ -495,6 +499,22 @@ public class GetDesktopGroupDetailResponse extends AcsResponse {
 			this.timingStrategyInfo = timingStrategyInfo;
 		}
 
+		public Integer getBuyDesktopsCount() {
+			return this.buyDesktopsCount;
+		}
+
+		public void setBuyDesktopsCount(Integer buyDesktopsCount) {
+			this.buyDesktopsCount = buyDesktopsCount;
+		}
+
+		public String getImageId() {
+			return this.imageId;
+		}
+
+		public void setImageId(String imageId) {
+			this.imageId = imageId;
+		}
+
 		public List<TimerInfo> getTimerInfos() {
 			return this.timerInfos;
 		}
@@ -578,7 +598,11 @@ public class GetDesktopGroupDetailResponse extends AcsResponse {
 
 			private Integer loadPolicy;
 
+			private Integer buyResAmount;
+
 			private Integer minResAmount;
+
+			private Integer maxResAmount;
 
 			private Long keepDuration;
 
@@ -608,12 +632,28 @@ public class GetDesktopGroupDetailResponse extends AcsResponse {
 				this.loadPolicy = loadPolicy;
 			}
 
+			public Integer getBuyResAmount() {
+				return this.buyResAmount;
+			}
+
+			public void setBuyResAmount(Integer buyResAmount) {
+				this.buyResAmount = buyResAmount;
+			}
+
 			public Integer getMinResAmount() {
 				return this.minResAmount;
 			}
 
 			public void setMinResAmount(Integer minResAmount) {
 				this.minResAmount = minResAmount;
+			}
+
+			public Integer getMaxResAmount() {
+				return this.maxResAmount;
+			}
+
+			public void setMaxResAmount(Integer maxResAmount) {
+				this.maxResAmount = maxResAmount;
 			}
 
 			public Long getKeepDuration() {

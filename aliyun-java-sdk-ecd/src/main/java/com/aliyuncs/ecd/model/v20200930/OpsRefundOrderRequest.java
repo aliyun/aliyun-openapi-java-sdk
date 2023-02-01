@@ -23,16 +23,16 @@ import com.aliyuncs.ecd.Endpoint;
  * @author auto create
  * @version 
  */
-public class StopDesktopsRequest extends RpcAcsRequest<StopDesktopsResponse> {
+public class OpsRefundOrderRequest extends RpcAcsRequest<OpsRefundOrderResponse> {
 	   
 
-	private String stoppedMode;
+	private String refundType;
 
-	private Boolean hibernate;
+	private String refundParamMap;
 
 	private List<String> desktopIds;
-	public StopDesktopsRequest() {
-		super("ecd", "2020-09-30", "StopDesktops");
+	public OpsRefundOrderRequest() {
+		super("ecd", "2020-09-30", "OpsRefundOrder");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -40,25 +40,25 @@ public class StopDesktopsRequest extends RpcAcsRequest<StopDesktopsResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getStoppedMode() {
-		return this.stoppedMode;
+	public String getRefundType() {
+		return this.refundType;
 	}
 
-	public void setStoppedMode(String stoppedMode) {
-		this.stoppedMode = stoppedMode;
-		if(stoppedMode != null){
-			putQueryParameter("StoppedMode", stoppedMode);
+	public void setRefundType(String refundType) {
+		this.refundType = refundType;
+		if(refundType != null){
+			putQueryParameter("RefundType", refundType);
 		}
 	}
 
-	public Boolean getHibernate() {
-		return this.hibernate;
+	public String getRefundParamMap() {
+		return this.refundParamMap;
 	}
 
-	public void setHibernate(Boolean hibernate) {
-		this.hibernate = hibernate;
-		if(hibernate != null){
-			putQueryParameter("Hibernate", hibernate.toString());
+	public void setRefundParamMap(String refundParamMap) {
+		this.refundParamMap = refundParamMap;
+		if(refundParamMap != null){
+			putQueryParameter("RefundParamMap", refundParamMap);
 		}
 	}
 
@@ -76,8 +76,8 @@ public class StopDesktopsRequest extends RpcAcsRequest<StopDesktopsResponse> {
 	}
 
 	@Override
-	public Class<StopDesktopsResponse> getResponseClass() {
-		return StopDesktopsResponse.class;
+	public Class<OpsRefundOrderResponse> getResponseClass() {
+		return OpsRefundOrderResponse.class;
 	}
 
 }

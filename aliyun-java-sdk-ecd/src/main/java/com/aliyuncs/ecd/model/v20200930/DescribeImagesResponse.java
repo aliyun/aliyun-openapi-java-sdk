@@ -95,6 +95,8 @@ public class DescribeImagesResponse extends AcsResponse {
 
 		private String updateTime;
 
+		private String platform;
+
 		private List<String> supportedLanguages;
 
 		public String getCreationTime() {
@@ -247,6 +249,14 @@ public class DescribeImagesResponse extends AcsResponse {
 
 		public void setUpdateTime(String updateTime) {
 			this.updateTime = updateTime;
+		}
+
+		public String getPlatform() {
+			return this.platform;
+		}
+
+		public void setPlatform(String platform) {
+			this.platform = platform;
 		}
 
 		public List<String> getSupportedLanguages() {

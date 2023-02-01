@@ -23,43 +23,17 @@ import com.aliyuncs.ecd.Endpoint;
  * @author auto create
  * @version 
  */
-public class StopDesktopsRequest extends RpcAcsRequest<StopDesktopsResponse> {
+public class DescribePreToPostQuotaRequest extends RpcAcsRequest<DescribePreToPostQuotaResponse> {
 	   
 
-	private String stoppedMode;
-
-	private Boolean hibernate;
-
 	private List<String> desktopIds;
-	public StopDesktopsRequest() {
-		super("ecd", "2020-09-30", "StopDesktops");
+	public DescribePreToPostQuotaRequest() {
+		super("ecd", "2020-09-30", "DescribePreToPostQuota");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getStoppedMode() {
-		return this.stoppedMode;
-	}
-
-	public void setStoppedMode(String stoppedMode) {
-		this.stoppedMode = stoppedMode;
-		if(stoppedMode != null){
-			putQueryParameter("StoppedMode", stoppedMode);
-		}
-	}
-
-	public Boolean getHibernate() {
-		return this.hibernate;
-	}
-
-	public void setHibernate(Boolean hibernate) {
-		this.hibernate = hibernate;
-		if(hibernate != null){
-			putQueryParameter("Hibernate", hibernate.toString());
-		}
 	}
 
 	public List<String> getDesktopIds() {
@@ -76,8 +50,8 @@ public class StopDesktopsRequest extends RpcAcsRequest<StopDesktopsResponse> {
 	}
 
 	@Override
-	public Class<StopDesktopsResponse> getResponseClass() {
-		return StopDesktopsResponse.class;
+	public Class<DescribePreToPostQuotaResponse> getResponseClass() {
+		return DescribePreToPostQuotaResponse.class;
 	}
 
 }
