@@ -28,6 +28,8 @@ public class AddUsersRequest extends RpcAcsRequest<AddUsersResponse> {
 
 	private String clusterId;
 
+	private Boolean async;
+
 	private List<User> users;
 	public AddUsersRequest() {
 		super("EHPC", "2018-04-12", "AddUsers");
@@ -46,6 +48,17 @@ public class AddUsersRequest extends RpcAcsRequest<AddUsersResponse> {
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public Boolean getAsync() {
+		return this.async;
+	}
+
+	public void setAsync(Boolean async) {
+		this.async = async;
+		if(async != null){
+			putQueryParameter("Async", async.toString());
 		}
 	}
 

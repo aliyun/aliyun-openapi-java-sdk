@@ -28,6 +28,8 @@ public class ModifyUserPasswordsRequest extends RpcAcsRequest<ModifyUserPassword
 
 	private String clusterId;
 
+	private Boolean async;
+
 	private List<User> users;
 	public ModifyUserPasswordsRequest() {
 		super("EHPC", "2018-04-12", "ModifyUserPasswords");
@@ -46,6 +48,17 @@ public class ModifyUserPasswordsRequest extends RpcAcsRequest<ModifyUserPassword
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public Boolean getAsync() {
+		return this.async;
+	}
+
+	public void setAsync(Boolean async) {
+		this.async = async;
+		if(async != null){
+			putQueryParameter("Async", async.toString());
 		}
 	}
 
