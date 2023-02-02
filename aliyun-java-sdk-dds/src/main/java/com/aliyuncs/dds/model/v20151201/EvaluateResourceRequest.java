@@ -30,6 +30,8 @@ public class EvaluateResourceRequest extends RpcAcsRequest<EvaluateResourceRespo
 
 	private String engineVersion;
 
+	private String storage;
+
 	private String shardsInfo;
 
 	private String replicationFactor;
@@ -84,6 +86,17 @@ public class EvaluateResourceRequest extends RpcAcsRequest<EvaluateResourceRespo
 		this.engineVersion = engineVersion;
 		if(engineVersion != null){
 			putQueryParameter("EngineVersion", engineVersion);
+		}
+	}
+
+	public String getStorage() {
+		return this.storage;
+	}
+
+	public void setStorage(String storage) {
+		this.storage = storage;
+		if(storage != null){
+			putQueryParameter("Storage", storage);
 		}
 	}
 

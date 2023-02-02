@@ -30,6 +30,8 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 
 	private String readonlyReplicas;
 
+	private String extraParam;
+
 	private String couponNo;
 
 	private String replicationFactor;
@@ -88,6 +90,17 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 		this.readonlyReplicas = readonlyReplicas;
 		if(readonlyReplicas != null){
 			putQueryParameter("ReadonlyReplicas", readonlyReplicas);
+		}
+	}
+
+	public String getExtraParam() {
+		return this.extraParam;
+	}
+
+	public void setExtraParam(String extraParam) {
+		this.extraParam = extraParam;
+		if(extraParam != null){
+			putQueryParameter("ExtraParam", extraParam);
 		}
 	}
 
