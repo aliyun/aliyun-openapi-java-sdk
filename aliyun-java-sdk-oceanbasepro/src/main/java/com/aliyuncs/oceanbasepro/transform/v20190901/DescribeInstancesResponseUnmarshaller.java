@@ -59,6 +59,7 @@ public class DescribeInstancesResponseUnmarshaller {
 			data.setUsedDiskSize(_ctx.longValue("DescribeInstancesResponse.Instances["+ i +"].UsedDiskSize"));
 			data.setResourceGroupId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].ResourceGroupId"));
 			data.setInstanceType(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].InstanceType"));
+			data.setInstanceRole(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].InstanceRole"));
 
 			List<String> availableZones = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstancesResponse.Instances["+ i +"].AvailableZones.Length"); j++) {

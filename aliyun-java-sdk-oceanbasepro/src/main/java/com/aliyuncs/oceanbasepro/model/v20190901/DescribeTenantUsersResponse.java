@@ -65,6 +65,10 @@ public class DescribeTenantUsersResponse extends AcsResponse {
 
 		private String userName;
 
+		private String tenantId;
+
+		private String instanceId;
+
 		private List<DatabasesItem> databases;
 
 		public String getUserType() {
@@ -97,6 +101,22 @@ public class DescribeTenantUsersResponse extends AcsResponse {
 
 		public void setUserName(String userName) {
 			this.userName = userName;
+		}
+
+		public String getTenantId() {
+			return this.tenantId;
+		}
+
+		public void setTenantId(String tenantId) {
+			this.tenantId = tenantId;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public List<DatabasesItem> getDatabases() {

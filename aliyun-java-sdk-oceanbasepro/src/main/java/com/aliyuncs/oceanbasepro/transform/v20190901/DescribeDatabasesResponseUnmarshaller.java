@@ -44,6 +44,7 @@ public class DescribeDatabasesResponseUnmarshaller {
 			data.setRequiredSize(_ctx.doubleValue("DescribeDatabasesResponse.Databases["+ i +"].RequiredSize"));
 			data.setDataSize(_ctx.doubleValue("DescribeDatabasesResponse.Databases["+ i +"].DataSize"));
 			data.setCollation(_ctx.stringValue("DescribeDatabasesResponse.Databases["+ i +"].Collation"));
+			data.setInstanceId(_ctx.stringValue("DescribeDatabasesResponse.Databases["+ i +"].InstanceId"));
 
 			List<UsersItem> users = new ArrayList<UsersItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDatabasesResponse.Databases["+ i +"].Users.Length"); j++) {

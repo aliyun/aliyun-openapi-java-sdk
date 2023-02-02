@@ -77,6 +77,8 @@ public class DescribeDatabasesResponse extends AcsResponse {
 
 		private String collation;
 
+		private String instanceId;
+
 		private List<UsersItem> users;
 
 		private List<TablesItem> tables;
@@ -159,6 +161,14 @@ public class DescribeDatabasesResponse extends AcsResponse {
 
 		public void setCollation(String collation) {
 			this.collation = collation;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public List<UsersItem> getUsers() {

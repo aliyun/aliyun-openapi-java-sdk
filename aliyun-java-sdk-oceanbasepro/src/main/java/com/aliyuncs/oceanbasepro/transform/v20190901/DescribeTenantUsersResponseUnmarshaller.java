@@ -37,6 +37,8 @@ public class DescribeTenantUsersResponseUnmarshaller {
 			tenantUsersItem.setDescription(_ctx.stringValue("DescribeTenantUsersResponse.TenantUsers["+ i +"].Description"));
 			tenantUsersItem.setUserStatus(_ctx.stringValue("DescribeTenantUsersResponse.TenantUsers["+ i +"].UserStatus"));
 			tenantUsersItem.setUserName(_ctx.stringValue("DescribeTenantUsersResponse.TenantUsers["+ i +"].UserName"));
+			tenantUsersItem.setTenantId(_ctx.stringValue("DescribeTenantUsersResponse.TenantUsers["+ i +"].TenantId"));
+			tenantUsersItem.setInstanceId(_ctx.stringValue("DescribeTenantUsersResponse.TenantUsers["+ i +"].InstanceId"));
 
 			List<DatabasesItem> databases = new ArrayList<DatabasesItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeTenantUsersResponse.TenantUsers["+ i +"].Databases.Length"); j++) {
