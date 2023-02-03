@@ -78,6 +78,12 @@ public class ListGatewayServiceResponseUnmarshaller {
 			}
 			services.setUnhealthyEndpoints(unhealthyEndpoints);
 
+			List<Integer> ports = new ArrayList<Integer>();
+			for (int j = 0; j < _ctx.lengthValue("ListGatewayServiceResponse.Data.Result["+ i +"].Ports.Length"); j++) {
+				ports.add(_ctx.integerValue("ListGatewayServiceResponse.Data.Result["+ i +"].Ports["+ j +"]"));
+			}
+			services.setPorts(ports);
+
 			HealthCheckInfo healthCheckInfo = new HealthCheckInfo();
 			healthCheckInfo.setCheck(_ctx.booleanValue("ListGatewayServiceResponse.Data.Result["+ i +"].HealthCheckInfo.Check"));
 			healthCheckInfo.setBizProtocol(_ctx.stringValue("ListGatewayServiceResponse.Data.Result["+ i +"].HealthCheckInfo.Protocol"));

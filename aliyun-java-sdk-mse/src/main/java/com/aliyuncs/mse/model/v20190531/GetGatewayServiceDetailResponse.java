@@ -123,7 +123,11 @@ public class GetGatewayServiceDetailResponse extends AcsResponse {
 
 		private List<VersionDetailsItem> versionDetails;
 
+		private List<PortTrafficPolicyListItem> portTrafficPolicyList;
+
 		private List<String> ips;
+
+		private List<Integer> ports;
 
 		private GatewayTrafficPolicy gatewayTrafficPolicy;
 
@@ -271,12 +275,28 @@ public class GetGatewayServiceDetailResponse extends AcsResponse {
 			this.versionDetails = versionDetails;
 		}
 
+		public List<PortTrafficPolicyListItem> getPortTrafficPolicyList() {
+			return this.portTrafficPolicyList;
+		}
+
+		public void setPortTrafficPolicyList(List<PortTrafficPolicyListItem> portTrafficPolicyList) {
+			this.portTrafficPolicyList = portTrafficPolicyList;
+		}
+
 		public List<String> getIps() {
 			return this.ips;
 		}
 
 		public void setIps(List<String> ips) {
 			this.ips = ips;
+		}
+
+		public List<Integer> getPorts() {
+			return this.ports;
+		}
+
+		public void setPorts(List<Integer> ports) {
+			this.ports = ports;
 		}
 
 		public GatewayTrafficPolicy getGatewayTrafficPolicy() {
@@ -422,29 +442,267 @@ public class GetGatewayServiceDetailResponse extends AcsResponse {
 			}
 		}
 
+		public static class PortTrafficPolicyListItem {
+
+			private Long id;
+
+			private Long serviceId;
+
+			private Integer servicePort;
+
+			private String gatewayUniqueId;
+
+			private String gmtCreate;
+
+			private String gmtModified;
+
+			private TrafficPolicy trafficPolicy;
+
+			public Long getId() {
+				return this.id;
+			}
+
+			public void setId(Long id) {
+				this.id = id;
+			}
+
+			public Long getServiceId() {
+				return this.serviceId;
+			}
+
+			public void setServiceId(Long serviceId) {
+				this.serviceId = serviceId;
+			}
+
+			public Integer getServicePort() {
+				return this.servicePort;
+			}
+
+			public void setServicePort(Integer servicePort) {
+				this.servicePort = servicePort;
+			}
+
+			public String getGatewayUniqueId() {
+				return this.gatewayUniqueId;
+			}
+
+			public void setGatewayUniqueId(String gatewayUniqueId) {
+				this.gatewayUniqueId = gatewayUniqueId;
+			}
+
+			public String getGmtCreate() {
+				return this.gmtCreate;
+			}
+
+			public void setGmtCreate(String gmtCreate) {
+				this.gmtCreate = gmtCreate;
+			}
+
+			public String getGmtModified() {
+				return this.gmtModified;
+			}
+
+			public void setGmtModified(String gmtModified) {
+				this.gmtModified = gmtModified;
+			}
+
+			public TrafficPolicy getTrafficPolicy() {
+				return this.trafficPolicy;
+			}
+
+			public void setTrafficPolicy(TrafficPolicy trafficPolicy) {
+				this.trafficPolicy = trafficPolicy;
+			}
+
+			public static class TrafficPolicy {
+
+				private TlsSetting tlsSetting;
+
+				private LoadBalancerSettings loadBalancerSettings;
+
+				public TlsSetting getTlsSetting() {
+					return this.tlsSetting;
+				}
+
+				public void setTlsSetting(TlsSetting tlsSetting) {
+					this.tlsSetting = tlsSetting;
+				}
+
+				public LoadBalancerSettings getLoadBalancerSettings() {
+					return this.loadBalancerSettings;
+				}
+
+				public void setLoadBalancerSettings(LoadBalancerSettings loadBalancerSettings) {
+					this.loadBalancerSettings = loadBalancerSettings;
+				}
+
+				public static class TlsSetting {
+
+					private String tlsMode;
+
+					private String certId;
+
+					private String caCertContent;
+
+					private String sni;
+
+					public String getTlsMode() {
+						return this.tlsMode;
+					}
+
+					public void setTlsMode(String tlsMode) {
+						this.tlsMode = tlsMode;
+					}
+
+					public String getCertId() {
+						return this.certId;
+					}
+
+					public void setCertId(String certId) {
+						this.certId = certId;
+					}
+
+					public String getCaCertContent() {
+						return this.caCertContent;
+					}
+
+					public void setCaCertContent(String caCertContent) {
+						this.caCertContent = caCertContent;
+					}
+
+					public String getSni() {
+						return this.sni;
+					}
+
+					public void setSni(String sni) {
+						this.sni = sni;
+					}
+				}
+
+				public static class LoadBalancerSettings {
+
+					private String loadbalancerType;
+
+					private Long warmupDuration;
+
+					private ConsistentHashLBConfig consistentHashLBConfig;
+
+					public String getLoadbalancerType() {
+						return this.loadbalancerType;
+					}
+
+					public void setLoadbalancerType(String loadbalancerType) {
+						this.loadbalancerType = loadbalancerType;
+					}
+
+					public Long getWarmupDuration() {
+						return this.warmupDuration;
+					}
+
+					public void setWarmupDuration(Long warmupDuration) {
+						this.warmupDuration = warmupDuration;
+					}
+
+					public ConsistentHashLBConfig getConsistentHashLBConfig() {
+						return this.consistentHashLBConfig;
+					}
+
+					public void setConsistentHashLBConfig(ConsistentHashLBConfig consistentHashLBConfig) {
+						this.consistentHashLBConfig = consistentHashLBConfig;
+					}
+
+					public static class ConsistentHashLBConfig {
+
+						private String parameterName;
+
+						private String consistentHashLBType;
+
+						private HttpCookie httpCookie;
+
+						public String getParameterName() {
+							return this.parameterName;
+						}
+
+						public void setParameterName(String parameterName) {
+							this.parameterName = parameterName;
+						}
+
+						public String getConsistentHashLBType() {
+							return this.consistentHashLBType;
+						}
+
+						public void setConsistentHashLBType(String consistentHashLBType) {
+							this.consistentHashLBType = consistentHashLBType;
+						}
+
+						public HttpCookie getHttpCookie() {
+							return this.httpCookie;
+						}
+
+						public void setHttpCookie(HttpCookie httpCookie) {
+							this.httpCookie = httpCookie;
+						}
+
+						public static class HttpCookie {
+
+							private String name;
+
+							private String path;
+
+							private String tTL;
+
+							public String getName() {
+								return this.name;
+							}
+
+							public void setName(String name) {
+								this.name = name;
+							}
+
+							public String getPath() {
+								return this.path;
+							}
+
+							public void setPath(String path) {
+								this.path = path;
+							}
+
+							public String getTTL() {
+								return this.tTL;
+							}
+
+							public void setTTL(String tTL) {
+								this.tTL = tTL;
+							}
+						}
+					}
+				}
+			}
+		}
+
 		public static class GatewayTrafficPolicy {
 
-			private TlsSetting tlsSetting;
+			private TlsSetting1 tlsSetting1;
 
-			private LoadBalancerSettings loadBalancerSettings;
+			private LoadBalancerSettings2 loadBalancerSettings2;
 
-			public TlsSetting getTlsSetting() {
-				return this.tlsSetting;
+			public TlsSetting1 getTlsSetting1() {
+				return this.tlsSetting1;
 			}
 
-			public void setTlsSetting(TlsSetting tlsSetting) {
-				this.tlsSetting = tlsSetting;
+			public void setTlsSetting1(TlsSetting1 tlsSetting1) {
+				this.tlsSetting1 = tlsSetting1;
 			}
 
-			public LoadBalancerSettings getLoadBalancerSettings() {
-				return this.loadBalancerSettings;
+			public LoadBalancerSettings2 getLoadBalancerSettings2() {
+				return this.loadBalancerSettings2;
 			}
 
-			public void setLoadBalancerSettings(LoadBalancerSettings loadBalancerSettings) {
-				this.loadBalancerSettings = loadBalancerSettings;
+			public void setLoadBalancerSettings2(LoadBalancerSettings2 loadBalancerSettings2) {
+				this.loadBalancerSettings2 = loadBalancerSettings2;
 			}
 
-			public static class TlsSetting {
+			public static class TlsSetting1 {
 
 				private String tlsMode;
 
@@ -487,13 +745,13 @@ public class GetGatewayServiceDetailResponse extends AcsResponse {
 				}
 			}
 
-			public static class LoadBalancerSettings {
+			public static class LoadBalancerSettings2 {
 
 				private String loadbalancerType;
 
 				private Long warmupDuration;
 
-				private ConsistentHashLBConfig consistentHashLBConfig;
+				private ConsistentHashLBConfig3 consistentHashLBConfig3;
 
 				public String getLoadbalancerType() {
 					return this.loadbalancerType;
@@ -511,21 +769,21 @@ public class GetGatewayServiceDetailResponse extends AcsResponse {
 					this.warmupDuration = warmupDuration;
 				}
 
-				public ConsistentHashLBConfig getConsistentHashLBConfig() {
-					return this.consistentHashLBConfig;
+				public ConsistentHashLBConfig3 getConsistentHashLBConfig3() {
+					return this.consistentHashLBConfig3;
 				}
 
-				public void setConsistentHashLBConfig(ConsistentHashLBConfig consistentHashLBConfig) {
-					this.consistentHashLBConfig = consistentHashLBConfig;
+				public void setConsistentHashLBConfig3(ConsistentHashLBConfig3 consistentHashLBConfig3) {
+					this.consistentHashLBConfig3 = consistentHashLBConfig3;
 				}
 
-				public static class ConsistentHashLBConfig {
+				public static class ConsistentHashLBConfig3 {
 
 					private String parameterName;
 
 					private String consistentHashLBType;
 
-					private HttpCookie httpCookie;
+					private HttpCookie4 httpCookie4;
 
 					public String getParameterName() {
 						return this.parameterName;
@@ -543,15 +801,15 @@ public class GetGatewayServiceDetailResponse extends AcsResponse {
 						this.consistentHashLBType = consistentHashLBType;
 					}
 
-					public HttpCookie getHttpCookie() {
-						return this.httpCookie;
+					public HttpCookie4 getHttpCookie4() {
+						return this.httpCookie4;
 					}
 
-					public void setHttpCookie(HttpCookie httpCookie) {
-						this.httpCookie = httpCookie;
+					public void setHttpCookie4(HttpCookie4 httpCookie4) {
+						this.httpCookie4 = httpCookie4;
 					}
 
-					public static class HttpCookie {
+					public static class HttpCookie4 {
 
 						private String name;
 

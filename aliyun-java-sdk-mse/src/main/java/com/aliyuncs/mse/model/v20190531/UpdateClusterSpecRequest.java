@@ -27,8 +27,6 @@ public class UpdateClusterSpecRequest extends RpcAcsRequest<UpdateClusterSpecRes
 
 	private String clusterSpecification;
 
-	private String mseSessionId;
-
 	private Integer instanceCount;
 
 	private String clusterId;
@@ -53,17 +51,6 @@ public class UpdateClusterSpecRequest extends RpcAcsRequest<UpdateClusterSpecRes
 		this.clusterSpecification = clusterSpecification;
 		if(clusterSpecification != null){
 			putQueryParameter("ClusterSpecification", clusterSpecification);
-		}
-	}
-
-	public String getMseSessionId() {
-		return this.mseSessionId;
-	}
-
-	public void setMseSessionId(String mseSessionId) {
-		this.mseSessionId = mseSessionId;
-		if(mseSessionId != null){
-			putQueryParameter("MseSessionId", mseSessionId);
 		}
 	}
 

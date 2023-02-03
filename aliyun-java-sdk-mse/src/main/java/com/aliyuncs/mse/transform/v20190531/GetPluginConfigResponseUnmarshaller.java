@@ -54,6 +54,7 @@ public class GetPluginConfigResponseUnmarshaller {
 		data.setImageName(_ctx.stringValue("GetPluginConfigResponse.Data.ImageName"));
 		data.setPublishState(_ctx.integerValue("GetPluginConfigResponse.Data.PublishState"));
 		data.setStatus(_ctx.stringValue("GetPluginConfigResponse.Data.Status"));
+		data.setVersionJson(_ctx.stringValue("GetPluginConfigResponse.Data.VersionJson"));
 
 		List<GatewayConfigListItem> gatewayConfigList = new ArrayList<GatewayConfigListItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetPluginConfigResponse.Data.GatewayConfigList.Length"); i++) {

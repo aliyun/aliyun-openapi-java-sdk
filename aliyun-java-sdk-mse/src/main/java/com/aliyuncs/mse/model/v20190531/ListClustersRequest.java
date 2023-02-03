@@ -26,8 +26,6 @@ import com.aliyuncs.mse.Endpoint;
 public class ListClustersRequest extends RpcAcsRequest<ListClustersResponse> {
 	   
 
-	private String mseSessionId;
-
 	private String clusterAliasName;
 
 	private Integer pageNum;
@@ -48,17 +46,6 @@ public class ListClustersRequest extends RpcAcsRequest<ListClustersResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getMseSessionId() {
-		return this.mseSessionId;
-	}
-
-	public void setMseSessionId(String mseSessionId) {
-		this.mseSessionId = mseSessionId;
-		if(mseSessionId != null){
-			putQueryParameter("MseSessionId", mseSessionId);
-		}
 	}
 
 	public String getClusterAliasName() {

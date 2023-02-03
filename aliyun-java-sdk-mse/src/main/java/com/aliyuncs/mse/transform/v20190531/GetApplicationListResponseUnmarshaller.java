@@ -51,6 +51,7 @@ public class GetApplicationListResponseUnmarshaller {
 			applicationList.setSource(_ctx.stringValue("GetApplicationListResponse.Data.Result["+ i +"].Source"));
 			applicationList.setLanguage(_ctx.stringValue("GetApplicationListResponse.Data.Result["+ i +"].Language"));
 			applicationList.setRegionId(_ctx.stringValue("GetApplicationListResponse.Data.Result["+ i +"].RegionId"));
+			applicationList.setNamespace(_ctx.stringValue("GetApplicationListResponse.Data.Result["+ i +"].Namespace"));
 
 			result.add(applicationList);
 		}

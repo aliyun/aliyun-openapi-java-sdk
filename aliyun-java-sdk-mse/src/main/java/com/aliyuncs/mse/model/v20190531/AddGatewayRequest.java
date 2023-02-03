@@ -15,6 +15,7 @@
 package com.aliyuncs.mse.model.v20190531;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.mse.Endpoint;
 
@@ -24,8 +25,6 @@ import com.aliyuncs.mse.Endpoint;
  */
 public class AddGatewayRequest extends RpcAcsRequest<AddGatewayResponse> {
 	   
-
-	private String mseSessionId;
 
 	private String internetSlbSpec;
 
@@ -43,7 +42,11 @@ public class AddGatewayRequest extends RpcAcsRequest<AddGatewayResponse> {
 
 	private String spec;
 
+	private String resourceGroupId;
+
 	private Boolean enterpriseSecurityGroup;
+
+	private List<Tag> tags;
 
 	private String vpc;
 
@@ -63,17 +66,6 @@ public class AddGatewayRequest extends RpcAcsRequest<AddGatewayResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getMseSessionId() {
-		return this.mseSessionId;
-	}
-
-	public void setMseSessionId(String mseSessionId) {
-		this.mseSessionId = mseSessionId;
-		if(mseSessionId != null){
-			putQueryParameter("MseSessionId", mseSessionId);
-		}
 	}
 
 	public String getInternetSlbSpec() {
@@ -164,6 +156,17 @@ public class AddGatewayRequest extends RpcAcsRequest<AddGatewayResponse> {
 		}
 	}
 
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
 	public Boolean getEnterpriseSecurityGroup() {
 		return this.enterpriseSecurityGroup;
 	}
@@ -173,6 +176,20 @@ public class AddGatewayRequest extends RpcAcsRequest<AddGatewayResponse> {
 		if(enterpriseSecurityGroup != null){
 			putQueryParameter("EnterpriseSecurityGroup", enterpriseSecurityGroup.toString());
 		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
 	}
 
 	public String getVpc() {
@@ -238,6 +255,29 @@ public class AddGatewayRequest extends RpcAcsRequest<AddGatewayResponse> {
 		this.region = region;
 		if(region != null){
 			putQueryParameter("Region", region);
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

@@ -122,6 +122,10 @@ public class GetGatewayResponse extends AcsResponse {
 
 		private String statusDesc;
 
+		private String mseTag;
+
+		private String resourceGroupId;
+
 		private XtraceDetails xtraceDetails;
 
 		private LogConfigDetails logConfigDetails;
@@ -268,6 +272,22 @@ public class GetGatewayResponse extends AcsResponse {
 
 		public void setStatusDesc(String statusDesc) {
 			this.statusDesc = statusDesc;
+		}
+
+		public String getMseTag() {
+			return this.mseTag;
+		}
+
+		public void setMseTag(String mseTag) {
+			this.mseTag = mseTag;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public XtraceDetails getXtraceDetails() {

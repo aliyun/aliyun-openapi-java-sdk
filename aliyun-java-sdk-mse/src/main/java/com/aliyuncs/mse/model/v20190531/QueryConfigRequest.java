@@ -25,7 +25,7 @@ import com.aliyuncs.mse.Endpoint;
 public class QueryConfigRequest extends RpcAcsRequest<QueryConfigResponse> {
 	   
 
-	private String mseSessionId;
+	private Boolean needRunningConf;
 
 	private String configType;
 
@@ -45,14 +45,14 @@ public class QueryConfigRequest extends RpcAcsRequest<QueryConfigResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getMseSessionId() {
-		return this.mseSessionId;
+	public Boolean getNeedRunningConf() {
+		return this.needRunningConf;
 	}
 
-	public void setMseSessionId(String mseSessionId) {
-		this.mseSessionId = mseSessionId;
-		if(mseSessionId != null){
-			putQueryParameter("MseSessionId", mseSessionId);
+	public void setNeedRunningConf(Boolean needRunningConf) {
+		this.needRunningConf = needRunningConf;
+		if(needRunningConf != null){
+			putQueryParameter("NeedRunningConf", needRunningConf.toString());
 		}
 	}
 

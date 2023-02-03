@@ -27,8 +27,6 @@ import com.aliyuncs.mse.Endpoint;
 public class UpdateGatewayRouteCORSRequest extends RpcAcsRequest<UpdateGatewayRouteCORSResponse> {
 	   
 
-	private String mseSessionId;
-
 	private String gatewayUniqueId;
 
 	private Long id;
@@ -46,17 +44,6 @@ public class UpdateGatewayRouteCORSRequest extends RpcAcsRequest<UpdateGatewayRo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getMseSessionId() {
-		return this.mseSessionId;
-	}
-
-	public void setMseSessionId(String mseSessionId) {
-		this.mseSessionId = mseSessionId;
-		if(mseSessionId != null){
-			putQueryParameter("MseSessionId", mseSessionId);
-		}
 	}
 
 	public String getGatewayUniqueId() {

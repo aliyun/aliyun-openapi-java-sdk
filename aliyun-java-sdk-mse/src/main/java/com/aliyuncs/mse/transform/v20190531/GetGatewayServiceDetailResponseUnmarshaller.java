@@ -20,11 +20,17 @@ import java.util.List;
 import com.aliyuncs.mse.model.v20190531.GetGatewayServiceDetailResponse;
 import com.aliyuncs.mse.model.v20190531.GetGatewayServiceDetailResponse.Data;
 import com.aliyuncs.mse.model.v20190531.GetGatewayServiceDetailResponse.Data.GatewayTrafficPolicy;
-import com.aliyuncs.mse.model.v20190531.GetGatewayServiceDetailResponse.Data.GatewayTrafficPolicy.LoadBalancerSettings;
-import com.aliyuncs.mse.model.v20190531.GetGatewayServiceDetailResponse.Data.GatewayTrafficPolicy.LoadBalancerSettings.ConsistentHashLBConfig;
-import com.aliyuncs.mse.model.v20190531.GetGatewayServiceDetailResponse.Data.GatewayTrafficPolicy.LoadBalancerSettings.ConsistentHashLBConfig.HttpCookie;
-import com.aliyuncs.mse.model.v20190531.GetGatewayServiceDetailResponse.Data.GatewayTrafficPolicy.TlsSetting;
+import com.aliyuncs.mse.model.v20190531.GetGatewayServiceDetailResponse.Data.GatewayTrafficPolicy.LoadBalancerSettings2;
+import com.aliyuncs.mse.model.v20190531.GetGatewayServiceDetailResponse.Data.GatewayTrafficPolicy.LoadBalancerSettings2.ConsistentHashLBConfig3;
+import com.aliyuncs.mse.model.v20190531.GetGatewayServiceDetailResponse.Data.GatewayTrafficPolicy.LoadBalancerSettings2.ConsistentHashLBConfig3.HttpCookie4;
+import com.aliyuncs.mse.model.v20190531.GetGatewayServiceDetailResponse.Data.GatewayTrafficPolicy.TlsSetting1;
 import com.aliyuncs.mse.model.v20190531.GetGatewayServiceDetailResponse.Data.LabelDetailsItem;
+import com.aliyuncs.mse.model.v20190531.GetGatewayServiceDetailResponse.Data.PortTrafficPolicyListItem;
+import com.aliyuncs.mse.model.v20190531.GetGatewayServiceDetailResponse.Data.PortTrafficPolicyListItem.TrafficPolicy;
+import com.aliyuncs.mse.model.v20190531.GetGatewayServiceDetailResponse.Data.PortTrafficPolicyListItem.TrafficPolicy.LoadBalancerSettings;
+import com.aliyuncs.mse.model.v20190531.GetGatewayServiceDetailResponse.Data.PortTrafficPolicyListItem.TrafficPolicy.LoadBalancerSettings.ConsistentHashLBConfig;
+import com.aliyuncs.mse.model.v20190531.GetGatewayServiceDetailResponse.Data.PortTrafficPolicyListItem.TrafficPolicy.LoadBalancerSettings.ConsistentHashLBConfig.HttpCookie;
+import com.aliyuncs.mse.model.v20190531.GetGatewayServiceDetailResponse.Data.PortTrafficPolicyListItem.TrafficPolicy.TlsSetting;
 import com.aliyuncs.mse.model.v20190531.GetGatewayServiceDetailResponse.Data.VersionDetailsItem;
 import com.aliyuncs.mse.model.v20190531.GetGatewayServiceDetailResponse.Data.VersionDetailsItem.ServiceVersion;
 import com.aliyuncs.mse.model.v20190531.GetGatewayServiceDetailResponse.Data.VersionDetailsItem.ServiceVersion.LabelsItem;
@@ -65,30 +71,36 @@ public class GetGatewayServiceDetailResponseUnmarshaller {
 		}
 		data.setIps(ips);
 
+		List<Integer> ports = new ArrayList<Integer>();
+		for (int i = 0; i < _ctx.lengthValue("GetGatewayServiceDetailResponse.Data.Ports.Length"); i++) {
+			ports.add(_ctx.integerValue("GetGatewayServiceDetailResponse.Data.Ports["+ i +"]"));
+		}
+		data.setPorts(ports);
+
 		GatewayTrafficPolicy gatewayTrafficPolicy = new GatewayTrafficPolicy();
 
-		TlsSetting tlsSetting = new TlsSetting();
-		tlsSetting.setTlsMode(_ctx.stringValue("GetGatewayServiceDetailResponse.Data.GatewayTrafficPolicy.TlsSetting.TlsMode"));
-		tlsSetting.setCertId(_ctx.stringValue("GetGatewayServiceDetailResponse.Data.GatewayTrafficPolicy.TlsSetting.CertId"));
-		tlsSetting.setCaCertContent(_ctx.stringValue("GetGatewayServiceDetailResponse.Data.GatewayTrafficPolicy.TlsSetting.CaCertContent"));
-		tlsSetting.setSni(_ctx.stringValue("GetGatewayServiceDetailResponse.Data.GatewayTrafficPolicy.TlsSetting.Sni"));
-		gatewayTrafficPolicy.setTlsSetting(tlsSetting);
+		TlsSetting1 tlsSetting1 = new TlsSetting1();
+		tlsSetting1.setTlsMode(_ctx.stringValue("GetGatewayServiceDetailResponse.Data.GatewayTrafficPolicy.TlsSetting.TlsMode"));
+		tlsSetting1.setCertId(_ctx.stringValue("GetGatewayServiceDetailResponse.Data.GatewayTrafficPolicy.TlsSetting.CertId"));
+		tlsSetting1.setCaCertContent(_ctx.stringValue("GetGatewayServiceDetailResponse.Data.GatewayTrafficPolicy.TlsSetting.CaCertContent"));
+		tlsSetting1.setSni(_ctx.stringValue("GetGatewayServiceDetailResponse.Data.GatewayTrafficPolicy.TlsSetting.Sni"));
+		gatewayTrafficPolicy.setTlsSetting1(tlsSetting1);
 
-		LoadBalancerSettings loadBalancerSettings = new LoadBalancerSettings();
-		loadBalancerSettings.setLoadbalancerType(_ctx.stringValue("GetGatewayServiceDetailResponse.Data.GatewayTrafficPolicy.LoadBalancerSettings.LoadbalancerType"));
-		loadBalancerSettings.setWarmupDuration(_ctx.longValue("GetGatewayServiceDetailResponse.Data.GatewayTrafficPolicy.LoadBalancerSettings.WarmupDuration"));
+		LoadBalancerSettings2 loadBalancerSettings2 = new LoadBalancerSettings2();
+		loadBalancerSettings2.setLoadbalancerType(_ctx.stringValue("GetGatewayServiceDetailResponse.Data.GatewayTrafficPolicy.LoadBalancerSettings.LoadbalancerType"));
+		loadBalancerSettings2.setWarmupDuration(_ctx.longValue("GetGatewayServiceDetailResponse.Data.GatewayTrafficPolicy.LoadBalancerSettings.WarmupDuration"));
 
-		ConsistentHashLBConfig consistentHashLBConfig = new ConsistentHashLBConfig();
-		consistentHashLBConfig.setParameterName(_ctx.stringValue("GetGatewayServiceDetailResponse.Data.GatewayTrafficPolicy.LoadBalancerSettings.ConsistentHashLBConfig.ParameterName"));
-		consistentHashLBConfig.setConsistentHashLBType(_ctx.stringValue("GetGatewayServiceDetailResponse.Data.GatewayTrafficPolicy.LoadBalancerSettings.ConsistentHashLBConfig.ConsistentHashLBType"));
+		ConsistentHashLBConfig3 consistentHashLBConfig3 = new ConsistentHashLBConfig3();
+		consistentHashLBConfig3.setParameterName(_ctx.stringValue("GetGatewayServiceDetailResponse.Data.GatewayTrafficPolicy.LoadBalancerSettings.ConsistentHashLBConfig.ParameterName"));
+		consistentHashLBConfig3.setConsistentHashLBType(_ctx.stringValue("GetGatewayServiceDetailResponse.Data.GatewayTrafficPolicy.LoadBalancerSettings.ConsistentHashLBConfig.ConsistentHashLBType"));
 
-		HttpCookie httpCookie = new HttpCookie();
-		httpCookie.setName(_ctx.stringValue("GetGatewayServiceDetailResponse.Data.GatewayTrafficPolicy.LoadBalancerSettings.ConsistentHashLBConfig.HttpCookie.Name"));
-		httpCookie.setPath(_ctx.stringValue("GetGatewayServiceDetailResponse.Data.GatewayTrafficPolicy.LoadBalancerSettings.ConsistentHashLBConfig.HttpCookie.Path"));
-		httpCookie.setTTL(_ctx.stringValue("GetGatewayServiceDetailResponse.Data.GatewayTrafficPolicy.LoadBalancerSettings.ConsistentHashLBConfig.HttpCookie.TTL"));
-		consistentHashLBConfig.setHttpCookie(httpCookie);
-		loadBalancerSettings.setConsistentHashLBConfig(consistentHashLBConfig);
-		gatewayTrafficPolicy.setLoadBalancerSettings(loadBalancerSettings);
+		HttpCookie4 httpCookie4 = new HttpCookie4();
+		httpCookie4.setName(_ctx.stringValue("GetGatewayServiceDetailResponse.Data.GatewayTrafficPolicy.LoadBalancerSettings.ConsistentHashLBConfig.HttpCookie.Name"));
+		httpCookie4.setPath(_ctx.stringValue("GetGatewayServiceDetailResponse.Data.GatewayTrafficPolicy.LoadBalancerSettings.ConsistentHashLBConfig.HttpCookie.Path"));
+		httpCookie4.setTTL(_ctx.stringValue("GetGatewayServiceDetailResponse.Data.GatewayTrafficPolicy.LoadBalancerSettings.ConsistentHashLBConfig.HttpCookie.TTL"));
+		consistentHashLBConfig3.setHttpCookie4(httpCookie4);
+		loadBalancerSettings2.setConsistentHashLBConfig3(consistentHashLBConfig3);
+		gatewayTrafficPolicy.setLoadBalancerSettings2(loadBalancerSettings2);
 		data.setGatewayTrafficPolicy(gatewayTrafficPolicy);
 
 		List<VersionsItem> versions = new ArrayList<VersionsItem>();
@@ -140,6 +152,46 @@ public class GetGatewayServiceDetailResponseUnmarshaller {
 			versionDetails.add(versionDetailsItem);
 		}
 		data.setVersionDetails(versionDetails);
+
+		List<PortTrafficPolicyListItem> portTrafficPolicyList = new ArrayList<PortTrafficPolicyListItem>();
+		for (int i = 0; i < _ctx.lengthValue("GetGatewayServiceDetailResponse.Data.PortTrafficPolicyList.Length"); i++) {
+			PortTrafficPolicyListItem portTrafficPolicyListItem = new PortTrafficPolicyListItem();
+			portTrafficPolicyListItem.setId(_ctx.longValue("GetGatewayServiceDetailResponse.Data.PortTrafficPolicyList["+ i +"].Id"));
+			portTrafficPolicyListItem.setServiceId(_ctx.longValue("GetGatewayServiceDetailResponse.Data.PortTrafficPolicyList["+ i +"].ServiceId"));
+			portTrafficPolicyListItem.setServicePort(_ctx.integerValue("GetGatewayServiceDetailResponse.Data.PortTrafficPolicyList["+ i +"].ServicePort"));
+			portTrafficPolicyListItem.setGatewayUniqueId(_ctx.stringValue("GetGatewayServiceDetailResponse.Data.PortTrafficPolicyList["+ i +"].GatewayUniqueId"));
+			portTrafficPolicyListItem.setGmtCreate(_ctx.stringValue("GetGatewayServiceDetailResponse.Data.PortTrafficPolicyList["+ i +"].GmtCreate"));
+			portTrafficPolicyListItem.setGmtModified(_ctx.stringValue("GetGatewayServiceDetailResponse.Data.PortTrafficPolicyList["+ i +"].GmtModified"));
+
+			TrafficPolicy trafficPolicy = new TrafficPolicy();
+
+			TlsSetting tlsSetting = new TlsSetting();
+			tlsSetting.setTlsMode(_ctx.stringValue("GetGatewayServiceDetailResponse.Data.PortTrafficPolicyList["+ i +"].TrafficPolicy.TlsSetting.TlsMode"));
+			tlsSetting.setCertId(_ctx.stringValue("GetGatewayServiceDetailResponse.Data.PortTrafficPolicyList["+ i +"].TrafficPolicy.TlsSetting.CertId"));
+			tlsSetting.setCaCertContent(_ctx.stringValue("GetGatewayServiceDetailResponse.Data.PortTrafficPolicyList["+ i +"].TrafficPolicy.TlsSetting.CaCertContent"));
+			tlsSetting.setSni(_ctx.stringValue("GetGatewayServiceDetailResponse.Data.PortTrafficPolicyList["+ i +"].TrafficPolicy.TlsSetting.Sni"));
+			trafficPolicy.setTlsSetting(tlsSetting);
+
+			LoadBalancerSettings loadBalancerSettings = new LoadBalancerSettings();
+			loadBalancerSettings.setLoadbalancerType(_ctx.stringValue("GetGatewayServiceDetailResponse.Data.PortTrafficPolicyList["+ i +"].TrafficPolicy.LoadBalancerSettings.LoadbalancerType"));
+			loadBalancerSettings.setWarmupDuration(_ctx.longValue("GetGatewayServiceDetailResponse.Data.PortTrafficPolicyList["+ i +"].TrafficPolicy.LoadBalancerSettings.WarmupDuration"));
+
+			ConsistentHashLBConfig consistentHashLBConfig = new ConsistentHashLBConfig();
+			consistentHashLBConfig.setParameterName(_ctx.stringValue("GetGatewayServiceDetailResponse.Data.PortTrafficPolicyList["+ i +"].TrafficPolicy.LoadBalancerSettings.ConsistentHashLBConfig.ParameterName"));
+			consistentHashLBConfig.setConsistentHashLBType(_ctx.stringValue("GetGatewayServiceDetailResponse.Data.PortTrafficPolicyList["+ i +"].TrafficPolicy.LoadBalancerSettings.ConsistentHashLBConfig.ConsistentHashLBType"));
+
+			HttpCookie httpCookie = new HttpCookie();
+			httpCookie.setName(_ctx.stringValue("GetGatewayServiceDetailResponse.Data.PortTrafficPolicyList["+ i +"].TrafficPolicy.LoadBalancerSettings.ConsistentHashLBConfig.HttpCookie.Name"));
+			httpCookie.setPath(_ctx.stringValue("GetGatewayServiceDetailResponse.Data.PortTrafficPolicyList["+ i +"].TrafficPolicy.LoadBalancerSettings.ConsistentHashLBConfig.HttpCookie.Path"));
+			httpCookie.setTTL(_ctx.stringValue("GetGatewayServiceDetailResponse.Data.PortTrafficPolicyList["+ i +"].TrafficPolicy.LoadBalancerSettings.ConsistentHashLBConfig.HttpCookie.TTL"));
+			consistentHashLBConfig.setHttpCookie(httpCookie);
+			loadBalancerSettings.setConsistentHashLBConfig(consistentHashLBConfig);
+			trafficPolicy.setLoadBalancerSettings(loadBalancerSettings);
+			portTrafficPolicyListItem.setTrafficPolicy(trafficPolicy);
+
+			portTrafficPolicyList.add(portTrafficPolicyListItem);
+		}
+		data.setPortTrafficPolicyList(portTrafficPolicyList);
 		getGatewayServiceDetailResponse.setData(data);
 	 
 	 	return getGatewayServiceDetailResponse;

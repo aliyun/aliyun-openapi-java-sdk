@@ -25,17 +25,15 @@ import com.aliyuncs.mse.Endpoint;
 public class CreateApplicationRequest extends RpcAcsRequest<CreateApplicationResponse> {
 	   
 
-	private String mseSessionId;
-
 	private String language;
 
 	private String source;
 
-	private String extraInfo;
-
 	private String appName;
 
 	private String switchEnable;
+
+	private String namespace;
 
 	private String acceptLanguage;
 
@@ -49,17 +47,6 @@ public class CreateApplicationRequest extends RpcAcsRequest<CreateApplicationRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getMseSessionId() {
-		return this.mseSessionId;
-	}
-
-	public void setMseSessionId(String mseSessionId) {
-		this.mseSessionId = mseSessionId;
-		if(mseSessionId != null){
-			putQueryParameter("MseSessionId", mseSessionId);
-		}
 	}
 
 	public String getLanguage() {
@@ -84,17 +71,6 @@ public class CreateApplicationRequest extends RpcAcsRequest<CreateApplicationRes
 		}
 	}
 
-	public String getExtraInfo() {
-		return this.extraInfo;
-	}
-
-	public void setExtraInfo(String extraInfo) {
-		this.extraInfo = extraInfo;
-		if(extraInfo != null){
-			putQueryParameter("ExtraInfo", extraInfo);
-		}
-	}
-
 	public String getAppName() {
 		return this.appName;
 	}
@@ -114,6 +90,17 @@ public class CreateApplicationRequest extends RpcAcsRequest<CreateApplicationRes
 		this.switchEnable = switchEnable;
 		if(switchEnable != null){
 			putQueryParameter("SwitchEnable", switchEnable);
+		}
+	}
+
+	public String getNamespace() {
+		return this.namespace;
+	}
+
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+		if(namespace != null){
+			putQueryParameter("Namespace", namespace);
 		}
 	}
 

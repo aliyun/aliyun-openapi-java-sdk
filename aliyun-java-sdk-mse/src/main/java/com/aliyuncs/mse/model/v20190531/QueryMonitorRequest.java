@@ -27,8 +27,6 @@ public class QueryMonitorRequest extends RpcAcsRequest<QueryMonitorResponse> {
 
 	private String monitorType;
 
-	private String mseSessionId;
-
 	private Long endTime;
 
 	private Long startTime;
@@ -57,17 +55,6 @@ public class QueryMonitorRequest extends RpcAcsRequest<QueryMonitorResponse> {
 		this.monitorType = monitorType;
 		if(monitorType != null){
 			putQueryParameter("MonitorType", monitorType);
-		}
-	}
-
-	public String getMseSessionId() {
-		return this.mseSessionId;
-	}
-
-	public void setMseSessionId(String mseSessionId) {
-		this.mseSessionId = mseSessionId;
-		if(mseSessionId != null){
-			putQueryParameter("MseSessionId", mseSessionId);
 		}
 	}
 

@@ -107,6 +107,12 @@ public class ListServiceSourceResponse extends AcsResponse {
 
 		private String sourceUniqueId;
 
+		private String gatewayUniqueId;
+
+		private List<String> groupList;
+
+		private List<String> pathList;
+
 		private IngressOptions ingressOptions;
 
 		public Long getId() {
@@ -189,6 +195,30 @@ public class ListServiceSourceResponse extends AcsResponse {
 			this.sourceUniqueId = sourceUniqueId;
 		}
 
+		public String getGatewayUniqueId() {
+			return this.gatewayUniqueId;
+		}
+
+		public void setGatewayUniqueId(String gatewayUniqueId) {
+			this.gatewayUniqueId = gatewayUniqueId;
+		}
+
+		public List<String> getGroupList() {
+			return this.groupList;
+		}
+
+		public void setGroupList(List<String> groupList) {
+			this.groupList = groupList;
+		}
+
+		public List<String> getPathList() {
+			return this.pathList;
+		}
+
+		public void setPathList(List<String> pathList) {
+			this.pathList = pathList;
+		}
+
 		public IngressOptions getIngressOptions() {
 			return this.ingressOptions;
 		}
@@ -204,6 +234,8 @@ public class ListServiceSourceResponse extends AcsResponse {
 			private String ingressClass;
 
 			private String watchNamespace;
+
+			private Boolean enableStatus;
 
 			public Boolean getEnableIngress() {
 				return this.enableIngress;
@@ -227,6 +259,14 @@ public class ListServiceSourceResponse extends AcsResponse {
 
 			public void setWatchNamespace(String watchNamespace) {
 				this.watchNamespace = watchNamespace;
+			}
+
+			public Boolean getEnableStatus() {
+				return this.enableStatus;
+			}
+
+			public void setEnableStatus(Boolean enableStatus) {
+				this.enableStatus = enableStatus;
 			}
 		}
 	}

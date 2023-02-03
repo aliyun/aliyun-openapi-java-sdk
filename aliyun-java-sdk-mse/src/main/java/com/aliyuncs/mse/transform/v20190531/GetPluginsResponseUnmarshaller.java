@@ -51,6 +51,9 @@ public class GetPluginsResponseUnmarshaller {
 			dataItem.setPublishState(_ctx.integerValue("GetPluginsResponse.Data["+ i +"].PublishState"));
 			dataItem.setWasmFile(_ctx.stringValue("GetPluginsResponse.Data["+ i +"].WasmFile"));
 			dataItem.setStatus(_ctx.stringValue("GetPluginsResponse.Data["+ i +"].Status"));
+			dataItem.setMode(_ctx.integerValue("GetPluginsResponse.Data["+ i +"].Mode"));
+			dataItem.setMaxVersion(_ctx.stringValue("GetPluginsResponse.Data["+ i +"].MaxVersion"));
+			dataItem.setNewVersionPublishingFlag(_ctx.booleanValue("GetPluginsResponse.Data["+ i +"].NewVersionPublishingFlag"));
 
 			data.add(dataItem);
 		}

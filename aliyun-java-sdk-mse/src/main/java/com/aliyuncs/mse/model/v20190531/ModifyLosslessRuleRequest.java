@@ -25,8 +25,6 @@ import com.aliyuncs.mse.Endpoint;
 public class ModifyLosslessRuleRequest extends RpcAcsRequest<ModifyLosslessRuleResponse> {
 	   
 
-	private String mseSessionId;
-
 	private Long delayTime;
 
 	private String source;
@@ -43,9 +41,15 @@ public class ModifyLosslessRuleRequest extends RpcAcsRequest<ModifyLosslessRuleR
 
 	private Integer shutdownWaitSeconds;
 
+	private Boolean notice;
+
+	private Boolean lossLessDetail;
+
 	private Long funcType;
 
 	private String appId;
+
+	private String namespace;
 
 	private String acceptLanguage;
 	public ModifyLosslessRuleRequest() {
@@ -55,17 +59,6 @@ public class ModifyLosslessRuleRequest extends RpcAcsRequest<ModifyLosslessRuleR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getMseSessionId() {
-		return this.mseSessionId;
-	}
-
-	public void setMseSessionId(String mseSessionId) {
-		this.mseSessionId = mseSessionId;
-		if(mseSessionId != null){
-			putQueryParameter("MseSessionId", mseSessionId);
-		}
 	}
 
 	public Long getDelayTime() {
@@ -156,6 +149,28 @@ public class ModifyLosslessRuleRequest extends RpcAcsRequest<ModifyLosslessRuleR
 		}
 	}
 
+	public Boolean getNotice() {
+		return this.notice;
+	}
+
+	public void setNotice(Boolean notice) {
+		this.notice = notice;
+		if(notice != null){
+			putQueryParameter("Notice", notice.toString());
+		}
+	}
+
+	public Boolean getLossLessDetail() {
+		return this.lossLessDetail;
+	}
+
+	public void setLossLessDetail(Boolean lossLessDetail) {
+		this.lossLessDetail = lossLessDetail;
+		if(lossLessDetail != null){
+			putQueryParameter("LossLessDetail", lossLessDetail.toString());
+		}
+	}
+
 	public Long getFuncType() {
 		return this.funcType;
 	}
@@ -175,6 +190,17 @@ public class ModifyLosslessRuleRequest extends RpcAcsRequest<ModifyLosslessRuleR
 		this.appId = appId;
 		if(appId != null){
 			putQueryParameter("AppId", appId);
+		}
+	}
+
+	public String getNamespace() {
+		return this.namespace;
+	}
+
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+		if(namespace != null){
+			putQueryParameter("Namespace", namespace);
 		}
 	}
 

@@ -25,8 +25,6 @@ import com.aliyuncs.mse.Endpoint;
 public class CreateZnodeRequest extends RpcAcsRequest<CreateZnodeResponse> {
 	   
 
-	private String mseSessionId;
-
 	private String data;
 
 	private String clusterId;
@@ -41,17 +39,6 @@ public class CreateZnodeRequest extends RpcAcsRequest<CreateZnodeResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getMseSessionId() {
-		return this.mseSessionId;
-	}
-
-	public void setMseSessionId(String mseSessionId) {
-		this.mseSessionId = mseSessionId;
-		if(mseSessionId != null){
-			putQueryParameter("MseSessionId", mseSessionId);
-		}
 	}
 
 	public String getData() {

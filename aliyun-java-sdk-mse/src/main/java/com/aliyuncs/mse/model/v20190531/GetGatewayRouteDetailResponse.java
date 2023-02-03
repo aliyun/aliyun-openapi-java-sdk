@@ -407,6 +407,8 @@ public class GetGatewayRouteDetailResponse extends AcsResponse {
 
 			private String agreementType;
 
+			private Integer servicePort;
+
 			public Long getServiceId() {
 				return this.serviceId;
 			}
@@ -477,6 +479,14 @@ public class GetGatewayRouteDetailResponse extends AcsResponse {
 
 			public void setAgreementType(String agreementType) {
 				this.agreementType = agreementType;
+			}
+
+			public Integer getServicePort() {
+				return this.servicePort;
+			}
+
+			public void setServicePort(Integer servicePort) {
+				this.servicePort = servicePort;
 			}
 		}
 
@@ -500,6 +510,8 @@ public class GetGatewayRouteDetailResponse extends AcsResponse {
 
 			private String agreementType;
 
+			private Integer servicePort;
+
 			public Long getServiceId() {
 				return this.serviceId;
 			}
@@ -570,6 +582,14 @@ public class GetGatewayRouteDetailResponse extends AcsResponse {
 
 			public void setAgreementType(String agreementType) {
 				this.agreementType = agreementType;
+			}
+
+			public Integer getServicePort() {
+				return this.servicePort;
+			}
+
+			public void setServicePort(Integer servicePort) {
+				this.servicePort = servicePort;
 			}
 		}
 

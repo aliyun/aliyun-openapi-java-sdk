@@ -27,8 +27,6 @@ public class UpgradeClusterRequest extends RpcAcsRequest<UpgradeClusterResponse>
 
 	private String upgradeVersion;
 
-	private String mseSessionId;
-
 	private String instanceId;
 
 	private String requestPars;
@@ -51,17 +49,6 @@ public class UpgradeClusterRequest extends RpcAcsRequest<UpgradeClusterResponse>
 		this.upgradeVersion = upgradeVersion;
 		if(upgradeVersion != null){
 			putQueryParameter("UpgradeVersion", upgradeVersion);
-		}
-	}
-
-	public String getMseSessionId() {
-		return this.mseSessionId;
-	}
-
-	public void setMseSessionId(String mseSessionId) {
-		this.mseSessionId = mseSessionId;
-		if(mseSessionId != null){
-			putQueryParameter("MseSessionId", mseSessionId);
 		}
 	}
 

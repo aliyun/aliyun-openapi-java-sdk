@@ -28,7 +28,7 @@ import com.aliyuncs.mse.Endpoint;
 public class UpdateMessageQueueRouteRequest extends RpcAcsRequest<UpdateMessageQueueRouteResponse> {
 	   
 
-	private String mseSessionId;
+	private String appName;
 
 	private Boolean enable;
 
@@ -38,6 +38,8 @@ public class UpdateMessageQueueRouteRequest extends RpcAcsRequest<UpdateMessageQ
 	private String filterSide;
 
 	private String appId;
+
+	private String namespace;
 
 	private String acceptLanguage;
 
@@ -51,14 +53,14 @@ public class UpdateMessageQueueRouteRequest extends RpcAcsRequest<UpdateMessageQ
 		} catch (Exception e) {}
 	}
 
-	public String getMseSessionId() {
-		return this.mseSessionId;
+	public String getAppName() {
+		return this.appName;
 	}
 
-	public void setMseSessionId(String mseSessionId) {
-		this.mseSessionId = mseSessionId;
-		if(mseSessionId != null){
-			putQueryParameter("MseSessionId", mseSessionId);
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putQueryParameter("AppName", appName);
 		}
 	}
 
@@ -103,6 +105,17 @@ public class UpdateMessageQueueRouteRequest extends RpcAcsRequest<UpdateMessageQ
 		this.appId = appId;
 		if(appId != null){
 			putQueryParameter("AppId", appId);
+		}
+	}
+
+	public String getNamespace() {
+		return this.namespace;
+	}
+
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+		if(namespace != null){
+			putQueryParameter("Namespace", namespace);
 		}
 	}
 

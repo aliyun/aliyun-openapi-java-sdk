@@ -183,6 +183,10 @@ public class ListGatewayResponse extends AcsResponse {
 
 			private Boolean rollBack;
 
+			private String mseTag;
+
+			private String resourceGroupId;
+
 			private List<SlbItem> slb;
 
 			private List<InternetSlbItem> internetSlb;
@@ -403,6 +407,22 @@ public class ListGatewayResponse extends AcsResponse {
 
 			public void setRollBack(Boolean rollBack) {
 				this.rollBack = rollBack;
+			}
+
+			public String getMseTag() {
+				return this.mseTag;
+			}
+
+			public void setMseTag(String mseTag) {
+				this.mseTag = mseTag;
+			}
+
+			public String getResourceGroupId() {
+				return this.resourceGroupId;
+			}
+
+			public void setResourceGroupId(String resourceGroupId) {
+				this.resourceGroupId = resourceGroupId;
 			}
 
 			public List<SlbItem> getSlb() {

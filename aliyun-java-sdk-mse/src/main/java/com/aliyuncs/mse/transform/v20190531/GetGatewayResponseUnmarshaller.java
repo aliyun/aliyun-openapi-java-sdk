@@ -50,6 +50,8 @@ public class GetGatewayResponseUnmarshaller {
 		data.setChargeType(_ctx.stringValue("GetGatewayResponse.Data.ChargeType"));
 		data.setEndDate(_ctx.stringValue("GetGatewayResponse.Data.EndDate"));
 		data.setStatusDesc(_ctx.stringValue("GetGatewayResponse.Data.StatusDesc"));
+		data.setMseTag(_ctx.stringValue("GetGatewayResponse.Data.MseTag"));
+		data.setResourceGroupId(_ctx.stringValue("GetGatewayResponse.Data.ResourceGroupId"));
 
 		XtraceDetails xtraceDetails = new XtraceDetails();
 		xtraceDetails.setSample(_ctx.integerValue("GetGatewayResponse.Data.XtraceDetails.Sample"));

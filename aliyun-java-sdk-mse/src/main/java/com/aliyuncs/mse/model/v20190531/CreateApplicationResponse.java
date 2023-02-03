@@ -108,6 +108,10 @@ public class CreateApplicationResponse extends AcsResponse {
 
 		private String regionId;
 
+		private String namespace;
+
+		private String version;
+
 		public Integer getStatus() {
 			return this.status;
 		}
@@ -194,6 +198,22 @@ public class CreateApplicationResponse extends AcsResponse {
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
+		}
+
+		public String getNamespace() {
+			return this.namespace;
+		}
+
+		public void setNamespace(String namespace) {
+			this.namespace = namespace;
+		}
+
+		public String getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(String version) {
+			this.version = version;
 		}
 	}
 

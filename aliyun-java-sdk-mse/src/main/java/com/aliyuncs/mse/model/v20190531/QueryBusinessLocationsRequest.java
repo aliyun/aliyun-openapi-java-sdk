@@ -25,8 +25,6 @@ import com.aliyuncs.mse.Endpoint;
 public class QueryBusinessLocationsRequest extends RpcAcsRequest<QueryBusinessLocationsResponse> {
 	   
 
-	private String mseSessionId;
-
 	private String acceptLanguage;
 	public QueryBusinessLocationsRequest() {
 		super("mse", "2019-05-31", "QueryBusinessLocations", "mse");
@@ -35,17 +33,6 @@ public class QueryBusinessLocationsRequest extends RpcAcsRequest<QueryBusinessLo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getMseSessionId() {
-		return this.mseSessionId;
-	}
-
-	public void setMseSessionId(String mseSessionId) {
-		this.mseSessionId = mseSessionId;
-		if(mseSessionId != null){
-			putQueryParameter("MseSessionId", mseSessionId);
-		}
 	}
 
 	public String getAcceptLanguage() {

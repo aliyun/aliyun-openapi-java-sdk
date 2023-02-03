@@ -1,3 +1,12 @@
+2023-02-03 Version: 3.0.35
+- Suport mse nologin.
+- Support mse nologin.
+- Fixed bugs timeout for ListEngineNamespaces.
+- Fixed api description.
+- Support change mseVersion.
+- Support listNamespace source type.
+- Support for checking Lua.
+
 2022-09-22 Version: 3.0.34
 - Add normandy api.
 

@@ -143,6 +143,12 @@ public class GetPluginsResponse extends AcsResponse {
 
 		private String status;
 
+		private Integer mode;
+
+		private String maxVersion;
+
+		private Boolean newVersionPublishingFlag;
+
 		public Long getId() {
 			return this.id;
 		}
@@ -245,6 +251,30 @@ public class GetPluginsResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public Integer getMode() {
+			return this.mode;
+		}
+
+		public void setMode(Integer mode) {
+			this.mode = mode;
+		}
+
+		public String getMaxVersion() {
+			return this.maxVersion;
+		}
+
+		public void setMaxVersion(String maxVersion) {
+			this.maxVersion = maxVersion;
+		}
+
+		public Boolean getNewVersionPublishingFlag() {
+			return this.newVersionPublishingFlag;
+		}
+
+		public void setNewVersionPublishingFlag(Boolean newVersionPublishingFlag) {
+			this.newVersionPublishingFlag = newVersionPublishingFlag;
 		}
 	}
 

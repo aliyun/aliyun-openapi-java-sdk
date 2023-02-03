@@ -25,7 +25,7 @@ import com.aliyuncs.mse.Endpoint;
 public class UpdateBlackWhiteListRequest extends RpcAcsRequest<UpdateBlackWhiteListResponse> {
 	   
 
-	private String mseSessionId;
+	private String note;
 
 	private String gatewayUniqueId;
 
@@ -35,9 +35,13 @@ public class UpdateBlackWhiteListRequest extends RpcAcsRequest<UpdateBlackWhiteL
 
 	private Boolean isWhite;
 
+	private String resourceIdJsonList;
+
 	private Long id;
 
 	private String resourceType;
+
+	private String name;
 
 	private String acceptLanguage;
 
@@ -51,14 +55,14 @@ public class UpdateBlackWhiteListRequest extends RpcAcsRequest<UpdateBlackWhiteL
 		} catch (Exception e) {}
 	}
 
-	public String getMseSessionId() {
-		return this.mseSessionId;
+	public String getNote() {
+		return this.note;
 	}
 
-	public void setMseSessionId(String mseSessionId) {
-		this.mseSessionId = mseSessionId;
-		if(mseSessionId != null){
-			putQueryParameter("MseSessionId", mseSessionId);
+	public void setNote(String note) {
+		this.note = note;
+		if(note != null){
+			putQueryParameter("Note", note);
 		}
 	}
 
@@ -106,6 +110,17 @@ public class UpdateBlackWhiteListRequest extends RpcAcsRequest<UpdateBlackWhiteL
 		}
 	}
 
+	public String getResourceIdJsonList() {
+		return this.resourceIdJsonList;
+	}
+
+	public void setResourceIdJsonList(String resourceIdJsonList) {
+		this.resourceIdJsonList = resourceIdJsonList;
+		if(resourceIdJsonList != null){
+			putQueryParameter("ResourceIdJsonList", resourceIdJsonList);
+		}
+	}
+
 	public Long getId() {
 		return this.id;
 	}
@@ -125,6 +140,17 @@ public class UpdateBlackWhiteListRequest extends RpcAcsRequest<UpdateBlackWhiteL
 		this.resourceType = resourceType;
 		if(resourceType != null){
 			putQueryParameter("ResourceType", resourceType);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

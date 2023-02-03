@@ -25,7 +25,7 @@ import com.aliyuncs.mse.Endpoint;
 public class QueryAllSwimmingLaneGroupRequest extends RpcAcsRequest<QueryAllSwimmingLaneGroupResponse> {
 	   
 
-	private String mseSessionId;
+	private String namespace;
 
 	private String acceptLanguage;
 	public QueryAllSwimmingLaneGroupRequest() {
@@ -37,14 +37,14 @@ public class QueryAllSwimmingLaneGroupRequest extends RpcAcsRequest<QueryAllSwim
 		} catch (Exception e) {}
 	}
 
-	public String getMseSessionId() {
-		return this.mseSessionId;
+	public String getNamespace() {
+		return this.namespace;
 	}
 
-	public void setMseSessionId(String mseSessionId) {
-		this.mseSessionId = mseSessionId;
-		if(mseSessionId != null){
-			putQueryParameter("MseSessionId", mseSessionId);
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+		if(namespace != null){
+			putQueryParameter("Namespace", namespace);
 		}
 	}
 

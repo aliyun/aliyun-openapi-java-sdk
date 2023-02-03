@@ -148,6 +148,7 @@ public class ListGatewayRouteResponseUnmarshaller {
 				routeServicesItem.setNamespace(_ctx.stringValue("ListGatewayRouteResponse.Data.Result["+ i +"].RouteServices["+ j +"].Namespace"));
 				routeServicesItem.setGroupName(_ctx.stringValue("ListGatewayRouteResponse.Data.Result["+ i +"].RouteServices["+ j +"].GroupName"));
 				routeServicesItem.setAgreementType(_ctx.stringValue("ListGatewayRouteResponse.Data.Result["+ i +"].RouteServices["+ j +"].AgreementType"));
+				routeServicesItem.setServicePort(_ctx.integerValue("ListGatewayRouteResponse.Data.Result["+ i +"].RouteServices["+ j +"].ServicePort"));
 
 				HttpDubboTranscoder httpDubboTranscoder = new HttpDubboTranscoder();
 				httpDubboTranscoder.setDubboServiceName(_ctx.stringValue("ListGatewayRouteResponse.Data.Result["+ i +"].RouteServices["+ j +"].HttpDubboTranscoder.DubboServiceName"));
@@ -200,6 +201,7 @@ public class ListGatewayRouteResponseUnmarshaller {
 				fallbackServicesItem.setNamespace(_ctx.stringValue("ListGatewayRouteResponse.Data.Result["+ i +"].FallbackServices["+ j +"].Namespace"));
 				fallbackServicesItem.setGroupName(_ctx.stringValue("ListGatewayRouteResponse.Data.Result["+ i +"].FallbackServices["+ j +"].GroupName"));
 				fallbackServicesItem.setAgreementType(_ctx.stringValue("ListGatewayRouteResponse.Data.Result["+ i +"].FallbackServices["+ j +"].AgreementType"));
+				fallbackServicesItem.setServicePort(_ctx.integerValue("ListGatewayRouteResponse.Data.Result["+ i +"].FallbackServices["+ j +"].ServicePort"));
 
 				fallbackServices.add(fallbackServicesItem);
 			}

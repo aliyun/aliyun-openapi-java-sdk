@@ -27,8 +27,6 @@ import com.aliyuncs.mse.Endpoint;
 public class ListGatewayRequest extends RpcAcsRequest<ListGatewayResponse> {
 	   
 
-	private String mseSessionId;
-
 	private Integer pageNumber;
 
 	private String orderItem;
@@ -48,17 +46,6 @@ public class ListGatewayRequest extends RpcAcsRequest<ListGatewayResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getMseSessionId() {
-		return this.mseSessionId;
-	}
-
-	public void setMseSessionId(String mseSessionId) {
-		this.mseSessionId = mseSessionId;
-		if(mseSessionId != null){
-			putQueryParameter("MseSessionId", mseSessionId);
-		}
 	}
 
 	public Integer getPageNumber() {
@@ -129,6 +116,9 @@ public class ListGatewayRequest extends RpcAcsRequest<ListGatewayResponse> {
 
 	public static class FilterParams {
 
+		@SerializedName("ResourceGroupId")
+		private String resourceGroupId;
+
 		@SerializedName("GatewayType")
 		private String gatewayType;
 
@@ -143,6 +133,17 @@ public class ListGatewayRequest extends RpcAcsRequest<ListGatewayResponse> {
 
 		@SerializedName("Vpc")
 		private String vpc;
+
+		@SerializedName("MseTag")
+		private String mseTag;
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
 
 		public String getGatewayType() {
 			return this.gatewayType;
@@ -182,6 +183,14 @@ public class ListGatewayRequest extends RpcAcsRequest<ListGatewayResponse> {
 
 		public void setVpc(String vpc) {
 			this.vpc = vpc;
+		}
+
+		public String getMseTag() {
+			return this.mseTag;
+		}
+
+		public void setMseTag(String mseTag) {
+			this.mseTag = mseTag;
 		}
 	}
 

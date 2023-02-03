@@ -41,6 +41,8 @@ public class CreateApplicationResponseUnmarshaller {
 		data.setSource(_ctx.stringValue("CreateApplicationResponse.Data.Source"));
 		data.setLanguage(_ctx.stringValue("CreateApplicationResponse.Data.Language"));
 		data.setRegionId(_ctx.stringValue("CreateApplicationResponse.Data.RegionId"));
+		data.setNamespace(_ctx.stringValue("CreateApplicationResponse.Data.Namespace"));
+		data.setVersion(_ctx.stringValue("CreateApplicationResponse.Data.Version"));
 		createApplicationResponse.setData(data);
 	 
 	 	return createApplicationResponse;

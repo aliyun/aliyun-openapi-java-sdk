@@ -71,6 +71,8 @@ public class ListGatewayResponseUnmarshaller {
 			gateways.setTag(_ctx.stringValue("ListGatewayResponse.Data.Result["+ i +"].Tag"));
 			gateways.setGatewayVersion(_ctx.stringValue("ListGatewayResponse.Data.Result["+ i +"].GatewayVersion"));
 			gateways.setRollBack(_ctx.booleanValue("ListGatewayResponse.Data.Result["+ i +"].RollBack"));
+			gateways.setMseTag(_ctx.stringValue("ListGatewayResponse.Data.Result["+ i +"].MseTag"));
+			gateways.setResourceGroupId(_ctx.stringValue("ListGatewayResponse.Data.Result["+ i +"].ResourceGroupId"));
 
 			InitConfig initConfig = new InitConfig();
 			initConfig.setEnableWaf(_ctx.booleanValue("ListGatewayResponse.Data.Result["+ i +"].InitConfig.EnableWaf"));

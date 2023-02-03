@@ -151,6 +151,8 @@ public class GetPluginConfigResponse extends AcsResponse {
 
 		private String status;
 
+		private String versionJson;
+
 		private List<GatewayConfigListItem> gatewayConfigList;
 
 		public Long getId() {
@@ -287,6 +289,14 @@ public class GetPluginConfigResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public String getVersionJson() {
+			return this.versionJson;
+		}
+
+		public void setVersionJson(String versionJson) {
+			this.versionJson = versionJson;
 		}
 
 		public List<GatewayConfigListItem> getGatewayConfigList() {

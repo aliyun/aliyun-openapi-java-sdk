@@ -22,44 +22,42 @@ import com.aliyuncs.mse.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListVgroupsRequest extends RpcAcsRequest<ListVgroupsResponse> {
+public class GetZookeeperDataImportUrlRequest extends RpcAcsRequest<GetZookeeperDataImportUrlResponse> {
 	   
 
-	private String mseSessionId;
+	private String contentType;
 
-	private String userId;
+	private String instanceId;
 
 	private String acceptLanguage;
-
-	private String region;
-	public ListVgroupsRequest() {
-		super("mse", "2019-05-31", "ListVgroups", "mse");
-		setMethod(MethodType.GET);
+	public GetZookeeperDataImportUrlRequest() {
+		super("mse", "2019-05-31", "GetZookeeperDataImportUrl", "mse");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getMseSessionId() {
-		return this.mseSessionId;
+	public String getContentType() {
+		return this.contentType;
 	}
 
-	public void setMseSessionId(String mseSessionId) {
-		this.mseSessionId = mseSessionId;
-		if(mseSessionId != null){
-			putQueryParameter("MseSessionId", mseSessionId);
+	public void setContentType(String contentType) {
+		this.contentType = contentType;
+		if(contentType != null){
+			putQueryParameter("ContentType", contentType);
 		}
 	}
 
-	public String getUserId() {
-		return this.userId;
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId);
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
@@ -74,20 +72,9 @@ public class ListVgroupsRequest extends RpcAcsRequest<ListVgroupsResponse> {
 		}
 	}
 
-	public String getRegion() {
-		return this.region;
-	}
-
-	public void setRegion(String region) {
-		this.region = region;
-		if(region != null){
-			putQueryParameter("Region", region);
-		}
-	}
-
 	@Override
-	public Class<ListVgroupsResponse> getResponseClass() {
-		return ListVgroupsResponse.class;
+	public Class<GetZookeeperDataImportUrlResponse> getResponseClass() {
+		return GetZookeeperDataImportUrlResponse.class;
 	}
 
 }

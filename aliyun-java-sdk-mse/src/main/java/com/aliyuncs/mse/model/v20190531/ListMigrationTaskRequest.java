@@ -22,18 +22,20 @@ import com.aliyuncs.mse.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListUserInstancesRequest extends RpcAcsRequest<ListUserInstancesResponse> {
+public class ListMigrationTaskRequest extends RpcAcsRequest<ListMigrationTaskResponse> {
 	   
 
-	private String mseSessionId;
+	private Long pageNum;
 
-	private String userId;
+	private String requestPars;
+
+	private Long pageSize;
 
 	private String acceptLanguage;
 
-	private String region;
-	public ListUserInstancesRequest() {
-		super("mse", "2019-05-31", "ListUserInstances", "mse");
+	private String originInstanceName;
+	public ListMigrationTaskRequest() {
+		super("mse", "2019-05-31", "ListMigrationTask", "mse");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,25 +43,36 @@ public class ListUserInstancesRequest extends RpcAcsRequest<ListUserInstancesRes
 		} catch (Exception e) {}
 	}
 
-	public String getMseSessionId() {
-		return this.mseSessionId;
+	public Long getPageNum() {
+		return this.pageNum;
 	}
 
-	public void setMseSessionId(String mseSessionId) {
-		this.mseSessionId = mseSessionId;
-		if(mseSessionId != null){
-			putQueryParameter("MseSessionId", mseSessionId);
+	public void setPageNum(Long pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
 		}
 	}
 
-	public String getUserId() {
-		return this.userId;
+	public String getRequestPars() {
+		return this.requestPars;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId);
+	public void setRequestPars(String requestPars) {
+		this.requestPars = requestPars;
+		if(requestPars != null){
+			putQueryParameter("RequestPars", requestPars);
+		}
+	}
+
+	public Long getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -74,20 +87,20 @@ public class ListUserInstancesRequest extends RpcAcsRequest<ListUserInstancesRes
 		}
 	}
 
-	public String getRegion() {
-		return this.region;
+	public String getOriginInstanceName() {
+		return this.originInstanceName;
 	}
 
-	public void setRegion(String region) {
-		this.region = region;
-		if(region != null){
-			putQueryParameter("Region", region);
+	public void setOriginInstanceName(String originInstanceName) {
+		this.originInstanceName = originInstanceName;
+		if(originInstanceName != null){
+			putQueryParameter("OriginInstanceName", originInstanceName);
 		}
 	}
 
 	@Override
-	public Class<ListUserInstancesResponse> getResponseClass() {
-		return ListUserInstancesResponse.class;
+	public Class<ListMigrationTaskResponse> getResponseClass() {
+		return ListMigrationTaskResponse.class;
 	}
 
 }

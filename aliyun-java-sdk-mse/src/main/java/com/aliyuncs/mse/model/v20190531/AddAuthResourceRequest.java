@@ -15,6 +15,9 @@
 package com.aliyuncs.mse.model.v20190531;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.mse.Endpoint;
 
@@ -25,7 +28,7 @@ import com.aliyuncs.mse.Endpoint;
 public class AddAuthResourceRequest extends RpcAcsRequest<AddAuthResourceResponse> {
 	   
 
-	private String mseSessionId;
+	private Boolean ignoreCase;
 
 	private String gatewayUniqueId;
 
@@ -37,6 +40,9 @@ public class AddAuthResourceRequest extends RpcAcsRequest<AddAuthResourceRespons
 
 	private Long authId;
 
+	@SerializedName("authResourceHeaderList")
+	private List<AuthResourceHeaderList> authResourceHeaderList;
+
 	private String acceptLanguage;
 	public AddAuthResourceRequest() {
 		super("mse", "2019-05-31", "AddAuthResource", "mse");
@@ -47,14 +53,14 @@ public class AddAuthResourceRequest extends RpcAcsRequest<AddAuthResourceRespons
 		} catch (Exception e) {}
 	}
 
-	public String getMseSessionId() {
-		return this.mseSessionId;
+	public Boolean getIgnoreCase() {
+		return this.ignoreCase;
 	}
 
-	public void setMseSessionId(String mseSessionId) {
-		this.mseSessionId = mseSessionId;
-		if(mseSessionId != null){
-			putQueryParameter("MseSessionId", mseSessionId);
+	public void setIgnoreCase(Boolean ignoreCase) {
+		this.ignoreCase = ignoreCase;
+		if(ignoreCase != null){
+			putQueryParameter("IgnoreCase", ignoreCase.toString());
 		}
 	}
 
@@ -113,6 +119,17 @@ public class AddAuthResourceRequest extends RpcAcsRequest<AddAuthResourceRespons
 		}
 	}
 
+	public List<AuthResourceHeaderList> getAuthResourceHeaderList() {
+		return this.authResourceHeaderList;
+	}
+
+	public void setAuthResourceHeaderList(List<AuthResourceHeaderList> authResourceHeaderList) {
+		this.authResourceHeaderList = authResourceHeaderList;	
+		if (authResourceHeaderList != null) {
+			putQueryParameter("AuthResourceHeaderList" , new Gson().toJson(authResourceHeaderList));
+		}	
+	}
+
 	public String getAcceptLanguage() {
 		return this.acceptLanguage;
 	}
@@ -121,6 +138,42 @@ public class AddAuthResourceRequest extends RpcAcsRequest<AddAuthResourceRespons
 		this.acceptLanguage = acceptLanguage;
 		if(acceptLanguage != null){
 			putQueryParameter("AcceptLanguage", acceptLanguage);
+		}
+	}
+
+	public static class AuthResourceHeaderList {
+
+		@SerializedName("HeaderValue")
+		private String headerValue;
+
+		@SerializedName("HeaderMethod")
+		private String headerMethod;
+
+		@SerializedName("HeaderKey")
+		private String headerKey;
+
+		public String getHeaderValue() {
+			return this.headerValue;
+		}
+
+		public void setHeaderValue(String headerValue) {
+			this.headerValue = headerValue;
+		}
+
+		public String getHeaderMethod() {
+			return this.headerMethod;
+		}
+
+		public void setHeaderMethod(String headerMethod) {
+			this.headerMethod = headerMethod;
+		}
+
+		public String getHeaderKey() {
+			return this.headerKey;
+		}
+
+		public void setHeaderKey(String headerKey) {
+			this.headerKey = headerKey;
 		}
 	}
 

@@ -15,6 +15,7 @@
 package com.aliyuncs.mse.model.v20190531;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.mse.Endpoint;
 
@@ -27,8 +28,6 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 
 	private String clusterSpecification;
 
-	private String mseSessionId;
-
 	private String pubSlbSpecification;
 
 	private String privateSlbSpecification;
@@ -38,6 +37,8 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 	private Integer instanceCount;
 
 	private String requestPars;
+
+	private List<Tag> tags;
 
 	private String connectionType;
 
@@ -79,17 +80,6 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		this.clusterSpecification = clusterSpecification;
 		if(clusterSpecification != null){
 			putQueryParameter("ClusterSpecification", clusterSpecification);
-		}
-	}
-
-	public String getMseSessionId() {
-		return this.mseSessionId;
-	}
-
-	public void setMseSessionId(String mseSessionId) {
-		this.mseSessionId = mseSessionId;
-		if(mseSessionId != null){
-			putQueryParameter("MseSessionId", mseSessionId);
 		}
 	}
 
@@ -146,6 +136,20 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		if(requestPars != null){
 			putQueryParameter("RequestPars", requestPars);
 		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
 	}
 
 	public String getConnectionType() {
@@ -277,6 +281,29 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		this.region = region;
 		if(region != null){
 			putQueryParameter("Region", region);
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

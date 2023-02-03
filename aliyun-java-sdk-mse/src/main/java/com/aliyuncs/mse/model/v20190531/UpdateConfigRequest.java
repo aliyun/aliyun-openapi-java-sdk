@@ -27,8 +27,6 @@ public class UpdateConfigRequest extends RpcAcsRequest<UpdateConfigResponse> {
 
 	private String openSuperAcl;
 
-	private String mseSessionId;
-
 	private Boolean configAuthEnabled;
 
 	private String passWord;
@@ -46,6 +44,8 @@ public class UpdateConfigRequest extends RpcAcsRequest<UpdateConfigResponse> {
 	private Boolean namingAuthEnabled;
 
 	private String configType;
+
+	private String extendedTypesEnable;
 
 	private String autopurgeSnapRetainCount;
 
@@ -87,17 +87,6 @@ public class UpdateConfigRequest extends RpcAcsRequest<UpdateConfigResponse> {
 		this.openSuperAcl = openSuperAcl;
 		if(openSuperAcl != null){
 			putBodyParameter("OpenSuperAcl", openSuperAcl);
-		}
-	}
-
-	public String getMseSessionId() {
-		return this.mseSessionId;
-	}
-
-	public void setMseSessionId(String mseSessionId) {
-		this.mseSessionId = mseSessionId;
-		if(mseSessionId != null){
-			putQueryParameter("MseSessionId", mseSessionId);
 		}
 	}
 
@@ -197,6 +186,17 @@ public class UpdateConfigRequest extends RpcAcsRequest<UpdateConfigResponse> {
 		this.configType = configType;
 		if(configType != null){
 			putQueryParameter("ConfigType", configType);
+		}
+	}
+
+	public String getExtendedTypesEnable() {
+		return this.extendedTypesEnable;
+	}
+
+	public void setExtendedTypesEnable(String extendedTypesEnable) {
+		this.extendedTypesEnable = extendedTypesEnable;
+		if(extendedTypesEnable != null){
+			putQueryParameter("ExtendedTypesEnable", extendedTypesEnable);
 		}
 	}
 

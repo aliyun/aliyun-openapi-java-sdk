@@ -22,44 +22,68 @@ import com.aliyuncs.mse.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
+public class QueryInstancesInfoRequest extends RpcAcsRequest<QueryInstancesInfoResponse> {
 	   
 
-	private String mseSessionId;
+	private String orderId;
 
-	private String userId;
+	private String clusterId;
+
+	private String instanceId;
+
+	private String requestPars;
 
 	private String acceptLanguage;
-
-	private String region;
-	public ListInstancesRequest() {
-		super("mse", "2019-05-31", "ListInstances", "mse");
-		setMethod(MethodType.GET);
+	public QueryInstancesInfoRequest() {
+		super("mse", "2019-05-31", "QueryInstancesInfo", "mse");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getMseSessionId() {
-		return this.mseSessionId;
+	public String getOrderId() {
+		return this.orderId;
 	}
 
-	public void setMseSessionId(String mseSessionId) {
-		this.mseSessionId = mseSessionId;
-		if(mseSessionId != null){
-			putQueryParameter("MseSessionId", mseSessionId);
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
+		if(orderId != null){
+			putQueryParameter("OrderId", orderId);
 		}
 	}
 
-	public String getUserId() {
-		return this.userId;
+	public String getClusterId() {
+		return this.clusterId;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId);
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getRequestPars() {
+		return this.requestPars;
+	}
+
+	public void setRequestPars(String requestPars) {
+		this.requestPars = requestPars;
+		if(requestPars != null){
+			putQueryParameter("RequestPars", requestPars);
 		}
 	}
 
@@ -74,20 +98,9 @@ public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
 		}
 	}
 
-	public String getRegion() {
-		return this.region;
-	}
-
-	public void setRegion(String region) {
-		this.region = region;
-		if(region != null){
-			putQueryParameter("Region", region);
-		}
-	}
-
 	@Override
-	public Class<ListInstancesResponse> getResponseClass() {
-		return ListInstancesResponse.class;
+	public Class<QueryInstancesInfoResponse> getResponseClass() {
+		return QueryInstancesInfoResponse.class;
 	}
 
 }

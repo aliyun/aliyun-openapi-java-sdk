@@ -30,8 +30,6 @@ public class UpdateGatewayRouteTimeoutRequest extends RpcAcsRequest<UpdateGatewa
 	@SerializedName("timeoutJSON")
 	private TimeoutJSON timeoutJSON;
 
-	private String mseSessionId;
-
 	private String gatewayUniqueId;
 
 	private Long id;
@@ -57,17 +55,6 @@ public class UpdateGatewayRouteTimeoutRequest extends RpcAcsRequest<UpdateGatewa
 		if (timeoutJSON != null) {
 			putQueryParameter("TimeoutJSON" , new Gson().toJson(timeoutJSON));
 		}	
-	}
-
-	public String getMseSessionId() {
-		return this.mseSessionId;
-	}
-
-	public void setMseSessionId(String mseSessionId) {
-		this.mseSessionId = mseSessionId;
-		if(mseSessionId != null){
-			putQueryParameter("MseSessionId", mseSessionId);
-		}
 	}
 
 	public String getGatewayUniqueId() {

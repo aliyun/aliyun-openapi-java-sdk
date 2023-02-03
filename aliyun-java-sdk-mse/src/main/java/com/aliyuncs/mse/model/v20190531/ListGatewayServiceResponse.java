@@ -169,6 +169,8 @@ public class ListGatewayServiceResponse extends AcsResponse {
 
 			private List<String> unhealthyEndpoints;
 
+			private List<Integer> ports;
+
 			private HealthCheckInfo healthCheckInfo;
 
 			private GatewayTrafficPolicy gatewayTrafficPolicy;
@@ -331,6 +333,14 @@ public class ListGatewayServiceResponse extends AcsResponse {
 
 			public void setUnhealthyEndpoints(List<String> unhealthyEndpoints) {
 				this.unhealthyEndpoints = unhealthyEndpoints;
+			}
+
+			public List<Integer> getPorts() {
+				return this.ports;
+			}
+
+			public void setPorts(List<Integer> ports) {
+				this.ports = ports;
 			}
 
 			public HealthCheckInfo getHealthCheckInfo() {

@@ -16,6 +16,8 @@ package com.aliyuncs.mse.model.v20190531;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.mse.Endpoint;
 
@@ -26,8 +28,6 @@ import com.aliyuncs.mse.Endpoint;
 public class CreateOrUpdateSwimmingLaneRequest extends RpcAcsRequest<CreateOrUpdateSwimmingLaneResponse> {
 	   
 
-	private String mseSessionId;
-
 	private String source;
 
 	private String gmtModified;
@@ -35,6 +35,9 @@ public class CreateOrUpdateSwimmingLaneRequest extends RpcAcsRequest<CreateOrUpd
 	private String userId;
 
 	private String licenseKey;
+
+	@SerializedName("gatewaySwimmingLaneRouteJson")
+	private GatewaySwimmingLaneRouteJson gatewaySwimmingLaneRouteJson;
 
 	private String entryRule;
 
@@ -64,17 +67,6 @@ public class CreateOrUpdateSwimmingLaneRequest extends RpcAcsRequest<CreateOrUpd
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getMseSessionId() {
-		return this.mseSessionId;
-	}
-
-	public void setMseSessionId(String mseSessionId) {
-		this.mseSessionId = mseSessionId;
-		if(mseSessionId != null){
-			putQueryParameter("MseSessionId", mseSessionId);
-		}
 	}
 
 	public String getSource() {
@@ -119,6 +111,17 @@ public class CreateOrUpdateSwimmingLaneRequest extends RpcAcsRequest<CreateOrUpd
 		if(licenseKey != null){
 			putQueryParameter("LicenseKey", licenseKey);
 		}
+	}
+
+	public GatewaySwimmingLaneRouteJson getGatewaySwimmingLaneRouteJson() {
+		return this.gatewaySwimmingLaneRouteJson;
+	}
+
+	public void setGatewaySwimmingLaneRouteJson(GatewaySwimmingLaneRouteJson gatewaySwimmingLaneRouteJson) {
+		this.gatewaySwimmingLaneRouteJson = gatewaySwimmingLaneRouteJson;	
+		if (gatewaySwimmingLaneRouteJson != null) {
+			putQueryParameter("GatewaySwimmingLaneRouteJson" , new Gson().toJson(gatewaySwimmingLaneRouteJson));
+		}	
 	}
 
 	public String getEntryRule() {
@@ -267,6 +270,100 @@ public class CreateOrUpdateSwimmingLaneRequest extends RpcAcsRequest<CreateOrUpd
 		this.status = status;
 		if(status != null){
 			putQueryParameter("Status", status.toString());
+		}
+	}
+
+	public static class GatewaySwimmingLaneRouteJson {
+
+		@SerializedName("GatewayUniqueId")
+		private String gatewayUniqueId;
+
+		@SerializedName("RouteIdList")
+		private List<Long> routeIdList;
+
+		@SerializedName("Conditions")
+		private List<ConditionsItem> conditions;
+
+		@SerializedName("GatewayId")
+		private Long gatewayId;
+
+		public String getGatewayUniqueId() {
+			return this.gatewayUniqueId;
+		}
+
+		public void setGatewayUniqueId(String gatewayUniqueId) {
+			this.gatewayUniqueId = gatewayUniqueId;
+		}
+
+		public List<Long> getRouteIdList() {
+			return this.routeIdList;
+		}
+
+		public void setRouteIdList(List<Long> routeIdList) {
+			this.routeIdList = routeIdList;
+		}
+
+		public List<ConditionsItem> getConditions() {
+			return this.conditions;
+		}
+
+		public void setConditions(List<ConditionsItem> conditions) {
+			this.conditions = conditions;
+		}
+
+		public Long getGatewayId() {
+			return this.gatewayId;
+		}
+
+		public void setGatewayId(Long gatewayId) {
+			this.gatewayId = gatewayId;
+		}
+
+		public static class ConditionsItem {
+
+			@SerializedName("Name")
+			private String name;
+
+			@SerializedName("Type")
+			private String type;
+
+			@SerializedName("Cond")
+			private String cond;
+
+			@SerializedName("Value")
+			private String value;
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public String getCond() {
+				return this.cond;
+			}
+
+			public void setCond(String cond) {
+				this.cond = cond;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 	}
 

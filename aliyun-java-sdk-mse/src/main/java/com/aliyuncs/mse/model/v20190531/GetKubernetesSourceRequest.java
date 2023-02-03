@@ -25,9 +25,9 @@ import com.aliyuncs.mse.Endpoint;
 public class GetKubernetesSourceRequest extends RpcAcsRequest<GetKubernetesSourceResponse> {
 	   
 
-	private String mseSessionId;
-
 	private String gatewayUniqueId;
+
+	private String vpcId;
 
 	private String acceptLanguage;
 	public GetKubernetesSourceRequest() {
@@ -39,17 +39,6 @@ public class GetKubernetesSourceRequest extends RpcAcsRequest<GetKubernetesSourc
 		} catch (Exception e) {}
 	}
 
-	public String getMseSessionId() {
-		return this.mseSessionId;
-	}
-
-	public void setMseSessionId(String mseSessionId) {
-		this.mseSessionId = mseSessionId;
-		if(mseSessionId != null){
-			putQueryParameter("MseSessionId", mseSessionId);
-		}
-	}
-
 	public String getGatewayUniqueId() {
 		return this.gatewayUniqueId;
 	}
@@ -58,6 +47,17 @@ public class GetKubernetesSourceRequest extends RpcAcsRequest<GetKubernetesSourc
 		this.gatewayUniqueId = gatewayUniqueId;
 		if(gatewayUniqueId != null){
 			putQueryParameter("GatewayUniqueId", gatewayUniqueId);
+		}
+	}
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
 		}
 	}
 

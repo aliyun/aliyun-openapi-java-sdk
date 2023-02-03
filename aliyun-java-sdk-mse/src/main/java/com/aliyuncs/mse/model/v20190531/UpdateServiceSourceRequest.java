@@ -15,6 +15,7 @@
 package com.aliyuncs.mse.model.v20190531;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
@@ -30,8 +31,6 @@ public class UpdateServiceSourceRequest extends RpcAcsRequest<UpdateServiceSourc
 	@SerializedName("ingressOptionsRequest")
 	private IngressOptionsRequest ingressOptionsRequest;
 
-	private String mseSessionId;
-
 	private String gatewayUniqueId;
 
 	private String source;
@@ -39,6 +38,9 @@ public class UpdateServiceSourceRequest extends RpcAcsRequest<UpdateServiceSourc
 	private String type;
 
 	private Long id;
+
+	@SerializedName("pathList")
+	private List<String> pathList;
 
 	private Long gatewayId;
 
@@ -65,17 +67,6 @@ public class UpdateServiceSourceRequest extends RpcAcsRequest<UpdateServiceSourc
 		if (ingressOptionsRequest != null) {
 			putQueryParameter("IngressOptionsRequest" , new Gson().toJson(ingressOptionsRequest));
 		}	
-	}
-
-	public String getMseSessionId() {
-		return this.mseSessionId;
-	}
-
-	public void setMseSessionId(String mseSessionId) {
-		this.mseSessionId = mseSessionId;
-		if(mseSessionId != null){
-			putQueryParameter("MseSessionId", mseSessionId);
-		}
 	}
 
 	public String getGatewayUniqueId() {
@@ -120,6 +111,17 @@ public class UpdateServiceSourceRequest extends RpcAcsRequest<UpdateServiceSourc
 		if(id != null){
 			putQueryParameter("Id", id.toString());
 		}
+	}
+
+	public List<String> getPathList() {
+		return this.pathList;
+	}
+
+	public void setPathList(List<String> pathList) {
+		this.pathList = pathList;	
+		if (pathList != null) {
+			putQueryParameter("PathList" , new Gson().toJson(pathList));
+		}	
 	}
 
 	public Long getGatewayId() {
@@ -168,6 +170,9 @@ public class UpdateServiceSourceRequest extends RpcAcsRequest<UpdateServiceSourc
 
 	public static class IngressOptionsRequest {
 
+		@SerializedName("EnableStatus")
+		private Boolean enableStatus;
+
 		@SerializedName("EnableIngress")
 		private Boolean enableIngress;
 
@@ -176,6 +181,14 @@ public class UpdateServiceSourceRequest extends RpcAcsRequest<UpdateServiceSourc
 
 		@SerializedName("IngressClass")
 		private String ingressClass;
+
+		public Boolean getEnableStatus() {
+			return this.enableStatus;
+		}
+
+		public void setEnableStatus(Boolean enableStatus) {
+			this.enableStatus = enableStatus;
+		}
 
 		public Boolean getEnableIngress() {
 			return this.enableIngress;

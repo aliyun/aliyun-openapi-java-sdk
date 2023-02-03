@@ -28,8 +28,6 @@ public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse>
 
 	private Boolean all;
 
-	private String mseSessionId;
-
 	private List<String> resourceIds;
 
 	private String resourceType;
@@ -54,17 +52,6 @@ public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse>
 		this.all = all;
 		if(all != null){
 			putQueryParameter("All", all.toString());
-		}
-	}
-
-	public String getMseSessionId() {
-		return this.mseSessionId;
-	}
-
-	public void setMseSessionId(String mseSessionId) {
-		this.mseSessionId = mseSessionId;
-		if(mseSessionId != null){
-			putQueryParameter("MseSessionId", mseSessionId);
 		}
 	}
 
