@@ -28,6 +28,7 @@ public class UpdateClusterSpecResponseUnmarshaller {
 		updateClusterSpecResponse.setCode(_ctx.integerValue("UpdateClusterSpecResponse.Code"));
 		updateClusterSpecResponse.setSuccess(_ctx.booleanValue("UpdateClusterSpecResponse.Success"));
 		updateClusterSpecResponse.setData(_ctx.stringValue("UpdateClusterSpecResponse.Data"));
+		updateClusterSpecResponse.setErrorCode(_ctx.stringValue("UpdateClusterSpecResponse.ErrorCode"));
 	 
 	 	return updateClusterSpecResponse;
 	}

@@ -33,6 +33,8 @@ public class UpdateClusterSpecRequest extends RpcAcsRequest<UpdateClusterSpecRes
 
 	private String instanceId;
 
+	private String mseVersion;
+
 	private String acceptLanguage;
 	public UpdateClusterSpecRequest() {
 		super("mse", "2019-05-31", "UpdateClusterSpec", "mse");
@@ -84,6 +86,17 @@ public class UpdateClusterSpecRequest extends RpcAcsRequest<UpdateClusterSpecRes
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getMseVersion() {
+		return this.mseVersion;
+	}
+
+	public void setMseVersion(String mseVersion) {
+		this.mseVersion = mseVersion;
+		if(mseVersion != null){
+			putQueryParameter("MseVersion", mseVersion);
 		}
 	}
 

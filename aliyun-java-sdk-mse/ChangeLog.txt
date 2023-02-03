@@ -1,3 +1,6 @@
+2023-02-03 Version: 3.0.36
+- For all api.
+
 2023-02-03 Version: 3.0.35
 - Suport mse nologin.
 - Support mse nologin.
