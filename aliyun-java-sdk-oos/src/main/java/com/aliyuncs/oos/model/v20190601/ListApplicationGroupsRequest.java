@@ -31,8 +31,6 @@ public class ListApplicationGroupsRequest extends RpcAcsRequest<ListApplicationG
 
 	private String resourceId;
 
-	private String product;
-
 	private String deployRegionId;
 
 	private String resourceType;
@@ -79,17 +77,6 @@ public class ListApplicationGroupsRequest extends RpcAcsRequest<ListApplicationG
 		this.resourceId = resourceId;
 		if(resourceId != null){
 			putQueryParameter("ResourceId", resourceId);
-		}
-	}
-
-	public String getProduct() {
-		return this.product;
-	}
-
-	public void setProduct(String product) {
-		this.product = product;
-		if(product != null){
-			putQueryParameter("Product", product);
 		}
 	}
 

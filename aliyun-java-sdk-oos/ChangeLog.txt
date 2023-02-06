@@ -1,3 +1,6 @@
+2023-02-06 Version: 1.5.10
+- ListApplicationGroups rename parameter Product to ResourceProduct
+
 2022-11-07 Version: 1.5.9
 - Update StartExecution add Parameter TemplateURL.
    Update StartExecution Parameter TemplateName to optional.
