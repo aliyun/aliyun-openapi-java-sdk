@@ -55,6 +55,7 @@ public class ListServiceInstancesResponseUnmarshaller {
 			serviceInstance.setEndTime(_ctx.stringValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].EndTime"));
 			serviceInstance.setServiceType(_ctx.stringValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].ServiceType"));
 			serviceInstance.setPayType(_ctx.stringValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].PayType"));
+			serviceInstance.setIsOperated(_ctx.booleanValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].IsOperated"));
 
 			Service service = new Service();
 			service.setStatus(_ctx.stringValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].Service.Status"));

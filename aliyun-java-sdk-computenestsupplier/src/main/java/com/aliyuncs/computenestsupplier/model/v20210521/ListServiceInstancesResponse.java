@@ -113,6 +113,8 @@ public class ListServiceInstancesResponse extends AcsResponse {
 
 		private String payType;
 
+		private Boolean isOperated;
+
 		private List<Tag> tags;
 
 		private Service service;
@@ -259,6 +261,14 @@ public class ListServiceInstancesResponse extends AcsResponse {
 
 		public void setPayType(String payType) {
 			this.payType = payType;
+		}
+
+		public Boolean getIsOperated() {
+			return this.isOperated;
+		}
+
+		public void setIsOperated(Boolean isOperated) {
+			this.isOperated = isOperated;
 		}
 
 		public List<Tag> getTags() {

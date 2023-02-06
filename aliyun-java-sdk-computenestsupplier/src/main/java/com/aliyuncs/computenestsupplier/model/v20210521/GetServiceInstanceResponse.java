@@ -542,6 +542,10 @@ public class GetServiceInstanceResponse extends AcsResponse {
 
 			private String endpointServiceId;
 
+			private String privateZoneName;
+
+			private List<ConnectionConfig> connectionConfigs;
+
 			public String getEndpointId() {
 				return this.endpointId;
 			}
@@ -556,6 +560,85 @@ public class GetServiceInstanceResponse extends AcsResponse {
 
 			public void setEndpointServiceId(String endpointServiceId) {
 				this.endpointServiceId = endpointServiceId;
+			}
+
+			public String getPrivateZoneName() {
+				return this.privateZoneName;
+			}
+
+			public void setPrivateZoneName(String privateZoneName) {
+				this.privateZoneName = privateZoneName;
+			}
+
+			public List<ConnectionConfig> getConnectionConfigs() {
+				return this.connectionConfigs;
+			}
+
+			public void setConnectionConfigs(List<ConnectionConfig> connectionConfigs) {
+				this.connectionConfigs = connectionConfigs;
+			}
+
+			public static class ConnectionConfig {
+
+				private String vpcId;
+
+				private String ingressEndpointStatus;
+
+				private String networkServiceStatus;
+
+				private List<String> securityGroups;
+
+				private List<String> vSwitches;
+
+				private List<String> endpointIps;
+
+				public String getVpcId() {
+					return this.vpcId;
+				}
+
+				public void setVpcId(String vpcId) {
+					this.vpcId = vpcId;
+				}
+
+				public String getIngressEndpointStatus() {
+					return this.ingressEndpointStatus;
+				}
+
+				public void setIngressEndpointStatus(String ingressEndpointStatus) {
+					this.ingressEndpointStatus = ingressEndpointStatus;
+				}
+
+				public String getNetworkServiceStatus() {
+					return this.networkServiceStatus;
+				}
+
+				public void setNetworkServiceStatus(String networkServiceStatus) {
+					this.networkServiceStatus = networkServiceStatus;
+				}
+
+				public List<String> getSecurityGroups() {
+					return this.securityGroups;
+				}
+
+				public void setSecurityGroups(List<String> securityGroups) {
+					this.securityGroups = securityGroups;
+				}
+
+				public List<String> getVSwitches() {
+					return this.vSwitches;
+				}
+
+				public void setVSwitches(List<String> vSwitches) {
+					this.vSwitches = vSwitches;
+				}
+
+				public List<String> getEndpointIps() {
+					return this.endpointIps;
+				}
+
+				public void setEndpointIps(List<String> endpointIps) {
+					this.endpointIps = endpointIps;
+				}
 			}
 		}
 

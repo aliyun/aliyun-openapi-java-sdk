@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.computenestsupplier.model.v20210521.GetServiceInstanceResponse;
 import com.aliyuncs.computenestsupplier.model.v20210521.GetServiceInstanceResponse.NetworkConfig;
 import com.aliyuncs.computenestsupplier.model.v20210521.GetServiceInstanceResponse.NetworkConfig.PrivateVpcConnection;
+import com.aliyuncs.computenestsupplier.model.v20210521.GetServiceInstanceResponse.NetworkConfig.PrivateVpcConnection.ConnectionConfig;
 import com.aliyuncs.computenestsupplier.model.v20210521.GetServiceInstanceResponse.NetworkConfig.ReversePrivateVpcConnection;
 import com.aliyuncs.computenestsupplier.model.v20210521.GetServiceInstanceResponse.Service;
 import com.aliyuncs.computenestsupplier.model.v20210521.GetServiceInstanceResponse.Service.ServiceInfo;
@@ -92,6 +93,36 @@ public class GetServiceInstanceResponseUnmarshaller {
 			PrivateVpcConnection privateVpcConnection = new PrivateVpcConnection();
 			privateVpcConnection.setEndpointId(_ctx.stringValue("GetServiceInstanceResponse.NetworkConfig.PrivateVpcConnections["+ i +"].EndpointId"));
 			privateVpcConnection.setEndpointServiceId(_ctx.stringValue("GetServiceInstanceResponse.NetworkConfig.PrivateVpcConnections["+ i +"].EndpointServiceId"));
+			privateVpcConnection.setPrivateZoneName(_ctx.stringValue("GetServiceInstanceResponse.NetworkConfig.PrivateVpcConnections["+ i +"].PrivateZoneName"));
+
+			List<ConnectionConfig> connectionConfigs = new ArrayList<ConnectionConfig>();
+			for (int j = 0; j < _ctx.lengthValue("GetServiceInstanceResponse.NetworkConfig.PrivateVpcConnections["+ i +"].ConnectionConfigs.Length"); j++) {
+				ConnectionConfig connectionConfig = new ConnectionConfig();
+				connectionConfig.setVpcId(_ctx.stringValue("GetServiceInstanceResponse.NetworkConfig.PrivateVpcConnections["+ i +"].ConnectionConfigs["+ j +"].VpcId"));
+				connectionConfig.setIngressEndpointStatus(_ctx.stringValue("GetServiceInstanceResponse.NetworkConfig.PrivateVpcConnections["+ i +"].ConnectionConfigs["+ j +"].IngressEndpointStatus"));
+				connectionConfig.setNetworkServiceStatus(_ctx.stringValue("GetServiceInstanceResponse.NetworkConfig.PrivateVpcConnections["+ i +"].ConnectionConfigs["+ j +"].NetworkServiceStatus"));
+
+				List<String> securityGroups = new ArrayList<String>();
+				for (int k = 0; k < _ctx.lengthValue("GetServiceInstanceResponse.NetworkConfig.PrivateVpcConnections["+ i +"].ConnectionConfigs["+ j +"].SecurityGroups.Length"); k++) {
+					securityGroups.add(_ctx.stringValue("GetServiceInstanceResponse.NetworkConfig.PrivateVpcConnections["+ i +"].ConnectionConfigs["+ j +"].SecurityGroups["+ k +"]"));
+				}
+				connectionConfig.setSecurityGroups(securityGroups);
+
+				List<String> vSwitches = new ArrayList<String>();
+				for (int k = 0; k < _ctx.lengthValue("GetServiceInstanceResponse.NetworkConfig.PrivateVpcConnections["+ i +"].ConnectionConfigs["+ j +"].VSwitches.Length"); k++) {
+					vSwitches.add(_ctx.stringValue("GetServiceInstanceResponse.NetworkConfig.PrivateVpcConnections["+ i +"].ConnectionConfigs["+ j +"].VSwitches["+ k +"]"));
+				}
+				connectionConfig.setVSwitches(vSwitches);
+
+				List<String> endpointIps = new ArrayList<String>();
+				for (int k = 0; k < _ctx.lengthValue("GetServiceInstanceResponse.NetworkConfig.PrivateVpcConnections["+ i +"].ConnectionConfigs["+ j +"].EndpointIps.Length"); k++) {
+					endpointIps.add(_ctx.stringValue("GetServiceInstanceResponse.NetworkConfig.PrivateVpcConnections["+ i +"].ConnectionConfigs["+ j +"].EndpointIps["+ k +"]"));
+				}
+				connectionConfig.setEndpointIps(endpointIps);
+
+				connectionConfigs.add(connectionConfig);
+			}
+			privateVpcConnection.setConnectionConfigs(connectionConfigs);
 
 			privateVpcConnections.add(privateVpcConnection);
 		}
