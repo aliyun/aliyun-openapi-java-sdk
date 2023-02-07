@@ -40,7 +40,7 @@ public class QuerySkuPriceListRequest extends RpcAcsRequest<QuerySkuPriceListRes
 
 	private Integer pageSize;
 	public QuerySkuPriceListRequest() {
-		super("BssOpenApi", "2017-12-14", "QuerySkuPriceList");
+		super("BssOpenApi", "2017-12-14", "QuerySkuPriceList", "bssopenapi");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -40,7 +40,7 @@ public class AddAccountRelationRequest extends RpcAcsRequest<AddAccountRelationR
 
 	private List<String> roleCodess;
 	public AddAccountRelationRequest() {
-		super("BssOpenApi", "2017-12-14", "AddAccountRelation");
+		super("BssOpenApi", "2017-12-14", "AddAccountRelation", "bssopenapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

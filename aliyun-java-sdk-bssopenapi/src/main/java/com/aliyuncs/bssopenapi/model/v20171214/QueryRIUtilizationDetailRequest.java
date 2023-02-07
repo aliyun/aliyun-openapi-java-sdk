@@ -41,7 +41,7 @@ public class QueryRIUtilizationDetailRequest extends RpcAcsRequest<QueryRIUtiliz
 
 	private String rICommodityCode;
 	public QueryRIUtilizationDetailRequest() {
-		super("BssOpenApi", "2017-12-14", "QueryRIUtilizationDetail");
+		super("BssOpenApi", "2017-12-14", "QueryRIUtilizationDetail", "bssopenapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

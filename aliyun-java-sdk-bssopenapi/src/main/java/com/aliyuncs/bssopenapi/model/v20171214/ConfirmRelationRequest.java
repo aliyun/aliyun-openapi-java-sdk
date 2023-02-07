@@ -40,7 +40,7 @@ public class ConfirmRelationRequest extends RpcAcsRequest<ConfirmRelationRespons
 
 	private Long relationId;
 	public ConfirmRelationRequest() {
-		super("BssOpenApi", "2017-12-14", "ConfirmRelation");
+		super("BssOpenApi", "2017-12-14", "ConfirmRelation", "bssopenapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

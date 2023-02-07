@@ -32,7 +32,7 @@ public class TagResourcesRequest extends RpcAcsRequest<TagResourcesResponse> {
 
 	private List<Tag> tags;
 	public TagResourcesRequest() {
-		super("BssOpenApi", "2017-12-14", "TagResources");
+		super("BssOpenApi", "2017-12-14", "TagResources", "bssopenapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

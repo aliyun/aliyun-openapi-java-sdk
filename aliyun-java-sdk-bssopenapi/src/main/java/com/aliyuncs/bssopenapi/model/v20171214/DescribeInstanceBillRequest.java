@@ -51,7 +51,7 @@ public class DescribeInstanceBillRequest extends RpcAcsRequest<DescribeInstanceB
 
 	private Integer maxResults;
 	public DescribeInstanceBillRequest() {
-		super("BssOpenApi", "2017-12-14", "DescribeInstanceBill");
+		super("BssOpenApi", "2017-12-14", "DescribeInstanceBill", "bssopenapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

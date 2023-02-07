@@ -35,7 +35,7 @@ public class DescribeCostBudgetsSummaryRequest extends RpcAcsRequest<DescribeCos
 
 	private String budgetName;
 	public DescribeCostBudgetsSummaryRequest() {
-		super("BssOpenApi", "2017-12-14", "DescribeCostBudgetsSummary");
+		super("BssOpenApi", "2017-12-14", "DescribeCostBudgetsSummary", "bssopenapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

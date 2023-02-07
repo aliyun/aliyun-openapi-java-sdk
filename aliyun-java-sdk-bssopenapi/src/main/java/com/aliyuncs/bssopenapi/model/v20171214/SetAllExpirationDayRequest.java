@@ -29,7 +29,7 @@ public class SetAllExpirationDayRequest extends RpcAcsRequest<SetAllExpirationDa
 
 	private String unifyExpireDay;
 	public SetAllExpirationDayRequest() {
-		super("BssOpenApi", "2017-12-14", "SetAllExpirationDay");
+		super("BssOpenApi", "2017-12-14", "SetAllExpirationDay", "bssopenapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

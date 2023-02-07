@@ -37,7 +37,7 @@ public class DescribeSavingsPlansUsageDetailRequest extends RpcAcsRequest<Descri
 
 	private Integer maxResults;
 	public DescribeSavingsPlansUsageDetailRequest() {
-		super("BssOpenApi", "2017-12-14", "DescribeSavingsPlansUsageDetail");
+		super("BssOpenApi", "2017-12-14", "DescribeSavingsPlansUsageDetail", "bssopenapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

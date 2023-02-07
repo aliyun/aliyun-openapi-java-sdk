@@ -27,7 +27,7 @@ public class QueryCommodityListRequest extends RpcAcsRequest<QueryCommodityListR
 
 	private String productCode;
 	public QueryCommodityListRequest() {
-		super("BssOpenApi", "2017-12-14", "QueryCommodityList");
+		super("BssOpenApi", "2017-12-14", "QueryCommodityList", "bssopenapi");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

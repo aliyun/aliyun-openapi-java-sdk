@@ -43,7 +43,7 @@ public class QueryAccountTransactionDetailsRequest extends RpcAcsRequest<QueryAc
 
 	private String transactionNumber;
 	public QueryAccountTransactionDetailsRequest() {
-		super("BssOpenApi", "2017-12-14", "QueryAccountTransactionDetails");
+		super("BssOpenApi", "2017-12-14", "QueryAccountTransactionDetails", "bssopenapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

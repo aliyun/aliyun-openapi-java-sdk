@@ -52,7 +52,7 @@ public class DescribeSplitItemBillRequest extends RpcAcsRequest<DescribeSplitIte
 
 	private Integer maxResults;
 	public DescribeSplitItemBillRequest() {
-		super("BssOpenApi", "2017-12-14", "DescribeSplitItemBill");
+		super("BssOpenApi", "2017-12-14", "DescribeSplitItemBill", "bssopenapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

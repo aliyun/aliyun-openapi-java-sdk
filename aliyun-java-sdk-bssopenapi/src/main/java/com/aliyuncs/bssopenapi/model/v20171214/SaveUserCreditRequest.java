@@ -42,7 +42,7 @@ public class SaveUserCreditRequest extends RpcAcsRequest<SaveUserCreditResponse>
 
 	private String creditType;
 	public SaveUserCreditRequest() {
-		super("BssOpenApi", "2017-12-14", "SaveUserCredit");
+		super("BssOpenApi", "2017-12-14", "SaveUserCredit", "bssopenapi");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

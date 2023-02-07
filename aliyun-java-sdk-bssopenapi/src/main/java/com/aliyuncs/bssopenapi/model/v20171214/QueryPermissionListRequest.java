@@ -27,7 +27,7 @@ public class QueryPermissionListRequest extends RpcAcsRequest<QueryPermissionLis
 
 	private Long relationId;
 	public QueryPermissionListRequest() {
-		super("BssOpenApi", "2017-12-14", "QueryPermissionList");
+		super("BssOpenApi", "2017-12-14", "QueryPermissionList", "bssopenapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

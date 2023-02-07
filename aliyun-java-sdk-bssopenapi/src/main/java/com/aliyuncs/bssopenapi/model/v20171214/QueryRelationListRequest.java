@@ -34,7 +34,7 @@ public class QueryRelationListRequest extends RpcAcsRequest<QueryRelationListRes
 
 	private Integer pageSize;
 	public QueryRelationListRequest() {
-		super("BssOpenApi", "2017-12-14", "QueryRelationList");
+		super("BssOpenApi", "2017-12-14", "QueryRelationList", "bssopenapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

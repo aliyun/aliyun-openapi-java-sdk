@@ -39,7 +39,7 @@ public class DescribeResourceUsageDetailRequest extends RpcAcsRequest<DescribeRe
 
 	private Integer maxResults;
 	public DescribeResourceUsageDetailRequest() {
-		super("BssOpenApi", "2017-12-14", "DescribeResourceUsageDetail");
+		super("BssOpenApi", "2017-12-14", "DescribeResourceUsageDetail", "bssopenapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

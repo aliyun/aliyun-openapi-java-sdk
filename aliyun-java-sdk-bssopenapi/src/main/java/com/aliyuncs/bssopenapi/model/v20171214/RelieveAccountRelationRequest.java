@@ -35,7 +35,7 @@ public class RelieveAccountRelationRequest extends RpcAcsRequest<RelieveAccountR
 
 	private Long relationId;
 	public RelieveAccountRelationRequest() {
-		super("BssOpenApi", "2017-12-14", "RelieveAccountRelation");
+		super("BssOpenApi", "2017-12-14", "RelieveAccountRelation", "bssopenapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

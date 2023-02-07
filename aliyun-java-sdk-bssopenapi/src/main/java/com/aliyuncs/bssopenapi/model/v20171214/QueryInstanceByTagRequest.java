@@ -32,7 +32,7 @@ public class QueryInstanceByTagRequest extends RpcAcsRequest<QueryInstanceByTagR
 
 	private List<Tag> tags;
 	public QueryInstanceByTagRequest() {
-		super("BssOpenApi", "2017-12-14", "QueryInstanceByTag");
+		super("BssOpenApi", "2017-12-14", "QueryInstanceByTag", "bssopenapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

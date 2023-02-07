@@ -60,7 +60,7 @@ public class SetCreditLabelActionRequest extends RpcAcsRequest<SetCreditLabelAct
 
 	private String isNeedAddSettleLabel;
 	public SetCreditLabelActionRequest() {
-		super("BssOpenApi", "2017-12-14", "SetCreditLabelAction");
+		super("BssOpenApi", "2017-12-14", "SetCreditLabelAction", "bssopenapi");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

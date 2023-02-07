@@ -46,7 +46,7 @@ public class ApplyInvoiceRequest extends RpcAcsRequest<ApplyInvoiceResponse> {
 
 	private String userRemark;
 	public ApplyInvoiceRequest() {
-		super("BssOpenApi", "2017-12-14", "ApplyInvoice");
+		super("BssOpenApi", "2017-12-14", "ApplyInvoice", "bssopenapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

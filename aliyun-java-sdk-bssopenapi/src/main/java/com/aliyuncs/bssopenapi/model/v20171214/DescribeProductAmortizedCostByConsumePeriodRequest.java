@@ -46,7 +46,7 @@ public class DescribeProductAmortizedCostByConsumePeriodRequest extends RpcAcsRe
 
 	private Integer maxResults;
 	public DescribeProductAmortizedCostByConsumePeriodRequest() {
-		super("BssOpenApi", "2017-12-14", "DescribeProductAmortizedCostByConsumePeriod");
+		super("BssOpenApi", "2017-12-14", "DescribeProductAmortizedCostByConsumePeriod", "bssopenapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

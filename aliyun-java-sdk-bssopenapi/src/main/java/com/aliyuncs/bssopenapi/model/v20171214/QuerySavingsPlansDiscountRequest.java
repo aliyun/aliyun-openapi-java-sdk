@@ -45,7 +45,7 @@ public class QuerySavingsPlansDiscountRequest extends RpcAcsRequest<QuerySavings
 
 	private String region;
 	public QuerySavingsPlansDiscountRequest() {
-		super("BssOpenApi", "2017-12-14", "QuerySavingsPlansDiscount");
+		super("BssOpenApi", "2017-12-14", "QuerySavingsPlansDiscount", "bssopenapi");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

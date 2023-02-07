@@ -39,7 +39,7 @@ public class ReleaseInstanceRequest extends RpcAcsRequest<ReleaseInstanceRespons
 
 	private String renewStatus;
 	public ReleaseInstanceRequest() {
-		super("BssOpenApi", "2017-12-14", "ReleaseInstance");
+		super("BssOpenApi", "2017-12-14", "ReleaseInstance", "bssopenapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

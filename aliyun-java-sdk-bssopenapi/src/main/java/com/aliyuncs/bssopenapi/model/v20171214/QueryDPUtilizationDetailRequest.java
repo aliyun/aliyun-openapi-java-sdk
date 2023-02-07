@@ -45,7 +45,7 @@ public class QueryDPUtilizationDetailRequest extends RpcAcsRequest<QueryDPUtiliz
 
 	private Integer limit;
 	public QueryDPUtilizationDetailRequest() {
-		super("BssOpenApi", "2017-12-14", "QueryDPUtilizationDetail");
+		super("BssOpenApi", "2017-12-14", "QueryDPUtilizationDetail", "bssopenapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

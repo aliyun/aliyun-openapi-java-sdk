@@ -45,7 +45,7 @@ public class CreateSavingsPlansInstanceRequest extends RpcAcsRequest<CreateSavin
 
 	private String pricingCycle;
 	public CreateSavingsPlansInstanceRequest() {
-		super("BssOpenApi", "2017-12-14", "CreateSavingsPlansInstance");
+		super("BssOpenApi", "2017-12-14", "CreateSavingsPlansInstance", "bssopenapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
