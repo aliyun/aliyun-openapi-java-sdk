@@ -1,3 +1,6 @@
+2023-02-07 Version: 1.0.15
+- add all language sdk.
+
 2023-02-01 Version: 1.0.14
 - SubmitTextTo2DAvatarVideoTask add new params code.
 
