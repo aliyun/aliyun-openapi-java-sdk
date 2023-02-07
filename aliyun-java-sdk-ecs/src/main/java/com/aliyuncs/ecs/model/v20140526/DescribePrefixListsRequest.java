@@ -44,7 +44,7 @@ public class DescribePrefixListsRequest extends RpcAcsRequest<DescribePrefixList
 
 	private Integer maxResults;
 	public DescribePrefixListsRequest() {
-		super("Ecs", "2014-05-26", "DescribePrefixLists", "ecs");
+		super("Ecs", "2014-05-26", "DescribePrefixLists");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

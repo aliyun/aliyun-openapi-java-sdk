@@ -50,7 +50,7 @@ public class DescribeManagedInstancesRequest extends RpcAcsRequest<DescribeManag
 
 	private String activationId;
 	public DescribeManagedInstancesRequest() {
-		super("Ecs", "2014-05-26", "DescribeManagedInstances", "ecs");
+		super("Ecs", "2014-05-26", "DescribeManagedInstances");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

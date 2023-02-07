@@ -35,7 +35,7 @@ public class DeregisterManagedInstanceRequest extends RpcAcsRequest<DeregisterMa
 
 	private String instanceId;
 	public DeregisterManagedInstanceRequest() {
-		super("Ecs", "2014-05-26", "DeregisterManagedInstance", "ecs");
+		super("Ecs", "2014-05-26", "DeregisterManagedInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

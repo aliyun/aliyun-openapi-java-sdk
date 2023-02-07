@@ -41,7 +41,7 @@ public class DescribeSnapshotMonitorDataRequest extends RpcAcsRequest<DescribeSn
 
 	private String category;
 	public DescribeSnapshotMonitorDataRequest() {
-		super("Ecs", "2014-05-26", "DescribeSnapshotMonitorData", "ecs");
+		super("Ecs", "2014-05-26", "DescribeSnapshotMonitorData");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

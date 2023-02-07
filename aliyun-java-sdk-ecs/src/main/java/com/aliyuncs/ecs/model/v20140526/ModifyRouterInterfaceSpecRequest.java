@@ -41,7 +41,7 @@ public class ModifyRouterInterfaceSpecRequest extends RpcAcsRequest<ModifyRouter
 
 	private Long ownerId;
 	public ModifyRouterInterfaceSpecRequest() {
-		super("Ecs", "2014-05-26", "ModifyRouterInterfaceSpec", "ecs");
+		super("Ecs", "2014-05-26", "ModifyRouterInterfaceSpec");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

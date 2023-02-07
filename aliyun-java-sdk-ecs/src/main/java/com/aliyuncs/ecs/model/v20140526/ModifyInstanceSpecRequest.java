@@ -55,7 +55,7 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 
 	private Integer internetMaxBandwidthIn;
 	public ModifyInstanceSpecRequest() {
-		super("Ecs", "2014-05-26", "ModifyInstanceSpec", "ecs");
+		super("Ecs", "2014-05-26", "ModifyInstanceSpec");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -38,7 +38,7 @@ public class DescribeImageSupportInstanceTypesRequest extends RpcAcsRequest<Desc
 
 	private List<Filter> filters;
 	public DescribeImageSupportInstanceTypesRequest() {
-		super("Ecs", "2014-05-26", "DescribeImageSupportInstanceTypes", "ecs");
+		super("Ecs", "2014-05-26", "DescribeImageSupportInstanceTypes");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

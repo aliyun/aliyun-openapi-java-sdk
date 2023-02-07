@@ -50,7 +50,7 @@ public class DescribeTasksRequest extends RpcAcsRequest<DescribeTasksResponse> {
 
 	private List<String> resourceIdss;
 	public DescribeTasksRequest() {
-		super("Ecs", "2014-05-26", "DescribeTasks", "ecs");
+		super("Ecs", "2014-05-26", "DescribeTasks");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,7 +35,7 @@ public class DisableActivationRequest extends RpcAcsRequest<DisableActivationRes
 
 	private String activationId;
 	public DisableActivationRequest() {
-		super("Ecs", "2014-05-26", "DisableActivation", "ecs");
+		super("Ecs", "2014-05-26", "DisableActivation");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

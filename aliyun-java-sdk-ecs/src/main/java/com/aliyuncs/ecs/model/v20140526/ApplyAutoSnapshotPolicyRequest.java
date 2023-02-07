@@ -35,7 +35,7 @@ public class ApplyAutoSnapshotPolicyRequest extends RpcAcsRequest<ApplyAutoSnaps
 
 	private Long ownerId;
 	public ApplyAutoSnapshotPolicyRequest() {
-		super("Ecs", "2014-05-26", "ApplyAutoSnapshotPolicy", "ecs");
+		super("Ecs", "2014-05-26", "ApplyAutoSnapshotPolicy");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

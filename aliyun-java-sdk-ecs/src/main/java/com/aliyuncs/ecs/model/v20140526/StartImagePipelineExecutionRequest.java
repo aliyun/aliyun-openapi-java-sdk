@@ -40,7 +40,7 @@ public class StartImagePipelineExecutionRequest extends RpcAcsRequest<StartImage
 
 	private Long ownerId;
 	public StartImagePipelineExecutionRequest() {
-		super("Ecs", "2014-05-26", "StartImagePipelineExecution", "ecs");
+		super("Ecs", "2014-05-26", "StartImagePipelineExecution");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
