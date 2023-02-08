@@ -25,6 +25,8 @@ public class StopMeetingTransRequest extends RoaAcsRequest<StopMeetingTransRespo
 	   
 
 	private String meetingId;
+
+	private String body;
 	public StopMeetingTransRequest() {
 		super("tingwu", "2022-09-30", "StopMeetingTrans", "tingwupaas");
 		setUriPattern("/openapi/meeting-trans/[MeetingId]/stop");
@@ -39,6 +41,17 @@ public class StopMeetingTransRequest extends RoaAcsRequest<StopMeetingTransRespo
 		this.meetingId = meetingId;
 		if(meetingId != null){
 			putPathParameter("MeetingId", meetingId);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

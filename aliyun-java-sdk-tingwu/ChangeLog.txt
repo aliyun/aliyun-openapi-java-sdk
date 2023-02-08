@@ -1,3 +1,6 @@
+2023-02-08 Version: 1.0.2
+- Support meeting realtime translate and role separation after meeting.
+
 2022-10-11 Version: 1.0.1
 - Init.
 
