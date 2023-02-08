@@ -333,6 +333,8 @@ public class ListGreyTagRouteResponse extends AcsResponse {
 
 				private String condition;
 
+				private String serviceName;
+
 				private List<Item2> items1;
 
 				public String getServiceId() {
@@ -357,6 +359,14 @@ public class ListGreyTagRouteResponse extends AcsResponse {
 
 				public void setCondition(String condition) {
 					this.condition = condition;
+				}
+
+				public String getServiceName() {
+					return this.serviceName;
+				}
+
+				public void setServiceName(String serviceName) {
+					this.serviceName = serviceName;
 				}
 
 				public List<Item2> getItems1() {

@@ -85,6 +85,7 @@ public class ListGreyTagRouteResponseUnmarshaller {
 				albRule.setServiceId(_ctx.stringValue("ListGreyTagRouteResponse.Data.Result["+ i +"].AlbRules["+ j +"].serviceId"));
 				albRule.setIngressId(_ctx.stringValue("ListGreyTagRouteResponse.Data.Result["+ i +"].AlbRules["+ j +"].ingressId"));
 				albRule.setCondition(_ctx.stringValue("ListGreyTagRouteResponse.Data.Result["+ i +"].AlbRules["+ j +"].condition"));
+				albRule.setServiceName(_ctx.stringValue("ListGreyTagRouteResponse.Data.Result["+ i +"].AlbRules["+ j +"].serviceName"));
 
 				List<Item2> items1 = new ArrayList<Item2>();
 				for (int k = 0; k < _ctx.lengthValue("ListGreyTagRouteResponse.Data.Result["+ i +"].AlbRules["+ j +"].items.Length"); k++) {
