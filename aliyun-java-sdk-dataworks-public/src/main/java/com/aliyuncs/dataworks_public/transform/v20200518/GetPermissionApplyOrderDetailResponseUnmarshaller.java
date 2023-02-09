@@ -59,6 +59,7 @@ public class GetPermissionApplyOrderDetailResponseUnmarshaller {
 				ColumnMetaListItem columnMetaListItem = new ColumnMetaListItem();
 				columnMetaListItem.setColumnName(_ctx.stringValue("GetPermissionApplyOrderDetailResponse.ApplyOrderDetail.ApproveContent.ProjectMeta.ObjectMetaList["+ i +"].ColumnMetaList["+ j +"].ColumnName"));
 				columnMetaListItem.setColumnComment(_ctx.stringValue("GetPermissionApplyOrderDetailResponse.ApplyOrderDetail.ApproveContent.ProjectMeta.ObjectMetaList["+ i +"].ColumnMetaList["+ j +"].ColumnComment"));
+				columnMetaListItem.setSecurityLevel(_ctx.stringValue("GetPermissionApplyOrderDetailResponse.ApplyOrderDetail.ApproveContent.ProjectMeta.ObjectMetaList["+ i +"].ColumnMetaList["+ j +"].SecurityLevel"));
 
 				columnMetaList.add(columnMetaListItem);
 			}

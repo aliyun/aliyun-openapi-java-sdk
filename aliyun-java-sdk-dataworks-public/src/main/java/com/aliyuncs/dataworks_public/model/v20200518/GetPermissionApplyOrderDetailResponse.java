@@ -275,6 +275,8 @@ public class GetPermissionApplyOrderDetailResponse extends AcsResponse {
 
 						private String columnComment;
 
+						private String securityLevel;
+
 						public String getColumnName() {
 							return this.columnName;
 						}
@@ -289,6 +291,14 @@ public class GetPermissionApplyOrderDetailResponse extends AcsResponse {
 
 						public void setColumnComment(String columnComment) {
 							this.columnComment = columnComment;
+						}
+
+						public String getSecurityLevel() {
+							return this.securityLevel;
+						}
+
+						public void setSecurityLevel(String securityLevel) {
+							this.securityLevel = securityLevel;
 						}
 					}
 				}
