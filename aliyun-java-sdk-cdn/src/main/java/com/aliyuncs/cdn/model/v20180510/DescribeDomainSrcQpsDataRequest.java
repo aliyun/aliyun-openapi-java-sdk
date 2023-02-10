@@ -25,15 +25,13 @@ import com.aliyuncs.cdn.Endpoint;
 public class DescribeDomainSrcQpsDataRequest extends RpcAcsRequest<DescribeDomainSrcQpsDataResponse> {
 	   
 
-	private String startTime;
-
 	private String domainName;
 
 	private String endTime;
 
-	private Long ownerId;
-
 	private String interval;
+
+	private String startTime;
 	public DescribeDomainSrcQpsDataRequest() {
 		super("Cdn", "2018-05-10", "DescribeDomainSrcQpsData");
 		setMethod(MethodType.POST);
@@ -41,17 +39,6 @@ public class DescribeDomainSrcQpsDataRequest extends RpcAcsRequest<DescribeDomai
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
 	}
 
 	public String getDomainName() {
@@ -76,17 +63,6 @@ public class DescribeDomainSrcQpsDataRequest extends RpcAcsRequest<DescribeDomai
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public String getInterval() {
 		return this.interval;
 	}
@@ -95,6 +71,17 @@ public class DescribeDomainSrcQpsDataRequest extends RpcAcsRequest<DescribeDomai
 		this.interval = interval;
 		if(interval != null){
 			putQueryParameter("Interval", interval);
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
 		}
 	}
 

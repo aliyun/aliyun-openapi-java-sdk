@@ -25,13 +25,11 @@ import com.aliyuncs.cdn.Endpoint;
 public class DescribeDomainBpsDataByTimeStampRequest extends RpcAcsRequest<DescribeDomainBpsDataByTimeStampResponse> {
 	   
 
-	private String locationNames;
-
 	private String ispNames;
 
-	private String domainName;
+	private String locationNames;
 
-	private Long ownerId;
+	private String domainName;
 
 	private String timePoint;
 	public DescribeDomainBpsDataByTimeStampRequest() {
@@ -41,17 +39,6 @@ public class DescribeDomainBpsDataByTimeStampRequest extends RpcAcsRequest<Descr
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getLocationNames() {
-		return this.locationNames;
-	}
-
-	public void setLocationNames(String locationNames) {
-		this.locationNames = locationNames;
-		if(locationNames != null){
-			putQueryParameter("LocationNames", locationNames);
-		}
 	}
 
 	public String getIspNames() {
@@ -65,6 +52,17 @@ public class DescribeDomainBpsDataByTimeStampRequest extends RpcAcsRequest<Descr
 		}
 	}
 
+	public String getLocationNames() {
+		return this.locationNames;
+	}
+
+	public void setLocationNames(String locationNames) {
+		this.locationNames = locationNames;
+		if(locationNames != null){
+			putQueryParameter("LocationNames", locationNames);
+		}
+	}
+
 	public String getDomainName() {
 		return this.domainName;
 	}
@@ -73,17 +71,6 @@ public class DescribeDomainBpsDataByTimeStampRequest extends RpcAcsRequest<Descr
 		this.domainName = domainName;
 		if(domainName != null){
 			putQueryParameter("DomainName", domainName);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

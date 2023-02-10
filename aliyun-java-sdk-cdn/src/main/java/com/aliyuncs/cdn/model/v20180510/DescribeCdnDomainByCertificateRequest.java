@@ -25,11 +25,9 @@ import com.aliyuncs.cdn.Endpoint;
 public class DescribeCdnDomainByCertificateRequest extends RpcAcsRequest<DescribeCdnDomainByCertificateResponse> {
 	   
 
-	private Long ownerId;
+	private String sSLPub;
 
 	private Boolean sSLStatus;
-
-	private String sSLPub;
 	public DescribeCdnDomainByCertificateRequest() {
 		super("Cdn", "2018-05-10", "DescribeCdnDomainByCertificate");
 		setMethod(MethodType.POST);
@@ -39,14 +37,14 @@ public class DescribeCdnDomainByCertificateRequest extends RpcAcsRequest<Describ
 		} catch (Exception e) {}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getSSLPub() {
+		return this.sSLPub;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
+	public void setSSLPub(String sSLPub) {
+		this.sSLPub = sSLPub;
+		if(sSLPub != null){
+			putQueryParameter("SSLPub", sSLPub);
 		}
 	}
 
@@ -58,17 +56,6 @@ public class DescribeCdnDomainByCertificateRequest extends RpcAcsRequest<Describ
 		this.sSLStatus = sSLStatus;
 		if(sSLStatus != null){
 			putQueryParameter("SSLStatus", sSLStatus.toString());
-		}
-	}
-
-	public String getSSLPub() {
-		return this.sSLPub;
-	}
-
-	public void setSSLPub(String sSLPub) {
-		this.sSLPub = sSLPub;
-		if(sSLPub != null){
-			putQueryParameter("SSLPub", sSLPub);
 		}
 	}
 

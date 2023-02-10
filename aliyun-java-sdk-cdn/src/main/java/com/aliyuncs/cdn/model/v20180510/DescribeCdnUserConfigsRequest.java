@@ -26,8 +26,6 @@ public class DescribeCdnUserConfigsRequest extends RpcAcsRequest<DescribeCdnUser
 	   
 
 	private String functionName;
-
-	private Long ownerId;
 	public DescribeCdnUserConfigsRequest() {
 		super("Cdn", "2018-05-10", "DescribeCdnUserConfigs");
 		setMethod(MethodType.POST);
@@ -45,17 +43,6 @@ public class DescribeCdnUserConfigsRequest extends RpcAcsRequest<DescribeCdnUser
 		this.functionName = functionName;
 		if(functionName != null){
 			putQueryParameter("FunctionName", functionName);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

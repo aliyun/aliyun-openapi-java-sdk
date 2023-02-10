@@ -25,10 +25,6 @@ import com.aliyuncs.cdn.Endpoint;
 public class DescribeDomainPathDataRequest extends RpcAcsRequest<DescribeDomainPathDataResponse> {
 	   
 
-	private String startTime;
-
-	private Integer pageNumber;
-
 	private String path;
 
 	private Integer pageSize;
@@ -37,7 +33,9 @@ public class DescribeDomainPathDataRequest extends RpcAcsRequest<DescribeDomainP
 
 	private String endTime;
 
-	private Long ownerId;
+	private String startTime;
+
+	private Integer pageNumber;
 	public DescribeDomainPathDataRequest() {
 		super("Cdn", "2018-05-10", "DescribeDomainPathData");
 		setMethod(MethodType.GET);
@@ -45,28 +43,6 @@ public class DescribeDomainPathDataRequest extends RpcAcsRequest<DescribeDomainP
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
 	}
 
 	public String getPath() {
@@ -113,14 +89,25 @@ public class DescribeDomainPathDataRequest extends RpcAcsRequest<DescribeDomainP
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getStartTime() {
+		return this.startTime;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

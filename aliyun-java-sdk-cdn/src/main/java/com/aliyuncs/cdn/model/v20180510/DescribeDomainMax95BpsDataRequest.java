@@ -25,15 +25,13 @@ import com.aliyuncs.cdn.Endpoint;
 public class DescribeDomainMax95BpsDataRequest extends RpcAcsRequest<DescribeDomainMax95BpsDataResponse> {
 	   
 
-	private String startTime;
-
-	private String cycle;
-
 	private String domainName;
 
 	private String endTime;
 
-	private Long ownerId;
+	private String startTime;
+
+	private String cycle;
 
 	private String timePoint;
 	public DescribeDomainMax95BpsDataRequest() {
@@ -43,28 +41,6 @@ public class DescribeDomainMax95BpsDataRequest extends RpcAcsRequest<DescribeDom
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public String getCycle() {
-		return this.cycle;
-	}
-
-	public void setCycle(String cycle) {
-		this.cycle = cycle;
-		if(cycle != null){
-			putQueryParameter("Cycle", cycle);
-		}
 	}
 
 	public String getDomainName() {
@@ -89,14 +65,25 @@ public class DescribeDomainMax95BpsDataRequest extends RpcAcsRequest<DescribeDom
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getStartTime() {
+		return this.startTime;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getCycle() {
+		return this.cycle;
+	}
+
+	public void setCycle(String cycle) {
+		this.cycle = cycle;
+		if(cycle != null){
+			putQueryParameter("Cycle", cycle);
 		}
 	}
 

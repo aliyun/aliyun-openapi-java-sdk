@@ -25,15 +25,13 @@ import com.aliyuncs.cdn.Endpoint;
 public class DescribeCdnUserDomainsByFuncRequest extends RpcAcsRequest<DescribeCdnUserDomainsByFuncResponse> {
 	   
 
-	private Integer pageNumber;
-
 	private String resourceGroupId;
 
 	private Integer pageSize;
 
-	private Long ownerId;
-
 	private Integer funcId;
+
+	private Integer pageNumber;
 	public DescribeCdnUserDomainsByFuncRequest() {
 		super("Cdn", "2018-05-10", "DescribeCdnUserDomainsByFunc");
 		setMethod(MethodType.POST);
@@ -41,17 +39,6 @@ public class DescribeCdnUserDomainsByFuncRequest extends RpcAcsRequest<DescribeC
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
 	}
 
 	public String getResourceGroupId() {
@@ -76,17 +63,6 @@ public class DescribeCdnUserDomainsByFuncRequest extends RpcAcsRequest<DescribeC
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public Integer getFuncId() {
 		return this.funcId;
 	}
@@ -95,6 +71,17 @@ public class DescribeCdnUserDomainsByFuncRequest extends RpcAcsRequest<DescribeC
 		this.funcId = funcId;
 		if(funcId != null){
 			putQueryParameter("FuncId", funcId.toString());
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

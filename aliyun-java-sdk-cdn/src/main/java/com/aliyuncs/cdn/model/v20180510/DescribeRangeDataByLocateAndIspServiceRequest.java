@@ -25,17 +25,15 @@ import com.aliyuncs.cdn.Endpoint;
 public class DescribeRangeDataByLocateAndIspServiceRequest extends RpcAcsRequest<DescribeRangeDataByLocateAndIspServiceResponse> {
 	   
 
+	private String ispNames;
+
 	private String domainNames;
 
 	private String locationNames;
 
-	private String startTime;
-
-	private String ispNames;
-
 	private String endTime;
 
-	private Long ownerId;
+	private String startTime;
 	public DescribeRangeDataByLocateAndIspServiceRequest() {
 		super("Cdn", "2018-05-10", "DescribeRangeDataByLocateAndIspService");
 		setMethod(MethodType.POST);
@@ -43,6 +41,17 @@ public class DescribeRangeDataByLocateAndIspServiceRequest extends RpcAcsRequest
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getIspNames() {
+		return this.ispNames;
+	}
+
+	public void setIspNames(String ispNames) {
+		this.ispNames = ispNames;
+		if(ispNames != null){
+			putQueryParameter("IspNames", ispNames);
+		}
 	}
 
 	public String getDomainNames() {
@@ -67,28 +76,6 @@ public class DescribeRangeDataByLocateAndIspServiceRequest extends RpcAcsRequest
 		}
 	}
 
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public String getIspNames() {
-		return this.ispNames;
-	}
-
-	public void setIspNames(String ispNames) {
-		this.ispNames = ispNames;
-		if(ispNames != null){
-			putQueryParameter("IspNames", ispNames);
-		}
-	}
-
 	public String getEndTime() {
 		return this.endTime;
 	}
@@ -100,14 +87,14 @@ public class DescribeRangeDataByLocateAndIspServiceRequest extends RpcAcsRequest
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getStartTime() {
+		return this.startTime;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
 		}
 	}
 

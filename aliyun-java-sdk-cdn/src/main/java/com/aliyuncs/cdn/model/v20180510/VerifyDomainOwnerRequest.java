@@ -25,11 +25,9 @@ import com.aliyuncs.cdn.Endpoint;
 public class VerifyDomainOwnerRequest extends RpcAcsRequest<VerifyDomainOwnerResponse> {
 	   
 
-	private String verifyType;
-
 	private String domainName;
 
-	private Long ownerId;
+	private String verifyType;
 	public VerifyDomainOwnerRequest() {
 		super("Cdn", "2018-05-10", "VerifyDomainOwner");
 		setMethod(MethodType.POST);
@@ -37,17 +35,6 @@ public class VerifyDomainOwnerRequest extends RpcAcsRequest<VerifyDomainOwnerRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getVerifyType() {
-		return this.verifyType;
-	}
-
-	public void setVerifyType(String verifyType) {
-		this.verifyType = verifyType;
-		if(verifyType != null){
-			putQueryParameter("VerifyType", verifyType);
-		}
 	}
 
 	public String getDomainName() {
@@ -61,14 +48,14 @@ public class VerifyDomainOwnerRequest extends RpcAcsRequest<VerifyDomainOwnerRes
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getVerifyType() {
+		return this.verifyType;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
+	public void setVerifyType(String verifyType) {
+		this.verifyType = verifyType;
+		if(verifyType != null){
+			putQueryParameter("VerifyType", verifyType);
 		}
 	}
 
