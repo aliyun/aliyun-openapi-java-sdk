@@ -29,6 +29,8 @@ public class ListStackOperationRisksResponse extends AcsResponse {
 
 	private List<Resource> riskResources;
 
+	private List<String> missingPolicyActions;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -45,23 +47,31 @@ public class ListStackOperationRisksResponse extends AcsResponse {
 		this.riskResources = riskResources;
 	}
 
+	public List<String> getMissingPolicyActions() {
+		return this.missingPolicyActions;
+	}
+
+	public void setMissingPolicyActions(List<String> missingPolicyActions) {
+		this.missingPolicyActions = missingPolicyActions;
+	}
+
 	public static class Resource {
 
 		private String logicalResourceId;
 
 		private String physicalResourceId;
 
+		private String requestId;
+
 		private String resourceType;
-
-		private String reason;
-
-		private String riskType;
 
 		private String code;
 
 		private String message;
 
-		private String requestId;
+		private String riskType;
+
+		private String reason;
 
 		public String getLogicalResourceId() {
 			return this.logicalResourceId;
@@ -79,28 +89,20 @@ public class ListStackOperationRisksResponse extends AcsResponse {
 			this.physicalResourceId = physicalResourceId;
 		}
 
+		public String getRequestId() {
+			return this.requestId;
+		}
+
+		public void setRequestId(String requestId) {
+			this.requestId = requestId;
+		}
+
 		public String getResourceType() {
 			return this.resourceType;
 		}
 
 		public void setResourceType(String resourceType) {
 			this.resourceType = resourceType;
-		}
-
-		public String getReason() {
-			return this.reason;
-		}
-
-		public void setReason(String reason) {
-			this.reason = reason;
-		}
-
-		public String getRiskType() {
-			return this.riskType;
-		}
-
-		public void setRiskType(String riskType) {
-			this.riskType = riskType;
 		}
 
 		public String getCode() {
@@ -119,12 +121,20 @@ public class ListStackOperationRisksResponse extends AcsResponse {
 			this.message = message;
 		}
 
-		public String getRequestId() {
-			return this.requestId;
+		public String getRiskType() {
+			return this.riskType;
 		}
 
-		public void setRequestId(String requestId) {
-			this.requestId = requestId;
+		public void setRiskType(String riskType) {
+			this.riskType = riskType;
+		}
+
+		public String getReason() {
+			return this.reason;
+		}
+
+		public void setReason(String reason) {
+			this.reason = reason;
 		}
 	}
 

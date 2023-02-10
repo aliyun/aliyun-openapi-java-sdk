@@ -27,19 +27,19 @@ public class GetStackResourceResponseUnmarshaller {
 	public static GetStackResourceResponse unmarshall(GetStackResourceResponse getStackResourceResponse, UnmarshallerContext _ctx) {
 		
 		getStackResourceResponse.setRequestId(_ctx.stringValue("GetStackResourceResponse.RequestId"));
-		getStackResourceResponse.setCreateTime(_ctx.stringValue("GetStackResourceResponse.CreateTime"));
-		getStackResourceResponse.setDescription(_ctx.stringValue("GetStackResourceResponse.Description"));
-		getStackResourceResponse.setLogicalResourceId(_ctx.stringValue("GetStackResourceResponse.LogicalResourceId"));
-		getStackResourceResponse.setMetadata(_ctx.mapValue("GetStackResourceResponse.Metadata"));
-		getStackResourceResponse.setPhysicalResourceId(_ctx.stringValue("GetStackResourceResponse.PhysicalResourceId"));
-		getStackResourceResponse.setResourceType(_ctx.stringValue("GetStackResourceResponse.ResourceType"));
-		getStackResourceResponse.setStackId(_ctx.stringValue("GetStackResourceResponse.StackId"));
-		getStackResourceResponse.setStackName(_ctx.stringValue("GetStackResourceResponse.StackName"));
 		getStackResourceResponse.setStatus(_ctx.stringValue("GetStackResourceResponse.Status"));
+		getStackResourceResponse.setDescription(_ctx.stringValue("GetStackResourceResponse.Description"));
 		getStackResourceResponse.setStatusReason(_ctx.stringValue("GetStackResourceResponse.StatusReason"));
-		getStackResourceResponse.setUpdateTime(_ctx.stringValue("GetStackResourceResponse.UpdateTime"));
+		getStackResourceResponse.setPhysicalResourceId(_ctx.stringValue("GetStackResourceResponse.PhysicalResourceId"));
+		getStackResourceResponse.setCreateTime(_ctx.stringValue("GetStackResourceResponse.CreateTime"));
+		getStackResourceResponse.setMetadata(_ctx.mapValue("GetStackResourceResponse.Metadata"));
+		getStackResourceResponse.setResourceType(_ctx.stringValue("GetStackResourceResponse.ResourceType"));
+		getStackResourceResponse.setLogicalResourceId(_ctx.stringValue("GetStackResourceResponse.LogicalResourceId"));
 		getStackResourceResponse.setResourceDriftStatus(_ctx.stringValue("GetStackResourceResponse.ResourceDriftStatus"));
+		getStackResourceResponse.setUpdateTime(_ctx.stringValue("GetStackResourceResponse.UpdateTime"));
 		getStackResourceResponse.setDriftDetectionTime(_ctx.stringValue("GetStackResourceResponse.DriftDetectionTime"));
+		getStackResourceResponse.setStackName(_ctx.stringValue("GetStackResourceResponse.StackName"));
+		getStackResourceResponse.setStackId(_ctx.stringValue("GetStackResourceResponse.StackId"));
 
 		List<Map<Object, Object>> resourceAttributes = _ctx.listMapValue("GetStackResourceResponse.ResourceAttributes");
 		getStackResourceResponse.setResourceAttributes(resourceAttributes);

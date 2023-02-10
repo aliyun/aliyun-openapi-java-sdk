@@ -32,6 +32,10 @@ public class UpdateStackGroupRequest extends RpcAcsRequest<UpdateStackGroupRespo
 
 	private String stackGroupName;
 
+	private Map<Object,Object> autoDeployment;
+
+	private String permissionModel;
+
 	private List<Object> regionIds;
 
 	private String templateId;
@@ -45,6 +49,8 @@ public class UpdateStackGroupRequest extends RpcAcsRequest<UpdateStackGroupRespo
 	private String description;
 
 	private String executionRoleName;
+
+	private Map<Object,Object> deploymentTargets;
 
 	private String templateURL;
 
@@ -83,6 +89,28 @@ public class UpdateStackGroupRequest extends RpcAcsRequest<UpdateStackGroupRespo
 		this.stackGroupName = stackGroupName;
 		if(stackGroupName != null){
 			putQueryParameter("StackGroupName", stackGroupName);
+		}
+	}
+
+	public Map<Object,Object> getAutoDeployment() {
+		return this.autoDeployment;
+	}
+
+	public void setAutoDeployment(Map<Object,Object> autoDeployment) {
+		this.autoDeployment = autoDeployment;
+		if(autoDeployment != null){
+			putQueryParameter("AutoDeployment", new Gson().toJson(autoDeployment));
+		}
+	}
+
+	public String getPermissionModel() {
+		return this.permissionModel;
+	}
+
+	public void setPermissionModel(String permissionModel) {
+		this.permissionModel = permissionModel;
+		if(permissionModel != null){
+			putQueryParameter("PermissionModel", permissionModel);
 		}
 	}
 
@@ -163,6 +191,17 @@ public class UpdateStackGroupRequest extends RpcAcsRequest<UpdateStackGroupRespo
 		this.executionRoleName = executionRoleName;
 		if(executionRoleName != null){
 			putQueryParameter("ExecutionRoleName", executionRoleName);
+		}
+	}
+
+	public Map<Object,Object> getDeploymentTargets() {
+		return this.deploymentTargets;
+	}
+
+	public void setDeploymentTargets(Map<Object,Object> deploymentTargets) {
+		this.deploymentTargets = deploymentTargets;
+		if(deploymentTargets != null){
+			putQueryParameter("DeploymentTargets", new Gson().toJson(deploymentTargets));
 		}
 	}
 

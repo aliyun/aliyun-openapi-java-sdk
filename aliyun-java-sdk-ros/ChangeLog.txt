@@ -1,3 +1,7 @@
+2023-02-10 Version: 3.6.2
+- A new PhysicsResourceId field is added to the Resources returned by the PreviewStack interface.
+- Added StackId parameter to the GetTemplateParameterConstraints API.
+
 2021-07-20 Version: 3.6.1
 - GetStack supports resource progress.
 - ValidateTemplate supports Outputs.

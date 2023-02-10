@@ -37,6 +37,8 @@ public class GetTemplateRequest extends RpcAcsRequest<GetTemplateResponse> {
 
 	private String templateId;
 
+	private String includeTags;
+
 	private String changeSetId;
 	public GetTemplateRequest() {
 		super("ROS", "2019-09-10", "GetTemplate", "ros");
@@ -110,6 +112,17 @@ public class GetTemplateRequest extends RpcAcsRequest<GetTemplateResponse> {
 		this.templateId = templateId;
 		if(templateId != null){
 			putQueryParameter("TemplateId", templateId);
+		}
+	}
+
+	public String getIncludeTags() {
+		return this.includeTags;
+	}
+
+	public void setIncludeTags(String includeTags) {
+		this.includeTags = includeTags;
+		if(includeTags != null){
+			putQueryParameter("IncludeTags", includeTags);
 		}
 	}
 

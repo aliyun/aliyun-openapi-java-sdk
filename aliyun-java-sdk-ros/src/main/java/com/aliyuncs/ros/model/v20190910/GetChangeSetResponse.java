@@ -26,70 +26,48 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetChangeSetResponse extends AcsResponse {
 
-	private String changeSetId;
-
-	private String changeSetName;
-
-	private String changeSetType;
-
-	private String createTime;
+	private String status;
 
 	private String description;
 
-	private Boolean disableRollback;
-
-	private String executionStatus;
-
-	private String regionId;
-
 	private String requestId;
 
-	private String stackId;
+	private String statusReason;
 
-	private String stackName;
-
-	private String status;
+	private String createTime;
 
 	private String templateBody;
 
+	private String changeSetName;
+
+	private String changeSetId;
+
+	private String executionStatus;
+
+	private String changeSetType;
+
+	private String regionId;
+
+	private Boolean disableRollback;
+
+	private String stackName;
+
 	private Integer timeoutInMinutes;
 
-	private String statusReason;
+	private String stackId;
 
 	private List<Parameter> parameters;
 
 	private List<Map<Object,Object>> changes;
 
-	public String getChangeSetId() {
-		return this.changeSetId;
+	private Log log;
+
+	public String getStatus() {
+		return this.status;
 	}
 
-	public void setChangeSetId(String changeSetId) {
-		this.changeSetId = changeSetId;
-	}
-
-	public String getChangeSetName() {
-		return this.changeSetName;
-	}
-
-	public void setChangeSetName(String changeSetName) {
-		this.changeSetName = changeSetName;
-	}
-
-	public String getChangeSetType() {
-		return this.changeSetType;
-	}
-
-	public void setChangeSetType(String changeSetType) {
-		this.changeSetType = changeSetType;
-	}
-
-	public String getCreateTime() {
-		return this.createTime;
-	}
-
-	public void setCreateTime(String createTime) {
-		this.createTime = createTime;
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	public String getDescription() {
@@ -100,30 +78,6 @@ public class GetChangeSetResponse extends AcsResponse {
 		this.description = description;
 	}
 
-	public Boolean getDisableRollback() {
-		return this.disableRollback;
-	}
-
-	public void setDisableRollback(Boolean disableRollback) {
-		this.disableRollback = disableRollback;
-	}
-
-	public String getExecutionStatus() {
-		return this.executionStatus;
-	}
-
-	public void setExecutionStatus(String executionStatus) {
-		this.executionStatus = executionStatus;
-	}
-
-	public String getRegionId() {
-		return this.regionId;
-	}
-
-	public void setRegionId(String regionId) {
-		this.regionId = regionId;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -132,28 +86,20 @@ public class GetChangeSetResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getStackId() {
-		return this.stackId;
+	public String getStatusReason() {
+		return this.statusReason;
 	}
 
-	public void setStackId(String stackId) {
-		this.stackId = stackId;
+	public void setStatusReason(String statusReason) {
+		this.statusReason = statusReason;
 	}
 
-	public String getStackName() {
-		return this.stackName;
+	public String getCreateTime() {
+		return this.createTime;
 	}
 
-	public void setStackName(String stackName) {
-		this.stackName = stackName;
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
+	public void setCreateTime(String createTime) {
+		this.createTime = createTime;
 	}
 
 	public String getTemplateBody() {
@@ -164,6 +110,62 @@ public class GetChangeSetResponse extends AcsResponse {
 		this.templateBody = templateBody;
 	}
 
+	public String getChangeSetName() {
+		return this.changeSetName;
+	}
+
+	public void setChangeSetName(String changeSetName) {
+		this.changeSetName = changeSetName;
+	}
+
+	public String getChangeSetId() {
+		return this.changeSetId;
+	}
+
+	public void setChangeSetId(String changeSetId) {
+		this.changeSetId = changeSetId;
+	}
+
+	public String getExecutionStatus() {
+		return this.executionStatus;
+	}
+
+	public void setExecutionStatus(String executionStatus) {
+		this.executionStatus = executionStatus;
+	}
+
+	public String getChangeSetType() {
+		return this.changeSetType;
+	}
+
+	public void setChangeSetType(String changeSetType) {
+		this.changeSetType = changeSetType;
+	}
+
+	public String getRegionId() {
+		return this.regionId;
+	}
+
+	public void setRegionId(String regionId) {
+		this.regionId = regionId;
+	}
+
+	public Boolean getDisableRollback() {
+		return this.disableRollback;
+	}
+
+	public void setDisableRollback(Boolean disableRollback) {
+		this.disableRollback = disableRollback;
+	}
+
+	public String getStackName() {
+		return this.stackName;
+	}
+
+	public void setStackName(String stackName) {
+		this.stackName = stackName;
+	}
+
 	public Integer getTimeoutInMinutes() {
 		return this.timeoutInMinutes;
 	}
@@ -172,12 +174,12 @@ public class GetChangeSetResponse extends AcsResponse {
 		this.timeoutInMinutes = timeoutInMinutes;
 	}
 
-	public String getStatusReason() {
-		return this.statusReason;
+	public String getStackId() {
+		return this.stackId;
 	}
 
-	public void setStatusReason(String statusReason) {
-		this.statusReason = statusReason;
+	public void setStackId(String stackId) {
+		this.stackId = stackId;
 	}
 
 	public List<Parameter> getParameters() {
@@ -194,6 +196,14 @@ public class GetChangeSetResponse extends AcsResponse {
 
 	public void setChanges(List<Map<Object,Object>> changes) {
 		this.changes = changes;
+	}
+
+	public Log getLog() {
+		return this.log;
+	}
+
+	public void setLog(Log log) {
+		this.log = log;
 	}
 
 	public static class Parameter {
@@ -216,6 +226,52 @@ public class GetChangeSetResponse extends AcsResponse {
 
 		public void setParameterValue(String parameterValue) {
 			this.parameterValue = parameterValue;
+		}
+	}
+
+	public static class Log {
+
+		private List<TerraformLog> terraformLogs;
+
+		public List<TerraformLog> getTerraformLogs() {
+			return this.terraformLogs;
+		}
+
+		public void setTerraformLogs(List<TerraformLog> terraformLogs) {
+			this.terraformLogs = terraformLogs;
+		}
+
+		public static class TerraformLog {
+
+			private String command;
+
+			private String stream;
+
+			private String content;
+
+			public String getCommand() {
+				return this.command;
+			}
+
+			public void setCommand(String command) {
+				this.command = command;
+			}
+
+			public String getStream() {
+				return this.stream;
+			}
+
+			public void setStream(String stream) {
+				this.stream = stream;
+			}
+
+			public String getContent() {
+				return this.content;
+			}
+
+			public void setContent(String content) {
+				this.content = content;
+			}
 		}
 	}
 

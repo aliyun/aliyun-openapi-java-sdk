@@ -27,9 +27,9 @@ public class ListStackGroupsResponse extends AcsResponse {
 
 	private Integer totalCount;
 
-	private Integer pageSize;
-
 	private String requestId;
+
+	private Integer pageSize;
 
 	private Integer pageNumber;
 
@@ -43,20 +43,20 @@ public class ListStackGroupsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public Integer getPageNumber() {
@@ -77,19 +77,33 @@ public class ListStackGroupsResponse extends AcsResponse {
 
 	public static class StackGroup {
 
+		private String stackGroupId;
+
 		private String status;
-
-		private String stackGroupDriftStatus;
-
-		private String description;
-
-		private String resourceGroupId;
-
-		private String stackGroupName;
 
 		private String driftDetectionTime;
 
-		private String stackGroupId;
+		private String description;
+
+		private String stackGroupDriftStatus;
+
+		private String stackGroupName;
+
+		private String resourceGroupId;
+
+		private String permissionModel;
+
+		private List<TagsItem> tags;
+
+		private AutoDeployment autoDeployment;
+
+		public String getStackGroupId() {
+			return this.stackGroupId;
+		}
+
+		public void setStackGroupId(String stackGroupId) {
+			this.stackGroupId = stackGroupId;
+		}
 
 		public String getStatus() {
 			return this.status;
@@ -97,38 +111,6 @@ public class ListStackGroupsResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
-		}
-
-		public String getStackGroupDriftStatus() {
-			return this.stackGroupDriftStatus;
-		}
-
-		public void setStackGroupDriftStatus(String stackGroupDriftStatus) {
-			this.stackGroupDriftStatus = stackGroupDriftStatus;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
-		}
-
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
-		}
-
-		public String getStackGroupName() {
-			return this.stackGroupName;
-		}
-
-		public void setStackGroupName(String stackGroupName) {
-			this.stackGroupName = stackGroupName;
 		}
 
 		public String getDriftDetectionTime() {
@@ -139,12 +121,106 @@ public class ListStackGroupsResponse extends AcsResponse {
 			this.driftDetectionTime = driftDetectionTime;
 		}
 
-		public String getStackGroupId() {
-			return this.stackGroupId;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setStackGroupId(String stackGroupId) {
-			this.stackGroupId = stackGroupId;
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getStackGroupDriftStatus() {
+			return this.stackGroupDriftStatus;
+		}
+
+		public void setStackGroupDriftStatus(String stackGroupDriftStatus) {
+			this.stackGroupDriftStatus = stackGroupDriftStatus;
+		}
+
+		public String getStackGroupName() {
+			return this.stackGroupName;
+		}
+
+		public void setStackGroupName(String stackGroupName) {
+			this.stackGroupName = stackGroupName;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getPermissionModel() {
+			return this.permissionModel;
+		}
+
+		public void setPermissionModel(String permissionModel) {
+			this.permissionModel = permissionModel;
+		}
+
+		public List<TagsItem> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<TagsItem> tags) {
+			this.tags = tags;
+		}
+
+		public AutoDeployment getAutoDeployment() {
+			return this.autoDeployment;
+		}
+
+		public void setAutoDeployment(AutoDeployment autoDeployment) {
+			this.autoDeployment = autoDeployment;
+		}
+
+		public static class TagsItem {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
+		}
+
+		public static class AutoDeployment {
+
+			private Boolean enabled;
+
+			private Boolean retainStacksOnAccountRemoval;
+
+			public Boolean getEnabled() {
+				return this.enabled;
+			}
+
+			public void setEnabled(Boolean enabled) {
+				this.enabled = enabled;
+			}
+
+			public Boolean getRetainStacksOnAccountRemoval() {
+				return this.retainStacksOnAccountRemoval;
+			}
+
+			public void setRetainStacksOnAccountRemoval(Boolean retainStacksOnAccountRemoval) {
+				this.retainStacksOnAccountRemoval = retainStacksOnAccountRemoval;
+			}
 		}
 	}
 

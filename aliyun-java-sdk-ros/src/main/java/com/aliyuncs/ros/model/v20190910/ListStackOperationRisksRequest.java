@@ -28,15 +28,23 @@ public class ListStackOperationRisksRequest extends RpcAcsRequest<ListStackOpera
 
 	private String clientToken;
 
+	private String templateBody;
+
 	private String stackId;
 
 	private List<String> retainResourcess;
+
+	private String templateURL;
+
+	private String templateVersion;
 
 	private Boolean retainAllResources;
 
 	private String ramRoleName;
 
 	private String operationType;
+
+	private String templateId;
 	public ListStackOperationRisksRequest() {
 		super("ROS", "2019-09-10", "ListStackOperationRisks", "ros");
 		setMethod(MethodType.POST);
@@ -54,6 +62,17 @@ public class ListStackOperationRisksRequest extends RpcAcsRequest<ListStackOpera
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getTemplateBody() {
+		return this.templateBody;
+	}
+
+	public void setTemplateBody(String templateBody) {
+		this.templateBody = templateBody;
+		if(templateBody != null){
+			putQueryParameter("TemplateBody", templateBody);
 		}
 	}
 
@@ -79,6 +98,28 @@ public class ListStackOperationRisksRequest extends RpcAcsRequest<ListStackOpera
 				putQueryParameter("RetainResources." + (i + 1) , retainResourcess.get(i));
 			}
 		}	
+	}
+
+	public String getTemplateURL() {
+		return this.templateURL;
+	}
+
+	public void setTemplateURL(String templateURL) {
+		this.templateURL = templateURL;
+		if(templateURL != null){
+			putQueryParameter("TemplateURL", templateURL);
+		}
+	}
+
+	public String getTemplateVersion() {
+		return this.templateVersion;
+	}
+
+	public void setTemplateVersion(String templateVersion) {
+		this.templateVersion = templateVersion;
+		if(templateVersion != null){
+			putQueryParameter("TemplateVersion", templateVersion);
+		}
 	}
 
 	public Boolean getRetainAllResources() {
@@ -111,6 +152,17 @@ public class ListStackOperationRisksRequest extends RpcAcsRequest<ListStackOpera
 		this.operationType = operationType;
 		if(operationType != null){
 			putQueryParameter("OperationType", operationType);
+		}
+	}
+
+	public String getTemplateId() {
+		return this.templateId;
+	}
+
+	public void setTemplateId(String templateId) {
+		this.templateId = templateId;
+		if(templateId != null){
+			putQueryParameter("TemplateId", templateId);
 		}
 	}
 

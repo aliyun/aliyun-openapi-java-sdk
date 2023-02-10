@@ -27,9 +27,9 @@ public class ListStacksResponse extends AcsResponse {
 
 	private Integer totalCount;
 
-	private String requestId;
-
 	private Integer pageSize;
+
+	private String requestId;
 
 	private Integer pageNumber;
 
@@ -43,20 +43,20 @@ public class ListStacksResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageNumber() {
@@ -79,33 +79,39 @@ public class ListStacksResponse extends AcsResponse {
 
 		private String status;
 
-		private String resourceGroupId;
+		private String updateTime;
 
-		private String parentStackId;
+		private String driftDetectionTime;
 
 		private String statusReason;
 
 		private String createTime;
 
-		private String stackType;
-
-		private String updateTime;
-
-		private String driftDetectionTime;
-
-		private String regionId;
-
-		private String stackDriftStatus;
+		private Boolean disableRollback;
 
 		private String stackName;
 
-		private Boolean disableRollback;
+		private Integer timeoutInMinutes;
+
+		private String regionId;
+
+		private String parentStackId;
 
 		private String stackId;
 
-		private Integer timeoutInMinutes;
+		private String stackDriftStatus;
+
+		private String stackType;
+
+		private String resourceGroupId;
+
+		private Boolean serviceManaged;
+
+		private String serviceName;
 
 		private List<Tag> tags;
+
+		private OperationInfo operationInfo;
 
 		public String getStatus() {
 			return this.status;
@@ -113,46 +119,6 @@ public class ListStacksResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
-		}
-
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
-		}
-
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
-		}
-
-		public String getParentStackId() {
-			return this.parentStackId;
-		}
-
-		public void setParentStackId(String parentStackId) {
-			this.parentStackId = parentStackId;
-		}
-
-		public String getStatusReason() {
-			return this.statusReason;
-		}
-
-		public void setStatusReason(String statusReason) {
-			this.statusReason = statusReason;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getStackType() {
-			return this.stackType;
-		}
-
-		public void setStackType(String stackType) {
-			this.stackType = stackType;
 		}
 
 		public String getUpdateTime() {
@@ -171,28 +137,20 @@ public class ListStacksResponse extends AcsResponse {
 			this.driftDetectionTime = driftDetectionTime;
 		}
 
-		public String getRegionId() {
-			return this.regionId;
+		public String getStatusReason() {
+			return this.statusReason;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setStatusReason(String statusReason) {
+			this.statusReason = statusReason;
 		}
 
-		public String getStackDriftStatus() {
-			return this.stackDriftStatus;
+		public String getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setStackDriftStatus(String stackDriftStatus) {
-			this.stackDriftStatus = stackDriftStatus;
-		}
-
-		public String getStackName() {
-			return this.stackName;
-		}
-
-		public void setStackName(String stackName) {
-			this.stackName = stackName;
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
 		public Boolean getDisableRollback() {
@@ -203,12 +161,12 @@ public class ListStacksResponse extends AcsResponse {
 			this.disableRollback = disableRollback;
 		}
 
-		public String getStackId() {
-			return this.stackId;
+		public String getStackName() {
+			return this.stackName;
 		}
 
-		public void setStackId(String stackId) {
-			this.stackId = stackId;
+		public void setStackName(String stackName) {
+			this.stackName = stackName;
 		}
 
 		public Integer getTimeoutInMinutes() {
@@ -219,6 +177,70 @@ public class ListStacksResponse extends AcsResponse {
 			this.timeoutInMinutes = timeoutInMinutes;
 		}
 
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getParentStackId() {
+			return this.parentStackId;
+		}
+
+		public void setParentStackId(String parentStackId) {
+			this.parentStackId = parentStackId;
+		}
+
+		public String getStackId() {
+			return this.stackId;
+		}
+
+		public void setStackId(String stackId) {
+			this.stackId = stackId;
+		}
+
+		public String getStackDriftStatus() {
+			return this.stackDriftStatus;
+		}
+
+		public void setStackDriftStatus(String stackDriftStatus) {
+			this.stackDriftStatus = stackDriftStatus;
+		}
+
+		public String getStackType() {
+			return this.stackType;
+		}
+
+		public void setStackType(String stackType) {
+			this.stackType = stackType;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public Boolean getServiceManaged() {
+			return this.serviceManaged;
+		}
+
+		public void setServiceManaged(Boolean serviceManaged) {
+			this.serviceManaged = serviceManaged;
+		}
+
+		public String getServiceName() {
+			return this.serviceName;
+		}
+
+		public void setServiceName(String serviceName) {
+			this.serviceName = serviceName;
+		}
+
 		public List<Tag> getTags() {
 			return this.tags;
 		}
@@ -227,11 +249,27 @@ public class ListStacksResponse extends AcsResponse {
 			this.tags = tags;
 		}
 
+		public OperationInfo getOperationInfo() {
+			return this.operationInfo;
+		}
+
+		public void setOperationInfo(OperationInfo operationInfo) {
+			this.operationInfo = operationInfo;
+		}
+
 		public static class Tag {
+
+			private String key;
 
 			private String value;
 
-			private String key;
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
 
 			public String getValue() {
 				return this.value;
@@ -240,13 +278,68 @@ public class ListStacksResponse extends AcsResponse {
 			public void setValue(String value) {
 				this.value = value;
 			}
+		}
 
-			public String getKey() {
-				return this.key;
+		public static class OperationInfo {
+
+			private String code;
+
+			private String message;
+
+			private String requestId;
+
+			private String action;
+
+			private String resourceType;
+
+			private String logicalResourceId;
+
+			public String getCode() {
+				return this.code;
 			}
 
-			public void setKey(String key) {
-				this.key = key;
+			public void setCode(String code) {
+				this.code = code;
+			}
+
+			public String getMessage() {
+				return this.message;
+			}
+
+			public void setMessage(String message) {
+				this.message = message;
+			}
+
+			public String getRequestId() {
+				return this.requestId;
+			}
+
+			public void setRequestId(String requestId) {
+				this.requestId = requestId;
+			}
+
+			public String getAction() {
+				return this.action;
+			}
+
+			public void setAction(String action) {
+				this.action = action;
+			}
+
+			public String getResourceType() {
+				return this.resourceType;
+			}
+
+			public void setResourceType(String resourceType) {
+				this.resourceType = resourceType;
+			}
+
+			public String getLogicalResourceId() {
+				return this.logicalResourceId;
+			}
+
+			public void setLogicalResourceId(String logicalResourceId) {
+				this.logicalResourceId = logicalResourceId;
 			}
 		}
 	}

@@ -30,15 +30,16 @@ public class GetStackInstanceResponseUnmarshaller {
 		getStackInstanceResponse.setRequestId(_ctx.stringValue("GetStackInstanceResponse.RequestId"));
 
 		StackInstance stackInstance = new StackInstance();
-		stackInstance.setStackGroupName(_ctx.stringValue("GetStackInstanceResponse.StackInstance.StackGroupName"));
+		stackInstance.setStatus(_ctx.stringValue("GetStackInstanceResponse.StackInstance.Status"));
 		stackInstance.setStackGroupId(_ctx.stringValue("GetStackInstanceResponse.StackInstance.StackGroupId"));
 		stackInstance.setStackId(_ctx.stringValue("GetStackInstanceResponse.StackInstance.StackId"));
+		stackInstance.setDriftDetectionTime(_ctx.stringValue("GetStackInstanceResponse.StackInstance.DriftDetectionTime"));
+		stackInstance.setStackDriftStatus(_ctx.stringValue("GetStackInstanceResponse.StackInstance.StackDriftStatus"));
+		stackInstance.setStatusReason(_ctx.stringValue("GetStackInstanceResponse.StackInstance.StatusReason"));
+		stackInstance.setStackGroupName(_ctx.stringValue("GetStackInstanceResponse.StackInstance.StackGroupName"));
 		stackInstance.setAccountId(_ctx.stringValue("GetStackInstanceResponse.StackInstance.AccountId"));
 		stackInstance.setRegionId(_ctx.stringValue("GetStackInstanceResponse.StackInstance.RegionId"));
-		stackInstance.setStatus(_ctx.stringValue("GetStackInstanceResponse.StackInstance.Status"));
-		stackInstance.setStatusReason(_ctx.stringValue("GetStackInstanceResponse.StackInstance.StatusReason"));
-		stackInstance.setStackDriftStatus(_ctx.stringValue("GetStackInstanceResponse.StackInstance.StackDriftStatus"));
-		stackInstance.setDriftDetectionTime(_ctx.stringValue("GetStackInstanceResponse.StackInstance.DriftDetectionTime"));
+		stackInstance.setRdFolderId(_ctx.stringValue("GetStackInstanceResponse.StackInstance.RdFolderId"));
 
 		List<ParameterOverride> parameterOverrides = new ArrayList<ParameterOverride>();
 		for (int i = 0; i < _ctx.lengthValue("GetStackInstanceResponse.StackInstance.ParameterOverrides.Length"); i++) {

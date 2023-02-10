@@ -42,11 +42,15 @@ public class CreateChangeSetRequest extends RpcAcsRequest<CreateChangeSetRespons
 
 	private List<Parameters> parameterss;
 
+	private String templateScratchId;
+
 	private String clientToken;
 
 	private String templateBody;
 
 	private String stackId;
+
+	private Long parallelism;
 
 	private String description;
 
@@ -169,6 +173,17 @@ public class CreateChangeSetRequest extends RpcAcsRequest<CreateChangeSetRespons
 		}	
 	}
 
+	public String getTemplateScratchId() {
+		return this.templateScratchId;
+	}
+
+	public void setTemplateScratchId(String templateScratchId) {
+		this.templateScratchId = templateScratchId;
+		if(templateScratchId != null){
+			putQueryParameter("TemplateScratchId", templateScratchId);
+		}
+	}
+
 	public String getClientToken() {
 		return this.clientToken;
 	}
@@ -199,6 +214,17 @@ public class CreateChangeSetRequest extends RpcAcsRequest<CreateChangeSetRespons
 		this.stackId = stackId;
 		if(stackId != null){
 			putQueryParameter("StackId", stackId);
+		}
+	}
+
+	public Long getParallelism() {
+		return this.parallelism;
+	}
+
+	public void setParallelism(Long parallelism) {
+		this.parallelism = parallelism;
+		if(parallelism != null){
+			putQueryParameter("Parallelism", parallelism.toString());
 		}
 	}
 

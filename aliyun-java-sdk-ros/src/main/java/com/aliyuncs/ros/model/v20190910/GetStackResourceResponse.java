@@ -26,42 +26,42 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetStackResourceResponse extends AcsResponse {
 
-	private String createTime;
+	private String status;
 
 	private String description;
 
-	private String logicalResourceId;
-
-	private Map<Object,Object> metadata;
-
-	private String physicalResourceId;
-
 	private String requestId;
-
-	private String resourceType;
-
-	private String stackId;
-
-	private String stackName;
-
-	private String status;
 
 	private String statusReason;
 
-	private String updateTime;
+	private String physicalResourceId;
+
+	private String createTime;
+
+	private Map<Object,Object> metadata;
+
+	private String resourceType;
+
+	private String logicalResourceId;
 
 	private String resourceDriftStatus;
 
+	private String updateTime;
+
 	private String driftDetectionTime;
+
+	private String stackName;
+
+	private String stackId;
 
 	private List<Map<Object,Object>> resourceAttributes;
 
-	public String getCreateTime() {
-		return this.createTime;
+	public String getStatus() {
+		return this.status;
 	}
 
-	public void setCreateTime(String createTime) {
-		this.createTime = createTime;
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	public String getDescription() {
@@ -72,68 +72,12 @@ public class GetStackResourceResponse extends AcsResponse {
 		this.description = description;
 	}
 
-	public String getLogicalResourceId() {
-		return this.logicalResourceId;
-	}
-
-	public void setLogicalResourceId(String logicalResourceId) {
-		this.logicalResourceId = logicalResourceId;
-	}
-
-	public Map<Object,Object> getMetadata() {
-		return this.metadata;
-	}
-
-	public void setMetadata(Map<Object,Object> metadata) {
-		this.metadata = metadata;
-	}
-
-	public String getPhysicalResourceId() {
-		return this.physicalResourceId;
-	}
-
-	public void setPhysicalResourceId(String physicalResourceId) {
-		this.physicalResourceId = physicalResourceId;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getResourceType() {
-		return this.resourceType;
-	}
-
-	public void setResourceType(String resourceType) {
-		this.resourceType = resourceType;
-	}
-
-	public String getStackId() {
-		return this.stackId;
-	}
-
-	public void setStackId(String stackId) {
-		this.stackId = stackId;
-	}
-
-	public String getStackName() {
-		return this.stackName;
-	}
-
-	public void setStackName(String stackName) {
-		this.stackName = stackName;
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
 	}
 
 	public String getStatusReason() {
@@ -144,12 +88,44 @@ public class GetStackResourceResponse extends AcsResponse {
 		this.statusReason = statusReason;
 	}
 
-	public String getUpdateTime() {
-		return this.updateTime;
+	public String getPhysicalResourceId() {
+		return this.physicalResourceId;
 	}
 
-	public void setUpdateTime(String updateTime) {
-		this.updateTime = updateTime;
+	public void setPhysicalResourceId(String physicalResourceId) {
+		this.physicalResourceId = physicalResourceId;
+	}
+
+	public String getCreateTime() {
+		return this.createTime;
+	}
+
+	public void setCreateTime(String createTime) {
+		this.createTime = createTime;
+	}
+
+	public Map<Object,Object> getMetadata() {
+		return this.metadata;
+	}
+
+	public void setMetadata(Map<Object,Object> metadata) {
+		this.metadata = metadata;
+	}
+
+	public String getResourceType() {
+		return this.resourceType;
+	}
+
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+	}
+
+	public String getLogicalResourceId() {
+		return this.logicalResourceId;
+	}
+
+	public void setLogicalResourceId(String logicalResourceId) {
+		this.logicalResourceId = logicalResourceId;
 	}
 
 	public String getResourceDriftStatus() {
@@ -160,12 +136,36 @@ public class GetStackResourceResponse extends AcsResponse {
 		this.resourceDriftStatus = resourceDriftStatus;
 	}
 
+	public String getUpdateTime() {
+		return this.updateTime;
+	}
+
+	public void setUpdateTime(String updateTime) {
+		this.updateTime = updateTime;
+	}
+
 	public String getDriftDetectionTime() {
 		return this.driftDetectionTime;
 	}
 
 	public void setDriftDetectionTime(String driftDetectionTime) {
 		this.driftDetectionTime = driftDetectionTime;
+	}
+
+	public String getStackName() {
+		return this.stackName;
+	}
+
+	public void setStackName(String stackName) {
+		this.stackName = stackName;
+	}
+
+	public String getStackId() {
+		return this.stackId;
+	}
+
+	public void setStackId(String stackId) {
+		this.stackId = stackId;
 	}
 
 	public List<Map<Object,Object>> getResourceAttributes() {

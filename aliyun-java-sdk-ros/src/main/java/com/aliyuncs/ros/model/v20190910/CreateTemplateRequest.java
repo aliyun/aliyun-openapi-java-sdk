@@ -15,6 +15,7 @@
 package com.aliyuncs.ros.model.v20190910;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ros.Endpoint;
 
@@ -34,6 +35,8 @@ public class CreateTemplateRequest extends RpcAcsRequest<CreateTemplateResponse>
 	private String resourceGroupId;
 
 	private String templateName;
+
+	private List<Tags> tagss;
 	public CreateTemplateRequest() {
 		super("ROS", "2019-09-10", "CreateTemplate", "ros");
 		setMethod(MethodType.POST);
@@ -95,6 +98,43 @@ public class CreateTemplateRequest extends RpcAcsRequest<CreateTemplateResponse>
 		this.templateName = templateName;
 		if(templateName != null){
 			putQueryParameter("TemplateName", templateName);
+		}
+	}
+
+	public List<Tags> getTagss() {
+		return this.tagss;
+	}
+
+	public void setTagss(List<Tags> tagss) {
+		this.tagss = tagss;	
+		if (tagss != null) {
+			for (int depth1 = 0; depth1 < tagss.size(); depth1++) {
+				putQueryParameter("Tags." + (depth1 + 1) + ".Value" , tagss.get(depth1).getValue());
+				putQueryParameter("Tags." + (depth1 + 1) + ".Key" , tagss.get(depth1).getKey());
+			}
+		}	
+	}
+
+	public static class Tags {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

@@ -25,22 +25,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListChangeSetsResponse extends AcsResponse {
 
-	private Integer pageNumber;
+	private Integer totalCount;
 
 	private Integer pageSize;
 
 	private String requestId;
 
-	private Integer totalCount;
+	private Integer pageNumber;
 
 	private List<ChangeSet> changeSets;
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public Integer getPageSize() {
@@ -59,12 +59,12 @@ public class ListChangeSetsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<ChangeSet> getChangeSets() {
@@ -77,34 +77,42 @@ public class ListChangeSetsResponse extends AcsResponse {
 
 	public static class ChangeSet {
 
-		private String changeSetId;
+		private String status;
+
+		private String stackId;
 
 		private String changeSetName;
 
+		private String description;
+
 		private String changeSetType;
+
+		private String statusReason;
 
 		private String createTime;
 
-		private String description;
+		private String changeSetId;
+
+		private String stackName;
 
 		private String executionStatus;
 
 		private String regionId;
 
-		private String stackId;
-
-		private String stackName;
-
-		private String status;
-
-		private String statusReason;
-
-		public String getChangeSetId() {
-			return this.changeSetId;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setChangeSetId(String changeSetId) {
-			this.changeSetId = changeSetId;
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getStackId() {
+			return this.stackId;
+		}
+
+		public void setStackId(String stackId) {
+			this.stackId = stackId;
 		}
 
 		public String getChangeSetName() {
@@ -115,12 +123,28 @@ public class ListChangeSetsResponse extends AcsResponse {
 			this.changeSetName = changeSetName;
 		}
 
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
 		public String getChangeSetType() {
 			return this.changeSetType;
 		}
 
 		public void setChangeSetType(String changeSetType) {
 			this.changeSetType = changeSetType;
+		}
+
+		public String getStatusReason() {
+			return this.statusReason;
+		}
+
+		public void setStatusReason(String statusReason) {
+			this.statusReason = statusReason;
 		}
 
 		public String getCreateTime() {
@@ -131,12 +155,20 @@ public class ListChangeSetsResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getDescription() {
-			return this.description;
+		public String getChangeSetId() {
+			return this.changeSetId;
 		}
 
-		public void setDescription(String description) {
-			this.description = description;
+		public void setChangeSetId(String changeSetId) {
+			this.changeSetId = changeSetId;
+		}
+
+		public String getStackName() {
+			return this.stackName;
+		}
+
+		public void setStackName(String stackName) {
+			this.stackName = stackName;
 		}
 
 		public String getExecutionStatus() {
@@ -153,38 +185,6 @@ public class ListChangeSetsResponse extends AcsResponse {
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
-		}
-
-		public String getStackId() {
-			return this.stackId;
-		}
-
-		public void setStackId(String stackId) {
-			this.stackId = stackId;
-		}
-
-		public String getStackName() {
-			return this.stackName;
-		}
-
-		public void setStackName(String stackName) {
-			this.stackName = stackName;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getStatusReason() {
-			return this.statusReason;
-		}
-
-		public void setStatusReason(String statusReason) {
-			this.statusReason = statusReason;
 		}
 	}
 

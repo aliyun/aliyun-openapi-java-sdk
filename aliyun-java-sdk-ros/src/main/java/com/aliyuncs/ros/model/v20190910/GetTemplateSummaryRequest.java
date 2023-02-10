@@ -15,6 +15,7 @@
 package com.aliyuncs.ros.model.v20190910;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ros.Endpoint;
 
@@ -24,6 +25,8 @@ import com.aliyuncs.ros.Endpoint;
  */
 public class GetTemplateSummaryRequest extends RpcAcsRequest<GetTemplateSummaryResponse> {
 	   
+
+	private String clientToken;
 
 	private String templateBody;
 
@@ -38,6 +41,8 @@ public class GetTemplateSummaryRequest extends RpcAcsRequest<GetTemplateSummaryR
 	private String templateId;
 
 	private String changeSetId;
+
+	private List<Parameters> parameterss;
 	public GetTemplateSummaryRequest() {
 		super("ROS", "2019-09-10", "GetTemplateSummary", "ros");
 		setMethod(MethodType.POST);
@@ -45,6 +50,17 @@ public class GetTemplateSummaryRequest extends RpcAcsRequest<GetTemplateSummaryR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
 	}
 
 	public String getTemplateBody() {
@@ -121,6 +137,43 @@ public class GetTemplateSummaryRequest extends RpcAcsRequest<GetTemplateSummaryR
 		this.changeSetId = changeSetId;
 		if(changeSetId != null){
 			putQueryParameter("ChangeSetId", changeSetId);
+		}
+	}
+
+	public List<Parameters> getParameterss() {
+		return this.parameterss;
+	}
+
+	public void setParameterss(List<Parameters> parameterss) {
+		this.parameterss = parameterss;	
+		if (parameterss != null) {
+			for (int depth1 = 0; depth1 < parameterss.size(); depth1++) {
+				putQueryParameter("Parameters." + (depth1 + 1) + ".ParameterValue" , parameterss.get(depth1).getParameterValue());
+				putQueryParameter("Parameters." + (depth1 + 1) + ".ParameterKey" , parameterss.get(depth1).getParameterKey());
+			}
+		}	
+	}
+
+	public static class Parameters {
+
+		private String parameterValue;
+
+		private String parameterKey;
+
+		public String getParameterValue() {
+			return this.parameterValue;
+		}
+
+		public void setParameterValue(String parameterValue) {
+			this.parameterValue = parameterValue;
+		}
+
+		public String getParameterKey() {
+			return this.parameterKey;
+		}
+
+		public void setParameterKey(String parameterKey) {
+			this.parameterKey = parameterKey;
 		}
 	}
 

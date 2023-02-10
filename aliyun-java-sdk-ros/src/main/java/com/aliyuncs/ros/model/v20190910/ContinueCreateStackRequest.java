@@ -26,25 +26,29 @@ import com.aliyuncs.ros.Endpoint;
 public class ContinueCreateStackRequest extends RpcAcsRequest<ContinueCreateStackResponse> {
 	   
 
-	private String templateBody;
-
-	private String stackId;
-
-	private String templateURL;
-
 	private String mode;
 
 	private String templateVersion;
 
 	private Boolean dryRun;
 
-	private String ramRoleName;
+	private List<String> recreatingOptionss;
 
 	private String templateId;
 
 	private List<Parameters> parameterss;
 
 	private List<String> recreatingResourcess;
+
+	private String templateBody;
+
+	private String stackId;
+
+	private Long parallelism;
+
+	private String templateURL;
+
+	private String ramRoleName;
 	public ContinueCreateStackRequest() {
 		super("ROS", "2019-09-10", "ContinueCreateStack", "ros");
 		setMethod(MethodType.POST);
@@ -52,39 +56,6 @@ public class ContinueCreateStackRequest extends RpcAcsRequest<ContinueCreateStac
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getTemplateBody() {
-		return this.templateBody;
-	}
-
-	public void setTemplateBody(String templateBody) {
-		this.templateBody = templateBody;
-		if(templateBody != null){
-			putQueryParameter("TemplateBody", templateBody);
-		}
-	}
-
-	public String getStackId() {
-		return this.stackId;
-	}
-
-	public void setStackId(String stackId) {
-		this.stackId = stackId;
-		if(stackId != null){
-			putQueryParameter("StackId", stackId);
-		}
-	}
-
-	public String getTemplateURL() {
-		return this.templateURL;
-	}
-
-	public void setTemplateURL(String templateURL) {
-		this.templateURL = templateURL;
-		if(templateURL != null){
-			putQueryParameter("TemplateURL", templateURL);
-		}
 	}
 
 	public String getMode() {
@@ -120,15 +91,17 @@ public class ContinueCreateStackRequest extends RpcAcsRequest<ContinueCreateStac
 		}
 	}
 
-	public String getRamRoleName() {
-		return this.ramRoleName;
+	public List<String> getRecreatingOptionss() {
+		return this.recreatingOptionss;
 	}
 
-	public void setRamRoleName(String ramRoleName) {
-		this.ramRoleName = ramRoleName;
-		if(ramRoleName != null){
-			putQueryParameter("RamRoleName", ramRoleName);
-		}
+	public void setRecreatingOptionss(List<String> recreatingOptionss) {
+		this.recreatingOptionss = recreatingOptionss;	
+		if (recreatingOptionss != null) {
+			for (int i = 0; i < recreatingOptionss.size(); i++) {
+				putQueryParameter("RecreatingOptions." + (i + 1) , recreatingOptionss.get(i));
+			}
+		}	
 	}
 
 	public String getTemplateId() {
@@ -167,6 +140,61 @@ public class ContinueCreateStackRequest extends RpcAcsRequest<ContinueCreateStac
 				putQueryParameter("RecreatingResources." + (i + 1) , recreatingResourcess.get(i));
 			}
 		}	
+	}
+
+	public String getTemplateBody() {
+		return this.templateBody;
+	}
+
+	public void setTemplateBody(String templateBody) {
+		this.templateBody = templateBody;
+		if(templateBody != null){
+			putQueryParameter("TemplateBody", templateBody);
+		}
+	}
+
+	public String getStackId() {
+		return this.stackId;
+	}
+
+	public void setStackId(String stackId) {
+		this.stackId = stackId;
+		if(stackId != null){
+			putQueryParameter("StackId", stackId);
+		}
+	}
+
+	public Long getParallelism() {
+		return this.parallelism;
+	}
+
+	public void setParallelism(Long parallelism) {
+		this.parallelism = parallelism;
+		if(parallelism != null){
+			putQueryParameter("Parallelism", parallelism.toString());
+		}
+	}
+
+	public String getTemplateURL() {
+		return this.templateURL;
+	}
+
+	public void setTemplateURL(String templateURL) {
+		this.templateURL = templateURL;
+		if(templateURL != null){
+			putQueryParameter("TemplateURL", templateURL);
+		}
+	}
+
+	public String getRamRoleName() {
+		return this.ramRoleName;
+	}
+
+	public void setRamRoleName(String ramRoleName) {
+		this.ramRoleName = ramRoleName;
+		if(ramRoleName != null){
+			putQueryParameter("RamRoleName", ramRoleName);
+		}
 	}
 
 	public static class Parameters {

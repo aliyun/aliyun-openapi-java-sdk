@@ -14,7 +14,11 @@
 
 package com.aliyuncs.ros.transform.v20190910;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.ros.model.v20190910.UpdateStackResponse;
+import com.aliyuncs.ros.model.v20190910.UpdateStackResponse.DryRunResult;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -24,6 +28,51 @@ public class UpdateStackResponseUnmarshaller {
 		
 		updateStackResponse.setRequestId(_ctx.stringValue("UpdateStackResponse.RequestId"));
 		updateStackResponse.setStackId(_ctx.stringValue("UpdateStackResponse.StackId"));
+
+		DryRunResult dryRunResult = new DryRunResult();
+
+		List<String> parametersAllowedToBeModified = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("UpdateStackResponse.DryRunResult.ParametersAllowedToBeModified.Length"); i++) {
+			parametersAllowedToBeModified.add(_ctx.stringValue("UpdateStackResponse.DryRunResult.ParametersAllowedToBeModified["+ i +"]"));
+		}
+		dryRunResult.setParametersAllowedToBeModified(parametersAllowedToBeModified);
+
+		List<String> parametersConditionallyAllowedToBeModified = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("UpdateStackResponse.DryRunResult.ParametersConditionallyAllowedToBeModified.Length"); i++) {
+			parametersConditionallyAllowedToBeModified.add(_ctx.stringValue("UpdateStackResponse.DryRunResult.ParametersConditionallyAllowedToBeModified["+ i +"]"));
+		}
+		dryRunResult.setParametersConditionallyAllowedToBeModified(parametersConditionallyAllowedToBeModified);
+
+		List<String> parametersUncertainlyAllowedToBeModified = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("UpdateStackResponse.DryRunResult.ParametersUncertainlyAllowedToBeModified.Length"); i++) {
+			parametersUncertainlyAllowedToBeModified.add(_ctx.stringValue("UpdateStackResponse.DryRunResult.ParametersUncertainlyAllowedToBeModified["+ i +"]"));
+		}
+		dryRunResult.setParametersUncertainlyAllowedToBeModified(parametersUncertainlyAllowedToBeModified);
+
+		List<String> parametersNotAllowedToBeModified = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("UpdateStackResponse.DryRunResult.ParametersNotAllowedToBeModified.Length"); i++) {
+			parametersNotAllowedToBeModified.add(_ctx.stringValue("UpdateStackResponse.DryRunResult.ParametersNotAllowedToBeModified["+ i +"]"));
+		}
+		dryRunResult.setParametersNotAllowedToBeModified(parametersNotAllowedToBeModified);
+
+		List<String> parametersCauseInterruptionIfModified = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("UpdateStackResponse.DryRunResult.ParametersCauseInterruptionIfModified.Length"); i++) {
+			parametersCauseInterruptionIfModified.add(_ctx.stringValue("UpdateStackResponse.DryRunResult.ParametersCauseInterruptionIfModified["+ i +"]"));
+		}
+		dryRunResult.setParametersCauseInterruptionIfModified(parametersCauseInterruptionIfModified);
+
+		List<String> parametersConditionallyCauseInterruptionIfModified = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("UpdateStackResponse.DryRunResult.ParametersConditionallyCauseInterruptionIfModified.Length"); i++) {
+			parametersConditionallyCauseInterruptionIfModified.add(_ctx.stringValue("UpdateStackResponse.DryRunResult.ParametersConditionallyCauseInterruptionIfModified["+ i +"]"));
+		}
+		dryRunResult.setParametersConditionallyCauseInterruptionIfModified(parametersConditionallyCauseInterruptionIfModified);
+
+		List<String> parametersUncertainlyCauseInterruptionIfModified = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("UpdateStackResponse.DryRunResult.ParametersUncertainlyCauseInterruptionIfModified.Length"); i++) {
+			parametersUncertainlyCauseInterruptionIfModified.add(_ctx.stringValue("UpdateStackResponse.DryRunResult.ParametersUncertainlyCauseInterruptionIfModified["+ i +"]"));
+		}
+		dryRunResult.setParametersUncertainlyCauseInterruptionIfModified(parametersUncertainlyCauseInterruptionIfModified);
+		updateStackResponse.setDryRunResult(dryRunResult);
 	 
 	 	return updateStackResponse;
 	}

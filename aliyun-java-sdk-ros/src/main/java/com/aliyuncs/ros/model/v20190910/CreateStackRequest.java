@@ -44,9 +44,15 @@ public class CreateStackRequest extends RpcAcsRequest<CreateStackResponse> {
 
 	private List<Parameters> parameterss;
 
+	private String templateScratchId;
+
 	private String clientToken;
 
 	private String templateBody;
+
+	private Long parallelism;
+
+	private String templateScratchRegionId;
 
 	private String templateURL;
 
@@ -173,6 +179,17 @@ public class CreateStackRequest extends RpcAcsRequest<CreateStackResponse> {
 		}	
 	}
 
+	public String getTemplateScratchId() {
+		return this.templateScratchId;
+	}
+
+	public void setTemplateScratchId(String templateScratchId) {
+		this.templateScratchId = templateScratchId;
+		if(templateScratchId != null){
+			putQueryParameter("TemplateScratchId", templateScratchId);
+		}
+	}
+
 	public String getClientToken() {
 		return this.clientToken;
 	}
@@ -192,6 +209,28 @@ public class CreateStackRequest extends RpcAcsRequest<CreateStackResponse> {
 		this.templateBody = templateBody;
 		if(templateBody != null){
 			putQueryParameter("TemplateBody", templateBody);
+		}
+	}
+
+	public Long getParallelism() {
+		return this.parallelism;
+	}
+
+	public void setParallelism(Long parallelism) {
+		this.parallelism = parallelism;
+		if(parallelism != null){
+			putQueryParameter("Parallelism", parallelism.toString());
+		}
+	}
+
+	public String getTemplateScratchRegionId() {
+		return this.templateScratchRegionId;
+	}
+
+	public void setTemplateScratchRegionId(String templateScratchRegionId) {
+		this.templateScratchRegionId = templateScratchRegionId;
+		if(templateScratchRegionId != null){
+			putQueryParameter("TemplateScratchRegionId", templateScratchRegionId);
 		}
 	}
 

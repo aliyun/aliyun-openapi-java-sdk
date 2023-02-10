@@ -29,17 +29,17 @@ public class GetTemplateSummaryResponseUnmarshaller {
 		
 		getTemplateSummaryResponse.setRequestId(_ctx.stringValue("GetTemplateSummaryResponse.RequestId"));
 		getTemplateSummaryResponse.setDescription(_ctx.stringValue("GetTemplateSummaryResponse.Description"));
-		getTemplateSummaryResponse.setMetadata(_ctx.mapValue("GetTemplateSummaryResponse.Metadata"));
 		getTemplateSummaryResponse.setVersion(_ctx.stringValue("GetTemplateSummaryResponse.Version"));
-
-		List<Map<Object, Object>> parameters = _ctx.listMapValue("GetTemplateSummaryResponse.Parameters");
-		getTemplateSummaryResponse.setParameters(parameters);
+		getTemplateSummaryResponse.setMetadata(_ctx.mapValue("GetTemplateSummaryResponse.Metadata"));
 
 		List<String> resourceTypes = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetTemplateSummaryResponse.ResourceTypes.Length"); i++) {
 			resourceTypes.add(_ctx.stringValue("GetTemplateSummaryResponse.ResourceTypes["+ i +"]"));
 		}
 		getTemplateSummaryResponse.setResourceTypes(resourceTypes);
+
+		List<Map<Object, Object>> parameters = _ctx.listMapValue("GetTemplateSummaryResponse.Parameters");
+		getTemplateSummaryResponse.setParameters(parameters);
 
 		List<ResourceIdentifierSummary> resourceIdentifierSummaries = new ArrayList<ResourceIdentifierSummary>();
 		for (int i = 0; i < _ctx.lengthValue("GetTemplateSummaryResponse.ResourceIdentifierSummaries.Length"); i++) {

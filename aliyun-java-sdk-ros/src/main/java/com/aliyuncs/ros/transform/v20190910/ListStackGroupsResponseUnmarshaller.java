@@ -19,6 +19,8 @@ import java.util.List;
 
 import com.aliyuncs.ros.model.v20190910.ListStackGroupsResponse;
 import com.aliyuncs.ros.model.v20190910.ListStackGroupsResponse.StackGroup;
+import com.aliyuncs.ros.model.v20190910.ListStackGroupsResponse.StackGroup.AutoDeployment;
+import com.aliyuncs.ros.model.v20190910.ListStackGroupsResponse.StackGroup.TagsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -34,13 +36,29 @@ public class ListStackGroupsResponseUnmarshaller {
 		List<StackGroup> stackGroups = new ArrayList<StackGroup>();
 		for (int i = 0; i < _ctx.lengthValue("ListStackGroupsResponse.StackGroups.Length"); i++) {
 			StackGroup stackGroup = new StackGroup();
-			stackGroup.setStatus(_ctx.stringValue("ListStackGroupsResponse.StackGroups["+ i +"].Status"));
-			stackGroup.setStackGroupDriftStatus(_ctx.stringValue("ListStackGroupsResponse.StackGroups["+ i +"].StackGroupDriftStatus"));
-			stackGroup.setDescription(_ctx.stringValue("ListStackGroupsResponse.StackGroups["+ i +"].Description"));
-			stackGroup.setResourceGroupId(_ctx.stringValue("ListStackGroupsResponse.StackGroups["+ i +"].ResourceGroupId"));
-			stackGroup.setStackGroupName(_ctx.stringValue("ListStackGroupsResponse.StackGroups["+ i +"].StackGroupName"));
-			stackGroup.setDriftDetectionTime(_ctx.stringValue("ListStackGroupsResponse.StackGroups["+ i +"].DriftDetectionTime"));
 			stackGroup.setStackGroupId(_ctx.stringValue("ListStackGroupsResponse.StackGroups["+ i +"].StackGroupId"));
+			stackGroup.setStatus(_ctx.stringValue("ListStackGroupsResponse.StackGroups["+ i +"].Status"));
+			stackGroup.setDriftDetectionTime(_ctx.stringValue("ListStackGroupsResponse.StackGroups["+ i +"].DriftDetectionTime"));
+			stackGroup.setDescription(_ctx.stringValue("ListStackGroupsResponse.StackGroups["+ i +"].Description"));
+			stackGroup.setStackGroupDriftStatus(_ctx.stringValue("ListStackGroupsResponse.StackGroups["+ i +"].StackGroupDriftStatus"));
+			stackGroup.setStackGroupName(_ctx.stringValue("ListStackGroupsResponse.StackGroups["+ i +"].StackGroupName"));
+			stackGroup.setResourceGroupId(_ctx.stringValue("ListStackGroupsResponse.StackGroups["+ i +"].ResourceGroupId"));
+			stackGroup.setPermissionModel(_ctx.stringValue("ListStackGroupsResponse.StackGroups["+ i +"].PermissionModel"));
+
+			AutoDeployment autoDeployment = new AutoDeployment();
+			autoDeployment.setEnabled(_ctx.booleanValue("ListStackGroupsResponse.StackGroups["+ i +"].AutoDeployment.Enabled"));
+			autoDeployment.setRetainStacksOnAccountRemoval(_ctx.booleanValue("ListStackGroupsResponse.StackGroups["+ i +"].AutoDeployment.RetainStacksOnAccountRemoval"));
+			stackGroup.setAutoDeployment(autoDeployment);
+
+			List<TagsItem> tags = new ArrayList<TagsItem>();
+			for (int j = 0; j < _ctx.lengthValue("ListStackGroupsResponse.StackGroups["+ i +"].Tags.Length"); j++) {
+				TagsItem tagsItem = new TagsItem();
+				tagsItem.setKey(_ctx.stringValue("ListStackGroupsResponse.StackGroups["+ i +"].Tags["+ j +"].Key"));
+				tagsItem.setValue(_ctx.stringValue("ListStackGroupsResponse.StackGroups["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tagsItem);
+			}
+			stackGroup.setTags(tags);
 
 			stackGroups.add(stackGroup);
 		}

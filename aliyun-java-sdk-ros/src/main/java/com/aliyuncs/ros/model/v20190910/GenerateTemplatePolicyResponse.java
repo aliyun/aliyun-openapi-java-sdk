@@ -69,19 +69,11 @@ public class GenerateTemplatePolicyResponse extends AcsResponse {
 
 		public static class StatementItem {
 
-			private String resource;
-
 			private String effect;
 
+			private String resource;
+
 			private List<String> action;
-
-			public String getResource() {
-				return this.resource;
-			}
-
-			public void setResource(String resource) {
-				this.resource = resource;
-			}
 
 			public String getEffect() {
 				return this.effect;
@@ -89,6 +81,14 @@ public class GenerateTemplatePolicyResponse extends AcsResponse {
 
 			public void setEffect(String effect) {
 				this.effect = effect;
+			}
+
+			public String getResource() {
+				return this.resource;
+			}
+
+			public void setResource(String resource) {
+				this.resource = resource;
 			}
 
 			public List<String> getAction() {

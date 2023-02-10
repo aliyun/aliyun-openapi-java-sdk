@@ -23,13 +23,13 @@ public class GetStackDriftDetectionStatusResponseUnmarshaller {
 	public static GetStackDriftDetectionStatusResponse unmarshall(GetStackDriftDetectionStatusResponse getStackDriftDetectionStatusResponse, UnmarshallerContext _ctx) {
 		
 		getStackDriftDetectionStatusResponse.setRequestId(_ctx.stringValue("GetStackDriftDetectionStatusResponse.RequestId"));
-		getStackDriftDetectionStatusResponse.setDriftDetectionId(_ctx.stringValue("GetStackDriftDetectionStatusResponse.DriftDetectionId"));
 		getStackDriftDetectionStatusResponse.setDriftDetectionTime(_ctx.stringValue("GetStackDriftDetectionStatusResponse.DriftDetectionTime"));
-		getStackDriftDetectionStatusResponse.setDriftDetectionStatus(_ctx.stringValue("GetStackDriftDetectionStatusResponse.DriftDetectionStatus"));
 		getStackDriftDetectionStatusResponse.setDriftDetectionStatusReason(_ctx.stringValue("GetStackDriftDetectionStatusResponse.DriftDetectionStatusReason"));
-		getStackDriftDetectionStatusResponse.setStackDriftStatus(_ctx.stringValue("GetStackDriftDetectionStatusResponse.StackDriftStatus"));
-		getStackDriftDetectionStatusResponse.setStackId(_ctx.stringValue("GetStackDriftDetectionStatusResponse.StackId"));
 		getStackDriftDetectionStatusResponse.setDriftedStackResourceCount(_ctx.integerValue("GetStackDriftDetectionStatusResponse.DriftedStackResourceCount"));
+		getStackDriftDetectionStatusResponse.setStackDriftStatus(_ctx.stringValue("GetStackDriftDetectionStatusResponse.StackDriftStatus"));
+		getStackDriftDetectionStatusResponse.setDriftDetectionStatus(_ctx.stringValue("GetStackDriftDetectionStatusResponse.DriftDetectionStatus"));
+		getStackDriftDetectionStatusResponse.setStackId(_ctx.stringValue("GetStackDriftDetectionStatusResponse.StackId"));
+		getStackDriftDetectionStatusResponse.setDriftDetectionId(_ctx.stringValue("GetStackDriftDetectionStatusResponse.DriftDetectionId"));
 	 
 	 	return getStackDriftDetectionStatusResponse;
 	}

@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListStackGroupOperationsResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer totalCount;
 
-	private Integer pageNumber;
+	private String requestId;
 
 	private Integer pageSize;
 
-	private Integer totalCount;
+	private Integer pageNumber;
 
 	private List<StackGroupOperation> stackGroupOperations;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class ListStackGroupOperationsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
 	}
 
 	public Integer getPageSize() {
@@ -59,12 +59,12 @@ public class ListStackGroupOperationsResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<StackGroupOperation> getStackGroupOperations() {
@@ -77,28 +77,28 @@ public class ListStackGroupOperationsResponse extends AcsResponse {
 
 	public static class StackGroupOperation {
 
-		private String stackGroupName;
+		private String status;
 
 		private String stackGroupId;
-
-		private String operationId;
-
-		private String operationDescription;
-
-		private String createTime;
 
 		private String endTime;
 
 		private String action;
 
-		private String status;
+		private String createTime;
 
-		public String getStackGroupName() {
-			return this.stackGroupName;
+		private String stackGroupName;
+
+		private String operationId;
+
+		private String operationDescription;
+
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setStackGroupName(String stackGroupName) {
-			this.stackGroupName = stackGroupName;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getStackGroupId() {
@@ -107,30 +107,6 @@ public class ListStackGroupOperationsResponse extends AcsResponse {
 
 		public void setStackGroupId(String stackGroupId) {
 			this.stackGroupId = stackGroupId;
-		}
-
-		public String getOperationId() {
-			return this.operationId;
-		}
-
-		public void setOperationId(String operationId) {
-			this.operationId = operationId;
-		}
-
-		public String getOperationDescription() {
-			return this.operationDescription;
-		}
-
-		public void setOperationDescription(String operationDescription) {
-			this.operationDescription = operationDescription;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
 		}
 
 		public String getEndTime() {
@@ -149,12 +125,36 @@ public class ListStackGroupOperationsResponse extends AcsResponse {
 			this.action = action;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getStackGroupName() {
+			return this.stackGroupName;
+		}
+
+		public void setStackGroupName(String stackGroupName) {
+			this.stackGroupName = stackGroupName;
+		}
+
+		public String getOperationId() {
+			return this.operationId;
+		}
+
+		public void setOperationId(String operationId) {
+			this.operationId = operationId;
+		}
+
+		public String getOperationDescription() {
+			return this.operationDescription;
+		}
+
+		public void setOperationDescription(String operationDescription) {
+			this.operationDescription = operationDescription;
 		}
 	}
 

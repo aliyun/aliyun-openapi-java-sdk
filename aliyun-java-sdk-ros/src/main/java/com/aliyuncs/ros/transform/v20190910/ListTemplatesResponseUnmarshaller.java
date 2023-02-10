@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ros.model.v20190910.ListTemplatesResponse;
 import com.aliyuncs.ros.model.v20190910.ListTemplatesResponse.Template;
+import com.aliyuncs.ros.model.v20190910.ListTemplatesResponse.Template.TagsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -35,15 +36,25 @@ public class ListTemplatesResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("ListTemplatesResponse.Templates.Length"); i++) {
 			Template template = new Template();
 			template.setTemplateARN(_ctx.stringValue("ListTemplatesResponse.Templates["+ i +"].TemplateARN"));
-			template.setDescription(_ctx.stringValue("ListTemplatesResponse.Templates["+ i +"].Description"));
-			template.setResourceGroupId(_ctx.stringValue("ListTemplatesResponse.Templates["+ i +"].ResourceGroupId"));
-			template.setOwnerId(_ctx.stringValue("ListTemplatesResponse.Templates["+ i +"].OwnerId"));
-			template.setCreateTime(_ctx.stringValue("ListTemplatesResponse.Templates["+ i +"].CreateTime"));
 			template.setUpdateTime(_ctx.stringValue("ListTemplatesResponse.Templates["+ i +"].UpdateTime"));
-			template.setTemplateVersion(_ctx.stringValue("ListTemplatesResponse.Templates["+ i +"].TemplateVersion"));
+			template.setDescription(_ctx.stringValue("ListTemplatesResponse.Templates["+ i +"].Description"));
+			template.setCreateTime(_ctx.stringValue("ListTemplatesResponse.Templates["+ i +"].CreateTime"));
 			template.setTemplateName(_ctx.stringValue("ListTemplatesResponse.Templates["+ i +"].TemplateName"));
+			template.setTemplateVersion(_ctx.stringValue("ListTemplatesResponse.Templates["+ i +"].TemplateVersion"));
 			template.setTemplateId(_ctx.stringValue("ListTemplatesResponse.Templates["+ i +"].TemplateId"));
+			template.setOwnerId(_ctx.stringValue("ListTemplatesResponse.Templates["+ i +"].OwnerId"));
 			template.setShareType(_ctx.stringValue("ListTemplatesResponse.Templates["+ i +"].ShareType"));
+			template.setResourceGroupId(_ctx.stringValue("ListTemplatesResponse.Templates["+ i +"].ResourceGroupId"));
+
+			List<TagsItem> tags = new ArrayList<TagsItem>();
+			for (int j = 0; j < _ctx.lengthValue("ListTemplatesResponse.Templates["+ i +"].Tags.Length"); j++) {
+				TagsItem tagsItem = new TagsItem();
+				tagsItem.setKey(_ctx.stringValue("ListTemplatesResponse.Templates["+ i +"].Tags["+ j +"].Key"));
+				tagsItem.setValue(_ctx.stringValue("ListTemplatesResponse.Templates["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tagsItem);
+			}
+			template.setTags(tags);
 
 			templates.add(template);
 		}

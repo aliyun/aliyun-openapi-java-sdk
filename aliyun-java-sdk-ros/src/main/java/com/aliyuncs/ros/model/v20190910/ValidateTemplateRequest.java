@@ -25,6 +25,10 @@ import com.aliyuncs.ros.Endpoint;
 public class ValidateTemplateRequest extends RpcAcsRequest<ValidateTemplateResponse> {
 	   
 
+	private String validationOption;
+
+	private String clientToken;
+
 	private String templateBody;
 
 	private String templateURL;
@@ -35,6 +39,28 @@ public class ValidateTemplateRequest extends RpcAcsRequest<ValidateTemplateRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getValidationOption() {
+		return this.validationOption;
+	}
+
+	public void setValidationOption(String validationOption) {
+		this.validationOption = validationOption;
+		if(validationOption != null){
+			putQueryParameter("ValidationOption", validationOption);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
 	}
 
 	public String getTemplateBody() {

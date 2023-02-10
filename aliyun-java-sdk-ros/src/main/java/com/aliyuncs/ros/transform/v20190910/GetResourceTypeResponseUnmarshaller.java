@@ -25,9 +25,11 @@ public class GetResourceTypeResponseUnmarshaller {
 		
 		getResourceTypeResponse.setRequestId(_ctx.stringValue("GetResourceTypeResponse.RequestId"));
 		getResourceTypeResponse.setAttributes(_ctx.mapValue("GetResourceTypeResponse.Attributes"));
-		getResourceTypeResponse.setProperties(_ctx.mapValue("GetResourceTypeResponse.Properties"));
 		getResourceTypeResponse.setResourceType(_ctx.stringValue("GetResourceTypeResponse.ResourceType"));
+		getResourceTypeResponse.setProperties(_ctx.mapValue("GetResourceTypeResponse.Properties"));
 		getResourceTypeResponse.setSupportDriftDetection(_ctx.booleanValue("GetResourceTypeResponse.SupportDriftDetection"));
+		getResourceTypeResponse.setSupportScratchDetection(_ctx.booleanValue("GetResourceTypeResponse.SupportScratchDetection"));
+		getResourceTypeResponse.setEntityType(_ctx.stringValue("GetResourceTypeResponse.EntityType"));
 	 
 	 	return getResourceTypeResponse;
 	}

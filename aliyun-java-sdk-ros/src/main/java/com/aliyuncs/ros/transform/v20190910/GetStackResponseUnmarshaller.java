@@ -18,6 +18,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.ros.model.v20190910.GetStackResponse;
+import com.aliyuncs.ros.model.v20190910.GetStackResponse.Log;
+import com.aliyuncs.ros.model.v20190910.GetStackResponse.Log.ResourceLog;
+import com.aliyuncs.ros.model.v20190910.GetStackResponse.Log.ResourceLog.Log1;
+import com.aliyuncs.ros.model.v20190910.GetStackResponse.Log.TerraformLog;
+import com.aliyuncs.ros.model.v20190910.GetStackResponse.OperationInfo;
 import com.aliyuncs.ros.model.v20190910.GetStackResponse.Parameter;
 import com.aliyuncs.ros.model.v20190910.GetStackResponse.ResourceProgress;
 import com.aliyuncs.ros.model.v20190910.GetStackResponse.ResourceProgress.InProgressResourceDetail;
@@ -50,6 +55,13 @@ public class GetStackResponseUnmarshaller {
 		getStackResponse.setTimeoutInMinutes(_ctx.integerValue("GetStackResponse.TimeoutInMinutes"));
 		getStackResponse.setStackId(_ctx.stringValue("GetStackResponse.StackId"));
 		getStackResponse.setResourceGroupId(_ctx.stringValue("GetStackResponse.ResourceGroupId"));
+		getStackResponse.setTemplateId(_ctx.stringValue("GetStackResponse.TemplateId"));
+		getStackResponse.setTemplateVersion(_ctx.stringValue("GetStackResponse.TemplateVersion"));
+		getStackResponse.setTemplateScratchId(_ctx.stringValue("GetStackResponse.TemplateScratchId"));
+		getStackResponse.setTemplateURL(_ctx.stringValue("GetStackResponse.TemplateURL"));
+		getStackResponse.set_Interface(_ctx.stringValue("GetStackResponse.Interface"));
+		getStackResponse.setServiceManaged(_ctx.booleanValue("GetStackResponse.ServiceManaged"));
+		getStackResponse.setServiceName(_ctx.stringValue("GetStackResponse.ServiceName"));
 
 		List<Map<Object, Object>> outputs = _ctx.listMapValue("GetStackResponse.Outputs");
 		getStackResponse.setOutputs(outputs);
@@ -79,6 +91,53 @@ public class GetStackResponseUnmarshaller {
 		}
 		resourceProgress.setInProgressResourceDetails(inProgressResourceDetails);
 		getStackResponse.setResourceProgress(resourceProgress);
+
+		Log log = new Log();
+
+		List<TerraformLog> terraformLogs = new ArrayList<TerraformLog>();
+		for (int i = 0; i < _ctx.lengthValue("GetStackResponse.Log.TerraformLogs.Length"); i++) {
+			TerraformLog terraformLog = new TerraformLog();
+			terraformLog.setCommand(_ctx.stringValue("GetStackResponse.Log.TerraformLogs["+ i +"].Command"));
+			terraformLog.setStream(_ctx.stringValue("GetStackResponse.Log.TerraformLogs["+ i +"].Stream"));
+			terraformLog.setContent(_ctx.stringValue("GetStackResponse.Log.TerraformLogs["+ i +"].Content"));
+
+			terraformLogs.add(terraformLog);
+		}
+		log.setTerraformLogs(terraformLogs);
+
+		List<ResourceLog> resourceLogs = new ArrayList<ResourceLog>();
+		for (int i = 0; i < _ctx.lengthValue("GetStackResponse.Log.ResourceLogs.Length"); i++) {
+			ResourceLog resourceLog = new ResourceLog();
+			resourceLog.setResourceName(_ctx.stringValue("GetStackResponse.Log.ResourceLogs["+ i +"].ResourceName"));
+
+			List<Log1> logs = new ArrayList<Log1>();
+			for (int j = 0; j < _ctx.lengthValue("GetStackResponse.Log.ResourceLogs["+ i +"].Logs.Length"); j++) {
+				Log1 log1 = new Log1();
+				log1.setContent(_ctx.stringValue("GetStackResponse.Log.ResourceLogs["+ i +"].Logs["+ j +"].Content"));
+
+				List<String> keys = new ArrayList<String>();
+				for (int k = 0; k < _ctx.lengthValue("GetStackResponse.Log.ResourceLogs["+ i +"].Logs["+ j +"].Keys.Length"); k++) {
+					keys.add(_ctx.stringValue("GetStackResponse.Log.ResourceLogs["+ i +"].Logs["+ j +"].Keys["+ k +"]"));
+				}
+				log1.setKeys(keys);
+
+				logs.add(log1);
+			}
+			resourceLog.setLogs(logs);
+
+			resourceLogs.add(resourceLog);
+		}
+		log.setResourceLogs(resourceLogs);
+		getStackResponse.setLog(log);
+
+		OperationInfo operationInfo = new OperationInfo();
+		operationInfo.setCode(_ctx.stringValue("GetStackResponse.OperationInfo.Code"));
+		operationInfo.setMessage(_ctx.stringValue("GetStackResponse.OperationInfo.Message"));
+		operationInfo.setRequestId(_ctx.stringValue("GetStackResponse.OperationInfo.RequestId"));
+		operationInfo.setAction(_ctx.stringValue("GetStackResponse.OperationInfo.Action"));
+		operationInfo.setResourceType(_ctx.stringValue("GetStackResponse.OperationInfo.ResourceType"));
+		operationInfo.setLogicalResourceId(_ctx.stringValue("GetStackResponse.OperationInfo.LogicalResourceId"));
+		getStackResponse.setOperationInfo(operationInfo);
 
 		List<Parameter> parameters = new ArrayList<Parameter>();
 		for (int i = 0; i < _ctx.lengthValue("GetStackResponse.Parameters.Length"); i++) {

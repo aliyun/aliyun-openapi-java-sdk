@@ -33,22 +33,22 @@ public class ListStackResourceDriftsResponseUnmarshaller {
 		List<ResourceDrift> resourceDrifts = new ArrayList<ResourceDrift>();
 		for (int i = 0; i < _ctx.lengthValue("ListStackResourceDriftsResponse.ResourceDrifts.Length"); i++) {
 			ResourceDrift resourceDrift = new ResourceDrift();
-			resourceDrift.setDriftDetectionTime(_ctx.stringValue("ListStackResourceDriftsResponse.ResourceDrifts["+ i +"].DriftDetectionTime"));
-			resourceDrift.setResourceDriftStatus(_ctx.stringValue("ListStackResourceDriftsResponse.ResourceDrifts["+ i +"].ResourceDriftStatus"));
-			resourceDrift.setStackId(_ctx.stringValue("ListStackResourceDriftsResponse.ResourceDrifts["+ i +"].StackId"));
-			resourceDrift.setResourceType(_ctx.stringValue("ListStackResourceDriftsResponse.ResourceDrifts["+ i +"].ResourceType"));
-			resourceDrift.setPhysicalResourceId(_ctx.stringValue("ListStackResourceDriftsResponse.ResourceDrifts["+ i +"].PhysicalResourceId"));
 			resourceDrift.setLogicalResourceId(_ctx.stringValue("ListStackResourceDriftsResponse.ResourceDrifts["+ i +"].LogicalResourceId"));
-			resourceDrift.setActualProperties(_ctx.stringValue("ListStackResourceDriftsResponse.ResourceDrifts["+ i +"].ActualProperties"));
+			resourceDrift.setStackId(_ctx.stringValue("ListStackResourceDriftsResponse.ResourceDrifts["+ i +"].StackId"));
+			resourceDrift.setPhysicalResourceId(_ctx.stringValue("ListStackResourceDriftsResponse.ResourceDrifts["+ i +"].PhysicalResourceId"));
+			resourceDrift.setDriftDetectionTime(_ctx.stringValue("ListStackResourceDriftsResponse.ResourceDrifts["+ i +"].DriftDetectionTime"));
+			resourceDrift.setResourceType(_ctx.stringValue("ListStackResourceDriftsResponse.ResourceDrifts["+ i +"].ResourceType"));
 			resourceDrift.setExpectedProperties(_ctx.stringValue("ListStackResourceDriftsResponse.ResourceDrifts["+ i +"].ExpectedProperties"));
+			resourceDrift.setResourceDriftStatus(_ctx.stringValue("ListStackResourceDriftsResponse.ResourceDrifts["+ i +"].ResourceDriftStatus"));
+			resourceDrift.setActualProperties(_ctx.stringValue("ListStackResourceDriftsResponse.ResourceDrifts["+ i +"].ActualProperties"));
 
 			List<PropertyDifference> propertyDifferences = new ArrayList<PropertyDifference>();
 			for (int j = 0; j < _ctx.lengthValue("ListStackResourceDriftsResponse.ResourceDrifts["+ i +"].PropertyDifferences.Length"); j++) {
 				PropertyDifference propertyDifference = new PropertyDifference();
-				propertyDifference.setPropertyPath(_ctx.stringValue("ListStackResourceDriftsResponse.ResourceDrifts["+ i +"].PropertyDifferences["+ j +"].PropertyPath"));
 				propertyDifference.setActualValue(_ctx.stringValue("ListStackResourceDriftsResponse.ResourceDrifts["+ i +"].PropertyDifferences["+ j +"].ActualValue"));
-				propertyDifference.setExpectedValue(_ctx.stringValue("ListStackResourceDriftsResponse.ResourceDrifts["+ i +"].PropertyDifferences["+ j +"].ExpectedValue"));
 				propertyDifference.setDifferenceType(_ctx.stringValue("ListStackResourceDriftsResponse.ResourceDrifts["+ i +"].PropertyDifferences["+ j +"].DifferenceType"));
+				propertyDifference.setPropertyPath(_ctx.stringValue("ListStackResourceDriftsResponse.ResourceDrifts["+ i +"].PropertyDifferences["+ j +"].PropertyPath"));
+				propertyDifference.setExpectedValue(_ctx.stringValue("ListStackResourceDriftsResponse.ResourceDrifts["+ i +"].PropertyDifferences["+ j +"].ExpectedValue"));
 
 				propertyDifferences.add(propertyDifference);
 			}

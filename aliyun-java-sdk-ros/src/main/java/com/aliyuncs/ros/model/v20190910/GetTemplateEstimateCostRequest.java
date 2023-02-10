@@ -26,9 +26,13 @@ import com.aliyuncs.ros.Endpoint;
 public class GetTemplateEstimateCostRequest extends RpcAcsRequest<GetTemplateEstimateCostResponse> {
 	   
 
+	private String templateScratchId;
+
 	private String clientToken;
 
 	private String templateBody;
+
+	private String templateScratchRegionId;
 
 	private String templateURL;
 
@@ -44,6 +48,17 @@ public class GetTemplateEstimateCostRequest extends RpcAcsRequest<GetTemplateEst
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getTemplateScratchId() {
+		return this.templateScratchId;
+	}
+
+	public void setTemplateScratchId(String templateScratchId) {
+		this.templateScratchId = templateScratchId;
+		if(templateScratchId != null){
+			putQueryParameter("TemplateScratchId", templateScratchId);
+		}
 	}
 
 	public String getClientToken() {
@@ -65,6 +80,17 @@ public class GetTemplateEstimateCostRequest extends RpcAcsRequest<GetTemplateEst
 		this.templateBody = templateBody;
 		if(templateBody != null){
 			putQueryParameter("TemplateBody", templateBody);
+		}
+	}
+
+	public String getTemplateScratchRegionId() {
+		return this.templateScratchRegionId;
+	}
+
+	public void setTemplateScratchRegionId(String templateScratchRegionId) {
+		this.templateScratchRegionId = templateScratchRegionId;
+		if(templateScratchRegionId != null){
+			putQueryParameter("TemplateScratchRegionId", templateScratchRegionId);
 		}
 	}
 

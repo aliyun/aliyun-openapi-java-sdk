@@ -19,6 +19,9 @@ import java.util.List;
 
 import com.aliyuncs.ros.model.v20190910.ValidateTemplateResponse;
 import com.aliyuncs.ros.model.v20190910.ValidateTemplateResponse.Output;
+import com.aliyuncs.ros.model.v20190910.ValidateTemplateResponse.Resource;
+import com.aliyuncs.ros.model.v20190910.ValidateTemplateResponse.ResourceTypes;
+import com.aliyuncs.ros.model.v20190910.ValidateTemplateResponse.UpdateInfo;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -33,15 +36,87 @@ public class ValidateTemplateResponseUnmarshaller {
 		List<Map<Object, Object>> parameters = _ctx.listMapValue("ValidateTemplateResponse.Parameters");
 		validateTemplateResponse.setParameters(parameters);
 
+		ResourceTypes resourceTypes = new ResourceTypes();
+
+		List<String> resources1 = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("ValidateTemplateResponse.ResourceTypes.Resources.Length"); i++) {
+			resources1.add(_ctx.stringValue("ValidateTemplateResponse.ResourceTypes.Resources["+ i +"]"));
+		}
+		resourceTypes.setResources1(resources1);
+
+		List<String> dataSources = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("ValidateTemplateResponse.ResourceTypes.DataSources.Length"); i++) {
+			dataSources.add(_ctx.stringValue("ValidateTemplateResponse.ResourceTypes.DataSources["+ i +"]"));
+		}
+		resourceTypes.setDataSources(dataSources);
+		validateTemplateResponse.setResourceTypes(resourceTypes);
+
+		UpdateInfo updateInfo = new UpdateInfo();
+
+		List<String> parametersAllowedToBeModified = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("ValidateTemplateResponse.UpdateInfo.ParametersAllowedToBeModified.Length"); i++) {
+			parametersAllowedToBeModified.add(_ctx.stringValue("ValidateTemplateResponse.UpdateInfo.ParametersAllowedToBeModified["+ i +"]"));
+		}
+		updateInfo.setParametersAllowedToBeModified(parametersAllowedToBeModified);
+
+		List<String> parametersCauseInterruptionIfModified = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("ValidateTemplateResponse.UpdateInfo.ParametersCauseInterruptionIfModified.Length"); i++) {
+			parametersCauseInterruptionIfModified.add(_ctx.stringValue("ValidateTemplateResponse.UpdateInfo.ParametersCauseInterruptionIfModified["+ i +"]"));
+		}
+		updateInfo.setParametersCauseInterruptionIfModified(parametersCauseInterruptionIfModified);
+
+		List<String> parametersConditionallyAllowedToBeModified = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("ValidateTemplateResponse.UpdateInfo.ParametersConditionallyAllowedToBeModified.Length"); i++) {
+			parametersConditionallyAllowedToBeModified.add(_ctx.stringValue("ValidateTemplateResponse.UpdateInfo.ParametersConditionallyAllowedToBeModified["+ i +"]"));
+		}
+		updateInfo.setParametersConditionallyAllowedToBeModified(parametersConditionallyAllowedToBeModified);
+
+		List<String> parametersConditionallyCauseInterruptionIfModified = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("ValidateTemplateResponse.UpdateInfo.ParametersConditionallyCauseInterruptionIfModified.Length"); i++) {
+			parametersConditionallyCauseInterruptionIfModified.add(_ctx.stringValue("ValidateTemplateResponse.UpdateInfo.ParametersConditionallyCauseInterruptionIfModified["+ i +"]"));
+		}
+		updateInfo.setParametersConditionallyCauseInterruptionIfModified(parametersConditionallyCauseInterruptionIfModified);
+
+		List<String> parametersNotAllowedToBeModified = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("ValidateTemplateResponse.UpdateInfo.ParametersNotAllowedToBeModified.Length"); i++) {
+			parametersNotAllowedToBeModified.add(_ctx.stringValue("ValidateTemplateResponse.UpdateInfo.ParametersNotAllowedToBeModified["+ i +"]"));
+		}
+		updateInfo.setParametersNotAllowedToBeModified(parametersNotAllowedToBeModified);
+
+		List<String> parametersUncertainlyAllowedToBeModified = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("ValidateTemplateResponse.UpdateInfo.ParametersUncertainlyAllowedToBeModified.Length"); i++) {
+			parametersUncertainlyAllowedToBeModified.add(_ctx.stringValue("ValidateTemplateResponse.UpdateInfo.ParametersUncertainlyAllowedToBeModified["+ i +"]"));
+		}
+		updateInfo.setParametersUncertainlyAllowedToBeModified(parametersUncertainlyAllowedToBeModified);
+
+		List<String> parametersUncertainlyCauseInterruptionIfModified = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("ValidateTemplateResponse.UpdateInfo.ParametersUncertainlyCauseInterruptionIfModified.Length"); i++) {
+			parametersUncertainlyCauseInterruptionIfModified.add(_ctx.stringValue("ValidateTemplateResponse.UpdateInfo.ParametersUncertainlyCauseInterruptionIfModified["+ i +"]"));
+		}
+		updateInfo.setParametersUncertainlyCauseInterruptionIfModified(parametersUncertainlyCauseInterruptionIfModified);
+		validateTemplateResponse.setUpdateInfo(updateInfo);
+
 		List<Output> outputs = new ArrayList<Output>();
 		for (int i = 0; i < _ctx.lengthValue("ValidateTemplateResponse.Outputs.Length"); i++) {
 			Output output = new Output();
 			output.setOutputKey(_ctx.stringValue("ValidateTemplateResponse.Outputs["+ i +"].OutputKey"));
 			output.setDescription(_ctx.stringValue("ValidateTemplateResponse.Outputs["+ i +"].Description"));
+			output.setLabel(_ctx.stringValue("ValidateTemplateResponse.Outputs["+ i +"].Label"));
 
 			outputs.add(output);
 		}
 		validateTemplateResponse.setOutputs(outputs);
+
+		List<Resource> resources = new ArrayList<Resource>();
+		for (int i = 0; i < _ctx.lengthValue("ValidateTemplateResponse.Resources.Length"); i++) {
+			Resource resource = new Resource();
+			resource.setResourceType(_ctx.stringValue("ValidateTemplateResponse.Resources["+ i +"].ResourceType"));
+			resource.setResourcePath(_ctx.stringValue("ValidateTemplateResponse.Resources["+ i +"].ResourcePath"));
+			resource.setLogicalResourceIdPattern(_ctx.stringValue("ValidateTemplateResponse.Resources["+ i +"].LogicalResourceIdPattern"));
+
+			resources.add(resource);
+		}
+		validateTemplateResponse.setResources(resources);
 	 
 	 	return validateTemplateResponse;
 	}

@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ros.model.v20190910.ListStacksResponse;
 import com.aliyuncs.ros.model.v20190910.ListStacksResponse.Stack;
+import com.aliyuncs.ros.model.v20190910.ListStacksResponse.Stack.OperationInfo;
 import com.aliyuncs.ros.model.v20190910.ListStacksResponse.Stack.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -36,25 +37,36 @@ public class ListStacksResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("ListStacksResponse.Stacks.Length"); i++) {
 			Stack stack = new Stack();
 			stack.setStatus(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].Status"));
-			stack.setResourceGroupId(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].ResourceGroupId"));
-			stack.setParentStackId(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].ParentStackId"));
-			stack.setStatusReason(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].StatusReason"));
-			stack.setCreateTime(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].CreateTime"));
-			stack.setStackType(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].StackType"));
 			stack.setUpdateTime(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].UpdateTime"));
 			stack.setDriftDetectionTime(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].DriftDetectionTime"));
-			stack.setRegionId(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].RegionId"));
-			stack.setStackDriftStatus(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].StackDriftStatus"));
-			stack.setStackName(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].StackName"));
+			stack.setStatusReason(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].StatusReason"));
+			stack.setCreateTime(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].CreateTime"));
 			stack.setDisableRollback(_ctx.booleanValue("ListStacksResponse.Stacks["+ i +"].DisableRollback"));
-			stack.setStackId(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].StackId"));
+			stack.setStackName(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].StackName"));
 			stack.setTimeoutInMinutes(_ctx.integerValue("ListStacksResponse.Stacks["+ i +"].TimeoutInMinutes"));
+			stack.setRegionId(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].RegionId"));
+			stack.setParentStackId(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].ParentStackId"));
+			stack.setStackId(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].StackId"));
+			stack.setStackDriftStatus(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].StackDriftStatus"));
+			stack.setStackType(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].StackType"));
+			stack.setResourceGroupId(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].ResourceGroupId"));
+			stack.setServiceManaged(_ctx.booleanValue("ListStacksResponse.Stacks["+ i +"].ServiceManaged"));
+			stack.setServiceName(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].ServiceName"));
+
+			OperationInfo operationInfo = new OperationInfo();
+			operationInfo.setCode(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].OperationInfo.Code"));
+			operationInfo.setMessage(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].OperationInfo.Message"));
+			operationInfo.setRequestId(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].OperationInfo.RequestId"));
+			operationInfo.setAction(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].OperationInfo.Action"));
+			operationInfo.setResourceType(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].OperationInfo.ResourceType"));
+			operationInfo.setLogicalResourceId(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].OperationInfo.LogicalResourceId"));
+			stack.setOperationInfo(operationInfo);
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("ListStacksResponse.Stacks["+ i +"].Tags.Length"); j++) {
 				Tag tag = new Tag();
-				tag.setValue(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].Tags["+ j +"].Value"));
 				tag.setKey(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].Tags["+ j +"].Value"));
 
 				tags.add(tag);
 			}

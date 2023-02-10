@@ -15,6 +15,7 @@
 package com.aliyuncs.ros.model.v20190910;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ros.Endpoint;
 
@@ -28,6 +29,8 @@ public class GetStackResourceRequest extends RpcAcsRequest<GetStackResourceRespo
 	private String clientToken;
 
 	private String stackId;
+
+	private List<String> resourceAttributess;
 
 	private String logicalResourceId;
 
@@ -61,6 +64,19 @@ public class GetStackResourceRequest extends RpcAcsRequest<GetStackResourceRespo
 		if(stackId != null){
 			putQueryParameter("StackId", stackId);
 		}
+	}
+
+	public List<String> getResourceAttributess() {
+		return this.resourceAttributess;
+	}
+
+	public void setResourceAttributess(List<String> resourceAttributess) {
+		this.resourceAttributess = resourceAttributess;	
+		if (resourceAttributess != null) {
+			for (int i = 0; i < resourceAttributess.size(); i++) {
+				putQueryParameter("ResourceAttributes." + (i + 1) , resourceAttributess.get(i));
+			}
+		}	
 	}
 
 	public String getLogicalResourceId() {

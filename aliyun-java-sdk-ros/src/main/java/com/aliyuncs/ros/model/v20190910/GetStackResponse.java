@@ -66,6 +66,20 @@ public class GetStackResponse extends AcsResponse {
 
 	private String resourceGroupId;
 
+	private String templateId;
+
+	private String templateVersion;
+
+	private String templateScratchId;
+
+	private String templateURL;
+
+	private String _interface;
+
+	private Boolean serviceManaged;
+
+	private String serviceName;
+
 	private List<Parameter> parameters;
 
 	private List<Tag> tags;
@@ -75,6 +89,10 @@ public class GetStackResponse extends AcsResponse {
 	private List<String> notificationURLs;
 
 	private ResourceProgress resourceProgress;
+
+	private Log log;
+
+	private OperationInfo operationInfo;
 
 	public String getStatus() {
 		return this.status;
@@ -236,6 +254,62 @@ public class GetStackResponse extends AcsResponse {
 		this.resourceGroupId = resourceGroupId;
 	}
 
+	public String getTemplateId() {
+		return this.templateId;
+	}
+
+	public void setTemplateId(String templateId) {
+		this.templateId = templateId;
+	}
+
+	public String getTemplateVersion() {
+		return this.templateVersion;
+	}
+
+	public void setTemplateVersion(String templateVersion) {
+		this.templateVersion = templateVersion;
+	}
+
+	public String getTemplateScratchId() {
+		return this.templateScratchId;
+	}
+
+	public void setTemplateScratchId(String templateScratchId) {
+		this.templateScratchId = templateScratchId;
+	}
+
+	public String getTemplateURL() {
+		return this.templateURL;
+	}
+
+	public void setTemplateURL(String templateURL) {
+		this.templateURL = templateURL;
+	}
+
+	public String get_Interface() {
+		return this._interface;
+	}
+
+	public void set_Interface(String _interface) {
+		this._interface = _interface;
+	}
+
+	public Boolean getServiceManaged() {
+		return this.serviceManaged;
+	}
+
+	public void setServiceManaged(Boolean serviceManaged) {
+		this.serviceManaged = serviceManaged;
+	}
+
+	public String getServiceName() {
+		return this.serviceName;
+	}
+
+	public void setServiceName(String serviceName) {
+		this.serviceName = serviceName;
+	}
+
 	public List<Parameter> getParameters() {
 		return this.parameters;
 	}
@@ -274,6 +348,22 @@ public class GetStackResponse extends AcsResponse {
 
 	public void setResourceProgress(ResourceProgress resourceProgress) {
 		this.resourceProgress = resourceProgress;
+	}
+
+	public Log getLog() {
+		return this.log;
+	}
+
+	public void setLog(Log log) {
+		this.log = log;
+	}
+
+	public OperationInfo getOperationInfo() {
+		return this.operationInfo;
+	}
+
+	public void setOperationInfo(OperationInfo operationInfo) {
+		this.operationInfo = operationInfo;
 	}
 
 	public static class Parameter {
@@ -425,6 +515,171 @@ public class GetStackResponse extends AcsResponse {
 			public void setProgressTargetValue(Float progressTargetValue) {
 				this.progressTargetValue = progressTargetValue;
 			}
+		}
+	}
+
+	public static class Log {
+
+		private List<TerraformLog> terraformLogs;
+
+		private List<ResourceLog> resourceLogs;
+
+		public List<TerraformLog> getTerraformLogs() {
+			return this.terraformLogs;
+		}
+
+		public void setTerraformLogs(List<TerraformLog> terraformLogs) {
+			this.terraformLogs = terraformLogs;
+		}
+
+		public List<ResourceLog> getResourceLogs() {
+			return this.resourceLogs;
+		}
+
+		public void setResourceLogs(List<ResourceLog> resourceLogs) {
+			this.resourceLogs = resourceLogs;
+		}
+
+		public static class TerraformLog {
+
+			private String command;
+
+			private String stream;
+
+			private String content;
+
+			public String getCommand() {
+				return this.command;
+			}
+
+			public void setCommand(String command) {
+				this.command = command;
+			}
+
+			public String getStream() {
+				return this.stream;
+			}
+
+			public void setStream(String stream) {
+				this.stream = stream;
+			}
+
+			public String getContent() {
+				return this.content;
+			}
+
+			public void setContent(String content) {
+				this.content = content;
+			}
+		}
+
+		public static class ResourceLog {
+
+			private String resourceName;
+
+			private List<Log1> logs;
+
+			public String getResourceName() {
+				return this.resourceName;
+			}
+
+			public void setResourceName(String resourceName) {
+				this.resourceName = resourceName;
+			}
+
+			public List<Log1> getLogs() {
+				return this.logs;
+			}
+
+			public void setLogs(List<Log1> logs) {
+				this.logs = logs;
+			}
+
+			public static class Log1 {
+
+				private String content;
+
+				private List<String> keys;
+
+				public String getContent() {
+					return this.content;
+				}
+
+				public void setContent(String content) {
+					this.content = content;
+				}
+
+				public List<String> getKeys() {
+					return this.keys;
+				}
+
+				public void setKeys(List<String> keys) {
+					this.keys = keys;
+				}
+			}
+		}
+	}
+
+	public static class OperationInfo {
+
+		private String code;
+
+		private String message;
+
+		private String requestId;
+
+		private String action;
+
+		private String resourceType;
+
+		private String logicalResourceId;
+
+		public String getCode() {
+			return this.code;
+		}
+
+		public void setCode(String code) {
+			this.code = code;
+		}
+
+		public String getMessage() {
+			return this.message;
+		}
+
+		public void setMessage(String message) {
+			this.message = message;
+		}
+
+		public String getRequestId() {
+			return this.requestId;
+		}
+
+		public void setRequestId(String requestId) {
+			this.requestId = requestId;
+		}
+
+		public String getAction() {
+			return this.action;
+		}
+
+		public void setAction(String action) {
+			this.action = action;
+		}
+
+		public String getResourceType() {
+			return this.resourceType;
+		}
+
+		public void setResourceType(String resourceType) {
+			this.resourceType = resourceType;
+		}
+
+		public String getLogicalResourceId() {
+			return this.logicalResourceId;
+		}
+
+		public void setLogicalResourceId(String logicalResourceId) {
+			this.logicalResourceId = logicalResourceId;
 		}
 	}
 

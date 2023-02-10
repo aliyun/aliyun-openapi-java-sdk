@@ -26,9 +26,9 @@ public class UpdateStackTemplateByResourcesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String oldTemplateBody;
-
 	private String newTemplateBody;
+
+	private String oldTemplateBody;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,20 +38,20 @@ public class UpdateStackTemplateByResourcesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getOldTemplateBody() {
-		return this.oldTemplateBody;
-	}
-
-	public void setOldTemplateBody(String oldTemplateBody) {
-		this.oldTemplateBody = oldTemplateBody;
-	}
-
 	public String getNewTemplateBody() {
 		return this.newTemplateBody;
 	}
 
 	public void setNewTemplateBody(String newTemplateBody) {
 		this.newTemplateBody = newTemplateBody;
+	}
+
+	public String getOldTemplateBody() {
+		return this.oldTemplateBody;
+	}
+
+	public void setOldTemplateBody(String oldTemplateBody) {
+		this.oldTemplateBody = oldTemplateBody;
 	}
 
 	@Override

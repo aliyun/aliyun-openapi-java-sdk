@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListTemplateVersionsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String nextToken;
 
+	private String requestId;
+
 	private List<Version> versions;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getNextToken() {
 		return this.nextToken;
@@ -45,6 +37,14 @@ public class ListTemplateVersionsResponse extends AcsResponse {
 
 	public void setNextToken(String nextToken) {
 		this.nextToken = nextToken;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<Version> getVersions() {
@@ -57,25 +57,17 @@ public class ListTemplateVersionsResponse extends AcsResponse {
 
 	public static class Version {
 
-		private String createTime;
-
 		private String updateTime;
-
-		private String templateId;
-
-		private String templateName;
-
-		private String templateVersion;
 
 		private String description;
 
-		public String getCreateTime() {
-			return this.createTime;
-		}
+		private String createTime;
 
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
+		private String templateName;
+
+		private String templateId;
+
+		private String templateVersion;
 
 		public String getUpdateTime() {
 			return this.updateTime;
@@ -85,12 +77,20 @@ public class ListTemplateVersionsResponse extends AcsResponse {
 			this.updateTime = updateTime;
 		}
 
-		public String getTemplateId() {
-			return this.templateId;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setTemplateId(String templateId) {
-			this.templateId = templateId;
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
 		public String getTemplateName() {
@@ -101,20 +101,20 @@ public class ListTemplateVersionsResponse extends AcsResponse {
 			this.templateName = templateName;
 		}
 
+		public String getTemplateId() {
+			return this.templateId;
+		}
+
+		public void setTemplateId(String templateId) {
+			this.templateId = templateId;
+		}
+
 		public String getTemplateVersion() {
 			return this.templateVersion;
 		}
 
 		public void setTemplateVersion(String templateVersion) {
 			this.templateVersion = templateVersion;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
 		}
 	}
 

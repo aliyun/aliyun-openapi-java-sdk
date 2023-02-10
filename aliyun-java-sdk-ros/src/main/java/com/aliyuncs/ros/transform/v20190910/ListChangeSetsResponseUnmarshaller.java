@@ -27,24 +27,24 @@ public class ListChangeSetsResponseUnmarshaller {
 	public static ListChangeSetsResponse unmarshall(ListChangeSetsResponse listChangeSetsResponse, UnmarshallerContext _ctx) {
 		
 		listChangeSetsResponse.setRequestId(_ctx.stringValue("ListChangeSetsResponse.RequestId"));
-		listChangeSetsResponse.setPageNumber(_ctx.integerValue("ListChangeSetsResponse.PageNumber"));
-		listChangeSetsResponse.setPageSize(_ctx.integerValue("ListChangeSetsResponse.PageSize"));
 		listChangeSetsResponse.setTotalCount(_ctx.integerValue("ListChangeSetsResponse.TotalCount"));
+		listChangeSetsResponse.setPageSize(_ctx.integerValue("ListChangeSetsResponse.PageSize"));
+		listChangeSetsResponse.setPageNumber(_ctx.integerValue("ListChangeSetsResponse.PageNumber"));
 
 		List<ChangeSet> changeSets = new ArrayList<ChangeSet>();
 		for (int i = 0; i < _ctx.lengthValue("ListChangeSetsResponse.ChangeSets.Length"); i++) {
 			ChangeSet changeSet = new ChangeSet();
-			changeSet.setChangeSetId(_ctx.stringValue("ListChangeSetsResponse.ChangeSets["+ i +"].ChangeSetId"));
+			changeSet.setStatus(_ctx.stringValue("ListChangeSetsResponse.ChangeSets["+ i +"].Status"));
+			changeSet.setStackId(_ctx.stringValue("ListChangeSetsResponse.ChangeSets["+ i +"].StackId"));
 			changeSet.setChangeSetName(_ctx.stringValue("ListChangeSetsResponse.ChangeSets["+ i +"].ChangeSetName"));
-			changeSet.setChangeSetType(_ctx.stringValue("ListChangeSetsResponse.ChangeSets["+ i +"].ChangeSetType"));
-			changeSet.setCreateTime(_ctx.stringValue("ListChangeSetsResponse.ChangeSets["+ i +"].CreateTime"));
 			changeSet.setDescription(_ctx.stringValue("ListChangeSetsResponse.ChangeSets["+ i +"].Description"));
+			changeSet.setChangeSetType(_ctx.stringValue("ListChangeSetsResponse.ChangeSets["+ i +"].ChangeSetType"));
+			changeSet.setStatusReason(_ctx.stringValue("ListChangeSetsResponse.ChangeSets["+ i +"].StatusReason"));
+			changeSet.setCreateTime(_ctx.stringValue("ListChangeSetsResponse.ChangeSets["+ i +"].CreateTime"));
+			changeSet.setChangeSetId(_ctx.stringValue("ListChangeSetsResponse.ChangeSets["+ i +"].ChangeSetId"));
+			changeSet.setStackName(_ctx.stringValue("ListChangeSetsResponse.ChangeSets["+ i +"].StackName"));
 			changeSet.setExecutionStatus(_ctx.stringValue("ListChangeSetsResponse.ChangeSets["+ i +"].ExecutionStatus"));
 			changeSet.setRegionId(_ctx.stringValue("ListChangeSetsResponse.ChangeSets["+ i +"].RegionId"));
-			changeSet.setStackId(_ctx.stringValue("ListChangeSetsResponse.ChangeSets["+ i +"].StackId"));
-			changeSet.setStackName(_ctx.stringValue("ListChangeSetsResponse.ChangeSets["+ i +"].StackName"));
-			changeSet.setStatus(_ctx.stringValue("ListChangeSetsResponse.ChangeSets["+ i +"].Status"));
-			changeSet.setStatusReason(_ctx.stringValue("ListChangeSetsResponse.ChangeSets["+ i +"].StatusReason"));
 
 			changeSets.add(changeSet);
 		}

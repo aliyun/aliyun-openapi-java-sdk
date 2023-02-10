@@ -30,7 +30,11 @@ public class UpdateStackRequest extends RpcAcsRequest<UpdateStackResponse> {
 
 	private String stackPolicyDuringUpdateBody;
 
+	private String resourceGroupId;
+
 	private String templateVersion;
+
+	private Boolean dryRun;
 
 	private Boolean disableRollback;
 
@@ -45,6 +49,8 @@ public class UpdateStackRequest extends RpcAcsRequest<UpdateStackResponse> {
 	private String templateBody;
 
 	private String stackId;
+
+	private Long parallelism;
 
 	private String templateURL;
 
@@ -90,6 +96,17 @@ public class UpdateStackRequest extends RpcAcsRequest<UpdateStackResponse> {
 		}
 	}
 
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
 	public String getTemplateVersion() {
 		return this.templateVersion;
 	}
@@ -98,6 +115,17 @@ public class UpdateStackRequest extends RpcAcsRequest<UpdateStackResponse> {
 		this.templateVersion = templateVersion;
 		if(templateVersion != null){
 			putQueryParameter("TemplateVersion", templateVersion);
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 
@@ -181,6 +209,17 @@ public class UpdateStackRequest extends RpcAcsRequest<UpdateStackResponse> {
 		this.stackId = stackId;
 		if(stackId != null){
 			putQueryParameter("StackId", stackId);
+		}
+	}
+
+	public Long getParallelism() {
+		return this.parallelism;
+	}
+
+	public void setParallelism(Long parallelism) {
+		this.parallelism = parallelism;
+		if(parallelism != null){
+			putQueryParameter("Parallelism", parallelism.toString());
 		}
 	}
 

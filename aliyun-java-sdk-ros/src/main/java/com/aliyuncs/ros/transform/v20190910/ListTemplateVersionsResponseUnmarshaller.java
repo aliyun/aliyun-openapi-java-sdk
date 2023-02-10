@@ -32,12 +32,12 @@ public class ListTemplateVersionsResponseUnmarshaller {
 		List<Version> versions = new ArrayList<Version>();
 		for (int i = 0; i < _ctx.lengthValue("ListTemplateVersionsResponse.Versions.Length"); i++) {
 			Version version = new Version();
-			version.setCreateTime(_ctx.stringValue("ListTemplateVersionsResponse.Versions["+ i +"].CreateTime"));
 			version.setUpdateTime(_ctx.stringValue("ListTemplateVersionsResponse.Versions["+ i +"].UpdateTime"));
-			version.setTemplateId(_ctx.stringValue("ListTemplateVersionsResponse.Versions["+ i +"].TemplateId"));
-			version.setTemplateName(_ctx.stringValue("ListTemplateVersionsResponse.Versions["+ i +"].TemplateName"));
-			version.setTemplateVersion(_ctx.stringValue("ListTemplateVersionsResponse.Versions["+ i +"].TemplateVersion"));
 			version.setDescription(_ctx.stringValue("ListTemplateVersionsResponse.Versions["+ i +"].Description"));
+			version.setCreateTime(_ctx.stringValue("ListTemplateVersionsResponse.Versions["+ i +"].CreateTime"));
+			version.setTemplateName(_ctx.stringValue("ListTemplateVersionsResponse.Versions["+ i +"].TemplateName"));
+			version.setTemplateId(_ctx.stringValue("ListTemplateVersionsResponse.Versions["+ i +"].TemplateId"));
+			version.setTemplateVersion(_ctx.stringValue("ListTemplateVersionsResponse.Versions["+ i +"].TemplateVersion"));
 
 			versions.add(version);
 		}

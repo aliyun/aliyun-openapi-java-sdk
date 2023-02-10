@@ -18,6 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.ros.model.v20190910.GetChangeSetResponse;
+import com.aliyuncs.ros.model.v20190910.GetChangeSetResponse.Log;
+import com.aliyuncs.ros.model.v20190910.GetChangeSetResponse.Log.TerraformLog;
 import com.aliyuncs.ros.model.v20190910.GetChangeSetResponse.Parameter;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -28,23 +30,37 @@ public class GetChangeSetResponseUnmarshaller {
 	public static GetChangeSetResponse unmarshall(GetChangeSetResponse getChangeSetResponse, UnmarshallerContext _ctx) {
 		
 		getChangeSetResponse.setRequestId(_ctx.stringValue("GetChangeSetResponse.RequestId"));
-		getChangeSetResponse.setChangeSetId(_ctx.stringValue("GetChangeSetResponse.ChangeSetId"));
-		getChangeSetResponse.setChangeSetName(_ctx.stringValue("GetChangeSetResponse.ChangeSetName"));
-		getChangeSetResponse.setChangeSetType(_ctx.stringValue("GetChangeSetResponse.ChangeSetType"));
-		getChangeSetResponse.setCreateTime(_ctx.stringValue("GetChangeSetResponse.CreateTime"));
-		getChangeSetResponse.setDescription(_ctx.stringValue("GetChangeSetResponse.Description"));
-		getChangeSetResponse.setDisableRollback(_ctx.booleanValue("GetChangeSetResponse.DisableRollback"));
-		getChangeSetResponse.setExecutionStatus(_ctx.stringValue("GetChangeSetResponse.ExecutionStatus"));
-		getChangeSetResponse.setRegionId(_ctx.stringValue("GetChangeSetResponse.RegionId"));
-		getChangeSetResponse.setStackId(_ctx.stringValue("GetChangeSetResponse.StackId"));
-		getChangeSetResponse.setStackName(_ctx.stringValue("GetChangeSetResponse.StackName"));
 		getChangeSetResponse.setStatus(_ctx.stringValue("GetChangeSetResponse.Status"));
-		getChangeSetResponse.setTemplateBody(_ctx.stringValue("GetChangeSetResponse.TemplateBody"));
-		getChangeSetResponse.setTimeoutInMinutes(_ctx.integerValue("GetChangeSetResponse.TimeoutInMinutes"));
+		getChangeSetResponse.setDescription(_ctx.stringValue("GetChangeSetResponse.Description"));
 		getChangeSetResponse.setStatusReason(_ctx.stringValue("GetChangeSetResponse.StatusReason"));
+		getChangeSetResponse.setCreateTime(_ctx.stringValue("GetChangeSetResponse.CreateTime"));
+		getChangeSetResponse.setTemplateBody(_ctx.stringValue("GetChangeSetResponse.TemplateBody"));
+		getChangeSetResponse.setChangeSetName(_ctx.stringValue("GetChangeSetResponse.ChangeSetName"));
+		getChangeSetResponse.setChangeSetId(_ctx.stringValue("GetChangeSetResponse.ChangeSetId"));
+		getChangeSetResponse.setExecutionStatus(_ctx.stringValue("GetChangeSetResponse.ExecutionStatus"));
+		getChangeSetResponse.setChangeSetType(_ctx.stringValue("GetChangeSetResponse.ChangeSetType"));
+		getChangeSetResponse.setRegionId(_ctx.stringValue("GetChangeSetResponse.RegionId"));
+		getChangeSetResponse.setDisableRollback(_ctx.booleanValue("GetChangeSetResponse.DisableRollback"));
+		getChangeSetResponse.setStackName(_ctx.stringValue("GetChangeSetResponse.StackName"));
+		getChangeSetResponse.setTimeoutInMinutes(_ctx.integerValue("GetChangeSetResponse.TimeoutInMinutes"));
+		getChangeSetResponse.setStackId(_ctx.stringValue("GetChangeSetResponse.StackId"));
 
 		List<Map<Object, Object>> changes = _ctx.listMapValue("GetChangeSetResponse.Changes");
 		getChangeSetResponse.setChanges(changes);
+
+		Log log = new Log();
+
+		List<TerraformLog> terraformLogs = new ArrayList<TerraformLog>();
+		for (int i = 0; i < _ctx.lengthValue("GetChangeSetResponse.Log.TerraformLogs.Length"); i++) {
+			TerraformLog terraformLog = new TerraformLog();
+			terraformLog.setCommand(_ctx.stringValue("GetChangeSetResponse.Log.TerraformLogs["+ i +"].Command"));
+			terraformLog.setStream(_ctx.stringValue("GetChangeSetResponse.Log.TerraformLogs["+ i +"].Stream"));
+			terraformLog.setContent(_ctx.stringValue("GetChangeSetResponse.Log.TerraformLogs["+ i +"].Content"));
+
+			terraformLogs.add(terraformLog);
+		}
+		log.setTerraformLogs(terraformLogs);
+		getChangeSetResponse.setLog(log);
 
 		List<Parameter> parameters = new ArrayList<Parameter>();
 		for (int i = 0; i < _ctx.lengthValue("GetChangeSetResponse.Parameters.Length"); i++) {

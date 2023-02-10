@@ -29,13 +29,11 @@ public class GetTemplateResponse extends AcsResponse {
 
 	private String description;
 
-	private String resourceGroupId;
-
 	private String requestId;
 
-	private String stackGroupName;
-
 	private String createTime;
+
+	private String stackGroupName;
 
 	private String templateVersion;
 
@@ -53,11 +51,17 @@ public class GetTemplateResponse extends AcsResponse {
 
 	private String templateId;
 
-	private String shareType;
-
 	private String stackId;
 
+	private String shareType;
+
+	private String resourceGroupId;
+
+	private String _interface;
+
 	private List<Permission> permissions;
+
+	private List<TagsItem> tags;
 
 	public String getTemplateARN() {
 		return this.templateARN;
@@ -75,14 +79,6 @@ public class GetTemplateResponse extends AcsResponse {
 		this.description = description;
 	}
 
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -91,20 +87,20 @@ public class GetTemplateResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getStackGroupName() {
-		return this.stackGroupName;
-	}
-
-	public void setStackGroupName(String stackGroupName) {
-		this.stackGroupName = stackGroupName;
-	}
-
 	public String getCreateTime() {
 		return this.createTime;
 	}
 
 	public void setCreateTime(String createTime) {
 		this.createTime = createTime;
+	}
+
+	public String getStackGroupName() {
+		return this.stackGroupName;
+	}
+
+	public void setStackGroupName(String stackGroupName) {
+		this.stackGroupName = stackGroupName;
 	}
 
 	public String getTemplateVersion() {
@@ -171,6 +167,14 @@ public class GetTemplateResponse extends AcsResponse {
 		this.templateId = templateId;
 	}
 
+	public String getStackId() {
+		return this.stackId;
+	}
+
+	public void setStackId(String stackId) {
+		this.stackId = stackId;
+	}
+
 	public String getShareType() {
 		return this.shareType;
 	}
@@ -179,12 +183,20 @@ public class GetTemplateResponse extends AcsResponse {
 		this.shareType = shareType;
 	}
 
-	public String getStackId() {
-		return this.stackId;
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
 	}
 
-	public void setStackId(String stackId) {
-		this.stackId = stackId;
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+	}
+
+	public String get_Interface() {
+		return this._interface;
+	}
+
+	public void set_Interface(String _interface) {
+		this._interface = _interface;
 	}
 
 	public List<Permission> getPermissions() {
@@ -195,22 +207,32 @@ public class GetTemplateResponse extends AcsResponse {
 		this.permissions = permissions;
 	}
 
+	public List<TagsItem> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<TagsItem> tags) {
+		this.tags = tags;
+	}
+
 	public static class Permission {
-
-		private String shareOption;
-
-		private String accountId;
-
-		private String templateVersion;
 
 		private String versionOption;
 
-		public String getShareOption() {
-			return this.shareOption;
+		private String accountId;
+
+		private String shareOption;
+
+		private String templateVersion;
+
+		private String shareSource;
+
+		public String getVersionOption() {
+			return this.versionOption;
 		}
 
-		public void setShareOption(String shareOption) {
-			this.shareOption = shareOption;
+		public void setVersionOption(String versionOption) {
+			this.versionOption = versionOption;
 		}
 
 		public String getAccountId() {
@@ -221,6 +243,14 @@ public class GetTemplateResponse extends AcsResponse {
 			this.accountId = accountId;
 		}
 
+		public String getShareOption() {
+			return this.shareOption;
+		}
+
+		public void setShareOption(String shareOption) {
+			this.shareOption = shareOption;
+		}
+
 		public String getTemplateVersion() {
 			return this.templateVersion;
 		}
@@ -229,12 +259,35 @@ public class GetTemplateResponse extends AcsResponse {
 			this.templateVersion = templateVersion;
 		}
 
-		public String getVersionOption() {
-			return this.versionOption;
+		public String getShareSource() {
+			return this.shareSource;
 		}
 
-		public void setVersionOption(String versionOption) {
-			this.versionOption = versionOption;
+		public void setShareSource(String shareSource) {
+			this.shareSource = shareSource;
+		}
+	}
+
+	public static class TagsItem {
+
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
 		}
 	}
 

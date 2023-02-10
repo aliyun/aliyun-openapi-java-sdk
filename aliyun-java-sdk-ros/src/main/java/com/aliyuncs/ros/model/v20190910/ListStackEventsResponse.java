@@ -25,22 +25,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListStackEventsResponse extends AcsResponse {
 
-	private Integer pageNumber;
+	private Integer totalCount;
 
 	private Integer pageSize;
 
 	private String requestId;
 
-	private Integer totalCount;
+	private Integer pageNumber;
 
 	private List<Event> events;
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public Integer getPageSize() {
@@ -59,12 +59,12 @@ public class ListStackEventsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<Event> getEvents() {
@@ -77,30 +77,30 @@ public class ListStackEventsResponse extends AcsResponse {
 
 	public static class Event {
 
-		private String createTime;
+		private String status;
 
 		private String eventId;
 
 		private String logicalResourceId;
 
+		private String stackId;
+
 		private String physicalResourceId;
 
 		private String resourceType;
 
-		private String stackId;
+		private String statusReason;
+
+		private String createTime;
 
 		private String stackName;
 
-		private String status;
-
-		private String statusReason;
-
-		public String getCreateTime() {
-			return this.createTime;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getEventId() {
@@ -119,6 +119,14 @@ public class ListStackEventsResponse extends AcsResponse {
 			this.logicalResourceId = logicalResourceId;
 		}
 
+		public String getStackId() {
+			return this.stackId;
+		}
+
+		public void setStackId(String stackId) {
+			this.stackId = stackId;
+		}
+
 		public String getPhysicalResourceId() {
 			return this.physicalResourceId;
 		}
@@ -135,12 +143,20 @@ public class ListStackEventsResponse extends AcsResponse {
 			this.resourceType = resourceType;
 		}
 
-		public String getStackId() {
-			return this.stackId;
+		public String getStatusReason() {
+			return this.statusReason;
 		}
 
-		public void setStackId(String stackId) {
-			this.stackId = stackId;
+		public void setStatusReason(String statusReason) {
+			this.statusReason = statusReason;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
 		public String getStackName() {
@@ -149,22 +165,6 @@ public class ListStackEventsResponse extends AcsResponse {
 
 		public void setStackName(String stackName) {
 			this.stackName = stackName;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getStatusReason() {
-			return this.statusReason;
-		}
-
-		public void setStatusReason(String statusReason) {
-			this.statusReason = statusReason;
 		}
 	}
 

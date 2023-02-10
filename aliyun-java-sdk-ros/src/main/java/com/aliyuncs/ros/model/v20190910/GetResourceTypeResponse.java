@@ -25,31 +25,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetResourceTypeResponse extends AcsResponse {
 
-	private Map<Object,Object> attributes;
-
-	private Map<Object,Object> properties;
-
 	private String requestId;
+
+	private Map<Object,Object> attributes;
 
 	private String resourceType;
 
+	private Map<Object,Object> properties;
+
 	private Boolean supportDriftDetection;
 
-	public Map<Object,Object> getAttributes() {
-		return this.attributes;
-	}
+	private Boolean supportScratchDetection;
 
-	public void setAttributes(Map<Object,Object> attributes) {
-		this.attributes = attributes;
-	}
-
-	public Map<Object,Object> getProperties() {
-		return this.properties;
-	}
-
-	public void setProperties(Map<Object,Object> properties) {
-		this.properties = properties;
-	}
+	private String entityType;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -57,6 +45,14 @@ public class GetResourceTypeResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Map<Object,Object> getAttributes() {
+		return this.attributes;
+	}
+
+	public void setAttributes(Map<Object,Object> attributes) {
+		this.attributes = attributes;
 	}
 
 	public String getResourceType() {
@@ -67,12 +63,36 @@ public class GetResourceTypeResponse extends AcsResponse {
 		this.resourceType = resourceType;
 	}
 
+	public Map<Object,Object> getProperties() {
+		return this.properties;
+	}
+
+	public void setProperties(Map<Object,Object> properties) {
+		this.properties = properties;
+	}
+
 	public Boolean getSupportDriftDetection() {
 		return this.supportDriftDetection;
 	}
 
 	public void setSupportDriftDetection(Boolean supportDriftDetection) {
 		this.supportDriftDetection = supportDriftDetection;
+	}
+
+	public Boolean getSupportScratchDetection() {
+		return this.supportScratchDetection;
+	}
+
+	public void setSupportScratchDetection(Boolean supportScratchDetection) {
+		this.supportScratchDetection = supportScratchDetection;
+	}
+
+	public String getEntityType() {
+		return this.entityType;
+	}
+
+	public void setEntityType(String entityType) {
+		this.entityType = entityType;
 	}
 
 	@Override

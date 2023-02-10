@@ -47,38 +47,40 @@ public class GetStackGroupOperationResponse extends AcsResponse {
 
 	public static class StackGroupOperation {
 
-		private String stackGroupName;
+		private String status;
 
 		private String stackGroupId;
+
+		private String action;
+
+		private String createTime;
+
+		private Boolean retainStacks;
+
+		private String stackGroupName;
 
 		private String operationId;
 
 		private String operationDescription;
 
-		private String createTime;
-
 		private String endTime;
-
-		private String action;
-
-		private String status;
-
-		private Boolean retainStacks;
-
-		private String administratorRoleName;
 
 		private String executionRoleName;
 
-		private OperationPreferences operationPreferences;
+		private String administrationRoleName;
 
 		private StackGroupDriftDetectionDetail stackGroupDriftDetectionDetail;
 
-		public String getStackGroupName() {
-			return this.stackGroupName;
+		private OperationPreferences operationPreferences;
+
+		private DeploymentTargets deploymentTargets;
+
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setStackGroupName(String stackGroupName) {
-			this.stackGroupName = stackGroupName;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getStackGroupId() {
@@ -87,6 +89,38 @@ public class GetStackGroupOperationResponse extends AcsResponse {
 
 		public void setStackGroupId(String stackGroupId) {
 			this.stackGroupId = stackGroupId;
+		}
+
+		public String getAction() {
+			return this.action;
+		}
+
+		public void setAction(String action) {
+			this.action = action;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public Boolean getRetainStacks() {
+			return this.retainStacks;
+		}
+
+		public void setRetainStacks(Boolean retainStacks) {
+			this.retainStacks = retainStacks;
+		}
+
+		public String getStackGroupName() {
+			return this.stackGroupName;
+		}
+
+		public void setStackGroupName(String stackGroupName) {
+			this.stackGroupName = stackGroupName;
 		}
 
 		public String getOperationId() {
@@ -105,52 +139,12 @@ public class GetStackGroupOperationResponse extends AcsResponse {
 			this.operationDescription = operationDescription;
 		}
 
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
 		public String getEndTime() {
 			return this.endTime;
 		}
 
 		public void setEndTime(String endTime) {
 			this.endTime = endTime;
-		}
-
-		public String getAction() {
-			return this.action;
-		}
-
-		public void setAction(String action) {
-			this.action = action;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public Boolean getRetainStacks() {
-			return this.retainStacks;
-		}
-
-		public void setRetainStacks(Boolean retainStacks) {
-			this.retainStacks = retainStacks;
-		}
-
-		public String getAdministratorRoleName() {
-			return this.administratorRoleName;
-		}
-
-		public void setAdministratorRoleName(String administratorRoleName) {
-			this.administratorRoleName = administratorRoleName;
 		}
 
 		public String getExecutionRoleName() {
@@ -161,12 +155,12 @@ public class GetStackGroupOperationResponse extends AcsResponse {
 			this.executionRoleName = executionRoleName;
 		}
 
-		public OperationPreferences getOperationPreferences() {
-			return this.operationPreferences;
+		public String getAdministrationRoleName() {
+			return this.administrationRoleName;
 		}
 
-		public void setOperationPreferences(OperationPreferences operationPreferences) {
-			this.operationPreferences = operationPreferences;
+		public void setAdministrationRoleName(String administrationRoleName) {
+			this.administrationRoleName = administrationRoleName;
 		}
 
 		public StackGroupDriftDetectionDetail getStackGroupDriftDetectionDetail() {
@@ -177,78 +171,41 @@ public class GetStackGroupOperationResponse extends AcsResponse {
 			this.stackGroupDriftDetectionDetail = stackGroupDriftDetectionDetail;
 		}
 
-		public static class OperationPreferences {
+		public OperationPreferences getOperationPreferences() {
+			return this.operationPreferences;
+		}
 
-			private Integer failureToleranceCount;
+		public void setOperationPreferences(OperationPreferences operationPreferences) {
+			this.operationPreferences = operationPreferences;
+		}
 
-			private Integer failureTolerancePercentage;
+		public DeploymentTargets getDeploymentTargets() {
+			return this.deploymentTargets;
+		}
 
-			private Integer maxConcurrentCount;
-
-			private Integer maxConcurrentPercentage;
-
-			private List<String> regionIdsOrder;
-
-			public Integer getFailureToleranceCount() {
-				return this.failureToleranceCount;
-			}
-
-			public void setFailureToleranceCount(Integer failureToleranceCount) {
-				this.failureToleranceCount = failureToleranceCount;
-			}
-
-			public Integer getFailureTolerancePercentage() {
-				return this.failureTolerancePercentage;
-			}
-
-			public void setFailureTolerancePercentage(Integer failureTolerancePercentage) {
-				this.failureTolerancePercentage = failureTolerancePercentage;
-			}
-
-			public Integer getMaxConcurrentCount() {
-				return this.maxConcurrentCount;
-			}
-
-			public void setMaxConcurrentCount(Integer maxConcurrentCount) {
-				this.maxConcurrentCount = maxConcurrentCount;
-			}
-
-			public Integer getMaxConcurrentPercentage() {
-				return this.maxConcurrentPercentage;
-			}
-
-			public void setMaxConcurrentPercentage(Integer maxConcurrentPercentage) {
-				this.maxConcurrentPercentage = maxConcurrentPercentage;
-			}
-
-			public List<String> getRegionIdsOrder() {
-				return this.regionIdsOrder;
-			}
-
-			public void setRegionIdsOrder(List<String> regionIdsOrder) {
-				this.regionIdsOrder = regionIdsOrder;
-			}
+		public void setDeploymentTargets(DeploymentTargets deploymentTargets) {
+			this.deploymentTargets = deploymentTargets;
 		}
 
 		public static class StackGroupDriftDetectionDetail {
 
 			private String driftDetectionTime;
 
-			private String stackGroupDriftStatus;
-
-			private String driftDetectionStatus;
-
-			private Integer driftedStackInstancesCount;
+			private Integer totalStackInstancesCount;
 
 			private Integer failedStackInstancesCount;
 
-			private Integer cancelledStackInstancesCount;
+			private String driftDetectionStatus;
+
+			private String stackGroupDriftStatus;
 
 			private Integer inProgressStackInstancesCount;
 
 			private Integer inSyncStackInstancesCount;
 
-			private Integer totalStackInstancesCount;
+			private Integer cancelledStackInstancesCount;
+
+			private Integer driftedStackInstancesCount;
 
 			public String getDriftDetectionTime() {
 				return this.driftDetectionTime;
@@ -258,28 +215,12 @@ public class GetStackGroupOperationResponse extends AcsResponse {
 				this.driftDetectionTime = driftDetectionTime;
 			}
 
-			public String getStackGroupDriftStatus() {
-				return this.stackGroupDriftStatus;
+			public Integer getTotalStackInstancesCount() {
+				return this.totalStackInstancesCount;
 			}
 
-			public void setStackGroupDriftStatus(String stackGroupDriftStatus) {
-				this.stackGroupDriftStatus = stackGroupDriftStatus;
-			}
-
-			public String getDriftDetectionStatus() {
-				return this.driftDetectionStatus;
-			}
-
-			public void setDriftDetectionStatus(String driftDetectionStatus) {
-				this.driftDetectionStatus = driftDetectionStatus;
-			}
-
-			public Integer getDriftedStackInstancesCount() {
-				return this.driftedStackInstancesCount;
-			}
-
-			public void setDriftedStackInstancesCount(Integer driftedStackInstancesCount) {
-				this.driftedStackInstancesCount = driftedStackInstancesCount;
+			public void setTotalStackInstancesCount(Integer totalStackInstancesCount) {
+				this.totalStackInstancesCount = totalStackInstancesCount;
 			}
 
 			public Integer getFailedStackInstancesCount() {
@@ -290,12 +231,20 @@ public class GetStackGroupOperationResponse extends AcsResponse {
 				this.failedStackInstancesCount = failedStackInstancesCount;
 			}
 
-			public Integer getCancelledStackInstancesCount() {
-				return this.cancelledStackInstancesCount;
+			public String getDriftDetectionStatus() {
+				return this.driftDetectionStatus;
 			}
 
-			public void setCancelledStackInstancesCount(Integer cancelledStackInstancesCount) {
-				this.cancelledStackInstancesCount = cancelledStackInstancesCount;
+			public void setDriftDetectionStatus(String driftDetectionStatus) {
+				this.driftDetectionStatus = driftDetectionStatus;
+			}
+
+			public String getStackGroupDriftStatus() {
+				return this.stackGroupDriftStatus;
+			}
+
+			public void setStackGroupDriftStatus(String stackGroupDriftStatus) {
+				this.stackGroupDriftStatus = stackGroupDriftStatus;
 			}
 
 			public Integer getInProgressStackInstancesCount() {
@@ -314,12 +263,96 @@ public class GetStackGroupOperationResponse extends AcsResponse {
 				this.inSyncStackInstancesCount = inSyncStackInstancesCount;
 			}
 
-			public Integer getTotalStackInstancesCount() {
-				return this.totalStackInstancesCount;
+			public Integer getCancelledStackInstancesCount() {
+				return this.cancelledStackInstancesCount;
 			}
 
-			public void setTotalStackInstancesCount(Integer totalStackInstancesCount) {
-				this.totalStackInstancesCount = totalStackInstancesCount;
+			public void setCancelledStackInstancesCount(Integer cancelledStackInstancesCount) {
+				this.cancelledStackInstancesCount = cancelledStackInstancesCount;
+			}
+
+			public Integer getDriftedStackInstancesCount() {
+				return this.driftedStackInstancesCount;
+			}
+
+			public void setDriftedStackInstancesCount(Integer driftedStackInstancesCount) {
+				this.driftedStackInstancesCount = driftedStackInstancesCount;
+			}
+		}
+
+		public static class OperationPreferences {
+
+			private Integer maxConcurrentCount;
+
+			private Integer failureToleranceCount;
+
+			private Integer maxConcurrentPercentage;
+
+			private Integer failureTolerancePercentage;
+
+			private List<String> regionIdsOrder;
+
+			public Integer getMaxConcurrentCount() {
+				return this.maxConcurrentCount;
+			}
+
+			public void setMaxConcurrentCount(Integer maxConcurrentCount) {
+				this.maxConcurrentCount = maxConcurrentCount;
+			}
+
+			public Integer getFailureToleranceCount() {
+				return this.failureToleranceCount;
+			}
+
+			public void setFailureToleranceCount(Integer failureToleranceCount) {
+				this.failureToleranceCount = failureToleranceCount;
+			}
+
+			public Integer getMaxConcurrentPercentage() {
+				return this.maxConcurrentPercentage;
+			}
+
+			public void setMaxConcurrentPercentage(Integer maxConcurrentPercentage) {
+				this.maxConcurrentPercentage = maxConcurrentPercentage;
+			}
+
+			public Integer getFailureTolerancePercentage() {
+				return this.failureTolerancePercentage;
+			}
+
+			public void setFailureTolerancePercentage(Integer failureTolerancePercentage) {
+				this.failureTolerancePercentage = failureTolerancePercentage;
+			}
+
+			public List<String> getRegionIdsOrder() {
+				return this.regionIdsOrder;
+			}
+
+			public void setRegionIdsOrder(List<String> regionIdsOrder) {
+				this.regionIdsOrder = regionIdsOrder;
+			}
+		}
+
+		public static class DeploymentTargets {
+
+			private List<String> rdFolderIds;
+
+			private List<String> accountIds;
+
+			public List<String> getRdFolderIds() {
+				return this.rdFolderIds;
+			}
+
+			public void setRdFolderIds(List<String> rdFolderIds) {
+				this.rdFolderIds = rdFolderIds;
+			}
+
+			public List<String> getAccountIds() {
+				return this.accountIds;
+			}
+
+			public void setAccountIds(List<String> accountIds) {
+				this.accountIds = accountIds;
 			}
 		}
 	}

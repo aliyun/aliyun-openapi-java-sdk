@@ -27,17 +27,18 @@ public class ListStackGroupOperationResultsResponseUnmarshaller {
 	public static ListStackGroupOperationResultsResponse unmarshall(ListStackGroupOperationResultsResponse listStackGroupOperationResultsResponse, UnmarshallerContext _ctx) {
 		
 		listStackGroupOperationResultsResponse.setRequestId(_ctx.stringValue("ListStackGroupOperationResultsResponse.RequestId"));
-		listStackGroupOperationResultsResponse.setPageNumber(_ctx.integerValue("ListStackGroupOperationResultsResponse.PageNumber"));
-		listStackGroupOperationResultsResponse.setPageSize(_ctx.integerValue("ListStackGroupOperationResultsResponse.PageSize"));
 		listStackGroupOperationResultsResponse.setTotalCount(_ctx.integerValue("ListStackGroupOperationResultsResponse.TotalCount"));
+		listStackGroupOperationResultsResponse.setPageSize(_ctx.integerValue("ListStackGroupOperationResultsResponse.PageSize"));
+		listStackGroupOperationResultsResponse.setPageNumber(_ctx.integerValue("ListStackGroupOperationResultsResponse.PageNumber"));
 
 		List<StackGroupOperationResult> stackGroupOperationResults = new ArrayList<StackGroupOperationResult>();
 		for (int i = 0; i < _ctx.lengthValue("ListStackGroupOperationResultsResponse.StackGroupOperationResults.Length"); i++) {
 			StackGroupOperationResult stackGroupOperationResult = new StackGroupOperationResult();
-			stackGroupOperationResult.setAccountId(_ctx.stringValue("ListStackGroupOperationResultsResponse.StackGroupOperationResults["+ i +"].AccountId"));
-			stackGroupOperationResult.setRegionId(_ctx.stringValue("ListStackGroupOperationResultsResponse.StackGroupOperationResults["+ i +"].RegionId"));
 			stackGroupOperationResult.setStatus(_ctx.stringValue("ListStackGroupOperationResultsResponse.StackGroupOperationResults["+ i +"].Status"));
 			stackGroupOperationResult.setStatusReason(_ctx.stringValue("ListStackGroupOperationResultsResponse.StackGroupOperationResults["+ i +"].StatusReason"));
+			stackGroupOperationResult.setAccountId(_ctx.stringValue("ListStackGroupOperationResultsResponse.StackGroupOperationResults["+ i +"].AccountId"));
+			stackGroupOperationResult.setRegionId(_ctx.stringValue("ListStackGroupOperationResultsResponse.StackGroupOperationResults["+ i +"].RegionId"));
+			stackGroupOperationResult.setRdFolderId(_ctx.stringValue("ListStackGroupOperationResultsResponse.StackGroupOperationResults["+ i +"].RdFolderId"));
 
 			stackGroupOperationResults.add(stackGroupOperationResult);
 		}

@@ -30,6 +30,8 @@ public class DeleteStackInstancesRequest extends RpcAcsRequest<DeleteStackInstan
 
 	private String clientToken;
 
+	private Map<Object,Object> deploymentTargets;
+
 	private Boolean retainStacks;
 
 	private String stackGroupName;
@@ -58,6 +60,17 @@ public class DeleteStackInstancesRequest extends RpcAcsRequest<DeleteStackInstan
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public Map<Object,Object> getDeploymentTargets() {
+		return this.deploymentTargets;
+	}
+
+	public void setDeploymentTargets(Map<Object,Object> deploymentTargets) {
+		this.deploymentTargets = deploymentTargets;
+		if(deploymentTargets != null){
+			putQueryParameter("DeploymentTargets", new Gson().toJson(deploymentTargets));
 		}
 	}
 

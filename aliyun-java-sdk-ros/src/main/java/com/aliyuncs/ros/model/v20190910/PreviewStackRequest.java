@@ -38,9 +38,19 @@ public class PreviewStackRequest extends RpcAcsRequest<PreviewStackResponse> {
 
 	private List<Parameters> parameterss;
 
+	private String templateScratchId;
+
 	private String clientToken;
 
 	private String templateBody;
+
+	private Boolean enablePreConfig;
+
+	private Long parallelism;
+
+	private String stackId;
+
+	private String templateScratchRegionId;
 
 	private String templateURL;
 
@@ -125,6 +135,17 @@ public class PreviewStackRequest extends RpcAcsRequest<PreviewStackResponse> {
 		}	
 	}
 
+	public String getTemplateScratchId() {
+		return this.templateScratchId;
+	}
+
+	public void setTemplateScratchId(String templateScratchId) {
+		this.templateScratchId = templateScratchId;
+		if(templateScratchId != null){
+			putQueryParameter("TemplateScratchId", templateScratchId);
+		}
+	}
+
 	public String getClientToken() {
 		return this.clientToken;
 	}
@@ -144,6 +165,50 @@ public class PreviewStackRequest extends RpcAcsRequest<PreviewStackResponse> {
 		this.templateBody = templateBody;
 		if(templateBody != null){
 			putQueryParameter("TemplateBody", templateBody);
+		}
+	}
+
+	public Boolean getEnablePreConfig() {
+		return this.enablePreConfig;
+	}
+
+	public void setEnablePreConfig(Boolean enablePreConfig) {
+		this.enablePreConfig = enablePreConfig;
+		if(enablePreConfig != null){
+			putQueryParameter("EnablePreConfig", enablePreConfig.toString());
+		}
+	}
+
+	public Long getParallelism() {
+		return this.parallelism;
+	}
+
+	public void setParallelism(Long parallelism) {
+		this.parallelism = parallelism;
+		if(parallelism != null){
+			putQueryParameter("Parallelism", parallelism.toString());
+		}
+	}
+
+	public String getStackId() {
+		return this.stackId;
+	}
+
+	public void setStackId(String stackId) {
+		this.stackId = stackId;
+		if(stackId != null){
+			putQueryParameter("StackId", stackId);
+		}
+	}
+
+	public String getTemplateScratchRegionId() {
+		return this.templateScratchRegionId;
+	}
+
+	public void setTemplateScratchRegionId(String templateScratchRegionId) {
+		this.templateScratchRegionId = templateScratchRegionId;
+		if(templateScratchRegionId != null){
+			putQueryParameter("TemplateScratchRegionId", templateScratchRegionId);
 		}
 	}
 

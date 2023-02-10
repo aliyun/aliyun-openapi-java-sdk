@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ros.model.v20190910.GetStackGroupOperationResponse;
 import com.aliyuncs.ros.model.v20190910.GetStackGroupOperationResponse.StackGroupOperation;
+import com.aliyuncs.ros.model.v20190910.GetStackGroupOperationResponse.StackGroupOperation.DeploymentTargets;
 import com.aliyuncs.ros.model.v20190910.GetStackGroupOperationResponse.StackGroupOperation.OperationPreferences;
 import com.aliyuncs.ros.model.v20190910.GetStackGroupOperationResponse.StackGroupOperation.StackGroupDriftDetectionDetail;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -31,23 +32,35 @@ public class GetStackGroupOperationResponseUnmarshaller {
 		getStackGroupOperationResponse.setRequestId(_ctx.stringValue("GetStackGroupOperationResponse.RequestId"));
 
 		StackGroupOperation stackGroupOperation = new StackGroupOperation();
-		stackGroupOperation.setStackGroupName(_ctx.stringValue("GetStackGroupOperationResponse.StackGroupOperation.StackGroupName"));
+		stackGroupOperation.setStatus(_ctx.stringValue("GetStackGroupOperationResponse.StackGroupOperation.Status"));
 		stackGroupOperation.setStackGroupId(_ctx.stringValue("GetStackGroupOperationResponse.StackGroupOperation.StackGroupId"));
+		stackGroupOperation.setAction(_ctx.stringValue("GetStackGroupOperationResponse.StackGroupOperation.Action"));
+		stackGroupOperation.setCreateTime(_ctx.stringValue("GetStackGroupOperationResponse.StackGroupOperation.CreateTime"));
+		stackGroupOperation.setRetainStacks(_ctx.booleanValue("GetStackGroupOperationResponse.StackGroupOperation.RetainStacks"));
+		stackGroupOperation.setStackGroupName(_ctx.stringValue("GetStackGroupOperationResponse.StackGroupOperation.StackGroupName"));
 		stackGroupOperation.setOperationId(_ctx.stringValue("GetStackGroupOperationResponse.StackGroupOperation.OperationId"));
 		stackGroupOperation.setOperationDescription(_ctx.stringValue("GetStackGroupOperationResponse.StackGroupOperation.OperationDescription"));
-		stackGroupOperation.setCreateTime(_ctx.stringValue("GetStackGroupOperationResponse.StackGroupOperation.CreateTime"));
 		stackGroupOperation.setEndTime(_ctx.stringValue("GetStackGroupOperationResponse.StackGroupOperation.EndTime"));
-		stackGroupOperation.setAction(_ctx.stringValue("GetStackGroupOperationResponse.StackGroupOperation.Action"));
-		stackGroupOperation.setStatus(_ctx.stringValue("GetStackGroupOperationResponse.StackGroupOperation.Status"));
-		stackGroupOperation.setRetainStacks(_ctx.booleanValue("GetStackGroupOperationResponse.StackGroupOperation.RetainStacks"));
-		stackGroupOperation.setAdministratorRoleName(_ctx.stringValue("GetStackGroupOperationResponse.StackGroupOperation.AdministratorRoleName"));
 		stackGroupOperation.setExecutionRoleName(_ctx.stringValue("GetStackGroupOperationResponse.StackGroupOperation.ExecutionRoleName"));
+		stackGroupOperation.setAdministrationRoleName(_ctx.stringValue("GetStackGroupOperationResponse.StackGroupOperation.AdministrationRoleName"));
+
+		StackGroupDriftDetectionDetail stackGroupDriftDetectionDetail = new StackGroupDriftDetectionDetail();
+		stackGroupDriftDetectionDetail.setDriftDetectionTime(_ctx.stringValue("GetStackGroupOperationResponse.StackGroupOperation.StackGroupDriftDetectionDetail.DriftDetectionTime"));
+		stackGroupDriftDetectionDetail.setTotalStackInstancesCount(_ctx.integerValue("GetStackGroupOperationResponse.StackGroupOperation.StackGroupDriftDetectionDetail.TotalStackInstancesCount"));
+		stackGroupDriftDetectionDetail.setFailedStackInstancesCount(_ctx.integerValue("GetStackGroupOperationResponse.StackGroupOperation.StackGroupDriftDetectionDetail.FailedStackInstancesCount"));
+		stackGroupDriftDetectionDetail.setDriftDetectionStatus(_ctx.stringValue("GetStackGroupOperationResponse.StackGroupOperation.StackGroupDriftDetectionDetail.DriftDetectionStatus"));
+		stackGroupDriftDetectionDetail.setStackGroupDriftStatus(_ctx.stringValue("GetStackGroupOperationResponse.StackGroupOperation.StackGroupDriftDetectionDetail.StackGroupDriftStatus"));
+		stackGroupDriftDetectionDetail.setInProgressStackInstancesCount(_ctx.integerValue("GetStackGroupOperationResponse.StackGroupOperation.StackGroupDriftDetectionDetail.InProgressStackInstancesCount"));
+		stackGroupDriftDetectionDetail.setInSyncStackInstancesCount(_ctx.integerValue("GetStackGroupOperationResponse.StackGroupOperation.StackGroupDriftDetectionDetail.InSyncStackInstancesCount"));
+		stackGroupDriftDetectionDetail.setCancelledStackInstancesCount(_ctx.integerValue("GetStackGroupOperationResponse.StackGroupOperation.StackGroupDriftDetectionDetail.CancelledStackInstancesCount"));
+		stackGroupDriftDetectionDetail.setDriftedStackInstancesCount(_ctx.integerValue("GetStackGroupOperationResponse.StackGroupOperation.StackGroupDriftDetectionDetail.DriftedStackInstancesCount"));
+		stackGroupOperation.setStackGroupDriftDetectionDetail(stackGroupDriftDetectionDetail);
 
 		OperationPreferences operationPreferences = new OperationPreferences();
-		operationPreferences.setFailureToleranceCount(_ctx.integerValue("GetStackGroupOperationResponse.StackGroupOperation.OperationPreferences.FailureToleranceCount"));
-		operationPreferences.setFailureTolerancePercentage(_ctx.integerValue("GetStackGroupOperationResponse.StackGroupOperation.OperationPreferences.FailureTolerancePercentage"));
 		operationPreferences.setMaxConcurrentCount(_ctx.integerValue("GetStackGroupOperationResponse.StackGroupOperation.OperationPreferences.MaxConcurrentCount"));
+		operationPreferences.setFailureToleranceCount(_ctx.integerValue("GetStackGroupOperationResponse.StackGroupOperation.OperationPreferences.FailureToleranceCount"));
 		operationPreferences.setMaxConcurrentPercentage(_ctx.integerValue("GetStackGroupOperationResponse.StackGroupOperation.OperationPreferences.MaxConcurrentPercentage"));
+		operationPreferences.setFailureTolerancePercentage(_ctx.integerValue("GetStackGroupOperationResponse.StackGroupOperation.OperationPreferences.FailureTolerancePercentage"));
 
 		List<String> regionIdsOrder = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetStackGroupOperationResponse.StackGroupOperation.OperationPreferences.RegionIdsOrder.Length"); i++) {
@@ -56,17 +69,20 @@ public class GetStackGroupOperationResponseUnmarshaller {
 		operationPreferences.setRegionIdsOrder(regionIdsOrder);
 		stackGroupOperation.setOperationPreferences(operationPreferences);
 
-		StackGroupDriftDetectionDetail stackGroupDriftDetectionDetail = new StackGroupDriftDetectionDetail();
-		stackGroupDriftDetectionDetail.setDriftDetectionTime(_ctx.stringValue("GetStackGroupOperationResponse.StackGroupOperation.StackGroupDriftDetectionDetail.DriftDetectionTime"));
-		stackGroupDriftDetectionDetail.setStackGroupDriftStatus(_ctx.stringValue("GetStackGroupOperationResponse.StackGroupOperation.StackGroupDriftDetectionDetail.StackGroupDriftStatus"));
-		stackGroupDriftDetectionDetail.setDriftDetectionStatus(_ctx.stringValue("GetStackGroupOperationResponse.StackGroupOperation.StackGroupDriftDetectionDetail.DriftDetectionStatus"));
-		stackGroupDriftDetectionDetail.setDriftedStackInstancesCount(_ctx.integerValue("GetStackGroupOperationResponse.StackGroupOperation.StackGroupDriftDetectionDetail.DriftedStackInstancesCount"));
-		stackGroupDriftDetectionDetail.setFailedStackInstancesCount(_ctx.integerValue("GetStackGroupOperationResponse.StackGroupOperation.StackGroupDriftDetectionDetail.FailedStackInstancesCount"));
-		stackGroupDriftDetectionDetail.setCancelledStackInstancesCount(_ctx.integerValue("GetStackGroupOperationResponse.StackGroupOperation.StackGroupDriftDetectionDetail.CancelledStackInstancesCount"));
-		stackGroupDriftDetectionDetail.setInProgressStackInstancesCount(_ctx.integerValue("GetStackGroupOperationResponse.StackGroupOperation.StackGroupDriftDetectionDetail.InProgressStackInstancesCount"));
-		stackGroupDriftDetectionDetail.setInSyncStackInstancesCount(_ctx.integerValue("GetStackGroupOperationResponse.StackGroupOperation.StackGroupDriftDetectionDetail.InSyncStackInstancesCount"));
-		stackGroupDriftDetectionDetail.setTotalStackInstancesCount(_ctx.integerValue("GetStackGroupOperationResponse.StackGroupOperation.StackGroupDriftDetectionDetail.TotalStackInstancesCount"));
-		stackGroupOperation.setStackGroupDriftDetectionDetail(stackGroupDriftDetectionDetail);
+		DeploymentTargets deploymentTargets = new DeploymentTargets();
+
+		List<String> rdFolderIds = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("GetStackGroupOperationResponse.StackGroupOperation.DeploymentTargets.RdFolderIds.Length"); i++) {
+			rdFolderIds.add(_ctx.stringValue("GetStackGroupOperationResponse.StackGroupOperation.DeploymentTargets.RdFolderIds["+ i +"]"));
+		}
+		deploymentTargets.setRdFolderIds(rdFolderIds);
+
+		List<String> accountIds = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("GetStackGroupOperationResponse.StackGroupOperation.DeploymentTargets.AccountIds.Length"); i++) {
+			accountIds.add(_ctx.stringValue("GetStackGroupOperationResponse.StackGroupOperation.DeploymentTargets.AccountIds["+ i +"]"));
+		}
+		deploymentTargets.setAccountIds(accountIds);
+		stackGroupOperation.setDeploymentTargets(deploymentTargets);
 		getStackGroupOperationResponse.setStackGroupOperation(stackGroupOperation);
 	 
 	 	return getStackGroupOperationResponse;

@@ -23,8 +23,8 @@ public class UpdateStackTemplateByResourcesResponseUnmarshaller {
 	public static UpdateStackTemplateByResourcesResponse unmarshall(UpdateStackTemplateByResourcesResponse updateStackTemplateByResourcesResponse, UnmarshallerContext _ctx) {
 		
 		updateStackTemplateByResourcesResponse.setRequestId(_ctx.stringValue("UpdateStackTemplateByResourcesResponse.RequestId"));
-		updateStackTemplateByResourcesResponse.setOldTemplateBody(_ctx.stringValue("UpdateStackTemplateByResourcesResponse.OldTemplateBody"));
 		updateStackTemplateByResourcesResponse.setNewTemplateBody(_ctx.stringValue("UpdateStackTemplateByResourcesResponse.NewTemplateBody"));
+		updateStackTemplateByResourcesResponse.setOldTemplateBody(_ctx.stringValue("UpdateStackTemplateByResourcesResponse.OldTemplateBody"));
 	 
 	 	return updateStackTemplateByResourcesResponse;
 	}

@@ -26,19 +26,19 @@ public class GetStackDriftDetectionStatusResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String driftDetectionId;
-
 	private String driftDetectionTime;
-
-	private String driftDetectionStatus;
 
 	private String driftDetectionStatusReason;
 
+	private Integer driftedStackResourceCount;
+
 	private String stackDriftStatus;
+
+	private String driftDetectionStatus;
 
 	private String stackId;
 
-	private Integer driftedStackResourceCount;
+	private String driftDetectionId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -46,14 +46,6 @@ public class GetStackDriftDetectionStatusResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getDriftDetectionId() {
-		return this.driftDetectionId;
-	}
-
-	public void setDriftDetectionId(String driftDetectionId) {
-		this.driftDetectionId = driftDetectionId;
 	}
 
 	public String getDriftDetectionTime() {
@@ -64,20 +56,20 @@ public class GetStackDriftDetectionStatusResponse extends AcsResponse {
 		this.driftDetectionTime = driftDetectionTime;
 	}
 
-	public String getDriftDetectionStatus() {
-		return this.driftDetectionStatus;
-	}
-
-	public void setDriftDetectionStatus(String driftDetectionStatus) {
-		this.driftDetectionStatus = driftDetectionStatus;
-	}
-
 	public String getDriftDetectionStatusReason() {
 		return this.driftDetectionStatusReason;
 	}
 
 	public void setDriftDetectionStatusReason(String driftDetectionStatusReason) {
 		this.driftDetectionStatusReason = driftDetectionStatusReason;
+	}
+
+	public Integer getDriftedStackResourceCount() {
+		return this.driftedStackResourceCount;
+	}
+
+	public void setDriftedStackResourceCount(Integer driftedStackResourceCount) {
+		this.driftedStackResourceCount = driftedStackResourceCount;
 	}
 
 	public String getStackDriftStatus() {
@@ -88,6 +80,14 @@ public class GetStackDriftDetectionStatusResponse extends AcsResponse {
 		this.stackDriftStatus = stackDriftStatus;
 	}
 
+	public String getDriftDetectionStatus() {
+		return this.driftDetectionStatus;
+	}
+
+	public void setDriftDetectionStatus(String driftDetectionStatus) {
+		this.driftDetectionStatus = driftDetectionStatus;
+	}
+
 	public String getStackId() {
 		return this.stackId;
 	}
@@ -96,12 +96,12 @@ public class GetStackDriftDetectionStatusResponse extends AcsResponse {
 		this.stackId = stackId;
 	}
 
-	public Integer getDriftedStackResourceCount() {
-		return this.driftedStackResourceCount;
+	public String getDriftDetectionId() {
+		return this.driftDetectionId;
 	}
 
-	public void setDriftedStackResourceCount(Integer driftedStackResourceCount) {
-		this.driftedStackResourceCount = driftedStackResourceCount;
+	public void setDriftDetectionId(String driftDetectionId) {
+		this.driftDetectionId = driftDetectionId;
 	}
 
 	@Override

@@ -47,32 +47,34 @@ public class GetStackInstanceResponse extends AcsResponse {
 
 	public static class StackInstance {
 
-		private String stackGroupName;
+		private String status;
 
 		private String stackGroupId;
 
 		private String stackId;
 
+		private String driftDetectionTime;
+
+		private String stackDriftStatus;
+
+		private String statusReason;
+
+		private String stackGroupName;
+
 		private String accountId;
 
 		private String regionId;
 
-		private String status;
-
-		private String statusReason;
-
-		private String stackDriftStatus;
-
-		private String driftDetectionTime;
+		private String rdFolderId;
 
 		private List<ParameterOverride> parameterOverrides;
 
-		public String getStackGroupName() {
-			return this.stackGroupName;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setStackGroupName(String stackGroupName) {
-			this.stackGroupName = stackGroupName;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getStackGroupId() {
@@ -91,6 +93,38 @@ public class GetStackInstanceResponse extends AcsResponse {
 			this.stackId = stackId;
 		}
 
+		public String getDriftDetectionTime() {
+			return this.driftDetectionTime;
+		}
+
+		public void setDriftDetectionTime(String driftDetectionTime) {
+			this.driftDetectionTime = driftDetectionTime;
+		}
+
+		public String getStackDriftStatus() {
+			return this.stackDriftStatus;
+		}
+
+		public void setStackDriftStatus(String stackDriftStatus) {
+			this.stackDriftStatus = stackDriftStatus;
+		}
+
+		public String getStatusReason() {
+			return this.statusReason;
+		}
+
+		public void setStatusReason(String statusReason) {
+			this.statusReason = statusReason;
+		}
+
+		public String getStackGroupName() {
+			return this.stackGroupName;
+		}
+
+		public void setStackGroupName(String stackGroupName) {
+			this.stackGroupName = stackGroupName;
+		}
+
 		public String getAccountId() {
 			return this.accountId;
 		}
@@ -107,36 +141,12 @@ public class GetStackInstanceResponse extends AcsResponse {
 			this.regionId = regionId;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getRdFolderId() {
+			return this.rdFolderId;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getStatusReason() {
-			return this.statusReason;
-		}
-
-		public void setStatusReason(String statusReason) {
-			this.statusReason = statusReason;
-		}
-
-		public String getStackDriftStatus() {
-			return this.stackDriftStatus;
-		}
-
-		public void setStackDriftStatus(String stackDriftStatus) {
-			this.stackDriftStatus = stackDriftStatus;
-		}
-
-		public String getDriftDetectionTime() {
-			return this.driftDetectionTime;
-		}
-
-		public void setDriftDetectionTime(String driftDetectionTime) {
-			this.driftDetectionTime = driftDetectionTime;
+		public void setRdFolderId(String rdFolderId) {
+			this.rdFolderId = rdFolderId;
 		}
 
 		public List<ParameterOverride> getParameterOverrides() {
