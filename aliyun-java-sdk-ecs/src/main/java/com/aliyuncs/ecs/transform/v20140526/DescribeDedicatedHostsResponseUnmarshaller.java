@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.ecs.model.v20140526.DescribeDedicatedHostsResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeDedicatedHostsResponse.DedicatedHost;
 import com.aliyuncs.ecs.model.v20140526.DescribeDedicatedHostsResponse.DedicatedHost.Capacity;
+import com.aliyuncs.ecs.model.v20140526.DescribeDedicatedHostsResponse.DedicatedHost.Capacity.SocketCapacity;
 import com.aliyuncs.ecs.model.v20140526.DescribeDedicatedHostsResponse.DedicatedHost.HostDetailInfo;
 import com.aliyuncs.ecs.model.v20140526.DescribeDedicatedHostsResponse.DedicatedHost.Instance;
 import com.aliyuncs.ecs.model.v20140526.DescribeDedicatedHostsResponse.DedicatedHost.NetworkAttributes;
@@ -92,6 +93,19 @@ public class DescribeDedicatedHostsResponseUnmarshaller {
 			capacity.setAvailableLocalStorage(_ctx.integerValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Capacity.AvailableLocalStorage"));
 			capacity.setAvailableVcpus(_ctx.integerValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Capacity.AvailableVcpus"));
 			capacity.setAvailableVgpus(_ctx.integerValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Capacity.AvailableVgpus"));
+
+			List<SocketCapacity> socketCapacities = new ArrayList<SocketCapacity>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Capacity.SocketCapacities.Length"); j++) {
+				SocketCapacity socketCapacity = new SocketCapacity();
+				socketCapacity.setSocketId(_ctx.integerValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Capacity.SocketCapacities["+ j +"].SocketId"));
+				socketCapacity.setAvailableMemory(_ctx.floatValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Capacity.SocketCapacities["+ j +"].AvailableMemory"));
+				socketCapacity.setTotalMemory(_ctx.floatValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Capacity.SocketCapacities["+ j +"].TotalMemory"));
+				socketCapacity.setAvailableVcpu(_ctx.integerValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Capacity.SocketCapacities["+ j +"].AvailableVcpu"));
+				socketCapacity.setTotalVcpu(_ctx.integerValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Capacity.SocketCapacities["+ j +"].TotalVcpu"));
+
+				socketCapacities.add(socketCapacity);
+			}
+			capacity.setSocketCapacities(socketCapacities);
 			dedicatedHost.setCapacity(capacity);
 
 			NetworkAttributes networkAttributes = new NetworkAttributes();
@@ -108,6 +122,7 @@ public class DescribeDedicatedHostsResponseUnmarshaller {
 				Instance instance = new Instance();
 				instance.setInstanceType(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Instances["+ j +"].InstanceType"));
 				instance.setInstanceId(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Instances["+ j +"].InstanceId"));
+				instance.setSocketId(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].Instances["+ j +"].SocketId"));
 
 				instances.add(instance);
 			}

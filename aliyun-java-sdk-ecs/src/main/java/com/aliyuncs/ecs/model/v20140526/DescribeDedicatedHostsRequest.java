@@ -30,6 +30,8 @@ public class DescribeDedicatedHostsRequest extends RpcAcsRequest<DescribeDedicat
 
 	private Long resourceOwnerId;
 
+	private String socketDetails;
+
 	private Integer pageNumber;
 
 	private String resourceGroupId;
@@ -83,6 +85,17 @@ public class DescribeDedicatedHostsRequest extends RpcAcsRequest<DescribeDedicat
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getSocketDetails() {
+		return this.socketDetails;
+	}
+
+	public void setSocketDetails(String socketDetails) {
+		this.socketDetails = socketDetails;
+		if(socketDetails != null){
+			putQueryParameter("SocketDetails", socketDetails);
 		}
 	}
 

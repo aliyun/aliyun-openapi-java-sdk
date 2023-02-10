@@ -1,3 +1,9 @@
+2023-02-10 Version: 4.24.56
+- Support TagPolicy Verify NoTag.
+- Fixed bugs for DescribeDemands error code.
+- Add encrypted disk ErrorCode.
+- DescribeDedicatedHosts supports SocketDetails param to check socket capacities of specified dedicated hosts.
+
 2023-02-07 Version: 4.24.55
 - Support tag.
 
