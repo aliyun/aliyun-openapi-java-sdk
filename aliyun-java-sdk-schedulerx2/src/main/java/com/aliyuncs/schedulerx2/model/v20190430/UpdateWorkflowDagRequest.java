@@ -22,29 +22,36 @@ import com.aliyuncs.schedulerx2.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetJobInstanceListRequest extends RpcAcsRequest<GetJobInstanceListResponse> {
+public class UpdateWorkflowDagRequest extends RpcAcsRequest<UpdateWorkflowDagResponse> {
 	   
+
+	private String dagJson;
 
 	private String namespaceSource;
 
 	private String groupId;
 
-	private Long startTimestamp;
-
-	private Long endTimestamp;
-
-	private Long jobId;
-
 	private String namespace;
 
-	private Integer status;
-	public GetJobInstanceListRequest() {
-		super("schedulerx2", "2019-04-30", "GetJobInstanceList");
-		setMethod(MethodType.GET);
+	private String workflowId;
+	public UpdateWorkflowDagRequest() {
+		super("schedulerx2", "2019-04-30", "UpdateWorkflowDag");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDagJson() {
+		return this.dagJson;
+	}
+
+	public void setDagJson(String dagJson) {
+		this.dagJson = dagJson;
+		if(dagJson != null){
+			putBodyParameter("DagJson", dagJson);
+		}
 	}
 
 	public String getNamespaceSource() {
@@ -54,7 +61,7 @@ public class GetJobInstanceListRequest extends RpcAcsRequest<GetJobInstanceListR
 	public void setNamespaceSource(String namespaceSource) {
 		this.namespaceSource = namespaceSource;
 		if(namespaceSource != null){
-			putQueryParameter("NamespaceSource", namespaceSource);
+			putBodyParameter("NamespaceSource", namespaceSource);
 		}
 	}
 
@@ -65,40 +72,7 @@ public class GetJobInstanceListRequest extends RpcAcsRequest<GetJobInstanceListR
 	public void setGroupId(String groupId) {
 		this.groupId = groupId;
 		if(groupId != null){
-			putQueryParameter("GroupId", groupId);
-		}
-	}
-
-	public Long getStartTimestamp() {
-		return this.startTimestamp;
-	}
-
-	public void setStartTimestamp(Long startTimestamp) {
-		this.startTimestamp = startTimestamp;
-		if(startTimestamp != null){
-			putQueryParameter("StartTimestamp", startTimestamp.toString());
-		}
-	}
-
-	public Long getEndTimestamp() {
-		return this.endTimestamp;
-	}
-
-	public void setEndTimestamp(Long endTimestamp) {
-		this.endTimestamp = endTimestamp;
-		if(endTimestamp != null){
-			putQueryParameter("EndTimestamp", endTimestamp.toString());
-		}
-	}
-
-	public Long getJobId() {
-		return this.jobId;
-	}
-
-	public void setJobId(Long jobId) {
-		this.jobId = jobId;
-		if(jobId != null){
-			putQueryParameter("JobId", jobId.toString());
+			putBodyParameter("GroupId", groupId);
 		}
 	}
 
@@ -109,24 +83,24 @@ public class GetJobInstanceListRequest extends RpcAcsRequest<GetJobInstanceListR
 	public void setNamespace(String namespace) {
 		this.namespace = namespace;
 		if(namespace != null){
-			putQueryParameter("Namespace", namespace);
+			putBodyParameter("Namespace", namespace);
 		}
 	}
 
-	public Integer getStatus() {
-		return this.status;
+	public String getWorkflowId() {
+		return this.workflowId;
 	}
 
-	public void setStatus(Integer status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status.toString());
+	public void setWorkflowId(String workflowId) {
+		this.workflowId = workflowId;
+		if(workflowId != null){
+			putBodyParameter("WorkflowId", workflowId);
 		}
 	}
 
 	@Override
-	public Class<GetJobInstanceListResponse> getResponseClass() {
-		return GetJobInstanceListResponse.class;
+	public Class<UpdateWorkflowDagResponse> getResponseClass() {
+		return UpdateWorkflowDagResponse.class;
 	}
 
 }

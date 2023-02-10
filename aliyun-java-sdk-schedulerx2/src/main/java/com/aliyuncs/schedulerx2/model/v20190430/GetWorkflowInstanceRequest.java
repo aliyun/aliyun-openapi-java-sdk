@@ -22,24 +22,20 @@ import com.aliyuncs.schedulerx2.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetJobInstanceListRequest extends RpcAcsRequest<GetJobInstanceListResponse> {
+public class GetWorkflowInstanceRequest extends RpcAcsRequest<GetWorkflowInstanceResponse> {
 	   
 
 	private String namespaceSource;
 
 	private String groupId;
 
-	private Long startTimestamp;
-
-	private Long endTimestamp;
-
-	private Long jobId;
+	private Long wfInstanceId;
 
 	private String namespace;
 
-	private Integer status;
-	public GetJobInstanceListRequest() {
-		super("schedulerx2", "2019-04-30", "GetJobInstanceList");
+	private Long workflowId;
+	public GetWorkflowInstanceRequest() {
+		super("schedulerx2", "2019-04-30", "GetWorkflowInstance");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -69,36 +65,14 @@ public class GetJobInstanceListRequest extends RpcAcsRequest<GetJobInstanceListR
 		}
 	}
 
-	public Long getStartTimestamp() {
-		return this.startTimestamp;
+	public Long getWfInstanceId() {
+		return this.wfInstanceId;
 	}
 
-	public void setStartTimestamp(Long startTimestamp) {
-		this.startTimestamp = startTimestamp;
-		if(startTimestamp != null){
-			putQueryParameter("StartTimestamp", startTimestamp.toString());
-		}
-	}
-
-	public Long getEndTimestamp() {
-		return this.endTimestamp;
-	}
-
-	public void setEndTimestamp(Long endTimestamp) {
-		this.endTimestamp = endTimestamp;
-		if(endTimestamp != null){
-			putQueryParameter("EndTimestamp", endTimestamp.toString());
-		}
-	}
-
-	public Long getJobId() {
-		return this.jobId;
-	}
-
-	public void setJobId(Long jobId) {
-		this.jobId = jobId;
-		if(jobId != null){
-			putQueryParameter("JobId", jobId.toString());
+	public void setWfInstanceId(Long wfInstanceId) {
+		this.wfInstanceId = wfInstanceId;
+		if(wfInstanceId != null){
+			putQueryParameter("WfInstanceId", wfInstanceId.toString());
 		}
 	}
 
@@ -113,20 +87,20 @@ public class GetJobInstanceListRequest extends RpcAcsRequest<GetJobInstanceListR
 		}
 	}
 
-	public Integer getStatus() {
-		return this.status;
+	public Long getWorkflowId() {
+		return this.workflowId;
 	}
 
-	public void setStatus(Integer status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status.toString());
+	public void setWorkflowId(Long workflowId) {
+		this.workflowId = workflowId;
+		if(workflowId != null){
+			putQueryParameter("WorkflowId", workflowId.toString());
 		}
 	}
 
 	@Override
-	public Class<GetJobInstanceListResponse> getResponseClass() {
-		return GetJobInstanceListResponse.class;
+	public Class<GetWorkflowInstanceResponse> getResponseClass() {
+		return GetWorkflowInstanceResponse.class;
 	}
 
 }

@@ -89,6 +89,8 @@ public class ListGroupsResponse extends AcsResponse {
 
 		public static class AppGroup {
 
+			private Long appGroupId;
+
 			private String appName;
 
 			private String appKey;
@@ -96,6 +98,14 @@ public class ListGroupsResponse extends AcsResponse {
 			private String description;
 
 			private String groupId;
+
+			public Long getAppGroupId() {
+				return this.appGroupId;
+			}
+
+			public void setAppGroupId(Long appGroupId) {
+				this.appGroupId = appGroupId;
+			}
 
 			public String getAppName() {
 				return this.appName;

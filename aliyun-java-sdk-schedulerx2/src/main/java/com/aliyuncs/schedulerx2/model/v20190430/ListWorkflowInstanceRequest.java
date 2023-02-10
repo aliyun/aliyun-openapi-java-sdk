@@ -22,24 +22,18 @@ import com.aliyuncs.schedulerx2.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetJobInstanceListRequest extends RpcAcsRequest<GetJobInstanceListResponse> {
+public class ListWorkflowInstanceRequest extends RpcAcsRequest<ListWorkflowInstanceResponse> {
 	   
 
 	private String namespaceSource;
 
 	private String groupId;
 
-	private Long startTimestamp;
-
-	private Long endTimestamp;
-
-	private Long jobId;
-
 	private String namespace;
 
-	private Integer status;
-	public GetJobInstanceListRequest() {
-		super("schedulerx2", "2019-04-30", "GetJobInstanceList");
+	private String workflowId;
+	public ListWorkflowInstanceRequest() {
+		super("schedulerx2", "2019-04-30", "ListWorkflowInstance");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -69,39 +63,6 @@ public class GetJobInstanceListRequest extends RpcAcsRequest<GetJobInstanceListR
 		}
 	}
 
-	public Long getStartTimestamp() {
-		return this.startTimestamp;
-	}
-
-	public void setStartTimestamp(Long startTimestamp) {
-		this.startTimestamp = startTimestamp;
-		if(startTimestamp != null){
-			putQueryParameter("StartTimestamp", startTimestamp.toString());
-		}
-	}
-
-	public Long getEndTimestamp() {
-		return this.endTimestamp;
-	}
-
-	public void setEndTimestamp(Long endTimestamp) {
-		this.endTimestamp = endTimestamp;
-		if(endTimestamp != null){
-			putQueryParameter("EndTimestamp", endTimestamp.toString());
-		}
-	}
-
-	public Long getJobId() {
-		return this.jobId;
-	}
-
-	public void setJobId(Long jobId) {
-		this.jobId = jobId;
-		if(jobId != null){
-			putQueryParameter("JobId", jobId.toString());
-		}
-	}
-
 	public String getNamespace() {
 		return this.namespace;
 	}
@@ -113,20 +74,20 @@ public class GetJobInstanceListRequest extends RpcAcsRequest<GetJobInstanceListR
 		}
 	}
 
-	public Integer getStatus() {
-		return this.status;
+	public String getWorkflowId() {
+		return this.workflowId;
 	}
 
-	public void setStatus(Integer status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status.toString());
+	public void setWorkflowId(String workflowId) {
+		this.workflowId = workflowId;
+		if(workflowId != null){
+			putQueryParameter("WorkflowId", workflowId);
 		}
 	}
 
 	@Override
-	public Class<GetJobInstanceListResponse> getResponseClass() {
-		return GetJobInstanceListResponse.class;
+	public Class<ListWorkflowInstanceResponse> getResponseClass() {
+		return ListWorkflowInstanceResponse.class;
 	}
 
 }

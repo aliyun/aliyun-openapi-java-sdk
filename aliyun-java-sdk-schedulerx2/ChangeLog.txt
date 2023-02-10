@@ -1,3 +1,11 @@
+2023-02-10 Version: 1.1.6
+- Support Create Workflow.
+- Support Update Workflow DAG.
+- Support Get Workflow Instance and DAG.
+- Support Retry Job Instance.
+- Support Get Log.
+- Create Job Add FailTimes and SuccessNoticeEnable.
+
 2022-11-02 Version: 1.1.5
 - ListJobs return JobType and XAttrs.
 - GetJobInfo return JobType and XAttrs.

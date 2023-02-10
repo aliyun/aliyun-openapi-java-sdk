@@ -22,24 +22,32 @@ import com.aliyuncs.schedulerx2.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetJobInstanceListRequest extends RpcAcsRequest<GetJobInstanceListResponse> {
+public class GetLogRequest extends RpcAcsRequest<GetLogResponse> {
 	   
 
 	private String namespaceSource;
 
-	private String groupId;
+	private Integer line;
 
 	private Long startTimestamp;
 
 	private Long endTimestamp;
 
-	private Long jobId;
+	private String jobId;
+
+	private String keyword;
+
+	private Integer offset;
+
+	private String groupId;
+
+	private Boolean reverse;
 
 	private String namespace;
 
-	private Integer status;
-	public GetJobInstanceListRequest() {
-		super("schedulerx2", "2019-04-30", "GetJobInstanceList");
+	private String jobInstanceId;
+	public GetLogRequest() {
+		super("schedulerx2", "2019-04-30", "GetLog");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -58,14 +66,14 @@ public class GetJobInstanceListRequest extends RpcAcsRequest<GetJobInstanceListR
 		}
 	}
 
-	public String getGroupId() {
-		return this.groupId;
+	public Integer getLine() {
+		return this.line;
 	}
 
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putQueryParameter("GroupId", groupId);
+	public void setLine(Integer line) {
+		this.line = line;
+		if(line != null){
+			putQueryParameter("Line", line.toString());
 		}
 	}
 
@@ -91,14 +99,58 @@ public class GetJobInstanceListRequest extends RpcAcsRequest<GetJobInstanceListR
 		}
 	}
 
-	public Long getJobId() {
+	public String getJobId() {
 		return this.jobId;
 	}
 
-	public void setJobId(Long jobId) {
+	public void setJobId(String jobId) {
 		this.jobId = jobId;
 		if(jobId != null){
-			putQueryParameter("JobId", jobId.toString());
+			putQueryParameter("JobId", jobId);
+		}
+	}
+
+	public String getKeyword() {
+		return this.keyword;
+	}
+
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
+		if(keyword != null){
+			putQueryParameter("Keyword", keyword);
+		}
+	}
+
+	public Integer getOffset() {
+		return this.offset;
+	}
+
+	public void setOffset(Integer offset) {
+		this.offset = offset;
+		if(offset != null){
+			putQueryParameter("Offset", offset.toString());
+		}
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
+		}
+	}
+
+	public Boolean getReverse() {
+		return this.reverse;
+	}
+
+	public void setReverse(Boolean reverse) {
+		this.reverse = reverse;
+		if(reverse != null){
+			putQueryParameter("Reverse", reverse.toString());
 		}
 	}
 
@@ -113,20 +165,20 @@ public class GetJobInstanceListRequest extends RpcAcsRequest<GetJobInstanceListR
 		}
 	}
 
-	public Integer getStatus() {
-		return this.status;
+	public String getJobInstanceId() {
+		return this.jobInstanceId;
 	}
 
-	public void setStatus(Integer status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status.toString());
+	public void setJobInstanceId(String jobInstanceId) {
+		this.jobInstanceId = jobInstanceId;
+		if(jobInstanceId != null){
+			putQueryParameter("JobInstanceId", jobInstanceId);
 		}
 	}
 
 	@Override
-	public Class<GetJobInstanceListResponse> getResponseClass() {
-		return GetJobInstanceListResponse.class;
+	public Class<GetLogResponse> getResponseClass() {
+		return GetLogResponse.class;
 	}
 
 }
