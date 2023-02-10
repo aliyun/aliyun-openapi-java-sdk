@@ -1,3 +1,6 @@
+2023-02-10 Version: 4.24.57
+- Add parameter DedicatedHostId for DescribePrice.
+
 2023-02-10 Version: 4.24.56
 - Support TagPolicy Verify NoTag.
 - Fixed bugs for DescribeDemands error code.

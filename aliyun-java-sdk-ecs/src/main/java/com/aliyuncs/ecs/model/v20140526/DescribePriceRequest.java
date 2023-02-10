@@ -82,6 +82,8 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 
 	private String scope;
 
+	private String schedulerOptionsDedicatedHostId;
+
 	private String instanceType;
 
 	private String dedicatedHostType;
@@ -427,6 +429,17 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 		this.scope = scope;
 		if(scope != null){
 			putQueryParameter("Scope", scope);
+		}
+	}
+
+	public String getSchedulerOptionsDedicatedHostId() {
+		return this.schedulerOptionsDedicatedHostId;
+	}
+
+	public void setSchedulerOptionsDedicatedHostId(String schedulerOptionsDedicatedHostId) {
+		this.schedulerOptionsDedicatedHostId = schedulerOptionsDedicatedHostId;
+		if(schedulerOptionsDedicatedHostId != null){
+			putQueryParameter("SchedulerOptions.DedicatedHostId", schedulerOptionsDedicatedHostId);
 		}
 	}
 
