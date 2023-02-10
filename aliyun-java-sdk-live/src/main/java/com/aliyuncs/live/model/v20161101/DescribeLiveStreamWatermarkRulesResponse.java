@@ -25,9 +25,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLiveStreamWatermarkRulesResponse extends AcsResponse {
 
+	private Integer total;
+
 	private String requestId;
 
 	private List<RuleInfo> ruleInfoList;
+
+	public Integer getTotal() {
+		return this.total;
+	}
+
+	public void setTotal(Integer total) {
+		this.total = total;
+	}
 
 	public String getRequestId() {
 		return this.requestId;

@@ -43,6 +43,8 @@ public class AddLiveStreamWatermarkRequest extends RpcAcsRequest<AddLiveStreamWa
 
 	private Integer transparency;
 
+	private String domain;
+
 	private String name;
 
 	private String offsetCorner;
@@ -153,6 +155,17 @@ public class AddLiveStreamWatermarkRequest extends RpcAcsRequest<AddLiveStreamWa
 		this.transparency = transparency;
 		if(transparency != null){
 			putQueryParameter("Transparency", transparency.toString());
+		}
+	}
+
+	public String getDomain() {
+		return this.domain;
+	}
+
+	public void setDomain(String domain) {
+		this.domain = domain;
+		if(domain != null){
+			putQueryParameter("Domain", domain);
 		}
 	}
 

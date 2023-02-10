@@ -22,48 +22,29 @@ import com.aliyuncs.live.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateLiveStreamRecordIndexFilesRequest extends RpcAcsRequest<CreateLiveStreamRecordIndexFilesResponse> {
+public class DescribeLiveDelayedStreamingUsageRequest extends RpcAcsRequest<DescribeLiveDelayedStreamingUsageResponse> {
 	   
-
-	private String ossEndpoint;
 
 	private String startTime;
 
-	private String ossObject;
-
-	private String appName;
-
-	private String securityToken;
-
-	private Boolean endTimeIncluded;
-
 	private String streamName;
 
-	private String ossBucket;
+	private String splitBy;
 
 	private String domainName;
 
 	private String endTime;
 
 	private Long ownerId;
-	public CreateLiveStreamRecordIndexFilesRequest() {
-		super("live", "2016-11-01", "CreateLiveStreamRecordIndexFiles", "live");
+
+	private String region;
+	public DescribeLiveDelayedStreamingUsageRequest() {
+		super("live", "2016-11-01", "DescribeLiveDelayedStreamingUsage", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getOssEndpoint() {
-		return this.ossEndpoint;
-	}
-
-	public void setOssEndpoint(String ossEndpoint) {
-		this.ossEndpoint = ossEndpoint;
-		if(ossEndpoint != null){
-			putQueryParameter("OssEndpoint", ossEndpoint);
-		}
 	}
 
 	public String getStartTime() {
@@ -74,50 +55,6 @@ public class CreateLiveStreamRecordIndexFilesRequest extends RpcAcsRequest<Creat
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public String getOssObject() {
-		return this.ossObject;
-	}
-
-	public void setOssObject(String ossObject) {
-		this.ossObject = ossObject;
-		if(ossObject != null){
-			putQueryParameter("OssObject", ossObject);
-		}
-	}
-
-	public String getAppName() {
-		return this.appName;
-	}
-
-	public void setAppName(String appName) {
-		this.appName = appName;
-		if(appName != null){
-			putQueryParameter("AppName", appName);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public Boolean getEndTimeIncluded() {
-		return this.endTimeIncluded;
-	}
-
-	public void setEndTimeIncluded(Boolean endTimeIncluded) {
-		this.endTimeIncluded = endTimeIncluded;
-		if(endTimeIncluded != null){
-			putQueryParameter("EndTimeIncluded", endTimeIncluded.toString());
 		}
 	}
 
@@ -132,14 +69,14 @@ public class CreateLiveStreamRecordIndexFilesRequest extends RpcAcsRequest<Creat
 		}
 	}
 
-	public String getOssBucket() {
-		return this.ossBucket;
+	public String getSplitBy() {
+		return this.splitBy;
 	}
 
-	public void setOssBucket(String ossBucket) {
-		this.ossBucket = ossBucket;
-		if(ossBucket != null){
-			putQueryParameter("OssBucket", ossBucket);
+	public void setSplitBy(String splitBy) {
+		this.splitBy = splitBy;
+		if(splitBy != null){
+			putQueryParameter("SplitBy", splitBy);
 		}
 	}
 
@@ -176,9 +113,20 @@ public class CreateLiveStreamRecordIndexFilesRequest extends RpcAcsRequest<Creat
 		}
 	}
 
+	public String getRegion() {
+		return this.region;
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
+		if(region != null){
+			putQueryParameter("Region", region);
+		}
+	}
+
 	@Override
-	public Class<CreateLiveStreamRecordIndexFilesResponse> getResponseClass() {
-		return CreateLiveStreamRecordIndexFilesResponse.class;
+	public Class<DescribeLiveDelayedStreamingUsageResponse> getResponseClass() {
+		return DescribeLiveDelayedStreamingUsageResponse.class;
 	}
 
 }

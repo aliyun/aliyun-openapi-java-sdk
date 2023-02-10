@@ -27,6 +27,7 @@ public class DescribeLiveStreamWatermarkRulesResponseUnmarshaller {
 	public static DescribeLiveStreamWatermarkRulesResponse unmarshall(DescribeLiveStreamWatermarkRulesResponse describeLiveStreamWatermarkRulesResponse, UnmarshallerContext _ctx) {
 		
 		describeLiveStreamWatermarkRulesResponse.setRequestId(_ctx.stringValue("DescribeLiveStreamWatermarkRulesResponse.RequestId"));
+		describeLiveStreamWatermarkRulesResponse.setTotal(_ctx.integerValue("DescribeLiveStreamWatermarkRulesResponse.Total"));
 
 		List<RuleInfo> ruleInfoList = new ArrayList<RuleInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLiveStreamWatermarkRulesResponse.RuleInfoList.Length"); i++) {

@@ -27,6 +27,8 @@ public class DescribeLiveDomainRecordUsageDataResponseUnmarshaller {
 	public static DescribeLiveDomainRecordUsageDataResponse unmarshall(DescribeLiveDomainRecordUsageDataResponse describeLiveDomainRecordUsageDataResponse, UnmarshallerContext _ctx) {
 		
 		describeLiveDomainRecordUsageDataResponse.setRequestId(_ctx.stringValue("DescribeLiveDomainRecordUsageDataResponse.RequestId"));
+		describeLiveDomainRecordUsageDataResponse.setEndTime(_ctx.stringValue("DescribeLiveDomainRecordUsageDataResponse.EndTime"));
+		describeLiveDomainRecordUsageDataResponse.setStartTime(_ctx.stringValue("DescribeLiveDomainRecordUsageDataResponse.StartTime"));
 
 		List<DataModule> recordUsageData = new ArrayList<DataModule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLiveDomainRecordUsageDataResponse.RecordUsageData.Length"); i++) {

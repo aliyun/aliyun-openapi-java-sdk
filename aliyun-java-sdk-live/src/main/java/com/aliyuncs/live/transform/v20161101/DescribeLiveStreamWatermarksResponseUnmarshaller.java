@@ -27,6 +27,7 @@ public class DescribeLiveStreamWatermarksResponseUnmarshaller {
 	public static DescribeLiveStreamWatermarksResponse unmarshall(DescribeLiveStreamWatermarksResponse describeLiveStreamWatermarksResponse, UnmarshallerContext _ctx) {
 		
 		describeLiveStreamWatermarksResponse.setRequestId(_ctx.stringValue("DescribeLiveStreamWatermarksResponse.RequestId"));
+		describeLiveStreamWatermarksResponse.setTotal(_ctx.integerValue("DescribeLiveStreamWatermarksResponse.Total"));
 
 		List<Watermark> watermarkList = new ArrayList<Watermark>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLiveStreamWatermarksResponse.WatermarkList.Length"); i++) {
@@ -41,6 +42,7 @@ public class DescribeLiveStreamWatermarksResponseUnmarshaller {
 			watermark.setTransparency(_ctx.integerValue("DescribeLiveStreamWatermarksResponse.WatermarkList["+ i +"].Transparency"));
 			watermark.setDescription(_ctx.stringValue("DescribeLiveStreamWatermarksResponse.WatermarkList["+ i +"].Description"));
 			watermark.setOffsetCorner(_ctx.stringValue("DescribeLiveStreamWatermarksResponse.WatermarkList["+ i +"].OffsetCorner"));
+			watermark.setRuleCount(_ctx.integerValue("DescribeLiveStreamWatermarksResponse.WatermarkList["+ i +"].RuleCount"));
 			watermark.setName(_ctx.stringValue("DescribeLiveStreamWatermarksResponse.WatermarkList["+ i +"].Name"));
 			watermark.setTemplateId(_ctx.stringValue("DescribeLiveStreamWatermarksResponse.WatermarkList["+ i +"].TemplateId"));
 

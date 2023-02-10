@@ -16,14 +16,14 @@ package com.aliyuncs.live.model.v20161101;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.live.transform.v20161101.DescribeLiveDomainRecordUsageDataResponseUnmarshaller;
+import com.aliyuncs.live.transform.v20161101.DescribeLiveDelayedStreamingUsageResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeLiveDomainRecordUsageDataResponse extends AcsResponse {
+public class DescribeLiveDelayedStreamingUsageResponse extends AcsResponse {
 
 	private String endTime;
 
@@ -31,7 +31,7 @@ public class DescribeLiveDomainRecordUsageDataResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<DataModule> recordUsageData;
+	private List<DelayDataItem> delayData;
 
 	public String getEndTime() {
 		return this.endTime;
@@ -57,33 +57,25 @@ public class DescribeLiveDomainRecordUsageDataResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<DataModule> getRecordUsageData() {
-		return this.recordUsageData;
+	public List<DelayDataItem> getDelayData() {
+		return this.delayData;
 	}
 
-	public void setRecordUsageData(List<DataModule> recordUsageData) {
-		this.recordUsageData = recordUsageData;
+	public void setDelayData(List<DelayDataItem> delayData) {
+		this.delayData = delayData;
 	}
 
-	public static class DataModule {
-
-		private String type;
+	public static class DelayDataItem {
 
 		private Long duration;
 
-		private String domain;
-
 		private String timeStamp;
 
-		private Long count;
+		private String streamName;
 
-		public String getType() {
-			return this.type;
-		}
+		private String domainName;
 
-		public void setType(String type) {
-			this.type = type;
-		}
+		private String region;
 
 		public Long getDuration() {
 			return this.duration;
@@ -91,14 +83,6 @@ public class DescribeLiveDomainRecordUsageDataResponse extends AcsResponse {
 
 		public void setDuration(Long duration) {
 			this.duration = duration;
-		}
-
-		public String getDomain() {
-			return this.domain;
-		}
-
-		public void setDomain(String domain) {
-			this.domain = domain;
 		}
 
 		public String getTimeStamp() {
@@ -109,17 +93,33 @@ public class DescribeLiveDomainRecordUsageDataResponse extends AcsResponse {
 			this.timeStamp = timeStamp;
 		}
 
-		public Long getCount() {
-			return this.count;
+		public String getStreamName() {
+			return this.streamName;
 		}
 
-		public void setCount(Long count) {
-			this.count = count;
+		public void setStreamName(String streamName) {
+			this.streamName = streamName;
+		}
+
+		public String getDomainName() {
+			return this.domainName;
+		}
+
+		public void setDomainName(String domainName) {
+			this.domainName = domainName;
+		}
+
+		public String getRegion() {
+			return this.region;
+		}
+
+		public void setRegion(String region) {
+			this.region = region;
 		}
 	}
 
 	@Override
-	public DescribeLiveDomainRecordUsageDataResponse getInstance(UnmarshallerContext context) {
-		return	DescribeLiveDomainRecordUsageDataResponseUnmarshaller.unmarshall(this, context);
+	public DescribeLiveDelayedStreamingUsageResponse getInstance(UnmarshallerContext context) {
+		return	DescribeLiveDelayedStreamingUsageResponseUnmarshaller.unmarshall(this, context);
 	}
 }

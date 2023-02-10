@@ -22,16 +22,16 @@ import com.aliyuncs.live.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeLiveUserBillPredictionRequest extends RpcAcsRequest<DescribeLiveUserBillPredictionResponse> {
+public class SetLiveMpuTaskSeiRequest extends RpcAcsRequest<SetLiveMpuTaskSeiResponse> {
 	   
 
-	private String startTime;
+	private String customSei;
 
-	private String endTime;
+	private String appId;
 
-	private Long ownerId;
-	public DescribeLiveUserBillPredictionRequest() {
-		super("live", "2016-11-01", "DescribeLiveUserBillPrediction", "live");
+	private String taskId;
+	public SetLiveMpuTaskSeiRequest() {
+		super("live", "2016-11-01", "SetLiveMpuTaskSei", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,42 +39,42 @@ public class DescribeLiveUserBillPredictionRequest extends RpcAcsRequest<Describ
 		} catch (Exception e) {}
 	}
 
-	public String getStartTime() {
-		return this.startTime;
+	public String getCustomSei() {
+		return this.customSei;
 	}
 
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
+	public void setCustomSei(String customSei) {
+		this.customSei = customSei;
+		if(customSei != null){
+			putQueryParameter("CustomSei", customSei);
 		}
 	}
 
-	public String getEndTime() {
-		return this.endTime;
+	public String getAppId() {
+		return this.appId;
 	}
 
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
+	public void setAppId(String appId) {
+		this.appId = appId;
+		if(appId != null){
+			putQueryParameter("AppId", appId);
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getTaskId() {
+		return this.taskId;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+		if(taskId != null){
+			putQueryParameter("TaskId", taskId);
 		}
 	}
 
 	@Override
-	public Class<DescribeLiveUserBillPredictionResponse> getResponseClass() {
-		return DescribeLiveUserBillPredictionResponse.class;
+	public Class<SetLiveMpuTaskSeiResponse> getResponseClass() {
+		return SetLiveMpuTaskSeiResponse.class;
 	}
 
 }

@@ -25,9 +25,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLiveStreamWatermarksResponse extends AcsResponse {
 
+	private Integer total;
+
 	private String requestId;
 
 	private List<Watermark> watermarkList;
+
+	public Integer getTotal() {
+		return this.total;
+	}
+
+	public void setTotal(Integer total) {
+		this.total = total;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -66,6 +76,8 @@ public class DescribeLiveStreamWatermarksResponse extends AcsResponse {
 		private String description;
 
 		private String offsetCorner;
+
+		private Integer ruleCount;
 
 		private String name;
 
@@ -149,6 +161,14 @@ public class DescribeLiveStreamWatermarksResponse extends AcsResponse {
 
 		public void setOffsetCorner(String offsetCorner) {
 			this.offsetCorner = offsetCorner;
+		}
+
+		public Integer getRuleCount() {
+			return this.ruleCount;
+		}
+
+		public void setRuleCount(Integer ruleCount) {
+			this.ruleCount = ruleCount;
 		}
 
 		public String getName() {
