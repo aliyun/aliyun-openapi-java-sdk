@@ -27,7 +27,7 @@ public class DescribeServiceLogRequest extends RoaAcsRequest<DescribeServiceLogR
 
 	private String ip;
 
-	private Integer pageSize;
+	private Long pageSize;
 
 	private String endTime;
 
@@ -37,7 +37,7 @@ public class DescribeServiceLogRequest extends RoaAcsRequest<DescribeServiceLogR
 
 	private String clusterId;
 
-	private Integer pageNum;
+	private Long pageNum;
 
 	private String keyword;
 	public DescribeServiceLogRequest() {
@@ -61,11 +61,11 @@ public class DescribeServiceLogRequest extends RoaAcsRequest<DescribeServiceLogR
 		}
 	}
 
-	public Integer getPageSize() {
+	public Long getPageSize() {
 		return this.pageSize;
 	}
 
-	public void setPageSize(Integer pageSize) {
+	public void setPageSize(Long pageSize) {
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
@@ -116,11 +116,11 @@ public class DescribeServiceLogRequest extends RoaAcsRequest<DescribeServiceLogR
 		}
 	}
 
-	public Integer getPageNum() {
+	public Long getPageNum() {
 		return this.pageNum;
 	}
 
-	public void setPageNum(Integer pageNum) {
+	public void setPageNum(Long pageNum) {
 		this.pageNum = pageNum;
 		if(pageNum != null){
 			putQueryParameter("PageNum", pageNum.toString());

@@ -95,7 +95,7 @@ public class ListResourceInstancesResponse extends AcsResponse {
 
 		private Float instanceUsedCpu;
 
-		private Integer instanceUsedGpu;
+		private Float instanceUsedGpu;
 
 		private String instanceUsedMemory;
 
@@ -114,6 +114,10 @@ public class ListResourceInstancesResponse extends AcsResponse {
 		private String region;
 
 		private String zone;
+
+		private String instanceTenantIp;
+
+		private String instanceUsedGpuMemory;
 
 		public String getInstanceId() {
 			return this.instanceId;
@@ -187,11 +191,11 @@ public class ListResourceInstancesResponse extends AcsResponse {
 			this.instanceUsedCpu = instanceUsedCpu;
 		}
 
-		public Integer getInstanceUsedGpu() {
+		public Float getInstanceUsedGpu() {
 			return this.instanceUsedGpu;
 		}
 
-		public void setInstanceUsedGpu(Integer instanceUsedGpu) {
+		public void setInstanceUsedGpu(Float instanceUsedGpu) {
 			this.instanceUsedGpu = instanceUsedGpu;
 		}
 
@@ -265,6 +269,22 @@ public class ListResourceInstancesResponse extends AcsResponse {
 
 		public void setZone(String zone) {
 			this.zone = zone;
+		}
+
+		public String getInstanceTenantIp() {
+			return this.instanceTenantIp;
+		}
+
+		public void setInstanceTenantIp(String instanceTenantIp) {
+			this.instanceTenantIp = instanceTenantIp;
+		}
+
+		public String getInstanceUsedGpuMemory() {
+			return this.instanceUsedGpuMemory;
+		}
+
+		public void setInstanceUsedGpuMemory(String instanceUsedGpuMemory) {
+			this.instanceUsedGpuMemory = instanceUsedGpuMemory;
 		}
 	}
 

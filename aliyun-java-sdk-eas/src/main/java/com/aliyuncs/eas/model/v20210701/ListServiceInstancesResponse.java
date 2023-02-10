@@ -102,6 +102,14 @@ public class ListServiceInstancesResponse extends AcsResponse {
 
 		private String startAt;
 
+		private String role;
+
+		private String resourceType;
+
+		private String tenantInstanceIP;
+
+		private String tenantHostIP;
+
 		private List<Map<Object,Object>> lastState;
 
 		public String getHostIP() {
@@ -198,6 +206,38 @@ public class ListServiceInstancesResponse extends AcsResponse {
 
 		public void setStartAt(String startAt) {
 			this.startAt = startAt;
+		}
+
+		public String getRole() {
+			return this.role;
+		}
+
+		public void setRole(String role) {
+			this.role = role;
+		}
+
+		public String getResourceType() {
+			return this.resourceType;
+		}
+
+		public void setResourceType(String resourceType) {
+			this.resourceType = resourceType;
+		}
+
+		public String getTenantInstanceIP() {
+			return this.tenantInstanceIP;
+		}
+
+		public void setTenantInstanceIP(String tenantInstanceIP) {
+			this.tenantInstanceIP = tenantInstanceIP;
+		}
+
+		public String getTenantHostIP() {
+			return this.tenantHostIP;
+		}
+
+		public void setTenantHostIP(String tenantHostIP) {
+			this.tenantHostIP = tenantHostIP;
 		}
 
 		public List<Map<Object,Object>> getLastState() {

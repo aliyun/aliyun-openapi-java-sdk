@@ -22,26 +22,20 @@ import com.aliyuncs.eas.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListResourceInstancesRequest extends RoaAcsRequest<ListResourceInstancesResponse> {
+public class UpdateResourceInstanceRequest extends RoaAcsRequest<UpdateResourceInstanceResponse> {
 	   
 
 	private String resourceId;
 
-	private String instanceName;
-
 	private String instanceId;
-
-	private Integer pageSize;
 
 	private String clusterId;
 
-	private String chargeType;
-
-	private Integer pageNumber;
-	public ListResourceInstancesRequest() {
-		super("eas", "2021-07-01", "ListResourceInstances", "eas");
-		setUriPattern("/api/v2/resources/[ClusterId]/[ResourceId]/instances");
-		setMethod(MethodType.GET);
+	private String body;
+	public UpdateResourceInstanceRequest() {
+		super("eas", "2021-07-01", "UpdateResourceInstance", "eas");
+		setUriPattern("/api/v2/resources/[ClusterId]/[ResourceId]/instances/[InstanceId]");
+		setMethod(MethodType.PUT);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -59,17 +53,6 @@ public class ListResourceInstancesRequest extends RoaAcsRequest<ListResourceInst
 		}
 	}
 
-	public String getInstanceName() {
-		return this.instanceName;
-	}
-
-	public void setInstanceName(String instanceName) {
-		this.instanceName = instanceName;
-		if(instanceName != null){
-			putQueryParameter("InstanceName", instanceName);
-		}
-	}
-
 	public String getInstanceId() {
 		return this.instanceId;
 	}
@@ -77,18 +60,7 @@ public class ListResourceInstancesRequest extends RoaAcsRequest<ListResourceInst
 	public void setInstanceId(String instanceId) {
 		this.instanceId = instanceId;
 		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
+			putPathParameter("InstanceId", instanceId);
 		}
 	}
 
@@ -103,31 +75,20 @@ public class ListResourceInstancesRequest extends RoaAcsRequest<ListResourceInst
 		}
 	}
 
-	public String getChargeType() {
-		return this.chargeType;
+	public String getBody() {
+		return this.body;
 	}
 
-	public void setChargeType(String chargeType) {
-		this.chargeType = chargeType;
-		if(chargeType != null){
-			putQueryParameter("ChargeType", chargeType);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 
 	@Override
-	public Class<ListResourceInstancesResponse> getResponseClass() {
-		return ListResourceInstancesResponse.class;
+	public Class<UpdateResourceInstanceResponse> getResponseClass() {
+		return UpdateResourceInstanceResponse.class;
 	}
 
 }

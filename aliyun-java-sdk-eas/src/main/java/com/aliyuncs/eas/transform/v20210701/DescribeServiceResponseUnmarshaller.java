@@ -14,7 +14,11 @@
 
 package com.aliyuncs.eas.transform.v20210701;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.eas.model.v20210701.DescribeServiceResponse;
+import com.aliyuncs.eas.model.v20210701.DescribeServiceResponse.LabelsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -56,6 +60,17 @@ public class DescribeServiceResponseUnmarshaller {
 		describeServiceResponse.setExtraData(_ctx.stringValue("DescribeServiceResponse.ExtraData"));
 		describeServiceResponse.setRole(_ctx.stringValue("DescribeServiceResponse.Role"));
 		describeServiceResponse.setRoleAttrs(_ctx.stringValue("DescribeServiceResponse.RoleAttrs"));
+		describeServiceResponse.setSafetyLock(_ctx.stringValue("DescribeServiceResponse.SafetyLock"));
+
+		List<LabelsItem> labels = new ArrayList<LabelsItem>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeServiceResponse.Labels.Length"); i++) {
+			LabelsItem labelsItem = new LabelsItem();
+			labelsItem.setLabelKey(_ctx.stringValue("DescribeServiceResponse.Labels["+ i +"].LabelKey"));
+			labelsItem.setLabelValue(_ctx.stringValue("DescribeServiceResponse.Labels["+ i +"].LabelValue"));
+
+			labels.add(labelsItem);
+		}
+		describeServiceResponse.setLabels(labels);
 	 
 	 	return describeServiceResponse;
 	}

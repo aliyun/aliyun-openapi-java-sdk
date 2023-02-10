@@ -145,6 +145,10 @@ public class ListResourceServicesResponse extends AcsResponse {
 
 		private String roleAttrs;
 
+		private String safetyLock;
+
+		private List<LabelsItem> labels;
+
 		public String getRequestId() {
 			return this.requestId;
 		}
@@ -415,6 +419,45 @@ public class ListResourceServicesResponse extends AcsResponse {
 
 		public void setRoleAttrs(String roleAttrs) {
 			this.roleAttrs = roleAttrs;
+		}
+
+		public String getSafetyLock() {
+			return this.safetyLock;
+		}
+
+		public void setSafetyLock(String safetyLock) {
+			this.safetyLock = safetyLock;
+		}
+
+		public List<LabelsItem> getLabels() {
+			return this.labels;
+		}
+
+		public void setLabels(List<LabelsItem> labels) {
+			this.labels = labels;
+		}
+
+		public static class LabelsItem {
+
+			private String labelKey;
+
+			private String labelValue;
+
+			public String getLabelKey() {
+				return this.labelKey;
+			}
+
+			public void setLabelKey(String labelKey) {
+				this.labelKey = labelKey;
+			}
+
+			public String getLabelValue() {
+				return this.labelValue;
+			}
+
+			public void setLabelValue(String labelValue) {
+				this.labelValue = labelValue;
+			}
 		}
 	}
 

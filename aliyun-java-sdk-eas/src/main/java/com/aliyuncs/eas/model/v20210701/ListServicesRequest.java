@@ -27,9 +27,15 @@ public class ListServicesRequest extends RoaAcsRequest<ListServicesResponse> {
 
 	private String filter;
 
+	private String serviceType;
+
+	private String parentServiceUid;
+
 	private Integer pageSize;
 
 	private String sort;
+
+	private String label;
 
 	private String groupName;
 
@@ -57,6 +63,28 @@ public class ListServicesRequest extends RoaAcsRequest<ListServicesResponse> {
 		}
 	}
 
+	public String getServiceType() {
+		return this.serviceType;
+	}
+
+	public void setServiceType(String serviceType) {
+		this.serviceType = serviceType;
+		if(serviceType != null){
+			putQueryParameter("ServiceType", serviceType);
+		}
+	}
+
+	public String getParentServiceUid() {
+		return this.parentServiceUid;
+	}
+
+	public void setParentServiceUid(String parentServiceUid) {
+		this.parentServiceUid = parentServiceUid;
+		if(parentServiceUid != null){
+			putQueryParameter("ParentServiceUid", parentServiceUid);
+		}
+	}
+
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -76,6 +104,17 @@ public class ListServicesRequest extends RoaAcsRequest<ListServicesResponse> {
 		this.sort = sort;
 		if(sort != null){
 			putQueryParameter("Sort", sort);
+		}
+	}
+
+	public String getLabel() {
+		return this.label;
+	}
+
+	public void setLabel(String label) {
+		this.label = label;
+		if(label != null){
+			putQueryParameter("Label", label);
 		}
 	}
 

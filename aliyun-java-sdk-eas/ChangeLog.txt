@@ -1,3 +1,6 @@
+2023-02-10 Version: 0.0.8
+- Add service label api.
+
 2022-11-02 Version: 0.0.7
 - Add new api for benchmark test.
 

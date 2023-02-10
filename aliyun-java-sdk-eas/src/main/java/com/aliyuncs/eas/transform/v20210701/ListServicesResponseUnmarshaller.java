@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.eas.model.v20210701.ListServicesResponse;
 import com.aliyuncs.eas.model.v20210701.ListServicesResponse.ServicesItem;
+import com.aliyuncs.eas.model.v20210701.ListServicesResponse.ServicesItem.LabelsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -68,6 +69,17 @@ public class ListServicesResponseUnmarshaller {
 			servicesItem.setExtraData(_ctx.stringValue("ListServicesResponse.Services["+ i +"].ExtraData"));
 			servicesItem.setRole(_ctx.stringValue("ListServicesResponse.Services["+ i +"].Role"));
 			servicesItem.setRoleAttrs(_ctx.stringValue("ListServicesResponse.Services["+ i +"].RoleAttrs"));
+			servicesItem.setSafetyLock(_ctx.stringValue("ListServicesResponse.Services["+ i +"].SafetyLock"));
+
+			List<LabelsItem> labels = new ArrayList<LabelsItem>();
+			for (int j = 0; j < _ctx.lengthValue("ListServicesResponse.Services["+ i +"].Labels.Length"); j++) {
+				LabelsItem labelsItem = new LabelsItem();
+				labelsItem.setLabelKey(_ctx.stringValue("ListServicesResponse.Services["+ i +"].Labels["+ j +"].LabelKey"));
+				labelsItem.setLabelValue(_ctx.stringValue("ListServicesResponse.Services["+ i +"].Labels["+ j +"].LabelValue"));
+
+				labels.add(labelsItem);
+			}
+			servicesItem.setLabels(labels);
 
 			services.add(servicesItem);
 		}

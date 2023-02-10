@@ -22,46 +22,22 @@ import com.aliyuncs.eas.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListBenchmarkTaskRequest extends RoaAcsRequest<ListBenchmarkTaskResponse> {
+public class UpdateServiceSafetyLockRequest extends RoaAcsRequest<UpdateServiceSafetyLockResponse> {
 	   
-
-	private String filter;
-
-	private String pageSize;
 
 	private String serviceName;
 
-	private String pageNumber;
-	public ListBenchmarkTaskRequest() {
-		super("eas", "2021-07-01", "ListBenchmarkTask", "eas");
-		setUriPattern("/api/v2/benchmark-tasks");
-		setMethod(MethodType.GET);
+	private String clusterId;
+
+	private String body;
+	public UpdateServiceSafetyLockRequest() {
+		super("eas", "2021-07-01", "UpdateServiceSafetyLock", "eas");
+		setUriPattern("/api/v2/services/[ClusterId]/[ServiceName]/lock");
+		setMethod(MethodType.PUT);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getFilter() {
-		return this.filter;
-	}
-
-	public void setFilter(String filter) {
-		this.filter = filter;
-		if(filter != null){
-			putQueryParameter("Filter", filter);
-		}
-	}
-
-	public String getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(String pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize);
-		}
 	}
 
 	public String getServiceName() {
@@ -71,24 +47,35 @@ public class ListBenchmarkTaskRequest extends RoaAcsRequest<ListBenchmarkTaskRes
 	public void setServiceName(String serviceName) {
 		this.serviceName = serviceName;
 		if(serviceName != null){
-			putQueryParameter("ServiceName", serviceName);
+			putPathParameter("ServiceName", serviceName);
 		}
 	}
 
-	public String getPageNumber() {
-		return this.pageNumber;
+	public String getClusterId() {
+		return this.clusterId;
 	}
 
-	public void setPageNumber(String pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber);
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putPathParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 
 	@Override
-	public Class<ListBenchmarkTaskResponse> getResponseClass() {
-		return ListBenchmarkTaskResponse.class;
+	public Class<UpdateServiceSafetyLockResponse> getResponseClass() {
+		return UpdateServiceSafetyLockResponse.class;
 	}
 
 }
