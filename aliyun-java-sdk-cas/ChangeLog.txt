@@ -1,3 +1,6 @@
+2023-02-13 Version: 1.0.14
+- Fix some bugs.
+
 2022-11-29 Version: 1.0.13
 - Fix some bugs.
 

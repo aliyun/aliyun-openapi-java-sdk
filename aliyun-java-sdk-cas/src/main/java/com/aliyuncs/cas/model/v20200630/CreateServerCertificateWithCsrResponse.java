@@ -34,6 +34,8 @@ public class CreateServerCertificateWithCsrResponse extends AcsResponse {
 
 	private String identifier;
 
+	private String serialNumber;
+
 	private String requestId;
 
 	public String getX509Certificate() {
@@ -74,6 +76,14 @@ public class CreateServerCertificateWithCsrResponse extends AcsResponse {
 
 	public void setIdentifier(String identifier) {
 		this.identifier = identifier;
+	}
+
+	public String getSerialNumber() {
+		return this.serialNumber;
+	}
+
+	public void setSerialNumber(String serialNumber) {
+		this.serialNumber = serialNumber;
 	}
 
 	public String getRequestId() {

@@ -28,6 +28,7 @@ public class CreateServerCertificateResponseUnmarshaller {
 		createServerCertificateResponse.setRootX509Certificate(_ctx.stringValue("CreateServerCertificateResponse.RootX509Certificate"));
 		createServerCertificateResponse.setParentX509Certificate(_ctx.stringValue("CreateServerCertificateResponse.ParentX509Certificate"));
 		createServerCertificateResponse.setIdentifier(_ctx.stringValue("CreateServerCertificateResponse.Identifier"));
+		createServerCertificateResponse.setSerialNumber(_ctx.stringValue("CreateServerCertificateResponse.SerialNumber"));
 	 
 	 	return createServerCertificateResponse;
 	}
