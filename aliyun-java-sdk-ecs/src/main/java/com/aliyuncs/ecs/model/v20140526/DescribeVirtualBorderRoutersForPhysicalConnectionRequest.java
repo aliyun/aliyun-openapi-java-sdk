@@ -40,7 +40,7 @@ public class DescribeVirtualBorderRoutersForPhysicalConnectionRequest extends Rp
 
 	private String physicalConnectionId;
 	public DescribeVirtualBorderRoutersForPhysicalConnectionRequest() {
-		super("Ecs", "2014-05-26", "DescribeVirtualBorderRoutersForPhysicalConnection");
+		super("Ecs", "2014-05-26", "DescribeVirtualBorderRoutersForPhysicalConnection", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

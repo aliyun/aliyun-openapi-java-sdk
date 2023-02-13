@@ -39,7 +39,7 @@ public class ModifyHaVipAttributeRequest extends RpcAcsRequest<ModifyHaVipAttrib
 
 	private Long ownerId;
 	public ModifyHaVipAttributeRequest() {
-		super("Ecs", "2014-05-26", "ModifyHaVipAttribute");
+		super("Ecs", "2014-05-26", "ModifyHaVipAttribute", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

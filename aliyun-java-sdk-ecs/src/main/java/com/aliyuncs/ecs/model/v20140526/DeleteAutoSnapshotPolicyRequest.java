@@ -33,7 +33,7 @@ public class DeleteAutoSnapshotPolicyRequest extends RpcAcsRequest<DeleteAutoSna
 
 	private Long ownerId;
 	public DeleteAutoSnapshotPolicyRequest() {
-		super("Ecs", "2014-05-26", "DeleteAutoSnapshotPolicy");
+		super("Ecs", "2014-05-26", "DeleteAutoSnapshotPolicy", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

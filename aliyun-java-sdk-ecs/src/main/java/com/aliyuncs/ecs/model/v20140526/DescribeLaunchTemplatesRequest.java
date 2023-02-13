@@ -46,7 +46,7 @@ public class DescribeLaunchTemplatesRequest extends RpcAcsRequest<DescribeLaunch
 
 	private Long ownerId;
 	public DescribeLaunchTemplatesRequest() {
-		super("Ecs", "2014-05-26", "DescribeLaunchTemplates");
+		super("Ecs", "2014-05-26", "DescribeLaunchTemplates", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

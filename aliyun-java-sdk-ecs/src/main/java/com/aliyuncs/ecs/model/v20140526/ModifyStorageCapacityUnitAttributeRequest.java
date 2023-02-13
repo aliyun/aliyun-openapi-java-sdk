@@ -39,7 +39,7 @@ public class ModifyStorageCapacityUnitAttributeRequest extends RpcAcsRequest<Mod
 
 	private String name;
 	public ModifyStorageCapacityUnitAttributeRequest() {
-		super("Ecs", "2014-05-26", "ModifyStorageCapacityUnitAttribute");
+		super("Ecs", "2014-05-26", "ModifyStorageCapacityUnitAttribute", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

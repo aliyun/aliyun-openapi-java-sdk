@@ -39,7 +39,7 @@ public class DescribeAutoProvisioningGroupInstancesRequest extends RpcAcsRequest
 
 	private String autoProvisioningGroupId;
 	public DescribeAutoProvisioningGroupInstancesRequest() {
-		super("Ecs", "2014-05-26", "DescribeAutoProvisioningGroupInstances");
+		super("Ecs", "2014-05-26", "DescribeAutoProvisioningGroupInstances", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

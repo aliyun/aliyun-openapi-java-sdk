@@ -134,7 +134,7 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 
 	private String systemDiskEncrypted;
 	public CreateLaunchTemplateRequest() {
-		super("Ecs", "2014-05-26", "CreateLaunchTemplate");
+		super("Ecs", "2014-05-26", "CreateLaunchTemplate", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

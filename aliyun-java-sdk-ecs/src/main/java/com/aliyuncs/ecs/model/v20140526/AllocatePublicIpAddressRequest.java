@@ -39,7 +39,7 @@ public class AllocatePublicIpAddressRequest extends RpcAcsRequest<AllocatePublic
 
 	private String instanceId;
 	public AllocatePublicIpAddressRequest() {
-		super("Ecs", "2014-05-26", "AllocatePublicIpAddress");
+		super("Ecs", "2014-05-26", "AllocatePublicIpAddress", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

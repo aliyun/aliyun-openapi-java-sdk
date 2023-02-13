@@ -37,7 +37,7 @@ public class ExportSnapshotRequest extends RpcAcsRequest<ExportSnapshotResponse>
 
 	private Long ownerId;
 	public ExportSnapshotRequest() {
-		super("Ecs", "2014-05-26", "ExportSnapshot");
+		super("Ecs", "2014-05-26", "ExportSnapshot", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

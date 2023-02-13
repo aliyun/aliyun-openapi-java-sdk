@@ -39,7 +39,7 @@ public class AssociateEipAddressRequest extends RpcAcsRequest<AssociateEipAddres
 
 	private String instanceId;
 	public AssociateEipAddressRequest() {
-		super("Ecs", "2014-05-26", "AssociateEipAddress");
+		super("Ecs", "2014-05-26", "AssociateEipAddress", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

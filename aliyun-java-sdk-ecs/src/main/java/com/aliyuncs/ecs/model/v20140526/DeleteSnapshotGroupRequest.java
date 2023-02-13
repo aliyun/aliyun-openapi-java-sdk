@@ -35,7 +35,7 @@ public class DeleteSnapshotGroupRequest extends RpcAcsRequest<DeleteSnapshotGrou
 
 	private Long ownerId;
 	public DeleteSnapshotGroupRequest() {
-		super("Ecs", "2014-05-26", "DeleteSnapshotGroup");
+		super("Ecs", "2014-05-26", "DeleteSnapshotGroup", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

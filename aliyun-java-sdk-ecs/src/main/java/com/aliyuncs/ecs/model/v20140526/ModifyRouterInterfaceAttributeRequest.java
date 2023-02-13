@@ -49,7 +49,7 @@ public class ModifyRouterInterfaceAttributeRequest extends RpcAcsRequest<ModifyR
 
 	private String oppositeRouterType;
 	public ModifyRouterInterfaceAttributeRequest() {
-		super("Ecs", "2014-05-26", "ModifyRouterInterfaceAttribute");
+		super("Ecs", "2014-05-26", "ModifyRouterInterfaceAttribute", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -39,7 +39,7 @@ public class DetachNetworkInterfaceRequest extends RpcAcsRequest<DetachNetworkIn
 
 	private String networkInterfaceId;
 	public DetachNetworkInterfaceRequest() {
-		super("Ecs", "2014-05-26", "DetachNetworkInterface");
+		super("Ecs", "2014-05-26", "DetachNetworkInterface", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

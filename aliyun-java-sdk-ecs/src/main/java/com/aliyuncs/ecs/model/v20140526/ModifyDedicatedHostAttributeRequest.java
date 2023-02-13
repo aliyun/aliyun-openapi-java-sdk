@@ -51,7 +51,7 @@ public class ModifyDedicatedHostAttributeRequest extends RpcAcsRequest<ModifyDed
 
 	private Integer networkAttributesUdpTimeout;
 	public ModifyDedicatedHostAttributeRequest() {
-		super("Ecs", "2014-05-26", "ModifyDedicatedHostAttribute");
+		super("Ecs", "2014-05-26", "ModifyDedicatedHostAttribute", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

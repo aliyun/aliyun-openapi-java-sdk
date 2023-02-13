@@ -57,7 +57,7 @@ public class ModifyDemandRequest extends RpcAcsRequest<ModifyDemandResponse> {
 
 	private String zoneId;
 	public ModifyDemandRequest() {
-		super("Ecs", "2014-05-26", "ModifyDemand");
+		super("Ecs", "2014-05-26", "ModifyDemand", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

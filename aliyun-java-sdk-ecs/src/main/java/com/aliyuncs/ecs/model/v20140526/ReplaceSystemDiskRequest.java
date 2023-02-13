@@ -66,7 +66,7 @@ public class ReplaceSystemDiskRequest extends RpcAcsRequest<ReplaceSystemDiskRes
 
 	private Boolean useAdditionalService;
 	public ReplaceSystemDiskRequest() {
-		super("Ecs", "2014-05-26", "ReplaceSystemDisk");
+		super("Ecs", "2014-05-26", "ReplaceSystemDisk", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

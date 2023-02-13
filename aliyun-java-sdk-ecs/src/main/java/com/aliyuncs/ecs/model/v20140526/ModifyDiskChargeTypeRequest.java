@@ -43,7 +43,7 @@ public class ModifyDiskChargeTypeRequest extends RpcAcsRequest<ModifyDiskChargeT
 
 	private String instanceId;
 	public ModifyDiskChargeTypeRequest() {
-		super("Ecs", "2014-05-26", "ModifyDiskChargeType");
+		super("Ecs", "2014-05-26", "ModifyDiskChargeType", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
