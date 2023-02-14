@@ -62,6 +62,7 @@ public class QueryFpShotJobListResponseUnmarshaller {
 			fpShotJob.setTransactionId(_ctx.stringValue("QueryFpShotJobListResponse.FpShotJobList["+ i +"].TransactionId"));
 			fpShotJob.setFileId(_ctx.stringValue("QueryFpShotJobListResponse.FpShotJobList["+ i +"].FileId"));
 			fpShotJob.setUserData(_ctx.stringValue("QueryFpShotJobListResponse.FpShotJobList["+ i +"].UserData"));
+			fpShotJob.setDuration(_ctx.integerValue("QueryFpShotJobListResponse.FpShotJobList["+ i +"].Duration"));
 			fpShotJob.setCode(_ctx.stringValue("QueryFpShotJobListResponse.FpShotJobList["+ i +"].Code"));
 			fpShotJob.setPipelineId(_ctx.stringValue("QueryFpShotJobListResponse.FpShotJobList["+ i +"].PipelineId"));
 			fpShotJob.setId(_ctx.stringValue("QueryFpShotJobListResponse.FpShotJobList["+ i +"].Id"));

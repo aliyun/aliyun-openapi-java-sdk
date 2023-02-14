@@ -93,6 +93,8 @@ public class QueryFpShotJobListResponse extends AcsResponse {
 
 		private String userData;
 
+		private Integer duration;
+
 		private String code;
 
 		private String pipelineId;
@@ -169,6 +171,14 @@ public class QueryFpShotJobListResponse extends AcsResponse {
 
 		public void setUserData(String userData) {
 			this.userData = userData;
+		}
+
+		public Integer getDuration() {
+			return this.duration;
+		}
+
+		public void setDuration(Integer duration) {
+			this.duration = duration;
 		}
 
 		public String getCode() {
