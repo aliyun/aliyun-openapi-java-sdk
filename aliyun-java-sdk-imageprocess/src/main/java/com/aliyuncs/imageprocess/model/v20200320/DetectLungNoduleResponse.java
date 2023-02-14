@@ -159,6 +159,14 @@ public class DetectLungNoduleResponse extends AcsResponse {
 
 				private Float x;
 
+				private String recistSOPInstanceUID;
+
+				private Float risk;
+
+				private List<Float> majorAxis;
+
+				private List<Float> minorAxis;
+
 				public Float getZ() {
 					return this.z;
 				}
@@ -269,6 +277,38 @@ public class DetectLungNoduleResponse extends AcsResponse {
 
 				public void setX(Float x) {
 					this.x = x;
+				}
+
+				public String getRecistSOPInstanceUID() {
+					return this.recistSOPInstanceUID;
+				}
+
+				public void setRecistSOPInstanceUID(String recistSOPInstanceUID) {
+					this.recistSOPInstanceUID = recistSOPInstanceUID;
+				}
+
+				public Float getRisk() {
+					return this.risk;
+				}
+
+				public void setRisk(Float risk) {
+					this.risk = risk;
+				}
+
+				public List<Float> getMajorAxis() {
+					return this.majorAxis;
+				}
+
+				public void setMajorAxis(List<Float> majorAxis) {
+					this.majorAxis = majorAxis;
+				}
+
+				public List<Float> getMinorAxis() {
+					return this.minorAxis;
+				}
+
+				public void setMinorAxis(List<Float> minorAxis) {
+					this.minorAxis = minorAxis;
 				}
 			}
 		}

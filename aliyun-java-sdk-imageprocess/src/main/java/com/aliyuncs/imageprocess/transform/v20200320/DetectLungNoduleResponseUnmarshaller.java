@@ -69,6 +69,20 @@ public class DetectLungNoduleResponseUnmarshaller {
 				element.setImageY(_ctx.floatValue("DetectLungNoduleResponse.Data.Series["+ i +"].Elements["+ j +"].ImageY"));
 				element.setDiameter(_ctx.floatValue("DetectLungNoduleResponse.Data.Series["+ i +"].Elements["+ j +"].Diameter"));
 				element.setX(_ctx.floatValue("DetectLungNoduleResponse.Data.Series["+ i +"].Elements["+ j +"].X"));
+				element.setRecistSOPInstanceUID(_ctx.stringValue("DetectLungNoduleResponse.Data.Series["+ i +"].Elements["+ j +"].RecistSOPInstanceUID"));
+				element.setRisk(_ctx.floatValue("DetectLungNoduleResponse.Data.Series["+ i +"].Elements["+ j +"].Risk"));
+
+				List<Float> majorAxis = new ArrayList<Float>();
+				for (int k = 0; k < _ctx.lengthValue("DetectLungNoduleResponse.Data.Series["+ i +"].Elements["+ j +"].MajorAxis.Length"); k++) {
+					majorAxis.add(_ctx.floatValue("DetectLungNoduleResponse.Data.Series["+ i +"].Elements["+ j +"].MajorAxis["+ k +"]"));
+				}
+				element.setMajorAxis(majorAxis);
+
+				List<Float> minorAxis = new ArrayList<Float>();
+				for (int k = 0; k < _ctx.lengthValue("DetectLungNoduleResponse.Data.Series["+ i +"].Elements["+ j +"].MinorAxis.Length"); k++) {
+					minorAxis.add(_ctx.floatValue("DetectLungNoduleResponse.Data.Series["+ i +"].Elements["+ j +"].MinorAxis["+ k +"]"));
+				}
+				element.setMinorAxis(minorAxis);
 
 				elements.add(element);
 			}
