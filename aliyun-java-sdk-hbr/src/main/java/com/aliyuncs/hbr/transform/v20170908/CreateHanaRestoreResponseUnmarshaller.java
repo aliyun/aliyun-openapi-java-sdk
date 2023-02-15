@@ -23,9 +23,9 @@ public class CreateHanaRestoreResponseUnmarshaller {
 	public static CreateHanaRestoreResponse unmarshall(CreateHanaRestoreResponse createHanaRestoreResponse, UnmarshallerContext _ctx) {
 		
 		createHanaRestoreResponse.setRequestId(_ctx.stringValue("CreateHanaRestoreResponse.RequestId"));
-		createHanaRestoreResponse.setSuccess(_ctx.booleanValue("CreateHanaRestoreResponse.Success"));
 		createHanaRestoreResponse.setCode(_ctx.stringValue("CreateHanaRestoreResponse.Code"));
 		createHanaRestoreResponse.setMessage(_ctx.stringValue("CreateHanaRestoreResponse.Message"));
+		createHanaRestoreResponse.setSuccess(_ctx.booleanValue("CreateHanaRestoreResponse.Success"));
 		createHanaRestoreResponse.setRestoreId(_ctx.stringValue("CreateHanaRestoreResponse.RestoreId"));
 	 
 	 	return createHanaRestoreResponse;

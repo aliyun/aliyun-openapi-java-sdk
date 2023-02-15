@@ -30,6 +30,8 @@ public class ExecuteBackupPlanRequest extends RpcAcsRequest<ExecuteBackupPlanRes
 	private String planId;
 
 	private String sourceType;
+
+	private String ruleId;
 	public ExecuteBackupPlanRequest() {
 		super("hbr", "2017-09-08", "ExecuteBackupPlan", "hbr");
 		setMethod(MethodType.POST);
@@ -69,6 +71,17 @@ public class ExecuteBackupPlanRequest extends RpcAcsRequest<ExecuteBackupPlanRes
 		this.sourceType = sourceType;
 		if(sourceType != null){
 			putQueryParameter("SourceType", sourceType);
+		}
+	}
+
+	public String getRuleId() {
+		return this.ruleId;
+	}
+
+	public void setRuleId(String ruleId) {
+		this.ruleId = ruleId;
+		if(ruleId != null){
+			putQueryParameter("RuleId", ruleId);
 		}
 	}
 

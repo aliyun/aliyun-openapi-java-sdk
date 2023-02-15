@@ -30,8 +30,6 @@ public class DescribeHanaBackupSettingRequest extends RpcAcsRequest<DescribeHana
 
 	private String clusterId;
 
-	private String token;
-
 	private String databaseName;
 	public DescribeHanaBackupSettingRequest() {
 		super("hbr", "2017-09-08", "DescribeHanaBackupSetting", "hbr");
@@ -62,17 +60,6 @@ public class DescribeHanaBackupSettingRequest extends RpcAcsRequest<DescribeHana
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putQueryParameter("ClusterId", clusterId);
-		}
-	}
-
-	public String getToken() {
-		return this.token;
-	}
-
-	public void setToken(String token) {
-		this.token = token;
-		if(token != null){
-			putQueryParameter("Token", token);
 		}
 	}
 

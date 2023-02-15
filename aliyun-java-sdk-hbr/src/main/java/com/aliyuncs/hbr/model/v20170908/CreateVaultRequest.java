@@ -29,15 +29,17 @@ public class CreateVaultRequest extends RpcAcsRequest<CreateVaultResponse> {
 
 	private String vaultName;
 
-	private String token;
+	private String encryptType;
 
 	private String vaultRegionId;
 
-	private String vaultStorageClass;
-
 	private String vaultType;
 
-	private Boolean searchEnabled;
+	private String redundancyType;
+
+	private String vaultStorageClass;
+
+	private String kmsKeyId;
 	public CreateVaultRequest() {
 		super("hbr", "2017-09-08", "CreateVault", "hbr");
 		setMethod(MethodType.POST);
@@ -69,14 +71,14 @@ public class CreateVaultRequest extends RpcAcsRequest<CreateVaultResponse> {
 		}
 	}
 
-	public String getToken() {
-		return this.token;
+	public String getEncryptType() {
+		return this.encryptType;
 	}
 
-	public void setToken(String token) {
-		this.token = token;
-		if(token != null){
-			putQueryParameter("Token", token);
+	public void setEncryptType(String encryptType) {
+		this.encryptType = encryptType;
+		if(encryptType != null){
+			putQueryParameter("EncryptType", encryptType);
 		}
 	}
 
@@ -91,17 +93,6 @@ public class CreateVaultRequest extends RpcAcsRequest<CreateVaultResponse> {
 		}
 	}
 
-	public String getVaultStorageClass() {
-		return this.vaultStorageClass;
-	}
-
-	public void setVaultStorageClass(String vaultStorageClass) {
-		this.vaultStorageClass = vaultStorageClass;
-		if(vaultStorageClass != null){
-			putQueryParameter("VaultStorageClass", vaultStorageClass);
-		}
-	}
-
 	public String getVaultType() {
 		return this.vaultType;
 	}
@@ -113,14 +104,36 @@ public class CreateVaultRequest extends RpcAcsRequest<CreateVaultResponse> {
 		}
 	}
 
-	public Boolean getSearchEnabled() {
-		return this.searchEnabled;
+	public String getRedundancyType() {
+		return this.redundancyType;
 	}
 
-	public void setSearchEnabled(Boolean searchEnabled) {
-		this.searchEnabled = searchEnabled;
-		if(searchEnabled != null){
-			putQueryParameter("SearchEnabled", searchEnabled.toString());
+	public void setRedundancyType(String redundancyType) {
+		this.redundancyType = redundancyType;
+		if(redundancyType != null){
+			putQueryParameter("RedundancyType", redundancyType);
+		}
+	}
+
+	public String getVaultStorageClass() {
+		return this.vaultStorageClass;
+	}
+
+	public void setVaultStorageClass(String vaultStorageClass) {
+		this.vaultStorageClass = vaultStorageClass;
+		if(vaultStorageClass != null){
+			putQueryParameter("VaultStorageClass", vaultStorageClass);
+		}
+	}
+
+	public String getKmsKeyId() {
+		return this.kmsKeyId;
+	}
+
+	public void setKmsKeyId(String kmsKeyId) {
+		this.kmsKeyId = kmsKeyId;
+		if(kmsKeyId != null){
+			putQueryParameter("KmsKeyId", kmsKeyId);
 		}
 	}
 

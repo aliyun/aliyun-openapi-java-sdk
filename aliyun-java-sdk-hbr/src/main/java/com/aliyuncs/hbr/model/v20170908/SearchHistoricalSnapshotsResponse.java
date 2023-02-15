@@ -25,21 +25,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class SearchHistoricalSnapshotsResponse extends AcsResponse {
 
+	private String nextToken;
+
 	private String requestId;
 
 	private Boolean success;
+
+	private Integer limit;
 
 	private String code;
 
 	private String message;
 
-	private Integer limit;
-
-	private String nextToken;
-
 	private Integer totalCount;
 
 	private List<Snapshot> snapshots;
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -57,6 +65,14 @@ public class SearchHistoricalSnapshotsResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public Integer getLimit() {
+		return this.limit;
+	}
+
+	public void setLimit(Integer limit) {
+		this.limit = limit;
+	}
+
 	public String getCode() {
 		return this.code;
 	}
@@ -71,22 +87,6 @@ public class SearchHistoricalSnapshotsResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
-	}
-
-	public Integer getLimit() {
-		return this.limit;
-	}
-
-	public void setLimit(Integer limit) {
-		this.limit = limit;
-	}
-
-	public String getNextToken() {
-		return this.nextToken;
-	}
-
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
 	}
 
 	public Integer getTotalCount() {
@@ -107,107 +107,71 @@ public class SearchHistoricalSnapshotsResponse extends AcsResponse {
 
 	public static class Snapshot {
 
-		private Long createdTime;
-
-		private Long updatedTime;
-
-		private String snapshotId;
-
-		private String sourceType;
-
-		private String jobId;
-
-		private String backupType;
-
 		private String status;
 
 		private String snapshotHash;
 
-		private String parentSnapshotHash;
+		private String vaultId;
 
-		private Long startTime;
+		private Long actualItems;
+
+		private String backupType;
+
+		private Long createTime;
+
+		private Long actualBytes;
+
+		private String sourceType;
+
+		private String prefix;
+
+		private String clientId;
+
+		private Long bytesTotal;
+
+		private Long itemsDone;
 
 		private Long completeTime;
 
 		private Long retention;
 
-		private Long bytesTotal;
-
-		private String fileSystemId;
-
-		private Long createTime;
+		private Long createdTime;
 
 		private String bucket;
 
-		private String prefix;
+		private String parentSnapshotHash;
 
 		private String instanceId;
 
-		private String path;
-
-		private String clientId;
-
-		private Long bytesDone;
-
-		private Long actualBytes;
-
-		private Long itemsDone;
-
-		private Long itemsTotal;
-
-		private Long actualItems;
+		private String fileSystemId;
 
 		private String errorFile;
 
+		private Long startTime;
+
+		private Long updatedTime;
+
+		private String snapshotId;
+
+		private String jobId;
+
+		private String path;
+
+		private Long itemsTotal;
+
+		private Long bytesDone;
+
+		private String instanceName;
+
+		private String tableName;
+
+		private Long rangeStart;
+
+		private Long rangeEnd;
+
+		private Long expireTime;
+
 		private List<String> paths;
-
-		public Long getCreatedTime() {
-			return this.createdTime;
-		}
-
-		public void setCreatedTime(Long createdTime) {
-			this.createdTime = createdTime;
-		}
-
-		public Long getUpdatedTime() {
-			return this.updatedTime;
-		}
-
-		public void setUpdatedTime(Long updatedTime) {
-			this.updatedTime = updatedTime;
-		}
-
-		public String getSnapshotId() {
-			return this.snapshotId;
-		}
-
-		public void setSnapshotId(String snapshotId) {
-			this.snapshotId = snapshotId;
-		}
-
-		public String getSourceType() {
-			return this.sourceType;
-		}
-
-		public void setSourceType(String sourceType) {
-			this.sourceType = sourceType;
-		}
-
-		public String getJobId() {
-			return this.jobId;
-		}
-
-		public void setJobId(String jobId) {
-			this.jobId = jobId;
-		}
-
-		public String getBackupType() {
-			return this.backupType;
-		}
-
-		public void setBackupType(String backupType) {
-			this.backupType = backupType;
-		}
 
 		public String getStatus() {
 			return this.status;
@@ -225,20 +189,84 @@ public class SearchHistoricalSnapshotsResponse extends AcsResponse {
 			this.snapshotHash = snapshotHash;
 		}
 
-		public String getParentSnapshotHash() {
-			return this.parentSnapshotHash;
+		public String getVaultId() {
+			return this.vaultId;
 		}
 
-		public void setParentSnapshotHash(String parentSnapshotHash) {
-			this.parentSnapshotHash = parentSnapshotHash;
+		public void setVaultId(String vaultId) {
+			this.vaultId = vaultId;
 		}
 
-		public Long getStartTime() {
-			return this.startTime;
+		public Long getActualItems() {
+			return this.actualItems;
 		}
 
-		public void setStartTime(Long startTime) {
-			this.startTime = startTime;
+		public void setActualItems(Long actualItems) {
+			this.actualItems = actualItems;
+		}
+
+		public String getBackupType() {
+			return this.backupType;
+		}
+
+		public void setBackupType(String backupType) {
+			this.backupType = backupType;
+		}
+
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
+		}
+
+		public Long getActualBytes() {
+			return this.actualBytes;
+		}
+
+		public void setActualBytes(Long actualBytes) {
+			this.actualBytes = actualBytes;
+		}
+
+		public String getSourceType() {
+			return this.sourceType;
+		}
+
+		public void setSourceType(String sourceType) {
+			this.sourceType = sourceType;
+		}
+
+		public String getPrefix() {
+			return this.prefix;
+		}
+
+		public void setPrefix(String prefix) {
+			this.prefix = prefix;
+		}
+
+		public String getClientId() {
+			return this.clientId;
+		}
+
+		public void setClientId(String clientId) {
+			this.clientId = clientId;
+		}
+
+		public Long getBytesTotal() {
+			return this.bytesTotal;
+		}
+
+		public void setBytesTotal(Long bytesTotal) {
+			this.bytesTotal = bytesTotal;
+		}
+
+		public Long getItemsDone() {
+			return this.itemsDone;
+		}
+
+		public void setItemsDone(Long itemsDone) {
+			this.itemsDone = itemsDone;
 		}
 
 		public Long getCompleteTime() {
@@ -257,28 +285,12 @@ public class SearchHistoricalSnapshotsResponse extends AcsResponse {
 			this.retention = retention;
 		}
 
-		public Long getBytesTotal() {
-			return this.bytesTotal;
+		public Long getCreatedTime() {
+			return this.createdTime;
 		}
 
-		public void setBytesTotal(Long bytesTotal) {
-			this.bytesTotal = bytesTotal;
-		}
-
-		public String getFileSystemId() {
-			return this.fileSystemId;
-		}
-
-		public void setFileSystemId(String fileSystemId) {
-			this.fileSystemId = fileSystemId;
-		}
-
-		public Long getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
+		public void setCreatedTime(Long createdTime) {
+			this.createdTime = createdTime;
 		}
 
 		public String getBucket() {
@@ -289,12 +301,12 @@ public class SearchHistoricalSnapshotsResponse extends AcsResponse {
 			this.bucket = bucket;
 		}
 
-		public String getPrefix() {
-			return this.prefix;
+		public String getParentSnapshotHash() {
+			return this.parentSnapshotHash;
 		}
 
-		public void setPrefix(String prefix) {
-			this.prefix = prefix;
+		public void setParentSnapshotHash(String parentSnapshotHash) {
+			this.parentSnapshotHash = parentSnapshotHash;
 		}
 
 		public String getInstanceId() {
@@ -305,44 +317,60 @@ public class SearchHistoricalSnapshotsResponse extends AcsResponse {
 			this.instanceId = instanceId;
 		}
 
+		public String getFileSystemId() {
+			return this.fileSystemId;
+		}
+
+		public void setFileSystemId(String fileSystemId) {
+			this.fileSystemId = fileSystemId;
+		}
+
+		public String getErrorFile() {
+			return this.errorFile;
+		}
+
+		public void setErrorFile(String errorFile) {
+			this.errorFile = errorFile;
+		}
+
+		public Long getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(Long startTime) {
+			this.startTime = startTime;
+		}
+
+		public Long getUpdatedTime() {
+			return this.updatedTime;
+		}
+
+		public void setUpdatedTime(Long updatedTime) {
+			this.updatedTime = updatedTime;
+		}
+
+		public String getSnapshotId() {
+			return this.snapshotId;
+		}
+
+		public void setSnapshotId(String snapshotId) {
+			this.snapshotId = snapshotId;
+		}
+
+		public String getJobId() {
+			return this.jobId;
+		}
+
+		public void setJobId(String jobId) {
+			this.jobId = jobId;
+		}
+
 		public String getPath() {
 			return this.path;
 		}
 
 		public void setPath(String path) {
 			this.path = path;
-		}
-
-		public String getClientId() {
-			return this.clientId;
-		}
-
-		public void setClientId(String clientId) {
-			this.clientId = clientId;
-		}
-
-		public Long getBytesDone() {
-			return this.bytesDone;
-		}
-
-		public void setBytesDone(Long bytesDone) {
-			this.bytesDone = bytesDone;
-		}
-
-		public Long getActualBytes() {
-			return this.actualBytes;
-		}
-
-		public void setActualBytes(Long actualBytes) {
-			this.actualBytes = actualBytes;
-		}
-
-		public Long getItemsDone() {
-			return this.itemsDone;
-		}
-
-		public void setItemsDone(Long itemsDone) {
-			this.itemsDone = itemsDone;
 		}
 
 		public Long getItemsTotal() {
@@ -353,20 +381,52 @@ public class SearchHistoricalSnapshotsResponse extends AcsResponse {
 			this.itemsTotal = itemsTotal;
 		}
 
-		public Long getActualItems() {
-			return this.actualItems;
+		public Long getBytesDone() {
+			return this.bytesDone;
 		}
 
-		public void setActualItems(Long actualItems) {
-			this.actualItems = actualItems;
+		public void setBytesDone(Long bytesDone) {
+			this.bytesDone = bytesDone;
 		}
 
-		public String getErrorFile() {
-			return this.errorFile;
+		public String getInstanceName() {
+			return this.instanceName;
 		}
 
-		public void setErrorFile(String errorFile) {
-			this.errorFile = errorFile;
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
+		}
+
+		public String getTableName() {
+			return this.tableName;
+		}
+
+		public void setTableName(String tableName) {
+			this.tableName = tableName;
+		}
+
+		public Long getRangeStart() {
+			return this.rangeStart;
+		}
+
+		public void setRangeStart(Long rangeStart) {
+			this.rangeStart = rangeStart;
+		}
+
+		public Long getRangeEnd() {
+			return this.rangeEnd;
+		}
+
+		public void setRangeEnd(Long rangeEnd) {
+			this.rangeEnd = rangeEnd;
+		}
+
+		public Long getExpireTime() {
+			return this.expireTime;
+		}
+
+		public void setExpireTime(Long expireTime) {
+			this.expireTime = expireTime;
 		}
 
 		public List<String> getPaths() {

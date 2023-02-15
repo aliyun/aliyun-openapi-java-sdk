@@ -32,7 +32,7 @@ public class DescribeHanaBackupPlansRequest extends RpcAcsRequest<DescribeHanaBa
 
 	private Integer pageNumber;
 
-	private String token;
+	private String resourceGroupId;
 
 	private String databaseName;
 
@@ -80,14 +80,14 @@ public class DescribeHanaBackupPlansRequest extends RpcAcsRequest<DescribeHanaBa
 		}
 	}
 
-	public String getToken() {
-		return this.token;
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
 	}
 
-	public void setToken(String token) {
-		this.token = token;
-		if(token != null){
-			putQueryParameter("Token", token);
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

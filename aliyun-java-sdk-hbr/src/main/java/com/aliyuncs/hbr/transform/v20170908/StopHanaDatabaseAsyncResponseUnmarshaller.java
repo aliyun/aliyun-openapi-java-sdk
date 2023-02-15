@@ -23,10 +23,10 @@ public class StopHanaDatabaseAsyncResponseUnmarshaller {
 	public static StopHanaDatabaseAsyncResponse unmarshall(StopHanaDatabaseAsyncResponse stopHanaDatabaseAsyncResponse, UnmarshallerContext _ctx) {
 		
 		stopHanaDatabaseAsyncResponse.setRequestId(_ctx.stringValue("StopHanaDatabaseAsyncResponse.RequestId"));
-		stopHanaDatabaseAsyncResponse.setSuccess(_ctx.booleanValue("StopHanaDatabaseAsyncResponse.Success"));
 		stopHanaDatabaseAsyncResponse.setCode(_ctx.stringValue("StopHanaDatabaseAsyncResponse.Code"));
 		stopHanaDatabaseAsyncResponse.setMessage(_ctx.stringValue("StopHanaDatabaseAsyncResponse.Message"));
 		stopHanaDatabaseAsyncResponse.setTaskId(_ctx.stringValue("StopHanaDatabaseAsyncResponse.TaskId"));
+		stopHanaDatabaseAsyncResponse.setSuccess(_ctx.booleanValue("StopHanaDatabaseAsyncResponse.Success"));
 	 
 	 	return stopHanaDatabaseAsyncResponse;
 	}

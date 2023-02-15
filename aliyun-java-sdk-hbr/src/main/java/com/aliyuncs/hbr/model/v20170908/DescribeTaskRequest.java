@@ -28,6 +28,8 @@ public class DescribeTaskRequest extends RpcAcsRequest<DescribeTaskResponse> {
 
 	private String token;
 
+	private String resourceGroupId;
+
 	private String taskId;
 	public DescribeTaskRequest() {
 		super("hbr", "2017-09-08", "DescribeTask", "hbr");
@@ -47,6 +49,17 @@ public class DescribeTaskRequest extends RpcAcsRequest<DescribeTaskResponse> {
 		this.token = token;
 		if(token != null){
 			putQueryParameter("Token", token);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

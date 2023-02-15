@@ -56,6 +56,7 @@ public class DescribeRestoreJobs2Request extends RpcAcsRequest<DescribeRestoreJo
 					}
 				}
 				putQueryParameter("Filters." + (depth1 + 1) + ".Key" , filterss.get(depth1).getKey());
+				putQueryParameter("Filters." + (depth1 + 1) + ".Operator" , filterss.get(depth1).getOperator());
 			}
 		}	
 	}
@@ -99,6 +100,8 @@ public class DescribeRestoreJobs2Request extends RpcAcsRequest<DescribeRestoreJo
 
 		private String key;
 
+		private String operator;
+
 		public List<String> getValuess() {
 			return this.valuess;
 		}
@@ -113,6 +116,14 @@ public class DescribeRestoreJobs2Request extends RpcAcsRequest<DescribeRestoreJo
 
 		public void setKey(String key) {
 			this.key = key;
+		}
+
+		public String getOperator() {
+			return this.operator;
+		}
+
+		public void setOperator(String operator) {
+			this.operator = operator;
 		}
 	}
 

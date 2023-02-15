@@ -15,6 +15,7 @@
 package com.aliyuncs.hbr.model.v20170908;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.hbr.transform.v20170908.DescribeBackupJobs2ResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -33,13 +34,13 @@ public class DescribeBackupJobs2Response extends AcsResponse {
 
 	private String message;
 
-	private Long totalCount;
-
-	private Integer pageSize;
+	private String diskId;
 
 	private Integer pageNumber;
 
-	private String diskId;
+	private Integer pageSize;
+
+	private Long totalCount;
 
 	private List<BackupJob> backupJobs;
 
@@ -75,20 +76,12 @@ public class DescribeBackupJobs2Response extends AcsResponse {
 		this.message = message;
 	}
 
-	public Long getTotalCount() {
-		return this.totalCount;
+	public String getDiskId() {
+		return this.diskId;
 	}
 
-	public void setTotalCount(Long totalCount) {
-		this.totalCount = totalCount;
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setDiskId(String diskId) {
+		this.diskId = diskId;
 	}
 
 	public Integer getPageNumber() {
@@ -99,12 +92,20 @@ public class DescribeBackupJobs2Response extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public String getDiskId() {
-		return this.diskId;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setDiskId(String diskId) {
-		this.diskId = diskId;
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public Long getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Long totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<BackupJob> getBackupJobs() {
@@ -117,129 +118,99 @@ public class DescribeBackupJobs2Response extends AcsResponse {
 
 	public static class BackupJob {
 
-		private String jobId;
-
-		private String sourceType;
-
-		private String vaultId;
-
-		private String backupSourceGroupId;
-
-		private String jobName;
-
-		private String backupType;
-
 		private String status;
-
-		private Long completeTime;
-
-		private Integer progress;
 
 		private String errorMessage;
 
-		private String parentId;
+		private Long actualItems;
 
-		private String clusterId;
+		private String vaultId;
 
-		private String databaseName;
+		private Long actualBytes;
 
-		private Long createdTime;
-
-		private Long updatedTime;
-
-		private Long startTime;
-
-		private Long bytesDone;
-
-		private Long bytesTotal;
-
-		private String fileSystemId;
+		private String dataSourceId;
 
 		private Long createTime;
 
-		private String bucket;
+		private String backupType;
 
 		private String prefix;
 
-		private String planId;
+		private String sourceType;
 
-		private String instanceId;
-
-		private String detail;
+		private String options;
 
 		private String diskId;
 
 		private String clientId;
 
-		private String speedLimit;
+		private Long itemsDone;
 
-		private String options;
-
-		private String include;
+		private Long bytesTotal;
 
 		private String exclude;
 
-		private String dataSourceId;
+		private String parentId;
 
-		private Long actualBytes;
+		private String jobName;
 
-		private Long itemsDone;
+		private String databaseName;
 
-		private Long itemsTotal;
+		private Long completeTime;
 
-		private Long actualItems;
+		private Long createdTime;
+
+		private String bucket;
+
+		private String clusterId;
+
+		private Integer progress;
+
+		private String speedLimit;
+
+		private String instanceId;
+
+		private String planId;
+
+		private String backupSourceGroupId;
+
+		private String fileSystemId;
 
 		private String errorFile;
 
+		private Long startTime;
+
+		private Long updatedTime;
+
+		private String jobId;
+
+		private Long itemsTotal;
+
+		private String include;
+
+		private Long bytesDone;
+
+		private String instanceName;
+
+		private Long speed;
+
+		private String tableName;
+
+		private String crossAccountType;
+
+		private Long crossAccountUserId;
+
+		private String crossAccountRoleName;
+
+		private List<Source> sources;
+
 		private List<String> paths;
 
-		public String getJobId() {
-			return this.jobId;
-		}
+		private Detail detail;
 
-		public void setJobId(String jobId) {
-			this.jobId = jobId;
-		}
+		private OtsDetail otsDetail;
 
-		public String getSourceType() {
-			return this.sourceType;
-		}
-
-		public void setSourceType(String sourceType) {
-			this.sourceType = sourceType;
-		}
-
-		public String getVaultId() {
-			return this.vaultId;
-		}
-
-		public void setVaultId(String vaultId) {
-			this.vaultId = vaultId;
-		}
-
-		public String getBackupSourceGroupId() {
-			return this.backupSourceGroupId;
-		}
-
-		public void setBackupSourceGroupId(String backupSourceGroupId) {
-			this.backupSourceGroupId = backupSourceGroupId;
-		}
-
-		public String getJobName() {
-			return this.jobName;
-		}
-
-		public void setJobName(String jobName) {
-			this.jobName = jobName;
-		}
-
-		public String getBackupType() {
-			return this.backupType;
-		}
-
-		public void setBackupType(String backupType) {
-			this.backupType = backupType;
-		}
+		private Report report;
 
 		public String getStatus() {
 			return this.status;
@@ -247,22 +218,6 @@ public class DescribeBackupJobs2Response extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
-		}
-
-		public Long getCompleteTime() {
-			return this.completeTime;
-		}
-
-		public void setCompleteTime(Long completeTime) {
-			this.completeTime = completeTime;
-		}
-
-		public Integer getProgress() {
-			return this.progress;
-		}
-
-		public void setProgress(Integer progress) {
-			this.progress = progress;
 		}
 
 		public String getErrorMessage() {
@@ -273,76 +228,36 @@ public class DescribeBackupJobs2Response extends AcsResponse {
 			this.errorMessage = errorMessage;
 		}
 
-		public String getParentId() {
-			return this.parentId;
+		public Long getActualItems() {
+			return this.actualItems;
 		}
 
-		public void setParentId(String parentId) {
-			this.parentId = parentId;
+		public void setActualItems(Long actualItems) {
+			this.actualItems = actualItems;
 		}
 
-		public String getClusterId() {
-			return this.clusterId;
+		public String getVaultId() {
+			return this.vaultId;
 		}
 
-		public void setClusterId(String clusterId) {
-			this.clusterId = clusterId;
+		public void setVaultId(String vaultId) {
+			this.vaultId = vaultId;
 		}
 
-		public String getDatabaseName() {
-			return this.databaseName;
+		public Long getActualBytes() {
+			return this.actualBytes;
 		}
 
-		public void setDatabaseName(String databaseName) {
-			this.databaseName = databaseName;
+		public void setActualBytes(Long actualBytes) {
+			this.actualBytes = actualBytes;
 		}
 
-		public Long getCreatedTime() {
-			return this.createdTime;
+		public String getDataSourceId() {
+			return this.dataSourceId;
 		}
 
-		public void setCreatedTime(Long createdTime) {
-			this.createdTime = createdTime;
-		}
-
-		public Long getUpdatedTime() {
-			return this.updatedTime;
-		}
-
-		public void setUpdatedTime(Long updatedTime) {
-			this.updatedTime = updatedTime;
-		}
-
-		public Long getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(Long startTime) {
-			this.startTime = startTime;
-		}
-
-		public Long getBytesDone() {
-			return this.bytesDone;
-		}
-
-		public void setBytesDone(Long bytesDone) {
-			this.bytesDone = bytesDone;
-		}
-
-		public Long getBytesTotal() {
-			return this.bytesTotal;
-		}
-
-		public void setBytesTotal(Long bytesTotal) {
-			this.bytesTotal = bytesTotal;
-		}
-
-		public String getFileSystemId() {
-			return this.fileSystemId;
-		}
-
-		public void setFileSystemId(String fileSystemId) {
-			this.fileSystemId = fileSystemId;
+		public void setDataSourceId(String dataSourceId) {
+			this.dataSourceId = dataSourceId;
 		}
 
 		public Long getCreateTime() {
@@ -353,12 +268,12 @@ public class DescribeBackupJobs2Response extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getBucket() {
-			return this.bucket;
+		public String getBackupType() {
+			return this.backupType;
 		}
 
-		public void setBucket(String bucket) {
-			this.bucket = bucket;
+		public void setBackupType(String backupType) {
+			this.backupType = backupType;
 		}
 
 		public String getPrefix() {
@@ -369,28 +284,20 @@ public class DescribeBackupJobs2Response extends AcsResponse {
 			this.prefix = prefix;
 		}
 
-		public String getPlanId() {
-			return this.planId;
+		public String getSourceType() {
+			return this.sourceType;
 		}
 
-		public void setPlanId(String planId) {
-			this.planId = planId;
+		public void setSourceType(String sourceType) {
+			this.sourceType = sourceType;
 		}
 
-		public String getInstanceId() {
-			return this.instanceId;
+		public String getOptions() {
+			return this.options;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getDetail() {
-			return this.detail;
-		}
-
-		public void setDetail(String detail) {
-			this.detail = detail;
+		public void setOptions(String options) {
+			this.options = options;
 		}
 
 		public String getDiskId() {
@@ -409,28 +316,20 @@ public class DescribeBackupJobs2Response extends AcsResponse {
 			this.clientId = clientId;
 		}
 
-		public String getSpeedLimit() {
-			return this.speedLimit;
+		public Long getItemsDone() {
+			return this.itemsDone;
 		}
 
-		public void setSpeedLimit(String speedLimit) {
-			this.speedLimit = speedLimit;
+		public void setItemsDone(Long itemsDone) {
+			this.itemsDone = itemsDone;
 		}
 
-		public String getOptions() {
-			return this.options;
+		public Long getBytesTotal() {
+			return this.bytesTotal;
 		}
 
-		public void setOptions(String options) {
-			this.options = options;
-		}
-
-		public String getInclude() {
-			return this.include;
-		}
-
-		public void setInclude(String include) {
-			this.include = include;
+		public void setBytesTotal(Long bytesTotal) {
+			this.bytesTotal = bytesTotal;
 		}
 
 		public String getExclude() {
@@ -441,44 +340,108 @@ public class DescribeBackupJobs2Response extends AcsResponse {
 			this.exclude = exclude;
 		}
 
-		public String getDataSourceId() {
-			return this.dataSourceId;
+		public String getParentId() {
+			return this.parentId;
 		}
 
-		public void setDataSourceId(String dataSourceId) {
-			this.dataSourceId = dataSourceId;
+		public void setParentId(String parentId) {
+			this.parentId = parentId;
 		}
 
-		public Long getActualBytes() {
-			return this.actualBytes;
+		public String getJobName() {
+			return this.jobName;
 		}
 
-		public void setActualBytes(Long actualBytes) {
-			this.actualBytes = actualBytes;
+		public void setJobName(String jobName) {
+			this.jobName = jobName;
 		}
 
-		public Long getItemsDone() {
-			return this.itemsDone;
+		public String getDatabaseName() {
+			return this.databaseName;
 		}
 
-		public void setItemsDone(Long itemsDone) {
-			this.itemsDone = itemsDone;
+		public void setDatabaseName(String databaseName) {
+			this.databaseName = databaseName;
 		}
 
-		public Long getItemsTotal() {
-			return this.itemsTotal;
+		public Long getCompleteTime() {
+			return this.completeTime;
 		}
 
-		public void setItemsTotal(Long itemsTotal) {
-			this.itemsTotal = itemsTotal;
+		public void setCompleteTime(Long completeTime) {
+			this.completeTime = completeTime;
 		}
 
-		public Long getActualItems() {
-			return this.actualItems;
+		public Long getCreatedTime() {
+			return this.createdTime;
 		}
 
-		public void setActualItems(Long actualItems) {
-			this.actualItems = actualItems;
+		public void setCreatedTime(Long createdTime) {
+			this.createdTime = createdTime;
+		}
+
+		public String getBucket() {
+			return this.bucket;
+		}
+
+		public void setBucket(String bucket) {
+			this.bucket = bucket;
+		}
+
+		public String getClusterId() {
+			return this.clusterId;
+		}
+
+		public void setClusterId(String clusterId) {
+			this.clusterId = clusterId;
+		}
+
+		public Integer getProgress() {
+			return this.progress;
+		}
+
+		public void setProgress(Integer progress) {
+			this.progress = progress;
+		}
+
+		public String getSpeedLimit() {
+			return this.speedLimit;
+		}
+
+		public void setSpeedLimit(String speedLimit) {
+			this.speedLimit = speedLimit;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getPlanId() {
+			return this.planId;
+		}
+
+		public void setPlanId(String planId) {
+			this.planId = planId;
+		}
+
+		public String getBackupSourceGroupId() {
+			return this.backupSourceGroupId;
+		}
+
+		public void setBackupSourceGroupId(String backupSourceGroupId) {
+			this.backupSourceGroupId = backupSourceGroupId;
+		}
+
+		public String getFileSystemId() {
+			return this.fileSystemId;
+		}
+
+		public void setFileSystemId(String fileSystemId) {
+			this.fileSystemId = fileSystemId;
 		}
 
 		public String getErrorFile() {
@@ -489,12 +452,632 @@ public class DescribeBackupJobs2Response extends AcsResponse {
 			this.errorFile = errorFile;
 		}
 
+		public Long getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(Long startTime) {
+			this.startTime = startTime;
+		}
+
+		public Long getUpdatedTime() {
+			return this.updatedTime;
+		}
+
+		public void setUpdatedTime(Long updatedTime) {
+			this.updatedTime = updatedTime;
+		}
+
+		public String getJobId() {
+			return this.jobId;
+		}
+
+		public void setJobId(String jobId) {
+			this.jobId = jobId;
+		}
+
+		public Long getItemsTotal() {
+			return this.itemsTotal;
+		}
+
+		public void setItemsTotal(Long itemsTotal) {
+			this.itemsTotal = itemsTotal;
+		}
+
+		public String getInclude() {
+			return this.include;
+		}
+
+		public void setInclude(String include) {
+			this.include = include;
+		}
+
+		public Long getBytesDone() {
+			return this.bytesDone;
+		}
+
+		public void setBytesDone(Long bytesDone) {
+			this.bytesDone = bytesDone;
+		}
+
+		public String getInstanceName() {
+			return this.instanceName;
+		}
+
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
+		}
+
+		public Long getSpeed() {
+			return this.speed;
+		}
+
+		public void setSpeed(Long speed) {
+			this.speed = speed;
+		}
+
+		public String getTableName() {
+			return this.tableName;
+		}
+
+		public void setTableName(String tableName) {
+			this.tableName = tableName;
+		}
+
+		public String getCrossAccountType() {
+			return this.crossAccountType;
+		}
+
+		public void setCrossAccountType(String crossAccountType) {
+			this.crossAccountType = crossAccountType;
+		}
+
+		public Long getCrossAccountUserId() {
+			return this.crossAccountUserId;
+		}
+
+		public void setCrossAccountUserId(Long crossAccountUserId) {
+			this.crossAccountUserId = crossAccountUserId;
+		}
+
+		public String getCrossAccountRoleName() {
+			return this.crossAccountRoleName;
+		}
+
+		public void setCrossAccountRoleName(String crossAccountRoleName) {
+			this.crossAccountRoleName = crossAccountRoleName;
+		}
+
+		public List<Source> getSources() {
+			return this.sources;
+		}
+
+		public void setSources(List<Source> sources) {
+			this.sources = sources;
+		}
+
 		public List<String> getPaths() {
 			return this.paths;
 		}
 
 		public void setPaths(List<String> paths) {
 			this.paths = paths;
+		}
+
+		public Detail getDetail() {
+			return this.detail;
+		}
+
+		public void setDetail(Detail detail) {
+			this.detail = detail;
+		}
+
+		public OtsDetail getOtsDetail() {
+			return this.otsDetail;
+		}
+
+		public void setOtsDetail(OtsDetail otsDetail) {
+			this.otsDetail = otsDetail;
+		}
+
+		public Report getReport() {
+			return this.report;
+		}
+
+		public void setReport(Report report) {
+			this.report = report;
+		}
+
+		public static class Source {
+
+			private String resourceType;
+
+			private String backupMethod;
+
+			private String resourceId;
+
+			private String resourceInfo;
+
+			public String getResourceType() {
+				return this.resourceType;
+			}
+
+			public void setResourceType(String resourceType) {
+				this.resourceType = resourceType;
+			}
+
+			public String getBackupMethod() {
+				return this.backupMethod;
+			}
+
+			public void setBackupMethod(String backupMethod) {
+				this.backupMethod = backupMethod;
+			}
+
+			public String getResourceId() {
+				return this.resourceId;
+			}
+
+			public void setResourceId(String resourceId) {
+				this.resourceId = resourceId;
+			}
+
+			public String getResourceInfo() {
+				return this.resourceInfo;
+			}
+
+			public void setResourceInfo(String resourceInfo) {
+				this.resourceInfo = resourceInfo;
+			}
+		}
+
+		public static class Detail {
+
+			private String downgradeReason;
+
+			private String backupVaultId;
+
+			private String osName;
+
+			private Boolean groupSnapshot;
+
+			private Boolean doCopy;
+
+			private String udmEcsDiskSnapshotId;
+
+			private String destinationRegionId;
+
+			private Long nativeSnapshotRetention;
+
+			private Boolean doBackup;
+
+			private String instanceName;
+
+			private String jobDetail;
+
+			private String platform;
+
+			private String osNameEn;
+
+			private String destinationNativeSnapshotId;
+
+			private Integer destinationNativeSnapshotProgress;
+
+			private String udmEcsDiskHbrSnapshotId;
+
+			private String diskDevName;
+
+			private String stage;
+
+			private String snapshotGroupId;
+
+			private String destinationNativeSnapshotStatus;
+
+			private Long diskSize;
+
+			private String consistentLevel;
+
+			private Long backupRetention;
+
+			private Long destinationRetention;
+
+			private Long startTime;
+
+			private String destinationSnapshotId;
+
+			private Map<Object,Object> diskHbrSnapshotIdWithDeviceMap;
+
+			private String osType;
+
+			private String destinationNativeSnapshotErrorMessage;
+
+			private String hbrSnapshotId;
+
+			private String nativeSnapshotId;
+
+			private Boolean systemDisk;
+
+			private String nativeSnapshotStatus;
+
+			private Map<Object,Object> instanceInfos;
+
+			private List<String> diskHbrSnapshotIdList;
+
+			private List<String> diskIdList;
+
+			private List<String> diskNativeSnapshotIdList;
+
+			private List<String> excludeDiskIdList;
+
+			public String getDowngradeReason() {
+				return this.downgradeReason;
+			}
+
+			public void setDowngradeReason(String downgradeReason) {
+				this.downgradeReason = downgradeReason;
+			}
+
+			public String getBackupVaultId() {
+				return this.backupVaultId;
+			}
+
+			public void setBackupVaultId(String backupVaultId) {
+				this.backupVaultId = backupVaultId;
+			}
+
+			public String getOsName() {
+				return this.osName;
+			}
+
+			public void setOsName(String osName) {
+				this.osName = osName;
+			}
+
+			public Boolean getGroupSnapshot() {
+				return this.groupSnapshot;
+			}
+
+			public void setGroupSnapshot(Boolean groupSnapshot) {
+				this.groupSnapshot = groupSnapshot;
+			}
+
+			public Boolean getDoCopy() {
+				return this.doCopy;
+			}
+
+			public void setDoCopy(Boolean doCopy) {
+				this.doCopy = doCopy;
+			}
+
+			public String getUdmEcsDiskSnapshotId() {
+				return this.udmEcsDiskSnapshotId;
+			}
+
+			public void setUdmEcsDiskSnapshotId(String udmEcsDiskSnapshotId) {
+				this.udmEcsDiskSnapshotId = udmEcsDiskSnapshotId;
+			}
+
+			public String getDestinationRegionId() {
+				return this.destinationRegionId;
+			}
+
+			public void setDestinationRegionId(String destinationRegionId) {
+				this.destinationRegionId = destinationRegionId;
+			}
+
+			public Long getNativeSnapshotRetention() {
+				return this.nativeSnapshotRetention;
+			}
+
+			public void setNativeSnapshotRetention(Long nativeSnapshotRetention) {
+				this.nativeSnapshotRetention = nativeSnapshotRetention;
+			}
+
+			public Boolean getDoBackup() {
+				return this.doBackup;
+			}
+
+			public void setDoBackup(Boolean doBackup) {
+				this.doBackup = doBackup;
+			}
+
+			public String getInstanceName() {
+				return this.instanceName;
+			}
+
+			public void setInstanceName(String instanceName) {
+				this.instanceName = instanceName;
+			}
+
+			public String getJobDetail() {
+				return this.jobDetail;
+			}
+
+			public void setJobDetail(String jobDetail) {
+				this.jobDetail = jobDetail;
+			}
+
+			public String getPlatform() {
+				return this.platform;
+			}
+
+			public void setPlatform(String platform) {
+				this.platform = platform;
+			}
+
+			public String getOsNameEn() {
+				return this.osNameEn;
+			}
+
+			public void setOsNameEn(String osNameEn) {
+				this.osNameEn = osNameEn;
+			}
+
+			public String getDestinationNativeSnapshotId() {
+				return this.destinationNativeSnapshotId;
+			}
+
+			public void setDestinationNativeSnapshotId(String destinationNativeSnapshotId) {
+				this.destinationNativeSnapshotId = destinationNativeSnapshotId;
+			}
+
+			public Integer getDestinationNativeSnapshotProgress() {
+				return this.destinationNativeSnapshotProgress;
+			}
+
+			public void setDestinationNativeSnapshotProgress(Integer destinationNativeSnapshotProgress) {
+				this.destinationNativeSnapshotProgress = destinationNativeSnapshotProgress;
+			}
+
+			public String getUdmEcsDiskHbrSnapshotId() {
+				return this.udmEcsDiskHbrSnapshotId;
+			}
+
+			public void setUdmEcsDiskHbrSnapshotId(String udmEcsDiskHbrSnapshotId) {
+				this.udmEcsDiskHbrSnapshotId = udmEcsDiskHbrSnapshotId;
+			}
+
+			public String getDiskDevName() {
+				return this.diskDevName;
+			}
+
+			public void setDiskDevName(String diskDevName) {
+				this.diskDevName = diskDevName;
+			}
+
+			public String getStage() {
+				return this.stage;
+			}
+
+			public void setStage(String stage) {
+				this.stage = stage;
+			}
+
+			public String getSnapshotGroupId() {
+				return this.snapshotGroupId;
+			}
+
+			public void setSnapshotGroupId(String snapshotGroupId) {
+				this.snapshotGroupId = snapshotGroupId;
+			}
+
+			public String getDestinationNativeSnapshotStatus() {
+				return this.destinationNativeSnapshotStatus;
+			}
+
+			public void setDestinationNativeSnapshotStatus(String destinationNativeSnapshotStatus) {
+				this.destinationNativeSnapshotStatus = destinationNativeSnapshotStatus;
+			}
+
+			public Long getDiskSize() {
+				return this.diskSize;
+			}
+
+			public void setDiskSize(Long diskSize) {
+				this.diskSize = diskSize;
+			}
+
+			public String getConsistentLevel() {
+				return this.consistentLevel;
+			}
+
+			public void setConsistentLevel(String consistentLevel) {
+				this.consistentLevel = consistentLevel;
+			}
+
+			public Long getBackupRetention() {
+				return this.backupRetention;
+			}
+
+			public void setBackupRetention(Long backupRetention) {
+				this.backupRetention = backupRetention;
+			}
+
+			public Long getDestinationRetention() {
+				return this.destinationRetention;
+			}
+
+			public void setDestinationRetention(Long destinationRetention) {
+				this.destinationRetention = destinationRetention;
+			}
+
+			public Long getStartTime() {
+				return this.startTime;
+			}
+
+			public void setStartTime(Long startTime) {
+				this.startTime = startTime;
+			}
+
+			public String getDestinationSnapshotId() {
+				return this.destinationSnapshotId;
+			}
+
+			public void setDestinationSnapshotId(String destinationSnapshotId) {
+				this.destinationSnapshotId = destinationSnapshotId;
+			}
+
+			public Map<Object,Object> getDiskHbrSnapshotIdWithDeviceMap() {
+				return this.diskHbrSnapshotIdWithDeviceMap;
+			}
+
+			public void setDiskHbrSnapshotIdWithDeviceMap(Map<Object,Object> diskHbrSnapshotIdWithDeviceMap) {
+				this.diskHbrSnapshotIdWithDeviceMap = diskHbrSnapshotIdWithDeviceMap;
+			}
+
+			public String getOsType() {
+				return this.osType;
+			}
+
+			public void setOsType(String osType) {
+				this.osType = osType;
+			}
+
+			public String getDestinationNativeSnapshotErrorMessage() {
+				return this.destinationNativeSnapshotErrorMessage;
+			}
+
+			public void setDestinationNativeSnapshotErrorMessage(String destinationNativeSnapshotErrorMessage) {
+				this.destinationNativeSnapshotErrorMessage = destinationNativeSnapshotErrorMessage;
+			}
+
+			public String getHbrSnapshotId() {
+				return this.hbrSnapshotId;
+			}
+
+			public void setHbrSnapshotId(String hbrSnapshotId) {
+				this.hbrSnapshotId = hbrSnapshotId;
+			}
+
+			public String getNativeSnapshotId() {
+				return this.nativeSnapshotId;
+			}
+
+			public void setNativeSnapshotId(String nativeSnapshotId) {
+				this.nativeSnapshotId = nativeSnapshotId;
+			}
+
+			public Boolean getSystemDisk() {
+				return this.systemDisk;
+			}
+
+			public void setSystemDisk(Boolean systemDisk) {
+				this.systemDisk = systemDisk;
+			}
+
+			public String getNativeSnapshotStatus() {
+				return this.nativeSnapshotStatus;
+			}
+
+			public void setNativeSnapshotStatus(String nativeSnapshotStatus) {
+				this.nativeSnapshotStatus = nativeSnapshotStatus;
+			}
+
+			public Map<Object,Object> getInstanceInfos() {
+				return this.instanceInfos;
+			}
+
+			public void setInstanceInfos(Map<Object,Object> instanceInfos) {
+				this.instanceInfos = instanceInfos;
+			}
+
+			public List<String> getDiskHbrSnapshotIdList() {
+				return this.diskHbrSnapshotIdList;
+			}
+
+			public void setDiskHbrSnapshotIdList(List<String> diskHbrSnapshotIdList) {
+				this.diskHbrSnapshotIdList = diskHbrSnapshotIdList;
+			}
+
+			public List<String> getDiskIdList() {
+				return this.diskIdList;
+			}
+
+			public void setDiskIdList(List<String> diskIdList) {
+				this.diskIdList = diskIdList;
+			}
+
+			public List<String> getDiskNativeSnapshotIdList() {
+				return this.diskNativeSnapshotIdList;
+			}
+
+			public void setDiskNativeSnapshotIdList(List<String> diskNativeSnapshotIdList) {
+				this.diskNativeSnapshotIdList = diskNativeSnapshotIdList;
+			}
+
+			public List<String> getExcludeDiskIdList() {
+				return this.excludeDiskIdList;
+			}
+
+			public void setExcludeDiskIdList(List<String> excludeDiskIdList) {
+				this.excludeDiskIdList = excludeDiskIdList;
+			}
+		}
+
+		public static class OtsDetail {
+
+			private List<String> tableNames;
+
+			public List<String> getTableNames() {
+				return this.tableNames;
+			}
+
+			public void setTableNames(List<String> tableNames) {
+				this.tableNames = tableNames;
+			}
+		}
+
+		public static class Report {
+
+			private String totalFiles;
+
+			private String successFiles;
+
+			private String failedFiles;
+
+			private String skippedFiles;
+
+			private String reportTaskStatus;
+
+			public String getTotalFiles() {
+				return this.totalFiles;
+			}
+
+			public void setTotalFiles(String totalFiles) {
+				this.totalFiles = totalFiles;
+			}
+
+			public String getSuccessFiles() {
+				return this.successFiles;
+			}
+
+			public void setSuccessFiles(String successFiles) {
+				this.successFiles = successFiles;
+			}
+
+			public String getFailedFiles() {
+				return this.failedFiles;
+			}
+
+			public void setFailedFiles(String failedFiles) {
+				this.failedFiles = failedFiles;
+			}
+
+			public String getSkippedFiles() {
+				return this.skippedFiles;
+			}
+
+			public void setSkippedFiles(String skippedFiles) {
+				this.skippedFiles = skippedFiles;
+			}
+
+			public String getReportTaskStatus() {
+				return this.reportTaskStatus;
+			}
+
+			public void setReportTaskStatus(String reportTaskStatus) {
+				this.reportTaskStatus = reportTaskStatus;
+			}
 		}
 	}
 

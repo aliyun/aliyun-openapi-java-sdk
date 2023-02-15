@@ -29,13 +29,13 @@ public class CreateHanaInstanceRequest extends RpcAcsRequest<CreateHanaInstanceR
 
 	private String vaultId;
 
-	private String contactId;
-
 	private Boolean useSsl;
 
 	private String sid;
 
 	private String alertSetting;
+
+	private String resourceGroupId;
 
 	private String password;
 
@@ -46,8 +46,6 @@ public class CreateHanaInstanceRequest extends RpcAcsRequest<CreateHanaInstanceR
 	private String ecsInstanceId;
 
 	private Integer instanceNumber;
-
-	private String token;
 
 	private String userName;
 	public CreateHanaInstanceRequest() {
@@ -81,17 +79,6 @@ public class CreateHanaInstanceRequest extends RpcAcsRequest<CreateHanaInstanceR
 		}
 	}
 
-	public String getContactId() {
-		return this.contactId;
-	}
-
-	public void setContactId(String contactId) {
-		this.contactId = contactId;
-		if(contactId != null){
-			putQueryParameter("ContactId", contactId);
-		}
-	}
-
 	public Boolean getUseSsl() {
 		return this.useSsl;
 	}
@@ -122,6 +109,17 @@ public class CreateHanaInstanceRequest extends RpcAcsRequest<CreateHanaInstanceR
 		this.alertSetting = alertSetting;
 		if(alertSetting != null){
 			putQueryParameter("AlertSetting", alertSetting);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
@@ -177,17 +175,6 @@ public class CreateHanaInstanceRequest extends RpcAcsRequest<CreateHanaInstanceR
 		this.instanceNumber = instanceNumber;
 		if(instanceNumber != null){
 			putQueryParameter("InstanceNumber", instanceNumber.toString());
-		}
-	}
-
-	public String getToken() {
-		return this.token;
-	}
-
-	public void setToken(String token) {
-		this.token = token;
-		if(token != null){
-			putQueryParameter("Token", token);
 		}
 	}
 

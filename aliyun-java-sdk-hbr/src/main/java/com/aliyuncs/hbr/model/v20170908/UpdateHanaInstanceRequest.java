@@ -30,11 +30,11 @@ public class UpdateHanaInstanceRequest extends RpcAcsRequest<UpdateHanaInstanceR
 
 	private String vaultId;
 
-	private String contactId;
-
 	private Boolean useSsl;
 
 	private String alertSetting;
+
+	private String resourceGroupId;
 
 	private String password;
 
@@ -45,8 +45,6 @@ public class UpdateHanaInstanceRequest extends RpcAcsRequest<UpdateHanaInstanceR
 	private String clusterId;
 
 	private Integer instanceNumber;
-
-	private String token;
 
 	private String userName;
 	public UpdateHanaInstanceRequest() {
@@ -81,17 +79,6 @@ public class UpdateHanaInstanceRequest extends RpcAcsRequest<UpdateHanaInstanceR
 		}
 	}
 
-	public String getContactId() {
-		return this.contactId;
-	}
-
-	public void setContactId(String contactId) {
-		this.contactId = contactId;
-		if(contactId != null){
-			putQueryParameter("ContactId", contactId);
-		}
-	}
-
 	public Boolean getUseSsl() {
 		return this.useSsl;
 	}
@@ -111,6 +98,17 @@ public class UpdateHanaInstanceRequest extends RpcAcsRequest<UpdateHanaInstanceR
 		this.alertSetting = alertSetting;
 		if(alertSetting != null){
 			putQueryParameter("AlertSetting", alertSetting);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
@@ -166,17 +164,6 @@ public class UpdateHanaInstanceRequest extends RpcAcsRequest<UpdateHanaInstanceR
 		this.instanceNumber = instanceNumber;
 		if(instanceNumber != null){
 			putQueryParameter("InstanceNumber", instanceNumber.toString());
-		}
-	}
-
-	public String getToken() {
-		return this.token;
-	}
-
-	public void setToken(String token) {
-		this.token = token;
-		if(token != null){
-			putQueryParameter("Token", token);
 		}
 	}
 

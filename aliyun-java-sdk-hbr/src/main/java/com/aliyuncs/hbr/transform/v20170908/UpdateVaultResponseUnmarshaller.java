@@ -23,9 +23,9 @@ public class UpdateVaultResponseUnmarshaller {
 	public static UpdateVaultResponse unmarshall(UpdateVaultResponse updateVaultResponse, UnmarshallerContext _ctx) {
 		
 		updateVaultResponse.setRequestId(_ctx.stringValue("UpdateVaultResponse.RequestId"));
-		updateVaultResponse.setSuccess(_ctx.booleanValue("UpdateVaultResponse.Success"));
 		updateVaultResponse.setCode(_ctx.stringValue("UpdateVaultResponse.Code"));
 		updateVaultResponse.setMessage(_ctx.stringValue("UpdateVaultResponse.Message"));
+		updateVaultResponse.setSuccess(_ctx.booleanValue("UpdateVaultResponse.Success"));
 	 
 	 	return updateVaultResponse;
 	}

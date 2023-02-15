@@ -32,7 +32,7 @@ public class UpdateVaultRequest extends RpcAcsRequest<UpdateVaultResponse> {
 
 	private String vaultName;
 
-	private Boolean searchEnabled;
+	private String resourceGroupId;
 	public UpdateVaultRequest() {
 		super("hbr", "2017-09-08", "UpdateVault", "hbr");
 		setProtocol(ProtocolType.HTTPS);
@@ -76,14 +76,14 @@ public class UpdateVaultRequest extends RpcAcsRequest<UpdateVaultResponse> {
 		}
 	}
 
-	public Boolean getSearchEnabled() {
-		return this.searchEnabled;
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
 	}
 
-	public void setSearchEnabled(Boolean searchEnabled) {
-		this.searchEnabled = searchEnabled;
-		if(searchEnabled != null){
-			putQueryParameter("SearchEnabled", searchEnabled.toString());
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

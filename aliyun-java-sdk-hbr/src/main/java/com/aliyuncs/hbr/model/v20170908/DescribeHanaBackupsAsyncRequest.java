@@ -39,6 +39,8 @@ public class DescribeHanaBackupsAsyncRequest extends RpcAcsRequest<DescribeHanaB
 
 	private String mode;
 
+	private String resourceGroupId;
+
 	private Boolean includeIncremental;
 
 	private Integer pageSize;
@@ -139,6 +141,17 @@ public class DescribeHanaBackupsAsyncRequest extends RpcAcsRequest<DescribeHanaB
 		this.mode = mode;
 		if(mode != null){
 			putQueryParameter("Mode", mode);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

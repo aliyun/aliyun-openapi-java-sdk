@@ -27,6 +27,12 @@ public class DetachNasFileSystemRequest extends RpcAcsRequest<DetachNasFileSyste
 
 	private String createTime;
 
+	private String crossAccountType;
+
+	private String crossAccountRoleName;
+
+	private Long crossAccountUserId;
+
 	private String fileSystemId;
 	public DetachNasFileSystemRequest() {
 		super("hbr", "2017-09-08", "DetachNasFileSystem", "hbr");
@@ -45,6 +51,39 @@ public class DetachNasFileSystemRequest extends RpcAcsRequest<DetachNasFileSyste
 		this.createTime = createTime;
 		if(createTime != null){
 			putQueryParameter("CreateTime", createTime);
+		}
+	}
+
+	public String getCrossAccountType() {
+		return this.crossAccountType;
+	}
+
+	public void setCrossAccountType(String crossAccountType) {
+		this.crossAccountType = crossAccountType;
+		if(crossAccountType != null){
+			putQueryParameter("CrossAccountType", crossAccountType);
+		}
+	}
+
+	public String getCrossAccountRoleName() {
+		return this.crossAccountRoleName;
+	}
+
+	public void setCrossAccountRoleName(String crossAccountRoleName) {
+		this.crossAccountRoleName = crossAccountRoleName;
+		if(crossAccountRoleName != null){
+			putQueryParameter("CrossAccountRoleName", crossAccountRoleName);
+		}
+	}
+
+	public Long getCrossAccountUserId() {
+		return this.crossAccountUserId;
+	}
+
+	public void setCrossAccountUserId(Long crossAccountUserId) {
+		this.crossAccountUserId = crossAccountUserId;
+		if(crossAccountUserId != null){
+			putQueryParameter("CrossAccountUserId", crossAccountUserId.toString());
 		}
 	}
 

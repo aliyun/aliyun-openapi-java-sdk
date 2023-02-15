@@ -33,11 +33,11 @@ public class DescribeRestoreJobs2Response extends AcsResponse {
 
 	private String message;
 
-	private Integer totalCount;
+	private Integer pageNumber;
 
 	private Integer pageSize;
 
-	private Integer pageNumber;
+	private Integer totalCount;
 
 	private List<RestoreJob> restoreJobs;
 
@@ -73,12 +73,12 @@ public class DescribeRestoreJobs2Response extends AcsResponse {
 		this.message = message;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public Integer getPageSize() {
@@ -89,12 +89,12 @@ public class DescribeRestoreJobs2Response extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<RestoreJob> getRestoreJobs() {
@@ -107,94 +107,100 @@ public class DescribeRestoreJobs2Response extends AcsResponse {
 
 	public static class RestoreJob {
 
-		private String restoreId;
-
-		private String restoreType;
-
-		private String parentId;
+		private String snapshotHash;
 
 		private String status;
 
 		private String errorMessage;
 
-		private Long startTime;
-
-		private Long completeTime;
-
-		private Long expireTime;
-
-		private Integer progress;
-
-		private Long bytesDone;
-
-		private Long bytesTotal;
+		private Long actualItems;
 
 		private String vaultId;
 
-		private String snapshotId;
+		private Long actualBytes;
 
-		private String snapshotHash;
+		private String udmDetail;
 
 		private String sourceType;
 
 		private String options;
 
-		private String targetFileSystemId;
+		private String targetInstanceId;
+
+		private String restoreType;
 
 		private Long targetCreateTime;
 
-		private String targetPath;
+		private Long itemsDone;
+
+		private Long bytesTotal;
+
+		private String exclude;
+
+		private String parentId;
+
+		private Long completeTime;
 
 		private Long createdTime;
 
-		private Long updatedTime;
-
 		private String targetBucket;
-
-		private String targetPrefix;
-
-		private String udmDetail;
-
-		private String targetInstanceId;
-
-		private String targetClientId;
 
 		private String clusterId;
 
+		private String targetFileSystemId;
+
+		private Integer progress;
+
+		private Long expireTime;
+
 		private String targetDataSourceId;
 
-		private Long actualBytes;
+		private String targetPrefix;
 
-		private Long itemsDone;
-
-		private Long itemsTotal;
-
-		private Long actualItems;
+		private String targetPath;
 
 		private String errorFile;
 
-		public String getRestoreId() {
-			return this.restoreId;
+		private Long startTime;
+
+		private Long updatedTime;
+
+		private String snapshotId;
+
+		private String restoreId;
+
+		private String targetClientId;
+
+		private Long itemsTotal;
+
+		private String include;
+
+		private Long bytesDone;
+
+		private String targetInstanceName;
+
+		private String targetTableName;
+
+		private Long speed;
+
+		private Long targetTime;
+
+		private String crossAccountType;
+
+		private Long crossAccountUserId;
+
+		private String crossAccountRoleName;
+
+		private OtsDetail otsDetail;
+
+		private Report report;
+
+		public String getSnapshotHash() {
+			return this.snapshotHash;
 		}
 
-		public void setRestoreId(String restoreId) {
-			this.restoreId = restoreId;
-		}
-
-		public String getRestoreType() {
-			return this.restoreType;
-		}
-
-		public void setRestoreType(String restoreType) {
-			this.restoreType = restoreType;
-		}
-
-		public String getParentId() {
-			return this.parentId;
-		}
-
-		public void setParentId(String parentId) {
-			this.parentId = parentId;
+		public void setSnapshotHash(String snapshotHash) {
+			this.snapshotHash = snapshotHash;
 		}
 
 		public String getStatus() {
@@ -213,52 +219,12 @@ public class DescribeRestoreJobs2Response extends AcsResponse {
 			this.errorMessage = errorMessage;
 		}
 
-		public Long getStartTime() {
-			return this.startTime;
+		public Long getActualItems() {
+			return this.actualItems;
 		}
 
-		public void setStartTime(Long startTime) {
-			this.startTime = startTime;
-		}
-
-		public Long getCompleteTime() {
-			return this.completeTime;
-		}
-
-		public void setCompleteTime(Long completeTime) {
-			this.completeTime = completeTime;
-		}
-
-		public Long getExpireTime() {
-			return this.expireTime;
-		}
-
-		public void setExpireTime(Long expireTime) {
-			this.expireTime = expireTime;
-		}
-
-		public Integer getProgress() {
-			return this.progress;
-		}
-
-		public void setProgress(Integer progress) {
-			this.progress = progress;
-		}
-
-		public Long getBytesDone() {
-			return this.bytesDone;
-		}
-
-		public void setBytesDone(Long bytesDone) {
-			this.bytesDone = bytesDone;
-		}
-
-		public Long getBytesTotal() {
-			return this.bytesTotal;
-		}
-
-		public void setBytesTotal(Long bytesTotal) {
-			this.bytesTotal = bytesTotal;
+		public void setActualItems(Long actualItems) {
+			this.actualItems = actualItems;
 		}
 
 		public String getVaultId() {
@@ -269,20 +235,20 @@ public class DescribeRestoreJobs2Response extends AcsResponse {
 			this.vaultId = vaultId;
 		}
 
-		public String getSnapshotId() {
-			return this.snapshotId;
+		public Long getActualBytes() {
+			return this.actualBytes;
 		}
 
-		public void setSnapshotId(String snapshotId) {
-			this.snapshotId = snapshotId;
+		public void setActualBytes(Long actualBytes) {
+			this.actualBytes = actualBytes;
 		}
 
-		public String getSnapshotHash() {
-			return this.snapshotHash;
+		public String getUdmDetail() {
+			return this.udmDetail;
 		}
 
-		public void setSnapshotHash(String snapshotHash) {
-			this.snapshotHash = snapshotHash;
+		public void setUdmDetail(String udmDetail) {
+			this.udmDetail = udmDetail;
 		}
 
 		public String getSourceType() {
@@ -301,12 +267,20 @@ public class DescribeRestoreJobs2Response extends AcsResponse {
 			this.options = options;
 		}
 
-		public String getTargetFileSystemId() {
-			return this.targetFileSystemId;
+		public String getTargetInstanceId() {
+			return this.targetInstanceId;
 		}
 
-		public void setTargetFileSystemId(String targetFileSystemId) {
-			this.targetFileSystemId = targetFileSystemId;
+		public void setTargetInstanceId(String targetInstanceId) {
+			this.targetInstanceId = targetInstanceId;
+		}
+
+		public String getRestoreType() {
+			return this.restoreType;
+		}
+
+		public void setRestoreType(String restoreType) {
+			this.restoreType = restoreType;
 		}
 
 		public Long getTargetCreateTime() {
@@ -317,12 +291,44 @@ public class DescribeRestoreJobs2Response extends AcsResponse {
 			this.targetCreateTime = targetCreateTime;
 		}
 
-		public String getTargetPath() {
-			return this.targetPath;
+		public Long getItemsDone() {
+			return this.itemsDone;
 		}
 
-		public void setTargetPath(String targetPath) {
-			this.targetPath = targetPath;
+		public void setItemsDone(Long itemsDone) {
+			this.itemsDone = itemsDone;
+		}
+
+		public Long getBytesTotal() {
+			return this.bytesTotal;
+		}
+
+		public void setBytesTotal(Long bytesTotal) {
+			this.bytesTotal = bytesTotal;
+		}
+
+		public String getExclude() {
+			return this.exclude;
+		}
+
+		public void setExclude(String exclude) {
+			this.exclude = exclude;
+		}
+
+		public String getParentId() {
+			return this.parentId;
+		}
+
+		public void setParentId(String parentId) {
+			this.parentId = parentId;
+		}
+
+		public Long getCompleteTime() {
+			return this.completeTime;
+		}
+
+		public void setCompleteTime(Long completeTime) {
+			this.completeTime = completeTime;
 		}
 
 		public Long getCreatedTime() {
@@ -333,52 +339,12 @@ public class DescribeRestoreJobs2Response extends AcsResponse {
 			this.createdTime = createdTime;
 		}
 
-		public Long getUpdatedTime() {
-			return this.updatedTime;
-		}
-
-		public void setUpdatedTime(Long updatedTime) {
-			this.updatedTime = updatedTime;
-		}
-
 		public String getTargetBucket() {
 			return this.targetBucket;
 		}
 
 		public void setTargetBucket(String targetBucket) {
 			this.targetBucket = targetBucket;
-		}
-
-		public String getTargetPrefix() {
-			return this.targetPrefix;
-		}
-
-		public void setTargetPrefix(String targetPrefix) {
-			this.targetPrefix = targetPrefix;
-		}
-
-		public String getUdmDetail() {
-			return this.udmDetail;
-		}
-
-		public void setUdmDetail(String udmDetail) {
-			this.udmDetail = udmDetail;
-		}
-
-		public String getTargetInstanceId() {
-			return this.targetInstanceId;
-		}
-
-		public void setTargetInstanceId(String targetInstanceId) {
-			this.targetInstanceId = targetInstanceId;
-		}
-
-		public String getTargetClientId() {
-			return this.targetClientId;
-		}
-
-		public void setTargetClientId(String targetClientId) {
-			this.targetClientId = targetClientId;
 		}
 
 		public String getClusterId() {
@@ -389,6 +355,30 @@ public class DescribeRestoreJobs2Response extends AcsResponse {
 			this.clusterId = clusterId;
 		}
 
+		public String getTargetFileSystemId() {
+			return this.targetFileSystemId;
+		}
+
+		public void setTargetFileSystemId(String targetFileSystemId) {
+			this.targetFileSystemId = targetFileSystemId;
+		}
+
+		public Integer getProgress() {
+			return this.progress;
+		}
+
+		public void setProgress(Integer progress) {
+			this.progress = progress;
+		}
+
+		public Long getExpireTime() {
+			return this.expireTime;
+		}
+
+		public void setExpireTime(Long expireTime) {
+			this.expireTime = expireTime;
+		}
+
 		public String getTargetDataSourceId() {
 			return this.targetDataSourceId;
 		}
@@ -397,20 +387,68 @@ public class DescribeRestoreJobs2Response extends AcsResponse {
 			this.targetDataSourceId = targetDataSourceId;
 		}
 
-		public Long getActualBytes() {
-			return this.actualBytes;
+		public String getTargetPrefix() {
+			return this.targetPrefix;
 		}
 
-		public void setActualBytes(Long actualBytes) {
-			this.actualBytes = actualBytes;
+		public void setTargetPrefix(String targetPrefix) {
+			this.targetPrefix = targetPrefix;
 		}
 
-		public Long getItemsDone() {
-			return this.itemsDone;
+		public String getTargetPath() {
+			return this.targetPath;
 		}
 
-		public void setItemsDone(Long itemsDone) {
-			this.itemsDone = itemsDone;
+		public void setTargetPath(String targetPath) {
+			this.targetPath = targetPath;
+		}
+
+		public String getErrorFile() {
+			return this.errorFile;
+		}
+
+		public void setErrorFile(String errorFile) {
+			this.errorFile = errorFile;
+		}
+
+		public Long getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(Long startTime) {
+			this.startTime = startTime;
+		}
+
+		public Long getUpdatedTime() {
+			return this.updatedTime;
+		}
+
+		public void setUpdatedTime(Long updatedTime) {
+			this.updatedTime = updatedTime;
+		}
+
+		public String getSnapshotId() {
+			return this.snapshotId;
+		}
+
+		public void setSnapshotId(String snapshotId) {
+			this.snapshotId = snapshotId;
+		}
+
+		public String getRestoreId() {
+			return this.restoreId;
+		}
+
+		public void setRestoreId(String restoreId) {
+			this.restoreId = restoreId;
+		}
+
+		public String getTargetClientId() {
+			return this.targetClientId;
+		}
+
+		public void setTargetClientId(String targetClientId) {
+			this.targetClientId = targetClientId;
 		}
 
 		public Long getItemsTotal() {
@@ -421,20 +459,168 @@ public class DescribeRestoreJobs2Response extends AcsResponse {
 			this.itemsTotal = itemsTotal;
 		}
 
-		public Long getActualItems() {
-			return this.actualItems;
+		public String getInclude() {
+			return this.include;
 		}
 
-		public void setActualItems(Long actualItems) {
-			this.actualItems = actualItems;
+		public void setInclude(String include) {
+			this.include = include;
 		}
 
-		public String getErrorFile() {
-			return this.errorFile;
+		public Long getBytesDone() {
+			return this.bytesDone;
 		}
 
-		public void setErrorFile(String errorFile) {
-			this.errorFile = errorFile;
+		public void setBytesDone(Long bytesDone) {
+			this.bytesDone = bytesDone;
+		}
+
+		public String getTargetInstanceName() {
+			return this.targetInstanceName;
+		}
+
+		public void setTargetInstanceName(String targetInstanceName) {
+			this.targetInstanceName = targetInstanceName;
+		}
+
+		public String getTargetTableName() {
+			return this.targetTableName;
+		}
+
+		public void setTargetTableName(String targetTableName) {
+			this.targetTableName = targetTableName;
+		}
+
+		public Long getSpeed() {
+			return this.speed;
+		}
+
+		public void setSpeed(Long speed) {
+			this.speed = speed;
+		}
+
+		public Long getTargetTime() {
+			return this.targetTime;
+		}
+
+		public void setTargetTime(Long targetTime) {
+			this.targetTime = targetTime;
+		}
+
+		public String getCrossAccountType() {
+			return this.crossAccountType;
+		}
+
+		public void setCrossAccountType(String crossAccountType) {
+			this.crossAccountType = crossAccountType;
+		}
+
+		public Long getCrossAccountUserId() {
+			return this.crossAccountUserId;
+		}
+
+		public void setCrossAccountUserId(Long crossAccountUserId) {
+			this.crossAccountUserId = crossAccountUserId;
+		}
+
+		public String getCrossAccountRoleName() {
+			return this.crossAccountRoleName;
+		}
+
+		public void setCrossAccountRoleName(String crossAccountRoleName) {
+			this.crossAccountRoleName = crossAccountRoleName;
+		}
+
+		public OtsDetail getOtsDetail() {
+			return this.otsDetail;
+		}
+
+		public void setOtsDetail(OtsDetail otsDetail) {
+			this.otsDetail = otsDetail;
+		}
+
+		public Report getReport() {
+			return this.report;
+		}
+
+		public void setReport(Report report) {
+			this.report = report;
+		}
+
+		public static class OtsDetail {
+
+			private Integer batchChannelCount;
+
+			private Boolean overwriteExisting;
+
+			public Integer getBatchChannelCount() {
+				return this.batchChannelCount;
+			}
+
+			public void setBatchChannelCount(Integer batchChannelCount) {
+				this.batchChannelCount = batchChannelCount;
+			}
+
+			public Boolean getOverwriteExisting() {
+				return this.overwriteExisting;
+			}
+
+			public void setOverwriteExisting(Boolean overwriteExisting) {
+				this.overwriteExisting = overwriteExisting;
+			}
+		}
+
+		public static class Report {
+
+			private String totalFiles;
+
+			private String successFiles;
+
+			private String failedFiles;
+
+			private String skippedFiles;
+
+			private String reportTaskStatus;
+
+			public String getTotalFiles() {
+				return this.totalFiles;
+			}
+
+			public void setTotalFiles(String totalFiles) {
+				this.totalFiles = totalFiles;
+			}
+
+			public String getSuccessFiles() {
+				return this.successFiles;
+			}
+
+			public void setSuccessFiles(String successFiles) {
+				this.successFiles = successFiles;
+			}
+
+			public String getFailedFiles() {
+				return this.failedFiles;
+			}
+
+			public void setFailedFiles(String failedFiles) {
+				this.failedFiles = failedFiles;
+			}
+
+			public String getSkippedFiles() {
+				return this.skippedFiles;
+			}
+
+			public void setSkippedFiles(String skippedFiles) {
+				this.skippedFiles = skippedFiles;
+			}
+
+			public String getReportTaskStatus() {
+				return this.reportTaskStatus;
+			}
+
+			public void setReportTaskStatus(String reportTaskStatus) {
+				this.reportTaskStatus = reportTaskStatus;
+			}
 		}
 	}
 

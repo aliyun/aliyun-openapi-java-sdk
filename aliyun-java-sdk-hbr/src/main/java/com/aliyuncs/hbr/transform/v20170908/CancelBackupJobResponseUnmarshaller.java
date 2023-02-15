@@ -23,9 +23,9 @@ public class CancelBackupJobResponseUnmarshaller {
 	public static CancelBackupJobResponse unmarshall(CancelBackupJobResponse cancelBackupJobResponse, UnmarshallerContext _ctx) {
 		
 		cancelBackupJobResponse.setRequestId(_ctx.stringValue("CancelBackupJobResponse.RequestId"));
-		cancelBackupJobResponse.setSuccess(_ctx.booleanValue("CancelBackupJobResponse.Success"));
 		cancelBackupJobResponse.setCode(_ctx.stringValue("CancelBackupJobResponse.Code"));
 		cancelBackupJobResponse.setMessage(_ctx.stringValue("CancelBackupJobResponse.Message"));
+		cancelBackupJobResponse.setSuccess(_ctx.booleanValue("CancelBackupJobResponse.Success"));
 	 
 	 	return cancelBackupJobResponse;
 	}

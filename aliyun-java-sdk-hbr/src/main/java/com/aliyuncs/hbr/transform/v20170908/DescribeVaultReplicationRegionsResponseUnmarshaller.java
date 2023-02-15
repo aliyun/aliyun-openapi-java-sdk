@@ -26,9 +26,9 @@ public class DescribeVaultReplicationRegionsResponseUnmarshaller {
 	public static DescribeVaultReplicationRegionsResponse unmarshall(DescribeVaultReplicationRegionsResponse describeVaultReplicationRegionsResponse, UnmarshallerContext _ctx) {
 		
 		describeVaultReplicationRegionsResponse.setRequestId(_ctx.stringValue("DescribeVaultReplicationRegionsResponse.RequestId"));
-		describeVaultReplicationRegionsResponse.setSuccess(_ctx.booleanValue("DescribeVaultReplicationRegionsResponse.Success"));
 		describeVaultReplicationRegionsResponse.setCode(_ctx.stringValue("DescribeVaultReplicationRegionsResponse.Code"));
 		describeVaultReplicationRegionsResponse.setMessage(_ctx.stringValue("DescribeVaultReplicationRegionsResponse.Message"));
+		describeVaultReplicationRegionsResponse.setSuccess(_ctx.booleanValue("DescribeVaultReplicationRegionsResponse.Success"));
 
 		List<String> regions = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeVaultReplicationRegionsResponse.Regions.Length"); i++) {

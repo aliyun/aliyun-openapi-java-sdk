@@ -23,9 +23,9 @@ public class UpdateHanaInstanceResponseUnmarshaller {
 	public static UpdateHanaInstanceResponse unmarshall(UpdateHanaInstanceResponse updateHanaInstanceResponse, UnmarshallerContext _ctx) {
 		
 		updateHanaInstanceResponse.setRequestId(_ctx.stringValue("UpdateHanaInstanceResponse.RequestId"));
-		updateHanaInstanceResponse.setSuccess(_ctx.booleanValue("UpdateHanaInstanceResponse.Success"));
 		updateHanaInstanceResponse.setCode(_ctx.stringValue("UpdateHanaInstanceResponse.Code"));
 		updateHanaInstanceResponse.setMessage(_ctx.stringValue("UpdateHanaInstanceResponse.Message"));
+		updateHanaInstanceResponse.setSuccess(_ctx.booleanValue("UpdateHanaInstanceResponse.Success"));
 	 
 	 	return updateHanaInstanceResponse;
 	}

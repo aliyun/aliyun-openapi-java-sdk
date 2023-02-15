@@ -28,23 +28,25 @@ public class UpdateClientSettingsRequest extends RpcAcsRequest<UpdateClientSetti
 
 	private String dataProxySetting;
 
-	private Integer maxWorker;
-
 	private Integer proxyPort;
 
 	private String clientId;
 
-	private Integer maxCpuCore;
-
 	private String vaultId;
 
-	private String dataNetworkType;
-
-	private String proxyPassword;
+	private String resourceGroupId;
 
 	private String proxyUser;
 
 	private Boolean useHttps;
+
+	private Integer maxWorker;
+
+	private Integer maxCpuCore;
+
+	private String dataNetworkType;
+
+	private String proxyPassword;
 
 	private String proxyHost;
 	public UpdateClientSettingsRequest() {
@@ -65,17 +67,6 @@ public class UpdateClientSettingsRequest extends RpcAcsRequest<UpdateClientSetti
 		this.dataProxySetting = dataProxySetting;
 		if(dataProxySetting != null){
 			putQueryParameter("DataProxySetting", dataProxySetting);
-		}
-	}
-
-	public Integer getMaxWorker() {
-		return this.maxWorker;
-	}
-
-	public void setMaxWorker(Integer maxWorker) {
-		this.maxWorker = maxWorker;
-		if(maxWorker != null){
-			putQueryParameter("MaxWorker", maxWorker.toString());
 		}
 	}
 
@@ -101,17 +92,6 @@ public class UpdateClientSettingsRequest extends RpcAcsRequest<UpdateClientSetti
 		}
 	}
 
-	public Integer getMaxCpuCore() {
-		return this.maxCpuCore;
-	}
-
-	public void setMaxCpuCore(Integer maxCpuCore) {
-		this.maxCpuCore = maxCpuCore;
-		if(maxCpuCore != null){
-			putQueryParameter("MaxCpuCore", maxCpuCore.toString());
-		}
-	}
-
 	public String getVaultId() {
 		return this.vaultId;
 	}
@@ -123,25 +103,14 @@ public class UpdateClientSettingsRequest extends RpcAcsRequest<UpdateClientSetti
 		}
 	}
 
-	public String getDataNetworkType() {
-		return this.dataNetworkType;
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
 	}
 
-	public void setDataNetworkType(String dataNetworkType) {
-		this.dataNetworkType = dataNetworkType;
-		if(dataNetworkType != null){
-			putQueryParameter("DataNetworkType", dataNetworkType);
-		}
-	}
-
-	public String getProxyPassword() {
-		return this.proxyPassword;
-	}
-
-	public void setProxyPassword(String proxyPassword) {
-		this.proxyPassword = proxyPassword;
-		if(proxyPassword != null){
-			putQueryParameter("ProxyPassword", proxyPassword);
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
@@ -164,6 +133,50 @@ public class UpdateClientSettingsRequest extends RpcAcsRequest<UpdateClientSetti
 		this.useHttps = useHttps;
 		if(useHttps != null){
 			putQueryParameter("UseHttps", useHttps.toString());
+		}
+	}
+
+	public Integer getMaxWorker() {
+		return this.maxWorker;
+	}
+
+	public void setMaxWorker(Integer maxWorker) {
+		this.maxWorker = maxWorker;
+		if(maxWorker != null){
+			putQueryParameter("MaxWorker", maxWorker.toString());
+		}
+	}
+
+	public Integer getMaxCpuCore() {
+		return this.maxCpuCore;
+	}
+
+	public void setMaxCpuCore(Integer maxCpuCore) {
+		this.maxCpuCore = maxCpuCore;
+		if(maxCpuCore != null){
+			putQueryParameter("MaxCpuCore", maxCpuCore.toString());
+		}
+	}
+
+	public String getDataNetworkType() {
+		return this.dataNetworkType;
+	}
+
+	public void setDataNetworkType(String dataNetworkType) {
+		this.dataNetworkType = dataNetworkType;
+		if(dataNetworkType != null){
+			putQueryParameter("DataNetworkType", dataNetworkType);
+		}
+	}
+
+	public String getProxyPassword() {
+		return this.proxyPassword;
+	}
+
+	public void setProxyPassword(String proxyPassword) {
+		this.proxyPassword = proxyPassword;
+		if(proxyPassword != null){
+			putQueryParameter("ProxyPassword", proxyPassword);
 		}
 	}
 

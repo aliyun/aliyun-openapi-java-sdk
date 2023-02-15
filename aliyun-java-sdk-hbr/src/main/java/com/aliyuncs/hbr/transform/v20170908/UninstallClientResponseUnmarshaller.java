@@ -23,10 +23,10 @@ public class UninstallClientResponseUnmarshaller {
 	public static UninstallClientResponse unmarshall(UninstallClientResponse uninstallClientResponse, UnmarshallerContext _ctx) {
 		
 		uninstallClientResponse.setRequestId(_ctx.stringValue("UninstallClientResponse.RequestId"));
-		uninstallClientResponse.setSuccess(_ctx.booleanValue("UninstallClientResponse.Success"));
 		uninstallClientResponse.setCode(_ctx.stringValue("UninstallClientResponse.Code"));
 		uninstallClientResponse.setMessage(_ctx.stringValue("UninstallClientResponse.Message"));
 		uninstallClientResponse.setTaskId(_ctx.stringValue("UninstallClientResponse.TaskId"));
+		uninstallClientResponse.setSuccess(_ctx.booleanValue("UninstallClientResponse.Success"));
 	 
 	 	return uninstallClientResponse;
 	}

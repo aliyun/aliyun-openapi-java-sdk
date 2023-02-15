@@ -23,10 +23,10 @@ public class UpgradeClientResponseUnmarshaller {
 	public static UpgradeClientResponse unmarshall(UpgradeClientResponse upgradeClientResponse, UnmarshallerContext _ctx) {
 		
 		upgradeClientResponse.setRequestId(_ctx.stringValue("UpgradeClientResponse.RequestId"));
-		upgradeClientResponse.setSuccess(_ctx.booleanValue("UpgradeClientResponse.Success"));
 		upgradeClientResponse.setCode(_ctx.stringValue("UpgradeClientResponse.Code"));
 		upgradeClientResponse.setMessage(_ctx.stringValue("UpgradeClientResponse.Message"));
 		upgradeClientResponse.setTaskId(_ctx.stringValue("UpgradeClientResponse.TaskId"));
+		upgradeClientResponse.setSuccess(_ctx.booleanValue("UpgradeClientResponse.Success"));
 	 
 	 	return upgradeClientResponse;
 	}

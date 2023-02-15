@@ -27,42 +27,48 @@ public class SearchHistoricalSnapshotsResponseUnmarshaller {
 	public static SearchHistoricalSnapshotsResponse unmarshall(SearchHistoricalSnapshotsResponse searchHistoricalSnapshotsResponse, UnmarshallerContext _ctx) {
 		
 		searchHistoricalSnapshotsResponse.setRequestId(_ctx.stringValue("SearchHistoricalSnapshotsResponse.RequestId"));
+		searchHistoricalSnapshotsResponse.setNextToken(_ctx.stringValue("SearchHistoricalSnapshotsResponse.NextToken"));
 		searchHistoricalSnapshotsResponse.setSuccess(_ctx.booleanValue("SearchHistoricalSnapshotsResponse.Success"));
+		searchHistoricalSnapshotsResponse.setLimit(_ctx.integerValue("SearchHistoricalSnapshotsResponse.Limit"));
 		searchHistoricalSnapshotsResponse.setCode(_ctx.stringValue("SearchHistoricalSnapshotsResponse.Code"));
 		searchHistoricalSnapshotsResponse.setMessage(_ctx.stringValue("SearchHistoricalSnapshotsResponse.Message"));
-		searchHistoricalSnapshotsResponse.setLimit(_ctx.integerValue("SearchHistoricalSnapshotsResponse.Limit"));
-		searchHistoricalSnapshotsResponse.setNextToken(_ctx.stringValue("SearchHistoricalSnapshotsResponse.NextToken"));
 		searchHistoricalSnapshotsResponse.setTotalCount(_ctx.integerValue("SearchHistoricalSnapshotsResponse.TotalCount"));
 
 		List<Snapshot> snapshots = new ArrayList<Snapshot>();
 		for (int i = 0; i < _ctx.lengthValue("SearchHistoricalSnapshotsResponse.Snapshots.Length"); i++) {
 			Snapshot snapshot = new Snapshot();
-			snapshot.setCreatedTime(_ctx.longValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].CreatedTime"));
-			snapshot.setUpdatedTime(_ctx.longValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].UpdatedTime"));
-			snapshot.setSnapshotId(_ctx.stringValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].SnapshotId"));
-			snapshot.setSourceType(_ctx.stringValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].SourceType"));
-			snapshot.setJobId(_ctx.stringValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].JobId"));
-			snapshot.setBackupType(_ctx.stringValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].BackupType"));
 			snapshot.setStatus(_ctx.stringValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].Status"));
 			snapshot.setSnapshotHash(_ctx.stringValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].SnapshotHash"));
-			snapshot.setParentSnapshotHash(_ctx.stringValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].ParentSnapshotHash"));
-			snapshot.setStartTime(_ctx.longValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].StartTime"));
+			snapshot.setVaultId(_ctx.stringValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].VaultId"));
+			snapshot.setActualItems(_ctx.longValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].ActualItems"));
+			snapshot.setBackupType(_ctx.stringValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].BackupType"));
+			snapshot.setCreateTime(_ctx.longValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].CreateTime"));
+			snapshot.setActualBytes(_ctx.longValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].ActualBytes"));
+			snapshot.setSourceType(_ctx.stringValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].SourceType"));
+			snapshot.setPrefix(_ctx.stringValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].Prefix"));
+			snapshot.setClientId(_ctx.stringValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].ClientId"));
+			snapshot.setBytesTotal(_ctx.longValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].BytesTotal"));
+			snapshot.setItemsDone(_ctx.longValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].ItemsDone"));
 			snapshot.setCompleteTime(_ctx.longValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].CompleteTime"));
 			snapshot.setRetention(_ctx.longValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].Retention"));
-			snapshot.setBytesTotal(_ctx.longValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].BytesTotal"));
-			snapshot.setFileSystemId(_ctx.stringValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].FileSystemId"));
-			snapshot.setCreateTime(_ctx.longValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].CreateTime"));
+			snapshot.setCreatedTime(_ctx.longValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].CreatedTime"));
 			snapshot.setBucket(_ctx.stringValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].Bucket"));
-			snapshot.setPrefix(_ctx.stringValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].Prefix"));
+			snapshot.setParentSnapshotHash(_ctx.stringValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].ParentSnapshotHash"));
 			snapshot.setInstanceId(_ctx.stringValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].InstanceId"));
-			snapshot.setPath(_ctx.stringValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].Path"));
-			snapshot.setClientId(_ctx.stringValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].ClientId"));
-			snapshot.setBytesDone(_ctx.longValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].BytesDone"));
-			snapshot.setActualBytes(_ctx.longValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].ActualBytes"));
-			snapshot.setItemsDone(_ctx.longValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].ItemsDone"));
-			snapshot.setItemsTotal(_ctx.longValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].ItemsTotal"));
-			snapshot.setActualItems(_ctx.longValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].ActualItems"));
+			snapshot.setFileSystemId(_ctx.stringValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].FileSystemId"));
 			snapshot.setErrorFile(_ctx.stringValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].ErrorFile"));
+			snapshot.setStartTime(_ctx.longValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].StartTime"));
+			snapshot.setUpdatedTime(_ctx.longValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].UpdatedTime"));
+			snapshot.setSnapshotId(_ctx.stringValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].SnapshotId"));
+			snapshot.setJobId(_ctx.stringValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].JobId"));
+			snapshot.setPath(_ctx.stringValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].Path"));
+			snapshot.setItemsTotal(_ctx.longValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].ItemsTotal"));
+			snapshot.setBytesDone(_ctx.longValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].BytesDone"));
+			snapshot.setInstanceName(_ctx.stringValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].InstanceName"));
+			snapshot.setTableName(_ctx.stringValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].TableName"));
+			snapshot.setRangeStart(_ctx.longValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].RangeStart"));
+			snapshot.setRangeEnd(_ctx.longValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].RangeEnd"));
+			snapshot.setExpireTime(_ctx.longValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].ExpireTime"));
 
 			List<String> paths = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].Paths.Length"); j++) {

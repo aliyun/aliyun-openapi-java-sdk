@@ -15,6 +15,9 @@
 package com.aliyuncs.hbr.model.v20170908;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.hbr.Endpoint;
 
@@ -25,7 +28,8 @@ import com.aliyuncs.hbr.Endpoint;
 public class SearchHistoricalSnapshotsRequest extends RpcAcsRequest<SearchHistoricalSnapshotsResponse> {
 	   
 
-	private String query;
+	@SerializedName("query")
+	private List<Object> query;
 
 	private String nextToken;
 
@@ -41,15 +45,15 @@ public class SearchHistoricalSnapshotsRequest extends RpcAcsRequest<SearchHistor
 		} catch (Exception e) {}
 	}
 
-	public String getQuery() {
+	public List<Object> getQuery() {
 		return this.query;
 	}
 
-	public void setQuery(String query) {
-		this.query = query;
-		if(query != null){
-			putQueryParameter("Query", query);
-		}
+	public void setQuery(List<Object> query) {
+		this.query = query;	
+		if (query != null) {
+			putQueryParameter("Query" , new Gson().toJson(query));
+		}	
 	}
 
 	public String getNextToken() {

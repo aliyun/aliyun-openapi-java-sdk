@@ -15,6 +15,8 @@
 package com.aliyuncs.hbr.model.v20170908;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.hbr.Endpoint;
 
@@ -33,33 +35,46 @@ public class CreateRestoreJobRequest extends RpcAcsRequest<CreateRestoreJobRespo
 
 	private String vaultId;
 
+	private String crossAccountType;
+
+	private String crossAccountRoleName;
+
 	private String snapshotHash;
 
-	private String targetClientId;
+	private Long targetTime;
 
-	private String options;
+	private String targetInstanceName;
 
 	private String sourceType;
 
 	private String exclude;
 
+	private String targetContainer;
+
 	private String targetBucket;
 
-	private String targetDataSourceId;
+	private String targetContainerClusterId;
 
 	private String include;
 
 	private String udmDetail;
 
-	private String clusterId;
+	private String targetTableName;
+
+	private Boolean initiatedByAck;
 
 	private String restoreType;
 
 	private String targetInstanceId;
 
+	@SerializedName("otsDetail")
+	private OtsDetail otsDetail;
+
 	private String targetFileSystemId;
 
 	private String targetPath;
+
+	private Long crossAccountUserId;
 
 	private String udmRegionId;
 	public CreateRestoreJobRequest() {
@@ -115,6 +130,28 @@ public class CreateRestoreJobRequest extends RpcAcsRequest<CreateRestoreJobRespo
 		}
 	}
 
+	public String getCrossAccountType() {
+		return this.crossAccountType;
+	}
+
+	public void setCrossAccountType(String crossAccountType) {
+		this.crossAccountType = crossAccountType;
+		if(crossAccountType != null){
+			putQueryParameter("CrossAccountType", crossAccountType);
+		}
+	}
+
+	public String getCrossAccountRoleName() {
+		return this.crossAccountRoleName;
+	}
+
+	public void setCrossAccountRoleName(String crossAccountRoleName) {
+		this.crossAccountRoleName = crossAccountRoleName;
+		if(crossAccountRoleName != null){
+			putQueryParameter("CrossAccountRoleName", crossAccountRoleName);
+		}
+	}
+
 	public String getSnapshotHash() {
 		return this.snapshotHash;
 	}
@@ -126,25 +163,25 @@ public class CreateRestoreJobRequest extends RpcAcsRequest<CreateRestoreJobRespo
 		}
 	}
 
-	public String getTargetClientId() {
-		return this.targetClientId;
+	public Long getTargetTime() {
+		return this.targetTime;
 	}
 
-	public void setTargetClientId(String targetClientId) {
-		this.targetClientId = targetClientId;
-		if(targetClientId != null){
-			putBodyParameter("TargetClientId", targetClientId);
+	public void setTargetTime(Long targetTime) {
+		this.targetTime = targetTime;
+		if(targetTime != null){
+			putQueryParameter("TargetTime", targetTime.toString());
 		}
 	}
 
-	public String getOptions() {
-		return this.options;
+	public String getTargetInstanceName() {
+		return this.targetInstanceName;
 	}
 
-	public void setOptions(String options) {
-		this.options = options;
-		if(options != null){
-			putQueryParameter("Options", options);
+	public void setTargetInstanceName(String targetInstanceName) {
+		this.targetInstanceName = targetInstanceName;
+		if(targetInstanceName != null){
+			putQueryParameter("TargetInstanceName", targetInstanceName);
 		}
 	}
 
@@ -170,6 +207,17 @@ public class CreateRestoreJobRequest extends RpcAcsRequest<CreateRestoreJobRespo
 		}
 	}
 
+	public String getTargetContainer() {
+		return this.targetContainer;
+	}
+
+	public void setTargetContainer(String targetContainer) {
+		this.targetContainer = targetContainer;
+		if(targetContainer != null){
+			putQueryParameter("TargetContainer", targetContainer);
+		}
+	}
+
 	public String getTargetBucket() {
 		return this.targetBucket;
 	}
@@ -181,14 +229,14 @@ public class CreateRestoreJobRequest extends RpcAcsRequest<CreateRestoreJobRespo
 		}
 	}
 
-	public String getTargetDataSourceId() {
-		return this.targetDataSourceId;
+	public String getTargetContainerClusterId() {
+		return this.targetContainerClusterId;
 	}
 
-	public void setTargetDataSourceId(String targetDataSourceId) {
-		this.targetDataSourceId = targetDataSourceId;
-		if(targetDataSourceId != null){
-			putBodyParameter("TargetDataSourceId", targetDataSourceId);
+	public void setTargetContainerClusterId(String targetContainerClusterId) {
+		this.targetContainerClusterId = targetContainerClusterId;
+		if(targetContainerClusterId != null){
+			putQueryParameter("TargetContainerClusterId", targetContainerClusterId);
 		}
 	}
 
@@ -214,14 +262,25 @@ public class CreateRestoreJobRequest extends RpcAcsRequest<CreateRestoreJobRespo
 		}
 	}
 
-	public String getClusterId() {
-		return this.clusterId;
+	public String getTargetTableName() {
+		return this.targetTableName;
 	}
 
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putBodyParameter("ClusterId", clusterId);
+	public void setTargetTableName(String targetTableName) {
+		this.targetTableName = targetTableName;
+		if(targetTableName != null){
+			putQueryParameter("TargetTableName", targetTableName);
+		}
+	}
+
+	public Boolean getInitiatedByAck() {
+		return this.initiatedByAck;
+	}
+
+	public void setInitiatedByAck(Boolean initiatedByAck) {
+		this.initiatedByAck = initiatedByAck;
+		if(initiatedByAck != null){
+			putQueryParameter("InitiatedByAck", initiatedByAck.toString());
 		}
 	}
 
@@ -247,6 +306,17 @@ public class CreateRestoreJobRequest extends RpcAcsRequest<CreateRestoreJobRespo
 		}
 	}
 
+	public OtsDetail getOtsDetail() {
+		return this.otsDetail;
+	}
+
+	public void setOtsDetail(OtsDetail otsDetail) {
+		this.otsDetail = otsDetail;	
+		if (otsDetail != null) {
+			putBodyParameter("OtsDetail" , new Gson().toJson(otsDetail));
+		}	
+	}
+
 	public String getTargetFileSystemId() {
 		return this.targetFileSystemId;
 	}
@@ -269,6 +339,17 @@ public class CreateRestoreJobRequest extends RpcAcsRequest<CreateRestoreJobRespo
 		}
 	}
 
+	public Long getCrossAccountUserId() {
+		return this.crossAccountUserId;
+	}
+
+	public void setCrossAccountUserId(Long crossAccountUserId) {
+		this.crossAccountUserId = crossAccountUserId;
+		if(crossAccountUserId != null){
+			putQueryParameter("CrossAccountUserId", crossAccountUserId.toString());
+		}
+	}
+
 	public String getUdmRegionId() {
 		return this.udmRegionId;
 	}
@@ -277,6 +358,86 @@ public class CreateRestoreJobRequest extends RpcAcsRequest<CreateRestoreJobRespo
 		this.udmRegionId = udmRegionId;
 		if(udmRegionId != null){
 			putQueryParameter("UdmRegionId", udmRegionId);
+		}
+	}
+
+	public static class OtsDetail {
+
+		@SerializedName("RestoreSearchIndex")
+		private Boolean restoreSearchIndex;
+
+		@SerializedName("RestoreIndex")
+		private Boolean restoreIndex;
+
+		@SerializedName("SearchIndexNameSuffix")
+		private String searchIndexNameSuffix;
+
+		@SerializedName("OverwriteExisting")
+		private Boolean overwriteExisting;
+
+		@SerializedName("IndexNameSuffix")
+		private String indexNameSuffix;
+
+		@SerializedName("BatchChannelCount")
+		private Integer batchChannelCount;
+
+		@SerializedName("ReGenerateAutoIncrementPK")
+		private Boolean reGenerateAutoIncrementPK;
+
+		public Boolean getRestoreSearchIndex() {
+			return this.restoreSearchIndex;
+		}
+
+		public void setRestoreSearchIndex(Boolean restoreSearchIndex) {
+			this.restoreSearchIndex = restoreSearchIndex;
+		}
+
+		public Boolean getRestoreIndex() {
+			return this.restoreIndex;
+		}
+
+		public void setRestoreIndex(Boolean restoreIndex) {
+			this.restoreIndex = restoreIndex;
+		}
+
+		public String getSearchIndexNameSuffix() {
+			return this.searchIndexNameSuffix;
+		}
+
+		public void setSearchIndexNameSuffix(String searchIndexNameSuffix) {
+			this.searchIndexNameSuffix = searchIndexNameSuffix;
+		}
+
+		public Boolean getOverwriteExisting() {
+			return this.overwriteExisting;
+		}
+
+		public void setOverwriteExisting(Boolean overwriteExisting) {
+			this.overwriteExisting = overwriteExisting;
+		}
+
+		public String getIndexNameSuffix() {
+			return this.indexNameSuffix;
+		}
+
+		public void setIndexNameSuffix(String indexNameSuffix) {
+			this.indexNameSuffix = indexNameSuffix;
+		}
+
+		public Integer getBatchChannelCount() {
+			return this.batchChannelCount;
+		}
+
+		public void setBatchChannelCount(Integer batchChannelCount) {
+			this.batchChannelCount = batchChannelCount;
+		}
+
+		public Boolean getReGenerateAutoIncrementPK() {
+			return this.reGenerateAutoIncrementPK;
+		}
+
+		public void setReGenerateAutoIncrementPK(Boolean reGenerateAutoIncrementPK) {
+			this.reGenerateAutoIncrementPK = reGenerateAutoIncrementPK;
 		}
 	}
 

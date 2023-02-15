@@ -15,6 +15,7 @@
 package com.aliyuncs.hbr.model.v20170908;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.hbr.transform.v20170908.DescribeUdmSnapshotsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -25,33 +26,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeUdmSnapshotsResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
 	private Long totalCount;
 
+	private Boolean success;
+
 	private List<Snapshot> snapshots;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -69,12 +54,28 @@ public class DescribeUdmSnapshotsResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public Long getTotalCount() {
 		return this.totalCount;
 	}
 
 	public void setTotalCount(Long totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<Snapshot> getSnapshots() {
@@ -87,107 +88,63 @@ public class DescribeUdmSnapshotsResponse extends AcsResponse {
 
 	public static class Snapshot {
 
-		private Long createdTime;
-
-		private Long updatedTime;
-
-		private String snapshotId;
-
-		private String sourceType;
-
-		private String jobId;
-
-		private String backupType;
-
 		private String status;
 
 		private String snapshotHash;
 
-		private String parentSnapshotHash;
+		private String vaultId;
 
-		private Long startTime;
+		private String backupType;
+
+		private Long createTime;
+
+		private String actualBytes;
+
+		private String sourceType;
+
+		private String prefix;
+
+		private String diskId;
+
+		private Long bytesTotal;
+
+		private String nativeSnapshotInfo;
 
 		private Long completeTime;
 
 		private Long retention;
 
-		private Long bytesTotal;
-
-		private String fileSystemId;
-
-		private Long createTime;
+		private Long createdTime;
 
 		private String bucket;
 
-		private String prefix;
+		private Long realSnapshotTime;
 
-		private String bucket1;
-
-		private String prefix2;
+		private String parentSnapshotHash;
 
 		private String instanceId;
 
-		private String diskId;
+		private String fileSystemId;
+
+		private Long startTime;
+
+		private Long updatedTime;
+
+		private String snapshotId;
+
+		private String jobId;
 
 		private String nativeSnapshotId;
 
-		private String actualBytes;
+		private String instanceGroupId;
 
-		private Long realSnapshotTime;
+		private String advancedRetentionType;
 
-		private String nativeSnapshotInfo;
-
-		private String detail;
+		private Long expireTime;
 
 		private List<String> paths;
 
-		public Long getCreatedTime() {
-			return this.createdTime;
-		}
-
-		public void setCreatedTime(Long createdTime) {
-			this.createdTime = createdTime;
-		}
-
-		public Long getUpdatedTime() {
-			return this.updatedTime;
-		}
-
-		public void setUpdatedTime(Long updatedTime) {
-			this.updatedTime = updatedTime;
-		}
-
-		public String getSnapshotId() {
-			return this.snapshotId;
-		}
-
-		public void setSnapshotId(String snapshotId) {
-			this.snapshotId = snapshotId;
-		}
-
-		public String getSourceType() {
-			return this.sourceType;
-		}
-
-		public void setSourceType(String sourceType) {
-			this.sourceType = sourceType;
-		}
-
-		public String getJobId() {
-			return this.jobId;
-		}
-
-		public void setJobId(String jobId) {
-			this.jobId = jobId;
-		}
-
-		public String getBackupType() {
-			return this.backupType;
-		}
-
-		public void setBackupType(String backupType) {
-			this.backupType = backupType;
-		}
+		private Detail detail;
 
 		public String getStatus() {
 			return this.status;
@@ -205,20 +162,76 @@ public class DescribeUdmSnapshotsResponse extends AcsResponse {
 			this.snapshotHash = snapshotHash;
 		}
 
-		public String getParentSnapshotHash() {
-			return this.parentSnapshotHash;
+		public String getVaultId() {
+			return this.vaultId;
 		}
 
-		public void setParentSnapshotHash(String parentSnapshotHash) {
-			this.parentSnapshotHash = parentSnapshotHash;
+		public void setVaultId(String vaultId) {
+			this.vaultId = vaultId;
 		}
 
-		public Long getStartTime() {
-			return this.startTime;
+		public String getBackupType() {
+			return this.backupType;
 		}
 
-		public void setStartTime(Long startTime) {
-			this.startTime = startTime;
+		public void setBackupType(String backupType) {
+			this.backupType = backupType;
+		}
+
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getActualBytes() {
+			return this.actualBytes;
+		}
+
+		public void setActualBytes(String actualBytes) {
+			this.actualBytes = actualBytes;
+		}
+
+		public String getSourceType() {
+			return this.sourceType;
+		}
+
+		public void setSourceType(String sourceType) {
+			this.sourceType = sourceType;
+		}
+
+		public String getPrefix() {
+			return this.prefix;
+		}
+
+		public void setPrefix(String prefix) {
+			this.prefix = prefix;
+		}
+
+		public String getDiskId() {
+			return this.diskId;
+		}
+
+		public void setDiskId(String diskId) {
+			this.diskId = diskId;
+		}
+
+		public Long getBytesTotal() {
+			return this.bytesTotal;
+		}
+
+		public void setBytesTotal(Long bytesTotal) {
+			this.bytesTotal = bytesTotal;
+		}
+
+		public String getNativeSnapshotInfo() {
+			return this.nativeSnapshotInfo;
+		}
+
+		public void setNativeSnapshotInfo(String nativeSnapshotInfo) {
+			this.nativeSnapshotInfo = nativeSnapshotInfo;
 		}
 
 		public Long getCompleteTime() {
@@ -237,28 +250,12 @@ public class DescribeUdmSnapshotsResponse extends AcsResponse {
 			this.retention = retention;
 		}
 
-		public Long getBytesTotal() {
-			return this.bytesTotal;
+		public Long getCreatedTime() {
+			return this.createdTime;
 		}
 
-		public void setBytesTotal(Long bytesTotal) {
-			this.bytesTotal = bytesTotal;
-		}
-
-		public String getFileSystemId() {
-			return this.fileSystemId;
-		}
-
-		public void setFileSystemId(String fileSystemId) {
-			this.fileSystemId = fileSystemId;
-		}
-
-		public Long getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
+		public void setCreatedTime(Long createdTime) {
+			this.createdTime = createdTime;
 		}
 
 		public String getBucket() {
@@ -269,28 +266,20 @@ public class DescribeUdmSnapshotsResponse extends AcsResponse {
 			this.bucket = bucket;
 		}
 
-		public String getPrefix() {
-			return this.prefix;
+		public Long getRealSnapshotTime() {
+			return this.realSnapshotTime;
 		}
 
-		public void setPrefix(String prefix) {
-			this.prefix = prefix;
+		public void setRealSnapshotTime(Long realSnapshotTime) {
+			this.realSnapshotTime = realSnapshotTime;
 		}
 
-		public String getBucket1() {
-			return this.bucket1;
+		public String getParentSnapshotHash() {
+			return this.parentSnapshotHash;
 		}
 
-		public void setBucket1(String bucket1) {
-			this.bucket1 = bucket1;
-		}
-
-		public String getPrefix2() {
-			return this.prefix2;
-		}
-
-		public void setPrefix2(String prefix2) {
-			this.prefix2 = prefix2;
+		public void setParentSnapshotHash(String parentSnapshotHash) {
+			this.parentSnapshotHash = parentSnapshotHash;
 		}
 
 		public String getInstanceId() {
@@ -301,12 +290,44 @@ public class DescribeUdmSnapshotsResponse extends AcsResponse {
 			this.instanceId = instanceId;
 		}
 
-		public String getDiskId() {
-			return this.diskId;
+		public String getFileSystemId() {
+			return this.fileSystemId;
 		}
 
-		public void setDiskId(String diskId) {
-			this.diskId = diskId;
+		public void setFileSystemId(String fileSystemId) {
+			this.fileSystemId = fileSystemId;
+		}
+
+		public Long getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(Long startTime) {
+			this.startTime = startTime;
+		}
+
+		public Long getUpdatedTime() {
+			return this.updatedTime;
+		}
+
+		public void setUpdatedTime(Long updatedTime) {
+			this.updatedTime = updatedTime;
+		}
+
+		public String getSnapshotId() {
+			return this.snapshotId;
+		}
+
+		public void setSnapshotId(String snapshotId) {
+			this.snapshotId = snapshotId;
+		}
+
+		public String getJobId() {
+			return this.jobId;
+		}
+
+		public void setJobId(String jobId) {
+			this.jobId = jobId;
 		}
 
 		public String getNativeSnapshotId() {
@@ -317,36 +338,28 @@ public class DescribeUdmSnapshotsResponse extends AcsResponse {
 			this.nativeSnapshotId = nativeSnapshotId;
 		}
 
-		public String getActualBytes() {
-			return this.actualBytes;
+		public String getInstanceGroupId() {
+			return this.instanceGroupId;
 		}
 
-		public void setActualBytes(String actualBytes) {
-			this.actualBytes = actualBytes;
+		public void setInstanceGroupId(String instanceGroupId) {
+			this.instanceGroupId = instanceGroupId;
 		}
 
-		public Long getRealSnapshotTime() {
-			return this.realSnapshotTime;
+		public String getAdvancedRetentionType() {
+			return this.advancedRetentionType;
 		}
 
-		public void setRealSnapshotTime(Long realSnapshotTime) {
-			this.realSnapshotTime = realSnapshotTime;
+		public void setAdvancedRetentionType(String advancedRetentionType) {
+			this.advancedRetentionType = advancedRetentionType;
 		}
 
-		public String getNativeSnapshotInfo() {
-			return this.nativeSnapshotInfo;
+		public Long getExpireTime() {
+			return this.expireTime;
 		}
 
-		public void setNativeSnapshotInfo(String nativeSnapshotInfo) {
-			this.nativeSnapshotInfo = nativeSnapshotInfo;
-		}
-
-		public String getDetail() {
-			return this.detail;
-		}
-
-		public void setDetail(String detail) {
-			this.detail = detail;
+		public void setExpireTime(Long expireTime) {
+			this.expireTime = expireTime;
 		}
 
 		public List<String> getPaths() {
@@ -355,6 +368,257 @@ public class DescribeUdmSnapshotsResponse extends AcsResponse {
 
 		public void setPaths(List<String> paths) {
 			this.paths = paths;
+		}
+
+		public Detail getDetail() {
+			return this.detail;
+		}
+
+		public void setDetail(Detail detail) {
+			this.detail = detail;
+		}
+
+		public static class Detail {
+
+			private String diskDevName;
+
+			private String downgradeReason;
+
+			private String osDiskId;
+
+			private String osName;
+
+			private Boolean containOsDisk;
+
+			private String consistentLevel;
+
+			private String vmName;
+
+			private Map<Object,Object> diskHbrBackupSnapshotIdWithDeviceMap;
+
+			private String nativeSnapshotInfo;
+
+			private Map<Object,Object> diskHbrSnapshotIdWithDeviceMap;
+
+			private Map<Object,Object> instanceIdWithDiskIdListMap;
+
+			private String instanceName;
+
+			private String osType;
+
+			private String platform;
+
+			private String osNameEn;
+
+			private String hostName;
+
+			private Boolean systemDisk;
+
+			private String snapshotGroupId;
+
+			private String instanceType;
+
+			private String diskCategory;
+
+			private String performanceLevel;
+
+			private Boolean instantAccess;
+
+			private List<String> diskIdList;
+
+			private List<String> nativeSnapshotIdList;
+
+			public String getDiskDevName() {
+				return this.diskDevName;
+			}
+
+			public void setDiskDevName(String diskDevName) {
+				this.diskDevName = diskDevName;
+			}
+
+			public String getDowngradeReason() {
+				return this.downgradeReason;
+			}
+
+			public void setDowngradeReason(String downgradeReason) {
+				this.downgradeReason = downgradeReason;
+			}
+
+			public String getOsDiskId() {
+				return this.osDiskId;
+			}
+
+			public void setOsDiskId(String osDiskId) {
+				this.osDiskId = osDiskId;
+			}
+
+			public String getOsName() {
+				return this.osName;
+			}
+
+			public void setOsName(String osName) {
+				this.osName = osName;
+			}
+
+			public Boolean getContainOsDisk() {
+				return this.containOsDisk;
+			}
+
+			public void setContainOsDisk(Boolean containOsDisk) {
+				this.containOsDisk = containOsDisk;
+			}
+
+			public String getConsistentLevel() {
+				return this.consistentLevel;
+			}
+
+			public void setConsistentLevel(String consistentLevel) {
+				this.consistentLevel = consistentLevel;
+			}
+
+			public String getVmName() {
+				return this.vmName;
+			}
+
+			public void setVmName(String vmName) {
+				this.vmName = vmName;
+			}
+
+			public Map<Object,Object> getDiskHbrBackupSnapshotIdWithDeviceMap() {
+				return this.diskHbrBackupSnapshotIdWithDeviceMap;
+			}
+
+			public void setDiskHbrBackupSnapshotIdWithDeviceMap(Map<Object,Object> diskHbrBackupSnapshotIdWithDeviceMap) {
+				this.diskHbrBackupSnapshotIdWithDeviceMap = diskHbrBackupSnapshotIdWithDeviceMap;
+			}
+
+			public String getNativeSnapshotInfo() {
+				return this.nativeSnapshotInfo;
+			}
+
+			public void setNativeSnapshotInfo(String nativeSnapshotInfo) {
+				this.nativeSnapshotInfo = nativeSnapshotInfo;
+			}
+
+			public Map<Object,Object> getDiskHbrSnapshotIdWithDeviceMap() {
+				return this.diskHbrSnapshotIdWithDeviceMap;
+			}
+
+			public void setDiskHbrSnapshotIdWithDeviceMap(Map<Object,Object> diskHbrSnapshotIdWithDeviceMap) {
+				this.diskHbrSnapshotIdWithDeviceMap = diskHbrSnapshotIdWithDeviceMap;
+			}
+
+			public Map<Object,Object> getInstanceIdWithDiskIdListMap() {
+				return this.instanceIdWithDiskIdListMap;
+			}
+
+			public void setInstanceIdWithDiskIdListMap(Map<Object,Object> instanceIdWithDiskIdListMap) {
+				this.instanceIdWithDiskIdListMap = instanceIdWithDiskIdListMap;
+			}
+
+			public String getInstanceName() {
+				return this.instanceName;
+			}
+
+			public void setInstanceName(String instanceName) {
+				this.instanceName = instanceName;
+			}
+
+			public String getOsType() {
+				return this.osType;
+			}
+
+			public void setOsType(String osType) {
+				this.osType = osType;
+			}
+
+			public String getPlatform() {
+				return this.platform;
+			}
+
+			public void setPlatform(String platform) {
+				this.platform = platform;
+			}
+
+			public String getOsNameEn() {
+				return this.osNameEn;
+			}
+
+			public void setOsNameEn(String osNameEn) {
+				this.osNameEn = osNameEn;
+			}
+
+			public String getHostName() {
+				return this.hostName;
+			}
+
+			public void setHostName(String hostName) {
+				this.hostName = hostName;
+			}
+
+			public Boolean getSystemDisk() {
+				return this.systemDisk;
+			}
+
+			public void setSystemDisk(Boolean systemDisk) {
+				this.systemDisk = systemDisk;
+			}
+
+			public String getSnapshotGroupId() {
+				return this.snapshotGroupId;
+			}
+
+			public void setSnapshotGroupId(String snapshotGroupId) {
+				this.snapshotGroupId = snapshotGroupId;
+			}
+
+			public String getInstanceType() {
+				return this.instanceType;
+			}
+
+			public void setInstanceType(String instanceType) {
+				this.instanceType = instanceType;
+			}
+
+			public String getDiskCategory() {
+				return this.diskCategory;
+			}
+
+			public void setDiskCategory(String diskCategory) {
+				this.diskCategory = diskCategory;
+			}
+
+			public String getPerformanceLevel() {
+				return this.performanceLevel;
+			}
+
+			public void setPerformanceLevel(String performanceLevel) {
+				this.performanceLevel = performanceLevel;
+			}
+
+			public Boolean getInstantAccess() {
+				return this.instantAccess;
+			}
+
+			public void setInstantAccess(Boolean instantAccess) {
+				this.instantAccess = instantAccess;
+			}
+
+			public List<String> getDiskIdList() {
+				return this.diskIdList;
+			}
+
+			public void setDiskIdList(List<String> diskIdList) {
+				this.diskIdList = diskIdList;
+			}
+
+			public List<String> getNativeSnapshotIdList() {
+				return this.nativeSnapshotIdList;
+			}
+
+			public void setNativeSnapshotIdList(List<String> nativeSnapshotIdList) {
+				this.nativeSnapshotIdList = nativeSnapshotIdList;
+			}
 		}
 	}
 

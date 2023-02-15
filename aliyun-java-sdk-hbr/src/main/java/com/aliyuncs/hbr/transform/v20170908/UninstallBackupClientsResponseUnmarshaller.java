@@ -29,14 +29,14 @@ public class UninstallBackupClientsResponseUnmarshaller {
 		uninstallBackupClientsResponse.setRequestId(_ctx.stringValue("UninstallBackupClientsResponse.RequestId"));
 		uninstallBackupClientsResponse.setCode(_ctx.stringValue("UninstallBackupClientsResponse.Code"));
 		uninstallBackupClientsResponse.setMessage(_ctx.stringValue("UninstallBackupClientsResponse.Message"));
-		uninstallBackupClientsResponse.setSuccess(_ctx.booleanValue("UninstallBackupClientsResponse.Success"));
 		uninstallBackupClientsResponse.setTaskId(_ctx.stringValue("UninstallBackupClientsResponse.TaskId"));
+		uninstallBackupClientsResponse.setSuccess(_ctx.booleanValue("UninstallBackupClientsResponse.Success"));
 
 		List<InstanceStatus> instanceStatuses = new ArrayList<InstanceStatus>();
 		for (int i = 0; i < _ctx.lengthValue("UninstallBackupClientsResponse.InstanceStatuses.Length"); i++) {
 			InstanceStatus instanceStatus = new InstanceStatus();
-			instanceStatus.setInstanceId(_ctx.stringValue("UninstallBackupClientsResponse.InstanceStatuses["+ i +"].InstanceId"));
 			instanceStatus.setValidInstance(_ctx.booleanValue("UninstallBackupClientsResponse.InstanceStatuses["+ i +"].ValidInstance"));
+			instanceStatus.setInstanceId(_ctx.stringValue("UninstallBackupClientsResponse.InstanceStatuses["+ i +"].InstanceId"));
 			instanceStatus.setErrorCode(_ctx.stringValue("UninstallBackupClientsResponse.InstanceStatuses["+ i +"].ErrorCode"));
 
 			instanceStatuses.add(instanceStatus);

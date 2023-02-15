@@ -16,6 +16,8 @@ package com.aliyuncs.hbr.model.v20170908;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.hbr.Endpoint;
 
@@ -29,6 +31,8 @@ public class UpdateBackupPlanRequest extends RpcAcsRequest<UpdateBackupPlanRespo
 	private String vaultId;
 
 	private String prefix;
+
+	private List<Rule> rules;
 
 	private List<String> paths;
 
@@ -44,7 +48,12 @@ public class UpdateBackupPlanRequest extends RpcAcsRequest<UpdateBackupPlanRespo
 
 	private String include;
 
+	private Long keepLatestSnapshots;
+
 	private String schedule;
+
+	@SerializedName("otsDetail")
+	private OtsDetail otsDetail;
 
 	private String speedLimit;
 
@@ -82,6 +91,26 @@ public class UpdateBackupPlanRequest extends RpcAcsRequest<UpdateBackupPlanRespo
 		if(prefix != null){
 			putQueryParameter("Prefix", prefix);
 		}
+	}
+
+	public List<Rule> getRules() {
+		return this.rules;
+	}
+
+	public void setRules(List<Rule> rules) {
+		this.rules = rules;	
+		if (rules != null) {
+			for (int depth1 = 0; depth1 < rules.size(); depth1++) {
+				putBodyParameter("Rule." + (depth1 + 1) + ".Schedule" , rules.get(depth1).getSchedule());
+				putBodyParameter("Rule." + (depth1 + 1) + ".DestinationRegionId" , rules.get(depth1).getDestinationRegionId());
+				putBodyParameter("Rule." + (depth1 + 1) + ".Disabled" , rules.get(depth1).getDisabled());
+				putBodyParameter("Rule." + (depth1 + 1) + ".RuleName" , rules.get(depth1).getRuleName());
+				putBodyParameter("Rule." + (depth1 + 1) + ".DestinationRetention" , rules.get(depth1).getDestinationRetention());
+				putBodyParameter("Rule." + (depth1 + 1) + ".Retention" , rules.get(depth1).getRetention());
+				putBodyParameter("Rule." + (depth1 + 1) + ".BackupType" , rules.get(depth1).getBackupType());
+				putBodyParameter("Rule." + (depth1 + 1) + ".DoCopy" , rules.get(depth1).getDoCopy());
+			}
+		}	
 	}
 
 	public List<String> getPaths() {
@@ -163,6 +192,17 @@ public class UpdateBackupPlanRequest extends RpcAcsRequest<UpdateBackupPlanRespo
 		}
 	}
 
+	public Long getKeepLatestSnapshots() {
+		return this.keepLatestSnapshots;
+	}
+
+	public void setKeepLatestSnapshots(Long keepLatestSnapshots) {
+		this.keepLatestSnapshots = keepLatestSnapshots;
+		if(keepLatestSnapshots != null){
+			putQueryParameter("KeepLatestSnapshots", keepLatestSnapshots.toString());
+		}
+	}
+
 	public String getSchedule() {
 		return this.schedule;
 	}
@@ -172,6 +212,17 @@ public class UpdateBackupPlanRequest extends RpcAcsRequest<UpdateBackupPlanRespo
 		if(schedule != null){
 			putQueryParameter("Schedule", schedule);
 		}
+	}
+
+	public OtsDetail getOtsDetail() {
+		return this.otsDetail;
+	}
+
+	public void setOtsDetail(OtsDetail otsDetail) {
+		this.otsDetail = otsDetail;	
+		if (otsDetail != null) {
+			putBodyParameter("OtsDetail" , new Gson().toJson(otsDetail));
+		}	
 	}
 
 	public String getSpeedLimit() {
@@ -215,6 +266,103 @@ public class UpdateBackupPlanRequest extends RpcAcsRequest<UpdateBackupPlanRespo
 		this.updatePaths = updatePaths;
 		if(updatePaths != null){
 			putQueryParameter("UpdatePaths", updatePaths.toString());
+		}
+	}
+
+	public static class Rule {
+
+		private String schedule;
+
+		private String destinationRegionId;
+
+		private Boolean disabled;
+
+		private String ruleName;
+
+		private Long destinationRetention;
+
+		private Long retention;
+
+		private String backupType;
+
+		private Boolean doCopy;
+
+		public String getSchedule() {
+			return this.schedule;
+		}
+
+		public void setSchedule(String schedule) {
+			this.schedule = schedule;
+		}
+
+		public String getDestinationRegionId() {
+			return this.destinationRegionId;
+		}
+
+		public void setDestinationRegionId(String destinationRegionId) {
+			this.destinationRegionId = destinationRegionId;
+		}
+
+		public Boolean getDisabled() {
+			return this.disabled;
+		}
+
+		public void setDisabled(Boolean disabled) {
+			this.disabled = disabled;
+		}
+
+		public String getRuleName() {
+			return this.ruleName;
+		}
+
+		public void setRuleName(String ruleName) {
+			this.ruleName = ruleName;
+		}
+
+		public Long getDestinationRetention() {
+			return this.destinationRetention;
+		}
+
+		public void setDestinationRetention(Long destinationRetention) {
+			this.destinationRetention = destinationRetention;
+		}
+
+		public Long getRetention() {
+			return this.retention;
+		}
+
+		public void setRetention(Long retention) {
+			this.retention = retention;
+		}
+
+		public String getBackupType() {
+			return this.backupType;
+		}
+
+		public void setBackupType(String backupType) {
+			this.backupType = backupType;
+		}
+
+		public Boolean getDoCopy() {
+			return this.doCopy;
+		}
+
+		public void setDoCopy(Boolean doCopy) {
+			this.doCopy = doCopy;
+		}
+	}
+
+	public static class OtsDetail {
+
+		@SerializedName("TableNames")
+		private List<String> tableNames;
+
+		public List<String> getTableNames() {
+			return this.tableNames;
+		}
+
+		public void setTableNames(List<String> tableNames) {
+			this.tableNames = tableNames;
 		}
 	}
 

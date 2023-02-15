@@ -30,7 +30,7 @@ public class DeleteClientRequest extends RpcAcsRequest<DeleteClientResponse> {
 
 	private String vaultId;
 
-	private String token;
+	private String resourceGroupId;
 	public DeleteClientRequest() {
 		super("hbr", "2017-09-08", "DeleteClient", "hbr");
 		setProtocol(ProtocolType.HTTPS);
@@ -63,14 +63,14 @@ public class DeleteClientRequest extends RpcAcsRequest<DeleteClientResponse> {
 		}
 	}
 
-	public String getToken() {
-		return this.token;
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
 	}
 
-	public void setToken(String token) {
-		this.token = token;
-		if(token != null){
-			putQueryParameter("Token", token);
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

@@ -38,8 +38,6 @@ public class UpdateHanaBackupSettingRequest extends RpcAcsRequest<UpdateHanaBack
 
 	private Boolean enableAutoLogBackup;
 
-	private String token;
-
 	private Boolean logBackupUsingBackint;
 
 	private Boolean catalogBackupUsingBackint;
@@ -120,17 +118,6 @@ public class UpdateHanaBackupSettingRequest extends RpcAcsRequest<UpdateHanaBack
 		this.enableAutoLogBackup = enableAutoLogBackup;
 		if(enableAutoLogBackup != null){
 			putQueryParameter("EnableAutoLogBackup", enableAutoLogBackup.toString());
-		}
-	}
-
-	public String getToken() {
-		return this.token;
-	}
-
-	public void setToken(String token) {
-		this.token = token;
-		if(token != null){
-			putQueryParameter("Token", token);
 		}
 	}
 

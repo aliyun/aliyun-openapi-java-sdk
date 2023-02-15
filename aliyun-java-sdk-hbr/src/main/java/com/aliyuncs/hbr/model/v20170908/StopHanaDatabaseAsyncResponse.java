@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class StopHanaDatabaseAsyncResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
 	private String taskId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
+	private Boolean success;
 
 	public String getCode() {
 		return this.code;
@@ -66,12 +50,28 @@ public class StopHanaDatabaseAsyncResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public String getTaskId() {
 		return this.taskId;
 	}
 
 	public void setTaskId(String taskId) {
 		this.taskId = taskId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

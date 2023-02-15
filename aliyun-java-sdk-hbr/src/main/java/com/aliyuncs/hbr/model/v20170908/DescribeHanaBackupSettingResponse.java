@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeHanaBackupSettingResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private HanaBackupSetting hanaBackupSetting;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -66,6 +50,22 @@ public class DescribeHanaBackupSettingResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public HanaBackupSetting getHanaBackupSetting() {
 		return this.hanaBackupSetting;
 	}
@@ -78,19 +78,19 @@ public class DescribeHanaBackupSettingResponse extends AcsResponse {
 
 		private String databaseName;
 
-		private Boolean enableAutoLogBackup;
-
-		private String dataBackupParameterFile;
-
-		private String logBackupParameterFile;
-
 		private Boolean logBackupUsingBackint;
 
-		private Long logBackupTimeout;
+		private String catalogBackupParameterFile;
 
 		private Boolean catalogBackupUsingBackint;
 
-		private String catalogBackupParameterFile;
+		private String dataBackupParameterFile;
+
+		private Long logBackupTimeout;
+
+		private Boolean enableAutoLogBackup;
+
+		private String logBackupParameterFile;
 
 		public String getDatabaseName() {
 			return this.databaseName;
@@ -98,30 +98,6 @@ public class DescribeHanaBackupSettingResponse extends AcsResponse {
 
 		public void setDatabaseName(String databaseName) {
 			this.databaseName = databaseName;
-		}
-
-		public Boolean getEnableAutoLogBackup() {
-			return this.enableAutoLogBackup;
-		}
-
-		public void setEnableAutoLogBackup(Boolean enableAutoLogBackup) {
-			this.enableAutoLogBackup = enableAutoLogBackup;
-		}
-
-		public String getDataBackupParameterFile() {
-			return this.dataBackupParameterFile;
-		}
-
-		public void setDataBackupParameterFile(String dataBackupParameterFile) {
-			this.dataBackupParameterFile = dataBackupParameterFile;
-		}
-
-		public String getLogBackupParameterFile() {
-			return this.logBackupParameterFile;
-		}
-
-		public void setLogBackupParameterFile(String logBackupParameterFile) {
-			this.logBackupParameterFile = logBackupParameterFile;
 		}
 
 		public Boolean getLogBackupUsingBackint() {
@@ -132,12 +108,12 @@ public class DescribeHanaBackupSettingResponse extends AcsResponse {
 			this.logBackupUsingBackint = logBackupUsingBackint;
 		}
 
-		public Long getLogBackupTimeout() {
-			return this.logBackupTimeout;
+		public String getCatalogBackupParameterFile() {
+			return this.catalogBackupParameterFile;
 		}
 
-		public void setLogBackupTimeout(Long logBackupTimeout) {
-			this.logBackupTimeout = logBackupTimeout;
+		public void setCatalogBackupParameterFile(String catalogBackupParameterFile) {
+			this.catalogBackupParameterFile = catalogBackupParameterFile;
 		}
 
 		public Boolean getCatalogBackupUsingBackint() {
@@ -148,12 +124,36 @@ public class DescribeHanaBackupSettingResponse extends AcsResponse {
 			this.catalogBackupUsingBackint = catalogBackupUsingBackint;
 		}
 
-		public String getCatalogBackupParameterFile() {
-			return this.catalogBackupParameterFile;
+		public String getDataBackupParameterFile() {
+			return this.dataBackupParameterFile;
 		}
 
-		public void setCatalogBackupParameterFile(String catalogBackupParameterFile) {
-			this.catalogBackupParameterFile = catalogBackupParameterFile;
+		public void setDataBackupParameterFile(String dataBackupParameterFile) {
+			this.dataBackupParameterFile = dataBackupParameterFile;
+		}
+
+		public Long getLogBackupTimeout() {
+			return this.logBackupTimeout;
+		}
+
+		public void setLogBackupTimeout(Long logBackupTimeout) {
+			this.logBackupTimeout = logBackupTimeout;
+		}
+
+		public Boolean getEnableAutoLogBackup() {
+			return this.enableAutoLogBackup;
+		}
+
+		public void setEnableAutoLogBackup(Boolean enableAutoLogBackup) {
+			this.enableAutoLogBackup = enableAutoLogBackup;
+		}
+
+		public String getLogBackupParameterFile() {
+			return this.logBackupParameterFile;
+		}
+
+		public void setLogBackupParameterFile(String logBackupParameterFile) {
+			this.logBackupParameterFile = logBackupParameterFile;
 		}
 	}
 

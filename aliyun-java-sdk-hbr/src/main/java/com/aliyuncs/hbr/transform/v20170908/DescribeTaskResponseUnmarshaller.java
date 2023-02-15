@@ -23,16 +23,16 @@ public class DescribeTaskResponseUnmarshaller {
 	public static DescribeTaskResponse unmarshall(DescribeTaskResponse describeTaskResponse, UnmarshallerContext _ctx) {
 		
 		describeTaskResponse.setRequestId(_ctx.stringValue("DescribeTaskResponse.RequestId"));
+		describeTaskResponse.setProgress(_ctx.integerValue("DescribeTaskResponse.Progress"));
+		describeTaskResponse.setCompletedTime(_ctx.longValue("DescribeTaskResponse.CompletedTime"));
+		describeTaskResponse.setResult(_ctx.stringValue("DescribeTaskResponse.Result"));
+		describeTaskResponse.setDescription(_ctx.stringValue("DescribeTaskResponse.Description"));
+		describeTaskResponse.setUpdatedTime(_ctx.longValue("DescribeTaskResponse.UpdatedTime"));
 		describeTaskResponse.setSuccess(_ctx.booleanValue("DescribeTaskResponse.Success"));
 		describeTaskResponse.setCode(_ctx.stringValue("DescribeTaskResponse.Code"));
 		describeTaskResponse.setMessage(_ctx.stringValue("DescribeTaskResponse.Message"));
-		describeTaskResponse.setProgress(_ctx.integerValue("DescribeTaskResponse.Progress"));
-		describeTaskResponse.setDescription(_ctx.stringValue("DescribeTaskResponse.Description"));
-		describeTaskResponse.setCreatedTime(_ctx.longValue("DescribeTaskResponse.CreatedTime"));
-		describeTaskResponse.setUpdatedTime(_ctx.longValue("DescribeTaskResponse.UpdatedTime"));
-		describeTaskResponse.setResult(_ctx.stringValue("DescribeTaskResponse.Result"));
-		describeTaskResponse.setCompletedTime(_ctx.longValue("DescribeTaskResponse.CompletedTime"));
 		describeTaskResponse.setName(_ctx.stringValue("DescribeTaskResponse.Name"));
+		describeTaskResponse.setCreatedTime(_ctx.longValue("DescribeTaskResponse.CreatedTime"));
 	 
 	 	return describeTaskResponse;
 	}

@@ -26,13 +26,13 @@ public class CreateReplicationVaultResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String vaultId;
+
 	private Boolean success;
 
 	private String code;
 
 	private String message;
-
-	private String vaultId;
 
 	private String taskId;
 
@@ -42,6 +42,14 @@ public class CreateReplicationVaultResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getVaultId() {
+		return this.vaultId;
+	}
+
+	public void setVaultId(String vaultId) {
+		this.vaultId = vaultId;
 	}
 
 	public Boolean getSuccess() {
@@ -66,14 +74,6 @@ public class CreateReplicationVaultResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
-	}
-
-	public String getVaultId() {
-		return this.vaultId;
-	}
-
-	public void setVaultId(String vaultId) {
-		this.vaultId = vaultId;
 	}
 
 	public String getTaskId() {

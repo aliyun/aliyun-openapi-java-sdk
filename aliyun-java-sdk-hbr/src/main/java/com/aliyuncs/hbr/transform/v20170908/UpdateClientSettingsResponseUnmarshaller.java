@@ -23,9 +23,9 @@ public class UpdateClientSettingsResponseUnmarshaller {
 	public static UpdateClientSettingsResponse unmarshall(UpdateClientSettingsResponse updateClientSettingsResponse, UnmarshallerContext _ctx) {
 		
 		updateClientSettingsResponse.setRequestId(_ctx.stringValue("UpdateClientSettingsResponse.RequestId"));
-		updateClientSettingsResponse.setSuccess(_ctx.booleanValue("UpdateClientSettingsResponse.Success"));
 		updateClientSettingsResponse.setCode(_ctx.stringValue("UpdateClientSettingsResponse.Code"));
 		updateClientSettingsResponse.setMessage(_ctx.stringValue("UpdateClientSettingsResponse.Message"));
+		updateClientSettingsResponse.setSuccess(_ctx.booleanValue("UpdateClientSettingsResponse.Success"));
 	 
 	 	return updateClientSettingsResponse;
 	}

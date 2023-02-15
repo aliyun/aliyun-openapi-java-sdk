@@ -33,11 +33,11 @@ public class DescribeHanaRestoresResponse extends AcsResponse {
 
 	private String message;
 
-	private Integer totalCount;
+	private Integer pageNumber;
 
 	private Integer pageSize;
 
-	private Integer pageNumber;
+	private Integer totalCount;
 
 	private List<HanaRestores> hanaRestore;
 
@@ -73,12 +73,12 @@ public class DescribeHanaRestoresResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public Integer getPageSize() {
@@ -89,12 +89,12 @@ public class DescribeHanaRestoresResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<HanaRestores> getHanaRestore() {
@@ -107,148 +107,76 @@ public class DescribeHanaRestoresResponse extends AcsResponse {
 
 	public static class HanaRestores {
 
-		private String restoreId;
-
-		private String clusterId;
-
-		private String vaultId;
-
-		private String databaseName;
-
-		private Long backupID;
-
-		private Long recoveryPointInTime;
-
-		private Long databaseRestoreId;
-
-		private String service;
-
-		private Long startTime;
-
-		private Long endTime;
+		private String status;
 
 		private Long reachedTime;
 
-		private String state;
+		private String logPaths;
 
-		private String phase;
-
-		private String message;
-
-		private String status;
-
-		private Integer maxPhase;
+		private String vaultId;
 
 		private Integer currentPhase;
 
-		private Long maxProgress;
+		private Boolean clearLog;
 
-		private Long currentProgress;
-
-		private String mode;
-
-		private Long logPosition;
-
-		private Integer volumeId;
-
-		private Boolean useCatalog;
-
-		private String backupPrefix;
-
-		private Boolean systemCopy;
-
-		private String source;
-
-		private String sourceClusterId;
-
-		private String logPaths;
+		private String message;
 
 		private Boolean checkAccess;
 
-		private Boolean clearLog;
+		private String mode;
+
+		private Boolean systemCopy;
+
+		private Long currentProgress;
 
 		private Boolean useDelta;
 
+		private Long backupID;
+
+		private String service;
+
+		private String sourceClusterId;
+
+		private Integer volumeId;
+
+		private String databaseName;
+
+		private String phase;
+
+		private String clusterId;
+
+		private Long databaseRestoreId;
+
+		private String state;
+
+		private String source;
+
+		private Integer maxPhase;
+
+		private Long endTime;
+
+		private Long startTime;
+
+		private String backupPrefix;
+
+		private String restoreId;
+
+		private Long logPosition;
+
 		private String extraOptions;
 
-		public String getRestoreId() {
-			return this.restoreId;
+		private Long recoveryPointInTime;
+
+		private Long maxProgress;
+
+		private Boolean useCatalog;
+
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setRestoreId(String restoreId) {
-			this.restoreId = restoreId;
-		}
-
-		public String getClusterId() {
-			return this.clusterId;
-		}
-
-		public void setClusterId(String clusterId) {
-			this.clusterId = clusterId;
-		}
-
-		public String getVaultId() {
-			return this.vaultId;
-		}
-
-		public void setVaultId(String vaultId) {
-			this.vaultId = vaultId;
-		}
-
-		public String getDatabaseName() {
-			return this.databaseName;
-		}
-
-		public void setDatabaseName(String databaseName) {
-			this.databaseName = databaseName;
-		}
-
-		public Long getBackupID() {
-			return this.backupID;
-		}
-
-		public void setBackupID(Long backupID) {
-			this.backupID = backupID;
-		}
-
-		public Long getRecoveryPointInTime() {
-			return this.recoveryPointInTime;
-		}
-
-		public void setRecoveryPointInTime(Long recoveryPointInTime) {
-			this.recoveryPointInTime = recoveryPointInTime;
-		}
-
-		public Long getDatabaseRestoreId() {
-			return this.databaseRestoreId;
-		}
-
-		public void setDatabaseRestoreId(Long databaseRestoreId) {
-			this.databaseRestoreId = databaseRestoreId;
-		}
-
-		public String getService() {
-			return this.service;
-		}
-
-		public void setService(String service) {
-			this.service = service;
-		}
-
-		public Long getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(Long startTime) {
-			this.startTime = startTime;
-		}
-
-		public Long getEndTime() {
-			return this.endTime;
-		}
-
-		public void setEndTime(Long endTime) {
-			this.endTime = endTime;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public Long getReachedTime() {
@@ -259,44 +187,20 @@ public class DescribeHanaRestoresResponse extends AcsResponse {
 			this.reachedTime = reachedTime;
 		}
 
-		public String getState() {
-			return this.state;
+		public String getLogPaths() {
+			return this.logPaths;
 		}
 
-		public void setState(String state) {
-			this.state = state;
+		public void setLogPaths(String logPaths) {
+			this.logPaths = logPaths;
 		}
 
-		public String getPhase() {
-			return this.phase;
+		public String getVaultId() {
+			return this.vaultId;
 		}
 
-		public void setPhase(String phase) {
-			this.phase = phase;
-		}
-
-		public String getMessage() {
-			return this.message;
-		}
-
-		public void setMessage(String message) {
-			this.message = message;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public Integer getMaxPhase() {
-			return this.maxPhase;
-		}
-
-		public void setMaxPhase(Integer maxPhase) {
-			this.maxPhase = maxPhase;
+		public void setVaultId(String vaultId) {
+			this.vaultId = vaultId;
 		}
 
 		public Integer getCurrentPhase() {
@@ -307,92 +211,20 @@ public class DescribeHanaRestoresResponse extends AcsResponse {
 			this.currentPhase = currentPhase;
 		}
 
-		public Long getMaxProgress() {
-			return this.maxProgress;
+		public Boolean getClearLog() {
+			return this.clearLog;
 		}
 
-		public void setMaxProgress(Long maxProgress) {
-			this.maxProgress = maxProgress;
+		public void setClearLog(Boolean clearLog) {
+			this.clearLog = clearLog;
 		}
 
-		public Long getCurrentProgress() {
-			return this.currentProgress;
+		public String getMessage() {
+			return this.message;
 		}
 
-		public void setCurrentProgress(Long currentProgress) {
-			this.currentProgress = currentProgress;
-		}
-
-		public String getMode() {
-			return this.mode;
-		}
-
-		public void setMode(String mode) {
-			this.mode = mode;
-		}
-
-		public Long getLogPosition() {
-			return this.logPosition;
-		}
-
-		public void setLogPosition(Long logPosition) {
-			this.logPosition = logPosition;
-		}
-
-		public Integer getVolumeId() {
-			return this.volumeId;
-		}
-
-		public void setVolumeId(Integer volumeId) {
-			this.volumeId = volumeId;
-		}
-
-		public Boolean getUseCatalog() {
-			return this.useCatalog;
-		}
-
-		public void setUseCatalog(Boolean useCatalog) {
-			this.useCatalog = useCatalog;
-		}
-
-		public String getBackupPrefix() {
-			return this.backupPrefix;
-		}
-
-		public void setBackupPrefix(String backupPrefix) {
-			this.backupPrefix = backupPrefix;
-		}
-
-		public Boolean getSystemCopy() {
-			return this.systemCopy;
-		}
-
-		public void setSystemCopy(Boolean systemCopy) {
-			this.systemCopy = systemCopy;
-		}
-
-		public String getSource() {
-			return this.source;
-		}
-
-		public void setSource(String source) {
-			this.source = source;
-		}
-
-		public String getSourceClusterId() {
-			return this.sourceClusterId;
-		}
-
-		public void setSourceClusterId(String sourceClusterId) {
-			this.sourceClusterId = sourceClusterId;
-		}
-
-		public String getLogPaths() {
-			return this.logPaths;
-		}
-
-		public void setLogPaths(String logPaths) {
-			this.logPaths = logPaths;
+		public void setMessage(String message) {
+			this.message = message;
 		}
 
 		public Boolean getCheckAccess() {
@@ -403,12 +235,28 @@ public class DescribeHanaRestoresResponse extends AcsResponse {
 			this.checkAccess = checkAccess;
 		}
 
-		public Boolean getClearLog() {
-			return this.clearLog;
+		public String getMode() {
+			return this.mode;
 		}
 
-		public void setClearLog(Boolean clearLog) {
-			this.clearLog = clearLog;
+		public void setMode(String mode) {
+			this.mode = mode;
+		}
+
+		public Boolean getSystemCopy() {
+			return this.systemCopy;
+		}
+
+		public void setSystemCopy(Boolean systemCopy) {
+			this.systemCopy = systemCopy;
+		}
+
+		public Long getCurrentProgress() {
+			return this.currentProgress;
+		}
+
+		public void setCurrentProgress(Long currentProgress) {
+			this.currentProgress = currentProgress;
 		}
 
 		public Boolean getUseDelta() {
@@ -419,12 +267,164 @@ public class DescribeHanaRestoresResponse extends AcsResponse {
 			this.useDelta = useDelta;
 		}
 
+		public Long getBackupID() {
+			return this.backupID;
+		}
+
+		public void setBackupID(Long backupID) {
+			this.backupID = backupID;
+		}
+
+		public String getService() {
+			return this.service;
+		}
+
+		public void setService(String service) {
+			this.service = service;
+		}
+
+		public String getSourceClusterId() {
+			return this.sourceClusterId;
+		}
+
+		public void setSourceClusterId(String sourceClusterId) {
+			this.sourceClusterId = sourceClusterId;
+		}
+
+		public Integer getVolumeId() {
+			return this.volumeId;
+		}
+
+		public void setVolumeId(Integer volumeId) {
+			this.volumeId = volumeId;
+		}
+
+		public String getDatabaseName() {
+			return this.databaseName;
+		}
+
+		public void setDatabaseName(String databaseName) {
+			this.databaseName = databaseName;
+		}
+
+		public String getPhase() {
+			return this.phase;
+		}
+
+		public void setPhase(String phase) {
+			this.phase = phase;
+		}
+
+		public String getClusterId() {
+			return this.clusterId;
+		}
+
+		public void setClusterId(String clusterId) {
+			this.clusterId = clusterId;
+		}
+
+		public Long getDatabaseRestoreId() {
+			return this.databaseRestoreId;
+		}
+
+		public void setDatabaseRestoreId(Long databaseRestoreId) {
+			this.databaseRestoreId = databaseRestoreId;
+		}
+
+		public String getState() {
+			return this.state;
+		}
+
+		public void setState(String state) {
+			this.state = state;
+		}
+
+		public String getSource() {
+			return this.source;
+		}
+
+		public void setSource(String source) {
+			this.source = source;
+		}
+
+		public Integer getMaxPhase() {
+			return this.maxPhase;
+		}
+
+		public void setMaxPhase(Integer maxPhase) {
+			this.maxPhase = maxPhase;
+		}
+
+		public Long getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(Long endTime) {
+			this.endTime = endTime;
+		}
+
+		public Long getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(Long startTime) {
+			this.startTime = startTime;
+		}
+
+		public String getBackupPrefix() {
+			return this.backupPrefix;
+		}
+
+		public void setBackupPrefix(String backupPrefix) {
+			this.backupPrefix = backupPrefix;
+		}
+
+		public String getRestoreId() {
+			return this.restoreId;
+		}
+
+		public void setRestoreId(String restoreId) {
+			this.restoreId = restoreId;
+		}
+
+		public Long getLogPosition() {
+			return this.logPosition;
+		}
+
+		public void setLogPosition(Long logPosition) {
+			this.logPosition = logPosition;
+		}
+
 		public String getExtraOptions() {
 			return this.extraOptions;
 		}
 
 		public void setExtraOptions(String extraOptions) {
 			this.extraOptions = extraOptions;
+		}
+
+		public Long getRecoveryPointInTime() {
+			return this.recoveryPointInTime;
+		}
+
+		public void setRecoveryPointInTime(Long recoveryPointInTime) {
+			this.recoveryPointInTime = recoveryPointInTime;
+		}
+
+		public Long getMaxProgress() {
+			return this.maxProgress;
+		}
+
+		public void setMaxProgress(Long maxProgress) {
+			this.maxProgress = maxProgress;
+		}
+
+		public Boolean getUseCatalog() {
+			return this.useCatalog;
+		}
+
+		public void setUseCatalog(Boolean useCatalog) {
+			this.useCatalog = useCatalog;
 		}
 	}
 

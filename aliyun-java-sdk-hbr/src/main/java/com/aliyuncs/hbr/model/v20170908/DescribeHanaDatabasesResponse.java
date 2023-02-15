@@ -33,11 +33,11 @@ public class DescribeHanaDatabasesResponse extends AcsResponse {
 
 	private String message;
 
-	private Long totalCount;
+	private Integer pageNumber;
 
 	private Integer pageSize;
 
-	private Integer pageNumber;
+	private Long totalCount;
 
 	private List<HanaDatabase> hanaDatabases;
 
@@ -73,12 +73,12 @@ public class DescribeHanaDatabasesResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Long getTotalCount() {
-		return this.totalCount;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setTotalCount(Long totalCount) {
-		this.totalCount = totalCount;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public Integer getPageSize() {
@@ -89,12 +89,12 @@ public class DescribeHanaDatabasesResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public Long getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setTotalCount(Long totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<HanaDatabase> getHanaDatabases() {
@@ -107,25 +107,17 @@ public class DescribeHanaDatabasesResponse extends AcsResponse {
 
 	public static class HanaDatabase {
 
-		private String databaseName;
-
 		private String host;
-
-		private String serviceName;
-
-		private String detail;
-
-		private String activeStatus;
 
 		private Integer sqlPort;
 
-		public String getDatabaseName() {
-			return this.databaseName;
-		}
+		private String databaseName;
 
-		public void setDatabaseName(String databaseName) {
-			this.databaseName = databaseName;
-		}
+		private String serviceName;
+
+		private String activeStatus;
+
+		private String detail;
 
 		public String getHost() {
 			return this.host;
@@ -133,6 +125,22 @@ public class DescribeHanaDatabasesResponse extends AcsResponse {
 
 		public void setHost(String host) {
 			this.host = host;
+		}
+
+		public Integer getSqlPort() {
+			return this.sqlPort;
+		}
+
+		public void setSqlPort(Integer sqlPort) {
+			this.sqlPort = sqlPort;
+		}
+
+		public String getDatabaseName() {
+			return this.databaseName;
+		}
+
+		public void setDatabaseName(String databaseName) {
+			this.databaseName = databaseName;
 		}
 
 		public String getServiceName() {
@@ -143,14 +151,6 @@ public class DescribeHanaDatabasesResponse extends AcsResponse {
 			this.serviceName = serviceName;
 		}
 
-		public String getDetail() {
-			return this.detail;
-		}
-
-		public void setDetail(String detail) {
-			this.detail = detail;
-		}
-
 		public String getActiveStatus() {
 			return this.activeStatus;
 		}
@@ -159,12 +159,12 @@ public class DescribeHanaDatabasesResponse extends AcsResponse {
 			this.activeStatus = activeStatus;
 		}
 
-		public Integer getSqlPort() {
-			return this.sqlPort;
+		public String getDetail() {
+			return this.detail;
 		}
 
-		public void setSqlPort(Integer sqlPort) {
-			this.sqlPort = sqlPort;
+		public void setDetail(String detail) {
+			this.detail = detail;
 		}
 	}
 

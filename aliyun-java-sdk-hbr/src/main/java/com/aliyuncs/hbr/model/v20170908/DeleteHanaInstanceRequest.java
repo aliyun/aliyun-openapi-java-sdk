@@ -30,6 +30,8 @@ public class DeleteHanaInstanceRequest extends RpcAcsRequest<DeleteHanaInstanceR
 	private String clusterId;
 
 	private String sid;
+
+	private String resourceGroupId;
 	public DeleteHanaInstanceRequest() {
 		super("hbr", "2017-09-08", "DeleteHanaInstance", "hbr");
 		setMethod(MethodType.POST);
@@ -69,6 +71,17 @@ public class DeleteHanaInstanceRequest extends RpcAcsRequest<DeleteHanaInstanceR
 		this.sid = sid;
 		if(sid != null){
 			putQueryParameter("Sid", sid);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

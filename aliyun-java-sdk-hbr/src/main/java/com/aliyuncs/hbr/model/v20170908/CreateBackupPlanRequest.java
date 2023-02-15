@@ -16,6 +16,8 @@ package com.aliyuncs.hbr.model.v20170908;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.hbr.Endpoint;
 
@@ -26,11 +28,15 @@ import com.aliyuncs.hbr.Endpoint;
 public class CreateBackupPlanRequest extends RpcAcsRequest<CreateBackupPlanResponse> {
 	   
 
-	private String clientId;
-
 	private String vaultId;
 
 	private String prefix;
+
+	private String crossAccountType;
+
+	private List<Rule> rules;
+
+	private String crossAccountRoleName;
 
 	private List<String> paths;
 
@@ -52,7 +58,7 @@ public class CreateBackupPlanRequest extends RpcAcsRequest<CreateBackupPlanRespo
 
 	private Long createTime;
 
-	private String clusterId;
+	private Long keepLatestSnapshots;
 
 	private String bucket;
 
@@ -60,13 +66,16 @@ public class CreateBackupPlanRequest extends RpcAcsRequest<CreateBackupPlanRespo
 
 	private String instanceId;
 
-	private String speedLimit;
+	private String instanceName;
 
-	private String dataSourceId;
+	@SerializedName("otsDetail")
+	private OtsDetail otsDetail;
+
+	private String speedLimit;
 
 	private String detail;
 
-	private String backupSourceGroupId;
+	private Long crossAccountUserId;
 
 	private String udmRegionId;
 	public CreateBackupPlanRequest() {
@@ -76,17 +85,6 @@ public class CreateBackupPlanRequest extends RpcAcsRequest<CreateBackupPlanRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getClientId() {
-		return this.clientId;
-	}
-
-	public void setClientId(String clientId) {
-		this.clientId = clientId;
-		if(clientId != null){
-			putBodyParameter("ClientId", clientId);
-		}
 	}
 
 	public String getVaultId() {
@@ -108,6 +106,48 @@ public class CreateBackupPlanRequest extends RpcAcsRequest<CreateBackupPlanRespo
 		this.prefix = prefix;
 		if(prefix != null){
 			putQueryParameter("Prefix", prefix);
+		}
+	}
+
+	public String getCrossAccountType() {
+		return this.crossAccountType;
+	}
+
+	public void setCrossAccountType(String crossAccountType) {
+		this.crossAccountType = crossAccountType;
+		if(crossAccountType != null){
+			putQueryParameter("CrossAccountType", crossAccountType);
+		}
+	}
+
+	public List<Rule> getRules() {
+		return this.rules;
+	}
+
+	public void setRules(List<Rule> rules) {
+		this.rules = rules;	
+		if (rules != null) {
+			for (int depth1 = 0; depth1 < rules.size(); depth1++) {
+				putBodyParameter("Rule." + (depth1 + 1) + ".Schedule" , rules.get(depth1).getSchedule());
+				putBodyParameter("Rule." + (depth1 + 1) + ".DestinationRegionId" , rules.get(depth1).getDestinationRegionId());
+				putBodyParameter("Rule." + (depth1 + 1) + ".Disabled" , rules.get(depth1).getDisabled());
+				putBodyParameter("Rule." + (depth1 + 1) + ".RuleName" , rules.get(depth1).getRuleName());
+				putBodyParameter("Rule." + (depth1 + 1) + ".DestinationRetention" , rules.get(depth1).getDestinationRetention());
+				putBodyParameter("Rule." + (depth1 + 1) + ".Retention" , rules.get(depth1).getRetention());
+				putBodyParameter("Rule." + (depth1 + 1) + ".BackupType" , rules.get(depth1).getBackupType());
+				putBodyParameter("Rule." + (depth1 + 1) + ".DoCopy" , rules.get(depth1).getDoCopy());
+			}
+		}	
+	}
+
+	public String getCrossAccountRoleName() {
+		return this.crossAccountRoleName;
+	}
+
+	public void setCrossAccountRoleName(String crossAccountRoleName) {
+		this.crossAccountRoleName = crossAccountRoleName;
+		if(crossAccountRoleName != null){
+			putQueryParameter("CrossAccountRoleName", crossAccountRoleName);
 		}
 	}
 
@@ -223,14 +263,14 @@ public class CreateBackupPlanRequest extends RpcAcsRequest<CreateBackupPlanRespo
 		}
 	}
 
-	public String getClusterId() {
-		return this.clusterId;
+	public Long getKeepLatestSnapshots() {
+		return this.keepLatestSnapshots;
 	}
 
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
+	public void setKeepLatestSnapshots(Long keepLatestSnapshots) {
+		this.keepLatestSnapshots = keepLatestSnapshots;
+		if(keepLatestSnapshots != null){
+			putQueryParameter("KeepLatestSnapshots", keepLatestSnapshots.toString());
 		}
 	}
 
@@ -267,6 +307,28 @@ public class CreateBackupPlanRequest extends RpcAcsRequest<CreateBackupPlanRespo
 		}
 	}
 
+	public String getInstanceName() {
+		return this.instanceName;
+	}
+
+	public void setInstanceName(String instanceName) {
+		this.instanceName = instanceName;
+		if(instanceName != null){
+			putBodyParameter("InstanceName", instanceName);
+		}
+	}
+
+	public OtsDetail getOtsDetail() {
+		return this.otsDetail;
+	}
+
+	public void setOtsDetail(OtsDetail otsDetail) {
+		this.otsDetail = otsDetail;	
+		if (otsDetail != null) {
+			putBodyParameter("OtsDetail" , new Gson().toJson(otsDetail));
+		}	
+	}
+
 	public String getSpeedLimit() {
 		return this.speedLimit;
 	}
@@ -275,17 +337,6 @@ public class CreateBackupPlanRequest extends RpcAcsRequest<CreateBackupPlanRespo
 		this.speedLimit = speedLimit;
 		if(speedLimit != null){
 			putBodyParameter("SpeedLimit", speedLimit);
-		}
-	}
-
-	public String getDataSourceId() {
-		return this.dataSourceId;
-	}
-
-	public void setDataSourceId(String dataSourceId) {
-		this.dataSourceId = dataSourceId;
-		if(dataSourceId != null){
-			putBodyParameter("DataSourceId", dataSourceId);
 		}
 	}
 
@@ -300,14 +351,14 @@ public class CreateBackupPlanRequest extends RpcAcsRequest<CreateBackupPlanRespo
 		}
 	}
 
-	public String getBackupSourceGroupId() {
-		return this.backupSourceGroupId;
+	public Long getCrossAccountUserId() {
+		return this.crossAccountUserId;
 	}
 
-	public void setBackupSourceGroupId(String backupSourceGroupId) {
-		this.backupSourceGroupId = backupSourceGroupId;
-		if(backupSourceGroupId != null){
-			putQueryParameter("BackupSourceGroupId", backupSourceGroupId);
+	public void setCrossAccountUserId(Long crossAccountUserId) {
+		this.crossAccountUserId = crossAccountUserId;
+		if(crossAccountUserId != null){
+			putQueryParameter("CrossAccountUserId", crossAccountUserId.toString());
 		}
 	}
 
@@ -319,6 +370,103 @@ public class CreateBackupPlanRequest extends RpcAcsRequest<CreateBackupPlanRespo
 		this.udmRegionId = udmRegionId;
 		if(udmRegionId != null){
 			putQueryParameter("UdmRegionId", udmRegionId);
+		}
+	}
+
+	public static class Rule {
+
+		private String schedule;
+
+		private String destinationRegionId;
+
+		private Boolean disabled;
+
+		private String ruleName;
+
+		private Long destinationRetention;
+
+		private Long retention;
+
+		private String backupType;
+
+		private Boolean doCopy;
+
+		public String getSchedule() {
+			return this.schedule;
+		}
+
+		public void setSchedule(String schedule) {
+			this.schedule = schedule;
+		}
+
+		public String getDestinationRegionId() {
+			return this.destinationRegionId;
+		}
+
+		public void setDestinationRegionId(String destinationRegionId) {
+			this.destinationRegionId = destinationRegionId;
+		}
+
+		public Boolean getDisabled() {
+			return this.disabled;
+		}
+
+		public void setDisabled(Boolean disabled) {
+			this.disabled = disabled;
+		}
+
+		public String getRuleName() {
+			return this.ruleName;
+		}
+
+		public void setRuleName(String ruleName) {
+			this.ruleName = ruleName;
+		}
+
+		public Long getDestinationRetention() {
+			return this.destinationRetention;
+		}
+
+		public void setDestinationRetention(Long destinationRetention) {
+			this.destinationRetention = destinationRetention;
+		}
+
+		public Long getRetention() {
+			return this.retention;
+		}
+
+		public void setRetention(Long retention) {
+			this.retention = retention;
+		}
+
+		public String getBackupType() {
+			return this.backupType;
+		}
+
+		public void setBackupType(String backupType) {
+			this.backupType = backupType;
+		}
+
+		public Boolean getDoCopy() {
+			return this.doCopy;
+		}
+
+		public void setDoCopy(Boolean doCopy) {
+			this.doCopy = doCopy;
+		}
+	}
+
+	public static class OtsDetail {
+
+		@SerializedName("TableNames")
+		private List<String> tableNames;
+
+		public List<String> getTableNames() {
+			return this.tableNames;
+		}
+
+		public void setTableNames(List<String> tableNames) {
+			this.tableNames = tableNames;
 		}
 	}
 

@@ -33,11 +33,11 @@ public class DescribeBackupClientsResponse extends AcsResponse {
 
 	private String message;
 
-	private Long totalCount;
+	private Integer pageNumber;
 
 	private Integer pageSize;
 
-	private Integer pageNumber;
+	private Long totalCount;
 
 	private List<Client> clients;
 
@@ -73,12 +73,12 @@ public class DescribeBackupClientsResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Long getTotalCount() {
-		return this.totalCount;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setTotalCount(Long totalCount) {
-		this.totalCount = totalCount;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public Integer getPageSize() {
@@ -89,12 +89,12 @@ public class DescribeBackupClientsResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public Long getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setTotalCount(Long totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<Client> getClients() {
@@ -107,209 +107,61 @@ public class DescribeBackupClientsResponse extends AcsResponse {
 
 	public static class Client {
 
-		private Long createdTime;
-
-		private Long updatedTime;
-
-		private String clientType;
-
-		private String clientId;
-
-		private String clientVersion;
-
-		private String osType;
-
-		private String archType;
-
-		private String hostname;
-
-		private Long lastHeartBeatTime;
-
-		private String instanceId;
-
-		private String zoneId;
-
-		private String privateIpV4;
-
-		private Boolean appliance;
-
-		private String productManufacturer;
-
-		private String productName;
-
-		private String productPartNumber;
-
-		private String productVersion;
-
-		private String productSerialNumber;
-
-		private String productAssetTag;
-
 		private String status;
 
 		private String backupStatus;
 
-		private String instanceName;
+		private String archType;
 
-		private String clusterId;
-
-		private Long registerTime;
+		private String clientId;
 
 		private String maxClientVersion;
 
+		private String privateIpV4;
+
+		private String instanceName;
+
+		private Long createdTime;
+
+		private Long lastHeartBeatTime;
+
+		private String clusterId;
+
+		private String productAssetTag;
+
+		private Long registerTime;
+
+		private String clientType;
+
+		private String productName;
+
+		private String hostname;
+
+		private String instanceId;
+
+		private String productVersion;
+
+		private Boolean appliance;
+
+		private String productPartNumber;
+
+		private Long updatedTime;
+
+		private String osType;
+
+		private String zoneId;
+
+		private String productManufacturer;
+
+		private String userDefinedKey;
+
+		private String productSerialNumber;
+
+		private String clientVersion;
+
+		private List<Tag> tags;
+
 		private Settings settings;
-
-		public Long getCreatedTime() {
-			return this.createdTime;
-		}
-
-		public void setCreatedTime(Long createdTime) {
-			this.createdTime = createdTime;
-		}
-
-		public Long getUpdatedTime() {
-			return this.updatedTime;
-		}
-
-		public void setUpdatedTime(Long updatedTime) {
-			this.updatedTime = updatedTime;
-		}
-
-		public String getClientType() {
-			return this.clientType;
-		}
-
-		public void setClientType(String clientType) {
-			this.clientType = clientType;
-		}
-
-		public String getClientId() {
-			return this.clientId;
-		}
-
-		public void setClientId(String clientId) {
-			this.clientId = clientId;
-		}
-
-		public String getClientVersion() {
-			return this.clientVersion;
-		}
-
-		public void setClientVersion(String clientVersion) {
-			this.clientVersion = clientVersion;
-		}
-
-		public String getOsType() {
-			return this.osType;
-		}
-
-		public void setOsType(String osType) {
-			this.osType = osType;
-		}
-
-		public String getArchType() {
-			return this.archType;
-		}
-
-		public void setArchType(String archType) {
-			this.archType = archType;
-		}
-
-		public String getHostname() {
-			return this.hostname;
-		}
-
-		public void setHostname(String hostname) {
-			this.hostname = hostname;
-		}
-
-		public Long getLastHeartBeatTime() {
-			return this.lastHeartBeatTime;
-		}
-
-		public void setLastHeartBeatTime(Long lastHeartBeatTime) {
-			this.lastHeartBeatTime = lastHeartBeatTime;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
-
-		public String getPrivateIpV4() {
-			return this.privateIpV4;
-		}
-
-		public void setPrivateIpV4(String privateIpV4) {
-			this.privateIpV4 = privateIpV4;
-		}
-
-		public Boolean getAppliance() {
-			return this.appliance;
-		}
-
-		public void setAppliance(Boolean appliance) {
-			this.appliance = appliance;
-		}
-
-		public String getProductManufacturer() {
-			return this.productManufacturer;
-		}
-
-		public void setProductManufacturer(String productManufacturer) {
-			this.productManufacturer = productManufacturer;
-		}
-
-		public String getProductName() {
-			return this.productName;
-		}
-
-		public void setProductName(String productName) {
-			this.productName = productName;
-		}
-
-		public String getProductPartNumber() {
-			return this.productPartNumber;
-		}
-
-		public void setProductPartNumber(String productPartNumber) {
-			this.productPartNumber = productPartNumber;
-		}
-
-		public String getProductVersion() {
-			return this.productVersion;
-		}
-
-		public void setProductVersion(String productVersion) {
-			this.productVersion = productVersion;
-		}
-
-		public String getProductSerialNumber() {
-			return this.productSerialNumber;
-		}
-
-		public void setProductSerialNumber(String productSerialNumber) {
-			this.productSerialNumber = productSerialNumber;
-		}
-
-		public String getProductAssetTag() {
-			return this.productAssetTag;
-		}
-
-		public void setProductAssetTag(String productAssetTag) {
-			this.productAssetTag = productAssetTag;
-		}
 
 		public String getStatus() {
 			return this.status;
@@ -327,28 +179,20 @@ public class DescribeBackupClientsResponse extends AcsResponse {
 			this.backupStatus = backupStatus;
 		}
 
-		public String getInstanceName() {
-			return this.instanceName;
+		public String getArchType() {
+			return this.archType;
 		}
 
-		public void setInstanceName(String instanceName) {
-			this.instanceName = instanceName;
+		public void setArchType(String archType) {
+			this.archType = archType;
 		}
 
-		public String getClusterId() {
-			return this.clusterId;
+		public String getClientId() {
+			return this.clientId;
 		}
 
-		public void setClusterId(String clusterId) {
-			this.clusterId = clusterId;
-		}
-
-		public Long getRegisterTime() {
-			return this.registerTime;
-		}
-
-		public void setRegisterTime(Long registerTime) {
-			this.registerTime = registerTime;
+		public void setClientId(String clientId) {
+			this.clientId = clientId;
 		}
 
 		public String getMaxClientVersion() {
@@ -359,6 +203,182 @@ public class DescribeBackupClientsResponse extends AcsResponse {
 			this.maxClientVersion = maxClientVersion;
 		}
 
+		public String getPrivateIpV4() {
+			return this.privateIpV4;
+		}
+
+		public void setPrivateIpV4(String privateIpV4) {
+			this.privateIpV4 = privateIpV4;
+		}
+
+		public String getInstanceName() {
+			return this.instanceName;
+		}
+
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
+		}
+
+		public Long getCreatedTime() {
+			return this.createdTime;
+		}
+
+		public void setCreatedTime(Long createdTime) {
+			this.createdTime = createdTime;
+		}
+
+		public Long getLastHeartBeatTime() {
+			return this.lastHeartBeatTime;
+		}
+
+		public void setLastHeartBeatTime(Long lastHeartBeatTime) {
+			this.lastHeartBeatTime = lastHeartBeatTime;
+		}
+
+		public String getClusterId() {
+			return this.clusterId;
+		}
+
+		public void setClusterId(String clusterId) {
+			this.clusterId = clusterId;
+		}
+
+		public String getProductAssetTag() {
+			return this.productAssetTag;
+		}
+
+		public void setProductAssetTag(String productAssetTag) {
+			this.productAssetTag = productAssetTag;
+		}
+
+		public Long getRegisterTime() {
+			return this.registerTime;
+		}
+
+		public void setRegisterTime(Long registerTime) {
+			this.registerTime = registerTime;
+		}
+
+		public String getClientType() {
+			return this.clientType;
+		}
+
+		public void setClientType(String clientType) {
+			this.clientType = clientType;
+		}
+
+		public String getProductName() {
+			return this.productName;
+		}
+
+		public void setProductName(String productName) {
+			this.productName = productName;
+		}
+
+		public String getHostname() {
+			return this.hostname;
+		}
+
+		public void setHostname(String hostname) {
+			this.hostname = hostname;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getProductVersion() {
+			return this.productVersion;
+		}
+
+		public void setProductVersion(String productVersion) {
+			this.productVersion = productVersion;
+		}
+
+		public Boolean getAppliance() {
+			return this.appliance;
+		}
+
+		public void setAppliance(Boolean appliance) {
+			this.appliance = appliance;
+		}
+
+		public String getProductPartNumber() {
+			return this.productPartNumber;
+		}
+
+		public void setProductPartNumber(String productPartNumber) {
+			this.productPartNumber = productPartNumber;
+		}
+
+		public Long getUpdatedTime() {
+			return this.updatedTime;
+		}
+
+		public void setUpdatedTime(Long updatedTime) {
+			this.updatedTime = updatedTime;
+		}
+
+		public String getOsType() {
+			return this.osType;
+		}
+
+		public void setOsType(String osType) {
+			this.osType = osType;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public String getProductManufacturer() {
+			return this.productManufacturer;
+		}
+
+		public void setProductManufacturer(String productManufacturer) {
+			this.productManufacturer = productManufacturer;
+		}
+
+		public String getUserDefinedKey() {
+			return this.userDefinedKey;
+		}
+
+		public void setUserDefinedKey(String userDefinedKey) {
+			this.userDefinedKey = userDefinedKey;
+		}
+
+		public String getProductSerialNumber() {
+			return this.productSerialNumber;
+		}
+
+		public void setProductSerialNumber(String productSerialNumber) {
+			this.productSerialNumber = productSerialNumber;
+		}
+
+		public String getClientVersion() {
+			return this.clientVersion;
+		}
+
+		public void setClientVersion(String clientVersion) {
+			this.clientVersion = clientVersion;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
 		public Settings getSettings() {
 			return this.settings;
 		}
@@ -367,40 +387,55 @@ public class DescribeBackupClientsResponse extends AcsResponse {
 			this.settings = settings;
 		}
 
+		public static class Tag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
+		}
+
 		public static class Settings {
-
-			private String dataNetworkType;
-
-			private String useHttps;
-
-			private String maxCpuCore;
-
-			private String maxWorker;
-
-			private String dataProxySetting;
 
 			private String proxyHost;
 
+			private String maxCpuCore;
+
 			private Integer proxyPort;
 
-			private String proxyUser;
+			private String useHttps;
 
 			private String proxyPassword;
 
-			public String getDataNetworkType() {
-				return this.dataNetworkType;
+			private String proxyUser;
+
+			private String dataProxySetting;
+
+			private String dataNetworkType;
+
+			private String maxWorker;
+
+			public String getProxyHost() {
+				return this.proxyHost;
 			}
 
-			public void setDataNetworkType(String dataNetworkType) {
-				this.dataNetworkType = dataNetworkType;
-			}
-
-			public String getUseHttps() {
-				return this.useHttps;
-			}
-
-			public void setUseHttps(String useHttps) {
-				this.useHttps = useHttps;
+			public void setProxyHost(String proxyHost) {
+				this.proxyHost = proxyHost;
 			}
 
 			public String getMaxCpuCore() {
@@ -411,36 +446,28 @@ public class DescribeBackupClientsResponse extends AcsResponse {
 				this.maxCpuCore = maxCpuCore;
 			}
 
-			public String getMaxWorker() {
-				return this.maxWorker;
-			}
-
-			public void setMaxWorker(String maxWorker) {
-				this.maxWorker = maxWorker;
-			}
-
-			public String getDataProxySetting() {
-				return this.dataProxySetting;
-			}
-
-			public void setDataProxySetting(String dataProxySetting) {
-				this.dataProxySetting = dataProxySetting;
-			}
-
-			public String getProxyHost() {
-				return this.proxyHost;
-			}
-
-			public void setProxyHost(String proxyHost) {
-				this.proxyHost = proxyHost;
-			}
-
 			public Integer getProxyPort() {
 				return this.proxyPort;
 			}
 
 			public void setProxyPort(Integer proxyPort) {
 				this.proxyPort = proxyPort;
+			}
+
+			public String getUseHttps() {
+				return this.useHttps;
+			}
+
+			public void setUseHttps(String useHttps) {
+				this.useHttps = useHttps;
+			}
+
+			public String getProxyPassword() {
+				return this.proxyPassword;
+			}
+
+			public void setProxyPassword(String proxyPassword) {
+				this.proxyPassword = proxyPassword;
 			}
 
 			public String getProxyUser() {
@@ -451,12 +478,28 @@ public class DescribeBackupClientsResponse extends AcsResponse {
 				this.proxyUser = proxyUser;
 			}
 
-			public String getProxyPassword() {
-				return this.proxyPassword;
+			public String getDataProxySetting() {
+				return this.dataProxySetting;
 			}
 
-			public void setProxyPassword(String proxyPassword) {
-				this.proxyPassword = proxyPassword;
+			public void setDataProxySetting(String dataProxySetting) {
+				this.dataProxySetting = dataProxySetting;
+			}
+
+			public String getDataNetworkType() {
+				return this.dataNetworkType;
+			}
+
+			public void setDataNetworkType(String dataNetworkType) {
+				this.dataNetworkType = dataNetworkType;
+			}
+
+			public String getMaxWorker() {
+				return this.maxWorker;
+			}
+
+			public void setMaxWorker(String maxWorker) {
+				this.maxWorker = maxWorker;
 			}
 		}
 	}

@@ -15,6 +15,7 @@
 package com.aliyuncs.hbr.model.v20170908;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.hbr.Endpoint;
@@ -32,9 +33,11 @@ public class DescribeHanaInstancesRequest extends RpcAcsRequest<DescribeHanaInst
 
 	private Integer pageNumber;
 
-	private String token;
+	private String resourceGroupId;
 
 	private Integer pageSize;
+
+	private List<Tag> tags;
 	public DescribeHanaInstancesRequest() {
 		super("hbr", "2017-09-08", "DescribeHanaInstances", "hbr");
 		setProtocol(ProtocolType.HTTPS);
@@ -78,14 +81,14 @@ public class DescribeHanaInstancesRequest extends RpcAcsRequest<DescribeHanaInst
 		}
 	}
 
-	public String getToken() {
-		return this.token;
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
 	}
 
-	public void setToken(String token) {
-		this.token = token;
-		if(token != null){
-			putQueryParameter("Token", token);
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
@@ -97,6 +100,43 @@ public class DescribeHanaInstancesRequest extends RpcAcsRequest<DescribeHanaInst
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putBodyParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putBodyParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

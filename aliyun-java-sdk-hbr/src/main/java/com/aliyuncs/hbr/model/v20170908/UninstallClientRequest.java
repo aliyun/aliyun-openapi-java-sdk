@@ -30,7 +30,7 @@ public class UninstallClientRequest extends RpcAcsRequest<UninstallClientRespons
 
 	private String vaultId;
 
-	private String token;
+	private String resourceGroupId;
 	public UninstallClientRequest() {
 		super("hbr", "2017-09-08", "UninstallClient", "hbr");
 		setProtocol(ProtocolType.HTTPS);
@@ -63,14 +63,14 @@ public class UninstallClientRequest extends RpcAcsRequest<UninstallClientRespons
 		}
 	}
 
-	public String getToken() {
-		return this.token;
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
 	}
 
-	public void setToken(String token) {
-		this.token = token;
-		if(token != null){
-			putQueryParameter("Token", token);
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

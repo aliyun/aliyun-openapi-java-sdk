@@ -23,10 +23,10 @@ public class CreateVaultResponseUnmarshaller {
 	public static CreateVaultResponse unmarshall(CreateVaultResponse createVaultResponse, UnmarshallerContext _ctx) {
 		
 		createVaultResponse.setRequestId(_ctx.stringValue("CreateVaultResponse.RequestId"));
+		createVaultResponse.setVaultId(_ctx.stringValue("CreateVaultResponse.VaultId"));
 		createVaultResponse.setSuccess(_ctx.booleanValue("CreateVaultResponse.Success"));
 		createVaultResponse.setCode(_ctx.stringValue("CreateVaultResponse.Code"));
 		createVaultResponse.setMessage(_ctx.stringValue("CreateVaultResponse.Message"));
-		createVaultResponse.setVaultId(_ctx.stringValue("CreateVaultResponse.VaultId"));
 		createVaultResponse.setTaskId(_ctx.stringValue("CreateVaultResponse.TaskId"));
 	 
 	 	return createVaultResponse;

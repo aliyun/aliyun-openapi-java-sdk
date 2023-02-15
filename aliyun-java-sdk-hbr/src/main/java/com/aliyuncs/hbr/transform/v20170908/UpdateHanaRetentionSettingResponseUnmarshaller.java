@@ -23,9 +23,9 @@ public class UpdateHanaRetentionSettingResponseUnmarshaller {
 	public static UpdateHanaRetentionSettingResponse unmarshall(UpdateHanaRetentionSettingResponse updateHanaRetentionSettingResponse, UnmarshallerContext _ctx) {
 		
 		updateHanaRetentionSettingResponse.setRequestId(_ctx.stringValue("UpdateHanaRetentionSettingResponse.RequestId"));
-		updateHanaRetentionSettingResponse.setSuccess(_ctx.booleanValue("UpdateHanaRetentionSettingResponse.Success"));
 		updateHanaRetentionSettingResponse.setCode(_ctx.stringValue("UpdateHanaRetentionSettingResponse.Code"));
 		updateHanaRetentionSettingResponse.setMessage(_ctx.stringValue("UpdateHanaRetentionSettingResponse.Message"));
+		updateHanaRetentionSettingResponse.setSuccess(_ctx.booleanValue("UpdateHanaRetentionSettingResponse.Success"));
 	 
 	 	return updateHanaRetentionSettingResponse;
 	}

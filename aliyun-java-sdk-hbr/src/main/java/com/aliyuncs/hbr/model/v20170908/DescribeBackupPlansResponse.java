@@ -33,11 +33,11 @@ public class DescribeBackupPlansResponse extends AcsResponse {
 
 	private String message;
 
-	private Long totalCount;
+	private Integer pageNumber;
 
 	private Integer pageSize;
 
-	private Integer pageNumber;
+	private Long totalCount;
 
 	private List<BackupPlan> backupPlans;
 
@@ -73,12 +73,12 @@ public class DescribeBackupPlansResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Long getTotalCount() {
-		return this.totalCount;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setTotalCount(Long totalCount) {
-		this.totalCount = totalCount;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public Integer getPageSize() {
@@ -89,12 +89,12 @@ public class DescribeBackupPlansResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public Long getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setTotalCount(Long totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<BackupPlan> getBackupPlans() {
@@ -109,53 +109,71 @@ public class DescribeBackupPlansResponse extends AcsResponse {
 
 		private String vaultId;
 
-		private String backupSourceGroupId;
-
-		private String planId;
-
-		private String planName;
-
-		private String sourceType;
-
 		private String backupType;
-
-		private String schedule;
-
-		private Long retention;
-
-		private String clusterId;
-
-		private Boolean disabled;
-
-		private Long createdTime;
-
-		private Long updatedTime;
-
-		private String fileSystemId;
 
 		private Long createTime;
 
-		private String bucket;
+		private String dataSourceId;
+
+		private String sourceType;
+
+		private Boolean disabled;
 
 		private String prefix;
 
-		private String instanceId;
-
-		private String detail;
+		private String options;
 
 		private String clientId;
 
+		private String exclude;
+
+		private Long retention;
+
+		private Long createdTime;
+
+		private String clusterId;
+
+		private String bucket;
+
+		private String detail;
+
+		private String schedule;
+
 		private String speedLimit;
 
-		private String options;
+		private String instanceId;
+
+		private String planId;
+
+		private String backupSourceGroupId;
+
+		private String fileSystemId;
+
+		private String instanceName;
+
+		private Long updatedTime;
+
+		private String planName;
 
 		private String include;
 
-		private String exclude;
+		private String instanceGroupId;
 
-		private String dataSourceId;
+		private String crossAccountType;
+
+		private Long crossAccountUserId;
+
+		private String crossAccountRoleName;
+
+		private Long keepLatestSnapshots;
+
+		private List<Rule> rules;
+
+		private List<Resource> resources;
 
 		private List<String> paths;
+
+		private OtsDetail otsDetail;
 
 		private TrialInfo trialInfo;
 
@@ -167,100 +185,12 @@ public class DescribeBackupPlansResponse extends AcsResponse {
 			this.vaultId = vaultId;
 		}
 
-		public String getBackupSourceGroupId() {
-			return this.backupSourceGroupId;
-		}
-
-		public void setBackupSourceGroupId(String backupSourceGroupId) {
-			this.backupSourceGroupId = backupSourceGroupId;
-		}
-
-		public String getPlanId() {
-			return this.planId;
-		}
-
-		public void setPlanId(String planId) {
-			this.planId = planId;
-		}
-
-		public String getPlanName() {
-			return this.planName;
-		}
-
-		public void setPlanName(String planName) {
-			this.planName = planName;
-		}
-
-		public String getSourceType() {
-			return this.sourceType;
-		}
-
-		public void setSourceType(String sourceType) {
-			this.sourceType = sourceType;
-		}
-
 		public String getBackupType() {
 			return this.backupType;
 		}
 
 		public void setBackupType(String backupType) {
 			this.backupType = backupType;
-		}
-
-		public String getSchedule() {
-			return this.schedule;
-		}
-
-		public void setSchedule(String schedule) {
-			this.schedule = schedule;
-		}
-
-		public Long getRetention() {
-			return this.retention;
-		}
-
-		public void setRetention(Long retention) {
-			this.retention = retention;
-		}
-
-		public String getClusterId() {
-			return this.clusterId;
-		}
-
-		public void setClusterId(String clusterId) {
-			this.clusterId = clusterId;
-		}
-
-		public Boolean getDisabled() {
-			return this.disabled;
-		}
-
-		public void setDisabled(Boolean disabled) {
-			this.disabled = disabled;
-		}
-
-		public Long getCreatedTime() {
-			return this.createdTime;
-		}
-
-		public void setCreatedTime(Long createdTime) {
-			this.createdTime = createdTime;
-		}
-
-		public Long getUpdatedTime() {
-			return this.updatedTime;
-		}
-
-		public void setUpdatedTime(Long updatedTime) {
-			this.updatedTime = updatedTime;
-		}
-
-		public String getFileSystemId() {
-			return this.fileSystemId;
-		}
-
-		public void setFileSystemId(String fileSystemId) {
-			this.fileSystemId = fileSystemId;
 		}
 
 		public Long getCreateTime() {
@@ -271,12 +201,28 @@ public class DescribeBackupPlansResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getBucket() {
-			return this.bucket;
+		public String getDataSourceId() {
+			return this.dataSourceId;
 		}
 
-		public void setBucket(String bucket) {
-			this.bucket = bucket;
+		public void setDataSourceId(String dataSourceId) {
+			this.dataSourceId = dataSourceId;
+		}
+
+		public String getSourceType() {
+			return this.sourceType;
+		}
+
+		public void setSourceType(String sourceType) {
+			this.sourceType = sourceType;
+		}
+
+		public Boolean getDisabled() {
+			return this.disabled;
+		}
+
+		public void setDisabled(Boolean disabled) {
+			this.disabled = disabled;
 		}
 
 		public String getPrefix() {
@@ -287,20 +233,12 @@ public class DescribeBackupPlansResponse extends AcsResponse {
 			this.prefix = prefix;
 		}
 
-		public String getInstanceId() {
-			return this.instanceId;
+		public String getOptions() {
+			return this.options;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getDetail() {
-			return this.detail;
-		}
-
-		public void setDetail(String detail) {
-			this.detail = detail;
+		public void setOptions(String options) {
+			this.options = options;
 		}
 
 		public String getClientId() {
@@ -311,6 +249,62 @@ public class DescribeBackupPlansResponse extends AcsResponse {
 			this.clientId = clientId;
 		}
 
+		public String getExclude() {
+			return this.exclude;
+		}
+
+		public void setExclude(String exclude) {
+			this.exclude = exclude;
+		}
+
+		public Long getRetention() {
+			return this.retention;
+		}
+
+		public void setRetention(Long retention) {
+			this.retention = retention;
+		}
+
+		public Long getCreatedTime() {
+			return this.createdTime;
+		}
+
+		public void setCreatedTime(Long createdTime) {
+			this.createdTime = createdTime;
+		}
+
+		public String getClusterId() {
+			return this.clusterId;
+		}
+
+		public void setClusterId(String clusterId) {
+			this.clusterId = clusterId;
+		}
+
+		public String getBucket() {
+			return this.bucket;
+		}
+
+		public void setBucket(String bucket) {
+			this.bucket = bucket;
+		}
+
+		public String getDetail() {
+			return this.detail;
+		}
+
+		public void setDetail(String detail) {
+			this.detail = detail;
+		}
+
+		public String getSchedule() {
+			return this.schedule;
+		}
+
+		public void setSchedule(String schedule) {
+			this.schedule = schedule;
+		}
+
 		public String getSpeedLimit() {
 			return this.speedLimit;
 		}
@@ -319,12 +313,60 @@ public class DescribeBackupPlansResponse extends AcsResponse {
 			this.speedLimit = speedLimit;
 		}
 
-		public String getOptions() {
-			return this.options;
+		public String getInstanceId() {
+			return this.instanceId;
 		}
 
-		public void setOptions(String options) {
-			this.options = options;
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getPlanId() {
+			return this.planId;
+		}
+
+		public void setPlanId(String planId) {
+			this.planId = planId;
+		}
+
+		public String getBackupSourceGroupId() {
+			return this.backupSourceGroupId;
+		}
+
+		public void setBackupSourceGroupId(String backupSourceGroupId) {
+			this.backupSourceGroupId = backupSourceGroupId;
+		}
+
+		public String getFileSystemId() {
+			return this.fileSystemId;
+		}
+
+		public void setFileSystemId(String fileSystemId) {
+			this.fileSystemId = fileSystemId;
+		}
+
+		public String getInstanceName() {
+			return this.instanceName;
+		}
+
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
+		}
+
+		public Long getUpdatedTime() {
+			return this.updatedTime;
+		}
+
+		public void setUpdatedTime(Long updatedTime) {
+			this.updatedTime = updatedTime;
+		}
+
+		public String getPlanName() {
+			return this.planName;
+		}
+
+		public void setPlanName(String planName) {
+			this.planName = planName;
 		}
 
 		public String getInclude() {
@@ -335,20 +377,60 @@ public class DescribeBackupPlansResponse extends AcsResponse {
 			this.include = include;
 		}
 
-		public String getExclude() {
-			return this.exclude;
+		public String getInstanceGroupId() {
+			return this.instanceGroupId;
 		}
 
-		public void setExclude(String exclude) {
-			this.exclude = exclude;
+		public void setInstanceGroupId(String instanceGroupId) {
+			this.instanceGroupId = instanceGroupId;
 		}
 
-		public String getDataSourceId() {
-			return this.dataSourceId;
+		public String getCrossAccountType() {
+			return this.crossAccountType;
 		}
 
-		public void setDataSourceId(String dataSourceId) {
-			this.dataSourceId = dataSourceId;
+		public void setCrossAccountType(String crossAccountType) {
+			this.crossAccountType = crossAccountType;
+		}
+
+		public Long getCrossAccountUserId() {
+			return this.crossAccountUserId;
+		}
+
+		public void setCrossAccountUserId(Long crossAccountUserId) {
+			this.crossAccountUserId = crossAccountUserId;
+		}
+
+		public String getCrossAccountRoleName() {
+			return this.crossAccountRoleName;
+		}
+
+		public void setCrossAccountRoleName(String crossAccountRoleName) {
+			this.crossAccountRoleName = crossAccountRoleName;
+		}
+
+		public Long getKeepLatestSnapshots() {
+			return this.keepLatestSnapshots;
+		}
+
+		public void setKeepLatestSnapshots(Long keepLatestSnapshots) {
+			this.keepLatestSnapshots = keepLatestSnapshots;
+		}
+
+		public List<Rule> getRules() {
+			return this.rules;
+		}
+
+		public void setRules(List<Rule> rules) {
+			this.rules = rules;
+		}
+
+		public List<Resource> getResources() {
+			return this.resources;
+		}
+
+		public void setResources(List<Resource> resources) {
+			this.resources = resources;
 		}
 
 		public List<String> getPaths() {
@@ -359,6 +441,14 @@ public class DescribeBackupPlansResponse extends AcsResponse {
 			this.paths = paths;
 		}
 
+		public OtsDetail getOtsDetail() {
+			return this.otsDetail;
+		}
+
+		public void setOtsDetail(OtsDetail otsDetail) {
+			this.otsDetail = otsDetail;
+		}
+
 		public TrialInfo getTrialInfo() {
 			return this.trialInfo;
 		}
@@ -367,15 +457,154 @@ public class DescribeBackupPlansResponse extends AcsResponse {
 			this.trialInfo = trialInfo;
 		}
 
+		public static class Rule {
+
+			private Long destinationRetention;
+
+			private String schedule;
+
+			private Long retention;
+
+			private Boolean disabled;
+
+			private Boolean doCopy;
+
+			private String destinationRegionId;
+
+			private String ruleId;
+
+			private String ruleName;
+
+			private String backupType;
+
+			public Long getDestinationRetention() {
+				return this.destinationRetention;
+			}
+
+			public void setDestinationRetention(Long destinationRetention) {
+				this.destinationRetention = destinationRetention;
+			}
+
+			public String getSchedule() {
+				return this.schedule;
+			}
+
+			public void setSchedule(String schedule) {
+				this.schedule = schedule;
+			}
+
+			public Long getRetention() {
+				return this.retention;
+			}
+
+			public void setRetention(Long retention) {
+				this.retention = retention;
+			}
+
+			public Boolean getDisabled() {
+				return this.disabled;
+			}
+
+			public void setDisabled(Boolean disabled) {
+				this.disabled = disabled;
+			}
+
+			public Boolean getDoCopy() {
+				return this.doCopy;
+			}
+
+			public void setDoCopy(Boolean doCopy) {
+				this.doCopy = doCopy;
+			}
+
+			public String getDestinationRegionId() {
+				return this.destinationRegionId;
+			}
+
+			public void setDestinationRegionId(String destinationRegionId) {
+				this.destinationRegionId = destinationRegionId;
+			}
+
+			public String getRuleId() {
+				return this.ruleId;
+			}
+
+			public void setRuleId(String ruleId) {
+				this.ruleId = ruleId;
+			}
+
+			public String getRuleName() {
+				return this.ruleName;
+			}
+
+			public void setRuleName(String ruleName) {
+				this.ruleName = ruleName;
+			}
+
+			public String getBackupType() {
+				return this.backupType;
+			}
+
+			public void setBackupType(String backupType) {
+				this.backupType = backupType;
+			}
+		}
+
+		public static class Resource {
+
+			private String sourceType;
+
+			private String resourceId;
+
+			private String extra;
+
+			public String getSourceType() {
+				return this.sourceType;
+			}
+
+			public void setSourceType(String sourceType) {
+				this.sourceType = sourceType;
+			}
+
+			public String getResourceId() {
+				return this.resourceId;
+			}
+
+			public void setResourceId(String resourceId) {
+				this.resourceId = resourceId;
+			}
+
+			public String getExtra() {
+				return this.extra;
+			}
+
+			public void setExtra(String extra) {
+				this.extra = extra;
+			}
+		}
+
+		public static class OtsDetail {
+
+			private List<String> tableNames;
+
+			public List<String> getTableNames() {
+				return this.tableNames;
+			}
+
+			public void setTableNames(List<String> tableNames) {
+				this.tableNames = tableNames;
+			}
+		}
+
 		public static class TrialInfo {
 
 			private Long trialStartTime;
 
+			private Long trialVaultReleaseTime;
+
 			private Long trialExpireTime;
 
 			private Boolean keepAfterTrialExpiration;
-
-			private Long trialVaultReleaseTime;
 
 			public Long getTrialStartTime() {
 				return this.trialStartTime;
@@ -383,6 +612,14 @@ public class DescribeBackupPlansResponse extends AcsResponse {
 
 			public void setTrialStartTime(Long trialStartTime) {
 				this.trialStartTime = trialStartTime;
+			}
+
+			public Long getTrialVaultReleaseTime() {
+				return this.trialVaultReleaseTime;
+			}
+
+			public void setTrialVaultReleaseTime(Long trialVaultReleaseTime) {
+				this.trialVaultReleaseTime = trialVaultReleaseTime;
 			}
 
 			public Long getTrialExpireTime() {
@@ -399,14 +636,6 @@ public class DescribeBackupPlansResponse extends AcsResponse {
 
 			public void setKeepAfterTrialExpiration(Boolean keepAfterTrialExpiration) {
 				this.keepAfterTrialExpiration = keepAfterTrialExpiration;
-			}
-
-			public Long getTrialVaultReleaseTime() {
-				return this.trialVaultReleaseTime;
-			}
-
-			public void setTrialVaultReleaseTime(Long trialVaultReleaseTime) {
-				this.trialVaultReleaseTime = trialVaultReleaseTime;
 			}
 		}
 	}
