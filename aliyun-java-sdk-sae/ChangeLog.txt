@@ -1,3 +1,6 @@
+2023-02-15 Version: 1.22.10
+- Add execjob api.
+
 2023-02-08 Version: 1.22.9
 - Add metric api.
 

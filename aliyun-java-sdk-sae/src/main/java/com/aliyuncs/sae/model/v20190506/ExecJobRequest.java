@@ -33,6 +33,8 @@ public class ExecJobRequest extends RoaAcsRequest<ExecJobResponse> {
 
 	private String commandArgs;
 
+	private String replicas;
+
 	private String appId;
 
 	private String envs;
@@ -93,6 +95,17 @@ public class ExecJobRequest extends RoaAcsRequest<ExecJobResponse> {
 		this.commandArgs = commandArgs;
 		if(commandArgs != null){
 			putQueryParameter("CommandArgs", commandArgs);
+		}
+	}
+
+	public String getReplicas() {
+		return this.replicas;
+	}
+
+	public void setReplicas(String replicas) {
+		this.replicas = replicas;
+		if(replicas != null){
+			putQueryParameter("Replicas", replicas);
 		}
 	}
 
