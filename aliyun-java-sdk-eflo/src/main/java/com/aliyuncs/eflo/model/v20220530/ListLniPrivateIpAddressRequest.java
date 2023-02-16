@@ -21,41 +21,39 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class ListVccsRequest extends RpcAcsRequest<ListVccsResponse> {
+public class ListLniPrivateIpAddressRequest extends RpcAcsRequest<ListLniPrivateIpAddressResponse> {
 	   
 
-	private String cenId;
+	private String clientToken;
 
 	private Integer pageNumber;
 
 	private Integer pageSize;
 
-	private String vccId;
+	private String nodeId;
 
-	private Integer bandwidth;
+	private String subnetId;
 
-	private String exStatus;
+	private String ip;
 
 	private String vpdId;
 
-	private String vpcId;
-
 	private Boolean enablePage;
 
-	private String status;
-	public ListVccsRequest() {
-		super("eflo", "2022-05-30", "ListVccs", "eflo");
+	private String networkInterfaceId;
+	public ListLniPrivateIpAddressRequest() {
+		super("eflo", "2022-05-30", "ListLniPrivateIpAddress", "eflo");
 		setMethod(MethodType.POST);
 	}
 
-	public String getCenId() {
-		return this.cenId;
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setCenId(String cenId) {
-		this.cenId = cenId;
-		if(cenId != null){
-			putBodyParameter("CenId", cenId);
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putBodyParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -81,36 +79,36 @@ public class ListVccsRequest extends RpcAcsRequest<ListVccsResponse> {
 		}
 	}
 
-	public String getVccId() {
-		return this.vccId;
+	public String getNodeId() {
+		return this.nodeId;
 	}
 
-	public void setVccId(String vccId) {
-		this.vccId = vccId;
-		if(vccId != null){
-			putBodyParameter("VccId", vccId);
+	public void setNodeId(String nodeId) {
+		this.nodeId = nodeId;
+		if(nodeId != null){
+			putBodyParameter("NodeId", nodeId);
 		}
 	}
 
-	public Integer getBandwidth() {
-		return this.bandwidth;
+	public String getSubnetId() {
+		return this.subnetId;
 	}
 
-	public void setBandwidth(Integer bandwidth) {
-		this.bandwidth = bandwidth;
-		if(bandwidth != null){
-			putBodyParameter("Bandwidth", bandwidth.toString());
+	public void setSubnetId(String subnetId) {
+		this.subnetId = subnetId;
+		if(subnetId != null){
+			putBodyParameter("SubnetId", subnetId);
 		}
 	}
 
-	public String getExStatus() {
-		return this.exStatus;
+	public String getIp() {
+		return this.ip;
 	}
 
-	public void setExStatus(String exStatus) {
-		this.exStatus = exStatus;
-		if(exStatus != null){
-			putBodyParameter("ExStatus", exStatus);
+	public void setIp(String ip) {
+		this.ip = ip;
+		if(ip != null){
+			putBodyParameter("Ip", ip);
 		}
 	}
 
@@ -125,17 +123,6 @@ public class ListVccsRequest extends RpcAcsRequest<ListVccsResponse> {
 		}
 	}
 
-	public String getVpcId() {
-		return this.vpcId;
-	}
-
-	public void setVpcId(String vpcId) {
-		this.vpcId = vpcId;
-		if(vpcId != null){
-			putBodyParameter("VpcId", vpcId);
-		}
-	}
-
 	public Boolean getEnablePage() {
 		return this.enablePage;
 	}
@@ -147,20 +134,20 @@ public class ListVccsRequest extends RpcAcsRequest<ListVccsResponse> {
 		}
 	}
 
-	public String getStatus() {
-		return this.status;
+	public String getNetworkInterfaceId() {
+		return this.networkInterfaceId;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
-		if(status != null){
-			putBodyParameter("Status", status);
+	public void setNetworkInterfaceId(String networkInterfaceId) {
+		this.networkInterfaceId = networkInterfaceId;
+		if(networkInterfaceId != null){
+			putBodyParameter("NetworkInterfaceId", networkInterfaceId);
 		}
 	}
 
 	@Override
-	public Class<ListVccsResponse> getResponseClass() {
-		return ListVccsResponse.class;
+	public Class<ListLniPrivateIpAddressResponse> getResponseClass() {
+		return ListLniPrivateIpAddressResponse.class;
 	}
 
 }

@@ -15,14 +15,14 @@
 package com.aliyuncs.eflo.model.v20220530;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.eflo.transform.v20220530.CreateVccResponseUnmarshaller;
+import com.aliyuncs.eflo.transform.v20220530.UnAssignPrivateIpAddressResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateVccResponse extends AcsResponse {
+public class UnAssignPrivateIpAddressResponse extends AcsResponse {
 
 	private Integer code;
 
@@ -66,20 +66,30 @@ public class CreateVccResponse extends AcsResponse {
 
 	public static class Content {
 
-		private String vccId;
+		private String networkInterfaceId;
 
-		public String getVccId() {
-			return this.vccId;
+		private String ipName;
+
+		public String getNetworkInterfaceId() {
+			return this.networkInterfaceId;
 		}
 
-		public void setVccId(String vccId) {
-			this.vccId = vccId;
+		public void setNetworkInterfaceId(String networkInterfaceId) {
+			this.networkInterfaceId = networkInterfaceId;
+		}
+
+		public String getIpName() {
+			return this.ipName;
+		}
+
+		public void setIpName(String ipName) {
+			this.ipName = ipName;
 		}
 	}
 
 	@Override
-	public CreateVccResponse getInstance(UnmarshallerContext context) {
-		return	CreateVccResponseUnmarshaller.unmarshall(this, context);
+	public UnAssignPrivateIpAddressResponse getInstance(UnmarshallerContext context) {
+		return	UnAssignPrivateIpAddressResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

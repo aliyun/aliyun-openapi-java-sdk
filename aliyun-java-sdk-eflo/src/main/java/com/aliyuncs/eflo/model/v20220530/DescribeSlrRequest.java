@@ -21,29 +21,29 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class GetSubnetRequest extends RpcAcsRequest<GetSubnetResponse> {
+public class DescribeSlrRequest extends RpcAcsRequest<DescribeSlrResponse> {
 	   
 
-	private String subnetId;
-	public GetSubnetRequest() {
-		super("eflo", "2022-05-30", "GetSubnet", "eflo");
+	private String resourceGroupId;
+	public DescribeSlrRequest() {
+		super("eflo", "2022-05-30", "DescribeSlr", "eflo");
 		setMethod(MethodType.POST);
 	}
 
-	public String getSubnetId() {
-		return this.subnetId;
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
 	}
 
-	public void setSubnetId(String subnetId) {
-		this.subnetId = subnetId;
-		if(subnetId != null){
-			putBodyParameter("SubnetId", subnetId);
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putBodyParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
 	@Override
-	public Class<GetSubnetResponse> getResponseClass() {
-		return GetSubnetResponse.class;
+	public Class<DescribeSlrResponse> getResponseClass() {
+		return DescribeSlrResponse.class;
 	}
 
 }

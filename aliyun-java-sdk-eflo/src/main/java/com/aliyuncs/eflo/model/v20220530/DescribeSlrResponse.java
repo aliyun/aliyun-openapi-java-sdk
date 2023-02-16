@@ -15,14 +15,14 @@
 package com.aliyuncs.eflo.model.v20220530;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.eflo.transform.v20220530.UpdateVpdResponseUnmarshaller;
+import com.aliyuncs.eflo.transform.v20220530.DescribeSlrResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UpdateVpdResponse extends AcsResponse {
+public class DescribeSlrResponse extends AcsResponse {
 
 	private Integer code;
 
@@ -66,20 +66,20 @@ public class UpdateVpdResponse extends AcsResponse {
 
 	public static class Content {
 
-		private String vpdId;
+		private Boolean hasRole;
 
-		public String getVpdId() {
-			return this.vpdId;
+		public Boolean getHasRole() {
+			return this.hasRole;
 		}
 
-		public void setVpdId(String vpdId) {
-			this.vpdId = vpdId;
+		public void setHasRole(Boolean hasRole) {
+			this.hasRole = hasRole;
 		}
 	}
 
 	@Override
-	public UpdateVpdResponse getInstance(UnmarshallerContext context) {
-		return	UpdateVpdResponseUnmarshaller.unmarshall(this, context);
+	public DescribeSlrResponse getInstance(UnmarshallerContext context) {
+		return	DescribeSlrResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

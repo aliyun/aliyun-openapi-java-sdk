@@ -15,14 +15,14 @@
 package com.aliyuncs.eflo.model.v20220530;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.eflo.transform.v20220530.CreateSubnetResponseUnmarshaller;
+import com.aliyuncs.eflo.transform.v20220530.AssignPrivateIpAddressResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateSubnetResponse extends AcsResponse {
+public class AssignPrivateIpAddressResponse extends AcsResponse {
 
 	private Integer code;
 
@@ -66,20 +66,30 @@ public class CreateSubnetResponse extends AcsResponse {
 
 	public static class Content {
 
-		private String subnetId;
+		private String networkInterfaceId;
 
-		public String getSubnetId() {
-			return this.subnetId;
+		private String ipName;
+
+		public String getNetworkInterfaceId() {
+			return this.networkInterfaceId;
 		}
 
-		public void setSubnetId(String subnetId) {
-			this.subnetId = subnetId;
+		public void setNetworkInterfaceId(String networkInterfaceId) {
+			this.networkInterfaceId = networkInterfaceId;
+		}
+
+		public String getIpName() {
+			return this.ipName;
+		}
+
+		public void setIpName(String ipName) {
+			this.ipName = ipName;
 		}
 	}
 
 	@Override
-	public CreateSubnetResponse getInstance(UnmarshallerContext context) {
-		return	CreateSubnetResponseUnmarshaller.unmarshall(this, context);
+	public AssignPrivateIpAddressResponse getInstance(UnmarshallerContext context) {
+		return	AssignPrivateIpAddressResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

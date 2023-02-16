@@ -1,3 +1,10 @@
+2023-02-16 Version: 1.0.1
+- Support lingjun network interface.
+- Supported DescribeSlr.
+- Supported Er.
+- Supported ErRouteMap_ErRouteEntry_ErAttachment_VpdRouteEntry_VccRouteEntry.
+- Fixed openapi.
+
 2022-12-30 Version: 1.0.0
 - First publish.
 

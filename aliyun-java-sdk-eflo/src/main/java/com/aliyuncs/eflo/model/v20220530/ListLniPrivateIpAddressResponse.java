@@ -15,16 +15,15 @@
 package com.aliyuncs.eflo.model.v20220530;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.eflo.transform.v20220530.ListVpdsResponseUnmarshaller;
+import com.aliyuncs.eflo.transform.v20220530.ListLniPrivateIpAddressResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListVpdsResponse extends AcsResponse {
+public class ListLniPrivateIpAddressResponse extends AcsResponse {
 
 	private Integer code;
 
@@ -92,29 +91,19 @@ public class ListVpdsResponse extends AcsResponse {
 
 			private String regionId;
 
-			private String vpdId;
+			private String gmtCreate;
 
-			private String name;
+			private String networkInterfaceId;
 
-			private String cidr;
+			private String ipName;
 
-			private String serviceCidr;
+			private String privateIpAddress;
+
+			private String ipAddressMac;
 
 			private String status;
 
 			private String message;
-
-			private Integer route;
-
-			private Integer ncCount;
-
-			private Integer subnetCount;
-
-			private String gmtCreate;
-
-			private String gmtModified;
-
-			private Map<Object,Object> dependence;
 
 			public String getRegionId() {
 				return this.regionId;
@@ -124,36 +113,44 @@ public class ListVpdsResponse extends AcsResponse {
 				this.regionId = regionId;
 			}
 
-			public String getVpdId() {
-				return this.vpdId;
+			public String getGmtCreate() {
+				return this.gmtCreate;
 			}
 
-			public void setVpdId(String vpdId) {
-				this.vpdId = vpdId;
+			public void setGmtCreate(String gmtCreate) {
+				this.gmtCreate = gmtCreate;
 			}
 
-			public String getName() {
-				return this.name;
+			public String getNetworkInterfaceId() {
+				return this.networkInterfaceId;
 			}
 
-			public void setName(String name) {
-				this.name = name;
+			public void setNetworkInterfaceId(String networkInterfaceId) {
+				this.networkInterfaceId = networkInterfaceId;
 			}
 
-			public String getCidr() {
-				return this.cidr;
+			public String getIpName() {
+				return this.ipName;
 			}
 
-			public void setCidr(String cidr) {
-				this.cidr = cidr;
+			public void setIpName(String ipName) {
+				this.ipName = ipName;
 			}
 
-			public String getServiceCidr() {
-				return this.serviceCidr;
+			public String getPrivateIpAddress() {
+				return this.privateIpAddress;
 			}
 
-			public void setServiceCidr(String serviceCidr) {
-				this.serviceCidr = serviceCidr;
+			public void setPrivateIpAddress(String privateIpAddress) {
+				this.privateIpAddress = privateIpAddress;
+			}
+
+			public String getIpAddressMac() {
+				return this.ipAddressMac;
+			}
+
+			public void setIpAddressMac(String ipAddressMac) {
+				this.ipAddressMac = ipAddressMac;
 			}
 
 			public String getStatus() {
@@ -171,60 +168,12 @@ public class ListVpdsResponse extends AcsResponse {
 			public void setMessage(String message) {
 				this.message = message;
 			}
-
-			public Integer getRoute() {
-				return this.route;
-			}
-
-			public void setRoute(Integer route) {
-				this.route = route;
-			}
-
-			public Integer getNcCount() {
-				return this.ncCount;
-			}
-
-			public void setNcCount(Integer ncCount) {
-				this.ncCount = ncCount;
-			}
-
-			public Integer getSubnetCount() {
-				return this.subnetCount;
-			}
-
-			public void setSubnetCount(Integer subnetCount) {
-				this.subnetCount = subnetCount;
-			}
-
-			public String getGmtCreate() {
-				return this.gmtCreate;
-			}
-
-			public void setGmtCreate(String gmtCreate) {
-				this.gmtCreate = gmtCreate;
-			}
-
-			public String getGmtModified() {
-				return this.gmtModified;
-			}
-
-			public void setGmtModified(String gmtModified) {
-				this.gmtModified = gmtModified;
-			}
-
-			public Map<Object,Object> getDependence() {
-				return this.dependence;
-			}
-
-			public void setDependence(Map<Object,Object> dependence) {
-				this.dependence = dependence;
-			}
 		}
 	}
 
 	@Override
-	public ListVpdsResponse getInstance(UnmarshallerContext context) {
-		return	ListVpdsResponseUnmarshaller.unmarshall(this, context);
+	public ListLniPrivateIpAddressResponse getInstance(UnmarshallerContext context) {
+		return	ListLniPrivateIpAddressResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

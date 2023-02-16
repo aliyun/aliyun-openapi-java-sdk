@@ -23,9 +23,22 @@ import com.aliyuncs.http.MethodType;
  */
 public class InitializeVccRequest extends RpcAcsRequest<InitializeVccResponse> {
 	   
+
+	private String resourceGroupId;
 	public InitializeVccRequest() {
 		super("eflo", "2022-05-30", "InitializeVcc", "eflo");
 		setMethod(MethodType.POST);
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putBodyParameter("ResourceGroupId", resourceGroupId);
+		}
 	}
 
 	@Override

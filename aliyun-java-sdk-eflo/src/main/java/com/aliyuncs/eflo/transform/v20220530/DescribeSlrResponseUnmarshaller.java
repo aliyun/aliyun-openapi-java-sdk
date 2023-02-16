@@ -14,23 +14,23 @@
 
 package com.aliyuncs.eflo.transform.v20220530;
 
-import com.aliyuncs.eflo.model.v20220530.UpdateVpdResponse;
-import com.aliyuncs.eflo.model.v20220530.UpdateVpdResponse.Content;
+import com.aliyuncs.eflo.model.v20220530.DescribeSlrResponse;
+import com.aliyuncs.eflo.model.v20220530.DescribeSlrResponse.Content;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class UpdateVpdResponseUnmarshaller {
+public class DescribeSlrResponseUnmarshaller {
 
-	public static UpdateVpdResponse unmarshall(UpdateVpdResponse updateVpdResponse, UnmarshallerContext _ctx) {
+	public static DescribeSlrResponse unmarshall(DescribeSlrResponse describeSlrResponse, UnmarshallerContext _ctx) {
 		
-		updateVpdResponse.setRequestId(_ctx.stringValue("UpdateVpdResponse.RequestId"));
-		updateVpdResponse.setCode(_ctx.integerValue("UpdateVpdResponse.Code"));
-		updateVpdResponse.setMessage(_ctx.stringValue("UpdateVpdResponse.Message"));
+		describeSlrResponse.setRequestId(_ctx.stringValue("DescribeSlrResponse.RequestId"));
+		describeSlrResponse.setCode(_ctx.integerValue("DescribeSlrResponse.Code"));
+		describeSlrResponse.setMessage(_ctx.stringValue("DescribeSlrResponse.Message"));
 
 		Content content = new Content();
-		content.setVpdId(_ctx.stringValue("UpdateVpdResponse.Content.VpdId"));
-		updateVpdResponse.setContent(content);
+		content.setHasRole(_ctx.booleanValue("DescribeSlrResponse.Content.HasRole"));
+		describeSlrResponse.setContent(content);
 	 
-	 	return updateVpdResponse;
+	 	return describeSlrResponse;
 	}
 }

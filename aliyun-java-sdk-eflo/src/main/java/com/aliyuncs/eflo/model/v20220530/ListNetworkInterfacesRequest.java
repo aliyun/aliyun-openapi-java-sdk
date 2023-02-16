@@ -21,31 +21,40 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class ListVpdsRequest extends RpcAcsRequest<ListVpdsResponse> {
+public class ListNetworkInterfacesRequest extends RpcAcsRequest<ListNetworkInterfacesResponse> {
 	   
+
+	private String clientToken;
 
 	private Integer pageNumber;
 
-	private Boolean withDependence;
-
-	private Boolean withoutVcc;
-
 	private Integer pageSize;
 
-	private Boolean forSelect;
+	private String nodeId;
 
-	private String filterErId;
+	private String subnetId;
+
+	private String ip;
 
 	private String vpdId;
 
 	private Boolean enablePage;
 
-	private String name;
-
-	private String status;
-	public ListVpdsRequest() {
-		super("eflo", "2022-05-30", "ListVpds", "eflo");
+	private String networkInterfaceId;
+	public ListNetworkInterfacesRequest() {
+		super("eflo", "2022-05-30", "ListNetworkInterfaces", "eflo");
 		setMethod(MethodType.POST);
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putBodyParameter("ClientToken", clientToken);
+		}
 	}
 
 	public Integer getPageNumber() {
@@ -56,28 +65,6 @@ public class ListVpdsRequest extends RpcAcsRequest<ListVpdsResponse> {
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putBodyParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public Boolean getWithDependence() {
-		return this.withDependence;
-	}
-
-	public void setWithDependence(Boolean withDependence) {
-		this.withDependence = withDependence;
-		if(withDependence != null){
-			putBodyParameter("WithDependence", withDependence.toString());
-		}
-	}
-
-	public Boolean getWithoutVcc() {
-		return this.withoutVcc;
-	}
-
-	public void setWithoutVcc(Boolean withoutVcc) {
-		this.withoutVcc = withoutVcc;
-		if(withoutVcc != null){
-			putBodyParameter("WithoutVcc", withoutVcc.toString());
 		}
 	}
 
@@ -92,25 +79,36 @@ public class ListVpdsRequest extends RpcAcsRequest<ListVpdsResponse> {
 		}
 	}
 
-	public Boolean getForSelect() {
-		return this.forSelect;
+	public String getNodeId() {
+		return this.nodeId;
 	}
 
-	public void setForSelect(Boolean forSelect) {
-		this.forSelect = forSelect;
-		if(forSelect != null){
-			putBodyParameter("ForSelect", forSelect.toString());
+	public void setNodeId(String nodeId) {
+		this.nodeId = nodeId;
+		if(nodeId != null){
+			putBodyParameter("NodeId", nodeId);
 		}
 	}
 
-	public String getFilterErId() {
-		return this.filterErId;
+	public String getSubnetId() {
+		return this.subnetId;
 	}
 
-	public void setFilterErId(String filterErId) {
-		this.filterErId = filterErId;
-		if(filterErId != null){
-			putBodyParameter("FilterErId", filterErId);
+	public void setSubnetId(String subnetId) {
+		this.subnetId = subnetId;
+		if(subnetId != null){
+			putBodyParameter("SubnetId", subnetId);
+		}
+	}
+
+	public String getIp() {
+		return this.ip;
+	}
+
+	public void setIp(String ip) {
+		this.ip = ip;
+		if(ip != null){
+			putBodyParameter("Ip", ip);
 		}
 	}
 
@@ -136,31 +134,20 @@ public class ListVpdsRequest extends RpcAcsRequest<ListVpdsResponse> {
 		}
 	}
 
-	public String getName() {
-		return this.name;
+	public String getNetworkInterfaceId() {
+		return this.networkInterfaceId;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putBodyParameter("Name", name);
-		}
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-		if(status != null){
-			putBodyParameter("Status", status);
+	public void setNetworkInterfaceId(String networkInterfaceId) {
+		this.networkInterfaceId = networkInterfaceId;
+		if(networkInterfaceId != null){
+			putBodyParameter("NetworkInterfaceId", networkInterfaceId);
 		}
 	}
 
 	@Override
-	public Class<ListVpdsResponse> getResponseClass() {
-		return ListVpdsResponse.class;
+	public Class<ListNetworkInterfacesResponse> getResponseClass() {
+		return ListNetworkInterfacesResponse.class;
 	}
 
 }
