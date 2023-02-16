@@ -129,6 +129,8 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		private String paymentType;
 
+		private String dBInstanceOrderStatus;
+
 		private List<ReplicaSet> replicaSets;
 
 		private List<Tag> tags;
@@ -467,6 +469,14 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		public void setPaymentType(String paymentType) {
 			this.paymentType = paymentType;
+		}
+
+		public String getDBInstanceOrderStatus() {
+			return this.dBInstanceOrderStatus;
+		}
+
+		public void setDBInstanceOrderStatus(String dBInstanceOrderStatus) {
+			this.dBInstanceOrderStatus = dBInstanceOrderStatus;
 		}
 
 		public List<ReplicaSet> getReplicaSets() {

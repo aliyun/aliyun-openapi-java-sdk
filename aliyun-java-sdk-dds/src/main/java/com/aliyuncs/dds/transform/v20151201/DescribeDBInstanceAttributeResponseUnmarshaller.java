@@ -78,6 +78,7 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 			dBInstance.setHiddenZoneId(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].HiddenZoneId"));
 			dBInstance.setDestroyTime(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].DestroyTime"));
 			dBInstance.setPaymentType(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].PaymentType"));
+			dBInstance.setDBInstanceOrderStatus(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].DBInstanceOrderStatus"));
 
 			List<ReplicaSet> replicaSets = new ArrayList<ReplicaSet>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBInstanceAttributeResponse.DBInstances["+ i +"].ReplicaSets.Length"); j++) {
