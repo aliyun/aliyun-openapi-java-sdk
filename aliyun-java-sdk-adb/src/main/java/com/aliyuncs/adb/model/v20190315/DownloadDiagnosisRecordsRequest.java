@@ -25,31 +25,31 @@ import com.aliyuncs.adb.Endpoint;
 public class DownloadDiagnosisRecordsRequest extends RpcAcsRequest<DownloadDiagnosisRecordsResponse> {
 	   
 
+	private String queryCondition;
+
+	private String startTime;
+
+	private String database;
+
+	private String clientIp;
+
+	private String keyword;
+
+	private String lang;
+
 	private Long maxScanSize;
 
 	private String resourceGroup;
 
 	private String dBClusterId;
 
-	private String queryCondition;
-
 	private String endTime;
-
-	private String startTime;
 
 	private Long minPeakMemory;
 
 	private Long minScanSize;
 
-	private String database;
-
-	private String clientIp;
-
 	private Long maxPeakMemory;
-
-	private String keyword;
-
-	private String lang;
 
 	private String userName;
 	public DownloadDiagnosisRecordsRequest() {
@@ -59,6 +59,72 @@ public class DownloadDiagnosisRecordsRequest extends RpcAcsRequest<DownloadDiagn
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getQueryCondition() {
+		return this.queryCondition;
+	}
+
+	public void setQueryCondition(String queryCondition) {
+		this.queryCondition = queryCondition;
+		if(queryCondition != null){
+			putQueryParameter("QueryCondition", queryCondition);
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getDatabase() {
+		return this.database;
+	}
+
+	public void setDatabase(String database) {
+		this.database = database;
+		if(database != null){
+			putQueryParameter("Database", database);
+		}
+	}
+
+	public String getClientIp() {
+		return this.clientIp;
+	}
+
+	public void setClientIp(String clientIp) {
+		this.clientIp = clientIp;
+		if(clientIp != null){
+			putQueryParameter("ClientIp", clientIp);
+		}
+	}
+
+	public String getKeyword() {
+		return this.keyword;
+	}
+
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
+		if(keyword != null){
+			putQueryParameter("Keyword", keyword);
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
 	}
 
 	public Long getMaxScanSize() {
@@ -94,17 +160,6 @@ public class DownloadDiagnosisRecordsRequest extends RpcAcsRequest<DownloadDiagn
 		}
 	}
 
-	public String getQueryCondition() {
-		return this.queryCondition;
-	}
-
-	public void setQueryCondition(String queryCondition) {
-		this.queryCondition = queryCondition;
-		if(queryCondition != null){
-			putQueryParameter("QueryCondition", queryCondition);
-		}
-	}
-
 	public String getEndTime() {
 		return this.endTime;
 	}
@@ -113,17 +168,6 @@ public class DownloadDiagnosisRecordsRequest extends RpcAcsRequest<DownloadDiagn
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
 		}
 	}
 
@@ -149,28 +193,6 @@ public class DownloadDiagnosisRecordsRequest extends RpcAcsRequest<DownloadDiagn
 		}
 	}
 
-	public String getDatabase() {
-		return this.database;
-	}
-
-	public void setDatabase(String database) {
-		this.database = database;
-		if(database != null){
-			putQueryParameter("Database", database);
-		}
-	}
-
-	public String getClientIp() {
-		return this.clientIp;
-	}
-
-	public void setClientIp(String clientIp) {
-		this.clientIp = clientIp;
-		if(clientIp != null){
-			putQueryParameter("ClientIp", clientIp);
-		}
-	}
-
 	public Long getMaxPeakMemory() {
 		return this.maxPeakMemory;
 	}
@@ -179,28 +201,6 @@ public class DownloadDiagnosisRecordsRequest extends RpcAcsRequest<DownloadDiagn
 		this.maxPeakMemory = maxPeakMemory;
 		if(maxPeakMemory != null){
 			putQueryParameter("MaxPeakMemory", maxPeakMemory.toString());
-		}
-	}
-
-	public String getKeyword() {
-		return this.keyword;
-	}
-
-	public void setKeyword(String keyword) {
-		this.keyword = keyword;
-		if(keyword != null){
-			putQueryParameter("Keyword", keyword);
-		}
-	}
-
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
 		}
 	}
 

@@ -27,6 +27,7 @@ public class DescribeDBResourceGroupResponseUnmarshaller {
 	public static DescribeDBResourceGroupResponse unmarshall(DescribeDBResourceGroupResponse describeDBResourceGroupResponse, UnmarshallerContext _ctx) {
 		
 		describeDBResourceGroupResponse.setRequestId(_ctx.stringValue("DescribeDBResourceGroupResponse.RequestId"));
+		describeDBResourceGroupResponse.setDBClusterId(_ctx.stringValue("DescribeDBResourceGroupResponse.DBClusterId"));
 
 		List<PoolInfo> groupsInfo = new ArrayList<PoolInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBResourceGroupResponse.GroupsInfo.Length"); i++) {

@@ -65,6 +65,10 @@ public class DescribeElasticDailyPlanResponse extends AcsResponse {
 
 		private String planName;
 
+		private String elasticPlanType;
+
+		private String elasticPlanWorkerSpec;
+
 		public Integer getStatus() {
 			return this.status;
 		}
@@ -135,6 +139,22 @@ public class DescribeElasticDailyPlanResponse extends AcsResponse {
 
 		public void setPlanName(String planName) {
 			this.planName = planName;
+		}
+
+		public String getElasticPlanType() {
+			return this.elasticPlanType;
+		}
+
+		public void setElasticPlanType(String elasticPlanType) {
+			this.elasticPlanType = elasticPlanType;
+		}
+
+		public String getElasticPlanWorkerSpec() {
+			return this.elasticPlanWorkerSpec;
+		}
+
+		public void setElasticPlanWorkerSpec(String elasticPlanWorkerSpec) {
+			this.elasticPlanWorkerSpec = elasticPlanWorkerSpec;
 		}
 	}
 

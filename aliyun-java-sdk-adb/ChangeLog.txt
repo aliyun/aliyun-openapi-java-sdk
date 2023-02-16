@@ -1,3 +1,6 @@
+2023-02-16 Version: 1.0.11
+- Support Adb5 DTS.
+
 2022-08-01 Version: 1.0.10
 - Support Adb3 For DescribeEIURange and DescribeComputeResource API.
 

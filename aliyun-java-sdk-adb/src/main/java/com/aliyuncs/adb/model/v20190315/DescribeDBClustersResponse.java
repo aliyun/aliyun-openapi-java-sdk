@@ -145,6 +145,10 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 		private String engine;
 
+		private String innerIp;
+
+		private String innerPort;
+
 		private List<Tag> tags;
 
 		public String getDtsJobId() {
@@ -417,6 +421,22 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 		public void setEngine(String engine) {
 			this.engine = engine;
+		}
+
+		public String getInnerIp() {
+			return this.innerIp;
+		}
+
+		public void setInnerIp(String innerIp) {
+			this.innerIp = innerIp;
+		}
+
+		public String getInnerPort() {
+			return this.innerPort;
+		}
+
+		public void setInnerPort(String innerPort) {
+			this.innerPort = innerPort;
 		}
 
 		public List<Tag> getTags() {

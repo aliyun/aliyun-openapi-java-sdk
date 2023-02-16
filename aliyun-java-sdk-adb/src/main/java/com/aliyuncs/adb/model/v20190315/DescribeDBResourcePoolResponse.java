@@ -27,6 +27,8 @@ public class DescribeDBResourcePoolResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String dBClusterId;
+
 	private List<PoolInfo> poolsInfo;
 
 	public String getRequestId() {
@@ -35,6 +37,14 @@ public class DescribeDBResourcePoolResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getDBClusterId() {
+		return this.dBClusterId;
+	}
+
+	public void setDBClusterId(String dBClusterId) {
+		this.dBClusterId = dBClusterId;
 	}
 
 	public List<PoolInfo> getPoolsInfo() {

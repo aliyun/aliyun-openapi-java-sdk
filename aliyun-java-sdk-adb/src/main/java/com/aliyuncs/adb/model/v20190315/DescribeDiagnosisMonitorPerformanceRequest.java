@@ -22,32 +22,25 @@ import com.aliyuncs.adb.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeDBClusterForecastRequest extends RpcAcsRequest<DescribeDBClusterForecastResponse> {
+public class DescribeDiagnosisMonitorPerformanceRequest extends RpcAcsRequest<DescribeDiagnosisMonitorPerformanceResponse> {
 	   
-
-	private String metricType;
 
 	private String dBClusterId;
 
+	private String queryCondition;
+
+	private String endTime;
+
 	private String startTime;
-	public DescribeDBClusterForecastRequest() {
-		super("adb", "2019-03-15", "DescribeDBClusterForecast", "ads");
+
+	private String lang;
+	public DescribeDiagnosisMonitorPerformanceRequest() {
+		super("adb", "2019-03-15", "DescribeDiagnosisMonitorPerformance", "ads");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getMetricType() {
-		return this.metricType;
-	}
-
-	public void setMetricType(String metricType) {
-		this.metricType = metricType;
-		if(metricType != null){
-			putQueryParameter("MetricType", metricType);
-		}
 	}
 
 	public String getDBClusterId() {
@@ -58,6 +51,28 @@ public class DescribeDBClusterForecastRequest extends RpcAcsRequest<DescribeDBCl
 		this.dBClusterId = dBClusterId;
 		if(dBClusterId != null){
 			putQueryParameter("DBClusterId", dBClusterId);
+		}
+	}
+
+	public String getQueryCondition() {
+		return this.queryCondition;
+	}
+
+	public void setQueryCondition(String queryCondition) {
+		this.queryCondition = queryCondition;
+		if(queryCondition != null){
+			putQueryParameter("QueryCondition", queryCondition);
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
 		}
 	}
 
@@ -72,9 +87,20 @@ public class DescribeDBClusterForecastRequest extends RpcAcsRequest<DescribeDBCl
 		}
 	}
 
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
+	}
+
 	@Override
-	public Class<DescribeDBClusterForecastResponse> getResponseClass() {
-		return DescribeDBClusterForecastResponse.class;
+	public Class<DescribeDiagnosisMonitorPerformanceResponse> getResponseClass() {
+		return DescribeDiagnosisMonitorPerformanceResponse.class;
 	}
 
 }

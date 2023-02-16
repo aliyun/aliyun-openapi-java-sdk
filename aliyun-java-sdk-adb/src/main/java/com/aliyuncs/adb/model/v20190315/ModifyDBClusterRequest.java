@@ -25,6 +25,8 @@ import com.aliyuncs.adb.Endpoint;
 public class ModifyDBClusterRequest extends RpcAcsRequest<ModifyDBClusterResponse> {
 	   
 
+	private String elasticIOResourceSize;
+
 	private Long resourceOwnerId;
 
 	private String mode;
@@ -34,6 +36,8 @@ public class ModifyDBClusterRequest extends RpcAcsRequest<ModifyDBClusterRespons
 	private String dBNodeClass;
 
 	private String dBClusterCategory;
+
+	private String diskPerformanceLevel;
 
 	private String resourceOwnerAccount;
 
@@ -61,6 +65,17 @@ public class ModifyDBClusterRequest extends RpcAcsRequest<ModifyDBClusterRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getElasticIOResourceSize() {
+		return this.elasticIOResourceSize;
+	}
+
+	public void setElasticIOResourceSize(String elasticIOResourceSize) {
+		this.elasticIOResourceSize = elasticIOResourceSize;
+		if(elasticIOResourceSize != null){
+			putQueryParameter("ElasticIOResourceSize", elasticIOResourceSize);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -115,6 +130,17 @@ public class ModifyDBClusterRequest extends RpcAcsRequest<ModifyDBClusterRespons
 		this.dBClusterCategory = dBClusterCategory;
 		if(dBClusterCategory != null){
 			putQueryParameter("DBClusterCategory", dBClusterCategory);
+		}
+	}
+
+	public String getDiskPerformanceLevel() {
+		return this.diskPerformanceLevel;
+	}
+
+	public void setDiskPerformanceLevel(String diskPerformanceLevel) {
+		this.diskPerformanceLevel = diskPerformanceLevel;
+		if(diskPerformanceLevel != null){
+			putQueryParameter("DiskPerformanceLevel", diskPerformanceLevel);
 		}
 	}
 

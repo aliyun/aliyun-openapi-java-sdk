@@ -27,11 +27,15 @@ public class CreateElasticPlanRequest extends RpcAcsRequest<CreateElasticPlanRes
 
 	private Long resourceOwnerId;
 
+	private String elasticPlanType;
+
 	private String elasticPlanTimeStart;
 
 	private String elasticPlanEndDay;
 
 	private String elasticPlanWeeklyRepeat;
+
+	private String elasticPlanWorkerSpec;
 
 	private Boolean elasticPlanEnable;
 
@@ -72,6 +76,17 @@ public class CreateElasticPlanRequest extends RpcAcsRequest<CreateElasticPlanRes
 		}
 	}
 
+	public String getElasticPlanType() {
+		return this.elasticPlanType;
+	}
+
+	public void setElasticPlanType(String elasticPlanType) {
+		this.elasticPlanType = elasticPlanType;
+		if(elasticPlanType != null){
+			putQueryParameter("ElasticPlanType", elasticPlanType);
+		}
+	}
+
 	public String getElasticPlanTimeStart() {
 		return this.elasticPlanTimeStart;
 	}
@@ -102,6 +117,17 @@ public class CreateElasticPlanRequest extends RpcAcsRequest<CreateElasticPlanRes
 		this.elasticPlanWeeklyRepeat = elasticPlanWeeklyRepeat;
 		if(elasticPlanWeeklyRepeat != null){
 			putQueryParameter("ElasticPlanWeeklyRepeat", elasticPlanWeeklyRepeat);
+		}
+	}
+
+	public String getElasticPlanWorkerSpec() {
+		return this.elasticPlanWorkerSpec;
+	}
+
+	public void setElasticPlanWorkerSpec(String elasticPlanWorkerSpec) {
+		this.elasticPlanWorkerSpec = elasticPlanWorkerSpec;
+		if(elasticPlanWorkerSpec != null){
+			putQueryParameter("ElasticPlanWorkerSpec", elasticPlanWorkerSpec);
 		}
 	}
 

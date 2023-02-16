@@ -69,6 +69,8 @@ public class DescribeDBClustersResponseUnmarshaller {
 			dBCluster.setZoneId(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].ZoneId"));
 			dBCluster.setCategory(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].Category"));
 			dBCluster.setEngine(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].Engine"));
+			dBCluster.setInnerIp(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].InnerIp"));
+			dBCluster.setInnerPort(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].InnerPort"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBClustersResponse.Items["+ i +"].Tags.Length"); j++) {

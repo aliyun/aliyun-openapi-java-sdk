@@ -22,19 +22,32 @@ import com.aliyuncs.adb.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeDBClusterHealthReportRequest extends RpcAcsRequest<DescribeDBClusterHealthReportResponse> {
+public class ApplyAdviceByIdRequest extends RpcAcsRequest<ApplyAdviceByIdResponse> {
 	   
+
+	private String adviceId;
 
 	private String dBClusterId;
 
-	private String startTime;
-	public DescribeDBClusterHealthReportRequest() {
-		super("adb", "2019-03-15", "DescribeDBClusterHealthReport", "ads");
+	private Long adviceDate;
+	public ApplyAdviceByIdRequest() {
+		super("adb", "2019-03-15", "ApplyAdviceById", "ads");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getAdviceId() {
+		return this.adviceId;
+	}
+
+	public void setAdviceId(String adviceId) {
+		this.adviceId = adviceId;
+		if(adviceId != null){
+			putQueryParameter("AdviceId", adviceId);
+		}
 	}
 
 	public String getDBClusterId() {
@@ -48,20 +61,20 @@ public class DescribeDBClusterHealthReportRequest extends RpcAcsRequest<Describe
 		}
 	}
 
-	public String getStartTime() {
-		return this.startTime;
+	public Long getAdviceDate() {
+		return this.adviceDate;
 	}
 
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
+	public void setAdviceDate(Long adviceDate) {
+		this.adviceDate = adviceDate;
+		if(adviceDate != null){
+			putQueryParameter("AdviceDate", adviceDate.toString());
 		}
 	}
 
 	@Override
-	public Class<DescribeDBClusterHealthReportResponse> getResponseClass() {
-		return DescribeDBClusterHealthReportResponse.class;
+	public Class<ApplyAdviceByIdResponse> getResponseClass() {
+		return ApplyAdviceByIdResponse.class;
 	}
 
 }

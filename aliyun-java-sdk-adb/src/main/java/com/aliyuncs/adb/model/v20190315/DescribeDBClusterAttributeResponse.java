@@ -127,6 +127,14 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 		private String kmsId;
 
+		private String innerIp;
+
+		private String innerPort;
+
+		private String diskPerformanceLevel;
+
+		private String elasticIOResourceSize;
+
 		private List<Tag> tags;
 
 		public String getCreationTime() {
@@ -447,6 +455,38 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 		public void setKmsId(String kmsId) {
 			this.kmsId = kmsId;
+		}
+
+		public String getInnerIp() {
+			return this.innerIp;
+		}
+
+		public void setInnerIp(String innerIp) {
+			this.innerIp = innerIp;
+		}
+
+		public String getInnerPort() {
+			return this.innerPort;
+		}
+
+		public void setInnerPort(String innerPort) {
+			this.innerPort = innerPort;
+		}
+
+		public String getDiskPerformanceLevel() {
+			return this.diskPerformanceLevel;
+		}
+
+		public void setDiskPerformanceLevel(String diskPerformanceLevel) {
+			this.diskPerformanceLevel = diskPerformanceLevel;
+		}
+
+		public String getElasticIOResourceSize() {
+			return this.elasticIOResourceSize;
+		}
+
+		public void setElasticIOResourceSize(String elasticIOResourceSize) {
+			this.elasticIOResourceSize = elasticIOResourceSize;
 		}
 
 		public List<Tag> getTags() {

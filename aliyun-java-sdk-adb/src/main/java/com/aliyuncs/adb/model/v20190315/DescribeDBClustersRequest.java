@@ -46,6 +46,8 @@ public class DescribeDBClustersRequest extends RpcAcsRequest<DescribeDBClustersR
 
 	private Long ownerId;
 
+	private String dBVersion;
+
 	private String dBClusterIds;
 	public DescribeDBClustersRequest() {
 		super("adb", "2019-03-15", "DescribeDBClusters", "ads");
@@ -166,6 +168,17 @@ public class DescribeDBClustersRequest extends RpcAcsRequest<DescribeDBClustersR
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getDBVersion() {
+		return this.dBVersion;
+	}
+
+	public void setDBVersion(String dBVersion) {
+		this.dBVersion = dBVersion;
+		if(dBVersion != null){
+			putQueryParameter("DBVersion", dBVersion);
 		}
 	}
 

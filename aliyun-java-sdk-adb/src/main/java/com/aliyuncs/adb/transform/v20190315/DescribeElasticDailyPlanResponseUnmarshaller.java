@@ -40,6 +40,8 @@ public class DescribeElasticDailyPlanResponseUnmarshaller {
 			elasticDailyPlanInfo.setElasticNodeNum(_ctx.integerValue("DescribeElasticDailyPlanResponse.ElasticDailyPlanList["+ i +"].ElasticNodeNum"));
 			elasticDailyPlanInfo.setEndTs(_ctx.stringValue("DescribeElasticDailyPlanResponse.ElasticDailyPlanList["+ i +"].EndTs"));
 			elasticDailyPlanInfo.setPlanName(_ctx.stringValue("DescribeElasticDailyPlanResponse.ElasticDailyPlanList["+ i +"].PlanName"));
+			elasticDailyPlanInfo.setElasticPlanType(_ctx.stringValue("DescribeElasticDailyPlanResponse.ElasticDailyPlanList["+ i +"].ElasticPlanType"));
+			elasticDailyPlanInfo.setElasticPlanWorkerSpec(_ctx.stringValue("DescribeElasticDailyPlanResponse.ElasticDailyPlanList["+ i +"].ElasticPlanWorkerSpec"));
 
 			elasticDailyPlanList.add(elasticDailyPlanInfo);
 		}

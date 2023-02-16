@@ -49,7 +49,7 @@ public class DescribeDiagnosisRecordsRequest extends RpcAcsRequest<DescribeDiagn
 
 	private String dBClusterId;
 
-	private Long patternId;
+	private String patternId;
 
 	private String endTime;
 
@@ -201,14 +201,14 @@ public class DescribeDiagnosisRecordsRequest extends RpcAcsRequest<DescribeDiagn
 		}
 	}
 
-	public Long getPatternId() {
+	public String getPatternId() {
 		return this.patternId;
 	}
 
-	public void setPatternId(Long patternId) {
+	public void setPatternId(String patternId) {
 		this.patternId = patternId;
 		if(patternId != null){
-			putQueryParameter("PatternId", patternId.toString());
+			putQueryParameter("PatternId", patternId);
 		}
 	}
 
