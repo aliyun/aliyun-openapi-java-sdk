@@ -36,9 +36,7 @@ public class GetTopicAttributesResponseUnmarshaller {
 		data.setMessageRetentionPeriod(_ctx.longValue("GetTopicAttributesResponse.Data.MessageRetentionPeriod"));
 		data.setCreateTime(_ctx.longValue("GetTopicAttributesResponse.Data.CreateTime"));
 		data.setLastModifyTime(_ctx.longValue("GetTopicAttributesResponse.Data.LastModifyTime"));
-		data.setTopicUrl(_ctx.stringValue("GetTopicAttributesResponse.Data.TopicUrl"));
 		data.setLoggingEnabled(_ctx.booleanValue("GetTopicAttributesResponse.Data.LoggingEnabled"));
-		data.setTopicInnerUrl(_ctx.stringValue("GetTopicAttributesResponse.Data.TopicInnerUrl"));
 		getTopicAttributesResponse.setData(data);
 	 
 	 	return getTopicAttributesResponse;

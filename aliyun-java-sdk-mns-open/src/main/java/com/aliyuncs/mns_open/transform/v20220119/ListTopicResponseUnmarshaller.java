@@ -47,8 +47,6 @@ public class ListTopicResponseUnmarshaller {
 			pageDataItem.setMessageRetentionPeriod(_ctx.longValue("ListTopicResponse.Data.PageData["+ i +"].MessageRetentionPeriod"));
 			pageDataItem.setCreateTime(_ctx.longValue("ListTopicResponse.Data.PageData["+ i +"].CreateTime"));
 			pageDataItem.setLastModifyTime(_ctx.longValue("ListTopicResponse.Data.PageData["+ i +"].LastModifyTime"));
-			pageDataItem.setTopicUrl(_ctx.stringValue("ListTopicResponse.Data.PageData["+ i +"].TopicUrl"));
-			pageDataItem.setTopicInnerUrl(_ctx.stringValue("ListTopicResponse.Data.PageData["+ i +"].TopicInnerUrl"));
 			pageDataItem.setLoggingEnabled(_ctx.booleanValue("ListTopicResponse.Data.PageData["+ i +"].LoggingEnabled"));
 
 			pageData.add(pageDataItem);

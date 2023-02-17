@@ -86,10 +86,6 @@ public class GetQueueAttributesResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String queueUrl;
-
-		private String queueInternalUrl;
-
 		private String queueName;
 
 		private Long createTime;
@@ -113,22 +109,6 @@ public class GetQueueAttributesResponse extends AcsResponse {
 		private Long delayMessages;
 
 		private Boolean loggingEnabled;
-
-		public String getQueueUrl() {
-			return this.queueUrl;
-		}
-
-		public void setQueueUrl(String queueUrl) {
-			this.queueUrl = queueUrl;
-		}
-
-		public String getQueueInternalUrl() {
-			return this.queueInternalUrl;
-		}
-
-		public void setQueueInternalUrl(String queueInternalUrl) {
-			this.queueInternalUrl = queueInternalUrl;
-		}
 
 		public String getQueueName() {
 			return this.queueName;

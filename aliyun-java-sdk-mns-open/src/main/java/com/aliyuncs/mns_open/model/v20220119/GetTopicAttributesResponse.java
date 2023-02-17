@@ -98,11 +98,7 @@ public class GetTopicAttributesResponse extends AcsResponse {
 
 		private Long lastModifyTime;
 
-		private String topicUrl;
-
 		private Boolean loggingEnabled;
-
-		private String topicInnerUrl;
 
 		public String getTopicName() {
 			return this.topicName;
@@ -152,28 +148,12 @@ public class GetTopicAttributesResponse extends AcsResponse {
 			this.lastModifyTime = lastModifyTime;
 		}
 
-		public String getTopicUrl() {
-			return this.topicUrl;
-		}
-
-		public void setTopicUrl(String topicUrl) {
-			this.topicUrl = topicUrl;
-		}
-
 		public Boolean getLoggingEnabled() {
 			return this.loggingEnabled;
 		}
 
 		public void setLoggingEnabled(Boolean loggingEnabled) {
 			this.loggingEnabled = loggingEnabled;
-		}
-
-		public String getTopicInnerUrl() {
-			return this.topicInnerUrl;
-		}
-
-		public void setTopicInnerUrl(String topicInnerUrl) {
-			this.topicInnerUrl = topicInnerUrl;
 		}
 	}
 

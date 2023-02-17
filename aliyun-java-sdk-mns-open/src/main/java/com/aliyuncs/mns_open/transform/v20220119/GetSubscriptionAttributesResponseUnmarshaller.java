@@ -39,7 +39,6 @@ public class GetSubscriptionAttributesResponseUnmarshaller {
 		data.setLastModifyTime(_ctx.longValue("GetSubscriptionAttributesResponse.Data.LastModifyTime"));
 		data.setNotifyStrategy(_ctx.stringValue("GetSubscriptionAttributesResponse.Data.NotifyStrategy"));
 		data.setNotifyContentFormat(_ctx.stringValue("GetSubscriptionAttributesResponse.Data.NotifyContentFormat"));
-		data.setSubscriptionURL(_ctx.stringValue("GetSubscriptionAttributesResponse.Data.SubscriptionURL"));
 		getSubscriptionAttributesResponse.setData(data);
 	 
 	 	return getSubscriptionAttributesResponse;

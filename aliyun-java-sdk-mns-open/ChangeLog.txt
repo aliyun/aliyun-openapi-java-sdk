@@ -1,3 +1,6 @@
+2023-02-17 Version: 1.0.2
+- Remove some useless response parameters.
+
 2022-09-20 Version: 1.0.1
 - Remove useless Agent parameters.
 

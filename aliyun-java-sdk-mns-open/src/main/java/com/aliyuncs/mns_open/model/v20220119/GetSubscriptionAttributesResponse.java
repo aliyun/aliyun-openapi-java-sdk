@@ -104,8 +104,6 @@ public class GetSubscriptionAttributesResponse extends AcsResponse {
 
 		private String notifyContentFormat;
 
-		private String subscriptionURL;
-
 		public String getSubscriptionName() {
 			return this.subscriptionName;
 		}
@@ -176,14 +174,6 @@ public class GetSubscriptionAttributesResponse extends AcsResponse {
 
 		public void setNotifyContentFormat(String notifyContentFormat) {
 			this.notifyContentFormat = notifyContentFormat;
-		}
-
-		public String getSubscriptionURL() {
-			return this.subscriptionURL;
-		}
-
-		public void setSubscriptionURL(String subscriptionURL) {
-			this.subscriptionURL = subscriptionURL;
 		}
 	}
 

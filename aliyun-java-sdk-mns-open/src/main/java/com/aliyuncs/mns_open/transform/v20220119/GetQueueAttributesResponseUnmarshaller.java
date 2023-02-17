@@ -30,8 +30,6 @@ public class GetQueueAttributesResponseUnmarshaller {
 		getQueueAttributesResponse.setSuccess(_ctx.booleanValue("GetQueueAttributesResponse.Success"));
 
 		Data data = new Data();
-		data.setQueueUrl(_ctx.stringValue("GetQueueAttributesResponse.Data.QueueUrl"));
-		data.setQueueInternalUrl(_ctx.stringValue("GetQueueAttributesResponse.Data.QueueInternalUrl"));
 		data.setQueueName(_ctx.stringValue("GetQueueAttributesResponse.Data.QueueName"));
 		data.setCreateTime(_ctx.longValue("GetQueueAttributesResponse.Data.CreateTime"));
 		data.setLastModifyTime(_ctx.longValue("GetQueueAttributesResponse.Data.LastModifyTime"));

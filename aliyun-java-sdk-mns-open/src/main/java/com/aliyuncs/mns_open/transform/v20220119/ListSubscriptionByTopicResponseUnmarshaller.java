@@ -52,7 +52,6 @@ public class ListSubscriptionByTopicResponseUnmarshaller {
 			pageDataItem.setLastModifyTime(_ctx.longValue("ListSubscriptionByTopicResponse.Data.PageData["+ i +"].LastModifyTime"));
 			pageDataItem.setNotifyStrategy(_ctx.stringValue("ListSubscriptionByTopicResponse.Data.PageData["+ i +"].NotifyStrategy"));
 			pageDataItem.setNotifyContentFormat(_ctx.stringValue("ListSubscriptionByTopicResponse.Data.PageData["+ i +"].NotifyContentFormat"));
-			pageDataItem.setSubscriptionURL(_ctx.stringValue("ListSubscriptionByTopicResponse.Data.PageData["+ i +"].SubscriptionURL"));
 
 			pageData.add(pageDataItem);
 		}

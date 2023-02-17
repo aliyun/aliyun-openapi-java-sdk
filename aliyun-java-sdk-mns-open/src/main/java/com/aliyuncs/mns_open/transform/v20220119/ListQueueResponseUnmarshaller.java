@@ -43,8 +43,6 @@ public class ListQueueResponseUnmarshaller {
 		List<PageDataItem> pageData = new ArrayList<PageDataItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListQueueResponse.Data.PageData.Length"); i++) {
 			PageDataItem pageDataItem = new PageDataItem();
-			pageDataItem.setQueueUrl(_ctx.stringValue("ListQueueResponse.Data.PageData["+ i +"].QueueUrl"));
-			pageDataItem.setQueueInternalUrl(_ctx.stringValue("ListQueueResponse.Data.PageData["+ i +"].QueueInternalUrl"));
 			pageDataItem.setQueueName(_ctx.stringValue("ListQueueResponse.Data.PageData["+ i +"].QueueName"));
 			pageDataItem.setCreateTime(_ctx.longValue("ListQueueResponse.Data.PageData["+ i +"].CreateTime"));
 			pageDataItem.setLastModifyTime(_ctx.longValue("ListQueueResponse.Data.PageData["+ i +"].LastModifyTime"));
