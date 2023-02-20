@@ -39,7 +39,7 @@ public class RecoverVirtualBorderRouterRequest extends RpcAcsRequest<RecoverVirt
 
 	private Long ownerId;
 	public RecoverVirtualBorderRouterRequest() {
-		super("Ecs", "2014-05-26", "RecoverVirtualBorderRouter", "ecs");
+		super("Ecs", "2014-05-26", "RecoverVirtualBorderRouter");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -72,7 +72,7 @@ public class RevokeSecurityGroupRequest extends RpcAcsRequest<RevokeSecurityGrou
 
 	private List<String> securityGroupRuleIds;
 	public RevokeSecurityGroupRequest() {
-		super("Ecs", "2014-05-26", "RevokeSecurityGroup", "ecs");
+		super("Ecs", "2014-05-26", "RevokeSecurityGroup");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

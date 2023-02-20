@@ -1,3 +1,12 @@
+2023-02-20 Version: 4.24.59
+- Edit error code.
+- Change timeout.
+- Add ErrorCode ServiceUnavailable for DescribeLaunchTemplates.
+- Add an error code to indicate insufficient quota in the zone.
+- Add specific error code for some unknown error.
+- Delete unused error code.
+- Support AutoRelaseTIme.
+
 2023-02-13 Version: 4.24.58
 - Support TagPolicy Verify NoTag.
 - Fixed bugs for DescribeDemands error code.

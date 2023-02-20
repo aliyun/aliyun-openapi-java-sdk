@@ -48,6 +48,8 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 
 	private String launchConfigurationPassword;
 
+	private String launchConfigurationAutoReleaseTime;
+
 	private String payAsYouGoAllocationStrategy;
 
 	private String defaultTargetCapacityType;
@@ -144,7 +146,7 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 
 	private String autoProvisioningGroupName;
 	public CreateAutoProvisioningGroupRequest() {
-		super("Ecs", "2014-05-26", "CreateAutoProvisioningGroup", "ecs");
+		super("Ecs", "2014-05-26", "CreateAutoProvisioningGroup");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -285,6 +287,17 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 		this.launchConfigurationPassword = launchConfigurationPassword;
 		if(launchConfigurationPassword != null){
 			putQueryParameter("LaunchConfiguration.Password", launchConfigurationPassword);
+		}
+	}
+
+	public String getLaunchConfigurationAutoReleaseTime() {
+		return this.launchConfigurationAutoReleaseTime;
+	}
+
+	public void setLaunchConfigurationAutoReleaseTime(String launchConfigurationAutoReleaseTime) {
+		this.launchConfigurationAutoReleaseTime = launchConfigurationAutoReleaseTime;
+		if(launchConfigurationAutoReleaseTime != null){
+			putQueryParameter("LaunchConfiguration.AutoReleaseTime", launchConfigurationAutoReleaseTime);
 		}
 	}
 

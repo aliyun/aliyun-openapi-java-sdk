@@ -108,7 +108,7 @@ public class DescribeInstanceTypesRequest extends RpcAcsRequest<DescribeInstance
 
 	private Long minimumLocalStorageCapacity;
 	public DescribeInstanceTypesRequest() {
-		super("Ecs", "2014-05-26", "DescribeInstanceTypes", "ecs");
+		super("Ecs", "2014-05-26", "DescribeInstanceTypes");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

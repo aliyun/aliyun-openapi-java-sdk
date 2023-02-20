@@ -37,7 +37,7 @@ public class ModifyManagedInstanceRequest extends RpcAcsRequest<ModifyManagedIns
 
 	private String instanceName;
 	public ModifyManagedInstanceRequest() {
-		super("Ecs", "2014-05-26", "ModifyManagedInstance", "ecs");
+		super("Ecs", "2014-05-26", "ModifyManagedInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

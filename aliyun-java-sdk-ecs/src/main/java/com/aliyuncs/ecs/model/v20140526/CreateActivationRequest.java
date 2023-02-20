@@ -46,7 +46,7 @@ public class CreateActivationRequest extends RpcAcsRequest<CreateActivationRespo
 
 	private String ipAddressRange;
 	public CreateActivationRequest() {
-		super("Ecs", "2014-05-26", "CreateActivation", "ecs");
+		super("Ecs", "2014-05-26", "CreateActivation");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

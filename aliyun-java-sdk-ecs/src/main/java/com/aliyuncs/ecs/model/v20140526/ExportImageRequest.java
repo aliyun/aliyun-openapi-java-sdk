@@ -41,7 +41,7 @@ public class ExportImageRequest extends RpcAcsRequest<ExportImageResponse> {
 
 	private String oSSPrefix;
 	public ExportImageRequest() {
-		super("Ecs", "2014-05-26", "ExportImage", "ecs");
+		super("Ecs", "2014-05-26", "ExportImage");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

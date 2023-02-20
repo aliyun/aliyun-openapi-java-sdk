@@ -66,7 +66,7 @@ public class CreateImagePipelineRequest extends RpcAcsRequest<CreateImagePipelin
 
 	private String buildContent;
 	public CreateImagePipelineRequest() {
-		super("Ecs", "2014-05-26", "CreateImagePipeline", "ecs");
+		super("Ecs", "2014-05-26", "CreateImagePipeline");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

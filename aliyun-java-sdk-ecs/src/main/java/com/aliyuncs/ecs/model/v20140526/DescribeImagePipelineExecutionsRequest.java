@@ -46,7 +46,7 @@ public class DescribeImagePipelineExecutionsRequest extends RpcAcsRequest<Descri
 
 	private String status;
 	public DescribeImagePipelineExecutionsRequest() {
-		super("Ecs", "2014-05-26", "DescribeImagePipelineExecutions", "ecs");
+		super("Ecs", "2014-05-26", "DescribeImagePipelineExecutions");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

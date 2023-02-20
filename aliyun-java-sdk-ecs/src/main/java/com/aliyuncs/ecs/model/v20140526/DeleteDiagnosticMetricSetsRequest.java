@@ -28,7 +28,7 @@ public class DeleteDiagnosticMetricSetsRequest extends RpcAcsRequest<DeleteDiagn
 
 	private List<String> metricSetIdss;
 	public DeleteDiagnosticMetricSetsRequest() {
-		super("Ecs", "2014-05-26", "DeleteDiagnosticMetricSets", "ecs");
+		super("Ecs", "2014-05-26", "DeleteDiagnosticMetricSets");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

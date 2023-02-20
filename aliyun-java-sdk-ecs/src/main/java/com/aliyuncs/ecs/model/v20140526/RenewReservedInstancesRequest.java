@@ -46,7 +46,7 @@ public class RenewReservedInstancesRequest extends RpcAcsRequest<RenewReservedIn
 
 	private Boolean autoRenew;
 	public RenewReservedInstancesRequest() {
-		super("Ecs", "2014-05-26", "RenewReservedInstances", "ecs");
+		super("Ecs", "2014-05-26", "RenewReservedInstances");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

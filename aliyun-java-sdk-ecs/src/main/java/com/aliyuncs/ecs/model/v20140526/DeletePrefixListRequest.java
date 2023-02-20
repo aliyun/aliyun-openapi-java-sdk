@@ -35,7 +35,7 @@ public class DeletePrefixListRequest extends RpcAcsRequest<DeletePrefixListRespo
 
 	private Long ownerId;
 	public DeletePrefixListRequest() {
-		super("Ecs", "2014-05-26", "DeletePrefixList", "ecs");
+		super("Ecs", "2014-05-26", "DeletePrefixList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

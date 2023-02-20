@@ -36,7 +36,7 @@ public class DescribeReservedInstanceAutoRenewAttributeRequest extends RpcAcsReq
 
 	private List<String> reservedInstanceIds;
 	public DescribeReservedInstanceAutoRenewAttributeRequest() {
-		super("Ecs", "2014-05-26", "DescribeReservedInstanceAutoRenewAttribute", "ecs");
+		super("Ecs", "2014-05-26", "DescribeReservedInstanceAutoRenewAttribute");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

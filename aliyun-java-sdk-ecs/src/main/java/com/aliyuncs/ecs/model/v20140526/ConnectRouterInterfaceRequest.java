@@ -33,7 +33,7 @@ public class ConnectRouterInterfaceRequest extends RpcAcsRequest<ConnectRouterIn
 
 	private String routerInterfaceId;
 	public ConnectRouterInterfaceRequest() {
-		super("Ecs", "2014-05-26", "ConnectRouterInterface", "ecs");
+		super("Ecs", "2014-05-26", "ConnectRouterInterface");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

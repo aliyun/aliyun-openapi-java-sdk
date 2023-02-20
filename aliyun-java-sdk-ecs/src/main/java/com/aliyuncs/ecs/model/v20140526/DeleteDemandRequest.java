@@ -39,7 +39,7 @@ public class DeleteDemandRequest extends RpcAcsRequest<DeleteDemandResponse> {
 
 	private String demandId;
 	public DeleteDemandRequest() {
-		super("Ecs", "2014-05-26", "DeleteDemand", "ecs");
+		super("Ecs", "2014-05-26", "DeleteDemand");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
