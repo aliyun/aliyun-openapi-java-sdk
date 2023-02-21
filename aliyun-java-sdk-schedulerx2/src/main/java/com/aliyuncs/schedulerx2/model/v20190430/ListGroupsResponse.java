@@ -99,6 +99,8 @@ public class ListGroupsResponse extends AcsResponse {
 
 			private String groupId;
 
+			private String xattrs;
+
 			public Long getAppGroupId() {
 				return this.appGroupId;
 			}
@@ -137,6 +139,14 @@ public class ListGroupsResponse extends AcsResponse {
 
 			public void setGroupId(String groupId) {
 				this.groupId = groupId;
+			}
+
+			public String getXattrs() {
+				return this.xattrs;
+			}
+
+			public void setXattrs(String xattrs) {
+				this.xattrs = xattrs;
 			}
 		}
 	}

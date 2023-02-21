@@ -70,6 +70,8 @@ public class UpdateJobRequest extends RpcAcsRequest<UpdateJobResponse> {
 
 	private Integer pageSize;
 
+	private String taskDispatchMode;
+
 	private String calendar;
 
 	private Boolean failEnable;
@@ -342,6 +344,17 @@ public class UpdateJobRequest extends RpcAcsRequest<UpdateJobResponse> {
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putBodyParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getTaskDispatchMode() {
+		return this.taskDispatchMode;
+	}
+
+	public void setTaskDispatchMode(String taskDispatchMode) {
+		this.taskDispatchMode = taskDispatchMode;
+		if(taskDispatchMode != null){
+			putBodyParameter("TaskDispatchMode", taskDispatchMode);
 		}
 	}
 

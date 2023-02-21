@@ -1,3 +1,9 @@
+2023-02-21 Version: 1.1.7
+- Update AppGroup Hide xattrs.
+- Get AppGroup Hide xattrs.
+- Create AppGroup HIde xattrs.
+- Get AppGroup Hide appGroupId.
+
 2023-02-10 Version: 1.1.6
 - Support Create Workflow.
 - Support Update Workflow DAG.

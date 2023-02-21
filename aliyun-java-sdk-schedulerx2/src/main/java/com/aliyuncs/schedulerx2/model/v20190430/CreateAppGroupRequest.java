@@ -42,9 +42,13 @@ public class CreateAppGroupRequest extends RpcAcsRequest<CreateAppGroupResponse>
 
 	private String groupId;
 
+	private Integer appType;
+
 	private String monitorConfigJson;
 
 	private String namespace;
+
+	private Boolean enableLog;
 
 	private String appKey;
 	public CreateAppGroupRequest() {
@@ -145,6 +149,17 @@ public class CreateAppGroupRequest extends RpcAcsRequest<CreateAppGroupResponse>
 		}
 	}
 
+	public Integer getAppType() {
+		return this.appType;
+	}
+
+	public void setAppType(Integer appType) {
+		this.appType = appType;
+		if(appType != null){
+			putQueryParameter("AppType", appType.toString());
+		}
+	}
+
 	public String getMonitorConfigJson() {
 		return this.monitorConfigJson;
 	}
@@ -164,6 +179,17 @@ public class CreateAppGroupRequest extends RpcAcsRequest<CreateAppGroupResponse>
 		this.namespace = namespace;
 		if(namespace != null){
 			putQueryParameter("Namespace", namespace);
+		}
+	}
+
+	public Boolean getEnableLog() {
+		return this.enableLog;
+	}
+
+	public void setEnableLog(Boolean enableLog) {
+		this.enableLog = enableLog;
+		if(enableLog != null){
+			putQueryParameter("EnableLog", enableLog.toString());
 		}
 	}
 
