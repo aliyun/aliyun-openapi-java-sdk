@@ -39,7 +39,7 @@ public class GetOcTaxAbnormalResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<String> data;
+	private List<DataItem> data;
 
 	public String getCode() {
 		return this.code;
@@ -97,12 +97,125 @@ public class GetOcTaxAbnormalResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<String> getData() {
+	public List<DataItem> getData() {
 		return this.data;
 	}
 
-	public void setData(List<String> data) {
+	public void setData(List<DataItem> data) {
 		this.data = data;
+	}
+
+	public static class DataItem {
+
+		private String entName;
+
+		private String legalName;
+
+		private String cardNum;
+
+		private String cardType;
+
+		private String judgeDate;
+
+		private String judgeDepartment;
+
+		private String judgeReason;
+
+		private String overdueType;
+
+		private String overdueAmount;
+
+		private String status;
+
+		private String taxpayerNum;
+
+		public String getEntName() {
+			return this.entName;
+		}
+
+		public void setEntName(String entName) {
+			this.entName = entName;
+		}
+
+		public String getLegalName() {
+			return this.legalName;
+		}
+
+		public void setLegalName(String legalName) {
+			this.legalName = legalName;
+		}
+
+		public String getCardNum() {
+			return this.cardNum;
+		}
+
+		public void setCardNum(String cardNum) {
+			this.cardNum = cardNum;
+		}
+
+		public String getCardType() {
+			return this.cardType;
+		}
+
+		public void setCardType(String cardType) {
+			this.cardType = cardType;
+		}
+
+		public String getJudgeDate() {
+			return this.judgeDate;
+		}
+
+		public void setJudgeDate(String judgeDate) {
+			this.judgeDate = judgeDate;
+		}
+
+		public String getJudgeDepartment() {
+			return this.judgeDepartment;
+		}
+
+		public void setJudgeDepartment(String judgeDepartment) {
+			this.judgeDepartment = judgeDepartment;
+		}
+
+		public String getJudgeReason() {
+			return this.judgeReason;
+		}
+
+		public void setJudgeReason(String judgeReason) {
+			this.judgeReason = judgeReason;
+		}
+
+		public String getOverdueType() {
+			return this.overdueType;
+		}
+
+		public void setOverdueType(String overdueType) {
+			this.overdueType = overdueType;
+		}
+
+		public String getOverdueAmount() {
+			return this.overdueAmount;
+		}
+
+		public void setOverdueAmount(String overdueAmount) {
+			this.overdueAmount = overdueAmount;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getTaxpayerNum() {
+			return this.taxpayerNum;
+		}
+
+		public void setTaxpayerNum(String taxpayerNum) {
+			this.taxpayerNum = taxpayerNum;
+		}
 	}
 
 	@Override

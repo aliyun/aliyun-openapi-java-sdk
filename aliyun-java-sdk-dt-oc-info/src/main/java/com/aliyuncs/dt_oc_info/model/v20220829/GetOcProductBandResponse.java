@@ -39,7 +39,7 @@ public class GetOcProductBandResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<String> data;
+	private List<DataItem> data;
 
 	public String getCode() {
 		return this.code;
@@ -97,12 +97,95 @@ public class GetOcProductBandResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<String> getData() {
+	public List<DataItem> getData() {
 		return this.data;
 	}
 
-	public void setData(List<String> data) {
+	public void setData(List<DataItem> data) {
 		this.data = data;
+	}
+
+	public static class DataItem {
+
+		private String entName;
+
+		private String productName;
+
+		private String productLogo;
+
+		private String productIntroduction;
+
+		private String brandIntroduction;
+
+		private String productWebsite;
+
+		private String productTag;
+
+		private String device;
+
+		public String getEntName() {
+			return this.entName;
+		}
+
+		public void setEntName(String entName) {
+			this.entName = entName;
+		}
+
+		public String getProductName() {
+			return this.productName;
+		}
+
+		public void setProductName(String productName) {
+			this.productName = productName;
+		}
+
+		public String getProductLogo() {
+			return this.productLogo;
+		}
+
+		public void setProductLogo(String productLogo) {
+			this.productLogo = productLogo;
+		}
+
+		public String getProductIntroduction() {
+			return this.productIntroduction;
+		}
+
+		public void setProductIntroduction(String productIntroduction) {
+			this.productIntroduction = productIntroduction;
+		}
+
+		public String getBrandIntroduction() {
+			return this.brandIntroduction;
+		}
+
+		public void setBrandIntroduction(String brandIntroduction) {
+			this.brandIntroduction = brandIntroduction;
+		}
+
+		public String getProductWebsite() {
+			return this.productWebsite;
+		}
+
+		public void setProductWebsite(String productWebsite) {
+			this.productWebsite = productWebsite;
+		}
+
+		public String getProductTag() {
+			return this.productTag;
+		}
+
+		public void setProductTag(String productTag) {
+			this.productTag = productTag;
+		}
+
+		public String getDevice() {
+			return this.device;
+		}
+
+		public void setDevice(String device) {
+			this.device = device;
+		}
 	}
 
 	@Override

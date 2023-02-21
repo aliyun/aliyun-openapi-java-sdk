@@ -39,7 +39,7 @@ public class GetOcCoreTeamsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<String> data;
+	private List<DataItem> data;
 
 	public String getCode() {
 		return this.code;
@@ -97,12 +97,55 @@ public class GetOcCoreTeamsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<String> getData() {
+	public List<DataItem> getData() {
 		return this.data;
 	}
 
-	public void setData(List<String> data) {
+	public void setData(List<DataItem> data) {
 		this.data = data;
+	}
+
+	public static class DataItem {
+
+		private String entName;
+
+		private String memberName;
+
+		private String memberPosition;
+
+		private String memberIntroduction;
+
+		public String getEntName() {
+			return this.entName;
+		}
+
+		public void setEntName(String entName) {
+			this.entName = entName;
+		}
+
+		public String getMemberName() {
+			return this.memberName;
+		}
+
+		public void setMemberName(String memberName) {
+			this.memberName = memberName;
+		}
+
+		public String getMemberPosition() {
+			return this.memberPosition;
+		}
+
+		public void setMemberPosition(String memberPosition) {
+			this.memberPosition = memberPosition;
+		}
+
+		public String getMemberIntroduction() {
+			return this.memberIntroduction;
+		}
+
+		public void setMemberIntroduction(String memberIntroduction) {
+			this.memberIntroduction = memberIntroduction;
+		}
 	}
 
 	@Override

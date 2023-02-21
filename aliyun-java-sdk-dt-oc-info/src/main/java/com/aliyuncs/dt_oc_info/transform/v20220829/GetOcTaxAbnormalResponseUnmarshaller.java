@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.dt_oc_info.model.v20220829.GetOcTaxAbnormalResponse;
+import com.aliyuncs.dt_oc_info.model.v20220829.GetOcTaxAbnormalResponse.DataItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -33,9 +34,22 @@ public class GetOcTaxAbnormalResponseUnmarshaller {
 		getOcTaxAbnormalResponse.setPageIndex(_ctx.integerValue("GetOcTaxAbnormalResponse.PageIndex"));
 		getOcTaxAbnormalResponse.setPageNum(_ctx.integerValue("GetOcTaxAbnormalResponse.PageNum"));
 
-		List<String> data = new ArrayList<String>();
+		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetOcTaxAbnormalResponse.Data.Length"); i++) {
-			data.add(_ctx.stringValue("GetOcTaxAbnormalResponse.Data["+ i +"]"));
+			DataItem dataItem = new DataItem();
+			dataItem.setEntName(_ctx.stringValue("GetOcTaxAbnormalResponse.Data["+ i +"].EntName"));
+			dataItem.setLegalName(_ctx.stringValue("GetOcTaxAbnormalResponse.Data["+ i +"].LegalName"));
+			dataItem.setCardNum(_ctx.stringValue("GetOcTaxAbnormalResponse.Data["+ i +"].CardNum"));
+			dataItem.setCardType(_ctx.stringValue("GetOcTaxAbnormalResponse.Data["+ i +"].CardType"));
+			dataItem.setJudgeDate(_ctx.stringValue("GetOcTaxAbnormalResponse.Data["+ i +"].JudgeDate"));
+			dataItem.setJudgeDepartment(_ctx.stringValue("GetOcTaxAbnormalResponse.Data["+ i +"].JudgeDepartment"));
+			dataItem.setJudgeReason(_ctx.stringValue("GetOcTaxAbnormalResponse.Data["+ i +"].JudgeReason"));
+			dataItem.setOverdueType(_ctx.stringValue("GetOcTaxAbnormalResponse.Data["+ i +"].OverdueType"));
+			dataItem.setOverdueAmount(_ctx.stringValue("GetOcTaxAbnormalResponse.Data["+ i +"].OverdueAmount"));
+			dataItem.setStatus(_ctx.stringValue("GetOcTaxAbnormalResponse.Data["+ i +"].Status"));
+			dataItem.setTaxpayerNum(_ctx.stringValue("GetOcTaxAbnormalResponse.Data["+ i +"].TaxpayerNum"));
+
+			data.add(dataItem);
 		}
 		getOcTaxAbnormalResponse.setData(data);
 	 

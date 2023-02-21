@@ -39,7 +39,7 @@ public class GetOcIpDomainResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<String> data;
+	private List<DataItem> data;
 
 	public String getCode() {
 		return this.code;
@@ -97,12 +97,75 @@ public class GetOcIpDomainResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<String> getData() {
+	public List<DataItem> getData() {
 		return this.data;
 	}
 
-	public void setData(List<String> data) {
+	public void setData(List<DataItem> data) {
 		this.data = data;
+	}
+
+	public static class DataItem {
+
+		private String entName;
+
+		private String number;
+
+		private String domain;
+
+		private String siteName;
+
+		private String homeUrl;
+
+		private String checkDate;
+
+		public String getEntName() {
+			return this.entName;
+		}
+
+		public void setEntName(String entName) {
+			this.entName = entName;
+		}
+
+		public String getNumber() {
+			return this.number;
+		}
+
+		public void setNumber(String number) {
+			this.number = number;
+		}
+
+		public String getDomain() {
+			return this.domain;
+		}
+
+		public void setDomain(String domain) {
+			this.domain = domain;
+		}
+
+		public String getSiteName() {
+			return this.siteName;
+		}
+
+		public void setSiteName(String siteName) {
+			this.siteName = siteName;
+		}
+
+		public String getHomeUrl() {
+			return this.homeUrl;
+		}
+
+		public void setHomeUrl(String homeUrl) {
+			this.homeUrl = homeUrl;
+		}
+
+		public String getCheckDate() {
+			return this.checkDate;
+		}
+
+		public void setCheckDate(String checkDate) {
+			this.checkDate = checkDate;
+		}
 	}
 
 	@Override

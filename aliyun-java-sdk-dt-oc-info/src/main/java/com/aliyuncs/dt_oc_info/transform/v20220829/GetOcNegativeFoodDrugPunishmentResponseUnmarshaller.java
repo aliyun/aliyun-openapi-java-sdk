@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.dt_oc_info.model.v20220829.GetOcNegativeFoodDrugPunishmentResponse;
+import com.aliyuncs.dt_oc_info.model.v20220829.GetOcNegativeFoodDrugPunishmentResponse.DataItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -33,9 +34,19 @@ public class GetOcNegativeFoodDrugPunishmentResponseUnmarshaller {
 		getOcNegativeFoodDrugPunishmentResponse.setPageIndex(_ctx.integerValue("GetOcNegativeFoodDrugPunishmentResponse.PageIndex"));
 		getOcNegativeFoodDrugPunishmentResponse.setPageNum(_ctx.integerValue("GetOcNegativeFoodDrugPunishmentResponse.PageNum"));
 
-		List<String> data = new ArrayList<String>();
+		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetOcNegativeFoodDrugPunishmentResponse.Data.Length"); i++) {
-			data.add(_ctx.stringValue("GetOcNegativeFoodDrugPunishmentResponse.Data["+ i +"]"));
+			DataItem dataItem = new DataItem();
+			dataItem.setEntName(_ctx.stringValue("GetOcNegativeFoodDrugPunishmentResponse.Data["+ i +"].EntName"));
+			dataItem.setPunishNum(_ctx.stringValue("GetOcNegativeFoodDrugPunishmentResponse.Data["+ i +"].PunishNum"));
+			dataItem.setIllegalType(_ctx.stringValue("GetOcNegativeFoodDrugPunishmentResponse.Data["+ i +"].IllegalType"));
+			dataItem.setPunishResult(_ctx.stringValue("GetOcNegativeFoodDrugPunishmentResponse.Data["+ i +"].PunishResult"));
+			dataItem.setDepartment(_ctx.stringValue("GetOcNegativeFoodDrugPunishmentResponse.Data["+ i +"].Department"));
+			dataItem.setPunishDate(_ctx.stringValue("GetOcNegativeFoodDrugPunishmentResponse.Data["+ i +"].PunishDate"));
+			dataItem.setLawBasis(_ctx.stringValue("GetOcNegativeFoodDrugPunishmentResponse.Data["+ i +"].LawBasis"));
+			dataItem.setPublicDate(_ctx.stringValue("GetOcNegativeFoodDrugPunishmentResponse.Data["+ i +"].PublicDate"));
+
+			data.add(dataItem);
 		}
 		getOcNegativeFoodDrugPunishmentResponse.setData(data);
 	 

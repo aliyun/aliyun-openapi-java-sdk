@@ -39,7 +39,7 @@ public class GetOcNegativeCustomsPunishmentResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<String> data;
+	private List<DataItem> data;
 
 	public String getCode() {
 		return this.code;
@@ -97,12 +97,95 @@ public class GetOcNegativeCustomsPunishmentResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<String> getData() {
+	public List<DataItem> getData() {
 		return this.data;
 	}
 
-	public void setData(List<String> data) {
+	public void setData(List<DataItem> data) {
 		this.data = data;
+	}
+
+	public static class DataItem {
+
+		private String basis;
+
+		private String title;
+
+		private String punishType;
+
+		private String legalName;
+
+		private String customs;
+
+		private String punishDate;
+
+		private String customsNo;
+
+		private String caseNo;
+
+		public String getBasis() {
+			return this.basis;
+		}
+
+		public void setBasis(String basis) {
+			this.basis = basis;
+		}
+
+		public String getTitle() {
+			return this.title;
+		}
+
+		public void setTitle(String title) {
+			this.title = title;
+		}
+
+		public String getPunishType() {
+			return this.punishType;
+		}
+
+		public void setPunishType(String punishType) {
+			this.punishType = punishType;
+		}
+
+		public String getLegalName() {
+			return this.legalName;
+		}
+
+		public void setLegalName(String legalName) {
+			this.legalName = legalName;
+		}
+
+		public String getCustoms() {
+			return this.customs;
+		}
+
+		public void setCustoms(String customs) {
+			this.customs = customs;
+		}
+
+		public String getPunishDate() {
+			return this.punishDate;
+		}
+
+		public void setPunishDate(String punishDate) {
+			this.punishDate = punishDate;
+		}
+
+		public String getCustomsNo() {
+			return this.customsNo;
+		}
+
+		public void setCustomsNo(String customsNo) {
+			this.customsNo = customsNo;
+		}
+
+		public String getCaseNo() {
+			return this.caseNo;
+		}
+
+		public void setCaseNo(String caseNo) {
+			this.caseNo = caseNo;
+		}
 	}
 
 	@Override

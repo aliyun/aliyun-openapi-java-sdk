@@ -39,7 +39,7 @@ public class GetOcNegativeEnvironmentPunishmentResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<String> data;
+	private List<DataItem> data;
 
 	public String getCode() {
 		return this.code;
@@ -97,12 +97,105 @@ public class GetOcNegativeEnvironmentPunishmentResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<String> getData() {
+	public List<DataItem> getData() {
 		return this.data;
 	}
 
-	public void setData(List<String> data) {
+	public void setData(List<DataItem> data) {
 		this.data = data;
+	}
+
+	public static class DataItem {
+
+		private String entName;
+
+		private String punishNum;
+
+		private String punishLaw;
+
+		private String punishBasis;
+
+		private String punishRes;
+
+		private String department;
+
+		private String punishDate;
+
+		private String execStatus;
+
+		private String punishContent;
+
+		public String getEntName() {
+			return this.entName;
+		}
+
+		public void setEntName(String entName) {
+			this.entName = entName;
+		}
+
+		public String getPunishNum() {
+			return this.punishNum;
+		}
+
+		public void setPunishNum(String punishNum) {
+			this.punishNum = punishNum;
+		}
+
+		public String getPunishLaw() {
+			return this.punishLaw;
+		}
+
+		public void setPunishLaw(String punishLaw) {
+			this.punishLaw = punishLaw;
+		}
+
+		public String getPunishBasis() {
+			return this.punishBasis;
+		}
+
+		public void setPunishBasis(String punishBasis) {
+			this.punishBasis = punishBasis;
+		}
+
+		public String getPunishRes() {
+			return this.punishRes;
+		}
+
+		public void setPunishRes(String punishRes) {
+			this.punishRes = punishRes;
+		}
+
+		public String getDepartment() {
+			return this.department;
+		}
+
+		public void setDepartment(String department) {
+			this.department = department;
+		}
+
+		public String getPunishDate() {
+			return this.punishDate;
+		}
+
+		public void setPunishDate(String punishDate) {
+			this.punishDate = punishDate;
+		}
+
+		public String getExecStatus() {
+			return this.execStatus;
+		}
+
+		public void setExecStatus(String execStatus) {
+			this.execStatus = execStatus;
+		}
+
+		public String getPunishContent() {
+			return this.punishContent;
+		}
+
+		public void setPunishContent(String punishContent) {
+			this.punishContent = punishContent;
+		}
 	}
 
 	@Override

@@ -15,15 +15,16 @@
 package com.aliyuncs.dt_oc_info.model.v20220829;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.dt_oc_info.transform.v20220829.GetOcFuzzSearchResponseUnmarshaller;
+import com.aliyuncs.dt_oc_info.transform.v20220829.GetQccSearchCertificationResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetOcFuzzSearchResponse extends AcsResponse {
+public class GetQccSearchCertificationResponse extends AcsResponse {
 
 	private String code;
 
@@ -39,7 +40,7 @@ public class GetOcFuzzSearchResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<DataItem> data;
+	private List<Map<Object,Object>> data;
 
 	public String getCode() {
 		return this.code;
@@ -97,30 +98,17 @@ public class GetOcFuzzSearchResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<DataItem> getData() {
+	public List<Map<Object,Object>> getData() {
 		return this.data;
 	}
 
-	public void setData(List<DataItem> data) {
+	public void setData(List<Map<Object,Object>> data) {
 		this.data = data;
 	}
 
-	public static class DataItem {
-
-		private String entName;
-
-		public String getEntName() {
-			return this.entName;
-		}
-
-		public void setEntName(String entName) {
-			this.entName = entName;
-		}
-	}
-
 	@Override
-	public GetOcFuzzSearchResponse getInstance(UnmarshallerContext context) {
-		return	GetOcFuzzSearchResponseUnmarshaller.unmarshall(this, context);
+	public GetQccSearchCertificationResponse getInstance(UnmarshallerContext context) {
+		return	GetQccSearchCertificationResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.dt_oc_info.model.v20220829.GetOcFinancingResponse;
+import com.aliyuncs.dt_oc_info.model.v20220829.GetOcFinancingResponse.DataItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -33,9 +34,16 @@ public class GetOcFinancingResponseUnmarshaller {
 		getOcFinancingResponse.setPageIndex(_ctx.integerValue("GetOcFinancingResponse.PageIndex"));
 		getOcFinancingResponse.setPageNum(_ctx.integerValue("GetOcFinancingResponse.PageNum"));
 
-		List<String> data = new ArrayList<String>();
+		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetOcFinancingResponse.Data.Length"); i++) {
-			data.add(_ctx.stringValue("GetOcFinancingResponse.Data["+ i +"]"));
+			DataItem dataItem = new DataItem();
+			dataItem.setEntName(_ctx.stringValue("GetOcFinancingResponse.Data["+ i +"].EntName"));
+			dataItem.setFinDate(_ctx.stringValue("GetOcFinancingResponse.Data["+ i +"].FinDate"));
+			dataItem.setFinTurn(_ctx.stringValue("GetOcFinancingResponse.Data["+ i +"].FinTurn"));
+			dataItem.setFinAmount(_ctx.stringValue("GetOcFinancingResponse.Data["+ i +"].FinAmount"));
+			dataItem.setInvestors(_ctx.stringValue("GetOcFinancingResponse.Data["+ i +"].Investors"));
+
+			data.add(dataItem);
 		}
 		getOcFinancingResponse.setData(data);
 	 

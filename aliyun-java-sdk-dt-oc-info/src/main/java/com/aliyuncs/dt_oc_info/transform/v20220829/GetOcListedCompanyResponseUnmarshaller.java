@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.dt_oc_info.model.v20220829.GetOcListedCompanyResponse;
+import com.aliyuncs.dt_oc_info.model.v20220829.GetOcListedCompanyResponse.DataItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -33,9 +34,20 @@ public class GetOcListedCompanyResponseUnmarshaller {
 		getOcListedCompanyResponse.setPageIndex(_ctx.integerValue("GetOcListedCompanyResponse.PageIndex"));
 		getOcListedCompanyResponse.setPageNum(_ctx.integerValue("GetOcListedCompanyResponse.PageNum"));
 
-		List<String> data = new ArrayList<String>();
+		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetOcListedCompanyResponse.Data.Length"); i++) {
-			data.add(_ctx.stringValue("GetOcListedCompanyResponse.Data["+ i +"]"));
+			DataItem dataItem = new DataItem();
+			dataItem.setEntName(_ctx.stringValue("GetOcListedCompanyResponse.Data["+ i +"].EntName"));
+			dataItem.setEntNameEng(_ctx.stringValue("GetOcListedCompanyResponse.Data["+ i +"].EntNameEng"));
+			dataItem.setSecuritiesCode(_ctx.stringValue("GetOcListedCompanyResponse.Data["+ i +"].SecuritiesCode"));
+			dataItem.setSecuritiesName(_ctx.stringValue("GetOcListedCompanyResponse.Data["+ i +"].SecuritiesName"));
+			dataItem.setSecuritiesMarket(_ctx.stringValue("GetOcListedCompanyResponse.Data["+ i +"].SecuritiesMarket"));
+			dataItem.setListDate(_ctx.stringValue("GetOcListedCompanyResponse.Data["+ i +"].ListDate"));
+			dataItem.setTotalShares(_ctx.stringValue("GetOcListedCompanyResponse.Data["+ i +"].TotalShares"));
+			dataItem.setTotalFlowShares(_ctx.stringValue("GetOcListedCompanyResponse.Data["+ i +"].TotalFlowShares"));
+			dataItem.setCirculationMarketValue(_ctx.stringValue("GetOcListedCompanyResponse.Data["+ i +"].CirculationMarketValue"));
+
+			data.add(dataItem);
 		}
 		getOcListedCompanyResponse.setData(data);
 	 

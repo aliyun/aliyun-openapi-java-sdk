@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.dt_oc_info.model.v20220829.GetOcOperationBiddingResponse;
+import com.aliyuncs.dt_oc_info.model.v20220829.GetOcOperationBiddingResponse.DataItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -33,9 +34,27 @@ public class GetOcOperationBiddingResponseUnmarshaller {
 		getOcOperationBiddingResponse.setPageIndex(_ctx.integerValue("GetOcOperationBiddingResponse.PageIndex"));
 		getOcOperationBiddingResponse.setPageNum(_ctx.integerValue("GetOcOperationBiddingResponse.PageNum"));
 
-		List<String> data = new ArrayList<String>();
+		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetOcOperationBiddingResponse.Data.Length"); i++) {
-			data.add(_ctx.stringValue("GetOcOperationBiddingResponse.Data["+ i +"]"));
+			DataItem dataItem = new DataItem();
+			dataItem.setEntName(_ctx.stringValue("GetOcOperationBiddingResponse.Data["+ i +"].EntName"));
+			dataItem.setBidTitle(_ctx.stringValue("GetOcOperationBiddingResponse.Data["+ i +"].BidTitle"));
+			dataItem.setBidType(_ctx.stringValue("GetOcOperationBiddingResponse.Data["+ i +"].BidType"));
+			dataItem.setRegionName(_ctx.stringValue("GetOcOperationBiddingResponse.Data["+ i +"].RegionName"));
+			dataItem.setBidIndustry(_ctx.stringValue("GetOcOperationBiddingResponse.Data["+ i +"].BidIndustry"));
+			dataItem.setPublicDate(_ctx.stringValue("GetOcOperationBiddingResponse.Data["+ i +"].PublicDate"));
+			dataItem.setProjectNum(_ctx.stringValue("GetOcOperationBiddingResponse.Data["+ i +"].ProjectNum"));
+			dataItem.setProjectName(_ctx.stringValue("GetOcOperationBiddingResponse.Data["+ i +"].ProjectName"));
+			dataItem.setProjectAmount(_ctx.stringValue("GetOcOperationBiddingResponse.Data["+ i +"].ProjectAmount"));
+			dataItem.setTenderEntName(_ctx.stringValue("GetOcOperationBiddingResponse.Data["+ i +"].TenderEntName"));
+			dataItem.setAgentEntName(_ctx.stringValue("GetOcOperationBiddingResponse.Data["+ i +"].AgentEntName"));
+			dataItem.setWinnerEntName(_ctx.stringValue("GetOcOperationBiddingResponse.Data["+ i +"].WinnerEntName"));
+			dataItem.setContent(_ctx.stringValue("GetOcOperationBiddingResponse.Data["+ i +"].Content"));
+			dataItem.setInfoType(_ctx.stringValue("GetOcOperationBiddingResponse.Data["+ i +"].InfoType"));
+			dataItem.setSubType(_ctx.stringValue("GetOcOperationBiddingResponse.Data["+ i +"].SubType"));
+			dataItem.setOpeningTime(_ctx.stringValue("GetOcOperationBiddingResponse.Data["+ i +"].OpeningTime"));
+
+			data.add(dataItem);
 		}
 		getOcOperationBiddingResponse.setData(data);
 	 

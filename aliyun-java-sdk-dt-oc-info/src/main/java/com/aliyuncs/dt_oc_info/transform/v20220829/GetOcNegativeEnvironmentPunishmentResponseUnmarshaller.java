@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.dt_oc_info.model.v20220829.GetOcNegativeEnvironmentPunishmentResponse;
+import com.aliyuncs.dt_oc_info.model.v20220829.GetOcNegativeEnvironmentPunishmentResponse.DataItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -33,9 +34,20 @@ public class GetOcNegativeEnvironmentPunishmentResponseUnmarshaller {
 		getOcNegativeEnvironmentPunishmentResponse.setPageIndex(_ctx.integerValue("GetOcNegativeEnvironmentPunishmentResponse.PageIndex"));
 		getOcNegativeEnvironmentPunishmentResponse.setPageNum(_ctx.integerValue("GetOcNegativeEnvironmentPunishmentResponse.PageNum"));
 
-		List<String> data = new ArrayList<String>();
+		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetOcNegativeEnvironmentPunishmentResponse.Data.Length"); i++) {
-			data.add(_ctx.stringValue("GetOcNegativeEnvironmentPunishmentResponse.Data["+ i +"]"));
+			DataItem dataItem = new DataItem();
+			dataItem.setEntName(_ctx.stringValue("GetOcNegativeEnvironmentPunishmentResponse.Data["+ i +"].EntName"));
+			dataItem.setPunishNum(_ctx.stringValue("GetOcNegativeEnvironmentPunishmentResponse.Data["+ i +"].PunishNum"));
+			dataItem.setPunishLaw(_ctx.stringValue("GetOcNegativeEnvironmentPunishmentResponse.Data["+ i +"].PunishLaw"));
+			dataItem.setPunishBasis(_ctx.stringValue("GetOcNegativeEnvironmentPunishmentResponse.Data["+ i +"].PunishBasis"));
+			dataItem.setPunishRes(_ctx.stringValue("GetOcNegativeEnvironmentPunishmentResponse.Data["+ i +"].PunishRes"));
+			dataItem.setDepartment(_ctx.stringValue("GetOcNegativeEnvironmentPunishmentResponse.Data["+ i +"].Department"));
+			dataItem.setPunishDate(_ctx.stringValue("GetOcNegativeEnvironmentPunishmentResponse.Data["+ i +"].PunishDate"));
+			dataItem.setExecStatus(_ctx.stringValue("GetOcNegativeEnvironmentPunishmentResponse.Data["+ i +"].ExecStatus"));
+			dataItem.setPunishContent(_ctx.stringValue("GetOcNegativeEnvironmentPunishmentResponse.Data["+ i +"].PunishContent"));
+
+			data.add(dataItem);
 		}
 		getOcNegativeEnvironmentPunishmentResponse.setData(data);
 	 

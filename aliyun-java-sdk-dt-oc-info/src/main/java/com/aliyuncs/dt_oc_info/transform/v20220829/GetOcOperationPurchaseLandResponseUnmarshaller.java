@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.dt_oc_info.model.v20220829.GetOcOperationPurchaseLandResponse;
+import com.aliyuncs.dt_oc_info.model.v20220829.GetOcOperationPurchaseLandResponse.DataItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -33,9 +34,31 @@ public class GetOcOperationPurchaseLandResponseUnmarshaller {
 		getOcOperationPurchaseLandResponse.setPageIndex(_ctx.integerValue("GetOcOperationPurchaseLandResponse.PageIndex"));
 		getOcOperationPurchaseLandResponse.setPageNum(_ctx.integerValue("GetOcOperationPurchaseLandResponse.PageNum"));
 
-		List<String> data = new ArrayList<String>();
+		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetOcOperationPurchaseLandResponse.Data.Length"); i++) {
-			data.add(_ctx.stringValue("GetOcOperationPurchaseLandResponse.Data["+ i +"]"));
+			DataItem dataItem = new DataItem();
+			dataItem.setEntName(_ctx.stringValue("GetOcOperationPurchaseLandResponse.Data["+ i +"].EntName"));
+			dataItem.setRegionName(_ctx.stringValue("GetOcOperationPurchaseLandResponse.Data["+ i +"].RegionName"));
+			dataItem.setElectronicNo(_ctx.stringValue("GetOcOperationPurchaseLandResponse.Data["+ i +"].ElectronicNo"));
+			dataItem.setProjectName(_ctx.stringValue("GetOcOperationPurchaseLandResponse.Data["+ i +"].ProjectName"));
+			dataItem.setLocation(_ctx.stringValue("GetOcOperationPurchaseLandResponse.Data["+ i +"].Location"));
+			dataItem.setArea(_ctx.stringValue("GetOcOperationPurchaseLandResponse.Data["+ i +"].Area"));
+			dataItem.setReleaseDate(_ctx.stringValue("GetOcOperationPurchaseLandResponse.Data["+ i +"].ReleaseDate"));
+			dataItem.setLandSource(_ctx.stringValue("GetOcOperationPurchaseLandResponse.Data["+ i +"].LandSource"));
+			dataItem.setLandUse(_ctx.stringValue("GetOcOperationPurchaseLandResponse.Data["+ i +"].LandUse"));
+			dataItem.setLandLevel(_ctx.stringValue("GetOcOperationPurchaseLandResponse.Data["+ i +"].LandLevel"));
+			dataItem.setSigningMode(_ctx.stringValue("GetOcOperationPurchaseLandResponse.Data["+ i +"].SigningMode"));
+			dataItem.setUseYear(_ctx.stringValue("GetOcOperationPurchaseLandResponse.Data["+ i +"].UseYear"));
+			dataItem.setIndustry(_ctx.stringValue("GetOcOperationPurchaseLandResponse.Data["+ i +"].Industry"));
+			dataItem.setPromiseDeliveryDate(_ctx.stringValue("GetOcOperationPurchaseLandResponse.Data["+ i +"].PromiseDeliveryDate"));
+			dataItem.setPromiseStartDate(_ctx.stringValue("GetOcOperationPurchaseLandResponse.Data["+ i +"].PromiseStartDate"));
+			dataItem.setPromiseEndDate(_ctx.stringValue("GetOcOperationPurchaseLandResponse.Data["+ i +"].PromiseEndDate"));
+			dataItem.setDepartment(_ctx.stringValue("GetOcOperationPurchaseLandResponse.Data["+ i +"].Department"));
+			dataItem.setPrice(_ctx.stringValue("GetOcOperationPurchaseLandResponse.Data["+ i +"].Price"));
+			dataItem.setVolumeFractionUpperBound(_ctx.stringValue("GetOcOperationPurchaseLandResponse.Data["+ i +"].VolumeFractionUpperBound"));
+			dataItem.setVolumeFractionLowerBound(_ctx.stringValue("GetOcOperationPurchaseLandResponse.Data["+ i +"].VolumeFractionLowerBound"));
+
+			data.add(dataItem);
 		}
 		getOcOperationPurchaseLandResponse.setData(data);
 	 

@@ -21,17 +21,41 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class GetOcIcInvestmentRequest extends RpcAcsRequest<GetOcIcInvestmentResponse> {
+public class GetQccSearchCertificationRequest extends RpcAcsRequest<GetQccSearchCertificationResponse> {
 	   
+
+	private String certCategory;
+
+	private String entName;
 
 	private Integer pageNo;
 
 	private Integer pageSize;
-
-	private String searchKey;
-	public GetOcIcInvestmentRequest() {
-		super("dt-oc-info", "2022-08-29", "GetOcIcInvestment");
+	public GetQccSearchCertificationRequest() {
+		super("dt-oc-info", "2022-08-29", "GetQccSearchCertification");
 		setMethod(MethodType.POST);
+	}
+
+	public String getCertCategory() {
+		return this.certCategory;
+	}
+
+	public void setCertCategory(String certCategory) {
+		this.certCategory = certCategory;
+		if(certCategory != null){
+			putBodyParameter("CertCategory", certCategory);
+		}
+	}
+
+	public String getEntName() {
+		return this.entName;
+	}
+
+	public void setEntName(String entName) {
+		this.entName = entName;
+		if(entName != null){
+			putBodyParameter("EntName", entName);
+		}
 	}
 
 	public Integer getPageNo() {
@@ -56,20 +80,9 @@ public class GetOcIcInvestmentRequest extends RpcAcsRequest<GetOcIcInvestmentRes
 		}
 	}
 
-	public String getSearchKey() {
-		return this.searchKey;
-	}
-
-	public void setSearchKey(String searchKey) {
-		this.searchKey = searchKey;
-		if(searchKey != null){
-			putBodyParameter("SearchKey", searchKey);
-		}
-	}
-
 	@Override
-	public Class<GetOcIcInvestmentResponse> getResponseClass() {
-		return GetOcIcInvestmentResponse.class;
+	public Class<GetQccSearchCertificationResponse> getResponseClass() {
+		return GetQccSearchCertificationResponse.class;
 	}
 
 }

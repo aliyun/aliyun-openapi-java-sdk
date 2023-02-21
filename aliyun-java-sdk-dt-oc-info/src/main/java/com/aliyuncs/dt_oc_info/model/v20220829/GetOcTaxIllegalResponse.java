@@ -39,7 +39,7 @@ public class GetOcTaxIllegalResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<String> data;
+	private List<DataItem> data;
 
 	public String getCode() {
 		return this.code;
@@ -97,12 +97,235 @@ public class GetOcTaxIllegalResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<String> getData() {
+	public List<DataItem> getData() {
 		return this.data;
 	}
 
-	public void setData(List<String> data) {
+	public void setData(List<DataItem> data) {
 		this.data = data;
+	}
+
+	public static class DataItem {
+
+		private String entName;
+
+		private String taxpayerNum;
+
+		private String orgCode;
+
+		private String entAddress;
+
+		private String caseType;
+
+		private String illegalTruth;
+
+		private String publishDate;
+
+		private String lawBasis;
+
+		private String department;
+
+		private String legalName;
+
+		private String legalSex;
+
+		private String legalCardType;
+
+		private String legalCardNum;
+
+		private String financialName;
+
+		private String financialSex;
+
+		private String financialCardType;
+
+		private String financialCardNum;
+
+		private String agencyEnt;
+
+		private String agencyName;
+
+		private String agencySex;
+
+		private String agencyCardType;
+
+		private String agencyCardNum;
+
+		public String getEntName() {
+			return this.entName;
+		}
+
+		public void setEntName(String entName) {
+			this.entName = entName;
+		}
+
+		public String getTaxpayerNum() {
+			return this.taxpayerNum;
+		}
+
+		public void setTaxpayerNum(String taxpayerNum) {
+			this.taxpayerNum = taxpayerNum;
+		}
+
+		public String getOrgCode() {
+			return this.orgCode;
+		}
+
+		public void setOrgCode(String orgCode) {
+			this.orgCode = orgCode;
+		}
+
+		public String getEntAddress() {
+			return this.entAddress;
+		}
+
+		public void setEntAddress(String entAddress) {
+			this.entAddress = entAddress;
+		}
+
+		public String getCaseType() {
+			return this.caseType;
+		}
+
+		public void setCaseType(String caseType) {
+			this.caseType = caseType;
+		}
+
+		public String getIllegalTruth() {
+			return this.illegalTruth;
+		}
+
+		public void setIllegalTruth(String illegalTruth) {
+			this.illegalTruth = illegalTruth;
+		}
+
+		public String getPublishDate() {
+			return this.publishDate;
+		}
+
+		public void setPublishDate(String publishDate) {
+			this.publishDate = publishDate;
+		}
+
+		public String getLawBasis() {
+			return this.lawBasis;
+		}
+
+		public void setLawBasis(String lawBasis) {
+			this.lawBasis = lawBasis;
+		}
+
+		public String getDepartment() {
+			return this.department;
+		}
+
+		public void setDepartment(String department) {
+			this.department = department;
+		}
+
+		public String getLegalName() {
+			return this.legalName;
+		}
+
+		public void setLegalName(String legalName) {
+			this.legalName = legalName;
+		}
+
+		public String getLegalSex() {
+			return this.legalSex;
+		}
+
+		public void setLegalSex(String legalSex) {
+			this.legalSex = legalSex;
+		}
+
+		public String getLegalCardType() {
+			return this.legalCardType;
+		}
+
+		public void setLegalCardType(String legalCardType) {
+			this.legalCardType = legalCardType;
+		}
+
+		public String getLegalCardNum() {
+			return this.legalCardNum;
+		}
+
+		public void setLegalCardNum(String legalCardNum) {
+			this.legalCardNum = legalCardNum;
+		}
+
+		public String getFinancialName() {
+			return this.financialName;
+		}
+
+		public void setFinancialName(String financialName) {
+			this.financialName = financialName;
+		}
+
+		public String getFinancialSex() {
+			return this.financialSex;
+		}
+
+		public void setFinancialSex(String financialSex) {
+			this.financialSex = financialSex;
+		}
+
+		public String getFinancialCardType() {
+			return this.financialCardType;
+		}
+
+		public void setFinancialCardType(String financialCardType) {
+			this.financialCardType = financialCardType;
+		}
+
+		public String getFinancialCardNum() {
+			return this.financialCardNum;
+		}
+
+		public void setFinancialCardNum(String financialCardNum) {
+			this.financialCardNum = financialCardNum;
+		}
+
+		public String getAgencyEnt() {
+			return this.agencyEnt;
+		}
+
+		public void setAgencyEnt(String agencyEnt) {
+			this.agencyEnt = agencyEnt;
+		}
+
+		public String getAgencyName() {
+			return this.agencyName;
+		}
+
+		public void setAgencyName(String agencyName) {
+			this.agencyName = agencyName;
+		}
+
+		public String getAgencySex() {
+			return this.agencySex;
+		}
+
+		public void setAgencySex(String agencySex) {
+			this.agencySex = agencySex;
+		}
+
+		public String getAgencyCardType() {
+			return this.agencyCardType;
+		}
+
+		public void setAgencyCardType(String agencyCardType) {
+			this.agencyCardType = agencyCardType;
+		}
+
+		public String getAgencyCardNum() {
+			return this.agencyCardNum;
+		}
+
+		public void setAgencyCardNum(String agencyCardNum) {
+			this.agencyCardNum = agencyCardNum;
+		}
 	}
 
 	@Override

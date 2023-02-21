@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.dt_oc_info.model.v20220829.GetOcNegativeCustomsPunishmentResponse;
+import com.aliyuncs.dt_oc_info.model.v20220829.GetOcNegativeCustomsPunishmentResponse.DataItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -33,9 +34,19 @@ public class GetOcNegativeCustomsPunishmentResponseUnmarshaller {
 		getOcNegativeCustomsPunishmentResponse.setPageIndex(_ctx.integerValue("GetOcNegativeCustomsPunishmentResponse.PageIndex"));
 		getOcNegativeCustomsPunishmentResponse.setPageNum(_ctx.integerValue("GetOcNegativeCustomsPunishmentResponse.PageNum"));
 
-		List<String> data = new ArrayList<String>();
+		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetOcNegativeCustomsPunishmentResponse.Data.Length"); i++) {
-			data.add(_ctx.stringValue("GetOcNegativeCustomsPunishmentResponse.Data["+ i +"]"));
+			DataItem dataItem = new DataItem();
+			dataItem.setBasis(_ctx.stringValue("GetOcNegativeCustomsPunishmentResponse.Data["+ i +"].Basis"));
+			dataItem.setTitle(_ctx.stringValue("GetOcNegativeCustomsPunishmentResponse.Data["+ i +"].Title"));
+			dataItem.setPunishType(_ctx.stringValue("GetOcNegativeCustomsPunishmentResponse.Data["+ i +"].PunishType"));
+			dataItem.setLegalName(_ctx.stringValue("GetOcNegativeCustomsPunishmentResponse.Data["+ i +"].LegalName"));
+			dataItem.setCustoms(_ctx.stringValue("GetOcNegativeCustomsPunishmentResponse.Data["+ i +"].Customs"));
+			dataItem.setPunishDate(_ctx.stringValue("GetOcNegativeCustomsPunishmentResponse.Data["+ i +"].PunishDate"));
+			dataItem.setCustomsNo(_ctx.stringValue("GetOcNegativeCustomsPunishmentResponse.Data["+ i +"].CustomsNo"));
+			dataItem.setCaseNo(_ctx.stringValue("GetOcNegativeCustomsPunishmentResponse.Data["+ i +"].CaseNo"));
+
+			data.add(dataItem);
 		}
 		getOcNegativeCustomsPunishmentResponse.setData(data);
 	 

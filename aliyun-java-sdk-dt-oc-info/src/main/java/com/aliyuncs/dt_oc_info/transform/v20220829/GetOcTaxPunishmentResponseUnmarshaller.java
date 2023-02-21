@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.dt_oc_info.model.v20220829.GetOcTaxPunishmentResponse;
+import com.aliyuncs.dt_oc_info.model.v20220829.GetOcTaxPunishmentResponse.DataItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -33,9 +34,19 @@ public class GetOcTaxPunishmentResponseUnmarshaller {
 		getOcTaxPunishmentResponse.setPageIndex(_ctx.integerValue("GetOcTaxPunishmentResponse.PageIndex"));
 		getOcTaxPunishmentResponse.setPageNum(_ctx.integerValue("GetOcTaxPunishmentResponse.PageNum"));
 
-		List<String> data = new ArrayList<String>();
+		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetOcTaxPunishmentResponse.Data.Length"); i++) {
-			data.add(_ctx.stringValue("GetOcTaxPunishmentResponse.Data["+ i +"]"));
+			DataItem dataItem = new DataItem();
+			dataItem.setEventType(_ctx.stringValue("GetOcTaxPunishmentResponse.Data["+ i +"].EventType"));
+			dataItem.setLegalName(_ctx.stringValue("GetOcTaxPunishmentResponse.Data["+ i +"].LegalName"));
+			dataItem.setPunishDate(_ctx.stringValue("GetOcTaxPunishmentResponse.Data["+ i +"].PunishDate"));
+			dataItem.setTaxpayerNum(_ctx.stringValue("GetOcTaxPunishmentResponse.Data["+ i +"].TaxpayerNum"));
+			dataItem.setDepartment(_ctx.stringValue("GetOcTaxPunishmentResponse.Data["+ i +"].Department"));
+			dataItem.setTitle(_ctx.stringValue("GetOcTaxPunishmentResponse.Data["+ i +"].Title"));
+			dataItem.setEventName(_ctx.stringValue("GetOcTaxPunishmentResponse.Data["+ i +"].EventName"));
+			dataItem.setEntName(_ctx.stringValue("GetOcTaxPunishmentResponse.Data["+ i +"].EntName"));
+
+			data.add(dataItem);
 		}
 		getOcTaxPunishmentResponse.setData(data);
 	 

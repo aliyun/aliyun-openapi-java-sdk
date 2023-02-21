@@ -39,7 +39,7 @@ public class GetOcNegativeQualityPunishmentResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<String> data;
+	private List<DataItem> data;
 
 	public String getCode() {
 		return this.code;
@@ -97,12 +97,75 @@ public class GetOcNegativeQualityPunishmentResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<String> getData() {
+	public List<DataItem> getData() {
 		return this.data;
 	}
 
-	public void setData(List<String> data) {
+	public void setData(List<DataItem> data) {
 		this.data = data;
+	}
+
+	public static class DataItem {
+
+		private String entName;
+
+		private String title;
+
+		private String eventDate;
+
+		private String department;
+
+		private String pubDate;
+
+		private String eventResult;
+
+		public String getEntName() {
+			return this.entName;
+		}
+
+		public void setEntName(String entName) {
+			this.entName = entName;
+		}
+
+		public String getTitle() {
+			return this.title;
+		}
+
+		public void setTitle(String title) {
+			this.title = title;
+		}
+
+		public String getEventDate() {
+			return this.eventDate;
+		}
+
+		public void setEventDate(String eventDate) {
+			this.eventDate = eventDate;
+		}
+
+		public String getDepartment() {
+			return this.department;
+		}
+
+		public void setDepartment(String department) {
+			this.department = department;
+		}
+
+		public String getPubDate() {
+			return this.pubDate;
+		}
+
+		public void setPubDate(String pubDate) {
+			this.pubDate = pubDate;
+		}
+
+		public String getEventResult() {
+			return this.eventResult;
+		}
+
+		public void setEventResult(String eventResult) {
+			this.eventResult = eventResult;
+		}
 	}
 
 	@Override

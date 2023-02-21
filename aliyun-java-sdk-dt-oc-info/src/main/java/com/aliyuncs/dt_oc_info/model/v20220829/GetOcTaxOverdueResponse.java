@@ -39,7 +39,7 @@ public class GetOcTaxOverdueResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<String> data;
+	private List<DataItem> data;
 
 	public String getCode() {
 		return this.code;
@@ -97,12 +97,115 @@ public class GetOcTaxOverdueResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<String> getData() {
+	public List<DataItem> getData() {
 		return this.data;
 	}
 
-	public void setData(List<String> data) {
+	public void setData(List<DataItem> data) {
 		this.data = data;
+	}
+
+	public static class DataItem {
+
+		private String entName;
+
+		private String overdueType;
+
+		private String entAddress;
+
+		private String overdueAmount;
+
+		private String legalName;
+
+		private String taxpayerType;
+
+		private String taxpayerNum;
+
+		private String department;
+
+		private String currOverdueAmount;
+
+		private String publishDate;
+
+		public String getEntName() {
+			return this.entName;
+		}
+
+		public void setEntName(String entName) {
+			this.entName = entName;
+		}
+
+		public String getOverdueType() {
+			return this.overdueType;
+		}
+
+		public void setOverdueType(String overdueType) {
+			this.overdueType = overdueType;
+		}
+
+		public String getEntAddress() {
+			return this.entAddress;
+		}
+
+		public void setEntAddress(String entAddress) {
+			this.entAddress = entAddress;
+		}
+
+		public String getOverdueAmount() {
+			return this.overdueAmount;
+		}
+
+		public void setOverdueAmount(String overdueAmount) {
+			this.overdueAmount = overdueAmount;
+		}
+
+		public String getLegalName() {
+			return this.legalName;
+		}
+
+		public void setLegalName(String legalName) {
+			this.legalName = legalName;
+		}
+
+		public String getTaxpayerType() {
+			return this.taxpayerType;
+		}
+
+		public void setTaxpayerType(String taxpayerType) {
+			this.taxpayerType = taxpayerType;
+		}
+
+		public String getTaxpayerNum() {
+			return this.taxpayerNum;
+		}
+
+		public void setTaxpayerNum(String taxpayerNum) {
+			this.taxpayerNum = taxpayerNum;
+		}
+
+		public String getDepartment() {
+			return this.department;
+		}
+
+		public void setDepartment(String department) {
+			this.department = department;
+		}
+
+		public String getCurrOverdueAmount() {
+			return this.currOverdueAmount;
+		}
+
+		public void setCurrOverdueAmount(String currOverdueAmount) {
+			this.currOverdueAmount = currOverdueAmount;
+		}
+
+		public String getPublishDate() {
+			return this.publishDate;
+		}
+
+		public void setPublishDate(String publishDate) {
+			this.publishDate = publishDate;
+		}
 	}
 
 	@Override

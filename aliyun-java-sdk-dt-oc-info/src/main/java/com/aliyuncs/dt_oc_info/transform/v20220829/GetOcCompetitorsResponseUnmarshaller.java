@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.dt_oc_info.model.v20220829.GetOcCompetitorsResponse;
+import com.aliyuncs.dt_oc_info.model.v20220829.GetOcCompetitorsResponse.DataItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -33,9 +34,22 @@ public class GetOcCompetitorsResponseUnmarshaller {
 		getOcCompetitorsResponse.setPageIndex(_ctx.integerValue("GetOcCompetitorsResponse.PageIndex"));
 		getOcCompetitorsResponse.setPageNum(_ctx.integerValue("GetOcCompetitorsResponse.PageNum"));
 
-		List<String> data = new ArrayList<String>();
+		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetOcCompetitorsResponse.Data.Length"); i++) {
-			data.add(_ctx.stringValue("GetOcCompetitorsResponse.Data["+ i +"]"));
+			DataItem dataItem = new DataItem();
+			dataItem.setEntName(_ctx.stringValue("GetOcCompetitorsResponse.Data["+ i +"].EntName"));
+			dataItem.setCompetitionProductName(_ctx.stringValue("GetOcCompetitorsResponse.Data["+ i +"].CompetitionProductName"));
+			dataItem.setCompetitionEntName(_ctx.stringValue("GetOcCompetitorsResponse.Data["+ i +"].CompetitionEntName"));
+			dataItem.setCompetitionWebsite(_ctx.stringValue("GetOcCompetitorsResponse.Data["+ i +"].CompetitionWebsite"));
+			dataItem.setCompetitionTag(_ctx.stringValue("GetOcCompetitorsResponse.Data["+ i +"].CompetitionTag"));
+			dataItem.setCompetitionLogoUrl(_ctx.stringValue("GetOcCompetitorsResponse.Data["+ i +"].CompetitionLogoUrl"));
+			dataItem.setCompetitionIntroduction(_ctx.stringValue("GetOcCompetitorsResponse.Data["+ i +"].CompetitionIntroduction"));
+			dataItem.setCompetitionBrandIntroduction(_ctx.stringValue("GetOcCompetitorsResponse.Data["+ i +"].CompetitionBrandIntroduction"));
+			dataItem.setCompetitionEntFinTurn(_ctx.stringValue("GetOcCompetitorsResponse.Data["+ i +"].CompetitionEntFinTurn"));
+			dataItem.setCompetitionEntAddress(_ctx.stringValue("GetOcCompetitorsResponse.Data["+ i +"].CompetitionEntAddress"));
+			dataItem.setCompetitionEntEsDate(_ctx.stringValue("GetOcCompetitorsResponse.Data["+ i +"].CompetitionEntEsDate"));
+
+			data.add(dataItem);
 		}
 		getOcCompetitorsResponse.setData(data);
 	 

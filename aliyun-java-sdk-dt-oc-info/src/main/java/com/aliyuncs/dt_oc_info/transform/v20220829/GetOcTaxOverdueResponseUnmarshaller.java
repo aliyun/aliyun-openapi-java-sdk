@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.dt_oc_info.model.v20220829.GetOcTaxOverdueResponse;
+import com.aliyuncs.dt_oc_info.model.v20220829.GetOcTaxOverdueResponse.DataItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -33,9 +34,21 @@ public class GetOcTaxOverdueResponseUnmarshaller {
 		getOcTaxOverdueResponse.setPageIndex(_ctx.integerValue("GetOcTaxOverdueResponse.PageIndex"));
 		getOcTaxOverdueResponse.setPageNum(_ctx.integerValue("GetOcTaxOverdueResponse.PageNum"));
 
-		List<String> data = new ArrayList<String>();
+		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetOcTaxOverdueResponse.Data.Length"); i++) {
-			data.add(_ctx.stringValue("GetOcTaxOverdueResponse.Data["+ i +"]"));
+			DataItem dataItem = new DataItem();
+			dataItem.setEntName(_ctx.stringValue("GetOcTaxOverdueResponse.Data["+ i +"].EntName"));
+			dataItem.setOverdueType(_ctx.stringValue("GetOcTaxOverdueResponse.Data["+ i +"].OverdueType"));
+			dataItem.setEntAddress(_ctx.stringValue("GetOcTaxOverdueResponse.Data["+ i +"].EntAddress"));
+			dataItem.setOverdueAmount(_ctx.stringValue("GetOcTaxOverdueResponse.Data["+ i +"].OverdueAmount"));
+			dataItem.setLegalName(_ctx.stringValue("GetOcTaxOverdueResponse.Data["+ i +"].LegalName"));
+			dataItem.setTaxpayerType(_ctx.stringValue("GetOcTaxOverdueResponse.Data["+ i +"].TaxpayerType"));
+			dataItem.setTaxpayerNum(_ctx.stringValue("GetOcTaxOverdueResponse.Data["+ i +"].TaxpayerNum"));
+			dataItem.setDepartment(_ctx.stringValue("GetOcTaxOverdueResponse.Data["+ i +"].Department"));
+			dataItem.setCurrOverdueAmount(_ctx.stringValue("GetOcTaxOverdueResponse.Data["+ i +"].CurrOverdueAmount"));
+			dataItem.setPublishDate(_ctx.stringValue("GetOcTaxOverdueResponse.Data["+ i +"].PublishDate"));
+
+			data.add(dataItem);
 		}
 		getOcTaxOverdueResponse.setData(data);
 	 

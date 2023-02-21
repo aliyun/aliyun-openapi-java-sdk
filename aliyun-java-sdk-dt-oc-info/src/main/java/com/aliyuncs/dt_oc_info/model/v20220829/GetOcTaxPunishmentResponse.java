@@ -39,7 +39,7 @@ public class GetOcTaxPunishmentResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<String> data;
+	private List<DataItem> data;
 
 	public String getCode() {
 		return this.code;
@@ -97,12 +97,95 @@ public class GetOcTaxPunishmentResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<String> getData() {
+	public List<DataItem> getData() {
 		return this.data;
 	}
 
-	public void setData(List<String> data) {
+	public void setData(List<DataItem> data) {
 		this.data = data;
+	}
+
+	public static class DataItem {
+
+		private String eventType;
+
+		private String legalName;
+
+		private String punishDate;
+
+		private String taxpayerNum;
+
+		private String department;
+
+		private String title;
+
+		private String eventName;
+
+		private String entName;
+
+		public String getEventType() {
+			return this.eventType;
+		}
+
+		public void setEventType(String eventType) {
+			this.eventType = eventType;
+		}
+
+		public String getLegalName() {
+			return this.legalName;
+		}
+
+		public void setLegalName(String legalName) {
+			this.legalName = legalName;
+		}
+
+		public String getPunishDate() {
+			return this.punishDate;
+		}
+
+		public void setPunishDate(String punishDate) {
+			this.punishDate = punishDate;
+		}
+
+		public String getTaxpayerNum() {
+			return this.taxpayerNum;
+		}
+
+		public void setTaxpayerNum(String taxpayerNum) {
+			this.taxpayerNum = taxpayerNum;
+		}
+
+		public String getDepartment() {
+			return this.department;
+		}
+
+		public void setDepartment(String department) {
+			this.department = department;
+		}
+
+		public String getTitle() {
+			return this.title;
+		}
+
+		public void setTitle(String title) {
+			this.title = title;
+		}
+
+		public String getEventName() {
+			return this.eventName;
+		}
+
+		public void setEventName(String eventName) {
+			this.eventName = eventName;
+		}
+
+		public String getEntName() {
+			return this.entName;
+		}
+
+		public void setEntName(String entName) {
+			this.entName = entName;
+		}
 	}
 
 	@Override

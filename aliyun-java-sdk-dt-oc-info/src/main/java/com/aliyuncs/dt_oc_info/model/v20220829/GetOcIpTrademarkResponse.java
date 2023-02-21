@@ -39,7 +39,7 @@ public class GetOcIpTrademarkResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<String> data;
+	private List<DataItem> data;
 
 	public String getCode() {
 		return this.code;
@@ -97,12 +97,165 @@ public class GetOcIpTrademarkResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<String> getData() {
+	public List<DataItem> getData() {
 		return this.data;
 	}
 
-	public void setData(List<String> data) {
+	public void setData(List<DataItem> data) {
 		this.data = data;
+	}
+
+	public static class DataItem {
+
+		private String entName;
+
+		private String trademarkName;
+
+		private String regNum;
+
+		private String trademarkType;
+
+		private String trademarkForm;
+
+		private String trademarkStatus;
+
+		private String applyDate;
+
+		private String imageUrl;
+
+		private String typeName;
+
+		private String period;
+
+		private String agent;
+
+		private String regPubNo;
+
+		private String regPubDate;
+
+		private String firstPubNo;
+
+		private String firstPubDate;
+
+		public String getEntName() {
+			return this.entName;
+		}
+
+		public void setEntName(String entName) {
+			this.entName = entName;
+		}
+
+		public String getTrademarkName() {
+			return this.trademarkName;
+		}
+
+		public void setTrademarkName(String trademarkName) {
+			this.trademarkName = trademarkName;
+		}
+
+		public String getRegNum() {
+			return this.regNum;
+		}
+
+		public void setRegNum(String regNum) {
+			this.regNum = regNum;
+		}
+
+		public String getTrademarkType() {
+			return this.trademarkType;
+		}
+
+		public void setTrademarkType(String trademarkType) {
+			this.trademarkType = trademarkType;
+		}
+
+		public String getTrademarkForm() {
+			return this.trademarkForm;
+		}
+
+		public void setTrademarkForm(String trademarkForm) {
+			this.trademarkForm = trademarkForm;
+		}
+
+		public String getTrademarkStatus() {
+			return this.trademarkStatus;
+		}
+
+		public void setTrademarkStatus(String trademarkStatus) {
+			this.trademarkStatus = trademarkStatus;
+		}
+
+		public String getApplyDate() {
+			return this.applyDate;
+		}
+
+		public void setApplyDate(String applyDate) {
+			this.applyDate = applyDate;
+		}
+
+		public String getImageUrl() {
+			return this.imageUrl;
+		}
+
+		public void setImageUrl(String imageUrl) {
+			this.imageUrl = imageUrl;
+		}
+
+		public String getTypeName() {
+			return this.typeName;
+		}
+
+		public void setTypeName(String typeName) {
+			this.typeName = typeName;
+		}
+
+		public String getPeriod() {
+			return this.period;
+		}
+
+		public void setPeriod(String period) {
+			this.period = period;
+		}
+
+		public String getAgent() {
+			return this.agent;
+		}
+
+		public void setAgent(String agent) {
+			this.agent = agent;
+		}
+
+		public String getRegPubNo() {
+			return this.regPubNo;
+		}
+
+		public void setRegPubNo(String regPubNo) {
+			this.regPubNo = regPubNo;
+		}
+
+		public String getRegPubDate() {
+			return this.regPubDate;
+		}
+
+		public void setRegPubDate(String regPubDate) {
+			this.regPubDate = regPubDate;
+		}
+
+		public String getFirstPubNo() {
+			return this.firstPubNo;
+		}
+
+		public void setFirstPubNo(String firstPubNo) {
+			this.firstPubNo = firstPubNo;
+		}
+
+		public String getFirstPubDate() {
+			return this.firstPubDate;
+		}
+
+		public void setFirstPubDate(String firstPubDate) {
+			this.firstPubDate = firstPubDate;
+		}
 	}
 
 	@Override

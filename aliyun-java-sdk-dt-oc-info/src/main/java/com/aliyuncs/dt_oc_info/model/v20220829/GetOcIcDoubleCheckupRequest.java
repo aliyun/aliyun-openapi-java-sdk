@@ -24,8 +24,6 @@ import com.aliyuncs.http.MethodType;
 public class GetOcIcDoubleCheckupRequest extends RpcAcsRequest<GetOcIcDoubleCheckupResponse> {
 	   
 
-	private String requestId;
-
 	private Integer pageNo;
 
 	private Integer pageSize;
@@ -34,17 +32,6 @@ public class GetOcIcDoubleCheckupRequest extends RpcAcsRequest<GetOcIcDoubleChec
 	public GetOcIcDoubleCheckupRequest() {
 		super("dt-oc-info", "2022-08-29", "GetOcIcDoubleCheckup");
 		setMethod(MethodType.POST);
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-		if(requestId != null){
-			putBodyParameter("RequestId", requestId);
-		}
 	}
 
 	public Integer getPageNo() {

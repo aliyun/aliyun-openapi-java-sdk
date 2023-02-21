@@ -39,7 +39,7 @@ public class GetOcIpCertificateResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<String> data;
+	private List<DataItem> data;
 
 	public String getCode() {
 		return this.code;
@@ -97,12 +97,115 @@ public class GetOcIpCertificateResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<String> getData() {
+	public List<DataItem> getData() {
 		return this.data;
 	}
 
-	public void setData(List<String> data) {
+	public void setData(List<DataItem> data) {
 		this.data = data;
+	}
+
+	public static class DataItem {
+
+		private String entName;
+
+		private String certType;
+
+		private String certNum;
+
+		private String validStartDate;
+
+		private String validEndDate;
+
+		private String authorizeDate;
+
+		private String authorizeDepartment;
+
+		private String pubDate;
+
+		private String province;
+
+		private String certScope;
+
+		public String getEntName() {
+			return this.entName;
+		}
+
+		public void setEntName(String entName) {
+			this.entName = entName;
+		}
+
+		public String getCertType() {
+			return this.certType;
+		}
+
+		public void setCertType(String certType) {
+			this.certType = certType;
+		}
+
+		public String getCertNum() {
+			return this.certNum;
+		}
+
+		public void setCertNum(String certNum) {
+			this.certNum = certNum;
+		}
+
+		public String getValidStartDate() {
+			return this.validStartDate;
+		}
+
+		public void setValidStartDate(String validStartDate) {
+			this.validStartDate = validStartDate;
+		}
+
+		public String getValidEndDate() {
+			return this.validEndDate;
+		}
+
+		public void setValidEndDate(String validEndDate) {
+			this.validEndDate = validEndDate;
+		}
+
+		public String getAuthorizeDate() {
+			return this.authorizeDate;
+		}
+
+		public void setAuthorizeDate(String authorizeDate) {
+			this.authorizeDate = authorizeDate;
+		}
+
+		public String getAuthorizeDepartment() {
+			return this.authorizeDepartment;
+		}
+
+		public void setAuthorizeDepartment(String authorizeDepartment) {
+			this.authorizeDepartment = authorizeDepartment;
+		}
+
+		public String getPubDate() {
+			return this.pubDate;
+		}
+
+		public void setPubDate(String pubDate) {
+			this.pubDate = pubDate;
+		}
+
+		public String getProvince() {
+			return this.province;
+		}
+
+		public void setProvince(String province) {
+			this.province = province;
+		}
+
+		public String getCertScope() {
+			return this.certScope;
+		}
+
+		public void setCertScope(String certScope) {
+			this.certScope = certScope;
+		}
 	}
 
 	@Override

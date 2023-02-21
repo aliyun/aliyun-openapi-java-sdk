@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.dt_oc_info.model.v20220829.GetOcIpTrademarkResponse;
+import com.aliyuncs.dt_oc_info.model.v20220829.GetOcIpTrademarkResponse.DataItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -33,9 +34,26 @@ public class GetOcIpTrademarkResponseUnmarshaller {
 		getOcIpTrademarkResponse.setPageIndex(_ctx.integerValue("GetOcIpTrademarkResponse.PageIndex"));
 		getOcIpTrademarkResponse.setPageNum(_ctx.integerValue("GetOcIpTrademarkResponse.PageNum"));
 
-		List<String> data = new ArrayList<String>();
+		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetOcIpTrademarkResponse.Data.Length"); i++) {
-			data.add(_ctx.stringValue("GetOcIpTrademarkResponse.Data["+ i +"]"));
+			DataItem dataItem = new DataItem();
+			dataItem.setEntName(_ctx.stringValue("GetOcIpTrademarkResponse.Data["+ i +"].EntName"));
+			dataItem.setTrademarkName(_ctx.stringValue("GetOcIpTrademarkResponse.Data["+ i +"].TrademarkName"));
+			dataItem.setRegNum(_ctx.stringValue("GetOcIpTrademarkResponse.Data["+ i +"].RegNum"));
+			dataItem.setTrademarkType(_ctx.stringValue("GetOcIpTrademarkResponse.Data["+ i +"].TrademarkType"));
+			dataItem.setTrademarkForm(_ctx.stringValue("GetOcIpTrademarkResponse.Data["+ i +"].TrademarkForm"));
+			dataItem.setTrademarkStatus(_ctx.stringValue("GetOcIpTrademarkResponse.Data["+ i +"].TrademarkStatus"));
+			dataItem.setApplyDate(_ctx.stringValue("GetOcIpTrademarkResponse.Data["+ i +"].ApplyDate"));
+			dataItem.setImageUrl(_ctx.stringValue("GetOcIpTrademarkResponse.Data["+ i +"].ImageUrl"));
+			dataItem.setTypeName(_ctx.stringValue("GetOcIpTrademarkResponse.Data["+ i +"].TypeName"));
+			dataItem.setPeriod(_ctx.stringValue("GetOcIpTrademarkResponse.Data["+ i +"].Period"));
+			dataItem.setAgent(_ctx.stringValue("GetOcIpTrademarkResponse.Data["+ i +"].Agent"));
+			dataItem.setRegPubNo(_ctx.stringValue("GetOcIpTrademarkResponse.Data["+ i +"].RegPubNo"));
+			dataItem.setRegPubDate(_ctx.stringValue("GetOcIpTrademarkResponse.Data["+ i +"].RegPubDate"));
+			dataItem.setFirstPubNo(_ctx.stringValue("GetOcIpTrademarkResponse.Data["+ i +"].FirstPubNo"));
+			dataItem.setFirstPubDate(_ctx.stringValue("GetOcIpTrademarkResponse.Data["+ i +"].FirstPubDate"));
+
+			data.add(dataItem);
 		}
 		getOcIpTrademarkResponse.setData(data);
 	 

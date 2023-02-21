@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.dt_oc_info.model.v20220829.GetOcTaxClassAResponse;
+import com.aliyuncs.dt_oc_info.model.v20220829.GetOcTaxClassAResponse.DataItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -33,9 +34,15 @@ public class GetOcTaxClassAResponseUnmarshaller {
 		getOcTaxClassAResponse.setPageIndex(_ctx.integerValue("GetOcTaxClassAResponse.PageIndex"));
 		getOcTaxClassAResponse.setPageNum(_ctx.integerValue("GetOcTaxClassAResponse.PageNum"));
 
-		List<String> data = new ArrayList<String>();
+		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetOcTaxClassAResponse.Data.Length"); i++) {
-			data.add(_ctx.stringValue("GetOcTaxClassAResponse.Data["+ i +"]"));
+			DataItem dataItem = new DataItem();
+			dataItem.setEntName(_ctx.stringValue("GetOcTaxClassAResponse.Data["+ i +"].EntName"));
+			dataItem.setTaxpayerNum(_ctx.stringValue("GetOcTaxClassAResponse.Data["+ i +"].TaxpayerNum"));
+			dataItem.setYear(_ctx.stringValue("GetOcTaxClassAResponse.Data["+ i +"].Year"));
+			dataItem.setTaxLevel(_ctx.stringValue("GetOcTaxClassAResponse.Data["+ i +"].TaxLevel"));
+
+			data.add(dataItem);
 		}
 		getOcTaxClassAResponse.setData(data);
 	 

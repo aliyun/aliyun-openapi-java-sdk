@@ -39,7 +39,7 @@ public class GetOcTaxClassAResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<String> data;
+	private List<DataItem> data;
 
 	public String getCode() {
 		return this.code;
@@ -97,12 +97,55 @@ public class GetOcTaxClassAResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<String> getData() {
+	public List<DataItem> getData() {
 		return this.data;
 	}
 
-	public void setData(List<String> data) {
+	public void setData(List<DataItem> data) {
 		this.data = data;
+	}
+
+	public static class DataItem {
+
+		private String entName;
+
+		private String taxpayerNum;
+
+		private String year;
+
+		private String taxLevel;
+
+		public String getEntName() {
+			return this.entName;
+		}
+
+		public void setEntName(String entName) {
+			this.entName = entName;
+		}
+
+		public String getTaxpayerNum() {
+			return this.taxpayerNum;
+		}
+
+		public void setTaxpayerNum(String taxpayerNum) {
+			this.taxpayerNum = taxpayerNum;
+		}
+
+		public String getYear() {
+			return this.year;
+		}
+
+		public void setYear(String year) {
+			this.year = year;
+		}
+
+		public String getTaxLevel() {
+			return this.taxLevel;
+		}
+
+		public void setTaxLevel(String taxLevel) {
+			this.taxLevel = taxLevel;
+		}
 	}
 
 	@Override

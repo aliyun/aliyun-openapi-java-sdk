@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.dt_oc_info.model.v20220829.GetOcOperationRecruitmentResponse;
+import com.aliyuncs.dt_oc_info.model.v20220829.GetOcOperationRecruitmentResponse.DataItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -33,9 +34,23 @@ public class GetOcOperationRecruitmentResponseUnmarshaller {
 		getOcOperationRecruitmentResponse.setPageIndex(_ctx.integerValue("GetOcOperationRecruitmentResponse.PageIndex"));
 		getOcOperationRecruitmentResponse.setPageNum(_ctx.integerValue("GetOcOperationRecruitmentResponse.PageNum"));
 
-		List<String> data = new ArrayList<String>();
+		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetOcOperationRecruitmentResponse.Data.Length"); i++) {
-			data.add(_ctx.stringValue("GetOcOperationRecruitmentResponse.Data["+ i +"]"));
+			DataItem dataItem = new DataItem();
+			dataItem.setEntName(_ctx.stringValue("GetOcOperationRecruitmentResponse.Data["+ i +"].EntName"));
+			dataItem.setRecruitingName(_ctx.stringValue("GetOcOperationRecruitmentResponse.Data["+ i +"].RecruitingName"));
+			dataItem.setDescription(_ctx.stringValue("GetOcOperationRecruitmentResponse.Data["+ i +"].Description"));
+			dataItem.setSalary(_ctx.stringValue("GetOcOperationRecruitmentResponse.Data["+ i +"].Salary"));
+			dataItem.setRecruitingAddress(_ctx.stringValue("GetOcOperationRecruitmentResponse.Data["+ i +"].RecruitingAddress"));
+			dataItem.setEducation(_ctx.stringValue("GetOcOperationRecruitmentResponse.Data["+ i +"].Education"));
+			dataItem.setExperience(_ctx.stringValue("GetOcOperationRecruitmentResponse.Data["+ i +"].Experience"));
+			dataItem.setBenefitList(_ctx.stringValue("GetOcOperationRecruitmentResponse.Data["+ i +"].BenefitList"));
+			dataItem.setPublishDate(_ctx.stringValue("GetOcOperationRecruitmentResponse.Data["+ i +"].PublishDate"));
+			dataItem.setStartDate(_ctx.stringValue("GetOcOperationRecruitmentResponse.Data["+ i +"].StartDate"));
+			dataItem.setEndDate(_ctx.stringValue("GetOcOperationRecruitmentResponse.Data["+ i +"].EndDate"));
+			dataItem.setPageUrl(_ctx.stringValue("GetOcOperationRecruitmentResponse.Data["+ i +"].PageUrl"));
+
+			data.add(dataItem);
 		}
 		getOcOperationRecruitmentResponse.setData(data);
 	 

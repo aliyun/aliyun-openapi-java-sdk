@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.dt_oc_info.model.v20220829.GetOcProductBandResponse;
+import com.aliyuncs.dt_oc_info.model.v20220829.GetOcProductBandResponse.DataItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -33,9 +34,19 @@ public class GetOcProductBandResponseUnmarshaller {
 		getOcProductBandResponse.setPageIndex(_ctx.integerValue("GetOcProductBandResponse.PageIndex"));
 		getOcProductBandResponse.setPageNum(_ctx.integerValue("GetOcProductBandResponse.PageNum"));
 
-		List<String> data = new ArrayList<String>();
+		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetOcProductBandResponse.Data.Length"); i++) {
-			data.add(_ctx.stringValue("GetOcProductBandResponse.Data["+ i +"]"));
+			DataItem dataItem = new DataItem();
+			dataItem.setEntName(_ctx.stringValue("GetOcProductBandResponse.Data["+ i +"].EntName"));
+			dataItem.setProductName(_ctx.stringValue("GetOcProductBandResponse.Data["+ i +"].ProductName"));
+			dataItem.setProductLogo(_ctx.stringValue("GetOcProductBandResponse.Data["+ i +"].ProductLogo"));
+			dataItem.setProductIntroduction(_ctx.stringValue("GetOcProductBandResponse.Data["+ i +"].ProductIntroduction"));
+			dataItem.setBrandIntroduction(_ctx.stringValue("GetOcProductBandResponse.Data["+ i +"].BrandIntroduction"));
+			dataItem.setProductWebsite(_ctx.stringValue("GetOcProductBandResponse.Data["+ i +"].ProductWebsite"));
+			dataItem.setProductTag(_ctx.stringValue("GetOcProductBandResponse.Data["+ i +"].ProductTag"));
+			dataItem.setDevice(_ctx.stringValue("GetOcProductBandResponse.Data["+ i +"].Device"));
+
+			data.add(dataItem);
 		}
 		getOcProductBandResponse.setData(data);
 	 

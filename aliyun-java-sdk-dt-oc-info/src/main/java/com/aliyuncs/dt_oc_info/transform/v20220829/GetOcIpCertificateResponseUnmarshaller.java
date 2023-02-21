@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.dt_oc_info.model.v20220829.GetOcIpCertificateResponse;
+import com.aliyuncs.dt_oc_info.model.v20220829.GetOcIpCertificateResponse.DataItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -33,9 +34,21 @@ public class GetOcIpCertificateResponseUnmarshaller {
 		getOcIpCertificateResponse.setPageIndex(_ctx.integerValue("GetOcIpCertificateResponse.PageIndex"));
 		getOcIpCertificateResponse.setPageNum(_ctx.integerValue("GetOcIpCertificateResponse.PageNum"));
 
-		List<String> data = new ArrayList<String>();
+		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetOcIpCertificateResponse.Data.Length"); i++) {
-			data.add(_ctx.stringValue("GetOcIpCertificateResponse.Data["+ i +"]"));
+			DataItem dataItem = new DataItem();
+			dataItem.setEntName(_ctx.stringValue("GetOcIpCertificateResponse.Data["+ i +"].EntName"));
+			dataItem.setCertType(_ctx.stringValue("GetOcIpCertificateResponse.Data["+ i +"].CertType"));
+			dataItem.setCertNum(_ctx.stringValue("GetOcIpCertificateResponse.Data["+ i +"].CertNum"));
+			dataItem.setValidStartDate(_ctx.stringValue("GetOcIpCertificateResponse.Data["+ i +"].ValidStartDate"));
+			dataItem.setValidEndDate(_ctx.stringValue("GetOcIpCertificateResponse.Data["+ i +"].ValidEndDate"));
+			dataItem.setAuthorizeDate(_ctx.stringValue("GetOcIpCertificateResponse.Data["+ i +"].AuthorizeDate"));
+			dataItem.setAuthorizeDepartment(_ctx.stringValue("GetOcIpCertificateResponse.Data["+ i +"].AuthorizeDepartment"));
+			dataItem.setPubDate(_ctx.stringValue("GetOcIpCertificateResponse.Data["+ i +"].PubDate"));
+			dataItem.setProvince(_ctx.stringValue("GetOcIpCertificateResponse.Data["+ i +"].Province"));
+			dataItem.setCertScope(_ctx.stringValue("GetOcIpCertificateResponse.Data["+ i +"].CertScope"));
+
+			data.add(dataItem);
 		}
 		getOcIpCertificateResponse.setData(data);
 	 

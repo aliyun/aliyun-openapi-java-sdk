@@ -1,3 +1,6 @@
+2023-02-21 Version: 1.0.1
+- Supported GetQccSearchCertification and GetQccCertificationDetailById Api For Zhimaxinyong.
+
 2022-10-25 Version: 1.0.0
 - Generated 2022-08-29 for `dt-oc-info`.
 

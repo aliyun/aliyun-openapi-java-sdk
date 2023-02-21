@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.dt_oc_info.model.v20220829.GetOcCoreTeamsResponse;
+import com.aliyuncs.dt_oc_info.model.v20220829.GetOcCoreTeamsResponse.DataItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -33,9 +34,15 @@ public class GetOcCoreTeamsResponseUnmarshaller {
 		getOcCoreTeamsResponse.setPageIndex(_ctx.integerValue("GetOcCoreTeamsResponse.PageIndex"));
 		getOcCoreTeamsResponse.setPageNum(_ctx.integerValue("GetOcCoreTeamsResponse.PageNum"));
 
-		List<String> data = new ArrayList<String>();
+		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetOcCoreTeamsResponse.Data.Length"); i++) {
-			data.add(_ctx.stringValue("GetOcCoreTeamsResponse.Data["+ i +"]"));
+			DataItem dataItem = new DataItem();
+			dataItem.setEntName(_ctx.stringValue("GetOcCoreTeamsResponse.Data["+ i +"].EntName"));
+			dataItem.setMemberName(_ctx.stringValue("GetOcCoreTeamsResponse.Data["+ i +"].MemberName"));
+			dataItem.setMemberPosition(_ctx.stringValue("GetOcCoreTeamsResponse.Data["+ i +"].MemberPosition"));
+			dataItem.setMemberIntroduction(_ctx.stringValue("GetOcCoreTeamsResponse.Data["+ i +"].MemberIntroduction"));
+
+			data.add(dataItem);
 		}
 		getOcCoreTeamsResponse.setData(data);
 	 

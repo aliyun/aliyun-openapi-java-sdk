@@ -39,7 +39,7 @@ public class GetOcNegativeAdminPunishmentResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<String> data;
+	private List<DataItem> data;
 
 	public String getCode() {
 		return this.code;
@@ -97,12 +97,95 @@ public class GetOcNegativeAdminPunishmentResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<String> getData() {
+	public List<DataItem> getData() {
 		return this.data;
 	}
 
-	public void setData(List<String> data) {
+	public void setData(List<DataItem> data) {
 		this.data = data;
+	}
+
+	public static class DataItem {
+
+		private String entName;
+
+		private String punishNum;
+
+		private String illegalType;
+
+		private String punishResult;
+
+		private String department;
+
+		private String punishDate;
+
+		private String lawBasis;
+
+		private String publicDate;
+
+		public String getEntName() {
+			return this.entName;
+		}
+
+		public void setEntName(String entName) {
+			this.entName = entName;
+		}
+
+		public String getPunishNum() {
+			return this.punishNum;
+		}
+
+		public void setPunishNum(String punishNum) {
+			this.punishNum = punishNum;
+		}
+
+		public String getIllegalType() {
+			return this.illegalType;
+		}
+
+		public void setIllegalType(String illegalType) {
+			this.illegalType = illegalType;
+		}
+
+		public String getPunishResult() {
+			return this.punishResult;
+		}
+
+		public void setPunishResult(String punishResult) {
+			this.punishResult = punishResult;
+		}
+
+		public String getDepartment() {
+			return this.department;
+		}
+
+		public void setDepartment(String department) {
+			this.department = department;
+		}
+
+		public String getPunishDate() {
+			return this.punishDate;
+		}
+
+		public void setPunishDate(String punishDate) {
+			this.punishDate = punishDate;
+		}
+
+		public String getLawBasis() {
+			return this.lawBasis;
+		}
+
+		public void setLawBasis(String lawBasis) {
+			this.lawBasis = lawBasis;
+		}
+
+		public String getPublicDate() {
+			return this.publicDate;
+		}
+
+		public void setPublicDate(String publicDate) {
+			this.publicDate = publicDate;
+		}
 	}
 
 	@Override

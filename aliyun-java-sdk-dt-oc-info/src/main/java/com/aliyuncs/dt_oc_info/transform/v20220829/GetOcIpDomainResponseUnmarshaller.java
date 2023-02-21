@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.dt_oc_info.model.v20220829.GetOcIpDomainResponse;
+import com.aliyuncs.dt_oc_info.model.v20220829.GetOcIpDomainResponse.DataItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -33,9 +34,17 @@ public class GetOcIpDomainResponseUnmarshaller {
 		getOcIpDomainResponse.setPageIndex(_ctx.integerValue("GetOcIpDomainResponse.PageIndex"));
 		getOcIpDomainResponse.setPageNum(_ctx.integerValue("GetOcIpDomainResponse.PageNum"));
 
-		List<String> data = new ArrayList<String>();
+		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetOcIpDomainResponse.Data.Length"); i++) {
-			data.add(_ctx.stringValue("GetOcIpDomainResponse.Data["+ i +"]"));
+			DataItem dataItem = new DataItem();
+			dataItem.setEntName(_ctx.stringValue("GetOcIpDomainResponse.Data["+ i +"].EntName"));
+			dataItem.setNumber(_ctx.stringValue("GetOcIpDomainResponse.Data["+ i +"].Number"));
+			dataItem.setDomain(_ctx.stringValue("GetOcIpDomainResponse.Data["+ i +"].Domain"));
+			dataItem.setSiteName(_ctx.stringValue("GetOcIpDomainResponse.Data["+ i +"].SiteName"));
+			dataItem.setHomeUrl(_ctx.stringValue("GetOcIpDomainResponse.Data["+ i +"].HomeUrl"));
+			dataItem.setCheckDate(_ctx.stringValue("GetOcIpDomainResponse.Data["+ i +"].CheckDate"));
+
+			data.add(dataItem);
 		}
 		getOcIpDomainResponse.setData(data);
 	 

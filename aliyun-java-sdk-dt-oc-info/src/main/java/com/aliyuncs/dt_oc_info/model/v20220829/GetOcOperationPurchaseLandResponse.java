@@ -39,7 +39,7 @@ public class GetOcOperationPurchaseLandResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<String> data;
+	private List<DataItem> data;
 
 	public String getCode() {
 		return this.code;
@@ -97,12 +97,215 @@ public class GetOcOperationPurchaseLandResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<String> getData() {
+	public List<DataItem> getData() {
 		return this.data;
 	}
 
-	public void setData(List<String> data) {
+	public void setData(List<DataItem> data) {
 		this.data = data;
+	}
+
+	public static class DataItem {
+
+		private String entName;
+
+		private String regionName;
+
+		private String electronicNo;
+
+		private String projectName;
+
+		private String location;
+
+		private String area;
+
+		private String releaseDate;
+
+		private String landSource;
+
+		private String landUse;
+
+		private String landLevel;
+
+		private String signingMode;
+
+		private String useYear;
+
+		private String industry;
+
+		private String promiseDeliveryDate;
+
+		private String promiseStartDate;
+
+		private String promiseEndDate;
+
+		private String department;
+
+		private String price;
+
+		private String volumeFractionUpperBound;
+
+		private String volumeFractionLowerBound;
+
+		public String getEntName() {
+			return this.entName;
+		}
+
+		public void setEntName(String entName) {
+			this.entName = entName;
+		}
+
+		public String getRegionName() {
+			return this.regionName;
+		}
+
+		public void setRegionName(String regionName) {
+			this.regionName = regionName;
+		}
+
+		public String getElectronicNo() {
+			return this.electronicNo;
+		}
+
+		public void setElectronicNo(String electronicNo) {
+			this.electronicNo = electronicNo;
+		}
+
+		public String getProjectName() {
+			return this.projectName;
+		}
+
+		public void setProjectName(String projectName) {
+			this.projectName = projectName;
+		}
+
+		public String getLocation() {
+			return this.location;
+		}
+
+		public void setLocation(String location) {
+			this.location = location;
+		}
+
+		public String getArea() {
+			return this.area;
+		}
+
+		public void setArea(String area) {
+			this.area = area;
+		}
+
+		public String getReleaseDate() {
+			return this.releaseDate;
+		}
+
+		public void setReleaseDate(String releaseDate) {
+			this.releaseDate = releaseDate;
+		}
+
+		public String getLandSource() {
+			return this.landSource;
+		}
+
+		public void setLandSource(String landSource) {
+			this.landSource = landSource;
+		}
+
+		public String getLandUse() {
+			return this.landUse;
+		}
+
+		public void setLandUse(String landUse) {
+			this.landUse = landUse;
+		}
+
+		public String getLandLevel() {
+			return this.landLevel;
+		}
+
+		public void setLandLevel(String landLevel) {
+			this.landLevel = landLevel;
+		}
+
+		public String getSigningMode() {
+			return this.signingMode;
+		}
+
+		public void setSigningMode(String signingMode) {
+			this.signingMode = signingMode;
+		}
+
+		public String getUseYear() {
+			return this.useYear;
+		}
+
+		public void setUseYear(String useYear) {
+			this.useYear = useYear;
+		}
+
+		public String getIndustry() {
+			return this.industry;
+		}
+
+		public void setIndustry(String industry) {
+			this.industry = industry;
+		}
+
+		public String getPromiseDeliveryDate() {
+			return this.promiseDeliveryDate;
+		}
+
+		public void setPromiseDeliveryDate(String promiseDeliveryDate) {
+			this.promiseDeliveryDate = promiseDeliveryDate;
+		}
+
+		public String getPromiseStartDate() {
+			return this.promiseStartDate;
+		}
+
+		public void setPromiseStartDate(String promiseStartDate) {
+			this.promiseStartDate = promiseStartDate;
+		}
+
+		public String getPromiseEndDate() {
+			return this.promiseEndDate;
+		}
+
+		public void setPromiseEndDate(String promiseEndDate) {
+			this.promiseEndDate = promiseEndDate;
+		}
+
+		public String getDepartment() {
+			return this.department;
+		}
+
+		public void setDepartment(String department) {
+			this.department = department;
+		}
+
+		public String getPrice() {
+			return this.price;
+		}
+
+		public void setPrice(String price) {
+			this.price = price;
+		}
+
+		public String getVolumeFractionUpperBound() {
+			return this.volumeFractionUpperBound;
+		}
+
+		public void setVolumeFractionUpperBound(String volumeFractionUpperBound) {
+			this.volumeFractionUpperBound = volumeFractionUpperBound;
+		}
+
+		public String getVolumeFractionLowerBound() {
+			return this.volumeFractionLowerBound;
+		}
+
+		public void setVolumeFractionLowerBound(String volumeFractionLowerBound) {
+			this.volumeFractionLowerBound = volumeFractionLowerBound;
+		}
 	}
 
 	@Override

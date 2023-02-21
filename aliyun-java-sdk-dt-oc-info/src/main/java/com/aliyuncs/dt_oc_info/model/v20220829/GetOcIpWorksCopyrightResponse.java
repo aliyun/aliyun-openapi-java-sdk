@@ -39,7 +39,7 @@ public class GetOcIpWorksCopyrightResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<String> data;
+	private List<DataItem> data;
 
 	public String getCode() {
 		return this.code;
@@ -97,12 +97,85 @@ public class GetOcIpWorksCopyrightResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<String> getData() {
+	public List<DataItem> getData() {
 		return this.data;
 	}
 
-	public void setData(List<String> data) {
+	public void setData(List<DataItem> data) {
 		this.data = data;
+	}
+
+	public static class DataItem {
+
+		private String entName;
+
+		private String copyName;
+
+		private String typeName;
+
+		private String copyNum;
+
+		private String successDate;
+
+		private String firstDate;
+
+		private String approvalDate;
+
+		public String getEntName() {
+			return this.entName;
+		}
+
+		public void setEntName(String entName) {
+			this.entName = entName;
+		}
+
+		public String getCopyName() {
+			return this.copyName;
+		}
+
+		public void setCopyName(String copyName) {
+			this.copyName = copyName;
+		}
+
+		public String getTypeName() {
+			return this.typeName;
+		}
+
+		public void setTypeName(String typeName) {
+			this.typeName = typeName;
+		}
+
+		public String getCopyNum() {
+			return this.copyNum;
+		}
+
+		public void setCopyNum(String copyNum) {
+			this.copyNum = copyNum;
+		}
+
+		public String getSuccessDate() {
+			return this.successDate;
+		}
+
+		public void setSuccessDate(String successDate) {
+			this.successDate = successDate;
+		}
+
+		public String getFirstDate() {
+			return this.firstDate;
+		}
+
+		public void setFirstDate(String firstDate) {
+			this.firstDate = firstDate;
+		}
+
+		public String getApprovalDate() {
+			return this.approvalDate;
+		}
+
+		public void setApprovalDate(String approvalDate) {
+			this.approvalDate = approvalDate;
+		}
 	}
 
 	@Override

@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.dt_oc_info.model.v20220829.GetOcFuzzSearchResponse;
+import com.aliyuncs.dt_oc_info.model.v20220829.GetOcFuzzSearchResponse.DataItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -33,9 +34,12 @@ public class GetOcFuzzSearchResponseUnmarshaller {
 		getOcFuzzSearchResponse.setPageIndex(_ctx.integerValue("GetOcFuzzSearchResponse.PageIndex"));
 		getOcFuzzSearchResponse.setPageNum(_ctx.integerValue("GetOcFuzzSearchResponse.PageNum"));
 
-		List<String> data = new ArrayList<String>();
+		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetOcFuzzSearchResponse.Data.Length"); i++) {
-			data.add(_ctx.stringValue("GetOcFuzzSearchResponse.Data["+ i +"]"));
+			DataItem dataItem = new DataItem();
+			dataItem.setEntName(_ctx.stringValue("GetOcFuzzSearchResponse.Data["+ i +"].EntName"));
+
+			data.add(dataItem);
 		}
 		getOcFuzzSearchResponse.setData(data);
 	 

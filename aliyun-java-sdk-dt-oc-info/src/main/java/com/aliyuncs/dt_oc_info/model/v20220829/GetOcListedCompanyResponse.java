@@ -39,7 +39,7 @@ public class GetOcListedCompanyResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<String> data;
+	private List<DataItem> data;
 
 	public String getCode() {
 		return this.code;
@@ -97,12 +97,105 @@ public class GetOcListedCompanyResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<String> getData() {
+	public List<DataItem> getData() {
 		return this.data;
 	}
 
-	public void setData(List<String> data) {
+	public void setData(List<DataItem> data) {
 		this.data = data;
+	}
+
+	public static class DataItem {
+
+		private String entName;
+
+		private String entNameEng;
+
+		private String securitiesCode;
+
+		private String securitiesName;
+
+		private String securitiesMarket;
+
+		private String listDate;
+
+		private String totalShares;
+
+		private String totalFlowShares;
+
+		private String circulationMarketValue;
+
+		public String getEntName() {
+			return this.entName;
+		}
+
+		public void setEntName(String entName) {
+			this.entName = entName;
+		}
+
+		public String getEntNameEng() {
+			return this.entNameEng;
+		}
+
+		public void setEntNameEng(String entNameEng) {
+			this.entNameEng = entNameEng;
+		}
+
+		public String getSecuritiesCode() {
+			return this.securitiesCode;
+		}
+
+		public void setSecuritiesCode(String securitiesCode) {
+			this.securitiesCode = securitiesCode;
+		}
+
+		public String getSecuritiesName() {
+			return this.securitiesName;
+		}
+
+		public void setSecuritiesName(String securitiesName) {
+			this.securitiesName = securitiesName;
+		}
+
+		public String getSecuritiesMarket() {
+			return this.securitiesMarket;
+		}
+
+		public void setSecuritiesMarket(String securitiesMarket) {
+			this.securitiesMarket = securitiesMarket;
+		}
+
+		public String getListDate() {
+			return this.listDate;
+		}
+
+		public void setListDate(String listDate) {
+			this.listDate = listDate;
+		}
+
+		public String getTotalShares() {
+			return this.totalShares;
+		}
+
+		public void setTotalShares(String totalShares) {
+			this.totalShares = totalShares;
+		}
+
+		public String getTotalFlowShares() {
+			return this.totalFlowShares;
+		}
+
+		public void setTotalFlowShares(String totalFlowShares) {
+			this.totalFlowShares = totalFlowShares;
+		}
+
+		public String getCirculationMarketValue() {
+			return this.circulationMarketValue;
+		}
+
+		public void setCirculationMarketValue(String circulationMarketValue) {
+			this.circulationMarketValue = circulationMarketValue;
+		}
 	}
 
 	@Override

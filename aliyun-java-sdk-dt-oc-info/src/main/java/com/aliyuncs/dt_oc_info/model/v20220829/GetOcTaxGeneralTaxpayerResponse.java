@@ -39,7 +39,7 @@ public class GetOcTaxGeneralTaxpayerResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<String> data;
+	private List<DataItem> data;
 
 	public String getCode() {
 		return this.code;
@@ -97,12 +97,85 @@ public class GetOcTaxGeneralTaxpayerResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<String> getData() {
+	public List<DataItem> getData() {
 		return this.data;
 	}
 
-	public void setData(List<String> data) {
+	public void setData(List<DataItem> data) {
 		this.data = data;
+	}
+
+	public static class DataItem {
+
+		private String entName;
+
+		private String taxpayerNum;
+
+		private String qualification;
+
+		private String judgeDate;
+
+		private String startDate;
+
+		private String endDate;
+
+		private String department;
+
+		public String getEntName() {
+			return this.entName;
+		}
+
+		public void setEntName(String entName) {
+			this.entName = entName;
+		}
+
+		public String getTaxpayerNum() {
+			return this.taxpayerNum;
+		}
+
+		public void setTaxpayerNum(String taxpayerNum) {
+			this.taxpayerNum = taxpayerNum;
+		}
+
+		public String getQualification() {
+			return this.qualification;
+		}
+
+		public void setQualification(String qualification) {
+			this.qualification = qualification;
+		}
+
+		public String getJudgeDate() {
+			return this.judgeDate;
+		}
+
+		public void setJudgeDate(String judgeDate) {
+			this.judgeDate = judgeDate;
+		}
+
+		public String getStartDate() {
+			return this.startDate;
+		}
+
+		public void setStartDate(String startDate) {
+			this.startDate = startDate;
+		}
+
+		public String getEndDate() {
+			return this.endDate;
+		}
+
+		public void setEndDate(String endDate) {
+			this.endDate = endDate;
+		}
+
+		public String getDepartment() {
+			return this.department;
+		}
+
+		public void setDepartment(String department) {
+			this.department = department;
+		}
 	}
 
 	@Override

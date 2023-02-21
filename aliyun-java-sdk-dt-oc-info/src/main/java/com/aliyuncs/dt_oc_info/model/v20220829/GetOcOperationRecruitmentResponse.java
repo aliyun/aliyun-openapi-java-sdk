@@ -39,7 +39,7 @@ public class GetOcOperationRecruitmentResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<String> data;
+	private List<DataItem> data;
 
 	public String getCode() {
 		return this.code;
@@ -97,12 +97,135 @@ public class GetOcOperationRecruitmentResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<String> getData() {
+	public List<DataItem> getData() {
 		return this.data;
 	}
 
-	public void setData(List<String> data) {
+	public void setData(List<DataItem> data) {
 		this.data = data;
+	}
+
+	public static class DataItem {
+
+		private String entName;
+
+		private String recruitingName;
+
+		private String description;
+
+		private String salary;
+
+		private String recruitingAddress;
+
+		private String education;
+
+		private String experience;
+
+		private String benefitList;
+
+		private String publishDate;
+
+		private String startDate;
+
+		private String endDate;
+
+		private String pageUrl;
+
+		public String getEntName() {
+			return this.entName;
+		}
+
+		public void setEntName(String entName) {
+			this.entName = entName;
+		}
+
+		public String getRecruitingName() {
+			return this.recruitingName;
+		}
+
+		public void setRecruitingName(String recruitingName) {
+			this.recruitingName = recruitingName;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getSalary() {
+			return this.salary;
+		}
+
+		public void setSalary(String salary) {
+			this.salary = salary;
+		}
+
+		public String getRecruitingAddress() {
+			return this.recruitingAddress;
+		}
+
+		public void setRecruitingAddress(String recruitingAddress) {
+			this.recruitingAddress = recruitingAddress;
+		}
+
+		public String getEducation() {
+			return this.education;
+		}
+
+		public void setEducation(String education) {
+			this.education = education;
+		}
+
+		public String getExperience() {
+			return this.experience;
+		}
+
+		public void setExperience(String experience) {
+			this.experience = experience;
+		}
+
+		public String getBenefitList() {
+			return this.benefitList;
+		}
+
+		public void setBenefitList(String benefitList) {
+			this.benefitList = benefitList;
+		}
+
+		public String getPublishDate() {
+			return this.publishDate;
+		}
+
+		public void setPublishDate(String publishDate) {
+			this.publishDate = publishDate;
+		}
+
+		public String getStartDate() {
+			return this.startDate;
+		}
+
+		public void setStartDate(String startDate) {
+			this.startDate = startDate;
+		}
+
+		public String getEndDate() {
+			return this.endDate;
+		}
+
+		public void setEndDate(String endDate) {
+			this.endDate = endDate;
+		}
+
+		public String getPageUrl() {
+			return this.pageUrl;
+		}
+
+		public void setPageUrl(String pageUrl) {
+			this.pageUrl = pageUrl;
+		}
 	}
 
 	@Override

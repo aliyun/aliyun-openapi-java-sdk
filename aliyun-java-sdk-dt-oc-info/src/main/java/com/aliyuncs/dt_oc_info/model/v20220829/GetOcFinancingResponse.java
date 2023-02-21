@@ -39,7 +39,7 @@ public class GetOcFinancingResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<String> data;
+	private List<DataItem> data;
 
 	public String getCode() {
 		return this.code;
@@ -97,12 +97,65 @@ public class GetOcFinancingResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<String> getData() {
+	public List<DataItem> getData() {
 		return this.data;
 	}
 
-	public void setData(List<String> data) {
+	public void setData(List<DataItem> data) {
 		this.data = data;
+	}
+
+	public static class DataItem {
+
+		private String entName;
+
+		private String finDate;
+
+		private String finTurn;
+
+		private String finAmount;
+
+		private String investors;
+
+		public String getEntName() {
+			return this.entName;
+		}
+
+		public void setEntName(String entName) {
+			this.entName = entName;
+		}
+
+		public String getFinDate() {
+			return this.finDate;
+		}
+
+		public void setFinDate(String finDate) {
+			this.finDate = finDate;
+		}
+
+		public String getFinTurn() {
+			return this.finTurn;
+		}
+
+		public void setFinTurn(String finTurn) {
+			this.finTurn = finTurn;
+		}
+
+		public String getFinAmount() {
+			return this.finAmount;
+		}
+
+		public void setFinAmount(String finAmount) {
+			this.finAmount = finAmount;
+		}
+
+		public String getInvestors() {
+			return this.investors;
+		}
+
+		public void setInvestors(String investors) {
+			this.investors = investors;
+		}
 	}
 
 	@Override

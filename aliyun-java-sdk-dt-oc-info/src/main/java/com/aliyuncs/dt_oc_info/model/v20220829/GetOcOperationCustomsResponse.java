@@ -39,7 +39,7 @@ public class GetOcOperationCustomsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<String> data;
+	private List<DataItem> data;
 
 	public String getCode() {
 		return this.code;
@@ -97,12 +97,175 @@ public class GetOcOperationCustomsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<String> getData() {
+	public List<DataItem> getData() {
 		return this.data;
 	}
 
-	public void setData(List<String> data) {
+	public void setData(List<DataItem> data) {
 		this.data = data;
+	}
+
+	public static class DataItem {
+
+		private String entName;
+
+		private String regDate;
+
+		private String customsNum;
+
+		private String customsReg;
+
+		private String businessCate;
+
+		private String adminRegionName;
+
+		private String ecoRegionName;
+
+		private String specialArea;
+
+		private String industryType;
+
+		private String validDate;
+
+		private String electType;
+
+		private String cancelFlag;
+
+		private String annualReport;
+
+		private String creditLevelsNew;
+
+		private String identCode;
+
+		private String identDate;
+
+		public String getEntName() {
+			return this.entName;
+		}
+
+		public void setEntName(String entName) {
+			this.entName = entName;
+		}
+
+		public String getRegDate() {
+			return this.regDate;
+		}
+
+		public void setRegDate(String regDate) {
+			this.regDate = regDate;
+		}
+
+		public String getCustomsNum() {
+			return this.customsNum;
+		}
+
+		public void setCustomsNum(String customsNum) {
+			this.customsNum = customsNum;
+		}
+
+		public String getCustomsReg() {
+			return this.customsReg;
+		}
+
+		public void setCustomsReg(String customsReg) {
+			this.customsReg = customsReg;
+		}
+
+		public String getBusinessCate() {
+			return this.businessCate;
+		}
+
+		public void setBusinessCate(String businessCate) {
+			this.businessCate = businessCate;
+		}
+
+		public String getAdminRegionName() {
+			return this.adminRegionName;
+		}
+
+		public void setAdminRegionName(String adminRegionName) {
+			this.adminRegionName = adminRegionName;
+		}
+
+		public String getEcoRegionName() {
+			return this.ecoRegionName;
+		}
+
+		public void setEcoRegionName(String ecoRegionName) {
+			this.ecoRegionName = ecoRegionName;
+		}
+
+		public String getSpecialArea() {
+			return this.specialArea;
+		}
+
+		public void setSpecialArea(String specialArea) {
+			this.specialArea = specialArea;
+		}
+
+		public String getIndustryType() {
+			return this.industryType;
+		}
+
+		public void setIndustryType(String industryType) {
+			this.industryType = industryType;
+		}
+
+		public String getValidDate() {
+			return this.validDate;
+		}
+
+		public void setValidDate(String validDate) {
+			this.validDate = validDate;
+		}
+
+		public String getElectType() {
+			return this.electType;
+		}
+
+		public void setElectType(String electType) {
+			this.electType = electType;
+		}
+
+		public String getCancelFlag() {
+			return this.cancelFlag;
+		}
+
+		public void setCancelFlag(String cancelFlag) {
+			this.cancelFlag = cancelFlag;
+		}
+
+		public String getAnnualReport() {
+			return this.annualReport;
+		}
+
+		public void setAnnualReport(String annualReport) {
+			this.annualReport = annualReport;
+		}
+
+		public String getCreditLevelsNew() {
+			return this.creditLevelsNew;
+		}
+
+		public void setCreditLevelsNew(String creditLevelsNew) {
+			this.creditLevelsNew = creditLevelsNew;
+		}
+
+		public String getIdentCode() {
+			return this.identCode;
+		}
+
+		public void setIdentCode(String identCode) {
+			this.identCode = identCode;
+		}
+
+		public String getIdentDate() {
+			return this.identDate;
+		}
+
+		public void setIdentDate(String identDate) {
+			this.identDate = identDate;
+		}
 	}
 
 	@Override

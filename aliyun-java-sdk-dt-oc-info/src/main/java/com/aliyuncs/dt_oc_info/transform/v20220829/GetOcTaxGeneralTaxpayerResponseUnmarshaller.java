@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.dt_oc_info.model.v20220829.GetOcTaxGeneralTaxpayerResponse;
+import com.aliyuncs.dt_oc_info.model.v20220829.GetOcTaxGeneralTaxpayerResponse.DataItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -33,9 +34,18 @@ public class GetOcTaxGeneralTaxpayerResponseUnmarshaller {
 		getOcTaxGeneralTaxpayerResponse.setPageIndex(_ctx.integerValue("GetOcTaxGeneralTaxpayerResponse.PageIndex"));
 		getOcTaxGeneralTaxpayerResponse.setPageNum(_ctx.integerValue("GetOcTaxGeneralTaxpayerResponse.PageNum"));
 
-		List<String> data = new ArrayList<String>();
+		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetOcTaxGeneralTaxpayerResponse.Data.Length"); i++) {
-			data.add(_ctx.stringValue("GetOcTaxGeneralTaxpayerResponse.Data["+ i +"]"));
+			DataItem dataItem = new DataItem();
+			dataItem.setEntName(_ctx.stringValue("GetOcTaxGeneralTaxpayerResponse.Data["+ i +"].EntName"));
+			dataItem.setTaxpayerNum(_ctx.stringValue("GetOcTaxGeneralTaxpayerResponse.Data["+ i +"].TaxpayerNum"));
+			dataItem.setQualification(_ctx.stringValue("GetOcTaxGeneralTaxpayerResponse.Data["+ i +"].Qualification"));
+			dataItem.setJudgeDate(_ctx.stringValue("GetOcTaxGeneralTaxpayerResponse.Data["+ i +"].JudgeDate"));
+			dataItem.setStartDate(_ctx.stringValue("GetOcTaxGeneralTaxpayerResponse.Data["+ i +"].StartDate"));
+			dataItem.setEndDate(_ctx.stringValue("GetOcTaxGeneralTaxpayerResponse.Data["+ i +"].EndDate"));
+			dataItem.setDepartment(_ctx.stringValue("GetOcTaxGeneralTaxpayerResponse.Data["+ i +"].Department"));
+
+			data.add(dataItem);
 		}
 		getOcTaxGeneralTaxpayerResponse.setData(data);
 	 

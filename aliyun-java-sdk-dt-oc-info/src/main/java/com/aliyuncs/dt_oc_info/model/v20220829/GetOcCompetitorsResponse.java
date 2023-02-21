@@ -39,7 +39,7 @@ public class GetOcCompetitorsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<String> data;
+	private List<DataItem> data;
 
 	public String getCode() {
 		return this.code;
@@ -97,12 +97,125 @@ public class GetOcCompetitorsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<String> getData() {
+	public List<DataItem> getData() {
 		return this.data;
 	}
 
-	public void setData(List<String> data) {
+	public void setData(List<DataItem> data) {
 		this.data = data;
+	}
+
+	public static class DataItem {
+
+		private String entName;
+
+		private String competitionProductName;
+
+		private String competitionEntName;
+
+		private String competitionWebsite;
+
+		private String competitionTag;
+
+		private String competitionLogoUrl;
+
+		private String competitionIntroduction;
+
+		private String competitionBrandIntroduction;
+
+		private String competitionEntFinTurn;
+
+		private String competitionEntAddress;
+
+		private String competitionEntEsDate;
+
+		public String getEntName() {
+			return this.entName;
+		}
+
+		public void setEntName(String entName) {
+			this.entName = entName;
+		}
+
+		public String getCompetitionProductName() {
+			return this.competitionProductName;
+		}
+
+		public void setCompetitionProductName(String competitionProductName) {
+			this.competitionProductName = competitionProductName;
+		}
+
+		public String getCompetitionEntName() {
+			return this.competitionEntName;
+		}
+
+		public void setCompetitionEntName(String competitionEntName) {
+			this.competitionEntName = competitionEntName;
+		}
+
+		public String getCompetitionWebsite() {
+			return this.competitionWebsite;
+		}
+
+		public void setCompetitionWebsite(String competitionWebsite) {
+			this.competitionWebsite = competitionWebsite;
+		}
+
+		public String getCompetitionTag() {
+			return this.competitionTag;
+		}
+
+		public void setCompetitionTag(String competitionTag) {
+			this.competitionTag = competitionTag;
+		}
+
+		public String getCompetitionLogoUrl() {
+			return this.competitionLogoUrl;
+		}
+
+		public void setCompetitionLogoUrl(String competitionLogoUrl) {
+			this.competitionLogoUrl = competitionLogoUrl;
+		}
+
+		public String getCompetitionIntroduction() {
+			return this.competitionIntroduction;
+		}
+
+		public void setCompetitionIntroduction(String competitionIntroduction) {
+			this.competitionIntroduction = competitionIntroduction;
+		}
+
+		public String getCompetitionBrandIntroduction() {
+			return this.competitionBrandIntroduction;
+		}
+
+		public void setCompetitionBrandIntroduction(String competitionBrandIntroduction) {
+			this.competitionBrandIntroduction = competitionBrandIntroduction;
+		}
+
+		public String getCompetitionEntFinTurn() {
+			return this.competitionEntFinTurn;
+		}
+
+		public void setCompetitionEntFinTurn(String competitionEntFinTurn) {
+			this.competitionEntFinTurn = competitionEntFinTurn;
+		}
+
+		public String getCompetitionEntAddress() {
+			return this.competitionEntAddress;
+		}
+
+		public void setCompetitionEntAddress(String competitionEntAddress) {
+			this.competitionEntAddress = competitionEntAddress;
+		}
+
+		public String getCompetitionEntEsDate() {
+			return this.competitionEntEsDate;
+		}
+
+		public void setCompetitionEntEsDate(String competitionEntEsDate) {
+			this.competitionEntEsDate = competitionEntEsDate;
+		}
 	}
 
 	@Override

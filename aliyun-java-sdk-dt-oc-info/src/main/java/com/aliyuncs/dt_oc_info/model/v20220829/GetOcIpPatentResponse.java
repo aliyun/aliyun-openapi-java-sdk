@@ -39,7 +39,7 @@ public class GetOcIpPatentResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<String> data;
+	private List<DataItem> data;
 
 	public String getCode() {
 		return this.code;
@@ -97,12 +97,185 @@ public class GetOcIpPatentResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<String> getData() {
+	public List<DataItem> getData() {
 		return this.data;
 	}
 
-	public void setData(List<String> data) {
+	public void setData(List<DataItem> data) {
 		this.data = data;
+	}
+
+	public static class DataItem {
+
+		private String entName;
+
+		private String patentType;
+
+		private String patentName;
+
+		private String patentStatus;
+
+		private String requestNum;
+
+		private String requestDate;
+
+		private String publicNum;
+
+		private String publicDate;
+
+		private String inventorList;
+
+		private String patenteeList;
+
+		private String cateNum;
+
+		private String prioNum;
+
+		private String prioDate;
+
+		private String agency;
+
+		private String agent;
+
+		private String brief;
+
+		private String mainClaim;
+
+		public String getEntName() {
+			return this.entName;
+		}
+
+		public void setEntName(String entName) {
+			this.entName = entName;
+		}
+
+		public String getPatentType() {
+			return this.patentType;
+		}
+
+		public void setPatentType(String patentType) {
+			this.patentType = patentType;
+		}
+
+		public String getPatentName() {
+			return this.patentName;
+		}
+
+		public void setPatentName(String patentName) {
+			this.patentName = patentName;
+		}
+
+		public String getPatentStatus() {
+			return this.patentStatus;
+		}
+
+		public void setPatentStatus(String patentStatus) {
+			this.patentStatus = patentStatus;
+		}
+
+		public String getRequestNum() {
+			return this.requestNum;
+		}
+
+		public void setRequestNum(String requestNum) {
+			this.requestNum = requestNum;
+		}
+
+		public String getRequestDate() {
+			return this.requestDate;
+		}
+
+		public void setRequestDate(String requestDate) {
+			this.requestDate = requestDate;
+		}
+
+		public String getPublicNum() {
+			return this.publicNum;
+		}
+
+		public void setPublicNum(String publicNum) {
+			this.publicNum = publicNum;
+		}
+
+		public String getPublicDate() {
+			return this.publicDate;
+		}
+
+		public void setPublicDate(String publicDate) {
+			this.publicDate = publicDate;
+		}
+
+		public String getInventorList() {
+			return this.inventorList;
+		}
+
+		public void setInventorList(String inventorList) {
+			this.inventorList = inventorList;
+		}
+
+		public String getPatenteeList() {
+			return this.patenteeList;
+		}
+
+		public void setPatenteeList(String patenteeList) {
+			this.patenteeList = patenteeList;
+		}
+
+		public String getCateNum() {
+			return this.cateNum;
+		}
+
+		public void setCateNum(String cateNum) {
+			this.cateNum = cateNum;
+		}
+
+		public String getPrioNum() {
+			return this.prioNum;
+		}
+
+		public void setPrioNum(String prioNum) {
+			this.prioNum = prioNum;
+		}
+
+		public String getPrioDate() {
+			return this.prioDate;
+		}
+
+		public void setPrioDate(String prioDate) {
+			this.prioDate = prioDate;
+		}
+
+		public String getAgency() {
+			return this.agency;
+		}
+
+		public void setAgency(String agency) {
+			this.agency = agency;
+		}
+
+		public String getAgent() {
+			return this.agent;
+		}
+
+		public void setAgent(String agent) {
+			this.agent = agent;
+		}
+
+		public String getBrief() {
+			return this.brief;
+		}
+
+		public void setBrief(String brief) {
+			this.brief = brief;
+		}
+
+		public String getMainClaim() {
+			return this.mainClaim;
+		}
+
+		public void setMainClaim(String mainClaim) {
+			this.mainClaim = mainClaim;
+		}
 	}
 
 	@Override

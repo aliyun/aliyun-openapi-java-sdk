@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.dt_oc_info.model.v20220829.GetOcIpSoftwareCopyrightResponse;
+import com.aliyuncs.dt_oc_info.model.v20220829.GetOcIpSoftwareCopyrightResponse.DataItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -33,9 +34,20 @@ public class GetOcIpSoftwareCopyrightResponseUnmarshaller {
 		getOcIpSoftwareCopyrightResponse.setPageIndex(_ctx.integerValue("GetOcIpSoftwareCopyrightResponse.PageIndex"));
 		getOcIpSoftwareCopyrightResponse.setPageNum(_ctx.integerValue("GetOcIpSoftwareCopyrightResponse.PageNum"));
 
-		List<String> data = new ArrayList<String>();
+		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetOcIpSoftwareCopyrightResponse.Data.Length"); i++) {
-			data.add(_ctx.stringValue("GetOcIpSoftwareCopyrightResponse.Data["+ i +"]"));
+			DataItem dataItem = new DataItem();
+			dataItem.setEntName(_ctx.stringValue("GetOcIpSoftwareCopyrightResponse.Data["+ i +"].EntName"));
+			dataItem.setCopyNum(_ctx.stringValue("GetOcIpSoftwareCopyrightResponse.Data["+ i +"].CopyNum"));
+			dataItem.setTypeNum(_ctx.stringValue("GetOcIpSoftwareCopyrightResponse.Data["+ i +"].TypeNum"));
+			dataItem.setShortName(_ctx.stringValue("GetOcIpSoftwareCopyrightResponse.Data["+ i +"].ShortName"));
+			dataItem.setCopyName(_ctx.stringValue("GetOcIpSoftwareCopyrightResponse.Data["+ i +"].CopyName"));
+			dataItem.setVersion(_ctx.stringValue("GetOcIpSoftwareCopyrightResponse.Data["+ i +"].Version"));
+			dataItem.setSuccessDate(_ctx.stringValue("GetOcIpSoftwareCopyrightResponse.Data["+ i +"].SuccessDate"));
+			dataItem.setFirstDate(_ctx.stringValue("GetOcIpSoftwareCopyrightResponse.Data["+ i +"].FirstDate"));
+			dataItem.setApprovalDate(_ctx.stringValue("GetOcIpSoftwareCopyrightResponse.Data["+ i +"].ApprovalDate"));
+
+			data.add(dataItem);
 		}
 		getOcIpSoftwareCopyrightResponse.setData(data);
 	 
