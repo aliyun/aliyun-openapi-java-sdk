@@ -1,3 +1,6 @@
+2023-02-21 Version: 1.0.6
+- Update EvaluateVideoQuality.
+
 2022-10-17 Version: 1.0.5
 - Update RecognizeVideoCastCrewList.
 

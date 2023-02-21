@@ -25,6 +25,8 @@ import com.aliyuncs.videorecog.Endpoint;
 public class SplitVideoPartsRequest extends RpcAcsRequest<SplitVideoPartsResponse> {
 	   
 
+	private String template;
+
 	private String videoUrl;
 	public SplitVideoPartsRequest() {
 		super("videorecog", "2020-03-20", "SplitVideoParts", "videorecog");
@@ -33,6 +35,17 @@ public class SplitVideoPartsRequest extends RpcAcsRequest<SplitVideoPartsRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getTemplate() {
+		return this.template;
+	}
+
+	public void setTemplate(String template) {
+		this.template = template;
+		if(template != null){
+			putBodyParameter("Template", template);
+		}
 	}
 
 	public String getVideoUrl() {

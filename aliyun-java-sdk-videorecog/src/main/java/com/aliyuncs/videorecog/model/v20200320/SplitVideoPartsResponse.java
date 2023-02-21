@@ -69,12 +69,22 @@ public class SplitVideoPartsResponse extends AcsResponse {
 
 		private List<ElementsItem> elements;
 
+		private List<SplitVideoPartResultsItem> splitVideoPartResults;
+
 		public List<ElementsItem> getElements() {
 			return this.elements;
 		}
 
 		public void setElements(List<ElementsItem> elements) {
 			this.elements = elements;
+		}
+
+		public List<SplitVideoPartResultsItem> getSplitVideoPartResults() {
+			return this.splitVideoPartResults;
+		}
+
+		public void setSplitVideoPartResults(List<SplitVideoPartResultsItem> splitVideoPartResults) {
+			this.splitVideoPartResults = splitVideoPartResults;
 		}
 
 		public static class ElementsItem {
@@ -107,6 +117,59 @@ public class SplitVideoPartsResponse extends AcsResponse {
 
 			public void setIndex(Long index) {
 				this.index = index;
+			}
+		}
+
+		public static class SplitVideoPartResultsItem {
+
+			private Float beginTime;
+
+			private Float endTime;
+
+			private String theme;
+
+			private String type;
+
+			private String by;
+
+			public Float getBeginTime() {
+				return this.beginTime;
+			}
+
+			public void setBeginTime(Float beginTime) {
+				this.beginTime = beginTime;
+			}
+
+			public Float getEndTime() {
+				return this.endTime;
+			}
+
+			public void setEndTime(Float endTime) {
+				this.endTime = endTime;
+			}
+
+			public String getTheme() {
+				return this.theme;
+			}
+
+			public void setTheme(String theme) {
+				this.theme = theme;
+			}
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public String getBy() {
+				return this.by;
+			}
+
+			public void setBy(String by) {
+				this.by = by;
 			}
 		}
 	}

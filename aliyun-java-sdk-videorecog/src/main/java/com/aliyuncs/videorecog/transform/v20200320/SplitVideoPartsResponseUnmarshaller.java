@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.videorecog.model.v20200320.SplitVideoPartsResponse;
 import com.aliyuncs.videorecog.model.v20200320.SplitVideoPartsResponse.Data;
 import com.aliyuncs.videorecog.model.v20200320.SplitVideoPartsResponse.Data.ElementsItem;
+import com.aliyuncs.videorecog.model.v20200320.SplitVideoPartsResponse.Data.SplitVideoPartResultsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -43,6 +44,19 @@ public class SplitVideoPartsResponseUnmarshaller {
 			elements.add(elementsItem);
 		}
 		data.setElements(elements);
+
+		List<SplitVideoPartResultsItem> splitVideoPartResults = new ArrayList<SplitVideoPartResultsItem>();
+		for (int i = 0; i < _ctx.lengthValue("SplitVideoPartsResponse.Data.SplitVideoPartResults.Length"); i++) {
+			SplitVideoPartResultsItem splitVideoPartResultsItem = new SplitVideoPartResultsItem();
+			splitVideoPartResultsItem.setBeginTime(_ctx.floatValue("SplitVideoPartsResponse.Data.SplitVideoPartResults["+ i +"].BeginTime"));
+			splitVideoPartResultsItem.setEndTime(_ctx.floatValue("SplitVideoPartsResponse.Data.SplitVideoPartResults["+ i +"].EndTime"));
+			splitVideoPartResultsItem.setTheme(_ctx.stringValue("SplitVideoPartsResponse.Data.SplitVideoPartResults["+ i +"].Theme"));
+			splitVideoPartResultsItem.setType(_ctx.stringValue("SplitVideoPartsResponse.Data.SplitVideoPartResults["+ i +"].Type"));
+			splitVideoPartResultsItem.setBy(_ctx.stringValue("SplitVideoPartsResponse.Data.SplitVideoPartResults["+ i +"].By"));
+
+			splitVideoPartResults.add(splitVideoPartResultsItem);
+		}
+		data.setSplitVideoPartResults(splitVideoPartResults);
 		splitVideoPartsResponse.setData(data);
 	 
 	 	return splitVideoPartsResponse;
