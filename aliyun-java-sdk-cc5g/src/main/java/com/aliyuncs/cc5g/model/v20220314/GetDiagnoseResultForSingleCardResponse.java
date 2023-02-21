@@ -141,6 +141,8 @@ public class GetDiagnoseResultForSingleCardResponse extends AcsResponse {
 
 		private String errorPart;
 
+		private String errorItem;
+
 		private String errorDesc;
 
 		private String errorSuggestion;
@@ -159,6 +161,14 @@ public class GetDiagnoseResultForSingleCardResponse extends AcsResponse {
 
 		public void setErrorPart(String errorPart) {
 			this.errorPart = errorPart;
+		}
+
+		public String getErrorItem() {
+			return this.errorItem;
+		}
+
+		public void setErrorItem(String errorItem) {
+			this.errorItem = errorItem;
 		}
 
 		public String getErrorDesc() {
@@ -184,6 +194,8 @@ public class GetDiagnoseResultForSingleCardResponse extends AcsResponse {
 
 		private String status;
 
+		private List<SubItemsItem> subItems;
+
 		public String getPart() {
 			return this.part;
 		}
@@ -198,6 +210,47 @@ public class GetDiagnoseResultForSingleCardResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public List<SubItemsItem> getSubItems() {
+			return this.subItems;
+		}
+
+		public void setSubItems(List<SubItemsItem> subItems) {
+			this.subItems = subItems;
+		}
+
+		public static class SubItemsItem {
+
+			private String subItem;
+
+			private String subItemStatus;
+
+			private String subItemInfo;
+
+			public String getSubItem() {
+				return this.subItem;
+			}
+
+			public void setSubItem(String subItem) {
+				this.subItem = subItem;
+			}
+
+			public String getSubItemStatus() {
+				return this.subItemStatus;
+			}
+
+			public void setSubItemStatus(String subItemStatus) {
+				this.subItemStatus = subItemStatus;
+			}
+
+			public String getSubItemInfo() {
+				return this.subItemInfo;
+			}
+
+			public void setSubItemInfo(String subItemInfo) {
+				this.subItemInfo = subItemInfo;
+			}
 		}
 	}
 

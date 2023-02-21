@@ -33,7 +33,6 @@ public class ListRegionsResponseUnmarshaller {
 			Region region = new Region();
 			region.setRegionId(_ctx.stringValue("ListRegionsResponse.Regions["+ i +"].RegionId"));
 			region.setLocalName(_ctx.stringValue("ListRegionsResponse.Regions["+ i +"].LocalName"));
-			region.setRegionEndpoint(_ctx.stringValue("ListRegionsResponse.Regions["+ i +"].RegionEndpoint"));
 
 			regions.add(region);
 		}

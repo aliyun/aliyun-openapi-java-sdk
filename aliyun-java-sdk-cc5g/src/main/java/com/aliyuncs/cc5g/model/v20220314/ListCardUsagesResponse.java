@@ -16,18 +16,20 @@ package com.aliyuncs.cc5g.model.v20220314;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cc5g.transform.v20220314.ListRegionsResponseUnmarshaller;
+import com.aliyuncs.cc5g.transform.v20220314.ListCardUsagesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListRegionsResponse extends AcsResponse {
+public class ListCardUsagesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<Region> regions;
+	private String totalCount;
+
+	private List<Card> cards;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,40 +39,48 @@ public class ListRegionsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<Region> getRegions() {
-		return this.regions;
+	public String getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setRegions(List<Region> regions) {
-		this.regions = regions;
+	public void setTotalCount(String totalCount) {
+		this.totalCount = totalCount;
 	}
 
-	public static class Region {
+	public List<Card> getCards() {
+		return this.cards;
+	}
 
-		private String regionId;
+	public void setCards(List<Card> cards) {
+		this.cards = cards;
+	}
 
-		private String localName;
+	public static class Card {
 
-		public String getRegionId() {
-			return this.regionId;
+		private String iccid;
+
+		private Long usageDataMonth;
+
+		public String getIccid() {
+			return this.iccid;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setIccid(String iccid) {
+			this.iccid = iccid;
 		}
 
-		public String getLocalName() {
-			return this.localName;
+		public Long getUsageDataMonth() {
+			return this.usageDataMonth;
 		}
 
-		public void setLocalName(String localName) {
-			this.localName = localName;
+		public void setUsageDataMonth(Long usageDataMonth) {
+			this.usageDataMonth = usageDataMonth;
 		}
 	}
 
 	@Override
-	public ListRegionsResponse getInstance(UnmarshallerContext context) {
-		return	ListRegionsResponseUnmarshaller.unmarshall(this, context);
+	public ListCardUsagesResponse getInstance(UnmarshallerContext context) {
+		return	ListCardUsagesResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

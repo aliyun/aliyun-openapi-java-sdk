@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.cc5g.model.v20220314.GetDiagnoseResultForSingleCardResponse;
 import com.aliyuncs.cc5g.model.v20220314.GetDiagnoseResultForSingleCardResponse.DiagnoseItemItem;
+import com.aliyuncs.cc5g.model.v20220314.GetDiagnoseResultForSingleCardResponse.DiagnoseItemItem.SubItemsItem;
 import com.aliyuncs.cc5g.model.v20220314.GetDiagnoseResultForSingleCardResponse.DiagnoseResult;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -42,6 +43,7 @@ public class GetDiagnoseResultForSingleCardResponseUnmarshaller {
 			DiagnoseResult diagnoseResult = new DiagnoseResult();
 			diagnoseResult.setErrorLevel(_ctx.stringValue("GetDiagnoseResultForSingleCardResponse.ErrorResult["+ i +"].ErrorLevel"));
 			diagnoseResult.setErrorPart(_ctx.stringValue("GetDiagnoseResultForSingleCardResponse.ErrorResult["+ i +"].ErrorPart"));
+			diagnoseResult.setErrorItem(_ctx.stringValue("GetDiagnoseResultForSingleCardResponse.ErrorResult["+ i +"].ErrorItem"));
 			diagnoseResult.setErrorDesc(_ctx.stringValue("GetDiagnoseResultForSingleCardResponse.ErrorResult["+ i +"].ErrorDesc"));
 			diagnoseResult.setErrorSuggestion(_ctx.stringValue("GetDiagnoseResultForSingleCardResponse.ErrorResult["+ i +"].ErrorSuggestion"));
 
@@ -54,6 +56,17 @@ public class GetDiagnoseResultForSingleCardResponseUnmarshaller {
 			DiagnoseItemItem diagnoseItemItem = new DiagnoseItemItem();
 			diagnoseItemItem.setPart(_ctx.stringValue("GetDiagnoseResultForSingleCardResponse.DiagnoseItem["+ i +"].Part"));
 			diagnoseItemItem.setStatus(_ctx.stringValue("GetDiagnoseResultForSingleCardResponse.DiagnoseItem["+ i +"].Status"));
+
+			List<SubItemsItem> subItems = new ArrayList<SubItemsItem>();
+			for (int j = 0; j < _ctx.lengthValue("GetDiagnoseResultForSingleCardResponse.DiagnoseItem["+ i +"].SubItems.Length"); j++) {
+				SubItemsItem subItemsItem = new SubItemsItem();
+				subItemsItem.setSubItem(_ctx.stringValue("GetDiagnoseResultForSingleCardResponse.DiagnoseItem["+ i +"].SubItems["+ j +"].SubItem"));
+				subItemsItem.setSubItemStatus(_ctx.stringValue("GetDiagnoseResultForSingleCardResponse.DiagnoseItem["+ i +"].SubItems["+ j +"].SubItemStatus"));
+				subItemsItem.setSubItemInfo(_ctx.stringValue("GetDiagnoseResultForSingleCardResponse.DiagnoseItem["+ i +"].SubItems["+ j +"].SubItemInfo"));
+
+				subItems.add(subItemsItem);
+			}
+			diagnoseItemItem.setSubItems(subItems);
 
 			diagnoseItem.add(diagnoseItemItem);
 		}
