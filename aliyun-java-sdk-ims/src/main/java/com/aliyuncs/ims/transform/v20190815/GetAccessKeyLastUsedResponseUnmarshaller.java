@@ -27,6 +27,7 @@ public class GetAccessKeyLastUsedResponseUnmarshaller {
 
 		AccessKeyLastUsed accessKeyLastUsed = new AccessKeyLastUsed();
 		accessKeyLastUsed.setLastUsedDate(_ctx.stringValue("GetAccessKeyLastUsedResponse.AccessKeyLastUsed.LastUsedDate"));
+		accessKeyLastUsed.setServiceName(_ctx.stringValue("GetAccessKeyLastUsedResponse.AccessKeyLastUsed.ServiceName"));
 		getAccessKeyLastUsedResponse.setAccessKeyLastUsed(accessKeyLastUsed);
 	 
 	 	return getAccessKeyLastUsedResponse;

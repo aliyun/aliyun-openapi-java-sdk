@@ -48,12 +48,22 @@ public class GetAccessKeyLastUsedResponse extends AcsResponse {
 
 		private String lastUsedDate;
 
+		private String serviceName;
+
 		public String getLastUsedDate() {
 			return this.lastUsedDate;
 		}
 
 		public void setLastUsedDate(String lastUsedDate) {
 			this.lastUsedDate = lastUsedDate;
+		}
+
+		public String getServiceName() {
+			return this.serviceName;
+		}
+
+		public void setServiceName(String serviceName) {
+			this.serviceName = serviceName;
 		}
 	}
 
