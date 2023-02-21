@@ -14,15 +14,16 @@
 
 package com.aliyuncs.ccc.model.v20200701;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ccc.transform.v20200701.GetMonoRecordingResponseUnmarshaller;
+import com.aliyuncs.ccc.transform.v20200701.BridgeRtcCallResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetMonoRecordingResponse extends AcsResponse {
+public class BridgeRtcCallResponse extends AcsResponse {
 
 	private String code;
 
@@ -31,6 +32,8 @@ public class GetMonoRecordingResponse extends AcsResponse {
 	private String message;
 
 	private String requestId;
+
+	private List<String> params;
 
 	private Data data;
 
@@ -66,6 +69,14 @@ public class GetMonoRecordingResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public List<String> getParams() {
+		return this.params;
+	}
+
+	public void setParams(List<String> params) {
+		this.params = params;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -76,40 +87,40 @@ public class GetMonoRecordingResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String fileUrl;
+		private Long instanceId;
 
-		private String fileName;
+		private String jobId;
 
-		private Long duration;
+		private String tokenInfo;
 
-		public String getFileUrl() {
-			return this.fileUrl;
+		public Long getInstanceId() {
+			return this.instanceId;
 		}
 
-		public void setFileUrl(String fileUrl) {
-			this.fileUrl = fileUrl;
+		public void setInstanceId(Long instanceId) {
+			this.instanceId = instanceId;
 		}
 
-		public String getFileName() {
-			return this.fileName;
+		public String getJobId() {
+			return this.jobId;
 		}
 
-		public void setFileName(String fileName) {
-			this.fileName = fileName;
+		public void setJobId(String jobId) {
+			this.jobId = jobId;
 		}
 
-		public Long getDuration() {
-			return this.duration;
+		public String getTokenInfo() {
+			return this.tokenInfo;
 		}
 
-		public void setDuration(Long duration) {
-			this.duration = duration;
+		public void setTokenInfo(String tokenInfo) {
+			this.tokenInfo = tokenInfo;
 		}
 	}
 
 	@Override
-	public GetMonoRecordingResponse getInstance(UnmarshallerContext context) {
-		return	GetMonoRecordingResponseUnmarshaller.unmarshall(this, context);
+	public BridgeRtcCallResponse getInstance(UnmarshallerContext context) {
+		return	BridgeRtcCallResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

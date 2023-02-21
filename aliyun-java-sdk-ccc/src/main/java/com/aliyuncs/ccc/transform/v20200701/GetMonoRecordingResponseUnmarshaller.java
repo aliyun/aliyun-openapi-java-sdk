@@ -31,6 +31,7 @@ public class GetMonoRecordingResponseUnmarshaller {
 		Data data = new Data();
 		data.setFileUrl(_ctx.stringValue("GetMonoRecordingResponse.Data.FileUrl"));
 		data.setFileName(_ctx.stringValue("GetMonoRecordingResponse.Data.FileName"));
+		data.setDuration(_ctx.longValue("GetMonoRecordingResponse.Data.Duration"));
 		getMonoRecordingResponse.setData(data);
 	 
 	 	return getMonoRecordingResponse;
