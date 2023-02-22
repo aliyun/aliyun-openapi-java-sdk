@@ -1,3 +1,6 @@
+2023-02-22 Version: 1.0.14
+- Release GenerateHumanAnimeStyleVideo.
+
 2022-12-16 Version: 1.0.13
 - Release MergeVideoModelFace.
 
