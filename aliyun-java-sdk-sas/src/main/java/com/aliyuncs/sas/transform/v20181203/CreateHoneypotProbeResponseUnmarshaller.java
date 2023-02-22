@@ -15,6 +15,7 @@
 package com.aliyuncs.sas.transform.v20181203;
 
 import com.aliyuncs.sas.model.v20181203.CreateHoneypotProbeResponse;
+import com.aliyuncs.sas.model.v20181203.CreateHoneypotProbeResponse.HoneypotProbe;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -27,6 +28,10 @@ public class CreateHoneypotProbeResponseUnmarshaller {
 		createHoneypotProbeResponse.setCode(_ctx.stringValue("CreateHoneypotProbeResponse.Code"));
 		createHoneypotProbeResponse.setMessage(_ctx.stringValue("CreateHoneypotProbeResponse.Message"));
 		createHoneypotProbeResponse.setHttpStatusCode(_ctx.integerValue("CreateHoneypotProbeResponse.HttpStatusCode"));
+
+		HoneypotProbe honeypotProbe = new HoneypotProbe();
+		honeypotProbe.setProbeId(_ctx.stringValue("CreateHoneypotProbeResponse.HoneypotProbe.ProbeId"));
+		createHoneypotProbeResponse.setHoneypotProbe(honeypotProbe);
 	 
 	 	return createHoneypotProbeResponse;
 	}

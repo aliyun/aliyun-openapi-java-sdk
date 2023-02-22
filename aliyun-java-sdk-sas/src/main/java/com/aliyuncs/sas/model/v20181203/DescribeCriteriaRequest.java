@@ -27,9 +27,9 @@ public class DescribeCriteriaRequest extends RpcAcsRequest<DescribeCriteriaRespo
 
 	private Boolean supportAutoTag;
 
-	private String value;
-
 	private String machineTypes;
+
+	private String value;
 	public DescribeCriteriaRequest() {
 		super("Sas", "2018-12-03", "DescribeCriteria");
 		setMethod(MethodType.POST);
@@ -50,17 +50,6 @@ public class DescribeCriteriaRequest extends RpcAcsRequest<DescribeCriteriaRespo
 		}
 	}
 
-	public String getValue() {
-		return this.value;
-	}
-
-	public void setValue(String value) {
-		this.value = value;
-		if(value != null){
-			putQueryParameter("Value", value);
-		}
-	}
-
 	public String getMachineTypes() {
 		return this.machineTypes;
 	}
@@ -69,6 +58,17 @@ public class DescribeCriteriaRequest extends RpcAcsRequest<DescribeCriteriaRespo
 		this.machineTypes = machineTypes;
 		if(machineTypes != null){
 			putQueryParameter("MachineTypes", machineTypes);
+		}
+	}
+
+	public String getValue() {
+		return this.value;
+	}
+
+	public void setValue(String value) {
+		this.value = value;
+		if(value != null){
+			putQueryParameter("Value", value);
 		}
 	}
 

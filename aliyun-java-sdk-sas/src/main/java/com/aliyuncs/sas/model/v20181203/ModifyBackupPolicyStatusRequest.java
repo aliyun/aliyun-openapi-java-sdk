@@ -25,9 +25,9 @@ import com.aliyuncs.sas.Endpoint;
 public class ModifyBackupPolicyStatusRequest extends RpcAcsRequest<ModifyBackupPolicyStatusResponse> {
 	   
 
-	private Long id;
-
 	private String policyVersion;
+
+	private Long id;
 
 	private String status;
 	public ModifyBackupPolicyStatusRequest() {
@@ -39,17 +39,6 @@ public class ModifyBackupPolicyStatusRequest extends RpcAcsRequest<ModifyBackupP
 		} catch (Exception e) {}
 	}
 
-	public Long getId() {
-		return this.id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-		if(id != null){
-			putQueryParameter("Id", id.toString());
-		}
-	}
-
 	public String getPolicyVersion() {
 		return this.policyVersion;
 	}
@@ -58,6 +47,17 @@ public class ModifyBackupPolicyStatusRequest extends RpcAcsRequest<ModifyBackupP
 		this.policyVersion = policyVersion;
 		if(policyVersion != null){
 			putQueryParameter("PolicyVersion", policyVersion);
+		}
+	}
+
+	public Long getId() {
+		return this.id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+		if(id != null){
+			putQueryParameter("Id", id.toString());
 		}
 	}
 

@@ -39,6 +39,11 @@ public class DescribeStrategyDetailResponseUnmarshaller {
 		strategy.setName(_ctx.stringValue("DescribeStrategyDetailResponse.Strategy.Name"));
 		strategy.setId(_ctx.integerValue("DescribeStrategyDetailResponse.Strategy.Id"));
 		strategy.setCycleStartTime(_ctx.integerValue("DescribeStrategyDetailResponse.Strategy.CycleStartTime"));
+		strategy.setStartTime(_ctx.stringValue("DescribeStrategyDetailResponse.Strategy.StartTime"));
+		strategy.setEndTime(_ctx.stringValue("DescribeStrategyDetailResponse.Strategy.EndTime"));
+		strategy.setCustomType(_ctx.stringValue("DescribeStrategyDetailResponse.Strategy.CustomType"));
+		strategy.setTargetType(_ctx.stringValue("DescribeStrategyDetailResponse.Strategy.TargetType"));
+		strategy.setRiskSubTypeName(_ctx.stringValue("DescribeStrategyDetailResponse.Strategy.RiskSubTypeName"));
 
 		List<RiskTypeWhiteListQueryResult> riskTypeWhiteListQueryResultList = new ArrayList<RiskTypeWhiteListQueryResult>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeStrategyDetailResponse.Strategy.RiskTypeWhiteListQueryResultList.Length"); i++) {

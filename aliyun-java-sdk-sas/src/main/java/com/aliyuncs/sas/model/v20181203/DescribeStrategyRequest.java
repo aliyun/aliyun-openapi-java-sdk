@@ -25,13 +25,13 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribeStrategyRequest extends RpcAcsRequest<DescribeStrategyResponse> {
 	   
 
-	private String sourceIp;
-
-	private String lang;
-
 	private String customType;
 
+	private String sourceIp;
+
 	private String strategyIds;
+
+	private String lang;
 	public DescribeStrategyRequest() {
 		super("Sas", "2018-12-03", "DescribeStrategy");
 		setMethod(MethodType.POST);
@@ -39,28 +39,6 @@ public class DescribeStrategyRequest extends RpcAcsRequest<DescribeStrategyRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getSourceIp() {
-		return this.sourceIp;
-	}
-
-	public void setSourceIp(String sourceIp) {
-		this.sourceIp = sourceIp;
-		if(sourceIp != null){
-			putQueryParameter("SourceIp", sourceIp);
-		}
-	}
-
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
-		}
 	}
 
 	public String getCustomType() {
@@ -74,6 +52,17 @@ public class DescribeStrategyRequest extends RpcAcsRequest<DescribeStrategyRespo
 		}
 	}
 
+	public String getSourceIp() {
+		return this.sourceIp;
+	}
+
+	public void setSourceIp(String sourceIp) {
+		this.sourceIp = sourceIp;
+		if(sourceIp != null){
+			putQueryParameter("SourceIp", sourceIp);
+		}
+	}
+
 	public String getStrategyIds() {
 		return this.strategyIds;
 	}
@@ -82,6 +71,17 @@ public class DescribeStrategyRequest extends RpcAcsRequest<DescribeStrategyRespo
 		this.strategyIds = strategyIds;
 		if(strategyIds != null){
 			putQueryParameter("StrategyIds", strategyIds);
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
 		}
 	}
 

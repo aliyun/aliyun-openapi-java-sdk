@@ -50,6 +50,7 @@ public class DescribeBackupPoliciesResponseUnmarshaller {
 			backupPolicy.setName(_ctx.stringValue("DescribeBackupPoliciesResponse.Policies["+ i +"].Name"));
 			backupPolicy.setHealthClientCount(_ctx.integerValue("DescribeBackupPoliciesResponse.Policies["+ i +"].HealthClientCount"));
 			backupPolicy.setId(_ctx.longValue("DescribeBackupPoliciesResponse.Policies["+ i +"].Id"));
+			backupPolicy.setServerType(_ctx.stringValue("DescribeBackupPoliciesResponse.Policies["+ i +"].ServerType"));
 
 			List<String> clientErrorUuidList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeBackupPoliciesResponse.Policies["+ i +"].ClientErrorUuidList.Length"); j++) {

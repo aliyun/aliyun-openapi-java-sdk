@@ -25,11 +25,7 @@ import com.aliyuncs.sas.Endpoint;
 public class CheckUserHasEcsRequest extends RpcAcsRequest<CheckUserHasEcsResponse> {
 	   
 
-	private Integer pageSize;
-
 	private String lang;
-
-	private Integer currentPage;
 	public CheckUserHasEcsRequest() {
 		super("Sas", "2018-12-03", "CheckUserHasEcs");
 		setMethod(MethodType.POST);
@@ -37,17 +33,6 @@ public class CheckUserHasEcsRequest extends RpcAcsRequest<CheckUserHasEcsRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
 	}
 
 	public String getLang() {
@@ -58,17 +43,6 @@ public class CheckUserHasEcsRequest extends RpcAcsRequest<CheckUserHasEcsRespons
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
-		}
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
 		}
 	}
 

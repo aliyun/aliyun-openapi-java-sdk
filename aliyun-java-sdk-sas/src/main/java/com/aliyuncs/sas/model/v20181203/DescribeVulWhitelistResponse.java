@@ -33,6 +33,8 @@ public class DescribeVulWhitelistResponse extends AcsResponse {
 
 	private Integer totalCount;
 
+	private Integer count;
+
 	private List<VulWhitelist> vulWhitelists;
 
 	public Integer getCurrentPage() {
@@ -67,6 +69,14 @@ public class DescribeVulWhitelistResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
+	public Integer getCount() {
+		return this.count;
+	}
+
+	public void setCount(Integer count) {
+		this.count = count;
+	}
+
 	public List<VulWhitelist> getVulWhitelists() {
 		return this.vulWhitelists;
 	}
@@ -88,6 +98,8 @@ public class DescribeVulWhitelistResponse extends AcsResponse {
 		private String reason;
 
 		private String id;
+
+		private String whitelist;
 
 		public String getType() {
 			return this.type;
@@ -135,6 +147,14 @@ public class DescribeVulWhitelistResponse extends AcsResponse {
 
 		public void setId(String id) {
 			this.id = id;
+		}
+
+		public String getWhitelist() {
+			return this.whitelist;
+		}
+
+		public void setWhitelist(String whitelist) {
+			this.whitelist = whitelist;
 		}
 	}
 

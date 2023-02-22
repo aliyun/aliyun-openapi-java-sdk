@@ -105,6 +105,20 @@ public class DescribeAffectedMaliciousFileImagesResponse extends AcsResponse {
 
 		private String maliciousSource;
 
+		private String instanceName;
+
+		private String internetIp;
+
+		private String intranetIp;
+
+		private String targetId;
+
+		private String targetName;
+
+		private String targetType;
+
+		private String uuid;
+
 		public Integer getStatus() {
 			return this.status;
 		}
@@ -295,6 +309,62 @@ public class DescribeAffectedMaliciousFileImagesResponse extends AcsResponse {
 
 		public void setMaliciousSource(String maliciousSource) {
 			this.maliciousSource = maliciousSource;
+		}
+
+		public String getInstanceName() {
+			return this.instanceName;
+		}
+
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
+		}
+
+		public String getInternetIp() {
+			return this.internetIp;
+		}
+
+		public void setInternetIp(String internetIp) {
+			this.internetIp = internetIp;
+		}
+
+		public String getIntranetIp() {
+			return this.intranetIp;
+		}
+
+		public void setIntranetIp(String intranetIp) {
+			this.intranetIp = intranetIp;
+		}
+
+		public String getTargetId() {
+			return this.targetId;
+		}
+
+		public void setTargetId(String targetId) {
+			this.targetId = targetId;
+		}
+
+		public String getTargetName() {
+			return this.targetName;
+		}
+
+		public void setTargetName(String targetName) {
+			this.targetName = targetName;
+		}
+
+		public String getTargetType() {
+			return this.targetType;
+		}
+
+		public void setTargetType(String targetType) {
+			this.targetType = targetType;
+		}
+
+		public String getUuid() {
+			return this.uuid;
+		}
+
+		public void setUuid(String uuid) {
+			this.uuid = uuid;
 		}
 	}
 

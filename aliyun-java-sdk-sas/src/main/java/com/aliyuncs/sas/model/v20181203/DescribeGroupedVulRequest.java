@@ -25,13 +25,19 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribeGroupedVulRequest extends RpcAcsRequest<DescribeGroupedVulResponse> {
 	   
 
+	private String targetType;
+
 	private String attachTypes;
 
 	private String type;
 
+	private String containerFieldName;
+
 	private Integer pageSize;
 
 	private String lang;
+
+	private String assetType;
 
 	private String groupId;
 
@@ -53,6 +59,17 @@ public class DescribeGroupedVulRequest extends RpcAcsRequest<DescribeGroupedVulR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getTargetType() {
+		return this.targetType;
+	}
+
+	public void setTargetType(String targetType) {
+		this.targetType = targetType;
+		if(targetType != null){
+			putQueryParameter("TargetType", targetType);
+		}
 	}
 
 	public String getAttachTypes() {
@@ -77,6 +94,17 @@ public class DescribeGroupedVulRequest extends RpcAcsRequest<DescribeGroupedVulR
 		}
 	}
 
+	public String getContainerFieldName() {
+		return this.containerFieldName;
+	}
+
+	public void setContainerFieldName(String containerFieldName) {
+		this.containerFieldName = containerFieldName;
+		if(containerFieldName != null){
+			putQueryParameter("ContainerFieldName", containerFieldName);
+		}
+	}
+
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -96,6 +124,17 @@ public class DescribeGroupedVulRequest extends RpcAcsRequest<DescribeGroupedVulR
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public String getAssetType() {
+		return this.assetType;
+	}
+
+	public void setAssetType(String assetType) {
+		this.assetType = assetType;
+		if(assetType != null){
+			putQueryParameter("AssetType", assetType);
 		}
 	}
 

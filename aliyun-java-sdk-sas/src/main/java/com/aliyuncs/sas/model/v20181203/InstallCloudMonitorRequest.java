@@ -30,11 +30,11 @@ public class InstallCloudMonitorRequest extends RpcAcsRequest<InstallCloudMonito
 
 	private String agentSecretKey;
 
-	private List<String> uuidLists;
-
 	private String argusVersion;
 
 	private List<String> instanceIdLists;
+
+	private List<String> uuidLists;
 	public InstallCloudMonitorRequest() {
 		super("Sas", "2018-12-03", "InstallCloudMonitor");
 		setMethod(MethodType.POST);
@@ -66,19 +66,6 @@ public class InstallCloudMonitorRequest extends RpcAcsRequest<InstallCloudMonito
 		}
 	}
 
-	public List<String> getUuidLists() {
-		return this.uuidLists;
-	}
-
-	public void setUuidLists(List<String> uuidLists) {
-		this.uuidLists = uuidLists;	
-		if (uuidLists != null) {
-			for (int i = 0; i < uuidLists.size(); i++) {
-				putQueryParameter("UuidList." + (i + 1) , uuidLists.get(i));
-			}
-		}	
-	}
-
 	public String getArgusVersion() {
 		return this.argusVersion;
 	}
@@ -99,6 +86,19 @@ public class InstallCloudMonitorRequest extends RpcAcsRequest<InstallCloudMonito
 		if (instanceIdLists != null) {
 			for (int i = 0; i < instanceIdLists.size(); i++) {
 				putQueryParameter("InstanceIdList." + (i + 1) , instanceIdLists.get(i));
+			}
+		}	
+	}
+
+	public List<String> getUuidLists() {
+		return this.uuidLists;
+	}
+
+	public void setUuidLists(List<String> uuidLists) {
+		this.uuidLists = uuidLists;	
+		if (uuidLists != null) {
+			for (int i = 0; i < uuidLists.size(); i++) {
+				putQueryParameter("UuidList." + (i + 1) , uuidLists.get(i));
 			}
 		}	
 	}

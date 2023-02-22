@@ -25,13 +25,13 @@ import com.aliyuncs.sas.Endpoint;
 public class ListVulAutoRepairConfigRequest extends RpcAcsRequest<ListVulAutoRepairConfigResponse> {
 	   
 
-	private String type;
-
-	private Integer pageSize;
-
 	private Integer currentPage;
 
+	private String type;
+
 	private String aliasName;
+
+	private Integer pageSize;
 	public ListVulAutoRepairConfigRequest() {
 		super("Sas", "2018-12-03", "ListVulAutoRepairConfig");
 		setMethod(MethodType.POST);
@@ -39,28 +39,6 @@ public class ListVulAutoRepairConfigRequest extends RpcAcsRequest<ListVulAutoRep
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
 	}
 
 	public Integer getCurrentPage() {
@@ -74,6 +52,17 @@ public class ListVulAutoRepairConfigRequest extends RpcAcsRequest<ListVulAutoRep
 		}
 	}
 
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
+		}
+	}
+
 	public String getAliasName() {
 		return this.aliasName;
 	}
@@ -82,6 +71,17 @@ public class ListVulAutoRepairConfigRequest extends RpcAcsRequest<ListVulAutoRep
 		this.aliasName = aliasName;
 		if(aliasName != null){
 			putQueryParameter("AliasName", aliasName);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

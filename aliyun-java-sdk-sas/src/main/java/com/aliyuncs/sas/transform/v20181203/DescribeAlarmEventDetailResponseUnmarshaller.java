@@ -32,6 +32,7 @@ public class DescribeAlarmEventDetailResponseUnmarshaller {
 
 		Data data = new Data();
 		data.setType(_ctx.stringValue("DescribeAlarmEventDetailResponse.Data.Type"));
+		data.setDealed(_ctx.booleanValue("DescribeAlarmEventDetailResponse.Data.Dealed"));
 		data.setInternetIp(_ctx.stringValue("DescribeAlarmEventDetailResponse.Data.InternetIp"));
 		data.setK8sClusterName(_ctx.stringValue("DescribeAlarmEventDetailResponse.Data.K8sClusterName"));
 		data.setContainerImageId(_ctx.stringValue("DescribeAlarmEventDetailResponse.Data.ContainerImageId"));
@@ -42,11 +43,13 @@ public class DescribeAlarmEventDetailResponseUnmarshaller {
 		data.setCanBeDealOnLine(_ctx.booleanValue("DescribeAlarmEventDetailResponse.Data.CanBeDealOnLine"));
 		data.setContainerImageName(_ctx.stringValue("DescribeAlarmEventDetailResponse.Data.ContainerImageName"));
 		data.setK8sClusterId(_ctx.stringValue("DescribeAlarmEventDetailResponse.Data.K8sClusterId"));
+		data.setAccessCode(_ctx.stringValue("DescribeAlarmEventDetailResponse.Data.AccessCode"));
 		data.setContainHwMode(_ctx.booleanValue("DescribeAlarmEventDetailResponse.Data.ContainHwMode"));
 		data.setInstanceName(_ctx.stringValue("DescribeAlarmEventDetailResponse.Data.InstanceName"));
 		data.setK8sNodeId(_ctx.stringValue("DescribeAlarmEventDetailResponse.Data.K8sNodeId"));
 		data.setSolution(_ctx.stringValue("DescribeAlarmEventDetailResponse.Data.Solution"));
 		data.setDataSource(_ctx.stringValue("DescribeAlarmEventDetailResponse.Data.DataSource"));
+		data.setHasTraceInfo(_ctx.booleanValue("DescribeAlarmEventDetailResponse.Data.HasTraceInfo"));
 		data.setIntranetIp(_ctx.stringValue("DescribeAlarmEventDetailResponse.Data.IntranetIp"));
 		data.setAlarmEventAliasName(_ctx.stringValue("DescribeAlarmEventDetailResponse.Data.AlarmEventAliasName"));
 		data.setEndTime(_ctx.longValue("DescribeAlarmEventDetailResponse.Data.EndTime"));

@@ -179,6 +179,8 @@ public class DescribeSuspEventsResponse extends AcsResponse {
 
 		private Long id;
 
+		private String clusterId;
+
 		private Boolean displaySandboxResult;
 
 		private List<TacticItem> tacticItems;
@@ -553,6 +555,14 @@ public class DescribeSuspEventsResponse extends AcsResponse {
 
 		public void setId(Long id) {
 			this.id = id;
+		}
+
+		public String getClusterId() {
+			return this.clusterId;
+		}
+
+		public void setClusterId(String clusterId) {
+			this.clusterId = clusterId;
 		}
 
 		public Boolean getDisplaySandboxResult() {

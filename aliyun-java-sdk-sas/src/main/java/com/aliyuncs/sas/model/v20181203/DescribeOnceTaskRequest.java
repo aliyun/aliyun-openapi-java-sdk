@@ -31,6 +31,8 @@ public class DescribeOnceTaskRequest extends RpcAcsRequest<DescribeOnceTaskRespo
 
 	private Integer pageSize;
 
+	private String taskId;
+
 	private String taskType;
 
 	private Long startTimeQuery;
@@ -75,6 +77,17 @@ public class DescribeOnceTaskRequest extends RpcAcsRequest<DescribeOnceTaskRespo
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getTaskId() {
+		return this.taskId;
+	}
+
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+		if(taskId != null){
+			putQueryParameter("TaskId", taskId);
 		}
 	}
 

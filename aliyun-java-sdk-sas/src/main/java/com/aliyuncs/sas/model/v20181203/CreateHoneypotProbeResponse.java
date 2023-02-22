@@ -34,6 +34,8 @@ public class CreateHoneypotProbeResponse extends AcsResponse {
 
 	private Integer httpStatusCode;
 
+	private HoneypotProbe honeypotProbe;
+
 	public Boolean getSuccess() {
 		return this.success;
 	}
@@ -72,6 +74,27 @@ public class CreateHoneypotProbeResponse extends AcsResponse {
 
 	public void setHttpStatusCode(Integer httpStatusCode) {
 		this.httpStatusCode = httpStatusCode;
+	}
+
+	public HoneypotProbe getHoneypotProbe() {
+		return this.honeypotProbe;
+	}
+
+	public void setHoneypotProbe(HoneypotProbe honeypotProbe) {
+		this.honeypotProbe = honeypotProbe;
+	}
+
+	public static class HoneypotProbe {
+
+		private String probeId;
+
+		public String getProbeId() {
+			return this.probeId;
+		}
+
+		public void setProbeId(String probeId) {
+			this.probeId = probeId;
+		}
 	}
 
 	@Override

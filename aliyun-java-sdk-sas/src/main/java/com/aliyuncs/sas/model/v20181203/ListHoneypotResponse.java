@@ -111,6 +111,8 @@ public class ListHoneypotResponse extends AcsResponse {
 
 		private String nodeId;
 
+		private String honeypotImageId;
+
 		private List<String> state;
 
 		public String getHoneypotId() {
@@ -167,6 +169,14 @@ public class ListHoneypotResponse extends AcsResponse {
 
 		public void setNodeId(String nodeId) {
 			this.nodeId = nodeId;
+		}
+
+		public String getHoneypotImageId() {
+			return this.honeypotImageId;
+		}
+
+		public void setHoneypotImageId(String honeypotImageId) {
+			this.honeypotImageId = honeypotImageId;
 		}
 
 		public List<String> getState() {

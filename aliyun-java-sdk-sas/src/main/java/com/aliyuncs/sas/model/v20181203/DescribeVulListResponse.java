@@ -15,6 +15,7 @@
 package com.aliyuncs.sas.model.v20181203;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.sas.transform.v20181203.DescribeVulListResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -78,6 +79,12 @@ public class DescribeVulListResponse extends AcsResponse {
 	public static class VulRecord {
 
 		private Integer status;
+
+		private Integer isPoc;
+
+		private Integer raspDefend;
+
+		private Integer raspStatus;
 
 		private String type;
 
@@ -161,6 +168,8 @@ public class DescribeVulListResponse extends AcsResponse {
 
 		private String authVersion;
 
+		private String product;
+
 		private ExtendContentJson extendContentJson;
 
 		private ProcessInfo processInfo;
@@ -171,6 +180,30 @@ public class DescribeVulListResponse extends AcsResponse {
 
 		public void setStatus(Integer status) {
 			this.status = status;
+		}
+
+		public Integer getIsPoc() {
+			return this.isPoc;
+		}
+
+		public void setIsPoc(Integer isPoc) {
+			this.isPoc = isPoc;
+		}
+
+		public Integer getRaspDefend() {
+			return this.raspDefend;
+		}
+
+		public void setRaspDefend(Integer raspDefend) {
+			this.raspDefend = raspDefend;
+		}
+
+		public Integer getRaspStatus() {
+			return this.raspStatus;
+		}
+
+		public void setRaspStatus(Integer raspStatus) {
+			this.raspStatus = raspStatus;
 		}
 
 		public String getType() {
@@ -501,6 +534,14 @@ public class DescribeVulListResponse extends AcsResponse {
 			this.authVersion = authVersion;
 		}
 
+		public String getProduct() {
+			return this.product;
+		}
+
+		public void setProduct(String product) {
+			this.product = product;
+		}
+
 		public ExtendContentJson getExtendContentJson() {
 			return this.extendContentJson;
 		}
@@ -563,11 +604,19 @@ public class DescribeVulListResponse extends AcsResponse {
 
 			private String reason;
 
+			private String level;
+
+			private Map<Object,Object> renderData;
+
 			private List<RpmEntity> rpmEntityList;
 
 			private List<String> cveList;
 
 			private Necessity necessity;
+
+			private PreCheck preCheck;
+
+			private AgentScanVul agentScanVul;
 
 			public String getStatus() {
 				return this.status;
@@ -745,6 +794,22 @@ public class DescribeVulListResponse extends AcsResponse {
 				this.reason = reason;
 			}
 
+			public String getLevel() {
+				return this.level;
+			}
+
+			public void setLevel(String level) {
+				this.level = level;
+			}
+
+			public Map<Object,Object> getRenderData() {
+				return this.renderData;
+			}
+
+			public void setRenderData(Map<Object,Object> renderData) {
+				this.renderData = renderData;
+			}
+
 			public List<RpmEntity> getRpmEntityList() {
 				return this.rpmEntityList;
 			}
@@ -769,6 +834,22 @@ public class DescribeVulListResponse extends AcsResponse {
 				this.necessity = necessity;
 			}
 
+			public PreCheck getPreCheck() {
+				return this.preCheck;
+			}
+
+			public void setPreCheck(PreCheck preCheck) {
+				this.preCheck = preCheck;
+			}
+
+			public AgentScanVul getAgentScanVul() {
+				return this.agentScanVul;
+			}
+
+			public void setAgentScanVul(AgentScanVul agentScanVul) {
+				this.agentScanVul = agentScanVul;
+			}
+
 			public static class RpmEntity {
 
 				private String fullVersion;
@@ -788,6 +869,8 @@ public class DescribeVulListResponse extends AcsResponse {
 				private String updateCmd;
 
 				private String pid;
+
+				private String extendField;
 
 				private List<String> matchList;
 
@@ -861,6 +944,14 @@ public class DescribeVulListResponse extends AcsResponse {
 
 				public void setPid(String pid) {
 					this.pid = pid;
+				}
+
+				public String getExtendField() {
+					return this.extendField;
+				}
+
+				public void setExtendField(String extendField) {
+					this.extendField = extendField;
 				}
 
 				public List<String> getMatchList() {
@@ -952,6 +1043,62 @@ public class DescribeVulListResponse extends AcsResponse {
 
 				public void setAssets_factor(String assets_factor) {
 					this.assets_factor = assets_factor;
+				}
+			}
+
+			public static class PreCheck {
+
+				private String msg;
+
+				private Long code;
+
+				public String getMsg() {
+					return this.msg;
+				}
+
+				public void setMsg(String msg) {
+					this.msg = msg;
+				}
+
+				public Long getCode() {
+					return this.code;
+				}
+
+				public void setCode(Long code) {
+					this.code = code;
+				}
+			}
+
+			public static class AgentScanVul {
+
+				private String poc;
+
+				private String proof;
+
+				private String target;
+
+				public String getPoc() {
+					return this.poc;
+				}
+
+				public void setPoc(String poc) {
+					this.poc = poc;
+				}
+
+				public String getProof() {
+					return this.proof;
+				}
+
+				public void setProof(String proof) {
+					this.proof = proof;
+				}
+
+				public String getTarget() {
+					return this.target;
+				}
+
+				public void setTarget(String target) {
+					this.target = target;
 				}
 			}
 		}

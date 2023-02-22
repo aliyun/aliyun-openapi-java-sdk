@@ -27,6 +27,8 @@ public class OperateAgentClientInstallRequest extends RpcAcsRequest<OperateAgent
 
 	private String instanceIds;
 
+	private String lang;
+
 	private String uuids;
 	public OperateAgentClientInstallRequest() {
 		super("Sas", "2018-12-03", "OperateAgentClientInstall");
@@ -45,6 +47,17 @@ public class OperateAgentClientInstallRequest extends RpcAcsRequest<OperateAgent
 		this.instanceIds = instanceIds;
 		if(instanceIds != null){
 			putQueryParameter("InstanceIds", instanceIds);
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
 		}
 	}
 

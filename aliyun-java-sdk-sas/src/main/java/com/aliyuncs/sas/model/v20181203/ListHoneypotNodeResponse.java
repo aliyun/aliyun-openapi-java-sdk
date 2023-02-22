@@ -123,6 +123,8 @@ public class ListHoneypotNodeResponse extends AcsResponse {
 
 		private String nodeIp;
 
+		private Boolean upgradeAvailable;
+
 		private List<String> securityGroupProbeIpList;
 
 		public String getNodeId() {
@@ -227,6 +229,14 @@ public class ListHoneypotNodeResponse extends AcsResponse {
 
 		public void setNodeIp(String nodeIp) {
 			this.nodeIp = nodeIp;
+		}
+
+		public Boolean getUpgradeAvailable() {
+			return this.upgradeAvailable;
+		}
+
+		public void setUpgradeAvailable(Boolean upgradeAvailable) {
+			this.upgradeAvailable = upgradeAvailable;
 		}
 
 		public List<String> getSecurityGroupProbeIpList() {

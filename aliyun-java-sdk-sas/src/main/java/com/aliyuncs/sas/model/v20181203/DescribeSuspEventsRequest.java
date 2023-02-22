@@ -58,6 +58,8 @@ public class DescribeSuspEventsRequest extends RpcAcsRequest<DescribeSuspEventsR
 
 	private String targetType;
 
+	private String sortType;
+
 	private String remark;
 
 	private String containerFieldValue;
@@ -73,6 +75,10 @@ public class DescribeSuspEventsRequest extends RpcAcsRequest<DescribeSuspEventsR
 	private String clusterId;
 
 	private List<String> operateErrorCodeLists;
+
+	private String sortColumn;
+
+	private List<String> assetsTypeLists;
 
 	private String operateTimeStart;
 
@@ -266,6 +272,17 @@ public class DescribeSuspEventsRequest extends RpcAcsRequest<DescribeSuspEventsR
 		}
 	}
 
+	public String getSortType() {
+		return this.sortType;
+	}
+
+	public void setSortType(String sortType) {
+		this.sortType = sortType;
+		if(sortType != null){
+			putQueryParameter("SortType", sortType);
+		}
+	}
+
 	public String getRemark() {
 		return this.remark;
 	}
@@ -352,6 +369,30 @@ public class DescribeSuspEventsRequest extends RpcAcsRequest<DescribeSuspEventsR
 		if (operateErrorCodeLists != null) {
 			for (int i = 0; i < operateErrorCodeLists.size(); i++) {
 				putQueryParameter("OperateErrorCodeList." + (i + 1) , operateErrorCodeLists.get(i));
+			}
+		}	
+	}
+
+	public String getSortColumn() {
+		return this.sortColumn;
+	}
+
+	public void setSortColumn(String sortColumn) {
+		this.sortColumn = sortColumn;
+		if(sortColumn != null){
+			putQueryParameter("SortColumn", sortColumn);
+		}
+	}
+
+	public List<String> getAssetsTypeLists() {
+		return this.assetsTypeLists;
+	}
+
+	public void setAssetsTypeLists(List<String> assetsTypeLists) {
+		this.assetsTypeLists = assetsTypeLists;	
+		if (assetsTypeLists != null) {
+			for (int i = 0; i < assetsTypeLists.size(); i++) {
+				putQueryParameter("AssetsTypeList." + (i + 1) , assetsTypeLists.get(i));
 			}
 		}	
 	}

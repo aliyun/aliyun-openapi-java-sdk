@@ -23,6 +23,9 @@ public class ModifyLoginBaseConfigResponseUnmarshaller {
 	public static ModifyLoginBaseConfigResponse unmarshall(ModifyLoginBaseConfigResponse modifyLoginBaseConfigResponse, UnmarshallerContext _ctx) {
 		
 		modifyLoginBaseConfigResponse.setRequestId(_ctx.stringValue("ModifyLoginBaseConfigResponse.RequestId"));
+		modifyLoginBaseConfigResponse.setCode(_ctx.stringValue("ModifyLoginBaseConfigResponse.Code"));
+		modifyLoginBaseConfigResponse.setMessage(_ctx.stringValue("ModifyLoginBaseConfigResponse.Message"));
+		modifyLoginBaseConfigResponse.setSuccess(_ctx.booleanValue("ModifyLoginBaseConfigResponse.Success"));
 	 
 	 	return modifyLoginBaseConfigResponse;
 	}

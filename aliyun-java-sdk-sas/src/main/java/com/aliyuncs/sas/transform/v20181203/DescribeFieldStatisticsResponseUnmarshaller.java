@@ -27,6 +27,8 @@ public class DescribeFieldStatisticsResponseUnmarshaller {
 
 		GroupedFields groupedFields = new GroupedFields();
 		groupedFields.setOfflineInstanceCount(_ctx.integerValue("DescribeFieldStatisticsResponse.GroupedFields.OfflineInstanceCount"));
+		groupedFields.setNoRiskInstanceCount(_ctx.integerValue("DescribeFieldStatisticsResponse.GroupedFields.NoRiskInstanceCount"));
+		groupedFields.setUnKnowStatusInstanceCount(_ctx.integerValue("DescribeFieldStatisticsResponse.GroupedFields.UnKnowStatusInstanceCount"));
 		groupedFields.setRegionCount(_ctx.integerValue("DescribeFieldStatisticsResponse.GroupedFields.RegionCount"));
 		groupedFields.setNewInstanceCount(_ctx.integerValue("DescribeFieldStatisticsResponse.GroupedFields.NewInstanceCount"));
 		groupedFields.setExposedInstanceCount(_ctx.integerValue("DescribeFieldStatisticsResponse.GroupedFields.ExposedInstanceCount"));
@@ -47,6 +49,7 @@ public class DescribeFieldStatisticsResponseUnmarshaller {
 		groupedFields.setHuaweiInstanceCount(_ctx.integerValue("DescribeFieldStatisticsResponse.GroupedFields.HuaweiInstanceCount"));
 		groupedFields.setAwsInstanceCount(_ctx.integerValue("DescribeFieldStatisticsResponse.GroupedFields.AwsInstanceCount"));
 		groupedFields.setOutMachineInstanceCount(_ctx.integerValue("DescribeFieldStatisticsResponse.GroupedFields.OutMachineInstanceCount"));
+		groupedFields.setTripartiteInstanceCount(_ctx.integerValue("DescribeFieldStatisticsResponse.GroupedFields.TripartiteInstanceCount"));
 		describeFieldStatisticsResponse.setGroupedFields(groupedFields);
 	 
 	 	return describeFieldStatisticsResponse;

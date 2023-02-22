@@ -73,6 +73,18 @@ public class DescribeInstanceStatisticsResponse extends AcsResponse {
 
 		private Integer weakPWNum;
 
+		private Integer agentlessAll;
+
+		private Integer agentlessMalicious;
+
+		private Integer agentlessVulCve;
+
+		private Integer agentlessVulSca;
+
+		private Integer agentlessBaseline;
+
+		private Integer cspmNum;
+
 		public Integer getAccount() {
 			return this.account;
 		}
@@ -175,6 +187,54 @@ public class DescribeInstanceStatisticsResponse extends AcsResponse {
 
 		public void setWeakPWNum(Integer weakPWNum) {
 			this.weakPWNum = weakPWNum;
+		}
+
+		public Integer getAgentlessAll() {
+			return this.agentlessAll;
+		}
+
+		public void setAgentlessAll(Integer agentlessAll) {
+			this.agentlessAll = agentlessAll;
+		}
+
+		public Integer getAgentlessMalicious() {
+			return this.agentlessMalicious;
+		}
+
+		public void setAgentlessMalicious(Integer agentlessMalicious) {
+			this.agentlessMalicious = agentlessMalicious;
+		}
+
+		public Integer getAgentlessVulCve() {
+			return this.agentlessVulCve;
+		}
+
+		public void setAgentlessVulCve(Integer agentlessVulCve) {
+			this.agentlessVulCve = agentlessVulCve;
+		}
+
+		public Integer getAgentlessVulSca() {
+			return this.agentlessVulSca;
+		}
+
+		public void setAgentlessVulSca(Integer agentlessVulSca) {
+			this.agentlessVulSca = agentlessVulSca;
+		}
+
+		public Integer getAgentlessBaseline() {
+			return this.agentlessBaseline;
+		}
+
+		public void setAgentlessBaseline(Integer agentlessBaseline) {
+			this.agentlessBaseline = agentlessBaseline;
+		}
+
+		public Integer getCspmNum() {
+			return this.cspmNum;
+		}
+
+		public void setCspmNum(Integer cspmNum) {
+			this.cspmNum = cspmNum;
 		}
 	}
 

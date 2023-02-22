@@ -57,6 +57,7 @@ public class ListHoneypotNodeResponseUnmarshaller {
 			honeypotNode.setAllowHoneypotAccessInternet(_ctx.booleanValue("ListHoneypotNodeResponse.HoneypotNodeList["+ i +"].AllowHoneypotAccessInternet"));
 			honeypotNode.setDefaultNode(_ctx.booleanValue("ListHoneypotNodeResponse.HoneypotNodeList["+ i +"].DefaultNode"));
 			honeypotNode.setNodeIp(_ctx.stringValue("ListHoneypotNodeResponse.HoneypotNodeList["+ i +"].NodeIp"));
+			honeypotNode.setUpgradeAvailable(_ctx.booleanValue("ListHoneypotNodeResponse.HoneypotNodeList["+ i +"].UpgradeAvailable"));
 
 			List<String> securityGroupProbeIpList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListHoneypotNodeResponse.HoneypotNodeList["+ i +"].SecurityGroupProbeIpList.Length"); j++) {

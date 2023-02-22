@@ -55,6 +55,8 @@ public class DescribeBackupClientsResponse extends AcsResponse {
 
 		private String clientId;
 
+		private String clientVersion;
+
 		public String getUuid() {
 			return this.uuid;
 		}
@@ -85,6 +87,14 @@ public class DescribeBackupClientsResponse extends AcsResponse {
 
 		public void setClientId(String clientId) {
 			this.clientId = clientId;
+		}
+
+		public String getClientVersion() {
+			return this.clientVersion;
+		}
+
+		public void setClientVersion(String clientVersion) {
+			this.clientVersion = clientVersion;
 		}
 	}
 

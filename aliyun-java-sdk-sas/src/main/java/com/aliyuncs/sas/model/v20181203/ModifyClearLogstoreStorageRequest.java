@@ -25,13 +25,13 @@ import com.aliyuncs.sas.Endpoint;
 public class ModifyClearLogstoreStorageRequest extends RpcAcsRequest<ModifyClearLogstoreStorageResponse> {
 	   
 
-	private String from;
-
-	private String lang;
-
 	private String userLogStore;
 
 	private String userProject;
+
+	private String from;
+
+	private String lang;
 	public ModifyClearLogstoreStorageRequest() {
 		super("Sas", "2018-12-03", "ModifyClearLogstoreStorage");
 		setMethod(MethodType.POST);
@@ -39,28 +39,6 @@ public class ModifyClearLogstoreStorageRequest extends RpcAcsRequest<ModifyClear
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getFrom() {
-		return this.from;
-	}
-
-	public void setFrom(String from) {
-		this.from = from;
-		if(from != null){
-			putQueryParameter("From", from);
-		}
-	}
-
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
-		}
 	}
 
 	public String getUserLogStore() {
@@ -82,6 +60,28 @@ public class ModifyClearLogstoreStorageRequest extends RpcAcsRequest<ModifyClear
 		this.userProject = userProject;
 		if(userProject != null){
 			putQueryParameter("UserProject", userProject);
+		}
+	}
+
+	public String getFrom() {
+		return this.from;
+	}
+
+	public void setFrom(String from) {
+		this.from = from;
+		if(from != null){
+			putQueryParameter("From", from);
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
 		}
 	}
 

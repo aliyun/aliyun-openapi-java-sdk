@@ -40,6 +40,8 @@ public class ListCheckResultRequest extends RpcAcsRequest<ListCheckResultRespons
 
 	private List<String> vendorss;
 
+	private List<String> typess;
+
 	private Integer currentPage;
 
 	private List<Long> requirementIdss;
@@ -139,6 +141,19 @@ public class ListCheckResultRequest extends RpcAcsRequest<ListCheckResultRespons
 		if (vendorss != null) {
 			for (int i = 0; i < vendorss.size(); i++) {
 				putQueryParameter("Vendors." + (i + 1) , vendorss.get(i));
+			}
+		}	
+	}
+
+	public List<String> getTypess() {
+		return this.typess;
+	}
+
+	public void setTypess(List<String> typess) {
+		this.typess = typess;	
+		if (typess != null) {
+			for (int i = 0; i < typess.size(); i++) {
+				putQueryParameter("Types." + (i + 1) , typess.get(i));
 			}
 		}	
 	}

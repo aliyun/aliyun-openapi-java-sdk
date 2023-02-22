@@ -66,6 +66,13 @@ public class DescribeImageListWithBaselineNameResponseUnmarshaller {
 			imageInfosItem.setContainerId(_ctx.stringValue("DescribeImageListWithBaselineNameResponse.ImageInfos["+ i +"].ContainerId"));
 			imageInfosItem.setImage(_ctx.stringValue("DescribeImageListWithBaselineNameResponse.ImageInfos["+ i +"].Image"));
 			imageInfosItem.setBaselineType(_ctx.stringValue("DescribeImageListWithBaselineNameResponse.ImageInfos["+ i +"].BaselineType"));
+			imageInfosItem.setInstanceName(_ctx.stringValue("DescribeImageListWithBaselineNameResponse.ImageInfos["+ i +"].InstanceName"));
+			imageInfosItem.setInternetIp(_ctx.stringValue("DescribeImageListWithBaselineNameResponse.ImageInfos["+ i +"].InternetIp"));
+			imageInfosItem.setIntranetIp(_ctx.stringValue("DescribeImageListWithBaselineNameResponse.ImageInfos["+ i +"].IntranetIp"));
+			imageInfosItem.setTargetName(_ctx.stringValue("DescribeImageListWithBaselineNameResponse.ImageInfos["+ i +"].TargetName"));
+			imageInfosItem.setTargetId(_ctx.stringValue("DescribeImageListWithBaselineNameResponse.ImageInfos["+ i +"].TargetId"));
+			imageInfosItem.setTargetType(_ctx.stringValue("DescribeImageListWithBaselineNameResponse.ImageInfos["+ i +"].TargetType"));
+			imageInfosItem.setLastScanTime(_ctx.longValue("DescribeImageListWithBaselineNameResponse.ImageInfos["+ i +"].LastScanTime"));
 
 			imageInfos.add(imageInfosItem);
 		}

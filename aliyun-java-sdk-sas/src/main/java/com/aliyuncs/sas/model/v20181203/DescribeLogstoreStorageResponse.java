@@ -34,6 +34,8 @@ public class DescribeLogstoreStorageResponse extends AcsResponse {
 
 	private Long preserve;
 
+	private String userProject;
+
 	public Long getUsed() {
 		return this.used;
 	}
@@ -72,6 +74,14 @@ public class DescribeLogstoreStorageResponse extends AcsResponse {
 
 	public void setPreserve(Long preserve) {
 		this.preserve = preserve;
+	}
+
+	public String getUserProject() {
+		return this.userProject;
+	}
+
+	public void setUserProject(String userProject) {
+		this.userProject = userProject;
 	}
 
 	@Override

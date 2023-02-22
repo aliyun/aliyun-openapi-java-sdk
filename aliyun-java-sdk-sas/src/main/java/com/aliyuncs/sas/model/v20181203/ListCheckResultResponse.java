@@ -77,6 +77,8 @@ public class ListCheckResultResponse extends AcsResponse {
 
 		private Long lastCheckTime;
 
+		private Boolean trialPermission;
+
 		private List<CheckPolicie> checkPolicies;
 
 		public Long getCheckId() {
@@ -157,6 +159,14 @@ public class ListCheckResultResponse extends AcsResponse {
 
 		public void setLastCheckTime(Long lastCheckTime) {
 			this.lastCheckTime = lastCheckTime;
+		}
+
+		public Boolean getTrialPermission() {
+			return this.trialPermission;
+		}
+
+		public void setTrialPermission(Boolean trialPermission) {
+			this.trialPermission = trialPermission;
 		}
 
 		public List<CheckPolicie> getCheckPolicies() {

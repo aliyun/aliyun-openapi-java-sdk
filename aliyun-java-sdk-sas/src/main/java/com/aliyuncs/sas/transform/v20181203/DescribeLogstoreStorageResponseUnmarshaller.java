@@ -27,6 +27,7 @@ public class DescribeLogstoreStorageResponseUnmarshaller {
 		describeLogstoreStorageResponse.setTtl(_ctx.integerValue("DescribeLogstoreStorageResponse.Ttl"));
 		describeLogstoreStorageResponse.setLogstore(_ctx.stringValue("DescribeLogstoreStorageResponse.Logstore"));
 		describeLogstoreStorageResponse.setPreserve(_ctx.longValue("DescribeLogstoreStorageResponse.Preserve"));
+		describeLogstoreStorageResponse.setUserProject(_ctx.stringValue("DescribeLogstoreStorageResponse.UserProject"));
 	 
 	 	return describeLogstoreStorageResponse;
 	}

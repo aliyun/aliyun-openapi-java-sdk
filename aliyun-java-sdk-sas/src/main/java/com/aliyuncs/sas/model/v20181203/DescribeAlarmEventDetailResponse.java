@@ -49,6 +49,8 @@ public class DescribeAlarmEventDetailResponse extends AcsResponse {
 
 		private String type;
 
+		private Boolean dealed;
+
 		private String internetIp;
 
 		private String k8sClusterName;
@@ -69,6 +71,8 @@ public class DescribeAlarmEventDetailResponse extends AcsResponse {
 
 		private String k8sClusterId;
 
+		private String accessCode;
+
 		private Boolean containHwMode;
 
 		private String instanceName;
@@ -78,6 +82,8 @@ public class DescribeAlarmEventDetailResponse extends AcsResponse {
 		private String solution;
 
 		private String dataSource;
+
+		private Boolean hasTraceInfo;
 
 		private String intranetIp;
 
@@ -107,6 +113,14 @@ public class DescribeAlarmEventDetailResponse extends AcsResponse {
 
 		public void setType(String type) {
 			this.type = type;
+		}
+
+		public Boolean getDealed() {
+			return this.dealed;
+		}
+
+		public void setDealed(Boolean dealed) {
+			this.dealed = dealed;
 		}
 
 		public String getInternetIp() {
@@ -189,6 +203,14 @@ public class DescribeAlarmEventDetailResponse extends AcsResponse {
 			this.k8sClusterId = k8sClusterId;
 		}
 
+		public String getAccessCode() {
+			return this.accessCode;
+		}
+
+		public void setAccessCode(String accessCode) {
+			this.accessCode = accessCode;
+		}
+
 		public Boolean getContainHwMode() {
 			return this.containHwMode;
 		}
@@ -227,6 +249,14 @@ public class DescribeAlarmEventDetailResponse extends AcsResponse {
 
 		public void setDataSource(String dataSource) {
 			this.dataSource = dataSource;
+		}
+
+		public Boolean getHasTraceInfo() {
+			return this.hasTraceInfo;
+		}
+
+		public void setHasTraceInfo(Boolean hasTraceInfo) {
+			this.hasTraceInfo = hasTraceInfo;
 		}
 
 		public String getIntranetIp() {

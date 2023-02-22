@@ -42,6 +42,8 @@ public class DescribeGroupedMaliciousFilesRequest extends RpcAcsRequest<Describe
 
 	private String imageTag;
 
+	private String maliciousMd5;
+
 	private Integer currentPage;
 
 	private String clusterId;
@@ -151,6 +153,17 @@ public class DescribeGroupedMaliciousFilesRequest extends RpcAcsRequest<Describe
 		this.imageTag = imageTag;
 		if(imageTag != null){
 			putQueryParameter("ImageTag", imageTag);
+		}
+	}
+
+	public String getMaliciousMd5() {
+		return this.maliciousMd5;
+	}
+
+	public void setMaliciousMd5(String maliciousMd5) {
+		this.maliciousMd5 = maliciousMd5;
+		if(maliciousMd5 != null){
+			putQueryParameter("MaliciousMd5", maliciousMd5);
 		}
 	}
 

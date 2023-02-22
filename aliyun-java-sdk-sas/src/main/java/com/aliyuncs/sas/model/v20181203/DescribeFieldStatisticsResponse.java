@@ -48,6 +48,10 @@ public class DescribeFieldStatisticsResponse extends AcsResponse {
 
 		private Integer offlineInstanceCount;
 
+		private Integer noRiskInstanceCount;
+
+		private Integer unKnowStatusInstanceCount;
+
 		private Integer regionCount;
 
 		private Integer newInstanceCount;
@@ -88,12 +92,30 @@ public class DescribeFieldStatisticsResponse extends AcsResponse {
 
 		private Integer outMachineInstanceCount;
 
+		private Integer tripartiteInstanceCount;
+
 		public Integer getOfflineInstanceCount() {
 			return this.offlineInstanceCount;
 		}
 
 		public void setOfflineInstanceCount(Integer offlineInstanceCount) {
 			this.offlineInstanceCount = offlineInstanceCount;
+		}
+
+		public Integer getNoRiskInstanceCount() {
+			return this.noRiskInstanceCount;
+		}
+
+		public void setNoRiskInstanceCount(Integer noRiskInstanceCount) {
+			this.noRiskInstanceCount = noRiskInstanceCount;
+		}
+
+		public Integer getUnKnowStatusInstanceCount() {
+			return this.unKnowStatusInstanceCount;
+		}
+
+		public void setUnKnowStatusInstanceCount(Integer unKnowStatusInstanceCount) {
+			this.unKnowStatusInstanceCount = unKnowStatusInstanceCount;
 		}
 
 		public Integer getRegionCount() {
@@ -254,6 +276,14 @@ public class DescribeFieldStatisticsResponse extends AcsResponse {
 
 		public void setOutMachineInstanceCount(Integer outMachineInstanceCount) {
 			this.outMachineInstanceCount = outMachineInstanceCount;
+		}
+
+		public Integer getTripartiteInstanceCount() {
+			return this.tripartiteInstanceCount;
+		}
+
+		public void setTripartiteInstanceCount(Integer tripartiteInstanceCount) {
+			this.tripartiteInstanceCount = tripartiteInstanceCount;
 		}
 	}
 

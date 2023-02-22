@@ -51,6 +51,7 @@ public class ListHoneypotResponseUnmarshaller {
 			listItem.setPresetId(_ctx.stringValue("ListHoneypotResponse.List["+ i +"].PresetId"));
 			listItem.setHoneypotImageDisplayName(_ctx.stringValue("ListHoneypotResponse.List["+ i +"].HoneypotImageDisplayName"));
 			listItem.setNodeId(_ctx.stringValue("ListHoneypotResponse.List["+ i +"].NodeId"));
+			listItem.setHoneypotImageId(_ctx.stringValue("ListHoneypotResponse.List["+ i +"].HoneypotImageId"));
 
 			List<String> state = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListHoneypotResponse.List["+ i +"].State.Length"); j++) {

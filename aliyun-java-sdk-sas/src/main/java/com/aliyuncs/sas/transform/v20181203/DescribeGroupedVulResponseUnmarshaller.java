@@ -36,6 +36,8 @@ public class DescribeGroupedVulResponseUnmarshaller {
 			GroupedVulItem groupedVulItem = new GroupedVulItem();
 			groupedVulItem.setType(_ctx.stringValue("DescribeGroupedVulResponse.GroupedVulItems["+ i +"].Type"));
 			groupedVulItem.setNntfCount(_ctx.integerValue("DescribeGroupedVulResponse.GroupedVulItems["+ i +"].NntfCount"));
+			groupedVulItem.setRaspDefend(_ctx.integerValue("DescribeGroupedVulResponse.GroupedVulItems["+ i +"].RaspDefend"));
+			groupedVulItem.setStatus(_ctx.integerValue("DescribeGroupedVulResponse.GroupedVulItems["+ i +"].Status"));
 			groupedVulItem.setHandledCount(_ctx.integerValue("DescribeGroupedVulResponse.GroupedVulItems["+ i +"].HandledCount"));
 			groupedVulItem.setGmtLast(_ctx.longValue("DescribeGroupedVulResponse.GroupedVulItems["+ i +"].GmtLast"));
 			groupedVulItem.setTags(_ctx.stringValue("DescribeGroupedVulResponse.GroupedVulItems["+ i +"].Tags"));
@@ -44,6 +46,7 @@ public class DescribeGroupedVulResponseUnmarshaller {
 			groupedVulItem.setName(_ctx.stringValue("DescribeGroupedVulResponse.GroupedVulItems["+ i +"].Name"));
 			groupedVulItem.setTotalFixCount(_ctx.longValue("DescribeGroupedVulResponse.GroupedVulItems["+ i +"].TotalFixCount"));
 			groupedVulItem.setAsapCount(_ctx.integerValue("DescribeGroupedVulResponse.GroupedVulItems["+ i +"].AsapCount"));
+			groupedVulItem.setRelated(_ctx.stringValue("DescribeGroupedVulResponse.GroupedVulItems["+ i +"].Related"));
 			groupedVulItem.setRuleModifyTime(_ctx.longValue("DescribeGroupedVulResponse.GroupedVulItems["+ i +"].RuleModifyTime"));
 
 			groupedVulItems.add(groupedVulItem);

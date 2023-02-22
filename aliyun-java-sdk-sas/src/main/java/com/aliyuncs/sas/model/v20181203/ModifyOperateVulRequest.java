@@ -29,9 +29,9 @@ public class ModifyOperateVulRequest extends RpcAcsRequest<ModifyOperateVulRespo
 
 	private String type;
 
-	private String info;
-
 	private String operateType;
+
+	private String info;
 	public ModifyOperateVulRequest() {
 		super("Sas", "2018-12-03", "ModifyOperateVul");
 		setMethod(MethodType.POST);
@@ -63,17 +63,6 @@ public class ModifyOperateVulRequest extends RpcAcsRequest<ModifyOperateVulRespo
 		}
 	}
 
-	public String getInfo() {
-		return this.info;
-	}
-
-	public void setInfo(String info) {
-		this.info = info;
-		if(info != null){
-			putQueryParameter("Info", info);
-		}
-	}
-
 	public String getOperateType() {
 		return this.operateType;
 	}
@@ -82,6 +71,17 @@ public class ModifyOperateVulRequest extends RpcAcsRequest<ModifyOperateVulRespo
 		this.operateType = operateType;
 		if(operateType != null){
 			putQueryParameter("OperateType", operateType);
+		}
+	}
+
+	public String getInfo() {
+		return this.info;
+	}
+
+	public void setInfo(String info) {
+		this.info = info;
+		if(info != null){
+			putQueryParameter("Info", info);
 		}
 	}
 

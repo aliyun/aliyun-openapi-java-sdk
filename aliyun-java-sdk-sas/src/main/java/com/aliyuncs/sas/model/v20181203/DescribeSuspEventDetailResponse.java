@@ -33,6 +33,8 @@ public class DescribeSuspEventDetailResponse extends AcsResponse {
 
 	private String internetIp;
 
+	private String alarmUniqueInfo;
+
 	private String intranetIp;
 
 	private String lastTime;
@@ -44,6 +46,8 @@ public class DescribeSuspEventDetailResponse extends AcsResponse {
 	private Boolean canBeDealOnLine;
 
 	private String requestId;
+
+	private String accessCode;
 
 	private String eventTypeDesc;
 
@@ -64,6 +68,8 @@ public class DescribeSuspEventDetailResponse extends AcsResponse {
 	private Integer id;
 
 	private List<QuaraFile> details;
+
+	private List<EventNote> eventNotes;
 
 	public String getType() {
 		return this.type;
@@ -95,6 +101,14 @@ public class DescribeSuspEventDetailResponse extends AcsResponse {
 
 	public void setInternetIp(String internetIp) {
 		this.internetIp = internetIp;
+	}
+
+	public String getAlarmUniqueInfo() {
+		return this.alarmUniqueInfo;
+	}
+
+	public void setAlarmUniqueInfo(String alarmUniqueInfo) {
+		this.alarmUniqueInfo = alarmUniqueInfo;
 	}
 
 	public String getIntranetIp() {
@@ -143,6 +157,14 @@ public class DescribeSuspEventDetailResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getAccessCode() {
+		return this.accessCode;
+	}
+
+	public void setAccessCode(String accessCode) {
+		this.accessCode = accessCode;
 	}
 
 	public String getEventTypeDesc() {
@@ -225,11 +247,21 @@ public class DescribeSuspEventDetailResponse extends AcsResponse {
 		this.details = details;
 	}
 
+	public List<EventNote> getEventNotes() {
+		return this.eventNotes;
+	}
+
+	public void setEventNotes(List<EventNote> eventNotes) {
+		this.eventNotes = eventNotes;
+	}
+
 	public static class QuaraFile {
 
 		private String type;
 
 		private String value;
+
+		private String valueDisplay;
 
 		private String infoType;
 
@@ -251,6 +283,14 @@ public class DescribeSuspEventDetailResponse extends AcsResponse {
 
 		public void setValue(String value) {
 			this.value = value;
+		}
+
+		public String getValueDisplay() {
+			return this.valueDisplay;
+		}
+
+		public void setValueDisplay(String valueDisplay) {
+			this.valueDisplay = valueDisplay;
 		}
 
 		public String getInfoType() {
@@ -275,6 +315,39 @@ public class DescribeSuspEventDetailResponse extends AcsResponse {
 
 		public void setName(String name) {
 			this.name = name;
+		}
+	}
+
+	public static class EventNote {
+
+		private String note;
+
+		private Long noteId;
+
+		private String noteTime;
+
+		public String getNote() {
+			return this.note;
+		}
+
+		public void setNote(String note) {
+			this.note = note;
+		}
+
+		public Long getNoteId() {
+			return this.noteId;
+		}
+
+		public void setNoteId(Long noteId) {
+			this.noteId = noteId;
+		}
+
+		public String getNoteTime() {
+			return this.noteTime;
+		}
+
+		public void setNoteTime(String noteTime) {
+			this.noteTime = noteTime;
 		}
 	}
 

@@ -44,6 +44,7 @@ public class DescribeCheckWarningsResponseUnmarshaller {
 			checkWarning.setLevel(_ctx.stringValue("DescribeCheckWarningsResponse.CheckWarnings["+ i +"].Level"));
 			checkWarning.setReason(_ctx.stringValue("DescribeCheckWarningsResponse.CheckWarnings["+ i +"].Reason"));
 			checkWarning.setFixStatus(_ctx.integerValue("DescribeCheckWarningsResponse.CheckWarnings["+ i +"].FixStatus"));
+			checkWarning.setExecErrorMessage(_ctx.stringValue("DescribeCheckWarningsResponse.CheckWarnings["+ i +"].ExecErrorMessage"));
 
 			checkWarnings.add(checkWarning);
 		}

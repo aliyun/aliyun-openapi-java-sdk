@@ -27,9 +27,9 @@ public class ModifyStrategyTargetRequest extends RpcAcsRequest<ModifyStrategyTar
 
 	private String type;
 
-	private String sourceIp;
-
 	private String target;
+
+	private String sourceIp;
 
 	private String config;
 	public ModifyStrategyTargetRequest() {
@@ -52,17 +52,6 @@ public class ModifyStrategyTargetRequest extends RpcAcsRequest<ModifyStrategyTar
 		}
 	}
 
-	public String getSourceIp() {
-		return this.sourceIp;
-	}
-
-	public void setSourceIp(String sourceIp) {
-		this.sourceIp = sourceIp;
-		if(sourceIp != null){
-			putQueryParameter("SourceIp", sourceIp);
-		}
-	}
-
 	public String getTarget() {
 		return this.target;
 	}
@@ -71,6 +60,17 @@ public class ModifyStrategyTargetRequest extends RpcAcsRequest<ModifyStrategyTar
 		this.target = target;
 		if(target != null){
 			putQueryParameter("Target", target);
+		}
+	}
+
+	public String getSourceIp() {
+		return this.sourceIp;
+	}
+
+	public void setSourceIp(String sourceIp) {
+		this.sourceIp = sourceIp;
+		if(sourceIp != null){
+			putQueryParameter("SourceIp", sourceIp);
 		}
 	}
 

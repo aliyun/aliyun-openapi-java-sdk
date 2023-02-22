@@ -26,12 +26,22 @@ public class DeleteGroupResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String code;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	@Override

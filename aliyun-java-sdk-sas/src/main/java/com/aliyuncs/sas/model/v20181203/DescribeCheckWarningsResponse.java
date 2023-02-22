@@ -105,6 +105,8 @@ public class DescribeCheckWarningsResponse extends AcsResponse {
 
 		private Integer fixStatus;
 
+		private String execErrorMessage;
+
 		public Integer getStatus() {
 			return this.status;
 		}
@@ -175,6 +177,14 @@ public class DescribeCheckWarningsResponse extends AcsResponse {
 
 		public void setFixStatus(Integer fixStatus) {
 			this.fixStatus = fixStatus;
+		}
+
+		public String getExecErrorMessage() {
+			return this.execErrorMessage;
+		}
+
+		public void setExecErrorMessage(String execErrorMessage) {
+			this.execErrorMessage = execErrorMessage;
 		}
 	}
 

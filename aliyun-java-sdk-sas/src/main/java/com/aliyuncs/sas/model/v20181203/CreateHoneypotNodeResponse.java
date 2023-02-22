@@ -34,6 +34,8 @@ public class CreateHoneypotNodeResponse extends AcsResponse {
 
 	private Integer httpStatusCode;
 
+	private HoneypotNode honeypotNode;
+
 	public Boolean getSuccess() {
 		return this.success;
 	}
@@ -72,6 +74,27 @@ public class CreateHoneypotNodeResponse extends AcsResponse {
 
 	public void setHttpStatusCode(Integer httpStatusCode) {
 		this.httpStatusCode = httpStatusCode;
+	}
+
+	public HoneypotNode getHoneypotNode() {
+		return this.honeypotNode;
+	}
+
+	public void setHoneypotNode(HoneypotNode honeypotNode) {
+		this.honeypotNode = honeypotNode;
+	}
+
+	public static class HoneypotNode {
+
+		private String nodeId;
+
+		public String getNodeId() {
+			return this.nodeId;
+		}
+
+		public void setNodeId(String nodeId) {
+			this.nodeId = nodeId;
+		}
 	}
 
 	@Override
