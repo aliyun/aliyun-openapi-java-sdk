@@ -1,3 +1,6 @@
+2023-02-22 Version: 2.8.6
+- Supported Legacy id.
+
 2023-02-21 Version: 2.8.5
 - Supported MonoRecording Duration.
 

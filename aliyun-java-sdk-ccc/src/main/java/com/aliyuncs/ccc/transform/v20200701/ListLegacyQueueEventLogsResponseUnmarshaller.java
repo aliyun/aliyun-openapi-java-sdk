@@ -51,6 +51,7 @@ public class ListLegacyQueueEventLogsResponseUnmarshaller {
 			queueEventLog.setAnswerPhone(_ctx.stringValue("ListLegacyQueueEventLogsResponse.Data.List["+ i +"].AnswerPhone"));
 			queueEventLog.setAcid(_ctx.stringValue("ListLegacyQueueEventLogsResponse.Data.List["+ i +"].Acid"));
 			queueEventLog.setTenantId(_ctx.stringValue("ListLegacyQueueEventLogsResponse.Data.List["+ i +"].TenantId"));
+			queueEventLog.setId(_ctx.longValue("ListLegacyQueueEventLogsResponse.Data.List["+ i +"].Id"));
 
 			list.add(queueEventLog);
 		}

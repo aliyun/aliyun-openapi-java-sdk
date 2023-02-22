@@ -149,6 +149,8 @@ public class ListLegacyQueueEventLogsResponse extends AcsResponse {
 
 			private String tenantId;
 
+			private Long id;
+
 			public String getVq() {
 				return this.vq;
 			}
@@ -227,6 +229,14 @@ public class ListLegacyQueueEventLogsResponse extends AcsResponse {
 
 			public void setTenantId(String tenantId) {
 				this.tenantId = tenantId;
+			}
+
+			public Long getId() {
+				return this.id;
+			}
+
+			public void setId(Long id) {
+				this.id = id;
 			}
 		}
 	}

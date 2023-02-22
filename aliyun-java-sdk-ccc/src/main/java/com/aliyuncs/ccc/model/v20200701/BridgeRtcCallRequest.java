@@ -25,6 +25,8 @@ import com.aliyuncs.ccc.Endpoint;
 public class BridgeRtcCallRequest extends RpcAcsRequest<BridgeRtcCallResponse> {
 	   
 
+	private String serviceProvider;
+
 	private String callee;
 
 	private String userId;
@@ -39,8 +41,6 @@ public class BridgeRtcCallRequest extends RpcAcsRequest<BridgeRtcCallResponse> {
 
 	private String instanceId;
 
-	private String provider;
-
 	private Boolean videoEnabled;
 	public BridgeRtcCallRequest() {
 		super("CCC", "2020-07-01", "BridgeRtcCall", "CCC");
@@ -49,6 +49,17 @@ public class BridgeRtcCallRequest extends RpcAcsRequest<BridgeRtcCallResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getServiceProvider() {
+		return this.serviceProvider;
+	}
+
+	public void setServiceProvider(String serviceProvider) {
+		this.serviceProvider = serviceProvider;
+		if(serviceProvider != null){
+			putQueryParameter("ServiceProvider", serviceProvider);
+		}
 	}
 
 	public String getCallee() {
@@ -125,17 +136,6 @@ public class BridgeRtcCallRequest extends RpcAcsRequest<BridgeRtcCallResponse> {
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getProvider() {
-		return this.provider;
-	}
-
-	public void setProvider(String provider) {
-		this.provider = provider;
-		if(provider != null){
-			putQueryParameter("Provider", provider);
 		}
 	}
 
