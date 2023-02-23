@@ -1,3 +1,6 @@
+2023-02-23 Version: 1.1.8
+- Get Job Instance Add RegionId.
+
 2023-02-21 Version: 1.1.7
 - Update AppGroup Hide xattrs.
 - Get AppGroup Hide xattrs.
