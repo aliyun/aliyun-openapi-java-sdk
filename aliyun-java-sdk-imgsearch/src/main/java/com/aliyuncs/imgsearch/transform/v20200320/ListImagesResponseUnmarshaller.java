@@ -36,11 +36,11 @@ public class ListImagesResponseUnmarshaller {
 		List<ImageListItem> imageList = new ArrayList<ImageListItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListImagesResponse.Data.ImageList.Length"); i++) {
 			ImageListItem imageListItem = new ImageListItem();
+			imageListItem.setEntityId(_ctx.stringValue("ListImagesResponse.Data.ImageList["+ i +"].EntityId"));
+			imageListItem.setCreatedAt(_ctx.longValue("ListImagesResponse.Data.ImageList["+ i +"].CreatedAt"));
+			imageListItem.setUpdatedAt(_ctx.longValue("ListImagesResponse.Data.ImageList["+ i +"].UpdatedAt"));
 			imageListItem.setDataId(_ctx.stringValue("ListImagesResponse.Data.ImageList["+ i +"].DataId"));
 			imageListItem.setExtraData(_ctx.stringValue("ListImagesResponse.Data.ImageList["+ i +"].ExtraData"));
-			imageListItem.setEntityId(_ctx.stringValue("ListImagesResponse.Data.ImageList["+ i +"].EntityId"));
-			imageListItem.setUpdatedAt(_ctx.longValue("ListImagesResponse.Data.ImageList["+ i +"].UpdatedAt"));
-			imageListItem.setCreatedAt(_ctx.longValue("ListImagesResponse.Data.ImageList["+ i +"].CreatedAt"));
 
 			imageList.add(imageListItem);
 		}

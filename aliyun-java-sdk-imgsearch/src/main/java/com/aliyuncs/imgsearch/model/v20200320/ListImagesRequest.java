@@ -37,7 +37,7 @@ public class ListImagesRequest extends RpcAcsRequest<ListImagesResponse> {
 
 	private String dbName;
 	public ListImagesRequest() {
-		super("imgsearch", "2020-03-20", "ListImages", "imgsearch");
+		super("imgsearch", "2020-03-20", "ListImages");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

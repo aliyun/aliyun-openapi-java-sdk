@@ -79,15 +79,39 @@ public class ListImagesResponse extends AcsResponse {
 
 		public static class ImageListItem {
 
+			private String entityId;
+
+			private Long createdAt;
+
+			private Long updatedAt;
+
 			private String dataId;
 
 			private String extraData;
 
-			private String entityId;
+			public String getEntityId() {
+				return this.entityId;
+			}
 
-			private Long updatedAt;
+			public void setEntityId(String entityId) {
+				this.entityId = entityId;
+			}
 
-			private Long createdAt;
+			public Long getCreatedAt() {
+				return this.createdAt;
+			}
+
+			public void setCreatedAt(Long createdAt) {
+				this.createdAt = createdAt;
+			}
+
+			public Long getUpdatedAt() {
+				return this.updatedAt;
+			}
+
+			public void setUpdatedAt(Long updatedAt) {
+				this.updatedAt = updatedAt;
+			}
 
 			public String getDataId() {
 				return this.dataId;
@@ -103,30 +127,6 @@ public class ListImagesResponse extends AcsResponse {
 
 			public void setExtraData(String extraData) {
 				this.extraData = extraData;
-			}
-
-			public String getEntityId() {
-				return this.entityId;
-			}
-
-			public void setEntityId(String entityId) {
-				this.entityId = entityId;
-			}
-
-			public Long getUpdatedAt() {
-				return this.updatedAt;
-			}
-
-			public void setUpdatedAt(Long updatedAt) {
-				this.updatedAt = updatedAt;
-			}
-
-			public Long getCreatedAt() {
-				return this.createdAt;
-			}
-
-			public void setCreatedAt(Long createdAt) {
-				this.createdAt = createdAt;
 			}
 		}
 	}

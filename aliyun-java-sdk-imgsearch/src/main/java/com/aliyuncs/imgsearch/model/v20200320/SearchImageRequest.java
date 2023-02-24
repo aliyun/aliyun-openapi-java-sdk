@@ -31,7 +31,7 @@ public class SearchImageRequest extends RpcAcsRequest<SearchImageResponse> {
 
 	private Integer limit;
 	public SearchImageRequest() {
-		super("imgsearch", "2020-03-20", "SearchImage", "imgsearch");
+		super("imgsearch", "2020-03-20", "SearchImage");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
