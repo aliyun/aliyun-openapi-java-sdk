@@ -14,18 +14,19 @@
 
 package com.aliyuncs.arms.model.v20190808;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.arms.transform.v20190808.ListPrometheusRemoteWritesResponseUnmarshaller;
+import com.aliyuncs.arms.transform.v20190808.UpdatePrometheusRemoteWriteResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListPrometheusRemoteWritesResponse extends AcsResponse {
+public class UpdatePrometheusRemoteWriteResponse extends AcsResponse {
 
 	private String requestId;
+
+	private String data;
 
 	private Boolean success;
 
@@ -33,14 +34,20 @@ public class ListPrometheusRemoteWritesResponse extends AcsResponse {
 
 	private Integer code;
 
-	private List<RemoteWrite> data;
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
 	}
 
 	public Boolean getSuccess() {
@@ -67,50 +74,9 @@ public class ListPrometheusRemoteWritesResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public List<RemoteWrite> getData() {
-		return this.data;
-	}
-
-	public void setData(List<RemoteWrite> data) {
-		this.data = data;
-	}
-
-	public static class RemoteWrite {
-
-		private String clusterId;
-
-		private String remoteWriteName;
-
-		private String remoteWriteYaml;
-
-		public String getClusterId() {
-			return this.clusterId;
-		}
-
-		public void setClusterId(String clusterId) {
-			this.clusterId = clusterId;
-		}
-
-		public String getRemoteWriteName() {
-			return this.remoteWriteName;
-		}
-
-		public void setRemoteWriteName(String remoteWriteName) {
-			this.remoteWriteName = remoteWriteName;
-		}
-
-		public String getRemoteWriteYaml() {
-			return this.remoteWriteYaml;
-		}
-
-		public void setRemoteWriteYaml(String remoteWriteYaml) {
-			this.remoteWriteYaml = remoteWriteYaml;
-		}
-	}
-
 	@Override
-	public ListPrometheusRemoteWritesResponse getInstance(UnmarshallerContext context) {
-		return	ListPrometheusRemoteWritesResponseUnmarshaller.unmarshall(this, context);
+	public UpdatePrometheusRemoteWriteResponse getInstance(UnmarshallerContext context) {
+		return	UpdatePrometheusRemoteWriteResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

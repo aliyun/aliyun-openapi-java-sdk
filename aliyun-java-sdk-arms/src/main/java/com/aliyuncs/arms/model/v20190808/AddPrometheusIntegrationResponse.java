@@ -15,18 +15,18 @@
 package com.aliyuncs.arms.model.v20190808;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.arms.transform.v20190808.ChangeResourceGroupResponseUnmarshaller;
+import com.aliyuncs.arms.transform.v20190808.AddPrometheusIntegrationResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ChangeResourceGroupResponse extends AcsResponse {
+public class AddPrometheusIntegrationResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String code;
+	private Integer code;
 
 	private String message;
 
@@ -40,11 +40,11 @@ public class ChangeResourceGroupResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getCode() {
+	public Integer getCode() {
 		return this.code;
 	}
 
-	public void setCode(String code) {
+	public void setCode(Integer code) {
 		this.code = code;
 	}
 
@@ -66,30 +66,30 @@ public class ChangeResourceGroupResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String resourceId;
+		private Long instanceId;
 
-		private String resourceGroupId;
+		private String instanceName;
 
-		public String getResourceId() {
-			return this.resourceId;
+		public Long getInstanceId() {
+			return this.instanceId;
 		}
 
-		public void setResourceId(String resourceId) {
-			this.resourceId = resourceId;
+		public void setInstanceId(Long instanceId) {
+			this.instanceId = instanceId;
 		}
 
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
+		public String getInstanceName() {
+			return this.instanceName;
 		}
 
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
 		}
 	}
 
 	@Override
-	public ChangeResourceGroupResponse getInstance(UnmarshallerContext context) {
-		return	ChangeResourceGroupResponseUnmarshaller.unmarshall(this, context);
+	public AddPrometheusIntegrationResponse getInstance(UnmarshallerContext context) {
+		return	AddPrometheusIntegrationResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

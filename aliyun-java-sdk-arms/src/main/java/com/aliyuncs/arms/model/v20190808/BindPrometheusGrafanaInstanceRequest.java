@@ -22,23 +22,32 @@ import com.aliyuncs.arms.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetManagedPrometheusStatusRequest extends RpcAcsRequest<GetManagedPrometheusStatusResponse> {
+public class BindPrometheusGrafanaInstanceRequest extends RpcAcsRequest<BindPrometheusGrafanaInstanceResponse> {
 	   
+
+	private String grafanaInstanceId;
 
 	private String clusterId;
 
-	private String clusterType;
-
 	private String resourceGroupId;
-
-	private String vpcId;
-	public GetManagedPrometheusStatusRequest() {
-		super("ARMS", "2019-08-08", "GetManagedPrometheusStatus", "arms");
+	public BindPrometheusGrafanaInstanceRequest() {
+		super("ARMS", "2019-08-08", "BindPrometheusGrafanaInstance", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getGrafanaInstanceId() {
+		return this.grafanaInstanceId;
+	}
+
+	public void setGrafanaInstanceId(String grafanaInstanceId) {
+		this.grafanaInstanceId = grafanaInstanceId;
+		if(grafanaInstanceId != null){
+			putQueryParameter("GrafanaInstanceId", grafanaInstanceId);
+		}
 	}
 
 	public String getClusterId() {
@@ -49,17 +58,6 @@ public class GetManagedPrometheusStatusRequest extends RpcAcsRequest<GetManagedP
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putQueryParameter("ClusterId", clusterId);
-		}
-	}
-
-	public String getClusterType() {
-		return this.clusterType;
-	}
-
-	public void setClusterType(String clusterType) {
-		this.clusterType = clusterType;
-		if(clusterType != null){
-			putQueryParameter("ClusterType", clusterType);
 		}
 	}
 
@@ -74,20 +72,9 @@ public class GetManagedPrometheusStatusRequest extends RpcAcsRequest<GetManagedP
 		}
 	}
 
-	public String getVpcId() {
-		return this.vpcId;
-	}
-
-	public void setVpcId(String vpcId) {
-		this.vpcId = vpcId;
-		if(vpcId != null){
-			putQueryParameter("VpcId", vpcId);
-		}
-	}
-
 	@Override
-	public Class<GetManagedPrometheusStatusResponse> getResponseClass() {
-		return GetManagedPrometheusStatusResponse.class;
+	public Class<BindPrometheusGrafanaInstanceResponse> getResponseClass() {
+		return BindPrometheusGrafanaInstanceResponse.class;
 	}
 
 }

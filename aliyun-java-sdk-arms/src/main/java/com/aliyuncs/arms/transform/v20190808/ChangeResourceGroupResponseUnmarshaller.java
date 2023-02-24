@@ -24,6 +24,8 @@ public class ChangeResourceGroupResponseUnmarshaller {
 	public static ChangeResourceGroupResponse unmarshall(ChangeResourceGroupResponse changeResourceGroupResponse, UnmarshallerContext _ctx) {
 		
 		changeResourceGroupResponse.setRequestId(_ctx.stringValue("ChangeResourceGroupResponse.RequestId"));
+		changeResourceGroupResponse.setCode(_ctx.stringValue("ChangeResourceGroupResponse.Code"));
+		changeResourceGroupResponse.setMessage(_ctx.stringValue("ChangeResourceGroupResponse.Message"));
 
 		Data data = new Data();
 		data.setResourceId(_ctx.stringValue("ChangeResourceGroupResponse.Data.ResourceId"));

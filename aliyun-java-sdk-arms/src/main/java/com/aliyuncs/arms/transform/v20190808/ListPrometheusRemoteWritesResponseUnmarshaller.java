@@ -14,7 +14,11 @@
 
 package com.aliyuncs.arms.transform.v20190808;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.arms.model.v20190808.ListPrometheusRemoteWritesResponse;
+import com.aliyuncs.arms.model.v20190808.ListPrometheusRemoteWritesResponse.RemoteWrite;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -23,10 +27,20 @@ public class ListPrometheusRemoteWritesResponseUnmarshaller {
 	public static ListPrometheusRemoteWritesResponse unmarshall(ListPrometheusRemoteWritesResponse listPrometheusRemoteWritesResponse, UnmarshallerContext _ctx) {
 		
 		listPrometheusRemoteWritesResponse.setRequestId(_ctx.stringValue("ListPrometheusRemoteWritesResponse.RequestId"));
-		listPrometheusRemoteWritesResponse.setData(_ctx.stringValue("ListPrometheusRemoteWritesResponse.Data"));
 		listPrometheusRemoteWritesResponse.setSuccess(_ctx.booleanValue("ListPrometheusRemoteWritesResponse.Success"));
 		listPrometheusRemoteWritesResponse.setMessage(_ctx.stringValue("ListPrometheusRemoteWritesResponse.Message"));
 		listPrometheusRemoteWritesResponse.setCode(_ctx.integerValue("ListPrometheusRemoteWritesResponse.Code"));
+
+		List<RemoteWrite> data = new ArrayList<RemoteWrite>();
+		for (int i = 0; i < _ctx.lengthValue("ListPrometheusRemoteWritesResponse.Data.Length"); i++) {
+			RemoteWrite remoteWrite = new RemoteWrite();
+			remoteWrite.setClusterId(_ctx.stringValue("ListPrometheusRemoteWritesResponse.Data["+ i +"].ClusterId"));
+			remoteWrite.setRemoteWriteName(_ctx.stringValue("ListPrometheusRemoteWritesResponse.Data["+ i +"].RemoteWriteName"));
+			remoteWrite.setRemoteWriteYaml(_ctx.stringValue("ListPrometheusRemoteWritesResponse.Data["+ i +"].RemoteWriteYaml"));
+
+			data.add(remoteWrite);
+		}
+		listPrometheusRemoteWritesResponse.setData(data);
 	 
 	 	return listPrometheusRemoteWritesResponse;
 	}

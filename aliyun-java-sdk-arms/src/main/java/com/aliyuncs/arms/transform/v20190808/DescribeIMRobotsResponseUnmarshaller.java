@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.arms.model.v20190808.DescribeIMRobotsResponse;
 import com.aliyuncs.arms.model.v20190808.DescribeIMRobotsResponse.PageBean;
 import com.aliyuncs.arms.model.v20190808.DescribeIMRobotsResponse.PageBean.IMRobots;
+import com.aliyuncs.arms.model.v20190808.DescribeIMRobotsResponse.PageBean.IMRobots.DispatchRule;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -44,6 +45,17 @@ public class DescribeIMRobotsResponseUnmarshaller {
 			iMRobots.setDailyNoc(_ctx.booleanValue("DescribeIMRobotsResponse.PageBean.AlertIMRobots["+ i +"].DailyNoc"));
 			iMRobots.setDailyNocTime(_ctx.stringValue("DescribeIMRobotsResponse.PageBean.AlertIMRobots["+ i +"].DailyNocTime"));
 			iMRobots.setDingSignKey(_ctx.stringValue("DescribeIMRobotsResponse.PageBean.AlertIMRobots["+ i +"].DingSignKey"));
+			iMRobots.setCreateTime(_ctx.stringValue("DescribeIMRobotsResponse.PageBean.AlertIMRobots["+ i +"].CreateTime"));
+
+			List<DispatchRule> dispatchRules = new ArrayList<DispatchRule>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeIMRobotsResponse.PageBean.AlertIMRobots["+ i +"].DispatchRules.Length"); j++) {
+				DispatchRule dispatchRule = new DispatchRule();
+				dispatchRule.setId(_ctx.longValue("DescribeIMRobotsResponse.PageBean.AlertIMRobots["+ i +"].DispatchRules["+ j +"].id"));
+				dispatchRule.setName(_ctx.stringValue("DescribeIMRobotsResponse.PageBean.AlertIMRobots["+ i +"].DispatchRules["+ j +"].name"));
+
+				dispatchRules.add(dispatchRule);
+			}
+			iMRobots.setDispatchRules(dispatchRules);
 
 			alertIMRobots.add(iMRobots);
 		}

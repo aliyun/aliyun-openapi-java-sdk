@@ -39,6 +39,8 @@ public class InstallManagedPrometheusRequest extends RpcAcsRequest<InstallManage
 
 	private String vSwitchId;
 
+	private String resourceGroupId;
+
 	private String vpcId;
 	public InstallManagedPrometheusRequest() {
 		super("ARMS", "2019-08-08", "InstallManagedPrometheus", "arms");
@@ -123,6 +125,17 @@ public class InstallManagedPrometheusRequest extends RpcAcsRequest<InstallManage
 		this.vSwitchId = vSwitchId;
 		if(vSwitchId != null){
 			putQueryParameter("VSwitchId", vSwitchId);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

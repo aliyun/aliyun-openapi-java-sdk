@@ -22,18 +22,16 @@ import com.aliyuncs.arms.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetManagedPrometheusStatusRequest extends RpcAcsRequest<GetManagedPrometheusStatusResponse> {
+public class UpdatePrometheusRemoteWriteRequest extends RpcAcsRequest<UpdatePrometheusRemoteWriteResponse> {
 	   
 
 	private String clusterId;
 
-	private String clusterType;
+	private String remoteWriteName;
 
-	private String resourceGroupId;
-
-	private String vpcId;
-	public GetManagedPrometheusStatusRequest() {
-		super("ARMS", "2019-08-08", "GetManagedPrometheusStatus", "arms");
+	private String remoteWriteYaml;
+	public UpdatePrometheusRemoteWriteRequest() {
+		super("ARMS", "2019-08-08", "UpdatePrometheusRemoteWrite", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -52,42 +50,31 @@ public class GetManagedPrometheusStatusRequest extends RpcAcsRequest<GetManagedP
 		}
 	}
 
-	public String getClusterType() {
-		return this.clusterType;
+	public String getRemoteWriteName() {
+		return this.remoteWriteName;
 	}
 
-	public void setClusterType(String clusterType) {
-		this.clusterType = clusterType;
-		if(clusterType != null){
-			putQueryParameter("ClusterType", clusterType);
+	public void setRemoteWriteName(String remoteWriteName) {
+		this.remoteWriteName = remoteWriteName;
+		if(remoteWriteName != null){
+			putQueryParameter("RemoteWriteName", remoteWriteName);
 		}
 	}
 
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
+	public String getRemoteWriteYaml() {
+		return this.remoteWriteYaml;
 	}
 
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
-	public String getVpcId() {
-		return this.vpcId;
-	}
-
-	public void setVpcId(String vpcId) {
-		this.vpcId = vpcId;
-		if(vpcId != null){
-			putQueryParameter("VpcId", vpcId);
+	public void setRemoteWriteYaml(String remoteWriteYaml) {
+		this.remoteWriteYaml = remoteWriteYaml;
+		if(remoteWriteYaml != null){
+			putBodyParameter("RemoteWriteYaml", remoteWriteYaml);
 		}
 	}
 
 	@Override
-	public Class<GetManagedPrometheusStatusResponse> getResponseClass() {
-		return GetManagedPrometheusStatusResponse.class;
+	public Class<UpdatePrometheusRemoteWriteResponse> getResponseClass() {
+		return UpdatePrometheusRemoteWriteResponse.class;
 	}
 
 }

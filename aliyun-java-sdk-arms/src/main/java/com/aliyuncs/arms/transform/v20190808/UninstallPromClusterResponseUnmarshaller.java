@@ -24,6 +24,8 @@ public class UninstallPromClusterResponseUnmarshaller {
 		
 		uninstallPromClusterResponse.setRequestId(_ctx.stringValue("UninstallPromClusterResponse.RequestId"));
 		uninstallPromClusterResponse.setData(_ctx.booleanValue("UninstallPromClusterResponse.Data"));
+		uninstallPromClusterResponse.setMessage(_ctx.stringValue("UninstallPromClusterResponse.Message"));
+		uninstallPromClusterResponse.setCode(_ctx.integerValue("UninstallPromClusterResponse.Code"));
 	 
 	 	return uninstallPromClusterResponse;
 	}

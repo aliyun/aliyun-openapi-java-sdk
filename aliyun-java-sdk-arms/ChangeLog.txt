@@ -1,3 +1,6 @@
+2023-02-24 Version: 2.8.28
+- Add cn-fuzhou region.
+
 2023-01-03 Version: 2.8.27
 - Update TraceApp and RetcodeApp related APIs.
 

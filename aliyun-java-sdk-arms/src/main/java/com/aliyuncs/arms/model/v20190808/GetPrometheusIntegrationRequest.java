@@ -22,16 +22,16 @@ import com.aliyuncs.arms.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteRetcodeAppRequest extends RpcAcsRequest<DeleteRetcodeAppResponse> {
+public class GetPrometheusIntegrationRequest extends RpcAcsRequest<GetPrometheusIntegrationResponse> {
 	   
 
-	private String appName;
+	private Long instanceId;
 
-	private String appId;
+	private String integrationType;
 
-	private String pid;
-	public DeleteRetcodeAppRequest() {
-		super("ARMS", "2019-08-08", "DeleteRetcodeApp", "arms");
+	private String clusterId;
+	public GetPrometheusIntegrationRequest() {
+		super("ARMS", "2019-08-08", "GetPrometheusIntegration", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,42 +39,42 @@ public class DeleteRetcodeAppRequest extends RpcAcsRequest<DeleteRetcodeAppRespo
 		} catch (Exception e) {}
 	}
 
-	public String getAppName() {
-		return this.appName;
+	public Long getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setAppName(String appName) {
-		this.appName = appName;
-		if(appName != null){
-			putQueryParameter("AppName", appName);
+	public void setInstanceId(Long instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId.toString());
 		}
 	}
 
-	public String getAppId() {
-		return this.appId;
+	public String getIntegrationType() {
+		return this.integrationType;
 	}
 
-	public void setAppId(String appId) {
-		this.appId = appId;
-		if(appId != null){
-			putQueryParameter("AppId", appId);
+	public void setIntegrationType(String integrationType) {
+		this.integrationType = integrationType;
+		if(integrationType != null){
+			putQueryParameter("IntegrationType", integrationType);
 		}
 	}
 
-	public String getPid() {
-		return this.pid;
+	public String getClusterId() {
+		return this.clusterId;
 	}
 
-	public void setPid(String pid) {
-		this.pid = pid;
-		if(pid != null){
-			putQueryParameter("Pid", pid);
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 
 	@Override
-	public Class<DeleteRetcodeAppResponse> getResponseClass() {
-		return DeleteRetcodeAppResponse.class;
+	public Class<GetPrometheusIntegrationResponse> getResponseClass() {
+		return GetPrometheusIntegrationResponse.class;
 	}
 
 }

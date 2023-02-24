@@ -15,6 +15,7 @@
 package com.aliyuncs.arms.transform.v20190808;
 
 import com.aliyuncs.arms.model.v20190808.GetPrometheusRemoteWriteResponse;
+import com.aliyuncs.arms.model.v20190808.GetPrometheusRemoteWriteResponse.Data;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -23,10 +24,15 @@ public class GetPrometheusRemoteWriteResponseUnmarshaller {
 	public static GetPrometheusRemoteWriteResponse unmarshall(GetPrometheusRemoteWriteResponse getPrometheusRemoteWriteResponse, UnmarshallerContext _ctx) {
 		
 		getPrometheusRemoteWriteResponse.setRequestId(_ctx.stringValue("GetPrometheusRemoteWriteResponse.RequestId"));
-		getPrometheusRemoteWriteResponse.setData(_ctx.stringValue("GetPrometheusRemoteWriteResponse.Data"));
 		getPrometheusRemoteWriteResponse.setSuccess(_ctx.booleanValue("GetPrometheusRemoteWriteResponse.Success"));
 		getPrometheusRemoteWriteResponse.setMessage(_ctx.stringValue("GetPrometheusRemoteWriteResponse.Message"));
 		getPrometheusRemoteWriteResponse.setCode(_ctx.integerValue("GetPrometheusRemoteWriteResponse.Code"));
+
+		Data data = new Data();
+		data.setClusterId(_ctx.stringValue("GetPrometheusRemoteWriteResponse.Data.ClusterId"));
+		data.setRemoteWriteName(_ctx.stringValue("GetPrometheusRemoteWriteResponse.Data.RemoteWriteName"));
+		data.setRemoteWriteYaml(_ctx.stringValue("GetPrometheusRemoteWriteResponse.Data.RemoteWriteYaml"));
+		getPrometheusRemoteWriteResponse.setData(data);
 	 
 	 	return getPrometheusRemoteWriteResponse;
 	}

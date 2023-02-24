@@ -25,11 +25,13 @@ import com.aliyuncs.arms.Endpoint;
 public class UninstallManagedPrometheusRequest extends RpcAcsRequest<UninstallManagedPrometheusResponse> {
 	   
 
+	private String clusterId;
+
 	private String clusterType;
 
-	private String vpcId;
+	private String resourceGroupId;
 
-	private String clusterId;
+	private String vpcId;
 	public UninstallManagedPrometheusRequest() {
 		super("ARMS", "2019-08-08", "UninstallManagedPrometheus", "arms");
 		setMethod(MethodType.POST);
@@ -37,6 +39,17 @@ public class UninstallManagedPrometheusRequest extends RpcAcsRequest<UninstallMa
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
+		}
 	}
 
 	public String getClusterType() {
@@ -50,6 +63,17 @@ public class UninstallManagedPrometheusRequest extends RpcAcsRequest<UninstallMa
 		}
 	}
 
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
 	public String getVpcId() {
 		return this.vpcId;
 	}
@@ -58,17 +82,6 @@ public class UninstallManagedPrometheusRequest extends RpcAcsRequest<UninstallMa
 		this.vpcId = vpcId;
 		if(vpcId != null){
 			putQueryParameter("VpcId", vpcId);
-		}
-	}
-
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 

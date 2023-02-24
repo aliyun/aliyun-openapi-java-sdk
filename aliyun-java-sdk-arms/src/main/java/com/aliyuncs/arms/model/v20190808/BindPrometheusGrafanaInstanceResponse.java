@@ -15,22 +15,22 @@
 package com.aliyuncs.arms.model.v20190808;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.arms.transform.v20190808.ChangeResourceGroupResponseUnmarshaller;
+import com.aliyuncs.arms.transform.v20190808.BindPrometheusGrafanaInstanceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ChangeResourceGroupResponse extends AcsResponse {
+public class BindPrometheusGrafanaInstanceResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String code;
+	private Boolean data;
 
 	private String message;
 
-	private Data data;
+	private Integer code;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,12 +40,12 @@ public class ChangeResourceGroupResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getCode() {
-		return this.code;
+	public Boolean getData() {
+		return this.data;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setData(Boolean data) {
+		this.data = data;
 	}
 
 	public String getMessage() {
@@ -56,40 +56,17 @@ public class ChangeResourceGroupResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Data getData() {
-		return this.data;
+	public Integer getCode() {
+		return this.code;
 	}
 
-	public void setData(Data data) {
-		this.data = data;
-	}
-
-	public static class Data {
-
-		private String resourceId;
-
-		private String resourceGroupId;
-
-		public String getResourceId() {
-			return this.resourceId;
-		}
-
-		public void setResourceId(String resourceId) {
-			this.resourceId = resourceId;
-		}
-
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
-		}
-
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
-		}
+	public void setCode(Integer code) {
+		this.code = code;
 	}
 
 	@Override
-	public ChangeResourceGroupResponse getInstance(UnmarshallerContext context) {
-		return	ChangeResourceGroupResponseUnmarshaller.unmarshall(this, context);
+	public BindPrometheusGrafanaInstanceResponse getInstance(UnmarshallerContext context) {
+		return	BindPrometheusGrafanaInstanceResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

@@ -37,6 +37,10 @@ public class SearchAlertRulesRequest extends RpcAcsRequest<SearchAlertRulesRespo
 
 	private String type;
 
+	private String resourceGroupId;
+
+	private String alertRuleId;
+
 	private Integer pageSize;
 	public SearchAlertRulesRequest() {
 		super("ARMS", "2019-08-08", "SearchAlertRules", "arms");
@@ -110,6 +114,28 @@ public class SearchAlertRulesRequest extends RpcAcsRequest<SearchAlertRulesRespo
 		this.type = type;
 		if(type != null){
 			putQueryParameter("Type", type);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getAlertRuleId() {
+		return this.alertRuleId;
+	}
+
+	public void setAlertRuleId(String alertRuleId) {
+		this.alertRuleId = alertRuleId;
+		if(alertRuleId != null){
+			putQueryParameter("AlertRuleId", alertRuleId);
 		}
 	}
 

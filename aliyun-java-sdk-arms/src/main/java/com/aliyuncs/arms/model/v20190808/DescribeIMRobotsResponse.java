@@ -103,6 +103,10 @@ public class DescribeIMRobotsResponse extends AcsResponse {
 
 			private String dingSignKey;
 
+			private String createTime;
+
+			private List<DispatchRule> dispatchRules;
+
 			public Float getRobotId() {
 				return this.robotId;
 			}
@@ -157,6 +161,45 @@ public class DescribeIMRobotsResponse extends AcsResponse {
 
 			public void setDingSignKey(String dingSignKey) {
 				this.dingSignKey = dingSignKey;
+			}
+
+			public String getCreateTime() {
+				return this.createTime;
+			}
+
+			public void setCreateTime(String createTime) {
+				this.createTime = createTime;
+			}
+
+			public List<DispatchRule> getDispatchRules() {
+				return this.dispatchRules;
+			}
+
+			public void setDispatchRules(List<DispatchRule> dispatchRules) {
+				this.dispatchRules = dispatchRules;
+			}
+
+			public static class DispatchRule {
+
+				private Long id;
+
+				private String name;
+
+				public Long getId() {
+					return this.id;
+				}
+
+				public void setId(Long id) {
+					this.id = id;
+				}
+
+				public String getName() {
+					return this.name;
+				}
+
+				public void setName(String name) {
+					this.name = name;
+				}
 			}
 		}
 	}

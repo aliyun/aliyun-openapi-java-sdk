@@ -26,13 +26,13 @@ public class GetPrometheusRemoteWriteResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String data;
-
 	private Boolean success;
 
 	private String message;
 
 	private Integer code;
+
+	private Data data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,14 +40,6 @@ public class GetPrometheusRemoteWriteResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
 	}
 
 	public Boolean getSuccess() {
@@ -72,6 +64,47 @@ public class GetPrometheusRemoteWriteResponse extends AcsResponse {
 
 	public void setCode(Integer code) {
 		this.code = code;
+	}
+
+	public Data getData() {
+		return this.data;
+	}
+
+	public void setData(Data data) {
+		this.data = data;
+	}
+
+	public static class Data {
+
+		private String clusterId;
+
+		private String remoteWriteName;
+
+		private String remoteWriteYaml;
+
+		public String getClusterId() {
+			return this.clusterId;
+		}
+
+		public void setClusterId(String clusterId) {
+			this.clusterId = clusterId;
+		}
+
+		public String getRemoteWriteName() {
+			return this.remoteWriteName;
+		}
+
+		public void setRemoteWriteName(String remoteWriteName) {
+			this.remoteWriteName = remoteWriteName;
+		}
+
+		public String getRemoteWriteYaml() {
+			return this.remoteWriteYaml;
+		}
+
+		public void setRemoteWriteYaml(String remoteWriteYaml) {
+			this.remoteWriteYaml = remoteWriteYaml;
+		}
 	}
 
 	@Override

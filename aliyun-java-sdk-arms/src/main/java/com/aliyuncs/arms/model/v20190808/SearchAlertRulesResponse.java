@@ -123,6 +123,8 @@ public class SearchAlertRulesResponse extends AcsResponse {
 
 			private Long id;
 
+			private String resourceGroupId;
+
 			private List<String> alertWays;
 
 			private AlarmContext alarmContext;
@@ -267,6 +269,14 @@ public class SearchAlertRulesResponse extends AcsResponse {
 
 			public void setId(Long id) {
 				this.id = id;
+			}
+
+			public String getResourceGroupId() {
+				return this.resourceGroupId;
+			}
+
+			public void setResourceGroupId(String resourceGroupId) {
+				this.resourceGroupId = resourceGroupId;
 			}
 
 			public List<String> getAlertWays() {

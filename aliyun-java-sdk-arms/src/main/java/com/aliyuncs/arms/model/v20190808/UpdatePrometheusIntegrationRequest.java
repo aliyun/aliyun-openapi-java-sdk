@@ -22,23 +22,34 @@ import com.aliyuncs.arms.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetManagedPrometheusStatusRequest extends RpcAcsRequest<GetManagedPrometheusStatusResponse> {
+public class UpdatePrometheusIntegrationRequest extends RpcAcsRequest<UpdatePrometheusIntegrationResponse> {
 	   
+
+	private String integrationType;
 
 	private String clusterId;
 
-	private String clusterType;
+	private Long instanceId;
 
-	private String resourceGroupId;
-
-	private String vpcId;
-	public GetManagedPrometheusStatusRequest() {
-		super("ARMS", "2019-08-08", "GetManagedPrometheusStatus", "arms");
+	private String param;
+	public UpdatePrometheusIntegrationRequest() {
+		super("ARMS", "2019-08-08", "UpdatePrometheusIntegration", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getIntegrationType() {
+		return this.integrationType;
+	}
+
+	public void setIntegrationType(String integrationType) {
+		this.integrationType = integrationType;
+		if(integrationType != null){
+			putQueryParameter("IntegrationType", integrationType);
+		}
 	}
 
 	public String getClusterId() {
@@ -52,42 +63,31 @@ public class GetManagedPrometheusStatusRequest extends RpcAcsRequest<GetManagedP
 		}
 	}
 
-	public String getClusterType() {
-		return this.clusterType;
+	public Long getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setClusterType(String clusterType) {
-		this.clusterType = clusterType;
-		if(clusterType != null){
-			putQueryParameter("ClusterType", clusterType);
+	public void setInstanceId(Long instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId.toString());
 		}
 	}
 
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
+	public String getParam() {
+		return this.param;
 	}
 
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
-	public String getVpcId() {
-		return this.vpcId;
-	}
-
-	public void setVpcId(String vpcId) {
-		this.vpcId = vpcId;
-		if(vpcId != null){
-			putQueryParameter("VpcId", vpcId);
+	public void setParam(String param) {
+		this.param = param;
+		if(param != null){
+			putQueryParameter("Param", param);
 		}
 	}
 
 	@Override
-	public Class<GetManagedPrometheusStatusResponse> getResponseClass() {
-		return GetManagedPrometheusStatusResponse.class;
+	public Class<UpdatePrometheusIntegrationResponse> getResponseClass() {
+		return UpdatePrometheusIntegrationResponse.class;
 	}
 
 }

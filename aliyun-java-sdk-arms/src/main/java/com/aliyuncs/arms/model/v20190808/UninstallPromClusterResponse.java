@@ -28,6 +28,10 @@ public class UninstallPromClusterResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String message;
+
+	private Integer code;
+
 	public Boolean getData() {
 		return this.data;
 	}
@@ -42,6 +46,22 @@ public class UninstallPromClusterResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public Integer getCode() {
+		return this.code;
+	}
+
+	public void setCode(Integer code) {
+		this.code = code;
 	}
 
 	@Override
