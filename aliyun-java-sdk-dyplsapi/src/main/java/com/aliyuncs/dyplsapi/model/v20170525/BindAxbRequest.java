@@ -45,6 +45,8 @@ public class BindAxbRequest extends RpcAcsRequest<BindAxbResponse> {
 
 	private String resourceOwnerAccount;
 
+	private String dtmfConfig;
+
 	private Long ownerId;
 
 	private String outOrderId;
@@ -176,6 +178,17 @@ public class BindAxbRequest extends RpcAcsRequest<BindAxbResponse> {
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getDtmfConfig() {
+		return this.dtmfConfig;
+	}
+
+	public void setDtmfConfig(String dtmfConfig) {
+		this.dtmfConfig = dtmfConfig;
+		if(dtmfConfig != null){
+			putQueryParameter("DtmfConfig", dtmfConfig);
 		}
 	}
 

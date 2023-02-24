@@ -76,6 +76,8 @@ public class CreatePickUpWaybillResponse extends AcsResponse {
 
 		private String errorMsg;
 
+		private String gotCode;
+
 		public String getSuccess() {
 			return this.success;
 		}
@@ -114,6 +116,14 @@ public class CreatePickUpWaybillResponse extends AcsResponse {
 
 		public void setErrorMsg(String errorMsg) {
 			this.errorMsg = errorMsg;
+		}
+
+		public String getGotCode() {
+			return this.gotCode;
+		}
+
+		public void setGotCode(String gotCode) {
+			this.gotCode = gotCode;
 		}
 	}
 
