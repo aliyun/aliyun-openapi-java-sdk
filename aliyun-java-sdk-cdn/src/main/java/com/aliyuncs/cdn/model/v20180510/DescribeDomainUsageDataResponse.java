@@ -25,21 +25,45 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDomainUsageDataResponse extends AcsResponse {
 
+	private String requestId;
+
+	private String domainName;
+
+	private String startTime;
+
 	private String endTime;
 
 	private String type;
 
-	private String startTime;
-
-	private String requestId;
-
 	private String area;
-
-	private String domainName;
 
 	private String dataInterval;
 
 	private List<DataModule> usageDataPerInterval;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
 
 	public String getEndTime() {
 		return this.endTime;
@@ -57,36 +81,12 @@ public class DescribeDomainUsageDataResponse extends AcsResponse {
 		this.type = type;
 	}
 
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getArea() {
 		return this.area;
 	}
 
 	public void setArea(String area) {
 		this.area = area;
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
 	}
 
 	public String getDataInterval() {

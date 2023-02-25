@@ -27,11 +27,11 @@ public class DescribeDomainUsageDataResponseUnmarshaller {
 	public static DescribeDomainUsageDataResponse unmarshall(DescribeDomainUsageDataResponse describeDomainUsageDataResponse, UnmarshallerContext _ctx) {
 		
 		describeDomainUsageDataResponse.setRequestId(_ctx.stringValue("DescribeDomainUsageDataResponse.RequestId"));
+		describeDomainUsageDataResponse.setDomainName(_ctx.stringValue("DescribeDomainUsageDataResponse.DomainName"));
+		describeDomainUsageDataResponse.setStartTime(_ctx.stringValue("DescribeDomainUsageDataResponse.StartTime"));
 		describeDomainUsageDataResponse.setEndTime(_ctx.stringValue("DescribeDomainUsageDataResponse.EndTime"));
 		describeDomainUsageDataResponse.setType(_ctx.stringValue("DescribeDomainUsageDataResponse.Type"));
-		describeDomainUsageDataResponse.setStartTime(_ctx.stringValue("DescribeDomainUsageDataResponse.StartTime"));
 		describeDomainUsageDataResponse.setArea(_ctx.stringValue("DescribeDomainUsageDataResponse.Area"));
-		describeDomainUsageDataResponse.setDomainName(_ctx.stringValue("DescribeDomainUsageDataResponse.DomainName"));
 		describeDomainUsageDataResponse.setDataInterval(_ctx.stringValue("DescribeDomainUsageDataResponse.DataInterval"));
 
 		List<DataModule> usageDataPerInterval = new ArrayList<DataModule>();

@@ -73,6 +73,10 @@ public class DescribeDomainCertificateInfoResponse extends AcsResponse {
 
 		private String serverCertificate;
 
+		private String certId;
+
+		private String certRegion;
+
 		public String getCertExpireTime() {
 			return this.certExpireTime;
 		}
@@ -175,6 +179,22 @@ public class DescribeDomainCertificateInfoResponse extends AcsResponse {
 
 		public void setServerCertificate(String serverCertificate) {
 			this.serverCertificate = serverCertificate;
+		}
+
+		public String getCertId() {
+			return this.certId;
+		}
+
+		public void setCertId(String certId) {
+			this.certId = certId;
+		}
+
+		public String getCertRegion() {
+			return this.certRegion;
+		}
+
+		public void setCertRegion(String certRegion) {
+			this.certRegion = certRegion;
 		}
 	}
 

@@ -44,6 +44,8 @@ public class DescribeDomainCertificateInfoResponseUnmarshaller {
 			certInfo.setCertName(_ctx.stringValue("DescribeDomainCertificateInfoResponse.CertInfos["+ i +"].CertName"));
 			certInfo.setDomainCnameStatus(_ctx.stringValue("DescribeDomainCertificateInfoResponse.CertInfos["+ i +"].DomainCnameStatus"));
 			certInfo.setServerCertificate(_ctx.stringValue("DescribeDomainCertificateInfoResponse.CertInfos["+ i +"].ServerCertificate"));
+			certInfo.setCertId(_ctx.stringValue("DescribeDomainCertificateInfoResponse.CertInfos["+ i +"].CertId"));
+			certInfo.setCertRegion(_ctx.stringValue("DescribeDomainCertificateInfoResponse.CertInfos["+ i +"].CertRegion"));
 
 			certInfos.add(certInfo);
 		}
