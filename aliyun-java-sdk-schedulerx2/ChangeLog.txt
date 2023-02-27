@@ -1,3 +1,7 @@
+2023-02-27 Version: 1.1.9
+- Create Job Support Timezone.
+- Update Job Support Timezone.
+
 2023-02-23 Version: 1.1.8
 - Get Job Instance Add RegionId.
 

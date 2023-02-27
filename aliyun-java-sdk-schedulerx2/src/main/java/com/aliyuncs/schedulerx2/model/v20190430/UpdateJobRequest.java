@@ -60,6 +60,8 @@ public class UpdateJobRequest extends RpcAcsRequest<UpdateJobResponse> {
 
 	private String namespaceSource;
 
+	private String timezone;
+
 	private String description;
 
 	private String content;
@@ -289,6 +291,17 @@ public class UpdateJobRequest extends RpcAcsRequest<UpdateJobResponse> {
 		this.namespaceSource = namespaceSource;
 		if(namespaceSource != null){
 			putBodyParameter("NamespaceSource", namespaceSource);
+		}
+	}
+
+	public String getTimezone() {
+		return this.timezone;
+	}
+
+	public void setTimezone(String timezone) {
+		this.timezone = timezone;
+		if(timezone != null){
+			putBodyParameter("Timezone", timezone);
 		}
 	}
 
