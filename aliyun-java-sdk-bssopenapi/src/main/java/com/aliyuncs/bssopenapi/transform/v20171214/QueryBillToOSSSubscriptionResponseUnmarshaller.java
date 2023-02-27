@@ -46,6 +46,7 @@ public class QueryBillToOSSSubscriptionResponseUnmarshaller {
 			item.setSubscribeLanguage(_ctx.stringValue("QueryBillToOSSSubscriptionResponse.Data.Items["+ i +"].SubscribeLanguage"));
 			item.setMultAccountRelSubscribe(_ctx.stringValue("QueryBillToOSSSubscriptionResponse.Data.Items["+ i +"].MultAccountRelSubscribe"));
 			item.setBucketPath(_ctx.stringValue("QueryBillToOSSSubscriptionResponse.Data.Items["+ i +"].BucketPath"));
+			item.setRowLimitPerFile(_ctx.integerValue("QueryBillToOSSSubscriptionResponse.Data.Items["+ i +"].RowLimitPerFile"));
 
 			items.add(item);
 		}

@@ -123,6 +123,8 @@ public class QueryBillToOSSSubscriptionResponse extends AcsResponse {
 
 			private String bucketPath;
 
+			private Integer rowLimitPerFile;
+
 			public Long getBucketOwnerId() {
 				return this.bucketOwnerId;
 			}
@@ -177,6 +179,14 @@ public class QueryBillToOSSSubscriptionResponse extends AcsResponse {
 
 			public void setBucketPath(String bucketPath) {
 				this.bucketPath = bucketPath;
+			}
+
+			public Integer getRowLimitPerFile() {
+				return this.rowLimitPerFile;
+			}
+
+			public void setRowLimitPerFile(Integer rowLimitPerFile) {
+				this.rowLimitPerFile = rowLimitPerFile;
 			}
 		}
 	}

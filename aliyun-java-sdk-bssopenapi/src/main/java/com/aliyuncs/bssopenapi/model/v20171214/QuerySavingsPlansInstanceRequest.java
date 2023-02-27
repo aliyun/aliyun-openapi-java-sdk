@@ -39,6 +39,8 @@ public class QuerySavingsPlansInstanceRequest extends RpcAcsRequest<QuerySavings
 	private Integer pageSize;
 
 	private List<Tag> tags;
+
+	private String status;
 	public QuerySavingsPlansInstanceRequest() {
 		super("BssOpenApi", "2017-12-14", "QuerySavingsPlansInstance", "bssopenapi");
 		setMethod(MethodType.POST);
@@ -126,6 +128,17 @@ public class QuerySavingsPlansInstanceRequest extends RpcAcsRequest<QuerySavings
 				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
+		}
 	}
 
 	public static class Tag {
