@@ -35,6 +35,8 @@ public class ModifyUserRequest extends RpcAcsRequest<ModifyUserResponse> {
 
 	private String instanceId;
 
+	private String displayName;
+
 	private String displayId;
 	public ModifyUserRequest() {
 		super("CCC", "2020-07-01", "ModifyUser", "CCC");
@@ -97,6 +99,17 @@ public class ModifyUserRequest extends RpcAcsRequest<ModifyUserResponse> {
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getDisplayName() {
+		return this.displayName;
+	}
+
+	public void setDisplayName(String displayName) {
+		this.displayName = displayName;
+		if(displayName != null){
+			putQueryParameter("DisplayName", displayName);
 		}
 	}
 
