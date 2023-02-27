@@ -29,7 +29,7 @@ public class GetTcChEcomRequest extends RpcAcsRequest<GetTcChEcomResponse> {
 
 	private String text;
 	public GetTcChEcomRequest() {
-		super("alinlp", "2020-06-29", "GetTcChEcom", "alinlp");
+		super("alinlp", "2020-06-29", "GetTcChEcom");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

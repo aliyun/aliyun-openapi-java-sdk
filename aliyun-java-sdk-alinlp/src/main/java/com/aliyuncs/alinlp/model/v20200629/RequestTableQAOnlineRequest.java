@@ -22,19 +22,34 @@ import com.aliyuncs.alinlp.Endpoint;
  * @author auto create
  * @version 
  */
-public class RequestTableQARequest extends RpcAcsRequest<RequestTableQAResponse> {
+public class RequestTableQAOnlineRequest extends RpcAcsRequest<RequestTableQAOnlineResponse> {
 	   
+
+	private String question;
 
 	private String params;
 
 	private String serviceCode;
-	public RequestTableQARequest() {
-		super("alinlp", "2020-06-29", "RequestTableQA");
+
+	private String botId;
+	public RequestTableQAOnlineRequest() {
+		super("alinlp", "2020-06-29", "RequestTableQAOnline");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getQuestion() {
+		return this.question;
+	}
+
+	public void setQuestion(String question) {
+		this.question = question;
+		if(question != null){
+			putBodyParameter("Question", question);
+		}
 	}
 
 	public String getParams() {
@@ -59,9 +74,20 @@ public class RequestTableQARequest extends RpcAcsRequest<RequestTableQAResponse>
 		}
 	}
 
+	public String getBotId() {
+		return this.botId;
+	}
+
+	public void setBotId(String botId) {
+		this.botId = botId;
+		if(botId != null){
+			putBodyParameter("BotId", botId);
+		}
+	}
+
 	@Override
-	public Class<RequestTableQAResponse> getResponseClass() {
-		return RequestTableQAResponse.class;
+	public Class<RequestTableQAOnlineResponse> getResponseClass() {
+		return RequestTableQAOnlineResponse.class;
 	}
 
 }

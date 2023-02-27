@@ -29,7 +29,7 @@ public class GetDpChGeneralCTBRequest extends RpcAcsRequest<GetDpChGeneralCTBRes
 
 	private String text;
 	public GetDpChGeneralCTBRequest() {
-		super("alinlp", "2020-06-29", "GetDpChGeneralCTB", "alinlp");
+		super("alinlp", "2020-06-29", "GetDpChGeneralCTB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

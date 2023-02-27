@@ -29,7 +29,7 @@ public class GetDpChGeneralStanfordRequest extends RpcAcsRequest<GetDpChGeneralS
 
 	private String text;
 	public GetDpChGeneralStanfordRequest() {
-		super("alinlp", "2020-06-29", "GetDpChGeneralStanford", "alinlp");
+		super("alinlp", "2020-06-29", "GetDpChGeneralStanford");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

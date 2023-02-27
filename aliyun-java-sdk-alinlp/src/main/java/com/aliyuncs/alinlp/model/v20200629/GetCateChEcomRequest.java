@@ -31,7 +31,7 @@ public class GetCateChEcomRequest extends RpcAcsRequest<GetCateChEcomResponse> {
 
 	private String text;
 	public GetCateChEcomRequest() {
-		super("alinlp", "2020-06-29", "GetCateChEcom", "alinlp");
+		super("alinlp", "2020-06-29", "GetCateChEcom");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

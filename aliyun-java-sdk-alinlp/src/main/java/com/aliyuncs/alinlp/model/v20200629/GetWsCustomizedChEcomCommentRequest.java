@@ -33,7 +33,7 @@ public class GetWsCustomizedChEcomCommentRequest extends RpcAcsRequest<GetWsCust
 
 	private String outType;
 	public GetWsCustomizedChEcomCommentRequest() {
-		super("alinlp", "2020-06-29", "GetWsCustomizedChEcomComment", "alinlp");
+		super("alinlp", "2020-06-29", "GetWsCustomizedChEcomComment");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

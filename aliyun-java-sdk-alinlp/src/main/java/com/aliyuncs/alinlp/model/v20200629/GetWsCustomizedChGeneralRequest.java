@@ -33,7 +33,7 @@ public class GetWsCustomizedChGeneralRequest extends RpcAcsRequest<GetWsCustomiz
 
 	private String outType;
 	public GetWsCustomizedChGeneralRequest() {
-		super("alinlp", "2020-06-29", "GetWsCustomizedChGeneral", "alinlp");
+		super("alinlp", "2020-06-29", "GetWsCustomizedChGeneral");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

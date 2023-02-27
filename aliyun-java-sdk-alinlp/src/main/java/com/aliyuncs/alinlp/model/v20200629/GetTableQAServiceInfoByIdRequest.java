@@ -22,30 +22,19 @@ import com.aliyuncs.alinlp.Endpoint;
  * @author auto create
  * @version 
  */
-public class RequestTableQARequest extends RpcAcsRequest<RequestTableQAResponse> {
+public class GetTableQAServiceInfoByIdRequest extends RpcAcsRequest<GetTableQAServiceInfoByIdResponse> {
 	   
 
-	private String params;
-
 	private String serviceCode;
-	public RequestTableQARequest() {
-		super("alinlp", "2020-06-29", "RequestTableQA");
+
+	private String serviceId;
+	public GetTableQAServiceInfoByIdRequest() {
+		super("alinlp", "2020-06-29", "GetTableQAServiceInfoById");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getParams() {
-		return this.params;
-	}
-
-	public void setParams(String params) {
-		this.params = params;
-		if(params != null){
-			putBodyParameter("Params", params);
-		}
 	}
 
 	public String getServiceCode() {
@@ -59,9 +48,20 @@ public class RequestTableQARequest extends RpcAcsRequest<RequestTableQAResponse>
 		}
 	}
 
+	public String getServiceId() {
+		return this.serviceId;
+	}
+
+	public void setServiceId(String serviceId) {
+		this.serviceId = serviceId;
+		if(serviceId != null){
+			putBodyParameter("ServiceId", serviceId);
+		}
+	}
+
 	@Override
-	public Class<RequestTableQAResponse> getResponseClass() {
-		return RequestTableQAResponse.class;
+	public Class<GetTableQAServiceInfoByIdResponse> getResponseClass() {
+		return GetTableQAServiceInfoByIdResponse.class;
 	}
 
 }

@@ -22,14 +22,14 @@ import com.aliyuncs.alinlp.Endpoint;
  * @author auto create
  * @version 
  */
-public class RequestTableQARequest extends RpcAcsRequest<RequestTableQAResponse> {
+public class ADMiniCogRequest extends RpcAcsRequest<ADMiniCogResponse> {
 	   
 
 	private String params;
 
 	private String serviceCode;
-	public RequestTableQARequest() {
-		super("alinlp", "2020-06-29", "RequestTableQA");
+	public ADMiniCogRequest() {
+		super("alinlp", "2020-06-29", "ADMiniCog");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -60,8 +60,8 @@ public class RequestTableQARequest extends RpcAcsRequest<RequestTableQAResponse>
 	}
 
 	@Override
-	public Class<RequestTableQAResponse> getResponseClass() {
-		return RequestTableQAResponse.class;
+	public Class<ADMiniCogResponse> getResponseClass() {
+		return ADMiniCogResponse.class;
 	}
 
 }

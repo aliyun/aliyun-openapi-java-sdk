@@ -31,7 +31,7 @@ public class GetKeywordChEcomRequest extends RpcAcsRequest<GetKeywordChEcomRespo
 
 	private String text;
 	public GetKeywordChEcomRequest() {
-		super("alinlp", "2020-06-29", "GetKeywordChEcom", "alinlp");
+		super("alinlp", "2020-06-29", "GetKeywordChEcom");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

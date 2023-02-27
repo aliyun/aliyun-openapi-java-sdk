@@ -29,7 +29,7 @@ public class GetKeywordEnEcomRequest extends RpcAcsRequest<GetKeywordEnEcomRespo
 
 	private String text;
 	public GetKeywordEnEcomRequest() {
-		super("alinlp", "2020-06-29", "GetKeywordEnEcom", "alinlp");
+		super("alinlp", "2020-06-29", "GetKeywordEnEcom");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class ADMMURequest extends RpcAcsRequest<ADMMUResponse> {
 
 	private String serviceCode;
 	public ADMMURequest() {
-		super("alinlp", "2020-06-29", "ADMMU", "alinlp");
+		super("alinlp", "2020-06-29", "ADMMU");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
