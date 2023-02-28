@@ -25,6 +25,8 @@ import com.aliyuncs.live.Endpoint;
 public class ModifyCasterVideoResourceRequest extends RpcAcsRequest<ModifyCasterVideoResourceResponse> {
 	   
 
+	private Integer inputType;
+
 	private Integer endOffset;
 
 	private String materialId;
@@ -53,6 +55,17 @@ public class ModifyCasterVideoResourceRequest extends RpcAcsRequest<ModifyCaster
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getInputType() {
+		return this.inputType;
+	}
+
+	public void setInputType(Integer inputType) {
+		this.inputType = inputType;
+		if(inputType != null){
+			putQueryParameter("InputType", inputType.toString());
+		}
 	}
 
 	public Integer getEndOffset() {

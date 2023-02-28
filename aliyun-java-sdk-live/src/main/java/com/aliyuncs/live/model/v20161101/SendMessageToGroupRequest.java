@@ -27,6 +27,8 @@ public class SendMessageToGroupRequest extends RpcAcsRequest<SendMessageToGroupR
 
 	private String data;
 
+	private Boolean skipAudit;
+
 	private Integer type;
 
 	private String operatorUserId;
@@ -51,6 +53,17 @@ public class SendMessageToGroupRequest extends RpcAcsRequest<SendMessageToGroupR
 		this.data = data;
 		if(data != null){
 			putBodyParameter("Data", data);
+		}
+	}
+
+	public Boolean getSkipAudit() {
+		return this.skipAudit;
+	}
+
+	public void setSkipAudit(Boolean skipAudit) {
+		this.skipAudit = skipAudit;
+		if(skipAudit != null){
+			putQueryParameter("SkipAudit", skipAudit.toString());
 		}
 	}
 
