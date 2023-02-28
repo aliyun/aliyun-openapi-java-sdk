@@ -31,6 +31,8 @@ public class DescribeContainerGroupPriceRequest extends RpcAcsRequest<DescribeCo
 
     private String spotStrategy;
 
+    private Integer spotDuration;
+
     private String zoneId;
 
     private Long resourceOwnerId;
@@ -75,6 +77,17 @@ public class DescribeContainerGroupPriceRequest extends RpcAcsRequest<DescribeCo
         this.spotStrategy = spotStrategy;
         if (null != spotStrategy) {
             putQueryParameter("SpotStrategy", spotStrategy.toString());
+        }
+    }
+
+    public Integer getSpotDuration() {
+        return this.spotDuration;
+    }
+
+    public void setSpotDuration(Integer spotDuration) {
+        this.spotDuration = spotDuration;
+        if (null != spotDuration) {
+            putQueryParameter("SpotDuration", spotDuration.longValue());
         }
     }
 
