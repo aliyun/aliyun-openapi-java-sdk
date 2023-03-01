@@ -29,8 +29,6 @@ public class ThreeElementsVerificationRequest extends RpcAcsRequest<ThreeElement
 
 	private String certCode;
 
-	private String routeName;
-
 	private String mask;
 
 	private String resourceOwnerAccount;
@@ -70,17 +68,6 @@ public class ThreeElementsVerificationRequest extends RpcAcsRequest<ThreeElement
 		this.certCode = certCode;
 		if(certCode != null){
 			putQueryParameter("CertCode", certCode);
-		}
-	}
-
-	public String getRouteName() {
-		return this.routeName;
-	}
-
-	public void setRouteName(String routeName) {
-		this.routeName = routeName;
-		if(routeName != null){
-			putQueryParameter("RouteName", routeName);
 		}
 	}
 
