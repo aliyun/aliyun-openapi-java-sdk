@@ -64,6 +64,8 @@ public class ListJobsResponseUnmarshaller {
 			application.setCompletionTime(_ctx.longValue("ListJobsResponse.Data.Applications["+ i +"].CompletionTime"));
 			application.setLastChangeorderState(_ctx.stringValue("ListJobsResponse.Data.Applications["+ i +"].LastChangeorderState"));
 			application.setLastJobState(_ctx.stringValue("ListJobsResponse.Data.Applications["+ i +"].LastJobState"));
+			application.setCpu(_ctx.integerValue("ListJobsResponse.Data.Applications["+ i +"].Cpu"));
+			application.setMem(_ctx.integerValue("ListJobsResponse.Data.Applications["+ i +"].Mem"));
 
 			List<TagsItem> tags = new ArrayList<TagsItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListJobsResponse.Data.Applications["+ i +"].Tags.Length"); j++) {

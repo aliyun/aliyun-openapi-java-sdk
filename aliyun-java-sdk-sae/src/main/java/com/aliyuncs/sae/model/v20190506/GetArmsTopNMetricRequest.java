@@ -49,7 +49,7 @@ public class GetArmsTopNMetricRequest extends RoaAcsRequest<GetArmsTopNMetricRes
 	public void setLimit(Long limit) {
 		this.limit = limit;
 		if(limit != null){
-			putPathParameter("Limit", limit.toString());
+			putQueryParameter("Limit", limit.toString());
 		}
 	}
 
@@ -60,7 +60,7 @@ public class GetArmsTopNMetricRequest extends RoaAcsRequest<GetArmsTopNMetricRes
 	public void setOrderBy(String orderBy) {
 		this.orderBy = orderBy;
 		if(orderBy != null){
-			putPathParameter("OrderBy", orderBy);
+			putQueryParameter("OrderBy", orderBy);
 		}
 	}
 
@@ -71,7 +71,7 @@ public class GetArmsTopNMetricRequest extends RoaAcsRequest<GetArmsTopNMetricRes
 	public void setEndTime(Long endTime) {
 		this.endTime = endTime;
 		if(endTime != null){
-			putPathParameter("EndTime", endTime.toString());
+			putQueryParameter("EndTime", endTime.toString());
 		}
 	}
 
@@ -82,7 +82,7 @@ public class GetArmsTopNMetricRequest extends RoaAcsRequest<GetArmsTopNMetricRes
 	public void setStartTime(Long startTime) {
 		this.startTime = startTime;
 		if(startTime != null){
-			putPathParameter("StartTime", startTime.toString());
+			putQueryParameter("StartTime", startTime.toString());
 		}
 	}
 

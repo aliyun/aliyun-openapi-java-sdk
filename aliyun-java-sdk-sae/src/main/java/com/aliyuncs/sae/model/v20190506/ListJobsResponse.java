@@ -197,6 +197,10 @@ public class ListJobsResponse extends AcsResponse {
 
 			private String lastJobState;
 
+			private Integer cpu;
+
+			private Integer mem;
+
 			private List<TagsItem> tags;
 
 			public String getAppName() {
@@ -349,6 +353,22 @@ public class ListJobsResponse extends AcsResponse {
 
 			public void setLastJobState(String lastJobState) {
 				this.lastJobState = lastJobState;
+			}
+
+			public Integer getCpu() {
+				return this.cpu;
+			}
+
+			public void setCpu(Integer cpu) {
+				this.cpu = cpu;
+			}
+
+			public Integer getMem() {
+				return this.mem;
+			}
+
+			public void setMem(Integer mem) {
+				this.mem = mem;
 			}
 
 			public List<TagsItem> getTags() {

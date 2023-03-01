@@ -43,7 +43,7 @@ public class GetAvailabilityMetricRequest extends RoaAcsRequest<GetAvailabilityM
 	public void setLimit(Long limit) {
 		this.limit = limit;
 		if(limit != null){
-			putPathParameter("Limit", limit.toString());
+			putQueryParameter("Limit", limit.toString());
 		}
 	}
 

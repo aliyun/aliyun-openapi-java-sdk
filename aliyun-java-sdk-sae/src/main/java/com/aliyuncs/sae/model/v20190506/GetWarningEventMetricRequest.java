@@ -47,7 +47,7 @@ public class GetWarningEventMetricRequest extends RoaAcsRequest<GetWarningEventM
 	public void setLimit(Long limit) {
 		this.limit = limit;
 		if(limit != null){
-			putPathParameter("Limit", limit.toString());
+			putQueryParameter("Limit", limit.toString());
 		}
 	}
 
@@ -58,7 +58,7 @@ public class GetWarningEventMetricRequest extends RoaAcsRequest<GetWarningEventM
 	public void setEndTime(Long endTime) {
 		this.endTime = endTime;
 		if(endTime != null){
-			putPathParameter("EndTime", endTime.toString());
+			putQueryParameter("EndTime", endTime.toString());
 		}
 	}
 
@@ -69,7 +69,7 @@ public class GetWarningEventMetricRequest extends RoaAcsRequest<GetWarningEventM
 	public void setStartTime(Long startTime) {
 		this.startTime = startTime;
 		if(startTime != null){
-			putPathParameter("StartTime", startTime.toString());
+			putQueryParameter("StartTime", startTime.toString());
 		}
 	}
 

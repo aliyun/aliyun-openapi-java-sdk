@@ -106,6 +106,8 @@ public class DescribeNamespaceResponse extends AcsResponse {
 
 		private String nameSpaceShortId;
 
+		private Boolean enableMicroRegistration;
+
 		public String getNamespaceDescription() {
 			return this.namespaceDescription;
 		}
@@ -144,6 +146,14 @@ public class DescribeNamespaceResponse extends AcsResponse {
 
 		public void setNameSpaceShortId(String nameSpaceShortId) {
 			this.nameSpaceShortId = nameSpaceShortId;
+		}
+
+		public Boolean getEnableMicroRegistration() {
+			return this.enableMicroRegistration;
+		}
+
+		public void setEnableMicroRegistration(Boolean enableMicroRegistration) {
+			this.enableMicroRegistration = enableMicroRegistration;
 		}
 	}
 

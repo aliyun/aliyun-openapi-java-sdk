@@ -47,7 +47,7 @@ public class GetChangeOrderMetricRequest extends RoaAcsRequest<GetChangeOrderMet
 	public void setCreateTime(String createTime) {
 		this.createTime = createTime;
 		if(createTime != null){
-			putPathParameter("CreateTime", createTime);
+			putQueryParameter("CreateTime", createTime);
 		}
 	}
 
@@ -58,7 +58,7 @@ public class GetChangeOrderMetricRequest extends RoaAcsRequest<GetChangeOrderMet
 	public void setLimit(Long limit) {
 		this.limit = limit;
 		if(limit != null){
-			putPathParameter("Limit", limit.toString());
+			putQueryParameter("Limit", limit.toString());
 		}
 	}
 
@@ -69,7 +69,7 @@ public class GetChangeOrderMetricRequest extends RoaAcsRequest<GetChangeOrderMet
 	public void setOrderBy(String orderBy) {
 		this.orderBy = orderBy;
 		if(orderBy != null){
-			putPathParameter("OrderBy", orderBy);
+			putQueryParameter("OrderBy", orderBy);
 		}
 	}
 
