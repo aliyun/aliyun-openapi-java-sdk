@@ -32,7 +32,7 @@ public class BatchGetEdgeInstanceDeviceDriverRequest extends RpcAcsRequest<Batch
 
 	private String instanceId;
 	public BatchGetEdgeInstanceDeviceDriverRequest() {
-		super("Iot", "2018-01-20", "BatchGetEdgeInstanceDeviceDriver");
+		super("Iot", "2018-01-20", "BatchGetEdgeInstanceDeviceDriver", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

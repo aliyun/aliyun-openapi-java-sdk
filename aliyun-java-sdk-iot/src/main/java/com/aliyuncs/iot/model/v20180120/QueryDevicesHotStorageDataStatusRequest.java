@@ -41,7 +41,7 @@ public class QueryDevicesHotStorageDataStatusRequest extends RpcAcsRequest<Query
 
 	private String deviceName;
 	public QueryDevicesHotStorageDataStatusRequest() {
-		super("Iot", "2018-01-20", "QueryDevicesHotStorageDataStatus");
+		super("Iot", "2018-01-20", "QueryDevicesHotStorageDataStatus", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

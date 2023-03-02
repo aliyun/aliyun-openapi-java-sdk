@@ -33,7 +33,7 @@ public class PubBroadcastRequest extends RpcAcsRequest<PubBroadcastResponse> {
 
 	private String productKey;
 	public PubBroadcastRequest() {
-		super("Iot", "2018-01-20", "PubBroadcast");
+		super("Iot", "2018-01-20", "PubBroadcast", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

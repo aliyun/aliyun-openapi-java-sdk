@@ -37,7 +37,7 @@ public class QueryStudioAppPageListOpenRequest extends RpcAcsRequest<QueryStudio
 
 	private String appId;
 	public QueryStudioAppPageListOpenRequest() {
-		super("Iot", "2018-01-20", "QueryStudioAppPageListOpen");
+		super("Iot", "2018-01-20", "QueryStudioAppPageListOpen", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

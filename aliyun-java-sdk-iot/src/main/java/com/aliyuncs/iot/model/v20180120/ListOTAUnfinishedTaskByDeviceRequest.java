@@ -37,7 +37,7 @@ public class ListOTAUnfinishedTaskByDeviceRequest extends RpcAcsRequest<ListOTAU
 
 	private String deviceName;
 	public ListOTAUnfinishedTaskByDeviceRequest() {
-		super("Iot", "2018-01-20", "ListOTAUnfinishedTaskByDevice");
+		super("Iot", "2018-01-20", "ListOTAUnfinishedTaskByDevice", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

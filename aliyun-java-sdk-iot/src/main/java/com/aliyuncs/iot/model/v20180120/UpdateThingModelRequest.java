@@ -37,7 +37,7 @@ public class UpdateThingModelRequest extends RpcAcsRequest<UpdateThingModelRespo
 
 	private String functionBlockId;
 	public UpdateThingModelRequest() {
-		super("Iot", "2018-01-20", "UpdateThingModel");
+		super("Iot", "2018-01-20", "UpdateThingModel", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

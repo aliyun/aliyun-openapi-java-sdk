@@ -41,7 +41,7 @@ public class UpdateSpeechRequest extends RpcAcsRequest<UpdateSpeechResponse> {
 
 	private String speechCode;
 	public UpdateSpeechRequest() {
-		super("Iot", "2018-01-20", "UpdateSpeech");
+		super("Iot", "2018-01-20", "UpdateSpeech", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

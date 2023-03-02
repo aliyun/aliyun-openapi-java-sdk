@@ -33,7 +33,7 @@ public class QueryEdgeInstanceMessageRoutingRequest extends RpcAcsRequest<QueryE
 
 	private String instanceId;
 	public QueryEdgeInstanceMessageRoutingRequest() {
-		super("Iot", "2018-01-20", "QueryEdgeInstanceMessageRouting");
+		super("Iot", "2018-01-20", "QueryEdgeInstanceMessageRouting", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class QueryVehicleDeviceRequest extends RpcAcsRequest<QueryVehicleDeviceR
 
 	private String deviceName;
 	public QueryVehicleDeviceRequest() {
-		super("Iot", "2018-01-20", "QueryVehicleDevice");
+		super("Iot", "2018-01-20", "QueryVehicleDevice", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,7 +35,7 @@ public class CreateRuleActionRequest extends RpcAcsRequest<CreateRuleActionRespo
 
 	private Long ruleId;
 	public CreateRuleActionRequest() {
-		super("Iot", "2018-01-20", "CreateRuleAction");
+		super("Iot", "2018-01-20", "CreateRuleAction", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

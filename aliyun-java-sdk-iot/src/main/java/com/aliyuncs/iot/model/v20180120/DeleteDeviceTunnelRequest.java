@@ -29,7 +29,7 @@ public class DeleteDeviceTunnelRequest extends RpcAcsRequest<DeleteDeviceTunnelR
 
 	private String tunnelId;
 	public DeleteDeviceTunnelRequest() {
-		super("Iot", "2018-01-20", "DeleteDeviceTunnel");
+		super("Iot", "2018-01-20", "DeleteDeviceTunnel", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

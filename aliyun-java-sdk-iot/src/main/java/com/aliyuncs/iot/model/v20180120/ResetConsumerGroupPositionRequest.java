@@ -29,7 +29,7 @@ public class ResetConsumerGroupPositionRequest extends RpcAcsRequest<ResetConsum
 
 	private String groupId;
 	public ResetConsumerGroupPositionRequest() {
-		super("Iot", "2018-01-20", "ResetConsumerGroupPosition");
+		super("Iot", "2018-01-20", "ResetConsumerGroupPosition", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

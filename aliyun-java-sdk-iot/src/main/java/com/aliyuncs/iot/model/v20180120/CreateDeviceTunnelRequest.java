@@ -37,7 +37,7 @@ public class CreateDeviceTunnelRequest extends RpcAcsRequest<CreateDeviceTunnelR
 
 	private String udi;
 	public CreateDeviceTunnelRequest() {
-		super("Iot", "2018-01-20", "CreateDeviceTunnel");
+		super("Iot", "2018-01-20", "CreateDeviceTunnel", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,15 +31,13 @@ public class CreateDownloadDataJobRequest extends RpcAcsRequest<CreateDownloadDa
 
 	private String iotInstanceId;
 
-	private String context;
-
 	private String tableName;
 
 	private Long endTime;
 
 	private String downloadDataType;
 	public CreateDownloadDataJobRequest() {
-		super("Iot", "2018-01-20", "CreateDownloadDataJob");
+		super("Iot", "2018-01-20", "CreateDownloadDataJob", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -77,17 +75,6 @@ public class CreateDownloadDataJobRequest extends RpcAcsRequest<CreateDownloadDa
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
 			putBodyParameter("IotInstanceId", iotInstanceId);
-		}
-	}
-
-	public String getContext() {
-		return this.context;
-	}
-
-	public void setContext(String context) {
-		this.context = context;
-		if(context != null){
-			putBodyParameter("Context", context);
 		}
 	}
 

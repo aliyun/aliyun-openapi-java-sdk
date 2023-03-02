@@ -34,7 +34,7 @@ public class ReBindLicenseDeviceRequest extends RpcAcsRequest<ReBindLicenseDevic
 
 	private String licenseCode;
 	public ReBindLicenseDeviceRequest() {
-		super("Iot", "2018-01-20", "ReBindLicenseDevice");
+		super("Iot", "2018-01-20", "ReBindLicenseDevice", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

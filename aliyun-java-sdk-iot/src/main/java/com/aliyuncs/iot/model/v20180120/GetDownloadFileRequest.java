@@ -31,7 +31,7 @@ public class GetDownloadFileRequest extends RpcAcsRequest<GetDownloadFileRespons
 
 	private String longJobId;
 	public GetDownloadFileRequest() {
-		super("Iot", "2018-01-20", "GetDownloadFile");
+		super("Iot", "2018-01-20", "GetDownloadFile", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class CountSpeechBroadcastHourRequest extends RpcAcsRequest<CountSpeechBr
 
 	private String shareTaskCode;
 	public CountSpeechBroadcastHourRequest() {
-		super("Iot", "2018-01-20", "CountSpeechBroadcastHour");
+		super("Iot", "2018-01-20", "CountSpeechBroadcastHour", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

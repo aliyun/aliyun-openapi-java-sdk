@@ -32,7 +32,7 @@ public class BatchCheckImportDeviceRequest extends RpcAcsRequest<BatchCheckImpor
 
 	private List<DeviceList> deviceLists;
 	public BatchCheckImportDeviceRequest() {
-		super("Iot", "2018-01-20", "BatchCheckImportDevice");
+		super("Iot", "2018-01-20", "BatchCheckImportDevice", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

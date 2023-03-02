@@ -27,7 +27,7 @@ public class GetSpeechLicenseDeviceStatisticsRequest extends RpcAcsRequest<GetSp
 
 	private String iotInstanceId;
 	public GetSpeechLicenseDeviceStatisticsRequest() {
-		super("Iot", "2018-01-20", "GetSpeechLicenseDeviceStatistics");
+		super("Iot", "2018-01-20", "GetSpeechLicenseDeviceStatistics", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

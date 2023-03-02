@@ -36,7 +36,7 @@ public class ClearDeviceDesiredPropertyRequest extends RpcAcsRequest<ClearDevice
 
 	private String deviceName;
 	public ClearDeviceDesiredPropertyRequest() {
-		super("Iot", "2018-01-20", "ClearDeviceDesiredProperty");
+		super("Iot", "2018-01-20", "ClearDeviceDesiredProperty", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
