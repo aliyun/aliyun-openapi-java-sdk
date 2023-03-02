@@ -35,6 +35,10 @@ public class CreateDataServiceApiRequest extends RpcAcsRequest<CreateDataService
 
 	private Long folderId;
 
+	private Long resourceGroupId;
+
+	private Long sqlMode;
+
 	private Long tenantId;
 
 	private String protocols;
@@ -117,6 +121,28 @@ public class CreateDataServiceApiRequest extends RpcAcsRequest<CreateDataService
 		this.folderId = folderId;
 		if(folderId != null){
 			putBodyParameter("FolderId", folderId.toString());
+		}
+	}
+
+	public Long getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(Long resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putBodyParameter("ResourceGroupId", resourceGroupId.toString());
+		}
+	}
+
+	public Long getSqlMode() {
+		return this.sqlMode;
+	}
+
+	public void setSqlMode(Long sqlMode) {
+		this.sqlMode = sqlMode;
+		if(sqlMode != null){
+			putBodyParameter("SqlMode", sqlMode.toString());
 		}
 	}
 

@@ -29,17 +29,11 @@ public class UpdateDataServiceApiRequest extends RpcAcsRequest<UpdateDataService
 
 	private Integer requestMethod;
 
-	private String apiPath;
-
-	private String wizardDetails;
-
-	private Integer visibleRange;
-
 	private String apiDescription;
 
 	private Integer timeout;
 
-	private String registrationDetails;
+	private Long resourceGroupId;
 
 	private Long tenantId;
 
@@ -47,9 +41,17 @@ public class UpdateDataServiceApiRequest extends RpcAcsRequest<UpdateDataService
 
 	private Long projectId;
 
-	private Long apiId;
-
 	private Integer responseContentType;
+
+	private String apiPath;
+
+	private String wizardDetails;
+
+	private Integer visibleRange;
+
+	private String registrationDetails;
+
+	private Long apiId;
 	public UpdateDataServiceApiRequest() {
 		super("dataworks-public", "2020-05-18", "UpdateDataServiceApi");
 		setMethod(MethodType.POST);
@@ -81,39 +83,6 @@ public class UpdateDataServiceApiRequest extends RpcAcsRequest<UpdateDataService
 		}
 	}
 
-	public String getApiPath() {
-		return this.apiPath;
-	}
-
-	public void setApiPath(String apiPath) {
-		this.apiPath = apiPath;
-		if(apiPath != null){
-			putBodyParameter("ApiPath", apiPath);
-		}
-	}
-
-	public String getWizardDetails() {
-		return this.wizardDetails;
-	}
-
-	public void setWizardDetails(String wizardDetails) {
-		this.wizardDetails = wizardDetails;
-		if(wizardDetails != null){
-			putBodyParameter("WizardDetails", wizardDetails);
-		}
-	}
-
-	public Integer getVisibleRange() {
-		return this.visibleRange;
-	}
-
-	public void setVisibleRange(Integer visibleRange) {
-		this.visibleRange = visibleRange;
-		if(visibleRange != null){
-			putBodyParameter("VisibleRange", visibleRange.toString());
-		}
-	}
-
 	public String getApiDescription() {
 		return this.apiDescription;
 	}
@@ -136,14 +105,14 @@ public class UpdateDataServiceApiRequest extends RpcAcsRequest<UpdateDataService
 		}
 	}
 
-	public String getRegistrationDetails() {
-		return this.registrationDetails;
+	public Long getResourceGroupId() {
+		return this.resourceGroupId;
 	}
 
-	public void setRegistrationDetails(String registrationDetails) {
-		this.registrationDetails = registrationDetails;
-		if(registrationDetails != null){
-			putBodyParameter("RegistrationDetails", registrationDetails);
+	public void setResourceGroupId(Long resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putBodyParameter("ResourceGroupId", resourceGroupId.toString());
 		}
 	}
 
@@ -180,17 +149,6 @@ public class UpdateDataServiceApiRequest extends RpcAcsRequest<UpdateDataService
 		}
 	}
 
-	public Long getApiId() {
-		return this.apiId;
-	}
-
-	public void setApiId(Long apiId) {
-		this.apiId = apiId;
-		if(apiId != null){
-			putBodyParameter("ApiId", apiId.toString());
-		}
-	}
-
 	public Integer getResponseContentType() {
 		return this.responseContentType;
 	}
@@ -199,6 +157,61 @@ public class UpdateDataServiceApiRequest extends RpcAcsRequest<UpdateDataService
 		this.responseContentType = responseContentType;
 		if(responseContentType != null){
 			putBodyParameter("ResponseContentType", responseContentType.toString());
+		}
+	}
+
+	public String getApiPath() {
+		return this.apiPath;
+	}
+
+	public void setApiPath(String apiPath) {
+		this.apiPath = apiPath;
+		if(apiPath != null){
+			putBodyParameter("ApiPath", apiPath);
+		}
+	}
+
+	public String getWizardDetails() {
+		return this.wizardDetails;
+	}
+
+	public void setWizardDetails(String wizardDetails) {
+		this.wizardDetails = wizardDetails;
+		if(wizardDetails != null){
+			putBodyParameter("WizardDetails", wizardDetails);
+		}
+	}
+
+	public Integer getVisibleRange() {
+		return this.visibleRange;
+	}
+
+	public void setVisibleRange(Integer visibleRange) {
+		this.visibleRange = visibleRange;
+		if(visibleRange != null){
+			putBodyParameter("VisibleRange", visibleRange.toString());
+		}
+	}
+
+	public String getRegistrationDetails() {
+		return this.registrationDetails;
+	}
+
+	public void setRegistrationDetails(String registrationDetails) {
+		this.registrationDetails = registrationDetails;
+		if(registrationDetails != null){
+			putBodyParameter("RegistrationDetails", registrationDetails);
+		}
+	}
+
+	public Long getApiId() {
+		return this.apiId;
+	}
+
+	public void setApiId(Long apiId) {
+		this.apiId = apiId;
+		if(apiId != null){
+			putBodyParameter("ApiId", apiId.toString());
 		}
 	}
 
