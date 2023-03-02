@@ -68,11 +68,11 @@ public class AssumeRoleWithSAMLResponse extends AcsResponse {
 
 		private String subjectType;
 
+		private String subject;
+
 		private String issuer;
 
 		private String recipient;
-
-		private String subject;
 
 		public String getSubjectType() {
 			return this.subjectType;
@@ -80,6 +80,14 @@ public class AssumeRoleWithSAMLResponse extends AcsResponse {
 
 		public void setSubjectType(String subjectType) {
 			this.subjectType = subjectType;
+		}
+
+		public String getSubject() {
+			return this.subject;
+		}
+
+		public void setSubject(String subject) {
+			this.subject = subject;
 		}
 
 		public String getIssuer() {
@@ -97,29 +105,13 @@ public class AssumeRoleWithSAMLResponse extends AcsResponse {
 		public void setRecipient(String recipient) {
 			this.recipient = recipient;
 		}
-
-		public String getSubject() {
-			return this.subject;
-		}
-
-		public void setSubject(String subject) {
-			this.subject = subject;
-		}
 	}
 
 	public static class AssumedRoleUser {
 
-		private String arn;
-
 		private String assumedRoleId;
 
-		public String getArn() {
-			return this.arn;
-		}
-
-		public void setArn(String arn) {
-			this.arn = arn;
-		}
+		private String arn;
 
 		public String getAssumedRoleId() {
 			return this.assumedRoleId;
@@ -128,17 +120,25 @@ public class AssumeRoleWithSAMLResponse extends AcsResponse {
 		public void setAssumedRoleId(String assumedRoleId) {
 			this.assumedRoleId = assumedRoleId;
 		}
+
+		public String getArn() {
+			return this.arn;
+		}
+
+		public void setArn(String arn) {
+			this.arn = arn;
+		}
 	}
 
 	public static class Credentials {
 
 		private String securityToken;
 
-		private String accessKeyId;
+		private String expiration;
 
 		private String accessKeySecret;
 
-		private String expiration;
+		private String accessKeyId;
 
 		public String getSecurityToken() {
 			return this.securityToken;
@@ -148,12 +148,12 @@ public class AssumeRoleWithSAMLResponse extends AcsResponse {
 			this.securityToken = securityToken;
 		}
 
-		public String getAccessKeyId() {
-			return this.accessKeyId;
+		public String getExpiration() {
+			return this.expiration;
 		}
 
-		public void setAccessKeyId(String accessKeyId) {
-			this.accessKeyId = accessKeyId;
+		public void setExpiration(String expiration) {
+			this.expiration = expiration;
 		}
 
 		public String getAccessKeySecret() {
@@ -164,12 +164,12 @@ public class AssumeRoleWithSAMLResponse extends AcsResponse {
 			this.accessKeySecret = accessKeySecret;
 		}
 
-		public String getExpiration() {
-			return this.expiration;
+		public String getAccessKeyId() {
+			return this.accessKeyId;
 		}
 
-		public void setExpiration(String expiration) {
-			this.expiration = expiration;
+		public void setAccessKeyId(String accessKeyId) {
+			this.accessKeyId = accessKeyId;
 		}
 	}
 
