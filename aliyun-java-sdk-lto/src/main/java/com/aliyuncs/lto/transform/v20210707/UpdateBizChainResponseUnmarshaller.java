@@ -1,0 +1,33 @@
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.aliyuncs.lto.transform.v20210707;
+
+import com.aliyuncs.lto.model.v20210707.UpdateBizChainResponse;
+import com.aliyuncs.transform.UnmarshallerContext;
+
+
+public class UpdateBizChainResponseUnmarshaller {
+
+	public static UpdateBizChainResponse unmarshall(UpdateBizChainResponse updateBizChainResponse, UnmarshallerContext _ctx) {
+		
+		updateBizChainResponse.setRequestId(_ctx.stringValue("UpdateBizChainResponse.RequestId"));
+		updateBizChainResponse.setCode(_ctx.stringValue("UpdateBizChainResponse.Code"));
+		updateBizChainResponse.setHttpStatusCode(_ctx.integerValue("UpdateBizChainResponse.HttpStatusCode"));
+		updateBizChainResponse.setMessage(_ctx.stringValue("UpdateBizChainResponse.Message"));
+		updateBizChainResponse.setSuccess(_ctx.booleanValue("UpdateBizChainResponse.Success"));
+	 
+	 	return updateBizChainResponse;
+	}
+}
