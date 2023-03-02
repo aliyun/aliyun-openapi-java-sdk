@@ -38,6 +38,7 @@ public class DescribeDatabasesResponseUnmarshaller {
 			database.setDBStatus(_ctx.stringValue("DescribeDatabasesResponse.Databases["+ i +"].DBStatus"));
 			database.setDBName(_ctx.stringValue("DescribeDatabasesResponse.Databases["+ i +"].DBName"));
 			database.setEngine(_ctx.stringValue("DescribeDatabasesResponse.Databases["+ i +"].Engine"));
+			database.setMasterID(_ctx.stringValue("DescribeDatabasesResponse.Databases["+ i +"].MasterID"));
 			database.setCharacterSetName(_ctx.stringValue("DescribeDatabasesResponse.Databases["+ i +"].CharacterSetName"));
 
 			List<Account> accounts = new ArrayList<Account>();

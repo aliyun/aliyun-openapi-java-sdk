@@ -22,7 +22,7 @@ import com.aliyuncs.polardb.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeStoragePlanRequest extends RpcAcsRequest<DescribeStoragePlanResponse> {
+public class DescribeVSwitchesRequest extends RpcAcsRequest<DescribeVSwitchesResponse> {
 	   
 
 	private Long resourceOwnerId;
@@ -31,15 +31,23 @@ public class DescribeStoragePlanRequest extends RpcAcsRequest<DescribeStoragePla
 
 	private String resourceGroupId;
 
+	private String securityToken;
+
 	private Integer pageSize;
+
+	private String dedicatedHostGroupId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-	public DescribeStoragePlanRequest() {
-		super("polardb", "2017-08-01", "DescribeStoragePlan", "polardb");
+
+	private String vpcId;
+
+	private String zoneId;
+	public DescribeVSwitchesRequest() {
+		super("polardb", "2017-08-01", "DescribeVSwitches", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -80,6 +88,17 @@ public class DescribeStoragePlanRequest extends RpcAcsRequest<DescribeStoragePla
 		}
 	}
 
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -88,6 +107,17 @@ public class DescribeStoragePlanRequest extends RpcAcsRequest<DescribeStoragePla
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getDedicatedHostGroupId() {
+		return this.dedicatedHostGroupId;
+	}
+
+	public void setDedicatedHostGroupId(String dedicatedHostGroupId) {
+		this.dedicatedHostGroupId = dedicatedHostGroupId;
+		if(dedicatedHostGroupId != null){
+			putQueryParameter("DedicatedHostGroupId", dedicatedHostGroupId);
 		}
 	}
 
@@ -124,9 +154,31 @@ public class DescribeStoragePlanRequest extends RpcAcsRequest<DescribeStoragePla
 		}
 	}
 
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
+		}
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
 	@Override
-	public Class<DescribeStoragePlanResponse> getResponseClass() {
-		return DescribeStoragePlanResponse.class;
+	public Class<DescribeVSwitchesResponse> getResponseClass() {
+		return DescribeVSwitchesResponse.class;
 	}
 
 }

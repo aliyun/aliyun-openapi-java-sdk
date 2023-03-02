@@ -32,7 +32,7 @@ public class DescribeClassListResponseUnmarshaller {
 		List<ItemsItem> items = new ArrayList<ItemsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeClassListResponse.Items.Length"); i++) {
 			ItemsItem itemsItem = new ItemsItem();
-			itemsItem.setMaxIOPS(_ctx.stringValue("DescribeClassListResponse.Items["+ i +"].MaxIOPS"));
+			itemsItem.setPsl4MaxIOPS(_ctx.stringValue("DescribeClassListResponse.Items["+ i +"].Psl4MaxIOPS"));
 			itemsItem.setClassTypeLevel(_ctx.stringValue("DescribeClassListResponse.Items["+ i +"].ClassTypeLevel"));
 			itemsItem.setCpu(_ctx.stringValue("DescribeClassListResponse.Items["+ i +"].Cpu"));
 			itemsItem.setReferencePrice(_ctx.stringValue("DescribeClassListResponse.Items["+ i +"].ReferencePrice"));
@@ -40,6 +40,12 @@ public class DescribeClassListResponseUnmarshaller {
 			itemsItem.setMemoryClass(_ctx.stringValue("DescribeClassListResponse.Items["+ i +"].MemoryClass"));
 			itemsItem.setClassCode(_ctx.stringValue("DescribeClassListResponse.Items["+ i +"].ClassCode"));
 			itemsItem.setClassGroup(_ctx.stringValue("DescribeClassListResponse.Items["+ i +"].ClassGroup"));
+			itemsItem.setPsl5MaxIOPS(_ctx.stringValue("DescribeClassListResponse.Items["+ i +"].Psl5MaxIOPS"));
+			itemsItem.setMaxIOPS(_ctx.stringValue("DescribeClassListResponse.Items["+ i +"].MaxIOPS"));
+			itemsItem.setMaxStorageCapacity(_ctx.stringValue("DescribeClassListResponse.Items["+ i +"].MaxStorageCapacity"));
+			itemsItem.setPl1MaxIOPS(_ctx.stringValue("DescribeClassListResponse.Items["+ i +"].Pl1MaxIOPS"));
+			itemsItem.setPl2MaxIOPS(_ctx.stringValue("DescribeClassListResponse.Items["+ i +"].Pl2MaxIOPS"));
+			itemsItem.setPl3MaxIOPS(_ctx.stringValue("DescribeClassListResponse.Items["+ i +"].Pl3MaxIOPS"));
 
 			items.add(itemsItem);
 		}

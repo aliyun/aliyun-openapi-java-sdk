@@ -39,6 +39,10 @@ public class DescribeGlobalDatabaseNetworkResponse extends AcsResponse {
 
 	private String gDNDescription;
 
+	private String dBClusterId;
+
+	private String resourceGroupId;
+
 	private List<Connection> connections;
 
 	private List<DBCluster> dBClusters;
@@ -97,6 +101,22 @@ public class DescribeGlobalDatabaseNetworkResponse extends AcsResponse {
 
 	public void setGDNDescription(String gDNDescription) {
 		this.gDNDescription = gDNDescription;
+	}
+
+	public String getDBClusterId() {
+		return this.dBClusterId;
+	}
+
+	public void setDBClusterId(String dBClusterId) {
+		this.dBClusterId = dBClusterId;
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
 	}
 
 	public List<Connection> getConnections() {

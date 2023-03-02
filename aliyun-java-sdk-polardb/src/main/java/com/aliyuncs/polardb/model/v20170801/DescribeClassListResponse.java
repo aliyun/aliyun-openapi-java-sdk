@@ -57,7 +57,7 @@ public class DescribeClassListResponse extends AcsResponse {
 
 	public static class ItemsItem {
 
-		private String maxIOPS;
+		private String psl4MaxIOPS;
 
 		private String classTypeLevel;
 
@@ -73,12 +73,24 @@ public class DescribeClassListResponse extends AcsResponse {
 
 		private String classGroup;
 
-		public String getMaxIOPS() {
-			return this.maxIOPS;
+		private String psl5MaxIOPS;
+
+		private String maxIOPS;
+
+		private String maxStorageCapacity;
+
+		private String pl1MaxIOPS;
+
+		private String pl2MaxIOPS;
+
+		private String pl3MaxIOPS;
+
+		public String getPsl4MaxIOPS() {
+			return this.psl4MaxIOPS;
 		}
 
-		public void setMaxIOPS(String maxIOPS) {
-			this.maxIOPS = maxIOPS;
+		public void setPsl4MaxIOPS(String psl4MaxIOPS) {
+			this.psl4MaxIOPS = psl4MaxIOPS;
 		}
 
 		public String getClassTypeLevel() {
@@ -135,6 +147,54 @@ public class DescribeClassListResponse extends AcsResponse {
 
 		public void setClassGroup(String classGroup) {
 			this.classGroup = classGroup;
+		}
+
+		public String getPsl5MaxIOPS() {
+			return this.psl5MaxIOPS;
+		}
+
+		public void setPsl5MaxIOPS(String psl5MaxIOPS) {
+			this.psl5MaxIOPS = psl5MaxIOPS;
+		}
+
+		public String getMaxIOPS() {
+			return this.maxIOPS;
+		}
+
+		public void setMaxIOPS(String maxIOPS) {
+			this.maxIOPS = maxIOPS;
+		}
+
+		public String getMaxStorageCapacity() {
+			return this.maxStorageCapacity;
+		}
+
+		public void setMaxStorageCapacity(String maxStorageCapacity) {
+			this.maxStorageCapacity = maxStorageCapacity;
+		}
+
+		public String getPl1MaxIOPS() {
+			return this.pl1MaxIOPS;
+		}
+
+		public void setPl1MaxIOPS(String pl1MaxIOPS) {
+			this.pl1MaxIOPS = pl1MaxIOPS;
+		}
+
+		public String getPl2MaxIOPS() {
+			return this.pl2MaxIOPS;
+		}
+
+		public void setPl2MaxIOPS(String pl2MaxIOPS) {
+			this.pl2MaxIOPS = pl2MaxIOPS;
+		}
+
+		public String getPl3MaxIOPS() {
+			return this.pl3MaxIOPS;
+		}
+
+		public void setPl3MaxIOPS(String pl3MaxIOPS) {
+			this.pl3MaxIOPS = pl3MaxIOPS;
 		}
 	}
 

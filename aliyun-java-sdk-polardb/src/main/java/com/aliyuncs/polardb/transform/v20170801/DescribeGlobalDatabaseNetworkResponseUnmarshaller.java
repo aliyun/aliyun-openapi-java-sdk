@@ -35,6 +35,8 @@ public class DescribeGlobalDatabaseNetworkResponseUnmarshaller {
 		describeGlobalDatabaseNetworkResponse.setCreateTime(_ctx.stringValue("DescribeGlobalDatabaseNetworkResponse.CreateTime"));
 		describeGlobalDatabaseNetworkResponse.setDBType(_ctx.stringValue("DescribeGlobalDatabaseNetworkResponse.DBType"));
 		describeGlobalDatabaseNetworkResponse.setGDNDescription(_ctx.stringValue("DescribeGlobalDatabaseNetworkResponse.GDNDescription"));
+		describeGlobalDatabaseNetworkResponse.setDBClusterId(_ctx.stringValue("DescribeGlobalDatabaseNetworkResponse.DBClusterId"));
+		describeGlobalDatabaseNetworkResponse.setResourceGroupId(_ctx.stringValue("DescribeGlobalDatabaseNetworkResponse.ResourceGroupId"));
 
 		List<Connection> connections = new ArrayList<Connection>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeGlobalDatabaseNetworkResponse.Connections.Length"); i++) {

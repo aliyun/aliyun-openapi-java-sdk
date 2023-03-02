@@ -75,6 +75,8 @@ public class DescribeDatabasesResponse extends AcsResponse {
 
 		private String engine;
 
+		private String masterID;
+
 		private String characterSetName;
 
 		private List<Account> accounts;
@@ -109,6 +111,14 @@ public class DescribeDatabasesResponse extends AcsResponse {
 
 		public void setEngine(String engine) {
 			this.engine = engine;
+		}
+
+		public String getMasterID() {
+			return this.masterID;
+		}
+
+		public void setMasterID(String masterID) {
+			this.masterID = masterID;
 		}
 
 		public String getCharacterSetName() {

@@ -31,6 +31,8 @@ public class DescribeGlobalDatabaseNetworksRequest extends RpcAcsRequest<Describ
 
 	private String resourceGroupId;
 
+	private String filterRegion;
+
 	private String securityToken;
 
 	private String gDNId;
@@ -85,6 +87,17 @@ public class DescribeGlobalDatabaseNetworksRequest extends RpcAcsRequest<Describ
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getFilterRegion() {
+		return this.filterRegion;
+	}
+
+	public void setFilterRegion(String filterRegion) {
+		this.filterRegion = filterRegion;
+		if(filterRegion != null){
+			putQueryParameter("FilterRegion", filterRegion);
 		}
 	}
 

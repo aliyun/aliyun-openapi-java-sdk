@@ -62,6 +62,8 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 
 	private Boolean autoRenew;
 
+	private String hotStandbyCluster;
+
 	private String zoneId;
 
 	private Boolean tDEStatus;
@@ -99,6 +101,8 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 	private String cloneDataPoint;
 
 	private String payType;
+
+	private Long storageSpace;
 
 	private String serverlessType;
 	public CreateDBClusterRequest() {
@@ -311,6 +315,17 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		}
 	}
 
+	public String getHotStandbyCluster() {
+		return this.hotStandbyCluster;
+	}
+
+	public void setHotStandbyCluster(String hotStandbyCluster) {
+		this.hotStandbyCluster = hotStandbyCluster;
+		if(hotStandbyCluster != null){
+			putQueryParameter("HotStandbyCluster", hotStandbyCluster);
+		}
+	}
+
 	public String getZoneId() {
 		return this.zoneId;
 	}
@@ -517,6 +532,17 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		this.payType = payType;
 		if(payType != null){
 			putQueryParameter("PayType", payType);
+		}
+	}
+
+	public Long getStorageSpace() {
+		return this.storageSpace;
+	}
+
+	public void setStorageSpace(Long storageSpace) {
+		this.storageSpace = storageSpace;
+		if(storageSpace != null){
+			putQueryParameter("StorageSpace", storageSpace.toString());
 		}
 	}
 
