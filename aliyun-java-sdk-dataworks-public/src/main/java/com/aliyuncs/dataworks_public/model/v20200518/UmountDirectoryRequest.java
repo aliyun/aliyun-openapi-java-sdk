@@ -28,6 +28,8 @@ public class UmountDirectoryRequest extends RpcAcsRequest<UmountDirectoryRespons
 	private String targetType;
 
 	private String targetId;
+
+	private String targetUserId;
 	public UmountDirectoryRequest() {
 		super("dataworks-public", "2020-05-18", "UmountDirectory");
 		setMethod(MethodType.POST);
@@ -56,6 +58,17 @@ public class UmountDirectoryRequest extends RpcAcsRequest<UmountDirectoryRespons
 		this.targetId = targetId;
 		if(targetId != null){
 			putBodyParameter("TargetId", targetId);
+		}
+	}
+
+	public String getTargetUserId() {
+		return this.targetUserId;
+	}
+
+	public void setTargetUserId(String targetUserId) {
+		this.targetUserId = targetUserId;
+		if(targetUserId != null){
+			putBodyParameter("TargetUserId", targetUserId);
 		}
 	}
 

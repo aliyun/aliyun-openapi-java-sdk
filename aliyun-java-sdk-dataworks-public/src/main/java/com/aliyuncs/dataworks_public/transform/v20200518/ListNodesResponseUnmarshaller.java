@@ -60,6 +60,8 @@ public class ListNodesResponseUnmarshaller {
 			nodesItem.setDqcDescription(_ctx.stringValue("ListNodesResponse.Data.Nodes["+ i +"].DqcDescription"));
 			nodesItem.setCronExpress(_ctx.stringValue("ListNodesResponse.Data.Nodes["+ i +"].CronExpress"));
 			nodesItem.setNodeId(_ctx.longValue("ListNodesResponse.Data.Nodes["+ i +"].NodeId"));
+			nodesItem.setResGroupIdentifier(_ctx.stringValue("ListNodesResponse.Data.Nodes["+ i +"].ResGroupIdentifier"));
+			nodesItem.setFileType(_ctx.integerValue("ListNodesResponse.Data.Nodes["+ i +"].FileType"));
 
 			nodes.add(nodesItem);
 		}

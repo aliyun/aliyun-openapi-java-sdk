@@ -167,6 +167,10 @@ public class ListNodesResponse extends AcsResponse {
 
 			private Long nodeId;
 
+			private String resGroupIdentifier;
+
+			private Integer fileType;
+
 			public String getSchedulerType() {
 				return this.schedulerType;
 			}
@@ -317,6 +321,22 @@ public class ListNodesResponse extends AcsResponse {
 
 			public void setNodeId(Long nodeId) {
 				this.nodeId = nodeId;
+			}
+
+			public String getResGroupIdentifier() {
+				return this.resGroupIdentifier;
+			}
+
+			public void setResGroupIdentifier(String resGroupIdentifier) {
+				this.resGroupIdentifier = resGroupIdentifier;
+			}
+
+			public Integer getFileType() {
+				return this.fileType;
+			}
+
+			public void setFileType(Integer fileType) {
+				this.fileType = fileType;
 			}
 		}
 	}

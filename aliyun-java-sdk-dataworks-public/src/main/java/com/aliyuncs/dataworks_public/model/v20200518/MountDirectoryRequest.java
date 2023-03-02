@@ -28,6 +28,8 @@ public class MountDirectoryRequest extends RpcAcsRequest<MountDirectoryResponse>
 	private String targetType;
 
 	private String targetId;
+
+	private String targetUserId;
 	public MountDirectoryRequest() {
 		super("dataworks-public", "2020-05-18", "MountDirectory");
 		setMethod(MethodType.POST);
@@ -56,6 +58,17 @@ public class MountDirectoryRequest extends RpcAcsRequest<MountDirectoryResponse>
 		this.targetId = targetId;
 		if(targetId != null){
 			putBodyParameter("TargetId", targetId);
+		}
+	}
+
+	public String getTargetUserId() {
+		return this.targetUserId;
+	}
+
+	public void setTargetUserId(String targetUserId) {
+		this.targetUserId = targetUserId;
+		if(targetUserId != null){
+			putBodyParameter("TargetUserId", targetUserId);
 		}
 	}
 

@@ -49,6 +49,8 @@ public class GetNodeResponseUnmarshaller {
 		data.setDqcDescription(_ctx.stringValue("GetNodeResponse.Data.DqcDescription"));
 		data.setCronExpress(_ctx.stringValue("GetNodeResponse.Data.CronExpress"));
 		data.setNodeId(_ctx.longValue("GetNodeResponse.Data.NodeId"));
+		data.setResGroupIdentifier(_ctx.stringValue("GetNodeResponse.Data.ResGroupIdentifier"));
+		data.setFileType(_ctx.integerValue("GetNodeResponse.Data.FileType"));
 		getNodeResponse.setData(data);
 	 
 	 	return getNodeResponse;
