@@ -29,24 +29,24 @@ public class ListMemberResponseUnmarshaller {
 		
 		listMemberResponse.setRequestId(_ctx.stringValue("ListMemberResponse.RequestId"));
 		listMemberResponse.setCode(_ctx.integerValue("ListMemberResponse.Code"));
-		listMemberResponse.setSuccess(_ctx.booleanValue("ListMemberResponse.Success"));
 		listMemberResponse.setMessage(_ctx.stringValue("ListMemberResponse.Message"));
+		listMemberResponse.setSuccess(_ctx.booleanValue("ListMemberResponse.Success"));
 
 		Data data = new Data();
-		data.setTotal(_ctx.integerValue("ListMemberResponse.Data.Total"));
 		data.setNum(_ctx.integerValue("ListMemberResponse.Data.Num"));
+		data.setTotal(_ctx.integerValue("ListMemberResponse.Data.Total"));
 		data.setSize(_ctx.integerValue("ListMemberResponse.Data.Size"));
 
 		List<MemberInfo> pageData = new ArrayList<MemberInfo>();
 		for (int i = 0; i < _ctx.lengthValue("ListMemberResponse.Data.PageData.Length"); i++) {
 			MemberInfo memberInfo = new MemberInfo();
-			memberInfo.setMemberId(_ctx.stringValue("ListMemberResponse.Data.PageData["+ i +"].MemberId"));
-			memberInfo.setMemberName(_ctx.stringValue("ListMemberResponse.Data.PageData["+ i +"].MemberName"));
-			memberInfo.setMemberUid(_ctx.stringValue("ListMemberResponse.Data.PageData["+ i +"].MemberUid"));
-			memberInfo.setMemberContact(_ctx.stringValue("ListMemberResponse.Data.PageData["+ i +"].MemberContact"));
-			memberInfo.setMemberPhone(_ctx.stringValue("ListMemberResponse.Data.PageData["+ i +"].MemberPhone"));
-			memberInfo.setRemark(_ctx.stringValue("ListMemberResponse.Data.PageData["+ i +"].Remark"));
 			memberInfo.setStatus(_ctx.stringValue("ListMemberResponse.Data.PageData["+ i +"].Status"));
+			memberInfo.setMemberName(_ctx.stringValue("ListMemberResponse.Data.PageData["+ i +"].MemberName"));
+			memberInfo.setRemark(_ctx.stringValue("ListMemberResponse.Data.PageData["+ i +"].Remark"));
+			memberInfo.setMemberUid(_ctx.stringValue("ListMemberResponse.Data.PageData["+ i +"].MemberUid"));
+			memberInfo.setMemberPhone(_ctx.stringValue("ListMemberResponse.Data.PageData["+ i +"].MemberPhone"));
+			memberInfo.setMemberId(_ctx.stringValue("ListMemberResponse.Data.PageData["+ i +"].MemberId"));
+			memberInfo.setMemberContact(_ctx.stringValue("ListMemberResponse.Data.PageData["+ i +"].MemberContact"));
 
 			pageData.add(memberInfo);
 		}

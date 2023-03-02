@@ -23,10 +23,10 @@ public class AttachDataResponseUnmarshaller {
 	public static AttachDataResponse unmarshall(AttachDataResponse attachDataResponse, UnmarshallerContext _ctx) {
 		
 		attachDataResponse.setRequestId(_ctx.stringValue("AttachDataResponse.RequestId"));
-		attachDataResponse.setData(_ctx.stringValue("AttachDataResponse.Data"));
 		attachDataResponse.setCode(_ctx.integerValue("AttachDataResponse.Code"));
-		attachDataResponse.setSuccess(_ctx.booleanValue("AttachDataResponse.Success"));
 		attachDataResponse.setMessage(_ctx.stringValue("AttachDataResponse.Message"));
+		attachDataResponse.setData(_ctx.stringValue("AttachDataResponse.Data"));
+		attachDataResponse.setSuccess(_ctx.booleanValue("AttachDataResponse.Success"));
 	 
 	 	return attachDataResponse;
 	}

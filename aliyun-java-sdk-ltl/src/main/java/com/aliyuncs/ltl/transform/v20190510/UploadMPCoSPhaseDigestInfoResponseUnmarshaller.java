@@ -24,9 +24,9 @@ public class UploadMPCoSPhaseDigestInfoResponseUnmarshaller {
 		
 		uploadMPCoSPhaseDigestInfoResponse.setRequestId(_ctx.stringValue("UploadMPCoSPhaseDigestInfoResponse.RequestId"));
 		uploadMPCoSPhaseDigestInfoResponse.setCode(_ctx.integerValue("UploadMPCoSPhaseDigestInfoResponse.Code"));
-		uploadMPCoSPhaseDigestInfoResponse.setSuccess(_ctx.booleanValue("UploadMPCoSPhaseDigestInfoResponse.Success"));
 		uploadMPCoSPhaseDigestInfoResponse.setMessage(_ctx.stringValue("UploadMPCoSPhaseDigestInfoResponse.Message"));
 		uploadMPCoSPhaseDigestInfoResponse.setData(_ctx.stringValue("UploadMPCoSPhaseDigestInfoResponse.Data"));
+		uploadMPCoSPhaseDigestInfoResponse.setSuccess(_ctx.booleanValue("UploadMPCoSPhaseDigestInfoResponse.Success"));
 	 
 	 	return uploadMPCoSPhaseDigestInfoResponse;
 	}

@@ -24,9 +24,9 @@ public class RegisterDeviceGroupResponseUnmarshaller {
 		
 		registerDeviceGroupResponse.setRequestId(_ctx.stringValue("RegisterDeviceGroupResponse.RequestId"));
 		registerDeviceGroupResponse.setCode(_ctx.integerValue("RegisterDeviceGroupResponse.Code"));
-		registerDeviceGroupResponse.setSuccess(_ctx.booleanValue("RegisterDeviceGroupResponse.Success"));
 		registerDeviceGroupResponse.setMessage(_ctx.stringValue("RegisterDeviceGroupResponse.Message"));
 		registerDeviceGroupResponse.setData(_ctx.stringValue("RegisterDeviceGroupResponse.Data"));
+		registerDeviceGroupResponse.setSuccess(_ctx.booleanValue("RegisterDeviceGroupResponse.Success"));
 	 
 	 	return registerDeviceGroupResponse;
 	}

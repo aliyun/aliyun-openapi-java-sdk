@@ -23,10 +23,10 @@ public class GetBlockChainInfoResponseUnmarshaller {
 	public static GetBlockChainInfoResponse unmarshall(GetBlockChainInfoResponse getBlockChainInfoResponse, UnmarshallerContext _ctx) {
 		
 		getBlockChainInfoResponse.setRequestId(_ctx.stringValue("GetBlockChainInfoResponse.RequestId"));
-		getBlockChainInfoResponse.setData(_ctx.stringValue("GetBlockChainInfoResponse.Data"));
 		getBlockChainInfoResponse.setCode(_ctx.integerValue("GetBlockChainInfoResponse.Code"));
-		getBlockChainInfoResponse.setSuccess(_ctx.booleanValue("GetBlockChainInfoResponse.Success"));
 		getBlockChainInfoResponse.setMessage(_ctx.stringValue("GetBlockChainInfoResponse.Message"));
+		getBlockChainInfoResponse.setData(_ctx.stringValue("GetBlockChainInfoResponse.Data"));
+		getBlockChainInfoResponse.setSuccess(_ctx.booleanValue("GetBlockChainInfoResponse.Success"));
 	 
 	 	return getBlockChainInfoResponse;
 	}

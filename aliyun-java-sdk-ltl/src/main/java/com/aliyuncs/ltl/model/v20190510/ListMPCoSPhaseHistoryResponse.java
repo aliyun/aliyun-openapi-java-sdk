@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListMPCoSPhaseHistoryResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer code;
-
-	private Boolean success;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getCode() {
 		return this.code;
@@ -51,20 +43,28 @@ public class ListMPCoSPhaseHistoryResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -77,21 +77,13 @@ public class ListMPCoSPhaseHistoryResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer total;
-
 		private Integer num;
+
+		private Integer total;
 
 		private Integer size;
 
 		private List<HistoryDataInfo> pageData;
-
-		public Integer getTotal() {
-			return this.total;
-		}
-
-		public void setTotal(Integer total) {
-			this.total = total;
-		}
 
 		public Integer getNum() {
 			return this.num;
@@ -99,6 +91,14 @@ public class ListMPCoSPhaseHistoryResponse extends AcsResponse {
 
 		public void setNum(Integer num) {
 			this.num = num;
+		}
+
+		public Integer getTotal() {
+			return this.total;
+		}
+
+		public void setTotal(Integer total) {
+			this.total = total;
 		}
 
 		public Integer getSize() {
@@ -119,40 +119,32 @@ public class ListMPCoSPhaseHistoryResponse extends AcsResponse {
 
 		public static class HistoryDataInfo {
 
-			private String dataSeq;
-
-			private Long blockNumber;
+			private String productKey;
 
 			private String previousHash;
 
 			private String dataHash;
 
-			private String blockHash;
-
-			private String transactionHash;
+			private String dataSeq;
 
 			private String dataValue;
 
 			private Long timestamp;
 
+			private String transactionHash;
+
+			private String blockHash;
+
+			private Long blockNumber;
+
 			private String iotId;
 
-			private String productKey;
-
-			public String getDataSeq() {
-				return this.dataSeq;
+			public String getProductKey() {
+				return this.productKey;
 			}
 
-			public void setDataSeq(String dataSeq) {
-				this.dataSeq = dataSeq;
-			}
-
-			public Long getBlockNumber() {
-				return this.blockNumber;
-			}
-
-			public void setBlockNumber(Long blockNumber) {
-				this.blockNumber = blockNumber;
+			public void setProductKey(String productKey) {
+				this.productKey = productKey;
 			}
 
 			public String getPreviousHash() {
@@ -171,20 +163,12 @@ public class ListMPCoSPhaseHistoryResponse extends AcsResponse {
 				this.dataHash = dataHash;
 			}
 
-			public String getBlockHash() {
-				return this.blockHash;
+			public String getDataSeq() {
+				return this.dataSeq;
 			}
 
-			public void setBlockHash(String blockHash) {
-				this.blockHash = blockHash;
-			}
-
-			public String getTransactionHash() {
-				return this.transactionHash;
-			}
-
-			public void setTransactionHash(String transactionHash) {
-				this.transactionHash = transactionHash;
+			public void setDataSeq(String dataSeq) {
+				this.dataSeq = dataSeq;
 			}
 
 			public String getDataValue() {
@@ -203,20 +187,36 @@ public class ListMPCoSPhaseHistoryResponse extends AcsResponse {
 				this.timestamp = timestamp;
 			}
 
+			public String getTransactionHash() {
+				return this.transactionHash;
+			}
+
+			public void setTransactionHash(String transactionHash) {
+				this.transactionHash = transactionHash;
+			}
+
+			public String getBlockHash() {
+				return this.blockHash;
+			}
+
+			public void setBlockHash(String blockHash) {
+				this.blockHash = blockHash;
+			}
+
+			public Long getBlockNumber() {
+				return this.blockNumber;
+			}
+
+			public void setBlockNumber(Long blockNumber) {
+				this.blockNumber = blockNumber;
+			}
+
 			public String getIotId() {
 				return this.iotId;
 			}
 
 			public void setIotId(String iotId) {
 				this.iotId = iotId;
-			}
-
-			public String getProductKey() {
-				return this.productKey;
-			}
-
-			public void setProductKey(String productKey) {
-				this.productKey = productKey;
 			}
 		}
 	}

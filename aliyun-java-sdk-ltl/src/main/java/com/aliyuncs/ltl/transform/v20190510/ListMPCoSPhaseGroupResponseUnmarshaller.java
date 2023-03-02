@@ -29,12 +29,12 @@ public class ListMPCoSPhaseGroupResponseUnmarshaller {
 		
 		listMPCoSPhaseGroupResponse.setRequestId(_ctx.stringValue("ListMPCoSPhaseGroupResponse.RequestId"));
 		listMPCoSPhaseGroupResponse.setCode(_ctx.integerValue("ListMPCoSPhaseGroupResponse.Code"));
-		listMPCoSPhaseGroupResponse.setSuccess(_ctx.booleanValue("ListMPCoSPhaseGroupResponse.Success"));
 		listMPCoSPhaseGroupResponse.setMessage(_ctx.stringValue("ListMPCoSPhaseGroupResponse.Message"));
+		listMPCoSPhaseGroupResponse.setSuccess(_ctx.booleanValue("ListMPCoSPhaseGroupResponse.Success"));
 
 		Data data = new Data();
-		data.setTotal(_ctx.integerValue("ListMPCoSPhaseGroupResponse.Data.Total"));
 		data.setNum(_ctx.integerValue("ListMPCoSPhaseGroupResponse.Data.Num"));
+		data.setTotal(_ctx.integerValue("ListMPCoSPhaseGroupResponse.Data.Total"));
 		data.setSize(_ctx.integerValue("ListMPCoSPhaseGroupResponse.Data.Size"));
 
 		List<PhaseGroupInfo> pageData = new ArrayList<PhaseGroupInfo>();

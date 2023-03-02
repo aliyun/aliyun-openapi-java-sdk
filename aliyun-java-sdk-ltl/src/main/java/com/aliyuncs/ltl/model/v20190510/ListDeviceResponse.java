@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListDeviceResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer code;
-
-	private Boolean success;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getCode() {
 		return this.code;
@@ -51,20 +43,28 @@ public class ListDeviceResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -77,21 +77,13 @@ public class ListDeviceResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer total;
-
 		private Integer num;
+
+		private Integer total;
 
 		private Integer size;
 
 		private List<DeviceInfo> pageData;
-
-		public Integer getTotal() {
-			return this.total;
-		}
-
-		public void setTotal(Integer total) {
-			this.total = total;
-		}
 
 		public Integer getNum() {
 			return this.num;
@@ -99,6 +91,14 @@ public class ListDeviceResponse extends AcsResponse {
 
 		public void setNum(Integer num) {
 			this.num = num;
+		}
+
+		public Integer getTotal() {
+			return this.total;
+		}
+
+		public void setTotal(Integer total) {
+			this.total = total;
 		}
 
 		public Integer getSize() {
@@ -119,29 +119,13 @@ public class ListDeviceResponse extends AcsResponse {
 
 		public static class DeviceInfo {
 
-			private String deviceId;
-
-			private String iotId;
-
 			private String status;
 
 			private Long lastSaveTime;
 
-			public String getDeviceId() {
-				return this.deviceId;
-			}
+			private String deviceId;
 
-			public void setDeviceId(String deviceId) {
-				this.deviceId = deviceId;
-			}
-
-			public String getIotId() {
-				return this.iotId;
-			}
-
-			public void setIotId(String iotId) {
-				this.iotId = iotId;
-			}
+			private String iotId;
 
 			public String getStatus() {
 				return this.status;
@@ -157,6 +141,22 @@ public class ListDeviceResponse extends AcsResponse {
 
 			public void setLastSaveTime(Long lastSaveTime) {
 				this.lastSaveTime = lastSaveTime;
+			}
+
+			public String getDeviceId() {
+				return this.deviceId;
+			}
+
+			public void setDeviceId(String deviceId) {
+				this.deviceId = deviceId;
+			}
+
+			public String getIotId() {
+				return this.iotId;
+			}
+
+			public void setIotId(String iotId) {
+				this.iotId = iotId;
 			}
 		}
 	}

@@ -24,9 +24,9 @@ public class AuthorizeDeviceResponseUnmarshaller {
 		
 		authorizeDeviceResponse.setRequestId(_ctx.stringValue("AuthorizeDeviceResponse.RequestId"));
 		authorizeDeviceResponse.setCode(_ctx.integerValue("AuthorizeDeviceResponse.Code"));
-		authorizeDeviceResponse.setSuccess(_ctx.booleanValue("AuthorizeDeviceResponse.Success"));
 		authorizeDeviceResponse.setMessage(_ctx.stringValue("AuthorizeDeviceResponse.Message"));
 		authorizeDeviceResponse.setData(_ctx.stringValue("AuthorizeDeviceResponse.Data"));
+		authorizeDeviceResponse.setSuccess(_ctx.booleanValue("AuthorizeDeviceResponse.Success"));
 	 
 	 	return authorizeDeviceResponse;
 	}

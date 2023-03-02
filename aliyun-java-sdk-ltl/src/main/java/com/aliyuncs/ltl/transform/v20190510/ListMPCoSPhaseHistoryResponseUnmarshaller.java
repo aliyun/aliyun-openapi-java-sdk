@@ -29,27 +29,27 @@ public class ListMPCoSPhaseHistoryResponseUnmarshaller {
 		
 		listMPCoSPhaseHistoryResponse.setRequestId(_ctx.stringValue("ListMPCoSPhaseHistoryResponse.RequestId"));
 		listMPCoSPhaseHistoryResponse.setCode(_ctx.integerValue("ListMPCoSPhaseHistoryResponse.Code"));
-		listMPCoSPhaseHistoryResponse.setSuccess(_ctx.booleanValue("ListMPCoSPhaseHistoryResponse.Success"));
 		listMPCoSPhaseHistoryResponse.setMessage(_ctx.stringValue("ListMPCoSPhaseHistoryResponse.Message"));
+		listMPCoSPhaseHistoryResponse.setSuccess(_ctx.booleanValue("ListMPCoSPhaseHistoryResponse.Success"));
 
 		Data data = new Data();
-		data.setTotal(_ctx.integerValue("ListMPCoSPhaseHistoryResponse.Data.Total"));
 		data.setNum(_ctx.integerValue("ListMPCoSPhaseHistoryResponse.Data.Num"));
+		data.setTotal(_ctx.integerValue("ListMPCoSPhaseHistoryResponse.Data.Total"));
 		data.setSize(_ctx.integerValue("ListMPCoSPhaseHistoryResponse.Data.Size"));
 
 		List<HistoryDataInfo> pageData = new ArrayList<HistoryDataInfo>();
 		for (int i = 0; i < _ctx.lengthValue("ListMPCoSPhaseHistoryResponse.Data.PageData.Length"); i++) {
 			HistoryDataInfo historyDataInfo = new HistoryDataInfo();
-			historyDataInfo.setDataSeq(_ctx.stringValue("ListMPCoSPhaseHistoryResponse.Data.PageData["+ i +"].DataSeq"));
-			historyDataInfo.setBlockNumber(_ctx.longValue("ListMPCoSPhaseHistoryResponse.Data.PageData["+ i +"].BlockNumber"));
+			historyDataInfo.setProductKey(_ctx.stringValue("ListMPCoSPhaseHistoryResponse.Data.PageData["+ i +"].ProductKey"));
 			historyDataInfo.setPreviousHash(_ctx.stringValue("ListMPCoSPhaseHistoryResponse.Data.PageData["+ i +"].PreviousHash"));
 			historyDataInfo.setDataHash(_ctx.stringValue("ListMPCoSPhaseHistoryResponse.Data.PageData["+ i +"].DataHash"));
-			historyDataInfo.setBlockHash(_ctx.stringValue("ListMPCoSPhaseHistoryResponse.Data.PageData["+ i +"].BlockHash"));
-			historyDataInfo.setTransactionHash(_ctx.stringValue("ListMPCoSPhaseHistoryResponse.Data.PageData["+ i +"].TransactionHash"));
+			historyDataInfo.setDataSeq(_ctx.stringValue("ListMPCoSPhaseHistoryResponse.Data.PageData["+ i +"].DataSeq"));
 			historyDataInfo.setDataValue(_ctx.stringValue("ListMPCoSPhaseHistoryResponse.Data.PageData["+ i +"].DataValue"));
 			historyDataInfo.setTimestamp(_ctx.longValue("ListMPCoSPhaseHistoryResponse.Data.PageData["+ i +"].Timestamp"));
+			historyDataInfo.setTransactionHash(_ctx.stringValue("ListMPCoSPhaseHistoryResponse.Data.PageData["+ i +"].TransactionHash"));
+			historyDataInfo.setBlockHash(_ctx.stringValue("ListMPCoSPhaseHistoryResponse.Data.PageData["+ i +"].BlockHash"));
+			historyDataInfo.setBlockNumber(_ctx.longValue("ListMPCoSPhaseHistoryResponse.Data.PageData["+ i +"].BlockNumber"));
 			historyDataInfo.setIotId(_ctx.stringValue("ListMPCoSPhaseHistoryResponse.Data.PageData["+ i +"].IotId"));
-			historyDataInfo.setProductKey(_ctx.stringValue("ListMPCoSPhaseHistoryResponse.Data.PageData["+ i +"].ProductKey"));
 
 			pageData.add(historyDataInfo);
 		}

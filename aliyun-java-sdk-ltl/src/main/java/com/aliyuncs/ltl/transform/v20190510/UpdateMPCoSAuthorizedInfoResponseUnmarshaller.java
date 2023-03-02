@@ -24,9 +24,9 @@ public class UpdateMPCoSAuthorizedInfoResponseUnmarshaller {
 		
 		updateMPCoSAuthorizedInfoResponse.setRequestId(_ctx.stringValue("UpdateMPCoSAuthorizedInfoResponse.RequestId"));
 		updateMPCoSAuthorizedInfoResponse.setCode(_ctx.integerValue("UpdateMPCoSAuthorizedInfoResponse.Code"));
-		updateMPCoSAuthorizedInfoResponse.setSuccess(_ctx.booleanValue("UpdateMPCoSAuthorizedInfoResponse.Success"));
 		updateMPCoSAuthorizedInfoResponse.setMessage(_ctx.stringValue("UpdateMPCoSAuthorizedInfoResponse.Message"));
 		updateMPCoSAuthorizedInfoResponse.setData(_ctx.stringValue("UpdateMPCoSAuthorizedInfoResponse.Data"));
+		updateMPCoSAuthorizedInfoResponse.setSuccess(_ctx.booleanValue("UpdateMPCoSAuthorizedInfoResponse.Success"));
 	 
 	 	return updateMPCoSAuthorizedInfoResponse;
 	}

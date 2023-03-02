@@ -29,24 +29,24 @@ public class ListDeviceGroupResponseUnmarshaller {
 		
 		listDeviceGroupResponse.setRequestId(_ctx.stringValue("ListDeviceGroupResponse.RequestId"));
 		listDeviceGroupResponse.setCode(_ctx.integerValue("ListDeviceGroupResponse.Code"));
-		listDeviceGroupResponse.setSuccess(_ctx.booleanValue("ListDeviceGroupResponse.Success"));
 		listDeviceGroupResponse.setMessage(_ctx.stringValue("ListDeviceGroupResponse.Message"));
+		listDeviceGroupResponse.setSuccess(_ctx.booleanValue("ListDeviceGroupResponse.Success"));
 
 		Data data = new Data();
-		data.setTotal(_ctx.integerValue("ListDeviceGroupResponse.Data.Total"));
 		data.setNum(_ctx.integerValue("ListDeviceGroupResponse.Data.Num"));
+		data.setTotal(_ctx.integerValue("ListDeviceGroupResponse.Data.Total"));
 		data.setSize(_ctx.integerValue("ListDeviceGroupResponse.Data.Size"));
 
 		List<DeviceGroupInfo> pageData = new ArrayList<DeviceGroupInfo>();
 		for (int i = 0; i < _ctx.lengthValue("ListDeviceGroupResponse.Data.PageData.Length"); i++) {
 			DeviceGroupInfo deviceGroupInfo = new DeviceGroupInfo();
+			deviceGroupInfo.setStatus(_ctx.stringValue("ListDeviceGroupResponse.Data.PageData["+ i +"].Status"));
 			deviceGroupInfo.setDeviceGroupId(_ctx.stringValue("ListDeviceGroupResponse.Data.PageData["+ i +"].DeviceGroupId"));
 			deviceGroupInfo.setProductKey(_ctx.stringValue("ListDeviceGroupResponse.Data.PageData["+ i +"].ProductKey"));
-			deviceGroupInfo.setAuthorizeType(_ctx.stringValue("ListDeviceGroupResponse.Data.PageData["+ i +"].AuthorizeType"));
-			deviceGroupInfo.setStatus(_ctx.stringValue("ListDeviceGroupResponse.Data.PageData["+ i +"].Status"));
-			deviceGroupInfo.setOwnerUid(_ctx.stringValue("ListDeviceGroupResponse.Data.PageData["+ i +"].OwnerUid"));
-			deviceGroupInfo.setOwnerName(_ctx.stringValue("ListDeviceGroupResponse.Data.PageData["+ i +"].OwnerName"));
 			deviceGroupInfo.setRemark(_ctx.stringValue("ListDeviceGroupResponse.Data.PageData["+ i +"].Remark"));
+			deviceGroupInfo.setAuthorizeType(_ctx.stringValue("ListDeviceGroupResponse.Data.PageData["+ i +"].AuthorizeType"));
+			deviceGroupInfo.setOwnerName(_ctx.stringValue("ListDeviceGroupResponse.Data.PageData["+ i +"].OwnerName"));
+			deviceGroupInfo.setOwnerUid(_ctx.stringValue("ListDeviceGroupResponse.Data.PageData["+ i +"].OwnerUid"));
 
 			pageData.add(deviceGroupInfo);
 		}

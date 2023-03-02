@@ -24,9 +24,9 @@ public class CreateMPCoSPhaseGroupResponseUnmarshaller {
 		
 		createMPCoSPhaseGroupResponse.setRequestId(_ctx.stringValue("CreateMPCoSPhaseGroupResponse.RequestId"));
 		createMPCoSPhaseGroupResponse.setCode(_ctx.integerValue("CreateMPCoSPhaseGroupResponse.Code"));
-		createMPCoSPhaseGroupResponse.setSuccess(_ctx.booleanValue("CreateMPCoSPhaseGroupResponse.Success"));
 		createMPCoSPhaseGroupResponse.setMessage(_ctx.stringValue("CreateMPCoSPhaseGroupResponse.Message"));
 		createMPCoSPhaseGroupResponse.setData(_ctx.stringValue("CreateMPCoSPhaseGroupResponse.Data"));
+		createMPCoSPhaseGroupResponse.setSuccess(_ctx.booleanValue("CreateMPCoSPhaseGroupResponse.Success"));
 	 
 	 	return createMPCoSPhaseGroupResponse;
 	}

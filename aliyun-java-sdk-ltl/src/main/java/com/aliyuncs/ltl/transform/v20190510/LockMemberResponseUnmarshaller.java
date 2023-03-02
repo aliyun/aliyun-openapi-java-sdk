@@ -24,9 +24,9 @@ public class LockMemberResponseUnmarshaller {
 		
 		lockMemberResponse.setRequestId(_ctx.stringValue("LockMemberResponse.RequestId"));
 		lockMemberResponse.setCode(_ctx.integerValue("LockMemberResponse.Code"));
-		lockMemberResponse.setSuccess(_ctx.booleanValue("LockMemberResponse.Success"));
 		lockMemberResponse.setMessage(_ctx.stringValue("LockMemberResponse.Message"));
 		lockMemberResponse.setData(_ctx.stringValue("LockMemberResponse.Data"));
+		lockMemberResponse.setSuccess(_ctx.booleanValue("LockMemberResponse.Success"));
 	 
 	 	return lockMemberResponse;
 	}

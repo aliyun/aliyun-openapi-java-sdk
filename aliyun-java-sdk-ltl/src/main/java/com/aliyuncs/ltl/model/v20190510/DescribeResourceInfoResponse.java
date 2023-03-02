@@ -24,23 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeResourceInfoResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer code;
-
-	private Boolean success;
 
 	private String message;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getCode() {
 		return this.code;
@@ -50,20 +42,28 @@ public class DescribeResourceInfoResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -76,31 +76,15 @@ public class DescribeResourceInfoResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String authorizeType;
-
-		private String region;
-
 		private String status;
 
 		private Long effectiveTime;
 
+		private String authorizeType;
+
 		private Long expiredTime;
 
-		public String getAuthorizeType() {
-			return this.authorizeType;
-		}
-
-		public void setAuthorizeType(String authorizeType) {
-			this.authorizeType = authorizeType;
-		}
-
-		public String getRegion() {
-			return this.region;
-		}
-
-		public void setRegion(String region) {
-			this.region = region;
-		}
+		private String region;
 
 		public String getStatus() {
 			return this.status;
@@ -118,12 +102,28 @@ public class DescribeResourceInfoResponse extends AcsResponse {
 			this.effectiveTime = effectiveTime;
 		}
 
+		public String getAuthorizeType() {
+			return this.authorizeType;
+		}
+
+		public void setAuthorizeType(String authorizeType) {
+			this.authorizeType = authorizeType;
+		}
+
 		public Long getExpiredTime() {
 			return this.expiredTime;
 		}
 
 		public void setExpiredTime(Long expiredTime) {
 			this.expiredTime = expiredTime;
+		}
+
+		public String getRegion() {
+			return this.region;
+		}
+
+		public void setRegion(String region) {
+			this.region = region;
 		}
 	}
 

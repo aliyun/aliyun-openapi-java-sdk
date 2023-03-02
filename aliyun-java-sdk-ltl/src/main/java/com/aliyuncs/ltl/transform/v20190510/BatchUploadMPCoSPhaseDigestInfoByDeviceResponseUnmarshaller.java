@@ -24,9 +24,9 @@ public class BatchUploadMPCoSPhaseDigestInfoByDeviceResponseUnmarshaller {
 		
 		batchUploadMPCoSPhaseDigestInfoByDeviceResponse.setRequestId(_ctx.stringValue("BatchUploadMPCoSPhaseDigestInfoByDeviceResponse.RequestId"));
 		batchUploadMPCoSPhaseDigestInfoByDeviceResponse.setCode(_ctx.integerValue("BatchUploadMPCoSPhaseDigestInfoByDeviceResponse.Code"));
-		batchUploadMPCoSPhaseDigestInfoByDeviceResponse.setSuccess(_ctx.booleanValue("BatchUploadMPCoSPhaseDigestInfoByDeviceResponse.Success"));
 		batchUploadMPCoSPhaseDigestInfoByDeviceResponse.setMessage(_ctx.stringValue("BatchUploadMPCoSPhaseDigestInfoByDeviceResponse.Message"));
 		batchUploadMPCoSPhaseDigestInfoByDeviceResponse.setData(_ctx.stringValue("BatchUploadMPCoSPhaseDigestInfoByDeviceResponse.Data"));
+		batchUploadMPCoSPhaseDigestInfoByDeviceResponse.setSuccess(_ctx.booleanValue("BatchUploadMPCoSPhaseDigestInfoByDeviceResponse.Success"));
 	 
 	 	return batchUploadMPCoSPhaseDigestInfoByDeviceResponse;
 	}
