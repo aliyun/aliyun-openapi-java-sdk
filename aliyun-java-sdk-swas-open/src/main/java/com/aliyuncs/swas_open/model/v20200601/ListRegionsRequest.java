@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class ListRegionsRequest extends RpcAcsRequest<ListRegionsResponse> {
 	   
 	public ListRegionsRequest() {
-		super("SWAS-OPEN", "2020-06-01", "ListRegions");
+		super("SWAS-OPEN", "2020-06-01", "ListRegions", "SWAS-OPEN");
 		setMethod(MethodType.POST);
 	}
 

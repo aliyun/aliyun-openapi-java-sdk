@@ -27,16 +27,17 @@ public class ListFirewallRulesResponseUnmarshaller {
 	public static ListFirewallRulesResponse unmarshall(ListFirewallRulesResponse listFirewallRulesResponse, UnmarshallerContext _ctx) {
 		
 		listFirewallRulesResponse.setRequestId(_ctx.stringValue("ListFirewallRulesResponse.RequestId"));
-		listFirewallRulesResponse.setPageNumber(_ctx.integerValue("ListFirewallRulesResponse.PageNumber"));
-		listFirewallRulesResponse.setPageSize(_ctx.integerValue("ListFirewallRulesResponse.PageSize"));
 		listFirewallRulesResponse.setTotalCount(_ctx.integerValue("ListFirewallRulesResponse.TotalCount"));
+		listFirewallRulesResponse.setPageSize(_ctx.integerValue("ListFirewallRulesResponse.PageSize"));
+		listFirewallRulesResponse.setPageNumber(_ctx.integerValue("ListFirewallRulesResponse.PageNumber"));
 
 		List<FirewallRule> firewallRules = new ArrayList<FirewallRule>();
 		for (int i = 0; i < _ctx.lengthValue("ListFirewallRulesResponse.FirewallRules.Length"); i++) {
 			FirewallRule firewallRule = new FirewallRule();
+			firewallRule.setRemark(_ctx.stringValue("ListFirewallRulesResponse.FirewallRules["+ i +"].Remark"));
+			firewallRule.setPort(_ctx.stringValue("ListFirewallRulesResponse.FirewallRules["+ i +"].Port"));
 			firewallRule.setRuleId(_ctx.stringValue("ListFirewallRulesResponse.FirewallRules["+ i +"].RuleId"));
 			firewallRule.setRuleProtocol(_ctx.stringValue("ListFirewallRulesResponse.FirewallRules["+ i +"].RuleProtocol"));
-			firewallRule.setPort(_ctx.stringValue("ListFirewallRulesResponse.FirewallRules["+ i +"].Port"));
 
 			firewallRules.add(firewallRule);
 		}

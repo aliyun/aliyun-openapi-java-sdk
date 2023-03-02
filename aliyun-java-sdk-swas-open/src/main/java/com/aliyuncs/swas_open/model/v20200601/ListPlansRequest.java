@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class ListPlansRequest extends RpcAcsRequest<ListPlansResponse> {
 	   
 	public ListPlansRequest() {
-		super("SWAS-OPEN", "2020-06-01", "ListPlans");
+		super("SWAS-OPEN", "2020-06-01", "ListPlans", "SWAS-OPEN");
 		setMethod(MethodType.POST);
 	}
 

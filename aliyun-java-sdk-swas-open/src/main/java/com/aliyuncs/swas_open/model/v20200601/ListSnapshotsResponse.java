@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListSnapshotsResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer totalCount;
 
-	private Integer pageNumber;
+	private String requestId;
 
 	private Integer pageSize;
 
-	private Integer totalCount;
+	private Integer pageNumber;
 
 	private List<Snapshot> snapshots;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class ListSnapshotsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
 	}
 
 	public Integer getPageSize() {
@@ -59,12 +59,12 @@ public class ListSnapshotsResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<Snapshot> getSnapshots() {
@@ -77,54 +77,30 @@ public class ListSnapshotsResponse extends AcsResponse {
 
 	public static class Snapshot {
 
-		private String regionId;
-
-		private String snapshotId;
-
-		private String snapshotName;
-
-		private String remark;
+		private String status;
 
 		private String creationTime;
 
+		private String sourceDiskId;
+
+		private String snapshotName;
+
 		private String progress;
 
-		private String status;
+		private String remark;
 
-		private String sourceDiskId;
+		private String snapshotId;
 
 		private String sourceDiskType;
 
-		public String getRegionId() {
-			return this.regionId;
+		private String regionId;
+
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getSnapshotId() {
-			return this.snapshotId;
-		}
-
-		public void setSnapshotId(String snapshotId) {
-			this.snapshotId = snapshotId;
-		}
-
-		public String getSnapshotName() {
-			return this.snapshotName;
-		}
-
-		public void setSnapshotName(String snapshotName) {
-			this.snapshotName = snapshotName;
-		}
-
-		public String getRemark() {
-			return this.remark;
-		}
-
-		public void setRemark(String remark) {
-			this.remark = remark;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getCreationTime() {
@@ -135,22 +111,6 @@ public class ListSnapshotsResponse extends AcsResponse {
 			this.creationTime = creationTime;
 		}
 
-		public String getProgress() {
-			return this.progress;
-		}
-
-		public void setProgress(String progress) {
-			this.progress = progress;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
 		public String getSourceDiskId() {
 			return this.sourceDiskId;
 		}
@@ -159,12 +119,52 @@ public class ListSnapshotsResponse extends AcsResponse {
 			this.sourceDiskId = sourceDiskId;
 		}
 
+		public String getSnapshotName() {
+			return this.snapshotName;
+		}
+
+		public void setSnapshotName(String snapshotName) {
+			this.snapshotName = snapshotName;
+		}
+
+		public String getProgress() {
+			return this.progress;
+		}
+
+		public void setProgress(String progress) {
+			this.progress = progress;
+		}
+
+		public String getRemark() {
+			return this.remark;
+		}
+
+		public void setRemark(String remark) {
+			this.remark = remark;
+		}
+
+		public String getSnapshotId() {
+			return this.snapshotId;
+		}
+
+		public void setSnapshotId(String snapshotId) {
+			this.snapshotId = snapshotId;
+		}
+
 		public String getSourceDiskType() {
 			return this.sourceDiskType;
 		}
 
 		public void setSourceDiskType(String sourceDiskType) {
 			this.sourceDiskType = sourceDiskType;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 	}
 

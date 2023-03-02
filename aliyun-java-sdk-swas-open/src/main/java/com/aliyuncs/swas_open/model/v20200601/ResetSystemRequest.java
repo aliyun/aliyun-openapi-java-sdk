@@ -30,7 +30,7 @@ public class ResetSystemRequest extends RpcAcsRequest<ResetSystemResponse> {
 
 	private String instanceId;
 	public ResetSystemRequest() {
-		super("SWAS-OPEN", "2020-06-01", "ResetSystem");
+		super("SWAS-OPEN", "2020-06-01", "ResetSystem", "SWAS-OPEN");
 		setMethod(MethodType.POST);
 	}
 

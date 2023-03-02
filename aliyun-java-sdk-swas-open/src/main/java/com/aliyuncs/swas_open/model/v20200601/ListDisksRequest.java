@@ -32,7 +32,7 @@ public class ListDisksRequest extends RpcAcsRequest<ListDisksResponse> {
 
 	private String diskIds;
 	public ListDisksRequest() {
-		super("SWAS-OPEN", "2020-06-01", "ListDisks");
+		super("SWAS-OPEN", "2020-06-01", "ListDisks", "SWAS-OPEN");
 		setMethod(MethodType.POST);
 	}
 

@@ -30,7 +30,7 @@ public class UpgradeInstanceRequest extends RpcAcsRequest<UpgradeInstanceRespons
 
 	private String planId;
 	public UpgradeInstanceRequest() {
-		super("SWAS-OPEN", "2020-06-01", "UpgradeInstance");
+		super("SWAS-OPEN", "2020-06-01", "UpgradeInstance", "SWAS-OPEN");
 		setMethod(MethodType.POST);
 	}
 

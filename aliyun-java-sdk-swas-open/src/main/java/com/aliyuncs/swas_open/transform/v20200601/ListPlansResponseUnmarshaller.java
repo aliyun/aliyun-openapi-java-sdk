@@ -31,12 +31,16 @@ public class ListPlansResponseUnmarshaller {
 		List<Plan> plans = new ArrayList<Plan>();
 		for (int i = 0; i < _ctx.lengthValue("ListPlansResponse.Plans.Length"); i++) {
 			Plan plan = new Plan();
-			plan.setPlanId(_ctx.stringValue("ListPlansResponse.Plans["+ i +"].PlanId"));
 			plan.setCore(_ctx.integerValue("ListPlansResponse.Plans["+ i +"].Core"));
-			plan.setMemory(_ctx.integerValue("ListPlansResponse.Plans["+ i +"].Memory"));
 			plan.setBandwidth(_ctx.integerValue("ListPlansResponse.Plans["+ i +"].Bandwidth"));
 			plan.setDiskSize(_ctx.integerValue("ListPlansResponse.Plans["+ i +"].DiskSize"));
 			plan.setFlow(_ctx.integerValue("ListPlansResponse.Plans["+ i +"].Flow"));
+			plan.setMemory(_ctx.integerValue("ListPlansResponse.Plans["+ i +"].Memory"));
+			plan.setPlanId(_ctx.stringValue("ListPlansResponse.Plans["+ i +"].PlanId"));
+			plan.setDiskType(_ctx.stringValue("ListPlansResponse.Plans["+ i +"].DiskType"));
+			plan.setOriginPrice(_ctx.doubleValue("ListPlansResponse.Plans["+ i +"].OriginPrice"));
+			plan.setCurrency(_ctx.stringValue("ListPlansResponse.Plans["+ i +"].Currency"));
+			plan.setSupportPlatform(_ctx.stringValue("ListPlansResponse.Plans["+ i +"].SupportPlatform"));
 
 			plans.add(plan);
 		}

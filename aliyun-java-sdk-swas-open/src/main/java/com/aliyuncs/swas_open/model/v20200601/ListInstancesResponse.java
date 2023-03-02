@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListInstancesResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer totalCount;
 
-	private Integer pageNumber;
+	private String requestId;
 
 	private Integer pageSize;
 
-	private Integer totalCount;
+	private Integer pageNumber;
 
 	private List<Instance> instances;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class ListInstancesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
 	}
 
 	public Integer getPageSize() {
@@ -59,12 +59,12 @@ public class ListInstancesResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<Instance> getInstances() {
@@ -77,46 +77,38 @@ public class ListInstancesResponse extends AcsResponse {
 
 	public static class Instance {
 
-		private String instanceId;
-
-		private String instanceName;
+		private String status;
 
 		private String creationTime;
 
-		private String expiredTime;
+		private String innerIpAddress;
 
 		private String chargeType;
 
-		private String publicIpAddress;
+		private String instanceId;
 
-		private String innerIpAddress;
+		private String planId;
+
+		private String publicIpAddress;
 
 		private String regionId;
 
-		private String status;
+		private String expiredTime;
+
+		private String instanceName;
+
+		private String businessStatus;
 
 		private String ddosStatus;
 
 		private String imageId;
 
-		private String planId;
-
-		private String businessStatus;
-
-		public String getInstanceId() {
-			return this.instanceId;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getInstanceName() {
-			return this.instanceName;
-		}
-
-		public void setInstanceName(String instanceName) {
-			this.instanceName = instanceName;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getCreationTime() {
@@ -127,12 +119,12 @@ public class ListInstancesResponse extends AcsResponse {
 			this.creationTime = creationTime;
 		}
 
-		public String getExpiredTime() {
-			return this.expiredTime;
+		public String getInnerIpAddress() {
+			return this.innerIpAddress;
 		}
 
-		public void setExpiredTime(String expiredTime) {
-			this.expiredTime = expiredTime;
+		public void setInnerIpAddress(String innerIpAddress) {
+			this.innerIpAddress = innerIpAddress;
 		}
 
 		public String getChargeType() {
@@ -143,20 +135,28 @@ public class ListInstancesResponse extends AcsResponse {
 			this.chargeType = chargeType;
 		}
 
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getPlanId() {
+			return this.planId;
+		}
+
+		public void setPlanId(String planId) {
+			this.planId = planId;
+		}
+
 		public String getPublicIpAddress() {
 			return this.publicIpAddress;
 		}
 
 		public void setPublicIpAddress(String publicIpAddress) {
 			this.publicIpAddress = publicIpAddress;
-		}
-
-		public String getInnerIpAddress() {
-			return this.innerIpAddress;
-		}
-
-		public void setInnerIpAddress(String innerIpAddress) {
-			this.innerIpAddress = innerIpAddress;
 		}
 
 		public String getRegionId() {
@@ -167,12 +167,28 @@ public class ListInstancesResponse extends AcsResponse {
 			this.regionId = regionId;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getExpiredTime() {
+			return this.expiredTime;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setExpiredTime(String expiredTime) {
+			this.expiredTime = expiredTime;
+		}
+
+		public String getInstanceName() {
+			return this.instanceName;
+		}
+
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
+		}
+
+		public String getBusinessStatus() {
+			return this.businessStatus;
+		}
+
+		public void setBusinessStatus(String businessStatus) {
+			this.businessStatus = businessStatus;
 		}
 
 		public String getDdosStatus() {
@@ -189,22 +205,6 @@ public class ListInstancesResponse extends AcsResponse {
 
 		public void setImageId(String imageId) {
 			this.imageId = imageId;
-		}
-
-		public String getPlanId() {
-			return this.planId;
-		}
-
-		public void setPlanId(String planId) {
-			this.planId = planId;
-		}
-
-		public String getBusinessStatus() {
-			return this.businessStatus;
-		}
-
-		public void setBusinessStatus(String businessStatus) {
-			this.businessStatus = businessStatus;
 		}
 	}
 

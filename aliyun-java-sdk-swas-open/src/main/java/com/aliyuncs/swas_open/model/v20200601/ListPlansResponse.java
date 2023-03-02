@@ -47,11 +47,7 @@ public class ListPlansResponse extends AcsResponse {
 
 	public static class Plan {
 
-		private String planId;
-
 		private Integer core;
-
-		private Integer memory;
 
 		private Integer bandwidth;
 
@@ -59,13 +55,17 @@ public class ListPlansResponse extends AcsResponse {
 
 		private Integer flow;
 
-		public String getPlanId() {
-			return this.planId;
-		}
+		private Integer memory;
 
-		public void setPlanId(String planId) {
-			this.planId = planId;
-		}
+		private String planId;
+
+		private String diskType;
+
+		private Double originPrice;
+
+		private String currency;
+
+		private String supportPlatform;
 
 		public Integer getCore() {
 			return this.core;
@@ -73,14 +73,6 @@ public class ListPlansResponse extends AcsResponse {
 
 		public void setCore(Integer core) {
 			this.core = core;
-		}
-
-		public Integer getMemory() {
-			return this.memory;
-		}
-
-		public void setMemory(Integer memory) {
-			this.memory = memory;
 		}
 
 		public Integer getBandwidth() {
@@ -105,6 +97,54 @@ public class ListPlansResponse extends AcsResponse {
 
 		public void setFlow(Integer flow) {
 			this.flow = flow;
+		}
+
+		public Integer getMemory() {
+			return this.memory;
+		}
+
+		public void setMemory(Integer memory) {
+			this.memory = memory;
+		}
+
+		public String getPlanId() {
+			return this.planId;
+		}
+
+		public void setPlanId(String planId) {
+			this.planId = planId;
+		}
+
+		public String getDiskType() {
+			return this.diskType;
+		}
+
+		public void setDiskType(String diskType) {
+			this.diskType = diskType;
+		}
+
+		public Double getOriginPrice() {
+			return this.originPrice;
+		}
+
+		public void setOriginPrice(Double originPrice) {
+			this.originPrice = originPrice;
+		}
+
+		public String getCurrency() {
+			return this.currency;
+		}
+
+		public void setCurrency(String currency) {
+			this.currency = currency;
+		}
+
+		public String getSupportPlatform() {
+			return this.supportPlatform;
+		}
+
+		public void setSupportPlatform(String supportPlatform) {
+			this.supportPlatform = supportPlatform;
 		}
 	}
 

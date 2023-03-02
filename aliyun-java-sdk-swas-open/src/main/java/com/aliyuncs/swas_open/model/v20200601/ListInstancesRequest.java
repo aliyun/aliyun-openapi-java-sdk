@@ -34,7 +34,7 @@ public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
 
 	private String chargeType;
 	public ListInstancesRequest() {
-		super("SWAS-OPEN", "2020-06-01", "ListInstances");
+		super("SWAS-OPEN", "2020-06-01", "ListInstances", "SWAS-OPEN");
 		setMethod(MethodType.POST);
 	}
 

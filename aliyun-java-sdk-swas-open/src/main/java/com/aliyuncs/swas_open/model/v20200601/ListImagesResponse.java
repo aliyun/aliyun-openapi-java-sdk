@@ -47,30 +47,22 @@ public class ListImagesResponse extends AcsResponse {
 
 	public static class Image {
 
-		private String imageId;
-
-		private String imageName;
+		private String imageType;
 
 		private String description;
 
-		private String imageType;
+		private String imageName;
 
-		private Boolean custom;
+		private String imageId;
 
-		public String getImageId() {
-			return this.imageId;
+		private String platform;
+
+		public String getImageType() {
+			return this.imageType;
 		}
 
-		public void setImageId(String imageId) {
-			this.imageId = imageId;
-		}
-
-		public String getImageName() {
-			return this.imageName;
-		}
-
-		public void setImageName(String imageName) {
-			this.imageName = imageName;
+		public void setImageType(String imageType) {
+			this.imageType = imageType;
 		}
 
 		public String getDescription() {
@@ -81,20 +73,28 @@ public class ListImagesResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getImageType() {
-			return this.imageType;
+		public String getImageName() {
+			return this.imageName;
 		}
 
-		public void setImageType(String imageType) {
-			this.imageType = imageType;
+		public void setImageName(String imageName) {
+			this.imageName = imageName;
 		}
 
-		public Boolean getCustom() {
-			return this.custom;
+		public String getImageId() {
+			return this.imageId;
 		}
 
-		public void setCustom(Boolean custom) {
-			this.custom = custom;
+		public void setImageId(String imageId) {
+			this.imageId = imageId;
+		}
+
+		public String getPlatform() {
+			return this.platform;
+		}
+
+		public void setPlatform(String platform) {
+			this.platform = platform;
 		}
 	}
 

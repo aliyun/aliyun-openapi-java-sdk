@@ -34,7 +34,7 @@ public class ListSnapshotsRequest extends RpcAcsRequest<ListSnapshotsResponse> {
 
 	private String diskId;
 	public ListSnapshotsRequest() {
-		super("SWAS-OPEN", "2020-06-01", "ListSnapshots");
+		super("SWAS-OPEN", "2020-06-01", "ListSnapshots", "SWAS-OPEN");
 		setMethod(MethodType.POST);
 	}
 

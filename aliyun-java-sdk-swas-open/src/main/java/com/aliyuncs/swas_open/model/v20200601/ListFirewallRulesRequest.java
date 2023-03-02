@@ -30,7 +30,7 @@ public class ListFirewallRulesRequest extends RpcAcsRequest<ListFirewallRulesRes
 
 	private Integer pageSize;
 	public ListFirewallRulesRequest() {
-		super("SWAS-OPEN", "2020-06-01", "ListFirewallRules");
+		super("SWAS-OPEN", "2020-06-01", "ListFirewallRules", "SWAS-OPEN");
 		setMethod(MethodType.POST);
 	}
 

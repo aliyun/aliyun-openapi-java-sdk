@@ -1,3 +1,18 @@
+2023-03-02 Version: 1.8.3
+- Add new apis.
+- DescribeDatabaseInstances.
+- StartDatabaseInstance.
+- StopDatabaseInstance.
+- RetartDatabaseInstance.
+- ResetDatabaseAccountPassword.
+- AllocatePublicConnection.
+- ReleasePublicConnection.
+- DescribeDatabaseInstanceMetricData.
+- DescribeDatabaseSlowLogRecords.
+- DescribeDatabaseErrorLogs.
+- DescribeDatabaseInstanceParameters.
+- ModifyDatabaseInstanceParameter.
+
 2020-08-05 Version: 1.8.2
 - Add action.
 

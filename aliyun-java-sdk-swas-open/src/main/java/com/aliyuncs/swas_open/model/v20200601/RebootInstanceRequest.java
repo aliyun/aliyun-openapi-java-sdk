@@ -28,7 +28,7 @@ public class RebootInstanceRequest extends RpcAcsRequest<RebootInstanceResponse>
 
 	private String instanceId;
 	public RebootInstanceRequest() {
-		super("SWAS-OPEN", "2020-06-01", "RebootInstance");
+		super("SWAS-OPEN", "2020-06-01", "RebootInstance", "SWAS-OPEN");
 		setMethod(MethodType.POST);
 	}
 

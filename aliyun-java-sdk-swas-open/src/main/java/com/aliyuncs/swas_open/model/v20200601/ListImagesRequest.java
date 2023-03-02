@@ -26,11 +26,9 @@ public class ListImagesRequest extends RpcAcsRequest<ListImagesResponse> {
 
 	private String imageType;
 
-	private Boolean custom;
-
 	private String imageIds;
 	public ListImagesRequest() {
-		super("SWAS-OPEN", "2020-06-01", "ListImages");
+		super("SWAS-OPEN", "2020-06-01", "ListImages", "SWAS-OPEN");
 		setMethod(MethodType.POST);
 	}
 
@@ -42,17 +40,6 @@ public class ListImagesRequest extends RpcAcsRequest<ListImagesResponse> {
 		this.imageType = imageType;
 		if(imageType != null){
 			putQueryParameter("ImageType", imageType);
-		}
-	}
-
-	public Boolean getCustom() {
-		return this.custom;
-	}
-
-	public void setCustom(Boolean custom) {
-		this.custom = custom;
-		if(custom != null){
-			putQueryParameter("Custom", custom.toString());
 		}
 	}
 

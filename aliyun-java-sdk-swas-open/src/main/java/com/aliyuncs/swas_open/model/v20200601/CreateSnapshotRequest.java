@@ -30,7 +30,7 @@ public class CreateSnapshotRequest extends RpcAcsRequest<CreateSnapshotResponse>
 
 	private String diskId;
 	public CreateSnapshotRequest() {
-		super("SWAS-OPEN", "2020-06-01", "CreateSnapshot");
+		super("SWAS-OPEN", "2020-06-01", "CreateSnapshot", "SWAS-OPEN");
 		setMethod(MethodType.POST);
 	}
 
