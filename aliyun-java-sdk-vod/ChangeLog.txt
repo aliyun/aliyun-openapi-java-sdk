@@ -1,3 +1,6 @@
+2023-03-02 Version: 2.16.14
+- Api DescribeVodDomainUsageData add parameter Interval.
+
 2022-12-05 Version: 2.16.13
 - Add API DescribeVodDomainSrcBpsData.
 - Add API DescribeVodDomainSrcTrafficData.
