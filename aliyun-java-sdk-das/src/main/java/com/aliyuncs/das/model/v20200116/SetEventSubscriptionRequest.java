@@ -29,9 +29,13 @@ public class SetEventSubscriptionRequest extends RpcAcsRequest<SetEventSubscript
 
 	private String contactName;
 
+	private String dispatchRule;
+
 	private String channelType;
 
 	private String lang;
+
+	private String severity;
 
 	private String level;
 
@@ -73,6 +77,17 @@ public class SetEventSubscriptionRequest extends RpcAcsRequest<SetEventSubscript
 		}
 	}
 
+	public String getDispatchRule() {
+		return this.dispatchRule;
+	}
+
+	public void setDispatchRule(String dispatchRule) {
+		this.dispatchRule = dispatchRule;
+		if(dispatchRule != null){
+			putQueryParameter("DispatchRule", dispatchRule);
+		}
+	}
+
 	public String getChannelType() {
 		return this.channelType;
 	}
@@ -92,6 +107,17 @@ public class SetEventSubscriptionRequest extends RpcAcsRequest<SetEventSubscript
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public String getSeverity() {
+		return this.severity;
+	}
+
+	public void setSeverity(String severity) {
+		this.severity = severity;
+		if(severity != null){
+			putQueryParameter("Severity", severity);
 		}
 	}
 

@@ -14,11 +14,8 @@
 
 package com.aliyuncs.das.transform.v20200116;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.aliyuncs.das.model.v20200116.GetDasProServiceUsageResponse;
-import com.aliyuncs.das.model.v20200116.GetDasProServiceUsageResponse.Unit;
+import com.aliyuncs.das.model.v20200116.GetDasProServiceUsageResponse.Data;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -31,30 +28,25 @@ public class GetDasProServiceUsageResponseUnmarshaller {
 		getDasProServiceUsageResponse.setCode(_ctx.longValue("GetDasProServiceUsageResponse.Code"));
 		getDasProServiceUsageResponse.setSuccess(_ctx.booleanValue("GetDasProServiceUsageResponse.Success"));
 
-		List<Unit> data = new ArrayList<Unit>();
-		for (int i = 0; i < _ctx.lengthValue("GetDasProServiceUsageResponse.Data.Length"); i++) {
-			Unit unit = new Unit();
-			unit.setStorageFreeQuotaInMB(_ctx.doubleValue("GetDasProServiceUsageResponse.Data["+ i +"].storageFreeQuotaInMB"));
-			unit.setIp(_ctx.stringValue("GetDasProServiceUsageResponse.Data["+ i +"].ip"));
-			unit.setCustinsId(_ctx.longValue("GetDasProServiceUsageResponse.Data["+ i +"].custinsId"));
-			unit.setUserId(_ctx.stringValue("GetDasProServiceUsageResponse.Data["+ i +"].userId"));
-			unit.setUuid(_ctx.stringValue("GetDasProServiceUsageResponse.Data["+ i +"].uuid"));
-			unit.setExpireTime(_ctx.longValue("GetDasProServiceUsageResponse.Data["+ i +"].expireTime"));
-			unit.setInstanceId(_ctx.stringValue("GetDasProServiceUsageResponse.Data["+ i +"].instanceId"));
-			unit.setStorageUsed(_ctx.longValue("GetDasProServiceUsageResponse.Data["+ i +"].storageUsed"));
-			unit.setEngine(_ctx.stringValue("GetDasProServiceUsageResponse.Data["+ i +"].engine"));
-			unit.setInstanceAlias(_ctx.stringValue("GetDasProServiceUsageResponse.Data["+ i +"].instanceAlias"));
-			unit.setPort(_ctx.integerValue("GetDasProServiceUsageResponse.Data["+ i +"].port"));
-			unit.setVpcId(_ctx.stringValue("GetDasProServiceUsageResponse.Data["+ i +"].vpcId"));
-			unit.setCommodityInstanceId(_ctx.stringValue("GetDasProServiceUsageResponse.Data["+ i +"].commodityInstanceId"));
-			unit.setStartTime(_ctx.longValue("GetDasProServiceUsageResponse.Data["+ i +"].startTime"));
-			unit.setIsSpare(_ctx.booleanValue("GetDasProServiceUsageResponse.Data["+ i +"].isSpare"));
-			unit.setRegion(_ctx.stringValue("GetDasProServiceUsageResponse.Data["+ i +"].region"));
-			unit.setServiceUnitId(_ctx.stringValue("GetDasProServiceUsageResponse.Data["+ i +"].serviceUnitId"));
-			unit.setSqlRetention(_ctx.stringValue("GetDasProServiceUsageResponse.Data["+ i +"].sqlRetention"));
-
-			data.add(unit);
-		}
+		Data data = new Data();
+		data.setStorageFreeQuotaInMB(_ctx.doubleValue("GetDasProServiceUsageResponse.Data.storageFreeQuotaInMB"));
+		data.setIp(_ctx.stringValue("GetDasProServiceUsageResponse.Data.ip"));
+		data.setCustinsId(_ctx.longValue("GetDasProServiceUsageResponse.Data.custinsId"));
+		data.setUserId(_ctx.stringValue("GetDasProServiceUsageResponse.Data.userId"));
+		data.setUuid(_ctx.stringValue("GetDasProServiceUsageResponse.Data.uuid"));
+		data.setExpireTime(_ctx.longValue("GetDasProServiceUsageResponse.Data.expireTime"));
+		data.setInstanceId(_ctx.stringValue("GetDasProServiceUsageResponse.Data.instanceId"));
+		data.setStorageUsed(_ctx.longValue("GetDasProServiceUsageResponse.Data.storageUsed"));
+		data.setEngine(_ctx.stringValue("GetDasProServiceUsageResponse.Data.engine"));
+		data.setInstanceAlias(_ctx.stringValue("GetDasProServiceUsageResponse.Data.instanceAlias"));
+		data.setPort(_ctx.integerValue("GetDasProServiceUsageResponse.Data.port"));
+		data.setVpcId(_ctx.stringValue("GetDasProServiceUsageResponse.Data.vpcId"));
+		data.setCommodityInstanceId(_ctx.stringValue("GetDasProServiceUsageResponse.Data.commodityInstanceId"));
+		data.setStartTime(_ctx.longValue("GetDasProServiceUsageResponse.Data.startTime"));
+		data.setIsSpare(_ctx.booleanValue("GetDasProServiceUsageResponse.Data.isSpare"));
+		data.setRegion(_ctx.stringValue("GetDasProServiceUsageResponse.Data.region"));
+		data.setServiceUnitId(_ctx.stringValue("GetDasProServiceUsageResponse.Data.serviceUnitId"));
+		data.setSqlRetention(_ctx.stringValue("GetDasProServiceUsageResponse.Data.sqlRetention"));
 		getDasProServiceUsageResponse.setData(data);
 	 
 	 	return getDasProServiceUsageResponse;

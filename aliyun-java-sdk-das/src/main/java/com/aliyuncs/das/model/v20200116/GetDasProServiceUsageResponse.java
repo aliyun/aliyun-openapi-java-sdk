@@ -14,7 +14,6 @@
 
 package com.aliyuncs.das.model.v20200116;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.das.transform.v20200116.GetDasProServiceUsageResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -33,7 +32,7 @@ public class GetDasProServiceUsageResponse extends AcsResponse {
 
 	private Boolean success;
 
-	private List<Unit> data;
+	private Data data;
 
 	public String getMessage() {
 		return this.message;
@@ -67,15 +66,15 @@ public class GetDasProServiceUsageResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public List<Unit> getData() {
+	public Data getData() {
 		return this.data;
 	}
 
-	public void setData(List<Unit> data) {
+	public void setData(Data data) {
 		this.data = data;
 	}
 
-	public static class Unit {
+	public static class Data {
 
 		private Double storageFreeQuotaInMB;
 

@@ -22,58 +22,21 @@ import com.aliyuncs.das.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetRequestDiagnosisResultRequest extends RpcAcsRequest<GetRequestDiagnosisResultResponse> {
+public class GetKillInstanceSessionTaskResultRequest extends RpcAcsRequest<GetKillInstanceSessionTaskResultResponse> {
 	   
-
-	private String sqlId;
-
-	private String messageId;
-
-	private String source;
 
 	private String instanceId;
 
 	private String nodeId;
-	public GetRequestDiagnosisResultRequest() {
-		super("DAS", "2020-01-16", "GetRequestDiagnosisResult");
+
+	private String taskId;
+	public GetKillInstanceSessionTaskResultRequest() {
+		super("DAS", "2020-01-16", "GetKillInstanceSessionTaskResult");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getSqlId() {
-		return this.sqlId;
-	}
-
-	public void setSqlId(String sqlId) {
-		this.sqlId = sqlId;
-		if(sqlId != null){
-			putQueryParameter("SqlId", sqlId);
-		}
-	}
-
-	public String getMessageId() {
-		return this.messageId;
-	}
-
-	public void setMessageId(String messageId) {
-		this.messageId = messageId;
-		if(messageId != null){
-			putQueryParameter("MessageId", messageId);
-		}
-	}
-
-	public String getSource() {
-		return this.source;
-	}
-
-	public void setSource(String source) {
-		this.source = source;
-		if(source != null){
-			putQueryParameter("Source", source);
-		}
 	}
 
 	public String getInstanceId() {
@@ -98,9 +61,20 @@ public class GetRequestDiagnosisResultRequest extends RpcAcsRequest<GetRequestDi
 		}
 	}
 
+	public String getTaskId() {
+		return this.taskId;
+	}
+
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+		if(taskId != null){
+			putQueryParameter("TaskId", taskId);
+		}
+	}
+
 	@Override
-	public Class<GetRequestDiagnosisResultResponse> getResponseClass() {
-		return GetRequestDiagnosisResultResponse.class;
+	public Class<GetKillInstanceSessionTaskResultResponse> getResponseClass() {
+		return GetKillInstanceSessionTaskResultResponse.class;
 	}
 
 }
