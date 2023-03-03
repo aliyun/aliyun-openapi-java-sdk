@@ -54,12 +54,20 @@ public class DescribeInstanceResponseUnmarshaller {
 		instance.setObRpmVersion(_ctx.stringValue("DescribeInstanceResponse.Instance.ObRpmVersion"));
 		instance.setIsLatestObVersion(_ctx.booleanValue("DescribeInstanceResponse.Instance.IsLatestObVersion"));
 		instance.setEnableUpgradeLogDisk(_ctx.booleanValue("DescribeInstanceResponse.Instance.EnableUpgradeLogDisk"));
+		instance.setInstanceRole(_ctx.stringValue("DescribeInstanceResponse.Instance.InstanceRole"));
+		instance.setNodeNum(_ctx.stringValue("DescribeInstanceResponse.Instance.NodeNum"));
 
 		List<String> availableZones = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceResponse.Instance.AvailableZones.Length"); i++) {
 			availableZones.add(_ctx.stringValue("DescribeInstanceResponse.Instance.AvailableZones["+ i +"]"));
 		}
 		instance.setAvailableZones(availableZones);
+
+		List<String> zones = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceResponse.Instance.Zones.Length"); i++) {
+			zones.add(_ctx.stringValue("DescribeInstanceResponse.Instance.Zones["+ i +"]"));
+		}
+		instance.setZones(zones);
 
 		Resource resource = new Resource();
 		resource.setUnitCount(_ctx.longValue("DescribeInstanceResponse.Instance.Resource.UnitCount"));

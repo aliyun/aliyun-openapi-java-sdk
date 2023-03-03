@@ -87,7 +87,13 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 		private Boolean enableUpgradeLogDisk;
 
+		private String instanceRole;
+
+		private String nodeNum;
+
 		private List<String> availableZones;
+
+		private List<String> zones;
 
 		private Resource resource;
 
@@ -251,12 +257,36 @@ public class DescribeInstanceResponse extends AcsResponse {
 			this.enableUpgradeLogDisk = enableUpgradeLogDisk;
 		}
 
+		public String getInstanceRole() {
+			return this.instanceRole;
+		}
+
+		public void setInstanceRole(String instanceRole) {
+			this.instanceRole = instanceRole;
+		}
+
+		public String getNodeNum() {
+			return this.nodeNum;
+		}
+
+		public void setNodeNum(String nodeNum) {
+			this.nodeNum = nodeNum;
+		}
+
 		public List<String> getAvailableZones() {
 			return this.availableZones;
 		}
 
 		public void setAvailableZones(List<String> availableZones) {
 			this.availableZones = availableZones;
+		}
+
+		public List<String> getZones() {
+			return this.zones;
+		}
+
+		public void setZones(List<String> zones) {
+			this.zones = zones;
 		}
 
 		public Resource getResource() {
