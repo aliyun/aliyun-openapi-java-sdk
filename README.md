@@ -69,7 +69,7 @@ If maven is not downloading jar packages from a central repository, you need to 
 ```
 
 ## Troubleshoot
-[Troubleshoot](https://troubleshoot.api.aliyun.com/?source=github_sdk) Provide OpenAPI diagnosis service to help developers locate quickly and provide solutions for developers through `RequestID` or `error message`.
+[Troubleshoot](https://troubleshoot.api.aliyun.com/?source=github_sdk) Provide OpenAPI diagnosis service to help developers quickly locate and troubleshoot errors by using `RequestID` or `error message`, and provide solutions.
 
 ## Quick Examples
 
