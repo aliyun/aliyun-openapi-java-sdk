@@ -29,7 +29,7 @@ public class DeleteParserDataSourceRequest extends RpcAcsRequest<DeleteParserDat
 
 	private Long dataSourceId;
 	public DeleteParserDataSourceRequest() {
-		super("Iot", "2018-01-20", "DeleteParserDataSource", "iot");
+		super("Iot", "2018-01-20", "DeleteParserDataSource");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

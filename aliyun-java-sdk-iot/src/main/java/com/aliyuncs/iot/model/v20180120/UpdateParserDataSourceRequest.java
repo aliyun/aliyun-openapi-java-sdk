@@ -33,7 +33,7 @@ public class UpdateParserDataSourceRequest extends RpcAcsRequest<UpdateParserDat
 
 	private String name;
 	public UpdateParserDataSourceRequest() {
-		super("Iot", "2018-01-20", "UpdateParserDataSource", "iot");
+		super("Iot", "2018-01-20", "UpdateParserDataSource");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

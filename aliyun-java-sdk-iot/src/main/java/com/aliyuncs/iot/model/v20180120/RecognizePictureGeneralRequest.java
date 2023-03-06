@@ -27,7 +27,7 @@ public class RecognizePictureGeneralRequest extends RpcAcsRequest<RecognizePictu
 
 	private String url;
 	public RecognizePictureGeneralRequest() {
-		super("Iot", "2018-01-20", "RecognizePictureGeneral", "iot");
+		super("Iot", "2018-01-20", "RecognizePictureGeneral");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

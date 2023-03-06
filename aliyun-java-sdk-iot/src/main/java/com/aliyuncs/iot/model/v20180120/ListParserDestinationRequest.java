@@ -31,7 +31,7 @@ public class ListParserDestinationRequest extends RpcAcsRequest<ListParserDestin
 
 	private Boolean isFailover;
 	public ListParserDestinationRequest() {
-		super("Iot", "2018-01-20", "ListParserDestination", "iot");
+		super("Iot", "2018-01-20", "ListParserDestination");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class DeleteConsumerGroupSubscribeRelationRequest extends RpcAcsRequest<D
 
 	private String productKey;
 	public DeleteConsumerGroupSubscribeRelationRequest() {
-		super("Iot", "2018-01-20", "DeleteConsumerGroupSubscribeRelation", "iot");
+		super("Iot", "2018-01-20", "DeleteConsumerGroupSubscribeRelation");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

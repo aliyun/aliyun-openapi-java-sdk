@@ -1,3 +1,6 @@
+2023-03-06 Version: 7.52.0
+- Iot_20180120 TeaDSL SDK.
+
 2023-03-02 Version: 7.51.0
 - Add a API QueryDeviceProvisioning to support query provisioning info for device.
 

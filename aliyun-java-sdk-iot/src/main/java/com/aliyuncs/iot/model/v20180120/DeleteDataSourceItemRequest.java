@@ -31,7 +31,7 @@ public class DeleteDataSourceItemRequest extends RpcAcsRequest<DeleteDataSourceI
 
 	private Long dataSourceId;
 	public DeleteDataSourceItemRequest() {
-		super("Iot", "2018-01-20", "DeleteDataSourceItem", "iot");
+		super("Iot", "2018-01-20", "DeleteDataSourceItem");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

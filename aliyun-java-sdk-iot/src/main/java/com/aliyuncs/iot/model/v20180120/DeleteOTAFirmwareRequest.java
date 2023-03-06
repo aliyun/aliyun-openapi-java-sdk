@@ -29,7 +29,7 @@ public class DeleteOTAFirmwareRequest extends RpcAcsRequest<DeleteOTAFirmwareRes
 
 	private String firmwareId;
 	public DeleteOTAFirmwareRequest() {
-		super("Iot", "2018-01-20", "DeleteOTAFirmware", "iot");
+		super("Iot", "2018-01-20", "DeleteOTAFirmware");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

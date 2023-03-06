@@ -29,7 +29,7 @@ public class GetParserRequest extends RpcAcsRequest<GetParserResponse> {
 
 	private Long parserId;
 	public GetParserRequest() {
-		super("Iot", "2018-01-20", "GetParser", "iot");
+		super("Iot", "2018-01-20", "GetParser");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

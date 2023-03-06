@@ -31,6 +31,9 @@ public class AddShareTaskDeviceResponseUnmarshaller {
 		Data data = new Data();
 		data.setProgress(_ctx.integerValue("AddShareTaskDeviceResponse.Data.Progress"));
 		data.setProgressId(_ctx.stringValue("AddShareTaskDeviceResponse.Data.ProgressId"));
+		data.setSuccessSum(_ctx.integerValue("AddShareTaskDeviceResponse.Data.SuccessSum"));
+		data.setFailSum(_ctx.integerValue("AddShareTaskDeviceResponse.Data.FailSum"));
+		data.setFailedResultCsvFile(_ctx.stringValue("AddShareTaskDeviceResponse.Data.FailedResultCsvFile"));
 		addShareTaskDeviceResponse.setData(data);
 	 
 	 	return addShareTaskDeviceResponse;

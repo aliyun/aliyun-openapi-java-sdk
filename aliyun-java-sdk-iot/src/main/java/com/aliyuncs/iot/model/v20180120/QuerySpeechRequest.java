@@ -29,7 +29,7 @@ public class QuerySpeechRequest extends RpcAcsRequest<QuerySpeechResponse> {
 
 	private String speechCode;
 	public QuerySpeechRequest() {
-		super("Iot", "2018-01-20", "QuerySpeech", "iot");
+		super("Iot", "2018-01-20", "QuerySpeech");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

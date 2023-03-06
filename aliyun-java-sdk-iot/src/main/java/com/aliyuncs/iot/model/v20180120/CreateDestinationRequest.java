@@ -35,7 +35,7 @@ public class CreateDestinationRequest extends RpcAcsRequest<CreateDestinationRes
 
 	private String name;
 	public CreateDestinationRequest() {
-		super("Iot", "2018-01-20", "CreateDestination", "iot");
+		super("Iot", "2018-01-20", "CreateDestination");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

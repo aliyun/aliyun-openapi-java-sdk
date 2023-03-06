@@ -36,7 +36,7 @@ public class ListDestinationRequest extends RpcAcsRequest<ListDestinationRespons
 
 	private Integer page;
 	public ListDestinationRequest() {
-		super("Iot", "2018-01-20", "ListDestination", "iot");
+		super("Iot", "2018-01-20", "ListDestination");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

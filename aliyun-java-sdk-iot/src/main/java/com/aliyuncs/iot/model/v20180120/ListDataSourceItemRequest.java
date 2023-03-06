@@ -35,7 +35,7 @@ public class ListDataSourceItemRequest extends RpcAcsRequest<ListDataSourceItemR
 
 	private Integer page;
 	public ListDataSourceItemRequest() {
-		super("Iot", "2018-01-20", "ListDataSourceItem", "iot");
+		super("Iot", "2018-01-20", "ListDataSourceItem");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

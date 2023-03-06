@@ -33,7 +33,7 @@ public class QueryImportedDeviceByApplyIdRequest extends RpcAcsRequest<QueryImpo
 
 	private Integer pageNo;
 	public QueryImportedDeviceByApplyIdRequest() {
-		super("Iot", "2018-01-20", "QueryImportedDeviceByApplyId", "iot");
+		super("Iot", "2018-01-20", "QueryImportedDeviceByApplyId");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class AttachDestinationRequest extends RpcAcsRequest<AttachDestinationRes
 
 	private Boolean isFailover;
 	public AttachDestinationRequest() {
-		super("Iot", "2018-01-20", "AttachDestination", "iot");
+		super("Iot", "2018-01-20", "AttachDestination");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

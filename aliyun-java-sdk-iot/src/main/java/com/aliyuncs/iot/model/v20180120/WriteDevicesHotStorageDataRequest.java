@@ -37,7 +37,7 @@ public class WriteDevicesHotStorageDataRequest extends RpcAcsRequest<WriteDevice
 
 	private String items;
 	public WriteDevicesHotStorageDataRequest() {
-		super("Iot", "2018-01-20", "WriteDevicesHotStorageData", "iot");
+		super("Iot", "2018-01-20", "WriteDevicesHotStorageData");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

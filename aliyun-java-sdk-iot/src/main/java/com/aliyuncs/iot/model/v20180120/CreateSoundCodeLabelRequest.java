@@ -31,7 +31,7 @@ public class CreateSoundCodeLabelRequest extends RpcAcsRequest<CreateSoundCodeLa
 
 	private String label;
 	public CreateSoundCodeLabelRequest() {
-		super("Iot", "2018-01-20", "CreateSoundCodeLabel", "iot");
+		super("Iot", "2018-01-20", "CreateSoundCodeLabel");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

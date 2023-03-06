@@ -29,7 +29,7 @@ public class RetrySoundCodeLabelBatchRequest extends RpcAcsRequest<RetrySoundCod
 
 	private String iotInstanceId;
 	public RetrySoundCodeLabelBatchRequest() {
-		super("Iot", "2018-01-20", "RetrySoundCodeLabelBatch", "iot");
+		super("Iot", "2018-01-20", "RetrySoundCodeLabelBatch");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

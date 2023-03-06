@@ -29,7 +29,7 @@ public class SetStudioProjectCooperationRequest extends RpcAcsRequest<SetStudioP
 
 	private String status;
 	public SetStudioProjectCooperationRequest() {
-		super("Iot", "2018-01-20", "SetStudioProjectCooperation", "iot");
+		super("Iot", "2018-01-20", "SetStudioProjectCooperation");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

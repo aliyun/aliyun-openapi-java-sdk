@@ -29,7 +29,7 @@ public class PackageSoundCodeLabelBatchAudioRequest extends RpcAcsRequest<Packag
 
 	private String iotInstanceId;
 	public PackageSoundCodeLabelBatchAudioRequest() {
-		super("Iot", "2018-01-20", "PackageSoundCodeLabelBatchAudio", "iot");
+		super("Iot", "2018-01-20", "PackageSoundCodeLabelBatchAudio");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

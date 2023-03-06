@@ -31,7 +31,7 @@ public class QueryStudioAppDomainListOpenRequest extends RpcAcsRequest<QueryStud
 
 	private String appId;
 	public QueryStudioAppDomainListOpenRequest() {
-		super("Iot", "2018-01-20", "QueryStudioAppDomainListOpen", "iot");
+		super("Iot", "2018-01-20", "QueryStudioAppDomainListOpen");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

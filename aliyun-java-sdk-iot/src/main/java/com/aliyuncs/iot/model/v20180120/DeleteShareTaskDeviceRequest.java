@@ -32,7 +32,7 @@ public class DeleteShareTaskDeviceRequest extends RpcAcsRequest<DeleteShareTaskD
 
 	private String shareTaskId;
 	public DeleteShareTaskDeviceRequest() {
-		super("Iot", "2018-01-20", "DeleteShareTaskDevice", "iot");
+		super("Iot", "2018-01-20", "DeleteShareTaskDevice");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

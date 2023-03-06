@@ -33,7 +33,7 @@ public class QuerySchedulePeriodListRequest extends RpcAcsRequest<QueryScheduleP
 
 	private Integer pageSize;
 	public QuerySchedulePeriodListRequest() {
-		super("Iot", "2018-01-20", "QuerySchedulePeriodList", "iot");
+		super("Iot", "2018-01-20", "QuerySchedulePeriodList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

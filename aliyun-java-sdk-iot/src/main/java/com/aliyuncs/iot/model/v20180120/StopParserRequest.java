@@ -29,7 +29,7 @@ public class StopParserRequest extends RpcAcsRequest<StopParserResponse> {
 
 	private Long parserId;
 	public StopParserRequest() {
-		super("Iot", "2018-01-20", "StopParser", "iot");
+		super("Iot", "2018-01-20", "StopParser");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

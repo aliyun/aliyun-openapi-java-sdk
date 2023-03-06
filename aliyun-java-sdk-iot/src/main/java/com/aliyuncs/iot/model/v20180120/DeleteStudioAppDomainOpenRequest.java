@@ -33,7 +33,7 @@ public class DeleteStudioAppDomainOpenRequest extends RpcAcsRequest<DeleteStudio
 
 	private String appId;
 	public DeleteStudioAppDomainOpenRequest() {
-		super("Iot", "2018-01-20", "DeleteStudioAppDomainOpen", "iot");
+		super("Iot", "2018-01-20", "DeleteStudioAppDomainOpen");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

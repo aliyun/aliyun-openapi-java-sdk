@@ -31,7 +31,7 @@ public class BindLicenseProductRequest extends RpcAcsRequest<BindLicenseProductR
 
 	private String licenseCode;
 	public BindLicenseProductRequest() {
-		super("Iot", "2018-01-20", "BindLicenseProduct", "iot");
+		super("Iot", "2018-01-20", "BindLicenseProduct");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class UnbindLicenseProductRequest extends RpcAcsRequest<UnbindLicenseProd
 
 	private String licenseCode;
 	public UnbindLicenseProductRequest() {
-		super("Iot", "2018-01-20", "UnbindLicenseProduct", "iot");
+		super("Iot", "2018-01-20", "UnbindLicenseProduct");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

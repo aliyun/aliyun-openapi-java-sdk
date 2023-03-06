@@ -29,7 +29,7 @@ public class RerunJobRequest extends RpcAcsRequest<RerunJobResponse> {
 
 	private String iotInstanceId;
 	public RerunJobRequest() {
-		super("Iot", "2018-01-20", "RerunJob", "iot");
+		super("Iot", "2018-01-20", "RerunJob");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

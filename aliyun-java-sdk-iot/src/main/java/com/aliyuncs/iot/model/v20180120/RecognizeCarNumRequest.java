@@ -27,7 +27,7 @@ public class RecognizeCarNumRequest extends RpcAcsRequest<RecognizeCarNumRespons
 
 	private String url;
 	public RecognizeCarNumRequest() {
-		super("Iot", "2018-01-20", "RecognizeCarNum", "iot");
+		super("Iot", "2018-01-20", "RecognizeCarNum");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

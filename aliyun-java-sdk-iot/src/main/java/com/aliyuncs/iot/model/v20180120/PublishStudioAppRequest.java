@@ -33,7 +33,7 @@ public class PublishStudioAppRequest extends RpcAcsRequest<PublishStudioAppRespo
 
 	private String appId;
 	public PublishStudioAppRequest() {
-		super("Iot", "2018-01-20", "PublishStudioApp", "iot");
+		super("Iot", "2018-01-20", "PublishStudioApp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

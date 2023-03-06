@@ -29,7 +29,7 @@ public class DeleteParserRequest extends RpcAcsRequest<DeleteParserResponse> {
 
 	private Long parserId;
 	public DeleteParserRequest() {
-		super("Iot", "2018-01-20", "DeleteParser", "iot");
+		super("Iot", "2018-01-20", "DeleteParser");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -37,7 +37,7 @@ public class CreateDataSourceItemRequest extends RpcAcsRequest<CreateDataSourceI
 
 	private String deviceName;
 	public CreateDataSourceItemRequest() {
-		super("Iot", "2018-01-20", "CreateDataSourceItem", "iot");
+		super("Iot", "2018-01-20", "CreateDataSourceItem");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

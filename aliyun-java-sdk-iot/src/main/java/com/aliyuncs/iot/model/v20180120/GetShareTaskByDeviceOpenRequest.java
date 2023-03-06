@@ -33,7 +33,7 @@ public class GetShareTaskByDeviceOpenRequest extends RpcAcsRequest<GetShareTaskB
 
 	private String deviceName;
 	public GetShareTaskByDeviceOpenRequest() {
-		super("Iot", "2018-01-20", "GetShareTaskByDeviceOpen", "iot");
+		super("Iot", "2018-01-20", "GetShareTaskByDeviceOpen");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

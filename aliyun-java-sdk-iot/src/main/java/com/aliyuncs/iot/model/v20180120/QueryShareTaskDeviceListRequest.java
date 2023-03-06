@@ -35,7 +35,7 @@ public class QueryShareTaskDeviceListRequest extends RpcAcsRequest<QueryShareTas
 
 	private String deviceName;
 	public QueryShareTaskDeviceListRequest() {
-		super("Iot", "2018-01-20", "QueryShareTaskDeviceList", "iot");
+		super("Iot", "2018-01-20", "QueryShareTaskDeviceList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

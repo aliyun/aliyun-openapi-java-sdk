@@ -29,7 +29,7 @@ public class PublishScriptRequest extends RpcAcsRequest<PublishScriptResponse> {
 
 	private Long parserId;
 	public PublishScriptRequest() {
-		super("Iot", "2018-01-20", "PublishScript", "iot");
+		super("Iot", "2018-01-20", "PublishScript");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

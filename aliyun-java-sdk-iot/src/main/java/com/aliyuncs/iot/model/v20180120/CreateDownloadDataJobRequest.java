@@ -37,7 +37,7 @@ public class CreateDownloadDataJobRequest extends RpcAcsRequest<CreateDownloadDa
 
 	private String downloadDataType;
 	public CreateDownloadDataJobRequest() {
-		super("Iot", "2018-01-20", "CreateDownloadDataJob", "iot");
+		super("Iot", "2018-01-20", "CreateDownloadDataJob");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

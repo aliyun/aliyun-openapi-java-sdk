@@ -29,7 +29,7 @@ public class QuerySoundCodeLabelBatchFailedResultRequest extends RpcAcsRequest<Q
 
 	private String iotInstanceId;
 	public QuerySoundCodeLabelBatchFailedResultRequest() {
-		super("Iot", "2018-01-20", "QuerySoundCodeLabelBatchFailedResult", "iot");
+		super("Iot", "2018-01-20", "QuerySoundCodeLabelBatchFailedResult");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

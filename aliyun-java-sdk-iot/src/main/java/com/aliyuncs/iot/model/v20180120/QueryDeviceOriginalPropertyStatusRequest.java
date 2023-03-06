@@ -39,7 +39,7 @@ public class QueryDeviceOriginalPropertyStatusRequest extends RpcAcsRequest<Quer
 
 	private String deviceName;
 	public QueryDeviceOriginalPropertyStatusRequest() {
-		super("Iot", "2018-01-20", "QueryDeviceOriginalPropertyStatus", "iot");
+		super("Iot", "2018-01-20", "QueryDeviceOriginalPropertyStatus");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

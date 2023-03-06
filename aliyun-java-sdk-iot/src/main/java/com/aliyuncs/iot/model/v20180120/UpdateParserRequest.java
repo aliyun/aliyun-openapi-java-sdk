@@ -33,7 +33,7 @@ public class UpdateParserRequest extends RpcAcsRequest<UpdateParserResponse> {
 
 	private String name;
 	public UpdateParserRequest() {
-		super("Iot", "2018-01-20", "UpdateParser", "iot");
+		super("Iot", "2018-01-20", "UpdateParser");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

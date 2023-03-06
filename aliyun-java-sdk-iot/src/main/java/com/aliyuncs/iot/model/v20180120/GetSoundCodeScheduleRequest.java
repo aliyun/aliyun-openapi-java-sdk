@@ -29,7 +29,7 @@ public class GetSoundCodeScheduleRequest extends RpcAcsRequest<GetSoundCodeSched
 
 	private String iotInstanceId;
 	public GetSoundCodeScheduleRequest() {
-		super("Iot", "2018-01-20", "GetSoundCodeSchedule", "iot");
+		super("Iot", "2018-01-20", "GetSoundCodeSchedule");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

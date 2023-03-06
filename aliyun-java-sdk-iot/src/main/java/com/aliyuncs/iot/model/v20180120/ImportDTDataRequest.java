@@ -32,7 +32,7 @@ public class ImportDTDataRequest extends RpcAcsRequest<ImportDTDataResponse> {
 
 	private List<Items> itemss;
 	public ImportDTDataRequest() {
-		super("Iot", "2018-01-20", "ImportDTData", "iot");
+		super("Iot", "2018-01-20", "ImportDTData");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

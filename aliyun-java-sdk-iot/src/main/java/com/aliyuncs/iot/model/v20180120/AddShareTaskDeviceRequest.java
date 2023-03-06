@@ -34,7 +34,7 @@ public class AddShareTaskDeviceRequest extends RpcAcsRequest<AddShareTaskDeviceR
 
 	private String productKey;
 	public AddShareTaskDeviceRequest() {
-		super("Iot", "2018-01-20", "AddShareTaskDevice", "iot");
+		super("Iot", "2018-01-20", "AddShareTaskDevice");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

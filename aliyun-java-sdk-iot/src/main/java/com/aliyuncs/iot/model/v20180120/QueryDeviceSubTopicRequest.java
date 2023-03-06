@@ -31,7 +31,7 @@ public class QueryDeviceSubTopicRequest extends RpcAcsRequest<QueryDeviceSubTopi
 
 	private String deviceName;
 	public QueryDeviceSubTopicRequest() {
-		super("Iot", "2018-01-20", "QueryDeviceSubTopic", "iot");
+		super("Iot", "2018-01-20", "QueryDeviceSubTopic");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

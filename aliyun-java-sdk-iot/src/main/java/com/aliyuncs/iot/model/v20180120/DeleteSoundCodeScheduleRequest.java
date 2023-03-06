@@ -29,7 +29,7 @@ public class DeleteSoundCodeScheduleRequest extends RpcAcsRequest<DeleteSoundCod
 
 	private String iotInstanceId;
 	public DeleteSoundCodeScheduleRequest() {
-		super("Iot", "2018-01-20", "DeleteSoundCodeSchedule", "iot");
+		super("Iot", "2018-01-20", "DeleteSoundCodeSchedule");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

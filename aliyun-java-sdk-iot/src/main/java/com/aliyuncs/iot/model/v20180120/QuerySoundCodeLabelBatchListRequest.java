@@ -33,7 +33,7 @@ public class QuerySoundCodeLabelBatchListRequest extends RpcAcsRequest<QuerySoun
 
 	private Integer pageSize;
 	public QuerySoundCodeLabelBatchListRequest() {
-		super("Iot", "2018-01-20", "QuerySoundCodeLabelBatchList", "iot");
+		super("Iot", "2018-01-20", "QuerySoundCodeLabelBatchList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

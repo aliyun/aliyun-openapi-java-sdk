@@ -80,6 +80,12 @@ public class AddShareTaskDeviceResponse extends AcsResponse {
 
 		private String progressId;
 
+		private Integer successSum;
+
+		private Integer failSum;
+
+		private String failedResultCsvFile;
+
 		public Integer getProgress() {
 			return this.progress;
 		}
@@ -94,6 +100,30 @@ public class AddShareTaskDeviceResponse extends AcsResponse {
 
 		public void setProgressId(String progressId) {
 			this.progressId = progressId;
+		}
+
+		public Integer getSuccessSum() {
+			return this.successSum;
+		}
+
+		public void setSuccessSum(Integer successSum) {
+			this.successSum = successSum;
+		}
+
+		public Integer getFailSum() {
+			return this.failSum;
+		}
+
+		public void setFailSum(Integer failSum) {
+			this.failSum = failSum;
+		}
+
+		public String getFailedResultCsvFile() {
+			return this.failedResultCsvFile;
+		}
+
+		public void setFailedResultCsvFile(String failedResultCsvFile) {
+			this.failedResultCsvFile = failedResultCsvFile;
 		}
 	}
 

@@ -27,7 +27,7 @@ public class DeleteDeviceDistributeJobRequest extends RpcAcsRequest<DeleteDevice
 
 	private String jobId;
 	public DeleteDeviceDistributeJobRequest() {
-		super("Iot", "2018-01-20", "DeleteDeviceDistributeJob", "iot");
+		super("Iot", "2018-01-20", "DeleteDeviceDistributeJob");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

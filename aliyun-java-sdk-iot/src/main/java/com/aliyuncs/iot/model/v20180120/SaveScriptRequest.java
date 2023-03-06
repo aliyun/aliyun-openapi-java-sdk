@@ -31,7 +31,7 @@ public class SaveScriptRequest extends RpcAcsRequest<SaveScriptResponse> {
 
 	private Long parserId;
 	public SaveScriptRequest() {
-		super("Iot", "2018-01-20", "SaveScript", "iot");
+		super("Iot", "2018-01-20", "SaveScript");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -40,7 +40,7 @@ public class ShareSpeechByCombinationRequest extends RpcAcsRequest<ShareSpeechBy
 
 	private String deviceName;
 	public ShareSpeechByCombinationRequest() {
-		super("Iot", "2018-01-20", "ShareSpeechByCombination", "iot");
+		super("Iot", "2018-01-20", "ShareSpeechByCombination");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

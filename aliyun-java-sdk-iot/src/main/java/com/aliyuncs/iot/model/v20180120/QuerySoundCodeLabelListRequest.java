@@ -33,7 +33,7 @@ public class QuerySoundCodeLabelListRequest extends RpcAcsRequest<QuerySoundCode
 
 	private Integer pageSize;
 	public QuerySoundCodeLabelListRequest() {
-		super("Iot", "2018-01-20", "QuerySoundCodeLabelList", "iot");
+		super("Iot", "2018-01-20", "QuerySoundCodeLabelList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
