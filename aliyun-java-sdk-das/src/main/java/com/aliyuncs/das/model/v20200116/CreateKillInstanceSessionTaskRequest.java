@@ -25,7 +25,7 @@ import com.aliyuncs.das.Endpoint;
 public class CreateKillInstanceSessionTaskRequest extends RpcAcsRequest<CreateKillInstanceSessionTaskResponse> {
 	   
 
-	private String killAllSessions;
+	private Boolean killAllSessions;
 
 	private String dbUser;
 
@@ -47,14 +47,14 @@ public class CreateKillInstanceSessionTaskRequest extends RpcAcsRequest<CreateKi
 		} catch (Exception e) {}
 	}
 
-	public String getKillAllSessions() {
+	public Boolean getKillAllSessions() {
 		return this.killAllSessions;
 	}
 
-	public void setKillAllSessions(String killAllSessions) {
+	public void setKillAllSessions(Boolean killAllSessions) {
 		this.killAllSessions = killAllSessions;
 		if(killAllSessions != null){
-			putQueryParameter("KillAllSessions", killAllSessions);
+			putQueryParameter("KillAllSessions", killAllSessions.toString());
 		}
 	}
 
