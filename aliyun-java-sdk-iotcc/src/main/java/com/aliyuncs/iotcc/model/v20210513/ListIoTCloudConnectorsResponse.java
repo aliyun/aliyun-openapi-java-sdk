@@ -111,6 +111,8 @@ public class ListIoTCloudConnectorsResponse extends AcsResponse {
 
 		private String serviceType;
 
+		private String grantAliUid;
+
 		private List<String> vSwitchList;
 
 		public String getIoTCloudConnectorId() {
@@ -247,6 +249,14 @@ public class ListIoTCloudConnectorsResponse extends AcsResponse {
 
 		public void setServiceType(String serviceType) {
 			this.serviceType = serviceType;
+		}
+
+		public String getGrantAliUid() {
+			return this.grantAliUid;
+		}
+
+		public void setGrantAliUid(String grantAliUid) {
+			this.grantAliUid = grantAliUid;
 		}
 
 		public List<String> getVSwitchList() {

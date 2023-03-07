@@ -41,6 +41,7 @@ public class ListIoTCloudConnectorGroupsResponseUnmarshaller {
 			ioTCloudConnectorGroupsItem.setDescription(_ctx.stringValue("ListIoTCloudConnectorGroupsResponse.IoTCloudConnectorGroups["+ i +"].Description"));
 			ioTCloudConnectorGroupsItem.setCreateTime(_ctx.longValue("ListIoTCloudConnectorGroupsResponse.IoTCloudConnectorGroups["+ i +"].CreateTime"));
 			ioTCloudConnectorGroupsItem.setType(_ctx.stringValue("ListIoTCloudConnectorGroupsResponse.IoTCloudConnectorGroups["+ i +"].Type"));
+			ioTCloudConnectorGroupsItem.setServiceType(_ctx.stringValue("ListIoTCloudConnectorGroupsResponse.IoTCloudConnectorGroups["+ i +"].ServiceType"));
 
 			List<IoTCloudConnectorsItem> ioTCloudConnectors = new ArrayList<IoTCloudConnectorsItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListIoTCloudConnectorGroupsResponse.IoTCloudConnectorGroups["+ i +"].IoTCloudConnectors.Length"); j++) {
@@ -52,6 +53,7 @@ public class ListIoTCloudConnectorGroupsResponseUnmarshaller {
 				ioTCloudConnectorsItem.setCreateTime(_ctx.longValue("ListIoTCloudConnectorGroupsResponse.IoTCloudConnectorGroups["+ i +"].IoTCloudConnectors["+ j +"].CreateTime"));
 				ioTCloudConnectorsItem.setISP(_ctx.stringValue("ListIoTCloudConnectorGroupsResponse.IoTCloudConnectorGroups["+ i +"].IoTCloudConnectors["+ j +"].ISP"));
 				ioTCloudConnectorsItem.setAPN(_ctx.stringValue("ListIoTCloudConnectorGroupsResponse.IoTCloudConnectorGroups["+ i +"].IoTCloudConnectors["+ j +"].APN"));
+				ioTCloudConnectorsItem.setServiceType(_ctx.stringValue("ListIoTCloudConnectorGroupsResponse.IoTCloudConnectorGroups["+ i +"].IoTCloudConnectors["+ j +"].ServiceType"));
 
 				ioTCloudConnectors.add(ioTCloudConnectorsItem);
 			}

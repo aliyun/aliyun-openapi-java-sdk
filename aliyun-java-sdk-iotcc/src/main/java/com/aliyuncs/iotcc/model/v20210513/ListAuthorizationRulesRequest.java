@@ -25,6 +25,10 @@ import com.aliyuncs.http.MethodType;
 public class ListAuthorizationRulesRequest extends RpcAcsRequest<ListAuthorizationRulesResponse> {
 	   
 
+	private String fuzzyDestination;
+
+	private String fuzzyAuthorizationRuleName;
+
 	private List<String> destinationTypes;
 
 	private List<String> destinations;
@@ -51,6 +55,28 @@ public class ListAuthorizationRulesRequest extends RpcAcsRequest<ListAuthorizati
 	public ListAuthorizationRulesRequest() {
 		super("IoTCC", "2021-05-13", "ListAuthorizationRules", "IoTCC");
 		setMethod(MethodType.POST);
+	}
+
+	public String getFuzzyDestination() {
+		return this.fuzzyDestination;
+	}
+
+	public void setFuzzyDestination(String fuzzyDestination) {
+		this.fuzzyDestination = fuzzyDestination;
+		if(fuzzyDestination != null){
+			putQueryParameter("FuzzyDestination", fuzzyDestination);
+		}
+	}
+
+	public String getFuzzyAuthorizationRuleName() {
+		return this.fuzzyAuthorizationRuleName;
+	}
+
+	public void setFuzzyAuthorizationRuleName(String fuzzyAuthorizationRuleName) {
+		this.fuzzyAuthorizationRuleName = fuzzyAuthorizationRuleName;
+		if(fuzzyAuthorizationRuleName != null){
+			putQueryParameter("FuzzyAuthorizationRuleName", fuzzyAuthorizationRuleName);
+		}
 	}
 
 	public List<String> getDestinationTypes() {
