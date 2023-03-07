@@ -49,6 +49,8 @@ public class CreateLindormInstanceRequest extends RpcAcsRequest<CreateLindormIns
 
 	private String vSwitchId;
 
+	private Integer streamNum;
+
 	private Integer logSingleStorage;
 
 	private String zoneId;
@@ -92,6 +94,8 @@ public class CreateLindormInstanceRequest extends RpcAcsRequest<CreateLindormIns
 	private String instanceAlias;
 
 	private Integer filestoreNum;
+
+	private String streamSpec;
 
 	private String coreSpec;
 
@@ -238,6 +242,17 @@ public class CreateLindormInstanceRequest extends RpcAcsRequest<CreateLindormIns
 		this.vSwitchId = vSwitchId;
 		if(vSwitchId != null){
 			putQueryParameter("VSwitchId", vSwitchId);
+		}
+	}
+
+	public Integer getStreamNum() {
+		return this.streamNum;
+	}
+
+	public void setStreamNum(Integer streamNum) {
+		this.streamNum = streamNum;
+		if(streamNum != null){
+			putQueryParameter("StreamNum", streamNum.toString());
 		}
 	}
 
@@ -480,6 +495,17 @@ public class CreateLindormInstanceRequest extends RpcAcsRequest<CreateLindormIns
 		this.filestoreNum = filestoreNum;
 		if(filestoreNum != null){
 			putQueryParameter("FilestoreNum", filestoreNum.toString());
+		}
+	}
+
+	public String getStreamSpec() {
+		return this.streamSpec;
+	}
+
+	public void setStreamSpec(String streamSpec) {
+		this.streamSpec = streamSpec;
+		if(streamSpec != null){
+			putQueryParameter("StreamSpec", streamSpec);
 		}
 	}
 
