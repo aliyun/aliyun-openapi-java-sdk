@@ -22,6 +22,7 @@ import com.aliyuncs.vpc.model.v20160428.DescribeNetworkAclAttributesResponse.Net
 import com.aliyuncs.vpc.model.v20160428.DescribeNetworkAclAttributesResponse.NetworkAclAttribute.EgressAclEntry;
 import com.aliyuncs.vpc.model.v20160428.DescribeNetworkAclAttributesResponse.NetworkAclAttribute.IngressAclEntry;
 import com.aliyuncs.vpc.model.v20160428.DescribeNetworkAclAttributesResponse.NetworkAclAttribute.Resource;
+import com.aliyuncs.vpc.model.v20160428.DescribeNetworkAclAttributesResponse.NetworkAclAttribute.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -83,6 +84,16 @@ public class DescribeNetworkAclAttributesResponseUnmarshaller {
 			resources.add(resource);
 		}
 		networkAclAttribute.setResources(resources);
+
+		List<Tag> tags = new ArrayList<Tag>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.Tags.Length"); i++) {
+			Tag tag = new Tag();
+			tag.setKey(_ctx.stringValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.Tags["+ i +"].Key"));
+			tag.setValue(_ctx.stringValue("DescribeNetworkAclAttributesResponse.NetworkAclAttribute.Tags["+ i +"].Value"));
+
+			tags.add(tag);
+		}
+		networkAclAttribute.setTags(tags);
 		describeNetworkAclAttributesResponse.setNetworkAclAttribute(networkAclAttribute);
 	 
 	 	return describeNetworkAclAttributesResponse;

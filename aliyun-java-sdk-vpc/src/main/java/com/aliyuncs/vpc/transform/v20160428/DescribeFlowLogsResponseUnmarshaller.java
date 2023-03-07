@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.vpc.model.v20160428.DescribeFlowLogsResponse;
 import com.aliyuncs.vpc.model.v20160428.DescribeFlowLogsResponse.FlowLog;
+import com.aliyuncs.vpc.model.v20160428.DescribeFlowLogsResponse.FlowLog.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -49,12 +50,23 @@ public class DescribeFlowLogsResponseUnmarshaller {
 			flowLog.setBusinessStatus(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].BusinessStatus"));
 			flowLog.setAggregationInterval(_ctx.integerValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].AggregationInterval"));
 			flowLog.setServiceType(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].ServiceType"));
+			flowLog.setResourceGroupId(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].ResourceGroupId"));
 
 			List<String> trafficPath = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].TrafficPath.Length"); j++) {
 				trafficPath.add(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].TrafficPath["+ j +"]"));
 			}
 			flowLog.setTrafficPath(trafficPath);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			flowLog.setTags(tags);
 
 			flowLogs.add(flowLog);
 		}

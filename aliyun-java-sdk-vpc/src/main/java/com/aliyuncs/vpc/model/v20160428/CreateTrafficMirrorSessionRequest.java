@@ -34,6 +34,8 @@ public class CreateTrafficMirrorSessionRequest extends RpcAcsRequest<CreateTraff
 
 	private Boolean enabled;
 
+	private String resourceGroupId;
+
 	private String trafficMirrorSessionName;
 
 	private String trafficMirrorSessionDescription;
@@ -107,6 +109,17 @@ public class CreateTrafficMirrorSessionRequest extends RpcAcsRequest<CreateTraff
 		this.enabled = enabled;
 		if(enabled != null){
 			putQueryParameter("Enabled", enabled.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

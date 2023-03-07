@@ -69,6 +69,8 @@ public class DescribeNetworkAclAttributesResponse extends AcsResponse {
 
 		private List<Resource> resources;
 
+		private List<Tag> tags;
+
 		public String getStatus() {
 			return this.status;
 		}
@@ -155,6 +157,14 @@ public class DescribeNetworkAclAttributesResponse extends AcsResponse {
 
 		public void setResources(List<Resource> resources) {
 			this.resources = resources;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
 		}
 
 		public static class IngressAclEntry {
@@ -353,6 +363,29 @@ public class DescribeNetworkAclAttributesResponse extends AcsResponse {
 
 			public void setResourceId(String resourceId) {
 				this.resourceId = resourceId;
+			}
+		}
+
+		public static class Tag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
 			}
 		}
 	}

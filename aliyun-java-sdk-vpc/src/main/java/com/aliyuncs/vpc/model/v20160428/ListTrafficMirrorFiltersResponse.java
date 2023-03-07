@@ -75,9 +75,13 @@ public class ListTrafficMirrorFiltersResponse extends AcsResponse {
 
 		private String trafficMirrorFilterName;
 
+		private String resourceGroupId;
+
 		private List<TrafficMirrorRule> ingressRules;
 
 		private List<TrafficMirrorRule> egressRules;
+
+		private List<Tag> tags;
 
 		public String getTrafficMirrorFilterStatus() {
 			return this.trafficMirrorFilterStatus;
@@ -111,6 +115,14 @@ public class ListTrafficMirrorFiltersResponse extends AcsResponse {
 			this.trafficMirrorFilterName = trafficMirrorFilterName;
 		}
 
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
 		public List<TrafficMirrorRule> getIngressRules() {
 			return this.ingressRules;
 		}
@@ -125,6 +137,14 @@ public class ListTrafficMirrorFiltersResponse extends AcsResponse {
 
 		public void setEgressRules(List<TrafficMirrorRule> egressRules) {
 			this.egressRules = egressRules;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
 		}
 
 		public static class TrafficMirrorRule {
@@ -237,6 +257,29 @@ public class ListTrafficMirrorFiltersResponse extends AcsResponse {
 
 			public void setSourcePortRange(String sourcePortRange) {
 				this.sourcePortRange = sourcePortRange;
+			}
+		}
+
+		public static class Tag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
 			}
 		}
 	}

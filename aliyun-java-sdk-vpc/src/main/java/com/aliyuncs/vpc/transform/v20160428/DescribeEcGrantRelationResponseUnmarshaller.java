@@ -45,6 +45,7 @@ public class DescribeEcGrantRelationResponseUnmarshaller {
 			ecGrantRelationModel.setInstanceRouterId(_ctx.stringValue("DescribeEcGrantRelationResponse.EcGrantRelations["+ i +"].InstanceRouterId"));
 			ecGrantRelationModel.setVbrRegionNo(_ctx.stringValue("DescribeEcGrantRelationResponse.EcGrantRelations["+ i +"].VbrRegionNo"));
 			ecGrantRelationModel.setGmtCreate(_ctx.stringValue("DescribeEcGrantRelationResponse.EcGrantRelations["+ i +"].GmtCreate"));
+			ecGrantRelationModel.setGrantType(_ctx.stringValue("DescribeEcGrantRelationResponse.EcGrantRelations["+ i +"].GrantType"));
 
 			ecGrantRelations.add(ecGrantRelationModel);
 		}

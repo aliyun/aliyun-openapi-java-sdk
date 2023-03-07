@@ -25,6 +25,7 @@ public class CreateFlowLogResponseUnmarshaller {
 		createFlowLogResponse.setRequestId(_ctx.stringValue("CreateFlowLogResponse.RequestId"));
 		createFlowLogResponse.setSuccess(_ctx.stringValue("CreateFlowLogResponse.Success"));
 		createFlowLogResponse.setFlowLogId(_ctx.stringValue("CreateFlowLogResponse.FlowLogId"));
+		createFlowLogResponse.setResourceGroupId(_ctx.stringValue("CreateFlowLogResponse.ResourceGroupId"));
 	 
 	 	return createFlowLogResponse;
 	}

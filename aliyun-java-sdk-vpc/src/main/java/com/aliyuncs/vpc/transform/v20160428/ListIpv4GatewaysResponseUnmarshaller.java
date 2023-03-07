@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.vpc.model.v20160428.ListIpv4GatewaysResponse;
 import com.aliyuncs.vpc.model.v20160428.ListIpv4GatewaysResponse.Ipv4GatewayModelsItem;
+import com.aliyuncs.vpc.model.v20160428.ListIpv4GatewaysResponse.Ipv4GatewayModelsItem.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -41,6 +42,17 @@ public class ListIpv4GatewaysResponseUnmarshaller {
 			ipv4GatewayModelsItem.setGmtCreate(_ctx.stringValue("ListIpv4GatewaysResponse.Ipv4GatewayModels["+ i +"].GmtCreate"));
 			ipv4GatewayModelsItem.setIpv4GatewayRouteTableId(_ctx.stringValue("ListIpv4GatewaysResponse.Ipv4GatewayModels["+ i +"].Ipv4GatewayRouteTableId"));
 			ipv4GatewayModelsItem.setIpv4GatewayName(_ctx.stringValue("ListIpv4GatewaysResponse.Ipv4GatewayModels["+ i +"].Ipv4GatewayName"));
+			ipv4GatewayModelsItem.setResourceGroupId(_ctx.stringValue("ListIpv4GatewaysResponse.Ipv4GatewayModels["+ i +"].ResourceGroupId"));
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("ListIpv4GatewaysResponse.Ipv4GatewayModels["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("ListIpv4GatewaysResponse.Ipv4GatewayModels["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("ListIpv4GatewaysResponse.Ipv4GatewayModels["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			ipv4GatewayModelsItem.setTags(tags);
 
 			ipv4GatewayModels.add(ipv4GatewayModelsItem);
 		}

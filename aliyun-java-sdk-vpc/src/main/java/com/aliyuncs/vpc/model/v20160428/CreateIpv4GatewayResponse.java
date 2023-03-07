@@ -26,6 +26,8 @@ public class CreateIpv4GatewayResponse extends AcsResponse {
 
 	private String ipv4GatewayId;
 
+	private String resourceGroupId;
+
 	private String requestId;
 
 	public String getIpv4GatewayId() {
@@ -34,6 +36,14 @@ public class CreateIpv4GatewayResponse extends AcsResponse {
 
 	public void setIpv4GatewayId(String ipv4GatewayId) {
 		this.ipv4GatewayId = ipv4GatewayId;
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
 	}
 
 	public String getRequestId() {

@@ -15,6 +15,7 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vpc.Endpoint;
 
@@ -56,6 +57,8 @@ public class CreateVpnConnectionRequest extends RpcAcsRequest<CreateVpnConnectio
 	private Long ownerId;
 
 	private Boolean enableDpd;
+
+	private List<Tags> tagss;
 
 	private String remoteCaCertificate;
 
@@ -247,6 +250,20 @@ public class CreateVpnConnectionRequest extends RpcAcsRequest<CreateVpnConnectio
 		}
 	}
 
+	public List<Tags> getTagss() {
+		return this.tagss;
+	}
+
+	public void setTagss(List<Tags> tagss) {
+		this.tagss = tagss;	
+		if (tagss != null) {
+			for (int depth1 = 0; depth1 < tagss.size(); depth1++) {
+				putQueryParameter("Tags." + (depth1 + 1) + ".Value" , tagss.get(depth1).getValue());
+				putQueryParameter("Tags." + (depth1 + 1) + ".Key" , tagss.get(depth1).getKey());
+			}
+		}	
+	}
+
 	public String getRemoteCaCertificate() {
 		return this.remoteCaCertificate;
 	}
@@ -277,6 +294,29 @@ public class CreateVpnConnectionRequest extends RpcAcsRequest<CreateVpnConnectio
 		this.enableNatTraversal = enableNatTraversal;
 		if(enableNatTraversal != null){
 			putQueryParameter("EnableNatTraversal", enableNatTraversal.toString());
+		}
+	}
+
+	public static class Tags {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

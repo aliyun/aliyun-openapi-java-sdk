@@ -107,6 +107,8 @@ public class DescribeEcGrantRelationResponse extends AcsResponse {
 
 		private String gmtCreate;
 
+		private String grantType;
+
 		public Long getVbrOwnerUid() {
 			return this.vbrOwnerUid;
 		}
@@ -185,6 +187,14 @@ public class DescribeEcGrantRelationResponse extends AcsResponse {
 
 		public void setGmtCreate(String gmtCreate) {
 			this.gmtCreate = gmtCreate;
+		}
+
+		public String getGrantType() {
+			return this.grantType;
+		}
+
+		public void setGrantType(String grantType) {
+			this.grantType = grantType;
 		}
 	}
 

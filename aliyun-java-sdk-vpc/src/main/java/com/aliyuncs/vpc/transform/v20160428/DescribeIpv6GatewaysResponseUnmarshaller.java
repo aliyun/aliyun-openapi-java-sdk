@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.vpc.model.v20160428.DescribeIpv6GatewaysResponse;
 import com.aliyuncs.vpc.model.v20160428.DescribeIpv6GatewaysResponse.Ipv6Gateway;
+import com.aliyuncs.vpc.model.v20160428.DescribeIpv6GatewaysResponse.Ipv6Gateway.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -45,6 +46,17 @@ public class DescribeIpv6GatewaysResponseUnmarshaller {
 			ipv6Gateway.setName(_ctx.stringValue("DescribeIpv6GatewaysResponse.Ipv6Gateways["+ i +"].Name"));
 			ipv6Gateway.setInstanceChargeType(_ctx.stringValue("DescribeIpv6GatewaysResponse.Ipv6Gateways["+ i +"].InstanceChargeType"));
 			ipv6Gateway.setRegionId(_ctx.stringValue("DescribeIpv6GatewaysResponse.Ipv6Gateways["+ i +"].RegionId"));
+			ipv6Gateway.setResourceGroupId(_ctx.stringValue("DescribeIpv6GatewaysResponse.Ipv6Gateways["+ i +"].ResourceGroupId"));
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeIpv6GatewaysResponse.Ipv6Gateways["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("DescribeIpv6GatewaysResponse.Ipv6Gateways["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("DescribeIpv6GatewaysResponse.Ipv6Gateways["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			ipv6Gateway.setTags(tags);
 
 			ipv6Gateways.add(ipv6Gateway);
 		}

@@ -33,6 +33,8 @@ public class CreateIpv4GatewayRequest extends RpcAcsRequest<CreateIpv4GatewayRes
 
 	private String ipv4GatewayName;
 
+	private String resourceGroupId;
+
 	private Boolean dryRun;
 
 	private String resourceOwnerAccount;
@@ -92,6 +94,17 @@ public class CreateIpv4GatewayRequest extends RpcAcsRequest<CreateIpv4GatewayRes
 		this.ipv4GatewayName = ipv4GatewayName;
 		if(ipv4GatewayName != null){
 			putQueryParameter("Ipv4GatewayName", ipv4GatewayName);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

@@ -31,6 +31,8 @@ public class CreateIpv6GatewayRequest extends RpcAcsRequest<CreateIpv6GatewayRes
 
 	private String description;
 
+	private String resourceGroupId;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -79,6 +81,17 @@ public class CreateIpv6GatewayRequest extends RpcAcsRequest<CreateIpv6GatewayRes
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

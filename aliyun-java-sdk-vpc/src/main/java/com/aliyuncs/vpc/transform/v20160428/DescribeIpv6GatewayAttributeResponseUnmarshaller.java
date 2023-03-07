@@ -14,7 +14,11 @@
 
 package com.aliyuncs.vpc.transform.v20160428;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.vpc.model.v20160428.DescribeIpv6GatewayAttributeResponse;
+import com.aliyuncs.vpc.model.v20160428.DescribeIpv6GatewayAttributeResponse.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -34,6 +38,17 @@ public class DescribeIpv6GatewayAttributeResponseUnmarshaller {
 		describeIpv6GatewayAttributeResponse.setExpiredTime(_ctx.stringValue("DescribeIpv6GatewayAttributeResponse.ExpiredTime"));
 		describeIpv6GatewayAttributeResponse.setBusinessStatus(_ctx.stringValue("DescribeIpv6GatewayAttributeResponse.BusinessStatus"));
 		describeIpv6GatewayAttributeResponse.setName(_ctx.stringValue("DescribeIpv6GatewayAttributeResponse.Name"));
+		describeIpv6GatewayAttributeResponse.setResourceGroupId(_ctx.stringValue("DescribeIpv6GatewayAttributeResponse.ResourceGroupId"));
+
+		List<Tag> tags = new ArrayList<Tag>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeIpv6GatewayAttributeResponse.Tags.Length"); i++) {
+			Tag tag = new Tag();
+			tag.setKey(_ctx.stringValue("DescribeIpv6GatewayAttributeResponse.Tags["+ i +"].Key"));
+			tag.setValue(_ctx.stringValue("DescribeIpv6GatewayAttributeResponse.Tags["+ i +"].Value"));
+
+			tags.add(tag);
+		}
+		describeIpv6GatewayAttributeResponse.setTags(tags);
 	 
 	 	return describeIpv6GatewayAttributeResponse;
 	}

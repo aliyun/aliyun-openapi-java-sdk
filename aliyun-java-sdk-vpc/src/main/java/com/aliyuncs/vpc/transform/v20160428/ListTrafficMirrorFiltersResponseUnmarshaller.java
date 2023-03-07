@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.vpc.model.v20160428.ListTrafficMirrorFiltersResponse;
 import com.aliyuncs.vpc.model.v20160428.ListTrafficMirrorFiltersResponse.TrafficMirrorFilter;
+import com.aliyuncs.vpc.model.v20160428.ListTrafficMirrorFiltersResponse.TrafficMirrorFilter.Tag;
 import com.aliyuncs.vpc.model.v20160428.ListTrafficMirrorFiltersResponse.TrafficMirrorFilter.TrafficMirrorRule;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -38,6 +39,7 @@ public class ListTrafficMirrorFiltersResponseUnmarshaller {
 			trafficMirrorFilter.setTrafficMirrorFilterDescription(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].TrafficMirrorFilterDescription"));
 			trafficMirrorFilter.setTrafficMirrorFilterId(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].TrafficMirrorFilterId"));
 			trafficMirrorFilter.setTrafficMirrorFilterName(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].TrafficMirrorFilterName"));
+			trafficMirrorFilter.setResourceGroupId(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].ResourceGroupId"));
 
 			List<TrafficMirrorRule> ingressRules = new ArrayList<TrafficMirrorRule>();
 			for (int j = 0; j < _ctx.lengthValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].IngressRules.Length"); j++) {
@@ -76,6 +78,16 @@ public class ListTrafficMirrorFiltersResponseUnmarshaller {
 				egressRules.add(trafficMirrorRule1);
 			}
 			trafficMirrorFilter.setEgressRules(egressRules);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("ListTrafficMirrorFiltersResponse.TrafficMirrorFilters["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			trafficMirrorFilter.setTags(tags);
 
 			trafficMirrorFilters.add(trafficMirrorFilter);
 		}

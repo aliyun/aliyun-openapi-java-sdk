@@ -34,6 +34,8 @@ public class CreateTrafficMirrorFilterRequest extends RpcAcsRequest<CreateTraffi
 
 	private String trafficMirrorFilterName;
 
+	private String resourceGroupId;
+
 	private List<EgressRules> egressRuless;
 
 	private Boolean dryRun;
@@ -103,6 +105,17 @@ public class CreateTrafficMirrorFilterRequest extends RpcAcsRequest<CreateTraffi
 		this.trafficMirrorFilterName = trafficMirrorFilterName;
 		if(trafficMirrorFilterName != null){
 			putQueryParameter("TrafficMirrorFilterName", trafficMirrorFilterName);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

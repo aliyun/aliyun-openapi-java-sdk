@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.vpc.model.v20160428.ListTrafficMirrorSessionsResponse;
 import com.aliyuncs.vpc.model.v20160428.ListTrafficMirrorSessionsResponse.TrafficMirrorSession;
+import com.aliyuncs.vpc.model.v20160428.ListTrafficMirrorSessionsResponse.TrafficMirrorSession.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -45,12 +46,23 @@ public class ListTrafficMirrorSessionsResponseUnmarshaller {
 			trafficMirrorSession.setVirtualNetworkId(_ctx.integerValue("ListTrafficMirrorSessionsResponse.TrafficMirrorSessions["+ i +"].VirtualNetworkId"));
 			trafficMirrorSession.setTrafficMirrorFilterId(_ctx.stringValue("ListTrafficMirrorSessionsResponse.TrafficMirrorSessions["+ i +"].TrafficMirrorFilterId"));
 			trafficMirrorSession.setTrafficMirrorSessionName(_ctx.stringValue("ListTrafficMirrorSessionsResponse.TrafficMirrorSessions["+ i +"].TrafficMirrorSessionName"));
+			trafficMirrorSession.setResourceGroupId(_ctx.stringValue("ListTrafficMirrorSessionsResponse.TrafficMirrorSessions["+ i +"].ResourceGroupId"));
 
 			List<String> trafficMirrorSourceIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListTrafficMirrorSessionsResponse.TrafficMirrorSessions["+ i +"].TrafficMirrorSourceIds.Length"); j++) {
 				trafficMirrorSourceIds.add(_ctx.stringValue("ListTrafficMirrorSessionsResponse.TrafficMirrorSessions["+ i +"].TrafficMirrorSourceIds["+ j +"]"));
 			}
 			trafficMirrorSession.setTrafficMirrorSourceIds(trafficMirrorSourceIds);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("ListTrafficMirrorSessionsResponse.TrafficMirrorSessions["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("ListTrafficMirrorSessionsResponse.TrafficMirrorSessions["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("ListTrafficMirrorSessionsResponse.TrafficMirrorSessions["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			trafficMirrorSession.setTags(tags);
 
 			trafficMirrorSessions.add(trafficMirrorSession);
 		}

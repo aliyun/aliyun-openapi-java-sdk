@@ -1,3 +1,19 @@
+2023-03-07 Version: 3.2.17
+- Add UnassociateNetworkAcl api error code.
+- Add ram error code.
+- Error code update.
+- Add AdminQueryVpcInfo  control policy.
+- OpenFlowLogService add errorcode.
+- CreateNatIp add error code.
+- Modify errorCode for OpenFlowLogService.
+- Add  error code.
+- Add errorCode for OpenFlowLogService.
+- Delete access control policy.
+- Add ControlPolicy for DescribeNatgates.
+- Supported ControlPolicy For Natgw API.
+- Fix TrafficPath Name.
+- Add ForceDeleteVpc Param.
+
 2023-01-31 Version: 3.2.16
 - Supported set high definition monitor log status for eip.
 - Supported batch associate eip to cloud products.

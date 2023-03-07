@@ -59,6 +59,8 @@ public class DescribeVSwitchAttributesResponse extends AcsResponse {
 
 	private List<CloudResourceSetType> cloudResources;
 
+	private List<Tag> tags;
+
 	private RouteTable routeTable;
 
 	public String getVpcId() {
@@ -197,6 +199,14 @@ public class DescribeVSwitchAttributesResponse extends AcsResponse {
 		this.cloudResources = cloudResources;
 	}
 
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;
+	}
+
 	public RouteTable getRouteTable() {
 		return this.routeTable;
 	}
@@ -225,6 +235,29 @@ public class DescribeVSwitchAttributesResponse extends AcsResponse {
 
 		public void setResourceType(String resourceType) {
 			this.resourceType = resourceType;
+		}
+	}
+
+	public static class Tag {
+
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
 		}
 	}
 

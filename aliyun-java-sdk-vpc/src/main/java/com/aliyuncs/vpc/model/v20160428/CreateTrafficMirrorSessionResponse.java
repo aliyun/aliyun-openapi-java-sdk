@@ -28,6 +28,8 @@ public class CreateTrafficMirrorSessionResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String resourceGroupId;
+
 	public String getTrafficMirrorSessionId() {
 		return this.trafficMirrorSessionId;
 	}
@@ -42,6 +44,14 @@ public class CreateTrafficMirrorSessionResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
 	}
 
 	@Override

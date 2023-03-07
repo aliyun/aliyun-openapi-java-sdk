@@ -24,6 +24,7 @@ public class CreateTrafficMirrorFilterResponseUnmarshaller {
 		
 		createTrafficMirrorFilterResponse.setRequestId(_ctx.stringValue("CreateTrafficMirrorFilterResponse.RequestId"));
 		createTrafficMirrorFilterResponse.setTrafficMirrorFilterId(_ctx.stringValue("CreateTrafficMirrorFilterResponse.TrafficMirrorFilterId"));
+		createTrafficMirrorFilterResponse.setResourceGroupId(_ctx.stringValue("CreateTrafficMirrorFilterResponse.ResourceGroupId"));
 	 
 	 	return createTrafficMirrorFilterResponse;
 	}

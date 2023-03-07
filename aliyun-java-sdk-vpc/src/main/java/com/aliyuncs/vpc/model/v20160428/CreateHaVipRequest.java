@@ -33,6 +33,8 @@ public class CreateHaVipRequest extends RpcAcsRequest<CreateHaVipResponse> {
 
 	private String description;
 
+	private String resourceGroupId;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -92,6 +94,17 @@ public class CreateHaVipRequest extends RpcAcsRequest<CreateHaVipResponse> {
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
