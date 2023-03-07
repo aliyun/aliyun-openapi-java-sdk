@@ -59,6 +59,10 @@ public class ListImagesResponse extends AcsResponse {
 
 		private String architecture;
 
+		private String oSName;
+
+		private String oSNameEn;
+
 		public String getVersion() {
 			return this.version;
 		}
@@ -105,6 +109,22 @@ public class ListImagesResponse extends AcsResponse {
 
 		public void setArchitecture(String architecture) {
 			this.architecture = architecture;
+		}
+
+		public String getOSName() {
+			return this.oSName;
+		}
+
+		public void setOSName(String oSName) {
+			this.oSName = oSName;
+		}
+
+		public String getOSNameEn() {
+			return this.oSNameEn;
+		}
+
+		public void setOSNameEn(String oSNameEn) {
+			this.oSNameEn = oSNameEn;
 		}
 	}
 

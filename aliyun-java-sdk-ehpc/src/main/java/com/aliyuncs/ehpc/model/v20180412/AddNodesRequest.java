@@ -70,6 +70,8 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 
 	private Boolean sync;
 
+	private String networkInterfaceTrafficMode;
+
 	private String vSwitchId;
 
 	private Integer computeSpotDuration;
@@ -344,6 +346,17 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 		this.sync = sync;
 		if(sync != null){
 			putQueryParameter("Sync", sync.toString());
+		}
+	}
+
+	public String getNetworkInterfaceTrafficMode() {
+		return this.networkInterfaceTrafficMode;
+	}
+
+	public void setNetworkInterfaceTrafficMode(String networkInterfaceTrafficMode) {
+		this.networkInterfaceTrafficMode = networkInterfaceTrafficMode;
+		if(networkInterfaceTrafficMode != null){
+			putQueryParameter("NetworkInterfaceTrafficMode", networkInterfaceTrafficMode);
 		}
 	}
 

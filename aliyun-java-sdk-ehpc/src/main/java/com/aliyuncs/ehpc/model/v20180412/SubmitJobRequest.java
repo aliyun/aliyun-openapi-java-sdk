@@ -31,6 +31,8 @@ public class SubmitJobRequest extends RpcAcsRequest<SubmitJobResponse> {
 
 	private String clockTime;
 
+	private Integer jobRetryPriority;
+
 	private String commandLine;
 
 	private String jobQueue;
@@ -42,6 +44,8 @@ public class SubmitJobRequest extends RpcAcsRequest<SubmitJobResponse> {
 	private String packagePath;
 
 	private String mem;
+
+	private Integer jobRetryCount;
 
 	private String stdoutRedirectPath;
 
@@ -62,6 +66,8 @@ public class SubmitJobRequest extends RpcAcsRequest<SubmitJobResponse> {
 	private Integer priority;
 
 	private Integer gpu;
+
+	private Integer jobRetryOnExitCode;
 
 	private Integer node;
 
@@ -113,6 +119,17 @@ public class SubmitJobRequest extends RpcAcsRequest<SubmitJobResponse> {
 		this.clockTime = clockTime;
 		if(clockTime != null){
 			putQueryParameter("ClockTime", clockTime);
+		}
+	}
+
+	public Integer getJobRetryPriority() {
+		return this.jobRetryPriority;
+	}
+
+	public void setJobRetryPriority(Integer jobRetryPriority) {
+		this.jobRetryPriority = jobRetryPriority;
+		if(jobRetryPriority != null){
+			putQueryParameter("JobRetry.Priority", jobRetryPriority.toString());
 		}
 	}
 
@@ -179,6 +196,17 @@ public class SubmitJobRequest extends RpcAcsRequest<SubmitJobResponse> {
 		this.mem = mem;
 		if(mem != null){
 			putQueryParameter("Mem", mem);
+		}
+	}
+
+	public Integer getJobRetryCount() {
+		return this.jobRetryCount;
+	}
+
+	public void setJobRetryCount(Integer jobRetryCount) {
+		this.jobRetryCount = jobRetryCount;
+		if(jobRetryCount != null){
+			putQueryParameter("JobRetry.Count", jobRetryCount.toString());
 		}
 	}
 
@@ -289,6 +317,17 @@ public class SubmitJobRequest extends RpcAcsRequest<SubmitJobResponse> {
 		this.gpu = gpu;
 		if(gpu != null){
 			putQueryParameter("Gpu", gpu.toString());
+		}
+	}
+
+	public Integer getJobRetryOnExitCode() {
+		return this.jobRetryOnExitCode;
+	}
+
+	public void setJobRetryOnExitCode(Integer jobRetryOnExitCode) {
+		this.jobRetryOnExitCode = jobRetryOnExitCode;
+		if(jobRetryOnExitCode != null){
+			putQueryParameter("JobRetry.OnExitCode", jobRetryOnExitCode.toString());
 		}
 	}
 
