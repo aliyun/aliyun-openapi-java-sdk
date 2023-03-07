@@ -1,3 +1,6 @@
+2023-03-07 Version: 4.2.4
+- Generated 2020-05-18 for `dataworks-public`.
+
 2023-03-02 Version: 4.2.3
 - Generated 2020-05-18 for `dataworks-public`.
 
