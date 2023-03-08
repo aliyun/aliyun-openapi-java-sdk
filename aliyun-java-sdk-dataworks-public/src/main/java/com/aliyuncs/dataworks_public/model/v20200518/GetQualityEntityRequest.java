@@ -32,6 +32,8 @@ public class GetQualityEntityRequest extends RpcAcsRequest<GetQualityEntityRespo
 	private String envType;
 
 	private String tableName;
+
+	private Long projectId;
 	public GetQualityEntityRequest() {
 		super("dataworks-public", "2020-05-18", "GetQualityEntity");
 		setMethod(MethodType.POST);
@@ -82,6 +84,17 @@ public class GetQualityEntityRequest extends RpcAcsRequest<GetQualityEntityRespo
 		this.tableName = tableName;
 		if(tableName != null){
 			putBodyParameter("TableName", tableName);
+		}
+	}
+
+	public Long getProjectId() {
+		return this.projectId;
+	}
+
+	public void setProjectId(Long projectId) {
+		this.projectId = projectId;
+		if(projectId != null){
+			putBodyParameter("ProjectId", projectId.toString());
 		}
 	}
 

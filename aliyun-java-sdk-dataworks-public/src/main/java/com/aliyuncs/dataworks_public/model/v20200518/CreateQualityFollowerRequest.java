@@ -32,6 +32,8 @@ public class CreateQualityFollowerRequest extends RpcAcsRequest<CreateQualityFol
 	private Long entityId;
 
 	private Integer alarmMode;
+
+	private Long projectId;
 	public CreateQualityFollowerRequest() {
 		super("dataworks-public", "2020-05-18", "CreateQualityFollower");
 		setMethod(MethodType.POST);
@@ -82,6 +84,17 @@ public class CreateQualityFollowerRequest extends RpcAcsRequest<CreateQualityFol
 		this.alarmMode = alarmMode;
 		if(alarmMode != null){
 			putBodyParameter("AlarmMode", alarmMode.toString());
+		}
+	}
+
+	public Long getProjectId() {
+		return this.projectId;
+	}
+
+	public void setProjectId(Long projectId) {
+		this.projectId = projectId;
+		if(projectId != null){
+			putBodyParameter("ProjectId", projectId.toString());
 		}
 	}
 

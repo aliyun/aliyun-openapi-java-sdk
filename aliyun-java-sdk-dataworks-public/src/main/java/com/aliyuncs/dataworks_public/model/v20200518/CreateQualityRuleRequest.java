@@ -43,6 +43,8 @@ public class CreateQualityRuleRequest extends RpcAcsRequest<CreateQualityRuleRes
 
 	private String warningThreshold;
 
+	private Long projectId;
+
 	private String methodName;
 
 	private String projectName;
@@ -165,6 +167,17 @@ public class CreateQualityRuleRequest extends RpcAcsRequest<CreateQualityRuleRes
 		this.warningThreshold = warningThreshold;
 		if(warningThreshold != null){
 			putBodyParameter("WarningThreshold", warningThreshold);
+		}
+	}
+
+	public Long getProjectId() {
+		return this.projectId;
+	}
+
+	public void setProjectId(Long projectId) {
+		this.projectId = projectId;
+		if(projectId != null){
+			putBodyParameter("ProjectId", projectId.toString());
 		}
 	}
 

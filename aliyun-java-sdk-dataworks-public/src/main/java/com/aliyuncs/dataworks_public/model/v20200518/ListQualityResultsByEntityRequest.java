@@ -36,6 +36,8 @@ public class ListQualityResultsByEntityRequest extends RpcAcsRequest<ListQuality
 	private String endDate;
 
 	private Integer pageSize;
+
+	private Long projectId;
 	public ListQualityResultsByEntityRequest() {
 		super("dataworks-public", "2020-05-18", "ListQualityResultsByEntity");
 		setMethod(MethodType.POST);
@@ -108,6 +110,17 @@ public class ListQualityResultsByEntityRequest extends RpcAcsRequest<ListQuality
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putBodyParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Long getProjectId() {
+		return this.projectId;
+	}
+
+	public void setProjectId(Long projectId) {
+		this.projectId = projectId;
+		if(projectId != null){
+			putBodyParameter("ProjectId", projectId.toString());
 		}
 	}
 
