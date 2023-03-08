@@ -30,6 +30,8 @@ public class DescribeDBClusterServerlessConfResponseUnmarshaller {
 		describeDBClusterServerlessConfResponse.setAllowShutDown(_ctx.stringValue("DescribeDBClusterServerlessConfResponse.AllowShutDown"));
 		describeDBClusterServerlessConfResponse.setSecondsUntilAutoPause(_ctx.stringValue("DescribeDBClusterServerlessConfResponse.SecondsUntilAutoPause"));
 		describeDBClusterServerlessConfResponse.setDBClusterId(_ctx.stringValue("DescribeDBClusterServerlessConfResponse.DBClusterId"));
+		describeDBClusterServerlessConfResponse.setScaleApRoNumMin(_ctx.stringValue("DescribeDBClusterServerlessConfResponse.ScaleApRoNumMin"));
+		describeDBClusterServerlessConfResponse.setScaleApRoNumMax(_ctx.stringValue("DescribeDBClusterServerlessConfResponse.ScaleApRoNumMax"));
 	 
 	 	return describeDBClusterServerlessConfResponse;
 	}

@@ -107,9 +107,15 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 	private String proxyStatus;
 
+	private String featureHTAPSupported;
+
+	private String proxyServerlessType;
+
 	private List<DBNode> dBNodes;
 
 	private List<Tag> tags;
+
+	private RelatedAPInstance relatedAPInstance;
 
 	public Integer getDeletionLock() {
 		return this.deletionLock;
@@ -439,6 +445,22 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 		this.proxyStatus = proxyStatus;
 	}
 
+	public String getFeatureHTAPSupported() {
+		return this.featureHTAPSupported;
+	}
+
+	public void setFeatureHTAPSupported(String featureHTAPSupported) {
+		this.featureHTAPSupported = featureHTAPSupported;
+	}
+
+	public String getProxyServerlessType() {
+		return this.proxyServerlessType;
+	}
+
+	public void setProxyServerlessType(String proxyServerlessType) {
+		this.proxyServerlessType = proxyServerlessType;
+	}
+
 	public List<DBNode> getDBNodes() {
 		return this.dBNodes;
 	}
@@ -453,6 +475,14 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 	public void setTags(List<Tag> tags) {
 		this.tags = tags;
+	}
+
+	public RelatedAPInstance getRelatedAPInstance() {
+		return this.relatedAPInstance;
+	}
+
+	public void setRelatedAPInstance(RelatedAPInstance relatedAPInstance) {
+		this.relatedAPInstance = relatedAPInstance;
 	}
 
 	public static class DBNode {
@@ -486,6 +516,8 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 		private String sccMode;
 
 		private String serverWeight;
+
+		private String serverlessType;
 
 		public String getCreationTime() {
 			return this.creationTime;
@@ -606,6 +638,14 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 		public void setServerWeight(String serverWeight) {
 			this.serverWeight = serverWeight;
 		}
+
+		public String getServerlessType() {
+			return this.serverlessType;
+		}
+
+		public void setServerlessType(String serverlessType) {
+			this.serverlessType = serverlessType;
+		}
 	}
 
 	public static class Tag {
@@ -628,6 +668,49 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 		public void setValue(String value) {
 			this.value = value;
+		}
+	}
+
+	public static class RelatedAPInstance {
+
+		private String name;
+
+		private String classCode;
+
+		private String ossStorageUsed;
+
+		private String totalAPNodes;
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getClassCode() {
+			return this.classCode;
+		}
+
+		public void setClassCode(String classCode) {
+			this.classCode = classCode;
+		}
+
+		public String getOssStorageUsed() {
+			return this.ossStorageUsed;
+		}
+
+		public void setOssStorageUsed(String ossStorageUsed) {
+			this.ossStorageUsed = ossStorageUsed;
+		}
+
+		public String getTotalAPNodes() {
+			return this.totalAPNodes;
+		}
+
+		public void setTotalAPNodes(String totalAPNodes) {
+			this.totalAPNodes = totalAPNodes;
 		}
 	}
 

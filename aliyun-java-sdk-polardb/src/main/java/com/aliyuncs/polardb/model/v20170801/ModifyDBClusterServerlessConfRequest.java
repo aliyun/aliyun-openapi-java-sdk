@@ -29,9 +29,13 @@ public class ModifyDBClusterServerlessConfRequest extends RpcAcsRequest<ModifyDB
 
 	private Long resourceOwnerId;
 
+	private String scaleApRoNumMax;
+
 	private String scaleMax;
 
 	private String secondsUntilAutoPause;
+
+	private String scaleApRoNumMin;
 
 	private String scaleMin;
 
@@ -77,6 +81,17 @@ public class ModifyDBClusterServerlessConfRequest extends RpcAcsRequest<ModifyDB
 		}
 	}
 
+	public String getScaleApRoNumMax() {
+		return this.scaleApRoNumMax;
+	}
+
+	public void setScaleApRoNumMax(String scaleApRoNumMax) {
+		this.scaleApRoNumMax = scaleApRoNumMax;
+		if(scaleApRoNumMax != null){
+			putQueryParameter("ScaleApRoNumMax", scaleApRoNumMax);
+		}
+	}
+
 	public String getScaleMax() {
 		return this.scaleMax;
 	}
@@ -96,6 +111,17 @@ public class ModifyDBClusterServerlessConfRequest extends RpcAcsRequest<ModifyDB
 		this.secondsUntilAutoPause = secondsUntilAutoPause;
 		if(secondsUntilAutoPause != null){
 			putQueryParameter("SecondsUntilAutoPause", secondsUntilAutoPause);
+		}
+	}
+
+	public String getScaleApRoNumMin() {
+		return this.scaleApRoNumMin;
+	}
+
+	public void setScaleApRoNumMin(String scaleApRoNumMin) {
+		this.scaleApRoNumMin = scaleApRoNumMin;
+		if(scaleApRoNumMin != null){
+			putQueryParameter("ScaleApRoNumMin", scaleApRoNumMin);
 		}
 	}
 

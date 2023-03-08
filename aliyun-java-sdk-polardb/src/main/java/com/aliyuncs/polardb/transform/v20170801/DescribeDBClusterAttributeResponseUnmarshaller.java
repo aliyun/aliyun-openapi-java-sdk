@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.polardb.model.v20170801.DescribeDBClusterAttributeResponse;
 import com.aliyuncs.polardb.model.v20170801.DescribeDBClusterAttributeResponse.DBNode;
+import com.aliyuncs.polardb.model.v20170801.DescribeDBClusterAttributeResponse.RelatedAPInstance;
 import com.aliyuncs.polardb.model.v20170801.DescribeDBClusterAttributeResponse.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -68,6 +69,15 @@ public class DescribeDBClusterAttributeResponseUnmarshaller {
 		describeDBClusterAttributeResponse.setProxyStandardCpuCores(_ctx.stringValue("DescribeDBClusterAttributeResponse.ProxyStandardCpuCores"));
 		describeDBClusterAttributeResponse.setProxyType(_ctx.stringValue("DescribeDBClusterAttributeResponse.ProxyType"));
 		describeDBClusterAttributeResponse.setProxyStatus(_ctx.stringValue("DescribeDBClusterAttributeResponse.ProxyStatus"));
+		describeDBClusterAttributeResponse.setFeatureHTAPSupported(_ctx.stringValue("DescribeDBClusterAttributeResponse.FeatureHTAPSupported"));
+		describeDBClusterAttributeResponse.setProxyServerlessType(_ctx.stringValue("DescribeDBClusterAttributeResponse.ProxyServerlessType"));
+
+		RelatedAPInstance relatedAPInstance = new RelatedAPInstance();
+		relatedAPInstance.setName(_ctx.stringValue("DescribeDBClusterAttributeResponse.RelatedAPInstance.Name"));
+		relatedAPInstance.setClassCode(_ctx.stringValue("DescribeDBClusterAttributeResponse.RelatedAPInstance.ClassCode"));
+		relatedAPInstance.setOssStorageUsed(_ctx.stringValue("DescribeDBClusterAttributeResponse.RelatedAPInstance.OssStorageUsed"));
+		relatedAPInstance.setTotalAPNodes(_ctx.stringValue("DescribeDBClusterAttributeResponse.RelatedAPInstance.TotalAPNodes"));
+		describeDBClusterAttributeResponse.setRelatedAPInstance(relatedAPInstance);
 
 		List<DBNode> dBNodes = new ArrayList<DBNode>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBClusterAttributeResponse.DBNodes.Length"); i++) {
@@ -87,6 +97,7 @@ public class DescribeDBClusterAttributeResponseUnmarshaller {
 			dBNode.setMasterId(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].MasterId"));
 			dBNode.setSccMode(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].SccMode"));
 			dBNode.setServerWeight(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].ServerWeight"));
+			dBNode.setServerlessType(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].ServerlessType"));
 
 			dBNodes.add(dBNode);
 		}

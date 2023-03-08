@@ -40,6 +40,10 @@ public class DescribeDBClusterServerlessConfResponse extends AcsResponse {
 
 	private String dBClusterId;
 
+	private String scaleApRoNumMin;
+
+	private String scaleApRoNumMax;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -102,6 +106,22 @@ public class DescribeDBClusterServerlessConfResponse extends AcsResponse {
 
 	public void setDBClusterId(String dBClusterId) {
 		this.dBClusterId = dBClusterId;
+	}
+
+	public String getScaleApRoNumMin() {
+		return this.scaleApRoNumMin;
+	}
+
+	public void setScaleApRoNumMin(String scaleApRoNumMin) {
+		this.scaleApRoNumMin = scaleApRoNumMin;
+	}
+
+	public String getScaleApRoNumMax() {
+		return this.scaleApRoNumMax;
+	}
+
+	public void setScaleApRoNumMax(String scaleApRoNumMax) {
+		this.scaleApRoNumMax = scaleApRoNumMax;
 	}
 
 	@Override

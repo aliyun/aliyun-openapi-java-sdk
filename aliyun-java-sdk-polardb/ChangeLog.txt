@@ -1,3 +1,6 @@
+2023-03-08 Version: 1.8.25
+- Support new feature.
+
 2023-03-02 Version: 1.8.24
 - Generated 2017-08-01 for `polardb`.
 
