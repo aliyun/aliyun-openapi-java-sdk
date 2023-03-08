@@ -132,6 +132,8 @@ public class GetVideoTaskInfoResponse extends AcsResponse {
 
 			private String subtitlesUrl;
 
+			private String wordSubtitlesUrl;
+
 			private String failReason;
 
 			private String failCode;
@@ -150,6 +152,14 @@ public class GetVideoTaskInfoResponse extends AcsResponse {
 
 			public void setSubtitlesUrl(String subtitlesUrl) {
 				this.subtitlesUrl = subtitlesUrl;
+			}
+
+			public String getWordSubtitlesUrl() {
+				return this.wordSubtitlesUrl;
+			}
+
+			public void setWordSubtitlesUrl(String wordSubtitlesUrl) {
+				this.wordSubtitlesUrl = wordSubtitlesUrl;
 			}
 
 			public String getFailReason() {
