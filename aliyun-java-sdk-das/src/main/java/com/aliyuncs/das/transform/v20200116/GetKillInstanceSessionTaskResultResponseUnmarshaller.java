@@ -36,6 +36,7 @@ public class GetKillInstanceSessionTaskResultResponseUnmarshaller {
 		data.setTaskId(_ctx.stringValue("GetKillInstanceSessionTaskResultResponse.Data.TaskId"));
 		data.setUserId(_ctx.stringValue("GetKillInstanceSessionTaskResultResponse.Data.UserId"));
 		data.setInstanceId(_ctx.stringValue("GetKillInstanceSessionTaskResultResponse.Data.InstanceId"));
+		data.setNodeId(_ctx.stringValue("GetKillInstanceSessionTaskResultResponse.Data.NodeId"));
 		data.setTaskState(_ctx.stringValue("GetKillInstanceSessionTaskResultResponse.Data.TaskState"));
 		data.setKillSuccessCount(_ctx.longValue("GetKillInstanceSessionTaskResultResponse.Data.KillSuccessCount"));
 		data.setKillFailCount(_ctx.longValue("GetKillInstanceSessionTaskResultResponse.Data.KillFailCount"));

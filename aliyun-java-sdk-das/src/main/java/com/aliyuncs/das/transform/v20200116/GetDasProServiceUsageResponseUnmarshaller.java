@@ -31,9 +31,7 @@ public class GetDasProServiceUsageResponseUnmarshaller {
 		Data data = new Data();
 		data.setStorageFreeQuotaInMB(_ctx.doubleValue("GetDasProServiceUsageResponse.Data.storageFreeQuotaInMB"));
 		data.setIp(_ctx.stringValue("GetDasProServiceUsageResponse.Data.ip"));
-		data.setCustinsId(_ctx.longValue("GetDasProServiceUsageResponse.Data.custinsId"));
 		data.setUserId(_ctx.stringValue("GetDasProServiceUsageResponse.Data.userId"));
-		data.setUuid(_ctx.stringValue("GetDasProServiceUsageResponse.Data.uuid"));
 		data.setExpireTime(_ctx.longValue("GetDasProServiceUsageResponse.Data.expireTime"));
 		data.setInstanceId(_ctx.stringValue("GetDasProServiceUsageResponse.Data.instanceId"));
 		data.setStorageUsed(_ctx.longValue("GetDasProServiceUsageResponse.Data.storageUsed"));

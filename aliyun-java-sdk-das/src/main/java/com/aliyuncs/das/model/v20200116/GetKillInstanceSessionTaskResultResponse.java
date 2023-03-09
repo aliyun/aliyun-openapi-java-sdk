@@ -83,6 +83,8 @@ public class GetKillInstanceSessionTaskResultResponse extends AcsResponse {
 
 		private String instanceId;
 
+		private String nodeId;
+
 		private String taskState;
 
 		private Long killSuccessCount;
@@ -117,6 +119,14 @@ public class GetKillInstanceSessionTaskResultResponse extends AcsResponse {
 
 		public void setInstanceId(String instanceId) {
 			this.instanceId = instanceId;
+		}
+
+		public String getNodeId() {
+			return this.nodeId;
+		}
+
+		public void setNodeId(String nodeId) {
+			this.nodeId = nodeId;
 		}
 
 		public String getTaskState() {

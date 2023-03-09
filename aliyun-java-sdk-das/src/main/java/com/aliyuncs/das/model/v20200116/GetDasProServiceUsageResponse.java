@@ -80,11 +80,7 @@ public class GetDasProServiceUsageResponse extends AcsResponse {
 
 		private String ip;
 
-		private Long custinsId;
-
 		private String userId;
-
-		private String uuid;
 
 		private Long expireTime;
 
@@ -128,28 +124,12 @@ public class GetDasProServiceUsageResponse extends AcsResponse {
 			this.ip = ip;
 		}
 
-		public Long getCustinsId() {
-			return this.custinsId;
-		}
-
-		public void setCustinsId(Long custinsId) {
-			this.custinsId = custinsId;
-		}
-
 		public String getUserId() {
 			return this.userId;
 		}
 
 		public void setUserId(String userId) {
 			this.userId = userId;
-		}
-
-		public String getUuid() {
-			return this.uuid;
-		}
-
-		public void setUuid(String uuid) {
-			this.uuid = uuid;
 		}
 
 		public Long getExpireTime() {
