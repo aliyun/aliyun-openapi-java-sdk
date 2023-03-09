@@ -31,6 +31,8 @@ public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvai
 
 	private String ownerAccount;
 
+	private String dBClusterVersion;
+
 	private Long ownerId;
 
 	private String acceptLanguage;
@@ -77,6 +79,17 @@ public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvai
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getDBClusterVersion() {
+		return this.dBClusterVersion;
+	}
+
+	public void setDBClusterVersion(String dBClusterVersion) {
+		this.dBClusterVersion = dBClusterVersion;
+		if(dBClusterVersion != null){
+			putQueryParameter("DBClusterVersion", dBClusterVersion);
 		}
 	}
 

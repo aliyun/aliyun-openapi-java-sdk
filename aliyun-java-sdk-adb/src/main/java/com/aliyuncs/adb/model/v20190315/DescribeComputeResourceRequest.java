@@ -31,7 +31,11 @@ public class DescribeComputeResourceRequest extends RpcAcsRequest<DescribeComput
 
 	private String ownerAccount;
 
+	private String dBClusterVersion;
+
 	private Long ownerId;
+
+	private String zoneId;
 	public DescribeComputeResourceRequest() {
 		super("adb", "2019-03-15", "DescribeComputeResource", "ads");
 		setMethod(MethodType.POST);
@@ -74,6 +78,17 @@ public class DescribeComputeResourceRequest extends RpcAcsRequest<DescribeComput
 		}
 	}
 
+	public String getDBClusterVersion() {
+		return this.dBClusterVersion;
+	}
+
+	public void setDBClusterVersion(String dBClusterVersion) {
+		this.dBClusterVersion = dBClusterVersion;
+		if(dBClusterVersion != null){
+			putQueryParameter("DBClusterVersion", dBClusterVersion);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -82,6 +97,17 @@ public class DescribeComputeResourceRequest extends RpcAcsRequest<DescribeComput
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
 		}
 	}
 

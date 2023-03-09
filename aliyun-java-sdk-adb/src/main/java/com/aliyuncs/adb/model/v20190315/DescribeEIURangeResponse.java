@@ -51,6 +51,8 @@ public class DescribeEIURangeResponse extends AcsResponse {
 
 		private List<Long> eIURange;
 
+		private List<String> storageResourceRange;
+
 		public String getDefaultValue() {
 			return this.defaultValue;
 		}
@@ -65,6 +67,14 @@ public class DescribeEIURangeResponse extends AcsResponse {
 
 		public void setEIURange(List<Long> eIURange) {
 			this.eIURange = eIURange;
+		}
+
+		public List<String> getStorageResourceRange() {
+			return this.storageResourceRange;
+		}
+
+		public void setStorageResourceRange(List<String> storageResourceRange) {
+			this.storageResourceRange = storageResourceRange;
 		}
 	}
 
