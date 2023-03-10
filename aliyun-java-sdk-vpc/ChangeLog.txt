@@ -1,3 +1,6 @@
+2023-03-10 Version: 3.2.18
+- Support create default VPC and create default vSwitch .
+
 2023-03-07 Version: 3.2.17
 - Add UnassociateNetworkAcl api error code.
 - Add ram error code.
