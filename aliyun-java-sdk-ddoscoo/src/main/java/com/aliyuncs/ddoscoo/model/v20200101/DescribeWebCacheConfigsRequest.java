@@ -30,7 +30,7 @@ public class DescribeWebCacheConfigsRequest extends RpcAcsRequest<DescribeWebCac
 
 	private String resourceGroupId;
 	public DescribeWebCacheConfigsRequest() {
-		super("ddoscoo", "2020-01-01", "DescribeWebCacheConfigs");
+		super("ddoscoo", "2020-01-01", "DescribeWebCacheConfigs", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

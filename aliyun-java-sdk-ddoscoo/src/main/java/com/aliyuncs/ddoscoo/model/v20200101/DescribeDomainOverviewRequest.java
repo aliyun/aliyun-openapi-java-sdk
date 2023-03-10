@@ -33,7 +33,7 @@ public class DescribeDomainOverviewRequest extends RpcAcsRequest<DescribeDomainO
 
 	private String domain;
 	public DescribeDomainOverviewRequest() {
-		super("ddoscoo", "2020-01-01", "DescribeDomainOverview");
+		super("ddoscoo", "2020-01-01", "DescribeDomainOverview", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

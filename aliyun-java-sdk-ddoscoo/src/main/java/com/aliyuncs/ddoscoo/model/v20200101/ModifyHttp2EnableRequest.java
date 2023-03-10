@@ -31,7 +31,7 @@ public class ModifyHttp2EnableRequest extends RpcAcsRequest<ModifyHttp2EnableRes
 
 	private String domain;
 	public ModifyHttp2EnableRequest() {
-		super("ddoscoo", "2020-01-01", "ModifyHttp2Enable");
+		super("ddoscoo", "2020-01-01", "ModifyHttp2Enable", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

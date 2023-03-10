@@ -42,6 +42,9 @@ public class DescribeInstanceSpecsResponseUnmarshaller {
 			instanceSpec.setFunctionVersion(_ctx.stringValue("DescribeInstanceSpecsResponse.InstanceSpecs["+ i +"].FunctionVersion"));
 			instanceSpec.setInstanceId(_ctx.stringValue("DescribeInstanceSpecsResponse.InstanceSpecs["+ i +"].InstanceId"));
 			instanceSpec.setDomainLimit(_ctx.integerValue("DescribeInstanceSpecsResponse.InstanceSpecs["+ i +"].DomainLimit"));
+			instanceSpec.setElasticBwModel(_ctx.stringValue("DescribeInstanceSpecsResponse.InstanceSpecs["+ i +"].ElasticBwModel"));
+			instanceSpec.setCpsLimit(_ctx.longValue("DescribeInstanceSpecsResponse.InstanceSpecs["+ i +"].CpsLimit"));
+			instanceSpec.setConnLimit(_ctx.longValue("DescribeInstanceSpecsResponse.InstanceSpecs["+ i +"].ConnLimit"));
 
 			instanceSpecs.add(instanceSpec);
 		}

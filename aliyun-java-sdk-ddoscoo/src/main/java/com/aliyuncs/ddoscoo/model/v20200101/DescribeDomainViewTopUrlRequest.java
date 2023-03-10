@@ -35,7 +35,7 @@ public class DescribeDomainViewTopUrlRequest extends RpcAcsRequest<DescribeDomai
 
 	private String domain;
 	public DescribeDomainViewTopUrlRequest() {
-		super("ddoscoo", "2020-01-01", "DescribeDomainViewTopUrl");
+		super("ddoscoo", "2020-01-01", "DescribeDomainViewTopUrl", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

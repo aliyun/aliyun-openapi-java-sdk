@@ -28,7 +28,7 @@ public class DescribePortAutoCcStatusRequest extends RpcAcsRequest<DescribePortA
 
 	private List<String> instanceIdss;
 	public DescribePortAutoCcStatusRequest() {
-		super("ddoscoo", "2020-01-01", "DescribePortAutoCcStatus");
+		super("ddoscoo", "2020-01-01", "DescribePortAutoCcStatus", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class CreateNetworkRulesRequest extends RpcAcsRequest<CreateNetworkRulesR
 
 	private String networkRules;
 	public CreateNetworkRulesRequest() {
-		super("ddoscoo", "2020-01-01", "CreateNetworkRules");
+		super("ddoscoo", "2020-01-01", "CreateNetworkRules", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

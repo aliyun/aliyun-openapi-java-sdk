@@ -29,7 +29,7 @@ public class DescribeCertsRequest extends RpcAcsRequest<DescribeCertsResponse> {
 
 	private String domain;
 	public DescribeCertsRequest() {
-		super("ddoscoo", "2020-01-01", "DescribeCerts");
+		super("ddoscoo", "2020-01-01", "DescribeCerts", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

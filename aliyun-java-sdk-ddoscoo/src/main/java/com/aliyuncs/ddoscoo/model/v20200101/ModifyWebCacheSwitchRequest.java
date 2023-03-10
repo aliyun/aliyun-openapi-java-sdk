@@ -31,7 +31,7 @@ public class ModifyWebCacheSwitchRequest extends RpcAcsRequest<ModifyWebCacheSwi
 
 	private String domain;
 	public ModifyWebCacheSwitchRequest() {
-		super("ddoscoo", "2020-01-01", "ModifyWebCacheSwitch");
+		super("ddoscoo", "2020-01-01", "ModifyWebCacheSwitch", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

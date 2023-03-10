@@ -35,7 +35,7 @@ public class CreateSchedulerRuleRequest extends RpcAcsRequest<CreateSchedulerRul
 
 	private Integer ruleType;
 	public CreateSchedulerRuleRequest() {
-		super("ddoscoo", "2020-01-01", "CreateSchedulerRule");
+		super("ddoscoo", "2020-01-01", "CreateSchedulerRule", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

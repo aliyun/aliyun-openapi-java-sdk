@@ -31,7 +31,7 @@ public class DescribeDDosEventIspRequest extends RpcAcsRequest<DescribeDDosEvent
 
 	private String eventType;
 	public DescribeDDosEventIspRequest() {
-		super("ddoscoo", "2020-01-01", "DescribeDDosEventIsp");
+		super("ddoscoo", "2020-01-01", "DescribeDDosEventIsp", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

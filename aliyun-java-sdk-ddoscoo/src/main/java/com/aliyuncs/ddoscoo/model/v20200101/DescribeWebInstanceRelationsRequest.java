@@ -30,7 +30,7 @@ public class DescribeWebInstanceRelationsRequest extends RpcAcsRequest<DescribeW
 
 	private String resourceGroupId;
 	public DescribeWebInstanceRelationsRequest() {
-		super("ddoscoo", "2020-01-01", "DescribeWebInstanceRelations");
+		super("ddoscoo", "2020-01-01", "DescribeWebInstanceRelations", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

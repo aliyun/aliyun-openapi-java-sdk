@@ -29,7 +29,7 @@ public class DescribeStsGrantStatusRequest extends RpcAcsRequest<DescribeStsGran
 
 	private String resourceGroupId;
 	public DescribeStsGrantStatusRequest() {
-		super("ddoscoo", "2020-01-01", "DescribeStsGrantStatus");
+		super("ddoscoo", "2020-01-01", "DescribeStsGrantStatus", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

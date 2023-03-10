@@ -27,7 +27,7 @@ public class DescribeUdpReflectRequest extends RpcAcsRequest<DescribeUdpReflectR
 
 	private String instanceId;
 	public DescribeUdpReflectRequest() {
-		super("ddoscoo", "2020-01-01", "DescribeUdpReflect");
+		super("ddoscoo", "2020-01-01", "DescribeUdpReflect", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

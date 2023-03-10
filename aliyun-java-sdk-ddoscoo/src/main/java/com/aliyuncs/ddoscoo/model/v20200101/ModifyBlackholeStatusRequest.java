@@ -29,7 +29,7 @@ public class ModifyBlackholeStatusRequest extends RpcAcsRequest<ModifyBlackholeS
 
 	private String instanceId;
 	public ModifyBlackholeStatusRequest() {
-		super("ddoscoo", "2020-01-01", "ModifyBlackholeStatus");
+		super("ddoscoo", "2020-01-01", "ModifyBlackholeStatus", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

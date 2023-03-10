@@ -28,7 +28,7 @@ public class DescribeWebAccessModeRequest extends RpcAcsRequest<DescribeWebAcces
 
 	private List<String> domainss;
 	public DescribeWebAccessModeRequest() {
-		super("ddoscoo", "2020-01-01", "DescribeWebAccessMode");
+		super("ddoscoo", "2020-01-01", "DescribeWebAccessMode", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

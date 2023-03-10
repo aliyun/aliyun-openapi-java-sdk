@@ -32,7 +32,7 @@ public class DeleteWebCacheCustomRuleRequest extends RpcAcsRequest<DeleteWebCach
 
 	private String domain;
 	public DeleteWebCacheCustomRuleRequest() {
-		super("ddoscoo", "2020-01-01", "DeleteWebCacheCustomRule");
+		super("ddoscoo", "2020-01-01", "DeleteWebCacheCustomRule", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

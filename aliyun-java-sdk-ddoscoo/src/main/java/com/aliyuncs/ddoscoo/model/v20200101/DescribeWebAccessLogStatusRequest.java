@@ -29,7 +29,7 @@ public class DescribeWebAccessLogStatusRequest extends RpcAcsRequest<DescribeWeb
 
 	private String domain;
 	public DescribeWebAccessLogStatusRequest() {
-		super("ddoscoo", "2020-01-01", "DescribeWebAccessLogStatus");
+		super("ddoscoo", "2020-01-01", "DescribeWebAccessLogStatus", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

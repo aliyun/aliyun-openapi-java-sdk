@@ -29,7 +29,7 @@ public class ModifyWebAccessModeRequest extends RpcAcsRequest<ModifyWebAccessMod
 
 	private Integer accessMode;
 	public ModifyWebAccessModeRequest() {
-		super("ddoscoo", "2020-01-01", "ModifyWebAccessMode");
+		super("ddoscoo", "2020-01-01", "ModifyWebAccessMode", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

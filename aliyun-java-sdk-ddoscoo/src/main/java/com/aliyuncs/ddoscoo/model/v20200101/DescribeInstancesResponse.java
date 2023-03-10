@@ -79,6 +79,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private String connInstanceId;
 
+		private Long isFirstOpenBw;
+
 		public Integer getStatus() {
 			return this.status;
 		}
@@ -165,6 +167,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setConnInstanceId(String connInstanceId) {
 			this.connInstanceId = connInstanceId;
+		}
+
+		public Long getIsFirstOpenBw() {
+			return this.isFirstOpenBw;
+		}
+
+		public void setIsFirstOpenBw(Long isFirstOpenBw) {
+			this.isFirstOpenBw = isFirstOpenBw;
 		}
 	}
 

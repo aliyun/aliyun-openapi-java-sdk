@@ -29,7 +29,7 @@ public class DeleteWebRuleRequest extends RpcAcsRequest<DeleteWebRuleResponse> {
 
 	private String domain;
 	public DeleteWebRuleRequest() {
-		super("ddoscoo", "2020-01-01", "DeleteWebRule");
+		super("ddoscoo", "2020-01-01", "DeleteWebRule", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

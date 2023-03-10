@@ -33,7 +33,7 @@ public class DescribeDomainQpsWithCacheRequest extends RpcAcsRequest<DescribeDom
 
 	private String domain;
 	public DescribeDomainQpsWithCacheRequest() {
-		super("ddoscoo", "2020-01-01", "DescribeDomainQpsWithCache");
+		super("ddoscoo", "2020-01-01", "DescribeDomainQpsWithCache", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class DetachSceneDefenseObjectRequest extends RpcAcsRequest<DetachSceneDe
 
 	private String objectType;
 	public DetachSceneDefenseObjectRequest() {
-		super("ddoscoo", "2020-01-01", "DetachSceneDefenseObject");
+		super("ddoscoo", "2020-01-01", "DetachSceneDefenseObject", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

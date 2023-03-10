@@ -35,7 +35,7 @@ public class DescribePortRequest extends RpcAcsRequest<DescribePortResponse> {
 
 	private Integer frontendPort;
 	public DescribePortRequest() {
-		super("ddoscoo", "2020-01-01", "DescribePort");
+		super("ddoscoo", "2020-01-01", "DescribePort", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

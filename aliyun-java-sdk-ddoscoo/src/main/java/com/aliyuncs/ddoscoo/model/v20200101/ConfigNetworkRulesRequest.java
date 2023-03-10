@@ -27,7 +27,7 @@ public class ConfigNetworkRulesRequest extends RpcAcsRequest<ConfigNetworkRulesR
 
 	private String networkRules;
 	public ConfigNetworkRulesRequest() {
-		super("ddoscoo", "2020-01-01", "ConfigNetworkRules");
+		super("ddoscoo", "2020-01-01", "ConfigNetworkRules", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

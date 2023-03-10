@@ -27,7 +27,7 @@ public class DescribeNetworkRegionBlockRequest extends RpcAcsRequest<DescribeNet
 
 	private String instanceId;
 	public DescribeNetworkRegionBlockRequest() {
-		super("ddoscoo", "2020-01-01", "DescribeNetworkRegionBlock");
+		super("ddoscoo", "2020-01-01", "DescribeNetworkRegionBlock", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class ModifyFullLogTtlRequest extends RpcAcsRequest<ModifyFullLogTtlRespo
 
 	private String resourceGroupId;
 	public ModifyFullLogTtlRequest() {
-		super("ddoscoo", "2020-01-01", "ModifyFullLogTtl");
+		super("ddoscoo", "2020-01-01", "ModifyFullLogTtl", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

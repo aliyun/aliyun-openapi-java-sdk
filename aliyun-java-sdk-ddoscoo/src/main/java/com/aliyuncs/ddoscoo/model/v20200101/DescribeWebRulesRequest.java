@@ -40,7 +40,7 @@ public class DescribeWebRulesRequest extends RpcAcsRequest<DescribeWebRulesRespo
 
 	private String domain;
 	public DescribeWebRulesRequest() {
-		super("ddoscoo", "2020-01-01", "DescribeWebRules");
+		super("ddoscoo", "2020-01-01", "DescribeWebRules", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

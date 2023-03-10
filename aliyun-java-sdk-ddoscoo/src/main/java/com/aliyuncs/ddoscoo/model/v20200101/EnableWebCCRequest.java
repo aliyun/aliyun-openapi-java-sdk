@@ -29,7 +29,7 @@ public class EnableWebCCRequest extends RpcAcsRequest<EnableWebCCResponse> {
 
 	private String domain;
 	public EnableWebCCRequest() {
-		super("ddoscoo", "2020-01-01", "EnableWebCC");
+		super("ddoscoo", "2020-01-01", "EnableWebCC", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

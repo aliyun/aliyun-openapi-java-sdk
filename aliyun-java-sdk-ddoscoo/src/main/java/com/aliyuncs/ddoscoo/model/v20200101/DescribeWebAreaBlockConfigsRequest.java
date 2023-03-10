@@ -30,7 +30,7 @@ public class DescribeWebAreaBlockConfigsRequest extends RpcAcsRequest<DescribeWe
 
 	private String resourceGroupId;
 	public DescribeWebAreaBlockConfigsRequest() {
-		super("ddoscoo", "2020-01-01", "DescribeWebAreaBlockConfigs");
+		super("ddoscoo", "2020-01-01", "DescribeWebAreaBlockConfigs", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

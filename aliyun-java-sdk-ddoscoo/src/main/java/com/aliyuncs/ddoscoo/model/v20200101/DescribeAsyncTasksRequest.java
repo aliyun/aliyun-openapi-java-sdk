@@ -31,7 +31,7 @@ public class DescribeAsyncTasksRequest extends RpcAcsRequest<DescribeAsyncTasksR
 
 	private Integer pageSize;
 	public DescribeAsyncTasksRequest() {
-		super("ddoscoo", "2020-01-01", "DescribeAsyncTasks");
+		super("ddoscoo", "2020-01-01", "DescribeAsyncTasks", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

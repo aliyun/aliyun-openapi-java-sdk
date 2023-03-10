@@ -31,7 +31,7 @@ public class ModifyWebAIProtectSwitchRequest extends RpcAcsRequest<ModifyWebAIPr
 
 	private String config;
 	public ModifyWebAIProtectSwitchRequest() {
-		super("ddoscoo", "2020-01-01", "ModifyWebAIProtectSwitch");
+		super("ddoscoo", "2020-01-01", "ModifyWebAIProtectSwitch", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

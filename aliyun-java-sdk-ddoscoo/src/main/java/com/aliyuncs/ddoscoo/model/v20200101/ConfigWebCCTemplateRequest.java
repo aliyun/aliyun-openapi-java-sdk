@@ -31,7 +31,7 @@ public class ConfigWebCCTemplateRequest extends RpcAcsRequest<ConfigWebCCTemplat
 
 	private String domain;
 	public ConfigWebCCTemplateRequest() {
-		super("ddoscoo", "2020-01-01", "ConfigWebCCTemplate");
+		super("ddoscoo", "2020-01-01", "ConfigWebCCTemplate", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

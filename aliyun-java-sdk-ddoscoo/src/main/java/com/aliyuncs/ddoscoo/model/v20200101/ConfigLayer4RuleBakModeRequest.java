@@ -29,7 +29,7 @@ public class ConfigLayer4RuleBakModeRequest extends RpcAcsRequest<ConfigLayer4Ru
 
 	private String listeners;
 	public ConfigLayer4RuleBakModeRequest() {
-		super("ddoscoo", "2020-01-01", "ConfigLayer4RuleBakMode");
+		super("ddoscoo", "2020-01-01", "ConfigLayer4RuleBakMode", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

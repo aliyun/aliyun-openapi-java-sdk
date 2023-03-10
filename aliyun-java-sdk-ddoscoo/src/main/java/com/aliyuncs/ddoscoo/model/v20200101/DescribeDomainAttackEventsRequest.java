@@ -37,7 +37,7 @@ public class DescribeDomainAttackEventsRequest extends RpcAcsRequest<DescribeDom
 
 	private String domain;
 	public DescribeDomainAttackEventsRequest() {
-		super("ddoscoo", "2020-01-01", "DescribeDomainAttackEvents");
+		super("ddoscoo", "2020-01-01", "DescribeDomainAttackEvents", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

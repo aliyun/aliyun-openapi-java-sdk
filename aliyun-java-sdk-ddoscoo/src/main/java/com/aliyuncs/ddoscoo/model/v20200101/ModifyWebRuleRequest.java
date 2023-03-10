@@ -40,7 +40,7 @@ public class ModifyWebRuleRequest extends RpcAcsRequest<ModifyWebRuleResponse> {
 
 	private String domain;
 	public ModifyWebRuleRequest() {
-		super("ddoscoo", "2020-01-01", "ModifyWebRule");
+		super("ddoscoo", "2020-01-01", "ModifyWebRule", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

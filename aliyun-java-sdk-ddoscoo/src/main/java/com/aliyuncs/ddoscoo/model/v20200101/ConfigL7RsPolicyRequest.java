@@ -31,7 +31,7 @@ public class ConfigL7RsPolicyRequest extends RpcAcsRequest<ConfigL7RsPolicyRespo
 
 	private String policy;
 	public ConfigL7RsPolicyRequest() {
-		super("ddoscoo", "2020-01-01", "ConfigL7RsPolicy");
+		super("ddoscoo", "2020-01-01", "ConfigL7RsPolicy", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

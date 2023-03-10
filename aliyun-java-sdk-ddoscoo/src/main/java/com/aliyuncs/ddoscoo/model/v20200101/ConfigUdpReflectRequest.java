@@ -29,7 +29,7 @@ public class ConfigUdpReflectRequest extends RpcAcsRequest<ConfigUdpReflectRespo
 
 	private String config;
 	public ConfigUdpReflectRequest() {
-		super("ddoscoo", "2020-01-01", "ConfigUdpReflect");
+		super("ddoscoo", "2020-01-01", "ConfigUdpReflect", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

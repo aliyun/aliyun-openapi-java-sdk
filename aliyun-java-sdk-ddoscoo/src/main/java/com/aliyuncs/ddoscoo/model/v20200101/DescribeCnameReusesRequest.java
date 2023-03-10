@@ -30,7 +30,7 @@ public class DescribeCnameReusesRequest extends RpcAcsRequest<DescribeCnameReuse
 
 	private String resourceGroupId;
 	public DescribeCnameReusesRequest() {
-		super("ddoscoo", "2020-01-01", "DescribeCnameReuses");
+		super("ddoscoo", "2020-01-01", "DescribeCnameReuses", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

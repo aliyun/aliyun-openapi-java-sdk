@@ -31,7 +31,7 @@ public class CreateAsyncTaskRequest extends RpcAcsRequest<CreateAsyncTaskRespons
 
 	private String resourceGroupId;
 	public CreateAsyncTaskRequest() {
-		super("ddoscoo", "2020-01-01", "CreateAsyncTask");
+		super("ddoscoo", "2020-01-01", "CreateAsyncTask", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

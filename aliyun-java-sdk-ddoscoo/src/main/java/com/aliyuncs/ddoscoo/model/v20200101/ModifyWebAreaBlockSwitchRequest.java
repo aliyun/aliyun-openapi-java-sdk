@@ -31,7 +31,7 @@ public class ModifyWebAreaBlockSwitchRequest extends RpcAcsRequest<ModifyWebArea
 
 	private String config;
 	public ModifyWebAreaBlockSwitchRequest() {
-		super("ddoscoo", "2020-01-01", "ModifyWebAreaBlockSwitch");
+		super("ddoscoo", "2020-01-01", "ModifyWebAreaBlockSwitch", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

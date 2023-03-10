@@ -69,6 +69,12 @@ public class DescribeInstanceSpecsResponse extends AcsResponse {
 
 		private Integer domainLimit;
 
+		private String elasticBwModel;
+
+		private Long cpsLimit;
+
+		private Long connLimit;
+
 		public Integer getBaseBandwidth() {
 			return this.baseBandwidth;
 		}
@@ -155,6 +161,30 @@ public class DescribeInstanceSpecsResponse extends AcsResponse {
 
 		public void setDomainLimit(Integer domainLimit) {
 			this.domainLimit = domainLimit;
+		}
+
+		public String getElasticBwModel() {
+			return this.elasticBwModel;
+		}
+
+		public void setElasticBwModel(String elasticBwModel) {
+			this.elasticBwModel = elasticBwModel;
+		}
+
+		public Long getCpsLimit() {
+			return this.cpsLimit;
+		}
+
+		public void setCpsLimit(Long cpsLimit) {
+			this.cpsLimit = cpsLimit;
+		}
+
+		public Long getConnLimit() {
+			return this.connLimit;
+		}
+
+		public void setConnLimit(Long connLimit) {
+			this.connLimit = connLimit;
 		}
 	}
 

@@ -27,7 +27,7 @@ public class ConfigLayer4RulePolicyRequest extends RpcAcsRequest<ConfigLayer4Rul
 
 	private String listeners;
 	public ConfigLayer4RulePolicyRequest() {
-		super("ddoscoo", "2020-01-01", "ConfigLayer4RulePolicy");
+		super("ddoscoo", "2020-01-01", "ConfigLayer4RulePolicy", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

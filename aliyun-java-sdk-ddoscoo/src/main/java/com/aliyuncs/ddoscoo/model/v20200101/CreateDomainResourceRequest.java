@@ -38,7 +38,7 @@ public class CreateDomainResourceRequest extends RpcAcsRequest<CreateDomainResou
 
 	private String domain;
 	public CreateDomainResourceRequest() {
-		super("ddoscoo", "2020-01-01", "CreateDomainResource");
+		super("ddoscoo", "2020-01-01", "CreateDomainResource", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

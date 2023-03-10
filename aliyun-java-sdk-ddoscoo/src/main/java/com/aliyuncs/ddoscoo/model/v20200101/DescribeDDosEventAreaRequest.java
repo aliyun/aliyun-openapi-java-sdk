@@ -31,7 +31,7 @@ public class DescribeDDosEventAreaRequest extends RpcAcsRequest<DescribeDDosEven
 
 	private String eventType;
 	public DescribeDDosEventAreaRequest() {
-		super("ddoscoo", "2020-01-01", "DescribeDDosEventArea");
+		super("ddoscoo", "2020-01-01", "DescribeDDosEventArea", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

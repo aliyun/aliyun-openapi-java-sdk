@@ -27,7 +27,7 @@ public class DescribeHealthCheckListRequest extends RpcAcsRequest<DescribeHealth
 
 	private String networkRules;
 	public DescribeHealthCheckListRequest() {
-		super("ddoscoo", "2020-01-01", "DescribeHealthCheckList");
+		super("ddoscoo", "2020-01-01", "DescribeHealthCheckList", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

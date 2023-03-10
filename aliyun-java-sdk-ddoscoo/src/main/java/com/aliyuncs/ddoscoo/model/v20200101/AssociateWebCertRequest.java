@@ -37,7 +37,7 @@ public class AssociateWebCertRequest extends RpcAcsRequest<AssociateWebCertRespo
 
 	private String domain;
 	public AssociateWebCertRequest() {
-		super("ddoscoo", "2020-01-01", "AssociateWebCert");
+		super("ddoscoo", "2020-01-01", "AssociateWebCert", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class DescribeUnBlackholeCountRequest extends RpcAcsRequest<DescribeUnBla
 
 	private String resourceGroupId;
 	public DescribeUnBlackholeCountRequest() {
-		super("ddoscoo", "2020-01-01", "DescribeUnBlackholeCount");
+		super("ddoscoo", "2020-01-01", "DescribeUnBlackholeCount", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

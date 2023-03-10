@@ -37,7 +37,7 @@ public class DescribeDefenseRecordsRequest extends RpcAcsRequest<DescribeDefense
 
 	private String instanceId;
 	public DescribeDefenseRecordsRequest() {
-		super("ddoscoo", "2020-01-01", "DescribeDefenseRecords");
+		super("ddoscoo", "2020-01-01", "DescribeDefenseRecords", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

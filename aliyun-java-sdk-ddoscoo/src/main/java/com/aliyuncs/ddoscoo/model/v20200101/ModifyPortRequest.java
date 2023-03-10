@@ -36,7 +36,7 @@ public class ModifyPortRequest extends RpcAcsRequest<ModifyPortResponse> {
 
 	private String frontendPort;
 	public ModifyPortRequest() {
-		super("ddoscoo", "2020-01-01", "ModifyPort");
+		super("ddoscoo", "2020-01-01", "ModifyPort", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

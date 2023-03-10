@@ -27,7 +27,7 @@ public class DeleteDomainResourceRequest extends RpcAcsRequest<DeleteDomainResou
 
 	private String domain;
 	public DeleteDomainResourceRequest() {
-		super("ddoscoo", "2020-01-01", "DeleteDomainResource");
+		super("ddoscoo", "2020-01-01", "DeleteDomainResource", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

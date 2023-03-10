@@ -27,7 +27,7 @@ public class DescribeSlsLogstoreInfoRequest extends RpcAcsRequest<DescribeSlsLog
 
 	private String resourceGroupId;
 	public DescribeSlsLogstoreInfoRequest() {
-		super("ddoscoo", "2020-01-01", "DescribeSlsLogstoreInfo");
+		super("ddoscoo", "2020-01-01", "DescribeSlsLogstoreInfo", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

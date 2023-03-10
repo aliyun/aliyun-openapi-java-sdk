@@ -31,7 +31,7 @@ public class SwitchSchedulerRuleRequest extends RpcAcsRequest<SwitchSchedulerRul
 
 	private String switchData;
 	public SwitchSchedulerRuleRequest() {
-		super("ddoscoo", "2020-01-01", "SwitchSchedulerRule");
+		super("ddoscoo", "2020-01-01", "SwitchSchedulerRule", "ddoscoo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
