@@ -55,8 +55,6 @@ public class ListApplicationsResponseUnmarshaller {
 			application.setInstances(_ctx.integerValue("ListApplicationsResponse.Data.Applications["+ i +"].Instances"));
 			application.setRegionId(_ctx.stringValue("ListApplicationsResponse.Data.Applications["+ i +"].RegionId"));
 			application.setAppDescription(_ctx.stringValue("ListApplicationsResponse.Data.Applications["+ i +"].AppDescription"));
-			application.setCpu(_ctx.integerValue("ListApplicationsResponse.Data.Applications["+ i +"].Cpu"));
-			application.setMem(_ctx.integerValue("ListApplicationsResponse.Data.Applications["+ i +"].Mem"));
 
 			List<TagsItem> tags = new ArrayList<TagsItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListApplicationsResponse.Data.Applications["+ i +"].Tags.Length"); j++) {

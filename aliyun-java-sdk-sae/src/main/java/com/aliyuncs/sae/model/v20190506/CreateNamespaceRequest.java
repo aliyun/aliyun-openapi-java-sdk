@@ -29,6 +29,8 @@ public class CreateNamespaceRequest extends RoaAcsRequest<CreateNamespaceRespons
 
 	private String namespaceDescription;
 
+	private Boolean enableMicroRegistration;
+
 	private String namespaceId;
 
 	private String nameSpaceShortId;
@@ -61,6 +63,17 @@ public class CreateNamespaceRequest extends RoaAcsRequest<CreateNamespaceRespons
 		this.namespaceDescription = namespaceDescription;
 		if(namespaceDescription != null){
 			putQueryParameter("NamespaceDescription", namespaceDescription);
+		}
+	}
+
+	public Boolean getEnableMicroRegistration() {
+		return this.enableMicroRegistration;
+	}
+
+	public void setEnableMicroRegistration(Boolean enableMicroRegistration) {
+		this.enableMicroRegistration = enableMicroRegistration;
+		if(enableMicroRegistration != null){
+			putQueryParameter("EnableMicroRegistration", enableMicroRegistration.toString());
 		}
 	}
 

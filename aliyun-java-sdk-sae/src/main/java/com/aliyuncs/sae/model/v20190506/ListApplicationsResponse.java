@@ -179,10 +179,6 @@ public class ListApplicationsResponse extends AcsResponse {
 
 			private String appDescription;
 
-			private Integer cpu;
-
-			private Integer mem;
-
 			private List<TagsItem> tags;
 
 			public String getAppName() {
@@ -263,22 +259,6 @@ public class ListApplicationsResponse extends AcsResponse {
 
 			public void setAppDescription(String appDescription) {
 				this.appDescription = appDescription;
-			}
-
-			public Integer getCpu() {
-				return this.cpu;
-			}
-
-			public void setCpu(Integer cpu) {
-				this.cpu = cpu;
-			}
-
-			public Integer getMem() {
-				return this.mem;
-			}
-
-			public void setMem(Integer mem) {
-				this.mem = mem;
 			}
 
 			public List<TagsItem> getTags() {

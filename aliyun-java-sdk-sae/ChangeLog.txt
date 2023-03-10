@@ -1,3 +1,6 @@
+2023-03-10 Version: 1.22.14
+- Support Create Namespace Without Micro Service Registration.
+
 2023-03-01 Version: 1.22.13
 - Fix getMetric api.
 
