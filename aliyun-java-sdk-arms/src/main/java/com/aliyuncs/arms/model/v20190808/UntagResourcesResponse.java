@@ -15,22 +15,30 @@
 package com.aliyuncs.arms.model.v20190808;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.arms.transform.v20190808.UninstallPromClusterResponseUnmarshaller;
+import com.aliyuncs.arms.transform.v20190808.UntagResourcesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UninstallPromClusterResponse extends AcsResponse {
-
-	private String data;
+public class UntagResourcesResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String data;
+
+	private String code;
+
 	private String message;
 
-	private Integer code;
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public String getData() {
 		return this.data;
@@ -40,12 +48,12 @@ public class UninstallPromClusterResponse extends AcsResponse {
 		this.data = data;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getMessage() {
@@ -56,17 +64,9 @@ public class UninstallPromClusterResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Integer getCode() {
-		return this.code;
-	}
-
-	public void setCode(Integer code) {
-		this.code = code;
-	}
-
 	@Override
-	public UninstallPromClusterResponse getInstance(UnmarshallerContext context) {
-		return	UninstallPromClusterResponseUnmarshaller.unmarshall(this, context);
+	public UntagResourcesResponse getInstance(UnmarshallerContext context) {
+		return	UntagResourcesResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

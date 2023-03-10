@@ -15,14 +15,14 @@
 package com.aliyuncs.arms.model.v20190808;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.arms.transform.v20190808.UninstallPromClusterResponseUnmarshaller;
+import com.aliyuncs.arms.transform.v20190808.CreatePrometheusInstanceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UninstallPromClusterResponse extends AcsResponse {
+public class CreatePrometheusInstanceResponse extends AcsResponse {
 
 	private String data;
 
@@ -65,8 +65,8 @@ public class UninstallPromClusterResponse extends AcsResponse {
 	}
 
 	@Override
-	public UninstallPromClusterResponse getInstance(UnmarshallerContext context) {
-		return	UninstallPromClusterResponseUnmarshaller.unmarshall(this, context);
+	public CreatePrometheusInstanceResponse getInstance(UnmarshallerContext context) {
+		return	CreatePrometheusInstanceResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
