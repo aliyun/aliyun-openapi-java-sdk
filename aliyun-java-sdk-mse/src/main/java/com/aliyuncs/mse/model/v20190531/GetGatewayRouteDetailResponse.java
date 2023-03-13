@@ -123,6 +123,8 @@ public class GetGatewayRouteDetailResponse extends AcsResponse {
 
 		private Boolean fallback;
 
+		private String policies;
+
 		private List<RouteServicesItem> routeServices;
 
 		private List<FallbackServicesItem> fallbackServices;
@@ -289,6 +291,14 @@ public class GetGatewayRouteDetailResponse extends AcsResponse {
 
 		public void setFallback(Boolean fallback) {
 			this.fallback = fallback;
+		}
+
+		public String getPolicies() {
+			return this.policies;
+		}
+
+		public void setPolicies(String policies) {
+			this.policies = policies;
 		}
 
 		public List<RouteServicesItem> getRouteServices() {

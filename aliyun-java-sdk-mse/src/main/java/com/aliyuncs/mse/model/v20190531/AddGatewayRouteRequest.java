@@ -34,7 +34,11 @@ public class AddGatewayRouteRequest extends RpcAcsRequest<AddGatewayRouteRespons
 
 	private String domainIdListJSON;
 
+	private String policies;
+
 	private Long domainId;
+
+	private String routeType;
 
 	private Long gatewayId;
 
@@ -104,6 +108,17 @@ public class AddGatewayRouteRequest extends RpcAcsRequest<AddGatewayRouteRespons
 		}
 	}
 
+	public String getPolicies() {
+		return this.policies;
+	}
+
+	public void setPolicies(String policies) {
+		this.policies = policies;
+		if(policies != null){
+			putQueryParameter("Policies", policies);
+		}
+	}
+
 	public Long getDomainId() {
 		return this.domainId;
 	}
@@ -112,6 +127,17 @@ public class AddGatewayRouteRequest extends RpcAcsRequest<AddGatewayRouteRespons
 		this.domainId = domainId;
 		if(domainId != null){
 			putQueryParameter("DomainId", domainId.toString());
+		}
+	}
+
+	public String getRouteType() {
+		return this.routeType;
+	}
+
+	public void setRouteType(String routeType) {
+		this.routeType = routeType;
+		if(routeType != null){
+			putQueryParameter("RouteType", routeType);
 		}
 	}
 

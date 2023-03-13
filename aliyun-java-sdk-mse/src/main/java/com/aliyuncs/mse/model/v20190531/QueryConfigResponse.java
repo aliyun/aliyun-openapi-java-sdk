@@ -140,6 +140,8 @@ public class QueryConfigResponse extends AcsResponse {
 
 		private Boolean extendedTypesEnable;
 
+		private Boolean eurekaSupported;
+
 		private NacosRunningEnv nacosRunningEnv;
 
 		public String getMaxClientCnxns() {
@@ -356,6 +358,14 @@ public class QueryConfigResponse extends AcsResponse {
 
 		public void setExtendedTypesEnable(Boolean extendedTypesEnable) {
 			this.extendedTypesEnable = extendedTypesEnable;
+		}
+
+		public Boolean getEurekaSupported() {
+			return this.eurekaSupported;
+		}
+
+		public void setEurekaSupported(Boolean eurekaSupported) {
+			this.eurekaSupported = eurekaSupported;
 		}
 
 		public NacosRunningEnv getNacosRunningEnv() {

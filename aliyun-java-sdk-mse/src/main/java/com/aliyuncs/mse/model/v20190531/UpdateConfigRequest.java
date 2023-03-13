@@ -29,6 +29,8 @@ public class UpdateConfigRequest extends RpcAcsRequest<UpdateConfigResponse> {
 
 	private Boolean configAuthEnabled;
 
+	private Boolean eurekaSupported;
+
 	private String passWord;
 
 	private String snapshotCount;
@@ -98,6 +100,17 @@ public class UpdateConfigRequest extends RpcAcsRequest<UpdateConfigResponse> {
 		this.configAuthEnabled = configAuthEnabled;
 		if(configAuthEnabled != null){
 			putQueryParameter("ConfigAuthEnabled", configAuthEnabled.toString());
+		}
+	}
+
+	public Boolean getEurekaSupported() {
+		return this.eurekaSupported;
+	}
+
+	public void setEurekaSupported(Boolean eurekaSupported) {
+		this.eurekaSupported = eurekaSupported;
+		if(eurekaSupported != null){
+			putQueryParameter("EurekaSupported", eurekaSupported.toString());
 		}
 	}
 

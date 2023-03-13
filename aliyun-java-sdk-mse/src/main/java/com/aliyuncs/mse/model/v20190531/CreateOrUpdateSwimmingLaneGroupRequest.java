@@ -45,6 +45,8 @@ public class CreateOrUpdateSwimmingLaneGroupRequest extends RpcAcsRequest<Create
 
 	private Long id;
 
+	private Boolean recordCanaryDetail;
+
 	private String gmtCreate;
 
 	private String name;
@@ -174,6 +176,17 @@ public class CreateOrUpdateSwimmingLaneGroupRequest extends RpcAcsRequest<Create
 		this.id = id;
 		if(id != null){
 			putQueryParameter("Id", id.toString());
+		}
+	}
+
+	public Boolean getRecordCanaryDetail() {
+		return this.recordCanaryDetail;
+	}
+
+	public void setRecordCanaryDetail(Boolean recordCanaryDetail) {
+		this.recordCanaryDetail = recordCanaryDetail;
+		if(recordCanaryDetail != null){
+			putQueryParameter("RecordCanaryDetail", recordCanaryDetail.toString());
 		}
 	}
 
