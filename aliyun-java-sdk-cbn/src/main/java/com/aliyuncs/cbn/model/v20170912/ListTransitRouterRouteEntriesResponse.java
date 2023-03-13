@@ -99,6 +99,16 @@ public class ListTransitRouterRouteEntriesResponse extends AcsResponse {
 
 		private String tag;
 
+		private String transitRouterRouteEntryNextHopResourceId;
+
+		private String transitRouterRouteEntryNextHopResourceType;
+
+		private String transitRouterRouteEntryOriginResourceType;
+
+		private String transitRouterRouteEntryOriginResourceId;
+
+		private String prefixListId;
+
 		public String getTransitRouterRouteEntryId() {
 			return this.transitRouterRouteEntryId;
 		}
@@ -185,6 +195,46 @@ public class ListTransitRouterRouteEntriesResponse extends AcsResponse {
 
 		public void setTag(String tag) {
 			this.tag = tag;
+		}
+
+		public String getTransitRouterRouteEntryNextHopResourceId() {
+			return this.transitRouterRouteEntryNextHopResourceId;
+		}
+
+		public void setTransitRouterRouteEntryNextHopResourceId(String transitRouterRouteEntryNextHopResourceId) {
+			this.transitRouterRouteEntryNextHopResourceId = transitRouterRouteEntryNextHopResourceId;
+		}
+
+		public String getTransitRouterRouteEntryNextHopResourceType() {
+			return this.transitRouterRouteEntryNextHopResourceType;
+		}
+
+		public void setTransitRouterRouteEntryNextHopResourceType(String transitRouterRouteEntryNextHopResourceType) {
+			this.transitRouterRouteEntryNextHopResourceType = transitRouterRouteEntryNextHopResourceType;
+		}
+
+		public String getTransitRouterRouteEntryOriginResourceType() {
+			return this.transitRouterRouteEntryOriginResourceType;
+		}
+
+		public void setTransitRouterRouteEntryOriginResourceType(String transitRouterRouteEntryOriginResourceType) {
+			this.transitRouterRouteEntryOriginResourceType = transitRouterRouteEntryOriginResourceType;
+		}
+
+		public String getTransitRouterRouteEntryOriginResourceId() {
+			return this.transitRouterRouteEntryOriginResourceId;
+		}
+
+		public void setTransitRouterRouteEntryOriginResourceId(String transitRouterRouteEntryOriginResourceId) {
+			this.transitRouterRouteEntryOriginResourceId = transitRouterRouteEntryOriginResourceId;
+		}
+
+		public String getPrefixListId() {
+			return this.prefixListId;
+		}
+
+		public void setPrefixListId(String prefixListId) {
+			this.prefixListId = prefixListId;
 		}
 	}
 

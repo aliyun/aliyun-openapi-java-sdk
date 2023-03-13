@@ -15,6 +15,7 @@
 package com.aliyuncs.cbn.model.v20170912;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cbn.Endpoint;
 
@@ -22,18 +23,16 @@ import com.aliyuncs.cbn.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeCenChildInstanceRouteEntriesRequest extends RpcAcsRequest<DescribeCenChildInstanceRouteEntriesResponse> {
+public class ListCenChildInstanceRouteEntriesToAttachmentRequest extends RpcAcsRequest<ListCenChildInstanceRouteEntriesToAttachmentResponse> {
 	   
 
 	private Long resourceOwnerId;
 
 	private String cenId;
 
-	private Integer pageNumber;
+	private String nextToken;
 
-	private Integer pageSize;
-
-	private String childInstanceRegionId;
+	private List<RouteFilter> routeFilters;
 
 	private String resourceOwnerAccount;
 
@@ -41,15 +40,15 @@ public class DescribeCenChildInstanceRouteEntriesRequest extends RpcAcsRequest<D
 
 	private Long ownerId;
 
-	private String childInstanceType;
+	private String transitRouterAttachmentId;
 
-	private String childInstanceId;
+	private String serviceType;
+
+	private Integer maxResults;
 
 	private String childInstanceRouteTableId;
-
-	private String status;
-	public DescribeCenChildInstanceRouteEntriesRequest() {
-		super("Cbn", "2017-09-12", "DescribeCenChildInstanceRouteEntries");
+	public ListCenChildInstanceRouteEntriesToAttachmentRequest() {
+		super("Cbn", "2017-09-12", "ListCenChildInstanceRouteEntriesToAttachment");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -79,37 +78,33 @@ public class DescribeCenChildInstanceRouteEntriesRequest extends RpcAcsRequest<D
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getNextToken() {
+		return this.nextToken;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public List<RouteFilter> getRouteFilters() {
+		return this.routeFilters;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getChildInstanceRegionId() {
-		return this.childInstanceRegionId;
-	}
-
-	public void setChildInstanceRegionId(String childInstanceRegionId) {
-		this.childInstanceRegionId = childInstanceRegionId;
-		if(childInstanceRegionId != null){
-			putQueryParameter("ChildInstanceRegionId", childInstanceRegionId);
-		}
+	public void setRouteFilters(List<RouteFilter> routeFilters) {
+		this.routeFilters = routeFilters;	
+		if (routeFilters != null) {
+			for (int depth1 = 0; depth1 < routeFilters.size(); depth1++) {
+				if (routeFilters.get(depth1).getValues() != null) {
+					for (int i = 0; i < routeFilters.get(depth1).getValues().size(); i++) {
+						putQueryParameter("RouteFilter." + (depth1 + 1) + ".Value." + (i + 1) , routeFilters.get(depth1).getValues().get(i));
+					}
+				}
+				putQueryParameter("RouteFilter." + (depth1 + 1) + ".Key" , routeFilters.get(depth1).getKey());
+			}
+		}	
 	}
 
 	public String getResourceOwnerAccount() {
@@ -145,25 +140,36 @@ public class DescribeCenChildInstanceRouteEntriesRequest extends RpcAcsRequest<D
 		}
 	}
 
-	public String getChildInstanceType() {
-		return this.childInstanceType;
+	public String getTransitRouterAttachmentId() {
+		return this.transitRouterAttachmentId;
 	}
 
-	public void setChildInstanceType(String childInstanceType) {
-		this.childInstanceType = childInstanceType;
-		if(childInstanceType != null){
-			putQueryParameter("ChildInstanceType", childInstanceType);
+	public void setTransitRouterAttachmentId(String transitRouterAttachmentId) {
+		this.transitRouterAttachmentId = transitRouterAttachmentId;
+		if(transitRouterAttachmentId != null){
+			putQueryParameter("TransitRouterAttachmentId", transitRouterAttachmentId);
 		}
 	}
 
-	public String getChildInstanceId() {
-		return this.childInstanceId;
+	public String getServiceType() {
+		return this.serviceType;
 	}
 
-	public void setChildInstanceId(String childInstanceId) {
-		this.childInstanceId = childInstanceId;
-		if(childInstanceId != null){
-			putQueryParameter("ChildInstanceId", childInstanceId);
+	public void setServiceType(String serviceType) {
+		this.serviceType = serviceType;
+		if(serviceType != null){
+			putQueryParameter("ServiceType", serviceType);
+		}
+	}
+
+	public Integer getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
+		if(maxResults != null){
+			putQueryParameter("MaxResults", maxResults.toString());
 		}
 	}
 
@@ -178,20 +184,32 @@ public class DescribeCenChildInstanceRouteEntriesRequest extends RpcAcsRequest<D
 		}
 	}
 
-	public String getStatus() {
-		return this.status;
-	}
+	public static class RouteFilter {
 
-	public void setStatus(String status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status);
+		private List<String> values;
+
+		private String key;
+
+		public List<String> getValues() {
+			return this.values;
+		}
+
+		public void setValues(List<String> values) {
+			this.values = values;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 
 	@Override
-	public Class<DescribeCenChildInstanceRouteEntriesResponse> getResponseClass() {
-		return DescribeCenChildInstanceRouteEntriesResponse.class;
+	public Class<ListCenChildInstanceRouteEntriesToAttachmentResponse> getResponseClass() {
+		return ListCenChildInstanceRouteEntriesToAttachmentResponse.class;
 	}
 
 }

@@ -83,6 +83,8 @@ public class ListGrantVSwitchesToCenResponse extends AcsResponse {
 
 		private String vSwitchId;
 
+		private String vSwitchName;
+
 		public String getVpcId() {
 			return this.vpcId;
 		}
@@ -105,6 +107,14 @@ public class ListGrantVSwitchesToCenResponse extends AcsResponse {
 
 		public void setVSwitchId(String vSwitchId) {
 			this.vSwitchId = vSwitchId;
+		}
+
+		public String getVSwitchName() {
+			return this.vSwitchName;
+		}
+
+		public void setVSwitchName(String vSwitchName) {
+			this.vSwitchName = vSwitchName;
 		}
 	}
 

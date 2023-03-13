@@ -52,6 +52,7 @@ public class ListTransitRouterPeerAttachmentsResponseUnmarshaller {
 			transitRouterAttachment.setPeerTransitRouterOwnerId(_ctx.longValue("ListTransitRouterPeerAttachmentsResponse.TransitRouterAttachments["+ i +"].PeerTransitRouterOwnerId"));
 			transitRouterAttachment.setAutoPublishRouteEnabled(_ctx.booleanValue("ListTransitRouterPeerAttachmentsResponse.TransitRouterAttachments["+ i +"].AutoPublishRouteEnabled"));
 			transitRouterAttachment.setTransitRouterAttachmentName(_ctx.stringValue("ListTransitRouterPeerAttachmentsResponse.TransitRouterAttachments["+ i +"].TransitRouterAttachmentName"));
+			transitRouterAttachment.setCenId(_ctx.stringValue("ListTransitRouterPeerAttachmentsResponse.TransitRouterAttachments["+ i +"].CenId"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("ListTransitRouterPeerAttachmentsResponse.TransitRouterAttachments["+ i +"].Tags.Length"); j++) {

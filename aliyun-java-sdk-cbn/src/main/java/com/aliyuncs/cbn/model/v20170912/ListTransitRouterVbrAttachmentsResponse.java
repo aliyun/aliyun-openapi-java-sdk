@@ -99,6 +99,8 @@ public class ListTransitRouterVbrAttachmentsResponse extends AcsResponse {
 
 		private String transitRouterAttachmentName;
 
+		private String cenId;
+
 		private List<Tag> tags;
 
 		public String getCreationTime() {
@@ -187,6 +189,14 @@ public class ListTransitRouterVbrAttachmentsResponse extends AcsResponse {
 
 		public void setTransitRouterAttachmentName(String transitRouterAttachmentName) {
 			this.transitRouterAttachmentName = transitRouterAttachmentName;
+		}
+
+		public String getCenId() {
+			return this.cenId;
+		}
+
+		public void setCenId(String cenId) {
+			this.cenId = cenId;
 		}
 
 		public List<Tag> getTags() {

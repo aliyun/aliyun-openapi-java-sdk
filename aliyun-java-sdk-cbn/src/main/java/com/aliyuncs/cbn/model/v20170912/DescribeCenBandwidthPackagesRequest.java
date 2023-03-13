@@ -34,7 +34,11 @@ public class DescribeCenBandwidthPackagesRequest extends RpcAcsRequest<DescribeC
 
 	private Boolean isOrKey;
 
+	private String resourceGroupId;
+
 	private Integer pageSize;
+
+	private List<Tag> tags;
 
 	private String resourceOwnerAccount;
 
@@ -96,6 +100,17 @@ public class DescribeCenBandwidthPackagesRequest extends RpcAcsRequest<DescribeC
 		}
 	}
 
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -105,6 +120,20 @@ public class DescribeCenBandwidthPackagesRequest extends RpcAcsRequest<DescribeC
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
 		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
 	}
 
 	public String getResourceOwnerAccount() {
@@ -156,6 +185,29 @@ public class DescribeCenBandwidthPackagesRequest extends RpcAcsRequest<DescribeC
 				putQueryParameter("Filter." + (depth1 + 1) + ".Key" , filters.get(depth1).getKey());
 			}
 		}	
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
 	}
 
 	public static class Filter {

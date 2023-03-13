@@ -105,6 +105,8 @@ public class ListTransitRouterVpcAttachmentsResponse extends AcsResponse {
 
 		private String orderType;
 
+		private String cenId;
+
 		private List<ZoneMapping> zoneMappings;
 
 		private List<Tag> tags;
@@ -219,6 +221,14 @@ public class ListTransitRouterVpcAttachmentsResponse extends AcsResponse {
 
 		public void setOrderType(String orderType) {
 			this.orderType = orderType;
+		}
+
+		public String getCenId() {
+			return this.cenId;
+		}
+
+		public void setCenId(String cenId) {
+			this.cenId = cenId;
 		}
 
 		public List<ZoneMapping> getZoneMappings() {

@@ -29,6 +29,8 @@ public class ListTransitRouterPrefixListAssociationRequest extends RpcAcsRequest
 
 	private Integer pageNumber;
 
+	private String nextHopInstanceId;
+
 	private String prefixListId;
 
 	private Integer pageSize;
@@ -48,6 +50,8 @@ public class ListTransitRouterPrefixListAssociationRequest extends RpcAcsRequest
 	private String transitRouterTableId;
 
 	private String nextHop;
+
+	private String status;
 	public ListTransitRouterPrefixListAssociationRequest() {
 		super("Cbn", "2017-09-12", "ListTransitRouterPrefixListAssociation");
 		setMethod(MethodType.POST);
@@ -76,6 +80,17 @@ public class ListTransitRouterPrefixListAssociationRequest extends RpcAcsRequest
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getNextHopInstanceId() {
+		return this.nextHopInstanceId;
+	}
+
+	public void setNextHopInstanceId(String nextHopInstanceId) {
+		this.nextHopInstanceId = nextHopInstanceId;
+		if(nextHopInstanceId != null){
+			putQueryParameter("NextHopInstanceId", nextHopInstanceId);
 		}
 	}
 
@@ -186,6 +201,17 @@ public class ListTransitRouterPrefixListAssociationRequest extends RpcAcsRequest
 		this.nextHop = nextHop;
 		if(nextHop != null){
 			putQueryParameter("NextHop", nextHop);
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
 		}
 	}
 

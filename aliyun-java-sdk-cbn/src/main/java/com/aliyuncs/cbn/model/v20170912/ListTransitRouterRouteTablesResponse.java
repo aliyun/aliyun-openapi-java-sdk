@@ -91,6 +91,8 @@ public class ListTransitRouterRouteTablesResponse extends AcsResponse {
 
 		private String regionId;
 
+		private String transitRouterId;
+
 		private List<Tag> tags;
 
 		private RouteTableOptions routeTableOptions;
@@ -149,6 +151,14 @@ public class ListTransitRouterRouteTablesResponse extends AcsResponse {
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
+		}
+
+		public String getTransitRouterId() {
+			return this.transitRouterId;
+		}
+
+		public void setTransitRouterId(String transitRouterId) {
+			this.transitRouterId = transitRouterId;
 		}
 
 		public List<Tag> getTags() {

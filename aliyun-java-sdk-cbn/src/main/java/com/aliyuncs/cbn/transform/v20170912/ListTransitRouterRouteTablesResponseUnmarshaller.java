@@ -43,6 +43,7 @@ public class ListTransitRouterRouteTablesResponseUnmarshaller {
 			transitRouterRouteTable.setTransitRouterRouteTableName(_ctx.stringValue("ListTransitRouterRouteTablesResponse.TransitRouterRouteTables["+ i +"].TransitRouterRouteTableName"));
 			transitRouterRouteTable.setTransitRouterRouteTableDescription(_ctx.stringValue("ListTransitRouterRouteTablesResponse.TransitRouterRouteTables["+ i +"].TransitRouterRouteTableDescription"));
 			transitRouterRouteTable.setRegionId(_ctx.stringValue("ListTransitRouterRouteTablesResponse.TransitRouterRouteTables["+ i +"].RegionId"));
+			transitRouterRouteTable.setTransitRouterId(_ctx.stringValue("ListTransitRouterRouteTablesResponse.TransitRouterRouteTables["+ i +"].TransitRouterId"));
 
 			RouteTableOptions routeTableOptions = new RouteTableOptions();
 			routeTableOptions.setMultiRegionECMP(_ctx.stringValue("ListTransitRouterRouteTablesResponse.TransitRouterRouteTables["+ i +"].RouteTableOptions.MultiRegionECMP"));

@@ -26,7 +26,13 @@ import com.aliyuncs.cbn.Endpoint;
 public class ListTransitRouterRouteEntriesRequest extends RpcAcsRequest<ListTransitRouterRouteEntriesResponse> {
 	   
 
+	private String transitRouterRouteEntryType;
+
 	private Long resourceOwnerId;
+
+	private String transitRouterRouteEntryNextHopResourceType;
+
+	private String transitRouterRouteEntryNextHopType;
 
 	private String transitRouterRouteEntryDestinationCidrBlock;
 
@@ -34,7 +40,13 @@ public class ListTransitRouterRouteEntriesRequest extends RpcAcsRequest<ListTran
 
 	private String nextToken;
 
+	private String prefixListId;
+
+	private String transitRouterRouteEntryNextHopId;
+
 	private String transitRouterRouteEntryStatus;
+
+	private List<RouteFilter> routeFilters;
 
 	private String resourceOwnerAccount;
 
@@ -46,7 +58,13 @@ public class ListTransitRouterRouteEntriesRequest extends RpcAcsRequest<ListTran
 
 	private Long ownerId;
 
+	private String transitRouterRouteEntryOriginResourceType;
+
 	private Integer maxResults;
+
+	private String transitRouterRouteEntryOriginResourceId;
+
+	private String transitRouterRouteEntryNextHopResourceId;
 	public ListTransitRouterRouteEntriesRequest() {
 		super("Cbn", "2017-09-12", "ListTransitRouterRouteEntries");
 		setMethod(MethodType.POST);
@@ -54,6 +72,17 @@ public class ListTransitRouterRouteEntriesRequest extends RpcAcsRequest<ListTran
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getTransitRouterRouteEntryType() {
+		return this.transitRouterRouteEntryType;
+	}
+
+	public void setTransitRouterRouteEntryType(String transitRouterRouteEntryType) {
+		this.transitRouterRouteEntryType = transitRouterRouteEntryType;
+		if(transitRouterRouteEntryType != null){
+			putQueryParameter("TransitRouterRouteEntryType", transitRouterRouteEntryType);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -64,6 +93,28 @@ public class ListTransitRouterRouteEntriesRequest extends RpcAcsRequest<ListTran
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getTransitRouterRouteEntryNextHopResourceType() {
+		return this.transitRouterRouteEntryNextHopResourceType;
+	}
+
+	public void setTransitRouterRouteEntryNextHopResourceType(String transitRouterRouteEntryNextHopResourceType) {
+		this.transitRouterRouteEntryNextHopResourceType = transitRouterRouteEntryNextHopResourceType;
+		if(transitRouterRouteEntryNextHopResourceType != null){
+			putQueryParameter("TransitRouterRouteEntryNextHopResourceType", transitRouterRouteEntryNextHopResourceType);
+		}
+	}
+
+	public String getTransitRouterRouteEntryNextHopType() {
+		return this.transitRouterRouteEntryNextHopType;
+	}
+
+	public void setTransitRouterRouteEntryNextHopType(String transitRouterRouteEntryNextHopType) {
+		this.transitRouterRouteEntryNextHopType = transitRouterRouteEntryNextHopType;
+		if(transitRouterRouteEntryNextHopType != null){
+			putQueryParameter("TransitRouterRouteEntryNextHopType", transitRouterRouteEntryNextHopType);
 		}
 	}
 
@@ -100,6 +151,28 @@ public class ListTransitRouterRouteEntriesRequest extends RpcAcsRequest<ListTran
 		}
 	}
 
+	public String getPrefixListId() {
+		return this.prefixListId;
+	}
+
+	public void setPrefixListId(String prefixListId) {
+		this.prefixListId = prefixListId;
+		if(prefixListId != null){
+			putQueryParameter("PrefixListId", prefixListId);
+		}
+	}
+
+	public String getTransitRouterRouteEntryNextHopId() {
+		return this.transitRouterRouteEntryNextHopId;
+	}
+
+	public void setTransitRouterRouteEntryNextHopId(String transitRouterRouteEntryNextHopId) {
+		this.transitRouterRouteEntryNextHopId = transitRouterRouteEntryNextHopId;
+		if(transitRouterRouteEntryNextHopId != null){
+			putQueryParameter("TransitRouterRouteEntryNextHopId", transitRouterRouteEntryNextHopId);
+		}
+	}
+
 	public String getTransitRouterRouteEntryStatus() {
 		return this.transitRouterRouteEntryStatus;
 	}
@@ -109,6 +182,24 @@ public class ListTransitRouterRouteEntriesRequest extends RpcAcsRequest<ListTran
 		if(transitRouterRouteEntryStatus != null){
 			putQueryParameter("TransitRouterRouteEntryStatus", transitRouterRouteEntryStatus);
 		}
+	}
+
+	public List<RouteFilter> getRouteFilters() {
+		return this.routeFilters;
+	}
+
+	public void setRouteFilters(List<RouteFilter> routeFilters) {
+		this.routeFilters = routeFilters;	
+		if (routeFilters != null) {
+			for (int depth1 = 0; depth1 < routeFilters.size(); depth1++) {
+				if (routeFilters.get(depth1).getValues() != null) {
+					for (int i = 0; i < routeFilters.get(depth1).getValues().size(); i++) {
+						putQueryParameter("RouteFilter." + (depth1 + 1) + ".Value." + (i + 1) , routeFilters.get(depth1).getValues().get(i));
+					}
+				}
+				putQueryParameter("RouteFilter." + (depth1 + 1) + ".Key" , routeFilters.get(depth1).getKey());
+			}
+		}	
 	}
 
 	public String getResourceOwnerAccount() {
@@ -170,6 +261,17 @@ public class ListTransitRouterRouteEntriesRequest extends RpcAcsRequest<ListTran
 		}
 	}
 
+	public String getTransitRouterRouteEntryOriginResourceType() {
+		return this.transitRouterRouteEntryOriginResourceType;
+	}
+
+	public void setTransitRouterRouteEntryOriginResourceType(String transitRouterRouteEntryOriginResourceType) {
+		this.transitRouterRouteEntryOriginResourceType = transitRouterRouteEntryOriginResourceType;
+		if(transitRouterRouteEntryOriginResourceType != null){
+			putQueryParameter("TransitRouterRouteEntryOriginResourceType", transitRouterRouteEntryOriginResourceType);
+		}
+	}
+
 	public Integer getMaxResults() {
 		return this.maxResults;
 	}
@@ -178,6 +280,51 @@ public class ListTransitRouterRouteEntriesRequest extends RpcAcsRequest<ListTran
 		this.maxResults = maxResults;
 		if(maxResults != null){
 			putQueryParameter("MaxResults", maxResults.toString());
+		}
+	}
+
+	public String getTransitRouterRouteEntryOriginResourceId() {
+		return this.transitRouterRouteEntryOriginResourceId;
+	}
+
+	public void setTransitRouterRouteEntryOriginResourceId(String transitRouterRouteEntryOriginResourceId) {
+		this.transitRouterRouteEntryOriginResourceId = transitRouterRouteEntryOriginResourceId;
+		if(transitRouterRouteEntryOriginResourceId != null){
+			putQueryParameter("TransitRouterRouteEntryOriginResourceId", transitRouterRouteEntryOriginResourceId);
+		}
+	}
+
+	public String getTransitRouterRouteEntryNextHopResourceId() {
+		return this.transitRouterRouteEntryNextHopResourceId;
+	}
+
+	public void setTransitRouterRouteEntryNextHopResourceId(String transitRouterRouteEntryNextHopResourceId) {
+		this.transitRouterRouteEntryNextHopResourceId = transitRouterRouteEntryNextHopResourceId;
+		if(transitRouterRouteEntryNextHopResourceId != null){
+			putQueryParameter("TransitRouterRouteEntryNextHopResourceId", transitRouterRouteEntryNextHopResourceId);
+		}
+	}
+
+	public static class RouteFilter {
+
+		private List<String> values;
+
+		private String key;
+
+		public List<String> getValues() {
+			return this.values;
+		}
+
+		public void setValues(List<String> values) {
+			this.values = values;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

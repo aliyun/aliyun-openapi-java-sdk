@@ -101,6 +101,8 @@ public class ListTransitRouterVpnAttachmentsResponse extends AcsResponse {
 
 		private String chargeType;
 
+		private String cenId;
+
 		private List<ZoneMapping> zones;
 
 		private List<Tag> tags;
@@ -199,6 +201,14 @@ public class ListTransitRouterVpnAttachmentsResponse extends AcsResponse {
 
 		public void setChargeType(String chargeType) {
 			this.chargeType = chargeType;
+		}
+
+		public String getCenId() {
+			return this.cenId;
+		}
+
+		public void setCenId(String cenId) {
+			this.cenId = cenId;
 		}
 
 		public List<ZoneMapping> getZones() {
