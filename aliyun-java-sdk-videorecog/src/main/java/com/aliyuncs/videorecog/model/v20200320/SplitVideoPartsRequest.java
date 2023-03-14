@@ -27,6 +27,10 @@ public class SplitVideoPartsRequest extends RpcAcsRequest<SplitVideoPartsRespons
 
 	private String template;
 
+	private Integer minTime;
+
+	private Integer maxTime;
+
 	private String videoUrl;
 	public SplitVideoPartsRequest() {
 		super("videorecog", "2020-03-20", "SplitVideoParts", "videorecog");
@@ -45,6 +49,28 @@ public class SplitVideoPartsRequest extends RpcAcsRequest<SplitVideoPartsRespons
 		this.template = template;
 		if(template != null){
 			putBodyParameter("Template", template);
+		}
+	}
+
+	public Integer getMinTime() {
+		return this.minTime;
+	}
+
+	public void setMinTime(Integer minTime) {
+		this.minTime = minTime;
+		if(minTime != null){
+			putBodyParameter("MinTime", minTime.toString());
+		}
+	}
+
+	public Integer getMaxTime() {
+		return this.maxTime;
+	}
+
+	public void setMaxTime(Integer maxTime) {
+		this.maxTime = maxTime;
+		if(maxTime != null){
+			putBodyParameter("MaxTime", maxTime.toString());
 		}
 	}
 
