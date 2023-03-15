@@ -1,3 +1,6 @@
+2023-03-15 Version: 1.8.27
+- Support hot standby cluster and proxy for SENormal.
+
 2023-03-09 Version: 1.8.26
 - Support modify dbcluster storage space.
 

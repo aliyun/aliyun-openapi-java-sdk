@@ -30,6 +30,10 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 
 	private String dBClusterDescription;
 
+	private String proxyClass;
+
+	private String proxyType;
+
 	private String scaleMax;
 
 	private String storageType;
@@ -90,6 +94,8 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 
 	private String usedTime;
 
+	private Integer dBNodeNum;
+
 	private String vPCId;
 
 	private String scaleRoNumMin;
@@ -133,6 +139,28 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		this.dBClusterDescription = dBClusterDescription;
 		if(dBClusterDescription != null){
 			putQueryParameter("DBClusterDescription", dBClusterDescription);
+		}
+	}
+
+	public String getProxyClass() {
+		return this.proxyClass;
+	}
+
+	public void setProxyClass(String proxyClass) {
+		this.proxyClass = proxyClass;
+		if(proxyClass != null){
+			putQueryParameter("ProxyClass", proxyClass);
+		}
+	}
+
+	public String getProxyType() {
+		return this.proxyType;
+	}
+
+	public void setProxyType(String proxyType) {
+		this.proxyType = proxyType;
+		if(proxyType != null){
+			putQueryParameter("ProxyType", proxyType);
 		}
 	}
 
@@ -466,6 +494,17 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		this.usedTime = usedTime;
 		if(usedTime != null){
 			putQueryParameter("UsedTime", usedTime);
+		}
+	}
+
+	public Integer getDBNodeNum() {
+		return this.dBNodeNum;
+	}
+
+	public void setDBNodeNum(Integer dBNodeNum) {
+		this.dBNodeNum = dBNodeNum;
+		if(dBNodeNum != null){
+			putQueryParameter("DBNodeNum", dBNodeNum.toString());
 		}
 	}
 
