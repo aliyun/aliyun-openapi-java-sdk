@@ -45,6 +45,8 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 
 	private Boolean trim;
 
+	private String androidMessageVivoCategory;
+
 	private String androidNotifyType;
 
 	private String androidPopupTitle;
@@ -93,6 +95,8 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 
 	private String iOSNotificationThreadId;
 
+	private Integer androidHuaweiTargetUserType;
+
 	private String androidMusic;
 
 	private String iOSNotificationCollapseId;
@@ -120,6 +124,8 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 	private Integer androidRenderStyle;
 
 	private String iOSExtParameters;
+
+	private String androidHuaweiReceiptId;
 
 	private String androidNotificationHonorChannel;
 
@@ -274,6 +280,17 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 		this.trim = trim;
 		if(trim != null){
 			putQueryParameter("Trim", trim.toString());
+		}
+	}
+
+	public String getAndroidMessageVivoCategory() {
+		return this.androidMessageVivoCategory;
+	}
+
+	public void setAndroidMessageVivoCategory(String androidMessageVivoCategory) {
+		this.androidMessageVivoCategory = androidMessageVivoCategory;
+		if(androidMessageVivoCategory != null){
+			putQueryParameter("AndroidMessageVivoCategory", androidMessageVivoCategory);
 		}
 	}
 
@@ -541,6 +558,17 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 		}
 	}
 
+	public Integer getAndroidHuaweiTargetUserType() {
+		return this.androidHuaweiTargetUserType;
+	}
+
+	public void setAndroidHuaweiTargetUserType(Integer androidHuaweiTargetUserType) {
+		this.androidHuaweiTargetUserType = androidHuaweiTargetUserType;
+		if(androidHuaweiTargetUserType != null){
+			putQueryParameter("AndroidHuaweiTargetUserType", androidHuaweiTargetUserType.toString());
+		}
+	}
+
 	public String getAndroidMusic() {
 		return this.androidMusic;
 	}
@@ -692,6 +720,17 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 		this.iOSExtParameters = iOSExtParameters;
 		if(iOSExtParameters != null){
 			putQueryParameter("iOSExtParameters", iOSExtParameters);
+		}
+	}
+
+	public String getAndroidHuaweiReceiptId() {
+		return this.androidHuaweiReceiptId;
+	}
+
+	public void setAndroidHuaweiReceiptId(String androidHuaweiReceiptId) {
+		this.androidHuaweiReceiptId = androidHuaweiReceiptId;
+		if(androidHuaweiReceiptId != null){
+			putQueryParameter("AndroidHuaweiReceiptId", androidHuaweiReceiptId);
 		}
 	}
 
