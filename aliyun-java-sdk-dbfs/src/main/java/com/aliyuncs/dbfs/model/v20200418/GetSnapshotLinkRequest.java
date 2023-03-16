@@ -27,7 +27,7 @@ public class GetSnapshotLinkRequest extends RpcAcsRequest<GetSnapshotLinkRespons
 
 	private String linkId;
 	public GetSnapshotLinkRequest() {
-		super("DBFS", "2020-04-18", "GetSnapshotLink");
+		super("DBFS", "2020-04-18", "GetSnapshotLink", "dbfs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

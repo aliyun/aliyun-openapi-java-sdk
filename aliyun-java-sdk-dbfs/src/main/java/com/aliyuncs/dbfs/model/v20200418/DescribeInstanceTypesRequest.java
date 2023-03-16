@@ -25,7 +25,7 @@ import com.aliyuncs.dbfs.Endpoint;
 public class DescribeInstanceTypesRequest extends RpcAcsRequest<DescribeInstanceTypesResponse> {
 	   
 	public DescribeInstanceTypesRequest() {
-		super("DBFS", "2020-04-18", "DescribeInstanceTypes");
+		super("DBFS", "2020-04-18", "DescribeInstanceTypes", "dbfs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

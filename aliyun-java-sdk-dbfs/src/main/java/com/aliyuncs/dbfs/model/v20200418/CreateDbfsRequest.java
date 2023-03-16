@@ -55,7 +55,7 @@ public class CreateDbfsRequest extends RpcAcsRequest<CreateDbfsResponse> {
 
 	private String kMSKeyId;
 	public CreateDbfsRequest() {
-		super("DBFS", "2020-04-18", "CreateDbfs");
+		super("DBFS", "2020-04-18", "CreateDbfs", "dbfs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

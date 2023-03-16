@@ -69,6 +69,8 @@ public class ListDbfsAttachableEcsInstancesResponse extends AcsResponse {
 
 		private String zoneId;
 
+		private String imageId;
+
 		public String getValue() {
 			return this.value;
 		}
@@ -115,6 +117,14 @@ public class ListDbfsAttachableEcsInstancesResponse extends AcsResponse {
 
 		public void setZoneId(String zoneId) {
 			this.zoneId = zoneId;
+		}
+
+		public String getImageId() {
+			return this.imageId;
+		}
+
+		public void setImageId(String imageId) {
+			this.imageId = imageId;
 		}
 	}
 

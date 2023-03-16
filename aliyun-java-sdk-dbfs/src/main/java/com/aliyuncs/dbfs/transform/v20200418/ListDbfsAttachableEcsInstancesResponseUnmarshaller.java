@@ -38,6 +38,7 @@ public class ListDbfsAttachableEcsInstancesResponseUnmarshaller {
 			labelInfo.setOSName(_ctx.stringValue("ListDbfsAttachableEcsInstancesResponse.EcsLabelInfo["+ i +"].OSName"));
 			labelInfo.setStatus(_ctx.stringValue("ListDbfsAttachableEcsInstancesResponse.EcsLabelInfo["+ i +"].Status"));
 			labelInfo.setZoneId(_ctx.stringValue("ListDbfsAttachableEcsInstancesResponse.EcsLabelInfo["+ i +"].ZoneId"));
+			labelInfo.setImageId(_ctx.stringValue("ListDbfsAttachableEcsInstancesResponse.EcsLabelInfo["+ i +"].ImageId"));
 
 			ecsLabelInfo.add(labelInfo);
 		}

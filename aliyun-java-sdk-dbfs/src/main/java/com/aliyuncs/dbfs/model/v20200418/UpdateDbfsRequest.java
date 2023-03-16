@@ -33,7 +33,7 @@ public class UpdateDbfsRequest extends RpcAcsRequest<UpdateDbfsResponse> {
 
 	private String advancedFeatures;
 	public UpdateDbfsRequest() {
-		super("DBFS", "2020-04-18", "UpdateDbfs");
+		super("DBFS", "2020-04-18", "UpdateDbfs", "dbfs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

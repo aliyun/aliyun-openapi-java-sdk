@@ -33,7 +33,7 @@ public class ListDbfsAttachableEcsInstancesRequest extends RpcAcsRequest<ListDbf
 
 	private Integer pageNumber;
 	public ListDbfsAttachableEcsInstancesRequest() {
-		super("DBFS", "2020-04-18", "ListDbfsAttachableEcsInstances");
+		super("DBFS", "2020-04-18", "ListDbfsAttachableEcsInstances", "dbfs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

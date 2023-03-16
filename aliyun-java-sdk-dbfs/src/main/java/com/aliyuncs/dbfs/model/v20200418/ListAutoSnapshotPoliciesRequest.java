@@ -33,7 +33,7 @@ public class ListAutoSnapshotPoliciesRequest extends RpcAcsRequest<ListAutoSnaps
 
 	private Integer pageSize;
 	public ListAutoSnapshotPoliciesRequest() {
-		super("DBFS", "2020-04-18", "ListAutoSnapshotPolicies");
+		super("DBFS", "2020-04-18", "ListAutoSnapshotPolicies", "dbfs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

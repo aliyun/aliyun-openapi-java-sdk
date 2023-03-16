@@ -31,7 +31,7 @@ public class ModifySnapshotAttributeRequest extends RpcAcsRequest<ModifySnapshot
 
 	private String snapshotName;
 	public ModifySnapshotAttributeRequest() {
-		super("DBFS", "2020-04-18", "ModifySnapshotAttribute");
+		super("DBFS", "2020-04-18", "ModifySnapshotAttribute", "dbfs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

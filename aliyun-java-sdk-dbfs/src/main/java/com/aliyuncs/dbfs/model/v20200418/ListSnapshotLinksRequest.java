@@ -31,9 +31,13 @@ public class ListSnapshotLinksRequest extends RpcAcsRequest<ListSnapshotLinksRes
 
 	private String filterKey;
 
+	private String linkIds;
+
 	private Integer pageSize;
+
+	private String fsIds;
 	public ListSnapshotLinksRequest() {
-		super("DBFS", "2020-04-18", "ListSnapshotLinks");
+		super("DBFS", "2020-04-18", "ListSnapshotLinks", "dbfs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -74,6 +78,17 @@ public class ListSnapshotLinksRequest extends RpcAcsRequest<ListSnapshotLinksRes
 		}
 	}
 
+	public String getLinkIds() {
+		return this.linkIds;
+	}
+
+	public void setLinkIds(String linkIds) {
+		this.linkIds = linkIds;
+		if(linkIds != null){
+			putQueryParameter("LinkIds", linkIds);
+		}
+	}
+
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -82,6 +97,17 @@ public class ListSnapshotLinksRequest extends RpcAcsRequest<ListSnapshotLinksRes
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getFsIds() {
+		return this.fsIds;
+	}
+
+	public void setFsIds(String fsIds) {
+		this.fsIds = fsIds;
+		if(fsIds != null){
+			putQueryParameter("FsIds", fsIds);
 		}
 	}
 

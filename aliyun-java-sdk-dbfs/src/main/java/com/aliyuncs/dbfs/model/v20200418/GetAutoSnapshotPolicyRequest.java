@@ -27,7 +27,7 @@ public class GetAutoSnapshotPolicyRequest extends RpcAcsRequest<GetAutoSnapshotP
 
 	private String policyId;
 	public GetAutoSnapshotPolicyRequest() {
-		super("DBFS", "2020-04-18", "GetAutoSnapshotPolicy");
+		super("DBFS", "2020-04-18", "GetAutoSnapshotPolicy", "dbfs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
