@@ -36,7 +36,7 @@ public class DescribeTransitRouteTableAggregationResponseUnmarshaller {
 			DataItem dataItem = new DataItem();
 			dataItem.setName(_ctx.stringValue("DescribeTransitRouteTableAggregationResponse.Data["+ i +"].Name"));
 			dataItem.setTransitRouteTableAggregationCidr(_ctx.stringValue("DescribeTransitRouteTableAggregationResponse.Data["+ i +"].TransitRouteTableAggregationCidr"));
-			dataItem.setScop(_ctx.stringValue("DescribeTransitRouteTableAggregationResponse.Data["+ i +"].Scop"));
+			dataItem.setScope(_ctx.stringValue("DescribeTransitRouteTableAggregationResponse.Data["+ i +"].Scope"));
 			dataItem.setNexthop(_ctx.stringValue("DescribeTransitRouteTableAggregationResponse.Data["+ i +"].Nexthop"));
 			dataItem.setRouteType(_ctx.stringValue("DescribeTransitRouteTableAggregationResponse.Data["+ i +"].RouteType"));
 			dataItem.setDescription(_ctx.stringValue("DescribeTransitRouteTableAggregationResponse.Data["+ i +"].Description"));

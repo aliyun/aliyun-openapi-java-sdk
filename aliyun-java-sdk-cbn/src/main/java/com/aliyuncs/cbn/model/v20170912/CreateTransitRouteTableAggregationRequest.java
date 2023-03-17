@@ -37,9 +37,9 @@ public class CreateTransitRouteTableAggregationRequest extends RpcAcsRequest<Cre
 
 	private String resourceOwnerAccount;
 
-	private String ownerAccount;
+	private String transitRouteTableAggregationScope;
 
-	private String transitRouteTableAggregationScop;
+	private String ownerAccount;
 
 	private Long ownerId;
 
@@ -121,6 +121,17 @@ public class CreateTransitRouteTableAggregationRequest extends RpcAcsRequest<Cre
 		}
 	}
 
+	public String getTransitRouteTableAggregationScope() {
+		return this.transitRouteTableAggregationScope;
+	}
+
+	public void setTransitRouteTableAggregationScope(String transitRouteTableAggregationScope) {
+		this.transitRouteTableAggregationScope = transitRouteTableAggregationScope;
+		if(transitRouteTableAggregationScope != null){
+			putQueryParameter("TransitRouteTableAggregationScope", transitRouteTableAggregationScope);
+		}
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -129,17 +140,6 @@ public class CreateTransitRouteTableAggregationRequest extends RpcAcsRequest<Cre
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getTransitRouteTableAggregationScop() {
-		return this.transitRouteTableAggregationScop;
-	}
-
-	public void setTransitRouteTableAggregationScop(String transitRouteTableAggregationScop) {
-		this.transitRouteTableAggregationScop = transitRouteTableAggregationScop;
-		if(transitRouteTableAggregationScop != null){
-			putQueryParameter("TransitRouteTableAggregationScop", transitRouteTableAggregationScop);
 		}
 	}
 

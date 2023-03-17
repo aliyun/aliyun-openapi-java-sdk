@@ -81,7 +81,7 @@ public class DescribeTransitRouteTableAggregationResponse extends AcsResponse {
 
 		private String transitRouteTableAggregationCidr;
 
-		private String scop;
+		private String scope;
 
 		private String nexthop;
 
@@ -109,12 +109,12 @@ public class DescribeTransitRouteTableAggregationResponse extends AcsResponse {
 			this.transitRouteTableAggregationCidr = transitRouteTableAggregationCidr;
 		}
 
-		public String getScop() {
-			return this.scop;
+		public String getScope() {
+			return this.scope;
 		}
 
-		public void setScop(String scop) {
-			this.scop = scop;
+		public void setScope(String scope) {
+			this.scope = scope;
 		}
 
 		public String getNexthop() {
