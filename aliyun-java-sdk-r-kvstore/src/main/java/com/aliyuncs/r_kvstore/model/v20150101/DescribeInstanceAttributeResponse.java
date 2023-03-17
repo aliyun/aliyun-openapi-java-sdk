@@ -145,6 +145,10 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 
 		private String cloudType;
 
+		private Boolean isOrderCompleted;
+
+		private Boolean isSupportTDE;
+
 		private List<Tag> tags;
 
 		public String getVpcId() {
@@ -537,6 +541,22 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 
 		public void setCloudType(String cloudType) {
 			this.cloudType = cloudType;
+		}
+
+		public Boolean getIsOrderCompleted() {
+			return this.isOrderCompleted;
+		}
+
+		public void setIsOrderCompleted(Boolean isOrderCompleted) {
+			this.isOrderCompleted = isOrderCompleted;
+		}
+
+		public Boolean getIsSupportTDE() {
+			return this.isSupportTDE;
+		}
+
+		public void setIsSupportTDE(Boolean isSupportTDE) {
+			this.isSupportTDE = isSupportTDE;
 		}
 
 		public List<Tag> getTags() {

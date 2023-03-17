@@ -34,6 +34,8 @@ public class DescribeIntranetAttributeResponse extends AcsResponse {
 
 	private Integer intranetBandwidth;
 
+	private Boolean hasPrePaidBandWidthOrderRunning;
+
 	public String getBandwidthExpireTime() {
 		return this.bandwidthExpireTime;
 	}
@@ -72,6 +74,14 @@ public class DescribeIntranetAttributeResponse extends AcsResponse {
 
 	public void setIntranetBandwidth(Integer intranetBandwidth) {
 		this.intranetBandwidth = intranetBandwidth;
+	}
+
+	public Boolean getHasPrePaidBandWidthOrderRunning() {
+		return this.hasPrePaidBandWidthOrderRunning;
+	}
+
+	public void setHasPrePaidBandWidthOrderRunning(Boolean hasPrePaidBandWidthOrderRunning) {
+		this.hasPrePaidBandWidthOrderRunning = hasPrePaidBandWidthOrderRunning;
 	}
 
 	@Override

@@ -81,6 +81,8 @@ public class DescribeInstanceAttributeResponseUnmarshaller {
 			dBInstanceAttribute.setEngine(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].Engine"));
 			dBInstanceAttribute.setStorage(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].Storage"));
 			dBInstanceAttribute.setCloudType(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].CloudType"));
+			dBInstanceAttribute.setIsOrderCompleted(_ctx.booleanValue("DescribeInstanceAttributeResponse.Instances["+ i +"].IsOrderCompleted"));
+			dBInstanceAttribute.setIsSupportTDE(_ctx.booleanValue("DescribeInstanceAttributeResponse.Instances["+ i +"].IsSupportTDE"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstanceAttributeResponse.Instances["+ i +"].Tags.Length"); j++) {

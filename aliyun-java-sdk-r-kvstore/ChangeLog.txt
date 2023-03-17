@@ -1,3 +1,6 @@
+2023-03-17 Version: 2.20.9
+- DescribeIntranetAttribute add HasPrePaidBandWidthOrderRunning return.
+
 2023-02-01 Version: 2.20.8
 - CreateTairInstance support dryrun.
 

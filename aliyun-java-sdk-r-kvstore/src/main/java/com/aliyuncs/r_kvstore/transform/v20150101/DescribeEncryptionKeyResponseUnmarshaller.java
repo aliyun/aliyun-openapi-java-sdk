@@ -31,6 +31,8 @@ public class DescribeEncryptionKeyResponseUnmarshaller {
 		describeEncryptionKeyResponse.setKeyUsage(_ctx.stringValue("DescribeEncryptionKeyResponse.KeyUsage"));
 		describeEncryptionKeyResponse.setEncryptionKey(_ctx.stringValue("DescribeEncryptionKeyResponse.EncryptionKey"));
 		describeEncryptionKeyResponse.setCreator(_ctx.stringValue("DescribeEncryptionKeyResponse.Creator"));
+		describeEncryptionKeyResponse.setEncryptionName(_ctx.stringValue("DescribeEncryptionKeyResponse.EncryptionName"));
+		describeEncryptionKeyResponse.setRoleArn(_ctx.stringValue("DescribeEncryptionKeyResponse.RoleArn"));
 	 
 	 	return describeEncryptionKeyResponse;
 	}

@@ -27,6 +27,7 @@ public class DescribeIntranetAttributeResponseUnmarshaller {
 		describeIntranetAttributeResponse.setAutoRenewal(_ctx.booleanValue("DescribeIntranetAttributeResponse.AutoRenewal"));
 		describeIntranetAttributeResponse.setExpireTime(_ctx.stringValue("DescribeIntranetAttributeResponse.ExpireTime"));
 		describeIntranetAttributeResponse.setIntranetBandwidth(_ctx.integerValue("DescribeIntranetAttributeResponse.IntranetBandwidth"));
+		describeIntranetAttributeResponse.setHasPrePaidBandWidthOrderRunning(_ctx.booleanValue("DescribeIntranetAttributeResponse.HasPrePaidBandWidthOrderRunning"));
 	 
 	 	return describeIntranetAttributeResponse;
 	}
