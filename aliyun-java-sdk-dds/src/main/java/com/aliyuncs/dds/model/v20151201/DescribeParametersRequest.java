@@ -26,6 +26,8 @@ public class DescribeParametersRequest extends RpcAcsRequest<DescribeParametersR
 
 	private Long resourceOwnerId;
 
+	private String extraParam;
+
 	private String securityToken;
 
 	private String dBInstanceId;
@@ -52,6 +54,17 @@ public class DescribeParametersRequest extends RpcAcsRequest<DescribeParametersR
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getExtraParam() {
+		return this.extraParam;
+	}
+
+	public void setExtraParam(String extraParam) {
+		this.extraParam = extraParam;
+		if(extraParam != null){
+			putQueryParameter("ExtraParam", extraParam);
 		}
 	}
 
