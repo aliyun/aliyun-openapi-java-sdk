@@ -30,13 +30,13 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 
 	private String imageId;
 
+	private String snapshotId;
+
 	private String pageNumber;
 
 	private String imageName;
 
 	private String pageSize;
-
-	private String product;
 	public DescribeImagesRequest() {
 		super("Ens", "2017-11-10", "DescribeImages", "ens");
 		setMethod(MethodType.POST);
@@ -75,6 +75,17 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 		}
 	}
 
+	public String getSnapshotId() {
+		return this.snapshotId;
+	}
+
+	public void setSnapshotId(String snapshotId) {
+		this.snapshotId = snapshotId;
+		if(snapshotId != null){
+			putQueryParameter("SnapshotId", snapshotId);
+		}
+	}
+
 	public String getPageNumber() {
 		return this.pageNumber;
 	}
@@ -105,17 +116,6 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize);
-		}
-	}
-
-	public String getProduct() {
-		return this.product;
-	}
-
-	public void setProduct(String product) {
-		this.product = product;
-		if(product != null){
-			putQueryParameter("product", product);
 		}
 	}
 

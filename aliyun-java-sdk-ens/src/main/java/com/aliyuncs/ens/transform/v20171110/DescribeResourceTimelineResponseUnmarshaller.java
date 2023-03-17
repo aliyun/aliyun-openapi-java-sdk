@@ -18,10 +18,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.ens.model.v20171110.DescribeResourceTimelineResponse;
-import com.aliyuncs.ens.model.v20171110.DescribeResourceTimelineResponse.可用性事件;
-import com.aliyuncs.ens.model.v20171110.DescribeResourceTimelineResponse.建设状态事件;
-import com.aliyuncs.ens.model.v20171110.DescribeResourceTimelineResponse.资源扣减事件;
-import com.aliyuncs.ens.model.v20171110.DescribeResourceTimelineResponse.资源预留事件;
+import com.aliyuncs.ens.model.v20171110.DescribeResourceTimelineResponse.AvailableEventsItem;
+import com.aliyuncs.ens.model.v20171110.DescribeResourceTimelineResponse.BizEventsItem;
+import com.aliyuncs.ens.model.v20171110.DescribeResourceTimelineResponse.InventoryEventsItem;
+import com.aliyuncs.ens.model.v20171110.DescribeResourceTimelineResponse.ReserveEventsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -33,51 +33,51 @@ public class DescribeResourceTimelineResponseUnmarshaller {
 		describeResourceTimelineResponse.setMsg(_ctx.stringValue("DescribeResourceTimelineResponse.Msg"));
 		describeResourceTimelineResponse.setDesc(_ctx.stringValue("DescribeResourceTimelineResponse.Desc"));
 
-		List<可用性事件> availableEvents = new ArrayList<可用性事件>();
+		List<AvailableEventsItem> availableEvents = new ArrayList<AvailableEventsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeResourceTimelineResponse.AvailableEvents.Length"); i++) {
-			可用性事件 可用性事件 = new 可用性事件();
-			可用性事件.setName(_ctx.stringValue("DescribeResourceTimelineResponse.AvailableEvents["+ i +"].Name"));
-			可用性事件.setOccurrenceTime(_ctx.stringValue("DescribeResourceTimelineResponse.AvailableEvents["+ i +"].OccurrenceTime"));
-			可用性事件.setReason(_ctx.stringValue("DescribeResourceTimelineResponse.AvailableEvents["+ i +"].Reason"));
-			可用性事件.setType(_ctx.stringValue("DescribeResourceTimelineResponse.AvailableEvents["+ i +"].Type"));
+			AvailableEventsItem availableEventsItem = new AvailableEventsItem();
+			availableEventsItem.setName(_ctx.stringValue("DescribeResourceTimelineResponse.AvailableEvents["+ i +"].Name"));
+			availableEventsItem.setOccurrenceTime(_ctx.stringValue("DescribeResourceTimelineResponse.AvailableEvents["+ i +"].OccurrenceTime"));
+			availableEventsItem.setReason(_ctx.stringValue("DescribeResourceTimelineResponse.AvailableEvents["+ i +"].Reason"));
+			availableEventsItem.setType(_ctx.stringValue("DescribeResourceTimelineResponse.AvailableEvents["+ i +"].Type"));
 
-			availableEvents.add(可用性事件);
+			availableEvents.add(availableEventsItem);
 		}
 		describeResourceTimelineResponse.setAvailableEvents(availableEvents);
 
-		List<建设状态事件> bizEvents = new ArrayList<建设状态事件>();
+		List<BizEventsItem> bizEvents = new ArrayList<BizEventsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeResourceTimelineResponse.BizEvents.Length"); i++) {
-			建设状态事件 建设状态事件 = new 建设状态事件();
-			建设状态事件.setName(_ctx.stringValue("DescribeResourceTimelineResponse.BizEvents["+ i +"].Name"));
-			建设状态事件.setOccurrenceTime(_ctx.stringValue("DescribeResourceTimelineResponse.BizEvents["+ i +"].OccurrenceTime"));
-			建设状态事件.setReason(_ctx.stringValue("DescribeResourceTimelineResponse.BizEvents["+ i +"].Reason"));
-			建设状态事件.setType(_ctx.stringValue("DescribeResourceTimelineResponse.BizEvents["+ i +"].Type"));
+			BizEventsItem bizEventsItem = new BizEventsItem();
+			bizEventsItem.setName(_ctx.stringValue("DescribeResourceTimelineResponse.BizEvents["+ i +"].Name"));
+			bizEventsItem.setOccurrenceTime(_ctx.stringValue("DescribeResourceTimelineResponse.BizEvents["+ i +"].OccurrenceTime"));
+			bizEventsItem.setReason(_ctx.stringValue("DescribeResourceTimelineResponse.BizEvents["+ i +"].Reason"));
+			bizEventsItem.setType(_ctx.stringValue("DescribeResourceTimelineResponse.BizEvents["+ i +"].Type"));
 
-			bizEvents.add(建设状态事件);
+			bizEvents.add(bizEventsItem);
 		}
 		describeResourceTimelineResponse.setBizEvents(bizEvents);
 
-		List<资源扣减事件> inventoryEvents = new ArrayList<资源扣减事件>();
+		List<InventoryEventsItem> inventoryEvents = new ArrayList<InventoryEventsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeResourceTimelineResponse.InventoryEvents.Length"); i++) {
-			资源扣减事件 资源扣减事件 = new 资源扣减事件();
-			资源扣减事件.setName(_ctx.stringValue("DescribeResourceTimelineResponse.InventoryEvents["+ i +"].Name"));
-			资源扣减事件.setOccurrenceTime(_ctx.stringValue("DescribeResourceTimelineResponse.InventoryEvents["+ i +"].OccurrenceTime"));
-			资源扣减事件.setReason(_ctx.stringValue("DescribeResourceTimelineResponse.InventoryEvents["+ i +"].Reason"));
-			资源扣减事件.setType(_ctx.stringValue("DescribeResourceTimelineResponse.InventoryEvents["+ i +"].Type"));
+			InventoryEventsItem inventoryEventsItem = new InventoryEventsItem();
+			inventoryEventsItem.setName(_ctx.stringValue("DescribeResourceTimelineResponse.InventoryEvents["+ i +"].Name"));
+			inventoryEventsItem.setOccurrenceTime(_ctx.stringValue("DescribeResourceTimelineResponse.InventoryEvents["+ i +"].OccurrenceTime"));
+			inventoryEventsItem.setReason(_ctx.stringValue("DescribeResourceTimelineResponse.InventoryEvents["+ i +"].Reason"));
+			inventoryEventsItem.setType(_ctx.stringValue("DescribeResourceTimelineResponse.InventoryEvents["+ i +"].Type"));
 
-			inventoryEvents.add(资源扣减事件);
+			inventoryEvents.add(inventoryEventsItem);
 		}
 		describeResourceTimelineResponse.setInventoryEvents(inventoryEvents);
 
-		List<资源预留事件> reserveEvents = new ArrayList<资源预留事件>();
+		List<ReserveEventsItem> reserveEvents = new ArrayList<ReserveEventsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeResourceTimelineResponse.ReserveEvents.Length"); i++) {
-			资源预留事件 资源预留事件 = new 资源预留事件();
-			资源预留事件.setName(_ctx.stringValue("DescribeResourceTimelineResponse.ReserveEvents["+ i +"].Name"));
-			资源预留事件.setOccurrenceTime(_ctx.stringValue("DescribeResourceTimelineResponse.ReserveEvents["+ i +"].OccurrenceTime"));
-			资源预留事件.setReason(_ctx.stringValue("DescribeResourceTimelineResponse.ReserveEvents["+ i +"].Reason"));
-			资源预留事件.setType(_ctx.stringValue("DescribeResourceTimelineResponse.ReserveEvents["+ i +"].Type"));
+			ReserveEventsItem reserveEventsItem = new ReserveEventsItem();
+			reserveEventsItem.setName(_ctx.stringValue("DescribeResourceTimelineResponse.ReserveEvents["+ i +"].Name"));
+			reserveEventsItem.setOccurrenceTime(_ctx.stringValue("DescribeResourceTimelineResponse.ReserveEvents["+ i +"].OccurrenceTime"));
+			reserveEventsItem.setReason(_ctx.stringValue("DescribeResourceTimelineResponse.ReserveEvents["+ i +"].Reason"));
+			reserveEventsItem.setType(_ctx.stringValue("DescribeResourceTimelineResponse.ReserveEvents["+ i +"].Type"));
 
-			reserveEvents.add(资源预留事件);
+			reserveEvents.add(reserveEventsItem);
 		}
 		describeResourceTimelineResponse.setReserveEvents(reserveEvents);
 	 

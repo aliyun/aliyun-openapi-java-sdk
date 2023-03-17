@@ -26,6 +26,8 @@ public class DescribeSelfImagesRequest extends RpcAcsRequest<DescribeSelfImagesR
 
 	private String imageId;
 
+	private String snapshotId;
+
 	private Integer pageNumber;
 
 	private String imageName;
@@ -44,6 +46,17 @@ public class DescribeSelfImagesRequest extends RpcAcsRequest<DescribeSelfImagesR
 		this.imageId = imageId;
 		if(imageId != null){
 			putQueryParameter("ImageId", imageId);
+		}
+	}
+
+	public String getSnapshotId() {
+		return this.snapshotId;
+	}
+
+	public void setSnapshotId(String snapshotId) {
+		this.snapshotId = snapshotId;
+		if(snapshotId != null){
+			putQueryParameter("SnapshotId", snapshotId);
 		}
 	}
 

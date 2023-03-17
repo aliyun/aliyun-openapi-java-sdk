@@ -77,6 +77,10 @@ public class DescribeSelfImagesResponse extends AcsResponse {
 
 		private String status;
 
+		private String computeType;
+
+		private String snapshotId;
+
 		public String getArchitecture() {
 			return this.architecture;
 		}
@@ -155,6 +159,22 @@ public class DescribeSelfImagesResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public String getComputeType() {
+			return this.computeType;
+		}
+
+		public void setComputeType(String computeType) {
+			this.computeType = computeType;
+		}
+
+		public String getSnapshotId() {
+			return this.snapshotId;
+		}
+
+		public void setSnapshotId(String snapshotId) {
+			this.snapshotId = snapshotId;
 		}
 	}
 

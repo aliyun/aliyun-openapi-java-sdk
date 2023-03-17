@@ -101,6 +101,8 @@ public class DescribeImagesResponse extends AcsResponse {
 
 		private String platform;
 
+		private String snapshotId;
+
 		public String getArchitecture() {
 			return this.architecture;
 		}
@@ -155,6 +157,14 @@ public class DescribeImagesResponse extends AcsResponse {
 
 		public void setPlatform(String platform) {
 			this.platform = platform;
+		}
+
+		public String getSnapshotId() {
+			return this.snapshotId;
+		}
+
+		public void setSnapshotId(String snapshotId) {
+			this.snapshotId = snapshotId;
 		}
 	}
 

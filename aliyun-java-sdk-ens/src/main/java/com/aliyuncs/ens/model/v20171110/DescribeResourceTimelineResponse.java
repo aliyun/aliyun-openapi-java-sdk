@@ -31,13 +31,13 @@ public class DescribeResourceTimelineResponse extends AcsResponse {
 
 	private String desc;
 
-	private List<可用性事件> availableEvents;
+	private List<AvailableEventsItem> availableEvents;
 
-	private List<建设状态事件> bizEvents;
+	private List<BizEventsItem> bizEvents;
 
-	private List<资源扣减事件> inventoryEvents;
+	private List<InventoryEventsItem> inventoryEvents;
 
-	private List<资源预留事件> reserveEvents;
+	private List<ReserveEventsItem> reserveEvents;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -63,39 +63,39 @@ public class DescribeResourceTimelineResponse extends AcsResponse {
 		this.desc = desc;
 	}
 
-	public List<可用性事件> getAvailableEvents() {
+	public List<AvailableEventsItem> getAvailableEvents() {
 		return this.availableEvents;
 	}
 
-	public void setAvailableEvents(List<可用性事件> availableEvents) {
+	public void setAvailableEvents(List<AvailableEventsItem> availableEvents) {
 		this.availableEvents = availableEvents;
 	}
 
-	public List<建设状态事件> getBizEvents() {
+	public List<BizEventsItem> getBizEvents() {
 		return this.bizEvents;
 	}
 
-	public void setBizEvents(List<建设状态事件> bizEvents) {
+	public void setBizEvents(List<BizEventsItem> bizEvents) {
 		this.bizEvents = bizEvents;
 	}
 
-	public List<资源扣减事件> getInventoryEvents() {
+	public List<InventoryEventsItem> getInventoryEvents() {
 		return this.inventoryEvents;
 	}
 
-	public void setInventoryEvents(List<资源扣减事件> inventoryEvents) {
+	public void setInventoryEvents(List<InventoryEventsItem> inventoryEvents) {
 		this.inventoryEvents = inventoryEvents;
 	}
 
-	public List<资源预留事件> getReserveEvents() {
+	public List<ReserveEventsItem> getReserveEvents() {
 		return this.reserveEvents;
 	}
 
-	public void setReserveEvents(List<资源预留事件> reserveEvents) {
+	public void setReserveEvents(List<ReserveEventsItem> reserveEvents) {
 		this.reserveEvents = reserveEvents;
 	}
 
-	public static class 可用性事件 {
+	public static class AvailableEventsItem {
 
 		private String name;
 
@@ -138,7 +138,7 @@ public class DescribeResourceTimelineResponse extends AcsResponse {
 		}
 	}
 
-	public static class 建设状态事件 {
+	public static class BizEventsItem {
 
 		private String name;
 
@@ -181,7 +181,7 @@ public class DescribeResourceTimelineResponse extends AcsResponse {
 		}
 	}
 
-	public static class 资源扣减事件 {
+	public static class InventoryEventsItem {
 
 		private String name;
 
@@ -224,7 +224,7 @@ public class DescribeResourceTimelineResponse extends AcsResponse {
 		}
 	}
 
-	public static class 资源预留事件 {
+	public static class ReserveEventsItem {
 
 		private String name;
 

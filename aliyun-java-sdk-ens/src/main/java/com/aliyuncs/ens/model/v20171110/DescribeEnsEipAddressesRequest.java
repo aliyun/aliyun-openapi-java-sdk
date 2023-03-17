@@ -24,6 +24,8 @@ import com.aliyuncs.http.MethodType;
 public class DescribeEnsEipAddressesRequest extends RpcAcsRequest<DescribeEnsEipAddressesResponse> {
 	   
 
+	private String eipName;
+
 	private String eipAddress;
 
 	private String ensRegionId;
@@ -40,6 +42,17 @@ public class DescribeEnsEipAddressesRequest extends RpcAcsRequest<DescribeEnsEip
 	public DescribeEnsEipAddressesRequest() {
 		super("Ens", "2017-11-10", "DescribeEnsEipAddresses", "ens");
 		setMethod(MethodType.POST);
+	}
+
+	public String getEipName() {
+		return this.eipName;
+	}
+
+	public void setEipName(String eipName) {
+		this.eipName = eipName;
+		if(eipName != null){
+			putQueryParameter("EipName", eipName);
+		}
 	}
 
 	public String getEipAddress() {

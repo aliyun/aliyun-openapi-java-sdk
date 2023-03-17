@@ -24,6 +24,8 @@ import com.aliyuncs.http.MethodType;
 public class CreateDiskRequest extends RpcAcsRequest<CreateDiskResponse> {
 	   
 
+	private String snapshotId;
+
 	private String ensRegionId;
 
 	private String instanceChargeType;
@@ -34,6 +36,17 @@ public class CreateDiskRequest extends RpcAcsRequest<CreateDiskResponse> {
 	public CreateDiskRequest() {
 		super("Ens", "2017-11-10", "CreateDisk", "ens");
 		setMethod(MethodType.POST);
+	}
+
+	public String getSnapshotId() {
+		return this.snapshotId;
+	}
+
+	public void setSnapshotId(String snapshotId) {
+		this.snapshotId = snapshotId;
+		if(snapshotId != null){
+			putQueryParameter("SnapshotId", snapshotId);
+		}
 	}
 
 	public String getEnsRegionId() {

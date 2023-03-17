@@ -42,6 +42,7 @@ public class DescribeImagesResponseUnmarshaller {
 			image.setImageOwnerAlias(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].ImageOwnerAlias"));
 			image.setImageSize(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].ImageSize"));
 			image.setPlatform(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].Platform"));
+			image.setSnapshotId(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].SnapshotId"));
 
 			images.add(image);
 		}

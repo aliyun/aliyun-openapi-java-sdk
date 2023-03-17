@@ -111,6 +111,8 @@ public class DescribeDisksResponse extends AcsResponse {
 
 		private Boolean portable;
 
+		private String snapshotId;
+
 		public String getCategory() {
 			return this.category;
 		}
@@ -205,6 +207,14 @@ public class DescribeDisksResponse extends AcsResponse {
 
 		public void setPortable(Boolean portable) {
 			this.portable = portable;
+		}
+
+		public String getSnapshotId() {
+			return this.snapshotId;
+		}
+
+		public void setSnapshotId(String snapshotId) {
+			this.snapshotId = snapshotId;
 		}
 	}
 

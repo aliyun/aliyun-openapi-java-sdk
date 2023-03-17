@@ -69,6 +69,8 @@ public class DescribeImageInfosResponse extends AcsResponse {
 
 		private String oSType;
 
+		private String computeType;
+
 		public String getDescription() {
 			return this.description;
 		}
@@ -115,6 +117,14 @@ public class DescribeImageInfosResponse extends AcsResponse {
 
 		public void setOSType(String oSType) {
 			this.oSType = oSType;
+		}
+
+		public String getComputeType() {
+			return this.computeType;
+		}
+
+		public void setComputeType(String computeType) {
+			this.computeType = computeType;
 		}
 	}
 

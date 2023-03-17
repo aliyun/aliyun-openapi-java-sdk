@@ -42,6 +42,8 @@ public class DescribeSelfImagesResponseUnmarshaller {
 			image.setOsVersion(_ctx.stringValue("DescribeSelfImagesResponse.Images["+ i +"].OsVersion"));
 			image.setPlatform(_ctx.stringValue("DescribeSelfImagesResponse.Images["+ i +"].Platform"));
 			image.setStatus(_ctx.stringValue("DescribeSelfImagesResponse.Images["+ i +"].Status"));
+			image.setComputeType(_ctx.stringValue("DescribeSelfImagesResponse.Images["+ i +"].ComputeType"));
+			image.setSnapshotId(_ctx.stringValue("DescribeSelfImagesResponse.Images["+ i +"].SnapshotId"));
 
 			images.add(image);
 		}

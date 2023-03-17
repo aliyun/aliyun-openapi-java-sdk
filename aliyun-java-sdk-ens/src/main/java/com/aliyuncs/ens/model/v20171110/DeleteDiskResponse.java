@@ -15,32 +15,18 @@
 package com.aliyuncs.ens.model.v20171110;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ens.transform.v20171110.PreCreateEnsServiceResponseUnmarshaller;
+import com.aliyuncs.ens.transform.v20171110.DeleteDiskResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class PreCreateEnsServiceResponse extends AcsResponse {
-
-	private String buyResourcesDetail;
+public class DeleteDiskResponse extends AcsResponse {
 
 	private Integer code;
 
-	private String ensServiceId;
-
-	private String netLevel;
-
 	private String requestId;
-
-	public String getBuyResourcesDetail() {
-		return this.buyResourcesDetail;
-	}
-
-	public void setBuyResourcesDetail(String buyResourcesDetail) {
-		this.buyResourcesDetail = buyResourcesDetail;
-	}
 
 	public Integer getCode() {
 		return this.code;
@@ -48,22 +34,6 @@ public class PreCreateEnsServiceResponse extends AcsResponse {
 
 	public void setCode(Integer code) {
 		this.code = code;
-	}
-
-	public String getEnsServiceId() {
-		return this.ensServiceId;
-	}
-
-	public void setEnsServiceId(String ensServiceId) {
-		this.ensServiceId = ensServiceId;
-	}
-
-	public String getNetLevel() {
-		return this.netLevel;
-	}
-
-	public void setNetLevel(String netLevel) {
-		this.netLevel = netLevel;
 	}
 
 	public String getRequestId() {
@@ -75,7 +45,7 @@ public class PreCreateEnsServiceResponse extends AcsResponse {
 	}
 
 	@Override
-	public PreCreateEnsServiceResponse getInstance(UnmarshallerContext context) {
-		return	PreCreateEnsServiceResponseUnmarshaller.unmarshall(this, context);
+	public DeleteDiskResponse getInstance(UnmarshallerContext context) {
+		return	DeleteDiskResponseUnmarshaller.unmarshall(this, context);
 	}
 }

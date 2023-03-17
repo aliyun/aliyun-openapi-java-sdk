@@ -38,6 +38,7 @@ public class DescribeImageInfosResponseUnmarshaller {
 			image.setImageVersion(_ctx.stringValue("DescribeImageInfosResponse.Images["+ i +"].ImageVersion"));
 			image.setOSName(_ctx.stringValue("DescribeImageInfosResponse.Images["+ i +"].OSName"));
 			image.setOSType(_ctx.stringValue("DescribeImageInfosResponse.Images["+ i +"].OSType"));
+			image.setComputeType(_ctx.stringValue("DescribeImageInfosResponse.Images["+ i +"].ComputeType"));
 
 			images.add(image);
 		}
