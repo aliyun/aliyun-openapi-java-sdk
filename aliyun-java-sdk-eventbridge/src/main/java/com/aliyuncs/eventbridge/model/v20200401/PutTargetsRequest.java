@@ -24,35 +24,18 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
+public class PutTargetsRequest extends RpcAcsRequest<PutTargetsResponse> {
 	   
-
-	private String description;
 
 	private String ruleName;
 
 	private String eventBusName;
 
-	@SerializedName("eventTargets")
-	private List<EventTargets> eventTargets;
-
-	private String filterPattern;
-
-	private String status;
-	public CreateRuleRequest() {
-		super("eventbridge", "2020-04-01", "CreateRule");
+	@SerializedName("targets")
+	private List<Targets> targets;
+	public PutTargetsRequest() {
+		super("eventbridge", "2020-04-01", "PutTargets");
 		setMethod(MethodType.POST);
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
-		}
 	}
 
 	public String getRuleName() {
@@ -77,40 +60,18 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 		}
 	}
 
-	public List<EventTargets> getEventTargets() {
-		return this.eventTargets;
+	public List<Targets> getTargets() {
+		return this.targets;
 	}
 
-	public void setEventTargets(List<EventTargets> eventTargets) {
-		this.eventTargets = eventTargets;	
-		if (eventTargets != null) {
-			putQueryParameter("EventTargets" , new Gson().toJson(eventTargets));
+	public void setTargets(List<Targets> targets) {
+		this.targets = targets;	
+		if (targets != null) {
+			putQueryParameter("Targets" , new Gson().toJson(targets));
 		}	
 	}
 
-	public String getFilterPattern() {
-		return this.filterPattern;
-	}
-
-	public void setFilterPattern(String filterPattern) {
-		this.filterPattern = filterPattern;
-		if(filterPattern != null){
-			putQueryParameter("FilterPattern", filterPattern);
-		}
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status);
-		}
-	}
-
-	public static class EventTargets {
+	public static class Targets {
 
 		@SerializedName("Endpoint")
 		private String endpoint;
@@ -252,8 +213,8 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 	}
 
 	@Override
-	public Class<CreateRuleResponse> getResponseClass() {
-		return CreateRuleResponse.class;
+	public Class<PutTargetsResponse> getResponseClass() {
+		return PutTargetsResponse.class;
 	}
 
 }

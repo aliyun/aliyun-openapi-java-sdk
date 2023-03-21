@@ -85,8 +85,14 @@ public class CreateTargetsRequest extends RpcAcsRequest<CreateTargetsResponse> {
 		@SerializedName("Id")
 		private String id;
 
+		@SerializedName("DeadLetterQueue")
+		private DeadLetterQueue deadLetterQueue;
+
 		@SerializedName("Type")
 		private String type;
+
+		@SerializedName("ErrorsTolerance")
+		private String errorsTolerance;
 
 		public String getEndpoint() {
 			return this.endpoint;
@@ -120,12 +126,28 @@ public class CreateTargetsRequest extends RpcAcsRequest<CreateTargetsResponse> {
 			this.id = id;
 		}
 
+		public DeadLetterQueue getDeadLetterQueue() {
+			return this.deadLetterQueue;
+		}
+
+		public void setDeadLetterQueue(DeadLetterQueue deadLetterQueue) {
+			this.deadLetterQueue = deadLetterQueue;
+		}
+
 		public String getType() {
 			return this.type;
 		}
 
 		public void setType(String type) {
 			this.type = type;
+		}
+
+		public String getErrorsTolerance() {
+			return this.errorsTolerance;
+		}
+
+		public void setErrorsTolerance(String errorsTolerance) {
+			this.errorsTolerance = errorsTolerance;
 		}
 
 		public static class ParamListItem {
@@ -172,6 +194,20 @@ public class CreateTargetsRequest extends RpcAcsRequest<CreateTargetsResponse> {
 
 			public void setValue(String value) {
 				this.value = value;
+			}
+		}
+
+		public static class DeadLetterQueue {
+
+			@SerializedName("Arn")
+			private String arn;
+
+			public String getArn() {
+				return this.arn;
+			}
+
+			public void setArn(String arn) {
+				this.arn = arn;
 			}
 		}
 	}
