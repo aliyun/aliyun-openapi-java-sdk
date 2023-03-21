@@ -28,6 +28,8 @@ public class DescribeBundlesRequest extends RpcAcsRequest<DescribeBundlesRespons
 
 	private Float gpuCount;
 
+	private List<String> imageIds;
+
 	private List<String> bundleIds;
 
 	private String desktopTypeFamily;
@@ -75,6 +77,19 @@ public class DescribeBundlesRequest extends RpcAcsRequest<DescribeBundlesRespons
 		if(gpuCount != null){
 			putQueryParameter("GpuCount", gpuCount.toString());
 		}
+	}
+
+	public List<String> getImageIds() {
+		return this.imageIds;
+	}
+
+	public void setImageIds(List<String> imageIds) {
+		this.imageIds = imageIds;	
+		if (imageIds != null) {
+			for (int i = 0; i < imageIds.size(); i++) {
+				putQueryParameter("ImageId." + (i + 1) , imageIds.get(i));
+			}
+		}	
 	}
 
 	public List<String> getBundleIds() {

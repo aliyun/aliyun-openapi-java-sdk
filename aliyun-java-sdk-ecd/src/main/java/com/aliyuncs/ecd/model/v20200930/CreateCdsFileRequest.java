@@ -40,8 +40,6 @@ public class CreateCdsFileRequest extends RpcAcsRequest<CreateCdsFileResponse> {
 	private String fileName;
 
 	private String fileHash;
-
-	private String md5;
 	public CreateCdsFileRequest() {
 		super("ecd", "2020-09-30", "CreateCdsFile");
 		setMethod(MethodType.POST);
@@ -136,17 +134,6 @@ public class CreateCdsFileRequest extends RpcAcsRequest<CreateCdsFileResponse> {
 		this.fileHash = fileHash;
 		if(fileHash != null){
 			putQueryParameter("FileHash", fileHash);
-		}
-	}
-
-	public String getMd5() {
-		return this.md5;
-	}
-
-	public void setMd5(String md5) {
-		this.md5 = md5;
-		if(md5 != null){
-			putQueryParameter("Md5", md5);
 		}
 	}
 

@@ -15,6 +15,7 @@
 package com.aliyuncs.ecd.model.v20200930;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecd.Endpoint;
 
@@ -22,12 +23,14 @@ import com.aliyuncs.ecd.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeClipboardFormatListRequest extends RpcAcsRequest<DescribeClipboardFormatListResponse> {
+public class DeleteCloudDriveGroupsRequest extends RpcAcsRequest<DeleteCloudDriveGroupsResponse> {
 	   
 
-	private String type;
-	public DescribeClipboardFormatListRequest() {
-		super("ecd", "2020-09-30", "DescribeClipboardFormatList");
+	private List<String> groupIds;
+
+	private String cdsId;
+	public DeleteCloudDriveGroupsRequest() {
+		super("ecd", "2020-09-30", "DeleteCloudDriveGroups");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,20 +38,33 @@ public class DescribeClipboardFormatListRequest extends RpcAcsRequest<DescribeCl
 		} catch (Exception e) {}
 	}
 
-	public String getType() {
-		return this.type;
+	public List<String> getGroupIds() {
+		return this.groupIds;
 	}
 
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
+	public void setGroupIds(List<String> groupIds) {
+		this.groupIds = groupIds;	
+		if (groupIds != null) {
+			for (int i = 0; i < groupIds.size(); i++) {
+				putQueryParameter("GroupId." + (i + 1) , groupIds.get(i));
+			}
+		}	
+	}
+
+	public String getCdsId() {
+		return this.cdsId;
+	}
+
+	public void setCdsId(String cdsId) {
+		this.cdsId = cdsId;
+		if(cdsId != null){
+			putQueryParameter("CdsId", cdsId);
 		}
 	}
 
 	@Override
-	public Class<DescribeClipboardFormatListResponse> getResponseClass() {
-		return DescribeClipboardFormatListResponse.class;
+	public Class<DeleteCloudDriveGroupsResponse> getResponseClass() {
+		return DeleteCloudDriveGroupsResponse.class;
 	}
 
 }

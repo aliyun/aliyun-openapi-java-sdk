@@ -141,6 +141,10 @@ public class DescribePolicyGroupsResponse extends AcsResponse {
 
 		private Integer watermarkRowAmount;
 
+		private String endUserApplyAdminCoordinate;
+
+		private String endUserGroupCoordinate;
+
 		private List<AuthorizeSecurityPolicyRule> authorizeSecurityPolicyRules;
 
 		private List<AuthorizeAccessPolicyRule> authorizeAccessPolicyRules;
@@ -491,6 +495,22 @@ public class DescribePolicyGroupsResponse extends AcsResponse {
 
 		public void setWatermarkRowAmount(Integer watermarkRowAmount) {
 			this.watermarkRowAmount = watermarkRowAmount;
+		}
+
+		public String getEndUserApplyAdminCoordinate() {
+			return this.endUserApplyAdminCoordinate;
+		}
+
+		public void setEndUserApplyAdminCoordinate(String endUserApplyAdminCoordinate) {
+			this.endUserApplyAdminCoordinate = endUserApplyAdminCoordinate;
+		}
+
+		public String getEndUserGroupCoordinate() {
+			return this.endUserGroupCoordinate;
+		}
+
+		public void setEndUserGroupCoordinate(String endUserGroupCoordinate) {
+			this.endUserGroupCoordinate = endUserGroupCoordinate;
 		}
 
 		public List<AuthorizeSecurityPolicyRule> getAuthorizeSecurityPolicyRules() {

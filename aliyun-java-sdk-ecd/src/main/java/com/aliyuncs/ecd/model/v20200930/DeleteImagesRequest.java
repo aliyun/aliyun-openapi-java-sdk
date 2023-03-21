@@ -27,6 +27,8 @@ public class DeleteImagesRequest extends RpcAcsRequest<DeleteImagesResponse> {
 	   
 
 	private List<String> imageIds;
+
+	private Boolean deleteCascadedBundle;
 	public DeleteImagesRequest() {
 		super("ecd", "2020-09-30", "DeleteImages");
 		setMethod(MethodType.POST);
@@ -47,6 +49,17 @@ public class DeleteImagesRequest extends RpcAcsRequest<DeleteImagesResponse> {
 				putQueryParameter("ImageId." + (i + 1) , imageIds.get(i));
 			}
 		}	
+	}
+
+	public Boolean getDeleteCascadedBundle() {
+		return this.deleteCascadedBundle;
+	}
+
+	public void setDeleteCascadedBundle(Boolean deleteCascadedBundle) {
+		this.deleteCascadedBundle = deleteCascadedBundle;
+		if(deleteCascadedBundle != null){
+			putQueryParameter("DeleteCascadedBundle", deleteCascadedBundle.toString());
+		}
 	}
 
 	@Override

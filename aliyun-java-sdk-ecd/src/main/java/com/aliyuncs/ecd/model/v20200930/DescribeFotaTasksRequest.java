@@ -28,6 +28,8 @@ public class DescribeFotaTasksRequest extends RpcAcsRequest<DescribeFotaTasksRes
 
 	private String userStatus;
 
+	private String fotaStatus;
+
 	private List<String> taskUids;
 
 	private String nextToken;
@@ -50,6 +52,17 @@ public class DescribeFotaTasksRequest extends RpcAcsRequest<DescribeFotaTasksRes
 		this.userStatus = userStatus;
 		if(userStatus != null){
 			putQueryParameter("UserStatus", userStatus);
+		}
+	}
+
+	public String getFotaStatus() {
+		return this.fotaStatus;
+	}
+
+	public void setFotaStatus(String fotaStatus) {
+		this.fotaStatus = fotaStatus;
+		if(fotaStatus != null){
+			putQueryParameter("FotaStatus", fotaStatus);
 		}
 	}
 

@@ -15,22 +15,24 @@
 package com.aliyuncs.ecd.model.v20200930;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ecd.transform.v20200930.DescribePreToPostQuotaResponseUnmarshaller;
+import com.aliyuncs.ecd.transform.v20200930.ModifyCloudDriveGroupsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribePreToPostQuotaResponse extends AcsResponse {
+public class ModifyCloudDriveGroupsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Long cost;
+	private String code;
 
-	private Long usedQuota;
+	private Boolean success;
 
-	private Long totalQuota;
+	private String data;
+
+	private String message;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,33 +42,41 @@ public class DescribePreToPostQuotaResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Long getCost() {
-		return this.cost;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setCost(Long cost) {
-		this.cost = cost;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
-	public Long getUsedQuota() {
-		return this.usedQuota;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setUsedQuota(Long usedQuota) {
-		this.usedQuota = usedQuota;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
-	public Long getTotalQuota() {
-		return this.totalQuota;
+	public String getData() {
+		return this.data;
 	}
 
-	public void setTotalQuota(Long totalQuota) {
-		this.totalQuota = totalQuota;
+	public void setData(String data) {
+		this.data = data;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	@Override
-	public DescribePreToPostQuotaResponse getInstance(UnmarshallerContext context) {
-		return	DescribePreToPostQuotaResponseUnmarshaller.unmarshall(this, context);
+	public ModifyCloudDriveGroupsResponse getInstance(UnmarshallerContext context) {
+		return	ModifyCloudDriveGroupsResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

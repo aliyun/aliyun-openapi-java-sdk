@@ -46,6 +46,8 @@ public class ModifyPolicyGroupRequest extends RpcAcsRequest<ModifyPolicyGroupRes
 
 	private String clipboard;
 
+	private String endUserApplyAdminCoordinate;
+
 	private String usbRedirect;
 
 	private String watermarkType;
@@ -95,6 +97,8 @@ public class ModifyPolicyGroupRequest extends RpcAcsRequest<ModifyPolicyGroupRes
 	private String scope;
 
 	private Integer watermarkRowAmount;
+
+	private String endUserGroupCoordinate;
 
 	private Double watermarkDegree;
 
@@ -249,6 +253,17 @@ public class ModifyPolicyGroupRequest extends RpcAcsRequest<ModifyPolicyGroupRes
 		this.clipboard = clipboard;
 		if(clipboard != null){
 			putQueryParameter("Clipboard", clipboard);
+		}
+	}
+
+	public String getEndUserApplyAdminCoordinate() {
+		return this.endUserApplyAdminCoordinate;
+	}
+
+	public void setEndUserApplyAdminCoordinate(String endUserApplyAdminCoordinate) {
+		this.endUserApplyAdminCoordinate = endUserApplyAdminCoordinate;
+		if(endUserApplyAdminCoordinate != null){
+			putQueryParameter("EndUserApplyAdminCoordinate", endUserApplyAdminCoordinate);
 		}
 	}
 
@@ -543,6 +558,17 @@ public class ModifyPolicyGroupRequest extends RpcAcsRequest<ModifyPolicyGroupRes
 		this.watermarkRowAmount = watermarkRowAmount;
 		if(watermarkRowAmount != null){
 			putQueryParameter("WatermarkRowAmount", watermarkRowAmount.toString());
+		}
+	}
+
+	public String getEndUserGroupCoordinate() {
+		return this.endUserGroupCoordinate;
+	}
+
+	public void setEndUserGroupCoordinate(String endUserGroupCoordinate) {
+		this.endUserGroupCoordinate = endUserGroupCoordinate;
+		if(endUserGroupCoordinate != null){
+			putQueryParameter("EndUserGroupCoordinate", endUserGroupCoordinate);
 		}
 	}
 

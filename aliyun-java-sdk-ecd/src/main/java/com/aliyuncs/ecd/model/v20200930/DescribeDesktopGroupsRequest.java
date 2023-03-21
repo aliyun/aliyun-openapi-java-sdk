@@ -30,6 +30,10 @@ public class DescribeDesktopGroupsRequest extends RpcAcsRequest<DescribeDesktopG
 
 	private List<String> endUserIdss;
 
+	private List<String> imageIds;
+
+	private List<String> bundleIds;
+
 	private String desktopGroupName;
 
 	private String desktopGroupId;
@@ -80,6 +84,32 @@ public class DescribeDesktopGroupsRequest extends RpcAcsRequest<DescribeDesktopG
 		if (endUserIdss != null) {
 			for (int i = 0; i < endUserIdss.size(); i++) {
 				putQueryParameter("EndUserIds." + (i + 1) , endUserIdss.get(i));
+			}
+		}	
+	}
+
+	public List<String> getImageIds() {
+		return this.imageIds;
+	}
+
+	public void setImageIds(List<String> imageIds) {
+		this.imageIds = imageIds;	
+		if (imageIds != null) {
+			for (int i = 0; i < imageIds.size(); i++) {
+				putQueryParameter("ImageId." + (i + 1) , imageIds.get(i));
+			}
+		}	
+	}
+
+	public List<String> getBundleIds() {
+		return this.bundleIds;
+	}
+
+	public void setBundleIds(List<String> bundleIds) {
+		this.bundleIds = bundleIds;	
+		if (bundleIds != null) {
+			for (int i = 0; i < bundleIds.size(); i++) {
+				putQueryParameter("BundleId." + (i + 1) , bundleIds.get(i));
 			}
 		}	
 	}

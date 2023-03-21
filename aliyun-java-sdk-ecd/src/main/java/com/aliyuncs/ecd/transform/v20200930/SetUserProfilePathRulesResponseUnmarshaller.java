@@ -14,16 +14,16 @@
 
 package com.aliyuncs.ecd.transform.v20200930;
 
-import com.aliyuncs.ecd.model.v20200930.AddDomainOfficeSiteResponse;
+import com.aliyuncs.ecd.model.v20200930.SetUserProfilePathRulesResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class AddDomainOfficeSiteResponseUnmarshaller {
+public class SetUserProfilePathRulesResponseUnmarshaller {
 
-	public static AddDomainOfficeSiteResponse unmarshall(AddDomainOfficeSiteResponse addDomainOfficeSiteResponse, UnmarshallerContext _ctx) {
+	public static SetUserProfilePathRulesResponse unmarshall(SetUserProfilePathRulesResponse setUserProfilePathRulesResponse, UnmarshallerContext _ctx) {
 		
-		addDomainOfficeSiteResponse.setRequestId(_ctx.stringValue("AddDomainOfficeSiteResponse.RequestId"));
+		setUserProfilePathRulesResponse.setRequestId(_ctx.stringValue("SetUserProfilePathRulesResponse.RequestId"));
 	 
-	 	return addDomainOfficeSiteResponse;
+	 	return setUserProfilePathRulesResponse;
 	}
 }

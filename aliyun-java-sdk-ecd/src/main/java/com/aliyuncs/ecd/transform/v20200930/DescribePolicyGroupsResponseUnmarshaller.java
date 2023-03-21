@@ -80,6 +80,8 @@ public class DescribePolicyGroupsResponseUnmarshaller {
 			describePolicyGroup.setWatermarkFontStyle(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].WatermarkFontStyle"));
 			describePolicyGroup.setWatermarkDegree(_ctx.doubleValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].WatermarkDegree"));
 			describePolicyGroup.setWatermarkRowAmount(_ctx.integerValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].WatermarkRowAmount"));
+			describePolicyGroup.setEndUserApplyAdminCoordinate(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].EndUserApplyAdminCoordinate"));
+			describePolicyGroup.setEndUserGroupCoordinate(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].EndUserGroupCoordinate"));
 
 			List<String> preemptLoginUsers = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].PreemptLoginUsers.Length"); j++) {

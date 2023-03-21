@@ -30,6 +30,8 @@ public class DescribeDesktopsRequest extends RpcAcsRequest<DescribeDesktopsRespo
 
 	private String snapshotPolicyId;
 
+	private List<String> imageIds;
+
 	private String desktopStatus;
 
 	private String desktopGroupId;
@@ -47,6 +49,8 @@ public class DescribeDesktopsRequest extends RpcAcsRequest<DescribeDesktopsRespo
 	private List<String> desktopIds;
 
 	private List<Tag> tags;
+
+	private String desktopType;
 
 	private String desktopName;
 
@@ -102,6 +106,19 @@ public class DescribeDesktopsRequest extends RpcAcsRequest<DescribeDesktopsRespo
 		if(snapshotPolicyId != null){
 			putQueryParameter("SnapshotPolicyId", snapshotPolicyId);
 		}
+	}
+
+	public List<String> getImageIds() {
+		return this.imageIds;
+	}
+
+	public void setImageIds(List<String> imageIds) {
+		this.imageIds = imageIds;	
+		if (imageIds != null) {
+			for (int i = 0; i < imageIds.size(); i++) {
+				putQueryParameter("ImageId." + (i + 1) , imageIds.get(i));
+			}
+		}	
 	}
 
 	public String getDesktopStatus() {
@@ -208,6 +225,17 @@ public class DescribeDesktopsRequest extends RpcAcsRequest<DescribeDesktopsRespo
 				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
+	}
+
+	public String getDesktopType() {
+		return this.desktopType;
+	}
+
+	public void setDesktopType(String desktopType) {
+		this.desktopType = desktopType;
+		if(desktopType != null){
+			putQueryParameter("DesktopType", desktopType);
+		}
 	}
 
 	public String getDesktopName() {

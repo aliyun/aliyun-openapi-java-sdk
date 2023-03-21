@@ -28,8 +28,6 @@ public class StopDesktopsRequest extends RpcAcsRequest<StopDesktopsResponse> {
 
 	private String stoppedMode;
 
-	private Boolean hibernate;
-
 	private List<String> desktopIds;
 	public StopDesktopsRequest() {
 		super("ecd", "2020-09-30", "StopDesktops");
@@ -48,17 +46,6 @@ public class StopDesktopsRequest extends RpcAcsRequest<StopDesktopsResponse> {
 		this.stoppedMode = stoppedMode;
 		if(stoppedMode != null){
 			putQueryParameter("StoppedMode", stoppedMode);
-		}
-	}
-
-	public Boolean getHibernate() {
-		return this.hibernate;
-	}
-
-	public void setHibernate(Boolean hibernate) {
-		this.hibernate = hibernate;
-		if(hibernate != null){
-			putQueryParameter("Hibernate", hibernate.toString());
 		}
 	}
 

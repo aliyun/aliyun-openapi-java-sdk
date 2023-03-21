@@ -143,6 +143,8 @@ public class DescribeDesktopGroupsResponse extends AcsResponse {
 
 		private String osType;
 
+		private Integer buyDesktopsCount;
+
 		public String getCreateTime() {
 			return this.createTime;
 		}
@@ -485,6 +487,14 @@ public class DescribeDesktopGroupsResponse extends AcsResponse {
 
 		public void setOsType(String osType) {
 			this.osType = osType;
+		}
+
+		public Integer getBuyDesktopsCount() {
+			return this.buyDesktopsCount;
+		}
+
+		public void setBuyDesktopsCount(Integer buyDesktopsCount) {
+			this.buyDesktopsCount = buyDesktopsCount;
 		}
 	}
 

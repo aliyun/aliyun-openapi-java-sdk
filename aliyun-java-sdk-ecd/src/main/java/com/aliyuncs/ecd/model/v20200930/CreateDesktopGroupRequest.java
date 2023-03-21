@@ -30,8 +30,6 @@ public class CreateDesktopGroupRequest extends RpcAcsRequest<CreateDesktopGroupR
 
 	private Integer allowBufferCount;
 
-	private Long groupVersion;
-
 	private Boolean allClassifyUsers;
 
 	private Integer maxDesktopsCount;
@@ -125,17 +123,6 @@ public class CreateDesktopGroupRequest extends RpcAcsRequest<CreateDesktopGroupR
 		this.allowBufferCount = allowBufferCount;
 		if(allowBufferCount != null){
 			putQueryParameter("AllowBufferCount", allowBufferCount.toString());
-		}
-	}
-
-	public Long getGroupVersion() {
-		return this.groupVersion;
-	}
-
-	public void setGroupVersion(Long groupVersion) {
-		this.groupVersion = groupVersion;
-		if(groupVersion != null){
-			putQueryParameter("GroupVersion", groupVersion.toString());
 		}
 	}
 

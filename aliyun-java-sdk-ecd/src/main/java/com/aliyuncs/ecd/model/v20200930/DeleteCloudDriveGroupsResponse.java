@@ -15,41 +15,31 @@
 package com.aliyuncs.ecd.model.v20200930;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ecd.transform.v20200930.SyncAllEduInfoResponseUnmarshaller;
+import com.aliyuncs.ecd.transform.v20200930.DeleteCloudDriveGroupsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SyncAllEduInfoResponse extends AcsResponse {
-
-	private String data;
-
-	private Boolean success;
-
-	private String code;
-
-	private String message;
-
-	private Integer httpStatusCode;
+public class DeleteCloudDriveGroupsResponse extends AcsResponse {
 
 	private String requestId;
 
-	public String getData() {
-		return this.data;
+	private String code;
+
+	private Boolean success;
+
+	private String data;
+
+	private String message;
+
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setData(String data) {
-		this.data = data;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -60,6 +50,22 @@ public class SyncAllEduInfoResponse extends AcsResponse {
 		this.code = code;
 	}
 
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+	}
+
 	public String getMessage() {
 		return this.message;
 	}
@@ -68,25 +74,9 @@ public class SyncAllEduInfoResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	@Override
-	public SyncAllEduInfoResponse getInstance(UnmarshallerContext context) {
-		return	SyncAllEduInfoResponseUnmarshaller.unmarshall(this, context);
+	public DeleteCloudDriveGroupsResponse getInstance(UnmarshallerContext context) {
+		return	DeleteCloudDriveGroupsResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

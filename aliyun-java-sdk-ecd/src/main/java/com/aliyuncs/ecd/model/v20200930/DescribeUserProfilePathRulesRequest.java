@@ -22,14 +22,14 @@ import com.aliyuncs.ecd.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeTimerJobRequest extends RpcAcsRequest<DescribeTimerJobResponse> {
+public class DescribeUserProfilePathRulesRequest extends RpcAcsRequest<DescribeUserProfilePathRulesResponse> {
 	   
 
-	private String sourceId;
+	private String ruleType;
 
-	private String eventType;
-	public DescribeTimerJobRequest() {
-		super("ecd", "2020-09-30", "DescribeTimerJob");
+	private String desktopGroupId;
+	public DescribeUserProfilePathRulesRequest() {
+		super("ecd", "2020-09-30", "DescribeUserProfilePathRules");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +37,31 @@ public class DescribeTimerJobRequest extends RpcAcsRequest<DescribeTimerJobRespo
 		} catch (Exception e) {}
 	}
 
-	public String getSourceId() {
-		return this.sourceId;
+	public String getRuleType() {
+		return this.ruleType;
 	}
 
-	public void setSourceId(String sourceId) {
-		this.sourceId = sourceId;
-		if(sourceId != null){
-			putQueryParameter("SourceId", sourceId);
+	public void setRuleType(String ruleType) {
+		this.ruleType = ruleType;
+		if(ruleType != null){
+			putQueryParameter("RuleType", ruleType);
 		}
 	}
 
-	public String getEventType() {
-		return this.eventType;
+	public String getDesktopGroupId() {
+		return this.desktopGroupId;
 	}
 
-	public void setEventType(String eventType) {
-		this.eventType = eventType;
-		if(eventType != null){
-			putQueryParameter("EventType", eventType);
+	public void setDesktopGroupId(String desktopGroupId) {
+		this.desktopGroupId = desktopGroupId;
+		if(desktopGroupId != null){
+			putQueryParameter("DesktopGroupId", desktopGroupId);
 		}
 	}
 
 	@Override
-	public Class<DescribeTimerJobResponse> getResponseClass() {
-		return DescribeTimerJobResponse.class;
+	public Class<DescribeUserProfilePathRulesResponse> getResponseClass() {
+		return DescribeUserProfilePathRulesResponse.class;
 	}
 
 }

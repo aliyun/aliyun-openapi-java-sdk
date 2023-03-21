@@ -15,14 +15,14 @@
 package com.aliyuncs.ecd.model.v20200930;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ecd.transform.v20200930.AddDomainOfficeSiteResponseUnmarshaller;
+import com.aliyuncs.ecd.transform.v20200930.SetUserProfilePathRulesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class AddDomainOfficeSiteResponse extends AcsResponse {
+public class SetUserProfilePathRulesResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,8 +35,8 @@ public class AddDomainOfficeSiteResponse extends AcsResponse {
 	}
 
 	@Override
-	public AddDomainOfficeSiteResponse getInstance(UnmarshallerContext context) {
-		return	AddDomainOfficeSiteResponseUnmarshaller.unmarshall(this, context);
+	public SetUserProfilePathRulesResponse getInstance(UnmarshallerContext context) {
+		return	SetUserProfilePathRulesResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
