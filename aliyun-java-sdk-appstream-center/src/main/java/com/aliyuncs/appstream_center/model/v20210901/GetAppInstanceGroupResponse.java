@@ -16,14 +16,14 @@ package com.aliyuncs.appstream_center.model.v20210901;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.appstream_center.transform.v20210901.ListAppInstanceGroupResponseUnmarshaller;
+import com.aliyuncs.appstream_center.transform.v20210901.GetAppInstanceGroupResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListAppInstanceGroupResponse extends AcsResponse {
+public class GetAppInstanceGroupResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -33,7 +33,7 @@ public class ListAppInstanceGroupResponse extends AcsResponse {
 
 	private Integer pageNumber;
 
-	private List<Data> appInstanceGroupModels;
+	private AppInstanceGroupModels appInstanceGroupModels;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,15 +67,15 @@ public class ListAppInstanceGroupResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public List<Data> getAppInstanceGroupModels() {
+	public AppInstanceGroupModels getAppInstanceGroupModels() {
 		return this.appInstanceGroupModels;
 	}
 
-	public void setAppInstanceGroupModels(List<Data> appInstanceGroupModels) {
+	public void setAppInstanceGroupModels(AppInstanceGroupModels appInstanceGroupModels) {
 		this.appInstanceGroupModels = appInstanceGroupModels;
 	}
 
-	public static class Data {
+	public static class AppInstanceGroupModels {
 
 		private String appCenterImageId;
 
@@ -117,11 +117,9 @@ public class ListAppInstanceGroupResponse extends AcsResponse {
 
 		private String osType;
 
+		private String appCenterImageName;
+
 		private String resourceStatus;
-
-		private String appPolicyId;
-
-		private String chargeResourceMode;
 
 		private List<AppsItem> apps;
 
@@ -289,28 +287,20 @@ public class ListAppInstanceGroupResponse extends AcsResponse {
 			this.osType = osType;
 		}
 
+		public String getAppCenterImageName() {
+			return this.appCenterImageName;
+		}
+
+		public void setAppCenterImageName(String appCenterImageName) {
+			this.appCenterImageName = appCenterImageName;
+		}
+
 		public String getResourceStatus() {
 			return this.resourceStatus;
 		}
 
 		public void setResourceStatus(String resourceStatus) {
 			this.resourceStatus = resourceStatus;
-		}
-
-		public String getAppPolicyId() {
-			return this.appPolicyId;
-		}
-
-		public void setAppPolicyId(String appPolicyId) {
-			this.appPolicyId = appPolicyId;
-		}
-
-		public String getChargeResourceMode() {
-			return this.chargeResourceMode;
-		}
-
-		public void setChargeResourceMode(String chargeResourceMode) {
-			this.chargeResourceMode = chargeResourceMode;
 		}
 
 		public List<AppsItem> getApps() {
@@ -343,12 +333,6 @@ public class ListAppInstanceGroupResponse extends AcsResponse {
 
 			private String appName;
 
-			private String appVersion;
-
-			private String appVersionName;
-
-			private String appIcon;
-
 			public String getAppId() {
 				return this.appId;
 			}
@@ -363,30 +347,6 @@ public class ListAppInstanceGroupResponse extends AcsResponse {
 
 			public void setAppName(String appName) {
 				this.appName = appName;
-			}
-
-			public String getAppVersion() {
-				return this.appVersion;
-			}
-
-			public void setAppVersion(String appVersion) {
-				this.appVersion = appVersion;
-			}
-
-			public String getAppVersionName() {
-				return this.appVersionName;
-			}
-
-			public void setAppVersionName(String appVersionName) {
-				this.appVersionName = appVersionName;
-			}
-
-			public String getAppIcon() {
-				return this.appIcon;
-			}
-
-			public void setAppIcon(String appIcon) {
-				this.appIcon = appIcon;
 			}
 		}
 
@@ -674,8 +634,8 @@ public class ListAppInstanceGroupResponse extends AcsResponse {
 	}
 
 	@Override
-	public ListAppInstanceGroupResponse getInstance(UnmarshallerContext context) {
-		return	ListAppInstanceGroupResponseUnmarshaller.unmarshall(this, context);
+	public GetAppInstanceGroupResponse getInstance(UnmarshallerContext context) {
+		return	GetAppInstanceGroupResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

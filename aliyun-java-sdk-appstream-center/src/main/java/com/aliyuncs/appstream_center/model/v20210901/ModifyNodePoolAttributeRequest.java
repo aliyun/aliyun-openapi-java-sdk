@@ -15,6 +15,7 @@
 package com.aliyuncs.appstream_center.model.v20210901;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
@@ -98,8 +99,14 @@ public class ModifyNodePoolAttributeRequest extends RpcAcsRequest<ModifyNodePool
 
 	public static class NodePoolStrategy {
 
+		@SerializedName("RecurrenceSchedules")
+		private List<RecurrenceSchedulesItem> recurrenceSchedules;
+
 		@SerializedName("ScalingStep")
 		private Integer scalingStep;
+
+		@SerializedName("StrategyDisableDate")
+		private String strategyDisableDate;
 
 		@SerializedName("ScalingDownAfterIdleMinutes")
 		private Integer scalingDownAfterIdleMinutes;
@@ -110,8 +117,22 @@ public class ModifyNodePoolAttributeRequest extends RpcAcsRequest<ModifyNodePool
 		@SerializedName("MaxScalingAmount")
 		private Integer maxScalingAmount;
 
+		@SerializedName("WarmUp")
+		private Boolean warmUp;
+
 		@SerializedName("ScalingUsageThreshold")
 		private String scalingUsageThreshold;
+
+		@SerializedName("StrategyEnableDate")
+		private String strategyEnableDate;
+
+		public List<RecurrenceSchedulesItem> getRecurrenceSchedules() {
+			return this.recurrenceSchedules;
+		}
+
+		public void setRecurrenceSchedules(List<RecurrenceSchedulesItem> recurrenceSchedules) {
+			this.recurrenceSchedules = recurrenceSchedules;
+		}
 
 		public Integer getScalingStep() {
 			return this.scalingStep;
@@ -119,6 +140,14 @@ public class ModifyNodePoolAttributeRequest extends RpcAcsRequest<ModifyNodePool
 
 		public void setScalingStep(Integer scalingStep) {
 			this.scalingStep = scalingStep;
+		}
+
+		public String getStrategyDisableDate() {
+			return this.strategyDisableDate;
+		}
+
+		public void setStrategyDisableDate(String strategyDisableDate) {
+			this.strategyDisableDate = strategyDisableDate;
 		}
 
 		public Integer getScalingDownAfterIdleMinutes() {
@@ -145,12 +174,100 @@ public class ModifyNodePoolAttributeRequest extends RpcAcsRequest<ModifyNodePool
 			this.maxScalingAmount = maxScalingAmount;
 		}
 
+		public Boolean getWarmUp() {
+			return this.warmUp;
+		}
+
+		public void setWarmUp(Boolean warmUp) {
+			this.warmUp = warmUp;
+		}
+
 		public String getScalingUsageThreshold() {
 			return this.scalingUsageThreshold;
 		}
 
 		public void setScalingUsageThreshold(String scalingUsageThreshold) {
 			this.scalingUsageThreshold = scalingUsageThreshold;
+		}
+
+		public String getStrategyEnableDate() {
+			return this.strategyEnableDate;
+		}
+
+		public void setStrategyEnableDate(String strategyEnableDate) {
+			this.strategyEnableDate = strategyEnableDate;
+		}
+
+		public static class RecurrenceSchedulesItem {
+
+			@SerializedName("RecurrenceValues")
+			private List<Integer> recurrenceValues;
+
+			@SerializedName("RecurrenceType")
+			private String recurrenceType;
+
+			@SerializedName("TimerPeriods")
+			private List<TimerPeriodsItem> timerPeriods;
+
+			public List<Integer> getRecurrenceValues() {
+				return this.recurrenceValues;
+			}
+
+			public void setRecurrenceValues(List<Integer> recurrenceValues) {
+				this.recurrenceValues = recurrenceValues;
+			}
+
+			public String getRecurrenceType() {
+				return this.recurrenceType;
+			}
+
+			public void setRecurrenceType(String recurrenceType) {
+				this.recurrenceType = recurrenceType;
+			}
+
+			public List<TimerPeriodsItem> getTimerPeriods() {
+				return this.timerPeriods;
+			}
+
+			public void setTimerPeriods(List<TimerPeriodsItem> timerPeriods) {
+				this.timerPeriods = timerPeriods;
+			}
+
+			public static class TimerPeriodsItem {
+
+				@SerializedName("Amount")
+				private Integer amount;
+
+				@SerializedName("EndTime")
+				private String endTime;
+
+				@SerializedName("StartTime")
+				private String startTime;
+
+				public Integer getAmount() {
+					return this.amount;
+				}
+
+				public void setAmount(Integer amount) {
+					this.amount = amount;
+				}
+
+				public String getEndTime() {
+					return this.endTime;
+				}
+
+				public void setEndTime(String endTime) {
+					this.endTime = endTime;
+				}
+
+				public String getStartTime() {
+					return this.startTime;
+				}
+
+				public void setStartTime(String startTime) {
+					this.startTime = startTime;
+				}
+			}
 		}
 	}
 
