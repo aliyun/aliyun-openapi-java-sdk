@@ -79,6 +79,7 @@ public class UpdateCasterSceneAudioRequest extends RpcAcsRequest<UpdateCasterSce
 				putQueryParameter("AudioLayer." + (depth1 + 1) + ".VolumeRate" , audioLayers.get(depth1).getVolumeRate());
 				putQueryParameter("AudioLayer." + (depth1 + 1) + ".FixedDelayDuration" , audioLayers.get(depth1).getFixedDelayDuration());
 				putQueryParameter("AudioLayer." + (depth1 + 1) + ".ValidChannel" , audioLayers.get(depth1).getValidChannel());
+				putQueryParameter("AudioLayer." + (depth1 + 1) + ".Filter" , audioLayers.get(depth1).getFilter());
 			}
 		}	
 	}
@@ -126,6 +127,8 @@ public class UpdateCasterSceneAudioRequest extends RpcAcsRequest<UpdateCasterSce
 
 		private String validChannel;
 
+		private String filter;
+
 		public Float getVolumeRate() {
 			return this.volumeRate;
 		}
@@ -148,6 +151,14 @@ public class UpdateCasterSceneAudioRequest extends RpcAcsRequest<UpdateCasterSce
 
 		public void setValidChannel(String validChannel) {
 			this.validChannel = validChannel;
+		}
+
+		public String getFilter() {
+			return this.filter;
+		}
+
+		public void setFilter(String filter) {
+			this.filter = filter;
 		}
 	}
 

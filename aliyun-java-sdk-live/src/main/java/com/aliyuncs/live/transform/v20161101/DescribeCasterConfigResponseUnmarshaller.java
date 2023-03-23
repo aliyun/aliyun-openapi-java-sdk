@@ -56,6 +56,7 @@ public class DescribeCasterConfigResponseUnmarshaller {
 		RecordConfig recordConfig = new RecordConfig();
 		recordConfig.setOssEndpoint(_ctx.stringValue("DescribeCasterConfigResponse.RecordConfig.OssEndpoint"));
 		recordConfig.setOssBucket(_ctx.stringValue("DescribeCasterConfigResponse.RecordConfig.OssBucket"));
+		recordConfig.setOnDemand(_ctx.integerValue("DescribeCasterConfigResponse.RecordConfig.OnDemand"));
 
 		List<RecordFormatItem> recordFormat = new ArrayList<RecordFormatItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCasterConfigResponse.RecordConfig.RecordFormat.Length"); i++) {

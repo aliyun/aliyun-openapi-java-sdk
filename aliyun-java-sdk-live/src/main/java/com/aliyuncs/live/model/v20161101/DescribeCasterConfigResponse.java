@@ -247,6 +247,8 @@ public class DescribeCasterConfigResponse extends AcsResponse {
 
 		private String ossBucket;
 
+		private Integer onDemand;
+
 		private List<RecordFormatItem> recordFormat;
 
 		public String getOssEndpoint() {
@@ -263,6 +265,14 @@ public class DescribeCasterConfigResponse extends AcsResponse {
 
 		public void setOssBucket(String ossBucket) {
 			this.ossBucket = ossBucket;
+		}
+
+		public Integer getOnDemand() {
+			return this.onDemand;
+		}
+
+		public void setOnDemand(Integer onDemand) {
+			this.onDemand = onDemand;
 		}
 
 		public List<RecordFormatItem> getRecordFormat() {

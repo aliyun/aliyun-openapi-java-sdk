@@ -22,12 +22,18 @@ import com.aliyuncs.live.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeLiveDomainRecordUsageDataRequest extends RpcAcsRequest<DescribeLiveDomainRecordUsageDataResponse> {
+public class DescribeLiveRecordNotifyRecordsRequest extends RpcAcsRequest<DescribeLiveRecordNotifyRecordsResponse> {
 	   
 
 	private String startTime;
 
-	private String splitBy;
+	private Long pageNumber;
+
+	private String appName;
+
+	private Long pageSize;
+
+	private String streamName;
 
 	private String domainName;
 
@@ -35,11 +41,9 @@ public class DescribeLiveDomainRecordUsageDataRequest extends RpcAcsRequest<Desc
 
 	private Long ownerId;
 
-	private String interval;
-
-	private String region;
-	public DescribeLiveDomainRecordUsageDataRequest() {
-		super("live", "2016-11-01", "DescribeLiveDomainRecordUsageData", "live");
+	private String status;
+	public DescribeLiveRecordNotifyRecordsRequest() {
+		super("live", "2016-11-01", "DescribeLiveRecordNotifyRecords", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -58,14 +62,47 @@ public class DescribeLiveDomainRecordUsageDataRequest extends RpcAcsRequest<Desc
 		}
 	}
 
-	public String getSplitBy() {
-		return this.splitBy;
+	public Long getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setSplitBy(String splitBy) {
-		this.splitBy = splitBy;
-		if(splitBy != null){
-			putQueryParameter("SplitBy", splitBy);
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getAppName() {
+		return this.appName;
+	}
+
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putQueryParameter("AppName", appName);
+		}
+	}
+
+	public Long getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getStreamName() {
+		return this.streamName;
+	}
+
+	public void setStreamName(String streamName) {
+		this.streamName = streamName;
+		if(streamName != null){
+			putQueryParameter("StreamName", streamName);
 		}
 	}
 
@@ -102,31 +139,20 @@ public class DescribeLiveDomainRecordUsageDataRequest extends RpcAcsRequest<Desc
 		}
 	}
 
-	public String getInterval() {
-		return this.interval;
+	public String getStatus() {
+		return this.status;
 	}
 
-	public void setInterval(String interval) {
-		this.interval = interval;
-		if(interval != null){
-			putQueryParameter("Interval", interval);
-		}
-	}
-
-	public String getRegion() {
-		return this.region;
-	}
-
-	public void setRegion(String region) {
-		this.region = region;
-		if(region != null){
-			putQueryParameter("Region", region);
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
 		}
 	}
 
 	@Override
-	public Class<DescribeLiveDomainRecordUsageDataResponse> getResponseClass() {
-		return DescribeLiveDomainRecordUsageDataResponse.class;
+	public Class<DescribeLiveRecordNotifyRecordsResponse> getResponseClass() {
+		return DescribeLiveRecordNotifyRecordsResponse.class;
 	}
 
 }
