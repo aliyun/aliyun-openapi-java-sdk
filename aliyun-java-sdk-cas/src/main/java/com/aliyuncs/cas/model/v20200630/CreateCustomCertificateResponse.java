@@ -15,16 +15,14 @@
 package com.aliyuncs.cas.model.v20200630;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cas.transform.v20200630.CreateRootCACertificateResponseUnmarshaller;
+import com.aliyuncs.cas.transform.v20200630.CreateCustomCertificateResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateRootCACertificateResponse extends AcsResponse {
-
-	private String requestId;
+public class CreateCustomCertificateResponse extends AcsResponse {
 
 	private String identifier;
 
@@ -32,13 +30,9 @@ public class CreateRootCACertificateResponse extends AcsResponse {
 
 	private String certificateChain;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private String serialNumber;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getIdentifier() {
 		return this.identifier;
@@ -64,9 +58,25 @@ public class CreateRootCACertificateResponse extends AcsResponse {
 		this.certificateChain = certificateChain;
 	}
 
+	public String getSerialNumber() {
+		return this.serialNumber;
+	}
+
+	public void setSerialNumber(String serialNumber) {
+		this.serialNumber = serialNumber;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	@Override
-	public CreateRootCACertificateResponse getInstance(UnmarshallerContext context) {
-		return	CreateRootCACertificateResponseUnmarshaller.unmarshall(this, context);
+	public CreateCustomCertificateResponse getInstance(UnmarshallerContext context) {
+		return	CreateCustomCertificateResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

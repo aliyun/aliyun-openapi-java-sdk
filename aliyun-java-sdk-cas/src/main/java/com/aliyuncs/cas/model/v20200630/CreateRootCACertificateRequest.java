@@ -27,19 +27,19 @@ public class CreateRootCACertificateRequest extends RpcAcsRequest<CreateRootCACe
 
 	private String countryCode;
 
+	private String locality;
+
 	private Integer years;
 
 	private String commonName;
 
-	private String state;
-
-	private String algorithm;
-
-	private String locality;
-
 	private String organization;
 
+	private String state;
+
 	private String organizationUnit;
+
+	private String algorithm;
 	public CreateRootCACertificateRequest() {
 		super("cas", "2020-06-30", "CreateRootCACertificate");
 		setMethod(MethodType.POST);
@@ -57,6 +57,17 @@ public class CreateRootCACertificateRequest extends RpcAcsRequest<CreateRootCACe
 		this.countryCode = countryCode;
 		if(countryCode != null){
 			putQueryParameter("CountryCode", countryCode);
+		}
+	}
+
+	public String getLocality() {
+		return this.locality;
+	}
+
+	public void setLocality(String locality) {
+		this.locality = locality;
+		if(locality != null){
+			putQueryParameter("Locality", locality);
 		}
 	}
 
@@ -82,39 +93,6 @@ public class CreateRootCACertificateRequest extends RpcAcsRequest<CreateRootCACe
 		}
 	}
 
-	public String getState() {
-		return this.state;
-	}
-
-	public void setState(String state) {
-		this.state = state;
-		if(state != null){
-			putQueryParameter("State", state);
-		}
-	}
-
-	public String getAlgorithm() {
-		return this.algorithm;
-	}
-
-	public void setAlgorithm(String algorithm) {
-		this.algorithm = algorithm;
-		if(algorithm != null){
-			putQueryParameter("Algorithm", algorithm);
-		}
-	}
-
-	public String getLocality() {
-		return this.locality;
-	}
-
-	public void setLocality(String locality) {
-		this.locality = locality;
-		if(locality != null){
-			putQueryParameter("Locality", locality);
-		}
-	}
-
 	public String getOrganization() {
 		return this.organization;
 	}
@@ -126,6 +104,17 @@ public class CreateRootCACertificateRequest extends RpcAcsRequest<CreateRootCACe
 		}
 	}
 
+	public String getState() {
+		return this.state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+		if(state != null){
+			putQueryParameter("State", state);
+		}
+	}
+
 	public String getOrganizationUnit() {
 		return this.organizationUnit;
 	}
@@ -134,6 +123,17 @@ public class CreateRootCACertificateRequest extends RpcAcsRequest<CreateRootCACe
 		this.organizationUnit = organizationUnit;
 		if(organizationUnit != null){
 			putQueryParameter("OrganizationUnit", organizationUnit);
+		}
+	}
+
+	public String getAlgorithm() {
+		return this.algorithm;
+	}
+
+	public void setAlgorithm(String algorithm) {
+		this.algorithm = algorithm;
+		if(algorithm != null){
+			putQueryParameter("Algorithm", algorithm);
 		}
 	}
 

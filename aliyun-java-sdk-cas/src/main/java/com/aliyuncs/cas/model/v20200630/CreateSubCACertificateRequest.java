@@ -15,6 +15,7 @@
 package com.aliyuncs.cas.model.v20200630;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cas.Endpoint;
 
@@ -25,23 +26,27 @@ import com.aliyuncs.cas.Endpoint;
 public class CreateSubCACertificateRequest extends RpcAcsRequest<CreateSubCACertificateResponse> {
 	   
 
+	private List<String> extendedKeyUsagess;
+
 	private String countryCode;
+
+	private String locality;
+
+	private Integer pathLenConstraint;
 
 	private Integer years;
 
 	private String commonName;
 
-	private String state;
-
-	private String algorithm;
-
-	private String locality;
-
 	private String organization;
 
 	private String parentIdentifier;
 
+	private String state;
+
 	private String organizationUnit;
+
+	private String algorithm;
 	public CreateSubCACertificateRequest() {
 		super("cas", "2020-06-30", "CreateSubCACertificate");
 		setMethod(MethodType.POST);
@@ -49,6 +54,19 @@ public class CreateSubCACertificateRequest extends RpcAcsRequest<CreateSubCACert
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public List<String> getExtendedKeyUsagess() {
+		return this.extendedKeyUsagess;
+	}
+
+	public void setExtendedKeyUsagess(List<String> extendedKeyUsagess) {
+		this.extendedKeyUsagess = extendedKeyUsagess;	
+		if (extendedKeyUsagess != null) {
+			for (int i = 0; i < extendedKeyUsagess.size(); i++) {
+				putQueryParameter("ExtendedKeyUsages." + (i + 1) , extendedKeyUsagess.get(i));
+			}
+		}	
 	}
 
 	public String getCountryCode() {
@@ -59,6 +77,28 @@ public class CreateSubCACertificateRequest extends RpcAcsRequest<CreateSubCACert
 		this.countryCode = countryCode;
 		if(countryCode != null){
 			putQueryParameter("CountryCode", countryCode);
+		}
+	}
+
+	public String getLocality() {
+		return this.locality;
+	}
+
+	public void setLocality(String locality) {
+		this.locality = locality;
+		if(locality != null){
+			putQueryParameter("Locality", locality);
+		}
+	}
+
+	public Integer getPathLenConstraint() {
+		return this.pathLenConstraint;
+	}
+
+	public void setPathLenConstraint(Integer pathLenConstraint) {
+		this.pathLenConstraint = pathLenConstraint;
+		if(pathLenConstraint != null){
+			putQueryParameter("PathLenConstraint", pathLenConstraint.toString());
 		}
 	}
 
@@ -84,39 +124,6 @@ public class CreateSubCACertificateRequest extends RpcAcsRequest<CreateSubCACert
 		}
 	}
 
-	public String getState() {
-		return this.state;
-	}
-
-	public void setState(String state) {
-		this.state = state;
-		if(state != null){
-			putQueryParameter("State", state);
-		}
-	}
-
-	public String getAlgorithm() {
-		return this.algorithm;
-	}
-
-	public void setAlgorithm(String algorithm) {
-		this.algorithm = algorithm;
-		if(algorithm != null){
-			putQueryParameter("Algorithm", algorithm);
-		}
-	}
-
-	public String getLocality() {
-		return this.locality;
-	}
-
-	public void setLocality(String locality) {
-		this.locality = locality;
-		if(locality != null){
-			putQueryParameter("Locality", locality);
-		}
-	}
-
 	public String getOrganization() {
 		return this.organization;
 	}
@@ -139,6 +146,17 @@ public class CreateSubCACertificateRequest extends RpcAcsRequest<CreateSubCACert
 		}
 	}
 
+	public String getState() {
+		return this.state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+		if(state != null){
+			putQueryParameter("State", state);
+		}
+	}
+
 	public String getOrganizationUnit() {
 		return this.organizationUnit;
 	}
@@ -147,6 +165,17 @@ public class CreateSubCACertificateRequest extends RpcAcsRequest<CreateSubCACert
 		this.organizationUnit = organizationUnit;
 		if(organizationUnit != null){
 			putQueryParameter("OrganizationUnit", organizationUnit);
+		}
+	}
+
+	public String getAlgorithm() {
+		return this.algorithm;
+	}
+
+	public void setAlgorithm(String algorithm) {
+		this.algorithm = algorithm;
+		if(algorithm != null){
+			putQueryParameter("Algorithm", algorithm);
 		}
 	}
 

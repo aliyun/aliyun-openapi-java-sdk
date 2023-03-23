@@ -24,21 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateSubCACertificateResponse extends AcsResponse {
 
-	private String identifier;
-
 	private String requestId;
+
+	private String identifier;
 
 	private String certificate;
 
 	private String certificateChain;
-
-	public String getIdentifier() {
-		return this.identifier;
-	}
-
-	public void setIdentifier(String identifier) {
-		this.identifier = identifier;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -46,6 +38,14 @@ public class CreateSubCACertificateResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getIdentifier() {
+		return this.identifier;
+	}
+
+	public void setIdentifier(String identifier) {
+		this.identifier = identifier;
 	}
 
 	public String getCertificate() {

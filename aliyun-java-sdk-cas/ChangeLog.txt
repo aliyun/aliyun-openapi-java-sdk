@@ -1,3 +1,7 @@
+2023-03-23 Version: 1.0.15
+- Fix some bugs.
+- Support PathLenConstraint and ExtendedKeyUsages.
+
 2023-02-13 Version: 1.0.14
 - Fix some bugs.
 
