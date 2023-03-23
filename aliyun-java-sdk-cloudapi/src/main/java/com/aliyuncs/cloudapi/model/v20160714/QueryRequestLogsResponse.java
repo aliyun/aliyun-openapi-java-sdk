@@ -117,6 +117,24 @@ public class QueryRequestLogsResponse extends AcsResponse {
 
 		private String initialRequestId;
 
+		private String appName;
+
+		private Long frontRequestStart;
+
+		private Long frontRequestEnd;
+
+		private Long backendRequestStart;
+
+		private Long backendRequestEnd;
+
+		private Long backendResponseStart;
+
+		private Long backendResponseEnd;
+
+		private Long frontResponseStart;
+
+		private Long frontResponseEnd;
+
 		public String getApiId() {
 			return this.apiId;
 		}
@@ -395,6 +413,78 @@ public class QueryRequestLogsResponse extends AcsResponse {
 
 		public void setInitialRequestId(String initialRequestId) {
 			this.initialRequestId = initialRequestId;
+		}
+
+		public String getAppName() {
+			return this.appName;
+		}
+
+		public void setAppName(String appName) {
+			this.appName = appName;
+		}
+
+		public Long getFrontRequestStart() {
+			return this.frontRequestStart;
+		}
+
+		public void setFrontRequestStart(Long frontRequestStart) {
+			this.frontRequestStart = frontRequestStart;
+		}
+
+		public Long getFrontRequestEnd() {
+			return this.frontRequestEnd;
+		}
+
+		public void setFrontRequestEnd(Long frontRequestEnd) {
+			this.frontRequestEnd = frontRequestEnd;
+		}
+
+		public Long getBackendRequestStart() {
+			return this.backendRequestStart;
+		}
+
+		public void setBackendRequestStart(Long backendRequestStart) {
+			this.backendRequestStart = backendRequestStart;
+		}
+
+		public Long getBackendRequestEnd() {
+			return this.backendRequestEnd;
+		}
+
+		public void setBackendRequestEnd(Long backendRequestEnd) {
+			this.backendRequestEnd = backendRequestEnd;
+		}
+
+		public Long getBackendResponseStart() {
+			return this.backendResponseStart;
+		}
+
+		public void setBackendResponseStart(Long backendResponseStart) {
+			this.backendResponseStart = backendResponseStart;
+		}
+
+		public Long getBackendResponseEnd() {
+			return this.backendResponseEnd;
+		}
+
+		public void setBackendResponseEnd(Long backendResponseEnd) {
+			this.backendResponseEnd = backendResponseEnd;
+		}
+
+		public Long getFrontResponseStart() {
+			return this.frontResponseStart;
+		}
+
+		public void setFrontResponseStart(Long frontResponseStart) {
+			this.frontResponseStart = frontResponseStart;
+		}
+
+		public Long getFrontResponseEnd() {
+			return this.frontResponseEnd;
+		}
+
+		public void setFrontResponseEnd(Long frontResponseEnd) {
+			this.frontResponseEnd = frontResponseEnd;
 		}
 	}
 

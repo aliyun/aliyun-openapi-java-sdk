@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeApisResponse;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeApisResponse.ApiSummary;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeApisResponse.ApiSummary.DeployedInfo;
+import com.aliyuncs.cloudapi.model.v20160714.DescribeApisResponse.ApiSummary.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -57,6 +58,16 @@ public class DescribeApisResponseUnmarshaller {
 				deployedInfos.add(deployedInfo);
 			}
 			apiSummary.setDeployedInfos(deployedInfos);
+
+			List<Tag> tagList = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeApisResponse.ApiSummarys["+ i +"].TagList.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setTagKey(_ctx.stringValue("DescribeApisResponse.ApiSummarys["+ i +"].TagList["+ j +"].TagKey"));
+				tag.setTagValue(_ctx.stringValue("DescribeApisResponse.ApiSummarys["+ i +"].TagList["+ j +"].TagValue"));
+
+				tagList.add(tag);
+			}
+			apiSummary.setTagList(tagList);
 
 			apiSummarys.add(apiSummary);
 		}

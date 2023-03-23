@@ -143,7 +143,15 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private String iPV6AclStatus;
 
+		private String dedicatedInstanceType;
+
+		private String instanceCidrBlock;
+
+		private String connectVpcId;
+
 		private List<SpecAttribute> instanceSpecAttributes;
+
+		private List<NetworkInterfaceAttribute> networkInterfaceAttributes;
 
 		public String getStatus() {
 			return this.status;
@@ -409,12 +417,44 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.iPV6AclStatus = iPV6AclStatus;
 		}
 
+		public String getDedicatedInstanceType() {
+			return this.dedicatedInstanceType;
+		}
+
+		public void setDedicatedInstanceType(String dedicatedInstanceType) {
+			this.dedicatedInstanceType = dedicatedInstanceType;
+		}
+
+		public String getInstanceCidrBlock() {
+			return this.instanceCidrBlock;
+		}
+
+		public void setInstanceCidrBlock(String instanceCidrBlock) {
+			this.instanceCidrBlock = instanceCidrBlock;
+		}
+
+		public String getConnectVpcId() {
+			return this.connectVpcId;
+		}
+
+		public void setConnectVpcId(String connectVpcId) {
+			this.connectVpcId = connectVpcId;
+		}
+
 		public List<SpecAttribute> getInstanceSpecAttributes() {
 			return this.instanceSpecAttributes;
 		}
 
 		public void setInstanceSpecAttributes(List<SpecAttribute> instanceSpecAttributes) {
 			this.instanceSpecAttributes = instanceSpecAttributes;
+		}
+
+		public List<NetworkInterfaceAttribute> getNetworkInterfaceAttributes() {
+			return this.networkInterfaceAttributes;
+		}
+
+		public void setNetworkInterfaceAttributes(List<NetworkInterfaceAttribute> networkInterfaceAttributes) {
+			this.networkInterfaceAttributes = networkInterfaceAttributes;
 		}
 
 		public static class SpecAttribute {
@@ -437,6 +477,59 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 			public void setLocalName(String localName) {
 				this.localName = localName;
+			}
+		}
+
+		public static class NetworkInterfaceAttribute {
+
+			private String vswitchId;
+
+			private String securityGroupId;
+
+			private String networkInterfaceId;
+
+			private String cidrBlock;
+
+			private String zoneId;
+
+			public String getVswitchId() {
+				return this.vswitchId;
+			}
+
+			public void setVswitchId(String vswitchId) {
+				this.vswitchId = vswitchId;
+			}
+
+			public String getSecurityGroupId() {
+				return this.securityGroupId;
+			}
+
+			public void setSecurityGroupId(String securityGroupId) {
+				this.securityGroupId = securityGroupId;
+			}
+
+			public String getNetworkInterfaceId() {
+				return this.networkInterfaceId;
+			}
+
+			public void setNetworkInterfaceId(String networkInterfaceId) {
+				this.networkInterfaceId = networkInterfaceId;
+			}
+
+			public String getCidrBlock() {
+				return this.cidrBlock;
+			}
+
+			public void setCidrBlock(String cidrBlock) {
+				this.cidrBlock = cidrBlock;
+			}
+
+			public String getZoneId() {
+				return this.zoneId;
+			}
+
+			public void setZoneId(String zoneId) {
+				this.zoneId = zoneId;
 			}
 		}
 	}

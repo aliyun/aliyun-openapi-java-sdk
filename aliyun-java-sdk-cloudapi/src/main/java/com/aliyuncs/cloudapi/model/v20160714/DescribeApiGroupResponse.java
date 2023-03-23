@@ -85,6 +85,8 @@ public class DescribeApiGroupResponse extends AcsResponse {
 
 	private Boolean cloudMarketCommodity;
 
+	private String dedicatedInstanceType;
+
 	private List<DomainItem> customDomains;
 
 	private List<StageInfo> stageItems;
@@ -327,6 +329,14 @@ public class DescribeApiGroupResponse extends AcsResponse {
 
 	public void setCloudMarketCommodity(Boolean cloudMarketCommodity) {
 		this.cloudMarketCommodity = cloudMarketCommodity;
+	}
+
+	public String getDedicatedInstanceType() {
+		return this.dedicatedInstanceType;
+	}
+
+	public void setDedicatedInstanceType(String dedicatedInstanceType) {
+		this.dedicatedInstanceType = dedicatedInstanceType;
 	}
 
 	public List<DomainItem> getCustomDomains() {

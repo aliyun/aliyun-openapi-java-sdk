@@ -101,6 +101,8 @@ public class DescribeApisResponse extends AcsResponse {
 
 		private List<DeployedInfo> deployedInfos;
 
+		private List<Tag> tagList;
+
 		public String getVisibility() {
 			return this.visibility;
 		}
@@ -197,6 +199,14 @@ public class DescribeApisResponse extends AcsResponse {
 			this.deployedInfos = deployedInfos;
 		}
 
+		public List<Tag> getTagList() {
+			return this.tagList;
+		}
+
+		public void setTagList(List<Tag> tagList) {
+			this.tagList = tagList;
+		}
+
 		public static class DeployedInfo {
 
 			private String stageName;
@@ -227,6 +237,29 @@ public class DescribeApisResponse extends AcsResponse {
 
 			public void setDeployedStatus(String deployedStatus) {
 				this.deployedStatus = deployedStatus;
+			}
+		}
+
+		public static class Tag {
+
+			private String tagKey;
+
+			private String tagValue;
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
 			}
 		}
 	}

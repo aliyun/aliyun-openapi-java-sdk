@@ -35,6 +35,8 @@ public class DescribeDomainResponseUnmarshaller {
 		describeDomainResponse.setCertificateBody(_ctx.stringValue("DescribeDomainResponse.CertificateBody"));
 		describeDomainResponse.setSubDomain(_ctx.stringValue("DescribeDomainResponse.SubDomain"));
 		describeDomainResponse.setDomainCNAMEStatus(_ctx.stringValue("DescribeDomainResponse.DomainCNAMEStatus"));
+		describeDomainResponse.setCertificateValidStart(_ctx.longValue("DescribeDomainResponse.CertificateValidStart"));
+		describeDomainResponse.setCertificateValidEnd(_ctx.longValue("DescribeDomainResponse.CertificateValidEnd"));
 	 
 	 	return describeDomainResponse;
 	}

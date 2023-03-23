@@ -57,6 +57,7 @@ public class DescribeApiGroupResponseUnmarshaller {
 		describeApiGroupResponse.setInstanceVipList(_ctx.stringValue("DescribeApiGroupResponse.InstanceVipList"));
 		describeApiGroupResponse.setVpcSlbIntranetDomain(_ctx.stringValue("DescribeApiGroupResponse.VpcSlbIntranetDomain"));
 		describeApiGroupResponse.setCloudMarketCommodity(_ctx.booleanValue("DescribeApiGroupResponse.CloudMarketCommodity"));
+		describeApiGroupResponse.setDedicatedInstanceType(_ctx.stringValue("DescribeApiGroupResponse.DedicatedInstanceType"));
 
 		List<DomainItem> customDomains = new ArrayList<DomainItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeApiGroupResponse.CustomDomains.Length"); i++) {

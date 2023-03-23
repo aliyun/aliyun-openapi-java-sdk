@@ -28,8 +28,6 @@ public class CreateAppRequest extends RpcAcsRequest<CreateAppResponse> {
 
 	private String description;
 
-	private String source;
-
 	private String appName;
 
 	private String securityToken;
@@ -58,17 +56,6 @@ public class CreateAppRequest extends RpcAcsRequest<CreateAppResponse> {
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
-		}
-	}
-
-	public String getSource() {
-		return this.source;
-	}
-
-	public void setSource(String source) {
-		this.source = source;
-		if(source != null){
-			putQueryParameter("Source", source);
 		}
 	}
 

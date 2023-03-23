@@ -50,6 +50,10 @@ public class DescribeDomainResponse extends AcsResponse {
 
 	private String domainCNAMEStatus;
 
+	private Long certificateValidStart;
+
+	private Long certificateValidEnd;
+
 	public String getCertificatePrivateKey() {
 		return this.certificatePrivateKey;
 	}
@@ -152,6 +156,22 @@ public class DescribeDomainResponse extends AcsResponse {
 
 	public void setDomainCNAMEStatus(String domainCNAMEStatus) {
 		this.domainCNAMEStatus = domainCNAMEStatus;
+	}
+
+	public Long getCertificateValidStart() {
+		return this.certificateValidStart;
+	}
+
+	public void setCertificateValidStart(Long certificateValidStart) {
+		this.certificateValidStart = certificateValidStart;
+	}
+
+	public Long getCertificateValidEnd() {
+		return this.certificateValidEnd;
+	}
+
+	public void setCertificateValidEnd(Long certificateValidEnd) {
+		this.certificateValidEnd = certificateValidEnd;
 	}
 
 	@Override

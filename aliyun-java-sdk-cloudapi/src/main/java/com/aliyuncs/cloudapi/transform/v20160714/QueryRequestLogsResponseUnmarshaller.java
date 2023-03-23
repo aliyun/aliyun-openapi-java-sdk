@@ -66,6 +66,15 @@ public class QueryRequestLogsResponseUnmarshaller {
 			requestLog.setResponseBody(_ctx.stringValue("QueryRequestLogsResponse.RequestLogs["+ i +"].ResponseBody"));
 			requestLog.setPlugin(_ctx.stringValue("QueryRequestLogsResponse.RequestLogs["+ i +"].plugin"));
 			requestLog.setInitialRequestId(_ctx.stringValue("QueryRequestLogsResponse.RequestLogs["+ i +"].InitialRequestId"));
+			requestLog.setAppName(_ctx.stringValue("QueryRequestLogsResponse.RequestLogs["+ i +"].AppName"));
+			requestLog.setFrontRequestStart(_ctx.longValue("QueryRequestLogsResponse.RequestLogs["+ i +"].FrontRequestStart"));
+			requestLog.setFrontRequestEnd(_ctx.longValue("QueryRequestLogsResponse.RequestLogs["+ i +"].FrontRequestEnd"));
+			requestLog.setBackendRequestStart(_ctx.longValue("QueryRequestLogsResponse.RequestLogs["+ i +"].BackendRequestStart"));
+			requestLog.setBackendRequestEnd(_ctx.longValue("QueryRequestLogsResponse.RequestLogs["+ i +"].BackendRequestEnd"));
+			requestLog.setBackendResponseStart(_ctx.longValue("QueryRequestLogsResponse.RequestLogs["+ i +"].BackendResponseStart"));
+			requestLog.setBackendResponseEnd(_ctx.longValue("QueryRequestLogsResponse.RequestLogs["+ i +"].BackendResponseEnd"));
+			requestLog.setFrontResponseStart(_ctx.longValue("QueryRequestLogsResponse.RequestLogs["+ i +"].FrontResponseStart"));
+			requestLog.setFrontResponseEnd(_ctx.longValue("QueryRequestLogsResponse.RequestLogs["+ i +"].FrontResponseEnd"));
 
 			requestLogs.add(requestLog);
 		}

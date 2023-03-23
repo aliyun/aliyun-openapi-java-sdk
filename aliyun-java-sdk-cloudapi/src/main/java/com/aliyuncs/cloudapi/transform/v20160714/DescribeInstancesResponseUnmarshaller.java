@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.cloudapi.model.v20160714.DescribeInstancesResponse;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeInstancesResponse.InstanceAttribute;
+import com.aliyuncs.cloudapi.model.v20160714.DescribeInstancesResponse.InstanceAttribute.NetworkInterfaceAttribute;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeInstancesResponse.InstanceAttribute.SpecAttribute;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -68,6 +69,9 @@ public class DescribeInstancesResponseUnmarshaller {
 			instanceAttribute.setIPV6AclId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].IPV6AclId"));
 			instanceAttribute.setIPV6AclType(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].IPV6AclType"));
 			instanceAttribute.setIPV6AclStatus(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].IPV6AclStatus"));
+			instanceAttribute.setDedicatedInstanceType(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].DedicatedInstanceType"));
+			instanceAttribute.setInstanceCidrBlock(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].InstanceCidrBlock"));
+			instanceAttribute.setConnectVpcId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].ConnectVpcId"));
 
 			List<SpecAttribute> instanceSpecAttributes = new ArrayList<SpecAttribute>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstancesResponse.Instances["+ i +"].InstanceSpecAttributes.Length"); j++) {
@@ -78,6 +82,19 @@ public class DescribeInstancesResponseUnmarshaller {
 				instanceSpecAttributes.add(specAttribute);
 			}
 			instanceAttribute.setInstanceSpecAttributes(instanceSpecAttributes);
+
+			List<NetworkInterfaceAttribute> networkInterfaceAttributes = new ArrayList<NetworkInterfaceAttribute>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeInstancesResponse.Instances["+ i +"].NetworkInterfaceAttributes.Length"); j++) {
+				NetworkInterfaceAttribute networkInterfaceAttribute = new NetworkInterfaceAttribute();
+				networkInterfaceAttribute.setVswitchId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].NetworkInterfaceAttributes["+ j +"].VswitchId"));
+				networkInterfaceAttribute.setSecurityGroupId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].NetworkInterfaceAttributes["+ j +"].SecurityGroupId"));
+				networkInterfaceAttribute.setNetworkInterfaceId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].NetworkInterfaceAttributes["+ j +"].NetworkInterfaceId"));
+				networkInterfaceAttribute.setCidrBlock(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].NetworkInterfaceAttributes["+ j +"].CidrBlock"));
+				networkInterfaceAttribute.setZoneId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].NetworkInterfaceAttributes["+ j +"].ZoneId"));
+
+				networkInterfaceAttributes.add(networkInterfaceAttribute);
+			}
+			instanceAttribute.setNetworkInterfaceAttributes(networkInterfaceAttributes);
 
 			instances.add(instanceAttribute);
 		}

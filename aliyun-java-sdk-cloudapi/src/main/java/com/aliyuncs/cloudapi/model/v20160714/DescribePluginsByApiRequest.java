@@ -29,7 +29,11 @@ public class DescribePluginsByApiRequest extends RpcAcsRequest<DescribePluginsBy
 
 	private String groupId;
 
+	private Integer pageNumber;
+
 	private String securityToken;
+
+	private Integer pageSize;
 
 	private String apiId;
 	public DescribePluginsByApiRequest() {
@@ -63,6 +67,17 @@ public class DescribePluginsByApiRequest extends RpcAcsRequest<DescribePluginsBy
 		}
 	}
 
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
@@ -71,6 +86,17 @@ public class DescribePluginsByApiRequest extends RpcAcsRequest<DescribePluginsBy
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
