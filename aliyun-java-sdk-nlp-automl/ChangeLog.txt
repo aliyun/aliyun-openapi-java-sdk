@@ -1,3 +1,6 @@
+2023-03-23 Version: 0.0.12
+- Add FindUserReport4Alinlp Api.
+
 2023-03-09 Version: 0.0.11
 - add FindUserReport4Alinlp Api.
 
