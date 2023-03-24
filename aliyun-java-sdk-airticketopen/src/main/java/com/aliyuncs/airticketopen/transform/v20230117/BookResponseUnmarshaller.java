@@ -14,7 +14,14 @@
 
 package com.aliyuncs.airticketopen.transform.v20230117;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.airticketopen.model.v20230117.BookResponse;
+import com.aliyuncs.airticketopen.model.v20230117.BookResponse.Data;
+import com.aliyuncs.airticketopen.model.v20230117.BookResponse.Data.Order_listItem;
+import com.aliyuncs.airticketopen.model.v20230117.BookResponse.Error_data;
+import com.aliyuncs.airticketopen.model.v20230117.BookResponse.Error_data.Order_listItem2;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -22,6 +29,35 @@ public class BookResponseUnmarshaller {
 
 	public static BookResponse unmarshall(BookResponse bookResponse, UnmarshallerContext _ctx) {
 		
+		bookResponse.setRequestId(_ctx.stringValue("BookResponse.RequestId"));
+		bookResponse.setStatus(_ctx.integerValue("BookResponse.status"));
+		bookResponse.setError_code(_ctx.stringValue("BookResponse.error_code"));
+		bookResponse.setError_msg(_ctx.stringValue("BookResponse.error_msg"));
+		bookResponse.setSuccess(_ctx.booleanValue("BookResponse.success"));
+
+		Data data = new Data();
+
+		List<Order_listItem> order_list = new ArrayList<Order_listItem>();
+		for (int i = 0; i < _ctx.lengthValue("BookResponse.data.order_list.Length"); i++) {
+			Order_listItem order_listItem = new Order_listItem();
+			order_listItem.setOrder_num(_ctx.longValue("BookResponse.data.order_list["+ i +"].order_num"));
+
+			order_list.add(order_listItem);
+		}
+		data.setOrder_list(order_list);
+		bookResponse.setData(data);
+
+		Error_data error_data = new Error_data();
+
+		List<Order_listItem2> order_list1 = new ArrayList<Order_listItem2>();
+		for (int i = 0; i < _ctx.lengthValue("BookResponse.error_data.order_list.Length"); i++) {
+			Order_listItem2 order_listItem2 = new Order_listItem2();
+			order_listItem2.setOrder_num(_ctx.longValue("BookResponse.error_data.order_list["+ i +"].order_num"));
+
+			order_list1.add(order_listItem2);
+		}
+		error_data.setOrder_list1(order_list1);
+		bookResponse.setError_data(error_data);
 	 
 	 	return bookResponse;
 	}
