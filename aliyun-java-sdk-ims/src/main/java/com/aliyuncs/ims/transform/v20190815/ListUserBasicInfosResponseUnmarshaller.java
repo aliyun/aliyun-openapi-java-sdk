@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.ims.model.v20190815.ListUserBasicInfosResponse;
 import com.aliyuncs.ims.model.v20190815.ListUserBasicInfosResponse.UserBasicInfo;
-import com.aliyuncs.ims.model.v20190815.ListUserBasicInfosResponse.UserBasicInfo.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -37,16 +36,6 @@ public class ListUserBasicInfosResponseUnmarshaller {
 			userBasicInfo.setUserPrincipalName(_ctx.stringValue("ListUserBasicInfosResponse.UserBasicInfos["+ i +"].UserPrincipalName"));
 			userBasicInfo.setDisplayName(_ctx.stringValue("ListUserBasicInfosResponse.UserBasicInfos["+ i +"].DisplayName"));
 			userBasicInfo.setUserId(_ctx.stringValue("ListUserBasicInfosResponse.UserBasicInfos["+ i +"].UserId"));
-
-			List<Tag> tags = new ArrayList<Tag>();
-			for (int j = 0; j < _ctx.lengthValue("ListUserBasicInfosResponse.UserBasicInfos["+ i +"].Tags.Length"); j++) {
-				Tag tag = new Tag();
-				tag.setTagKey(_ctx.stringValue("ListUserBasicInfosResponse.UserBasicInfos["+ i +"].Tags["+ j +"].TagKey"));
-				tag.setTagValue(_ctx.stringValue("ListUserBasicInfosResponse.UserBasicInfos["+ i +"].Tags["+ j +"].TagValue"));
-
-				tags.add(tag);
-			}
-			userBasicInfo.setTags(tags);
 
 			userBasicInfos.add(userBasicInfo);
 		}

@@ -15,6 +15,9 @@
 package com.aliyuncs.ims.model.v20190815;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ims.Endpoint;
 
@@ -32,6 +35,9 @@ public class SetSecurityPreferenceRequest extends RpcAcsRequest<SetSecurityPrefe
 	private Boolean allowUserToChangePassword;
 
 	private Integer loginSessionDuration;
+
+	@SerializedName("verificationTypes")
+	private List<String> verificationTypes;
 
 	private Boolean allowUserToManageAccessKeys;
 
@@ -93,6 +99,17 @@ public class SetSecurityPreferenceRequest extends RpcAcsRequest<SetSecurityPrefe
 		if(loginSessionDuration != null){
 			putQueryParameter("LoginSessionDuration", loginSessionDuration.toString());
 		}
+	}
+
+	public List<String> getVerificationTypes() {
+		return this.verificationTypes;
+	}
+
+	public void setVerificationTypes(List<String> verificationTypes) {
+		this.verificationTypes = verificationTypes;	
+		if (verificationTypes != null) {
+			putQueryParameter("VerificationTypes" , new Gson().toJson(verificationTypes));
+		}	
 	}
 
 	public Boolean getAllowUserToManageAccessKeys() {

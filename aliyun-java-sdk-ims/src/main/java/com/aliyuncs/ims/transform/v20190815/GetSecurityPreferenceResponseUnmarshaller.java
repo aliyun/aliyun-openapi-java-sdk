@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.ims.model.v20190815.GetSecurityPreferenceResponse;
 import com.aliyuncs.ims.model.v20190815.GetSecurityPreferenceResponse.SecurityPreference;
 import com.aliyuncs.ims.model.v20190815.GetSecurityPreferenceResponse.SecurityPreference.AccessKeyPreference;
+import com.aliyuncs.ims.model.v20190815.GetSecurityPreferenceResponse.SecurityPreference.ApplicationLoginPreference;
 import com.aliyuncs.ims.model.v20190815.GetSecurityPreferenceResponse.SecurityPreference.LoginProfilePreference;
 import com.aliyuncs.ims.model.v20190815.GetSecurityPreferenceResponse.SecurityPreference.MFAPreference;
 import com.aliyuncs.ims.model.v20190815.GetSecurityPreferenceResponse.SecurityPreference.PersonalInfoPreference;
@@ -65,6 +66,10 @@ public class GetSecurityPreferenceResponseUnmarshaller {
 		PersonalInfoPreference personalInfoPreference = new PersonalInfoPreference();
 		personalInfoPreference.setAllowUserToManagePersonalDingTalk(_ctx.booleanValue("GetSecurityPreferenceResponse.SecurityPreference.PersonalInfoPreference.AllowUserToManagePersonalDingTalk"));
 		securityPreference.setPersonalInfoPreference(personalInfoPreference);
+
+		ApplicationLoginPreference applicationLoginPreference = new ApplicationLoginPreference();
+		applicationLoginPreference.setAllowUserLongTermLogin(_ctx.booleanValue("GetSecurityPreferenceResponse.SecurityPreference.ApplicationLoginPreference.AllowUserLongTermLogin"));
+		securityPreference.setApplicationLoginPreference(applicationLoginPreference);
 		getSecurityPreferenceResponse.setSecurityPreference(securityPreference);
 	 
 	 	return getSecurityPreferenceResponse;

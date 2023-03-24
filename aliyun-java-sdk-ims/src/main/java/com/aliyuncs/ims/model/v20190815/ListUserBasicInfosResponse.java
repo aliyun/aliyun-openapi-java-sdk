@@ -73,8 +73,6 @@ public class ListUserBasicInfosResponse extends AcsResponse {
 
 		private String userId;
 
-		private List<Tag> tags;
-
 		public String getUserPrincipalName() {
 			return this.userPrincipalName;
 		}
@@ -97,37 +95,6 @@ public class ListUserBasicInfosResponse extends AcsResponse {
 
 		public void setUserId(String userId) {
 			this.userId = userId;
-		}
-
-		public List<Tag> getTags() {
-			return this.tags;
-		}
-
-		public void setTags(List<Tag> tags) {
-			this.tags = tags;
-		}
-
-		public static class Tag {
-
-			private String tagKey;
-
-			private String tagValue;
-
-			public String getTagKey() {
-				return this.tagKey;
-			}
-
-			public void setTagKey(String tagKey) {
-				this.tagKey = tagKey;
-			}
-
-			public String getTagValue() {
-				return this.tagValue;
-			}
-
-			public void setTagValue(String tagValue) {
-				this.tagValue = tagValue;
-			}
 		}
 	}
 

@@ -57,6 +57,8 @@ public class GetSecurityPreferenceResponse extends AcsResponse {
 
 		private PersonalInfoPreference personalInfoPreference;
 
+		private ApplicationLoginPreference applicationLoginPreference;
+
 		public AccessKeyPreference getAccessKeyPreference() {
 			return this.accessKeyPreference;
 		}
@@ -95,6 +97,14 @@ public class GetSecurityPreferenceResponse extends AcsResponse {
 
 		public void setPersonalInfoPreference(PersonalInfoPreference personalInfoPreference) {
 			this.personalInfoPreference = personalInfoPreference;
+		}
+
+		public ApplicationLoginPreference getApplicationLoginPreference() {
+			return this.applicationLoginPreference;
+		}
+
+		public void setApplicationLoginPreference(ApplicationLoginPreference applicationLoginPreference) {
+			this.applicationLoginPreference = applicationLoginPreference;
 		}
 
 		public static class AccessKeyPreference {
@@ -219,6 +229,19 @@ public class GetSecurityPreferenceResponse extends AcsResponse {
 
 			public void setAllowUserToManagePersonalDingTalk(Boolean allowUserToManagePersonalDingTalk) {
 				this.allowUserToManagePersonalDingTalk = allowUserToManagePersonalDingTalk;
+			}
+		}
+
+		public static class ApplicationLoginPreference {
+
+			private Boolean allowUserLongTermLogin;
+
+			public Boolean getAllowUserLongTermLogin() {
+				return this.allowUserLongTermLogin;
+			}
+
+			public void setAllowUserLongTermLogin(Boolean allowUserLongTermLogin) {
+				this.allowUserLongTermLogin = allowUserLongTermLogin;
 			}
 		}
 	}
