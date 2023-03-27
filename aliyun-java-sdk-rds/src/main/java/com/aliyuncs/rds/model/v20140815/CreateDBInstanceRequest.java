@@ -72,6 +72,8 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private String autoRenew;
 
+	private String port;
+
 	private String roleARN;
 
 	private String zoneId;
@@ -375,6 +377,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.autoRenew = autoRenew;
 		if(autoRenew != null){
 			putQueryParameter("AutoRenew", autoRenew);
+		}
+	}
+
+	public String getPort() {
+		return this.port;
+	}
+
+	public void setPort(String port) {
+		this.port = port;
+		if(port != null){
+			putQueryParameter("Port", port);
 		}
 	}
 

@@ -53,6 +53,8 @@ public class DescribeDBProxyResponse extends AcsResponse {
 
 	private List<DbProxyEndpointItemsItem> dbProxyEndpointItems;
 
+	private List<String> dBProxyAVZones;
+
 	public String getDBProxyInstanceLatestMinorVersion() {
 		return this.dBProxyInstanceLatestMinorVersion;
 	}
@@ -165,6 +167,14 @@ public class DescribeDBProxyResponse extends AcsResponse {
 		this.dbProxyEndpointItems = dbProxyEndpointItems;
 	}
 
+	public List<String> getDBProxyAVZones() {
+		return this.dBProxyAVZones;
+	}
+
+	public void setDBProxyAVZones(List<String> dBProxyAVZones) {
+		this.dBProxyAVZones = dBProxyAVZones;
+	}
+
 	public static class DBProxyConnectStringItemsItem {
 
 		private String dBProxyConnectStringNetWorkType;
@@ -180,6 +190,10 @@ public class DescribeDBProxyResponse extends AcsResponse {
 		private String dBProxyConnectStringPort;
 
 		private String dBProxyConnectString;
+
+		private String dBProxyVpcId;
+
+		private String dBProxyVswitchId;
 
 		public String getDBProxyConnectStringNetWorkType() {
 			return this.dBProxyConnectStringNetWorkType;
@@ -235,6 +249,22 @@ public class DescribeDBProxyResponse extends AcsResponse {
 
 		public void setDBProxyConnectString(String dBProxyConnectString) {
 			this.dBProxyConnectString = dBProxyConnectString;
+		}
+
+		public String getDBProxyVpcId() {
+			return this.dBProxyVpcId;
+		}
+
+		public void setDBProxyVpcId(String dBProxyVpcId) {
+			this.dBProxyVpcId = dBProxyVpcId;
+		}
+
+		public String getDBProxyVswitchId() {
+			return this.dBProxyVswitchId;
+		}
+
+		public void setDBProxyVswitchId(String dBProxyVswitchId) {
+			this.dBProxyVswitchId = dBProxyVswitchId;
 		}
 	}
 

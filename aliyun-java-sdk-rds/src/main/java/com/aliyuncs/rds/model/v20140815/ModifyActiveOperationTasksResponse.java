@@ -15,22 +15,26 @@
 package com.aliyuncs.rds.model.v20140815;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.rds.transform.v20140815.CreateDBNodesResponseUnmarshaller;
+import com.aliyuncs.rds.transform.v20140815.ModifyActiveOperationTasksResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateDBNodesResponse extends AcsResponse {
+public class ModifyActiveOperationTasksResponse extends AcsResponse {
+
+	private String ids;
 
 	private String requestId;
 
-	private String dBInstanceId;
+	public String getIds() {
+		return this.ids;
+	}
 
-	private Long orderId;
-
-	private String nodeIds;
+	public void setIds(String ids) {
+		this.ids = ids;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,33 +44,9 @@ public class CreateDBNodesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-	}
-
-	public Long getOrderId() {
-		return this.orderId;
-	}
-
-	public void setOrderId(Long orderId) {
-		this.orderId = orderId;
-	}
-
-	public String getNodeIds() {
-		return this.nodeIds;
-	}
-
-	public void setNodeIds(String nodeIds) {
-		this.nodeIds = nodeIds;
-	}
-
 	@Override
-	public CreateDBNodesResponse getInstance(UnmarshallerContext context) {
-		return	CreateDBNodesResponseUnmarshaller.unmarshall(this, context);
+	public ModifyActiveOperationTasksResponse getInstance(UnmarshallerContext context) {
+		return	ModifyActiveOperationTasksResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

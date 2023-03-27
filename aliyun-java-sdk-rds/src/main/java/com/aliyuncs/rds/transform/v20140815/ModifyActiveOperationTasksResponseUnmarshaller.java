@@ -14,19 +14,17 @@
 
 package com.aliyuncs.rds.transform.v20140815;
 
-import com.aliyuncs.rds.model.v20140815.CreateDBNodesResponse;
+import com.aliyuncs.rds.model.v20140815.ModifyActiveOperationTasksResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CreateDBNodesResponseUnmarshaller {
+public class ModifyActiveOperationTasksResponseUnmarshaller {
 
-	public static CreateDBNodesResponse unmarshall(CreateDBNodesResponse createDBNodesResponse, UnmarshallerContext _ctx) {
+	public static ModifyActiveOperationTasksResponse unmarshall(ModifyActiveOperationTasksResponse modifyActiveOperationTasksResponse, UnmarshallerContext _ctx) {
 		
-		createDBNodesResponse.setRequestId(_ctx.stringValue("CreateDBNodesResponse.RequestId"));
-		createDBNodesResponse.setDBInstanceId(_ctx.stringValue("CreateDBNodesResponse.DBInstanceId"));
-		createDBNodesResponse.setOrderId(_ctx.longValue("CreateDBNodesResponse.OrderId"));
-		createDBNodesResponse.setNodeIds(_ctx.stringValue("CreateDBNodesResponse.NodeIds"));
+		modifyActiveOperationTasksResponse.setRequestId(_ctx.stringValue("ModifyActiveOperationTasksResponse.RequestId"));
+		modifyActiveOperationTasksResponse.setIds(_ctx.stringValue("ModifyActiveOperationTasksResponse.Ids"));
 	 
-	 	return createDBNodesResponse;
+	 	return modifyActiveOperationTasksResponse;
 	}
 }

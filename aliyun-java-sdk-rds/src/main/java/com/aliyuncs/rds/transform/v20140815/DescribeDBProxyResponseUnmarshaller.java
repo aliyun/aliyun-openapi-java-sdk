@@ -40,6 +40,12 @@ public class DescribeDBProxyResponseUnmarshaller {
 		describeDBProxyResponse.setAccountName(_ctx.stringValue("DescribeDBProxyResponse.AccountName"));
 		describeDBProxyResponse.setResourceGroupId(_ctx.stringValue("DescribeDBProxyResponse.ResourceGroupId"));
 
+		List<String> dBProxyAVZones = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeDBProxyResponse.DBProxyAVZones.Length"); i++) {
+			dBProxyAVZones.add(_ctx.stringValue("DescribeDBProxyResponse.DBProxyAVZones["+ i +"]"));
+		}
+		describeDBProxyResponse.setDBProxyAVZones(dBProxyAVZones);
+
 		List<DBProxyConnectStringItemsItem> dBProxyConnectStringItems = new ArrayList<DBProxyConnectStringItemsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBProxyResponse.DBProxyConnectStringItems.Length"); i++) {
 			DBProxyConnectStringItemsItem dBProxyConnectStringItemsItem = new DBProxyConnectStringItemsItem();
@@ -50,6 +56,8 @@ public class DescribeDBProxyResponseUnmarshaller {
 			dBProxyConnectStringItemsItem.setDBProxyEndpointId(_ctx.stringValue("DescribeDBProxyResponse.DBProxyConnectStringItems["+ i +"].DBProxyEndpointId"));
 			dBProxyConnectStringItemsItem.setDBProxyConnectStringPort(_ctx.stringValue("DescribeDBProxyResponse.DBProxyConnectStringItems["+ i +"].DBProxyConnectStringPort"));
 			dBProxyConnectStringItemsItem.setDBProxyConnectString(_ctx.stringValue("DescribeDBProxyResponse.DBProxyConnectStringItems["+ i +"].DBProxyConnectString"));
+			dBProxyConnectStringItemsItem.setDBProxyVpcId(_ctx.stringValue("DescribeDBProxyResponse.DBProxyConnectStringItems["+ i +"].DBProxyVpcId"));
+			dBProxyConnectStringItemsItem.setDBProxyVswitchId(_ctx.stringValue("DescribeDBProxyResponse.DBProxyConnectStringItems["+ i +"].DBProxyVswitchId"));
 
 			dBProxyConnectStringItems.add(dBProxyConnectStringItemsItem);
 		}
