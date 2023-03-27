@@ -1,3 +1,6 @@
+2023-03-27 Version: 2.8.0
+- Add DeleteUnionBrand.
+
 2022-10-27 Version: 2.7.0
 - Supported ChargeType for CreateUnionTask.
 - Add StopUnionTask.
