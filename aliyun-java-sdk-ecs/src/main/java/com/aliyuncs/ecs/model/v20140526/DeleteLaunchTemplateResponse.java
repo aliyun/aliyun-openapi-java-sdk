@@ -26,12 +26,22 @@ public class DeleteLaunchTemplateResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String launchTemplateId;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getLaunchTemplateId() {
+		return this.launchTemplateId;
+	}
+
+	public void setLaunchTemplateId(String launchTemplateId) {
+		this.launchTemplateId = launchTemplateId;
 	}
 
 	@Override

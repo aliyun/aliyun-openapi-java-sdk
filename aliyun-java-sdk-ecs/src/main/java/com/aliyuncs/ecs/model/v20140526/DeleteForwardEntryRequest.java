@@ -37,7 +37,7 @@ public class DeleteForwardEntryRequest extends RpcAcsRequest<DeleteForwardEntryR
 
 	private Long ownerId;
 	public DeleteForwardEntryRequest() {
-		super("Ecs", "2014-05-26", "DeleteForwardEntry");
+		super("Ecs", "2014-05-26", "DeleteForwardEntry", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

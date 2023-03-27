@@ -40,7 +40,7 @@ public class DeleteLaunchTemplateVersionRequest extends RpcAcsRequest<DeleteLaun
 
 	private Long ownerId;
 	public DeleteLaunchTemplateVersionRequest() {
-		super("Ecs", "2014-05-26", "DeleteLaunchTemplateVersion");
+		super("Ecs", "2014-05-26", "DeleteLaunchTemplateVersion", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

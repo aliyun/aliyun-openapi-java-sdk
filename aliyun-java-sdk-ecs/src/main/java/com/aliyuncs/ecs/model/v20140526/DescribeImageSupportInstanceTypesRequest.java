@@ -26,8 +26,6 @@ import com.aliyuncs.ecs.Endpoint;
 public class DescribeImageSupportInstanceTypesRequest extends RpcAcsRequest<DescribeImageSupportInstanceTypesResponse> {
 	   
 
-	private String actionType;
-
 	private Long resourceOwnerId;
 
 	private String imageId;
@@ -38,23 +36,12 @@ public class DescribeImageSupportInstanceTypesRequest extends RpcAcsRequest<Desc
 
 	private List<Filter> filters;
 	public DescribeImageSupportInstanceTypesRequest() {
-		super("Ecs", "2014-05-26", "DescribeImageSupportInstanceTypes");
+		super("Ecs", "2014-05-26", "DescribeImageSupportInstanceTypes", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getActionType() {
-		return this.actionType;
-	}
-
-	public void setActionType(String actionType) {
-		this.actionType = actionType;
-		if(actionType != null){
-			putQueryParameter("ActionType", actionType);
-		}
 	}
 
 	public Long getResourceOwnerId() {

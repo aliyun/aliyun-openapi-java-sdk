@@ -23,6 +23,7 @@ public class DeleteLaunchTemplateResponseUnmarshaller {
 	public static DeleteLaunchTemplateResponse unmarshall(DeleteLaunchTemplateResponse deleteLaunchTemplateResponse, UnmarshallerContext _ctx) {
 		
 		deleteLaunchTemplateResponse.setRequestId(_ctx.stringValue("DeleteLaunchTemplateResponse.RequestId"));
+		deleteLaunchTemplateResponse.setLaunchTemplateId(_ctx.stringValue("DeleteLaunchTemplateResponse.LaunchTemplateId"));
 	 
 	 	return deleteLaunchTemplateResponse;
 	}

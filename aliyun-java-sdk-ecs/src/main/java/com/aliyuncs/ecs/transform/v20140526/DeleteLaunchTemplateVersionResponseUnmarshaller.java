@@ -14,7 +14,11 @@
 
 package com.aliyuncs.ecs.transform.v20140526;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.ecs.model.v20140526.DeleteLaunchTemplateVersionResponse;
+import com.aliyuncs.ecs.model.v20140526.DeleteLaunchTemplateVersionResponse.LaunchTemplateVersion;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -23,6 +27,16 @@ public class DeleteLaunchTemplateVersionResponseUnmarshaller {
 	public static DeleteLaunchTemplateVersionResponse unmarshall(DeleteLaunchTemplateVersionResponse deleteLaunchTemplateVersionResponse, UnmarshallerContext _ctx) {
 		
 		deleteLaunchTemplateVersionResponse.setRequestId(_ctx.stringValue("DeleteLaunchTemplateVersionResponse.RequestId"));
+
+		List<LaunchTemplateVersion> launchTemplateVersions = new ArrayList<LaunchTemplateVersion>();
+		for (int i = 0; i < _ctx.lengthValue("DeleteLaunchTemplateVersionResponse.LaunchTemplateVersions.Length"); i++) {
+			LaunchTemplateVersion launchTemplateVersion = new LaunchTemplateVersion();
+			launchTemplateVersion.setLaunchTemplateId(_ctx.stringValue("DeleteLaunchTemplateVersionResponse.LaunchTemplateVersions["+ i +"].LaunchTemplateId"));
+			launchTemplateVersion.setLaunchTemplateVersionNumber(_ctx.longValue("DeleteLaunchTemplateVersionResponse.LaunchTemplateVersions["+ i +"].LaunchTemplateVersionNumber"));
+
+			launchTemplateVersions.add(launchTemplateVersion);
+		}
+		deleteLaunchTemplateVersionResponse.setLaunchTemplateVersions(launchTemplateVersions);
 	 
 	 	return deleteLaunchTemplateVersionResponse;
 	}

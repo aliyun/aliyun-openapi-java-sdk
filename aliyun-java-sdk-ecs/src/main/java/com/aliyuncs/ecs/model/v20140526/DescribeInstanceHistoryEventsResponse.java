@@ -247,6 +247,16 @@ public class DescribeInstanceHistoryEventsResponse extends AcsResponse {
 
 			private String rack;
 
+			private String punishType;
+
+			private String punishDomain;
+
+			private String punishUrl;
+
+			private String code;
+
+			private String canAccept;
+
 			private List<InactiveDisk> inactiveDisks;
 
 			private List<String> migrationOptions;
@@ -297,6 +307,46 @@ public class DescribeInstanceHistoryEventsResponse extends AcsResponse {
 
 			public void setRack(String rack) {
 				this.rack = rack;
+			}
+
+			public String getPunishType() {
+				return this.punishType;
+			}
+
+			public void setPunishType(String punishType) {
+				this.punishType = punishType;
+			}
+
+			public String getPunishDomain() {
+				return this.punishDomain;
+			}
+
+			public void setPunishDomain(String punishDomain) {
+				this.punishDomain = punishDomain;
+			}
+
+			public String getPunishUrl() {
+				return this.punishUrl;
+			}
+
+			public void setPunishUrl(String punishUrl) {
+				this.punishUrl = punishUrl;
+			}
+
+			public String getCode() {
+				return this.code;
+			}
+
+			public void setCode(String code) {
+				this.code = code;
+			}
+
+			public String getCanAccept() {
+				return this.canAccept;
+			}
+
+			public void setCanAccept(String canAccept) {
+				this.canAccept = canAccept;
 			}
 
 			public List<InactiveDisk> getInactiveDisks() {

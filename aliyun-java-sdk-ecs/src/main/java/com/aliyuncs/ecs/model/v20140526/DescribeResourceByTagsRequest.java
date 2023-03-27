@@ -40,7 +40,7 @@ public class DescribeResourceByTagsRequest extends RpcAcsRequest<DescribeResourc
 
 	private String resourceType;
 	public DescribeResourceByTagsRequest() {
-		super("Ecs", "2014-05-26", "DescribeResourceByTags");
+		super("Ecs", "2014-05-26", "DescribeResourceByTags", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

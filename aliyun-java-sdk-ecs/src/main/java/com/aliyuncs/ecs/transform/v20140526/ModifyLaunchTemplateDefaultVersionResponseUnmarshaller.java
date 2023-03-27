@@ -23,6 +23,7 @@ public class ModifyLaunchTemplateDefaultVersionResponseUnmarshaller {
 	public static ModifyLaunchTemplateDefaultVersionResponse unmarshall(ModifyLaunchTemplateDefaultVersionResponse modifyLaunchTemplateDefaultVersionResponse, UnmarshallerContext _ctx) {
 		
 		modifyLaunchTemplateDefaultVersionResponse.setRequestId(_ctx.stringValue("ModifyLaunchTemplateDefaultVersionResponse.RequestId"));
+		modifyLaunchTemplateDefaultVersionResponse.setLaunchTemplateId(_ctx.stringValue("ModifyLaunchTemplateDefaultVersionResponse.LaunchTemplateId"));
 	 
 	 	return modifyLaunchTemplateDefaultVersionResponse;
 	}

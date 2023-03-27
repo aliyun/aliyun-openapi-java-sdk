@@ -35,7 +35,7 @@ public class DescribeInstanceAttributeRequest extends RpcAcsRequest<DescribeInst
 
 	private String instanceId;
 	public DescribeInstanceAttributeRequest() {
-		super("Ecs", "2014-05-26", "DescribeInstanceAttribute");
+		super("Ecs", "2014-05-26", "DescribeInstanceAttribute", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

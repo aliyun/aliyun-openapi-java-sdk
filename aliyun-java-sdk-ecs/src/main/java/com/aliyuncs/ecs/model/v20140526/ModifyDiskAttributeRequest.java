@@ -50,7 +50,7 @@ public class ModifyDiskAttributeRequest extends RpcAcsRequest<ModifyDiskAttribut
 
 	private Boolean burstingEnabled;
 	public ModifyDiskAttributeRequest() {
-		super("Ecs", "2014-05-26", "ModifyDiskAttribute");
+		super("Ecs", "2014-05-26", "ModifyDiskAttribute", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

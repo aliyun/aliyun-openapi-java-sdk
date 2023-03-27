@@ -58,7 +58,7 @@ public class DescribeInstancesFullStatusRequest extends RpcAcsRequest<DescribeIn
 
 	private String status;
 	public DescribeInstancesFullStatusRequest() {
-		super("Ecs", "2014-05-26", "DescribeInstancesFullStatus");
+		super("Ecs", "2014-05-26", "DescribeInstancesFullStatus", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

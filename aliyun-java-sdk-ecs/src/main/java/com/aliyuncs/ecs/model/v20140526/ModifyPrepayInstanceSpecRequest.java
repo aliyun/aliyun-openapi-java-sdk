@@ -53,7 +53,7 @@ public class ModifyPrepayInstanceSpecRequest extends RpcAcsRequest<ModifyPrepayI
 
 	private String instanceId;
 	public ModifyPrepayInstanceSpecRequest() {
-		super("Ecs", "2014-05-26", "ModifyPrepayInstanceSpec");
+		super("Ecs", "2014-05-26", "ModifyPrepayInstanceSpec", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -37,7 +37,7 @@ public class GetInstanceScreenshotRequest extends RpcAcsRequest<GetInstanceScree
 
 	private String instanceId;
 	public GetInstanceScreenshotRequest() {
-		super("Ecs", "2014-05-26", "GetInstanceScreenshot");
+		super("Ecs", "2014-05-26", "GetInstanceScreenshot", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

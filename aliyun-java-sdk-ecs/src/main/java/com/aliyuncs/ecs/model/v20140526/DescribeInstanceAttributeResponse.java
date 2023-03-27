@@ -75,6 +75,8 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 
 	private String creditSpecification;
 
+	private Boolean enableJumboFrame;
+
 	private List<LockReason> operationLocks;
 
 	private List<String> securityGroupIds;
@@ -287,6 +289,14 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 
 	public void setCreditSpecification(String creditSpecification) {
 		this.creditSpecification = creditSpecification;
+	}
+
+	public Boolean getEnableJumboFrame() {
+		return this.enableJumboFrame;
+	}
+
+	public void setEnableJumboFrame(Boolean enableJumboFrame) {
+		this.enableJumboFrame = enableJumboFrame;
 	}
 
 	public List<LockReason> getOperationLocks() {

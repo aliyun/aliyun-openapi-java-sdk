@@ -28,6 +28,8 @@ public class AssignIpv6AddressesRequest extends RpcAcsRequest<AssignIpv6Addresse
 
 	private Long resourceOwnerId;
 
+	private String clientToken;
+
 	private List<String> ipv6Prefixs;
 
 	private Integer ipv6PrefixCount;
@@ -44,7 +46,7 @@ public class AssignIpv6AddressesRequest extends RpcAcsRequest<AssignIpv6Addresse
 
 	private List<String> ipv6Addresss;
 	public AssignIpv6AddressesRequest() {
-		super("Ecs", "2014-05-26", "AssignIpv6Addresses");
+		super("Ecs", "2014-05-26", "AssignIpv6Addresses", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -60,6 +62,17 @@ public class AssignIpv6AddressesRequest extends RpcAcsRequest<AssignIpv6Addresse
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 

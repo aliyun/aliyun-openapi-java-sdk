@@ -45,7 +45,7 @@ public class ModifyCommandRequest extends RpcAcsRequest<ModifyCommandResponse> {
 
 	private String name;
 	public ModifyCommandRequest() {
-		super("Ecs", "2014-05-26", "ModifyCommand");
+		super("Ecs", "2014-05-26", "ModifyCommand", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

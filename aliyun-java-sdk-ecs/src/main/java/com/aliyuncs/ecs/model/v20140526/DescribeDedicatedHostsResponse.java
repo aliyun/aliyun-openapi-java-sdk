@@ -123,6 +123,8 @@ public class DescribeDedicatedHostsResponse extends AcsResponse {
 
 		private String machineId;
 
+		private Long dedicatedHostOwnerId;
+
 		private List<Instance> instances;
 
 		private List<OperationLock> operationLocks;
@@ -325,6 +327,14 @@ public class DescribeDedicatedHostsResponse extends AcsResponse {
 			this.machineId = machineId;
 		}
 
+		public Long getDedicatedHostOwnerId() {
+			return this.dedicatedHostOwnerId;
+		}
+
+		public void setDedicatedHostOwnerId(Long dedicatedHostOwnerId) {
+			this.dedicatedHostOwnerId = dedicatedHostOwnerId;
+		}
+
 		public List<Instance> getInstances() {
 			return this.instances;
 		}
@@ -405,6 +415,8 @@ public class DescribeDedicatedHostsResponse extends AcsResponse {
 
 			private String socketId;
 
+			private Long instanceOwnerId;
+
 			public String getInstanceType() {
 				return this.instanceType;
 			}
@@ -427,6 +439,14 @@ public class DescribeDedicatedHostsResponse extends AcsResponse {
 
 			public void setSocketId(String socketId) {
 				this.socketId = socketId;
+			}
+
+			public Long getInstanceOwnerId() {
+				return this.instanceOwnerId;
+			}
+
+			public void setInstanceOwnerId(Long instanceOwnerId) {
+				this.instanceOwnerId = instanceOwnerId;
 			}
 		}
 

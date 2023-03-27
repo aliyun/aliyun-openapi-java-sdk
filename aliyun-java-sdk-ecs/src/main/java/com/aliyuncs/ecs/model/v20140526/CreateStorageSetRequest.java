@@ -43,7 +43,7 @@ public class CreateStorageSetRequest extends RpcAcsRequest<CreateStorageSetRespo
 
 	private String storageSetName;
 	public CreateStorageSetRequest() {
-		super("Ecs", "2014-05-26", "CreateStorageSet");
+		super("Ecs", "2014-05-26", "CreateStorageSet", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

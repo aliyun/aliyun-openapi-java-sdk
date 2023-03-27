@@ -35,7 +35,7 @@ public class DeleteDeploymentSetRequest extends RpcAcsRequest<DeleteDeploymentSe
 
 	private Long ownerId;
 	public DeleteDeploymentSetRequest() {
-		super("Ecs", "2014-05-26", "DeleteDeploymentSet");
+		super("Ecs", "2014-05-26", "DeleteDeploymentSet", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

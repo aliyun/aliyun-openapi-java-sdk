@@ -42,6 +42,8 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 
 	private String hostName;
 
+	private Boolean enableJumboFrame;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -58,7 +60,7 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 
 	private RemoteConnectionOptions remoteConnectionOptions;
 	public ModifyInstanceAttributeRequest() {
-		super("Ecs", "2014-05-26", "ModifyInstanceAttribute");
+		super("Ecs", "2014-05-26", "ModifyInstanceAttribute", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -151,6 +153,17 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 		this.hostName = hostName;
 		if(hostName != null){
 			putQueryParameter("HostName", hostName);
+		}
+	}
+
+	public Boolean getEnableJumboFrame() {
+		return this.enableJumboFrame;
+	}
+
+	public void setEnableJumboFrame(Boolean enableJumboFrame) {
+		this.enableJumboFrame = enableJumboFrame;
+		if(enableJumboFrame != null){
+			putQueryParameter("EnableJumboFrame", enableJumboFrame.toString());
 		}
 	}
 

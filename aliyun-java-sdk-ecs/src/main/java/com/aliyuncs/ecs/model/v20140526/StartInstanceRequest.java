@@ -27,8 +27,6 @@ public class StartInstanceRequest extends RpcAcsRequest<StartInstanceResponse> {
 
 	private Long resourceOwnerId;
 
-	private String sourceRegionId;
-
 	private Boolean initLocalDisk;
 
 	private Boolean dryRun;
@@ -41,7 +39,7 @@ public class StartInstanceRequest extends RpcAcsRequest<StartInstanceResponse> {
 
 	private String instanceId;
 	public StartInstanceRequest() {
-		super("Ecs", "2014-05-26", "StartInstance");
+		super("Ecs", "2014-05-26", "StartInstance", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -57,17 +55,6 @@ public class StartInstanceRequest extends RpcAcsRequest<StartInstanceResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getSourceRegionId() {
-		return this.sourceRegionId;
-	}
-
-	public void setSourceRegionId(String sourceRegionId) {
-		this.sourceRegionId = sourceRegionId;
-		if(sourceRegionId != null){
-			putQueryParameter("SourceRegionId", sourceRegionId);
 		}
 	}
 

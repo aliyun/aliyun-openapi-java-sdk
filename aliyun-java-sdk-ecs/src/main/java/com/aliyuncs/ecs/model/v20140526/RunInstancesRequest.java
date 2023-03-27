@@ -104,6 +104,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 	private List<String> securityGroupIdss;
 
+	private NetworkOptions networkOptions;
+
 	private String systemDiskSize;
 
 	private String imageFamily;
@@ -190,7 +192,7 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 	private String systemDiskDescription;
 	public RunInstancesRequest() {
-		super("Ecs", "2014-05-26", "RunInstances");
+		super("Ecs", "2014-05-26", "RunInstances", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -636,6 +638,18 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 			for (int i = 0; i < securityGroupIdss.size(); i++) {
 				putQueryParameter("SecurityGroupIds." + (i + 1) , securityGroupIdss.get(i));
 			}
+		}	
+	}
+
+	public NetworkOptions getNetworkOptions() {
+		return this.networkOptions;
+	}
+
+	public void setNetworkOptions(NetworkOptions networkOptions) {
+		this.networkOptions = networkOptions;	
+		if (networkOptions != null) {
+			
+				putQueryParameter("NetworkOptions.EnableJumboFrame" , networkOptions.getEnableJumboFrame());
 		}	
 	}
 
@@ -1250,6 +1264,19 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 		public void setAssumeRoleFor(Long assumeRoleFor) {
 			this.assumeRoleFor = assumeRoleFor;
+		}
+	}
+
+	public static class NetworkOptions {
+
+		private Boolean enableJumboFrame;
+
+		public Boolean getEnableJumboFrame() {
+			return this.enableJumboFrame;
+		}
+
+		public void setEnableJumboFrame(Boolean enableJumboFrame) {
+			this.enableJumboFrame = enableJumboFrame;
 		}
 	}
 
