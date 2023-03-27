@@ -1,3 +1,6 @@
+2023-03-27 Version: 2.8.1
+- Add DeleteUnionBrand.
+
 2023-03-27 Version: 2.8.0
 - Add DeleteUnionBrand.
 
