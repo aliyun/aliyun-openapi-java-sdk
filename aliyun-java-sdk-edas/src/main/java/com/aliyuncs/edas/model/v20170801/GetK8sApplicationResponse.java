@@ -658,6 +658,8 @@ public class GetK8sApplicationResponse extends AcsResponse {
 
 			private String tolerations;
 
+			private String userBaseImageUrl;
+
 			public String getPostStart() {
 				return this.postStart;
 			}
@@ -792,6 +794,14 @@ public class GetK8sApplicationResponse extends AcsResponse {
 
 			public void setTolerations(String tolerations) {
 				this.tolerations = tolerations;
+			}
+
+			public String getUserBaseImageUrl() {
+				return this.userBaseImageUrl;
+			}
+
+			public void setUserBaseImageUrl(String userBaseImageUrl) {
+				this.userBaseImageUrl = userBaseImageUrl;
 			}
 		}
 

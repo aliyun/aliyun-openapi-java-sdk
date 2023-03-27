@@ -118,6 +118,7 @@ public class GetK8sApplicationResponseUnmarshaller {
 		conf.setK8sVolumeInfo(_ctx.stringValue("GetK8sApplicationResponse.Applcation.Conf.K8sVolumeInfo"));
 		conf.setAffinity(_ctx.stringValue("GetK8sApplicationResponse.Applcation.Conf.Affinity"));
 		conf.setTolerations(_ctx.stringValue("GetK8sApplicationResponse.Applcation.Conf.Tolerations"));
+		conf.setUserBaseImageUrl(_ctx.stringValue("GetK8sApplicationResponse.Applcation.Conf.UserBaseImageUrl"));
 		applcation.setConf(conf);
 
 		LatestVersion latestVersion = new LatestVersion();

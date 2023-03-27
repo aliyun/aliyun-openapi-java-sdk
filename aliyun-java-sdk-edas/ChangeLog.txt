@@ -1,3 +1,7 @@
+2023-03-27 Version: 3.26.16
+- Add UserBaseImageUrl parameter for InsertK8sApplication API.
+- Add UserBaseImageUrl parameter for DeployK8sApplication API.
+
 2023-01-09 Version: 3.26.15
 - Add Behaviour parameter for CreateApplicationScalingRule API.
 

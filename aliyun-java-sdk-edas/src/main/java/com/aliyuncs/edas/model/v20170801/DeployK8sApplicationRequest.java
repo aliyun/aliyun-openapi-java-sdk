@@ -27,6 +27,8 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 
 	private String nasId;
 
+	private String sidecars;
+
 	private String packageVersionId;
 
 	private Integer batchWaitTime;
@@ -67,6 +69,8 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 
 	private String labels;
 
+	private String userBaseImageUrl;
+
 	private Boolean useBodyEncoding;
 
 	private Integer limitEphemeralStorage;
@@ -102,6 +106,8 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 	private String readiness;
 
 	private String liveness;
+
+	private String initContainers;
 
 	private String packageVersion;
 
@@ -162,6 +168,17 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 		this.nasId = nasId;
 		if(nasId != null){
 			putQueryParameter("NasId", nasId);
+		}
+	}
+
+	public String getSidecars() {
+		return this.sidecars;
+	}
+
+	public void setSidecars(String sidecars) {
+		this.sidecars = sidecars;
+		if(sidecars != null){
+			putQueryParameter("Sidecars", sidecars);
 		}
 	}
 
@@ -385,6 +402,17 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 		}
 	}
 
+	public String getUserBaseImageUrl() {
+		return this.userBaseImageUrl;
+	}
+
+	public void setUserBaseImageUrl(String userBaseImageUrl) {
+		this.userBaseImageUrl = userBaseImageUrl;
+		if(userBaseImageUrl != null){
+			putQueryParameter("UserBaseImageUrl", userBaseImageUrl);
+		}
+	}
+
 	public Boolean getUseBodyEncoding() {
 		return this.useBodyEncoding;
 	}
@@ -580,6 +608,17 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 		this.liveness = liveness;
 		if(liveness != null){
 			putQueryParameter("Liveness", liveness);
+		}
+	}
+
+	public String getInitContainers() {
+		return this.initContainers;
+	}
+
+	public void setInitContainers(String initContainers) {
+		this.initContainers = initContainers;
+		if(initContainers != null){
+			putQueryParameter("InitContainers", initContainers);
 		}
 	}
 

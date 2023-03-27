@@ -51,6 +51,8 @@ public class ListApplicationResponseUnmarshaller {
 			application.setRunningInstanceCount(_ctx.integerValue("ListApplicationResponse.ApplicationList["+ i +"].RunningInstanceCount"));
 			application.setClusterId(_ctx.stringValue("ListApplicationResponse.ApplicationList["+ i +"].ClusterId"));
 			application.setResourceGroupId(_ctx.stringValue("ListApplicationResponse.ApplicationList["+ i +"].ResourceGroupId"));
+			application.setK8sNamespace(_ctx.stringValue("ListApplicationResponse.ApplicationList["+ i +"].K8sNamespace"));
+			application.setNamespaceId(_ctx.stringValue("ListApplicationResponse.ApplicationList["+ i +"].NamespaceId"));
 
 			applicationList.add(application);
 		}

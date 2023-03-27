@@ -27,6 +27,8 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 
 	private String nasId;
 
+	private String sidecars;
+
 	private String intranetSlbId;
 
 	private Integer requestsEphemeralStorage;
@@ -61,7 +63,11 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 
 	private String localVolume;
 
+	private String workloadType;
+
 	private String labels;
+
+	private String userBaseImageUrl;
 
 	private Boolean useBodyEncoding;
 
@@ -108,6 +114,8 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 	private String csClusterId;
 
 	private String appConfig;
+
+	private String initContainers;
 
 	private Integer internetSlbPort;
 
@@ -194,6 +202,17 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 		this.nasId = nasId;
 		if(nasId != null){
 			putQueryParameter("NasId", nasId);
+		}
+	}
+
+	public String getSidecars() {
+		return this.sidecars;
+	}
+
+	public void setSidecars(String sidecars) {
+		this.sidecars = sidecars;
+		if(sidecars != null){
+			putQueryParameter("Sidecars", sidecars);
 		}
 	}
 
@@ -384,6 +403,17 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 		}
 	}
 
+	public String getWorkloadType() {
+		return this.workloadType;
+	}
+
+	public void setWorkloadType(String workloadType) {
+		this.workloadType = workloadType;
+		if(workloadType != null){
+			putQueryParameter("WorkloadType", workloadType);
+		}
+	}
+
 	public String getLabels() {
 		return this.labels;
 	}
@@ -392,6 +422,17 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 		this.labels = labels;
 		if(labels != null){
 			putQueryParameter("Labels", labels);
+		}
+	}
+
+	public String getUserBaseImageUrl() {
+		return this.userBaseImageUrl;
+	}
+
+	public void setUserBaseImageUrl(String userBaseImageUrl) {
+		this.userBaseImageUrl = userBaseImageUrl;
+		if(userBaseImageUrl != null){
+			putQueryParameter("UserBaseImageUrl", userBaseImageUrl);
 		}
 	}
 
@@ -645,6 +686,17 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 		this.appConfig = appConfig;
 		if(appConfig != null){
 			putQueryParameter("AppConfig", appConfig);
+		}
+	}
+
+	public String getInitContainers() {
+		return this.initContainers;
+	}
+
+	public void setInitContainers(String initContainers) {
+		this.initContainers = initContainers;
+		if(initContainers != null){
+			putQueryParameter("InitContainers", initContainers);
 		}
 	}
 

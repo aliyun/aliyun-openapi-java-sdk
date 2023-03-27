@@ -103,6 +103,10 @@ public class ListApplicationResponse extends AcsResponse {
 
 		private String resourceGroupId;
 
+		private String k8sNamespace;
+
+		private String namespaceId;
+
 		public String getAppId() {
 			return this.appId;
 		}
@@ -245,6 +249,22 @@ public class ListApplicationResponse extends AcsResponse {
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getK8sNamespace() {
+			return this.k8sNamespace;
+		}
+
+		public void setK8sNamespace(String k8sNamespace) {
+			this.k8sNamespace = k8sNamespace;
+		}
+
+		public String getNamespaceId() {
+			return this.namespaceId;
+		}
+
+		public void setNamespaceId(String namespaceId) {
+			this.namespaceId = namespaceId;
 		}
 	}
 

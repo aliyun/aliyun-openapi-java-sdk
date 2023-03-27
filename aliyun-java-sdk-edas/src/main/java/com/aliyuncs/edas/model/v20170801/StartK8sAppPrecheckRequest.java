@@ -25,6 +25,8 @@ import com.aliyuncs.edas.Endpoint;
 public class StartK8sAppPrecheckRequest extends RoaAcsRequest<StartK8sAppPrecheckResponse> {
 	   
 
+	private String componentIds;
+
 	private Integer replicas;
 
 	private Integer requestsEphemeralStorage;
@@ -76,6 +78,17 @@ public class StartK8sAppPrecheckRequest extends RoaAcsRequest<StartK8sAppPrechec
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getComponentIds() {
+		return this.componentIds;
+	}
+
+	public void setComponentIds(String componentIds) {
+		this.componentIds = componentIds;
+		if(componentIds != null){
+			putQueryParameter("ComponentIds", componentIds);
+		}
 	}
 
 	public Integer getReplicas() {
