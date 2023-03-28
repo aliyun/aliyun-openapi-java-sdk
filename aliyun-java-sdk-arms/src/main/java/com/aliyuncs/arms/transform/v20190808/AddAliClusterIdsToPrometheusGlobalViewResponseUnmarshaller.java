@@ -24,6 +24,8 @@ public class AddAliClusterIdsToPrometheusGlobalViewResponseUnmarshaller {
 	public static AddAliClusterIdsToPrometheusGlobalViewResponse unmarshall(AddAliClusterIdsToPrometheusGlobalViewResponse addAliClusterIdsToPrometheusGlobalViewResponse, UnmarshallerContext _ctx) {
 		
 		addAliClusterIdsToPrometheusGlobalViewResponse.setRequestId(_ctx.stringValue("AddAliClusterIdsToPrometheusGlobalViewResponse.RequestId"));
+		addAliClusterIdsToPrometheusGlobalViewResponse.setCode(_ctx.integerValue("AddAliClusterIdsToPrometheusGlobalViewResponse.Code"));
+		addAliClusterIdsToPrometheusGlobalViewResponse.setMessage(_ctx.stringValue("AddAliClusterIdsToPrometheusGlobalViewResponse.Message"));
 
 		Data data = new Data();
 		data.setSuccess(_ctx.booleanValue("AddAliClusterIdsToPrometheusGlobalViewResponse.Data.Success"));

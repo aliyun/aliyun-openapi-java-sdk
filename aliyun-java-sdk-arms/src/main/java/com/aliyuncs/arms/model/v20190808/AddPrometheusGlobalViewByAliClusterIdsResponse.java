@@ -26,6 +26,10 @@ public class AddPrometheusGlobalViewByAliClusterIdsResponse extends AcsResponse 
 
 	private String requestId;
 
+	private Integer code;
+
+	private String message;
+
 	private Data data;
 
 	public String getRequestId() {
@@ -34,6 +38,22 @@ public class AddPrometheusGlobalViewByAliClusterIdsResponse extends AcsResponse 
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getCode() {
+		return this.code;
+	}
+
+	public void setCode(Integer code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Data getData() {

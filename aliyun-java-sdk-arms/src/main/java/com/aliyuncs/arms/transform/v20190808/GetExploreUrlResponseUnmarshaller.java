@@ -24,6 +24,9 @@ public class GetExploreUrlResponseUnmarshaller {
 		
 		getExploreUrlResponse.setRequestId(_ctx.stringValue("GetExploreUrlResponse.RequestId"));
 		getExploreUrlResponse.setData(_ctx.stringValue("GetExploreUrlResponse.Data"));
+		getExploreUrlResponse.setCode(_ctx.integerValue("GetExploreUrlResponse.Code"));
+		getExploreUrlResponse.setMessage(_ctx.stringValue("GetExploreUrlResponse.Message"));
+		getExploreUrlResponse.setSuccess(_ctx.booleanValue("GetExploreUrlResponse.Success"));
 	 
 	 	return getExploreUrlResponse;
 	}

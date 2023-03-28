@@ -24,6 +24,8 @@ public class RemoveAliClusterIdsFromPrometheusGlobalViewResponseUnmarshaller {
 	public static RemoveAliClusterIdsFromPrometheusGlobalViewResponse unmarshall(RemoveAliClusterIdsFromPrometheusGlobalViewResponse removeAliClusterIdsFromPrometheusGlobalViewResponse, UnmarshallerContext _ctx) {
 		
 		removeAliClusterIdsFromPrometheusGlobalViewResponse.setRequestId(_ctx.stringValue("RemoveAliClusterIdsFromPrometheusGlobalViewResponse.RequestId"));
+		removeAliClusterIdsFromPrometheusGlobalViewResponse.setMessage(_ctx.stringValue("RemoveAliClusterIdsFromPrometheusGlobalViewResponse.Message"));
+		removeAliClusterIdsFromPrometheusGlobalViewResponse.setCode(_ctx.integerValue("RemoveAliClusterIdsFromPrometheusGlobalViewResponse.Code"));
 
 		Data data = new Data();
 		data.setSuccess(_ctx.booleanValue("RemoveAliClusterIdsFromPrometheusGlobalViewResponse.Data.Success"));

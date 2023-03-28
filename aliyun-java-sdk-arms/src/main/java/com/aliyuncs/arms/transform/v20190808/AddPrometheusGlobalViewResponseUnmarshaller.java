@@ -25,6 +25,8 @@ public class AddPrometheusGlobalViewResponseUnmarshaller {
 	public static AddPrometheusGlobalViewResponse unmarshall(AddPrometheusGlobalViewResponse addPrometheusGlobalViewResponse, UnmarshallerContext _ctx) {
 		
 		addPrometheusGlobalViewResponse.setRequestId(_ctx.stringValue("AddPrometheusGlobalViewResponse.RequestId"));
+		addPrometheusGlobalViewResponse.setCode(_ctx.integerValue("AddPrometheusGlobalViewResponse.Code"));
+		addPrometheusGlobalViewResponse.setMessage(_ctx.stringValue("AddPrometheusGlobalViewResponse.Message"));
 
 		Data data = new Data();
 		data.setSuccess(_ctx.booleanValue("AddPrometheusGlobalViewResponse.Data.Success"));

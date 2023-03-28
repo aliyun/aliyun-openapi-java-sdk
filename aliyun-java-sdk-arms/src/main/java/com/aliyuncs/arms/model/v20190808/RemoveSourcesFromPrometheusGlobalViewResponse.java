@@ -26,6 +26,10 @@ public class RemoveSourcesFromPrometheusGlobalViewResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String message;
+
+	private Integer code;
+
 	private Data data;
 
 	public String getRequestId() {
@@ -34,6 +38,22 @@ public class RemoveSourcesFromPrometheusGlobalViewResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public Integer getCode() {
+		return this.code;
+	}
+
+	public void setCode(Integer code) {
+		this.code = code;
 	}
 
 	public Data getData() {

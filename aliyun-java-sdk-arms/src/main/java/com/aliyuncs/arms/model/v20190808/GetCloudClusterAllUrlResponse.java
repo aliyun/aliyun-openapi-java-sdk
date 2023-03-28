@@ -27,6 +27,12 @@ public class GetCloudClusterAllUrlResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Integer code;
+
+	private String message;
+
+	private Boolean success;
+
 	private List<DataItem> data;
 
 	public String getRequestId() {
@@ -35,6 +41,30 @@ public class GetCloudClusterAllUrlResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getCode() {
+		return this.code;
+	}
+
+	public void setCode(Integer code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<DataItem> getData() {

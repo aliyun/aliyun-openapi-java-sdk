@@ -24,6 +24,8 @@ public class GetIntegrationStateResponseUnmarshaller {
 		
 		getIntegrationStateResponse.setRequestId(_ctx.stringValue("GetIntegrationStateResponse.RequestId"));
 		getIntegrationStateResponse.setState(_ctx.booleanValue("GetIntegrationStateResponse.State"));
+		getIntegrationStateResponse.setCode(_ctx.integerValue("GetIntegrationStateResponse.Code"));
+		getIntegrationStateResponse.setMessage(_ctx.stringValue("GetIntegrationStateResponse.Message"));
 	 
 	 	return getIntegrationStateResponse;
 	}

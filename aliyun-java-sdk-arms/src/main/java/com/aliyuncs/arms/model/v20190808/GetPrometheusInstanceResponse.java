@@ -93,7 +93,7 @@ public class GetPrometheusInstanceResponse extends AcsResponse {
 
 		private String resourceType;
 
-		private List<Tag> tags;
+		private List<TagsItem> tags;
 
 		public String getClusterId() {
 			return this.clusterId;
@@ -199,15 +199,15 @@ public class GetPrometheusInstanceResponse extends AcsResponse {
 			this.resourceType = resourceType;
 		}
 
-		public List<Tag> getTags() {
+		public List<TagsItem> getTags() {
 			return this.tags;
 		}
 
-		public void setTags(List<Tag> tags) {
+		public void setTags(List<TagsItem> tags) {
 			this.tags = tags;
 		}
 
-		public static class Tag {
+		public static class TagsItem {
 
 			private String tagKey;
 

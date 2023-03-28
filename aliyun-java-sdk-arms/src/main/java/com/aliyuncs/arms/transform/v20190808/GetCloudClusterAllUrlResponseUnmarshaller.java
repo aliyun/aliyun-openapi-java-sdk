@@ -28,6 +28,9 @@ public class GetCloudClusterAllUrlResponseUnmarshaller {
 	public static GetCloudClusterAllUrlResponse unmarshall(GetCloudClusterAllUrlResponse getCloudClusterAllUrlResponse, UnmarshallerContext _ctx) {
 		
 		getCloudClusterAllUrlResponse.setRequestId(_ctx.stringValue("GetCloudClusterAllUrlResponse.RequestId"));
+		getCloudClusterAllUrlResponse.setCode(_ctx.integerValue("GetCloudClusterAllUrlResponse.Code"));
+		getCloudClusterAllUrlResponse.setMessage(_ctx.stringValue("GetCloudClusterAllUrlResponse.Message"));
+		getCloudClusterAllUrlResponse.setSuccess(_ctx.booleanValue("GetCloudClusterAllUrlResponse.Success"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetCloudClusterAllUrlResponse.Data.Length"); i++) {

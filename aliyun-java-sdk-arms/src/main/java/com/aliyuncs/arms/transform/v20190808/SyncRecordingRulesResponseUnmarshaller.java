@@ -24,6 +24,8 @@ public class SyncRecordingRulesResponseUnmarshaller {
 		
 		syncRecordingRulesResponse.setRequestId(_ctx.stringValue("SyncRecordingRulesResponse.RequestId"));
 		syncRecordingRulesResponse.setData(_ctx.stringValue("SyncRecordingRulesResponse.Data"));
+		syncRecordingRulesResponse.setCode(_ctx.integerValue("SyncRecordingRulesResponse.Code"));
+		syncRecordingRulesResponse.setMessage(_ctx.stringValue("SyncRecordingRulesResponse.Message"));
 	 
 	 	return syncRecordingRulesResponse;
 	}

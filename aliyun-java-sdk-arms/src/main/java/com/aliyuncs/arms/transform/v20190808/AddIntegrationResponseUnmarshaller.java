@@ -24,6 +24,8 @@ public class AddIntegrationResponseUnmarshaller {
 		
 		addIntegrationResponse.setRequestId(_ctx.stringValue("AddIntegrationResponse.RequestId"));
 		addIntegrationResponse.setData(_ctx.stringValue("AddIntegrationResponse.Data"));
+		addIntegrationResponse.setCode(_ctx.integerValue("AddIntegrationResponse.Code"));
+		addIntegrationResponse.setMessage(_ctx.stringValue("AddIntegrationResponse.Message"));
 	 
 	 	return addIntegrationResponse;
 	}

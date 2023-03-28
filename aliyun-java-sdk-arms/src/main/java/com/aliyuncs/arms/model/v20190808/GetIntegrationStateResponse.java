@@ -28,6 +28,10 @@ public class GetIntegrationStateResponse extends AcsResponse {
 
 	private Boolean state;
 
+	private Integer code;
+
+	private String message;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -42,6 +46,22 @@ public class GetIntegrationStateResponse extends AcsResponse {
 
 	public void setState(Boolean state) {
 		this.state = state;
+	}
+
+	public Integer getCode() {
+		return this.code;
+	}
+
+	public void setCode(Integer code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	@Override

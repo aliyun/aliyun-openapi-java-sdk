@@ -24,6 +24,8 @@ public class ManageGetRecordingRuleResponseUnmarshaller {
 		
 		manageGetRecordingRuleResponse.setRequestId(_ctx.stringValue("ManageGetRecordingRuleResponse.RequestId"));
 		manageGetRecordingRuleResponse.setData(_ctx.stringValue("ManageGetRecordingRuleResponse.Data"));
+		manageGetRecordingRuleResponse.setCode(_ctx.integerValue("ManageGetRecordingRuleResponse.Code"));
+		manageGetRecordingRuleResponse.setMessage(_ctx.stringValue("ManageGetRecordingRuleResponse.Message"));
 	 
 	 	return manageGetRecordingRuleResponse;
 	}

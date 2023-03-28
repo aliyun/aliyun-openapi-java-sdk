@@ -19,7 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.arms.model.v20190808.GetPrometheusInstanceResponse;
 import com.aliyuncs.arms.model.v20190808.GetPrometheusInstanceResponse.Data;
-import com.aliyuncs.arms.model.v20190808.GetPrometheusInstanceResponse.Data.Tag;
+import com.aliyuncs.arms.model.v20190808.GetPrometheusInstanceResponse.Data.TagsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -46,13 +46,13 @@ public class GetPrometheusInstanceResponseUnmarshaller {
 		data.setResourceGroupId(_ctx.stringValue("GetPrometheusInstanceResponse.Data.ResourceGroupId"));
 		data.setResourceType(_ctx.stringValue("GetPrometheusInstanceResponse.Data.ResourceType"));
 
-		List<Tag> tags = new ArrayList<Tag>();
+		List<TagsItem> tags = new ArrayList<TagsItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetPrometheusInstanceResponse.Data.Tags.Length"); i++) {
-			Tag tag = new Tag();
-			tag.setTagKey(_ctx.stringValue("GetPrometheusInstanceResponse.Data.Tags["+ i +"].TagKey"));
-			tag.setTagValue(_ctx.stringValue("GetPrometheusInstanceResponse.Data.Tags["+ i +"].TagValue"));
+			TagsItem tagsItem = new TagsItem();
+			tagsItem.setTagKey(_ctx.stringValue("GetPrometheusInstanceResponse.Data.Tags["+ i +"].TagKey"));
+			tagsItem.setTagValue(_ctx.stringValue("GetPrometheusInstanceResponse.Data.Tags["+ i +"].TagValue"));
 
-			tags.add(tag);
+			tags.add(tagsItem);
 		}
 		data.setTags(tags);
 		getPrometheusInstanceResponse.setData(data);
