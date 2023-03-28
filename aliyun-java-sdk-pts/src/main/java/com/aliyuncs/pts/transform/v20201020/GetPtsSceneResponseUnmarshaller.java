@@ -23,6 +23,7 @@ import com.aliyuncs.pts.model.v20201020.GetPtsSceneResponse.Scene.AdvanceSetting
 import com.aliyuncs.pts.model.v20201020.GetPtsSceneResponse.Scene.AdvanceSetting.DomainBinding;
 import com.aliyuncs.pts.model.v20201020.GetPtsSceneResponse.Scene.FileParameter;
 import com.aliyuncs.pts.model.v20201020.GetPtsSceneResponse.Scene.GlobalParameter;
+import com.aliyuncs.pts.model.v20201020.GetPtsSceneResponse.Scene.Header1;
 import com.aliyuncs.pts.model.v20201020.GetPtsSceneResponse.Scene.LoadConfig;
 import com.aliyuncs.pts.model.v20201020.GetPtsSceneResponse.Scene.LoadConfig.ApiLoadConfig;
 import com.aliyuncs.pts.model.v20201020.GetPtsSceneResponse.Scene.LoadConfig.Configuration;
@@ -215,6 +216,16 @@ public class GetPtsSceneResponseUnmarshaller {
 			globalParameterList.add(globalParameter);
 		}
 		scene.setGlobalParameterList(globalParameterList);
+
+		List<Header1> headers = new ArrayList<Header1>();
+		for (int i = 0; i < _ctx.lengthValue("GetPtsSceneResponse.Scene.Headers.Length"); i++) {
+			Header1 header1 = new Header1();
+			header1.setName(_ctx.stringValue("GetPtsSceneResponse.Scene.Headers["+ i +"].Name"));
+			header1.setValue(_ctx.stringValue("GetPtsSceneResponse.Scene.Headers["+ i +"].Value"));
+
+			headers.add(header1);
+		}
+		scene.setHeaders(headers);
 		getPtsSceneResponse.setScene(scene);
 	 
 	 	return getPtsSceneResponse;

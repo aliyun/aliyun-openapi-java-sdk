@@ -103,6 +103,8 @@ public class GetPtsSceneResponse extends AcsResponse {
 
 		private List<GlobalParameter> globalParameterList;
 
+		private List<Header1> headers;
+
 		private LoadConfig loadConfig;
 
 		private AdvanceSetting advanceSetting;
@@ -169,6 +171,14 @@ public class GetPtsSceneResponse extends AcsResponse {
 
 		public void setGlobalParameterList(List<GlobalParameter> globalParameterList) {
 			this.globalParameterList = globalParameterList;
+		}
+
+		public List<Header1> getHeaders() {
+			return this.headers;
+		}
+
+		public void setHeaders(List<Header1> headers) {
+			this.headers = headers;
 		}
 
 		public LoadConfig getLoadConfig() {
@@ -551,6 +561,29 @@ public class GetPtsSceneResponse extends AcsResponse {
 
 			public void setParamValue(String paramValue) {
 				this.paramValue = paramValue;
+			}
+		}
+
+		public static class Header1 {
+
+			private String name;
+
+			private String value;
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
 			}
 		}
 
