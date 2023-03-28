@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.vpc.model.v20160428.GetDhcpOptionsSetResponse;
 import com.aliyuncs.vpc.model.v20160428.GetDhcpOptionsSetResponse.AssociateVpc;
 import com.aliyuncs.vpc.model.v20160428.GetDhcpOptionsSetResponse.DhcpOptions;
+import com.aliyuncs.vpc.model.v20160428.GetDhcpOptionsSetResponse.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -33,6 +34,7 @@ public class GetDhcpOptionsSetResponseUnmarshaller {
 		getDhcpOptionsSetResponse.setDhcpOptionsSetId(_ctx.stringValue("GetDhcpOptionsSetResponse.DhcpOptionsSetId"));
 		getDhcpOptionsSetResponse.setDhcpOptionsSetName(_ctx.stringValue("GetDhcpOptionsSetResponse.DhcpOptionsSetName"));
 		getDhcpOptionsSetResponse.setOwnerId(_ctx.longValue("GetDhcpOptionsSetResponse.OwnerId"));
+		getDhcpOptionsSetResponse.setResourceGroupId(_ctx.stringValue("GetDhcpOptionsSetResponse.ResourceGroupId"));
 
 		DhcpOptions dhcpOptions = new DhcpOptions();
 		dhcpOptions.setTFTPServerName(_ctx.stringValue("GetDhcpOptionsSetResponse.DhcpOptions.TFTPServerName"));
@@ -52,6 +54,16 @@ public class GetDhcpOptionsSetResponseUnmarshaller {
 			associateVpcs.add(associateVpc);
 		}
 		getDhcpOptionsSetResponse.setAssociateVpcs(associateVpcs);
+
+		List<Tag> tags = new ArrayList<Tag>();
+		for (int i = 0; i < _ctx.lengthValue("GetDhcpOptionsSetResponse.Tags.Length"); i++) {
+			Tag tag = new Tag();
+			tag.setKey(_ctx.stringValue("GetDhcpOptionsSetResponse.Tags["+ i +"].Key"));
+			tag.setValue(_ctx.stringValue("GetDhcpOptionsSetResponse.Tags["+ i +"].Value"));
+
+			tags.add(tag);
+		}
+		getDhcpOptionsSetResponse.setTags(tags);
 	 
 	 	return getDhcpOptionsSetResponse;
 	}

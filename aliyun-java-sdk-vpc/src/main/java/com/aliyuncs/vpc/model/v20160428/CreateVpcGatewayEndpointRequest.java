@@ -29,6 +29,8 @@ public class CreateVpcGatewayEndpointRequest extends RpcAcsRequest<CreateVpcGate
 
 	private String clientToken;
 
+	private String resourceGroupId;
+
 	private String serviceName;
 
 	private Boolean dryRun;
@@ -74,6 +76,17 @@ public class CreateVpcGatewayEndpointRequest extends RpcAcsRequest<CreateVpcGate
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

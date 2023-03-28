@@ -29,6 +29,8 @@ public class ListDhcpOptionsSetsResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String totalCount;
+
 	private List<DhcpOptionsSet> dhcpOptionsSets;
 
 	public String getNextToken() {
@@ -45,6 +47,14 @@ public class ListDhcpOptionsSetsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(String totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<DhcpOptionsSet> getDhcpOptionsSets() {
@@ -68,6 +78,10 @@ public class ListDhcpOptionsSetsResponse extends AcsResponse {
 		private Integer associateVpcCount;
 
 		private Long ownerId;
+
+		private String resourceGroupId;
+
+		private List<Tag> tags;
 
 		private DhcpOptions dhcpOptions;
 
@@ -119,12 +133,51 @@ public class ListDhcpOptionsSetsResponse extends AcsResponse {
 			this.ownerId = ownerId;
 		}
 
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
 		public DhcpOptions getDhcpOptions() {
 			return this.dhcpOptions;
 		}
 
 		public void setDhcpOptions(DhcpOptions dhcpOptions) {
 			this.dhcpOptions = dhcpOptions;
+		}
+
+		public static class Tag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 
 		public static class DhcpOptions {

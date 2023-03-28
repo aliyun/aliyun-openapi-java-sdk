@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.vpc.model.v20160428.GetVpcGatewayEndpointAttributeResponse;
+import com.aliyuncs.vpc.model.v20160428.GetVpcGatewayEndpointAttributeResponse.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -34,12 +35,23 @@ public class GetVpcGatewayEndpointAttributeResponseUnmarshaller {
 		getVpcGatewayEndpointAttributeResponse.setPolicyDocument(_ctx.stringValue("GetVpcGatewayEndpointAttributeResponse.PolicyDocument"));
 		getVpcGatewayEndpointAttributeResponse.setCreationTime(_ctx.stringValue("GetVpcGatewayEndpointAttributeResponse.CreationTime"));
 		getVpcGatewayEndpointAttributeResponse.setEndpointStatus(_ctx.stringValue("GetVpcGatewayEndpointAttributeResponse.EndpointStatus"));
+		getVpcGatewayEndpointAttributeResponse.setResourceGroupId(_ctx.stringValue("GetVpcGatewayEndpointAttributeResponse.ResourceGroupId"));
 
 		List<String> routeTables = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetVpcGatewayEndpointAttributeResponse.RouteTables.Length"); i++) {
 			routeTables.add(_ctx.stringValue("GetVpcGatewayEndpointAttributeResponse.RouteTables["+ i +"]"));
 		}
 		getVpcGatewayEndpointAttributeResponse.setRouteTables(routeTables);
+
+		List<Tag> tags = new ArrayList<Tag>();
+		for (int i = 0; i < _ctx.lengthValue("GetVpcGatewayEndpointAttributeResponse.Tags.Length"); i++) {
+			Tag tag = new Tag();
+			tag.setKey(_ctx.stringValue("GetVpcGatewayEndpointAttributeResponse.Tags["+ i +"].Key"));
+			tag.setValue(_ctx.stringValue("GetVpcGatewayEndpointAttributeResponse.Tags["+ i +"].Value"));
+
+			tags.add(tag);
+		}
+		getVpcGatewayEndpointAttributeResponse.setTags(tags);
 	 
 	 	return getVpcGatewayEndpointAttributeResponse;
 	}

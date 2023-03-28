@@ -24,6 +24,7 @@ public class CreateDhcpOptionsSetResponseUnmarshaller {
 		
 		createDhcpOptionsSetResponse.setRequestId(_ctx.stringValue("CreateDhcpOptionsSetResponse.RequestId"));
 		createDhcpOptionsSetResponse.setDhcpOptionsSetId(_ctx.stringValue("CreateDhcpOptionsSetResponse.DhcpOptionsSetId"));
+		createDhcpOptionsSetResponse.setResourceGroupId(_ctx.stringValue("CreateDhcpOptionsSetResponse.ResourceGroupId"));
 	 
 	 	return createDhcpOptionsSetResponse;
 	}

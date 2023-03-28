@@ -1,3 +1,18 @@
+2023-03-28 Version: 3.2.19
+- Support create pconn with tag.
+- Add errorcode for OpenFlowLogService.
+- Supported BandwidthPackageId for DescribeEipAddresses.
+- The number oftraffic mirror source on the gateway side is limited to 30.
+- Support associate transfer.
+- Hide OrderId of AllocateEipSegmentAddress.
+- Update error code of DeleteVSwitch.
+- CreateFullNatEntry add error code.
+- Support tag and resource group for dhcp options set and gateway endpoint.
+- Fixed bugs for CreationTime.
+- Fix pageNo.
+- Add errorcode for AssociateEipAddress.
+- Modify timeout.
+
 2023-03-10 Version: 3.2.18
 - Support create default VPC and create default vSwitch .
 

@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.vpc.model.v20160428.ListDhcpOptionsSetsResponse;
 import com.aliyuncs.vpc.model.v20160428.ListDhcpOptionsSetsResponse.DhcpOptionsSet;
 import com.aliyuncs.vpc.model.v20160428.ListDhcpOptionsSetsResponse.DhcpOptionsSet.DhcpOptions;
+import com.aliyuncs.vpc.model.v20160428.ListDhcpOptionsSetsResponse.DhcpOptionsSet.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -29,6 +30,7 @@ public class ListDhcpOptionsSetsResponseUnmarshaller {
 		
 		listDhcpOptionsSetsResponse.setRequestId(_ctx.stringValue("ListDhcpOptionsSetsResponse.RequestId"));
 		listDhcpOptionsSetsResponse.setNextToken(_ctx.stringValue("ListDhcpOptionsSetsResponse.NextToken"));
+		listDhcpOptionsSetsResponse.setTotalCount(_ctx.stringValue("ListDhcpOptionsSetsResponse.TotalCount"));
 
 		List<DhcpOptionsSet> dhcpOptionsSets = new ArrayList<DhcpOptionsSet>();
 		for (int i = 0; i < _ctx.lengthValue("ListDhcpOptionsSetsResponse.DhcpOptionsSets.Length"); i++) {
@@ -39,6 +41,7 @@ public class ListDhcpOptionsSetsResponseUnmarshaller {
 			dhcpOptionsSet.setDhcpOptionsSetName(_ctx.stringValue("ListDhcpOptionsSetsResponse.DhcpOptionsSets["+ i +"].DhcpOptionsSetName"));
 			dhcpOptionsSet.setAssociateVpcCount(_ctx.integerValue("ListDhcpOptionsSetsResponse.DhcpOptionsSets["+ i +"].AssociateVpcCount"));
 			dhcpOptionsSet.setOwnerId(_ctx.longValue("ListDhcpOptionsSetsResponse.DhcpOptionsSets["+ i +"].OwnerId"));
+			dhcpOptionsSet.setResourceGroupId(_ctx.stringValue("ListDhcpOptionsSetsResponse.DhcpOptionsSets["+ i +"].ResourceGroupId"));
 
 			DhcpOptions dhcpOptions = new DhcpOptions();
 			dhcpOptions.setDomainNameServers(_ctx.stringValue("ListDhcpOptionsSetsResponse.DhcpOptionsSets["+ i +"].DhcpOptions.DomainNameServers"));
@@ -46,6 +49,16 @@ public class ListDhcpOptionsSetsResponseUnmarshaller {
 			dhcpOptions.setLeaseTime(_ctx.stringValue("ListDhcpOptionsSetsResponse.DhcpOptionsSets["+ i +"].DhcpOptions.LeaseTime"));
 			dhcpOptions.setIpv6LeaseTime(_ctx.stringValue("ListDhcpOptionsSetsResponse.DhcpOptionsSets["+ i +"].DhcpOptions.Ipv6LeaseTime"));
 			dhcpOptionsSet.setDhcpOptions(dhcpOptions);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("ListDhcpOptionsSetsResponse.DhcpOptionsSets["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("ListDhcpOptionsSetsResponse.DhcpOptionsSets["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("ListDhcpOptionsSetsResponse.DhcpOptionsSets["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			dhcpOptionsSet.setTags(tags);
 
 			dhcpOptionsSets.add(dhcpOptionsSet);
 		}
