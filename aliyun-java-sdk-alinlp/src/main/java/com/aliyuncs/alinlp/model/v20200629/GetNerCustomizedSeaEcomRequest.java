@@ -31,7 +31,7 @@ public class GetNerCustomizedSeaEcomRequest extends RpcAcsRequest<GetNerCustomiz
 
 	private String text;
 	public GetNerCustomizedSeaEcomRequest() {
-		super("alinlp", "2020-06-29", "GetNerCustomizedSeaEcom");
+		super("alinlp", "2020-06-29", "GetNerCustomizedSeaEcom", "alinlp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

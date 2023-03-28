@@ -29,7 +29,7 @@ public class ADClockRequest extends RpcAcsRequest<ADClockResponse> {
 
 	private String serviceCode;
 	public ADClockRequest() {
-		super("alinlp", "2020-06-29", "ADClock");
+		super("alinlp", "2020-06-29", "ADClock", "alinlp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

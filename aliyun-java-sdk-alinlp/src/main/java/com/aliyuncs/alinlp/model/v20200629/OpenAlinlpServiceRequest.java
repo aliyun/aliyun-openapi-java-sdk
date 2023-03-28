@@ -25,7 +25,7 @@ import com.aliyuncs.alinlp.Endpoint;
 public class OpenAlinlpServiceRequest extends RpcAcsRequest<OpenAlinlpServiceResponse> {
 	   
 	public OpenAlinlpServiceRequest() {
-		super("alinlp", "2020-06-29", "OpenAlinlpService");
+		super("alinlp", "2020-06-29", "OpenAlinlpService", "alinlp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

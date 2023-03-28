@@ -29,7 +29,7 @@ public class ADMiniCogRequest extends RpcAcsRequest<ADMiniCogResponse> {
 
 	private String serviceCode;
 	public ADMiniCogRequest() {
-		super("alinlp", "2020-06-29", "ADMiniCog");
+		super("alinlp", "2020-06-29", "ADMiniCog", "alinlp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

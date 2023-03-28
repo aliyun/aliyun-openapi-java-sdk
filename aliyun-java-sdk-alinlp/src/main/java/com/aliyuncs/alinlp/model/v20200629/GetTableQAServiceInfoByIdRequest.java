@@ -29,7 +29,7 @@ public class GetTableQAServiceInfoByIdRequest extends RpcAcsRequest<GetTableQASe
 
 	private String serviceId;
 	public GetTableQAServiceInfoByIdRequest() {
-		super("alinlp", "2020-06-29", "GetTableQAServiceInfoById");
+		super("alinlp", "2020-06-29", "GetTableQAServiceInfoById", "alinlp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

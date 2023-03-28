@@ -33,7 +33,7 @@ public class RequestTableQAOnlineRequest extends RpcAcsRequest<RequestTableQAOnl
 
 	private String botId;
 	public RequestTableQAOnlineRequest() {
-		super("alinlp", "2020-06-29", "RequestTableQAOnline");
+		super("alinlp", "2020-06-29", "RequestTableQAOnline", "alinlp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

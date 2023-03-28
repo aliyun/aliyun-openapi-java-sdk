@@ -29,7 +29,7 @@ public class GetNerChMedicalRequest extends RpcAcsRequest<GetNerChMedicalRespons
 
 	private String text;
 	public GetNerChMedicalRequest() {
-		super("alinlp", "2020-06-29", "GetNerChMedical");
+		super("alinlp", "2020-06-29", "GetNerChMedical", "alinlp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class GetPosChGeneralRequest extends RpcAcsRequest<GetPosChGeneralRespons
 
 	private String outType;
 	public GetPosChGeneralRequest() {
-		super("alinlp", "2020-06-29", "GetPosChGeneral");
+		super("alinlp", "2020-06-29", "GetPosChGeneral", "alinlp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

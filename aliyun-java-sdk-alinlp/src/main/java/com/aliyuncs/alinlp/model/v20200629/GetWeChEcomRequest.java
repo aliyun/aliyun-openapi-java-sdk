@@ -37,7 +37,7 @@ public class GetWeChEcomRequest extends RpcAcsRequest<GetWeChEcomResponse> {
 
 	private String operation;
 	public GetWeChEcomRequest() {
-		super("alinlp", "2020-06-29", "GetWeChEcom");
+		super("alinlp", "2020-06-29", "GetWeChEcom", "alinlp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

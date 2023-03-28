@@ -33,7 +33,7 @@ public class GetWsCustomizedChO2ORequest extends RpcAcsRequest<GetWsCustomizedCh
 
 	private String outType;
 	public GetWsCustomizedChO2ORequest() {
-		super("alinlp", "2020-06-29", "GetWsCustomizedChO2O");
+		super("alinlp", "2020-06-29", "GetWsCustomizedChO2O", "alinlp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
