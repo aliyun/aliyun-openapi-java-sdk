@@ -32,6 +32,8 @@ public class DescribeCdnUserQuotaResponseUnmarshaller {
 		describeCdnUserQuotaResponse.setPreloadQuota(_ctx.integerValue("DescribeCdnUserQuotaResponse.PreloadQuota"));
 		describeCdnUserQuotaResponse.setRefreshDirQuota(_ctx.integerValue("DescribeCdnUserQuotaResponse.RefreshDirQuota"));
 		describeCdnUserQuotaResponse.setRefreshDirRemain(_ctx.integerValue("DescribeCdnUserQuotaResponse.RefreshDirRemain"));
+		describeCdnUserQuotaResponse.setIgnoreParamsQuota(_ctx.integerValue("DescribeCdnUserQuotaResponse.IgnoreParamsQuota"));
+		describeCdnUserQuotaResponse.setIgnoreParamsRemain(_ctx.integerValue("DescribeCdnUserQuotaResponse.IgnoreParamsRemain"));
 	 
 	 	return describeCdnUserQuotaResponse;
 	}

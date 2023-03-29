@@ -50,6 +50,10 @@ public class DescribeRefreshQuotaResponse extends AcsResponse {
 
 	private String regexQuota;
 
+	private String ignoreParamsQuota;
+
+	private String ignoreParamsRemain;
+
 	public String getPreloadRemain() {
 		return this.preloadRemain;
 	}
@@ -152,6 +156,22 @@ public class DescribeRefreshQuotaResponse extends AcsResponse {
 
 	public void setRegexQuota(String regexQuota) {
 		this.regexQuota = regexQuota;
+	}
+
+	public String getIgnoreParamsQuota() {
+		return this.ignoreParamsQuota;
+	}
+
+	public void setIgnoreParamsQuota(String ignoreParamsQuota) {
+		this.ignoreParamsQuota = ignoreParamsQuota;
+	}
+
+	public String getIgnoreParamsRemain() {
+		return this.ignoreParamsRemain;
+	}
+
+	public void setIgnoreParamsRemain(String ignoreParamsRemain) {
+		this.ignoreParamsRemain = ignoreParamsRemain;
 	}
 
 	@Override

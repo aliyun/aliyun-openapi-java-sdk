@@ -35,6 +35,8 @@ public class DescribeRefreshQuotaResponseUnmarshaller {
 		describeRefreshQuotaResponse.setPreloadEdgeRemain(_ctx.stringValue("DescribeRefreshQuotaResponse.PreloadEdgeRemain"));
 		describeRefreshQuotaResponse.setPreloadQuota(_ctx.stringValue("DescribeRefreshQuotaResponse.PreloadQuota"));
 		describeRefreshQuotaResponse.setRegexQuota(_ctx.stringValue("DescribeRefreshQuotaResponse.RegexQuota"));
+		describeRefreshQuotaResponse.setIgnoreParamsQuota(_ctx.stringValue("DescribeRefreshQuotaResponse.IgnoreParamsQuota"));
+		describeRefreshQuotaResponse.setIgnoreParamsRemain(_ctx.stringValue("DescribeRefreshQuotaResponse.IgnoreParamsRemain"));
 	 
 	 	return describeRefreshQuotaResponse;
 	}

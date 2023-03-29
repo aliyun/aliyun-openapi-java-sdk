@@ -44,6 +44,10 @@ public class DescribeCdnUserQuotaResponse extends AcsResponse {
 
 	private Integer refreshDirRemain;
 
+	private Integer ignoreParamsQuota;
+
+	private Integer ignoreParamsRemain;
+
 	public Integer getBlockQuota() {
 		return this.blockQuota;
 	}
@@ -122,6 +126,22 @@ public class DescribeCdnUserQuotaResponse extends AcsResponse {
 
 	public void setRefreshDirRemain(Integer refreshDirRemain) {
 		this.refreshDirRemain = refreshDirRemain;
+	}
+
+	public Integer getIgnoreParamsQuota() {
+		return this.ignoreParamsQuota;
+	}
+
+	public void setIgnoreParamsQuota(Integer ignoreParamsQuota) {
+		this.ignoreParamsQuota = ignoreParamsQuota;
+	}
+
+	public Integer getIgnoreParamsRemain() {
+		return this.ignoreParamsRemain;
+	}
+
+	public void setIgnoreParamsRemain(Integer ignoreParamsRemain) {
+		this.ignoreParamsRemain = ignoreParamsRemain;
 	}
 
 	@Override
