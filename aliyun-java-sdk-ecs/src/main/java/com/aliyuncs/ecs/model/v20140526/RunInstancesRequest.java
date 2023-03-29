@@ -44,6 +44,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 	private SystemDisk systemDisk;
 
+	private ImageOptions imageOptions;
+
 	private Integer deploymentSetGroupNo;
 
 	private String systemDiskAutoSnapshotPolicyId;
@@ -302,6 +304,18 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 				putQueryParameter("SystemDisk.Encrypted" , systemDisk.getEncrypted());
 				putQueryParameter("SystemDisk.KMSKeyId" , systemDisk.getKMSKeyId());
 				putQueryParameter("SystemDisk.EncryptAlgorithm" , systemDisk.getEncryptAlgorithm());
+		}	
+	}
+
+	public ImageOptions getImageOptions() {
+		return this.imageOptions;
+	}
+
+	public void setImageOptions(ImageOptions imageOptions) {
+		this.imageOptions = imageOptions;	
+		if (imageOptions != null) {
+			
+				putQueryParameter("ImageOptions.LoginAsNonRoot" , imageOptions.getLoginAsNonRoot());
 		}	
 	}
 
@@ -1231,6 +1245,19 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 		public void setEncryptAlgorithm(String encryptAlgorithm) {
 			this.encryptAlgorithm = encryptAlgorithm;
+		}
+	}
+
+	public static class ImageOptions {
+
+		private Boolean loginAsNonRoot;
+
+		public Boolean getLoginAsNonRoot() {
+			return this.loginAsNonRoot;
+		}
+
+		public void setLoginAsNonRoot(Boolean loginAsNonRoot) {
+			this.loginAsNonRoot = loginAsNonRoot;
 		}
 	}
 
