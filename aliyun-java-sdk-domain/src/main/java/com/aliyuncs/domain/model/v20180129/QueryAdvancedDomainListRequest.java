@@ -15,6 +15,7 @@
 package com.aliyuncs.domain.model.v20180129;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.domain.Endpoint;
 
@@ -38,6 +39,8 @@ public class QueryAdvancedDomainListRequest extends RpcAcsRequest<QueryAdvancedD
 	private Boolean excludedSuffix;
 
 	private Integer pageSize;
+
+	private List<Tag> tags;
 
 	private String lang;
 
@@ -79,7 +82,7 @@ public class QueryAdvancedDomainListRequest extends RpcAcsRequest<QueryAdvancedD
 
 	private Integer endLength;
 	public QueryAdvancedDomainListRequest() {
-		super("Domain", "2018-01-29", "QueryAdvancedDomainList");
+		super("Domain", "2018-01-29", "QueryAdvancedDomainList", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -162,6 +165,20 @@ public class QueryAdvancedDomainListRequest extends RpcAcsRequest<QueryAdvancedD
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
 		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
 	}
 
 	public String getLang() {
@@ -381,6 +398,29 @@ public class QueryAdvancedDomainListRequest extends RpcAcsRequest<QueryAdvancedD
 		this.endLength = endLength;
 		if(endLength != null){
 			putQueryParameter("EndLength", endLength.toString());
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

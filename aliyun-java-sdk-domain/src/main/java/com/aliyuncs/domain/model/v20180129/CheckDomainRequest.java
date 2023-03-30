@@ -35,7 +35,7 @@ public class CheckDomainRequest extends RpcAcsRequest<CheckDomainResponse> {
 
 	private String lang;
 	public CheckDomainRequest() {
-		super("Domain", "2018-01-29", "CheckDomain");
+		super("Domain", "2018-01-29", "CheckDomain", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

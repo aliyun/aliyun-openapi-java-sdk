@@ -33,7 +33,7 @@ public class CheckMaxYearOfServerLockRequest extends RpcAcsRequest<CheckMaxYearO
 
 	private String lang;
 	public CheckMaxYearOfServerLockRequest() {
-		super("Domain", "2018-01-29", "CheckMaxYearOfServerLock");
+		super("Domain", "2018-01-29", "CheckMaxYearOfServerLock", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

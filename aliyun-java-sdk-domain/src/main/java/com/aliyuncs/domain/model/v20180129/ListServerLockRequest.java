@@ -47,7 +47,7 @@ public class ListServerLockRequest extends RpcAcsRequest<ListServerLockResponse>
 
 	private String userClientIp;
 	public ListServerLockRequest() {
-		super("Domain", "2018-01-29", "ListServerLock");
+		super("Domain", "2018-01-29", "ListServerLock", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

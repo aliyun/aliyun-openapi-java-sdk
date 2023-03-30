@@ -33,7 +33,7 @@ public class QueryRegistrantProfileRealNameVerificationInfoRequest extends RpcAc
 
 	private String lang;
 	public QueryRegistrantProfileRealNameVerificationInfoRequest() {
-		super("Domain", "2018-01-29", "QueryRegistrantProfileRealNameVerificationInfo");
+		super("Domain", "2018-01-29", "QueryRegistrantProfileRealNameVerificationInfo", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

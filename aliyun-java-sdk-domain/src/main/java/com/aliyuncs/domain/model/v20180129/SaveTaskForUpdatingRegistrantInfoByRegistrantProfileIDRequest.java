@@ -36,7 +36,7 @@ public class SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest exten
 
 	private String lang;
 	public SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest() {
-		super("Domain", "2018-01-29", "SaveTaskForUpdatingRegistrantInfoByRegistrantProfileID");
+		super("Domain", "2018-01-29", "SaveTaskForUpdatingRegistrantInfoByRegistrantProfileID", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

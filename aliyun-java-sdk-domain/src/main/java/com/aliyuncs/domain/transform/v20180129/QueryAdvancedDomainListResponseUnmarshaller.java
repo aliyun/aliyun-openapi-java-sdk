@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.domain.model.v20180129.QueryAdvancedDomainListResponse;
 import com.aliyuncs.domain.model.v20180129.QueryAdvancedDomainListResponse.Domain;
+import com.aliyuncs.domain.model.v20180129.QueryAdvancedDomainListResponse.Domain.TagItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -64,6 +65,16 @@ public class QueryAdvancedDomainListResponseUnmarshaller {
 				dnsList.add(_ctx.stringValue("QueryAdvancedDomainListResponse.Data["+ i +"].DnsList["+ j +"]"));
 			}
 			domain.setDnsList(dnsList);
+
+			List<TagItem> tag = new ArrayList<TagItem>();
+			for (int j = 0; j < _ctx.lengthValue("QueryAdvancedDomainListResponse.Data["+ i +"].Tag.Length"); j++) {
+				TagItem tagItem = new TagItem();
+				tagItem.setKey(_ctx.stringValue("QueryAdvancedDomainListResponse.Data["+ i +"].Tag["+ j +"].Key"));
+				tagItem.setValue(_ctx.stringValue("QueryAdvancedDomainListResponse.Data["+ i +"].Tag["+ j +"].Value"));
+
+				tag.add(tagItem);
+			}
+			domain.setTag(tag);
 
 			data.add(domain);
 		}

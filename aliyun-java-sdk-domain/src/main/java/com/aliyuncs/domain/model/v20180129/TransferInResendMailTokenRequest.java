@@ -31,7 +31,7 @@ public class TransferInResendMailTokenRequest extends RpcAcsRequest<TransferInRe
 
 	private String lang;
 	public TransferInResendMailTokenRequest() {
-		super("Domain", "2018-01-29", "TransferInResendMailToken");
+		super("Domain", "2018-01-29", "TransferInResendMailToken", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

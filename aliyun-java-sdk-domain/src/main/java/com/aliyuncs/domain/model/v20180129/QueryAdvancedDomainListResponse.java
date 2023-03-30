@@ -149,6 +149,8 @@ public class QueryAdvancedDomainListResponse extends AcsResponse {
 
 		private String resourceGroupId;
 
+		private List<TagItem> tag;
+
 		private List<String> dnsList;
 
 		public String getDomainAuditStatus() {
@@ -319,12 +321,43 @@ public class QueryAdvancedDomainListResponse extends AcsResponse {
 			this.resourceGroupId = resourceGroupId;
 		}
 
+		public List<TagItem> getTag() {
+			return this.tag;
+		}
+
+		public void setTag(List<TagItem> tag) {
+			this.tag = tag;
+		}
+
 		public List<String> getDnsList() {
 			return this.dnsList;
 		}
 
 		public void setDnsList(List<String> dnsList) {
 			this.dnsList = dnsList;
+		}
+
+		public static class TagItem {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 	}
 

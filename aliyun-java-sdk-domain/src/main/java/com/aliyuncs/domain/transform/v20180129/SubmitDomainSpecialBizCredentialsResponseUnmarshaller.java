@@ -14,16 +14,15 @@
 
 package com.aliyuncs.domain.transform.v20180129;
 
-import com.aliyuncs.domain.model.v20180129.TagResourcesResponse;
+import com.aliyuncs.domain.model.v20180129.SubmitDomainSpecialBizCredentialsResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class TagResourcesResponseUnmarshaller {
+public class SubmitDomainSpecialBizCredentialsResponseUnmarshaller {
 
-	public static TagResourcesResponse unmarshall(TagResourcesResponse tagResourcesResponse, UnmarshallerContext _ctx) {
+	public static SubmitDomainSpecialBizCredentialsResponse unmarshall(SubmitDomainSpecialBizCredentialsResponse submitDomainSpecialBizCredentialsResponse, UnmarshallerContext _ctx) {
 		
-		tagResourcesResponse.setRequestId(_ctx.stringValue("TagResourcesResponse.RequestId"));
 	 
-	 	return tagResourcesResponse;
+	 	return submitDomainSpecialBizCredentialsResponse;
 	}
 }

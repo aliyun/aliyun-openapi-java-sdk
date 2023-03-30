@@ -143,6 +143,8 @@ public class QueryDomainListResponse extends AcsResponse {
 
 		private String resourceGroupId;
 
+		private List<TagItem> tag;
+
 		public String getDomainAuditStatus() {
 			return this.domainAuditStatus;
 		}
@@ -285,6 +287,37 @@ public class QueryDomainListResponse extends AcsResponse {
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public List<TagItem> getTag() {
+			return this.tag;
+		}
+
+		public void setTag(List<TagItem> tag) {
+			this.tag = tag;
+		}
+
+		public static class TagItem {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 	}
 

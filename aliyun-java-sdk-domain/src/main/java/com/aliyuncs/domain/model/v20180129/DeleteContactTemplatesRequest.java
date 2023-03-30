@@ -29,7 +29,7 @@ public class DeleteContactTemplatesRequest extends RpcAcsRequest<DeleteContactTe
 
 	private String registrantProfileIds;
 	public DeleteContactTemplatesRequest() {
-		super("Domain", "2018-01-29", "DeleteContactTemplates");
+		super("Domain", "2018-01-29", "DeleteContactTemplates", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

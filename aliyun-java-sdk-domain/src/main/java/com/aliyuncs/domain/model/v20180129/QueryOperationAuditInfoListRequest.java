@@ -37,7 +37,7 @@ public class QueryOperationAuditInfoListRequest extends RpcAcsRequest<QueryOpera
 
 	private String lang;
 	public QueryOperationAuditInfoListRequest() {
-		super("Domain", "2018-01-29", "QueryOperationAuditInfoList");
+		super("Domain", "2018-01-29", "QueryOperationAuditInfoList", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

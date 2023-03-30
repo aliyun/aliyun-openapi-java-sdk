@@ -91,7 +91,7 @@ public class SaveSingleTaskForCreatingOrderActivateRequest extends RpcAcsRequest
 
 	private String userClientIp;
 	public SaveSingleTaskForCreatingOrderActivateRequest() {
-		super("Domain", "2018-01-29", "SaveSingleTaskForCreatingOrderActivate");
+		super("Domain", "2018-01-29", "SaveSingleTaskForCreatingOrderActivate", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

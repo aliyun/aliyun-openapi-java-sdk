@@ -29,7 +29,7 @@ public class SetDefaultRegistrantProfileRequest extends RpcAcsRequest<SetDefault
 
 	private String userClientIp;
 	public SetDefaultRegistrantProfileRequest() {
-		super("Domain", "2018-01-29", "SetDefaultRegistrantProfile");
+		super("Domain", "2018-01-29", "SetDefaultRegistrantProfile", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

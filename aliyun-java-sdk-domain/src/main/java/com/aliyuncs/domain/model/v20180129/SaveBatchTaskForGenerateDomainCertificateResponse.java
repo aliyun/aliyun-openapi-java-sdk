@@ -15,16 +15,18 @@
 package com.aliyuncs.domain.model.v20180129;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.domain.transform.v20180129.TagResourcesSystemTagsResponseUnmarshaller;
+import com.aliyuncs.domain.transform.v20180129.SaveBatchTaskForGenerateDomainCertificateResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class TagResourcesSystemTagsResponse extends AcsResponse {
+public class SaveBatchTaskForGenerateDomainCertificateResponse extends AcsResponse {
 
 	private String requestId;
+
+	private String taskNo;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -34,8 +36,21 @@ public class TagResourcesSystemTagsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getTaskNo() {
+		return this.taskNo;
+	}
+
+	public void setTaskNo(String taskNo) {
+		this.taskNo = taskNo;
+	}
+
 	@Override
-	public TagResourcesSystemTagsResponse getInstance(UnmarshallerContext context) {
-		return	TagResourcesSystemTagsResponseUnmarshaller.unmarshall(this, context);
+	public SaveBatchTaskForGenerateDomainCertificateResponse getInstance(UnmarshallerContext context) {
+		return	SaveBatchTaskForGenerateDomainCertificateResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }
