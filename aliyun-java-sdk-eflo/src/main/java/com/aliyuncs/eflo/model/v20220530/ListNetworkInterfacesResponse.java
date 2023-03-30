@@ -107,9 +107,11 @@ public class ListNetworkInterfacesResponse extends AcsResponse {
 
 			private String gateway;
 
-			private String gmtCreate;
+			private String createTime;
 
 			private Integer quota;
+
+			private String ncType;
 
 			private List<PrivateIpAddressMacGroupItem> privateIpAddressMacGroup;
 
@@ -191,12 +193,12 @@ public class ListNetworkInterfacesResponse extends AcsResponse {
 				this.gateway = gateway;
 			}
 
-			public String getGmtCreate() {
-				return this.gmtCreate;
+			public String getCreateTime() {
+				return this.createTime;
 			}
 
-			public void setGmtCreate(String gmtCreate) {
-				this.gmtCreate = gmtCreate;
+			public void setCreateTime(String createTime) {
+				this.createTime = createTime;
 			}
 
 			public Integer getQuota() {
@@ -205,6 +207,14 @@ public class ListNetworkInterfacesResponse extends AcsResponse {
 
 			public void setQuota(Integer quota) {
 				this.quota = quota;
+			}
+
+			public String getNcType() {
+				return this.ncType;
+			}
+
+			public void setNcType(String ncType) {
+				this.ncType = ncType;
 			}
 
 			public List<PrivateIpAddressMacGroupItem> getPrivateIpAddressMacGroup() {
@@ -296,11 +306,11 @@ public class ListNetworkInterfacesResponse extends AcsResponse {
 
 				private String vpdId;
 
-				private String name;
+				private String vpdName;
 
 				private String cidr;
 
-				private String gmtCreate;
+				private String createTime;
 
 				public String getVpdId() {
 					return this.vpdId;
@@ -310,12 +320,12 @@ public class ListNetworkInterfacesResponse extends AcsResponse {
 					this.vpdId = vpdId;
 				}
 
-				public String getName() {
-					return this.name;
+				public String getVpdName() {
+					return this.vpdName;
 				}
 
-				public void setName(String name) {
-					this.name = name;
+				public void setVpdName(String vpdName) {
+					this.vpdName = vpdName;
 				}
 
 				public String getCidr() {
@@ -326,12 +336,12 @@ public class ListNetworkInterfacesResponse extends AcsResponse {
 					this.cidr = cidr;
 				}
 
-				public String getGmtCreate() {
-					return this.gmtCreate;
+				public String getCreateTime() {
+					return this.createTime;
 				}
 
-				public void setGmtCreate(String gmtCreate) {
-					this.gmtCreate = gmtCreate;
+				public void setCreateTime(String createTime) {
+					this.createTime = createTime;
 				}
 			}
 

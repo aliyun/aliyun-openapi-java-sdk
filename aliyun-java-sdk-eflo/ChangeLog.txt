@@ -1,3 +1,6 @@
+2023-03-30 Version: 1.0.2
+- Supported Vpd,subnet,networkInterface add parameter require limit.
+
 2023-02-16 Version: 1.0.1
 - Support lingjun network interface.
 - Supported DescribeSlr.

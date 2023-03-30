@@ -49,8 +49,9 @@ public class ListNetworkInterfacesResponseUnmarshaller {
 			dataItem.setServiceMac(_ctx.stringValue("ListNetworkInterfacesResponse.Content.Data["+ i +"].ServiceMac"));
 			dataItem.setStatus(_ctx.stringValue("ListNetworkInterfacesResponse.Content.Data["+ i +"].Status"));
 			dataItem.setGateway(_ctx.stringValue("ListNetworkInterfacesResponse.Content.Data["+ i +"].Gateway"));
-			dataItem.setGmtCreate(_ctx.stringValue("ListNetworkInterfacesResponse.Content.Data["+ i +"].GmtCreate"));
+			dataItem.setCreateTime(_ctx.stringValue("ListNetworkInterfacesResponse.Content.Data["+ i +"].CreateTime"));
 			dataItem.setQuota(_ctx.integerValue("ListNetworkInterfacesResponse.Content.Data["+ i +"].Quota"));
+			dataItem.setNcType(_ctx.stringValue("ListNetworkInterfacesResponse.Content.Data["+ i +"].NcType"));
 
 			List<String> ethernet = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListNetworkInterfacesResponse.Content.Data["+ i +"].Ethernet.Length"); j++) {
@@ -60,9 +61,9 @@ public class ListNetworkInterfacesResponseUnmarshaller {
 
 			VpdBaseInfo vpdBaseInfo = new VpdBaseInfo();
 			vpdBaseInfo.setVpdId(_ctx.stringValue("ListNetworkInterfacesResponse.Content.Data["+ i +"].VpdBaseInfo.VpdId"));
-			vpdBaseInfo.setName(_ctx.stringValue("ListNetworkInterfacesResponse.Content.Data["+ i +"].VpdBaseInfo.Name"));
+			vpdBaseInfo.setVpdName(_ctx.stringValue("ListNetworkInterfacesResponse.Content.Data["+ i +"].VpdBaseInfo.VpdName"));
 			vpdBaseInfo.setCidr(_ctx.stringValue("ListNetworkInterfacesResponse.Content.Data["+ i +"].VpdBaseInfo.Cidr"));
-			vpdBaseInfo.setGmtCreate(_ctx.stringValue("ListNetworkInterfacesResponse.Content.Data["+ i +"].VpdBaseInfo.GmtCreate"));
+			vpdBaseInfo.setCreateTime(_ctx.stringValue("ListNetworkInterfacesResponse.Content.Data["+ i +"].VpdBaseInfo.CreateTime"));
 			dataItem.setVpdBaseInfo(vpdBaseInfo);
 
 			SubnetBaseInfo subnetBaseInfo = new SubnetBaseInfo();

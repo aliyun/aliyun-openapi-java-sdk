@@ -21,28 +21,15 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class GetNetworkInterfaceRequest extends RpcAcsRequest<GetNetworkInterfaceResponse> {
+public class GetVpdRequest extends RpcAcsRequest<GetVpdResponse> {
 	   
-
-	private String subnetId;
 
 	private String clientToken;
 
-	private String networkInterfaceId;
-	public GetNetworkInterfaceRequest() {
-		super("eflo", "2022-05-30", "GetNetworkInterface", "eflo");
+	private String vpdId;
+	public GetVpdRequest() {
+		super("eflo", "2022-05-30", "GetVpd", "eflo");
 		setMethod(MethodType.POST);
-	}
-
-	public String getSubnetId() {
-		return this.subnetId;
-	}
-
-	public void setSubnetId(String subnetId) {
-		this.subnetId = subnetId;
-		if(subnetId != null){
-			putBodyParameter("SubnetId", subnetId);
-		}
 	}
 
 	public String getClientToken() {
@@ -56,20 +43,20 @@ public class GetNetworkInterfaceRequest extends RpcAcsRequest<GetNetworkInterfac
 		}
 	}
 
-	public String getNetworkInterfaceId() {
-		return this.networkInterfaceId;
+	public String getVpdId() {
+		return this.vpdId;
 	}
 
-	public void setNetworkInterfaceId(String networkInterfaceId) {
-		this.networkInterfaceId = networkInterfaceId;
-		if(networkInterfaceId != null){
-			putBodyParameter("NetworkInterfaceId", networkInterfaceId);
+	public void setVpdId(String vpdId) {
+		this.vpdId = vpdId;
+		if(vpdId != null){
+			putBodyParameter("VpdId", vpdId);
 		}
 	}
 
 	@Override
-	public Class<GetNetworkInterfaceResponse> getResponseClass() {
-		return GetNetworkInterfaceResponse.class;
+	public Class<GetVpdResponse> getResponseClass() {
+		return GetVpdResponse.class;
 	}
 
 }

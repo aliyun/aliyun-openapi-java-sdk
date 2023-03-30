@@ -24,8 +24,6 @@ import com.aliyuncs.http.MethodType;
 public class ListNetworkInterfacesRequest extends RpcAcsRequest<ListNetworkInterfacesResponse> {
 	   
 
-	private String clientToken;
-
 	private Integer pageNumber;
 
 	private Integer pageSize;
@@ -44,17 +42,6 @@ public class ListNetworkInterfacesRequest extends RpcAcsRequest<ListNetworkInter
 	public ListNetworkInterfacesRequest() {
 		super("eflo", "2022-05-30", "ListNetworkInterfaces", "eflo");
 		setMethod(MethodType.POST);
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putBodyParameter("ClientToken", clientToken);
-		}
 	}
 
 	public Integer getPageNumber() {

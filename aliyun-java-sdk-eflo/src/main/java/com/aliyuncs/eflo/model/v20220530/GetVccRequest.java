@@ -21,22 +21,18 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class ListLniPrivateIpAddressRequest extends RpcAcsRequest<ListLniPrivateIpAddressResponse> {
+public class GetVccRequest extends RpcAcsRequest<GetVccResponse> {
 	   
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
-
-	private String ip;
-
 	private Boolean enablePage;
 
-	private String ipName;
+	private Integer pageSize;
 
-	private String networkInterfaceId;
-	public ListLniPrivateIpAddressRequest() {
-		super("eflo", "2022-05-30", "ListLniPrivateIpAddress", "eflo");
+	private String vccId;
+	public GetVccRequest() {
+		super("eflo", "2022-05-30", "GetVcc", "eflo");
 		setMethod(MethodType.POST);
 	}
 
@@ -51,28 +47,6 @@ public class ListLniPrivateIpAddressRequest extends RpcAcsRequest<ListLniPrivate
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putBodyParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getIp() {
-		return this.ip;
-	}
-
-	public void setIp(String ip) {
-		this.ip = ip;
-		if(ip != null){
-			putBodyParameter("Ip", ip);
-		}
-	}
-
 	public Boolean getEnablePage() {
 		return this.enablePage;
 	}
@@ -84,31 +58,31 @@ public class ListLniPrivateIpAddressRequest extends RpcAcsRequest<ListLniPrivate
 		}
 	}
 
-	public String getIpName() {
-		return this.ipName;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setIpName(String ipName) {
-		this.ipName = ipName;
-		if(ipName != null){
-			putBodyParameter("IpName", ipName);
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putBodyParameter("PageSize", pageSize.toString());
 		}
 	}
 
-	public String getNetworkInterfaceId() {
-		return this.networkInterfaceId;
+	public String getVccId() {
+		return this.vccId;
 	}
 
-	public void setNetworkInterfaceId(String networkInterfaceId) {
-		this.networkInterfaceId = networkInterfaceId;
-		if(networkInterfaceId != null){
-			putBodyParameter("NetworkInterfaceId", networkInterfaceId);
+	public void setVccId(String vccId) {
+		this.vccId = vccId;
+		if(vccId != null){
+			putBodyParameter("VccId", vccId);
 		}
 	}
 
 	@Override
-	public Class<ListLniPrivateIpAddressResponse> getResponseClass() {
-		return ListLniPrivateIpAddressResponse.class;
+	public Class<GetVccResponse> getResponseClass() {
+		return GetVccResponse.class;
 	}
 
 }
