@@ -37,6 +37,7 @@ public class DescribeDomainRecordInfoResponseUnmarshaller {
 		describeDomainRecordInfoResponse.setDomainId(_ctx.stringValue("DescribeDomainRecordInfoResponse.DomainId"));
 		describeDomainRecordInfoResponse.setValue(_ctx.stringValue("DescribeDomainRecordInfoResponse.Value"));
 		describeDomainRecordInfoResponse.setRecordId(_ctx.stringValue("DescribeDomainRecordInfoResponse.RecordId"));
+		describeDomainRecordInfoResponse.setRemark(_ctx.stringValue("DescribeDomainRecordInfoResponse.Remark"));
 	 
 	 	return describeDomainRecordInfoResponse;
 	}

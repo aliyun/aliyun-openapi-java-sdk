@@ -28,6 +28,7 @@ public class DescribeGtmAccessStrategyAvailableConfigResponseUnmarshaller {
 	public static DescribeGtmAccessStrategyAvailableConfigResponse unmarshall(DescribeGtmAccessStrategyAvailableConfigResponse describeGtmAccessStrategyAvailableConfigResponse, UnmarshallerContext _ctx) {
 		
 		describeGtmAccessStrategyAvailableConfigResponse.setRequestId(_ctx.stringValue("DescribeGtmAccessStrategyAvailableConfigResponse.RequestId"));
+		describeGtmAccessStrategyAvailableConfigResponse.setSuggestSetDefaultLine(_ctx.booleanValue("DescribeGtmAccessStrategyAvailableConfigResponse.SuggestSetDefaultLine"));
 
 		List<AddrPool> addrPools = new ArrayList<AddrPool>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeGtmAccessStrategyAvailableConfigResponse.AddrPools.Length"); i++) {

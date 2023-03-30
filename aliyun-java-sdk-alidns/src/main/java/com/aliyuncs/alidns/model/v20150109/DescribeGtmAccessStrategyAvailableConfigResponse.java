@@ -27,6 +27,8 @@ public class DescribeGtmAccessStrategyAvailableConfigResponse extends AcsRespons
 
 	private String requestId;
 
+	private Boolean suggestSetDefaultLine;
+
 	private List<AddrPool> addrPools;
 
 	private List<Line> lines;
@@ -37,6 +39,14 @@ public class DescribeGtmAccessStrategyAvailableConfigResponse extends AcsRespons
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuggestSetDefaultLine() {
+		return this.suggestSetDefaultLine;
+	}
+
+	public void setSuggestSetDefaultLine(Boolean suggestSetDefaultLine) {
+		this.suggestSetDefaultLine = suggestSetDefaultLine;
 	}
 
 	public List<AddrPool> getAddrPools() {

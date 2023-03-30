@@ -54,6 +54,8 @@ public class DescribeDomainRecordInfoResponse extends AcsResponse {
 
 	private String recordId;
 
+	private String remark;
+
 	public String getStatus() {
 		return this.status;
 	}
@@ -172,6 +174,14 @@ public class DescribeDomainRecordInfoResponse extends AcsResponse {
 
 	public void setRecordId(String recordId) {
 		this.recordId = recordId;
+	}
+
+	public String getRemark() {
+		return this.remark;
+	}
+
+	public void setRemark(String remark) {
+		this.remark = remark;
 	}
 
 	@Override

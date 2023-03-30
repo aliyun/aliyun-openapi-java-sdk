@@ -31,6 +31,8 @@ public class DescribeDomainNsResponse extends AcsResponse {
 
 	private Boolean includeAliDns;
 
+	private String detectFailedReasonCode;
+
 	private List<String> expectDnsServers;
 
 	private List<String> dnsServers;
@@ -57,6 +59,14 @@ public class DescribeDomainNsResponse extends AcsResponse {
 
 	public void setIncludeAliDns(Boolean includeAliDns) {
 		this.includeAliDns = includeAliDns;
+	}
+
+	public String getDetectFailedReasonCode() {
+		return this.detectFailedReasonCode;
+	}
+
+	public void setDetectFailedReasonCode(String detectFailedReasonCode) {
+		this.detectFailedReasonCode = detectFailedReasonCode;
 	}
 
 	public List<String> getExpectDnsServers() {

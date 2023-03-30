@@ -1,3 +1,6 @@
+2023-03-30 Version: 3.0.2
+- New Resolve Statistic Summary API.
+
 2022-11-23 Version: 3.0.1
 - Api DescribeSubDomainRecords add Remark field.
 
