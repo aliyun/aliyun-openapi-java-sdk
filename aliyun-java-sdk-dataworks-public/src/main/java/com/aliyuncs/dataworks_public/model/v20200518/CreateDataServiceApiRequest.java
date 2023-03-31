@@ -41,6 +41,8 @@ public class CreateDataServiceApiRequest extends RpcAcsRequest<CreateDataService
 
 	private Long tenantId;
 
+	private Integer requestContentType;
+
 	private String protocols;
 
 	private Long projectId;
@@ -154,6 +156,17 @@ public class CreateDataServiceApiRequest extends RpcAcsRequest<CreateDataService
 		this.tenantId = tenantId;
 		if(tenantId != null){
 			putBodyParameter("TenantId", tenantId.toString());
+		}
+	}
+
+	public Integer getRequestContentType() {
+		return this.requestContentType;
+	}
+
+	public void setRequestContentType(Integer requestContentType) {
+		this.requestContentType = requestContentType;
+		if(requestContentType != null){
+			putBodyParameter("RequestContentType", requestContentType.toString());
 		}
 	}
 

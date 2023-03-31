@@ -195,31 +195,15 @@ public class GetBaselineKeyPathResponse extends AcsResponse {
 
 			private Long beginRunningTime;
 
-			private Long cycTime;
-
-			private String owner;
-
 			private Long finishTime;
 
-			private Long projectId;
-
 			private Long beginCast;
-
-			private Long instanceId;
 
 			private Long endCast;
 
 			private Long beginWaitResTime;
 
-			private Integer inGroupId;
-
-			private String nodeName;
-
-			private Long bizdate;
-
 			private Long beginWaitTimeTime;
-
-			private Long nodeId;
 
 			public String getStatus() {
 				return this.status;
@@ -245,22 +229,6 @@ public class GetBaselineKeyPathResponse extends AcsResponse {
 				this.beginRunningTime = beginRunningTime;
 			}
 
-			public Long getCycTime() {
-				return this.cycTime;
-			}
-
-			public void setCycTime(Long cycTime) {
-				this.cycTime = cycTime;
-			}
-
-			public String getOwner() {
-				return this.owner;
-			}
-
-			public void setOwner(String owner) {
-				this.owner = owner;
-			}
-
 			public Long getFinishTime() {
 				return this.finishTime;
 			}
@@ -269,28 +237,12 @@ public class GetBaselineKeyPathResponse extends AcsResponse {
 				this.finishTime = finishTime;
 			}
 
-			public Long getProjectId() {
-				return this.projectId;
-			}
-
-			public void setProjectId(Long projectId) {
-				this.projectId = projectId;
-			}
-
 			public Long getBeginCast() {
 				return this.beginCast;
 			}
 
 			public void setBeginCast(Long beginCast) {
 				this.beginCast = beginCast;
-			}
-
-			public Long getInstanceId() {
-				return this.instanceId;
-			}
-
-			public void setInstanceId(Long instanceId) {
-				this.instanceId = instanceId;
 			}
 
 			public Long getEndCast() {
@@ -309,30 +261,6 @@ public class GetBaselineKeyPathResponse extends AcsResponse {
 				this.beginWaitResTime = beginWaitResTime;
 			}
 
-			public Integer getInGroupId() {
-				return this.inGroupId;
-			}
-
-			public void setInGroupId(Integer inGroupId) {
-				this.inGroupId = inGroupId;
-			}
-
-			public String getNodeName() {
-				return this.nodeName;
-			}
-
-			public void setNodeName(String nodeName) {
-				this.nodeName = nodeName;
-			}
-
-			public Long getBizdate() {
-				return this.bizdate;
-			}
-
-			public void setBizdate(Long bizdate) {
-				this.bizdate = bizdate;
-			}
-
 			public Long getBeginWaitTimeTime() {
 				return this.beginWaitTimeTime;
 			}
@@ -340,19 +268,11 @@ public class GetBaselineKeyPathResponse extends AcsResponse {
 			public void setBeginWaitTimeTime(Long beginWaitTimeTime) {
 				this.beginWaitTimeTime = beginWaitTimeTime;
 			}
-
-			public Long getNodeId() {
-				return this.nodeId;
-			}
-
-			public void setNodeId(Long nodeId) {
-				this.nodeId = nodeId;
-			}
 		}
 
 		public static class TopicsItem {
 
-			private Long topicName;
+			private String topicName;
 
 			private Long instanceId;
 
@@ -360,11 +280,11 @@ public class GetBaselineKeyPathResponse extends AcsResponse {
 
 			private Long addTime;
 
-			public Long getTopicName() {
+			public String getTopicName() {
 				return this.topicName;
 			}
 
-			public void setTopicName(Long topicName) {
+			public void setTopicName(String topicName) {
 				this.topicName = topicName;
 			}
 
