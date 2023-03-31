@@ -43,6 +43,8 @@ public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardin
 
 	private String dBInstanceDescription;
 
+	private String globalSecurityGroupIds;
+
 	private Integer period;
 
 	private List<ConfigServer> configServers;
@@ -187,6 +189,17 @@ public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardin
 		this.dBInstanceDescription = dBInstanceDescription;
 		if(dBInstanceDescription != null){
 			putQueryParameter("DBInstanceDescription", dBInstanceDescription);
+		}
+	}
+
+	public String getGlobalSecurityGroupIds() {
+		return this.globalSecurityGroupIds;
+	}
+
+	public void setGlobalSecurityGroupIds(String globalSecurityGroupIds) {
+		this.globalSecurityGroupIds = globalSecurityGroupIds;
+		if(globalSecurityGroupIds != null){
+			putQueryParameter("GlobalSecurityGroupIds", globalSecurityGroupIds);
 		}
 	}
 

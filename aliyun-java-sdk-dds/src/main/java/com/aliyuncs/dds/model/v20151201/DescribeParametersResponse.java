@@ -33,7 +33,7 @@ public class DescribeParametersResponse extends AcsResponse {
 
 	private List<Parameter> runningParameters;
 
-	private List<Parameter> configParameters;
+	private List<Parameter1> configParameters;
 
 	public String getEngineVersion() {
 		return this.engineVersion;
@@ -67,11 +67,11 @@ public class DescribeParametersResponse extends AcsResponse {
 		this.runningParameters = runningParameters;
 	}
 
-	public List<Parameter> getConfigParameters() {
+	public List<Parameter1> getConfigParameters() {
 		return this.configParameters;
 	}
 
-	public void setConfigParameters(List<Parameter> configParameters) {
+	public void setConfigParameters(List<Parameter1> configParameters) {
 		this.configParameters = configParameters;
 	}
 
@@ -88,6 +88,8 @@ public class DescribeParametersResponse extends AcsResponse {
 		private String parameterDescription;
 
 		private String modifiableStatus;
+
+		private String characterType;
 
 		public String getCheckingCode() {
 			return this.checkingCode;
@@ -134,6 +136,77 @@ public class DescribeParametersResponse extends AcsResponse {
 		}
 
 		public void setModifiableStatus(String modifiableStatus) {
+			this.modifiableStatus = modifiableStatus;
+		}
+
+		public String getCharacterType() {
+			return this.characterType;
+		}
+
+		public void setCharacterType(String characterType) {
+			this.characterType = characterType;
+		}
+	}
+
+	public static class Parameter1 {
+
+		private String checkingCode;
+
+		private String parameterName;
+
+		private String parameterValue;
+
+		private Boolean forceRestart;
+
+		private String parameterDescription;
+
+		private Boolean modifiableStatus;
+
+		public String getCheckingCode() {
+			return this.checkingCode;
+		}
+
+		public void setCheckingCode(String checkingCode) {
+			this.checkingCode = checkingCode;
+		}
+
+		public String getParameterName() {
+			return this.parameterName;
+		}
+
+		public void setParameterName(String parameterName) {
+			this.parameterName = parameterName;
+		}
+
+		public String getParameterValue() {
+			return this.parameterValue;
+		}
+
+		public void setParameterValue(String parameterValue) {
+			this.parameterValue = parameterValue;
+		}
+
+		public Boolean getForceRestart() {
+			return this.forceRestart;
+		}
+
+		public void setForceRestart(Boolean forceRestart) {
+			this.forceRestart = forceRestart;
+		}
+
+		public String getParameterDescription() {
+			return this.parameterDescription;
+		}
+
+		public void setParameterDescription(String parameterDescription) {
+			this.parameterDescription = parameterDescription;
+		}
+
+		public Boolean getModifiableStatus() {
+			return this.modifiableStatus;
+		}
+
+		public void setModifiableStatus(Boolean modifiableStatus) {
 			this.modifiableStatus = modifiableStatus;
 		}
 	}

@@ -44,6 +44,8 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private String dBInstanceDescription;
 
+	private String globalSecurityGroupIds;
+
 	private String businessInfo;
 
 	private Integer period;
@@ -203,6 +205,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.dBInstanceDescription = dBInstanceDescription;
 		if(dBInstanceDescription != null){
 			putQueryParameter("DBInstanceDescription", dBInstanceDescription);
+		}
+	}
+
+	public String getGlobalSecurityGroupIds() {
+		return this.globalSecurityGroupIds;
+	}
+
+	public void setGlobalSecurityGroupIds(String globalSecurityGroupIds) {
+		this.globalSecurityGroupIds = globalSecurityGroupIds;
+		if(globalSecurityGroupIds != null){
+			putQueryParameter("GlobalSecurityGroupIds", globalSecurityGroupIds);
 		}
 	}
 

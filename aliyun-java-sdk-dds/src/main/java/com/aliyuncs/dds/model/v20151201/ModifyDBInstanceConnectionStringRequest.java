@@ -36,6 +36,8 @@ public class ModifyDBInstanceConnectionStringRequest extends RpcAcsRequest<Modif
 
 	private String ownerAccount;
 
+	private Integer newPort;
+
 	private String newConnectionString;
 
 	private Long ownerId;
@@ -109,6 +111,17 @@ public class ModifyDBInstanceConnectionStringRequest extends RpcAcsRequest<Modif
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Integer getNewPort() {
+		return this.newPort;
+	}
+
+	public void setNewPort(Integer newPort) {
+		this.newPort = newPort;
+		if(newPort != null){
+			putQueryParameter("NewPort", newPort.toString());
 		}
 	}
 

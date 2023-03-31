@@ -21,28 +21,24 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class ResetAccountPasswordRequest extends RpcAcsRequest<ResetAccountPasswordResponse> {
+public class ModifyGlobalSecurityIPGroupRelationRequest extends RpcAcsRequest<ModifyGlobalSecurityIPGroupRelationResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String accountName;
+	private String globalSecurityGroupId;
 
 	private String securityToken;
 
-	private String dBInstanceId;
-
 	private String resourceOwnerAccount;
+
+	private String dBClusterId;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String accountPassword;
-
-	private String characterType;
-	public ResetAccountPasswordRequest() {
-		super("Dds", "2015-12-01", "ResetAccountPassword", "dds");
+	public ModifyGlobalSecurityIPGroupRelationRequest() {
+		super("Dds", "2015-12-01", "ModifyGlobalSecurityIPGroupRelation", "dds");
 		setMethod(MethodType.POST);
 	}
 
@@ -57,14 +53,14 @@ public class ResetAccountPasswordRequest extends RpcAcsRequest<ResetAccountPassw
 		}
 	}
 
-	public String getAccountName() {
-		return this.accountName;
+	public String getGlobalSecurityGroupId() {
+		return this.globalSecurityGroupId;
 	}
 
-	public void setAccountName(String accountName) {
-		this.accountName = accountName;
-		if(accountName != null){
-			putQueryParameter("AccountName", accountName);
+	public void setGlobalSecurityGroupId(String globalSecurityGroupId) {
+		this.globalSecurityGroupId = globalSecurityGroupId;
+		if(globalSecurityGroupId != null){
+			putQueryParameter("GlobalSecurityGroupId", globalSecurityGroupId);
 		}
 	}
 
@@ -79,17 +75,6 @@ public class ResetAccountPasswordRequest extends RpcAcsRequest<ResetAccountPassw
 		}
 	}
 
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
-		}
-	}
-
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -98,6 +83,17 @@ public class ResetAccountPasswordRequest extends RpcAcsRequest<ResetAccountPassw
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getDBClusterId() {
+		return this.dBClusterId;
+	}
+
+	public void setDBClusterId(String dBClusterId) {
+		this.dBClusterId = dBClusterId;
+		if(dBClusterId != null){
+			putQueryParameter("DBClusterId", dBClusterId);
 		}
 	}
 
@@ -123,31 +119,9 @@ public class ResetAccountPasswordRequest extends RpcAcsRequest<ResetAccountPassw
 		}
 	}
 
-	public String getAccountPassword() {
-		return this.accountPassword;
-	}
-
-	public void setAccountPassword(String accountPassword) {
-		this.accountPassword = accountPassword;
-		if(accountPassword != null){
-			putQueryParameter("AccountPassword", accountPassword);
-		}
-	}
-
-	public String getCharacterType() {
-		return this.characterType;
-	}
-
-	public void setCharacterType(String characterType) {
-		this.characterType = characterType;
-		if(characterType != null){
-			putQueryParameter("CharacterType", characterType);
-		}
-	}
-
 	@Override
-	public Class<ResetAccountPasswordResponse> getResponseClass() {
-		return ResetAccountPasswordResponse.class;
+	public Class<ModifyGlobalSecurityIPGroupRelationResponse> getResponseClass() {
+		return ModifyGlobalSecurityIPGroupRelationResponse.class;
 	}
 
 }
