@@ -15,6 +15,9 @@
 package com.aliyuncs.bssopenapi.model.v20171214;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.Map;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.bssopenapi.Endpoint;
 
@@ -38,6 +41,9 @@ public class CreateSavingsPlansInstanceRequest extends RpcAcsRequest<CreateSavin
 	private String duration;
 
 	private String specType;
+
+	@SerializedName("extendMap")
+	private Map<String,String> extendMap;
 
 	private String payMode;
 
@@ -128,6 +134,17 @@ public class CreateSavingsPlansInstanceRequest extends RpcAcsRequest<CreateSavin
 		if(specType != null){
 			putQueryParameter("SpecType", specType);
 		}
+	}
+
+	public Map<String,String> getExtendMap() {
+		return this.extendMap;
+	}
+
+	public void setExtendMap(Map<String,String> extendMap) {
+		this.extendMap = extendMap;	
+		if (extendMap != null) {
+			putQueryParameter("ExtendMap" , new Gson().toJson(extendMap));
+		}	
 	}
 
 	public String getPayMode() {
