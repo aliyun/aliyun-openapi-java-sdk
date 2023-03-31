@@ -16,6 +16,9 @@ package com.aliyuncs.mpaas.model.v20201028;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import java.util.Map;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.mpaas.Endpoint;
 
@@ -36,11 +39,16 @@ public class PushMultipleRequest extends RpcAcsRequest<PushMultipleResponse> {
 
 	private String notifyType;
 
+	private String miChannelId;
+
 	private String extendedParams;
 
 	private Long silent;
 
 	private String strategyContent;
+
+	@SerializedName("thirdChannelCategory")
+	private Map<String,String> thirdChannelCategory;
 
 	private String classification;
 
@@ -51,6 +59,8 @@ public class PushMultipleRequest extends RpcAcsRequest<PushMultipleResponse> {
 	private String appId;
 
 	private Integer strategyType;
+
+	private String channelId;
 
 	private String workspaceId;
 	public PushMultipleRequest() {
@@ -117,6 +127,17 @@ public class PushMultipleRequest extends RpcAcsRequest<PushMultipleResponse> {
 		}
 	}
 
+	public String getMiChannelId() {
+		return this.miChannelId;
+	}
+
+	public void setMiChannelId(String miChannelId) {
+		this.miChannelId = miChannelId;
+		if(miChannelId != null){
+			putBodyParameter("MiChannelId", miChannelId);
+		}
+	}
+
 	public String getExtendedParams() {
 		return this.extendedParams;
 	}
@@ -148,6 +169,17 @@ public class PushMultipleRequest extends RpcAcsRequest<PushMultipleResponse> {
 		if(strategyContent != null){
 			putBodyParameter("StrategyContent", strategyContent);
 		}
+	}
+
+	public Map<String,String> getThirdChannelCategory() {
+		return this.thirdChannelCategory;
+	}
+
+	public void setThirdChannelCategory(Map<String,String> thirdChannelCategory) {
+		this.thirdChannelCategory = thirdChannelCategory;	
+		if (thirdChannelCategory != null) {
+			putBodyParameter("ThirdChannelCategory" , new Gson().toJson(thirdChannelCategory));
+		}	
 	}
 
 	public String getClassification() {
@@ -207,6 +239,17 @@ public class PushMultipleRequest extends RpcAcsRequest<PushMultipleResponse> {
 		this.strategyType = strategyType;
 		if(strategyType != null){
 			putBodyParameter("StrategyType", strategyType.toString());
+		}
+	}
+
+	public String getChannelId() {
+		return this.channelId;
+	}
+
+	public void setChannelId(String channelId) {
+		this.channelId = channelId;
+		if(channelId != null){
+			putBodyParameter("ChannelId", channelId);
 		}
 	}
 

@@ -15,6 +15,9 @@
 package com.aliyuncs.mpaas.model.v20201028;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.Map;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.mpaas.Endpoint;
 
@@ -39,6 +42,8 @@ public class PushBroadcastRequest extends RpcAcsRequest<PushBroadcastResponse> {
 
 	private String notifyType;
 
+	private String miChannelId;
+
 	private String extendedParams;
 
 	private Long silent;
@@ -46,6 +51,9 @@ public class PushBroadcastRequest extends RpcAcsRequest<PushBroadcastResponse> {
 	private String strategyContent;
 
 	private Long pushStatus;
+
+	@SerializedName("thirdChannelCategory")
+	private Map<String,String> thirdChannelCategory;
 
 	private String classification;
 
@@ -60,6 +68,8 @@ public class PushBroadcastRequest extends RpcAcsRequest<PushBroadcastResponse> {
 	private Integer strategyType;
 
 	private Integer bindPeriod;
+
+	private String channelId;
 
 	private String workspaceId;
 	public PushBroadcastRequest() {
@@ -148,6 +158,17 @@ public class PushBroadcastRequest extends RpcAcsRequest<PushBroadcastResponse> {
 		}
 	}
 
+	public String getMiChannelId() {
+		return this.miChannelId;
+	}
+
+	public void setMiChannelId(String miChannelId) {
+		this.miChannelId = miChannelId;
+		if(miChannelId != null){
+			putBodyParameter("MiChannelId", miChannelId);
+		}
+	}
+
 	public String getExtendedParams() {
 		return this.extendedParams;
 	}
@@ -190,6 +211,17 @@ public class PushBroadcastRequest extends RpcAcsRequest<PushBroadcastResponse> {
 		if(pushStatus != null){
 			putBodyParameter("PushStatus", pushStatus.toString());
 		}
+	}
+
+	public Map<String,String> getThirdChannelCategory() {
+		return this.thirdChannelCategory;
+	}
+
+	public void setThirdChannelCategory(Map<String,String> thirdChannelCategory) {
+		this.thirdChannelCategory = thirdChannelCategory;	
+		if (thirdChannelCategory != null) {
+			putBodyParameter("ThirdChannelCategory" , new Gson().toJson(thirdChannelCategory));
+		}	
 	}
 
 	public String getClassification() {
@@ -266,6 +298,17 @@ public class PushBroadcastRequest extends RpcAcsRequest<PushBroadcastResponse> {
 		this.bindPeriod = bindPeriod;
 		if(bindPeriod != null){
 			putBodyParameter("BindPeriod", bindPeriod.toString());
+		}
+	}
+
+	public String getChannelId() {
+		return this.channelId;
+	}
+
+	public void setChannelId(String channelId) {
+		this.channelId = channelId;
+		if(channelId != null){
+			putBodyParameter("ChannelId", channelId);
 		}
 	}
 

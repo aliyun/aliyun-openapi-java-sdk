@@ -15,6 +15,9 @@
 package com.aliyuncs.mpaas.model.v20201028;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.Map;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.mpaas.Endpoint;
 
@@ -31,17 +34,9 @@ public class PushSimpleRequest extends RpcAcsRequest<PushSimpleResponse> {
 
 	private String taskName;
 
-	private String title;
-
-	private String content;
-
-	private String iconUrls;
-
 	private Long pushAction;
 
 	private Long deliveryType;
-
-	private String smsTemplateParam;
 
 	private String notifyType;
 
@@ -51,15 +46,32 @@ public class PushSimpleRequest extends RpcAcsRequest<PushSimpleResponse> {
 
 	private String extendedParams;
 
-	private Long silent;
-
 	private String strategyContent;
+
+	@SerializedName("thirdChannelCategory")
+	private Map<String,String> thirdChannelCategory;
 
 	private String classification;
 
-	private String uri;
-
 	private Long expiredSeconds;
+
+	private Integer strategyType;
+
+	private String workspaceId;
+
+	private String title;
+
+	private String content;
+
+	private String iconUrls;
+
+	private String smsTemplateParam;
+
+	private String miChannelId;
+
+	private Long silent;
+
+	private String uri;
 
 	private String smsTemplateCode;
 
@@ -67,9 +79,7 @@ public class PushSimpleRequest extends RpcAcsRequest<PushSimpleResponse> {
 
 	private String smsSignName;
 
-	private Integer strategyType;
-
-	private String workspaceId;
+	private String channelId;
 	public PushSimpleRequest() {
 		super("mPaaS", "2020-10-28", "PushSimple");
 		setMethod(MethodType.POST);
@@ -112,39 +122,6 @@ public class PushSimpleRequest extends RpcAcsRequest<PushSimpleResponse> {
 		}
 	}
 
-	public String getTitle() {
-		return this.title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-		if(title != null){
-			putBodyParameter("Title", title);
-		}
-	}
-
-	public String getContent() {
-		return this.content;
-	}
-
-	public void setContent(String content) {
-		this.content = content;
-		if(content != null){
-			putBodyParameter("Content", content);
-		}
-	}
-
-	public String getIconUrls() {
-		return this.iconUrls;
-	}
-
-	public void setIconUrls(String iconUrls) {
-		this.iconUrls = iconUrls;
-		if(iconUrls != null){
-			putBodyParameter("IconUrls", iconUrls);
-		}
-	}
-
 	public Long getPushAction() {
 		return this.pushAction;
 	}
@@ -164,17 +141,6 @@ public class PushSimpleRequest extends RpcAcsRequest<PushSimpleResponse> {
 		this.deliveryType = deliveryType;
 		if(deliveryType != null){
 			putBodyParameter("DeliveryType", deliveryType.toString());
-		}
-	}
-
-	public String getSmsTemplateParam() {
-		return this.smsTemplateParam;
-	}
-
-	public void setSmsTemplateParam(String smsTemplateParam) {
-		this.smsTemplateParam = smsTemplateParam;
-		if(smsTemplateParam != null){
-			putBodyParameter("SmsTemplateParam", smsTemplateParam);
 		}
 	}
 
@@ -222,17 +188,6 @@ public class PushSimpleRequest extends RpcAcsRequest<PushSimpleResponse> {
 		}
 	}
 
-	public Long getSilent() {
-		return this.silent;
-	}
-
-	public void setSilent(Long silent) {
-		this.silent = silent;
-		if(silent != null){
-			putBodyParameter("Silent", silent.toString());
-		}
-	}
-
 	public String getStrategyContent() {
 		return this.strategyContent;
 	}
@@ -242,6 +197,17 @@ public class PushSimpleRequest extends RpcAcsRequest<PushSimpleResponse> {
 		if(strategyContent != null){
 			putBodyParameter("StrategyContent", strategyContent);
 		}
+	}
+
+	public Map<String,String> getThirdChannelCategory() {
+		return this.thirdChannelCategory;
+	}
+
+	public void setThirdChannelCategory(Map<String,String> thirdChannelCategory) {
+		this.thirdChannelCategory = thirdChannelCategory;	
+		if (thirdChannelCategory != null) {
+			putBodyParameter("ThirdChannelCategory" , new Gson().toJson(thirdChannelCategory));
+		}	
 	}
 
 	public String getClassification() {
@@ -255,17 +221,6 @@ public class PushSimpleRequest extends RpcAcsRequest<PushSimpleResponse> {
 		}
 	}
 
-	public String getUri() {
-		return this.uri;
-	}
-
-	public void setUri(String uri) {
-		this.uri = uri;
-		if(uri != null){
-			putBodyParameter("Uri", uri);
-		}
-	}
-
 	public Long getExpiredSeconds() {
 		return this.expiredSeconds;
 	}
@@ -274,6 +229,105 @@ public class PushSimpleRequest extends RpcAcsRequest<PushSimpleResponse> {
 		this.expiredSeconds = expiredSeconds;
 		if(expiredSeconds != null){
 			putBodyParameter("ExpiredSeconds", expiredSeconds.toString());
+		}
+	}
+
+	public Integer getStrategyType() {
+		return this.strategyType;
+	}
+
+	public void setStrategyType(Integer strategyType) {
+		this.strategyType = strategyType;
+		if(strategyType != null){
+			putBodyParameter("StrategyType", strategyType.toString());
+		}
+	}
+
+	public String getWorkspaceId() {
+		return this.workspaceId;
+	}
+
+	public void setWorkspaceId(String workspaceId) {
+		this.workspaceId = workspaceId;
+		if(workspaceId != null){
+			putBodyParameter("WorkspaceId", workspaceId);
+		}
+	}
+
+	public String getTitle() {
+		return this.title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+		if(title != null){
+			putBodyParameter("Title", title);
+		}
+	}
+
+	public String getContent() {
+		return this.content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+		if(content != null){
+			putBodyParameter("Content", content);
+		}
+	}
+
+	public String getIconUrls() {
+		return this.iconUrls;
+	}
+
+	public void setIconUrls(String iconUrls) {
+		this.iconUrls = iconUrls;
+		if(iconUrls != null){
+			putBodyParameter("IconUrls", iconUrls);
+		}
+	}
+
+	public String getSmsTemplateParam() {
+		return this.smsTemplateParam;
+	}
+
+	public void setSmsTemplateParam(String smsTemplateParam) {
+		this.smsTemplateParam = smsTemplateParam;
+		if(smsTemplateParam != null){
+			putBodyParameter("SmsTemplateParam", smsTemplateParam);
+		}
+	}
+
+	public String getMiChannelId() {
+		return this.miChannelId;
+	}
+
+	public void setMiChannelId(String miChannelId) {
+		this.miChannelId = miChannelId;
+		if(miChannelId != null){
+			putBodyParameter("MiChannelId", miChannelId);
+		}
+	}
+
+	public Long getSilent() {
+		return this.silent;
+	}
+
+	public void setSilent(Long silent) {
+		this.silent = silent;
+		if(silent != null){
+			putBodyParameter("Silent", silent.toString());
+		}
+	}
+
+	public String getUri() {
+		return this.uri;
+	}
+
+	public void setUri(String uri) {
+		this.uri = uri;
+		if(uri != null){
+			putBodyParameter("Uri", uri);
 		}
 	}
 
@@ -310,25 +364,14 @@ public class PushSimpleRequest extends RpcAcsRequest<PushSimpleResponse> {
 		}
 	}
 
-	public Integer getStrategyType() {
-		return this.strategyType;
+	public String getChannelId() {
+		return this.channelId;
 	}
 
-	public void setStrategyType(Integer strategyType) {
-		this.strategyType = strategyType;
-		if(strategyType != null){
-			putBodyParameter("StrategyType", strategyType.toString());
-		}
-	}
-
-	public String getWorkspaceId() {
-		return this.workspaceId;
-	}
-
-	public void setWorkspaceId(String workspaceId) {
-		this.workspaceId = workspaceId;
-		if(workspaceId != null){
-			putBodyParameter("WorkspaceId", workspaceId);
+	public void setChannelId(String channelId) {
+		this.channelId = channelId;
+		if(channelId != null){
+			putBodyParameter("ChannelId", channelId);
 		}
 	}
 
