@@ -1,3 +1,10 @@
+2023-03-31 Version: 3.3.5
+- SetVerificationInfo api.
+- GetVerificationInfo api.
+- UnbindVerification api,  user unbind verification.
+- SetSecurityPreference, add configuration of verify type for login.
+- GetSecurityPreference.
+
 2023-03-24 Version: 3.3.4
 - ListUserBasicInfos bug fix, delete tags element.
 
