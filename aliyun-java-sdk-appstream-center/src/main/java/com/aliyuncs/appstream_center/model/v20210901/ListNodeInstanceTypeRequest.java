@@ -28,6 +28,8 @@ public class ListNodeInstanceTypeRequest extends RpcAcsRequest<ListNodeInstanceT
 
 	private String language;
 
+	private String nodeInstanceType;
+
 	private String osType;
 
 	private Integer pageNumber;
@@ -59,6 +61,17 @@ public class ListNodeInstanceTypeRequest extends RpcAcsRequest<ListNodeInstanceT
 		this.language = language;
 		if(language != null){
 			putQueryParameter("Language", language);
+		}
+	}
+
+	public String getNodeInstanceType() {
+		return this.nodeInstanceType;
+	}
+
+	public void setNodeInstanceType(String nodeInstanceType) {
+		this.nodeInstanceType = nodeInstanceType;
+		if(nodeInstanceType != null){
+			putQueryParameter("NodeInstanceType", nodeInstanceType);
 		}
 	}
 

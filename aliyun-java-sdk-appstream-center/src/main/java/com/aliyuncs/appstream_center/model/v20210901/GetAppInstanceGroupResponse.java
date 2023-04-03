@@ -121,6 +121,8 @@ public class GetAppInstanceGroupResponse extends AcsResponse {
 
 		private String resourceStatus;
 
+		private String appPolicyId;
+
 		private List<AppsItem> apps;
 
 		private List<Node> nodePool;
@@ -301,6 +303,14 @@ public class GetAppInstanceGroupResponse extends AcsResponse {
 
 		public void setResourceStatus(String resourceStatus) {
 			this.resourceStatus = resourceStatus;
+		}
+
+		public String getAppPolicyId() {
+			return this.appPolicyId;
+		}
+
+		public void setAppPolicyId(String appPolicyId) {
+			this.appPolicyId = appPolicyId;
 		}
 
 		public List<AppsItem> getApps() {

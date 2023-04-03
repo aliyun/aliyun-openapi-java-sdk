@@ -59,6 +59,7 @@ public class GetAppInstanceGroupResponseUnmarshaller {
 		appInstanceGroupModels.setOsType(_ctx.stringValue("GetAppInstanceGroupResponse.AppInstanceGroupModels.OsType"));
 		appInstanceGroupModels.setAppCenterImageName(_ctx.stringValue("GetAppInstanceGroupResponse.AppInstanceGroupModels.AppCenterImageName"));
 		appInstanceGroupModels.setResourceStatus(_ctx.stringValue("GetAppInstanceGroupResponse.AppInstanceGroupModels.ResourceStatus"));
+		appInstanceGroupModels.setAppPolicyId(_ctx.stringValue("GetAppInstanceGroupResponse.AppInstanceGroupModels.AppPolicyId"));
 
 		OtaInfo otaInfo = new OtaInfo();
 		otaInfo.setOtaVersion(_ctx.stringValue("GetAppInstanceGroupResponse.AppInstanceGroupModels.OtaInfo.OtaVersion"));

@@ -1,3 +1,6 @@
+2023-04-03 Version: 1.0.6
+- Add ListAppInstances Open API.
+
 2023-03-22 Version: 1.0.5
 - Add ListAppInstances Open API.
 

@@ -102,6 +102,9 @@ public class ModifyNodePoolAttributeRequest extends RpcAcsRequest<ModifyNodePool
 		@SerializedName("RecurrenceSchedules")
 		private List<RecurrenceSchedulesItem> recurrenceSchedules;
 
+		@SerializedName("NodeAmount")
+		private Integer nodeAmount;
+
 		@SerializedName("ScalingStep")
 		private Integer scalingStep;
 
@@ -132,6 +135,14 @@ public class ModifyNodePoolAttributeRequest extends RpcAcsRequest<ModifyNodePool
 
 		public void setRecurrenceSchedules(List<RecurrenceSchedulesItem> recurrenceSchedules) {
 			this.recurrenceSchedules = recurrenceSchedules;
+		}
+
+		public Integer getNodeAmount() {
+			return this.nodeAmount;
+		}
+
+		public void setNodeAmount(Integer nodeAmount) {
+			this.nodeAmount = nodeAmount;
 		}
 
 		public Integer getScalingStep() {
