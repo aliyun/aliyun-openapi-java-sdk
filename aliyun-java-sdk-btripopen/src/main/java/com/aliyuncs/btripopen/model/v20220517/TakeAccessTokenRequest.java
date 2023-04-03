@@ -31,7 +31,7 @@ public class TakeAccessTokenRequest extends RoaAcsRequest<TakeAccessTokenRespons
 	public TakeAccessTokenRequest() {
 		super("btripOpen", "2022-05-17", "TakeAccessToken");
 		setProtocol(ProtocolType.HTTPS);
-		setUriPattern("/btrip/open/access-token/take");
+		setUriPattern("/btrip/open/access-token/take/[app_key]");
 		setMethod(MethodType.GET);
 	}
 
@@ -42,7 +42,7 @@ public class TakeAccessTokenRequest extends RoaAcsRequest<TakeAccessTokenRespons
 	public void setApp_key(String app_key) {
 		this.app_key = app_key;
 		if(app_key != null){
-			putQueryParameter("app_key", app_key);
+			putPathParameter("app_key", app_key);
 		}
 	}
 
