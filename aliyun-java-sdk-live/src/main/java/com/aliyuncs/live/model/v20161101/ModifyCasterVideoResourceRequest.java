@@ -25,7 +25,7 @@ import com.aliyuncs.live.Endpoint;
 public class ModifyCasterVideoResourceRequest extends RpcAcsRequest<ModifyCasterVideoResourceResponse> {
 	   
 
-	private Integer inputType;
+	private String imageId;
 
 	private Integer endOffset;
 
@@ -43,6 +43,8 @@ public class ModifyCasterVideoResourceRequest extends RpcAcsRequest<ModifyCaster
 
 	private String liveStreamUrl;
 
+	private String imageUrl;
+
 	private Integer ptsCallbackInterval;
 
 	private String resourceName;
@@ -57,14 +59,14 @@ public class ModifyCasterVideoResourceRequest extends RpcAcsRequest<ModifyCaster
 		} catch (Exception e) {}
 	}
 
-	public Integer getInputType() {
-		return this.inputType;
+	public String getImageId() {
+		return this.imageId;
 	}
 
-	public void setInputType(Integer inputType) {
-		this.inputType = inputType;
-		if(inputType != null){
-			putQueryParameter("InputType", inputType.toString());
+	public void setImageId(String imageId) {
+		this.imageId = imageId;
+		if(imageId != null){
+			putQueryParameter("ImageId", imageId);
 		}
 	}
 
@@ -153,6 +155,17 @@ public class ModifyCasterVideoResourceRequest extends RpcAcsRequest<ModifyCaster
 		this.liveStreamUrl = liveStreamUrl;
 		if(liveStreamUrl != null){
 			putQueryParameter("LiveStreamUrl", liveStreamUrl);
+		}
+	}
+
+	public String getImageUrl() {
+		return this.imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+		if(imageUrl != null){
+			putQueryParameter("ImageUrl", imageUrl);
 		}
 	}
 

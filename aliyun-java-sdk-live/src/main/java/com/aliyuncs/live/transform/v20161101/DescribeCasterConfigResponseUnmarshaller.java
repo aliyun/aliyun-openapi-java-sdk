@@ -33,6 +33,8 @@ public class DescribeCasterConfigResponseUnmarshaller {
 		describeCasterConfigResponse.setDelay(_ctx.floatValue("DescribeCasterConfigResponse.Delay"));
 		describeCasterConfigResponse.setUrgentLiveStreamUrl(_ctx.stringValue("DescribeCasterConfigResponse.UrgentLiveStreamUrl"));
 		describeCasterConfigResponse.setUrgentMaterialId(_ctx.stringValue("DescribeCasterConfigResponse.UrgentMaterialId"));
+		describeCasterConfigResponse.setUrgentImageId(_ctx.stringValue("DescribeCasterConfigResponse.UrgentImageId"));
+		describeCasterConfigResponse.setUrgentImageUrl(_ctx.stringValue("DescribeCasterConfigResponse.UrgentImageUrl"));
 		describeCasterConfigResponse.setCallbackUrl(_ctx.stringValue("DescribeCasterConfigResponse.CallbackUrl"));
 		describeCasterConfigResponse.setProgramName(_ctx.stringValue("DescribeCasterConfigResponse.ProgramName"));
 		describeCasterConfigResponse.setCasterName(_ctx.stringValue("DescribeCasterConfigResponse.CasterName"));

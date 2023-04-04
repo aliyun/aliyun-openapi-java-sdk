@@ -31,6 +31,8 @@ public class SetCasterConfigRequest extends RpcAcsRequest<SetCasterConfigRespons
 
 	private String programName;
 
+	private String urgentImageUrl;
+
 	private String recordConfig;
 
 	private String urgentMaterialId;
@@ -54,6 +56,8 @@ public class SetCasterConfigRequest extends RpcAcsRequest<SetCasterConfigRespons
 	private Long ownerId;
 
 	private Float delay;
+
+	private String urgentImageId;
 
 	private String callbackUrl;
 	public SetCasterConfigRequest() {
@@ -95,6 +99,17 @@ public class SetCasterConfigRequest extends RpcAcsRequest<SetCasterConfigRespons
 		this.programName = programName;
 		if(programName != null){
 			putQueryParameter("ProgramName", programName);
+		}
+	}
+
+	public String getUrgentImageUrl() {
+		return this.urgentImageUrl;
+	}
+
+	public void setUrgentImageUrl(String urgentImageUrl) {
+		this.urgentImageUrl = urgentImageUrl;
+		if(urgentImageUrl != null){
+			putQueryParameter("UrgentImageUrl", urgentImageUrl);
 		}
 	}
 
@@ -227,6 +242,17 @@ public class SetCasterConfigRequest extends RpcAcsRequest<SetCasterConfigRespons
 		this.delay = delay;
 		if(delay != null){
 			putQueryParameter("Delay", delay.toString());
+		}
+	}
+
+	public String getUrgentImageId() {
+		return this.urgentImageId;
+	}
+
+	public void setUrgentImageId(String urgentImageId) {
+		this.urgentImageId = urgentImageId;
+		if(urgentImageId != null){
+			putQueryParameter("UrgentImageId", urgentImageId);
 		}
 	}
 

@@ -79,6 +79,10 @@ public class DescribeCasterVideoResourcesResponse extends AcsResponse {
 
 		private String resourceName;
 
+		private String imageId;
+
+		private String imageUrl;
+
 		public Integer getEndOffset() {
 			return this.endOffset;
 		}
@@ -165,6 +169,22 @@ public class DescribeCasterVideoResourcesResponse extends AcsResponse {
 
 		public void setResourceName(String resourceName) {
 			this.resourceName = resourceName;
+		}
+
+		public String getImageId() {
+			return this.imageId;
+		}
+
+		public void setImageId(String imageId) {
+			this.imageId = imageId;
+		}
+
+		public String getImageUrl() {
+			return this.imageUrl;
+		}
+
+		public void setImageUrl(String imageUrl) {
+			this.imageUrl = imageUrl;
 		}
 	}
 

@@ -27,6 +27,8 @@ public class CancelMuteAllGroupUserRequest extends RpcAcsRequest<CancelMuteAllGr
 
 	private String operatorUserId;
 
+	private Integer broadCastType;
+
 	private String groupId;
 
 	private String appId;
@@ -47,6 +49,17 @@ public class CancelMuteAllGroupUserRequest extends RpcAcsRequest<CancelMuteAllGr
 		this.operatorUserId = operatorUserId;
 		if(operatorUserId != null){
 			putBodyParameter("OperatorUserId", operatorUserId);
+		}
+	}
+
+	public Integer getBroadCastType() {
+		return this.broadCastType;
+	}
+
+	public void setBroadCastType(Integer broadCastType) {
+		this.broadCastType = broadCastType;
+		if(broadCastType != null){
+			putBodyParameter("BroadCastType", broadCastType.toString());
 		}
 	}
 

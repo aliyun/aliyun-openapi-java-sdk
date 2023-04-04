@@ -31,6 +31,10 @@ public class DescribeCasterConfigResponse extends AcsResponse {
 
 	private String urgentMaterialId;
 
+	private String urgentImageId;
+
+	private String urgentImageUrl;
+
 	private String callbackUrl;
 
 	private String programName;
@@ -79,6 +83,22 @@ public class DescribeCasterConfigResponse extends AcsResponse {
 
 	public void setUrgentMaterialId(String urgentMaterialId) {
 		this.urgentMaterialId = urgentMaterialId;
+	}
+
+	public String getUrgentImageId() {
+		return this.urgentImageId;
+	}
+
+	public void setUrgentImageId(String urgentImageId) {
+		this.urgentImageId = urgentImageId;
+	}
+
+	public String getUrgentImageUrl() {
+		return this.urgentImageUrl;
+	}
+
+	public void setUrgentImageUrl(String urgentImageUrl) {
+		this.urgentImageUrl = urgentImageUrl;
 	}
 
 	public String getCallbackUrl() {
