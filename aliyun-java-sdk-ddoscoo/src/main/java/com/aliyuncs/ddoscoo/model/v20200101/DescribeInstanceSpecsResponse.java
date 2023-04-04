@@ -75,6 +75,8 @@ public class DescribeInstanceSpecsResponse extends AcsResponse {
 
 		private Long connLimit;
 
+		private Long realLimitBw;
+
 		public Integer getBaseBandwidth() {
 			return this.baseBandwidth;
 		}
@@ -185,6 +187,14 @@ public class DescribeInstanceSpecsResponse extends AcsResponse {
 
 		public void setConnLimit(Long connLimit) {
 			this.connLimit = connLimit;
+		}
+
+		public Long getRealLimitBw() {
+			return this.realLimitBw;
+		}
+
+		public void setRealLimitBw(Long realLimitBw) {
+			this.realLimitBw = realLimitBw;
 		}
 	}
 

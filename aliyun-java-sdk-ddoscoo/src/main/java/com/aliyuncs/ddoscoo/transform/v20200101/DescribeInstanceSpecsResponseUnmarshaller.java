@@ -45,6 +45,7 @@ public class DescribeInstanceSpecsResponseUnmarshaller {
 			instanceSpec.setElasticBwModel(_ctx.stringValue("DescribeInstanceSpecsResponse.InstanceSpecs["+ i +"].ElasticBwModel"));
 			instanceSpec.setCpsLimit(_ctx.longValue("DescribeInstanceSpecsResponse.InstanceSpecs["+ i +"].CpsLimit"));
 			instanceSpec.setConnLimit(_ctx.longValue("DescribeInstanceSpecsResponse.InstanceSpecs["+ i +"].ConnLimit"));
+			instanceSpec.setRealLimitBw(_ctx.longValue("DescribeInstanceSpecsResponse.InstanceSpecs["+ i +"].RealLimitBw"));
 
 			instanceSpecs.add(instanceSpec);
 		}
