@@ -1,3 +1,6 @@
+2023-04-04 Version: 1.0.17
+- test
+
 2023-03-08 Version: 1.0.16
 - offline Add word subtitle
 
