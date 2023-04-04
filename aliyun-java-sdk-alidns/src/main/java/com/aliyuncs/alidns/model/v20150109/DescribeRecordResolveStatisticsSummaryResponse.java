@@ -87,11 +87,21 @@ public class DescribeRecordResolveStatisticsSummaryResponse extends AcsResponse 
 
 	public static class Statistic {
 
+		private String subDomain;
+
 		private String domainName;
 
 		private String count;
 
 		private String domainType;
+
+		public String getSubDomain() {
+			return this.subDomain;
+		}
+
+		public void setSubDomain(String subDomain) {
+			this.subDomain = subDomain;
+		}
 
 		public String getDomainName() {
 			return this.domainName;

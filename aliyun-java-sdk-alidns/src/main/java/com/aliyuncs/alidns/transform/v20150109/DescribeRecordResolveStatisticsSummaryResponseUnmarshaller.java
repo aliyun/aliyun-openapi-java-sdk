@@ -35,6 +35,7 @@ public class DescribeRecordResolveStatisticsSummaryResponseUnmarshaller {
 		List<Statistic> statistics = new ArrayList<Statistic>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeRecordResolveStatisticsSummaryResponse.Statistics.Length"); i++) {
 			Statistic statistic = new Statistic();
+			statistic.setSubDomain(_ctx.stringValue("DescribeRecordResolveStatisticsSummaryResponse.Statistics["+ i +"].SubDomain"));
 			statistic.setDomainName(_ctx.stringValue("DescribeRecordResolveStatisticsSummaryResponse.Statistics["+ i +"].DomainName"));
 			statistic.setCount(_ctx.stringValue("DescribeRecordResolveStatisticsSummaryResponse.Statistics["+ i +"].Count"));
 			statistic.setDomainType(_ctx.stringValue("DescribeRecordResolveStatisticsSummaryResponse.Statistics["+ i +"].DomainType"));
