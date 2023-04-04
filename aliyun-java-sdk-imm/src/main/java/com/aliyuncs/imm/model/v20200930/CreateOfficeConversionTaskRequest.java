@@ -31,11 +31,39 @@ public class CreateOfficeConversionTaskRequest extends RpcAcsRequest<CreateOffic
 
 	private Long sheetCount;
 
+	private Boolean showComments;
+
+	@SerializedName("notification")
+	private Notification notification;
+
+	private String password;
+
+	private String pages;
+
+	private String sourceType;
+
+	private String projectName;
+
+	private Boolean fitToHeight;
+
+	private Long endPage;
+
+	private Boolean fitToWidth;
+
+	private Long quality;
+
+	@SerializedName("tags")
+	private Map<String,String> tags;
+
+	private String sourceURI;
+
+	private Long sheetIndex;
+
+	private Boolean holdLineFeed;
+
 	private Boolean longText;
 
 	private String targetType;
-
-	private Boolean showComments;
 
 	@SerializedName("trimPolicy")
 	private TrimPolicy trimPolicy;
@@ -50,51 +78,22 @@ public class CreateOfficeConversionTaskRequest extends RpcAcsRequest<CreateOffic
 
 	private Long scalePercentage;
 
-	private String password;
-
 	private Long startPage;
-
-	private String pages;
 
 	private String targetURIPrefix;
 
-	private String notifyEndpoint;
-
 	private String targetURI;
-
-	private String sourceType;
 
 	private String paperSize;
 
 	private Long imageDPI;
 
-	private String projectName;
-
-	private String notifyTopicName;
-
-	private Boolean fitToHeight;
-
 	private Boolean longPicture;
 
 	private Long maxSheetRow;
 
-	private Long endPage;
-
 	@SerializedName("credentialConfig")
 	private CredentialConfig credentialConfig;
-
-	private Boolean fitToWidth;
-
-	private Long quality;
-
-	@SerializedName("tags")
-	private Map<String,String> tags;
-
-	private String sourceURI;
-
-	private Long sheetIndex;
-
-	private Boolean holdLineFeed;
 	public CreateOfficeConversionTaskRequest() {
 		super("imm", "2020-09-30", "CreateOfficeConversionTask", "imm");
 		setMethod(MethodType.POST);
@@ -112,6 +111,160 @@ public class CreateOfficeConversionTaskRequest extends RpcAcsRequest<CreateOffic
 		this.sheetCount = sheetCount;
 		if(sheetCount != null){
 			putQueryParameter("SheetCount", sheetCount.toString());
+		}
+	}
+
+	public Boolean getShowComments() {
+		return this.showComments;
+	}
+
+	public void setShowComments(Boolean showComments) {
+		this.showComments = showComments;
+		if(showComments != null){
+			putQueryParameter("ShowComments", showComments.toString());
+		}
+	}
+
+	public Notification getNotification() {
+		return this.notification;
+	}
+
+	public void setNotification(Notification notification) {
+		this.notification = notification;	
+		if (notification != null) {
+			putQueryParameter("Notification" , new Gson().toJson(notification));
+		}	
+	}
+
+	public String getPassword() {
+		return this.password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+		if(password != null){
+			putQueryParameter("Password", password);
+		}
+	}
+
+	public String getPages() {
+		return this.pages;
+	}
+
+	public void setPages(String pages) {
+		this.pages = pages;
+		if(pages != null){
+			putQueryParameter("Pages", pages);
+		}
+	}
+
+	public String getSourceType() {
+		return this.sourceType;
+	}
+
+	public void setSourceType(String sourceType) {
+		this.sourceType = sourceType;
+		if(sourceType != null){
+			putQueryParameter("SourceType", sourceType);
+		}
+	}
+
+	public String getProjectName() {
+		return this.projectName;
+	}
+
+	public void setProjectName(String projectName) {
+		this.projectName = projectName;
+		if(projectName != null){
+			putQueryParameter("ProjectName", projectName);
+		}
+	}
+
+	public Boolean getFitToHeight() {
+		return this.fitToHeight;
+	}
+
+	public void setFitToHeight(Boolean fitToHeight) {
+		this.fitToHeight = fitToHeight;
+		if(fitToHeight != null){
+			putQueryParameter("FitToHeight", fitToHeight.toString());
+		}
+	}
+
+	public Long getEndPage() {
+		return this.endPage;
+	}
+
+	public void setEndPage(Long endPage) {
+		this.endPage = endPage;
+		if(endPage != null){
+			putQueryParameter("EndPage", endPage.toString());
+		}
+	}
+
+	public Boolean getFitToWidth() {
+		return this.fitToWidth;
+	}
+
+	public void setFitToWidth(Boolean fitToWidth) {
+		this.fitToWidth = fitToWidth;
+		if(fitToWidth != null){
+			putQueryParameter("FitToWidth", fitToWidth.toString());
+		}
+	}
+
+	public Long getQuality() {
+		return this.quality;
+	}
+
+	public void setQuality(Long quality) {
+		this.quality = quality;
+		if(quality != null){
+			putQueryParameter("Quality", quality.toString());
+		}
+	}
+
+	public Map<String,String> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(Map<String,String> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			putQueryParameter("Tags" , new Gson().toJson(tags));
+		}	
+	}
+
+	public String getSourceURI() {
+		return this.sourceURI;
+	}
+
+	public void setSourceURI(String sourceURI) {
+		this.sourceURI = sourceURI;
+		if(sourceURI != null){
+			putQueryParameter("SourceURI", sourceURI);
+		}
+	}
+
+	public Long getSheetIndex() {
+		return this.sheetIndex;
+	}
+
+	public void setSheetIndex(Long sheetIndex) {
+		this.sheetIndex = sheetIndex;
+		if(sheetIndex != null){
+			putQueryParameter("SheetIndex", sheetIndex.toString());
+		}
+	}
+
+	public Boolean getHoldLineFeed() {
+		return this.holdLineFeed;
+	}
+
+	public void setHoldLineFeed(Boolean holdLineFeed) {
+		this.holdLineFeed = holdLineFeed;
+		if(holdLineFeed != null){
+			putQueryParameter("HoldLineFeed", holdLineFeed.toString());
 		}
 	}
 
@@ -134,17 +287,6 @@ public class CreateOfficeConversionTaskRequest extends RpcAcsRequest<CreateOffic
 		this.targetType = targetType;
 		if(targetType != null){
 			putQueryParameter("TargetType", targetType);
-		}
-	}
-
-	public Boolean getShowComments() {
-		return this.showComments;
-	}
-
-	public void setShowComments(Boolean showComments) {
-		this.showComments = showComments;
-		if(showComments != null){
-			putQueryParameter("ShowComments", showComments.toString());
 		}
 	}
 
@@ -214,17 +356,6 @@ public class CreateOfficeConversionTaskRequest extends RpcAcsRequest<CreateOffic
 		}
 	}
 
-	public String getPassword() {
-		return this.password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-		if(password != null){
-			putQueryParameter("Password", password);
-		}
-	}
-
 	public Long getStartPage() {
 		return this.startPage;
 	}
@@ -233,17 +364,6 @@ public class CreateOfficeConversionTaskRequest extends RpcAcsRequest<CreateOffic
 		this.startPage = startPage;
 		if(startPage != null){
 			putQueryParameter("StartPage", startPage.toString());
-		}
-	}
-
-	public String getPages() {
-		return this.pages;
-	}
-
-	public void setPages(String pages) {
-		this.pages = pages;
-		if(pages != null){
-			putQueryParameter("Pages", pages);
 		}
 	}
 
@@ -258,17 +378,6 @@ public class CreateOfficeConversionTaskRequest extends RpcAcsRequest<CreateOffic
 		}
 	}
 
-	public String getNotifyEndpoint() {
-		return this.notifyEndpoint;
-	}
-
-	public void setNotifyEndpoint(String notifyEndpoint) {
-		this.notifyEndpoint = notifyEndpoint;
-		if(notifyEndpoint != null){
-			putQueryParameter("NotifyEndpoint", notifyEndpoint);
-		}
-	}
-
 	public String getTargetURI() {
 		return this.targetURI;
 	}
@@ -277,17 +386,6 @@ public class CreateOfficeConversionTaskRequest extends RpcAcsRequest<CreateOffic
 		this.targetURI = targetURI;
 		if(targetURI != null){
 			putQueryParameter("TargetURI", targetURI);
-		}
-	}
-
-	public String getSourceType() {
-		return this.sourceType;
-	}
-
-	public void setSourceType(String sourceType) {
-		this.sourceType = sourceType;
-		if(sourceType != null){
-			putQueryParameter("SourceType", sourceType);
 		}
 	}
 
@@ -313,39 +411,6 @@ public class CreateOfficeConversionTaskRequest extends RpcAcsRequest<CreateOffic
 		}
 	}
 
-	public String getProjectName() {
-		return this.projectName;
-	}
-
-	public void setProjectName(String projectName) {
-		this.projectName = projectName;
-		if(projectName != null){
-			putQueryParameter("ProjectName", projectName);
-		}
-	}
-
-	public String getNotifyTopicName() {
-		return this.notifyTopicName;
-	}
-
-	public void setNotifyTopicName(String notifyTopicName) {
-		this.notifyTopicName = notifyTopicName;
-		if(notifyTopicName != null){
-			putQueryParameter("NotifyTopicName", notifyTopicName);
-		}
-	}
-
-	public Boolean getFitToHeight() {
-		return this.fitToHeight;
-	}
-
-	public void setFitToHeight(Boolean fitToHeight) {
-		this.fitToHeight = fitToHeight;
-		if(fitToHeight != null){
-			putQueryParameter("FitToHeight", fitToHeight.toString());
-		}
-	}
-
 	public Boolean getLongPicture() {
 		return this.longPicture;
 	}
@@ -368,17 +433,6 @@ public class CreateOfficeConversionTaskRequest extends RpcAcsRequest<CreateOffic
 		}
 	}
 
-	public Long getEndPage() {
-		return this.endPage;
-	}
-
-	public void setEndPage(Long endPage) {
-		this.endPage = endPage;
-		if(endPage != null){
-			putQueryParameter("EndPage", endPage.toString());
-		}
-	}
-
 	public CredentialConfig getCredentialConfig() {
 		return this.credentialConfig;
 	}
@@ -390,69 +444,89 @@ public class CreateOfficeConversionTaskRequest extends RpcAcsRequest<CreateOffic
 		}	
 	}
 
-	public Boolean getFitToWidth() {
-		return this.fitToWidth;
-	}
+	public static class Notification {
 
-	public void setFitToWidth(Boolean fitToWidth) {
-		this.fitToWidth = fitToWidth;
-		if(fitToWidth != null){
-			putQueryParameter("FitToWidth", fitToWidth.toString());
+		@SerializedName("MNS")
+		private MNS mNS;
+
+		@SerializedName("RocketMQ")
+		private RocketMQ rocketMQ;
+
+		public MNS getMNS() {
+			return this.mNS;
 		}
-	}
 
-	public Long getQuality() {
-		return this.quality;
-	}
-
-	public void setQuality(Long quality) {
-		this.quality = quality;
-		if(quality != null){
-			putQueryParameter("Quality", quality.toString());
+		public void setMNS(MNS mNS) {
+			this.mNS = mNS;
 		}
-	}
 
-	public Map<String,String> getTags() {
-		return this.tags;
-	}
-
-	public void setTags(Map<String,String> tags) {
-		this.tags = tags;	
-		if (tags != null) {
-			putQueryParameter("Tags" , new Gson().toJson(tags));
-		}	
-	}
-
-	public String getSourceURI() {
-		return this.sourceURI;
-	}
-
-	public void setSourceURI(String sourceURI) {
-		this.sourceURI = sourceURI;
-		if(sourceURI != null){
-			putQueryParameter("SourceURI", sourceURI);
+		public RocketMQ getRocketMQ() {
+			return this.rocketMQ;
 		}
-	}
 
-	public Long getSheetIndex() {
-		return this.sheetIndex;
-	}
-
-	public void setSheetIndex(Long sheetIndex) {
-		this.sheetIndex = sheetIndex;
-		if(sheetIndex != null){
-			putQueryParameter("SheetIndex", sheetIndex.toString());
+		public void setRocketMQ(RocketMQ rocketMQ) {
+			this.rocketMQ = rocketMQ;
 		}
-	}
 
-	public Boolean getHoldLineFeed() {
-		return this.holdLineFeed;
-	}
+		public static class MNS {
 
-	public void setHoldLineFeed(Boolean holdLineFeed) {
-		this.holdLineFeed = holdLineFeed;
-		if(holdLineFeed != null){
-			putQueryParameter("HoldLineFeed", holdLineFeed.toString());
+			@SerializedName("Endpoint")
+			private String endpoint;
+
+			@SerializedName("TopicName")
+			private String topicName;
+
+			public String getEndpoint() {
+				return this.endpoint;
+			}
+
+			public void setEndpoint(String endpoint) {
+				this.endpoint = endpoint;
+			}
+
+			public String getTopicName() {
+				return this.topicName;
+			}
+
+			public void setTopicName(String topicName) {
+				this.topicName = topicName;
+			}
+		}
+
+		public static class RocketMQ {
+
+			@SerializedName("Endpoint")
+			private String endpoint;
+
+			@SerializedName("InstanceId")
+			private String instanceId;
+
+			@SerializedName("TopicName")
+			private String topicName;
+
+			public String getEndpoint() {
+				return this.endpoint;
+			}
+
+			public void setEndpoint(String endpoint) {
+				this.endpoint = endpoint;
+			}
+
+			public String getInstanceId() {
+				return this.instanceId;
+			}
+
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
+			}
+
+			public String getTopicName() {
+				return this.topicName;
+			}
+
+			public void setTopicName(String topicName) {
+				this.topicName = topicName;
+			}
 		}
 	}
 

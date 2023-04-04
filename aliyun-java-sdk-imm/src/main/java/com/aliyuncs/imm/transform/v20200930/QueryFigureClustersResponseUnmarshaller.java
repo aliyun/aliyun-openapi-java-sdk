@@ -70,6 +70,7 @@ public class QueryFigureClustersResponseUnmarshaller {
 			figureClustersItem.setMaxAge(_ctx.floatValue("QueryFigureClustersResponse.FigureClusters["+ i +"].MaxAge"));
 			figureClustersItem.setCustomId(_ctx.stringValue("QueryFigureClustersResponse.FigureClusters["+ i +"].CustomId"));
 			figureClustersItem.setCustomLabels(_ctx.mapValue("QueryFigureClustersResponse.FigureClusters["+ i +"].CustomLabels"));
+			figureClustersItem.setMetaLockVersion(_ctx.longValue("QueryFigureClustersResponse.FigureClusters["+ i +"].MetaLockVersion"));
 
 			Cover cover = new Cover();
 			cover.setOwnerId(_ctx.stringValue("QueryFigureClustersResponse.FigureClusters["+ i +"].Cover.OwnerId"));

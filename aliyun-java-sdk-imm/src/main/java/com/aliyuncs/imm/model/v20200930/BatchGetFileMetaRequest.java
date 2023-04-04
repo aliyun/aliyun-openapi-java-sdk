@@ -28,12 +28,12 @@ import com.aliyuncs.imm.Endpoint;
 public class BatchGetFileMetaRequest extends RpcAcsRequest<BatchGetFileMetaResponse> {
 	   
 
-	@SerializedName("uRIs")
-	private List<String> uRIs;
+	private String datasetName;
 
 	private String projectName;
 
-	private String datasetName;
+	@SerializedName("uRIs")
+	private List<String> uRIs;
 	public BatchGetFileMetaRequest() {
 		super("imm", "2020-09-30", "BatchGetFileMeta", "imm");
 		setMethod(MethodType.POST);
@@ -43,15 +43,15 @@ public class BatchGetFileMetaRequest extends RpcAcsRequest<BatchGetFileMetaRespo
 		} catch (Exception e) {}
 	}
 
-	public List<String> getURIs() {
-		return this.uRIs;
+	public String getDatasetName() {
+		return this.datasetName;
 	}
 
-	public void setURIs(List<String> uRIs) {
-		this.uRIs = uRIs;	
-		if (uRIs != null) {
-			putQueryParameter("URIs" , new Gson().toJson(uRIs));
-		}	
+	public void setDatasetName(String datasetName) {
+		this.datasetName = datasetName;
+		if(datasetName != null){
+			putQueryParameter("DatasetName", datasetName);
+		}
 	}
 
 	public String getProjectName() {
@@ -65,15 +65,15 @@ public class BatchGetFileMetaRequest extends RpcAcsRequest<BatchGetFileMetaRespo
 		}
 	}
 
-	public String getDatasetName() {
-		return this.datasetName;
+	public List<String> getURIs() {
+		return this.uRIs;
 	}
 
-	public void setDatasetName(String datasetName) {
-		this.datasetName = datasetName;
-		if(datasetName != null){
-			putQueryParameter("DatasetName", datasetName);
-		}
+	public void setURIs(List<String> uRIs) {
+		this.uRIs = uRIs;	
+		if (uRIs != null) {
+			putQueryParameter("URIs" , new Gson().toJson(uRIs));
+		}	
 	}
 
 	@Override

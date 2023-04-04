@@ -25,9 +25,9 @@ import com.aliyuncs.imm.Endpoint;
 public class CreateBindingRequest extends RpcAcsRequest<CreateBindingResponse> {
 	   
 
-	private String projectName;
-
 	private String datasetName;
+
+	private String projectName;
 
 	private String uRI;
 	public CreateBindingRequest() {
@@ -39,17 +39,6 @@ public class CreateBindingRequest extends RpcAcsRequest<CreateBindingResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getProjectName() {
-		return this.projectName;
-	}
-
-	public void setProjectName(String projectName) {
-		this.projectName = projectName;
-		if(projectName != null){
-			putQueryParameter("ProjectName", projectName);
-		}
-	}
-
 	public String getDatasetName() {
 		return this.datasetName;
 	}
@@ -58,6 +47,17 @@ public class CreateBindingRequest extends RpcAcsRequest<CreateBindingResponse> {
 		this.datasetName = datasetName;
 		if(datasetName != null){
 			putQueryParameter("DatasetName", datasetName);
+		}
+	}
+
+	public String getProjectName() {
+		return this.projectName;
+	}
+
+	public void setProjectName(String projectName) {
+		this.projectName = projectName;
+		if(projectName != null){
+			putQueryParameter("ProjectName", projectName);
 		}
 	}
 

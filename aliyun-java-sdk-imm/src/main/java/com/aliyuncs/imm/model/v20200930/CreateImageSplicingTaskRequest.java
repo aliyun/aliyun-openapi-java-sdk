@@ -29,40 +29,39 @@ import com.aliyuncs.imm.Endpoint;
 public class CreateImageSplicingTaskRequest extends RpcAcsRequest<CreateImageSplicingTaskResponse> {
 	   
 
-	private Long padding;
+	private Long align;
+
+	private String backgroundColor;
+
+	@SerializedName("notification")
+	private Notification notification;
+
+	private String scaleType;
 
 	private String projectName;
 
 	private Long margin;
 
-	private String notifyTopicName;
-
-	@SerializedName("sources")
-	private List<Sources> sources;
-
-	@SerializedName("credentialConfig")
-	private CredentialConfig credentialConfig;
-
-	private Long align;
-
 	private Long quality;
-
-	private String backgroundColor;
 
 	@SerializedName("tags")
 	private Map<String,String> tags;
 
+	@SerializedName("sources")
+	private List<Sources> sources;
+
 	private String userData;
 
-	private String notifyEndpoint;
-
 	private String targetURI;
-
-	private String scaleType;
 
 	private String imageFormat;
 
 	private String direction;
+
+	private Long padding;
+
+	@SerializedName("credentialConfig")
+	private CredentialConfig credentialConfig;
 	public CreateImageSplicingTaskRequest() {
 		super("imm", "2020-09-30", "CreateImageSplicingTask", "imm");
 		setMethod(MethodType.POST);
@@ -72,14 +71,47 @@ public class CreateImageSplicingTaskRequest extends RpcAcsRequest<CreateImageSpl
 		} catch (Exception e) {}
 	}
 
-	public Long getPadding() {
-		return this.padding;
+	public Long getAlign() {
+		return this.align;
 	}
 
-	public void setPadding(Long padding) {
-		this.padding = padding;
-		if(padding != null){
-			putQueryParameter("Padding", padding.toString());
+	public void setAlign(Long align) {
+		this.align = align;
+		if(align != null){
+			putQueryParameter("Align", align.toString());
+		}
+	}
+
+	public String getBackgroundColor() {
+		return this.backgroundColor;
+	}
+
+	public void setBackgroundColor(String backgroundColor) {
+		this.backgroundColor = backgroundColor;
+		if(backgroundColor != null){
+			putQueryParameter("BackgroundColor", backgroundColor);
+		}
+	}
+
+	public Notification getNotification() {
+		return this.notification;
+	}
+
+	public void setNotification(Notification notification) {
+		this.notification = notification;	
+		if (notification != null) {
+			putQueryParameter("Notification" , new Gson().toJson(notification));
+		}	
+	}
+
+	public String getScaleType() {
+		return this.scaleType;
+	}
+
+	public void setScaleType(String scaleType) {
+		this.scaleType = scaleType;
+		if(scaleType != null){
+			putQueryParameter("ScaleType", scaleType);
 		}
 	}
 
@@ -105,50 +137,6 @@ public class CreateImageSplicingTaskRequest extends RpcAcsRequest<CreateImageSpl
 		}
 	}
 
-	public String getNotifyTopicName() {
-		return this.notifyTopicName;
-	}
-
-	public void setNotifyTopicName(String notifyTopicName) {
-		this.notifyTopicName = notifyTopicName;
-		if(notifyTopicName != null){
-			putQueryParameter("NotifyTopicName", notifyTopicName);
-		}
-	}
-
-	public List<Sources> getSources() {
-		return this.sources;
-	}
-
-	public void setSources(List<Sources> sources) {
-		this.sources = sources;	
-		if (sources != null) {
-			putQueryParameter("Sources" , new Gson().toJson(sources));
-		}	
-	}
-
-	public CredentialConfig getCredentialConfig() {
-		return this.credentialConfig;
-	}
-
-	public void setCredentialConfig(CredentialConfig credentialConfig) {
-		this.credentialConfig = credentialConfig;	
-		if (credentialConfig != null) {
-			putQueryParameter("CredentialConfig" , new Gson().toJson(credentialConfig));
-		}	
-	}
-
-	public Long getAlign() {
-		return this.align;
-	}
-
-	public void setAlign(Long align) {
-		this.align = align;
-		if(align != null){
-			putQueryParameter("Align", align.toString());
-		}
-	}
-
 	public Long getQuality() {
 		return this.quality;
 	}
@@ -157,17 +145,6 @@ public class CreateImageSplicingTaskRequest extends RpcAcsRequest<CreateImageSpl
 		this.quality = quality;
 		if(quality != null){
 			putQueryParameter("Quality", quality.toString());
-		}
-	}
-
-	public String getBackgroundColor() {
-		return this.backgroundColor;
-	}
-
-	public void setBackgroundColor(String backgroundColor) {
-		this.backgroundColor = backgroundColor;
-		if(backgroundColor != null){
-			putQueryParameter("BackgroundColor", backgroundColor);
 		}
 	}
 
@@ -182,6 +159,17 @@ public class CreateImageSplicingTaskRequest extends RpcAcsRequest<CreateImageSpl
 		}	
 	}
 
+	public List<Sources> getSources() {
+		return this.sources;
+	}
+
+	public void setSources(List<Sources> sources) {
+		this.sources = sources;	
+		if (sources != null) {
+			putQueryParameter("Sources" , new Gson().toJson(sources));
+		}	
+	}
+
 	public String getUserData() {
 		return this.userData;
 	}
@@ -193,17 +181,6 @@ public class CreateImageSplicingTaskRequest extends RpcAcsRequest<CreateImageSpl
 		}
 	}
 
-	public String getNotifyEndpoint() {
-		return this.notifyEndpoint;
-	}
-
-	public void setNotifyEndpoint(String notifyEndpoint) {
-		this.notifyEndpoint = notifyEndpoint;
-		if(notifyEndpoint != null){
-			putQueryParameter("NotifyEndpoint", notifyEndpoint);
-		}
-	}
-
 	public String getTargetURI() {
 		return this.targetURI;
 	}
@@ -212,17 +189,6 @@ public class CreateImageSplicingTaskRequest extends RpcAcsRequest<CreateImageSpl
 		this.targetURI = targetURI;
 		if(targetURI != null){
 			putQueryParameter("TargetURI", targetURI);
-		}
-	}
-
-	public String getScaleType() {
-		return this.scaleType;
-	}
-
-	public void setScaleType(String scaleType) {
-		this.scaleType = scaleType;
-		if(scaleType != null){
-			putQueryParameter("ScaleType", scaleType);
 		}
 	}
 
@@ -245,6 +211,114 @@ public class CreateImageSplicingTaskRequest extends RpcAcsRequest<CreateImageSpl
 		this.direction = direction;
 		if(direction != null){
 			putQueryParameter("Direction", direction);
+		}
+	}
+
+	public Long getPadding() {
+		return this.padding;
+	}
+
+	public void setPadding(Long padding) {
+		this.padding = padding;
+		if(padding != null){
+			putQueryParameter("Padding", padding.toString());
+		}
+	}
+
+	public CredentialConfig getCredentialConfig() {
+		return this.credentialConfig;
+	}
+
+	public void setCredentialConfig(CredentialConfig credentialConfig) {
+		this.credentialConfig = credentialConfig;	
+		if (credentialConfig != null) {
+			putQueryParameter("CredentialConfig" , new Gson().toJson(credentialConfig));
+		}	
+	}
+
+	public static class Notification {
+
+		@SerializedName("MNS")
+		private MNS mNS;
+
+		@SerializedName("RocketMQ")
+		private RocketMQ rocketMQ;
+
+		public MNS getMNS() {
+			return this.mNS;
+		}
+
+		public void setMNS(MNS mNS) {
+			this.mNS = mNS;
+		}
+
+		public RocketMQ getRocketMQ() {
+			return this.rocketMQ;
+		}
+
+		public void setRocketMQ(RocketMQ rocketMQ) {
+			this.rocketMQ = rocketMQ;
+		}
+
+		public static class MNS {
+
+			@SerializedName("Endpoint")
+			private String endpoint;
+
+			@SerializedName("TopicName")
+			private String topicName;
+
+			public String getEndpoint() {
+				return this.endpoint;
+			}
+
+			public void setEndpoint(String endpoint) {
+				this.endpoint = endpoint;
+			}
+
+			public String getTopicName() {
+				return this.topicName;
+			}
+
+			public void setTopicName(String topicName) {
+				this.topicName = topicName;
+			}
+		}
+
+		public static class RocketMQ {
+
+			@SerializedName("Endpoint")
+			private String endpoint;
+
+			@SerializedName("InstanceId")
+			private String instanceId;
+
+			@SerializedName("TopicName")
+			private String topicName;
+
+			public String getEndpoint() {
+				return this.endpoint;
+			}
+
+			public void setEndpoint(String endpoint) {
+				this.endpoint = endpoint;
+			}
+
+			public String getInstanceId() {
+				return this.instanceId;
+			}
+
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
+			}
+
+			public String getTopicName() {
+				return this.topicName;
+			}
+
+			public void setTopicName(String topicName) {
+				this.topicName = topicName;
+			}
 		}
 	}
 

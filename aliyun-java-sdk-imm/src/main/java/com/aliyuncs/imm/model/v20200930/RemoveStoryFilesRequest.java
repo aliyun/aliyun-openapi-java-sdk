@@ -28,9 +28,9 @@ import com.aliyuncs.imm.Endpoint;
 public class RemoveStoryFilesRequest extends RpcAcsRequest<RemoveStoryFilesResponse> {
 	   
 
-	private String projectName;
-
 	private String datasetName;
+
+	private String projectName;
 
 	@SerializedName("files")
 	private List<Files> files;
@@ -45,17 +45,6 @@ public class RemoveStoryFilesRequest extends RpcAcsRequest<RemoveStoryFilesRespo
 		} catch (Exception e) {}
 	}
 
-	public String getProjectName() {
-		return this.projectName;
-	}
-
-	public void setProjectName(String projectName) {
-		this.projectName = projectName;
-		if(projectName != null){
-			putBodyParameter("ProjectName", projectName);
-		}
-	}
-
 	public String getDatasetName() {
 		return this.datasetName;
 	}
@@ -64,6 +53,17 @@ public class RemoveStoryFilesRequest extends RpcAcsRequest<RemoveStoryFilesRespo
 		this.datasetName = datasetName;
 		if(datasetName != null){
 			putBodyParameter("DatasetName", datasetName);
+		}
+	}
+
+	public String getProjectName() {
+		return this.projectName;
+	}
+
+	public void setProjectName(String projectName) {
+		this.projectName = projectName;
+		if(projectName != null){
+			putBodyParameter("ProjectName", projectName);
 		}
 	}
 

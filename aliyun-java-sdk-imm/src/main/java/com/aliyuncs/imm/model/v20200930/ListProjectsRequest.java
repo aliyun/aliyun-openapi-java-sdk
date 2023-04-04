@@ -25,9 +25,9 @@ import com.aliyuncs.imm.Endpoint;
 public class ListProjectsRequest extends RpcAcsRequest<ListProjectsResponse> {
 	   
 
-	private String nextToken;
-
 	private String prefix;
+
+	private String nextToken;
 
 	private Long maxResults;
 	public ListProjectsRequest() {
@@ -39,17 +39,6 @@ public class ListProjectsRequest extends RpcAcsRequest<ListProjectsResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getNextToken() {
-		return this.nextToken;
-	}
-
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-		if(nextToken != null){
-			putQueryParameter("NextToken", nextToken);
-		}
-	}
-
 	public String getPrefix() {
 		return this.prefix;
 	}
@@ -58,6 +47,17 @@ public class ListProjectsRequest extends RpcAcsRequest<ListProjectsResponse> {
 		this.prefix = prefix;
 		if(prefix != null){
 			putQueryParameter("Prefix", prefix);
+		}
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
 		}
 	}
 

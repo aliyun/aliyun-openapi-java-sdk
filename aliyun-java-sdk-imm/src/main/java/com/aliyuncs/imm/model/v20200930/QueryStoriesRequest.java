@@ -31,38 +31,38 @@ public class QueryStoriesRequest extends RpcAcsRequest<QueryStoriesResponse> {
 	@SerializedName("figureClusterIds")
 	private List<String> figureClusterIds;
 
-	private String projectName;
-
 	private String customLabels;
+
+	private Boolean withEmptyStories;
+
+	private String order;
+
+	private String projectName;
 
 	private String sort;
 
 	private String storyType;
 
-	@SerializedName("storyEndTimeRange")
-	private StoryEndTimeRange storyEndTimeRange;
-
-	private Boolean withEmptyStories;
-
 	@SerializedName("storyStartTimeRange")
 	private StoryStartTimeRange storyStartTimeRange;
 
+	private String storySubType;
+
+	private Long maxResults;
+
 	private String nextToken;
 
-	private String storySubType;
+	private String datasetName;
+
+	@SerializedName("storyEndTimeRange")
+	private StoryEndTimeRange storyEndTimeRange;
 
 	@SerializedName("createTimeRange")
 	private CreateTimeRange createTimeRange;
 
-	private String datasetName;
-
-	private Long maxResults;
-
 	private String objectId;
 
 	private String storyName;
-
-	private String order;
 	public QueryStoriesRequest() {
 		super("imm", "2020-09-30", "QueryStories", "imm");
 		setMethod(MethodType.POST);
@@ -83,17 +83,6 @@ public class QueryStoriesRequest extends RpcAcsRequest<QueryStoriesResponse> {
 		}	
 	}
 
-	public String getProjectName() {
-		return this.projectName;
-	}
-
-	public void setProjectName(String projectName) {
-		this.projectName = projectName;
-		if(projectName != null){
-			putQueryParameter("ProjectName", projectName);
-		}
-	}
-
 	public String getCustomLabels() {
 		return this.customLabels;
 	}
@@ -102,6 +91,39 @@ public class QueryStoriesRequest extends RpcAcsRequest<QueryStoriesResponse> {
 		this.customLabels = customLabels;
 		if(customLabels != null){
 			putQueryParameter("CustomLabels", customLabels);
+		}
+	}
+
+	public Boolean getWithEmptyStories() {
+		return this.withEmptyStories;
+	}
+
+	public void setWithEmptyStories(Boolean withEmptyStories) {
+		this.withEmptyStories = withEmptyStories;
+		if(withEmptyStories != null){
+			putQueryParameter("WithEmptyStories", withEmptyStories.toString());
+		}
+	}
+
+	public String getOrder() {
+		return this.order;
+	}
+
+	public void setOrder(String order) {
+		this.order = order;
+		if(order != null){
+			putQueryParameter("Order", order);
+		}
+	}
+
+	public String getProjectName() {
+		return this.projectName;
+	}
+
+	public void setProjectName(String projectName) {
+		this.projectName = projectName;
+		if(projectName != null){
+			putQueryParameter("ProjectName", projectName);
 		}
 	}
 
@@ -127,28 +149,6 @@ public class QueryStoriesRequest extends RpcAcsRequest<QueryStoriesResponse> {
 		}
 	}
 
-	public StoryEndTimeRange getStoryEndTimeRange() {
-		return this.storyEndTimeRange;
-	}
-
-	public void setStoryEndTimeRange(StoryEndTimeRange storyEndTimeRange) {
-		this.storyEndTimeRange = storyEndTimeRange;	
-		if (storyEndTimeRange != null) {
-			putQueryParameter("StoryEndTimeRange" , new Gson().toJson(storyEndTimeRange));
-		}	
-	}
-
-	public Boolean getWithEmptyStories() {
-		return this.withEmptyStories;
-	}
-
-	public void setWithEmptyStories(Boolean withEmptyStories) {
-		this.withEmptyStories = withEmptyStories;
-		if(withEmptyStories != null){
-			putQueryParameter("WithEmptyStories", withEmptyStories.toString());
-		}
-	}
-
 	public StoryStartTimeRange getStoryStartTimeRange() {
 		return this.storyStartTimeRange;
 	}
@@ -158,17 +158,6 @@ public class QueryStoriesRequest extends RpcAcsRequest<QueryStoriesResponse> {
 		if (storyStartTimeRange != null) {
 			putQueryParameter("StoryStartTimeRange" , new Gson().toJson(storyStartTimeRange));
 		}	
-	}
-
-	public String getNextToken() {
-		return this.nextToken;
-	}
-
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-		if(nextToken != null){
-			putQueryParameter("NextToken", nextToken);
-		}
 	}
 
 	public String getStorySubType() {
@@ -182,15 +171,26 @@ public class QueryStoriesRequest extends RpcAcsRequest<QueryStoriesResponse> {
 		}
 	}
 
-	public CreateTimeRange getCreateTimeRange() {
-		return this.createTimeRange;
+	public Long getMaxResults() {
+		return this.maxResults;
 	}
 
-	public void setCreateTimeRange(CreateTimeRange createTimeRange) {
-		this.createTimeRange = createTimeRange;	
-		if (createTimeRange != null) {
-			putQueryParameter("CreateTimeRange" , new Gson().toJson(createTimeRange));
-		}	
+	public void setMaxResults(Long maxResults) {
+		this.maxResults = maxResults;
+		if(maxResults != null){
+			putQueryParameter("MaxResults", maxResults.toString());
+		}
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
+		}
 	}
 
 	public String getDatasetName() {
@@ -204,15 +204,26 @@ public class QueryStoriesRequest extends RpcAcsRequest<QueryStoriesResponse> {
 		}
 	}
 
-	public Long getMaxResults() {
-		return this.maxResults;
+	public StoryEndTimeRange getStoryEndTimeRange() {
+		return this.storyEndTimeRange;
 	}
 
-	public void setMaxResults(Long maxResults) {
-		this.maxResults = maxResults;
-		if(maxResults != null){
-			putQueryParameter("MaxResults", maxResults.toString());
-		}
+	public void setStoryEndTimeRange(StoryEndTimeRange storyEndTimeRange) {
+		this.storyEndTimeRange = storyEndTimeRange;	
+		if (storyEndTimeRange != null) {
+			putQueryParameter("StoryEndTimeRange" , new Gson().toJson(storyEndTimeRange));
+		}	
+	}
+
+	public CreateTimeRange getCreateTimeRange() {
+		return this.createTimeRange;
+	}
+
+	public void setCreateTimeRange(CreateTimeRange createTimeRange) {
+		this.createTimeRange = createTimeRange;	
+		if (createTimeRange != null) {
+			putQueryParameter("CreateTimeRange" , new Gson().toJson(createTimeRange));
+		}	
 	}
 
 	public String getObjectId() {
@@ -237,18 +248,7 @@ public class QueryStoriesRequest extends RpcAcsRequest<QueryStoriesResponse> {
 		}
 	}
 
-	public String getOrder() {
-		return this.order;
-	}
-
-	public void setOrder(String order) {
-		this.order = order;
-		if(order != null){
-			putQueryParameter("Order", order);
-		}
-	}
-
-	public static class StoryEndTimeRange {
+	public static class StoryStartTimeRange {
 
 		@SerializedName("Start")
 		private String start;
@@ -273,7 +273,7 @@ public class QueryStoriesRequest extends RpcAcsRequest<QueryStoriesResponse> {
 		}
 	}
 
-	public static class StoryStartTimeRange {
+	public static class StoryEndTimeRange {
 
 		@SerializedName("Start")
 		private String start;

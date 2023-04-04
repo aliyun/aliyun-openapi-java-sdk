@@ -28,11 +28,11 @@ import com.aliyuncs.imm.Endpoint;
 public class RefreshWebofficeTokenRequest extends RpcAcsRequest<RefreshWebofficeTokenResponse> {
 	   
 
-	private String projectName;
-
 	private String accessToken;
 
 	private String refreshToken;
+
+	private String projectName;
 
 	@SerializedName("credentialConfig")
 	private CredentialConfig credentialConfig;
@@ -43,17 +43,6 @@ public class RefreshWebofficeTokenRequest extends RpcAcsRequest<RefreshWeboffice
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getProjectName() {
-		return this.projectName;
-	}
-
-	public void setProjectName(String projectName) {
-		this.projectName = projectName;
-		if(projectName != null){
-			putQueryParameter("ProjectName", projectName);
-		}
 	}
 
 	public String getAccessToken() {
@@ -75,6 +64,17 @@ public class RefreshWebofficeTokenRequest extends RpcAcsRequest<RefreshWeboffice
 		this.refreshToken = refreshToken;
 		if(refreshToken != null){
 			putQueryParameter("RefreshToken", refreshToken);
+		}
+	}
+
+	public String getProjectName() {
+		return this.projectName;
+	}
+
+	public void setProjectName(String projectName) {
+		this.projectName = projectName;
+		if(projectName != null){
+			putQueryParameter("ProjectName", projectName);
 		}
 	}
 

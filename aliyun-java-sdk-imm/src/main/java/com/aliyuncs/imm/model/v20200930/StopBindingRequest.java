@@ -27,9 +27,9 @@ public class StopBindingRequest extends RpcAcsRequest<StopBindingResponse> {
 
 	private String reason;
 
-	private String projectName;
-
 	private String datasetName;
+
+	private String projectName;
 
 	private String uRI;
 	public StopBindingRequest() {
@@ -52,17 +52,6 @@ public class StopBindingRequest extends RpcAcsRequest<StopBindingResponse> {
 		}
 	}
 
-	public String getProjectName() {
-		return this.projectName;
-	}
-
-	public void setProjectName(String projectName) {
-		this.projectName = projectName;
-		if(projectName != null){
-			putQueryParameter("ProjectName", projectName);
-		}
-	}
-
 	public String getDatasetName() {
 		return this.datasetName;
 	}
@@ -71,6 +60,17 @@ public class StopBindingRequest extends RpcAcsRequest<StopBindingResponse> {
 		this.datasetName = datasetName;
 		if(datasetName != null){
 			putQueryParameter("DatasetName", datasetName);
+		}
+	}
+
+	public String getProjectName() {
+		return this.projectName;
+	}
+
+	public void setProjectName(String projectName) {
+		this.projectName = projectName;
+		if(projectName != null){
+			putQueryParameter("ProjectName", projectName);
 		}
 	}
 

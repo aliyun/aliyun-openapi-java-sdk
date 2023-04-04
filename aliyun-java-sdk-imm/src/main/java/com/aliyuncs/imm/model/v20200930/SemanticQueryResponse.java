@@ -32,8 +32,6 @@ public class SemanticQueryResponse extends AcsResponse {
 
 	private List<FilesItem> files;
 
-	private List<AggregationsItem> aggregations;
-
 	public String getNextToken() {
 		return this.nextToken;
 	}
@@ -56,14 +54,6 @@ public class SemanticQueryResponse extends AcsResponse {
 
 	public void setFiles(List<FilesItem> files) {
 		this.files = files;
-	}
-
-	public List<AggregationsItem> getAggregations() {
-		return this.aggregations;
-	}
-
-	public void setAggregations(List<AggregationsItem> aggregations) {
-		this.aggregations = aggregations;
 	}
 
 	public static class FilesItem {
@@ -2322,72 +2312,6 @@ public class SemanticQueryResponse extends AcsResponse {
 
 			public void setOverallQualityScore(Float overallQualityScore) {
 				this.overallQualityScore = overallQualityScore;
-			}
-		}
-	}
-
-	public static class AggregationsItem {
-
-		private String field;
-
-		private String operation;
-
-		private Float value;
-
-		private List<GroupsItem> groups;
-
-		public String getField() {
-			return this.field;
-		}
-
-		public void setField(String field) {
-			this.field = field;
-		}
-
-		public String getOperation() {
-			return this.operation;
-		}
-
-		public void setOperation(String operation) {
-			this.operation = operation;
-		}
-
-		public Float getValue() {
-			return this.value;
-		}
-
-		public void setValue(Float value) {
-			this.value = value;
-		}
-
-		public List<GroupsItem> getGroups() {
-			return this.groups;
-		}
-
-		public void setGroups(List<GroupsItem> groups) {
-			this.groups = groups;
-		}
-
-		public static class GroupsItem {
-
-			private String value;
-
-			private Long count;
-
-			public String getValue() {
-				return this.value;
-			}
-
-			public void setValue(String value) {
-				this.value = value;
-			}
-
-			public Long getCount() {
-				return this.count;
-			}
-
-			public void setCount(Long count) {
-				this.count = count;
 			}
 		}
 	}

@@ -25,9 +25,9 @@ import com.aliyuncs.imm.Endpoint;
 public class DetectTextAnomalyRequest extends RpcAcsRequest<DetectTextAnomalyResponse> {
 	   
 
-	private String projectName;
-
 	private String content;
+
+	private String projectName;
 	public DetectTextAnomalyRequest() {
 		super("imm", "2020-09-30", "DetectTextAnomaly", "imm");
 		setMethod(MethodType.POST);
@@ -35,17 +35,6 @@ public class DetectTextAnomalyRequest extends RpcAcsRequest<DetectTextAnomalyRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getProjectName() {
-		return this.projectName;
-	}
-
-	public void setProjectName(String projectName) {
-		this.projectName = projectName;
-		if(projectName != null){
-			putQueryParameter("ProjectName", projectName);
-		}
 	}
 
 	public String getContent() {
@@ -56,6 +45,17 @@ public class DetectTextAnomalyRequest extends RpcAcsRequest<DetectTextAnomalyRes
 		this.content = content;
 		if(content != null){
 			putQueryParameter("Content", content);
+		}
+	}
+
+	public String getProjectName() {
+		return this.projectName;
+	}
+
+	public void setProjectName(String projectName) {
+		this.projectName = projectName;
+		if(projectName != null){
+			putQueryParameter("ProjectName", projectName);
 		}
 	}
 

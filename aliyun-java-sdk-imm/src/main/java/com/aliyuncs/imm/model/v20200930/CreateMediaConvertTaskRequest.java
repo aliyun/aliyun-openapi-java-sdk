@@ -29,22 +29,21 @@ import com.aliyuncs.imm.Endpoint;
 public class CreateMediaConvertTaskRequest extends RpcAcsRequest<CreateMediaConvertTaskResponse> {
 	   
 
-	private String userData;
-
-	private String projectName;
-
-	private String notifyTopicName;
-
 	@SerializedName("sources")
 	private List<Sources> sources;
 
-	private String notifyEndpoint;
+	@SerializedName("targets")
+	private List<Targets> targets;
+
+	private String userData;
+
+	@SerializedName("notification")
+	private Notification notification;
+
+	private String projectName;
 
 	@SerializedName("credentialConfig")
 	private CredentialConfig credentialConfig;
-
-	@SerializedName("targets")
-	private List<Targets> targets;
 
 	@SerializedName("tags")
 	private Map<String,String> tags;
@@ -55,39 +54,6 @@ public class CreateMediaConvertTaskRequest extends RpcAcsRequest<CreateMediaConv
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getUserData() {
-		return this.userData;
-	}
-
-	public void setUserData(String userData) {
-		this.userData = userData;
-		if(userData != null){
-			putQueryParameter("UserData", userData);
-		}
-	}
-
-	public String getProjectName() {
-		return this.projectName;
-	}
-
-	public void setProjectName(String projectName) {
-		this.projectName = projectName;
-		if(projectName != null){
-			putQueryParameter("ProjectName", projectName);
-		}
-	}
-
-	public String getNotifyTopicName() {
-		return this.notifyTopicName;
-	}
-
-	public void setNotifyTopicName(String notifyTopicName) {
-		this.notifyTopicName = notifyTopicName;
-		if(notifyTopicName != null){
-			putQueryParameter("NotifyTopicName", notifyTopicName);
-		}
 	}
 
 	public List<Sources> getSources() {
@@ -101,14 +67,47 @@ public class CreateMediaConvertTaskRequest extends RpcAcsRequest<CreateMediaConv
 		}	
 	}
 
-	public String getNotifyEndpoint() {
-		return this.notifyEndpoint;
+	public List<Targets> getTargets() {
+		return this.targets;
 	}
 
-	public void setNotifyEndpoint(String notifyEndpoint) {
-		this.notifyEndpoint = notifyEndpoint;
-		if(notifyEndpoint != null){
-			putQueryParameter("NotifyEndpoint", notifyEndpoint);
+	public void setTargets(List<Targets> targets) {
+		this.targets = targets;	
+		if (targets != null) {
+			putQueryParameter("Targets" , new Gson().toJson(targets));
+		}	
+	}
+
+	public String getUserData() {
+		return this.userData;
+	}
+
+	public void setUserData(String userData) {
+		this.userData = userData;
+		if(userData != null){
+			putQueryParameter("UserData", userData);
+		}
+	}
+
+	public Notification getNotification() {
+		return this.notification;
+	}
+
+	public void setNotification(Notification notification) {
+		this.notification = notification;	
+		if (notification != null) {
+			putQueryParameter("Notification" , new Gson().toJson(notification));
+		}	
+	}
+
+	public String getProjectName() {
+		return this.projectName;
+	}
+
+	public void setProjectName(String projectName) {
+		this.projectName = projectName;
+		if(projectName != null){
+			putQueryParameter("ProjectName", projectName);
 		}
 	}
 
@@ -120,17 +119,6 @@ public class CreateMediaConvertTaskRequest extends RpcAcsRequest<CreateMediaConv
 		this.credentialConfig = credentialConfig;	
 		if (credentialConfig != null) {
 			putQueryParameter("CredentialConfig" , new Gson().toJson(credentialConfig));
-		}	
-	}
-
-	public List<Targets> getTargets() {
-		return this.targets;
-	}
-
-	public void setTargets(List<Targets> targets) {
-		this.targets = targets;	
-		if (targets != null) {
-			putQueryParameter("Targets" , new Gson().toJson(targets));
 		}	
 	}
 
@@ -228,78 +216,6 @@ public class CreateMediaConvertTaskRequest extends RpcAcsRequest<CreateMediaConv
 		}
 	}
 
-	public static class CredentialConfig {
-
-		@SerializedName("Chain")
-		private List<ChainItem> chain;
-
-		@SerializedName("ServiceRole")
-		private String serviceRole;
-
-		@SerializedName("Policy")
-		private String policy;
-
-		public List<ChainItem> getChain() {
-			return this.chain;
-		}
-
-		public void setChain(List<ChainItem> chain) {
-			this.chain = chain;
-		}
-
-		public String getServiceRole() {
-			return this.serviceRole;
-		}
-
-		public void setServiceRole(String serviceRole) {
-			this.serviceRole = serviceRole;
-		}
-
-		public String getPolicy() {
-			return this.policy;
-		}
-
-		public void setPolicy(String policy) {
-			this.policy = policy;
-		}
-
-		public static class ChainItem {
-
-			@SerializedName("Role")
-			private String role;
-
-			@SerializedName("RoleType")
-			private String roleType;
-
-			@SerializedName("AssumeRoleFor")
-			private String assumeRoleFor;
-
-			public String getRole() {
-				return this.role;
-			}
-
-			public void setRole(String role) {
-				this.role = role;
-			}
-
-			public String getRoleType() {
-				return this.roleType;
-			}
-
-			public void setRoleType(String roleType) {
-				this.roleType = roleType;
-			}
-
-			public String getAssumeRoleFor() {
-				return this.assumeRoleFor;
-			}
-
-			public void setAssumeRoleFor(String assumeRoleFor) {
-				this.assumeRoleFor = assumeRoleFor;
-			}
-		}
-	}
-
 	public static class Targets {
 
 		@SerializedName("Container")
@@ -317,6 +233,9 @@ public class CreateMediaConvertTaskRequest extends RpcAcsRequest<CreateMediaConv
 		@SerializedName("Subtitle")
 		private Subtitle subtitle;
 
+		@SerializedName("StripMetadata")
+		private Boolean stripMetadata;
+
 		@SerializedName("Preset")
 		private Preset preset;
 
@@ -331,6 +250,9 @@ public class CreateMediaConvertTaskRequest extends RpcAcsRequest<CreateMediaConv
 
 		@SerializedName("Speed")
 		private Float speed;
+
+		@SerializedName("PTSOffset")
+		private Double pTSOffset;
 
 		public String getContainer() {
 			return this.container;
@@ -370,6 +292,14 @@ public class CreateMediaConvertTaskRequest extends RpcAcsRequest<CreateMediaConv
 
 		public void setSubtitle(Subtitle subtitle) {
 			this.subtitle = subtitle;
+		}
+
+		public Boolean getStripMetadata() {
+			return this.stripMetadata;
+		}
+
+		public void setStripMetadata(Boolean stripMetadata) {
+			this.stripMetadata = stripMetadata;
 		}
 
 		public Preset getPreset() {
@@ -412,10 +342,21 @@ public class CreateMediaConvertTaskRequest extends RpcAcsRequest<CreateMediaConv
 			this.speed = speed;
 		}
 
+		public Double getPTSOffset() {
+			return this.pTSOffset;
+		}
+
+		public void setPTSOffset(Double pTSOffset) {
+			this.pTSOffset = pTSOffset;
+		}
+
 		public static class Image {
 
 			@SerializedName("Snapshots")
 			private List<SnapshotsItem> snapshots;
+
+			@SerializedName("Animations")
+			private List<AnimationsItem> animations;
 
 			@SerializedName("Sprites")
 			private List<SpritesItem> sprites;
@@ -426,6 +367,14 @@ public class CreateMediaConvertTaskRequest extends RpcAcsRequest<CreateMediaConv
 
 			public void setSnapshots(List<SnapshotsItem> snapshots) {
 				this.snapshots = snapshots;
+			}
+
+			public List<AnimationsItem> getAnimations() {
+				return this.animations;
+			}
+
+			public void setAnimations(List<AnimationsItem> animations) {
+				this.animations = animations;
 			}
 
 			public List<SpritesItem> getSprites() {
@@ -468,6 +417,108 @@ public class CreateMediaConvertTaskRequest extends RpcAcsRequest<CreateMediaConv
 
 				public void setNumber(Integer number) {
 					this.number = number;
+				}
+
+				public String getFormat() {
+					return this.format;
+				}
+
+				public void setFormat(String format) {
+					this.format = format;
+				}
+
+				public Integer getWidth() {
+					return this.width;
+				}
+
+				public void setWidth(Integer width) {
+					this.width = width;
+				}
+
+				public Double getInterval() {
+					return this.interval;
+				}
+
+				public void setInterval(Double interval) {
+					this.interval = interval;
+				}
+
+				public Double getStartTime() {
+					return this.startTime;
+				}
+
+				public void setStartTime(Double startTime) {
+					this.startTime = startTime;
+				}
+
+				public String getScaleType() {
+					return this.scaleType;
+				}
+
+				public void setScaleType(String scaleType) {
+					this.scaleType = scaleType;
+				}
+
+				public String getURI() {
+					return this.uRI;
+				}
+
+				public void setURI(String uRI) {
+					this.uRI = uRI;
+				}
+
+				public Integer getHeight() {
+					return this.height;
+				}
+
+				public void setHeight(Integer height) {
+					this.height = height;
+				}
+			}
+
+			public static class AnimationsItem {
+
+				@SerializedName("Number")
+				private Integer number;
+
+				@SerializedName("FrameRate")
+				private Double frameRate;
+
+				@SerializedName("Format")
+				private String format;
+
+				@SerializedName("Width")
+				private Integer width;
+
+				@SerializedName("Interval")
+				private Double interval;
+
+				@SerializedName("StartTime")
+				private Double startTime;
+
+				@SerializedName("ScaleType")
+				private String scaleType;
+
+				@SerializedName("URI")
+				private String uRI;
+
+				@SerializedName("Height")
+				private Integer height;
+
+				public Integer getNumber() {
+					return this.number;
+				}
+
+				public void setNumber(Integer number) {
+					this.number = number;
+				}
+
+				public Double getFrameRate() {
+					return this.frameRate;
+				}
+
+				public void setFrameRate(Double frameRate) {
+					this.frameRate = frameRate;
 				}
 
 				public String getFormat() {
@@ -718,6 +769,9 @@ public class CreateMediaConvertTaskRequest extends RpcAcsRequest<CreateMediaConv
 			@SerializedName("DisableSubtitle")
 			private Boolean disableSubtitle;
 
+			@SerializedName("Stream")
+			private List<Integer> stream;
+
 			@SerializedName("ExtractSubtitle")
 			private ExtractSubtitle extractSubtitle;
 
@@ -727,6 +781,14 @@ public class CreateMediaConvertTaskRequest extends RpcAcsRequest<CreateMediaConv
 
 			public void setDisableSubtitle(Boolean disableSubtitle) {
 				this.disableSubtitle = disableSubtitle;
+			}
+
+			public List<Integer> getStream() {
+				return this.stream;
+			}
+
+			public void setStream(List<Integer> stream) {
+				this.stream = stream;
 			}
 
 			public ExtractSubtitle getExtractSubtitle() {
@@ -793,6 +855,9 @@ public class CreateMediaConvertTaskRequest extends RpcAcsRequest<CreateMediaConv
 			@SerializedName("FilterVideo")
 			private FilterVideo filterVideo;
 
+			@SerializedName("Stream")
+			private List<Integer> stream;
+
 			@SerializedName("DisableVideo")
 			private Boolean disableVideo;
 
@@ -805,6 +870,14 @@ public class CreateMediaConvertTaskRequest extends RpcAcsRequest<CreateMediaConv
 
 			public void setFilterVideo(FilterVideo filterVideo) {
 				this.filterVideo = filterVideo;
+			}
+
+			public List<Integer> getStream() {
+				return this.stream;
+			}
+
+			public void setStream(List<Integer> stream) {
+				this.stream = stream;
 			}
 
 			public Boolean getDisableVideo() {
@@ -1300,6 +1373,9 @@ public class CreateMediaConvertTaskRequest extends RpcAcsRequest<CreateMediaConv
 
 		public static class Audio {
 
+			@SerializedName("Stream")
+			private List<Long> stream;
+
 			@SerializedName("DisableAudio")
 			private Boolean disableAudio;
 
@@ -1308,6 +1384,14 @@ public class CreateMediaConvertTaskRequest extends RpcAcsRequest<CreateMediaConv
 
 			@SerializedName("FilterAudio")
 			private FilterAudio filterAudio;
+
+			public List<Long> getStream() {
+				return this.stream;
+			}
+
+			public void setStream(List<Long> stream) {
+				this.stream = stream;
+			}
 
 			public Boolean getDisableAudio() {
 				return this.disableAudio;
@@ -1425,6 +1509,164 @@ public class CreateMediaConvertTaskRequest extends RpcAcsRequest<CreateMediaConv
 				public void setMixing(Boolean mixing) {
 					this.mixing = mixing;
 				}
+			}
+		}
+	}
+
+	public static class Notification {
+
+		@SerializedName("MNS")
+		private MNS mNS;
+
+		@SerializedName("RocketMQ")
+		private RocketMQ rocketMQ;
+
+		public MNS getMNS() {
+			return this.mNS;
+		}
+
+		public void setMNS(MNS mNS) {
+			this.mNS = mNS;
+		}
+
+		public RocketMQ getRocketMQ() {
+			return this.rocketMQ;
+		}
+
+		public void setRocketMQ(RocketMQ rocketMQ) {
+			this.rocketMQ = rocketMQ;
+		}
+
+		public static class MNS {
+
+			@SerializedName("Endpoint")
+			private String endpoint;
+
+			@SerializedName("TopicName")
+			private String topicName;
+
+			public String getEndpoint() {
+				return this.endpoint;
+			}
+
+			public void setEndpoint(String endpoint) {
+				this.endpoint = endpoint;
+			}
+
+			public String getTopicName() {
+				return this.topicName;
+			}
+
+			public void setTopicName(String topicName) {
+				this.topicName = topicName;
+			}
+		}
+
+		public static class RocketMQ {
+
+			@SerializedName("Endpoint")
+			private String endpoint;
+
+			@SerializedName("InstanceId")
+			private String instanceId;
+
+			@SerializedName("TopicName")
+			private String topicName;
+
+			public String getEndpoint() {
+				return this.endpoint;
+			}
+
+			public void setEndpoint(String endpoint) {
+				this.endpoint = endpoint;
+			}
+
+			public String getInstanceId() {
+				return this.instanceId;
+			}
+
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
+			}
+
+			public String getTopicName() {
+				return this.topicName;
+			}
+
+			public void setTopicName(String topicName) {
+				this.topicName = topicName;
+			}
+		}
+	}
+
+	public static class CredentialConfig {
+
+		@SerializedName("Chain")
+		private List<ChainItem> chain;
+
+		@SerializedName("ServiceRole")
+		private String serviceRole;
+
+		@SerializedName("Policy")
+		private String policy;
+
+		public List<ChainItem> getChain() {
+			return this.chain;
+		}
+
+		public void setChain(List<ChainItem> chain) {
+			this.chain = chain;
+		}
+
+		public String getServiceRole() {
+			return this.serviceRole;
+		}
+
+		public void setServiceRole(String serviceRole) {
+			this.serviceRole = serviceRole;
+		}
+
+		public String getPolicy() {
+			return this.policy;
+		}
+
+		public void setPolicy(String policy) {
+			this.policy = policy;
+		}
+
+		public static class ChainItem {
+
+			@SerializedName("Role")
+			private String role;
+
+			@SerializedName("RoleType")
+			private String roleType;
+
+			@SerializedName("AssumeRoleFor")
+			private String assumeRoleFor;
+
+			public String getRole() {
+				return this.role;
+			}
+
+			public void setRole(String role) {
+				this.role = role;
+			}
+
+			public String getRoleType() {
+				return this.roleType;
+			}
+
+			public void setRoleType(String roleType) {
+				this.roleType = roleType;
+			}
+
+			public String getAssumeRoleFor() {
+				return this.assumeRoleFor;
+			}
+
+			public void setAssumeRoleFor(String assumeRoleFor) {
+				this.assumeRoleFor = assumeRoleFor;
 			}
 		}
 	}

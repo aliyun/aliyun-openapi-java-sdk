@@ -31,20 +31,12 @@ public class CreateImageModerationTaskRequest extends RpcAcsRequest<CreateImageM
 
 	private String userData;
 
+	@SerializedName("notification")
+	private Notification notification;
+
 	private String projectName;
 
-	private String notifyTopicName;
-
-	private String notifyEndpoint;
-
-	private String sourceURI;
-
-	@SerializedName("scenes")
-	private List<String> scenes;
-
 	private Long maxFrames;
-
-	private Long interval;
 
 	@SerializedName("credentialConfig")
 	private CredentialConfig credentialConfig;
@@ -53,6 +45,13 @@ public class CreateImageModerationTaskRequest extends RpcAcsRequest<CreateImageM
 
 	@SerializedName("tags")
 	private Map<String,String> tags;
+
+	private String sourceURI;
+
+	@SerializedName("scenes")
+	private List<String> scenes;
+
+	private Long interval;
 	public CreateImageModerationTaskRequest() {
 		super("imm", "2020-09-30", "CreateImageModerationTask", "imm");
 		setMethod(MethodType.POST);
@@ -73,6 +72,17 @@ public class CreateImageModerationTaskRequest extends RpcAcsRequest<CreateImageM
 		}
 	}
 
+	public Notification getNotification() {
+		return this.notification;
+	}
+
+	public void setNotification(Notification notification) {
+		this.notification = notification;	
+		if (notification != null) {
+			putQueryParameter("Notification" , new Gson().toJson(notification));
+		}	
+	}
+
 	public String getProjectName() {
 		return this.projectName;
 	}
@@ -84,50 +94,6 @@ public class CreateImageModerationTaskRequest extends RpcAcsRequest<CreateImageM
 		}
 	}
 
-	public String getNotifyTopicName() {
-		return this.notifyTopicName;
-	}
-
-	public void setNotifyTopicName(String notifyTopicName) {
-		this.notifyTopicName = notifyTopicName;
-		if(notifyTopicName != null){
-			putQueryParameter("NotifyTopicName", notifyTopicName);
-		}
-	}
-
-	public String getNotifyEndpoint() {
-		return this.notifyEndpoint;
-	}
-
-	public void setNotifyEndpoint(String notifyEndpoint) {
-		this.notifyEndpoint = notifyEndpoint;
-		if(notifyEndpoint != null){
-			putQueryParameter("NotifyEndpoint", notifyEndpoint);
-		}
-	}
-
-	public String getSourceURI() {
-		return this.sourceURI;
-	}
-
-	public void setSourceURI(String sourceURI) {
-		this.sourceURI = sourceURI;
-		if(sourceURI != null){
-			putQueryParameter("SourceURI", sourceURI);
-		}
-	}
-
-	public List<String> getScenes() {
-		return this.scenes;
-	}
-
-	public void setScenes(List<String> scenes) {
-		this.scenes = scenes;	
-		if (scenes != null) {
-			putQueryParameter("Scenes" , new Gson().toJson(scenes));
-		}	
-	}
-
 	public Long getMaxFrames() {
 		return this.maxFrames;
 	}
@@ -136,17 +102,6 @@ public class CreateImageModerationTaskRequest extends RpcAcsRequest<CreateImageM
 		this.maxFrames = maxFrames;
 		if(maxFrames != null){
 			putQueryParameter("MaxFrames", maxFrames.toString());
-		}
-	}
-
-	public Long getInterval() {
-		return this.interval;
-	}
-
-	public void setInterval(Long interval) {
-		this.interval = interval;
-		if(interval != null){
-			putQueryParameter("Interval", interval.toString());
 		}
 	}
 
@@ -181,6 +136,125 @@ public class CreateImageModerationTaskRequest extends RpcAcsRequest<CreateImageM
 		if (tags != null) {
 			putQueryParameter("Tags" , new Gson().toJson(tags));
 		}	
+	}
+
+	public String getSourceURI() {
+		return this.sourceURI;
+	}
+
+	public void setSourceURI(String sourceURI) {
+		this.sourceURI = sourceURI;
+		if(sourceURI != null){
+			putQueryParameter("SourceURI", sourceURI);
+		}
+	}
+
+	public List<String> getScenes() {
+		return this.scenes;
+	}
+
+	public void setScenes(List<String> scenes) {
+		this.scenes = scenes;	
+		if (scenes != null) {
+			putQueryParameter("Scenes" , new Gson().toJson(scenes));
+		}	
+	}
+
+	public Long getInterval() {
+		return this.interval;
+	}
+
+	public void setInterval(Long interval) {
+		this.interval = interval;
+		if(interval != null){
+			putQueryParameter("Interval", interval.toString());
+		}
+	}
+
+	public static class Notification {
+
+		@SerializedName("MNS")
+		private MNS mNS;
+
+		@SerializedName("RocketMQ")
+		private RocketMQ rocketMQ;
+
+		public MNS getMNS() {
+			return this.mNS;
+		}
+
+		public void setMNS(MNS mNS) {
+			this.mNS = mNS;
+		}
+
+		public RocketMQ getRocketMQ() {
+			return this.rocketMQ;
+		}
+
+		public void setRocketMQ(RocketMQ rocketMQ) {
+			this.rocketMQ = rocketMQ;
+		}
+
+		public static class MNS {
+
+			@SerializedName("Endpoint")
+			private String endpoint;
+
+			@SerializedName("TopicName")
+			private String topicName;
+
+			public String getEndpoint() {
+				return this.endpoint;
+			}
+
+			public void setEndpoint(String endpoint) {
+				this.endpoint = endpoint;
+			}
+
+			public String getTopicName() {
+				return this.topicName;
+			}
+
+			public void setTopicName(String topicName) {
+				this.topicName = topicName;
+			}
+		}
+
+		public static class RocketMQ {
+
+			@SerializedName("Endpoint")
+			private String endpoint;
+
+			@SerializedName("InstanceId")
+			private String instanceId;
+
+			@SerializedName("TopicName")
+			private String topicName;
+
+			public String getEndpoint() {
+				return this.endpoint;
+			}
+
+			public void setEndpoint(String endpoint) {
+				this.endpoint = endpoint;
+			}
+
+			public String getInstanceId() {
+				return this.instanceId;
+			}
+
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
+			}
+
+			public String getTopicName() {
+				return this.topicName;
+			}
+
+			public void setTopicName(String topicName) {
+				this.topicName = topicName;
+			}
+		}
 	}
 
 	public static class CredentialConfig {

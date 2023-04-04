@@ -29,12 +29,12 @@ import com.aliyuncs.imm.Endpoint;
 public class UpdateFigureClusterRequest extends RpcAcsRequest<UpdateFigureClusterResponse> {
 	   
 
+	private String datasetName;
+
 	private String projectName;
 
 	@SerializedName("figureCluster")
 	private FigureCluster figureCluster;
-
-	private String datasetName;
 	public UpdateFigureClusterRequest() {
 		super("imm", "2020-09-30", "UpdateFigureCluster", "imm");
 		setMethod(MethodType.POST);
@@ -42,6 +42,17 @@ public class UpdateFigureClusterRequest extends RpcAcsRequest<UpdateFigureCluste
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDatasetName() {
+		return this.datasetName;
+	}
+
+	public void setDatasetName(String datasetName) {
+		this.datasetName = datasetName;
+		if(datasetName != null){
+			putQueryParameter("DatasetName", datasetName);
+		}
 	}
 
 	public String getProjectName() {
@@ -66,21 +77,13 @@ public class UpdateFigureClusterRequest extends RpcAcsRequest<UpdateFigureCluste
 		}	
 	}
 
-	public String getDatasetName() {
-		return this.datasetName;
-	}
-
-	public void setDatasetName(String datasetName) {
-		this.datasetName = datasetName;
-		if(datasetName != null){
-			putQueryParameter("DatasetName", datasetName);
-		}
-	}
-
 	public static class FigureCluster {
 
 		@SerializedName("Cover")
 		private Cover cover;
+
+		@SerializedName("MetaLockVersion")
+		private Long metaLockVersion;
 
 		@SerializedName("CustomLabels")
 		private Map<String,String> customLabels;
@@ -100,6 +103,14 @@ public class UpdateFigureClusterRequest extends RpcAcsRequest<UpdateFigureCluste
 
 		public void setCover(Cover cover) {
 			this.cover = cover;
+		}
+
+		public Long getMetaLockVersion() {
+			return this.metaLockVersion;
+		}
+
+		public void setMetaLockVersion(Long metaLockVersion) {
+			this.metaLockVersion = metaLockVersion;
 		}
 
 		public Map<String,String> getCustomLabels() {

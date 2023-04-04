@@ -67,6 +67,7 @@ public class GetFigureClusterResponseUnmarshaller {
 		figureCluster.setMaxAge(_ctx.floatValue("GetFigureClusterResponse.FigureCluster.MaxAge"));
 		figureCluster.setCustomId(_ctx.stringValue("GetFigureClusterResponse.FigureCluster.CustomId"));
 		figureCluster.setCustomLabels(_ctx.mapValue("GetFigureClusterResponse.FigureCluster.CustomLabels"));
+		figureCluster.setMetaLockVersion(_ctx.longValue("GetFigureClusterResponse.FigureCluster.MetaLockVersion"));
 
 		Cover cover = new Cover();
 		cover.setOwnerId(_ctx.stringValue("GetFigureClusterResponse.FigureCluster.Cover.OwnerId"));

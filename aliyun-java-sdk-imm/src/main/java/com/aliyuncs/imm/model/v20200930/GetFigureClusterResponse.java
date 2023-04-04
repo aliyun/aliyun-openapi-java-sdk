@@ -82,6 +82,8 @@ public class GetFigureClusterResponse extends AcsResponse {
 
 		private Map<Object,Object> customLabels;
 
+		private Long metaLockVersion;
+
 		private Cover cover;
 
 		public String getOwnerId() {
@@ -218,6 +220,14 @@ public class GetFigureClusterResponse extends AcsResponse {
 
 		public void setCustomLabels(Map<Object,Object> customLabels) {
 			this.customLabels = customLabels;
+		}
+
+		public Long getMetaLockVersion() {
+			return this.metaLockVersion;
+		}
+
+		public void setMetaLockVersion(Long metaLockVersion) {
+			this.metaLockVersion = metaLockVersion;
 		}
 
 		public Cover getCover() {

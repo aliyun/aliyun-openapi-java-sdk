@@ -25,11 +25,11 @@ import com.aliyuncs.imm.Endpoint;
 public class ListBindingsRequest extends RpcAcsRequest<ListBindingsResponse> {
 	   
 
-	private String projectName;
-
 	private String nextToken;
 
 	private String datasetName;
+
+	private String projectName;
 
 	private Long maxResults;
 	public ListBindingsRequest() {
@@ -39,17 +39,6 @@ public class ListBindingsRequest extends RpcAcsRequest<ListBindingsResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getProjectName() {
-		return this.projectName;
-	}
-
-	public void setProjectName(String projectName) {
-		this.projectName = projectName;
-		if(projectName != null){
-			putQueryParameter("ProjectName", projectName);
-		}
 	}
 
 	public String getNextToken() {
@@ -71,6 +60,17 @@ public class ListBindingsRequest extends RpcAcsRequest<ListBindingsResponse> {
 		this.datasetName = datasetName;
 		if(datasetName != null){
 			putQueryParameter("DatasetName", datasetName);
+		}
+	}
+
+	public String getProjectName() {
+		return this.projectName;
+	}
+
+	public void setProjectName(String projectName) {
+		this.projectName = projectName;
+		if(projectName != null){
+			putQueryParameter("ProjectName", projectName);
 		}
 	}
 

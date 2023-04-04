@@ -25,15 +25,15 @@ import com.aliyuncs.imm.Endpoint;
 public class SemanticQueryRequest extends RpcAcsRequest<SemanticQueryResponse> {
 	   
 
-	private String projectName;
-
 	private String nextToken;
+
+	private String datasetName;
+
+	private String projectName;
 
 	private String query;
 
 	private Integer maxResults;
-
-	private String datasetName;
 	public SemanticQueryRequest() {
 		super("imm", "2020-09-30", "SemanticQuery", "imm");
 		setMethod(MethodType.POST);
@@ -41,17 +41,6 @@ public class SemanticQueryRequest extends RpcAcsRequest<SemanticQueryResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getProjectName() {
-		return this.projectName;
-	}
-
-	public void setProjectName(String projectName) {
-		this.projectName = projectName;
-		if(projectName != null){
-			putQueryParameter("ProjectName", projectName);
-		}
 	}
 
 	public String getNextToken() {
@@ -62,6 +51,28 @@ public class SemanticQueryRequest extends RpcAcsRequest<SemanticQueryResponse> {
 		this.nextToken = nextToken;
 		if(nextToken != null){
 			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public String getDatasetName() {
+		return this.datasetName;
+	}
+
+	public void setDatasetName(String datasetName) {
+		this.datasetName = datasetName;
+		if(datasetName != null){
+			putQueryParameter("DatasetName", datasetName);
+		}
+	}
+
+	public String getProjectName() {
+		return this.projectName;
+	}
+
+	public void setProjectName(String projectName) {
+		this.projectName = projectName;
+		if(projectName != null){
+			putQueryParameter("ProjectName", projectName);
 		}
 	}
 
@@ -84,17 +95,6 @@ public class SemanticQueryRequest extends RpcAcsRequest<SemanticQueryResponse> {
 		this.maxResults = maxResults;
 		if(maxResults != null){
 			putQueryParameter("MaxResults", maxResults.toString());
-		}
-	}
-
-	public String getDatasetName() {
-		return this.datasetName;
-	}
-
-	public void setDatasetName(String datasetName) {
-		this.datasetName = datasetName;
-		if(datasetName != null){
-			putQueryParameter("DatasetName", datasetName);
 		}
 	}
 

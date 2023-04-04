@@ -15,6 +15,8 @@
 package com.aliyuncs.imm.model.v20200930;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.imm.Endpoint;
 
@@ -25,19 +27,25 @@ import com.aliyuncs.imm.Endpoint;
 public class QueryFigureClustersRequest extends RpcAcsRequest<QueryFigureClustersResponse> {
 	   
 
-	private String projectName;
-
 	private String customLabels;
 
 	private String nextToken;
 
 	private String datasetName;
 
-	private Long maxResults;
+	private String order;
+
+	private String projectName;
 
 	private String sort;
 
-	private String order;
+	@SerializedName("createTimeRange")
+	private CreateTimeRange createTimeRange;
+
+	private Long maxResults;
+
+	@SerializedName("updateTimeRange")
+	private UpdateTimeRange updateTimeRange;
 	public QueryFigureClustersRequest() {
 		super("imm", "2020-09-30", "QueryFigureClusters", "imm");
 		setMethod(MethodType.POST);
@@ -45,17 +53,6 @@ public class QueryFigureClustersRequest extends RpcAcsRequest<QueryFigureCluster
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getProjectName() {
-		return this.projectName;
-	}
-
-	public void setProjectName(String projectName) {
-		this.projectName = projectName;
-		if(projectName != null){
-			putQueryParameter("ProjectName", projectName);
-		}
 	}
 
 	public String getCustomLabels() {
@@ -91,14 +88,25 @@ public class QueryFigureClustersRequest extends RpcAcsRequest<QueryFigureCluster
 		}
 	}
 
-	public Long getMaxResults() {
-		return this.maxResults;
+	public String getOrder() {
+		return this.order;
 	}
 
-	public void setMaxResults(Long maxResults) {
-		this.maxResults = maxResults;
-		if(maxResults != null){
-			putQueryParameter("MaxResults", maxResults.toString());
+	public void setOrder(String order) {
+		this.order = order;
+		if(order != null){
+			putQueryParameter("Order", order);
+		}
+	}
+
+	public String getProjectName() {
+		return this.projectName;
+	}
+
+	public void setProjectName(String projectName) {
+		this.projectName = projectName;
+		if(projectName != null){
+			putQueryParameter("ProjectName", projectName);
 		}
 	}
 
@@ -113,14 +121,86 @@ public class QueryFigureClustersRequest extends RpcAcsRequest<QueryFigureCluster
 		}
 	}
 
-	public String getOrder() {
-		return this.order;
+	public CreateTimeRange getCreateTimeRange() {
+		return this.createTimeRange;
 	}
 
-	public void setOrder(String order) {
-		this.order = order;
-		if(order != null){
-			putQueryParameter("Order", order);
+	public void setCreateTimeRange(CreateTimeRange createTimeRange) {
+		this.createTimeRange = createTimeRange;	
+		if (createTimeRange != null) {
+			putQueryParameter("CreateTimeRange" , new Gson().toJson(createTimeRange));
+		}	
+	}
+
+	public Long getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Long maxResults) {
+		this.maxResults = maxResults;
+		if(maxResults != null){
+			putQueryParameter("MaxResults", maxResults.toString());
+		}
+	}
+
+	public UpdateTimeRange getUpdateTimeRange() {
+		return this.updateTimeRange;
+	}
+
+	public void setUpdateTimeRange(UpdateTimeRange updateTimeRange) {
+		this.updateTimeRange = updateTimeRange;	
+		if (updateTimeRange != null) {
+			putQueryParameter("UpdateTimeRange" , new Gson().toJson(updateTimeRange));
+		}	
+	}
+
+	public static class CreateTimeRange {
+
+		@SerializedName("Start")
+		private String start;
+
+		@SerializedName("End")
+		private String end;
+
+		public String getStart() {
+			return this.start;
+		}
+
+		public void setStart(String start) {
+			this.start = start;
+		}
+
+		public String getEnd() {
+			return this.end;
+		}
+
+		public void setEnd(String end) {
+			this.end = end;
+		}
+	}
+
+	public static class UpdateTimeRange {
+
+		@SerializedName("Start")
+		private String start;
+
+		@SerializedName("End")
+		private String end;
+
+		public String getStart() {
+			return this.start;
+		}
+
+		public void setStart(String start) {
+			this.start = start;
+		}
+
+		public String getEnd() {
+			return this.end;
+		}
+
+		public void setEnd(String end) {
+			this.end = end;
 		}
 	}
 

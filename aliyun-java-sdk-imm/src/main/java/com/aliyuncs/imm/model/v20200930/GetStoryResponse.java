@@ -78,6 +78,8 @@ public class GetStoryResponse extends AcsResponse {
 
 		private List<FilesItem> files;
 
+		private List<AddressesItem11> addresses;
+
 		private List<String> figureClusterIds;
 
 		private Cover cover;
@@ -200,6 +202,14 @@ public class GetStoryResponse extends AcsResponse {
 
 		public void setFiles(List<FilesItem> files) {
 			this.files = files;
+		}
+
+		public List<AddressesItem11> getAddresses() {
+			return this.addresses;
+		}
+
+		public void setAddresses(List<AddressesItem11> addresses) {
+			this.addresses = addresses;
 		}
 
 		public List<String> getFigureClusterIds() {
@@ -358,7 +368,7 @@ public class GetStoryResponse extends AcsResponse {
 
 			private Double duration;
 
-			private List<AddressesItem> addresses;
+			private List<AddressesItem> addresses1;
 
 			private List<FiguresItem> figures;
 
@@ -930,12 +940,12 @@ public class GetStoryResponse extends AcsResponse {
 				this.duration = duration;
 			}
 
-			public List<AddressesItem> getAddresses() {
-				return this.addresses;
+			public List<AddressesItem> getAddresses1() {
+				return this.addresses1;
 			}
 
-			public void setAddresses(List<AddressesItem> addresses) {
-				this.addresses = addresses;
+			public void setAddresses1(List<AddressesItem> addresses1) {
+				this.addresses1 = addresses1;
 			}
 
 			public List<FiguresItem> getFigures() {
@@ -1491,7 +1501,7 @@ public class GetStoryResponse extends AcsResponse {
 
 				private Float confidence;
 
-				private Boundary1 boundary1;
+				private Boundary2 boundary2;
 
 				public String getAspectRatio() {
 					return this.aspectRatio;
@@ -1509,15 +1519,15 @@ public class GetStoryResponse extends AcsResponse {
 					this.confidence = confidence;
 				}
 
-				public Boundary1 getBoundary1() {
-					return this.boundary1;
+				public Boundary2 getBoundary2() {
+					return this.boundary2;
 				}
 
-				public void setBoundary1(Boundary1 boundary1) {
-					this.boundary1 = boundary1;
+				public void setBoundary2(Boundary2 boundary2) {
+					this.boundary2 = boundary2;
 				}
 
-				public static class Boundary1 {
+				public static class Boundary2 {
 
 					private Long width;
 
@@ -1569,7 +1579,7 @@ public class GetStoryResponse extends AcsResponse {
 
 				private Float confidence;
 
-				private Boundary2 boundary2;
+				private Boundary3 boundary3;
 
 				public String getLanguage() {
 					return this.language;
@@ -1595,15 +1605,15 @@ public class GetStoryResponse extends AcsResponse {
 					this.confidence = confidence;
 				}
 
-				public Boundary2 getBoundary2() {
-					return this.boundary2;
+				public Boundary3 getBoundary3() {
+					return this.boundary3;
 				}
 
-				public void setBoundary2(Boundary2 boundary2) {
-					this.boundary2 = boundary2;
+				public void setBoundary3(Boundary3 boundary3) {
+					this.boundary3 = boundary3;
 				}
 
-				public static class Boundary2 {
+				public static class Boundary3 {
 
 					private Long width;
 
@@ -2234,11 +2244,11 @@ public class GetStoryResponse extends AcsResponse {
 
 				private String eXIF;
 
-				private List<CroppingSuggestionsItem6> croppingSuggestions4;
+				private List<CroppingSuggestionsItem7> croppingSuggestions5;
 
-				private List<OCRContentsItem8> oCRContents5;
+				private List<OCRContentsItem9> oCRContents6;
 
-				private ImageScore3 imageScore3;
+				private ImageScore4 imageScore4;
 
 				public Long getImageWidth() {
 					return this.imageWidth;
@@ -2264,37 +2274,37 @@ public class GetStoryResponse extends AcsResponse {
 					this.eXIF = eXIF;
 				}
 
-				public List<CroppingSuggestionsItem6> getCroppingSuggestions4() {
-					return this.croppingSuggestions4;
+				public List<CroppingSuggestionsItem7> getCroppingSuggestions5() {
+					return this.croppingSuggestions5;
 				}
 
-				public void setCroppingSuggestions4(List<CroppingSuggestionsItem6> croppingSuggestions4) {
-					this.croppingSuggestions4 = croppingSuggestions4;
+				public void setCroppingSuggestions5(List<CroppingSuggestionsItem7> croppingSuggestions5) {
+					this.croppingSuggestions5 = croppingSuggestions5;
 				}
 
-				public List<OCRContentsItem8> getOCRContents5() {
-					return this.oCRContents5;
+				public List<OCRContentsItem9> getOCRContents6() {
+					return this.oCRContents6;
 				}
 
-				public void setOCRContents5(List<OCRContentsItem8> oCRContents5) {
-					this.oCRContents5 = oCRContents5;
+				public void setOCRContents6(List<OCRContentsItem9> oCRContents6) {
+					this.oCRContents6 = oCRContents6;
 				}
 
-				public ImageScore3 getImageScore3() {
-					return this.imageScore3;
+				public ImageScore4 getImageScore4() {
+					return this.imageScore4;
 				}
 
-				public void setImageScore3(ImageScore3 imageScore3) {
-					this.imageScore3 = imageScore3;
+				public void setImageScore4(ImageScore4 imageScore4) {
+					this.imageScore4 = imageScore4;
 				}
 
-				public static class CroppingSuggestionsItem6 {
+				public static class CroppingSuggestionsItem7 {
 
 					private String aspectRatio;
 
 					private Float confidence;
 
-					private Boundary7 boundary7;
+					private Boundary8 boundary8;
 
 					public String getAspectRatio() {
 						return this.aspectRatio;
@@ -2312,15 +2322,15 @@ public class GetStoryResponse extends AcsResponse {
 						this.confidence = confidence;
 					}
 
-					public Boundary7 getBoundary7() {
-						return this.boundary7;
+					public Boundary8 getBoundary8() {
+						return this.boundary8;
 					}
 
-					public void setBoundary7(Boundary7 boundary7) {
-						this.boundary7 = boundary7;
+					public void setBoundary8(Boundary8 boundary8) {
+						this.boundary8 = boundary8;
 					}
 
-					public static class Boundary7 {
+					public static class Boundary8 {
 
 						private Long width;
 
@@ -2364,7 +2374,7 @@ public class GetStoryResponse extends AcsResponse {
 					}
 				}
 
-				public static class OCRContentsItem8 {
+				public static class OCRContentsItem9 {
 
 					private String language;
 
@@ -2372,7 +2382,7 @@ public class GetStoryResponse extends AcsResponse {
 
 					private Float confidence;
 
-					private Boundary9 boundary9;
+					private Boundary10 boundary10;
 
 					public String getLanguage() {
 						return this.language;
@@ -2398,15 +2408,15 @@ public class GetStoryResponse extends AcsResponse {
 						this.confidence = confidence;
 					}
 
-					public Boundary9 getBoundary9() {
-						return this.boundary9;
+					public Boundary10 getBoundary10() {
+						return this.boundary10;
 					}
 
-					public void setBoundary9(Boundary9 boundary9) {
-						this.boundary9 = boundary9;
+					public void setBoundary10(Boundary10 boundary10) {
+						this.boundary10 = boundary10;
 					}
 
-					public static class Boundary9 {
+					public static class Boundary10 {
 
 						private Long width;
 
@@ -2450,7 +2460,7 @@ public class GetStoryResponse extends AcsResponse {
 					}
 				}
 
-				public static class ImageScore3 {
+				public static class ImageScore4 {
 
 					private Float overallQualityScore;
 
@@ -2475,6 +2485,79 @@ public class GetStoryResponse extends AcsResponse {
 				public void setOverallQualityScore(Float overallQualityScore) {
 					this.overallQualityScore = overallQualityScore;
 				}
+			}
+		}
+
+		public static class AddressesItem11 {
+
+			private String language;
+
+			private String addressLine;
+
+			private String country;
+
+			private String province;
+
+			private String city;
+
+			private String district;
+
+			private String township;
+
+			public String getLanguage() {
+				return this.language;
+			}
+
+			public void setLanguage(String language) {
+				this.language = language;
+			}
+
+			public String getAddressLine() {
+				return this.addressLine;
+			}
+
+			public void setAddressLine(String addressLine) {
+				this.addressLine = addressLine;
+			}
+
+			public String getCountry() {
+				return this.country;
+			}
+
+			public void setCountry(String country) {
+				this.country = country;
+			}
+
+			public String getProvince() {
+				return this.province;
+			}
+
+			public void setProvince(String province) {
+				this.province = province;
+			}
+
+			public String getCity() {
+				return this.city;
+			}
+
+			public void setCity(String city) {
+				this.city = city;
+			}
+
+			public String getDistrict() {
+				return this.district;
+			}
+
+			public void setDistrict(String district) {
+				this.district = district;
+			}
+
+			public String getTownship() {
+				return this.township;
+			}
+
+			public void setTownship(String township) {
+				this.township = township;
 			}
 		}
 
@@ -2618,25 +2701,25 @@ public class GetStoryResponse extends AcsResponse {
 
 			private Double duration;
 
-			private List<AddressesItem20> addresses11;
+			private List<AddressesItem22> addresses13;
 
-			private List<FiguresItem21> figures12;
+			private List<FiguresItem23> figures14;
 
-			private List<LabelsItem24> labels13;
+			private List<LabelsItem26> labels15;
 
-			private List<CroppingSuggestionsItem25> croppingSuggestions14;
+			private List<CroppingSuggestionsItem27> croppingSuggestions16;
 
-			private List<OCRContentsItem27> oCRContents15;
+			private List<OCRContentsItem29> oCRContents17;
 
-			private List<VideoStreamsItem29> videoStreams16;
+			private List<VideoStreamsItem31> videoStreams18;
 
-			private List<SubtitlesItem30> subtitles17;
+			private List<SubtitlesItem32> subtitles19;
 
-			private List<AudioStreamsItem31> audioStreams18;
+			private List<AudioStreamsItem33> audioStreams20;
 
-			private List<AudioCoversItem32> audioCovers19;
+			private List<AudioCoversItem34> audioCovers21;
 
-			private ImageScore10 imageScore10;
+			private ImageScore12 imageScore12;
 
 			public String getOwnerId() {
 				return this.ownerId;
@@ -3190,87 +3273,87 @@ public class GetStoryResponse extends AcsResponse {
 				this.duration = duration;
 			}
 
-			public List<AddressesItem20> getAddresses11() {
-				return this.addresses11;
+			public List<AddressesItem22> getAddresses13() {
+				return this.addresses13;
 			}
 
-			public void setAddresses11(List<AddressesItem20> addresses11) {
-				this.addresses11 = addresses11;
+			public void setAddresses13(List<AddressesItem22> addresses13) {
+				this.addresses13 = addresses13;
 			}
 
-			public List<FiguresItem21> getFigures12() {
-				return this.figures12;
+			public List<FiguresItem23> getFigures14() {
+				return this.figures14;
 			}
 
-			public void setFigures12(List<FiguresItem21> figures12) {
-				this.figures12 = figures12;
+			public void setFigures14(List<FiguresItem23> figures14) {
+				this.figures14 = figures14;
 			}
 
-			public List<LabelsItem24> getLabels13() {
-				return this.labels13;
+			public List<LabelsItem26> getLabels15() {
+				return this.labels15;
 			}
 
-			public void setLabels13(List<LabelsItem24> labels13) {
-				this.labels13 = labels13;
+			public void setLabels15(List<LabelsItem26> labels15) {
+				this.labels15 = labels15;
 			}
 
-			public List<CroppingSuggestionsItem25> getCroppingSuggestions14() {
-				return this.croppingSuggestions14;
+			public List<CroppingSuggestionsItem27> getCroppingSuggestions16() {
+				return this.croppingSuggestions16;
 			}
 
-			public void setCroppingSuggestions14(List<CroppingSuggestionsItem25> croppingSuggestions14) {
-				this.croppingSuggestions14 = croppingSuggestions14;
+			public void setCroppingSuggestions16(List<CroppingSuggestionsItem27> croppingSuggestions16) {
+				this.croppingSuggestions16 = croppingSuggestions16;
 			}
 
-			public List<OCRContentsItem27> getOCRContents15() {
-				return this.oCRContents15;
+			public List<OCRContentsItem29> getOCRContents17() {
+				return this.oCRContents17;
 			}
 
-			public void setOCRContents15(List<OCRContentsItem27> oCRContents15) {
-				this.oCRContents15 = oCRContents15;
+			public void setOCRContents17(List<OCRContentsItem29> oCRContents17) {
+				this.oCRContents17 = oCRContents17;
 			}
 
-			public List<VideoStreamsItem29> getVideoStreams16() {
-				return this.videoStreams16;
+			public List<VideoStreamsItem31> getVideoStreams18() {
+				return this.videoStreams18;
 			}
 
-			public void setVideoStreams16(List<VideoStreamsItem29> videoStreams16) {
-				this.videoStreams16 = videoStreams16;
+			public void setVideoStreams18(List<VideoStreamsItem31> videoStreams18) {
+				this.videoStreams18 = videoStreams18;
 			}
 
-			public List<SubtitlesItem30> getSubtitles17() {
-				return this.subtitles17;
+			public List<SubtitlesItem32> getSubtitles19() {
+				return this.subtitles19;
 			}
 
-			public void setSubtitles17(List<SubtitlesItem30> subtitles17) {
-				this.subtitles17 = subtitles17;
+			public void setSubtitles19(List<SubtitlesItem32> subtitles19) {
+				this.subtitles19 = subtitles19;
 			}
 
-			public List<AudioStreamsItem31> getAudioStreams18() {
-				return this.audioStreams18;
+			public List<AudioStreamsItem33> getAudioStreams20() {
+				return this.audioStreams20;
 			}
 
-			public void setAudioStreams18(List<AudioStreamsItem31> audioStreams18) {
-				this.audioStreams18 = audioStreams18;
+			public void setAudioStreams20(List<AudioStreamsItem33> audioStreams20) {
+				this.audioStreams20 = audioStreams20;
 			}
 
-			public List<AudioCoversItem32> getAudioCovers19() {
-				return this.audioCovers19;
+			public List<AudioCoversItem34> getAudioCovers21() {
+				return this.audioCovers21;
 			}
 
-			public void setAudioCovers19(List<AudioCoversItem32> audioCovers19) {
-				this.audioCovers19 = audioCovers19;
+			public void setAudioCovers21(List<AudioCoversItem34> audioCovers21) {
+				this.audioCovers21 = audioCovers21;
 			}
 
-			public ImageScore10 getImageScore10() {
-				return this.imageScore10;
+			public ImageScore12 getImageScore12() {
+				return this.imageScore12;
 			}
 
-			public void setImageScore10(ImageScore10 imageScore10) {
-				this.imageScore10 = imageScore10;
+			public void setImageScore12(ImageScore12 imageScore12) {
+				this.imageScore12 = imageScore12;
 			}
 
-			public static class AddressesItem20 {
+			public static class AddressesItem22 {
 
 				private String language;
 
@@ -3343,7 +3426,7 @@ public class GetStoryResponse extends AcsResponse {
 				}
 			}
 
-			public static class FiguresItem21 {
+			public static class FiguresItem23 {
 
 				private String figureId;
 
@@ -3393,9 +3476,9 @@ public class GetStoryResponse extends AcsResponse {
 
 				private Float attractive;
 
-				private Boundary22 boundary22;
+				private Boundary24 boundary24;
 
-				private HeadPose23 headPose23;
+				private HeadPose25 headPose25;
 
 				public String getFigureId() {
 					return this.figureId;
@@ -3589,23 +3672,23 @@ public class GetStoryResponse extends AcsResponse {
 					this.attractive = attractive;
 				}
 
-				public Boundary22 getBoundary22() {
-					return this.boundary22;
+				public Boundary24 getBoundary24() {
+					return this.boundary24;
 				}
 
-				public void setBoundary22(Boundary22 boundary22) {
-					this.boundary22 = boundary22;
+				public void setBoundary24(Boundary24 boundary24) {
+					this.boundary24 = boundary24;
 				}
 
-				public HeadPose23 getHeadPose23() {
-					return this.headPose23;
+				public HeadPose25 getHeadPose25() {
+					return this.headPose25;
 				}
 
-				public void setHeadPose23(HeadPose23 headPose23) {
-					this.headPose23 = headPose23;
+				public void setHeadPose25(HeadPose25 headPose25) {
+					this.headPose25 = headPose25;
 				}
 
-				public static class Boundary22 {
+				public static class Boundary24 {
 
 					private Long width;
 
@@ -3648,7 +3731,7 @@ public class GetStoryResponse extends AcsResponse {
 					}
 				}
 
-				public static class HeadPose23 {
+				public static class HeadPose25 {
 
 					private Float pitch;
 
@@ -3682,7 +3765,7 @@ public class GetStoryResponse extends AcsResponse {
 				}
 			}
 
-			public static class LabelsItem24 {
+			public static class LabelsItem26 {
 
 				private String language;
 
@@ -3745,13 +3828,13 @@ public class GetStoryResponse extends AcsResponse {
 				}
 			}
 
-			public static class CroppingSuggestionsItem25 {
+			public static class CroppingSuggestionsItem27 {
 
 				private String aspectRatio;
 
 				private Float confidence;
 
-				private Boundary26 boundary26;
+				private Boundary28 boundary28;
 
 				public String getAspectRatio() {
 					return this.aspectRatio;
@@ -3759,92 +3842,6 @@ public class GetStoryResponse extends AcsResponse {
 
 				public void setAspectRatio(String aspectRatio) {
 					this.aspectRatio = aspectRatio;
-				}
-
-				public Float getConfidence() {
-					return this.confidence;
-				}
-
-				public void setConfidence(Float confidence) {
-					this.confidence = confidence;
-				}
-
-				public Boundary26 getBoundary26() {
-					return this.boundary26;
-				}
-
-				public void setBoundary26(Boundary26 boundary26) {
-					this.boundary26 = boundary26;
-				}
-
-				public static class Boundary26 {
-
-					private Long width;
-
-					private Long height;
-
-					private Long left;
-
-					private Long top;
-
-					public Long getWidth() {
-						return this.width;
-					}
-
-					public void setWidth(Long width) {
-						this.width = width;
-					}
-
-					public Long getHeight() {
-						return this.height;
-					}
-
-					public void setHeight(Long height) {
-						this.height = height;
-					}
-
-					public Long getLeft() {
-						return this.left;
-					}
-
-					public void setLeft(Long left) {
-						this.left = left;
-					}
-
-					public Long getTop() {
-						return this.top;
-					}
-
-					public void setTop(Long top) {
-						this.top = top;
-					}
-				}
-			}
-
-			public static class OCRContentsItem27 {
-
-				private String language;
-
-				private String contents;
-
-				private Float confidence;
-
-				private Boundary28 boundary28;
-
-				public String getLanguage() {
-					return this.language;
-				}
-
-				public void setLanguage(String language) {
-					this.language = language;
-				}
-
-				public String getContents() {
-					return this.contents;
-				}
-
-				public void setContents(String contents) {
-					this.contents = contents;
 				}
 
 				public Float getConfidence() {
@@ -3907,7 +3904,93 @@ public class GetStoryResponse extends AcsResponse {
 				}
 			}
 
-			public static class VideoStreamsItem29 {
+			public static class OCRContentsItem29 {
+
+				private String language;
+
+				private String contents;
+
+				private Float confidence;
+
+				private Boundary30 boundary30;
+
+				public String getLanguage() {
+					return this.language;
+				}
+
+				public void setLanguage(String language) {
+					this.language = language;
+				}
+
+				public String getContents() {
+					return this.contents;
+				}
+
+				public void setContents(String contents) {
+					this.contents = contents;
+				}
+
+				public Float getConfidence() {
+					return this.confidence;
+				}
+
+				public void setConfidence(Float confidence) {
+					this.confidence = confidence;
+				}
+
+				public Boundary30 getBoundary30() {
+					return this.boundary30;
+				}
+
+				public void setBoundary30(Boundary30 boundary30) {
+					this.boundary30 = boundary30;
+				}
+
+				public static class Boundary30 {
+
+					private Long width;
+
+					private Long height;
+
+					private Long left;
+
+					private Long top;
+
+					public Long getWidth() {
+						return this.width;
+					}
+
+					public void setWidth(Long width) {
+						this.width = width;
+					}
+
+					public Long getHeight() {
+						return this.height;
+					}
+
+					public void setHeight(Long height) {
+						this.height = height;
+					}
+
+					public Long getLeft() {
+						return this.left;
+					}
+
+					public void setLeft(Long left) {
+						this.left = left;
+					}
+
+					public Long getTop() {
+						return this.top;
+					}
+
+					public void setTop(Long top) {
+						this.top = top;
+					}
+				}
+			}
+
+			public static class VideoStreamsItem31 {
 
 				private Long index;
 
@@ -4190,7 +4273,7 @@ public class GetStoryResponse extends AcsResponse {
 				}
 			}
 
-			public static class SubtitlesItem30 {
+			public static class SubtitlesItem32 {
 
 				private Long index;
 
@@ -4313,7 +4396,7 @@ public class GetStoryResponse extends AcsResponse {
 				}
 			}
 
-			public static class AudioStreamsItem31 {
+			public static class AudioStreamsItem33 {
 
 				private Long index;
 
@@ -4486,7 +4569,7 @@ public class GetStoryResponse extends AcsResponse {
 				}
 			}
 
-			public static class AudioCoversItem32 {
+			public static class AudioCoversItem34 {
 
 				private Long imageWidth;
 
@@ -4494,11 +4577,11 @@ public class GetStoryResponse extends AcsResponse {
 
 				private String eXIF;
 
-				private List<CroppingSuggestionsItem36> croppingSuggestions34;
+				private List<CroppingSuggestionsItem38> croppingSuggestions36;
 
-				private List<OCRContentsItem38> oCRContents35;
+				private List<OCRContentsItem40> oCRContents37;
 
-				private ImageScore33 imageScore33;
+				private ImageScore35 imageScore35;
 
 				public Long getImageWidth() {
 					return this.imageWidth;
@@ -4524,37 +4607,37 @@ public class GetStoryResponse extends AcsResponse {
 					this.eXIF = eXIF;
 				}
 
-				public List<CroppingSuggestionsItem36> getCroppingSuggestions34() {
-					return this.croppingSuggestions34;
+				public List<CroppingSuggestionsItem38> getCroppingSuggestions36() {
+					return this.croppingSuggestions36;
 				}
 
-				public void setCroppingSuggestions34(List<CroppingSuggestionsItem36> croppingSuggestions34) {
-					this.croppingSuggestions34 = croppingSuggestions34;
+				public void setCroppingSuggestions36(List<CroppingSuggestionsItem38> croppingSuggestions36) {
+					this.croppingSuggestions36 = croppingSuggestions36;
 				}
 
-				public List<OCRContentsItem38> getOCRContents35() {
-					return this.oCRContents35;
+				public List<OCRContentsItem40> getOCRContents37() {
+					return this.oCRContents37;
 				}
 
-				public void setOCRContents35(List<OCRContentsItem38> oCRContents35) {
-					this.oCRContents35 = oCRContents35;
+				public void setOCRContents37(List<OCRContentsItem40> oCRContents37) {
+					this.oCRContents37 = oCRContents37;
 				}
 
-				public ImageScore33 getImageScore33() {
-					return this.imageScore33;
+				public ImageScore35 getImageScore35() {
+					return this.imageScore35;
 				}
 
-				public void setImageScore33(ImageScore33 imageScore33) {
-					this.imageScore33 = imageScore33;
+				public void setImageScore35(ImageScore35 imageScore35) {
+					this.imageScore35 = imageScore35;
 				}
 
-				public static class CroppingSuggestionsItem36 {
+				public static class CroppingSuggestionsItem38 {
 
 					private String aspectRatio;
 
 					private Float confidence;
 
-					private Boundary37 boundary37;
+					private Boundary39 boundary39;
 
 					public String getAspectRatio() {
 						return this.aspectRatio;
@@ -4562,92 +4645,6 @@ public class GetStoryResponse extends AcsResponse {
 
 					public void setAspectRatio(String aspectRatio) {
 						this.aspectRatio = aspectRatio;
-					}
-
-					public Float getConfidence() {
-						return this.confidence;
-					}
-
-					public void setConfidence(Float confidence) {
-						this.confidence = confidence;
-					}
-
-					public Boundary37 getBoundary37() {
-						return this.boundary37;
-					}
-
-					public void setBoundary37(Boundary37 boundary37) {
-						this.boundary37 = boundary37;
-					}
-
-					public static class Boundary37 {
-
-						private Long width;
-
-						private Long height;
-
-						private Long left;
-
-						private Long top;
-
-						public Long getWidth() {
-							return this.width;
-						}
-
-						public void setWidth(Long width) {
-							this.width = width;
-						}
-
-						public Long getHeight() {
-							return this.height;
-						}
-
-						public void setHeight(Long height) {
-							this.height = height;
-						}
-
-						public Long getLeft() {
-							return this.left;
-						}
-
-						public void setLeft(Long left) {
-							this.left = left;
-						}
-
-						public Long getTop() {
-							return this.top;
-						}
-
-						public void setTop(Long top) {
-							this.top = top;
-						}
-					}
-				}
-
-				public static class OCRContentsItem38 {
-
-					private String language;
-
-					private String contents;
-
-					private Float confidence;
-
-					private Boundary39 boundary39;
-
-					public String getLanguage() {
-						return this.language;
-					}
-
-					public void setLanguage(String language) {
-						this.language = language;
-					}
-
-					public String getContents() {
-						return this.contents;
-					}
-
-					public void setContents(String contents) {
-						this.contents = contents;
 					}
 
 					public Float getConfidence() {
@@ -4710,7 +4707,93 @@ public class GetStoryResponse extends AcsResponse {
 					}
 				}
 
-				public static class ImageScore33 {
+				public static class OCRContentsItem40 {
+
+					private String language;
+
+					private String contents;
+
+					private Float confidence;
+
+					private Boundary41 boundary41;
+
+					public String getLanguage() {
+						return this.language;
+					}
+
+					public void setLanguage(String language) {
+						this.language = language;
+					}
+
+					public String getContents() {
+						return this.contents;
+					}
+
+					public void setContents(String contents) {
+						this.contents = contents;
+					}
+
+					public Float getConfidence() {
+						return this.confidence;
+					}
+
+					public void setConfidence(Float confidence) {
+						this.confidence = confidence;
+					}
+
+					public Boundary41 getBoundary41() {
+						return this.boundary41;
+					}
+
+					public void setBoundary41(Boundary41 boundary41) {
+						this.boundary41 = boundary41;
+					}
+
+					public static class Boundary41 {
+
+						private Long width;
+
+						private Long height;
+
+						private Long left;
+
+						private Long top;
+
+						public Long getWidth() {
+							return this.width;
+						}
+
+						public void setWidth(Long width) {
+							this.width = width;
+						}
+
+						public Long getHeight() {
+							return this.height;
+						}
+
+						public void setHeight(Long height) {
+							this.height = height;
+						}
+
+						public Long getLeft() {
+							return this.left;
+						}
+
+						public void setLeft(Long left) {
+							this.left = left;
+						}
+
+						public Long getTop() {
+							return this.top;
+						}
+
+						public void setTop(Long top) {
+							this.top = top;
+						}
+					}
+				}
+
+				public static class ImageScore35 {
 
 					private Float overallQualityScore;
 
@@ -4724,7 +4807,7 @@ public class GetStoryResponse extends AcsResponse {
 				}
 			}
 
-			public static class ImageScore10 {
+			public static class ImageScore12 {
 
 				private Float overallQualityScore;
 

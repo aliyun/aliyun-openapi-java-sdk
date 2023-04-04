@@ -28,9 +28,14 @@ import com.aliyuncs.imm.Endpoint;
 public class ListTasksRequest extends RpcAcsRequest<ListTasksResponse> {
 	   
 
-	private String projectName;
+	@SerializedName("startTimeRange")
+	private StartTimeRange startTimeRange;
 
 	private String nextToken;
+
+	private String order;
+
+	private String projectName;
 
 	@SerializedName("taskTypes")
 	private List<String> taskTypes;
@@ -38,18 +43,13 @@ public class ListTasksRequest extends RpcAcsRequest<ListTasksResponse> {
 	@SerializedName("endTimeRange")
 	private EndTimeRange endTimeRange;
 
+	private String sort;
+
 	private Long maxResults;
 
 	private String tagSelector;
 
-	private String sort;
-
-	private String order;
-
 	private String status;
-
-	@SerializedName("startTimeRange")
-	private StartTimeRange startTimeRange;
 	public ListTasksRequest() {
 		super("imm", "2020-09-30", "ListTasks", "imm");
 		setMethod(MethodType.POST);
@@ -59,15 +59,15 @@ public class ListTasksRequest extends RpcAcsRequest<ListTasksResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getProjectName() {
-		return this.projectName;
+	public StartTimeRange getStartTimeRange() {
+		return this.startTimeRange;
 	}
 
-	public void setProjectName(String projectName) {
-		this.projectName = projectName;
-		if(projectName != null){
-			putQueryParameter("ProjectName", projectName);
-		}
+	public void setStartTimeRange(StartTimeRange startTimeRange) {
+		this.startTimeRange = startTimeRange;	
+		if (startTimeRange != null) {
+			putQueryParameter("StartTimeRange" , new Gson().toJson(startTimeRange));
+		}	
 	}
 
 	public String getNextToken() {
@@ -78,6 +78,28 @@ public class ListTasksRequest extends RpcAcsRequest<ListTasksResponse> {
 		this.nextToken = nextToken;
 		if(nextToken != null){
 			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public String getOrder() {
+		return this.order;
+	}
+
+	public void setOrder(String order) {
+		this.order = order;
+		if(order != null){
+			putQueryParameter("Order", order);
+		}
+	}
+
+	public String getProjectName() {
+		return this.projectName;
+	}
+
+	public void setProjectName(String projectName) {
+		this.projectName = projectName;
+		if(projectName != null){
+			putQueryParameter("ProjectName", projectName);
 		}
 	}
 
@@ -103,6 +125,17 @@ public class ListTasksRequest extends RpcAcsRequest<ListTasksResponse> {
 		}	
 	}
 
+	public String getSort() {
+		return this.sort;
+	}
+
+	public void setSort(String sort) {
+		this.sort = sort;
+		if(sort != null){
+			putQueryParameter("Sort", sort);
+		}
+	}
+
 	public Long getMaxResults() {
 		return this.maxResults;
 	}
@@ -125,28 +158,6 @@ public class ListTasksRequest extends RpcAcsRequest<ListTasksResponse> {
 		}
 	}
 
-	public String getSort() {
-		return this.sort;
-	}
-
-	public void setSort(String sort) {
-		this.sort = sort;
-		if(sort != null){
-			putQueryParameter("Sort", sort);
-		}
-	}
-
-	public String getOrder() {
-		return this.order;
-	}
-
-	public void setOrder(String order) {
-		this.order = order;
-		if(order != null){
-			putQueryParameter("Order", order);
-		}
-	}
-
 	public String getStatus() {
 		return this.status;
 	}
@@ -158,18 +169,7 @@ public class ListTasksRequest extends RpcAcsRequest<ListTasksResponse> {
 		}
 	}
 
-	public StartTimeRange getStartTimeRange() {
-		return this.startTimeRange;
-	}
-
-	public void setStartTimeRange(StartTimeRange startTimeRange) {
-		this.startTimeRange = startTimeRange;	
-		if (startTimeRange != null) {
-			putQueryParameter("StartTimeRange" , new Gson().toJson(startTimeRange));
-		}	
-	}
-
-	public static class EndTimeRange {
+	public static class StartTimeRange {
 
 		@SerializedName("Start")
 		private String start;
@@ -194,7 +194,7 @@ public class ListTasksRequest extends RpcAcsRequest<ListTasksResponse> {
 		}
 	}
 
-	public static class StartTimeRange {
+	public static class EndTimeRange {
 
 		@SerializedName("Start")
 		private String start;

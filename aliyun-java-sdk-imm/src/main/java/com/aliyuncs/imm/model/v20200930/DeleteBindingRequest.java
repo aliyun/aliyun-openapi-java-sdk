@@ -25,13 +25,13 @@ import com.aliyuncs.imm.Endpoint;
 public class DeleteBindingRequest extends RpcAcsRequest<DeleteBindingResponse> {
 	   
 
-	private String projectName;
-
-	private Boolean cleanup;
-
 	private String datasetName;
 
+	private String projectName;
+
 	private String uRI;
+
+	private Boolean cleanup;
 	public DeleteBindingRequest() {
 		super("imm", "2020-09-30", "DeleteBinding", "imm");
 		setMethod(MethodType.POST);
@@ -39,28 +39,6 @@ public class DeleteBindingRequest extends RpcAcsRequest<DeleteBindingResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getProjectName() {
-		return this.projectName;
-	}
-
-	public void setProjectName(String projectName) {
-		this.projectName = projectName;
-		if(projectName != null){
-			putQueryParameter("ProjectName", projectName);
-		}
-	}
-
-	public Boolean getCleanup() {
-		return this.cleanup;
-	}
-
-	public void setCleanup(Boolean cleanup) {
-		this.cleanup = cleanup;
-		if(cleanup != null){
-			putQueryParameter("Cleanup", cleanup.toString());
-		}
 	}
 
 	public String getDatasetName() {
@@ -74,6 +52,17 @@ public class DeleteBindingRequest extends RpcAcsRequest<DeleteBindingResponse> {
 		}
 	}
 
+	public String getProjectName() {
+		return this.projectName;
+	}
+
+	public void setProjectName(String projectName) {
+		this.projectName = projectName;
+		if(projectName != null){
+			putQueryParameter("ProjectName", projectName);
+		}
+	}
+
 	public String getURI() {
 		return this.uRI;
 	}
@@ -82,6 +71,17 @@ public class DeleteBindingRequest extends RpcAcsRequest<DeleteBindingResponse> {
 		this.uRI = uRI;
 		if(uRI != null){
 			putQueryParameter("URI", uRI);
+		}
+	}
+
+	public Boolean getCleanup() {
+		return this.cleanup;
+	}
+
+	public void setCleanup(Boolean cleanup) {
+		this.cleanup = cleanup;
+		if(cleanup != null){
+			putQueryParameter("Cleanup", cleanup.toString());
 		}
 	}
 

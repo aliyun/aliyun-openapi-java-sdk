@@ -19,44 +19,45 @@ import java.util.List;
 
 import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse;
 import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem;
+import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.AddressesItem11;
 import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.Cover;
-import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.Cover.AddressesItem20;
-import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.Cover.AudioCoversItem32;
-import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.Cover.AudioCoversItem32.CroppingSuggestionsItem36;
-import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.Cover.AudioCoversItem32.CroppingSuggestionsItem36.Boundary37;
-import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.Cover.AudioCoversItem32.ImageScore33;
-import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.Cover.AudioCoversItem32.OCRContentsItem38;
-import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.Cover.AudioCoversItem32.OCRContentsItem38.Boundary39;
-import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.Cover.AudioStreamsItem31;
-import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.Cover.CroppingSuggestionsItem25;
-import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.Cover.CroppingSuggestionsItem25.Boundary26;
-import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.Cover.FiguresItem21;
-import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.Cover.FiguresItem21.Boundary22;
-import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.Cover.FiguresItem21.HeadPose23;
-import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.Cover.ImageScore10;
-import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.Cover.LabelsItem24;
-import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.Cover.OCRContentsItem27;
-import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.Cover.OCRContentsItem27.Boundary28;
-import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.Cover.SubtitlesItem30;
-import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.Cover.VideoStreamsItem29;
+import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.Cover.AddressesItem22;
+import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.Cover.AudioCoversItem34;
+import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.Cover.AudioCoversItem34.CroppingSuggestionsItem38;
+import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.Cover.AudioCoversItem34.CroppingSuggestionsItem38.Boundary39;
+import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.Cover.AudioCoversItem34.ImageScore35;
+import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.Cover.AudioCoversItem34.OCRContentsItem40;
+import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.Cover.AudioCoversItem34.OCRContentsItem40.Boundary41;
+import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.Cover.AudioStreamsItem33;
+import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.Cover.CroppingSuggestionsItem27;
+import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.Cover.CroppingSuggestionsItem27.Boundary28;
+import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.Cover.FiguresItem23;
+import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.Cover.FiguresItem23.Boundary24;
+import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.Cover.FiguresItem23.HeadPose25;
+import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.Cover.ImageScore12;
+import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.Cover.LabelsItem26;
+import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.Cover.OCRContentsItem29;
+import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.Cover.OCRContentsItem29.Boundary30;
+import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.Cover.SubtitlesItem32;
+import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.Cover.VideoStreamsItem31;
 import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.FilesItem;
 import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.FilesItem.AddressesItem;
 import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.FilesItem.AudioCoversItem;
-import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.FilesItem.AudioCoversItem.CroppingSuggestionsItem6;
-import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.FilesItem.AudioCoversItem.CroppingSuggestionsItem6.Boundary7;
-import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.FilesItem.AudioCoversItem.ImageScore3;
-import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.FilesItem.AudioCoversItem.OCRContentsItem8;
-import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.FilesItem.AudioCoversItem.OCRContentsItem8.Boundary9;
+import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.FilesItem.AudioCoversItem.CroppingSuggestionsItem7;
+import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.FilesItem.AudioCoversItem.CroppingSuggestionsItem7.Boundary8;
+import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.FilesItem.AudioCoversItem.ImageScore4;
+import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.FilesItem.AudioCoversItem.OCRContentsItem9;
+import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.FilesItem.AudioCoversItem.OCRContentsItem9.Boundary10;
 import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.FilesItem.AudioStreamsItem;
 import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.FilesItem.CroppingSuggestionsItem;
-import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.FilesItem.CroppingSuggestionsItem.Boundary1;
+import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.FilesItem.CroppingSuggestionsItem.Boundary2;
 import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.FilesItem.FiguresItem;
 import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.FilesItem.FiguresItem.Boundary;
 import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.FilesItem.FiguresItem.HeadPose;
 import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.FilesItem.ImageScore;
 import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.FilesItem.LabelsItem;
 import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.FilesItem.OCRContentsItem;
-import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.FilesItem.OCRContentsItem.Boundary2;
+import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.FilesItem.OCRContentsItem.Boundary3;
 import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.FilesItem.SubtitlesItem;
 import com.aliyuncs.imm.model.v20200930.QueryStoriesResponse.StoriesItem.FilesItem.VideoStreamsItem;
 import java.util.Map;
@@ -165,249 +166,249 @@ public class QueryStoriesResponseUnmarshaller {
 			cover.setBitrate(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.Bitrate"));
 			cover.setDuration(_ctx.doubleValue("QueryStoriesResponse.Stories["+ i +"].Cover.Duration"));
 
-			ImageScore10 imageScore10 = new ImageScore10();
-			imageScore10.setOverallQualityScore(_ctx.floatValue("QueryStoriesResponse.Stories["+ i +"].Cover.ImageScore.OverallQualityScore"));
-			cover.setImageScore10(imageScore10);
+			ImageScore12 imageScore12 = new ImageScore12();
+			imageScore12.setOverallQualityScore(_ctx.floatValue("QueryStoriesResponse.Stories["+ i +"].Cover.ImageScore.OverallQualityScore"));
+			cover.setImageScore12(imageScore12);
 
-			List<AddressesItem20> addresses11 = new ArrayList<AddressesItem20>();
+			List<AddressesItem22> addresses13 = new ArrayList<AddressesItem22>();
 			for (int j = 0; j < _ctx.lengthValue("QueryStoriesResponse.Stories["+ i +"].Cover.Addresses.Length"); j++) {
-				AddressesItem20 addressesItem20 = new AddressesItem20();
-				addressesItem20.setLanguage(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.Addresses["+ j +"].Language"));
-				addressesItem20.setAddressLine(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.Addresses["+ j +"].AddressLine"));
-				addressesItem20.setCountry(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.Addresses["+ j +"].Country"));
-				addressesItem20.setProvince(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.Addresses["+ j +"].Province"));
-				addressesItem20.setCity(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.Addresses["+ j +"].City"));
-				addressesItem20.setDistrict(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.Addresses["+ j +"].District"));
-				addressesItem20.setTownship(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.Addresses["+ j +"].Township"));
+				AddressesItem22 addressesItem22 = new AddressesItem22();
+				addressesItem22.setLanguage(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.Addresses["+ j +"].Language"));
+				addressesItem22.setAddressLine(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.Addresses["+ j +"].AddressLine"));
+				addressesItem22.setCountry(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.Addresses["+ j +"].Country"));
+				addressesItem22.setProvince(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.Addresses["+ j +"].Province"));
+				addressesItem22.setCity(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.Addresses["+ j +"].City"));
+				addressesItem22.setDistrict(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.Addresses["+ j +"].District"));
+				addressesItem22.setTownship(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.Addresses["+ j +"].Township"));
 
-				addresses11.add(addressesItem20);
+				addresses13.add(addressesItem22);
 			}
-			cover.setAddresses11(addresses11);
+			cover.setAddresses13(addresses13);
 
-			List<FiguresItem21> figures12 = new ArrayList<FiguresItem21>();
+			List<FiguresItem23> figures14 = new ArrayList<FiguresItem23>();
 			for (int j = 0; j < _ctx.lengthValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures.Length"); j++) {
-				FiguresItem21 figuresItem21 = new FiguresItem21();
-				figuresItem21.setFigureId(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].FigureId"));
-				figuresItem21.setFigureConfidence(_ctx.floatValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].FigureConfidence"));
-				figuresItem21.setFigureClusterId(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].FigureClusterId"));
-				figuresItem21.setFigureClusterConfidence(_ctx.floatValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].FigureClusterConfidence"));
-				figuresItem21.setFigureType(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].FigureType"));
-				figuresItem21.setAge(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].Age"));
-				figuresItem21.setAgeSD(_ctx.floatValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].AgeSD"));
-				figuresItem21.setGender(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].Gender"));
-				figuresItem21.setGenderConfidence(_ctx.floatValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].GenderConfidence"));
-				figuresItem21.setEmotion(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].Emotion"));
-				figuresItem21.setEmotionConfidence(_ctx.floatValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].EmotionConfidence"));
-				figuresItem21.setFaceQuality(_ctx.floatValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].FaceQuality"));
-				figuresItem21.setMouth(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].Mouth"));
-				figuresItem21.setMouthConfidence(_ctx.floatValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].MouthConfidence"));
-				figuresItem21.setBeard(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].Beard"));
-				figuresItem21.setBeardConfidence(_ctx.floatValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].BeardConfidence"));
-				figuresItem21.setHat(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].Hat"));
-				figuresItem21.setHatConfidence(_ctx.floatValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].HatConfidence"));
-				figuresItem21.setMask(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].Mask"));
-				figuresItem21.setMaskConfidence(_ctx.floatValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].MaskConfidence"));
-				figuresItem21.setGlasses(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].Glasses"));
-				figuresItem21.setGlassesConfidence(_ctx.floatValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].GlassesConfidence"));
-				figuresItem21.setSharpness(_ctx.floatValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].Sharpness"));
-				figuresItem21.setAttractive(_ctx.floatValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].Attractive"));
+				FiguresItem23 figuresItem23 = new FiguresItem23();
+				figuresItem23.setFigureId(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].FigureId"));
+				figuresItem23.setFigureConfidence(_ctx.floatValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].FigureConfidence"));
+				figuresItem23.setFigureClusterId(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].FigureClusterId"));
+				figuresItem23.setFigureClusterConfidence(_ctx.floatValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].FigureClusterConfidence"));
+				figuresItem23.setFigureType(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].FigureType"));
+				figuresItem23.setAge(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].Age"));
+				figuresItem23.setAgeSD(_ctx.floatValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].AgeSD"));
+				figuresItem23.setGender(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].Gender"));
+				figuresItem23.setGenderConfidence(_ctx.floatValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].GenderConfidence"));
+				figuresItem23.setEmotion(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].Emotion"));
+				figuresItem23.setEmotionConfidence(_ctx.floatValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].EmotionConfidence"));
+				figuresItem23.setFaceQuality(_ctx.floatValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].FaceQuality"));
+				figuresItem23.setMouth(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].Mouth"));
+				figuresItem23.setMouthConfidence(_ctx.floatValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].MouthConfidence"));
+				figuresItem23.setBeard(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].Beard"));
+				figuresItem23.setBeardConfidence(_ctx.floatValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].BeardConfidence"));
+				figuresItem23.setHat(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].Hat"));
+				figuresItem23.setHatConfidence(_ctx.floatValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].HatConfidence"));
+				figuresItem23.setMask(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].Mask"));
+				figuresItem23.setMaskConfidence(_ctx.floatValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].MaskConfidence"));
+				figuresItem23.setGlasses(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].Glasses"));
+				figuresItem23.setGlassesConfidence(_ctx.floatValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].GlassesConfidence"));
+				figuresItem23.setSharpness(_ctx.floatValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].Sharpness"));
+				figuresItem23.setAttractive(_ctx.floatValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].Attractive"));
 
-				Boundary22 boundary22 = new Boundary22();
-				boundary22.setWidth(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].Boundary.Width"));
-				boundary22.setHeight(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].Boundary.Height"));
-				boundary22.setLeft(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].Boundary.Left"));
-				boundary22.setTop(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].Boundary.Top"));
-				figuresItem21.setBoundary22(boundary22);
+				Boundary24 boundary24 = new Boundary24();
+				boundary24.setWidth(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].Boundary.Width"));
+				boundary24.setHeight(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].Boundary.Height"));
+				boundary24.setLeft(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].Boundary.Left"));
+				boundary24.setTop(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].Boundary.Top"));
+				figuresItem23.setBoundary24(boundary24);
 
-				HeadPose23 headPose23 = new HeadPose23();
-				headPose23.setPitch(_ctx.floatValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].HeadPose.Pitch"));
-				headPose23.setRoll(_ctx.floatValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].HeadPose.Roll"));
-				headPose23.setYaw(_ctx.floatValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].HeadPose.Yaw"));
-				figuresItem21.setHeadPose23(headPose23);
+				HeadPose25 headPose25 = new HeadPose25();
+				headPose25.setPitch(_ctx.floatValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].HeadPose.Pitch"));
+				headPose25.setRoll(_ctx.floatValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].HeadPose.Roll"));
+				headPose25.setYaw(_ctx.floatValue("QueryStoriesResponse.Stories["+ i +"].Cover.Figures["+ j +"].HeadPose.Yaw"));
+				figuresItem23.setHeadPose25(headPose25);
 
-				figures12.add(figuresItem21);
+				figures14.add(figuresItem23);
 			}
-			cover.setFigures12(figures12);
+			cover.setFigures14(figures14);
 
-			List<LabelsItem24> labels13 = new ArrayList<LabelsItem24>();
+			List<LabelsItem26> labels15 = new ArrayList<LabelsItem26>();
 			for (int j = 0; j < _ctx.lengthValue("QueryStoriesResponse.Stories["+ i +"].Cover.Labels.Length"); j++) {
-				LabelsItem24 labelsItem24 = new LabelsItem24();
-				labelsItem24.setLanguage(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.Labels["+ j +"].Language"));
-				labelsItem24.setLabelName(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.Labels["+ j +"].LabelName"));
-				labelsItem24.setLabelLevel(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.Labels["+ j +"].LabelLevel"));
-				labelsItem24.setLabelConfidence(_ctx.floatValue("QueryStoriesResponse.Stories["+ i +"].Cover.Labels["+ j +"].LabelConfidence"));
-				labelsItem24.setParentLabelName(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.Labels["+ j +"].ParentLabelName"));
-				labelsItem24.setCentricScore(_ctx.floatValue("QueryStoriesResponse.Stories["+ i +"].Cover.Labels["+ j +"].CentricScore"));
+				LabelsItem26 labelsItem26 = new LabelsItem26();
+				labelsItem26.setLanguage(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.Labels["+ j +"].Language"));
+				labelsItem26.setLabelName(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.Labels["+ j +"].LabelName"));
+				labelsItem26.setLabelLevel(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.Labels["+ j +"].LabelLevel"));
+				labelsItem26.setLabelConfidence(_ctx.floatValue("QueryStoriesResponse.Stories["+ i +"].Cover.Labels["+ j +"].LabelConfidence"));
+				labelsItem26.setParentLabelName(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.Labels["+ j +"].ParentLabelName"));
+				labelsItem26.setCentricScore(_ctx.floatValue("QueryStoriesResponse.Stories["+ i +"].Cover.Labels["+ j +"].CentricScore"));
 
-				labels13.add(labelsItem24);
+				labels15.add(labelsItem26);
 			}
-			cover.setLabels13(labels13);
+			cover.setLabels15(labels15);
 
-			List<CroppingSuggestionsItem25> croppingSuggestions14 = new ArrayList<CroppingSuggestionsItem25>();
+			List<CroppingSuggestionsItem27> croppingSuggestions16 = new ArrayList<CroppingSuggestionsItem27>();
 			for (int j = 0; j < _ctx.lengthValue("QueryStoriesResponse.Stories["+ i +"].Cover.CroppingSuggestions.Length"); j++) {
-				CroppingSuggestionsItem25 croppingSuggestionsItem25 = new CroppingSuggestionsItem25();
-				croppingSuggestionsItem25.setAspectRatio(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.CroppingSuggestions["+ j +"].AspectRatio"));
-				croppingSuggestionsItem25.setConfidence(_ctx.floatValue("QueryStoriesResponse.Stories["+ i +"].Cover.CroppingSuggestions["+ j +"].Confidence"));
-
-				Boundary26 boundary26 = new Boundary26();
-				boundary26.setWidth(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.CroppingSuggestions["+ j +"].Boundary.Width"));
-				boundary26.setHeight(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.CroppingSuggestions["+ j +"].Boundary.Height"));
-				boundary26.setLeft(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.CroppingSuggestions["+ j +"].Boundary.Left"));
-				boundary26.setTop(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.CroppingSuggestions["+ j +"].Boundary.Top"));
-				croppingSuggestionsItem25.setBoundary26(boundary26);
-
-				croppingSuggestions14.add(croppingSuggestionsItem25);
-			}
-			cover.setCroppingSuggestions14(croppingSuggestions14);
-
-			List<OCRContentsItem27> oCRContents15 = new ArrayList<OCRContentsItem27>();
-			for (int j = 0; j < _ctx.lengthValue("QueryStoriesResponse.Stories["+ i +"].Cover.OCRContents.Length"); j++) {
-				OCRContentsItem27 oCRContentsItem27 = new OCRContentsItem27();
-				oCRContentsItem27.setLanguage(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.OCRContents["+ j +"].Language"));
-				oCRContentsItem27.setContents(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.OCRContents["+ j +"].Contents"));
-				oCRContentsItem27.setConfidence(_ctx.floatValue("QueryStoriesResponse.Stories["+ i +"].Cover.OCRContents["+ j +"].Confidence"));
+				CroppingSuggestionsItem27 croppingSuggestionsItem27 = new CroppingSuggestionsItem27();
+				croppingSuggestionsItem27.setAspectRatio(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.CroppingSuggestions["+ j +"].AspectRatio"));
+				croppingSuggestionsItem27.setConfidence(_ctx.floatValue("QueryStoriesResponse.Stories["+ i +"].Cover.CroppingSuggestions["+ j +"].Confidence"));
 
 				Boundary28 boundary28 = new Boundary28();
-				boundary28.setWidth(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.OCRContents["+ j +"].Boundary.Width"));
-				boundary28.setHeight(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.OCRContents["+ j +"].Boundary.Height"));
-				boundary28.setLeft(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.OCRContents["+ j +"].Boundary.Left"));
-				boundary28.setTop(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.OCRContents["+ j +"].Boundary.Top"));
-				oCRContentsItem27.setBoundary28(boundary28);
+				boundary28.setWidth(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.CroppingSuggestions["+ j +"].Boundary.Width"));
+				boundary28.setHeight(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.CroppingSuggestions["+ j +"].Boundary.Height"));
+				boundary28.setLeft(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.CroppingSuggestions["+ j +"].Boundary.Left"));
+				boundary28.setTop(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.CroppingSuggestions["+ j +"].Boundary.Top"));
+				croppingSuggestionsItem27.setBoundary28(boundary28);
 
-				oCRContents15.add(oCRContentsItem27);
+				croppingSuggestions16.add(croppingSuggestionsItem27);
 			}
-			cover.setOCRContents15(oCRContents15);
+			cover.setCroppingSuggestions16(croppingSuggestions16);
 
-			List<VideoStreamsItem29> videoStreams16 = new ArrayList<VideoStreamsItem29>();
+			List<OCRContentsItem29> oCRContents17 = new ArrayList<OCRContentsItem29>();
+			for (int j = 0; j < _ctx.lengthValue("QueryStoriesResponse.Stories["+ i +"].Cover.OCRContents.Length"); j++) {
+				OCRContentsItem29 oCRContentsItem29 = new OCRContentsItem29();
+				oCRContentsItem29.setLanguage(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.OCRContents["+ j +"].Language"));
+				oCRContentsItem29.setContents(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.OCRContents["+ j +"].Contents"));
+				oCRContentsItem29.setConfidence(_ctx.floatValue("QueryStoriesResponse.Stories["+ i +"].Cover.OCRContents["+ j +"].Confidence"));
+
+				Boundary30 boundary30 = new Boundary30();
+				boundary30.setWidth(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.OCRContents["+ j +"].Boundary.Width"));
+				boundary30.setHeight(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.OCRContents["+ j +"].Boundary.Height"));
+				boundary30.setLeft(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.OCRContents["+ j +"].Boundary.Left"));
+				boundary30.setTop(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.OCRContents["+ j +"].Boundary.Top"));
+				oCRContentsItem29.setBoundary30(boundary30);
+
+				oCRContents17.add(oCRContentsItem29);
+			}
+			cover.setOCRContents17(oCRContents17);
+
+			List<VideoStreamsItem31> videoStreams18 = new ArrayList<VideoStreamsItem31>();
 			for (int j = 0; j < _ctx.lengthValue("QueryStoriesResponse.Stories["+ i +"].Cover.VideoStreams.Length"); j++) {
-				VideoStreamsItem29 videoStreamsItem29 = new VideoStreamsItem29();
-				videoStreamsItem29.setIndex(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.VideoStreams["+ j +"].Index"));
-				videoStreamsItem29.setLanguage(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.VideoStreams["+ j +"].Language"));
-				videoStreamsItem29.setCodecName(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.VideoStreams["+ j +"].CodecName"));
-				videoStreamsItem29.setCodecLongName(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.VideoStreams["+ j +"].CodecLongName"));
-				videoStreamsItem29.setProfile(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.VideoStreams["+ j +"].Profile"));
-				videoStreamsItem29.setCodecTimeBase(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.VideoStreams["+ j +"].CodecTimeBase"));
-				videoStreamsItem29.setCodecTagString(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.VideoStreams["+ j +"].CodecTagString"));
-				videoStreamsItem29.setCodecTag(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.VideoStreams["+ j +"].CodecTag"));
-				videoStreamsItem29.setWidth(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.VideoStreams["+ j +"].Width"));
-				videoStreamsItem29.setHeight(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.VideoStreams["+ j +"].Height"));
-				videoStreamsItem29.setHasBFrames(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.VideoStreams["+ j +"].HasBFrames"));
-				videoStreamsItem29.setSampleAspectRatio(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.VideoStreams["+ j +"].SampleAspectRatio"));
-				videoStreamsItem29.setDisplayAspectRatio(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.VideoStreams["+ j +"].DisplayAspectRatio"));
-				videoStreamsItem29.setPixelFormat(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.VideoStreams["+ j +"].PixelFormat"));
-				videoStreamsItem29.setLevel(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.VideoStreams["+ j +"].Level"));
-				videoStreamsItem29.setFrameRate(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.VideoStreams["+ j +"].FrameRate"));
-				videoStreamsItem29.setAverageFrameRate(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.VideoStreams["+ j +"].AverageFrameRate"));
-				videoStreamsItem29.setTimeBase(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.VideoStreams["+ j +"].TimeBase"));
-				videoStreamsItem29.setStartTime(_ctx.doubleValue("QueryStoriesResponse.Stories["+ i +"].Cover.VideoStreams["+ j +"].StartTime"));
-				videoStreamsItem29.setDuration(_ctx.doubleValue("QueryStoriesResponse.Stories["+ i +"].Cover.VideoStreams["+ j +"].Duration"));
-				videoStreamsItem29.setBitrate(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.VideoStreams["+ j +"].Bitrate"));
-				videoStreamsItem29.setFrameCount(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.VideoStreams["+ j +"].FrameCount"));
-				videoStreamsItem29.setRotate(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.VideoStreams["+ j +"].Rotate"));
-				videoStreamsItem29.setBitDepth(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.VideoStreams["+ j +"].BitDepth"));
-				videoStreamsItem29.setColorSpace(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.VideoStreams["+ j +"].ColorSpace"));
-				videoStreamsItem29.setColorRange(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.VideoStreams["+ j +"].ColorRange"));
-				videoStreamsItem29.setColorTransfer(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.VideoStreams["+ j +"].ColorTransfer"));
-				videoStreamsItem29.setColorPrimaries(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.VideoStreams["+ j +"].ColorPrimaries"));
+				VideoStreamsItem31 videoStreamsItem31 = new VideoStreamsItem31();
+				videoStreamsItem31.setIndex(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.VideoStreams["+ j +"].Index"));
+				videoStreamsItem31.setLanguage(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.VideoStreams["+ j +"].Language"));
+				videoStreamsItem31.setCodecName(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.VideoStreams["+ j +"].CodecName"));
+				videoStreamsItem31.setCodecLongName(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.VideoStreams["+ j +"].CodecLongName"));
+				videoStreamsItem31.setProfile(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.VideoStreams["+ j +"].Profile"));
+				videoStreamsItem31.setCodecTimeBase(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.VideoStreams["+ j +"].CodecTimeBase"));
+				videoStreamsItem31.setCodecTagString(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.VideoStreams["+ j +"].CodecTagString"));
+				videoStreamsItem31.setCodecTag(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.VideoStreams["+ j +"].CodecTag"));
+				videoStreamsItem31.setWidth(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.VideoStreams["+ j +"].Width"));
+				videoStreamsItem31.setHeight(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.VideoStreams["+ j +"].Height"));
+				videoStreamsItem31.setHasBFrames(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.VideoStreams["+ j +"].HasBFrames"));
+				videoStreamsItem31.setSampleAspectRatio(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.VideoStreams["+ j +"].SampleAspectRatio"));
+				videoStreamsItem31.setDisplayAspectRatio(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.VideoStreams["+ j +"].DisplayAspectRatio"));
+				videoStreamsItem31.setPixelFormat(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.VideoStreams["+ j +"].PixelFormat"));
+				videoStreamsItem31.setLevel(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.VideoStreams["+ j +"].Level"));
+				videoStreamsItem31.setFrameRate(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.VideoStreams["+ j +"].FrameRate"));
+				videoStreamsItem31.setAverageFrameRate(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.VideoStreams["+ j +"].AverageFrameRate"));
+				videoStreamsItem31.setTimeBase(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.VideoStreams["+ j +"].TimeBase"));
+				videoStreamsItem31.setStartTime(_ctx.doubleValue("QueryStoriesResponse.Stories["+ i +"].Cover.VideoStreams["+ j +"].StartTime"));
+				videoStreamsItem31.setDuration(_ctx.doubleValue("QueryStoriesResponse.Stories["+ i +"].Cover.VideoStreams["+ j +"].Duration"));
+				videoStreamsItem31.setBitrate(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.VideoStreams["+ j +"].Bitrate"));
+				videoStreamsItem31.setFrameCount(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.VideoStreams["+ j +"].FrameCount"));
+				videoStreamsItem31.setRotate(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.VideoStreams["+ j +"].Rotate"));
+				videoStreamsItem31.setBitDepth(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.VideoStreams["+ j +"].BitDepth"));
+				videoStreamsItem31.setColorSpace(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.VideoStreams["+ j +"].ColorSpace"));
+				videoStreamsItem31.setColorRange(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.VideoStreams["+ j +"].ColorRange"));
+				videoStreamsItem31.setColorTransfer(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.VideoStreams["+ j +"].ColorTransfer"));
+				videoStreamsItem31.setColorPrimaries(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.VideoStreams["+ j +"].ColorPrimaries"));
 
-				videoStreams16.add(videoStreamsItem29);
+				videoStreams18.add(videoStreamsItem31);
 			}
-			cover.setVideoStreams16(videoStreams16);
+			cover.setVideoStreams18(videoStreams18);
 
-			List<SubtitlesItem30> subtitles17 = new ArrayList<SubtitlesItem30>();
+			List<SubtitlesItem32> subtitles19 = new ArrayList<SubtitlesItem32>();
 			for (int j = 0; j < _ctx.lengthValue("QueryStoriesResponse.Stories["+ i +"].Cover.Subtitles.Length"); j++) {
-				SubtitlesItem30 subtitlesItem30 = new SubtitlesItem30();
-				subtitlesItem30.setIndex(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.Subtitles["+ j +"].Index"));
-				subtitlesItem30.setLanguage(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.Subtitles["+ j +"].Language"));
-				subtitlesItem30.setCodecName(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.Subtitles["+ j +"].CodecName"));
-				subtitlesItem30.setCodecLongName(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.Subtitles["+ j +"].CodecLongName"));
-				subtitlesItem30.setCodecTagString(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.Subtitles["+ j +"].CodecTagString"));
-				subtitlesItem30.setCodecTag(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.Subtitles["+ j +"].CodecTag"));
-				subtitlesItem30.setStartTime(_ctx.doubleValue("QueryStoriesResponse.Stories["+ i +"].Cover.Subtitles["+ j +"].StartTime"));
-				subtitlesItem30.setDuration(_ctx.doubleValue("QueryStoriesResponse.Stories["+ i +"].Cover.Subtitles["+ j +"].Duration"));
-				subtitlesItem30.setBitrate(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.Subtitles["+ j +"].Bitrate"));
-				subtitlesItem30.setContent(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.Subtitles["+ j +"].Content"));
-				subtitlesItem30.setWidth(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.Subtitles["+ j +"].Width"));
-				subtitlesItem30.setHeight(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.Subtitles["+ j +"].Height"));
+				SubtitlesItem32 subtitlesItem32 = new SubtitlesItem32();
+				subtitlesItem32.setIndex(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.Subtitles["+ j +"].Index"));
+				subtitlesItem32.setLanguage(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.Subtitles["+ j +"].Language"));
+				subtitlesItem32.setCodecName(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.Subtitles["+ j +"].CodecName"));
+				subtitlesItem32.setCodecLongName(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.Subtitles["+ j +"].CodecLongName"));
+				subtitlesItem32.setCodecTagString(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.Subtitles["+ j +"].CodecTagString"));
+				subtitlesItem32.setCodecTag(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.Subtitles["+ j +"].CodecTag"));
+				subtitlesItem32.setStartTime(_ctx.doubleValue("QueryStoriesResponse.Stories["+ i +"].Cover.Subtitles["+ j +"].StartTime"));
+				subtitlesItem32.setDuration(_ctx.doubleValue("QueryStoriesResponse.Stories["+ i +"].Cover.Subtitles["+ j +"].Duration"));
+				subtitlesItem32.setBitrate(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.Subtitles["+ j +"].Bitrate"));
+				subtitlesItem32.setContent(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.Subtitles["+ j +"].Content"));
+				subtitlesItem32.setWidth(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.Subtitles["+ j +"].Width"));
+				subtitlesItem32.setHeight(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.Subtitles["+ j +"].Height"));
 
-				subtitles17.add(subtitlesItem30);
+				subtitles19.add(subtitlesItem32);
 			}
-			cover.setSubtitles17(subtitles17);
+			cover.setSubtitles19(subtitles19);
 
-			List<AudioStreamsItem31> audioStreams18 = new ArrayList<AudioStreamsItem31>();
+			List<AudioStreamsItem33> audioStreams20 = new ArrayList<AudioStreamsItem33>();
 			for (int j = 0; j < _ctx.lengthValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioStreams.Length"); j++) {
-				AudioStreamsItem31 audioStreamsItem31 = new AudioStreamsItem31();
-				audioStreamsItem31.setIndex(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioStreams["+ j +"].Index"));
-				audioStreamsItem31.setLanguage(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioStreams["+ j +"].Language"));
-				audioStreamsItem31.setCodecName(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioStreams["+ j +"].CodecName"));
-				audioStreamsItem31.setCodecLongName(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioStreams["+ j +"].CodecLongName"));
-				audioStreamsItem31.setCodecTimeBase(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioStreams["+ j +"].CodecTimeBase"));
-				audioStreamsItem31.setCodecTagString(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioStreams["+ j +"].CodecTagString"));
-				audioStreamsItem31.setCodecTag(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioStreams["+ j +"].CodecTag"));
-				audioStreamsItem31.setTimeBase(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioStreams["+ j +"].TimeBase"));
-				audioStreamsItem31.setStartTime(_ctx.doubleValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioStreams["+ j +"].StartTime"));
-				audioStreamsItem31.setDuration(_ctx.doubleValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioStreams["+ j +"].Duration"));
-				audioStreamsItem31.setBitrate(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioStreams["+ j +"].Bitrate"));
-				audioStreamsItem31.setFrameCount(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioStreams["+ j +"].FrameCount"));
-				audioStreamsItem31.setLyric(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioStreams["+ j +"].Lyric"));
-				audioStreamsItem31.setSampleFormat(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioStreams["+ j +"].SampleFormat"));
-				audioStreamsItem31.setSampleRate(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioStreams["+ j +"].SampleRate"));
-				audioStreamsItem31.setChannels(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioStreams["+ j +"].Channels"));
-				audioStreamsItem31.setChannelLayout(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioStreams["+ j +"].ChannelLayout"));
+				AudioStreamsItem33 audioStreamsItem33 = new AudioStreamsItem33();
+				audioStreamsItem33.setIndex(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioStreams["+ j +"].Index"));
+				audioStreamsItem33.setLanguage(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioStreams["+ j +"].Language"));
+				audioStreamsItem33.setCodecName(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioStreams["+ j +"].CodecName"));
+				audioStreamsItem33.setCodecLongName(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioStreams["+ j +"].CodecLongName"));
+				audioStreamsItem33.setCodecTimeBase(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioStreams["+ j +"].CodecTimeBase"));
+				audioStreamsItem33.setCodecTagString(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioStreams["+ j +"].CodecTagString"));
+				audioStreamsItem33.setCodecTag(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioStreams["+ j +"].CodecTag"));
+				audioStreamsItem33.setTimeBase(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioStreams["+ j +"].TimeBase"));
+				audioStreamsItem33.setStartTime(_ctx.doubleValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioStreams["+ j +"].StartTime"));
+				audioStreamsItem33.setDuration(_ctx.doubleValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioStreams["+ j +"].Duration"));
+				audioStreamsItem33.setBitrate(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioStreams["+ j +"].Bitrate"));
+				audioStreamsItem33.setFrameCount(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioStreams["+ j +"].FrameCount"));
+				audioStreamsItem33.setLyric(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioStreams["+ j +"].Lyric"));
+				audioStreamsItem33.setSampleFormat(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioStreams["+ j +"].SampleFormat"));
+				audioStreamsItem33.setSampleRate(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioStreams["+ j +"].SampleRate"));
+				audioStreamsItem33.setChannels(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioStreams["+ j +"].Channels"));
+				audioStreamsItem33.setChannelLayout(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioStreams["+ j +"].ChannelLayout"));
 
-				audioStreams18.add(audioStreamsItem31);
+				audioStreams20.add(audioStreamsItem33);
 			}
-			cover.setAudioStreams18(audioStreams18);
+			cover.setAudioStreams20(audioStreams20);
 
-			List<AudioCoversItem32> audioCovers19 = new ArrayList<AudioCoversItem32>();
+			List<AudioCoversItem34> audioCovers21 = new ArrayList<AudioCoversItem34>();
 			for (int j = 0; j < _ctx.lengthValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioCovers.Length"); j++) {
-				AudioCoversItem32 audioCoversItem32 = new AudioCoversItem32();
-				audioCoversItem32.setImageWidth(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioCovers["+ j +"].ImageWidth"));
-				audioCoversItem32.setImageHeight(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioCovers["+ j +"].ImageHeight"));
-				audioCoversItem32.setEXIF(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioCovers["+ j +"].EXIF"));
+				AudioCoversItem34 audioCoversItem34 = new AudioCoversItem34();
+				audioCoversItem34.setImageWidth(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioCovers["+ j +"].ImageWidth"));
+				audioCoversItem34.setImageHeight(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioCovers["+ j +"].ImageHeight"));
+				audioCoversItem34.setEXIF(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioCovers["+ j +"].EXIF"));
 
-				ImageScore33 imageScore33 = new ImageScore33();
-				imageScore33.setOverallQualityScore(_ctx.floatValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioCovers["+ j +"].ImageScore.OverallQualityScore"));
-				audioCoversItem32.setImageScore33(imageScore33);
+				ImageScore35 imageScore35 = new ImageScore35();
+				imageScore35.setOverallQualityScore(_ctx.floatValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioCovers["+ j +"].ImageScore.OverallQualityScore"));
+				audioCoversItem34.setImageScore35(imageScore35);
 
-				List<CroppingSuggestionsItem36> croppingSuggestions34 = new ArrayList<CroppingSuggestionsItem36>();
+				List<CroppingSuggestionsItem38> croppingSuggestions36 = new ArrayList<CroppingSuggestionsItem38>();
 				for (int k = 0; k < _ctx.lengthValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioCovers["+ j +"].CroppingSuggestions.Length"); k++) {
-					CroppingSuggestionsItem36 croppingSuggestionsItem36 = new CroppingSuggestionsItem36();
-					croppingSuggestionsItem36.setAspectRatio(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioCovers["+ j +"].CroppingSuggestions["+ k +"].AspectRatio"));
-					croppingSuggestionsItem36.setConfidence(_ctx.floatValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioCovers["+ j +"].CroppingSuggestions["+ k +"].Confidence"));
-
-					Boundary37 boundary37 = new Boundary37();
-					boundary37.setWidth(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioCovers["+ j +"].CroppingSuggestions["+ k +"].Boundary.Width"));
-					boundary37.setHeight(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioCovers["+ j +"].CroppingSuggestions["+ k +"].Boundary.Height"));
-					boundary37.setLeft(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioCovers["+ j +"].CroppingSuggestions["+ k +"].Boundary.Left"));
-					boundary37.setTop(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioCovers["+ j +"].CroppingSuggestions["+ k +"].Boundary.Top"));
-					croppingSuggestionsItem36.setBoundary37(boundary37);
-
-					croppingSuggestions34.add(croppingSuggestionsItem36);
-				}
-				audioCoversItem32.setCroppingSuggestions34(croppingSuggestions34);
-
-				List<OCRContentsItem38> oCRContents35 = new ArrayList<OCRContentsItem38>();
-				for (int k = 0; k < _ctx.lengthValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioCovers["+ j +"].OCRContents.Length"); k++) {
-					OCRContentsItem38 oCRContentsItem38 = new OCRContentsItem38();
-					oCRContentsItem38.setLanguage(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioCovers["+ j +"].OCRContents["+ k +"].Language"));
-					oCRContentsItem38.setContents(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioCovers["+ j +"].OCRContents["+ k +"].Contents"));
-					oCRContentsItem38.setConfidence(_ctx.floatValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioCovers["+ j +"].OCRContents["+ k +"].Confidence"));
+					CroppingSuggestionsItem38 croppingSuggestionsItem38 = new CroppingSuggestionsItem38();
+					croppingSuggestionsItem38.setAspectRatio(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioCovers["+ j +"].CroppingSuggestions["+ k +"].AspectRatio"));
+					croppingSuggestionsItem38.setConfidence(_ctx.floatValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioCovers["+ j +"].CroppingSuggestions["+ k +"].Confidence"));
 
 					Boundary39 boundary39 = new Boundary39();
-					boundary39.setWidth(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioCovers["+ j +"].OCRContents["+ k +"].Boundary.Width"));
-					boundary39.setHeight(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioCovers["+ j +"].OCRContents["+ k +"].Boundary.Height"));
-					boundary39.setLeft(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioCovers["+ j +"].OCRContents["+ k +"].Boundary.Left"));
-					boundary39.setTop(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioCovers["+ j +"].OCRContents["+ k +"].Boundary.Top"));
-					oCRContentsItem38.setBoundary39(boundary39);
+					boundary39.setWidth(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioCovers["+ j +"].CroppingSuggestions["+ k +"].Boundary.Width"));
+					boundary39.setHeight(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioCovers["+ j +"].CroppingSuggestions["+ k +"].Boundary.Height"));
+					boundary39.setLeft(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioCovers["+ j +"].CroppingSuggestions["+ k +"].Boundary.Left"));
+					boundary39.setTop(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioCovers["+ j +"].CroppingSuggestions["+ k +"].Boundary.Top"));
+					croppingSuggestionsItem38.setBoundary39(boundary39);
 
-					oCRContents35.add(oCRContentsItem38);
+					croppingSuggestions36.add(croppingSuggestionsItem38);
 				}
-				audioCoversItem32.setOCRContents35(oCRContents35);
+				audioCoversItem34.setCroppingSuggestions36(croppingSuggestions36);
 
-				audioCovers19.add(audioCoversItem32);
+				List<OCRContentsItem40> oCRContents37 = new ArrayList<OCRContentsItem40>();
+				for (int k = 0; k < _ctx.lengthValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioCovers["+ j +"].OCRContents.Length"); k++) {
+					OCRContentsItem40 oCRContentsItem40 = new OCRContentsItem40();
+					oCRContentsItem40.setLanguage(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioCovers["+ j +"].OCRContents["+ k +"].Language"));
+					oCRContentsItem40.setContents(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioCovers["+ j +"].OCRContents["+ k +"].Contents"));
+					oCRContentsItem40.setConfidence(_ctx.floatValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioCovers["+ j +"].OCRContents["+ k +"].Confidence"));
+
+					Boundary41 boundary41 = new Boundary41();
+					boundary41.setWidth(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioCovers["+ j +"].OCRContents["+ k +"].Boundary.Width"));
+					boundary41.setHeight(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioCovers["+ j +"].OCRContents["+ k +"].Boundary.Height"));
+					boundary41.setLeft(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioCovers["+ j +"].OCRContents["+ k +"].Boundary.Left"));
+					boundary41.setTop(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Cover.AudioCovers["+ j +"].OCRContents["+ k +"].Boundary.Top"));
+					oCRContentsItem40.setBoundary41(boundary41);
+
+					oCRContents37.add(oCRContentsItem40);
+				}
+				audioCoversItem34.setOCRContents37(oCRContents37);
+
+				audioCovers21.add(audioCoversItem34);
 			}
-			cover.setAudioCovers19(audioCovers19);
+			cover.setAudioCovers21(audioCovers21);
 			storiesItem.setCover(cover);
 
 			List<FilesItem> files = new ArrayList<FilesItem>();
@@ -487,7 +488,7 @@ public class QueryStoriesResponseUnmarshaller {
 				imageScore.setOverallQualityScore(_ctx.floatValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].ImageScore.OverallQualityScore"));
 				filesItem.setImageScore(imageScore);
 
-				List<AddressesItem> addresses = new ArrayList<AddressesItem>();
+				List<AddressesItem> addresses1 = new ArrayList<AddressesItem>();
 				for (int k = 0; k < _ctx.lengthValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].Addresses.Length"); k++) {
 					AddressesItem addressesItem = new AddressesItem();
 					addressesItem.setLanguage(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].Addresses["+ k +"].Language"));
@@ -498,9 +499,9 @@ public class QueryStoriesResponseUnmarshaller {
 					addressesItem.setDistrict(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].Addresses["+ k +"].District"));
 					addressesItem.setTownship(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].Addresses["+ k +"].Township"));
 
-					addresses.add(addressesItem);
+					addresses1.add(addressesItem);
 				}
-				filesItem.setAddresses(addresses);
+				filesItem.setAddresses1(addresses1);
 
 				List<FiguresItem> figures = new ArrayList<FiguresItem>();
 				for (int k = 0; k < _ctx.lengthValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].Figures.Length"); k++) {
@@ -567,12 +568,12 @@ public class QueryStoriesResponseUnmarshaller {
 					croppingSuggestionsItem.setAspectRatio(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].CroppingSuggestions["+ k +"].AspectRatio"));
 					croppingSuggestionsItem.setConfidence(_ctx.floatValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].CroppingSuggestions["+ k +"].Confidence"));
 
-					Boundary1 boundary1 = new Boundary1();
-					boundary1.setWidth(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].CroppingSuggestions["+ k +"].Boundary.Width"));
-					boundary1.setHeight(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].CroppingSuggestions["+ k +"].Boundary.Height"));
-					boundary1.setLeft(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].CroppingSuggestions["+ k +"].Boundary.Left"));
-					boundary1.setTop(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].CroppingSuggestions["+ k +"].Boundary.Top"));
-					croppingSuggestionsItem.setBoundary1(boundary1);
+					Boundary2 boundary2 = new Boundary2();
+					boundary2.setWidth(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].CroppingSuggestions["+ k +"].Boundary.Width"));
+					boundary2.setHeight(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].CroppingSuggestions["+ k +"].Boundary.Height"));
+					boundary2.setLeft(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].CroppingSuggestions["+ k +"].Boundary.Left"));
+					boundary2.setTop(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].CroppingSuggestions["+ k +"].Boundary.Top"));
+					croppingSuggestionsItem.setBoundary2(boundary2);
 
 					croppingSuggestions.add(croppingSuggestionsItem);
 				}
@@ -585,12 +586,12 @@ public class QueryStoriesResponseUnmarshaller {
 					oCRContentsItem.setContents(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].OCRContents["+ k +"].Contents"));
 					oCRContentsItem.setConfidence(_ctx.floatValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].OCRContents["+ k +"].Confidence"));
 
-					Boundary2 boundary2 = new Boundary2();
-					boundary2.setWidth(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].OCRContents["+ k +"].Boundary.Width"));
-					boundary2.setHeight(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].OCRContents["+ k +"].Boundary.Height"));
-					boundary2.setLeft(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].OCRContents["+ k +"].Boundary.Left"));
-					boundary2.setTop(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].OCRContents["+ k +"].Boundary.Top"));
-					oCRContentsItem.setBoundary2(boundary2);
+					Boundary3 boundary3 = new Boundary3();
+					boundary3.setWidth(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].OCRContents["+ k +"].Boundary.Width"));
+					boundary3.setHeight(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].OCRContents["+ k +"].Boundary.Height"));
+					boundary3.setLeft(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].OCRContents["+ k +"].Boundary.Left"));
+					boundary3.setTop(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].OCRContents["+ k +"].Boundary.Top"));
+					oCRContentsItem.setBoundary3(boundary3);
 
 					oCRContents.add(oCRContentsItem);
 				}
@@ -684,44 +685,44 @@ public class QueryStoriesResponseUnmarshaller {
 					audioCoversItem.setImageHeight(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].AudioCovers["+ k +"].ImageHeight"));
 					audioCoversItem.setEXIF(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].AudioCovers["+ k +"].EXIF"));
 
-					ImageScore3 imageScore3 = new ImageScore3();
-					imageScore3.setOverallQualityScore(_ctx.floatValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].AudioCovers["+ k +"].ImageScore.OverallQualityScore"));
-					audioCoversItem.setImageScore3(imageScore3);
+					ImageScore4 imageScore4 = new ImageScore4();
+					imageScore4.setOverallQualityScore(_ctx.floatValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].AudioCovers["+ k +"].ImageScore.OverallQualityScore"));
+					audioCoversItem.setImageScore4(imageScore4);
 
-					List<CroppingSuggestionsItem6> croppingSuggestions4 = new ArrayList<CroppingSuggestionsItem6>();
+					List<CroppingSuggestionsItem7> croppingSuggestions5 = new ArrayList<CroppingSuggestionsItem7>();
 					for (int l = 0; l < _ctx.lengthValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].AudioCovers["+ k +"].CroppingSuggestions.Length"); l++) {
-						CroppingSuggestionsItem6 croppingSuggestionsItem6 = new CroppingSuggestionsItem6();
-						croppingSuggestionsItem6.setAspectRatio(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].AudioCovers["+ k +"].CroppingSuggestions["+ l +"].AspectRatio"));
-						croppingSuggestionsItem6.setConfidence(_ctx.floatValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].AudioCovers["+ k +"].CroppingSuggestions["+ l +"].Confidence"));
+						CroppingSuggestionsItem7 croppingSuggestionsItem7 = new CroppingSuggestionsItem7();
+						croppingSuggestionsItem7.setAspectRatio(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].AudioCovers["+ k +"].CroppingSuggestions["+ l +"].AspectRatio"));
+						croppingSuggestionsItem7.setConfidence(_ctx.floatValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].AudioCovers["+ k +"].CroppingSuggestions["+ l +"].Confidence"));
 
-						Boundary7 boundary7 = new Boundary7();
-						boundary7.setWidth(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].AudioCovers["+ k +"].CroppingSuggestions["+ l +"].Boundary.Width"));
-						boundary7.setHeight(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].AudioCovers["+ k +"].CroppingSuggestions["+ l +"].Boundary.Height"));
-						boundary7.setLeft(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].AudioCovers["+ k +"].CroppingSuggestions["+ l +"].Boundary.Left"));
-						boundary7.setTop(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].AudioCovers["+ k +"].CroppingSuggestions["+ l +"].Boundary.Top"));
-						croppingSuggestionsItem6.setBoundary7(boundary7);
+						Boundary8 boundary8 = new Boundary8();
+						boundary8.setWidth(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].AudioCovers["+ k +"].CroppingSuggestions["+ l +"].Boundary.Width"));
+						boundary8.setHeight(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].AudioCovers["+ k +"].CroppingSuggestions["+ l +"].Boundary.Height"));
+						boundary8.setLeft(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].AudioCovers["+ k +"].CroppingSuggestions["+ l +"].Boundary.Left"));
+						boundary8.setTop(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].AudioCovers["+ k +"].CroppingSuggestions["+ l +"].Boundary.Top"));
+						croppingSuggestionsItem7.setBoundary8(boundary8);
 
-						croppingSuggestions4.add(croppingSuggestionsItem6);
+						croppingSuggestions5.add(croppingSuggestionsItem7);
 					}
-					audioCoversItem.setCroppingSuggestions4(croppingSuggestions4);
+					audioCoversItem.setCroppingSuggestions5(croppingSuggestions5);
 
-					List<OCRContentsItem8> oCRContents5 = new ArrayList<OCRContentsItem8>();
+					List<OCRContentsItem9> oCRContents6 = new ArrayList<OCRContentsItem9>();
 					for (int l = 0; l < _ctx.lengthValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].AudioCovers["+ k +"].OCRContents.Length"); l++) {
-						OCRContentsItem8 oCRContentsItem8 = new OCRContentsItem8();
-						oCRContentsItem8.setLanguage(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].AudioCovers["+ k +"].OCRContents["+ l +"].Language"));
-						oCRContentsItem8.setContents(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].AudioCovers["+ k +"].OCRContents["+ l +"].Contents"));
-						oCRContentsItem8.setConfidence(_ctx.floatValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].AudioCovers["+ k +"].OCRContents["+ l +"].Confidence"));
+						OCRContentsItem9 oCRContentsItem9 = new OCRContentsItem9();
+						oCRContentsItem9.setLanguage(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].AudioCovers["+ k +"].OCRContents["+ l +"].Language"));
+						oCRContentsItem9.setContents(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].AudioCovers["+ k +"].OCRContents["+ l +"].Contents"));
+						oCRContentsItem9.setConfidence(_ctx.floatValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].AudioCovers["+ k +"].OCRContents["+ l +"].Confidence"));
 
-						Boundary9 boundary9 = new Boundary9();
-						boundary9.setWidth(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].AudioCovers["+ k +"].OCRContents["+ l +"].Boundary.Width"));
-						boundary9.setHeight(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].AudioCovers["+ k +"].OCRContents["+ l +"].Boundary.Height"));
-						boundary9.setLeft(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].AudioCovers["+ k +"].OCRContents["+ l +"].Boundary.Left"));
-						boundary9.setTop(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].AudioCovers["+ k +"].OCRContents["+ l +"].Boundary.Top"));
-						oCRContentsItem8.setBoundary9(boundary9);
+						Boundary10 boundary10 = new Boundary10();
+						boundary10.setWidth(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].AudioCovers["+ k +"].OCRContents["+ l +"].Boundary.Width"));
+						boundary10.setHeight(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].AudioCovers["+ k +"].OCRContents["+ l +"].Boundary.Height"));
+						boundary10.setLeft(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].AudioCovers["+ k +"].OCRContents["+ l +"].Boundary.Left"));
+						boundary10.setTop(_ctx.longValue("QueryStoriesResponse.Stories["+ i +"].Files["+ j +"].AudioCovers["+ k +"].OCRContents["+ l +"].Boundary.Top"));
+						oCRContentsItem9.setBoundary10(boundary10);
 
-						oCRContents5.add(oCRContentsItem8);
+						oCRContents6.add(oCRContentsItem9);
 					}
-					audioCoversItem.setOCRContents5(oCRContents5);
+					audioCoversItem.setOCRContents6(oCRContents6);
 
 					audioCovers.add(audioCoversItem);
 				}
@@ -730,6 +731,21 @@ public class QueryStoriesResponseUnmarshaller {
 				files.add(filesItem);
 			}
 			storiesItem.setFiles(files);
+
+			List<AddressesItem11> addresses = new ArrayList<AddressesItem11>();
+			for (int j = 0; j < _ctx.lengthValue("QueryStoriesResponse.Stories["+ i +"].Addresses.Length"); j++) {
+				AddressesItem11 addressesItem11 = new AddressesItem11();
+				addressesItem11.setLanguage(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Addresses["+ j +"].Language"));
+				addressesItem11.setAddressLine(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Addresses["+ j +"].AddressLine"));
+				addressesItem11.setCountry(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Addresses["+ j +"].Country"));
+				addressesItem11.setProvince(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Addresses["+ j +"].Province"));
+				addressesItem11.setCity(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Addresses["+ j +"].City"));
+				addressesItem11.setDistrict(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Addresses["+ j +"].District"));
+				addressesItem11.setTownship(_ctx.stringValue("QueryStoriesResponse.Stories["+ i +"].Addresses["+ j +"].Township"));
+
+				addresses.add(addressesItem11);
+			}
+			storiesItem.setAddresses(addresses);
 
 			stories.add(storiesItem);
 		}
