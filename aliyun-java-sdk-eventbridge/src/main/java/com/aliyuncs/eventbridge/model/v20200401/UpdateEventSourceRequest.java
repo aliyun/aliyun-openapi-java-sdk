@@ -225,26 +225,65 @@ public class UpdateEventSourceRequest extends RpcAcsRequest<UpdateEventSourceRes
 
 	public static class SourceRocketMQParameters {
 
+		@SerializedName("InstanceNetwork")
+		private String instanceNetwork;
+
+		@SerializedName("InstanceVSwitchIds")
+		private String instanceVSwitchIds;
+
+		@SerializedName("InstanceSecurityGroupId")
+		private String instanceSecurityGroupId;
+
 		@SerializedName("InstanceId")
 		private String instanceId;
 
 		@SerializedName("Offset")
 		private String offset;
 
+		@SerializedName("InstanceVpcId")
+		private String instanceVpcId;
+
 		@SerializedName("RegionId")
 		private String regionId;
 
-		@SerializedName("GroupId")
-		private String groupId;
+		@SerializedName("GroupID")
+		private String groupID;
 
 		@SerializedName("Topic")
 		private String topic;
+
+		@SerializedName("InstanceType")
+		private String instanceType;
 
 		@SerializedName("Tag")
 		private String tag;
 
 		@SerializedName("Timestamp")
 		private Float timestamp;
+
+		public String getInstanceNetwork() {
+			return this.instanceNetwork;
+		}
+
+		public void setInstanceNetwork(String instanceNetwork) {
+			this.instanceNetwork = instanceNetwork;
+		}
+
+		public String getInstanceVSwitchIds() {
+			return this.instanceVSwitchIds;
+		}
+
+		public void setInstanceVSwitchIds(String instanceVSwitchIds) {
+			this.instanceVSwitchIds = instanceVSwitchIds;
+		}
+
+		public String getInstanceSecurityGroupId() {
+			return this.instanceSecurityGroupId;
+		}
+
+		public void setInstanceSecurityGroupId(String instanceSecurityGroupId) {
+			this.instanceSecurityGroupId = instanceSecurityGroupId;
+		}
 
 		public String getInstanceId() {
 			return this.instanceId;
@@ -262,6 +301,14 @@ public class UpdateEventSourceRequest extends RpcAcsRequest<UpdateEventSourceRes
 			this.offset = offset;
 		}
 
+		public String getInstanceVpcId() {
+			return this.instanceVpcId;
+		}
+
+		public void setInstanceVpcId(String instanceVpcId) {
+			this.instanceVpcId = instanceVpcId;
+		}
+
 		public String getRegionId() {
 			return this.regionId;
 		}
@@ -270,12 +317,12 @@ public class UpdateEventSourceRequest extends RpcAcsRequest<UpdateEventSourceRes
 			this.regionId = regionId;
 		}
 
-		public String getGroupId() {
-			return this.groupId;
+		public String getGroupID() {
+			return this.groupID;
 		}
 
-		public void setGroupId(String groupId) {
-			this.groupId = groupId;
+		public void setGroupID(String groupID) {
+			this.groupID = groupID;
 		}
 
 		public String getTopic() {
@@ -284,6 +331,14 @@ public class UpdateEventSourceRequest extends RpcAcsRequest<UpdateEventSourceRes
 
 		public void setTopic(String topic) {
 			this.topic = topic;
+		}
+
+		public String getInstanceType() {
+			return this.instanceType;
+		}
+
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
 		}
 
 		public String getTag() {

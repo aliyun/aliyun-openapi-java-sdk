@@ -57,7 +57,6 @@ public class ListConnectionsResponseUnmarshaller {
 			connectionsItem.setDescription(_ctx.stringValue("ListConnectionsResponse.Data.Connections["+ i +"].Description"));
 			connectionsItem.setId(_ctx.longValue("ListConnectionsResponse.Data.Connections["+ i +"].Id"));
 			connectionsItem.setGmtCreate(_ctx.longValue("ListConnectionsResponse.Data.Connections["+ i +"].GmtCreate"));
-			connectionsItem.setApiDestinationName(_ctx.stringValue("ListConnectionsResponse.Data.Connections["+ i +"].ApiDestinationName"));
 
 			NetworkParameters networkParameters = new NetworkParameters();
 			networkParameters.setNetworkType(_ctx.stringValue("ListConnectionsResponse.Data.Connections["+ i +"].NetworkParameters.NetworkType"));

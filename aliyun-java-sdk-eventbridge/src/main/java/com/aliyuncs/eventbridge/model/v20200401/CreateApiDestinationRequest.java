@@ -35,8 +35,6 @@ public class CreateApiDestinationRequest extends RpcAcsRequest<CreateApiDestinat
 	private HttpApiParameters httpApiParameters;
 
 	private String apiDestinationName;
-
-	private Long invocationRateLimitPerSecond;
 	public CreateApiDestinationRequest() {
 		super("eventbridge", "2020-04-01", "CreateApiDestination");
 		setMethod(MethodType.POST);
@@ -83,17 +81,6 @@ public class CreateApiDestinationRequest extends RpcAcsRequest<CreateApiDestinat
 		this.apiDestinationName = apiDestinationName;
 		if(apiDestinationName != null){
 			putQueryParameter("ApiDestinationName", apiDestinationName);
-		}
-	}
-
-	public Long getInvocationRateLimitPerSecond() {
-		return this.invocationRateLimitPerSecond;
-	}
-
-	public void setInvocationRateLimitPerSecond(Long invocationRateLimitPerSecond) {
-		this.invocationRateLimitPerSecond = invocationRateLimitPerSecond;
-		if(invocationRateLimitPerSecond != null){
-			putQueryParameter("InvocationRateLimitPerSecond", invocationRateLimitPerSecond.toString());
 		}
 	}
 

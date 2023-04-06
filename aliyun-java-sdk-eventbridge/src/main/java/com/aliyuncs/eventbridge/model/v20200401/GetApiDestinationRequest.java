@@ -24,23 +24,10 @@ import com.aliyuncs.http.MethodType;
 public class GetApiDestinationRequest extends RpcAcsRequest<GetApiDestinationResponse> {
 	   
 
-	private String clientToken;
-
 	private String apiDestinationName;
 	public GetApiDestinationRequest() {
 		super("eventbridge", "2020-04-01", "GetApiDestination");
 		setMethod(MethodType.POST);
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
 	}
 
 	public String getApiDestinationName() {

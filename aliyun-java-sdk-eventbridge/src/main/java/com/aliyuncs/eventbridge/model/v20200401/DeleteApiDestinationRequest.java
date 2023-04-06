@@ -24,23 +24,10 @@ import com.aliyuncs.http.MethodType;
 public class DeleteApiDestinationRequest extends RpcAcsRequest<DeleteApiDestinationResponse> {
 	   
 
-	private String clientToken;
-
 	private String apiDestinationName;
 	public DeleteApiDestinationRequest() {
 		super("eventbridge", "2020-04-01", "DeleteApiDestination");
 		setMethod(MethodType.POST);
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
 	}
 
 	public String getApiDestinationName() {

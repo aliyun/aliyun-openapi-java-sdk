@@ -87,8 +87,6 @@ public class GetConnectionResponse extends AcsResponse {
 
 			private Long gmtCreate;
 
-			private String apiDestinationName;
-
 			private NetworkParameters networkParameters;
 
 			private AuthParameters authParameters;
@@ -123,14 +121,6 @@ public class GetConnectionResponse extends AcsResponse {
 
 			public void setGmtCreate(Long gmtCreate) {
 				this.gmtCreate = gmtCreate;
-			}
-
-			public String getApiDestinationName() {
-				return this.apiDestinationName;
-			}
-
-			public void setApiDestinationName(String apiDestinationName) {
-				this.apiDestinationName = apiDestinationName;
 			}
 
 			public NetworkParameters getNetworkParameters() {

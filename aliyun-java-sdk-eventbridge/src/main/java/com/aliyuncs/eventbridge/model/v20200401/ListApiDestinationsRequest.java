@@ -24,11 +24,9 @@ import com.aliyuncs.http.MethodType;
 public class ListApiDestinationsRequest extends RpcAcsRequest<ListApiDestinationsResponse> {
 	   
 
-	private String clientToken;
-
-	private String description;
-
 	private String nextToken;
+
+	private String connectionName;
 
 	private Long maxResults;
 
@@ -36,28 +34,6 @@ public class ListApiDestinationsRequest extends RpcAcsRequest<ListApiDestination
 	public ListApiDestinationsRequest() {
 		super("eventbridge", "2020-04-01", "ListApiDestinations");
 		setMethod(MethodType.POST);
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
-		}
 	}
 
 	public String getNextToken() {
@@ -68,6 +44,17 @@ public class ListApiDestinationsRequest extends RpcAcsRequest<ListApiDestination
 		this.nextToken = nextToken;
 		if(nextToken != null){
 			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public String getConnectionName() {
+		return this.connectionName;
+	}
+
+	public void setConnectionName(String connectionName) {
+		this.connectionName = connectionName;
+		if(connectionName != null){
+			putQueryParameter("ConnectionName", connectionName);
 		}
 	}
 

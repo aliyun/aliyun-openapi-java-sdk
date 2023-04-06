@@ -41,6 +41,7 @@ public class ListAliyunOfficialEventSourcesResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("ListAliyunOfficialEventSourcesResponse.Data.EventSourceList.Length"); i++) {
 			EventSourceListItem eventSourceListItem = new EventSourceListItem();
 			eventSourceListItem.setName(_ctx.stringValue("ListAliyunOfficialEventSourcesResponse.Data.EventSourceList["+ i +"].Name"));
+			eventSourceListItem.setFullName(_ctx.stringValue("ListAliyunOfficialEventSourcesResponse.Data.EventSourceList["+ i +"].FullName"));
 			eventSourceListItem.setArn(_ctx.stringValue("ListAliyunOfficialEventSourcesResponse.Data.EventSourceList["+ i +"].Arn"));
 			eventSourceListItem.setStatus(_ctx.stringValue("ListAliyunOfficialEventSourcesResponse.Data.EventSourceList["+ i +"].Status"));
 			eventSourceListItem.setType(_ctx.stringValue("ListAliyunOfficialEventSourcesResponse.Data.EventSourceList["+ i +"].Type"));

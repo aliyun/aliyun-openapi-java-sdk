@@ -111,6 +111,8 @@ public class ListAliyunOfficialEventSourcesResponse extends AcsResponse {
 
 			private String name;
 
+			private String fullName;
+
 			private String arn;
 
 			private String status;
@@ -131,6 +133,14 @@ public class ListAliyunOfficialEventSourcesResponse extends AcsResponse {
 
 			public void setName(String name) {
 				this.name = name;
+			}
+
+			public String getFullName() {
+				return this.fullName;
+			}
+
+			public void setFullName(String fullName) {
+				this.fullName = fullName;
 			}
 
 			public String getArn() {

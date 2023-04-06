@@ -67,7 +67,37 @@ public class ListApiDestinationsResponse extends AcsResponse {
 
 	public static class Data {
 
+		private String nextToken;
+
+		private Float total;
+
+		private Float maxResults;
+
 		private List<ApiDestinationsItem> apiDestinations;
+
+		public String getNextToken() {
+			return this.nextToken;
+		}
+
+		public void setNextToken(String nextToken) {
+			this.nextToken = nextToken;
+		}
+
+		public Float getTotal() {
+			return this.total;
+		}
+
+		public void setTotal(Float total) {
+			this.total = total;
+		}
+
+		public Float getMaxResults() {
+			return this.maxResults;
+		}
+
+		public void setMaxResults(Float maxResults) {
+			this.maxResults = maxResults;
+		}
 
 		public List<ApiDestinationsItem> getApiDestinations() {
 			return this.apiDestinations;

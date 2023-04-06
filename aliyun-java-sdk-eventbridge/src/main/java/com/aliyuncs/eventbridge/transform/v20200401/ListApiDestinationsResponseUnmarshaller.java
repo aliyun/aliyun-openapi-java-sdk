@@ -34,6 +34,9 @@ public class ListApiDestinationsResponseUnmarshaller {
 		listApiDestinationsResponse.setCode(_ctx.stringValue("ListApiDestinationsResponse.Code"));
 
 		Data data = new Data();
+		data.setNextToken(_ctx.stringValue("ListApiDestinationsResponse.Data.NextToken"));
+		data.setTotal(_ctx.floatValue("ListApiDestinationsResponse.Data.Total"));
+		data.setMaxResults(_ctx.floatValue("ListApiDestinationsResponse.Data.MaxResults"));
 
 		List<ApiDestinationsItem> apiDestinations = new ArrayList<ApiDestinationsItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListApiDestinationsResponse.Data.ApiDestinations.Length"); i++) {

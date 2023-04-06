@@ -54,7 +54,6 @@ public class GetConnectionResponseUnmarshaller {
 			connectionsItem.setId(_ctx.longValue("GetConnectionResponse.Data.Connections["+ i +"].Id"));
 			connectionsItem.setDescription(_ctx.stringValue("GetConnectionResponse.Data.Connections["+ i +"].Description"));
 			connectionsItem.setGmtCreate(_ctx.longValue("GetConnectionResponse.Data.Connections["+ i +"].GmtCreate"));
-			connectionsItem.setApiDestinationName(_ctx.stringValue("GetConnectionResponse.Data.Connections["+ i +"].ApiDestinationName"));
 
 			NetworkParameters networkParameters = new NetworkParameters();
 			networkParameters.setNetworkType(_ctx.stringValue("GetConnectionResponse.Data.Connections["+ i +"].NetworkParameters.NetworkType"));
