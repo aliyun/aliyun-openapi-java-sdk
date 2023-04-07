@@ -29,9 +29,6 @@ public class QueryOpenStatusResponseUnmarshaller {
 		
 		queryOpenStatusResponse.setRequestId(_ctx.stringValue("QueryOpenStatusResponse.RequestId"));
 		queryOpenStatusResponse.setSuccess(_ctx.booleanValue("QueryOpenStatusResponse.Success"));
-		queryOpenStatusResponse.setHttpCode(_ctx.stringValue("QueryOpenStatusResponse.HttpCode"));
-		queryOpenStatusResponse.setErrorCode(_ctx.stringValue("QueryOpenStatusResponse.ErrorCode"));
-		queryOpenStatusResponse.setErrorMessage(_ctx.stringValue("QueryOpenStatusResponse.ErrorMessage"));
 		queryOpenStatusResponse.setAccessDeniedDetail(_ctx.stringValue("QueryOpenStatusResponse.AccessDeniedDetail"));
 
 		Data data = new Data();

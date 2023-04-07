@@ -29,12 +29,6 @@ public class ListModelNamesResponse extends AcsResponse {
 
 	private Boolean success;
 
-	private String httpCode;
-
-	private String errorCode;
-
-	private String errorMessage;
-
 	private String accessDeniedDetail;
 
 	private List<DataItem> data;
@@ -53,30 +47,6 @@ public class ListModelNamesResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public String getHttpCode() {
-		return this.httpCode;
-	}
-
-	public void setHttpCode(String httpCode) {
-		this.httpCode = httpCode;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
 	}
 
 	public String getAccessDeniedDetail() {
@@ -101,6 +71,8 @@ public class ListModelNamesResponse extends AcsResponse {
 
 		private String modelName;
 
+		private String modelUnit;
+
 		public String getModelDesc() {
 			return this.modelDesc;
 		}
@@ -115,6 +87,14 @@ public class ListModelNamesResponse extends AcsResponse {
 
 		public void setModelName(String modelName) {
 			this.modelName = modelName;
+		}
+
+		public String getModelUnit() {
+			return this.modelUnit;
+		}
+
+		public void setModelUnit(String modelUnit) {
+			this.modelUnit = modelUnit;
 		}
 	}
 

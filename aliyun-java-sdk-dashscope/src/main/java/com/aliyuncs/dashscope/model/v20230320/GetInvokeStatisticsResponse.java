@@ -29,12 +29,6 @@ public class GetInvokeStatisticsResponse extends AcsResponse {
 
 	private Boolean success;
 
-	private String httpCode;
-
-	private String errorCode;
-
-	private String errorMessage;
-
 	private String accessDeniedDetail;
 
 	private List<DataItem> data;
@@ -53,30 +47,6 @@ public class GetInvokeStatisticsResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public String getHttpCode() {
-		return this.httpCode;
-	}
-
-	public void setHttpCode(String httpCode) {
-		this.httpCode = httpCode;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
 	}
 
 	public String getAccessDeniedDetail() {
@@ -104,6 +74,8 @@ public class GetInvokeStatisticsResponse extends AcsResponse {
 		private String modelName;
 
 		private String timeUnit;
+
+		private String numUnit;
 
 		private String statisticsUnit;
 
@@ -139,6 +111,14 @@ public class GetInvokeStatisticsResponse extends AcsResponse {
 
 		public void setTimeUnit(String timeUnit) {
 			this.timeUnit = timeUnit;
+		}
+
+		public String getNumUnit() {
+			return this.numUnit;
+		}
+
+		public void setNumUnit(String numUnit) {
+			this.numUnit = numUnit;
 		}
 
 		public String getStatisticsUnit() {

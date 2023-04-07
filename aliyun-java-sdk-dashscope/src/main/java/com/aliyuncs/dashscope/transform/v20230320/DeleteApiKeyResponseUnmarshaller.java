@@ -24,9 +24,6 @@ public class DeleteApiKeyResponseUnmarshaller {
 		
 		deleteApiKeyResponse.setRequestId(_ctx.stringValue("DeleteApiKeyResponse.RequestId"));
 		deleteApiKeyResponse.setSuccess(_ctx.booleanValue("DeleteApiKeyResponse.Success"));
-		deleteApiKeyResponse.setCode(_ctx.integerValue("DeleteApiKeyResponse.Code"));
-		deleteApiKeyResponse.setErrorCode(_ctx.stringValue("DeleteApiKeyResponse.ErrorCode"));
-		deleteApiKeyResponse.setMessage(_ctx.stringValue("DeleteApiKeyResponse.Message"));
 		deleteApiKeyResponse.setAccessDeniedDetail(_ctx.stringValue("DeleteApiKeyResponse.AccessDeniedDetail"));
 	 
 	 	return deleteApiKeyResponse;

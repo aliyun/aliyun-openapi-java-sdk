@@ -28,9 +28,6 @@ public class ListApiKeysResponseUnmarshaller {
 	public static ListApiKeysResponse unmarshall(ListApiKeysResponse listApiKeysResponse, UnmarshallerContext _ctx) {
 		
 		listApiKeysResponse.setRequestId(_ctx.stringValue("ListApiKeysResponse.RequestId"));
-		listApiKeysResponse.setCode(_ctx.stringValue("ListApiKeysResponse.Code"));
-		listApiKeysResponse.setErrorCode(_ctx.stringValue("ListApiKeysResponse.ErrorCode"));
-		listApiKeysResponse.setMessage(_ctx.stringValue("ListApiKeysResponse.Message"));
 		listApiKeysResponse.setAccessDeniedDetail(_ctx.stringValue("ListApiKeysResponse.AccessDeniedDetail"));
 
 		Data data = new Data();

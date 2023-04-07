@@ -28,9 +28,6 @@ public class ListModelNamesResponseUnmarshaller {
 		
 		listModelNamesResponse.setRequestId(_ctx.stringValue("ListModelNamesResponse.RequestId"));
 		listModelNamesResponse.setSuccess(_ctx.booleanValue("ListModelNamesResponse.Success"));
-		listModelNamesResponse.setHttpCode(_ctx.stringValue("ListModelNamesResponse.HttpCode"));
-		listModelNamesResponse.setErrorCode(_ctx.stringValue("ListModelNamesResponse.ErrorCode"));
-		listModelNamesResponse.setErrorMessage(_ctx.stringValue("ListModelNamesResponse.ErrorMessage"));
 		listModelNamesResponse.setAccessDeniedDetail(_ctx.stringValue("ListModelNamesResponse.AccessDeniedDetail"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
@@ -38,6 +35,7 @@ public class ListModelNamesResponseUnmarshaller {
 			DataItem dataItem = new DataItem();
 			dataItem.setModelDesc(_ctx.stringValue("ListModelNamesResponse.Data["+ i +"].ModelDesc"));
 			dataItem.setModelName(_ctx.stringValue("ListModelNamesResponse.Data["+ i +"].ModelName"));
+			dataItem.setModelUnit(_ctx.stringValue("ListModelNamesResponse.Data["+ i +"].ModelUnit"));
 
 			data.add(dataItem);
 		}

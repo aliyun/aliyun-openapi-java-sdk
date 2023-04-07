@@ -29,9 +29,6 @@ public class GetInvokeStatisticsResponseUnmarshaller {
 		
 		getInvokeStatisticsResponse.setRequestId(_ctx.stringValue("GetInvokeStatisticsResponse.RequestId"));
 		getInvokeStatisticsResponse.setSuccess(_ctx.booleanValue("GetInvokeStatisticsResponse.Success"));
-		getInvokeStatisticsResponse.setHttpCode(_ctx.stringValue("GetInvokeStatisticsResponse.HttpCode"));
-		getInvokeStatisticsResponse.setErrorCode(_ctx.stringValue("GetInvokeStatisticsResponse.ErrorCode"));
-		getInvokeStatisticsResponse.setErrorMessage(_ctx.stringValue("GetInvokeStatisticsResponse.ErrorMessage"));
 		getInvokeStatisticsResponse.setAccessDeniedDetail(_ctx.stringValue("GetInvokeStatisticsResponse.AccessDeniedDetail"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
@@ -41,6 +38,7 @@ public class GetInvokeStatisticsResponseUnmarshaller {
 			dataItem.setApiKey(_ctx.stringValue("GetInvokeStatisticsResponse.Data["+ i +"].ApiKey"));
 			dataItem.setModelName(_ctx.stringValue("GetInvokeStatisticsResponse.Data["+ i +"].ModelName"));
 			dataItem.setTimeUnit(_ctx.stringValue("GetInvokeStatisticsResponse.Data["+ i +"].TimeUnit"));
+			dataItem.setNumUnit(_ctx.stringValue("GetInvokeStatisticsResponse.Data["+ i +"].NumUnit"));
 			dataItem.setStatisticsUnit(_ctx.stringValue("GetInvokeStatisticsResponse.Data["+ i +"].StatisticsUnit"));
 
 			List<MetricsItem> metrics = new ArrayList<MetricsItem>();

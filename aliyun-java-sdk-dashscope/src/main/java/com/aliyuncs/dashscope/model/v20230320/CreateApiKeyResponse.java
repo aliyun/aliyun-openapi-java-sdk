@@ -28,12 +28,6 @@ public class CreateApiKeyResponse extends AcsResponse {
 
 	private Boolean success;
 
-	private Integer code;
-
-	private String errorCode;
-
-	private String message;
-
 	private String accessDeniedDetail;
 
 	private Data data;
@@ -52,30 +46,6 @@ public class CreateApiKeyResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public Integer getCode() {
-		return this.code;
-	}
-
-	public void setCode(Integer code) {
-		this.code = code;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
 	}
 
 	public String getAccessDeniedDetail() {

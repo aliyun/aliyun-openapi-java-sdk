@@ -29,12 +29,6 @@ public class QueryOpenStatusResponse extends AcsResponse {
 
 	private Boolean success;
 
-	private String httpCode;
-
-	private String errorCode;
-
-	private String errorMessage;
-
 	private String accessDeniedDetail;
 
 	private Data data;
@@ -53,30 +47,6 @@ public class QueryOpenStatusResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public String getHttpCode() {
-		return this.httpCode;
-	}
-
-	public void setHttpCode(String httpCode) {
-		this.httpCode = httpCode;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
 	}
 
 	public String getAccessDeniedDetail() {

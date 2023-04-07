@@ -27,12 +27,6 @@ public class ListApiKeysResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String code;
-
-	private String errorCode;
-
-	private String message;
-
 	private String accessDeniedDetail;
 
 	private Data data;
@@ -43,30 +37,6 @@ public class ListApiKeysResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
 	}
 
 	public String getAccessDeniedDetail() {

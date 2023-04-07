@@ -25,9 +25,6 @@ public class CreateApiKeyResponseUnmarshaller {
 		
 		createApiKeyResponse.setRequestId(_ctx.stringValue("CreateApiKeyResponse.RequestId"));
 		createApiKeyResponse.setSuccess(_ctx.booleanValue("CreateApiKeyResponse.Success"));
-		createApiKeyResponse.setCode(_ctx.integerValue("CreateApiKeyResponse.Code"));
-		createApiKeyResponse.setErrorCode(_ctx.stringValue("CreateApiKeyResponse.ErrorCode"));
-		createApiKeyResponse.setMessage(_ctx.stringValue("CreateApiKeyResponse.Message"));
 		createApiKeyResponse.setAccessDeniedDetail(_ctx.stringValue("CreateApiKeyResponse.AccessDeniedDetail"));
 
 		Data data = new Data();
