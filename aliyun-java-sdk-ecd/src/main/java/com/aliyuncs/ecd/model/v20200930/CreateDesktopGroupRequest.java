@@ -30,6 +30,8 @@ public class CreateDesktopGroupRequest extends RpcAcsRequest<CreateDesktopGroupR
 
 	private Integer allowBufferCount;
 
+	private Integer groupVersion;
+
 	private Boolean allClassifyUsers;
 
 	private Integer maxDesktopsCount;
@@ -47,6 +49,8 @@ public class CreateDesktopGroupRequest extends RpcAcsRequest<CreateDesktopGroupR
 	private Long keepDuration;
 
 	private String periodUnit;
+
+	private Boolean autoRenew;
 
 	private Boolean profileFollowSwitch;
 
@@ -123,6 +127,17 @@ public class CreateDesktopGroupRequest extends RpcAcsRequest<CreateDesktopGroupR
 		this.allowBufferCount = allowBufferCount;
 		if(allowBufferCount != null){
 			putQueryParameter("AllowBufferCount", allowBufferCount.toString());
+		}
+	}
+
+	public Integer getGroupVersion() {
+		return this.groupVersion;
+	}
+
+	public void setGroupVersion(Integer groupVersion) {
+		this.groupVersion = groupVersion;
+		if(groupVersion != null){
+			putQueryParameter("GroupVersion", groupVersion.toString());
 		}
 	}
 
@@ -222,6 +237,17 @@ public class CreateDesktopGroupRequest extends RpcAcsRequest<CreateDesktopGroupR
 		this.periodUnit = periodUnit;
 		if(periodUnit != null){
 			putQueryParameter("PeriodUnit", periodUnit);
+		}
+	}
+
+	public Boolean getAutoRenew() {
+		return this.autoRenew;
+	}
+
+	public void setAutoRenew(Boolean autoRenew) {
+		this.autoRenew = autoRenew;
+		if(autoRenew != null){
+			putQueryParameter("AutoRenew", autoRenew.toString());
 		}
 	}
 

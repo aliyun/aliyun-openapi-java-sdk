@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.ecd.model.v20200930.CreateCdsFileResponse;
 import com.aliyuncs.ecd.model.v20200930.CreateCdsFileResponse.FileModel;
-import com.aliyuncs.ecd.model.v20200930.CreateCdsFileResponse.FileModel.Info;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -34,26 +33,7 @@ public class CreateCdsFileResponseUnmarshaller {
 			FileModel fileModel = new FileModel();
 			fileModel.setUploadId(_ctx.stringValue("CreateCdsFileResponse.FileModels["+ i +"].UploadId"));
 			fileModel.setUploadUrl(_ctx.stringValue("CreateCdsFileResponse.FileModels["+ i +"].UploadUrl"));
-			fileModel.setAccessKeyId(_ctx.stringValue("CreateCdsFileResponse.FileModels["+ i +"].AccessKeyId"));
 			fileModel.setFileId(_ctx.stringValue("CreateCdsFileResponse.FileModels["+ i +"].FileId"));
-			fileModel.setUploadType(_ctx.stringValue("CreateCdsFileResponse.FileModels["+ i +"].UploadType"));
-			fileModel.setExpirationSeconds(_ctx.stringValue("CreateCdsFileResponse.FileModels["+ i +"].ExpirationSeconds"));
-			fileModel.setAccessTokenExpirationMillis(_ctx.stringValue("CreateCdsFileResponse.FileModels["+ i +"].AccessTokenExpirationMillis"));
-			fileModel.setAccessKeySecret(_ctx.stringValue("CreateCdsFileResponse.FileModels["+ i +"].AccessKeySecret"));
-			fileModel.setResourceUrl(_ctx.stringValue("CreateCdsFileResponse.FileModels["+ i +"].ResourceUrl"));
-			fileModel.setEndPoint(_ctx.stringValue("CreateCdsFileResponse.FileModels["+ i +"].EndPoint"));
-			fileModel.setAccessToken(_ctx.stringValue("CreateCdsFileResponse.FileModels["+ i +"].AccessToken"));
-			fileModel.setBucket(_ctx.stringValue("CreateCdsFileResponse.FileModels["+ i +"].Bucket"));
-
-			List<Info> headerInfo = new ArrayList<Info>();
-			for (int j = 0; j < _ctx.lengthValue("CreateCdsFileResponse.FileModels["+ i +"].HeaderInfo.Length"); j++) {
-				Info info = new Info();
-				info.setDate(_ctx.stringValue("CreateCdsFileResponse.FileModels["+ i +"].HeaderInfo["+ j +"].Date"));
-				info.setAuthorization(_ctx.stringValue("CreateCdsFileResponse.FileModels["+ i +"].HeaderInfo["+ j +"].Authorization"));
-
-				headerInfo.add(info);
-			}
-			fileModel.setHeaderInfo(headerInfo);
 
 			fileModels.add(fileModel);
 		}

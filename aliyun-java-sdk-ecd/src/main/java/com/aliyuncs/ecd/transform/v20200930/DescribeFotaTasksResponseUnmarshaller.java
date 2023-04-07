@@ -39,6 +39,7 @@ public class DescribeFotaTasksResponseUnmarshaller {
 			fotaTask.setPendingDesktopCount(_ctx.integerValue("DescribeFotaTasksResponse.FotaTasks["+ i +"].PendingDesktopCount"));
 			fotaTask.setReleaseNote(_ctx.stringValue("DescribeFotaTasksResponse.FotaTasks["+ i +"].ReleaseNote"));
 			fotaTask.setSize(_ctx.integerValue("DescribeFotaTasksResponse.FotaTasks["+ i +"].Size"));
+			fotaTask.setPendingCustomImageCount(_ctx.integerValue("DescribeFotaTasksResponse.FotaTasks["+ i +"].PendingCustomImageCount"));
 
 			fotaTasks.add(fotaTask);
 		}

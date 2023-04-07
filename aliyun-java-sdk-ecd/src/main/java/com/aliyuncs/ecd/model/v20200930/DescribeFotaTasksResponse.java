@@ -63,6 +63,8 @@ public class DescribeFotaTasksResponse extends AcsResponse {
 
 		private Integer size;
 
+		private Integer pendingCustomImageCount;
+
 		public String getTaskUid() {
 			return this.taskUid;
 		}
@@ -125,6 +127,14 @@ public class DescribeFotaTasksResponse extends AcsResponse {
 
 		public void setSize(Integer size) {
 			this.size = size;
+		}
+
+		public Integer getPendingCustomImageCount() {
+			return this.pendingCustomImageCount;
+		}
+
+		public void setPendingCustomImageCount(Integer pendingCustomImageCount) {
+			this.pendingCustomImageCount = pendingCustomImageCount;
 		}
 	}
 

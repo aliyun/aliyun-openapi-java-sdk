@@ -22,42 +22,25 @@ import com.aliyuncs.ecd.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateCdsFileRequest extends RpcAcsRequest<CreateCdsFileResponse> {
+public class ModifyCdsFileRequest extends RpcAcsRequest<ModifyCdsFileResponse> {
 	   
-
-	private String fileType;
 
 	private String cdsId;
 
 	private String conflictPolicy;
 
-	private String parentFileId;
-
 	private String fileName;
-
-	private Long fileLength;
 
 	private String endUserId;
 
-	private String fileHash;
-	public CreateCdsFileRequest() {
-		super("ecd", "2020-09-30", "CreateCdsFile");
+	private String fileId;
+	public ModifyCdsFileRequest() {
+		super("ecd", "2020-09-30", "ModifyCdsFile");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getFileType() {
-		return this.fileType;
-	}
-
-	public void setFileType(String fileType) {
-		this.fileType = fileType;
-		if(fileType != null){
-			putQueryParameter("FileType", fileType);
-		}
 	}
 
 	public String getCdsId() {
@@ -82,17 +65,6 @@ public class CreateCdsFileRequest extends RpcAcsRequest<CreateCdsFileResponse> {
 		}
 	}
 
-	public String getParentFileId() {
-		return this.parentFileId;
-	}
-
-	public void setParentFileId(String parentFileId) {
-		this.parentFileId = parentFileId;
-		if(parentFileId != null){
-			putQueryParameter("ParentFileId", parentFileId);
-		}
-	}
-
 	public String getFileName() {
 		return this.fileName;
 	}
@@ -101,17 +73,6 @@ public class CreateCdsFileRequest extends RpcAcsRequest<CreateCdsFileResponse> {
 		this.fileName = fileName;
 		if(fileName != null){
 			putQueryParameter("FileName", fileName);
-		}
-	}
-
-	public Long getFileLength() {
-		return this.fileLength;
-	}
-
-	public void setFileLength(Long fileLength) {
-		this.fileLength = fileLength;
-		if(fileLength != null){
-			putQueryParameter("FileLength", fileLength.toString());
 		}
 	}
 
@@ -126,20 +87,20 @@ public class CreateCdsFileRequest extends RpcAcsRequest<CreateCdsFileResponse> {
 		}
 	}
 
-	public String getFileHash() {
-		return this.fileHash;
+	public String getFileId() {
+		return this.fileId;
 	}
 
-	public void setFileHash(String fileHash) {
-		this.fileHash = fileHash;
-		if(fileHash != null){
-			putQueryParameter("FileHash", fileHash);
+	public void setFileId(String fileId) {
+		this.fileId = fileId;
+		if(fileId != null){
+			putQueryParameter("FileId", fileId);
 		}
 	}
 
 	@Override
-	public Class<CreateCdsFileResponse> getResponseClass() {
-		return CreateCdsFileResponse.class;
+	public Class<ModifyCdsFileResponse> getResponseClass() {
+		return ModifyCdsFileResponse.class;
 	}
 
 }

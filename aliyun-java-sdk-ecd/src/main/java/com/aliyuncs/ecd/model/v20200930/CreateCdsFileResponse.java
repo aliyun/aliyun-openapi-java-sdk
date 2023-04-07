@@ -51,27 +51,7 @@ public class CreateCdsFileResponse extends AcsResponse {
 
 		private String uploadUrl;
 
-		private String accessKeyId;
-
 		private String fileId;
-
-		private String uploadType;
-
-		private String expirationSeconds;
-
-		private String accessTokenExpirationMillis;
-
-		private String accessKeySecret;
-
-		private String resourceUrl;
-
-		private String endPoint;
-
-		private String accessToken;
-
-		private String bucket;
-
-		private List<Info> headerInfo;
 
 		public String getUploadId() {
 			return this.uploadId;
@@ -89,115 +69,12 @@ public class CreateCdsFileResponse extends AcsResponse {
 			this.uploadUrl = uploadUrl;
 		}
 
-		public String getAccessKeyId() {
-			return this.accessKeyId;
-		}
-
-		public void setAccessKeyId(String accessKeyId) {
-			this.accessKeyId = accessKeyId;
-		}
-
 		public String getFileId() {
 			return this.fileId;
 		}
 
 		public void setFileId(String fileId) {
 			this.fileId = fileId;
-		}
-
-		public String getUploadType() {
-			return this.uploadType;
-		}
-
-		public void setUploadType(String uploadType) {
-			this.uploadType = uploadType;
-		}
-
-		public String getExpirationSeconds() {
-			return this.expirationSeconds;
-		}
-
-		public void setExpirationSeconds(String expirationSeconds) {
-			this.expirationSeconds = expirationSeconds;
-		}
-
-		public String getAccessTokenExpirationMillis() {
-			return this.accessTokenExpirationMillis;
-		}
-
-		public void setAccessTokenExpirationMillis(String accessTokenExpirationMillis) {
-			this.accessTokenExpirationMillis = accessTokenExpirationMillis;
-		}
-
-		public String getAccessKeySecret() {
-			return this.accessKeySecret;
-		}
-
-		public void setAccessKeySecret(String accessKeySecret) {
-			this.accessKeySecret = accessKeySecret;
-		}
-
-		public String getResourceUrl() {
-			return this.resourceUrl;
-		}
-
-		public void setResourceUrl(String resourceUrl) {
-			this.resourceUrl = resourceUrl;
-		}
-
-		public String getEndPoint() {
-			return this.endPoint;
-		}
-
-		public void setEndPoint(String endPoint) {
-			this.endPoint = endPoint;
-		}
-
-		public String getAccessToken() {
-			return this.accessToken;
-		}
-
-		public void setAccessToken(String accessToken) {
-			this.accessToken = accessToken;
-		}
-
-		public String getBucket() {
-			return this.bucket;
-		}
-
-		public void setBucket(String bucket) {
-			this.bucket = bucket;
-		}
-
-		public List<Info> getHeaderInfo() {
-			return this.headerInfo;
-		}
-
-		public void setHeaderInfo(List<Info> headerInfo) {
-			this.headerInfo = headerInfo;
-		}
-
-		public static class Info {
-
-			private String date;
-
-			private String authorization;
-
-			public String getDate() {
-				return this.date;
-			}
-
-			public void setDate(String date) {
-				this.date = date;
-			}
-
-			public String getAuthorization() {
-				return this.authorization;
-			}
-
-			public void setAuthorization(String authorization) {
-				this.authorization = authorization;
-			}
 		}
 	}
 
