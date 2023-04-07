@@ -27,7 +27,7 @@ public class DescribeAnycastServerRegionsRequest extends RpcAcsRequest<DescribeA
 
 	private String serviceLocation;
 	public DescribeAnycastServerRegionsRequest() {
-		super("Eipanycast", "2020-03-09", "DescribeAnycastServerRegions");
+		super("Eipanycast", "2020-03-09", "DescribeAnycastServerRegions", "eipanycast");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

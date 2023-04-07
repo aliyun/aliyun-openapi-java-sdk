@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.eipanycast.model.v20200309.ListAnycastEipAddressesResponse;
 import com.aliyuncs.eipanycast.model.v20200309.ListAnycastEipAddressesResponse.Anycast;
 import com.aliyuncs.eipanycast.model.v20200309.ListAnycastEipAddressesResponse.Anycast.AnycastEipBindInfo;
+import com.aliyuncs.eipanycast.model.v20200309.ListAnycastEipAddressesResponse.Anycast.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -60,6 +61,16 @@ public class ListAnycastEipAddressesResponseUnmarshaller {
 				anycastEipBindInfoList.add(anycastEipBindInfo);
 			}
 			anycast.setAnycastEipBindInfoList(anycastEipBindInfoList);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("ListAnycastEipAddressesResponse.AnycastList["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("ListAnycastEipAddressesResponse.AnycastList["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("ListAnycastEipAddressesResponse.AnycastList["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			anycast.setTags(tags);
 
 			anycastList.add(anycast);
 		}

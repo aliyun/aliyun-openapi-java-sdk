@@ -31,7 +31,7 @@ public class ModifyAnycastEipAddressAttributeRequest extends RpcAcsRequest<Modif
 
 	private String name;
 	public ModifyAnycastEipAddressAttributeRequest() {
-		super("Eipanycast", "2020-03-09", "ModifyAnycastEipAddressAttribute");
+		super("Eipanycast", "2020-03-09", "ModifyAnycastEipAddressAttribute", "eipanycast");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

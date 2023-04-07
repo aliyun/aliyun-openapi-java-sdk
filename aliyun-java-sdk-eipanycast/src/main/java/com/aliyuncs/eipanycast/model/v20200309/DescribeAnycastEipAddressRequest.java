@@ -31,7 +31,7 @@ public class DescribeAnycastEipAddressRequest extends RpcAcsRequest<DescribeAnyc
 
 	private String bindInstanceId;
 	public DescribeAnycastEipAddressRequest() {
-		super("Eipanycast", "2020-03-09", "DescribeAnycastEipAddress");
+		super("Eipanycast", "2020-03-09", "DescribeAnycastEipAddress", "eipanycast");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
