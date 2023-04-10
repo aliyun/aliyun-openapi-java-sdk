@@ -37,6 +37,8 @@ public class CreateTenantUserRequest extends RpcAcsRequest<CreateTenantUserRespo
 
 	private String tenantId;
 
+	private String encryptionType;
+
 	private String userName;
 	public CreateTenantUserRequest() {
 		super("OceanBasePro", "2019-09-01", "CreateTenantUser", "oceanbase");
@@ -110,6 +112,17 @@ public class CreateTenantUserRequest extends RpcAcsRequest<CreateTenantUserRespo
 		this.tenantId = tenantId;
 		if(tenantId != null){
 			putBodyParameter("TenantId", tenantId);
+		}
+	}
+
+	public String getEncryptionType() {
+		return this.encryptionType;
+	}
+
+	public void setEncryptionType(String encryptionType) {
+		this.encryptionType = encryptionType;
+		if(encryptionType != null){
+			putBodyParameter("EncryptionType", encryptionType);
 		}
 	}
 
