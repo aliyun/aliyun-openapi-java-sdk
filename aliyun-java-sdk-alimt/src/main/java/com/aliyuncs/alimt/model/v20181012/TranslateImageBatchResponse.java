@@ -15,29 +15,29 @@
 package com.aliyuncs.alimt.model.v20181012;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.alimt.transform.v20181012.GetUserResponseUnmarshaller;
+import com.aliyuncs.alimt.transform.v20181012.TranslateImageBatchResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetUserResponse extends AcsResponse {
-
-	private Integer code;
-
-	private String message;
-
-	private String data;
+public class TranslateImageBatchResponse extends AcsResponse {
 
 	private String requestId;
 
-	public Integer getCode() {
-		return this.code;
+	private String message;
+
+	private Integer code;
+
+	private Data data;
+
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(Integer code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -48,25 +48,38 @@ public class GetUserResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getData() {
+	public Integer getCode() {
+		return this.code;
+	}
+
+	public void setCode(Integer code) {
+		this.code = code;
+	}
+
+	public Data getData() {
 		return this.data;
 	}
 
-	public void setData(String data) {
+	public void setData(Data data) {
 		this.data = data;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	public static class Data {
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+		private String taskId;
+
+		public String getTaskId() {
+			return this.taskId;
+		}
+
+		public void setTaskId(String taskId) {
+			this.taskId = taskId;
+		}
 	}
 
 	@Override
-	public GetUserResponse getInstance(UnmarshallerContext context) {
-		return	GetUserResponseUnmarshaller.unmarshall(this, context);
+	public TranslateImageBatchResponse getInstance(UnmarshallerContext context) {
+		return	TranslateImageBatchResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

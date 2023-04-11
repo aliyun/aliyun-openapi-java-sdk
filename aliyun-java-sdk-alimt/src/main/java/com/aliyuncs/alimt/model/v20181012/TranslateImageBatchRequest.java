@@ -22,27 +22,38 @@ import com.aliyuncs.alimt.Endpoint;
  * @author auto create
  * @version 
  */
-public class TranslateECommerceRequest extends RpcAcsRequest<TranslateECommerceResponse> {
+public class TranslateImageBatchRequest extends RpcAcsRequest<TranslateImageBatchResponse> {
 	   
+
+	private String ext;
 
 	private String sourceLanguage;
 
-	private String sourceText;
+	private String imageUrls;
 
-	private String formatType;
+	private String customTaskId;
 
-	private String scene;
-
-	private String context;
+	private String field;
 
 	private String targetLanguage;
-	public TranslateECommerceRequest() {
-		super("alimt", "2018-10-12", "TranslateECommerce");
+	public TranslateImageBatchRequest() {
+		super("alimt", "2018-10-12", "TranslateImageBatch");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getExt() {
+		return this.ext;
+	}
+
+	public void setExt(String ext) {
+		this.ext = ext;
+		if(ext != null){
+			putBodyParameter("Ext", ext);
+		}
 	}
 
 	public String getSourceLanguage() {
@@ -56,47 +67,36 @@ public class TranslateECommerceRequest extends RpcAcsRequest<TranslateECommerceR
 		}
 	}
 
-	public String getSourceText() {
-		return this.sourceText;
+	public String getImageUrls() {
+		return this.imageUrls;
 	}
 
-	public void setSourceText(String sourceText) {
-		this.sourceText = sourceText;
-		if(sourceText != null){
-			putBodyParameter("SourceText", sourceText);
+	public void setImageUrls(String imageUrls) {
+		this.imageUrls = imageUrls;
+		if(imageUrls != null){
+			putBodyParameter("ImageUrls", imageUrls);
 		}
 	}
 
-	public String getFormatType() {
-		return this.formatType;
+	public String getCustomTaskId() {
+		return this.customTaskId;
 	}
 
-	public void setFormatType(String formatType) {
-		this.formatType = formatType;
-		if(formatType != null){
-			putBodyParameter("FormatType", formatType);
+	public void setCustomTaskId(String customTaskId) {
+		this.customTaskId = customTaskId;
+		if(customTaskId != null){
+			putBodyParameter("CustomTaskId", customTaskId);
 		}
 	}
 
-	public String getScene() {
-		return this.scene;
+	public String getField() {
+		return this.field;
 	}
 
-	public void setScene(String scene) {
-		this.scene = scene;
-		if(scene != null){
-			putBodyParameter("Scene", scene);
-		}
-	}
-
-	public String getContext() {
-		return this.context;
-	}
-
-	public void setContext(String context) {
-		this.context = context;
-		if(context != null){
-			putQueryParameter("Context", context);
+	public void setField(String field) {
+		this.field = field;
+		if(field != null){
+			putBodyParameter("Field", field);
 		}
 	}
 
@@ -112,8 +112,8 @@ public class TranslateECommerceRequest extends RpcAcsRequest<TranslateECommerceR
 	}
 
 	@Override
-	public Class<TranslateECommerceResponse> getResponseClass() {
-		return TranslateECommerceResponse.class;
+	public Class<TranslateImageBatchResponse> getResponseClass() {
+		return TranslateImageBatchResponse.class;
 	}
 
 }

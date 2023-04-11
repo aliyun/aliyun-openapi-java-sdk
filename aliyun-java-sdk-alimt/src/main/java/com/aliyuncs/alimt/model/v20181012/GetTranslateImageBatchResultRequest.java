@@ -22,10 +22,12 @@ import com.aliyuncs.alimt.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetUserRequest extends RpcAcsRequest<GetUserResponse> {
+public class GetTranslateImageBatchResultRequest extends RpcAcsRequest<GetTranslateImageBatchResultResponse> {
 	   
-	public GetUserRequest() {
-		super("alimt", "2018-10-12", "GetUser");
+
+	private String taskId;
+	public GetTranslateImageBatchResultRequest() {
+		super("alimt", "2018-10-12", "GetTranslateImageBatchResult");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -33,9 +35,20 @@ public class GetUserRequest extends RpcAcsRequest<GetUserResponse> {
 		} catch (Exception e) {}
 	}
 
+	public String getTaskId() {
+		return this.taskId;
+	}
+
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+		if(taskId != null){
+			putBodyParameter("TaskId", taskId);
+		}
+	}
+
 	@Override
-	public Class<GetUserResponse> getResponseClass() {
-		return GetUserResponse.class;
+	public Class<GetTranslateImageBatchResultResponse> getResponseClass() {
+		return GetTranslateImageBatchResultResponse.class;
 	}
 
 }
