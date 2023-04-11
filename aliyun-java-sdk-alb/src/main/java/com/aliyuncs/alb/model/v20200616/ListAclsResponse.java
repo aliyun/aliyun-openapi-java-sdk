@@ -93,6 +93,8 @@ public class ListAclsResponse extends AcsResponse {
 
 		private Boolean configManagedEnabled;
 
+		private String createTime;
+
 		public String getAclId() {
 			return this.aclId;
 		}
@@ -155,6 +157,14 @@ public class ListAclsResponse extends AcsResponse {
 
 		public void setConfigManagedEnabled(Boolean configManagedEnabled) {
 			this.configManagedEnabled = configManagedEnabled;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 	}
 

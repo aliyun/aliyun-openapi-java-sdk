@@ -89,6 +89,8 @@ public class ListSecurityPoliciesResponse extends AcsResponse {
 
 		private String serviceManagedMode;
 
+		private String createTime;
+
 		private List<String> ciphers;
 
 		private List<String> tLSVersions;
@@ -139,6 +141,14 @@ public class ListSecurityPoliciesResponse extends AcsResponse {
 
 		public void setServiceManagedMode(String serviceManagedMode) {
 			this.serviceManagedMode = serviceManagedMode;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
 		public List<String> getCiphers() {

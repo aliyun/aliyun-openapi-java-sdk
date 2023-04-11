@@ -40,6 +40,7 @@ public class ListSecurityPoliciesResponseUnmarshaller {
 			securityPolicy.setSecurityPolicyStatus(_ctx.stringValue("ListSecurityPoliciesResponse.SecurityPolicies["+ i +"].SecurityPolicyStatus"));
 			securityPolicy.setServiceManagedEnabled(_ctx.booleanValue("ListSecurityPoliciesResponse.SecurityPolicies["+ i +"].ServiceManagedEnabled"));
 			securityPolicy.setServiceManagedMode(_ctx.stringValue("ListSecurityPoliciesResponse.SecurityPolicies["+ i +"].ServiceManagedMode"));
+			securityPolicy.setCreateTime(_ctx.stringValue("ListSecurityPoliciesResponse.SecurityPolicies["+ i +"].CreateTime"));
 
 			List<String> ciphers = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListSecurityPoliciesResponse.SecurityPolicies["+ i +"].Ciphers.Length"); j++) {

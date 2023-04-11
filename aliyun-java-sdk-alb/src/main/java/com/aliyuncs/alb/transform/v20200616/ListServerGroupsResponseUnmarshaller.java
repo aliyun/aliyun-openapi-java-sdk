@@ -53,6 +53,7 @@ public class ListServerGroupsResponseUnmarshaller {
 			serverGroup.setIpv6Enabled(_ctx.booleanValue("ListServerGroupsResponse.ServerGroups["+ i +"].Ipv6Enabled"));
 			serverGroup.setServerCount(_ctx.integerValue("ListServerGroupsResponse.ServerGroups["+ i +"].ServerCount"));
 			serverGroup.setServiceName(_ctx.stringValue("ListServerGroupsResponse.ServerGroups["+ i +"].ServiceName"));
+			serverGroup.setCreateTime(_ctx.stringValue("ListServerGroupsResponse.ServerGroups["+ i +"].CreateTime"));
 
 			List<String> relatedLoadBalancerIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListServerGroupsResponse.ServerGroups["+ i +"].RelatedLoadBalancerIds.Length"); j++) {

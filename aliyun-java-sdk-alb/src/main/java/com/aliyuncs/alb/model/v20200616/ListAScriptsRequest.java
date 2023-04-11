@@ -23,40 +23,25 @@ import com.aliyuncs.alb.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListRulesRequest extends RpcAcsRequest<ListRulesResponse> {
+public class ListAScriptsRequest extends RpcAcsRequest<ListAScriptsResponse> {
 	   
-
-	private List<String> loadBalancerIds;
 
 	private String nextToken;
 
-	private String direction;
-
-	private List<String> ruleIds;
+	private List<String> aScriptNames;
 
 	private List<String> listenerIds;
 
+	private List<String> aScriptIds;
+
 	private Integer maxResults;
-	public ListRulesRequest() {
-		super("Alb", "2020-06-16", "ListRules", "alb");
+	public ListAScriptsRequest() {
+		super("Alb", "2020-06-16", "ListAScripts", "alb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public List<String> getLoadBalancerIds() {
-		return this.loadBalancerIds;
-	}
-
-	public void setLoadBalancerIds(List<String> loadBalancerIds) {
-		this.loadBalancerIds = loadBalancerIds;	
-		if (loadBalancerIds != null) {
-			for (int depth1 = 0; depth1 < loadBalancerIds.size(); depth1++) {
-				putQueryParameter("LoadBalancerIds." + (depth1 + 1) , loadBalancerIds.get(depth1));
-			}
-		}	
 	}
 
 	public String getNextToken() {
@@ -70,26 +55,15 @@ public class ListRulesRequest extends RpcAcsRequest<ListRulesResponse> {
 		}
 	}
 
-	public String getDirection() {
-		return this.direction;
+	public List<String> getAScriptNames() {
+		return this.aScriptNames;
 	}
 
-	public void setDirection(String direction) {
-		this.direction = direction;
-		if(direction != null){
-			putQueryParameter("Direction", direction);
-		}
-	}
-
-	public List<String> getRuleIds() {
-		return this.ruleIds;
-	}
-
-	public void setRuleIds(List<String> ruleIds) {
-		this.ruleIds = ruleIds;	
-		if (ruleIds != null) {
-			for (int depth1 = 0; depth1 < ruleIds.size(); depth1++) {
-				putQueryParameter("RuleIds." + (depth1 + 1) , ruleIds.get(depth1));
+	public void setAScriptNames(List<String> aScriptNames) {
+		this.aScriptNames = aScriptNames;	
+		if (aScriptNames != null) {
+			for (int depth1 = 0; depth1 < aScriptNames.size(); depth1++) {
+				putQueryParameter("AScriptNames." + (depth1 + 1) , aScriptNames.get(depth1));
 			}
 		}	
 	}
@@ -107,6 +81,19 @@ public class ListRulesRequest extends RpcAcsRequest<ListRulesResponse> {
 		}	
 	}
 
+	public List<String> getAScriptIds() {
+		return this.aScriptIds;
+	}
+
+	public void setAScriptIds(List<String> aScriptIds) {
+		this.aScriptIds = aScriptIds;	
+		if (aScriptIds != null) {
+			for (int depth1 = 0; depth1 < aScriptIds.size(); depth1++) {
+				putQueryParameter("AScriptIds." + (depth1 + 1) , aScriptIds.get(depth1));
+			}
+		}	
+	}
+
 	public Integer getMaxResults() {
 		return this.maxResults;
 	}
@@ -119,8 +106,8 @@ public class ListRulesRequest extends RpcAcsRequest<ListRulesResponse> {
 	}
 
 	@Override
-	public Class<ListRulesResponse> getResponseClass() {
-		return ListRulesResponse.class;
+	public Class<ListAScriptsResponse> getResponseClass() {
+		return ListAScriptsResponse.class;
 	}
 
 }

@@ -24,6 +24,8 @@ import com.aliyuncs.alb.Endpoint;
  */
 public class DescribeZonesRequest extends RpcAcsRequest<DescribeZonesResponse> {
 	   
+
+	private String acceptLanguage;
 	public DescribeZonesRequest() {
 		super("Alb", "2020-06-16", "DescribeZones", "alb");
 		setMethod(MethodType.POST);
@@ -31,6 +33,17 @@ public class DescribeZonesRequest extends RpcAcsRequest<DescribeZonesResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
+		}
 	}
 
 	@Override

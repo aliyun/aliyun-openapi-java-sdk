@@ -107,6 +107,8 @@ public class ListServerGroupsResponse extends AcsResponse {
 
 		private String serviceName;
 
+		private String createTime;
+
 		private List<Tag> tags;
 
 		private List<String> relatedLoadBalancerIds;
@@ -239,6 +241,14 @@ public class ListServerGroupsResponse extends AcsResponse {
 
 		public void setServiceName(String serviceName) {
 			this.serviceName = serviceName;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
 		public List<Tag> getTags() {

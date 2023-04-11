@@ -42,6 +42,7 @@ public class ListAclsResponseUnmarshaller {
 			acl.setServiceManagedEnabled(_ctx.booleanValue("ListAclsResponse.Acls["+ i +"].ServiceManagedEnabled"));
 			acl.setServiceManagedMode(_ctx.stringValue("ListAclsResponse.Acls["+ i +"].ServiceManagedMode"));
 			acl.setConfigManagedEnabled(_ctx.booleanValue("ListAclsResponse.Acls["+ i +"].ConfigManagedEnabled"));
+			acl.setCreateTime(_ctx.stringValue("ListAclsResponse.Acls["+ i +"].CreateTime"));
 
 			acls.add(acl);
 		}

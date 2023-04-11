@@ -65,6 +65,12 @@ public class GetLoadBalancerAttributeResponse extends AcsResponse {
 
 	private String ipv6AddressType;
 
+	private Boolean backToOriginRouteEnabled;
+
+	private String loadBalancerVersion;
+
+	private String sysSecurityGroupId;
+
 	private List<LoadBalancerOperationLock> loadBalancerOperationLocks;
 
 	private List<Tag> tags;
@@ -72,6 +78,8 @@ public class GetLoadBalancerAttributeResponse extends AcsResponse {
 	private List<ZoneMapping> zoneMappings;
 
 	private List<String> featureLabels;
+
+	private List<String> securityGroupIds;
 
 	private AccessLogConfig accessLogConfig;
 
@@ -241,6 +249,30 @@ public class GetLoadBalancerAttributeResponse extends AcsResponse {
 		this.ipv6AddressType = ipv6AddressType;
 	}
 
+	public Boolean getBackToOriginRouteEnabled() {
+		return this.backToOriginRouteEnabled;
+	}
+
+	public void setBackToOriginRouteEnabled(Boolean backToOriginRouteEnabled) {
+		this.backToOriginRouteEnabled = backToOriginRouteEnabled;
+	}
+
+	public String getLoadBalancerVersion() {
+		return this.loadBalancerVersion;
+	}
+
+	public void setLoadBalancerVersion(String loadBalancerVersion) {
+		this.loadBalancerVersion = loadBalancerVersion;
+	}
+
+	public String getSysSecurityGroupId() {
+		return this.sysSecurityGroupId;
+	}
+
+	public void setSysSecurityGroupId(String sysSecurityGroupId) {
+		this.sysSecurityGroupId = sysSecurityGroupId;
+	}
+
 	public List<LoadBalancerOperationLock> getLoadBalancerOperationLocks() {
 		return this.loadBalancerOperationLocks;
 	}
@@ -271,6 +303,14 @@ public class GetLoadBalancerAttributeResponse extends AcsResponse {
 
 	public void setFeatureLabels(List<String> featureLabels) {
 		this.featureLabels = featureLabels;
+	}
+
+	public List<String> getSecurityGroupIds() {
+		return this.securityGroupIds;
+	}
+
+	public void setSecurityGroupIds(List<String> securityGroupIds) {
+		this.securityGroupIds = securityGroupIds;
 	}
 
 	public AccessLogConfig getAccessLogConfig() {

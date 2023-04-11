@@ -41,6 +41,8 @@ public class UpdateServerGroupAttributeRequest extends RpcAcsRequest<UpdateServe
 	private StickySessionConfig stickySessionConfig;
 
 	private Boolean dryRun;
+
+	private UchConfig uchConfig;
 	public UpdateServerGroupAttributeRequest() {
 		super("Alb", "2020-06-16", "UpdateServerGroupAttribute", "alb");
 		setMethod(MethodType.POST);
@@ -162,6 +164,19 @@ public class UpdateServerGroupAttributeRequest extends RpcAcsRequest<UpdateServe
 		if(dryRun != null){
 			putQueryParameter("DryRun", dryRun.toString());
 		}
+	}
+
+	public UchConfig getUchConfig() {
+		return this.uchConfig;
+	}
+
+	public void setUchConfig(UchConfig uchConfig) {
+		this.uchConfig = uchConfig;	
+		if (uchConfig != null) {
+			
+				putQueryParameter("UchConfig.Type" , uchConfig.getType());
+				putQueryParameter("UchConfig.Value" , uchConfig.getValue());
+		}	
 	}
 
 	public static class HealthCheckConfig {
@@ -347,6 +362,29 @@ public class UpdateServerGroupAttributeRequest extends RpcAcsRequest<UpdateServe
 
 		public void setStickySessionType(String stickySessionType) {
 			this.stickySessionType = stickySessionType;
+		}
+	}
+
+	public static class UchConfig {
+
+		private String type;
+
+		private String value;
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
 		}
 	}
 

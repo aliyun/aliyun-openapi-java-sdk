@@ -53,12 +53,21 @@ public class GetLoadBalancerAttributeResponseUnmarshaller {
 		getLoadBalancerAttributeResponse.setConfigManagedEnabled(_ctx.booleanValue("GetLoadBalancerAttributeResponse.ConfigManagedEnabled"));
 		getLoadBalancerAttributeResponse.setAddressIpVersion(_ctx.stringValue("GetLoadBalancerAttributeResponse.AddressIpVersion"));
 		getLoadBalancerAttributeResponse.setIpv6AddressType(_ctx.stringValue("GetLoadBalancerAttributeResponse.Ipv6AddressType"));
+		getLoadBalancerAttributeResponse.setBackToOriginRouteEnabled(_ctx.booleanValue("GetLoadBalancerAttributeResponse.BackToOriginRouteEnabled"));
+		getLoadBalancerAttributeResponse.setLoadBalancerVersion(_ctx.stringValue("GetLoadBalancerAttributeResponse.LoadBalancerVersion"));
+		getLoadBalancerAttributeResponse.setSysSecurityGroupId(_ctx.stringValue("GetLoadBalancerAttributeResponse.SysSecurityGroupId"));
 
 		List<String> featureLabels = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetLoadBalancerAttributeResponse.FeatureLabels.Length"); i++) {
 			featureLabels.add(_ctx.stringValue("GetLoadBalancerAttributeResponse.FeatureLabels["+ i +"]"));
 		}
 		getLoadBalancerAttributeResponse.setFeatureLabels(featureLabels);
+
+		List<String> securityGroupIds = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("GetLoadBalancerAttributeResponse.SecurityGroupIds.Length"); i++) {
+			securityGroupIds.add(_ctx.stringValue("GetLoadBalancerAttributeResponse.SecurityGroupIds["+ i +"]"));
+		}
+		getLoadBalancerAttributeResponse.setSecurityGroupIds(securityGroupIds);
 
 		AccessLogConfig accessLogConfig = new AccessLogConfig();
 		accessLogConfig.setLogProject(_ctx.stringValue("GetLoadBalancerAttributeResponse.AccessLogConfig.LogProject"));

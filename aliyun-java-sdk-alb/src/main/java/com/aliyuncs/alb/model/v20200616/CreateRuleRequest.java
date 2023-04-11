@@ -32,6 +32,8 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 
 	private String listenerId;
 
+	private String direction;
+
 	private List<RuleActions> ruleActions;
 
 	private List<RuleConditions> ruleConditions;
@@ -78,6 +80,17 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 		this.listenerId = listenerId;
 		if(listenerId != null){
 			putQueryParameter("ListenerId", listenerId);
+		}
+	}
+
+	public String getDirection() {
+		return this.direction;
+	}
+
+	public void setDirection(String direction) {
+		this.direction = direction;
+		if(direction != null){
+			putQueryParameter("Direction", direction);
 		}
 	}
 
