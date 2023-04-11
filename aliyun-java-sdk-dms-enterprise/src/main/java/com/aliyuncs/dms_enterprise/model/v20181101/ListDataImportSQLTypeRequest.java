@@ -22,14 +22,14 @@ import com.aliyuncs.dms_enterprise.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetProxyRequest extends RpcAcsRequest<GetProxyResponse> {
+public class ListDataImportSQLTypeRequest extends RpcAcsRequest<ListDataImportSQLTypeResponse> {
 	   
 
 	private Long tid;
 
-	private Long proxyId;
-	public GetProxyRequest() {
-		super("dms-enterprise", "2018-11-01", "GetProxy", "dms-enterprise");
+	private Long orderId;
+	public ListDataImportSQLTypeRequest() {
+		super("dms-enterprise", "2018-11-01", "ListDataImportSQLType", "dms-enterprise");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -48,20 +48,20 @@ public class GetProxyRequest extends RpcAcsRequest<GetProxyResponse> {
 		}
 	}
 
-	public Long getProxyId() {
-		return this.proxyId;
+	public Long getOrderId() {
+		return this.orderId;
 	}
 
-	public void setProxyId(Long proxyId) {
-		this.proxyId = proxyId;
-		if(proxyId != null){
-			putQueryParameter("ProxyId", proxyId.toString());
+	public void setOrderId(Long orderId) {
+		this.orderId = orderId;
+		if(orderId != null){
+			putQueryParameter("OrderId", orderId.toString());
 		}
 	}
 
 	@Override
-	public Class<GetProxyResponse> getResponseClass() {
-		return GetProxyResponse.class;
+	public Class<ListDataImportSQLTypeResponse> getResponseClass() {
+		return ListDataImportSQLTypeResponse.class;
 	}
 
 }

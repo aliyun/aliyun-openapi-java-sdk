@@ -22,19 +22,32 @@ import com.aliyuncs.dms_enterprise.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetProxyRequest extends RpcAcsRequest<GetProxyResponse> {
+public class CreateAuthorityTemplateRequest extends RpcAcsRequest<CreateAuthorityTemplateResponse> {
 	   
+
+	private String description;
 
 	private Long tid;
 
-	private Long proxyId;
-	public GetProxyRequest() {
-		super("dms-enterprise", "2018-11-01", "GetProxy", "dms-enterprise");
+	private String name;
+	public CreateAuthorityTemplateRequest() {
+		super("dms-enterprise", "2018-11-01", "CreateAuthorityTemplate", "dms-enterprise");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
 	}
 
 	public Long getTid() {
@@ -48,20 +61,20 @@ public class GetProxyRequest extends RpcAcsRequest<GetProxyResponse> {
 		}
 	}
 
-	public Long getProxyId() {
-		return this.proxyId;
+	public String getName() {
+		return this.name;
 	}
 
-	public void setProxyId(Long proxyId) {
-		this.proxyId = proxyId;
-		if(proxyId != null){
-			putQueryParameter("ProxyId", proxyId.toString());
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 
 	@Override
-	public Class<GetProxyResponse> getResponseClass() {
-		return GetProxyResponse.class;
+	public Class<CreateAuthorityTemplateResponse> getResponseClass() {
+		return CreateAuthorityTemplateResponse.class;
 	}
 
 }

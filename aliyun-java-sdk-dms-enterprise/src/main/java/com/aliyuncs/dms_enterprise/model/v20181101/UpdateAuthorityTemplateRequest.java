@@ -22,19 +22,34 @@ import com.aliyuncs.dms_enterprise.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetProxyRequest extends RpcAcsRequest<GetProxyResponse> {
+public class UpdateAuthorityTemplateRequest extends RpcAcsRequest<UpdateAuthorityTemplateResponse> {
 	   
+
+	private String description;
 
 	private Long tid;
 
-	private Long proxyId;
-	public GetProxyRequest() {
-		super("dms-enterprise", "2018-11-01", "GetProxy", "dms-enterprise");
+	private Long templateId;
+
+	private String name;
+	public UpdateAuthorityTemplateRequest() {
+		super("dms-enterprise", "2018-11-01", "UpdateAuthorityTemplate", "dms-enterprise");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
 	}
 
 	public Long getTid() {
@@ -48,20 +63,31 @@ public class GetProxyRequest extends RpcAcsRequest<GetProxyResponse> {
 		}
 	}
 
-	public Long getProxyId() {
-		return this.proxyId;
+	public Long getTemplateId() {
+		return this.templateId;
 	}
 
-	public void setProxyId(Long proxyId) {
-		this.proxyId = proxyId;
-		if(proxyId != null){
-			putQueryParameter("ProxyId", proxyId.toString());
+	public void setTemplateId(Long templateId) {
+		this.templateId = templateId;
+		if(templateId != null){
+			putQueryParameter("TemplateId", templateId.toString());
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 
 	@Override
-	public Class<GetProxyResponse> getResponseClass() {
-		return GetProxyResponse.class;
+	public Class<UpdateAuthorityTemplateResponse> getResponseClass() {
+		return UpdateAuthorityTemplateResponse.class;
 	}
 
 }

@@ -1,3 +1,6 @@
+2023-04-11 Version: 1.45.0
+- Supported ListDataImportSQLPreCheckDetail,GetDataImportSQL,ListDataImportSQLType API.
+
 2023-01-13 Version: 1.44.0
 - Supported GetProxy, ListProxies to return RegionId information.
 - Supported SearchDatabase to return CatalogName information.
