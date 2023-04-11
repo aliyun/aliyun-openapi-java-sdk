@@ -83,6 +83,7 @@ public class DescribeLoadBalancerHTTPSListenerAttributeResponseUnmarshaller {
 		describeLoadBalancerHTTPSListenerAttributeResponse.setXForwardedFor_SLBIP(_ctx.stringValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.XForwardedFor_SLBIP"));
 		describeLoadBalancerHTTPSListenerAttributeResponse.setStickySession(_ctx.stringValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.StickySession"));
 		describeLoadBalancerHTTPSListenerAttributeResponse.setHealthCheck(_ctx.stringValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.HealthCheck"));
+		describeLoadBalancerHTTPSListenerAttributeResponse.setLoadBalancerId(_ctx.stringValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.LoadBalancerId"));
 
 		List<String> aclIds = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.AclIds.Length"); i++) {

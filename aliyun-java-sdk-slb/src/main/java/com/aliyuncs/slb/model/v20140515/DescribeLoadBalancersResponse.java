@@ -135,7 +135,11 @@ public class DescribeLoadBalancersResponse extends AcsResponse {
 
 		private String instanceChargeType;
 
+		private String serviceManagedReason;
+
 		private List<Tag> tags;
+
+		private List<String> ineffectiveOrderList;
 
 		public String getVpcId() {
 			return this.vpcId;
@@ -369,12 +373,28 @@ public class DescribeLoadBalancersResponse extends AcsResponse {
 			this.instanceChargeType = instanceChargeType;
 		}
 
+		public String getServiceManagedReason() {
+			return this.serviceManagedReason;
+		}
+
+		public void setServiceManagedReason(String serviceManagedReason) {
+			this.serviceManagedReason = serviceManagedReason;
+		}
+
 		public List<Tag> getTags() {
 			return this.tags;
 		}
 
 		public void setTags(List<Tag> tags) {
 			this.tags = tags;
+		}
+
+		public List<String> getIneffectiveOrderList() {
+			return this.ineffectiveOrderList;
+		}
+
+		public void setIneffectiveOrderList(List<String> ineffectiveOrderList) {
+			this.ineffectiveOrderList = ineffectiveOrderList;
 		}
 
 		public static class Tag {

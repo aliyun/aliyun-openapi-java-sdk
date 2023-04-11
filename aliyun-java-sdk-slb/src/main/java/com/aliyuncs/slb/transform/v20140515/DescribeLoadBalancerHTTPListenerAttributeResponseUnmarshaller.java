@@ -69,6 +69,7 @@ public class DescribeLoadBalancerHTTPListenerAttributeResponseUnmarshaller {
 		describeLoadBalancerHTTPListenerAttributeResponse.setStickySession(_ctx.stringValue("DescribeLoadBalancerHTTPListenerAttributeResponse.StickySession"));
 		describeLoadBalancerHTTPListenerAttributeResponse.setHealthCheckMethod(_ctx.stringValue("DescribeLoadBalancerHTTPListenerAttributeResponse.HealthCheckMethod"));
 		describeLoadBalancerHTTPListenerAttributeResponse.setHealthCheck(_ctx.stringValue("DescribeLoadBalancerHTTPListenerAttributeResponse.HealthCheck"));
+		describeLoadBalancerHTTPListenerAttributeResponse.setLoadBalancerId(_ctx.stringValue("DescribeLoadBalancerHTTPListenerAttributeResponse.LoadBalancerId"));
 
 		List<String> aclIds = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLoadBalancerHTTPListenerAttributeResponse.AclIds.Length"); i++) {

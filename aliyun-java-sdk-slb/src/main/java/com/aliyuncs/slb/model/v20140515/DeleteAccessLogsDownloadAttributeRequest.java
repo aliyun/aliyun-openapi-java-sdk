@@ -22,26 +22,24 @@ import com.aliyuncs.slb.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeAccessControlListAttributeRequest extends RpcAcsRequest<DescribeAccessControlListAttributeResponse> {
+public class DeleteAccessLogsDownloadAttributeRequest extends RpcAcsRequest<DeleteAccessLogsDownloadAttributeResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private Integer pageSize;
-
-	private String aclId;
+	private String logsDownloadAttributes;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String aclEntryComment;
-
 	private Long ownerId;
 
-	private Integer page;
-	public DescribeAccessControlListAttributeRequest() {
-		super("Slb", "2014-05-15", "DescribeAccessControlListAttribute", "slb");
+	private String tags;
+
+	private String loadBalancerId;
+	public DeleteAccessLogsDownloadAttributeRequest() {
+		super("Slb", "2014-05-15", "DeleteAccessLogsDownloadAttribute", "slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -60,25 +58,14 @@ public class DescribeAccessControlListAttributeRequest extends RpcAcsRequest<Des
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getLogsDownloadAttributes() {
+		return this.logsDownloadAttributes;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getAclId() {
-		return this.aclId;
-	}
-
-	public void setAclId(String aclId) {
-		this.aclId = aclId;
-		if(aclId != null){
-			putQueryParameter("AclId", aclId);
+	public void setLogsDownloadAttributes(String logsDownloadAttributes) {
+		this.logsDownloadAttributes = logsDownloadAttributes;
+		if(logsDownloadAttributes != null){
+			putQueryParameter("LogsDownloadAttributes", logsDownloadAttributes);
 		}
 	}
 
@@ -104,17 +91,6 @@ public class DescribeAccessControlListAttributeRequest extends RpcAcsRequest<Des
 		}
 	}
 
-	public String getAclEntryComment() {
-		return this.aclEntryComment;
-	}
-
-	public void setAclEntryComment(String aclEntryComment) {
-		this.aclEntryComment = aclEntryComment;
-		if(aclEntryComment != null){
-			putQueryParameter("AclEntryComment", aclEntryComment);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -126,20 +102,31 @@ public class DescribeAccessControlListAttributeRequest extends RpcAcsRequest<Des
 		}
 	}
 
-	public Integer getPage() {
-		return this.page;
+	public String getTags() {
+		return this.tags;
 	}
 
-	public void setPage(Integer page) {
-		this.page = page;
-		if(page != null){
-			putQueryParameter("Page", page.toString());
+	public void setTags(String tags) {
+		this.tags = tags;
+		if(tags != null){
+			putQueryParameter("Tags", tags);
+		}
+	}
+
+	public String getLoadBalancerId() {
+		return this.loadBalancerId;
+	}
+
+	public void setLoadBalancerId(String loadBalancerId) {
+		this.loadBalancerId = loadBalancerId;
+		if(loadBalancerId != null){
+			putQueryParameter("LoadBalancerId", loadBalancerId);
 		}
 	}
 
 	@Override
-	public Class<DescribeAccessControlListAttributeResponse> getResponseClass() {
-		return DescribeAccessControlListAttributeResponse.class;
+	public Class<DeleteAccessLogsDownloadAttributeResponse> getResponseClass() {
+		return DeleteAccessLogsDownloadAttributeResponse.class;
 	}
 
 }

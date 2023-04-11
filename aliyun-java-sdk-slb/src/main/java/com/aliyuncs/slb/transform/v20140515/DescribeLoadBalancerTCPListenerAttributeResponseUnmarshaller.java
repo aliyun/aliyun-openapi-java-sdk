@@ -66,6 +66,7 @@ public class DescribeLoadBalancerTCPListenerAttributeResponseUnmarshaller {
 		describeLoadBalancerTCPListenerAttributeResponse.setConnectionDrain(_ctx.stringValue("DescribeLoadBalancerTCPListenerAttributeResponse.ConnectionDrain"));
 		describeLoadBalancerTCPListenerAttributeResponse.setHealthCheckMethod(_ctx.stringValue("DescribeLoadBalancerTCPListenerAttributeResponse.HealthCheckMethod"));
 		describeLoadBalancerTCPListenerAttributeResponse.setHealthCheck(_ctx.stringValue("DescribeLoadBalancerTCPListenerAttributeResponse.HealthCheck"));
+		describeLoadBalancerTCPListenerAttributeResponse.setLoadBalancerId(_ctx.stringValue("DescribeLoadBalancerTCPListenerAttributeResponse.LoadBalancerId"));
 
 		List<String> aclIds = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLoadBalancerTCPListenerAttributeResponse.AclIds.Length"); i++) {

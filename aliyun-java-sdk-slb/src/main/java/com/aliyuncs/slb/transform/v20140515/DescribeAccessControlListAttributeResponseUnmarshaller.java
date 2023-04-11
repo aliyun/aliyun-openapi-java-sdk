@@ -34,6 +34,7 @@ public class DescribeAccessControlListAttributeResponseUnmarshaller {
 		describeAccessControlListAttributeResponse.setResourceGroupId(_ctx.stringValue("DescribeAccessControlListAttributeResponse.ResourceGroupId"));
 		describeAccessControlListAttributeResponse.setAclName(_ctx.stringValue("DescribeAccessControlListAttributeResponse.AclName"));
 		describeAccessControlListAttributeResponse.setCreateTime(_ctx.stringValue("DescribeAccessControlListAttributeResponse.CreateTime"));
+		describeAccessControlListAttributeResponse.setTotalAclEntry(_ctx.integerValue("DescribeAccessControlListAttributeResponse.TotalAclEntry"));
 
 		List<AclEntry> aclEntrys = new ArrayList<AclEntry>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAccessControlListAttributeResponse.AclEntrys.Length"); i++) {

@@ -131,6 +131,8 @@ public class DescribeLoadBalancerHTTPSListenerAttributeResponse extends AcsRespo
 
 	private String healthCheck;
 
+	private String loadBalancerId;
+
 	private List<Rule> rules;
 
 	private List<DomainExtension> domainExtensions;
@@ -561,6 +563,14 @@ public class DescribeLoadBalancerHTTPSListenerAttributeResponse extends AcsRespo
 
 	public void setHealthCheck(String healthCheck) {
 		this.healthCheck = healthCheck;
+	}
+
+	public String getLoadBalancerId() {
+		return this.loadBalancerId;
+	}
+
+	public void setLoadBalancerId(String loadBalancerId) {
+		this.loadBalancerId = loadBalancerId;
 	}
 
 	public List<Rule> getRules() {

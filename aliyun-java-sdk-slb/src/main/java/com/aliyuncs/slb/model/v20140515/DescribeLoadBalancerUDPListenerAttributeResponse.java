@@ -107,6 +107,8 @@ public class DescribeLoadBalancerUDPListenerAttributeResponse extends AcsRespons
 
 	private String healthCheck;
 
+	private String loadBalancerId;
+
 	private List<PortRange> portRanges;
 
 	private List<String> aclIds;
@@ -437,6 +439,14 @@ public class DescribeLoadBalancerUDPListenerAttributeResponse extends AcsRespons
 
 	public void setHealthCheck(String healthCheck) {
 		this.healthCheck = healthCheck;
+	}
+
+	public String getLoadBalancerId() {
+		return this.loadBalancerId;
+	}
+
+	public void setLoadBalancerId(String loadBalancerId) {
+		this.loadBalancerId = loadBalancerId;
 	}
 
 	public List<PortRange> getPortRanges() {

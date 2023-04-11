@@ -22,26 +22,20 @@ import com.aliyuncs.slb.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeAccessControlListAttributeRequest extends RpcAcsRequest<DescribeAccessControlListAttributeResponse> {
+public class DescribeHighDefinationMonitorRequest extends RpcAcsRequest<DescribeHighDefinationMonitorResponse> {
 	   
 
 	private Long resourceOwnerId;
-
-	private Integer pageSize;
-
-	private String aclId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String aclEntryComment;
-
 	private Long ownerId;
 
-	private Integer page;
-	public DescribeAccessControlListAttributeRequest() {
-		super("Slb", "2014-05-15", "DescribeAccessControlListAttribute", "slb");
+	private String tags;
+	public DescribeHighDefinationMonitorRequest() {
+		super("Slb", "2014-05-15", "DescribeHighDefinationMonitor", "slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -57,28 +51,6 @@ public class DescribeAccessControlListAttributeRequest extends RpcAcsRequest<Des
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getAclId() {
-		return this.aclId;
-	}
-
-	public void setAclId(String aclId) {
-		this.aclId = aclId;
-		if(aclId != null){
-			putQueryParameter("AclId", aclId);
 		}
 	}
 
@@ -104,17 +76,6 @@ public class DescribeAccessControlListAttributeRequest extends RpcAcsRequest<Des
 		}
 	}
 
-	public String getAclEntryComment() {
-		return this.aclEntryComment;
-	}
-
-	public void setAclEntryComment(String aclEntryComment) {
-		this.aclEntryComment = aclEntryComment;
-		if(aclEntryComment != null){
-			putQueryParameter("AclEntryComment", aclEntryComment);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -126,20 +87,20 @@ public class DescribeAccessControlListAttributeRequest extends RpcAcsRequest<Des
 		}
 	}
 
-	public Integer getPage() {
-		return this.page;
+	public String getTags() {
+		return this.tags;
 	}
 
-	public void setPage(Integer page) {
-		this.page = page;
-		if(page != null){
-			putQueryParameter("Page", page.toString());
+	public void setTags(String tags) {
+		this.tags = tags;
+		if(tags != null){
+			putQueryParameter("Tags", tags);
 		}
 	}
 
 	@Override
-	public Class<DescribeAccessControlListAttributeResponse> getResponseClass() {
-		return DescribeAccessControlListAttributeResponse.class;
+	public Class<DescribeHighDefinationMonitorResponse> getResponseClass() {
+		return DescribeHighDefinationMonitorResponse.class;
 	}
 
 }

@@ -64,6 +64,13 @@ public class DescribeLoadBalancersResponseUnmarshaller {
 			loadBalancer.setDeleteProtection(_ctx.stringValue("DescribeLoadBalancersResponse.LoadBalancers["+ i +"].DeleteProtection"));
 			loadBalancer.setRegionIdAlias(_ctx.stringValue("DescribeLoadBalancersResponse.LoadBalancers["+ i +"].RegionIdAlias"));
 			loadBalancer.setInstanceChargeType(_ctx.stringValue("DescribeLoadBalancersResponse.LoadBalancers["+ i +"].InstanceChargeType"));
+			loadBalancer.setServiceManagedReason(_ctx.stringValue("DescribeLoadBalancersResponse.LoadBalancers["+ i +"].ServiceManagedReason"));
+
+			List<String> ineffectiveOrderList = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeLoadBalancersResponse.LoadBalancers["+ i +"].IneffectiveOrderList.Length"); j++) {
+				ineffectiveOrderList.add(_ctx.stringValue("DescribeLoadBalancersResponse.LoadBalancers["+ i +"].IneffectiveOrderList["+ j +"]"));
+			}
+			loadBalancer.setIneffectiveOrderList(ineffectiveOrderList);
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeLoadBalancersResponse.LoadBalancers["+ i +"].Tags.Length"); j++) {
