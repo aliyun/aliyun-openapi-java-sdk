@@ -33,6 +33,8 @@ public class GetAggregateDiscoveredResourceRequest extends RpcAcsRequest<GetAggr
 
 	private String resourceType;
 
+	private Long resourceAccountId;
+
 	private String region;
 	public GetAggregateDiscoveredResourceRequest() {
 		super("Config", "2020-09-07", "GetAggregateDiscoveredResource");
@@ -84,6 +86,17 @@ public class GetAggregateDiscoveredResourceRequest extends RpcAcsRequest<GetAggr
 		this.resourceType = resourceType;
 		if(resourceType != null){
 			putQueryParameter("ResourceType", resourceType);
+		}
+	}
+
+	public Long getResourceAccountId() {
+		return this.resourceAccountId;
+	}
+
+	public void setResourceAccountId(Long resourceAccountId) {
+		this.resourceAccountId = resourceAccountId;
+		if(resourceAccountId != null){
+			putQueryParameter("ResourceAccountId", resourceAccountId.toString());
 		}
 	}
 

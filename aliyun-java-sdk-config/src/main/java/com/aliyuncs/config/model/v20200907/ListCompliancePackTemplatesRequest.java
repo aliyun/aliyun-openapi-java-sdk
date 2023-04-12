@@ -25,6 +25,8 @@ import com.aliyuncs.config.Endpoint;
 public class ListCompliancePackTemplatesRequest extends RpcAcsRequest<ListCompliancePackTemplatesResponse> {
 	   
 
+	private String resourceTypes;
+
 	private String compliancePackTemplateId;
 
 	private Integer pageNumber;
@@ -37,6 +39,17 @@ public class ListCompliancePackTemplatesRequest extends RpcAcsRequest<ListCompli
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getResourceTypes() {
+		return this.resourceTypes;
+	}
+
+	public void setResourceTypes(String resourceTypes) {
+		this.resourceTypes = resourceTypes;
+		if(resourceTypes != null){
+			putQueryParameter("ResourceTypes", resourceTypes);
+		}
 	}
 
 	public String getCompliancePackTemplateId() {

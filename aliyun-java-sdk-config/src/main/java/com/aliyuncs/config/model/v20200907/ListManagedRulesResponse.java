@@ -105,6 +105,8 @@ public class ListManagedRulesResponse extends AcsResponse {
 
 			private List<String> labels;
 
+			private Scope scope;
+
 			public Integer getRiskLevel() {
 				return this.riskLevel;
 			}
@@ -167,6 +169,27 @@ public class ListManagedRulesResponse extends AcsResponse {
 
 			public void setLabels(List<String> labels) {
 				this.labels = labels;
+			}
+
+			public Scope getScope() {
+				return this.scope;
+			}
+
+			public void setScope(Scope scope) {
+				this.scope = scope;
+			}
+
+			public static class Scope {
+
+				private List<String> complianceResourceTypes;
+
+				public List<String> getComplianceResourceTypes() {
+					return this.complianceResourceTypes;
+				}
+
+				public void setComplianceResourceTypes(List<String> complianceResourceTypes) {
+					this.complianceResourceTypes = complianceResourceTypes;
+				}
 			}
 		}
 	}

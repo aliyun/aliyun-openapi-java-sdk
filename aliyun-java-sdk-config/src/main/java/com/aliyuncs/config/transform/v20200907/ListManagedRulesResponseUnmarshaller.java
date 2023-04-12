@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.config.model.v20200907.ListManagedRulesResponse;
 import com.aliyuncs.config.model.v20200907.ListManagedRulesResponse.ManagedRules;
 import com.aliyuncs.config.model.v20200907.ListManagedRulesResponse.ManagedRules.ManagedRule;
+import com.aliyuncs.config.model.v20200907.ListManagedRulesResponse.ManagedRules.ManagedRule.Scope;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -50,6 +51,15 @@ public class ListManagedRulesResponseUnmarshaller {
 				labels.add(_ctx.stringValue("ListManagedRulesResponse.ManagedRules.ManagedRuleList["+ i +"].Labels["+ j +"]"));
 			}
 			managedRule.setLabels(labels);
+
+			Scope scope = new Scope();
+
+			List<String> complianceResourceTypes = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("ListManagedRulesResponse.ManagedRules.ManagedRuleList["+ i +"].Scope.ComplianceResourceTypes.Length"); j++) {
+				complianceResourceTypes.add(_ctx.stringValue("ListManagedRulesResponse.ManagedRules.ManagedRuleList["+ i +"].Scope.ComplianceResourceTypes["+ j +"]"));
+			}
+			scope.setComplianceResourceTypes(complianceResourceTypes);
+			managedRule.setScope(scope);
 
 			managedRuleList.add(managedRule);
 		}

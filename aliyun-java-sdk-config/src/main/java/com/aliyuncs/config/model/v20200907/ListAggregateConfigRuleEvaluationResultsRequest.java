@@ -33,6 +33,8 @@ public class ListAggregateConfigRuleEvaluationResultsRequest extends RpcAcsReque
 
 	private String aggregatorId;
 
+	private Long resourceAccountId;
+
 	private String nextToken;
 
 	private String compliancePackId;
@@ -94,6 +96,17 @@ public class ListAggregateConfigRuleEvaluationResultsRequest extends RpcAcsReque
 		this.aggregatorId = aggregatorId;
 		if(aggregatorId != null){
 			putQueryParameter("AggregatorId", aggregatorId);
+		}
+	}
+
+	public Long getResourceAccountId() {
+		return this.resourceAccountId;
+	}
+
+	public void setResourceAccountId(Long resourceAccountId) {
+		this.resourceAccountId = resourceAccountId;
+		if(resourceAccountId != null){
+			putQueryParameter("ResourceAccountId", resourceAccountId.toString());
 		}
 	}
 

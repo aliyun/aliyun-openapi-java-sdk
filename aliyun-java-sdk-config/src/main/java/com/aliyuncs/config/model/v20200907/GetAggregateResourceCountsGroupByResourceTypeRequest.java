@@ -31,6 +31,8 @@ public class GetAggregateResourceCountsGroupByResourceTypeRequest extends RpcAcs
 
 	private String folderId;
 
+	private Long resourceAccountId;
+
 	private String region;
 	public GetAggregateResourceCountsGroupByResourceTypeRequest() {
 		super("Config", "2020-09-07", "GetAggregateResourceCountsGroupByResourceType");
@@ -71,6 +73,17 @@ public class GetAggregateResourceCountsGroupByResourceTypeRequest extends RpcAcs
 		this.folderId = folderId;
 		if(folderId != null){
 			putQueryParameter("FolderId", folderId);
+		}
+	}
+
+	public Long getResourceAccountId() {
+		return this.resourceAccountId;
+	}
+
+	public void setResourceAccountId(Long resourceAccountId) {
+		this.resourceAccountId = resourceAccountId;
+		if(resourceAccountId != null){
+			putQueryParameter("ResourceAccountId", resourceAccountId.toString());
 		}
 	}
 

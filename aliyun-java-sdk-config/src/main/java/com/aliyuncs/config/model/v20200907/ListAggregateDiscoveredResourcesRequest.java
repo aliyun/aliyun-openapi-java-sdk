@@ -33,6 +33,8 @@ public class ListAggregateDiscoveredResourcesRequest extends RpcAcsRequest<ListA
 
 	private String aggregatorId;
 
+	private Long resourceAccountId;
+
 	private String nextToken;
 
 	private String resourceId;
@@ -90,6 +92,17 @@ public class ListAggregateDiscoveredResourcesRequest extends RpcAcsRequest<ListA
 		this.aggregatorId = aggregatorId;
 		if(aggregatorId != null){
 			putQueryParameter("AggregatorId", aggregatorId);
+		}
+	}
+
+	public Long getResourceAccountId() {
+		return this.resourceAccountId;
+	}
+
+	public void setResourceAccountId(Long resourceAccountId) {
+		this.resourceAccountId = resourceAccountId;
+		if(resourceAccountId != null){
+			putQueryParameter("ResourceAccountId", resourceAccountId.toString());
 		}
 	}
 

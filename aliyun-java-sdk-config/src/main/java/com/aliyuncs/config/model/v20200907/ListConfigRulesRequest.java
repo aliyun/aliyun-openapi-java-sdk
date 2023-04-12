@@ -22,12 +22,10 @@ import com.aliyuncs.config.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListAggregateConfigRulesRequest extends RpcAcsRequest<ListAggregateConfigRulesResponse> {
+public class ListConfigRulesRequest extends RpcAcsRequest<ListConfigRulesResponse> {
 	   
 
 	private String configRuleState;
-
-	private String aggregatorId;
 
 	private Integer pageNumber;
 
@@ -42,8 +40,8 @@ public class ListAggregateConfigRulesRequest extends RpcAcsRequest<ListAggregate
 	private Integer riskLevel;
 
 	private String configRuleName;
-	public ListAggregateConfigRulesRequest() {
-		super("Config", "2020-09-07", "ListAggregateConfigRules");
+	public ListConfigRulesRequest() {
+		super("Config", "2020-09-07", "ListConfigRules");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -59,17 +57,6 @@ public class ListAggregateConfigRulesRequest extends RpcAcsRequest<ListAggregate
 		this.configRuleState = configRuleState;
 		if(configRuleState != null){
 			putQueryParameter("ConfigRuleState", configRuleState);
-		}
-	}
-
-	public String getAggregatorId() {
-		return this.aggregatorId;
-	}
-
-	public void setAggregatorId(String aggregatorId) {
-		this.aggregatorId = aggregatorId;
-		if(aggregatorId != null){
-			putQueryParameter("AggregatorId", aggregatorId);
 		}
 	}
 
@@ -151,8 +138,8 @@ public class ListAggregateConfigRulesRequest extends RpcAcsRequest<ListAggregate
 	}
 
 	@Override
-	public Class<ListAggregateConfigRulesResponse> getResponseClass() {
-		return ListAggregateConfigRulesResponse.class;
+	public Class<ListConfigRulesResponse> getResponseClass() {
+		return ListConfigRulesResponse.class;
 	}
 
 }

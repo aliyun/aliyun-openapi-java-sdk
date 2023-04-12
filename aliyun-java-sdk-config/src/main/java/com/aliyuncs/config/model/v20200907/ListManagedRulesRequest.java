@@ -25,6 +25,8 @@ import com.aliyuncs.config.Endpoint;
 public class ListManagedRulesRequest extends RpcAcsRequest<ListManagedRulesResponse> {
 	   
 
+	private String resourceTypes;
+
 	private Integer riskLevel;
 
 	private Integer pageNumber;
@@ -39,6 +41,17 @@ public class ListManagedRulesRequest extends RpcAcsRequest<ListManagedRulesRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getResourceTypes() {
+		return this.resourceTypes;
+	}
+
+	public void setResourceTypes(String resourceTypes) {
+		this.resourceTypes = resourceTypes;
+		if(resourceTypes != null){
+			putQueryParameter("ResourceTypes", resourceTypes);
+		}
 	}
 
 	public Integer getRiskLevel() {

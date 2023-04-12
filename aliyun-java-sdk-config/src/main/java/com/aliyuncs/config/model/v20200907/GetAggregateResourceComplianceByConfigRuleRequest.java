@@ -27,9 +27,9 @@ public class GetAggregateResourceComplianceByConfigRuleRequest extends RpcAcsReq
 
 	private String configRuleId;
 
-	private Long resourceOwnerId;
-
 	private String aggregatorId;
+
+	private Long resourceAccountId;
 
 	private String complianceType;
 	public GetAggregateResourceComplianceByConfigRuleRequest() {
@@ -52,17 +52,6 @@ public class GetAggregateResourceComplianceByConfigRuleRequest extends RpcAcsReq
 		}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
 	public String getAggregatorId() {
 		return this.aggregatorId;
 	}
@@ -71,6 +60,17 @@ public class GetAggregateResourceComplianceByConfigRuleRequest extends RpcAcsReq
 		this.aggregatorId = aggregatorId;
 		if(aggregatorId != null){
 			putQueryParameter("AggregatorId", aggregatorId);
+		}
+	}
+
+	public Long getResourceAccountId() {
+		return this.resourceAccountId;
+	}
+
+	public void setResourceAccountId(Long resourceAccountId) {
+		this.resourceAccountId = resourceAccountId;
+		if(resourceAccountId != null){
+			putQueryParameter("ResourceAccountId", resourceAccountId.toString());
 		}
 	}
 
