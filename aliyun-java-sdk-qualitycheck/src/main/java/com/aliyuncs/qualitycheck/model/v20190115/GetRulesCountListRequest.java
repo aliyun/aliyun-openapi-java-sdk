@@ -69,6 +69,8 @@ public class GetRulesCountListRequest extends RpcAcsRequest<GetRulesCountListRes
 
 	private String lastUpdateEmpid;
 
+	private Long baseMeAgentId;
+
 	private String typeName;
 
 	private List<String> requireInfoss;
@@ -318,6 +320,17 @@ public class GetRulesCountListRequest extends RpcAcsRequest<GetRulesCountListRes
 		this.lastUpdateEmpid = lastUpdateEmpid;
 		if(lastUpdateEmpid != null){
 			putBodyParameter("LastUpdateEmpid", lastUpdateEmpid);
+		}
+	}
+
+	public Long getBaseMeAgentId() {
+		return this.baseMeAgentId;
+	}
+
+	public void setBaseMeAgentId(Long baseMeAgentId) {
+		this.baseMeAgentId = baseMeAgentId;
+		if(baseMeAgentId != null){
+			putQueryParameter("BaseMeAgentId", baseMeAgentId.toString());
 		}
 	}
 

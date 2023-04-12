@@ -26,11 +26,13 @@ public class UpdateRuleByIdRequest extends RpcAcsRequest<UpdateRuleByIdResponse>
 
 	private Boolean returnRelatedSchemes;
 
+	private Boolean isCopy;
+
 	private String jsonStrForRule;
 
 	private Long ruleId;
 
-	private Boolean isCopy;
+	private Long baseMeAgentId;
 	public UpdateRuleByIdRequest() {
 		super("Qualitycheck", "2019-01-15", "UpdateRuleById");
 		setMethod(MethodType.POST);
@@ -44,6 +46,17 @@ public class UpdateRuleByIdRequest extends RpcAcsRequest<UpdateRuleByIdResponse>
 		this.returnRelatedSchemes = returnRelatedSchemes;
 		if(returnRelatedSchemes != null){
 			putBodyParameter("ReturnRelatedSchemes", returnRelatedSchemes.toString());
+		}
+	}
+
+	public Boolean getIsCopy() {
+		return this.isCopy;
+	}
+
+	public void setIsCopy(Boolean isCopy) {
+		this.isCopy = isCopy;
+		if(isCopy != null){
+			putBodyParameter("IsCopy", isCopy.toString());
 		}
 	}
 
@@ -69,14 +82,14 @@ public class UpdateRuleByIdRequest extends RpcAcsRequest<UpdateRuleByIdResponse>
 		}
 	}
 
-	public Boolean getIsCopy() {
-		return this.isCopy;
+	public Long getBaseMeAgentId() {
+		return this.baseMeAgentId;
 	}
 
-	public void setIsCopy(Boolean isCopy) {
-		this.isCopy = isCopy;
-		if(isCopy != null){
-			putBodyParameter("IsCopy", isCopy.toString());
+	public void setBaseMeAgentId(Long baseMeAgentId) {
+		this.baseMeAgentId = baseMeAgentId;
+		if(baseMeAgentId != null){
+			putQueryParameter("BaseMeAgentId", baseMeAgentId.toString());
 		}
 	}
 

@@ -25,6 +25,8 @@ public class CreateCheckTypeToSchemeRequest extends RpcAcsRequest<CreateCheckTyp
 	   
 
 	private String jsonStr;
+
+	private Long baseMeAgentId;
 	public CreateCheckTypeToSchemeRequest() {
 		super("Qualitycheck", "2019-01-15", "CreateCheckTypeToScheme");
 		setMethod(MethodType.POST);
@@ -38,6 +40,17 @@ public class CreateCheckTypeToSchemeRequest extends RpcAcsRequest<CreateCheckTyp
 		this.jsonStr = jsonStr;
 		if(jsonStr != null){
 			putQueryParameter("jsonStr", jsonStr);
+		}
+	}
+
+	public Long getBaseMeAgentId() {
+		return this.baseMeAgentId;
+	}
+
+	public void setBaseMeAgentId(Long baseMeAgentId) {
+		this.baseMeAgentId = baseMeAgentId;
+		if(baseMeAgentId != null){
+			putQueryParameter("BaseMeAgentId", baseMeAgentId.toString());
 		}
 	}
 

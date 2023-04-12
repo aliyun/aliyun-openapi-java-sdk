@@ -25,6 +25,8 @@ public class UpdateUserConfigRequest extends RpcAcsRequest<UpdateUserConfigRespo
 	   
 
 	private String jsonStr;
+
+	private Long baseMeAgentId;
 	public UpdateUserConfigRequest() {
 		super("Qualitycheck", "2019-01-15", "UpdateUserConfig");
 		setMethod(MethodType.POST);
@@ -38,6 +40,17 @@ public class UpdateUserConfigRequest extends RpcAcsRequest<UpdateUserConfigRespo
 		this.jsonStr = jsonStr;
 		if(jsonStr != null){
 			putQueryParameter("JsonStr", jsonStr);
+		}
+	}
+
+	public Long getBaseMeAgentId() {
+		return this.baseMeAgentId;
+	}
+
+	public void setBaseMeAgentId(Long baseMeAgentId) {
+		this.baseMeAgentId = baseMeAgentId;
+		if(baseMeAgentId != null){
+			putQueryParameter("BaseMeAgentId", baseMeAgentId.toString());
 		}
 	}
 

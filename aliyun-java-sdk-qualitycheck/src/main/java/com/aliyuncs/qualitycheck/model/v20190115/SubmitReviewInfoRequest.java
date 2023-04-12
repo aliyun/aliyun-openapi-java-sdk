@@ -25,6 +25,8 @@ public class SubmitReviewInfoRequest extends RpcAcsRequest<SubmitReviewInfoRespo
 	   
 
 	private String jsonStr;
+
+	private Long baseMeAgentId;
 	public SubmitReviewInfoRequest() {
 		super("Qualitycheck", "2019-01-15", "SubmitReviewInfo");
 		setMethod(MethodType.POST);
@@ -38,6 +40,17 @@ public class SubmitReviewInfoRequest extends RpcAcsRequest<SubmitReviewInfoRespo
 		this.jsonStr = jsonStr;
 		if(jsonStr != null){
 			putQueryParameter("JsonStr", jsonStr);
+		}
+	}
+
+	public Long getBaseMeAgentId() {
+		return this.baseMeAgentId;
+	}
+
+	public void setBaseMeAgentId(Long baseMeAgentId) {
+		this.baseMeAgentId = baseMeAgentId;
+		if(baseMeAgentId != null){
+			putQueryParameter("BaseMeAgentId", baseMeAgentId.toString());
 		}
 	}
 

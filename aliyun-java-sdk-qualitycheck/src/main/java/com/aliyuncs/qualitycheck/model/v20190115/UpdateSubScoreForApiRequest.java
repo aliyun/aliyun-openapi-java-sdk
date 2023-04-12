@@ -25,6 +25,8 @@ public class UpdateSubScoreForApiRequest extends RpcAcsRequest<UpdateSubScoreFor
 	   
 
 	private String jsonStr;
+
+	private Long baseMeAgentId;
 	public UpdateSubScoreForApiRequest() {
 		super("Qualitycheck", "2019-01-15", "UpdateSubScoreForApi");
 		setMethod(MethodType.POST);
@@ -38,6 +40,17 @@ public class UpdateSubScoreForApiRequest extends RpcAcsRequest<UpdateSubScoreFor
 		this.jsonStr = jsonStr;
 		if(jsonStr != null){
 			putQueryParameter("JsonStr", jsonStr);
+		}
+	}
+
+	public Long getBaseMeAgentId() {
+		return this.baseMeAgentId;
+	}
+
+	public void setBaseMeAgentId(Long baseMeAgentId) {
+		this.baseMeAgentId = baseMeAgentId;
+		if(baseMeAgentId != null){
+			putQueryParameter("BaseMeAgentId", baseMeAgentId.toString());
 		}
 	}
 

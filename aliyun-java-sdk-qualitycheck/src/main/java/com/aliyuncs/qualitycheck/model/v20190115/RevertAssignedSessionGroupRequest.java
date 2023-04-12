@@ -25,6 +25,8 @@ public class RevertAssignedSessionGroupRequest extends RpcAcsRequest<RevertAssig
 	   
 
 	private String jsonStr;
+
+	private Long baseMeAgentId;
 	public RevertAssignedSessionGroupRequest() {
 		super("Qualitycheck", "2019-01-15", "RevertAssignedSessionGroup");
 		setMethod(MethodType.POST);
@@ -38,6 +40,17 @@ public class RevertAssignedSessionGroupRequest extends RpcAcsRequest<RevertAssig
 		this.jsonStr = jsonStr;
 		if(jsonStr != null){
 			putQueryParameter("jsonStr", jsonStr);
+		}
+	}
+
+	public Long getBaseMeAgentId() {
+		return this.baseMeAgentId;
+	}
+
+	public void setBaseMeAgentId(Long baseMeAgentId) {
+		this.baseMeAgentId = baseMeAgentId;
+		if(baseMeAgentId != null){
+			putQueryParameter("BaseMeAgentId", baseMeAgentId.toString());
 		}
 	}
 

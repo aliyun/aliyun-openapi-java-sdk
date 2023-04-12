@@ -25,6 +25,8 @@ public class InvalidRuleRequest extends RpcAcsRequest<InvalidRuleResponse> {
 	   
 
 	private String jsonStr;
+
+	private Long baseMeAgentId;
 	public InvalidRuleRequest() {
 		super("Qualitycheck", "2019-01-15", "InvalidRule");
 		setMethod(MethodType.POST);
@@ -38,6 +40,17 @@ public class InvalidRuleRequest extends RpcAcsRequest<InvalidRuleResponse> {
 		this.jsonStr = jsonStr;
 		if(jsonStr != null){
 			putQueryParameter("JsonStr", jsonStr);
+		}
+	}
+
+	public Long getBaseMeAgentId() {
+		return this.baseMeAgentId;
+	}
+
+	public void setBaseMeAgentId(Long baseMeAgentId) {
+		this.baseMeAgentId = baseMeAgentId;
+		if(baseMeAgentId != null){
+			putQueryParameter("BaseMeAgentId", baseMeAgentId.toString());
 		}
 	}
 

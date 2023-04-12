@@ -25,6 +25,8 @@ public class UpdateSchemeTaskConfigRequest extends RpcAcsRequest<UpdateSchemeTas
 	   
 
 	private String jsonStr;
+
+	private Long baseMeAgentId;
 	public UpdateSchemeTaskConfigRequest() {
 		super("Qualitycheck", "2019-01-15", "UpdateSchemeTaskConfig");
 		setMethod(MethodType.POST);
@@ -38,6 +40,17 @@ public class UpdateSchemeTaskConfigRequest extends RpcAcsRequest<UpdateSchemeTas
 		this.jsonStr = jsonStr;
 		if(jsonStr != null){
 			putQueryParameter("jsonStr", jsonStr);
+		}
+	}
+
+	public Long getBaseMeAgentId() {
+		return this.baseMeAgentId;
+	}
+
+	public void setBaseMeAgentId(Long baseMeAgentId) {
+		this.baseMeAgentId = baseMeAgentId;
+		if(baseMeAgentId != null){
+			putQueryParameter("BaseMeAgentId", baseMeAgentId.toString());
 		}
 	}
 

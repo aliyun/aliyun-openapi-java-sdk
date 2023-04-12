@@ -25,6 +25,8 @@ public class GetRuleByIdRequest extends RpcAcsRequest<GetRuleByIdResponse> {
 	   
 
 	private Long ruleId;
+
+	private Long baseMeAgentId;
 	public GetRuleByIdRequest() {
 		super("Qualitycheck", "2019-01-15", "GetRuleById");
 		setMethod(MethodType.POST);
@@ -38,6 +40,17 @@ public class GetRuleByIdRequest extends RpcAcsRequest<GetRuleByIdResponse> {
 		this.ruleId = ruleId;
 		if(ruleId != null){
 			putBodyParameter("RuleId", ruleId.toString());
+		}
+	}
+
+	public Long getBaseMeAgentId() {
+		return this.baseMeAgentId;
+	}
+
+	public void setBaseMeAgentId(Long baseMeAgentId) {
+		this.baseMeAgentId = baseMeAgentId;
+		if(baseMeAgentId != null){
+			putQueryParameter("BaseMeAgentId", baseMeAgentId.toString());
 		}
 	}
 

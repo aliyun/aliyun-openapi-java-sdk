@@ -25,6 +25,8 @@ public class DeleteWarningConfigRequest extends RpcAcsRequest<DeleteWarningConfi
 	   
 
 	private String jsonStr;
+
+	private Long baseMeAgentId;
 	public DeleteWarningConfigRequest() {
 		super("Qualitycheck", "2019-01-15", "DeleteWarningConfig");
 		setMethod(MethodType.POST);
@@ -38,6 +40,17 @@ public class DeleteWarningConfigRequest extends RpcAcsRequest<DeleteWarningConfi
 		this.jsonStr = jsonStr;
 		if(jsonStr != null){
 			putQueryParameter("JsonStr", jsonStr);
+		}
+	}
+
+	public Long getBaseMeAgentId() {
+		return this.baseMeAgentId;
+	}
+
+	public void setBaseMeAgentId(Long baseMeAgentId) {
+		this.baseMeAgentId = baseMeAgentId;
+		if(baseMeAgentId != null){
+			putQueryParameter("BaseMeAgentId", baseMeAgentId.toString());
 		}
 	}
 

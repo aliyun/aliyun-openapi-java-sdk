@@ -14,9 +14,6 @@
 
 package com.aliyuncs.qualitycheck.transform.v20190115;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.aliyuncs.qualitycheck.model.v20190115.GetRuleByIdResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -25,18 +22,6 @@ public class GetRuleByIdResponseUnmarshaller {
 
 	public static GetRuleByIdResponse unmarshall(GetRuleByIdResponse getRuleByIdResponse, UnmarshallerContext _ctx) {
 		
-		getRuleByIdResponse.setRequestId(_ctx.stringValue("GetRuleByIdResponse.RequestId"));
-		getRuleByIdResponse.setData(_ctx.stringValue("GetRuleByIdResponse.Data"));
-		getRuleByIdResponse.setSuccess(_ctx.booleanValue("GetRuleByIdResponse.Success"));
-		getRuleByIdResponse.setCode(_ctx.stringValue("GetRuleByIdResponse.Code"));
-		getRuleByIdResponse.setMessage(_ctx.stringValue("GetRuleByIdResponse.Message"));
-		getRuleByIdResponse.setHttpStatusCode(_ctx.integerValue("GetRuleByIdResponse.HttpStatusCode"));
-
-		List<String> messages = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("GetRuleByIdResponse.Messages.Length"); i++) {
-			messages.add(_ctx.stringValue("GetRuleByIdResponse.Messages["+ i +"]"));
-		}
-		getRuleByIdResponse.setMessages(messages);
 	 
 	 	return getRuleByIdResponse;
 	}

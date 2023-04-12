@@ -14,7 +14,6 @@
 
 package com.aliyuncs.qualitycheck.model.v20190115;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.qualitycheck.transform.v20190115.GetRuleByIdResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -25,78 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetRuleByIdResponse extends AcsResponse {
 
-	private String data;
-
-	private String requestId;
-
-	private Boolean success;
-
-	private String code;
-
-	private String message;
-
-	private Integer httpStatusCode;
-
-	private List<String> messages;
-
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
-
-	public List<String> getMessages() {
-		return this.messages;
-	}
-
-	public void setMessages(List<String> messages) {
-		this.messages = messages;
-	}
-
 	@Override
 	public GetRuleByIdResponse getInstance(UnmarshallerContext context) {
 		return	GetRuleByIdResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

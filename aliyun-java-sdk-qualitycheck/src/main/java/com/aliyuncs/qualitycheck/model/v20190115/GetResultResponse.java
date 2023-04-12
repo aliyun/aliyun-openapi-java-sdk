@@ -436,6 +436,8 @@ public class GetResultResponse extends AcsResponse {
 
 			private List<Hit> hits;
 
+			private List<ConditionsItem> conditions;
+
 			public String getType() {
 				return this.type;
 			}
@@ -490,6 +492,14 @@ public class GetResultResponse extends AcsResponse {
 
 			public void setHits(List<Hit> hits) {
 				this.hits = hits;
+			}
+
+			public List<ConditionsItem> getConditions() {
+				return this.conditions;
+			}
+
+			public void setConditions(List<ConditionsItem> conditions) {
+				this.conditions = conditions;
 			}
 
 			public static class Hit {
@@ -617,6 +627,656 @@ public class GetResultResponse extends AcsResponse {
 
 					public void setBegin(Long begin) {
 						this.begin = begin;
+					}
+				}
+			}
+
+			public static class ConditionsItem {
+
+				private String cid;
+
+				private Long id;
+
+				private String rid;
+
+				private String lambda;
+
+				private Integer exclusion;
+
+				private List<Operator> operators;
+
+				private Check_range check_range;
+
+				public String getCid() {
+					return this.cid;
+				}
+
+				public void setCid(String cid) {
+					this.cid = cid;
+				}
+
+				public Long getId() {
+					return this.id;
+				}
+
+				public void setId(Long id) {
+					this.id = id;
+				}
+
+				public String getRid() {
+					return this.rid;
+				}
+
+				public void setRid(String rid) {
+					this.rid = rid;
+				}
+
+				public String getLambda() {
+					return this.lambda;
+				}
+
+				public void setLambda(String lambda) {
+					this.lambda = lambda;
+				}
+
+				public Integer getExclusion() {
+					return this.exclusion;
+				}
+
+				public void setExclusion(Integer exclusion) {
+					this.exclusion = exclusion;
+				}
+
+				public List<Operator> getOperators() {
+					return this.operators;
+				}
+
+				public void setOperators(List<Operator> operators) {
+					this.operators = operators;
+				}
+
+				public Check_range getCheck_range() {
+					return this.check_range;
+				}
+
+				public void setCheck_range(Check_range check_range) {
+					this.check_range = check_range;
+				}
+
+				public static class Operator {
+
+					private String oid;
+
+					private Long id;
+
+					private String type;
+
+					private String name;
+
+					private Param param;
+
+					public String getOid() {
+						return this.oid;
+					}
+
+					public void setOid(String oid) {
+						this.oid = oid;
+					}
+
+					public Long getId() {
+						return this.id;
+					}
+
+					public void setId(Long id) {
+						this.id = id;
+					}
+
+					public String getType() {
+						return this.type;
+					}
+
+					public void setType(String type) {
+						this.type = type;
+					}
+
+					public String getName() {
+						return this.name;
+					}
+
+					public void setName(String name) {
+						this.name = name;
+					}
+
+					public Param getParam() {
+						return this.param;
+					}
+
+					public void setParam(Param param) {
+						this.param = param;
+					}
+
+					public static class Param {
+
+						private String regex;
+
+						private String notRegex;
+
+						private String phrase;
+
+						private Integer interval;
+
+						private Integer intervalEnd;
+
+						private Float threshold;
+
+						private Boolean in_sentence;
+
+						private Integer target;
+
+						private Boolean from_end;
+
+						private Integer keywordExtension;
+
+						private Boolean case_sensitive;
+
+						private Boolean near_dialogue;
+
+						private Integer minWordSize;
+
+						private Integer hit_time;
+
+						private Integer from;
+
+						private Boolean checkFirstSentence;
+
+						private Boolean average;
+
+						private String beginType;
+
+						private String endType;
+
+						private String compareOperator;
+
+						private Boolean contextChatMatch;
+
+						private Integer keywordMatchSize;
+
+						private Integer maxEmotionChangeValue;
+
+						private Integer checkType;
+
+						private Integer delayTime;
+
+						private List<String> keywords;
+
+						private List<String> excludes;
+
+						private FlowNodePrerequisiteParam flowNodePrerequisiteParam;
+
+						private IntentModelCheckParm intentModelCheckParm;
+
+						public String getRegex() {
+							return this.regex;
+						}
+
+						public void setRegex(String regex) {
+							this.regex = regex;
+						}
+
+						public String getNotRegex() {
+							return this.notRegex;
+						}
+
+						public void setNotRegex(String notRegex) {
+							this.notRegex = notRegex;
+						}
+
+						public String getPhrase() {
+							return this.phrase;
+						}
+
+						public void setPhrase(String phrase) {
+							this.phrase = phrase;
+						}
+
+						public Integer getInterval() {
+							return this.interval;
+						}
+
+						public void setInterval(Integer interval) {
+							this.interval = interval;
+						}
+
+						public Integer getIntervalEnd() {
+							return this.intervalEnd;
+						}
+
+						public void setIntervalEnd(Integer intervalEnd) {
+							this.intervalEnd = intervalEnd;
+						}
+
+						public Float getThreshold() {
+							return this.threshold;
+						}
+
+						public void setThreshold(Float threshold) {
+							this.threshold = threshold;
+						}
+
+						public Boolean getIn_sentence() {
+							return this.in_sentence;
+						}
+
+						public void setIn_sentence(Boolean in_sentence) {
+							this.in_sentence = in_sentence;
+						}
+
+						public Integer getTarget() {
+							return this.target;
+						}
+
+						public void setTarget(Integer target) {
+							this.target = target;
+						}
+
+						public Boolean getFrom_end() {
+							return this.from_end;
+						}
+
+						public void setFrom_end(Boolean from_end) {
+							this.from_end = from_end;
+						}
+
+						public Integer getKeywordExtension() {
+							return this.keywordExtension;
+						}
+
+						public void setKeywordExtension(Integer keywordExtension) {
+							this.keywordExtension = keywordExtension;
+						}
+
+						public Boolean getCase_sensitive() {
+							return this.case_sensitive;
+						}
+
+						public void setCase_sensitive(Boolean case_sensitive) {
+							this.case_sensitive = case_sensitive;
+						}
+
+						public Boolean getNear_dialogue() {
+							return this.near_dialogue;
+						}
+
+						public void setNear_dialogue(Boolean near_dialogue) {
+							this.near_dialogue = near_dialogue;
+						}
+
+						public Integer getMinWordSize() {
+							return this.minWordSize;
+						}
+
+						public void setMinWordSize(Integer minWordSize) {
+							this.minWordSize = minWordSize;
+						}
+
+						public Integer getHit_time() {
+							return this.hit_time;
+						}
+
+						public void setHit_time(Integer hit_time) {
+							this.hit_time = hit_time;
+						}
+
+						public Integer getFrom() {
+							return this.from;
+						}
+
+						public void setFrom(Integer from) {
+							this.from = from;
+						}
+
+						public Boolean getCheckFirstSentence() {
+							return this.checkFirstSentence;
+						}
+
+						public void setCheckFirstSentence(Boolean checkFirstSentence) {
+							this.checkFirstSentence = checkFirstSentence;
+						}
+
+						public Boolean getAverage() {
+							return this.average;
+						}
+
+						public void setAverage(Boolean average) {
+							this.average = average;
+						}
+
+						public String getBeginType() {
+							return this.beginType;
+						}
+
+						public void setBeginType(String beginType) {
+							this.beginType = beginType;
+						}
+
+						public String getEndType() {
+							return this.endType;
+						}
+
+						public void setEndType(String endType) {
+							this.endType = endType;
+						}
+
+						public String getCompareOperator() {
+							return this.compareOperator;
+						}
+
+						public void setCompareOperator(String compareOperator) {
+							this.compareOperator = compareOperator;
+						}
+
+						public Boolean getContextChatMatch() {
+							return this.contextChatMatch;
+						}
+
+						public void setContextChatMatch(Boolean contextChatMatch) {
+							this.contextChatMatch = contextChatMatch;
+						}
+
+						public Integer getKeywordMatchSize() {
+							return this.keywordMatchSize;
+						}
+
+						public void setKeywordMatchSize(Integer keywordMatchSize) {
+							this.keywordMatchSize = keywordMatchSize;
+						}
+
+						public Integer getMaxEmotionChangeValue() {
+							return this.maxEmotionChangeValue;
+						}
+
+						public void setMaxEmotionChangeValue(Integer maxEmotionChangeValue) {
+							this.maxEmotionChangeValue = maxEmotionChangeValue;
+						}
+
+						public Integer getCheckType() {
+							return this.checkType;
+						}
+
+						public void setCheckType(Integer checkType) {
+							this.checkType = checkType;
+						}
+
+						public Integer getDelayTime() {
+							return this.delayTime;
+						}
+
+						public void setDelayTime(Integer delayTime) {
+							this.delayTime = delayTime;
+						}
+
+						public List<String> getKeywords() {
+							return this.keywords;
+						}
+
+						public void setKeywords(List<String> keywords) {
+							this.keywords = keywords;
+						}
+
+						public List<String> getExcludes() {
+							return this.excludes;
+						}
+
+						public void setExcludes(List<String> excludes) {
+							this.excludes = excludes;
+						}
+
+						public FlowNodePrerequisiteParam getFlowNodePrerequisiteParam() {
+							return this.flowNodePrerequisiteParam;
+						}
+
+						public void setFlowNodePrerequisiteParam(FlowNodePrerequisiteParam flowNodePrerequisiteParam) {
+							this.flowNodePrerequisiteParam = flowNodePrerequisiteParam;
+						}
+
+						public IntentModelCheckParm getIntentModelCheckParm() {
+							return this.intentModelCheckParm;
+						}
+
+						public void setIntentModelCheckParm(IntentModelCheckParm intentModelCheckParm) {
+							this.intentModelCheckParm = intentModelCheckParm;
+						}
+
+						public static class FlowNodePrerequisiteParam {
+
+							private Long nodeId;
+
+							private String nodeName;
+
+							private Integer nodeMatchStatus;
+
+							public Long getNodeId() {
+								return this.nodeId;
+							}
+
+							public void setNodeId(Long nodeId) {
+								this.nodeId = nodeId;
+							}
+
+							public String getNodeName() {
+								return this.nodeName;
+							}
+
+							public void setNodeName(String nodeName) {
+								this.nodeName = nodeName;
+							}
+
+							public Integer getNodeMatchStatus() {
+								return this.nodeMatchStatus;
+							}
+
+							public void setNodeMatchStatus(Integer nodeMatchStatus) {
+								this.nodeMatchStatus = nodeMatchStatus;
+							}
+						}
+
+						public static class IntentModelCheckParm {
+
+							private String modelScene;
+
+							private List<Intent> intents;
+
+							public String getModelScene() {
+								return this.modelScene;
+							}
+
+							public void setModelScene(String modelScene) {
+								this.modelScene = modelScene;
+							}
+
+							public List<Intent> getIntents() {
+								return this.intents;
+							}
+
+							public void setIntents(List<Intent> intents) {
+								this.intents = intents;
+							}
+
+							public static class Intent {
+
+								private Long id;
+
+								private String name;
+
+								public Long getId() {
+									return this.id;
+								}
+
+								public void setId(Long id) {
+									this.id = id;
+								}
+
+								public String getName() {
+									return this.name;
+								}
+
+								public void setName(String name) {
+									this.name = name;
+								}
+							}
+						}
+					}
+				}
+
+				public static class Check_range {
+
+					private Integer roleId;
+
+					private String role;
+
+					private Boolean absolute;
+
+					private Boolean allSentencesSatisfy;
+
+					private Anchor anchor;
+
+					private Range range;
+
+					private TimeRange timeRange;
+
+					public Integer getRoleId() {
+						return this.roleId;
+					}
+
+					public void setRoleId(Integer roleId) {
+						this.roleId = roleId;
+					}
+
+					public String getRole() {
+						return this.role;
+					}
+
+					public void setRole(String role) {
+						this.role = role;
+					}
+
+					public Boolean getAbsolute() {
+						return this.absolute;
+					}
+
+					public void setAbsolute(Boolean absolute) {
+						this.absolute = absolute;
+					}
+
+					public Boolean getAllSentencesSatisfy() {
+						return this.allSentencesSatisfy;
+					}
+
+					public void setAllSentencesSatisfy(Boolean allSentencesSatisfy) {
+						this.allSentencesSatisfy = allSentencesSatisfy;
+					}
+
+					public Anchor getAnchor() {
+						return this.anchor;
+					}
+
+					public void setAnchor(Anchor anchor) {
+						this.anchor = anchor;
+					}
+
+					public Range getRange() {
+						return this.range;
+					}
+
+					public void setRange(Range range) {
+						this.range = range;
+					}
+
+					public TimeRange getTimeRange() {
+						return this.timeRange;
+					}
+
+					public void setTimeRange(TimeRange timeRange) {
+						this.timeRange = timeRange;
+					}
+
+					public static class Anchor {
+
+						private String cid;
+
+						private String location;
+
+						private Integer hit_time;
+
+						public String getCid() {
+							return this.cid;
+						}
+
+						public void setCid(String cid) {
+							this.cid = cid;
+						}
+
+						public String getLocation() {
+							return this.location;
+						}
+
+						public void setLocation(String location) {
+							this.location = location;
+						}
+
+						public Integer getHit_time() {
+							return this.hit_time;
+						}
+
+						public void setHit_time(Integer hit_time) {
+							this.hit_time = hit_time;
+						}
+					}
+
+					public static class Range {
+
+						private Integer from;
+
+						private Integer to;
+
+						public Integer getFrom() {
+							return this.from;
+						}
+
+						public void setFrom(Integer from) {
+							this.from = from;
+						}
+
+						public Integer getTo() {
+							return this.to;
+						}
+
+						public void setTo(Integer to) {
+							this.to = to;
+						}
+					}
+
+					public static class TimeRange {
+
+						private Long from;
+
+						private Long to;
+
+						public Long getFrom() {
+							return this.from;
+						}
+
+						public void setFrom(Long from) {
+							this.from = from;
+						}
+
+						public Long getTo() {
+							return this.to;
+						}
+
+						public void setTo(Long to) {
+							this.to = to;
+						}
 					}
 				}
 			}

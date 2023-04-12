@@ -22,6 +22,16 @@ import com.aliyuncs.qualitycheck.model.v20190115.GetResultResponse.ResultInfo;
 import com.aliyuncs.qualitycheck.model.v20190115.GetResultResponse.ResultInfo.Agent;
 import com.aliyuncs.qualitycheck.model.v20190115.GetResultResponse.ResultInfo.AsrResultItem;
 import com.aliyuncs.qualitycheck.model.v20190115.GetResultResponse.ResultInfo.HitResultItem;
+import com.aliyuncs.qualitycheck.model.v20190115.GetResultResponse.ResultInfo.HitResultItem.ConditionsItem;
+import com.aliyuncs.qualitycheck.model.v20190115.GetResultResponse.ResultInfo.HitResultItem.ConditionsItem.Check_range;
+import com.aliyuncs.qualitycheck.model.v20190115.GetResultResponse.ResultInfo.HitResultItem.ConditionsItem.Check_range.Anchor;
+import com.aliyuncs.qualitycheck.model.v20190115.GetResultResponse.ResultInfo.HitResultItem.ConditionsItem.Check_range.Range;
+import com.aliyuncs.qualitycheck.model.v20190115.GetResultResponse.ResultInfo.HitResultItem.ConditionsItem.Check_range.TimeRange;
+import com.aliyuncs.qualitycheck.model.v20190115.GetResultResponse.ResultInfo.HitResultItem.ConditionsItem.Operator;
+import com.aliyuncs.qualitycheck.model.v20190115.GetResultResponse.ResultInfo.HitResultItem.ConditionsItem.Operator.Param;
+import com.aliyuncs.qualitycheck.model.v20190115.GetResultResponse.ResultInfo.HitResultItem.ConditionsItem.Operator.Param.FlowNodePrerequisiteParam;
+import com.aliyuncs.qualitycheck.model.v20190115.GetResultResponse.ResultInfo.HitResultItem.ConditionsItem.Operator.Param.IntentModelCheckParm;
+import com.aliyuncs.qualitycheck.model.v20190115.GetResultResponse.ResultInfo.HitResultItem.ConditionsItem.Operator.Param.IntentModelCheckParm.Intent;
 import com.aliyuncs.qualitycheck.model.v20190115.GetResultResponse.ResultInfo.HitResultItem.Hit;
 import com.aliyuncs.qualitycheck.model.v20190115.GetResultResponse.ResultInfo.HitResultItem.Hit.KeyWord;
 import com.aliyuncs.qualitycheck.model.v20190115.GetResultResponse.ResultInfo.HitResultItem.Hit.Phrase;
@@ -168,6 +178,114 @@ public class GetResultResponseUnmarshaller {
 					hits.add(hit);
 				}
 				hitResultItem.setHits(hits);
+
+				List<ConditionsItem> conditions = new ArrayList<ConditionsItem>();
+				for (int k = 0; k < _ctx.lengthValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions.Length"); k++) {
+					ConditionsItem conditionsItem = new ConditionsItem();
+					conditionsItem.setCid(_ctx.stringValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions["+ k +"].Cid"));
+					conditionsItem.setId(_ctx.longValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions["+ k +"].Id"));
+					conditionsItem.setRid(_ctx.stringValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions["+ k +"].Rid"));
+					conditionsItem.setLambda(_ctx.stringValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions["+ k +"].Lambda"));
+					conditionsItem.setExclusion(_ctx.integerValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions["+ k +"].Exclusion"));
+
+					Check_range check_range = new Check_range();
+					check_range.setRoleId(_ctx.integerValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions["+ k +"].Check_range.RoleId"));
+					check_range.setRole(_ctx.stringValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions["+ k +"].Check_range.Role"));
+					check_range.setAbsolute(_ctx.booleanValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions["+ k +"].Check_range.Absolute"));
+					check_range.setAllSentencesSatisfy(_ctx.booleanValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions["+ k +"].Check_range.AllSentencesSatisfy"));
+
+					Anchor anchor = new Anchor();
+					anchor.setCid(_ctx.stringValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions["+ k +"].Check_range.Anchor.Cid"));
+					anchor.setLocation(_ctx.stringValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions["+ k +"].Check_range.Anchor.Location"));
+					anchor.setHit_time(_ctx.integerValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions["+ k +"].Check_range.Anchor.Hit_time"));
+					check_range.setAnchor(anchor);
+
+					Range range = new Range();
+					range.setFrom(_ctx.integerValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions["+ k +"].Check_range.Range.From"));
+					range.setTo(_ctx.integerValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions["+ k +"].Check_range.Range.To"));
+					check_range.setRange(range);
+
+					TimeRange timeRange = new TimeRange();
+					timeRange.setFrom(_ctx.longValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions["+ k +"].Check_range.TimeRange.From"));
+					timeRange.setTo(_ctx.longValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions["+ k +"].Check_range.TimeRange.To"));
+					check_range.setTimeRange(timeRange);
+					conditionsItem.setCheck_range(check_range);
+
+					List<Operator> operators = new ArrayList<Operator>();
+					for (int l = 0; l < _ctx.lengthValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions["+ k +"].Operators.Length"); l++) {
+						Operator operator = new Operator();
+						operator.setOid(_ctx.stringValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions["+ k +"].Operators["+ l +"].Oid"));
+						operator.setId(_ctx.longValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions["+ k +"].Operators["+ l +"].Id"));
+						operator.setType(_ctx.stringValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions["+ k +"].Operators["+ l +"].Type"));
+						operator.setName(_ctx.stringValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions["+ k +"].Operators["+ l +"].Name"));
+
+						Param param = new Param();
+						param.setRegex(_ctx.stringValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions["+ k +"].Operators["+ l +"].Param.Regex"));
+						param.setNotRegex(_ctx.stringValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions["+ k +"].Operators["+ l +"].Param.NotRegex"));
+						param.setPhrase(_ctx.stringValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions["+ k +"].Operators["+ l +"].Param.Phrase"));
+						param.setInterval(_ctx.integerValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions["+ k +"].Operators["+ l +"].Param.Interval"));
+						param.setIntervalEnd(_ctx.integerValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions["+ k +"].Operators["+ l +"].Param.IntervalEnd"));
+						param.setThreshold(_ctx.floatValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions["+ k +"].Operators["+ l +"].Param.Threshold"));
+						param.setIn_sentence(_ctx.booleanValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions["+ k +"].Operators["+ l +"].Param.In_sentence"));
+						param.setTarget(_ctx.integerValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions["+ k +"].Operators["+ l +"].Param.Target"));
+						param.setFrom_end(_ctx.booleanValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions["+ k +"].Operators["+ l +"].Param.From_end"));
+						param.setKeywordExtension(_ctx.integerValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions["+ k +"].Operators["+ l +"].Param.KeywordExtension"));
+						param.setCase_sensitive(_ctx.booleanValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions["+ k +"].Operators["+ l +"].Param.Case_sensitive"));
+						param.setNear_dialogue(_ctx.booleanValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions["+ k +"].Operators["+ l +"].Param.Near_dialogue"));
+						param.setMinWordSize(_ctx.integerValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions["+ k +"].Operators["+ l +"].Param.MinWordSize"));
+						param.setHit_time(_ctx.integerValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions["+ k +"].Operators["+ l +"].Param.Hit_time"));
+						param.setFrom(_ctx.integerValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions["+ k +"].Operators["+ l +"].Param.From"));
+						param.setCheckFirstSentence(_ctx.booleanValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions["+ k +"].Operators["+ l +"].Param.CheckFirstSentence"));
+						param.setAverage(_ctx.booleanValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions["+ k +"].Operators["+ l +"].Param.Average"));
+						param.setBeginType(_ctx.stringValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions["+ k +"].Operators["+ l +"].Param.BeginType"));
+						param.setEndType(_ctx.stringValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions["+ k +"].Operators["+ l +"].Param.EndType"));
+						param.setCompareOperator(_ctx.stringValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions["+ k +"].Operators["+ l +"].Param.CompareOperator"));
+						param.setContextChatMatch(_ctx.booleanValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions["+ k +"].Operators["+ l +"].Param.ContextChatMatch"));
+						param.setKeywordMatchSize(_ctx.integerValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions["+ k +"].Operators["+ l +"].Param.KeywordMatchSize"));
+						param.setMaxEmotionChangeValue(_ctx.integerValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions["+ k +"].Operators["+ l +"].Param.MaxEmotionChangeValue"));
+						param.setCheckType(_ctx.integerValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions["+ k +"].Operators["+ l +"].Param.CheckType"));
+						param.setDelayTime(_ctx.integerValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions["+ k +"].Operators["+ l +"].Param.DelayTime"));
+
+						List<String> keywords = new ArrayList<String>();
+						for (int m = 0; m < _ctx.lengthValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions["+ k +"].Operators["+ l +"].Param.Keywords.Length"); m++) {
+							keywords.add(_ctx.stringValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions["+ k +"].Operators["+ l +"].Param.Keywords["+ m +"]"));
+						}
+						param.setKeywords(keywords);
+
+						List<String> excludes = new ArrayList<String>();
+						for (int m = 0; m < _ctx.lengthValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions["+ k +"].Operators["+ l +"].Param.Excludes.Length"); m++) {
+							excludes.add(_ctx.stringValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions["+ k +"].Operators["+ l +"].Param.Excludes["+ m +"]"));
+						}
+						param.setExcludes(excludes);
+
+						FlowNodePrerequisiteParam flowNodePrerequisiteParam = new FlowNodePrerequisiteParam();
+						flowNodePrerequisiteParam.setNodeId(_ctx.longValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions["+ k +"].Operators["+ l +"].Param.FlowNodePrerequisiteParam.NodeId"));
+						flowNodePrerequisiteParam.setNodeName(_ctx.stringValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions["+ k +"].Operators["+ l +"].Param.FlowNodePrerequisiteParam.NodeName"));
+						flowNodePrerequisiteParam.setNodeMatchStatus(_ctx.integerValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions["+ k +"].Operators["+ l +"].Param.FlowNodePrerequisiteParam.NodeMatchStatus"));
+						param.setFlowNodePrerequisiteParam(flowNodePrerequisiteParam);
+
+						IntentModelCheckParm intentModelCheckParm = new IntentModelCheckParm();
+						intentModelCheckParm.setModelScene(_ctx.stringValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions["+ k +"].Operators["+ l +"].Param.IntentModelCheckParm.ModelScene"));
+
+						List<Intent> intents = new ArrayList<Intent>();
+						for (int m = 0; m < _ctx.lengthValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions["+ k +"].Operators["+ l +"].Param.IntentModelCheckParm.Intents.Length"); m++) {
+							Intent intent = new Intent();
+							intent.setId(_ctx.longValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions["+ k +"].Operators["+ l +"].Param.IntentModelCheckParm.Intents["+ m +"].Id"));
+							intent.setName(_ctx.stringValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Conditions["+ k +"].Operators["+ l +"].Param.IntentModelCheckParm.Intents["+ m +"].Name"));
+
+							intents.add(intent);
+						}
+						intentModelCheckParm.setIntents(intents);
+						param.setIntentModelCheckParm(intentModelCheckParm);
+						operator.setParam(param);
+
+						operators.add(operator);
+					}
+					conditionsItem.setOperators(operators);
+
+					conditions.add(conditionsItem);
+				}
+				hitResultItem.setConditions(conditions);
 
 				hitResult.add(hitResultItem);
 			}

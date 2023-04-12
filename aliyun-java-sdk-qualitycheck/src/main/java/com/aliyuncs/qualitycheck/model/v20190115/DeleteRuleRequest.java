@@ -29,6 +29,8 @@ public class DeleteRuleRequest extends RpcAcsRequest<DeleteRuleResponse> {
 	private Boolean forceDelete;
 
 	private Long ruleId;
+
+	private Long baseMeAgentId;
 	public DeleteRuleRequest() {
 		super("Qualitycheck", "2019-01-15", "DeleteRule");
 		setMethod(MethodType.POST);
@@ -64,6 +66,17 @@ public class DeleteRuleRequest extends RpcAcsRequest<DeleteRuleResponse> {
 		this.ruleId = ruleId;
 		if(ruleId != null){
 			putBodyParameter("RuleId", ruleId.toString());
+		}
+	}
+
+	public Long getBaseMeAgentId() {
+		return this.baseMeAgentId;
+	}
+
+	public void setBaseMeAgentId(Long baseMeAgentId) {
+		this.baseMeAgentId = baseMeAgentId;
+		if(baseMeAgentId != null){
+			putQueryParameter("BaseMeAgentId", baseMeAgentId.toString());
 		}
 	}
 
