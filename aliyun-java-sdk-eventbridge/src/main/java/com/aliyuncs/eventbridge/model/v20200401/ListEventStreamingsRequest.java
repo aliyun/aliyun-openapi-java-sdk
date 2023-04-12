@@ -26,7 +26,7 @@ public class ListEventStreamingsRequest extends RpcAcsRequest<ListEventStreaming
 
 	private String nextToken;
 
-	private Long limit;
+	private Integer limit;
 
 	private String namePrefix;
 	public ListEventStreamingsRequest() {
@@ -45,11 +45,11 @@ public class ListEventStreamingsRequest extends RpcAcsRequest<ListEventStreaming
 		}
 	}
 
-	public Long getLimit() {
+	public Integer getLimit() {
 		return this.limit;
 	}
 
-	public void setLimit(Long limit) {
+	public void setLimit(Integer limit) {
 		this.limit = limit;
 		if(limit != null){
 			putBodyParameter("Limit", limit.toString());
