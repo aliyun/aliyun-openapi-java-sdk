@@ -27,6 +27,8 @@ public class GetAggregateResourceComplianceByConfigRuleRequest extends RpcAcsReq
 
 	private String configRuleId;
 
+	private Long resourceOwnerId;
+
 	private String aggregatorId;
 
 	private Long resourceAccountId;
@@ -49,6 +51,17 @@ public class GetAggregateResourceComplianceByConfigRuleRequest extends RpcAcsReq
 		this.configRuleId = configRuleId;
 		if(configRuleId != null){
 			putQueryParameter("ConfigRuleId", configRuleId);
+		}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 

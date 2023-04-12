@@ -1,3 +1,6 @@
+2023-04-12 Version: 2.2.7
+- Fix resourceOwnerId param.
+
 2023-04-12 Version: 2.2.5
 - Fix resourceOwnerId param.
 
