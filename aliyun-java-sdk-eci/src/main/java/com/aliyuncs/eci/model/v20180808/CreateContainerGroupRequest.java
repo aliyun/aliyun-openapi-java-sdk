@@ -323,9 +323,11 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 				}
 				if (containers.get(depth1).getVolumeMounts() != null) {
 					for (int depth2 = 0; depth2 < containers.get(depth1).getVolumeMounts().size(); depth2++) {
+						putQueryParameter("Container." + (depth1 + 1) + ".VolumeMount." + (depth2 + 1) + ".MountPropagation", containers.get(depth1).getVolumeMounts().get(depth2).getMountPropagation());
 						putQueryParameter("Container." + (depth1 + 1) + ".VolumeMount." + (depth2 + 1) + ".MountPath", containers.get(depth1).getVolumeMounts().get(depth2).getMountPath());
 						putQueryParameter("Container." + (depth1 + 1) + ".VolumeMount." + (depth2 + 1) + ".ReadOnly", containers.get(depth1).getVolumeMounts().get(depth2).getReadOnly());
 						putQueryParameter("Container." + (depth1 + 1) + ".VolumeMount." + (depth2 + 1) + ".Name", containers.get(depth1).getVolumeMounts().get(depth2).getName());
+						putQueryParameter("Container." + (depth1 + 1) + ".VolumeMount." + (depth2 + 1) + ".SubPath", containers.get(depth1).getVolumeMounts().get(depth2).getSubPath());
 					}
 				}
 				if (containers.get(depth1).getPorts() != null) {
@@ -556,9 +558,11 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 				}
 				if (initContainers.get(depth1).getVolumeMounts() != null) {
 					for (int depth2 = 0; depth2 < initContainers.get(depth1).getVolumeMounts().size(); depth2++) {
+						putQueryParameter("InitContainer." + (depth1 + 1) + ".VolumeMount." + (depth2 + 1) + ".MountPropagation", initContainers.get(depth1).getVolumeMounts().get(depth2).getMountPropagation());
 						putQueryParameter("InitContainer." + (depth1 + 1) + ".VolumeMount." + (depth2 + 1) + ".MountPath", initContainers.get(depth1).getVolumeMounts().get(depth2).getMountPath());
 						putQueryParameter("InitContainer." + (depth1 + 1) + ".VolumeMount." + (depth2 + 1) + ".ReadOnly", initContainers.get(depth1).getVolumeMounts().get(depth2).getReadOnly());
 						putQueryParameter("InitContainer." + (depth1 + 1) + ".VolumeMount." + (depth2 + 1) + ".Name", initContainers.get(depth1).getVolumeMounts().get(depth2).getName());
+						putQueryParameter("InitContainer." + (depth1 + 1) + ".VolumeMount." + (depth2 + 1) + ".SubPath", initContainers.get(depth1).getVolumeMounts().get(depth2).getSubPath());
 					}
 				}
 				if (initContainers.get(depth1).getPorts() != null) {
@@ -1317,6 +1321,8 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 
 		public static class VolumeMount {
 
+			private String mountPropagation;
+
 			private String mountPath;
 
 			private Boolean readOnly;
@@ -1324,6 +1330,14 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 			private String name;
 
 			private String subPath;
+
+			public String getMountPropagation() {
+				return this.mountPropagation;
+			}
+
+			public void setMountPropagation(String mountPropagation) {
+				this.mountPropagation = mountPropagation;
+			}
 
 			public String getMountPath() {
 				return this.mountPath;
