@@ -45,6 +45,8 @@ public class RecommendRequest extends RoaAcsRequest<RecommendResponse> {
 
 	private Boolean rankOpen;
 
+	private String strategy;
+
 	private String items;
 
 	private String userInfo;
@@ -165,6 +167,17 @@ public class RecommendRequest extends RoaAcsRequest<RecommendResponse> {
 		this.rankOpen = rankOpen;
 		if(rankOpen != null){
 			putQueryParameter("rankOpen", rankOpen.toString());
+		}
+	}
+
+	public String getStrategy() {
+		return this.strategy;
+	}
+
+	public void setStrategy(String strategy) {
+		this.strategy = strategy;
+		if(strategy != null){
+			putQueryParameter("strategy", strategy);
 		}
 	}
 

@@ -22,37 +22,22 @@ import com.aliyuncs.airec.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListItemsRequest extends RoaAcsRequest<ListItemsResponse> {
+public class PushColdStartDocumentRequest extends RoaAcsRequest<PushColdStartDocumentResponse> {
 	   
-
-	private Boolean strategyUsed;
 
 	private String instanceId;
 
-	private Integer size;
+	private String tableName;
 
-	private Boolean withInvalidDetail;
-
-	private Integer page;
-	public ListItemsRequest() {
-		super("Airec", "2020-11-26", "ListItems", "airec");
-		setUriPattern("/v2/openapi/instances/[instanceId]/items/actions/list");
+	private String body;
+	public PushColdStartDocumentRequest() {
+		super("Airec", "2020-11-26", "PushColdStartDocument", "airec");
+		setUriPattern("/v2/openapi/instances/cold-start/[instanceId]/tables/[tableName]/actions/bulk");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Boolean getStrategyUsed() {
-		return this.strategyUsed;
-	}
-
-	public void setStrategyUsed(Boolean strategyUsed) {
-		this.strategyUsed = strategyUsed;
-		if(strategyUsed != null){
-			putQueryParameter("strategyUsed", strategyUsed.toString());
-		}
 	}
 
 	public String getInstanceId() {
@@ -66,42 +51,31 @@ public class ListItemsRequest extends RoaAcsRequest<ListItemsResponse> {
 		}
 	}
 
-	public Integer getSize() {
-		return this.size;
+	public String getTableName() {
+		return this.tableName;
 	}
 
-	public void setSize(Integer size) {
-		this.size = size;
-		if(size != null){
-			putQueryParameter("size", size.toString());
+	public void setTableName(String tableName) {
+		this.tableName = tableName;
+		if(tableName != null){
+			putPathParameter("tableName", tableName);
 		}
 	}
 
-	public Boolean getWithInvalidDetail() {
-		return this.withInvalidDetail;
+	public String getBody() {
+		return this.body;
 	}
 
-	public void setWithInvalidDetail(Boolean withInvalidDetail) {
-		this.withInvalidDetail = withInvalidDetail;
-		if(withInvalidDetail != null){
-			putQueryParameter("withInvalidDetail", withInvalidDetail.toString());
-		}
-	}
-
-	public Integer getPage() {
-		return this.page;
-	}
-
-	public void setPage(Integer page) {
-		this.page = page;
-		if(page != null){
-			putQueryParameter("page", page.toString());
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 
 	@Override
-	public Class<ListItemsResponse> getResponseClass() {
-		return ListItemsResponse.class;
+	public Class<PushColdStartDocumentResponse> getResponseClass() {
+		return PushColdStartDocumentResponse.class;
 	}
 
 }

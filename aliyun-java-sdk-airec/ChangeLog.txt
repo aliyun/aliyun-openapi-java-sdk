@@ -1,3 +1,6 @@
+2023-04-14 Version: 2.3.0
+- Support cold start.
+
 2022-12-02 Version: 2.2.0
 - Support flow control Task.
 
