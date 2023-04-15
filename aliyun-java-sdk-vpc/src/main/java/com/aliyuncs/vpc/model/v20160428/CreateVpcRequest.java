@@ -37,6 +37,8 @@ public class CreateVpcRequest extends RpcAcsRequest<CreateVpcResponse> {
 
 	private String resourceGroupId;
 
+	private String ipv4IpamPoolId;
+
 	private String ipv6Isp;
 
 	private String userCidr;
@@ -124,6 +126,17 @@ public class CreateVpcRequest extends RpcAcsRequest<CreateVpcResponse> {
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getIpv4IpamPoolId() {
+		return this.ipv4IpamPoolId;
+	}
+
+	public void setIpv4IpamPoolId(String ipv4IpamPoolId) {
+		this.ipv4IpamPoolId = ipv4IpamPoolId;
+		if(ipv4IpamPoolId != null){
+			putQueryParameter("Ipv4IpamPoolId", ipv4IpamPoolId);
 		}
 	}
 

@@ -53,6 +53,8 @@ public class UpdateTrafficMirrorSessionAttributeRequest extends RpcAcsRequest<Up
 
 	private String trafficMirrorFilterId;
 
+	private Integer packetLength;
+
 	private Integer virtualNetworkId;
 	public UpdateTrafficMirrorSessionAttributeRequest() {
 		super("Vpc", "2016-04-28", "UpdateTrafficMirrorSessionAttribute", "vpc");
@@ -214,6 +216,17 @@ public class UpdateTrafficMirrorSessionAttributeRequest extends RpcAcsRequest<Up
 		this.trafficMirrorFilterId = trafficMirrorFilterId;
 		if(trafficMirrorFilterId != null){
 			putQueryParameter("TrafficMirrorFilterId", trafficMirrorFilterId);
+		}
+	}
+
+	public Integer getPacketLength() {
+		return this.packetLength;
+	}
+
+	public void setPacketLength(Integer packetLength) {
+		this.packetLength = packetLength;
+		if(packetLength != null){
+			putQueryParameter("PacketLength", packetLength.toString());
 		}
 	}
 

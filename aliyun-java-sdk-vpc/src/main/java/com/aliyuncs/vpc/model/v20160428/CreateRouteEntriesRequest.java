@@ -103,6 +103,7 @@ public class CreateRouteEntriesRequest extends RpcAcsRequest<CreateRouteEntriesR
 				putQueryParameter("RouteEntries." + (depth1 + 1) + ".NextHopType" , routeEntriess.get(depth1).getNextHopType());
 				putQueryParameter("RouteEntries." + (depth1 + 1) + ".Name" , routeEntriess.get(depth1).getName());
 				putQueryParameter("RouteEntries." + (depth1 + 1) + ".Describption" , routeEntriess.get(depth1).getDescribption());
+				putQueryParameter("RouteEntries." + (depth1 + 1) + ".Description" , routeEntriess.get(depth1).getDescription());
 			}
 		}	
 	}
@@ -122,6 +123,8 @@ public class CreateRouteEntriesRequest extends RpcAcsRequest<CreateRouteEntriesR
 		private String name;
 
 		private String describption;
+
+		private String description;
 
 		public String getDstCidrBlock() {
 			return this.dstCidrBlock;
@@ -177,6 +180,14 @@ public class CreateRouteEntriesRequest extends RpcAcsRequest<CreateRouteEntriesR
 
 		public void setDescribption(String describption) {
 			this.describption = describption;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
 		}
 	}
 

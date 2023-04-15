@@ -27,6 +27,8 @@ public class AssociateVpcCidrBlockRequest extends RpcAcsRequest<AssociateVpcCidr
 
 	private Long resourceOwnerId;
 
+	private String ipamPoolId;
+
 	private String ipv6Isp;
 
 	private String ipVersion;
@@ -59,6 +61,17 @@ public class AssociateVpcCidrBlockRequest extends RpcAcsRequest<AssociateVpcCidr
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getIpamPoolId() {
+		return this.ipamPoolId;
+	}
+
+	public void setIpamPoolId(String ipamPoolId) {
+		this.ipamPoolId = ipamPoolId;
+		if(ipamPoolId != null){
+			putQueryParameter("IpamPoolId", ipamPoolId);
 		}
 	}
 

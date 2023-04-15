@@ -1,3 +1,16 @@
+2023-04-15 Version: 3.2.20
+- CreateForwardEntry add error code.
+- Fix description error.
+- Add Error Code.
+- Parameter Tag is requeired for TagResources.
+- Add error code and message.
+- Supported Zone for AllocateEipAddress.
+- Add Delete IPv4Gw ErrorCode.
+- Supported Ipam for Vpc.
+- Support for multi-zone backend.
+- Add ErrorCode.
+- Add new ErrorCode and TrafficMirror supports to cumtomize PackageLength.
+
 2023-03-28 Version: 3.2.19
 - Support create pconn with tag.
 - Add errorcode for OpenFlowLogService.
