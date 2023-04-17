@@ -53,8 +53,6 @@ public class GetDeviceListResponse extends AcsResponse {
 
 		private String code;
 
-		private String errorMessage;
-
 		private Boolean success;
 
 		private List<Device> deviceList;
@@ -81,14 +79,6 @@ public class GetDeviceListResponse extends AcsResponse {
 
 		public void setCode(String code) {
 			this.code = code;
-		}
-
-		public String getErrorMessage() {
-			return this.errorMessage;
-		}
-
-		public void setErrorMessage(String errorMessage) {
-			this.errorMessage = errorMessage;
 		}
 
 		public Boolean getSuccess() {

@@ -30,7 +30,6 @@ public class GetOrgAndFactoryResponseUnmarshaller {
 		getOrgAndFactoryResponse.setRequestId(_ctx.stringValue("GetOrgAndFactoryResponse.requestId"));
 		getOrgAndFactoryResponse.setHttpCode(_ctx.integerValue("GetOrgAndFactoryResponse.httpCode"));
 		getOrgAndFactoryResponse.setCode(_ctx.stringValue("GetOrgAndFactoryResponse.code"));
-		getOrgAndFactoryResponse.setErrorMessage(_ctx.stringValue("GetOrgAndFactoryResponse.errorMessage"));
 		getOrgAndFactoryResponse.setSuccess(_ctx.booleanValue("GetOrgAndFactoryResponse.success"));
 
 		List<DataItem> data = new ArrayList<DataItem>();

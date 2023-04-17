@@ -34,7 +34,6 @@ public class GetDeviceListResponseUnmarshaller {
 		data.setFactoryId(_ctx.stringValue("GetDeviceListResponse.data.factoryId"));
 		data.setHttpCode(_ctx.integerValue("GetDeviceListResponse.data.httpCode"));
 		data.setCode(_ctx.stringValue("GetDeviceListResponse.data.code"));
-		data.setErrorMessage(_ctx.stringValue("GetDeviceListResponse.data.errorMessage"));
 		data.setSuccess(_ctx.booleanValue("GetDeviceListResponse.data.success"));
 
 		List<Device> deviceList = new ArrayList<Device>();

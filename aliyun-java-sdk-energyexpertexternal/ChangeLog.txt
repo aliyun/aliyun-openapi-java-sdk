@@ -1,3 +1,9 @@
+2023-04-17 Version: 1.0.2
+- For Energy.
+- GetOrgAndFactory.
+- GetDeviceList.
+- GetDeviceInfo.
+
 2023-03-24 Version: 1.0.1
 - For Energy.
 - GetOrgAndFactory.

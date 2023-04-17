@@ -30,7 +30,6 @@ public class GetDeviceInfoResponseUnmarshaller {
 		getDeviceInfoResponse.setRequestId(_ctx.stringValue("GetDeviceInfoResponse.requestId"));
 		getDeviceInfoResponse.setHttpCode(_ctx.integerValue("GetDeviceInfoResponse.httpCode"));
 		getDeviceInfoResponse.setCode(_ctx.stringValue("GetDeviceInfoResponse.code"));
-		getDeviceInfoResponse.setErrorMessage(_ctx.stringValue("GetDeviceInfoResponse.errorMessage"));
 		getDeviceInfoResponse.setSuccess(_ctx.booleanValue("GetDeviceInfoResponse.success"));
 
 		Data data = new Data();
