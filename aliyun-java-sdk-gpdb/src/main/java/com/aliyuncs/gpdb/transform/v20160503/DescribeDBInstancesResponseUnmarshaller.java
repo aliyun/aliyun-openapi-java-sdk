@@ -60,6 +60,7 @@ public class DescribeDBInstancesResponseUnmarshaller {
 			dBInstance.setDBInstanceCategory(_ctx.stringValue("DescribeDBInstancesResponse.Items["+ i +"].DBInstanceCategory"));
 			dBInstance.setDBInstanceMode(_ctx.stringValue("DescribeDBInstancesResponse.Items["+ i +"].DBInstanceMode"));
 			dBInstance.setResourceGroupId(_ctx.stringValue("DescribeDBInstancesResponse.Items["+ i +"].ResourceGroupId"));
+			dBInstance.setServerlessMode(_ctx.stringValue("DescribeDBInstancesResponse.Items["+ i +"].ServerlessMode"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBInstancesResponse.Items["+ i +"].Tags.Length"); j++) {

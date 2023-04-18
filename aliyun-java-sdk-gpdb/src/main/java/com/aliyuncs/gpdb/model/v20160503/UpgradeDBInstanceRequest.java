@@ -29,6 +29,8 @@ public class UpgradeDBInstanceRequest extends RpcAcsRequest<UpgradeDBInstanceRes
 
 	private String storageSize;
 
+	private String segStorageType;
+
 	private String masterNodeNum;
 
 	private Long upgradeType;
@@ -42,6 +44,8 @@ public class UpgradeDBInstanceRequest extends RpcAcsRequest<UpgradeDBInstanceRes
 	private String dBInstanceGroupCount;
 
 	private Long ownerId;
+
+	private String segDiskPerformanceLevel;
 
 	private String dBInstanceClass;
 
@@ -74,6 +78,17 @@ public class UpgradeDBInstanceRequest extends RpcAcsRequest<UpgradeDBInstanceRes
 		this.storageSize = storageSize;
 		if(storageSize != null){
 			putQueryParameter("StorageSize", storageSize);
+		}
+	}
+
+	public String getSegStorageType() {
+		return this.segStorageType;
+	}
+
+	public void setSegStorageType(String segStorageType) {
+		this.segStorageType = segStorageType;
+		if(segStorageType != null){
+			putQueryParameter("SegStorageType", segStorageType);
 		}
 	}
 
@@ -151,6 +166,17 @@ public class UpgradeDBInstanceRequest extends RpcAcsRequest<UpgradeDBInstanceRes
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getSegDiskPerformanceLevel() {
+		return this.segDiskPerformanceLevel;
+	}
+
+	public void setSegDiskPerformanceLevel(String segDiskPerformanceLevel) {
+		this.segDiskPerformanceLevel = segDiskPerformanceLevel;
+		if(segDiskPerformanceLevel != null){
+			putQueryParameter("SegDiskPerformanceLevel", segDiskPerformanceLevel);
 		}
 	}
 

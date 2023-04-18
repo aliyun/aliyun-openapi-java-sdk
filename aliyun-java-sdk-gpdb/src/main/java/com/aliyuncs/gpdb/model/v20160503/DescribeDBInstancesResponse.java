@@ -127,6 +127,8 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 		private String resourceGroupId;
 
+		private String serverlessMode;
+
 		private List<Tag> tags;
 
 		public String getVpcId() {
@@ -327,6 +329,14 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getServerlessMode() {
+			return this.serverlessMode;
+		}
+
+		public void setServerlessMode(String serverlessMode) {
+			this.serverlessMode = serverlessMode;
 		}
 
 		public List<Tag> getTags() {

@@ -36,6 +36,8 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private String dBInstanceDescription;
 
+	private String serverlessMode;
+
 	private List<Tag> tags;
 
 	private String period;
@@ -77,6 +79,10 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 	private String usedTime;
 
 	private String vPCId;
+
+	private Integer serverlessResource;
+
+	private Integer idleTime;
 
 	private String payType;
 	public CreateDBInstanceRequest() {
@@ -140,6 +146,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.dBInstanceDescription = dBInstanceDescription;
 		if(dBInstanceDescription != null){
 			putQueryParameter("DBInstanceDescription", dBInstanceDescription);
+		}
+	}
+
+	public String getServerlessMode() {
+		return this.serverlessMode;
+	}
+
+	public void setServerlessMode(String serverlessMode) {
+		this.serverlessMode = serverlessMode;
+		if(serverlessMode != null){
+			putQueryParameter("ServerlessMode", serverlessMode);
 		}
 	}
 
@@ -374,6 +391,28 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.vPCId = vPCId;
 		if(vPCId != null){
 			putQueryParameter("VPCId", vPCId);
+		}
+	}
+
+	public Integer getServerlessResource() {
+		return this.serverlessResource;
+	}
+
+	public void setServerlessResource(Integer serverlessResource) {
+		this.serverlessResource = serverlessResource;
+		if(serverlessResource != null){
+			putQueryParameter("ServerlessResource", serverlessResource.toString());
+		}
+	}
+
+	public Integer getIdleTime() {
+		return this.idleTime;
+	}
+
+	public void setIdleTime(Integer idleTime) {
+		this.idleTime = idleTime;
+		if(idleTime != null){
+			putQueryParameter("IdleTime", idleTime.toString());
 		}
 	}
 

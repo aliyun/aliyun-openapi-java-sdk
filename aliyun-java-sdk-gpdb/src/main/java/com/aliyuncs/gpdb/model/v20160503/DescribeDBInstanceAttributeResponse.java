@@ -157,6 +157,14 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		private String resourceGroupId;
 
+		private Integer serverlessResource;
+
+		private Integer idleTime;
+
+		private String serverlessMode;
+
+		private String segDiskPerformanceLevel;
+
 		private List<Tag> tags;
 
 		public String getVpcId() {
@@ -597,6 +605,38 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public Integer getServerlessResource() {
+			return this.serverlessResource;
+		}
+
+		public void setServerlessResource(Integer serverlessResource) {
+			this.serverlessResource = serverlessResource;
+		}
+
+		public Integer getIdleTime() {
+			return this.idleTime;
+		}
+
+		public void setIdleTime(Integer idleTime) {
+			this.idleTime = idleTime;
+		}
+
+		public String getServerlessMode() {
+			return this.serverlessMode;
+		}
+
+		public void setServerlessMode(String serverlessMode) {
+			this.serverlessMode = serverlessMode;
+		}
+
+		public String getSegDiskPerformanceLevel() {
+			return this.segDiskPerformanceLevel;
+		}
+
+		public void setSegDiskPerformanceLevel(String segDiskPerformanceLevel) {
+			this.segDiskPerformanceLevel = segDiskPerformanceLevel;
 		}
 
 		public List<Tag> getTags() {
