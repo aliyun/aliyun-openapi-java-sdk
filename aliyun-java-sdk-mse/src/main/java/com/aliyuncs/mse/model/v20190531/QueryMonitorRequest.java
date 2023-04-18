@@ -25,15 +25,15 @@ import com.aliyuncs.mse.Endpoint;
 public class QueryMonitorRequest extends RpcAcsRequest<QueryMonitorResponse> {
 	   
 
+	private Long startTime;
+
+	private String requestPars;
+
 	private String monitorType;
 
 	private Long endTime;
 
-	private Long startTime;
-
 	private String instanceId;
-
-	private String requestPars;
 
 	private String acceptLanguage;
 
@@ -45,6 +45,28 @@ public class QueryMonitorRequest extends RpcAcsRequest<QueryMonitorResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(Long startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime.toString());
+		}
+	}
+
+	public String getRequestPars() {
+		return this.requestPars;
+	}
+
+	public void setRequestPars(String requestPars) {
+		this.requestPars = requestPars;
+		if(requestPars != null){
+			putQueryParameter("RequestPars", requestPars);
+		}
 	}
 
 	public String getMonitorType() {
@@ -69,17 +91,6 @@ public class QueryMonitorRequest extends RpcAcsRequest<QueryMonitorResponse> {
 		}
 	}
 
-	public Long getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(Long startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime.toString());
-		}
-	}
-
 	public String getInstanceId() {
 		return this.instanceId;
 	}
@@ -88,17 +99,6 @@ public class QueryMonitorRequest extends RpcAcsRequest<QueryMonitorResponse> {
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getRequestPars() {
-		return this.requestPars;
-	}
-
-	public void setRequestPars(String requestPars) {
-		this.requestPars = requestPars;
-		if(requestPars != null){
-			putQueryParameter("RequestPars", requestPars);
 		}
 	}
 

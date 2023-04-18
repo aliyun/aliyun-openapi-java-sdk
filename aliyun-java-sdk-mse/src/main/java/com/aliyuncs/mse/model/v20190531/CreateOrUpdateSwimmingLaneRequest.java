@@ -34,11 +34,6 @@ public class CreateOrUpdateSwimmingLaneRequest extends RpcAcsRequest<CreateOrUpd
 
 	private String userId;
 
-	private String licenseKey;
-
-	@SerializedName("gatewaySwimmingLaneRouteJson")
-	private GatewaySwimmingLaneRouteJson gatewaySwimmingLaneRouteJson;
-
 	private String entryRule;
 
 	private Boolean enable;
@@ -51,15 +46,22 @@ public class CreateOrUpdateSwimmingLaneRequest extends RpcAcsRequest<CreateOrUpd
 
 	private Long groupId;
 
-	private String gmtCreate;
-
 	private Boolean enableRules;
 
 	private String name;
 
-	private String acceptLanguage;
-
 	private Integer status;
+
+	private String licenseKey;
+
+	@SerializedName("gatewaySwimmingLaneRouteJson")
+	private GatewaySwimmingLaneRouteJson gatewaySwimmingLaneRouteJson;
+
+	private String gmtCreate;
+
+	private String namespace;
+
+	private String acceptLanguage;
 	public CreateOrUpdateSwimmingLaneRequest() {
 		super("mse", "2019-05-31", "CreateOrUpdateSwimmingLane", "mse");
 		setMethod(MethodType.POST);
@@ -100,28 +102,6 @@ public class CreateOrUpdateSwimmingLaneRequest extends RpcAcsRequest<CreateOrUpd
 		if(userId != null){
 			putQueryParameter("UserId", userId);
 		}
-	}
-
-	public String getLicenseKey() {
-		return this.licenseKey;
-	}
-
-	public void setLicenseKey(String licenseKey) {
-		this.licenseKey = licenseKey;
-		if(licenseKey != null){
-			putQueryParameter("LicenseKey", licenseKey);
-		}
-	}
-
-	public GatewaySwimmingLaneRouteJson getGatewaySwimmingLaneRouteJson() {
-		return this.gatewaySwimmingLaneRouteJson;
-	}
-
-	public void setGatewaySwimmingLaneRouteJson(GatewaySwimmingLaneRouteJson gatewaySwimmingLaneRouteJson) {
-		this.gatewaySwimmingLaneRouteJson = gatewaySwimmingLaneRouteJson;	
-		if (gatewaySwimmingLaneRouteJson != null) {
-			putQueryParameter("GatewaySwimmingLaneRouteJson" , new Gson().toJson(gatewaySwimmingLaneRouteJson));
-		}	
 	}
 
 	public String getEntryRule() {
@@ -218,17 +198,6 @@ public class CreateOrUpdateSwimmingLaneRequest extends RpcAcsRequest<CreateOrUpd
 		}
 	}
 
-	public String getGmtCreate() {
-		return this.gmtCreate;
-	}
-
-	public void setGmtCreate(String gmtCreate) {
-		this.gmtCreate = gmtCreate;
-		if(gmtCreate != null){
-			putQueryParameter("GmtCreate", gmtCreate);
-		}
-	}
-
 	public Boolean getEnableRules() {
 		return this.enableRules;
 	}
@@ -251,17 +220,6 @@ public class CreateOrUpdateSwimmingLaneRequest extends RpcAcsRequest<CreateOrUpd
 		}
 	}
 
-	public String getAcceptLanguage() {
-		return this.acceptLanguage;
-	}
-
-	public void setAcceptLanguage(String acceptLanguage) {
-		this.acceptLanguage = acceptLanguage;
-		if(acceptLanguage != null){
-			putQueryParameter("AcceptLanguage", acceptLanguage);
-		}
-	}
-
 	public Integer getStatus() {
 		return this.status;
 	}
@@ -273,97 +231,58 @@ public class CreateOrUpdateSwimmingLaneRequest extends RpcAcsRequest<CreateOrUpd
 		}
 	}
 
-	public static class GatewaySwimmingLaneRouteJson {
+	public String getLicenseKey() {
+		return this.licenseKey;
+	}
 
-		@SerializedName("GatewayUniqueId")
-		private String gatewayUniqueId;
-
-		@SerializedName("RouteIdList")
-		private List<Long> routeIdList;
-
-		@SerializedName("Conditions")
-		private List<ConditionsItem> conditions;
-
-		@SerializedName("GatewayId")
-		private Long gatewayId;
-
-		public String getGatewayUniqueId() {
-			return this.gatewayUniqueId;
+	public void setLicenseKey(String licenseKey) {
+		this.licenseKey = licenseKey;
+		if(licenseKey != null){
+			putQueryParameter("LicenseKey", licenseKey);
 		}
+	}
 
-		public void setGatewayUniqueId(String gatewayUniqueId) {
-			this.gatewayUniqueId = gatewayUniqueId;
+	public GatewaySwimmingLaneRouteJson getGatewaySwimmingLaneRouteJson() {
+		return this.gatewaySwimmingLaneRouteJson;
+	}
+
+	public void setGatewaySwimmingLaneRouteJson(GatewaySwimmingLaneRouteJson gatewaySwimmingLaneRouteJson) {
+		this.gatewaySwimmingLaneRouteJson = gatewaySwimmingLaneRouteJson;	
+		if (gatewaySwimmingLaneRouteJson != null) {
+			putQueryParameter("GatewaySwimmingLaneRouteJson" , new Gson().toJson(gatewaySwimmingLaneRouteJson));
+		}	
+	}
+
+	public String getGmtCreate() {
+		return this.gmtCreate;
+	}
+
+	public void setGmtCreate(String gmtCreate) {
+		this.gmtCreate = gmtCreate;
+		if(gmtCreate != null){
+			putQueryParameter("GmtCreate", gmtCreate);
 		}
+	}
 
-		public List<Long> getRouteIdList() {
-			return this.routeIdList;
+	public String getNamespace() {
+		return this.namespace;
+	}
+
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+		if(namespace != null){
+			putQueryParameter("Namespace", namespace);
 		}
+	}
 
-		public void setRouteIdList(List<Long> routeIdList) {
-			this.routeIdList = routeIdList;
-		}
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
 
-		public List<ConditionsItem> getConditions() {
-			return this.conditions;
-		}
-
-		public void setConditions(List<ConditionsItem> conditions) {
-			this.conditions = conditions;
-		}
-
-		public Long getGatewayId() {
-			return this.gatewayId;
-		}
-
-		public void setGatewayId(Long gatewayId) {
-			this.gatewayId = gatewayId;
-		}
-
-		public static class ConditionsItem {
-
-			@SerializedName("Name")
-			private String name;
-
-			@SerializedName("Type")
-			private String type;
-
-			@SerializedName("Cond")
-			private String cond;
-
-			@SerializedName("Value")
-			private String value;
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
-
-			public String getType() {
-				return this.type;
-			}
-
-			public void setType(String type) {
-				this.type = type;
-			}
-
-			public String getCond() {
-				return this.cond;
-			}
-
-			public void setCond(String cond) {
-				this.cond = cond;
-			}
-
-			public String getValue() {
-				return this.value;
-			}
-
-			public void setValue(String value) {
-				this.value = value;
-			}
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 
@@ -529,6 +448,100 @@ public class CreateOrUpdateSwimmingLaneRequest extends RpcAcsRequest<CreateOrUpd
 
 			public void setOperator(String operator) {
 				this.operator = operator;
+			}
+		}
+	}
+
+	public static class GatewaySwimmingLaneRouteJson {
+
+		@SerializedName("GatewayUniqueId")
+		private String gatewayUniqueId;
+
+		@SerializedName("RouteIdList")
+		private List<Long> routeIdList;
+
+		@SerializedName("Conditions")
+		private List<ConditionsItem> conditions;
+
+		@SerializedName("GatewayId")
+		private Long gatewayId;
+
+		public String getGatewayUniqueId() {
+			return this.gatewayUniqueId;
+		}
+
+		public void setGatewayUniqueId(String gatewayUniqueId) {
+			this.gatewayUniqueId = gatewayUniqueId;
+		}
+
+		public List<Long> getRouteIdList() {
+			return this.routeIdList;
+		}
+
+		public void setRouteIdList(List<Long> routeIdList) {
+			this.routeIdList = routeIdList;
+		}
+
+		public List<ConditionsItem> getConditions() {
+			return this.conditions;
+		}
+
+		public void setConditions(List<ConditionsItem> conditions) {
+			this.conditions = conditions;
+		}
+
+		public Long getGatewayId() {
+			return this.gatewayId;
+		}
+
+		public void setGatewayId(Long gatewayId) {
+			this.gatewayId = gatewayId;
+		}
+
+		public static class ConditionsItem {
+
+			@SerializedName("Name")
+			private String name;
+
+			@SerializedName("Type")
+			private String type;
+
+			@SerializedName("Cond")
+			private String cond;
+
+			@SerializedName("Value")
+			private String value;
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public String getCond() {
+				return this.cond;
+			}
+
+			public void setCond(String cond) {
+				this.cond = cond;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
 			}
 		}
 	}

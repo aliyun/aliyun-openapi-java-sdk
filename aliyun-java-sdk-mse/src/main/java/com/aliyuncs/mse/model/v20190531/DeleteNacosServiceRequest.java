@@ -25,15 +25,15 @@ import com.aliyuncs.mse.Endpoint;
 public class DeleteNacosServiceRequest extends RpcAcsRequest<DeleteNacosServiceResponse> {
 	   
 
+	private String namespaceId;
+
+	private String serviceName;
+
 	private String groupName;
 
 	private String instanceId;
 
-	private String namespaceId;
-
 	private String acceptLanguage;
-
-	private String serviceName;
 	public DeleteNacosServiceRequest() {
 		super("mse", "2019-05-31", "DeleteNacosService", "mse");
 		setMethod(MethodType.POST);
@@ -41,6 +41,28 @@ public class DeleteNacosServiceRequest extends RpcAcsRequest<DeleteNacosServiceR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getNamespaceId() {
+		return this.namespaceId;
+	}
+
+	public void setNamespaceId(String namespaceId) {
+		this.namespaceId = namespaceId;
+		if(namespaceId != null){
+			putQueryParameter("NamespaceId", namespaceId);
+		}
+	}
+
+	public String getServiceName() {
+		return this.serviceName;
+	}
+
+	public void setServiceName(String serviceName) {
+		this.serviceName = serviceName;
+		if(serviceName != null){
+			putQueryParameter("ServiceName", serviceName);
+		}
 	}
 
 	public String getGroupName() {
@@ -65,17 +87,6 @@ public class DeleteNacosServiceRequest extends RpcAcsRequest<DeleteNacosServiceR
 		}
 	}
 
-	public String getNamespaceId() {
-		return this.namespaceId;
-	}
-
-	public void setNamespaceId(String namespaceId) {
-		this.namespaceId = namespaceId;
-		if(namespaceId != null){
-			putQueryParameter("NamespaceId", namespaceId);
-		}
-	}
-
 	public String getAcceptLanguage() {
 		return this.acceptLanguage;
 	}
@@ -84,17 +95,6 @@ public class DeleteNacosServiceRequest extends RpcAcsRequest<DeleteNacosServiceR
 		this.acceptLanguage = acceptLanguage;
 		if(acceptLanguage != null){
 			putQueryParameter("AcceptLanguage", acceptLanguage);
-		}
-	}
-
-	public String getServiceName() {
-		return this.serviceName;
-	}
-
-	public void setServiceName(String serviceName) {
-		this.serviceName = serviceName;
-		if(serviceName != null){
-			putQueryParameter("ServiceName", serviceName);
 		}
 	}
 

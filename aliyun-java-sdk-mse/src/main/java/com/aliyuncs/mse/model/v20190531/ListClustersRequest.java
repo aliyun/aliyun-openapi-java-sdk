@@ -26,8 +26,6 @@ import com.aliyuncs.mse.Endpoint;
 public class ListClustersRequest extends RpcAcsRequest<ListClustersResponse> {
 	   
 
-	private String clusterAliasName;
-
 	private Integer pageNum;
 
 	private String resourceGroupId;
@@ -36,9 +34,11 @@ public class ListClustersRequest extends RpcAcsRequest<ListClustersResponse> {
 
 	private Integer pageSize;
 
-	private String acceptLanguage;
-
 	private List<Tag> tags;
+
+	private String clusterAliasName;
+
+	private String acceptLanguage;
 	public ListClustersRequest() {
 		super("mse", "2019-05-31", "ListClusters", "mse");
 		setMethod(MethodType.GET);
@@ -46,17 +46,6 @@ public class ListClustersRequest extends RpcAcsRequest<ListClustersResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getClusterAliasName() {
-		return this.clusterAliasName;
-	}
-
-	public void setClusterAliasName(String clusterAliasName) {
-		this.clusterAliasName = clusterAliasName;
-		if(clusterAliasName != null){
-			putQueryParameter("ClusterAliasName", clusterAliasName);
-		}
 	}
 
 	public Integer getPageNum() {
@@ -103,17 +92,6 @@ public class ListClustersRequest extends RpcAcsRequest<ListClustersResponse> {
 		}
 	}
 
-	public String getAcceptLanguage() {
-		return this.acceptLanguage;
-	}
-
-	public void setAcceptLanguage(String acceptLanguage) {
-		this.acceptLanguage = acceptLanguage;
-		if(acceptLanguage != null){
-			putQueryParameter("AcceptLanguage", acceptLanguage);
-		}
-	}
-
 	public List<Tag> getTags() {
 		return this.tags;
 	}
@@ -126,6 +104,28 @@ public class ListClustersRequest extends RpcAcsRequest<ListClustersResponse> {
 				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
+	}
+
+	public String getClusterAliasName() {
+		return this.clusterAliasName;
+	}
+
+	public void setClusterAliasName(String clusterAliasName) {
+		this.clusterAliasName = clusterAliasName;
+		if(clusterAliasName != null){
+			putQueryParameter("ClusterAliasName", clusterAliasName);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
+		}
 	}
 
 	public static class Tag {

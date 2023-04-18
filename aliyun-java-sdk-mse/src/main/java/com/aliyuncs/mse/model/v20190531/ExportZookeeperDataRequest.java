@@ -25,11 +25,11 @@ import com.aliyuncs.mse.Endpoint;
 public class ExportZookeeperDataRequest extends RpcAcsRequest<ExportZookeeperDataResponse> {
 	   
 
+	private String requestPars;
+
 	private String exportType;
 
 	private String instanceId;
-
-	private String requestPars;
 
 	private String acceptLanguage;
 	public ExportZookeeperDataRequest() {
@@ -39,6 +39,17 @@ public class ExportZookeeperDataRequest extends RpcAcsRequest<ExportZookeeperDat
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getRequestPars() {
+		return this.requestPars;
+	}
+
+	public void setRequestPars(String requestPars) {
+		this.requestPars = requestPars;
+		if(requestPars != null){
+			putQueryParameter("RequestPars", requestPars);
+		}
 	}
 
 	public String getExportType() {
@@ -60,17 +71,6 @@ public class ExportZookeeperDataRequest extends RpcAcsRequest<ExportZookeeperDat
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getRequestPars() {
-		return this.requestPars;
-	}
-
-	public void setRequestPars(String requestPars) {
-		this.requestPars = requestPars;
-		if(requestPars != null){
-			putQueryParameter("RequestPars", requestPars);
 		}
 	}
 

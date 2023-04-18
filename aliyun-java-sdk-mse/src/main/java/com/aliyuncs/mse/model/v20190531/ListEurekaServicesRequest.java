@@ -25,13 +25,13 @@ import com.aliyuncs.mse.Endpoint;
 public class ListEurekaServicesRequest extends RpcAcsRequest<ListEurekaServicesResponse> {
 	   
 
-	private String clusterId;
-
 	private Integer pageNum;
 
 	private String requestPars;
 
 	private Integer pageSize;
+
+	private String clusterId;
 
 	private String acceptLanguage;
 	public ListEurekaServicesRequest() {
@@ -41,17 +41,6 @@ public class ListEurekaServicesRequest extends RpcAcsRequest<ListEurekaServicesR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
-		}
 	}
 
 	public Integer getPageNum() {
@@ -84,6 +73,17 @@ public class ListEurekaServicesRequest extends RpcAcsRequest<ListEurekaServicesR
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 

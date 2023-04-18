@@ -25,11 +25,13 @@ import com.aliyuncs.mse.Endpoint;
 public class ListAppBySwimmingLaneGroupTagRequest extends RpcAcsRequest<ListAppBySwimmingLaneGroupTagResponse> {
 	   
 
+	private String tag;
+
 	private Long groupId;
 
-	private String acceptLanguage;
+	private String namespace;
 
-	private String tag;
+	private String acceptLanguage;
 	public ListAppBySwimmingLaneGroupTagRequest() {
 		super("mse", "2019-05-31", "ListAppBySwimmingLaneGroupTag", "mse");
 		setMethod(MethodType.POST);
@@ -37,6 +39,17 @@ public class ListAppBySwimmingLaneGroupTagRequest extends RpcAcsRequest<ListAppB
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getTag() {
+		return this.tag;
+	}
+
+	public void setTag(String tag) {
+		this.tag = tag;
+		if(tag != null){
+			putQueryParameter("Tag", tag);
+		}
 	}
 
 	public Long getGroupId() {
@@ -50,6 +63,17 @@ public class ListAppBySwimmingLaneGroupTagRequest extends RpcAcsRequest<ListAppB
 		}
 	}
 
+	public String getNamespace() {
+		return this.namespace;
+	}
+
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+		if(namespace != null){
+			putQueryParameter("Namespace", namespace);
+		}
+	}
+
 	public String getAcceptLanguage() {
 		return this.acceptLanguage;
 	}
@@ -58,17 +82,6 @@ public class ListAppBySwimmingLaneGroupTagRequest extends RpcAcsRequest<ListAppB
 		this.acceptLanguage = acceptLanguage;
 		if(acceptLanguage != null){
 			putQueryParameter("AcceptLanguage", acceptLanguage);
-		}
-	}
-
-	public String getTag() {
-		return this.tag;
-	}
-
-	public void setTag(String tag) {
-		this.tag = tag;
-		if(tag != null){
-			putQueryParameter("Tag", tag);
 		}
 	}
 

@@ -27,6 +27,8 @@ public class GetTagsBySwimmingLaneGroupIdRequest extends RpcAcsRequest<GetTagsBy
 
 	private Long groupId;
 
+	private String namespace;
+
 	private String acceptLanguage;
 	public GetTagsBySwimmingLaneGroupIdRequest() {
 		super("mse", "2019-05-31", "GetTagsBySwimmingLaneGroupId", "mse");
@@ -45,6 +47,17 @@ public class GetTagsBySwimmingLaneGroupIdRequest extends RpcAcsRequest<GetTagsBy
 		this.groupId = groupId;
 		if(groupId != null){
 			putQueryParameter("GroupId", groupId.toString());
+		}
+	}
+
+	public String getNamespace() {
+		return this.namespace;
+	}
+
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+		if(namespace != null){
+			putQueryParameter("Namespace", namespace);
 		}
 	}
 

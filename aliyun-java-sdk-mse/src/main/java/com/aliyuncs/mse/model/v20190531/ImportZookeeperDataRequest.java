@@ -25,11 +25,11 @@ import com.aliyuncs.mse.Endpoint;
 public class ImportZookeeperDataRequest extends RpcAcsRequest<ImportZookeeperDataResponse> {
 	   
 
+	private String requestPars;
+
 	private String instanceId;
 
 	private String fileName;
-
-	private String requestPars;
 
 	private String acceptLanguage;
 
@@ -41,6 +41,17 @@ public class ImportZookeeperDataRequest extends RpcAcsRequest<ImportZookeeperDat
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getRequestPars() {
+		return this.requestPars;
+	}
+
+	public void setRequestPars(String requestPars) {
+		this.requestPars = requestPars;
+		if(requestPars != null){
+			putQueryParameter("RequestPars", requestPars);
+		}
 	}
 
 	public String getInstanceId() {
@@ -62,17 +73,6 @@ public class ImportZookeeperDataRequest extends RpcAcsRequest<ImportZookeeperDat
 		this.fileName = fileName;
 		if(fileName != null){
 			putQueryParameter("FileName", fileName);
-		}
-	}
-
-	public String getRequestPars() {
-		return this.requestPars;
-	}
-
-	public void setRequestPars(String requestPars) {
-		this.requestPars = requestPars;
-		if(requestPars != null){
-			putQueryParameter("RequestPars", requestPars);
 		}
 	}
 

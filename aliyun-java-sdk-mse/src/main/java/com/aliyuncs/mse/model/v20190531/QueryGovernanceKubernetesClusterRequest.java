@@ -27,11 +27,11 @@ public class QueryGovernanceKubernetesClusterRequest extends RpcAcsRequest<Query
 
 	private String clusterName;
 
-	private String clusterId;
-
 	private Integer pageNumber;
 
 	private Integer pageSize;
+
+	private String clusterId;
 
 	private String acceptLanguage;
 	public QueryGovernanceKubernetesClusterRequest() {
@@ -54,17 +54,6 @@ public class QueryGovernanceKubernetesClusterRequest extends RpcAcsRequest<Query
 		}
 	}
 
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
-		}
-	}
-
 	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
@@ -84,6 +73,17 @@ public class QueryGovernanceKubernetesClusterRequest extends RpcAcsRequest<Query
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 

@@ -27,9 +27,9 @@ public class ListExportZookeeperDataRequest extends RpcAcsRequest<ListExportZook
 
 	private Integer pageNumber;
 
-	private String instanceId;
-
 	private Integer pageSize;
+
+	private String instanceId;
 
 	private String acceptLanguage;
 	public ListExportZookeeperDataRequest() {
@@ -52,17 +52,6 @@ public class ListExportZookeeperDataRequest extends RpcAcsRequest<ListExportZook
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -71,6 +60,17 @@ public class ListExportZookeeperDataRequest extends RpcAcsRequest<ListExportZook
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

@@ -27,9 +27,9 @@ public class DeleteAuthResourceRequest extends RpcAcsRequest<DeleteAuthResourceR
 
 	private String gatewayUniqueId;
 
-	private String acceptLanguage;
-
 	private Long id;
+
+	private String acceptLanguage;
 	public DeleteAuthResourceRequest() {
 		super("mse", "2019-05-31", "DeleteAuthResource", "mse");
 		setMethod(MethodType.POST);
@@ -50,17 +50,6 @@ public class DeleteAuthResourceRequest extends RpcAcsRequest<DeleteAuthResourceR
 		}
 	}
 
-	public String getAcceptLanguage() {
-		return this.acceptLanguage;
-	}
-
-	public void setAcceptLanguage(String acceptLanguage) {
-		this.acceptLanguage = acceptLanguage;
-		if(acceptLanguage != null){
-			putQueryParameter("AcceptLanguage", acceptLanguage);
-		}
-	}
-
 	public Long getId() {
 		return this.id;
 	}
@@ -69,6 +58,17 @@ public class DeleteAuthResourceRequest extends RpcAcsRequest<DeleteAuthResourceR
 		this.id = id;
 		if(id != null){
 			putQueryParameter("Id", id.toString());
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

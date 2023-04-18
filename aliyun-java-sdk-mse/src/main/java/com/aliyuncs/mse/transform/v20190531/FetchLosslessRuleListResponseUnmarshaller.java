@@ -28,29 +28,29 @@ public class FetchLosslessRuleListResponseUnmarshaller {
 	public static FetchLosslessRuleListResponse unmarshall(FetchLosslessRuleListResponse fetchLosslessRuleListResponse, UnmarshallerContext _ctx) {
 		
 		fetchLosslessRuleListResponse.setRequestId(_ctx.stringValue("FetchLosslessRuleListResponse.RequestId"));
-		fetchLosslessRuleListResponse.setMessage(_ctx.stringValue("FetchLosslessRuleListResponse.Message"));
-		fetchLosslessRuleListResponse.setHttpCode(_ctx.stringValue("FetchLosslessRuleListResponse.HttpCode"));
-		fetchLosslessRuleListResponse.setCode(_ctx.stringValue("FetchLosslessRuleListResponse.Code"));
 		fetchLosslessRuleListResponse.setSuccess(_ctx.booleanValue("FetchLosslessRuleListResponse.Success"));
+		fetchLosslessRuleListResponse.setCode(_ctx.integerValue("FetchLosslessRuleListResponse.Code"));
+		fetchLosslessRuleListResponse.setErrorCode(_ctx.stringValue("FetchLosslessRuleListResponse.ErrorCode"));
+		fetchLosslessRuleListResponse.setHttpStatusCode(_ctx.integerValue("FetchLosslessRuleListResponse.HttpStatusCode"));
+		fetchLosslessRuleListResponse.setMessage(_ctx.stringValue("FetchLosslessRuleListResponse.Message"));
 
 		Data data = new Data();
-		data.setPageNumber(_ctx.longValue("FetchLosslessRuleListResponse.Data.PageNumber"));
-		data.setPageSize(_ctx.longValue("FetchLosslessRuleListResponse.Data.PageSize"));
-		data.setTotalSize(_ctx.longValue("FetchLosslessRuleListResponse.Data.TotalSize"));
+		data.setPageNumber(_ctx.integerValue("FetchLosslessRuleListResponse.Data.PageNumber"));
+		data.setPageSize(_ctx.integerValue("FetchLosslessRuleListResponse.Data.PageSize"));
+		data.setTotalSize(_ctx.integerValue("FetchLosslessRuleListResponse.Data.TotalSize"));
 
 		List<ApplicationList> results = new ArrayList<ApplicationList>();
 		for (int i = 0; i < _ctx.lengthValue("FetchLosslessRuleListResponse.Data.Results.Length"); i++) {
 			ApplicationList applicationList = new ApplicationList();
-			applicationList.setAligned(_ctx.booleanValue("FetchLosslessRuleListResponse.Data.Results["+ i +"].Aligned"));
-			applicationList.setAppId(_ctx.stringValue("FetchLosslessRuleListResponse.Data.Results["+ i +"].AppId"));
 			applicationList.setAppName(_ctx.stringValue("FetchLosslessRuleListResponse.Data.Results["+ i +"].AppName"));
-			applicationList.setCount(_ctx.longValue("FetchLosslessRuleListResponse.Data.Results["+ i +"].Count"));
-			applicationList.setDelayTime(_ctx.longValue("FetchLosslessRuleListResponse.Data.Results["+ i +"].DelayTime"));
+			applicationList.setAppId(_ctx.stringValue("FetchLosslessRuleListResponse.Data.Results["+ i +"].AppId"));
+			applicationList.setCount(_ctx.integerValue("FetchLosslessRuleListResponse.Data.Results["+ i +"].Count"));
 			applicationList.setEnable(_ctx.booleanValue("FetchLosslessRuleListResponse.Data.Results["+ i +"].Enable"));
-			applicationList.setFuncType(_ctx.longValue("FetchLosslessRuleListResponse.Data.Results["+ i +"].FuncType"));
+			applicationList.setWarmupTime(_ctx.integerValue("FetchLosslessRuleListResponse.Data.Results["+ i +"].WarmupTime"));
+			applicationList.setDelayTime(_ctx.integerValue("FetchLosslessRuleListResponse.Data.Results["+ i +"].DelayTime"));
+			applicationList.setFuncType(_ctx.integerValue("FetchLosslessRuleListResponse.Data.Results["+ i +"].FuncType"));
+			applicationList.setAligned(_ctx.booleanValue("FetchLosslessRuleListResponse.Data.Results["+ i +"].Aligned"));
 			applicationList.setRelated(_ctx.booleanValue("FetchLosslessRuleListResponse.Data.Results["+ i +"].Related"));
-			applicationList.setWarmupTime(_ctx.longValue("FetchLosslessRuleListResponse.Data.Results["+ i +"].WarmupTime"));
-			applicationList.setShutdownWaitSeconds(_ctx.integerValue("FetchLosslessRuleListResponse.Data.Results["+ i +"].ShutdownWaitSeconds"));
 			applicationList.setLossLessDetail(_ctx.booleanValue("FetchLosslessRuleListResponse.Data.Results["+ i +"].LossLessDetail"));
 			applicationList.setNotice(_ctx.booleanValue("FetchLosslessRuleListResponse.Data.Results["+ i +"].Notice"));
 

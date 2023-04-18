@@ -26,13 +26,13 @@ import com.aliyuncs.mse.Endpoint;
 public class TagResourcesRequest extends RpcAcsRequest<TagResourcesResponse> {
 	   
 
+	private List<Tag> tags;
+
 	private List<String> resourceIds;
 
 	private String resourceType;
 
 	private String acceptLanguage;
-
-	private List<Tag> tags;
 	public TagResourcesRequest() {
 		super("mse", "2019-05-31", "TagResources", "mse");
 		setMethod(MethodType.POST);
@@ -40,6 +40,20 @@ public class TagResourcesRequest extends RpcAcsRequest<TagResourcesResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
 	}
 
 	public List<String> getResourceIds() {
@@ -75,20 +89,6 @@ public class TagResourcesRequest extends RpcAcsRequest<TagResourcesResponse> {
 		if(acceptLanguage != null){
 			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
-	}
-
-	public List<Tag> getTags() {
-		return this.tags;
-	}
-
-	public void setTags(List<Tag> tags) {
-		this.tags = tags;	
-		if (tags != null) {
-			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
-				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
-				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
-			}
-		}	
 	}
 
 	public static class Tag {

@@ -25,45 +25,45 @@ import com.aliyuncs.mse.Endpoint;
 public class UpdateConfigRequest extends RpcAcsRequest<UpdateConfigResponse> {
 	   
 
-	private String openSuperAcl;
-
 	private Boolean configAuthEnabled;
 
-	private Boolean eurekaSupported;
-
 	private String passWord;
-
-	private String snapshotCount;
-
-	private String minSessionTimeout;
 
 	private String maxClientCnxns;
 
 	private String requestPars;
 
-	private String juteMaxbuffer;
-
 	private Boolean namingAuthEnabled;
-
-	private String configType;
 
 	private String extendedTypesEnable;
 
 	private String autopurgeSnapRetainCount;
 
-	private String maxSessionTimeout;
-
 	private Boolean configSecretEnabled;
 
 	private Boolean mCPEnabled;
 
-	private String tickTime;
-
-	private String clusterId;
-
 	private String syncLimit;
 
 	private String instanceId;
+
+	private String openSuperAcl;
+
+	private Boolean eurekaSupported;
+
+	private String snapshotCount;
+
+	private String minSessionTimeout;
+
+	private String juteMaxbuffer;
+
+	private String configType;
+
+	private String maxSessionTimeout;
+
+	private String tickTime;
+
+	private String clusterId;
 
 	private String autopurgePurgeInterval;
 
@@ -81,17 +81,6 @@ public class UpdateConfigRequest extends RpcAcsRequest<UpdateConfigResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getOpenSuperAcl() {
-		return this.openSuperAcl;
-	}
-
-	public void setOpenSuperAcl(String openSuperAcl) {
-		this.openSuperAcl = openSuperAcl;
-		if(openSuperAcl != null){
-			putBodyParameter("OpenSuperAcl", openSuperAcl);
-		}
-	}
-
 	public Boolean getConfigAuthEnabled() {
 		return this.configAuthEnabled;
 	}
@@ -103,17 +92,6 @@ public class UpdateConfigRequest extends RpcAcsRequest<UpdateConfigResponse> {
 		}
 	}
 
-	public Boolean getEurekaSupported() {
-		return this.eurekaSupported;
-	}
-
-	public void setEurekaSupported(Boolean eurekaSupported) {
-		this.eurekaSupported = eurekaSupported;
-		if(eurekaSupported != null){
-			putQueryParameter("EurekaSupported", eurekaSupported.toString());
-		}
-	}
-
 	public String getPassWord() {
 		return this.passWord;
 	}
@@ -122,28 +100,6 @@ public class UpdateConfigRequest extends RpcAcsRequest<UpdateConfigResponse> {
 		this.passWord = passWord;
 		if(passWord != null){
 			putQueryParameter("PassWord", passWord);
-		}
-	}
-
-	public String getSnapshotCount() {
-		return this.snapshotCount;
-	}
-
-	public void setSnapshotCount(String snapshotCount) {
-		this.snapshotCount = snapshotCount;
-		if(snapshotCount != null){
-			putQueryParameter("SnapshotCount", snapshotCount);
-		}
-	}
-
-	public String getMinSessionTimeout() {
-		return this.minSessionTimeout;
-	}
-
-	public void setMinSessionTimeout(String minSessionTimeout) {
-		this.minSessionTimeout = minSessionTimeout;
-		if(minSessionTimeout != null){
-			putQueryParameter("MinSessionTimeout", minSessionTimeout);
 		}
 	}
 
@@ -169,17 +125,6 @@ public class UpdateConfigRequest extends RpcAcsRequest<UpdateConfigResponse> {
 		}
 	}
 
-	public String getJuteMaxbuffer() {
-		return this.juteMaxbuffer;
-	}
-
-	public void setJuteMaxbuffer(String juteMaxbuffer) {
-		this.juteMaxbuffer = juteMaxbuffer;
-		if(juteMaxbuffer != null){
-			putQueryParameter("JuteMaxbuffer", juteMaxbuffer);
-		}
-	}
-
 	public Boolean getNamingAuthEnabled() {
 		return this.namingAuthEnabled;
 	}
@@ -188,17 +133,6 @@ public class UpdateConfigRequest extends RpcAcsRequest<UpdateConfigResponse> {
 		this.namingAuthEnabled = namingAuthEnabled;
 		if(namingAuthEnabled != null){
 			putQueryParameter("NamingAuthEnabled", namingAuthEnabled.toString());
-		}
-	}
-
-	public String getConfigType() {
-		return this.configType;
-	}
-
-	public void setConfigType(String configType) {
-		this.configType = configType;
-		if(configType != null){
-			putQueryParameter("ConfigType", configType);
 		}
 	}
 
@@ -224,17 +158,6 @@ public class UpdateConfigRequest extends RpcAcsRequest<UpdateConfigResponse> {
 		}
 	}
 
-	public String getMaxSessionTimeout() {
-		return this.maxSessionTimeout;
-	}
-
-	public void setMaxSessionTimeout(String maxSessionTimeout) {
-		this.maxSessionTimeout = maxSessionTimeout;
-		if(maxSessionTimeout != null){
-			putQueryParameter("MaxSessionTimeout", maxSessionTimeout);
-		}
-	}
-
 	public Boolean getConfigSecretEnabled() {
 		return this.configSecretEnabled;
 	}
@@ -257,28 +180,6 @@ public class UpdateConfigRequest extends RpcAcsRequest<UpdateConfigResponse> {
 		}
 	}
 
-	public String getTickTime() {
-		return this.tickTime;
-	}
-
-	public void setTickTime(String tickTime) {
-		this.tickTime = tickTime;
-		if(tickTime != null){
-			putQueryParameter("TickTime", tickTime);
-		}
-	}
-
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
-		}
-	}
-
 	public String getSyncLimit() {
 		return this.syncLimit;
 	}
@@ -298,6 +199,105 @@ public class UpdateConfigRequest extends RpcAcsRequest<UpdateConfigResponse> {
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getOpenSuperAcl() {
+		return this.openSuperAcl;
+	}
+
+	public void setOpenSuperAcl(String openSuperAcl) {
+		this.openSuperAcl = openSuperAcl;
+		if(openSuperAcl != null){
+			putBodyParameter("OpenSuperAcl", openSuperAcl);
+		}
+	}
+
+	public Boolean getEurekaSupported() {
+		return this.eurekaSupported;
+	}
+
+	public void setEurekaSupported(Boolean eurekaSupported) {
+		this.eurekaSupported = eurekaSupported;
+		if(eurekaSupported != null){
+			putQueryParameter("EurekaSupported", eurekaSupported.toString());
+		}
+	}
+
+	public String getSnapshotCount() {
+		return this.snapshotCount;
+	}
+
+	public void setSnapshotCount(String snapshotCount) {
+		this.snapshotCount = snapshotCount;
+		if(snapshotCount != null){
+			putQueryParameter("SnapshotCount", snapshotCount);
+		}
+	}
+
+	public String getMinSessionTimeout() {
+		return this.minSessionTimeout;
+	}
+
+	public void setMinSessionTimeout(String minSessionTimeout) {
+		this.minSessionTimeout = minSessionTimeout;
+		if(minSessionTimeout != null){
+			putQueryParameter("MinSessionTimeout", minSessionTimeout);
+		}
+	}
+
+	public String getJuteMaxbuffer() {
+		return this.juteMaxbuffer;
+	}
+
+	public void setJuteMaxbuffer(String juteMaxbuffer) {
+		this.juteMaxbuffer = juteMaxbuffer;
+		if(juteMaxbuffer != null){
+			putQueryParameter("JuteMaxbuffer", juteMaxbuffer);
+		}
+	}
+
+	public String getConfigType() {
+		return this.configType;
+	}
+
+	public void setConfigType(String configType) {
+		this.configType = configType;
+		if(configType != null){
+			putQueryParameter("ConfigType", configType);
+		}
+	}
+
+	public String getMaxSessionTimeout() {
+		return this.maxSessionTimeout;
+	}
+
+	public void setMaxSessionTimeout(String maxSessionTimeout) {
+		this.maxSessionTimeout = maxSessionTimeout;
+		if(maxSessionTimeout != null){
+			putQueryParameter("MaxSessionTimeout", maxSessionTimeout);
+		}
+	}
+
+	public String getTickTime() {
+		return this.tickTime;
+	}
+
+	public void setTickTime(String tickTime) {
+		this.tickTime = tickTime;
+		if(tickTime != null){
+			putQueryParameter("TickTime", tickTime);
+		}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 

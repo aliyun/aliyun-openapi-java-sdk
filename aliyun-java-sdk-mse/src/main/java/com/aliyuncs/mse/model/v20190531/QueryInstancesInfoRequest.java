@@ -25,13 +25,13 @@ import com.aliyuncs.mse.Endpoint;
 public class QueryInstancesInfoRequest extends RpcAcsRequest<QueryInstancesInfoResponse> {
 	   
 
+	private String requestPars;
+
 	private String orderId;
 
 	private String clusterId;
 
 	private String instanceId;
-
-	private String requestPars;
 
 	private String acceptLanguage;
 	public QueryInstancesInfoRequest() {
@@ -41,6 +41,17 @@ public class QueryInstancesInfoRequest extends RpcAcsRequest<QueryInstancesInfoR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getRequestPars() {
+		return this.requestPars;
+	}
+
+	public void setRequestPars(String requestPars) {
+		this.requestPars = requestPars;
+		if(requestPars != null){
+			putQueryParameter("RequestPars", requestPars);
+		}
 	}
 
 	public String getOrderId() {
@@ -73,17 +84,6 @@ public class QueryInstancesInfoRequest extends RpcAcsRequest<QueryInstancesInfoR
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getRequestPars() {
-		return this.requestPars;
-	}
-
-	public void setRequestPars(String requestPars) {
-		this.requestPars = requestPars;
-		if(requestPars != null){
-			putQueryParameter("RequestPars", requestPars);
 		}
 	}
 

@@ -25,13 +25,13 @@ import com.aliyuncs.mse.Endpoint;
 public class DeleteEngineNamespaceRequest extends RpcAcsRequest<DeleteEngineNamespaceResponse> {
 	   
 
+	private String id;
+
 	private String clusterId;
 
 	private String instanceId;
 
 	private String acceptLanguage;
-
-	private String id;
 	public DeleteEngineNamespaceRequest() {
 		super("mse", "2019-05-31", "DeleteEngineNamespace", "mse");
 		setMethod(MethodType.POST);
@@ -39,6 +39,17 @@ public class DeleteEngineNamespaceRequest extends RpcAcsRequest<DeleteEngineName
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getId() {
+		return this.id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+		if(id != null){
+			putQueryParameter("Id", id);
+		}
 	}
 
 	public String getClusterId() {
@@ -71,17 +82,6 @@ public class DeleteEngineNamespaceRequest extends RpcAcsRequest<DeleteEngineName
 		this.acceptLanguage = acceptLanguage;
 		if(acceptLanguage != null){
 			putQueryParameter("AcceptLanguage", acceptLanguage);
-		}
-	}
-
-	public String getId() {
-		return this.id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-		if(id != null){
-			putQueryParameter("Id", id);
 		}
 	}
 

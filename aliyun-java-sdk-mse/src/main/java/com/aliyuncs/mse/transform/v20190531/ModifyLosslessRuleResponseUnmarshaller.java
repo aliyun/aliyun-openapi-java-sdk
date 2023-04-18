@@ -22,11 +22,6 @@ public class ModifyLosslessRuleResponseUnmarshaller {
 
 	public static ModifyLosslessRuleResponse unmarshall(ModifyLosslessRuleResponse modifyLosslessRuleResponse, UnmarshallerContext _ctx) {
 		
-		modifyLosslessRuleResponse.setRequestId(_ctx.stringValue("ModifyLosslessRuleResponse.RequestId"));
-		modifyLosslessRuleResponse.setErrorCode(_ctx.stringValue("ModifyLosslessRuleResponse.ErrorCode"));
-		modifyLosslessRuleResponse.setHttpCode(_ctx.stringValue("ModifyLosslessRuleResponse.HttpCode"));
-		modifyLosslessRuleResponse.setMessage(_ctx.stringValue("ModifyLosslessRuleResponse.Message"));
-		modifyLosslessRuleResponse.setSuccess(_ctx.booleanValue("ModifyLosslessRuleResponse.Success"));
 	 
 	 	return modifyLosslessRuleResponse;
 	}

@@ -24,56 +24,6 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ModifyLosslessRuleResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String errorCode;
-
-	private String httpCode;
-
-	private String message;
-
-	private Boolean success;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
-
-	public String getHttpCode() {
-		return this.httpCode;
-	}
-
-	public void setHttpCode(String httpCode) {
-		this.httpCode = httpCode;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	@Override
 	public ModifyLosslessRuleResponse getInstance(UnmarshallerContext context) {
 		return	ModifyLosslessRuleResponseUnmarshaller.unmarshall(this, context);

@@ -27,17 +27,17 @@ public class CreateNacosServiceRequest extends RpcAcsRequest<CreateNacosServiceR
 
 	private Boolean ephemeral;
 
+	private String namespaceId;
+
+	private String serviceName;
+
 	private String clusterId;
 
 	private String groupName;
 
 	private String instanceId;
 
-	private String namespaceId;
-
 	private String acceptLanguage;
-
-	private String serviceName;
 
 	private String protectThreshold;
 	public CreateNacosServiceRequest() {
@@ -57,6 +57,28 @@ public class CreateNacosServiceRequest extends RpcAcsRequest<CreateNacosServiceR
 		this.ephemeral = ephemeral;
 		if(ephemeral != null){
 			putQueryParameter("Ephemeral", ephemeral.toString());
+		}
+	}
+
+	public String getNamespaceId() {
+		return this.namespaceId;
+	}
+
+	public void setNamespaceId(String namespaceId) {
+		this.namespaceId = namespaceId;
+		if(namespaceId != null){
+			putQueryParameter("NamespaceId", namespaceId);
+		}
+	}
+
+	public String getServiceName() {
+		return this.serviceName;
+	}
+
+	public void setServiceName(String serviceName) {
+		this.serviceName = serviceName;
+		if(serviceName != null){
+			putQueryParameter("ServiceName", serviceName);
 		}
 	}
 
@@ -93,17 +115,6 @@ public class CreateNacosServiceRequest extends RpcAcsRequest<CreateNacosServiceR
 		}
 	}
 
-	public String getNamespaceId() {
-		return this.namespaceId;
-	}
-
-	public void setNamespaceId(String namespaceId) {
-		this.namespaceId = namespaceId;
-		if(namespaceId != null){
-			putQueryParameter("NamespaceId", namespaceId);
-		}
-	}
-
 	public String getAcceptLanguage() {
 		return this.acceptLanguage;
 	}
@@ -112,17 +123,6 @@ public class CreateNacosServiceRequest extends RpcAcsRequest<CreateNacosServiceR
 		this.acceptLanguage = acceptLanguage;
 		if(acceptLanguage != null){
 			putQueryParameter("AcceptLanguage", acceptLanguage);
-		}
-	}
-
-	public String getServiceName() {
-		return this.serviceName;
-	}
-
-	public void setServiceName(String serviceName) {
-		this.serviceName = serviceName;
-		if(serviceName != null){
-			putQueryParameter("ServiceName", serviceName);
 		}
 	}
 

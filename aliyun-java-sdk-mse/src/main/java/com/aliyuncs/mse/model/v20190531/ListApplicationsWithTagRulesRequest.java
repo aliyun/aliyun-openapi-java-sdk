@@ -31,9 +31,11 @@ public class ListApplicationsWithTagRulesRequest extends RpcAcsRequest<ListAppli
 
 	private String appName;
 
+	private Integer pageSize;
+
 	private String appId;
 
-	private Integer pageSize;
+	private String namespace;
 
 	private String acceptLanguage;
 
@@ -80,6 +82,17 @@ public class ListApplicationsWithTagRulesRequest extends RpcAcsRequest<ListAppli
 		}
 	}
 
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
 	public String getAppId() {
 		return this.appId;
 	}
@@ -91,14 +104,14 @@ public class ListApplicationsWithTagRulesRequest extends RpcAcsRequest<ListAppli
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getNamespace() {
+		return this.namespace;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+		if(namespace != null){
+			putQueryParameter("Namespace", namespace);
 		}
 	}
 

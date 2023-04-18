@@ -29,8 +29,6 @@ public class UpdateNacosConfigRequest extends RpcAcsRequest<UpdateNacosConfigRes
 
 	private String type;
 
-	private String content;
-
 	private String appName;
 
 	private String namespaceId;
@@ -43,11 +41,13 @@ public class UpdateNacosConfigRequest extends RpcAcsRequest<UpdateNacosConfigRes
 
 	private String instanceId;
 
+	private String desc;
+
+	private String content;
+
 	private String dataId;
 
 	private String acceptLanguage;
-
-	private String desc;
 
 	private String md5;
 	public UpdateNacosConfigRequest() {
@@ -78,17 +78,6 @@ public class UpdateNacosConfigRequest extends RpcAcsRequest<UpdateNacosConfigRes
 		this.type = type;
 		if(type != null){
 			putQueryParameter("Type", type);
-		}
-	}
-
-	public String getContent() {
-		return this.content;
-	}
-
-	public void setContent(String content) {
-		this.content = content;
-		if(content != null){
-			putQueryParameter("Content", content);
 		}
 	}
 
@@ -158,6 +147,28 @@ public class UpdateNacosConfigRequest extends RpcAcsRequest<UpdateNacosConfigRes
 		}
 	}
 
+	public String getDesc() {
+		return this.desc;
+	}
+
+	public void setDesc(String desc) {
+		this.desc = desc;
+		if(desc != null){
+			putQueryParameter("Desc", desc);
+		}
+	}
+
+	public String getContent() {
+		return this.content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+		if(content != null){
+			putQueryParameter("Content", content);
+		}
+	}
+
 	public String getDataId() {
 		return this.dataId;
 	}
@@ -177,17 +188,6 @@ public class UpdateNacosConfigRequest extends RpcAcsRequest<UpdateNacosConfigRes
 		this.acceptLanguage = acceptLanguage;
 		if(acceptLanguage != null){
 			putQueryParameter("AcceptLanguage", acceptLanguage);
-		}
-	}
-
-	public String getDesc() {
-		return this.desc;
-	}
-
-	public void setDesc(String desc) {
-		this.desc = desc;
-		if(desc != null){
-			putQueryParameter("Desc", desc);
 		}
 	}
 

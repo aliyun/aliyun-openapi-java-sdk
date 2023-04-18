@@ -27,6 +27,8 @@ public class DeleteSwimmingLaneRequest extends RpcAcsRequest<DeleteSwimmingLaneR
 
 	private Long laneId;
 
+	private String namespace;
+
 	private String acceptLanguage;
 	public DeleteSwimmingLaneRequest() {
 		super("mse", "2019-05-31", "DeleteSwimmingLane", "mse");
@@ -45,6 +47,17 @@ public class DeleteSwimmingLaneRequest extends RpcAcsRequest<DeleteSwimmingLaneR
 		this.laneId = laneId;
 		if(laneId != null){
 			putQueryParameter("LaneId", laneId.toString());
+		}
+	}
+
+	public String getNamespace() {
+		return this.namespace;
+	}
+
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+		if(namespace != null){
+			putQueryParameter("Namespace", namespace);
 		}
 	}
 

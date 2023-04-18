@@ -31,11 +31,7 @@ public class UpdateNacosInstanceRequest extends RpcAcsRequest<UpdateNacosInstanc
 
 	private Boolean ephemeral;
 
-	private Boolean enabled;
-
 	private String namespaceId;
-
-	private String serviceName;
 
 	private String ip;
 
@@ -46,6 +42,10 @@ public class UpdateNacosInstanceRequest extends RpcAcsRequest<UpdateNacosInstanc
 	private String instanceId;
 
 	private Integer port;
+
+	private Boolean enabled;
+
+	private String serviceName;
 
 	private String acceptLanguage;
 	public UpdateNacosInstanceRequest() {
@@ -90,17 +90,6 @@ public class UpdateNacosInstanceRequest extends RpcAcsRequest<UpdateNacosInstanc
 		}
 	}
 
-	public Boolean getEnabled() {
-		return this.enabled;
-	}
-
-	public void setEnabled(Boolean enabled) {
-		this.enabled = enabled;
-		if(enabled != null){
-			putQueryParameter("Enabled", enabled.toString());
-		}
-	}
-
 	public String getNamespaceId() {
 		return this.namespaceId;
 	}
@@ -109,17 +98,6 @@ public class UpdateNacosInstanceRequest extends RpcAcsRequest<UpdateNacosInstanc
 		this.namespaceId = namespaceId;
 		if(namespaceId != null){
 			putQueryParameter("NamespaceId", namespaceId);
-		}
-	}
-
-	public String getServiceName() {
-		return this.serviceName;
-	}
-
-	public void setServiceName(String serviceName) {
-		this.serviceName = serviceName;
-		if(serviceName != null){
-			putQueryParameter("ServiceName", serviceName);
 		}
 	}
 
@@ -175,6 +153,28 @@ public class UpdateNacosInstanceRequest extends RpcAcsRequest<UpdateNacosInstanc
 		this.port = port;
 		if(port != null){
 			putQueryParameter("Port", port.toString());
+		}
+	}
+
+	public Boolean getEnabled() {
+		return this.enabled;
+	}
+
+	public void setEnabled(Boolean enabled) {
+		this.enabled = enabled;
+		if(enabled != null){
+			putQueryParameter("Enabled", enabled.toString());
+		}
+	}
+
+	public String getServiceName() {
+		return this.serviceName;
+	}
+
+	public void setServiceName(String serviceName) {
+		this.serviceName = serviceName;
+		if(serviceName != null){
+			putQueryParameter("ServiceName", serviceName);
 		}
 	}
 

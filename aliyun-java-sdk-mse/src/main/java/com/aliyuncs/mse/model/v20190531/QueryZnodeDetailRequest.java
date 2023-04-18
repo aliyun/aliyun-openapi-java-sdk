@@ -25,13 +25,13 @@ import com.aliyuncs.mse.Endpoint;
 public class QueryZnodeDetailRequest extends RpcAcsRequest<QueryZnodeDetailResponse> {
 	   
 
-	private String clusterId;
-
 	private String path;
 
-	private String instanceId;
-
 	private String requestPars;
+
+	private String clusterId;
+
+	private String instanceId;
 
 	private String acceptLanguage;
 	public QueryZnodeDetailRequest() {
@@ -41,17 +41,6 @@ public class QueryZnodeDetailRequest extends RpcAcsRequest<QueryZnodeDetailRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
-		}
 	}
 
 	public String getPath() {
@@ -65,17 +54,6 @@ public class QueryZnodeDetailRequest extends RpcAcsRequest<QueryZnodeDetailRespo
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
 	public String getRequestPars() {
 		return this.requestPars;
 	}
@@ -84,6 +62,28 @@ public class QueryZnodeDetailRequest extends RpcAcsRequest<QueryZnodeDetailRespo
 		this.requestPars = requestPars;
 		if(requestPars != null){
 			putQueryParameter("RequestPars", requestPars);
+		}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

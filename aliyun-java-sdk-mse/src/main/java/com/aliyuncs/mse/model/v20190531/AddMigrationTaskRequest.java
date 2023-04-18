@@ -31,8 +31,6 @@ public class AddMigrationTaskRequest extends RpcAcsRequest<AddMigrationTaskRespo
 
 	private String requestPars;
 
-	private String id;
-
 	private String originInstanceName;
 
 	private String projectDesc;
@@ -85,17 +83,6 @@ public class AddMigrationTaskRequest extends RpcAcsRequest<AddMigrationTaskRespo
 		this.requestPars = requestPars;
 		if(requestPars != null){
 			putQueryParameter("RequestPars", requestPars);
-		}
-	}
-
-	public String getId() {
-		return this.id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-		if(id != null){
-			putQueryParameter("Id", id);
 		}
 	}
 

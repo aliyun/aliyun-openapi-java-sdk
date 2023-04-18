@@ -129,6 +129,8 @@ public class ListApplicationsWithTagRulesResponse extends AcsResponse {
 
 		public static class ApplicationList {
 
+			private String namespace;
+
 			private String appName;
 
 			private String appId;
@@ -136,6 +138,14 @@ public class ListApplicationsWithTagRulesResponse extends AcsResponse {
 			private Long routeStatus;
 
 			private List<RouteRule> routeRules;
+
+			public String getNamespace() {
+				return this.namespace;
+			}
+
+			public void setNamespace(String namespace) {
+				this.namespace = namespace;
+			}
 
 			public String getAppName() {
 				return this.appName;

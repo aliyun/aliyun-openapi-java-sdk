@@ -31,19 +31,19 @@ public class GetServiceListenersRequest extends RpcAcsRequest<GetServiceListener
 
 	private String namespaceId;
 
-	private Integer pageSize;
-
 	private String requestPars;
+
+	private String groupName;
+
+	private String instanceId;
+
+	private Integer pageSize;
 
 	private String serviceName;
 
 	private String clusterId;
 
-	private String groupName;
-
 	private String hasIpCount;
-
-	private String instanceId;
 
 	private String acceptLanguage;
 	public GetServiceListenersRequest() {
@@ -88,17 +88,6 @@ public class GetServiceListenersRequest extends RpcAcsRequest<GetServiceListener
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	public String getRequestPars() {
 		return this.requestPars;
 	}
@@ -107,6 +96,39 @@ public class GetServiceListenersRequest extends RpcAcsRequest<GetServiceListener
 		this.requestPars = requestPars;
 		if(requestPars != null){
 			putQueryParameter("RequestPars", requestPars);
+		}
+	}
+
+	public String getGroupName() {
+		return this.groupName;
+	}
+
+	public void setGroupName(String groupName) {
+		this.groupName = groupName;
+		if(groupName != null){
+			putQueryParameter("GroupName", groupName);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -132,17 +154,6 @@ public class GetServiceListenersRequest extends RpcAcsRequest<GetServiceListener
 		}
 	}
 
-	public String getGroupName() {
-		return this.groupName;
-	}
-
-	public void setGroupName(String groupName) {
-		this.groupName = groupName;
-		if(groupName != null){
-			putQueryParameter("GroupName", groupName);
-		}
-	}
-
 	public String getHasIpCount() {
 		return this.hasIpCount;
 	}
@@ -151,17 +162,6 @@ public class GetServiceListenersRequest extends RpcAcsRequest<GetServiceListener
 		this.hasIpCount = hasIpCount;
 		if(hasIpCount != null){
 			putQueryParameter("HasIpCount", hasIpCount);
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

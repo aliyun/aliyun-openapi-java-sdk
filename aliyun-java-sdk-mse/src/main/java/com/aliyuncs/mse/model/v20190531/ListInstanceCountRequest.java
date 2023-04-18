@@ -25,11 +25,11 @@ import com.aliyuncs.mse.Endpoint;
 public class ListInstanceCountRequest extends RpcAcsRequest<ListInstanceCountResponse> {
 	   
 
+	private String requestPars;
+
 	private String clusterType;
 
 	private String mseVersion;
-
-	private String requestPars;
 
 	private String acceptLanguage;
 	public ListInstanceCountRequest() {
@@ -39,6 +39,17 @@ public class ListInstanceCountRequest extends RpcAcsRequest<ListInstanceCountRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getRequestPars() {
+		return this.requestPars;
+	}
+
+	public void setRequestPars(String requestPars) {
+		this.requestPars = requestPars;
+		if(requestPars != null){
+			putQueryParameter("RequestPars", requestPars);
+		}
 	}
 
 	public String getClusterType() {
@@ -60,17 +71,6 @@ public class ListInstanceCountRequest extends RpcAcsRequest<ListInstanceCountRes
 		this.mseVersion = mseVersion;
 		if(mseVersion != null){
 			putQueryParameter("MseVersion", mseVersion);
-		}
-	}
-
-	public String getRequestPars() {
-		return this.requestPars;
-	}
-
-	public void setRequestPars(String requestPars) {
-		this.requestPars = requestPars;
-		if(requestPars != null){
-			putQueryParameter("RequestPars", requestPars);
 		}
 	}
 

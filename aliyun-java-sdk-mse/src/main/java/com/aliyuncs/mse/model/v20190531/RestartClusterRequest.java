@@ -25,13 +25,13 @@ import com.aliyuncs.mse.Endpoint;
 public class RestartClusterRequest extends RpcAcsRequest<RestartClusterResponse> {
 	   
 
-	private String clusterId;
-
 	private String podNameList;
 
-	private String instanceId;
-
 	private String requestPars;
+
+	private String clusterId;
+
+	private String instanceId;
 
 	private String acceptLanguage;
 	public RestartClusterRequest() {
@@ -41,17 +41,6 @@ public class RestartClusterRequest extends RpcAcsRequest<RestartClusterResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
-		}
 	}
 
 	public String getPodNameList() {
@@ -65,17 +54,6 @@ public class RestartClusterRequest extends RpcAcsRequest<RestartClusterResponse>
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
 	public String getRequestPars() {
 		return this.requestPars;
 	}
@@ -84,6 +62,28 @@ public class RestartClusterRequest extends RpcAcsRequest<RestartClusterResponse>
 		this.requestPars = requestPars;
 		if(requestPars != null){
 			putQueryParameter("RequestPars", requestPars);
+		}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

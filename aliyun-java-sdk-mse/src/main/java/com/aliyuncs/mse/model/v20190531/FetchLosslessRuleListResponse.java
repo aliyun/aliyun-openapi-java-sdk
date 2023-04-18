@@ -27,13 +27,15 @@ public class FetchLosslessRuleListResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String message;
-
-	private String httpCode;
-
-	private String code;
-
 	private Boolean success;
+
+	private Integer code;
+
+	private String errorCode;
+
+	private Integer httpStatusCode;
+
+	private String message;
 
 	private Data data;
 
@@ -45,36 +47,44 @@ public class FetchLosslessRuleListResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public String getHttpCode() {
-		return this.httpCode;
-	}
-
-	public void setHttpCode(String httpCode) {
-		this.httpCode = httpCode;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
 	public Boolean getSuccess() {
 		return this.success;
 	}
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public Integer getCode() {
+		return this.code;
+	}
+
+	public void setCode(Integer code) {
+		this.code = code;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Data getData() {
@@ -87,35 +97,35 @@ public class FetchLosslessRuleListResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Long pageNumber;
+		private Integer pageNumber;
 
-		private Long pageSize;
+		private Integer pageSize;
 
-		private Long totalSize;
+		private Integer totalSize;
 
 		private List<ApplicationList> results;
 
-		public Long getPageNumber() {
+		public Integer getPageNumber() {
 			return this.pageNumber;
 		}
 
-		public void setPageNumber(Long pageNumber) {
+		public void setPageNumber(Integer pageNumber) {
 			this.pageNumber = pageNumber;
 		}
 
-		public Long getPageSize() {
+		public Integer getPageSize() {
 			return this.pageSize;
 		}
 
-		public void setPageSize(Long pageSize) {
+		public void setPageSize(Integer pageSize) {
 			this.pageSize = pageSize;
 		}
 
-		public Long getTotalSize() {
+		public Integer getTotalSize() {
 			return this.totalSize;
 		}
 
-		public void setTotalSize(Long totalSize) {
+		public void setTotalSize(Integer totalSize) {
 			this.totalSize = totalSize;
 		}
 
@@ -129,36 +139,34 @@ public class FetchLosslessRuleListResponse extends AcsResponse {
 
 		public static class ApplicationList {
 
-			private Boolean aligned;
+			private String appName;
 
 			private String appId;
 
-			private String appName;
-
-			private Long count;
-
-			private Long delayTime;
+			private Integer count;
 
 			private Boolean enable;
 
-			private Long funcType;
+			private Integer warmupTime;
+
+			private Integer delayTime;
+
+			private Integer funcType;
+
+			private Boolean aligned;
 
 			private Boolean related;
-
-			private Long warmupTime;
-
-			private Integer shutdownWaitSeconds;
 
 			private Boolean lossLessDetail;
 
 			private Boolean notice;
 
-			public Boolean getAligned() {
-				return this.aligned;
+			public String getAppName() {
+				return this.appName;
 			}
 
-			public void setAligned(Boolean aligned) {
-				this.aligned = aligned;
+			public void setAppName(String appName) {
+				this.appName = appName;
 			}
 
 			public String getAppId() {
@@ -169,28 +177,12 @@ public class FetchLosslessRuleListResponse extends AcsResponse {
 				this.appId = appId;
 			}
 
-			public String getAppName() {
-				return this.appName;
-			}
-
-			public void setAppName(String appName) {
-				this.appName = appName;
-			}
-
-			public Long getCount() {
+			public Integer getCount() {
 				return this.count;
 			}
 
-			public void setCount(Long count) {
+			public void setCount(Integer count) {
 				this.count = count;
-			}
-
-			public Long getDelayTime() {
-				return this.delayTime;
-			}
-
-			public void setDelayTime(Long delayTime) {
-				this.delayTime = delayTime;
 			}
 
 			public Boolean getEnable() {
@@ -201,12 +193,36 @@ public class FetchLosslessRuleListResponse extends AcsResponse {
 				this.enable = enable;
 			}
 
-			public Long getFuncType() {
+			public Integer getWarmupTime() {
+				return this.warmupTime;
+			}
+
+			public void setWarmupTime(Integer warmupTime) {
+				this.warmupTime = warmupTime;
+			}
+
+			public Integer getDelayTime() {
+				return this.delayTime;
+			}
+
+			public void setDelayTime(Integer delayTime) {
+				this.delayTime = delayTime;
+			}
+
+			public Integer getFuncType() {
 				return this.funcType;
 			}
 
-			public void setFuncType(Long funcType) {
+			public void setFuncType(Integer funcType) {
 				this.funcType = funcType;
+			}
+
+			public Boolean getAligned() {
+				return this.aligned;
+			}
+
+			public void setAligned(Boolean aligned) {
+				this.aligned = aligned;
 			}
 
 			public Boolean getRelated() {
@@ -215,22 +231,6 @@ public class FetchLosslessRuleListResponse extends AcsResponse {
 
 			public void setRelated(Boolean related) {
 				this.related = related;
-			}
-
-			public Long getWarmupTime() {
-				return this.warmupTime;
-			}
-
-			public void setWarmupTime(Long warmupTime) {
-				this.warmupTime = warmupTime;
-			}
-
-			public Integer getShutdownWaitSeconds() {
-				return this.shutdownWaitSeconds;
-			}
-
-			public void setShutdownWaitSeconds(Integer shutdownWaitSeconds) {
-				this.shutdownWaitSeconds = shutdownWaitSeconds;
 			}
 
 			public Boolean getLossLessDetail() {

@@ -25,9 +25,9 @@ import com.aliyuncs.mse.Endpoint;
 public class DeleteNacosConfigsRequest extends RpcAcsRequest<DeleteNacosConfigsResponse> {
 	   
 
-	private String instanceId;
-
 	private String namespaceId;
+
+	private String instanceId;
 
 	private String acceptLanguage;
 
@@ -41,17 +41,6 @@ public class DeleteNacosConfigsRequest extends RpcAcsRequest<DeleteNacosConfigsR
 		} catch (Exception e) {}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
 	public String getNamespaceId() {
 		return this.namespaceId;
 	}
@@ -60,6 +49,17 @@ public class DeleteNacosConfigsRequest extends RpcAcsRequest<DeleteNacosConfigsR
 		this.namespaceId = namespaceId;
 		if(namespaceId != null){
 			putQueryParameter("NamespaceId", namespaceId);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

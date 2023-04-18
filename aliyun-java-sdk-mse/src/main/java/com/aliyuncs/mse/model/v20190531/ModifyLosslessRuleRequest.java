@@ -25,27 +25,23 @@ import com.aliyuncs.mse.Endpoint;
 public class ModifyLosslessRuleRequest extends RpcAcsRequest<ModifyLosslessRuleResponse> {
 	   
 
-	private Long delayTime;
-
-	private String source;
-
-	private Long warmupTime;
-
 	private String appName;
-
-	private Boolean related;
 
 	private Boolean enable;
 
 	private Boolean aligned;
 
-	private Integer shutdownWaitSeconds;
+	private Integer funcType;
+
+	private Integer delayTime;
+
+	private Integer warmupTime;
+
+	private Boolean related;
 
 	private Boolean notice;
 
 	private Boolean lossLessDetail;
-
-	private Long funcType;
 
 	private String appId;
 
@@ -61,39 +57,6 @@ public class ModifyLosslessRuleRequest extends RpcAcsRequest<ModifyLosslessRuleR
 		} catch (Exception e) {}
 	}
 
-	public Long getDelayTime() {
-		return this.delayTime;
-	}
-
-	public void setDelayTime(Long delayTime) {
-		this.delayTime = delayTime;
-		if(delayTime != null){
-			putQueryParameter("DelayTime", delayTime.toString());
-		}
-	}
-
-	public String getSource() {
-		return this.source;
-	}
-
-	public void setSource(String source) {
-		this.source = source;
-		if(source != null){
-			putQueryParameter("Source", source);
-		}
-	}
-
-	public Long getWarmupTime() {
-		return this.warmupTime;
-	}
-
-	public void setWarmupTime(Long warmupTime) {
-		this.warmupTime = warmupTime;
-		if(warmupTime != null){
-			putQueryParameter("WarmupTime", warmupTime.toString());
-		}
-	}
-
 	public String getAppName() {
 		return this.appName;
 	}
@@ -102,17 +65,6 @@ public class ModifyLosslessRuleRequest extends RpcAcsRequest<ModifyLosslessRuleR
 		this.appName = appName;
 		if(appName != null){
 			putQueryParameter("AppName", appName);
-		}
-	}
-
-	public Boolean getRelated() {
-		return this.related;
-	}
-
-	public void setRelated(Boolean related) {
-		this.related = related;
-		if(related != null){
-			putQueryParameter("Related", related.toString());
 		}
 	}
 
@@ -138,14 +90,47 @@ public class ModifyLosslessRuleRequest extends RpcAcsRequest<ModifyLosslessRuleR
 		}
 	}
 
-	public Integer getShutdownWaitSeconds() {
-		return this.shutdownWaitSeconds;
+	public Integer getFuncType() {
+		return this.funcType;
 	}
 
-	public void setShutdownWaitSeconds(Integer shutdownWaitSeconds) {
-		this.shutdownWaitSeconds = shutdownWaitSeconds;
-		if(shutdownWaitSeconds != null){
-			putQueryParameter("ShutdownWaitSeconds", shutdownWaitSeconds.toString());
+	public void setFuncType(Integer funcType) {
+		this.funcType = funcType;
+		if(funcType != null){
+			putQueryParameter("FuncType", funcType.toString());
+		}
+	}
+
+	public Integer getDelayTime() {
+		return this.delayTime;
+	}
+
+	public void setDelayTime(Integer delayTime) {
+		this.delayTime = delayTime;
+		if(delayTime != null){
+			putQueryParameter("DelayTime", delayTime.toString());
+		}
+	}
+
+	public Integer getWarmupTime() {
+		return this.warmupTime;
+	}
+
+	public void setWarmupTime(Integer warmupTime) {
+		this.warmupTime = warmupTime;
+		if(warmupTime != null){
+			putQueryParameter("WarmupTime", warmupTime.toString());
+		}
+	}
+
+	public Boolean getRelated() {
+		return this.related;
+	}
+
+	public void setRelated(Boolean related) {
+		this.related = related;
+		if(related != null){
+			putQueryParameter("Related", related.toString());
 		}
 	}
 
@@ -168,17 +153,6 @@ public class ModifyLosslessRuleRequest extends RpcAcsRequest<ModifyLosslessRuleR
 		this.lossLessDetail = lossLessDetail;
 		if(lossLessDetail != null){
 			putQueryParameter("LossLessDetail", lossLessDetail.toString());
-		}
-	}
-
-	public Long getFuncType() {
-		return this.funcType;
-	}
-
-	public void setFuncType(Long funcType) {
-		this.funcType = funcType;
-		if(funcType != null){
-			putQueryParameter("FuncType", funcType.toString());
 		}
 	}
 

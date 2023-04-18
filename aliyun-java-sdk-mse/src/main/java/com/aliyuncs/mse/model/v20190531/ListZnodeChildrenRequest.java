@@ -25,9 +25,9 @@ import com.aliyuncs.mse.Endpoint;
 public class ListZnodeChildrenRequest extends RpcAcsRequest<ListZnodeChildrenResponse> {
 	   
 
-	private String clusterId;
-
 	private String path;
+
+	private String clusterId;
 
 	private String acceptLanguage;
 	public ListZnodeChildrenRequest() {
@@ -39,17 +39,6 @@ public class ListZnodeChildrenRequest extends RpcAcsRequest<ListZnodeChildrenRes
 		} catch (Exception e) {}
 	}
 
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
-		}
-	}
-
 	public String getPath() {
 		return this.path;
 	}
@@ -58,6 +47,17 @@ public class ListZnodeChildrenRequest extends RpcAcsRequest<ListZnodeChildrenRes
 		this.path = path;
 		if(path != null){
 			putQueryParameter("Path", path);
+		}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 

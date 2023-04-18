@@ -33,17 +33,17 @@ public class ListConfigTrackRequest extends RpcAcsRequest<ListConfigTrackRespons
 
 	private String requestPars;
 
-	private Long endTs;
-
-	private Long pageSize;
-
 	private String group;
 
 	private String ip;
 
-	private Boolean reverse;
-
 	private String instanceId;
+
+	private Long endTs;
+
+	private Long pageSize;
+
+	private Boolean reverse;
 
 	private String dataId;
 
@@ -101,28 +101,6 @@ public class ListConfigTrackRequest extends RpcAcsRequest<ListConfigTrackRespons
 		}
 	}
 
-	public Long getEndTs() {
-		return this.endTs;
-	}
-
-	public void setEndTs(Long endTs) {
-		this.endTs = endTs;
-		if(endTs != null){
-			putQueryParameter("EndTs", endTs.toString());
-		}
-	}
-
-	public Long getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Long pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	public String getGroup() {
 		return this.group;
 	}
@@ -145,17 +123,6 @@ public class ListConfigTrackRequest extends RpcAcsRequest<ListConfigTrackRespons
 		}
 	}
 
-	public Boolean getReverse() {
-		return this.reverse;
-	}
-
-	public void setReverse(Boolean reverse) {
-		this.reverse = reverse;
-		if(reverse != null){
-			putQueryParameter("Reverse", reverse.toString());
-		}
-	}
-
 	public String getInstanceId() {
 		return this.instanceId;
 	}
@@ -164,6 +131,39 @@ public class ListConfigTrackRequest extends RpcAcsRequest<ListConfigTrackRespons
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public Long getEndTs() {
+		return this.endTs;
+	}
+
+	public void setEndTs(Long endTs) {
+		this.endTs = endTs;
+		if(endTs != null){
+			putQueryParameter("EndTs", endTs.toString());
+		}
+	}
+
+	public Long getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Boolean getReverse() {
+		return this.reverse;
+	}
+
+	public void setReverse(Boolean reverse) {
+		this.reverse = reverse;
+		if(reverse != null){
+			putQueryParameter("Reverse", reverse.toString());
 		}
 	}
 

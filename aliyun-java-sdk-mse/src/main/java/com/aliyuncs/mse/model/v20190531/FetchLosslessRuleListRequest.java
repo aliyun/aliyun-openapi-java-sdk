@@ -25,13 +25,11 @@ import com.aliyuncs.mse.Endpoint;
 public class FetchLosslessRuleListRequest extends RpcAcsRequest<FetchLosslessRuleListResponse> {
 	   
 
-	private String source;
-
-	private Long pageNumber;
+	private Integer pageNumber;
 
 	private String appName;
 
-	private Long pageSize;
+	private Integer pageSize;
 
 	private String appId;
 
@@ -40,29 +38,18 @@ public class FetchLosslessRuleListRequest extends RpcAcsRequest<FetchLosslessRul
 	private String acceptLanguage;
 	public FetchLosslessRuleListRequest() {
 		super("mse", "2019-05-31", "FetchLosslessRuleList", "mse");
-		setMethod(MethodType.GET);
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getSource() {
-		return this.source;
-	}
-
-	public void setSource(String source) {
-		this.source = source;
-		if(source != null){
-			putQueryParameter("Source", source);
-		}
-	}
-
-	public Long getPageNumber() {
+	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
 
-	public void setPageNumber(Long pageNumber) {
+	public void setPageNumber(Integer pageNumber) {
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
@@ -80,11 +67,11 @@ public class FetchLosslessRuleListRequest extends RpcAcsRequest<FetchLosslessRul
 		}
 	}
 
-	public Long getPageSize() {
+	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
-	public void setPageSize(Long pageSize) {
+	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());

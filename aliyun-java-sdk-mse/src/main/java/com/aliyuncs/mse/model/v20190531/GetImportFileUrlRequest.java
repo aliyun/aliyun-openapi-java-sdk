@@ -25,11 +25,11 @@ import com.aliyuncs.mse.Endpoint;
 public class GetImportFileUrlRequest extends RpcAcsRequest<GetImportFileUrlResponse> {
 	   
 
+	private String namespaceId;
+
 	private String contentType;
 
 	private String instanceId;
-
-	private String namespaceId;
 
 	private String acceptLanguage;
 	public GetImportFileUrlRequest() {
@@ -39,6 +39,17 @@ public class GetImportFileUrlRequest extends RpcAcsRequest<GetImportFileUrlRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getNamespaceId() {
+		return this.namespaceId;
+	}
+
+	public void setNamespaceId(String namespaceId) {
+		this.namespaceId = namespaceId;
+		if(namespaceId != null){
+			putQueryParameter("NamespaceId", namespaceId);
+		}
 	}
 
 	public String getContentType() {
@@ -60,17 +71,6 @@ public class GetImportFileUrlRequest extends RpcAcsRequest<GetImportFileUrlRespo
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getNamespaceId() {
-		return this.namespaceId;
-	}
-
-	public void setNamespaceId(String namespaceId) {
-		this.namespaceId = namespaceId;
-		if(namespaceId != null){
-			putQueryParameter("NamespaceId", namespaceId);
 		}
 	}
 

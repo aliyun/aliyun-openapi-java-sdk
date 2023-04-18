@@ -25,13 +25,13 @@ import com.aliyuncs.mse.Endpoint;
 public class ListListenersByIpRequest extends RpcAcsRequest<ListListenersByIpResponse> {
 	   
 
-	private String ip;
-
-	private String instanceId;
-
 	private String namespaceId;
 
 	private String requestPars;
+
+	private String ip;
+
+	private String instanceId;
 
 	private String acceptLanguage;
 	public ListListenersByIpRequest() {
@@ -41,28 +41,6 @@ public class ListListenersByIpRequest extends RpcAcsRequest<ListListenersByIpRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getIp() {
-		return this.ip;
-	}
-
-	public void setIp(String ip) {
-		this.ip = ip;
-		if(ip != null){
-			putQueryParameter("Ip", ip);
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
 	}
 
 	public String getNamespaceId() {
@@ -84,6 +62,28 @@ public class ListListenersByIpRequest extends RpcAcsRequest<ListListenersByIpRes
 		this.requestPars = requestPars;
 		if(requestPars != null){
 			putQueryParameter("RequestPars", requestPars);
+		}
+	}
+
+	public String getIp() {
+		return this.ip;
+	}
+
+	public void setIp(String ip) {
+		this.ip = ip;
+		if(ip != null){
+			putQueryParameter("Ip", ip);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

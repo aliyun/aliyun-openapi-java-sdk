@@ -27,6 +27,8 @@ public class DeleteGatewaySlbRequest extends RpcAcsRequest<DeleteGatewaySlbRespo
 
 	private Boolean deleteSlb;
 
+	private String slbId;
+
 	private String gatewayUniqueId;
 
 	private String id;
@@ -49,6 +51,17 @@ public class DeleteGatewaySlbRequest extends RpcAcsRequest<DeleteGatewaySlbRespo
 		this.deleteSlb = deleteSlb;
 		if(deleteSlb != null){
 			putQueryParameter("DeleteSlb", deleteSlb.toString());
+		}
+	}
+
+	public String getSlbId() {
+		return this.slbId;
+	}
+
+	public void setSlbId(String slbId) {
+		this.slbId = slbId;
+		if(slbId != null){
+			putQueryParameter("SlbId", slbId);
 		}
 	}
 

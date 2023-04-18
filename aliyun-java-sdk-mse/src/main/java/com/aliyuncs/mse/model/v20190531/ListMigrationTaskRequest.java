@@ -31,9 +31,9 @@ public class ListMigrationTaskRequest extends RpcAcsRequest<ListMigrationTaskRes
 
 	private Long pageSize;
 
-	private String acceptLanguage;
-
 	private String originInstanceName;
+
+	private String acceptLanguage;
 	public ListMigrationTaskRequest() {
 		super("mse", "2019-05-31", "ListMigrationTask", "mse");
 		setMethod(MethodType.GET);
@@ -76,17 +76,6 @@ public class ListMigrationTaskRequest extends RpcAcsRequest<ListMigrationTaskRes
 		}
 	}
 
-	public String getAcceptLanguage() {
-		return this.acceptLanguage;
-	}
-
-	public void setAcceptLanguage(String acceptLanguage) {
-		this.acceptLanguage = acceptLanguage;
-		if(acceptLanguage != null){
-			putQueryParameter("AcceptLanguage", acceptLanguage);
-		}
-	}
-
 	public String getOriginInstanceName() {
 		return this.originInstanceName;
 	}
@@ -95,6 +84,17 @@ public class ListMigrationTaskRequest extends RpcAcsRequest<ListMigrationTaskRes
 		this.originInstanceName = originInstanceName;
 		if(originInstanceName != null){
 			putQueryParameter("OriginInstanceName", originInstanceName);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

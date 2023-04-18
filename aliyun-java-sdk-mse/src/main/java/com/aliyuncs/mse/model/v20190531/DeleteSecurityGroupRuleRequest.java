@@ -27,9 +27,9 @@ public class DeleteSecurityGroupRuleRequest extends RpcAcsRequest<DeleteSecurity
 
 	private String gatewayUniqueId;
 
-	private String acceptLanguage;
-
 	private Long id;
+
+	private String acceptLanguage;
 	public DeleteSecurityGroupRuleRequest() {
 		super("mse", "2019-05-31", "DeleteSecurityGroupRule", "mse");
 		setMethod(MethodType.POST);
@@ -50,17 +50,6 @@ public class DeleteSecurityGroupRuleRequest extends RpcAcsRequest<DeleteSecurity
 		}
 	}
 
-	public String getAcceptLanguage() {
-		return this.acceptLanguage;
-	}
-
-	public void setAcceptLanguage(String acceptLanguage) {
-		this.acceptLanguage = acceptLanguage;
-		if(acceptLanguage != null){
-			putQueryParameter("AcceptLanguage", acceptLanguage);
-		}
-	}
-
 	public Long getId() {
 		return this.id;
 	}
@@ -69,6 +58,17 @@ public class DeleteSecurityGroupRuleRequest extends RpcAcsRequest<DeleteSecurity
 		this.id = id;
 		if(id != null){
 			putQueryParameter("Id", id.toString());
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

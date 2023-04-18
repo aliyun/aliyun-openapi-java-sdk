@@ -25,9 +25,9 @@ import com.aliyuncs.mse.Endpoint;
 public class RetryClusterRequest extends RpcAcsRequest<RetryClusterResponse> {
 	   
 
-	private String instanceId;
-
 	private String requestPars;
+
+	private String instanceId;
 
 	private String acceptLanguage;
 	public RetryClusterRequest() {
@@ -39,17 +39,6 @@ public class RetryClusterRequest extends RpcAcsRequest<RetryClusterResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
 	public String getRequestPars() {
 		return this.requestPars;
 	}
@@ -58,6 +47,17 @@ public class RetryClusterRequest extends RpcAcsRequest<RetryClusterResponse> {
 		this.requestPars = requestPars;
 		if(requestPars != null){
 			putQueryParameter("RequestPars", requestPars);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

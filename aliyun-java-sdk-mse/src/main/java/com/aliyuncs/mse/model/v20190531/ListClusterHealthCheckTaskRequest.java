@@ -27,11 +27,11 @@ public class ListClusterHealthCheckTaskRequest extends RpcAcsRequest<ListCluster
 
 	private Integer pageNum;
 
-	private String instanceId;
-
 	private Integer pageSize;
 
 	private String requestPars;
+
+	private String instanceId;
 
 	private String acceptLanguage;
 	public ListClusterHealthCheckTaskRequest() {
@@ -54,17 +54,6 @@ public class ListClusterHealthCheckTaskRequest extends RpcAcsRequest<ListCluster
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -84,6 +73,17 @@ public class ListClusterHealthCheckTaskRequest extends RpcAcsRequest<ListCluster
 		this.requestPars = requestPars;
 		if(requestPars != null){
 			putQueryParameter("RequestPars", requestPars);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

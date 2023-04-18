@@ -25,6 +25,8 @@ import com.aliyuncs.mse.Endpoint;
 public class QueryClusterInfoRequest extends RpcAcsRequest<QueryClusterInfoResponse> {
 	   
 
+	private String requestPars;
+
 	private Boolean aclSwitch;
 
 	private String orderId;
@@ -32,8 +34,6 @@ public class QueryClusterInfoRequest extends RpcAcsRequest<QueryClusterInfoRespo
 	private String clusterId;
 
 	private String instanceId;
-
-	private String requestPars;
 
 	private String acceptLanguage;
 	public QueryClusterInfoRequest() {
@@ -43,6 +43,17 @@ public class QueryClusterInfoRequest extends RpcAcsRequest<QueryClusterInfoRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getRequestPars() {
+		return this.requestPars;
+	}
+
+	public void setRequestPars(String requestPars) {
+		this.requestPars = requestPars;
+		if(requestPars != null){
+			putQueryParameter("RequestPars", requestPars);
+		}
 	}
 
 	public Boolean getAclSwitch() {
@@ -86,17 +97,6 @@ public class QueryClusterInfoRequest extends RpcAcsRequest<QueryClusterInfoRespo
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getRequestPars() {
-		return this.requestPars;
-	}
-
-	public void setRequestPars(String requestPars) {
-		this.requestPars = requestPars;
-		if(requestPars != null){
-			putQueryParameter("RequestPars", requestPars);
 		}
 	}
 

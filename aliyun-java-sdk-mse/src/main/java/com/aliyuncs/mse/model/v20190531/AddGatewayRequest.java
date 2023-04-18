@@ -30,11 +30,7 @@ public class AddGatewayRequest extends RpcAcsRequest<AddGatewayResponse> {
 
 	private Boolean enableXtrace;
 
-	private String xtraceRatio;
-
 	private Integer replica;
-
-	private String vSwitchId2;
 
 	private Boolean enableHardwareAcceleration;
 
@@ -44,11 +40,11 @@ public class AddGatewayRequest extends RpcAcsRequest<AddGatewayResponse> {
 
 	private String resourceGroupId;
 
+	private String requestPars;
+
 	private Boolean enterpriseSecurityGroup;
 
 	private List<Tag> tags;
-
-	private String vpc;
 
 	private String vSwitchId;
 
@@ -56,9 +52,15 @@ public class AddGatewayRequest extends RpcAcsRequest<AddGatewayResponse> {
 
 	private String name;
 
-	private String acceptLanguage;
-
 	private String region;
+
+	private String xtraceRatio;
+
+	private String vSwitchId2;
+
+	private String vpc;
+
+	private String acceptLanguage;
 	public AddGatewayRequest() {
 		super("mse", "2019-05-31", "AddGateway", "mse");
 		setMethod(MethodType.POST);
@@ -90,17 +92,6 @@ public class AddGatewayRequest extends RpcAcsRequest<AddGatewayResponse> {
 		}
 	}
 
-	public String getXtraceRatio() {
-		return this.xtraceRatio;
-	}
-
-	public void setXtraceRatio(String xtraceRatio) {
-		this.xtraceRatio = xtraceRatio;
-		if(xtraceRatio != null){
-			putQueryParameter("XtraceRatio", xtraceRatio);
-		}
-	}
-
 	public Integer getReplica() {
 		return this.replica;
 	}
@@ -109,17 +100,6 @@ public class AddGatewayRequest extends RpcAcsRequest<AddGatewayResponse> {
 		this.replica = replica;
 		if(replica != null){
 			putQueryParameter("Replica", replica.toString());
-		}
-	}
-
-	public String getVSwitchId2() {
-		return this.vSwitchId2;
-	}
-
-	public void setVSwitchId2(String vSwitchId2) {
-		this.vSwitchId2 = vSwitchId2;
-		if(vSwitchId2 != null){
-			putQueryParameter("VSwitchId2", vSwitchId2);
 		}
 	}
 
@@ -167,6 +147,17 @@ public class AddGatewayRequest extends RpcAcsRequest<AddGatewayResponse> {
 		}
 	}
 
+	public String getRequestPars() {
+		return this.requestPars;
+	}
+
+	public void setRequestPars(String requestPars) {
+		this.requestPars = requestPars;
+		if(requestPars != null){
+			putQueryParameter("RequestPars", requestPars);
+		}
+	}
+
 	public Boolean getEnterpriseSecurityGroup() {
 		return this.enterpriseSecurityGroup;
 	}
@@ -190,17 +181,6 @@ public class AddGatewayRequest extends RpcAcsRequest<AddGatewayResponse> {
 				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
-	}
-
-	public String getVpc() {
-		return this.vpc;
-	}
-
-	public void setVpc(String vpc) {
-		this.vpc = vpc;
-		if(vpc != null){
-			putQueryParameter("Vpc", vpc);
-		}
 	}
 
 	public String getVSwitchId() {
@@ -236,17 +216,6 @@ public class AddGatewayRequest extends RpcAcsRequest<AddGatewayResponse> {
 		}
 	}
 
-	public String getAcceptLanguage() {
-		return this.acceptLanguage;
-	}
-
-	public void setAcceptLanguage(String acceptLanguage) {
-		this.acceptLanguage = acceptLanguage;
-		if(acceptLanguage != null){
-			putQueryParameter("AcceptLanguage", acceptLanguage);
-		}
-	}
-
 	public String getRegion() {
 		return this.region;
 	}
@@ -255,6 +224,50 @@ public class AddGatewayRequest extends RpcAcsRequest<AddGatewayResponse> {
 		this.region = region;
 		if(region != null){
 			putQueryParameter("Region", region);
+		}
+	}
+
+	public String getXtraceRatio() {
+		return this.xtraceRatio;
+	}
+
+	public void setXtraceRatio(String xtraceRatio) {
+		this.xtraceRatio = xtraceRatio;
+		if(xtraceRatio != null){
+			putQueryParameter("XtraceRatio", xtraceRatio);
+		}
+	}
+
+	public String getVSwitchId2() {
+		return this.vSwitchId2;
+	}
+
+	public void setVSwitchId2(String vSwitchId2) {
+		this.vSwitchId2 = vSwitchId2;
+		if(vSwitchId2 != null){
+			putQueryParameter("VSwitchId2", vSwitchId2);
+		}
+	}
+
+	public String getVpc() {
+		return this.vpc;
+	}
+
+	public void setVpc(String vpc) {
+		this.vpc = vpc;
+		if(vpc != null){
+			putQueryParameter("Vpc", vpc);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

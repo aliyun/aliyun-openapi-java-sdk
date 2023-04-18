@@ -33,19 +33,19 @@ public class ListNamingTrackRequest extends RpcAcsRequest<ListNamingTrackRespons
 
 	private String requestPars;
 
+	private String group;
+
+	private String ip;
+
+	private String instanceId;
+
 	private Long endTs;
 
 	private Long pageSize;
 
 	private String serviceName;
 
-	private String group;
-
-	private String ip;
-
 	private Boolean reverse;
-
-	private String instanceId;
 
 	private String acceptLanguage;
 	public ListNamingTrackRequest() {
@@ -101,6 +101,39 @@ public class ListNamingTrackRequest extends RpcAcsRequest<ListNamingTrackRespons
 		}
 	}
 
+	public String getGroup() {
+		return this.group;
+	}
+
+	public void setGroup(String group) {
+		this.group = group;
+		if(group != null){
+			putQueryParameter("Group", group);
+		}
+	}
+
+	public String getIp() {
+		return this.ip;
+	}
+
+	public void setIp(String ip) {
+		this.ip = ip;
+		if(ip != null){
+			putQueryParameter("Ip", ip);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
 	public Long getEndTs() {
 		return this.endTs;
 	}
@@ -134,28 +167,6 @@ public class ListNamingTrackRequest extends RpcAcsRequest<ListNamingTrackRespons
 		}
 	}
 
-	public String getGroup() {
-		return this.group;
-	}
-
-	public void setGroup(String group) {
-		this.group = group;
-		if(group != null){
-			putQueryParameter("Group", group);
-		}
-	}
-
-	public String getIp() {
-		return this.ip;
-	}
-
-	public void setIp(String ip) {
-		this.ip = ip;
-		if(ip != null){
-			putQueryParameter("Ip", ip);
-		}
-	}
-
 	public Boolean getReverse() {
 		return this.reverse;
 	}
@@ -164,17 +175,6 @@ public class ListNamingTrackRequest extends RpcAcsRequest<ListNamingTrackRespons
 		this.reverse = reverse;
 		if(reverse != null){
 			putQueryParameter("Reverse", reverse.toString());
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

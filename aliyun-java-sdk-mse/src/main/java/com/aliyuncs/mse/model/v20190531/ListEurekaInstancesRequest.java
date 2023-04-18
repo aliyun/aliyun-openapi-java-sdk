@@ -25,17 +25,17 @@ import com.aliyuncs.mse.Endpoint;
 public class ListEurekaInstancesRequest extends RpcAcsRequest<ListEurekaInstancesResponse> {
 	   
 
-	private String clusterId;
-
 	private Integer pageNum;
 
 	private String requestPars;
 
 	private Integer pageSize;
 
-	private String acceptLanguage;
-
 	private String serviceName;
+
+	private String clusterId;
+
+	private String acceptLanguage;
 	public ListEurekaInstancesRequest() {
 		super("mse", "2019-05-31", "ListEurekaInstances", "mse");
 		setMethod(MethodType.GET);
@@ -43,17 +43,6 @@ public class ListEurekaInstancesRequest extends RpcAcsRequest<ListEurekaInstance
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
-		}
 	}
 
 	public Integer getPageNum() {
@@ -89,17 +78,6 @@ public class ListEurekaInstancesRequest extends RpcAcsRequest<ListEurekaInstance
 		}
 	}
 
-	public String getAcceptLanguage() {
-		return this.acceptLanguage;
-	}
-
-	public void setAcceptLanguage(String acceptLanguage) {
-		this.acceptLanguage = acceptLanguage;
-		if(acceptLanguage != null){
-			putQueryParameter("AcceptLanguage", acceptLanguage);
-		}
-	}
-
 	public String getServiceName() {
 		return this.serviceName;
 	}
@@ -108,6 +86,28 @@ public class ListEurekaInstancesRequest extends RpcAcsRequest<ListEurekaInstance
 		this.serviceName = serviceName;
 		if(serviceName != null){
 			putQueryParameter("ServiceName", serviceName);
+		}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 
