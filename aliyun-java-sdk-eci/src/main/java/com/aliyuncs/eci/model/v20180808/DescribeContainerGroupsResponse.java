@@ -766,6 +766,8 @@ public class DescribeContainerGroupsResponse extends AcsResponse {
 
                 private String mountPropagation;
 
+                private String subPath;
+
                 public String getMountPath() {
                     return this.mountPath;
                 }
@@ -798,6 +800,13 @@ public class DescribeContainerGroupsResponse extends AcsResponse {
                     this.mountPropagation = mountPropagation;
                 }
 
+                public String getSubPath() {
+                    return this.subPath;
+                }
+
+                public void setSubPath(String subPath) {
+                    this.subPath = subPath;
+                }
             }
 
             public static class Port {
