@@ -285,6 +285,7 @@ public class DescribeContainerGroupsResponseUnmarshaller {
                     volumeMount.setMountPropagation(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups[" + i + "].Containers[" + j + "].VolumeMounts[" + k + "].MountPropagation"));
                     volumeMount.setMountPath(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups[" + i + "].Containers[" + j + "].VolumeMounts[" + k + "].MountPath"));
                     volumeMount.setReadOnly(context.booleanValue("DescribeContainerGroupsResponse.ContainerGroups[" + i + "].Containers[" + j + "].VolumeMounts[" + k + "].ReadOnly"));
+                    volumeMount.setSubPath(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups[" + i + "].Containers[" + j + "].VolumeMounts[" + k + "].SubPath"));
 
                     volumeMounts.add(volumeMount);
                 }
@@ -413,6 +414,7 @@ public class DescribeContainerGroupsResponseUnmarshaller {
                     volumeMount.setMountPath(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups[" + i + "].InitContainers[" + j + "].VolumeMounts[" + k + "].MountPath"));
                     volumeMount.setReadOnly(context.booleanValue("DescribeContainerGroupsResponse.ContainerGroups[" + i + "].InitContainers[" + j + "].VolumeMounts[" + k + "].ReadOnly"));
                     volumeMount.setMountPropagation(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups[" + i + "].InitContainers[" + j + "].VolumeMounts[" + k + "].MountPropagation"));
+                    volumeMount.setSubPath(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups[" + i + "].InitContainers[" + j + "].VolumeMounts[" + k + "].SubPath"));
 
                     volumeMounts.add(volumeMount);
                 }
