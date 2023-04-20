@@ -38,6 +38,8 @@ public class CreateTransitRouterVpcAttachmentRequest extends RpcAcsRequest<Creat
 
 	private List<Tag> tags;
 
+	private Boolean autoPublishRouteEnabled;
+
 	private Boolean dryRun;
 
 	private String resourceOwnerAccount;
@@ -131,6 +133,17 @@ public class CreateTransitRouterVpcAttachmentRequest extends RpcAcsRequest<Creat
 				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
+	}
+
+	public Boolean getAutoPublishRouteEnabled() {
+		return this.autoPublishRouteEnabled;
+	}
+
+	public void setAutoPublishRouteEnabled(Boolean autoPublishRouteEnabled) {
+		this.autoPublishRouteEnabled = autoPublishRouteEnabled;
+		if(autoPublishRouteEnabled != null){
+			putQueryParameter("AutoPublishRouteEnabled", autoPublishRouteEnabled.toString());
+		}
 	}
 
 	public Boolean getDryRun() {

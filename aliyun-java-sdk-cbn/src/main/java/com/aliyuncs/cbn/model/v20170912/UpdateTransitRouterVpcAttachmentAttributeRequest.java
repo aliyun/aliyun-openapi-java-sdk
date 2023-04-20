@@ -31,6 +31,8 @@ public class UpdateTransitRouterVpcAttachmentAttributeRequest extends RpcAcsRequ
 
 	private String transitRouterAttachmentName;
 
+	private Boolean autoPublishRouteEnabled;
+
 	private Boolean dryRun;
 
 	private String resourceOwnerAccount;
@@ -81,6 +83,17 @@ public class UpdateTransitRouterVpcAttachmentAttributeRequest extends RpcAcsRequ
 		this.transitRouterAttachmentName = transitRouterAttachmentName;
 		if(transitRouterAttachmentName != null){
 			putQueryParameter("TransitRouterAttachmentName", transitRouterAttachmentName);
+		}
+	}
+
+	public Boolean getAutoPublishRouteEnabled() {
+		return this.autoPublishRouteEnabled;
+	}
+
+	public void setAutoPublishRouteEnabled(Boolean autoPublishRouteEnabled) {
+		this.autoPublishRouteEnabled = autoPublishRouteEnabled;
+		if(autoPublishRouteEnabled != null){
+			putQueryParameter("AutoPublishRouteEnabled", autoPublishRouteEnabled.toString());
 		}
 	}
 
