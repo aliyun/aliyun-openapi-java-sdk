@@ -1,3 +1,6 @@
+2023-04-20 Version: 2.0.13
+- Add response Permission.
+
 2023-02-06 Version: 2.0.12
 - Public ListServiceUsages  OpenApi.
 

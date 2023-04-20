@@ -30,6 +30,8 @@ public class ListServiceInstancesRequest extends RpcAcsRequest<ListServiceInstan
 
 	private List<Tag> tags;
 
+	private Boolean showDeleted;
+
 	private List<Filter> filters;
 
 	private String maxResults;
@@ -65,6 +67,17 @@ public class ListServiceInstancesRequest extends RpcAcsRequest<ListServiceInstan
 				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
+	}
+
+	public Boolean getShowDeleted() {
+		return this.showDeleted;
+	}
+
+	public void setShowDeleted(Boolean showDeleted) {
+		this.showDeleted = showDeleted;
+		if(showDeleted != null){
+			putQueryParameter("ShowDeleted", showDeleted.toString());
+		}
 	}
 
 	public List<Filter> getFilters() {

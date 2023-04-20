@@ -73,6 +73,8 @@ public class GetServiceInstanceResponse extends AcsResponse {
 
 	private String name;
 
+	private String enableUserPrometheus;
+
 	private List<Tag> tags;
 
 	private Service service;
@@ -271,6 +273,14 @@ public class GetServiceInstanceResponse extends AcsResponse {
 		this.name = name;
 	}
 
+	public String getEnableUserPrometheus() {
+		return this.enableUserPrometheus;
+	}
+
+	public void setEnableUserPrometheus(String enableUserPrometheus) {
+		this.enableUserPrometheus = enableUserPrometheus;
+	}
+
 	public List<Tag> getTags() {
 		return this.tags;
 	}
@@ -345,6 +355,8 @@ public class GetServiceInstanceResponse extends AcsResponse {
 		private String versionName;
 
 		private List<ServiceInfo> serviceInfos;
+
+		private List<String> upgradableServiceVersions;
 
 		public String getStatus() {
 			return this.status;
@@ -448,6 +460,14 @@ public class GetServiceInstanceResponse extends AcsResponse {
 
 		public void setServiceInfos(List<ServiceInfo> serviceInfos) {
 			this.serviceInfos = serviceInfos;
+		}
+
+		public List<String> getUpgradableServiceVersions() {
+			return this.upgradableServiceVersions;
+		}
+
+		public void setUpgradableServiceVersions(List<String> upgradableServiceVersions) {
+			this.upgradableServiceVersions = upgradableServiceVersions;
 		}
 
 		public static class ServiceInfo {
@@ -586,6 +606,8 @@ public class GetServiceInstanceResponse extends AcsResponse {
 
 				private String networkServiceStatus;
 
+				private String domainName;
+
 				private List<String> securityGroups;
 
 				private List<String> vSwitches;
@@ -614,6 +636,14 @@ public class GetServiceInstanceResponse extends AcsResponse {
 
 				public void setNetworkServiceStatus(String networkServiceStatus) {
 					this.networkServiceStatus = networkServiceStatus;
+				}
+
+				public String getDomainName() {
+					return this.domainName;
+				}
+
+				public void setDomainName(String domainName) {
+					this.domainName = domainName;
 				}
 
 				public List<String> getSecurityGroups() {

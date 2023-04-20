@@ -332,6 +332,8 @@ public class ListServiceInstancesResponse extends AcsResponse {
 
 			private String deployMetadata;
 
+			private Boolean enablePrivateVpcConnection;
+
 			private List<ServiceInfo> serviceInfos;
 
 			public String getStatus() {
@@ -412,6 +414,14 @@ public class ListServiceInstancesResponse extends AcsResponse {
 
 			public void setDeployMetadata(String deployMetadata) {
 				this.deployMetadata = deployMetadata;
+			}
+
+			public Boolean getEnablePrivateVpcConnection() {
+				return this.enablePrivateVpcConnection;
+			}
+
+			public void setEnablePrivateVpcConnection(Boolean enablePrivateVpcConnection) {
+				this.enablePrivateVpcConnection = enablePrivateVpcConnection;
 			}
 
 			public List<ServiceInfo> getServiceInfos() {

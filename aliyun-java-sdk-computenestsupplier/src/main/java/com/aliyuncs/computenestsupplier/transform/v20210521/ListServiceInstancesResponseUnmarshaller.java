@@ -68,6 +68,7 @@ public class ListServiceInstancesResponseUnmarshaller {
 			service.setSupplierName(_ctx.stringValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].Service.SupplierName"));
 			service.setVersionName(_ctx.stringValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].Service.VersionName"));
 			service.setDeployMetadata(_ctx.stringValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].Service.DeployMetadata"));
+			service.setEnablePrivateVpcConnection(_ctx.booleanValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].Service.EnablePrivateVpcConnection"));
 
 			List<ServiceInfo> serviceInfos = new ArrayList<ServiceInfo>();
 			for (int j = 0; j < _ctx.lengthValue("ListServiceInstancesResponse.ServiceInstances["+ i +"].Service.ServiceInfos.Length"); j++) {

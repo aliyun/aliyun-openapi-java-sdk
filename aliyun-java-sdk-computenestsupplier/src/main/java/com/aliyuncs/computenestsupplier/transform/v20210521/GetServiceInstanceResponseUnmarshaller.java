@@ -56,6 +56,7 @@ public class GetServiceInstanceResponseUnmarshaller {
 		getServiceInstanceResponse.setPayType(_ctx.stringValue("GetServiceInstanceResponse.PayType"));
 		getServiceInstanceResponse.setLicenseMetadata(_ctx.stringValue("GetServiceInstanceResponse.LicenseMetadata"));
 		getServiceInstanceResponse.setName(_ctx.stringValue("GetServiceInstanceResponse.Name"));
+		getServiceInstanceResponse.setEnableUserPrometheus(_ctx.stringValue("GetServiceInstanceResponse.EnableUserPrometheus"));
 
 		Service service = new Service();
 		service.setStatus(_ctx.stringValue("GetServiceInstanceResponse.Service.Status"));
@@ -70,6 +71,12 @@ public class GetServiceInstanceResponseUnmarshaller {
 		service.setServiceType(_ctx.stringValue("GetServiceInstanceResponse.Service.ServiceType"));
 		service.setSupplierName(_ctx.stringValue("GetServiceInstanceResponse.Service.SupplierName"));
 		service.setVersionName(_ctx.stringValue("GetServiceInstanceResponse.Service.VersionName"));
+
+		List<String> upgradableServiceVersions = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("GetServiceInstanceResponse.Service.UpgradableServiceVersions.Length"); i++) {
+			upgradableServiceVersions.add(_ctx.stringValue("GetServiceInstanceResponse.Service.UpgradableServiceVersions["+ i +"]"));
+		}
+		service.setUpgradableServiceVersions(upgradableServiceVersions);
 
 		List<ServiceInfo> serviceInfos = new ArrayList<ServiceInfo>();
 		for (int i = 0; i < _ctx.lengthValue("GetServiceInstanceResponse.Service.ServiceInfos.Length"); i++) {
@@ -101,6 +108,7 @@ public class GetServiceInstanceResponseUnmarshaller {
 				connectionConfig.setVpcId(_ctx.stringValue("GetServiceInstanceResponse.NetworkConfig.PrivateVpcConnections["+ i +"].ConnectionConfigs["+ j +"].VpcId"));
 				connectionConfig.setIngressEndpointStatus(_ctx.stringValue("GetServiceInstanceResponse.NetworkConfig.PrivateVpcConnections["+ i +"].ConnectionConfigs["+ j +"].IngressEndpointStatus"));
 				connectionConfig.setNetworkServiceStatus(_ctx.stringValue("GetServiceInstanceResponse.NetworkConfig.PrivateVpcConnections["+ i +"].ConnectionConfigs["+ j +"].NetworkServiceStatus"));
+				connectionConfig.setDomainName(_ctx.stringValue("GetServiceInstanceResponse.NetworkConfig.PrivateVpcConnections["+ i +"].ConnectionConfigs["+ j +"].DomainName"));
 
 				List<String> securityGroups = new ArrayList<String>();
 				for (int k = 0; k < _ctx.lengthValue("GetServiceInstanceResponse.NetworkConfig.PrivateVpcConnections["+ i +"].ConnectionConfigs["+ j +"].SecurityGroups.Length"); k++) {
