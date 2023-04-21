@@ -27,6 +27,7 @@ import com.aliyuncs.eventbridge.model.v20200401.ListEventStreamingsResponse.Data
 import com.aliyuncs.eventbridge.model.v20200401.ListEventStreamingsResponse.Data.EventStreamingsItem.Sink;
 import com.aliyuncs.eventbridge.model.v20200401.ListEventStreamingsResponse.Data.EventStreamingsItem.Sink.SinkFcParameters;
 import com.aliyuncs.eventbridge.model.v20200401.ListEventStreamingsResponse.Data.EventStreamingsItem.Sink.SinkFcParameters.Body1;
+import com.aliyuncs.eventbridge.model.v20200401.ListEventStreamingsResponse.Data.EventStreamingsItem.Sink.SinkFcParameters.Concurrency;
 import com.aliyuncs.eventbridge.model.v20200401.ListEventStreamingsResponse.Data.EventStreamingsItem.Sink.SinkFcParameters.FunctionName;
 import com.aliyuncs.eventbridge.model.v20200401.ListEventStreamingsResponse.Data.EventStreamingsItem.Sink.SinkFcParameters.InvocationType;
 import com.aliyuncs.eventbridge.model.v20200401.ListEventStreamingsResponse.Data.EventStreamingsItem.Sink.SinkFcParameters.Qualifier;
@@ -196,6 +197,12 @@ public class ListEventStreamingsResponseUnmarshaller {
 			functionName.setForm(_ctx.stringValue("ListEventStreamingsResponse.Data.EventStreamings["+ i +"].Sink.SinkFcParameters.FunctionName.Form"));
 			functionName.setTemplate(_ctx.stringValue("ListEventStreamingsResponse.Data.EventStreamings["+ i +"].Sink.SinkFcParameters.FunctionName.Template"));
 			sinkFcParameters.setFunctionName(functionName);
+
+			Concurrency concurrency = new Concurrency();
+			concurrency.setValue(_ctx.stringValue("ListEventStreamingsResponse.Data.EventStreamings["+ i +"].Sink.SinkFcParameters.Concurrency.Value"));
+			concurrency.setForm(_ctx.stringValue("ListEventStreamingsResponse.Data.EventStreamings["+ i +"].Sink.SinkFcParameters.Concurrency.Form"));
+			concurrency.setTemplate(_ctx.stringValue("ListEventStreamingsResponse.Data.EventStreamings["+ i +"].Sink.SinkFcParameters.Concurrency.Template"));
+			sinkFcParameters.setConcurrency(concurrency);
 
 			Qualifier qualifier = new Qualifier();
 			qualifier.setValue(_ctx.stringValue("ListEventStreamingsResponse.Data.EventStreamings["+ i +"].Sink.SinkFcParameters.Qualifier.Value"));

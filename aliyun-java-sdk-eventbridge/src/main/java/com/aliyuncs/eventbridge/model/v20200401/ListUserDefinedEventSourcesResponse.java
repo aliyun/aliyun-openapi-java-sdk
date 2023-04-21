@@ -122,8 +122,6 @@ public class ListUserDefinedEventSourcesResponse extends AcsResponse {
 
 			private String description;
 
-			private Boolean linkedExternalSource;
-
 			private String externalSourceType;
 
 			private Map<Object,Object> externalSourceConfig;
@@ -186,14 +184,6 @@ public class ListUserDefinedEventSourcesResponse extends AcsResponse {
 
 			public void setDescription(String description) {
 				this.description = description;
-			}
-
-			public Boolean getLinkedExternalSource() {
-				return this.linkedExternalSource;
-			}
-
-			public void setLinkedExternalSource(Boolean linkedExternalSource) {
-				this.linkedExternalSource = linkedExternalSource;
 			}
 
 			public String getExternalSourceType() {

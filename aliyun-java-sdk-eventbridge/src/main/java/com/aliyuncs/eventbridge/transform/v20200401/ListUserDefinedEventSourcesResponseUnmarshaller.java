@@ -51,7 +51,6 @@ public class ListUserDefinedEventSourcesResponseUnmarshaller {
 			eventSourceListItem.setType(_ctx.stringValue("ListUserDefinedEventSourcesResponse.Data.EventSourceList["+ i +"].Type"));
 			eventSourceListItem.setCtime(_ctx.floatValue("ListUserDefinedEventSourcesResponse.Data.EventSourceList["+ i +"].Ctime"));
 			eventSourceListItem.setDescription(_ctx.stringValue("ListUserDefinedEventSourcesResponse.Data.EventSourceList["+ i +"].Description"));
-			eventSourceListItem.setLinkedExternalSource(_ctx.booleanValue("ListUserDefinedEventSourcesResponse.Data.EventSourceList["+ i +"].LinkedExternalSource"));
 			eventSourceListItem.setExternalSourceType(_ctx.stringValue("ListUserDefinedEventSourcesResponse.Data.EventSourceList["+ i +"].ExternalSourceType"));
 			eventSourceListItem.setExternalSourceConfig(_ctx.mapValue("ListUserDefinedEventSourcesResponse.Data.EventSourceList["+ i +"].ExternalSourceConfig"));
 			eventSourceListItem.setEventBusName(_ctx.stringValue("ListUserDefinedEventSourcesResponse.Data.EventSourceList["+ i +"].EventBusName"));

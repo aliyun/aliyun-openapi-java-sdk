@@ -23,6 +23,7 @@ import com.aliyuncs.eventbridge.model.v20200401.GetEventStreamingResponse.Data.R
 import com.aliyuncs.eventbridge.model.v20200401.GetEventStreamingResponse.Data.Sink;
 import com.aliyuncs.eventbridge.model.v20200401.GetEventStreamingResponse.Data.Sink.SinkFcParameters;
 import com.aliyuncs.eventbridge.model.v20200401.GetEventStreamingResponse.Data.Sink.SinkFcParameters.Body3;
+import com.aliyuncs.eventbridge.model.v20200401.GetEventStreamingResponse.Data.Sink.SinkFcParameters.Concurrency;
 import com.aliyuncs.eventbridge.model.v20200401.GetEventStreamingResponse.Data.Sink.SinkFcParameters.FunctionName;
 import com.aliyuncs.eventbridge.model.v20200401.GetEventStreamingResponse.Data.Sink.SinkFcParameters.InvocationType;
 import com.aliyuncs.eventbridge.model.v20200401.GetEventStreamingResponse.Data.Sink.SinkFcParameters.Qualifier;
@@ -243,6 +244,12 @@ public class GetEventStreamingResponseUnmarshaller {
 		functionName.setForm(_ctx.stringValue("GetEventStreamingResponse.Data.Sink.SinkFcParameters.FunctionName.Form"));
 		functionName.setTemplate(_ctx.stringValue("GetEventStreamingResponse.Data.Sink.SinkFcParameters.FunctionName.Template"));
 		sinkFcParameters.setFunctionName(functionName);
+
+		Concurrency concurrency = new Concurrency();
+		concurrency.setValue(_ctx.stringValue("GetEventStreamingResponse.Data.Sink.SinkFcParameters.Concurrency.Value"));
+		concurrency.setForm(_ctx.stringValue("GetEventStreamingResponse.Data.Sink.SinkFcParameters.Concurrency.Form"));
+		concurrency.setTemplate(_ctx.stringValue("GetEventStreamingResponse.Data.Sink.SinkFcParameters.Concurrency.Template"));
+		sinkFcParameters.setConcurrency(concurrency);
 
 		Qualifier qualifier = new Qualifier();
 		qualifier.setValue(_ctx.stringValue("GetEventStreamingResponse.Data.Sink.SinkFcParameters.Qualifier.Value"));

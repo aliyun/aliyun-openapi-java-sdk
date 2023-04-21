@@ -863,6 +863,8 @@ public class ListEventStreamingsResponse extends AcsResponse {
 
 					private FunctionName functionName;
 
+					private Concurrency concurrency;
+
 					private Qualifier qualifier;
 
 					private InvocationType invocationType;
@@ -883,6 +885,14 @@ public class ListEventStreamingsResponse extends AcsResponse {
 
 					public void setFunctionName(FunctionName functionName) {
 						this.functionName = functionName;
+					}
+
+					public Concurrency getConcurrency() {
+						return this.concurrency;
+					}
+
+					public void setConcurrency(Concurrency concurrency) {
+						this.concurrency = concurrency;
 					}
 
 					public Qualifier getQualifier() {
@@ -943,6 +953,39 @@ public class ListEventStreamingsResponse extends AcsResponse {
 					}
 
 					public static class FunctionName {
+
+						private String value;
+
+						private String form;
+
+						private String template;
+
+						public String getValue() {
+							return this.value;
+						}
+
+						public void setValue(String value) {
+							this.value = value;
+						}
+
+						public String getForm() {
+							return this.form;
+						}
+
+						public void setForm(String form) {
+							this.form = form;
+						}
+
+						public String getTemplate() {
+							return this.template;
+						}
+
+						public void setTemplate(String template) {
+							this.template = template;
+						}
+					}
+
+					public static class Concurrency {
 
 						private String value;
 

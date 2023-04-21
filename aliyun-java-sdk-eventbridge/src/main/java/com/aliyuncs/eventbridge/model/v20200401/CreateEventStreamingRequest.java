@@ -1347,6 +1347,9 @@ public class CreateEventStreamingRequest extends RpcAcsRequest<CreateEventStream
 			@SerializedName("Body")
 			private Body body;
 
+			@SerializedName("Concurrency")
+			private Concurrency concurrency;
+
 			public InvocationType getInvocationType() {
 				return this.invocationType;
 			}
@@ -1385,6 +1388,14 @@ public class CreateEventStreamingRequest extends RpcAcsRequest<CreateEventStream
 
 			public void setBody(Body body) {
 				this.body = body;
+			}
+
+			public Concurrency getConcurrency() {
+				return this.concurrency;
+			}
+
+			public void setConcurrency(Concurrency concurrency) {
+				this.concurrency = concurrency;
 			}
 
 			public static class InvocationType {
@@ -1532,6 +1543,42 @@ public class CreateEventStreamingRequest extends RpcAcsRequest<CreateEventStream
 			}
 
 			public static class Body {
+
+				@SerializedName("Template")
+				private String template;
+
+				@SerializedName("Form")
+				private String form;
+
+				@SerializedName("Value")
+				private String value;
+
+				public String getTemplate() {
+					return this.template;
+				}
+
+				public void setTemplate(String template) {
+					this.template = template;
+				}
+
+				public String getForm() {
+					return this.form;
+				}
+
+				public void setForm(String form) {
+					this.form = form;
+				}
+
+				public String getValue() {
+					return this.value;
+				}
+
+				public void setValue(String value) {
+					this.value = value;
+				}
+			}
+
+			public static class Concurrency {
 
 				@SerializedName("Template")
 				private String template;

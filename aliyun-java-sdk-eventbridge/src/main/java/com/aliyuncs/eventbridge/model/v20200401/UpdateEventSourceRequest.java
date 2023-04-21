@@ -43,6 +43,12 @@ public class UpdateEventSourceRequest extends RpcAcsRequest<UpdateEventSourceRes
 	@SerializedName("sourceSLSParameters")
 	private SourceSLSParameters sourceSLSParameters;
 
+	@SerializedName("sourceScheduledEventParameters")
+	private SourceScheduledEventParameters sourceScheduledEventParameters;
+
+	@SerializedName("sourceKafkaParameters")
+	private SourceKafkaParameters sourceKafkaParameters;
+
 	@SerializedName("sourceHttpEventParameters")
 	private SourceHttpEventParameters sourceHttpEventParameters;
 
@@ -115,6 +121,28 @@ public class UpdateEventSourceRequest extends RpcAcsRequest<UpdateEventSourceRes
 		this.sourceSLSParameters = sourceSLSParameters;	
 		if (sourceSLSParameters != null) {
 			putBodyParameter("SourceSLSParameters" , new Gson().toJson(sourceSLSParameters));
+		}	
+	}
+
+	public SourceScheduledEventParameters getSourceScheduledEventParameters() {
+		return this.sourceScheduledEventParameters;
+	}
+
+	public void setSourceScheduledEventParameters(SourceScheduledEventParameters sourceScheduledEventParameters) {
+		this.sourceScheduledEventParameters = sourceScheduledEventParameters;	
+		if (sourceScheduledEventParameters != null) {
+			putBodyParameter("SourceScheduledEventParameters" , new Gson().toJson(sourceScheduledEventParameters));
+		}	
+	}
+
+	public SourceKafkaParameters getSourceKafkaParameters() {
+		return this.sourceKafkaParameters;
+	}
+
+	public void setSourceKafkaParameters(SourceKafkaParameters sourceKafkaParameters) {
+		this.sourceKafkaParameters = sourceKafkaParameters;	
+		if (sourceKafkaParameters != null) {
+			putBodyParameter("SourceKafkaParameters" , new Gson().toJson(sourceKafkaParameters));
 		}	
 	}
 
@@ -402,6 +430,144 @@ public class UpdateEventSourceRequest extends RpcAcsRequest<UpdateEventSourceRes
 
 		public void setConsumePosition(String consumePosition) {
 			this.consumePosition = consumePosition;
+		}
+	}
+
+	public static class SourceScheduledEventParameters {
+
+		@SerializedName("Schedule")
+		private String schedule;
+
+		@SerializedName("TimeZone")
+		private String timeZone;
+
+		public String getSchedule() {
+			return this.schedule;
+		}
+
+		public void setSchedule(String schedule) {
+			this.schedule = schedule;
+		}
+
+		public String getTimeZone() {
+			return this.timeZone;
+		}
+
+		public void setTimeZone(String timeZone) {
+			this.timeZone = timeZone;
+		}
+	}
+
+	public static class SourceKafkaParameters {
+
+		@SerializedName("InstanceId")
+		private String instanceId;
+
+		@SerializedName("ConsumerGroup")
+		private String consumerGroup;
+
+		@SerializedName("RegionId")
+		private String regionId;
+
+		@SerializedName("VSwitchIds")
+		private String vSwitchIds;
+
+		@SerializedName("VpcId")
+		private String vpcId;
+
+		@SerializedName("SecurityGroupId")
+		private String securityGroupId;
+
+		@SerializedName("Topic")
+		private String topic;
+
+		@SerializedName("OffsetReset")
+		private String offsetReset;
+
+		@SerializedName("MaximumTasks")
+		private Integer maximumTasks;
+
+		@SerializedName("Network")
+		private String network;
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getConsumerGroup() {
+			return this.consumerGroup;
+		}
+
+		public void setConsumerGroup(String consumerGroup) {
+			this.consumerGroup = consumerGroup;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getVSwitchIds() {
+			return this.vSwitchIds;
+		}
+
+		public void setVSwitchIds(String vSwitchIds) {
+			this.vSwitchIds = vSwitchIds;
+		}
+
+		public String getVpcId() {
+			return this.vpcId;
+		}
+
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
+		}
+
+		public String getSecurityGroupId() {
+			return this.securityGroupId;
+		}
+
+		public void setSecurityGroupId(String securityGroupId) {
+			this.securityGroupId = securityGroupId;
+		}
+
+		public String getTopic() {
+			return this.topic;
+		}
+
+		public void setTopic(String topic) {
+			this.topic = topic;
+		}
+
+		public String getOffsetReset() {
+			return this.offsetReset;
+		}
+
+		public void setOffsetReset(String offsetReset) {
+			this.offsetReset = offsetReset;
+		}
+
+		public Integer getMaximumTasks() {
+			return this.maximumTasks;
+		}
+
+		public void setMaximumTasks(Integer maximumTasks) {
+			this.maximumTasks = maximumTasks;
+		}
+
+		public String getNetwork() {
+			return this.network;
+		}
+
+		public void setNetwork(String network) {
+			this.network = network;
 		}
 	}
 
