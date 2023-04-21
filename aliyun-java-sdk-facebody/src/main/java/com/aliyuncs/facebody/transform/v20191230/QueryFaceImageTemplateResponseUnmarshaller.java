@@ -20,6 +20,8 @@ import java.util.List;
 import com.aliyuncs.facebody.model.v20191230.QueryFaceImageTemplateResponse;
 import com.aliyuncs.facebody.model.v20191230.QueryFaceImageTemplateResponse.Data;
 import com.aliyuncs.facebody.model.v20191230.QueryFaceImageTemplateResponse.Data.ElementsItem;
+import com.aliyuncs.facebody.model.v20191230.QueryFaceImageTemplateResponse.Data.ElementsItem.FaceInfosItem;
+import com.aliyuncs.facebody.model.v20191230.QueryFaceImageTemplateResponse.Data.ElementsItem.FaceInfosItem.FaceRect;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -41,6 +43,22 @@ public class QueryFaceImageTemplateResponseUnmarshaller {
 			elementsItem.setUserId(_ctx.stringValue("QueryFaceImageTemplateResponse.Data.Elements["+ i +"].UserId"));
 			elementsItem.setTemplateId(_ctx.stringValue("QueryFaceImageTemplateResponse.Data.Elements["+ i +"].TemplateId"));
 			elementsItem.setTemplateURL(_ctx.stringValue("QueryFaceImageTemplateResponse.Data.Elements["+ i +"].TemplateURL"));
+
+			List<FaceInfosItem> faceInfos = new ArrayList<FaceInfosItem>();
+			for (int j = 0; j < _ctx.lengthValue("QueryFaceImageTemplateResponse.Data.Elements["+ i +"].FaceInfos.Length"); j++) {
+				FaceInfosItem faceInfosItem = new FaceInfosItem();
+				faceInfosItem.setTemplateFaceID(_ctx.stringValue("QueryFaceImageTemplateResponse.Data.Elements["+ i +"].FaceInfos["+ j +"].TemplateFaceID"));
+
+				FaceRect faceRect = new FaceRect();
+				faceRect.setX(_ctx.stringValue("QueryFaceImageTemplateResponse.Data.Elements["+ i +"].FaceInfos["+ j +"].FaceRect.X"));
+				faceRect.setY(_ctx.stringValue("QueryFaceImageTemplateResponse.Data.Elements["+ i +"].FaceInfos["+ j +"].FaceRect.Y"));
+				faceRect.setHeight(_ctx.stringValue("QueryFaceImageTemplateResponse.Data.Elements["+ i +"].FaceInfos["+ j +"].FaceRect.Height"));
+				faceRect.setWidth(_ctx.stringValue("QueryFaceImageTemplateResponse.Data.Elements["+ i +"].FaceInfos["+ j +"].FaceRect.Width"));
+				faceInfosItem.setFaceRect(faceRect);
+
+				faceInfos.add(faceInfosItem);
+			}
+			elementsItem.setFaceInfos(faceInfos);
 
 			elements.add(elementsItem);
 		}

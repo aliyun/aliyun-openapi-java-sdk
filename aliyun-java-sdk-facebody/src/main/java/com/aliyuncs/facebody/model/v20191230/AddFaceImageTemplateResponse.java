@@ -14,6 +14,7 @@
 
 package com.aliyuncs.facebody.model.v20191230;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.facebody.transform.v20191230.AddFaceImageTemplateResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -68,12 +69,88 @@ public class AddFaceImageTemplateResponse extends AcsResponse {
 
 		private String templateId;
 
+		private List<FaceInfosItem> faceInfos;
+
 		public String getTemplateId() {
 			return this.templateId;
 		}
 
 		public void setTemplateId(String templateId) {
 			this.templateId = templateId;
+		}
+
+		public List<FaceInfosItem> getFaceInfos() {
+			return this.faceInfos;
+		}
+
+		public void setFaceInfos(List<FaceInfosItem> faceInfos) {
+			this.faceInfos = faceInfos;
+		}
+
+		public static class FaceInfosItem {
+
+			private String templateFaceID;
+
+			private FaceRect faceRect;
+
+			public String getTemplateFaceID() {
+				return this.templateFaceID;
+			}
+
+			public void setTemplateFaceID(String templateFaceID) {
+				this.templateFaceID = templateFaceID;
+			}
+
+			public FaceRect getFaceRect() {
+				return this.faceRect;
+			}
+
+			public void setFaceRect(FaceRect faceRect) {
+				this.faceRect = faceRect;
+			}
+
+			public static class FaceRect {
+
+				private String x;
+
+				private String y;
+
+				private String height;
+
+				private String width;
+
+				public String getX() {
+					return this.x;
+				}
+
+				public void setX(String x) {
+					this.x = x;
+				}
+
+				public String getY() {
+					return this.y;
+				}
+
+				public void setY(String y) {
+					this.y = y;
+				}
+
+				public String getHeight() {
+					return this.height;
+				}
+
+				public void setHeight(String height) {
+					this.height = height;
+				}
+
+				public String getWidth() {
+					return this.width;
+				}
+
+				public void setWidth(String width) {
+					this.width = width;
+				}
+			}
 		}
 	}
 
