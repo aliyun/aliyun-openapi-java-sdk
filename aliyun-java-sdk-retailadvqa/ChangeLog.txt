@@ -1,3 +1,6 @@
+2023-04-23 Version: 1.0.0
+- Generated 2023-04-17 for `retailadvqa`.
+
 2022-05-07 Version: 1.8.1
 - Test.
 

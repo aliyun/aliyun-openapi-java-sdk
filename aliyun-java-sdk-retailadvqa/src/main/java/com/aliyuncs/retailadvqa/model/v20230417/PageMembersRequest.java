@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.retailadvqa.model.v20191027;
+package com.aliyuncs.retailadvqa.model.v20230417;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -21,29 +21,29 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class QueryBrandListRequest extends RpcAcsRequest<QueryBrandListResponse> {
+public class PageMembersRequest extends RpcAcsRequest<PageMembersResponse> {
 	   
 
-	private String uid;
-	public QueryBrandListRequest() {
-		super("retailadvqa", "2019-10-27", "QueryBrandList");
+	private String body;
+	public PageMembersRequest() {
+		super("retailadvqa", "2023-04-17", "PageMembers");
 		setMethod(MethodType.POST);
 	}
 
-	public String getUid() {
-		return this.uid;
+	public String getBody() {
+		return this.body;
 	}
 
-	public void setUid(String uid) {
-		this.uid = uid;
-		if(uid != null){
-			putQueryParameter("uid", uid);
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putQueryParameter("body", body);
 		}
 	}
 
 	@Override
-	public Class<QueryBrandListResponse> getResponseClass() {
-		return QueryBrandListResponse.class;
+	public Class<PageMembersResponse> getResponseClass() {
+		return PageMembersResponse.class;
 	}
 
 }
