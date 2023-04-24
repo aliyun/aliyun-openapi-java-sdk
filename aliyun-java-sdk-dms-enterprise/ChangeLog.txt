@@ -1,3 +1,7 @@
+2023-04-24 Version: 1.46.0
+- Supported GetDatabaseExportOrderDetail,CreateDatabaseExportOrder,CreateDataExportOrder API.
+- Supported CreateDataTrackOrder,GetDataTrackJobDegree,GetDataTrackJobTableMeta,GetDataTrackOrderDetail,SearchDataTrackResult,DownloadDataTrackResult,QueryDataTrackResultDownloadStatus API.
+
 2023-04-11 Version: 1.45.0
 - Supported ListDataImportSQLPreCheckDetail,GetDataImportSQL,ListDataImportSQLType API.
 
