@@ -1,3 +1,6 @@
+2023-04-24 Version: 4.24.62
+- ModifyDiskSpec add PerformanceControlOptions.
+
 2023-03-29 Version: 4.24.61
 - Change visibility of param ActionType in DescribeImageSupportInstanceTypes.
 

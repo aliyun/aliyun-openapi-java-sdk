@@ -20,6 +20,8 @@ import java.util.List;
 import com.aliyuncs.ecs.model.v20140526.DescribeResourcesModificationResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeResourcesModificationResponse.AvailableZone;
 import com.aliyuncs.ecs.model.v20140526.DescribeResourcesModificationResponse.AvailableZone.AvailableResource;
+import com.aliyuncs.ecs.model.v20140526.DescribeResourcesModificationResponse.AvailableZone.AvailableResource.ConditionSupportedResource;
+import com.aliyuncs.ecs.model.v20140526.DescribeResourcesModificationResponse.AvailableZone.AvailableResource.ConditionSupportedResource.Condition;
 import com.aliyuncs.ecs.model.v20140526.DescribeResourcesModificationResponse.AvailableZone.AvailableResource.SupportedResource;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -56,6 +58,29 @@ public class DescribeResourcesModificationResponseUnmarshaller {
 					supportedResources.add(supportedResource);
 				}
 				availableResource.setSupportedResources(supportedResources);
+
+				List<ConditionSupportedResource> conditionSupportedResources = new ArrayList<ConditionSupportedResource>();
+				for (int k = 0; k < _ctx.lengthValue("DescribeResourcesModificationResponse.AvailableZones["+ i +"].AvailableResources["+ j +"].ConditionSupportedResources.Length"); k++) {
+					ConditionSupportedResource conditionSupportedResource = new ConditionSupportedResource();
+					conditionSupportedResource.setStatus(_ctx.stringValue("DescribeResourcesModificationResponse.AvailableZones["+ i +"].AvailableResources["+ j +"].ConditionSupportedResources["+ k +"].Status"));
+					conditionSupportedResource.setValue(_ctx.stringValue("DescribeResourcesModificationResponse.AvailableZones["+ i +"].AvailableResources["+ j +"].ConditionSupportedResources["+ k +"].Value"));
+					conditionSupportedResource.setMax(_ctx.integerValue("DescribeResourcesModificationResponse.AvailableZones["+ i +"].AvailableResources["+ j +"].ConditionSupportedResources["+ k +"].Max"));
+					conditionSupportedResource.setUnit(_ctx.stringValue("DescribeResourcesModificationResponse.AvailableZones["+ i +"].AvailableResources["+ j +"].ConditionSupportedResources["+ k +"].Unit"));
+					conditionSupportedResource.setStatusCategory(_ctx.stringValue("DescribeResourcesModificationResponse.AvailableZones["+ i +"].AvailableResources["+ j +"].ConditionSupportedResources["+ k +"].StatusCategory"));
+					conditionSupportedResource.setMin(_ctx.integerValue("DescribeResourcesModificationResponse.AvailableZones["+ i +"].AvailableResources["+ j +"].ConditionSupportedResources["+ k +"].Min"));
+
+					List<Condition> conditions = new ArrayList<Condition>();
+					for (int l = 0; l < _ctx.lengthValue("DescribeResourcesModificationResponse.AvailableZones["+ i +"].AvailableResources["+ j +"].ConditionSupportedResources["+ k +"].Conditions.Length"); l++) {
+						Condition condition = new Condition();
+						condition.setKey(_ctx.stringValue("DescribeResourcesModificationResponse.AvailableZones["+ i +"].AvailableResources["+ j +"].ConditionSupportedResources["+ k +"].Conditions["+ l +"].Key"));
+
+						conditions.add(condition);
+					}
+					conditionSupportedResource.setConditions(conditions);
+
+					conditionSupportedResources.add(conditionSupportedResource);
+				}
+				availableResource.setConditionSupportedResources(conditionSupportedResources);
 
 				availableResources.add(availableResource);
 			}

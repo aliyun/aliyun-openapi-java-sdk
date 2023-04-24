@@ -22,7 +22,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyDiskSpecRequest extends RpcAcsRequest<ModifyDiskSpecResponse> {
+public class ModifyDiskDeploymentRequest extends RpcAcsRequest<ModifyDiskDeploymentResponse> {
 	   
 
 	private Long resourceOwnerId;
@@ -39,13 +39,11 @@ public class ModifyDiskSpecRequest extends RpcAcsRequest<ModifyDiskSpecResponse>
 
 	private String ownerAccount;
 
-	private PerformanceControlOptions performanceControlOptions;
-
 	private Long ownerId;
 
-	private Long provisionedIops;
-	public ModifyDiskSpecRequest() {
-		super("Ecs", "2014-05-26", "ModifyDiskSpec", "ecs");
+	private String storageClusterId;
+	public ModifyDiskDeploymentRequest() {
+		super("Ecs", "2014-05-26", "ModifyDiskDeployment", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -130,20 +128,6 @@ public class ModifyDiskSpecRequest extends RpcAcsRequest<ModifyDiskSpecResponse>
 		}
 	}
 
-	public PerformanceControlOptions getPerformanceControlOptions() {
-		return this.performanceControlOptions;
-	}
-
-	public void setPerformanceControlOptions(PerformanceControlOptions performanceControlOptions) {
-		this.performanceControlOptions = performanceControlOptions;	
-		if (performanceControlOptions != null) {
-			
-				putQueryParameter("PerformanceControlOptions.IOPS" , performanceControlOptions.getIOPS());
-				putQueryParameter("PerformanceControlOptions.Throughput" , performanceControlOptions.getThroughput());
-				putQueryParameter("PerformanceControlOptions.Recover" , performanceControlOptions.getRecover());
-		}	
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -155,53 +139,20 @@ public class ModifyDiskSpecRequest extends RpcAcsRequest<ModifyDiskSpecResponse>
 		}
 	}
 
-	public Long getProvisionedIops() {
-		return this.provisionedIops;
+	public String getStorageClusterId() {
+		return this.storageClusterId;
 	}
 
-	public void setProvisionedIops(Long provisionedIops) {
-		this.provisionedIops = provisionedIops;
-		if(provisionedIops != null){
-			putQueryParameter("ProvisionedIops", provisionedIops.toString());
-		}
-	}
-
-	public static class PerformanceControlOptions {
-
-		private Integer iOPS;
-
-		private Integer throughput;
-
-		private String recover;
-
-		public Integer getIOPS() {
-			return this.iOPS;
-		}
-
-		public void setIOPS(Integer iOPS) {
-			this.iOPS = iOPS;
-		}
-
-		public Integer getThroughput() {
-			return this.throughput;
-		}
-
-		public void setThroughput(Integer throughput) {
-			this.throughput = throughput;
-		}
-
-		public String getRecover() {
-			return this.recover;
-		}
-
-		public void setRecover(String recover) {
-			this.recover = recover;
+	public void setStorageClusterId(String storageClusterId) {
+		this.storageClusterId = storageClusterId;
+		if(storageClusterId != null){
+			putQueryParameter("StorageClusterId", storageClusterId);
 		}
 	}
 
 	@Override
-	public Class<ModifyDiskSpecResponse> getResponseClass() {
-		return ModifyDiskSpecResponse.class;
+	public Class<ModifyDiskDeploymentResponse> getResponseClass() {
+		return ModifyDiskDeploymentResponse.class;
 	}
 
 }

@@ -15,6 +15,7 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecs.Endpoint;
 
@@ -39,6 +40,8 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 
 	private String temporaryEndTime;
 
+	private String modifyMode;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -50,6 +53,8 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 	private String temporaryStartTime;
 
 	private Boolean async;
+
+	private List<Disk> disks;
 
 	private String instanceId;
 
@@ -140,6 +145,17 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 		}
 	}
 
+	public String getModifyMode() {
+		return this.modifyMode;
+	}
+
+	public void setModifyMode(String modifyMode) {
+		this.modifyMode = modifyMode;
+		if(modifyMode != null){
+			putQueryParameter("ModifyMode", modifyMode);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -206,6 +222,21 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 		}
 	}
 
+	public List<Disk> getDisks() {
+		return this.disks;
+	}
+
+	public void setDisks(List<Disk> disks) {
+		this.disks = disks;	
+		if (disks != null) {
+			for (int depth1 = 0; depth1 < disks.size(); depth1++) {
+				putQueryParameter("Disk." + (depth1 + 1) + ".PerformanceLevel" , disks.get(depth1).getPerformanceLevel());
+				putQueryParameter("Disk." + (depth1 + 1) + ".DiskId" , disks.get(depth1).getDiskId());
+				putQueryParameter("Disk." + (depth1 + 1) + ".Category" , disks.get(depth1).getCategory());
+			}
+		}	
+	}
+
 	public String getInstanceId() {
 		return this.instanceId;
 	}
@@ -225,6 +256,39 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 		this.internetMaxBandwidthIn = internetMaxBandwidthIn;
 		if(internetMaxBandwidthIn != null){
 			putQueryParameter("InternetMaxBandwidthIn", internetMaxBandwidthIn.toString());
+		}
+	}
+
+	public static class Disk {
+
+		private String performanceLevel;
+
+		private String diskId;
+
+		private String category;
+
+		public String getPerformanceLevel() {
+			return this.performanceLevel;
+		}
+
+		public void setPerformanceLevel(String performanceLevel) {
+			this.performanceLevel = performanceLevel;
+		}
+
+		public String getDiskId() {
+			return this.diskId;
+		}
+
+		public void setDiskId(String diskId) {
+			this.diskId = diskId;
+		}
+
+		public String getCategory() {
+			return this.category;
+		}
+
+		public void setCategory(String category) {
+			this.category = category;
 		}
 	}
 

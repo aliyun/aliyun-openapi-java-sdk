@@ -15,6 +15,7 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecs.Endpoint;
 
@@ -48,6 +49,8 @@ public class DescribeResourcesModificationRequest extends RpcAcsRequest<Describe
 	private String destinationResource;
 
 	private String zoneId;
+
+	private List<String> conditionss;
 	public DescribeResourcesModificationRequest() {
 		super("Ecs", "2014-05-26", "DescribeResourcesModification", "ecs");
 		setMethod(MethodType.POST);
@@ -187,6 +190,19 @@ public class DescribeResourcesModificationRequest extends RpcAcsRequest<Describe
 		if(zoneId != null){
 			putQueryParameter("ZoneId", zoneId);
 		}
+	}
+
+	public List<String> getConditionss() {
+		return this.conditionss;
+	}
+
+	public void setConditionss(List<String> conditionss) {
+		this.conditionss = conditionss;	
+		if (conditionss != null) {
+			for (int i = 0; i < conditionss.size(); i++) {
+				putQueryParameter("Conditions." + (i + 1) , conditionss.get(i));
+			}
+		}	
 	}
 
 	@Override

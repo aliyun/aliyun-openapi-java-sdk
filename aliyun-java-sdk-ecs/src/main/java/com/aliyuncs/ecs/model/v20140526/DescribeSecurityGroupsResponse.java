@@ -25,35 +25,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSecurityGroupsResponse extends AcsResponse {
 
-	private Integer pageSize;
-
-	private Integer pageNumber;
-
 	private String requestId;
-
-	private Integer totalCount;
 
 	private String regionId;
 
 	private String nextToken;
 
+	private Integer totalCount;
+
+	private Integer pageNumber;
+
+	private Integer pageSize;
+
 	private List<SecurityGroup> securityGroups;
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -61,14 +45,6 @@ public class DescribeSecurityGroupsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public String getRegionId() {
@@ -87,6 +63,30 @@ public class DescribeSecurityGroupsResponse extends AcsResponse {
 		this.nextToken = nextToken;
 	}
 
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
 	public List<SecurityGroup> getSecurityGroups() {
 		return this.securityGroups;
 	}
@@ -97,61 +97,29 @@ public class DescribeSecurityGroupsResponse extends AcsResponse {
 
 	public static class SecurityGroup {
 
-		private String creationTime;
-
-		private String vpcId;
-
-		private Boolean serviceManaged;
-
-		private String description;
-
 		private String securityGroupId;
-
-		private String resourceGroupId;
 
 		private String securityGroupName;
 
-		private Integer ecsCount;
-
-		private Long serviceID;
+		private String description;
 
 		private String securityGroupType;
 
+		private String vpcId;
+
+		private String creationTime;
+
+		private Integer ecsCount;
+
 		private Integer availableInstanceAmount;
 
+		private String resourceGroupId;
+
+		private Boolean serviceManaged;
+
+		private Long serviceID;
+
 		private List<Tag> tags;
-
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
-		public String getVpcId() {
-			return this.vpcId;
-		}
-
-		public void setVpcId(String vpcId) {
-			this.vpcId = vpcId;
-		}
-
-		public Boolean getServiceManaged() {
-			return this.serviceManaged;
-		}
-
-		public void setServiceManaged(Boolean serviceManaged) {
-			this.serviceManaged = serviceManaged;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
 
 		public String getSecurityGroupId() {
 			return this.securityGroupId;
@@ -159,14 +127,6 @@ public class DescribeSecurityGroupsResponse extends AcsResponse {
 
 		public void setSecurityGroupId(String securityGroupId) {
 			this.securityGroupId = securityGroupId;
-		}
-
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
-		}
-
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
 		}
 
 		public String getSecurityGroupName() {
@@ -177,20 +137,12 @@ public class DescribeSecurityGroupsResponse extends AcsResponse {
 			this.securityGroupName = securityGroupName;
 		}
 
-		public Integer getEcsCount() {
-			return this.ecsCount;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setEcsCount(Integer ecsCount) {
-			this.ecsCount = ecsCount;
-		}
-
-		public Long getServiceID() {
-			return this.serviceID;
-		}
-
-		public void setServiceID(Long serviceID) {
-			this.serviceID = serviceID;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getSecurityGroupType() {
@@ -201,12 +153,60 @@ public class DescribeSecurityGroupsResponse extends AcsResponse {
 			this.securityGroupType = securityGroupType;
 		}
 
+		public String getVpcId() {
+			return this.vpcId;
+		}
+
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
+		}
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
+
+		public Integer getEcsCount() {
+			return this.ecsCount;
+		}
+
+		public void setEcsCount(Integer ecsCount) {
+			this.ecsCount = ecsCount;
+		}
+
 		public Integer getAvailableInstanceAmount() {
 			return this.availableInstanceAmount;
 		}
 
 		public void setAvailableInstanceAmount(Integer availableInstanceAmount) {
 			this.availableInstanceAmount = availableInstanceAmount;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public Boolean getServiceManaged() {
+			return this.serviceManaged;
+		}
+
+		public void setServiceManaged(Boolean serviceManaged) {
+			this.serviceManaged = serviceManaged;
+		}
+
+		public Long getServiceID() {
+			return this.serviceID;
+		}
+
+		public void setServiceID(Long serviceID) {
+			this.serviceID = serviceID;
 		}
 
 		public List<Tag> getTags() {
