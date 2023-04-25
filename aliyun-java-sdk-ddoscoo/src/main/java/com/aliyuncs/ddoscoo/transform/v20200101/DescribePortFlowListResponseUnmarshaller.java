@@ -40,6 +40,8 @@ public class DescribePortFlowListResponseUnmarshaller {
 			portFlow.setAttackPps(_ctx.longValue("DescribePortFlowListResponse.PortFlowList["+ i +"].AttackPps"));
 			portFlow.setOutBps(_ctx.longValue("DescribePortFlowListResponse.PortFlowList["+ i +"].OutBps"));
 			portFlow.setAttackBps(_ctx.longValue("DescribePortFlowListResponse.PortFlowList["+ i +"].AttackBps"));
+			portFlow.setSlaBps(_ctx.longValue("DescribePortFlowListResponse.PortFlowList["+ i +"].SlaBps"));
+			portFlow.setSlaPps(_ctx.longValue("DescribePortFlowListResponse.PortFlowList["+ i +"].SlaPps"));
 
 			portFlowList.add(portFlow);
 		}

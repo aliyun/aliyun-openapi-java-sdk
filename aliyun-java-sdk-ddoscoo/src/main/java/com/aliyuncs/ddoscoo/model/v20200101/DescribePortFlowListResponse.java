@@ -65,6 +65,10 @@ public class DescribePortFlowListResponse extends AcsResponse {
 
 		private Long attackBps;
 
+		private Long slaBps;
+
+		private Long slaPps;
+
 		public Long getIndex() {
 			return this.index;
 		}
@@ -135,6 +139,22 @@ public class DescribePortFlowListResponse extends AcsResponse {
 
 		public void setAttackBps(Long attackBps) {
 			this.attackBps = attackBps;
+		}
+
+		public Long getSlaBps() {
+			return this.slaBps;
+		}
+
+		public void setSlaBps(Long slaBps) {
+			this.slaBps = slaBps;
+		}
+
+		public Long getSlaPps() {
+			return this.slaPps;
+		}
+
+		public void setSlaPps(Long slaPps) {
+			this.slaPps = slaPps;
 		}
 	}
 
