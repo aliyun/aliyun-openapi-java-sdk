@@ -43,7 +43,7 @@ public class UpgradePrePayOrderRequest extends RpcAcsRequest<UpgradePrePayOrderR
 
 	private Integer partitionNum;
 	public UpgradePrePayOrderRequest() {
-		super("alikafka", "2019-09-16", "UpgradePrePayOrder", "alikafka");
+		super("alikafka", "2019-09-16", "UpgradePrePayOrder");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

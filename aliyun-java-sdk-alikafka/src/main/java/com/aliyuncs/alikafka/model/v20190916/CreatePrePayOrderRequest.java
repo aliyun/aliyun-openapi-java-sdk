@@ -48,7 +48,7 @@ public class CreatePrePayOrderRequest extends RpcAcsRequest<CreatePrePayOrderRes
 
 	private Integer deployType;
 	public CreatePrePayOrderRequest() {
-		super("alikafka", "2019-09-16", "CreatePrePayOrder", "alikafka");
+		super("alikafka", "2019-09-16", "CreatePrePayOrder");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

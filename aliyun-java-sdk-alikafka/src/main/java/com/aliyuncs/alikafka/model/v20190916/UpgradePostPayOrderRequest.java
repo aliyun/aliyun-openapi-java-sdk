@@ -43,7 +43,7 @@ public class UpgradePostPayOrderRequest extends RpcAcsRequest<UpgradePostPayOrde
 
 	private Integer partitionNum;
 	public UpgradePostPayOrderRequest() {
-		super("alikafka", "2019-09-16", "UpgradePostPayOrder", "alikafka");
+		super("alikafka", "2019-09-16", "UpgradePostPayOrder");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

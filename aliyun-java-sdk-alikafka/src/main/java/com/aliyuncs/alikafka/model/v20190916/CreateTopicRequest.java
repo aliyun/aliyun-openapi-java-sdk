@@ -46,7 +46,7 @@ public class CreateTopicRequest extends RpcAcsRequest<CreateTopicResponse> {
 
 	private Boolean localTopic;
 	public CreateTopicRequest() {
-		super("alikafka", "2019-09-16", "CreateTopic", "alikafka");
+		super("alikafka", "2019-09-16", "CreateTopic");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

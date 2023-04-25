@@ -37,7 +37,7 @@ public class DeleteAclRequest extends RpcAcsRequest<DeleteAclResponse> {
 
 	private String username;
 	public DeleteAclRequest() {
-		super("alikafka", "2019-09-16", "DeleteAcl", "alikafka");
+		super("alikafka", "2019-09-16", "DeleteAcl");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

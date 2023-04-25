@@ -127,6 +127,8 @@ public class GetTopicListResponse extends AcsResponse {
 
 		private String regionId;
 
+		private Boolean autoCreate;
+
 		private List<TagVO> tags;
 
 		public Integer getStatus() {
@@ -207,6 +209,14 @@ public class GetTopicListResponse extends AcsResponse {
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
+		}
+
+		public Boolean getAutoCreate() {
+			return this.autoCreate;
+		}
+
+		public void setAutoCreate(Boolean autoCreate) {
+			this.autoCreate = autoCreate;
 		}
 
 		public List<TagVO> getTags() {

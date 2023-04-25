@@ -29,7 +29,7 @@ public class GetTopicStatusRequest extends RpcAcsRequest<GetTopicStatusResponse>
 
 	private String topic;
 	public GetTopicStatusRequest() {
-		super("alikafka", "2019-09-16", "GetTopicStatus", "alikafka");
+		super("alikafka", "2019-09-16", "GetTopicStatus");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

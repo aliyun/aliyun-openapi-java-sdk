@@ -85,6 +85,8 @@ public class GetConsumerListResponse extends AcsResponse {
 
 		private String regionId;
 
+		private Boolean automaticallyCreatedGroup;
+
 		private List<TagVO> tags;
 
 		public String getConsumerId() {
@@ -117,6 +119,14 @@ public class GetConsumerListResponse extends AcsResponse {
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
+		}
+
+		public Boolean getAutomaticallyCreatedGroup() {
+			return this.automaticallyCreatedGroup;
+		}
+
+		public void setAutomaticallyCreatedGroup(Boolean automaticallyCreatedGroup) {
+			this.automaticallyCreatedGroup = automaticallyCreatedGroup;
 		}
 
 		public List<TagVO> getTags() {

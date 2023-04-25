@@ -40,6 +40,7 @@ public class GetQuotaTipResponseUnmarshaller {
 		quotaData.setGroupLeft(_ctx.integerValue("GetQuotaTipResponse.QuotaData.GroupLeft"));
 		quotaData.setGroupUsed(_ctx.integerValue("GetQuotaTipResponse.QuotaData.GroupUsed"));
 		quotaData.setIsPartitionBuy(_ctx.integerValue("GetQuotaTipResponse.QuotaData.IsPartitionBuy"));
+		quotaData.setPartitionQuota(_ctx.integerValue("GetQuotaTipResponse.QuotaData.PartitionQuota"));
 		getQuotaTipResponse.setQuotaData(quotaData);
 	 
 	 	return getQuotaTipResponse;

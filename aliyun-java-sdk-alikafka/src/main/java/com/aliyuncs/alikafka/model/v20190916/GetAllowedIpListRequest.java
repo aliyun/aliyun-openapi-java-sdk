@@ -27,7 +27,7 @@ public class GetAllowedIpListRequest extends RpcAcsRequest<GetAllowedIpListRespo
 
 	private String instanceId;
 	public GetAllowedIpListRequest() {
-		super("alikafka", "2019-09-16", "GetAllowedIpList", "alikafka");
+		super("alikafka", "2019-09-16", "GetAllowedIpList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

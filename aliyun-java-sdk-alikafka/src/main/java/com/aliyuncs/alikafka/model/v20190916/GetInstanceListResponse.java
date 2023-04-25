@@ -139,6 +139,8 @@ public class GetInstanceListResponse extends AcsResponse {
 
 		private String standardZoneId;
 
+		private String ioMaxSpec;
+
 		private List<TagVO> tags;
 
 		private UpgradeServiceDetailInfo upgradeServiceDetailInfo;
@@ -389,6 +391,14 @@ public class GetInstanceListResponse extends AcsResponse {
 
 		public void setStandardZoneId(String standardZoneId) {
 			this.standardZoneId = standardZoneId;
+		}
+
+		public String getIoMaxSpec() {
+			return this.ioMaxSpec;
+		}
+
+		public void setIoMaxSpec(String ioMaxSpec) {
+			this.ioMaxSpec = ioMaxSpec;
 		}
 
 		public List<TagVO> getTags() {

@@ -29,7 +29,7 @@ public class UpgradeInstanceVersionRequest extends RpcAcsRequest<UpgradeInstance
 
 	private String instanceId;
 	public UpgradeInstanceVersionRequest() {
-		super("alikafka", "2019-09-16", "UpgradeInstanceVersion", "alikafka");
+		super("alikafka", "2019-09-16", "UpgradeInstanceVersion");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class UpdateInstanceConfigRequest extends RpcAcsRequest<UpdateInstanceCon
 
 	private String config;
 	public UpdateInstanceConfigRequest() {
-		super("alikafka", "2019-09-16", "UpdateInstanceConfig", "alikafka");
+		super("alikafka", "2019-09-16", "UpdateInstanceConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

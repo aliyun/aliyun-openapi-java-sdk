@@ -35,7 +35,7 @@ public class DescribeAclsRequest extends RpcAcsRequest<DescribeAclsResponse> {
 
 	private String username;
 	public DescribeAclsRequest() {
-		super("alikafka", "2019-09-16", "DescribeAcls", "alikafka");
+		super("alikafka", "2019-09-16", "DescribeAcls");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -34,7 +34,7 @@ public class CreateConsumerGroupRequest extends RpcAcsRequest<CreateConsumerGrou
 
 	private List<Tag> tags;
 	public CreateConsumerGroupRequest() {
-		super("alikafka", "2019-09-16", "CreateConsumerGroup", "alikafka");
+		super("alikafka", "2019-09-16", "CreateConsumerGroup");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

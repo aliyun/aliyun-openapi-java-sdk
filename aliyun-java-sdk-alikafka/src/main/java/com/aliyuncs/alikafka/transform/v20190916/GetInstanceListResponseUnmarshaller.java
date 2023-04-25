@@ -67,6 +67,7 @@ public class GetInstanceListResponseUnmarshaller {
 			instanceVO.setUsedPartitionCount(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].UsedPartitionCount"));
 			instanceVO.setKmsKeyId(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].KmsKeyId"));
 			instanceVO.setStandardZoneId(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].StandardZoneId"));
+			instanceVO.setIoMaxSpec(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].IoMaxSpec"));
 
 			UpgradeServiceDetailInfo upgradeServiceDetailInfo = new UpgradeServiceDetailInfo();
 			upgradeServiceDetailInfo.setCurrent2OpenSourceVersion(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].UpgradeServiceDetailInfo.Current2OpenSourceVersion"));

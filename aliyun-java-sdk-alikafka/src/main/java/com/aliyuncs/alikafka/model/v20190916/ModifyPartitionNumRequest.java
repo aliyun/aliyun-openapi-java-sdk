@@ -31,7 +31,7 @@ public class ModifyPartitionNumRequest extends RpcAcsRequest<ModifyPartitionNumR
 
 	private String topic;
 	public ModifyPartitionNumRequest() {
-		super("alikafka", "2019-09-16", "ModifyPartitionNum", "alikafka");
+		super("alikafka", "2019-09-16", "ModifyPartitionNum");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

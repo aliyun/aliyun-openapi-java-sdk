@@ -27,7 +27,7 @@ public class GetQuotaTipRequest extends RpcAcsRequest<GetQuotaTipResponse> {
 
 	private String instanceId;
 	public GetQuotaTipRequest() {
-		super("alikafka", "2019-09-16", "GetQuotaTip", "alikafka");
+		super("alikafka", "2019-09-16", "GetQuotaTip");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

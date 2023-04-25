@@ -25,7 +25,7 @@ import com.aliyuncs.alikafka.Endpoint;
 public class GetAllInstanceIdListRequest extends RpcAcsRequest<GetAllInstanceIdListResponse> {
 	   
 	public GetAllInstanceIdListRequest() {
-		super("alikafka", "2019-09-16", "GetAllInstanceIdList", "alikafka");
+		super("alikafka", "2019-09-16", "GetAllInstanceIdList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class CreateSaslUserRequest extends RpcAcsRequest<CreateSaslUserResponse>
 
 	private String username;
 	public CreateSaslUserRequest() {
-		super("alikafka", "2019-09-16", "CreateSaslUser", "alikafka");
+		super("alikafka", "2019-09-16", "CreateSaslUser");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

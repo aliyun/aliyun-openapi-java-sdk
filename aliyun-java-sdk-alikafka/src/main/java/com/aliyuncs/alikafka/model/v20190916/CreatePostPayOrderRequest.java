@@ -48,7 +48,7 @@ public class CreatePostPayOrderRequest extends RpcAcsRequest<CreatePostPayOrderR
 
 	private Integer deployType;
 	public CreatePostPayOrderRequest() {
-		super("alikafka", "2019-09-16", "CreatePostPayOrder", "alikafka");
+		super("alikafka", "2019-09-16", "CreatePostPayOrder");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

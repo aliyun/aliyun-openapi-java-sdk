@@ -98,6 +98,8 @@ public class GetQuotaTipResponse extends AcsResponse {
 
 		private Integer isPartitionBuy;
 
+		private Integer partitionQuota;
+
 		public Integer getTopicNumOfBuy() {
 			return this.topicNumOfBuy;
 		}
@@ -184,6 +186,14 @@ public class GetQuotaTipResponse extends AcsResponse {
 
 		public void setIsPartitionBuy(Integer isPartitionBuy) {
 			this.isPartitionBuy = isPartitionBuy;
+		}
+
+		public Integer getPartitionQuota() {
+			return this.partitionQuota;
+		}
+
+		public void setPartitionQuota(Integer partitionQuota) {
+			this.partitionQuota = partitionQuota;
 		}
 	}
 
