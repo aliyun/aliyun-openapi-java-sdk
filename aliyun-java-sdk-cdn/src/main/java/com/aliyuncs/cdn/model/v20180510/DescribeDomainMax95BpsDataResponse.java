@@ -14,6 +14,7 @@
 
 package com.aliyuncs.cdn.model.v20180510;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.cdn.transform.v20180510.DescribeDomainMax95BpsDataResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -24,11 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDomainMax95BpsDataResponse extends AcsResponse {
 
+	private String requestId;
+
+	private String domainName;
+
 	private String endTime;
 
 	private String startTime;
-
-	private String requestId;
 
 	private String domesticMax95Bps;
 
@@ -36,7 +39,23 @@ public class DescribeDomainMax95BpsDataResponse extends AcsResponse {
 
 	private String max95Bps;
 
-	private String domainName;
+	private List<Max95Detail> detailData;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+	}
 
 	public String getEndTime() {
 		return this.endTime;
@@ -52,14 +71,6 @@ public class DescribeDomainMax95BpsDataResponse extends AcsResponse {
 
 	public void setStartTime(String startTime) {
 		this.startTime = startTime;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
 	}
 
 	public String getDomesticMax95Bps() {
@@ -86,12 +97,55 @@ public class DescribeDomainMax95BpsDataResponse extends AcsResponse {
 		this.max95Bps = max95Bps;
 	}
 
-	public String getDomainName() {
-		return this.domainName;
+	public List<Max95Detail> getDetailData() {
+		return this.detailData;
 	}
 
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
+	public void setDetailData(List<Max95Detail> detailData) {
+		this.detailData = detailData;
+	}
+
+	public static class Max95Detail {
+
+		private String timeStamp;
+
+		private String area;
+
+		private String max95BpsPeakTime;
+
+		private Float max95Bps;
+
+		public String getTimeStamp() {
+			return this.timeStamp;
+		}
+
+		public void setTimeStamp(String timeStamp) {
+			this.timeStamp = timeStamp;
+		}
+
+		public String getArea() {
+			return this.area;
+		}
+
+		public void setArea(String area) {
+			this.area = area;
+		}
+
+		public String getMax95BpsPeakTime() {
+			return this.max95BpsPeakTime;
+		}
+
+		public void setMax95BpsPeakTime(String max95BpsPeakTime) {
+			this.max95BpsPeakTime = max95BpsPeakTime;
+		}
+
+		public Float getMax95Bps() {
+			return this.max95Bps;
+		}
+
+		public void setMax95Bps(Float max95Bps) {
+			this.max95Bps = max95Bps;
+		}
 	}
 
 	@Override

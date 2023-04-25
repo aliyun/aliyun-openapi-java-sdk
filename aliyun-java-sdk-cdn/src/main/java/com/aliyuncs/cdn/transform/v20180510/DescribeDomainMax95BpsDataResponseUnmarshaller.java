@@ -14,7 +14,11 @@
 
 package com.aliyuncs.cdn.transform.v20180510;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.cdn.model.v20180510.DescribeDomainMax95BpsDataResponse;
+import com.aliyuncs.cdn.model.v20180510.DescribeDomainMax95BpsDataResponse.Max95Detail;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -23,12 +27,24 @@ public class DescribeDomainMax95BpsDataResponseUnmarshaller {
 	public static DescribeDomainMax95BpsDataResponse unmarshall(DescribeDomainMax95BpsDataResponse describeDomainMax95BpsDataResponse, UnmarshallerContext _ctx) {
 		
 		describeDomainMax95BpsDataResponse.setRequestId(_ctx.stringValue("DescribeDomainMax95BpsDataResponse.RequestId"));
+		describeDomainMax95BpsDataResponse.setDomainName(_ctx.stringValue("DescribeDomainMax95BpsDataResponse.DomainName"));
 		describeDomainMax95BpsDataResponse.setEndTime(_ctx.stringValue("DescribeDomainMax95BpsDataResponse.EndTime"));
 		describeDomainMax95BpsDataResponse.setStartTime(_ctx.stringValue("DescribeDomainMax95BpsDataResponse.StartTime"));
 		describeDomainMax95BpsDataResponse.setDomesticMax95Bps(_ctx.stringValue("DescribeDomainMax95BpsDataResponse.DomesticMax95Bps"));
 		describeDomainMax95BpsDataResponse.setOverseasMax95Bps(_ctx.stringValue("DescribeDomainMax95BpsDataResponse.OverseasMax95Bps"));
 		describeDomainMax95BpsDataResponse.setMax95Bps(_ctx.stringValue("DescribeDomainMax95BpsDataResponse.Max95Bps"));
-		describeDomainMax95BpsDataResponse.setDomainName(_ctx.stringValue("DescribeDomainMax95BpsDataResponse.DomainName"));
+
+		List<Max95Detail> detailData = new ArrayList<Max95Detail>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeDomainMax95BpsDataResponse.DetailData.Length"); i++) {
+			Max95Detail max95Detail = new Max95Detail();
+			max95Detail.setTimeStamp(_ctx.stringValue("DescribeDomainMax95BpsDataResponse.DetailData["+ i +"].TimeStamp"));
+			max95Detail.setArea(_ctx.stringValue("DescribeDomainMax95BpsDataResponse.DetailData["+ i +"].Area"));
+			max95Detail.setMax95BpsPeakTime(_ctx.stringValue("DescribeDomainMax95BpsDataResponse.DetailData["+ i +"].Max95BpsPeakTime"));
+			max95Detail.setMax95Bps(_ctx.floatValue("DescribeDomainMax95BpsDataResponse.DetailData["+ i +"].Max95Bps"));
+
+			detailData.add(max95Detail);
+		}
+		describeDomainMax95BpsDataResponse.setDetailData(detailData);
 	 
 	 	return describeDomainMax95BpsDataResponse;
 	}
