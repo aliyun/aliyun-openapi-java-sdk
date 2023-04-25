@@ -183,6 +183,8 @@ public class ListCallDetailRecordsResponse extends AcsResponse {
 
 			private Long dialingTime;
 
+			private Long talkTime;
+
 			public String getContactDisposition() {
 				return this.contactDisposition;
 			}
@@ -437,6 +439,14 @@ public class ListCallDetailRecordsResponse extends AcsResponse {
 
 			public void setDialingTime(Long dialingTime) {
 				this.dialingTime = dialingTime;
+			}
+
+			public Long getTalkTime() {
+				return this.talkTime;
+			}
+
+			public void setTalkTime(Long talkTime) {
+				this.talkTime = talkTime;
 			}
 		}
 	}

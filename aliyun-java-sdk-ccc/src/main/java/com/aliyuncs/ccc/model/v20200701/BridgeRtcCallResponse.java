@@ -87,17 +87,17 @@ public class BridgeRtcCallResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Long instanceId;
+		private String instanceId;
 
 		private String jobId;
 
 		private String tokenInfo;
 
-		public Long getInstanceId() {
+		public String getInstanceId() {
 			return this.instanceId;
 		}
 
-		public void setInstanceId(Long instanceId) {
+		public void setInstanceId(String instanceId) {
 			this.instanceId = instanceId;
 		}
 

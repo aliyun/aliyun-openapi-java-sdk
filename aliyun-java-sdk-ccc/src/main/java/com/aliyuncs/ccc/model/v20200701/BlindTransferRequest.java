@@ -33,11 +33,17 @@ public class BlindTransferRequest extends RpcAcsRequest<BlindTransferResponse> {
 
 	private String deviceId;
 
+	private String strategyName;
+
 	private Integer timeoutSeconds;
 
 	private String jobId;
 
 	private String instanceId;
+
+	private String strategyParams;
+
+	private Integer callPriority;
 	public BlindTransferRequest() {
 		super("CCC", "2020-07-01", "BlindTransfer", "CCC");
 		setMethod(MethodType.POST);
@@ -91,6 +97,17 @@ public class BlindTransferRequest extends RpcAcsRequest<BlindTransferResponse> {
 		}
 	}
 
+	public String getStrategyName() {
+		return this.strategyName;
+	}
+
+	public void setStrategyName(String strategyName) {
+		this.strategyName = strategyName;
+		if(strategyName != null){
+			putQueryParameter("StrategyName", strategyName);
+		}
+	}
+
 	public Integer getTimeoutSeconds() {
 		return this.timeoutSeconds;
 	}
@@ -121,6 +138,28 @@ public class BlindTransferRequest extends RpcAcsRequest<BlindTransferResponse> {
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getStrategyParams() {
+		return this.strategyParams;
+	}
+
+	public void setStrategyParams(String strategyParams) {
+		this.strategyParams = strategyParams;
+		if(strategyParams != null){
+			putQueryParameter("StrategyParams", strategyParams);
+		}
+	}
+
+	public Integer getCallPriority() {
+		return this.callPriority;
+	}
+
+	public void setCallPriority(Integer callPriority) {
+		this.callPriority = callPriority;
+		if(callPriority != null){
+			putQueryParameter("CallPriority", callPriority.toString());
 		}
 	}
 

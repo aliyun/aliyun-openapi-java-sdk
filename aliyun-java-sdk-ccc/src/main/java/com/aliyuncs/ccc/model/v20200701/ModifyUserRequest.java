@@ -37,6 +37,8 @@ public class ModifyUserRequest extends RpcAcsRequest<ModifyUserResponse> {
 
 	private String displayName;
 
+	private Boolean force;
+
 	private String displayId;
 	public ModifyUserRequest() {
 		super("CCC", "2020-07-01", "ModifyUser", "CCC");
@@ -110,6 +112,17 @@ public class ModifyUserRequest extends RpcAcsRequest<ModifyUserResponse> {
 		this.displayName = displayName;
 		if(displayName != null){
 			putQueryParameter("DisplayName", displayName);
+		}
+	}
+
+	public Boolean getForce() {
+		return this.force;
+	}
+
+	public void setForce(Boolean force) {
+		this.force = force;
+		if(force != null){
+			putQueryParameter("Force", force.toString());
 		}
 	}
 

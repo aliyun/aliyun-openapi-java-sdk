@@ -38,7 +38,7 @@ public class BridgeRtcCallResponseUnmarshaller {
 		bridgeRtcCallResponse.setParams(params);
 
 		Data data = new Data();
-		data.setInstanceId(_ctx.longValue("BridgeRtcCallResponse.Data.InstanceId"));
+		data.setInstanceId(_ctx.stringValue("BridgeRtcCallResponse.Data.InstanceId"));
 		data.setJobId(_ctx.stringValue("BridgeRtcCallResponse.Data.JobId"));
 		data.setTokenInfo(_ctx.stringValue("BridgeRtcCallResponse.Data.TokenInfo"));
 		bridgeRtcCallResponse.setData(data);

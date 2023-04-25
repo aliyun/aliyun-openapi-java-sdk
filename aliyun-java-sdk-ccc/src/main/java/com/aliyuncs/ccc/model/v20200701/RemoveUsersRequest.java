@@ -28,6 +28,8 @@ public class RemoveUsersRequest extends RpcAcsRequest<RemoveUsersResponse> {
 	private String userIdList;
 
 	private String instanceId;
+
+	private Boolean force;
 	public RemoveUsersRequest() {
 		super("CCC", "2020-07-01", "RemoveUsers", "CCC");
 		setMethod(MethodType.POST);
@@ -56,6 +58,17 @@ public class RemoveUsersRequest extends RpcAcsRequest<RemoveUsersResponse> {
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public Boolean getForce() {
+		return this.force;
+	}
+
+	public void setForce(Boolean force) {
+		this.force = force;
+		if(force != null){
+			putQueryParameter("Force", force.toString());
 		}
 	}
 
