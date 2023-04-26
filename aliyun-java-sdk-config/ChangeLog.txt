@@ -1,3 +1,6 @@
+2023-04-26 Version: 2.2.8
+- Publish resource relations api.
+
 2023-04-12 Version: 2.2.7
 - Fix resourceOwnerId param.
 

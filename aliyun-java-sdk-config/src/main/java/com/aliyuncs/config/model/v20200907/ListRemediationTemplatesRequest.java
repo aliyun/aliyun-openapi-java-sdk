@@ -28,6 +28,10 @@ public class ListRemediationTemplatesRequest extends RpcAcsRequest<ListRemediati
 	private String managedRuleIdentifier;
 
 	private String remediationType;
+
+	private Long pageNumber;
+
+	private Long pageSize;
 	public ListRemediationTemplatesRequest() {
 		super("Config", "2020-09-07", "ListRemediationTemplates");
 		setMethod(MethodType.POST);
@@ -56,6 +60,28 @@ public class ListRemediationTemplatesRequest extends RpcAcsRequest<ListRemediati
 		this.remediationType = remediationType;
 		if(remediationType != null){
 			putQueryParameter("RemediationType", remediationType);
+		}
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Long getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

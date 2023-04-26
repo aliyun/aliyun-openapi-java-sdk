@@ -46,6 +46,7 @@ public class GetManagedRuleResponseUnmarshaller {
 		managedRule.setHelpUrls(_ctx.stringValue("GetManagedRuleResponse.ManagedRule.HelpUrls"));
 		managedRule.setServiceName(_ctx.stringValue("GetManagedRuleResponse.ManagedRule.ServiceName"));
 		managedRule.setCreateTimestamp(_ctx.longValue("GetManagedRuleResponse.ManagedRule.CreateTimestamp"));
+		managedRule.setUseCases(_ctx.stringValue("GetManagedRuleResponse.ManagedRule.UseCases"));
 
 		List<String> labels = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetManagedRuleResponse.ManagedRule.Labels.Length"); i++) {

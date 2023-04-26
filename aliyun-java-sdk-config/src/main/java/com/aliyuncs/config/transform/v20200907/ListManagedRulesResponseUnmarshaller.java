@@ -45,6 +45,9 @@ public class ListManagedRulesResponseUnmarshaller {
 			managedRule.setConfigRuleName(_ctx.stringValue("ListManagedRulesResponse.ManagedRules.ManagedRuleList["+ i +"].ConfigRuleName"));
 			managedRule.setReferenceCount(_ctx.integerValue("ListManagedRulesResponse.ManagedRules.ManagedRuleList["+ i +"].ReferenceCount"));
 			managedRule.setHelpUrls(_ctx.stringValue("ListManagedRulesResponse.ManagedRules.ManagedRuleList["+ i +"].HelpUrls"));
+			managedRule.setSupportPreviewManagedRule(_ctx.booleanValue("ListManagedRulesResponse.ManagedRules.ManagedRuleList["+ i +"].SupportPreviewManagedRule"));
+			managedRule.setRemediationTemplateIdentifier(_ctx.stringValue("ListManagedRulesResponse.ManagedRules.ManagedRuleList["+ i +"].RemediationTemplateIdentifier"));
+			managedRule.setRemediationTemplateName(_ctx.stringValue("ListManagedRulesResponse.ManagedRules.ManagedRuleList["+ i +"].RemediationTemplateName"));
 
 			List<String> labels = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListManagedRulesResponse.ManagedRules.ManagedRuleList["+ i +"].Labels.Length"); j++) {

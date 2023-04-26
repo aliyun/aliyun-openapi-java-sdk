@@ -103,6 +103,12 @@ public class ListManagedRulesResponse extends AcsResponse {
 
 			private String helpUrls;
 
+			private Boolean supportPreviewManagedRule;
+
+			private String remediationTemplateIdentifier;
+
+			private String remediationTemplateName;
+
 			private List<String> labels;
 
 			private Scope scope;
@@ -161,6 +167,30 @@ public class ListManagedRulesResponse extends AcsResponse {
 
 			public void setHelpUrls(String helpUrls) {
 				this.helpUrls = helpUrls;
+			}
+
+			public Boolean getSupportPreviewManagedRule() {
+				return this.supportPreviewManagedRule;
+			}
+
+			public void setSupportPreviewManagedRule(Boolean supportPreviewManagedRule) {
+				this.supportPreviewManagedRule = supportPreviewManagedRule;
+			}
+
+			public String getRemediationTemplateIdentifier() {
+				return this.remediationTemplateIdentifier;
+			}
+
+			public void setRemediationTemplateIdentifier(String remediationTemplateIdentifier) {
+				this.remediationTemplateIdentifier = remediationTemplateIdentifier;
+			}
+
+			public String getRemediationTemplateName() {
+				return this.remediationTemplateName;
+			}
+
+			public void setRemediationTemplateName(String remediationTemplateName) {
+				this.remediationTemplateName = remediationTemplateName;
 			}
 
 			public List<String> getLabels() {
