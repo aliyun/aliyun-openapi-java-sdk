@@ -16,6 +16,7 @@ package com.aliyuncs.premiumpics.model.v20200505;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.premiumpics.Endpoint;
 
 /**
  * @author auto create
@@ -23,6 +24,8 @@ import com.aliyuncs.http.MethodType;
  */
 public class ListLogosRequest extends RpcAcsRequest<ListLogosResponse> {
 	   
+
+	private String authorityType;
 
 	private String description;
 
@@ -32,18 +35,39 @@ public class ListLogosRequest extends RpcAcsRequest<ListLogosResponse> {
 
 	private String userId;
 
+	private String fontStyle;
+
+	private String colorStyle;
+
+	private String industryName;
+
 	private String industryId;
+
+	private String styleId;
 
 	private Integer page;
 
 	private String slogan;
 
-	private String industryName;
-
 	private String logoVersion;
 	public ListLogosRequest() {
 		super("Premiumpics", "2020-05-05", "ListLogos");
 		setMethod(MethodType.GET);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public String getAuthorityType() {
+		return this.authorityType;
+	}
+
+	public void setAuthorityType(String authorityType) {
+		this.authorityType = authorityType;
+		if(authorityType != null){
+			putQueryParameter("AuthorityType", authorityType);
+		}
 	}
 
 	public String getDescription() {
@@ -90,6 +114,39 @@ public class ListLogosRequest extends RpcAcsRequest<ListLogosResponse> {
 		}
 	}
 
+	public String getFontStyle() {
+		return this.fontStyle;
+	}
+
+	public void setFontStyle(String fontStyle) {
+		this.fontStyle = fontStyle;
+		if(fontStyle != null){
+			putQueryParameter("FontStyle", fontStyle);
+		}
+	}
+
+	public String getColorStyle() {
+		return this.colorStyle;
+	}
+
+	public void setColorStyle(String colorStyle) {
+		this.colorStyle = colorStyle;
+		if(colorStyle != null){
+			putQueryParameter("ColorStyle", colorStyle);
+		}
+	}
+
+	public String getIndustryName() {
+		return this.industryName;
+	}
+
+	public void setIndustryName(String industryName) {
+		this.industryName = industryName;
+		if(industryName != null){
+			putQueryParameter("IndustryName", industryName);
+		}
+	}
+
 	public String getIndustryId() {
 		return this.industryId;
 	}
@@ -98,6 +155,17 @@ public class ListLogosRequest extends RpcAcsRequest<ListLogosResponse> {
 		this.industryId = industryId;
 		if(industryId != null){
 			putQueryParameter("IndustryId", industryId);
+		}
+	}
+
+	public String getStyleId() {
+		return this.styleId;
+	}
+
+	public void setStyleId(String styleId) {
+		this.styleId = styleId;
+		if(styleId != null){
+			putQueryParameter("StyleId", styleId);
 		}
 	}
 
@@ -120,17 +188,6 @@ public class ListLogosRequest extends RpcAcsRequest<ListLogosResponse> {
 		this.slogan = slogan;
 		if(slogan != null){
 			putQueryParameter("Slogan", slogan);
-		}
-	}
-
-	public String getIndustryName() {
-		return this.industryName;
-	}
-
-	public void setIndustryName(String industryName) {
-		this.industryName = industryName;
-		if(industryName != null){
-			putQueryParameter("IndustryName", industryName);
 		}
 	}
 

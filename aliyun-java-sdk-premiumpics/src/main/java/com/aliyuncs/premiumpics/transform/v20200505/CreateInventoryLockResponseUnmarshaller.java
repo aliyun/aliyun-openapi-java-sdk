@@ -23,8 +23,8 @@ public class CreateInventoryLockResponseUnmarshaller {
 	public static CreateInventoryLockResponse unmarshall(CreateInventoryLockResponse createInventoryLockResponse, UnmarshallerContext _ctx) {
 		
 		createInventoryLockResponse.setRequestId(_ctx.stringValue("CreateInventoryLockResponse.RequestId"));
-		createInventoryLockResponse.setSuccess(_ctx.booleanValue("CreateInventoryLockResponse.Success"));
 		createInventoryLockResponse.setStatus(_ctx.booleanValue("CreateInventoryLockResponse.Status"));
+		createInventoryLockResponse.setSuccess(_ctx.booleanValue("CreateInventoryLockResponse.Success"));
 	 
 	 	return createInventoryLockResponse;
 	}

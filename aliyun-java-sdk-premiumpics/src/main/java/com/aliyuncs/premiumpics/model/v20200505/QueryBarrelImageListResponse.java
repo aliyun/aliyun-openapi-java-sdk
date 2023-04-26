@@ -27,17 +27,17 @@ public class QueryBarrelImageListResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private Integer pageSize;
 
 	private String errorMsg;
 
 	private String errorCode;
 
-	private Integer nextId;
-
 	private Boolean hasNext;
 
-	private Integer pageSize;
+	private Boolean success;
+
+	private Integer nextId;
 
 	private List<Image> images;
 
@@ -49,12 +49,12 @@ public class QueryBarrelImageListResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public String getErrorMsg() {
@@ -73,14 +73,6 @@ public class QueryBarrelImageListResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public Integer getNextId() {
-		return this.nextId;
-	}
-
-	public void setNextId(Integer nextId) {
-		this.nextId = nextId;
-	}
-
 	public Boolean getHasNext() {
 		return this.hasNext;
 	}
@@ -89,12 +81,20 @@ public class QueryBarrelImageListResponse extends AcsResponse {
 		this.hasNext = hasNext;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public Integer getNextId() {
+		return this.nextId;
+	}
+
+	public void setNextId(Integer nextId) {
+		this.nextId = nextId;
 	}
 
 	public List<Image> getImages() {
@@ -107,52 +107,28 @@ public class QueryBarrelImageListResponse extends AcsResponse {
 
 	public static class Image {
 
-		private String title;
-
-		private String imageId;
-
-		private String tag;
-
-		private String smallImage;
+		private Boolean buy;
 
 		private String midImage;
 
 		private String bigImage;
 
-		private Boolean buy;
+		private String smallImage;
+
+		private String title;
+
+		private String tag;
+
+		private String imageId;
 
 		private List<Specification> specifications;
 
-		public String getTitle() {
-			return this.title;
+		public Boolean getBuy() {
+			return this.buy;
 		}
 
-		public void setTitle(String title) {
-			this.title = title;
-		}
-
-		public String getImageId() {
-			return this.imageId;
-		}
-
-		public void setImageId(String imageId) {
-			this.imageId = imageId;
-		}
-
-		public String getTag() {
-			return this.tag;
-		}
-
-		public void setTag(String tag) {
-			this.tag = tag;
-		}
-
-		public String getSmallImage() {
-			return this.smallImage;
-		}
-
-		public void setSmallImage(String smallImage) {
-			this.smallImage = smallImage;
+		public void setBuy(Boolean buy) {
+			this.buy = buy;
 		}
 
 		public String getMidImage() {
@@ -171,12 +147,36 @@ public class QueryBarrelImageListResponse extends AcsResponse {
 			this.bigImage = bigImage;
 		}
 
-		public Boolean getBuy() {
-			return this.buy;
+		public String getSmallImage() {
+			return this.smallImage;
 		}
 
-		public void setBuy(Boolean buy) {
-			this.buy = buy;
+		public void setSmallImage(String smallImage) {
+			this.smallImage = smallImage;
+		}
+
+		public String getTitle() {
+			return this.title;
+		}
+
+		public void setTitle(String title) {
+			this.title = title;
+		}
+
+		public String getTag() {
+			return this.tag;
+		}
+
+		public void setTag(String tag) {
+			this.tag = tag;
+		}
+
+		public String getImageId() {
+			return this.imageId;
+		}
+
+		public void setImageId(String imageId) {
+			this.imageId = imageId;
 		}
 
 		public List<Specification> getSpecifications() {
@@ -189,50 +189,26 @@ public class QueryBarrelImageListResponse extends AcsResponse {
 
 		public static class Specification {
 
-			private Long id;
-
-			private String imageId;
-
-			private String name;
-
-			private Integer height;
+			private String price;
 
 			private Integer width;
 
+			private Integer height;
+
+			private String name;
+
+			private String imageId;
+
+			private Long id;
+
 			private String suffix;
 
-			private String price;
-
-			public Long getId() {
-				return this.id;
+			public String getPrice() {
+				return this.price;
 			}
 
-			public void setId(Long id) {
-				this.id = id;
-			}
-
-			public String getImageId() {
-				return this.imageId;
-			}
-
-			public void setImageId(String imageId) {
-				this.imageId = imageId;
-			}
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
-
-			public Integer getHeight() {
-				return this.height;
-			}
-
-			public void setHeight(Integer height) {
-				this.height = height;
+			public void setPrice(String price) {
+				this.price = price;
 			}
 
 			public Integer getWidth() {
@@ -243,20 +219,44 @@ public class QueryBarrelImageListResponse extends AcsResponse {
 				this.width = width;
 			}
 
+			public Integer getHeight() {
+				return this.height;
+			}
+
+			public void setHeight(Integer height) {
+				this.height = height;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getImageId() {
+				return this.imageId;
+			}
+
+			public void setImageId(String imageId) {
+				this.imageId = imageId;
+			}
+
+			public Long getId() {
+				return this.id;
+			}
+
+			public void setId(Long id) {
+				this.id = id;
+			}
+
 			public String getSuffix() {
 				return this.suffix;
 			}
 
 			public void setSuffix(String suffix) {
 				this.suffix = suffix;
-			}
-
-			public String getPrice() {
-				return this.price;
-			}
-
-			public void setPrice(String price) {
-				this.price = price;
 			}
 		}
 	}

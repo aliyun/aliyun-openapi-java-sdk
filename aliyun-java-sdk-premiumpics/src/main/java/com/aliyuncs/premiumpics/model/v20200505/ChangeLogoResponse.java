@@ -16,36 +16,22 @@ package com.aliyuncs.premiumpics.model.v20200505;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.premiumpics.transform.v20200505.ListLogosResponseUnmarshaller;
+import com.aliyuncs.premiumpics.transform.v20200505.ChangeLogoResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListLogosResponse extends AcsResponse {
-
-	private Integer nextPage;
+public class ChangeLogoResponse extends AcsResponse {
 
 	private String requestId;
 
 	private Boolean success;
 
-	private String version;
-
-	private String logoVersion;
-
-	private Integer pageNumber;
+	private Integer httpStatusCode;
 
 	private List<Goods> data;
-
-	public Integer getNextPage() {
-		return this.nextPage;
-	}
-
-	public void setNextPage(Integer nextPage) {
-		this.nextPage = nextPage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -63,28 +49,12 @@ public class ListLogosResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getVersion() {
-		return this.version;
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
 	}
 
-	public void setVersion(String version) {
-		this.version = version;
-	}
-
-	public String getLogoVersion() {
-		return this.logoVersion;
-	}
-
-	public void setLogoVersion(String logoVersion) {
-		this.logoVersion = logoVersion;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public List<Goods> getData() {
@@ -179,8 +149,8 @@ public class ListLogosResponse extends AcsResponse {
 	}
 
 	@Override
-	public ListLogosResponse getInstance(UnmarshallerContext context) {
-		return	ListLogosResponseUnmarshaller.unmarshall(this, context);
+	public ChangeLogoResponse getInstance(UnmarshallerContext context) {
+		return	ChangeLogoResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

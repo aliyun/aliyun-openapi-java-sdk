@@ -26,14 +26,14 @@ public class DescribeLogoResponseUnmarshaller {
 	public static DescribeLogoResponse unmarshall(DescribeLogoResponse describeLogoResponse, UnmarshallerContext _ctx) {
 		
 		describeLogoResponse.setRequestId(_ctx.stringValue("DescribeLogoResponse.RequestId"));
-		describeLogoResponse.setSuccess(_ctx.booleanValue("DescribeLogoResponse.Success"));
-		describeLogoResponse.setColorOne(_ctx.stringValue("DescribeLogoResponse.ColorOne"));
-		describeLogoResponse.setColorTwo(_ctx.stringValue("DescribeLogoResponse.ColorTwo"));
-		describeLogoResponse.setColorThree(_ctx.stringValue("DescribeLogoResponse.ColorThree"));
-		describeLogoResponse.setColorDescription(_ctx.stringValue("DescribeLogoResponse.ColorDescription"));
-		describeLogoResponse.setNamePath(_ctx.stringValue("DescribeLogoResponse.NamePath"));
 		describeLogoResponse.setFontDescription(_ctx.stringValue("DescribeLogoResponse.FontDescription"));
+		describeLogoResponse.setSuccess(_ctx.booleanValue("DescribeLogoResponse.Success"));
 		describeLogoResponse.setBrandName(_ctx.stringValue("DescribeLogoResponse.BrandName"));
+		describeLogoResponse.setNamePath(_ctx.stringValue("DescribeLogoResponse.NamePath"));
+		describeLogoResponse.setColorTwo(_ctx.stringValue("DescribeLogoResponse.ColorTwo"));
+		describeLogoResponse.setColorOne(_ctx.stringValue("DescribeLogoResponse.ColorOne"));
+		describeLogoResponse.setColorDescription(_ctx.stringValue("DescribeLogoResponse.ColorDescription"));
+		describeLogoResponse.setColorThree(_ctx.stringValue("DescribeLogoResponse.ColorThree"));
 
 		List<String> images = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLogoResponse.Images.Length"); i++) {

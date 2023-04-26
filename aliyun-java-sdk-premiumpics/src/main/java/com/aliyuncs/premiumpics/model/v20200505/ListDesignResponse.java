@@ -119,17 +119,9 @@ public class ListDesignResponse extends AcsResponse {
 
 		public static class TemplatesItem {
 
-			private String templateId;
-
 			private String previewUrl;
 
-			public String getTemplateId() {
-				return this.templateId;
-			}
-
-			public void setTemplateId(String templateId) {
-				this.templateId = templateId;
-			}
+			private String templateId;
 
 			public String getPreviewUrl() {
 				return this.previewUrl;
@@ -137,6 +129,14 @@ public class ListDesignResponse extends AcsResponse {
 
 			public void setPreviewUrl(String previewUrl) {
 				this.previewUrl = previewUrl;
+			}
+
+			public String getTemplateId() {
+				return this.templateId;
+			}
+
+			public void setTemplateId(String templateId) {
+				this.templateId = templateId;
 			}
 		}
 	}

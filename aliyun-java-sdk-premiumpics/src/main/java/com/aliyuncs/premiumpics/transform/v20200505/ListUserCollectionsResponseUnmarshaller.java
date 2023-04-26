@@ -27,19 +27,20 @@ public class ListUserCollectionsResponseUnmarshaller {
 	public static ListUserCollectionsResponse unmarshall(ListUserCollectionsResponse listUserCollectionsResponse, UnmarshallerContext _ctx) {
 		
 		listUserCollectionsResponse.setRequestId(_ctx.stringValue("ListUserCollectionsResponse.RequestId"));
-		listUserCollectionsResponse.setSuccess(_ctx.booleanValue("ListUserCollectionsResponse.Success"));
+		listUserCollectionsResponse.setTotalCount(_ctx.integerValue("ListUserCollectionsResponse.TotalCount"));
+		listUserCollectionsResponse.setPageSize(_ctx.integerValue("ListUserCollectionsResponse.PageSize"));
+		listUserCollectionsResponse.setPageNumber(_ctx.integerValue("ListUserCollectionsResponse.PageNumber"));
 		listUserCollectionsResponse.setErrorMsg(_ctx.stringValue("ListUserCollectionsResponse.ErrorMsg"));
 		listUserCollectionsResponse.setErrorCode(_ctx.stringValue("ListUserCollectionsResponse.ErrorCode"));
-		listUserCollectionsResponse.setPageSize(_ctx.integerValue("ListUserCollectionsResponse.PageSize"));
-		listUserCollectionsResponse.setTotalCount(_ctx.integerValue("ListUserCollectionsResponse.TotalCount"));
-		listUserCollectionsResponse.setPageNumber(_ctx.integerValue("ListUserCollectionsResponse.PageNumber"));
+		listUserCollectionsResponse.setSuccess(_ctx.booleanValue("ListUserCollectionsResponse.Success"));
 
 		List<Collections> data = new ArrayList<Collections>();
 		for (int i = 0; i < _ctx.lengthValue("ListUserCollectionsResponse.Data.Length"); i++) {
 			Collections collections = new Collections();
 			collections.setUnitId(_ctx.stringValue("ListUserCollectionsResponse.Data["+ i +"].UnitId"));
-			collections.setUnitName(_ctx.stringValue("ListUserCollectionsResponse.Data["+ i +"].UnitName"));
 			collections.setImage(_ctx.stringValue("ListUserCollectionsResponse.Data["+ i +"].Image"));
+			collections.setUnitName(_ctx.stringValue("ListUserCollectionsResponse.Data["+ i +"].UnitName"));
+			collections.setExtend(_ctx.stringValue("ListUserCollectionsResponse.Data["+ i +"].extend"));
 
 			data.add(collections);
 		}

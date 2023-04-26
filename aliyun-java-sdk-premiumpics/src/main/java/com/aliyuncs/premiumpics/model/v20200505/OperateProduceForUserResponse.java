@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OperateProduceForUserResponse extends AcsResponse {
 
-	private String errorCode;
+	private String requestId;
 
 	private String errorMsg;
 
-	private String requestId;
+	private String errorCode;
 
 	private Boolean success;
 
-	public String getErrorCode() {
-		return this.errorCode;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getErrorMsg() {
@@ -48,12 +48,12 @@ public class OperateProduceForUserResponse extends AcsResponse {
 		this.errorMsg = errorMsg;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getErrorCode() {
+		return this.errorCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public Boolean getSuccess() {

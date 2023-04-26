@@ -23,9 +23,9 @@ public class GetLogoImageResponseUnmarshaller {
 	public static GetLogoImageResponse unmarshall(GetLogoImageResponse getLogoImageResponse, UnmarshallerContext _ctx) {
 		
 		getLogoImageResponse.setRequestId(_ctx.stringValue("GetLogoImageResponse.RequestId"));
-		getLogoImageResponse.setSuccess(_ctx.booleanValue("GetLogoImageResponse.Success"));
 		getLogoImageResponse.setGoodsId(_ctx.stringValue("GetLogoImageResponse.GoodsId"));
 		getLogoImageResponse.setUrl(_ctx.stringValue("GetLogoImageResponse.Url"));
+		getLogoImageResponse.setSuccess(_ctx.booleanValue("GetLogoImageResponse.Success"));
 	 
 	 	return getLogoImageResponse;
 	}

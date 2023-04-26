@@ -24,15 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DeleteUserCollectionResponse extends AcsResponse {
 
+	private Boolean status;
+
 	private String requestId;
 
-	private Boolean success;
-
-	private Boolean status;
+	private String errorMsg;
 
 	private String errorCode;
 
-	private String errorMsg;
+	private Boolean success;
+
+	public Boolean getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(Boolean status) {
+		this.status = status;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,20 +50,12 @@ public class DeleteUserCollectionResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getErrorMsg() {
+		return this.errorMsg;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public Boolean getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(Boolean status) {
-		this.status = status;
+	public void setErrorMsg(String errorMsg) {
+		this.errorMsg = errorMsg;
 	}
 
 	public String getErrorCode() {
@@ -66,12 +66,12 @@ public class DeleteUserCollectionResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public String getErrorMsg() {
-		return this.errorMsg;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setErrorMsg(String errorMsg) {
-		this.errorMsg = errorMsg;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

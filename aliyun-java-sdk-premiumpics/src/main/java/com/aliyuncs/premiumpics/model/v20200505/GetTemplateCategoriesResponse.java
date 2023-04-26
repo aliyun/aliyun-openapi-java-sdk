@@ -25,8 +25,6 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetTemplateCategoriesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean allowRetry;
 
 	private String errorMsg;
@@ -39,13 +37,7 @@ public class GetTemplateCategoriesResponse extends AcsResponse {
 
 	private String appName;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public Boolean getAllowRetry() {
 		return this.allowRetry;
@@ -93,6 +85,14 @@ public class GetTemplateCategoriesResponse extends AcsResponse {
 
 	public void setAppName(String appName) {
 		this.appName = appName;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

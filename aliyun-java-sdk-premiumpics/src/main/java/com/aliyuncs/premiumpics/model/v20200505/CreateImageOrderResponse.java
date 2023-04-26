@@ -26,13 +26,13 @@ public class CreateImageOrderResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
-
 	private String errorMsg;
 
 	private String errorCode;
 
 	private String orderId;
+
+	private Boolean success;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,14 +40,6 @@ public class CreateImageOrderResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public String getErrorMsg() {
@@ -72,6 +64,14 @@ public class CreateImageOrderResponse extends AcsResponse {
 
 	public void setOrderId(String orderId) {
 		this.orderId = orderId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

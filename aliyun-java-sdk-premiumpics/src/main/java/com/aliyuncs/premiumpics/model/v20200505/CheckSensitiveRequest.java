@@ -16,6 +16,7 @@ package com.aliyuncs.premiumpics.model.v20200505;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.premiumpics.Endpoint;
 
 /**
  * @author auto create
@@ -28,6 +29,10 @@ public class CheckSensitiveRequest extends RpcAcsRequest<CheckSensitiveResponse>
 	public CheckSensitiveRequest() {
 		super("Premiumpics", "2020-05-05", "CheckSensitive");
 		setMethod(MethodType.GET);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getContent() {

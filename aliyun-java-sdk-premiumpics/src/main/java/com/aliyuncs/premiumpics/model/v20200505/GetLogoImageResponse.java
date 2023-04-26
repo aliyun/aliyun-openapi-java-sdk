@@ -24,29 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetLogoImageResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String goodsId;
 
 	private String url;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private String requestId;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
+	private Boolean success;
 
 	public String getGoodsId() {
 		return this.goodsId;
@@ -62,6 +46,22 @@ public class GetLogoImageResponse extends AcsResponse {
 
 	public void setUrl(String url) {
 		this.url = url;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

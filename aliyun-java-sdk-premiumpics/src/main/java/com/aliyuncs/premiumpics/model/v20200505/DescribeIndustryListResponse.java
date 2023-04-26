@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeIndustryListResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean success;
 
+	private String requestId;
+
 	private List<Industries> data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -45,6 +37,14 @@ public class DescribeIndustryListResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<Industries> getData() {
@@ -57,11 +57,19 @@ public class DescribeIndustryListResponse extends AcsResponse {
 
 	public static class Industries {
 
+		private String industryId;
+
 		private String name;
 
 		private String description;
 
-		private String industryId;
+		public String getIndustryId() {
+			return this.industryId;
+		}
+
+		public void setIndustryId(String industryId) {
+			this.industryId = industryId;
+		}
 
 		public String getName() {
 			return this.name;
@@ -77,14 +85,6 @@ public class DescribeIndustryListResponse extends AcsResponse {
 
 		public void setDescription(String description) {
 			this.description = description;
-		}
-
-		public String getIndustryId() {
-			return this.industryId;
-		}
-
-		public void setIndustryId(String industryId) {
-			this.industryId = industryId;
 		}
 	}
 

@@ -28,34 +28,34 @@ public class QueryBarrelImageListResponseUnmarshaller {
 	public static QueryBarrelImageListResponse unmarshall(QueryBarrelImageListResponse queryBarrelImageListResponse, UnmarshallerContext _ctx) {
 		
 		queryBarrelImageListResponse.setRequestId(_ctx.stringValue("QueryBarrelImageListResponse.RequestId"));
-		queryBarrelImageListResponse.setSuccess(_ctx.booleanValue("QueryBarrelImageListResponse.Success"));
+		queryBarrelImageListResponse.setPageSize(_ctx.integerValue("QueryBarrelImageListResponse.PageSize"));
 		queryBarrelImageListResponse.setErrorMsg(_ctx.stringValue("QueryBarrelImageListResponse.ErrorMsg"));
 		queryBarrelImageListResponse.setErrorCode(_ctx.stringValue("QueryBarrelImageListResponse.ErrorCode"));
-		queryBarrelImageListResponse.setNextId(_ctx.integerValue("QueryBarrelImageListResponse.NextId"));
 		queryBarrelImageListResponse.setHasNext(_ctx.booleanValue("QueryBarrelImageListResponse.HasNext"));
-		queryBarrelImageListResponse.setPageSize(_ctx.integerValue("QueryBarrelImageListResponse.PageSize"));
+		queryBarrelImageListResponse.setSuccess(_ctx.booleanValue("QueryBarrelImageListResponse.Success"));
+		queryBarrelImageListResponse.setNextId(_ctx.integerValue("QueryBarrelImageListResponse.NextId"));
 
 		List<Image> images = new ArrayList<Image>();
 		for (int i = 0; i < _ctx.lengthValue("QueryBarrelImageListResponse.Images.Length"); i++) {
 			Image image = new Image();
-			image.setTitle(_ctx.stringValue("QueryBarrelImageListResponse.Images["+ i +"].Title"));
-			image.setImageId(_ctx.stringValue("QueryBarrelImageListResponse.Images["+ i +"].ImageId"));
-			image.setTag(_ctx.stringValue("QueryBarrelImageListResponse.Images["+ i +"].Tag"));
-			image.setSmallImage(_ctx.stringValue("QueryBarrelImageListResponse.Images["+ i +"].SmallImage"));
+			image.setBuy(_ctx.booleanValue("QueryBarrelImageListResponse.Images["+ i +"].Buy"));
 			image.setMidImage(_ctx.stringValue("QueryBarrelImageListResponse.Images["+ i +"].MidImage"));
 			image.setBigImage(_ctx.stringValue("QueryBarrelImageListResponse.Images["+ i +"].BigImage"));
-			image.setBuy(_ctx.booleanValue("QueryBarrelImageListResponse.Images["+ i +"].Buy"));
+			image.setSmallImage(_ctx.stringValue("QueryBarrelImageListResponse.Images["+ i +"].SmallImage"));
+			image.setTitle(_ctx.stringValue("QueryBarrelImageListResponse.Images["+ i +"].Title"));
+			image.setTag(_ctx.stringValue("QueryBarrelImageListResponse.Images["+ i +"].Tag"));
+			image.setImageId(_ctx.stringValue("QueryBarrelImageListResponse.Images["+ i +"].ImageId"));
 
 			List<Specification> specifications = new ArrayList<Specification>();
 			for (int j = 0; j < _ctx.lengthValue("QueryBarrelImageListResponse.Images["+ i +"].Specifications.Length"); j++) {
 				Specification specification = new Specification();
-				specification.setId(_ctx.longValue("QueryBarrelImageListResponse.Images["+ i +"].Specifications["+ j +"].Id"));
-				specification.setImageId(_ctx.stringValue("QueryBarrelImageListResponse.Images["+ i +"].Specifications["+ j +"].ImageId"));
-				specification.setName(_ctx.stringValue("QueryBarrelImageListResponse.Images["+ i +"].Specifications["+ j +"].Name"));
-				specification.setHeight(_ctx.integerValue("QueryBarrelImageListResponse.Images["+ i +"].Specifications["+ j +"].Height"));
-				specification.setWidth(_ctx.integerValue("QueryBarrelImageListResponse.Images["+ i +"].Specifications["+ j +"].Width"));
-				specification.setSuffix(_ctx.stringValue("QueryBarrelImageListResponse.Images["+ i +"].Specifications["+ j +"].Suffix"));
 				specification.setPrice(_ctx.stringValue("QueryBarrelImageListResponse.Images["+ i +"].Specifications["+ j +"].Price"));
+				specification.setWidth(_ctx.integerValue("QueryBarrelImageListResponse.Images["+ i +"].Specifications["+ j +"].Width"));
+				specification.setHeight(_ctx.integerValue("QueryBarrelImageListResponse.Images["+ i +"].Specifications["+ j +"].Height"));
+				specification.setName(_ctx.stringValue("QueryBarrelImageListResponse.Images["+ i +"].Specifications["+ j +"].Name"));
+				specification.setImageId(_ctx.stringValue("QueryBarrelImageListResponse.Images["+ i +"].Specifications["+ j +"].ImageId"));
+				specification.setId(_ctx.longValue("QueryBarrelImageListResponse.Images["+ i +"].Specifications["+ j +"].Id"));
+				specification.setSuffix(_ctx.stringValue("QueryBarrelImageListResponse.Images["+ i +"].Specifications["+ j +"].Suffix"));
 
 				specifications.add(specification);
 			}

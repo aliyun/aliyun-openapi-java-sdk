@@ -42,8 +42,8 @@ public class ListDesignResponseUnmarshaller {
 			List<TemplatesItem> templates = new ArrayList<TemplatesItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListDesignResponse.Data["+ i +"].Templates.Length"); j++) {
 				TemplatesItem templatesItem = new TemplatesItem();
-				templatesItem.setTemplateId(_ctx.stringValue("ListDesignResponse.Data["+ i +"].Templates["+ j +"].TemplateId"));
 				templatesItem.setPreviewUrl(_ctx.stringValue("ListDesignResponse.Data["+ i +"].Templates["+ j +"].PreviewUrl"));
+				templatesItem.setTemplateId(_ctx.stringValue("ListDesignResponse.Data["+ i +"].Templates["+ j +"].TemplateId"));
 
 				templates.add(templatesItem);
 			}

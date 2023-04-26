@@ -23,8 +23,8 @@ public class SubmitIntentionResponseUnmarshaller {
 	public static SubmitIntentionResponse unmarshall(SubmitIntentionResponse submitIntentionResponse, UnmarshallerContext _ctx) {
 		
 		submitIntentionResponse.setRequestId(_ctx.stringValue("SubmitIntentionResponse.RequestId"));
-		submitIntentionResponse.setSuccess(_ctx.booleanValue("SubmitIntentionResponse.Success"));
 		submitIntentionResponse.setErrorMsg(_ctx.stringValue("SubmitIntentionResponse.ErrorMsg"));
+		submitIntentionResponse.setSuccess(_ctx.booleanValue("SubmitIntentionResponse.Success"));
 		submitIntentionResponse.setIntentionBizId(_ctx.stringValue("SubmitIntentionResponse.IntentionBizId"));
 	 
 	 	return submitIntentionResponse;

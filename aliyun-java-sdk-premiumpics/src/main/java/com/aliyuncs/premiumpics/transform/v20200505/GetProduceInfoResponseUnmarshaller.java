@@ -23,9 +23,9 @@ public class GetProduceInfoResponseUnmarshaller {
 	public static GetProduceInfoResponse unmarshall(GetProduceInfoResponse getProduceInfoResponse, UnmarshallerContext _ctx) {
 		
 		getProduceInfoResponse.setRequestId(_ctx.stringValue("GetProduceInfoResponse.RequestId"));
-		getProduceInfoResponse.setSuccess(_ctx.booleanValue("GetProduceInfoResponse.Success"));
-		getProduceInfoResponse.setGoodsId(_ctx.stringValue("GetProduceInfoResponse.GoodsId"));
 		getProduceInfoResponse.setBizId(_ctx.stringValue("GetProduceInfoResponse.BizId"));
+		getProduceInfoResponse.setGoodsId(_ctx.stringValue("GetProduceInfoResponse.GoodsId"));
+		getProduceInfoResponse.setSuccess(_ctx.booleanValue("GetProduceInfoResponse.Success"));
 	 
 	 	return getProduceInfoResponse;
 	}

@@ -23,10 +23,10 @@ public class CreateImageOrderResponseUnmarshaller {
 	public static CreateImageOrderResponse unmarshall(CreateImageOrderResponse createImageOrderResponse, UnmarshallerContext _ctx) {
 		
 		createImageOrderResponse.setRequestId(_ctx.stringValue("CreateImageOrderResponse.RequestId"));
-		createImageOrderResponse.setSuccess(_ctx.booleanValue("CreateImageOrderResponse.Success"));
 		createImageOrderResponse.setErrorMsg(_ctx.stringValue("CreateImageOrderResponse.ErrorMsg"));
 		createImageOrderResponse.setErrorCode(_ctx.stringValue("CreateImageOrderResponse.ErrorCode"));
 		createImageOrderResponse.setOrderId(_ctx.stringValue("CreateImageOrderResponse.OrderId"));
+		createImageOrderResponse.setSuccess(_ctx.booleanValue("CreateImageOrderResponse.Success"));
 	 
 	 	return createImageOrderResponse;
 	}

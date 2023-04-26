@@ -23,11 +23,11 @@ public class DescribeDownloadImageInfoResponseUnmarshaller {
 	public static DescribeDownloadImageInfoResponse unmarshall(DescribeDownloadImageInfoResponse describeDownloadImageInfoResponse, UnmarshallerContext _ctx) {
 		
 		describeDownloadImageInfoResponse.setRequestId(_ctx.stringValue("DescribeDownloadImageInfoResponse.RequestId"));
-		describeDownloadImageInfoResponse.setSuccess(_ctx.booleanValue("DescribeDownloadImageInfoResponse.Success"));
-		describeDownloadImageInfoResponse.setErrorMsg(_ctx.stringValue("DescribeDownloadImageInfoResponse.ErrorMsg"));
-		describeDownloadImageInfoResponse.setErrorCode(_ctx.stringValue("DescribeDownloadImageInfoResponse.ErrorCode"));
-		describeDownloadImageInfoResponse.setImageUrl(_ctx.stringValue("DescribeDownloadImageInfoResponse.ImageUrl"));
 		describeDownloadImageInfoResponse.setAuthorizationUrl(_ctx.stringValue("DescribeDownloadImageInfoResponse.AuthorizationUrl"));
+		describeDownloadImageInfoResponse.setErrorMsg(_ctx.stringValue("DescribeDownloadImageInfoResponse.ErrorMsg"));
+		describeDownloadImageInfoResponse.setImageUrl(_ctx.stringValue("DescribeDownloadImageInfoResponse.ImageUrl"));
+		describeDownloadImageInfoResponse.setErrorCode(_ctx.stringValue("DescribeDownloadImageInfoResponse.ErrorCode"));
+		describeDownloadImageInfoResponse.setSuccess(_ctx.booleanValue("DescribeDownloadImageInfoResponse.Success"));
 	 
 	 	return describeDownloadImageInfoResponse;
 	}
