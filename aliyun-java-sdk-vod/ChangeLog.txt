@@ -1,3 +1,6 @@
+2023-04-26 Version: 2.16.16
+- Api add media storage class.
+
 2023-04-26 Version: 2.16.15
 - Api add media storage class.
 
