@@ -25,8 +25,6 @@ import com.aliyuncs.http.MethodType;
 public class CreateVpdRequest extends RpcAcsRequest<CreateVpdResponse> {
 	   
 
-	private String clientToken;
-
 	private String vpdName;
 
 	private String resourceGroupId;
@@ -39,17 +37,6 @@ public class CreateVpdRequest extends RpcAcsRequest<CreateVpdResponse> {
 	public CreateVpdRequest() {
 		super("eflo", "2022-05-30", "CreateVpd", "eflo");
 		setMethod(MethodType.POST);
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putBodyParameter("ClientToken", clientToken);
-		}
 	}
 
 	public String getVpdName() {
@@ -94,7 +81,6 @@ public class CreateVpdRequest extends RpcAcsRequest<CreateVpdResponse> {
 		if (subnetss != null) {
 			for (int depth1 = 0; depth1 < subnetss.size(); depth1++) {
 				putBodyParameter("Subnets." + (depth1 + 1) + ".RegionId" , subnetss.get(depth1).getRegionId());
-				putBodyParameter("Subnets." + (depth1 + 1) + ".ClientToken" , subnetss.get(depth1).getClientToken());
 				putBodyParameter("Subnets." + (depth1 + 1) + ".ZoneId" , subnetss.get(depth1).getZoneId());
 				putBodyParameter("Subnets." + (depth1 + 1) + ".Cidr" , subnetss.get(depth1).getCidr());
 				putBodyParameter("Subnets." + (depth1 + 1) + ".SubnetName" , subnetss.get(depth1).getSubnetName());
@@ -121,8 +107,6 @@ public class CreateVpdRequest extends RpcAcsRequest<CreateVpdResponse> {
 
 		private String regionId;
 
-		private String clientToken;
-
 		private String zoneId;
 
 		private String cidr;
@@ -137,14 +121,6 @@ public class CreateVpdRequest extends RpcAcsRequest<CreateVpdResponse> {
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
-		}
-
-		public String getClientToken() {
-			return this.clientToken;
-		}
-
-		public void setClientToken(String clientToken) {
-			this.clientToken = clientToken;
 		}
 
 		public String getZoneId() {

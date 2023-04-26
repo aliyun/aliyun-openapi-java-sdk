@@ -26,8 +26,6 @@ public class UnAssignPrivateIpAddressRequest extends RpcAcsRequest<UnAssignPriva
 
 	private String subnetId;
 
-	private String clientToken;
-
 	private String privateIpAddress;
 
 	private String ipName;
@@ -46,17 +44,6 @@ public class UnAssignPrivateIpAddressRequest extends RpcAcsRequest<UnAssignPriva
 		this.subnetId = subnetId;
 		if(subnetId != null){
 			putBodyParameter("SubnetId", subnetId);
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putBodyParameter("ClientToken", clientToken);
 		}
 	}
 

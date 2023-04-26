@@ -43,6 +43,8 @@ public class CreateVccRequest extends RpcAcsRequest<CreateVccResponse> {
 
 	private String connectionType;
 
+	private Integer bandwidth;
+
 	private String vSwitchId;
 
 	private String vpdId;
@@ -154,6 +156,17 @@ public class CreateVccRequest extends RpcAcsRequest<CreateVccResponse> {
 		this.connectionType = connectionType;
 		if(connectionType != null){
 			putBodyParameter("ConnectionType", connectionType);
+		}
+	}
+
+	public Integer getBandwidth() {
+		return this.bandwidth;
+	}
+
+	public void setBandwidth(Integer bandwidth) {
+		this.bandwidth = bandwidth;
+		if(bandwidth != null){
+			putBodyParameter("Bandwidth", bandwidth.toString());
 		}
 	}
 

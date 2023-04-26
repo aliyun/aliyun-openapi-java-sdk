@@ -26,8 +26,6 @@ public class UpdateSubnetRequest extends RpcAcsRequest<UpdateSubnetResponse> {
 
 	private String subnetId;
 
-	private String description;
-
 	private String vpdId;
 
 	private String zoneId;
@@ -46,17 +44,6 @@ public class UpdateSubnetRequest extends RpcAcsRequest<UpdateSubnetResponse> {
 		this.subnetId = subnetId;
 		if(subnetId != null){
 			putBodyParameter("SubnetId", subnetId);
-		}
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putBodyParameter("Description", description);
 		}
 	}
 

@@ -26,8 +26,6 @@ public class GetSubnetRequest extends RpcAcsRequest<GetSubnetResponse> {
 
 	private String subnetId;
 
-	private String clientToken;
-
 	private String vpdId;
 	public GetSubnetRequest() {
 		super("eflo", "2022-05-30", "GetSubnet", "eflo");
@@ -42,17 +40,6 @@ public class GetSubnetRequest extends RpcAcsRequest<GetSubnetResponse> {
 		this.subnetId = subnetId;
 		if(subnetId != null){
 			putBodyParameter("SubnetId", subnetId);
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putBodyParameter("ClientToken", clientToken);
 		}
 	}
 

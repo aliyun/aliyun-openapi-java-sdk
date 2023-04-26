@@ -26,7 +26,7 @@ public class AssignPrivateIpAddressRequest extends RpcAcsRequest<AssignPrivateIp
 
 	private String subnetId;
 
-	private String clientToken;
+	private Boolean skipConfig;
 
 	private Boolean assignMac;
 
@@ -49,14 +49,14 @@ public class AssignPrivateIpAddressRequest extends RpcAcsRequest<AssignPrivateIp
 		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
+	public Boolean getSkipConfig() {
+		return this.skipConfig;
 	}
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putBodyParameter("ClientToken", clientToken);
+	public void setSkipConfig(Boolean skipConfig) {
+		this.skipConfig = skipConfig;
+		if(skipConfig != null){
+			putBodyParameter("SkipConfig", skipConfig.toString());
 		}
 	}
 

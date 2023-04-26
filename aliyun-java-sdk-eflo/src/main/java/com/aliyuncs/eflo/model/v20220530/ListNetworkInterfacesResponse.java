@@ -113,6 +113,8 @@ public class ListNetworkInterfacesResponse extends AcsResponse {
 
 			private String ncType;
 
+			private String networkInterfaceName;
+
 			private List<PrivateIpAddressMacGroupItem> privateIpAddressMacGroup;
 
 			private List<String> ethernet;
@@ -215,6 +217,14 @@ public class ListNetworkInterfacesResponse extends AcsResponse {
 
 			public void setNcType(String ncType) {
 				this.ncType = ncType;
+			}
+
+			public String getNetworkInterfaceName() {
+				return this.networkInterfaceName;
+			}
+
+			public void setNetworkInterfaceName(String networkInterfaceName) {
+				this.networkInterfaceName = networkInterfaceName;
 			}
 
 			public List<PrivateIpAddressMacGroupItem> getPrivateIpAddressMacGroup() {
@@ -349,11 +359,11 @@ public class ListNetworkInterfacesResponse extends AcsResponse {
 
 				private String subnetId;
 
-				private String name;
+				private String subnetName;
 
 				private String cidr;
 
-				private String gmtCreate;
+				private String createTime;
 
 				public String getSubnetId() {
 					return this.subnetId;
@@ -363,12 +373,12 @@ public class ListNetworkInterfacesResponse extends AcsResponse {
 					this.subnetId = subnetId;
 				}
 
-				public String getName() {
-					return this.name;
+				public String getSubnetName() {
+					return this.subnetName;
 				}
 
-				public void setName(String name) {
-					this.name = name;
+				public void setSubnetName(String subnetName) {
+					this.subnetName = subnetName;
 				}
 
 				public String getCidr() {
@@ -379,12 +389,12 @@ public class ListNetworkInterfacesResponse extends AcsResponse {
 					this.cidr = cidr;
 				}
 
-				public String getGmtCreate() {
-					return this.gmtCreate;
+				public String getCreateTime() {
+					return this.createTime;
 				}
 
-				public void setGmtCreate(String gmtCreate) {
-					this.gmtCreate = gmtCreate;
+				public void setCreateTime(String createTime) {
+					this.createTime = createTime;
 				}
 			}
 		}

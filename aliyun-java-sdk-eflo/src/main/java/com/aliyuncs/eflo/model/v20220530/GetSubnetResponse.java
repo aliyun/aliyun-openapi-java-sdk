@@ -83,8 +83,6 @@ public class GetSubnetResponse extends AcsResponse {
 
 		private String cidr;
 
-		private String description;
-
 		private String vpdId;
 
 		private String type;
@@ -97,9 +95,9 @@ public class GetSubnetResponse extends AcsResponse {
 
 		private Long lbCount;
 
-		private Integer availableIps;
-
 		private String resourceGroupId;
+
+		private Integer availableIps;
 
 		private List<Tag> tags;
 
@@ -169,14 +167,6 @@ public class GetSubnetResponse extends AcsResponse {
 			this.cidr = cidr;
 		}
 
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
 		public String getVpdId() {
 			return this.vpdId;
 		}
@@ -225,20 +215,20 @@ public class GetSubnetResponse extends AcsResponse {
 			this.lbCount = lbCount;
 		}
 
-		public Integer getAvailableIps() {
-			return this.availableIps;
-		}
-
-		public void setAvailableIps(Integer availableIps) {
-			this.availableIps = availableIps;
-		}
-
 		public String getResourceGroupId() {
 			return this.resourceGroupId;
 		}
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public Integer getAvailableIps() {
+			return this.availableIps;
+		}
+
+		public void setAvailableIps(Integer availableIps) {
+			this.availableIps = availableIps;
 		}
 
 		public List<Tag> getTags() {

@@ -52,6 +52,7 @@ public class ListNetworkInterfacesResponseUnmarshaller {
 			dataItem.setCreateTime(_ctx.stringValue("ListNetworkInterfacesResponse.Content.Data["+ i +"].CreateTime"));
 			dataItem.setQuota(_ctx.integerValue("ListNetworkInterfacesResponse.Content.Data["+ i +"].Quota"));
 			dataItem.setNcType(_ctx.stringValue("ListNetworkInterfacesResponse.Content.Data["+ i +"].NcType"));
+			dataItem.setNetworkInterfaceName(_ctx.stringValue("ListNetworkInterfacesResponse.Content.Data["+ i +"].NetworkInterfaceName"));
 
 			List<String> ethernet = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListNetworkInterfacesResponse.Content.Data["+ i +"].Ethernet.Length"); j++) {
@@ -68,9 +69,9 @@ public class ListNetworkInterfacesResponseUnmarshaller {
 
 			SubnetBaseInfo subnetBaseInfo = new SubnetBaseInfo();
 			subnetBaseInfo.setSubnetId(_ctx.stringValue("ListNetworkInterfacesResponse.Content.Data["+ i +"].SubnetBaseInfo.SubnetId"));
-			subnetBaseInfo.setName(_ctx.stringValue("ListNetworkInterfacesResponse.Content.Data["+ i +"].SubnetBaseInfo.Name"));
+			subnetBaseInfo.setSubnetName(_ctx.stringValue("ListNetworkInterfacesResponse.Content.Data["+ i +"].SubnetBaseInfo.SubnetName"));
 			subnetBaseInfo.setCidr(_ctx.stringValue("ListNetworkInterfacesResponse.Content.Data["+ i +"].SubnetBaseInfo.Cidr"));
-			subnetBaseInfo.setGmtCreate(_ctx.stringValue("ListNetworkInterfacesResponse.Content.Data["+ i +"].SubnetBaseInfo.GmtCreate"));
+			subnetBaseInfo.setCreateTime(_ctx.stringValue("ListNetworkInterfacesResponse.Content.Data["+ i +"].SubnetBaseInfo.CreateTime"));
 			dataItem.setSubnetBaseInfo(subnetBaseInfo);
 
 			List<PrivateIpAddressMacGroupItem> privateIpAddressMacGroup = new ArrayList<PrivateIpAddressMacGroupItem>();

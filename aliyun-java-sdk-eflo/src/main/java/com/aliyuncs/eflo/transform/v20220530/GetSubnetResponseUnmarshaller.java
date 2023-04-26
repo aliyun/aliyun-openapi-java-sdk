@@ -41,15 +41,14 @@ public class GetSubnetResponseUnmarshaller {
 		content.setSubnetId(_ctx.stringValue("GetSubnetResponse.Content.SubnetId"));
 		content.setSubnetName(_ctx.stringValue("GetSubnetResponse.Content.SubnetName"));
 		content.setCidr(_ctx.stringValue("GetSubnetResponse.Content.Cidr"));
-		content.setDescription(_ctx.stringValue("GetSubnetResponse.Content.Description"));
 		content.setVpdId(_ctx.stringValue("GetSubnetResponse.Content.VpdId"));
 		content.setType(_ctx.stringValue("GetSubnetResponse.Content.Type"));
 		content.setStatus(_ctx.stringValue("GetSubnetResponse.Content.Status"));
 		content.setMessage(_ctx.stringValue("GetSubnetResponse.Content.Message"));
 		content.setNcCount(_ctx.longValue("GetSubnetResponse.Content.NcCount"));
 		content.setLbCount(_ctx.longValue("GetSubnetResponse.Content.LbCount"));
-		content.setAvailableIps(_ctx.integerValue("GetSubnetResponse.Content.AvailableIps"));
 		content.setResourceGroupId(_ctx.stringValue("GetSubnetResponse.Content.ResourceGroupId"));
+		content.setAvailableIps(_ctx.integerValue("GetSubnetResponse.Content.AvailableIps"));
 
 		VpdBaseInfo vpdBaseInfo = new VpdBaseInfo();
 		vpdBaseInfo.setVpdId(_ctx.stringValue("GetSubnetResponse.Content.VpdBaseInfo.VpdId"));
