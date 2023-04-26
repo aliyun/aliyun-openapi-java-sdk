@@ -1,3 +1,6 @@
+2023-04-26 Version: 5.10.56
+- Adjust migrate instance.
+
 2023-04-24 Version: 4.24.62
 - ModifyDiskSpec add PerformanceControlOptions.
 
