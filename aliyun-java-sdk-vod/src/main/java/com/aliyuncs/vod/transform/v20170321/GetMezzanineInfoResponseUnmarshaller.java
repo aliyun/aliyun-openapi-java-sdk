@@ -45,6 +45,9 @@ public class GetMezzanineInfoResponseUnmarshaller {
 		mezzanine.setCRC64(_ctx.stringValue("GetMezzanineInfoResponse.Mezzanine.CRC64"));
 		mezzanine.setDuration(_ctx.stringValue("GetMezzanineInfoResponse.Mezzanine.Duration"));
 		mezzanine.setFps(_ctx.stringValue("GetMezzanineInfoResponse.Mezzanine.Fps"));
+		mezzanine.setStorageClass(_ctx.stringValue("GetMezzanineInfoResponse.Mezzanine.StorageClass"));
+		mezzanine.setRestoreStatus(_ctx.stringValue("GetMezzanineInfoResponse.Mezzanine.RestoreStatus"));
+		mezzanine.setRestoreExpiration(_ctx.stringValue("GetMezzanineInfoResponse.Mezzanine.RestoreExpiration"));
 
 		List<AudioStream> audioStreamList = new ArrayList<AudioStream>();
 		for (int i = 0; i < _ctx.lengthValue("GetMezzanineInfoResponse.Mezzanine.AudioStreamList.Length"); i++) {

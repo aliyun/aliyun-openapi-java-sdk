@@ -75,6 +75,12 @@ public class GetMezzanineInfoResponse extends AcsResponse {
 
 		private String fps;
 
+		private String storageClass;
+
+		private String restoreStatus;
+
+		private String restoreExpiration;
+
 		private List<AudioStream> audioStreamList;
 
 		private List<VideoStream> videoStreamList;
@@ -189,6 +195,30 @@ public class GetMezzanineInfoResponse extends AcsResponse {
 
 		public void setFps(String fps) {
 			this.fps = fps;
+		}
+
+		public String getStorageClass() {
+			return this.storageClass;
+		}
+
+		public void setStorageClass(String storageClass) {
+			this.storageClass = storageClass;
+		}
+
+		public String getRestoreStatus() {
+			return this.restoreStatus;
+		}
+
+		public void setRestoreStatus(String restoreStatus) {
+			this.restoreStatus = restoreStatus;
+		}
+
+		public String getRestoreExpiration() {
+			return this.restoreExpiration;
+		}
+
+		public void setRestoreExpiration(String restoreExpiration) {
+			this.restoreExpiration = restoreExpiration;
 		}
 
 		public List<AudioStream> getAudioStreamList() {

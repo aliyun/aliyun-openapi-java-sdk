@@ -101,6 +101,12 @@ public class GetVideoInfoResponse extends AcsResponse {
 
 		private String modifyTime;
 
+		private String storageClass;
+
+		private String restoreStatus;
+
+		private String restoreExpiration;
+
 		private List<Thumbnail> thumbnailList;
 
 		private List<String> snapshots;
@@ -279,6 +285,30 @@ public class GetVideoInfoResponse extends AcsResponse {
 
 		public void setModifyTime(String modifyTime) {
 			this.modifyTime = modifyTime;
+		}
+
+		public String getStorageClass() {
+			return this.storageClass;
+		}
+
+		public void setStorageClass(String storageClass) {
+			this.storageClass = storageClass;
+		}
+
+		public String getRestoreStatus() {
+			return this.restoreStatus;
+		}
+
+		public void setRestoreStatus(String restoreStatus) {
+			this.restoreStatus = restoreStatus;
+		}
+
+		public String getRestoreExpiration() {
+			return this.restoreExpiration;
+		}
+
+		public void setRestoreExpiration(String restoreExpiration) {
+			this.restoreExpiration = restoreExpiration;
 		}
 
 		public List<Thumbnail> getThumbnailList() {

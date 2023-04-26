@@ -19,6 +19,11 @@ import java.util.List;
 
 import com.aliyuncs.vod.model.v20170321.SearchMediaResponse;
 import com.aliyuncs.vod.model.v20170321.SearchMediaResponse.Media;
+import com.aliyuncs.vod.model.v20170321.SearchMediaResponse.Media.AiData;
+import com.aliyuncs.vod.model.v20170321.SearchMediaResponse.Media.AiData.AiLabelInfoItem;
+import com.aliyuncs.vod.model.v20170321.SearchMediaResponse.Media.AiData.AiLabelInfoItem.OccurrencesItem;
+import com.aliyuncs.vod.model.v20170321.SearchMediaResponse.Media.AiData.OcrInfoItem;
+import com.aliyuncs.vod.model.v20170321.SearchMediaResponse.Media.AiRoughData;
 import com.aliyuncs.vod.model.v20170321.SearchMediaResponse.Media.AttachedMedia;
 import com.aliyuncs.vod.model.v20170321.SearchMediaResponse.Media.AttachedMedia.Category;
 import com.aliyuncs.vod.model.v20170321.SearchMediaResponse.Media.Audio;
@@ -70,6 +75,9 @@ public class SearchMediaResponseUnmarshaller {
 			video.setTranscodeMode(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].Video.TranscodeMode"));
 			video.setAuditAIResult(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].Video.AuditAIResult"));
 			video.setPreprocessStatus(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].Video.PreprocessStatus"));
+			video.setRestoreExpiration(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].Video.RestoreExpiration"));
+			video.setRestoreStatus(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].Video.RestoreStatus"));
+			video.setStorageClass(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].Video.StorageClass"));
 			video.setSize(_ctx.longValue("SearchMediaResponse.MediaList["+ i +"].Video.Size"));
 			video.setDuration(_ctx.floatValue("SearchMediaResponse.MediaList["+ i +"].Video.Duration"));
 			video.setTitle(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].Video.Title"));
@@ -133,6 +141,9 @@ public class SearchMediaResponseUnmarshaller {
 			audio.setCustomMediaInfo(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].Audio.CustomMediaInfo"));
 			audio.setAuditAIResult(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].Audio.AuditAIResult"));
 			audio.setPreprocessStatus(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].Audio.PreprocessStatus"));
+			audio.setRestoreExpiration(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].Audio.RestoreExpiration"));
+			audio.setRestoreStatus(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].Audio.RestoreStatus"));
+			audio.setStorageClass(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].Audio.StorageClass"));
 			audio.setSize(_ctx.longValue("SearchMediaResponse.MediaList["+ i +"].Audio.Size"));
 			audio.setDuration(_ctx.floatValue("SearchMediaResponse.MediaList["+ i +"].Audio.Duration"));
 			audio.setTitle(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].Audio.Title"));
@@ -220,6 +231,49 @@ public class SearchMediaResponseUnmarshaller {
 			}
 			attachedMedia.setCategories(categories);
 			media.setAttachedMedia(attachedMedia);
+
+			AiData aiData = new AiData();
+
+			List<AiLabelInfoItem> aiLabelInfo = new ArrayList<AiLabelInfoItem>();
+			for (int j = 0; j < _ctx.lengthValue("SearchMediaResponse.MediaList["+ i +"].AiData.AiLabelInfo.Length"); j++) {
+				AiLabelInfoItem aiLabelInfoItem = new AiLabelInfoItem();
+				aiLabelInfoItem.setCategory(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].AiData.AiLabelInfo["+ j +"].Category"));
+				aiLabelInfoItem.setLabelName(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].AiData.AiLabelInfo["+ j +"].LabelName"));
+				aiLabelInfoItem.setLabelId(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].AiData.AiLabelInfo["+ j +"].LabelId"));
+
+				List<OccurrencesItem> occurrences = new ArrayList<OccurrencesItem>();
+				for (int k = 0; k < _ctx.lengthValue("SearchMediaResponse.MediaList["+ i +"].AiData.AiLabelInfo["+ j +"].Occurrences.Length"); k++) {
+					OccurrencesItem occurrencesItem = new OccurrencesItem();
+					occurrencesItem.setScore(_ctx.doubleValue("SearchMediaResponse.MediaList["+ i +"].AiData.AiLabelInfo["+ j +"].Occurrences["+ k +"].Score"));
+					occurrencesItem.setFrom(_ctx.doubleValue("SearchMediaResponse.MediaList["+ i +"].AiData.AiLabelInfo["+ j +"].Occurrences["+ k +"].From"));
+					occurrencesItem.setTo(_ctx.doubleValue("SearchMediaResponse.MediaList["+ i +"].AiData.AiLabelInfo["+ j +"].Occurrences["+ k +"].To"));
+
+					occurrences.add(occurrencesItem);
+				}
+				aiLabelInfoItem.setOccurrences(occurrences);
+
+				aiLabelInfo.add(aiLabelInfoItem);
+			}
+			aiData.setAiLabelInfo(aiLabelInfo);
+
+			List<OcrInfoItem> ocrInfo = new ArrayList<OcrInfoItem>();
+			for (int j = 0; j < _ctx.lengthValue("SearchMediaResponse.MediaList["+ i +"].AiData.OcrInfo.Length"); j++) {
+				OcrInfoItem ocrInfoItem = new OcrInfoItem();
+				ocrInfoItem.setFrom(_ctx.doubleValue("SearchMediaResponse.MediaList["+ i +"].AiData.OcrInfo["+ j +"].From"));
+				ocrInfoItem.setTo(_ctx.doubleValue("SearchMediaResponse.MediaList["+ i +"].AiData.OcrInfo["+ j +"].To"));
+				ocrInfoItem.setContent(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].AiData.OcrInfo["+ j +"].Content"));
+
+				ocrInfo.add(ocrInfoItem);
+			}
+			aiData.setOcrInfo(ocrInfo);
+			media.setAiData(aiData);
+
+			AiRoughData aiRoughData = new AiRoughData();
+			aiRoughData.setSaveType(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].AiRoughData.SaveType"));
+			aiRoughData.setStatus(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].AiRoughData.Status"));
+			aiRoughData.setAiJobId(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].AiRoughData.AiJobId"));
+			aiRoughData.setAiCategory(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].AiRoughData.AiCategory"));
+			media.setAiRoughData(aiRoughData);
 
 			mediaList.add(media);
 		}
