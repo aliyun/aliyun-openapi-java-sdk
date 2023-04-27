@@ -1,3 +1,6 @@
+2023-04-27 Version: 4.7.6
+- Add Api. UploadDataV4.
+
 2023-04-12 Version: 4.7.5
 - Add Api.
 
