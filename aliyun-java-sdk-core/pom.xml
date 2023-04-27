@@ -132,7 +132,7 @@
         <dependency>
             <groupId>org.jacoco</groupId>
             <artifactId>org.jacoco.agent</artifactId>
-            <version>0.8.8</version>
+            <version>0.8.10</version>
             <classifier>runtime</classifier>
         </dependency>
         <dependency>
