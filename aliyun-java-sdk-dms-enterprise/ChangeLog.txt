@@ -1,3 +1,7 @@
+2023-04-27 Version: 1.47.0
+- Support GetDataExportPreCheckDetail API.
+- Modify GetOpLog API.
+
 2023-04-24 Version: 1.46.0
 - Supported GetDatabaseExportOrderDetail,CreateDatabaseExportOrder,CreateDataExportOrder API.
 - Supported CreateDataTrackOrder,GetDataTrackJobDegree,GetDataTrackJobTableMeta,GetDataTrackOrderDetail,SearchDataTrackResult,DownloadDataTrackResult,QueryDataTrackResultDownloadStatus API.

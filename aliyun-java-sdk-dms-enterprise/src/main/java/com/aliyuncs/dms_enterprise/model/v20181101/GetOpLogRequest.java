@@ -25,6 +25,8 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class GetOpLogRequest extends RpcAcsRequest<GetOpLogResponse> {
 	   
 
+	private String userNick;
+
 	private String startTime;
 
 	private Long tid;
@@ -36,6 +38,8 @@ public class GetOpLogRequest extends RpcAcsRequest<GetOpLogResponse> {
 	private String module;
 
 	private String endTime;
+
+	private String databaseName;
 	public GetOpLogRequest() {
 		super("dms-enterprise", "2018-11-01", "GetOpLog", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -43,6 +47,17 @@ public class GetOpLogRequest extends RpcAcsRequest<GetOpLogResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getUserNick() {
+		return this.userNick;
+	}
+
+	public void setUserNick(String userNick) {
+		this.userNick = userNick;
+		if(userNick != null){
+			putQueryParameter("UserNick", userNick);
+		}
 	}
 
 	public String getStartTime() {
@@ -108,6 +123,17 @@ public class GetOpLogRequest extends RpcAcsRequest<GetOpLogResponse> {
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public String getDatabaseName() {
+		return this.databaseName;
+	}
+
+	public void setDatabaseName(String databaseName) {
+		this.databaseName = databaseName;
+		if(databaseName != null){
+			putQueryParameter("DatabaseName", databaseName);
 		}
 	}
 
