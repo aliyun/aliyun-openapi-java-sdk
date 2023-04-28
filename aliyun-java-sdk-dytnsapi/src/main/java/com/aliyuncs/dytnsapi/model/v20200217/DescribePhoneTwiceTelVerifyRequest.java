@@ -29,6 +29,8 @@ public class DescribePhoneTwiceTelVerifyRequest extends RpcAcsRequest<DescribePh
 
 	private String startTime;
 
+	private String extendFunction;
+
 	private String mask;
 
 	private String resourceOwnerAccount;
@@ -66,6 +68,17 @@ public class DescribePhoneTwiceTelVerifyRequest extends RpcAcsRequest<DescribePh
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getExtendFunction() {
+		return this.extendFunction;
+	}
+
+	public void setExtendFunction(String extendFunction) {
+		this.extendFunction = extendFunction;
+		if(extendFunction != null){
+			putQueryParameter("ExtendFunction", extendFunction);
 		}
 	}
 

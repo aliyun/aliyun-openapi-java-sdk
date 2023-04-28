@@ -1,3 +1,15 @@
+2023-04-28 Version: 1.1.5
+- Change api backend.
+- Modify error code.
+- Delete headers module in response.
+- Add return param .
+- Fixed bug.
+- Change to brick.
+- Supported for hiding old api.
+- Access bill.
+- Improve error code.
+- Add credit verify.
+
 2023-03-01 Version: 1.1.4
 - Change param invisible.
 

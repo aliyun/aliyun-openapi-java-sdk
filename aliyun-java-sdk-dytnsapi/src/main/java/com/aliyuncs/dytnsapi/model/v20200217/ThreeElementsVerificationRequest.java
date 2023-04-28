@@ -27,6 +27,8 @@ public class ThreeElementsVerificationRequest extends RpcAcsRequest<ThreeElement
 
 	private Long resourceOwnerId;
 
+	private String extendFunction;
+
 	private String certCode;
 
 	private String mask;
@@ -57,6 +59,17 @@ public class ThreeElementsVerificationRequest extends RpcAcsRequest<ThreeElement
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getExtendFunction() {
+		return this.extendFunction;
+	}
+
+	public void setExtendFunction(String extendFunction) {
+		this.extendFunction = extendFunction;
+		if(extendFunction != null){
+			putQueryParameter("ExtendFunction", extendFunction);
 		}
 	}
 
