@@ -147,6 +147,8 @@ public class DescribePhysicalConnectionsResponse extends AcsResponse {
 
 		private String resourceGroupId;
 
+		private String adDetailLocation;
+
 		public String getType() {
 			return this.type;
 		}
@@ -425,6 +427,14 @@ public class DescribePhysicalConnectionsResponse extends AcsResponse {
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getAdDetailLocation() {
+			return this.adDetailLocation;
+		}
+
+		public void setAdDetailLocation(String adDetailLocation) {
+			this.adDetailLocation = adDetailLocation;
 		}
 	}
 
