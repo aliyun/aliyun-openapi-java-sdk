@@ -27,13 +27,13 @@ public class LockSecretNoRequest extends RpcAcsRequest<LockSecretNoResponse> {
 
 	private Long resourceOwnerId;
 
+	private String secretNo;
+
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
 
 	private String poolKey;
-
-	private String secretNo;
 	public LockSecretNoRequest() {
 		super("Dyplsapi", "2017-05-25", "LockSecretNo");
 		setMethod(MethodType.POST);
@@ -51,6 +51,17 @@ public class LockSecretNoRequest extends RpcAcsRequest<LockSecretNoResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getSecretNo() {
+		return this.secretNo;
+	}
+
+	public void setSecretNo(String secretNo) {
+		this.secretNo = secretNo;
+		if(secretNo != null){
+			putQueryParameter("SecretNo", secretNo);
 		}
 	}
 
@@ -84,17 +95,6 @@ public class LockSecretNoRequest extends RpcAcsRequest<LockSecretNoResponse> {
 		this.poolKey = poolKey;
 		if(poolKey != null){
 			putQueryParameter("PoolKey", poolKey);
-		}
-	}
-
-	public String getSecretNo() {
-		return this.secretNo;
-	}
-
-	public void setSecretNo(String secretNo) {
-		this.secretNo = secretNo;
-		if(secretNo != null){
-			putQueryParameter("SecretNo", secretNo);
 		}
 	}
 

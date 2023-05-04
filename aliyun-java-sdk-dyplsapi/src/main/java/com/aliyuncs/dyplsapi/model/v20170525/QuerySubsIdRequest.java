@@ -27,13 +27,13 @@ public class QuerySubsIdRequest extends RpcAcsRequest<QuerySubsIdResponse> {
 
 	private Long resourceOwnerId;
 
+	private String phoneNoX;
+
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
 
 	private String poolKey;
-
-	private String phoneNoX;
 	public QuerySubsIdRequest() {
 		super("Dyplsapi", "2017-05-25", "QuerySubsId");
 		setMethod(MethodType.POST);
@@ -51,6 +51,17 @@ public class QuerySubsIdRequest extends RpcAcsRequest<QuerySubsIdResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getPhoneNoX() {
+		return this.phoneNoX;
+	}
+
+	public void setPhoneNoX(String phoneNoX) {
+		this.phoneNoX = phoneNoX;
+		if(phoneNoX != null){
+			putQueryParameter("PhoneNoX", phoneNoX);
 		}
 	}
 
@@ -84,17 +95,6 @@ public class QuerySubsIdRequest extends RpcAcsRequest<QuerySubsIdResponse> {
 		this.poolKey = poolKey;
 		if(poolKey != null){
 			putQueryParameter("PoolKey", poolKey);
-		}
-	}
-
-	public String getPhoneNoX() {
-		return this.phoneNoX;
-	}
-
-	public void setPhoneNoX(String phoneNoX) {
-		this.phoneNoX = phoneNoX;
-		if(phoneNoX != null){
-			putQueryParameter("PhoneNoX", phoneNoX);
 		}
 	}
 

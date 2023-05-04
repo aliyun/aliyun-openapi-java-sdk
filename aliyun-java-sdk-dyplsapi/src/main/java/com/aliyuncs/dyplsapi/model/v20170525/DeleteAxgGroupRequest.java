@@ -22,20 +22,20 @@ import com.aliyuncs.dyplsapi.Endpoint;
  * @author auto create
  * @version 
  */
-public class UnlockSecretNoRequest extends RpcAcsRequest<UnlockSecretNoResponse> {
+public class DeleteAxgGroupRequest extends RpcAcsRequest<DeleteAxgGroupResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String secretNo;
-
 	private String resourceOwnerAccount;
+
+	private Long groupId;
 
 	private Long ownerId;
 
 	private String poolKey;
-	public UnlockSecretNoRequest() {
-		super("Dyplsapi", "2017-05-25", "UnlockSecretNo");
+	public DeleteAxgGroupRequest() {
+		super("Dyplsapi", "2017-05-25", "DeleteAxgGroup");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -54,17 +54,6 @@ public class UnlockSecretNoRequest extends RpcAcsRequest<UnlockSecretNoResponse>
 		}
 	}
 
-	public String getSecretNo() {
-		return this.secretNo;
-	}
-
-	public void setSecretNo(String secretNo) {
-		this.secretNo = secretNo;
-		if(secretNo != null){
-			putQueryParameter("SecretNo", secretNo);
-		}
-	}
-
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -73,6 +62,17 @@ public class UnlockSecretNoRequest extends RpcAcsRequest<UnlockSecretNoResponse>
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public Long getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(Long groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId.toString());
 		}
 	}
 
@@ -99,8 +99,8 @@ public class UnlockSecretNoRequest extends RpcAcsRequest<UnlockSecretNoResponse>
 	}
 
 	@Override
-	public Class<UnlockSecretNoResponse> getResponseClass() {
-		return UnlockSecretNoResponse.class;
+	public Class<DeleteAxgGroupResponse> getResponseClass() {
+		return DeleteAxgGroupResponse.class;
 	}
 
 }
