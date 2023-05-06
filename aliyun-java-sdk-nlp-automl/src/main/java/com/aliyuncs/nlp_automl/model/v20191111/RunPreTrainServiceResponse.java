@@ -28,6 +28,8 @@ public class RunPreTrainServiceResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Integer billingCount;
+
 	public String getPredictResult() {
 		return this.predictResult;
 	}
@@ -42,6 +44,14 @@ public class RunPreTrainServiceResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getBillingCount() {
+		return this.billingCount;
+	}
+
+	public void setBillingCount(Integer billingCount) {
+		this.billingCount = billingCount;
 	}
 
 	@Override

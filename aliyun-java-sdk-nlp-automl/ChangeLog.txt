@@ -1,3 +1,6 @@
+2023-05-06 Version: 0.0.13
+- Add The billingCount return value to the RunPreTrainService Api.
+
 2023-03-23 Version: 0.0.12
 - Add FindUserReport4Alinlp Api.
 

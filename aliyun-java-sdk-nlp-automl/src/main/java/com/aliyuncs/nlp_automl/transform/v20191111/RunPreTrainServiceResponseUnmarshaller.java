@@ -24,6 +24,7 @@ public class RunPreTrainServiceResponseUnmarshaller {
 		
 		runPreTrainServiceResponse.setRequestId(_ctx.stringValue("RunPreTrainServiceResponse.RequestId"));
 		runPreTrainServiceResponse.setPredictResult(_ctx.stringValue("RunPreTrainServiceResponse.PredictResult"));
+		runPreTrainServiceResponse.setBillingCount(_ctx.integerValue("RunPreTrainServiceResponse.BillingCount"));
 	 
 	 	return runPreTrainServiceResponse;
 	}
