@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ccc.model.v20200701.ListMultiChannelRecordingsResponse;
 import com.aliyuncs.ccc.model.v20200701.ListMultiChannelRecordingsResponse.RecordingDTO;
+import com.aliyuncs.ccc.model.v20200701.ListMultiChannelRecordingsResponse.RecordingDTO.HoldTimeSegment;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -44,6 +45,16 @@ public class ListMultiChannelRecordingsResponseUnmarshaller {
 			recordingDTO.setSkillGroupId(_ctx.stringValue("ListMultiChannelRecordingsResponse.Data["+ i +"].SkillGroupId"));
 			recordingDTO.setRamId(_ctx.stringValue("ListMultiChannelRecordingsResponse.Data["+ i +"].RamId"));
 			recordingDTO.setAgentChannelId(_ctx.stringValue("ListMultiChannelRecordingsResponse.Data["+ i +"].AgentChannelId"));
+
+			List<HoldTimeSegment> holdTimeSegments = new ArrayList<HoldTimeSegment>();
+			for (int j = 0; j < _ctx.lengthValue("ListMultiChannelRecordingsResponse.Data["+ i +"].HoldTimeSegments.Length"); j++) {
+				HoldTimeSegment holdTimeSegment = new HoldTimeSegment();
+				holdTimeSegment.setStartTime(_ctx.longValue("ListMultiChannelRecordingsResponse.Data["+ i +"].HoldTimeSegments["+ j +"].StartTime"));
+				holdTimeSegment.setEndTime(_ctx.longValue("ListMultiChannelRecordingsResponse.Data["+ i +"].HoldTimeSegments["+ j +"].EndTime"));
+
+				holdTimeSegments.add(holdTimeSegment);
+			}
+			recordingDTO.setHoldTimeSegments(holdTimeSegments);
 
 			data.add(recordingDTO);
 		}
