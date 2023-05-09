@@ -49,6 +49,7 @@ public class QueryFigureClustersResponseUnmarshaller {
 		
 		queryFigureClustersResponse.setRequestId(_ctx.stringValue("QueryFigureClustersResponse.RequestId"));
 		queryFigureClustersResponse.setNextToken(_ctx.stringValue("QueryFigureClustersResponse.NextToken"));
+		queryFigureClustersResponse.setTotalCount(_ctx.longValue("QueryFigureClustersResponse.TotalCount"));
 
 		List<FigureClustersItem> figureClusters = new ArrayList<FigureClustersItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryFigureClustersResponse.FigureClusters.Length"); i++) {

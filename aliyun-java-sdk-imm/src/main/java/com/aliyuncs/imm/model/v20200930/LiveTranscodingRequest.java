@@ -33,8 +33,6 @@ public class LiveTranscodingRequest extends RpcAcsRequest<LiveTranscodingRespons
 	@SerializedName("credentialConfig")
 	private CredentialConfig credentialConfig;
 
-	private String token;
-
 	private String sourceURI;
 	public LiveTranscodingRequest() {
 		super("imm", "2020-09-30", "LiveTranscoding", "imm");
@@ -65,17 +63,6 @@ public class LiveTranscodingRequest extends RpcAcsRequest<LiveTranscodingRespons
 		if (credentialConfig != null) {
 			putQueryParameter("CredentialConfig" , new Gson().toJson(credentialConfig));
 		}	
-	}
-
-	public String getToken() {
-		return this.token;
-	}
-
-	public void setToken(String token) {
-		this.token = token;
-		if(token != null){
-			putQueryParameter("Token", token);
-		}
 	}
 
 	public String getSourceURI() {

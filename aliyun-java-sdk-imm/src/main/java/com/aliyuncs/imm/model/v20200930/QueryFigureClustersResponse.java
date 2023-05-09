@@ -30,6 +30,8 @@ public class QueryFigureClustersResponse extends AcsResponse {
 
 	private String nextToken;
 
+	private Long totalCount;
+
 	private List<FigureClustersItem> figureClusters;
 
 	public String getRequestId() {
@@ -46,6 +48,14 @@ public class QueryFigureClustersResponse extends AcsResponse {
 
 	public void setNextToken(String nextToken) {
 		this.nextToken = nextToken;
+	}
+
+	public Long getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Long totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<FigureClustersItem> getFigureClusters() {

@@ -40,6 +40,8 @@ public class CreateMediaConvertTaskRequest extends RpcAcsRequest<CreateMediaConv
 	@SerializedName("notification")
 	private Notification notification;
 
+	private Integer alignmentIndex;
+
 	private String projectName;
 
 	@SerializedName("credentialConfig")
@@ -98,6 +100,17 @@ public class CreateMediaConvertTaskRequest extends RpcAcsRequest<CreateMediaConv
 		if (notification != null) {
 			putQueryParameter("Notification" , new Gson().toJson(notification));
 		}	
+	}
+
+	public Integer getAlignmentIndex() {
+		return this.alignmentIndex;
+	}
+
+	public void setAlignmentIndex(Integer alignmentIndex) {
+		this.alignmentIndex = alignmentIndex;
+		if(alignmentIndex != null){
+			putQueryParameter("AlignmentIndex", alignmentIndex.toString());
+		}
 	}
 
 	public String getProjectName() {
@@ -236,9 +249,6 @@ public class CreateMediaConvertTaskRequest extends RpcAcsRequest<CreateMediaConv
 		@SerializedName("StripMetadata")
 		private Boolean stripMetadata;
 
-		@SerializedName("Preset")
-		private Preset preset;
-
 		@SerializedName("Video")
 		private Video video;
 
@@ -300,14 +310,6 @@ public class CreateMediaConvertTaskRequest extends RpcAcsRequest<CreateMediaConv
 
 		public void setStripMetadata(Boolean stripMetadata) {
 			this.stripMetadata = stripMetadata;
-		}
-
-		public Preset getPreset() {
-			return this.preset;
-		}
-
-		public void setPreset(Preset preset) {
-			this.preset = preset;
 		}
 
 		public Video getVideo() {
@@ -822,31 +824,6 @@ public class CreateMediaConvertTaskRequest extends RpcAcsRequest<CreateMediaConv
 				public void setURI(String uRI) {
 					this.uRI = uRI;
 				}
-			}
-		}
-
-		public static class Preset {
-
-			@SerializedName("Name")
-			private String name;
-
-			@SerializedName("Type")
-			private String type;
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
-
-			public String getType() {
-				return this.type;
-			}
-
-			public void setType(String type) {
-				this.type = type;
 			}
 		}
 

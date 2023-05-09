@@ -44,6 +44,8 @@ public class QueryFigureClustersRequest extends RpcAcsRequest<QueryFigureCluster
 
 	private Long maxResults;
 
+	private Boolean withTotalCount;
+
 	@SerializedName("updateTimeRange")
 	private UpdateTimeRange updateTimeRange;
 	public QueryFigureClustersRequest() {
@@ -140,6 +142,17 @@ public class QueryFigureClustersRequest extends RpcAcsRequest<QueryFigureCluster
 		this.maxResults = maxResults;
 		if(maxResults != null){
 			putQueryParameter("MaxResults", maxResults.toString());
+		}
+	}
+
+	public Boolean getWithTotalCount() {
+		return this.withTotalCount;
+	}
+
+	public void setWithTotalCount(Boolean withTotalCount) {
+		this.withTotalCount = withTotalCount;
+		if(withTotalCount != null){
+			putQueryParameter("WithTotalCount", withTotalCount.toString());
 		}
 	}
 

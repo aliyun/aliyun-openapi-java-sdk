@@ -1,3 +1,6 @@
+2023-05-09 Version: 2.1.13
+- Remove PresetReference struct.
+
 2023-04-23 Version: 2.1.12
 - Change parameter name to InputFile.
 
