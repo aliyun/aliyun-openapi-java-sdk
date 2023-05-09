@@ -28,22 +28,22 @@ public class QuerySpeechDeviceResponseUnmarshaller {
 	public static QuerySpeechDeviceResponse unmarshall(QuerySpeechDeviceResponse querySpeechDeviceResponse, UnmarshallerContext _ctx) {
 		
 		querySpeechDeviceResponse.setRequestId(_ctx.stringValue("QuerySpeechDeviceResponse.RequestId"));
-		querySpeechDeviceResponse.setSuccess(_ctx.booleanValue("QuerySpeechDeviceResponse.Success"));
 		querySpeechDeviceResponse.setCode(_ctx.stringValue("QuerySpeechDeviceResponse.Code"));
 		querySpeechDeviceResponse.setErrorMessage(_ctx.stringValue("QuerySpeechDeviceResponse.ErrorMessage"));
+		querySpeechDeviceResponse.setSuccess(_ctx.booleanValue("QuerySpeechDeviceResponse.Success"));
 
 		Data data = new Data();
+		data.setPageSize(_ctx.integerValue("QuerySpeechDeviceResponse.Data.PageSize"));
 		data.setTotal(_ctx.integerValue("QuerySpeechDeviceResponse.Data.Total"));
 		data.setPageId(_ctx.integerValue("QuerySpeechDeviceResponse.Data.PageId"));
-		data.setPageSize(_ctx.integerValue("QuerySpeechDeviceResponse.Data.PageSize"));
 
 		List<Items> list = new ArrayList<Items>();
 		for (int i = 0; i < _ctx.lengthValue("QuerySpeechDeviceResponse.Data.List.Length"); i++) {
 			Items items = new Items();
 			items.setProductKey(_ctx.stringValue("QuerySpeechDeviceResponse.Data.List["+ i +"].ProductKey"));
+			items.setAvailableSpace(_ctx.floatValue("QuerySpeechDeviceResponse.Data.List["+ i +"].AvailableSpace"));
 			items.setDeviceName(_ctx.stringValue("QuerySpeechDeviceResponse.Data.List["+ i +"].DeviceName"));
 			items.setIotId(_ctx.stringValue("QuerySpeechDeviceResponse.Data.List["+ i +"].IotId"));
-			items.setAvailableSpace(_ctx.floatValue("QuerySpeechDeviceResponse.Data.List["+ i +"].AvailableSpace"));
 
 			list.add(items);
 		}

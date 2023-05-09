@@ -24,9 +24,9 @@ public class GetThingScriptResponseUnmarshaller {
 	public static GetThingScriptResponse unmarshall(GetThingScriptResponse getThingScriptResponse, UnmarshallerContext _ctx) {
 		
 		getThingScriptResponse.setRequestId(_ctx.stringValue("GetThingScriptResponse.RequestId"));
-		getThingScriptResponse.setSuccess(_ctx.booleanValue("GetThingScriptResponse.Success"));
 		getThingScriptResponse.setCode(_ctx.stringValue("GetThingScriptResponse.Code"));
 		getThingScriptResponse.setErrorMessage(_ctx.stringValue("GetThingScriptResponse.ErrorMessage"));
+		getThingScriptResponse.setSuccess(_ctx.booleanValue("GetThingScriptResponse.Success"));
 
 		Data data = new Data();
 		data.setScriptType(_ctx.stringValue("GetThingScriptResponse.Data.ScriptType"));

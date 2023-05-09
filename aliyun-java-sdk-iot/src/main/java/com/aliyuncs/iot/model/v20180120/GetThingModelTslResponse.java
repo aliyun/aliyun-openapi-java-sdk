@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetThingModelTslResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -66,6 +50,22 @@ public class GetThingModelTslResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -76,17 +76,9 @@ public class GetThingModelTslResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String tslStr;
-
 		private String tslUri;
 
-		public String getTslStr() {
-			return this.tslStr;
-		}
-
-		public void setTslStr(String tslStr) {
-			this.tslStr = tslStr;
-		}
+		private String tslStr;
 
 		public String getTslUri() {
 			return this.tslUri;
@@ -94,6 +86,14 @@ public class GetThingModelTslResponse extends AcsResponse {
 
 		public void setTslUri(String tslUri) {
 			this.tslUri = tslUri;
+		}
+
+		public String getTslStr() {
+			return this.tslStr;
+		}
+
+		public void setTslStr(String tslStr) {
+			this.tslStr = tslStr;
 		}
 	}
 

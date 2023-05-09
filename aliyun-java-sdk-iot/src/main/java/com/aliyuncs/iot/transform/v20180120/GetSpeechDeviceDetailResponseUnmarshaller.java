@@ -24,18 +24,18 @@ public class GetSpeechDeviceDetailResponseUnmarshaller {
 	public static GetSpeechDeviceDetailResponse unmarshall(GetSpeechDeviceDetailResponse getSpeechDeviceDetailResponse, UnmarshallerContext _ctx) {
 		
 		getSpeechDeviceDetailResponse.setRequestId(_ctx.stringValue("GetSpeechDeviceDetailResponse.RequestId"));
-		getSpeechDeviceDetailResponse.setSuccess(_ctx.booleanValue("GetSpeechDeviceDetailResponse.Success"));
 		getSpeechDeviceDetailResponse.setCode(_ctx.stringValue("GetSpeechDeviceDetailResponse.Code"));
 		getSpeechDeviceDetailResponse.setErrorMessage(_ctx.stringValue("GetSpeechDeviceDetailResponse.ErrorMessage"));
+		getSpeechDeviceDetailResponse.setSuccess(_ctx.booleanValue("GetSpeechDeviceDetailResponse.Success"));
 
 		Data data = new Data();
+		data.setStatus(_ctx.stringValue("GetSpeechDeviceDetailResponse.Data.Status"));
+		data.setTotalSpace(_ctx.floatValue("GetSpeechDeviceDetailResponse.Data.TotalSpace"));
 		data.setProductKey(_ctx.stringValue("GetSpeechDeviceDetailResponse.Data.ProductKey"));
 		data.setDeviceName(_ctx.stringValue("GetSpeechDeviceDetailResponse.Data.DeviceName"));
-		data.setIotId(_ctx.stringValue("GetSpeechDeviceDetailResponse.Data.IotId"));
-		data.setStatus(_ctx.stringValue("GetSpeechDeviceDetailResponse.Data.Status"));
-		data.setAvailableSpace(_ctx.floatValue("GetSpeechDeviceDetailResponse.Data.AvailableSpace"));
-		data.setTotalSpace(_ctx.floatValue("GetSpeechDeviceDetailResponse.Data.TotalSpace"));
 		data.setSpeechListUpdateTime(_ctx.longValue("GetSpeechDeviceDetailResponse.Data.SpeechListUpdateTime"));
+		data.setAvailableSpace(_ctx.floatValue("GetSpeechDeviceDetailResponse.Data.AvailableSpace"));
+		data.setIotId(_ctx.stringValue("GetSpeechDeviceDetailResponse.Data.IotId"));
 		getSpeechDeviceDetailResponse.setData(data);
 	 
 	 	return getSpeechDeviceDetailResponse;

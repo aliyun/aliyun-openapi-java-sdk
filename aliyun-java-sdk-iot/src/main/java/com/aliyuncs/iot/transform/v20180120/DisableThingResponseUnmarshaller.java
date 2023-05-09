@@ -23,9 +23,9 @@ public class DisableThingResponseUnmarshaller {
 	public static DisableThingResponse unmarshall(DisableThingResponse disableThingResponse, UnmarshallerContext _ctx) {
 		
 		disableThingResponse.setRequestId(_ctx.stringValue("DisableThingResponse.RequestId"));
-		disableThingResponse.setSuccess(_ctx.booleanValue("DisableThingResponse.Success"));
 		disableThingResponse.setCode(_ctx.stringValue("DisableThingResponse.Code"));
 		disableThingResponse.setErrorMessage(_ctx.stringValue("DisableThingResponse.ErrorMessage"));
+		disableThingResponse.setSuccess(_ctx.booleanValue("DisableThingResponse.Success"));
 	 
 	 	return disableThingResponse;
 	}

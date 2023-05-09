@@ -27,19 +27,19 @@ public class QueryLoRaJoinPermissionsResponseUnmarshaller {
 	public static QueryLoRaJoinPermissionsResponse unmarshall(QueryLoRaJoinPermissionsResponse queryLoRaJoinPermissionsResponse, UnmarshallerContext _ctx) {
 		
 		queryLoRaJoinPermissionsResponse.setRequestId(_ctx.stringValue("QueryLoRaJoinPermissionsResponse.RequestId"));
-		queryLoRaJoinPermissionsResponse.setSuccess(_ctx.booleanValue("QueryLoRaJoinPermissionsResponse.Success"));
 		queryLoRaJoinPermissionsResponse.setCode(_ctx.stringValue("QueryLoRaJoinPermissionsResponse.Code"));
-		queryLoRaJoinPermissionsResponse.setErrorMessage(_ctx.stringValue("QueryLoRaJoinPermissionsResponse.ErrorMessage"));
 		queryLoRaJoinPermissionsResponse.setProductKey(_ctx.stringValue("QueryLoRaJoinPermissionsResponse.ProductKey"));
+		queryLoRaJoinPermissionsResponse.setErrorMessage(_ctx.stringValue("QueryLoRaJoinPermissionsResponse.ErrorMessage"));
+		queryLoRaJoinPermissionsResponse.setSuccess(_ctx.booleanValue("QueryLoRaJoinPermissionsResponse.Success"));
 
 		List<JoinPermission> joinPermissions = new ArrayList<JoinPermission>();
 		for (int i = 0; i < _ctx.lengthValue("QueryLoRaJoinPermissionsResponse.JoinPermissions.Length"); i++) {
 			JoinPermission joinPermission = new JoinPermission();
+			joinPermission.setEnabled(_ctx.booleanValue("QueryLoRaJoinPermissionsResponse.JoinPermissions["+ i +"].Enabled"));
+			joinPermission.setJoinPermissionType(_ctx.stringValue("QueryLoRaJoinPermissionsResponse.JoinPermissions["+ i +"].JoinPermissionType"));
 			joinPermission.setJoinPermissionId(_ctx.stringValue("QueryLoRaJoinPermissionsResponse.JoinPermissions["+ i +"].JoinPermissionId"));
 			joinPermission.setJoinPermissionName(_ctx.stringValue("QueryLoRaJoinPermissionsResponse.JoinPermissions["+ i +"].JoinPermissionName"));
-			joinPermission.setJoinPermissionType(_ctx.stringValue("QueryLoRaJoinPermissionsResponse.JoinPermissions["+ i +"].JoinPermissionType"));
 			joinPermission.setOwnerAliyunPk(_ctx.stringValue("QueryLoRaJoinPermissionsResponse.JoinPermissions["+ i +"].OwnerAliyunPk"));
-			joinPermission.setEnabled(_ctx.booleanValue("QueryLoRaJoinPermissionsResponse.JoinPermissions["+ i +"].Enabled"));
 			joinPermission.setClassMode(_ctx.stringValue("QueryLoRaJoinPermissionsResponse.JoinPermissions["+ i +"].ClassMode"));
 
 			joinPermissions.add(joinPermission);

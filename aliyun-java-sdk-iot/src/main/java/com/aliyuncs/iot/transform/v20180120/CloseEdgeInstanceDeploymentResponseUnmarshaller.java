@@ -23,9 +23,9 @@ public class CloseEdgeInstanceDeploymentResponseUnmarshaller {
 	public static CloseEdgeInstanceDeploymentResponse unmarshall(CloseEdgeInstanceDeploymentResponse closeEdgeInstanceDeploymentResponse, UnmarshallerContext _ctx) {
 		
 		closeEdgeInstanceDeploymentResponse.setRequestId(_ctx.stringValue("CloseEdgeInstanceDeploymentResponse.RequestId"));
-		closeEdgeInstanceDeploymentResponse.setSuccess(_ctx.booleanValue("CloseEdgeInstanceDeploymentResponse.Success"));
 		closeEdgeInstanceDeploymentResponse.setCode(_ctx.stringValue("CloseEdgeInstanceDeploymentResponse.Code"));
 		closeEdgeInstanceDeploymentResponse.setErrorMessage(_ctx.stringValue("CloseEdgeInstanceDeploymentResponse.ErrorMessage"));
+		closeEdgeInstanceDeploymentResponse.setSuccess(_ctx.booleanValue("CloseEdgeInstanceDeploymentResponse.Success"));
 	 
 	 	return closeEdgeInstanceDeploymentResponse;
 	}

@@ -28,23 +28,23 @@ public class QueryEdgeInstanceDriverResponseUnmarshaller {
 	public static QueryEdgeInstanceDriverResponse unmarshall(QueryEdgeInstanceDriverResponse queryEdgeInstanceDriverResponse, UnmarshallerContext _ctx) {
 		
 		queryEdgeInstanceDriverResponse.setRequestId(_ctx.stringValue("QueryEdgeInstanceDriverResponse.RequestId"));
-		queryEdgeInstanceDriverResponse.setSuccess(_ctx.booleanValue("QueryEdgeInstanceDriverResponse.Success"));
 		queryEdgeInstanceDriverResponse.setCode(_ctx.stringValue("QueryEdgeInstanceDriverResponse.Code"));
 		queryEdgeInstanceDriverResponse.setErrorMessage(_ctx.stringValue("QueryEdgeInstanceDriverResponse.ErrorMessage"));
+		queryEdgeInstanceDriverResponse.setSuccess(_ctx.booleanValue("QueryEdgeInstanceDriverResponse.Success"));
 
 		Data data = new Data();
-		data.setTotal(_ctx.integerValue("QueryEdgeInstanceDriverResponse.Data.Total"));
-		data.setPageSize(_ctx.integerValue("QueryEdgeInstanceDriverResponse.Data.PageSize"));
 		data.setCurrentPage(_ctx.integerValue("QueryEdgeInstanceDriverResponse.Data.CurrentPage"));
+		data.setPageSize(_ctx.integerValue("QueryEdgeInstanceDriverResponse.Data.PageSize"));
+		data.setTotal(_ctx.integerValue("QueryEdgeInstanceDriverResponse.Data.Total"));
 
 		List<Driver> driverList = new ArrayList<Driver>();
 		for (int i = 0; i < _ctx.lengthValue("QueryEdgeInstanceDriverResponse.Data.DriverList.Length"); i++) {
 			Driver driver = new Driver();
-			driver.setDriverId(_ctx.stringValue("QueryEdgeInstanceDriverResponse.Data.DriverList["+ i +"].DriverId"));
-			driver.setDriverVersion(_ctx.stringValue("QueryEdgeInstanceDriverResponse.Data.DriverList["+ i +"].DriverVersion"));
-			driver.setOrderId(_ctx.stringValue("QueryEdgeInstanceDriverResponse.Data.DriverList["+ i +"].OrderId"));
 			driver.setGmtCreate(_ctx.stringValue("QueryEdgeInstanceDriverResponse.Data.DriverList["+ i +"].GmtCreate"));
 			driver.setGmtModified(_ctx.stringValue("QueryEdgeInstanceDriverResponse.Data.DriverList["+ i +"].GmtModified"));
+			driver.setDriverId(_ctx.stringValue("QueryEdgeInstanceDriverResponse.Data.DriverList["+ i +"].DriverId"));
+			driver.setOrderId(_ctx.stringValue("QueryEdgeInstanceDriverResponse.Data.DriverList["+ i +"].OrderId"));
+			driver.setDriverVersion(_ctx.stringValue("QueryEdgeInstanceDriverResponse.Data.DriverList["+ i +"].DriverVersion"));
 
 			driverList.add(driver);
 		}

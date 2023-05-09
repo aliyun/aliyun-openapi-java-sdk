@@ -23,9 +23,9 @@ public class CancelOTATaskByJobResponseUnmarshaller {
 	public static CancelOTATaskByJobResponse unmarshall(CancelOTATaskByJobResponse cancelOTATaskByJobResponse, UnmarshallerContext _ctx) {
 		
 		cancelOTATaskByJobResponse.setRequestId(_ctx.stringValue("CancelOTATaskByJobResponse.RequestId"));
-		cancelOTATaskByJobResponse.setSuccess(_ctx.booleanValue("CancelOTATaskByJobResponse.Success"));
 		cancelOTATaskByJobResponse.setCode(_ctx.stringValue("CancelOTATaskByJobResponse.Code"));
 		cancelOTATaskByJobResponse.setErrorMessage(_ctx.stringValue("CancelOTATaskByJobResponse.ErrorMessage"));
+		cancelOTATaskByJobResponse.setSuccess(_ctx.booleanValue("CancelOTATaskByJobResponse.Success"));
 	 
 	 	return cancelOTATaskByJobResponse;
 	}

@@ -23,9 +23,9 @@ public class DeleteSchedulePeriodResponseUnmarshaller {
 	public static DeleteSchedulePeriodResponse unmarshall(DeleteSchedulePeriodResponse deleteSchedulePeriodResponse, UnmarshallerContext _ctx) {
 		
 		deleteSchedulePeriodResponse.setRequestId(_ctx.stringValue("DeleteSchedulePeriodResponse.RequestId"));
-		deleteSchedulePeriodResponse.setSuccess(_ctx.booleanValue("DeleteSchedulePeriodResponse.Success"));
 		deleteSchedulePeriodResponse.setCode(_ctx.stringValue("DeleteSchedulePeriodResponse.Code"));
 		deleteSchedulePeriodResponse.setErrorMessage(_ctx.stringValue("DeleteSchedulePeriodResponse.ErrorMessage"));
+		deleteSchedulePeriodResponse.setSuccess(_ctx.booleanValue("DeleteSchedulePeriodResponse.Success"));
 	 
 	 	return deleteSchedulePeriodResponse;
 	}

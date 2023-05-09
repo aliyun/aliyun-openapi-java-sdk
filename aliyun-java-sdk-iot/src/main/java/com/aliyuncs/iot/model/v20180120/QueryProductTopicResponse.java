@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryProductTopicResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private List<ProductTopicInfo> data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class QueryProductTopicResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public List<ProductTopicInfo> getData() {
 		return this.data;
 	}
@@ -77,15 +77,27 @@ public class QueryProductTopicResponse extends AcsResponse {
 
 	public static class ProductTopicInfo {
 
+		private String operation;
+
 		private String productKey;
+
+		private String codec;
 
 		private String topicShortName;
 
-		private String operation;
+		private Boolean enableProxySubscribe;
+
+		private String id;
 
 		private String desc;
 
-		private String id;
+		public String getOperation() {
+			return this.operation;
+		}
+
+		public void setOperation(String operation) {
+			this.operation = operation;
+		}
 
 		public String getProductKey() {
 			return this.productKey;
@@ -93,6 +105,14 @@ public class QueryProductTopicResponse extends AcsResponse {
 
 		public void setProductKey(String productKey) {
 			this.productKey = productKey;
+		}
+
+		public String getCodec() {
+			return this.codec;
+		}
+
+		public void setCodec(String codec) {
+			this.codec = codec;
 		}
 
 		public String getTopicShortName() {
@@ -103,20 +123,12 @@ public class QueryProductTopicResponse extends AcsResponse {
 			this.topicShortName = topicShortName;
 		}
 
-		public String getOperation() {
-			return this.operation;
+		public Boolean getEnableProxySubscribe() {
+			return this.enableProxySubscribe;
 		}
 
-		public void setOperation(String operation) {
-			this.operation = operation;
-		}
-
-		public String getDesc() {
-			return this.desc;
-		}
-
-		public void setDesc(String desc) {
-			this.desc = desc;
+		public void setEnableProxySubscribe(Boolean enableProxySubscribe) {
+			this.enableProxySubscribe = enableProxySubscribe;
 		}
 
 		public String getId() {
@@ -125,6 +137,14 @@ public class QueryProductTopicResponse extends AcsResponse {
 
 		public void setId(String id) {
 			this.id = id;
+		}
+
+		public String getDesc() {
+			return this.desc;
+		}
+
+		public void setDesc(String desc) {
+			this.desc = desc;
 		}
 	}
 

@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryProductListResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class QueryProductListResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -79,11 +79,11 @@ public class QueryProductListResponse extends AcsResponse {
 
 		private Integer currentPage;
 
-		private Integer pageCount;
-
 		private Integer pageSize;
 
 		private Integer total;
+
+		private Integer pageCount;
 
 		private List<ProductInfo> list;
 
@@ -93,14 +93,6 @@ public class QueryProductListResponse extends AcsResponse {
 
 		public void setCurrentPage(Integer currentPage) {
 			this.currentPage = currentPage;
-		}
-
-		public Integer getPageCount() {
-			return this.pageCount;
-		}
-
-		public void setPageCount(Integer pageCount) {
-			this.pageCount = pageCount;
 		}
 
 		public Integer getPageSize() {
@@ -119,6 +111,14 @@ public class QueryProductListResponse extends AcsResponse {
 			this.total = total;
 		}
 
+		public Integer getPageCount() {
+			return this.pageCount;
+		}
+
+		public void setPageCount(Integer pageCount) {
+			this.pageCount = pageCount;
+		}
+
 		public List<ProductInfo> getList() {
 			return this.list;
 		}
@@ -129,60 +129,28 @@ public class QueryProductListResponse extends AcsResponse {
 
 		public static class ProductInfo {
 
-			private Long gmtCreate;
-
-			private Integer dataFormat;
-
-			private String description;
-
-			private Integer deviceCount;
-
-			private Integer nodeType;
+			private String authType;
 
 			private String productKey;
 
 			private String productName;
 
-			private String authType;
+			private String description;
 
-			public Long getGmtCreate() {
-				return this.gmtCreate;
+			private Integer nodeType;
+
+			private Long gmtCreate;
+
+			private Integer dataFormat;
+
+			private Integer deviceCount;
+
+			public String getAuthType() {
+				return this.authType;
 			}
 
-			public void setGmtCreate(Long gmtCreate) {
-				this.gmtCreate = gmtCreate;
-			}
-
-			public Integer getDataFormat() {
-				return this.dataFormat;
-			}
-
-			public void setDataFormat(Integer dataFormat) {
-				this.dataFormat = dataFormat;
-			}
-
-			public String getDescription() {
-				return this.description;
-			}
-
-			public void setDescription(String description) {
-				this.description = description;
-			}
-
-			public Integer getDeviceCount() {
-				return this.deviceCount;
-			}
-
-			public void setDeviceCount(Integer deviceCount) {
-				this.deviceCount = deviceCount;
-			}
-
-			public Integer getNodeType() {
-				return this.nodeType;
-			}
-
-			public void setNodeType(Integer nodeType) {
-				this.nodeType = nodeType;
+			public void setAuthType(String authType) {
+				this.authType = authType;
 			}
 
 			public String getProductKey() {
@@ -201,12 +169,44 @@ public class QueryProductListResponse extends AcsResponse {
 				this.productName = productName;
 			}
 
-			public String getAuthType() {
-				return this.authType;
+			public String getDescription() {
+				return this.description;
 			}
 
-			public void setAuthType(String authType) {
-				this.authType = authType;
+			public void setDescription(String description) {
+				this.description = description;
+			}
+
+			public Integer getNodeType() {
+				return this.nodeType;
+			}
+
+			public void setNodeType(Integer nodeType) {
+				this.nodeType = nodeType;
+			}
+
+			public Long getGmtCreate() {
+				return this.gmtCreate;
+			}
+
+			public void setGmtCreate(Long gmtCreate) {
+				this.gmtCreate = gmtCreate;
+			}
+
+			public Integer getDataFormat() {
+				return this.dataFormat;
+			}
+
+			public void setDataFormat(Integer dataFormat) {
+				this.dataFormat = dataFormat;
+			}
+
+			public Integer getDeviceCount() {
+				return this.deviceCount;
+			}
+
+			public void setDeviceCount(Integer deviceCount) {
+				this.deviceCount = deviceCount;
 			}
 		}
 	}

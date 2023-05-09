@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryDeviceDistributeJobResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class QueryDeviceDistributeJobResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -77,72 +77,32 @@ public class QueryDeviceDistributeJobResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String sourceUid;
-
-		private String targetUid;
-
-		private String sourceInstanceId;
-
-		private String jobId;
-
-		private String productKey;
-
-		private Integer total;
+		private Integer strategy;
 
 		private Integer status;
 
+		private String productKey;
+
+		private String targetUid;
+
+		private String jobId;
+
 		private Long gmtCreate;
 
-		private Integer strategy;
+		private String sourceUid;
+
+		private Integer total;
+
+		private String sourceInstanceId;
 
 		private List<TargetInstanceConfigsItem> targetInstanceConfigs;
 
-		public String getSourceUid() {
-			return this.sourceUid;
+		public Integer getStrategy() {
+			return this.strategy;
 		}
 
-		public void setSourceUid(String sourceUid) {
-			this.sourceUid = sourceUid;
-		}
-
-		public String getTargetUid() {
-			return this.targetUid;
-		}
-
-		public void setTargetUid(String targetUid) {
-			this.targetUid = targetUid;
-		}
-
-		public String getSourceInstanceId() {
-			return this.sourceInstanceId;
-		}
-
-		public void setSourceInstanceId(String sourceInstanceId) {
-			this.sourceInstanceId = sourceInstanceId;
-		}
-
-		public String getJobId() {
-			return this.jobId;
-		}
-
-		public void setJobId(String jobId) {
-			this.jobId = jobId;
-		}
-
-		public String getProductKey() {
-			return this.productKey;
-		}
-
-		public void setProductKey(String productKey) {
-			this.productKey = productKey;
-		}
-
-		public Integer getTotal() {
-			return this.total;
-		}
-
-		public void setTotal(Integer total) {
-			this.total = total;
+		public void setStrategy(Integer strategy) {
+			this.strategy = strategy;
 		}
 
 		public Integer getStatus() {
@@ -153,6 +113,30 @@ public class QueryDeviceDistributeJobResponse extends AcsResponse {
 			this.status = status;
 		}
 
+		public String getProductKey() {
+			return this.productKey;
+		}
+
+		public void setProductKey(String productKey) {
+			this.productKey = productKey;
+		}
+
+		public String getTargetUid() {
+			return this.targetUid;
+		}
+
+		public void setTargetUid(String targetUid) {
+			this.targetUid = targetUid;
+		}
+
+		public String getJobId() {
+			return this.jobId;
+		}
+
+		public void setJobId(String jobId) {
+			this.jobId = jobId;
+		}
+
 		public Long getGmtCreate() {
 			return this.gmtCreate;
 		}
@@ -161,12 +145,28 @@ public class QueryDeviceDistributeJobResponse extends AcsResponse {
 			this.gmtCreate = gmtCreate;
 		}
 
-		public Integer getStrategy() {
-			return this.strategy;
+		public String getSourceUid() {
+			return this.sourceUid;
 		}
 
-		public void setStrategy(Integer strategy) {
-			this.strategy = strategy;
+		public void setSourceUid(String sourceUid) {
+			this.sourceUid = sourceUid;
+		}
+
+		public Integer getTotal() {
+			return this.total;
+		}
+
+		public void setTotal(Integer total) {
+			this.total = total;
+		}
+
+		public String getSourceInstanceId() {
+			return this.sourceInstanceId;
+		}
+
+		public void setSourceInstanceId(String sourceInstanceId) {
+			this.sourceInstanceId = sourceInstanceId;
 		}
 
 		public List<TargetInstanceConfigsItem> getTargetInstanceConfigs() {

@@ -24,9 +24,9 @@ public class QueryDeviceCertResponseUnmarshaller {
 	public static QueryDeviceCertResponse unmarshall(QueryDeviceCertResponse queryDeviceCertResponse, UnmarshallerContext _ctx) {
 		
 		queryDeviceCertResponse.setRequestId(_ctx.stringValue("QueryDeviceCertResponse.RequestId"));
-		queryDeviceCertResponse.setSuccess(_ctx.booleanValue("QueryDeviceCertResponse.Success"));
 		queryDeviceCertResponse.setCode(_ctx.stringValue("QueryDeviceCertResponse.Code"));
 		queryDeviceCertResponse.setErrorMessage(_ctx.stringValue("QueryDeviceCertResponse.ErrorMessage"));
+		queryDeviceCertResponse.setSuccess(_ctx.booleanValue("QueryDeviceCertResponse.Success"));
 
 		DeviceCertInfo deviceCertInfo = new DeviceCertInfo();
 		deviceCertInfo.setStatus(_ctx.integerValue("QueryDeviceCertResponse.DeviceCertInfo.Status"));

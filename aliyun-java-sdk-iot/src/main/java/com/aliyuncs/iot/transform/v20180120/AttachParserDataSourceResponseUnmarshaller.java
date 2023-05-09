@@ -23,9 +23,9 @@ public class AttachParserDataSourceResponseUnmarshaller {
 	public static AttachParserDataSourceResponse unmarshall(AttachParserDataSourceResponse attachParserDataSourceResponse, UnmarshallerContext _ctx) {
 		
 		attachParserDataSourceResponse.setRequestId(_ctx.stringValue("AttachParserDataSourceResponse.RequestId"));
-		attachParserDataSourceResponse.setSuccess(_ctx.booleanValue("AttachParserDataSourceResponse.Success"));
 		attachParserDataSourceResponse.setCode(_ctx.stringValue("AttachParserDataSourceResponse.Code"));
 		attachParserDataSourceResponse.setErrorMessage(_ctx.stringValue("AttachParserDataSourceResponse.ErrorMessage"));
+		attachParserDataSourceResponse.setSuccess(_ctx.booleanValue("AttachParserDataSourceResponse.Success"));
 	 
 	 	return attachParserDataSourceResponse;
 	}

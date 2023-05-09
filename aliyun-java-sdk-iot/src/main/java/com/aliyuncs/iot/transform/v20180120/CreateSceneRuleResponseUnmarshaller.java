@@ -23,9 +23,9 @@ public class CreateSceneRuleResponseUnmarshaller {
 	public static CreateSceneRuleResponse unmarshall(CreateSceneRuleResponse createSceneRuleResponse, UnmarshallerContext _ctx) {
 		
 		createSceneRuleResponse.setRequestId(_ctx.stringValue("CreateSceneRuleResponse.RequestId"));
-		createSceneRuleResponse.setSuccess(_ctx.booleanValue("CreateSceneRuleResponse.Success"));
 		createSceneRuleResponse.setCode(_ctx.stringValue("CreateSceneRuleResponse.Code"));
 		createSceneRuleResponse.setErrorMessage(_ctx.stringValue("CreateSceneRuleResponse.ErrorMessage"));
+		createSceneRuleResponse.setSuccess(_ctx.booleanValue("CreateSceneRuleResponse.Success"));
 		createSceneRuleResponse.setRuleId(_ctx.stringValue("CreateSceneRuleResponse.RuleId"));
 	 
 	 	return createSceneRuleResponse;

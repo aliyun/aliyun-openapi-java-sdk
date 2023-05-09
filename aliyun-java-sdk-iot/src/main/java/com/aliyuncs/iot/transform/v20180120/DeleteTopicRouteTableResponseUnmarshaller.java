@@ -27,10 +27,10 @@ public class DeleteTopicRouteTableResponseUnmarshaller {
 	public static DeleteTopicRouteTableResponse unmarshall(DeleteTopicRouteTableResponse deleteTopicRouteTableResponse, UnmarshallerContext _ctx) {
 		
 		deleteTopicRouteTableResponse.setRequestId(_ctx.stringValue("DeleteTopicRouteTableResponse.RequestId"));
-		deleteTopicRouteTableResponse.setSuccess(_ctx.booleanValue("DeleteTopicRouteTableResponse.Success"));
 		deleteTopicRouteTableResponse.setCode(_ctx.stringValue("DeleteTopicRouteTableResponse.Code"));
-		deleteTopicRouteTableResponse.setIsAllSucceed(_ctx.booleanValue("DeleteTopicRouteTableResponse.IsAllSucceed"));
 		deleteTopicRouteTableResponse.setErrorMessage(_ctx.stringValue("DeleteTopicRouteTableResponse.ErrorMessage"));
+		deleteTopicRouteTableResponse.setIsAllSucceed(_ctx.booleanValue("DeleteTopicRouteTableResponse.IsAllSucceed"));
+		deleteTopicRouteTableResponse.setSuccess(_ctx.booleanValue("DeleteTopicRouteTableResponse.Success"));
 
 		List<Map<Object, Object>> failureTopics = _ctx.listMapValue("DeleteTopicRouteTableResponse.FailureTopics");
 		deleteTopicRouteTableResponse.setFailureTopics(failureTopics);

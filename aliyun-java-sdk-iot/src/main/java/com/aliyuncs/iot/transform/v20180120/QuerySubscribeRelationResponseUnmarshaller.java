@@ -26,23 +26,23 @@ public class QuerySubscribeRelationResponseUnmarshaller {
 	public static QuerySubscribeRelationResponse unmarshall(QuerySubscribeRelationResponse querySubscribeRelationResponse, UnmarshallerContext _ctx) {
 		
 		querySubscribeRelationResponse.setRequestId(_ctx.stringValue("QuerySubscribeRelationResponse.RequestId"));
-		querySubscribeRelationResponse.setSuccess(_ctx.booleanValue("QuerySubscribeRelationResponse.Success"));
-		querySubscribeRelationResponse.setCode(_ctx.stringValue("QuerySubscribeRelationResponse.Code"));
-		querySubscribeRelationResponse.setErrorMessage(_ctx.stringValue("QuerySubscribeRelationResponse.ErrorMessage"));
-		querySubscribeRelationResponse.setProductKey(_ctx.stringValue("QuerySubscribeRelationResponse.ProductKey"));
 		querySubscribeRelationResponse.setType(_ctx.stringValue("QuerySubscribeRelationResponse.Type"));
-		querySubscribeRelationResponse.setDeviceDataFlag(_ctx.booleanValue("QuerySubscribeRelationResponse.DeviceDataFlag"));
-		querySubscribeRelationResponse.setDeviceLifeCycleFlag(_ctx.booleanValue("QuerySubscribeRelationResponse.DeviceLifeCycleFlag"));
-		querySubscribeRelationResponse.setDeviceStatusChangeFlag(_ctx.booleanValue("QuerySubscribeRelationResponse.DeviceStatusChangeFlag"));
-		querySubscribeRelationResponse.setDeviceTopoLifeCycleFlag(_ctx.booleanValue("QuerySubscribeRelationResponse.DeviceTopoLifeCycleFlag"));
-		querySubscribeRelationResponse.setFoundDeviceListFlag(_ctx.booleanValue("QuerySubscribeRelationResponse.FoundDeviceListFlag"));
-		querySubscribeRelationResponse.setOtaEventFlag(_ctx.booleanValue("QuerySubscribeRelationResponse.OtaEventFlag"));
-		querySubscribeRelationResponse.setThingHistoryFlag(_ctx.booleanValue("QuerySubscribeRelationResponse.ThingHistoryFlag"));
-		querySubscribeRelationResponse.setMnsConfiguration(_ctx.stringValue("QuerySubscribeRelationResponse.MnsConfiguration"));
+		querySubscribeRelationResponse.setErrorMessage(_ctx.stringValue("QuerySubscribeRelationResponse.ErrorMessage"));
 		querySubscribeRelationResponse.setDeviceTagFlag(_ctx.booleanValue("QuerySubscribeRelationResponse.DeviceTagFlag"));
 		querySubscribeRelationResponse.setOtaVersionFlag(_ctx.booleanValue("QuerySubscribeRelationResponse.OtaVersionFlag"));
-		querySubscribeRelationResponse.setOtaJobFlag(_ctx.booleanValue("QuerySubscribeRelationResponse.OtaJobFlag"));
+		querySubscribeRelationResponse.setDeviceDataFlag(_ctx.booleanValue("QuerySubscribeRelationResponse.DeviceDataFlag"));
+		querySubscribeRelationResponse.setSuccess(_ctx.booleanValue("QuerySubscribeRelationResponse.Success"));
 		querySubscribeRelationResponse.setSubscribeFlags(_ctx.stringValue("QuerySubscribeRelationResponse.SubscribeFlags"));
+		querySubscribeRelationResponse.setOtaEventFlag(_ctx.booleanValue("QuerySubscribeRelationResponse.OtaEventFlag"));
+		querySubscribeRelationResponse.setThingHistoryFlag(_ctx.booleanValue("QuerySubscribeRelationResponse.ThingHistoryFlag"));
+		querySubscribeRelationResponse.setDeviceStatusChangeFlag(_ctx.booleanValue("QuerySubscribeRelationResponse.DeviceStatusChangeFlag"));
+		querySubscribeRelationResponse.setProductKey(_ctx.stringValue("QuerySubscribeRelationResponse.ProductKey"));
+		querySubscribeRelationResponse.setMnsConfiguration(_ctx.stringValue("QuerySubscribeRelationResponse.MnsConfiguration"));
+		querySubscribeRelationResponse.setDeviceTopoLifeCycleFlag(_ctx.booleanValue("QuerySubscribeRelationResponse.DeviceTopoLifeCycleFlag"));
+		querySubscribeRelationResponse.setDeviceLifeCycleFlag(_ctx.booleanValue("QuerySubscribeRelationResponse.DeviceLifeCycleFlag"));
+		querySubscribeRelationResponse.setCode(_ctx.stringValue("QuerySubscribeRelationResponse.Code"));
+		querySubscribeRelationResponse.setFoundDeviceListFlag(_ctx.booleanValue("QuerySubscribeRelationResponse.FoundDeviceListFlag"));
+		querySubscribeRelationResponse.setOtaJobFlag(_ctx.booleanValue("QuerySubscribeRelationResponse.OtaJobFlag"));
 
 		List<String> consumerGroupIds = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("QuerySubscribeRelationResponse.ConsumerGroupIds.Length"); i++) {

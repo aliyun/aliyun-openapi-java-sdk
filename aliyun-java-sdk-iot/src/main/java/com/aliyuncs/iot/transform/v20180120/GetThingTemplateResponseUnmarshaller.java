@@ -23,10 +23,10 @@ public class GetThingTemplateResponseUnmarshaller {
 	public static GetThingTemplateResponse unmarshall(GetThingTemplateResponse getThingTemplateResponse, UnmarshallerContext _ctx) {
 		
 		getThingTemplateResponse.setRequestId(_ctx.stringValue("GetThingTemplateResponse.RequestId"));
-		getThingTemplateResponse.setSuccess(_ctx.booleanValue("GetThingTemplateResponse.Success"));
 		getThingTemplateResponse.setCode(_ctx.stringValue("GetThingTemplateResponse.Code"));
 		getThingTemplateResponse.setErrorMessage(_ctx.stringValue("GetThingTemplateResponse.ErrorMessage"));
 		getThingTemplateResponse.setThingModelJSON(_ctx.stringValue("GetThingTemplateResponse.ThingModelJSON"));
+		getThingTemplateResponse.setSuccess(_ctx.booleanValue("GetThingTemplateResponse.Success"));
 	 
 	 	return getThingTemplateResponse;
 	}

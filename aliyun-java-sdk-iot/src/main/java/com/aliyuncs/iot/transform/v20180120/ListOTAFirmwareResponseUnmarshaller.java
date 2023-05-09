@@ -27,33 +27,33 @@ public class ListOTAFirmwareResponseUnmarshaller {
 	public static ListOTAFirmwareResponse unmarshall(ListOTAFirmwareResponse listOTAFirmwareResponse, UnmarshallerContext _ctx) {
 		
 		listOTAFirmwareResponse.setRequestId(_ctx.stringValue("ListOTAFirmwareResponse.RequestId"));
+		listOTAFirmwareResponse.setCurrentPage(_ctx.integerValue("ListOTAFirmwareResponse.CurrentPage"));
+		listOTAFirmwareResponse.setErrorMessage(_ctx.stringValue("ListOTAFirmwareResponse.ErrorMessage"));
 		listOTAFirmwareResponse.setSuccess(_ctx.booleanValue("ListOTAFirmwareResponse.Success"));
 		listOTAFirmwareResponse.setCode(_ctx.stringValue("ListOTAFirmwareResponse.Code"));
-		listOTAFirmwareResponse.setErrorMessage(_ctx.stringValue("ListOTAFirmwareResponse.ErrorMessage"));
-		listOTAFirmwareResponse.setTotal(_ctx.integerValue("ListOTAFirmwareResponse.Total"));
 		listOTAFirmwareResponse.setPageSize(_ctx.integerValue("ListOTAFirmwareResponse.PageSize"));
 		listOTAFirmwareResponse.setPageCount(_ctx.integerValue("ListOTAFirmwareResponse.PageCount"));
-		listOTAFirmwareResponse.setCurrentPage(_ctx.integerValue("ListOTAFirmwareResponse.CurrentPage"));
+		listOTAFirmwareResponse.setTotal(_ctx.integerValue("ListOTAFirmwareResponse.Total"));
 
 		List<SimpleFirmwareInfo> firmwareInfo = new ArrayList<SimpleFirmwareInfo>();
 		for (int i = 0; i < _ctx.lengthValue("ListOTAFirmwareResponse.FirmwareInfo.Length"); i++) {
 			SimpleFirmwareInfo simpleFirmwareInfo = new SimpleFirmwareInfo();
-			simpleFirmwareInfo.setFirmwareName(_ctx.stringValue("ListOTAFirmwareResponse.FirmwareInfo["+ i +"].FirmwareName"));
-			simpleFirmwareInfo.setFirmwareId(_ctx.stringValue("ListOTAFirmwareResponse.FirmwareInfo["+ i +"].FirmwareId"));
-			simpleFirmwareInfo.setSrcVersion(_ctx.stringValue("ListOTAFirmwareResponse.FirmwareInfo["+ i +"].SrcVersion"));
-			simpleFirmwareInfo.setDestVersion(_ctx.stringValue("ListOTAFirmwareResponse.FirmwareInfo["+ i +"].DestVersion"));
-			simpleFirmwareInfo.setUtcCreate(_ctx.stringValue("ListOTAFirmwareResponse.FirmwareInfo["+ i +"].UtcCreate"));
-			simpleFirmwareInfo.setUtcModified(_ctx.stringValue("ListOTAFirmwareResponse.FirmwareInfo["+ i +"].UtcModified"));
-			simpleFirmwareInfo.setStatus(_ctx.integerValue("ListOTAFirmwareResponse.FirmwareInfo["+ i +"].Status"));
-			simpleFirmwareInfo.setFirmwareDesc(_ctx.stringValue("ListOTAFirmwareResponse.FirmwareInfo["+ i +"].FirmwareDesc"));
-			simpleFirmwareInfo.setFirmwareSign(_ctx.stringValue("ListOTAFirmwareResponse.FirmwareInfo["+ i +"].FirmwareSign"));
-			simpleFirmwareInfo.setFirmwareSize(_ctx.integerValue("ListOTAFirmwareResponse.FirmwareInfo["+ i +"].FirmwareSize"));
-			simpleFirmwareInfo.setFirmwareUrl(_ctx.stringValue("ListOTAFirmwareResponse.FirmwareInfo["+ i +"].FirmwareUrl"));
-			simpleFirmwareInfo.setProductKey(_ctx.stringValue("ListOTAFirmwareResponse.FirmwareInfo["+ i +"].ProductKey"));
-			simpleFirmwareInfo.setSignMethod(_ctx.stringValue("ListOTAFirmwareResponse.FirmwareInfo["+ i +"].SignMethod"));
-			simpleFirmwareInfo.setProductName(_ctx.stringValue("ListOTAFirmwareResponse.FirmwareInfo["+ i +"].ProductName"));
-			simpleFirmwareInfo.setType(_ctx.integerValue("ListOTAFirmwareResponse.FirmwareInfo["+ i +"].Type"));
 			simpleFirmwareInfo.setModuleName(_ctx.stringValue("ListOTAFirmwareResponse.FirmwareInfo["+ i +"].ModuleName"));
+			simpleFirmwareInfo.setType(_ctx.integerValue("ListOTAFirmwareResponse.FirmwareInfo["+ i +"].Type"));
+			simpleFirmwareInfo.setStatus(_ctx.integerValue("ListOTAFirmwareResponse.FirmwareInfo["+ i +"].Status"));
+			simpleFirmwareInfo.setProductName(_ctx.stringValue("ListOTAFirmwareResponse.FirmwareInfo["+ i +"].ProductName"));
+			simpleFirmwareInfo.setFirmwareUrl(_ctx.stringValue("ListOTAFirmwareResponse.FirmwareInfo["+ i +"].FirmwareUrl"));
+			simpleFirmwareInfo.setUtcCreate(_ctx.stringValue("ListOTAFirmwareResponse.FirmwareInfo["+ i +"].UtcCreate"));
+			simpleFirmwareInfo.setFirmwareSize(_ctx.integerValue("ListOTAFirmwareResponse.FirmwareInfo["+ i +"].FirmwareSize"));
+			simpleFirmwareInfo.setFirmwareName(_ctx.stringValue("ListOTAFirmwareResponse.FirmwareInfo["+ i +"].FirmwareName"));
+			simpleFirmwareInfo.setFirmwareSign(_ctx.stringValue("ListOTAFirmwareResponse.FirmwareInfo["+ i +"].FirmwareSign"));
+			simpleFirmwareInfo.setProductKey(_ctx.stringValue("ListOTAFirmwareResponse.FirmwareInfo["+ i +"].ProductKey"));
+			simpleFirmwareInfo.setUtcModified(_ctx.stringValue("ListOTAFirmwareResponse.FirmwareInfo["+ i +"].UtcModified"));
+			simpleFirmwareInfo.setSrcVersion(_ctx.stringValue("ListOTAFirmwareResponse.FirmwareInfo["+ i +"].SrcVersion"));
+			simpleFirmwareInfo.setFirmwareDesc(_ctx.stringValue("ListOTAFirmwareResponse.FirmwareInfo["+ i +"].FirmwareDesc"));
+			simpleFirmwareInfo.setSignMethod(_ctx.stringValue("ListOTAFirmwareResponse.FirmwareInfo["+ i +"].SignMethod"));
+			simpleFirmwareInfo.setDestVersion(_ctx.stringValue("ListOTAFirmwareResponse.FirmwareInfo["+ i +"].DestVersion"));
+			simpleFirmwareInfo.setFirmwareId(_ctx.stringValue("ListOTAFirmwareResponse.FirmwareInfo["+ i +"].FirmwareId"));
 
 			firmwareInfo.add(simpleFirmwareInfo);
 		}

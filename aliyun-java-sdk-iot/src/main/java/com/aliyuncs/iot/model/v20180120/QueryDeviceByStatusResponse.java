@@ -27,19 +27,19 @@ public class QueryDeviceByStatusResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String errorMessage;
+
 	private Boolean success;
 
 	private String code;
 
-	private String errorMessage;
-
-	private Integer page;
-
 	private Integer pageSize;
+
+	private Integer total;
 
 	private Integer pageCount;
 
-	private Integer total;
+	private Integer page;
 
 	private List<SimpleDeviceInfo> data;
 
@@ -49,6 +49,14 @@ public class QueryDeviceByStatusResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
 	public Boolean getSuccess() {
@@ -67,28 +75,20 @@ public class QueryDeviceByStatusResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
-	public Integer getPage() {
-		return this.page;
-	}
-
-	public void setPage(Integer page) {
-		this.page = page;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public Integer getTotal() {
+		return this.total;
+	}
+
+	public void setTotal(Integer total) {
+		this.total = total;
 	}
 
 	public Integer getPageCount() {
@@ -99,12 +99,12 @@ public class QueryDeviceByStatusResponse extends AcsResponse {
 		this.pageCount = pageCount;
 	}
 
-	public Integer getTotal() {
-		return this.total;
+	public Integer getPage() {
+		return this.page;
 	}
 
-	public void setTotal(Integer total) {
-		this.total = total;
+	public void setPage(Integer page) {
+		this.page = page;
 	}
 
 	public List<SimpleDeviceInfo> getData() {
@@ -117,25 +117,33 @@ public class QueryDeviceByStatusResponse extends AcsResponse {
 
 	public static class SimpleDeviceInfo {
 
+		private String status;
+
 		private String productKey;
 
 		private String deviceName;
 
-		private String status;
-
-		private String iotId;
-
-		private String nickname;
-
-		private String gmtCreate;
-
-		private String gmtModified;
-
-		private String utcCreate;
-
 		private String utcModified;
 
 		private String deviceSecret;
+
+		private String utcCreate;
+
+		private String gmtCreate;
+
+		private String nickname;
+
+		private String gmtModified;
+
+		private String iotId;
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
 
 		public String getProductKey() {
 			return this.productKey;
@@ -153,54 +161,6 @@ public class QueryDeviceByStatusResponse extends AcsResponse {
 			this.deviceName = deviceName;
 		}
 
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getIotId() {
-			return this.iotId;
-		}
-
-		public void setIotId(String iotId) {
-			this.iotId = iotId;
-		}
-
-		public String getNickname() {
-			return this.nickname;
-		}
-
-		public void setNickname(String nickname) {
-			this.nickname = nickname;
-		}
-
-		public String getGmtCreate() {
-			return this.gmtCreate;
-		}
-
-		public void setGmtCreate(String gmtCreate) {
-			this.gmtCreate = gmtCreate;
-		}
-
-		public String getGmtModified() {
-			return this.gmtModified;
-		}
-
-		public void setGmtModified(String gmtModified) {
-			this.gmtModified = gmtModified;
-		}
-
-		public String getUtcCreate() {
-			return this.utcCreate;
-		}
-
-		public void setUtcCreate(String utcCreate) {
-			this.utcCreate = utcCreate;
-		}
-
 		public String getUtcModified() {
 			return this.utcModified;
 		}
@@ -215,6 +175,46 @@ public class QueryDeviceByStatusResponse extends AcsResponse {
 
 		public void setDeviceSecret(String deviceSecret) {
 			this.deviceSecret = deviceSecret;
+		}
+
+		public String getUtcCreate() {
+			return this.utcCreate;
+		}
+
+		public void setUtcCreate(String utcCreate) {
+			this.utcCreate = utcCreate;
+		}
+
+		public String getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(String gmtCreate) {
+			this.gmtCreate = gmtCreate;
+		}
+
+		public String getNickname() {
+			return this.nickname;
+		}
+
+		public void setNickname(String nickname) {
+			this.nickname = nickname;
+		}
+
+		public String getGmtModified() {
+			return this.gmtModified;
+		}
+
+		public void setGmtModified(String gmtModified) {
+			this.gmtModified = gmtModified;
+		}
+
+		public String getIotId() {
+			return this.iotId;
+		}
+
+		public void setIotId(String iotId) {
+			this.iotId = iotId;
 		}
 	}
 

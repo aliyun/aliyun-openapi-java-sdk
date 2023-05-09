@@ -27,19 +27,19 @@ public class GetLoraNodesTaskResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
-
-	private String code;
-
 	private String errorMessage;
 
-	private String taskId;
+	private Boolean success;
 
 	private String taskState;
 
-	private Long totalCount;
+	private String code;
 
 	private Long successCount;
+
+	private Long totalCount;
+
+	private String taskId;
 
 	private List<String> successDevEuis;
 
@@ -51,22 +51,6 @@ public class GetLoraNodesTaskResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
 	public String getErrorMessage() {
 		return this.errorMessage;
 	}
@@ -75,12 +59,12 @@ public class GetLoraNodesTaskResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public String getTaskId() {
-		return this.taskId;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public String getTaskState() {
@@ -91,12 +75,12 @@ public class GetLoraNodesTaskResponse extends AcsResponse {
 		this.taskState = taskState;
 	}
 
-	public Long getTotalCount() {
-		return this.totalCount;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setTotalCount(Long totalCount) {
-		this.totalCount = totalCount;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Long getSuccessCount() {
@@ -105,6 +89,22 @@ public class GetLoraNodesTaskResponse extends AcsResponse {
 
 	public void setSuccessCount(Long successCount) {
 		this.successCount = successCount;
+	}
+
+	public Long getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Long totalCount) {
+		this.totalCount = totalCount;
+	}
+
+	public String getTaskId() {
+		return this.taskId;
+	}
+
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
 	}
 
 	public List<String> getSuccessDevEuis() {

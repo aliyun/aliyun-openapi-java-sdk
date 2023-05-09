@@ -23,9 +23,9 @@ public class UpdateConsumerGroupResponseUnmarshaller {
 	public static UpdateConsumerGroupResponse unmarshall(UpdateConsumerGroupResponse updateConsumerGroupResponse, UnmarshallerContext _ctx) {
 		
 		updateConsumerGroupResponse.setRequestId(_ctx.stringValue("UpdateConsumerGroupResponse.RequestId"));
-		updateConsumerGroupResponse.setSuccess(_ctx.booleanValue("UpdateConsumerGroupResponse.Success"));
-		updateConsumerGroupResponse.setErrorMessage(_ctx.stringValue("UpdateConsumerGroupResponse.ErrorMessage"));
 		updateConsumerGroupResponse.setCode(_ctx.stringValue("UpdateConsumerGroupResponse.Code"));
+		updateConsumerGroupResponse.setErrorMessage(_ctx.stringValue("UpdateConsumerGroupResponse.ErrorMessage"));
+		updateConsumerGroupResponse.setSuccess(_ctx.booleanValue("UpdateConsumerGroupResponse.Success"));
 	 
 	 	return updateConsumerGroupResponse;
 	}

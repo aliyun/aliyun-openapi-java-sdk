@@ -23,9 +23,9 @@ public class EnableDeviceTunnelShareResponseUnmarshaller {
 	public static EnableDeviceTunnelShareResponse unmarshall(EnableDeviceTunnelShareResponse enableDeviceTunnelShareResponse, UnmarshallerContext _ctx) {
 		
 		enableDeviceTunnelShareResponse.setRequestId(_ctx.stringValue("EnableDeviceTunnelShareResponse.RequestId"));
-		enableDeviceTunnelShareResponse.setSuccess(_ctx.booleanValue("EnableDeviceTunnelShareResponse.Success"));
-		enableDeviceTunnelShareResponse.setErrorMessage(_ctx.stringValue("EnableDeviceTunnelShareResponse.ErrorMessage"));
 		enableDeviceTunnelShareResponse.setCode(_ctx.stringValue("EnableDeviceTunnelShareResponse.Code"));
+		enableDeviceTunnelShareResponse.setErrorMessage(_ctx.stringValue("EnableDeviceTunnelShareResponse.ErrorMessage"));
+		enableDeviceTunnelShareResponse.setSuccess(_ctx.booleanValue("EnableDeviceTunnelShareResponse.Success"));
 	 
 	 	return enableDeviceTunnelShareResponse;
 	}

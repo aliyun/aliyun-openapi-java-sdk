@@ -23,9 +23,9 @@ public class BindRoleToEdgeInstanceResponseUnmarshaller {
 	public static BindRoleToEdgeInstanceResponse unmarshall(BindRoleToEdgeInstanceResponse bindRoleToEdgeInstanceResponse, UnmarshallerContext _ctx) {
 		
 		bindRoleToEdgeInstanceResponse.setRequestId(_ctx.stringValue("BindRoleToEdgeInstanceResponse.RequestId"));
-		bindRoleToEdgeInstanceResponse.setSuccess(_ctx.booleanValue("BindRoleToEdgeInstanceResponse.Success"));
 		bindRoleToEdgeInstanceResponse.setCode(_ctx.stringValue("BindRoleToEdgeInstanceResponse.Code"));
 		bindRoleToEdgeInstanceResponse.setErrorMessage(_ctx.stringValue("BindRoleToEdgeInstanceResponse.ErrorMessage"));
+		bindRoleToEdgeInstanceResponse.setSuccess(_ctx.booleanValue("BindRoleToEdgeInstanceResponse.Success"));
 	 
 	 	return bindRoleToEdgeInstanceResponse;
 	}

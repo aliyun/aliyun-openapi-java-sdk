@@ -24,19 +24,19 @@ public class GenerateOTAUploadURLResponseUnmarshaller {
 	public static GenerateOTAUploadURLResponse unmarshall(GenerateOTAUploadURLResponse generateOTAUploadURLResponse, UnmarshallerContext _ctx) {
 		
 		generateOTAUploadURLResponse.setRequestId(_ctx.stringValue("GenerateOTAUploadURLResponse.RequestId"));
-		generateOTAUploadURLResponse.setSuccess(_ctx.booleanValue("GenerateOTAUploadURLResponse.Success"));
 		generateOTAUploadURLResponse.setCode(_ctx.stringValue("GenerateOTAUploadURLResponse.Code"));
 		generateOTAUploadURLResponse.setErrorMessage(_ctx.stringValue("GenerateOTAUploadURLResponse.ErrorMessage"));
+		generateOTAUploadURLResponse.setSuccess(_ctx.booleanValue("GenerateOTAUploadURLResponse.Success"));
 
 		Data data = new Data();
 		data.setKey(_ctx.stringValue("GenerateOTAUploadURLResponse.Data.Key"));
-		data.setHost(_ctx.stringValue("GenerateOTAUploadURLResponse.Data.Host"));
-		data.setPolicy(_ctx.stringValue("GenerateOTAUploadURLResponse.Data.Policy"));
 		data.setOSSAccessKeyId(_ctx.stringValue("GenerateOTAUploadURLResponse.Data.OSSAccessKeyId"));
 		data.setSignature(_ctx.stringValue("GenerateOTAUploadURLResponse.Data.Signature"));
+		data.setHost(_ctx.stringValue("GenerateOTAUploadURLResponse.Data.Host"));
+		data.setPolicy(_ctx.stringValue("GenerateOTAUploadURLResponse.Data.Policy"));
+		data.setObjectStorage(_ctx.stringValue("GenerateOTAUploadURLResponse.Data.ObjectStorage"));
 		data.setFirmwareUrl(_ctx.stringValue("GenerateOTAUploadURLResponse.Data.FirmwareUrl"));
 		data.setUtcCreate(_ctx.stringValue("GenerateOTAUploadURLResponse.Data.UtcCreate"));
-		data.setObjectStorage(_ctx.stringValue("GenerateOTAUploadURLResponse.Data.ObjectStorage"));
 		generateOTAUploadURLResponse.setData(data);
 	 
 	 	return generateOTAUploadURLResponse;

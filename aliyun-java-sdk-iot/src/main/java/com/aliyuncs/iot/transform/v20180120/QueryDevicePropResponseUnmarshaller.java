@@ -23,10 +23,10 @@ public class QueryDevicePropResponseUnmarshaller {
 	public static QueryDevicePropResponse unmarshall(QueryDevicePropResponse queryDevicePropResponse, UnmarshallerContext _ctx) {
 		
 		queryDevicePropResponse.setRequestId(_ctx.stringValue("QueryDevicePropResponse.RequestId"));
-		queryDevicePropResponse.setSuccess(_ctx.booleanValue("QueryDevicePropResponse.Success"));
+		queryDevicePropResponse.setProps(_ctx.stringValue("QueryDevicePropResponse.Props"));
 		queryDevicePropResponse.setCode(_ctx.stringValue("QueryDevicePropResponse.Code"));
 		queryDevicePropResponse.setErrorMessage(_ctx.stringValue("QueryDevicePropResponse.ErrorMessage"));
-		queryDevicePropResponse.setProps(_ctx.stringValue("QueryDevicePropResponse.Props"));
+		queryDevicePropResponse.setSuccess(_ctx.booleanValue("QueryDevicePropResponse.Success"));
 	 
 	 	return queryDevicePropResponse;
 	}

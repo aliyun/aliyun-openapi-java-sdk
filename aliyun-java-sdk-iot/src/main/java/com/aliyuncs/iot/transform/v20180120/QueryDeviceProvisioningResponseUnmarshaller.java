@@ -24,20 +24,20 @@ public class QueryDeviceProvisioningResponseUnmarshaller {
 	public static QueryDeviceProvisioningResponse unmarshall(QueryDeviceProvisioningResponse queryDeviceProvisioningResponse, UnmarshallerContext _ctx) {
 		
 		queryDeviceProvisioningResponse.setRequestId(_ctx.stringValue("QueryDeviceProvisioningResponse.RequestId"));
-		queryDeviceProvisioningResponse.setSuccess(_ctx.booleanValue("QueryDeviceProvisioningResponse.Success"));
 		queryDeviceProvisioningResponse.setCode(_ctx.stringValue("QueryDeviceProvisioningResponse.Code"));
 		queryDeviceProvisioningResponse.setErrorMessage(_ctx.stringValue("QueryDeviceProvisioningResponse.ErrorMessage"));
+		queryDeviceProvisioningResponse.setSuccess(_ctx.booleanValue("QueryDeviceProvisioningResponse.Success"));
 
 		Data data = new Data();
-		data.setGmtCreate(_ctx.longValue("QueryDeviceProvisioningResponse.Data.GmtCreate"));
-		data.setGmtModified(_ctx.longValue("QueryDeviceProvisioningResponse.Data.GmtModified"));
-		data.setAliyunUid(_ctx.stringValue("QueryDeviceProvisioningResponse.Data.AliyunUid"));
+		data.setTargetRegion(_ctx.stringValue("QueryDeviceProvisioningResponse.Data.TargetRegion"));
 		data.setProductKey(_ctx.stringValue("QueryDeviceProvisioningResponse.Data.ProductKey"));
 		data.setDeviceName(_ctx.stringValue("QueryDeviceProvisioningResponse.Data.DeviceName"));
-		data.setSourceIotInstanceId(_ctx.stringValue("QueryDeviceProvisioningResponse.Data.SourceIotInstanceId"));
+		data.setGmtCreate(_ctx.longValue("QueryDeviceProvisioningResponse.Data.GmtCreate"));
 		data.setTargetIotInstanceId(_ctx.stringValue("QueryDeviceProvisioningResponse.Data.TargetIotInstanceId"));
+		data.setSourceIotInstanceId(_ctx.stringValue("QueryDeviceProvisioningResponse.Data.SourceIotInstanceId"));
+		data.setAliyunUid(_ctx.stringValue("QueryDeviceProvisioningResponse.Data.AliyunUid"));
+		data.setGmtModified(_ctx.longValue("QueryDeviceProvisioningResponse.Data.GmtModified"));
 		data.setSourceRegion(_ctx.stringValue("QueryDeviceProvisioningResponse.Data.SourceRegion"));
-		data.setTargetRegion(_ctx.stringValue("QueryDeviceProvisioningResponse.Data.TargetRegion"));
 		queryDeviceProvisioningResponse.setData(data);
 	 
 	 	return queryDeviceProvisioningResponse;

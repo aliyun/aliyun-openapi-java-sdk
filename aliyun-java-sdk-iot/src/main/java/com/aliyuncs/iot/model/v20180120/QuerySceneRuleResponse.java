@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QuerySceneRuleResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class QuerySceneRuleResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -77,20 +77,20 @@ public class QuerySceneRuleResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer total;
+		private Integer currentPage;
 
 		private Integer pageSize;
 
-		private Integer currentPage;
+		private Integer total;
 
 		private List<Rule> ruleList;
 
-		public Integer getTotal() {
-			return this.total;
+		public Integer getCurrentPage() {
+			return this.currentPage;
 		}
 
-		public void setTotal(Integer total) {
-			this.total = total;
+		public void setCurrentPage(Integer currentPage) {
+			this.currentPage = currentPage;
 		}
 
 		public Integer getPageSize() {
@@ -101,12 +101,12 @@ public class QuerySceneRuleResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
-		public Integer getCurrentPage() {
-			return this.currentPage;
+		public Integer getTotal() {
+			return this.total;
 		}
 
-		public void setCurrentPage(Integer currentPage) {
-			this.currentPage = currentPage;
+		public void setTotal(Integer total) {
+			this.total = total;
 		}
 
 		public List<Rule> getRuleList() {
@@ -119,24 +119,24 @@ public class QuerySceneRuleResponse extends AcsResponse {
 
 		public static class Rule {
 
-			private String ruleId;
+			private Integer ruleStatus;
 
 			private Long gmtCreate;
 
 			private Long gmtModified;
 
-			private String ruleName;
-
 			private String ruleDescription;
 
-			private Integer ruleStatus;
+			private String ruleId;
 
-			public String getRuleId() {
-				return this.ruleId;
+			private String ruleName;
+
+			public Integer getRuleStatus() {
+				return this.ruleStatus;
 			}
 
-			public void setRuleId(String ruleId) {
-				this.ruleId = ruleId;
+			public void setRuleStatus(Integer ruleStatus) {
+				this.ruleStatus = ruleStatus;
 			}
 
 			public Long getGmtCreate() {
@@ -155,14 +155,6 @@ public class QuerySceneRuleResponse extends AcsResponse {
 				this.gmtModified = gmtModified;
 			}
 
-			public String getRuleName() {
-				return this.ruleName;
-			}
-
-			public void setRuleName(String ruleName) {
-				this.ruleName = ruleName;
-			}
-
 			public String getRuleDescription() {
 				return this.ruleDescription;
 			}
@@ -171,12 +163,20 @@ public class QuerySceneRuleResponse extends AcsResponse {
 				this.ruleDescription = ruleDescription;
 			}
 
-			public Integer getRuleStatus() {
-				return this.ruleStatus;
+			public String getRuleId() {
+				return this.ruleId;
 			}
 
-			public void setRuleStatus(Integer ruleStatus) {
-				this.ruleStatus = ruleStatus;
+			public void setRuleId(String ruleId) {
+				this.ruleId = ruleId;
+			}
+
+			public String getRuleName() {
+				return this.ruleName;
+			}
+
+			public void setRuleName(String ruleName) {
+				this.ruleName = ruleName;
 			}
 		}
 	}

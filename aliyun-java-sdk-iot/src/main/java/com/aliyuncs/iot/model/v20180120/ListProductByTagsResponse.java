@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListProductByTagsResponse extends AcsResponse {
 
-	private String requestId;
+	private String code;
 
-	private Boolean success;
+	private String requestId;
 
 	private String errorMessage;
 
-	private String code;
+	private Boolean success;
 
 	private List<ProductInfo> productInfos;
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class ListProductByTagsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public String getErrorMessage() {
@@ -59,12 +59,12 @@ public class ListProductByTagsResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public String getCode() {
-		return this.code;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<ProductInfo> getProductInfos() {
@@ -77,23 +77,15 @@ public class ListProductByTagsResponse extends AcsResponse {
 
 	public static class ProductInfo {
 
-		private String productName;
-
 		private String productKey;
 
-		private Long createTime;
-
-		private String description;
+		private String productName;
 
 		private Integer nodeType;
 
-		public String getProductName() {
-			return this.productName;
-		}
+		private String description;
 
-		public void setProductName(String productName) {
-			this.productName = productName;
-		}
+		private Long createTime;
 
 		public String getProductKey() {
 			return this.productKey;
@@ -103,12 +95,20 @@ public class ListProductByTagsResponse extends AcsResponse {
 			this.productKey = productKey;
 		}
 
-		public Long getCreateTime() {
-			return this.createTime;
+		public String getProductName() {
+			return this.productName;
 		}
 
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
+		public void setProductName(String productName) {
+			this.productName = productName;
+		}
+
+		public Integer getNodeType() {
+			return this.nodeType;
+		}
+
+		public void setNodeType(Integer nodeType) {
+			this.nodeType = nodeType;
 		}
 
 		public String getDescription() {
@@ -119,12 +119,12 @@ public class ListProductByTagsResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public Integer getNodeType() {
-			return this.nodeType;
+		public Long getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setNodeType(Integer nodeType) {
-			this.nodeType = nodeType;
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
 		}
 	}
 

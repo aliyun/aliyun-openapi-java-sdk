@@ -24,16 +24,16 @@ public class GetStudioAppTokenOpenResponseUnmarshaller {
 	public static GetStudioAppTokenOpenResponse unmarshall(GetStudioAppTokenOpenResponse getStudioAppTokenOpenResponse, UnmarshallerContext _ctx) {
 		
 		getStudioAppTokenOpenResponse.setRequestId(_ctx.stringValue("GetStudioAppTokenOpenResponse.RequestId"));
-		getStudioAppTokenOpenResponse.setSuccess(_ctx.booleanValue("GetStudioAppTokenOpenResponse.Success"));
 		getStudioAppTokenOpenResponse.setCode(_ctx.stringValue("GetStudioAppTokenOpenResponse.Code"));
 		getStudioAppTokenOpenResponse.setErrorMessage(_ctx.stringValue("GetStudioAppTokenOpenResponse.ErrorMessage"));
+		getStudioAppTokenOpenResponse.setSuccess(_ctx.booleanValue("GetStudioAppTokenOpenResponse.Success"));
 
 		Data data = new Data();
-		data.setIsEnable(_ctx.stringValue("GetStudioAppTokenOpenResponse.Data.IsEnable"));
 		data.setType(_ctx.stringValue("GetStudioAppTokenOpenResponse.Data.Type"));
-		data.setBizType(_ctx.stringValue("GetStudioAppTokenOpenResponse.Data.BizType"));
-		data.setToken(_ctx.stringValue("GetStudioAppTokenOpenResponse.Data.Token"));
+		data.setIsEnable(_ctx.stringValue("GetStudioAppTokenOpenResponse.Data.IsEnable"));
 		data.setBizId(_ctx.stringValue("GetStudioAppTokenOpenResponse.Data.BizId"));
+		data.setToken(_ctx.stringValue("GetStudioAppTokenOpenResponse.Data.Token"));
+		data.setBizType(_ctx.stringValue("GetStudioAppTokenOpenResponse.Data.BizType"));
 		getStudioAppTokenOpenResponse.setData(data);
 	 
 	 	return getStudioAppTokenOpenResponse;

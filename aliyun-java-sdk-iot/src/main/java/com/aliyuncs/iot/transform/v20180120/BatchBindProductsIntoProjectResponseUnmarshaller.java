@@ -23,10 +23,10 @@ public class BatchBindProductsIntoProjectResponseUnmarshaller {
 	public static BatchBindProductsIntoProjectResponse unmarshall(BatchBindProductsIntoProjectResponse batchBindProductsIntoProjectResponse, UnmarshallerContext _ctx) {
 		
 		batchBindProductsIntoProjectResponse.setRequestId(_ctx.stringValue("BatchBindProductsIntoProjectResponse.RequestId"));
-		batchBindProductsIntoProjectResponse.setSuccess(_ctx.booleanValue("BatchBindProductsIntoProjectResponse.Success"));
 		batchBindProductsIntoProjectResponse.setCode(_ctx.stringValue("BatchBindProductsIntoProjectResponse.Code"));
-		batchBindProductsIntoProjectResponse.setErrorMessage(_ctx.stringValue("BatchBindProductsIntoProjectResponse.ErrorMessage"));
 		batchBindProductsIntoProjectResponse.setData(_ctx.booleanValue("BatchBindProductsIntoProjectResponse.Data"));
+		batchBindProductsIntoProjectResponse.setErrorMessage(_ctx.stringValue("BatchBindProductsIntoProjectResponse.ErrorMessage"));
+		batchBindProductsIntoProjectResponse.setSuccess(_ctx.booleanValue("BatchBindProductsIntoProjectResponse.Success"));
 	 
 	 	return batchBindProductsIntoProjectResponse;
 	}

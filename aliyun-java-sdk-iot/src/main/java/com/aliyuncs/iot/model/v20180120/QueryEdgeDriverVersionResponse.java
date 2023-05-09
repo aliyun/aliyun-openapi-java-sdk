@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryEdgeDriverVersionResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class QueryEdgeDriverVersionResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -77,20 +77,20 @@ public class QueryEdgeDriverVersionResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer total;
+		private Integer currentPage;
 
 		private Integer pageSize;
 
-		private Integer currentPage;
+		private Integer total;
 
 		private List<DriverVersion> driverVersionList;
 
-		public Integer getTotal() {
-			return this.total;
+		public Integer getCurrentPage() {
+			return this.currentPage;
 		}
 
-		public void setTotal(Integer total) {
-			this.total = total;
+		public void setCurrentPage(Integer currentPage) {
+			this.currentPage = currentPage;
 		}
 
 		public Integer getPageSize() {
@@ -101,12 +101,12 @@ public class QueryEdgeDriverVersionResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
-		public Integer getCurrentPage() {
-			return this.currentPage;
+		public Integer getTotal() {
+			return this.total;
 		}
 
-		public void setCurrentPage(Integer currentPage) {
-			this.currentPage = currentPage;
+		public void setTotal(Integer total) {
+			this.total = total;
 		}
 
 		public List<DriverVersion> getDriverVersionList() {
@@ -119,92 +119,36 @@ public class QueryEdgeDriverVersionResponse extends AcsResponse {
 
 		public static class DriverVersion {
 
-			private String driverId;
-
-			private String driverVersion;
-
-			private String versionState;
-
-			private String edgeVersion;
-
-			private String description;
-
-			private String sourceConfig;
-
-			private String driverConfig;
-
-			private String containerConfig;
+			private Long gmtCreateTimestamp;
 
 			private String configCheckRule;
 
-			private Long gmtCreateTimestamp;
+			private String driverId;
+
+			private String edgeVersion;
 
 			private Long gmtModifiedTimestamp;
 
+			private String versionState;
+
+			private String containerConfig;
+
+			private String description;
+
+			private String driverConfig;
+
+			private String driverVersion;
+
 			private String argument;
 
-			public String getDriverId() {
-				return this.driverId;
+			private String sourceConfig;
+
+			public Long getGmtCreateTimestamp() {
+				return this.gmtCreateTimestamp;
 			}
 
-			public void setDriverId(String driverId) {
-				this.driverId = driverId;
-			}
-
-			public String getDriverVersion() {
-				return this.driverVersion;
-			}
-
-			public void setDriverVersion(String driverVersion) {
-				this.driverVersion = driverVersion;
-			}
-
-			public String getVersionState() {
-				return this.versionState;
-			}
-
-			public void setVersionState(String versionState) {
-				this.versionState = versionState;
-			}
-
-			public String getEdgeVersion() {
-				return this.edgeVersion;
-			}
-
-			public void setEdgeVersion(String edgeVersion) {
-				this.edgeVersion = edgeVersion;
-			}
-
-			public String getDescription() {
-				return this.description;
-			}
-
-			public void setDescription(String description) {
-				this.description = description;
-			}
-
-			public String getSourceConfig() {
-				return this.sourceConfig;
-			}
-
-			public void setSourceConfig(String sourceConfig) {
-				this.sourceConfig = sourceConfig;
-			}
-
-			public String getDriverConfig() {
-				return this.driverConfig;
-			}
-
-			public void setDriverConfig(String driverConfig) {
-				this.driverConfig = driverConfig;
-			}
-
-			public String getContainerConfig() {
-				return this.containerConfig;
-			}
-
-			public void setContainerConfig(String containerConfig) {
-				this.containerConfig = containerConfig;
+			public void setGmtCreateTimestamp(Long gmtCreateTimestamp) {
+				this.gmtCreateTimestamp = gmtCreateTimestamp;
 			}
 
 			public String getConfigCheckRule() {
@@ -215,12 +159,20 @@ public class QueryEdgeDriverVersionResponse extends AcsResponse {
 				this.configCheckRule = configCheckRule;
 			}
 
-			public Long getGmtCreateTimestamp() {
-				return this.gmtCreateTimestamp;
+			public String getDriverId() {
+				return this.driverId;
 			}
 
-			public void setGmtCreateTimestamp(Long gmtCreateTimestamp) {
-				this.gmtCreateTimestamp = gmtCreateTimestamp;
+			public void setDriverId(String driverId) {
+				this.driverId = driverId;
+			}
+
+			public String getEdgeVersion() {
+				return this.edgeVersion;
+			}
+
+			public void setEdgeVersion(String edgeVersion) {
+				this.edgeVersion = edgeVersion;
 			}
 
 			public Long getGmtModifiedTimestamp() {
@@ -231,12 +183,60 @@ public class QueryEdgeDriverVersionResponse extends AcsResponse {
 				this.gmtModifiedTimestamp = gmtModifiedTimestamp;
 			}
 
+			public String getVersionState() {
+				return this.versionState;
+			}
+
+			public void setVersionState(String versionState) {
+				this.versionState = versionState;
+			}
+
+			public String getContainerConfig() {
+				return this.containerConfig;
+			}
+
+			public void setContainerConfig(String containerConfig) {
+				this.containerConfig = containerConfig;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
+			}
+
+			public String getDriverConfig() {
+				return this.driverConfig;
+			}
+
+			public void setDriverConfig(String driverConfig) {
+				this.driverConfig = driverConfig;
+			}
+
+			public String getDriverVersion() {
+				return this.driverVersion;
+			}
+
+			public void setDriverVersion(String driverVersion) {
+				this.driverVersion = driverVersion;
+			}
+
 			public String getArgument() {
 				return this.argument;
 			}
 
 			public void setArgument(String argument) {
 				this.argument = argument;
+			}
+
+			public String getSourceConfig() {
+				return this.sourceConfig;
+			}
+
+			public void setSourceConfig(String sourceConfig) {
+				this.sourceConfig = sourceConfig;
 			}
 		}
 	}

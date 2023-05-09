@@ -30,22 +30,22 @@ public class QueryDeviceBySQLResponseUnmarshaller {
 	public static QueryDeviceBySQLResponse unmarshall(QueryDeviceBySQLResponse queryDeviceBySQLResponse, UnmarshallerContext _ctx) {
 		
 		queryDeviceBySQLResponse.setRequestId(_ctx.stringValue("QueryDeviceBySQLResponse.RequestId"));
-		queryDeviceBySQLResponse.setSuccess(_ctx.booleanValue("QueryDeviceBySQLResponse.Success"));
 		queryDeviceBySQLResponse.setCode(_ctx.stringValue("QueryDeviceBySQLResponse.Code"));
 		queryDeviceBySQLResponse.setErrorMessage(_ctx.stringValue("QueryDeviceBySQLResponse.ErrorMessage"));
 		queryDeviceBySQLResponse.setTotalCount(_ctx.longValue("QueryDeviceBySQLResponse.TotalCount"));
+		queryDeviceBySQLResponse.setSuccess(_ctx.booleanValue("QueryDeviceBySQLResponse.Success"));
 
 		List<SimpleDeviceSearchInfo> data = new ArrayList<SimpleDeviceSearchInfo>();
 		for (int i = 0; i < _ctx.lengthValue("QueryDeviceBySQLResponse.Data.Length"); i++) {
 			SimpleDeviceSearchInfo simpleDeviceSearchInfo = new SimpleDeviceSearchInfo();
+			simpleDeviceSearchInfo.setStatus(_ctx.stringValue("QueryDeviceBySQLResponse.Data["+ i +"].Status"));
 			simpleDeviceSearchInfo.setProductKey(_ctx.stringValue("QueryDeviceBySQLResponse.Data["+ i +"].ProductKey"));
 			simpleDeviceSearchInfo.setDeviceName(_ctx.stringValue("QueryDeviceBySQLResponse.Data["+ i +"].DeviceName"));
-			simpleDeviceSearchInfo.setNickname(_ctx.stringValue("QueryDeviceBySQLResponse.Data["+ i +"].Nickname"));
-			simpleDeviceSearchInfo.setStatus(_ctx.stringValue("QueryDeviceBySQLResponse.Data["+ i +"].Status"));
-			simpleDeviceSearchInfo.setActiveTime(_ctx.stringValue("QueryDeviceBySQLResponse.Data["+ i +"].ActiveTime"));
-			simpleDeviceSearchInfo.setIotId(_ctx.stringValue("QueryDeviceBySQLResponse.Data["+ i +"].IotId"));
 			simpleDeviceSearchInfo.setGmtCreate(_ctx.stringValue("QueryDeviceBySQLResponse.Data["+ i +"].GmtCreate"));
+			simpleDeviceSearchInfo.setNickname(_ctx.stringValue("QueryDeviceBySQLResponse.Data["+ i +"].Nickname"));
+			simpleDeviceSearchInfo.setActiveTime(_ctx.stringValue("QueryDeviceBySQLResponse.Data["+ i +"].ActiveTime"));
 			simpleDeviceSearchInfo.setGmtModified(_ctx.stringValue("QueryDeviceBySQLResponse.Data["+ i +"].GmtModified"));
+			simpleDeviceSearchInfo.setIotId(_ctx.stringValue("QueryDeviceBySQLResponse.Data["+ i +"].IotId"));
 
 			List<SimpleDeviceGroupInfo> groups = new ArrayList<SimpleDeviceGroupInfo>();
 			for (int j = 0; j < _ctx.lengthValue("QueryDeviceBySQLResponse.Data["+ i +"].Groups.Length"); j++) {

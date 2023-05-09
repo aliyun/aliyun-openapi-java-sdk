@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryOTAJobResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class QueryOTAJobResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -77,75 +77,67 @@ public class QueryOTAJobResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String jobId;
-
 		private String utcCreate;
-
-		private String utcModified;
-
-		private String productKey;
-
-		private String firmwareId;
-
-		private String utcStartTime;
-
-		private String utcEndTime;
-
-		private String jobStatus;
-
-		private String jobType;
-
-		private String jobDesc;
-
-		private String name;
-
-		private String utcScheduleTime;
 
 		private Integer retryInterval;
 
-		private Integer retryCount;
-
-		private Integer timeoutInMinutes;
-
-		private String targetSelection;
+		private String jobType;
 
 		private String selectionType;
 
+		private Integer overwriteMode;
+
+		private String targetSelection;
+
+		private Integer timeoutInMinutes;
+
 		private String grayPercent;
 
-		private Integer maximumPerMinute;
+		private Boolean needPush;
+
+		private String jobStatus;
+
+		private String jobDesc;
+
+		private String utcModified;
+
+		private String utcStartTime;
+
+		private Boolean multiModuleMode;
+
+		private String utcEndTime;
+
+		private String name;
 
 		private String destVersion;
 
 		private String utcScheduleFinishTime;
 
-		private Integer overwriteMode;
+		private Integer maximumPerMinute;
 
 		private Integer dynamicMode;
 
-		private Boolean needPush;
+		private Integer retryCount;
 
-		private Boolean needConfirm;
-
-		private String groupId;
+		private String productKey;
 
 		private String groupName;
 
+		private String groupId;
+
+		private String utcScheduleTime;
+
+		private String jobId;
+
 		private String downloadProtocol;
 
-		private Boolean multiModuleMode;
+		private Boolean needConfirm;
+
+		private String firmwareId;
 
 		private List<OtaTagDTO> tags;
 
 		private List<String> srcVersions;
-
-		public String getJobId() {
-			return this.jobId;
-		}
-
-		public void setJobId(String jobId) {
-			this.jobId = jobId;
-		}
 
 		public String getUtcCreate() {
 			return this.utcCreate;
@@ -153,86 +145,6 @@ public class QueryOTAJobResponse extends AcsResponse {
 
 		public void setUtcCreate(String utcCreate) {
 			this.utcCreate = utcCreate;
-		}
-
-		public String getUtcModified() {
-			return this.utcModified;
-		}
-
-		public void setUtcModified(String utcModified) {
-			this.utcModified = utcModified;
-		}
-
-		public String getProductKey() {
-			return this.productKey;
-		}
-
-		public void setProductKey(String productKey) {
-			this.productKey = productKey;
-		}
-
-		public String getFirmwareId() {
-			return this.firmwareId;
-		}
-
-		public void setFirmwareId(String firmwareId) {
-			this.firmwareId = firmwareId;
-		}
-
-		public String getUtcStartTime() {
-			return this.utcStartTime;
-		}
-
-		public void setUtcStartTime(String utcStartTime) {
-			this.utcStartTime = utcStartTime;
-		}
-
-		public String getUtcEndTime() {
-			return this.utcEndTime;
-		}
-
-		public void setUtcEndTime(String utcEndTime) {
-			this.utcEndTime = utcEndTime;
-		}
-
-		public String getJobStatus() {
-			return this.jobStatus;
-		}
-
-		public void setJobStatus(String jobStatus) {
-			this.jobStatus = jobStatus;
-		}
-
-		public String getJobType() {
-			return this.jobType;
-		}
-
-		public void setJobType(String jobType) {
-			this.jobType = jobType;
-		}
-
-		public String getJobDesc() {
-			return this.jobDesc;
-		}
-
-		public void setJobDesc(String jobDesc) {
-			this.jobDesc = jobDesc;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getUtcScheduleTime() {
-			return this.utcScheduleTime;
-		}
-
-		public void setUtcScheduleTime(String utcScheduleTime) {
-			this.utcScheduleTime = utcScheduleTime;
 		}
 
 		public Integer getRetryInterval() {
@@ -243,28 +155,12 @@ public class QueryOTAJobResponse extends AcsResponse {
 			this.retryInterval = retryInterval;
 		}
 
-		public Integer getRetryCount() {
-			return this.retryCount;
+		public String getJobType() {
+			return this.jobType;
 		}
 
-		public void setRetryCount(Integer retryCount) {
-			this.retryCount = retryCount;
-		}
-
-		public Integer getTimeoutInMinutes() {
-			return this.timeoutInMinutes;
-		}
-
-		public void setTimeoutInMinutes(Integer timeoutInMinutes) {
-			this.timeoutInMinutes = timeoutInMinutes;
-		}
-
-		public String getTargetSelection() {
-			return this.targetSelection;
-		}
-
-		public void setTargetSelection(String targetSelection) {
-			this.targetSelection = targetSelection;
+		public void setJobType(String jobType) {
+			this.jobType = jobType;
 		}
 
 		public String getSelectionType() {
@@ -275,6 +171,30 @@ public class QueryOTAJobResponse extends AcsResponse {
 			this.selectionType = selectionType;
 		}
 
+		public Integer getOverwriteMode() {
+			return this.overwriteMode;
+		}
+
+		public void setOverwriteMode(Integer overwriteMode) {
+			this.overwriteMode = overwriteMode;
+		}
+
+		public String getTargetSelection() {
+			return this.targetSelection;
+		}
+
+		public void setTargetSelection(String targetSelection) {
+			this.targetSelection = targetSelection;
+		}
+
+		public Integer getTimeoutInMinutes() {
+			return this.timeoutInMinutes;
+		}
+
+		public void setTimeoutInMinutes(Integer timeoutInMinutes) {
+			this.timeoutInMinutes = timeoutInMinutes;
+		}
+
 		public String getGrayPercent() {
 			return this.grayPercent;
 		}
@@ -283,12 +203,68 @@ public class QueryOTAJobResponse extends AcsResponse {
 			this.grayPercent = grayPercent;
 		}
 
-		public Integer getMaximumPerMinute() {
-			return this.maximumPerMinute;
+		public Boolean getNeedPush() {
+			return this.needPush;
 		}
 
-		public void setMaximumPerMinute(Integer maximumPerMinute) {
-			this.maximumPerMinute = maximumPerMinute;
+		public void setNeedPush(Boolean needPush) {
+			this.needPush = needPush;
+		}
+
+		public String getJobStatus() {
+			return this.jobStatus;
+		}
+
+		public void setJobStatus(String jobStatus) {
+			this.jobStatus = jobStatus;
+		}
+
+		public String getJobDesc() {
+			return this.jobDesc;
+		}
+
+		public void setJobDesc(String jobDesc) {
+			this.jobDesc = jobDesc;
+		}
+
+		public String getUtcModified() {
+			return this.utcModified;
+		}
+
+		public void setUtcModified(String utcModified) {
+			this.utcModified = utcModified;
+		}
+
+		public String getUtcStartTime() {
+			return this.utcStartTime;
+		}
+
+		public void setUtcStartTime(String utcStartTime) {
+			this.utcStartTime = utcStartTime;
+		}
+
+		public Boolean getMultiModuleMode() {
+			return this.multiModuleMode;
+		}
+
+		public void setMultiModuleMode(Boolean multiModuleMode) {
+			this.multiModuleMode = multiModuleMode;
+		}
+
+		public String getUtcEndTime() {
+			return this.utcEndTime;
+		}
+
+		public void setUtcEndTime(String utcEndTime) {
+			this.utcEndTime = utcEndTime;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public String getDestVersion() {
@@ -307,12 +283,12 @@ public class QueryOTAJobResponse extends AcsResponse {
 			this.utcScheduleFinishTime = utcScheduleFinishTime;
 		}
 
-		public Integer getOverwriteMode() {
-			return this.overwriteMode;
+		public Integer getMaximumPerMinute() {
+			return this.maximumPerMinute;
 		}
 
-		public void setOverwriteMode(Integer overwriteMode) {
-			this.overwriteMode = overwriteMode;
+		public void setMaximumPerMinute(Integer maximumPerMinute) {
+			this.maximumPerMinute = maximumPerMinute;
 		}
 
 		public Integer getDynamicMode() {
@@ -323,28 +299,20 @@ public class QueryOTAJobResponse extends AcsResponse {
 			this.dynamicMode = dynamicMode;
 		}
 
-		public Boolean getNeedPush() {
-			return this.needPush;
+		public Integer getRetryCount() {
+			return this.retryCount;
 		}
 
-		public void setNeedPush(Boolean needPush) {
-			this.needPush = needPush;
+		public void setRetryCount(Integer retryCount) {
+			this.retryCount = retryCount;
 		}
 
-		public Boolean getNeedConfirm() {
-			return this.needConfirm;
+		public String getProductKey() {
+			return this.productKey;
 		}
 
-		public void setNeedConfirm(Boolean needConfirm) {
-			this.needConfirm = needConfirm;
-		}
-
-		public String getGroupId() {
-			return this.groupId;
-		}
-
-		public void setGroupId(String groupId) {
-			this.groupId = groupId;
+		public void setProductKey(String productKey) {
+			this.productKey = productKey;
 		}
 
 		public String getGroupName() {
@@ -355,6 +323,30 @@ public class QueryOTAJobResponse extends AcsResponse {
 			this.groupName = groupName;
 		}
 
+		public String getGroupId() {
+			return this.groupId;
+		}
+
+		public void setGroupId(String groupId) {
+			this.groupId = groupId;
+		}
+
+		public String getUtcScheduleTime() {
+			return this.utcScheduleTime;
+		}
+
+		public void setUtcScheduleTime(String utcScheduleTime) {
+			this.utcScheduleTime = utcScheduleTime;
+		}
+
+		public String getJobId() {
+			return this.jobId;
+		}
+
+		public void setJobId(String jobId) {
+			this.jobId = jobId;
+		}
+
 		public String getDownloadProtocol() {
 			return this.downloadProtocol;
 		}
@@ -363,12 +355,20 @@ public class QueryOTAJobResponse extends AcsResponse {
 			this.downloadProtocol = downloadProtocol;
 		}
 
-		public Boolean getMultiModuleMode() {
-			return this.multiModuleMode;
+		public Boolean getNeedConfirm() {
+			return this.needConfirm;
 		}
 
-		public void setMultiModuleMode(Boolean multiModuleMode) {
-			this.multiModuleMode = multiModuleMode;
+		public void setNeedConfirm(Boolean needConfirm) {
+			this.needConfirm = needConfirm;
+		}
+
+		public String getFirmwareId() {
+			return this.firmwareId;
+		}
+
+		public void setFirmwareId(String firmwareId) {
+			this.firmwareId = firmwareId;
 		}
 
 		public List<OtaTagDTO> getTags() {

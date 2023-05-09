@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetEdgeInstanceResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -66,6 +50,22 @@ public class GetEdgeInstanceResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -76,60 +76,44 @@ public class GetEdgeInstanceResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String instanceId;
-
-		private String name;
-
-		private String tags;
+		private Long gmtCreateTimestamp;
 
 		private String type;
 
+		private String roleArn;
+
 		private Integer spec;
+
+		private String roleAttachTime;
+
+		private Long gmtModifiedTimestamp;
+
+		private String tags;
+
+		private String instanceId;
+
+		private String roleName;
+
+		private Long roleAttachTimestamp;
+
+		private String gmtModified;
+
+		private String latestDeploymentType;
+
+		private Integer latestDeploymentStatus;
 
 		private Boolean bizEnable;
 
 		private String gmtCreate;
 
-		private String gmtModified;
+		private String name;
 
-		private String roleArn;
-
-		private String roleName;
-
-		private String roleAttachTime;
-
-		private Integer latestDeploymentStatus;
-
-		private String latestDeploymentType;
-
-		private Long gmtCreateTimestamp;
-
-		private Long gmtModifiedTimestamp;
-
-		private Long roleAttachTimestamp;
-
-		public String getInstanceId() {
-			return this.instanceId;
+		public Long getGmtCreateTimestamp() {
+			return this.gmtCreateTimestamp;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getTags() {
-			return this.tags;
-		}
-
-		public void setTags(String tags) {
-			this.tags = tags;
+		public void setGmtCreateTimestamp(Long gmtCreateTimestamp) {
+			this.gmtCreateTimestamp = gmtCreateTimestamp;
 		}
 
 		public String getType() {
@@ -140,12 +124,92 @@ public class GetEdgeInstanceResponse extends AcsResponse {
 			this.type = type;
 		}
 
+		public String getRoleArn() {
+			return this.roleArn;
+		}
+
+		public void setRoleArn(String roleArn) {
+			this.roleArn = roleArn;
+		}
+
 		public Integer getSpec() {
 			return this.spec;
 		}
 
 		public void setSpec(Integer spec) {
 			this.spec = spec;
+		}
+
+		public String getRoleAttachTime() {
+			return this.roleAttachTime;
+		}
+
+		public void setRoleAttachTime(String roleAttachTime) {
+			this.roleAttachTime = roleAttachTime;
+		}
+
+		public Long getGmtModifiedTimestamp() {
+			return this.gmtModifiedTimestamp;
+		}
+
+		public void setGmtModifiedTimestamp(Long gmtModifiedTimestamp) {
+			this.gmtModifiedTimestamp = gmtModifiedTimestamp;
+		}
+
+		public String getTags() {
+			return this.tags;
+		}
+
+		public void setTags(String tags) {
+			this.tags = tags;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getRoleName() {
+			return this.roleName;
+		}
+
+		public void setRoleName(String roleName) {
+			this.roleName = roleName;
+		}
+
+		public Long getRoleAttachTimestamp() {
+			return this.roleAttachTimestamp;
+		}
+
+		public void setRoleAttachTimestamp(Long roleAttachTimestamp) {
+			this.roleAttachTimestamp = roleAttachTimestamp;
+		}
+
+		public String getGmtModified() {
+			return this.gmtModified;
+		}
+
+		public void setGmtModified(String gmtModified) {
+			this.gmtModified = gmtModified;
+		}
+
+		public String getLatestDeploymentType() {
+			return this.latestDeploymentType;
+		}
+
+		public void setLatestDeploymentType(String latestDeploymentType) {
+			this.latestDeploymentType = latestDeploymentType;
+		}
+
+		public Integer getLatestDeploymentStatus() {
+			return this.latestDeploymentStatus;
+		}
+
+		public void setLatestDeploymentStatus(Integer latestDeploymentStatus) {
+			this.latestDeploymentStatus = latestDeploymentStatus;
 		}
 
 		public Boolean getBizEnable() {
@@ -164,76 +228,12 @@ public class GetEdgeInstanceResponse extends AcsResponse {
 			this.gmtCreate = gmtCreate;
 		}
 
-		public String getGmtModified() {
-			return this.gmtModified;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setGmtModified(String gmtModified) {
-			this.gmtModified = gmtModified;
-		}
-
-		public String getRoleArn() {
-			return this.roleArn;
-		}
-
-		public void setRoleArn(String roleArn) {
-			this.roleArn = roleArn;
-		}
-
-		public String getRoleName() {
-			return this.roleName;
-		}
-
-		public void setRoleName(String roleName) {
-			this.roleName = roleName;
-		}
-
-		public String getRoleAttachTime() {
-			return this.roleAttachTime;
-		}
-
-		public void setRoleAttachTime(String roleAttachTime) {
-			this.roleAttachTime = roleAttachTime;
-		}
-
-		public Integer getLatestDeploymentStatus() {
-			return this.latestDeploymentStatus;
-		}
-
-		public void setLatestDeploymentStatus(Integer latestDeploymentStatus) {
-			this.latestDeploymentStatus = latestDeploymentStatus;
-		}
-
-		public String getLatestDeploymentType() {
-			return this.latestDeploymentType;
-		}
-
-		public void setLatestDeploymentType(String latestDeploymentType) {
-			this.latestDeploymentType = latestDeploymentType;
-		}
-
-		public Long getGmtCreateTimestamp() {
-			return this.gmtCreateTimestamp;
-		}
-
-		public void setGmtCreateTimestamp(Long gmtCreateTimestamp) {
-			this.gmtCreateTimestamp = gmtCreateTimestamp;
-		}
-
-		public Long getGmtModifiedTimestamp() {
-			return this.gmtModifiedTimestamp;
-		}
-
-		public void setGmtModifiedTimestamp(Long gmtModifiedTimestamp) {
-			this.gmtModifiedTimestamp = gmtModifiedTimestamp;
-		}
-
-		public Long getRoleAttachTimestamp() {
-			return this.roleAttachTimestamp;
-		}
-
-		public void setRoleAttachTimestamp(Long roleAttachTimestamp) {
-			this.roleAttachTimestamp = roleAttachTimestamp;
+		public void setName(String name) {
+			this.name = name;
 		}
 	}
 

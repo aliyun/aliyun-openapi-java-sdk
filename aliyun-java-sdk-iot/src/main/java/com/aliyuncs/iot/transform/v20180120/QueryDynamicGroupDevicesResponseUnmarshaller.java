@@ -27,30 +27,30 @@ public class QueryDynamicGroupDevicesResponseUnmarshaller {
 	public static QueryDynamicGroupDevicesResponse unmarshall(QueryDynamicGroupDevicesResponse queryDynamicGroupDevicesResponse, UnmarshallerContext _ctx) {
 		
 		queryDynamicGroupDevicesResponse.setRequestId(_ctx.stringValue("QueryDynamicGroupDevicesResponse.RequestId"));
+		queryDynamicGroupDevicesResponse.setNextToken(_ctx.stringValue("QueryDynamicGroupDevicesResponse.NextToken"));
+		queryDynamicGroupDevicesResponse.setErrorMessage(_ctx.stringValue("QueryDynamicGroupDevicesResponse.ErrorMessage"));
 		queryDynamicGroupDevicesResponse.setSuccess(_ctx.booleanValue("QueryDynamicGroupDevicesResponse.Success"));
 		queryDynamicGroupDevicesResponse.setCode(_ctx.stringValue("QueryDynamicGroupDevicesResponse.Code"));
-		queryDynamicGroupDevicesResponse.setErrorMessage(_ctx.stringValue("QueryDynamicGroupDevicesResponse.ErrorMessage"));
-		queryDynamicGroupDevicesResponse.setPage(_ctx.integerValue("QueryDynamicGroupDevicesResponse.Page"));
 		queryDynamicGroupDevicesResponse.setPageSize(_ctx.integerValue("QueryDynamicGroupDevicesResponse.PageSize"));
-		queryDynamicGroupDevicesResponse.setPageCount(_ctx.integerValue("QueryDynamicGroupDevicesResponse.PageCount"));
 		queryDynamicGroupDevicesResponse.setTotal(_ctx.integerValue("QueryDynamicGroupDevicesResponse.Total"));
-		queryDynamicGroupDevicesResponse.setNextToken(_ctx.stringValue("QueryDynamicGroupDevicesResponse.NextToken"));
+		queryDynamicGroupDevicesResponse.setPageCount(_ctx.integerValue("QueryDynamicGroupDevicesResponse.PageCount"));
+		queryDynamicGroupDevicesResponse.setPage(_ctx.integerValue("QueryDynamicGroupDevicesResponse.Page"));
 
 		List<SimpleDeviceInfo> data = new ArrayList<SimpleDeviceInfo>();
 		for (int i = 0; i < _ctx.lengthValue("QueryDynamicGroupDevicesResponse.Data.Length"); i++) {
 			SimpleDeviceInfo simpleDeviceInfo = new SimpleDeviceInfo();
-			simpleDeviceInfo.setProductName(_ctx.stringValue("QueryDynamicGroupDevicesResponse.Data["+ i +"].ProductName"));
-			simpleDeviceInfo.setProductKey(_ctx.stringValue("QueryDynamicGroupDevicesResponse.Data["+ i +"].ProductKey"));
-			simpleDeviceInfo.setDeviceName(_ctx.stringValue("QueryDynamicGroupDevicesResponse.Data["+ i +"].DeviceName"));
-			simpleDeviceInfo.setCategoryKey(_ctx.stringValue("QueryDynamicGroupDevicesResponse.Data["+ i +"].CategoryKey"));
-			simpleDeviceInfo.setNodeType(_ctx.integerValue("QueryDynamicGroupDevicesResponse.Data["+ i +"].NodeType"));
 			simpleDeviceInfo.setStatus(_ctx.stringValue("QueryDynamicGroupDevicesResponse.Data["+ i +"].Status"));
-			simpleDeviceInfo.setIotId(_ctx.stringValue("QueryDynamicGroupDevicesResponse.Data["+ i +"].IotId"));
-			simpleDeviceInfo.setActiveTime(_ctx.stringValue("QueryDynamicGroupDevicesResponse.Data["+ i +"].ActiveTime"));
+			simpleDeviceInfo.setProductName(_ctx.stringValue("QueryDynamicGroupDevicesResponse.Data["+ i +"].ProductName"));
+			simpleDeviceInfo.setDeviceName(_ctx.stringValue("QueryDynamicGroupDevicesResponse.Data["+ i +"].DeviceName"));
 			simpleDeviceInfo.setUtcActiveTime(_ctx.stringValue("QueryDynamicGroupDevicesResponse.Data["+ i +"].UtcActiveTime"));
+			simpleDeviceInfo.setActiveTime(_ctx.stringValue("QueryDynamicGroupDevicesResponse.Data["+ i +"].ActiveTime"));
+			simpleDeviceInfo.setProductKey(_ctx.stringValue("QueryDynamicGroupDevicesResponse.Data["+ i +"].ProductKey"));
 			simpleDeviceInfo.setLastOnlineTime(_ctx.stringValue("QueryDynamicGroupDevicesResponse.Data["+ i +"].LastOnlineTime"));
+			simpleDeviceInfo.setNodeType(_ctx.integerValue("QueryDynamicGroupDevicesResponse.Data["+ i +"].NodeType"));
 			simpleDeviceInfo.setUtcLastOnlineTime(_ctx.stringValue("QueryDynamicGroupDevicesResponse.Data["+ i +"].UtcLastOnlineTime"));
 			simpleDeviceInfo.setNickname(_ctx.stringValue("QueryDynamicGroupDevicesResponse.Data["+ i +"].Nickname"));
+			simpleDeviceInfo.setCategoryKey(_ctx.stringValue("QueryDynamicGroupDevicesResponse.Data["+ i +"].CategoryKey"));
+			simpleDeviceInfo.setIotId(_ctx.stringValue("QueryDynamicGroupDevicesResponse.Data["+ i +"].IotId"));
 
 			data.add(simpleDeviceInfo);
 		}

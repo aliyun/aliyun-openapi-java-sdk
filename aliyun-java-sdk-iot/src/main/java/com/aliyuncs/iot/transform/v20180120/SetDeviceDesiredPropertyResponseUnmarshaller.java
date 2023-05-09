@@ -24,10 +24,10 @@ public class SetDeviceDesiredPropertyResponseUnmarshaller {
 	public static SetDeviceDesiredPropertyResponse unmarshall(SetDeviceDesiredPropertyResponse setDeviceDesiredPropertyResponse, UnmarshallerContext _ctx) {
 		
 		setDeviceDesiredPropertyResponse.setRequestId(_ctx.stringValue("SetDeviceDesiredPropertyResponse.RequestId"));
-		setDeviceDesiredPropertyResponse.setSuccess(_ctx.booleanValue("SetDeviceDesiredPropertyResponse.Success"));
-		setDeviceDesiredPropertyResponse.setErrorMessage(_ctx.stringValue("SetDeviceDesiredPropertyResponse.ErrorMessage"));
 		setDeviceDesiredPropertyResponse.setCode(_ctx.stringValue("SetDeviceDesiredPropertyResponse.Code"));
+		setDeviceDesiredPropertyResponse.setErrorMessage(_ctx.stringValue("SetDeviceDesiredPropertyResponse.ErrorMessage"));
 		setDeviceDesiredPropertyResponse.setMessageArguments(_ctx.stringValue("SetDeviceDesiredPropertyResponse.MessageArguments"));
+		setDeviceDesiredPropertyResponse.setSuccess(_ctx.booleanValue("SetDeviceDesiredPropertyResponse.Success"));
 
 		Data data = new Data();
 		data.setMessageId(_ctx.stringValue("SetDeviceDesiredPropertyResponse.Data.MessageId"));

@@ -27,26 +27,26 @@ public class ListOTAUnfinishedTaskByDeviceResponseUnmarshaller {
 	public static ListOTAUnfinishedTaskByDeviceResponse unmarshall(ListOTAUnfinishedTaskByDeviceResponse listOTAUnfinishedTaskByDeviceResponse, UnmarshallerContext _ctx) {
 		
 		listOTAUnfinishedTaskByDeviceResponse.setRequestId(_ctx.stringValue("ListOTAUnfinishedTaskByDeviceResponse.RequestId"));
-		listOTAUnfinishedTaskByDeviceResponse.setSuccess(_ctx.booleanValue("ListOTAUnfinishedTaskByDeviceResponse.Success"));
 		listOTAUnfinishedTaskByDeviceResponse.setCode(_ctx.stringValue("ListOTAUnfinishedTaskByDeviceResponse.Code"));
 		listOTAUnfinishedTaskByDeviceResponse.setErrorMessage(_ctx.stringValue("ListOTAUnfinishedTaskByDeviceResponse.ErrorMessage"));
+		listOTAUnfinishedTaskByDeviceResponse.setSuccess(_ctx.booleanValue("ListOTAUnfinishedTaskByDeviceResponse.Success"));
 
 		List<SimpleOTATaskInfo> data = new ArrayList<SimpleOTATaskInfo>();
 		for (int i = 0; i < _ctx.lengthValue("ListOTAUnfinishedTaskByDeviceResponse.Data.Length"); i++) {
 			SimpleOTATaskInfo simpleOTATaskInfo = new SimpleOTATaskInfo();
-			simpleOTATaskInfo.setTaskId(_ctx.stringValue("ListOTAUnfinishedTaskByDeviceResponse.Data["+ i +"].TaskId"));
-			simpleOTATaskInfo.setUtcModified(_ctx.stringValue("ListOTAUnfinishedTaskByDeviceResponse.Data["+ i +"].UtcModified"));
-			simpleOTATaskInfo.setProductKey(_ctx.stringValue("ListOTAUnfinishedTaskByDeviceResponse.Data["+ i +"].ProductKey"));
-			simpleOTATaskInfo.setTaskStatus(_ctx.stringValue("ListOTAUnfinishedTaskByDeviceResponse.Data["+ i +"].TaskStatus"));
-			simpleOTATaskInfo.setJobId(_ctx.stringValue("ListOTAUnfinishedTaskByDeviceResponse.Data["+ i +"].JobId"));
+			simpleOTATaskInfo.setModuleName(_ctx.stringValue("ListOTAUnfinishedTaskByDeviceResponse.Data["+ i +"].ModuleName"));
 			simpleOTATaskInfo.setProductName(_ctx.stringValue("ListOTAUnfinishedTaskByDeviceResponse.Data["+ i +"].ProductName"));
 			simpleOTATaskInfo.setDeviceName(_ctx.stringValue("ListOTAUnfinishedTaskByDeviceResponse.Data["+ i +"].DeviceName"));
-			simpleOTATaskInfo.setSrcVersion(_ctx.stringValue("ListOTAUnfinishedTaskByDeviceResponse.Data["+ i +"].SrcVersion"));
-			simpleOTATaskInfo.setDestVersion(_ctx.stringValue("ListOTAUnfinishedTaskByDeviceResponse.Data["+ i +"].DestVersion"));
-			simpleOTATaskInfo.setIotId(_ctx.stringValue("ListOTAUnfinishedTaskByDeviceResponse.Data["+ i +"].IotId"));
 			simpleOTATaskInfo.setUtcCreate(_ctx.stringValue("ListOTAUnfinishedTaskByDeviceResponse.Data["+ i +"].UtcCreate"));
-			simpleOTATaskInfo.setModuleName(_ctx.stringValue("ListOTAUnfinishedTaskByDeviceResponse.Data["+ i +"].ModuleName"));
+			simpleOTATaskInfo.setProductKey(_ctx.stringValue("ListOTAUnfinishedTaskByDeviceResponse.Data["+ i +"].ProductKey"));
+			simpleOTATaskInfo.setTaskStatus(_ctx.stringValue("ListOTAUnfinishedTaskByDeviceResponse.Data["+ i +"].TaskStatus"));
+			simpleOTATaskInfo.setUtcModified(_ctx.stringValue("ListOTAUnfinishedTaskByDeviceResponse.Data["+ i +"].UtcModified"));
+			simpleOTATaskInfo.setJobId(_ctx.stringValue("ListOTAUnfinishedTaskByDeviceResponse.Data["+ i +"].JobId"));
+			simpleOTATaskInfo.setSrcVersion(_ctx.stringValue("ListOTAUnfinishedTaskByDeviceResponse.Data["+ i +"].SrcVersion"));
+			simpleOTATaskInfo.setTaskId(_ctx.stringValue("ListOTAUnfinishedTaskByDeviceResponse.Data["+ i +"].TaskId"));
+			simpleOTATaskInfo.setDestVersion(_ctx.stringValue("ListOTAUnfinishedTaskByDeviceResponse.Data["+ i +"].DestVersion"));
 			simpleOTATaskInfo.setFirmwareId(_ctx.stringValue("ListOTAUnfinishedTaskByDeviceResponse.Data["+ i +"].FirmwareId"));
+			simpleOTATaskInfo.setIotId(_ctx.stringValue("ListOTAUnfinishedTaskByDeviceResponse.Data["+ i +"].IotId"));
 
 			data.add(simpleOTATaskInfo);
 		}

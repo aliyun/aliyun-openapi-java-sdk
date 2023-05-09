@@ -23,9 +23,9 @@ public class StartParserResponseUnmarshaller {
 	public static StartParserResponse unmarshall(StartParserResponse startParserResponse, UnmarshallerContext _ctx) {
 		
 		startParserResponse.setRequestId(_ctx.stringValue("StartParserResponse.RequestId"));
-		startParserResponse.setSuccess(_ctx.booleanValue("StartParserResponse.Success"));
 		startParserResponse.setCode(_ctx.stringValue("StartParserResponse.Code"));
 		startParserResponse.setErrorMessage(_ctx.stringValue("StartParserResponse.ErrorMessage"));
+		startParserResponse.setSuccess(_ctx.booleanValue("StartParserResponse.Success"));
 	 
 	 	return startParserResponse;
 	}

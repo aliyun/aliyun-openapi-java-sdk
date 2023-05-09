@@ -23,9 +23,9 @@ public class DeleteDeviceGroupResponseUnmarshaller {
 	public static DeleteDeviceGroupResponse unmarshall(DeleteDeviceGroupResponse deleteDeviceGroupResponse, UnmarshallerContext _ctx) {
 		
 		deleteDeviceGroupResponse.setRequestId(_ctx.stringValue("DeleteDeviceGroupResponse.RequestId"));
-		deleteDeviceGroupResponse.setSuccess(_ctx.booleanValue("DeleteDeviceGroupResponse.Success"));
 		deleteDeviceGroupResponse.setCode(_ctx.stringValue("DeleteDeviceGroupResponse.Code"));
 		deleteDeviceGroupResponse.setErrorMessage(_ctx.stringValue("DeleteDeviceGroupResponse.ErrorMessage"));
+		deleteDeviceGroupResponse.setSuccess(_ctx.booleanValue("DeleteDeviceGroupResponse.Success"));
 	 
 	 	return deleteDeviceGroupResponse;
 	}

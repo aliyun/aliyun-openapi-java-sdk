@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class RefreshStudioAppTokenOpenResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -66,6 +50,22 @@ public class RefreshStudioAppTokenOpenResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -76,23 +76,15 @@ public class RefreshStudioAppTokenOpenResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String isEnable;
-
 		private String type;
 
-		private String bizType;
-
-		private String token;
+		private String isEnable;
 
 		private String bizId;
 
-		public String getIsEnable() {
-			return this.isEnable;
-		}
+		private String token;
 
-		public void setIsEnable(String isEnable) {
-			this.isEnable = isEnable;
-		}
+		private String bizType;
 
 		public String getType() {
 			return this.type;
@@ -102,12 +94,20 @@ public class RefreshStudioAppTokenOpenResponse extends AcsResponse {
 			this.type = type;
 		}
 
-		public String getBizType() {
-			return this.bizType;
+		public String getIsEnable() {
+			return this.isEnable;
 		}
 
-		public void setBizType(String bizType) {
-			this.bizType = bizType;
+		public void setIsEnable(String isEnable) {
+			this.isEnable = isEnable;
+		}
+
+		public String getBizId() {
+			return this.bizId;
+		}
+
+		public void setBizId(String bizId) {
+			this.bizId = bizId;
 		}
 
 		public String getToken() {
@@ -118,12 +118,12 @@ public class RefreshStudioAppTokenOpenResponse extends AcsResponse {
 			this.token = token;
 		}
 
-		public String getBizId() {
-			return this.bizId;
+		public String getBizType() {
+			return this.bizType;
 		}
 
-		public void setBizId(String bizId) {
-			this.bizId = bizId;
+		public void setBizType(String bizType) {
+			this.bizType = bizType;
 		}
 	}
 

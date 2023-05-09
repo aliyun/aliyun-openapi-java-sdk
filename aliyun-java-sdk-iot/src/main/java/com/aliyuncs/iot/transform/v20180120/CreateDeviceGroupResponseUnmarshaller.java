@@ -24,15 +24,15 @@ public class CreateDeviceGroupResponseUnmarshaller {
 	public static CreateDeviceGroupResponse unmarshall(CreateDeviceGroupResponse createDeviceGroupResponse, UnmarshallerContext _ctx) {
 		
 		createDeviceGroupResponse.setRequestId(_ctx.stringValue("CreateDeviceGroupResponse.RequestId"));
-		createDeviceGroupResponse.setSuccess(_ctx.booleanValue("CreateDeviceGroupResponse.Success"));
 		createDeviceGroupResponse.setCode(_ctx.stringValue("CreateDeviceGroupResponse.Code"));
 		createDeviceGroupResponse.setErrorMessage(_ctx.stringValue("CreateDeviceGroupResponse.ErrorMessage"));
+		createDeviceGroupResponse.setSuccess(_ctx.booleanValue("CreateDeviceGroupResponse.Success"));
 
 		Data data = new Data();
 		data.setGroupId(_ctx.stringValue("CreateDeviceGroupResponse.Data.GroupId"));
-		data.setUtcCreate(_ctx.stringValue("CreateDeviceGroupResponse.Data.UtcCreate"));
 		data.setGroupName(_ctx.stringValue("CreateDeviceGroupResponse.Data.GroupName"));
 		data.setGroupDesc(_ctx.stringValue("CreateDeviceGroupResponse.Data.GroupDesc"));
+		data.setUtcCreate(_ctx.stringValue("CreateDeviceGroupResponse.Data.UtcCreate"));
 		createDeviceGroupResponse.setData(data);
 	 
 	 	return createDeviceGroupResponse;

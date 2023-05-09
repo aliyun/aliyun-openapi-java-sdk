@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListParserDestinationResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private List<Destinations> data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class ListParserDestinationResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public List<Destinations> getData() {
 		return this.data;
 	}
@@ -77,19 +77,27 @@ public class ListParserDestinationResponse extends AcsResponse {
 
 	public static class Destinations {
 
+		private String type;
+
 		private Long destinationId;
 
-		private String name;
-
-		private String type;
+		private String utcModified;
 
 		private String configuration;
 
-		private Boolean isFailover;
+		private String name;
 
 		private String utcCreated;
 
-		private String utcModified;
+		private Boolean isFailover;
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
+		}
 
 		public Long getDestinationId() {
 			return this.destinationId;
@@ -99,20 +107,12 @@ public class ListParserDestinationResponse extends AcsResponse {
 			this.destinationId = destinationId;
 		}
 
-		public String getName() {
-			return this.name;
+		public String getUtcModified() {
+			return this.utcModified;
 		}
 
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getType() {
-			return this.type;
-		}
-
-		public void setType(String type) {
-			this.type = type;
+		public void setUtcModified(String utcModified) {
+			this.utcModified = utcModified;
 		}
 
 		public String getConfiguration() {
@@ -123,12 +123,12 @@ public class ListParserDestinationResponse extends AcsResponse {
 			this.configuration = configuration;
 		}
 
-		public Boolean getIsFailover() {
-			return this.isFailover;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setIsFailover(Boolean isFailover) {
-			this.isFailover = isFailover;
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public String getUtcCreated() {
@@ -139,12 +139,12 @@ public class ListParserDestinationResponse extends AcsResponse {
 			this.utcCreated = utcCreated;
 		}
 
-		public String getUtcModified() {
-			return this.utcModified;
+		public Boolean getIsFailover() {
+			return this.isFailover;
 		}
 
-		public void setUtcModified(String utcModified) {
-			this.utcModified = utcModified;
+		public void setIsFailover(Boolean isFailover) {
+			this.isFailover = isFailover;
 		}
 	}
 

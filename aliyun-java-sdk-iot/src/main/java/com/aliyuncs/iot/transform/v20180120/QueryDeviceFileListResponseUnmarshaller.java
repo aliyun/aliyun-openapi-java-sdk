@@ -27,21 +27,21 @@ public class QueryDeviceFileListResponseUnmarshaller {
 	public static QueryDeviceFileListResponse unmarshall(QueryDeviceFileListResponse queryDeviceFileListResponse, UnmarshallerContext _ctx) {
 		
 		queryDeviceFileListResponse.setRequestId(_ctx.stringValue("QueryDeviceFileListResponse.RequestId"));
+		queryDeviceFileListResponse.setCurrentPage(_ctx.integerValue("QueryDeviceFileListResponse.CurrentPage"));
+		queryDeviceFileListResponse.setErrorMessage(_ctx.stringValue("QueryDeviceFileListResponse.ErrorMessage"));
 		queryDeviceFileListResponse.setSuccess(_ctx.booleanValue("QueryDeviceFileListResponse.Success"));
 		queryDeviceFileListResponse.setCode(_ctx.stringValue("QueryDeviceFileListResponse.Code"));
-		queryDeviceFileListResponse.setErrorMessage(_ctx.stringValue("QueryDeviceFileListResponse.ErrorMessage"));
-		queryDeviceFileListResponse.setCurrentPage(_ctx.integerValue("QueryDeviceFileListResponse.CurrentPage"));
-		queryDeviceFileListResponse.setPageCount(_ctx.integerValue("QueryDeviceFileListResponse.PageCount"));
 		queryDeviceFileListResponse.setPageSize(_ctx.integerValue("QueryDeviceFileListResponse.PageSize"));
 		queryDeviceFileListResponse.setTotal(_ctx.integerValue("QueryDeviceFileListResponse.Total"));
+		queryDeviceFileListResponse.setPageCount(_ctx.integerValue("QueryDeviceFileListResponse.PageCount"));
 
 		List<FileSummary> data = new ArrayList<FileSummary>();
 		for (int i = 0; i < _ctx.lengthValue("QueryDeviceFileListResponse.Data.Length"); i++) {
 			FileSummary fileSummary = new FileSummary();
-			fileSummary.setFileId(_ctx.stringValue("QueryDeviceFileListResponse.Data["+ i +"].FileId"));
+			fileSummary.setUtcCreatedOn(_ctx.stringValue("QueryDeviceFileListResponse.Data["+ i +"].UtcCreatedOn"));
 			fileSummary.setName(_ctx.stringValue("QueryDeviceFileListResponse.Data["+ i +"].Name"));
 			fileSummary.setSize(_ctx.stringValue("QueryDeviceFileListResponse.Data["+ i +"].Size"));
-			fileSummary.setUtcCreatedOn(_ctx.stringValue("QueryDeviceFileListResponse.Data["+ i +"].UtcCreatedOn"));
+			fileSummary.setFileId(_ctx.stringValue("QueryDeviceFileListResponse.Data["+ i +"].FileId"));
 
 			data.add(fileSummary);
 		}

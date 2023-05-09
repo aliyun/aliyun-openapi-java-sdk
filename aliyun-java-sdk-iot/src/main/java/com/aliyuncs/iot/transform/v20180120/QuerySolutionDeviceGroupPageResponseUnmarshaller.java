@@ -28,22 +28,22 @@ public class QuerySolutionDeviceGroupPageResponseUnmarshaller {
 	public static QuerySolutionDeviceGroupPageResponse unmarshall(QuerySolutionDeviceGroupPageResponse querySolutionDeviceGroupPageResponse, UnmarshallerContext _ctx) {
 		
 		querySolutionDeviceGroupPageResponse.setRequestId(_ctx.stringValue("QuerySolutionDeviceGroupPageResponse.RequestId"));
-		querySolutionDeviceGroupPageResponse.setSuccess(_ctx.booleanValue("QuerySolutionDeviceGroupPageResponse.Success"));
 		querySolutionDeviceGroupPageResponse.setCode(_ctx.stringValue("QuerySolutionDeviceGroupPageResponse.Code"));
 		querySolutionDeviceGroupPageResponse.setErrorMessage(_ctx.stringValue("QuerySolutionDeviceGroupPageResponse.ErrorMessage"));
+		querySolutionDeviceGroupPageResponse.setSuccess(_ctx.booleanValue("QuerySolutionDeviceGroupPageResponse.Success"));
 
 		Data data = new Data();
-		data.setPageId(_ctx.integerValue("QuerySolutionDeviceGroupPageResponse.Data.PageId"));
 		data.setPageSize(_ctx.integerValue("QuerySolutionDeviceGroupPageResponse.Data.PageSize"));
+		data.setPageId(_ctx.integerValue("QuerySolutionDeviceGroupPageResponse.Data.PageId"));
 		data.setTotal(_ctx.integerValue("QuerySolutionDeviceGroupPageResponse.Data.Total"));
 
 		List<ItemName> list = new ArrayList<ItemName>();
 		for (int i = 0; i < _ctx.lengthValue("QuerySolutionDeviceGroupPageResponse.Data.List.Length"); i++) {
 			ItemName itemName = new ItemName();
-			itemName.setGmtCreate(_ctx.longValue("QuerySolutionDeviceGroupPageResponse.Data.List["+ i +"].GmtCreate"));
-			itemName.setGmtModified(_ctx.longValue("QuerySolutionDeviceGroupPageResponse.Data.List["+ i +"].GmtModified"));
 			itemName.setGroupId(_ctx.stringValue("QuerySolutionDeviceGroupPageResponse.Data.List["+ i +"].GroupId"));
 			itemName.setGroupName(_ctx.stringValue("QuerySolutionDeviceGroupPageResponse.Data.List["+ i +"].GroupName"));
+			itemName.setGmtCreate(_ctx.longValue("QuerySolutionDeviceGroupPageResponse.Data.List["+ i +"].GmtCreate"));
+			itemName.setGmtModified(_ctx.longValue("QuerySolutionDeviceGroupPageResponse.Data.List["+ i +"].GmtModified"));
 			itemName.setGroupDesc(_ctx.stringValue("QuerySolutionDeviceGroupPageResponse.Data.List["+ i +"].GroupDesc"));
 			itemName.setDeviceCount(_ctx.longValue("QuerySolutionDeviceGroupPageResponse.Data.List["+ i +"].DeviceCount"));
 

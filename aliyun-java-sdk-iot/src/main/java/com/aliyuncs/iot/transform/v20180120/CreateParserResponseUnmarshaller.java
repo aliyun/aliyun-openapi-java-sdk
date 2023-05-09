@@ -23,9 +23,9 @@ public class CreateParserResponseUnmarshaller {
 	public static CreateParserResponse unmarshall(CreateParserResponse createParserResponse, UnmarshallerContext _ctx) {
 		
 		createParserResponse.setRequestId(_ctx.stringValue("CreateParserResponse.RequestId"));
-		createParserResponse.setSuccess(_ctx.booleanValue("CreateParserResponse.Success"));
 		createParserResponse.setCode(_ctx.stringValue("CreateParserResponse.Code"));
 		createParserResponse.setErrorMessage(_ctx.stringValue("CreateParserResponse.ErrorMessage"));
+		createParserResponse.setSuccess(_ctx.booleanValue("CreateParserResponse.Success"));
 		createParserResponse.setParserId(_ctx.longValue("CreateParserResponse.ParserId"));
 	 
 	 	return createParserResponse;

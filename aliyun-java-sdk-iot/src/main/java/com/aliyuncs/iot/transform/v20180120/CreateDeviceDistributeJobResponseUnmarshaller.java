@@ -23,9 +23,9 @@ public class CreateDeviceDistributeJobResponseUnmarshaller {
 	public static CreateDeviceDistributeJobResponse unmarshall(CreateDeviceDistributeJobResponse createDeviceDistributeJobResponse, UnmarshallerContext _ctx) {
 		
 		createDeviceDistributeJobResponse.setRequestId(_ctx.stringValue("CreateDeviceDistributeJobResponse.RequestId"));
-		createDeviceDistributeJobResponse.setSuccess(_ctx.booleanValue("CreateDeviceDistributeJobResponse.Success"));
 		createDeviceDistributeJobResponse.setCode(_ctx.stringValue("CreateDeviceDistributeJobResponse.Code"));
 		createDeviceDistributeJobResponse.setErrorMessage(_ctx.stringValue("CreateDeviceDistributeJobResponse.ErrorMessage"));
+		createDeviceDistributeJobResponse.setSuccess(_ctx.booleanValue("CreateDeviceDistributeJobResponse.Success"));
 		createDeviceDistributeJobResponse.setJobId(_ctx.stringValue("CreateDeviceDistributeJobResponse.JobId"));
 	 
 	 	return createDeviceDistributeJobResponse;

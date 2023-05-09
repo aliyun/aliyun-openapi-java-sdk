@@ -24,23 +24,23 @@ public class GetEdgeDriverVersionResponseUnmarshaller {
 	public static GetEdgeDriverVersionResponse unmarshall(GetEdgeDriverVersionResponse getEdgeDriverVersionResponse, UnmarshallerContext _ctx) {
 		
 		getEdgeDriverVersionResponse.setRequestId(_ctx.stringValue("GetEdgeDriverVersionResponse.RequestId"));
-		getEdgeDriverVersionResponse.setSuccess(_ctx.booleanValue("GetEdgeDriverVersionResponse.Success"));
 		getEdgeDriverVersionResponse.setCode(_ctx.stringValue("GetEdgeDriverVersionResponse.Code"));
 		getEdgeDriverVersionResponse.setErrorMessage(_ctx.stringValue("GetEdgeDriverVersionResponse.ErrorMessage"));
+		getEdgeDriverVersionResponse.setSuccess(_ctx.booleanValue("GetEdgeDriverVersionResponse.Success"));
 
 		Data data = new Data();
-		data.setDriverId(_ctx.stringValue("GetEdgeDriverVersionResponse.Data.DriverId"));
-		data.setDriverVersion(_ctx.stringValue("GetEdgeDriverVersionResponse.Data.DriverVersion"));
-		data.setVersionState(_ctx.stringValue("GetEdgeDriverVersionResponse.Data.VersionState"));
-		data.setEdgeVersion(_ctx.stringValue("GetEdgeDriverVersionResponse.Data.EdgeVersion"));
-		data.setDescription(_ctx.stringValue("GetEdgeDriverVersionResponse.Data.Description"));
-		data.setSourceConfig(_ctx.stringValue("GetEdgeDriverVersionResponse.Data.SourceConfig"));
-		data.setDriverConfig(_ctx.stringValue("GetEdgeDriverVersionResponse.Data.DriverConfig"));
-		data.setContainerConfig(_ctx.stringValue("GetEdgeDriverVersionResponse.Data.ContainerConfig"));
-		data.setConfigCheckRule(_ctx.stringValue("GetEdgeDriverVersionResponse.Data.ConfigCheckRule"));
 		data.setGmtCreateTimestamp(_ctx.longValue("GetEdgeDriverVersionResponse.Data.GmtCreateTimestamp"));
+		data.setConfigCheckRule(_ctx.stringValue("GetEdgeDriverVersionResponse.Data.ConfigCheckRule"));
+		data.setDriverId(_ctx.stringValue("GetEdgeDriverVersionResponse.Data.DriverId"));
+		data.setEdgeVersion(_ctx.stringValue("GetEdgeDriverVersionResponse.Data.EdgeVersion"));
 		data.setGmtModifiedTimestamp(_ctx.longValue("GetEdgeDriverVersionResponse.Data.GmtModifiedTimestamp"));
+		data.setVersionState(_ctx.stringValue("GetEdgeDriverVersionResponse.Data.VersionState"));
+		data.setContainerConfig(_ctx.stringValue("GetEdgeDriverVersionResponse.Data.ContainerConfig"));
+		data.setDescription(_ctx.stringValue("GetEdgeDriverVersionResponse.Data.Description"));
+		data.setDriverConfig(_ctx.stringValue("GetEdgeDriverVersionResponse.Data.DriverConfig"));
+		data.setDriverVersion(_ctx.stringValue("GetEdgeDriverVersionResponse.Data.DriverVersion"));
 		data.setArgument(_ctx.stringValue("GetEdgeDriverVersionResponse.Data.Argument"));
+		data.setSourceConfig(_ctx.stringValue("GetEdgeDriverVersionResponse.Data.SourceConfig"));
 		getEdgeDriverVersionResponse.setData(data);
 	 
 	 	return getEdgeDriverVersionResponse;

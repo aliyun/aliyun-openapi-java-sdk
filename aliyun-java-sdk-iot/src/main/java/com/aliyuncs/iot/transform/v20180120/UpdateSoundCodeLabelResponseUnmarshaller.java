@@ -23,9 +23,9 @@ public class UpdateSoundCodeLabelResponseUnmarshaller {
 	public static UpdateSoundCodeLabelResponse unmarshall(UpdateSoundCodeLabelResponse updateSoundCodeLabelResponse, UnmarshallerContext _ctx) {
 		
 		updateSoundCodeLabelResponse.setRequestId(_ctx.stringValue("UpdateSoundCodeLabelResponse.RequestId"));
-		updateSoundCodeLabelResponse.setSuccess(_ctx.booleanValue("UpdateSoundCodeLabelResponse.Success"));
 		updateSoundCodeLabelResponse.setCode(_ctx.stringValue("UpdateSoundCodeLabelResponse.Code"));
 		updateSoundCodeLabelResponse.setErrorMessage(_ctx.stringValue("UpdateSoundCodeLabelResponse.ErrorMessage"));
+		updateSoundCodeLabelResponse.setSuccess(_ctx.booleanValue("UpdateSoundCodeLabelResponse.Success"));
 	 
 	 	return updateSoundCodeLabelResponse;
 	}

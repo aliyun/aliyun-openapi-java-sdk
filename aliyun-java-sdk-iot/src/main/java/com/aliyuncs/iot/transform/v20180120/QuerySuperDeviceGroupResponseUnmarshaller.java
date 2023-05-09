@@ -27,9 +27,9 @@ public class QuerySuperDeviceGroupResponseUnmarshaller {
 	public static QuerySuperDeviceGroupResponse unmarshall(QuerySuperDeviceGroupResponse querySuperDeviceGroupResponse, UnmarshallerContext _ctx) {
 		
 		querySuperDeviceGroupResponse.setRequestId(_ctx.stringValue("QuerySuperDeviceGroupResponse.RequestId"));
-		querySuperDeviceGroupResponse.setSuccess(_ctx.booleanValue("QuerySuperDeviceGroupResponse.Success"));
 		querySuperDeviceGroupResponse.setCode(_ctx.stringValue("QuerySuperDeviceGroupResponse.Code"));
 		querySuperDeviceGroupResponse.setErrorMessage(_ctx.stringValue("QuerySuperDeviceGroupResponse.ErrorMessage"));
+		querySuperDeviceGroupResponse.setSuccess(_ctx.booleanValue("QuerySuperDeviceGroupResponse.Success"));
 
 		List<GroupInfo> data = new ArrayList<GroupInfo>();
 		for (int i = 0; i < _ctx.lengthValue("QuerySuperDeviceGroupResponse.Data.Length"); i++) {

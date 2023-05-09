@@ -25,13 +25,21 @@ import com.aliyuncs.iot.Endpoint;
 public class UpdateTopicConfigRequest extends RpcAcsRequest<UpdateTopicConfigResponse> {
 	   
 
+	private String description;
+
 	private String iotInstanceId;
 
 	private String topicFullName;
 
 	private Boolean enableBroadcast;
 
+	private Boolean enableProxySubscribe;
+
 	private String productKey;
+
+	private String codec;
+
+	private String operation;
 	public UpdateTopicConfigRequest() {
 		super("Iot", "2018-01-20", "UpdateTopicConfig");
 		setMethod(MethodType.POST);
@@ -39,6 +47,17 @@ public class UpdateTopicConfigRequest extends RpcAcsRequest<UpdateTopicConfigRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
 	}
 
 	public String getIotInstanceId() {
@@ -74,6 +93,17 @@ public class UpdateTopicConfigRequest extends RpcAcsRequest<UpdateTopicConfigRes
 		}
 	}
 
+	public Boolean getEnableProxySubscribe() {
+		return this.enableProxySubscribe;
+	}
+
+	public void setEnableProxySubscribe(Boolean enableProxySubscribe) {
+		this.enableProxySubscribe = enableProxySubscribe;
+		if(enableProxySubscribe != null){
+			putQueryParameter("EnableProxySubscribe", enableProxySubscribe.toString());
+		}
+	}
+
 	public String getProductKey() {
 		return this.productKey;
 	}
@@ -82,6 +112,28 @@ public class UpdateTopicConfigRequest extends RpcAcsRequest<UpdateTopicConfigRes
 		this.productKey = productKey;
 		if(productKey != null){
 			putQueryParameter("ProductKey", productKey);
+		}
+	}
+
+	public String getCodec() {
+		return this.codec;
+	}
+
+	public void setCodec(String codec) {
+		this.codec = codec;
+		if(codec != null){
+			putQueryParameter("Codec", codec);
+		}
+	}
+
+	public String getOperation() {
+		return this.operation;
+	}
+
+	public void setOperation(String operation) {
+		this.operation = operation;
+		if(operation != null){
+			putQueryParameter("Operation", operation);
 		}
 	}
 

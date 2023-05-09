@@ -27,22 +27,22 @@ public class ListOTAModuleVersionsByDeviceResponseUnmarshaller {
 	public static ListOTAModuleVersionsByDeviceResponse unmarshall(ListOTAModuleVersionsByDeviceResponse listOTAModuleVersionsByDeviceResponse, UnmarshallerContext _ctx) {
 		
 		listOTAModuleVersionsByDeviceResponse.setRequestId(_ctx.stringValue("ListOTAModuleVersionsByDeviceResponse.RequestId"));
+		listOTAModuleVersionsByDeviceResponse.setCurrentPage(_ctx.integerValue("ListOTAModuleVersionsByDeviceResponse.CurrentPage"));
+		listOTAModuleVersionsByDeviceResponse.setErrorMessage(_ctx.stringValue("ListOTAModuleVersionsByDeviceResponse.ErrorMessage"));
 		listOTAModuleVersionsByDeviceResponse.setSuccess(_ctx.booleanValue("ListOTAModuleVersionsByDeviceResponse.Success"));
 		listOTAModuleVersionsByDeviceResponse.setCode(_ctx.stringValue("ListOTAModuleVersionsByDeviceResponse.Code"));
-		listOTAModuleVersionsByDeviceResponse.setErrorMessage(_ctx.stringValue("ListOTAModuleVersionsByDeviceResponse.ErrorMessage"));
-		listOTAModuleVersionsByDeviceResponse.setTotal(_ctx.integerValue("ListOTAModuleVersionsByDeviceResponse.Total"));
 		listOTAModuleVersionsByDeviceResponse.setPageSize(_ctx.integerValue("ListOTAModuleVersionsByDeviceResponse.PageSize"));
 		listOTAModuleVersionsByDeviceResponse.setPageCount(_ctx.integerValue("ListOTAModuleVersionsByDeviceResponse.PageCount"));
-		listOTAModuleVersionsByDeviceResponse.setCurrentPage(_ctx.integerValue("ListOTAModuleVersionsByDeviceResponse.CurrentPage"));
+		listOTAModuleVersionsByDeviceResponse.setTotal(_ctx.integerValue("ListOTAModuleVersionsByDeviceResponse.Total"));
 
 		List<SimpleOTAModuleInfo> data = new ArrayList<SimpleOTAModuleInfo>();
 		for (int i = 0; i < _ctx.lengthValue("ListOTAModuleVersionsByDeviceResponse.Data.Length"); i++) {
 			SimpleOTAModuleInfo simpleOTAModuleInfo = new SimpleOTAModuleInfo();
+			simpleOTAModuleInfo.setModuleName(_ctx.stringValue("ListOTAModuleVersionsByDeviceResponse.Data["+ i +"].ModuleName"));
 			simpleOTAModuleInfo.setProductKey(_ctx.stringValue("ListOTAModuleVersionsByDeviceResponse.Data["+ i +"].ProductKey"));
 			simpleOTAModuleInfo.setDeviceName(_ctx.stringValue("ListOTAModuleVersionsByDeviceResponse.Data["+ i +"].DeviceName"));
-			simpleOTAModuleInfo.setIotId(_ctx.stringValue("ListOTAModuleVersionsByDeviceResponse.Data["+ i +"].IotId"));
 			simpleOTAModuleInfo.setModuleVersion(_ctx.stringValue("ListOTAModuleVersionsByDeviceResponse.Data["+ i +"].ModuleVersion"));
-			simpleOTAModuleInfo.setModuleName(_ctx.stringValue("ListOTAModuleVersionsByDeviceResponse.Data["+ i +"].ModuleName"));
+			simpleOTAModuleInfo.setIotId(_ctx.stringValue("ListOTAModuleVersionsByDeviceResponse.Data["+ i +"].IotId"));
 
 			data.add(simpleOTAModuleInfo);
 		}

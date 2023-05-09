@@ -27,23 +27,23 @@ public class QueryConsumerGroupStatusResponseUnmarshaller {
 	public static QueryConsumerGroupStatusResponse unmarshall(QueryConsumerGroupStatusResponse queryConsumerGroupStatusResponse, UnmarshallerContext _ctx) {
 		
 		queryConsumerGroupStatusResponse.setRequestId(_ctx.stringValue("QueryConsumerGroupStatusResponse.RequestId"));
-		queryConsumerGroupStatusResponse.setSuccess(_ctx.booleanValue("QueryConsumerGroupStatusResponse.Success"));
-		queryConsumerGroupStatusResponse.setErrorMessage(_ctx.stringValue("QueryConsumerGroupStatusResponse.ErrorMessage"));
-		queryConsumerGroupStatusResponse.setAccumulationCount(_ctx.integerValue("QueryConsumerGroupStatusResponse.AccumulationCount"));
 		queryConsumerGroupStatusResponse.setConsumerSpeed(_ctx.integerValue("QueryConsumerGroupStatusResponse.ConsumerSpeed"));
-		queryConsumerGroupStatusResponse.setLastConsumerTime(_ctx.stringValue("QueryConsumerGroupStatusResponse.LastConsumerTime"));
-		queryConsumerGroupStatusResponse.setCode(_ctx.stringValue("QueryConsumerGroupStatusResponse.Code"));
+		queryConsumerGroupStatusResponse.setErrorMessage(_ctx.stringValue("QueryConsumerGroupStatusResponse.ErrorMessage"));
 		queryConsumerGroupStatusResponse.setAccumulatedConsumeCountPerMinute(_ctx.integerValue("QueryConsumerGroupStatusResponse.AccumulatedConsumeCountPerMinute"));
+		queryConsumerGroupStatusResponse.setLastConsumerTime(_ctx.stringValue("QueryConsumerGroupStatusResponse.LastConsumerTime"));
+		queryConsumerGroupStatusResponse.setSuccess(_ctx.booleanValue("QueryConsumerGroupStatusResponse.Success"));
 		queryConsumerGroupStatusResponse.setRealTimeConsumeCountPerMinute(_ctx.integerValue("QueryConsumerGroupStatusResponse.RealTimeConsumeCountPerMinute"));
+		queryConsumerGroupStatusResponse.setCode(_ctx.stringValue("QueryConsumerGroupStatusResponse.Code"));
+		queryConsumerGroupStatusResponse.setAccumulationCount(_ctx.integerValue("QueryConsumerGroupStatusResponse.AccumulationCount"));
 
 		List<ConsumerGroupClientConnectionInfo> clientConnectionStatusList = new ArrayList<ConsumerGroupClientConnectionInfo>();
 		for (int i = 0; i < _ctx.lengthValue("QueryConsumerGroupStatusResponse.ClientConnectionStatusList.Length"); i++) {
 			ConsumerGroupClientConnectionInfo consumerGroupClientConnectionInfo = new ConsumerGroupClientConnectionInfo();
-			consumerGroupClientConnectionInfo.setClientId(_ctx.stringValue("QueryConsumerGroupStatusResponse.ClientConnectionStatusList["+ i +"].ClientId"));
-			consumerGroupClientConnectionInfo.setClientIpPort(_ctx.stringValue("QueryConsumerGroupStatusResponse.ClientConnectionStatusList["+ i +"].ClientIpPort"));
 			consumerGroupClientConnectionInfo.setOnlineTime(_ctx.longValue("QueryConsumerGroupStatusResponse.ClientConnectionStatusList["+ i +"].OnlineTime"));
-			consumerGroupClientConnectionInfo.setRealTimeConsumeCountPerMinute(_ctx.integerValue("QueryConsumerGroupStatusResponse.ClientConnectionStatusList["+ i +"].RealTimeConsumeCountPerMinute"));
 			consumerGroupClientConnectionInfo.setAccumulatedConsumeCountPerMinute(_ctx.integerValue("QueryConsumerGroupStatusResponse.ClientConnectionStatusList["+ i +"].AccumulatedConsumeCountPerMinute"));
+			consumerGroupClientConnectionInfo.setRealTimeConsumeCountPerMinute(_ctx.integerValue("QueryConsumerGroupStatusResponse.ClientConnectionStatusList["+ i +"].RealTimeConsumeCountPerMinute"));
+			consumerGroupClientConnectionInfo.setClientIpPort(_ctx.stringValue("QueryConsumerGroupStatusResponse.ClientConnectionStatusList["+ i +"].ClientIpPort"));
+			consumerGroupClientConnectionInfo.setClientId(_ctx.stringValue("QueryConsumerGroupStatusResponse.ClientConnectionStatusList["+ i +"].ClientId"));
 
 			clientConnectionStatusList.add(consumerGroupClientConnectionInfo);
 		}

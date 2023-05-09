@@ -23,10 +23,10 @@ public class CreateConsumerGroupResponseUnmarshaller {
 	public static CreateConsumerGroupResponse unmarshall(CreateConsumerGroupResponse createConsumerGroupResponse, UnmarshallerContext _ctx) {
 		
 		createConsumerGroupResponse.setRequestId(_ctx.stringValue("CreateConsumerGroupResponse.RequestId"));
-		createConsumerGroupResponse.setSuccess(_ctx.booleanValue("CreateConsumerGroupResponse.Success"));
+		createConsumerGroupResponse.setCode(_ctx.stringValue("CreateConsumerGroupResponse.Code"));
 		createConsumerGroupResponse.setErrorMessage(_ctx.stringValue("CreateConsumerGroupResponse.ErrorMessage"));
 		createConsumerGroupResponse.setGroupId(_ctx.stringValue("CreateConsumerGroupResponse.GroupId"));
-		createConsumerGroupResponse.setCode(_ctx.stringValue("CreateConsumerGroupResponse.Code"));
+		createConsumerGroupResponse.setSuccess(_ctx.booleanValue("CreateConsumerGroupResponse.Success"));
 	 
 	 	return createConsumerGroupResponse;
 	}

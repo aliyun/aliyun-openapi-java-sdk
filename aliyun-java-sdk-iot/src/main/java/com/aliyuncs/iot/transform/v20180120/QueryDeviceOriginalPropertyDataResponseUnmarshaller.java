@@ -28,19 +28,19 @@ public class QueryDeviceOriginalPropertyDataResponseUnmarshaller {
 	public static QueryDeviceOriginalPropertyDataResponse unmarshall(QueryDeviceOriginalPropertyDataResponse queryDeviceOriginalPropertyDataResponse, UnmarshallerContext _ctx) {
 		
 		queryDeviceOriginalPropertyDataResponse.setRequestId(_ctx.stringValue("QueryDeviceOriginalPropertyDataResponse.RequestId"));
-		queryDeviceOriginalPropertyDataResponse.setSuccess(_ctx.booleanValue("QueryDeviceOriginalPropertyDataResponse.Success"));
 		queryDeviceOriginalPropertyDataResponse.setCode(_ctx.stringValue("QueryDeviceOriginalPropertyDataResponse.Code"));
 		queryDeviceOriginalPropertyDataResponse.setErrorMessage(_ctx.stringValue("QueryDeviceOriginalPropertyDataResponse.ErrorMessage"));
+		queryDeviceOriginalPropertyDataResponse.setSuccess(_ctx.booleanValue("QueryDeviceOriginalPropertyDataResponse.Success"));
 
 		Data data = new Data();
-		data.setNextValid(_ctx.booleanValue("QueryDeviceOriginalPropertyDataResponse.Data.NextValid"));
 		data.setNextPageToken(_ctx.stringValue("QueryDeviceOriginalPropertyDataResponse.Data.nextPageToken"));
+		data.setNextValid(_ctx.booleanValue("QueryDeviceOriginalPropertyDataResponse.Data.NextValid"));
 
 		List<PropertyInfo> list = new ArrayList<PropertyInfo>();
 		for (int i = 0; i < _ctx.lengthValue("QueryDeviceOriginalPropertyDataResponse.Data.List.Length"); i++) {
 			PropertyInfo propertyInfo = new PropertyInfo();
-			propertyInfo.setTime(_ctx.stringValue("QueryDeviceOriginalPropertyDataResponse.Data.List["+ i +"].Time"));
 			propertyInfo.setValue(_ctx.stringValue("QueryDeviceOriginalPropertyDataResponse.Data.List["+ i +"].Value"));
+			propertyInfo.setTime(_ctx.stringValue("QueryDeviceOriginalPropertyDataResponse.Data.List["+ i +"].Time"));
 
 			list.add(propertyInfo);
 		}

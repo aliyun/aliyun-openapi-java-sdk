@@ -28,27 +28,27 @@ public class QueryProductListResponseUnmarshaller {
 	public static QueryProductListResponse unmarshall(QueryProductListResponse queryProductListResponse, UnmarshallerContext _ctx) {
 		
 		queryProductListResponse.setRequestId(_ctx.stringValue("QueryProductListResponse.RequestId"));
-		queryProductListResponse.setSuccess(_ctx.booleanValue("QueryProductListResponse.Success"));
 		queryProductListResponse.setCode(_ctx.stringValue("QueryProductListResponse.Code"));
 		queryProductListResponse.setErrorMessage(_ctx.stringValue("QueryProductListResponse.ErrorMessage"));
+		queryProductListResponse.setSuccess(_ctx.booleanValue("QueryProductListResponse.Success"));
 
 		Data data = new Data();
 		data.setCurrentPage(_ctx.integerValue("QueryProductListResponse.Data.CurrentPage"));
-		data.setPageCount(_ctx.integerValue("QueryProductListResponse.Data.PageCount"));
 		data.setPageSize(_ctx.integerValue("QueryProductListResponse.Data.PageSize"));
 		data.setTotal(_ctx.integerValue("QueryProductListResponse.Data.Total"));
+		data.setPageCount(_ctx.integerValue("QueryProductListResponse.Data.PageCount"));
 
 		List<ProductInfo> list = new ArrayList<ProductInfo>();
 		for (int i = 0; i < _ctx.lengthValue("QueryProductListResponse.Data.List.Length"); i++) {
 			ProductInfo productInfo = new ProductInfo();
-			productInfo.setGmtCreate(_ctx.longValue("QueryProductListResponse.Data.List["+ i +"].GmtCreate"));
-			productInfo.setDataFormat(_ctx.integerValue("QueryProductListResponse.Data.List["+ i +"].DataFormat"));
-			productInfo.setDescription(_ctx.stringValue("QueryProductListResponse.Data.List["+ i +"].Description"));
-			productInfo.setDeviceCount(_ctx.integerValue("QueryProductListResponse.Data.List["+ i +"].DeviceCount"));
-			productInfo.setNodeType(_ctx.integerValue("QueryProductListResponse.Data.List["+ i +"].NodeType"));
+			productInfo.setAuthType(_ctx.stringValue("QueryProductListResponse.Data.List["+ i +"].AuthType"));
 			productInfo.setProductKey(_ctx.stringValue("QueryProductListResponse.Data.List["+ i +"].ProductKey"));
 			productInfo.setProductName(_ctx.stringValue("QueryProductListResponse.Data.List["+ i +"].ProductName"));
-			productInfo.setAuthType(_ctx.stringValue("QueryProductListResponse.Data.List["+ i +"].AuthType"));
+			productInfo.setDescription(_ctx.stringValue("QueryProductListResponse.Data.List["+ i +"].Description"));
+			productInfo.setNodeType(_ctx.integerValue("QueryProductListResponse.Data.List["+ i +"].NodeType"));
+			productInfo.setGmtCreate(_ctx.longValue("QueryProductListResponse.Data.List["+ i +"].GmtCreate"));
+			productInfo.setDataFormat(_ctx.integerValue("QueryProductListResponse.Data.List["+ i +"].DataFormat"));
+			productInfo.setDeviceCount(_ctx.integerValue("QueryProductListResponse.Data.List["+ i +"].DeviceCount"));
 
 			list.add(productInfo);
 		}

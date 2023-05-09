@@ -23,9 +23,9 @@ public class CreateRuleResponseUnmarshaller {
 	public static CreateRuleResponse unmarshall(CreateRuleResponse createRuleResponse, UnmarshallerContext _ctx) {
 		
 		createRuleResponse.setRequestId(_ctx.stringValue("CreateRuleResponse.RequestId"));
-		createRuleResponse.setSuccess(_ctx.booleanValue("CreateRuleResponse.Success"));
 		createRuleResponse.setCode(_ctx.stringValue("CreateRuleResponse.Code"));
 		createRuleResponse.setErrorMessage(_ctx.stringValue("CreateRuleResponse.ErrorMessage"));
+		createRuleResponse.setSuccess(_ctx.booleanValue("CreateRuleResponse.Success"));
 		createRuleResponse.setRuleId(_ctx.longValue("CreateRuleResponse.RuleId"));
 	 
 	 	return createRuleResponse;

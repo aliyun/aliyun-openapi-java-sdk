@@ -27,10 +27,10 @@ public class CreateTopicRouteTableResponseUnmarshaller {
 	public static CreateTopicRouteTableResponse unmarshall(CreateTopicRouteTableResponse createTopicRouteTableResponse, UnmarshallerContext _ctx) {
 		
 		createTopicRouteTableResponse.setRequestId(_ctx.stringValue("CreateTopicRouteTableResponse.RequestId"));
-		createTopicRouteTableResponse.setSuccess(_ctx.booleanValue("CreateTopicRouteTableResponse.Success"));
 		createTopicRouteTableResponse.setCode(_ctx.stringValue("CreateTopicRouteTableResponse.Code"));
-		createTopicRouteTableResponse.setIsAllSucceed(_ctx.booleanValue("CreateTopicRouteTableResponse.IsAllSucceed"));
 		createTopicRouteTableResponse.setErrorMessage(_ctx.stringValue("CreateTopicRouteTableResponse.ErrorMessage"));
+		createTopicRouteTableResponse.setIsAllSucceed(_ctx.booleanValue("CreateTopicRouteTableResponse.IsAllSucceed"));
+		createTopicRouteTableResponse.setSuccess(_ctx.booleanValue("CreateTopicRouteTableResponse.Success"));
 
 		List<Map<Object, Object>> failureTopics = _ctx.listMapValue("CreateTopicRouteTableResponse.FailureTopics");
 		createTopicRouteTableResponse.setFailureTopics(failureTopics);

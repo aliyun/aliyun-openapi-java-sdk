@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryJobResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class QueryJobResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -77,23 +77,23 @@ public class QueryJobResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String jobId;
-
-		private String jobName;
-
-		private String utcCreate;
+		private String type;
 
 		private String status;
 
 		private String description;
 
-		private String type;
-
-		private String jobDocument;
+		private String jobName;
 
 		private String utcModified;
 
+		private String jobId;
+
+		private String utcCreate;
+
 		private Long scheduledTime;
+
+		private String jobDocument;
 
 		private RolloutConfig rolloutConfig;
 
@@ -103,28 +103,12 @@ public class QueryJobResponse extends AcsResponse {
 
 		private TargetConfig targetConfig;
 
-		public String getJobId() {
-			return this.jobId;
+		public String getType() {
+			return this.type;
 		}
 
-		public void setJobId(String jobId) {
-			this.jobId = jobId;
-		}
-
-		public String getJobName() {
-			return this.jobName;
-		}
-
-		public void setJobName(String jobName) {
-			this.jobName = jobName;
-		}
-
-		public String getUtcCreate() {
-			return this.utcCreate;
-		}
-
-		public void setUtcCreate(String utcCreate) {
-			this.utcCreate = utcCreate;
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public String getStatus() {
@@ -143,20 +127,12 @@ public class QueryJobResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getType() {
-			return this.type;
+		public String getJobName() {
+			return this.jobName;
 		}
 
-		public void setType(String type) {
-			this.type = type;
-		}
-
-		public String getJobDocument() {
-			return this.jobDocument;
-		}
-
-		public void setJobDocument(String jobDocument) {
-			this.jobDocument = jobDocument;
+		public void setJobName(String jobName) {
+			this.jobName = jobName;
 		}
 
 		public String getUtcModified() {
@@ -167,12 +143,36 @@ public class QueryJobResponse extends AcsResponse {
 			this.utcModified = utcModified;
 		}
 
+		public String getJobId() {
+			return this.jobId;
+		}
+
+		public void setJobId(String jobId) {
+			this.jobId = jobId;
+		}
+
+		public String getUtcCreate() {
+			return this.utcCreate;
+		}
+
+		public void setUtcCreate(String utcCreate) {
+			this.utcCreate = utcCreate;
+		}
+
 		public Long getScheduledTime() {
 			return this.scheduledTime;
 		}
 
 		public void setScheduledTime(Long scheduledTime) {
 			this.scheduledTime = scheduledTime;
+		}
+
+		public String getJobDocument() {
+			return this.jobDocument;
+		}
+
+		public void setJobDocument(String jobDocument) {
+			this.jobDocument = jobDocument;
 		}
 
 		public RolloutConfig getRolloutConfig() {
@@ -278,21 +278,13 @@ public class QueryJobResponse extends AcsResponse {
 
 		public static class TargetConfig {
 
-			private String targetGroup;
-
 			private String targetProduct;
+
+			private String targetGroup;
 
 			private String targetType;
 
 			private List<TargetDevicesItem> targetDevices;
-
-			public String getTargetGroup() {
-				return this.targetGroup;
-			}
-
-			public void setTargetGroup(String targetGroup) {
-				this.targetGroup = targetGroup;
-			}
 
 			public String getTargetProduct() {
 				return this.targetProduct;
@@ -300,6 +292,14 @@ public class QueryJobResponse extends AcsResponse {
 
 			public void setTargetProduct(String targetProduct) {
 				this.targetProduct = targetProduct;
+			}
+
+			public String getTargetGroup() {
+				return this.targetGroup;
+			}
+
+			public void setTargetGroup(String targetGroup) {
+				this.targetGroup = targetGroup;
 			}
 
 			public String getTargetType() {
@@ -320,17 +320,9 @@ public class QueryJobResponse extends AcsResponse {
 
 			public static class TargetDevicesItem {
 
-				private String productKey;
-
 				private String deviceName;
 
-				public String getProductKey() {
-					return this.productKey;
-				}
-
-				public void setProductKey(String productKey) {
-					this.productKey = productKey;
-				}
+				private String productKey;
 
 				public String getDeviceName() {
 					return this.deviceName;
@@ -338,6 +330,14 @@ public class QueryJobResponse extends AcsResponse {
 
 				public void setDeviceName(String deviceName) {
 					this.deviceName = deviceName;
+				}
+
+				public String getProductKey() {
+					return this.productKey;
+				}
+
+				public void setProductKey(String productKey) {
+					this.productKey = productKey;
 				}
 			}
 		}

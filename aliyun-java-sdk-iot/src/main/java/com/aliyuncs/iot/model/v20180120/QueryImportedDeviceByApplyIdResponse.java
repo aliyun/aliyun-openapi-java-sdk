@@ -25,23 +25,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryImportedDeviceByApplyIdResponse extends AcsResponse {
 
+	private String productKey;
+
 	private String requestId;
+
+	private String errorMessage;
 
 	private Boolean success;
 
 	private String code;
 
-	private String errorMessage;
-
 	private Integer pageNo;
-
-	private Integer pageSize;
 
 	private Integer totalPage;
 
-	private String productKey;
+	private Integer pageSize;
 
 	private List<Device> deviceList;
+
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,6 +57,14 @@ public class QueryImportedDeviceByApplyIdResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
 	public Boolean getSuccess() {
@@ -67,28 +83,12 @@ public class QueryImportedDeviceByApplyIdResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
 	public Integer getPageNo() {
 		return this.pageNo;
 	}
 
 	public void setPageNo(Integer pageNo) {
 		this.pageNo = pageNo;
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
 	}
 
 	public Integer getTotalPage() {
@@ -99,12 +99,12 @@ public class QueryImportedDeviceByApplyIdResponse extends AcsResponse {
 		this.totalPage = totalPage;
 	}
 
-	public String getProductKey() {
-		return this.productKey;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setProductKey(String productKey) {
-		this.productKey = productKey;
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public List<Device> getDeviceList() {
@@ -119,11 +119,11 @@ public class QueryImportedDeviceByApplyIdResponse extends AcsResponse {
 
 		private String productKey;
 
+		private String sn;
+
 		private String deviceName;
 
 		private String deviceSecret;
-
-		private String sn;
 
 		public String getProductKey() {
 			return this.productKey;
@@ -131,6 +131,14 @@ public class QueryImportedDeviceByApplyIdResponse extends AcsResponse {
 
 		public void setProductKey(String productKey) {
 			this.productKey = productKey;
+		}
+
+		public String getSn() {
+			return this.sn;
+		}
+
+		public void setSn(String sn) {
+			this.sn = sn;
 		}
 
 		public String getDeviceName() {
@@ -147,14 +155,6 @@ public class QueryImportedDeviceByApplyIdResponse extends AcsResponse {
 
 		public void setDeviceSecret(String deviceSecret) {
 			this.deviceSecret = deviceSecret;
-		}
-
-		public String getSn() {
-			return this.sn;
-		}
-
-		public void setSn(String sn) {
-			this.sn = sn;
 		}
 	}
 

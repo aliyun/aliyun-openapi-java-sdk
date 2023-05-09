@@ -23,9 +23,9 @@ public class ImportDTDataResponseUnmarshaller {
 	public static ImportDTDataResponse unmarshall(ImportDTDataResponse importDTDataResponse, UnmarshallerContext _ctx) {
 		
 		importDTDataResponse.setRequestId(_ctx.stringValue("ImportDTDataResponse.RequestId"));
-		importDTDataResponse.setSuccess(_ctx.booleanValue("ImportDTDataResponse.Success"));
 		importDTDataResponse.setCode(_ctx.stringValue("ImportDTDataResponse.Code"));
 		importDTDataResponse.setErrorMessage(_ctx.stringValue("ImportDTDataResponse.ErrorMessage"));
+		importDTDataResponse.setSuccess(_ctx.booleanValue("ImportDTDataResponse.Success"));
 	 
 	 	return importDTDataResponse;
 	}

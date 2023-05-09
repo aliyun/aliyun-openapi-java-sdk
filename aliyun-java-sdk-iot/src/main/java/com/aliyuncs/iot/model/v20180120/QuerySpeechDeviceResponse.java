@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QuerySpeechDeviceResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class QuerySpeechDeviceResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -77,13 +77,21 @@ public class QuerySpeechDeviceResponse extends AcsResponse {
 
 	public static class Data {
 
+		private Integer pageSize;
+
 		private Integer total;
 
 		private Integer pageId;
 
-		private Integer pageSize;
-
 		private List<Items> list;
+
+		public Integer getPageSize() {
+			return this.pageSize;
+		}
+
+		public void setPageSize(Integer pageSize) {
+			this.pageSize = pageSize;
+		}
 
 		public Integer getTotal() {
 			return this.total;
@@ -101,14 +109,6 @@ public class QuerySpeechDeviceResponse extends AcsResponse {
 			this.pageId = pageId;
 		}
 
-		public Integer getPageSize() {
-			return this.pageSize;
-		}
-
-		public void setPageSize(Integer pageSize) {
-			this.pageSize = pageSize;
-		}
-
 		public List<Items> getList() {
 			return this.list;
 		}
@@ -121,11 +121,11 @@ public class QuerySpeechDeviceResponse extends AcsResponse {
 
 			private String productKey;
 
+			private Float availableSpace;
+
 			private String deviceName;
 
 			private String iotId;
-
-			private Float availableSpace;
 
 			public String getProductKey() {
 				return this.productKey;
@@ -133,6 +133,14 @@ public class QuerySpeechDeviceResponse extends AcsResponse {
 
 			public void setProductKey(String productKey) {
 				this.productKey = productKey;
+			}
+
+			public Float getAvailableSpace() {
+				return this.availableSpace;
+			}
+
+			public void setAvailableSpace(Float availableSpace) {
+				this.availableSpace = availableSpace;
 			}
 
 			public String getDeviceName() {
@@ -149,14 +157,6 @@ public class QuerySpeechDeviceResponse extends AcsResponse {
 
 			public void setIotId(String iotId) {
 				this.iotId = iotId;
-			}
-
-			public Float getAvailableSpace() {
-				return this.availableSpace;
-			}
-
-			public void setAvailableSpace(Float availableSpace) {
-				this.availableSpace = availableSpace;
 			}
 		}
 	}

@@ -23,10 +23,10 @@ public class CreateEdgeInstanceResponseUnmarshaller {
 	public static CreateEdgeInstanceResponse unmarshall(CreateEdgeInstanceResponse createEdgeInstanceResponse, UnmarshallerContext _ctx) {
 		
 		createEdgeInstanceResponse.setRequestId(_ctx.stringValue("CreateEdgeInstanceResponse.RequestId"));
-		createEdgeInstanceResponse.setSuccess(_ctx.booleanValue("CreateEdgeInstanceResponse.Success"));
-		createEdgeInstanceResponse.setErrorMessage(_ctx.stringValue("CreateEdgeInstanceResponse.ErrorMessage"));
 		createEdgeInstanceResponse.setCode(_ctx.stringValue("CreateEdgeInstanceResponse.Code"));
 		createEdgeInstanceResponse.setInstanceId(_ctx.stringValue("CreateEdgeInstanceResponse.InstanceId"));
+		createEdgeInstanceResponse.setErrorMessage(_ctx.stringValue("CreateEdgeInstanceResponse.ErrorMessage"));
+		createEdgeInstanceResponse.setSuccess(_ctx.booleanValue("CreateEdgeInstanceResponse.Success"));
 	 
 	 	return createEdgeInstanceResponse;
 	}

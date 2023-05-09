@@ -25,11 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryConsumerGroupListResponse extends AcsResponse {
 
+	private Integer currentPage;
+
 	private String requestId;
+
+	private String errorMessage;
 
 	private Boolean success;
 
-	private String errorMessage;
+	private String code;
 
 	private Integer pageSize;
 
@@ -37,11 +41,15 @@ public class QueryConsumerGroupListResponse extends AcsResponse {
 
 	private Integer total;
 
-	private Integer currentPage;
-
-	private String code;
-
 	private List<ConsumerGroupDTO> data;
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,6 +57,14 @@ public class QueryConsumerGroupListResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
 	public Boolean getSuccess() {
@@ -59,12 +75,12 @@ public class QueryConsumerGroupListResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getErrorMessage() {
-		return this.errorMessage;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Integer getPageSize() {
@@ -91,22 +107,6 @@ public class QueryConsumerGroupListResponse extends AcsResponse {
 		this.total = total;
 	}
 
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
 	public List<ConsumerGroupDTO> getData() {
 		return this.data;
 	}
@@ -117,26 +117,26 @@ public class QueryConsumerGroupListResponse extends AcsResponse {
 
 	public static class ConsumerGroupDTO {
 
-		private String iotId;
+		private String authType;
 
 		private String groupId;
 
 		private String groupName;
 
-		private String creator;
-
 		private String createTime;
-
-		private String authType;
 
 		private String cloudCommodityType;
 
-		public String getIotId() {
-			return this.iotId;
+		private String iotId;
+
+		private String creator;
+
+		public String getAuthType() {
+			return this.authType;
 		}
 
-		public void setIotId(String iotId) {
-			this.iotId = iotId;
+		public void setAuthType(String authType) {
+			this.authType = authType;
 		}
 
 		public String getGroupId() {
@@ -155,14 +155,6 @@ public class QueryConsumerGroupListResponse extends AcsResponse {
 			this.groupName = groupName;
 		}
 
-		public String getCreator() {
-			return this.creator;
-		}
-
-		public void setCreator(String creator) {
-			this.creator = creator;
-		}
-
 		public String getCreateTime() {
 			return this.createTime;
 		}
@@ -171,20 +163,28 @@ public class QueryConsumerGroupListResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getAuthType() {
-			return this.authType;
-		}
-
-		public void setAuthType(String authType) {
-			this.authType = authType;
-		}
-
 		public String getCloudCommodityType() {
 			return this.cloudCommodityType;
 		}
 
 		public void setCloudCommodityType(String cloudCommodityType) {
 			this.cloudCommodityType = cloudCommodityType;
+		}
+
+		public String getIotId() {
+			return this.iotId;
+		}
+
+		public void setIotId(String iotId) {
+			this.iotId = iotId;
+		}
+
+		public String getCreator() {
+			return this.creator;
+		}
+
+		public void setCreator(String creator) {
+			this.creator = creator;
 		}
 	}
 

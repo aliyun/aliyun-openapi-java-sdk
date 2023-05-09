@@ -23,9 +23,9 @@ public class ReplaceEdgeInstanceGatewayResponseUnmarshaller {
 	public static ReplaceEdgeInstanceGatewayResponse unmarshall(ReplaceEdgeInstanceGatewayResponse replaceEdgeInstanceGatewayResponse, UnmarshallerContext _ctx) {
 		
 		replaceEdgeInstanceGatewayResponse.setRequestId(_ctx.stringValue("ReplaceEdgeInstanceGatewayResponse.RequestId"));
-		replaceEdgeInstanceGatewayResponse.setSuccess(_ctx.booleanValue("ReplaceEdgeInstanceGatewayResponse.Success"));
 		replaceEdgeInstanceGatewayResponse.setCode(_ctx.stringValue("ReplaceEdgeInstanceGatewayResponse.Code"));
 		replaceEdgeInstanceGatewayResponse.setErrorMessage(_ctx.stringValue("ReplaceEdgeInstanceGatewayResponse.ErrorMessage"));
+		replaceEdgeInstanceGatewayResponse.setSuccess(_ctx.booleanValue("ReplaceEdgeInstanceGatewayResponse.Success"));
 	 
 	 	return replaceEdgeInstanceGatewayResponse;
 	}

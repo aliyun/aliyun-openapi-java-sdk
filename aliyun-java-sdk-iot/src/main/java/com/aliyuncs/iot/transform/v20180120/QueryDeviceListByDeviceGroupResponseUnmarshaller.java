@@ -27,19 +27,19 @@ public class QueryDeviceListByDeviceGroupResponseUnmarshaller {
 	public static QueryDeviceListByDeviceGroupResponse unmarshall(QueryDeviceListByDeviceGroupResponse queryDeviceListByDeviceGroupResponse, UnmarshallerContext _ctx) {
 		
 		queryDeviceListByDeviceGroupResponse.setRequestId(_ctx.stringValue("QueryDeviceListByDeviceGroupResponse.RequestId"));
+		queryDeviceListByDeviceGroupResponse.setErrorMessage(_ctx.stringValue("QueryDeviceListByDeviceGroupResponse.ErrorMessage"));
 		queryDeviceListByDeviceGroupResponse.setSuccess(_ctx.booleanValue("QueryDeviceListByDeviceGroupResponse.Success"));
 		queryDeviceListByDeviceGroupResponse.setCode(_ctx.stringValue("QueryDeviceListByDeviceGroupResponse.Code"));
-		queryDeviceListByDeviceGroupResponse.setErrorMessage(_ctx.stringValue("QueryDeviceListByDeviceGroupResponse.ErrorMessage"));
-		queryDeviceListByDeviceGroupResponse.setPage(_ctx.integerValue("QueryDeviceListByDeviceGroupResponse.Page"));
 		queryDeviceListByDeviceGroupResponse.setPageSize(_ctx.integerValue("QueryDeviceListByDeviceGroupResponse.PageSize"));
-		queryDeviceListByDeviceGroupResponse.setPageCount(_ctx.integerValue("QueryDeviceListByDeviceGroupResponse.PageCount"));
 		queryDeviceListByDeviceGroupResponse.setTotal(_ctx.integerValue("QueryDeviceListByDeviceGroupResponse.Total"));
+		queryDeviceListByDeviceGroupResponse.setPageCount(_ctx.integerValue("QueryDeviceListByDeviceGroupResponse.PageCount"));
+		queryDeviceListByDeviceGroupResponse.setPage(_ctx.integerValue("QueryDeviceListByDeviceGroupResponse.Page"));
 
 		List<SimpleDeviceInfo> data = new ArrayList<SimpleDeviceInfo>();
 		for (int i = 0; i < _ctx.lengthValue("QueryDeviceListByDeviceGroupResponse.Data.Length"); i++) {
 			SimpleDeviceInfo simpleDeviceInfo = new SimpleDeviceInfo();
-			simpleDeviceInfo.setProductName(_ctx.stringValue("QueryDeviceListByDeviceGroupResponse.Data["+ i +"].ProductName"));
 			simpleDeviceInfo.setProductKey(_ctx.stringValue("QueryDeviceListByDeviceGroupResponse.Data["+ i +"].ProductKey"));
+			simpleDeviceInfo.setProductName(_ctx.stringValue("QueryDeviceListByDeviceGroupResponse.Data["+ i +"].ProductName"));
 			simpleDeviceInfo.setDeviceName(_ctx.stringValue("QueryDeviceListByDeviceGroupResponse.Data["+ i +"].DeviceName"));
 			simpleDeviceInfo.setIotId(_ctx.stringValue("QueryDeviceListByDeviceGroupResponse.Data["+ i +"].IotId"));
 

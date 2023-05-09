@@ -23,9 +23,9 @@ public class CreateConsumerGroupSubscribeRelationResponseUnmarshaller {
 	public static CreateConsumerGroupSubscribeRelationResponse unmarshall(CreateConsumerGroupSubscribeRelationResponse createConsumerGroupSubscribeRelationResponse, UnmarshallerContext _ctx) {
 		
 		createConsumerGroupSubscribeRelationResponse.setRequestId(_ctx.stringValue("CreateConsumerGroupSubscribeRelationResponse.RequestId"));
-		createConsumerGroupSubscribeRelationResponse.setSuccess(_ctx.booleanValue("CreateConsumerGroupSubscribeRelationResponse.Success"));
 		createConsumerGroupSubscribeRelationResponse.setCode(_ctx.stringValue("CreateConsumerGroupSubscribeRelationResponse.Code"));
 		createConsumerGroupSubscribeRelationResponse.setErrorMessage(_ctx.stringValue("CreateConsumerGroupSubscribeRelationResponse.ErrorMessage"));
+		createConsumerGroupSubscribeRelationResponse.setSuccess(_ctx.booleanValue("CreateConsumerGroupSubscribeRelationResponse.Success"));
 	 
 	 	return createConsumerGroupSubscribeRelationResponse;
 	}

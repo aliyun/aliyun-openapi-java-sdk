@@ -23,9 +23,9 @@ public class BatchUpdateDeviceNicknameResponseUnmarshaller {
 	public static BatchUpdateDeviceNicknameResponse unmarshall(BatchUpdateDeviceNicknameResponse batchUpdateDeviceNicknameResponse, UnmarshallerContext _ctx) {
 		
 		batchUpdateDeviceNicknameResponse.setRequestId(_ctx.stringValue("BatchUpdateDeviceNicknameResponse.RequestId"));
-		batchUpdateDeviceNicknameResponse.setSuccess(_ctx.booleanValue("BatchUpdateDeviceNicknameResponse.Success"));
 		batchUpdateDeviceNicknameResponse.setCode(_ctx.stringValue("BatchUpdateDeviceNicknameResponse.Code"));
 		batchUpdateDeviceNicknameResponse.setErrorMessage(_ctx.stringValue("BatchUpdateDeviceNicknameResponse.ErrorMessage"));
+		batchUpdateDeviceNicknameResponse.setSuccess(_ctx.booleanValue("BatchUpdateDeviceNicknameResponse.Success"));
 	 
 	 	return batchUpdateDeviceNicknameResponse;
 	}

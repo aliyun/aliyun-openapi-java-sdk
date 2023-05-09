@@ -24,15 +24,39 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class PubBroadcastResponse extends AcsResponse {
 
+	private String code;
+
+	private Long messageId;
+
+	private String errorMessage;
+
 	private String requestId;
 
 	private Boolean success;
 
-	private String code;
+	public String getCode() {
+		return this.code;
+	}
 
-	private String errorMessage;
+	public void setCode(String code) {
+		this.code = code;
+	}
 
-	private Long messageId;
+	public Long getMessageId() {
+		return this.messageId;
+	}
+
+	public void setMessageId(Long messageId) {
+		this.messageId = messageId;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -48,30 +72,6 @@ public class PubBroadcastResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
-	public Long getMessageId() {
-		return this.messageId;
-	}
-
-	public void setMessageId(Long messageId) {
-		this.messageId = messageId;
 	}
 
 	@Override

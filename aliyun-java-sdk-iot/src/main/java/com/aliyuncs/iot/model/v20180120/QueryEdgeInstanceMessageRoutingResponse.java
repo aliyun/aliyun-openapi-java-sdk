@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryEdgeInstanceMessageRoutingResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class QueryEdgeInstanceMessageRoutingResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -77,20 +77,20 @@ public class QueryEdgeInstanceMessageRoutingResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer total;
+		private Integer currentPage;
 
 		private Integer pageSize;
 
-		private Integer currentPage;
+		private Integer total;
 
 		private List<MessageRoute> messageRouteList;
 
-		public Integer getTotal() {
-			return this.total;
+		public Integer getCurrentPage() {
+			return this.currentPage;
 		}
 
-		public void setTotal(Integer total) {
-			this.total = total;
+		public void setCurrentPage(Integer currentPage) {
+			this.currentPage = currentPage;
 		}
 
 		public Integer getPageSize() {
@@ -101,12 +101,12 @@ public class QueryEdgeInstanceMessageRoutingResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
-		public Integer getCurrentPage() {
-			return this.currentPage;
+		public Integer getTotal() {
+			return this.total;
 		}
 
-		public void setCurrentPage(Integer currentPage) {
-			this.currentPage = currentPage;
+		public void setTotal(Integer total) {
+			this.total = total;
 		}
 
 		public List<MessageRoute> getMessageRouteList() {
@@ -119,44 +119,36 @@ public class QueryEdgeInstanceMessageRoutingResponse extends AcsResponse {
 
 		public static class MessageRoute {
 
-			private Integer routeId;
-
-			private String name;
+			private Long gmtCreateTimestamp;
 
 			private String topicFilter;
 
-			private String sourceType;
-
-			private String sourceData;
-
-			private String targetType;
+			private Long gmtModifiedTimestamp;
 
 			private String targetData;
 
 			private String gmtCreate;
 
+			private String sourceType;
+
 			private String gmtModified;
 
-			private Long gmtCreateTimestamp;
+			private String name;
 
-			private Long gmtModifiedTimestamp;
+			private Integer routeId;
+
+			private String sourceData;
+
+			private String targetType;
 
 			private RouteContext routeContext;
 
-			public Integer getRouteId() {
-				return this.routeId;
+			public Long getGmtCreateTimestamp() {
+				return this.gmtCreateTimestamp;
 			}
 
-			public void setRouteId(Integer routeId) {
-				this.routeId = routeId;
-			}
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
+			public void setGmtCreateTimestamp(Long gmtCreateTimestamp) {
+				this.gmtCreateTimestamp = gmtCreateTimestamp;
 			}
 
 			public String getTopicFilter() {
@@ -167,28 +159,12 @@ public class QueryEdgeInstanceMessageRoutingResponse extends AcsResponse {
 				this.topicFilter = topicFilter;
 			}
 
-			public String getSourceType() {
-				return this.sourceType;
+			public Long getGmtModifiedTimestamp() {
+				return this.gmtModifiedTimestamp;
 			}
 
-			public void setSourceType(String sourceType) {
-				this.sourceType = sourceType;
-			}
-
-			public String getSourceData() {
-				return this.sourceData;
-			}
-
-			public void setSourceData(String sourceData) {
-				this.sourceData = sourceData;
-			}
-
-			public String getTargetType() {
-				return this.targetType;
-			}
-
-			public void setTargetType(String targetType) {
-				this.targetType = targetType;
+			public void setGmtModifiedTimestamp(Long gmtModifiedTimestamp) {
+				this.gmtModifiedTimestamp = gmtModifiedTimestamp;
 			}
 
 			public String getTargetData() {
@@ -207,6 +183,14 @@ public class QueryEdgeInstanceMessageRoutingResponse extends AcsResponse {
 				this.gmtCreate = gmtCreate;
 			}
 
+			public String getSourceType() {
+				return this.sourceType;
+			}
+
+			public void setSourceType(String sourceType) {
+				this.sourceType = sourceType;
+			}
+
 			public String getGmtModified() {
 				return this.gmtModified;
 			}
@@ -215,20 +199,36 @@ public class QueryEdgeInstanceMessageRoutingResponse extends AcsResponse {
 				this.gmtModified = gmtModified;
 			}
 
-			public Long getGmtCreateTimestamp() {
-				return this.gmtCreateTimestamp;
+			public String getName() {
+				return this.name;
 			}
 
-			public void setGmtCreateTimestamp(Long gmtCreateTimestamp) {
-				this.gmtCreateTimestamp = gmtCreateTimestamp;
+			public void setName(String name) {
+				this.name = name;
 			}
 
-			public Long getGmtModifiedTimestamp() {
-				return this.gmtModifiedTimestamp;
+			public Integer getRouteId() {
+				return this.routeId;
 			}
 
-			public void setGmtModifiedTimestamp(Long gmtModifiedTimestamp) {
-				this.gmtModifiedTimestamp = gmtModifiedTimestamp;
+			public void setRouteId(Integer routeId) {
+				this.routeId = routeId;
+			}
+
+			public String getSourceData() {
+				return this.sourceData;
+			}
+
+			public void setSourceData(String sourceData) {
+				this.sourceData = sourceData;
+			}
+
+			public String getTargetType() {
+				return this.targetType;
+			}
+
+			public void setTargetType(String targetType) {
+				this.targetType = targetType;
 			}
 
 			public RouteContext getRouteContext() {
@@ -241,71 +241,23 @@ public class QueryEdgeInstanceMessageRoutingResponse extends AcsResponse {
 
 			public static class RouteContext {
 
-				private String sourceFcServiceName;
-
-				private String sourceFcFunctionName;
-
-				private String sourceStreamName;
-
-				private String sourceApplicationName;
-
-				private String targetFcServiceName;
-
-				private String targetFcFunctionName;
-
 				private String targetStreamName;
 
 				private String targetApplicationName;
 
+				private String sourceApplicationName;
+
+				private String targetFcFunctionName;
+
+				private String sourceFcFunctionName;
+
+				private String targetFcServiceName;
+
+				private String sourceStreamName;
+
+				private String sourceFcServiceName;
+
 				private String qos;
-
-				public String getSourceFcServiceName() {
-					return this.sourceFcServiceName;
-				}
-
-				public void setSourceFcServiceName(String sourceFcServiceName) {
-					this.sourceFcServiceName = sourceFcServiceName;
-				}
-
-				public String getSourceFcFunctionName() {
-					return this.sourceFcFunctionName;
-				}
-
-				public void setSourceFcFunctionName(String sourceFcFunctionName) {
-					this.sourceFcFunctionName = sourceFcFunctionName;
-				}
-
-				public String getSourceStreamName() {
-					return this.sourceStreamName;
-				}
-
-				public void setSourceStreamName(String sourceStreamName) {
-					this.sourceStreamName = sourceStreamName;
-				}
-
-				public String getSourceApplicationName() {
-					return this.sourceApplicationName;
-				}
-
-				public void setSourceApplicationName(String sourceApplicationName) {
-					this.sourceApplicationName = sourceApplicationName;
-				}
-
-				public String getTargetFcServiceName() {
-					return this.targetFcServiceName;
-				}
-
-				public void setTargetFcServiceName(String targetFcServiceName) {
-					this.targetFcServiceName = targetFcServiceName;
-				}
-
-				public String getTargetFcFunctionName() {
-					return this.targetFcFunctionName;
-				}
-
-				public void setTargetFcFunctionName(String targetFcFunctionName) {
-					this.targetFcFunctionName = targetFcFunctionName;
-				}
 
 				public String getTargetStreamName() {
 					return this.targetStreamName;
@@ -321,6 +273,54 @@ public class QueryEdgeInstanceMessageRoutingResponse extends AcsResponse {
 
 				public void setTargetApplicationName(String targetApplicationName) {
 					this.targetApplicationName = targetApplicationName;
+				}
+
+				public String getSourceApplicationName() {
+					return this.sourceApplicationName;
+				}
+
+				public void setSourceApplicationName(String sourceApplicationName) {
+					this.sourceApplicationName = sourceApplicationName;
+				}
+
+				public String getTargetFcFunctionName() {
+					return this.targetFcFunctionName;
+				}
+
+				public void setTargetFcFunctionName(String targetFcFunctionName) {
+					this.targetFcFunctionName = targetFcFunctionName;
+				}
+
+				public String getSourceFcFunctionName() {
+					return this.sourceFcFunctionName;
+				}
+
+				public void setSourceFcFunctionName(String sourceFcFunctionName) {
+					this.sourceFcFunctionName = sourceFcFunctionName;
+				}
+
+				public String getTargetFcServiceName() {
+					return this.targetFcServiceName;
+				}
+
+				public void setTargetFcServiceName(String targetFcServiceName) {
+					this.targetFcServiceName = targetFcServiceName;
+				}
+
+				public String getSourceStreamName() {
+					return this.sourceStreamName;
+				}
+
+				public void setSourceStreamName(String sourceStreamName) {
+					this.sourceStreamName = sourceStreamName;
+				}
+
+				public String getSourceFcServiceName() {
+					return this.sourceFcServiceName;
+				}
+
+				public void setSourceFcServiceName(String sourceFcServiceName) {
+					this.sourceFcServiceName = sourceFcServiceName;
 				}
 
 				public String getQos() {

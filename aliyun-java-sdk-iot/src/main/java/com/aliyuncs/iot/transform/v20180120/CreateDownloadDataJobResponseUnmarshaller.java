@@ -24,15 +24,15 @@ public class CreateDownloadDataJobResponseUnmarshaller {
 	public static CreateDownloadDataJobResponse unmarshall(CreateDownloadDataJobResponse createDownloadDataJobResponse, UnmarshallerContext _ctx) {
 		
 		createDownloadDataJobResponse.setRequestId(_ctx.stringValue("CreateDownloadDataJobResponse.RequestId"));
-		createDownloadDataJobResponse.setSuccess(_ctx.booleanValue("CreateDownloadDataJobResponse.Success"));
 		createDownloadDataJobResponse.setCode(_ctx.stringValue("CreateDownloadDataJobResponse.Code"));
 		createDownloadDataJobResponse.setErrorMessage(_ctx.stringValue("CreateDownloadDataJobResponse.ErrorMessage"));
+		createDownloadDataJobResponse.setSuccess(_ctx.booleanValue("CreateDownloadDataJobResponse.Success"));
 
 		Data data = new Data();
-		data.setCsvUrl(_ctx.stringValue("CreateDownloadDataJobResponse.Data.CsvUrl"));
-		data.setLongJobId(_ctx.stringValue("CreateDownloadDataJobResponse.Data.LongJobId"));
 		data.setStatus(_ctx.integerValue("CreateDownloadDataJobResponse.Data.Status"));
+		data.setLongJobId(_ctx.stringValue("CreateDownloadDataJobResponse.Data.LongJobId"));
 		data.setAsyncExecute(_ctx.booleanValue("CreateDownloadDataJobResponse.Data.AsyncExecute"));
+		data.setCsvUrl(_ctx.stringValue("CreateDownloadDataJobResponse.Data.CsvUrl"));
 		data.setCsvFileName(_ctx.stringValue("CreateDownloadDataJobResponse.Data.CsvFileName"));
 		createDownloadDataJobResponse.setData(data);
 	 

@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QuerySoundCodeLabelBatchListResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class QuerySoundCodeLabelBatchListResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -77,13 +77,21 @@ public class QuerySoundCodeLabelBatchListResponse extends AcsResponse {
 
 	public static class Data {
 
+		private Integer pageSize;
+
 		private Integer total;
 
 		private Integer pageId;
 
-		private Integer pageSize;
-
 		private List<Items> list;
+
+		public Integer getPageSize() {
+			return this.pageSize;
+		}
+
+		public void setPageSize(Integer pageSize) {
+			this.pageSize = pageSize;
+		}
 
 		public Integer getTotal() {
 			return this.total;
@@ -101,14 +109,6 @@ public class QuerySoundCodeLabelBatchListResponse extends AcsResponse {
 			this.pageId = pageId;
 		}
 
-		public Integer getPageSize() {
-			return this.pageSize;
-		}
-
-		public void setPageSize(Integer pageSize) {
-			this.pageSize = pageSize;
-		}
-
 		public List<Items> getList() {
 			return this.list;
 		}
@@ -119,24 +119,24 @@ public class QuerySoundCodeLabelBatchListResponse extends AcsResponse {
 
 		public static class Items {
 
-			private String batchCode;
+			private String status;
 
 			private String description;
 
-			private Integer total;
-
-			private Integer successNum;
-
-			private String status;
+			private String batchCode;
 
 			private Long gmtCreate;
 
-			public String getBatchCode() {
-				return this.batchCode;
+			private Integer successNum;
+
+			private Integer total;
+
+			public String getStatus() {
+				return this.status;
 			}
 
-			public void setBatchCode(String batchCode) {
-				this.batchCode = batchCode;
+			public void setStatus(String status) {
+				this.status = status;
 			}
 
 			public String getDescription() {
@@ -147,12 +147,20 @@ public class QuerySoundCodeLabelBatchListResponse extends AcsResponse {
 				this.description = description;
 			}
 
-			public Integer getTotal() {
-				return this.total;
+			public String getBatchCode() {
+				return this.batchCode;
 			}
 
-			public void setTotal(Integer total) {
-				this.total = total;
+			public void setBatchCode(String batchCode) {
+				this.batchCode = batchCode;
+			}
+
+			public Long getGmtCreate() {
+				return this.gmtCreate;
+			}
+
+			public void setGmtCreate(Long gmtCreate) {
+				this.gmtCreate = gmtCreate;
 			}
 
 			public Integer getSuccessNum() {
@@ -163,20 +171,12 @@ public class QuerySoundCodeLabelBatchListResponse extends AcsResponse {
 				this.successNum = successNum;
 			}
 
-			public String getStatus() {
-				return this.status;
+			public Integer getTotal() {
+				return this.total;
 			}
 
-			public void setStatus(String status) {
-				this.status = status;
-			}
-
-			public Long getGmtCreate() {
-				return this.gmtCreate;
-			}
-
-			public void setGmtCreate(Long gmtCreate) {
-				this.gmtCreate = gmtCreate;
+			public void setTotal(Integer total) {
+				this.total = total;
 			}
 		}
 	}

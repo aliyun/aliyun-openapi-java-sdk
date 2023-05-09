@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryEdgeInstanceGatewayResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private List<Gateway> gatewayList;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class QueryEdgeInstanceGatewayResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public List<Gateway> getGatewayList() {
 		return this.gatewayList;
 	}
@@ -79,11 +79,11 @@ public class QueryEdgeInstanceGatewayResponse extends AcsResponse {
 
 		private String productKey;
 
+		private String edgeVersion;
+
 		private String deviceName;
 
 		private String iotId;
-
-		private String edgeVersion;
 
 		public String getProductKey() {
 			return this.productKey;
@@ -91,6 +91,14 @@ public class QueryEdgeInstanceGatewayResponse extends AcsResponse {
 
 		public void setProductKey(String productKey) {
 			this.productKey = productKey;
+		}
+
+		public String getEdgeVersion() {
+			return this.edgeVersion;
+		}
+
+		public void setEdgeVersion(String edgeVersion) {
+			this.edgeVersion = edgeVersion;
 		}
 
 		public String getDeviceName() {
@@ -107,14 +115,6 @@ public class QueryEdgeInstanceGatewayResponse extends AcsResponse {
 
 		public void setIotId(String iotId) {
 			this.iotId = iotId;
-		}
-
-		public String getEdgeVersion() {
-			return this.edgeVersion;
-		}
-
-		public void setEdgeVersion(String edgeVersion) {
-			this.edgeVersion = edgeVersion;
 		}
 	}
 

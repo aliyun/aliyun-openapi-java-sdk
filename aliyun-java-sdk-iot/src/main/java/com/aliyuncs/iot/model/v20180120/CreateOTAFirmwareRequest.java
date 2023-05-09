@@ -84,8 +84,8 @@ public class CreateOTAFirmwareRequest extends RpcAcsRequest<CreateOTAFirmwareRes
 		if (multiFiless != null) {
 			for (int depth1 = 0; depth1 < multiFiless.size(); depth1++) {
 				putQueryParameter("MultiFiles." + (depth1 + 1) + ".Size" , multiFiless.get(depth1).getSize());
-				putQueryParameter("MultiFiles." + (depth1 + 1) + ".Name" , multiFiless.get(depth1).getName());
 				putQueryParameter("MultiFiles." + (depth1 + 1) + ".SignValue" , multiFiless.get(depth1).getSignValue());
+				putQueryParameter("MultiFiles." + (depth1 + 1) + ".Name" , multiFiless.get(depth1).getName());
 				putQueryParameter("MultiFiles." + (depth1 + 1) + ".FileMd5" , multiFiless.get(depth1).getFileMd5());
 				putQueryParameter("MultiFiles." + (depth1 + 1) + ".Url" , multiFiless.get(depth1).getUrl());
 			}
@@ -239,9 +239,9 @@ public class CreateOTAFirmwareRequest extends RpcAcsRequest<CreateOTAFirmwareRes
 
 		private Integer size;
 
-		private String name;
-
 		private String signValue;
+
+		private String name;
 
 		private String fileMd5;
 
@@ -255,20 +255,20 @@ public class CreateOTAFirmwareRequest extends RpcAcsRequest<CreateOTAFirmwareRes
 			this.size = size;
 		}
 
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
 		public String getSignValue() {
 			return this.signValue;
 		}
 
 		public void setSignValue(String signValue) {
 			this.signValue = signValue;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public String getFileMd5() {

@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class BatchGetDeviceStateResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private List<DeviceStatus> deviceStatusList;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class BatchGetDeviceStateResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public List<DeviceStatus> getDeviceStatusList() {
 		return this.deviceStatusList;
 	}
@@ -77,24 +77,32 @@ public class BatchGetDeviceStateResponse extends AcsResponse {
 
 	public static class DeviceStatus {
 
-		private String deviceId;
-
-		private String deviceName;
-
 		private String status;
-
-		private String asAddress;
 
 		private String lastOnlineTime;
 
+		private String deviceName;
+
+		private String deviceId;
+
+		private String asAddress;
+
 		private String iotId;
 
-		public String getDeviceId() {
-			return this.deviceId;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setDeviceId(String deviceId) {
-			this.deviceId = deviceId;
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getLastOnlineTime() {
+			return this.lastOnlineTime;
+		}
+
+		public void setLastOnlineTime(String lastOnlineTime) {
+			this.lastOnlineTime = lastOnlineTime;
 		}
 
 		public String getDeviceName() {
@@ -105,12 +113,12 @@ public class BatchGetDeviceStateResponse extends AcsResponse {
 			this.deviceName = deviceName;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getDeviceId() {
+			return this.deviceId;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setDeviceId(String deviceId) {
+			this.deviceId = deviceId;
 		}
 
 		public String getAsAddress() {
@@ -119,14 +127,6 @@ public class BatchGetDeviceStateResponse extends AcsResponse {
 
 		public void setAsAddress(String asAddress) {
 			this.asAddress = asAddress;
-		}
-
-		public String getLastOnlineTime() {
-			return this.lastOnlineTime;
-		}
-
-		public void setLastOnlineTime(String lastOnlineTime) {
-			this.lastOnlineTime = lastOnlineTime;
 		}
 
 		public String getIotId() {

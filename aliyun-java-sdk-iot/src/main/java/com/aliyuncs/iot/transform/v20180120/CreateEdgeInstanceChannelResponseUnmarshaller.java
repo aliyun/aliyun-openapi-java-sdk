@@ -23,10 +23,10 @@ public class CreateEdgeInstanceChannelResponseUnmarshaller {
 	public static CreateEdgeInstanceChannelResponse unmarshall(CreateEdgeInstanceChannelResponse createEdgeInstanceChannelResponse, UnmarshallerContext _ctx) {
 		
 		createEdgeInstanceChannelResponse.setRequestId(_ctx.stringValue("CreateEdgeInstanceChannelResponse.RequestId"));
-		createEdgeInstanceChannelResponse.setSuccess(_ctx.booleanValue("CreateEdgeInstanceChannelResponse.Success"));
 		createEdgeInstanceChannelResponse.setCode(_ctx.stringValue("CreateEdgeInstanceChannelResponse.Code"));
-		createEdgeInstanceChannelResponse.setErrorMessage(_ctx.stringValue("CreateEdgeInstanceChannelResponse.ErrorMessage"));
 		createEdgeInstanceChannelResponse.setData(_ctx.stringValue("CreateEdgeInstanceChannelResponse.Data"));
+		createEdgeInstanceChannelResponse.setErrorMessage(_ctx.stringValue("CreateEdgeInstanceChannelResponse.ErrorMessage"));
+		createEdgeInstanceChannelResponse.setSuccess(_ctx.booleanValue("CreateEdgeInstanceChannelResponse.Success"));
 	 
 	 	return createEdgeInstanceChannelResponse;
 	}

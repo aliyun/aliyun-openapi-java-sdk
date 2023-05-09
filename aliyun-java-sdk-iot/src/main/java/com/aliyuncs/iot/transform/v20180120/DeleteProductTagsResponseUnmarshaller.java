@@ -23,9 +23,9 @@ public class DeleteProductTagsResponseUnmarshaller {
 	public static DeleteProductTagsResponse unmarshall(DeleteProductTagsResponse deleteProductTagsResponse, UnmarshallerContext _ctx) {
 		
 		deleteProductTagsResponse.setRequestId(_ctx.stringValue("DeleteProductTagsResponse.RequestId"));
-		deleteProductTagsResponse.setSuccess(_ctx.booleanValue("DeleteProductTagsResponse.Success"));
-		deleteProductTagsResponse.setErrorMessage(_ctx.stringValue("DeleteProductTagsResponse.ErrorMessage"));
 		deleteProductTagsResponse.setCode(_ctx.stringValue("DeleteProductTagsResponse.Code"));
+		deleteProductTagsResponse.setErrorMessage(_ctx.stringValue("DeleteProductTagsResponse.ErrorMessage"));
+		deleteProductTagsResponse.setSuccess(_ctx.booleanValue("DeleteProductTagsResponse.Success"));
 	 
 	 	return deleteProductTagsResponse;
 	}

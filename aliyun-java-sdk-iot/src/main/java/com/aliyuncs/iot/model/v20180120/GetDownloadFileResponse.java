@@ -26,31 +26,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetDownloadFileResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -68,6 +52,22 @@ public class GetDownloadFileResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -78,33 +78,31 @@ public class GetDownloadFileResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer previewSize;
-
-		private String csvUrl;
-
-		private String datasetId;
+		private Integer status;
 
 		private String longJobId;
 
-		private Integer status;
-
 		private Long beginTime;
-
-		private Long endTime;
-
-		private String resultDataInString;
 
 		private Boolean asyncExecute;
 
 		private Long totalCount;
 
+		private Long endTime;
+
+		private Integer previewSize;
+
 		private Integer pageNo;
 
 		private Integer pageSize;
 
-		private String csvUrl1;
+		private String csvUrl;
 
 		private String csvFileName;
+
+		private String datasetId;
+
+		private String resultDataInString;
 
 		private List<HeaderItem> header;
 
@@ -112,28 +110,12 @@ public class GetDownloadFileResponse extends AcsResponse {
 
 		private QuerySetting querySetting;
 
-		public Integer getPreviewSize() {
-			return this.previewSize;
+		public Integer getStatus() {
+			return this.status;
 		}
 
-		public void setPreviewSize(Integer previewSize) {
-			this.previewSize = previewSize;
-		}
-
-		public String getCsvUrl() {
-			return this.csvUrl;
-		}
-
-		public void setCsvUrl(String csvUrl) {
-			this.csvUrl = csvUrl;
-		}
-
-		public String getDatasetId() {
-			return this.datasetId;
-		}
-
-		public void setDatasetId(String datasetId) {
-			this.datasetId = datasetId;
+		public void setStatus(Integer status) {
+			this.status = status;
 		}
 
 		public String getLongJobId() {
@@ -144,36 +126,12 @@ public class GetDownloadFileResponse extends AcsResponse {
 			this.longJobId = longJobId;
 		}
 
-		public Integer getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(Integer status) {
-			this.status = status;
-		}
-
 		public Long getBeginTime() {
 			return this.beginTime;
 		}
 
 		public void setBeginTime(Long beginTime) {
 			this.beginTime = beginTime;
-		}
-
-		public Long getEndTime() {
-			return this.endTime;
-		}
-
-		public void setEndTime(Long endTime) {
-			this.endTime = endTime;
-		}
-
-		public String getResultDataInString() {
-			return this.resultDataInString;
-		}
-
-		public void setResultDataInString(String resultDataInString) {
-			this.resultDataInString = resultDataInString;
 		}
 
 		public Boolean getAsyncExecute() {
@@ -192,6 +150,22 @@ public class GetDownloadFileResponse extends AcsResponse {
 			this.totalCount = totalCount;
 		}
 
+		public Long getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(Long endTime) {
+			this.endTime = endTime;
+		}
+
+		public Integer getPreviewSize() {
+			return this.previewSize;
+		}
+
+		public void setPreviewSize(Integer previewSize) {
+			this.previewSize = previewSize;
+		}
+
 		public Integer getPageNo() {
 			return this.pageNo;
 		}
@@ -208,12 +182,12 @@ public class GetDownloadFileResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
-		public String getCsvUrl1() {
-			return this.csvUrl1;
+		public String getCsvUrl() {
+			return this.csvUrl;
 		}
 
-		public void setCsvUrl1(String csvUrl1) {
-			this.csvUrl1 = csvUrl1;
+		public void setCsvUrl(String csvUrl) {
+			this.csvUrl = csvUrl;
 		}
 
 		public String getCsvFileName() {
@@ -222,6 +196,22 @@ public class GetDownloadFileResponse extends AcsResponse {
 
 		public void setCsvFileName(String csvFileName) {
 			this.csvFileName = csvFileName;
+		}
+
+		public String getDatasetId() {
+			return this.datasetId;
+		}
+
+		public void setDatasetId(String datasetId) {
+			this.datasetId = datasetId;
+		}
+
+		public String getResultDataInString() {
+			return this.resultDataInString;
+		}
+
+		public void setResultDataInString(String resultDataInString) {
+			this.resultDataInString = resultDataInString;
 		}
 
 		public List<HeaderItem> getHeader() {
@@ -250,43 +240,19 @@ public class GetDownloadFileResponse extends AcsResponse {
 
 		public static class HeaderItem {
 
-			private String fieldName;
-
-			private String alias;
-
-			private String fieldType;
-
 			private String typeClass;
 
-			private String timeClass;
+			private String fieldName;
 
 			private String geoClass;
 
+			private String fieldType;
+
+			private String timeClass;
+
 			private String dimDateClass;
 
-			public String getFieldName() {
-				return this.fieldName;
-			}
-
-			public void setFieldName(String fieldName) {
-				this.fieldName = fieldName;
-			}
-
-			public String getAlias() {
-				return this.alias;
-			}
-
-			public void setAlias(String alias) {
-				this.alias = alias;
-			}
-
-			public String getFieldType() {
-				return this.fieldType;
-			}
-
-			public void setFieldType(String fieldType) {
-				this.fieldType = fieldType;
-			}
+			private String alias;
 
 			public String getTypeClass() {
 				return this.typeClass;
@@ -296,12 +262,12 @@ public class GetDownloadFileResponse extends AcsResponse {
 				this.typeClass = typeClass;
 			}
 
-			public String getTimeClass() {
-				return this.timeClass;
+			public String getFieldName() {
+				return this.fieldName;
 			}
 
-			public void setTimeClass(String timeClass) {
-				this.timeClass = timeClass;
+			public void setFieldName(String fieldName) {
+				this.fieldName = fieldName;
 			}
 
 			public String getGeoClass() {
@@ -312,12 +278,36 @@ public class GetDownloadFileResponse extends AcsResponse {
 				this.geoClass = geoClass;
 			}
 
+			public String getFieldType() {
+				return this.fieldType;
+			}
+
+			public void setFieldType(String fieldType) {
+				this.fieldType = fieldType;
+			}
+
+			public String getTimeClass() {
+				return this.timeClass;
+			}
+
+			public void setTimeClass(String timeClass) {
+				this.timeClass = timeClass;
+			}
+
 			public String getDimDateClass() {
 				return this.dimDateClass;
 			}
 
 			public void setDimDateClass(String dimDateClass) {
 				this.dimDateClass = dimDateClass;
+			}
+
+			public String getAlias() {
+				return this.alias;
+			}
+
+			public void setAlias(String alias) {
+				this.alias = alias;
 			}
 		}
 
@@ -347,13 +337,13 @@ public class GetDownloadFileResponse extends AcsResponse {
 
 				private String fieldName;
 
-				private String alias;
+				private String geoClass;
 
 				private String fieldType;
 
 				private String timeClass;
 
-				private String geoClass;
+				private String alias;
 
 				private String dimDateClass;
 
@@ -365,12 +355,12 @@ public class GetDownloadFileResponse extends AcsResponse {
 					this.fieldName = fieldName;
 				}
 
-				public String getAlias() {
-					return this.alias;
+				public String getGeoClass() {
+					return this.geoClass;
 				}
 
-				public void setAlias(String alias) {
-					this.alias = alias;
+				public void setGeoClass(String geoClass) {
+					this.geoClass = geoClass;
 				}
 
 				public String getFieldType() {
@@ -389,12 +379,12 @@ public class GetDownloadFileResponse extends AcsResponse {
 					this.timeClass = timeClass;
 				}
 
-				public String getGeoClass() {
-					return this.geoClass;
+				public String getAlias() {
+					return this.alias;
 				}
 
-				public void setGeoClass(String geoClass) {
-					this.geoClass = geoClass;
+				public void setAlias(String alias) {
+					this.alias = alias;
 				}
 
 				public String getDimDateClass() {
@@ -408,17 +398,9 @@ public class GetDownloadFileResponse extends AcsResponse {
 
 			public static class AstExprItem {
 
-				private String expr;
-
 				private String exprType;
 
-				public String getExpr() {
-					return this.expr;
-				}
-
-				public void setExpr(String expr) {
-					this.expr = expr;
-				}
+				private String expr;
 
 				public String getExprType() {
 					return this.exprType;
@@ -426,6 +408,14 @@ public class GetDownloadFileResponse extends AcsResponse {
 
 				public void setExprType(String exprType) {
 					this.exprType = exprType;
+				}
+
+				public String getExpr() {
+					return this.expr;
+				}
+
+				public void setExpr(String expr) {
+					this.expr = expr;
 				}
 			}
 		}

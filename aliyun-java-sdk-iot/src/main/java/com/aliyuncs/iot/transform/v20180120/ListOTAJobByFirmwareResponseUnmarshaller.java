@@ -28,28 +28,28 @@ public class ListOTAJobByFirmwareResponseUnmarshaller {
 	public static ListOTAJobByFirmwareResponse unmarshall(ListOTAJobByFirmwareResponse listOTAJobByFirmwareResponse, UnmarshallerContext _ctx) {
 		
 		listOTAJobByFirmwareResponse.setRequestId(_ctx.stringValue("ListOTAJobByFirmwareResponse.RequestId"));
+		listOTAJobByFirmwareResponse.setCurrentPage(_ctx.integerValue("ListOTAJobByFirmwareResponse.CurrentPage"));
+		listOTAJobByFirmwareResponse.setErrorMessage(_ctx.stringValue("ListOTAJobByFirmwareResponse.ErrorMessage"));
 		listOTAJobByFirmwareResponse.setSuccess(_ctx.booleanValue("ListOTAJobByFirmwareResponse.Success"));
 		listOTAJobByFirmwareResponse.setCode(_ctx.stringValue("ListOTAJobByFirmwareResponse.Code"));
-		listOTAJobByFirmwareResponse.setErrorMessage(_ctx.stringValue("ListOTAJobByFirmwareResponse.ErrorMessage"));
-		listOTAJobByFirmwareResponse.setTotal(_ctx.integerValue("ListOTAJobByFirmwareResponse.Total"));
 		listOTAJobByFirmwareResponse.setPageSize(_ctx.integerValue("ListOTAJobByFirmwareResponse.PageSize"));
 		listOTAJobByFirmwareResponse.setPageCount(_ctx.integerValue("ListOTAJobByFirmwareResponse.PageCount"));
-		listOTAJobByFirmwareResponse.setCurrentPage(_ctx.integerValue("ListOTAJobByFirmwareResponse.CurrentPage"));
+		listOTAJobByFirmwareResponse.setTotal(_ctx.integerValue("ListOTAJobByFirmwareResponse.Total"));
 
 		List<SimpleOTAJobInfo> data = new ArrayList<SimpleOTAJobInfo>();
 		for (int i = 0; i < _ctx.lengthValue("ListOTAJobByFirmwareResponse.Data.Length"); i++) {
 			SimpleOTAJobInfo simpleOTAJobInfo = new SimpleOTAJobInfo();
+			simpleOTAJobInfo.setProductKey(_ctx.stringValue("ListOTAJobByFirmwareResponse.Data["+ i +"].ProductKey"));
+			simpleOTAJobInfo.setJobStatus(_ctx.stringValue("ListOTAJobByFirmwareResponse.Data["+ i +"].JobStatus"));
+			simpleOTAJobInfo.setUtcStartTime(_ctx.stringValue("ListOTAJobByFirmwareResponse.Data["+ i +"].UtcStartTime"));
+			simpleOTAJobInfo.setUtcModified(_ctx.stringValue("ListOTAJobByFirmwareResponse.Data["+ i +"].UtcModified"));
 			simpleOTAJobInfo.setJobId(_ctx.stringValue("ListOTAJobByFirmwareResponse.Data["+ i +"].JobId"));
 			simpleOTAJobInfo.setUtcCreate(_ctx.stringValue("ListOTAJobByFirmwareResponse.Data["+ i +"].UtcCreate"));
-			simpleOTAJobInfo.setUtcModified(_ctx.stringValue("ListOTAJobByFirmwareResponse.Data["+ i +"].UtcModified"));
-			simpleOTAJobInfo.setProductKey(_ctx.stringValue("ListOTAJobByFirmwareResponse.Data["+ i +"].ProductKey"));
-			simpleOTAJobInfo.setFirmwareId(_ctx.stringValue("ListOTAJobByFirmwareResponse.Data["+ i +"].FirmwareId"));
-			simpleOTAJobInfo.setUtcStartTime(_ctx.stringValue("ListOTAJobByFirmwareResponse.Data["+ i +"].UtcStartTime"));
-			simpleOTAJobInfo.setUtcEndTime(_ctx.stringValue("ListOTAJobByFirmwareResponse.Data["+ i +"].UtcEndTime"));
-			simpleOTAJobInfo.setJobStatus(_ctx.stringValue("ListOTAJobByFirmwareResponse.Data["+ i +"].JobStatus"));
+			simpleOTAJobInfo.setSelectionType(_ctx.stringValue("ListOTAJobByFirmwareResponse.Data["+ i +"].SelectionType"));
 			simpleOTAJobInfo.setJobType(_ctx.stringValue("ListOTAJobByFirmwareResponse.Data["+ i +"].JobType"));
 			simpleOTAJobInfo.setTargetSelection(_ctx.stringValue("ListOTAJobByFirmwareResponse.Data["+ i +"].TargetSelection"));
-			simpleOTAJobInfo.setSelectionType(_ctx.stringValue("ListOTAJobByFirmwareResponse.Data["+ i +"].SelectionType"));
+			simpleOTAJobInfo.setUtcEndTime(_ctx.stringValue("ListOTAJobByFirmwareResponse.Data["+ i +"].UtcEndTime"));
+			simpleOTAJobInfo.setFirmwareId(_ctx.stringValue("ListOTAJobByFirmwareResponse.Data["+ i +"].FirmwareId"));
 
 			List<OtaTagDTO> tags = new ArrayList<OtaTagDTO>();
 			for (int j = 0; j < _ctx.lengthValue("ListOTAJobByFirmwareResponse.Data["+ i +"].Tags.Length"); j++) {

@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateDataAPIServiceResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -66,6 +50,22 @@ public class CreateDataAPIServiceResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -76,11 +76,19 @@ public class CreateDataAPIServiceResponse extends AcsResponse {
 
 	public static class Data {
 
+		private Long lastUpdateTime;
+
 		private String apiSrn;
 
 		private Long createTime;
 
-		private Long lastUpdateTime;
+		public Long getLastUpdateTime() {
+			return this.lastUpdateTime;
+		}
+
+		public void setLastUpdateTime(Long lastUpdateTime) {
+			this.lastUpdateTime = lastUpdateTime;
+		}
 
 		public String getApiSrn() {
 			return this.apiSrn;
@@ -96,14 +104,6 @@ public class CreateDataAPIServiceResponse extends AcsResponse {
 
 		public void setCreateTime(Long createTime) {
 			this.createTime = createTime;
-		}
-
-		public Long getLastUpdateTime() {
-			return this.lastUpdateTime;
-		}
-
-		public void setLastUpdateTime(Long lastUpdateTime) {
-			this.lastUpdateTime = lastUpdateTime;
 		}
 	}
 

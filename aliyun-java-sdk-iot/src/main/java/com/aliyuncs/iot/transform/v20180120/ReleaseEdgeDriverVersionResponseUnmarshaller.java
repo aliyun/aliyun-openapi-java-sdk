@@ -23,9 +23,9 @@ public class ReleaseEdgeDriverVersionResponseUnmarshaller {
 	public static ReleaseEdgeDriverVersionResponse unmarshall(ReleaseEdgeDriverVersionResponse releaseEdgeDriverVersionResponse, UnmarshallerContext _ctx) {
 		
 		releaseEdgeDriverVersionResponse.setRequestId(_ctx.stringValue("ReleaseEdgeDriverVersionResponse.RequestId"));
-		releaseEdgeDriverVersionResponse.setSuccess(_ctx.booleanValue("ReleaseEdgeDriverVersionResponse.Success"));
 		releaseEdgeDriverVersionResponse.setCode(_ctx.stringValue("ReleaseEdgeDriverVersionResponse.Code"));
 		releaseEdgeDriverVersionResponse.setErrorMessage(_ctx.stringValue("ReleaseEdgeDriverVersionResponse.ErrorMessage"));
+		releaseEdgeDriverVersionResponse.setSuccess(_ctx.booleanValue("ReleaseEdgeDriverVersionResponse.Success"));
 	 
 	 	return releaseEdgeDriverVersionResponse;
 	}

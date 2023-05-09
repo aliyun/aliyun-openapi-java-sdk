@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryDeviceProvisioningResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -66,6 +50,22 @@ public class QueryDeviceProvisioningResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -76,46 +76,30 @@ public class QueryDeviceProvisioningResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Long gmtCreate;
-
-		private Long gmtModified;
-
-		private String aliyunUid;
+		private String targetRegion;
 
 		private String productKey;
 
 		private String deviceName;
 
-		private String sourceIotInstanceId;
+		private Long gmtCreate;
 
 		private String targetIotInstanceId;
 
+		private String sourceIotInstanceId;
+
+		private String aliyunUid;
+
+		private Long gmtModified;
+
 		private String sourceRegion;
 
-		private String targetRegion;
-
-		public Long getGmtCreate() {
-			return this.gmtCreate;
+		public String getTargetRegion() {
+			return this.targetRegion;
 		}
 
-		public void setGmtCreate(Long gmtCreate) {
-			this.gmtCreate = gmtCreate;
-		}
-
-		public Long getGmtModified() {
-			return this.gmtModified;
-		}
-
-		public void setGmtModified(Long gmtModified) {
-			this.gmtModified = gmtModified;
-		}
-
-		public String getAliyunUid() {
-			return this.aliyunUid;
-		}
-
-		public void setAliyunUid(String aliyunUid) {
-			this.aliyunUid = aliyunUid;
+		public void setTargetRegion(String targetRegion) {
+			this.targetRegion = targetRegion;
 		}
 
 		public String getProductKey() {
@@ -134,12 +118,12 @@ public class QueryDeviceProvisioningResponse extends AcsResponse {
 			this.deviceName = deviceName;
 		}
 
-		public String getSourceIotInstanceId() {
-			return this.sourceIotInstanceId;
+		public Long getGmtCreate() {
+			return this.gmtCreate;
 		}
 
-		public void setSourceIotInstanceId(String sourceIotInstanceId) {
-			this.sourceIotInstanceId = sourceIotInstanceId;
+		public void setGmtCreate(Long gmtCreate) {
+			this.gmtCreate = gmtCreate;
 		}
 
 		public String getTargetIotInstanceId() {
@@ -150,20 +134,36 @@ public class QueryDeviceProvisioningResponse extends AcsResponse {
 			this.targetIotInstanceId = targetIotInstanceId;
 		}
 
+		public String getSourceIotInstanceId() {
+			return this.sourceIotInstanceId;
+		}
+
+		public void setSourceIotInstanceId(String sourceIotInstanceId) {
+			this.sourceIotInstanceId = sourceIotInstanceId;
+		}
+
+		public String getAliyunUid() {
+			return this.aliyunUid;
+		}
+
+		public void setAliyunUid(String aliyunUid) {
+			this.aliyunUid = aliyunUid;
+		}
+
+		public Long getGmtModified() {
+			return this.gmtModified;
+		}
+
+		public void setGmtModified(Long gmtModified) {
+			this.gmtModified = gmtModified;
+		}
+
 		public String getSourceRegion() {
 			return this.sourceRegion;
 		}
 
 		public void setSourceRegion(String sourceRegion) {
 			this.sourceRegion = sourceRegion;
-		}
-
-		public String getTargetRegion() {
-			return this.targetRegion;
-		}
-
-		public void setTargetRegion(String targetRegion) {
-			this.targetRegion = targetRegion;
 		}
 	}
 

@@ -23,9 +23,9 @@ public class CloseDeviceTunnelResponseUnmarshaller {
 	public static CloseDeviceTunnelResponse unmarshall(CloseDeviceTunnelResponse closeDeviceTunnelResponse, UnmarshallerContext _ctx) {
 		
 		closeDeviceTunnelResponse.setRequestId(_ctx.stringValue("CloseDeviceTunnelResponse.RequestId"));
-		closeDeviceTunnelResponse.setSuccess(_ctx.booleanValue("CloseDeviceTunnelResponse.Success"));
 		closeDeviceTunnelResponse.setCode(_ctx.stringValue("CloseDeviceTunnelResponse.Code"));
 		closeDeviceTunnelResponse.setErrorMessage(_ctx.stringValue("CloseDeviceTunnelResponse.ErrorMessage"));
+		closeDeviceTunnelResponse.setSuccess(_ctx.booleanValue("CloseDeviceTunnelResponse.Success"));
 	 
 	 	return closeDeviceTunnelResponse;
 	}

@@ -25,23 +25,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryDeviceGroupListResponse extends AcsResponse {
 
+	private Integer currentPage;
+
 	private String requestId;
+
+	private String errorMessage;
 
 	private Boolean success;
 
 	private String code;
 
-	private String errorMessage;
-
-	private Integer currentPage;
-
-	private Integer pageCount;
-
 	private Integer pageSize;
 
 	private Integer total;
 
+	private Integer pageCount;
+
 	private List<GroupInfo> data;
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,6 +57,14 @@ public class QueryDeviceGroupListResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
 	public Boolean getSuccess() {
@@ -67,30 +83,6 @@ public class QueryDeviceGroupListResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-	}
-
-	public Integer getPageCount() {
-		return this.pageCount;
-	}
-
-	public void setPageCount(Integer pageCount) {
-		this.pageCount = pageCount;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -107,6 +99,14 @@ public class QueryDeviceGroupListResponse extends AcsResponse {
 		this.total = total;
 	}
 
+	public Integer getPageCount() {
+		return this.pageCount;
+	}
+
+	public void setPageCount(Integer pageCount) {
+		this.pageCount = pageCount;
+	}
+
 	public List<GroupInfo> getData() {
 		return this.data;
 	}
@@ -117,15 +117,23 @@ public class QueryDeviceGroupListResponse extends AcsResponse {
 
 	public static class GroupInfo {
 
+		private String groupName;
+
 		private String groupId;
 
-		private String utcCreate;
-
-		private String groupName;
+		private String groupType;
 
 		private String groupDesc;
 
-		private String groupType;
+		private String utcCreate;
+
+		public String getGroupName() {
+			return this.groupName;
+		}
+
+		public void setGroupName(String groupName) {
+			this.groupName = groupName;
+		}
 
 		public String getGroupId() {
 			return this.groupId;
@@ -135,20 +143,12 @@ public class QueryDeviceGroupListResponse extends AcsResponse {
 			this.groupId = groupId;
 		}
 
-		public String getUtcCreate() {
-			return this.utcCreate;
+		public String getGroupType() {
+			return this.groupType;
 		}
 
-		public void setUtcCreate(String utcCreate) {
-			this.utcCreate = utcCreate;
-		}
-
-		public String getGroupName() {
-			return this.groupName;
-		}
-
-		public void setGroupName(String groupName) {
-			this.groupName = groupName;
+		public void setGroupType(String groupType) {
+			this.groupType = groupType;
 		}
 
 		public String getGroupDesc() {
@@ -159,12 +159,12 @@ public class QueryDeviceGroupListResponse extends AcsResponse {
 			this.groupDesc = groupDesc;
 		}
 
-		public String getGroupType() {
-			return this.groupType;
+		public String getUtcCreate() {
+			return this.utcCreate;
 		}
 
-		public void setGroupType(String groupType) {
-			this.groupType = groupType;
+		public void setUtcCreate(String utcCreate) {
+			this.utcCreate = utcCreate;
 		}
 	}
 

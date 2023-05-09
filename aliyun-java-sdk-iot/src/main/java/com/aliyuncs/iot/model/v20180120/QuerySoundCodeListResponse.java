@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QuerySoundCodeListResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class QuerySoundCodeListResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -77,13 +77,21 @@ public class QuerySoundCodeListResponse extends AcsResponse {
 
 	public static class Data {
 
+		private Integer pageSize;
+
 		private Integer total;
 
 		private Integer pageId;
 
-		private Integer pageSize;
-
 		private List<Items> list;
+
+		public Integer getPageSize() {
+			return this.pageSize;
+		}
+
+		public void setPageSize(Integer pageSize) {
+			this.pageSize = pageSize;
+		}
 
 		public Integer getTotal() {
 			return this.total;
@@ -101,14 +109,6 @@ public class QuerySoundCodeListResponse extends AcsResponse {
 			this.pageId = pageId;
 		}
 
-		public Integer getPageSize() {
-			return this.pageSize;
-		}
-
-		public void setPageSize(Integer pageSize) {
-			this.pageSize = pageSize;
-		}
-
 		public List<Items> getList() {
 			return this.list;
 		}
@@ -119,40 +119,24 @@ public class QuerySoundCodeListResponse extends AcsResponse {
 
 		public static class Items {
 
-			private String soundCode;
-
-			private String soundCodeContent;
-
-			private Integer duration;
+			private String openType;
 
 			private Long gmtCreate;
 
-			private String openType;
+			private Integer duration;
+
+			private String soundCodeContent;
 
 			private String name;
 
-			public String getSoundCode() {
-				return this.soundCode;
+			private String soundCode;
+
+			public String getOpenType() {
+				return this.openType;
 			}
 
-			public void setSoundCode(String soundCode) {
-				this.soundCode = soundCode;
-			}
-
-			public String getSoundCodeContent() {
-				return this.soundCodeContent;
-			}
-
-			public void setSoundCodeContent(String soundCodeContent) {
-				this.soundCodeContent = soundCodeContent;
-			}
-
-			public Integer getDuration() {
-				return this.duration;
-			}
-
-			public void setDuration(Integer duration) {
-				this.duration = duration;
+			public void setOpenType(String openType) {
+				this.openType = openType;
 			}
 
 			public Long getGmtCreate() {
@@ -163,12 +147,20 @@ public class QuerySoundCodeListResponse extends AcsResponse {
 				this.gmtCreate = gmtCreate;
 			}
 
-			public String getOpenType() {
-				return this.openType;
+			public Integer getDuration() {
+				return this.duration;
 			}
 
-			public void setOpenType(String openType) {
-				this.openType = openType;
+			public void setDuration(Integer duration) {
+				this.duration = duration;
+			}
+
+			public String getSoundCodeContent() {
+				return this.soundCodeContent;
+			}
+
+			public void setSoundCodeContent(String soundCodeContent) {
+				this.soundCodeContent = soundCodeContent;
 			}
 
 			public String getName() {
@@ -177,6 +169,14 @@ public class QuerySoundCodeListResponse extends AcsResponse {
 
 			public void setName(String name) {
 				this.name = name;
+			}
+
+			public String getSoundCode() {
+				return this.soundCode;
+			}
+
+			public void setSoundCode(String soundCode) {
+				this.soundCode = soundCode;
 			}
 		}
 	}

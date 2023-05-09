@@ -23,9 +23,9 @@ public class RerunJobResponseUnmarshaller {
 	public static RerunJobResponse unmarshall(RerunJobResponse rerunJobResponse, UnmarshallerContext _ctx) {
 		
 		rerunJobResponse.setRequestId(_ctx.stringValue("RerunJobResponse.RequestId"));
-		rerunJobResponse.setSuccess(_ctx.booleanValue("RerunJobResponse.Success"));
 		rerunJobResponse.setCode(_ctx.stringValue("RerunJobResponse.Code"));
 		rerunJobResponse.setErrorMessage(_ctx.stringValue("RerunJobResponse.ErrorMessage"));
+		rerunJobResponse.setSuccess(_ctx.booleanValue("RerunJobResponse.Success"));
 	 
 	 	return rerunJobResponse;
 	}

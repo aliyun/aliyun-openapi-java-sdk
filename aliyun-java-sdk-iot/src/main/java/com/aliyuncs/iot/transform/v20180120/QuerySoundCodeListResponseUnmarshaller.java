@@ -28,24 +28,24 @@ public class QuerySoundCodeListResponseUnmarshaller {
 	public static QuerySoundCodeListResponse unmarshall(QuerySoundCodeListResponse querySoundCodeListResponse, UnmarshallerContext _ctx) {
 		
 		querySoundCodeListResponse.setRequestId(_ctx.stringValue("QuerySoundCodeListResponse.RequestId"));
-		querySoundCodeListResponse.setSuccess(_ctx.booleanValue("QuerySoundCodeListResponse.Success"));
 		querySoundCodeListResponse.setCode(_ctx.stringValue("QuerySoundCodeListResponse.Code"));
 		querySoundCodeListResponse.setErrorMessage(_ctx.stringValue("QuerySoundCodeListResponse.ErrorMessage"));
+		querySoundCodeListResponse.setSuccess(_ctx.booleanValue("QuerySoundCodeListResponse.Success"));
 
 		Data data = new Data();
+		data.setPageSize(_ctx.integerValue("QuerySoundCodeListResponse.Data.PageSize"));
 		data.setTotal(_ctx.integerValue("QuerySoundCodeListResponse.Data.Total"));
 		data.setPageId(_ctx.integerValue("QuerySoundCodeListResponse.Data.PageId"));
-		data.setPageSize(_ctx.integerValue("QuerySoundCodeListResponse.Data.PageSize"));
 
 		List<Items> list = new ArrayList<Items>();
 		for (int i = 0; i < _ctx.lengthValue("QuerySoundCodeListResponse.Data.List.Length"); i++) {
 			Items items = new Items();
-			items.setSoundCode(_ctx.stringValue("QuerySoundCodeListResponse.Data.List["+ i +"].SoundCode"));
-			items.setSoundCodeContent(_ctx.stringValue("QuerySoundCodeListResponse.Data.List["+ i +"].SoundCodeContent"));
-			items.setDuration(_ctx.integerValue("QuerySoundCodeListResponse.Data.List["+ i +"].Duration"));
-			items.setGmtCreate(_ctx.longValue("QuerySoundCodeListResponse.Data.List["+ i +"].GmtCreate"));
 			items.setOpenType(_ctx.stringValue("QuerySoundCodeListResponse.Data.List["+ i +"].OpenType"));
+			items.setGmtCreate(_ctx.longValue("QuerySoundCodeListResponse.Data.List["+ i +"].GmtCreate"));
+			items.setDuration(_ctx.integerValue("QuerySoundCodeListResponse.Data.List["+ i +"].Duration"));
+			items.setSoundCodeContent(_ctx.stringValue("QuerySoundCodeListResponse.Data.List["+ i +"].SoundCodeContent"));
 			items.setName(_ctx.stringValue("QuerySoundCodeListResponse.Data.List["+ i +"].Name"));
+			items.setSoundCode(_ctx.stringValue("QuerySoundCodeListResponse.Data.List["+ i +"].SoundCode"));
 
 			list.add(items);
 		}

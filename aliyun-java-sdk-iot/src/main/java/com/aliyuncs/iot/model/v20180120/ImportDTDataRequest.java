@@ -26,6 +26,8 @@ import com.aliyuncs.iot.Endpoint;
 public class ImportDTDataRequest extends RpcAcsRequest<ImportDTDataResponse> {
 	   
 
+	private String dTInstanceId;
+
 	private String iotInstanceId;
 
 	private String productKey;
@@ -38,6 +40,17 @@ public class ImportDTDataRequest extends RpcAcsRequest<ImportDTDataResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDTInstanceId() {
+		return this.dTInstanceId;
+	}
+
+	public void setDTInstanceId(String dTInstanceId) {
+		this.dTInstanceId = dTInstanceId;
+		if(dTInstanceId != null){
+			putQueryParameter("DTInstanceId", dTInstanceId);
+		}
 	}
 
 	public String getIotInstanceId() {

@@ -24,30 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryDevicePropResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
+	private String props;
 
 	private String code;
 
 	private String errorMessage;
 
-	private String props;
+	private String requestId;
 
-	public String getRequestId() {
-		return this.requestId;
+	private Boolean success;
+
+	public String getProps() {
+		return this.props;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setProps(String props) {
+		this.props = props;
 	}
 
 	public String getCode() {
@@ -66,12 +58,20 @@ public class QueryDevicePropResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public String getProps() {
-		return this.props;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setProps(String props) {
-		this.props = props;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

@@ -29,7 +29,11 @@ public class CreateProductTopicRequest extends RpcAcsRequest<CreateProductTopicR
 
 	private String topicShortName;
 
+	private Boolean enableProxySubscribe;
+
 	private String productKey;
+
+	private String codec;
 
 	private String operation;
 
@@ -65,6 +69,17 @@ public class CreateProductTopicRequest extends RpcAcsRequest<CreateProductTopicR
 		}
 	}
 
+	public Boolean getEnableProxySubscribe() {
+		return this.enableProxySubscribe;
+	}
+
+	public void setEnableProxySubscribe(Boolean enableProxySubscribe) {
+		this.enableProxySubscribe = enableProxySubscribe;
+		if(enableProxySubscribe != null){
+			putQueryParameter("EnableProxySubscribe", enableProxySubscribe.toString());
+		}
+	}
+
 	public String getProductKey() {
 		return this.productKey;
 	}
@@ -73,6 +88,17 @@ public class CreateProductTopicRequest extends RpcAcsRequest<CreateProductTopicR
 		this.productKey = productKey;
 		if(productKey != null){
 			putQueryParameter("ProductKey", productKey);
+		}
+	}
+
+	public String getCodec() {
+		return this.codec;
+	}
+
+	public void setCodec(String codec) {
+		this.codec = codec;
+		if(codec != null){
+			putQueryParameter("Codec", codec);
 		}
 	}
 

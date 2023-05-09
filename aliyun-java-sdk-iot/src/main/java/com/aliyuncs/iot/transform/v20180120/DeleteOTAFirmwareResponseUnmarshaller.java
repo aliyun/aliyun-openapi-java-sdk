@@ -23,9 +23,9 @@ public class DeleteOTAFirmwareResponseUnmarshaller {
 	public static DeleteOTAFirmwareResponse unmarshall(DeleteOTAFirmwareResponse deleteOTAFirmwareResponse, UnmarshallerContext _ctx) {
 		
 		deleteOTAFirmwareResponse.setRequestId(_ctx.stringValue("DeleteOTAFirmwareResponse.RequestId"));
-		deleteOTAFirmwareResponse.setSuccess(_ctx.booleanValue("DeleteOTAFirmwareResponse.Success"));
 		deleteOTAFirmwareResponse.setCode(_ctx.stringValue("DeleteOTAFirmwareResponse.Code"));
 		deleteOTAFirmwareResponse.setErrorMessage(_ctx.stringValue("DeleteOTAFirmwareResponse.ErrorMessage"));
+		deleteOTAFirmwareResponse.setSuccess(_ctx.booleanValue("DeleteOTAFirmwareResponse.Success"));
 	 
 	 	return deleteOTAFirmwareResponse;
 	}

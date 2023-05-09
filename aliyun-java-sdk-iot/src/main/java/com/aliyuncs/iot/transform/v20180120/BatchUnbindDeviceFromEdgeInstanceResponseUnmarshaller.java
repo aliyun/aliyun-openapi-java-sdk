@@ -23,9 +23,9 @@ public class BatchUnbindDeviceFromEdgeInstanceResponseUnmarshaller {
 	public static BatchUnbindDeviceFromEdgeInstanceResponse unmarshall(BatchUnbindDeviceFromEdgeInstanceResponse batchUnbindDeviceFromEdgeInstanceResponse, UnmarshallerContext _ctx) {
 		
 		batchUnbindDeviceFromEdgeInstanceResponse.setRequestId(_ctx.stringValue("BatchUnbindDeviceFromEdgeInstanceResponse.RequestId"));
-		batchUnbindDeviceFromEdgeInstanceResponse.setSuccess(_ctx.booleanValue("BatchUnbindDeviceFromEdgeInstanceResponse.Success"));
 		batchUnbindDeviceFromEdgeInstanceResponse.setCode(_ctx.stringValue("BatchUnbindDeviceFromEdgeInstanceResponse.Code"));
 		batchUnbindDeviceFromEdgeInstanceResponse.setErrorMessage(_ctx.stringValue("BatchUnbindDeviceFromEdgeInstanceResponse.ErrorMessage"));
+		batchUnbindDeviceFromEdgeInstanceResponse.setSuccess(_ctx.booleanValue("BatchUnbindDeviceFromEdgeInstanceResponse.Success"));
 	 
 	 	return batchUnbindDeviceFromEdgeInstanceResponse;
 	}

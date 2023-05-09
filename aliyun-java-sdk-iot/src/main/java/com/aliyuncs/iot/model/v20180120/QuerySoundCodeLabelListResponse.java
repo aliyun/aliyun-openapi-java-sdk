@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QuerySoundCodeLabelListResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class QuerySoundCodeLabelListResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -77,13 +77,21 @@ public class QuerySoundCodeLabelListResponse extends AcsResponse {
 
 	public static class Data {
 
+		private Integer pageSize;
+
 		private Integer total;
 
 		private Integer pageId;
 
-		private Integer pageSize;
-
 		private List<Items> list;
+
+		public Integer getPageSize() {
+			return this.pageSize;
+		}
+
+		public void setPageSize(Integer pageSize) {
+			this.pageSize = pageSize;
+		}
 
 		public Integer getTotal() {
 			return this.total;
@@ -101,14 +109,6 @@ public class QuerySoundCodeLabelListResponse extends AcsResponse {
 			this.pageId = pageId;
 		}
 
-		public Integer getPageSize() {
-			return this.pageSize;
-		}
-
-		public void setPageSize(Integer pageSize) {
-			this.pageSize = pageSize;
-		}
-
 		public List<Items> getList() {
 			return this.list;
 		}
@@ -119,17 +119,9 @@ public class QuerySoundCodeLabelListResponse extends AcsResponse {
 
 		public static class Items {
 
-			private String soundCode;
-
 			private String label;
 
-			public String getSoundCode() {
-				return this.soundCode;
-			}
-
-			public void setSoundCode(String soundCode) {
-				this.soundCode = soundCode;
-			}
+			private String soundCode;
 
 			public String getLabel() {
 				return this.label;
@@ -137,6 +129,14 @@ public class QuerySoundCodeLabelListResponse extends AcsResponse {
 
 			public void setLabel(String label) {
 				this.label = label;
+			}
+
+			public String getSoundCode() {
+				return this.soundCode;
+			}
+
+			public void setSoundCode(String soundCode) {
+				this.soundCode = soundCode;
 			}
 		}
 	}

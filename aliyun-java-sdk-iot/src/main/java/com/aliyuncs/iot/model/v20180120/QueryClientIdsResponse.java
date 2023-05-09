@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryClientIdsResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -65,6 +49,22 @@ public class QueryClientIdsResponse extends AcsResponse {
 
 	public void setErrorMessage(String errorMessage) {
 		this.errorMessage = errorMessage;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -99,17 +99,9 @@ public class QueryClientIdsResponse extends AcsResponse {
 
 		public static class DynamicRegClientId {
 
-			private String clientId;
-
 			private Long createTime;
 
-			public String getClientId() {
-				return this.clientId;
-			}
-
-			public void setClientId(String clientId) {
-				this.clientId = clientId;
-			}
+			private String clientId;
 
 			public Long getCreateTime() {
 				return this.createTime;
@@ -117,6 +109,14 @@ public class QueryClientIdsResponse extends AcsResponse {
 
 			public void setCreateTime(Long createTime) {
 				this.createTime = createTime;
+			}
+
+			public String getClientId() {
+				return this.clientId;
+			}
+
+			public void setClientId(String clientId) {
+				this.clientId = clientId;
 			}
 		}
 	}

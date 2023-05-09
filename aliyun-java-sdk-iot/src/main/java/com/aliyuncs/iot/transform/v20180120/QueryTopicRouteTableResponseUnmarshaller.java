@@ -27,9 +27,9 @@ public class QueryTopicRouteTableResponseUnmarshaller {
 	public static QueryTopicRouteTableResponse unmarshall(QueryTopicRouteTableResponse queryTopicRouteTableResponse, UnmarshallerContext _ctx) {
 		
 		queryTopicRouteTableResponse.setRequestId(_ctx.stringValue("QueryTopicRouteTableResponse.RequestId"));
-		queryTopicRouteTableResponse.setSuccess(_ctx.booleanValue("QueryTopicRouteTableResponse.Success"));
 		queryTopicRouteTableResponse.setCode(_ctx.stringValue("QueryTopicRouteTableResponse.Code"));
 		queryTopicRouteTableResponse.setErrorMessage(_ctx.stringValue("QueryTopicRouteTableResponse.ErrorMessage"));
+		queryTopicRouteTableResponse.setSuccess(_ctx.booleanValue("QueryTopicRouteTableResponse.Success"));
 
 		List<Map<Object, Object>> dstTopics = _ctx.listMapValue("QueryTopicRouteTableResponse.DstTopics");
 		queryTopicRouteTableResponse.setDstTopics(dstTopics);

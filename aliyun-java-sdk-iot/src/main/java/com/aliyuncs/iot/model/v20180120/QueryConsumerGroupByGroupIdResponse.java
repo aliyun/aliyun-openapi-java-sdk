@@ -24,15 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryConsumerGroupByGroupIdResponse extends AcsResponse {
 
-	private String requestId;
+	private String code;
 
-	private Boolean success;
+	private String requestId;
 
 	private String errorMessage;
 
-	private String code;
+	private Boolean success;
 
 	private Data data;
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,14 +48,6 @@ public class QueryConsumerGroupByGroupIdResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public String getErrorMessage() {
@@ -58,12 +58,12 @@ public class QueryConsumerGroupByGroupIdResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public String getCode() {
-		return this.code;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -76,24 +76,24 @@ public class QueryConsumerGroupByGroupIdResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String iotId;
+		private String authType;
 
 		private String groupId;
 
 		private String groupName;
 
-		private String creator;
-
 		private String createTime;
 
-		private String authType;
+		private String iotId;
 
-		public String getIotId() {
-			return this.iotId;
+		private String creator;
+
+		public String getAuthType() {
+			return this.authType;
 		}
 
-		public void setIotId(String iotId) {
-			this.iotId = iotId;
+		public void setAuthType(String authType) {
+			this.authType = authType;
 		}
 
 		public String getGroupId() {
@@ -112,14 +112,6 @@ public class QueryConsumerGroupByGroupIdResponse extends AcsResponse {
 			this.groupName = groupName;
 		}
 
-		public String getCreator() {
-			return this.creator;
-		}
-
-		public void setCreator(String creator) {
-			this.creator = creator;
-		}
-
 		public String getCreateTime() {
 			return this.createTime;
 		}
@@ -128,12 +120,20 @@ public class QueryConsumerGroupByGroupIdResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getAuthType() {
-			return this.authType;
+		public String getIotId() {
+			return this.iotId;
 		}
 
-		public void setAuthType(String authType) {
-			this.authType = authType;
+		public void setIotId(String iotId) {
+			this.iotId = iotId;
+		}
+
+		public String getCreator() {
+			return this.creator;
+		}
+
+		public void setCreator(String creator) {
+			this.creator = creator;
 		}
 	}
 

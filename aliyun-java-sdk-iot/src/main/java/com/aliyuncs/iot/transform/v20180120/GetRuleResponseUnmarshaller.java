@@ -24,27 +24,27 @@ public class GetRuleResponseUnmarshaller {
 	public static GetRuleResponse unmarshall(GetRuleResponse getRuleResponse, UnmarshallerContext _ctx) {
 		
 		getRuleResponse.setRequestId(_ctx.stringValue("GetRuleResponse.RequestId"));
-		getRuleResponse.setSuccess(_ctx.booleanValue("GetRuleResponse.Success"));
 		getRuleResponse.setCode(_ctx.stringValue("GetRuleResponse.Code"));
 		getRuleResponse.setErrorMessage(_ctx.stringValue("GetRuleResponse.ErrorMessage"));
+		getRuleResponse.setSuccess(_ctx.booleanValue("GetRuleResponse.Success"));
 
 		RuleInfo ruleInfo = new RuleInfo();
-		ruleInfo.setId(_ctx.longValue("GetRuleResponse.RuleInfo.Id"));
+		ruleInfo.setModified(_ctx.stringValue("GetRuleResponse.RuleInfo.Modified"));
+		ruleInfo.setStatus(_ctx.stringValue("GetRuleResponse.RuleInfo.Status"));
+		ruleInfo.setDataType(_ctx.stringValue("GetRuleResponse.RuleInfo.DataType"));
 		ruleInfo.setSelect(_ctx.stringValue("GetRuleResponse.RuleInfo.Select"));
+		ruleInfo.setUtcCreated(_ctx.stringValue("GetRuleResponse.RuleInfo.UtcCreated"));
+		ruleInfo.setTopicType(_ctx.integerValue("GetRuleResponse.RuleInfo.TopicType"));
+		ruleInfo.setCreateUserId(_ctx.longValue("GetRuleResponse.RuleInfo.CreateUserId"));
+		ruleInfo.setWhere(_ctx.stringValue("GetRuleResponse.RuleInfo.Where"));
+		ruleInfo.setProductKey(_ctx.stringValue("GetRuleResponse.RuleInfo.ProductKey"));
+		ruleInfo.setUtcModified(_ctx.stringValue("GetRuleResponse.RuleInfo.UtcModified"));
 		ruleInfo.setTopic(_ctx.stringValue("GetRuleResponse.RuleInfo.Topic"));
 		ruleInfo.setShortTopic(_ctx.stringValue("GetRuleResponse.RuleInfo.ShortTopic"));
-		ruleInfo.setWhere(_ctx.stringValue("GetRuleResponse.RuleInfo.Where"));
-		ruleInfo.setStatus(_ctx.stringValue("GetRuleResponse.RuleInfo.Status"));
-		ruleInfo.setCreateUserId(_ctx.longValue("GetRuleResponse.RuleInfo.CreateUserId"));
-		ruleInfo.setProductKey(_ctx.stringValue("GetRuleResponse.RuleInfo.ProductKey"));
-		ruleInfo.setName(_ctx.stringValue("GetRuleResponse.RuleInfo.Name"));
 		ruleInfo.setRuleDesc(_ctx.stringValue("GetRuleResponse.RuleInfo.RuleDesc"));
-		ruleInfo.setDataType(_ctx.stringValue("GetRuleResponse.RuleInfo.DataType"));
+		ruleInfo.setName(_ctx.stringValue("GetRuleResponse.RuleInfo.Name"));
 		ruleInfo.setCreated(_ctx.stringValue("GetRuleResponse.RuleInfo.Created"));
-		ruleInfo.setUtcCreated(_ctx.stringValue("GetRuleResponse.RuleInfo.UtcCreated"));
-		ruleInfo.setModified(_ctx.stringValue("GetRuleResponse.RuleInfo.Modified"));
-		ruleInfo.setUtcModified(_ctx.stringValue("GetRuleResponse.RuleInfo.UtcModified"));
-		ruleInfo.setTopicType(_ctx.integerValue("GetRuleResponse.RuleInfo.TopicType"));
+		ruleInfo.setId(_ctx.longValue("GetRuleResponse.RuleInfo.Id"));
 		getRuleResponse.setRuleInfo(ruleInfo);
 	 
 	 	return getRuleResponse;

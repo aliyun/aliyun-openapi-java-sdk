@@ -24,17 +24,41 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateProductResponse extends AcsResponse {
 
+	private String code;
+
+	private String productKey;
+
+	private String errorMessage;
+
 	private String requestId;
 
 	private Boolean success;
 
-	private String code;
-
-	private String errorMessage;
-
-	private String productKey;
-
 	private Data data;
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -52,30 +76,6 @@ public class CreateProductResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
-	public String getProductKey() {
-		return this.productKey;
-	}
-
-	public void setProductKey(String productKey) {
-		this.productKey = productKey;
-	}
-
 	public Data getData() {
 		return this.data;
 	}
@@ -86,48 +86,32 @@ public class CreateProductResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer dataFormat;
-
-		private String description;
-
-		private Integer nodeType;
+		private String authType;
 
 		private String productKey;
 
 		private String productName;
 
-		private String aliyunCommodityCode;
+		private Integer nodeType;
+
+		private String description;
 
 		private Boolean id2;
 
-		private String protocolType;
-
-		private String authType;
-
 		private String productSecret;
 
-		public Integer getDataFormat() {
-			return this.dataFormat;
+		private String protocolType;
+
+		private Integer dataFormat;
+
+		private String aliyunCommodityCode;
+
+		public String getAuthType() {
+			return this.authType;
 		}
 
-		public void setDataFormat(Integer dataFormat) {
-			this.dataFormat = dataFormat;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public Integer getNodeType() {
-			return this.nodeType;
-		}
-
-		public void setNodeType(Integer nodeType) {
-			this.nodeType = nodeType;
+		public void setAuthType(String authType) {
+			this.authType = authType;
 		}
 
 		public String getProductKey() {
@@ -146,12 +130,20 @@ public class CreateProductResponse extends AcsResponse {
 			this.productName = productName;
 		}
 
-		public String getAliyunCommodityCode() {
-			return this.aliyunCommodityCode;
+		public Integer getNodeType() {
+			return this.nodeType;
 		}
 
-		public void setAliyunCommodityCode(String aliyunCommodityCode) {
-			this.aliyunCommodityCode = aliyunCommodityCode;
+		public void setNodeType(Integer nodeType) {
+			this.nodeType = nodeType;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public Boolean getId2() {
@@ -162,6 +154,14 @@ public class CreateProductResponse extends AcsResponse {
 			this.id2 = id2;
 		}
 
+		public String getProductSecret() {
+			return this.productSecret;
+		}
+
+		public void setProductSecret(String productSecret) {
+			this.productSecret = productSecret;
+		}
+
 		public String getProtocolType() {
 			return this.protocolType;
 		}
@@ -170,20 +170,20 @@ public class CreateProductResponse extends AcsResponse {
 			this.protocolType = protocolType;
 		}
 
-		public String getAuthType() {
-			return this.authType;
+		public Integer getDataFormat() {
+			return this.dataFormat;
 		}
 
-		public void setAuthType(String authType) {
-			this.authType = authType;
+		public void setDataFormat(Integer dataFormat) {
+			this.dataFormat = dataFormat;
 		}
 
-		public String getProductSecret() {
-			return this.productSecret;
+		public String getAliyunCommodityCode() {
+			return this.aliyunCommodityCode;
 		}
 
-		public void setProductSecret(String productSecret) {
-			this.productSecret = productSecret;
+		public void setAliyunCommodityCode(String aliyunCommodityCode) {
+			this.aliyunCommodityCode = aliyunCommodityCode;
 		}
 	}
 

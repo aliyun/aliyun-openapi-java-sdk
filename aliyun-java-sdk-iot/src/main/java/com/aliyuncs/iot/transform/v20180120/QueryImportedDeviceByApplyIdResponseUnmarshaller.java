@@ -27,21 +27,21 @@ public class QueryImportedDeviceByApplyIdResponseUnmarshaller {
 	public static QueryImportedDeviceByApplyIdResponse unmarshall(QueryImportedDeviceByApplyIdResponse queryImportedDeviceByApplyIdResponse, UnmarshallerContext _ctx) {
 		
 		queryImportedDeviceByApplyIdResponse.setRequestId(_ctx.stringValue("QueryImportedDeviceByApplyIdResponse.RequestId"));
+		queryImportedDeviceByApplyIdResponse.setProductKey(_ctx.stringValue("QueryImportedDeviceByApplyIdResponse.ProductKey"));
+		queryImportedDeviceByApplyIdResponse.setErrorMessage(_ctx.stringValue("QueryImportedDeviceByApplyIdResponse.ErrorMessage"));
 		queryImportedDeviceByApplyIdResponse.setSuccess(_ctx.booleanValue("QueryImportedDeviceByApplyIdResponse.Success"));
 		queryImportedDeviceByApplyIdResponse.setCode(_ctx.stringValue("QueryImportedDeviceByApplyIdResponse.Code"));
-		queryImportedDeviceByApplyIdResponse.setErrorMessage(_ctx.stringValue("QueryImportedDeviceByApplyIdResponse.ErrorMessage"));
 		queryImportedDeviceByApplyIdResponse.setPageNo(_ctx.integerValue("QueryImportedDeviceByApplyIdResponse.PageNo"));
-		queryImportedDeviceByApplyIdResponse.setPageSize(_ctx.integerValue("QueryImportedDeviceByApplyIdResponse.PageSize"));
 		queryImportedDeviceByApplyIdResponse.setTotalPage(_ctx.integerValue("QueryImportedDeviceByApplyIdResponse.TotalPage"));
-		queryImportedDeviceByApplyIdResponse.setProductKey(_ctx.stringValue("QueryImportedDeviceByApplyIdResponse.ProductKey"));
+		queryImportedDeviceByApplyIdResponse.setPageSize(_ctx.integerValue("QueryImportedDeviceByApplyIdResponse.PageSize"));
 
 		List<Device> deviceList = new ArrayList<Device>();
 		for (int i = 0; i < _ctx.lengthValue("QueryImportedDeviceByApplyIdResponse.DeviceList.Length"); i++) {
 			Device device = new Device();
 			device.setProductKey(_ctx.stringValue("QueryImportedDeviceByApplyIdResponse.DeviceList["+ i +"].ProductKey"));
+			device.setSn(_ctx.stringValue("QueryImportedDeviceByApplyIdResponse.DeviceList["+ i +"].Sn"));
 			device.setDeviceName(_ctx.stringValue("QueryImportedDeviceByApplyIdResponse.DeviceList["+ i +"].DeviceName"));
 			device.setDeviceSecret(_ctx.stringValue("QueryImportedDeviceByApplyIdResponse.DeviceList["+ i +"].DeviceSecret"));
-			device.setSn(_ctx.stringValue("QueryImportedDeviceByApplyIdResponse.DeviceList["+ i +"].Sn"));
 
 			deviceList.add(device);
 		}

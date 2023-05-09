@@ -23,9 +23,9 @@ public class CancelReleaseProductResponseUnmarshaller {
 	public static CancelReleaseProductResponse unmarshall(CancelReleaseProductResponse cancelReleaseProductResponse, UnmarshallerContext _ctx) {
 		
 		cancelReleaseProductResponse.setRequestId(_ctx.stringValue("CancelReleaseProductResponse.RequestId"));
-		cancelReleaseProductResponse.setSuccess(_ctx.booleanValue("CancelReleaseProductResponse.Success"));
-		cancelReleaseProductResponse.setErrorMessage(_ctx.stringValue("CancelReleaseProductResponse.ErrorMessage"));
 		cancelReleaseProductResponse.setCode(_ctx.stringValue("CancelReleaseProductResponse.Code"));
+		cancelReleaseProductResponse.setErrorMessage(_ctx.stringValue("CancelReleaseProductResponse.ErrorMessage"));
+		cancelReleaseProductResponse.setSuccess(_ctx.booleanValue("CancelReleaseProductResponse.Success"));
 	 
 	 	return cancelReleaseProductResponse;
 	}

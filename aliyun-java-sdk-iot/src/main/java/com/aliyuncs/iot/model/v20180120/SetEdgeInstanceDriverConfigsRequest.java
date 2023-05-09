@@ -51,8 +51,8 @@ public class SetEdgeInstanceDriverConfigsRequest extends RpcAcsRequest<SetEdgeIn
 		if (configss != null) {
 			for (int depth1 = 0; depth1 < configss.size(); depth1++) {
 				putQueryParameter("Configs." + (depth1 + 1) + ".Format" , configss.get(depth1).getFormat());
-				putQueryParameter("Configs." + (depth1 + 1) + ".Content" , configss.get(depth1).getContent());
 				putQueryParameter("Configs." + (depth1 + 1) + ".Key" , configss.get(depth1).getKey());
+				putQueryParameter("Configs." + (depth1 + 1) + ".Content" , configss.get(depth1).getContent());
 			}
 		}	
 	}
@@ -94,9 +94,9 @@ public class SetEdgeInstanceDriverConfigsRequest extends RpcAcsRequest<SetEdgeIn
 
 		private String format;
 
-		private String content;
-
 		private String key;
+
+		private String content;
 
 		public String getFormat() {
 			return this.format;
@@ -106,20 +106,20 @@ public class SetEdgeInstanceDriverConfigsRequest extends RpcAcsRequest<SetEdgeIn
 			this.format = format;
 		}
 
-		public String getContent() {
-			return this.content;
-		}
-
-		public void setContent(String content) {
-			this.content = content;
-		}
-
 		public String getKey() {
 			return this.key;
 		}
 
 		public void setKey(String key) {
 			this.key = key;
+		}
+
+		public String getContent() {
+			return this.content;
+		}
+
+		public void setContent(String content) {
+			this.content = content;
 		}
 	}
 

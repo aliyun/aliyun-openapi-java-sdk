@@ -28,9 +28,9 @@ public class BatchGetEdgeInstanceDeviceConfigResponseUnmarshaller {
 	public static BatchGetEdgeInstanceDeviceConfigResponse unmarshall(BatchGetEdgeInstanceDeviceConfigResponse batchGetEdgeInstanceDeviceConfigResponse, UnmarshallerContext _ctx) {
 		
 		batchGetEdgeInstanceDeviceConfigResponse.setRequestId(_ctx.stringValue("BatchGetEdgeInstanceDeviceConfigResponse.RequestId"));
-		batchGetEdgeInstanceDeviceConfigResponse.setSuccess(_ctx.booleanValue("BatchGetEdgeInstanceDeviceConfigResponse.Success"));
 		batchGetEdgeInstanceDeviceConfigResponse.setCode(_ctx.stringValue("BatchGetEdgeInstanceDeviceConfigResponse.Code"));
 		batchGetEdgeInstanceDeviceConfigResponse.setErrorMessage(_ctx.stringValue("BatchGetEdgeInstanceDeviceConfigResponse.ErrorMessage"));
+		batchGetEdgeInstanceDeviceConfigResponse.setSuccess(_ctx.booleanValue("BatchGetEdgeInstanceDeviceConfigResponse.Success"));
 
 		List<DeviceConfig> deviceConfigList = new ArrayList<DeviceConfig>();
 		for (int i = 0; i < _ctx.lengthValue("BatchGetEdgeInstanceDeviceConfigResponse.DeviceConfigList.Length"); i++) {
@@ -38,8 +38,8 @@ public class BatchGetEdgeInstanceDeviceConfigResponseUnmarshaller {
 			deviceConfig.setIotId(_ctx.stringValue("BatchGetEdgeInstanceDeviceConfigResponse.DeviceConfigList["+ i +"].IotId"));
 
 			Config config = new Config();
-			config.setFormat(_ctx.stringValue("BatchGetEdgeInstanceDeviceConfigResponse.DeviceConfigList["+ i +"].Config.Format"));
 			config.setContent(_ctx.stringValue("BatchGetEdgeInstanceDeviceConfigResponse.DeviceConfigList["+ i +"].Config.Content"));
+			config.setFormat(_ctx.stringValue("BatchGetEdgeInstanceDeviceConfigResponse.DeviceConfigList["+ i +"].Config.Format"));
 			deviceConfig.setConfig(config);
 
 			deviceConfigList.add(deviceConfig);

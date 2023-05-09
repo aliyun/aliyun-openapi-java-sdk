@@ -27,19 +27,19 @@ public class QueryPageByApplyIdResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String errorMessage;
+
 	private Boolean success;
 
 	private String code;
 
-	private String errorMessage;
-
 	private Integer pageSize;
 
-	private Integer page;
+	private Integer total;
 
 	private Integer pageCount;
 
-	private Integer total;
+	private Integer page;
 
 	private List<ApplyDeviceInfo> applyDeviceList;
 
@@ -49,6 +49,14 @@ public class QueryPageByApplyIdResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
 	public Boolean getSuccess() {
@@ -67,14 +75,6 @@ public class QueryPageByApplyIdResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -83,12 +83,12 @@ public class QueryPageByApplyIdResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getPage() {
-		return this.page;
+	public Integer getTotal() {
+		return this.total;
 	}
 
-	public void setPage(Integer page) {
-		this.page = page;
+	public void setTotal(Integer total) {
+		this.total = total;
 	}
 
 	public Integer getPageCount() {
@@ -99,12 +99,12 @@ public class QueryPageByApplyIdResponse extends AcsResponse {
 		this.pageCount = pageCount;
 	}
 
-	public Integer getTotal() {
-		return this.total;
+	public Integer getPage() {
+		return this.page;
 	}
 
-	public void setTotal(Integer total) {
-		this.total = total;
+	public void setPage(Integer page) {
+		this.page = page;
 	}
 
 	public List<ApplyDeviceInfo> getApplyDeviceList() {
@@ -117,21 +117,13 @@ public class QueryPageByApplyIdResponse extends AcsResponse {
 
 	public static class ApplyDeviceInfo {
 
-		private String deviceId;
-
 		private String deviceName;
 
-		private String deviceSecret;
+		private String deviceId;
 
 		private String iotId;
 
-		public String getDeviceId() {
-			return this.deviceId;
-		}
-
-		public void setDeviceId(String deviceId) {
-			this.deviceId = deviceId;
-		}
+		private String deviceSecret;
 
 		public String getDeviceName() {
 			return this.deviceName;
@@ -141,12 +133,12 @@ public class QueryPageByApplyIdResponse extends AcsResponse {
 			this.deviceName = deviceName;
 		}
 
-		public String getDeviceSecret() {
-			return this.deviceSecret;
+		public String getDeviceId() {
+			return this.deviceId;
 		}
 
-		public void setDeviceSecret(String deviceSecret) {
-			this.deviceSecret = deviceSecret;
+		public void setDeviceId(String deviceId) {
+			this.deviceId = deviceId;
 		}
 
 		public String getIotId() {
@@ -155,6 +147,14 @@ public class QueryPageByApplyIdResponse extends AcsResponse {
 
 		public void setIotId(String iotId) {
 			this.iotId = iotId;
+		}
+
+		public String getDeviceSecret() {
+			return this.deviceSecret;
+		}
+
+		public void setDeviceSecret(String deviceSecret) {
+			this.deviceSecret = deviceSecret;
 		}
 	}
 

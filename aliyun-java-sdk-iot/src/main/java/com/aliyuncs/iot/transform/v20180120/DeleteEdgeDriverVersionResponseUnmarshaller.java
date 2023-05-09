@@ -23,9 +23,9 @@ public class DeleteEdgeDriverVersionResponseUnmarshaller {
 	public static DeleteEdgeDriverVersionResponse unmarshall(DeleteEdgeDriverVersionResponse deleteEdgeDriverVersionResponse, UnmarshallerContext _ctx) {
 		
 		deleteEdgeDriverVersionResponse.setRequestId(_ctx.stringValue("DeleteEdgeDriverVersionResponse.RequestId"));
-		deleteEdgeDriverVersionResponse.setSuccess(_ctx.booleanValue("DeleteEdgeDriverVersionResponse.Success"));
 		deleteEdgeDriverVersionResponse.setCode(_ctx.stringValue("DeleteEdgeDriverVersionResponse.Code"));
 		deleteEdgeDriverVersionResponse.setErrorMessage(_ctx.stringValue("DeleteEdgeDriverVersionResponse.ErrorMessage"));
+		deleteEdgeDriverVersionResponse.setSuccess(_ctx.booleanValue("DeleteEdgeDriverVersionResponse.Success"));
 	 
 	 	return deleteEdgeDriverVersionResponse;
 	}

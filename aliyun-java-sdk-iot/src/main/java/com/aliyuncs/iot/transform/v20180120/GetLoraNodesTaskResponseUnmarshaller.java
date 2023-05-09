@@ -26,13 +26,13 @@ public class GetLoraNodesTaskResponseUnmarshaller {
 	public static GetLoraNodesTaskResponse unmarshall(GetLoraNodesTaskResponse getLoraNodesTaskResponse, UnmarshallerContext _ctx) {
 		
 		getLoraNodesTaskResponse.setRequestId(_ctx.stringValue("GetLoraNodesTaskResponse.RequestId"));
-		getLoraNodesTaskResponse.setSuccess(_ctx.booleanValue("GetLoraNodesTaskResponse.Success"));
-		getLoraNodesTaskResponse.setCode(_ctx.stringValue("GetLoraNodesTaskResponse.Code"));
 		getLoraNodesTaskResponse.setErrorMessage(_ctx.stringValue("GetLoraNodesTaskResponse.ErrorMessage"));
-		getLoraNodesTaskResponse.setTaskId(_ctx.stringValue("GetLoraNodesTaskResponse.TaskId"));
+		getLoraNodesTaskResponse.setSuccess(_ctx.booleanValue("GetLoraNodesTaskResponse.Success"));
 		getLoraNodesTaskResponse.setTaskState(_ctx.stringValue("GetLoraNodesTaskResponse.TaskState"));
-		getLoraNodesTaskResponse.setTotalCount(_ctx.longValue("GetLoraNodesTaskResponse.TotalCount"));
+		getLoraNodesTaskResponse.setCode(_ctx.stringValue("GetLoraNodesTaskResponse.Code"));
 		getLoraNodesTaskResponse.setSuccessCount(_ctx.longValue("GetLoraNodesTaskResponse.SuccessCount"));
+		getLoraNodesTaskResponse.setTotalCount(_ctx.longValue("GetLoraNodesTaskResponse.TotalCount"));
+		getLoraNodesTaskResponse.setTaskId(_ctx.stringValue("GetLoraNodesTaskResponse.TaskId"));
 
 		List<String> successDevEuis = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetLoraNodesTaskResponse.SuccessDevEuis.Length"); i++) {

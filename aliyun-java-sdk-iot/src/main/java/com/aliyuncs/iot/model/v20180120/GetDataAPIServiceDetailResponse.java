@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetDataAPIServiceDetailResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class GetDataAPIServiceDetailResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -77,34 +77,34 @@ public class GetDataAPIServiceDetailResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String apiSrn;
+		private String displayName;
 
 		private Integer status;
 
-		private String displayName;
+		private String apiSrn;
 
-		private String apiPath;
+		private String description;
 
 		private Long createTime;
 
 		private Long lastUpdateTime;
 
-		private String dateFormat;
-
 		private String requestMethod;
+
+		private String dateFormat;
 
 		private String requestProtocol;
 
-		private String description;
+		private String apiPath;
 
 		private SqlTemplateDTO sqlTemplateDTO;
 
-		public String getApiSrn() {
-			return this.apiSrn;
+		public String getDisplayName() {
+			return this.displayName;
 		}
 
-		public void setApiSrn(String apiSrn) {
-			this.apiSrn = apiSrn;
+		public void setDisplayName(String displayName) {
+			this.displayName = displayName;
 		}
 
 		public Integer getStatus() {
@@ -115,20 +115,20 @@ public class GetDataAPIServiceDetailResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getDisplayName() {
-			return this.displayName;
+		public String getApiSrn() {
+			return this.apiSrn;
 		}
 
-		public void setDisplayName(String displayName) {
-			this.displayName = displayName;
+		public void setApiSrn(String apiSrn) {
+			this.apiSrn = apiSrn;
 		}
 
-		public String getApiPath() {
-			return this.apiPath;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setApiPath(String apiPath) {
-			this.apiPath = apiPath;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public Long getCreateTime() {
@@ -147,20 +147,20 @@ public class GetDataAPIServiceDetailResponse extends AcsResponse {
 			this.lastUpdateTime = lastUpdateTime;
 		}
 
-		public String getDateFormat() {
-			return this.dateFormat;
-		}
-
-		public void setDateFormat(String dateFormat) {
-			this.dateFormat = dateFormat;
-		}
-
 		public String getRequestMethod() {
 			return this.requestMethod;
 		}
 
 		public void setRequestMethod(String requestMethod) {
 			this.requestMethod = requestMethod;
+		}
+
+		public String getDateFormat() {
+			return this.dateFormat;
+		}
+
+		public void setDateFormat(String dateFormat) {
+			this.dateFormat = dateFormat;
 		}
 
 		public String getRequestProtocol() {
@@ -171,12 +171,12 @@ public class GetDataAPIServiceDetailResponse extends AcsResponse {
 			this.requestProtocol = requestProtocol;
 		}
 
-		public String getDescription() {
-			return this.description;
+		public String getApiPath() {
+			return this.apiPath;
 		}
 
-		public void setDescription(String description) {
-			this.description = description;
+		public void setApiPath(String apiPath) {
+			this.apiPath = apiPath;
 		}
 
 		public SqlTemplateDTO getSqlTemplateDTO() {
@@ -231,23 +231,15 @@ public class GetDataAPIServiceDetailResponse extends AcsResponse {
 
 			public static class RequestParamsItem {
 
-				private String name;
-
 				private String type;
-
-				private String desc;
-
-				private String example;
 
 				private Boolean required;
 
-				public String getName() {
-					return this.name;
-				}
+				private String example;
 
-				public void setName(String name) {
-					this.name = name;
-				}
+				private String name;
+
+				private String desc;
 
 				public String getType() {
 					return this.type;
@@ -257,12 +249,12 @@ public class GetDataAPIServiceDetailResponse extends AcsResponse {
 					this.type = type;
 				}
 
-				public String getDesc() {
-					return this.desc;
+				public Boolean getRequired() {
+					return this.required;
 				}
 
-				public void setDesc(String desc) {
-					this.desc = desc;
+				public void setRequired(Boolean required) {
+					this.required = required;
 				}
 
 				public String getExample() {
@@ -273,34 +265,34 @@ public class GetDataAPIServiceDetailResponse extends AcsResponse {
 					this.example = example;
 				}
 
-				public Boolean getRequired() {
-					return this.required;
+				public String getName() {
+					return this.name;
 				}
 
-				public void setRequired(Boolean required) {
-					this.required = required;
+				public void setName(String name) {
+					this.name = name;
+				}
+
+				public String getDesc() {
+					return this.desc;
+				}
+
+				public void setDesc(String desc) {
+					this.desc = desc;
 				}
 			}
 
 			public static class ResponseParamsItem {
 
-				private String name;
-
 				private String type;
-
-				private String desc;
-
-				private String example;
 
 				private Boolean required;
 
-				public String getName() {
-					return this.name;
-				}
+				private String example;
 
-				public void setName(String name) {
-					this.name = name;
-				}
+				private String name;
+
+				private String desc;
 
 				public String getType() {
 					return this.type;
@@ -310,12 +302,12 @@ public class GetDataAPIServiceDetailResponse extends AcsResponse {
 					this.type = type;
 				}
 
-				public String getDesc() {
-					return this.desc;
+				public Boolean getRequired() {
+					return this.required;
 				}
 
-				public void setDesc(String desc) {
-					this.desc = desc;
+				public void setRequired(Boolean required) {
+					this.required = required;
 				}
 
 				public String getExample() {
@@ -326,12 +318,20 @@ public class GetDataAPIServiceDetailResponse extends AcsResponse {
 					this.example = example;
 				}
 
-				public Boolean getRequired() {
-					return this.required;
+				public String getName() {
+					return this.name;
 				}
 
-				public void setRequired(Boolean required) {
-					this.required = required;
+				public void setName(String name) {
+					this.name = name;
+				}
+
+				public String getDesc() {
+					return this.desc;
+				}
+
+				public void setDesc(String desc) {
+					this.desc = desc;
 				}
 			}
 		}

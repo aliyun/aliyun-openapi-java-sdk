@@ -28,40 +28,40 @@ public class QueryOTAJobResponseUnmarshaller {
 	public static QueryOTAJobResponse unmarshall(QueryOTAJobResponse queryOTAJobResponse, UnmarshallerContext _ctx) {
 		
 		queryOTAJobResponse.setRequestId(_ctx.stringValue("QueryOTAJobResponse.RequestId"));
-		queryOTAJobResponse.setSuccess(_ctx.booleanValue("QueryOTAJobResponse.Success"));
 		queryOTAJobResponse.setCode(_ctx.stringValue("QueryOTAJobResponse.Code"));
 		queryOTAJobResponse.setErrorMessage(_ctx.stringValue("QueryOTAJobResponse.ErrorMessage"));
+		queryOTAJobResponse.setSuccess(_ctx.booleanValue("QueryOTAJobResponse.Success"));
 
 		Data data = new Data();
-		data.setJobId(_ctx.stringValue("QueryOTAJobResponse.Data.JobId"));
 		data.setUtcCreate(_ctx.stringValue("QueryOTAJobResponse.Data.UtcCreate"));
-		data.setUtcModified(_ctx.stringValue("QueryOTAJobResponse.Data.UtcModified"));
-		data.setProductKey(_ctx.stringValue("QueryOTAJobResponse.Data.ProductKey"));
-		data.setFirmwareId(_ctx.stringValue("QueryOTAJobResponse.Data.FirmwareId"));
-		data.setUtcStartTime(_ctx.stringValue("QueryOTAJobResponse.Data.UtcStartTime"));
-		data.setUtcEndTime(_ctx.stringValue("QueryOTAJobResponse.Data.UtcEndTime"));
-		data.setJobStatus(_ctx.stringValue("QueryOTAJobResponse.Data.JobStatus"));
-		data.setJobType(_ctx.stringValue("QueryOTAJobResponse.Data.JobType"));
-		data.setJobDesc(_ctx.stringValue("QueryOTAJobResponse.Data.JobDesc"));
-		data.setName(_ctx.stringValue("QueryOTAJobResponse.Data.Name"));
-		data.setUtcScheduleTime(_ctx.stringValue("QueryOTAJobResponse.Data.UtcScheduleTime"));
 		data.setRetryInterval(_ctx.integerValue("QueryOTAJobResponse.Data.RetryInterval"));
-		data.setRetryCount(_ctx.integerValue("QueryOTAJobResponse.Data.RetryCount"));
-		data.setTimeoutInMinutes(_ctx.integerValue("QueryOTAJobResponse.Data.TimeoutInMinutes"));
-		data.setTargetSelection(_ctx.stringValue("QueryOTAJobResponse.Data.TargetSelection"));
+		data.setJobType(_ctx.stringValue("QueryOTAJobResponse.Data.JobType"));
 		data.setSelectionType(_ctx.stringValue("QueryOTAJobResponse.Data.SelectionType"));
+		data.setOverwriteMode(_ctx.integerValue("QueryOTAJobResponse.Data.OverwriteMode"));
+		data.setTargetSelection(_ctx.stringValue("QueryOTAJobResponse.Data.TargetSelection"));
+		data.setTimeoutInMinutes(_ctx.integerValue("QueryOTAJobResponse.Data.TimeoutInMinutes"));
 		data.setGrayPercent(_ctx.stringValue("QueryOTAJobResponse.Data.GrayPercent"));
-		data.setMaximumPerMinute(_ctx.integerValue("QueryOTAJobResponse.Data.MaximumPerMinute"));
+		data.setNeedPush(_ctx.booleanValue("QueryOTAJobResponse.Data.NeedPush"));
+		data.setJobStatus(_ctx.stringValue("QueryOTAJobResponse.Data.JobStatus"));
+		data.setJobDesc(_ctx.stringValue("QueryOTAJobResponse.Data.JobDesc"));
+		data.setUtcModified(_ctx.stringValue("QueryOTAJobResponse.Data.UtcModified"));
+		data.setUtcStartTime(_ctx.stringValue("QueryOTAJobResponse.Data.UtcStartTime"));
+		data.setMultiModuleMode(_ctx.booleanValue("QueryOTAJobResponse.Data.MultiModuleMode"));
+		data.setUtcEndTime(_ctx.stringValue("QueryOTAJobResponse.Data.UtcEndTime"));
+		data.setName(_ctx.stringValue("QueryOTAJobResponse.Data.Name"));
 		data.setDestVersion(_ctx.stringValue("QueryOTAJobResponse.Data.DestVersion"));
 		data.setUtcScheduleFinishTime(_ctx.stringValue("QueryOTAJobResponse.Data.UtcScheduleFinishTime"));
-		data.setOverwriteMode(_ctx.integerValue("QueryOTAJobResponse.Data.OverwriteMode"));
+		data.setMaximumPerMinute(_ctx.integerValue("QueryOTAJobResponse.Data.MaximumPerMinute"));
 		data.setDynamicMode(_ctx.integerValue("QueryOTAJobResponse.Data.DynamicMode"));
-		data.setNeedPush(_ctx.booleanValue("QueryOTAJobResponse.Data.NeedPush"));
-		data.setNeedConfirm(_ctx.booleanValue("QueryOTAJobResponse.Data.NeedConfirm"));
-		data.setGroupId(_ctx.stringValue("QueryOTAJobResponse.Data.GroupId"));
+		data.setRetryCount(_ctx.integerValue("QueryOTAJobResponse.Data.RetryCount"));
+		data.setProductKey(_ctx.stringValue("QueryOTAJobResponse.Data.ProductKey"));
 		data.setGroupName(_ctx.stringValue("QueryOTAJobResponse.Data.GroupName"));
+		data.setGroupId(_ctx.stringValue("QueryOTAJobResponse.Data.GroupId"));
+		data.setUtcScheduleTime(_ctx.stringValue("QueryOTAJobResponse.Data.UtcScheduleTime"));
+		data.setJobId(_ctx.stringValue("QueryOTAJobResponse.Data.JobId"));
 		data.setDownloadProtocol(_ctx.stringValue("QueryOTAJobResponse.Data.DownloadProtocol"));
-		data.setMultiModuleMode(_ctx.booleanValue("QueryOTAJobResponse.Data.MultiModuleMode"));
+		data.setNeedConfirm(_ctx.booleanValue("QueryOTAJobResponse.Data.NeedConfirm"));
+		data.setFirmwareId(_ctx.stringValue("QueryOTAJobResponse.Data.FirmwareId"));
 
 		List<String> srcVersions = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("QueryOTAJobResponse.Data.SrcVersions.Length"); i++) {

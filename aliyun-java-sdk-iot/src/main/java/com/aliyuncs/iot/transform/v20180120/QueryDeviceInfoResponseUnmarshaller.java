@@ -24,16 +24,16 @@ public class QueryDeviceInfoResponseUnmarshaller {
 	public static QueryDeviceInfoResponse unmarshall(QueryDeviceInfoResponse queryDeviceInfoResponse, UnmarshallerContext _ctx) {
 		
 		queryDeviceInfoResponse.setRequestId(_ctx.stringValue("QueryDeviceInfoResponse.RequestId"));
-		queryDeviceInfoResponse.setSuccess(_ctx.booleanValue("QueryDeviceInfoResponse.Success"));
 		queryDeviceInfoResponse.setCode(_ctx.stringValue("QueryDeviceInfoResponse.Code"));
 		queryDeviceInfoResponse.setErrorMessage(_ctx.stringValue("QueryDeviceInfoResponse.ErrorMessage"));
+		queryDeviceInfoResponse.setSuccess(_ctx.booleanValue("QueryDeviceInfoResponse.Success"));
 
 		Data data = new Data();
-		data.setIotId(_ctx.stringValue("QueryDeviceInfoResponse.Data.IotId"));
+		data.setNickname(_ctx.stringValue("QueryDeviceInfoResponse.Data.Nickname"));
 		data.setProductKey(_ctx.stringValue("QueryDeviceInfoResponse.Data.ProductKey"));
 		data.setDeviceName(_ctx.stringValue("QueryDeviceInfoResponse.Data.DeviceName"));
 		data.setDeviceSecret(_ctx.stringValue("QueryDeviceInfoResponse.Data.DeviceSecret"));
-		data.setNickname(_ctx.stringValue("QueryDeviceInfoResponse.Data.Nickname"));
+		data.setIotId(_ctx.stringValue("QueryDeviceInfoResponse.Data.IotId"));
 		queryDeviceInfoResponse.setData(data);
 	 
 	 	return queryDeviceInfoResponse;

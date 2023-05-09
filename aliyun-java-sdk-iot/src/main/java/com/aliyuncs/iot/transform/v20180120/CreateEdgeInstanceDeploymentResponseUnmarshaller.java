@@ -23,10 +23,10 @@ public class CreateEdgeInstanceDeploymentResponseUnmarshaller {
 	public static CreateEdgeInstanceDeploymentResponse unmarshall(CreateEdgeInstanceDeploymentResponse createEdgeInstanceDeploymentResponse, UnmarshallerContext _ctx) {
 		
 		createEdgeInstanceDeploymentResponse.setRequestId(_ctx.stringValue("CreateEdgeInstanceDeploymentResponse.RequestId"));
-		createEdgeInstanceDeploymentResponse.setSuccess(_ctx.booleanValue("CreateEdgeInstanceDeploymentResponse.Success"));
 		createEdgeInstanceDeploymentResponse.setCode(_ctx.stringValue("CreateEdgeInstanceDeploymentResponse.Code"));
-		createEdgeInstanceDeploymentResponse.setErrorMessage(_ctx.stringValue("CreateEdgeInstanceDeploymentResponse.ErrorMessage"));
 		createEdgeInstanceDeploymentResponse.setDeploymentId(_ctx.stringValue("CreateEdgeInstanceDeploymentResponse.DeploymentId"));
+		createEdgeInstanceDeploymentResponse.setErrorMessage(_ctx.stringValue("CreateEdgeInstanceDeploymentResponse.ErrorMessage"));
+		createEdgeInstanceDeploymentResponse.setSuccess(_ctx.booleanValue("CreateEdgeInstanceDeploymentResponse.Success"));
 	 
 	 	return createEdgeInstanceDeploymentResponse;
 	}

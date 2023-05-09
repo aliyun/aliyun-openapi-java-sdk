@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ImportDeviceResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -66,6 +50,22 @@ public class ImportDeviceResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -76,25 +76,17 @@ public class ImportDeviceResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String iotId;
-
 		private String productKey;
+
+		private String sn;
 
 		private String deviceName;
 
 		private String deviceSecret;
 
-		private String sn;
-
 		private String nickname;
 
-		public String getIotId() {
-			return this.iotId;
-		}
-
-		public void setIotId(String iotId) {
-			this.iotId = iotId;
-		}
+		private String iotId;
 
 		public String getProductKey() {
 			return this.productKey;
@@ -102,6 +94,14 @@ public class ImportDeviceResponse extends AcsResponse {
 
 		public void setProductKey(String productKey) {
 			this.productKey = productKey;
+		}
+
+		public String getSn() {
+			return this.sn;
+		}
+
+		public void setSn(String sn) {
+			this.sn = sn;
 		}
 
 		public String getDeviceName() {
@@ -120,20 +120,20 @@ public class ImportDeviceResponse extends AcsResponse {
 			this.deviceSecret = deviceSecret;
 		}
 
-		public String getSn() {
-			return this.sn;
-		}
-
-		public void setSn(String sn) {
-			this.sn = sn;
-		}
-
 		public String getNickname() {
 			return this.nickname;
 		}
 
 		public void setNickname(String nickname) {
 			this.nickname = nickname;
+		}
+
+		public String getIotId() {
+			return this.iotId;
+		}
+
+		public void setIotId(String iotId) {
+			this.iotId = iotId;
 		}
 	}
 

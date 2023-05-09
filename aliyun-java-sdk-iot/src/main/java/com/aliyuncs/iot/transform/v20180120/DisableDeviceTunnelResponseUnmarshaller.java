@@ -23,9 +23,9 @@ public class DisableDeviceTunnelResponseUnmarshaller {
 	public static DisableDeviceTunnelResponse unmarshall(DisableDeviceTunnelResponse disableDeviceTunnelResponse, UnmarshallerContext _ctx) {
 		
 		disableDeviceTunnelResponse.setRequestId(_ctx.stringValue("DisableDeviceTunnelResponse.RequestId"));
-		disableDeviceTunnelResponse.setSuccess(_ctx.booleanValue("DisableDeviceTunnelResponse.Success"));
 		disableDeviceTunnelResponse.setCode(_ctx.stringValue("DisableDeviceTunnelResponse.Code"));
 		disableDeviceTunnelResponse.setErrorMessage(_ctx.stringValue("DisableDeviceTunnelResponse.ErrorMessage"));
+		disableDeviceTunnelResponse.setSuccess(_ctx.booleanValue("DisableDeviceTunnelResponse.Success"));
 	 
 	 	return disableDeviceTunnelResponse;
 	}

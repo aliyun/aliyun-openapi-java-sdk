@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryDeviceFileResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -66,6 +50,22 @@ public class QueryDeviceFileResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -76,22 +76,22 @@ public class QueryDeviceFileResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String fileId;
+		private String utcCreatedOn;
 
 		private String name;
 
-		private String size;
-
-		private String utcCreatedOn;
-
 		private String downloadUrl;
 
-		public String getFileId() {
-			return this.fileId;
+		private String size;
+
+		private String fileId;
+
+		public String getUtcCreatedOn() {
+			return this.utcCreatedOn;
 		}
 
-		public void setFileId(String fileId) {
-			this.fileId = fileId;
+		public void setUtcCreatedOn(String utcCreatedOn) {
+			this.utcCreatedOn = utcCreatedOn;
 		}
 
 		public String getName() {
@@ -102,6 +102,14 @@ public class QueryDeviceFileResponse extends AcsResponse {
 			this.name = name;
 		}
 
+		public String getDownloadUrl() {
+			return this.downloadUrl;
+		}
+
+		public void setDownloadUrl(String downloadUrl) {
+			this.downloadUrl = downloadUrl;
+		}
+
 		public String getSize() {
 			return this.size;
 		}
@@ -110,20 +118,12 @@ public class QueryDeviceFileResponse extends AcsResponse {
 			this.size = size;
 		}
 
-		public String getUtcCreatedOn() {
-			return this.utcCreatedOn;
+		public String getFileId() {
+			return this.fileId;
 		}
 
-		public void setUtcCreatedOn(String utcCreatedOn) {
-			this.utcCreatedOn = utcCreatedOn;
-		}
-
-		public String getDownloadUrl() {
-			return this.downloadUrl;
-		}
-
-		public void setDownloadUrl(String downloadUrl) {
-			this.downloadUrl = downloadUrl;
+		public void setFileId(String fileId) {
+			this.fileId = fileId;
 		}
 	}
 

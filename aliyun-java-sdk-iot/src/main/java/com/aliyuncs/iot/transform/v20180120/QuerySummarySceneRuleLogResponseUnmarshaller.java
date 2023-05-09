@@ -28,14 +28,14 @@ public class QuerySummarySceneRuleLogResponseUnmarshaller {
 	public static QuerySummarySceneRuleLogResponse unmarshall(QuerySummarySceneRuleLogResponse querySummarySceneRuleLogResponse, UnmarshallerContext _ctx) {
 		
 		querySummarySceneRuleLogResponse.setRequestId(_ctx.stringValue("QuerySummarySceneRuleLogResponse.RequestId"));
-		querySummarySceneRuleLogResponse.setSuccess(_ctx.booleanValue("QuerySummarySceneRuleLogResponse.Success"));
-		querySummarySceneRuleLogResponse.setErrorMessage(_ctx.stringValue("QuerySummarySceneRuleLogResponse.ErrorMessage"));
 		querySummarySceneRuleLogResponse.setCode(_ctx.stringValue("QuerySummarySceneRuleLogResponse.Code"));
+		querySummarySceneRuleLogResponse.setErrorMessage(_ctx.stringValue("QuerySummarySceneRuleLogResponse.ErrorMessage"));
+		querySummarySceneRuleLogResponse.setSuccess(_ctx.booleanValue("QuerySummarySceneRuleLogResponse.Success"));
 
 		Data data = new Data();
-		data.setTotal(_ctx.integerValue("QuerySummarySceneRuleLogResponse.Data.Total"));
-		data.setPageSize(_ctx.integerValue("QuerySummarySceneRuleLogResponse.Data.PageSize"));
 		data.setCurrentPage(_ctx.integerValue("QuerySummarySceneRuleLogResponse.Data.CurrentPage"));
+		data.setPageSize(_ctx.integerValue("QuerySummarySceneRuleLogResponse.Data.PageSize"));
+		data.setTotal(_ctx.integerValue("QuerySummarySceneRuleLogResponse.Data.Total"));
 
 		List<LogInfo> logList = new ArrayList<LogInfo>();
 		for (int i = 0; i < _ctx.lengthValue("QuerySummarySceneRuleLogResponse.Data.LogList.Length"); i++) {

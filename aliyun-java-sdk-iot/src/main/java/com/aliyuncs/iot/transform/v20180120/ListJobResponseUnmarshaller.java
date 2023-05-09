@@ -27,23 +27,23 @@ public class ListJobResponseUnmarshaller {
 	public static ListJobResponse unmarshall(ListJobResponse listJobResponse, UnmarshallerContext _ctx) {
 		
 		listJobResponse.setRequestId(_ctx.stringValue("ListJobResponse.RequestId"));
+		listJobResponse.setErrorMessage(_ctx.stringValue("ListJobResponse.ErrorMessage"));
 		listJobResponse.setSuccess(_ctx.booleanValue("ListJobResponse.Success"));
 		listJobResponse.setCode(_ctx.stringValue("ListJobResponse.Code"));
-		listJobResponse.setErrorMessage(_ctx.stringValue("ListJobResponse.ErrorMessage"));
-		listJobResponse.setTotal(_ctx.integerValue("ListJobResponse.Total"));
 		listJobResponse.setPageSize(_ctx.integerValue("ListJobResponse.PageSize"));
+		listJobResponse.setTotal(_ctx.integerValue("ListJobResponse.Total"));
 		listJobResponse.setPage(_ctx.integerValue("ListJobResponse.Page"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListJobResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setJobId(_ctx.stringValue("ListJobResponse.Data["+ i +"].JobId"));
-			dataItem.setJobName(_ctx.stringValue("ListJobResponse.Data["+ i +"].JobName"));
-			dataItem.setUtcCreate(_ctx.stringValue("ListJobResponse.Data["+ i +"].UtcCreate"));
-			dataItem.setUtcModified(_ctx.stringValue("ListJobResponse.Data["+ i +"].UtcModified"));
-			dataItem.setStatus(_ctx.stringValue("ListJobResponse.Data["+ i +"].Status"));
-			dataItem.setDescription(_ctx.stringValue("ListJobResponse.Data["+ i +"].Description"));
 			dataItem.setType(_ctx.stringValue("ListJobResponse.Data["+ i +"].Type"));
+			dataItem.setStatus(_ctx.stringValue("ListJobResponse.Data["+ i +"].Status"));
+			dataItem.setJobName(_ctx.stringValue("ListJobResponse.Data["+ i +"].JobName"));
+			dataItem.setDescription(_ctx.stringValue("ListJobResponse.Data["+ i +"].Description"));
+			dataItem.setUtcModified(_ctx.stringValue("ListJobResponse.Data["+ i +"].UtcModified"));
+			dataItem.setJobId(_ctx.stringValue("ListJobResponse.Data["+ i +"].JobId"));
+			dataItem.setUtcCreate(_ctx.stringValue("ListJobResponse.Data["+ i +"].UtcCreate"));
 			dataItem.setScheduledTime(_ctx.longValue("ListJobResponse.Data["+ i +"].ScheduledTime"));
 
 			data.add(dataItem);

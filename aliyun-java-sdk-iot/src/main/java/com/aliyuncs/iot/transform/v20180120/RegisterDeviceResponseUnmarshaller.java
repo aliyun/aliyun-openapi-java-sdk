@@ -24,18 +24,18 @@ public class RegisterDeviceResponseUnmarshaller {
 	public static RegisterDeviceResponse unmarshall(RegisterDeviceResponse registerDeviceResponse, UnmarshallerContext _ctx) {
 		
 		registerDeviceResponse.setRequestId(_ctx.stringValue("RegisterDeviceResponse.RequestId"));
-		registerDeviceResponse.setSuccess(_ctx.booleanValue("RegisterDeviceResponse.Success"));
 		registerDeviceResponse.setCode(_ctx.stringValue("RegisterDeviceResponse.Code"));
 		registerDeviceResponse.setErrorMessage(_ctx.stringValue("RegisterDeviceResponse.ErrorMessage"));
+		registerDeviceResponse.setSuccess(_ctx.booleanValue("RegisterDeviceResponse.Success"));
 
 		Data data = new Data();
-		data.setIotId(_ctx.stringValue("RegisterDeviceResponse.Data.IotId"));
 		data.setProductKey(_ctx.stringValue("RegisterDeviceResponse.Data.ProductKey"));
-		data.setDeviceName(_ctx.stringValue("RegisterDeviceResponse.Data.DeviceName"));
-		data.setDeviceSecret(_ctx.stringValue("RegisterDeviceResponse.Data.DeviceSecret"));
 		data.setDevEui(_ctx.stringValue("RegisterDeviceResponse.Data.DevEui"));
+		data.setDeviceName(_ctx.stringValue("RegisterDeviceResponse.Data.DeviceName"));
 		data.setJoinEui(_ctx.stringValue("RegisterDeviceResponse.Data.JoinEui"));
+		data.setDeviceSecret(_ctx.stringValue("RegisterDeviceResponse.Data.DeviceSecret"));
 		data.setNickname(_ctx.stringValue("RegisterDeviceResponse.Data.Nickname"));
+		data.setIotId(_ctx.stringValue("RegisterDeviceResponse.Data.IotId"));
 		registerDeviceResponse.setData(data);
 	 
 	 	return registerDeviceResponse;

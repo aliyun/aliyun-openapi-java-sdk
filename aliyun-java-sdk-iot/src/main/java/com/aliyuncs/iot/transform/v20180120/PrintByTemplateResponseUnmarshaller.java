@@ -24,17 +24,17 @@ public class PrintByTemplateResponseUnmarshaller {
 	public static PrintByTemplateResponse unmarshall(PrintByTemplateResponse printByTemplateResponse, UnmarshallerContext _ctx) {
 		
 		printByTemplateResponse.setRequestId(_ctx.stringValue("PrintByTemplateResponse.RequestId"));
-		printByTemplateResponse.setSuccess(_ctx.booleanValue("PrintByTemplateResponse.Success"));
 		printByTemplateResponse.setCode(_ctx.stringValue("PrintByTemplateResponse.Code"));
 		printByTemplateResponse.setErrorMessage(_ctx.stringValue("PrintByTemplateResponse.ErrorMessage"));
+		printByTemplateResponse.setSuccess(_ctx.booleanValue("PrintByTemplateResponse.Success"));
 
 		Data data = new Data();
-		data.setSuccess(_ctx.booleanValue("PrintByTemplateResponse.Data.Success"));
-		data.setDeviceErrorCode(_ctx.stringValue("PrintByTemplateResponse.Data.DeviceErrorCode"));
-		data.setDeviceErrorMessage(_ctx.stringValue("PrintByTemplateResponse.Data.DeviceErrorMessage"));
-		data.setId(_ctx.stringValue("PrintByTemplateResponse.Data.Id"));
 		data.setRetryCount(_ctx.integerValue("PrintByTemplateResponse.Data.RetryCount"));
+		data.setSuccess(_ctx.booleanValue("PrintByTemplateResponse.Data.Success"));
+		data.setDeviceErrorMessage(_ctx.stringValue("PrintByTemplateResponse.Data.DeviceErrorMessage"));
 		data.setMaxRetryCount(_ctx.integerValue("PrintByTemplateResponse.Data.MaxRetryCount"));
+		data.setDeviceErrorCode(_ctx.stringValue("PrintByTemplateResponse.Data.DeviceErrorCode"));
+		data.setId(_ctx.stringValue("PrintByTemplateResponse.Data.Id"));
 		printByTemplateResponse.setData(data);
 	 
 	 	return printByTemplateResponse;

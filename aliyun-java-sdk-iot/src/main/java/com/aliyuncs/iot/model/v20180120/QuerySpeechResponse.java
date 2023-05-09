@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QuerySpeechResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -66,6 +50,22 @@ public class QuerySpeechResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -76,32 +76,32 @@ public class QuerySpeechResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String speechCode;
+		private String voice;
 
 		private String bizCode;
 
-		private String voice;
+		private String speechCode;
 
-		private Integer volume;
-
-		private Integer speechRate;
+		private String speechType;
 
 		private String text;
 
-		private String audioFormat;
+		private Integer speechRate;
 
-		private String speechType;
+		private Integer volume;
+
+		private String audioFormat;
 
 		private Boolean enableSoundCode;
 
 		private SoundCodeConfig soundCodeConfig;
 
-		public String getSpeechCode() {
-			return this.speechCode;
+		public String getVoice() {
+			return this.voice;
 		}
 
-		public void setSpeechCode(String speechCode) {
-			this.speechCode = speechCode;
+		public void setVoice(String voice) {
+			this.voice = voice;
 		}
 
 		public String getBizCode() {
@@ -112,28 +112,20 @@ public class QuerySpeechResponse extends AcsResponse {
 			this.bizCode = bizCode;
 		}
 
-		public String getVoice() {
-			return this.voice;
+		public String getSpeechCode() {
+			return this.speechCode;
 		}
 
-		public void setVoice(String voice) {
-			this.voice = voice;
+		public void setSpeechCode(String speechCode) {
+			this.speechCode = speechCode;
 		}
 
-		public Integer getVolume() {
-			return this.volume;
+		public String getSpeechType() {
+			return this.speechType;
 		}
 
-		public void setVolume(Integer volume) {
-			this.volume = volume;
-		}
-
-		public Integer getSpeechRate() {
-			return this.speechRate;
-		}
-
-		public void setSpeechRate(Integer speechRate) {
-			this.speechRate = speechRate;
+		public void setSpeechType(String speechType) {
+			this.speechType = speechType;
 		}
 
 		public String getText() {
@@ -144,20 +136,28 @@ public class QuerySpeechResponse extends AcsResponse {
 			this.text = text;
 		}
 
+		public Integer getSpeechRate() {
+			return this.speechRate;
+		}
+
+		public void setSpeechRate(Integer speechRate) {
+			this.speechRate = speechRate;
+		}
+
+		public Integer getVolume() {
+			return this.volume;
+		}
+
+		public void setVolume(Integer volume) {
+			this.volume = volume;
+		}
+
 		public String getAudioFormat() {
 			return this.audioFormat;
 		}
 
 		public void setAudioFormat(String audioFormat) {
 			this.audioFormat = audioFormat;
-		}
-
-		public String getSpeechType() {
-			return this.speechType;
-		}
-
-		public void setSpeechType(String speechType) {
-			this.speechType = speechType;
 		}
 
 		public Boolean getEnableSoundCode() {

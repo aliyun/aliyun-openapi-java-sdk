@@ -23,9 +23,9 @@ public class UpdateEdgeInstanceResponseUnmarshaller {
 	public static UpdateEdgeInstanceResponse unmarshall(UpdateEdgeInstanceResponse updateEdgeInstanceResponse, UnmarshallerContext _ctx) {
 		
 		updateEdgeInstanceResponse.setRequestId(_ctx.stringValue("UpdateEdgeInstanceResponse.RequestId"));
-		updateEdgeInstanceResponse.setSuccess(_ctx.booleanValue("UpdateEdgeInstanceResponse.Success"));
 		updateEdgeInstanceResponse.setCode(_ctx.stringValue("UpdateEdgeInstanceResponse.Code"));
 		updateEdgeInstanceResponse.setErrorMessage(_ctx.stringValue("UpdateEdgeInstanceResponse.ErrorMessage"));
+		updateEdgeInstanceResponse.setSuccess(_ctx.booleanValue("UpdateEdgeInstanceResponse.Success"));
 	 
 	 	return updateEdgeInstanceResponse;
 	}

@@ -23,9 +23,9 @@ public class SpeechByCombinationResponseUnmarshaller {
 	public static SpeechByCombinationResponse unmarshall(SpeechByCombinationResponse speechByCombinationResponse, UnmarshallerContext _ctx) {
 		
 		speechByCombinationResponse.setRequestId(_ctx.stringValue("SpeechByCombinationResponse.RequestId"));
-		speechByCombinationResponse.setSuccess(_ctx.booleanValue("SpeechByCombinationResponse.Success"));
 		speechByCombinationResponse.setCode(_ctx.stringValue("SpeechByCombinationResponse.Code"));
 		speechByCombinationResponse.setErrorMessage(_ctx.stringValue("SpeechByCombinationResponse.ErrorMessage"));
+		speechByCombinationResponse.setSuccess(_ctx.booleanValue("SpeechByCombinationResponse.Success"));
 	 
 	 	return speechByCombinationResponse;
 	}

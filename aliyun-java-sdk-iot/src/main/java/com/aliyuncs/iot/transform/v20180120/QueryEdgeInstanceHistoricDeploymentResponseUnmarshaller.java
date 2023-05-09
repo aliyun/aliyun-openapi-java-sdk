@@ -28,28 +28,28 @@ public class QueryEdgeInstanceHistoricDeploymentResponseUnmarshaller {
 	public static QueryEdgeInstanceHistoricDeploymentResponse unmarshall(QueryEdgeInstanceHistoricDeploymentResponse queryEdgeInstanceHistoricDeploymentResponse, UnmarshallerContext _ctx) {
 		
 		queryEdgeInstanceHistoricDeploymentResponse.setRequestId(_ctx.stringValue("QueryEdgeInstanceHistoricDeploymentResponse.RequestId"));
-		queryEdgeInstanceHistoricDeploymentResponse.setSuccess(_ctx.booleanValue("QueryEdgeInstanceHistoricDeploymentResponse.Success"));
 		queryEdgeInstanceHistoricDeploymentResponse.setCode(_ctx.stringValue("QueryEdgeInstanceHistoricDeploymentResponse.Code"));
 		queryEdgeInstanceHistoricDeploymentResponse.setErrorMessage(_ctx.stringValue("QueryEdgeInstanceHistoricDeploymentResponse.ErrorMessage"));
+		queryEdgeInstanceHistoricDeploymentResponse.setSuccess(_ctx.booleanValue("QueryEdgeInstanceHistoricDeploymentResponse.Success"));
 
 		Data data = new Data();
-		data.setTotal(_ctx.integerValue("QueryEdgeInstanceHistoricDeploymentResponse.Data.Total"));
-		data.setPageSize(_ctx.integerValue("QueryEdgeInstanceHistoricDeploymentResponse.Data.PageSize"));
 		data.setCurrentPage(_ctx.integerValue("QueryEdgeInstanceHistoricDeploymentResponse.Data.CurrentPage"));
+		data.setPageSize(_ctx.integerValue("QueryEdgeInstanceHistoricDeploymentResponse.Data.PageSize"));
+		data.setTotal(_ctx.integerValue("QueryEdgeInstanceHistoricDeploymentResponse.Data.Total"));
 
 		List<Deployment> deploymentList = new ArrayList<Deployment>();
 		for (int i = 0; i < _ctx.lengthValue("QueryEdgeInstanceHistoricDeploymentResponse.Data.DeploymentList.Length"); i++) {
 			Deployment deployment = new Deployment();
-			deployment.setGmtCreate(_ctx.stringValue("QueryEdgeInstanceHistoricDeploymentResponse.Data.DeploymentList["+ i +"].GmtCreate"));
-			deployment.setGmtModified(_ctx.stringValue("QueryEdgeInstanceHistoricDeploymentResponse.Data.DeploymentList["+ i +"].GmtModified"));
-			deployment.setGmtCompleted(_ctx.stringValue("QueryEdgeInstanceHistoricDeploymentResponse.Data.DeploymentList["+ i +"].GmtCompleted"));
+			deployment.setGmtCreateTimestamp(_ctx.longValue("QueryEdgeInstanceHistoricDeploymentResponse.Data.DeploymentList["+ i +"].GmtCreateTimestamp"));
+			deployment.setType(_ctx.stringValue("QueryEdgeInstanceHistoricDeploymentResponse.Data.DeploymentList["+ i +"].Type"));
+			deployment.setStatus(_ctx.integerValue("QueryEdgeInstanceHistoricDeploymentResponse.Data.DeploymentList["+ i +"].Status"));
 			deployment.setDeploymentId(_ctx.stringValue("QueryEdgeInstanceHistoricDeploymentResponse.Data.DeploymentList["+ i +"].DeploymentId"));
 			deployment.setDescription(_ctx.stringValue("QueryEdgeInstanceHistoricDeploymentResponse.Data.DeploymentList["+ i +"].Description"));
-			deployment.setStatus(_ctx.integerValue("QueryEdgeInstanceHistoricDeploymentResponse.Data.DeploymentList["+ i +"].Status"));
-			deployment.setType(_ctx.stringValue("QueryEdgeInstanceHistoricDeploymentResponse.Data.DeploymentList["+ i +"].Type"));
-			deployment.setGmtCreateTimestamp(_ctx.longValue("QueryEdgeInstanceHistoricDeploymentResponse.Data.DeploymentList["+ i +"].GmtCreateTimestamp"));
 			deployment.setGmtModifiedTimestamp(_ctx.longValue("QueryEdgeInstanceHistoricDeploymentResponse.Data.DeploymentList["+ i +"].GmtModifiedTimestamp"));
+			deployment.setGmtCompleted(_ctx.stringValue("QueryEdgeInstanceHistoricDeploymentResponse.Data.DeploymentList["+ i +"].GmtCompleted"));
+			deployment.setGmtCreate(_ctx.stringValue("QueryEdgeInstanceHistoricDeploymentResponse.Data.DeploymentList["+ i +"].GmtCreate"));
 			deployment.setGmtCompletedTimestamp(_ctx.longValue("QueryEdgeInstanceHistoricDeploymentResponse.Data.DeploymentList["+ i +"].GmtCompletedTimestamp"));
+			deployment.setGmtModified(_ctx.stringValue("QueryEdgeInstanceHistoricDeploymentResponse.Data.DeploymentList["+ i +"].GmtModified"));
 
 			deploymentList.add(deployment);
 		}

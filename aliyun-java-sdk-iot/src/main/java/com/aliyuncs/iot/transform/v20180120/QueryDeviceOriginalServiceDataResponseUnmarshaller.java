@@ -28,9 +28,9 @@ public class QueryDeviceOriginalServiceDataResponseUnmarshaller {
 	public static QueryDeviceOriginalServiceDataResponse unmarshall(QueryDeviceOriginalServiceDataResponse queryDeviceOriginalServiceDataResponse, UnmarshallerContext _ctx) {
 		
 		queryDeviceOriginalServiceDataResponse.setRequestId(_ctx.stringValue("QueryDeviceOriginalServiceDataResponse.RequestId"));
-		queryDeviceOriginalServiceDataResponse.setSuccess(_ctx.booleanValue("QueryDeviceOriginalServiceDataResponse.Success"));
 		queryDeviceOriginalServiceDataResponse.setCode(_ctx.stringValue("QueryDeviceOriginalServiceDataResponse.Code"));
 		queryDeviceOriginalServiceDataResponse.setErrorMessage(_ctx.stringValue("QueryDeviceOriginalServiceDataResponse.ErrorMessage"));
+		queryDeviceOriginalServiceDataResponse.setSuccess(_ctx.booleanValue("QueryDeviceOriginalServiceDataResponse.Success"));
 
 		Data data = new Data();
 		data.setNextPageToken(_ctx.stringValue("QueryDeviceOriginalServiceDataResponse.Data.NextPageToken"));
@@ -39,11 +39,11 @@ public class QueryDeviceOriginalServiceDataResponseUnmarshaller {
 		List<ServiceInfo> list = new ArrayList<ServiceInfo>();
 		for (int i = 0; i < _ctx.lengthValue("QueryDeviceOriginalServiceDataResponse.Data.List.Length"); i++) {
 			ServiceInfo serviceInfo = new ServiceInfo();
-			serviceInfo.setTime(_ctx.stringValue("QueryDeviceOriginalServiceDataResponse.Data.List["+ i +"].Time"));
 			serviceInfo.setIdentifier(_ctx.stringValue("QueryDeviceOriginalServiceDataResponse.Data.List["+ i +"].Identifier"));
-			serviceInfo.setName(_ctx.stringValue("QueryDeviceOriginalServiceDataResponse.Data.List["+ i +"].Name"));
-			serviceInfo.setInputData(_ctx.stringValue("QueryDeviceOriginalServiceDataResponse.Data.List["+ i +"].InputData"));
 			serviceInfo.setOutputData(_ctx.stringValue("QueryDeviceOriginalServiceDataResponse.Data.List["+ i +"].OutputData"));
+			serviceInfo.setTime(_ctx.stringValue("QueryDeviceOriginalServiceDataResponse.Data.List["+ i +"].Time"));
+			serviceInfo.setInputData(_ctx.stringValue("QueryDeviceOriginalServiceDataResponse.Data.List["+ i +"].InputData"));
+			serviceInfo.setName(_ctx.stringValue("QueryDeviceOriginalServiceDataResponse.Data.List["+ i +"].Name"));
 
 			list.add(serviceInfo);
 		}

@@ -23,9 +23,9 @@ public class ShareSpeechByCombinationResponseUnmarshaller {
 	public static ShareSpeechByCombinationResponse unmarshall(ShareSpeechByCombinationResponse shareSpeechByCombinationResponse, UnmarshallerContext _ctx) {
 		
 		shareSpeechByCombinationResponse.setRequestId(_ctx.stringValue("ShareSpeechByCombinationResponse.RequestId"));
-		shareSpeechByCombinationResponse.setSuccess(_ctx.booleanValue("ShareSpeechByCombinationResponse.Success"));
 		shareSpeechByCombinationResponse.setCode(_ctx.stringValue("ShareSpeechByCombinationResponse.Code"));
 		shareSpeechByCombinationResponse.setErrorMessage(_ctx.stringValue("ShareSpeechByCombinationResponse.ErrorMessage"));
+		shareSpeechByCombinationResponse.setSuccess(_ctx.booleanValue("ShareSpeechByCombinationResponse.Success"));
 	 
 	 	return shareSpeechByCombinationResponse;
 	}

@@ -27,22 +27,22 @@ public class BatchGetEdgeDriverResponseUnmarshaller {
 	public static BatchGetEdgeDriverResponse unmarshall(BatchGetEdgeDriverResponse batchGetEdgeDriverResponse, UnmarshallerContext _ctx) {
 		
 		batchGetEdgeDriverResponse.setRequestId(_ctx.stringValue("BatchGetEdgeDriverResponse.RequestId"));
-		batchGetEdgeDriverResponse.setSuccess(_ctx.booleanValue("BatchGetEdgeDriverResponse.Success"));
 		batchGetEdgeDriverResponse.setCode(_ctx.stringValue("BatchGetEdgeDriverResponse.Code"));
 		batchGetEdgeDriverResponse.setErrorMessage(_ctx.stringValue("BatchGetEdgeDriverResponse.ErrorMessage"));
+		batchGetEdgeDriverResponse.setSuccess(_ctx.booleanValue("BatchGetEdgeDriverResponse.Success"));
 
 		List<Driver> driverList = new ArrayList<Driver>();
 		for (int i = 0; i < _ctx.lengthValue("BatchGetEdgeDriverResponse.DriverList.Length"); i++) {
 			Driver driver = new Driver();
+			driver.setGmtCreateTimestamp(_ctx.longValue("BatchGetEdgeDriverResponse.DriverList["+ i +"].GmtCreateTimestamp"));
+			driver.setType(_ctx.integerValue("BatchGetEdgeDriverResponse.DriverList["+ i +"].Type"));
+			driver.setCpuArch(_ctx.stringValue("BatchGetEdgeDriverResponse.DriverList["+ i +"].CpuArch"));
 			driver.setDriverId(_ctx.stringValue("BatchGetEdgeDriverResponse.DriverList["+ i +"].DriverId"));
+			driver.setIsBuiltIn(_ctx.booleanValue("BatchGetEdgeDriverResponse.DriverList["+ i +"].IsBuiltIn"));
+			driver.setGmtModifiedTimestamp(_ctx.longValue("BatchGetEdgeDriverResponse.DriverList["+ i +"].GmtModifiedTimestamp"));
+			driver.setRuntime(_ctx.stringValue("BatchGetEdgeDriverResponse.DriverList["+ i +"].Runtime"));
 			driver.setDriverName(_ctx.stringValue("BatchGetEdgeDriverResponse.DriverList["+ i +"].DriverName"));
 			driver.setDriverProtocol(_ctx.stringValue("BatchGetEdgeDriverResponse.DriverList["+ i +"].DriverProtocol"));
-			driver.setRuntime(_ctx.stringValue("BatchGetEdgeDriverResponse.DriverList["+ i +"].Runtime"));
-			driver.setCpuArch(_ctx.stringValue("BatchGetEdgeDriverResponse.DriverList["+ i +"].CpuArch"));
-			driver.setType(_ctx.integerValue("BatchGetEdgeDriverResponse.DriverList["+ i +"].Type"));
-			driver.setIsBuiltIn(_ctx.booleanValue("BatchGetEdgeDriverResponse.DriverList["+ i +"].IsBuiltIn"));
-			driver.setGmtCreateTimestamp(_ctx.longValue("BatchGetEdgeDriverResponse.DriverList["+ i +"].GmtCreateTimestamp"));
-			driver.setGmtModifiedTimestamp(_ctx.longValue("BatchGetEdgeDriverResponse.DriverList["+ i +"].GmtModifiedTimestamp"));
 			driver.setUseOfficialConfig(_ctx.integerValue("BatchGetEdgeDriverResponse.DriverList["+ i +"].UseOfficialConfig"));
 
 			driverList.add(driver);

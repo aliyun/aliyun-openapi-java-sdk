@@ -28,9 +28,9 @@ public class ListDistributedProductResponseUnmarshaller {
 	public static ListDistributedProductResponse unmarshall(ListDistributedProductResponse listDistributedProductResponse, UnmarshallerContext _ctx) {
 		
 		listDistributedProductResponse.setRequestId(_ctx.stringValue("ListDistributedProductResponse.RequestId"));
-		listDistributedProductResponse.setSuccess(_ctx.booleanValue("ListDistributedProductResponse.Success"));
 		listDistributedProductResponse.setCode(_ctx.stringValue("ListDistributedProductResponse.Code"));
 		listDistributedProductResponse.setErrorMessage(_ctx.stringValue("ListDistributedProductResponse.ErrorMessage"));
+		listDistributedProductResponse.setSuccess(_ctx.booleanValue("ListDistributedProductResponse.Success"));
 
 		Data data = new Data();
 		data.setTotal(_ctx.integerValue("ListDistributedProductResponse.Data.Total"));
@@ -38,17 +38,17 @@ public class ListDistributedProductResponseUnmarshaller {
 		List<Items> info = new ArrayList<Items>();
 		for (int i = 0; i < _ctx.lengthValue("ListDistributedProductResponse.Data.Info.Length"); i++) {
 			Items items = new Items();
-			items.setSourceUid(_ctx.stringValue("ListDistributedProductResponse.Data.Info["+ i +"].SourceUid"));
-			items.setTargetUid(_ctx.stringValue("ListDistributedProductResponse.Data.Info["+ i +"].TargetUid"));
-			items.setProductKey(_ctx.stringValue("ListDistributedProductResponse.Data.Info["+ i +"].ProductKey"));
-			items.setSourceInstanceId(_ctx.stringValue("ListDistributedProductResponse.Data.Info["+ i +"].SourceInstanceId"));
-			items.setTargetInstanceId(_ctx.stringValue("ListDistributedProductResponse.Data.Info["+ i +"].TargetInstanceId"));
-			items.setGmtCreate(_ctx.longValue("ListDistributedProductResponse.Data.Info["+ i +"].GmtCreate"));
-			items.setTargetAliyunId(_ctx.stringValue("ListDistributedProductResponse.Data.Info["+ i +"].TargetAliyunId"));
-			items.setSourceRegion(_ctx.stringValue("ListDistributedProductResponse.Data.Info["+ i +"].SourceRegion"));
 			items.setTargetRegion(_ctx.stringValue("ListDistributedProductResponse.Data.Info["+ i +"].TargetRegion"));
-			items.setSourceInstanceName(_ctx.stringValue("ListDistributedProductResponse.Data.Info["+ i +"].SourceInstanceName"));
+			items.setProductKey(_ctx.stringValue("ListDistributedProductResponse.Data.Info["+ i +"].ProductKey"));
+			items.setTargetUid(_ctx.stringValue("ListDistributedProductResponse.Data.Info["+ i +"].TargetUid"));
 			items.setTargetInstanceName(_ctx.stringValue("ListDistributedProductResponse.Data.Info["+ i +"].TargetInstanceName"));
+			items.setTargetAliyunId(_ctx.stringValue("ListDistributedProductResponse.Data.Info["+ i +"].TargetAliyunId"));
+			items.setGmtCreate(_ctx.longValue("ListDistributedProductResponse.Data.Info["+ i +"].GmtCreate"));
+			items.setSourceInstanceName(_ctx.stringValue("ListDistributedProductResponse.Data.Info["+ i +"].SourceInstanceName"));
+			items.setSourceUid(_ctx.stringValue("ListDistributedProductResponse.Data.Info["+ i +"].SourceUid"));
+			items.setTargetInstanceId(_ctx.stringValue("ListDistributedProductResponse.Data.Info["+ i +"].TargetInstanceId"));
+			items.setSourceRegion(_ctx.stringValue("ListDistributedProductResponse.Data.Info["+ i +"].SourceRegion"));
+			items.setSourceInstanceId(_ctx.stringValue("ListDistributedProductResponse.Data.Info["+ i +"].SourceInstanceId"));
 
 			info.add(items);
 		}

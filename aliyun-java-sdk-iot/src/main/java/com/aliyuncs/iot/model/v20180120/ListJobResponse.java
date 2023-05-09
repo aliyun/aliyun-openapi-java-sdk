@@ -27,15 +27,15 @@ public class ListJobResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String errorMessage;
+
 	private Boolean success;
 
 	private String code;
 
-	private String errorMessage;
+	private Integer pageSize;
 
 	private Integer total;
-
-	private Integer pageSize;
 
 	private Integer page;
 
@@ -47,6 +47,14 @@ public class ListJobResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
 	public Boolean getSuccess() {
@@ -65,12 +73,12 @@ public class ListJobResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getErrorMessage() {
-		return this.errorMessage;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public Integer getTotal() {
@@ -79,14 +87,6 @@ public class ListJobResponse extends AcsResponse {
 
 	public void setTotal(Integer total) {
 		this.total = total;
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
 	}
 
 	public Integer getPage() {
@@ -107,52 +107,28 @@ public class ListJobResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private String jobId;
-
-		private String jobName;
-
-		private String utcCreate;
-
-		private String utcModified;
+		private String type;
 
 		private String status;
 
+		private String jobName;
+
 		private String description;
 
-		private String type;
+		private String utcModified;
+
+		private String jobId;
+
+		private String utcCreate;
 
 		private Long scheduledTime;
 
-		public String getJobId() {
-			return this.jobId;
+		public String getType() {
+			return this.type;
 		}
 
-		public void setJobId(String jobId) {
-			this.jobId = jobId;
-		}
-
-		public String getJobName() {
-			return this.jobName;
-		}
-
-		public void setJobName(String jobName) {
-			this.jobName = jobName;
-		}
-
-		public String getUtcCreate() {
-			return this.utcCreate;
-		}
-
-		public void setUtcCreate(String utcCreate) {
-			this.utcCreate = utcCreate;
-		}
-
-		public String getUtcModified() {
-			return this.utcModified;
-		}
-
-		public void setUtcModified(String utcModified) {
-			this.utcModified = utcModified;
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public String getStatus() {
@@ -163,6 +139,14 @@ public class ListJobResponse extends AcsResponse {
 			this.status = status;
 		}
 
+		public String getJobName() {
+			return this.jobName;
+		}
+
+		public void setJobName(String jobName) {
+			this.jobName = jobName;
+		}
+
 		public String getDescription() {
 			return this.description;
 		}
@@ -171,12 +155,28 @@ public class ListJobResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getType() {
-			return this.type;
+		public String getUtcModified() {
+			return this.utcModified;
 		}
 
-		public void setType(String type) {
-			this.type = type;
+		public void setUtcModified(String utcModified) {
+			this.utcModified = utcModified;
+		}
+
+		public String getJobId() {
+			return this.jobId;
+		}
+
+		public void setJobId(String jobId) {
+			this.jobId = jobId;
+		}
+
+		public String getUtcCreate() {
+			return this.utcCreate;
+		}
+
+		public void setUtcCreate(String utcCreate) {
+			this.utcCreate = utcCreate;
 		}
 
 		public Long getScheduledTime() {

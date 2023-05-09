@@ -24,19 +24,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class RRpcResponse extends AcsResponse {
 
+	private Long messageId;
+
 	private String requestId;
+
+	private String errorMessage;
 
 	private Boolean success;
 
 	private String code;
 
-	private String errorMessage;
+	private String payloadBase64Byte;
 
 	private String rrpcCode;
 
-	private String payloadBase64Byte;
+	public Long getMessageId() {
+		return this.messageId;
+	}
 
-	private Long messageId;
+	public void setMessageId(Long messageId) {
+		this.messageId = messageId;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,6 +52,14 @@ public class RRpcResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
 	public Boolean getSuccess() {
@@ -62,22 +78,6 @@ public class RRpcResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
-	public String getRrpcCode() {
-		return this.rrpcCode;
-	}
-
-	public void setRrpcCode(String rrpcCode) {
-		this.rrpcCode = rrpcCode;
-	}
-
 	public String getPayloadBase64Byte() {
 		return this.payloadBase64Byte;
 	}
@@ -86,12 +86,12 @@ public class RRpcResponse extends AcsResponse {
 		this.payloadBase64Byte = payloadBase64Byte;
 	}
 
-	public Long getMessageId() {
-		return this.messageId;
+	public String getRrpcCode() {
+		return this.rrpcCode;
 	}
 
-	public void setMessageId(Long messageId) {
-		this.messageId = messageId;
+	public void setRrpcCode(String rrpcCode) {
+		this.rrpcCode = rrpcCode;
 	}
 
 	@Override

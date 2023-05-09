@@ -25,9 +25,13 @@ import com.aliyuncs.iot.Endpoint;
 public class CreateConsumerGroupRequest extends RpcAcsRequest<CreateConsumerGroupResponse> {
 	   
 
+	private String type;
+
 	private String iotInstanceId;
 
 	private String groupName;
+
+	private String subBizCode;
 	public CreateConsumerGroupRequest() {
 		super("Iot", "2018-01-20", "CreateConsumerGroup");
 		setMethod(MethodType.POST);
@@ -35,6 +39,17 @@ public class CreateConsumerGroupRequest extends RpcAcsRequest<CreateConsumerGrou
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
+		}
 	}
 
 	public String getIotInstanceId() {
@@ -56,6 +71,17 @@ public class CreateConsumerGroupRequest extends RpcAcsRequest<CreateConsumerGrou
 		this.groupName = groupName;
 		if(groupName != null){
 			putQueryParameter("GroupName", groupName);
+		}
+	}
+
+	public String getSubBizCode() {
+		return this.subBizCode;
+	}
+
+	public void setSubBizCode(String subBizCode) {
+		this.subBizCode = subBizCode;
+		if(subBizCode != null){
+			putQueryParameter("SubBizCode", subBizCode);
 		}
 	}
 

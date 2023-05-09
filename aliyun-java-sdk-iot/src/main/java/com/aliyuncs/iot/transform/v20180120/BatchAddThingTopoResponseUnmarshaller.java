@@ -23,9 +23,9 @@ public class BatchAddThingTopoResponseUnmarshaller {
 	public static BatchAddThingTopoResponse unmarshall(BatchAddThingTopoResponse batchAddThingTopoResponse, UnmarshallerContext _ctx) {
 		
 		batchAddThingTopoResponse.setRequestId(_ctx.stringValue("BatchAddThingTopoResponse.RequestId"));
-		batchAddThingTopoResponse.setSuccess(_ctx.booleanValue("BatchAddThingTopoResponse.Success"));
 		batchAddThingTopoResponse.setCode(_ctx.stringValue("BatchAddThingTopoResponse.Code"));
 		batchAddThingTopoResponse.setErrorMessage(_ctx.stringValue("BatchAddThingTopoResponse.ErrorMessage"));
+		batchAddThingTopoResponse.setSuccess(_ctx.booleanValue("BatchAddThingTopoResponse.Success"));
 	 
 	 	return batchAddThingTopoResponse;
 	}

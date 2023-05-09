@@ -28,13 +28,13 @@ public class QueryMessageInfoResponseUnmarshaller {
 	public static QueryMessageInfoResponse unmarshall(QueryMessageInfoResponse queryMessageInfoResponse, UnmarshallerContext _ctx) {
 		
 		queryMessageInfoResponse.setRequestId(_ctx.stringValue("QueryMessageInfoResponse.RequestId"));
-		queryMessageInfoResponse.setSuccess(_ctx.booleanValue("QueryMessageInfoResponse.Success"));
-		queryMessageInfoResponse.setErrorMessage(_ctx.stringValue("QueryMessageInfoResponse.ErrorMessage"));
 		queryMessageInfoResponse.setCode(_ctx.stringValue("QueryMessageInfoResponse.Code"));
+		queryMessageInfoResponse.setErrorMessage(_ctx.stringValue("QueryMessageInfoResponse.ErrorMessage"));
+		queryMessageInfoResponse.setSuccess(_ctx.booleanValue("QueryMessageInfoResponse.Success"));
 
 		Message message = new Message();
-		message.setUniMsgId(_ctx.stringValue("QueryMessageInfoResponse.Message.UniMsgId"));
 		message.setTopicFullName(_ctx.stringValue("QueryMessageInfoResponse.Message.TopicFullName"));
+		message.setUniMsgId(_ctx.stringValue("QueryMessageInfoResponse.Message.UniMsgId"));
 		message.setMessageContent(_ctx.stringValue("QueryMessageInfoResponse.Message.MessageContent"));
 		message.setGenerateTime(_ctx.longValue("QueryMessageInfoResponse.Message.GenerateTime"));
 

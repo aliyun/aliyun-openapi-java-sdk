@@ -23,9 +23,9 @@ public class BindGatewayToEdgeInstanceResponseUnmarshaller {
 	public static BindGatewayToEdgeInstanceResponse unmarshall(BindGatewayToEdgeInstanceResponse bindGatewayToEdgeInstanceResponse, UnmarshallerContext _ctx) {
 		
 		bindGatewayToEdgeInstanceResponse.setRequestId(_ctx.stringValue("BindGatewayToEdgeInstanceResponse.RequestId"));
-		bindGatewayToEdgeInstanceResponse.setSuccess(_ctx.booleanValue("BindGatewayToEdgeInstanceResponse.Success"));
 		bindGatewayToEdgeInstanceResponse.setCode(_ctx.stringValue("BindGatewayToEdgeInstanceResponse.Code"));
 		bindGatewayToEdgeInstanceResponse.setErrorMessage(_ctx.stringValue("BindGatewayToEdgeInstanceResponse.ErrorMessage"));
+		bindGatewayToEdgeInstanceResponse.setSuccess(_ctx.booleanValue("BindGatewayToEdgeInstanceResponse.Success"));
 	 
 	 	return bindGatewayToEdgeInstanceResponse;
 	}

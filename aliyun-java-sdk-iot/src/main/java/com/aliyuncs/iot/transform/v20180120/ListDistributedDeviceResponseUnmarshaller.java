@@ -28,9 +28,9 @@ public class ListDistributedDeviceResponseUnmarshaller {
 	public static ListDistributedDeviceResponse unmarshall(ListDistributedDeviceResponse listDistributedDeviceResponse, UnmarshallerContext _ctx) {
 		
 		listDistributedDeviceResponse.setRequestId(_ctx.stringValue("ListDistributedDeviceResponse.RequestId"));
-		listDistributedDeviceResponse.setSuccess(_ctx.booleanValue("ListDistributedDeviceResponse.Success"));
 		listDistributedDeviceResponse.setCode(_ctx.stringValue("ListDistributedDeviceResponse.Code"));
 		listDistributedDeviceResponse.setErrorMessage(_ctx.stringValue("ListDistributedDeviceResponse.ErrorMessage"));
+		listDistributedDeviceResponse.setSuccess(_ctx.booleanValue("ListDistributedDeviceResponse.Success"));
 
 		Data data = new Data();
 		data.setTotal(_ctx.integerValue("ListDistributedDeviceResponse.Data.Total"));
@@ -38,19 +38,19 @@ public class ListDistributedDeviceResponseUnmarshaller {
 		List<Items> info = new ArrayList<Items>();
 		for (int i = 0; i < _ctx.lengthValue("ListDistributedDeviceResponse.Data.Info.Length"); i++) {
 			Items items = new Items();
+			items.setDeviceName(_ctx.stringValue("ListDistributedDeviceResponse.Data.Info["+ i +"].DeviceName"));
+			items.setTargetAliyunId(_ctx.stringValue("ListDistributedDeviceResponse.Data.Info["+ i +"].TargetAliyunId"));
 			items.setSourceUid(_ctx.stringValue("ListDistributedDeviceResponse.Data.Info["+ i +"].SourceUid"));
+			items.setGmtModified(_ctx.longValue("ListDistributedDeviceResponse.Data.Info["+ i +"].GmtModified"));
+			items.setTargetInstanceId(_ctx.stringValue("ListDistributedDeviceResponse.Data.Info["+ i +"].TargetInstanceId"));
 			items.setTargetUid(_ctx.stringValue("ListDistributedDeviceResponse.Data.Info["+ i +"].TargetUid"));
 			items.setProductKey(_ctx.stringValue("ListDistributedDeviceResponse.Data.Info["+ i +"].ProductKey"));
-			items.setDeviceName(_ctx.stringValue("ListDistributedDeviceResponse.Data.Info["+ i +"].DeviceName"));
-			items.setSourceInstanceId(_ctx.stringValue("ListDistributedDeviceResponse.Data.Info["+ i +"].SourceInstanceId"));
-			items.setTargetInstanceId(_ctx.stringValue("ListDistributedDeviceResponse.Data.Info["+ i +"].TargetInstanceId"));
-			items.setGmtCreate(_ctx.longValue("ListDistributedDeviceResponse.Data.Info["+ i +"].GmtCreate"));
-			items.setTargetAliyunId(_ctx.stringValue("ListDistributedDeviceResponse.Data.Info["+ i +"].TargetAliyunId"));
-			items.setSourceRegion(_ctx.stringValue("ListDistributedDeviceResponse.Data.Info["+ i +"].SourceRegion"));
 			items.setTargetRegion(_ctx.stringValue("ListDistributedDeviceResponse.Data.Info["+ i +"].TargetRegion"));
-			items.setSourceInstanceName(_ctx.stringValue("ListDistributedDeviceResponse.Data.Info["+ i +"].SourceInstanceName"));
+			items.setGmtCreate(_ctx.longValue("ListDistributedDeviceResponse.Data.Info["+ i +"].GmtCreate"));
 			items.setTargetInstanceName(_ctx.stringValue("ListDistributedDeviceResponse.Data.Info["+ i +"].TargetInstanceName"));
-			items.setGmtModified(_ctx.longValue("ListDistributedDeviceResponse.Data.Info["+ i +"].GmtModified"));
+			items.setSourceInstanceName(_ctx.stringValue("ListDistributedDeviceResponse.Data.Info["+ i +"].SourceInstanceName"));
+			items.setSourceRegion(_ctx.stringValue("ListDistributedDeviceResponse.Data.Info["+ i +"].SourceRegion"));
+			items.setSourceInstanceId(_ctx.stringValue("ListDistributedDeviceResponse.Data.Info["+ i +"].SourceInstanceId"));
 
 			info.add(items);
 		}

@@ -28,20 +28,20 @@ public class QueryDevicePropertyStatusResponseUnmarshaller {
 	public static QueryDevicePropertyStatusResponse unmarshall(QueryDevicePropertyStatusResponse queryDevicePropertyStatusResponse, UnmarshallerContext _ctx) {
 		
 		queryDevicePropertyStatusResponse.setRequestId(_ctx.stringValue("QueryDevicePropertyStatusResponse.RequestId"));
-		queryDevicePropertyStatusResponse.setSuccess(_ctx.booleanValue("QueryDevicePropertyStatusResponse.Success"));
 		queryDevicePropertyStatusResponse.setCode(_ctx.stringValue("QueryDevicePropertyStatusResponse.Code"));
 		queryDevicePropertyStatusResponse.setErrorMessage(_ctx.stringValue("QueryDevicePropertyStatusResponse.ErrorMessage"));
+		queryDevicePropertyStatusResponse.setSuccess(_ctx.booleanValue("QueryDevicePropertyStatusResponse.Success"));
 
 		Data data = new Data();
 
 		List<PropertyStatusInfo> list = new ArrayList<PropertyStatusInfo>();
 		for (int i = 0; i < _ctx.lengthValue("QueryDevicePropertyStatusResponse.Data.List.Length"); i++) {
 			PropertyStatusInfo propertyStatusInfo = new PropertyStatusInfo();
-			propertyStatusInfo.setUnit(_ctx.stringValue("QueryDevicePropertyStatusResponse.Data.List["+ i +"].Unit"));
-			propertyStatusInfo.setIdentifier(_ctx.stringValue("QueryDevicePropertyStatusResponse.Data.List["+ i +"].Identifier"));
-			propertyStatusInfo.setDataType(_ctx.stringValue("QueryDevicePropertyStatusResponse.Data.List["+ i +"].DataType"));
 			propertyStatusInfo.setTime(_ctx.stringValue("QueryDevicePropertyStatusResponse.Data.List["+ i +"].Time"));
 			propertyStatusInfo.setValue(_ctx.stringValue("QueryDevicePropertyStatusResponse.Data.List["+ i +"].Value"));
+			propertyStatusInfo.setDataType(_ctx.stringValue("QueryDevicePropertyStatusResponse.Data.List["+ i +"].DataType"));
+			propertyStatusInfo.setUnit(_ctx.stringValue("QueryDevicePropertyStatusResponse.Data.List["+ i +"].Unit"));
+			propertyStatusInfo.setIdentifier(_ctx.stringValue("QueryDevicePropertyStatusResponse.Data.List["+ i +"].Identifier"));
 			propertyStatusInfo.setName(_ctx.stringValue("QueryDevicePropertyStatusResponse.Data.List["+ i +"].Name"));
 
 			list.add(propertyStatusInfo);

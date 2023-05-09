@@ -28,28 +28,28 @@ public class QueryStudioAppDomainListOpenResponseUnmarshaller {
 	public static QueryStudioAppDomainListOpenResponse unmarshall(QueryStudioAppDomainListOpenResponse queryStudioAppDomainListOpenResponse, UnmarshallerContext _ctx) {
 		
 		queryStudioAppDomainListOpenResponse.setRequestId(_ctx.stringValue("QueryStudioAppDomainListOpenResponse.RequestId"));
-		queryStudioAppDomainListOpenResponse.setSuccess(_ctx.booleanValue("QueryStudioAppDomainListOpenResponse.Success"));
 		queryStudioAppDomainListOpenResponse.setCode(_ctx.stringValue("QueryStudioAppDomainListOpenResponse.Code"));
 		queryStudioAppDomainListOpenResponse.setErrorMessage(_ctx.stringValue("QueryStudioAppDomainListOpenResponse.ErrorMessage"));
+		queryStudioAppDomainListOpenResponse.setSuccess(_ctx.booleanValue("QueryStudioAppDomainListOpenResponse.Success"));
 
 		Data data = new Data();
 		data.setPageNo(_ctx.integerValue("QueryStudioAppDomainListOpenResponse.Data.PageNo"));
+		data.setTotalPage(_ctx.integerValue("QueryStudioAppDomainListOpenResponse.Data.TotalPage"));
 		data.setPageSize(_ctx.integerValue("QueryStudioAppDomainListOpenResponse.Data.PageSize"));
 		data.setTotal(_ctx.integerValue("QueryStudioAppDomainListOpenResponse.Data.Total"));
-		data.setTotalPage(_ctx.integerValue("QueryStudioAppDomainListOpenResponse.Data.TotalPage"));
 
 		List<DomainInfo> list = new ArrayList<DomainInfo>();
 		for (int i = 0; i < _ctx.lengthValue("QueryStudioAppDomainListOpenResponse.Data.List.Length"); i++) {
 			DomainInfo domainInfo = new DomainInfo();
-			domainInfo.setTenantId(_ctx.stringValue("QueryStudioAppDomainListOpenResponse.Data.List["+ i +"].TenantId"));
+			domainInfo.setHost(_ctx.stringValue("QueryStudioAppDomainListOpenResponse.Data.List["+ i +"].Host"));
+			domainInfo.setBizProtocol(_ctx.stringValue("QueryStudioAppDomainListOpenResponse.Data.List["+ i +"].Protocol"));
 			domainInfo.setAppId(_ctx.stringValue("QueryStudioAppDomainListOpenResponse.Data.List["+ i +"].AppId"));
 			domainInfo.setProjectId(_ctx.stringValue("QueryStudioAppDomainListOpenResponse.Data.List["+ i +"].ProjectId"));
-			domainInfo.setHost(_ctx.stringValue("QueryStudioAppDomainListOpenResponse.Data.List["+ i +"].Host"));
-			domainInfo.setId(_ctx.integerValue("QueryStudioAppDomainListOpenResponse.Data.List["+ i +"].Id"));
-			domainInfo.setIsBeian(_ctx.stringValue("QueryStudioAppDomainListOpenResponse.Data.List["+ i +"].IsBeian"));
-			domainInfo.setBizProtocol(_ctx.stringValue("QueryStudioAppDomainListOpenResponse.Data.List["+ i +"].Protocol"));
 			domainInfo.setGmtCreate(_ctx.stringValue("QueryStudioAppDomainListOpenResponse.Data.List["+ i +"].GmtCreate"));
+			domainInfo.setIsBeian(_ctx.stringValue("QueryStudioAppDomainListOpenResponse.Data.List["+ i +"].IsBeian"));
 			domainInfo.setGmtModified(_ctx.stringValue("QueryStudioAppDomainListOpenResponse.Data.List["+ i +"].GmtModified"));
+			domainInfo.setId(_ctx.integerValue("QueryStudioAppDomainListOpenResponse.Data.List["+ i +"].Id"));
+			domainInfo.setTenantId(_ctx.stringValue("QueryStudioAppDomainListOpenResponse.Data.List["+ i +"].TenantId"));
 
 			list.add(domainInfo);
 		}

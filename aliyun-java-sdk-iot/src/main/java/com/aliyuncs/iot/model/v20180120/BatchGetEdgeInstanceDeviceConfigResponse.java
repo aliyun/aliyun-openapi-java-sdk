@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class BatchGetEdgeInstanceDeviceConfigResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private List<DeviceConfig> deviceConfigList;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -65,6 +49,22 @@ public class BatchGetEdgeInstanceDeviceConfigResponse extends AcsResponse {
 
 	public void setErrorMessage(String errorMessage) {
 		this.errorMessage = errorMessage;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<DeviceConfig> getDeviceConfigList() {
@@ -99,17 +99,9 @@ public class BatchGetEdgeInstanceDeviceConfigResponse extends AcsResponse {
 
 		public static class Config {
 
-			private String format;
-
 			private String content;
 
-			public String getFormat() {
-				return this.format;
-			}
-
-			public void setFormat(String format) {
-				this.format = format;
-			}
+			private String format;
 
 			public String getContent() {
 				return this.content;
@@ -117,6 +109,14 @@ public class BatchGetEdgeInstanceDeviceConfigResponse extends AcsResponse {
 
 			public void setContent(String content) {
 				this.content = content;
+			}
+
+			public String getFormat() {
+				return this.format;
+			}
+
+			public void setFormat(String format) {
+				this.format = format;
 			}
 		}
 	}

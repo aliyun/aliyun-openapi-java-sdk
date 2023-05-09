@@ -23,9 +23,9 @@ public class CreateEdgeDriverVersionResponseUnmarshaller {
 	public static CreateEdgeDriverVersionResponse unmarshall(CreateEdgeDriverVersionResponse createEdgeDriverVersionResponse, UnmarshallerContext _ctx) {
 		
 		createEdgeDriverVersionResponse.setRequestId(_ctx.stringValue("CreateEdgeDriverVersionResponse.RequestId"));
-		createEdgeDriverVersionResponse.setSuccess(_ctx.booleanValue("CreateEdgeDriverVersionResponse.Success"));
 		createEdgeDriverVersionResponse.setCode(_ctx.stringValue("CreateEdgeDriverVersionResponse.Code"));
 		createEdgeDriverVersionResponse.setErrorMessage(_ctx.stringValue("CreateEdgeDriverVersionResponse.ErrorMessage"));
+		createEdgeDriverVersionResponse.setSuccess(_ctx.booleanValue("CreateEdgeDriverVersionResponse.Success"));
 	 
 	 	return createEdgeDriverVersionResponse;
 	}

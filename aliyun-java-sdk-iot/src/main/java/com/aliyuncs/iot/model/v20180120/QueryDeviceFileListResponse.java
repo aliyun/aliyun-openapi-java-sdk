@@ -25,23 +25,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryDeviceFileListResponse extends AcsResponse {
 
+	private Integer currentPage;
+
 	private String requestId;
+
+	private String errorMessage;
 
 	private Boolean success;
 
 	private String code;
 
-	private String errorMessage;
-
-	private Integer currentPage;
-
-	private Integer pageCount;
-
 	private Integer pageSize;
 
 	private Integer total;
 
+	private Integer pageCount;
+
 	private List<FileSummary> data;
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,6 +57,14 @@ public class QueryDeviceFileListResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
 	public Boolean getSuccess() {
@@ -67,30 +83,6 @@ public class QueryDeviceFileListResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-	}
-
-	public Integer getPageCount() {
-		return this.pageCount;
-	}
-
-	public void setPageCount(Integer pageCount) {
-		this.pageCount = pageCount;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -107,6 +99,14 @@ public class QueryDeviceFileListResponse extends AcsResponse {
 		this.total = total;
 	}
 
+	public Integer getPageCount() {
+		return this.pageCount;
+	}
+
+	public void setPageCount(Integer pageCount) {
+		this.pageCount = pageCount;
+	}
+
 	public List<FileSummary> getData() {
 		return this.data;
 	}
@@ -117,20 +117,20 @@ public class QueryDeviceFileListResponse extends AcsResponse {
 
 	public static class FileSummary {
 
-		private String fileId;
+		private String utcCreatedOn;
 
 		private String name;
 
 		private String size;
 
-		private String utcCreatedOn;
+		private String fileId;
 
-		public String getFileId() {
-			return this.fileId;
+		public String getUtcCreatedOn() {
+			return this.utcCreatedOn;
 		}
 
-		public void setFileId(String fileId) {
-			this.fileId = fileId;
+		public void setUtcCreatedOn(String utcCreatedOn) {
+			this.utcCreatedOn = utcCreatedOn;
 		}
 
 		public String getName() {
@@ -149,12 +149,12 @@ public class QueryDeviceFileListResponse extends AcsResponse {
 			this.size = size;
 		}
 
-		public String getUtcCreatedOn() {
-			return this.utcCreatedOn;
+		public String getFileId() {
+			return this.fileId;
 		}
 
-		public void setUtcCreatedOn(String utcCreatedOn) {
-			this.utcCreatedOn = utcCreatedOn;
+		public void setFileId(String fileId) {
+			this.fileId = fileId;
 		}
 	}
 

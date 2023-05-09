@@ -24,23 +24,23 @@ public class QueryDeviceTunnelResponseUnmarshaller {
 	public static QueryDeviceTunnelResponse unmarshall(QueryDeviceTunnelResponse queryDeviceTunnelResponse, UnmarshallerContext _ctx) {
 		
 		queryDeviceTunnelResponse.setRequestId(_ctx.stringValue("QueryDeviceTunnelResponse.RequestId"));
-		queryDeviceTunnelResponse.setSuccess(_ctx.booleanValue("QueryDeviceTunnelResponse.Success"));
 		queryDeviceTunnelResponse.setCode(_ctx.stringValue("QueryDeviceTunnelResponse.Code"));
 		queryDeviceTunnelResponse.setErrorMessage(_ctx.stringValue("QueryDeviceTunnelResponse.ErrorMessage"));
+		queryDeviceTunnelResponse.setSuccess(_ctx.booleanValue("QueryDeviceTunnelResponse.Success"));
 
 		Data data = new Data();
+		data.setProductName(_ctx.stringValue("QueryDeviceTunnelResponse.Data.ProductName"));
+		data.setDeviceName(_ctx.stringValue("QueryDeviceTunnelResponse.Data.DeviceName"));
+		data.setUtcClosed(_ctx.stringValue("QueryDeviceTunnelResponse.Data.UtcClosed"));
+		data.setDeviceConnState(_ctx.stringValue("QueryDeviceTunnelResponse.Data.DeviceConnState"));
+		data.setUtcCreated(_ctx.stringValue("QueryDeviceTunnelResponse.Data.UtcCreated"));
+		data.setSourceConnState(_ctx.stringValue("QueryDeviceTunnelResponse.Data.SourceConnState"));
+		data.setProductKey(_ctx.stringValue("QueryDeviceTunnelResponse.Data.ProductKey"));
+		data.setDescription(_ctx.stringValue("QueryDeviceTunnelResponse.Data.Description"));
 		data.setTunnelId(_ctx.stringValue("QueryDeviceTunnelResponse.Data.TunnelId"));
 		data.setTunnelState(_ctx.stringValue("QueryDeviceTunnelResponse.Data.TunnelState"));
-		data.setProductKey(_ctx.stringValue("QueryDeviceTunnelResponse.Data.ProductKey"));
-		data.setDeviceName(_ctx.stringValue("QueryDeviceTunnelResponse.Data.DeviceName"));
 		data.setIotId(_ctx.stringValue("QueryDeviceTunnelResponse.Data.IotId"));
-		data.setDeviceConnState(_ctx.stringValue("QueryDeviceTunnelResponse.Data.DeviceConnState"));
-		data.setSourceConnState(_ctx.stringValue("QueryDeviceTunnelResponse.Data.SourceConnState"));
 		data.setUdi(_ctx.stringValue("QueryDeviceTunnelResponse.Data.Udi"));
-		data.setDescription(_ctx.stringValue("QueryDeviceTunnelResponse.Data.Description"));
-		data.setUtcCreated(_ctx.stringValue("QueryDeviceTunnelResponse.Data.UtcCreated"));
-		data.setUtcClosed(_ctx.stringValue("QueryDeviceTunnelResponse.Data.UtcClosed"));
-		data.setProductName(_ctx.stringValue("QueryDeviceTunnelResponse.Data.ProductName"));
 		queryDeviceTunnelResponse.setData(data);
 	 
 	 	return queryDeviceTunnelResponse;

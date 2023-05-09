@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryEdgeInstanceHistoricDeploymentResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class QueryEdgeInstanceHistoricDeploymentResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -77,20 +77,20 @@ public class QueryEdgeInstanceHistoricDeploymentResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer total;
+		private Integer currentPage;
 
 		private Integer pageSize;
 
-		private Integer currentPage;
+		private Integer total;
 
 		private List<Deployment> deploymentList;
 
-		public Integer getTotal() {
-			return this.total;
+		public Integer getCurrentPage() {
+			return this.currentPage;
 		}
 
-		public void setTotal(Integer total) {
-			this.total = total;
+		public void setCurrentPage(Integer currentPage) {
+			this.currentPage = currentPage;
 		}
 
 		public Integer getPageSize() {
@@ -101,12 +101,12 @@ public class QueryEdgeInstanceHistoricDeploymentResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
-		public Integer getCurrentPage() {
-			return this.currentPage;
+		public Integer getTotal() {
+			return this.total;
 		}
 
-		public void setCurrentPage(Integer currentPage) {
-			this.currentPage = currentPage;
+		public void setTotal(Integer total) {
+			this.total = total;
 		}
 
 		public List<Deployment> getDeploymentList() {
@@ -119,48 +119,48 @@ public class QueryEdgeInstanceHistoricDeploymentResponse extends AcsResponse {
 
 		public static class Deployment {
 
-			private String gmtCreate;
+			private Long gmtCreateTimestamp;
 
-			private String gmtModified;
+			private String type;
 
-			private String gmtCompleted;
+			private Integer status;
 
 			private String deploymentId;
 
 			private String description;
 
-			private Integer status;
-
-			private String type;
-
-			private Long gmtCreateTimestamp;
-
 			private Long gmtModifiedTimestamp;
+
+			private String gmtCompleted;
+
+			private String gmtCreate;
 
 			private Long gmtCompletedTimestamp;
 
-			public String getGmtCreate() {
-				return this.gmtCreate;
+			private String gmtModified;
+
+			public Long getGmtCreateTimestamp() {
+				return this.gmtCreateTimestamp;
 			}
 
-			public void setGmtCreate(String gmtCreate) {
-				this.gmtCreate = gmtCreate;
+			public void setGmtCreateTimestamp(Long gmtCreateTimestamp) {
+				this.gmtCreateTimestamp = gmtCreateTimestamp;
 			}
 
-			public String getGmtModified() {
-				return this.gmtModified;
+			public String getType() {
+				return this.type;
 			}
 
-			public void setGmtModified(String gmtModified) {
-				this.gmtModified = gmtModified;
+			public void setType(String type) {
+				this.type = type;
 			}
 
-			public String getGmtCompleted() {
-				return this.gmtCompleted;
+			public Integer getStatus() {
+				return this.status;
 			}
 
-			public void setGmtCompleted(String gmtCompleted) {
-				this.gmtCompleted = gmtCompleted;
+			public void setStatus(Integer status) {
+				this.status = status;
 			}
 
 			public String getDeploymentId() {
@@ -179,30 +179,6 @@ public class QueryEdgeInstanceHistoricDeploymentResponse extends AcsResponse {
 				this.description = description;
 			}
 
-			public Integer getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(Integer status) {
-				this.status = status;
-			}
-
-			public String getType() {
-				return this.type;
-			}
-
-			public void setType(String type) {
-				this.type = type;
-			}
-
-			public Long getGmtCreateTimestamp() {
-				return this.gmtCreateTimestamp;
-			}
-
-			public void setGmtCreateTimestamp(Long gmtCreateTimestamp) {
-				this.gmtCreateTimestamp = gmtCreateTimestamp;
-			}
-
 			public Long getGmtModifiedTimestamp() {
 				return this.gmtModifiedTimestamp;
 			}
@@ -211,12 +187,36 @@ public class QueryEdgeInstanceHistoricDeploymentResponse extends AcsResponse {
 				this.gmtModifiedTimestamp = gmtModifiedTimestamp;
 			}
 
+			public String getGmtCompleted() {
+				return this.gmtCompleted;
+			}
+
+			public void setGmtCompleted(String gmtCompleted) {
+				this.gmtCompleted = gmtCompleted;
+			}
+
+			public String getGmtCreate() {
+				return this.gmtCreate;
+			}
+
+			public void setGmtCreate(String gmtCreate) {
+				this.gmtCreate = gmtCreate;
+			}
+
 			public Long getGmtCompletedTimestamp() {
 				return this.gmtCompletedTimestamp;
 			}
 
 			public void setGmtCompletedTimestamp(Long gmtCompletedTimestamp) {
 				this.gmtCompletedTimestamp = gmtCompletedTimestamp;
+			}
+
+			public String getGmtModified() {
+				return this.gmtModified;
+			}
+
+			public void setGmtModified(String gmtModified) {
+				this.gmtModified = gmtModified;
 			}
 		}
 	}

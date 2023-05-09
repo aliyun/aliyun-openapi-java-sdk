@@ -27,18 +27,18 @@ public class QueryDeviceGroupByDeviceResponseUnmarshaller {
 	public static QueryDeviceGroupByDeviceResponse unmarshall(QueryDeviceGroupByDeviceResponse queryDeviceGroupByDeviceResponse, UnmarshallerContext _ctx) {
 		
 		queryDeviceGroupByDeviceResponse.setRequestId(_ctx.stringValue("QueryDeviceGroupByDeviceResponse.RequestId"));
-		queryDeviceGroupByDeviceResponse.setSuccess(_ctx.booleanValue("QueryDeviceGroupByDeviceResponse.Success"));
 		queryDeviceGroupByDeviceResponse.setCode(_ctx.stringValue("QueryDeviceGroupByDeviceResponse.Code"));
 		queryDeviceGroupByDeviceResponse.setErrorMessage(_ctx.stringValue("QueryDeviceGroupByDeviceResponse.ErrorMessage"));
+		queryDeviceGroupByDeviceResponse.setSuccess(_ctx.booleanValue("QueryDeviceGroupByDeviceResponse.Success"));
 
 		List<GroupInfo> groupInfos = new ArrayList<GroupInfo>();
 		for (int i = 0; i < _ctx.lengthValue("QueryDeviceGroupByDeviceResponse.GroupInfos.Length"); i++) {
 			GroupInfo groupInfo = new GroupInfo();
-			groupInfo.setGroupId(_ctx.stringValue("QueryDeviceGroupByDeviceResponse.GroupInfos["+ i +"].GroupId"));
 			groupInfo.setGroupName(_ctx.stringValue("QueryDeviceGroupByDeviceResponse.GroupInfos["+ i +"].GroupName"));
-			groupInfo.setUtcCreate(_ctx.stringValue("QueryDeviceGroupByDeviceResponse.GroupInfos["+ i +"].UtcCreate"));
-			groupInfo.setGroupDesc(_ctx.stringValue("QueryDeviceGroupByDeviceResponse.GroupInfos["+ i +"].GroupDesc"));
+			groupInfo.setGroupId(_ctx.stringValue("QueryDeviceGroupByDeviceResponse.GroupInfos["+ i +"].GroupId"));
 			groupInfo.setGroupType(_ctx.stringValue("QueryDeviceGroupByDeviceResponse.GroupInfos["+ i +"].GroupType"));
+			groupInfo.setGroupDesc(_ctx.stringValue("QueryDeviceGroupByDeviceResponse.GroupInfos["+ i +"].GroupDesc"));
+			groupInfo.setUtcCreate(_ctx.stringValue("QueryDeviceGroupByDeviceResponse.GroupInfos["+ i +"].UtcCreate"));
 
 			groupInfos.add(groupInfo);
 		}

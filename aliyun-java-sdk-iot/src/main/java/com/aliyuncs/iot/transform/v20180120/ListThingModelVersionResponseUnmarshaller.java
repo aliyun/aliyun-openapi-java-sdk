@@ -28,18 +28,18 @@ public class ListThingModelVersionResponseUnmarshaller {
 	public static ListThingModelVersionResponse unmarshall(ListThingModelVersionResponse listThingModelVersionResponse, UnmarshallerContext _ctx) {
 		
 		listThingModelVersionResponse.setRequestId(_ctx.stringValue("ListThingModelVersionResponse.RequestId"));
-		listThingModelVersionResponse.setSuccess(_ctx.booleanValue("ListThingModelVersionResponse.Success"));
 		listThingModelVersionResponse.setCode(_ctx.stringValue("ListThingModelVersionResponse.Code"));
 		listThingModelVersionResponse.setErrorMessage(_ctx.stringValue("ListThingModelVersionResponse.ErrorMessage"));
+		listThingModelVersionResponse.setSuccess(_ctx.booleanValue("ListThingModelVersionResponse.Success"));
 
 		Data data = new Data();
 
 		List<ModelVersion> modelVersions = new ArrayList<ModelVersion>();
 		for (int i = 0; i < _ctx.lengthValue("ListThingModelVersionResponse.Data.ModelVersions.Length"); i++) {
 			ModelVersion modelVersion = new ModelVersion();
-			modelVersion.setModelVersion(_ctx.stringValue("ListThingModelVersionResponse.Data.ModelVersions["+ i +"].ModelVersion"));
-			modelVersion.setDescription(_ctx.stringValue("ListThingModelVersionResponse.Data.ModelVersions["+ i +"].Description"));
 			modelVersion.setGmtCreate(_ctx.longValue("ListThingModelVersionResponse.Data.ModelVersions["+ i +"].GmtCreate"));
+			modelVersion.setDescription(_ctx.stringValue("ListThingModelVersionResponse.Data.ModelVersions["+ i +"].Description"));
+			modelVersion.setModelVersion(_ctx.stringValue("ListThingModelVersionResponse.Data.ModelVersions["+ i +"].ModelVersion"));
 
 			modelVersions.add(modelVersion);
 		}

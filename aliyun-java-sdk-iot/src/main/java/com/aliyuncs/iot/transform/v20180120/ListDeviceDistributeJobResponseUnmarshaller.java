@@ -29,9 +29,9 @@ public class ListDeviceDistributeJobResponseUnmarshaller {
 	public static ListDeviceDistributeJobResponse unmarshall(ListDeviceDistributeJobResponse listDeviceDistributeJobResponse, UnmarshallerContext _ctx) {
 		
 		listDeviceDistributeJobResponse.setRequestId(_ctx.stringValue("ListDeviceDistributeJobResponse.RequestId"));
-		listDeviceDistributeJobResponse.setSuccess(_ctx.booleanValue("ListDeviceDistributeJobResponse.Success"));
 		listDeviceDistributeJobResponse.setCode(_ctx.stringValue("ListDeviceDistributeJobResponse.Code"));
 		listDeviceDistributeJobResponse.setErrorMessage(_ctx.stringValue("ListDeviceDistributeJobResponse.ErrorMessage"));
+		listDeviceDistributeJobResponse.setSuccess(_ctx.booleanValue("ListDeviceDistributeJobResponse.Success"));
 
 		Data data = new Data();
 		data.setTotal(_ctx.integerValue("ListDeviceDistributeJobResponse.Data.Total"));
@@ -40,24 +40,24 @@ public class ListDeviceDistributeJobResponseUnmarshaller {
 		List<Items> jobInfo = new ArrayList<Items>();
 		for (int i = 0; i < _ctx.lengthValue("ListDeviceDistributeJobResponse.Data.JobInfo.Length"); i++) {
 			Items items = new Items();
-			items.setGmtCreate(_ctx.longValue("ListDeviceDistributeJobResponse.Data.JobInfo["+ i +"].GmtCreate"));
-			items.setSourceUid(_ctx.stringValue("ListDeviceDistributeJobResponse.Data.JobInfo["+ i +"].SourceUid"));
+			items.setStrategy(_ctx.integerValue("ListDeviceDistributeJobResponse.Data.JobInfo["+ i +"].Strategy"));
+			items.setStatus(_ctx.integerValue("ListDeviceDistributeJobResponse.Data.JobInfo["+ i +"].Status"));
+			items.setProductKey(_ctx.stringValue("ListDeviceDistributeJobResponse.Data.JobInfo["+ i +"].ProductKey"));
 			items.setTargetUid(_ctx.stringValue("ListDeviceDistributeJobResponse.Data.JobInfo["+ i +"].TargetUid"));
 			items.setJobId(_ctx.stringValue("ListDeviceDistributeJobResponse.Data.JobInfo["+ i +"].JobId"));
-			items.setSourceInstanceId(_ctx.stringValue("ListDeviceDistributeJobResponse.Data.JobInfo["+ i +"].SourceInstanceId"));
-			items.setProductKey(_ctx.stringValue("ListDeviceDistributeJobResponse.Data.JobInfo["+ i +"].ProductKey"));
-			items.setTotal(_ctx.integerValue("ListDeviceDistributeJobResponse.Data.JobInfo["+ i +"].Total"));
-			items.setStatus(_ctx.integerValue("ListDeviceDistributeJobResponse.Data.JobInfo["+ i +"].Status"));
-			items.setStrategy(_ctx.integerValue("ListDeviceDistributeJobResponse.Data.JobInfo["+ i +"].Strategy"));
-			items.setSourceRegion(_ctx.stringValue("ListDeviceDistributeJobResponse.Data.JobInfo["+ i +"].SourceRegion"));
+			items.setGmtCreate(_ctx.longValue("ListDeviceDistributeJobResponse.Data.JobInfo["+ i +"].GmtCreate"));
 			items.setSourceInstanceName(_ctx.stringValue("ListDeviceDistributeJobResponse.Data.JobInfo["+ i +"].SourceInstanceName"));
+			items.setSourceUid(_ctx.stringValue("ListDeviceDistributeJobResponse.Data.JobInfo["+ i +"].SourceUid"));
+			items.setTotal(_ctx.integerValue("ListDeviceDistributeJobResponse.Data.JobInfo["+ i +"].Total"));
+			items.setSourceRegion(_ctx.stringValue("ListDeviceDistributeJobResponse.Data.JobInfo["+ i +"].SourceRegion"));
+			items.setSourceInstanceId(_ctx.stringValue("ListDeviceDistributeJobResponse.Data.JobInfo["+ i +"].SourceInstanceId"));
 
 			List<TargetInstanceConfigsItem> targetInstanceConfigs = new ArrayList<TargetInstanceConfigsItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListDeviceDistributeJobResponse.Data.JobInfo["+ i +"].TargetInstanceConfigs.Length"); j++) {
 				TargetInstanceConfigsItem targetInstanceConfigsItem = new TargetInstanceConfigsItem();
-				targetInstanceConfigsItem.setTargetInstanceId(_ctx.stringValue("ListDeviceDistributeJobResponse.Data.JobInfo["+ i +"].TargetInstanceConfigs["+ j +"].TargetInstanceId"));
-				targetInstanceConfigsItem.setTargetRegion(_ctx.stringValue("ListDeviceDistributeJobResponse.Data.JobInfo["+ i +"].TargetInstanceConfigs["+ j +"].TargetRegion"));
 				targetInstanceConfigsItem.setTargetInstanceName(_ctx.stringValue("ListDeviceDistributeJobResponse.Data.JobInfo["+ i +"].TargetInstanceConfigs["+ j +"].TargetInstanceName"));
+				targetInstanceConfigsItem.setTargetRegion(_ctx.stringValue("ListDeviceDistributeJobResponse.Data.JobInfo["+ i +"].TargetInstanceConfigs["+ j +"].TargetRegion"));
+				targetInstanceConfigsItem.setTargetInstanceId(_ctx.stringValue("ListDeviceDistributeJobResponse.Data.JobInfo["+ i +"].TargetInstanceConfigs["+ j +"].TargetInstanceId"));
 
 				targetInstanceConfigs.add(targetInstanceConfigsItem);
 			}

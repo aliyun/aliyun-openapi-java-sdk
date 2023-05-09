@@ -23,9 +23,9 @@ public class UpdateEdgeInstanceChannelResponseUnmarshaller {
 	public static UpdateEdgeInstanceChannelResponse unmarshall(UpdateEdgeInstanceChannelResponse updateEdgeInstanceChannelResponse, UnmarshallerContext _ctx) {
 		
 		updateEdgeInstanceChannelResponse.setRequestId(_ctx.stringValue("UpdateEdgeInstanceChannelResponse.RequestId"));
-		updateEdgeInstanceChannelResponse.setSuccess(_ctx.booleanValue("UpdateEdgeInstanceChannelResponse.Success"));
 		updateEdgeInstanceChannelResponse.setCode(_ctx.stringValue("UpdateEdgeInstanceChannelResponse.Code"));
 		updateEdgeInstanceChannelResponse.setErrorMessage(_ctx.stringValue("UpdateEdgeInstanceChannelResponse.ErrorMessage"));
+		updateEdgeInstanceChannelResponse.setSuccess(_ctx.booleanValue("UpdateEdgeInstanceChannelResponse.Success"));
 	 
 	 	return updateEdgeInstanceChannelResponse;
 	}

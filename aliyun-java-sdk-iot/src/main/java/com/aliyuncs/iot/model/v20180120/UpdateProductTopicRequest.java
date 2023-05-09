@@ -31,6 +31,10 @@ public class UpdateProductTopicRequest extends RpcAcsRequest<UpdateProductTopicR
 
 	private String topicShortName;
 
+	private Boolean enableProxySubscribe;
+
+	private String codec;
+
 	private String operation;
 
 	private String desc;
@@ -73,6 +77,28 @@ public class UpdateProductTopicRequest extends RpcAcsRequest<UpdateProductTopicR
 		this.topicShortName = topicShortName;
 		if(topicShortName != null){
 			putQueryParameter("TopicShortName", topicShortName);
+		}
+	}
+
+	public Boolean getEnableProxySubscribe() {
+		return this.enableProxySubscribe;
+	}
+
+	public void setEnableProxySubscribe(Boolean enableProxySubscribe) {
+		this.enableProxySubscribe = enableProxySubscribe;
+		if(enableProxySubscribe != null){
+			putQueryParameter("EnableProxySubscribe", enableProxySubscribe.toString());
+		}
+	}
+
+	public String getCodec() {
+		return this.codec;
+	}
+
+	public void setCodec(String codec) {
+		this.codec = codec;
+		if(codec != null){
+			putQueryParameter("Codec", codec);
 		}
 	}
 

@@ -28,28 +28,28 @@ public class QuerySoundCodeScheduleListResponseUnmarshaller {
 	public static QuerySoundCodeScheduleListResponse unmarshall(QuerySoundCodeScheduleListResponse querySoundCodeScheduleListResponse, UnmarshallerContext _ctx) {
 		
 		querySoundCodeScheduleListResponse.setRequestId(_ctx.stringValue("QuerySoundCodeScheduleListResponse.RequestId"));
-		querySoundCodeScheduleListResponse.setSuccess(_ctx.booleanValue("QuerySoundCodeScheduleListResponse.Success"));
 		querySoundCodeScheduleListResponse.setCode(_ctx.stringValue("QuerySoundCodeScheduleListResponse.Code"));
 		querySoundCodeScheduleListResponse.setErrorMessage(_ctx.stringValue("QuerySoundCodeScheduleListResponse.ErrorMessage"));
+		querySoundCodeScheduleListResponse.setSuccess(_ctx.booleanValue("QuerySoundCodeScheduleListResponse.Success"));
 
 		Data data = new Data();
+		data.setPageSize(_ctx.integerValue("QuerySoundCodeScheduleListResponse.Data.PageSize"));
 		data.setTotal(_ctx.integerValue("QuerySoundCodeScheduleListResponse.Data.Total"));
 		data.setPageId(_ctx.integerValue("QuerySoundCodeScheduleListResponse.Data.PageId"));
-		data.setPageSize(_ctx.integerValue("QuerySoundCodeScheduleListResponse.Data.PageSize"));
 
 		List<Items> list = new ArrayList<Items>();
 		for (int i = 0; i < _ctx.lengthValue("QuerySoundCodeScheduleListResponse.Data.List.Length"); i++) {
 			Items items = new Items();
-			items.setScheduleCode(_ctx.stringValue("QuerySoundCodeScheduleListResponse.Data.List["+ i +"].ScheduleCode"));
-			items.setName(_ctx.stringValue("QuerySoundCodeScheduleListResponse.Data.List["+ i +"].Name"));
-			items.setDescription(_ctx.stringValue("QuerySoundCodeScheduleListResponse.Data.List["+ i +"].Description"));
-			items.setGmtCreate(_ctx.longValue("QuerySoundCodeScheduleListResponse.Data.List["+ i +"].GmtCreate"));
+			items.setOpenType(_ctx.stringValue("QuerySoundCodeScheduleListResponse.Data.List["+ i +"].OpenType"));
+			items.setEndTime(_ctx.stringValue("QuerySoundCodeScheduleListResponse.Data.List["+ i +"].EndTime"));
 			items.setStatus(_ctx.stringValue("QuerySoundCodeScheduleListResponse.Data.List["+ i +"].Status"));
 			items.setStartTime(_ctx.stringValue("QuerySoundCodeScheduleListResponse.Data.List["+ i +"].StartTime"));
-			items.setEndTime(_ctx.stringValue("QuerySoundCodeScheduleListResponse.Data.List["+ i +"].EndTime"));
-			items.setStartDate(_ctx.stringValue("QuerySoundCodeScheduleListResponse.Data.List["+ i +"].StartDate"));
 			items.setEndDate(_ctx.stringValue("QuerySoundCodeScheduleListResponse.Data.List["+ i +"].EndDate"));
-			items.setOpenType(_ctx.stringValue("QuerySoundCodeScheduleListResponse.Data.List["+ i +"].OpenType"));
+			items.setDescription(_ctx.stringValue("QuerySoundCodeScheduleListResponse.Data.List["+ i +"].Description"));
+			items.setScheduleCode(_ctx.stringValue("QuerySoundCodeScheduleListResponse.Data.List["+ i +"].ScheduleCode"));
+			items.setGmtCreate(_ctx.longValue("QuerySoundCodeScheduleListResponse.Data.List["+ i +"].GmtCreate"));
+			items.setStartDate(_ctx.stringValue("QuerySoundCodeScheduleListResponse.Data.List["+ i +"].StartDate"));
+			items.setName(_ctx.stringValue("QuerySoundCodeScheduleListResponse.Data.List["+ i +"].Name"));
 
 			list.add(items);
 		}

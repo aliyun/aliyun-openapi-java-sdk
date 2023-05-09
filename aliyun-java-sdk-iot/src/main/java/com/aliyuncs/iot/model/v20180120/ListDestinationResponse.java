@@ -27,17 +27,17 @@ public class ListDestinationResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String errorMessage;
+
 	private Boolean success;
 
 	private String code;
 
-	private String errorMessage;
-
-	private Integer page;
-
 	private Integer pageSize;
 
 	private Integer total;
+
+	private Integer page;
 
 	private List<DestinationsItem> destinations;
 
@@ -47,6 +47,14 @@ public class ListDestinationResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
 	public Boolean getSuccess() {
@@ -65,22 +73,6 @@ public class ListDestinationResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
-	public Integer getPage() {
-		return this.page;
-	}
-
-	public void setPage(Integer page) {
-		this.page = page;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -97,6 +89,14 @@ public class ListDestinationResponse extends AcsResponse {
 		this.total = total;
 	}
 
+	public Integer getPage() {
+		return this.page;
+	}
+
+	public void setPage(Integer page) {
+		this.page = page;
+	}
+
 	public List<DestinationsItem> getDestinations() {
 		return this.destinations;
 	}
@@ -107,36 +107,28 @@ public class ListDestinationResponse extends AcsResponse {
 
 	public static class DestinationsItem {
 
-		private Long destinationId;
-
-		private String name;
+		private String status;
 
 		private String type;
 
+		private String description;
+
+		private Long destinationId;
+
 		private String configuration;
 
-		private Boolean isFailover;
+		private String name;
 
 		private String utcCreated;
 
-		private String description;
+		private Boolean isFailover;
 
-		private String status;
-
-		public Long getDestinationId() {
-			return this.destinationId;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setDestinationId(Long destinationId) {
-			this.destinationId = destinationId;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getType() {
@@ -147,6 +139,22 @@ public class ListDestinationResponse extends AcsResponse {
 			this.type = type;
 		}
 
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public Long getDestinationId() {
+			return this.destinationId;
+		}
+
+		public void setDestinationId(Long destinationId) {
+			this.destinationId = destinationId;
+		}
+
 		public String getConfiguration() {
 			return this.configuration;
 		}
@@ -155,12 +163,12 @@ public class ListDestinationResponse extends AcsResponse {
 			this.configuration = configuration;
 		}
 
-		public Boolean getIsFailover() {
-			return this.isFailover;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setIsFailover(Boolean isFailover) {
-			this.isFailover = isFailover;
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public String getUtcCreated() {
@@ -171,20 +179,12 @@ public class ListDestinationResponse extends AcsResponse {
 			this.utcCreated = utcCreated;
 		}
 
-		public String getDescription() {
-			return this.description;
+		public Boolean getIsFailover() {
+			return this.isFailover;
 		}
 
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
+		public void setIsFailover(Boolean isFailover) {
+			this.isFailover = isFailover;
 		}
 	}
 

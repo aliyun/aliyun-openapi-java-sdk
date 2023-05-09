@@ -24,16 +24,16 @@ public class GenerateFileUploadURLResponseUnmarshaller {
 	public static GenerateFileUploadURLResponse unmarshall(GenerateFileUploadURLResponse generateFileUploadURLResponse, UnmarshallerContext _ctx) {
 		
 		generateFileUploadURLResponse.setRequestId(_ctx.stringValue("GenerateFileUploadURLResponse.RequestId"));
-		generateFileUploadURLResponse.setSuccess(_ctx.booleanValue("GenerateFileUploadURLResponse.Success"));
 		generateFileUploadURLResponse.setCode(_ctx.stringValue("GenerateFileUploadURLResponse.Code"));
 		generateFileUploadURLResponse.setErrorMessage(_ctx.stringValue("GenerateFileUploadURLResponse.ErrorMessage"));
+		generateFileUploadURLResponse.setSuccess(_ctx.booleanValue("GenerateFileUploadURLResponse.Success"));
 
 		Data data = new Data();
 		data.setKey(_ctx.stringValue("GenerateFileUploadURLResponse.Data.Key"));
-		data.setHost(_ctx.stringValue("GenerateFileUploadURLResponse.Data.Host"));
-		data.setPolicy(_ctx.stringValue("GenerateFileUploadURLResponse.Data.Policy"));
 		data.setOssAccessKeyId(_ctx.stringValue("GenerateFileUploadURLResponse.Data.OssAccessKeyId"));
 		data.setSignature(_ctx.stringValue("GenerateFileUploadURLResponse.Data.Signature"));
+		data.setHost(_ctx.stringValue("GenerateFileUploadURLResponse.Data.Host"));
+		data.setPolicy(_ctx.stringValue("GenerateFileUploadURLResponse.Data.Policy"));
 		data.setObjectStorage(_ctx.stringValue("GenerateFileUploadURLResponse.Data.ObjectStorage"));
 		generateFileUploadURLResponse.setData(data);
 	 

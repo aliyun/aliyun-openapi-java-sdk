@@ -23,9 +23,9 @@ public class UpdateParserResponseUnmarshaller {
 	public static UpdateParserResponse unmarshall(UpdateParserResponse updateParserResponse, UnmarshallerContext _ctx) {
 		
 		updateParserResponse.setRequestId(_ctx.stringValue("UpdateParserResponse.RequestId"));
-		updateParserResponse.setSuccess(_ctx.booleanValue("UpdateParserResponse.Success"));
 		updateParserResponse.setCode(_ctx.stringValue("UpdateParserResponse.Code"));
 		updateParserResponse.setErrorMessage(_ctx.stringValue("UpdateParserResponse.ErrorMessage"));
+		updateParserResponse.setSuccess(_ctx.booleanValue("UpdateParserResponse.Success"));
 	 
 	 	return updateParserResponse;
 	}

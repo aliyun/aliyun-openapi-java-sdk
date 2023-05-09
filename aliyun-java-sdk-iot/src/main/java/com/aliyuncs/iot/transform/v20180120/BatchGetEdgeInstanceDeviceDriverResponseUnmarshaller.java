@@ -27,9 +27,9 @@ public class BatchGetEdgeInstanceDeviceDriverResponseUnmarshaller {
 	public static BatchGetEdgeInstanceDeviceDriverResponse unmarshall(BatchGetEdgeInstanceDeviceDriverResponse batchGetEdgeInstanceDeviceDriverResponse, UnmarshallerContext _ctx) {
 		
 		batchGetEdgeInstanceDeviceDriverResponse.setRequestId(_ctx.stringValue("BatchGetEdgeInstanceDeviceDriverResponse.RequestId"));
-		batchGetEdgeInstanceDeviceDriverResponse.setSuccess(_ctx.booleanValue("BatchGetEdgeInstanceDeviceDriverResponse.Success"));
 		batchGetEdgeInstanceDeviceDriverResponse.setCode(_ctx.stringValue("BatchGetEdgeInstanceDeviceDriverResponse.Code"));
 		batchGetEdgeInstanceDeviceDriverResponse.setErrorMessage(_ctx.stringValue("BatchGetEdgeInstanceDeviceDriverResponse.ErrorMessage"));
+		batchGetEdgeInstanceDeviceDriverResponse.setSuccess(_ctx.booleanValue("BatchGetEdgeInstanceDeviceDriverResponse.Success"));
 
 		List<DeviceDriver> deviceDriverList = new ArrayList<DeviceDriver>();
 		for (int i = 0; i < _ctx.lengthValue("BatchGetEdgeInstanceDeviceDriverResponse.DeviceDriverList.Length"); i++) {

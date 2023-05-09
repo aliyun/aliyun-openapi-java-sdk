@@ -25,40 +25,32 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryConsumerGroupStatusResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
+	private Integer consumerSpeed;
 
 	private String errorMessage;
 
-	private Integer accumulationCount;
-
-	private Integer consumerSpeed;
-
-	private String lastConsumerTime;
-
-	private String code;
+	private String requestId;
 
 	private Integer accumulatedConsumeCountPerMinute;
 
+	private String lastConsumerTime;
+
+	private Boolean success;
+
 	private Integer realTimeConsumeCountPerMinute;
+
+	private String code;
+
+	private Integer accumulationCount;
 
 	private List<ConsumerGroupClientConnectionInfo> clientConnectionStatusList;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getConsumerSpeed() {
+		return this.consumerSpeed;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setConsumerSpeed(Integer consumerSpeed) {
+		this.consumerSpeed = consumerSpeed;
 	}
 
 	public String getErrorMessage() {
@@ -69,36 +61,12 @@ public class QueryConsumerGroupStatusResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public Integer getAccumulationCount() {
-		return this.accumulationCount;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setAccumulationCount(Integer accumulationCount) {
-		this.accumulationCount = accumulationCount;
-	}
-
-	public Integer getConsumerSpeed() {
-		return this.consumerSpeed;
-	}
-
-	public void setConsumerSpeed(Integer consumerSpeed) {
-		this.consumerSpeed = consumerSpeed;
-	}
-
-	public String getLastConsumerTime() {
-		return this.lastConsumerTime;
-	}
-
-	public void setLastConsumerTime(String lastConsumerTime) {
-		this.lastConsumerTime = lastConsumerTime;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getAccumulatedConsumeCountPerMinute() {
@@ -109,12 +77,44 @@ public class QueryConsumerGroupStatusResponse extends AcsResponse {
 		this.accumulatedConsumeCountPerMinute = accumulatedConsumeCountPerMinute;
 	}
 
+	public String getLastConsumerTime() {
+		return this.lastConsumerTime;
+	}
+
+	public void setLastConsumerTime(String lastConsumerTime) {
+		this.lastConsumerTime = lastConsumerTime;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Integer getRealTimeConsumeCountPerMinute() {
 		return this.realTimeConsumeCountPerMinute;
 	}
 
 	public void setRealTimeConsumeCountPerMinute(Integer realTimeConsumeCountPerMinute) {
 		this.realTimeConsumeCountPerMinute = realTimeConsumeCountPerMinute;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Integer getAccumulationCount() {
+		return this.accumulationCount;
+	}
+
+	public void setAccumulationCount(Integer accumulationCount) {
+		this.accumulationCount = accumulationCount;
 	}
 
 	public List<ConsumerGroupClientConnectionInfo> getClientConnectionStatusList() {
@@ -127,31 +127,15 @@ public class QueryConsumerGroupStatusResponse extends AcsResponse {
 
 	public static class ConsumerGroupClientConnectionInfo {
 
-		private String clientId;
-
-		private String clientIpPort;
-
 		private Long onlineTime;
-
-		private Integer realTimeConsumeCountPerMinute;
 
 		private Integer accumulatedConsumeCountPerMinute;
 
-		public String getClientId() {
-			return this.clientId;
-		}
+		private Integer realTimeConsumeCountPerMinute;
 
-		public void setClientId(String clientId) {
-			this.clientId = clientId;
-		}
+		private String clientIpPort;
 
-		public String getClientIpPort() {
-			return this.clientIpPort;
-		}
-
-		public void setClientIpPort(String clientIpPort) {
-			this.clientIpPort = clientIpPort;
-		}
+		private String clientId;
 
 		public Long getOnlineTime() {
 			return this.onlineTime;
@@ -159,6 +143,14 @@ public class QueryConsumerGroupStatusResponse extends AcsResponse {
 
 		public void setOnlineTime(Long onlineTime) {
 			this.onlineTime = onlineTime;
+		}
+
+		public Integer getAccumulatedConsumeCountPerMinute() {
+			return this.accumulatedConsumeCountPerMinute;
+		}
+
+		public void setAccumulatedConsumeCountPerMinute(Integer accumulatedConsumeCountPerMinute) {
+			this.accumulatedConsumeCountPerMinute = accumulatedConsumeCountPerMinute;
 		}
 
 		public Integer getRealTimeConsumeCountPerMinute() {
@@ -169,12 +161,20 @@ public class QueryConsumerGroupStatusResponse extends AcsResponse {
 			this.realTimeConsumeCountPerMinute = realTimeConsumeCountPerMinute;
 		}
 
-		public Integer getAccumulatedConsumeCountPerMinute() {
-			return this.accumulatedConsumeCountPerMinute;
+		public String getClientIpPort() {
+			return this.clientIpPort;
 		}
 
-		public void setAccumulatedConsumeCountPerMinute(Integer accumulatedConsumeCountPerMinute) {
-			this.accumulatedConsumeCountPerMinute = accumulatedConsumeCountPerMinute;
+		public void setClientIpPort(String clientIpPort) {
+			this.clientIpPort = clientIpPort;
+		}
+
+		public String getClientId() {
+			return this.clientId;
+		}
+
+		public void setClientId(String clientId) {
+			this.clientId = clientId;
 		}
 	}
 

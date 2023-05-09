@@ -24,9 +24,9 @@ public class BatchRegisterDeviceResponseUnmarshaller {
 	public static BatchRegisterDeviceResponse unmarshall(BatchRegisterDeviceResponse batchRegisterDeviceResponse, UnmarshallerContext _ctx) {
 		
 		batchRegisterDeviceResponse.setRequestId(_ctx.stringValue("BatchRegisterDeviceResponse.RequestId"));
-		batchRegisterDeviceResponse.setSuccess(_ctx.booleanValue("BatchRegisterDeviceResponse.Success"));
 		batchRegisterDeviceResponse.setCode(_ctx.stringValue("BatchRegisterDeviceResponse.Code"));
 		batchRegisterDeviceResponse.setErrorMessage(_ctx.stringValue("BatchRegisterDeviceResponse.ErrorMessage"));
+		batchRegisterDeviceResponse.setSuccess(_ctx.booleanValue("BatchRegisterDeviceResponse.Success"));
 
 		Data data = new Data();
 		data.setApplyId(_ctx.longValue("BatchRegisterDeviceResponse.Data.ApplyId"));

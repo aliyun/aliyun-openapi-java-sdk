@@ -27,23 +27,23 @@ public class GisQueryDeviceLocationResponseUnmarshaller {
 	public static GisQueryDeviceLocationResponse unmarshall(GisQueryDeviceLocationResponse gisQueryDeviceLocationResponse, UnmarshallerContext _ctx) {
 		
 		gisQueryDeviceLocationResponse.setRequestId(_ctx.stringValue("GisQueryDeviceLocationResponse.RequestId"));
-		gisQueryDeviceLocationResponse.setSuccess(_ctx.booleanValue("GisQueryDeviceLocationResponse.Success"));
 		gisQueryDeviceLocationResponse.setCode(_ctx.stringValue("GisQueryDeviceLocationResponse.Code"));
 		gisQueryDeviceLocationResponse.setErrorMessage(_ctx.stringValue("GisQueryDeviceLocationResponse.ErrorMessage"));
+		gisQueryDeviceLocationResponse.setSuccess(_ctx.booleanValue("GisQueryDeviceLocationResponse.Success"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("GisQueryDeviceLocationResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
 			dataItem.setProductKey(_ctx.stringValue("GisQueryDeviceLocationResponse.Data["+ i +"].ProductKey"));
 			dataItem.setDeviceName(_ctx.stringValue("GisQueryDeviceLocationResponse.Data["+ i +"].DeviceName"));
-			dataItem.setIp(_ctx.stringValue("GisQueryDeviceLocationResponse.Data["+ i +"].Ip"));
-			dataItem.setCountry(_ctx.stringValue("GisQueryDeviceLocationResponse.Data["+ i +"].Country"));
-			dataItem.setProvince(_ctx.stringValue("GisQueryDeviceLocationResponse.Data["+ i +"].Province"));
-			dataItem.setCity(_ctx.stringValue("GisQueryDeviceLocationResponse.Data["+ i +"].City"));
-			dataItem.setLongitude(_ctx.floatValue("GisQueryDeviceLocationResponse.Data["+ i +"].Longitude"));
-			dataItem.setLatitude(_ctx.floatValue("GisQueryDeviceLocationResponse.Data["+ i +"].Latitude"));
 			dataItem.setCoordinateSystem(_ctx.integerValue("GisQueryDeviceLocationResponse.Data["+ i +"].CoordinateSystem"));
+			dataItem.setLongitude(_ctx.floatValue("GisQueryDeviceLocationResponse.Data["+ i +"].Longitude"));
+			dataItem.setCountry(_ctx.stringValue("GisQueryDeviceLocationResponse.Data["+ i +"].Country"));
+			dataItem.setIp(_ctx.stringValue("GisQueryDeviceLocationResponse.Data["+ i +"].Ip"));
+			dataItem.setCity(_ctx.stringValue("GisQueryDeviceLocationResponse.Data["+ i +"].City"));
 			dataItem.setAdcode(_ctx.longValue("GisQueryDeviceLocationResponse.Data["+ i +"].Adcode"));
+			dataItem.setLatitude(_ctx.floatValue("GisQueryDeviceLocationResponse.Data["+ i +"].Latitude"));
+			dataItem.setProvince(_ctx.stringValue("GisQueryDeviceLocationResponse.Data["+ i +"].Province"));
 
 			data.add(dataItem);
 		}

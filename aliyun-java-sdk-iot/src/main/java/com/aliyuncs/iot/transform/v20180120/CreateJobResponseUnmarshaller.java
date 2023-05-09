@@ -23,9 +23,9 @@ public class CreateJobResponseUnmarshaller {
 	public static CreateJobResponse unmarshall(CreateJobResponse createJobResponse, UnmarshallerContext _ctx) {
 		
 		createJobResponse.setRequestId(_ctx.stringValue("CreateJobResponse.RequestId"));
-		createJobResponse.setSuccess(_ctx.booleanValue("CreateJobResponse.Success"));
 		createJobResponse.setCode(_ctx.stringValue("CreateJobResponse.Code"));
 		createJobResponse.setErrorMessage(_ctx.stringValue("CreateJobResponse.ErrorMessage"));
+		createJobResponse.setSuccess(_ctx.booleanValue("CreateJobResponse.Success"));
 		createJobResponse.setJobId(_ctx.stringValue("CreateJobResponse.JobId"));
 	 
 	 	return createJobResponse;

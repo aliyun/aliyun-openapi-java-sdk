@@ -24,16 +24,16 @@ public class ReBindLicenseDeviceResponseUnmarshaller {
 	public static ReBindLicenseDeviceResponse unmarshall(ReBindLicenseDeviceResponse reBindLicenseDeviceResponse, UnmarshallerContext _ctx) {
 		
 		reBindLicenseDeviceResponse.setRequestId(_ctx.stringValue("ReBindLicenseDeviceResponse.RequestId"));
-		reBindLicenseDeviceResponse.setSuccess(_ctx.booleanValue("ReBindLicenseDeviceResponse.Success"));
 		reBindLicenseDeviceResponse.setCode(_ctx.stringValue("ReBindLicenseDeviceResponse.Code"));
 		reBindLicenseDeviceResponse.setErrorMessage(_ctx.stringValue("ReBindLicenseDeviceResponse.ErrorMessage"));
+		reBindLicenseDeviceResponse.setSuccess(_ctx.booleanValue("ReBindLicenseDeviceResponse.Success"));
 
 		Data data = new Data();
 		data.setSuccessSum(_ctx.longValue("ReBindLicenseDeviceResponse.Data.SuccessSum"));
-		data.setFailSum(_ctx.longValue("ReBindLicenseDeviceResponse.Data.FailSum"));
-		data.setResultCsvFile(_ctx.stringValue("ReBindLicenseDeviceResponse.Data.ResultCsvFile"));
 		data.setProgress(_ctx.integerValue("ReBindLicenseDeviceResponse.Data.Progress"));
+		data.setResultCsvFile(_ctx.stringValue("ReBindLicenseDeviceResponse.Data.ResultCsvFile"));
 		data.setCheckProgressId(_ctx.stringValue("ReBindLicenseDeviceResponse.Data.CheckProgressId"));
+		data.setFailSum(_ctx.longValue("ReBindLicenseDeviceResponse.Data.FailSum"));
 		reBindLicenseDeviceResponse.setData(data);
 	 
 	 	return reBindLicenseDeviceResponse;

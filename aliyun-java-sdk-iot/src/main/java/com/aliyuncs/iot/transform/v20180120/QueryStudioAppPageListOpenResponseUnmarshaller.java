@@ -28,28 +28,28 @@ public class QueryStudioAppPageListOpenResponseUnmarshaller {
 	public static QueryStudioAppPageListOpenResponse unmarshall(QueryStudioAppPageListOpenResponse queryStudioAppPageListOpenResponse, UnmarshallerContext _ctx) {
 		
 		queryStudioAppPageListOpenResponse.setRequestId(_ctx.stringValue("QueryStudioAppPageListOpenResponse.RequestId"));
-		queryStudioAppPageListOpenResponse.setSuccess(_ctx.booleanValue("QueryStudioAppPageListOpenResponse.Success"));
 		queryStudioAppPageListOpenResponse.setCode(_ctx.stringValue("QueryStudioAppPageListOpenResponse.Code"));
 		queryStudioAppPageListOpenResponse.setErrorMessage(_ctx.stringValue("QueryStudioAppPageListOpenResponse.ErrorMessage"));
+		queryStudioAppPageListOpenResponse.setSuccess(_ctx.booleanValue("QueryStudioAppPageListOpenResponse.Success"));
 
 		Data data = new Data();
-		data.setPageSize(_ctx.integerValue("QueryStudioAppPageListOpenResponse.Data.PageSize"));
 		data.setPageNo(_ctx.integerValue("QueryStudioAppPageListOpenResponse.Data.PageNo"));
-		data.setTotal(_ctx.integerValue("QueryStudioAppPageListOpenResponse.Data.Total"));
 		data.setTotalPage(_ctx.integerValue("QueryStudioAppPageListOpenResponse.Data.TotalPage"));
+		data.setPageSize(_ctx.integerValue("QueryStudioAppPageListOpenResponse.Data.PageSize"));
+		data.setTotal(_ctx.integerValue("QueryStudioAppPageListOpenResponse.Data.Total"));
 
 		List<PageInfo> list = new ArrayList<PageInfo>();
 		for (int i = 0; i < _ctx.lengthValue("QueryStudioAppPageListOpenResponse.Data.List.Length"); i++) {
 			PageInfo pageInfo = new PageInfo();
-			pageInfo.setId(_ctx.integerValue("QueryStudioAppPageListOpenResponse.Data.List["+ i +"].Id"));
-			pageInfo.setPageId(_ctx.stringValue("QueryStudioAppPageListOpenResponse.Data.List["+ i +"].PageId"));
+			pageInfo.setGmtCreate(_ctx.stringValue("QueryStudioAppPageListOpenResponse.Data.List["+ i +"].GmtCreate"));
+			pageInfo.setIsLoginPage(_ctx.integerValue("QueryStudioAppPageListOpenResponse.Data.List["+ i +"].IsLoginPage"));
 			pageInfo.setPath(_ctx.stringValue("QueryStudioAppPageListOpenResponse.Data.List["+ i +"].Path"));
 			pageInfo.setIsHidden(_ctx.integerValue("QueryStudioAppPageListOpenResponse.Data.List["+ i +"].IsHidden"));
-			pageInfo.setIsHome(_ctx.integerValue("QueryStudioAppPageListOpenResponse.Data.List["+ i +"].IsHome"));
-			pageInfo.setIsLoginPage(_ctx.integerValue("QueryStudioAppPageListOpenResponse.Data.List["+ i +"].IsLoginPage"));
-			pageInfo.setName(_ctx.stringValue("QueryStudioAppPageListOpenResponse.Data.List["+ i +"].Name"));
-			pageInfo.setGmtCreate(_ctx.stringValue("QueryStudioAppPageListOpenResponse.Data.List["+ i +"].GmtCreate"));
 			pageInfo.setGmtModified(_ctx.stringValue("QueryStudioAppPageListOpenResponse.Data.List["+ i +"].GmtModified"));
+			pageInfo.setName(_ctx.stringValue("QueryStudioAppPageListOpenResponse.Data.List["+ i +"].Name"));
+			pageInfo.setPageId(_ctx.stringValue("QueryStudioAppPageListOpenResponse.Data.List["+ i +"].PageId"));
+			pageInfo.setIsHome(_ctx.integerValue("QueryStudioAppPageListOpenResponse.Data.List["+ i +"].IsHome"));
+			pageInfo.setId(_ctx.integerValue("QueryStudioAppPageListOpenResponse.Data.List["+ i +"].Id"));
 
 			list.add(pageInfo);
 		}

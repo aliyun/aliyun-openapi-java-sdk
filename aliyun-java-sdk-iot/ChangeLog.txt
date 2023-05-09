@@ -1,3 +1,6 @@
+2023-05-09 Version: 7.52.1
+- Support new api for iot.
+
 2023-03-06 Version: 7.52.0
 - Iot_20180120 TeaDSL SDK.
 

@@ -25,19 +25,19 @@ public class SetupStudioAppAuthModeOpenResponseUnmarshaller {
 	public static SetupStudioAppAuthModeOpenResponse unmarshall(SetupStudioAppAuthModeOpenResponse setupStudioAppAuthModeOpenResponse, UnmarshallerContext _ctx) {
 		
 		setupStudioAppAuthModeOpenResponse.setRequestId(_ctx.stringValue("SetupStudioAppAuthModeOpenResponse.RequestId"));
-		setupStudioAppAuthModeOpenResponse.setSuccess(_ctx.booleanValue("SetupStudioAppAuthModeOpenResponse.Success"));
 		setupStudioAppAuthModeOpenResponse.setCode(_ctx.stringValue("SetupStudioAppAuthModeOpenResponse.Code"));
 		setupStudioAppAuthModeOpenResponse.setErrorMessage(_ctx.stringValue("SetupStudioAppAuthModeOpenResponse.ErrorMessage"));
+		setupStudioAppAuthModeOpenResponse.setSuccess(_ctx.booleanValue("SetupStudioAppAuthModeOpenResponse.Success"));
 
 		Data data = new Data();
 		data.setAuthMode(_ctx.integerValue("SetupStudioAppAuthModeOpenResponse.Data.AuthMode"));
 
 		TokenInfo tokenInfo = new TokenInfo();
-		tokenInfo.setIsEnable(_ctx.stringValue("SetupStudioAppAuthModeOpenResponse.Data.TokenInfo.IsEnable"));
 		tokenInfo.setType(_ctx.stringValue("SetupStudioAppAuthModeOpenResponse.Data.TokenInfo.Type"));
-		tokenInfo.setBizType(_ctx.stringValue("SetupStudioAppAuthModeOpenResponse.Data.TokenInfo.BizType"));
-		tokenInfo.setToken(_ctx.stringValue("SetupStudioAppAuthModeOpenResponse.Data.TokenInfo.Token"));
+		tokenInfo.setIsEnable(_ctx.stringValue("SetupStudioAppAuthModeOpenResponse.Data.TokenInfo.IsEnable"));
 		tokenInfo.setBizId(_ctx.stringValue("SetupStudioAppAuthModeOpenResponse.Data.TokenInfo.BizId"));
+		tokenInfo.setToken(_ctx.stringValue("SetupStudioAppAuthModeOpenResponse.Data.TokenInfo.Token"));
+		tokenInfo.setBizType(_ctx.stringValue("SetupStudioAppAuthModeOpenResponse.Data.TokenInfo.BizType"));
 		data.setTokenInfo(tokenInfo);
 		setupStudioAppAuthModeOpenResponse.setData(data);
 	 

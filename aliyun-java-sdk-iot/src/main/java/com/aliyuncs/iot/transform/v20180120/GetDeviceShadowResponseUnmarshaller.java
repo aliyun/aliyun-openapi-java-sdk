@@ -23,10 +23,10 @@ public class GetDeviceShadowResponseUnmarshaller {
 	public static GetDeviceShadowResponse unmarshall(GetDeviceShadowResponse getDeviceShadowResponse, UnmarshallerContext _ctx) {
 		
 		getDeviceShadowResponse.setRequestId(_ctx.stringValue("GetDeviceShadowResponse.RequestId"));
-		getDeviceShadowResponse.setSuccess(_ctx.booleanValue("GetDeviceShadowResponse.Success"));
 		getDeviceShadowResponse.setCode(_ctx.stringValue("GetDeviceShadowResponse.Code"));
 		getDeviceShadowResponse.setErrorMessage(_ctx.stringValue("GetDeviceShadowResponse.ErrorMessage"));
 		getDeviceShadowResponse.setShadowMessage(_ctx.stringValue("GetDeviceShadowResponse.ShadowMessage"));
+		getDeviceShadowResponse.setSuccess(_ctx.booleanValue("GetDeviceShadowResponse.Success"));
 	 
 	 	return getDeviceShadowResponse;
 	}

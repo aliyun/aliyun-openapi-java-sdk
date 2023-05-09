@@ -23,9 +23,9 @@ public class CreateOTAModuleResponseUnmarshaller {
 	public static CreateOTAModuleResponse unmarshall(CreateOTAModuleResponse createOTAModuleResponse, UnmarshallerContext _ctx) {
 		
 		createOTAModuleResponse.setRequestId(_ctx.stringValue("CreateOTAModuleResponse.RequestId"));
-		createOTAModuleResponse.setSuccess(_ctx.booleanValue("CreateOTAModuleResponse.Success"));
 		createOTAModuleResponse.setCode(_ctx.stringValue("CreateOTAModuleResponse.Code"));
 		createOTAModuleResponse.setErrorMessage(_ctx.stringValue("CreateOTAModuleResponse.ErrorMessage"));
+		createOTAModuleResponse.setSuccess(_ctx.booleanValue("CreateOTAModuleResponse.Success"));
 	 
 	 	return createOTAModuleResponse;
 	}

@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryStudioAppListResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class QueryStudioAppListResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -77,23 +77,15 @@ public class QueryStudioAppListResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer pageSize;
-
 		private Integer pageNo;
-
-		private Integer total;
 
 		private Integer totalPage;
 
+		private Integer pageSize;
+
+		private Integer total;
+
 		private List<AppInfo> list;
-
-		public Integer getPageSize() {
-			return this.pageSize;
-		}
-
-		public void setPageSize(Integer pageSize) {
-			this.pageSize = pageSize;
-		}
 
 		public Integer getPageNo() {
 			return this.pageNo;
@@ -103,20 +95,28 @@ public class QueryStudioAppListResponse extends AcsResponse {
 			this.pageNo = pageNo;
 		}
 
-		public Integer getTotal() {
-			return this.total;
-		}
-
-		public void setTotal(Integer total) {
-			this.total = total;
-		}
-
 		public Integer getTotalPage() {
 			return this.totalPage;
 		}
 
 		public void setTotalPage(Integer totalPage) {
 			this.totalPage = totalPage;
+		}
+
+		public Integer getPageSize() {
+			return this.pageSize;
+		}
+
+		public void setPageSize(Integer pageSize) {
+			this.pageSize = pageSize;
+		}
+
+		public Integer getTotal() {
+			return this.total;
+		}
+
+		public void setTotal(Integer total) {
+			this.total = total;
 		}
 
 		public List<AppInfo> getList() {
@@ -129,48 +129,32 @@ public class QueryStudioAppListResponse extends AcsResponse {
 
 		public static class AppInfo {
 
-			private String name;
-
-			private String appId;
-
-			private String appKey;
+			private String type;
 
 			private String appSecret;
 
-			private String projectId;
-
-			private String type;
+			private String appKey;
 
 			private String description;
 
-			private String gmtCreate;
+			private String appId;
 
-			private String gmtModified;
+			private String projectId;
+
+			private String gmtCreate;
 
 			private String gmtRelease;
 
-			public String getName() {
-				return this.name;
+			private String gmtModified;
+
+			private String name;
+
+			public String getType() {
+				return this.type;
 			}
 
-			public void setName(String name) {
-				this.name = name;
-			}
-
-			public String getAppId() {
-				return this.appId;
-			}
-
-			public void setAppId(String appId) {
-				this.appId = appId;
-			}
-
-			public String getAppKey() {
-				return this.appKey;
-			}
-
-			public void setAppKey(String appKey) {
-				this.appKey = appKey;
+			public void setType(String type) {
+				this.type = type;
 			}
 
 			public String getAppSecret() {
@@ -181,20 +165,12 @@ public class QueryStudioAppListResponse extends AcsResponse {
 				this.appSecret = appSecret;
 			}
 
-			public String getProjectId() {
-				return this.projectId;
+			public String getAppKey() {
+				return this.appKey;
 			}
 
-			public void setProjectId(String projectId) {
-				this.projectId = projectId;
-			}
-
-			public String getType() {
-				return this.type;
-			}
-
-			public void setType(String type) {
-				this.type = type;
+			public void setAppKey(String appKey) {
+				this.appKey = appKey;
 			}
 
 			public String getDescription() {
@@ -205,12 +181,36 @@ public class QueryStudioAppListResponse extends AcsResponse {
 				this.description = description;
 			}
 
+			public String getAppId() {
+				return this.appId;
+			}
+
+			public void setAppId(String appId) {
+				this.appId = appId;
+			}
+
+			public String getProjectId() {
+				return this.projectId;
+			}
+
+			public void setProjectId(String projectId) {
+				this.projectId = projectId;
+			}
+
 			public String getGmtCreate() {
 				return this.gmtCreate;
 			}
 
 			public void setGmtCreate(String gmtCreate) {
 				this.gmtCreate = gmtCreate;
+			}
+
+			public String getGmtRelease() {
+				return this.gmtRelease;
+			}
+
+			public void setGmtRelease(String gmtRelease) {
+				this.gmtRelease = gmtRelease;
 			}
 
 			public String getGmtModified() {
@@ -221,12 +221,12 @@ public class QueryStudioAppListResponse extends AcsResponse {
 				this.gmtModified = gmtModified;
 			}
 
-			public String getGmtRelease() {
-				return this.gmtRelease;
+			public String getName() {
+				return this.name;
 			}
 
-			public void setGmtRelease(String gmtRelease) {
-				this.gmtRelease = gmtRelease;
+			public void setName(String name) {
+				this.name = name;
 			}
 		}
 	}

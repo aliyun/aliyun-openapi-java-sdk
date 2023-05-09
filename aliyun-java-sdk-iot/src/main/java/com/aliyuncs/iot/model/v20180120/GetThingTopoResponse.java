@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetThingTopoResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class GetThingTopoResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -77,23 +77,15 @@ public class GetThingTopoResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Long total;
-
 		private Integer currentPage;
 
 		private Integer pageSize;
 
 		private Long pageCount;
 
+		private Long total;
+
 		private List<DeviceInfo> list;
-
-		public Long getTotal() {
-			return this.total;
-		}
-
-		public void setTotal(Long total) {
-			this.total = total;
-		}
 
 		public Integer getCurrentPage() {
 			return this.currentPage;
@@ -119,6 +111,14 @@ public class GetThingTopoResponse extends AcsResponse {
 			this.pageCount = pageCount;
 		}
 
+		public Long getTotal() {
+			return this.total;
+		}
+
+		public void setTotal(Long total) {
+			this.total = total;
+		}
+
 		public List<DeviceInfo> getList() {
 			return this.list;
 		}
@@ -129,19 +129,11 @@ public class GetThingTopoResponse extends AcsResponse {
 
 		public static class DeviceInfo {
 
-			private String iotId;
-
 			private String productKey;
 
 			private String deviceName;
 
-			public String getIotId() {
-				return this.iotId;
-			}
-
-			public void setIotId(String iotId) {
-				this.iotId = iotId;
-			}
+			private String iotId;
 
 			public String getProductKey() {
 				return this.productKey;
@@ -157,6 +149,14 @@ public class GetThingTopoResponse extends AcsResponse {
 
 			public void setDeviceName(String deviceName) {
 				this.deviceName = deviceName;
+			}
+
+			public String getIotId() {
+				return this.iotId;
+			}
+
+			public void setIotId(String iotId) {
+				this.iotId = iotId;
 			}
 		}
 	}

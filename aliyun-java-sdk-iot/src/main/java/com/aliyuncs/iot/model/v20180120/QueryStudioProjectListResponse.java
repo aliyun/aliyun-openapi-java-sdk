@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryStudioProjectListResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class QueryStudioProjectListResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -79,11 +79,11 @@ public class QueryStudioProjectListResponse extends AcsResponse {
 
 		private Integer pageNo;
 
+		private Integer totalPage;
+
 		private Integer pageSize;
 
 		private Integer total;
-
-		private Integer totalPage;
 
 		private List<ProjectInfo> list;
 
@@ -93,6 +93,14 @@ public class QueryStudioProjectListResponse extends AcsResponse {
 
 		public void setPageNo(Integer pageNo) {
 			this.pageNo = pageNo;
+		}
+
+		public Integer getTotalPage() {
+			return this.totalPage;
+		}
+
+		public void setTotalPage(Integer totalPage) {
+			this.totalPage = totalPage;
 		}
 
 		public Integer getPageSize() {
@@ -111,14 +119,6 @@ public class QueryStudioProjectListResponse extends AcsResponse {
 			this.total = total;
 		}
 
-		public Integer getTotalPage() {
-			return this.totalPage;
-		}
-
-		public void setTotalPage(Integer totalPage) {
-			this.totalPage = totalPage;
-		}
-
 		public List<ProjectInfo> getList() {
 			return this.list;
 		}
@@ -131,13 +131,13 @@ public class QueryStudioProjectListResponse extends AcsResponse {
 
 			private Long gmtCreate;
 
-			private Long gmtModified;
+			private String description;
 
 			private String name;
 
-			private String projectId;
+			private Long gmtModified;
 
-			private String description;
+			private String projectId;
 
 			public Long getGmtCreate() {
 				return this.gmtCreate;
@@ -147,12 +147,12 @@ public class QueryStudioProjectListResponse extends AcsResponse {
 				this.gmtCreate = gmtCreate;
 			}
 
-			public Long getGmtModified() {
-				return this.gmtModified;
+			public String getDescription() {
+				return this.description;
 			}
 
-			public void setGmtModified(Long gmtModified) {
-				this.gmtModified = gmtModified;
+			public void setDescription(String description) {
+				this.description = description;
 			}
 
 			public String getName() {
@@ -163,20 +163,20 @@ public class QueryStudioProjectListResponse extends AcsResponse {
 				this.name = name;
 			}
 
+			public Long getGmtModified() {
+				return this.gmtModified;
+			}
+
+			public void setGmtModified(Long gmtModified) {
+				this.gmtModified = gmtModified;
+			}
+
 			public String getProjectId() {
 				return this.projectId;
 			}
 
 			public void setProjectId(String projectId) {
 				this.projectId = projectId;
-			}
-
-			public String getDescription() {
-				return this.description;
-			}
-
-			public void setDescription(String description) {
-				this.description = description;
 			}
 		}
 	}

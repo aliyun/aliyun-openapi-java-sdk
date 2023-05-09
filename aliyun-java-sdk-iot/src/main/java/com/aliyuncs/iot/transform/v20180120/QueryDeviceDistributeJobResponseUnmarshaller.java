@@ -28,20 +28,20 @@ public class QueryDeviceDistributeJobResponseUnmarshaller {
 	public static QueryDeviceDistributeJobResponse unmarshall(QueryDeviceDistributeJobResponse queryDeviceDistributeJobResponse, UnmarshallerContext _ctx) {
 		
 		queryDeviceDistributeJobResponse.setRequestId(_ctx.stringValue("QueryDeviceDistributeJobResponse.RequestId"));
-		queryDeviceDistributeJobResponse.setSuccess(_ctx.booleanValue("QueryDeviceDistributeJobResponse.Success"));
 		queryDeviceDistributeJobResponse.setCode(_ctx.stringValue("QueryDeviceDistributeJobResponse.Code"));
 		queryDeviceDistributeJobResponse.setErrorMessage(_ctx.stringValue("QueryDeviceDistributeJobResponse.ErrorMessage"));
+		queryDeviceDistributeJobResponse.setSuccess(_ctx.booleanValue("QueryDeviceDistributeJobResponse.Success"));
 
 		Data data = new Data();
-		data.setSourceUid(_ctx.stringValue("QueryDeviceDistributeJobResponse.Data.SourceUid"));
-		data.setTargetUid(_ctx.stringValue("QueryDeviceDistributeJobResponse.Data.TargetUid"));
-		data.setSourceInstanceId(_ctx.stringValue("QueryDeviceDistributeJobResponse.Data.SourceInstanceId"));
-		data.setJobId(_ctx.stringValue("QueryDeviceDistributeJobResponse.Data.JobId"));
-		data.setProductKey(_ctx.stringValue("QueryDeviceDistributeJobResponse.Data.ProductKey"));
-		data.setTotal(_ctx.integerValue("QueryDeviceDistributeJobResponse.Data.Total"));
-		data.setStatus(_ctx.integerValue("QueryDeviceDistributeJobResponse.Data.Status"));
-		data.setGmtCreate(_ctx.longValue("QueryDeviceDistributeJobResponse.Data.GmtCreate"));
 		data.setStrategy(_ctx.integerValue("QueryDeviceDistributeJobResponse.Data.Strategy"));
+		data.setStatus(_ctx.integerValue("QueryDeviceDistributeJobResponse.Data.Status"));
+		data.setProductKey(_ctx.stringValue("QueryDeviceDistributeJobResponse.Data.ProductKey"));
+		data.setTargetUid(_ctx.stringValue("QueryDeviceDistributeJobResponse.Data.TargetUid"));
+		data.setJobId(_ctx.stringValue("QueryDeviceDistributeJobResponse.Data.JobId"));
+		data.setGmtCreate(_ctx.longValue("QueryDeviceDistributeJobResponse.Data.GmtCreate"));
+		data.setSourceUid(_ctx.stringValue("QueryDeviceDistributeJobResponse.Data.SourceUid"));
+		data.setTotal(_ctx.integerValue("QueryDeviceDistributeJobResponse.Data.Total"));
+		data.setSourceInstanceId(_ctx.stringValue("QueryDeviceDistributeJobResponse.Data.SourceInstanceId"));
 
 		List<TargetInstanceConfigsItem> targetInstanceConfigs = new ArrayList<TargetInstanceConfigsItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryDeviceDistributeJobResponse.Data.TargetInstanceConfigs.Length"); i++) {

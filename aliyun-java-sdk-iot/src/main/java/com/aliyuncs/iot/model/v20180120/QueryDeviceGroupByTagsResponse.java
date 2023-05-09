@@ -27,19 +27,19 @@ public class QueryDeviceGroupByTagsResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String errorMessage;
+
 	private Boolean success;
 
 	private String code;
 
-	private String errorMessage;
-
-	private Integer page;
-
 	private Integer pageSize;
+
+	private Integer total;
 
 	private Integer pageCount;
 
-	private Integer total;
+	private Integer page;
 
 	private List<DeviceGroup> data;
 
@@ -49,6 +49,14 @@ public class QueryDeviceGroupByTagsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
 	public Boolean getSuccess() {
@@ -67,28 +75,20 @@ public class QueryDeviceGroupByTagsResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
-	public Integer getPage() {
-		return this.page;
-	}
-
-	public void setPage(Integer page) {
-		this.page = page;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public Integer getTotal() {
+		return this.total;
+	}
+
+	public void setTotal(Integer total) {
+		this.total = total;
 	}
 
 	public Integer getPageCount() {
@@ -99,12 +99,12 @@ public class QueryDeviceGroupByTagsResponse extends AcsResponse {
 		this.pageCount = pageCount;
 	}
 
-	public Integer getTotal() {
-		return this.total;
+	public Integer getPage() {
+		return this.page;
 	}
 
-	public void setTotal(Integer total) {
-		this.total = total;
+	public void setPage(Integer page) {
+		this.page = page;
 	}
 
 	public List<DeviceGroup> getData() {
@@ -117,17 +117,9 @@ public class QueryDeviceGroupByTagsResponse extends AcsResponse {
 
 	public static class DeviceGroup {
 
-		private String groupId;
-
 		private String groupName;
 
-		public String getGroupId() {
-			return this.groupId;
-		}
-
-		public void setGroupId(String groupId) {
-			this.groupId = groupId;
-		}
+		private String groupId;
 
 		public String getGroupName() {
 			return this.groupName;
@@ -135,6 +127,14 @@ public class QueryDeviceGroupByTagsResponse extends AcsResponse {
 
 		public void setGroupName(String groupName) {
 			this.groupName = groupName;
+		}
+
+		public String getGroupId() {
+			return this.groupId;
+		}
+
+		public void setGroupId(String groupId) {
+			this.groupId = groupId;
 		}
 	}
 

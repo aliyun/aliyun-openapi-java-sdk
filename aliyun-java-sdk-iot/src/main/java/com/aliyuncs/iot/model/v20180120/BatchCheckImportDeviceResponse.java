@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class BatchCheckImportDeviceResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class BatchCheckImportDeviceResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -77,28 +77,30 @@ public class BatchCheckImportDeviceResponse extends AcsResponse {
 
 	public static class Data {
 
-		private List<String> invalidDeviceNameList;
-
-		private List<String> invalidDeviceSecretList;
-
-		private List<String> invalidSnList;
+		private List<InvalidDetailListItem> invalidDetailList;
 
 		private List<String> repeatedDeviceNameList;
 
-		public List<String> getInvalidDeviceNameList() {
-			return this.invalidDeviceNameList;
+		private List<String> invalidSnList;
+
+		private List<String> invalidDeviceSecretList;
+
+		private List<String> invalidDeviceNameList;
+
+		public List<InvalidDetailListItem> getInvalidDetailList() {
+			return this.invalidDetailList;
 		}
 
-		public void setInvalidDeviceNameList(List<String> invalidDeviceNameList) {
-			this.invalidDeviceNameList = invalidDeviceNameList;
+		public void setInvalidDetailList(List<InvalidDetailListItem> invalidDetailList) {
+			this.invalidDetailList = invalidDetailList;
 		}
 
-		public List<String> getInvalidDeviceSecretList() {
-			return this.invalidDeviceSecretList;
+		public List<String> getRepeatedDeviceNameList() {
+			return this.repeatedDeviceNameList;
 		}
 
-		public void setInvalidDeviceSecretList(List<String> invalidDeviceSecretList) {
-			this.invalidDeviceSecretList = invalidDeviceSecretList;
+		public void setRepeatedDeviceNameList(List<String> repeatedDeviceNameList) {
+			this.repeatedDeviceNameList = repeatedDeviceNameList;
 		}
 
 		public List<String> getInvalidSnList() {
@@ -109,12 +111,63 @@ public class BatchCheckImportDeviceResponse extends AcsResponse {
 			this.invalidSnList = invalidSnList;
 		}
 
-		public List<String> getRepeatedDeviceNameList() {
-			return this.repeatedDeviceNameList;
+		public List<String> getInvalidDeviceSecretList() {
+			return this.invalidDeviceSecretList;
 		}
 
-		public void setRepeatedDeviceNameList(List<String> repeatedDeviceNameList) {
-			this.repeatedDeviceNameList = repeatedDeviceNameList;
+		public void setInvalidDeviceSecretList(List<String> invalidDeviceSecretList) {
+			this.invalidDeviceSecretList = invalidDeviceSecretList;
+		}
+
+		public List<String> getInvalidDeviceNameList() {
+			return this.invalidDeviceNameList;
+		}
+
+		public void setInvalidDeviceNameList(List<String> invalidDeviceNameList) {
+			this.invalidDeviceNameList = invalidDeviceNameList;
+		}
+
+		public static class InvalidDetailListItem {
+
+			private String errorMsg;
+
+			private String sn;
+
+			private String deviceName;
+
+			private String deviceSecret;
+
+			public String getErrorMsg() {
+				return this.errorMsg;
+			}
+
+			public void setErrorMsg(String errorMsg) {
+				this.errorMsg = errorMsg;
+			}
+
+			public String getSn() {
+				return this.sn;
+			}
+
+			public void setSn(String sn) {
+				this.sn = sn;
+			}
+
+			public String getDeviceName() {
+				return this.deviceName;
+			}
+
+			public void setDeviceName(String deviceName) {
+				this.deviceName = deviceName;
+			}
+
+			public String getDeviceSecret() {
+				return this.deviceSecret;
+			}
+
+			public void setDeviceSecret(String deviceSecret) {
+				this.deviceSecret = deviceSecret;
+			}
 		}
 	}
 

@@ -32,9 +32,9 @@ public class SyncSpeechByCombinationRequest extends RpcAcsRequest<SyncSpeechByCo
 
 	private String iotId;
 
-	private List<String> combinationLists;
-
 	private String iotInstanceId;
+
+	private List<String> combinationLists;
 
 	private Boolean enforceFlag;
 
@@ -83,6 +83,17 @@ public class SyncSpeechByCombinationRequest extends RpcAcsRequest<SyncSpeechByCo
 		}
 	}
 
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putBodyParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
 	public List<String> getCombinationLists() {
 		return this.combinationLists;
 	}
@@ -94,17 +105,6 @@ public class SyncSpeechByCombinationRequest extends RpcAcsRequest<SyncSpeechByCo
 				putBodyParameter("CombinationList." + (i + 1) , combinationLists.get(i));
 			}
 		}	
-	}
-
-	public String getIotInstanceId() {
-		return this.iotInstanceId;
-	}
-
-	public void setIotInstanceId(String iotInstanceId) {
-		this.iotInstanceId = iotInstanceId;
-		if(iotInstanceId != null){
-			putBodyParameter("IotInstanceId", iotInstanceId);
-		}
 	}
 
 	public Boolean getEnforceFlag() {

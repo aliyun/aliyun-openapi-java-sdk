@@ -23,9 +23,9 @@ public class BatchSetEdgeInstanceDeviceChannelResponseUnmarshaller {
 	public static BatchSetEdgeInstanceDeviceChannelResponse unmarshall(BatchSetEdgeInstanceDeviceChannelResponse batchSetEdgeInstanceDeviceChannelResponse, UnmarshallerContext _ctx) {
 		
 		batchSetEdgeInstanceDeviceChannelResponse.setRequestId(_ctx.stringValue("BatchSetEdgeInstanceDeviceChannelResponse.RequestId"));
-		batchSetEdgeInstanceDeviceChannelResponse.setSuccess(_ctx.booleanValue("BatchSetEdgeInstanceDeviceChannelResponse.Success"));
 		batchSetEdgeInstanceDeviceChannelResponse.setCode(_ctx.stringValue("BatchSetEdgeInstanceDeviceChannelResponse.Code"));
 		batchSetEdgeInstanceDeviceChannelResponse.setErrorMessage(_ctx.stringValue("BatchSetEdgeInstanceDeviceChannelResponse.ErrorMessage"));
+		batchSetEdgeInstanceDeviceChannelResponse.setSuccess(_ctx.booleanValue("BatchSetEdgeInstanceDeviceChannelResponse.Success"));
 	 
 	 	return batchSetEdgeInstanceDeviceChannelResponse;
 	}

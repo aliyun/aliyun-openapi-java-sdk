@@ -23,9 +23,9 @@ public class ConfirmOTATaskResponseUnmarshaller {
 	public static ConfirmOTATaskResponse unmarshall(ConfirmOTATaskResponse confirmOTATaskResponse, UnmarshallerContext _ctx) {
 		
 		confirmOTATaskResponse.setRequestId(_ctx.stringValue("ConfirmOTATaskResponse.RequestId"));
-		confirmOTATaskResponse.setSuccess(_ctx.booleanValue("ConfirmOTATaskResponse.Success"));
 		confirmOTATaskResponse.setCode(_ctx.stringValue("ConfirmOTATaskResponse.Code"));
 		confirmOTATaskResponse.setErrorMessage(_ctx.stringValue("ConfirmOTATaskResponse.ErrorMessage"));
+		confirmOTATaskResponse.setSuccess(_ctx.booleanValue("ConfirmOTATaskResponse.Success"));
 	 
 	 	return confirmOTATaskResponse;
 	}

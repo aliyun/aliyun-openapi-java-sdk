@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetEdgeInstanceMessageRoutingResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -66,6 +50,22 @@ public class GetEdgeInstanceMessageRoutingResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -76,9 +76,19 @@ public class GetEdgeInstanceMessageRoutingResponse extends AcsResponse {
 
 	public static class Data {
 
+		private Long gmtCreateTimestamp;
+
 		private String topicFilter;
 
+		private Long gmtModifiedTimestamp;
+
+		private String targetData;
+
+		private String gmtCreate;
+
 		private String sourceType;
+
+		private String gmtModified;
 
 		private String name;
 
@@ -86,17 +96,15 @@ public class GetEdgeInstanceMessageRoutingResponse extends AcsResponse {
 
 		private String targetType;
 
-		private String targetData;
-
-		private String gmtCreate;
-
-		private String gmtModified;
-
-		private Long gmtCreateTimestamp;
-
-		private Long gmtModifiedTimestamp;
-
 		private RouteContext routeContext;
+
+		public Long getGmtCreateTimestamp() {
+			return this.gmtCreateTimestamp;
+		}
+
+		public void setGmtCreateTimestamp(Long gmtCreateTimestamp) {
+			this.gmtCreateTimestamp = gmtCreateTimestamp;
+		}
 
 		public String getTopicFilter() {
 			return this.topicFilter;
@@ -106,12 +114,44 @@ public class GetEdgeInstanceMessageRoutingResponse extends AcsResponse {
 			this.topicFilter = topicFilter;
 		}
 
+		public Long getGmtModifiedTimestamp() {
+			return this.gmtModifiedTimestamp;
+		}
+
+		public void setGmtModifiedTimestamp(Long gmtModifiedTimestamp) {
+			this.gmtModifiedTimestamp = gmtModifiedTimestamp;
+		}
+
+		public String getTargetData() {
+			return this.targetData;
+		}
+
+		public void setTargetData(String targetData) {
+			this.targetData = targetData;
+		}
+
+		public String getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(String gmtCreate) {
+			this.gmtCreate = gmtCreate;
+		}
+
 		public String getSourceType() {
 			return this.sourceType;
 		}
 
 		public void setSourceType(String sourceType) {
 			this.sourceType = sourceType;
+		}
+
+		public String getGmtModified() {
+			return this.gmtModified;
+		}
+
+		public void setGmtModified(String gmtModified) {
+			this.gmtModified = gmtModified;
 		}
 
 		public String getName() {
@@ -138,46 +178,6 @@ public class GetEdgeInstanceMessageRoutingResponse extends AcsResponse {
 			this.targetType = targetType;
 		}
 
-		public String getTargetData() {
-			return this.targetData;
-		}
-
-		public void setTargetData(String targetData) {
-			this.targetData = targetData;
-		}
-
-		public String getGmtCreate() {
-			return this.gmtCreate;
-		}
-
-		public void setGmtCreate(String gmtCreate) {
-			this.gmtCreate = gmtCreate;
-		}
-
-		public String getGmtModified() {
-			return this.gmtModified;
-		}
-
-		public void setGmtModified(String gmtModified) {
-			this.gmtModified = gmtModified;
-		}
-
-		public Long getGmtCreateTimestamp() {
-			return this.gmtCreateTimestamp;
-		}
-
-		public void setGmtCreateTimestamp(Long gmtCreateTimestamp) {
-			this.gmtCreateTimestamp = gmtCreateTimestamp;
-		}
-
-		public Long getGmtModifiedTimestamp() {
-			return this.gmtModifiedTimestamp;
-		}
-
-		public void setGmtModifiedTimestamp(Long gmtModifiedTimestamp) {
-			this.gmtModifiedTimestamp = gmtModifiedTimestamp;
-		}
-
 		public RouteContext getRouteContext() {
 			return this.routeContext;
 		}
@@ -188,71 +188,23 @@ public class GetEdgeInstanceMessageRoutingResponse extends AcsResponse {
 
 		public static class RouteContext {
 
-			private String sourceFcServiceName;
-
-			private String sourceFcFunctionName;
-
-			private String sourceStreamName;
-
-			private String sourceApplicationName;
-
-			private String targetFcServiceName;
-
-			private String targetFcFunctionName;
-
 			private String targetStreamName;
 
 			private String targetApplicationName;
 
+			private String sourceApplicationName;
+
+			private String targetFcFunctionName;
+
+			private String sourceFcFunctionName;
+
+			private String targetFcServiceName;
+
+			private String sourceStreamName;
+
+			private String sourceFcServiceName;
+
 			private String qos;
-
-			public String getSourceFcServiceName() {
-				return this.sourceFcServiceName;
-			}
-
-			public void setSourceFcServiceName(String sourceFcServiceName) {
-				this.sourceFcServiceName = sourceFcServiceName;
-			}
-
-			public String getSourceFcFunctionName() {
-				return this.sourceFcFunctionName;
-			}
-
-			public void setSourceFcFunctionName(String sourceFcFunctionName) {
-				this.sourceFcFunctionName = sourceFcFunctionName;
-			}
-
-			public String getSourceStreamName() {
-				return this.sourceStreamName;
-			}
-
-			public void setSourceStreamName(String sourceStreamName) {
-				this.sourceStreamName = sourceStreamName;
-			}
-
-			public String getSourceApplicationName() {
-				return this.sourceApplicationName;
-			}
-
-			public void setSourceApplicationName(String sourceApplicationName) {
-				this.sourceApplicationName = sourceApplicationName;
-			}
-
-			public String getTargetFcServiceName() {
-				return this.targetFcServiceName;
-			}
-
-			public void setTargetFcServiceName(String targetFcServiceName) {
-				this.targetFcServiceName = targetFcServiceName;
-			}
-
-			public String getTargetFcFunctionName() {
-				return this.targetFcFunctionName;
-			}
-
-			public void setTargetFcFunctionName(String targetFcFunctionName) {
-				this.targetFcFunctionName = targetFcFunctionName;
-			}
 
 			public String getTargetStreamName() {
 				return this.targetStreamName;
@@ -268,6 +220,54 @@ public class GetEdgeInstanceMessageRoutingResponse extends AcsResponse {
 
 			public void setTargetApplicationName(String targetApplicationName) {
 				this.targetApplicationName = targetApplicationName;
+			}
+
+			public String getSourceApplicationName() {
+				return this.sourceApplicationName;
+			}
+
+			public void setSourceApplicationName(String sourceApplicationName) {
+				this.sourceApplicationName = sourceApplicationName;
+			}
+
+			public String getTargetFcFunctionName() {
+				return this.targetFcFunctionName;
+			}
+
+			public void setTargetFcFunctionName(String targetFcFunctionName) {
+				this.targetFcFunctionName = targetFcFunctionName;
+			}
+
+			public String getSourceFcFunctionName() {
+				return this.sourceFcFunctionName;
+			}
+
+			public void setSourceFcFunctionName(String sourceFcFunctionName) {
+				this.sourceFcFunctionName = sourceFcFunctionName;
+			}
+
+			public String getTargetFcServiceName() {
+				return this.targetFcServiceName;
+			}
+
+			public void setTargetFcServiceName(String targetFcServiceName) {
+				this.targetFcServiceName = targetFcServiceName;
+			}
+
+			public String getSourceStreamName() {
+				return this.sourceStreamName;
+			}
+
+			public void setSourceStreamName(String sourceStreamName) {
+				this.sourceStreamName = sourceStreamName;
+			}
+
+			public String getSourceFcServiceName() {
+				return this.sourceFcServiceName;
+			}
+
+			public void setSourceFcServiceName(String sourceFcServiceName) {
+				this.sourceFcServiceName = sourceFcServiceName;
 			}
 
 			public String getQos() {

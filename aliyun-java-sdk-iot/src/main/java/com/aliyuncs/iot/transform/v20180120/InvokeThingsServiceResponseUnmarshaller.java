@@ -23,9 +23,9 @@ public class InvokeThingsServiceResponseUnmarshaller {
 	public static InvokeThingsServiceResponse unmarshall(InvokeThingsServiceResponse invokeThingsServiceResponse, UnmarshallerContext _ctx) {
 		
 		invokeThingsServiceResponse.setRequestId(_ctx.stringValue("InvokeThingsServiceResponse.RequestId"));
-		invokeThingsServiceResponse.setSuccess(_ctx.booleanValue("InvokeThingsServiceResponse.Success"));
-		invokeThingsServiceResponse.setErrorMessage(_ctx.stringValue("InvokeThingsServiceResponse.ErrorMessage"));
 		invokeThingsServiceResponse.setCode(_ctx.stringValue("InvokeThingsServiceResponse.Code"));
+		invokeThingsServiceResponse.setErrorMessage(_ctx.stringValue("InvokeThingsServiceResponse.ErrorMessage"));
+		invokeThingsServiceResponse.setSuccess(_ctx.booleanValue("InvokeThingsServiceResponse.Success"));
 	 
 	 	return invokeThingsServiceResponse;
 	}

@@ -28,22 +28,22 @@ public class QueryDeviceDesiredPropertyResponseUnmarshaller {
 	public static QueryDeviceDesiredPropertyResponse unmarshall(QueryDeviceDesiredPropertyResponse queryDeviceDesiredPropertyResponse, UnmarshallerContext _ctx) {
 		
 		queryDeviceDesiredPropertyResponse.setRequestId(_ctx.stringValue("QueryDeviceDesiredPropertyResponse.RequestId"));
-		queryDeviceDesiredPropertyResponse.setSuccess(_ctx.booleanValue("QueryDeviceDesiredPropertyResponse.Success"));
 		queryDeviceDesiredPropertyResponse.setCode(_ctx.stringValue("QueryDeviceDesiredPropertyResponse.Code"));
 		queryDeviceDesiredPropertyResponse.setErrorMessage(_ctx.stringValue("QueryDeviceDesiredPropertyResponse.ErrorMessage"));
+		queryDeviceDesiredPropertyResponse.setSuccess(_ctx.booleanValue("QueryDeviceDesiredPropertyResponse.Success"));
 
 		Data data = new Data();
 
 		List<DesiredPropertyInfo> list = new ArrayList<DesiredPropertyInfo>();
 		for (int i = 0; i < _ctx.lengthValue("QueryDeviceDesiredPropertyResponse.Data.List.Length"); i++) {
 			DesiredPropertyInfo desiredPropertyInfo = new DesiredPropertyInfo();
-			desiredPropertyInfo.setUnit(_ctx.stringValue("QueryDeviceDesiredPropertyResponse.Data.List["+ i +"].Unit"));
-			desiredPropertyInfo.setIdentifier(_ctx.stringValue("QueryDeviceDesiredPropertyResponse.Data.List["+ i +"].Identifier"));
-			desiredPropertyInfo.setDataType(_ctx.stringValue("QueryDeviceDesiredPropertyResponse.Data.List["+ i +"].DataType"));
 			desiredPropertyInfo.setTime(_ctx.stringValue("QueryDeviceDesiredPropertyResponse.Data.List["+ i +"].Time"));
 			desiredPropertyInfo.setValue(_ctx.stringValue("QueryDeviceDesiredPropertyResponse.Data.List["+ i +"].Value"));
-			desiredPropertyInfo.setName(_ctx.stringValue("QueryDeviceDesiredPropertyResponse.Data.List["+ i +"].Name"));
+			desiredPropertyInfo.setDataType(_ctx.stringValue("QueryDeviceDesiredPropertyResponse.Data.List["+ i +"].DataType"));
 			desiredPropertyInfo.setVersion(_ctx.longValue("QueryDeviceDesiredPropertyResponse.Data.List["+ i +"].Version"));
+			desiredPropertyInfo.setUnit(_ctx.stringValue("QueryDeviceDesiredPropertyResponse.Data.List["+ i +"].Unit"));
+			desiredPropertyInfo.setIdentifier(_ctx.stringValue("QueryDeviceDesiredPropertyResponse.Data.List["+ i +"].Identifier"));
+			desiredPropertyInfo.setName(_ctx.stringValue("QueryDeviceDesiredPropertyResponse.Data.List["+ i +"].Name"));
 
 			list.add(desiredPropertyInfo);
 		}

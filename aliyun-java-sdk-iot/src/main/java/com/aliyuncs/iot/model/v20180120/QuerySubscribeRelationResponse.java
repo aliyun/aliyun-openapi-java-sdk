@@ -25,83 +25,43 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QuerySubscribeRelationResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
-	private String code;
-
-	private String errorMessage;
-
-	private String productKey;
-
 	private String type;
 
-	private Boolean deviceDataFlag;
-
-	private Boolean deviceLifeCycleFlag;
-
-	private Boolean deviceStatusChangeFlag;
-
-	private Boolean deviceTopoLifeCycleFlag;
-
-	private Boolean foundDeviceListFlag;
-
-	private Boolean otaEventFlag;
-
-	private Boolean thingHistoryFlag;
-
-	private String mnsConfiguration;
+	private String errorMessage;
 
 	private Boolean deviceTagFlag;
 
 	private Boolean otaVersionFlag;
 
-	private Boolean otaJobFlag;
+	private Boolean deviceDataFlag;
+
+	private Boolean success;
 
 	private String subscribeFlags;
 
+	private Boolean otaEventFlag;
+
+	private Boolean thingHistoryFlag;
+
+	private Boolean deviceStatusChangeFlag;
+
+	private String productKey;
+
+	private String requestId;
+
+	private String mnsConfiguration;
+
+	private Boolean deviceTopoLifeCycleFlag;
+
+	private Boolean deviceLifeCycleFlag;
+
+	private String code;
+
+	private Boolean foundDeviceListFlag;
+
+	private Boolean otaJobFlag;
+
 	private List<String> consumerGroupIds;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
-	public String getProductKey() {
-		return this.productKey;
-	}
-
-	public void setProductKey(String productKey) {
-		this.productKey = productKey;
-	}
 
 	public String getType() {
 		return this.type;
@@ -111,68 +71,12 @@ public class QuerySubscribeRelationResponse extends AcsResponse {
 		this.type = type;
 	}
 
-	public Boolean getDeviceDataFlag() {
-		return this.deviceDataFlag;
+	public String getErrorMessage() {
+		return this.errorMessage;
 	}
 
-	public void setDeviceDataFlag(Boolean deviceDataFlag) {
-		this.deviceDataFlag = deviceDataFlag;
-	}
-
-	public Boolean getDeviceLifeCycleFlag() {
-		return this.deviceLifeCycleFlag;
-	}
-
-	public void setDeviceLifeCycleFlag(Boolean deviceLifeCycleFlag) {
-		this.deviceLifeCycleFlag = deviceLifeCycleFlag;
-	}
-
-	public Boolean getDeviceStatusChangeFlag() {
-		return this.deviceStatusChangeFlag;
-	}
-
-	public void setDeviceStatusChangeFlag(Boolean deviceStatusChangeFlag) {
-		this.deviceStatusChangeFlag = deviceStatusChangeFlag;
-	}
-
-	public Boolean getDeviceTopoLifeCycleFlag() {
-		return this.deviceTopoLifeCycleFlag;
-	}
-
-	public void setDeviceTopoLifeCycleFlag(Boolean deviceTopoLifeCycleFlag) {
-		this.deviceTopoLifeCycleFlag = deviceTopoLifeCycleFlag;
-	}
-
-	public Boolean getFoundDeviceListFlag() {
-		return this.foundDeviceListFlag;
-	}
-
-	public void setFoundDeviceListFlag(Boolean foundDeviceListFlag) {
-		this.foundDeviceListFlag = foundDeviceListFlag;
-	}
-
-	public Boolean getOtaEventFlag() {
-		return this.otaEventFlag;
-	}
-
-	public void setOtaEventFlag(Boolean otaEventFlag) {
-		this.otaEventFlag = otaEventFlag;
-	}
-
-	public Boolean getThingHistoryFlag() {
-		return this.thingHistoryFlag;
-	}
-
-	public void setThingHistoryFlag(Boolean thingHistoryFlag) {
-		this.thingHistoryFlag = thingHistoryFlag;
-	}
-
-	public String getMnsConfiguration() {
-		return this.mnsConfiguration;
-	}
-
-	public void setMnsConfiguration(String mnsConfiguration) {
-		this.mnsConfiguration = mnsConfiguration;
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
 	public Boolean getDeviceTagFlag() {
@@ -191,12 +95,20 @@ public class QuerySubscribeRelationResponse extends AcsResponse {
 		this.otaVersionFlag = otaVersionFlag;
 	}
 
-	public Boolean getOtaJobFlag() {
-		return this.otaJobFlag;
+	public Boolean getDeviceDataFlag() {
+		return this.deviceDataFlag;
 	}
 
-	public void setOtaJobFlag(Boolean otaJobFlag) {
-		this.otaJobFlag = otaJobFlag;
+	public void setDeviceDataFlag(Boolean deviceDataFlag) {
+		this.deviceDataFlag = deviceDataFlag;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public String getSubscribeFlags() {
@@ -205,6 +117,94 @@ public class QuerySubscribeRelationResponse extends AcsResponse {
 
 	public void setSubscribeFlags(String subscribeFlags) {
 		this.subscribeFlags = subscribeFlags;
+	}
+
+	public Boolean getOtaEventFlag() {
+		return this.otaEventFlag;
+	}
+
+	public void setOtaEventFlag(Boolean otaEventFlag) {
+		this.otaEventFlag = otaEventFlag;
+	}
+
+	public Boolean getThingHistoryFlag() {
+		return this.thingHistoryFlag;
+	}
+
+	public void setThingHistoryFlag(Boolean thingHistoryFlag) {
+		this.thingHistoryFlag = thingHistoryFlag;
+	}
+
+	public Boolean getDeviceStatusChangeFlag() {
+		return this.deviceStatusChangeFlag;
+	}
+
+	public void setDeviceStatusChangeFlag(Boolean deviceStatusChangeFlag) {
+		this.deviceStatusChangeFlag = deviceStatusChangeFlag;
+	}
+
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getMnsConfiguration() {
+		return this.mnsConfiguration;
+	}
+
+	public void setMnsConfiguration(String mnsConfiguration) {
+		this.mnsConfiguration = mnsConfiguration;
+	}
+
+	public Boolean getDeviceTopoLifeCycleFlag() {
+		return this.deviceTopoLifeCycleFlag;
+	}
+
+	public void setDeviceTopoLifeCycleFlag(Boolean deviceTopoLifeCycleFlag) {
+		this.deviceTopoLifeCycleFlag = deviceTopoLifeCycleFlag;
+	}
+
+	public Boolean getDeviceLifeCycleFlag() {
+		return this.deviceLifeCycleFlag;
+	}
+
+	public void setDeviceLifeCycleFlag(Boolean deviceLifeCycleFlag) {
+		this.deviceLifeCycleFlag = deviceLifeCycleFlag;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getFoundDeviceListFlag() {
+		return this.foundDeviceListFlag;
+	}
+
+	public void setFoundDeviceListFlag(Boolean foundDeviceListFlag) {
+		this.foundDeviceListFlag = foundDeviceListFlag;
+	}
+
+	public Boolean getOtaJobFlag() {
+		return this.otaJobFlag;
+	}
+
+	public void setOtaJobFlag(Boolean otaJobFlag) {
+		this.otaJobFlag = otaJobFlag;
 	}
 
 	public List<String> getConsumerGroupIds() {

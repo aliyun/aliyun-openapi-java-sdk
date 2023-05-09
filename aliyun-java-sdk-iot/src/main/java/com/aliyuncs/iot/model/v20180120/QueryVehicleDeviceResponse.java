@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryVehicleDeviceResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -66,6 +50,22 @@ public class QueryVehicleDeviceResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -76,43 +76,19 @@ public class QueryVehicleDeviceResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String iotId;
-
 		private String productKey;
-
-		private String deviceName;
-
-		private String manufacturer;
-
-		private String deviceModel;
-
-		private String deviceId;
-
-		private String status;
-
-		private String authCode;
-
-		private String province;
-
-		private String city;
-
-		private String vehicleColour;
-
-		private String vehicleNumber;
-
-		private Long createTime;
 
 		private Long modifiedTime;
 
-		private Long registerTime;
+		private String deviceName;
 
-		public String getIotId() {
-			return this.iotId;
-		}
+		private String protocol;
 
-		public void setIotId(String iotId) {
-			this.iotId = iotId;
-		}
+		private Long createTime;
+
+		private String iotId;
+
+		private JtProtocolDeviceData jtProtocolDeviceData;
 
 		public String getProductKey() {
 			return this.productKey;
@@ -120,94 +96,6 @@ public class QueryVehicleDeviceResponse extends AcsResponse {
 
 		public void setProductKey(String productKey) {
 			this.productKey = productKey;
-		}
-
-		public String getDeviceName() {
-			return this.deviceName;
-		}
-
-		public void setDeviceName(String deviceName) {
-			this.deviceName = deviceName;
-		}
-
-		public String getManufacturer() {
-			return this.manufacturer;
-		}
-
-		public void setManufacturer(String manufacturer) {
-			this.manufacturer = manufacturer;
-		}
-
-		public String getDeviceModel() {
-			return this.deviceModel;
-		}
-
-		public void setDeviceModel(String deviceModel) {
-			this.deviceModel = deviceModel;
-		}
-
-		public String getDeviceId() {
-			return this.deviceId;
-		}
-
-		public void setDeviceId(String deviceId) {
-			this.deviceId = deviceId;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getAuthCode() {
-			return this.authCode;
-		}
-
-		public void setAuthCode(String authCode) {
-			this.authCode = authCode;
-		}
-
-		public String getProvince() {
-			return this.province;
-		}
-
-		public void setProvince(String province) {
-			this.province = province;
-		}
-
-		public String getCity() {
-			return this.city;
-		}
-
-		public void setCity(String city) {
-			this.city = city;
-		}
-
-		public String getVehicleColour() {
-			return this.vehicleColour;
-		}
-
-		public void setVehicleColour(String vehicleColour) {
-			this.vehicleColour = vehicleColour;
-		}
-
-		public String getVehicleNumber() {
-			return this.vehicleNumber;
-		}
-
-		public void setVehicleNumber(String vehicleNumber) {
-			this.vehicleNumber = vehicleNumber;
-		}
-
-		public Long getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
 		}
 
 		public Long getModifiedTime() {
@@ -218,12 +106,147 @@ public class QueryVehicleDeviceResponse extends AcsResponse {
 			this.modifiedTime = modifiedTime;
 		}
 
-		public Long getRegisterTime() {
-			return this.registerTime;
+		public String getDeviceName() {
+			return this.deviceName;
 		}
 
-		public void setRegisterTime(Long registerTime) {
-			this.registerTime = registerTime;
+		public void setDeviceName(String deviceName) {
+			this.deviceName = deviceName;
+		}
+
+		public String getBizProtocol() {
+			return this.protocol;
+		}
+
+		public void setBizProtocol(String protocol) {
+			this.protocol = protocol;
+		}
+
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getIotId() {
+			return this.iotId;
+		}
+
+		public void setIotId(String iotId) {
+			this.iotId = iotId;
+		}
+
+		public JtProtocolDeviceData getJtProtocolDeviceData() {
+			return this.jtProtocolDeviceData;
+		}
+
+		public void setJtProtocolDeviceData(JtProtocolDeviceData jtProtocolDeviceData) {
+			this.jtProtocolDeviceData = jtProtocolDeviceData;
+		}
+
+		public static class JtProtocolDeviceData {
+
+			private String status;
+
+			private String registerTime;
+
+			private String authCode;
+
+			private String vehicleColour;
+
+			private String deviceId;
+
+			private String vehicleNumber;
+
+			private String city;
+
+			private String deviceModel;
+
+			private String manufacturer;
+
+			private String province;
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public String getRegisterTime() {
+				return this.registerTime;
+			}
+
+			public void setRegisterTime(String registerTime) {
+				this.registerTime = registerTime;
+			}
+
+			public String getAuthCode() {
+				return this.authCode;
+			}
+
+			public void setAuthCode(String authCode) {
+				this.authCode = authCode;
+			}
+
+			public String getVehicleColour() {
+				return this.vehicleColour;
+			}
+
+			public void setVehicleColour(String vehicleColour) {
+				this.vehicleColour = vehicleColour;
+			}
+
+			public String getDeviceId() {
+				return this.deviceId;
+			}
+
+			public void setDeviceId(String deviceId) {
+				this.deviceId = deviceId;
+			}
+
+			public String getVehicleNumber() {
+				return this.vehicleNumber;
+			}
+
+			public void setVehicleNumber(String vehicleNumber) {
+				this.vehicleNumber = vehicleNumber;
+			}
+
+			public String getCity() {
+				return this.city;
+			}
+
+			public void setCity(String city) {
+				this.city = city;
+			}
+
+			public String getDeviceModel() {
+				return this.deviceModel;
+			}
+
+			public void setDeviceModel(String deviceModel) {
+				this.deviceModel = deviceModel;
+			}
+
+			public String getManufacturer() {
+				return this.manufacturer;
+			}
+
+			public void setManufacturer(String manufacturer) {
+				this.manufacturer = manufacturer;
+			}
+
+			public String getProvince() {
+				return this.province;
+			}
+
+			public void setProvince(String province) {
+				this.province = province;
+			}
 		}
 	}
 

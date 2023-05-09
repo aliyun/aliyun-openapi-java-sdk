@@ -29,32 +29,32 @@ public class QueryEdgeInstanceChannelResponseUnmarshaller {
 	public static QueryEdgeInstanceChannelResponse unmarshall(QueryEdgeInstanceChannelResponse queryEdgeInstanceChannelResponse, UnmarshallerContext _ctx) {
 		
 		queryEdgeInstanceChannelResponse.setRequestId(_ctx.stringValue("QueryEdgeInstanceChannelResponse.RequestId"));
-		queryEdgeInstanceChannelResponse.setSuccess(_ctx.booleanValue("QueryEdgeInstanceChannelResponse.Success"));
 		queryEdgeInstanceChannelResponse.setCode(_ctx.stringValue("QueryEdgeInstanceChannelResponse.Code"));
 		queryEdgeInstanceChannelResponse.setErrorMessage(_ctx.stringValue("QueryEdgeInstanceChannelResponse.ErrorMessage"));
+		queryEdgeInstanceChannelResponse.setSuccess(_ctx.booleanValue("QueryEdgeInstanceChannelResponse.Success"));
 
 		Data data = new Data();
-		data.setTotal(_ctx.integerValue("QueryEdgeInstanceChannelResponse.Data.Total"));
-		data.setPageSize(_ctx.integerValue("QueryEdgeInstanceChannelResponse.Data.PageSize"));
 		data.setCurrentPage(_ctx.integerValue("QueryEdgeInstanceChannelResponse.Data.CurrentPage"));
+		data.setPageSize(_ctx.integerValue("QueryEdgeInstanceChannelResponse.Data.PageSize"));
+		data.setTotal(_ctx.integerValue("QueryEdgeInstanceChannelResponse.Data.Total"));
 
 		List<Channel> channelList = new ArrayList<Channel>();
 		for (int i = 0; i < _ctx.lengthValue("QueryEdgeInstanceChannelResponse.Data.ChannelList.Length"); i++) {
 			Channel channel = new Channel();
-			channel.setChannelId(_ctx.stringValue("QueryEdgeInstanceChannelResponse.Data.ChannelList["+ i +"].ChannelId"));
+			channel.setGmtCreateTimestamp(_ctx.longValue("QueryEdgeInstanceChannelResponse.Data.ChannelList["+ i +"].GmtCreateTimestamp"));
 			channel.setChannelName(_ctx.stringValue("QueryEdgeInstanceChannelResponse.Data.ChannelList["+ i +"].ChannelName"));
+			channel.setGmtModifiedTimestamp(_ctx.longValue("QueryEdgeInstanceChannelResponse.Data.ChannelList["+ i +"].GmtModifiedTimestamp"));
+			channel.setChannelId(_ctx.stringValue("QueryEdgeInstanceChannelResponse.Data.ChannelList["+ i +"].ChannelId"));
 			channel.setGmtCreate(_ctx.stringValue("QueryEdgeInstanceChannelResponse.Data.ChannelList["+ i +"].GmtCreate"));
 			channel.setGmtModified(_ctx.stringValue("QueryEdgeInstanceChannelResponse.Data.ChannelList["+ i +"].GmtModified"));
-			channel.setGmtCreateTimestamp(_ctx.longValue("QueryEdgeInstanceChannelResponse.Data.ChannelList["+ i +"].GmtCreateTimestamp"));
-			channel.setGmtModifiedTimestamp(_ctx.longValue("QueryEdgeInstanceChannelResponse.Data.ChannelList["+ i +"].GmtModifiedTimestamp"));
 
 			List<Config> configList = new ArrayList<Config>();
 			for (int j = 0; j < _ctx.lengthValue("QueryEdgeInstanceChannelResponse.Data.ChannelList["+ i +"].ConfigList.Length"); j++) {
 				Config config = new Config();
+				config.setKey(_ctx.stringValue("QueryEdgeInstanceChannelResponse.Data.ChannelList["+ i +"].ConfigList["+ j +"].Key"));
 				config.setConfigId(_ctx.stringValue("QueryEdgeInstanceChannelResponse.Data.ChannelList["+ i +"].ConfigList["+ j +"].ConfigId"));
 				config.setFormat(_ctx.stringValue("QueryEdgeInstanceChannelResponse.Data.ChannelList["+ i +"].ConfigList["+ j +"].Format"));
 				config.setContent(_ctx.stringValue("QueryEdgeInstanceChannelResponse.Data.ChannelList["+ i +"].ConfigList["+ j +"].Content"));
-				config.setKey(_ctx.stringValue("QueryEdgeInstanceChannelResponse.Data.ChannelList["+ i +"].ConfigList["+ j +"].Key"));
 
 				configList.add(config);
 			}

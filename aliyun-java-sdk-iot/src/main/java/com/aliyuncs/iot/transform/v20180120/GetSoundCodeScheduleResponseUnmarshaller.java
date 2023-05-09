@@ -24,21 +24,21 @@ public class GetSoundCodeScheduleResponseUnmarshaller {
 	public static GetSoundCodeScheduleResponse unmarshall(GetSoundCodeScheduleResponse getSoundCodeScheduleResponse, UnmarshallerContext _ctx) {
 		
 		getSoundCodeScheduleResponse.setRequestId(_ctx.stringValue("GetSoundCodeScheduleResponse.RequestId"));
-		getSoundCodeScheduleResponse.setSuccess(_ctx.booleanValue("GetSoundCodeScheduleResponse.Success"));
 		getSoundCodeScheduleResponse.setCode(_ctx.stringValue("GetSoundCodeScheduleResponse.Code"));
 		getSoundCodeScheduleResponse.setErrorMessage(_ctx.stringValue("GetSoundCodeScheduleResponse.ErrorMessage"));
+		getSoundCodeScheduleResponse.setSuccess(_ctx.booleanValue("GetSoundCodeScheduleResponse.Success"));
 
 		Data data = new Data();
-		data.setScheduleCode(_ctx.stringValue("GetSoundCodeScheduleResponse.Data.ScheduleCode"));
-		data.setName(_ctx.stringValue("GetSoundCodeScheduleResponse.Data.Name"));
-		data.setDescription(_ctx.stringValue("GetSoundCodeScheduleResponse.Data.Description"));
-		data.setGmtCreate(_ctx.longValue("GetSoundCodeScheduleResponse.Data.GmtCreate"));
+		data.setOpenType(_ctx.stringValue("GetSoundCodeScheduleResponse.Data.OpenType"));
+		data.setEndTime(_ctx.stringValue("GetSoundCodeScheduleResponse.Data.EndTime"));
 		data.setStatus(_ctx.stringValue("GetSoundCodeScheduleResponse.Data.Status"));
 		data.setStartTime(_ctx.stringValue("GetSoundCodeScheduleResponse.Data.StartTime"));
-		data.setEndTime(_ctx.stringValue("GetSoundCodeScheduleResponse.Data.EndTime"));
-		data.setStartDate(_ctx.stringValue("GetSoundCodeScheduleResponse.Data.StartDate"));
 		data.setEndDate(_ctx.stringValue("GetSoundCodeScheduleResponse.Data.EndDate"));
-		data.setOpenType(_ctx.stringValue("GetSoundCodeScheduleResponse.Data.OpenType"));
+		data.setDescription(_ctx.stringValue("GetSoundCodeScheduleResponse.Data.Description"));
+		data.setScheduleCode(_ctx.stringValue("GetSoundCodeScheduleResponse.Data.ScheduleCode"));
+		data.setGmtCreate(_ctx.longValue("GetSoundCodeScheduleResponse.Data.GmtCreate"));
+		data.setStartDate(_ctx.stringValue("GetSoundCodeScheduleResponse.Data.StartDate"));
+		data.setName(_ctx.stringValue("GetSoundCodeScheduleResponse.Data.Name"));
 		getSoundCodeScheduleResponse.setData(data);
 	 
 	 	return getSoundCodeScheduleResponse;

@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryBatchRegisterDeviceStatusResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class QueryBatchRegisterDeviceStatusResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -79,9 +79,11 @@ public class QueryBatchRegisterDeviceStatusResponse extends AcsResponse {
 
 		private String status;
 
-		private List<String> validList;
+		private List<InvalidDetailListItem> invalidDetailList;
 
 		private List<String> invalidList;
+
+		private List<String> validList;
 
 		public String getStatus() {
 			return this.status;
@@ -89,6 +91,22 @@ public class QueryBatchRegisterDeviceStatusResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public List<InvalidDetailListItem> getInvalidDetailList() {
+			return this.invalidDetailList;
+		}
+
+		public void setInvalidDetailList(List<InvalidDetailListItem> invalidDetailList) {
+			this.invalidDetailList = invalidDetailList;
+		}
+
+		public List<String> getInvalidList() {
+			return this.invalidList;
+		}
+
+		public void setInvalidList(List<String> invalidList) {
+			this.invalidList = invalidList;
 		}
 
 		public List<String> getValidList() {
@@ -99,12 +117,37 @@ public class QueryBatchRegisterDeviceStatusResponse extends AcsResponse {
 			this.validList = validList;
 		}
 
-		public List<String> getInvalidList() {
-			return this.invalidList;
-		}
+		public static class InvalidDetailListItem {
 
-		public void setInvalidList(List<String> invalidList) {
-			this.invalidList = invalidList;
+			private String errorMsg;
+
+			private String nickName;
+
+			private String deviceName;
+
+			public String getErrorMsg() {
+				return this.errorMsg;
+			}
+
+			public void setErrorMsg(String errorMsg) {
+				this.errorMsg = errorMsg;
+			}
+
+			public String getNickName() {
+				return this.nickName;
+			}
+
+			public void setNickName(String nickName) {
+				this.nickName = nickName;
+			}
+
+			public String getDeviceName() {
+				return this.deviceName;
+			}
+
+			public void setDeviceName(String deviceName) {
+				this.deviceName = deviceName;
+			}
 		}
 	}
 

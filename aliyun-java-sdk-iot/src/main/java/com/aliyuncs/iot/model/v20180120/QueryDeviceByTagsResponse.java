@@ -27,19 +27,19 @@ public class QueryDeviceByTagsResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String errorMessage;
+
 	private Boolean success;
 
 	private String code;
 
-	private String errorMessage;
-
-	private Integer page;
-
 	private Integer pageSize;
+
+	private Integer total;
 
 	private Integer pageCount;
 
-	private Integer total;
+	private Integer page;
 
 	private List<SimpleDeviceInfo> data;
 
@@ -49,6 +49,14 @@ public class QueryDeviceByTagsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
 	public Boolean getSuccess() {
@@ -67,28 +75,20 @@ public class QueryDeviceByTagsResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
-	public Integer getPage() {
-		return this.page;
-	}
-
-	public void setPage(Integer page) {
-		this.page = page;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public Integer getTotal() {
+		return this.total;
+	}
+
+	public void setTotal(Integer total) {
+		this.total = total;
 	}
 
 	public Integer getPageCount() {
@@ -99,12 +99,12 @@ public class QueryDeviceByTagsResponse extends AcsResponse {
 		this.pageCount = pageCount;
 	}
 
-	public Integer getTotal() {
-		return this.total;
+	public Integer getPage() {
+		return this.page;
 	}
 
-	public void setTotal(Integer total) {
-		this.total = total;
+	public void setPage(Integer page) {
+		this.page = page;
 	}
 
 	public List<SimpleDeviceInfo> getData() {
@@ -117,21 +117,13 @@ public class QueryDeviceByTagsResponse extends AcsResponse {
 
 	public static class SimpleDeviceInfo {
 
-		private String productName;
-
 		private String productKey;
+
+		private String productName;
 
 		private String deviceName;
 
 		private String iotId;
-
-		public String getProductName() {
-			return this.productName;
-		}
-
-		public void setProductName(String productName) {
-			this.productName = productName;
-		}
 
 		public String getProductKey() {
 			return this.productKey;
@@ -139,6 +131,14 @@ public class QueryDeviceByTagsResponse extends AcsResponse {
 
 		public void setProductKey(String productKey) {
 			this.productKey = productKey;
+		}
+
+		public String getProductName() {
+			return this.productName;
+		}
+
+		public void setProductName(String productName) {
+			this.productName = productName;
 		}
 
 		public String getDeviceName() {

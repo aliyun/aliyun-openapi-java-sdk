@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryDeviceServiceDataResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class QueryDeviceServiceDataResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -77,19 +77,11 @@ public class QueryDeviceServiceDataResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Long nextTime;
-
 		private Boolean nextValid;
 
+		private Long nextTime;
+
 		private List<ServiceInfo> list;
-
-		public Long getNextTime() {
-			return this.nextTime;
-		}
-
-		public void setNextTime(Long nextTime) {
-			this.nextTime = nextTime;
-		}
 
 		public Boolean getNextValid() {
 			return this.nextValid;
@@ -97,6 +89,14 @@ public class QueryDeviceServiceDataResponse extends AcsResponse {
 
 		public void setNextValid(Boolean nextValid) {
 			this.nextValid = nextValid;
+		}
+
+		public Long getNextTime() {
+			return this.nextTime;
+		}
+
+		public void setNextTime(Long nextTime) {
+			this.nextTime = nextTime;
 		}
 
 		public List<ServiceInfo> getList() {
@@ -109,23 +109,15 @@ public class QueryDeviceServiceDataResponse extends AcsResponse {
 
 		public static class ServiceInfo {
 
-			private String time;
-
 			private String identifier;
-
-			private String name;
-
-			private String inputData;
 
 			private String outputData;
 
-			public String getTime() {
-				return this.time;
-			}
+			private String time;
 
-			public void setTime(String time) {
-				this.time = time;
-			}
+			private String inputData;
+
+			private String name;
 
 			public String getIdentifier() {
 				return this.identifier;
@@ -135,12 +127,20 @@ public class QueryDeviceServiceDataResponse extends AcsResponse {
 				this.identifier = identifier;
 			}
 
-			public String getName() {
-				return this.name;
+			public String getOutputData() {
+				return this.outputData;
 			}
 
-			public void setName(String name) {
-				this.name = name;
+			public void setOutputData(String outputData) {
+				this.outputData = outputData;
+			}
+
+			public String getTime() {
+				return this.time;
+			}
+
+			public void setTime(String time) {
+				this.time = time;
 			}
 
 			public String getInputData() {
@@ -151,12 +151,12 @@ public class QueryDeviceServiceDataResponse extends AcsResponse {
 				this.inputData = inputData;
 			}
 
-			public String getOutputData() {
-				return this.outputData;
+			public String getName() {
+				return this.name;
 			}
 
-			public void setOutputData(String outputData) {
-				this.outputData = outputData;
+			public void setName(String name) {
+				this.name = name;
 			}
 		}
 	}

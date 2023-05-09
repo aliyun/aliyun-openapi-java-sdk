@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListThingTemplatesResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private List<CategoryInfo> data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class ListThingTemplatesResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public List<CategoryInfo> getData() {
 		return this.data;
 	}
@@ -77,17 +77,9 @@ public class ListThingTemplatesResponse extends AcsResponse {
 
 	public static class CategoryInfo {
 
-		private String categoryKey;
-
 		private String categoryName;
 
-		public String getCategoryKey() {
-			return this.categoryKey;
-		}
-
-		public void setCategoryKey(String categoryKey) {
-			this.categoryKey = categoryKey;
-		}
+		private String categoryKey;
 
 		public String getCategoryName() {
 			return this.categoryName;
@@ -95,6 +87,14 @@ public class ListThingTemplatesResponse extends AcsResponse {
 
 		public void setCategoryName(String categoryName) {
 			this.categoryName = categoryName;
+		}
+
+		public String getCategoryKey() {
+			return this.categoryKey;
+		}
+
+		public void setCategoryKey(String categoryKey) {
+			this.categoryKey = categoryKey;
 		}
 	}
 

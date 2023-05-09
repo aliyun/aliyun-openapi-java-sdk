@@ -23,9 +23,9 @@ public class UpdateOTAModuleResponseUnmarshaller {
 	public static UpdateOTAModuleResponse unmarshall(UpdateOTAModuleResponse updateOTAModuleResponse, UnmarshallerContext _ctx) {
 		
 		updateOTAModuleResponse.setRequestId(_ctx.stringValue("UpdateOTAModuleResponse.RequestId"));
-		updateOTAModuleResponse.setSuccess(_ctx.booleanValue("UpdateOTAModuleResponse.Success"));
 		updateOTAModuleResponse.setCode(_ctx.stringValue("UpdateOTAModuleResponse.Code"));
 		updateOTAModuleResponse.setErrorMessage(_ctx.stringValue("UpdateOTAModuleResponse.ErrorMessage"));
+		updateOTAModuleResponse.setSuccess(_ctx.booleanValue("UpdateOTAModuleResponse.Success"));
 	 
 	 	return updateOTAModuleResponse;
 	}

@@ -23,9 +23,9 @@ public class PublishThingModelResponseUnmarshaller {
 	public static PublishThingModelResponse unmarshall(PublishThingModelResponse publishThingModelResponse, UnmarshallerContext _ctx) {
 		
 		publishThingModelResponse.setRequestId(_ctx.stringValue("PublishThingModelResponse.RequestId"));
-		publishThingModelResponse.setSuccess(_ctx.booleanValue("PublishThingModelResponse.Success"));
 		publishThingModelResponse.setCode(_ctx.stringValue("PublishThingModelResponse.Code"));
 		publishThingModelResponse.setErrorMessage(_ctx.stringValue("PublishThingModelResponse.ErrorMessage"));
+		publishThingModelResponse.setSuccess(_ctx.booleanValue("PublishThingModelResponse.Success"));
 	 
 	 	return publishThingModelResponse;
 	}

@@ -28,9 +28,9 @@ public class QuerySpeechLicenseDeviceListResponseUnmarshaller {
 	public static QuerySpeechLicenseDeviceListResponse unmarshall(QuerySpeechLicenseDeviceListResponse querySpeechLicenseDeviceListResponse, UnmarshallerContext _ctx) {
 		
 		querySpeechLicenseDeviceListResponse.setRequestId(_ctx.stringValue("QuerySpeechLicenseDeviceListResponse.RequestId"));
-		querySpeechLicenseDeviceListResponse.setSuccess(_ctx.booleanValue("QuerySpeechLicenseDeviceListResponse.Success"));
 		querySpeechLicenseDeviceListResponse.setCode(_ctx.stringValue("QuerySpeechLicenseDeviceListResponse.Code"));
 		querySpeechLicenseDeviceListResponse.setErrorMessage(_ctx.stringValue("QuerySpeechLicenseDeviceListResponse.ErrorMessage"));
+		querySpeechLicenseDeviceListResponse.setSuccess(_ctx.booleanValue("QuerySpeechLicenseDeviceListResponse.Success"));
 
 		Data data = new Data();
 		data.setPageSize(_ctx.integerValue("QuerySpeechLicenseDeviceListResponse.Data.PageSize"));
@@ -40,14 +40,14 @@ public class QuerySpeechLicenseDeviceListResponseUnmarshaller {
 		List<Item> deviceList = new ArrayList<Item>();
 		for (int i = 0; i < _ctx.lengthValue("QuerySpeechLicenseDeviceListResponse.Data.DeviceList.Length"); i++) {
 			Item item = new Item();
-			item.setProductName(_ctx.stringValue("QuerySpeechLicenseDeviceListResponse.Data.DeviceList["+ i +"].ProductName"));
-			item.setProductKey(_ctx.stringValue("QuerySpeechLicenseDeviceListResponse.Data.DeviceList["+ i +"].ProductKey"));
-			item.setDeviceName(_ctx.stringValue("QuerySpeechLicenseDeviceListResponse.Data.DeviceList["+ i +"].DeviceName"));
 			item.setExpiryTime(_ctx.longValue("QuerySpeechLicenseDeviceListResponse.Data.DeviceList["+ i +"].ExpiryTime"));
-			item.setIotId(_ctx.stringValue("QuerySpeechLicenseDeviceListResponse.Data.DeviceList["+ i +"].IotId"));
+			item.setProductKey(_ctx.stringValue("QuerySpeechLicenseDeviceListResponse.Data.DeviceList["+ i +"].ProductKey"));
 			item.setLicenseStatus(_ctx.stringValue("QuerySpeechLicenseDeviceListResponse.Data.DeviceList["+ i +"].LicenseStatus"));
-			item.setDeviceStatus(_ctx.stringValue("QuerySpeechLicenseDeviceListResponse.Data.DeviceList["+ i +"].DeviceStatus"));
+			item.setProductName(_ctx.stringValue("QuerySpeechLicenseDeviceListResponse.Data.DeviceList["+ i +"].ProductName"));
+			item.setDeviceName(_ctx.stringValue("QuerySpeechLicenseDeviceListResponse.Data.DeviceList["+ i +"].DeviceName"));
 			item.setInSpecifiedGroup(_ctx.booleanValue("QuerySpeechLicenseDeviceListResponse.Data.DeviceList["+ i +"].InSpecifiedGroup"));
+			item.setDeviceStatus(_ctx.stringValue("QuerySpeechLicenseDeviceListResponse.Data.DeviceList["+ i +"].DeviceStatus"));
+			item.setIotId(_ctx.stringValue("QuerySpeechLicenseDeviceListResponse.Data.DeviceList["+ i +"].IotId"));
 
 			deviceList.add(item);
 		}

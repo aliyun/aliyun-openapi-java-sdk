@@ -27,20 +27,20 @@ public class ListParserDestinationResponseUnmarshaller {
 	public static ListParserDestinationResponse unmarshall(ListParserDestinationResponse listParserDestinationResponse, UnmarshallerContext _ctx) {
 		
 		listParserDestinationResponse.setRequestId(_ctx.stringValue("ListParserDestinationResponse.RequestId"));
-		listParserDestinationResponse.setSuccess(_ctx.booleanValue("ListParserDestinationResponse.Success"));
 		listParserDestinationResponse.setCode(_ctx.stringValue("ListParserDestinationResponse.Code"));
 		listParserDestinationResponse.setErrorMessage(_ctx.stringValue("ListParserDestinationResponse.ErrorMessage"));
+		listParserDestinationResponse.setSuccess(_ctx.booleanValue("ListParserDestinationResponse.Success"));
 
 		List<Destinations> data = new ArrayList<Destinations>();
 		for (int i = 0; i < _ctx.lengthValue("ListParserDestinationResponse.Data.Length"); i++) {
 			Destinations destinations = new Destinations();
-			destinations.setDestinationId(_ctx.longValue("ListParserDestinationResponse.Data["+ i +"].DestinationId"));
-			destinations.setName(_ctx.stringValue("ListParserDestinationResponse.Data["+ i +"].Name"));
 			destinations.setType(_ctx.stringValue("ListParserDestinationResponse.Data["+ i +"].Type"));
-			destinations.setConfiguration(_ctx.stringValue("ListParserDestinationResponse.Data["+ i +"].Configuration"));
-			destinations.setIsFailover(_ctx.booleanValue("ListParserDestinationResponse.Data["+ i +"].IsFailover"));
-			destinations.setUtcCreated(_ctx.stringValue("ListParserDestinationResponse.Data["+ i +"].UtcCreated"));
+			destinations.setDestinationId(_ctx.longValue("ListParserDestinationResponse.Data["+ i +"].DestinationId"));
 			destinations.setUtcModified(_ctx.stringValue("ListParserDestinationResponse.Data["+ i +"].UtcModified"));
+			destinations.setConfiguration(_ctx.stringValue("ListParserDestinationResponse.Data["+ i +"].Configuration"));
+			destinations.setName(_ctx.stringValue("ListParserDestinationResponse.Data["+ i +"].Name"));
+			destinations.setUtcCreated(_ctx.stringValue("ListParserDestinationResponse.Data["+ i +"].UtcCreated"));
+			destinations.setIsFailover(_ctx.booleanValue("ListParserDestinationResponse.Data["+ i +"].IsFailover"));
 
 			data.add(destinations);
 		}

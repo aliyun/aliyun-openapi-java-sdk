@@ -27,19 +27,19 @@ public class QueryDeviceByTagsResponseUnmarshaller {
 	public static QueryDeviceByTagsResponse unmarshall(QueryDeviceByTagsResponse queryDeviceByTagsResponse, UnmarshallerContext _ctx) {
 		
 		queryDeviceByTagsResponse.setRequestId(_ctx.stringValue("QueryDeviceByTagsResponse.RequestId"));
+		queryDeviceByTagsResponse.setErrorMessage(_ctx.stringValue("QueryDeviceByTagsResponse.ErrorMessage"));
 		queryDeviceByTagsResponse.setSuccess(_ctx.booleanValue("QueryDeviceByTagsResponse.Success"));
 		queryDeviceByTagsResponse.setCode(_ctx.stringValue("QueryDeviceByTagsResponse.Code"));
-		queryDeviceByTagsResponse.setErrorMessage(_ctx.stringValue("QueryDeviceByTagsResponse.ErrorMessage"));
-		queryDeviceByTagsResponse.setPage(_ctx.integerValue("QueryDeviceByTagsResponse.Page"));
 		queryDeviceByTagsResponse.setPageSize(_ctx.integerValue("QueryDeviceByTagsResponse.PageSize"));
-		queryDeviceByTagsResponse.setPageCount(_ctx.integerValue("QueryDeviceByTagsResponse.PageCount"));
 		queryDeviceByTagsResponse.setTotal(_ctx.integerValue("QueryDeviceByTagsResponse.Total"));
+		queryDeviceByTagsResponse.setPageCount(_ctx.integerValue("QueryDeviceByTagsResponse.PageCount"));
+		queryDeviceByTagsResponse.setPage(_ctx.integerValue("QueryDeviceByTagsResponse.Page"));
 
 		List<SimpleDeviceInfo> data = new ArrayList<SimpleDeviceInfo>();
 		for (int i = 0; i < _ctx.lengthValue("QueryDeviceByTagsResponse.Data.Length"); i++) {
 			SimpleDeviceInfo simpleDeviceInfo = new SimpleDeviceInfo();
-			simpleDeviceInfo.setProductName(_ctx.stringValue("QueryDeviceByTagsResponse.Data["+ i +"].ProductName"));
 			simpleDeviceInfo.setProductKey(_ctx.stringValue("QueryDeviceByTagsResponse.Data["+ i +"].ProductKey"));
+			simpleDeviceInfo.setProductName(_ctx.stringValue("QueryDeviceByTagsResponse.Data["+ i +"].ProductName"));
 			simpleDeviceInfo.setDeviceName(_ctx.stringValue("QueryDeviceByTagsResponse.Data["+ i +"].DeviceName"));
 			simpleDeviceInfo.setIotId(_ctx.stringValue("QueryDeviceByTagsResponse.Data["+ i +"].IotId"));
 

@@ -27,15 +27,15 @@ public class QueryDeviceGroupTagListResponseUnmarshaller {
 	public static QueryDeviceGroupTagListResponse unmarshall(QueryDeviceGroupTagListResponse queryDeviceGroupTagListResponse, UnmarshallerContext _ctx) {
 		
 		queryDeviceGroupTagListResponse.setRequestId(_ctx.stringValue("QueryDeviceGroupTagListResponse.RequestId"));
-		queryDeviceGroupTagListResponse.setSuccess(_ctx.booleanValue("QueryDeviceGroupTagListResponse.Success"));
 		queryDeviceGroupTagListResponse.setCode(_ctx.stringValue("QueryDeviceGroupTagListResponse.Code"));
 		queryDeviceGroupTagListResponse.setErrorMessage(_ctx.stringValue("QueryDeviceGroupTagListResponse.ErrorMessage"));
+		queryDeviceGroupTagListResponse.setSuccess(_ctx.booleanValue("QueryDeviceGroupTagListResponse.Success"));
 
 		List<GroupTagInfo> data = new ArrayList<GroupTagInfo>();
 		for (int i = 0; i < _ctx.lengthValue("QueryDeviceGroupTagListResponse.Data.Length"); i++) {
 			GroupTagInfo groupTagInfo = new GroupTagInfo();
-			groupTagInfo.setTagKey(_ctx.stringValue("QueryDeviceGroupTagListResponse.Data["+ i +"].TagKey"));
 			groupTagInfo.setTagValue(_ctx.stringValue("QueryDeviceGroupTagListResponse.Data["+ i +"].TagValue"));
+			groupTagInfo.setTagKey(_ctx.stringValue("QueryDeviceGroupTagListResponse.Data["+ i +"].TagKey"));
 
 			data.add(groupTagInfo);
 		}

@@ -23,10 +23,10 @@ public class CountSpeechBroadcastHourResponseUnmarshaller {
 	public static CountSpeechBroadcastHourResponse unmarshall(CountSpeechBroadcastHourResponse countSpeechBroadcastHourResponse, UnmarshallerContext _ctx) {
 		
 		countSpeechBroadcastHourResponse.setRequestId(_ctx.stringValue("CountSpeechBroadcastHourResponse.RequestId"));
-		countSpeechBroadcastHourResponse.setSuccess(_ctx.booleanValue("CountSpeechBroadcastHourResponse.Success"));
 		countSpeechBroadcastHourResponse.setCode(_ctx.stringValue("CountSpeechBroadcastHourResponse.Code"));
-		countSpeechBroadcastHourResponse.setErrorMessage(_ctx.stringValue("CountSpeechBroadcastHourResponse.ErrorMessage"));
 		countSpeechBroadcastHourResponse.setData(_ctx.integerValue("CountSpeechBroadcastHourResponse.Data"));
+		countSpeechBroadcastHourResponse.setErrorMessage(_ctx.stringValue("CountSpeechBroadcastHourResponse.ErrorMessage"));
+		countSpeechBroadcastHourResponse.setSuccess(_ctx.booleanValue("CountSpeechBroadcastHourResponse.Success"));
 	 
 	 	return countSpeechBroadcastHourResponse;
 	}

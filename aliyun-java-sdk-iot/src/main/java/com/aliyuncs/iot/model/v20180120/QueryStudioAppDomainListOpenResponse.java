@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryStudioAppDomainListOpenResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class QueryStudioAppDomainListOpenResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -79,11 +79,11 @@ public class QueryStudioAppDomainListOpenResponse extends AcsResponse {
 
 		private Integer pageNo;
 
+		private Integer totalPage;
+
 		private Integer pageSize;
 
 		private Integer total;
-
-		private Integer totalPage;
 
 		private List<DomainInfo> list;
 
@@ -93,6 +93,14 @@ public class QueryStudioAppDomainListOpenResponse extends AcsResponse {
 
 		public void setPageNo(Integer pageNo) {
 			this.pageNo = pageNo;
+		}
+
+		public Integer getTotalPage() {
+			return this.totalPage;
+		}
+
+		public void setTotalPage(Integer totalPage) {
+			this.totalPage = totalPage;
 		}
 
 		public Integer getPageSize() {
@@ -111,14 +119,6 @@ public class QueryStudioAppDomainListOpenResponse extends AcsResponse {
 			this.total = total;
 		}
 
-		public Integer getTotalPage() {
-			return this.totalPage;
-		}
-
-		public void setTotalPage(Integer totalPage) {
-			this.totalPage = totalPage;
-		}
-
 		public List<DomainInfo> getList() {
 			return this.list;
 		}
@@ -129,30 +129,38 @@ public class QueryStudioAppDomainListOpenResponse extends AcsResponse {
 
 		public static class DomainInfo {
 
-			private String tenantId;
+			private String host;
+
+			private String protocol;
 
 			private String appId;
 
 			private String projectId;
 
-			private String host;
-
-			private Integer id;
+			private String gmtCreate;
 
 			private String isBeian;
 
-			private String protocol;
-
-			private String gmtCreate;
-
 			private String gmtModified;
 
-			public String getTenantId() {
-				return this.tenantId;
+			private Integer id;
+
+			private String tenantId;
+
+			public String getHost() {
+				return this.host;
 			}
 
-			public void setTenantId(String tenantId) {
-				this.tenantId = tenantId;
+			public void setHost(String host) {
+				this.host = host;
+			}
+
+			public String getBizProtocol() {
+				return this.protocol;
+			}
+
+			public void setBizProtocol(String protocol) {
+				this.protocol = protocol;
 			}
 
 			public String getAppId() {
@@ -171,20 +179,12 @@ public class QueryStudioAppDomainListOpenResponse extends AcsResponse {
 				this.projectId = projectId;
 			}
 
-			public String getHost() {
-				return this.host;
+			public String getGmtCreate() {
+				return this.gmtCreate;
 			}
 
-			public void setHost(String host) {
-				this.host = host;
-			}
-
-			public Integer getId() {
-				return this.id;
-			}
-
-			public void setId(Integer id) {
-				this.id = id;
+			public void setGmtCreate(String gmtCreate) {
+				this.gmtCreate = gmtCreate;
 			}
 
 			public String getIsBeian() {
@@ -195,28 +195,28 @@ public class QueryStudioAppDomainListOpenResponse extends AcsResponse {
 				this.isBeian = isBeian;
 			}
 
-			public String getBizProtocol() {
-				return this.protocol;
-			}
-
-			public void setBizProtocol(String protocol) {
-				this.protocol = protocol;
-			}
-
-			public String getGmtCreate() {
-				return this.gmtCreate;
-			}
-
-			public void setGmtCreate(String gmtCreate) {
-				this.gmtCreate = gmtCreate;
-			}
-
 			public String getGmtModified() {
 				return this.gmtModified;
 			}
 
 			public void setGmtModified(String gmtModified) {
 				this.gmtModified = gmtModified;
+			}
+
+			public Integer getId() {
+				return this.id;
+			}
+
+			public void setId(Integer id) {
+				this.id = id;
+			}
+
+			public String getTenantId() {
+				return this.tenantId;
+			}
+
+			public void setTenantId(String tenantId) {
+				this.tenantId = tenantId;
 			}
 		}
 	}

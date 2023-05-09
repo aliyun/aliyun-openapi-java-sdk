@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateEdgeOssPreSignedAddressResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -66,6 +50,22 @@ public class CreateEdgeOssPreSignedAddressResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -76,17 +76,9 @@ public class CreateEdgeOssPreSignedAddressResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String ossPreSignedAddress;
-
 		private String ossAddress;
 
-		public String getOssPreSignedAddress() {
-			return this.ossPreSignedAddress;
-		}
-
-		public void setOssPreSignedAddress(String ossPreSignedAddress) {
-			this.ossPreSignedAddress = ossPreSignedAddress;
-		}
+		private String ossPreSignedAddress;
 
 		public String getOssAddress() {
 			return this.ossAddress;
@@ -94,6 +86,14 @@ public class CreateEdgeOssPreSignedAddressResponse extends AcsResponse {
 
 		public void setOssAddress(String ossAddress) {
 			this.ossAddress = ossAddress;
+		}
+
+		public String getOssPreSignedAddress() {
+			return this.ossPreSignedAddress;
+		}
+
+		public void setOssPreSignedAddress(String ossPreSignedAddress) {
+			this.ossPreSignedAddress = ossPreSignedAddress;
 		}
 	}
 

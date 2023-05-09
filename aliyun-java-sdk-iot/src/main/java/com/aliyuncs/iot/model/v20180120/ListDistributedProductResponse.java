@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListDistributedProductResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -65,6 +49,22 @@ public class ListDistributedProductResponse extends AcsResponse {
 
 	public void setErrorMessage(String errorMessage) {
 		this.errorMessage = errorMessage;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -99,42 +99,34 @@ public class ListDistributedProductResponse extends AcsResponse {
 
 		public static class Items {
 
-			private String sourceUid;
-
-			private String targetUid;
+			private String targetRegion;
 
 			private String productKey;
 
-			private String sourceInstanceId;
-
-			private String targetInstanceId;
-
-			private Long gmtCreate;
-
-			private String targetAliyunId;
-
-			private String sourceRegion;
-
-			private String targetRegion;
-
-			private String sourceInstanceName;
+			private String targetUid;
 
 			private String targetInstanceName;
 
-			public String getSourceUid() {
-				return this.sourceUid;
+			private String targetAliyunId;
+
+			private Long gmtCreate;
+
+			private String sourceInstanceName;
+
+			private String sourceUid;
+
+			private String targetInstanceId;
+
+			private String sourceRegion;
+
+			private String sourceInstanceId;
+
+			public String getTargetRegion() {
+				return this.targetRegion;
 			}
 
-			public void setSourceUid(String sourceUid) {
-				this.sourceUid = sourceUid;
-			}
-
-			public String getTargetUid() {
-				return this.targetUid;
-			}
-
-			public void setTargetUid(String targetUid) {
-				this.targetUid = targetUid;
+			public void setTargetRegion(String targetRegion) {
+				this.targetRegion = targetRegion;
 			}
 
 			public String getProductKey() {
@@ -145,28 +137,20 @@ public class ListDistributedProductResponse extends AcsResponse {
 				this.productKey = productKey;
 			}
 
-			public String getSourceInstanceId() {
-				return this.sourceInstanceId;
+			public String getTargetUid() {
+				return this.targetUid;
 			}
 
-			public void setSourceInstanceId(String sourceInstanceId) {
-				this.sourceInstanceId = sourceInstanceId;
+			public void setTargetUid(String targetUid) {
+				this.targetUid = targetUid;
 			}
 
-			public String getTargetInstanceId() {
-				return this.targetInstanceId;
+			public String getTargetInstanceName() {
+				return this.targetInstanceName;
 			}
 
-			public void setTargetInstanceId(String targetInstanceId) {
-				this.targetInstanceId = targetInstanceId;
-			}
-
-			public Long getGmtCreate() {
-				return this.gmtCreate;
-			}
-
-			public void setGmtCreate(Long gmtCreate) {
-				this.gmtCreate = gmtCreate;
+			public void setTargetInstanceName(String targetInstanceName) {
+				this.targetInstanceName = targetInstanceName;
 			}
 
 			public String getTargetAliyunId() {
@@ -177,20 +161,12 @@ public class ListDistributedProductResponse extends AcsResponse {
 				this.targetAliyunId = targetAliyunId;
 			}
 
-			public String getSourceRegion() {
-				return this.sourceRegion;
+			public Long getGmtCreate() {
+				return this.gmtCreate;
 			}
 
-			public void setSourceRegion(String sourceRegion) {
-				this.sourceRegion = sourceRegion;
-			}
-
-			public String getTargetRegion() {
-				return this.targetRegion;
-			}
-
-			public void setTargetRegion(String targetRegion) {
-				this.targetRegion = targetRegion;
+			public void setGmtCreate(Long gmtCreate) {
+				this.gmtCreate = gmtCreate;
 			}
 
 			public String getSourceInstanceName() {
@@ -201,12 +177,36 @@ public class ListDistributedProductResponse extends AcsResponse {
 				this.sourceInstanceName = sourceInstanceName;
 			}
 
-			public String getTargetInstanceName() {
-				return this.targetInstanceName;
+			public String getSourceUid() {
+				return this.sourceUid;
 			}
 
-			public void setTargetInstanceName(String targetInstanceName) {
-				this.targetInstanceName = targetInstanceName;
+			public void setSourceUid(String sourceUid) {
+				this.sourceUid = sourceUid;
+			}
+
+			public String getTargetInstanceId() {
+				return this.targetInstanceId;
+			}
+
+			public void setTargetInstanceId(String targetInstanceId) {
+				this.targetInstanceId = targetInstanceId;
+			}
+
+			public String getSourceRegion() {
+				return this.sourceRegion;
+			}
+
+			public void setSourceRegion(String sourceRegion) {
+				this.sourceRegion = sourceRegion;
+			}
+
+			public String getSourceInstanceId() {
+				return this.sourceInstanceId;
+			}
+
+			public void setSourceInstanceId(String sourceInstanceId) {
+				this.sourceInstanceId = sourceInstanceId;
 			}
 		}
 	}

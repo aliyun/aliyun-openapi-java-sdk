@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetParserResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -66,6 +50,22 @@ public class GetParserResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -76,47 +76,23 @@ public class GetParserResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Long parserId;
-
-		private String name;
-
-		private Long dataSourceId;
-
 		private String status;
-
-		private String utcCreated;
-
-		private String utcModified;
-
-		private String scriptDraft;
-
-		private String script;
 
 		private String description;
 
-		public Long getParserId() {
-			return this.parserId;
-		}
+		private String utcModified;
 
-		public void setParserId(Long parserId) {
-			this.parserId = parserId;
-		}
+		private Long dataSourceId;
 
-		public String getName() {
-			return this.name;
-		}
+		private String scriptDraft;
 
-		public void setName(String name) {
-			this.name = name;
-		}
+		private String utcCreated;
 
-		public Long getDataSourceId() {
-			return this.dataSourceId;
-		}
+		private String name;
 
-		public void setDataSourceId(Long dataSourceId) {
-			this.dataSourceId = dataSourceId;
-		}
+		private String script;
+
+		private Long parserId;
 
 		public String getStatus() {
 			return this.status;
@@ -126,12 +102,12 @@ public class GetParserResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getUtcCreated() {
-			return this.utcCreated;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setUtcCreated(String utcCreated) {
-			this.utcCreated = utcCreated;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getUtcModified() {
@@ -142,12 +118,36 @@ public class GetParserResponse extends AcsResponse {
 			this.utcModified = utcModified;
 		}
 
+		public Long getDataSourceId() {
+			return this.dataSourceId;
+		}
+
+		public void setDataSourceId(Long dataSourceId) {
+			this.dataSourceId = dataSourceId;
+		}
+
 		public String getScriptDraft() {
 			return this.scriptDraft;
 		}
 
 		public void setScriptDraft(String scriptDraft) {
 			this.scriptDraft = scriptDraft;
+		}
+
+		public String getUtcCreated() {
+			return this.utcCreated;
+		}
+
+		public void setUtcCreated(String utcCreated) {
+			this.utcCreated = utcCreated;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public String getScript() {
@@ -158,12 +158,12 @@ public class GetParserResponse extends AcsResponse {
 			this.script = script;
 		}
 
-		public String getDescription() {
-			return this.description;
+		public Long getParserId() {
+			return this.parserId;
 		}
 
-		public void setDescription(String description) {
-			this.description = description;
+		public void setParserId(Long parserId) {
+			this.parserId = parserId;
 		}
 	}
 

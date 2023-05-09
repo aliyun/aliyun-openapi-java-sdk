@@ -29,32 +29,32 @@ public class QuerySpeechListResponseUnmarshaller {
 	public static QuerySpeechListResponse unmarshall(QuerySpeechListResponse querySpeechListResponse, UnmarshallerContext _ctx) {
 		
 		querySpeechListResponse.setRequestId(_ctx.stringValue("QuerySpeechListResponse.RequestId"));
-		querySpeechListResponse.setSuccess(_ctx.booleanValue("QuerySpeechListResponse.Success"));
 		querySpeechListResponse.setCode(_ctx.stringValue("QuerySpeechListResponse.Code"));
 		querySpeechListResponse.setErrorMessage(_ctx.stringValue("QuerySpeechListResponse.ErrorMessage"));
+		querySpeechListResponse.setSuccess(_ctx.booleanValue("QuerySpeechListResponse.Success"));
 
 		Data data = new Data();
+		data.setPageSize(_ctx.integerValue("QuerySpeechListResponse.Data.PageSize"));
 		data.setTotal(_ctx.integerValue("QuerySpeechListResponse.Data.Total"));
 		data.setPageId(_ctx.integerValue("QuerySpeechListResponse.Data.PageId"));
-		data.setPageSize(_ctx.integerValue("QuerySpeechListResponse.Data.PageSize"));
 
 		List<Items> list = new ArrayList<Items>();
 		for (int i = 0; i < _ctx.lengthValue("QuerySpeechListResponse.Data.List.Length"); i++) {
 			Items items = new Items();
-			items.setSpeechCode(_ctx.stringValue("QuerySpeechListResponse.Data.List["+ i +"].SpeechCode"));
-			items.setBizCode(_ctx.stringValue("QuerySpeechListResponse.Data.List["+ i +"].BizCode"));
-			items.setText(_ctx.stringValue("QuerySpeechListResponse.Data.List["+ i +"].Text"));
 			items.setVoice(_ctx.stringValue("QuerySpeechListResponse.Data.List["+ i +"].Voice"));
+			items.setBizCode(_ctx.stringValue("QuerySpeechListResponse.Data.List["+ i +"].BizCode"));
+			items.setSpeechCode(_ctx.stringValue("QuerySpeechListResponse.Data.List["+ i +"].SpeechCode"));
 			items.setSpeechType(_ctx.stringValue("QuerySpeechListResponse.Data.List["+ i +"].SpeechType"));
+			items.setText(_ctx.stringValue("QuerySpeechListResponse.Data.List["+ i +"].Text"));
 			items.setAudioFormat(_ctx.stringValue("QuerySpeechListResponse.Data.List["+ i +"].AudioFormat"));
 
 			List<Items1> speechList = new ArrayList<Items1>();
 			for (int j = 0; j < _ctx.lengthValue("QuerySpeechListResponse.Data.List["+ i +"].SpeechList.Length"); j++) {
 				Items1 items1 = new Items1();
-				items1.setSpeechCode(_ctx.stringValue("QuerySpeechListResponse.Data.List["+ i +"].SpeechList["+ j +"].SpeechCode"));
-				items1.setBizCode(_ctx.stringValue("QuerySpeechListResponse.Data.List["+ i +"].SpeechList["+ j +"].BizCode"));
 				items1.setText(_ctx.stringValue("QuerySpeechListResponse.Data.List["+ i +"].SpeechList["+ j +"].Text"));
 				items1.setVoice(_ctx.stringValue("QuerySpeechListResponse.Data.List["+ i +"].SpeechList["+ j +"].Voice"));
+				items1.setBizCode(_ctx.stringValue("QuerySpeechListResponse.Data.List["+ i +"].SpeechList["+ j +"].BizCode"));
+				items1.setSpeechCode(_ctx.stringValue("QuerySpeechListResponse.Data.List["+ i +"].SpeechList["+ j +"].SpeechCode"));
 
 				speechList.add(items1);
 			}

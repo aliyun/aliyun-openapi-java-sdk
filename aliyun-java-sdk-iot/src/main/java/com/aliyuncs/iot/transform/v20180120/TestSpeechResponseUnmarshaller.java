@@ -26,9 +26,9 @@ public class TestSpeechResponseUnmarshaller {
 	public static TestSpeechResponse unmarshall(TestSpeechResponse testSpeechResponse, UnmarshallerContext _ctx) {
 		
 		testSpeechResponse.setRequestId(_ctx.stringValue("TestSpeechResponse.RequestId"));
-		testSpeechResponse.setSuccess(_ctx.booleanValue("TestSpeechResponse.Success"));
 		testSpeechResponse.setCode(_ctx.stringValue("TestSpeechResponse.Code"));
 		testSpeechResponse.setErrorMessage(_ctx.stringValue("TestSpeechResponse.ErrorMessage"));
+		testSpeechResponse.setSuccess(_ctx.booleanValue("TestSpeechResponse.Success"));
 
 		List<String> data = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("TestSpeechResponse.Data.Length"); i++) {

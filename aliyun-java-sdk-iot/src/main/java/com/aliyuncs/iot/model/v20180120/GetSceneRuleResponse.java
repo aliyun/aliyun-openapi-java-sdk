@@ -24,15 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetSceneRuleResponse extends AcsResponse {
 
-	private String requestId;
+	private String code;
 
-	private Boolean success;
+	private String requestId;
 
 	private String errorMessage;
 
-	private String code;
+	private Boolean success;
 
 	private Data data;
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,14 +48,6 @@ public class GetSceneRuleResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public String getErrorMessage() {
@@ -58,12 +58,12 @@ public class GetSceneRuleResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public String getCode() {
-		return this.code;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -76,17 +76,33 @@ public class GetSceneRuleResponse extends AcsResponse {
 
 	public static class Data {
 
+		private Integer ruleStatus;
+
+		private String ruleContent;
+
 		private Long gmtCreate;
 
 		private Long gmtModified;
 
-		private String ruleName;
-
-		private String ruleContent;
-
 		private String ruleDescription;
 
-		private Integer ruleStatus;
+		private String ruleName;
+
+		public Integer getRuleStatus() {
+			return this.ruleStatus;
+		}
+
+		public void setRuleStatus(Integer ruleStatus) {
+			this.ruleStatus = ruleStatus;
+		}
+
+		public String getRuleContent() {
+			return this.ruleContent;
+		}
+
+		public void setRuleContent(String ruleContent) {
+			this.ruleContent = ruleContent;
+		}
 
 		public Long getGmtCreate() {
 			return this.gmtCreate;
@@ -104,22 +120,6 @@ public class GetSceneRuleResponse extends AcsResponse {
 			this.gmtModified = gmtModified;
 		}
 
-		public String getRuleName() {
-			return this.ruleName;
-		}
-
-		public void setRuleName(String ruleName) {
-			this.ruleName = ruleName;
-		}
-
-		public String getRuleContent() {
-			return this.ruleContent;
-		}
-
-		public void setRuleContent(String ruleContent) {
-			this.ruleContent = ruleContent;
-		}
-
 		public String getRuleDescription() {
 			return this.ruleDescription;
 		}
@@ -128,12 +128,12 @@ public class GetSceneRuleResponse extends AcsResponse {
 			this.ruleDescription = ruleDescription;
 		}
 
-		public Integer getRuleStatus() {
-			return this.ruleStatus;
+		public String getRuleName() {
+			return this.ruleName;
 		}
 
-		public void setRuleStatus(Integer ruleStatus) {
-			this.ruleStatus = ruleStatus;
+		public void setRuleName(String ruleName) {
+			this.ruleName = ruleName;
 		}
 	}
 

@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GenerateFileUploadURLResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -66,6 +50,22 @@ public class GenerateFileUploadURLResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -78,13 +78,13 @@ public class GenerateFileUploadURLResponse extends AcsResponse {
 
 		private String key;
 
-		private String host;
-
-		private String policy;
-
 		private String ossAccessKeyId;
 
 		private String signature;
+
+		private String host;
+
+		private String policy;
 
 		private String objectStorage;
 
@@ -94,22 +94,6 @@ public class GenerateFileUploadURLResponse extends AcsResponse {
 
 		public void setKey(String key) {
 			this.key = key;
-		}
-
-		public String getHost() {
-			return this.host;
-		}
-
-		public void setHost(String host) {
-			this.host = host;
-		}
-
-		public String getPolicy() {
-			return this.policy;
-		}
-
-		public void setPolicy(String policy) {
-			this.policy = policy;
 		}
 
 		public String getOssAccessKeyId() {
@@ -126,6 +110,22 @@ public class GenerateFileUploadURLResponse extends AcsResponse {
 
 		public void setSignature(String signature) {
 			this.signature = signature;
+		}
+
+		public String getHost() {
+			return this.host;
+		}
+
+		public void setHost(String host) {
+			this.host = host;
+		}
+
+		public String getPolicy() {
+			return this.policy;
+		}
+
+		public void setPolicy(String policy) {
+			this.policy = policy;
 		}
 
 		public String getObjectStorage() {

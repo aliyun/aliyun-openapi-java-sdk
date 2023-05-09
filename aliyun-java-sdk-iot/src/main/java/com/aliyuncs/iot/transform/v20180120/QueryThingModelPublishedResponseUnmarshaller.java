@@ -24,10 +24,10 @@ public class QueryThingModelPublishedResponseUnmarshaller {
 	public static QueryThingModelPublishedResponse unmarshall(QueryThingModelPublishedResponse queryThingModelPublishedResponse, UnmarshallerContext _ctx) {
 		
 		queryThingModelPublishedResponse.setRequestId(_ctx.stringValue("QueryThingModelPublishedResponse.RequestId"));
-		queryThingModelPublishedResponse.setSuccess(_ctx.booleanValue("QueryThingModelPublishedResponse.Success"));
 		queryThingModelPublishedResponse.setCode(_ctx.stringValue("QueryThingModelPublishedResponse.Code"));
-		queryThingModelPublishedResponse.setErrorMessage(_ctx.stringValue("QueryThingModelPublishedResponse.ErrorMessage"));
 		queryThingModelPublishedResponse.setProductKey(_ctx.stringValue("QueryThingModelPublishedResponse.ProductKey"));
+		queryThingModelPublishedResponse.setErrorMessage(_ctx.stringValue("QueryThingModelPublishedResponse.ErrorMessage"));
+		queryThingModelPublishedResponse.setSuccess(_ctx.booleanValue("QueryThingModelPublishedResponse.Success"));
 
 		Data data = new Data();
 		data.setThingModelJson(_ctx.stringValue("QueryThingModelPublishedResponse.Data.ThingModelJson"));

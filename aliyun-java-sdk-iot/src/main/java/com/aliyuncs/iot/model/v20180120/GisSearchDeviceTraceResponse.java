@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GisSearchDeviceTraceResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class GisSearchDeviceTraceResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -77,19 +77,11 @@ public class GisSearchDeviceTraceResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String productKey;
-
 		private String deviceName;
 
+		private String productKey;
+
 		private List<PointsItem> points;
-
-		public String getProductKey() {
-			return this.productKey;
-		}
-
-		public void setProductKey(String productKey) {
-			this.productKey = productKey;
-		}
 
 		public String getDeviceName() {
 			return this.deviceName;
@@ -97,6 +89,14 @@ public class GisSearchDeviceTraceResponse extends AcsResponse {
 
 		public void setDeviceName(String deviceName) {
 			this.deviceName = deviceName;
+		}
+
+		public String getProductKey() {
+			return this.productKey;
+		}
+
+		public void setProductKey(String productKey) {
+			this.productKey = productKey;
 		}
 
 		public List<PointsItem> getPoints() {
@@ -109,17 +109,9 @@ public class GisSearchDeviceTraceResponse extends AcsResponse {
 
 		public static class PointsItem {
 
-			private String location;
-
 			private Long locateTime;
 
-			public String getLocation() {
-				return this.location;
-			}
-
-			public void setLocation(String location) {
-				this.location = location;
-			}
+			private String location;
 
 			public Long getLocateTime() {
 				return this.locateTime;
@@ -127,6 +119,14 @@ public class GisSearchDeviceTraceResponse extends AcsResponse {
 
 			public void setLocateTime(Long locateTime) {
 				this.locateTime = locateTime;
+			}
+
+			public String getLocation() {
+				return this.location;
+			}
+
+			public void setLocation(String location) {
+				this.location = location;
 			}
 		}
 	}

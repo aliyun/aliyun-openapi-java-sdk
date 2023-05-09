@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateDestinationResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Destination destination;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -66,6 +50,22 @@ public class CreateDestinationResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Destination getDestination() {
 		return this.destination;
 	}
@@ -76,33 +76,17 @@ public class CreateDestinationResponse extends AcsResponse {
 
 	public static class Destination {
 
-		private Long destinationId;
-
-		private String name;
-
 		private String type;
+
+		private Long destinationId;
 
 		private String configuration;
 
-		private Boolean isFailover;
+		private String name;
 
 		private String utcCreated;
 
-		public Long getDestinationId() {
-			return this.destinationId;
-		}
-
-		public void setDestinationId(Long destinationId) {
-			this.destinationId = destinationId;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
+		private Boolean isFailover;
 
 		public String getType() {
 			return this.type;
@@ -110,6 +94,14 @@ public class CreateDestinationResponse extends AcsResponse {
 
 		public void setType(String type) {
 			this.type = type;
+		}
+
+		public Long getDestinationId() {
+			return this.destinationId;
+		}
+
+		public void setDestinationId(Long destinationId) {
+			this.destinationId = destinationId;
 		}
 
 		public String getConfiguration() {
@@ -120,12 +112,12 @@ public class CreateDestinationResponse extends AcsResponse {
 			this.configuration = configuration;
 		}
 
-		public Boolean getIsFailover() {
-			return this.isFailover;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setIsFailover(Boolean isFailover) {
-			this.isFailover = isFailover;
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public String getUtcCreated() {
@@ -134,6 +126,14 @@ public class CreateDestinationResponse extends AcsResponse {
 
 		public void setUtcCreated(String utcCreated) {
 			this.utcCreated = utcCreated;
+		}
+
+		public Boolean getIsFailover() {
+			return this.isFailover;
+		}
+
+		public void setIsFailover(Boolean isFailover) {
+			this.isFailover = isFailover;
 		}
 	}
 

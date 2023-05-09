@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QuerySpeechListResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class QuerySpeechListResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -77,13 +77,21 @@ public class QuerySpeechListResponse extends AcsResponse {
 
 	public static class Data {
 
+		private Integer pageSize;
+
 		private Integer total;
 
 		private Integer pageId;
 
-		private Integer pageSize;
-
 		private List<Items> list;
+
+		public Integer getPageSize() {
+			return this.pageSize;
+		}
+
+		public void setPageSize(Integer pageSize) {
+			this.pageSize = pageSize;
+		}
 
 		public Integer getTotal() {
 			return this.total;
@@ -101,14 +109,6 @@ public class QuerySpeechListResponse extends AcsResponse {
 			this.pageId = pageId;
 		}
 
-		public Integer getPageSize() {
-			return this.pageSize;
-		}
-
-		public void setPageSize(Integer pageSize) {
-			this.pageSize = pageSize;
-		}
-
 		public List<Items> getList() {
 			return this.list;
 		}
@@ -119,26 +119,26 @@ public class QuerySpeechListResponse extends AcsResponse {
 
 		public static class Items {
 
-			private String speechCode;
+			private String voice;
 
 			private String bizCode;
 
-			private String text;
-
-			private String voice;
+			private String speechCode;
 
 			private String speechType;
+
+			private String text;
 
 			private String audioFormat;
 
 			private List<Items1> speechList;
 
-			public String getSpeechCode() {
-				return this.speechCode;
+			public String getVoice() {
+				return this.voice;
 			}
 
-			public void setSpeechCode(String speechCode) {
-				this.speechCode = speechCode;
+			public void setVoice(String voice) {
+				this.voice = voice;
 			}
 
 			public String getBizCode() {
@@ -149,20 +149,12 @@ public class QuerySpeechListResponse extends AcsResponse {
 				this.bizCode = bizCode;
 			}
 
-			public String getText() {
-				return this.text;
+			public String getSpeechCode() {
+				return this.speechCode;
 			}
 
-			public void setText(String text) {
-				this.text = text;
-			}
-
-			public String getVoice() {
-				return this.voice;
-			}
-
-			public void setVoice(String voice) {
-				this.voice = voice;
+			public void setSpeechCode(String speechCode) {
+				this.speechCode = speechCode;
 			}
 
 			public String getSpeechType() {
@@ -171,6 +163,14 @@ public class QuerySpeechListResponse extends AcsResponse {
 
 			public void setSpeechType(String speechType) {
 				this.speechType = speechType;
+			}
+
+			public String getText() {
+				return this.text;
+			}
+
+			public void setText(String text) {
+				this.text = text;
 			}
 
 			public String getAudioFormat() {
@@ -191,29 +191,13 @@ public class QuerySpeechListResponse extends AcsResponse {
 
 			public static class Items1 {
 
-				private String speechCode;
-
-				private String bizCode;
-
 				private String text;
 
 				private String voice;
 
-				public String getSpeechCode() {
-					return this.speechCode;
-				}
+				private String bizCode;
 
-				public void setSpeechCode(String speechCode) {
-					this.speechCode = speechCode;
-				}
-
-				public String getBizCode() {
-					return this.bizCode;
-				}
-
-				public void setBizCode(String bizCode) {
-					this.bizCode = bizCode;
-				}
+				private String speechCode;
 
 				public String getText() {
 					return this.text;
@@ -229,6 +213,22 @@ public class QuerySpeechListResponse extends AcsResponse {
 
 				public void setVoice(String voice) {
 					this.voice = voice;
+				}
+
+				public String getBizCode() {
+					return this.bizCode;
+				}
+
+				public void setBizCode(String bizCode) {
+					this.bizCode = bizCode;
+				}
+
+				public String getSpeechCode() {
+					return this.speechCode;
+				}
+
+				public void setSpeechCode(String speechCode) {
+					this.speechCode = speechCode;
 				}
 			}
 		}

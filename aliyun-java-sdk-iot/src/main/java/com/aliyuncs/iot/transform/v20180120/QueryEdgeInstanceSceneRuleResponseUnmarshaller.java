@@ -28,23 +28,23 @@ public class QueryEdgeInstanceSceneRuleResponseUnmarshaller {
 	public static QueryEdgeInstanceSceneRuleResponse unmarshall(QueryEdgeInstanceSceneRuleResponse queryEdgeInstanceSceneRuleResponse, UnmarshallerContext _ctx) {
 		
 		queryEdgeInstanceSceneRuleResponse.setRequestId(_ctx.stringValue("QueryEdgeInstanceSceneRuleResponse.RequestId"));
-		queryEdgeInstanceSceneRuleResponse.setSuccess(_ctx.booleanValue("QueryEdgeInstanceSceneRuleResponse.Success"));
 		queryEdgeInstanceSceneRuleResponse.setCode(_ctx.stringValue("QueryEdgeInstanceSceneRuleResponse.Code"));
 		queryEdgeInstanceSceneRuleResponse.setErrorMessage(_ctx.stringValue("QueryEdgeInstanceSceneRuleResponse.ErrorMessage"));
+		queryEdgeInstanceSceneRuleResponse.setSuccess(_ctx.booleanValue("QueryEdgeInstanceSceneRuleResponse.Success"));
 
 		Data data = new Data();
-		data.setTotal(_ctx.integerValue("QueryEdgeInstanceSceneRuleResponse.Data.Total"));
-		data.setPageSize(_ctx.integerValue("QueryEdgeInstanceSceneRuleResponse.Data.PageSize"));
 		data.setCurrentPage(_ctx.integerValue("QueryEdgeInstanceSceneRuleResponse.Data.CurrentPage"));
+		data.setPageSize(_ctx.integerValue("QueryEdgeInstanceSceneRuleResponse.Data.PageSize"));
+		data.setTotal(_ctx.integerValue("QueryEdgeInstanceSceneRuleResponse.Data.Total"));
 
 		List<Rule> ruleList = new ArrayList<Rule>();
 		for (int i = 0; i < _ctx.lengthValue("QueryEdgeInstanceSceneRuleResponse.Data.RuleList.Length"); i++) {
 			Rule rule = new Rule();
-			rule.setRuleId(_ctx.stringValue("QueryEdgeInstanceSceneRuleResponse.Data.RuleList["+ i +"].RuleId"));
-			rule.setRuleName(_ctx.stringValue("QueryEdgeInstanceSceneRuleResponse.Data.RuleList["+ i +"].RuleName"));
-			rule.setGmtCreate(_ctx.longValue("QueryEdgeInstanceSceneRuleResponse.Data.RuleList["+ i +"].GmtCreate"));
 			rule.setStatus(_ctx.integerValue("QueryEdgeInstanceSceneRuleResponse.Data.RuleList["+ i +"].Status"));
+			rule.setGmtCreate(_ctx.longValue("QueryEdgeInstanceSceneRuleResponse.Data.RuleList["+ i +"].GmtCreate"));
 			rule.setIsExisted(_ctx.integerValue("QueryEdgeInstanceSceneRuleResponse.Data.RuleList["+ i +"].IsExisted"));
+			rule.setRuleName(_ctx.stringValue("QueryEdgeInstanceSceneRuleResponse.Data.RuleList["+ i +"].RuleName"));
+			rule.setRuleId(_ctx.stringValue("QueryEdgeInstanceSceneRuleResponse.Data.RuleList["+ i +"].RuleId"));
 
 			ruleList.add(rule);
 		}

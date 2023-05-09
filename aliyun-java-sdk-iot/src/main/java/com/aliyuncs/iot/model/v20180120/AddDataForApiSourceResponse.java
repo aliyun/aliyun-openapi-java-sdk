@@ -24,15 +24,39 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class AddDataForApiSourceResponse extends AcsResponse {
 
+	private String code;
+
+	private Long data;
+
+	private String errorMessage;
+
 	private String requestId;
 
 	private Boolean success;
 
-	private String code;
+	public String getCode() {
+		return this.code;
+	}
 
-	private String errorMessage;
+	public void setCode(String code) {
+		this.code = code;
+	}
 
-	private Long data;
+	public Long getData() {
+		return this.data;
+	}
+
+	public void setData(Long data) {
+		this.data = data;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -48,30 +72,6 @@ public class AddDataForApiSourceResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
-	public Long getData() {
-		return this.data;
-	}
-
-	public void setData(Long data) {
-		this.data = data;
 	}
 
 	@Override

@@ -25,23 +25,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListOTAFirmwareResponse extends AcsResponse {
 
+	private Integer currentPage;
+
 	private String requestId;
+
+	private String errorMessage;
 
 	private Boolean success;
 
 	private String code;
 
-	private String errorMessage;
-
-	private Integer total;
-
 	private Integer pageSize;
 
 	private Integer pageCount;
 
-	private Integer currentPage;
+	private Integer total;
 
 	private List<SimpleFirmwareInfo> firmwareInfo;
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,6 +57,14 @@ public class ListOTAFirmwareResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
 	public Boolean getSuccess() {
@@ -67,22 +83,6 @@ public class ListOTAFirmwareResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
-	public Integer getTotal() {
-		return this.total;
-	}
-
-	public void setTotal(Integer total) {
-		this.total = total;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -99,12 +99,12 @@ public class ListOTAFirmwareResponse extends AcsResponse {
 		this.pageCount = pageCount;
 	}
 
-	public Integer getCurrentPage() {
-		return this.currentPage;
+	public Integer getTotal() {
+		return this.total;
 	}
 
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
+	public void setTotal(Integer total) {
+		this.total = total;
 	}
 
 	public List<SimpleFirmwareInfo> getFirmwareInfo() {
@@ -117,148 +117,44 @@ public class ListOTAFirmwareResponse extends AcsResponse {
 
 	public static class SimpleFirmwareInfo {
 
-		private String firmwareName;
-
-		private String firmwareId;
-
-		private String srcVersion;
-
-		private String destVersion;
-
-		private String utcCreate;
-
-		private String utcModified;
-
-		private Integer status;
-
-		private String firmwareDesc;
-
-		private String firmwareSign;
-
-		private Integer firmwareSize;
-
-		private String firmwareUrl;
-
-		private String productKey;
-
-		private String signMethod;
-
-		private String productName;
+		private String moduleName;
 
 		private Integer type;
 
-		private String moduleName;
+		private Integer status;
 
-		public String getFirmwareName() {
-			return this.firmwareName;
+		private String productName;
+
+		private String firmwareUrl;
+
+		private String utcCreate;
+
+		private Integer firmwareSize;
+
+		private String firmwareName;
+
+		private String firmwareSign;
+
+		private String productKey;
+
+		private String utcModified;
+
+		private String srcVersion;
+
+		private String firmwareDesc;
+
+		private String signMethod;
+
+		private String destVersion;
+
+		private String firmwareId;
+
+		public String getModuleName() {
+			return this.moduleName;
 		}
 
-		public void setFirmwareName(String firmwareName) {
-			this.firmwareName = firmwareName;
-		}
-
-		public String getFirmwareId() {
-			return this.firmwareId;
-		}
-
-		public void setFirmwareId(String firmwareId) {
-			this.firmwareId = firmwareId;
-		}
-
-		public String getSrcVersion() {
-			return this.srcVersion;
-		}
-
-		public void setSrcVersion(String srcVersion) {
-			this.srcVersion = srcVersion;
-		}
-
-		public String getDestVersion() {
-			return this.destVersion;
-		}
-
-		public void setDestVersion(String destVersion) {
-			this.destVersion = destVersion;
-		}
-
-		public String getUtcCreate() {
-			return this.utcCreate;
-		}
-
-		public void setUtcCreate(String utcCreate) {
-			this.utcCreate = utcCreate;
-		}
-
-		public String getUtcModified() {
-			return this.utcModified;
-		}
-
-		public void setUtcModified(String utcModified) {
-			this.utcModified = utcModified;
-		}
-
-		public Integer getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(Integer status) {
-			this.status = status;
-		}
-
-		public String getFirmwareDesc() {
-			return this.firmwareDesc;
-		}
-
-		public void setFirmwareDesc(String firmwareDesc) {
-			this.firmwareDesc = firmwareDesc;
-		}
-
-		public String getFirmwareSign() {
-			return this.firmwareSign;
-		}
-
-		public void setFirmwareSign(String firmwareSign) {
-			this.firmwareSign = firmwareSign;
-		}
-
-		public Integer getFirmwareSize() {
-			return this.firmwareSize;
-		}
-
-		public void setFirmwareSize(Integer firmwareSize) {
-			this.firmwareSize = firmwareSize;
-		}
-
-		public String getFirmwareUrl() {
-			return this.firmwareUrl;
-		}
-
-		public void setFirmwareUrl(String firmwareUrl) {
-			this.firmwareUrl = firmwareUrl;
-		}
-
-		public String getProductKey() {
-			return this.productKey;
-		}
-
-		public void setProductKey(String productKey) {
-			this.productKey = productKey;
-		}
-
-		public String getSignMethod() {
-			return this.signMethod;
-		}
-
-		public void setSignMethod(String signMethod) {
-			this.signMethod = signMethod;
-		}
-
-		public String getProductName() {
-			return this.productName;
-		}
-
-		public void setProductName(String productName) {
-			this.productName = productName;
+		public void setModuleName(String moduleName) {
+			this.moduleName = moduleName;
 		}
 
 		public Integer getType() {
@@ -269,12 +165,116 @@ public class ListOTAFirmwareResponse extends AcsResponse {
 			this.type = type;
 		}
 
-		public String getModuleName() {
-			return this.moduleName;
+		public Integer getStatus() {
+			return this.status;
 		}
 
-		public void setModuleName(String moduleName) {
-			this.moduleName = moduleName;
+		public void setStatus(Integer status) {
+			this.status = status;
+		}
+
+		public String getProductName() {
+			return this.productName;
+		}
+
+		public void setProductName(String productName) {
+			this.productName = productName;
+		}
+
+		public String getFirmwareUrl() {
+			return this.firmwareUrl;
+		}
+
+		public void setFirmwareUrl(String firmwareUrl) {
+			this.firmwareUrl = firmwareUrl;
+		}
+
+		public String getUtcCreate() {
+			return this.utcCreate;
+		}
+
+		public void setUtcCreate(String utcCreate) {
+			this.utcCreate = utcCreate;
+		}
+
+		public Integer getFirmwareSize() {
+			return this.firmwareSize;
+		}
+
+		public void setFirmwareSize(Integer firmwareSize) {
+			this.firmwareSize = firmwareSize;
+		}
+
+		public String getFirmwareName() {
+			return this.firmwareName;
+		}
+
+		public void setFirmwareName(String firmwareName) {
+			this.firmwareName = firmwareName;
+		}
+
+		public String getFirmwareSign() {
+			return this.firmwareSign;
+		}
+
+		public void setFirmwareSign(String firmwareSign) {
+			this.firmwareSign = firmwareSign;
+		}
+
+		public String getProductKey() {
+			return this.productKey;
+		}
+
+		public void setProductKey(String productKey) {
+			this.productKey = productKey;
+		}
+
+		public String getUtcModified() {
+			return this.utcModified;
+		}
+
+		public void setUtcModified(String utcModified) {
+			this.utcModified = utcModified;
+		}
+
+		public String getSrcVersion() {
+			return this.srcVersion;
+		}
+
+		public void setSrcVersion(String srcVersion) {
+			this.srcVersion = srcVersion;
+		}
+
+		public String getFirmwareDesc() {
+			return this.firmwareDesc;
+		}
+
+		public void setFirmwareDesc(String firmwareDesc) {
+			this.firmwareDesc = firmwareDesc;
+		}
+
+		public String getSignMethod() {
+			return this.signMethod;
+		}
+
+		public void setSignMethod(String signMethod) {
+			this.signMethod = signMethod;
+		}
+
+		public String getDestVersion() {
+			return this.destVersion;
+		}
+
+		public void setDestVersion(String destVersion) {
+			this.destVersion = destVersion;
+		}
+
+		public String getFirmwareId() {
+			return this.firmwareId;
+		}
+
+		public void setFirmwareId(String firmwareId) {
+			this.firmwareId = firmwareId;
 		}
 	}
 

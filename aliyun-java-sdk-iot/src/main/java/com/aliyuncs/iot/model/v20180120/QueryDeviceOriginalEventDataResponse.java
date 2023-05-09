@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryDeviceOriginalEventDataResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -65,6 +49,22 @@ public class QueryDeviceOriginalEventDataResponse extends AcsResponse {
 
 	public void setErrorMessage(String errorMessage) {
 		this.errorMessage = errorMessage;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -109,23 +109,15 @@ public class QueryDeviceOriginalEventDataResponse extends AcsResponse {
 
 		public static class EventInfo {
 
-			private String time;
-
 			private String identifier;
-
-			private String name;
-
-			private String eventType;
 
 			private String outputData;
 
-			public String getTime() {
-				return this.time;
-			}
+			private String time;
 
-			public void setTime(String time) {
-				this.time = time;
-			}
+			private String eventType;
+
+			private String name;
 
 			public String getIdentifier() {
 				return this.identifier;
@@ -135,12 +127,20 @@ public class QueryDeviceOriginalEventDataResponse extends AcsResponse {
 				this.identifier = identifier;
 			}
 
-			public String getName() {
-				return this.name;
+			public String getOutputData() {
+				return this.outputData;
 			}
 
-			public void setName(String name) {
-				this.name = name;
+			public void setOutputData(String outputData) {
+				this.outputData = outputData;
+			}
+
+			public String getTime() {
+				return this.time;
+			}
+
+			public void setTime(String time) {
+				this.time = time;
 			}
 
 			public String getEventType() {
@@ -151,12 +151,12 @@ public class QueryDeviceOriginalEventDataResponse extends AcsResponse {
 				this.eventType = eventType;
 			}
 
-			public String getOutputData() {
-				return this.outputData;
+			public String getName() {
+				return this.name;
 			}
 
-			public void setOutputData(String outputData) {
-				this.outputData = outputData;
+			public void setName(String name) {
+				this.name = name;
 			}
 		}
 	}

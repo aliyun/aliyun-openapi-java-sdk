@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GisQueryDeviceLocationResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private List<DataItem> data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class GisQueryDeviceLocationResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public List<DataItem> getData() {
 		return this.data;
 	}
@@ -81,21 +81,21 @@ public class GisQueryDeviceLocationResponse extends AcsResponse {
 
 		private String deviceName;
 
-		private String ip;
-
-		private String country;
-
-		private String province;
-
-		private String city;
+		private Integer coordinateSystem;
 
 		private Float longitude;
 
-		private Float latitude;
+		private String country;
 
-		private Integer coordinateSystem;
+		private String ip;
+
+		private String city;
 
 		private Long adcode;
+
+		private Float latitude;
+
+		private String province;
 
 		public String getProductKey() {
 			return this.productKey;
@@ -113,36 +113,12 @@ public class GisQueryDeviceLocationResponse extends AcsResponse {
 			this.deviceName = deviceName;
 		}
 
-		public String getIp() {
-			return this.ip;
+		public Integer getCoordinateSystem() {
+			return this.coordinateSystem;
 		}
 
-		public void setIp(String ip) {
-			this.ip = ip;
-		}
-
-		public String getCountry() {
-			return this.country;
-		}
-
-		public void setCountry(String country) {
-			this.country = country;
-		}
-
-		public String getProvince() {
-			return this.province;
-		}
-
-		public void setProvince(String province) {
-			this.province = province;
-		}
-
-		public String getCity() {
-			return this.city;
-		}
-
-		public void setCity(String city) {
-			this.city = city;
+		public void setCoordinateSystem(Integer coordinateSystem) {
+			this.coordinateSystem = coordinateSystem;
 		}
 
 		public Float getLongitude() {
@@ -153,20 +129,28 @@ public class GisQueryDeviceLocationResponse extends AcsResponse {
 			this.longitude = longitude;
 		}
 
-		public Float getLatitude() {
-			return this.latitude;
+		public String getCountry() {
+			return this.country;
 		}
 
-		public void setLatitude(Float latitude) {
-			this.latitude = latitude;
+		public void setCountry(String country) {
+			this.country = country;
 		}
 
-		public Integer getCoordinateSystem() {
-			return this.coordinateSystem;
+		public String getIp() {
+			return this.ip;
 		}
 
-		public void setCoordinateSystem(Integer coordinateSystem) {
-			this.coordinateSystem = coordinateSystem;
+		public void setIp(String ip) {
+			this.ip = ip;
+		}
+
+		public String getCity() {
+			return this.city;
+		}
+
+		public void setCity(String city) {
+			this.city = city;
 		}
 
 		public Long getAdcode() {
@@ -175,6 +159,22 @@ public class GisQueryDeviceLocationResponse extends AcsResponse {
 
 		public void setAdcode(Long adcode) {
 			this.adcode = adcode;
+		}
+
+		public Float getLatitude() {
+			return this.latitude;
+		}
+
+		public void setLatitude(Float latitude) {
+			this.latitude = latitude;
+		}
+
+		public String getProvince() {
+			return this.province;
+		}
+
+		public void setProvince(String province) {
+			this.province = province;
 		}
 	}
 

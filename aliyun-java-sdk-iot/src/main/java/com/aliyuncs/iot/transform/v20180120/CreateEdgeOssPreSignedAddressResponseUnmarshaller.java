@@ -24,13 +24,13 @@ public class CreateEdgeOssPreSignedAddressResponseUnmarshaller {
 	public static CreateEdgeOssPreSignedAddressResponse unmarshall(CreateEdgeOssPreSignedAddressResponse createEdgeOssPreSignedAddressResponse, UnmarshallerContext _ctx) {
 		
 		createEdgeOssPreSignedAddressResponse.setRequestId(_ctx.stringValue("CreateEdgeOssPreSignedAddressResponse.RequestId"));
-		createEdgeOssPreSignedAddressResponse.setSuccess(_ctx.booleanValue("CreateEdgeOssPreSignedAddressResponse.Success"));
 		createEdgeOssPreSignedAddressResponse.setCode(_ctx.stringValue("CreateEdgeOssPreSignedAddressResponse.Code"));
 		createEdgeOssPreSignedAddressResponse.setErrorMessage(_ctx.stringValue("CreateEdgeOssPreSignedAddressResponse.ErrorMessage"));
+		createEdgeOssPreSignedAddressResponse.setSuccess(_ctx.booleanValue("CreateEdgeOssPreSignedAddressResponse.Success"));
 
 		Data data = new Data();
-		data.setOssPreSignedAddress(_ctx.stringValue("CreateEdgeOssPreSignedAddressResponse.Data.OssPreSignedAddress"));
 		data.setOssAddress(_ctx.stringValue("CreateEdgeOssPreSignedAddressResponse.Data.OssAddress"));
+		data.setOssPreSignedAddress(_ctx.stringValue("CreateEdgeOssPreSignedAddressResponse.Data.OssPreSignedAddress"));
 		createEdgeOssPreSignedAddressResponse.setData(data);
 	 
 	 	return createEdgeOssPreSignedAddressResponse;

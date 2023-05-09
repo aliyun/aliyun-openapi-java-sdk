@@ -24,13 +24,13 @@ public class DeleteShareTaskDeviceResponseUnmarshaller {
 	public static DeleteShareTaskDeviceResponse unmarshall(DeleteShareTaskDeviceResponse deleteShareTaskDeviceResponse, UnmarshallerContext _ctx) {
 		
 		deleteShareTaskDeviceResponse.setRequestId(_ctx.stringValue("DeleteShareTaskDeviceResponse.RequestId"));
-		deleteShareTaskDeviceResponse.setSuccess(_ctx.booleanValue("DeleteShareTaskDeviceResponse.Success"));
 		deleteShareTaskDeviceResponse.setCode(_ctx.stringValue("DeleteShareTaskDeviceResponse.Code"));
 		deleteShareTaskDeviceResponse.setErrorMessage(_ctx.stringValue("DeleteShareTaskDeviceResponse.ErrorMessage"));
+		deleteShareTaskDeviceResponse.setSuccess(_ctx.booleanValue("DeleteShareTaskDeviceResponse.Success"));
 
 		Data data = new Data();
-		data.setProgress(_ctx.integerValue("DeleteShareTaskDeviceResponse.Data.Progress"));
 		data.setProgressId(_ctx.stringValue("DeleteShareTaskDeviceResponse.Data.ProgressId"));
+		data.setProgress(_ctx.integerValue("DeleteShareTaskDeviceResponse.Data.Progress"));
 		deleteShareTaskDeviceResponse.setData(data);
 	 
 	 	return deleteShareTaskDeviceResponse;

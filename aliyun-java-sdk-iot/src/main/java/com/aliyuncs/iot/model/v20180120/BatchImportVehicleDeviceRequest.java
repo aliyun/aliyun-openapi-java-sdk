@@ -70,20 +70,31 @@ public class BatchImportVehicleDeviceRequest extends RpcAcsRequest<BatchImportVe
 		this.deviceLists = deviceLists;	
 		if (deviceLists != null) {
 			for (int depth1 = 0; depth1 < deviceLists.size(); depth1++) {
-				putQueryParameter("DeviceList." + (depth1 + 1) + ".DeviceId" , deviceLists.get(depth1).getDeviceId());
-				putQueryParameter("DeviceList." + (depth1 + 1) + ".Manufacturer" , deviceLists.get(depth1).getManufacturer());
-				putQueryParameter("DeviceList." + (depth1 + 1) + ".DeviceModel" , deviceLists.get(depth1).getDeviceModel());
+				putBodyParameter("DeviceList." + (depth1 + 1) + ".DeviceName" , deviceLists.get(depth1).getDeviceName());
+				putBodyParameter("DeviceList." + (depth1 + 1) + ".DeviceId" , deviceLists.get(depth1).getDeviceId());
+				putBodyParameter("DeviceList." + (depth1 + 1) + ".DeviceModel" , deviceLists.get(depth1).getDeviceModel());
+				putBodyParameter("DeviceList." + (depth1 + 1) + ".Manufacturer" , deviceLists.get(depth1).getManufacturer());
 			}
 		}	
 	}
 
 	public static class DeviceList {
 
+		private String deviceName;
+
 		private String deviceId;
+
+		private String deviceModel;
 
 		private String manufacturer;
 
-		private String deviceModel;
+		public String getDeviceName() {
+			return this.deviceName;
+		}
+
+		public void setDeviceName(String deviceName) {
+			this.deviceName = deviceName;
+		}
 
 		public String getDeviceId() {
 			return this.deviceId;
@@ -93,20 +104,20 @@ public class BatchImportVehicleDeviceRequest extends RpcAcsRequest<BatchImportVe
 			this.deviceId = deviceId;
 		}
 
-		public String getManufacturer() {
-			return this.manufacturer;
-		}
-
-		public void setManufacturer(String manufacturer) {
-			this.manufacturer = manufacturer;
-		}
-
 		public String getDeviceModel() {
 			return this.deviceModel;
 		}
 
 		public void setDeviceModel(String deviceModel) {
 			this.deviceModel = deviceModel;
+		}
+
+		public String getManufacturer() {
+			return this.manufacturer;
+		}
+
+		public void setManufacturer(String manufacturer) {
+			this.manufacturer = manufacturer;
 		}
 	}
 

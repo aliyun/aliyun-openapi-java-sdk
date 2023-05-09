@@ -28,11 +28,11 @@ public class QueryDevicePropertiesDataResponseUnmarshaller {
 	public static QueryDevicePropertiesDataResponse unmarshall(QueryDevicePropertiesDataResponse queryDevicePropertiesDataResponse, UnmarshallerContext _ctx) {
 		
 		queryDevicePropertiesDataResponse.setRequestId(_ctx.stringValue("QueryDevicePropertiesDataResponse.RequestId"));
-		queryDevicePropertiesDataResponse.setSuccess(_ctx.booleanValue("QueryDevicePropertiesDataResponse.Success"));
-		queryDevicePropertiesDataResponse.setCode(_ctx.stringValue("QueryDevicePropertiesDataResponse.Code"));
-		queryDevicePropertiesDataResponse.setErrorMessage(_ctx.stringValue("QueryDevicePropertiesDataResponse.ErrorMessage"));
 		queryDevicePropertiesDataResponse.setNextValid(_ctx.booleanValue("QueryDevicePropertiesDataResponse.NextValid"));
 		queryDevicePropertiesDataResponse.setNextTime(_ctx.longValue("QueryDevicePropertiesDataResponse.NextTime"));
+		queryDevicePropertiesDataResponse.setErrorMessage(_ctx.stringValue("QueryDevicePropertiesDataResponse.ErrorMessage"));
+		queryDevicePropertiesDataResponse.setSuccess(_ctx.booleanValue("QueryDevicePropertiesDataResponse.Success"));
+		queryDevicePropertiesDataResponse.setCode(_ctx.stringValue("QueryDevicePropertiesDataResponse.Code"));
 
 		List<PropertyDataInfo> propertyDataInfos = new ArrayList<PropertyDataInfo>();
 		for (int i = 0; i < _ctx.lengthValue("QueryDevicePropertiesDataResponse.PropertyDataInfos.Length"); i++) {
@@ -42,8 +42,8 @@ public class QueryDevicePropertiesDataResponseUnmarshaller {
 			List<PropertyInfo> list = new ArrayList<PropertyInfo>();
 			for (int j = 0; j < _ctx.lengthValue("QueryDevicePropertiesDataResponse.PropertyDataInfos["+ i +"].List.Length"); j++) {
 				PropertyInfo propertyInfo = new PropertyInfo();
-				propertyInfo.setTime(_ctx.longValue("QueryDevicePropertiesDataResponse.PropertyDataInfos["+ i +"].List["+ j +"].Time"));
 				propertyInfo.setValue(_ctx.stringValue("QueryDevicePropertiesDataResponse.PropertyDataInfos["+ i +"].List["+ j +"].Value"));
+				propertyInfo.setTime(_ctx.longValue("QueryDevicePropertiesDataResponse.PropertyDataInfos["+ i +"].List["+ j +"].Time"));
 
 				list.add(propertyInfo);
 			}

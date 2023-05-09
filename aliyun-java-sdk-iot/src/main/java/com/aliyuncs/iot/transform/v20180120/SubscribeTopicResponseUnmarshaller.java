@@ -23,9 +23,9 @@ public class SubscribeTopicResponseUnmarshaller {
 	public static SubscribeTopicResponse unmarshall(SubscribeTopicResponse subscribeTopicResponse, UnmarshallerContext _ctx) {
 		
 		subscribeTopicResponse.setRequestId(_ctx.stringValue("SubscribeTopicResponse.RequestId"));
-		subscribeTopicResponse.setSuccess(_ctx.booleanValue("SubscribeTopicResponse.Success"));
 		subscribeTopicResponse.setCode(_ctx.stringValue("SubscribeTopicResponse.Code"));
 		subscribeTopicResponse.setErrorMessage(_ctx.stringValue("SubscribeTopicResponse.ErrorMessage"));
+		subscribeTopicResponse.setSuccess(_ctx.booleanValue("SubscribeTopicResponse.Success"));
 	 
 	 	return subscribeTopicResponse;
 	}

@@ -23,10 +23,10 @@ public class CreateSchedulePeriodResponseUnmarshaller {
 	public static CreateSchedulePeriodResponse unmarshall(CreateSchedulePeriodResponse createSchedulePeriodResponse, UnmarshallerContext _ctx) {
 		
 		createSchedulePeriodResponse.setRequestId(_ctx.stringValue("CreateSchedulePeriodResponse.RequestId"));
-		createSchedulePeriodResponse.setSuccess(_ctx.booleanValue("CreateSchedulePeriodResponse.Success"));
 		createSchedulePeriodResponse.setCode(_ctx.stringValue("CreateSchedulePeriodResponse.Code"));
-		createSchedulePeriodResponse.setErrorMessage(_ctx.stringValue("CreateSchedulePeriodResponse.ErrorMessage"));
 		createSchedulePeriodResponse.setData(_ctx.stringValue("CreateSchedulePeriodResponse.Data"));
+		createSchedulePeriodResponse.setErrorMessage(_ctx.stringValue("CreateSchedulePeriodResponse.ErrorMessage"));
+		createSchedulePeriodResponse.setSuccess(_ctx.booleanValue("CreateSchedulePeriodResponse.Success"));
 	 
 	 	return createSchedulePeriodResponse;
 	}

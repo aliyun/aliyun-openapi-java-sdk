@@ -24,16 +24,16 @@ public class QueryDeviceFileResponseUnmarshaller {
 	public static QueryDeviceFileResponse unmarshall(QueryDeviceFileResponse queryDeviceFileResponse, UnmarshallerContext _ctx) {
 		
 		queryDeviceFileResponse.setRequestId(_ctx.stringValue("QueryDeviceFileResponse.RequestId"));
-		queryDeviceFileResponse.setSuccess(_ctx.booleanValue("QueryDeviceFileResponse.Success"));
 		queryDeviceFileResponse.setCode(_ctx.stringValue("QueryDeviceFileResponse.Code"));
 		queryDeviceFileResponse.setErrorMessage(_ctx.stringValue("QueryDeviceFileResponse.ErrorMessage"));
+		queryDeviceFileResponse.setSuccess(_ctx.booleanValue("QueryDeviceFileResponse.Success"));
 
 		Data data = new Data();
-		data.setFileId(_ctx.stringValue("QueryDeviceFileResponse.Data.FileId"));
-		data.setName(_ctx.stringValue("QueryDeviceFileResponse.Data.Name"));
-		data.setSize(_ctx.stringValue("QueryDeviceFileResponse.Data.Size"));
 		data.setUtcCreatedOn(_ctx.stringValue("QueryDeviceFileResponse.Data.UtcCreatedOn"));
+		data.setName(_ctx.stringValue("QueryDeviceFileResponse.Data.Name"));
 		data.setDownloadUrl(_ctx.stringValue("QueryDeviceFileResponse.Data.DownloadUrl"));
+		data.setSize(_ctx.stringValue("QueryDeviceFileResponse.Data.Size"));
+		data.setFileId(_ctx.stringValue("QueryDeviceFileResponse.Data.FileId"));
 		queryDeviceFileResponse.setData(data);
 	 
 	 	return queryDeviceFileResponse;

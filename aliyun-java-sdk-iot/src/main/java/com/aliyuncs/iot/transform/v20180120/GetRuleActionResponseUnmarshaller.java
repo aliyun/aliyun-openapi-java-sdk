@@ -24,16 +24,16 @@ public class GetRuleActionResponseUnmarshaller {
 	public static GetRuleActionResponse unmarshall(GetRuleActionResponse getRuleActionResponse, UnmarshallerContext _ctx) {
 		
 		getRuleActionResponse.setRequestId(_ctx.stringValue("GetRuleActionResponse.RequestId"));
-		getRuleActionResponse.setSuccess(_ctx.booleanValue("GetRuleActionResponse.Success"));
 		getRuleActionResponse.setCode(_ctx.stringValue("GetRuleActionResponse.Code"));
 		getRuleActionResponse.setErrorMessage(_ctx.stringValue("GetRuleActionResponse.ErrorMessage"));
+		getRuleActionResponse.setSuccess(_ctx.booleanValue("GetRuleActionResponse.Success"));
 
 		RuleActionInfo ruleActionInfo = new RuleActionInfo();
-		ruleActionInfo.setId(_ctx.longValue("GetRuleActionResponse.RuleActionInfo.Id"));
-		ruleActionInfo.setRuleId(_ctx.longValue("GetRuleActionResponse.RuleActionInfo.RuleId"));
+		ruleActionInfo.setErrorActionFlag(_ctx.booleanValue("GetRuleActionResponse.RuleActionInfo.ErrorActionFlag"));
 		ruleActionInfo.setType(_ctx.stringValue("GetRuleActionResponse.RuleActionInfo.Type"));
 		ruleActionInfo.setConfiguration(_ctx.stringValue("GetRuleActionResponse.RuleActionInfo.Configuration"));
-		ruleActionInfo.setErrorActionFlag(_ctx.booleanValue("GetRuleActionResponse.RuleActionInfo.ErrorActionFlag"));
+		ruleActionInfo.setId(_ctx.longValue("GetRuleActionResponse.RuleActionInfo.Id"));
+		ruleActionInfo.setRuleId(_ctx.longValue("GetRuleActionResponse.RuleActionInfo.RuleId"));
 		getRuleActionResponse.setRuleActionInfo(ruleActionInfo);
 	 
 	 	return getRuleActionResponse;

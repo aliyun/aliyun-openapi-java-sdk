@@ -28,28 +28,28 @@ public class QueryEdgeDriverResponseUnmarshaller {
 	public static QueryEdgeDriverResponse unmarshall(QueryEdgeDriverResponse queryEdgeDriverResponse, UnmarshallerContext _ctx) {
 		
 		queryEdgeDriverResponse.setRequestId(_ctx.stringValue("QueryEdgeDriverResponse.RequestId"));
-		queryEdgeDriverResponse.setSuccess(_ctx.booleanValue("QueryEdgeDriverResponse.Success"));
 		queryEdgeDriverResponse.setCode(_ctx.stringValue("QueryEdgeDriverResponse.Code"));
 		queryEdgeDriverResponse.setErrorMessage(_ctx.stringValue("QueryEdgeDriverResponse.ErrorMessage"));
+		queryEdgeDriverResponse.setSuccess(_ctx.booleanValue("QueryEdgeDriverResponse.Success"));
 
 		Data data = new Data();
-		data.setTotal(_ctx.integerValue("QueryEdgeDriverResponse.Data.Total"));
-		data.setPageSize(_ctx.integerValue("QueryEdgeDriverResponse.Data.PageSize"));
 		data.setCurrentPage(_ctx.integerValue("QueryEdgeDriverResponse.Data.CurrentPage"));
+		data.setPageSize(_ctx.integerValue("QueryEdgeDriverResponse.Data.PageSize"));
+		data.setTotal(_ctx.integerValue("QueryEdgeDriverResponse.Data.Total"));
 
 		List<Driver> driverList = new ArrayList<Driver>();
 		for (int i = 0; i < _ctx.lengthValue("QueryEdgeDriverResponse.Data.DriverList.Length"); i++) {
 			Driver driver = new Driver();
-			driver.setDriverId(_ctx.stringValue("QueryEdgeDriverResponse.Data.DriverList["+ i +"].DriverId"));
-			driver.setDriverName(_ctx.stringValue("QueryEdgeDriverResponse.Data.DriverList["+ i +"].DriverName"));
-			driver.setDriverProtocol(_ctx.stringValue("QueryEdgeDriverResponse.Data.DriverList["+ i +"].DriverProtocol"));
-			driver.setRuntime(_ctx.stringValue("QueryEdgeDriverResponse.Data.DriverList["+ i +"].Runtime"));
-			driver.setCpuArch(_ctx.stringValue("QueryEdgeDriverResponse.Data.DriverList["+ i +"].CpuArch"));
-			driver.setType(_ctx.integerValue("QueryEdgeDriverResponse.Data.DriverList["+ i +"].Type"));
-			driver.setIsBuiltIn(_ctx.booleanValue("QueryEdgeDriverResponse.Data.DriverList["+ i +"].IsBuiltIn"));
 			driver.setGmtCreateTimestamp(_ctx.longValue("QueryEdgeDriverResponse.Data.DriverList["+ i +"].GmtCreateTimestamp"));
+			driver.setType(_ctx.integerValue("QueryEdgeDriverResponse.Data.DriverList["+ i +"].Type"));
+			driver.setCpuArch(_ctx.stringValue("QueryEdgeDriverResponse.Data.DriverList["+ i +"].CpuArch"));
+			driver.setDriverId(_ctx.stringValue("QueryEdgeDriverResponse.Data.DriverList["+ i +"].DriverId"));
+			driver.setIsBuiltIn(_ctx.booleanValue("QueryEdgeDriverResponse.Data.DriverList["+ i +"].IsBuiltIn"));
 			driver.setGmtModifiedTimestamp(_ctx.longValue("QueryEdgeDriverResponse.Data.DriverList["+ i +"].GmtModifiedTimestamp"));
 			driver.setIsApply(_ctx.booleanValue("QueryEdgeDriverResponse.Data.DriverList["+ i +"].IsApply"));
+			driver.setRuntime(_ctx.stringValue("QueryEdgeDriverResponse.Data.DriverList["+ i +"].Runtime"));
+			driver.setDriverName(_ctx.stringValue("QueryEdgeDriverResponse.Data.DriverList["+ i +"].DriverName"));
+			driver.setDriverProtocol(_ctx.stringValue("QueryEdgeDriverResponse.Data.DriverList["+ i +"].DriverProtocol"));
 			driver.setUseOfficialConfig(_ctx.integerValue("QueryEdgeDriverResponse.Data.DriverList["+ i +"].UseOfficialConfig"));
 
 			driverList.add(driver);

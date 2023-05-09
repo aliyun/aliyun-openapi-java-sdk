@@ -24,17 +24,17 @@ public class GetSceneRuleResponseUnmarshaller {
 	public static GetSceneRuleResponse unmarshall(GetSceneRuleResponse getSceneRuleResponse, UnmarshallerContext _ctx) {
 		
 		getSceneRuleResponse.setRequestId(_ctx.stringValue("GetSceneRuleResponse.RequestId"));
-		getSceneRuleResponse.setSuccess(_ctx.booleanValue("GetSceneRuleResponse.Success"));
-		getSceneRuleResponse.setErrorMessage(_ctx.stringValue("GetSceneRuleResponse.ErrorMessage"));
 		getSceneRuleResponse.setCode(_ctx.stringValue("GetSceneRuleResponse.Code"));
+		getSceneRuleResponse.setErrorMessage(_ctx.stringValue("GetSceneRuleResponse.ErrorMessage"));
+		getSceneRuleResponse.setSuccess(_ctx.booleanValue("GetSceneRuleResponse.Success"));
 
 		Data data = new Data();
+		data.setRuleStatus(_ctx.integerValue("GetSceneRuleResponse.Data.RuleStatus"));
+		data.setRuleContent(_ctx.stringValue("GetSceneRuleResponse.Data.RuleContent"));
 		data.setGmtCreate(_ctx.longValue("GetSceneRuleResponse.Data.GmtCreate"));
 		data.setGmtModified(_ctx.longValue("GetSceneRuleResponse.Data.GmtModified"));
-		data.setRuleName(_ctx.stringValue("GetSceneRuleResponse.Data.RuleName"));
-		data.setRuleContent(_ctx.stringValue("GetSceneRuleResponse.Data.RuleContent"));
 		data.setRuleDescription(_ctx.stringValue("GetSceneRuleResponse.Data.RuleDescription"));
-		data.setRuleStatus(_ctx.integerValue("GetSceneRuleResponse.Data.RuleStatus"));
+		data.setRuleName(_ctx.stringValue("GetSceneRuleResponse.Data.RuleName"));
 		getSceneRuleResponse.setData(data);
 	 
 	 	return getSceneRuleResponse;

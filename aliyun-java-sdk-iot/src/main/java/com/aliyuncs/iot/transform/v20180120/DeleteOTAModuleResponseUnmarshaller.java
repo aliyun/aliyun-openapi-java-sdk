@@ -23,9 +23,9 @@ public class DeleteOTAModuleResponseUnmarshaller {
 	public static DeleteOTAModuleResponse unmarshall(DeleteOTAModuleResponse deleteOTAModuleResponse, UnmarshallerContext _ctx) {
 		
 		deleteOTAModuleResponse.setRequestId(_ctx.stringValue("DeleteOTAModuleResponse.RequestId"));
-		deleteOTAModuleResponse.setSuccess(_ctx.booleanValue("DeleteOTAModuleResponse.Success"));
 		deleteOTAModuleResponse.setCode(_ctx.stringValue("DeleteOTAModuleResponse.Code"));
 		deleteOTAModuleResponse.setErrorMessage(_ctx.stringValue("DeleteOTAModuleResponse.ErrorMessage"));
+		deleteOTAModuleResponse.setSuccess(_ctx.booleanValue("DeleteOTAModuleResponse.Success"));
 	 
 	 	return deleteOTAModuleResponse;
 	}

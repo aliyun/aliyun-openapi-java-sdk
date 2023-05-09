@@ -25,17 +25,41 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryLoRaJoinPermissionsResponse extends AcsResponse {
 
+	private String code;
+
+	private String productKey;
+
+	private String errorMessage;
+
 	private String requestId;
 
 	private Boolean success;
 
-	private String code;
-
-	private String errorMessage;
-
-	private String productKey;
-
 	private List<JoinPermission> joinPermissions;
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -53,30 +77,6 @@ public class QueryLoRaJoinPermissionsResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
-	public String getProductKey() {
-		return this.productKey;
-	}
-
-	public void setProductKey(String productKey) {
-		this.productKey = productKey;
-	}
-
 	public List<JoinPermission> getJoinPermissions() {
 		return this.joinPermissions;
 	}
@@ -87,17 +87,33 @@ public class QueryLoRaJoinPermissionsResponse extends AcsResponse {
 
 	public static class JoinPermission {
 
+		private Boolean enabled;
+
+		private String joinPermissionType;
+
 		private String joinPermissionId;
 
 		private String joinPermissionName;
 
-		private String joinPermissionType;
-
 		private String ownerAliyunPk;
 
-		private Boolean enabled;
-
 		private String classMode;
+
+		public Boolean getEnabled() {
+			return this.enabled;
+		}
+
+		public void setEnabled(Boolean enabled) {
+			this.enabled = enabled;
+		}
+
+		public String getJoinPermissionType() {
+			return this.joinPermissionType;
+		}
+
+		public void setJoinPermissionType(String joinPermissionType) {
+			this.joinPermissionType = joinPermissionType;
+		}
 
 		public String getJoinPermissionId() {
 			return this.joinPermissionId;
@@ -115,28 +131,12 @@ public class QueryLoRaJoinPermissionsResponse extends AcsResponse {
 			this.joinPermissionName = joinPermissionName;
 		}
 
-		public String getJoinPermissionType() {
-			return this.joinPermissionType;
-		}
-
-		public void setJoinPermissionType(String joinPermissionType) {
-			this.joinPermissionType = joinPermissionType;
-		}
-
 		public String getOwnerAliyunPk() {
 			return this.ownerAliyunPk;
 		}
 
 		public void setOwnerAliyunPk(String ownerAliyunPk) {
 			this.ownerAliyunPk = ownerAliyunPk;
-		}
-
-		public Boolean getEnabled() {
-			return this.enabled;
-		}
-
-		public void setEnabled(Boolean enabled) {
-			this.enabled = enabled;
 		}
 
 		public String getClassMode() {

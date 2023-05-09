@@ -27,16 +27,16 @@ public class QuerySoundCodeLabelBatchFailedResultResponseUnmarshaller {
 	public static QuerySoundCodeLabelBatchFailedResultResponse unmarshall(QuerySoundCodeLabelBatchFailedResultResponse querySoundCodeLabelBatchFailedResultResponse, UnmarshallerContext _ctx) {
 		
 		querySoundCodeLabelBatchFailedResultResponse.setRequestId(_ctx.stringValue("QuerySoundCodeLabelBatchFailedResultResponse.RequestId"));
-		querySoundCodeLabelBatchFailedResultResponse.setSuccess(_ctx.booleanValue("QuerySoundCodeLabelBatchFailedResultResponse.Success"));
 		querySoundCodeLabelBatchFailedResultResponse.setCode(_ctx.stringValue("QuerySoundCodeLabelBatchFailedResultResponse.Code"));
 		querySoundCodeLabelBatchFailedResultResponse.setErrorMessage(_ctx.stringValue("QuerySoundCodeLabelBatchFailedResultResponse.ErrorMessage"));
+		querySoundCodeLabelBatchFailedResultResponse.setSuccess(_ctx.booleanValue("QuerySoundCodeLabelBatchFailedResultResponse.Success"));
 
 		List<Items> data = new ArrayList<Items>();
 		for (int i = 0; i < _ctx.lengthValue("QuerySoundCodeLabelBatchFailedResultResponse.Data.Length"); i++) {
 			Items items = new Items();
 			items.setResultCode(_ctx.stringValue("QuerySoundCodeLabelBatchFailedResultResponse.Data["+ i +"].ResultCode"));
-			items.setLabel(_ctx.stringValue("QuerySoundCodeLabelBatchFailedResultResponse.Data["+ i +"].Label"));
 			items.setErrorMessage(_ctx.stringValue("QuerySoundCodeLabelBatchFailedResultResponse.Data["+ i +"].ErrorMessage"));
+			items.setLabel(_ctx.stringValue("QuerySoundCodeLabelBatchFailedResultResponse.Data["+ i +"].Label"));
 
 			data.add(items);
 		}

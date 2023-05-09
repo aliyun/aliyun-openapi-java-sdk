@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetDestinationResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Destination destination;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -66,6 +50,22 @@ public class GetDestinationResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Destination getDestination() {
 		return this.destination;
 	}
@@ -76,34 +76,26 @@ public class GetDestinationResponse extends AcsResponse {
 
 	public static class Destination {
 
-		private String destinationId;
-
-		private String name;
+		private String status;
 
 		private String type;
 
+		private String destinationId;
+
 		private String configuration;
 
-		private Boolean isFailover;
+		private String name;
 
 		private String utcCreated;
 
-		private String status;
+		private Boolean isFailover;
 
-		public String getDestinationId() {
-			return this.destinationId;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setDestinationId(String destinationId) {
-			this.destinationId = destinationId;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getType() {
@@ -114,6 +106,14 @@ public class GetDestinationResponse extends AcsResponse {
 			this.type = type;
 		}
 
+		public String getDestinationId() {
+			return this.destinationId;
+		}
+
+		public void setDestinationId(String destinationId) {
+			this.destinationId = destinationId;
+		}
+
 		public String getConfiguration() {
 			return this.configuration;
 		}
@@ -122,12 +122,12 @@ public class GetDestinationResponse extends AcsResponse {
 			this.configuration = configuration;
 		}
 
-		public Boolean getIsFailover() {
-			return this.isFailover;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setIsFailover(Boolean isFailover) {
-			this.isFailover = isFailover;
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public String getUtcCreated() {
@@ -138,12 +138,12 @@ public class GetDestinationResponse extends AcsResponse {
 			this.utcCreated = utcCreated;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public Boolean getIsFailover() {
+			return this.isFailover;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setIsFailover(Boolean isFailover) {
+			this.isFailover = isFailover;
 		}
 	}
 

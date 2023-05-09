@@ -28,24 +28,24 @@ public class QuerySceneRuleResponseUnmarshaller {
 	public static QuerySceneRuleResponse unmarshall(QuerySceneRuleResponse querySceneRuleResponse, UnmarshallerContext _ctx) {
 		
 		querySceneRuleResponse.setRequestId(_ctx.stringValue("QuerySceneRuleResponse.RequestId"));
-		querySceneRuleResponse.setSuccess(_ctx.booleanValue("QuerySceneRuleResponse.Success"));
 		querySceneRuleResponse.setCode(_ctx.stringValue("QuerySceneRuleResponse.Code"));
 		querySceneRuleResponse.setErrorMessage(_ctx.stringValue("QuerySceneRuleResponse.ErrorMessage"));
+		querySceneRuleResponse.setSuccess(_ctx.booleanValue("QuerySceneRuleResponse.Success"));
 
 		Data data = new Data();
-		data.setTotal(_ctx.integerValue("QuerySceneRuleResponse.Data.Total"));
-		data.setPageSize(_ctx.integerValue("QuerySceneRuleResponse.Data.PageSize"));
 		data.setCurrentPage(_ctx.integerValue("QuerySceneRuleResponse.Data.CurrentPage"));
+		data.setPageSize(_ctx.integerValue("QuerySceneRuleResponse.Data.PageSize"));
+		data.setTotal(_ctx.integerValue("QuerySceneRuleResponse.Data.Total"));
 
 		List<Rule> ruleList = new ArrayList<Rule>();
 		for (int i = 0; i < _ctx.lengthValue("QuerySceneRuleResponse.Data.RuleList.Length"); i++) {
 			Rule rule = new Rule();
-			rule.setRuleId(_ctx.stringValue("QuerySceneRuleResponse.Data.RuleList["+ i +"].RuleId"));
+			rule.setRuleStatus(_ctx.integerValue("QuerySceneRuleResponse.Data.RuleList["+ i +"].RuleStatus"));
 			rule.setGmtCreate(_ctx.longValue("QuerySceneRuleResponse.Data.RuleList["+ i +"].GmtCreate"));
 			rule.setGmtModified(_ctx.longValue("QuerySceneRuleResponse.Data.RuleList["+ i +"].GmtModified"));
-			rule.setRuleName(_ctx.stringValue("QuerySceneRuleResponse.Data.RuleList["+ i +"].RuleName"));
 			rule.setRuleDescription(_ctx.stringValue("QuerySceneRuleResponse.Data.RuleList["+ i +"].RuleDescription"));
-			rule.setRuleStatus(_ctx.integerValue("QuerySceneRuleResponse.Data.RuleList["+ i +"].RuleStatus"));
+			rule.setRuleId(_ctx.stringValue("QuerySceneRuleResponse.Data.RuleList["+ i +"].RuleId"));
+			rule.setRuleName(_ctx.stringValue("QuerySceneRuleResponse.Data.RuleList["+ i +"].RuleName"));
 
 			ruleList.add(rule);
 		}

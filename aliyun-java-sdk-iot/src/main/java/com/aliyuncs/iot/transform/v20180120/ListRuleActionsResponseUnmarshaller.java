@@ -27,19 +27,19 @@ public class ListRuleActionsResponseUnmarshaller {
 	public static ListRuleActionsResponse unmarshall(ListRuleActionsResponse listRuleActionsResponse, UnmarshallerContext _ctx) {
 		
 		listRuleActionsResponse.setRequestId(_ctx.stringValue("ListRuleActionsResponse.RequestId"));
-		listRuleActionsResponse.setSuccess(_ctx.booleanValue("ListRuleActionsResponse.Success"));
 		listRuleActionsResponse.setCode(_ctx.stringValue("ListRuleActionsResponse.Code"));
 		listRuleActionsResponse.setErrorMessage(_ctx.stringValue("ListRuleActionsResponse.ErrorMessage"));
+		listRuleActionsResponse.setSuccess(_ctx.booleanValue("ListRuleActionsResponse.Success"));
 
 		List<RuleActionInfo> ruleActionList = new ArrayList<RuleActionInfo>();
 		for (int i = 0; i < _ctx.lengthValue("ListRuleActionsResponse.RuleActionList.Length"); i++) {
 			RuleActionInfo ruleActionInfo = new RuleActionInfo();
-			ruleActionInfo.setId(_ctx.longValue("ListRuleActionsResponse.RuleActionList["+ i +"].Id"));
-			ruleActionInfo.setRuleId(_ctx.longValue("ListRuleActionsResponse.RuleActionList["+ i +"].RuleId"));
 			ruleActionInfo.setType(_ctx.stringValue("ListRuleActionsResponse.RuleActionList["+ i +"].Type"));
+			ruleActionInfo.setStatus(_ctx.stringValue("ListRuleActionsResponse.RuleActionList["+ i +"].Status"));
 			ruleActionInfo.setConfiguration(_ctx.stringValue("ListRuleActionsResponse.RuleActionList["+ i +"].Configuration"));
 			ruleActionInfo.setErrorActionFlag(_ctx.booleanValue("ListRuleActionsResponse.RuleActionList["+ i +"].ErrorActionFlag"));
-			ruleActionInfo.setStatus(_ctx.stringValue("ListRuleActionsResponse.RuleActionList["+ i +"].Status"));
+			ruleActionInfo.setId(_ctx.longValue("ListRuleActionsResponse.RuleActionList["+ i +"].Id"));
+			ruleActionInfo.setRuleId(_ctx.longValue("ListRuleActionsResponse.RuleActionList["+ i +"].RuleId"));
 
 			ruleActionList.add(ruleActionInfo);
 		}

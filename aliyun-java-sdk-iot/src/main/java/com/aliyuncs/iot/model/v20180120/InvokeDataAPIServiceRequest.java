@@ -48,15 +48,15 @@ public class InvokeDataAPIServiceRequest extends RpcAcsRequest<InvokeDataAPIServ
 		this.params = params;	
 		if (params != null) {
 			for (int depth1 = 0; depth1 < params.size(); depth1++) {
+				putBodyParameter("Param." + (depth1 + 1) + ".ParamName" , params.get(depth1).getParamName());
 				putBodyParameter("Param." + (depth1 + 1) + ".ParamType" , params.get(depth1).getParamType());
+				putBodyParameter("Param." + (depth1 + 1) + ".ListParamType" , params.get(depth1).getListParamType());
+				putBodyParameter("Param." + (depth1 + 1) + ".ParamValue" , params.get(depth1).getParamValue());
 				if (params.get(depth1).getListParamValues() != null) {
 					for (int i = 0; i < params.get(depth1).getListParamValues().size(); i++) {
 						putBodyParameter("Param." + (depth1 + 1) + ".ListParamValue." + (i + 1) , params.get(depth1).getListParamValues().get(i));
 					}
 				}
-				putBodyParameter("Param." + (depth1 + 1) + ".ListParamType" , params.get(depth1).getListParamType());
-				putBodyParameter("Param." + (depth1 + 1) + ".ParamName" , params.get(depth1).getParamName());
-				putBodyParameter("Param." + (depth1 + 1) + ".ParamValue" , params.get(depth1).getParamValue());
 			}
 		}	
 	}
@@ -85,15 +85,23 @@ public class InvokeDataAPIServiceRequest extends RpcAcsRequest<InvokeDataAPIServ
 
 	public static class Param {
 
-		private String paramType;
+		private String paramName;
 
-		private List<String> listParamValues;
+		private String paramType;
 
 		private String listParamType;
 
-		private String paramName;
-
 		private String paramValue;
+
+		private List<String> listParamValues;
+
+		public String getParamName() {
+			return this.paramName;
+		}
+
+		public void setParamName(String paramName) {
+			this.paramName = paramName;
+		}
 
 		public String getParamType() {
 			return this.paramType;
@@ -101,14 +109,6 @@ public class InvokeDataAPIServiceRequest extends RpcAcsRequest<InvokeDataAPIServ
 
 		public void setParamType(String paramType) {
 			this.paramType = paramType;
-		}
-
-		public List<String> getListParamValues() {
-			return this.listParamValues;
-		}
-
-		public void setListParamValues(List<String> listParamValues) {
-			this.listParamValues = listParamValues;
 		}
 
 		public String getListParamType() {
@@ -119,20 +119,20 @@ public class InvokeDataAPIServiceRequest extends RpcAcsRequest<InvokeDataAPIServ
 			this.listParamType = listParamType;
 		}
 
-		public String getParamName() {
-			return this.paramName;
-		}
-
-		public void setParamName(String paramName) {
-			this.paramName = paramName;
-		}
-
 		public String getParamValue() {
 			return this.paramValue;
 		}
 
 		public void setParamValue(String paramValue) {
 			this.paramValue = paramValue;
+		}
+
+		public List<String> getListParamValues() {
+			return this.listParamValues;
+		}
+
+		public void setListParamValues(List<String> listParamValues) {
+			this.listParamValues = listParamValues;
 		}
 	}
 

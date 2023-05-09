@@ -27,24 +27,24 @@ public class ListTaskResponseUnmarshaller {
 	public static ListTaskResponse unmarshall(ListTaskResponse listTaskResponse, UnmarshallerContext _ctx) {
 		
 		listTaskResponse.setRequestId(_ctx.stringValue("ListTaskResponse.RequestId"));
-		listTaskResponse.setSuccess(_ctx.booleanValue("ListTaskResponse.Success"));
 		listTaskResponse.setCode(_ctx.stringValue("ListTaskResponse.Code"));
-		listTaskResponse.setErrorMessage(_ctx.stringValue("ListTaskResponse.ErrorMessage"));
 		listTaskResponse.setNextToken(_ctx.stringValue("ListTaskResponse.NextToken"));
+		listTaskResponse.setErrorMessage(_ctx.stringValue("ListTaskResponse.ErrorMessage"));
+		listTaskResponse.setSuccess(_ctx.booleanValue("ListTaskResponse.Success"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListTaskResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setJobId(_ctx.stringValue("ListTaskResponse.Data["+ i +"].JobId"));
-			dataItem.setJobName(_ctx.stringValue("ListTaskResponse.Data["+ i +"].JobName"));
-			dataItem.setTaskId(_ctx.stringValue("ListTaskResponse.Data["+ i +"].TaskId"));
-			dataItem.setProductKey(_ctx.stringValue("ListTaskResponse.Data["+ i +"].ProductKey"));
-			dataItem.setDeviceName(_ctx.stringValue("ListTaskResponse.Data["+ i +"].DeviceName"));
-			dataItem.setIotId(_ctx.stringValue("ListTaskResponse.Data["+ i +"].IotId"));
-			dataItem.setProgress(_ctx.stringValue("ListTaskResponse.Data["+ i +"].Progress"));
-			dataItem.setUtcQueueTime(_ctx.stringValue("ListTaskResponse.Data["+ i +"].UtcQueueTime"));
-			dataItem.setUtcModified(_ctx.stringValue("ListTaskResponse.Data["+ i +"].UtcModified"));
 			dataItem.setStatus(_ctx.stringValue("ListTaskResponse.Data["+ i +"].Status"));
+			dataItem.setUtcQueueTime(_ctx.stringValue("ListTaskResponse.Data["+ i +"].UtcQueueTime"));
+			dataItem.setProductKey(_ctx.stringValue("ListTaskResponse.Data["+ i +"].ProductKey"));
+			dataItem.setProgress(_ctx.stringValue("ListTaskResponse.Data["+ i +"].Progress"));
+			dataItem.setDeviceName(_ctx.stringValue("ListTaskResponse.Data["+ i +"].DeviceName"));
+			dataItem.setJobName(_ctx.stringValue("ListTaskResponse.Data["+ i +"].JobName"));
+			dataItem.setUtcModified(_ctx.stringValue("ListTaskResponse.Data["+ i +"].UtcModified"));
+			dataItem.setJobId(_ctx.stringValue("ListTaskResponse.Data["+ i +"].JobId"));
+			dataItem.setTaskId(_ctx.stringValue("ListTaskResponse.Data["+ i +"].TaskId"));
+			dataItem.setIotId(_ctx.stringValue("ListTaskResponse.Data["+ i +"].IotId"));
 
 			data.add(dataItem);
 		}

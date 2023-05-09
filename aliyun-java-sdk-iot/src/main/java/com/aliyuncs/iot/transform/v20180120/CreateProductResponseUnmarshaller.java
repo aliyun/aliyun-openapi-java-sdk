@@ -24,22 +24,22 @@ public class CreateProductResponseUnmarshaller {
 	public static CreateProductResponse unmarshall(CreateProductResponse createProductResponse, UnmarshallerContext _ctx) {
 		
 		createProductResponse.setRequestId(_ctx.stringValue("CreateProductResponse.RequestId"));
-		createProductResponse.setSuccess(_ctx.booleanValue("CreateProductResponse.Success"));
 		createProductResponse.setCode(_ctx.stringValue("CreateProductResponse.Code"));
-		createProductResponse.setErrorMessage(_ctx.stringValue("CreateProductResponse.ErrorMessage"));
 		createProductResponse.setProductKey(_ctx.stringValue("CreateProductResponse.ProductKey"));
+		createProductResponse.setErrorMessage(_ctx.stringValue("CreateProductResponse.ErrorMessage"));
+		createProductResponse.setSuccess(_ctx.booleanValue("CreateProductResponse.Success"));
 
 		Data data = new Data();
-		data.setDataFormat(_ctx.integerValue("CreateProductResponse.Data.DataFormat"));
-		data.setDescription(_ctx.stringValue("CreateProductResponse.Data.Description"));
-		data.setNodeType(_ctx.integerValue("CreateProductResponse.Data.NodeType"));
+		data.setAuthType(_ctx.stringValue("CreateProductResponse.Data.AuthType"));
 		data.setProductKey(_ctx.stringValue("CreateProductResponse.Data.ProductKey"));
 		data.setProductName(_ctx.stringValue("CreateProductResponse.Data.ProductName"));
-		data.setAliyunCommodityCode(_ctx.stringValue("CreateProductResponse.Data.AliyunCommodityCode"));
+		data.setNodeType(_ctx.integerValue("CreateProductResponse.Data.NodeType"));
+		data.setDescription(_ctx.stringValue("CreateProductResponse.Data.Description"));
 		data.setId2(_ctx.booleanValue("CreateProductResponse.Data.Id2"));
-		data.setProtocolType(_ctx.stringValue("CreateProductResponse.Data.ProtocolType"));
-		data.setAuthType(_ctx.stringValue("CreateProductResponse.Data.AuthType"));
 		data.setProductSecret(_ctx.stringValue("CreateProductResponse.Data.ProductSecret"));
+		data.setProtocolType(_ctx.stringValue("CreateProductResponse.Data.ProtocolType"));
+		data.setDataFormat(_ctx.integerValue("CreateProductResponse.Data.DataFormat"));
+		data.setAliyunCommodityCode(_ctx.stringValue("CreateProductResponse.Data.AliyunCommodityCode"));
 		createProductResponse.setData(data);
 	 
 	 	return createProductResponse;

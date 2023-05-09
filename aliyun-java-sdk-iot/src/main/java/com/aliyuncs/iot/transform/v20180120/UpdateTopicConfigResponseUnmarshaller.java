@@ -23,9 +23,9 @@ public class UpdateTopicConfigResponseUnmarshaller {
 	public static UpdateTopicConfigResponse unmarshall(UpdateTopicConfigResponse updateTopicConfigResponse, UnmarshallerContext _ctx) {
 		
 		updateTopicConfigResponse.setRequestId(_ctx.stringValue("UpdateTopicConfigResponse.RequestId"));
-		updateTopicConfigResponse.setSuccess(_ctx.booleanValue("UpdateTopicConfigResponse.Success"));
 		updateTopicConfigResponse.setCode(_ctx.stringValue("UpdateTopicConfigResponse.Code"));
-		updateTopicConfigResponse.setErrorMessage(_ctx.stringValue("UpdateTopicConfigResponse.ErrorMessage"));
+		updateTopicConfigResponse.setMessage(_ctx.stringValue("UpdateTopicConfigResponse.Message"));
+		updateTopicConfigResponse.setSuccess(_ctx.booleanValue("UpdateTopicConfigResponse.Success"));
 	 
 	 	return updateTopicConfigResponse;
 	}

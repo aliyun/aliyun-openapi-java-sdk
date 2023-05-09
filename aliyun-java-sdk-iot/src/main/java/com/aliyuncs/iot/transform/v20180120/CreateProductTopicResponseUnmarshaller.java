@@ -23,10 +23,10 @@ public class CreateProductTopicResponseUnmarshaller {
 	public static CreateProductTopicResponse unmarshall(CreateProductTopicResponse createProductTopicResponse, UnmarshallerContext _ctx) {
 		
 		createProductTopicResponse.setRequestId(_ctx.stringValue("CreateProductTopicResponse.RequestId"));
-		createProductTopicResponse.setSuccess(_ctx.booleanValue("CreateProductTopicResponse.Success"));
 		createProductTopicResponse.setCode(_ctx.stringValue("CreateProductTopicResponse.Code"));
-		createProductTopicResponse.setErrorMessage(_ctx.stringValue("CreateProductTopicResponse.ErrorMessage"));
 		createProductTopicResponse.setTopicId(_ctx.longValue("CreateProductTopicResponse.TopicId"));
+		createProductTopicResponse.setErrorMessage(_ctx.stringValue("CreateProductTopicResponse.ErrorMessage"));
+		createProductTopicResponse.setSuccess(_ctx.booleanValue("CreateProductTopicResponse.Success"));
 	 
 	 	return createProductTopicResponse;
 	}

@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetRuleResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private RuleInfo ruleInfo;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -66,6 +50,22 @@ public class GetRuleResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public RuleInfo getRuleInfo() {
 		return this.ruleInfo;
 	}
@@ -76,44 +76,60 @@ public class GetRuleResponse extends AcsResponse {
 
 	public static class RuleInfo {
 
-		private Long id;
+		private String modified;
+
+		private String status;
+
+		private String dataType;
 
 		private String select;
+
+		private String utcCreated;
+
+		private Integer topicType;
+
+		private Long createUserId;
+
+		private String where;
+
+		private String productKey;
+
+		private String utcModified;
 
 		private String topic;
 
 		private String shortTopic;
 
-		private String where;
-
-		private String status;
-
-		private Long createUserId;
-
-		private String productKey;
+		private String ruleDesc;
 
 		private String name;
 
-		private String ruleDesc;
-
-		private String dataType;
-
 		private String created;
 
-		private String utcCreated;
+		private Long id;
 
-		private String modified;
-
-		private String utcModified;
-
-		private Integer topicType;
-
-		public Long getId() {
-			return this.id;
+		public String getModified() {
+			return this.modified;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
+		public void setModified(String modified) {
+			this.modified = modified;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getDataType() {
+			return this.dataType;
+		}
+
+		public void setDataType(String dataType) {
+			this.dataType = dataType;
 		}
 
 		public String getSelect() {
@@ -122,6 +138,54 @@ public class GetRuleResponse extends AcsResponse {
 
 		public void setSelect(String select) {
 			this.select = select;
+		}
+
+		public String getUtcCreated() {
+			return this.utcCreated;
+		}
+
+		public void setUtcCreated(String utcCreated) {
+			this.utcCreated = utcCreated;
+		}
+
+		public Integer getTopicType() {
+			return this.topicType;
+		}
+
+		public void setTopicType(Integer topicType) {
+			this.topicType = topicType;
+		}
+
+		public Long getCreateUserId() {
+			return this.createUserId;
+		}
+
+		public void setCreateUserId(Long createUserId) {
+			this.createUserId = createUserId;
+		}
+
+		public String getWhere() {
+			return this.where;
+		}
+
+		public void setWhere(String where) {
+			this.where = where;
+		}
+
+		public String getProductKey() {
+			return this.productKey;
+		}
+
+		public void setProductKey(String productKey) {
+			this.productKey = productKey;
+		}
+
+		public String getUtcModified() {
+			return this.utcModified;
+		}
+
+		public void setUtcModified(String utcModified) {
+			this.utcModified = utcModified;
 		}
 
 		public String getTopic() {
@@ -140,36 +204,12 @@ public class GetRuleResponse extends AcsResponse {
 			this.shortTopic = shortTopic;
 		}
 
-		public String getWhere() {
-			return this.where;
+		public String getRuleDesc() {
+			return this.ruleDesc;
 		}
 
-		public void setWhere(String where) {
-			this.where = where;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public Long getCreateUserId() {
-			return this.createUserId;
-		}
-
-		public void setCreateUserId(Long createUserId) {
-			this.createUserId = createUserId;
-		}
-
-		public String getProductKey() {
-			return this.productKey;
-		}
-
-		public void setProductKey(String productKey) {
-			this.productKey = productKey;
+		public void setRuleDesc(String ruleDesc) {
+			this.ruleDesc = ruleDesc;
 		}
 
 		public String getName() {
@@ -180,22 +220,6 @@ public class GetRuleResponse extends AcsResponse {
 			this.name = name;
 		}
 
-		public String getRuleDesc() {
-			return this.ruleDesc;
-		}
-
-		public void setRuleDesc(String ruleDesc) {
-			this.ruleDesc = ruleDesc;
-		}
-
-		public String getDataType() {
-			return this.dataType;
-		}
-
-		public void setDataType(String dataType) {
-			this.dataType = dataType;
-		}
-
 		public String getCreated() {
 			return this.created;
 		}
@@ -204,36 +228,12 @@ public class GetRuleResponse extends AcsResponse {
 			this.created = created;
 		}
 
-		public String getUtcCreated() {
-			return this.utcCreated;
+		public Long getId() {
+			return this.id;
 		}
 
-		public void setUtcCreated(String utcCreated) {
-			this.utcCreated = utcCreated;
-		}
-
-		public String getModified() {
-			return this.modified;
-		}
-
-		public void setModified(String modified) {
-			this.modified = modified;
-		}
-
-		public String getUtcModified() {
-			return this.utcModified;
-		}
-
-		public void setUtcModified(String utcModified) {
-			this.utcModified = utcModified;
-		}
-
-		public Integer getTopicType() {
-			return this.topicType;
-		}
-
-		public void setTopicType(Integer topicType) {
-			this.topicType = topicType;
+		public void setId(Long id) {
+			this.id = id;
 		}
 	}
 

@@ -24,7 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class BatchAddDeviceGroupRelationsResponse extends AcsResponse {
 
+	private String errorMessage;
+
 	private String requestId;
+
+	private Integer exceedTenGroupDeviceCount;
+
+	private Integer alreadyRelatedGroupDeviceCount;
 
 	private Boolean success;
 
@@ -32,13 +38,15 @@ public class BatchAddDeviceGroupRelationsResponse extends AcsResponse {
 
 	private Integer validDeviceCount;
 
-	private Integer exceedTenGroupDeviceCount;
-
-	private Integer alreadyRelatedGroupDeviceCount;
-
 	private Integer successAddedDeviceCount;
 
-	private String errorMessage;
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -46,6 +54,22 @@ public class BatchAddDeviceGroupRelationsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getExceedTenGroupDeviceCount() {
+		return this.exceedTenGroupDeviceCount;
+	}
+
+	public void setExceedTenGroupDeviceCount(Integer exceedTenGroupDeviceCount) {
+		this.exceedTenGroupDeviceCount = exceedTenGroupDeviceCount;
+	}
+
+	public Integer getAlreadyRelatedGroupDeviceCount() {
+		return this.alreadyRelatedGroupDeviceCount;
+	}
+
+	public void setAlreadyRelatedGroupDeviceCount(Integer alreadyRelatedGroupDeviceCount) {
+		this.alreadyRelatedGroupDeviceCount = alreadyRelatedGroupDeviceCount;
 	}
 
 	public Boolean getSuccess() {
@@ -72,36 +96,12 @@ public class BatchAddDeviceGroupRelationsResponse extends AcsResponse {
 		this.validDeviceCount = validDeviceCount;
 	}
 
-	public Integer getExceedTenGroupDeviceCount() {
-		return this.exceedTenGroupDeviceCount;
-	}
-
-	public void setExceedTenGroupDeviceCount(Integer exceedTenGroupDeviceCount) {
-		this.exceedTenGroupDeviceCount = exceedTenGroupDeviceCount;
-	}
-
-	public Integer getAlreadyRelatedGroupDeviceCount() {
-		return this.alreadyRelatedGroupDeviceCount;
-	}
-
-	public void setAlreadyRelatedGroupDeviceCount(Integer alreadyRelatedGroupDeviceCount) {
-		this.alreadyRelatedGroupDeviceCount = alreadyRelatedGroupDeviceCount;
-	}
-
 	public Integer getSuccessAddedDeviceCount() {
 		return this.successAddedDeviceCount;
 	}
 
 	public void setSuccessAddedDeviceCount(Integer successAddedDeviceCount) {
 		this.successAddedDeviceCount = successAddedDeviceCount;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
 	}
 
 	@Override

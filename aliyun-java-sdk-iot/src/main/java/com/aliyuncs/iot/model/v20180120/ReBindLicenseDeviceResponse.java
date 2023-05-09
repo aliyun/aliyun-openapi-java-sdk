@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ReBindLicenseDeviceResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -66,6 +50,22 @@ public class ReBindLicenseDeviceResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -78,13 +78,13 @@ public class ReBindLicenseDeviceResponse extends AcsResponse {
 
 		private Long successSum;
 
-		private Long failSum;
+		private Integer progress;
 
 		private String resultCsvFile;
 
-		private Integer progress;
-
 		private String checkProgressId;
+
+		private Long failSum;
 
 		public Long getSuccessSum() {
 			return this.successSum;
@@ -92,22 +92,6 @@ public class ReBindLicenseDeviceResponse extends AcsResponse {
 
 		public void setSuccessSum(Long successSum) {
 			this.successSum = successSum;
-		}
-
-		public Long getFailSum() {
-			return this.failSum;
-		}
-
-		public void setFailSum(Long failSum) {
-			this.failSum = failSum;
-		}
-
-		public String getResultCsvFile() {
-			return this.resultCsvFile;
-		}
-
-		public void setResultCsvFile(String resultCsvFile) {
-			this.resultCsvFile = resultCsvFile;
 		}
 
 		public Integer getProgress() {
@@ -118,12 +102,28 @@ public class ReBindLicenseDeviceResponse extends AcsResponse {
 			this.progress = progress;
 		}
 
+		public String getResultCsvFile() {
+			return this.resultCsvFile;
+		}
+
+		public void setResultCsvFile(String resultCsvFile) {
+			this.resultCsvFile = resultCsvFile;
+		}
+
 		public String getCheckProgressId() {
 			return this.checkProgressId;
 		}
 
 		public void setCheckProgressId(String checkProgressId) {
 			this.checkProgressId = checkProgressId;
+		}
+
+		public Long getFailSum() {
+			return this.failSum;
+		}
+
+		public void setFailSum(Long failSum) {
+			this.failSum = failSum;
 		}
 	}
 

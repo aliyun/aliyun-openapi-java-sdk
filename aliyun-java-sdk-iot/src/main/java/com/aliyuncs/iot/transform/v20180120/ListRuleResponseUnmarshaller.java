@@ -27,31 +27,31 @@ public class ListRuleResponseUnmarshaller {
 	public static ListRuleResponse unmarshall(ListRuleResponse listRuleResponse, UnmarshallerContext _ctx) {
 		
 		listRuleResponse.setRequestId(_ctx.stringValue("ListRuleResponse.RequestId"));
+		listRuleResponse.setErrorMessage(_ctx.stringValue("ListRuleResponse.ErrorMessage"));
 		listRuleResponse.setSuccess(_ctx.booleanValue("ListRuleResponse.Success"));
 		listRuleResponse.setCode(_ctx.stringValue("ListRuleResponse.Code"));
-		listRuleResponse.setErrorMessage(_ctx.stringValue("ListRuleResponse.ErrorMessage"));
-		listRuleResponse.setPage(_ctx.integerValue("ListRuleResponse.Page"));
-		listRuleResponse.setTotal(_ctx.integerValue("ListRuleResponse.Total"));
 		listRuleResponse.setPageSize(_ctx.integerValue("ListRuleResponse.PageSize"));
+		listRuleResponse.setTotal(_ctx.integerValue("ListRuleResponse.Total"));
+		listRuleResponse.setPage(_ctx.integerValue("ListRuleResponse.Page"));
 
 		List<RuleInfo> data = new ArrayList<RuleInfo>();
 		for (int i = 0; i < _ctx.lengthValue("ListRuleResponse.Data.Length"); i++) {
 			RuleInfo ruleInfo = new RuleInfo();
-			ruleInfo.setId(_ctx.longValue("ListRuleResponse.Data["+ i +"].Id"));
+			ruleInfo.setModified(_ctx.stringValue("ListRuleResponse.Data["+ i +"].Modified"));
+			ruleInfo.setStatus(_ctx.stringValue("ListRuleResponse.Data["+ i +"].Status"));
+			ruleInfo.setDataType(_ctx.stringValue("ListRuleResponse.Data["+ i +"].DataType"));
 			ruleInfo.setSelect(_ctx.stringValue("ListRuleResponse.Data["+ i +"].Select"));
+			ruleInfo.setUtcCreated(_ctx.stringValue("ListRuleResponse.Data["+ i +"].UtcCreated"));
+			ruleInfo.setCreateUserId(_ctx.longValue("ListRuleResponse.Data["+ i +"].CreateUserId"));
+			ruleInfo.setWhere(_ctx.stringValue("ListRuleResponse.Data["+ i +"].Where"));
+			ruleInfo.setProductKey(_ctx.stringValue("ListRuleResponse.Data["+ i +"].ProductKey"));
+			ruleInfo.setUtcModified(_ctx.stringValue("ListRuleResponse.Data["+ i +"].UtcModified"));
 			ruleInfo.setTopic(_ctx.stringValue("ListRuleResponse.Data["+ i +"].Topic"));
 			ruleInfo.setShortTopic(_ctx.stringValue("ListRuleResponse.Data["+ i +"].ShortTopic"));
-			ruleInfo.setWhere(_ctx.stringValue("ListRuleResponse.Data["+ i +"].Where"));
-			ruleInfo.setStatus(_ctx.stringValue("ListRuleResponse.Data["+ i +"].Status"));
-			ruleInfo.setCreateUserId(_ctx.longValue("ListRuleResponse.Data["+ i +"].CreateUserId"));
-			ruleInfo.setProductKey(_ctx.stringValue("ListRuleResponse.Data["+ i +"].ProductKey"));
-			ruleInfo.setName(_ctx.stringValue("ListRuleResponse.Data["+ i +"].Name"));
-			ruleInfo.setDataType(_ctx.stringValue("ListRuleResponse.Data["+ i +"].DataType"));
 			ruleInfo.setRuleDesc(_ctx.stringValue("ListRuleResponse.Data["+ i +"].RuleDesc"));
+			ruleInfo.setName(_ctx.stringValue("ListRuleResponse.Data["+ i +"].Name"));
 			ruleInfo.setCreated(_ctx.stringValue("ListRuleResponse.Data["+ i +"].Created"));
-			ruleInfo.setUtcCreated(_ctx.stringValue("ListRuleResponse.Data["+ i +"].UtcCreated"));
-			ruleInfo.setModified(_ctx.stringValue("ListRuleResponse.Data["+ i +"].Modified"));
-			ruleInfo.setUtcModified(_ctx.stringValue("ListRuleResponse.Data["+ i +"].UtcModified"));
+			ruleInfo.setId(_ctx.longValue("ListRuleResponse.Data["+ i +"].Id"));
 
 			data.add(ruleInfo);
 		}

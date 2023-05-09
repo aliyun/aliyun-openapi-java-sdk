@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.iot.model.v20180120.QueryBatchRegisterDeviceStatusResponse;
 import com.aliyuncs.iot.model.v20180120.QueryBatchRegisterDeviceStatusResponse.Data;
+import com.aliyuncs.iot.model.v20180120.QueryBatchRegisterDeviceStatusResponse.Data.InvalidDetailListItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -27,12 +28,18 @@ public class QueryBatchRegisterDeviceStatusResponseUnmarshaller {
 	public static QueryBatchRegisterDeviceStatusResponse unmarshall(QueryBatchRegisterDeviceStatusResponse queryBatchRegisterDeviceStatusResponse, UnmarshallerContext _ctx) {
 		
 		queryBatchRegisterDeviceStatusResponse.setRequestId(_ctx.stringValue("QueryBatchRegisterDeviceStatusResponse.RequestId"));
-		queryBatchRegisterDeviceStatusResponse.setSuccess(_ctx.booleanValue("QueryBatchRegisterDeviceStatusResponse.Success"));
 		queryBatchRegisterDeviceStatusResponse.setCode(_ctx.stringValue("QueryBatchRegisterDeviceStatusResponse.Code"));
 		queryBatchRegisterDeviceStatusResponse.setErrorMessage(_ctx.stringValue("QueryBatchRegisterDeviceStatusResponse.ErrorMessage"));
+		queryBatchRegisterDeviceStatusResponse.setSuccess(_ctx.booleanValue("QueryBatchRegisterDeviceStatusResponse.Success"));
 
 		Data data = new Data();
 		data.setStatus(_ctx.stringValue("QueryBatchRegisterDeviceStatusResponse.Data.Status"));
+
+		List<String> invalidList = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("QueryBatchRegisterDeviceStatusResponse.Data.InvalidList.Length"); i++) {
+			invalidList.add(_ctx.stringValue("QueryBatchRegisterDeviceStatusResponse.Data.InvalidList["+ i +"]"));
+		}
+		data.setInvalidList(invalidList);
 
 		List<String> validList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("QueryBatchRegisterDeviceStatusResponse.Data.ValidList.Length"); i++) {
@@ -40,11 +47,16 @@ public class QueryBatchRegisterDeviceStatusResponseUnmarshaller {
 		}
 		data.setValidList(validList);
 
-		List<String> invalidList = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("QueryBatchRegisterDeviceStatusResponse.Data.InvalidList.Length"); i++) {
-			invalidList.add(_ctx.stringValue("QueryBatchRegisterDeviceStatusResponse.Data.InvalidList["+ i +"]"));
+		List<InvalidDetailListItem> invalidDetailList = new ArrayList<InvalidDetailListItem>();
+		for (int i = 0; i < _ctx.lengthValue("QueryBatchRegisterDeviceStatusResponse.Data.InvalidDetailList.Length"); i++) {
+			InvalidDetailListItem invalidDetailListItem = new InvalidDetailListItem();
+			invalidDetailListItem.setErrorMsg(_ctx.stringValue("QueryBatchRegisterDeviceStatusResponse.Data.InvalidDetailList["+ i +"].ErrorMsg"));
+			invalidDetailListItem.setNickName(_ctx.stringValue("QueryBatchRegisterDeviceStatusResponse.Data.InvalidDetailList["+ i +"].NickName"));
+			invalidDetailListItem.setDeviceName(_ctx.stringValue("QueryBatchRegisterDeviceStatusResponse.Data.InvalidDetailList["+ i +"].DeviceName"));
+
+			invalidDetailList.add(invalidDetailListItem);
 		}
-		data.setInvalidList(invalidList);
+		data.setInvalidDetailList(invalidDetailList);
 		queryBatchRegisterDeviceStatusResponse.setData(data);
 	 
 	 	return queryBatchRegisterDeviceStatusResponse;

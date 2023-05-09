@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GenerateOTAUploadURLResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -66,6 +50,22 @@ public class GenerateOTAUploadURLResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -78,19 +78,19 @@ public class GenerateOTAUploadURLResponse extends AcsResponse {
 
 		private String key;
 
-		private String host;
-
-		private String policy;
-
 		private String oSSAccessKeyId;
 
 		private String signature;
 
+		private String host;
+
+		private String policy;
+
+		private String objectStorage;
+
 		private String firmwareUrl;
 
 		private String utcCreate;
-
-		private String objectStorage;
 
 		public String getKey() {
 			return this.key;
@@ -98,22 +98,6 @@ public class GenerateOTAUploadURLResponse extends AcsResponse {
 
 		public void setKey(String key) {
 			this.key = key;
-		}
-
-		public String getHost() {
-			return this.host;
-		}
-
-		public void setHost(String host) {
-			this.host = host;
-		}
-
-		public String getPolicy() {
-			return this.policy;
-		}
-
-		public void setPolicy(String policy) {
-			this.policy = policy;
 		}
 
 		public String getOSSAccessKeyId() {
@@ -132,6 +116,30 @@ public class GenerateOTAUploadURLResponse extends AcsResponse {
 			this.signature = signature;
 		}
 
+		public String getHost() {
+			return this.host;
+		}
+
+		public void setHost(String host) {
+			this.host = host;
+		}
+
+		public String getPolicy() {
+			return this.policy;
+		}
+
+		public void setPolicy(String policy) {
+			this.policy = policy;
+		}
+
+		public String getObjectStorage() {
+			return this.objectStorage;
+		}
+
+		public void setObjectStorage(String objectStorage) {
+			this.objectStorage = objectStorage;
+		}
+
 		public String getFirmwareUrl() {
 			return this.firmwareUrl;
 		}
@@ -146,14 +154,6 @@ public class GenerateOTAUploadURLResponse extends AcsResponse {
 
 		public void setUtcCreate(String utcCreate) {
 			this.utcCreate = utcCreate;
-		}
-
-		public String getObjectStorage() {
-			return this.objectStorage;
-		}
-
-		public void setObjectStorage(String objectStorage) {
-			this.objectStorage = objectStorage;
 		}
 	}
 

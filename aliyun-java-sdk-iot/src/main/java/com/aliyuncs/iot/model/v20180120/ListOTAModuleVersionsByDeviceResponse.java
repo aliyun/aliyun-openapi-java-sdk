@@ -25,23 +25,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListOTAModuleVersionsByDeviceResponse extends AcsResponse {
 
+	private Integer currentPage;
+
 	private String requestId;
+
+	private String errorMessage;
 
 	private Boolean success;
 
 	private String code;
 
-	private String errorMessage;
-
-	private Integer total;
-
 	private Integer pageSize;
 
 	private Integer pageCount;
 
-	private Integer currentPage;
+	private Integer total;
 
 	private List<SimpleOTAModuleInfo> data;
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,6 +57,14 @@ public class ListOTAModuleVersionsByDeviceResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
 	public Boolean getSuccess() {
@@ -67,22 +83,6 @@ public class ListOTAModuleVersionsByDeviceResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
-	public Integer getTotal() {
-		return this.total;
-	}
-
-	public void setTotal(Integer total) {
-		this.total = total;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -99,12 +99,12 @@ public class ListOTAModuleVersionsByDeviceResponse extends AcsResponse {
 		this.pageCount = pageCount;
 	}
 
-	public Integer getCurrentPage() {
-		return this.currentPage;
+	public Integer getTotal() {
+		return this.total;
 	}
 
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
+	public void setTotal(Integer total) {
+		this.total = total;
 	}
 
 	public List<SimpleOTAModuleInfo> getData() {
@@ -117,15 +117,23 @@ public class ListOTAModuleVersionsByDeviceResponse extends AcsResponse {
 
 	public static class SimpleOTAModuleInfo {
 
+		private String moduleName;
+
 		private String productKey;
 
 		private String deviceName;
 
-		private String iotId;
-
 		private String moduleVersion;
 
-		private String moduleName;
+		private String iotId;
+
+		public String getModuleName() {
+			return this.moduleName;
+		}
+
+		public void setModuleName(String moduleName) {
+			this.moduleName = moduleName;
+		}
 
 		public String getProductKey() {
 			return this.productKey;
@@ -143,14 +151,6 @@ public class ListOTAModuleVersionsByDeviceResponse extends AcsResponse {
 			this.deviceName = deviceName;
 		}
 
-		public String getIotId() {
-			return this.iotId;
-		}
-
-		public void setIotId(String iotId) {
-			this.iotId = iotId;
-		}
-
 		public String getModuleVersion() {
 			return this.moduleVersion;
 		}
@@ -159,12 +159,12 @@ public class ListOTAModuleVersionsByDeviceResponse extends AcsResponse {
 			this.moduleVersion = moduleVersion;
 		}
 
-		public String getModuleName() {
-			return this.moduleName;
+		public String getIotId() {
+			return this.iotId;
 		}
 
-		public void setModuleName(String moduleName) {
-			this.moduleName = moduleName;
+		public void setIotId(String iotId) {
+			this.iotId = iotId;
 		}
 	}
 

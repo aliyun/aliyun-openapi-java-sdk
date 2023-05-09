@@ -36,8 +36,6 @@ public class PubRequest extends RpcAcsRequest<PubResponse> {
 
 	private String iotInstanceId;
 
-	private Long messageExpiryInterval;
-
 	private String responseTopic;
 
 	private String topicFullName;
@@ -47,8 +45,6 @@ public class PubRequest extends RpcAcsRequest<PubResponse> {
 	private String productKey;
 
 	private String contentType;
-
-	private Boolean retained;
 
 	private String deviceName;
 	public PubRequest() {
@@ -118,17 +114,6 @@ public class PubRequest extends RpcAcsRequest<PubResponse> {
 		}
 	}
 
-	public Long getMessageExpiryInterval() {
-		return this.messageExpiryInterval;
-	}
-
-	public void setMessageExpiryInterval(Long messageExpiryInterval) {
-		this.messageExpiryInterval = messageExpiryInterval;
-		if(messageExpiryInterval != null){
-			putQueryParameter("MessageExpiryInterval", messageExpiryInterval.toString());
-		}
-	}
-
 	public String getResponseTopic() {
 		return this.responseTopic;
 	}
@@ -181,17 +166,6 @@ public class PubRequest extends RpcAcsRequest<PubResponse> {
 		this.contentType = contentType;
 		if(contentType != null){
 			putQueryParameter("ContentType", contentType);
-		}
-	}
-
-	public Boolean getRetained() {
-		return this.retained;
-	}
-
-	public void setRetained(Boolean retained) {
-		this.retained = retained;
-		if(retained != null){
-			putQueryParameter("Retained", retained.toString());
 		}
 	}
 

@@ -27,21 +27,21 @@ public class ListDataSourceItemResponseUnmarshaller {
 	public static ListDataSourceItemResponse unmarshall(ListDataSourceItemResponse listDataSourceItemResponse, UnmarshallerContext _ctx) {
 		
 		listDataSourceItemResponse.setRequestId(_ctx.stringValue("ListDataSourceItemResponse.RequestId"));
+		listDataSourceItemResponse.setErrorMessage(_ctx.stringValue("ListDataSourceItemResponse.ErrorMessage"));
 		listDataSourceItemResponse.setSuccess(_ctx.booleanValue("ListDataSourceItemResponse.Success"));
 		listDataSourceItemResponse.setCode(_ctx.stringValue("ListDataSourceItemResponse.Code"));
-		listDataSourceItemResponse.setErrorMessage(_ctx.stringValue("ListDataSourceItemResponse.ErrorMessage"));
-		listDataSourceItemResponse.setPage(_ctx.integerValue("ListDataSourceItemResponse.Page"));
 		listDataSourceItemResponse.setPageSize(_ctx.integerValue("ListDataSourceItemResponse.PageSize"));
 		listDataSourceItemResponse.setTotal(_ctx.integerValue("ListDataSourceItemResponse.Total"));
+		listDataSourceItemResponse.setPage(_ctx.integerValue("ListDataSourceItemResponse.Page"));
 
 		List<DataSourceItem> dataSourceItems = new ArrayList<DataSourceItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListDataSourceItemResponse.DataSourceItems.Length"); i++) {
 			DataSourceItem dataSourceItem = new DataSourceItem();
-			dataSourceItem.setDataSourceItemId(_ctx.longValue("ListDataSourceItemResponse.DataSourceItems["+ i +"].DataSourceItemId"));
-			dataSourceItem.setTopic(_ctx.stringValue("ListDataSourceItemResponse.DataSourceItems["+ i +"].Topic"));
-			dataSourceItem.setScopeType(_ctx.stringValue("ListDataSourceItemResponse.DataSourceItems["+ i +"].ScopeType"));
 			dataSourceItem.setProductKey(_ctx.stringValue("ListDataSourceItemResponse.DataSourceItems["+ i +"].ProductKey"));
+			dataSourceItem.setDataSourceItemId(_ctx.longValue("ListDataSourceItemResponse.DataSourceItems["+ i +"].DataSourceItemId"));
 			dataSourceItem.setDeviceName(_ctx.stringValue("ListDataSourceItemResponse.DataSourceItems["+ i +"].DeviceName"));
+			dataSourceItem.setScopeType(_ctx.stringValue("ListDataSourceItemResponse.DataSourceItems["+ i +"].ScopeType"));
+			dataSourceItem.setTopic(_ctx.stringValue("ListDataSourceItemResponse.DataSourceItems["+ i +"].Topic"));
 
 			dataSourceItems.add(dataSourceItem);
 		}

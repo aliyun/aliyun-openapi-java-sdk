@@ -27,17 +27,17 @@ public class ListDataSourceItemResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String errorMessage;
+
 	private Boolean success;
 
 	private String code;
 
-	private String errorMessage;
-
-	private Integer page;
-
 	private Integer pageSize;
 
 	private Integer total;
+
+	private Integer page;
 
 	private List<DataSourceItem> dataSourceItems;
 
@@ -47,6 +47,14 @@ public class ListDataSourceItemResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
 	public Boolean getSuccess() {
@@ -65,22 +73,6 @@ public class ListDataSourceItemResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
-	public Integer getPage() {
-		return this.page;
-	}
-
-	public void setPage(Integer page) {
-		this.page = page;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -97,6 +89,14 @@ public class ListDataSourceItemResponse extends AcsResponse {
 		this.total = total;
 	}
 
+	public Integer getPage() {
+		return this.page;
+	}
+
+	public void setPage(Integer page) {
+		this.page = page;
+	}
+
 	public List<DataSourceItem> getDataSourceItems() {
 		return this.dataSourceItems;
 	}
@@ -107,15 +107,23 @@ public class ListDataSourceItemResponse extends AcsResponse {
 
 	public static class DataSourceItem {
 
+		private String productKey;
+
 		private Long dataSourceItemId;
 
-		private String topic;
+		private String deviceName;
 
 		private String scopeType;
 
-		private String productKey;
+		private String topic;
 
-		private String deviceName;
+		public String getProductKey() {
+			return this.productKey;
+		}
+
+		public void setProductKey(String productKey) {
+			this.productKey = productKey;
+		}
 
 		public Long getDataSourceItemId() {
 			return this.dataSourceItemId;
@@ -125,12 +133,12 @@ public class ListDataSourceItemResponse extends AcsResponse {
 			this.dataSourceItemId = dataSourceItemId;
 		}
 
-		public String getTopic() {
-			return this.topic;
+		public String getDeviceName() {
+			return this.deviceName;
 		}
 
-		public void setTopic(String topic) {
-			this.topic = topic;
+		public void setDeviceName(String deviceName) {
+			this.deviceName = deviceName;
 		}
 
 		public String getScopeType() {
@@ -141,20 +149,12 @@ public class ListDataSourceItemResponse extends AcsResponse {
 			this.scopeType = scopeType;
 		}
 
-		public String getProductKey() {
-			return this.productKey;
+		public String getTopic() {
+			return this.topic;
 		}
 
-		public void setProductKey(String productKey) {
-			this.productKey = productKey;
-		}
-
-		public String getDeviceName() {
-			return this.deviceName;
-		}
-
-		public void setDeviceName(String deviceName) {
-			this.deviceName = deviceName;
+		public void setTopic(String topic) {
+			this.topic = topic;
 		}
 	}
 

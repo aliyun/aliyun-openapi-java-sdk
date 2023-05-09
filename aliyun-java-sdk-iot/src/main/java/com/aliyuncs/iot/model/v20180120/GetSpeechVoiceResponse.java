@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetSpeechVoiceResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private List<Items> data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class GetSpeechVoiceResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public List<Items> getData() {
 		return this.data;
 	}
@@ -77,19 +77,11 @@ public class GetSpeechVoiceResponse extends AcsResponse {
 
 	public static class Items {
 
-		private String value;
-
 		private String label;
 
+		private String value;
+
 		private List<Items1> voiceList;
-
-		public String getValue() {
-			return this.value;
-		}
-
-		public void setValue(String value) {
-			this.value = value;
-		}
 
 		public String getLabel() {
 			return this.label;
@@ -97,6 +89,14 @@ public class GetSpeechVoiceResponse extends AcsResponse {
 
 		public void setLabel(String label) {
 			this.label = label;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
 		}
 
 		public List<Items1> getVoiceList() {
@@ -109,17 +109,9 @@ public class GetSpeechVoiceResponse extends AcsResponse {
 
 		public static class Items1 {
 
-			private String value;
-
 			private String label;
 
-			public String getValue() {
-				return this.value;
-			}
-
-			public void setValue(String value) {
-				this.value = value;
-			}
+			private String value;
 
 			public String getLabel() {
 				return this.label;
@@ -127,6 +119,14 @@ public class GetSpeechVoiceResponse extends AcsResponse {
 
 			public void setLabel(String label) {
 				this.label = label;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
 			}
 		}
 	}

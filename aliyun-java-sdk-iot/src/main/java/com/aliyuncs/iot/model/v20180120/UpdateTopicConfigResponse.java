@@ -24,13 +24,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class UpdateTopicConfigResponse extends AcsResponse {
 
+	private String code;
+
+	private String message;
+
 	private String requestId;
 
 	private Boolean success;
 
-	private String code;
+	public String getCode() {
+		return this.code;
+	}
 
-	private String errorMessage;
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -46,22 +62,6 @@ public class UpdateTopicConfigResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
 	}
 
 	@Override

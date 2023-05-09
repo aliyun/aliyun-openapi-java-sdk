@@ -24,29 +24,29 @@ public class QueryDeviceDetailResponseUnmarshaller {
 	public static QueryDeviceDetailResponse unmarshall(QueryDeviceDetailResponse queryDeviceDetailResponse, UnmarshallerContext _ctx) {
 		
 		queryDeviceDetailResponse.setRequestId(_ctx.stringValue("QueryDeviceDetailResponse.RequestId"));
-		queryDeviceDetailResponse.setSuccess(_ctx.booleanValue("QueryDeviceDetailResponse.Success"));
 		queryDeviceDetailResponse.setCode(_ctx.stringValue("QueryDeviceDetailResponse.Code"));
 		queryDeviceDetailResponse.setErrorMessage(_ctx.stringValue("QueryDeviceDetailResponse.ErrorMessage"));
+		queryDeviceDetailResponse.setSuccess(_ctx.booleanValue("QueryDeviceDetailResponse.Success"));
 
 		Data data = new Data();
-		data.setIotId(_ctx.stringValue("QueryDeviceDetailResponse.Data.IotId"));
-		data.setProductKey(_ctx.stringValue("QueryDeviceDetailResponse.Data.ProductKey"));
+		data.setStatus(_ctx.stringValue("QueryDeviceDetailResponse.Data.Status"));
+		data.setOwner(_ctx.booleanValue("QueryDeviceDetailResponse.Data.Owner"));
+		data.setUtcActive(_ctx.stringValue("QueryDeviceDetailResponse.Data.UtcActive"));
 		data.setProductName(_ctx.stringValue("QueryDeviceDetailResponse.Data.ProductName"));
 		data.setDeviceName(_ctx.stringValue("QueryDeviceDetailResponse.Data.DeviceName"));
-		data.setDeviceSecret(_ctx.stringValue("QueryDeviceDetailResponse.Data.DeviceSecret"));
-		data.setFirmwareVersion(_ctx.stringValue("QueryDeviceDetailResponse.Data.FirmwareVersion"));
-		data.setGmtCreate(_ctx.stringValue("QueryDeviceDetailResponse.Data.GmtCreate"));
 		data.setUtcCreate(_ctx.stringValue("QueryDeviceDetailResponse.Data.UtcCreate"));
-		data.setGmtActive(_ctx.stringValue("QueryDeviceDetailResponse.Data.GmtActive"));
-		data.setUtcActive(_ctx.stringValue("QueryDeviceDetailResponse.Data.UtcActive"));
+		data.setFirmwareVersion(_ctx.stringValue("QueryDeviceDetailResponse.Data.FirmwareVersion"));
 		data.setGmtOnline(_ctx.stringValue("QueryDeviceDetailResponse.Data.GmtOnline"));
 		data.setUtcOnline(_ctx.stringValue("QueryDeviceDetailResponse.Data.UtcOnline"));
-		data.setStatus(_ctx.stringValue("QueryDeviceDetailResponse.Data.Status"));
+		data.setProductKey(_ctx.stringValue("QueryDeviceDetailResponse.Data.ProductKey"));
 		data.setIpAddress(_ctx.stringValue("QueryDeviceDetailResponse.Data.IpAddress"));
 		data.setNodeType(_ctx.integerValue("QueryDeviceDetailResponse.Data.NodeType"));
 		data.setRegion(_ctx.stringValue("QueryDeviceDetailResponse.Data.Region"));
-		data.setOwner(_ctx.booleanValue("QueryDeviceDetailResponse.Data.Owner"));
+		data.setDeviceSecret(_ctx.stringValue("QueryDeviceDetailResponse.Data.DeviceSecret"));
+		data.setGmtActive(_ctx.stringValue("QueryDeviceDetailResponse.Data.GmtActive"));
+		data.setGmtCreate(_ctx.stringValue("QueryDeviceDetailResponse.Data.GmtCreate"));
 		data.setNickname(_ctx.stringValue("QueryDeviceDetailResponse.Data.Nickname"));
+		data.setIotId(_ctx.stringValue("QueryDeviceDetailResponse.Data.IotId"));
 		queryDeviceDetailResponse.setData(data);
 	 
 	 	return queryDeviceDetailResponse;

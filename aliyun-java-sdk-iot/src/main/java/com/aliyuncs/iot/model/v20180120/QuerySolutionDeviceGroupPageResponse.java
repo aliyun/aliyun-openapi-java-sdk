@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QuerySolutionDeviceGroupPageResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class QuerySolutionDeviceGroupPageResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -77,21 +77,13 @@ public class QuerySolutionDeviceGroupPageResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer pageId;
-
 		private Integer pageSize;
+
+		private Integer pageId;
 
 		private Integer total;
 
 		private List<ItemName> list;
-
-		public Integer getPageId() {
-			return this.pageId;
-		}
-
-		public void setPageId(Integer pageId) {
-			this.pageId = pageId;
-		}
 
 		public Integer getPageSize() {
 			return this.pageSize;
@@ -99,6 +91,14 @@ public class QuerySolutionDeviceGroupPageResponse extends AcsResponse {
 
 		public void setPageSize(Integer pageSize) {
 			this.pageSize = pageSize;
+		}
+
+		public Integer getPageId() {
+			return this.pageId;
+		}
+
+		public void setPageId(Integer pageId) {
+			this.pageId = pageId;
 		}
 
 		public Integer getTotal() {
@@ -119,33 +119,17 @@ public class QuerySolutionDeviceGroupPageResponse extends AcsResponse {
 
 		public static class ItemName {
 
-			private Long gmtCreate;
-
-			private Long gmtModified;
-
 			private String groupId;
 
 			private String groupName;
 
+			private Long gmtCreate;
+
+			private Long gmtModified;
+
 			private String groupDesc;
 
 			private Long deviceCount;
-
-			public Long getGmtCreate() {
-				return this.gmtCreate;
-			}
-
-			public void setGmtCreate(Long gmtCreate) {
-				this.gmtCreate = gmtCreate;
-			}
-
-			public Long getGmtModified() {
-				return this.gmtModified;
-			}
-
-			public void setGmtModified(Long gmtModified) {
-				this.gmtModified = gmtModified;
-			}
 
 			public String getGroupId() {
 				return this.groupId;
@@ -161,6 +145,22 @@ public class QuerySolutionDeviceGroupPageResponse extends AcsResponse {
 
 			public void setGroupName(String groupName) {
 				this.groupName = groupName;
+			}
+
+			public Long getGmtCreate() {
+				return this.gmtCreate;
+			}
+
+			public void setGmtCreate(Long gmtCreate) {
+				this.gmtCreate = gmtCreate;
+			}
+
+			public Long getGmtModified() {
+				return this.gmtModified;
+			}
+
+			public void setGmtModified(Long gmtModified) {
+				this.gmtModified = gmtModified;
 			}
 
 			public String getGroupDesc() {

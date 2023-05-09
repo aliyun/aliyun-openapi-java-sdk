@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class BatchGetEdgeInstanceDriverConfigsResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private List<DriverConfig> driverConfigList;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -65,6 +49,22 @@ public class BatchGetEdgeInstanceDriverConfigsResponse extends AcsResponse {
 
 	public void setErrorMessage(String errorMessage) {
 		this.errorMessage = errorMessage;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<DriverConfig> getDriverConfigList() {
@@ -99,13 +99,21 @@ public class BatchGetEdgeInstanceDriverConfigsResponse extends AcsResponse {
 
 		public static class Config {
 
+			private String key;
+
 			private String configId;
 
 			private String format;
 
 			private String content;
 
-			private String key;
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
 
 			public String getConfigId() {
 				return this.configId;
@@ -129,14 +137,6 @@ public class BatchGetEdgeInstanceDriverConfigsResponse extends AcsResponse {
 
 			public void setContent(String content) {
 				this.content = content;
-			}
-
-			public String getKey() {
-				return this.key;
-			}
-
-			public void setKey(String key) {
-				this.key = key;
 			}
 		}
 	}

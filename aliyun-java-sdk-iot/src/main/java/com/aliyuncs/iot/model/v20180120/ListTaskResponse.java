@@ -25,17 +25,41 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListTaskResponse extends AcsResponse {
 
+	private String code;
+
+	private String nextToken;
+
+	private String errorMessage;
+
 	private String requestId;
 
 	private Boolean success;
 
-	private String code;
-
-	private String errorMessage;
-
-	private String nextToken;
-
 	private List<DataItem> data;
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -53,30 +77,6 @@ public class ListTaskResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
-	public String getNextToken() {
-		return this.nextToken;
-	}
-
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-	}
-
 	public List<DataItem> getData() {
 		return this.data;
 	}
@@ -87,80 +87,32 @@ public class ListTaskResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private String jobId;
-
-		private String jobName;
-
-		private String taskId;
-
-		private String productKey;
-
-		private String deviceName;
-
-		private String iotId;
-
-		private String progress;
+		private String status;
 
 		private String utcQueueTime;
 
+		private String productKey;
+
+		private String progress;
+
+		private String deviceName;
+
+		private String jobName;
+
 		private String utcModified;
 
-		private String status;
+		private String jobId;
 
-		public String getJobId() {
-			return this.jobId;
+		private String taskId;
+
+		private String iotId;
+
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setJobId(String jobId) {
-			this.jobId = jobId;
-		}
-
-		public String getJobName() {
-			return this.jobName;
-		}
-
-		public void setJobName(String jobName) {
-			this.jobName = jobName;
-		}
-
-		public String getTaskId() {
-			return this.taskId;
-		}
-
-		public void setTaskId(String taskId) {
-			this.taskId = taskId;
-		}
-
-		public String getProductKey() {
-			return this.productKey;
-		}
-
-		public void setProductKey(String productKey) {
-			this.productKey = productKey;
-		}
-
-		public String getDeviceName() {
-			return this.deviceName;
-		}
-
-		public void setDeviceName(String deviceName) {
-			this.deviceName = deviceName;
-		}
-
-		public String getIotId() {
-			return this.iotId;
-		}
-
-		public void setIotId(String iotId) {
-			this.iotId = iotId;
-		}
-
-		public String getProgress() {
-			return this.progress;
-		}
-
-		public void setProgress(String progress) {
-			this.progress = progress;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getUtcQueueTime() {
@@ -171,6 +123,38 @@ public class ListTaskResponse extends AcsResponse {
 			this.utcQueueTime = utcQueueTime;
 		}
 
+		public String getProductKey() {
+			return this.productKey;
+		}
+
+		public void setProductKey(String productKey) {
+			this.productKey = productKey;
+		}
+
+		public String getProgress() {
+			return this.progress;
+		}
+
+		public void setProgress(String progress) {
+			this.progress = progress;
+		}
+
+		public String getDeviceName() {
+			return this.deviceName;
+		}
+
+		public void setDeviceName(String deviceName) {
+			this.deviceName = deviceName;
+		}
+
+		public String getJobName() {
+			return this.jobName;
+		}
+
+		public void setJobName(String jobName) {
+			this.jobName = jobName;
+		}
+
 		public String getUtcModified() {
 			return this.utcModified;
 		}
@@ -179,12 +163,28 @@ public class ListTaskResponse extends AcsResponse {
 			this.utcModified = utcModified;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getJobId() {
+			return this.jobId;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setJobId(String jobId) {
+			this.jobId = jobId;
+		}
+
+		public String getTaskId() {
+			return this.taskId;
+		}
+
+		public void setTaskId(String taskId) {
+			this.taskId = taskId;
+		}
+
+		public String getIotId() {
+			return this.iotId;
+		}
+
+		public void setIotId(String iotId) {
+			this.iotId = iotId;
 		}
 	}
 

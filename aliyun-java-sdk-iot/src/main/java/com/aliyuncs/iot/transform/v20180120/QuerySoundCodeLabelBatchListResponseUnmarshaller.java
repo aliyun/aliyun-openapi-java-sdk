@@ -28,24 +28,24 @@ public class QuerySoundCodeLabelBatchListResponseUnmarshaller {
 	public static QuerySoundCodeLabelBatchListResponse unmarshall(QuerySoundCodeLabelBatchListResponse querySoundCodeLabelBatchListResponse, UnmarshallerContext _ctx) {
 		
 		querySoundCodeLabelBatchListResponse.setRequestId(_ctx.stringValue("QuerySoundCodeLabelBatchListResponse.RequestId"));
-		querySoundCodeLabelBatchListResponse.setSuccess(_ctx.booleanValue("QuerySoundCodeLabelBatchListResponse.Success"));
 		querySoundCodeLabelBatchListResponse.setCode(_ctx.stringValue("QuerySoundCodeLabelBatchListResponse.Code"));
 		querySoundCodeLabelBatchListResponse.setErrorMessage(_ctx.stringValue("QuerySoundCodeLabelBatchListResponse.ErrorMessage"));
+		querySoundCodeLabelBatchListResponse.setSuccess(_ctx.booleanValue("QuerySoundCodeLabelBatchListResponse.Success"));
 
 		Data data = new Data();
+		data.setPageSize(_ctx.integerValue("QuerySoundCodeLabelBatchListResponse.Data.PageSize"));
 		data.setTotal(_ctx.integerValue("QuerySoundCodeLabelBatchListResponse.Data.Total"));
 		data.setPageId(_ctx.integerValue("QuerySoundCodeLabelBatchListResponse.Data.PageId"));
-		data.setPageSize(_ctx.integerValue("QuerySoundCodeLabelBatchListResponse.Data.PageSize"));
 
 		List<Items> list = new ArrayList<Items>();
 		for (int i = 0; i < _ctx.lengthValue("QuerySoundCodeLabelBatchListResponse.Data.List.Length"); i++) {
 			Items items = new Items();
-			items.setBatchCode(_ctx.stringValue("QuerySoundCodeLabelBatchListResponse.Data.List["+ i +"].BatchCode"));
-			items.setDescription(_ctx.stringValue("QuerySoundCodeLabelBatchListResponse.Data.List["+ i +"].Description"));
-			items.setTotal(_ctx.integerValue("QuerySoundCodeLabelBatchListResponse.Data.List["+ i +"].Total"));
-			items.setSuccessNum(_ctx.integerValue("QuerySoundCodeLabelBatchListResponse.Data.List["+ i +"].SuccessNum"));
 			items.setStatus(_ctx.stringValue("QuerySoundCodeLabelBatchListResponse.Data.List["+ i +"].Status"));
+			items.setDescription(_ctx.stringValue("QuerySoundCodeLabelBatchListResponse.Data.List["+ i +"].Description"));
+			items.setBatchCode(_ctx.stringValue("QuerySoundCodeLabelBatchListResponse.Data.List["+ i +"].BatchCode"));
 			items.setGmtCreate(_ctx.longValue("QuerySoundCodeLabelBatchListResponse.Data.List["+ i +"].GmtCreate"));
+			items.setSuccessNum(_ctx.integerValue("QuerySoundCodeLabelBatchListResponse.Data.List["+ i +"].SuccessNum"));
+			items.setTotal(_ctx.integerValue("QuerySoundCodeLabelBatchListResponse.Data.List["+ i +"].Total"));
 
 			list.add(items);
 		}

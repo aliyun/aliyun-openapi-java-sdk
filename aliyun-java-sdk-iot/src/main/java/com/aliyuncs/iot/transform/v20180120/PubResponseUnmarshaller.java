@@ -23,10 +23,10 @@ public class PubResponseUnmarshaller {
 	public static PubResponse unmarshall(PubResponse pubResponse, UnmarshallerContext _ctx) {
 		
 		pubResponse.setRequestId(_ctx.stringValue("PubResponse.RequestId"));
-		pubResponse.setSuccess(_ctx.booleanValue("PubResponse.Success"));
 		pubResponse.setCode(_ctx.stringValue("PubResponse.Code"));
-		pubResponse.setErrorMessage(_ctx.stringValue("PubResponse.ErrorMessage"));
 		pubResponse.setMessageId(_ctx.stringValue("PubResponse.MessageId"));
+		pubResponse.setErrorMessage(_ctx.stringValue("PubResponse.ErrorMessage"));
+		pubResponse.setSuccess(_ctx.booleanValue("PubResponse.Success"));
 	 
 	 	return pubResponse;
 	}

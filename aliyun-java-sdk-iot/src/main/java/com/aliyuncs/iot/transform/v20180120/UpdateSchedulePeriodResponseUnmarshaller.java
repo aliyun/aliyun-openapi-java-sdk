@@ -23,9 +23,9 @@ public class UpdateSchedulePeriodResponseUnmarshaller {
 	public static UpdateSchedulePeriodResponse unmarshall(UpdateSchedulePeriodResponse updateSchedulePeriodResponse, UnmarshallerContext _ctx) {
 		
 		updateSchedulePeriodResponse.setRequestId(_ctx.stringValue("UpdateSchedulePeriodResponse.RequestId"));
-		updateSchedulePeriodResponse.setSuccess(_ctx.booleanValue("UpdateSchedulePeriodResponse.Success"));
 		updateSchedulePeriodResponse.setCode(_ctx.stringValue("UpdateSchedulePeriodResponse.Code"));
 		updateSchedulePeriodResponse.setErrorMessage(_ctx.stringValue("UpdateSchedulePeriodResponse.ErrorMessage"));
+		updateSchedulePeriodResponse.setSuccess(_ctx.booleanValue("UpdateSchedulePeriodResponse.Success"));
 	 
 	 	return updateSchedulePeriodResponse;
 	}

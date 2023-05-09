@@ -27,15 +27,15 @@ public class UpdateProductTagsResponseUnmarshaller {
 	public static UpdateProductTagsResponse unmarshall(UpdateProductTagsResponse updateProductTagsResponse, UnmarshallerContext _ctx) {
 		
 		updateProductTagsResponse.setRequestId(_ctx.stringValue("UpdateProductTagsResponse.RequestId"));
-		updateProductTagsResponse.setSuccess(_ctx.booleanValue("UpdateProductTagsResponse.Success"));
-		updateProductTagsResponse.setErrorMessage(_ctx.stringValue("UpdateProductTagsResponse.ErrorMessage"));
 		updateProductTagsResponse.setCode(_ctx.stringValue("UpdateProductTagsResponse.Code"));
+		updateProductTagsResponse.setErrorMessage(_ctx.stringValue("UpdateProductTagsResponse.ErrorMessage"));
+		updateProductTagsResponse.setSuccess(_ctx.booleanValue("UpdateProductTagsResponse.Success"));
 
 		List<ProductTag> invalidProductTags = new ArrayList<ProductTag>();
 		for (int i = 0; i < _ctx.lengthValue("UpdateProductTagsResponse.InvalidProductTags.Length"); i++) {
 			ProductTag productTag = new ProductTag();
-			productTag.setTagKey(_ctx.stringValue("UpdateProductTagsResponse.InvalidProductTags["+ i +"].TagKey"));
 			productTag.setTagValue(_ctx.stringValue("UpdateProductTagsResponse.InvalidProductTags["+ i +"].TagValue"));
+			productTag.setTagKey(_ctx.stringValue("UpdateProductTagsResponse.InvalidProductTags["+ i +"].TagKey"));
 
 			invalidProductTags.add(productTag);
 		}

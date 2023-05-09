@@ -25,25 +25,41 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryDynamicGroupDevicesResponse extends AcsResponse {
 
+	private String nextToken;
+
+	private String errorMessage;
+
 	private String requestId;
 
 	private Boolean success;
 
 	private String code;
 
-	private String errorMessage;
-
-	private Integer page;
-
 	private Integer pageSize;
-
-	private Integer pageCount;
 
 	private Integer total;
 
-	private String nextToken;
+	private Integer pageCount;
+
+	private Integer page;
 
 	private List<SimpleDeviceInfo> data;
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -69,36 +85,12 @@ public class QueryDynamicGroupDevicesResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
-	public Integer getPage() {
-		return this.page;
-	}
-
-	public void setPage(Integer page) {
-		this.page = page;
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
-	}
-
-	public Integer getPageCount() {
-		return this.pageCount;
-	}
-
-	public void setPageCount(Integer pageCount) {
-		this.pageCount = pageCount;
 	}
 
 	public Integer getTotal() {
@@ -109,12 +101,20 @@ public class QueryDynamicGroupDevicesResponse extends AcsResponse {
 		this.total = total;
 	}
 
-	public String getNextToken() {
-		return this.nextToken;
+	public Integer getPageCount() {
+		return this.pageCount;
 	}
 
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
+	public void setPageCount(Integer pageCount) {
+		this.pageCount = pageCount;
+	}
+
+	public Integer getPage() {
+		return this.page;
+	}
+
+	public void setPage(Integer page) {
+		this.page = page;
 	}
 
 	public List<SimpleDeviceInfo> getData() {
@@ -127,29 +127,37 @@ public class QueryDynamicGroupDevicesResponse extends AcsResponse {
 
 	public static class SimpleDeviceInfo {
 
-		private String productName;
+		private String status;
 
-		private String productKey;
+		private String productName;
 
 		private String deviceName;
 
-		private String categoryKey;
-
-		private Integer nodeType;
-
-		private String status;
-
-		private String iotId;
+		private String utcActiveTime;
 
 		private String activeTime;
 
-		private String utcActiveTime;
+		private String productKey;
 
 		private String lastOnlineTime;
+
+		private Integer nodeType;
 
 		private String utcLastOnlineTime;
 
 		private String nickname;
+
+		private String categoryKey;
+
+		private String iotId;
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
 
 		public String getProductName() {
 			return this.productName;
@@ -157,14 +165,6 @@ public class QueryDynamicGroupDevicesResponse extends AcsResponse {
 
 		public void setProductName(String productName) {
 			this.productName = productName;
-		}
-
-		public String getProductKey() {
-			return this.productKey;
-		}
-
-		public void setProductKey(String productKey) {
-			this.productKey = productKey;
 		}
 
 		public String getDeviceName() {
@@ -175,36 +175,12 @@ public class QueryDynamicGroupDevicesResponse extends AcsResponse {
 			this.deviceName = deviceName;
 		}
 
-		public String getCategoryKey() {
-			return this.categoryKey;
+		public String getUtcActiveTime() {
+			return this.utcActiveTime;
 		}
 
-		public void setCategoryKey(String categoryKey) {
-			this.categoryKey = categoryKey;
-		}
-
-		public Integer getNodeType() {
-			return this.nodeType;
-		}
-
-		public void setNodeType(Integer nodeType) {
-			this.nodeType = nodeType;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getIotId() {
-			return this.iotId;
-		}
-
-		public void setIotId(String iotId) {
-			this.iotId = iotId;
+		public void setUtcActiveTime(String utcActiveTime) {
+			this.utcActiveTime = utcActiveTime;
 		}
 
 		public String getActiveTime() {
@@ -215,12 +191,12 @@ public class QueryDynamicGroupDevicesResponse extends AcsResponse {
 			this.activeTime = activeTime;
 		}
 
-		public String getUtcActiveTime() {
-			return this.utcActiveTime;
+		public String getProductKey() {
+			return this.productKey;
 		}
 
-		public void setUtcActiveTime(String utcActiveTime) {
-			this.utcActiveTime = utcActiveTime;
+		public void setProductKey(String productKey) {
+			this.productKey = productKey;
 		}
 
 		public String getLastOnlineTime() {
@@ -229,6 +205,14 @@ public class QueryDynamicGroupDevicesResponse extends AcsResponse {
 
 		public void setLastOnlineTime(String lastOnlineTime) {
 			this.lastOnlineTime = lastOnlineTime;
+		}
+
+		public Integer getNodeType() {
+			return this.nodeType;
+		}
+
+		public void setNodeType(Integer nodeType) {
+			this.nodeType = nodeType;
 		}
 
 		public String getUtcLastOnlineTime() {
@@ -245,6 +229,22 @@ public class QueryDynamicGroupDevicesResponse extends AcsResponse {
 
 		public void setNickname(String nickname) {
 			this.nickname = nickname;
+		}
+
+		public String getCategoryKey() {
+			return this.categoryKey;
+		}
+
+		public void setCategoryKey(String categoryKey) {
+			this.categoryKey = categoryKey;
+		}
+
+		public String getIotId() {
+			return this.iotId;
+		}
+
+		public void setIotId(String iotId) {
+			this.iotId = iotId;
 		}
 	}
 

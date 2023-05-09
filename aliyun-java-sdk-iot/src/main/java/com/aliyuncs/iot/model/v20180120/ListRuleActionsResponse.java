@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListRuleActionsResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String code;
 
 	private String errorMessage;
 
+	private String requestId;
+
+	private Boolean success;
+
 	private List<RuleActionInfo> ruleActionList;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -67,6 +51,22 @@ public class ListRuleActionsResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public List<RuleActionInfo> getRuleActionList() {
 		return this.ruleActionList;
 	}
@@ -77,33 +77,17 @@ public class ListRuleActionsResponse extends AcsResponse {
 
 	public static class RuleActionInfo {
 
-		private Long id;
-
-		private Long ruleId;
-
 		private String type;
+
+		private String status;
 
 		private String configuration;
 
 		private Boolean errorActionFlag;
 
-		private String status;
+		private Long id;
 
-		public Long getId() {
-			return this.id;
-		}
-
-		public void setId(Long id) {
-			this.id = id;
-		}
-
-		public Long getRuleId() {
-			return this.ruleId;
-		}
-
-		public void setRuleId(Long ruleId) {
-			this.ruleId = ruleId;
-		}
+		private Long ruleId;
 
 		public String getType() {
 			return this.type;
@@ -111,6 +95,14 @@ public class ListRuleActionsResponse extends AcsResponse {
 
 		public void setType(String type) {
 			this.type = type;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getConfiguration() {
@@ -129,12 +121,20 @@ public class ListRuleActionsResponse extends AcsResponse {
 			this.errorActionFlag = errorActionFlag;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public Long getId() {
+			return this.id;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setId(Long id) {
+			this.id = id;
+		}
+
+		public Long getRuleId() {
+			return this.ruleId;
+		}
+
+		public void setRuleId(Long ruleId) {
+			this.ruleId = ruleId;
 		}
 	}
 

@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.iot.model.v20180120.BatchCheckDeviceNamesResponse;
 import com.aliyuncs.iot.model.v20180120.BatchCheckDeviceNamesResponse.Data;
+import com.aliyuncs.iot.model.v20180120.BatchCheckDeviceNamesResponse.Data.InvalidDetailListItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -27,12 +28,18 @@ public class BatchCheckDeviceNamesResponseUnmarshaller {
 	public static BatchCheckDeviceNamesResponse unmarshall(BatchCheckDeviceNamesResponse batchCheckDeviceNamesResponse, UnmarshallerContext _ctx) {
 		
 		batchCheckDeviceNamesResponse.setRequestId(_ctx.stringValue("BatchCheckDeviceNamesResponse.RequestId"));
-		batchCheckDeviceNamesResponse.setSuccess(_ctx.booleanValue("BatchCheckDeviceNamesResponse.Success"));
 		batchCheckDeviceNamesResponse.setCode(_ctx.stringValue("BatchCheckDeviceNamesResponse.Code"));
 		batchCheckDeviceNamesResponse.setErrorMessage(_ctx.stringValue("BatchCheckDeviceNamesResponse.ErrorMessage"));
+		batchCheckDeviceNamesResponse.setSuccess(_ctx.booleanValue("BatchCheckDeviceNamesResponse.Success"));
 
 		Data data = new Data();
 		data.setApplyId(_ctx.longValue("BatchCheckDeviceNamesResponse.Data.ApplyId"));
+
+		List<String> repeatedDeviceNameList = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("BatchCheckDeviceNamesResponse.Data.RepeatedDeviceNameList.Length"); i++) {
+			repeatedDeviceNameList.add(_ctx.stringValue("BatchCheckDeviceNamesResponse.Data.RepeatedDeviceNameList["+ i +"]"));
+		}
+		data.setRepeatedDeviceNameList(repeatedDeviceNameList);
 
 		List<String> invalidDeviceNameList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("BatchCheckDeviceNamesResponse.Data.InvalidDeviceNameList.Length"); i++) {
@@ -45,6 +52,17 @@ public class BatchCheckDeviceNamesResponseUnmarshaller {
 			invalidDeviceNicknameList.add(_ctx.stringValue("BatchCheckDeviceNamesResponse.Data.InvalidDeviceNicknameList["+ i +"]"));
 		}
 		data.setInvalidDeviceNicknameList(invalidDeviceNicknameList);
+
+		List<InvalidDetailListItem> invalidDetailList = new ArrayList<InvalidDetailListItem>();
+		for (int i = 0; i < _ctx.lengthValue("BatchCheckDeviceNamesResponse.Data.InvalidDetailList.Length"); i++) {
+			InvalidDetailListItem invalidDetailListItem = new InvalidDetailListItem();
+			invalidDetailListItem.setNickName(_ctx.stringValue("BatchCheckDeviceNamesResponse.Data.InvalidDetailList["+ i +"].NickName"));
+			invalidDetailListItem.setErrorMsg(_ctx.stringValue("BatchCheckDeviceNamesResponse.Data.InvalidDetailList["+ i +"].ErrorMsg"));
+			invalidDetailListItem.setDeviceName(_ctx.stringValue("BatchCheckDeviceNamesResponse.Data.InvalidDetailList["+ i +"].DeviceName"));
+
+			invalidDetailList.add(invalidDetailListItem);
+		}
+		data.setInvalidDetailList(invalidDetailList);
 		batchCheckDeviceNamesResponse.setData(data);
 	 
 	 	return batchCheckDeviceNamesResponse;

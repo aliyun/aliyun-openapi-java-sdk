@@ -23,9 +23,9 @@ public class UnbindApplicationFromEdgeInstanceResponseUnmarshaller {
 	public static UnbindApplicationFromEdgeInstanceResponse unmarshall(UnbindApplicationFromEdgeInstanceResponse unbindApplicationFromEdgeInstanceResponse, UnmarshallerContext _ctx) {
 		
 		unbindApplicationFromEdgeInstanceResponse.setRequestId(_ctx.stringValue("UnbindApplicationFromEdgeInstanceResponse.RequestId"));
-		unbindApplicationFromEdgeInstanceResponse.setSuccess(_ctx.booleanValue("UnbindApplicationFromEdgeInstanceResponse.Success"));
 		unbindApplicationFromEdgeInstanceResponse.setCode(_ctx.stringValue("UnbindApplicationFromEdgeInstanceResponse.Code"));
 		unbindApplicationFromEdgeInstanceResponse.setErrorMessage(_ctx.stringValue("UnbindApplicationFromEdgeInstanceResponse.ErrorMessage"));
+		unbindApplicationFromEdgeInstanceResponse.setSuccess(_ctx.booleanValue("UnbindApplicationFromEdgeInstanceResponse.Success"));
 	 
 	 	return unbindApplicationFromEdgeInstanceResponse;
 	}

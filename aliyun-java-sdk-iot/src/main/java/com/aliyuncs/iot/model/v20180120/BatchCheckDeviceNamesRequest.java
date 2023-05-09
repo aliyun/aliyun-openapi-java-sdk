@@ -50,8 +50,8 @@ public class BatchCheckDeviceNamesRequest extends RpcAcsRequest<BatchCheckDevice
 		this.deviceNameLists = deviceNameLists;	
 		if (deviceNameLists != null) {
 			for (int depth1 = 0; depth1 < deviceNameLists.size(); depth1++) {
-				putQueryParameter("DeviceNameList." + (depth1 + 1) + ".DeviceNickname" , deviceNameLists.get(depth1).getDeviceNickname());
-				putQueryParameter("DeviceNameList." + (depth1 + 1) + ".DeviceName" , deviceNameLists.get(depth1).getDeviceName());
+				putBodyParameter("DeviceNameList." + (depth1 + 1) + ".DeviceNickname" , deviceNameLists.get(depth1).getDeviceNickname());
+				putBodyParameter("DeviceNameList." + (depth1 + 1) + ".DeviceName" , deviceNameLists.get(depth1).getDeviceName());
 			}
 		}	
 	}
@@ -86,7 +86,7 @@ public class BatchCheckDeviceNamesRequest extends RpcAcsRequest<BatchCheckDevice
 		this.deviceNames = deviceNames;	
 		if (deviceNames != null) {
 			for (int i = 0; i < deviceNames.size(); i++) {
-				putQueryParameter("DeviceName." + (i + 1) , deviceNames.get(i));
+				putBodyParameter("DeviceName." + (i + 1) , deviceNames.get(i));
 			}
 		}	
 	}
