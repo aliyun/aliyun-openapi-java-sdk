@@ -1,3 +1,6 @@
+2023-05-09 Version: 2.10.2
+- Supported GetVideo Api.
+
 2023-05-08 Version: 2.10.1
 - Supported GetVideo Api.
 
