@@ -1,3 +1,6 @@
+2023-05-10 Version: 1.0.18
+- SendMessage add Feedback param
+
 2023-04-04 Version: 1.0.17
 - test
 

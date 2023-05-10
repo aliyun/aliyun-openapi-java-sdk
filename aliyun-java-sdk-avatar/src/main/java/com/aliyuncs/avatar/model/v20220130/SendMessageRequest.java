@@ -26,6 +26,8 @@ import com.aliyuncs.http.MethodType;
 public class SendMessageRequest extends RpcAcsRequest<SendMessageResponse> {
 	   
 
+	private Boolean feedback;
+
 	private String textRequest;
 
 	private Long tenantId;
@@ -37,6 +39,17 @@ public class SendMessageRequest extends RpcAcsRequest<SendMessageResponse> {
 	public SendMessageRequest() {
 		super("avatar", "2022-01-30", "SendMessage");
 		setMethod(MethodType.POST);
+	}
+
+	public Boolean getFeedback() {
+		return this.feedback;
+	}
+
+	public void setFeedback(Boolean feedback) {
+		this.feedback = feedback;
+		if(feedback != null){
+			putQueryParameter("Feedback", feedback.toString());
+		}
 	}
 
 	public String getTextRequest() {
