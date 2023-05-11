@@ -26,7 +26,7 @@ public class QueryWorksRequest extends RpcAcsRequest<QueryWorksResponse> {
 
 	private String worksId;
 	public QueryWorksRequest() {
-		super("quickbi-public", "2022-01-01", "QueryWorks", "quickbi");
+		super("quickbi-public", "2022-01-01", "QueryWorks", "2.2.0");
 		setMethod(MethodType.POST);
 	}
 

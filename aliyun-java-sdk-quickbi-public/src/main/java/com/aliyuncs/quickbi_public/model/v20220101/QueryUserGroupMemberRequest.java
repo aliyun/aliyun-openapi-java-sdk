@@ -28,7 +28,7 @@ public class QueryUserGroupMemberRequest extends RpcAcsRequest<QueryUserGroupMem
 
 	private String keyword;
 	public QueryUserGroupMemberRequest() {
-		super("quickbi-public", "2022-01-01", "QueryUserGroupMember", "quickbi");
+		super("quickbi-public", "2022-01-01", "QueryUserGroupMember", "2.2.0");
 		setMethod(MethodType.POST);
 	}
 

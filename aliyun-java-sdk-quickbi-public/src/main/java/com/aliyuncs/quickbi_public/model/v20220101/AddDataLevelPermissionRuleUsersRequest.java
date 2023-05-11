@@ -26,7 +26,7 @@ public class AddDataLevelPermissionRuleUsersRequest extends RpcAcsRequest<AddDat
 
 	private String addUserModel;
 	public AddDataLevelPermissionRuleUsersRequest() {
-		super("quickbi-public", "2022-01-01", "AddDataLevelPermissionRuleUsers", "quickbi");
+		super("quickbi-public", "2022-01-01", "AddDataLevelPermissionRuleUsers", "2.2.0");
 		setMethod(MethodType.POST);
 	}
 

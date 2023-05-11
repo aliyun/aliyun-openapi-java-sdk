@@ -21,38 +21,38 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class AddWorkspaceUsersRequest extends RpcAcsRequest<AddWorkspaceUsersResponse> {
+public class ModifyApiDatasourceParametersRequest extends RpcAcsRequest<ModifyApiDatasourceParametersResponse> {
 	   
 
-	private String userIds;
+	private String parameters;
 
-	private Long roleId;
+	private String apiId;
 
 	private String workspaceId;
-	public AddWorkspaceUsersRequest() {
-		super("quickbi-public", "2022-01-01", "AddWorkspaceUsers", "2.2.0");
+	public ModifyApiDatasourceParametersRequest() {
+		super("quickbi-public", "2022-01-01", "ModifyApiDatasourceParameters", "2.2.0");
 		setMethod(MethodType.POST);
 	}
 
-	public String getUserIds() {
-		return this.userIds;
+	public String getParameters() {
+		return this.parameters;
 	}
 
-	public void setUserIds(String userIds) {
-		this.userIds = userIds;
-		if(userIds != null){
-			putQueryParameter("UserIds", userIds);
+	public void setParameters(String parameters) {
+		this.parameters = parameters;
+		if(parameters != null){
+			putQueryParameter("Parameters", parameters);
 		}
 	}
 
-	public Long getRoleId() {
-		return this.roleId;
+	public String getApiId() {
+		return this.apiId;
 	}
 
-	public void setRoleId(Long roleId) {
-		this.roleId = roleId;
-		if(roleId != null){
-			putQueryParameter("RoleId", roleId.toString());
+	public void setApiId(String apiId) {
+		this.apiId = apiId;
+		if(apiId != null){
+			putQueryParameter("ApiId", apiId);
 		}
 	}
 
@@ -68,8 +68,8 @@ public class AddWorkspaceUsersRequest extends RpcAcsRequest<AddWorkspaceUsersRes
 	}
 
 	@Override
-	public Class<AddWorkspaceUsersResponse> getResponseClass() {
-		return AddWorkspaceUsersResponse.class;
+	public Class<ModifyApiDatasourceParametersResponse> getResponseClass() {
+		return ModifyApiDatasourceParametersResponse.class;
 	}
 
 }

@@ -30,7 +30,7 @@ public class UpdateUserGroupRequest extends RpcAcsRequest<UpdateUserGroupRespons
 
 	private String userGroupDescription;
 	public UpdateUserGroupRequest() {
-		super("quickbi-public", "2022-01-01", "UpdateUserGroup", "quickbi");
+		super("quickbi-public", "2022-01-01", "UpdateUserGroup", "2.2.0");
 		setMethod(MethodType.POST);
 	}
 

@@ -34,7 +34,7 @@ public class UpdateUserRequest extends RpcAcsRequest<UpdateUserResponse> {
 
 	private Boolean authAdminUser;
 	public UpdateUserRequest() {
-		super("quickbi-public", "2022-01-01", "UpdateUser", "quickbi");
+		super("quickbi-public", "2022-01-01", "UpdateUser", "2.2.0");
 		setMethod(MethodType.POST);
 	}
 

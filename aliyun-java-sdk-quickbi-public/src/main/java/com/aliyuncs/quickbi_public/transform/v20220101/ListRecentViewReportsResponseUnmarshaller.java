@@ -35,6 +35,7 @@ public class ListRecentViewReportsResponseUnmarshaller {
 		result.setTotalPages(_ctx.integerValue("ListRecentViewReportsResponse.Result.TotalPages"));
 		result.setPageNum(_ctx.integerValue("ListRecentViewReportsResponse.Result.PageNum"));
 		result.setPageSize(_ctx.integerValue("ListRecentViewReportsResponse.Result.PageSize"));
+		result.setAttention(_ctx.stringValue("ListRecentViewReportsResponse.Result.Attention"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListRecentViewReportsResponse.Result.Data.Length"); i++) {

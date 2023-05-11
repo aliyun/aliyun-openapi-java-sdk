@@ -30,7 +30,7 @@ public class AddUserToWorkspaceRequest extends RpcAcsRequest<AddUserToWorkspaceR
 
 	private String workspaceId;
 	public AddUserToWorkspaceRequest() {
-		super("quickbi-public", "2022-01-01", "AddUserToWorkspace", "quickbi");
+		super("quickbi-public", "2022-01-01", "AddUserToWorkspace", "2.2.0");
 		setMethod(MethodType.POST);
 	}
 

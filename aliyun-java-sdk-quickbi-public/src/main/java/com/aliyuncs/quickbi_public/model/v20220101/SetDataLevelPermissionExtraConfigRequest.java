@@ -30,7 +30,7 @@ public class SetDataLevelPermissionExtraConfigRequest extends RpcAcsRequest<SetD
 
 	private String cubeId;
 	public SetDataLevelPermissionExtraConfigRequest() {
-		super("quickbi-public", "2022-01-01", "SetDataLevelPermissionExtraConfig", "quickbi");
+		super("quickbi-public", "2022-01-01", "SetDataLevelPermissionExtraConfig", "2.2.0");
 		setMethod(MethodType.POST);
 	}
 

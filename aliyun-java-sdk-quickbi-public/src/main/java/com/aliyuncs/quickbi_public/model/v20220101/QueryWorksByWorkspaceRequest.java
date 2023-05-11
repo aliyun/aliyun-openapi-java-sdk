@@ -36,7 +36,7 @@ public class QueryWorksByWorkspaceRequest extends RpcAcsRequest<QueryWorksByWork
 
 	private Integer status;
 	public QueryWorksByWorkspaceRequest() {
-		super("quickbi-public", "2022-01-01", "QueryWorksByWorkspace", "quickbi");
+		super("quickbi-public", "2022-01-01", "QueryWorksByWorkspace", "2.2.0");
 		setMethod(MethodType.POST);
 	}
 

@@ -21,43 +21,19 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class QueryWorksByOrganizationRequest extends RpcAcsRequest<QueryWorksByOrganizationResponse> {
+public class ListApiDatasourceRequest extends RpcAcsRequest<ListApiDatasourceResponse> {
 	   
-
-	private String worksType;
-
-	private Integer thirdPartAuthFlag;
 
 	private Integer pageSize;
 
 	private Integer pageNum;
 
-	private Integer status;
-	public QueryWorksByOrganizationRequest() {
-		super("quickbi-public", "2022-01-01", "QueryWorksByOrganization", "2.2.0");
+	private String keyWord;
+
+	private String workspaceId;
+	public ListApiDatasourceRequest() {
+		super("quickbi-public", "2022-01-01", "ListApiDatasource", "2.2.0");
 		setMethod(MethodType.POST);
-	}
-
-	public String getWorksType() {
-		return this.worksType;
-	}
-
-	public void setWorksType(String worksType) {
-		this.worksType = worksType;
-		if(worksType != null){
-			putQueryParameter("WorksType", worksType);
-		}
-	}
-
-	public Integer getThirdPartAuthFlag() {
-		return this.thirdPartAuthFlag;
-	}
-
-	public void setThirdPartAuthFlag(Integer thirdPartAuthFlag) {
-		this.thirdPartAuthFlag = thirdPartAuthFlag;
-		if(thirdPartAuthFlag != null){
-			putQueryParameter("ThirdPartAuthFlag", thirdPartAuthFlag.toString());
-		}
 	}
 
 	public Integer getPageSize() {
@@ -82,20 +58,31 @@ public class QueryWorksByOrganizationRequest extends RpcAcsRequest<QueryWorksByO
 		}
 	}
 
-	public Integer getStatus() {
-		return this.status;
+	public String getKeyWord() {
+		return this.keyWord;
 	}
 
-	public void setStatus(Integer status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status.toString());
+	public void setKeyWord(String keyWord) {
+		this.keyWord = keyWord;
+		if(keyWord != null){
+			putQueryParameter("KeyWord", keyWord);
+		}
+	}
+
+	public String getWorkspaceId() {
+		return this.workspaceId;
+	}
+
+	public void setWorkspaceId(String workspaceId) {
+		this.workspaceId = workspaceId;
+		if(workspaceId != null){
+			putQueryParameter("WorkspaceId", workspaceId);
 		}
 	}
 
 	@Override
-	public Class<QueryWorksByOrganizationResponse> getResponseClass() {
-		return QueryWorksByOrganizationResponse.class;
+	public Class<ListApiDatasourceResponse> getResponseClass() {
+		return ListApiDatasourceResponse.class;
 	}
 
 }

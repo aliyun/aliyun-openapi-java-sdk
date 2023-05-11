@@ -28,7 +28,7 @@ public class CheckReadableRequest extends RpcAcsRequest<CheckReadableResponse> {
 
 	private String userId;
 	public CheckReadableRequest() {
-		super("quickbi-public", "2022-01-01", "CheckReadable", "quickbi");
+		super("quickbi-public", "2022-01-01", "CheckReadable", "2.2.0");
 		setMethod(MethodType.POST);
 	}
 

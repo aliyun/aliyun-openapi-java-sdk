@@ -30,7 +30,7 @@ public class ChangeVisibilityModelRequest extends RpcAcsRequest<ChangeVisibility
 
 	private String menuIds;
 	public ChangeVisibilityModelRequest() {
-		super("quickbi-public", "2022-01-01", "ChangeVisibilityModel", "quickbi");
+		super("quickbi-public", "2022-01-01", "ChangeVisibilityModel", "2.2.0");
 		setMethod(MethodType.POST);
 	}
 

@@ -28,7 +28,7 @@ public class DelayTicketExpireTimeRequest extends RpcAcsRequest<DelayTicketExpir
 
 	private String ticket;
 	public DelayTicketExpireTimeRequest() {
-		super("quickbi-public", "2022-01-01", "DelayTicketExpireTime", "quickbi");
+		super("quickbi-public", "2022-01-01", "DelayTicketExpireTime", "2.2.0");
 		setMethod(MethodType.POST);
 	}
 

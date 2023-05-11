@@ -65,6 +65,8 @@ public class ListRecentViewReportsResponse extends AcsResponse {
 
 		private Integer pageSize;
 
+		private String attention;
+
 		private List<DataItem> data;
 
 		public Integer getTotalNum() {
@@ -97,6 +99,14 @@ public class ListRecentViewReportsResponse extends AcsResponse {
 
 		public void setPageSize(Integer pageSize) {
 			this.pageSize = pageSize;
+		}
+
+		public String getAttention() {
+			return this.attention;
+		}
+
+		public void setAttention(String attention) {
+			this.attention = attention;
 		}
 
 		public List<DataItem> getData() {

@@ -30,7 +30,7 @@ public class QueryUserListRequest extends RpcAcsRequest<QueryUserListResponse> {
 
 	private Integer pageNum;
 	public QueryUserListRequest() {
-		super("quickbi-public", "2022-01-01", "QueryUserList", "quickbi");
+		super("quickbi-public", "2022-01-01", "QueryUserList", "2.2.0");
 		setMethod(MethodType.GET);
 	}
 

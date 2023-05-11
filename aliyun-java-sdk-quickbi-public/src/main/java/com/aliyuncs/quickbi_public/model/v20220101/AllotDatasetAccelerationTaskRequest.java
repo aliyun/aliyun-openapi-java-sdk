@@ -21,29 +21,29 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class GetUserGroupInfoRequest extends RpcAcsRequest<GetUserGroupInfoResponse> {
+public class AllotDatasetAccelerationTaskRequest extends RpcAcsRequest<AllotDatasetAccelerationTaskResponse> {
 	   
 
-	private String keyword;
-	public GetUserGroupInfoRequest() {
-		super("quickbi-public", "2022-01-01", "GetUserGroupInfo", "2.2.0");
+	private String cubeId;
+	public AllotDatasetAccelerationTaskRequest() {
+		super("quickbi-public", "2022-01-01", "AllotDatasetAccelerationTask", "2.2.0");
 		setMethod(MethodType.POST);
 	}
 
-	public String getKeyword() {
-		return this.keyword;
+	public String getCubeId() {
+		return this.cubeId;
 	}
 
-	public void setKeyword(String keyword) {
-		this.keyword = keyword;
-		if(keyword != null){
-			putQueryParameter("Keyword", keyword);
+	public void setCubeId(String cubeId) {
+		this.cubeId = cubeId;
+		if(cubeId != null){
+			putQueryParameter("CubeId", cubeId);
 		}
 	}
 
 	@Override
-	public Class<GetUserGroupInfoResponse> getResponseClass() {
-		return GetUserGroupInfoResponse.class;
+	public Class<AllotDatasetAccelerationTaskResponse> getResponseClass() {
+		return AllotDatasetAccelerationTaskResponse.class;
 	}
 
 }

@@ -34,7 +34,7 @@ public class AddUserRequest extends RpcAcsRequest<AddUserResponse> {
 
 	private Boolean authAdminUser;
 	public AddUserRequest() {
-		super("quickbi-public", "2022-01-01", "AddUser", "quickbi");
+		super("quickbi-public", "2022-01-01", "AddUser", "2.2.0");
 		setMethod(MethodType.POST);
 	}
 

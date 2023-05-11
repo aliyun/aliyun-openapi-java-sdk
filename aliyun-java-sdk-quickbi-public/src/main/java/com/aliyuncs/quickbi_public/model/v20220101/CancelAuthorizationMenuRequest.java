@@ -32,7 +32,7 @@ public class CancelAuthorizationMenuRequest extends RpcAcsRequest<CancelAuthoriz
 
 	private String menuIds;
 	public CancelAuthorizationMenuRequest() {
-		super("quickbi-public", "2022-01-01", "CancelAuthorizationMenu", "quickbi");
+		super("quickbi-public", "2022-01-01", "CancelAuthorizationMenu", "2.2.0");
 		setMethod(MethodType.POST);
 	}
 

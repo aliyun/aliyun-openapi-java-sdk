@@ -30,7 +30,7 @@ public class UpdateWorkspaceUsersRoleRequest extends RpcAcsRequest<UpdateWorkspa
 
 	private String workspaceId;
 	public UpdateWorkspaceUsersRoleRequest() {
-		super("quickbi-public", "2022-01-01", "UpdateWorkspaceUsersRole", "quickbi");
+		super("quickbi-public", "2022-01-01", "UpdateWorkspaceUsersRole", "2.2.0");
 		setMethod(MethodType.POST);
 	}
 

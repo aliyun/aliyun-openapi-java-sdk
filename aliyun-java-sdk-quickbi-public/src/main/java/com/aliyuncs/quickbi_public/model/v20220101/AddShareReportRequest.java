@@ -34,7 +34,7 @@ public class AddShareReportRequest extends RpcAcsRequest<AddShareReportResponse>
 
 	private String shareToId;
 	public AddShareReportRequest() {
-		super("quickbi-public", "2022-01-01", "AddShareReport", "quickbi");
+		super("quickbi-public", "2022-01-01", "AddShareReport", "2.2.0");
 		setMethod(MethodType.POST);
 	}
 

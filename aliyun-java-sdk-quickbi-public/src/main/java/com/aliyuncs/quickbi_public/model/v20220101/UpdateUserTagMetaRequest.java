@@ -30,7 +30,7 @@ public class UpdateUserTagMetaRequest extends RpcAcsRequest<UpdateUserTagMetaRes
 
 	private String tagId;
 	public UpdateUserTagMetaRequest() {
-		super("quickbi-public", "2022-01-01", "UpdateUserTagMeta", "quickbi");
+		super("quickbi-public", "2022-01-01", "UpdateUserTagMeta", "2.2.0");
 		setMethod(MethodType.POST);
 	}
 

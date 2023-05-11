@@ -28,7 +28,7 @@ public class DeleteUserFromWorkspaceRequest extends RpcAcsRequest<DeleteUserFrom
 
 	private String workspaceId;
 	public DeleteUserFromWorkspaceRequest() {
-		super("quickbi-public", "2022-01-01", "DeleteUserFromWorkspace", "quickbi");
+		super("quickbi-public", "2022-01-01", "DeleteUserFromWorkspace", "2.2.0");
 		setMethod(MethodType.POST);
 	}
 

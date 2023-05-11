@@ -42,7 +42,7 @@ public class CreateTicketRequest extends RpcAcsRequest<CreateTicketResponse> {
 
 	private String watermarkParam;
 	public CreateTicketRequest() {
-		super("quickbi-public", "2022-01-01", "CreateTicket", "quickbi");
+		super("quickbi-public", "2022-01-01", "CreateTicket", "2.2.0");
 		setMethod(MethodType.POST);
 	}
 

@@ -28,7 +28,7 @@ public class AddUserTagMetaRequest extends RpcAcsRequest<AddUserTagMetaResponse>
 
 	private String tagName;
 	public AddUserTagMetaRequest() {
-		super("quickbi-public", "2022-01-01", "AddUserTagMeta", "quickbi");
+		super("quickbi-public", "2022-01-01", "AddUserTagMeta", "2.2.0");
 		setMethod(MethodType.POST);
 	}
 

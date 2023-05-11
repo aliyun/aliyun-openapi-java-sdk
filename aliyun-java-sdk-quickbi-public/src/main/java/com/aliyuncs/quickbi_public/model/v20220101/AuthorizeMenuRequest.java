@@ -34,7 +34,7 @@ public class AuthorizeMenuRequest extends RpcAcsRequest<AuthorizeMenuResponse> {
 
 	private String menuIds;
 	public AuthorizeMenuRequest() {
-		super("quickbi-public", "2022-01-01", "AuthorizeMenu", "quickbi");
+		super("quickbi-public", "2022-01-01", "AuthorizeMenu", "2.2.0");
 		setMethod(MethodType.POST);
 	}
 

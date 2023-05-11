@@ -26,7 +26,7 @@ public class QuerySharesToUserListRequest extends RpcAcsRequest<QuerySharesToUse
 
 	private String userId;
 	public QuerySharesToUserListRequest() {
-		super("quickbi-public", "2022-01-01", "QuerySharesToUserList", "quickbi");
+		super("quickbi-public", "2022-01-01", "QuerySharesToUserList", "2.2.0");
 		setMethod(MethodType.POST);
 	}
 
