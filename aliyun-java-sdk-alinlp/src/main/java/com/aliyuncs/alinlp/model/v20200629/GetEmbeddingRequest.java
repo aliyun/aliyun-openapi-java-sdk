@@ -28,6 +28,8 @@ public class GetEmbeddingRequest extends RpcAcsRequest<GetEmbeddingResponse> {
 	private String serviceCode;
 
 	private String text;
+
+	private String textType;
 	public GetEmbeddingRequest() {
 		super("alinlp", "2020-06-29", "GetEmbedding", "alinlp");
 		setMethod(MethodType.POST);
@@ -56,6 +58,17 @@ public class GetEmbeddingRequest extends RpcAcsRequest<GetEmbeddingResponse> {
 		this.text = text;
 		if(text != null){
 			putBodyParameter("Text", text);
+		}
+	}
+
+	public String getTextType() {
+		return this.textType;
+	}
+
+	public void setTextType(String textType) {
+		this.textType = textType;
+		if(textType != null){
+			putBodyParameter("TextType", textType);
 		}
 	}
 
