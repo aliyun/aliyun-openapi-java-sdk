@@ -1,3 +1,6 @@
+2023-05-11 Version: 1.0.36
+- Update API DescribeGrantRulesToCen support ChildInstanceOwnerId and ChildInstanceId.
+
 2023-04-20 Version: 1.0.35
 - Update API CreateTransitRouterVpcAttachment support AutoPublishRoute.
 - Update API UpdateTransitRouterVpcAttachmentAttribute support AutoPublishRoute.

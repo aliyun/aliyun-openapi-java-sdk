@@ -39,6 +39,10 @@ public class DescribeGrantRulesToCenRequest extends RpcAcsRequest<DescribeGrantR
 
 	private Long ownerId;
 
+	private Long childInstanceOwnerId;
+
+	private String childInstanceId;
+
 	private Long maxResults;
 	public DescribeGrantRulesToCenRequest() {
 		super("Cbn", "2017-09-12", "DescribeGrantRulesToCen");
@@ -123,6 +127,28 @@ public class DescribeGrantRulesToCenRequest extends RpcAcsRequest<DescribeGrantR
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Long getChildInstanceOwnerId() {
+		return this.childInstanceOwnerId;
+	}
+
+	public void setChildInstanceOwnerId(Long childInstanceOwnerId) {
+		this.childInstanceOwnerId = childInstanceOwnerId;
+		if(childInstanceOwnerId != null){
+			putQueryParameter("ChildInstanceOwnerId", childInstanceOwnerId.toString());
+		}
+	}
+
+	public String getChildInstanceId() {
+		return this.childInstanceId;
+	}
+
+	public void setChildInstanceId(String childInstanceId) {
+		this.childInstanceId = childInstanceId;
+		if(childInstanceId != null){
+			putQueryParameter("ChildInstanceId", childInstanceId);
 		}
 	}
 

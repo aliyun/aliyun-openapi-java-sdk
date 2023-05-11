@@ -18,6 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.cbn.model.v20170912.DescribeCenAttachedChildInstanceAttributeResponse;
+import com.aliyuncs.cbn.model.v20170912.DescribeCenAttachedChildInstanceAttributeResponse.ChildInstanceAttributes;
+import com.aliyuncs.cbn.model.v20170912.DescribeCenAttachedChildInstanceAttributeResponse.ChildInstanceAttributes.Ipv6CidrBlock;
 import com.aliyuncs.cbn.model.v20170912.DescribeCenAttachedChildInstanceAttributeResponse.ChildInstanceRouteTable;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -36,6 +38,27 @@ public class DescribeCenAttachedChildInstanceAttributeResponseUnmarshaller {
 		describeCenAttachedChildInstanceAttributeResponse.setChildInstanceName(_ctx.stringValue("DescribeCenAttachedChildInstanceAttributeResponse.ChildInstanceName"));
 		describeCenAttachedChildInstanceAttributeResponse.setIpv6StatusInCen(_ctx.stringValue("DescribeCenAttachedChildInstanceAttributeResponse.Ipv6StatusInCen"));
 		describeCenAttachedChildInstanceAttributeResponse.setChildInstanceAttachTime(_ctx.stringValue("DescribeCenAttachedChildInstanceAttributeResponse.ChildInstanceAttachTime"));
+
+		ChildInstanceAttributes childInstanceAttributes = new ChildInstanceAttributes();
+		childInstanceAttributes.setCidrBlock(_ctx.stringValue("DescribeCenAttachedChildInstanceAttributeResponse.ChildInstanceAttributes.CidrBlock"));
+		childInstanceAttributes.setIpv6CidrBlock(_ctx.stringValue("DescribeCenAttachedChildInstanceAttributeResponse.ChildInstanceAttributes.Ipv6CidrBlock"));
+
+		List<String> secondaryCidrBlocks = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeCenAttachedChildInstanceAttributeResponse.ChildInstanceAttributes.SecondaryCidrBlocks.Length"); i++) {
+			secondaryCidrBlocks.add(_ctx.stringValue("DescribeCenAttachedChildInstanceAttributeResponse.ChildInstanceAttributes.SecondaryCidrBlocks["+ i +"]"));
+		}
+		childInstanceAttributes.setSecondaryCidrBlocks(secondaryCidrBlocks);
+
+		List<Ipv6CidrBlock> ipv6CidrBlocks = new ArrayList<Ipv6CidrBlock>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeCenAttachedChildInstanceAttributeResponse.ChildInstanceAttributes.Ipv6CidrBlocks.Length"); i++) {
+			Ipv6CidrBlock ipv6CidrBlock = new Ipv6CidrBlock();
+			ipv6CidrBlock.setIpv6Isp(_ctx.stringValue("DescribeCenAttachedChildInstanceAttributeResponse.ChildInstanceAttributes.Ipv6CidrBlocks["+ i +"].Ipv6Isp"));
+			ipv6CidrBlock.setIpv6CidrBlock(_ctx.stringValue("DescribeCenAttachedChildInstanceAttributeResponse.ChildInstanceAttributes.Ipv6CidrBlocks["+ i +"].Ipv6CidrBlock"));
+
+			ipv6CidrBlocks.add(ipv6CidrBlock);
+		}
+		childInstanceAttributes.setIpv6CidrBlocks(ipv6CidrBlocks);
+		describeCenAttachedChildInstanceAttributeResponse.setChildInstanceAttributes(childInstanceAttributes);
 
 		List<ChildInstanceRouteTable> childInstanceRouteTables = new ArrayList<ChildInstanceRouteTable>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCenAttachedChildInstanceAttributeResponse.ChildInstanceRouteTables.Length"); i++) {
