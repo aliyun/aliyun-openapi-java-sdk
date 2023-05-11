@@ -24,16 +24,16 @@ public class ListAnalyticsDataResponseUnmarshaller {
 	public static ListAnalyticsDataResponse unmarshall(ListAnalyticsDataResponse listAnalyticsDataResponse, UnmarshallerContext _ctx) {
 		
 		listAnalyticsDataResponse.setRequestId(_ctx.stringValue("ListAnalyticsDataResponse.RequestId"));
+		listAnalyticsDataResponse.setSuccess(_ctx.booleanValue("ListAnalyticsDataResponse.Success"));
 		listAnalyticsDataResponse.setCode(_ctx.stringValue("ListAnalyticsDataResponse.Code"));
 		listAnalyticsDataResponse.setErrorMessage(_ctx.stringValue("ListAnalyticsDataResponse.ErrorMessage"));
-		listAnalyticsDataResponse.setSuccess(_ctx.booleanValue("ListAnalyticsDataResponse.Success"));
 
 		Data data = new Data();
+		data.setHasNext(_ctx.booleanValue("ListAnalyticsDataResponse.Data.HasNext"));
 		data.setResultJson(_ctx.stringValue("ListAnalyticsDataResponse.Data.ResultJson"));
+		data.setCount(_ctx.longValue("ListAnalyticsDataResponse.Data.Count"));
 		data.setPageNum(_ctx.integerValue("ListAnalyticsDataResponse.Data.PageNum"));
 		data.setPageSize(_ctx.integerValue("ListAnalyticsDataResponse.Data.PageSize"));
-		data.setCount(_ctx.longValue("ListAnalyticsDataResponse.Data.Count"));
-		data.setHasNext(_ctx.booleanValue("ListAnalyticsDataResponse.Data.HasNext"));
 		listAnalyticsDataResponse.setData(data);
 	 
 	 	return listAnalyticsDataResponse;

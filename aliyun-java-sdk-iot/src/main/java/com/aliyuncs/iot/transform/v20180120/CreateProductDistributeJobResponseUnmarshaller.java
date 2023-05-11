@@ -23,9 +23,9 @@ public class CreateProductDistributeJobResponseUnmarshaller {
 	public static CreateProductDistributeJobResponse unmarshall(CreateProductDistributeJobResponse createProductDistributeJobResponse, UnmarshallerContext _ctx) {
 		
 		createProductDistributeJobResponse.setRequestId(_ctx.stringValue("CreateProductDistributeJobResponse.RequestId"));
+		createProductDistributeJobResponse.setSuccess(_ctx.booleanValue("CreateProductDistributeJobResponse.Success"));
 		createProductDistributeJobResponse.setCode(_ctx.stringValue("CreateProductDistributeJobResponse.Code"));
 		createProductDistributeJobResponse.setErrorMessage(_ctx.stringValue("CreateProductDistributeJobResponse.ErrorMessage"));
-		createProductDistributeJobResponse.setSuccess(_ctx.booleanValue("CreateProductDistributeJobResponse.Success"));
 		createProductDistributeJobResponse.setJobId(_ctx.stringValue("CreateProductDistributeJobResponse.JobId"));
 	 
 	 	return createProductDistributeJobResponse;

@@ -23,9 +23,9 @@ public class ResetThingResponseUnmarshaller {
 	public static ResetThingResponse unmarshall(ResetThingResponse resetThingResponse, UnmarshallerContext _ctx) {
 		
 		resetThingResponse.setRequestId(_ctx.stringValue("ResetThingResponse.RequestId"));
+		resetThingResponse.setSuccess(_ctx.booleanValue("ResetThingResponse.Success"));
 		resetThingResponse.setCode(_ctx.stringValue("ResetThingResponse.Code"));
 		resetThingResponse.setErrorMessage(_ctx.stringValue("ResetThingResponse.ErrorMessage"));
-		resetThingResponse.setSuccess(_ctx.booleanValue("ResetThingResponse.Success"));
 		resetThingResponse.setJobId(_ctx.stringValue("ResetThingResponse.JobId"));
 	 
 	 	return resetThingResponse;

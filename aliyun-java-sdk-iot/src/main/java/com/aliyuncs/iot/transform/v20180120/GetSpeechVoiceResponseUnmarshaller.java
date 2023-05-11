@@ -28,21 +28,21 @@ public class GetSpeechVoiceResponseUnmarshaller {
 	public static GetSpeechVoiceResponse unmarshall(GetSpeechVoiceResponse getSpeechVoiceResponse, UnmarshallerContext _ctx) {
 		
 		getSpeechVoiceResponse.setRequestId(_ctx.stringValue("GetSpeechVoiceResponse.RequestId"));
+		getSpeechVoiceResponse.setSuccess(_ctx.booleanValue("GetSpeechVoiceResponse.Success"));
 		getSpeechVoiceResponse.setCode(_ctx.stringValue("GetSpeechVoiceResponse.Code"));
 		getSpeechVoiceResponse.setErrorMessage(_ctx.stringValue("GetSpeechVoiceResponse.ErrorMessage"));
-		getSpeechVoiceResponse.setSuccess(_ctx.booleanValue("GetSpeechVoiceResponse.Success"));
 
 		List<Items> data = new ArrayList<Items>();
 		for (int i = 0; i < _ctx.lengthValue("GetSpeechVoiceResponse.Data.Length"); i++) {
 			Items items = new Items();
-			items.setLabel(_ctx.stringValue("GetSpeechVoiceResponse.Data["+ i +"].Label"));
 			items.setValue(_ctx.stringValue("GetSpeechVoiceResponse.Data["+ i +"].Value"));
+			items.setLabel(_ctx.stringValue("GetSpeechVoiceResponse.Data["+ i +"].Label"));
 
 			List<Items1> voiceList = new ArrayList<Items1>();
 			for (int j = 0; j < _ctx.lengthValue("GetSpeechVoiceResponse.Data["+ i +"].VoiceList.Length"); j++) {
 				Items1 items1 = new Items1();
-				items1.setLabel(_ctx.stringValue("GetSpeechVoiceResponse.Data["+ i +"].VoiceList["+ j +"].Label"));
 				items1.setValue(_ctx.stringValue("GetSpeechVoiceResponse.Data["+ i +"].VoiceList["+ j +"].Value"));
+				items1.setLabel(_ctx.stringValue("GetSpeechVoiceResponse.Data["+ i +"].VoiceList["+ j +"].Label"));
 
 				voiceList.add(items1);
 			}

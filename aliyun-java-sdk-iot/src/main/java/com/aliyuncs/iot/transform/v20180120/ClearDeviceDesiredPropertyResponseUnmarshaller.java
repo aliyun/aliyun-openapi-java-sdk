@@ -24,9 +24,9 @@ public class ClearDeviceDesiredPropertyResponseUnmarshaller {
 	public static ClearDeviceDesiredPropertyResponse unmarshall(ClearDeviceDesiredPropertyResponse clearDeviceDesiredPropertyResponse, UnmarshallerContext _ctx) {
 		
 		clearDeviceDesiredPropertyResponse.setRequestId(_ctx.stringValue("ClearDeviceDesiredPropertyResponse.RequestId"));
-		clearDeviceDesiredPropertyResponse.setCode(_ctx.stringValue("ClearDeviceDesiredPropertyResponse.Code"));
-		clearDeviceDesiredPropertyResponse.setErrorMessage(_ctx.stringValue("ClearDeviceDesiredPropertyResponse.ErrorMessage"));
 		clearDeviceDesiredPropertyResponse.setSuccess(_ctx.booleanValue("ClearDeviceDesiredPropertyResponse.Success"));
+		clearDeviceDesiredPropertyResponse.setErrorMessage(_ctx.stringValue("ClearDeviceDesiredPropertyResponse.ErrorMessage"));
+		clearDeviceDesiredPropertyResponse.setCode(_ctx.stringValue("ClearDeviceDesiredPropertyResponse.Code"));
 
 		Data data = new Data();
 		data.setVersions(_ctx.stringValue("ClearDeviceDesiredPropertyResponse.Data.Versions"));

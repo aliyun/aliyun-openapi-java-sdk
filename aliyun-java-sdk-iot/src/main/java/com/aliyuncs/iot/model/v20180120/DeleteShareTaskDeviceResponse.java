@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DeleteShareTaskDeviceResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -66,6 +50,22 @@ public class DeleteShareTaskDeviceResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -76,17 +76,9 @@ public class DeleteShareTaskDeviceResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String progressId;
-
 		private Integer progress;
 
-		public String getProgressId() {
-			return this.progressId;
-		}
-
-		public void setProgressId(String progressId) {
-			this.progressId = progressId;
-		}
+		private String progressId;
 
 		public Integer getProgress() {
 			return this.progress;
@@ -94,6 +86,14 @@ public class DeleteShareTaskDeviceResponse extends AcsResponse {
 
 		public void setProgress(Integer progress) {
 			this.progress = progress;
+		}
+
+		public String getProgressId() {
+			return this.progressId;
+		}
+
+		public void setProgressId(String progressId) {
+			this.progressId = progressId;
 		}
 	}
 

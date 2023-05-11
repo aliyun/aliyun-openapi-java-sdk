@@ -24,21 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class WriteDevicesHotStorageDataResponse extends AcsResponse {
 
-	private String code;
-
 	private String requestId;
-
-	private String errorMessage;
 
 	private Boolean success;
 
-	public String getCode() {
-		return this.code;
-	}
+	private String errorMessage;
 
-	public void setCode(String code) {
-		this.code = code;
-	}
+	private String code;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -46,6 +38,14 @@ public class WriteDevicesHotStorageDataResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public String getErrorMessage() {
@@ -56,12 +56,12 @@ public class WriteDevicesHotStorageDataResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	@Override

@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateDeviceGroupResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -66,6 +50,22 @@ public class CreateDeviceGroupResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -78,11 +78,11 @@ public class CreateDeviceGroupResponse extends AcsResponse {
 
 		private String groupId;
 
+		private String utcCreate;
+
 		private String groupName;
 
 		private String groupDesc;
-
-		private String utcCreate;
 
 		public String getGroupId() {
 			return this.groupId;
@@ -90,6 +90,14 @@ public class CreateDeviceGroupResponse extends AcsResponse {
 
 		public void setGroupId(String groupId) {
 			this.groupId = groupId;
+		}
+
+		public String getUtcCreate() {
+			return this.utcCreate;
+		}
+
+		public void setUtcCreate(String utcCreate) {
+			this.utcCreate = utcCreate;
 		}
 
 		public String getGroupName() {
@@ -106,14 +114,6 @@ public class CreateDeviceGroupResponse extends AcsResponse {
 
 		public void setGroupDesc(String groupDesc) {
 			this.groupDesc = groupDesc;
-		}
-
-		public String getUtcCreate() {
-			return this.utcCreate;
-		}
-
-		public void setUtcCreate(String utcCreate) {
-			this.utcCreate = utcCreate;
 		}
 	}
 

@@ -24,23 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ClearDeviceDesiredPropertyResponse extends AcsResponse {
 
-	private String code;
-
 	private String requestId;
-
-	private String errorMessage;
 
 	private Boolean success;
 
+	private String errorMessage;
+
+	private String code;
+
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -48,6 +40,14 @@ public class ClearDeviceDesiredPropertyResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public String getErrorMessage() {
@@ -58,12 +58,12 @@ public class ClearDeviceDesiredPropertyResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Data getData() {

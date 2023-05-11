@@ -28,9 +28,9 @@ public class QueryClientIdsResponseUnmarshaller {
 	public static QueryClientIdsResponse unmarshall(QueryClientIdsResponse queryClientIdsResponse, UnmarshallerContext _ctx) {
 		
 		queryClientIdsResponse.setRequestId(_ctx.stringValue("QueryClientIdsResponse.RequestId"));
+		queryClientIdsResponse.setSuccess(_ctx.booleanValue("QueryClientIdsResponse.Success"));
 		queryClientIdsResponse.setCode(_ctx.stringValue("QueryClientIdsResponse.Code"));
 		queryClientIdsResponse.setErrorMessage(_ctx.stringValue("QueryClientIdsResponse.ErrorMessage"));
-		queryClientIdsResponse.setSuccess(_ctx.booleanValue("QueryClientIdsResponse.Success"));
 
 		Data data = new Data();
 		data.setIotId(_ctx.stringValue("QueryClientIdsResponse.Data.IotId"));
@@ -38,8 +38,8 @@ public class QueryClientIdsResponseUnmarshaller {
 		List<DynamicRegClientId> dynamicRegClientIds = new ArrayList<DynamicRegClientId>();
 		for (int i = 0; i < _ctx.lengthValue("QueryClientIdsResponse.Data.DynamicRegClientIds.Length"); i++) {
 			DynamicRegClientId dynamicRegClientId = new DynamicRegClientId();
-			dynamicRegClientId.setCreateTime(_ctx.longValue("QueryClientIdsResponse.Data.DynamicRegClientIds["+ i +"].CreateTime"));
 			dynamicRegClientId.setClientId(_ctx.stringValue("QueryClientIdsResponse.Data.DynamicRegClientIds["+ i +"].ClientId"));
+			dynamicRegClientId.setCreateTime(_ctx.longValue("QueryClientIdsResponse.Data.DynamicRegClientIds["+ i +"].CreateTime"));
 
 			dynamicRegClientIds.add(dynamicRegClientId);
 		}

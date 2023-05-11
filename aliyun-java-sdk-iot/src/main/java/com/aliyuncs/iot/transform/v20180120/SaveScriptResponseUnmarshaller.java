@@ -23,9 +23,9 @@ public class SaveScriptResponseUnmarshaller {
 	public static SaveScriptResponse unmarshall(SaveScriptResponse saveScriptResponse, UnmarshallerContext _ctx) {
 		
 		saveScriptResponse.setRequestId(_ctx.stringValue("SaveScriptResponse.RequestId"));
+		saveScriptResponse.setSuccess(_ctx.booleanValue("SaveScriptResponse.Success"));
 		saveScriptResponse.setCode(_ctx.stringValue("SaveScriptResponse.Code"));
 		saveScriptResponse.setErrorMessage(_ctx.stringValue("SaveScriptResponse.ErrorMessage"));
-		saveScriptResponse.setSuccess(_ctx.booleanValue("SaveScriptResponse.Success"));
 	 
 	 	return saveScriptResponse;
 	}

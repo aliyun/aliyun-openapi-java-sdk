@@ -27,21 +27,21 @@ public class QueryPageByApplyIdResponseUnmarshaller {
 	public static QueryPageByApplyIdResponse unmarshall(QueryPageByApplyIdResponse queryPageByApplyIdResponse, UnmarshallerContext _ctx) {
 		
 		queryPageByApplyIdResponse.setRequestId(_ctx.stringValue("QueryPageByApplyIdResponse.RequestId"));
-		queryPageByApplyIdResponse.setErrorMessage(_ctx.stringValue("QueryPageByApplyIdResponse.ErrorMessage"));
 		queryPageByApplyIdResponse.setSuccess(_ctx.booleanValue("QueryPageByApplyIdResponse.Success"));
 		queryPageByApplyIdResponse.setCode(_ctx.stringValue("QueryPageByApplyIdResponse.Code"));
+		queryPageByApplyIdResponse.setErrorMessage(_ctx.stringValue("QueryPageByApplyIdResponse.ErrorMessage"));
 		queryPageByApplyIdResponse.setPageSize(_ctx.integerValue("QueryPageByApplyIdResponse.PageSize"));
-		queryPageByApplyIdResponse.setTotal(_ctx.integerValue("QueryPageByApplyIdResponse.Total"));
-		queryPageByApplyIdResponse.setPageCount(_ctx.integerValue("QueryPageByApplyIdResponse.PageCount"));
 		queryPageByApplyIdResponse.setPage(_ctx.integerValue("QueryPageByApplyIdResponse.Page"));
+		queryPageByApplyIdResponse.setPageCount(_ctx.integerValue("QueryPageByApplyIdResponse.PageCount"));
+		queryPageByApplyIdResponse.setTotal(_ctx.integerValue("QueryPageByApplyIdResponse.Total"));
 
 		List<ApplyDeviceInfo> applyDeviceList = new ArrayList<ApplyDeviceInfo>();
 		for (int i = 0; i < _ctx.lengthValue("QueryPageByApplyIdResponse.ApplyDeviceList.Length"); i++) {
 			ApplyDeviceInfo applyDeviceInfo = new ApplyDeviceInfo();
-			applyDeviceInfo.setDeviceName(_ctx.stringValue("QueryPageByApplyIdResponse.ApplyDeviceList["+ i +"].DeviceName"));
 			applyDeviceInfo.setDeviceId(_ctx.stringValue("QueryPageByApplyIdResponse.ApplyDeviceList["+ i +"].DeviceId"));
-			applyDeviceInfo.setIotId(_ctx.stringValue("QueryPageByApplyIdResponse.ApplyDeviceList["+ i +"].IotId"));
+			applyDeviceInfo.setDeviceName(_ctx.stringValue("QueryPageByApplyIdResponse.ApplyDeviceList["+ i +"].DeviceName"));
 			applyDeviceInfo.setDeviceSecret(_ctx.stringValue("QueryPageByApplyIdResponse.ApplyDeviceList["+ i +"].DeviceSecret"));
+			applyDeviceInfo.setIotId(_ctx.stringValue("QueryPageByApplyIdResponse.ApplyDeviceList["+ i +"].IotId"));
 
 			applyDeviceList.add(applyDeviceInfo);
 		}

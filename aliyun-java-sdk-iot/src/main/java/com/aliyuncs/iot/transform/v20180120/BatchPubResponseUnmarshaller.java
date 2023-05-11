@@ -23,9 +23,9 @@ public class BatchPubResponseUnmarshaller {
 	public static BatchPubResponse unmarshall(BatchPubResponse batchPubResponse, UnmarshallerContext _ctx) {
 		
 		batchPubResponse.setRequestId(_ctx.stringValue("BatchPubResponse.RequestId"));
+		batchPubResponse.setSuccess(_ctx.booleanValue("BatchPubResponse.Success"));
 		batchPubResponse.setCode(_ctx.stringValue("BatchPubResponse.Code"));
 		batchPubResponse.setErrorMessage(_ctx.stringValue("BatchPubResponse.ErrorMessage"));
-		batchPubResponse.setSuccess(_ctx.booleanValue("BatchPubResponse.Success"));
 	 
 	 	return batchPubResponse;
 	}

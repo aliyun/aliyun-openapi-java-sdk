@@ -27,20 +27,20 @@ public class QueryTopicConfigResponseUnmarshaller {
 	public static QueryTopicConfigResponse unmarshall(QueryTopicConfigResponse queryTopicConfigResponse, UnmarshallerContext _ctx) {
 		
 		queryTopicConfigResponse.setRequestId(_ctx.stringValue("QueryTopicConfigResponse.RequestId"));
+		queryTopicConfigResponse.setSuccess(_ctx.booleanValue("QueryTopicConfigResponse.Success"));
 		queryTopicConfigResponse.setCode(_ctx.stringValue("QueryTopicConfigResponse.Code"));
 		queryTopicConfigResponse.setMessage(_ctx.stringValue("QueryTopicConfigResponse.Message"));
-		queryTopicConfigResponse.setSuccess(_ctx.booleanValue("QueryTopicConfigResponse.Success"));
 
 		List<TopicConfigInfo> data = new ArrayList<TopicConfigInfo>();
 		for (int i = 0; i < _ctx.lengthValue("QueryTopicConfigResponse.Data.Length"); i++) {
 			TopicConfigInfo topicConfigInfo = new TopicConfigInfo();
+			topicConfigInfo.setProductKey(_ctx.stringValue("QueryTopicConfigResponse.Data["+ i +"].ProductKey"));
 			topicConfigInfo.setTopicFullName(_ctx.stringValue("QueryTopicConfigResponse.Data["+ i +"].TopicFullName"));
 			topicConfigInfo.setOperation(_ctx.stringValue("QueryTopicConfigResponse.Data["+ i +"].Operation"));
-			topicConfigInfo.setProductKey(_ctx.stringValue("QueryTopicConfigResponse.Data["+ i +"].ProductKey"));
 			topicConfigInfo.setDescription(_ctx.stringValue("QueryTopicConfigResponse.Data["+ i +"].Description"));
-			topicConfigInfo.setCodec(_ctx.stringValue("QueryTopicConfigResponse.Data["+ i +"].Codec"));
 			topicConfigInfo.setEnableBroadcast(_ctx.booleanValue("QueryTopicConfigResponse.Data["+ i +"].EnableBroadcast"));
 			topicConfigInfo.setEnableProxySubscribe(_ctx.booleanValue("QueryTopicConfigResponse.Data["+ i +"].EnableProxySubscribe"));
+			topicConfigInfo.setCodec(_ctx.stringValue("QueryTopicConfigResponse.Data["+ i +"].Codec"));
 
 			data.add(topicConfigInfo);
 		}

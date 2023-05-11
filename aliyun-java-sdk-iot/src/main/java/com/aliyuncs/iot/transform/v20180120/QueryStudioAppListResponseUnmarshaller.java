@@ -28,29 +28,29 @@ public class QueryStudioAppListResponseUnmarshaller {
 	public static QueryStudioAppListResponse unmarshall(QueryStudioAppListResponse queryStudioAppListResponse, UnmarshallerContext _ctx) {
 		
 		queryStudioAppListResponse.setRequestId(_ctx.stringValue("QueryStudioAppListResponse.RequestId"));
+		queryStudioAppListResponse.setSuccess(_ctx.booleanValue("QueryStudioAppListResponse.Success"));
 		queryStudioAppListResponse.setCode(_ctx.stringValue("QueryStudioAppListResponse.Code"));
 		queryStudioAppListResponse.setErrorMessage(_ctx.stringValue("QueryStudioAppListResponse.ErrorMessage"));
-		queryStudioAppListResponse.setSuccess(_ctx.booleanValue("QueryStudioAppListResponse.Success"));
 
 		Data data = new Data();
-		data.setPageNo(_ctx.integerValue("QueryStudioAppListResponse.Data.PageNo"));
-		data.setTotalPage(_ctx.integerValue("QueryStudioAppListResponse.Data.TotalPage"));
 		data.setPageSize(_ctx.integerValue("QueryStudioAppListResponse.Data.PageSize"));
+		data.setPageNo(_ctx.integerValue("QueryStudioAppListResponse.Data.PageNo"));
 		data.setTotal(_ctx.integerValue("QueryStudioAppListResponse.Data.Total"));
+		data.setTotalPage(_ctx.integerValue("QueryStudioAppListResponse.Data.TotalPage"));
 
 		List<AppInfo> list = new ArrayList<AppInfo>();
 		for (int i = 0; i < _ctx.lengthValue("QueryStudioAppListResponse.Data.List.Length"); i++) {
 			AppInfo appInfo = new AppInfo();
-			appInfo.setType(_ctx.stringValue("QueryStudioAppListResponse.Data.List["+ i +"].Type"));
-			appInfo.setAppSecret(_ctx.stringValue("QueryStudioAppListResponse.Data.List["+ i +"].AppSecret"));
-			appInfo.setAppKey(_ctx.stringValue("QueryStudioAppListResponse.Data.List["+ i +"].AppKey"));
-			appInfo.setDescription(_ctx.stringValue("QueryStudioAppListResponse.Data.List["+ i +"].Description"));
-			appInfo.setAppId(_ctx.stringValue("QueryStudioAppListResponse.Data.List["+ i +"].AppId"));
-			appInfo.setProjectId(_ctx.stringValue("QueryStudioAppListResponse.Data.List["+ i +"].ProjectId"));
-			appInfo.setGmtCreate(_ctx.stringValue("QueryStudioAppListResponse.Data.List["+ i +"].GmtCreate"));
-			appInfo.setGmtRelease(_ctx.stringValue("QueryStudioAppListResponse.Data.List["+ i +"].GmtRelease"));
-			appInfo.setGmtModified(_ctx.stringValue("QueryStudioAppListResponse.Data.List["+ i +"].GmtModified"));
 			appInfo.setName(_ctx.stringValue("QueryStudioAppListResponse.Data.List["+ i +"].Name"));
+			appInfo.setAppId(_ctx.stringValue("QueryStudioAppListResponse.Data.List["+ i +"].AppId"));
+			appInfo.setAppKey(_ctx.stringValue("QueryStudioAppListResponse.Data.List["+ i +"].AppKey"));
+			appInfo.setAppSecret(_ctx.stringValue("QueryStudioAppListResponse.Data.List["+ i +"].AppSecret"));
+			appInfo.setProjectId(_ctx.stringValue("QueryStudioAppListResponse.Data.List["+ i +"].ProjectId"));
+			appInfo.setType(_ctx.stringValue("QueryStudioAppListResponse.Data.List["+ i +"].Type"));
+			appInfo.setDescription(_ctx.stringValue("QueryStudioAppListResponse.Data.List["+ i +"].Description"));
+			appInfo.setGmtCreate(_ctx.stringValue("QueryStudioAppListResponse.Data.List["+ i +"].GmtCreate"));
+			appInfo.setGmtModified(_ctx.stringValue("QueryStudioAppListResponse.Data.List["+ i +"].GmtModified"));
+			appInfo.setGmtRelease(_ctx.stringValue("QueryStudioAppListResponse.Data.List["+ i +"].GmtRelease"));
 
 			list.add(appInfo);
 		}

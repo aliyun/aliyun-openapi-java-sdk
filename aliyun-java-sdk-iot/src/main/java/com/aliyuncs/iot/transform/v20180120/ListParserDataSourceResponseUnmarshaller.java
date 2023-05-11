@@ -27,20 +27,20 @@ public class ListParserDataSourceResponseUnmarshaller {
 	public static ListParserDataSourceResponse unmarshall(ListParserDataSourceResponse listParserDataSourceResponse, UnmarshallerContext _ctx) {
 		
 		listParserDataSourceResponse.setRequestId(_ctx.stringValue("ListParserDataSourceResponse.RequestId"));
-		listParserDataSourceResponse.setErrorMessage(_ctx.stringValue("ListParserDataSourceResponse.ErrorMessage"));
 		listParserDataSourceResponse.setSuccess(_ctx.booleanValue("ListParserDataSourceResponse.Success"));
 		listParserDataSourceResponse.setCode(_ctx.stringValue("ListParserDataSourceResponse.Code"));
+		listParserDataSourceResponse.setErrorMessage(_ctx.stringValue("ListParserDataSourceResponse.ErrorMessage"));
+		listParserDataSourceResponse.setPage(_ctx.integerValue("ListParserDataSourceResponse.Page"));
 		listParserDataSourceResponse.setPageSize(_ctx.integerValue("ListParserDataSourceResponse.PageSize"));
 		listParserDataSourceResponse.setTotal(_ctx.integerValue("ListParserDataSourceResponse.Total"));
-		listParserDataSourceResponse.setPage(_ctx.integerValue("ListParserDataSourceResponse.Page"));
 
 		List<DataSource> data = new ArrayList<DataSource>();
 		for (int i = 0; i < _ctx.lengthValue("ListParserDataSourceResponse.Data.Length"); i++) {
 			DataSource dataSource = new DataSource();
-			dataSource.setUtcCreated(_ctx.stringValue("ListParserDataSourceResponse.Data["+ i +"].UtcCreated"));
 			dataSource.setName(_ctx.stringValue("ListParserDataSourceResponse.Data["+ i +"].Name"));
 			dataSource.setDescription(_ctx.stringValue("ListParserDataSourceResponse.Data["+ i +"].Description"));
 			dataSource.setDataSourceId(_ctx.longValue("ListParserDataSourceResponse.Data["+ i +"].DataSourceId"));
+			dataSource.setUtcCreated(_ctx.stringValue("ListParserDataSourceResponse.Data["+ i +"].UtcCreated"));
 
 			data.add(dataSource);
 		}

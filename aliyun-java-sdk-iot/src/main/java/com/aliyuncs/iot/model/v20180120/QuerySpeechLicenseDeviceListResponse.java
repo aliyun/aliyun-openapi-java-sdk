@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QuerySpeechLicenseDeviceListResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -65,6 +49,22 @@ public class QuerySpeechLicenseDeviceListResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
 	public Data getData() {
@@ -119,28 +119,28 @@ public class QuerySpeechLicenseDeviceListResponse extends AcsResponse {
 
 		public static class Item {
 
-			private Long expiryTime;
+			private String productName;
 
 			private String productKey;
 
-			private String licenseStatus;
-
-			private String productName;
-
 			private String deviceName;
 
-			private Boolean inSpecifiedGroup;
-
-			private String deviceStatus;
+			private Long expiryTime;
 
 			private String iotId;
 
-			public Long getExpiryTime() {
-				return this.expiryTime;
+			private String licenseStatus;
+
+			private String deviceStatus;
+
+			private Boolean inSpecifiedGroup;
+
+			public String getProductName() {
+				return this.productName;
 			}
 
-			public void setExpiryTime(Long expiryTime) {
-				this.expiryTime = expiryTime;
+			public void setProductName(String productName) {
+				this.productName = productName;
 			}
 
 			public String getProductKey() {
@@ -151,22 +151,6 @@ public class QuerySpeechLicenseDeviceListResponse extends AcsResponse {
 				this.productKey = productKey;
 			}
 
-			public String getLicenseStatus() {
-				return this.licenseStatus;
-			}
-
-			public void setLicenseStatus(String licenseStatus) {
-				this.licenseStatus = licenseStatus;
-			}
-
-			public String getProductName() {
-				return this.productName;
-			}
-
-			public void setProductName(String productName) {
-				this.productName = productName;
-			}
-
 			public String getDeviceName() {
 				return this.deviceName;
 			}
@@ -175,12 +159,28 @@ public class QuerySpeechLicenseDeviceListResponse extends AcsResponse {
 				this.deviceName = deviceName;
 			}
 
-			public Boolean getInSpecifiedGroup() {
-				return this.inSpecifiedGroup;
+			public Long getExpiryTime() {
+				return this.expiryTime;
 			}
 
-			public void setInSpecifiedGroup(Boolean inSpecifiedGroup) {
-				this.inSpecifiedGroup = inSpecifiedGroup;
+			public void setExpiryTime(Long expiryTime) {
+				this.expiryTime = expiryTime;
+			}
+
+			public String getIotId() {
+				return this.iotId;
+			}
+
+			public void setIotId(String iotId) {
+				this.iotId = iotId;
+			}
+
+			public String getLicenseStatus() {
+				return this.licenseStatus;
+			}
+
+			public void setLicenseStatus(String licenseStatus) {
+				this.licenseStatus = licenseStatus;
 			}
 
 			public String getDeviceStatus() {
@@ -191,12 +191,12 @@ public class QuerySpeechLicenseDeviceListResponse extends AcsResponse {
 				this.deviceStatus = deviceStatus;
 			}
 
-			public String getIotId() {
-				return this.iotId;
+			public Boolean getInSpecifiedGroup() {
+				return this.inSpecifiedGroup;
 			}
 
-			public void setIotId(String iotId) {
-				this.iotId = iotId;
+			public void setInSpecifiedGroup(Boolean inSpecifiedGroup) {
+				this.inSpecifiedGroup = inSpecifiedGroup;
 			}
 		}
 	}

@@ -27,17 +27,17 @@ public class ListParserDataSourceResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String errorMessage;
-
 	private Boolean success;
 
 	private String code;
 
+	private String errorMessage;
+
+	private Integer page;
+
 	private Integer pageSize;
 
 	private Integer total;
-
-	private Integer page;
 
 	private List<DataSource> data;
 
@@ -47,14 +47,6 @@ public class ListParserDataSourceResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
 	}
 
 	public Boolean getSuccess() {
@@ -73,6 +65,22 @@ public class ListParserDataSourceResponse extends AcsResponse {
 		this.code = code;
 	}
 
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
+	public Integer getPage() {
+		return this.page;
+	}
+
+	public void setPage(Integer page) {
+		this.page = page;
+	}
+
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -89,14 +97,6 @@ public class ListParserDataSourceResponse extends AcsResponse {
 		this.total = total;
 	}
 
-	public Integer getPage() {
-		return this.page;
-	}
-
-	public void setPage(Integer page) {
-		this.page = page;
-	}
-
 	public List<DataSource> getData() {
 		return this.data;
 	}
@@ -107,21 +107,13 @@ public class ListParserDataSourceResponse extends AcsResponse {
 
 	public static class DataSource {
 
-		private String utcCreated;
-
 		private String name;
 
 		private String description;
 
 		private Long dataSourceId;
 
-		public String getUtcCreated() {
-			return this.utcCreated;
-		}
-
-		public void setUtcCreated(String utcCreated) {
-			this.utcCreated = utcCreated;
-		}
+		private String utcCreated;
 
 		public String getName() {
 			return this.name;
@@ -145,6 +137,14 @@ public class ListParserDataSourceResponse extends AcsResponse {
 
 		public void setDataSourceId(Long dataSourceId) {
 			this.dataSourceId = dataSourceId;
+		}
+
+		public String getUtcCreated() {
+			return this.utcCreated;
+		}
+
+		public void setUtcCreated(String utcCreated) {
+			this.utcCreated = utcCreated;
 		}
 	}
 

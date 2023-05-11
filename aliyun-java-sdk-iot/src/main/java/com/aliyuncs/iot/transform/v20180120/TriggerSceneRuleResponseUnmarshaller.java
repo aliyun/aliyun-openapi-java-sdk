@@ -23,9 +23,9 @@ public class TriggerSceneRuleResponseUnmarshaller {
 	public static TriggerSceneRuleResponse unmarshall(TriggerSceneRuleResponse triggerSceneRuleResponse, UnmarshallerContext _ctx) {
 		
 		triggerSceneRuleResponse.setRequestId(_ctx.stringValue("TriggerSceneRuleResponse.RequestId"));
-		triggerSceneRuleResponse.setCode(_ctx.stringValue("TriggerSceneRuleResponse.Code"));
-		triggerSceneRuleResponse.setErrorMessage(_ctx.stringValue("TriggerSceneRuleResponse.ErrorMessage"));
 		triggerSceneRuleResponse.setSuccess(_ctx.booleanValue("TriggerSceneRuleResponse.Success"));
+		triggerSceneRuleResponse.setErrorMessage(_ctx.stringValue("TriggerSceneRuleResponse.ErrorMessage"));
+		triggerSceneRuleResponse.setCode(_ctx.stringValue("TriggerSceneRuleResponse.Code"));
 	 
 	 	return triggerSceneRuleResponse;
 	}

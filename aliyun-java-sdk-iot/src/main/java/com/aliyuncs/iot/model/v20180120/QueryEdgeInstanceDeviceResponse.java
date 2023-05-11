@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryEdgeInstanceDeviceResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,6 +51,22 @@ public class QueryEdgeInstanceDeviceResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -77,20 +77,20 @@ public class QueryEdgeInstanceDeviceResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer currentPage;
+		private Integer total;
 
 		private Integer pageSize;
 
-		private Integer total;
+		private Integer currentPage;
 
 		private List<Device> deviceList;
 
-		public Integer getCurrentPage() {
-			return this.currentPage;
+		public Integer getTotal() {
+			return this.total;
 		}
 
-		public void setCurrentPage(Integer currentPage) {
-			this.currentPage = currentPage;
+		public void setTotal(Integer total) {
+			this.total = total;
 		}
 
 		public Integer getPageSize() {
@@ -101,12 +101,12 @@ public class QueryEdgeInstanceDeviceResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
-		public Integer getTotal() {
-			return this.total;
+		public Integer getCurrentPage() {
+			return this.currentPage;
 		}
 
-		public void setTotal(Integer total) {
-			this.total = total;
+		public void setCurrentPage(Integer currentPage) {
+			this.currentPage = currentPage;
 		}
 
 		public List<Device> getDeviceList() {
@@ -119,13 +119,21 @@ public class QueryEdgeInstanceDeviceResponse extends AcsResponse {
 
 		public static class Device {
 
-			private String productKey;
+			private String iotId;
 
-			private String driverId;
+			private String productKey;
 
 			private String deviceName;
 
-			private String iotId;
+			private String driverId;
+
+			public String getIotId() {
+				return this.iotId;
+			}
+
+			public void setIotId(String iotId) {
+				this.iotId = iotId;
+			}
 
 			public String getProductKey() {
 				return this.productKey;
@@ -133,14 +141,6 @@ public class QueryEdgeInstanceDeviceResponse extends AcsResponse {
 
 			public void setProductKey(String productKey) {
 				this.productKey = productKey;
-			}
-
-			public String getDriverId() {
-				return this.driverId;
-			}
-
-			public void setDriverId(String driverId) {
-				this.driverId = driverId;
 			}
 
 			public String getDeviceName() {
@@ -151,12 +151,12 @@ public class QueryEdgeInstanceDeviceResponse extends AcsResponse {
 				this.deviceName = deviceName;
 			}
 
-			public String getIotId() {
-				return this.iotId;
+			public String getDriverId() {
+				return this.driverId;
 			}
 
-			public void setIotId(String iotId) {
-				this.iotId = iotId;
+			public void setDriverId(String driverId) {
+				this.driverId = driverId;
 			}
 		}
 	}

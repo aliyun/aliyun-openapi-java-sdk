@@ -24,15 +24,15 @@ public class GetDeviceTunnelShareStatusResponseUnmarshaller {
 	public static GetDeviceTunnelShareStatusResponse unmarshall(GetDeviceTunnelShareStatusResponse getDeviceTunnelShareStatusResponse, UnmarshallerContext _ctx) {
 		
 		getDeviceTunnelShareStatusResponse.setRequestId(_ctx.stringValue("GetDeviceTunnelShareStatusResponse.RequestId"));
-		getDeviceTunnelShareStatusResponse.setCode(_ctx.stringValue("GetDeviceTunnelShareStatusResponse.Code"));
-		getDeviceTunnelShareStatusResponse.setErrorMessage(_ctx.stringValue("GetDeviceTunnelShareStatusResponse.ErrorMessage"));
 		getDeviceTunnelShareStatusResponse.setSuccess(_ctx.booleanValue("GetDeviceTunnelShareStatusResponse.Success"));
+		getDeviceTunnelShareStatusResponse.setErrorMessage(_ctx.stringValue("GetDeviceTunnelShareStatusResponse.ErrorMessage"));
+		getDeviceTunnelShareStatusResponse.setCode(_ctx.stringValue("GetDeviceTunnelShareStatusResponse.Code"));
 
 		Data data = new Data();
 		data.setShareId(_ctx.stringValue("GetDeviceTunnelShareStatusResponse.Data.ShareId"));
 		data.setPassword(_ctx.stringValue("GetDeviceTunnelShareStatusResponse.Data.Password"));
-		data.setGmtOpened(_ctx.longValue("GetDeviceTunnelShareStatusResponse.Data.GmtOpened"));
 		data.setIsOpen(_ctx.booleanValue("GetDeviceTunnelShareStatusResponse.Data.IsOpen"));
+		data.setGmtOpened(_ctx.longValue("GetDeviceTunnelShareStatusResponse.Data.GmtOpened"));
 		getDeviceTunnelShareStatusResponse.setData(data);
 	 
 	 	return getDeviceTunnelShareStatusResponse;

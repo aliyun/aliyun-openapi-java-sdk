@@ -24,18 +24,18 @@ public class CreateStudioAppDomainOpenResponseUnmarshaller {
 	public static CreateStudioAppDomainOpenResponse unmarshall(CreateStudioAppDomainOpenResponse createStudioAppDomainOpenResponse, UnmarshallerContext _ctx) {
 		
 		createStudioAppDomainOpenResponse.setRequestId(_ctx.stringValue("CreateStudioAppDomainOpenResponse.RequestId"));
+		createStudioAppDomainOpenResponse.setSuccess(_ctx.booleanValue("CreateStudioAppDomainOpenResponse.Success"));
 		createStudioAppDomainOpenResponse.setCode(_ctx.stringValue("CreateStudioAppDomainOpenResponse.Code"));
 		createStudioAppDomainOpenResponse.setErrorMessage(_ctx.stringValue("CreateStudioAppDomainOpenResponse.ErrorMessage"));
-		createStudioAppDomainOpenResponse.setSuccess(_ctx.booleanValue("CreateStudioAppDomainOpenResponse.Success"));
 
 		Data data = new Data();
-		data.setHost(_ctx.stringValue("CreateStudioAppDomainOpenResponse.Data.Host"));
-		data.setBizProtocol(_ctx.stringValue("CreateStudioAppDomainOpenResponse.Data.Protocol"));
+		data.setTenantId(_ctx.stringValue("CreateStudioAppDomainOpenResponse.Data.TenantId"));
 		data.setAppId(_ctx.stringValue("CreateStudioAppDomainOpenResponse.Data.AppId"));
 		data.setProjectId(_ctx.stringValue("CreateStudioAppDomainOpenResponse.Data.ProjectId"));
-		data.setIsBeian(_ctx.stringValue("CreateStudioAppDomainOpenResponse.Data.IsBeian"));
+		data.setHost(_ctx.stringValue("CreateStudioAppDomainOpenResponse.Data.Host"));
 		data.setId(_ctx.integerValue("CreateStudioAppDomainOpenResponse.Data.Id"));
-		data.setTenantId(_ctx.stringValue("CreateStudioAppDomainOpenResponse.Data.TenantId"));
+		data.setIsBeian(_ctx.stringValue("CreateStudioAppDomainOpenResponse.Data.IsBeian"));
+		data.setBizProtocol(_ctx.stringValue("CreateStudioAppDomainOpenResponse.Data.Protocol"));
 		createStudioAppDomainOpenResponse.setData(data);
 	 
 	 	return createStudioAppDomainOpenResponse;

@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class AddShareTaskDeviceResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -66,6 +50,22 @@ public class AddShareTaskDeviceResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -76,15 +76,23 @@ public class AddShareTaskDeviceResponse extends AcsResponse {
 
 	public static class Data {
 
+		private Integer progress;
+
 		private String progressId;
 
 		private Integer successSum;
 
-		private Integer progress;
+		private Integer failSum;
 
 		private String failedResultCsvFile;
 
-		private Integer failSum;
+		public Integer getProgress() {
+			return this.progress;
+		}
+
+		public void setProgress(Integer progress) {
+			this.progress = progress;
+		}
 
 		public String getProgressId() {
 			return this.progressId;
@@ -102,12 +110,12 @@ public class AddShareTaskDeviceResponse extends AcsResponse {
 			this.successSum = successSum;
 		}
 
-		public Integer getProgress() {
-			return this.progress;
+		public Integer getFailSum() {
+			return this.failSum;
 		}
 
-		public void setProgress(Integer progress) {
-			this.progress = progress;
+		public void setFailSum(Integer failSum) {
+			this.failSum = failSum;
 		}
 
 		public String getFailedResultCsvFile() {
@@ -116,14 +124,6 @@ public class AddShareTaskDeviceResponse extends AcsResponse {
 
 		public void setFailedResultCsvFile(String failedResultCsvFile) {
 			this.failedResultCsvFile = failedResultCsvFile;
-		}
-
-		public Integer getFailSum() {
-			return this.failSum;
-		}
-
-		public void setFailSum(Integer failSum) {
-			this.failSum = failSum;
 		}
 	}
 

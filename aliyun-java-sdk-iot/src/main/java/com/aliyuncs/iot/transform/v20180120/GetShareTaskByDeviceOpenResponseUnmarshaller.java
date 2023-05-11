@@ -23,10 +23,10 @@ public class GetShareTaskByDeviceOpenResponseUnmarshaller {
 	public static GetShareTaskByDeviceOpenResponse unmarshall(GetShareTaskByDeviceOpenResponse getShareTaskByDeviceOpenResponse, UnmarshallerContext _ctx) {
 		
 		getShareTaskByDeviceOpenResponse.setRequestId(_ctx.stringValue("GetShareTaskByDeviceOpenResponse.RequestId"));
-		getShareTaskByDeviceOpenResponse.setCode(_ctx.stringValue("GetShareTaskByDeviceOpenResponse.Code"));
-		getShareTaskByDeviceOpenResponse.setData(_ctx.stringValue("GetShareTaskByDeviceOpenResponse.Data"));
-		getShareTaskByDeviceOpenResponse.setErrorMessage(_ctx.stringValue("GetShareTaskByDeviceOpenResponse.ErrorMessage"));
 		getShareTaskByDeviceOpenResponse.setSuccess(_ctx.booleanValue("GetShareTaskByDeviceOpenResponse.Success"));
+		getShareTaskByDeviceOpenResponse.setCode(_ctx.stringValue("GetShareTaskByDeviceOpenResponse.Code"));
+		getShareTaskByDeviceOpenResponse.setErrorMessage(_ctx.stringValue("GetShareTaskByDeviceOpenResponse.ErrorMessage"));
+		getShareTaskByDeviceOpenResponse.setData(_ctx.stringValue("GetShareTaskByDeviceOpenResponse.Data"));
 	 
 	 	return getShareTaskByDeviceOpenResponse;
 	}

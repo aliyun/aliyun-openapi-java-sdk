@@ -28,9 +28,9 @@ public class QueryLicenseDeviceListResponseUnmarshaller {
 	public static QueryLicenseDeviceListResponse unmarshall(QueryLicenseDeviceListResponse queryLicenseDeviceListResponse, UnmarshallerContext _ctx) {
 		
 		queryLicenseDeviceListResponse.setRequestId(_ctx.stringValue("QueryLicenseDeviceListResponse.RequestId"));
+		queryLicenseDeviceListResponse.setSuccess(_ctx.booleanValue("QueryLicenseDeviceListResponse.Success"));
 		queryLicenseDeviceListResponse.setCode(_ctx.stringValue("QueryLicenseDeviceListResponse.Code"));
 		queryLicenseDeviceListResponse.setErrorMessage(_ctx.stringValue("QueryLicenseDeviceListResponse.ErrorMessage"));
-		queryLicenseDeviceListResponse.setSuccess(_ctx.booleanValue("QueryLicenseDeviceListResponse.Success"));
 
 		Data data = new Data();
 		data.setPageSize(_ctx.integerValue("QueryLicenseDeviceListResponse.Data.PageSize"));
@@ -40,12 +40,12 @@ public class QueryLicenseDeviceListResponseUnmarshaller {
 		List<Item> deviceList = new ArrayList<Item>();
 		for (int i = 0; i < _ctx.lengthValue("QueryLicenseDeviceListResponse.Data.DeviceList.Length"); i++) {
 			Item item = new Item();
-			item.setExpiryTime(_ctx.longValue("QueryLicenseDeviceListResponse.Data.DeviceList["+ i +"].ExpiryTime"));
-			item.setProductKey(_ctx.stringValue("QueryLicenseDeviceListResponse.Data.DeviceList["+ i +"].ProductKey"));
 			item.setProductName(_ctx.stringValue("QueryLicenseDeviceListResponse.Data.DeviceList["+ i +"].ProductName"));
-			item.setDeviceName(_ctx.stringValue("QueryLicenseDeviceListResponse.Data.DeviceList["+ i +"].DeviceName"));
-			item.setGmtCreate(_ctx.longValue("QueryLicenseDeviceListResponse.Data.DeviceList["+ i +"].GmtCreate"));
 			item.setLicenseCode(_ctx.stringValue("QueryLicenseDeviceListResponse.Data.DeviceList["+ i +"].LicenseCode"));
+			item.setProductKey(_ctx.stringValue("QueryLicenseDeviceListResponse.Data.DeviceList["+ i +"].ProductKey"));
+			item.setDeviceName(_ctx.stringValue("QueryLicenseDeviceListResponse.Data.DeviceList["+ i +"].DeviceName"));
+			item.setExpiryTime(_ctx.longValue("QueryLicenseDeviceListResponse.Data.DeviceList["+ i +"].ExpiryTime"));
+			item.setGmtCreate(_ctx.longValue("QueryLicenseDeviceListResponse.Data.DeviceList["+ i +"].GmtCreate"));
 			item.setIotId(_ctx.stringValue("QueryLicenseDeviceListResponse.Data.DeviceList["+ i +"].IotId"));
 
 			deviceList.add(item);

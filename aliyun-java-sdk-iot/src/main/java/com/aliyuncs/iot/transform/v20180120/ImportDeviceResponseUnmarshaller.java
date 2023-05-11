@@ -24,17 +24,17 @@ public class ImportDeviceResponseUnmarshaller {
 	public static ImportDeviceResponse unmarshall(ImportDeviceResponse importDeviceResponse, UnmarshallerContext _ctx) {
 		
 		importDeviceResponse.setRequestId(_ctx.stringValue("ImportDeviceResponse.RequestId"));
+		importDeviceResponse.setSuccess(_ctx.booleanValue("ImportDeviceResponse.Success"));
 		importDeviceResponse.setCode(_ctx.stringValue("ImportDeviceResponse.Code"));
 		importDeviceResponse.setErrorMessage(_ctx.stringValue("ImportDeviceResponse.ErrorMessage"));
-		importDeviceResponse.setSuccess(_ctx.booleanValue("ImportDeviceResponse.Success"));
 
 		Data data = new Data();
+		data.setIotId(_ctx.stringValue("ImportDeviceResponse.Data.IotId"));
 		data.setProductKey(_ctx.stringValue("ImportDeviceResponse.Data.ProductKey"));
-		data.setSn(_ctx.stringValue("ImportDeviceResponse.Data.Sn"));
 		data.setDeviceName(_ctx.stringValue("ImportDeviceResponse.Data.DeviceName"));
 		data.setDeviceSecret(_ctx.stringValue("ImportDeviceResponse.Data.DeviceSecret"));
+		data.setSn(_ctx.stringValue("ImportDeviceResponse.Data.Sn"));
 		data.setNickname(_ctx.stringValue("ImportDeviceResponse.Data.Nickname"));
-		data.setIotId(_ctx.stringValue("ImportDeviceResponse.Data.IotId"));
 		importDeviceResponse.setData(data);
 	 
 	 	return importDeviceResponse;

@@ -27,27 +27,27 @@ public class QueryDeviceByStatusResponseUnmarshaller {
 	public static QueryDeviceByStatusResponse unmarshall(QueryDeviceByStatusResponse queryDeviceByStatusResponse, UnmarshallerContext _ctx) {
 		
 		queryDeviceByStatusResponse.setRequestId(_ctx.stringValue("QueryDeviceByStatusResponse.RequestId"));
-		queryDeviceByStatusResponse.setErrorMessage(_ctx.stringValue("QueryDeviceByStatusResponse.ErrorMessage"));
 		queryDeviceByStatusResponse.setSuccess(_ctx.booleanValue("QueryDeviceByStatusResponse.Success"));
 		queryDeviceByStatusResponse.setCode(_ctx.stringValue("QueryDeviceByStatusResponse.Code"));
-		queryDeviceByStatusResponse.setPageSize(_ctx.integerValue("QueryDeviceByStatusResponse.PageSize"));
-		queryDeviceByStatusResponse.setTotal(_ctx.integerValue("QueryDeviceByStatusResponse.Total"));
-		queryDeviceByStatusResponse.setPageCount(_ctx.integerValue("QueryDeviceByStatusResponse.PageCount"));
+		queryDeviceByStatusResponse.setErrorMessage(_ctx.stringValue("QueryDeviceByStatusResponse.ErrorMessage"));
 		queryDeviceByStatusResponse.setPage(_ctx.integerValue("QueryDeviceByStatusResponse.Page"));
+		queryDeviceByStatusResponse.setPageSize(_ctx.integerValue("QueryDeviceByStatusResponse.PageSize"));
+		queryDeviceByStatusResponse.setPageCount(_ctx.integerValue("QueryDeviceByStatusResponse.PageCount"));
+		queryDeviceByStatusResponse.setTotal(_ctx.integerValue("QueryDeviceByStatusResponse.Total"));
 
 		List<SimpleDeviceInfo> data = new ArrayList<SimpleDeviceInfo>();
 		for (int i = 0; i < _ctx.lengthValue("QueryDeviceByStatusResponse.Data.Length"); i++) {
 			SimpleDeviceInfo simpleDeviceInfo = new SimpleDeviceInfo();
-			simpleDeviceInfo.setStatus(_ctx.stringValue("QueryDeviceByStatusResponse.Data["+ i +"].Status"));
 			simpleDeviceInfo.setProductKey(_ctx.stringValue("QueryDeviceByStatusResponse.Data["+ i +"].ProductKey"));
 			simpleDeviceInfo.setDeviceName(_ctx.stringValue("QueryDeviceByStatusResponse.Data["+ i +"].DeviceName"));
+			simpleDeviceInfo.setStatus(_ctx.stringValue("QueryDeviceByStatusResponse.Data["+ i +"].Status"));
+			simpleDeviceInfo.setIotId(_ctx.stringValue("QueryDeviceByStatusResponse.Data["+ i +"].IotId"));
+			simpleDeviceInfo.setNickname(_ctx.stringValue("QueryDeviceByStatusResponse.Data["+ i +"].Nickname"));
+			simpleDeviceInfo.setGmtCreate(_ctx.stringValue("QueryDeviceByStatusResponse.Data["+ i +"].GmtCreate"));
+			simpleDeviceInfo.setGmtModified(_ctx.stringValue("QueryDeviceByStatusResponse.Data["+ i +"].GmtModified"));
+			simpleDeviceInfo.setUtcCreate(_ctx.stringValue("QueryDeviceByStatusResponse.Data["+ i +"].UtcCreate"));
 			simpleDeviceInfo.setUtcModified(_ctx.stringValue("QueryDeviceByStatusResponse.Data["+ i +"].UtcModified"));
 			simpleDeviceInfo.setDeviceSecret(_ctx.stringValue("QueryDeviceByStatusResponse.Data["+ i +"].DeviceSecret"));
-			simpleDeviceInfo.setUtcCreate(_ctx.stringValue("QueryDeviceByStatusResponse.Data["+ i +"].UtcCreate"));
-			simpleDeviceInfo.setGmtCreate(_ctx.stringValue("QueryDeviceByStatusResponse.Data["+ i +"].GmtCreate"));
-			simpleDeviceInfo.setNickname(_ctx.stringValue("QueryDeviceByStatusResponse.Data["+ i +"].Nickname"));
-			simpleDeviceInfo.setGmtModified(_ctx.stringValue("QueryDeviceByStatusResponse.Data["+ i +"].GmtModified"));
-			simpleDeviceInfo.setIotId(_ctx.stringValue("QueryDeviceByStatusResponse.Data["+ i +"].IotId"));
 
 			data.add(simpleDeviceInfo);
 		}

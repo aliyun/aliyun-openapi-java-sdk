@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateStudioAppDomainOpenResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -66,6 +50,22 @@ public class CreateStudioAppDomainOpenResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -76,34 +76,26 @@ public class CreateStudioAppDomainOpenResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String host;
-
-		private String protocol;
+		private String tenantId;
 
 		private String appId;
 
 		private String projectId;
 
-		private String isBeian;
+		private String host;
 
 		private Integer id;
 
-		private String tenantId;
+		private String isBeian;
 
-		public String getHost() {
-			return this.host;
+		private String protocol;
+
+		public String getTenantId() {
+			return this.tenantId;
 		}
 
-		public void setHost(String host) {
-			this.host = host;
-		}
-
-		public String getBizProtocol() {
-			return this.protocol;
-		}
-
-		public void setBizProtocol(String protocol) {
-			this.protocol = protocol;
+		public void setTenantId(String tenantId) {
+			this.tenantId = tenantId;
 		}
 
 		public String getAppId() {
@@ -122,12 +114,12 @@ public class CreateStudioAppDomainOpenResponse extends AcsResponse {
 			this.projectId = projectId;
 		}
 
-		public String getIsBeian() {
-			return this.isBeian;
+		public String getHost() {
+			return this.host;
 		}
 
-		public void setIsBeian(String isBeian) {
-			this.isBeian = isBeian;
+		public void setHost(String host) {
+			this.host = host;
 		}
 
 		public Integer getId() {
@@ -138,12 +130,20 @@ public class CreateStudioAppDomainOpenResponse extends AcsResponse {
 			this.id = id;
 		}
 
-		public String getTenantId() {
-			return this.tenantId;
+		public String getIsBeian() {
+			return this.isBeian;
 		}
 
-		public void setTenantId(String tenantId) {
-			this.tenantId = tenantId;
+		public void setIsBeian(String isBeian) {
+			this.isBeian = isBeian;
+		}
+
+		public String getBizProtocol() {
+			return this.protocol;
+		}
+
+		public void setBizProtocol(String protocol) {
+			this.protocol = protocol;
 		}
 	}
 

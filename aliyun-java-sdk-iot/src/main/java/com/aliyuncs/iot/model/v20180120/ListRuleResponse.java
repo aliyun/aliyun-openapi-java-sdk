@@ -27,17 +27,17 @@ public class ListRuleResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String errorMessage;
-
 	private Boolean success;
 
 	private String code;
 
-	private Integer pageSize;
+	private String errorMessage;
+
+	private Integer page;
 
 	private Integer total;
 
-	private Integer page;
+	private Integer pageSize;
 
 	private List<RuleInfo> data;
 
@@ -47,14 +47,6 @@ public class ListRuleResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
 	}
 
 	public Boolean getSuccess() {
@@ -73,12 +65,20 @@ public class ListRuleResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getErrorMessage() {
+		return this.errorMessage;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
+	public Integer getPage() {
+		return this.page;
+	}
+
+	public void setPage(Integer page) {
+		this.page = page;
 	}
 
 	public Integer getTotal() {
@@ -89,12 +89,12 @@ public class ListRuleResponse extends AcsResponse {
 		this.total = total;
 	}
 
-	public Integer getPage() {
-		return this.page;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setPage(Integer page) {
-		this.page = page;
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public List<RuleInfo> getData() {
@@ -107,58 +107,42 @@ public class ListRuleResponse extends AcsResponse {
 
 	public static class RuleInfo {
 
-		private String modified;
-
-		private String status;
-
-		private String dataType;
+		private Long id;
 
 		private String select;
-
-		private String utcCreated;
-
-		private Long createUserId;
-
-		private String where;
-
-		private String productKey;
-
-		private String utcModified;
 
 		private String topic;
 
 		private String shortTopic;
 
-		private String ruleDesc;
+		private String where;
+
+		private String status;
+
+		private Long createUserId;
+
+		private String productKey;
 
 		private String name;
 
+		private String dataType;
+
+		private String ruleDesc;
+
 		private String created;
 
-		private Long id;
+		private String utcCreated;
 
-		public String getModified() {
-			return this.modified;
+		private String modified;
+
+		private String utcModified;
+
+		public Long getId() {
+			return this.id;
 		}
 
-		public void setModified(String modified) {
-			this.modified = modified;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getDataType() {
-			return this.dataType;
-		}
-
-		public void setDataType(String dataType) {
-			this.dataType = dataType;
+		public void setId(Long id) {
+			this.id = id;
 		}
 
 		public String getSelect() {
@@ -167,46 +151,6 @@ public class ListRuleResponse extends AcsResponse {
 
 		public void setSelect(String select) {
 			this.select = select;
-		}
-
-		public String getUtcCreated() {
-			return this.utcCreated;
-		}
-
-		public void setUtcCreated(String utcCreated) {
-			this.utcCreated = utcCreated;
-		}
-
-		public Long getCreateUserId() {
-			return this.createUserId;
-		}
-
-		public void setCreateUserId(Long createUserId) {
-			this.createUserId = createUserId;
-		}
-
-		public String getWhere() {
-			return this.where;
-		}
-
-		public void setWhere(String where) {
-			this.where = where;
-		}
-
-		public String getProductKey() {
-			return this.productKey;
-		}
-
-		public void setProductKey(String productKey) {
-			this.productKey = productKey;
-		}
-
-		public String getUtcModified() {
-			return this.utcModified;
-		}
-
-		public void setUtcModified(String utcModified) {
-			this.utcModified = utcModified;
 		}
 
 		public String getTopic() {
@@ -225,12 +169,36 @@ public class ListRuleResponse extends AcsResponse {
 			this.shortTopic = shortTopic;
 		}
 
-		public String getRuleDesc() {
-			return this.ruleDesc;
+		public String getWhere() {
+			return this.where;
 		}
 
-		public void setRuleDesc(String ruleDesc) {
-			this.ruleDesc = ruleDesc;
+		public void setWhere(String where) {
+			this.where = where;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public Long getCreateUserId() {
+			return this.createUserId;
+		}
+
+		public void setCreateUserId(Long createUserId) {
+			this.createUserId = createUserId;
+		}
+
+		public String getProductKey() {
+			return this.productKey;
+		}
+
+		public void setProductKey(String productKey) {
+			this.productKey = productKey;
 		}
 
 		public String getName() {
@@ -241,6 +209,22 @@ public class ListRuleResponse extends AcsResponse {
 			this.name = name;
 		}
 
+		public String getDataType() {
+			return this.dataType;
+		}
+
+		public void setDataType(String dataType) {
+			this.dataType = dataType;
+		}
+
+		public String getRuleDesc() {
+			return this.ruleDesc;
+		}
+
+		public void setRuleDesc(String ruleDesc) {
+			this.ruleDesc = ruleDesc;
+		}
+
 		public String getCreated() {
 			return this.created;
 		}
@@ -249,12 +233,28 @@ public class ListRuleResponse extends AcsResponse {
 			this.created = created;
 		}
 
-		public Long getId() {
-			return this.id;
+		public String getUtcCreated() {
+			return this.utcCreated;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
+		public void setUtcCreated(String utcCreated) {
+			this.utcCreated = utcCreated;
+		}
+
+		public String getModified() {
+			return this.modified;
+		}
+
+		public void setModified(String modified) {
+			this.modified = modified;
+		}
+
+		public String getUtcModified() {
+			return this.utcModified;
+		}
+
+		public void setUtcModified(String utcModified) {
+			this.utcModified = utcModified;
 		}
 	}
 

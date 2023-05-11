@@ -24,16 +24,16 @@ public class RefreshStudioAppTokenOpenResponseUnmarshaller {
 	public static RefreshStudioAppTokenOpenResponse unmarshall(RefreshStudioAppTokenOpenResponse refreshStudioAppTokenOpenResponse, UnmarshallerContext _ctx) {
 		
 		refreshStudioAppTokenOpenResponse.setRequestId(_ctx.stringValue("RefreshStudioAppTokenOpenResponse.RequestId"));
+		refreshStudioAppTokenOpenResponse.setSuccess(_ctx.booleanValue("RefreshStudioAppTokenOpenResponse.Success"));
 		refreshStudioAppTokenOpenResponse.setCode(_ctx.stringValue("RefreshStudioAppTokenOpenResponse.Code"));
 		refreshStudioAppTokenOpenResponse.setErrorMessage(_ctx.stringValue("RefreshStudioAppTokenOpenResponse.ErrorMessage"));
-		refreshStudioAppTokenOpenResponse.setSuccess(_ctx.booleanValue("RefreshStudioAppTokenOpenResponse.Success"));
 
 		Data data = new Data();
-		data.setType(_ctx.stringValue("RefreshStudioAppTokenOpenResponse.Data.Type"));
 		data.setIsEnable(_ctx.stringValue("RefreshStudioAppTokenOpenResponse.Data.IsEnable"));
-		data.setBizId(_ctx.stringValue("RefreshStudioAppTokenOpenResponse.Data.BizId"));
-		data.setToken(_ctx.stringValue("RefreshStudioAppTokenOpenResponse.Data.Token"));
+		data.setType(_ctx.stringValue("RefreshStudioAppTokenOpenResponse.Data.Type"));
 		data.setBizType(_ctx.stringValue("RefreshStudioAppTokenOpenResponse.Data.BizType"));
+		data.setToken(_ctx.stringValue("RefreshStudioAppTokenOpenResponse.Data.Token"));
+		data.setBizId(_ctx.stringValue("RefreshStudioAppTokenOpenResponse.Data.BizId"));
 		refreshStudioAppTokenOpenResponse.setData(data);
 	 
 	 	return refreshStudioAppTokenOpenResponse;

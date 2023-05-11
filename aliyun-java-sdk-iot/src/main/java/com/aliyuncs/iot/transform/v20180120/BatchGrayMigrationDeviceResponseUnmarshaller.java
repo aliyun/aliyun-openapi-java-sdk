@@ -28,19 +28,19 @@ public class BatchGrayMigrationDeviceResponseUnmarshaller {
 	public static BatchGrayMigrationDeviceResponse unmarshall(BatchGrayMigrationDeviceResponse batchGrayMigrationDeviceResponse, UnmarshallerContext _ctx) {
 		
 		batchGrayMigrationDeviceResponse.setRequestId(_ctx.stringValue("BatchGrayMigrationDeviceResponse.RequestId"));
+		batchGrayMigrationDeviceResponse.setSuccess(_ctx.booleanValue("BatchGrayMigrationDeviceResponse.Success"));
 		batchGrayMigrationDeviceResponse.setCode(_ctx.stringValue("BatchGrayMigrationDeviceResponse.Code"));
 		batchGrayMigrationDeviceResponse.setErrorMessage(_ctx.stringValue("BatchGrayMigrationDeviceResponse.ErrorMessage"));
-		batchGrayMigrationDeviceResponse.setSuccess(_ctx.booleanValue("BatchGrayMigrationDeviceResponse.Success"));
 
 		Data data = new Data();
 
 		List<Item> details = new ArrayList<Item>();
 		for (int i = 0; i < _ctx.lengthValue("BatchGrayMigrationDeviceResponse.Data.Details.Length"); i++) {
 			Item item = new Item();
+			item.setDeviceName(_ctx.stringValue("BatchGrayMigrationDeviceResponse.Data.Details["+ i +"].DeviceName"));
 			item.setStatus(_ctx.stringValue("BatchGrayMigrationDeviceResponse.Data.Details["+ i +"].Status"));
 			item.setCode(_ctx.integerValue("BatchGrayMigrationDeviceResponse.Data.Details["+ i +"].Code"));
 			item.setMessage(_ctx.stringValue("BatchGrayMigrationDeviceResponse.Data.Details["+ i +"].Message"));
-			item.setDeviceName(_ctx.stringValue("BatchGrayMigrationDeviceResponse.Data.Details["+ i +"].DeviceName"));
 
 			details.add(item);
 		}

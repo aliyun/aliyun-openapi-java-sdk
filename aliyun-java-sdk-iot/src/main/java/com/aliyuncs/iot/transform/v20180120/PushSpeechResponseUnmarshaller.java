@@ -23,10 +23,10 @@ public class PushSpeechResponseUnmarshaller {
 	public static PushSpeechResponse unmarshall(PushSpeechResponse pushSpeechResponse, UnmarshallerContext _ctx) {
 		
 		pushSpeechResponse.setRequestId(_ctx.stringValue("PushSpeechResponse.RequestId"));
-		pushSpeechResponse.setCode(_ctx.stringValue("PushSpeechResponse.Code"));
-		pushSpeechResponse.setData(_ctx.stringValue("PushSpeechResponse.Data"));
-		pushSpeechResponse.setErrorMessage(_ctx.stringValue("PushSpeechResponse.ErrorMessage"));
 		pushSpeechResponse.setSuccess(_ctx.booleanValue("PushSpeechResponse.Success"));
+		pushSpeechResponse.setCode(_ctx.stringValue("PushSpeechResponse.Code"));
+		pushSpeechResponse.setErrorMessage(_ctx.stringValue("PushSpeechResponse.ErrorMessage"));
+		pushSpeechResponse.setData(_ctx.stringValue("PushSpeechResponse.Data"));
 	 
 	 	return pushSpeechResponse;
 	}

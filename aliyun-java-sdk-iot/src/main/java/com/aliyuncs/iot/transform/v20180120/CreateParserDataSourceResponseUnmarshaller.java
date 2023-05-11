@@ -24,15 +24,15 @@ public class CreateParserDataSourceResponseUnmarshaller {
 	public static CreateParserDataSourceResponse unmarshall(CreateParserDataSourceResponse createParserDataSourceResponse, UnmarshallerContext _ctx) {
 		
 		createParserDataSourceResponse.setRequestId(_ctx.stringValue("CreateParserDataSourceResponse.RequestId"));
+		createParserDataSourceResponse.setSuccess(_ctx.booleanValue("CreateParserDataSourceResponse.Success"));
 		createParserDataSourceResponse.setCode(_ctx.stringValue("CreateParserDataSourceResponse.Code"));
 		createParserDataSourceResponse.setErrorMessage(_ctx.stringValue("CreateParserDataSourceResponse.ErrorMessage"));
-		createParserDataSourceResponse.setSuccess(_ctx.booleanValue("CreateParserDataSourceResponse.Success"));
 
 		DataSource dataSource = new DataSource();
-		dataSource.setUtcCreated(_ctx.stringValue("CreateParserDataSourceResponse.DataSource.UtcCreated"));
 		dataSource.setName(_ctx.stringValue("CreateParserDataSourceResponse.DataSource.Name"));
 		dataSource.setDescription(_ctx.stringValue("CreateParserDataSourceResponse.DataSource.Description"));
 		dataSource.setDataSourceId(_ctx.longValue("CreateParserDataSourceResponse.DataSource.DataSourceId"));
+		dataSource.setUtcCreated(_ctx.stringValue("CreateParserDataSourceResponse.DataSource.UtcCreated"));
 		createParserDataSourceResponse.setDataSource(dataSource);
 	 
 	 	return createParserDataSourceResponse;

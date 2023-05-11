@@ -28,13 +28,13 @@ public class QueryDevicesHotStorageDataStatusResponseUnmarshaller {
 	public static QueryDevicesHotStorageDataStatusResponse unmarshall(QueryDevicesHotStorageDataStatusResponse queryDevicesHotStorageDataStatusResponse, UnmarshallerContext _ctx) {
 		
 		queryDevicesHotStorageDataStatusResponse.setRequestId(_ctx.stringValue("QueryDevicesHotStorageDataStatusResponse.RequestId"));
+		queryDevicesHotStorageDataStatusResponse.setSuccess(_ctx.booleanValue("QueryDevicesHotStorageDataStatusResponse.Success"));
 		queryDevicesHotStorageDataStatusResponse.setCode(_ctx.stringValue("QueryDevicesHotStorageDataStatusResponse.Code"));
 		queryDevicesHotStorageDataStatusResponse.setErrorMessage(_ctx.stringValue("QueryDevicesHotStorageDataStatusResponse.ErrorMessage"));
-		queryDevicesHotStorageDataStatusResponse.setSuccess(_ctx.booleanValue("QueryDevicesHotStorageDataStatusResponse.Success"));
 
 		Data data = new Data();
-		data.setNextPageToken(_ctx.stringValue("QueryDevicesHotStorageDataStatusResponse.Data.NextPageToken"));
 		data.setNextValid(_ctx.booleanValue("QueryDevicesHotStorageDataStatusResponse.Data.NextValid"));
+		data.setNextPageToken(_ctx.stringValue("QueryDevicesHotStorageDataStatusResponse.Data.NextPageToken"));
 
 		List<PropertyStatusDataInfo> list = new ArrayList<PropertyStatusDataInfo>();
 		for (int i = 0; i < _ctx.lengthValue("QueryDevicesHotStorageDataStatusResponse.Data.List.Length"); i++) {

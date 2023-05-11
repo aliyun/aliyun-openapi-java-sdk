@@ -23,9 +23,9 @@ public class CopyThingModelResponseUnmarshaller {
 	public static CopyThingModelResponse unmarshall(CopyThingModelResponse copyThingModelResponse, UnmarshallerContext _ctx) {
 		
 		copyThingModelResponse.setRequestId(_ctx.stringValue("CopyThingModelResponse.RequestId"));
+		copyThingModelResponse.setSuccess(_ctx.booleanValue("CopyThingModelResponse.Success"));
 		copyThingModelResponse.setCode(_ctx.stringValue("CopyThingModelResponse.Code"));
 		copyThingModelResponse.setErrorMessage(_ctx.stringValue("CopyThingModelResponse.ErrorMessage"));
-		copyThingModelResponse.setSuccess(_ctx.booleanValue("CopyThingModelResponse.Success"));
 	 
 	 	return copyThingModelResponse;
 	}

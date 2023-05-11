@@ -23,9 +23,9 @@ public class ImportThingModelTslResponseUnmarshaller {
 	public static ImportThingModelTslResponse unmarshall(ImportThingModelTslResponse importThingModelTslResponse, UnmarshallerContext _ctx) {
 		
 		importThingModelTslResponse.setRequestId(_ctx.stringValue("ImportThingModelTslResponse.RequestId"));
+		importThingModelTslResponse.setSuccess(_ctx.booleanValue("ImportThingModelTslResponse.Success"));
 		importThingModelTslResponse.setCode(_ctx.stringValue("ImportThingModelTslResponse.Code"));
 		importThingModelTslResponse.setErrorMessage(_ctx.stringValue("ImportThingModelTslResponse.ErrorMessage"));
-		importThingModelTslResponse.setSuccess(_ctx.booleanValue("ImportThingModelTslResponse.Success"));
 	 
 	 	return importThingModelTslResponse;
 	}

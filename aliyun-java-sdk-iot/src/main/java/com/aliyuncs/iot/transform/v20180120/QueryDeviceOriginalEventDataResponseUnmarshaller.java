@@ -28,9 +28,9 @@ public class QueryDeviceOriginalEventDataResponseUnmarshaller {
 	public static QueryDeviceOriginalEventDataResponse unmarshall(QueryDeviceOriginalEventDataResponse queryDeviceOriginalEventDataResponse, UnmarshallerContext _ctx) {
 		
 		queryDeviceOriginalEventDataResponse.setRequestId(_ctx.stringValue("QueryDeviceOriginalEventDataResponse.RequestId"));
+		queryDeviceOriginalEventDataResponse.setSuccess(_ctx.booleanValue("QueryDeviceOriginalEventDataResponse.Success"));
 		queryDeviceOriginalEventDataResponse.setCode(_ctx.stringValue("QueryDeviceOriginalEventDataResponse.Code"));
 		queryDeviceOriginalEventDataResponse.setErrorMessage(_ctx.stringValue("QueryDeviceOriginalEventDataResponse.ErrorMessage"));
-		queryDeviceOriginalEventDataResponse.setSuccess(_ctx.booleanValue("QueryDeviceOriginalEventDataResponse.Success"));
 
 		Data data = new Data();
 		data.setNextPageToken(_ctx.stringValue("QueryDeviceOriginalEventDataResponse.Data.NextPageToken"));
@@ -39,11 +39,11 @@ public class QueryDeviceOriginalEventDataResponseUnmarshaller {
 		List<EventInfo> list = new ArrayList<EventInfo>();
 		for (int i = 0; i < _ctx.lengthValue("QueryDeviceOriginalEventDataResponse.Data.List.Length"); i++) {
 			EventInfo eventInfo = new EventInfo();
-			eventInfo.setIdentifier(_ctx.stringValue("QueryDeviceOriginalEventDataResponse.Data.List["+ i +"].Identifier"));
-			eventInfo.setOutputData(_ctx.stringValue("QueryDeviceOriginalEventDataResponse.Data.List["+ i +"].OutputData"));
 			eventInfo.setTime(_ctx.stringValue("QueryDeviceOriginalEventDataResponse.Data.List["+ i +"].Time"));
-			eventInfo.setEventType(_ctx.stringValue("QueryDeviceOriginalEventDataResponse.Data.List["+ i +"].EventType"));
+			eventInfo.setIdentifier(_ctx.stringValue("QueryDeviceOriginalEventDataResponse.Data.List["+ i +"].Identifier"));
 			eventInfo.setName(_ctx.stringValue("QueryDeviceOriginalEventDataResponse.Data.List["+ i +"].Name"));
+			eventInfo.setEventType(_ctx.stringValue("QueryDeviceOriginalEventDataResponse.Data.List["+ i +"].EventType"));
+			eventInfo.setOutputData(_ctx.stringValue("QueryDeviceOriginalEventDataResponse.Data.List["+ i +"].OutputData"));
 
 			list.add(eventInfo);
 		}

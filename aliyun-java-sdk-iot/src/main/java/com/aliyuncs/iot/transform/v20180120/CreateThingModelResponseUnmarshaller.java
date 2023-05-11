@@ -23,9 +23,9 @@ public class CreateThingModelResponseUnmarshaller {
 	public static CreateThingModelResponse unmarshall(CreateThingModelResponse createThingModelResponse, UnmarshallerContext _ctx) {
 		
 		createThingModelResponse.setRequestId(_ctx.stringValue("CreateThingModelResponse.RequestId"));
+		createThingModelResponse.setSuccess(_ctx.booleanValue("CreateThingModelResponse.Success"));
 		createThingModelResponse.setCode(_ctx.stringValue("CreateThingModelResponse.Code"));
 		createThingModelResponse.setErrorMessage(_ctx.stringValue("CreateThingModelResponse.ErrorMessage"));
-		createThingModelResponse.setSuccess(_ctx.booleanValue("CreateThingModelResponse.Success"));
 	 
 	 	return createThingModelResponse;
 	}

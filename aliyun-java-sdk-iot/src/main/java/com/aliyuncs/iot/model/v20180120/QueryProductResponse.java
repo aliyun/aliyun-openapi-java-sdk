@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryProductResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -66,6 +50,22 @@ public class QueryProductResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -76,48 +76,88 @@ public class QueryProductResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Boolean owner;
+		private Long gmtCreate;
+
+		private Integer dataFormat;
+
+		private String description;
+
+		private Integer deviceCount;
+
+		private Integer nodeType;
+
+		private String productKey;
 
 		private String productName;
 
 		private String productSecret;
 
-		private Integer dataFormat;
-
 		private String categoryName;
-
-		private String productStatus;
-
-		private String aliyunCommodityCode;
-
-		private Integer deviceCount;
-
-		private String authType;
-
-		private String productKey;
-
-		private Integer nodeType;
-
-		private String description;
-
-		private Integer validateType;
-
-		private Boolean id2;
-
-		private Integer netType;
-
-		private Long gmtCreate;
-
-		private String protocolType;
 
 		private String categoryKey;
 
-		public Boolean getOwner() {
-			return this.owner;
+		private String aliyunCommodityCode;
+
+		private Boolean id2;
+
+		private String protocolType;
+
+		private String productStatus;
+
+		private Boolean owner;
+
+		private Integer netType;
+
+		private String authType;
+
+		private Integer validateType;
+
+		public Long getGmtCreate() {
+			return this.gmtCreate;
 		}
 
-		public void setOwner(Boolean owner) {
-			this.owner = owner;
+		public void setGmtCreate(Long gmtCreate) {
+			this.gmtCreate = gmtCreate;
+		}
+
+		public Integer getDataFormat() {
+			return this.dataFormat;
+		}
+
+		public void setDataFormat(Integer dataFormat) {
+			this.dataFormat = dataFormat;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public Integer getDeviceCount() {
+			return this.deviceCount;
+		}
+
+		public void setDeviceCount(Integer deviceCount) {
+			this.deviceCount = deviceCount;
+		}
+
+		public Integer getNodeType() {
+			return this.nodeType;
+		}
+
+		public void setNodeType(Integer nodeType) {
+			this.nodeType = nodeType;
+		}
+
+		public String getProductKey() {
+			return this.productKey;
+		}
+
+		public void setProductKey(String productKey) {
+			this.productKey = productKey;
 		}
 
 		public String getProductName() {
@@ -136,14 +176,6 @@ public class QueryProductResponse extends AcsResponse {
 			this.productSecret = productSecret;
 		}
 
-		public Integer getDataFormat() {
-			return this.dataFormat;
-		}
-
-		public void setDataFormat(Integer dataFormat) {
-			this.dataFormat = dataFormat;
-		}
-
 		public String getCategoryName() {
 			return this.categoryName;
 		}
@@ -152,12 +184,12 @@ public class QueryProductResponse extends AcsResponse {
 			this.categoryName = categoryName;
 		}
 
-		public String getProductStatus() {
-			return this.productStatus;
+		public String getCategoryKey() {
+			return this.categoryKey;
 		}
 
-		public void setProductStatus(String productStatus) {
-			this.productStatus = productStatus;
+		public void setCategoryKey(String categoryKey) {
+			this.categoryKey = categoryKey;
 		}
 
 		public String getAliyunCommodityCode() {
@@ -168,76 +200,12 @@ public class QueryProductResponse extends AcsResponse {
 			this.aliyunCommodityCode = aliyunCommodityCode;
 		}
 
-		public Integer getDeviceCount() {
-			return this.deviceCount;
-		}
-
-		public void setDeviceCount(Integer deviceCount) {
-			this.deviceCount = deviceCount;
-		}
-
-		public String getAuthType() {
-			return this.authType;
-		}
-
-		public void setAuthType(String authType) {
-			this.authType = authType;
-		}
-
-		public String getProductKey() {
-			return this.productKey;
-		}
-
-		public void setProductKey(String productKey) {
-			this.productKey = productKey;
-		}
-
-		public Integer getNodeType() {
-			return this.nodeType;
-		}
-
-		public void setNodeType(Integer nodeType) {
-			this.nodeType = nodeType;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public Integer getValidateType() {
-			return this.validateType;
-		}
-
-		public void setValidateType(Integer validateType) {
-			this.validateType = validateType;
-		}
-
 		public Boolean getId2() {
 			return this.id2;
 		}
 
 		public void setId2(Boolean id2) {
 			this.id2 = id2;
-		}
-
-		public Integer getNetType() {
-			return this.netType;
-		}
-
-		public void setNetType(Integer netType) {
-			this.netType = netType;
-		}
-
-		public Long getGmtCreate() {
-			return this.gmtCreate;
-		}
-
-		public void setGmtCreate(Long gmtCreate) {
-			this.gmtCreate = gmtCreate;
 		}
 
 		public String getProtocolType() {
@@ -248,12 +216,44 @@ public class QueryProductResponse extends AcsResponse {
 			this.protocolType = protocolType;
 		}
 
-		public String getCategoryKey() {
-			return this.categoryKey;
+		public String getProductStatus() {
+			return this.productStatus;
 		}
 
-		public void setCategoryKey(String categoryKey) {
-			this.categoryKey = categoryKey;
+		public void setProductStatus(String productStatus) {
+			this.productStatus = productStatus;
+		}
+
+		public Boolean getOwner() {
+			return this.owner;
+		}
+
+		public void setOwner(Boolean owner) {
+			this.owner = owner;
+		}
+
+		public Integer getNetType() {
+			return this.netType;
+		}
+
+		public void setNetType(Integer netType) {
+			this.netType = netType;
+		}
+
+		public String getAuthType() {
+			return this.authType;
+		}
+
+		public void setAuthType(String authType) {
+			this.authType = authType;
+		}
+
+		public Integer getValidateType() {
+			return this.validateType;
+		}
+
+		public void setValidateType(Integer validateType) {
+			this.validateType = validateType;
 		}
 	}
 

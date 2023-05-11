@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetSpeechDeviceDetailResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -66,6 +50,22 @@ public class GetSpeechDeviceDetailResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -76,35 +76,19 @@ public class GetSpeechDeviceDetailResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String status;
-
-		private Float totalSpace;
-
 		private String productKey;
 
 		private String deviceName;
 
-		private Long speechListUpdateTime;
+		private String iotId;
+
+		private String status;
 
 		private Float availableSpace;
 
-		private String iotId;
+		private Float totalSpace;
 
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public Float getTotalSpace() {
-			return this.totalSpace;
-		}
-
-		public void setTotalSpace(Float totalSpace) {
-			this.totalSpace = totalSpace;
-		}
+		private Long speechListUpdateTime;
 
 		public String getProductKey() {
 			return this.productKey;
@@ -122,12 +106,20 @@ public class GetSpeechDeviceDetailResponse extends AcsResponse {
 			this.deviceName = deviceName;
 		}
 
-		public Long getSpeechListUpdateTime() {
-			return this.speechListUpdateTime;
+		public String getIotId() {
+			return this.iotId;
 		}
 
-		public void setSpeechListUpdateTime(Long speechListUpdateTime) {
-			this.speechListUpdateTime = speechListUpdateTime;
+		public void setIotId(String iotId) {
+			this.iotId = iotId;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public Float getAvailableSpace() {
@@ -138,12 +130,20 @@ public class GetSpeechDeviceDetailResponse extends AcsResponse {
 			this.availableSpace = availableSpace;
 		}
 
-		public String getIotId() {
-			return this.iotId;
+		public Float getTotalSpace() {
+			return this.totalSpace;
 		}
 
-		public void setIotId(String iotId) {
-			this.iotId = iotId;
+		public void setTotalSpace(Float totalSpace) {
+			this.totalSpace = totalSpace;
+		}
+
+		public Long getSpeechListUpdateTime() {
+			return this.speechListUpdateTime;
+		}
+
+		public void setSpeechListUpdateTime(Long speechListUpdateTime) {
+			this.speechListUpdateTime = speechListUpdateTime;
 		}
 	}
 

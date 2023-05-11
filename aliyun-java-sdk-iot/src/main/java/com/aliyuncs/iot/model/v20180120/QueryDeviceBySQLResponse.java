@@ -25,17 +25,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryDeviceBySQLResponse extends AcsResponse {
 
+	private String requestId;
+
+	private Boolean success;
+
 	private String code;
 
 	private String errorMessage;
 
-	private String requestId;
-
 	private Long totalCount;
 
-	private Boolean success;
-
 	private List<SimpleDeviceSearchInfo> data;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
 
 	public String getCode() {
 		return this.code;
@@ -53,28 +69,12 @@ public class QueryDeviceBySQLResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Long getTotalCount() {
 		return this.totalCount;
 	}
 
 	public void setTotalCount(Long totalCount) {
 		this.totalCount = totalCount;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public List<SimpleDeviceSearchInfo> getData() {
@@ -87,35 +87,27 @@ public class QueryDeviceBySQLResponse extends AcsResponse {
 
 	public static class SimpleDeviceSearchInfo {
 
-		private String status;
-
 		private String productKey;
 
 		private String deviceName;
 
-		private String gmtCreate;
-
 		private String nickname;
+
+		private String status;
 
 		private String activeTime;
 
-		private String gmtModified;
-
 		private String iotId;
+
+		private String gmtCreate;
+
+		private String gmtModified;
 
 		private List<SimpleDeviceGroupInfo> groups;
 
 		private List<TagInfo> tags;
 
 		private List<OTAModuleInfo> oTAModules;
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
 
 		public String getProductKey() {
 			return this.productKey;
@@ -133,20 +125,20 @@ public class QueryDeviceBySQLResponse extends AcsResponse {
 			this.deviceName = deviceName;
 		}
 
-		public String getGmtCreate() {
-			return this.gmtCreate;
-		}
-
-		public void setGmtCreate(String gmtCreate) {
-			this.gmtCreate = gmtCreate;
-		}
-
 		public String getNickname() {
 			return this.nickname;
 		}
 
 		public void setNickname(String nickname) {
 			this.nickname = nickname;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getActiveTime() {
@@ -157,20 +149,28 @@ public class QueryDeviceBySQLResponse extends AcsResponse {
 			this.activeTime = activeTime;
 		}
 
-		public String getGmtModified() {
-			return this.gmtModified;
-		}
-
-		public void setGmtModified(String gmtModified) {
-			this.gmtModified = gmtModified;
-		}
-
 		public String getIotId() {
 			return this.iotId;
 		}
 
 		public void setIotId(String iotId) {
 			this.iotId = iotId;
+		}
+
+		public String getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(String gmtCreate) {
+			this.gmtCreate = gmtCreate;
+		}
+
+		public String getGmtModified() {
+			return this.gmtModified;
+		}
+
+		public void setGmtModified(String gmtModified) {
+			this.gmtModified = gmtModified;
 		}
 
 		public List<SimpleDeviceGroupInfo> getGroups() {

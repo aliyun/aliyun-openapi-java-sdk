@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryEdgeInstanceDriverResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,6 +51,22 @@ public class QueryEdgeInstanceDriverResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -77,20 +77,20 @@ public class QueryEdgeInstanceDriverResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer currentPage;
+		private Integer total;
 
 		private Integer pageSize;
 
-		private Integer total;
+		private Integer currentPage;
 
 		private List<Driver> driverList;
 
-		public Integer getCurrentPage() {
-			return this.currentPage;
+		public Integer getTotal() {
+			return this.total;
 		}
 
-		public void setCurrentPage(Integer currentPage) {
-			this.currentPage = currentPage;
+		public void setTotal(Integer total) {
+			this.total = total;
 		}
 
 		public Integer getPageSize() {
@@ -101,12 +101,12 @@ public class QueryEdgeInstanceDriverResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
-		public Integer getTotal() {
-			return this.total;
+		public Integer getCurrentPage() {
+			return this.currentPage;
 		}
 
-		public void setTotal(Integer total) {
-			this.total = total;
+		public void setCurrentPage(Integer currentPage) {
+			this.currentPage = currentPage;
 		}
 
 		public List<Driver> getDriverList() {
@@ -119,15 +119,39 @@ public class QueryEdgeInstanceDriverResponse extends AcsResponse {
 
 		public static class Driver {
 
+			private String driverId;
+
+			private String driverVersion;
+
+			private String orderId;
+
 			private String gmtCreate;
 
 			private String gmtModified;
 
-			private String driverId;
+			public String getDriverId() {
+				return this.driverId;
+			}
 
-			private String orderId;
+			public void setDriverId(String driverId) {
+				this.driverId = driverId;
+			}
 
-			private String driverVersion;
+			public String getDriverVersion() {
+				return this.driverVersion;
+			}
+
+			public void setDriverVersion(String driverVersion) {
+				this.driverVersion = driverVersion;
+			}
+
+			public String getOrderId() {
+				return this.orderId;
+			}
+
+			public void setOrderId(String orderId) {
+				this.orderId = orderId;
+			}
 
 			public String getGmtCreate() {
 				return this.gmtCreate;
@@ -143,30 +167,6 @@ public class QueryEdgeInstanceDriverResponse extends AcsResponse {
 
 			public void setGmtModified(String gmtModified) {
 				this.gmtModified = gmtModified;
-			}
-
-			public String getDriverId() {
-				return this.driverId;
-			}
-
-			public void setDriverId(String driverId) {
-				this.driverId = driverId;
-			}
-
-			public String getOrderId() {
-				return this.orderId;
-			}
-
-			public void setOrderId(String orderId) {
-				this.orderId = orderId;
-			}
-
-			public String getDriverVersion() {
-				return this.driverVersion;
-			}
-
-			public void setDriverVersion(String driverVersion) {
-				this.driverVersion = driverVersion;
 			}
 		}
 	}

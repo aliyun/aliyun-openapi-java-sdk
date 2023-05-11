@@ -25,31 +25,31 @@ public class GetEdgeInstanceMessageRoutingResponseUnmarshaller {
 	public static GetEdgeInstanceMessageRoutingResponse unmarshall(GetEdgeInstanceMessageRoutingResponse getEdgeInstanceMessageRoutingResponse, UnmarshallerContext _ctx) {
 		
 		getEdgeInstanceMessageRoutingResponse.setRequestId(_ctx.stringValue("GetEdgeInstanceMessageRoutingResponse.RequestId"));
+		getEdgeInstanceMessageRoutingResponse.setSuccess(_ctx.booleanValue("GetEdgeInstanceMessageRoutingResponse.Success"));
 		getEdgeInstanceMessageRoutingResponse.setCode(_ctx.stringValue("GetEdgeInstanceMessageRoutingResponse.Code"));
 		getEdgeInstanceMessageRoutingResponse.setErrorMessage(_ctx.stringValue("GetEdgeInstanceMessageRoutingResponse.ErrorMessage"));
-		getEdgeInstanceMessageRoutingResponse.setSuccess(_ctx.booleanValue("GetEdgeInstanceMessageRoutingResponse.Success"));
 
 		Data data = new Data();
-		data.setGmtCreateTimestamp(_ctx.longValue("GetEdgeInstanceMessageRoutingResponse.Data.GmtCreateTimestamp"));
 		data.setTopicFilter(_ctx.stringValue("GetEdgeInstanceMessageRoutingResponse.Data.TopicFilter"));
-		data.setGmtModifiedTimestamp(_ctx.longValue("GetEdgeInstanceMessageRoutingResponse.Data.GmtModifiedTimestamp"));
-		data.setTargetData(_ctx.stringValue("GetEdgeInstanceMessageRoutingResponse.Data.TargetData"));
-		data.setGmtCreate(_ctx.stringValue("GetEdgeInstanceMessageRoutingResponse.Data.GmtCreate"));
 		data.setSourceType(_ctx.stringValue("GetEdgeInstanceMessageRoutingResponse.Data.SourceType"));
-		data.setGmtModified(_ctx.stringValue("GetEdgeInstanceMessageRoutingResponse.Data.GmtModified"));
 		data.setName(_ctx.stringValue("GetEdgeInstanceMessageRoutingResponse.Data.Name"));
 		data.setSourceData(_ctx.stringValue("GetEdgeInstanceMessageRoutingResponse.Data.SourceData"));
 		data.setTargetType(_ctx.stringValue("GetEdgeInstanceMessageRoutingResponse.Data.TargetType"));
+		data.setTargetData(_ctx.stringValue("GetEdgeInstanceMessageRoutingResponse.Data.TargetData"));
+		data.setGmtCreate(_ctx.stringValue("GetEdgeInstanceMessageRoutingResponse.Data.GmtCreate"));
+		data.setGmtModified(_ctx.stringValue("GetEdgeInstanceMessageRoutingResponse.Data.GmtModified"));
+		data.setGmtCreateTimestamp(_ctx.longValue("GetEdgeInstanceMessageRoutingResponse.Data.GmtCreateTimestamp"));
+		data.setGmtModifiedTimestamp(_ctx.longValue("GetEdgeInstanceMessageRoutingResponse.Data.GmtModifiedTimestamp"));
 
 		RouteContext routeContext = new RouteContext();
+		routeContext.setSourceFcServiceName(_ctx.stringValue("GetEdgeInstanceMessageRoutingResponse.Data.RouteContext.SourceFcServiceName"));
+		routeContext.setSourceFcFunctionName(_ctx.stringValue("GetEdgeInstanceMessageRoutingResponse.Data.RouteContext.SourceFcFunctionName"));
+		routeContext.setSourceStreamName(_ctx.stringValue("GetEdgeInstanceMessageRoutingResponse.Data.RouteContext.SourceStreamName"));
+		routeContext.setSourceApplicationName(_ctx.stringValue("GetEdgeInstanceMessageRoutingResponse.Data.RouteContext.SourceApplicationName"));
+		routeContext.setTargetFcServiceName(_ctx.stringValue("GetEdgeInstanceMessageRoutingResponse.Data.RouteContext.TargetFcServiceName"));
+		routeContext.setTargetFcFunctionName(_ctx.stringValue("GetEdgeInstanceMessageRoutingResponse.Data.RouteContext.TargetFcFunctionName"));
 		routeContext.setTargetStreamName(_ctx.stringValue("GetEdgeInstanceMessageRoutingResponse.Data.RouteContext.TargetStreamName"));
 		routeContext.setTargetApplicationName(_ctx.stringValue("GetEdgeInstanceMessageRoutingResponse.Data.RouteContext.TargetApplicationName"));
-		routeContext.setSourceApplicationName(_ctx.stringValue("GetEdgeInstanceMessageRoutingResponse.Data.RouteContext.SourceApplicationName"));
-		routeContext.setTargetFcFunctionName(_ctx.stringValue("GetEdgeInstanceMessageRoutingResponse.Data.RouteContext.TargetFcFunctionName"));
-		routeContext.setSourceFcFunctionName(_ctx.stringValue("GetEdgeInstanceMessageRoutingResponse.Data.RouteContext.SourceFcFunctionName"));
-		routeContext.setTargetFcServiceName(_ctx.stringValue("GetEdgeInstanceMessageRoutingResponse.Data.RouteContext.TargetFcServiceName"));
-		routeContext.setSourceStreamName(_ctx.stringValue("GetEdgeInstanceMessageRoutingResponse.Data.RouteContext.SourceStreamName"));
-		routeContext.setSourceFcServiceName(_ctx.stringValue("GetEdgeInstanceMessageRoutingResponse.Data.RouteContext.SourceFcServiceName"));
 		routeContext.setQos(_ctx.stringValue("GetEdgeInstanceMessageRoutingResponse.Data.RouteContext.Qos"));
 		data.setRouteContext(routeContext);
 		getEdgeInstanceMessageRoutingResponse.setData(data);

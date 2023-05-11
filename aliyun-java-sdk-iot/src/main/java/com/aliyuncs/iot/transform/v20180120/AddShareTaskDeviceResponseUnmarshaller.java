@@ -24,16 +24,16 @@ public class AddShareTaskDeviceResponseUnmarshaller {
 	public static AddShareTaskDeviceResponse unmarshall(AddShareTaskDeviceResponse addShareTaskDeviceResponse, UnmarshallerContext _ctx) {
 		
 		addShareTaskDeviceResponse.setRequestId(_ctx.stringValue("AddShareTaskDeviceResponse.RequestId"));
+		addShareTaskDeviceResponse.setSuccess(_ctx.booleanValue("AddShareTaskDeviceResponse.Success"));
 		addShareTaskDeviceResponse.setCode(_ctx.stringValue("AddShareTaskDeviceResponse.Code"));
 		addShareTaskDeviceResponse.setErrorMessage(_ctx.stringValue("AddShareTaskDeviceResponse.ErrorMessage"));
-		addShareTaskDeviceResponse.setSuccess(_ctx.booleanValue("AddShareTaskDeviceResponse.Success"));
 
 		Data data = new Data();
+		data.setProgress(_ctx.integerValue("AddShareTaskDeviceResponse.Data.Progress"));
 		data.setProgressId(_ctx.stringValue("AddShareTaskDeviceResponse.Data.ProgressId"));
 		data.setSuccessSum(_ctx.integerValue("AddShareTaskDeviceResponse.Data.SuccessSum"));
-		data.setProgress(_ctx.integerValue("AddShareTaskDeviceResponse.Data.Progress"));
-		data.setFailedResultCsvFile(_ctx.stringValue("AddShareTaskDeviceResponse.Data.FailedResultCsvFile"));
 		data.setFailSum(_ctx.integerValue("AddShareTaskDeviceResponse.Data.FailSum"));
+		data.setFailedResultCsvFile(_ctx.stringValue("AddShareTaskDeviceResponse.Data.FailedResultCsvFile"));
 		addShareTaskDeviceResponse.setData(data);
 	 
 	 	return addShareTaskDeviceResponse;

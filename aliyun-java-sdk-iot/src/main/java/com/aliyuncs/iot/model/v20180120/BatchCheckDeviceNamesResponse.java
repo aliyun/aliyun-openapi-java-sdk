@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class BatchCheckDeviceNamesResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,6 +51,22 @@ public class BatchCheckDeviceNamesResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -81,11 +81,11 @@ public class BatchCheckDeviceNamesResponse extends AcsResponse {
 
 		private List<InvalidDetailListItem> invalidDetailList;
 
-		private List<String> repeatedDeviceNameList;
-
 		private List<String> invalidDeviceNameList;
 
 		private List<String> invalidDeviceNicknameList;
+
+		private List<String> repeatedDeviceNameList;
 
 		public Long getApplyId() {
 			return this.applyId;
@@ -101,14 +101,6 @@ public class BatchCheckDeviceNamesResponse extends AcsResponse {
 
 		public void setInvalidDetailList(List<InvalidDetailListItem> invalidDetailList) {
 			this.invalidDetailList = invalidDetailList;
-		}
-
-		public List<String> getRepeatedDeviceNameList() {
-			return this.repeatedDeviceNameList;
-		}
-
-		public void setRepeatedDeviceNameList(List<String> repeatedDeviceNameList) {
-			this.repeatedDeviceNameList = repeatedDeviceNameList;
 		}
 
 		public List<String> getInvalidDeviceNameList() {
@@ -127,13 +119,29 @@ public class BatchCheckDeviceNamesResponse extends AcsResponse {
 			this.invalidDeviceNicknameList = invalidDeviceNicknameList;
 		}
 
+		public List<String> getRepeatedDeviceNameList() {
+			return this.repeatedDeviceNameList;
+		}
+
+		public void setRepeatedDeviceNameList(List<String> repeatedDeviceNameList) {
+			this.repeatedDeviceNameList = repeatedDeviceNameList;
+		}
+
 		public static class InvalidDetailListItem {
+
+			private String deviceName;
 
 			private String nickName;
 
 			private String errorMsg;
 
-			private String deviceName;
+			public String getDeviceName() {
+				return this.deviceName;
+			}
+
+			public void setDeviceName(String deviceName) {
+				this.deviceName = deviceName;
+			}
 
 			public String getNickName() {
 				return this.nickName;
@@ -149,14 +157,6 @@ public class BatchCheckDeviceNamesResponse extends AcsResponse {
 
 			public void setErrorMsg(String errorMsg) {
 				this.errorMsg = errorMsg;
-			}
-
-			public String getDeviceName() {
-				return this.deviceName;
-			}
-
-			public void setDeviceName(String deviceName) {
-				this.deviceName = deviceName;
 			}
 		}
 	}

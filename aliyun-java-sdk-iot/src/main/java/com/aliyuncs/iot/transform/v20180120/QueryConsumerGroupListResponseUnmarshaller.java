@@ -27,24 +27,24 @@ public class QueryConsumerGroupListResponseUnmarshaller {
 	public static QueryConsumerGroupListResponse unmarshall(QueryConsumerGroupListResponse queryConsumerGroupListResponse, UnmarshallerContext _ctx) {
 		
 		queryConsumerGroupListResponse.setRequestId(_ctx.stringValue("QueryConsumerGroupListResponse.RequestId"));
-		queryConsumerGroupListResponse.setCurrentPage(_ctx.integerValue("QueryConsumerGroupListResponse.CurrentPage"));
-		queryConsumerGroupListResponse.setErrorMessage(_ctx.stringValue("QueryConsumerGroupListResponse.ErrorMessage"));
 		queryConsumerGroupListResponse.setSuccess(_ctx.booleanValue("QueryConsumerGroupListResponse.Success"));
-		queryConsumerGroupListResponse.setCode(_ctx.stringValue("QueryConsumerGroupListResponse.Code"));
+		queryConsumerGroupListResponse.setErrorMessage(_ctx.stringValue("QueryConsumerGroupListResponse.ErrorMessage"));
 		queryConsumerGroupListResponse.setPageSize(_ctx.integerValue("QueryConsumerGroupListResponse.PageSize"));
 		queryConsumerGroupListResponse.setPageCount(_ctx.integerValue("QueryConsumerGroupListResponse.PageCount"));
 		queryConsumerGroupListResponse.setTotal(_ctx.integerValue("QueryConsumerGroupListResponse.Total"));
+		queryConsumerGroupListResponse.setCurrentPage(_ctx.integerValue("QueryConsumerGroupListResponse.CurrentPage"));
+		queryConsumerGroupListResponse.setCode(_ctx.stringValue("QueryConsumerGroupListResponse.Code"));
 
 		List<ConsumerGroupDTO> data = new ArrayList<ConsumerGroupDTO>();
 		for (int i = 0; i < _ctx.lengthValue("QueryConsumerGroupListResponse.Data.Length"); i++) {
 			ConsumerGroupDTO consumerGroupDTO = new ConsumerGroupDTO();
-			consumerGroupDTO.setAuthType(_ctx.stringValue("QueryConsumerGroupListResponse.Data["+ i +"].AuthType"));
+			consumerGroupDTO.setIotId(_ctx.stringValue("QueryConsumerGroupListResponse.Data["+ i +"].IotId"));
 			consumerGroupDTO.setGroupId(_ctx.stringValue("QueryConsumerGroupListResponse.Data["+ i +"].GroupId"));
 			consumerGroupDTO.setGroupName(_ctx.stringValue("QueryConsumerGroupListResponse.Data["+ i +"].GroupName"));
-			consumerGroupDTO.setCreateTime(_ctx.stringValue("QueryConsumerGroupListResponse.Data["+ i +"].CreateTime"));
-			consumerGroupDTO.setCloudCommodityType(_ctx.stringValue("QueryConsumerGroupListResponse.Data["+ i +"].CloudCommodityType"));
-			consumerGroupDTO.setIotId(_ctx.stringValue("QueryConsumerGroupListResponse.Data["+ i +"].IotId"));
 			consumerGroupDTO.setCreator(_ctx.stringValue("QueryConsumerGroupListResponse.Data["+ i +"].Creator"));
+			consumerGroupDTO.setCreateTime(_ctx.stringValue("QueryConsumerGroupListResponse.Data["+ i +"].CreateTime"));
+			consumerGroupDTO.setAuthType(_ctx.stringValue("QueryConsumerGroupListResponse.Data["+ i +"].AuthType"));
+			consumerGroupDTO.setCloudCommodityType(_ctx.stringValue("QueryConsumerGroupListResponse.Data["+ i +"].CloudCommodityType"));
 
 			data.add(consumerGroupDTO);
 		}

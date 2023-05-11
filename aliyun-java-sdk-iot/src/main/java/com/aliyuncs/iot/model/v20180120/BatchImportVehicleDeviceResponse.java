@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class BatchImportVehicleDeviceResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -65,6 +49,22 @@ public class BatchImportVehicleDeviceResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
 	public Data getData() {
@@ -83,15 +83,15 @@ public class BatchImportVehicleDeviceResponse extends AcsResponse {
 
 		private List<String> invalidManufacturerList;
 
-		private List<String> repeatedDeviceIdList;
-
-		private List<String> repeatedDeviceNameList;
+		private List<String> invalidDeviceModelList;
 
 		private List<String> invalidDeviceIdList;
 
-		private List<String> invalidDeviceModelList;
+		private List<String> repeatedDeviceIdList;
 
 		private List<String> invalidDeviceNameList;
+
+		private List<String> repeatedDeviceNameList;
 
 		public Long getApplyId() {
 			return this.applyId;
@@ -117,20 +117,12 @@ public class BatchImportVehicleDeviceResponse extends AcsResponse {
 			this.invalidManufacturerList = invalidManufacturerList;
 		}
 
-		public List<String> getRepeatedDeviceIdList() {
-			return this.repeatedDeviceIdList;
+		public List<String> getInvalidDeviceModelList() {
+			return this.invalidDeviceModelList;
 		}
 
-		public void setRepeatedDeviceIdList(List<String> repeatedDeviceIdList) {
-			this.repeatedDeviceIdList = repeatedDeviceIdList;
-		}
-
-		public List<String> getRepeatedDeviceNameList() {
-			return this.repeatedDeviceNameList;
-		}
-
-		public void setRepeatedDeviceNameList(List<String> repeatedDeviceNameList) {
-			this.repeatedDeviceNameList = repeatedDeviceNameList;
+		public void setInvalidDeviceModelList(List<String> invalidDeviceModelList) {
+			this.invalidDeviceModelList = invalidDeviceModelList;
 		}
 
 		public List<String> getInvalidDeviceIdList() {
@@ -141,12 +133,12 @@ public class BatchImportVehicleDeviceResponse extends AcsResponse {
 			this.invalidDeviceIdList = invalidDeviceIdList;
 		}
 
-		public List<String> getInvalidDeviceModelList() {
-			return this.invalidDeviceModelList;
+		public List<String> getRepeatedDeviceIdList() {
+			return this.repeatedDeviceIdList;
 		}
 
-		public void setInvalidDeviceModelList(List<String> invalidDeviceModelList) {
-			this.invalidDeviceModelList = invalidDeviceModelList;
+		public void setRepeatedDeviceIdList(List<String> repeatedDeviceIdList) {
+			this.repeatedDeviceIdList = repeatedDeviceIdList;
 		}
 
 		public List<String> getInvalidDeviceNameList() {
@@ -157,24 +149,32 @@ public class BatchImportVehicleDeviceResponse extends AcsResponse {
 			this.invalidDeviceNameList = invalidDeviceNameList;
 		}
 
+		public List<String> getRepeatedDeviceNameList() {
+			return this.repeatedDeviceNameList;
+		}
+
+		public void setRepeatedDeviceNameList(List<String> repeatedDeviceNameList) {
+			this.repeatedDeviceNameList = repeatedDeviceNameList;
+		}
+
 		public static class InvalidDetailListItem {
-
-			private String errorMsg;
-
-			private String deviceModel;
-
-			private String deviceName;
-
-			private String deviceId;
 
 			private String manufacturer;
 
-			public String getErrorMsg() {
-				return this.errorMsg;
+			private String deviceModel;
+
+			private String deviceId;
+
+			private String deviceName;
+
+			private String errorMsg;
+
+			public String getManufacturer() {
+				return this.manufacturer;
 			}
 
-			public void setErrorMsg(String errorMsg) {
-				this.errorMsg = errorMsg;
+			public void setManufacturer(String manufacturer) {
+				this.manufacturer = manufacturer;
 			}
 
 			public String getDeviceModel() {
@@ -185,14 +185,6 @@ public class BatchImportVehicleDeviceResponse extends AcsResponse {
 				this.deviceModel = deviceModel;
 			}
 
-			public String getDeviceName() {
-				return this.deviceName;
-			}
-
-			public void setDeviceName(String deviceName) {
-				this.deviceName = deviceName;
-			}
-
 			public String getDeviceId() {
 				return this.deviceId;
 			}
@@ -201,12 +193,20 @@ public class BatchImportVehicleDeviceResponse extends AcsResponse {
 				this.deviceId = deviceId;
 			}
 
-			public String getManufacturer() {
-				return this.manufacturer;
+			public String getDeviceName() {
+				return this.deviceName;
 			}
 
-			public void setManufacturer(String manufacturer) {
-				this.manufacturer = manufacturer;
+			public void setDeviceName(String deviceName) {
+				this.deviceName = deviceName;
+			}
+
+			public String getErrorMsg() {
+				return this.errorMsg;
+			}
+
+			public void setErrorMsg(String errorMsg) {
+				this.errorMsg = errorMsg;
 			}
 		}
 	}

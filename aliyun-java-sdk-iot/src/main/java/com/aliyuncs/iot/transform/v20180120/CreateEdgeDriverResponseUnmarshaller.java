@@ -23,10 +23,10 @@ public class CreateEdgeDriverResponseUnmarshaller {
 	public static CreateEdgeDriverResponse unmarshall(CreateEdgeDriverResponse createEdgeDriverResponse, UnmarshallerContext _ctx) {
 		
 		createEdgeDriverResponse.setRequestId(_ctx.stringValue("CreateEdgeDriverResponse.RequestId"));
+		createEdgeDriverResponse.setSuccess(_ctx.booleanValue("CreateEdgeDriverResponse.Success"));
 		createEdgeDriverResponse.setCode(_ctx.stringValue("CreateEdgeDriverResponse.Code"));
 		createEdgeDriverResponse.setErrorMessage(_ctx.stringValue("CreateEdgeDriverResponse.ErrorMessage"));
 		createEdgeDriverResponse.setDriverId(_ctx.stringValue("CreateEdgeDriverResponse.DriverId"));
-		createEdgeDriverResponse.setSuccess(_ctx.booleanValue("CreateEdgeDriverResponse.Success"));
 	 
 	 	return createEdgeDriverResponse;
 	}

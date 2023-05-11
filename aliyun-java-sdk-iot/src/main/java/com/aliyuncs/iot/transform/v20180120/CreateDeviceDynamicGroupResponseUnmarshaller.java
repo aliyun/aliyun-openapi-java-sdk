@@ -24,16 +24,16 @@ public class CreateDeviceDynamicGroupResponseUnmarshaller {
 	public static CreateDeviceDynamicGroupResponse unmarshall(CreateDeviceDynamicGroupResponse createDeviceDynamicGroupResponse, UnmarshallerContext _ctx) {
 		
 		createDeviceDynamicGroupResponse.setRequestId(_ctx.stringValue("CreateDeviceDynamicGroupResponse.RequestId"));
+		createDeviceDynamicGroupResponse.setSuccess(_ctx.booleanValue("CreateDeviceDynamicGroupResponse.Success"));
 		createDeviceDynamicGroupResponse.setCode(_ctx.stringValue("CreateDeviceDynamicGroupResponse.Code"));
 		createDeviceDynamicGroupResponse.setErrorMessage(_ctx.stringValue("CreateDeviceDynamicGroupResponse.ErrorMessage"));
-		createDeviceDynamicGroupResponse.setSuccess(_ctx.booleanValue("CreateDeviceDynamicGroupResponse.Success"));
 
 		Data data = new Data();
-		data.setDynamicGroupExpression(_ctx.stringValue("CreateDeviceDynamicGroupResponse.Data.DynamicGroupExpression"));
-		data.setGroupName(_ctx.stringValue("CreateDeviceDynamicGroupResponse.Data.GroupName"));
 		data.setGroupId(_ctx.stringValue("CreateDeviceDynamicGroupResponse.Data.GroupId"));
-		data.setGroupDesc(_ctx.stringValue("CreateDeviceDynamicGroupResponse.Data.GroupDesc"));
 		data.setUtcCreate(_ctx.stringValue("CreateDeviceDynamicGroupResponse.Data.UtcCreate"));
+		data.setGroupName(_ctx.stringValue("CreateDeviceDynamicGroupResponse.Data.GroupName"));
+		data.setGroupDesc(_ctx.stringValue("CreateDeviceDynamicGroupResponse.Data.GroupDesc"));
+		data.setDynamicGroupExpression(_ctx.stringValue("CreateDeviceDynamicGroupResponse.Data.DynamicGroupExpression"));
 		createDeviceDynamicGroupResponse.setData(data);
 	 
 	 	return createDeviceDynamicGroupResponse;

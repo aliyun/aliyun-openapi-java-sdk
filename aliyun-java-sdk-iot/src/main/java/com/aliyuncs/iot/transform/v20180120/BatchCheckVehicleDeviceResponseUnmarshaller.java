@@ -28,9 +28,9 @@ public class BatchCheckVehicleDeviceResponseUnmarshaller {
 	public static BatchCheckVehicleDeviceResponse unmarshall(BatchCheckVehicleDeviceResponse batchCheckVehicleDeviceResponse, UnmarshallerContext _ctx) {
 		
 		batchCheckVehicleDeviceResponse.setRequestId(_ctx.stringValue("BatchCheckVehicleDeviceResponse.RequestId"));
+		batchCheckVehicleDeviceResponse.setSuccess(_ctx.booleanValue("BatchCheckVehicleDeviceResponse.Success"));
 		batchCheckVehicleDeviceResponse.setCode(_ctx.stringValue("BatchCheckVehicleDeviceResponse.Code"));
 		batchCheckVehicleDeviceResponse.setErrorMessage(_ctx.stringValue("BatchCheckVehicleDeviceResponse.ErrorMessage"));
-		batchCheckVehicleDeviceResponse.setSuccess(_ctx.booleanValue("BatchCheckVehicleDeviceResponse.Success"));
 
 		Data data = new Data();
 
@@ -40,17 +40,11 @@ public class BatchCheckVehicleDeviceResponseUnmarshaller {
 		}
 		data.setInvalidManufacturerList(invalidManufacturerList);
 
-		List<String> repeatedDeviceIdList = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("BatchCheckVehicleDeviceResponse.Data.RepeatedDeviceIdList.Length"); i++) {
-			repeatedDeviceIdList.add(_ctx.stringValue("BatchCheckVehicleDeviceResponse.Data.RepeatedDeviceIdList["+ i +"]"));
+		List<String> invalidDeviceModelList = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("BatchCheckVehicleDeviceResponse.Data.InvalidDeviceModelList.Length"); i++) {
+			invalidDeviceModelList.add(_ctx.stringValue("BatchCheckVehicleDeviceResponse.Data.InvalidDeviceModelList["+ i +"]"));
 		}
-		data.setRepeatedDeviceIdList(repeatedDeviceIdList);
-
-		List<String> repeatedDeviceNameList = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("BatchCheckVehicleDeviceResponse.Data.RepeatedDeviceNameList.Length"); i++) {
-			repeatedDeviceNameList.add(_ctx.stringValue("BatchCheckVehicleDeviceResponse.Data.RepeatedDeviceNameList["+ i +"]"));
-		}
-		data.setRepeatedDeviceNameList(repeatedDeviceNameList);
+		data.setInvalidDeviceModelList(invalidDeviceModelList);
 
 		List<String> invalidDeviceIdList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("BatchCheckVehicleDeviceResponse.Data.InvalidDeviceIdList.Length"); i++) {
@@ -58,11 +52,11 @@ public class BatchCheckVehicleDeviceResponseUnmarshaller {
 		}
 		data.setInvalidDeviceIdList(invalidDeviceIdList);
 
-		List<String> invalidDeviceModelList = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("BatchCheckVehicleDeviceResponse.Data.InvalidDeviceModelList.Length"); i++) {
-			invalidDeviceModelList.add(_ctx.stringValue("BatchCheckVehicleDeviceResponse.Data.InvalidDeviceModelList["+ i +"]"));
+		List<String> repeatedDeviceIdList = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("BatchCheckVehicleDeviceResponse.Data.RepeatedDeviceIdList.Length"); i++) {
+			repeatedDeviceIdList.add(_ctx.stringValue("BatchCheckVehicleDeviceResponse.Data.RepeatedDeviceIdList["+ i +"]"));
 		}
-		data.setInvalidDeviceModelList(invalidDeviceModelList);
+		data.setRepeatedDeviceIdList(repeatedDeviceIdList);
 
 		List<String> invalidDeviceNameList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("BatchCheckVehicleDeviceResponse.Data.InvalidDeviceNameList.Length"); i++) {
@@ -70,14 +64,20 @@ public class BatchCheckVehicleDeviceResponseUnmarshaller {
 		}
 		data.setInvalidDeviceNameList(invalidDeviceNameList);
 
+		List<String> repeatedDeviceNameList = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("BatchCheckVehicleDeviceResponse.Data.RepeatedDeviceNameList.Length"); i++) {
+			repeatedDeviceNameList.add(_ctx.stringValue("BatchCheckVehicleDeviceResponse.Data.RepeatedDeviceNameList["+ i +"]"));
+		}
+		data.setRepeatedDeviceNameList(repeatedDeviceNameList);
+
 		List<InvalidDetailListItem> invalidDetailList = new ArrayList<InvalidDetailListItem>();
 		for (int i = 0; i < _ctx.lengthValue("BatchCheckVehicleDeviceResponse.Data.InvalidDetailList.Length"); i++) {
 			InvalidDetailListItem invalidDetailListItem = new InvalidDetailListItem();
-			invalidDetailListItem.setErrorMsg(_ctx.stringValue("BatchCheckVehicleDeviceResponse.Data.InvalidDetailList["+ i +"].ErrorMsg"));
-			invalidDetailListItem.setDeviceModel(_ctx.stringValue("BatchCheckVehicleDeviceResponse.Data.InvalidDetailList["+ i +"].DeviceModel"));
-			invalidDetailListItem.setDeviceName(_ctx.stringValue("BatchCheckVehicleDeviceResponse.Data.InvalidDetailList["+ i +"].DeviceName"));
-			invalidDetailListItem.setDeviceId(_ctx.stringValue("BatchCheckVehicleDeviceResponse.Data.InvalidDetailList["+ i +"].DeviceId"));
 			invalidDetailListItem.setManufacturer(_ctx.stringValue("BatchCheckVehicleDeviceResponse.Data.InvalidDetailList["+ i +"].Manufacturer"));
+			invalidDetailListItem.setDeviceModel(_ctx.stringValue("BatchCheckVehicleDeviceResponse.Data.InvalidDetailList["+ i +"].DeviceModel"));
+			invalidDetailListItem.setDeviceId(_ctx.stringValue("BatchCheckVehicleDeviceResponse.Data.InvalidDetailList["+ i +"].DeviceId"));
+			invalidDetailListItem.setDeviceName(_ctx.stringValue("BatchCheckVehicleDeviceResponse.Data.InvalidDetailList["+ i +"].DeviceName"));
+			invalidDetailListItem.setErrorMsg(_ctx.stringValue("BatchCheckVehicleDeviceResponse.Data.InvalidDetailList["+ i +"].ErrorMsg"));
 
 			invalidDetailList.add(invalidDetailListItem);
 		}

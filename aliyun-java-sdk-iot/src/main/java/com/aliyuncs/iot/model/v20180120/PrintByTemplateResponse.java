@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class PrintByTemplateResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -66,6 +50,22 @@ public class PrintByTemplateResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -76,25 +76,17 @@ public class PrintByTemplateResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer retryCount;
-
 		private Boolean success;
-
-		private String deviceErrorMessage;
-
-		private Integer maxRetryCount;
 
 		private String deviceErrorCode;
 
+		private String deviceErrorMessage;
+
 		private String id;
 
-		public Integer getRetryCount() {
-			return this.retryCount;
-		}
+		private Integer retryCount;
 
-		public void setRetryCount(Integer retryCount) {
-			this.retryCount = retryCount;
-		}
+		private Integer maxRetryCount;
 
 		public Boolean getSuccess() {
 			return this.success;
@@ -102,22 +94,6 @@ public class PrintByTemplateResponse extends AcsResponse {
 
 		public void setSuccess(Boolean success) {
 			this.success = success;
-		}
-
-		public String getDeviceErrorMessage() {
-			return this.deviceErrorMessage;
-		}
-
-		public void setDeviceErrorMessage(String deviceErrorMessage) {
-			this.deviceErrorMessage = deviceErrorMessage;
-		}
-
-		public Integer getMaxRetryCount() {
-			return this.maxRetryCount;
-		}
-
-		public void setMaxRetryCount(Integer maxRetryCount) {
-			this.maxRetryCount = maxRetryCount;
 		}
 
 		public String getDeviceErrorCode() {
@@ -128,12 +104,36 @@ public class PrintByTemplateResponse extends AcsResponse {
 			this.deviceErrorCode = deviceErrorCode;
 		}
 
+		public String getDeviceErrorMessage() {
+			return this.deviceErrorMessage;
+		}
+
+		public void setDeviceErrorMessage(String deviceErrorMessage) {
+			this.deviceErrorMessage = deviceErrorMessage;
+		}
+
 		public String getId() {
 			return this.id;
 		}
 
 		public void setId(String id) {
 			this.id = id;
+		}
+
+		public Integer getRetryCount() {
+			return this.retryCount;
+		}
+
+		public void setRetryCount(Integer retryCount) {
+			this.retryCount = retryCount;
+		}
+
+		public Integer getMaxRetryCount() {
+			return this.maxRetryCount;
+		}
+
+		public void setMaxRetryCount(Integer maxRetryCount) {
+			this.maxRetryCount = maxRetryCount;
 		}
 	}
 

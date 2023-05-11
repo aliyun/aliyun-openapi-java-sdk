@@ -23,9 +23,9 @@ public class DetachDestinationResponseUnmarshaller {
 	public static DetachDestinationResponse unmarshall(DetachDestinationResponse detachDestinationResponse, UnmarshallerContext _ctx) {
 		
 		detachDestinationResponse.setRequestId(_ctx.stringValue("DetachDestinationResponse.RequestId"));
+		detachDestinationResponse.setSuccess(_ctx.booleanValue("DetachDestinationResponse.Success"));
 		detachDestinationResponse.setCode(_ctx.stringValue("DetachDestinationResponse.Code"));
 		detachDestinationResponse.setErrorMessage(_ctx.stringValue("DetachDestinationResponse.ErrorMessage"));
-		detachDestinationResponse.setSuccess(_ctx.booleanValue("DetachDestinationResponse.Success"));
 	 
 	 	return detachDestinationResponse;
 	}

@@ -23,10 +23,10 @@ public class DeleteStudioAppDomainOpenResponseUnmarshaller {
 	public static DeleteStudioAppDomainOpenResponse unmarshall(DeleteStudioAppDomainOpenResponse deleteStudioAppDomainOpenResponse, UnmarshallerContext _ctx) {
 		
 		deleteStudioAppDomainOpenResponse.setRequestId(_ctx.stringValue("DeleteStudioAppDomainOpenResponse.RequestId"));
-		deleteStudioAppDomainOpenResponse.setCode(_ctx.stringValue("DeleteStudioAppDomainOpenResponse.Code"));
-		deleteStudioAppDomainOpenResponse.setData(_ctx.booleanValue("DeleteStudioAppDomainOpenResponse.Data"));
-		deleteStudioAppDomainOpenResponse.setErrorMessage(_ctx.stringValue("DeleteStudioAppDomainOpenResponse.ErrorMessage"));
 		deleteStudioAppDomainOpenResponse.setSuccess(_ctx.booleanValue("DeleteStudioAppDomainOpenResponse.Success"));
+		deleteStudioAppDomainOpenResponse.setCode(_ctx.stringValue("DeleteStudioAppDomainOpenResponse.Code"));
+		deleteStudioAppDomainOpenResponse.setErrorMessage(_ctx.stringValue("DeleteStudioAppDomainOpenResponse.ErrorMessage"));
+		deleteStudioAppDomainOpenResponse.setData(_ctx.booleanValue("DeleteStudioAppDomainOpenResponse.Data"));
 	 
 	 	return deleteStudioAppDomainOpenResponse;
 	}

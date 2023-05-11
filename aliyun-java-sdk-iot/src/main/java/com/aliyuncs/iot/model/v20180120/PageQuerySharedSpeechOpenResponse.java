@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class PageQuerySharedSpeechOpenResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,6 +51,22 @@ public class PageQuerySharedSpeechOpenResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -77,21 +77,13 @@ public class PageQuerySharedSpeechOpenResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer pageSize;
-
 		private Integer pageId;
+
+		private Integer pageSize;
 
 		private Integer total;
 
 		private List<Data1> resultData;
-
-		public Integer getPageSize() {
-			return this.pageSize;
-		}
-
-		public void setPageSize(Integer pageSize) {
-			this.pageSize = pageSize;
-		}
 
 		public Integer getPageId() {
 			return this.pageId;
@@ -99,6 +91,14 @@ public class PageQuerySharedSpeechOpenResponse extends AcsResponse {
 
 		public void setPageId(Integer pageId) {
 			this.pageId = pageId;
+		}
+
+		public Integer getPageSize() {
+			return this.pageSize;
+		}
+
+		public void setPageSize(Integer pageSize) {
+			this.pageSize = pageSize;
 		}
 
 		public Integer getTotal() {
@@ -119,15 +119,13 @@ public class PageQuerySharedSpeechOpenResponse extends AcsResponse {
 
 		public static class Data1 {
 
-			private Integer status;
-
-			private String voice;
+			private String code;
 
 			private String bizCode;
 
-			private String code;
-
 			private String text;
+
+			private String voice;
 
 			private Integer speechRate;
 
@@ -135,20 +133,14 @@ public class PageQuerySharedSpeechOpenResponse extends AcsResponse {
 
 			private String audioFormat;
 
-			public Integer getStatus() {
-				return this.status;
+			private Integer status;
+
+			public String getCode() {
+				return this.code;
 			}
 
-			public void setStatus(Integer status) {
-				this.status = status;
-			}
-
-			public String getVoice() {
-				return this.voice;
-			}
-
-			public void setVoice(String voice) {
-				this.voice = voice;
+			public void setCode(String code) {
+				this.code = code;
 			}
 
 			public String getBizCode() {
@@ -159,20 +151,20 @@ public class PageQuerySharedSpeechOpenResponse extends AcsResponse {
 				this.bizCode = bizCode;
 			}
 
-			public String getCode() {
-				return this.code;
-			}
-
-			public void setCode(String code) {
-				this.code = code;
-			}
-
 			public String getText() {
 				return this.text;
 			}
 
 			public void setText(String text) {
 				this.text = text;
+			}
+
+			public String getVoice() {
+				return this.voice;
+			}
+
+			public void setVoice(String voice) {
+				this.voice = voice;
 			}
 
 			public Integer getSpeechRate() {
@@ -197,6 +189,14 @@ public class PageQuerySharedSpeechOpenResponse extends AcsResponse {
 
 			public void setAudioFormat(String audioFormat) {
 				this.audioFormat = audioFormat;
+			}
+
+			public Integer getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(Integer status) {
+				this.status = status;
 			}
 		}
 	}

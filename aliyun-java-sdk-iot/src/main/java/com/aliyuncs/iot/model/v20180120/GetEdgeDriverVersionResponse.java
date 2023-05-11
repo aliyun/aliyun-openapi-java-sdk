@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetEdgeDriverVersionResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -66,6 +50,22 @@ public class GetEdgeDriverVersionResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -76,45 +76,29 @@ public class GetEdgeDriverVersionResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Long gmtCreateTimestamp;
-
-		private String configCheckRule;
-
 		private String driverId;
-
-		private String edgeVersion;
-
-		private Long gmtModifiedTimestamp;
-
-		private String versionState;
-
-		private String containerConfig;
-
-		private String description;
-
-		private String driverConfig;
 
 		private String driverVersion;
 
-		private String argument;
+		private String versionState;
+
+		private String edgeVersion;
+
+		private String description;
 
 		private String sourceConfig;
 
-		public Long getGmtCreateTimestamp() {
-			return this.gmtCreateTimestamp;
-		}
+		private String driverConfig;
 
-		public void setGmtCreateTimestamp(Long gmtCreateTimestamp) {
-			this.gmtCreateTimestamp = gmtCreateTimestamp;
-		}
+		private String containerConfig;
 
-		public String getConfigCheckRule() {
-			return this.configCheckRule;
-		}
+		private String configCheckRule;
 
-		public void setConfigCheckRule(String configCheckRule) {
-			this.configCheckRule = configCheckRule;
-		}
+		private Long gmtCreateTimestamp;
+
+		private Long gmtModifiedTimestamp;
+
+		private String argument;
 
 		public String getDriverId() {
 			return this.driverId;
@@ -122,54 +106,6 @@ public class GetEdgeDriverVersionResponse extends AcsResponse {
 
 		public void setDriverId(String driverId) {
 			this.driverId = driverId;
-		}
-
-		public String getEdgeVersion() {
-			return this.edgeVersion;
-		}
-
-		public void setEdgeVersion(String edgeVersion) {
-			this.edgeVersion = edgeVersion;
-		}
-
-		public Long getGmtModifiedTimestamp() {
-			return this.gmtModifiedTimestamp;
-		}
-
-		public void setGmtModifiedTimestamp(Long gmtModifiedTimestamp) {
-			this.gmtModifiedTimestamp = gmtModifiedTimestamp;
-		}
-
-		public String getVersionState() {
-			return this.versionState;
-		}
-
-		public void setVersionState(String versionState) {
-			this.versionState = versionState;
-		}
-
-		public String getContainerConfig() {
-			return this.containerConfig;
-		}
-
-		public void setContainerConfig(String containerConfig) {
-			this.containerConfig = containerConfig;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getDriverConfig() {
-			return this.driverConfig;
-		}
-
-		public void setDriverConfig(String driverConfig) {
-			this.driverConfig = driverConfig;
 		}
 
 		public String getDriverVersion() {
@@ -180,12 +116,28 @@ public class GetEdgeDriverVersionResponse extends AcsResponse {
 			this.driverVersion = driverVersion;
 		}
 
-		public String getArgument() {
-			return this.argument;
+		public String getVersionState() {
+			return this.versionState;
 		}
 
-		public void setArgument(String argument) {
-			this.argument = argument;
+		public void setVersionState(String versionState) {
+			this.versionState = versionState;
+		}
+
+		public String getEdgeVersion() {
+			return this.edgeVersion;
+		}
+
+		public void setEdgeVersion(String edgeVersion) {
+			this.edgeVersion = edgeVersion;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getSourceConfig() {
@@ -194,6 +146,54 @@ public class GetEdgeDriverVersionResponse extends AcsResponse {
 
 		public void setSourceConfig(String sourceConfig) {
 			this.sourceConfig = sourceConfig;
+		}
+
+		public String getDriverConfig() {
+			return this.driverConfig;
+		}
+
+		public void setDriverConfig(String driverConfig) {
+			this.driverConfig = driverConfig;
+		}
+
+		public String getContainerConfig() {
+			return this.containerConfig;
+		}
+
+		public void setContainerConfig(String containerConfig) {
+			this.containerConfig = containerConfig;
+		}
+
+		public String getConfigCheckRule() {
+			return this.configCheckRule;
+		}
+
+		public void setConfigCheckRule(String configCheckRule) {
+			this.configCheckRule = configCheckRule;
+		}
+
+		public Long getGmtCreateTimestamp() {
+			return this.gmtCreateTimestamp;
+		}
+
+		public void setGmtCreateTimestamp(Long gmtCreateTimestamp) {
+			this.gmtCreateTimestamp = gmtCreateTimestamp;
+		}
+
+		public Long getGmtModifiedTimestamp() {
+			return this.gmtModifiedTimestamp;
+		}
+
+		public void setGmtModifiedTimestamp(Long gmtModifiedTimestamp) {
+			this.gmtModifiedTimestamp = gmtModifiedTimestamp;
+		}
+
+		public String getArgument() {
+			return this.argument;
+		}
+
+		public void setArgument(String argument) {
+			this.argument = argument;
 		}
 	}
 

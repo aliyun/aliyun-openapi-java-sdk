@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateDownloadDataJobResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -66,6 +50,22 @@ public class CreateDownloadDataJobResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -76,22 +76,22 @@ public class CreateDownloadDataJobResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer status;
+		private String csvUrl;
 
 		private String longJobId;
 
-		private Boolean asyncExecute;
+		private Integer status;
 
-		private String csvUrl;
+		private Boolean asyncExecute;
 
 		private String csvFileName;
 
-		public Integer getStatus() {
-			return this.status;
+		public String getCsvUrl() {
+			return this.csvUrl;
 		}
 
-		public void setStatus(Integer status) {
-			this.status = status;
+		public void setCsvUrl(String csvUrl) {
+			this.csvUrl = csvUrl;
 		}
 
 		public String getLongJobId() {
@@ -102,20 +102,20 @@ public class CreateDownloadDataJobResponse extends AcsResponse {
 			this.longJobId = longJobId;
 		}
 
+		public Integer getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(Integer status) {
+			this.status = status;
+		}
+
 		public Boolean getAsyncExecute() {
 			return this.asyncExecute;
 		}
 
 		public void setAsyncExecute(Boolean asyncExecute) {
 			this.asyncExecute = asyncExecute;
-		}
-
-		public String getCsvUrl() {
-			return this.csvUrl;
-		}
-
-		public void setCsvUrl(String csvUrl) {
-			this.csvUrl = csvUrl;
 		}
 
 		public String getCsvFileName() {

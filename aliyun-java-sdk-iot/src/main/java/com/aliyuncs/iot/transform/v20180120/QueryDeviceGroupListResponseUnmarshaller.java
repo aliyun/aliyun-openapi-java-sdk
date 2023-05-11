@@ -27,22 +27,22 @@ public class QueryDeviceGroupListResponseUnmarshaller {
 	public static QueryDeviceGroupListResponse unmarshall(QueryDeviceGroupListResponse queryDeviceGroupListResponse, UnmarshallerContext _ctx) {
 		
 		queryDeviceGroupListResponse.setRequestId(_ctx.stringValue("QueryDeviceGroupListResponse.RequestId"));
-		queryDeviceGroupListResponse.setCurrentPage(_ctx.integerValue("QueryDeviceGroupListResponse.CurrentPage"));
-		queryDeviceGroupListResponse.setErrorMessage(_ctx.stringValue("QueryDeviceGroupListResponse.ErrorMessage"));
 		queryDeviceGroupListResponse.setSuccess(_ctx.booleanValue("QueryDeviceGroupListResponse.Success"));
 		queryDeviceGroupListResponse.setCode(_ctx.stringValue("QueryDeviceGroupListResponse.Code"));
+		queryDeviceGroupListResponse.setErrorMessage(_ctx.stringValue("QueryDeviceGroupListResponse.ErrorMessage"));
+		queryDeviceGroupListResponse.setCurrentPage(_ctx.integerValue("QueryDeviceGroupListResponse.CurrentPage"));
+		queryDeviceGroupListResponse.setPageCount(_ctx.integerValue("QueryDeviceGroupListResponse.PageCount"));
 		queryDeviceGroupListResponse.setPageSize(_ctx.integerValue("QueryDeviceGroupListResponse.PageSize"));
 		queryDeviceGroupListResponse.setTotal(_ctx.integerValue("QueryDeviceGroupListResponse.Total"));
-		queryDeviceGroupListResponse.setPageCount(_ctx.integerValue("QueryDeviceGroupListResponse.PageCount"));
 
 		List<GroupInfo> data = new ArrayList<GroupInfo>();
 		for (int i = 0; i < _ctx.lengthValue("QueryDeviceGroupListResponse.Data.Length"); i++) {
 			GroupInfo groupInfo = new GroupInfo();
-			groupInfo.setGroupName(_ctx.stringValue("QueryDeviceGroupListResponse.Data["+ i +"].GroupName"));
 			groupInfo.setGroupId(_ctx.stringValue("QueryDeviceGroupListResponse.Data["+ i +"].GroupId"));
-			groupInfo.setGroupType(_ctx.stringValue("QueryDeviceGroupListResponse.Data["+ i +"].GroupType"));
-			groupInfo.setGroupDesc(_ctx.stringValue("QueryDeviceGroupListResponse.Data["+ i +"].GroupDesc"));
 			groupInfo.setUtcCreate(_ctx.stringValue("QueryDeviceGroupListResponse.Data["+ i +"].UtcCreate"));
+			groupInfo.setGroupName(_ctx.stringValue("QueryDeviceGroupListResponse.Data["+ i +"].GroupName"));
+			groupInfo.setGroupDesc(_ctx.stringValue("QueryDeviceGroupListResponse.Data["+ i +"].GroupDesc"));
+			groupInfo.setGroupType(_ctx.stringValue("QueryDeviceGroupListResponse.Data["+ i +"].GroupType"));
 
 			data.add(groupInfo);
 		}

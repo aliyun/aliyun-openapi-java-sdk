@@ -23,10 +23,10 @@ public class QuerySpeechLicenseAvailableQuotaResponseUnmarshaller {
 	public static QuerySpeechLicenseAvailableQuotaResponse unmarshall(QuerySpeechLicenseAvailableQuotaResponse querySpeechLicenseAvailableQuotaResponse, UnmarshallerContext _ctx) {
 		
 		querySpeechLicenseAvailableQuotaResponse.setRequestId(_ctx.stringValue("QuerySpeechLicenseAvailableQuotaResponse.RequestId"));
-		querySpeechLicenseAvailableQuotaResponse.setCode(_ctx.stringValue("QuerySpeechLicenseAvailableQuotaResponse.Code"));
-		querySpeechLicenseAvailableQuotaResponse.setData(_ctx.longValue("QuerySpeechLicenseAvailableQuotaResponse.Data"));
-		querySpeechLicenseAvailableQuotaResponse.setErrorMessage(_ctx.stringValue("QuerySpeechLicenseAvailableQuotaResponse.ErrorMessage"));
 		querySpeechLicenseAvailableQuotaResponse.setSuccess(_ctx.booleanValue("QuerySpeechLicenseAvailableQuotaResponse.Success"));
+		querySpeechLicenseAvailableQuotaResponse.setCode(_ctx.stringValue("QuerySpeechLicenseAvailableQuotaResponse.Code"));
+		querySpeechLicenseAvailableQuotaResponse.setErrorMessage(_ctx.stringValue("QuerySpeechLicenseAvailableQuotaResponse.ErrorMessage"));
+		querySpeechLicenseAvailableQuotaResponse.setData(_ctx.longValue("QuerySpeechLicenseAvailableQuotaResponse.Data"));
 	 
 	 	return querySpeechLicenseAvailableQuotaResponse;
 	}

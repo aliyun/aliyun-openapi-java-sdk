@@ -23,10 +23,10 @@ public class BatchBindDevicesIntoProjectResponseUnmarshaller {
 	public static BatchBindDevicesIntoProjectResponse unmarshall(BatchBindDevicesIntoProjectResponse batchBindDevicesIntoProjectResponse, UnmarshallerContext _ctx) {
 		
 		batchBindDevicesIntoProjectResponse.setRequestId(_ctx.stringValue("BatchBindDevicesIntoProjectResponse.RequestId"));
-		batchBindDevicesIntoProjectResponse.setCode(_ctx.stringValue("BatchBindDevicesIntoProjectResponse.Code"));
-		batchBindDevicesIntoProjectResponse.setData(_ctx.booleanValue("BatchBindDevicesIntoProjectResponse.Data"));
-		batchBindDevicesIntoProjectResponse.setErrorMessage(_ctx.stringValue("BatchBindDevicesIntoProjectResponse.ErrorMessage"));
 		batchBindDevicesIntoProjectResponse.setSuccess(_ctx.booleanValue("BatchBindDevicesIntoProjectResponse.Success"));
+		batchBindDevicesIntoProjectResponse.setCode(_ctx.stringValue("BatchBindDevicesIntoProjectResponse.Code"));
+		batchBindDevicesIntoProjectResponse.setErrorMessage(_ctx.stringValue("BatchBindDevicesIntoProjectResponse.ErrorMessage"));
+		batchBindDevicesIntoProjectResponse.setData(_ctx.booleanValue("BatchBindDevicesIntoProjectResponse.Data"));
 	 
 	 	return batchBindDevicesIntoProjectResponse;
 	}

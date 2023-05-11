@@ -24,22 +24,30 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryCertUrlByApplyIdResponse extends AcsResponse {
 
-	private String certUrl;
+	private String requestId;
+
+	private Boolean success;
 
 	private String code;
 
 	private String errorMessage;
 
-	private String requestId;
+	private String certUrl;
 
-	private Boolean success;
-
-	public String getCertUrl() {
-		return this.certUrl;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCertUrl(String certUrl) {
-		this.certUrl = certUrl;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public String getCode() {
@@ -58,20 +66,12 @@ public class QueryCertUrlByApplyIdResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCertUrl() {
+		return this.certUrl;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setCertUrl(String certUrl) {
+		this.certUrl = certUrl;
 	}
 
 	@Override

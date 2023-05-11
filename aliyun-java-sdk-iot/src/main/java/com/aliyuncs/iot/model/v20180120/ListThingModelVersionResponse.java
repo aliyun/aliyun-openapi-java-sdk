@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListThingModelVersionResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -65,6 +49,22 @@ public class ListThingModelVersionResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
 	public Data getData() {
@@ -89,18 +89,18 @@ public class ListThingModelVersionResponse extends AcsResponse {
 
 		public static class ModelVersion {
 
-			private Long gmtCreate;
+			private String modelVersion;
 
 			private String description;
 
-			private String modelVersion;
+			private Long gmtCreate;
 
-			public Long getGmtCreate() {
-				return this.gmtCreate;
+			public String getModelVersion() {
+				return this.modelVersion;
 			}
 
-			public void setGmtCreate(Long gmtCreate) {
-				this.gmtCreate = gmtCreate;
+			public void setModelVersion(String modelVersion) {
+				this.modelVersion = modelVersion;
 			}
 
 			public String getDescription() {
@@ -111,12 +111,12 @@ public class ListThingModelVersionResponse extends AcsResponse {
 				this.description = description;
 			}
 
-			public String getModelVersion() {
-				return this.modelVersion;
+			public Long getGmtCreate() {
+				return this.gmtCreate;
 			}
 
-			public void setModelVersion(String modelVersion) {
-				this.modelVersion = modelVersion;
+			public void setGmtCreate(Long gmtCreate) {
+				this.gmtCreate = gmtCreate;
 			}
 		}
 	}

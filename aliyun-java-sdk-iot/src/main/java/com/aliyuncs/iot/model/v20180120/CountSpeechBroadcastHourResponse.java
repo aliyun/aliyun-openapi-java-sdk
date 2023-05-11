@@ -24,39 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CountSpeechBroadcastHourResponse extends AcsResponse {
 
-	private String code;
-
-	private Integer data;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
-	public String getCode() {
-		return this.code;
-	}
+	private String code;
 
-	public void setCode(String code) {
-		this.code = code;
-	}
+	private String errorMessage;
 
-	public Integer getData() {
-		return this.data;
-	}
-
-	public void setData(Integer data) {
-		this.data = data;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
+	private Integer data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -72,6 +48,30 @@ public class CountSpeechBroadcastHourResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
+	public Integer getData() {
+		return this.data;
+	}
+
+	public void setData(Integer data) {
+		this.data = data;
 	}
 
 	@Override

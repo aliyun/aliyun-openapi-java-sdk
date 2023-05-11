@@ -24,39 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class AsyncRRpcResponse extends AcsResponse {
 
-	private String code;
-
-	private Long messageId;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
-	public String getCode() {
-		return this.code;
-	}
+	private String code;
 
-	public void setCode(String code) {
-		this.code = code;
-	}
+	private String errorMessage;
 
-	public Long getMessageId() {
-		return this.messageId;
-	}
-
-	public void setMessageId(Long messageId) {
-		this.messageId = messageId;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
+	private Long messageId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -72,6 +48,30 @@ public class AsyncRRpcResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
+	public Long getMessageId() {
+		return this.messageId;
+	}
+
+	public void setMessageId(Long messageId) {
+		this.messageId = messageId;
 	}
 
 	@Override

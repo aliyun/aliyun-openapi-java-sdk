@@ -23,9 +23,9 @@ public class SetEdgeInstanceDriverConfigsResponseUnmarshaller {
 	public static SetEdgeInstanceDriverConfigsResponse unmarshall(SetEdgeInstanceDriverConfigsResponse setEdgeInstanceDriverConfigsResponse, UnmarshallerContext _ctx) {
 		
 		setEdgeInstanceDriverConfigsResponse.setRequestId(_ctx.stringValue("SetEdgeInstanceDriverConfigsResponse.RequestId"));
+		setEdgeInstanceDriverConfigsResponse.setSuccess(_ctx.booleanValue("SetEdgeInstanceDriverConfigsResponse.Success"));
 		setEdgeInstanceDriverConfigsResponse.setCode(_ctx.stringValue("SetEdgeInstanceDriverConfigsResponse.Code"));
 		setEdgeInstanceDriverConfigsResponse.setErrorMessage(_ctx.stringValue("SetEdgeInstanceDriverConfigsResponse.ErrorMessage"));
-		setEdgeInstanceDriverConfigsResponse.setSuccess(_ctx.booleanValue("SetEdgeInstanceDriverConfigsResponse.Success"));
 	 
 	 	return setEdgeInstanceDriverConfigsResponse;
 	}

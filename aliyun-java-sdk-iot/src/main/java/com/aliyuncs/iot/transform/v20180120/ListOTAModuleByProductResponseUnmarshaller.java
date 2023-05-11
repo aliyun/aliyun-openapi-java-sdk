@@ -27,19 +27,19 @@ public class ListOTAModuleByProductResponseUnmarshaller {
 	public static ListOTAModuleByProductResponse unmarshall(ListOTAModuleByProductResponse listOTAModuleByProductResponse, UnmarshallerContext _ctx) {
 		
 		listOTAModuleByProductResponse.setRequestId(_ctx.stringValue("ListOTAModuleByProductResponse.RequestId"));
+		listOTAModuleByProductResponse.setSuccess(_ctx.booleanValue("ListOTAModuleByProductResponse.Success"));
 		listOTAModuleByProductResponse.setCode(_ctx.stringValue("ListOTAModuleByProductResponse.Code"));
 		listOTAModuleByProductResponse.setErrorMessage(_ctx.stringValue("ListOTAModuleByProductResponse.ErrorMessage"));
-		listOTAModuleByProductResponse.setSuccess(_ctx.booleanValue("ListOTAModuleByProductResponse.Success"));
 
 		List<OtaModuleDTO> data = new ArrayList<OtaModuleDTO>();
 		for (int i = 0; i < _ctx.lengthValue("ListOTAModuleByProductResponse.Data.Length"); i++) {
 			OtaModuleDTO otaModuleDTO = new OtaModuleDTO();
-			otaModuleDTO.setModuleName(_ctx.stringValue("ListOTAModuleByProductResponse.Data["+ i +"].ModuleName"));
 			otaModuleDTO.setProductKey(_ctx.stringValue("ListOTAModuleByProductResponse.Data["+ i +"].ProductKey"));
-			otaModuleDTO.setGmtCreate(_ctx.stringValue("ListOTAModuleByProductResponse.Data["+ i +"].GmtCreate"));
+			otaModuleDTO.setModuleName(_ctx.stringValue("ListOTAModuleByProductResponse.Data["+ i +"].ModuleName"));
 			otaModuleDTO.setAliasName(_ctx.stringValue("ListOTAModuleByProductResponse.Data["+ i +"].AliasName"));
-			otaModuleDTO.setGmtModified(_ctx.stringValue("ListOTAModuleByProductResponse.Data["+ i +"].GmtModified"));
 			otaModuleDTO.setDesc(_ctx.stringValue("ListOTAModuleByProductResponse.Data["+ i +"].Desc"));
+			otaModuleDTO.setGmtCreate(_ctx.stringValue("ListOTAModuleByProductResponse.Data["+ i +"].GmtCreate"));
+			otaModuleDTO.setGmtModified(_ctx.stringValue("ListOTAModuleByProductResponse.Data["+ i +"].GmtModified"));
 
 			data.add(otaModuleDTO);
 		}

@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateProductTagsResponse extends AcsResponse {
 
-	private String code;
-
 	private String requestId;
-
-	private String errorMessage;
 
 	private Boolean success;
 
+	private String errorMessage;
+
+	private String code;
+
 	private List<ProductTag> invalidProductTags;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,6 +41,14 @@ public class CreateProductTagsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public String getErrorMessage() {
@@ -59,12 +59,12 @@ public class CreateProductTagsResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public List<ProductTag> getInvalidProductTags() {
@@ -77,17 +77,9 @@ public class CreateProductTagsResponse extends AcsResponse {
 
 	public static class ProductTag {
 
-		private String tagValue;
-
 		private String tagKey;
 
-		public String getTagValue() {
-			return this.tagValue;
-		}
-
-		public void setTagValue(String tagValue) {
-			this.tagValue = tagValue;
-		}
+		private String tagValue;
 
 		public String getTagKey() {
 			return this.tagKey;
@@ -95,6 +87,14 @@ public class CreateProductTagsResponse extends AcsResponse {
 
 		public void setTagKey(String tagKey) {
 			this.tagKey = tagKey;
+		}
+
+		public String getTagValue() {
+			return this.tagValue;
+		}
+
+		public void setTagValue(String tagValue) {
+			this.tagValue = tagValue;
 		}
 	}
 

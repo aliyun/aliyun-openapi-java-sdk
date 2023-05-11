@@ -24,29 +24,29 @@ public class QueryProductResponseUnmarshaller {
 	public static QueryProductResponse unmarshall(QueryProductResponse queryProductResponse, UnmarshallerContext _ctx) {
 		
 		queryProductResponse.setRequestId(_ctx.stringValue("QueryProductResponse.RequestId"));
+		queryProductResponse.setSuccess(_ctx.booleanValue("QueryProductResponse.Success"));
 		queryProductResponse.setCode(_ctx.stringValue("QueryProductResponse.Code"));
 		queryProductResponse.setErrorMessage(_ctx.stringValue("QueryProductResponse.ErrorMessage"));
-		queryProductResponse.setSuccess(_ctx.booleanValue("QueryProductResponse.Success"));
 
 		Data data = new Data();
-		data.setOwner(_ctx.booleanValue("QueryProductResponse.Data.Owner"));
+		data.setGmtCreate(_ctx.longValue("QueryProductResponse.Data.GmtCreate"));
+		data.setDataFormat(_ctx.integerValue("QueryProductResponse.Data.DataFormat"));
+		data.setDescription(_ctx.stringValue("QueryProductResponse.Data.Description"));
+		data.setDeviceCount(_ctx.integerValue("QueryProductResponse.Data.DeviceCount"));
+		data.setNodeType(_ctx.integerValue("QueryProductResponse.Data.NodeType"));
+		data.setProductKey(_ctx.stringValue("QueryProductResponse.Data.ProductKey"));
 		data.setProductName(_ctx.stringValue("QueryProductResponse.Data.ProductName"));
 		data.setProductSecret(_ctx.stringValue("QueryProductResponse.Data.ProductSecret"));
-		data.setDataFormat(_ctx.integerValue("QueryProductResponse.Data.DataFormat"));
 		data.setCategoryName(_ctx.stringValue("QueryProductResponse.Data.CategoryName"));
-		data.setProductStatus(_ctx.stringValue("QueryProductResponse.Data.ProductStatus"));
-		data.setAliyunCommodityCode(_ctx.stringValue("QueryProductResponse.Data.AliyunCommodityCode"));
-		data.setDeviceCount(_ctx.integerValue("QueryProductResponse.Data.DeviceCount"));
-		data.setAuthType(_ctx.stringValue("QueryProductResponse.Data.AuthType"));
-		data.setProductKey(_ctx.stringValue("QueryProductResponse.Data.ProductKey"));
-		data.setNodeType(_ctx.integerValue("QueryProductResponse.Data.NodeType"));
-		data.setDescription(_ctx.stringValue("QueryProductResponse.Data.Description"));
-		data.setValidateType(_ctx.integerValue("QueryProductResponse.Data.ValidateType"));
-		data.setId2(_ctx.booleanValue("QueryProductResponse.Data.Id2"));
-		data.setNetType(_ctx.integerValue("QueryProductResponse.Data.NetType"));
-		data.setGmtCreate(_ctx.longValue("QueryProductResponse.Data.GmtCreate"));
-		data.setProtocolType(_ctx.stringValue("QueryProductResponse.Data.ProtocolType"));
 		data.setCategoryKey(_ctx.stringValue("QueryProductResponse.Data.CategoryKey"));
+		data.setAliyunCommodityCode(_ctx.stringValue("QueryProductResponse.Data.AliyunCommodityCode"));
+		data.setId2(_ctx.booleanValue("QueryProductResponse.Data.Id2"));
+		data.setProtocolType(_ctx.stringValue("QueryProductResponse.Data.ProtocolType"));
+		data.setProductStatus(_ctx.stringValue("QueryProductResponse.Data.ProductStatus"));
+		data.setOwner(_ctx.booleanValue("QueryProductResponse.Data.Owner"));
+		data.setNetType(_ctx.integerValue("QueryProductResponse.Data.NetType"));
+		data.setAuthType(_ctx.stringValue("QueryProductResponse.Data.AuthType"));
+		data.setValidateType(_ctx.integerValue("QueryProductResponse.Data.ValidateType"));
 		queryProductResponse.setData(data);
 	 
 	 	return queryProductResponse;

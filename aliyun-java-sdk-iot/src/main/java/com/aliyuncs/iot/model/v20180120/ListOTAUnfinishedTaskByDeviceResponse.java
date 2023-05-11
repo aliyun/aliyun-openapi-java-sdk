@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListOTAUnfinishedTaskByDeviceResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private List<SimpleOTATaskInfo> data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,6 +51,22 @@ public class ListOTAUnfinishedTaskByDeviceResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public List<SimpleOTATaskInfo> getData() {
 		return this.data;
 	}
@@ -77,62 +77,46 @@ public class ListOTAUnfinishedTaskByDeviceResponse extends AcsResponse {
 
 	public static class SimpleOTATaskInfo {
 
-		private String moduleName;
+		private String taskId;
 
-		private String productName;
-
-		private String deviceName;
-
-		private String utcCreate;
+		private String utcModified;
 
 		private String productKey;
 
 		private String taskStatus;
 
-		private String utcModified;
-
 		private String jobId;
+
+		private String productName;
+
+		private String deviceName;
 
 		private String srcVersion;
 
-		private String taskId;
-
 		private String destVersion;
-
-		private String firmwareId;
 
 		private String iotId;
 
-		public String getModuleName() {
-			return this.moduleName;
+		private String utcCreate;
+
+		private String moduleName;
+
+		private String firmwareId;
+
+		public String getTaskId() {
+			return this.taskId;
 		}
 
-		public void setModuleName(String moduleName) {
-			this.moduleName = moduleName;
+		public void setTaskId(String taskId) {
+			this.taskId = taskId;
 		}
 
-		public String getProductName() {
-			return this.productName;
+		public String getUtcModified() {
+			return this.utcModified;
 		}
 
-		public void setProductName(String productName) {
-			this.productName = productName;
-		}
-
-		public String getDeviceName() {
-			return this.deviceName;
-		}
-
-		public void setDeviceName(String deviceName) {
-			this.deviceName = deviceName;
-		}
-
-		public String getUtcCreate() {
-			return this.utcCreate;
-		}
-
-		public void setUtcCreate(String utcCreate) {
-			this.utcCreate = utcCreate;
+		public void setUtcModified(String utcModified) {
+			this.utcModified = utcModified;
 		}
 
 		public String getProductKey() {
@@ -151,20 +135,28 @@ public class ListOTAUnfinishedTaskByDeviceResponse extends AcsResponse {
 			this.taskStatus = taskStatus;
 		}
 
-		public String getUtcModified() {
-			return this.utcModified;
-		}
-
-		public void setUtcModified(String utcModified) {
-			this.utcModified = utcModified;
-		}
-
 		public String getJobId() {
 			return this.jobId;
 		}
 
 		public void setJobId(String jobId) {
 			this.jobId = jobId;
+		}
+
+		public String getProductName() {
+			return this.productName;
+		}
+
+		public void setProductName(String productName) {
+			this.productName = productName;
+		}
+
+		public String getDeviceName() {
+			return this.deviceName;
+		}
+
+		public void setDeviceName(String deviceName) {
+			this.deviceName = deviceName;
 		}
 
 		public String getSrcVersion() {
@@ -175,14 +167,6 @@ public class ListOTAUnfinishedTaskByDeviceResponse extends AcsResponse {
 			this.srcVersion = srcVersion;
 		}
 
-		public String getTaskId() {
-			return this.taskId;
-		}
-
-		public void setTaskId(String taskId) {
-			this.taskId = taskId;
-		}
-
 		public String getDestVersion() {
 			return this.destVersion;
 		}
@@ -191,20 +175,36 @@ public class ListOTAUnfinishedTaskByDeviceResponse extends AcsResponse {
 			this.destVersion = destVersion;
 		}
 
-		public String getFirmwareId() {
-			return this.firmwareId;
-		}
-
-		public void setFirmwareId(String firmwareId) {
-			this.firmwareId = firmwareId;
-		}
-
 		public String getIotId() {
 			return this.iotId;
 		}
 
 		public void setIotId(String iotId) {
 			this.iotId = iotId;
+		}
+
+		public String getUtcCreate() {
+			return this.utcCreate;
+		}
+
+		public void setUtcCreate(String utcCreate) {
+			this.utcCreate = utcCreate;
+		}
+
+		public String getModuleName() {
+			return this.moduleName;
+		}
+
+		public void setModuleName(String moduleName) {
+			this.moduleName = moduleName;
+		}
+
+		public String getFirmwareId() {
+			return this.firmwareId;
+		}
+
+		public void setFirmwareId(String firmwareId) {
+			this.firmwareId = firmwareId;
 		}
 	}
 

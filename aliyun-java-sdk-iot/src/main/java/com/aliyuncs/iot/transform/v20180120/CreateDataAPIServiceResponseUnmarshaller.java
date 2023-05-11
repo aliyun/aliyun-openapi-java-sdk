@@ -24,14 +24,14 @@ public class CreateDataAPIServiceResponseUnmarshaller {
 	public static CreateDataAPIServiceResponse unmarshall(CreateDataAPIServiceResponse createDataAPIServiceResponse, UnmarshallerContext _ctx) {
 		
 		createDataAPIServiceResponse.setRequestId(_ctx.stringValue("CreateDataAPIServiceResponse.RequestId"));
+		createDataAPIServiceResponse.setSuccess(_ctx.booleanValue("CreateDataAPIServiceResponse.Success"));
 		createDataAPIServiceResponse.setCode(_ctx.stringValue("CreateDataAPIServiceResponse.Code"));
 		createDataAPIServiceResponse.setErrorMessage(_ctx.stringValue("CreateDataAPIServiceResponse.ErrorMessage"));
-		createDataAPIServiceResponse.setSuccess(_ctx.booleanValue("CreateDataAPIServiceResponse.Success"));
 
 		Data data = new Data();
-		data.setLastUpdateTime(_ctx.longValue("CreateDataAPIServiceResponse.Data.LastUpdateTime"));
 		data.setApiSrn(_ctx.stringValue("CreateDataAPIServiceResponse.Data.ApiSrn"));
 		data.setCreateTime(_ctx.longValue("CreateDataAPIServiceResponse.Data.CreateTime"));
+		data.setLastUpdateTime(_ctx.longValue("CreateDataAPIServiceResponse.Data.LastUpdateTime"));
 		createDataAPIServiceResponse.setData(data);
 	 
 	 	return createDataAPIServiceResponse;

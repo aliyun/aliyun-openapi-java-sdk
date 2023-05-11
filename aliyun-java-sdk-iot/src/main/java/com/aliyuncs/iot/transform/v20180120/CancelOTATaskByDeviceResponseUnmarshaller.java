@@ -23,9 +23,9 @@ public class CancelOTATaskByDeviceResponseUnmarshaller {
 	public static CancelOTATaskByDeviceResponse unmarshall(CancelOTATaskByDeviceResponse cancelOTATaskByDeviceResponse, UnmarshallerContext _ctx) {
 		
 		cancelOTATaskByDeviceResponse.setRequestId(_ctx.stringValue("CancelOTATaskByDeviceResponse.RequestId"));
+		cancelOTATaskByDeviceResponse.setSuccess(_ctx.booleanValue("CancelOTATaskByDeviceResponse.Success"));
 		cancelOTATaskByDeviceResponse.setCode(_ctx.stringValue("CancelOTATaskByDeviceResponse.Code"));
 		cancelOTATaskByDeviceResponse.setErrorMessage(_ctx.stringValue("CancelOTATaskByDeviceResponse.ErrorMessage"));
-		cancelOTATaskByDeviceResponse.setSuccess(_ctx.booleanValue("CancelOTATaskByDeviceResponse.Success"));
 	 
 	 	return cancelOTATaskByDeviceResponse;
 	}

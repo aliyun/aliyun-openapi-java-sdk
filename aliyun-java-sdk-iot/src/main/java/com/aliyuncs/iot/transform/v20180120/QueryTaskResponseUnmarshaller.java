@@ -24,23 +24,23 @@ public class QueryTaskResponseUnmarshaller {
 	public static QueryTaskResponse unmarshall(QueryTaskResponse queryTaskResponse, UnmarshallerContext _ctx) {
 		
 		queryTaskResponse.setRequestId(_ctx.stringValue("QueryTaskResponse.RequestId"));
+		queryTaskResponse.setSuccess(_ctx.booleanValue("QueryTaskResponse.Success"));
 		queryTaskResponse.setCode(_ctx.stringValue("QueryTaskResponse.Code"));
 		queryTaskResponse.setErrorMessage(_ctx.stringValue("QueryTaskResponse.ErrorMessage"));
-		queryTaskResponse.setSuccess(_ctx.booleanValue("QueryTaskResponse.Success"));
 
 		Data data = new Data();
-		data.setStatus(_ctx.stringValue("QueryTaskResponse.Data.Status"));
-		data.setProgress(_ctx.stringValue("QueryTaskResponse.Data.Progress"));
-		data.setDeviceName(_ctx.stringValue("QueryTaskResponse.Data.DeviceName"));
-		data.setMessage(_ctx.stringValue("QueryTaskResponse.Data.Message"));
-		data.setUtcQueueTime(_ctx.stringValue("QueryTaskResponse.Data.UtcQueueTime"));
-		data.setProductKey(_ctx.stringValue("QueryTaskResponse.Data.ProductKey"));
-		data.setJobName(_ctx.stringValue("QueryTaskResponse.Data.JobName"));
-		data.setUtcModified(_ctx.stringValue("QueryTaskResponse.Data.UtcModified"));
 		data.setJobId(_ctx.stringValue("QueryTaskResponse.Data.JobId"));
-		data.setStatusDetail(_ctx.stringValue("QueryTaskResponse.Data.StatusDetail"));
+		data.setJobName(_ctx.stringValue("QueryTaskResponse.Data.JobName"));
 		data.setTaskId(_ctx.stringValue("QueryTaskResponse.Data.TaskId"));
+		data.setProductKey(_ctx.stringValue("QueryTaskResponse.Data.ProductKey"));
+		data.setDeviceName(_ctx.stringValue("QueryTaskResponse.Data.DeviceName"));
 		data.setIotId(_ctx.stringValue("QueryTaskResponse.Data.IotId"));
+		data.setProgress(_ctx.stringValue("QueryTaskResponse.Data.Progress"));
+		data.setUtcQueueTime(_ctx.stringValue("QueryTaskResponse.Data.UtcQueueTime"));
+		data.setUtcModified(_ctx.stringValue("QueryTaskResponse.Data.UtcModified"));
+		data.setStatusDetail(_ctx.stringValue("QueryTaskResponse.Data.StatusDetail"));
+		data.setStatus(_ctx.stringValue("QueryTaskResponse.Data.Status"));
+		data.setMessage(_ctx.stringValue("QueryTaskResponse.Data.Message"));
 		queryTaskResponse.setData(data);
 	 
 	 	return queryTaskResponse;

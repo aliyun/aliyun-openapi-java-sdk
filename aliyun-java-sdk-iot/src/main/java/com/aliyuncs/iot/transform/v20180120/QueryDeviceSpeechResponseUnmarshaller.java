@@ -28,21 +28,21 @@ public class QueryDeviceSpeechResponseUnmarshaller {
 	public static QueryDeviceSpeechResponse unmarshall(QueryDeviceSpeechResponse queryDeviceSpeechResponse, UnmarshallerContext _ctx) {
 		
 		queryDeviceSpeechResponse.setRequestId(_ctx.stringValue("QueryDeviceSpeechResponse.RequestId"));
+		queryDeviceSpeechResponse.setSuccess(_ctx.booleanValue("QueryDeviceSpeechResponse.Success"));
 		queryDeviceSpeechResponse.setCode(_ctx.stringValue("QueryDeviceSpeechResponse.Code"));
 		queryDeviceSpeechResponse.setErrorMessage(_ctx.stringValue("QueryDeviceSpeechResponse.ErrorMessage"));
-		queryDeviceSpeechResponse.setSuccess(_ctx.booleanValue("QueryDeviceSpeechResponse.Success"));
 
 		Data data = new Data();
-		data.setPageSize(_ctx.integerValue("QueryDeviceSpeechResponse.Data.PageSize"));
 		data.setTotal(_ctx.integerValue("QueryDeviceSpeechResponse.Data.Total"));
 		data.setPageId(_ctx.integerValue("QueryDeviceSpeechResponse.Data.PageId"));
+		data.setPageSize(_ctx.integerValue("QueryDeviceSpeechResponse.Data.PageSize"));
 
 		List<Items> list = new ArrayList<Items>();
 		for (int i = 0; i < _ctx.lengthValue("QueryDeviceSpeechResponse.Data.List.Length"); i++) {
 			Items items = new Items();
-			items.setAudioFormat(_ctx.stringValue("QueryDeviceSpeechResponse.Data.List["+ i +"].AudioFormat"));
 			items.setBizCode(_ctx.stringValue("QueryDeviceSpeechResponse.Data.List["+ i +"].BizCode"));
 			items.setSize(_ctx.floatValue("QueryDeviceSpeechResponse.Data.List["+ i +"].Size"));
+			items.setAudioFormat(_ctx.stringValue("QueryDeviceSpeechResponse.Data.List["+ i +"].AudioFormat"));
 
 			list.add(items);
 		}

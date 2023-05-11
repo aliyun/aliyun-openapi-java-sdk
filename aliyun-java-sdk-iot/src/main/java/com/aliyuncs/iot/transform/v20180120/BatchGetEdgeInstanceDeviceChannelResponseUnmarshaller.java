@@ -27,9 +27,9 @@ public class BatchGetEdgeInstanceDeviceChannelResponseUnmarshaller {
 	public static BatchGetEdgeInstanceDeviceChannelResponse unmarshall(BatchGetEdgeInstanceDeviceChannelResponse batchGetEdgeInstanceDeviceChannelResponse, UnmarshallerContext _ctx) {
 		
 		batchGetEdgeInstanceDeviceChannelResponse.setRequestId(_ctx.stringValue("BatchGetEdgeInstanceDeviceChannelResponse.RequestId"));
+		batchGetEdgeInstanceDeviceChannelResponse.setSuccess(_ctx.booleanValue("BatchGetEdgeInstanceDeviceChannelResponse.Success"));
 		batchGetEdgeInstanceDeviceChannelResponse.setCode(_ctx.stringValue("BatchGetEdgeInstanceDeviceChannelResponse.Code"));
 		batchGetEdgeInstanceDeviceChannelResponse.setErrorMessage(_ctx.stringValue("BatchGetEdgeInstanceDeviceChannelResponse.ErrorMessage"));
-		batchGetEdgeInstanceDeviceChannelResponse.setSuccess(_ctx.booleanValue("BatchGetEdgeInstanceDeviceChannelResponse.Success"));
 
 		List<DeviceChannel> deviceChannelList = new ArrayList<DeviceChannel>();
 		for (int i = 0; i < _ctx.lengthValue("BatchGetEdgeInstanceDeviceChannelResponse.DeviceChannelList.Length"); i++) {

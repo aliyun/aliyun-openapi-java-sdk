@@ -23,9 +23,9 @@ public class ClearEdgeInstanceDriverConfigsResponseUnmarshaller {
 	public static ClearEdgeInstanceDriverConfigsResponse unmarshall(ClearEdgeInstanceDriverConfigsResponse clearEdgeInstanceDriverConfigsResponse, UnmarshallerContext _ctx) {
 		
 		clearEdgeInstanceDriverConfigsResponse.setRequestId(_ctx.stringValue("ClearEdgeInstanceDriverConfigsResponse.RequestId"));
+		clearEdgeInstanceDriverConfigsResponse.setSuccess(_ctx.booleanValue("ClearEdgeInstanceDriverConfigsResponse.Success"));
 		clearEdgeInstanceDriverConfigsResponse.setCode(_ctx.stringValue("ClearEdgeInstanceDriverConfigsResponse.Code"));
 		clearEdgeInstanceDriverConfigsResponse.setErrorMessage(_ctx.stringValue("ClearEdgeInstanceDriverConfigsResponse.ErrorMessage"));
-		clearEdgeInstanceDriverConfigsResponse.setSuccess(_ctx.booleanValue("ClearEdgeInstanceDriverConfigsResponse.Success"));
 	 
 	 	return clearEdgeInstanceDriverConfigsResponse;
 	}

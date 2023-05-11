@@ -23,9 +23,9 @@ public class DeleteDeviceTunnelResponseUnmarshaller {
 	public static DeleteDeviceTunnelResponse unmarshall(DeleteDeviceTunnelResponse deleteDeviceTunnelResponse, UnmarshallerContext _ctx) {
 		
 		deleteDeviceTunnelResponse.setRequestId(_ctx.stringValue("DeleteDeviceTunnelResponse.RequestId"));
+		deleteDeviceTunnelResponse.setSuccess(_ctx.booleanValue("DeleteDeviceTunnelResponse.Success"));
 		deleteDeviceTunnelResponse.setCode(_ctx.stringValue("DeleteDeviceTunnelResponse.Code"));
 		deleteDeviceTunnelResponse.setErrorMessage(_ctx.stringValue("DeleteDeviceTunnelResponse.ErrorMessage"));
-		deleteDeviceTunnelResponse.setSuccess(_ctx.booleanValue("DeleteDeviceTunnelResponse.Success"));
 	 
 	 	return deleteDeviceTunnelResponse;
 	}

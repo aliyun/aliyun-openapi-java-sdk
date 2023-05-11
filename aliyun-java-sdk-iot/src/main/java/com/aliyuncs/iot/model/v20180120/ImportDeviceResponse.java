@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ImportDeviceResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -66,6 +50,22 @@ public class ImportDeviceResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -76,17 +76,25 @@ public class ImportDeviceResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String productKey;
+		private String iotId;
 
-		private String sn;
+		private String productKey;
 
 		private String deviceName;
 
 		private String deviceSecret;
 
+		private String sn;
+
 		private String nickname;
 
-		private String iotId;
+		public String getIotId() {
+			return this.iotId;
+		}
+
+		public void setIotId(String iotId) {
+			this.iotId = iotId;
+		}
 
 		public String getProductKey() {
 			return this.productKey;
@@ -94,14 +102,6 @@ public class ImportDeviceResponse extends AcsResponse {
 
 		public void setProductKey(String productKey) {
 			this.productKey = productKey;
-		}
-
-		public String getSn() {
-			return this.sn;
-		}
-
-		public void setSn(String sn) {
-			this.sn = sn;
 		}
 
 		public String getDeviceName() {
@@ -120,20 +120,20 @@ public class ImportDeviceResponse extends AcsResponse {
 			this.deviceSecret = deviceSecret;
 		}
 
+		public String getSn() {
+			return this.sn;
+		}
+
+		public void setSn(String sn) {
+			this.sn = sn;
+		}
+
 		public String getNickname() {
 			return this.nickname;
 		}
 
 		public void setNickname(String nickname) {
 			this.nickname = nickname;
-		}
-
-		public String getIotId() {
-			return this.iotId;
-		}
-
-		public void setIotId(String iotId) {
-			this.iotId = iotId;
 		}
 	}
 

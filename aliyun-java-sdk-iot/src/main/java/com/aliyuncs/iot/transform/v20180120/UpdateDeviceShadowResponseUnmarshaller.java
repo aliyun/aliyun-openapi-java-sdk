@@ -23,9 +23,9 @@ public class UpdateDeviceShadowResponseUnmarshaller {
 	public static UpdateDeviceShadowResponse unmarshall(UpdateDeviceShadowResponse updateDeviceShadowResponse, UnmarshallerContext _ctx) {
 		
 		updateDeviceShadowResponse.setRequestId(_ctx.stringValue("UpdateDeviceShadowResponse.RequestId"));
+		updateDeviceShadowResponse.setSuccess(_ctx.booleanValue("UpdateDeviceShadowResponse.Success"));
 		updateDeviceShadowResponse.setCode(_ctx.stringValue("UpdateDeviceShadowResponse.Code"));
 		updateDeviceShadowResponse.setErrorMessage(_ctx.stringValue("UpdateDeviceShadowResponse.ErrorMessage"));
-		updateDeviceShadowResponse.setSuccess(_ctx.booleanValue("UpdateDeviceShadowResponse.Success"));
 	 
 	 	return updateDeviceShadowResponse;
 	}

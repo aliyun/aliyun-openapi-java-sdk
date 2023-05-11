@@ -23,10 +23,10 @@ public class PublishScriptResponseUnmarshaller {
 	public static PublishScriptResponse unmarshall(PublishScriptResponse publishScriptResponse, UnmarshallerContext _ctx) {
 		
 		publishScriptResponse.setRequestId(_ctx.stringValue("PublishScriptResponse.RequestId"));
+		publishScriptResponse.setSuccess(_ctx.booleanValue("PublishScriptResponse.Success"));
 		publishScriptResponse.setCode(_ctx.stringValue("PublishScriptResponse.Code"));
 		publishScriptResponse.setErrorMessage(_ctx.stringValue("PublishScriptResponse.ErrorMessage"));
 		publishScriptResponse.setSyntaxErrorMsg(_ctx.stringValue("PublishScriptResponse.SyntaxErrorMsg"));
-		publishScriptResponse.setSuccess(_ctx.booleanValue("PublishScriptResponse.Success"));
 	 
 	 	return publishScriptResponse;
 	}

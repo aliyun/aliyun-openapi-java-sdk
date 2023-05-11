@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class RegisterDeviceResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -66,6 +50,22 @@ public class RegisterDeviceResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -76,19 +76,27 @@ public class RegisterDeviceResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String productKey;
+		private String iotId;
 
-		private String devEui;
+		private String productKey;
 
 		private String deviceName;
 
-		private String joinEui;
-
 		private String deviceSecret;
+
+		private String devEui;
+
+		private String joinEui;
 
 		private String nickname;
 
-		private String iotId;
+		public String getIotId() {
+			return this.iotId;
+		}
+
+		public void setIotId(String iotId) {
+			this.iotId = iotId;
+		}
 
 		public String getProductKey() {
 			return this.productKey;
@@ -96,14 +104,6 @@ public class RegisterDeviceResponse extends AcsResponse {
 
 		public void setProductKey(String productKey) {
 			this.productKey = productKey;
-		}
-
-		public String getDevEui() {
-			return this.devEui;
-		}
-
-		public void setDevEui(String devEui) {
-			this.devEui = devEui;
 		}
 
 		public String getDeviceName() {
@@ -114,14 +114,6 @@ public class RegisterDeviceResponse extends AcsResponse {
 			this.deviceName = deviceName;
 		}
 
-		public String getJoinEui() {
-			return this.joinEui;
-		}
-
-		public void setJoinEui(String joinEui) {
-			this.joinEui = joinEui;
-		}
-
 		public String getDeviceSecret() {
 			return this.deviceSecret;
 		}
@@ -130,20 +122,28 @@ public class RegisterDeviceResponse extends AcsResponse {
 			this.deviceSecret = deviceSecret;
 		}
 
+		public String getDevEui() {
+			return this.devEui;
+		}
+
+		public void setDevEui(String devEui) {
+			this.devEui = devEui;
+		}
+
+		public String getJoinEui() {
+			return this.joinEui;
+		}
+
+		public void setJoinEui(String joinEui) {
+			this.joinEui = joinEui;
+		}
+
 		public String getNickname() {
 			return this.nickname;
 		}
 
 		public void setNickname(String nickname) {
 			this.nickname = nickname;
-		}
-
-		public String getIotId() {
-			return this.iotId;
-		}
-
-		public void setIotId(String iotId) {
-			this.iotId = iotId;
 		}
 	}
 

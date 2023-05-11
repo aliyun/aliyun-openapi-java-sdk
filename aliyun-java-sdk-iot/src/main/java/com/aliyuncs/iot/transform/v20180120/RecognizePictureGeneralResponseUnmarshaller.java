@@ -23,10 +23,10 @@ public class RecognizePictureGeneralResponseUnmarshaller {
 	public static RecognizePictureGeneralResponse unmarshall(RecognizePictureGeneralResponse recognizePictureGeneralResponse, UnmarshallerContext _ctx) {
 		
 		recognizePictureGeneralResponse.setRequestId(_ctx.stringValue("RecognizePictureGeneralResponse.RequestId"));
-		recognizePictureGeneralResponse.setCode(_ctx.stringValue("RecognizePictureGeneralResponse.Code"));
-		recognizePictureGeneralResponse.setData(_ctx.stringValue("RecognizePictureGeneralResponse.Data"));
-		recognizePictureGeneralResponse.setErrorMessage(_ctx.stringValue("RecognizePictureGeneralResponse.ErrorMessage"));
 		recognizePictureGeneralResponse.setSuccess(_ctx.booleanValue("RecognizePictureGeneralResponse.Success"));
+		recognizePictureGeneralResponse.setCode(_ctx.stringValue("RecognizePictureGeneralResponse.Code"));
+		recognizePictureGeneralResponse.setErrorMessage(_ctx.stringValue("RecognizePictureGeneralResponse.ErrorMessage"));
+		recognizePictureGeneralResponse.setData(_ctx.stringValue("RecognizePictureGeneralResponse.Data"));
 	 
 	 	return recognizePictureGeneralResponse;
 	}

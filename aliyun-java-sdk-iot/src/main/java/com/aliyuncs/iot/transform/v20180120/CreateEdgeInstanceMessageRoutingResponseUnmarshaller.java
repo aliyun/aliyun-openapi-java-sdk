@@ -23,10 +23,10 @@ public class CreateEdgeInstanceMessageRoutingResponseUnmarshaller {
 	public static CreateEdgeInstanceMessageRoutingResponse unmarshall(CreateEdgeInstanceMessageRoutingResponse createEdgeInstanceMessageRoutingResponse, UnmarshallerContext _ctx) {
 		
 		createEdgeInstanceMessageRoutingResponse.setRequestId(_ctx.stringValue("CreateEdgeInstanceMessageRoutingResponse.RequestId"));
+		createEdgeInstanceMessageRoutingResponse.setSuccess(_ctx.booleanValue("CreateEdgeInstanceMessageRoutingResponse.Success"));
 		createEdgeInstanceMessageRoutingResponse.setCode(_ctx.stringValue("CreateEdgeInstanceMessageRoutingResponse.Code"));
 		createEdgeInstanceMessageRoutingResponse.setErrorMessage(_ctx.stringValue("CreateEdgeInstanceMessageRoutingResponse.ErrorMessage"));
 		createEdgeInstanceMessageRoutingResponse.setRouteId(_ctx.longValue("CreateEdgeInstanceMessageRoutingResponse.RouteId"));
-		createEdgeInstanceMessageRoutingResponse.setSuccess(_ctx.booleanValue("CreateEdgeInstanceMessageRoutingResponse.Success"));
 	 
 	 	return createEdgeInstanceMessageRoutingResponse;
 	}

@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryProductTopicResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private List<ProductTopicInfo> data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,6 +51,22 @@ public class QueryProductTopicResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public List<ProductTopicInfo> getData() {
 		return this.data;
 	}
@@ -77,27 +77,19 @@ public class QueryProductTopicResponse extends AcsResponse {
 
 	public static class ProductTopicInfo {
 
-		private String operation;
-
 		private String productKey;
-
-		private String codec;
 
 		private String topicShortName;
 
-		private Boolean enableProxySubscribe;
-
-		private String id;
+		private String operation;
 
 		private String desc;
 
-		public String getOperation() {
-			return this.operation;
-		}
+		private String id;
 
-		public void setOperation(String operation) {
-			this.operation = operation;
-		}
+		private Boolean enableProxySubscribe;
+
+		private String codec;
 
 		public String getProductKey() {
 			return this.productKey;
@@ -105,14 +97,6 @@ public class QueryProductTopicResponse extends AcsResponse {
 
 		public void setProductKey(String productKey) {
 			this.productKey = productKey;
-		}
-
-		public String getCodec() {
-			return this.codec;
-		}
-
-		public void setCodec(String codec) {
-			this.codec = codec;
 		}
 
 		public String getTopicShortName() {
@@ -123,12 +107,20 @@ public class QueryProductTopicResponse extends AcsResponse {
 			this.topicShortName = topicShortName;
 		}
 
-		public Boolean getEnableProxySubscribe() {
-			return this.enableProxySubscribe;
+		public String getOperation() {
+			return this.operation;
 		}
 
-		public void setEnableProxySubscribe(Boolean enableProxySubscribe) {
-			this.enableProxySubscribe = enableProxySubscribe;
+		public void setOperation(String operation) {
+			this.operation = operation;
+		}
+
+		public String getDesc() {
+			return this.desc;
+		}
+
+		public void setDesc(String desc) {
+			this.desc = desc;
 		}
 
 		public String getId() {
@@ -139,12 +131,20 @@ public class QueryProductTopicResponse extends AcsResponse {
 			this.id = id;
 		}
 
-		public String getDesc() {
-			return this.desc;
+		public Boolean getEnableProxySubscribe() {
+			return this.enableProxySubscribe;
 		}
 
-		public void setDesc(String desc) {
-			this.desc = desc;
+		public void setEnableProxySubscribe(Boolean enableProxySubscribe) {
+			this.enableProxySubscribe = enableProxySubscribe;
+		}
+
+		public String getCodec() {
+			return this.codec;
+		}
+
+		public void setCodec(String codec) {
+			this.codec = codec;
 		}
 	}
 

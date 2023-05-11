@@ -23,10 +23,10 @@ public class BatchCreateSoundCodeLabelResponseUnmarshaller {
 	public static BatchCreateSoundCodeLabelResponse unmarshall(BatchCreateSoundCodeLabelResponse batchCreateSoundCodeLabelResponse, UnmarshallerContext _ctx) {
 		
 		batchCreateSoundCodeLabelResponse.setRequestId(_ctx.stringValue("BatchCreateSoundCodeLabelResponse.RequestId"));
-		batchCreateSoundCodeLabelResponse.setCode(_ctx.stringValue("BatchCreateSoundCodeLabelResponse.Code"));
-		batchCreateSoundCodeLabelResponse.setData(_ctx.stringValue("BatchCreateSoundCodeLabelResponse.Data"));
-		batchCreateSoundCodeLabelResponse.setErrorMessage(_ctx.stringValue("BatchCreateSoundCodeLabelResponse.ErrorMessage"));
 		batchCreateSoundCodeLabelResponse.setSuccess(_ctx.booleanValue("BatchCreateSoundCodeLabelResponse.Success"));
+		batchCreateSoundCodeLabelResponse.setCode(_ctx.stringValue("BatchCreateSoundCodeLabelResponse.Code"));
+		batchCreateSoundCodeLabelResponse.setErrorMessage(_ctx.stringValue("BatchCreateSoundCodeLabelResponse.ErrorMessage"));
+		batchCreateSoundCodeLabelResponse.setData(_ctx.stringValue("BatchCreateSoundCodeLabelResponse.Data"));
 	 
 	 	return batchCreateSoundCodeLabelResponse;
 	}

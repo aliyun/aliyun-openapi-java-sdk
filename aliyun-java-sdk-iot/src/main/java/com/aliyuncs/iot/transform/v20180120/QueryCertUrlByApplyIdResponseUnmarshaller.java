@@ -23,10 +23,10 @@ public class QueryCertUrlByApplyIdResponseUnmarshaller {
 	public static QueryCertUrlByApplyIdResponse unmarshall(QueryCertUrlByApplyIdResponse queryCertUrlByApplyIdResponse, UnmarshallerContext _ctx) {
 		
 		queryCertUrlByApplyIdResponse.setRequestId(_ctx.stringValue("QueryCertUrlByApplyIdResponse.RequestId"));
-		queryCertUrlByApplyIdResponse.setCertUrl(_ctx.stringValue("QueryCertUrlByApplyIdResponse.CertUrl"));
+		queryCertUrlByApplyIdResponse.setSuccess(_ctx.booleanValue("QueryCertUrlByApplyIdResponse.Success"));
 		queryCertUrlByApplyIdResponse.setCode(_ctx.stringValue("QueryCertUrlByApplyIdResponse.Code"));
 		queryCertUrlByApplyIdResponse.setErrorMessage(_ctx.stringValue("QueryCertUrlByApplyIdResponse.ErrorMessage"));
-		queryCertUrlByApplyIdResponse.setSuccess(_ctx.booleanValue("QueryCertUrlByApplyIdResponse.Success"));
+		queryCertUrlByApplyIdResponse.setCertUrl(_ctx.stringValue("QueryCertUrlByApplyIdResponse.CertUrl"));
 	 
 	 	return queryCertUrlByApplyIdResponse;
 	}

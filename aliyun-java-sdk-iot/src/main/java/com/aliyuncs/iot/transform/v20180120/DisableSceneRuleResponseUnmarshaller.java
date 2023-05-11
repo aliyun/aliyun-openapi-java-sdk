@@ -23,9 +23,9 @@ public class DisableSceneRuleResponseUnmarshaller {
 	public static DisableSceneRuleResponse unmarshall(DisableSceneRuleResponse disableSceneRuleResponse, UnmarshallerContext _ctx) {
 		
 		disableSceneRuleResponse.setRequestId(_ctx.stringValue("DisableSceneRuleResponse.RequestId"));
-		disableSceneRuleResponse.setCode(_ctx.stringValue("DisableSceneRuleResponse.Code"));
-		disableSceneRuleResponse.setErrorMessage(_ctx.stringValue("DisableSceneRuleResponse.ErrorMessage"));
 		disableSceneRuleResponse.setSuccess(_ctx.booleanValue("DisableSceneRuleResponse.Success"));
+		disableSceneRuleResponse.setErrorMessage(_ctx.stringValue("DisableSceneRuleResponse.ErrorMessage"));
+		disableSceneRuleResponse.setCode(_ctx.stringValue("DisableSceneRuleResponse.Code"));
 	 
 	 	return disableSceneRuleResponse;
 	}

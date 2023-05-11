@@ -23,9 +23,9 @@ public class UpdateEdgeDriverVersionResponseUnmarshaller {
 	public static UpdateEdgeDriverVersionResponse unmarshall(UpdateEdgeDriverVersionResponse updateEdgeDriverVersionResponse, UnmarshallerContext _ctx) {
 		
 		updateEdgeDriverVersionResponse.setRequestId(_ctx.stringValue("UpdateEdgeDriverVersionResponse.RequestId"));
+		updateEdgeDriverVersionResponse.setSuccess(_ctx.booleanValue("UpdateEdgeDriverVersionResponse.Success"));
 		updateEdgeDriverVersionResponse.setCode(_ctx.stringValue("UpdateEdgeDriverVersionResponse.Code"));
 		updateEdgeDriverVersionResponse.setErrorMessage(_ctx.stringValue("UpdateEdgeDriverVersionResponse.ErrorMessage"));
-		updateEdgeDriverVersionResponse.setSuccess(_ctx.booleanValue("UpdateEdgeDriverVersionResponse.Success"));
 	 
 	 	return updateEdgeDriverVersionResponse;
 	}

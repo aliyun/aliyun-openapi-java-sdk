@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QuerySummarySceneRuleLogResponse extends AcsResponse {
 
-	private String code;
-
 	private String requestId;
-
-	private String errorMessage;
 
 	private Boolean success;
 
+	private String errorMessage;
+
+	private String code;
+
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,6 +41,14 @@ public class QuerySummarySceneRuleLogResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public String getErrorMessage() {
@@ -59,12 +59,12 @@ public class QuerySummarySceneRuleLogResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Data getData() {
@@ -77,20 +77,20 @@ public class QuerySummarySceneRuleLogResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer currentPage;
+		private Integer total;
 
 		private Integer pageSize;
 
-		private Integer total;
+		private Integer currentPage;
 
 		private List<LogInfo> logList;
 
-		public Integer getCurrentPage() {
-			return this.currentPage;
+		public Integer getTotal() {
+			return this.total;
 		}
 
-		public void setCurrentPage(Integer currentPage) {
-			this.currentPage = currentPage;
+		public void setTotal(Integer total) {
+			this.total = total;
 		}
 
 		public Integer getPageSize() {
@@ -101,12 +101,12 @@ public class QuerySummarySceneRuleLogResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
-		public Integer getTotal() {
-			return this.total;
+		public Integer getCurrentPage() {
+			return this.currentPage;
 		}
 
-		public void setTotal(Integer total) {
-			this.total = total;
+		public void setCurrentPage(Integer currentPage) {
+			this.currentPage = currentPage;
 		}
 
 		public List<LogInfo> getLogList() {

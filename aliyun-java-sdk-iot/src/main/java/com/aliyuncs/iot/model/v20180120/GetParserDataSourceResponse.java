@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetParserDataSourceResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private DataSource dataSource;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -66,6 +50,22 @@ public class GetParserDataSourceResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public DataSource getDataSource() {
 		return this.dataSource;
 	}
@@ -76,22 +76,22 @@ public class GetParserDataSourceResponse extends AcsResponse {
 
 	public static class DataSource {
 
-		private String utcCreated;
+		private String name;
 
 		private String description;
 
-		private String name;
+		private Long dataSourceId;
+
+		private String utcCreated;
 
 		private Long createUserId;
 
-		private Long dataSourceId;
-
-		public String getUtcCreated() {
-			return this.utcCreated;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setUtcCreated(String utcCreated) {
-			this.utcCreated = utcCreated;
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public String getDescription() {
@@ -102,12 +102,20 @@ public class GetParserDataSourceResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getName() {
-			return this.name;
+		public Long getDataSourceId() {
+			return this.dataSourceId;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+		public void setDataSourceId(Long dataSourceId) {
+			this.dataSourceId = dataSourceId;
+		}
+
+		public String getUtcCreated() {
+			return this.utcCreated;
+		}
+
+		public void setUtcCreated(String utcCreated) {
+			this.utcCreated = utcCreated;
 		}
 
 		public Long getCreateUserId() {
@@ -116,14 +124,6 @@ public class GetParserDataSourceResponse extends AcsResponse {
 
 		public void setCreateUserId(Long createUserId) {
 			this.createUserId = createUserId;
-		}
-
-		public Long getDataSourceId() {
-			return this.dataSourceId;
-		}
-
-		public void setDataSourceId(Long dataSourceId) {
-			this.dataSourceId = dataSourceId;
 		}
 	}
 

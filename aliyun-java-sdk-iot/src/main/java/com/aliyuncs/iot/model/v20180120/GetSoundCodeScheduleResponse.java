@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetSoundCodeScheduleResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -66,6 +50,22 @@ public class GetSoundCodeScheduleResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -76,40 +76,56 @@ public class GetSoundCodeScheduleResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String openType;
+		private String scheduleCode;
 
-		private String endTime;
+		private String name;
+
+		private String description;
+
+		private Long gmtCreate;
 
 		private String status;
 
 		private String startTime;
 
-		private String endDate;
-
-		private String description;
-
-		private String scheduleCode;
-
-		private Long gmtCreate;
+		private String endTime;
 
 		private String startDate;
 
-		private String name;
+		private String endDate;
 
-		public String getOpenType() {
-			return this.openType;
+		private String openType;
+
+		public String getScheduleCode() {
+			return this.scheduleCode;
 		}
 
-		public void setOpenType(String openType) {
-			this.openType = openType;
+		public void setScheduleCode(String scheduleCode) {
+			this.scheduleCode = scheduleCode;
 		}
 
-		public String getEndTime() {
-			return this.endTime;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setEndTime(String endTime) {
-			this.endTime = endTime;
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public Long getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(Long gmtCreate) {
+			this.gmtCreate = gmtCreate;
 		}
 
 		public String getStatus() {
@@ -128,36 +144,12 @@ public class GetSoundCodeScheduleResponse extends AcsResponse {
 			this.startTime = startTime;
 		}
 
-		public String getEndDate() {
-			return this.endDate;
+		public String getEndTime() {
+			return this.endTime;
 		}
 
-		public void setEndDate(String endDate) {
-			this.endDate = endDate;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getScheduleCode() {
-			return this.scheduleCode;
-		}
-
-		public void setScheduleCode(String scheduleCode) {
-			this.scheduleCode = scheduleCode;
-		}
-
-		public Long getGmtCreate() {
-			return this.gmtCreate;
-		}
-
-		public void setGmtCreate(Long gmtCreate) {
-			this.gmtCreate = gmtCreate;
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
 		}
 
 		public String getStartDate() {
@@ -168,12 +160,20 @@ public class GetSoundCodeScheduleResponse extends AcsResponse {
 			this.startDate = startDate;
 		}
 
-		public String getName() {
-			return this.name;
+		public String getEndDate() {
+			return this.endDate;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+		public void setEndDate(String endDate) {
+			this.endDate = endDate;
+		}
+
+		public String getOpenType() {
+			return this.openType;
+		}
+
+		public void setOpenType(String openType) {
+			this.openType = openType;
 		}
 	}
 

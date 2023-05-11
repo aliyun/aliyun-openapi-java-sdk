@@ -28,22 +28,22 @@ public class QueryEdgeInstanceDeviceResponseUnmarshaller {
 	public static QueryEdgeInstanceDeviceResponse unmarshall(QueryEdgeInstanceDeviceResponse queryEdgeInstanceDeviceResponse, UnmarshallerContext _ctx) {
 		
 		queryEdgeInstanceDeviceResponse.setRequestId(_ctx.stringValue("QueryEdgeInstanceDeviceResponse.RequestId"));
+		queryEdgeInstanceDeviceResponse.setSuccess(_ctx.booleanValue("QueryEdgeInstanceDeviceResponse.Success"));
 		queryEdgeInstanceDeviceResponse.setCode(_ctx.stringValue("QueryEdgeInstanceDeviceResponse.Code"));
 		queryEdgeInstanceDeviceResponse.setErrorMessage(_ctx.stringValue("QueryEdgeInstanceDeviceResponse.ErrorMessage"));
-		queryEdgeInstanceDeviceResponse.setSuccess(_ctx.booleanValue("QueryEdgeInstanceDeviceResponse.Success"));
 
 		Data data = new Data();
-		data.setCurrentPage(_ctx.integerValue("QueryEdgeInstanceDeviceResponse.Data.CurrentPage"));
-		data.setPageSize(_ctx.integerValue("QueryEdgeInstanceDeviceResponse.Data.PageSize"));
 		data.setTotal(_ctx.integerValue("QueryEdgeInstanceDeviceResponse.Data.Total"));
+		data.setPageSize(_ctx.integerValue("QueryEdgeInstanceDeviceResponse.Data.PageSize"));
+		data.setCurrentPage(_ctx.integerValue("QueryEdgeInstanceDeviceResponse.Data.CurrentPage"));
 
 		List<Device> deviceList = new ArrayList<Device>();
 		for (int i = 0; i < _ctx.lengthValue("QueryEdgeInstanceDeviceResponse.Data.DeviceList.Length"); i++) {
 			Device device = new Device();
-			device.setProductKey(_ctx.stringValue("QueryEdgeInstanceDeviceResponse.Data.DeviceList["+ i +"].ProductKey"));
-			device.setDriverId(_ctx.stringValue("QueryEdgeInstanceDeviceResponse.Data.DeviceList["+ i +"].DriverId"));
-			device.setDeviceName(_ctx.stringValue("QueryEdgeInstanceDeviceResponse.Data.DeviceList["+ i +"].DeviceName"));
 			device.setIotId(_ctx.stringValue("QueryEdgeInstanceDeviceResponse.Data.DeviceList["+ i +"].IotId"));
+			device.setProductKey(_ctx.stringValue("QueryEdgeInstanceDeviceResponse.Data.DeviceList["+ i +"].ProductKey"));
+			device.setDeviceName(_ctx.stringValue("QueryEdgeInstanceDeviceResponse.Data.DeviceList["+ i +"].DeviceName"));
+			device.setDriverId(_ctx.stringValue("QueryEdgeInstanceDeviceResponse.Data.DeviceList["+ i +"].DriverId"));
 
 			deviceList.add(device);
 		}

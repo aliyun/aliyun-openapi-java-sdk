@@ -23,10 +23,10 @@ public class SetStudioProjectCooperationResponseUnmarshaller {
 	public static SetStudioProjectCooperationResponse unmarshall(SetStudioProjectCooperationResponse setStudioProjectCooperationResponse, UnmarshallerContext _ctx) {
 		
 		setStudioProjectCooperationResponse.setRequestId(_ctx.stringValue("SetStudioProjectCooperationResponse.RequestId"));
-		setStudioProjectCooperationResponse.setCode(_ctx.stringValue("SetStudioProjectCooperationResponse.Code"));
-		setStudioProjectCooperationResponse.setData(_ctx.booleanValue("SetStudioProjectCooperationResponse.Data"));
-		setStudioProjectCooperationResponse.setErrorMessage(_ctx.stringValue("SetStudioProjectCooperationResponse.ErrorMessage"));
 		setStudioProjectCooperationResponse.setSuccess(_ctx.booleanValue("SetStudioProjectCooperationResponse.Success"));
+		setStudioProjectCooperationResponse.setCode(_ctx.stringValue("SetStudioProjectCooperationResponse.Code"));
+		setStudioProjectCooperationResponse.setErrorMessage(_ctx.stringValue("SetStudioProjectCooperationResponse.ErrorMessage"));
+		setStudioProjectCooperationResponse.setData(_ctx.booleanValue("SetStudioProjectCooperationResponse.Data"));
 	 
 	 	return setStudioProjectCooperationResponse;
 	}

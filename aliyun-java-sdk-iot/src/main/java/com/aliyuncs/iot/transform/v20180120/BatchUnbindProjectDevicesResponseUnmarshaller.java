@@ -23,10 +23,10 @@ public class BatchUnbindProjectDevicesResponseUnmarshaller {
 	public static BatchUnbindProjectDevicesResponse unmarshall(BatchUnbindProjectDevicesResponse batchUnbindProjectDevicesResponse, UnmarshallerContext _ctx) {
 		
 		batchUnbindProjectDevicesResponse.setRequestId(_ctx.stringValue("BatchUnbindProjectDevicesResponse.RequestId"));
-		batchUnbindProjectDevicesResponse.setCode(_ctx.stringValue("BatchUnbindProjectDevicesResponse.Code"));
-		batchUnbindProjectDevicesResponse.setData(_ctx.booleanValue("BatchUnbindProjectDevicesResponse.Data"));
-		batchUnbindProjectDevicesResponse.setErrorMessage(_ctx.stringValue("BatchUnbindProjectDevicesResponse.ErrorMessage"));
 		batchUnbindProjectDevicesResponse.setSuccess(_ctx.booleanValue("BatchUnbindProjectDevicesResponse.Success"));
+		batchUnbindProjectDevicesResponse.setCode(_ctx.stringValue("BatchUnbindProjectDevicesResponse.Code"));
+		batchUnbindProjectDevicesResponse.setErrorMessage(_ctx.stringValue("BatchUnbindProjectDevicesResponse.ErrorMessage"));
+		batchUnbindProjectDevicesResponse.setData(_ctx.booleanValue("BatchUnbindProjectDevicesResponse.Data"));
 	 
 	 	return batchUnbindProjectDevicesResponse;
 	}

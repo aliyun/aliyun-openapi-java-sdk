@@ -23,9 +23,9 @@ public class BatchBindDeviceToEdgeInstanceWithDriverResponseUnmarshaller {
 	public static BatchBindDeviceToEdgeInstanceWithDriverResponse unmarshall(BatchBindDeviceToEdgeInstanceWithDriverResponse batchBindDeviceToEdgeInstanceWithDriverResponse, UnmarshallerContext _ctx) {
 		
 		batchBindDeviceToEdgeInstanceWithDriverResponse.setRequestId(_ctx.stringValue("BatchBindDeviceToEdgeInstanceWithDriverResponse.RequestId"));
+		batchBindDeviceToEdgeInstanceWithDriverResponse.setSuccess(_ctx.booleanValue("BatchBindDeviceToEdgeInstanceWithDriverResponse.Success"));
 		batchBindDeviceToEdgeInstanceWithDriverResponse.setCode(_ctx.stringValue("BatchBindDeviceToEdgeInstanceWithDriverResponse.Code"));
 		batchBindDeviceToEdgeInstanceWithDriverResponse.setErrorMessage(_ctx.stringValue("BatchBindDeviceToEdgeInstanceWithDriverResponse.ErrorMessage"));
-		batchBindDeviceToEdgeInstanceWithDriverResponse.setSuccess(_ctx.booleanValue("BatchBindDeviceToEdgeInstanceWithDriverResponse.Success"));
 	 
 	 	return batchBindDeviceToEdgeInstanceWithDriverResponse;
 	}

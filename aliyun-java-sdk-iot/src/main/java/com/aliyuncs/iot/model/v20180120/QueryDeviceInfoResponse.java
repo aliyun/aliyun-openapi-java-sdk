@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryDeviceInfoResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -66,6 +50,22 @@ public class QueryDeviceInfoResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -76,7 +76,7 @@ public class QueryDeviceInfoResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String nickname;
+		private String iotId;
 
 		private String productKey;
 
@@ -84,14 +84,14 @@ public class QueryDeviceInfoResponse extends AcsResponse {
 
 		private String deviceSecret;
 
-		private String iotId;
+		private String nickname;
 
-		public String getNickname() {
-			return this.nickname;
+		public String getIotId() {
+			return this.iotId;
 		}
 
-		public void setNickname(String nickname) {
-			this.nickname = nickname;
+		public void setIotId(String iotId) {
+			this.iotId = iotId;
 		}
 
 		public String getProductKey() {
@@ -118,12 +118,12 @@ public class QueryDeviceInfoResponse extends AcsResponse {
 			this.deviceSecret = deviceSecret;
 		}
 
-		public String getIotId() {
-			return this.iotId;
+		public String getNickname() {
+			return this.nickname;
 		}
 
-		public void setIotId(String iotId) {
-			this.iotId = iotId;
+		public void setNickname(String nickname) {
+			this.nickname = nickname;
 		}
 	}
 

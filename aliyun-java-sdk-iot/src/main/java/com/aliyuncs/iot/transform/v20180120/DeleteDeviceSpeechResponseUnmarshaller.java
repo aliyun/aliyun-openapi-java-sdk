@@ -23,9 +23,9 @@ public class DeleteDeviceSpeechResponseUnmarshaller {
 	public static DeleteDeviceSpeechResponse unmarshall(DeleteDeviceSpeechResponse deleteDeviceSpeechResponse, UnmarshallerContext _ctx) {
 		
 		deleteDeviceSpeechResponse.setRequestId(_ctx.stringValue("DeleteDeviceSpeechResponse.RequestId"));
+		deleteDeviceSpeechResponse.setSuccess(_ctx.booleanValue("DeleteDeviceSpeechResponse.Success"));
 		deleteDeviceSpeechResponse.setCode(_ctx.stringValue("DeleteDeviceSpeechResponse.Code"));
 		deleteDeviceSpeechResponse.setErrorMessage(_ctx.stringValue("DeleteDeviceSpeechResponse.ErrorMessage"));
-		deleteDeviceSpeechResponse.setSuccess(_ctx.booleanValue("DeleteDeviceSpeechResponse.Success"));
 	 
 	 	return deleteDeviceSpeechResponse;
 	}

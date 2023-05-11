@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryDeviceStatisticsResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -66,6 +50,22 @@ public class QueryDeviceStatisticsResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -78,9 +78,9 @@ public class QueryDeviceStatisticsResponse extends AcsResponse {
 
 		private Long deviceCount;
 
-		private Long activeCount;
-
 		private Long onlineCount;
+
+		private Long activeCount;
 
 		public Long getDeviceCount() {
 			return this.deviceCount;
@@ -90,20 +90,20 @@ public class QueryDeviceStatisticsResponse extends AcsResponse {
 			this.deviceCount = deviceCount;
 		}
 
-		public Long getActiveCount() {
-			return this.activeCount;
-		}
-
-		public void setActiveCount(Long activeCount) {
-			this.activeCount = activeCount;
-		}
-
 		public Long getOnlineCount() {
 			return this.onlineCount;
 		}
 
 		public void setOnlineCount(Long onlineCount) {
 			this.onlineCount = onlineCount;
+		}
+
+		public Long getActiveCount() {
+			return this.activeCount;
+		}
+
+		public void setActiveCount(Long activeCount) {
+			this.activeCount = activeCount;
 		}
 	}
 

@@ -23,9 +23,9 @@ public class DeleteDeviceDistributeJobResponseUnmarshaller {
 	public static DeleteDeviceDistributeJobResponse unmarshall(DeleteDeviceDistributeJobResponse deleteDeviceDistributeJobResponse, UnmarshallerContext _ctx) {
 		
 		deleteDeviceDistributeJobResponse.setRequestId(_ctx.stringValue("DeleteDeviceDistributeJobResponse.RequestId"));
+		deleteDeviceDistributeJobResponse.setSuccess(_ctx.booleanValue("DeleteDeviceDistributeJobResponse.Success"));
 		deleteDeviceDistributeJobResponse.setCode(_ctx.stringValue("DeleteDeviceDistributeJobResponse.Code"));
 		deleteDeviceDistributeJobResponse.setErrorMessage(_ctx.stringValue("DeleteDeviceDistributeJobResponse.ErrorMessage"));
-		deleteDeviceDistributeJobResponse.setSuccess(_ctx.booleanValue("DeleteDeviceDistributeJobResponse.Success"));
 	 
 	 	return deleteDeviceDistributeJobResponse;
 	}

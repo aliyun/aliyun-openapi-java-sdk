@@ -24,17 +24,17 @@ public class QueryConsumerGroupByGroupIdResponseUnmarshaller {
 	public static QueryConsumerGroupByGroupIdResponse unmarshall(QueryConsumerGroupByGroupIdResponse queryConsumerGroupByGroupIdResponse, UnmarshallerContext _ctx) {
 		
 		queryConsumerGroupByGroupIdResponse.setRequestId(_ctx.stringValue("QueryConsumerGroupByGroupIdResponse.RequestId"));
-		queryConsumerGroupByGroupIdResponse.setCode(_ctx.stringValue("QueryConsumerGroupByGroupIdResponse.Code"));
-		queryConsumerGroupByGroupIdResponse.setErrorMessage(_ctx.stringValue("QueryConsumerGroupByGroupIdResponse.ErrorMessage"));
 		queryConsumerGroupByGroupIdResponse.setSuccess(_ctx.booleanValue("QueryConsumerGroupByGroupIdResponse.Success"));
+		queryConsumerGroupByGroupIdResponse.setErrorMessage(_ctx.stringValue("QueryConsumerGroupByGroupIdResponse.ErrorMessage"));
+		queryConsumerGroupByGroupIdResponse.setCode(_ctx.stringValue("QueryConsumerGroupByGroupIdResponse.Code"));
 
 		Data data = new Data();
-		data.setAuthType(_ctx.stringValue("QueryConsumerGroupByGroupIdResponse.Data.AuthType"));
+		data.setIotId(_ctx.stringValue("QueryConsumerGroupByGroupIdResponse.Data.IotId"));
 		data.setGroupId(_ctx.stringValue("QueryConsumerGroupByGroupIdResponse.Data.GroupId"));
 		data.setGroupName(_ctx.stringValue("QueryConsumerGroupByGroupIdResponse.Data.GroupName"));
-		data.setCreateTime(_ctx.stringValue("QueryConsumerGroupByGroupIdResponse.Data.CreateTime"));
-		data.setIotId(_ctx.stringValue("QueryConsumerGroupByGroupIdResponse.Data.IotId"));
 		data.setCreator(_ctx.stringValue("QueryConsumerGroupByGroupIdResponse.Data.Creator"));
+		data.setCreateTime(_ctx.stringValue("QueryConsumerGroupByGroupIdResponse.Data.CreateTime"));
+		data.setAuthType(_ctx.stringValue("QueryConsumerGroupByGroupIdResponse.Data.AuthType"));
 		queryConsumerGroupByGroupIdResponse.setData(data);
 	 
 	 	return queryConsumerGroupByGroupIdResponse;

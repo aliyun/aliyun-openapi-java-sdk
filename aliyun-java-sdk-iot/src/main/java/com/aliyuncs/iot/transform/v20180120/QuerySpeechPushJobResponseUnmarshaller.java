@@ -28,34 +28,34 @@ public class QuerySpeechPushJobResponseUnmarshaller {
 	public static QuerySpeechPushJobResponse unmarshall(QuerySpeechPushJobResponse querySpeechPushJobResponse, UnmarshallerContext _ctx) {
 		
 		querySpeechPushJobResponse.setRequestId(_ctx.stringValue("QuerySpeechPushJobResponse.RequestId"));
+		querySpeechPushJobResponse.setSuccess(_ctx.booleanValue("QuerySpeechPushJobResponse.Success"));
 		querySpeechPushJobResponse.setCode(_ctx.stringValue("QuerySpeechPushJobResponse.Code"));
 		querySpeechPushJobResponse.setErrorMessage(_ctx.stringValue("QuerySpeechPushJobResponse.ErrorMessage"));
-		querySpeechPushJobResponse.setSuccess(_ctx.booleanValue("QuerySpeechPushJobResponse.Success"));
 
 		Data data = new Data();
-		data.setPageSize(_ctx.integerValue("QuerySpeechPushJobResponse.Data.PageSize"));
 		data.setTotal(_ctx.integerValue("QuerySpeechPushJobResponse.Data.Total"));
 		data.setPageId(_ctx.integerValue("QuerySpeechPushJobResponse.Data.PageId"));
+		data.setPageSize(_ctx.integerValue("QuerySpeechPushJobResponse.Data.PageSize"));
 
 		List<Items> list = new ArrayList<Items>();
 		for (int i = 0; i < _ctx.lengthValue("QuerySpeechPushJobResponse.Data.List.Length"); i++) {
 			Items items = new Items();
-			items.setStatus(_ctx.stringValue("QuerySpeechPushJobResponse.Data.List["+ i +"].Status"));
-			items.setSuccessDeviceNum(_ctx.integerValue("QuerySpeechPushJobResponse.Data.List["+ i +"].SuccessDeviceNum"));
-			items.setSpeechNum(_ctx.integerValue("QuerySpeechPushJobResponse.Data.List["+ i +"].SpeechNum"));
-			items.setDeviceName(_ctx.stringValue("QuerySpeechPushJobResponse.Data.List["+ i +"].DeviceName"));
-			items.setFailDeviceNum(_ctx.integerValue("QuerySpeechPushJobResponse.Data.List["+ i +"].FailDeviceNum"));
-			items.setPushMode(_ctx.stringValue("QuerySpeechPushJobResponse.Data.List["+ i +"].PushMode"));
-			items.setSpeechStatus(_ctx.booleanValue("QuerySpeechPushJobResponse.Data.List["+ i +"].SpeechStatus"));
-			items.setProductKey(_ctx.stringValue("QuerySpeechPushJobResponse.Data.List["+ i +"].ProductKey"));
-			items.setGroupName(_ctx.stringValue("QuerySpeechPushJobResponse.Data.List["+ i +"].GroupName"));
-			items.setGroupId(_ctx.stringValue("QuerySpeechPushJobResponse.Data.List["+ i +"].GroupId"));
-			items.setExpiredTime(_ctx.longValue("QuerySpeechPushJobResponse.Data.List["+ i +"].ExpiredTime"));
-			items.setRunningDeviceNum(_ctx.integerValue("QuerySpeechPushJobResponse.Data.List["+ i +"].RunningDeviceNum"));
 			items.setCode(_ctx.stringValue("QuerySpeechPushJobResponse.Data.List["+ i +"].Code"));
-			items.setTotalDeviceNum(_ctx.integerValue("QuerySpeechPushJobResponse.Data.List["+ i +"].TotalDeviceNum"));
-			items.setCreatedTime(_ctx.longValue("QuerySpeechPushJobResponse.Data.List["+ i +"].CreatedTime"));
+			items.setExpiredTime(_ctx.longValue("QuerySpeechPushJobResponse.Data.List["+ i +"].ExpiredTime"));
+			items.setPushMode(_ctx.stringValue("QuerySpeechPushJobResponse.Data.List["+ i +"].PushMode"));
 			items.setIotId(_ctx.stringValue("QuerySpeechPushJobResponse.Data.List["+ i +"].IotId"));
+			items.setStatus(_ctx.stringValue("QuerySpeechPushJobResponse.Data.List["+ i +"].Status"));
+			items.setCreatedTime(_ctx.longValue("QuerySpeechPushJobResponse.Data.List["+ i +"].CreatedTime"));
+			items.setTotalDeviceNum(_ctx.integerValue("QuerySpeechPushJobResponse.Data.List["+ i +"].TotalDeviceNum"));
+			items.setSuccessDeviceNum(_ctx.integerValue("QuerySpeechPushJobResponse.Data.List["+ i +"].SuccessDeviceNum"));
+			items.setSpeechStatus(_ctx.booleanValue("QuerySpeechPushJobResponse.Data.List["+ i +"].SpeechStatus"));
+			items.setFailDeviceNum(_ctx.integerValue("QuerySpeechPushJobResponse.Data.List["+ i +"].FailDeviceNum"));
+			items.setSpeechNum(_ctx.integerValue("QuerySpeechPushJobResponse.Data.List["+ i +"].SpeechNum"));
+			items.setRunningDeviceNum(_ctx.integerValue("QuerySpeechPushJobResponse.Data.List["+ i +"].RunningDeviceNum"));
+			items.setGroupId(_ctx.stringValue("QuerySpeechPushJobResponse.Data.List["+ i +"].GroupId"));
+			items.setGroupName(_ctx.stringValue("QuerySpeechPushJobResponse.Data.List["+ i +"].GroupName"));
+			items.setProductKey(_ctx.stringValue("QuerySpeechPushJobResponse.Data.List["+ i +"].ProductKey"));
+			items.setDeviceName(_ctx.stringValue("QuerySpeechPushJobResponse.Data.List["+ i +"].DeviceName"));
 
 			list.add(items);
 		}

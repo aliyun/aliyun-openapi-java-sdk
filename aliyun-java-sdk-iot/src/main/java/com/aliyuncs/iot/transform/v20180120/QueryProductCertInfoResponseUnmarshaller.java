@@ -24,9 +24,9 @@ public class QueryProductCertInfoResponseUnmarshaller {
 	public static QueryProductCertInfoResponse unmarshall(QueryProductCertInfoResponse queryProductCertInfoResponse, UnmarshallerContext _ctx) {
 		
 		queryProductCertInfoResponse.setRequestId(_ctx.stringValue("QueryProductCertInfoResponse.RequestId"));
+		queryProductCertInfoResponse.setSuccess(_ctx.booleanValue("QueryProductCertInfoResponse.Success"));
 		queryProductCertInfoResponse.setCode(_ctx.stringValue("QueryProductCertInfoResponse.Code"));
 		queryProductCertInfoResponse.setErrorMessage(_ctx.stringValue("QueryProductCertInfoResponse.ErrorMessage"));
-		queryProductCertInfoResponse.setSuccess(_ctx.booleanValue("QueryProductCertInfoResponse.Success"));
 
 		ProductCertInfo productCertInfo = new ProductCertInfo();
 		productCertInfo.setIssueModel(_ctx.integerValue("QueryProductCertInfoResponse.ProductCertInfo.IssueModel"));

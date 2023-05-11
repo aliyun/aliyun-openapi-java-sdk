@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryDeviceDistributeJobResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,6 +51,22 @@ public class QueryDeviceDistributeJobResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -77,48 +77,32 @@ public class QueryDeviceDistributeJobResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer strategy;
-
-		private Integer status;
-
-		private String productKey;
+		private String sourceUid;
 
 		private String targetUid;
 
+		private String sourceInstanceId;
+
 		private String jobId;
 
-		private Long gmtCreate;
-
-		private String sourceUid;
+		private String productKey;
 
 		private Integer total;
 
-		private String sourceInstanceId;
+		private Integer status;
+
+		private Long gmtCreate;
+
+		private Integer strategy;
 
 		private List<TargetInstanceConfigsItem> targetInstanceConfigs;
 
-		public Integer getStrategy() {
-			return this.strategy;
+		public String getSourceUid() {
+			return this.sourceUid;
 		}
 
-		public void setStrategy(Integer strategy) {
-			this.strategy = strategy;
-		}
-
-		public Integer getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(Integer status) {
-			this.status = status;
-		}
-
-		public String getProductKey() {
-			return this.productKey;
-		}
-
-		public void setProductKey(String productKey) {
-			this.productKey = productKey;
+		public void setSourceUid(String sourceUid) {
+			this.sourceUid = sourceUid;
 		}
 
 		public String getTargetUid() {
@@ -129,6 +113,14 @@ public class QueryDeviceDistributeJobResponse extends AcsResponse {
 			this.targetUid = targetUid;
 		}
 
+		public String getSourceInstanceId() {
+			return this.sourceInstanceId;
+		}
+
+		public void setSourceInstanceId(String sourceInstanceId) {
+			this.sourceInstanceId = sourceInstanceId;
+		}
+
 		public String getJobId() {
 			return this.jobId;
 		}
@@ -137,20 +129,12 @@ public class QueryDeviceDistributeJobResponse extends AcsResponse {
 			this.jobId = jobId;
 		}
 
-		public Long getGmtCreate() {
-			return this.gmtCreate;
+		public String getProductKey() {
+			return this.productKey;
 		}
 
-		public void setGmtCreate(Long gmtCreate) {
-			this.gmtCreate = gmtCreate;
-		}
-
-		public String getSourceUid() {
-			return this.sourceUid;
-		}
-
-		public void setSourceUid(String sourceUid) {
-			this.sourceUid = sourceUid;
+		public void setProductKey(String productKey) {
+			this.productKey = productKey;
 		}
 
 		public Integer getTotal() {
@@ -161,12 +145,28 @@ public class QueryDeviceDistributeJobResponse extends AcsResponse {
 			this.total = total;
 		}
 
-		public String getSourceInstanceId() {
-			return this.sourceInstanceId;
+		public Integer getStatus() {
+			return this.status;
 		}
 
-		public void setSourceInstanceId(String sourceInstanceId) {
-			this.sourceInstanceId = sourceInstanceId;
+		public void setStatus(Integer status) {
+			this.status = status;
+		}
+
+		public Long getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(Long gmtCreate) {
+			this.gmtCreate = gmtCreate;
+		}
+
+		public Integer getStrategy() {
+			return this.strategy;
+		}
+
+		public void setStrategy(Integer strategy) {
+			this.strategy = strategy;
 		}
 
 		public List<TargetInstanceConfigsItem> getTargetInstanceConfigs() {

@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryLicenseDeviceListResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -65,6 +49,22 @@ public class QueryLicenseDeviceListResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
 	public Data getData() {
@@ -119,26 +119,34 @@ public class QueryLicenseDeviceListResponse extends AcsResponse {
 
 		public static class Item {
 
-			private Long expiryTime;
-
-			private String productKey;
-
 			private String productName;
-
-			private String deviceName;
-
-			private Long gmtCreate;
 
 			private String licenseCode;
 
+			private String productKey;
+
+			private String deviceName;
+
+			private Long expiryTime;
+
+			private Long gmtCreate;
+
 			private String iotId;
 
-			public Long getExpiryTime() {
-				return this.expiryTime;
+			public String getProductName() {
+				return this.productName;
 			}
 
-			public void setExpiryTime(Long expiryTime) {
-				this.expiryTime = expiryTime;
+			public void setProductName(String productName) {
+				this.productName = productName;
+			}
+
+			public String getLicenseCode() {
+				return this.licenseCode;
+			}
+
+			public void setLicenseCode(String licenseCode) {
+				this.licenseCode = licenseCode;
 			}
 
 			public String getProductKey() {
@@ -149,14 +157,6 @@ public class QueryLicenseDeviceListResponse extends AcsResponse {
 				this.productKey = productKey;
 			}
 
-			public String getProductName() {
-				return this.productName;
-			}
-
-			public void setProductName(String productName) {
-				this.productName = productName;
-			}
-
 			public String getDeviceName() {
 				return this.deviceName;
 			}
@@ -165,20 +165,20 @@ public class QueryLicenseDeviceListResponse extends AcsResponse {
 				this.deviceName = deviceName;
 			}
 
+			public Long getExpiryTime() {
+				return this.expiryTime;
+			}
+
+			public void setExpiryTime(Long expiryTime) {
+				this.expiryTime = expiryTime;
+			}
+
 			public Long getGmtCreate() {
 				return this.gmtCreate;
 			}
 
 			public void setGmtCreate(Long gmtCreate) {
 				this.gmtCreate = gmtCreate;
-			}
-
-			public String getLicenseCode() {
-				return this.licenseCode;
-			}
-
-			public void setLicenseCode(String licenseCode) {
-				this.licenseCode = licenseCode;
 			}
 
 			public String getIotId() {

@@ -27,20 +27,20 @@ public class ListParserResponseUnmarshaller {
 	public static ListParserResponse unmarshall(ListParserResponse listParserResponse, UnmarshallerContext _ctx) {
 		
 		listParserResponse.setRequestId(_ctx.stringValue("ListParserResponse.RequestId"));
+		listParserResponse.setSuccess(_ctx.booleanValue("ListParserResponse.Success"));
 		listParserResponse.setCode(_ctx.stringValue("ListParserResponse.Code"));
 		listParserResponse.setErrorMessage(_ctx.stringValue("ListParserResponse.ErrorMessage"));
 		listParserResponse.setTotal(_ctx.integerValue("ListParserResponse.Total"));
-		listParserResponse.setSuccess(_ctx.booleanValue("ListParserResponse.Success"));
 
 		List<ParserList> data = new ArrayList<ParserList>();
 		for (int i = 0; i < _ctx.lengthValue("ListParserResponse.Data.Length"); i++) {
 			ParserList parserList = new ParserList();
-			parserList.setStatus(_ctx.stringValue("ListParserResponse.Data["+ i +"].Status"));
-			parserList.setDescription(_ctx.stringValue("ListParserResponse.Data["+ i +"].Description"));
-			parserList.setUtcModified(_ctx.stringValue("ListParserResponse.Data["+ i +"].UtcModified"));
 			parserList.setName(_ctx.stringValue("ListParserResponse.Data["+ i +"].Name"));
-			parserList.setUtcCreated(_ctx.stringValue("ListParserResponse.Data["+ i +"].UtcCreated"));
 			parserList.setParserId(_ctx.longValue("ListParserResponse.Data["+ i +"].ParserId"));
+			parserList.setDescription(_ctx.stringValue("ListParserResponse.Data["+ i +"].Description"));
+			parserList.setStatus(_ctx.stringValue("ListParserResponse.Data["+ i +"].Status"));
+			parserList.setUtcCreated(_ctx.stringValue("ListParserResponse.Data["+ i +"].UtcCreated"));
+			parserList.setUtcModified(_ctx.stringValue("ListParserResponse.Data["+ i +"].UtcModified"));
 
 			data.add(parserList);
 		}

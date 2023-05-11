@@ -27,15 +27,15 @@ public class CreateProductTagsResponseUnmarshaller {
 	public static CreateProductTagsResponse unmarshall(CreateProductTagsResponse createProductTagsResponse, UnmarshallerContext _ctx) {
 		
 		createProductTagsResponse.setRequestId(_ctx.stringValue("CreateProductTagsResponse.RequestId"));
-		createProductTagsResponse.setCode(_ctx.stringValue("CreateProductTagsResponse.Code"));
-		createProductTagsResponse.setErrorMessage(_ctx.stringValue("CreateProductTagsResponse.ErrorMessage"));
 		createProductTagsResponse.setSuccess(_ctx.booleanValue("CreateProductTagsResponse.Success"));
+		createProductTagsResponse.setErrorMessage(_ctx.stringValue("CreateProductTagsResponse.ErrorMessage"));
+		createProductTagsResponse.setCode(_ctx.stringValue("CreateProductTagsResponse.Code"));
 
 		List<ProductTag> invalidProductTags = new ArrayList<ProductTag>();
 		for (int i = 0; i < _ctx.lengthValue("CreateProductTagsResponse.InvalidProductTags.Length"); i++) {
 			ProductTag productTag = new ProductTag();
-			productTag.setTagValue(_ctx.stringValue("CreateProductTagsResponse.InvalidProductTags["+ i +"].TagValue"));
 			productTag.setTagKey(_ctx.stringValue("CreateProductTagsResponse.InvalidProductTags["+ i +"].TagKey"));
+			productTag.setTagValue(_ctx.stringValue("CreateProductTagsResponse.InvalidProductTags["+ i +"].TagValue"));
 
 			invalidProductTags.add(productTag);
 		}

@@ -24,19 +24,19 @@ public class GenerateDeviceNameListURLResponseUnmarshaller {
 	public static GenerateDeviceNameListURLResponse unmarshall(GenerateDeviceNameListURLResponse generateDeviceNameListURLResponse, UnmarshallerContext _ctx) {
 		
 		generateDeviceNameListURLResponse.setRequestId(_ctx.stringValue("GenerateDeviceNameListURLResponse.RequestId"));
+		generateDeviceNameListURLResponse.setSuccess(_ctx.booleanValue("GenerateDeviceNameListURLResponse.Success"));
 		generateDeviceNameListURLResponse.setCode(_ctx.stringValue("GenerateDeviceNameListURLResponse.Code"));
 		generateDeviceNameListURLResponse.setErrorMessage(_ctx.stringValue("GenerateDeviceNameListURLResponse.ErrorMessage"));
-		generateDeviceNameListURLResponse.setSuccess(_ctx.booleanValue("GenerateDeviceNameListURLResponse.Success"));
 
 		Data data = new Data();
 		data.setKey(_ctx.stringValue("GenerateDeviceNameListURLResponse.Data.Key"));
-		data.setSignature(_ctx.stringValue("GenerateDeviceNameListURLResponse.Data.Signature"));
 		data.setHost(_ctx.stringValue("GenerateDeviceNameListURLResponse.Data.Host"));
-		data.setFileUrl(_ctx.stringValue("GenerateDeviceNameListURLResponse.Data.FileUrl"));
 		data.setPolicy(_ctx.stringValue("GenerateDeviceNameListURLResponse.Data.Policy"));
-		data.setObjectStorage(_ctx.stringValue("GenerateDeviceNameListURLResponse.Data.ObjectStorage"));
-		data.setUtcCreate(_ctx.stringValue("GenerateDeviceNameListURLResponse.Data.UtcCreate"));
 		data.setAccessKeyId(_ctx.stringValue("GenerateDeviceNameListURLResponse.Data.AccessKeyId"));
+		data.setSignature(_ctx.stringValue("GenerateDeviceNameListURLResponse.Data.Signature"));
+		data.setFileUrl(_ctx.stringValue("GenerateDeviceNameListURLResponse.Data.FileUrl"));
+		data.setUtcCreate(_ctx.stringValue("GenerateDeviceNameListURLResponse.Data.UtcCreate"));
+		data.setObjectStorage(_ctx.stringValue("GenerateDeviceNameListURLResponse.Data.ObjectStorage"));
 		generateDeviceNameListURLResponse.setData(data);
 	 
 	 	return generateDeviceNameListURLResponse;

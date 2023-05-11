@@ -23,10 +23,10 @@ public class UnbindLicenseProductResponseUnmarshaller {
 	public static UnbindLicenseProductResponse unmarshall(UnbindLicenseProductResponse unbindLicenseProductResponse, UnmarshallerContext _ctx) {
 		
 		unbindLicenseProductResponse.setRequestId(_ctx.stringValue("UnbindLicenseProductResponse.RequestId"));
-		unbindLicenseProductResponse.setCode(_ctx.stringValue("UnbindLicenseProductResponse.Code"));
-		unbindLicenseProductResponse.setData(_ctx.booleanValue("UnbindLicenseProductResponse.Data"));
-		unbindLicenseProductResponse.setErrorMessage(_ctx.stringValue("UnbindLicenseProductResponse.ErrorMessage"));
 		unbindLicenseProductResponse.setSuccess(_ctx.booleanValue("UnbindLicenseProductResponse.Success"));
+		unbindLicenseProductResponse.setCode(_ctx.stringValue("UnbindLicenseProductResponse.Code"));
+		unbindLicenseProductResponse.setErrorMessage(_ctx.stringValue("UnbindLicenseProductResponse.ErrorMessage"));
+		unbindLicenseProductResponse.setData(_ctx.booleanValue("UnbindLicenseProductResponse.Data"));
 	 
 	 	return unbindLicenseProductResponse;
 	}

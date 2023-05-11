@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class SyncSpeechByCombinationResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -66,6 +50,22 @@ public class SyncSpeechByCombinationResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -76,19 +76,27 @@ public class SyncSpeechByCombinationResponse extends AcsResponse {
 
 	public static class Data {
 
+		private String id;
+
 		private Integer retryCount;
 
 		private Boolean success;
-
-		private String deviceErrorMessage;
 
 		private Integer maxRetryCount;
 
 		private String deviceErrorCode;
 
-		private String id;
+		private String deviceErrorMessage;
 
 		private String detail;
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
 
 		public Integer getRetryCount() {
 			return this.retryCount;
@@ -104,14 +112,6 @@ public class SyncSpeechByCombinationResponse extends AcsResponse {
 
 		public void setSuccess(Boolean success) {
 			this.success = success;
-		}
-
-		public String getDeviceErrorMessage() {
-			return this.deviceErrorMessage;
-		}
-
-		public void setDeviceErrorMessage(String deviceErrorMessage) {
-			this.deviceErrorMessage = deviceErrorMessage;
 		}
 
 		public Integer getMaxRetryCount() {
@@ -130,12 +130,12 @@ public class SyncSpeechByCombinationResponse extends AcsResponse {
 			this.deviceErrorCode = deviceErrorCode;
 		}
 
-		public String getId() {
-			return this.id;
+		public String getDeviceErrorMessage() {
+			return this.deviceErrorMessage;
 		}
 
-		public void setId(String id) {
-			this.id = id;
+		public void setDeviceErrorMessage(String deviceErrorMessage) {
+			this.deviceErrorMessage = deviceErrorMessage;
 		}
 
 		public String getDetail() {

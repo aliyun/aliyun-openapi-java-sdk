@@ -23,9 +23,9 @@ public class UpdateDeviceGroupResponseUnmarshaller {
 	public static UpdateDeviceGroupResponse unmarshall(UpdateDeviceGroupResponse updateDeviceGroupResponse, UnmarshallerContext _ctx) {
 		
 		updateDeviceGroupResponse.setRequestId(_ctx.stringValue("UpdateDeviceGroupResponse.RequestId"));
+		updateDeviceGroupResponse.setSuccess(_ctx.booleanValue("UpdateDeviceGroupResponse.Success"));
 		updateDeviceGroupResponse.setCode(_ctx.stringValue("UpdateDeviceGroupResponse.Code"));
 		updateDeviceGroupResponse.setErrorMessage(_ctx.stringValue("UpdateDeviceGroupResponse.ErrorMessage"));
-		updateDeviceGroupResponse.setSuccess(_ctx.booleanValue("UpdateDeviceGroupResponse.Success"));
 	 
 	 	return updateDeviceGroupResponse;
 	}

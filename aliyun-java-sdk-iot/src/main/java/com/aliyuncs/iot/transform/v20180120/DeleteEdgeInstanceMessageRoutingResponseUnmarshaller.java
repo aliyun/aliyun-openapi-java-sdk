@@ -23,9 +23,9 @@ public class DeleteEdgeInstanceMessageRoutingResponseUnmarshaller {
 	public static DeleteEdgeInstanceMessageRoutingResponse unmarshall(DeleteEdgeInstanceMessageRoutingResponse deleteEdgeInstanceMessageRoutingResponse, UnmarshallerContext _ctx) {
 		
 		deleteEdgeInstanceMessageRoutingResponse.setRequestId(_ctx.stringValue("DeleteEdgeInstanceMessageRoutingResponse.RequestId"));
+		deleteEdgeInstanceMessageRoutingResponse.setSuccess(_ctx.booleanValue("DeleteEdgeInstanceMessageRoutingResponse.Success"));
 		deleteEdgeInstanceMessageRoutingResponse.setCode(_ctx.stringValue("DeleteEdgeInstanceMessageRoutingResponse.Code"));
 		deleteEdgeInstanceMessageRoutingResponse.setErrorMessage(_ctx.stringValue("DeleteEdgeInstanceMessageRoutingResponse.ErrorMessage"));
-		deleteEdgeInstanceMessageRoutingResponse.setSuccess(_ctx.booleanValue("DeleteEdgeInstanceMessageRoutingResponse.Success"));
 	 
 	 	return deleteEdgeInstanceMessageRoutingResponse;
 	}

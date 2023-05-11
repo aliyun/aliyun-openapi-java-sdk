@@ -23,9 +23,9 @@ public class BindSceneRuleToEdgeInstanceResponseUnmarshaller {
 	public static BindSceneRuleToEdgeInstanceResponse unmarshall(BindSceneRuleToEdgeInstanceResponse bindSceneRuleToEdgeInstanceResponse, UnmarshallerContext _ctx) {
 		
 		bindSceneRuleToEdgeInstanceResponse.setRequestId(_ctx.stringValue("BindSceneRuleToEdgeInstanceResponse.RequestId"));
-		bindSceneRuleToEdgeInstanceResponse.setCode(_ctx.stringValue("BindSceneRuleToEdgeInstanceResponse.Code"));
-		bindSceneRuleToEdgeInstanceResponse.setErrorMessage(_ctx.stringValue("BindSceneRuleToEdgeInstanceResponse.ErrorMessage"));
 		bindSceneRuleToEdgeInstanceResponse.setSuccess(_ctx.booleanValue("BindSceneRuleToEdgeInstanceResponse.Success"));
+		bindSceneRuleToEdgeInstanceResponse.setErrorMessage(_ctx.stringValue("BindSceneRuleToEdgeInstanceResponse.ErrorMessage"));
+		bindSceneRuleToEdgeInstanceResponse.setCode(_ctx.stringValue("BindSceneRuleToEdgeInstanceResponse.Code"));
 	 
 	 	return bindSceneRuleToEdgeInstanceResponse;
 	}

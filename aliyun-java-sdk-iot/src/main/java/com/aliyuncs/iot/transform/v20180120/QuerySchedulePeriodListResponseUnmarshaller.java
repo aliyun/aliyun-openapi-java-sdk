@@ -28,23 +28,23 @@ public class QuerySchedulePeriodListResponseUnmarshaller {
 	public static QuerySchedulePeriodListResponse unmarshall(QuerySchedulePeriodListResponse querySchedulePeriodListResponse, UnmarshallerContext _ctx) {
 		
 		querySchedulePeriodListResponse.setRequestId(_ctx.stringValue("QuerySchedulePeriodListResponse.RequestId"));
+		querySchedulePeriodListResponse.setSuccess(_ctx.booleanValue("QuerySchedulePeriodListResponse.Success"));
 		querySchedulePeriodListResponse.setCode(_ctx.stringValue("QuerySchedulePeriodListResponse.Code"));
 		querySchedulePeriodListResponse.setErrorMessage(_ctx.stringValue("QuerySchedulePeriodListResponse.ErrorMessage"));
-		querySchedulePeriodListResponse.setSuccess(_ctx.booleanValue("QuerySchedulePeriodListResponse.Success"));
 
 		Data data = new Data();
-		data.setPageSize(_ctx.integerValue("QuerySchedulePeriodListResponse.Data.PageSize"));
 		data.setTotal(_ctx.integerValue("QuerySchedulePeriodListResponse.Data.Total"));
 		data.setPageId(_ctx.integerValue("QuerySchedulePeriodListResponse.Data.PageId"));
+		data.setPageSize(_ctx.integerValue("QuerySchedulePeriodListResponse.Data.PageSize"));
 
 		List<Items> list = new ArrayList<Items>();
 		for (int i = 0; i < _ctx.lengthValue("QuerySchedulePeriodListResponse.Data.List.Length"); i++) {
 			Items items = new Items();
-			items.setEndTime(_ctx.stringValue("QuerySchedulePeriodListResponse.Data.List["+ i +"].EndTime"));
-			items.setStartTime(_ctx.stringValue("QuerySchedulePeriodListResponse.Data.List["+ i +"].StartTime"));
+			items.setPeriodCode(_ctx.stringValue("QuerySchedulePeriodListResponse.Data.List["+ i +"].PeriodCode"));
 			items.setSoundCodeContent(_ctx.stringValue("QuerySchedulePeriodListResponse.Data.List["+ i +"].SoundCodeContent"));
 			items.setDescription(_ctx.stringValue("QuerySchedulePeriodListResponse.Data.List["+ i +"].Description"));
-			items.setPeriodCode(_ctx.stringValue("QuerySchedulePeriodListResponse.Data.List["+ i +"].PeriodCode"));
+			items.setStartTime(_ctx.stringValue("QuerySchedulePeriodListResponse.Data.List["+ i +"].StartTime"));
+			items.setEndTime(_ctx.stringValue("QuerySchedulePeriodListResponse.Data.List["+ i +"].EndTime"));
 
 			list.add(items);
 		}

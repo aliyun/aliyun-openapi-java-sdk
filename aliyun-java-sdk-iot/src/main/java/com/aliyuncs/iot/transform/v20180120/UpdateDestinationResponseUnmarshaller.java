@@ -23,9 +23,9 @@ public class UpdateDestinationResponseUnmarshaller {
 	public static UpdateDestinationResponse unmarshall(UpdateDestinationResponse updateDestinationResponse, UnmarshallerContext _ctx) {
 		
 		updateDestinationResponse.setRequestId(_ctx.stringValue("UpdateDestinationResponse.RequestId"));
+		updateDestinationResponse.setSuccess(_ctx.booleanValue("UpdateDestinationResponse.Success"));
 		updateDestinationResponse.setCode(_ctx.stringValue("UpdateDestinationResponse.Code"));
 		updateDestinationResponse.setErrorMessage(_ctx.stringValue("UpdateDestinationResponse.ErrorMessage"));
-		updateDestinationResponse.setSuccess(_ctx.booleanValue("UpdateDestinationResponse.Success"));
 	 
 	 	return updateDestinationResponse;
 	}

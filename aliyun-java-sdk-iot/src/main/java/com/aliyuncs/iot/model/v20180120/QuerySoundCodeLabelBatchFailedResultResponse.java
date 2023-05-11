@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QuerySoundCodeLabelBatchFailedResultResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private List<Items> data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,6 +51,22 @@ public class QuerySoundCodeLabelBatchFailedResultResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public List<Items> getData() {
 		return this.data;
 	}
@@ -79,9 +79,9 @@ public class QuerySoundCodeLabelBatchFailedResultResponse extends AcsResponse {
 
 		private String resultCode;
 
-		private String errorMessage;
-
 		private String label;
+
+		private String errorMessage;
 
 		public String getResultCode() {
 			return this.resultCode;
@@ -91,20 +91,20 @@ public class QuerySoundCodeLabelBatchFailedResultResponse extends AcsResponse {
 			this.resultCode = resultCode;
 		}
 
-		public String getErrorMessage() {
-			return this.errorMessage;
-		}
-
-		public void setErrorMessage(String errorMessage) {
-			this.errorMessage = errorMessage;
-		}
-
 		public String getLabel() {
 			return this.label;
 		}
 
 		public void setLabel(String label) {
 			this.label = label;
+		}
+
+		public String getErrorMessage() {
+			return this.errorMessage;
+		}
+
+		public void setErrorMessage(String errorMessage) {
+			this.errorMessage = errorMessage;
 		}
 	}
 

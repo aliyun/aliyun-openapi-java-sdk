@@ -27,9 +27,9 @@ public class QueryTopicReverseRouteTableResponseUnmarshaller {
 	public static QueryTopicReverseRouteTableResponse unmarshall(QueryTopicReverseRouteTableResponse queryTopicReverseRouteTableResponse, UnmarshallerContext _ctx) {
 		
 		queryTopicReverseRouteTableResponse.setRequestId(_ctx.stringValue("QueryTopicReverseRouteTableResponse.RequestId"));
+		queryTopicReverseRouteTableResponse.setSuccess(_ctx.booleanValue("QueryTopicReverseRouteTableResponse.Success"));
 		queryTopicReverseRouteTableResponse.setCode(_ctx.stringValue("QueryTopicReverseRouteTableResponse.Code"));
 		queryTopicReverseRouteTableResponse.setErrorMessage(_ctx.stringValue("QueryTopicReverseRouteTableResponse.ErrorMessage"));
-		queryTopicReverseRouteTableResponse.setSuccess(_ctx.booleanValue("QueryTopicReverseRouteTableResponse.Success"));
 
 		List<Map<Object, Object>> srcTopics = _ctx.listMapValue("QueryTopicReverseRouteTableResponse.SrcTopics");
 		queryTopicReverseRouteTableResponse.setSrcTopics(srcTopics);

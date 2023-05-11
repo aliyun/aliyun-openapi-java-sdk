@@ -23,9 +23,9 @@ public class WriteDevicesHotStorageDataResponseUnmarshaller {
 	public static WriteDevicesHotStorageDataResponse unmarshall(WriteDevicesHotStorageDataResponse writeDevicesHotStorageDataResponse, UnmarshallerContext _ctx) {
 		
 		writeDevicesHotStorageDataResponse.setRequestId(_ctx.stringValue("WriteDevicesHotStorageDataResponse.RequestId"));
-		writeDevicesHotStorageDataResponse.setCode(_ctx.stringValue("WriteDevicesHotStorageDataResponse.Code"));
-		writeDevicesHotStorageDataResponse.setErrorMessage(_ctx.stringValue("WriteDevicesHotStorageDataResponse.ErrorMessage"));
 		writeDevicesHotStorageDataResponse.setSuccess(_ctx.booleanValue("WriteDevicesHotStorageDataResponse.Success"));
+		writeDevicesHotStorageDataResponse.setErrorMessage(_ctx.stringValue("WriteDevicesHotStorageDataResponse.ErrorMessage"));
+		writeDevicesHotStorageDataResponse.setCode(_ctx.stringValue("WriteDevicesHotStorageDataResponse.Code"));
 	 
 	 	return writeDevicesHotStorageDataResponse;
 	}

@@ -23,9 +23,9 @@ public class UpdateSoundCodeScheduleResponseUnmarshaller {
 	public static UpdateSoundCodeScheduleResponse unmarshall(UpdateSoundCodeScheduleResponse updateSoundCodeScheduleResponse, UnmarshallerContext _ctx) {
 		
 		updateSoundCodeScheduleResponse.setRequestId(_ctx.stringValue("UpdateSoundCodeScheduleResponse.RequestId"));
+		updateSoundCodeScheduleResponse.setSuccess(_ctx.booleanValue("UpdateSoundCodeScheduleResponse.Success"));
 		updateSoundCodeScheduleResponse.setCode(_ctx.stringValue("UpdateSoundCodeScheduleResponse.Code"));
 		updateSoundCodeScheduleResponse.setErrorMessage(_ctx.stringValue("UpdateSoundCodeScheduleResponse.ErrorMessage"));
-		updateSoundCodeScheduleResponse.setSuccess(_ctx.booleanValue("UpdateSoundCodeScheduleResponse.Success"));
 	 
 	 	return updateSoundCodeScheduleResponse;
 	}

@@ -28,22 +28,22 @@ public class QueryDeviceEventDataResponseUnmarshaller {
 	public static QueryDeviceEventDataResponse unmarshall(QueryDeviceEventDataResponse queryDeviceEventDataResponse, UnmarshallerContext _ctx) {
 		
 		queryDeviceEventDataResponse.setRequestId(_ctx.stringValue("QueryDeviceEventDataResponse.RequestId"));
+		queryDeviceEventDataResponse.setSuccess(_ctx.booleanValue("QueryDeviceEventDataResponse.Success"));
 		queryDeviceEventDataResponse.setCode(_ctx.stringValue("QueryDeviceEventDataResponse.Code"));
 		queryDeviceEventDataResponse.setErrorMessage(_ctx.stringValue("QueryDeviceEventDataResponse.ErrorMessage"));
-		queryDeviceEventDataResponse.setSuccess(_ctx.booleanValue("QueryDeviceEventDataResponse.Success"));
 
 		Data data = new Data();
-		data.setNextValid(_ctx.booleanValue("QueryDeviceEventDataResponse.Data.NextValid"));
 		data.setNextTime(_ctx.longValue("QueryDeviceEventDataResponse.Data.NextTime"));
+		data.setNextValid(_ctx.booleanValue("QueryDeviceEventDataResponse.Data.NextValid"));
 
 		List<EventInfo> list = new ArrayList<EventInfo>();
 		for (int i = 0; i < _ctx.lengthValue("QueryDeviceEventDataResponse.Data.List.Length"); i++) {
 			EventInfo eventInfo = new EventInfo();
-			eventInfo.setIdentifier(_ctx.stringValue("QueryDeviceEventDataResponse.Data.List["+ i +"].Identifier"));
-			eventInfo.setOutputData(_ctx.stringValue("QueryDeviceEventDataResponse.Data.List["+ i +"].OutputData"));
 			eventInfo.setTime(_ctx.stringValue("QueryDeviceEventDataResponse.Data.List["+ i +"].Time"));
-			eventInfo.setEventType(_ctx.stringValue("QueryDeviceEventDataResponse.Data.List["+ i +"].EventType"));
+			eventInfo.setIdentifier(_ctx.stringValue("QueryDeviceEventDataResponse.Data.List["+ i +"].Identifier"));
 			eventInfo.setName(_ctx.stringValue("QueryDeviceEventDataResponse.Data.List["+ i +"].Name"));
+			eventInfo.setEventType(_ctx.stringValue("QueryDeviceEventDataResponse.Data.List["+ i +"].EventType"));
+			eventInfo.setOutputData(_ctx.stringValue("QueryDeviceEventDataResponse.Data.List["+ i +"].OutputData"));
 
 			list.add(eventInfo);
 		}

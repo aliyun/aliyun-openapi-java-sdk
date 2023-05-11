@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryDeviceTunnelResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -66,6 +50,22 @@ public class QueryDeviceTunnelResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -76,93 +76,29 @@ public class QueryDeviceTunnelResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String productName;
-
-		private String deviceName;
-
-		private String utcClosed;
-
-		private String deviceConnState;
-
-		private String utcCreated;
-
-		private String sourceConnState;
-
-		private String productKey;
-
-		private String description;
-
 		private String tunnelId;
 
 		private String tunnelState;
 
+		private String productKey;
+
+		private String deviceName;
+
 		private String iotId;
+
+		private String deviceConnState;
+
+		private String sourceConnState;
 
 		private String udi;
 
-		public String getProductName() {
-			return this.productName;
-		}
+		private String description;
 
-		public void setProductName(String productName) {
-			this.productName = productName;
-		}
+		private String utcCreated;
 
-		public String getDeviceName() {
-			return this.deviceName;
-		}
+		private String utcClosed;
 
-		public void setDeviceName(String deviceName) {
-			this.deviceName = deviceName;
-		}
-
-		public String getUtcClosed() {
-			return this.utcClosed;
-		}
-
-		public void setUtcClosed(String utcClosed) {
-			this.utcClosed = utcClosed;
-		}
-
-		public String getDeviceConnState() {
-			return this.deviceConnState;
-		}
-
-		public void setDeviceConnState(String deviceConnState) {
-			this.deviceConnState = deviceConnState;
-		}
-
-		public String getUtcCreated() {
-			return this.utcCreated;
-		}
-
-		public void setUtcCreated(String utcCreated) {
-			this.utcCreated = utcCreated;
-		}
-
-		public String getSourceConnState() {
-			return this.sourceConnState;
-		}
-
-		public void setSourceConnState(String sourceConnState) {
-			this.sourceConnState = sourceConnState;
-		}
-
-		public String getProductKey() {
-			return this.productKey;
-		}
-
-		public void setProductKey(String productKey) {
-			this.productKey = productKey;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
+		private String productName;
 
 		public String getTunnelId() {
 			return this.tunnelId;
@@ -180,6 +116,22 @@ public class QueryDeviceTunnelResponse extends AcsResponse {
 			this.tunnelState = tunnelState;
 		}
 
+		public String getProductKey() {
+			return this.productKey;
+		}
+
+		public void setProductKey(String productKey) {
+			this.productKey = productKey;
+		}
+
+		public String getDeviceName() {
+			return this.deviceName;
+		}
+
+		public void setDeviceName(String deviceName) {
+			this.deviceName = deviceName;
+		}
+
 		public String getIotId() {
 			return this.iotId;
 		}
@@ -188,12 +140,60 @@ public class QueryDeviceTunnelResponse extends AcsResponse {
 			this.iotId = iotId;
 		}
 
+		public String getDeviceConnState() {
+			return this.deviceConnState;
+		}
+
+		public void setDeviceConnState(String deviceConnState) {
+			this.deviceConnState = deviceConnState;
+		}
+
+		public String getSourceConnState() {
+			return this.sourceConnState;
+		}
+
+		public void setSourceConnState(String sourceConnState) {
+			this.sourceConnState = sourceConnState;
+		}
+
 		public String getUdi() {
 			return this.udi;
 		}
 
 		public void setUdi(String udi) {
 			this.udi = udi;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getUtcCreated() {
+			return this.utcCreated;
+		}
+
+		public void setUtcCreated(String utcCreated) {
+			this.utcCreated = utcCreated;
+		}
+
+		public String getUtcClosed() {
+			return this.utcClosed;
+		}
+
+		public void setUtcClosed(String utcClosed) {
+			this.utcClosed = utcClosed;
+		}
+
+		public String getProductName() {
+			return this.productName;
+		}
+
+		public void setProductName(String productName) {
+			this.productName = productName;
 		}
 	}
 

@@ -25,31 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListOTAJobByDeviceResponse extends AcsResponse {
 
-	private Integer currentPage;
-
 	private String requestId;
-
-	private String errorMessage;
 
 	private Boolean success;
 
 	private String code;
 
+	private String errorMessage;
+
+	private Integer total;
+
 	private Integer pageSize;
 
 	private Integer pageCount;
 
-	private Integer total;
+	private Integer currentPage;
 
 	private List<SimpleOTAJobInfo> data;
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -57,14 +49,6 @@ public class ListOTAJobByDeviceResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
 	}
 
 	public Boolean getSuccess() {
@@ -83,6 +67,22 @@ public class ListOTAJobByDeviceResponse extends AcsResponse {
 		this.code = code;
 	}
 
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
+	public Integer getTotal() {
+		return this.total;
+	}
+
+	public void setTotal(Integer total) {
+		this.total = total;
+	}
+
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -99,12 +99,12 @@ public class ListOTAJobByDeviceResponse extends AcsResponse {
 		this.pageCount = pageCount;
 	}
 
-	public Integer getTotal() {
-		return this.total;
+	public Integer getCurrentPage() {
+		return this.currentPage;
 	}
 
-	public void setTotal(Integer total) {
-		this.total = total;
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
 	}
 
 	public List<SimpleOTAJobInfo> getData() {
@@ -117,61 +117,29 @@ public class ListOTAJobByDeviceResponse extends AcsResponse {
 
 	public static class SimpleOTAJobInfo {
 
-		private String productKey;
-
-		private String jobStatus;
-
-		private String utcStartTime;
-
-		private String utcModified;
-
 		private String jobId;
 
 		private String utcCreate;
 
-		private String selectionType;
+		private String utcModified;
+
+		private String productKey;
+
+		private String firmwareId;
+
+		private String utcStartTime;
+
+		private String utcEndTime;
+
+		private String jobStatus;
 
 		private String jobType;
 
 		private String targetSelection;
 
-		private String utcEndTime;
-
-		private String firmwareId;
+		private String selectionType;
 
 		private List<OtaTagDTO> tags;
-
-		public String getProductKey() {
-			return this.productKey;
-		}
-
-		public void setProductKey(String productKey) {
-			this.productKey = productKey;
-		}
-
-		public String getJobStatus() {
-			return this.jobStatus;
-		}
-
-		public void setJobStatus(String jobStatus) {
-			this.jobStatus = jobStatus;
-		}
-
-		public String getUtcStartTime() {
-			return this.utcStartTime;
-		}
-
-		public void setUtcStartTime(String utcStartTime) {
-			this.utcStartTime = utcStartTime;
-		}
-
-		public String getUtcModified() {
-			return this.utcModified;
-		}
-
-		public void setUtcModified(String utcModified) {
-			this.utcModified = utcModified;
-		}
 
 		public String getJobId() {
 			return this.jobId;
@@ -189,12 +157,52 @@ public class ListOTAJobByDeviceResponse extends AcsResponse {
 			this.utcCreate = utcCreate;
 		}
 
-		public String getSelectionType() {
-			return this.selectionType;
+		public String getUtcModified() {
+			return this.utcModified;
 		}
 
-		public void setSelectionType(String selectionType) {
-			this.selectionType = selectionType;
+		public void setUtcModified(String utcModified) {
+			this.utcModified = utcModified;
+		}
+
+		public String getProductKey() {
+			return this.productKey;
+		}
+
+		public void setProductKey(String productKey) {
+			this.productKey = productKey;
+		}
+
+		public String getFirmwareId() {
+			return this.firmwareId;
+		}
+
+		public void setFirmwareId(String firmwareId) {
+			this.firmwareId = firmwareId;
+		}
+
+		public String getUtcStartTime() {
+			return this.utcStartTime;
+		}
+
+		public void setUtcStartTime(String utcStartTime) {
+			this.utcStartTime = utcStartTime;
+		}
+
+		public String getUtcEndTime() {
+			return this.utcEndTime;
+		}
+
+		public void setUtcEndTime(String utcEndTime) {
+			this.utcEndTime = utcEndTime;
+		}
+
+		public String getJobStatus() {
+			return this.jobStatus;
+		}
+
+		public void setJobStatus(String jobStatus) {
+			this.jobStatus = jobStatus;
 		}
 
 		public String getJobType() {
@@ -213,20 +221,12 @@ public class ListOTAJobByDeviceResponse extends AcsResponse {
 			this.targetSelection = targetSelection;
 		}
 
-		public String getUtcEndTime() {
-			return this.utcEndTime;
+		public String getSelectionType() {
+			return this.selectionType;
 		}
 
-		public void setUtcEndTime(String utcEndTime) {
-			this.utcEndTime = utcEndTime;
-		}
-
-		public String getFirmwareId() {
-			return this.firmwareId;
-		}
-
-		public void setFirmwareId(String firmwareId) {
-			this.firmwareId = firmwareId;
+		public void setSelectionType(String selectionType) {
+			this.selectionType = selectionType;
 		}
 
 		public List<OtaTagDTO> getTags() {

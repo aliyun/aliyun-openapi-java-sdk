@@ -72,8 +72,8 @@ public class BatchCheckVehicleDeviceRequest extends RpcAcsRequest<BatchCheckVehi
 			for (int depth1 = 0; depth1 < deviceLists.size(); depth1++) {
 				putBodyParameter("DeviceList." + (depth1 + 1) + ".DeviceName" , deviceLists.get(depth1).getDeviceName());
 				putBodyParameter("DeviceList." + (depth1 + 1) + ".DeviceId" , deviceLists.get(depth1).getDeviceId());
-				putBodyParameter("DeviceList." + (depth1 + 1) + ".DeviceModel" , deviceLists.get(depth1).getDeviceModel());
 				putBodyParameter("DeviceList." + (depth1 + 1) + ".Manufacturer" , deviceLists.get(depth1).getManufacturer());
+				putBodyParameter("DeviceList." + (depth1 + 1) + ".DeviceModel" , deviceLists.get(depth1).getDeviceModel());
 			}
 		}	
 	}
@@ -84,9 +84,9 @@ public class BatchCheckVehicleDeviceRequest extends RpcAcsRequest<BatchCheckVehi
 
 		private String deviceId;
 
-		private String deviceModel;
-
 		private String manufacturer;
+
+		private String deviceModel;
 
 		public String getDeviceName() {
 			return this.deviceName;
@@ -104,20 +104,20 @@ public class BatchCheckVehicleDeviceRequest extends RpcAcsRequest<BatchCheckVehi
 			this.deviceId = deviceId;
 		}
 
-		public String getDeviceModel() {
-			return this.deviceModel;
-		}
-
-		public void setDeviceModel(String deviceModel) {
-			this.deviceModel = deviceModel;
-		}
-
 		public String getManufacturer() {
 			return this.manufacturer;
 		}
 
 		public void setManufacturer(String manufacturer) {
 			this.manufacturer = manufacturer;
+		}
+
+		public String getDeviceModel() {
+			return this.deviceModel;
+		}
+
+		public void setDeviceModel(String deviceModel) {
+			this.deviceModel = deviceModel;
 		}
 	}
 

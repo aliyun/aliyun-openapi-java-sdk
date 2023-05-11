@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryDevicePropertyDataResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,6 +51,22 @@ public class QueryDevicePropertyDataResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -77,19 +77,11 @@ public class QueryDevicePropertyDataResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Long nextTime;
-
 		private Boolean nextValid;
 
+		private Long nextTime;
+
 		private List<PropertyInfo> list;
-
-		public Long getNextTime() {
-			return this.nextTime;
-		}
-
-		public void setNextTime(Long nextTime) {
-			this.nextTime = nextTime;
-		}
 
 		public Boolean getNextValid() {
 			return this.nextValid;
@@ -97,6 +89,14 @@ public class QueryDevicePropertyDataResponse extends AcsResponse {
 
 		public void setNextValid(Boolean nextValid) {
 			this.nextValid = nextValid;
+		}
+
+		public Long getNextTime() {
+			return this.nextTime;
+		}
+
+		public void setNextTime(Long nextTime) {
+			this.nextTime = nextTime;
 		}
 
 		public List<PropertyInfo> getList() {
@@ -109,17 +109,9 @@ public class QueryDevicePropertyDataResponse extends AcsResponse {
 
 		public static class PropertyInfo {
 
-			private String value;
-
 			private String time;
 
-			public String getValue() {
-				return this.value;
-			}
-
-			public void setValue(String value) {
-				this.value = value;
-			}
+			private String value;
 
 			public String getTime() {
 				return this.time;
@@ -127,6 +119,14 @@ public class QueryDevicePropertyDataResponse extends AcsResponse {
 
 			public void setTime(String time) {
 				this.time = time;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
 			}
 		}
 	}

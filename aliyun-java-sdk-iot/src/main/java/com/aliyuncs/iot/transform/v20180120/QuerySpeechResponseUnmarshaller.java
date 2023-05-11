@@ -25,19 +25,19 @@ public class QuerySpeechResponseUnmarshaller {
 	public static QuerySpeechResponse unmarshall(QuerySpeechResponse querySpeechResponse, UnmarshallerContext _ctx) {
 		
 		querySpeechResponse.setRequestId(_ctx.stringValue("QuerySpeechResponse.RequestId"));
+		querySpeechResponse.setSuccess(_ctx.booleanValue("QuerySpeechResponse.Success"));
 		querySpeechResponse.setCode(_ctx.stringValue("QuerySpeechResponse.Code"));
 		querySpeechResponse.setErrorMessage(_ctx.stringValue("QuerySpeechResponse.ErrorMessage"));
-		querySpeechResponse.setSuccess(_ctx.booleanValue("QuerySpeechResponse.Success"));
 
 		Data data = new Data();
-		data.setVoice(_ctx.stringValue("QuerySpeechResponse.Data.Voice"));
-		data.setBizCode(_ctx.stringValue("QuerySpeechResponse.Data.BizCode"));
 		data.setSpeechCode(_ctx.stringValue("QuerySpeechResponse.Data.SpeechCode"));
-		data.setSpeechType(_ctx.stringValue("QuerySpeechResponse.Data.SpeechType"));
-		data.setText(_ctx.stringValue("QuerySpeechResponse.Data.Text"));
-		data.setSpeechRate(_ctx.integerValue("QuerySpeechResponse.Data.SpeechRate"));
+		data.setBizCode(_ctx.stringValue("QuerySpeechResponse.Data.BizCode"));
+		data.setVoice(_ctx.stringValue("QuerySpeechResponse.Data.Voice"));
 		data.setVolume(_ctx.integerValue("QuerySpeechResponse.Data.Volume"));
+		data.setSpeechRate(_ctx.integerValue("QuerySpeechResponse.Data.SpeechRate"));
+		data.setText(_ctx.stringValue("QuerySpeechResponse.Data.Text"));
 		data.setAudioFormat(_ctx.stringValue("QuerySpeechResponse.Data.AudioFormat"));
+		data.setSpeechType(_ctx.stringValue("QuerySpeechResponse.Data.SpeechType"));
 		data.setEnableSoundCode(_ctx.booleanValue("QuerySpeechResponse.Data.EnableSoundCode"));
 
 		SoundCodeConfig soundCodeConfig = new SoundCodeConfig();

@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QuerySchedulePeriodListResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,6 +51,22 @@ public class QuerySchedulePeriodListResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -77,21 +77,13 @@ public class QuerySchedulePeriodListResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer pageSize;
-
 		private Integer total;
 
 		private Integer pageId;
 
+		private Integer pageSize;
+
 		private List<Items> list;
-
-		public Integer getPageSize() {
-			return this.pageSize;
-		}
-
-		public void setPageSize(Integer pageSize) {
-			this.pageSize = pageSize;
-		}
 
 		public Integer getTotal() {
 			return this.total;
@@ -109,6 +101,14 @@ public class QuerySchedulePeriodListResponse extends AcsResponse {
 			this.pageId = pageId;
 		}
 
+		public Integer getPageSize() {
+			return this.pageSize;
+		}
+
+		public void setPageSize(Integer pageSize) {
+			this.pageSize = pageSize;
+		}
+
 		public List<Items> getList() {
 			return this.list;
 		}
@@ -119,30 +119,22 @@ public class QuerySchedulePeriodListResponse extends AcsResponse {
 
 		public static class Items {
 
-			private String endTime;
-
-			private String startTime;
+			private String periodCode;
 
 			private String soundCodeContent;
 
 			private String description;
 
-			private String periodCode;
+			private String startTime;
 
-			public String getEndTime() {
-				return this.endTime;
+			private String endTime;
+
+			public String getPeriodCode() {
+				return this.periodCode;
 			}
 
-			public void setEndTime(String endTime) {
-				this.endTime = endTime;
-			}
-
-			public String getStartTime() {
-				return this.startTime;
-			}
-
-			public void setStartTime(String startTime) {
-				this.startTime = startTime;
+			public void setPeriodCode(String periodCode) {
+				this.periodCode = periodCode;
 			}
 
 			public String getSoundCodeContent() {
@@ -161,12 +153,20 @@ public class QuerySchedulePeriodListResponse extends AcsResponse {
 				this.description = description;
 			}
 
-			public String getPeriodCode() {
-				return this.periodCode;
+			public String getStartTime() {
+				return this.startTime;
 			}
 
-			public void setPeriodCode(String periodCode) {
-				this.periodCode = periodCode;
+			public void setStartTime(String startTime) {
+				this.startTime = startTime;
+			}
+
+			public String getEndTime() {
+				return this.endTime;
+			}
+
+			public void setEndTime(String endTime) {
+				this.endTime = endTime;
 			}
 		}
 	}

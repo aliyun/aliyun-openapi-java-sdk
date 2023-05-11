@@ -28,19 +28,19 @@ public class GisSearchDeviceTraceResponseUnmarshaller {
 	public static GisSearchDeviceTraceResponse unmarshall(GisSearchDeviceTraceResponse gisSearchDeviceTraceResponse, UnmarshallerContext _ctx) {
 		
 		gisSearchDeviceTraceResponse.setRequestId(_ctx.stringValue("GisSearchDeviceTraceResponse.RequestId"));
+		gisSearchDeviceTraceResponse.setSuccess(_ctx.booleanValue("GisSearchDeviceTraceResponse.Success"));
 		gisSearchDeviceTraceResponse.setCode(_ctx.stringValue("GisSearchDeviceTraceResponse.Code"));
 		gisSearchDeviceTraceResponse.setErrorMessage(_ctx.stringValue("GisSearchDeviceTraceResponse.ErrorMessage"));
-		gisSearchDeviceTraceResponse.setSuccess(_ctx.booleanValue("GisSearchDeviceTraceResponse.Success"));
 
 		Data data = new Data();
-		data.setDeviceName(_ctx.stringValue("GisSearchDeviceTraceResponse.Data.DeviceName"));
 		data.setProductKey(_ctx.stringValue("GisSearchDeviceTraceResponse.Data.ProductKey"));
+		data.setDeviceName(_ctx.stringValue("GisSearchDeviceTraceResponse.Data.DeviceName"));
 
 		List<PointsItem> points = new ArrayList<PointsItem>();
 		for (int i = 0; i < _ctx.lengthValue("GisSearchDeviceTraceResponse.Data.Points.Length"); i++) {
 			PointsItem pointsItem = new PointsItem();
-			pointsItem.setLocateTime(_ctx.longValue("GisSearchDeviceTraceResponse.Data.Points["+ i +"].LocateTime"));
 			pointsItem.setLocation(_ctx.stringValue("GisSearchDeviceTraceResponse.Data.Points["+ i +"].Location"));
+			pointsItem.setLocateTime(_ctx.longValue("GisSearchDeviceTraceResponse.Data.Points["+ i +"].LocateTime"));
 
 			points.add(pointsItem);
 		}

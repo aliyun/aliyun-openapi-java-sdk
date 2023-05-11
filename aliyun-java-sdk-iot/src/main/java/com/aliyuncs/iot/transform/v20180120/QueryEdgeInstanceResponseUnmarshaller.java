@@ -28,34 +28,34 @@ public class QueryEdgeInstanceResponseUnmarshaller {
 	public static QueryEdgeInstanceResponse unmarshall(QueryEdgeInstanceResponse queryEdgeInstanceResponse, UnmarshallerContext _ctx) {
 		
 		queryEdgeInstanceResponse.setRequestId(_ctx.stringValue("QueryEdgeInstanceResponse.RequestId"));
+		queryEdgeInstanceResponse.setSuccess(_ctx.booleanValue("QueryEdgeInstanceResponse.Success"));
 		queryEdgeInstanceResponse.setCode(_ctx.stringValue("QueryEdgeInstanceResponse.Code"));
 		queryEdgeInstanceResponse.setErrorMessage(_ctx.stringValue("QueryEdgeInstanceResponse.ErrorMessage"));
-		queryEdgeInstanceResponse.setSuccess(_ctx.booleanValue("QueryEdgeInstanceResponse.Success"));
 
 		Data data = new Data();
-		data.setCurrentPage(_ctx.integerValue("QueryEdgeInstanceResponse.Data.CurrentPage"));
-		data.setPageSize(_ctx.integerValue("QueryEdgeInstanceResponse.Data.PageSize"));
 		data.setTotal(_ctx.integerValue("QueryEdgeInstanceResponse.Data.Total"));
+		data.setPageSize(_ctx.integerValue("QueryEdgeInstanceResponse.Data.PageSize"));
+		data.setCurrentPage(_ctx.integerValue("QueryEdgeInstanceResponse.Data.CurrentPage"));
 
 		List<Instance> instanceList = new ArrayList<Instance>();
 		for (int i = 0; i < _ctx.lengthValue("QueryEdgeInstanceResponse.Data.InstanceList.Length"); i++) {
 			Instance instance = new Instance();
-			instance.setGmtCreateTimestamp(_ctx.longValue("QueryEdgeInstanceResponse.Data.InstanceList["+ i +"].GmtCreateTimestamp"));
+			instance.setInstanceId(_ctx.stringValue("QueryEdgeInstanceResponse.Data.InstanceList["+ i +"].InstanceId"));
+			instance.setName(_ctx.stringValue("QueryEdgeInstanceResponse.Data.InstanceList["+ i +"].Name"));
+			instance.setTags(_ctx.stringValue("QueryEdgeInstanceResponse.Data.InstanceList["+ i +"].Tags"));
 			instance.setType(_ctx.integerValue("QueryEdgeInstanceResponse.Data.InstanceList["+ i +"].Type"));
+			instance.setGmtCreate(_ctx.stringValue("QueryEdgeInstanceResponse.Data.InstanceList["+ i +"].GmtCreate"));
+			instance.setGmtModified(_ctx.stringValue("QueryEdgeInstanceResponse.Data.InstanceList["+ i +"].GmtModified"));
 			instance.setRoleArn(_ctx.stringValue("QueryEdgeInstanceResponse.Data.InstanceList["+ i +"].RoleArn"));
+			instance.setRoleName(_ctx.stringValue("QueryEdgeInstanceResponse.Data.InstanceList["+ i +"].RoleName"));
 			instance.setRoleAttachTime(_ctx.stringValue("QueryEdgeInstanceResponse.Data.InstanceList["+ i +"].RoleAttachTime"));
 			instance.setSpec(_ctx.integerValue("QueryEdgeInstanceResponse.Data.InstanceList["+ i +"].Spec"));
-			instance.setGmtModifiedTimestamp(_ctx.longValue("QueryEdgeInstanceResponse.Data.InstanceList["+ i +"].GmtModifiedTimestamp"));
-			instance.setTags(_ctx.stringValue("QueryEdgeInstanceResponse.Data.InstanceList["+ i +"].Tags"));
-			instance.setInstanceId(_ctx.stringValue("QueryEdgeInstanceResponse.Data.InstanceList["+ i +"].InstanceId"));
-			instance.setRoleName(_ctx.stringValue("QueryEdgeInstanceResponse.Data.InstanceList["+ i +"].RoleName"));
-			instance.setRoleAttachTimestamp(_ctx.longValue("QueryEdgeInstanceResponse.Data.InstanceList["+ i +"].RoleAttachTimestamp"));
-			instance.setGmtModified(_ctx.stringValue("QueryEdgeInstanceResponse.Data.InstanceList["+ i +"].GmtModified"));
-			instance.setLatestDeploymentType(_ctx.stringValue("QueryEdgeInstanceResponse.Data.InstanceList["+ i +"].LatestDeploymentType"));
-			instance.setLatestDeploymentStatus(_ctx.integerValue("QueryEdgeInstanceResponse.Data.InstanceList["+ i +"].LatestDeploymentStatus"));
 			instance.setBizEnable(_ctx.booleanValue("QueryEdgeInstanceResponse.Data.InstanceList["+ i +"].BizEnable"));
-			instance.setGmtCreate(_ctx.stringValue("QueryEdgeInstanceResponse.Data.InstanceList["+ i +"].GmtCreate"));
-			instance.setName(_ctx.stringValue("QueryEdgeInstanceResponse.Data.InstanceList["+ i +"].Name"));
+			instance.setLatestDeploymentStatus(_ctx.integerValue("QueryEdgeInstanceResponse.Data.InstanceList["+ i +"].LatestDeploymentStatus"));
+			instance.setLatestDeploymentType(_ctx.stringValue("QueryEdgeInstanceResponse.Data.InstanceList["+ i +"].LatestDeploymentType"));
+			instance.setGmtCreateTimestamp(_ctx.longValue("QueryEdgeInstanceResponse.Data.InstanceList["+ i +"].GmtCreateTimestamp"));
+			instance.setGmtModifiedTimestamp(_ctx.longValue("QueryEdgeInstanceResponse.Data.InstanceList["+ i +"].GmtModifiedTimestamp"));
+			instance.setRoleAttachTimestamp(_ctx.longValue("QueryEdgeInstanceResponse.Data.InstanceList["+ i +"].RoleAttachTimestamp"));
 
 			instanceList.add(instance);
 		}

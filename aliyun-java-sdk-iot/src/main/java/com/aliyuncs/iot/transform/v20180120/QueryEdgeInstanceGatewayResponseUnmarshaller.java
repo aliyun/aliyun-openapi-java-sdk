@@ -27,17 +27,17 @@ public class QueryEdgeInstanceGatewayResponseUnmarshaller {
 	public static QueryEdgeInstanceGatewayResponse unmarshall(QueryEdgeInstanceGatewayResponse queryEdgeInstanceGatewayResponse, UnmarshallerContext _ctx) {
 		
 		queryEdgeInstanceGatewayResponse.setRequestId(_ctx.stringValue("QueryEdgeInstanceGatewayResponse.RequestId"));
+		queryEdgeInstanceGatewayResponse.setSuccess(_ctx.booleanValue("QueryEdgeInstanceGatewayResponse.Success"));
 		queryEdgeInstanceGatewayResponse.setCode(_ctx.stringValue("QueryEdgeInstanceGatewayResponse.Code"));
 		queryEdgeInstanceGatewayResponse.setErrorMessage(_ctx.stringValue("QueryEdgeInstanceGatewayResponse.ErrorMessage"));
-		queryEdgeInstanceGatewayResponse.setSuccess(_ctx.booleanValue("QueryEdgeInstanceGatewayResponse.Success"));
 
 		List<Gateway> gatewayList = new ArrayList<Gateway>();
 		for (int i = 0; i < _ctx.lengthValue("QueryEdgeInstanceGatewayResponse.GatewayList.Length"); i++) {
 			Gateway gateway = new Gateway();
 			gateway.setProductKey(_ctx.stringValue("QueryEdgeInstanceGatewayResponse.GatewayList["+ i +"].ProductKey"));
-			gateway.setEdgeVersion(_ctx.stringValue("QueryEdgeInstanceGatewayResponse.GatewayList["+ i +"].EdgeVersion"));
 			gateway.setDeviceName(_ctx.stringValue("QueryEdgeInstanceGatewayResponse.GatewayList["+ i +"].DeviceName"));
 			gateway.setIotId(_ctx.stringValue("QueryEdgeInstanceGatewayResponse.GatewayList["+ i +"].IotId"));
+			gateway.setEdgeVersion(_ctx.stringValue("QueryEdgeInstanceGatewayResponse.GatewayList["+ i +"].EdgeVersion"));
 
 			gatewayList.add(gateway);
 		}

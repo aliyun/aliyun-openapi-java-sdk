@@ -23,9 +23,9 @@ public class CreateThingScriptResponseUnmarshaller {
 	public static CreateThingScriptResponse unmarshall(CreateThingScriptResponse createThingScriptResponse, UnmarshallerContext _ctx) {
 		
 		createThingScriptResponse.setRequestId(_ctx.stringValue("CreateThingScriptResponse.RequestId"));
+		createThingScriptResponse.setSuccess(_ctx.booleanValue("CreateThingScriptResponse.Success"));
 		createThingScriptResponse.setCode(_ctx.stringValue("CreateThingScriptResponse.Code"));
 		createThingScriptResponse.setErrorMessage(_ctx.stringValue("CreateThingScriptResponse.ErrorMessage"));
-		createThingScriptResponse.setSuccess(_ctx.booleanValue("CreateThingScriptResponse.Success"));
 	 
 	 	return createThingScriptResponse;
 	}

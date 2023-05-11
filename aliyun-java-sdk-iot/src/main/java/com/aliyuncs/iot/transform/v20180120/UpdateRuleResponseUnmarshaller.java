@@ -23,9 +23,9 @@ public class UpdateRuleResponseUnmarshaller {
 	public static UpdateRuleResponse unmarshall(UpdateRuleResponse updateRuleResponse, UnmarshallerContext _ctx) {
 		
 		updateRuleResponse.setRequestId(_ctx.stringValue("UpdateRuleResponse.RequestId"));
+		updateRuleResponse.setSuccess(_ctx.booleanValue("UpdateRuleResponse.Success"));
 		updateRuleResponse.setCode(_ctx.stringValue("UpdateRuleResponse.Code"));
 		updateRuleResponse.setErrorMessage(_ctx.stringValue("UpdateRuleResponse.ErrorMessage"));
-		updateRuleResponse.setSuccess(_ctx.booleanValue("UpdateRuleResponse.Success"));
 	 
 	 	return updateRuleResponse;
 	}

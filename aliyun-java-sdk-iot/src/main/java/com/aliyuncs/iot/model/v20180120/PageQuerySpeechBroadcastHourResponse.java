@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class PageQuerySpeechBroadcastHourResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,6 +51,22 @@ public class PageQuerySpeechBroadcastHourResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -77,9 +77,9 @@ public class PageQuerySpeechBroadcastHourResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer pageSize;
-
 		private Integer pageId;
+
+		private Integer pageSize;
 
 		private Integer total;
 
@@ -87,20 +87,20 @@ public class PageQuerySpeechBroadcastHourResponse extends AcsResponse {
 
 		private List<Data1> resultData;
 
-		public Integer getPageSize() {
-			return this.pageSize;
-		}
-
-		public void setPageSize(Integer pageSize) {
-			this.pageSize = pageSize;
-		}
-
 		public Integer getPageId() {
 			return this.pageId;
 		}
 
 		public void setPageId(Integer pageId) {
 			this.pageId = pageId;
+		}
+
+		public Integer getPageSize() {
+			return this.pageSize;
+		}
+
+		public void setPageSize(Integer pageSize) {
+			this.pageSize = pageSize;
 		}
 
 		public Integer getTotal() {
@@ -129,37 +129,21 @@ public class PageQuerySpeechBroadcastHourResponse extends AcsResponse {
 
 		public static class Data1 {
 
-			private String msg;
-
-			private Long startTime;
-
 			private String productKey;
 
 			private String deviceName;
 
 			private String shareTaskCode;
 
-			private String speechId;
+			private String speechs;
 
 			private Integer code;
 
-			private String speechs;
+			private String msg;
 
-			public String getMsg() {
-				return this.msg;
-			}
+			private String speechId;
 
-			public void setMsg(String msg) {
-				this.msg = msg;
-			}
-
-			public Long getStartTime() {
-				return this.startTime;
-			}
-
-			public void setStartTime(Long startTime) {
-				this.startTime = startTime;
-			}
+			private Long startTime;
 
 			public String getProductKey() {
 				return this.productKey;
@@ -185,12 +169,12 @@ public class PageQuerySpeechBroadcastHourResponse extends AcsResponse {
 				this.shareTaskCode = shareTaskCode;
 			}
 
-			public String getSpeechId() {
-				return this.speechId;
+			public String getSpeechs() {
+				return this.speechs;
 			}
 
-			public void setSpeechId(String speechId) {
-				this.speechId = speechId;
+			public void setSpeechs(String speechs) {
+				this.speechs = speechs;
 			}
 
 			public Integer getCode() {
@@ -201,12 +185,28 @@ public class PageQuerySpeechBroadcastHourResponse extends AcsResponse {
 				this.code = code;
 			}
 
-			public String getSpeechs() {
-				return this.speechs;
+			public String getMsg() {
+				return this.msg;
 			}
 
-			public void setSpeechs(String speechs) {
-				this.speechs = speechs;
+			public void setMsg(String msg) {
+				this.msg = msg;
+			}
+
+			public String getSpeechId() {
+				return this.speechId;
+			}
+
+			public void setSpeechId(String speechId) {
+				this.speechId = speechId;
+			}
+
+			public Long getStartTime() {
+				return this.startTime;
+			}
+
+			public void setStartTime(Long startTime) {
+				this.startTime = startTime;
 			}
 		}
 	}

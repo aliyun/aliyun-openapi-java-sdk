@@ -23,9 +23,9 @@ public class UpdateProductTopicResponseUnmarshaller {
 	public static UpdateProductTopicResponse unmarshall(UpdateProductTopicResponse updateProductTopicResponse, UnmarshallerContext _ctx) {
 		
 		updateProductTopicResponse.setRequestId(_ctx.stringValue("UpdateProductTopicResponse.RequestId"));
+		updateProductTopicResponse.setSuccess(_ctx.booleanValue("UpdateProductTopicResponse.Success"));
 		updateProductTopicResponse.setCode(_ctx.stringValue("UpdateProductTopicResponse.Code"));
 		updateProductTopicResponse.setErrorMessage(_ctx.stringValue("UpdateProductTopicResponse.ErrorMessage"));
-		updateProductTopicResponse.setSuccess(_ctx.booleanValue("UpdateProductTopicResponse.Success"));
 	 
 	 	return updateProductTopicResponse;
 	}

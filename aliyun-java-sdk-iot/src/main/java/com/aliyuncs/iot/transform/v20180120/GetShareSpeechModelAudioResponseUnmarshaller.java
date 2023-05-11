@@ -26,9 +26,9 @@ public class GetShareSpeechModelAudioResponseUnmarshaller {
 	public static GetShareSpeechModelAudioResponse unmarshall(GetShareSpeechModelAudioResponse getShareSpeechModelAudioResponse, UnmarshallerContext _ctx) {
 		
 		getShareSpeechModelAudioResponse.setRequestId(_ctx.stringValue("GetShareSpeechModelAudioResponse.RequestId"));
+		getShareSpeechModelAudioResponse.setSuccess(_ctx.booleanValue("GetShareSpeechModelAudioResponse.Success"));
 		getShareSpeechModelAudioResponse.setCode(_ctx.stringValue("GetShareSpeechModelAudioResponse.Code"));
 		getShareSpeechModelAudioResponse.setErrorMessage(_ctx.stringValue("GetShareSpeechModelAudioResponse.ErrorMessage"));
-		getShareSpeechModelAudioResponse.setSuccess(_ctx.booleanValue("GetShareSpeechModelAudioResponse.Success"));
 
 		List<String> data = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetShareSpeechModelAudioResponse.Data.Length"); i++) {

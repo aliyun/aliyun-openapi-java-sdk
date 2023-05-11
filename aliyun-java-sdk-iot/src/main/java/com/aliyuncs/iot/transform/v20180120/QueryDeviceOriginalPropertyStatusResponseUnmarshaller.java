@@ -28,13 +28,13 @@ public class QueryDeviceOriginalPropertyStatusResponseUnmarshaller {
 	public static QueryDeviceOriginalPropertyStatusResponse unmarshall(QueryDeviceOriginalPropertyStatusResponse queryDeviceOriginalPropertyStatusResponse, UnmarshallerContext _ctx) {
 		
 		queryDeviceOriginalPropertyStatusResponse.setRequestId(_ctx.stringValue("QueryDeviceOriginalPropertyStatusResponse.RequestId"));
+		queryDeviceOriginalPropertyStatusResponse.setSuccess(_ctx.booleanValue("QueryDeviceOriginalPropertyStatusResponse.Success"));
 		queryDeviceOriginalPropertyStatusResponse.setCode(_ctx.stringValue("QueryDeviceOriginalPropertyStatusResponse.Code"));
 		queryDeviceOriginalPropertyStatusResponse.setErrorMessage(_ctx.stringValue("QueryDeviceOriginalPropertyStatusResponse.ErrorMessage"));
-		queryDeviceOriginalPropertyStatusResponse.setSuccess(_ctx.booleanValue("QueryDeviceOriginalPropertyStatusResponse.Success"));
 
 		Data data = new Data();
-		data.setNextPageToken(_ctx.stringValue("QueryDeviceOriginalPropertyStatusResponse.Data.NextPageToken"));
 		data.setNextValid(_ctx.booleanValue("QueryDeviceOriginalPropertyStatusResponse.Data.NextValid"));
+		data.setNextPageToken(_ctx.stringValue("QueryDeviceOriginalPropertyStatusResponse.Data.NextPageToken"));
 
 		List<PropertyStatusDataInfo> list = new ArrayList<PropertyStatusDataInfo>();
 		for (int i = 0; i < _ctx.lengthValue("QueryDeviceOriginalPropertyStatusResponse.Data.List.Length"); i++) {

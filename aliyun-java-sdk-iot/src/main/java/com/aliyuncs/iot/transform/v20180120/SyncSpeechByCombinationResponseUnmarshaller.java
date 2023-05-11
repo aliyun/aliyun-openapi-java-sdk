@@ -24,17 +24,17 @@ public class SyncSpeechByCombinationResponseUnmarshaller {
 	public static SyncSpeechByCombinationResponse unmarshall(SyncSpeechByCombinationResponse syncSpeechByCombinationResponse, UnmarshallerContext _ctx) {
 		
 		syncSpeechByCombinationResponse.setRequestId(_ctx.stringValue("SyncSpeechByCombinationResponse.RequestId"));
+		syncSpeechByCombinationResponse.setSuccess(_ctx.booleanValue("SyncSpeechByCombinationResponse.Success"));
 		syncSpeechByCombinationResponse.setCode(_ctx.stringValue("SyncSpeechByCombinationResponse.Code"));
 		syncSpeechByCombinationResponse.setErrorMessage(_ctx.stringValue("SyncSpeechByCombinationResponse.ErrorMessage"));
-		syncSpeechByCombinationResponse.setSuccess(_ctx.booleanValue("SyncSpeechByCombinationResponse.Success"));
 
 		Data data = new Data();
+		data.setId(_ctx.stringValue("SyncSpeechByCombinationResponse.Data.Id"));
 		data.setRetryCount(_ctx.integerValue("SyncSpeechByCombinationResponse.Data.RetryCount"));
 		data.setSuccess(_ctx.booleanValue("SyncSpeechByCombinationResponse.Data.Success"));
-		data.setDeviceErrorMessage(_ctx.stringValue("SyncSpeechByCombinationResponse.Data.DeviceErrorMessage"));
 		data.setMaxRetryCount(_ctx.integerValue("SyncSpeechByCombinationResponse.Data.MaxRetryCount"));
 		data.setDeviceErrorCode(_ctx.stringValue("SyncSpeechByCombinationResponse.Data.DeviceErrorCode"));
-		data.setId(_ctx.stringValue("SyncSpeechByCombinationResponse.Data.Id"));
+		data.setDeviceErrorMessage(_ctx.stringValue("SyncSpeechByCombinationResponse.Data.DeviceErrorMessage"));
 		data.setDetail(_ctx.stringValue("SyncSpeechByCombinationResponse.Data.Detail"));
 		syncSpeechByCombinationResponse.setData(data);
 	 

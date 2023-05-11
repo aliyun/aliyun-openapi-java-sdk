@@ -23,9 +23,9 @@ public class StopRuleResponseUnmarshaller {
 	public static StopRuleResponse unmarshall(StopRuleResponse stopRuleResponse, UnmarshallerContext _ctx) {
 		
 		stopRuleResponse.setRequestId(_ctx.stringValue("StopRuleResponse.RequestId"));
+		stopRuleResponse.setSuccess(_ctx.booleanValue("StopRuleResponse.Success"));
 		stopRuleResponse.setCode(_ctx.stringValue("StopRuleResponse.Code"));
 		stopRuleResponse.setErrorMessage(_ctx.stringValue("StopRuleResponse.ErrorMessage"));
-		stopRuleResponse.setSuccess(_ctx.booleanValue("StopRuleResponse.Success"));
 	 
 	 	return stopRuleResponse;
 	}

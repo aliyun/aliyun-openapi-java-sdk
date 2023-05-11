@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GenerateDeviceNameListURLResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -66,6 +50,22 @@ public class GenerateDeviceNameListURLResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -78,19 +78,19 @@ public class GenerateDeviceNameListURLResponse extends AcsResponse {
 
 		private String key;
 
-		private String signature;
-
 		private String host;
-
-		private String fileUrl;
 
 		private String policy;
 
-		private String objectStorage;
+		private String accessKeyId;
+
+		private String signature;
+
+		private String fileUrl;
 
 		private String utcCreate;
 
-		private String accessKeyId;
+		private String objectStorage;
 
 		public String getKey() {
 			return this.key;
@@ -98,14 +98,6 @@ public class GenerateDeviceNameListURLResponse extends AcsResponse {
 
 		public void setKey(String key) {
 			this.key = key;
-		}
-
-		public String getSignature() {
-			return this.signature;
-		}
-
-		public void setSignature(String signature) {
-			this.signature = signature;
 		}
 
 		public String getHost() {
@@ -116,14 +108,6 @@ public class GenerateDeviceNameListURLResponse extends AcsResponse {
 			this.host = host;
 		}
 
-		public String getFileUrl() {
-			return this.fileUrl;
-		}
-
-		public void setFileUrl(String fileUrl) {
-			this.fileUrl = fileUrl;
-		}
-
 		public String getPolicy() {
 			return this.policy;
 		}
@@ -132,12 +116,28 @@ public class GenerateDeviceNameListURLResponse extends AcsResponse {
 			this.policy = policy;
 		}
 
-		public String getObjectStorage() {
-			return this.objectStorage;
+		public String getAccessKeyId() {
+			return this.accessKeyId;
 		}
 
-		public void setObjectStorage(String objectStorage) {
-			this.objectStorage = objectStorage;
+		public void setAccessKeyId(String accessKeyId) {
+			this.accessKeyId = accessKeyId;
+		}
+
+		public String getSignature() {
+			return this.signature;
+		}
+
+		public void setSignature(String signature) {
+			this.signature = signature;
+		}
+
+		public String getFileUrl() {
+			return this.fileUrl;
+		}
+
+		public void setFileUrl(String fileUrl) {
+			this.fileUrl = fileUrl;
 		}
 
 		public String getUtcCreate() {
@@ -148,12 +148,12 @@ public class GenerateDeviceNameListURLResponse extends AcsResponse {
 			this.utcCreate = utcCreate;
 		}
 
-		public String getAccessKeyId() {
-			return this.accessKeyId;
+		public String getObjectStorage() {
+			return this.objectStorage;
 		}
 
-		public void setAccessKeyId(String accessKeyId) {
-			this.accessKeyId = accessKeyId;
+		public void setObjectStorage(String objectStorage) {
+			this.objectStorage = objectStorage;
 		}
 	}
 

@@ -23,9 +23,9 @@ public class DeleteClientIdsResponseUnmarshaller {
 	public static DeleteClientIdsResponse unmarshall(DeleteClientIdsResponse deleteClientIdsResponse, UnmarshallerContext _ctx) {
 		
 		deleteClientIdsResponse.setRequestId(_ctx.stringValue("DeleteClientIdsResponse.RequestId"));
+		deleteClientIdsResponse.setSuccess(_ctx.booleanValue("DeleteClientIdsResponse.Success"));
 		deleteClientIdsResponse.setCode(_ctx.stringValue("DeleteClientIdsResponse.Code"));
 		deleteClientIdsResponse.setErrorMessage(_ctx.stringValue("DeleteClientIdsResponse.ErrorMessage"));
-		deleteClientIdsResponse.setSuccess(_ctx.booleanValue("DeleteClientIdsResponse.Success"));
 	 
 	 	return deleteClientIdsResponse;
 	}

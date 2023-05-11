@@ -23,9 +23,9 @@ public class QueryDeviceDistributeDetailResponseUnmarshaller {
 	public static QueryDeviceDistributeDetailResponse unmarshall(QueryDeviceDistributeDetailResponse queryDeviceDistributeDetailResponse, UnmarshallerContext _ctx) {
 		
 		queryDeviceDistributeDetailResponse.setRequestId(_ctx.stringValue("QueryDeviceDistributeDetailResponse.RequestId"));
+		queryDeviceDistributeDetailResponse.setSuccess(_ctx.booleanValue("QueryDeviceDistributeDetailResponse.Success"));
 		queryDeviceDistributeDetailResponse.setCode(_ctx.stringValue("QueryDeviceDistributeDetailResponse.Code"));
 		queryDeviceDistributeDetailResponse.setErrorMessage(_ctx.stringValue("QueryDeviceDistributeDetailResponse.ErrorMessage"));
-		queryDeviceDistributeDetailResponse.setSuccess(_ctx.booleanValue("QueryDeviceDistributeDetailResponse.Success"));
 		queryDeviceDistributeDetailResponse.setFile(_ctx.stringValue("QueryDeviceDistributeDetailResponse.File"));
 	 
 	 	return queryDeviceDistributeDetailResponse;

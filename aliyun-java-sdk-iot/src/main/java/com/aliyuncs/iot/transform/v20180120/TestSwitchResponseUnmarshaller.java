@@ -23,9 +23,9 @@ public class TestSwitchResponseUnmarshaller {
 	public static TestSwitchResponse unmarshall(TestSwitchResponse testSwitchResponse, UnmarshallerContext _ctx) {
 		
 		testSwitchResponse.setRequestId(_ctx.stringValue("TestSwitchResponse.RequestId"));
+		testSwitchResponse.setSuccess(_ctx.booleanValue("TestSwitchResponse.Success"));
 		testSwitchResponse.setCode(_ctx.stringValue("TestSwitchResponse.Code"));
 		testSwitchResponse.setErrorMessage(_ctx.stringValue("TestSwitchResponse.ErrorMessage"));
-		testSwitchResponse.setSuccess(_ctx.booleanValue("TestSwitchResponse.Success"));
 		testSwitchResponse.setIotId(_ctx.stringValue("TestSwitchResponse.IotId"));
 	 
 	 	return testSwitchResponse;

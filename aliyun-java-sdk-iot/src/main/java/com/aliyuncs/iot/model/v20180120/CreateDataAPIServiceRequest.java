@@ -58,11 +58,11 @@ public class CreateDataAPIServiceRequest extends RpcAcsRequest<CreateDataAPIServ
 		this.requestParams = requestParams;	
 		if (requestParams != null) {
 			for (int depth1 = 0; depth1 < requestParams.size(); depth1++) {
-				putBodyParameter("RequestParam." + (depth1 + 1) + ".Type" , requestParams.get(depth1).getType());
-				putBodyParameter("RequestParam." + (depth1 + 1) + ".Required" , requestParams.get(depth1).getRequired());
-				putBodyParameter("RequestParam." + (depth1 + 1) + ".Example" , requestParams.get(depth1).getExample());
 				putBodyParameter("RequestParam." + (depth1 + 1) + ".Name" , requestParams.get(depth1).getName());
+				putBodyParameter("RequestParam." + (depth1 + 1) + ".Type" , requestParams.get(depth1).getType());
 				putBodyParameter("RequestParam." + (depth1 + 1) + ".Desc" , requestParams.get(depth1).getDesc());
+				putBodyParameter("RequestParam." + (depth1 + 1) + ".Example" , requestParams.get(depth1).getExample());
+				putBodyParameter("RequestParam." + (depth1 + 1) + ".Required" , requestParams.get(depth1).getRequired());
 			}
 		}	
 	}
@@ -108,11 +108,11 @@ public class CreateDataAPIServiceRequest extends RpcAcsRequest<CreateDataAPIServ
 		this.responseParams = responseParams;	
 		if (responseParams != null) {
 			for (int depth1 = 0; depth1 < responseParams.size(); depth1++) {
-				putBodyParameter("ResponseParam." + (depth1 + 1) + ".Type" , responseParams.get(depth1).getType());
-				putBodyParameter("ResponseParam." + (depth1 + 1) + ".Required" , responseParams.get(depth1).getRequired());
-				putBodyParameter("ResponseParam." + (depth1 + 1) + ".Example" , responseParams.get(depth1).getExample());
 				putBodyParameter("ResponseParam." + (depth1 + 1) + ".Name" , responseParams.get(depth1).getName());
+				putBodyParameter("ResponseParam." + (depth1 + 1) + ".Type" , responseParams.get(depth1).getType());
 				putBodyParameter("ResponseParam." + (depth1 + 1) + ".Desc" , responseParams.get(depth1).getDesc());
+				putBodyParameter("ResponseParam." + (depth1 + 1) + ".Example" , responseParams.get(depth1).getExample());
+				putBodyParameter("ResponseParam." + (depth1 + 1) + ".Required" , responseParams.get(depth1).getRequired());
 			}
 		}	
 	}
@@ -152,15 +152,23 @@ public class CreateDataAPIServiceRequest extends RpcAcsRequest<CreateDataAPIServ
 
 	public static class RequestParam {
 
+		private String name;
+
 		private String type;
 
-		private Boolean required;
+		private String desc;
 
 		private String example;
 
-		private String name;
+		private Boolean required;
 
-		private String desc;
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
 
 		public String getType() {
 			return this.type;
@@ -170,12 +178,12 @@ public class CreateDataAPIServiceRequest extends RpcAcsRequest<CreateDataAPIServ
 			this.type = type;
 		}
 
-		public Boolean getRequired() {
-			return this.required;
+		public String getDesc() {
+			return this.desc;
 		}
 
-		public void setRequired(Boolean required) {
-			this.required = required;
+		public void setDesc(String desc) {
+			this.desc = desc;
 		}
 
 		public String getExample() {
@@ -186,34 +194,34 @@ public class CreateDataAPIServiceRequest extends RpcAcsRequest<CreateDataAPIServ
 			this.example = example;
 		}
 
-		public String getName() {
-			return this.name;
+		public Boolean getRequired() {
+			return this.required;
 		}
 
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getDesc() {
-			return this.desc;
-		}
-
-		public void setDesc(String desc) {
-			this.desc = desc;
+		public void setRequired(Boolean required) {
+			this.required = required;
 		}
 	}
 
 	public static class ResponseParam {
 
+		private String name;
+
 		private String type;
 
-		private Boolean required;
+		private String desc;
 
 		private String example;
 
-		private String name;
+		private Boolean required;
 
-		private String desc;
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
 
 		public String getType() {
 			return this.type;
@@ -223,12 +231,12 @@ public class CreateDataAPIServiceRequest extends RpcAcsRequest<CreateDataAPIServ
 			this.type = type;
 		}
 
-		public Boolean getRequired() {
-			return this.required;
+		public String getDesc() {
+			return this.desc;
 		}
 
-		public void setRequired(Boolean required) {
-			this.required = required;
+		public void setDesc(String desc) {
+			this.desc = desc;
 		}
 
 		public String getExample() {
@@ -239,20 +247,12 @@ public class CreateDataAPIServiceRequest extends RpcAcsRequest<CreateDataAPIServ
 			this.example = example;
 		}
 
-		public String getName() {
-			return this.name;
+		public Boolean getRequired() {
+			return this.required;
 		}
 
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getDesc() {
-			return this.desc;
-		}
-
-		public void setDesc(String desc) {
-			this.desc = desc;
+		public void setRequired(Boolean required) {
+			this.required = required;
 		}
 	}
 

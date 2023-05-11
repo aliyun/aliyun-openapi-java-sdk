@@ -23,9 +23,9 @@ public class DeleteSoundCodeLabelResponseUnmarshaller {
 	public static DeleteSoundCodeLabelResponse unmarshall(DeleteSoundCodeLabelResponse deleteSoundCodeLabelResponse, UnmarshallerContext _ctx) {
 		
 		deleteSoundCodeLabelResponse.setRequestId(_ctx.stringValue("DeleteSoundCodeLabelResponse.RequestId"));
+		deleteSoundCodeLabelResponse.setSuccess(_ctx.booleanValue("DeleteSoundCodeLabelResponse.Success"));
 		deleteSoundCodeLabelResponse.setCode(_ctx.stringValue("DeleteSoundCodeLabelResponse.Code"));
 		deleteSoundCodeLabelResponse.setErrorMessage(_ctx.stringValue("DeleteSoundCodeLabelResponse.ErrorMessage"));
-		deleteSoundCodeLabelResponse.setSuccess(_ctx.booleanValue("DeleteSoundCodeLabelResponse.Success"));
 	 
 	 	return deleteSoundCodeLabelResponse;
 	}

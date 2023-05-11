@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListAnalyticsDataResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -66,6 +50,22 @@ public class ListAnalyticsDataResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -76,15 +76,23 @@ public class ListAnalyticsDataResponse extends AcsResponse {
 
 	public static class Data {
 
+		private Boolean hasNext;
+
 		private String resultJson;
+
+		private Long count;
 
 		private Integer pageNum;
 
 		private Integer pageSize;
 
-		private Long count;
+		public Boolean getHasNext() {
+			return this.hasNext;
+		}
 
-		private Boolean hasNext;
+		public void setHasNext(Boolean hasNext) {
+			this.hasNext = hasNext;
+		}
 
 		public String getResultJson() {
 			return this.resultJson;
@@ -92,6 +100,14 @@ public class ListAnalyticsDataResponse extends AcsResponse {
 
 		public void setResultJson(String resultJson) {
 			this.resultJson = resultJson;
+		}
+
+		public Long getCount() {
+			return this.count;
+		}
+
+		public void setCount(Long count) {
+			this.count = count;
 		}
 
 		public Integer getPageNum() {
@@ -108,22 +124,6 @@ public class ListAnalyticsDataResponse extends AcsResponse {
 
 		public void setPageSize(Integer pageSize) {
 			this.pageSize = pageSize;
-		}
-
-		public Long getCount() {
-			return this.count;
-		}
-
-		public void setCount(Long count) {
-			this.count = count;
-		}
-
-		public Boolean getHasNext() {
-			return this.hasNext;
-		}
-
-		public void setHasNext(Boolean hasNext) {
-			this.hasNext = hasNext;
 		}
 	}
 

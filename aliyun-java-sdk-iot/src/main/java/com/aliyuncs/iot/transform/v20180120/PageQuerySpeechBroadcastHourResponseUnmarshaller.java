@@ -28,27 +28,27 @@ public class PageQuerySpeechBroadcastHourResponseUnmarshaller {
 	public static PageQuerySpeechBroadcastHourResponse unmarshall(PageQuerySpeechBroadcastHourResponse pageQuerySpeechBroadcastHourResponse, UnmarshallerContext _ctx) {
 		
 		pageQuerySpeechBroadcastHourResponse.setRequestId(_ctx.stringValue("PageQuerySpeechBroadcastHourResponse.RequestId"));
+		pageQuerySpeechBroadcastHourResponse.setSuccess(_ctx.booleanValue("PageQuerySpeechBroadcastHourResponse.Success"));
 		pageQuerySpeechBroadcastHourResponse.setCode(_ctx.stringValue("PageQuerySpeechBroadcastHourResponse.Code"));
 		pageQuerySpeechBroadcastHourResponse.setErrorMessage(_ctx.stringValue("PageQuerySpeechBroadcastHourResponse.ErrorMessage"));
-		pageQuerySpeechBroadcastHourResponse.setSuccess(_ctx.booleanValue("PageQuerySpeechBroadcastHourResponse.Success"));
 
 		Data data = new Data();
-		data.setPageSize(_ctx.integerValue("PageQuerySpeechBroadcastHourResponse.Data.PageSize"));
 		data.setPageId(_ctx.integerValue("PageQuerySpeechBroadcastHourResponse.Data.PageId"));
+		data.setPageSize(_ctx.integerValue("PageQuerySpeechBroadcastHourResponse.Data.PageSize"));
 		data.setTotal(_ctx.integerValue("PageQuerySpeechBroadcastHourResponse.Data.Total"));
 		data.setPageToken(_ctx.stringValue("PageQuerySpeechBroadcastHourResponse.Data.PageToken"));
 
 		List<Data1> resultData = new ArrayList<Data1>();
 		for (int i = 0; i < _ctx.lengthValue("PageQuerySpeechBroadcastHourResponse.Data.ResultData.Length"); i++) {
 			Data1 data1 = new Data1();
-			data1.setMsg(_ctx.stringValue("PageQuerySpeechBroadcastHourResponse.Data.ResultData["+ i +"].Msg"));
-			data1.setStartTime(_ctx.longValue("PageQuerySpeechBroadcastHourResponse.Data.ResultData["+ i +"].StartTime"));
 			data1.setProductKey(_ctx.stringValue("PageQuerySpeechBroadcastHourResponse.Data.ResultData["+ i +"].ProductKey"));
 			data1.setDeviceName(_ctx.stringValue("PageQuerySpeechBroadcastHourResponse.Data.ResultData["+ i +"].DeviceName"));
 			data1.setShareTaskCode(_ctx.stringValue("PageQuerySpeechBroadcastHourResponse.Data.ResultData["+ i +"].ShareTaskCode"));
-			data1.setSpeechId(_ctx.stringValue("PageQuerySpeechBroadcastHourResponse.Data.ResultData["+ i +"].SpeechId"));
-			data1.setCode(_ctx.integerValue("PageQuerySpeechBroadcastHourResponse.Data.ResultData["+ i +"].Code"));
 			data1.setSpeechs(_ctx.stringValue("PageQuerySpeechBroadcastHourResponse.Data.ResultData["+ i +"].Speechs"));
+			data1.setCode(_ctx.integerValue("PageQuerySpeechBroadcastHourResponse.Data.ResultData["+ i +"].Code"));
+			data1.setMsg(_ctx.stringValue("PageQuerySpeechBroadcastHourResponse.Data.ResultData["+ i +"].Msg"));
+			data1.setSpeechId(_ctx.stringValue("PageQuerySpeechBroadcastHourResponse.Data.ResultData["+ i +"].SpeechId"));
+			data1.setStartTime(_ctx.longValue("PageQuerySpeechBroadcastHourResponse.Data.ResultData["+ i +"].StartTime"));
 
 			resultData.add(data1);
 		}

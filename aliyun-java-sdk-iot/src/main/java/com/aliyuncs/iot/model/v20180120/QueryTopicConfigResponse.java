@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryTopicConfigResponse extends AcsResponse {
 
-	private String code;
-
-	private String message;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String message;
+
 	private List<TopicConfigInfo> data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,6 +51,22 @@ public class QueryTopicConfigResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
 	public List<TopicConfigInfo> getData() {
 		return this.data;
 	}
@@ -77,19 +77,27 @@ public class QueryTopicConfigResponse extends AcsResponse {
 
 	public static class TopicConfigInfo {
 
+		private String productKey;
+
 		private String topicFullName;
 
 		private String operation;
 
-		private String productKey;
-
 		private String description;
-
-		private String codec;
 
 		private Boolean enableBroadcast;
 
 		private Boolean enableProxySubscribe;
+
+		private String codec;
+
+		public String getProductKey() {
+			return this.productKey;
+		}
+
+		public void setProductKey(String productKey) {
+			this.productKey = productKey;
+		}
 
 		public String getTopicFullName() {
 			return this.topicFullName;
@@ -107,28 +115,12 @@ public class QueryTopicConfigResponse extends AcsResponse {
 			this.operation = operation;
 		}
 
-		public String getProductKey() {
-			return this.productKey;
-		}
-
-		public void setProductKey(String productKey) {
-			this.productKey = productKey;
-		}
-
 		public String getDescription() {
 			return this.description;
 		}
 
 		public void setDescription(String description) {
 			this.description = description;
-		}
-
-		public String getCodec() {
-			return this.codec;
-		}
-
-		public void setCodec(String codec) {
-			this.codec = codec;
 		}
 
 		public Boolean getEnableBroadcast() {
@@ -145,6 +137,14 @@ public class QueryTopicConfigResponse extends AcsResponse {
 
 		public void setEnableProxySubscribe(Boolean enableProxySubscribe) {
 			this.enableProxySubscribe = enableProxySubscribe;
+		}
+
+		public String getCodec() {
+			return this.codec;
+		}
+
+		public void setCodec(String codec) {
+			this.codec = codec;
 		}
 	}
 

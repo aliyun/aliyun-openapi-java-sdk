@@ -23,12 +23,12 @@ public class BatchDeleteDeviceGroupRelationsResponseUnmarshaller {
 	public static BatchDeleteDeviceGroupRelationsResponse unmarshall(BatchDeleteDeviceGroupRelationsResponse batchDeleteDeviceGroupRelationsResponse, UnmarshallerContext _ctx) {
 		
 		batchDeleteDeviceGroupRelationsResponse.setRequestId(_ctx.stringValue("BatchDeleteDeviceGroupRelationsResponse.RequestId"));
-		batchDeleteDeviceGroupRelationsResponse.setSuccessDeviceCount(_ctx.integerValue("BatchDeleteDeviceGroupRelationsResponse.SuccessDeviceCount"));
-		batchDeleteDeviceGroupRelationsResponse.setErrorMessage(_ctx.stringValue("BatchDeleteDeviceGroupRelationsResponse.ErrorMessage"));
-		batchDeleteDeviceGroupRelationsResponse.setAlreadyRelatedGroupDeviceCount(_ctx.integerValue("BatchDeleteDeviceGroupRelationsResponse.AlreadyRelatedGroupDeviceCount"));
 		batchDeleteDeviceGroupRelationsResponse.setSuccess(_ctx.booleanValue("BatchDeleteDeviceGroupRelationsResponse.Success"));
 		batchDeleteDeviceGroupRelationsResponse.setCode(_ctx.stringValue("BatchDeleteDeviceGroupRelationsResponse.Code"));
+		batchDeleteDeviceGroupRelationsResponse.setErrorMessage(_ctx.stringValue("BatchDeleteDeviceGroupRelationsResponse.ErrorMessage"));
 		batchDeleteDeviceGroupRelationsResponse.setValidDeviceCount(_ctx.integerValue("BatchDeleteDeviceGroupRelationsResponse.ValidDeviceCount"));
+		batchDeleteDeviceGroupRelationsResponse.setAlreadyRelatedGroupDeviceCount(_ctx.integerValue("BatchDeleteDeviceGroupRelationsResponse.AlreadyRelatedGroupDeviceCount"));
+		batchDeleteDeviceGroupRelationsResponse.setSuccessDeviceCount(_ctx.integerValue("BatchDeleteDeviceGroupRelationsResponse.SuccessDeviceCount"));
 	 
 	 	return batchDeleteDeviceGroupRelationsResponse;
 	}

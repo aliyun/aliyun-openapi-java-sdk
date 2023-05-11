@@ -27,32 +27,32 @@ public class ListOTATaskByJobResponseUnmarshaller {
 	public static ListOTATaskByJobResponse unmarshall(ListOTATaskByJobResponse listOTATaskByJobResponse, UnmarshallerContext _ctx) {
 		
 		listOTATaskByJobResponse.setRequestId(_ctx.stringValue("ListOTATaskByJobResponse.RequestId"));
-		listOTATaskByJobResponse.setCurrentPage(_ctx.integerValue("ListOTATaskByJobResponse.CurrentPage"));
-		listOTATaskByJobResponse.setErrorMessage(_ctx.stringValue("ListOTATaskByJobResponse.ErrorMessage"));
 		listOTATaskByJobResponse.setSuccess(_ctx.booleanValue("ListOTATaskByJobResponse.Success"));
 		listOTATaskByJobResponse.setCode(_ctx.stringValue("ListOTATaskByJobResponse.Code"));
+		listOTATaskByJobResponse.setErrorMessage(_ctx.stringValue("ListOTATaskByJobResponse.ErrorMessage"));
+		listOTATaskByJobResponse.setTotal(_ctx.integerValue("ListOTATaskByJobResponse.Total"));
 		listOTATaskByJobResponse.setPageSize(_ctx.integerValue("ListOTATaskByJobResponse.PageSize"));
 		listOTATaskByJobResponse.setPageCount(_ctx.integerValue("ListOTATaskByJobResponse.PageCount"));
-		listOTATaskByJobResponse.setTotal(_ctx.integerValue("ListOTATaskByJobResponse.Total"));
+		listOTATaskByJobResponse.setCurrentPage(_ctx.integerValue("ListOTATaskByJobResponse.CurrentPage"));
 
 		List<SimpleOTATaskInfo> data = new ArrayList<SimpleOTATaskInfo>();
 		for (int i = 0; i < _ctx.lengthValue("ListOTATaskByJobResponse.Data.Length"); i++) {
 			SimpleOTATaskInfo simpleOTATaskInfo = new SimpleOTATaskInfo();
-			simpleOTATaskInfo.setTimeout(_ctx.stringValue("ListOTATaskByJobResponse.Data["+ i +"].Timeout"));
-			simpleOTATaskInfo.setProductName(_ctx.stringValue("ListOTATaskByJobResponse.Data["+ i +"].ProductName"));
-			simpleOTATaskInfo.setProgress(_ctx.stringValue("ListOTATaskByJobResponse.Data["+ i +"].Progress"));
-			simpleOTATaskInfo.setDeviceName(_ctx.stringValue("ListOTATaskByJobResponse.Data["+ i +"].DeviceName"));
-			simpleOTATaskInfo.setUtcCreate(_ctx.stringValue("ListOTATaskByJobResponse.Data["+ i +"].UtcCreate"));
-			simpleOTATaskInfo.setProductKey(_ctx.stringValue("ListOTATaskByJobResponse.Data["+ i +"].ProductKey"));
-			simpleOTATaskInfo.setTaskStatus(_ctx.stringValue("ListOTATaskByJobResponse.Data["+ i +"].TaskStatus"));
-			simpleOTATaskInfo.setUtcModified(_ctx.stringValue("ListOTATaskByJobResponse.Data["+ i +"].UtcModified"));
-			simpleOTATaskInfo.setJobId(_ctx.stringValue("ListOTATaskByJobResponse.Data["+ i +"].JobId"));
-			simpleOTATaskInfo.setSrcVersion(_ctx.stringValue("ListOTATaskByJobResponse.Data["+ i +"].SrcVersion"));
-			simpleOTATaskInfo.setTaskDesc(_ctx.stringValue("ListOTATaskByJobResponse.Data["+ i +"].TaskDesc"));
 			simpleOTATaskInfo.setTaskId(_ctx.stringValue("ListOTATaskByJobResponse.Data["+ i +"].TaskId"));
-			simpleOTATaskInfo.setDestVersion(_ctx.stringValue("ListOTATaskByJobResponse.Data["+ i +"].DestVersion"));
+			simpleOTATaskInfo.setUtcModified(_ctx.stringValue("ListOTATaskByJobResponse.Data["+ i +"].UtcModified"));
+			simpleOTATaskInfo.setProductKey(_ctx.stringValue("ListOTATaskByJobResponse.Data["+ i +"].ProductKey"));
 			simpleOTATaskInfo.setFirmwareId(_ctx.stringValue("ListOTATaskByJobResponse.Data["+ i +"].FirmwareId"));
+			simpleOTATaskInfo.setTaskStatus(_ctx.stringValue("ListOTATaskByJobResponse.Data["+ i +"].TaskStatus"));
+			simpleOTATaskInfo.setJobId(_ctx.stringValue("ListOTATaskByJobResponse.Data["+ i +"].JobId"));
+			simpleOTATaskInfo.setProductName(_ctx.stringValue("ListOTATaskByJobResponse.Data["+ i +"].ProductName"));
+			simpleOTATaskInfo.setDeviceName(_ctx.stringValue("ListOTATaskByJobResponse.Data["+ i +"].DeviceName"));
+			simpleOTATaskInfo.setSrcVersion(_ctx.stringValue("ListOTATaskByJobResponse.Data["+ i +"].SrcVersion"));
+			simpleOTATaskInfo.setDestVersion(_ctx.stringValue("ListOTATaskByJobResponse.Data["+ i +"].DestVersion"));
+			simpleOTATaskInfo.setTaskDesc(_ctx.stringValue("ListOTATaskByJobResponse.Data["+ i +"].TaskDesc"));
+			simpleOTATaskInfo.setProgress(_ctx.stringValue("ListOTATaskByJobResponse.Data["+ i +"].Progress"));
 			simpleOTATaskInfo.setIotId(_ctx.stringValue("ListOTATaskByJobResponse.Data["+ i +"].IotId"));
+			simpleOTATaskInfo.setUtcCreate(_ctx.stringValue("ListOTATaskByJobResponse.Data["+ i +"].UtcCreate"));
+			simpleOTATaskInfo.setTimeout(_ctx.stringValue("ListOTATaskByJobResponse.Data["+ i +"].Timeout"));
 
 			data.add(simpleOTATaskInfo);
 		}

@@ -23,10 +23,10 @@ public class RecognizeCarNumResponseUnmarshaller {
 	public static RecognizeCarNumResponse unmarshall(RecognizeCarNumResponse recognizeCarNumResponse, UnmarshallerContext _ctx) {
 		
 		recognizeCarNumResponse.setRequestId(_ctx.stringValue("RecognizeCarNumResponse.RequestId"));
-		recognizeCarNumResponse.setCode(_ctx.stringValue("RecognizeCarNumResponse.Code"));
-		recognizeCarNumResponse.setData(_ctx.stringValue("RecognizeCarNumResponse.Data"));
-		recognizeCarNumResponse.setErrorMessage(_ctx.stringValue("RecognizeCarNumResponse.ErrorMessage"));
 		recognizeCarNumResponse.setSuccess(_ctx.booleanValue("RecognizeCarNumResponse.Success"));
+		recognizeCarNumResponse.setCode(_ctx.stringValue("RecognizeCarNumResponse.Code"));
+		recognizeCarNumResponse.setErrorMessage(_ctx.stringValue("RecognizeCarNumResponse.ErrorMessage"));
+		recognizeCarNumResponse.setData(_ctx.stringValue("RecognizeCarNumResponse.Data"));
 	 
 	 	return recognizeCarNumResponse;
 	}

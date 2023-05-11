@@ -23,9 +23,9 @@ public class StopParserResponseUnmarshaller {
 	public static StopParserResponse unmarshall(StopParserResponse stopParserResponse, UnmarshallerContext _ctx) {
 		
 		stopParserResponse.setRequestId(_ctx.stringValue("StopParserResponse.RequestId"));
+		stopParserResponse.setSuccess(_ctx.booleanValue("StopParserResponse.Success"));
 		stopParserResponse.setCode(_ctx.stringValue("StopParserResponse.Code"));
 		stopParserResponse.setErrorMessage(_ctx.stringValue("StopParserResponse.ErrorMessage"));
-		stopParserResponse.setSuccess(_ctx.booleanValue("StopParserResponse.Success"));
 	 
 	 	return stopParserResponse;
 	}

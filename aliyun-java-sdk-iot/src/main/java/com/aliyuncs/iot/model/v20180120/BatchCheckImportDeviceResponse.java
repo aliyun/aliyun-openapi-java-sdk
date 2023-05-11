@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class BatchCheckImportDeviceResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,6 +51,22 @@ public class BatchCheckImportDeviceResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -79,13 +79,13 @@ public class BatchCheckImportDeviceResponse extends AcsResponse {
 
 		private List<InvalidDetailListItem> invalidDetailList;
 
-		private List<String> repeatedDeviceNameList;
-
-		private List<String> invalidSnList;
+		private List<String> invalidDeviceNameList;
 
 		private List<String> invalidDeviceSecretList;
 
-		private List<String> invalidDeviceNameList;
+		private List<String> invalidSnList;
+
+		private List<String> repeatedDeviceNameList;
 
 		public List<InvalidDetailListItem> getInvalidDetailList() {
 			return this.invalidDetailList;
@@ -93,30 +93,6 @@ public class BatchCheckImportDeviceResponse extends AcsResponse {
 
 		public void setInvalidDetailList(List<InvalidDetailListItem> invalidDetailList) {
 			this.invalidDetailList = invalidDetailList;
-		}
-
-		public List<String> getRepeatedDeviceNameList() {
-			return this.repeatedDeviceNameList;
-		}
-
-		public void setRepeatedDeviceNameList(List<String> repeatedDeviceNameList) {
-			this.repeatedDeviceNameList = repeatedDeviceNameList;
-		}
-
-		public List<String> getInvalidSnList() {
-			return this.invalidSnList;
-		}
-
-		public void setInvalidSnList(List<String> invalidSnList) {
-			this.invalidSnList = invalidSnList;
-		}
-
-		public List<String> getInvalidDeviceSecretList() {
-			return this.invalidDeviceSecretList;
-		}
-
-		public void setInvalidDeviceSecretList(List<String> invalidDeviceSecretList) {
-			this.invalidDeviceSecretList = invalidDeviceSecretList;
 		}
 
 		public List<String> getInvalidDeviceNameList() {
@@ -127,31 +103,39 @@ public class BatchCheckImportDeviceResponse extends AcsResponse {
 			this.invalidDeviceNameList = invalidDeviceNameList;
 		}
 
+		public List<String> getInvalidDeviceSecretList() {
+			return this.invalidDeviceSecretList;
+		}
+
+		public void setInvalidDeviceSecretList(List<String> invalidDeviceSecretList) {
+			this.invalidDeviceSecretList = invalidDeviceSecretList;
+		}
+
+		public List<String> getInvalidSnList() {
+			return this.invalidSnList;
+		}
+
+		public void setInvalidSnList(List<String> invalidSnList) {
+			this.invalidSnList = invalidSnList;
+		}
+
+		public List<String> getRepeatedDeviceNameList() {
+			return this.repeatedDeviceNameList;
+		}
+
+		public void setRepeatedDeviceNameList(List<String> repeatedDeviceNameList) {
+			this.repeatedDeviceNameList = repeatedDeviceNameList;
+		}
+
 		public static class InvalidDetailListItem {
-
-			private String errorMsg;
-
-			private String sn;
 
 			private String deviceName;
 
 			private String deviceSecret;
 
-			public String getErrorMsg() {
-				return this.errorMsg;
-			}
+			private String sn;
 
-			public void setErrorMsg(String errorMsg) {
-				this.errorMsg = errorMsg;
-			}
-
-			public String getSn() {
-				return this.sn;
-			}
-
-			public void setSn(String sn) {
-				this.sn = sn;
-			}
+			private String errorMsg;
 
 			public String getDeviceName() {
 				return this.deviceName;
@@ -167,6 +151,22 @@ public class BatchCheckImportDeviceResponse extends AcsResponse {
 
 			public void setDeviceSecret(String deviceSecret) {
 				this.deviceSecret = deviceSecret;
+			}
+
+			public String getSn() {
+				return this.sn;
+			}
+
+			public void setSn(String sn) {
+				this.sn = sn;
+			}
+
+			public String getErrorMsg() {
+				return this.errorMsg;
+			}
+
+			public void setErrorMsg(String errorMsg) {
+				this.errorMsg = errorMsg;
 			}
 		}
 	}

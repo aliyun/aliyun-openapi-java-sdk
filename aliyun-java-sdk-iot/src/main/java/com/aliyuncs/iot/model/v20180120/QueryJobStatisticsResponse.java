@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryJobStatisticsResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -66,6 +50,22 @@ public class QueryJobStatisticsResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -76,23 +76,71 @@ public class QueryJobStatisticsResponse extends AcsResponse {
 
 	public static class Data {
 
+		private Integer total;
+
+		private Integer queued;
+
+		private Integer sent;
+
+		private Integer inProgress;
+
+		private Integer succeeded;
+
+		private Integer failed;
+
 		private Integer rejected;
 
 		private Integer timeOut;
 
-		private Integer failed;
-
-		private Integer queued;
-
-		private Integer succeeded;
-
-		private Integer sent;
-
-		private Integer total;
-
-		private Integer inProgress;
-
 		private Integer cancelled;
+
+		public Integer getTotal() {
+			return this.total;
+		}
+
+		public void setTotal(Integer total) {
+			this.total = total;
+		}
+
+		public Integer getQueued() {
+			return this.queued;
+		}
+
+		public void setQueued(Integer queued) {
+			this.queued = queued;
+		}
+
+		public Integer getSent() {
+			return this.sent;
+		}
+
+		public void setSent(Integer sent) {
+			this.sent = sent;
+		}
+
+		public Integer getInProgress() {
+			return this.inProgress;
+		}
+
+		public void setInProgress(Integer inProgress) {
+			this.inProgress = inProgress;
+		}
+
+		public Integer getSucceeded() {
+			return this.succeeded;
+		}
+
+		public void setSucceeded(Integer succeeded) {
+			this.succeeded = succeeded;
+		}
+
+		public Integer getFailed() {
+			return this.failed;
+		}
+
+		public void setFailed(Integer failed) {
+			this.failed = failed;
+		}
 
 		public Integer getRejected() {
 			return this.rejected;
@@ -108,54 +156,6 @@ public class QueryJobStatisticsResponse extends AcsResponse {
 
 		public void setTimeOut(Integer timeOut) {
 			this.timeOut = timeOut;
-		}
-
-		public Integer getFailed() {
-			return this.failed;
-		}
-
-		public void setFailed(Integer failed) {
-			this.failed = failed;
-		}
-
-		public Integer getQueued() {
-			return this.queued;
-		}
-
-		public void setQueued(Integer queued) {
-			this.queued = queued;
-		}
-
-		public Integer getSucceeded() {
-			return this.succeeded;
-		}
-
-		public void setSucceeded(Integer succeeded) {
-			this.succeeded = succeeded;
-		}
-
-		public Integer getSent() {
-			return this.sent;
-		}
-
-		public void setSent(Integer sent) {
-			this.sent = sent;
-		}
-
-		public Integer getTotal() {
-			return this.total;
-		}
-
-		public void setTotal(Integer total) {
-			this.total = total;
-		}
-
-		public Integer getInProgress() {
-			return this.inProgress;
-		}
-
-		public void setInProgress(Integer inProgress) {
-			this.inProgress = inProgress;
 		}
 
 		public Integer getCancelled() {

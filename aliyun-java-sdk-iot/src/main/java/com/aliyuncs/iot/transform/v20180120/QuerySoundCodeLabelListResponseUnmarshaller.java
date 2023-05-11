@@ -28,20 +28,20 @@ public class QuerySoundCodeLabelListResponseUnmarshaller {
 	public static QuerySoundCodeLabelListResponse unmarshall(QuerySoundCodeLabelListResponse querySoundCodeLabelListResponse, UnmarshallerContext _ctx) {
 		
 		querySoundCodeLabelListResponse.setRequestId(_ctx.stringValue("QuerySoundCodeLabelListResponse.RequestId"));
+		querySoundCodeLabelListResponse.setSuccess(_ctx.booleanValue("QuerySoundCodeLabelListResponse.Success"));
 		querySoundCodeLabelListResponse.setCode(_ctx.stringValue("QuerySoundCodeLabelListResponse.Code"));
 		querySoundCodeLabelListResponse.setErrorMessage(_ctx.stringValue("QuerySoundCodeLabelListResponse.ErrorMessage"));
-		querySoundCodeLabelListResponse.setSuccess(_ctx.booleanValue("QuerySoundCodeLabelListResponse.Success"));
 
 		Data data = new Data();
-		data.setPageSize(_ctx.integerValue("QuerySoundCodeLabelListResponse.Data.PageSize"));
 		data.setTotal(_ctx.integerValue("QuerySoundCodeLabelListResponse.Data.Total"));
 		data.setPageId(_ctx.integerValue("QuerySoundCodeLabelListResponse.Data.PageId"));
+		data.setPageSize(_ctx.integerValue("QuerySoundCodeLabelListResponse.Data.PageSize"));
 
 		List<Items> list = new ArrayList<Items>();
 		for (int i = 0; i < _ctx.lengthValue("QuerySoundCodeLabelListResponse.Data.List.Length"); i++) {
 			Items items = new Items();
-			items.setLabel(_ctx.stringValue("QuerySoundCodeLabelListResponse.Data.List["+ i +"].Label"));
 			items.setSoundCode(_ctx.stringValue("QuerySoundCodeLabelListResponse.Data.List["+ i +"].SoundCode"));
+			items.setLabel(_ctx.stringValue("QuerySoundCodeLabelListResponse.Data.List["+ i +"].Label"));
 
 			list.add(items);
 		}

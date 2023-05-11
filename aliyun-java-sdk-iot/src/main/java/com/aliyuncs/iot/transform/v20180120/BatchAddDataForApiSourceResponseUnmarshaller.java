@@ -24,10 +24,10 @@ public class BatchAddDataForApiSourceResponseUnmarshaller {
 	public static BatchAddDataForApiSourceResponse unmarshall(BatchAddDataForApiSourceResponse batchAddDataForApiSourceResponse, UnmarshallerContext _ctx) {
 		
 		batchAddDataForApiSourceResponse.setRequestId(_ctx.stringValue("BatchAddDataForApiSourceResponse.RequestId"));
-		batchAddDataForApiSourceResponse.setCode(_ctx.stringValue("BatchAddDataForApiSourceResponse.Code"));
-		batchAddDataForApiSourceResponse.setData(_ctx.mapValue("BatchAddDataForApiSourceResponse.Data"));
-		batchAddDataForApiSourceResponse.setErrorMessage(_ctx.stringValue("BatchAddDataForApiSourceResponse.ErrorMessage"));
 		batchAddDataForApiSourceResponse.setSuccess(_ctx.booleanValue("BatchAddDataForApiSourceResponse.Success"));
+		batchAddDataForApiSourceResponse.setCode(_ctx.stringValue("BatchAddDataForApiSourceResponse.Code"));
+		batchAddDataForApiSourceResponse.setErrorMessage(_ctx.stringValue("BatchAddDataForApiSourceResponse.ErrorMessage"));
+		batchAddDataForApiSourceResponse.setData(_ctx.mapValue("BatchAddDataForApiSourceResponse.Data"));
 	 
 	 	return batchAddDataForApiSourceResponse;
 	}

@@ -23,9 +23,9 @@ public class SetDeviceGroupTagsResponseUnmarshaller {
 	public static SetDeviceGroupTagsResponse unmarshall(SetDeviceGroupTagsResponse setDeviceGroupTagsResponse, UnmarshallerContext _ctx) {
 		
 		setDeviceGroupTagsResponse.setRequestId(_ctx.stringValue("SetDeviceGroupTagsResponse.RequestId"));
+		setDeviceGroupTagsResponse.setSuccess(_ctx.booleanValue("SetDeviceGroupTagsResponse.Success"));
 		setDeviceGroupTagsResponse.setCode(_ctx.stringValue("SetDeviceGroupTagsResponse.Code"));
 		setDeviceGroupTagsResponse.setErrorMessage(_ctx.stringValue("SetDeviceGroupTagsResponse.ErrorMessage"));
-		setDeviceGroupTagsResponse.setSuccess(_ctx.booleanValue("SetDeviceGroupTagsResponse.Success"));
 	 
 	 	return setDeviceGroupTagsResponse;
 	}

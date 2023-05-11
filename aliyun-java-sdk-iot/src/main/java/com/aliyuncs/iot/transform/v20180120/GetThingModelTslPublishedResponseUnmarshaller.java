@@ -24,13 +24,13 @@ public class GetThingModelTslPublishedResponseUnmarshaller {
 	public static GetThingModelTslPublishedResponse unmarshall(GetThingModelTslPublishedResponse getThingModelTslPublishedResponse, UnmarshallerContext _ctx) {
 		
 		getThingModelTslPublishedResponse.setRequestId(_ctx.stringValue("GetThingModelTslPublishedResponse.RequestId"));
+		getThingModelTslPublishedResponse.setSuccess(_ctx.booleanValue("GetThingModelTslPublishedResponse.Success"));
 		getThingModelTslPublishedResponse.setCode(_ctx.stringValue("GetThingModelTslPublishedResponse.Code"));
 		getThingModelTslPublishedResponse.setErrorMessage(_ctx.stringValue("GetThingModelTslPublishedResponse.ErrorMessage"));
-		getThingModelTslPublishedResponse.setSuccess(_ctx.booleanValue("GetThingModelTslPublishedResponse.Success"));
 
 		Data data = new Data();
-		data.setTslUri(_ctx.stringValue("GetThingModelTslPublishedResponse.Data.TslUri"));
 		data.setTslStr(_ctx.stringValue("GetThingModelTslPublishedResponse.Data.TslStr"));
+		data.setTslUri(_ctx.stringValue("GetThingModelTslPublishedResponse.Data.TslUri"));
 		getThingModelTslPublishedResponse.setData(data);
 	 
 	 	return getThingModelTslPublishedResponse;

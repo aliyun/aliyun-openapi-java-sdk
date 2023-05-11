@@ -36,9 +36,9 @@ public class DeleteThingModelRequest extends RpcAcsRequest<DeleteThingModelRespo
 
 	private String productKey;
 
-	private String functionBlockId;
-
 	private List<String> eventIdentifiers;
+
+	private String functionBlockId;
 	public DeleteThingModelRequest() {
 		super("Iot", "2018-01-20", "DeleteThingModel");
 		setMethod(MethodType.POST);
@@ -107,17 +107,6 @@ public class DeleteThingModelRequest extends RpcAcsRequest<DeleteThingModelRespo
 		}
 	}
 
-	public String getFunctionBlockId() {
-		return this.functionBlockId;
-	}
-
-	public void setFunctionBlockId(String functionBlockId) {
-		this.functionBlockId = functionBlockId;
-		if(functionBlockId != null){
-			putQueryParameter("FunctionBlockId", functionBlockId);
-		}
-	}
-
 	public List<String> getEventIdentifiers() {
 		return this.eventIdentifiers;
 	}
@@ -129,6 +118,17 @@ public class DeleteThingModelRequest extends RpcAcsRequest<DeleteThingModelRespo
 				putQueryParameter("EventIdentifier." + (i + 1) , eventIdentifiers.get(i));
 			}
 		}	
+	}
+
+	public String getFunctionBlockId() {
+		return this.functionBlockId;
+	}
+
+	public void setFunctionBlockId(String functionBlockId) {
+		this.functionBlockId = functionBlockId;
+		if(functionBlockId != null){
+			putQueryParameter("FunctionBlockId", functionBlockId);
+		}
 	}
 
 	@Override

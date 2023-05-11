@@ -32,9 +32,9 @@ public class ShareSpeechByCombinationRequest extends RpcAcsRequest<ShareSpeechBy
 
 	private String iotId;
 
-	private String iotInstanceId;
-
 	private List<String> combinationLists;
+
+	private String iotInstanceId;
 
 	private String productKey;
 
@@ -81,17 +81,6 @@ public class ShareSpeechByCombinationRequest extends RpcAcsRequest<ShareSpeechBy
 		}
 	}
 
-	public String getIotInstanceId() {
-		return this.iotInstanceId;
-	}
-
-	public void setIotInstanceId(String iotInstanceId) {
-		this.iotInstanceId = iotInstanceId;
-		if(iotInstanceId != null){
-			putBodyParameter("IotInstanceId", iotInstanceId);
-		}
-	}
-
 	public List<String> getCombinationLists() {
 		return this.combinationLists;
 	}
@@ -103,6 +92,17 @@ public class ShareSpeechByCombinationRequest extends RpcAcsRequest<ShareSpeechBy
 				putBodyParameter("CombinationList." + (i + 1) , combinationLists.get(i));
 			}
 		}	
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putBodyParameter("IotInstanceId", iotInstanceId);
+		}
 	}
 
 	public String getProductKey() {

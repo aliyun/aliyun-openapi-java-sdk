@@ -23,9 +23,9 @@ public class DeleteTopicConfigResponseUnmarshaller {
 	public static DeleteTopicConfigResponse unmarshall(DeleteTopicConfigResponse deleteTopicConfigResponse, UnmarshallerContext _ctx) {
 		
 		deleteTopicConfigResponse.setRequestId(_ctx.stringValue("DeleteTopicConfigResponse.RequestId"));
+		deleteTopicConfigResponse.setSuccess(_ctx.booleanValue("DeleteTopicConfigResponse.Success"));
 		deleteTopicConfigResponse.setCode(_ctx.stringValue("DeleteTopicConfigResponse.Code"));
 		deleteTopicConfigResponse.setMessage(_ctx.stringValue("DeleteTopicConfigResponse.Message"));
-		deleteTopicConfigResponse.setSuccess(_ctx.booleanValue("DeleteTopicConfigResponse.Success"));
 	 
 	 	return deleteTopicConfigResponse;
 	}

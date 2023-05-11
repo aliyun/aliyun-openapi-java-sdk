@@ -24,16 +24,16 @@ public class GetParserDataSourceResponseUnmarshaller {
 	public static GetParserDataSourceResponse unmarshall(GetParserDataSourceResponse getParserDataSourceResponse, UnmarshallerContext _ctx) {
 		
 		getParserDataSourceResponse.setRequestId(_ctx.stringValue("GetParserDataSourceResponse.RequestId"));
+		getParserDataSourceResponse.setSuccess(_ctx.booleanValue("GetParserDataSourceResponse.Success"));
 		getParserDataSourceResponse.setCode(_ctx.stringValue("GetParserDataSourceResponse.Code"));
 		getParserDataSourceResponse.setErrorMessage(_ctx.stringValue("GetParserDataSourceResponse.ErrorMessage"));
-		getParserDataSourceResponse.setSuccess(_ctx.booleanValue("GetParserDataSourceResponse.Success"));
 
 		DataSource dataSource = new DataSource();
-		dataSource.setUtcCreated(_ctx.stringValue("GetParserDataSourceResponse.DataSource.UtcCreated"));
-		dataSource.setDescription(_ctx.stringValue("GetParserDataSourceResponse.DataSource.Description"));
 		dataSource.setName(_ctx.stringValue("GetParserDataSourceResponse.DataSource.Name"));
-		dataSource.setCreateUserId(_ctx.longValue("GetParserDataSourceResponse.DataSource.CreateUserId"));
+		dataSource.setDescription(_ctx.stringValue("GetParserDataSourceResponse.DataSource.Description"));
 		dataSource.setDataSourceId(_ctx.longValue("GetParserDataSourceResponse.DataSource.DataSourceId"));
+		dataSource.setUtcCreated(_ctx.stringValue("GetParserDataSourceResponse.DataSource.UtcCreated"));
+		dataSource.setCreateUserId(_ctx.longValue("GetParserDataSourceResponse.DataSource.CreateUserId"));
 		getParserDataSourceResponse.setDataSource(dataSource);
 	 
 	 	return getParserDataSourceResponse;

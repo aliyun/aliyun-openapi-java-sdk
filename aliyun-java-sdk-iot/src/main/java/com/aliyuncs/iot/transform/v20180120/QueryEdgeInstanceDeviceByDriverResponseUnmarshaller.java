@@ -28,14 +28,14 @@ public class QueryEdgeInstanceDeviceByDriverResponseUnmarshaller {
 	public static QueryEdgeInstanceDeviceByDriverResponse unmarshall(QueryEdgeInstanceDeviceByDriverResponse queryEdgeInstanceDeviceByDriverResponse, UnmarshallerContext _ctx) {
 		
 		queryEdgeInstanceDeviceByDriverResponse.setRequestId(_ctx.stringValue("QueryEdgeInstanceDeviceByDriverResponse.RequestId"));
+		queryEdgeInstanceDeviceByDriverResponse.setSuccess(_ctx.booleanValue("QueryEdgeInstanceDeviceByDriverResponse.Success"));
 		queryEdgeInstanceDeviceByDriverResponse.setCode(_ctx.stringValue("QueryEdgeInstanceDeviceByDriverResponse.Code"));
 		queryEdgeInstanceDeviceByDriverResponse.setErrorMessage(_ctx.stringValue("QueryEdgeInstanceDeviceByDriverResponse.ErrorMessage"));
-		queryEdgeInstanceDeviceByDriverResponse.setSuccess(_ctx.booleanValue("QueryEdgeInstanceDeviceByDriverResponse.Success"));
 
 		Data data = new Data();
-		data.setCurrentPage(_ctx.integerValue("QueryEdgeInstanceDeviceByDriverResponse.Data.CurrentPage"));
-		data.setPageSize(_ctx.integerValue("QueryEdgeInstanceDeviceByDriverResponse.Data.PageSize"));
 		data.setTotal(_ctx.integerValue("QueryEdgeInstanceDeviceByDriverResponse.Data.Total"));
+		data.setPageSize(_ctx.integerValue("QueryEdgeInstanceDeviceByDriverResponse.Data.PageSize"));
+		data.setCurrentPage(_ctx.integerValue("QueryEdgeInstanceDeviceByDriverResponse.Data.CurrentPage"));
 
 		List<Device> deviceList = new ArrayList<Device>();
 		for (int i = 0; i < _ctx.lengthValue("QueryEdgeInstanceDeviceByDriverResponse.Data.DeviceList.Length"); i++) {

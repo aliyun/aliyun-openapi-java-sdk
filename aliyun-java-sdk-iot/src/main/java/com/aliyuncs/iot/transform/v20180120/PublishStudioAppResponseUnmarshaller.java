@@ -23,10 +23,10 @@ public class PublishStudioAppResponseUnmarshaller {
 	public static PublishStudioAppResponse unmarshall(PublishStudioAppResponse publishStudioAppResponse, UnmarshallerContext _ctx) {
 		
 		publishStudioAppResponse.setRequestId(_ctx.stringValue("PublishStudioAppResponse.RequestId"));
-		publishStudioAppResponse.setCode(_ctx.stringValue("PublishStudioAppResponse.Code"));
-		publishStudioAppResponse.setData(_ctx.booleanValue("PublishStudioAppResponse.Data"));
-		publishStudioAppResponse.setErrorMessage(_ctx.stringValue("PublishStudioAppResponse.ErrorMessage"));
 		publishStudioAppResponse.setSuccess(_ctx.booleanValue("PublishStudioAppResponse.Success"));
+		publishStudioAppResponse.setCode(_ctx.stringValue("PublishStudioAppResponse.Code"));
+		publishStudioAppResponse.setErrorMessage(_ctx.stringValue("PublishStudioAppResponse.ErrorMessage"));
+		publishStudioAppResponse.setData(_ctx.booleanValue("PublishStudioAppResponse.Data"));
 	 
 	 	return publishStudioAppResponse;
 	}

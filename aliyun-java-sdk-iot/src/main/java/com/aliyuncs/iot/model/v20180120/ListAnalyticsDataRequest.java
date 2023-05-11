@@ -111,8 +111,8 @@ public class ListAnalyticsDataRequest extends RpcAcsRequest<ListAnalyticsDataRes
 			for (int depth1 = 0; depth1 < conditions.size(); depth1++) {
 				putQueryParameter("Condition." + (depth1 + 1) + ".FieldName" , conditions.get(depth1).getFieldName());
 				putQueryParameter("Condition." + (depth1 + 1) + ".Operate" , conditions.get(depth1).getOperate());
-				putQueryParameter("Condition." + (depth1 + 1) + ".BetweenEnd" , conditions.get(depth1).getBetweenEnd());
 				putQueryParameter("Condition." + (depth1 + 1) + ".BetweenStart" , conditions.get(depth1).getBetweenStart());
+				putQueryParameter("Condition." + (depth1 + 1) + ".BetweenEnd" , conditions.get(depth1).getBetweenEnd());
 				putQueryParameter("Condition." + (depth1 + 1) + ".Value" , conditions.get(depth1).getValue());
 			}
 		}	
@@ -124,9 +124,9 @@ public class ListAnalyticsDataRequest extends RpcAcsRequest<ListAnalyticsDataRes
 
 		private String operate;
 
-		private String betweenEnd;
-
 		private String betweenStart;
+
+		private String betweenEnd;
 
 		private String value;
 
@@ -146,20 +146,20 @@ public class ListAnalyticsDataRequest extends RpcAcsRequest<ListAnalyticsDataRes
 			this.operate = operate;
 		}
 
-		public String getBetweenEnd() {
-			return this.betweenEnd;
-		}
-
-		public void setBetweenEnd(String betweenEnd) {
-			this.betweenEnd = betweenEnd;
-		}
-
 		public String getBetweenStart() {
 			return this.betweenStart;
 		}
 
 		public void setBetweenStart(String betweenStart) {
 			this.betweenStart = betweenStart;
+		}
+
+		public String getBetweenEnd() {
+			return this.betweenEnd;
+		}
+
+		public void setBetweenEnd(String betweenEnd) {
+			this.betweenEnd = betweenEnd;
 		}
 
 		public String getValue() {

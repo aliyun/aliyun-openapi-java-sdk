@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryDeviceDetailResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -66,6 +50,22 @@ public class QueryDeviceDetailResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -76,25 +76,31 @@ public class QueryDeviceDetailResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String status;
+		private String iotId;
 
-		private Boolean owner;
-
-		private String utcActive;
+		private String productKey;
 
 		private String productName;
 
 		private String deviceName;
 
-		private String utcCreate;
+		private String deviceSecret;
 
 		private String firmwareVersion;
+
+		private String gmtCreate;
+
+		private String utcCreate;
+
+		private String gmtActive;
+
+		private String utcActive;
 
 		private String gmtOnline;
 
 		private String utcOnline;
 
-		private String productKey;
+		private String status;
 
 		private String ipAddress;
 
@@ -102,38 +108,24 @@ public class QueryDeviceDetailResponse extends AcsResponse {
 
 		private String region;
 
-		private String deviceSecret;
-
-		private String gmtActive;
-
-		private String gmtCreate;
+		private Boolean owner;
 
 		private String nickname;
 
-		private String iotId;
-
-		public String getStatus() {
-			return this.status;
+		public String getIotId() {
+			return this.iotId;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setIotId(String iotId) {
+			this.iotId = iotId;
 		}
 
-		public Boolean getOwner() {
-			return this.owner;
+		public String getProductKey() {
+			return this.productKey;
 		}
 
-		public void setOwner(Boolean owner) {
-			this.owner = owner;
-		}
-
-		public String getUtcActive() {
-			return this.utcActive;
-		}
-
-		public void setUtcActive(String utcActive) {
-			this.utcActive = utcActive;
+		public void setProductKey(String productKey) {
+			this.productKey = productKey;
 		}
 
 		public String getProductName() {
@@ -152,12 +144,12 @@ public class QueryDeviceDetailResponse extends AcsResponse {
 			this.deviceName = deviceName;
 		}
 
-		public String getUtcCreate() {
-			return this.utcCreate;
+		public String getDeviceSecret() {
+			return this.deviceSecret;
 		}
 
-		public void setUtcCreate(String utcCreate) {
-			this.utcCreate = utcCreate;
+		public void setDeviceSecret(String deviceSecret) {
+			this.deviceSecret = deviceSecret;
 		}
 
 		public String getFirmwareVersion() {
@@ -166,6 +158,38 @@ public class QueryDeviceDetailResponse extends AcsResponse {
 
 		public void setFirmwareVersion(String firmwareVersion) {
 			this.firmwareVersion = firmwareVersion;
+		}
+
+		public String getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(String gmtCreate) {
+			this.gmtCreate = gmtCreate;
+		}
+
+		public String getUtcCreate() {
+			return this.utcCreate;
+		}
+
+		public void setUtcCreate(String utcCreate) {
+			this.utcCreate = utcCreate;
+		}
+
+		public String getGmtActive() {
+			return this.gmtActive;
+		}
+
+		public void setGmtActive(String gmtActive) {
+			this.gmtActive = gmtActive;
+		}
+
+		public String getUtcActive() {
+			return this.utcActive;
+		}
+
+		public void setUtcActive(String utcActive) {
+			this.utcActive = utcActive;
 		}
 
 		public String getGmtOnline() {
@@ -184,12 +208,12 @@ public class QueryDeviceDetailResponse extends AcsResponse {
 			this.utcOnline = utcOnline;
 		}
 
-		public String getProductKey() {
-			return this.productKey;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setProductKey(String productKey) {
-			this.productKey = productKey;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getIpAddress() {
@@ -216,28 +240,12 @@ public class QueryDeviceDetailResponse extends AcsResponse {
 			this.region = region;
 		}
 
-		public String getDeviceSecret() {
-			return this.deviceSecret;
+		public Boolean getOwner() {
+			return this.owner;
 		}
 
-		public void setDeviceSecret(String deviceSecret) {
-			this.deviceSecret = deviceSecret;
-		}
-
-		public String getGmtActive() {
-			return this.gmtActive;
-		}
-
-		public void setGmtActive(String gmtActive) {
-			this.gmtActive = gmtActive;
-		}
-
-		public String getGmtCreate() {
-			return this.gmtCreate;
-		}
-
-		public void setGmtCreate(String gmtCreate) {
-			this.gmtCreate = gmtCreate;
+		public void setOwner(Boolean owner) {
+			this.owner = owner;
 		}
 
 		public String getNickname() {
@@ -246,14 +254,6 @@ public class QueryDeviceDetailResponse extends AcsResponse {
 
 		public void setNickname(String nickname) {
 			this.nickname = nickname;
-		}
-
-		public String getIotId() {
-			return this.iotId;
-		}
-
-		public void setIotId(String iotId) {
-			this.iotId = iotId;
 		}
 	}
 

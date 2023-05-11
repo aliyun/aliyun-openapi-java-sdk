@@ -23,9 +23,9 @@ public class DeleteThingModelResponseUnmarshaller {
 	public static DeleteThingModelResponse unmarshall(DeleteThingModelResponse deleteThingModelResponse, UnmarshallerContext _ctx) {
 		
 		deleteThingModelResponse.setRequestId(_ctx.stringValue("DeleteThingModelResponse.RequestId"));
+		deleteThingModelResponse.setSuccess(_ctx.booleanValue("DeleteThingModelResponse.Success"));
 		deleteThingModelResponse.setCode(_ctx.stringValue("DeleteThingModelResponse.Code"));
 		deleteThingModelResponse.setErrorMessage(_ctx.stringValue("DeleteThingModelResponse.ErrorMessage"));
-		deleteThingModelResponse.setSuccess(_ctx.booleanValue("DeleteThingModelResponse.Success"));
 	 
 	 	return deleteThingModelResponse;
 	}

@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryDevicesHotStorageDataStatusResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,6 +51,22 @@ public class QueryDevicesHotStorageDataStatusResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -77,19 +77,11 @@ public class QueryDevicesHotStorageDataStatusResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String nextPageToken;
-
 		private Boolean nextValid;
 
+		private String nextPageToken;
+
 		private List<PropertyStatusDataInfo> list;
-
-		public String getNextPageToken() {
-			return this.nextPageToken;
-		}
-
-		public void setNextPageToken(String nextPageToken) {
-			this.nextPageToken = nextPageToken;
-		}
 
 		public Boolean getNextValid() {
 			return this.nextValid;
@@ -97,6 +89,14 @@ public class QueryDevicesHotStorageDataStatusResponse extends AcsResponse {
 
 		public void setNextValid(Boolean nextValid) {
 			this.nextValid = nextValid;
+		}
+
+		public String getNextPageToken() {
+			return this.nextPageToken;
+		}
+
+		public void setNextPageToken(String nextPageToken) {
+			this.nextPageToken = nextPageToken;
 		}
 
 		public List<PropertyStatusDataInfo> getList() {

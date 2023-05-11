@@ -24,27 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class BatchDeleteDeviceGroupRelationsResponse extends AcsResponse {
 
-	private Integer successDeviceCount;
-
 	private String requestId;
-
-	private String errorMessage;
-
-	private Integer alreadyRelatedGroupDeviceCount;
 
 	private Boolean success;
 
 	private String code;
 
+	private String errorMessage;
+
 	private Integer validDeviceCount;
 
-	public Integer getSuccessDeviceCount() {
-		return this.successDeviceCount;
-	}
+	private Integer alreadyRelatedGroupDeviceCount;
 
-	public void setSuccessDeviceCount(Integer successDeviceCount) {
-		this.successDeviceCount = successDeviceCount;
-	}
+	private Integer successDeviceCount;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -52,22 +44,6 @@ public class BatchDeleteDeviceGroupRelationsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
-	public Integer getAlreadyRelatedGroupDeviceCount() {
-		return this.alreadyRelatedGroupDeviceCount;
-	}
-
-	public void setAlreadyRelatedGroupDeviceCount(Integer alreadyRelatedGroupDeviceCount) {
-		this.alreadyRelatedGroupDeviceCount = alreadyRelatedGroupDeviceCount;
 	}
 
 	public Boolean getSuccess() {
@@ -86,12 +62,36 @@ public class BatchDeleteDeviceGroupRelationsResponse extends AcsResponse {
 		this.code = code;
 	}
 
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public Integer getValidDeviceCount() {
 		return this.validDeviceCount;
 	}
 
 	public void setValidDeviceCount(Integer validDeviceCount) {
 		this.validDeviceCount = validDeviceCount;
+	}
+
+	public Integer getAlreadyRelatedGroupDeviceCount() {
+		return this.alreadyRelatedGroupDeviceCount;
+	}
+
+	public void setAlreadyRelatedGroupDeviceCount(Integer alreadyRelatedGroupDeviceCount) {
+		this.alreadyRelatedGroupDeviceCount = alreadyRelatedGroupDeviceCount;
+	}
+
+	public Integer getSuccessDeviceCount() {
+		return this.successDeviceCount;
+	}
+
+	public void setSuccessDeviceCount(Integer successDeviceCount) {
+		this.successDeviceCount = successDeviceCount;
 	}
 
 	@Override

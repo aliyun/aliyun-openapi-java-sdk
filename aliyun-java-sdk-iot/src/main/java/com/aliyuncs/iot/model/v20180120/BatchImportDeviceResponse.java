@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class BatchImportDeviceResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -65,6 +49,22 @@ public class BatchImportDeviceResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
 	public Data getData() {
@@ -83,11 +83,11 @@ public class BatchImportDeviceResponse extends AcsResponse {
 
 		private List<String> repeatedDeviceNameList;
 
-		private List<String> invalidSnList;
+		private List<String> invalidDeviceNameList;
 
 		private List<String> invalidDeviceSecretList;
 
-		private List<String> invalidDeviceNameList;
+		private List<String> invalidSnList;
 
 		public Long getApplyId() {
 			return this.applyId;
@@ -113,12 +113,12 @@ public class BatchImportDeviceResponse extends AcsResponse {
 			this.repeatedDeviceNameList = repeatedDeviceNameList;
 		}
 
-		public List<String> getInvalidSnList() {
-			return this.invalidSnList;
+		public List<String> getInvalidDeviceNameList() {
+			return this.invalidDeviceNameList;
 		}
 
-		public void setInvalidSnList(List<String> invalidSnList) {
-			this.invalidSnList = invalidSnList;
+		public void setInvalidDeviceNameList(List<String> invalidDeviceNameList) {
+			this.invalidDeviceNameList = invalidDeviceNameList;
 		}
 
 		public List<String> getInvalidDeviceSecretList() {
@@ -129,39 +129,23 @@ public class BatchImportDeviceResponse extends AcsResponse {
 			this.invalidDeviceSecretList = invalidDeviceSecretList;
 		}
 
-		public List<String> getInvalidDeviceNameList() {
-			return this.invalidDeviceNameList;
+		public List<String> getInvalidSnList() {
+			return this.invalidSnList;
 		}
 
-		public void setInvalidDeviceNameList(List<String> invalidDeviceNameList) {
-			this.invalidDeviceNameList = invalidDeviceNameList;
+		public void setInvalidSnList(List<String> invalidSnList) {
+			this.invalidSnList = invalidSnList;
 		}
 
 		public static class InvalidDetailListItem {
-
-			private String errorMsg;
-
-			private String sn;
 
 			private String deviceName;
 
 			private String deviceSecret;
 
-			public String getErrorMsg() {
-				return this.errorMsg;
-			}
+			private String sn;
 
-			public void setErrorMsg(String errorMsg) {
-				this.errorMsg = errorMsg;
-			}
-
-			public String getSn() {
-				return this.sn;
-			}
-
-			public void setSn(String sn) {
-				this.sn = sn;
-			}
+			private String errorMsg;
 
 			public String getDeviceName() {
 				return this.deviceName;
@@ -177,6 +161,22 @@ public class BatchImportDeviceResponse extends AcsResponse {
 
 			public void setDeviceSecret(String deviceSecret) {
 				this.deviceSecret = deviceSecret;
+			}
+
+			public String getSn() {
+				return this.sn;
+			}
+
+			public void setSn(String sn) {
+				this.sn = sn;
+			}
+
+			public String getErrorMsg() {
+				return this.errorMsg;
+			}
+
+			public void setErrorMsg(String errorMsg) {
+				this.errorMsg = errorMsg;
 			}
 		}
 	}

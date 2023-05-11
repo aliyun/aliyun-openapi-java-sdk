@@ -24,9 +24,9 @@ public class QueryThingModelExtendConfigPublishedResponseUnmarshaller {
 	public static QueryThingModelExtendConfigPublishedResponse unmarshall(QueryThingModelExtendConfigPublishedResponse queryThingModelExtendConfigPublishedResponse, UnmarshallerContext _ctx) {
 		
 		queryThingModelExtendConfigPublishedResponse.setRequestId(_ctx.stringValue("QueryThingModelExtendConfigPublishedResponse.RequestId"));
+		queryThingModelExtendConfigPublishedResponse.setSuccess(_ctx.booleanValue("QueryThingModelExtendConfigPublishedResponse.Success"));
 		queryThingModelExtendConfigPublishedResponse.setCode(_ctx.stringValue("QueryThingModelExtendConfigPublishedResponse.Code"));
 		queryThingModelExtendConfigPublishedResponse.setErrorMessage(_ctx.stringValue("QueryThingModelExtendConfigPublishedResponse.ErrorMessage"));
-		queryThingModelExtendConfigPublishedResponse.setSuccess(_ctx.booleanValue("QueryThingModelExtendConfigPublishedResponse.Success"));
 
 		Data data = new Data();
 		data.setConfiguration(_ctx.stringValue("QueryThingModelExtendConfigPublishedResponse.Data.Configuration"));

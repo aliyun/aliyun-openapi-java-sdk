@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QuerySpeechPushJobResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,6 +51,22 @@ public class QuerySpeechPushJobResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -77,21 +77,13 @@ public class QuerySpeechPushJobResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer pageSize;
-
 		private Integer total;
 
 		private Integer pageId;
 
+		private Integer pageSize;
+
 		private List<Items> list;
-
-		public Integer getPageSize() {
-			return this.pageSize;
-		}
-
-		public void setPageSize(Integer pageSize) {
-			this.pageSize = pageSize;
-		}
 
 		public Integer getTotal() {
 			return this.total;
@@ -109,6 +101,14 @@ public class QuerySpeechPushJobResponse extends AcsResponse {
 			this.pageId = pageId;
 		}
 
+		public Integer getPageSize() {
+			return this.pageSize;
+		}
+
+		public void setPageSize(Integer pageSize) {
+			this.pageSize = pageSize;
+		}
+
 		public List<Items> getList() {
 			return this.list;
 		}
@@ -119,116 +119,44 @@ public class QuerySpeechPushJobResponse extends AcsResponse {
 
 		public static class Items {
 
-			private String status;
-
-			private Integer successDeviceNum;
-
-			private Integer speechNum;
-
-			private String deviceName;
-
-			private Integer failDeviceNum;
-
-			private String pushMode;
-
-			private Boolean speechStatus;
-
-			private String productKey;
-
-			private String groupName;
-
-			private String groupId;
+			private String code;
 
 			private Long expiredTime;
 
-			private Integer runningDeviceNum;
-
-			private String code;
-
-			private Integer totalDeviceNum;
-
-			private Long createdTime;
+			private String pushMode;
 
 			private String iotId;
 
-			public String getStatus() {
-				return this.status;
+			private String status;
+
+			private Long createdTime;
+
+			private Integer totalDeviceNum;
+
+			private Integer successDeviceNum;
+
+			private Boolean speechStatus;
+
+			private Integer failDeviceNum;
+
+			private Integer speechNum;
+
+			private Integer runningDeviceNum;
+
+			private String groupId;
+
+			private String groupName;
+
+			private String productKey;
+
+			private String deviceName;
+
+			public String getCode() {
+				return this.code;
 			}
 
-			public void setStatus(String status) {
-				this.status = status;
-			}
-
-			public Integer getSuccessDeviceNum() {
-				return this.successDeviceNum;
-			}
-
-			public void setSuccessDeviceNum(Integer successDeviceNum) {
-				this.successDeviceNum = successDeviceNum;
-			}
-
-			public Integer getSpeechNum() {
-				return this.speechNum;
-			}
-
-			public void setSpeechNum(Integer speechNum) {
-				this.speechNum = speechNum;
-			}
-
-			public String getDeviceName() {
-				return this.deviceName;
-			}
-
-			public void setDeviceName(String deviceName) {
-				this.deviceName = deviceName;
-			}
-
-			public Integer getFailDeviceNum() {
-				return this.failDeviceNum;
-			}
-
-			public void setFailDeviceNum(Integer failDeviceNum) {
-				this.failDeviceNum = failDeviceNum;
-			}
-
-			public String getPushMode() {
-				return this.pushMode;
-			}
-
-			public void setPushMode(String pushMode) {
-				this.pushMode = pushMode;
-			}
-
-			public Boolean getSpeechStatus() {
-				return this.speechStatus;
-			}
-
-			public void setSpeechStatus(Boolean speechStatus) {
-				this.speechStatus = speechStatus;
-			}
-
-			public String getProductKey() {
-				return this.productKey;
-			}
-
-			public void setProductKey(String productKey) {
-				this.productKey = productKey;
-			}
-
-			public String getGroupName() {
-				return this.groupName;
-			}
-
-			public void setGroupName(String groupName) {
-				this.groupName = groupName;
-			}
-
-			public String getGroupId() {
-				return this.groupId;
-			}
-
-			public void setGroupId(String groupId) {
-				this.groupId = groupId;
+			public void setCode(String code) {
+				this.code = code;
 			}
 
 			public Long getExpiredTime() {
@@ -239,28 +167,28 @@ public class QuerySpeechPushJobResponse extends AcsResponse {
 				this.expiredTime = expiredTime;
 			}
 
-			public Integer getRunningDeviceNum() {
-				return this.runningDeviceNum;
+			public String getPushMode() {
+				return this.pushMode;
 			}
 
-			public void setRunningDeviceNum(Integer runningDeviceNum) {
-				this.runningDeviceNum = runningDeviceNum;
+			public void setPushMode(String pushMode) {
+				this.pushMode = pushMode;
 			}
 
-			public String getCode() {
-				return this.code;
+			public String getIotId() {
+				return this.iotId;
 			}
 
-			public void setCode(String code) {
-				this.code = code;
+			public void setIotId(String iotId) {
+				this.iotId = iotId;
 			}
 
-			public Integer getTotalDeviceNum() {
-				return this.totalDeviceNum;
+			public String getStatus() {
+				return this.status;
 			}
 
-			public void setTotalDeviceNum(Integer totalDeviceNum) {
-				this.totalDeviceNum = totalDeviceNum;
+			public void setStatus(String status) {
+				this.status = status;
 			}
 
 			public Long getCreatedTime() {
@@ -271,12 +199,84 @@ public class QuerySpeechPushJobResponse extends AcsResponse {
 				this.createdTime = createdTime;
 			}
 
-			public String getIotId() {
-				return this.iotId;
+			public Integer getTotalDeviceNum() {
+				return this.totalDeviceNum;
 			}
 
-			public void setIotId(String iotId) {
-				this.iotId = iotId;
+			public void setTotalDeviceNum(Integer totalDeviceNum) {
+				this.totalDeviceNum = totalDeviceNum;
+			}
+
+			public Integer getSuccessDeviceNum() {
+				return this.successDeviceNum;
+			}
+
+			public void setSuccessDeviceNum(Integer successDeviceNum) {
+				this.successDeviceNum = successDeviceNum;
+			}
+
+			public Boolean getSpeechStatus() {
+				return this.speechStatus;
+			}
+
+			public void setSpeechStatus(Boolean speechStatus) {
+				this.speechStatus = speechStatus;
+			}
+
+			public Integer getFailDeviceNum() {
+				return this.failDeviceNum;
+			}
+
+			public void setFailDeviceNum(Integer failDeviceNum) {
+				this.failDeviceNum = failDeviceNum;
+			}
+
+			public Integer getSpeechNum() {
+				return this.speechNum;
+			}
+
+			public void setSpeechNum(Integer speechNum) {
+				this.speechNum = speechNum;
+			}
+
+			public Integer getRunningDeviceNum() {
+				return this.runningDeviceNum;
+			}
+
+			public void setRunningDeviceNum(Integer runningDeviceNum) {
+				this.runningDeviceNum = runningDeviceNum;
+			}
+
+			public String getGroupId() {
+				return this.groupId;
+			}
+
+			public void setGroupId(String groupId) {
+				this.groupId = groupId;
+			}
+
+			public String getGroupName() {
+				return this.groupName;
+			}
+
+			public void setGroupName(String groupName) {
+				this.groupName = groupName;
+			}
+
+			public String getProductKey() {
+				return this.productKey;
+			}
+
+			public void setProductKey(String productKey) {
+				this.productKey = productKey;
+			}
+
+			public String getDeviceName() {
+				return this.deviceName;
+			}
+
+			public void setDeviceName(String deviceName) {
+				this.deviceName = deviceName;
 			}
 		}
 	}

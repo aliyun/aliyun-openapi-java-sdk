@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryDeviceGroupByDeviceResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private List<GroupInfo> groupInfos;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,6 +51,22 @@ public class QueryDeviceGroupByDeviceResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public List<GroupInfo> getGroupInfos() {
 		return this.groupInfos;
 	}
@@ -77,23 +77,15 @@ public class QueryDeviceGroupByDeviceResponse extends AcsResponse {
 
 	public static class GroupInfo {
 
-		private String groupName;
-
 		private String groupId;
 
-		private String groupType;
-
-		private String groupDesc;
+		private String groupName;
 
 		private String utcCreate;
 
-		public String getGroupName() {
-			return this.groupName;
-		}
+		private String groupDesc;
 
-		public void setGroupName(String groupName) {
-			this.groupName = groupName;
-		}
+		private String groupType;
 
 		public String getGroupId() {
 			return this.groupId;
@@ -103,12 +95,20 @@ public class QueryDeviceGroupByDeviceResponse extends AcsResponse {
 			this.groupId = groupId;
 		}
 
-		public String getGroupType() {
-			return this.groupType;
+		public String getGroupName() {
+			return this.groupName;
 		}
 
-		public void setGroupType(String groupType) {
-			this.groupType = groupType;
+		public void setGroupName(String groupName) {
+			this.groupName = groupName;
+		}
+
+		public String getUtcCreate() {
+			return this.utcCreate;
+		}
+
+		public void setUtcCreate(String utcCreate) {
+			this.utcCreate = utcCreate;
 		}
 
 		public String getGroupDesc() {
@@ -119,12 +119,12 @@ public class QueryDeviceGroupByDeviceResponse extends AcsResponse {
 			this.groupDesc = groupDesc;
 		}
 
-		public String getUtcCreate() {
-			return this.utcCreate;
+		public String getGroupType() {
+			return this.groupType;
 		}
 
-		public void setUtcCreate(String utcCreate) {
-			this.utcCreate = utcCreate;
+		public void setGroupType(String groupType) {
+			this.groupType = groupType;
 		}
 	}
 

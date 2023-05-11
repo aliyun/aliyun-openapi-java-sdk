@@ -23,9 +23,9 @@ public class ResetConsumerGroupPositionResponseUnmarshaller {
 	public static ResetConsumerGroupPositionResponse unmarshall(ResetConsumerGroupPositionResponse resetConsumerGroupPositionResponse, UnmarshallerContext _ctx) {
 		
 		resetConsumerGroupPositionResponse.setRequestId(_ctx.stringValue("ResetConsumerGroupPositionResponse.RequestId"));
-		resetConsumerGroupPositionResponse.setCode(_ctx.stringValue("ResetConsumerGroupPositionResponse.Code"));
-		resetConsumerGroupPositionResponse.setErrorMessage(_ctx.stringValue("ResetConsumerGroupPositionResponse.ErrorMessage"));
 		resetConsumerGroupPositionResponse.setSuccess(_ctx.booleanValue("ResetConsumerGroupPositionResponse.Success"));
+		resetConsumerGroupPositionResponse.setErrorMessage(_ctx.stringValue("ResetConsumerGroupPositionResponse.ErrorMessage"));
+		resetConsumerGroupPositionResponse.setCode(_ctx.stringValue("ResetConsumerGroupPositionResponse.Code"));
 	 
 	 	return resetConsumerGroupPositionResponse;
 	}

@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryStudioAppPageListOpenResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,6 +51,22 @@ public class QueryStudioAppPageListOpenResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -77,31 +77,15 @@ public class QueryStudioAppPageListOpenResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer pageNo;
-
-		private Integer totalPage;
-
 		private Integer pageSize;
+
+		private Integer pageNo;
 
 		private Integer total;
 
+		private Integer totalPage;
+
 		private List<PageInfo> list;
-
-		public Integer getPageNo() {
-			return this.pageNo;
-		}
-
-		public void setPageNo(Integer pageNo) {
-			this.pageNo = pageNo;
-		}
-
-		public Integer getTotalPage() {
-			return this.totalPage;
-		}
-
-		public void setTotalPage(Integer totalPage) {
-			this.totalPage = totalPage;
-		}
 
 		public Integer getPageSize() {
 			return this.pageSize;
@@ -111,12 +95,28 @@ public class QueryStudioAppPageListOpenResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
+		public Integer getPageNo() {
+			return this.pageNo;
+		}
+
+		public void setPageNo(Integer pageNo) {
+			this.pageNo = pageNo;
+		}
+
 		public Integer getTotal() {
 			return this.total;
 		}
 
 		public void setTotal(Integer total) {
 			this.total = total;
+		}
+
+		public Integer getTotalPage() {
+			return this.totalPage;
+		}
+
+		public void setTotalPage(Integer totalPage) {
+			this.totalPage = totalPage;
 		}
 
 		public List<PageInfo> getList() {
@@ -129,38 +129,38 @@ public class QueryStudioAppPageListOpenResponse extends AcsResponse {
 
 		public static class PageInfo {
 
-			private String gmtCreate;
+			private Integer id;
 
-			private Integer isLoginPage;
+			private String pageId;
 
 			private String path;
 
 			private Integer isHidden;
 
-			private String gmtModified;
+			private Integer isHome;
+
+			private Integer isLoginPage;
 
 			private String name;
 
-			private String pageId;
+			private String gmtCreate;
 
-			private Integer isHome;
+			private String gmtModified;
 
-			private Integer id;
-
-			public String getGmtCreate() {
-				return this.gmtCreate;
+			public Integer getId() {
+				return this.id;
 			}
 
-			public void setGmtCreate(String gmtCreate) {
-				this.gmtCreate = gmtCreate;
+			public void setId(Integer id) {
+				this.id = id;
 			}
 
-			public Integer getIsLoginPage() {
-				return this.isLoginPage;
+			public String getPageId() {
+				return this.pageId;
 			}
 
-			public void setIsLoginPage(Integer isLoginPage) {
-				this.isLoginPage = isLoginPage;
+			public void setPageId(String pageId) {
+				this.pageId = pageId;
 			}
 
 			public String getPath() {
@@ -179,12 +179,20 @@ public class QueryStudioAppPageListOpenResponse extends AcsResponse {
 				this.isHidden = isHidden;
 			}
 
-			public String getGmtModified() {
-				return this.gmtModified;
+			public Integer getIsHome() {
+				return this.isHome;
 			}
 
-			public void setGmtModified(String gmtModified) {
-				this.gmtModified = gmtModified;
+			public void setIsHome(Integer isHome) {
+				this.isHome = isHome;
+			}
+
+			public Integer getIsLoginPage() {
+				return this.isLoginPage;
+			}
+
+			public void setIsLoginPage(Integer isLoginPage) {
+				this.isLoginPage = isLoginPage;
 			}
 
 			public String getName() {
@@ -195,28 +203,20 @@ public class QueryStudioAppPageListOpenResponse extends AcsResponse {
 				this.name = name;
 			}
 
-			public String getPageId() {
-				return this.pageId;
+			public String getGmtCreate() {
+				return this.gmtCreate;
 			}
 
-			public void setPageId(String pageId) {
-				this.pageId = pageId;
+			public void setGmtCreate(String gmtCreate) {
+				this.gmtCreate = gmtCreate;
 			}
 
-			public Integer getIsHome() {
-				return this.isHome;
+			public String getGmtModified() {
+				return this.gmtModified;
 			}
 
-			public void setIsHome(Integer isHome) {
-				this.isHome = isHome;
-			}
-
-			public Integer getId() {
-				return this.id;
-			}
-
-			public void setId(Integer id) {
-				this.id = id;
+			public void setGmtModified(String gmtModified) {
+				this.gmtModified = gmtModified;
 			}
 		}
 	}

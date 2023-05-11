@@ -24,20 +24,20 @@ public class GetParserResponseUnmarshaller {
 	public static GetParserResponse unmarshall(GetParserResponse getParserResponse, UnmarshallerContext _ctx) {
 		
 		getParserResponse.setRequestId(_ctx.stringValue("GetParserResponse.RequestId"));
+		getParserResponse.setSuccess(_ctx.booleanValue("GetParserResponse.Success"));
 		getParserResponse.setCode(_ctx.stringValue("GetParserResponse.Code"));
 		getParserResponse.setErrorMessage(_ctx.stringValue("GetParserResponse.ErrorMessage"));
-		getParserResponse.setSuccess(_ctx.booleanValue("GetParserResponse.Success"));
 
 		Data data = new Data();
-		data.setStatus(_ctx.stringValue("GetParserResponse.Data.Status"));
-		data.setDescription(_ctx.stringValue("GetParserResponse.Data.Description"));
-		data.setUtcModified(_ctx.stringValue("GetParserResponse.Data.UtcModified"));
-		data.setDataSourceId(_ctx.longValue("GetParserResponse.Data.DataSourceId"));
-		data.setScriptDraft(_ctx.stringValue("GetParserResponse.Data.ScriptDraft"));
-		data.setUtcCreated(_ctx.stringValue("GetParserResponse.Data.UtcCreated"));
-		data.setName(_ctx.stringValue("GetParserResponse.Data.Name"));
-		data.setScript(_ctx.stringValue("GetParserResponse.Data.Script"));
 		data.setParserId(_ctx.longValue("GetParserResponse.Data.ParserId"));
+		data.setName(_ctx.stringValue("GetParserResponse.Data.Name"));
+		data.setDataSourceId(_ctx.longValue("GetParserResponse.Data.DataSourceId"));
+		data.setStatus(_ctx.stringValue("GetParserResponse.Data.Status"));
+		data.setUtcCreated(_ctx.stringValue("GetParserResponse.Data.UtcCreated"));
+		data.setUtcModified(_ctx.stringValue("GetParserResponse.Data.UtcModified"));
+		data.setScriptDraft(_ctx.stringValue("GetParserResponse.Data.ScriptDraft"));
+		data.setScript(_ctx.stringValue("GetParserResponse.Data.Script"));
+		data.setDescription(_ctx.stringValue("GetParserResponse.Data.Description"));
 		getParserResponse.setData(data);
 	 
 	 	return getParserResponse;

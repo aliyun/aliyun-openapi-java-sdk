@@ -32,20 +32,20 @@ public class QueryJobResponseUnmarshaller {
 	public static QueryJobResponse unmarshall(QueryJobResponse queryJobResponse, UnmarshallerContext _ctx) {
 		
 		queryJobResponse.setRequestId(_ctx.stringValue("QueryJobResponse.RequestId"));
+		queryJobResponse.setSuccess(_ctx.booleanValue("QueryJobResponse.Success"));
 		queryJobResponse.setCode(_ctx.stringValue("QueryJobResponse.Code"));
 		queryJobResponse.setErrorMessage(_ctx.stringValue("QueryJobResponse.ErrorMessage"));
-		queryJobResponse.setSuccess(_ctx.booleanValue("QueryJobResponse.Success"));
 
 		Data data = new Data();
-		data.setType(_ctx.stringValue("QueryJobResponse.Data.Type"));
+		data.setJobId(_ctx.stringValue("QueryJobResponse.Data.JobId"));
+		data.setJobName(_ctx.stringValue("QueryJobResponse.Data.JobName"));
+		data.setUtcCreate(_ctx.stringValue("QueryJobResponse.Data.UtcCreate"));
 		data.setStatus(_ctx.stringValue("QueryJobResponse.Data.Status"));
 		data.setDescription(_ctx.stringValue("QueryJobResponse.Data.Description"));
-		data.setJobName(_ctx.stringValue("QueryJobResponse.Data.JobName"));
-		data.setUtcModified(_ctx.stringValue("QueryJobResponse.Data.UtcModified"));
-		data.setJobId(_ctx.stringValue("QueryJobResponse.Data.JobId"));
-		data.setUtcCreate(_ctx.stringValue("QueryJobResponse.Data.UtcCreate"));
-		data.setScheduledTime(_ctx.longValue("QueryJobResponse.Data.ScheduledTime"));
+		data.setType(_ctx.stringValue("QueryJobResponse.Data.Type"));
 		data.setJobDocument(_ctx.stringValue("QueryJobResponse.Data.JobDocument"));
+		data.setUtcModified(_ctx.stringValue("QueryJobResponse.Data.UtcModified"));
+		data.setScheduledTime(_ctx.longValue("QueryJobResponse.Data.ScheduledTime"));
 
 		RolloutConfig rolloutConfig = new RolloutConfig();
 		rolloutConfig.setMaximumPerMinute(_ctx.integerValue("QueryJobResponse.Data.RolloutConfig.MaximumPerMinute"));
@@ -63,15 +63,15 @@ public class QueryJobResponseUnmarshaller {
 		data.setJobFile(jobFile);
 
 		TargetConfig targetConfig = new TargetConfig();
-		targetConfig.setTargetProduct(_ctx.stringValue("QueryJobResponse.Data.TargetConfig.TargetProduct"));
 		targetConfig.setTargetGroup(_ctx.stringValue("QueryJobResponse.Data.TargetConfig.TargetGroup"));
+		targetConfig.setTargetProduct(_ctx.stringValue("QueryJobResponse.Data.TargetConfig.TargetProduct"));
 		targetConfig.setTargetType(_ctx.stringValue("QueryJobResponse.Data.TargetConfig.TargetType"));
 
 		List<TargetDevicesItem> targetDevices = new ArrayList<TargetDevicesItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryJobResponse.Data.TargetConfig.TargetDevices.Length"); i++) {
 			TargetDevicesItem targetDevicesItem = new TargetDevicesItem();
-			targetDevicesItem.setDeviceName(_ctx.stringValue("QueryJobResponse.Data.TargetConfig.TargetDevices["+ i +"].DeviceName"));
 			targetDevicesItem.setProductKey(_ctx.stringValue("QueryJobResponse.Data.TargetConfig.TargetDevices["+ i +"].ProductKey"));
+			targetDevicesItem.setDeviceName(_ctx.stringValue("QueryJobResponse.Data.TargetConfig.TargetDevices["+ i +"].DeviceName"));
 
 			targetDevices.add(targetDevicesItem);
 		}

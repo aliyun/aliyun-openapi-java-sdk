@@ -24,39 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateProductTopicResponse extends AcsResponse {
 
-	private String code;
-
-	private Long topicId;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
-	public String getCode() {
-		return this.code;
-	}
+	private String code;
 
-	public void setCode(String code) {
-		this.code = code;
-	}
+	private String errorMessage;
 
-	public Long getTopicId() {
-		return this.topicId;
-	}
-
-	public void setTopicId(Long topicId) {
-		this.topicId = topicId;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
+	private Long topicId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -72,6 +48,30 @@ public class CreateProductTopicResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
+	public Long getTopicId() {
+		return this.topicId;
+	}
+
+	public void setTopicId(Long topicId) {
+		this.topicId = topicId;
 	}
 
 	@Override

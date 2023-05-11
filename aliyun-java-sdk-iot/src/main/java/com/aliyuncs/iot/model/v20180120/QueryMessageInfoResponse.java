@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryMessageInfoResponse extends AcsResponse {
 
-	private String code;
-
 	private String requestId;
-
-	private String errorMessage;
 
 	private Boolean success;
 
+	private String errorMessage;
+
+	private String code;
+
 	private Message message;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,6 +41,14 @@ public class QueryMessageInfoResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public String getErrorMessage() {
@@ -59,12 +59,12 @@ public class QueryMessageInfoResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Message getMessage() {
@@ -77,9 +77,9 @@ public class QueryMessageInfoResponse extends AcsResponse {
 
 	public static class Message {
 
-		private String topicFullName;
-
 		private String uniMsgId;
+
+		private String topicFullName;
 
 		private String messageContent;
 
@@ -87,20 +87,20 @@ public class QueryMessageInfoResponse extends AcsResponse {
 
 		private List<UserProperty> userProperties;
 
-		public String getTopicFullName() {
-			return this.topicFullName;
-		}
-
-		public void setTopicFullName(String topicFullName) {
-			this.topicFullName = topicFullName;
-		}
-
 		public String getUniMsgId() {
 			return this.uniMsgId;
 		}
 
 		public void setUniMsgId(String uniMsgId) {
 			this.uniMsgId = uniMsgId;
+		}
+
+		public String getTopicFullName() {
+			return this.topicFullName;
+		}
+
+		public void setTopicFullName(String topicFullName) {
+			this.topicFullName = topicFullName;
 		}
 
 		public String getMessageContent() {

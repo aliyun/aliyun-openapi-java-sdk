@@ -25,35 +25,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryDevicePropertiesDataResponse extends AcsResponse {
 
-	private Boolean nextValid;
-
-	private Long nextTime;
-
 	private String requestId;
-
-	private String errorMessage;
 
 	private Boolean success;
 
 	private String code;
 
+	private String errorMessage;
+
+	private Boolean nextValid;
+
+	private Long nextTime;
+
 	private List<PropertyDataInfo> propertyDataInfos;
-
-	public Boolean getNextValid() {
-		return this.nextValid;
-	}
-
-	public void setNextValid(Boolean nextValid) {
-		this.nextValid = nextValid;
-	}
-
-	public Long getNextTime() {
-		return this.nextTime;
-	}
-
-	public void setNextTime(Long nextTime) {
-		this.nextTime = nextTime;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -61,14 +45,6 @@ public class QueryDevicePropertiesDataResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
 	}
 
 	public Boolean getSuccess() {
@@ -85,6 +61,30 @@ public class QueryDevicePropertiesDataResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
+	public Boolean getNextValid() {
+		return this.nextValid;
+	}
+
+	public void setNextValid(Boolean nextValid) {
+		this.nextValid = nextValid;
+	}
+
+	public Long getNextTime() {
+		return this.nextTime;
+	}
+
+	public void setNextTime(Long nextTime) {
+		this.nextTime = nextTime;
 	}
 
 	public List<PropertyDataInfo> getPropertyDataInfos() {
@@ -119,17 +119,9 @@ public class QueryDevicePropertiesDataResponse extends AcsResponse {
 
 		public static class PropertyInfo {
 
-			private String value;
-
 			private Long time;
 
-			public String getValue() {
-				return this.value;
-			}
-
-			public void setValue(String value) {
-				this.value = value;
-			}
+			private String value;
 
 			public Long getTime() {
 				return this.time;
@@ -137,6 +129,14 @@ public class QueryDevicePropertiesDataResponse extends AcsResponse {
 
 			public void setTime(Long time) {
 				this.time = time;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
 			}
 		}
 	}

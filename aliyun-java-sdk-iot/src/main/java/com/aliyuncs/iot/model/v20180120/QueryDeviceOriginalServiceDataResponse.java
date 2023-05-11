@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryDeviceOriginalServiceDataResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -65,6 +49,22 @@ public class QueryDeviceOriginalServiceDataResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
 	public Data getData() {
@@ -109,15 +109,23 @@ public class QueryDeviceOriginalServiceDataResponse extends AcsResponse {
 
 		public static class ServiceInfo {
 
+			private String time;
+
 			private String identifier;
 
-			private String outputData;
-
-			private String time;
+			private String name;
 
 			private String inputData;
 
-			private String name;
+			private String outputData;
+
+			public String getTime() {
+				return this.time;
+			}
+
+			public void setTime(String time) {
+				this.time = time;
+			}
 
 			public String getIdentifier() {
 				return this.identifier;
@@ -127,20 +135,12 @@ public class QueryDeviceOriginalServiceDataResponse extends AcsResponse {
 				this.identifier = identifier;
 			}
 
-			public String getOutputData() {
-				return this.outputData;
+			public String getName() {
+				return this.name;
 			}
 
-			public void setOutputData(String outputData) {
-				this.outputData = outputData;
-			}
-
-			public String getTime() {
-				return this.time;
-			}
-
-			public void setTime(String time) {
-				this.time = time;
+			public void setName(String name) {
+				this.name = name;
 			}
 
 			public String getInputData() {
@@ -151,12 +151,12 @@ public class QueryDeviceOriginalServiceDataResponse extends AcsResponse {
 				this.inputData = inputData;
 			}
 
-			public String getName() {
-				return this.name;
+			public String getOutputData() {
+				return this.outputData;
 			}
 
-			public void setName(String name) {
-				this.name = name;
+			public void setOutputData(String outputData) {
+				this.outputData = outputData;
 			}
 		}
 	}

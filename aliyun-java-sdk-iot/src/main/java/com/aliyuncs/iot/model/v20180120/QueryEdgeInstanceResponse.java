@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryEdgeInstanceResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,6 +51,22 @@ public class QueryEdgeInstanceResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -77,20 +77,20 @@ public class QueryEdgeInstanceResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer currentPage;
+		private Integer total;
 
 		private Integer pageSize;
 
-		private Integer total;
+		private Integer currentPage;
 
 		private List<Instance> instanceList;
 
-		public Integer getCurrentPage() {
-			return this.currentPage;
+		public Integer getTotal() {
+			return this.total;
 		}
 
-		public void setCurrentPage(Integer currentPage) {
-			this.currentPage = currentPage;
+		public void setTotal(Integer total) {
+			this.total = total;
 		}
 
 		public Integer getPageSize() {
@@ -101,12 +101,12 @@ public class QueryEdgeInstanceResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
-		public Integer getTotal() {
-			return this.total;
+		public Integer getCurrentPage() {
+			return this.currentPage;
 		}
 
-		public void setTotal(Integer total) {
-			this.total = total;
+		public void setCurrentPage(Integer currentPage) {
+			this.currentPage = currentPage;
 		}
 
 		public List<Instance> getInstanceList() {
@@ -119,44 +119,60 @@ public class QueryEdgeInstanceResponse extends AcsResponse {
 
 		public static class Instance {
 
-			private Long gmtCreateTimestamp;
+			private String instanceId;
+
+			private String name;
+
+			private String tags;
 
 			private Integer type;
 
+			private String gmtCreate;
+
+			private String gmtModified;
+
 			private String roleArn;
+
+			private String roleName;
 
 			private String roleAttachTime;
 
 			private Integer spec;
 
-			private Long gmtModifiedTimestamp;
-
-			private String tags;
-
-			private String instanceId;
-
-			private String roleName;
-
-			private Long roleAttachTimestamp;
-
-			private String gmtModified;
-
-			private String latestDeploymentType;
+			private Boolean bizEnable;
 
 			private Integer latestDeploymentStatus;
 
-			private Boolean bizEnable;
+			private String latestDeploymentType;
 
-			private String gmtCreate;
+			private Long gmtCreateTimestamp;
 
-			private String name;
+			private Long gmtModifiedTimestamp;
 
-			public Long getGmtCreateTimestamp() {
-				return this.gmtCreateTimestamp;
+			private Long roleAttachTimestamp;
+
+			public String getInstanceId() {
+				return this.instanceId;
 			}
 
-			public void setGmtCreateTimestamp(Long gmtCreateTimestamp) {
-				this.gmtCreateTimestamp = gmtCreateTimestamp;
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getTags() {
+				return this.tags;
+			}
+
+			public void setTags(String tags) {
+				this.tags = tags;
 			}
 
 			public Integer getType() {
@@ -167,12 +183,36 @@ public class QueryEdgeInstanceResponse extends AcsResponse {
 				this.type = type;
 			}
 
+			public String getGmtCreate() {
+				return this.gmtCreate;
+			}
+
+			public void setGmtCreate(String gmtCreate) {
+				this.gmtCreate = gmtCreate;
+			}
+
+			public String getGmtModified() {
+				return this.gmtModified;
+			}
+
+			public void setGmtModified(String gmtModified) {
+				this.gmtModified = gmtModified;
+			}
+
 			public String getRoleArn() {
 				return this.roleArn;
 			}
 
 			public void setRoleArn(String roleArn) {
 				this.roleArn = roleArn;
+			}
+
+			public String getRoleName() {
+				return this.roleName;
+			}
+
+			public void setRoleName(String roleName) {
+				this.roleName = roleName;
 			}
 
 			public String getRoleAttachTime() {
@@ -191,60 +231,12 @@ public class QueryEdgeInstanceResponse extends AcsResponse {
 				this.spec = spec;
 			}
 
-			public Long getGmtModifiedTimestamp() {
-				return this.gmtModifiedTimestamp;
+			public Boolean getBizEnable() {
+				return this.bizEnable;
 			}
 
-			public void setGmtModifiedTimestamp(Long gmtModifiedTimestamp) {
-				this.gmtModifiedTimestamp = gmtModifiedTimestamp;
-			}
-
-			public String getTags() {
-				return this.tags;
-			}
-
-			public void setTags(String tags) {
-				this.tags = tags;
-			}
-
-			public String getInstanceId() {
-				return this.instanceId;
-			}
-
-			public void setInstanceId(String instanceId) {
-				this.instanceId = instanceId;
-			}
-
-			public String getRoleName() {
-				return this.roleName;
-			}
-
-			public void setRoleName(String roleName) {
-				this.roleName = roleName;
-			}
-
-			public Long getRoleAttachTimestamp() {
-				return this.roleAttachTimestamp;
-			}
-
-			public void setRoleAttachTimestamp(Long roleAttachTimestamp) {
-				this.roleAttachTimestamp = roleAttachTimestamp;
-			}
-
-			public String getGmtModified() {
-				return this.gmtModified;
-			}
-
-			public void setGmtModified(String gmtModified) {
-				this.gmtModified = gmtModified;
-			}
-
-			public String getLatestDeploymentType() {
-				return this.latestDeploymentType;
-			}
-
-			public void setLatestDeploymentType(String latestDeploymentType) {
-				this.latestDeploymentType = latestDeploymentType;
+			public void setBizEnable(Boolean bizEnable) {
+				this.bizEnable = bizEnable;
 			}
 
 			public Integer getLatestDeploymentStatus() {
@@ -255,28 +247,36 @@ public class QueryEdgeInstanceResponse extends AcsResponse {
 				this.latestDeploymentStatus = latestDeploymentStatus;
 			}
 
-			public Boolean getBizEnable() {
-				return this.bizEnable;
+			public String getLatestDeploymentType() {
+				return this.latestDeploymentType;
 			}
 
-			public void setBizEnable(Boolean bizEnable) {
-				this.bizEnable = bizEnable;
+			public void setLatestDeploymentType(String latestDeploymentType) {
+				this.latestDeploymentType = latestDeploymentType;
 			}
 
-			public String getGmtCreate() {
-				return this.gmtCreate;
+			public Long getGmtCreateTimestamp() {
+				return this.gmtCreateTimestamp;
 			}
 
-			public void setGmtCreate(String gmtCreate) {
-				this.gmtCreate = gmtCreate;
+			public void setGmtCreateTimestamp(Long gmtCreateTimestamp) {
+				this.gmtCreateTimestamp = gmtCreateTimestamp;
 			}
 
-			public String getName() {
-				return this.name;
+			public Long getGmtModifiedTimestamp() {
+				return this.gmtModifiedTimestamp;
 			}
 
-			public void setName(String name) {
-				this.name = name;
+			public void setGmtModifiedTimestamp(Long gmtModifiedTimestamp) {
+				this.gmtModifiedTimestamp = gmtModifiedTimestamp;
+			}
+
+			public Long getRoleAttachTimestamp() {
+				return this.roleAttachTimestamp;
+			}
+
+			public void setRoleAttachTimestamp(Long roleAttachTimestamp) {
+				this.roleAttachTimestamp = roleAttachTimestamp;
 			}
 		}
 	}

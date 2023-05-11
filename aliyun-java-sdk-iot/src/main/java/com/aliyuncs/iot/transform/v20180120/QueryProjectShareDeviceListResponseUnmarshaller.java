@@ -28,9 +28,9 @@ public class QueryProjectShareDeviceListResponseUnmarshaller {
 	public static QueryProjectShareDeviceListResponse unmarshall(QueryProjectShareDeviceListResponse queryProjectShareDeviceListResponse, UnmarshallerContext _ctx) {
 		
 		queryProjectShareDeviceListResponse.setRequestId(_ctx.stringValue("QueryProjectShareDeviceListResponse.RequestId"));
+		queryProjectShareDeviceListResponse.setSuccess(_ctx.booleanValue("QueryProjectShareDeviceListResponse.Success"));
 		queryProjectShareDeviceListResponse.setCode(_ctx.stringValue("QueryProjectShareDeviceListResponse.Code"));
 		queryProjectShareDeviceListResponse.setErrorMessage(_ctx.stringValue("QueryProjectShareDeviceListResponse.ErrorMessage"));
-		queryProjectShareDeviceListResponse.setSuccess(_ctx.booleanValue("QueryProjectShareDeviceListResponse.Success"));
 
 		Data data = new Data();
 		data.setPageSize(_ctx.integerValue("QueryProjectShareDeviceListResponse.Data.PageSize"));

@@ -23,10 +23,10 @@ public class AsyncRRpcResponseUnmarshaller {
 	public static AsyncRRpcResponse unmarshall(AsyncRRpcResponse asyncRRpcResponse, UnmarshallerContext _ctx) {
 		
 		asyncRRpcResponse.setRequestId(_ctx.stringValue("AsyncRRpcResponse.RequestId"));
-		asyncRRpcResponse.setCode(_ctx.stringValue("AsyncRRpcResponse.Code"));
-		asyncRRpcResponse.setMessageId(_ctx.longValue("AsyncRRpcResponse.MessageId"));
-		asyncRRpcResponse.setErrorMessage(_ctx.stringValue("AsyncRRpcResponse.ErrorMessage"));
 		asyncRRpcResponse.setSuccess(_ctx.booleanValue("AsyncRRpcResponse.Success"));
+		asyncRRpcResponse.setCode(_ctx.stringValue("AsyncRRpcResponse.Code"));
+		asyncRRpcResponse.setErrorMessage(_ctx.stringValue("AsyncRRpcResponse.ErrorMessage"));
+		asyncRRpcResponse.setMessageId(_ctx.longValue("AsyncRRpcResponse.MessageId"));
 	 
 	 	return asyncRRpcResponse;
 	}

@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class BatchGetEdgeInstanceChannelResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private List<Channel> data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,6 +51,22 @@ public class BatchGetEdgeInstanceChannelResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public List<Channel> getData() {
 		return this.data;
 	}
@@ -77,19 +77,11 @@ public class BatchGetEdgeInstanceChannelResponse extends AcsResponse {
 
 	public static class Channel {
 
-		private String channelName;
-
 		private String channelId;
 
+		private String channelName;
+
 		private List<Config> configList;
-
-		public String getChannelName() {
-			return this.channelName;
-		}
-
-		public void setChannelName(String channelName) {
-			this.channelName = channelName;
-		}
 
 		public String getChannelId() {
 			return this.channelId;
@@ -97,6 +89,14 @@ public class BatchGetEdgeInstanceChannelResponse extends AcsResponse {
 
 		public void setChannelId(String channelId) {
 			this.channelId = channelId;
+		}
+
+		public String getChannelName() {
+			return this.channelName;
+		}
+
+		public void setChannelName(String channelName) {
+			this.channelName = channelName;
 		}
 
 		public List<Config> getConfigList() {
@@ -109,21 +109,13 @@ public class BatchGetEdgeInstanceChannelResponse extends AcsResponse {
 
 		public static class Config {
 
-			private String key;
-
 			private String configId;
 
 			private String format;
 
 			private String content;
 
-			public String getKey() {
-				return this.key;
-			}
-
-			public void setKey(String key) {
-				this.key = key;
-			}
+			private String key;
 
 			public String getConfigId() {
 				return this.configId;
@@ -147,6 +139,14 @@ public class BatchGetEdgeInstanceChannelResponse extends AcsResponse {
 
 			public void setContent(String content) {
 				this.content = content;
+			}
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
 			}
 		}
 	}

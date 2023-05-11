@@ -27,27 +27,27 @@ public class BatchQueryDeviceDetailResponseUnmarshaller {
 	public static BatchQueryDeviceDetailResponse unmarshall(BatchQueryDeviceDetailResponse batchQueryDeviceDetailResponse, UnmarshallerContext _ctx) {
 		
 		batchQueryDeviceDetailResponse.setRequestId(_ctx.stringValue("BatchQueryDeviceDetailResponse.RequestId"));
+		batchQueryDeviceDetailResponse.setSuccess(_ctx.booleanValue("BatchQueryDeviceDetailResponse.Success"));
 		batchQueryDeviceDetailResponse.setCode(_ctx.stringValue("BatchQueryDeviceDetailResponse.Code"));
 		batchQueryDeviceDetailResponse.setErrorMessage(_ctx.stringValue("BatchQueryDeviceDetailResponse.ErrorMessage"));
-		batchQueryDeviceDetailResponse.setSuccess(_ctx.booleanValue("BatchQueryDeviceDetailResponse.Success"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("BatchQueryDeviceDetailResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setStatus(_ctx.stringValue("BatchQueryDeviceDetailResponse.Data["+ i +"].Status"));
-			dataItem.setUtcActive(_ctx.stringValue("BatchQueryDeviceDetailResponse.Data["+ i +"].UtcActive"));
+			dataItem.setProductKey(_ctx.stringValue("BatchQueryDeviceDetailResponse.Data["+ i +"].ProductKey"));
 			dataItem.setProductName(_ctx.stringValue("BatchQueryDeviceDetailResponse.Data["+ i +"].ProductName"));
 			dataItem.setDeviceName(_ctx.stringValue("BatchQueryDeviceDetailResponse.Data["+ i +"].DeviceName"));
+			dataItem.setNickname(_ctx.stringValue("BatchQueryDeviceDetailResponse.Data["+ i +"].Nickname"));
+			dataItem.setDeviceSecret(_ctx.stringValue("BatchQueryDeviceDetailResponse.Data["+ i +"].DeviceSecret"));
+			dataItem.setIotId(_ctx.stringValue("BatchQueryDeviceDetailResponse.Data["+ i +"].IotId"));
 			dataItem.setUtcCreate(_ctx.stringValue("BatchQueryDeviceDetailResponse.Data["+ i +"].UtcCreate"));
+			dataItem.setGmtCreate(_ctx.stringValue("BatchQueryDeviceDetailResponse.Data["+ i +"].GmtCreate"));
+			dataItem.setUtcActive(_ctx.stringValue("BatchQueryDeviceDetailResponse.Data["+ i +"].UtcActive"));
+			dataItem.setGmtActive(_ctx.stringValue("BatchQueryDeviceDetailResponse.Data["+ i +"].GmtActive"));
+			dataItem.setStatus(_ctx.stringValue("BatchQueryDeviceDetailResponse.Data["+ i +"].Status"));
 			dataItem.setFirmwareVersion(_ctx.stringValue("BatchQueryDeviceDetailResponse.Data["+ i +"].FirmwareVersion"));
-			dataItem.setProductKey(_ctx.stringValue("BatchQueryDeviceDetailResponse.Data["+ i +"].ProductKey"));
 			dataItem.setNodeType(_ctx.integerValue("BatchQueryDeviceDetailResponse.Data["+ i +"].NodeType"));
 			dataItem.setRegion(_ctx.stringValue("BatchQueryDeviceDetailResponse.Data["+ i +"].Region"));
-			dataItem.setDeviceSecret(_ctx.stringValue("BatchQueryDeviceDetailResponse.Data["+ i +"].DeviceSecret"));
-			dataItem.setGmtCreate(_ctx.stringValue("BatchQueryDeviceDetailResponse.Data["+ i +"].GmtCreate"));
-			dataItem.setGmtActive(_ctx.stringValue("BatchQueryDeviceDetailResponse.Data["+ i +"].GmtActive"));
-			dataItem.setNickname(_ctx.stringValue("BatchQueryDeviceDetailResponse.Data["+ i +"].Nickname"));
-			dataItem.setIotId(_ctx.stringValue("BatchQueryDeviceDetailResponse.Data["+ i +"].IotId"));
 
 			data.add(dataItem);
 		}

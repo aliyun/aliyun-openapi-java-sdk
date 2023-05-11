@@ -24,9 +24,9 @@ public class GetSpeechLicenseDeviceStatisticsResponseUnmarshaller {
 	public static GetSpeechLicenseDeviceStatisticsResponse unmarshall(GetSpeechLicenseDeviceStatisticsResponse getSpeechLicenseDeviceStatisticsResponse, UnmarshallerContext _ctx) {
 		
 		getSpeechLicenseDeviceStatisticsResponse.setRequestId(_ctx.stringValue("GetSpeechLicenseDeviceStatisticsResponse.RequestId"));
+		getSpeechLicenseDeviceStatisticsResponse.setSuccess(_ctx.booleanValue("GetSpeechLicenseDeviceStatisticsResponse.Success"));
 		getSpeechLicenseDeviceStatisticsResponse.setCode(_ctx.stringValue("GetSpeechLicenseDeviceStatisticsResponse.Code"));
 		getSpeechLicenseDeviceStatisticsResponse.setErrorMessage(_ctx.stringValue("GetSpeechLicenseDeviceStatisticsResponse.ErrorMessage"));
-		getSpeechLicenseDeviceStatisticsResponse.setSuccess(_ctx.booleanValue("GetSpeechLicenseDeviceStatisticsResponse.Success"));
 
 		Data data = new Data();
 		data.setAvailableQuota(_ctx.integerValue("GetSpeechLicenseDeviceStatisticsResponse.Data.AvailableQuota"));

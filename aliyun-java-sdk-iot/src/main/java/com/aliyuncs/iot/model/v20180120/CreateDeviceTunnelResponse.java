@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateDeviceTunnelResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -66,6 +50,22 @@ public class CreateDeviceTunnelResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -78,9 +78,9 @@ public class CreateDeviceTunnelResponse extends AcsResponse {
 
 		private String tunnelId;
 
-		private String sourceURI;
-
 		private String sourceAccessToken;
+
+		private String sourceURI;
 
 		public String getTunnelId() {
 			return this.tunnelId;
@@ -90,20 +90,20 @@ public class CreateDeviceTunnelResponse extends AcsResponse {
 			this.tunnelId = tunnelId;
 		}
 
-		public String getSourceURI() {
-			return this.sourceURI;
-		}
-
-		public void setSourceURI(String sourceURI) {
-			this.sourceURI = sourceURI;
-		}
-
 		public String getSourceAccessToken() {
 			return this.sourceAccessToken;
 		}
 
 		public void setSourceAccessToken(String sourceAccessToken) {
 			this.sourceAccessToken = sourceAccessToken;
+		}
+
+		public String getSourceURI() {
+			return this.sourceURI;
+		}
+
+		public void setSourceURI(String sourceURI) {
+			this.sourceURI = sourceURI;
 		}
 	}
 

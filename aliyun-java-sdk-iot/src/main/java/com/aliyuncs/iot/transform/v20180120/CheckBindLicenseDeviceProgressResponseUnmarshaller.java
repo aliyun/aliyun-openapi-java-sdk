@@ -24,15 +24,15 @@ public class CheckBindLicenseDeviceProgressResponseUnmarshaller {
 	public static CheckBindLicenseDeviceProgressResponse unmarshall(CheckBindLicenseDeviceProgressResponse checkBindLicenseDeviceProgressResponse, UnmarshallerContext _ctx) {
 		
 		checkBindLicenseDeviceProgressResponse.setRequestId(_ctx.stringValue("CheckBindLicenseDeviceProgressResponse.RequestId"));
+		checkBindLicenseDeviceProgressResponse.setSuccess(_ctx.booleanValue("CheckBindLicenseDeviceProgressResponse.Success"));
 		checkBindLicenseDeviceProgressResponse.setCode(_ctx.stringValue("CheckBindLicenseDeviceProgressResponse.Code"));
 		checkBindLicenseDeviceProgressResponse.setErrorMessage(_ctx.stringValue("CheckBindLicenseDeviceProgressResponse.ErrorMessage"));
-		checkBindLicenseDeviceProgressResponse.setSuccess(_ctx.booleanValue("CheckBindLicenseDeviceProgressResponse.Success"));
 
 		Data data = new Data();
 		data.setSuccessSum(_ctx.longValue("CheckBindLicenseDeviceProgressResponse.Data.SuccessSum"));
-		data.setProgress(_ctx.integerValue("CheckBindLicenseDeviceProgressResponse.Data.Progress"));
-		data.setResultCsvFile(_ctx.stringValue("CheckBindLicenseDeviceProgressResponse.Data.ResultCsvFile"));
 		data.setFailSum(_ctx.longValue("CheckBindLicenseDeviceProgressResponse.Data.FailSum"));
+		data.setResultCsvFile(_ctx.stringValue("CheckBindLicenseDeviceProgressResponse.Data.ResultCsvFile"));
+		data.setProgress(_ctx.integerValue("CheckBindLicenseDeviceProgressResponse.Data.Progress"));
 		checkBindLicenseDeviceProgressResponse.setData(data);
 	 
 	 	return checkBindLicenseDeviceProgressResponse;

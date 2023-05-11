@@ -23,10 +23,10 @@ public class CreateSoundCodeResponseUnmarshaller {
 	public static CreateSoundCodeResponse unmarshall(CreateSoundCodeResponse createSoundCodeResponse, UnmarshallerContext _ctx) {
 		
 		createSoundCodeResponse.setRequestId(_ctx.stringValue("CreateSoundCodeResponse.RequestId"));
-		createSoundCodeResponse.setCode(_ctx.stringValue("CreateSoundCodeResponse.Code"));
-		createSoundCodeResponse.setData(_ctx.stringValue("CreateSoundCodeResponse.Data"));
-		createSoundCodeResponse.setErrorMessage(_ctx.stringValue("CreateSoundCodeResponse.ErrorMessage"));
 		createSoundCodeResponse.setSuccess(_ctx.booleanValue("CreateSoundCodeResponse.Success"));
+		createSoundCodeResponse.setCode(_ctx.stringValue("CreateSoundCodeResponse.Code"));
+		createSoundCodeResponse.setErrorMessage(_ctx.stringValue("CreateSoundCodeResponse.ErrorMessage"));
+		createSoundCodeResponse.setData(_ctx.stringValue("CreateSoundCodeResponse.Data"));
 	 
 	 	return createSoundCodeResponse;
 	}

@@ -23,9 +23,9 @@ public class UpdateProductFilterConfigResponseUnmarshaller {
 	public static UpdateProductFilterConfigResponse unmarshall(UpdateProductFilterConfigResponse updateProductFilterConfigResponse, UnmarshallerContext _ctx) {
 		
 		updateProductFilterConfigResponse.setRequestId(_ctx.stringValue("UpdateProductFilterConfigResponse.RequestId"));
+		updateProductFilterConfigResponse.setSuccess(_ctx.booleanValue("UpdateProductFilterConfigResponse.Success"));
 		updateProductFilterConfigResponse.setCode(_ctx.stringValue("UpdateProductFilterConfigResponse.Code"));
 		updateProductFilterConfigResponse.setErrorMessage(_ctx.stringValue("UpdateProductFilterConfigResponse.ErrorMessage"));
-		updateProductFilterConfigResponse.setSuccess(_ctx.booleanValue("UpdateProductFilterConfigResponse.Success"));
 	 
 	 	return updateProductFilterConfigResponse;
 	}

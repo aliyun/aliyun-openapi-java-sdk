@@ -28,23 +28,23 @@ public class BatchGetEdgeInstanceChannelResponseUnmarshaller {
 	public static BatchGetEdgeInstanceChannelResponse unmarshall(BatchGetEdgeInstanceChannelResponse batchGetEdgeInstanceChannelResponse, UnmarshallerContext _ctx) {
 		
 		batchGetEdgeInstanceChannelResponse.setRequestId(_ctx.stringValue("BatchGetEdgeInstanceChannelResponse.RequestId"));
+		batchGetEdgeInstanceChannelResponse.setSuccess(_ctx.booleanValue("BatchGetEdgeInstanceChannelResponse.Success"));
 		batchGetEdgeInstanceChannelResponse.setCode(_ctx.stringValue("BatchGetEdgeInstanceChannelResponse.Code"));
 		batchGetEdgeInstanceChannelResponse.setErrorMessage(_ctx.stringValue("BatchGetEdgeInstanceChannelResponse.ErrorMessage"));
-		batchGetEdgeInstanceChannelResponse.setSuccess(_ctx.booleanValue("BatchGetEdgeInstanceChannelResponse.Success"));
 
 		List<Channel> data = new ArrayList<Channel>();
 		for (int i = 0; i < _ctx.lengthValue("BatchGetEdgeInstanceChannelResponse.Data.Length"); i++) {
 			Channel channel = new Channel();
-			channel.setChannelName(_ctx.stringValue("BatchGetEdgeInstanceChannelResponse.Data["+ i +"].ChannelName"));
 			channel.setChannelId(_ctx.stringValue("BatchGetEdgeInstanceChannelResponse.Data["+ i +"].ChannelId"));
+			channel.setChannelName(_ctx.stringValue("BatchGetEdgeInstanceChannelResponse.Data["+ i +"].ChannelName"));
 
 			List<Config> configList = new ArrayList<Config>();
 			for (int j = 0; j < _ctx.lengthValue("BatchGetEdgeInstanceChannelResponse.Data["+ i +"].ConfigList.Length"); j++) {
 				Config config = new Config();
-				config.setKey(_ctx.stringValue("BatchGetEdgeInstanceChannelResponse.Data["+ i +"].ConfigList["+ j +"].Key"));
 				config.setConfigId(_ctx.stringValue("BatchGetEdgeInstanceChannelResponse.Data["+ i +"].ConfigList["+ j +"].ConfigId"));
 				config.setFormat(_ctx.stringValue("BatchGetEdgeInstanceChannelResponse.Data["+ i +"].ConfigList["+ j +"].Format"));
 				config.setContent(_ctx.stringValue("BatchGetEdgeInstanceChannelResponse.Data["+ i +"].ConfigList["+ j +"].Content"));
+				config.setKey(_ctx.stringValue("BatchGetEdgeInstanceChannelResponse.Data["+ i +"].ConfigList["+ j +"].Key"));
 
 				configList.add(config);
 			}

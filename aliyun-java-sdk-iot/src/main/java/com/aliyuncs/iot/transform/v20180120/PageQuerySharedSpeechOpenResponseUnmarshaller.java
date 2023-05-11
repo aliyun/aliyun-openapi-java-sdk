@@ -28,26 +28,26 @@ public class PageQuerySharedSpeechOpenResponseUnmarshaller {
 	public static PageQuerySharedSpeechOpenResponse unmarshall(PageQuerySharedSpeechOpenResponse pageQuerySharedSpeechOpenResponse, UnmarshallerContext _ctx) {
 		
 		pageQuerySharedSpeechOpenResponse.setRequestId(_ctx.stringValue("PageQuerySharedSpeechOpenResponse.RequestId"));
+		pageQuerySharedSpeechOpenResponse.setSuccess(_ctx.booleanValue("PageQuerySharedSpeechOpenResponse.Success"));
 		pageQuerySharedSpeechOpenResponse.setCode(_ctx.stringValue("PageQuerySharedSpeechOpenResponse.Code"));
 		pageQuerySharedSpeechOpenResponse.setErrorMessage(_ctx.stringValue("PageQuerySharedSpeechOpenResponse.ErrorMessage"));
-		pageQuerySharedSpeechOpenResponse.setSuccess(_ctx.booleanValue("PageQuerySharedSpeechOpenResponse.Success"));
 
 		Data data = new Data();
-		data.setPageSize(_ctx.integerValue("PageQuerySharedSpeechOpenResponse.Data.PageSize"));
 		data.setPageId(_ctx.integerValue("PageQuerySharedSpeechOpenResponse.Data.PageId"));
+		data.setPageSize(_ctx.integerValue("PageQuerySharedSpeechOpenResponse.Data.PageSize"));
 		data.setTotal(_ctx.integerValue("PageQuerySharedSpeechOpenResponse.Data.Total"));
 
 		List<Data1> resultData = new ArrayList<Data1>();
 		for (int i = 0; i < _ctx.lengthValue("PageQuerySharedSpeechOpenResponse.Data.ResultData.Length"); i++) {
 			Data1 data1 = new Data1();
-			data1.setStatus(_ctx.integerValue("PageQuerySharedSpeechOpenResponse.Data.ResultData["+ i +"].Status"));
-			data1.setVoice(_ctx.stringValue("PageQuerySharedSpeechOpenResponse.Data.ResultData["+ i +"].Voice"));
-			data1.setBizCode(_ctx.stringValue("PageQuerySharedSpeechOpenResponse.Data.ResultData["+ i +"].BizCode"));
 			data1.setCode(_ctx.stringValue("PageQuerySharedSpeechOpenResponse.Data.ResultData["+ i +"].Code"));
+			data1.setBizCode(_ctx.stringValue("PageQuerySharedSpeechOpenResponse.Data.ResultData["+ i +"].BizCode"));
 			data1.setText(_ctx.stringValue("PageQuerySharedSpeechOpenResponse.Data.ResultData["+ i +"].Text"));
+			data1.setVoice(_ctx.stringValue("PageQuerySharedSpeechOpenResponse.Data.ResultData["+ i +"].Voice"));
 			data1.setSpeechRate(_ctx.integerValue("PageQuerySharedSpeechOpenResponse.Data.ResultData["+ i +"].SpeechRate"));
 			data1.setVolume(_ctx.integerValue("PageQuerySharedSpeechOpenResponse.Data.ResultData["+ i +"].Volume"));
 			data1.setAudioFormat(_ctx.stringValue("PageQuerySharedSpeechOpenResponse.Data.ResultData["+ i +"].AudioFormat"));
+			data1.setStatus(_ctx.integerValue("PageQuerySharedSpeechOpenResponse.Data.ResultData["+ i +"].Status"));
 
 			resultData.add(data1);
 		}

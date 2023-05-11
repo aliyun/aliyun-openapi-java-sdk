@@ -27,20 +27,20 @@ public class QueryProductTopicResponseUnmarshaller {
 	public static QueryProductTopicResponse unmarshall(QueryProductTopicResponse queryProductTopicResponse, UnmarshallerContext _ctx) {
 		
 		queryProductTopicResponse.setRequestId(_ctx.stringValue("QueryProductTopicResponse.RequestId"));
+		queryProductTopicResponse.setSuccess(_ctx.booleanValue("QueryProductTopicResponse.Success"));
 		queryProductTopicResponse.setCode(_ctx.stringValue("QueryProductTopicResponse.Code"));
 		queryProductTopicResponse.setErrorMessage(_ctx.stringValue("QueryProductTopicResponse.ErrorMessage"));
-		queryProductTopicResponse.setSuccess(_ctx.booleanValue("QueryProductTopicResponse.Success"));
 
 		List<ProductTopicInfo> data = new ArrayList<ProductTopicInfo>();
 		for (int i = 0; i < _ctx.lengthValue("QueryProductTopicResponse.Data.Length"); i++) {
 			ProductTopicInfo productTopicInfo = new ProductTopicInfo();
-			productTopicInfo.setOperation(_ctx.stringValue("QueryProductTopicResponse.Data["+ i +"].Operation"));
 			productTopicInfo.setProductKey(_ctx.stringValue("QueryProductTopicResponse.Data["+ i +"].ProductKey"));
-			productTopicInfo.setCodec(_ctx.stringValue("QueryProductTopicResponse.Data["+ i +"].Codec"));
 			productTopicInfo.setTopicShortName(_ctx.stringValue("QueryProductTopicResponse.Data["+ i +"].TopicShortName"));
-			productTopicInfo.setEnableProxySubscribe(_ctx.booleanValue("QueryProductTopicResponse.Data["+ i +"].EnableProxySubscribe"));
-			productTopicInfo.setId(_ctx.stringValue("QueryProductTopicResponse.Data["+ i +"].Id"));
+			productTopicInfo.setOperation(_ctx.stringValue("QueryProductTopicResponse.Data["+ i +"].Operation"));
 			productTopicInfo.setDesc(_ctx.stringValue("QueryProductTopicResponse.Data["+ i +"].Desc"));
+			productTopicInfo.setId(_ctx.stringValue("QueryProductTopicResponse.Data["+ i +"].Id"));
+			productTopicInfo.setEnableProxySubscribe(_ctx.booleanValue("QueryProductTopicResponse.Data["+ i +"].EnableProxySubscribe"));
+			productTopicInfo.setCodec(_ctx.stringValue("QueryProductTopicResponse.Data["+ i +"].Codec"));
 
 			data.add(productTopicInfo);
 		}

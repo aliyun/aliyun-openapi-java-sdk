@@ -27,24 +27,24 @@ public class ListDestinationResponseUnmarshaller {
 	public static ListDestinationResponse unmarshall(ListDestinationResponse listDestinationResponse, UnmarshallerContext _ctx) {
 		
 		listDestinationResponse.setRequestId(_ctx.stringValue("ListDestinationResponse.RequestId"));
-		listDestinationResponse.setErrorMessage(_ctx.stringValue("ListDestinationResponse.ErrorMessage"));
 		listDestinationResponse.setSuccess(_ctx.booleanValue("ListDestinationResponse.Success"));
 		listDestinationResponse.setCode(_ctx.stringValue("ListDestinationResponse.Code"));
+		listDestinationResponse.setErrorMessage(_ctx.stringValue("ListDestinationResponse.ErrorMessage"));
+		listDestinationResponse.setPage(_ctx.integerValue("ListDestinationResponse.Page"));
 		listDestinationResponse.setPageSize(_ctx.integerValue("ListDestinationResponse.PageSize"));
 		listDestinationResponse.setTotal(_ctx.integerValue("ListDestinationResponse.Total"));
-		listDestinationResponse.setPage(_ctx.integerValue("ListDestinationResponse.Page"));
 
 		List<DestinationsItem> destinations = new ArrayList<DestinationsItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListDestinationResponse.Destinations.Length"); i++) {
 			DestinationsItem destinationsItem = new DestinationsItem();
-			destinationsItem.setStatus(_ctx.stringValue("ListDestinationResponse.Destinations["+ i +"].Status"));
-			destinationsItem.setType(_ctx.stringValue("ListDestinationResponse.Destinations["+ i +"].Type"));
-			destinationsItem.setDescription(_ctx.stringValue("ListDestinationResponse.Destinations["+ i +"].Description"));
 			destinationsItem.setDestinationId(_ctx.longValue("ListDestinationResponse.Destinations["+ i +"].DestinationId"));
-			destinationsItem.setConfiguration(_ctx.stringValue("ListDestinationResponse.Destinations["+ i +"].Configuration"));
 			destinationsItem.setName(_ctx.stringValue("ListDestinationResponse.Destinations["+ i +"].Name"));
-			destinationsItem.setUtcCreated(_ctx.stringValue("ListDestinationResponse.Destinations["+ i +"].UtcCreated"));
+			destinationsItem.setType(_ctx.stringValue("ListDestinationResponse.Destinations["+ i +"].Type"));
+			destinationsItem.setConfiguration(_ctx.stringValue("ListDestinationResponse.Destinations["+ i +"].Configuration"));
 			destinationsItem.setIsFailover(_ctx.booleanValue("ListDestinationResponse.Destinations["+ i +"].IsFailover"));
+			destinationsItem.setUtcCreated(_ctx.stringValue("ListDestinationResponse.Destinations["+ i +"].UtcCreated"));
+			destinationsItem.setDescription(_ctx.stringValue("ListDestinationResponse.Destinations["+ i +"].Description"));
+			destinationsItem.setStatus(_ctx.stringValue("ListDestinationResponse.Destinations["+ i +"].Status"));
 
 			destinations.add(destinationsItem);
 		}

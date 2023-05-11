@@ -26,9 +26,9 @@ public class GetSoundCodeAudioResponseUnmarshaller {
 	public static GetSoundCodeAudioResponse unmarshall(GetSoundCodeAudioResponse getSoundCodeAudioResponse, UnmarshallerContext _ctx) {
 		
 		getSoundCodeAudioResponse.setRequestId(_ctx.stringValue("GetSoundCodeAudioResponse.RequestId"));
+		getSoundCodeAudioResponse.setSuccess(_ctx.booleanValue("GetSoundCodeAudioResponse.Success"));
 		getSoundCodeAudioResponse.setCode(_ctx.stringValue("GetSoundCodeAudioResponse.Code"));
 		getSoundCodeAudioResponse.setErrorMessage(_ctx.stringValue("GetSoundCodeAudioResponse.ErrorMessage"));
-		getSoundCodeAudioResponse.setSuccess(_ctx.booleanValue("GetSoundCodeAudioResponse.Success"));
 
 		List<String> data = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetSoundCodeAudioResponse.Data.Length"); i++) {

@@ -29,53 +29,53 @@ public class GetEdgeInstanceDeploymentResponseUnmarshaller {
 	public static GetEdgeInstanceDeploymentResponse unmarshall(GetEdgeInstanceDeploymentResponse getEdgeInstanceDeploymentResponse, UnmarshallerContext _ctx) {
 		
 		getEdgeInstanceDeploymentResponse.setRequestId(_ctx.stringValue("GetEdgeInstanceDeploymentResponse.RequestId"));
+		getEdgeInstanceDeploymentResponse.setSuccess(_ctx.booleanValue("GetEdgeInstanceDeploymentResponse.Success"));
 		getEdgeInstanceDeploymentResponse.setCode(_ctx.stringValue("GetEdgeInstanceDeploymentResponse.Code"));
 		getEdgeInstanceDeploymentResponse.setErrorMessage(_ctx.stringValue("GetEdgeInstanceDeploymentResponse.ErrorMessage"));
-		getEdgeInstanceDeploymentResponse.setSuccess(_ctx.booleanValue("GetEdgeInstanceDeploymentResponse.Success"));
 
 		Data data = new Data();
-		data.setGmtCreateTimestamp(_ctx.longValue("GetEdgeInstanceDeploymentResponse.Data.GmtCreateTimestamp"));
-		data.setType(_ctx.stringValue("GetEdgeInstanceDeploymentResponse.Data.Type"));
-		data.setStatus(_ctx.integerValue("GetEdgeInstanceDeploymentResponse.Data.Status"));
+		data.setGmtCreate(_ctx.stringValue("GetEdgeInstanceDeploymentResponse.Data.GmtCreate"));
+		data.setGmtModified(_ctx.stringValue("GetEdgeInstanceDeploymentResponse.Data.GmtModified"));
+		data.setGmtCompleted(_ctx.stringValue("GetEdgeInstanceDeploymentResponse.Data.GmtCompleted"));
 		data.setDeploymentId(_ctx.stringValue("GetEdgeInstanceDeploymentResponse.Data.DeploymentId"));
 		data.setDescription(_ctx.stringValue("GetEdgeInstanceDeploymentResponse.Data.Description"));
+		data.setStatus(_ctx.integerValue("GetEdgeInstanceDeploymentResponse.Data.Status"));
+		data.setType(_ctx.stringValue("GetEdgeInstanceDeploymentResponse.Data.Type"));
+		data.setGmtCreateTimestamp(_ctx.longValue("GetEdgeInstanceDeploymentResponse.Data.GmtCreateTimestamp"));
 		data.setGmtModifiedTimestamp(_ctx.longValue("GetEdgeInstanceDeploymentResponse.Data.GmtModifiedTimestamp"));
-		data.setGmtCompleted(_ctx.stringValue("GetEdgeInstanceDeploymentResponse.Data.GmtCompleted"));
-		data.setGmtCreate(_ctx.stringValue("GetEdgeInstanceDeploymentResponse.Data.GmtCreate"));
 		data.setGmtCompletedTimestamp(_ctx.longValue("GetEdgeInstanceDeploymentResponse.Data.GmtCompletedTimestamp"));
-		data.setGmtModified(_ctx.stringValue("GetEdgeInstanceDeploymentResponse.Data.GmtModified"));
 
 		List<Task> taskList = new ArrayList<Task>();
 		for (int i = 0; i < _ctx.lengthValue("GetEdgeInstanceDeploymentResponse.Data.TaskList.Length"); i++) {
 			Task task = new Task();
-			task.setGmtCreateTimestamp(_ctx.longValue("GetEdgeInstanceDeploymentResponse.Data.TaskList["+ i +"].GmtCreateTimestamp"));
-			task.setStatus(_ctx.integerValue("GetEdgeInstanceDeploymentResponse.Data.TaskList["+ i +"].Status"));
-			task.setStage(_ctx.integerValue("GetEdgeInstanceDeploymentResponse.Data.TaskList["+ i +"].Stage"));
-			task.setGatewayId(_ctx.stringValue("GetEdgeInstanceDeploymentResponse.Data.TaskList["+ i +"].GatewayId"));
-			task.setGmtModifiedTimestamp(_ctx.longValue("GetEdgeInstanceDeploymentResponse.Data.TaskList["+ i +"].GmtModifiedTimestamp"));
-			task.setGmtCompleted(_ctx.stringValue("GetEdgeInstanceDeploymentResponse.Data.TaskList["+ i +"].GmtCompleted"));
 			task.setGmtCreate(_ctx.stringValue("GetEdgeInstanceDeploymentResponse.Data.TaskList["+ i +"].GmtCreate"));
-			task.setGmtCompletedTimestamp(_ctx.longValue("GetEdgeInstanceDeploymentResponse.Data.TaskList["+ i +"].GmtCompletedTimestamp"));
 			task.setGmtModified(_ctx.stringValue("GetEdgeInstanceDeploymentResponse.Data.TaskList["+ i +"].GmtModified"));
+			task.setGmtCompleted(_ctx.stringValue("GetEdgeInstanceDeploymentResponse.Data.TaskList["+ i +"].GmtCompleted"));
+			task.setGatewayId(_ctx.stringValue("GetEdgeInstanceDeploymentResponse.Data.TaskList["+ i +"].GatewayId"));
 			task.setTaskId(_ctx.stringValue("GetEdgeInstanceDeploymentResponse.Data.TaskList["+ i +"].TaskId"));
+			task.setStage(_ctx.integerValue("GetEdgeInstanceDeploymentResponse.Data.TaskList["+ i +"].Stage"));
+			task.setStatus(_ctx.integerValue("GetEdgeInstanceDeploymentResponse.Data.TaskList["+ i +"].Status"));
+			task.setGmtCreateTimestamp(_ctx.longValue("GetEdgeInstanceDeploymentResponse.Data.TaskList["+ i +"].GmtCreateTimestamp"));
+			task.setGmtModifiedTimestamp(_ctx.longValue("GetEdgeInstanceDeploymentResponse.Data.TaskList["+ i +"].GmtModifiedTimestamp"));
+			task.setGmtCompletedTimestamp(_ctx.longValue("GetEdgeInstanceDeploymentResponse.Data.TaskList["+ i +"].GmtCompletedTimestamp"));
 
 			List<ResourceSnapshot> resourceSnapshotList = new ArrayList<ResourceSnapshot>();
 			for (int j = 0; j < _ctx.lengthValue("GetEdgeInstanceDeploymentResponse.Data.TaskList["+ i +"].ResourceSnapshotList.Length"); j++) {
 				ResourceSnapshot resourceSnapshot = new ResourceSnapshot();
-				resourceSnapshot.setStatus(_ctx.integerValue("GetEdgeInstanceDeploymentResponse.Data.TaskList["+ i +"].ResourceSnapshotList["+ j +"].Status"));
-				resourceSnapshot.setGmtCreateTimestamp(_ctx.longValue("GetEdgeInstanceDeploymentResponse.Data.TaskList["+ i +"].ResourceSnapshotList["+ j +"].GmtCreateTimestamp"));
-				resourceSnapshot.setStage(_ctx.integerValue("GetEdgeInstanceDeploymentResponse.Data.TaskList["+ i +"].ResourceSnapshotList["+ j +"].Stage"));
-				resourceSnapshot.setGmtModifiedTimestamp(_ctx.longValue("GetEdgeInstanceDeploymentResponse.Data.TaskList["+ i +"].ResourceSnapshotList["+ j +"].GmtModifiedTimestamp"));
-				resourceSnapshot.setGmtModified(_ctx.stringValue("GetEdgeInstanceDeploymentResponse.Data.TaskList["+ i +"].ResourceSnapshotList["+ j +"].GmtModified"));
-				resourceSnapshot.setLog(_ctx.stringValue("GetEdgeInstanceDeploymentResponse.Data.TaskList["+ i +"].ResourceSnapshotList["+ j +"].Log"));
-				resourceSnapshot.setOperateType(_ctx.integerValue("GetEdgeInstanceDeploymentResponse.Data.TaskList["+ i +"].ResourceSnapshotList["+ j +"].OperateType"));
-				resourceSnapshot.setResourceType(_ctx.stringValue("GetEdgeInstanceDeploymentResponse.Data.TaskList["+ i +"].ResourceSnapshotList["+ j +"].ResourceType"));
-				resourceSnapshot.setSnapshotId(_ctx.stringValue("GetEdgeInstanceDeploymentResponse.Data.TaskList["+ i +"].ResourceSnapshotList["+ j +"].SnapshotId"));
-				resourceSnapshot.setGmtCompleted(_ctx.stringValue("GetEdgeInstanceDeploymentResponse.Data.TaskList["+ i +"].ResourceSnapshotList["+ j +"].GmtCompleted"));
 				resourceSnapshot.setGmtCreate(_ctx.stringValue("GetEdgeInstanceDeploymentResponse.Data.TaskList["+ i +"].ResourceSnapshotList["+ j +"].GmtCreate"));
-				resourceSnapshot.setGmtCompletedTimestamp(_ctx.longValue("GetEdgeInstanceDeploymentResponse.Data.TaskList["+ i +"].ResourceSnapshotList["+ j +"].GmtCompletedTimestamp"));
+				resourceSnapshot.setGmtModified(_ctx.stringValue("GetEdgeInstanceDeploymentResponse.Data.TaskList["+ i +"].ResourceSnapshotList["+ j +"].GmtModified"));
+				resourceSnapshot.setGmtCompleted(_ctx.stringValue("GetEdgeInstanceDeploymentResponse.Data.TaskList["+ i +"].ResourceSnapshotList["+ j +"].GmtCompleted"));
+				resourceSnapshot.setSnapshotId(_ctx.stringValue("GetEdgeInstanceDeploymentResponse.Data.TaskList["+ i +"].ResourceSnapshotList["+ j +"].SnapshotId"));
+				resourceSnapshot.setResourceType(_ctx.stringValue("GetEdgeInstanceDeploymentResponse.Data.TaskList["+ i +"].ResourceSnapshotList["+ j +"].ResourceType"));
 				resourceSnapshot.setResourceId(_ctx.stringValue("GetEdgeInstanceDeploymentResponse.Data.TaskList["+ i +"].ResourceSnapshotList["+ j +"].ResourceId"));
 				resourceSnapshot.setResourceName(_ctx.stringValue("GetEdgeInstanceDeploymentResponse.Data.TaskList["+ i +"].ResourceSnapshotList["+ j +"].ResourceName"));
+				resourceSnapshot.setOperateType(_ctx.integerValue("GetEdgeInstanceDeploymentResponse.Data.TaskList["+ i +"].ResourceSnapshotList["+ j +"].OperateType"));
+				resourceSnapshot.setStage(_ctx.integerValue("GetEdgeInstanceDeploymentResponse.Data.TaskList["+ i +"].ResourceSnapshotList["+ j +"].Stage"));
+				resourceSnapshot.setStatus(_ctx.integerValue("GetEdgeInstanceDeploymentResponse.Data.TaskList["+ i +"].ResourceSnapshotList["+ j +"].Status"));
+				resourceSnapshot.setLog(_ctx.stringValue("GetEdgeInstanceDeploymentResponse.Data.TaskList["+ i +"].ResourceSnapshotList["+ j +"].Log"));
+				resourceSnapshot.setGmtCreateTimestamp(_ctx.longValue("GetEdgeInstanceDeploymentResponse.Data.TaskList["+ i +"].ResourceSnapshotList["+ j +"].GmtCreateTimestamp"));
+				resourceSnapshot.setGmtModifiedTimestamp(_ctx.longValue("GetEdgeInstanceDeploymentResponse.Data.TaskList["+ i +"].ResourceSnapshotList["+ j +"].GmtModifiedTimestamp"));
+				resourceSnapshot.setGmtCompletedTimestamp(_ctx.longValue("GetEdgeInstanceDeploymentResponse.Data.TaskList["+ i +"].ResourceSnapshotList["+ j +"].GmtCompletedTimestamp"));
 
 				resourceSnapshotList.add(resourceSnapshot);
 			}

@@ -24,9 +24,9 @@ public class CreateOTAFirmwareResponseUnmarshaller {
 	public static CreateOTAFirmwareResponse unmarshall(CreateOTAFirmwareResponse createOTAFirmwareResponse, UnmarshallerContext _ctx) {
 		
 		createOTAFirmwareResponse.setRequestId(_ctx.stringValue("CreateOTAFirmwareResponse.RequestId"));
+		createOTAFirmwareResponse.setSuccess(_ctx.booleanValue("CreateOTAFirmwareResponse.Success"));
 		createOTAFirmwareResponse.setCode(_ctx.stringValue("CreateOTAFirmwareResponse.Code"));
 		createOTAFirmwareResponse.setErrorMessage(_ctx.stringValue("CreateOTAFirmwareResponse.ErrorMessage"));
-		createOTAFirmwareResponse.setSuccess(_ctx.booleanValue("CreateOTAFirmwareResponse.Success"));
 
 		Data data = new Data();
 		data.setFirmwareId(_ctx.stringValue("CreateOTAFirmwareResponse.Data.FirmwareId"));

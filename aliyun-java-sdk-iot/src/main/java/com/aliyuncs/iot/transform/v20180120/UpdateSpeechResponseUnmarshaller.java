@@ -23,9 +23,9 @@ public class UpdateSpeechResponseUnmarshaller {
 	public static UpdateSpeechResponse unmarshall(UpdateSpeechResponse updateSpeechResponse, UnmarshallerContext _ctx) {
 		
 		updateSpeechResponse.setRequestId(_ctx.stringValue("UpdateSpeechResponse.RequestId"));
+		updateSpeechResponse.setSuccess(_ctx.booleanValue("UpdateSpeechResponse.Success"));
 		updateSpeechResponse.setCode(_ctx.stringValue("UpdateSpeechResponse.Code"));
 		updateSpeechResponse.setErrorMessage(_ctx.stringValue("UpdateSpeechResponse.ErrorMessage"));
-		updateSpeechResponse.setSuccess(_ctx.booleanValue("UpdateSpeechResponse.Success"));
 	 
 	 	return updateSpeechResponse;
 	}

@@ -24,14 +24,14 @@ public class QueryDeviceStatisticsResponseUnmarshaller {
 	public static QueryDeviceStatisticsResponse unmarshall(QueryDeviceStatisticsResponse queryDeviceStatisticsResponse, UnmarshallerContext _ctx) {
 		
 		queryDeviceStatisticsResponse.setRequestId(_ctx.stringValue("QueryDeviceStatisticsResponse.RequestId"));
+		queryDeviceStatisticsResponse.setSuccess(_ctx.booleanValue("QueryDeviceStatisticsResponse.Success"));
 		queryDeviceStatisticsResponse.setCode(_ctx.stringValue("QueryDeviceStatisticsResponse.Code"));
 		queryDeviceStatisticsResponse.setErrorMessage(_ctx.stringValue("QueryDeviceStatisticsResponse.ErrorMessage"));
-		queryDeviceStatisticsResponse.setSuccess(_ctx.booleanValue("QueryDeviceStatisticsResponse.Success"));
 
 		Data data = new Data();
 		data.setDeviceCount(_ctx.longValue("QueryDeviceStatisticsResponse.Data.deviceCount"));
-		data.setActiveCount(_ctx.longValue("QueryDeviceStatisticsResponse.Data.activeCount"));
 		data.setOnlineCount(_ctx.longValue("QueryDeviceStatisticsResponse.Data.onlineCount"));
+		data.setActiveCount(_ctx.longValue("QueryDeviceStatisticsResponse.Data.activeCount"));
 		queryDeviceStatisticsResponse.setData(data);
 	 
 	 	return queryDeviceStatisticsResponse;

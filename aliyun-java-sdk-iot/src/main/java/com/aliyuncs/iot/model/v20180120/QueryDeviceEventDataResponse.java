@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryDeviceEventDataResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,6 +51,22 @@ public class QueryDeviceEventDataResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -77,19 +77,11 @@ public class QueryDeviceEventDataResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Boolean nextValid;
-
 		private Long nextTime;
 
+		private Boolean nextValid;
+
 		private List<EventInfo> list;
-
-		public Boolean getNextValid() {
-			return this.nextValid;
-		}
-
-		public void setNextValid(Boolean nextValid) {
-			this.nextValid = nextValid;
-		}
 
 		public Long getNextTime() {
 			return this.nextTime;
@@ -97,6 +89,14 @@ public class QueryDeviceEventDataResponse extends AcsResponse {
 
 		public void setNextTime(Long nextTime) {
 			this.nextTime = nextTime;
+		}
+
+		public Boolean getNextValid() {
+			return this.nextValid;
+		}
+
+		public void setNextValid(Boolean nextValid) {
+			this.nextValid = nextValid;
 		}
 
 		public List<EventInfo> getList() {
@@ -109,15 +109,23 @@ public class QueryDeviceEventDataResponse extends AcsResponse {
 
 		public static class EventInfo {
 
+			private String time;
+
 			private String identifier;
 
-			private String outputData;
-
-			private String time;
+			private String name;
 
 			private String eventType;
 
-			private String name;
+			private String outputData;
+
+			public String getTime() {
+				return this.time;
+			}
+
+			public void setTime(String time) {
+				this.time = time;
+			}
 
 			public String getIdentifier() {
 				return this.identifier;
@@ -127,20 +135,12 @@ public class QueryDeviceEventDataResponse extends AcsResponse {
 				this.identifier = identifier;
 			}
 
-			public String getOutputData() {
-				return this.outputData;
+			public String getName() {
+				return this.name;
 			}
 
-			public void setOutputData(String outputData) {
-				this.outputData = outputData;
-			}
-
-			public String getTime() {
-				return this.time;
-			}
-
-			public void setTime(String time) {
-				this.time = time;
+			public void setName(String name) {
+				this.name = name;
 			}
 
 			public String getEventType() {
@@ -151,12 +151,12 @@ public class QueryDeviceEventDataResponse extends AcsResponse {
 				this.eventType = eventType;
 			}
 
-			public String getName() {
-				return this.name;
+			public String getOutputData() {
+				return this.outputData;
 			}
 
-			public void setName(String name) {
-				this.name = name;
+			public void setOutputData(String outputData) {
+				this.outputData = outputData;
 			}
 		}
 	}

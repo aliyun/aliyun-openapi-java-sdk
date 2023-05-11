@@ -27,17 +27,17 @@ public class ListDestinationResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String errorMessage;
-
 	private Boolean success;
 
 	private String code;
 
+	private String errorMessage;
+
+	private Integer page;
+
 	private Integer pageSize;
 
 	private Integer total;
-
-	private Integer page;
 
 	private List<DestinationsItem> destinations;
 
@@ -47,14 +47,6 @@ public class ListDestinationResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
 	}
 
 	public Boolean getSuccess() {
@@ -73,6 +65,22 @@ public class ListDestinationResponse extends AcsResponse {
 		this.code = code;
 	}
 
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
+	public Integer getPage() {
+		return this.page;
+	}
+
+	public void setPage(Integer page) {
+		this.page = page;
+	}
+
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -89,14 +97,6 @@ public class ListDestinationResponse extends AcsResponse {
 		this.total = total;
 	}
 
-	public Integer getPage() {
-		return this.page;
-	}
-
-	public void setPage(Integer page) {
-		this.page = page;
-	}
-
 	public List<DestinationsItem> getDestinations() {
 		return this.destinations;
 	}
@@ -107,45 +107,21 @@ public class ListDestinationResponse extends AcsResponse {
 
 	public static class DestinationsItem {
 
-		private String status;
-
-		private String type;
-
-		private String description;
-
 		private Long destinationId;
-
-		private String configuration;
 
 		private String name;
 
-		private String utcCreated;
+		private String type;
+
+		private String configuration;
 
 		private Boolean isFailover;
 
-		public String getStatus() {
-			return this.status;
-		}
+		private String utcCreated;
 
-		public void setStatus(String status) {
-			this.status = status;
-		}
+		private String description;
 
-		public String getType() {
-			return this.type;
-		}
-
-		public void setType(String type) {
-			this.type = type;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
+		private String status;
 
 		public Long getDestinationId() {
 			return this.destinationId;
@@ -153,14 +129,6 @@ public class ListDestinationResponse extends AcsResponse {
 
 		public void setDestinationId(Long destinationId) {
 			this.destinationId = destinationId;
-		}
-
-		public String getConfiguration() {
-			return this.configuration;
-		}
-
-		public void setConfiguration(String configuration) {
-			this.configuration = configuration;
 		}
 
 		public String getName() {
@@ -171,12 +139,20 @@ public class ListDestinationResponse extends AcsResponse {
 			this.name = name;
 		}
 
-		public String getUtcCreated() {
-			return this.utcCreated;
+		public String getType() {
+			return this.type;
 		}
 
-		public void setUtcCreated(String utcCreated) {
-			this.utcCreated = utcCreated;
+		public void setType(String type) {
+			this.type = type;
+		}
+
+		public String getConfiguration() {
+			return this.configuration;
+		}
+
+		public void setConfiguration(String configuration) {
+			this.configuration = configuration;
 		}
 
 		public Boolean getIsFailover() {
@@ -185,6 +161,30 @@ public class ListDestinationResponse extends AcsResponse {
 
 		public void setIsFailover(Boolean isFailover) {
 			this.isFailover = isFailover;
+		}
+
+		public String getUtcCreated() {
+			return this.utcCreated;
+		}
+
+		public void setUtcCreated(String utcCreated) {
+			this.utcCreated = utcCreated;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
 		}
 	}
 

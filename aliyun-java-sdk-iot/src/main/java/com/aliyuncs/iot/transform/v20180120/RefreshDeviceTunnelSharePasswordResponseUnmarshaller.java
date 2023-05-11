@@ -23,10 +23,10 @@ public class RefreshDeviceTunnelSharePasswordResponseUnmarshaller {
 	public static RefreshDeviceTunnelSharePasswordResponse unmarshall(RefreshDeviceTunnelSharePasswordResponse refreshDeviceTunnelSharePasswordResponse, UnmarshallerContext _ctx) {
 		
 		refreshDeviceTunnelSharePasswordResponse.setRequestId(_ctx.stringValue("RefreshDeviceTunnelSharePasswordResponse.RequestId"));
+		refreshDeviceTunnelSharePasswordResponse.setSuccess(_ctx.booleanValue("RefreshDeviceTunnelSharePasswordResponse.Success"));
+		refreshDeviceTunnelSharePasswordResponse.setErrorMessage(_ctx.stringValue("RefreshDeviceTunnelSharePasswordResponse.ErrorMessage"));
 		refreshDeviceTunnelSharePasswordResponse.setCode(_ctx.stringValue("RefreshDeviceTunnelSharePasswordResponse.Code"));
 		refreshDeviceTunnelSharePasswordResponse.setPassword(_ctx.stringValue("RefreshDeviceTunnelSharePasswordResponse.Password"));
-		refreshDeviceTunnelSharePasswordResponse.setErrorMessage(_ctx.stringValue("RefreshDeviceTunnelSharePasswordResponse.ErrorMessage"));
-		refreshDeviceTunnelSharePasswordResponse.setSuccess(_ctx.booleanValue("RefreshDeviceTunnelSharePasswordResponse.Success"));
 	 
 	 	return refreshDeviceTunnelSharePasswordResponse;
 	}

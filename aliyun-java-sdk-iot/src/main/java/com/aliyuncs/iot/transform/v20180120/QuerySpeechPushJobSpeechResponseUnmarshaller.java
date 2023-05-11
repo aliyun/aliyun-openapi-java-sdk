@@ -29,29 +29,29 @@ public class QuerySpeechPushJobSpeechResponseUnmarshaller {
 	public static QuerySpeechPushJobSpeechResponse unmarshall(QuerySpeechPushJobSpeechResponse querySpeechPushJobSpeechResponse, UnmarshallerContext _ctx) {
 		
 		querySpeechPushJobSpeechResponse.setRequestId(_ctx.stringValue("QuerySpeechPushJobSpeechResponse.RequestId"));
+		querySpeechPushJobSpeechResponse.setSuccess(_ctx.booleanValue("QuerySpeechPushJobSpeechResponse.Success"));
 		querySpeechPushJobSpeechResponse.setCode(_ctx.stringValue("QuerySpeechPushJobSpeechResponse.Code"));
 		querySpeechPushJobSpeechResponse.setErrorMessage(_ctx.stringValue("QuerySpeechPushJobSpeechResponse.ErrorMessage"));
-		querySpeechPushJobSpeechResponse.setSuccess(_ctx.booleanValue("QuerySpeechPushJobSpeechResponse.Success"));
 
 		Data data = new Data();
-		data.setPageSize(_ctx.integerValue("QuerySpeechPushJobSpeechResponse.Data.PageSize"));
 		data.setTotal(_ctx.integerValue("QuerySpeechPushJobSpeechResponse.Data.Total"));
 		data.setPageId(_ctx.integerValue("QuerySpeechPushJobSpeechResponse.Data.PageId"));
+		data.setPageSize(_ctx.integerValue("QuerySpeechPushJobSpeechResponse.Data.PageSize"));
 
 		List<Items> list = new ArrayList<Items>();
 		for (int i = 0; i < _ctx.lengthValue("QuerySpeechPushJobSpeechResponse.Data.List.Length"); i++) {
 			Items items = new Items();
-			items.setSpeechType(_ctx.stringValue("QuerySpeechPushJobSpeechResponse.Data.List["+ i +"].SpeechType"));
+			items.setBizCode(_ctx.stringValue("QuerySpeechPushJobSpeechResponse.Data.List["+ i +"].BizCode"));
 			items.setText(_ctx.stringValue("QuerySpeechPushJobSpeechResponse.Data.List["+ i +"].Text"));
 			items.setVoice(_ctx.stringValue("QuerySpeechPushJobSpeechResponse.Data.List["+ i +"].Voice"));
-			items.setBizCode(_ctx.stringValue("QuerySpeechPushJobSpeechResponse.Data.List["+ i +"].BizCode"));
+			items.setSpeechType(_ctx.stringValue("QuerySpeechPushJobSpeechResponse.Data.List["+ i +"].SpeechType"));
 
 			List<Items1> speechList = new ArrayList<Items1>();
 			for (int j = 0; j < _ctx.lengthValue("QuerySpeechPushJobSpeechResponse.Data.List["+ i +"].SpeechList.Length"); j++) {
 				Items1 items1 = new Items1();
+				items1.setBizCode(_ctx.stringValue("QuerySpeechPushJobSpeechResponse.Data.List["+ i +"].SpeechList["+ j +"].BizCode"));
 				items1.setText(_ctx.stringValue("QuerySpeechPushJobSpeechResponse.Data.List["+ i +"].SpeechList["+ j +"].Text"));
 				items1.setVoice(_ctx.stringValue("QuerySpeechPushJobSpeechResponse.Data.List["+ i +"].SpeechList["+ j +"].Voice"));
-				items1.setBizCode(_ctx.stringValue("QuerySpeechPushJobSpeechResponse.Data.List["+ i +"].SpeechList["+ j +"].BizCode"));
 
 				speechList.add(items1);
 			}

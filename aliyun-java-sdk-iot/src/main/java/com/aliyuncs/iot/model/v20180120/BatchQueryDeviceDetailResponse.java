@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class BatchQueryDeviceDetailResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private List<DataItem> data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,6 +51,22 @@ public class BatchQueryDeviceDetailResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public List<DataItem> getData() {
 		return this.data;
 	}
@@ -77,48 +77,40 @@ public class BatchQueryDeviceDetailResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private String status;
-
-		private String utcActive;
+		private String productKey;
 
 		private String productName;
 
 		private String deviceName;
 
+		private String nickname;
+
+		private String deviceSecret;
+
+		private String iotId;
+
 		private String utcCreate;
 
-		private String firmwareVersion;
+		private String gmtCreate;
 
-		private String productKey;
+		private String utcActive;
+
+		private String gmtActive;
+
+		private String status;
+
+		private String firmwareVersion;
 
 		private Integer nodeType;
 
 		private String region;
 
-		private String deviceSecret;
-
-		private String gmtCreate;
-
-		private String gmtActive;
-
-		private String nickname;
-
-		private String iotId;
-
-		public String getStatus() {
-			return this.status;
+		public String getProductKey() {
+			return this.productKey;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getUtcActive() {
-			return this.utcActive;
-		}
-
-		public void setUtcActive(String utcActive) {
-			this.utcActive = utcActive;
+		public void setProductKey(String productKey) {
+			this.productKey = productKey;
 		}
 
 		public String getProductName() {
@@ -137,6 +129,30 @@ public class BatchQueryDeviceDetailResponse extends AcsResponse {
 			this.deviceName = deviceName;
 		}
 
+		public String getNickname() {
+			return this.nickname;
+		}
+
+		public void setNickname(String nickname) {
+			this.nickname = nickname;
+		}
+
+		public String getDeviceSecret() {
+			return this.deviceSecret;
+		}
+
+		public void setDeviceSecret(String deviceSecret) {
+			this.deviceSecret = deviceSecret;
+		}
+
+		public String getIotId() {
+			return this.iotId;
+		}
+
+		public void setIotId(String iotId) {
+			this.iotId = iotId;
+		}
+
 		public String getUtcCreate() {
 			return this.utcCreate;
 		}
@@ -145,20 +161,44 @@ public class BatchQueryDeviceDetailResponse extends AcsResponse {
 			this.utcCreate = utcCreate;
 		}
 
+		public String getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(String gmtCreate) {
+			this.gmtCreate = gmtCreate;
+		}
+
+		public String getUtcActive() {
+			return this.utcActive;
+		}
+
+		public void setUtcActive(String utcActive) {
+			this.utcActive = utcActive;
+		}
+
+		public String getGmtActive() {
+			return this.gmtActive;
+		}
+
+		public void setGmtActive(String gmtActive) {
+			this.gmtActive = gmtActive;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
 		public String getFirmwareVersion() {
 			return this.firmwareVersion;
 		}
 
 		public void setFirmwareVersion(String firmwareVersion) {
 			this.firmwareVersion = firmwareVersion;
-		}
-
-		public String getProductKey() {
-			return this.productKey;
-		}
-
-		public void setProductKey(String productKey) {
-			this.productKey = productKey;
 		}
 
 		public Integer getNodeType() {
@@ -175,46 +215,6 @@ public class BatchQueryDeviceDetailResponse extends AcsResponse {
 
 		public void setRegion(String region) {
 			this.region = region;
-		}
-
-		public String getDeviceSecret() {
-			return this.deviceSecret;
-		}
-
-		public void setDeviceSecret(String deviceSecret) {
-			this.deviceSecret = deviceSecret;
-		}
-
-		public String getGmtCreate() {
-			return this.gmtCreate;
-		}
-
-		public void setGmtCreate(String gmtCreate) {
-			this.gmtCreate = gmtCreate;
-		}
-
-		public String getGmtActive() {
-			return this.gmtActive;
-		}
-
-		public void setGmtActive(String gmtActive) {
-			this.gmtActive = gmtActive;
-		}
-
-		public String getNickname() {
-			return this.nickname;
-		}
-
-		public void setNickname(String nickname) {
-			this.nickname = nickname;
-		}
-
-		public String getIotId() {
-			return this.iotId;
-		}
-
-		public void setIotId(String iotId) {
-			this.iotId = iotId;
 		}
 	}
 

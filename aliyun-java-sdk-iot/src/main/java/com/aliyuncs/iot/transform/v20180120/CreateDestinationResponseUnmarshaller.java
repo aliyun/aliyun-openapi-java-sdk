@@ -24,17 +24,17 @@ public class CreateDestinationResponseUnmarshaller {
 	public static CreateDestinationResponse unmarshall(CreateDestinationResponse createDestinationResponse, UnmarshallerContext _ctx) {
 		
 		createDestinationResponse.setRequestId(_ctx.stringValue("CreateDestinationResponse.RequestId"));
+		createDestinationResponse.setSuccess(_ctx.booleanValue("CreateDestinationResponse.Success"));
 		createDestinationResponse.setCode(_ctx.stringValue("CreateDestinationResponse.Code"));
 		createDestinationResponse.setErrorMessage(_ctx.stringValue("CreateDestinationResponse.ErrorMessage"));
-		createDestinationResponse.setSuccess(_ctx.booleanValue("CreateDestinationResponse.Success"));
 
 		Destination destination = new Destination();
-		destination.setType(_ctx.stringValue("CreateDestinationResponse.Destination.Type"));
 		destination.setDestinationId(_ctx.longValue("CreateDestinationResponse.Destination.DestinationId"));
-		destination.setConfiguration(_ctx.stringValue("CreateDestinationResponse.Destination.Configuration"));
 		destination.setName(_ctx.stringValue("CreateDestinationResponse.Destination.Name"));
-		destination.setUtcCreated(_ctx.stringValue("CreateDestinationResponse.Destination.UtcCreated"));
+		destination.setType(_ctx.stringValue("CreateDestinationResponse.Destination.Type"));
+		destination.setConfiguration(_ctx.stringValue("CreateDestinationResponse.Destination.Configuration"));
 		destination.setIsFailover(_ctx.booleanValue("CreateDestinationResponse.Destination.IsFailover"));
+		destination.setUtcCreated(_ctx.stringValue("CreateDestinationResponse.Destination.UtcCreated"));
 		createDestinationResponse.setDestination(destination);
 	 
 	 	return createDestinationResponse;

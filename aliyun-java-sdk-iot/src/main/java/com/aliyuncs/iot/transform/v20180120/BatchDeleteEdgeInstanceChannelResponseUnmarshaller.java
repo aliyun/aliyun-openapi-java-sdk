@@ -23,9 +23,9 @@ public class BatchDeleteEdgeInstanceChannelResponseUnmarshaller {
 	public static BatchDeleteEdgeInstanceChannelResponse unmarshall(BatchDeleteEdgeInstanceChannelResponse batchDeleteEdgeInstanceChannelResponse, UnmarshallerContext _ctx) {
 		
 		batchDeleteEdgeInstanceChannelResponse.setRequestId(_ctx.stringValue("BatchDeleteEdgeInstanceChannelResponse.RequestId"));
+		batchDeleteEdgeInstanceChannelResponse.setSuccess(_ctx.booleanValue("BatchDeleteEdgeInstanceChannelResponse.Success"));
 		batchDeleteEdgeInstanceChannelResponse.setCode(_ctx.stringValue("BatchDeleteEdgeInstanceChannelResponse.Code"));
 		batchDeleteEdgeInstanceChannelResponse.setErrorMessage(_ctx.stringValue("BatchDeleteEdgeInstanceChannelResponse.ErrorMessage"));
-		batchDeleteEdgeInstanceChannelResponse.setSuccess(_ctx.booleanValue("BatchDeleteEdgeInstanceChannelResponse.Success"));
 	 
 	 	return batchDeleteEdgeInstanceChannelResponse;
 	}

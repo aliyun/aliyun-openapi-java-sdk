@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateParserDataSourceResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private DataSource dataSource;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -66,6 +50,22 @@ public class CreateParserDataSourceResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public DataSource getDataSource() {
 		return this.dataSource;
 	}
@@ -76,21 +76,13 @@ public class CreateParserDataSourceResponse extends AcsResponse {
 
 	public static class DataSource {
 
-		private String utcCreated;
-
 		private String name;
 
 		private String description;
 
 		private Long dataSourceId;
 
-		public String getUtcCreated() {
-			return this.utcCreated;
-		}
-
-		public void setUtcCreated(String utcCreated) {
-			this.utcCreated = utcCreated;
-		}
+		private String utcCreated;
 
 		public String getName() {
 			return this.name;
@@ -114,6 +106,14 @@ public class CreateParserDataSourceResponse extends AcsResponse {
 
 		public void setDataSourceId(Long dataSourceId) {
 			this.dataSourceId = dataSourceId;
+		}
+
+		public String getUtcCreated() {
+			return this.utcCreated;
+		}
+
+		public void setUtcCreated(String utcCreated) {
+			this.utcCreated = utcCreated;
 		}
 	}
 

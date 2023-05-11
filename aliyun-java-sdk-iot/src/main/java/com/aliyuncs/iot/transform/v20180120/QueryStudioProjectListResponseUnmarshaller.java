@@ -28,24 +28,24 @@ public class QueryStudioProjectListResponseUnmarshaller {
 	public static QueryStudioProjectListResponse unmarshall(QueryStudioProjectListResponse queryStudioProjectListResponse, UnmarshallerContext _ctx) {
 		
 		queryStudioProjectListResponse.setRequestId(_ctx.stringValue("QueryStudioProjectListResponse.RequestId"));
+		queryStudioProjectListResponse.setSuccess(_ctx.booleanValue("QueryStudioProjectListResponse.Success"));
 		queryStudioProjectListResponse.setCode(_ctx.stringValue("QueryStudioProjectListResponse.Code"));
 		queryStudioProjectListResponse.setErrorMessage(_ctx.stringValue("QueryStudioProjectListResponse.ErrorMessage"));
-		queryStudioProjectListResponse.setSuccess(_ctx.booleanValue("QueryStudioProjectListResponse.Success"));
 
 		Data data = new Data();
 		data.setPageNo(_ctx.integerValue("QueryStudioProjectListResponse.Data.PageNo"));
-		data.setTotalPage(_ctx.integerValue("QueryStudioProjectListResponse.Data.TotalPage"));
 		data.setPageSize(_ctx.integerValue("QueryStudioProjectListResponse.Data.PageSize"));
 		data.setTotal(_ctx.integerValue("QueryStudioProjectListResponse.Data.Total"));
+		data.setTotalPage(_ctx.integerValue("QueryStudioProjectListResponse.Data.TotalPage"));
 
 		List<ProjectInfo> list = new ArrayList<ProjectInfo>();
 		for (int i = 0; i < _ctx.lengthValue("QueryStudioProjectListResponse.Data.List.Length"); i++) {
 			ProjectInfo projectInfo = new ProjectInfo();
 			projectInfo.setGmtCreate(_ctx.longValue("QueryStudioProjectListResponse.Data.List["+ i +"].GmtCreate"));
-			projectInfo.setDescription(_ctx.stringValue("QueryStudioProjectListResponse.Data.List["+ i +"].Description"));
-			projectInfo.setName(_ctx.stringValue("QueryStudioProjectListResponse.Data.List["+ i +"].Name"));
 			projectInfo.setGmtModified(_ctx.longValue("QueryStudioProjectListResponse.Data.List["+ i +"].GmtModified"));
+			projectInfo.setName(_ctx.stringValue("QueryStudioProjectListResponse.Data.List["+ i +"].Name"));
 			projectInfo.setProjectId(_ctx.stringValue("QueryStudioProjectListResponse.Data.List["+ i +"].ProjectId"));
+			projectInfo.setDescription(_ctx.stringValue("QueryStudioProjectListResponse.Data.List["+ i +"].Description"));
 
 			list.add(projectInfo);
 		}

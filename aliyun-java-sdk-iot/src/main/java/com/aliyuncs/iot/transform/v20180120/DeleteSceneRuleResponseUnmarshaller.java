@@ -23,9 +23,9 @@ public class DeleteSceneRuleResponseUnmarshaller {
 	public static DeleteSceneRuleResponse unmarshall(DeleteSceneRuleResponse deleteSceneRuleResponse, UnmarshallerContext _ctx) {
 		
 		deleteSceneRuleResponse.setRequestId(_ctx.stringValue("DeleteSceneRuleResponse.RequestId"));
-		deleteSceneRuleResponse.setCode(_ctx.stringValue("DeleteSceneRuleResponse.Code"));
-		deleteSceneRuleResponse.setErrorMessage(_ctx.stringValue("DeleteSceneRuleResponse.ErrorMessage"));
 		deleteSceneRuleResponse.setSuccess(_ctx.booleanValue("DeleteSceneRuleResponse.Success"));
+		deleteSceneRuleResponse.setErrorMessage(_ctx.stringValue("DeleteSceneRuleResponse.ErrorMessage"));
+		deleteSceneRuleResponse.setCode(_ctx.stringValue("DeleteSceneRuleResponse.Code"));
 	 
 	 	return deleteSceneRuleResponse;
 	}

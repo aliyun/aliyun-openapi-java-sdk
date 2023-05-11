@@ -24,9 +24,9 @@ public class CreateOTAStaticUpgradeJobResponseUnmarshaller {
 	public static CreateOTAStaticUpgradeJobResponse unmarshall(CreateOTAStaticUpgradeJobResponse createOTAStaticUpgradeJobResponse, UnmarshallerContext _ctx) {
 		
 		createOTAStaticUpgradeJobResponse.setRequestId(_ctx.stringValue("CreateOTAStaticUpgradeJobResponse.RequestId"));
+		createOTAStaticUpgradeJobResponse.setSuccess(_ctx.booleanValue("CreateOTAStaticUpgradeJobResponse.Success"));
 		createOTAStaticUpgradeJobResponse.setCode(_ctx.stringValue("CreateOTAStaticUpgradeJobResponse.Code"));
 		createOTAStaticUpgradeJobResponse.setErrorMessage(_ctx.stringValue("CreateOTAStaticUpgradeJobResponse.ErrorMessage"));
-		createOTAStaticUpgradeJobResponse.setSuccess(_ctx.booleanValue("CreateOTAStaticUpgradeJobResponse.Success"));
 
 		Data data = new Data();
 		data.setJobId(_ctx.stringValue("CreateOTAStaticUpgradeJobResponse.Data.JobId"));

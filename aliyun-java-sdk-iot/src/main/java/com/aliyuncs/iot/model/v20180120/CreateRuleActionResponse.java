@@ -24,15 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateRuleActionResponse extends AcsResponse {
 
+	private String requestId;
+
 	private String code;
 
-	private Long actionId;
+	private Boolean success;
 
 	private String errorMessage;
 
-	private String requestId;
+	private Long actionId;
 
-	private Boolean success;
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public String getCode() {
 		return this.code;
@@ -42,12 +50,12 @@ public class CreateRuleActionResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public Long getActionId() {
-		return this.actionId;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setActionId(Long actionId) {
-		this.actionId = actionId;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public String getErrorMessage() {
@@ -58,20 +66,12 @@ public class CreateRuleActionResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public Long getActionId() {
+		return this.actionId;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setActionId(Long actionId) {
+		this.actionId = actionId;
 	}
 
 	@Override

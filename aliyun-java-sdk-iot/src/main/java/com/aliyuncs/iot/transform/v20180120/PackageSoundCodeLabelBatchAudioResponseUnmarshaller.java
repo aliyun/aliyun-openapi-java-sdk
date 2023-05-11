@@ -23,10 +23,10 @@ public class PackageSoundCodeLabelBatchAudioResponseUnmarshaller {
 	public static PackageSoundCodeLabelBatchAudioResponse unmarshall(PackageSoundCodeLabelBatchAudioResponse packageSoundCodeLabelBatchAudioResponse, UnmarshallerContext _ctx) {
 		
 		packageSoundCodeLabelBatchAudioResponse.setRequestId(_ctx.stringValue("PackageSoundCodeLabelBatchAudioResponse.RequestId"));
-		packageSoundCodeLabelBatchAudioResponse.setCode(_ctx.stringValue("PackageSoundCodeLabelBatchAudioResponse.Code"));
-		packageSoundCodeLabelBatchAudioResponse.setData(_ctx.stringValue("PackageSoundCodeLabelBatchAudioResponse.Data"));
-		packageSoundCodeLabelBatchAudioResponse.setErrorMessage(_ctx.stringValue("PackageSoundCodeLabelBatchAudioResponse.ErrorMessage"));
 		packageSoundCodeLabelBatchAudioResponse.setSuccess(_ctx.booleanValue("PackageSoundCodeLabelBatchAudioResponse.Success"));
+		packageSoundCodeLabelBatchAudioResponse.setCode(_ctx.stringValue("PackageSoundCodeLabelBatchAudioResponse.Code"));
+		packageSoundCodeLabelBatchAudioResponse.setErrorMessage(_ctx.stringValue("PackageSoundCodeLabelBatchAudioResponse.ErrorMessage"));
+		packageSoundCodeLabelBatchAudioResponse.setData(_ctx.stringValue("PackageSoundCodeLabelBatchAudioResponse.Data"));
 	 
 	 	return packageSoundCodeLabelBatchAudioResponse;
 	}

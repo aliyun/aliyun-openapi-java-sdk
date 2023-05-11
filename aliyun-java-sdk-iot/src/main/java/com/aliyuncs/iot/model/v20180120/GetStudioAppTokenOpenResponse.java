@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetStudioAppTokenOpenResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -66,6 +50,22 @@ public class GetStudioAppTokenOpenResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -76,23 +76,15 @@ public class GetStudioAppTokenOpenResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String type;
-
 		private String isEnable;
 
-		private String bizId;
-
-		private String token;
+		private String type;
 
 		private String bizType;
 
-		public String getType() {
-			return this.type;
-		}
+		private String token;
 
-		public void setType(String type) {
-			this.type = type;
-		}
+		private String bizId;
 
 		public String getIsEnable() {
 			return this.isEnable;
@@ -102,12 +94,20 @@ public class GetStudioAppTokenOpenResponse extends AcsResponse {
 			this.isEnable = isEnable;
 		}
 
-		public String getBizId() {
-			return this.bizId;
+		public String getType() {
+			return this.type;
 		}
 
-		public void setBizId(String bizId) {
-			this.bizId = bizId;
+		public void setType(String type) {
+			this.type = type;
+		}
+
+		public String getBizType() {
+			return this.bizType;
+		}
+
+		public void setBizType(String bizType) {
+			this.bizType = bizType;
 		}
 
 		public String getToken() {
@@ -118,12 +118,12 @@ public class GetStudioAppTokenOpenResponse extends AcsResponse {
 			this.token = token;
 		}
 
-		public String getBizType() {
-			return this.bizType;
+		public String getBizId() {
+			return this.bizId;
 		}
 
-		public void setBizType(String bizType) {
-			this.bizType = bizType;
+		public void setBizId(String bizId) {
+			this.bizId = bizId;
 		}
 	}
 

@@ -32,24 +32,25 @@ public class GetDownloadFileResponseUnmarshaller {
 	public static GetDownloadFileResponse unmarshall(GetDownloadFileResponse getDownloadFileResponse, UnmarshallerContext _ctx) {
 		
 		getDownloadFileResponse.setRequestId(_ctx.stringValue("GetDownloadFileResponse.RequestId"));
+		getDownloadFileResponse.setSuccess(_ctx.booleanValue("GetDownloadFileResponse.Success"));
 		getDownloadFileResponse.setCode(_ctx.stringValue("GetDownloadFileResponse.Code"));
 		getDownloadFileResponse.setErrorMessage(_ctx.stringValue("GetDownloadFileResponse.ErrorMessage"));
-		getDownloadFileResponse.setSuccess(_ctx.booleanValue("GetDownloadFileResponse.Success"));
 
 		Data data = new Data();
-		data.setStatus(_ctx.integerValue("GetDownloadFileResponse.Data.Status"));
+		data.setPreviewSize(_ctx.integerValue("GetDownloadFileResponse.Data.PreviewSize"));
+		data.setCsvUrl(_ctx.stringValue("GetDownloadFileResponse.Data.CsvUrl"));
+		data.setDatasetId(_ctx.stringValue("GetDownloadFileResponse.Data.DatasetId"));
 		data.setLongJobId(_ctx.stringValue("GetDownloadFileResponse.Data.LongJobId"));
+		data.setStatus(_ctx.integerValue("GetDownloadFileResponse.Data.Status"));
 		data.setBeginTime(_ctx.longValue("GetDownloadFileResponse.Data.BeginTime"));
+		data.setEndTime(_ctx.longValue("GetDownloadFileResponse.Data.EndTime"));
+		data.setResultDataInString(_ctx.stringValue("GetDownloadFileResponse.Data.ResultDataInString"));
 		data.setAsyncExecute(_ctx.booleanValue("GetDownloadFileResponse.Data.AsyncExecute"));
 		data.setTotalCount(_ctx.longValue("GetDownloadFileResponse.Data.TotalCount"));
-		data.setEndTime(_ctx.longValue("GetDownloadFileResponse.Data.EndTime"));
-		data.setPreviewSize(_ctx.integerValue("GetDownloadFileResponse.Data.PreviewSize"));
 		data.setPageNo(_ctx.integerValue("GetDownloadFileResponse.Data.PageNo"));
 		data.setPageSize(_ctx.integerValue("GetDownloadFileResponse.Data.PageSize"));
-		data.setCsvUrl(_ctx.stringValue("GetDownloadFileResponse.Data.CsvUrl"));
+		data.setCsvUrl1(_ctx.stringValue("GetDownloadFileResponse.Data.CsvUrl"));
 		data.setCsvFileName(_ctx.stringValue("GetDownloadFileResponse.Data.CsvFileName"));
-		data.setDatasetId(_ctx.stringValue("GetDownloadFileResponse.Data.DatasetId"));
-		data.setResultDataInString(_ctx.stringValue("GetDownloadFileResponse.Data.ResultDataInString"));
 
 		List<Map<Object, Object>> result = _ctx.listMapValue("GetDownloadFileResponse.Data.Result");
 		data.setResult(result);
@@ -60,10 +61,10 @@ public class GetDownloadFileResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("GetDownloadFileResponse.Data.QuerySetting.SelectedHeaders.Length"); i++) {
 			SelectedHeadersItem selectedHeadersItem = new SelectedHeadersItem();
 			selectedHeadersItem.setFieldName(_ctx.stringValue("GetDownloadFileResponse.Data.QuerySetting.SelectedHeaders["+ i +"].FieldName"));
-			selectedHeadersItem.setGeoClass(_ctx.stringValue("GetDownloadFileResponse.Data.QuerySetting.SelectedHeaders["+ i +"].GeoClass"));
+			selectedHeadersItem.setAlias(_ctx.stringValue("GetDownloadFileResponse.Data.QuerySetting.SelectedHeaders["+ i +"].Alias"));
 			selectedHeadersItem.setFieldType(_ctx.stringValue("GetDownloadFileResponse.Data.QuerySetting.SelectedHeaders["+ i +"].FieldType"));
 			selectedHeadersItem.setTimeClass(_ctx.stringValue("GetDownloadFileResponse.Data.QuerySetting.SelectedHeaders["+ i +"].TimeClass"));
-			selectedHeadersItem.setAlias(_ctx.stringValue("GetDownloadFileResponse.Data.QuerySetting.SelectedHeaders["+ i +"].Alias"));
+			selectedHeadersItem.setGeoClass(_ctx.stringValue("GetDownloadFileResponse.Data.QuerySetting.SelectedHeaders["+ i +"].GeoClass"));
 			selectedHeadersItem.setDimDateClass(_ctx.stringValue("GetDownloadFileResponse.Data.QuerySetting.SelectedHeaders["+ i +"].DimDateClass"));
 
 			selectedHeaders.add(selectedHeadersItem);
@@ -73,8 +74,8 @@ public class GetDownloadFileResponseUnmarshaller {
 		List<AstExprItem> astExpr = new ArrayList<AstExprItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetDownloadFileResponse.Data.QuerySetting.AstExpr.Length"); i++) {
 			AstExprItem astExprItem = new AstExprItem();
-			astExprItem.setExprType(_ctx.stringValue("GetDownloadFileResponse.Data.QuerySetting.AstExpr["+ i +"].ExprType"));
 			astExprItem.setExpr(_ctx.stringValue("GetDownloadFileResponse.Data.QuerySetting.AstExpr["+ i +"].Expr"));
+			astExprItem.setExprType(_ctx.stringValue("GetDownloadFileResponse.Data.QuerySetting.AstExpr["+ i +"].ExprType"));
 
 			astExpr.add(astExprItem);
 		}
@@ -84,13 +85,13 @@ public class GetDownloadFileResponseUnmarshaller {
 		List<HeaderItem> header = new ArrayList<HeaderItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetDownloadFileResponse.Data.Header.Length"); i++) {
 			HeaderItem headerItem = new HeaderItem();
-			headerItem.setTypeClass(_ctx.stringValue("GetDownloadFileResponse.Data.Header["+ i +"].TypeClass"));
 			headerItem.setFieldName(_ctx.stringValue("GetDownloadFileResponse.Data.Header["+ i +"].FieldName"));
-			headerItem.setGeoClass(_ctx.stringValue("GetDownloadFileResponse.Data.Header["+ i +"].GeoClass"));
-			headerItem.setFieldType(_ctx.stringValue("GetDownloadFileResponse.Data.Header["+ i +"].FieldType"));
-			headerItem.setTimeClass(_ctx.stringValue("GetDownloadFileResponse.Data.Header["+ i +"].TimeClass"));
-			headerItem.setDimDateClass(_ctx.stringValue("GetDownloadFileResponse.Data.Header["+ i +"].DimDateClass"));
 			headerItem.setAlias(_ctx.stringValue("GetDownloadFileResponse.Data.Header["+ i +"].Alias"));
+			headerItem.setFieldType(_ctx.stringValue("GetDownloadFileResponse.Data.Header["+ i +"].FieldType"));
+			headerItem.setTypeClass(_ctx.stringValue("GetDownloadFileResponse.Data.Header["+ i +"].TypeClass"));
+			headerItem.setTimeClass(_ctx.stringValue("GetDownloadFileResponse.Data.Header["+ i +"].TimeClass"));
+			headerItem.setGeoClass(_ctx.stringValue("GetDownloadFileResponse.Data.Header["+ i +"].GeoClass"));
+			headerItem.setDimDateClass(_ctx.stringValue("GetDownloadFileResponse.Data.Header["+ i +"].DimDateClass"));
 
 			header.add(headerItem);
 		}

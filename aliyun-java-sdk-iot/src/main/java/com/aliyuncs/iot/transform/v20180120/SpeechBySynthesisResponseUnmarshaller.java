@@ -23,9 +23,9 @@ public class SpeechBySynthesisResponseUnmarshaller {
 	public static SpeechBySynthesisResponse unmarshall(SpeechBySynthesisResponse speechBySynthesisResponse, UnmarshallerContext _ctx) {
 		
 		speechBySynthesisResponse.setRequestId(_ctx.stringValue("SpeechBySynthesisResponse.RequestId"));
+		speechBySynthesisResponse.setSuccess(_ctx.booleanValue("SpeechBySynthesisResponse.Success"));
 		speechBySynthesisResponse.setCode(_ctx.stringValue("SpeechBySynthesisResponse.Code"));
 		speechBySynthesisResponse.setErrorMessage(_ctx.stringValue("SpeechBySynthesisResponse.ErrorMessage"));
-		speechBySynthesisResponse.setSuccess(_ctx.booleanValue("SpeechBySynthesisResponse.Success"));
 	 
 	 	return speechBySynthesisResponse;
 	}

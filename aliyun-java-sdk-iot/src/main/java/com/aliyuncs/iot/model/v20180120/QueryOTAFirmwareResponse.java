@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryOTAFirmwareResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private FirmwareInfo firmwareInfo;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,6 +51,22 @@ public class QueryOTAFirmwareResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public FirmwareInfo getFirmwareInfo() {
 		return this.firmwareInfo;
 	}
@@ -77,99 +77,43 @@ public class QueryOTAFirmwareResponse extends AcsResponse {
 
 	public static class FirmwareInfo {
 
-		private String moduleName;
-
-		private Integer type;
-
-		private Integer status;
-
-		private String productName;
-
-		private String firmwareUrl;
-
-		private String utcCreate;
-
-		private Integer firmwareSize;
-
 		private String firmwareName;
 
-		private String firmwareSign;
-
-		private String productKey;
-
-		private String utcModified;
+		private String firmwareId;
 
 		private String srcVersion;
 
-		private Integer verifyProgress;
+		private String destVersion;
+
+		private String utcCreate;
+
+		private String utcModified;
+
+		private Integer status;
 
 		private String firmwareDesc;
 
+		private String firmwareSign;
+
+		private Integer firmwareSize;
+
+		private String firmwareUrl;
+
+		private String productKey;
+
 		private String signMethod;
 
-		private String destVersion;
+		private String productName;
 
-		private String firmwareId;
+		private Integer type;
+
+		private Integer verifyProgress;
+
+		private String moduleName;
 
 		private String udi;
 
 		private List<OtaPackageFileDTO> multiFiles;
-
-		public String getModuleName() {
-			return this.moduleName;
-		}
-
-		public void setModuleName(String moduleName) {
-			this.moduleName = moduleName;
-		}
-
-		public Integer getType() {
-			return this.type;
-		}
-
-		public void setType(Integer type) {
-			this.type = type;
-		}
-
-		public Integer getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(Integer status) {
-			this.status = status;
-		}
-
-		public String getProductName() {
-			return this.productName;
-		}
-
-		public void setProductName(String productName) {
-			this.productName = productName;
-		}
-
-		public String getFirmwareUrl() {
-			return this.firmwareUrl;
-		}
-
-		public void setFirmwareUrl(String firmwareUrl) {
-			this.firmwareUrl = firmwareUrl;
-		}
-
-		public String getUtcCreate() {
-			return this.utcCreate;
-		}
-
-		public void setUtcCreate(String utcCreate) {
-			this.utcCreate = utcCreate;
-		}
-
-		public Integer getFirmwareSize() {
-			return this.firmwareSize;
-		}
-
-		public void setFirmwareSize(Integer firmwareSize) {
-			this.firmwareSize = firmwareSize;
-		}
 
 		public String getFirmwareName() {
 			return this.firmwareName;
@@ -179,28 +123,12 @@ public class QueryOTAFirmwareResponse extends AcsResponse {
 			this.firmwareName = firmwareName;
 		}
 
-		public String getFirmwareSign() {
-			return this.firmwareSign;
+		public String getFirmwareId() {
+			return this.firmwareId;
 		}
 
-		public void setFirmwareSign(String firmwareSign) {
-			this.firmwareSign = firmwareSign;
-		}
-
-		public String getProductKey() {
-			return this.productKey;
-		}
-
-		public void setProductKey(String productKey) {
-			this.productKey = productKey;
-		}
-
-		public String getUtcModified() {
-			return this.utcModified;
-		}
-
-		public void setUtcModified(String utcModified) {
-			this.utcModified = utcModified;
+		public void setFirmwareId(String firmwareId) {
+			this.firmwareId = firmwareId;
 		}
 
 		public String getSrcVersion() {
@@ -211,12 +139,36 @@ public class QueryOTAFirmwareResponse extends AcsResponse {
 			this.srcVersion = srcVersion;
 		}
 
-		public Integer getVerifyProgress() {
-			return this.verifyProgress;
+		public String getDestVersion() {
+			return this.destVersion;
 		}
 
-		public void setVerifyProgress(Integer verifyProgress) {
-			this.verifyProgress = verifyProgress;
+		public void setDestVersion(String destVersion) {
+			this.destVersion = destVersion;
+		}
+
+		public String getUtcCreate() {
+			return this.utcCreate;
+		}
+
+		public void setUtcCreate(String utcCreate) {
+			this.utcCreate = utcCreate;
+		}
+
+		public String getUtcModified() {
+			return this.utcModified;
+		}
+
+		public void setUtcModified(String utcModified) {
+			this.utcModified = utcModified;
+		}
+
+		public Integer getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(Integer status) {
+			this.status = status;
 		}
 
 		public String getFirmwareDesc() {
@@ -227,6 +179,38 @@ public class QueryOTAFirmwareResponse extends AcsResponse {
 			this.firmwareDesc = firmwareDesc;
 		}
 
+		public String getFirmwareSign() {
+			return this.firmwareSign;
+		}
+
+		public void setFirmwareSign(String firmwareSign) {
+			this.firmwareSign = firmwareSign;
+		}
+
+		public Integer getFirmwareSize() {
+			return this.firmwareSize;
+		}
+
+		public void setFirmwareSize(Integer firmwareSize) {
+			this.firmwareSize = firmwareSize;
+		}
+
+		public String getFirmwareUrl() {
+			return this.firmwareUrl;
+		}
+
+		public void setFirmwareUrl(String firmwareUrl) {
+			this.firmwareUrl = firmwareUrl;
+		}
+
+		public String getProductKey() {
+			return this.productKey;
+		}
+
+		public void setProductKey(String productKey) {
+			this.productKey = productKey;
+		}
+
 		public String getSignMethod() {
 			return this.signMethod;
 		}
@@ -235,20 +219,36 @@ public class QueryOTAFirmwareResponse extends AcsResponse {
 			this.signMethod = signMethod;
 		}
 
-		public String getDestVersion() {
-			return this.destVersion;
+		public String getProductName() {
+			return this.productName;
 		}
 
-		public void setDestVersion(String destVersion) {
-			this.destVersion = destVersion;
+		public void setProductName(String productName) {
+			this.productName = productName;
 		}
 
-		public String getFirmwareId() {
-			return this.firmwareId;
+		public Integer getType() {
+			return this.type;
 		}
 
-		public void setFirmwareId(String firmwareId) {
-			this.firmwareId = firmwareId;
+		public void setType(Integer type) {
+			this.type = type;
+		}
+
+		public Integer getVerifyProgress() {
+			return this.verifyProgress;
+		}
+
+		public void setVerifyProgress(Integer verifyProgress) {
+			this.verifyProgress = verifyProgress;
+		}
+
+		public String getModuleName() {
+			return this.moduleName;
+		}
+
+		public void setModuleName(String moduleName) {
+			this.moduleName = moduleName;
 		}
 
 		public String getUdi() {
@@ -269,39 +269,15 @@ public class QueryOTAFirmwareResponse extends AcsResponse {
 
 		public static class OtaPackageFileDTO {
 
-			private String url;
-
-			private String fileMd5;
-
-			private String signValue;
-
 			private String name;
 
 			private Integer size;
 
-			public String getUrl() {
-				return this.url;
-			}
+			private String url;
 
-			public void setUrl(String url) {
-				this.url = url;
-			}
+			private String signValue;
 
-			public String getFileMd5() {
-				return this.fileMd5;
-			}
-
-			public void setFileMd5(String fileMd5) {
-				this.fileMd5 = fileMd5;
-			}
-
-			public String getSignValue() {
-				return this.signValue;
-			}
-
-			public void setSignValue(String signValue) {
-				this.signValue = signValue;
-			}
+			private String fileMd5;
 
 			public String getName() {
 				return this.name;
@@ -317,6 +293,30 @@ public class QueryOTAFirmwareResponse extends AcsResponse {
 
 			public void setSize(Integer size) {
 				this.size = size;
+			}
+
+			public String getUrl() {
+				return this.url;
+			}
+
+			public void setUrl(String url) {
+				this.url = url;
+			}
+
+			public String getSignValue() {
+				return this.signValue;
+			}
+
+			public void setSignValue(String signValue) {
+				this.signValue = signValue;
+			}
+
+			public String getFileMd5() {
+				return this.fileMd5;
+			}
+
+			public void setFileMd5(String fileMd5) {
+				this.fileMd5 = fileMd5;
 			}
 		}
 	}

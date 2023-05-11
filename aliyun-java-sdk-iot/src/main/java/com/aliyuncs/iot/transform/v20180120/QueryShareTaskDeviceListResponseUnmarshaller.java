@@ -28,9 +28,9 @@ public class QueryShareTaskDeviceListResponseUnmarshaller {
 	public static QueryShareTaskDeviceListResponse unmarshall(QueryShareTaskDeviceListResponse queryShareTaskDeviceListResponse, UnmarshallerContext _ctx) {
 		
 		queryShareTaskDeviceListResponse.setRequestId(_ctx.stringValue("QueryShareTaskDeviceListResponse.RequestId"));
+		queryShareTaskDeviceListResponse.setSuccess(_ctx.booleanValue("QueryShareTaskDeviceListResponse.Success"));
 		queryShareTaskDeviceListResponse.setCode(_ctx.stringValue("QueryShareTaskDeviceListResponse.Code"));
 		queryShareTaskDeviceListResponse.setErrorMessage(_ctx.stringValue("QueryShareTaskDeviceListResponse.ErrorMessage"));
-		queryShareTaskDeviceListResponse.setSuccess(_ctx.booleanValue("QueryShareTaskDeviceListResponse.Success"));
 
 		Data data = new Data();
 		data.setPageSize(_ctx.integerValue("QueryShareTaskDeviceListResponse.Data.PageSize"));
@@ -41,8 +41,8 @@ public class QueryShareTaskDeviceListResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("QueryShareTaskDeviceListResponse.Data.DeviceList.Length"); i++) {
 			Items items = new Items();
 			items.setProductKey(_ctx.stringValue("QueryShareTaskDeviceListResponse.Data.DeviceList["+ i +"].ProductKey"));
-			items.setGmtAdded(_ctx.longValue("QueryShareTaskDeviceListResponse.Data.DeviceList["+ i +"].GmtAdded"));
 			items.setDeviceName(_ctx.stringValue("QueryShareTaskDeviceListResponse.Data.DeviceList["+ i +"].DeviceName"));
+			items.setGmtAdded(_ctx.longValue("QueryShareTaskDeviceListResponse.Data.DeviceList["+ i +"].GmtAdded"));
 			items.setIotId(_ctx.stringValue("QueryShareTaskDeviceListResponse.Data.DeviceList["+ i +"].IotId"));
 
 			deviceList.add(items);

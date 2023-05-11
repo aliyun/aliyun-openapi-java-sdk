@@ -23,9 +23,9 @@ public class DetachParserDataSourceResponseUnmarshaller {
 	public static DetachParserDataSourceResponse unmarshall(DetachParserDataSourceResponse detachParserDataSourceResponse, UnmarshallerContext _ctx) {
 		
 		detachParserDataSourceResponse.setRequestId(_ctx.stringValue("DetachParserDataSourceResponse.RequestId"));
+		detachParserDataSourceResponse.setSuccess(_ctx.booleanValue("DetachParserDataSourceResponse.Success"));
 		detachParserDataSourceResponse.setCode(_ctx.stringValue("DetachParserDataSourceResponse.Code"));
 		detachParserDataSourceResponse.setErrorMessage(_ctx.stringValue("DetachParserDataSourceResponse.ErrorMessage"));
-		detachParserDataSourceResponse.setSuccess(_ctx.booleanValue("DetachParserDataSourceResponse.Success"));
 	 
 	 	return detachParserDataSourceResponse;
 	}

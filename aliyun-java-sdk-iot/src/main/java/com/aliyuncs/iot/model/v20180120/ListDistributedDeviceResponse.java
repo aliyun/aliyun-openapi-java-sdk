@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListDistributedDeviceResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -65,6 +49,22 @@ public class ListDistributedDeviceResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
 	public Data getData() {
@@ -99,47 +99,31 @@ public class ListDistributedDeviceResponse extends AcsResponse {
 
 		public static class Items {
 
-			private String deviceName;
-
-			private String targetAliyunId;
-
 			private String sourceUid;
-
-			private Long gmtModified;
-
-			private String targetInstanceId;
 
 			private String targetUid;
 
 			private String productKey;
 
-			private String targetRegion;
-
-			private Long gmtCreate;
-
-			private String targetInstanceName;
-
-			private String sourceInstanceName;
-
-			private String sourceRegion;
+			private String deviceName;
 
 			private String sourceInstanceId;
 
-			public String getDeviceName() {
-				return this.deviceName;
-			}
+			private String targetInstanceId;
 
-			public void setDeviceName(String deviceName) {
-				this.deviceName = deviceName;
-			}
+			private Long gmtCreate;
 
-			public String getTargetAliyunId() {
-				return this.targetAliyunId;
-			}
+			private String targetAliyunId;
 
-			public void setTargetAliyunId(String targetAliyunId) {
-				this.targetAliyunId = targetAliyunId;
-			}
+			private String sourceRegion;
+
+			private String targetRegion;
+
+			private String sourceInstanceName;
+
+			private String targetInstanceName;
+
+			private Long gmtModified;
 
 			public String getSourceUid() {
 				return this.sourceUid;
@@ -147,22 +131,6 @@ public class ListDistributedDeviceResponse extends AcsResponse {
 
 			public void setSourceUid(String sourceUid) {
 				this.sourceUid = sourceUid;
-			}
-
-			public Long getGmtModified() {
-				return this.gmtModified;
-			}
-
-			public void setGmtModified(Long gmtModified) {
-				this.gmtModified = gmtModified;
-			}
-
-			public String getTargetInstanceId() {
-				return this.targetInstanceId;
-			}
-
-			public void setTargetInstanceId(String targetInstanceId) {
-				this.targetInstanceId = targetInstanceId;
 			}
 
 			public String getTargetUid() {
@@ -181,12 +149,28 @@ public class ListDistributedDeviceResponse extends AcsResponse {
 				this.productKey = productKey;
 			}
 
-			public String getTargetRegion() {
-				return this.targetRegion;
+			public String getDeviceName() {
+				return this.deviceName;
 			}
 
-			public void setTargetRegion(String targetRegion) {
-				this.targetRegion = targetRegion;
+			public void setDeviceName(String deviceName) {
+				this.deviceName = deviceName;
+			}
+
+			public String getSourceInstanceId() {
+				return this.sourceInstanceId;
+			}
+
+			public void setSourceInstanceId(String sourceInstanceId) {
+				this.sourceInstanceId = sourceInstanceId;
+			}
+
+			public String getTargetInstanceId() {
+				return this.targetInstanceId;
+			}
+
+			public void setTargetInstanceId(String targetInstanceId) {
+				this.targetInstanceId = targetInstanceId;
 			}
 
 			public Long getGmtCreate() {
@@ -197,20 +181,12 @@ public class ListDistributedDeviceResponse extends AcsResponse {
 				this.gmtCreate = gmtCreate;
 			}
 
-			public String getTargetInstanceName() {
-				return this.targetInstanceName;
+			public String getTargetAliyunId() {
+				return this.targetAliyunId;
 			}
 
-			public void setTargetInstanceName(String targetInstanceName) {
-				this.targetInstanceName = targetInstanceName;
-			}
-
-			public String getSourceInstanceName() {
-				return this.sourceInstanceName;
-			}
-
-			public void setSourceInstanceName(String sourceInstanceName) {
-				this.sourceInstanceName = sourceInstanceName;
+			public void setTargetAliyunId(String targetAliyunId) {
+				this.targetAliyunId = targetAliyunId;
 			}
 
 			public String getSourceRegion() {
@@ -221,12 +197,36 @@ public class ListDistributedDeviceResponse extends AcsResponse {
 				this.sourceRegion = sourceRegion;
 			}
 
-			public String getSourceInstanceId() {
-				return this.sourceInstanceId;
+			public String getTargetRegion() {
+				return this.targetRegion;
 			}
 
-			public void setSourceInstanceId(String sourceInstanceId) {
-				this.sourceInstanceId = sourceInstanceId;
+			public void setTargetRegion(String targetRegion) {
+				this.targetRegion = targetRegion;
+			}
+
+			public String getSourceInstanceName() {
+				return this.sourceInstanceName;
+			}
+
+			public void setSourceInstanceName(String sourceInstanceName) {
+				this.sourceInstanceName = sourceInstanceName;
+			}
+
+			public String getTargetInstanceName() {
+				return this.targetInstanceName;
+			}
+
+			public void setTargetInstanceName(String targetInstanceName) {
+				this.targetInstanceName = targetInstanceName;
+			}
+
+			public Long getGmtModified() {
+				return this.gmtModified;
+			}
+
+			public void setGmtModified(Long gmtModified) {
+				this.gmtModified = gmtModified;
 			}
 		}
 	}

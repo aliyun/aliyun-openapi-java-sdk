@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListDeviceDistributeJobResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -65,6 +49,22 @@ public class ListDeviceDistributeJobResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
 	public Data getData() {
@@ -109,52 +109,44 @@ public class ListDeviceDistributeJobResponse extends AcsResponse {
 
 		public static class Items {
 
-			private Integer strategy;
+			private Long gmtCreate;
 
-			private Integer status;
-
-			private String productKey;
+			private String sourceUid;
 
 			private String targetUid;
 
 			private String jobId;
 
-			private Long gmtCreate;
+			private String sourceInstanceId;
 
-			private String sourceInstanceName;
-
-			private String sourceUid;
+			private String productKey;
 
 			private Integer total;
 
+			private Integer status;
+
+			private Integer strategy;
+
 			private String sourceRegion;
 
-			private String sourceInstanceId;
+			private String sourceInstanceName;
 
 			private List<TargetInstanceConfigsItem> targetInstanceConfigs;
 
-			public Integer getStrategy() {
-				return this.strategy;
+			public Long getGmtCreate() {
+				return this.gmtCreate;
 			}
 
-			public void setStrategy(Integer strategy) {
-				this.strategy = strategy;
+			public void setGmtCreate(Long gmtCreate) {
+				this.gmtCreate = gmtCreate;
 			}
 
-			public Integer getStatus() {
-				return this.status;
+			public String getSourceUid() {
+				return this.sourceUid;
 			}
 
-			public void setStatus(Integer status) {
-				this.status = status;
-			}
-
-			public String getProductKey() {
-				return this.productKey;
-			}
-
-			public void setProductKey(String productKey) {
-				this.productKey = productKey;
+			public void setSourceUid(String sourceUid) {
+				this.sourceUid = sourceUid;
 			}
 
 			public String getTargetUid() {
@@ -173,28 +165,20 @@ public class ListDeviceDistributeJobResponse extends AcsResponse {
 				this.jobId = jobId;
 			}
 
-			public Long getGmtCreate() {
-				return this.gmtCreate;
+			public String getSourceInstanceId() {
+				return this.sourceInstanceId;
 			}
 
-			public void setGmtCreate(Long gmtCreate) {
-				this.gmtCreate = gmtCreate;
+			public void setSourceInstanceId(String sourceInstanceId) {
+				this.sourceInstanceId = sourceInstanceId;
 			}
 
-			public String getSourceInstanceName() {
-				return this.sourceInstanceName;
+			public String getProductKey() {
+				return this.productKey;
 			}
 
-			public void setSourceInstanceName(String sourceInstanceName) {
-				this.sourceInstanceName = sourceInstanceName;
-			}
-
-			public String getSourceUid() {
-				return this.sourceUid;
-			}
-
-			public void setSourceUid(String sourceUid) {
-				this.sourceUid = sourceUid;
+			public void setProductKey(String productKey) {
+				this.productKey = productKey;
 			}
 
 			public Integer getTotal() {
@@ -205,6 +189,22 @@ public class ListDeviceDistributeJobResponse extends AcsResponse {
 				this.total = total;
 			}
 
+			public Integer getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(Integer status) {
+				this.status = status;
+			}
+
+			public Integer getStrategy() {
+				return this.strategy;
+			}
+
+			public void setStrategy(Integer strategy) {
+				this.strategy = strategy;
+			}
+
 			public String getSourceRegion() {
 				return this.sourceRegion;
 			}
@@ -213,12 +213,12 @@ public class ListDeviceDistributeJobResponse extends AcsResponse {
 				this.sourceRegion = sourceRegion;
 			}
 
-			public String getSourceInstanceId() {
-				return this.sourceInstanceId;
+			public String getSourceInstanceName() {
+				return this.sourceInstanceName;
 			}
 
-			public void setSourceInstanceId(String sourceInstanceId) {
-				this.sourceInstanceId = sourceInstanceId;
+			public void setSourceInstanceName(String sourceInstanceName) {
+				this.sourceInstanceName = sourceInstanceName;
 			}
 
 			public List<TargetInstanceConfigsItem> getTargetInstanceConfigs() {
@@ -231,18 +231,18 @@ public class ListDeviceDistributeJobResponse extends AcsResponse {
 
 			public static class TargetInstanceConfigsItem {
 
-				private String targetInstanceName;
+				private String targetInstanceId;
 
 				private String targetRegion;
 
-				private String targetInstanceId;
+				private String targetInstanceName;
 
-				public String getTargetInstanceName() {
-					return this.targetInstanceName;
+				public String getTargetInstanceId() {
+					return this.targetInstanceId;
 				}
 
-				public void setTargetInstanceName(String targetInstanceName) {
-					this.targetInstanceName = targetInstanceName;
+				public void setTargetInstanceId(String targetInstanceId) {
+					this.targetInstanceId = targetInstanceId;
 				}
 
 				public String getTargetRegion() {
@@ -253,12 +253,12 @@ public class ListDeviceDistributeJobResponse extends AcsResponse {
 					this.targetRegion = targetRegion;
 				}
 
-				public String getTargetInstanceId() {
-					return this.targetInstanceId;
+				public String getTargetInstanceName() {
+					return this.targetInstanceName;
 				}
 
-				public void setTargetInstanceId(String targetInstanceId) {
-					this.targetInstanceId = targetInstanceId;
+				public void setTargetInstanceName(String targetInstanceName) {
+					this.targetInstanceName = targetInstanceName;
 				}
 			}
 		}

@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryStudioAppDomainListOpenResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,6 +51,22 @@ public class QueryStudioAppDomainListOpenResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -79,11 +79,11 @@ public class QueryStudioAppDomainListOpenResponse extends AcsResponse {
 
 		private Integer pageNo;
 
-		private Integer totalPage;
-
 		private Integer pageSize;
 
 		private Integer total;
+
+		private Integer totalPage;
 
 		private List<DomainInfo> list;
 
@@ -93,14 +93,6 @@ public class QueryStudioAppDomainListOpenResponse extends AcsResponse {
 
 		public void setPageNo(Integer pageNo) {
 			this.pageNo = pageNo;
-		}
-
-		public Integer getTotalPage() {
-			return this.totalPage;
-		}
-
-		public void setTotalPage(Integer totalPage) {
-			this.totalPage = totalPage;
 		}
 
 		public Integer getPageSize() {
@@ -119,6 +111,14 @@ public class QueryStudioAppDomainListOpenResponse extends AcsResponse {
 			this.total = total;
 		}
 
+		public Integer getTotalPage() {
+			return this.totalPage;
+		}
+
+		public void setTotalPage(Integer totalPage) {
+			this.totalPage = totalPage;
+		}
+
 		public List<DomainInfo> getList() {
 			return this.list;
 		}
@@ -129,38 +129,30 @@ public class QueryStudioAppDomainListOpenResponse extends AcsResponse {
 
 		public static class DomainInfo {
 
-			private String host;
-
-			private String protocol;
+			private String tenantId;
 
 			private String appId;
 
 			private String projectId;
 
-			private String gmtCreate;
-
-			private String isBeian;
-
-			private String gmtModified;
+			private String host;
 
 			private Integer id;
 
-			private String tenantId;
+			private String isBeian;
 
-			public String getHost() {
-				return this.host;
+			private String protocol;
+
+			private String gmtCreate;
+
+			private String gmtModified;
+
+			public String getTenantId() {
+				return this.tenantId;
 			}
 
-			public void setHost(String host) {
-				this.host = host;
-			}
-
-			public String getBizProtocol() {
-				return this.protocol;
-			}
-
-			public void setBizProtocol(String protocol) {
-				this.protocol = protocol;
+			public void setTenantId(String tenantId) {
+				this.tenantId = tenantId;
 			}
 
 			public String getAppId() {
@@ -179,28 +171,12 @@ public class QueryStudioAppDomainListOpenResponse extends AcsResponse {
 				this.projectId = projectId;
 			}
 
-			public String getGmtCreate() {
-				return this.gmtCreate;
+			public String getHost() {
+				return this.host;
 			}
 
-			public void setGmtCreate(String gmtCreate) {
-				this.gmtCreate = gmtCreate;
-			}
-
-			public String getIsBeian() {
-				return this.isBeian;
-			}
-
-			public void setIsBeian(String isBeian) {
-				this.isBeian = isBeian;
-			}
-
-			public String getGmtModified() {
-				return this.gmtModified;
-			}
-
-			public void setGmtModified(String gmtModified) {
-				this.gmtModified = gmtModified;
+			public void setHost(String host) {
+				this.host = host;
 			}
 
 			public Integer getId() {
@@ -211,12 +187,36 @@ public class QueryStudioAppDomainListOpenResponse extends AcsResponse {
 				this.id = id;
 			}
 
-			public String getTenantId() {
-				return this.tenantId;
+			public String getIsBeian() {
+				return this.isBeian;
 			}
 
-			public void setTenantId(String tenantId) {
-				this.tenantId = tenantId;
+			public void setIsBeian(String isBeian) {
+				this.isBeian = isBeian;
+			}
+
+			public String getBizProtocol() {
+				return this.protocol;
+			}
+
+			public void setBizProtocol(String protocol) {
+				this.protocol = protocol;
+			}
+
+			public String getGmtCreate() {
+				return this.gmtCreate;
+			}
+
+			public void setGmtCreate(String gmtCreate) {
+				this.gmtCreate = gmtCreate;
+			}
+
+			public String getGmtModified() {
+				return this.gmtModified;
+			}
+
+			public void setGmtModified(String gmtModified) {
+				this.gmtModified = gmtModified;
 			}
 		}
 	}

@@ -23,10 +23,10 @@ public class RemoveThingTopoResponseUnmarshaller {
 	public static RemoveThingTopoResponse unmarshall(RemoveThingTopoResponse removeThingTopoResponse, UnmarshallerContext _ctx) {
 		
 		removeThingTopoResponse.setRequestId(_ctx.stringValue("RemoveThingTopoResponse.RequestId"));
-		removeThingTopoResponse.setCode(_ctx.stringValue("RemoveThingTopoResponse.Code"));
-		removeThingTopoResponse.setData(_ctx.booleanValue("RemoveThingTopoResponse.Data"));
-		removeThingTopoResponse.setErrorMessage(_ctx.stringValue("RemoveThingTopoResponse.ErrorMessage"));
 		removeThingTopoResponse.setSuccess(_ctx.booleanValue("RemoveThingTopoResponse.Success"));
+		removeThingTopoResponse.setCode(_ctx.stringValue("RemoveThingTopoResponse.Code"));
+		removeThingTopoResponse.setErrorMessage(_ctx.stringValue("RemoveThingTopoResponse.ErrorMessage"));
+		removeThingTopoResponse.setData(_ctx.booleanValue("RemoveThingTopoResponse.Data"));
 	 
 	 	return removeThingTopoResponse;
 	}

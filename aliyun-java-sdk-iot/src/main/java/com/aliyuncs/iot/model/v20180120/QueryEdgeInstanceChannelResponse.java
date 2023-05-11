@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryEdgeInstanceChannelResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,6 +51,22 @@ public class QueryEdgeInstanceChannelResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -77,20 +77,20 @@ public class QueryEdgeInstanceChannelResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer currentPage;
+		private Integer total;
 
 		private Integer pageSize;
 
-		private Integer total;
+		private Integer currentPage;
 
 		private List<Channel> channelList;
 
-		public Integer getCurrentPage() {
-			return this.currentPage;
+		public Integer getTotal() {
+			return this.total;
 		}
 
-		public void setCurrentPage(Integer currentPage) {
-			this.currentPage = currentPage;
+		public void setTotal(Integer total) {
+			this.total = total;
 		}
 
 		public Integer getPageSize() {
@@ -101,12 +101,12 @@ public class QueryEdgeInstanceChannelResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
-		public Integer getTotal() {
-			return this.total;
+		public Integer getCurrentPage() {
+			return this.currentPage;
 		}
 
-		public void setTotal(Integer total) {
-			this.total = total;
+		public void setCurrentPage(Integer currentPage) {
+			this.currentPage = currentPage;
 		}
 
 		public List<Channel> getChannelList() {
@@ -119,26 +119,26 @@ public class QueryEdgeInstanceChannelResponse extends AcsResponse {
 
 		public static class Channel {
 
-			private Long gmtCreateTimestamp;
+			private String channelId;
 
 			private String channelName;
-
-			private Long gmtModifiedTimestamp;
-
-			private String channelId;
 
 			private String gmtCreate;
 
 			private String gmtModified;
 
+			private Long gmtCreateTimestamp;
+
+			private Long gmtModifiedTimestamp;
+
 			private List<Config> configList;
 
-			public Long getGmtCreateTimestamp() {
-				return this.gmtCreateTimestamp;
+			public String getChannelId() {
+				return this.channelId;
 			}
 
-			public void setGmtCreateTimestamp(Long gmtCreateTimestamp) {
-				this.gmtCreateTimestamp = gmtCreateTimestamp;
+			public void setChannelId(String channelId) {
+				this.channelId = channelId;
 			}
 
 			public String getChannelName() {
@@ -147,22 +147,6 @@ public class QueryEdgeInstanceChannelResponse extends AcsResponse {
 
 			public void setChannelName(String channelName) {
 				this.channelName = channelName;
-			}
-
-			public Long getGmtModifiedTimestamp() {
-				return this.gmtModifiedTimestamp;
-			}
-
-			public void setGmtModifiedTimestamp(Long gmtModifiedTimestamp) {
-				this.gmtModifiedTimestamp = gmtModifiedTimestamp;
-			}
-
-			public String getChannelId() {
-				return this.channelId;
-			}
-
-			public void setChannelId(String channelId) {
-				this.channelId = channelId;
 			}
 
 			public String getGmtCreate() {
@@ -181,6 +165,22 @@ public class QueryEdgeInstanceChannelResponse extends AcsResponse {
 				this.gmtModified = gmtModified;
 			}
 
+			public Long getGmtCreateTimestamp() {
+				return this.gmtCreateTimestamp;
+			}
+
+			public void setGmtCreateTimestamp(Long gmtCreateTimestamp) {
+				this.gmtCreateTimestamp = gmtCreateTimestamp;
+			}
+
+			public Long getGmtModifiedTimestamp() {
+				return this.gmtModifiedTimestamp;
+			}
+
+			public void setGmtModifiedTimestamp(Long gmtModifiedTimestamp) {
+				this.gmtModifiedTimestamp = gmtModifiedTimestamp;
+			}
+
 			public List<Config> getConfigList() {
 				return this.configList;
 			}
@@ -191,21 +191,13 @@ public class QueryEdgeInstanceChannelResponse extends AcsResponse {
 
 			public static class Config {
 
-				private String key;
-
 				private String configId;
 
 				private String format;
 
 				private String content;
 
-				public String getKey() {
-					return this.key;
-				}
-
-				public void setKey(String key) {
-					this.key = key;
-				}
+				private String key;
 
 				public String getConfigId() {
 					return this.configId;
@@ -229,6 +221,14 @@ public class QueryEdgeInstanceChannelResponse extends AcsResponse {
 
 				public void setContent(String content) {
 					this.content = content;
+				}
+
+				public String getKey() {
+					return this.key;
+				}
+
+				public void setKey(String key) {
+					this.key = key;
 				}
 			}
 		}

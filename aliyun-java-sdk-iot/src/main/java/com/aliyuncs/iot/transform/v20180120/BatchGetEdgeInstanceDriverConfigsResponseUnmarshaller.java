@@ -28,9 +28,9 @@ public class BatchGetEdgeInstanceDriverConfigsResponseUnmarshaller {
 	public static BatchGetEdgeInstanceDriverConfigsResponse unmarshall(BatchGetEdgeInstanceDriverConfigsResponse batchGetEdgeInstanceDriverConfigsResponse, UnmarshallerContext _ctx) {
 		
 		batchGetEdgeInstanceDriverConfigsResponse.setRequestId(_ctx.stringValue("BatchGetEdgeInstanceDriverConfigsResponse.RequestId"));
+		batchGetEdgeInstanceDriverConfigsResponse.setSuccess(_ctx.booleanValue("BatchGetEdgeInstanceDriverConfigsResponse.Success"));
 		batchGetEdgeInstanceDriverConfigsResponse.setCode(_ctx.stringValue("BatchGetEdgeInstanceDriverConfigsResponse.Code"));
 		batchGetEdgeInstanceDriverConfigsResponse.setErrorMessage(_ctx.stringValue("BatchGetEdgeInstanceDriverConfigsResponse.ErrorMessage"));
-		batchGetEdgeInstanceDriverConfigsResponse.setSuccess(_ctx.booleanValue("BatchGetEdgeInstanceDriverConfigsResponse.Success"));
 
 		List<DriverConfig> driverConfigList = new ArrayList<DriverConfig>();
 		for (int i = 0; i < _ctx.lengthValue("BatchGetEdgeInstanceDriverConfigsResponse.DriverConfigList.Length"); i++) {
@@ -40,10 +40,10 @@ public class BatchGetEdgeInstanceDriverConfigsResponseUnmarshaller {
 			List<Config> configList = new ArrayList<Config>();
 			for (int j = 0; j < _ctx.lengthValue("BatchGetEdgeInstanceDriverConfigsResponse.DriverConfigList["+ i +"].ConfigList.Length"); j++) {
 				Config config = new Config();
-				config.setKey(_ctx.stringValue("BatchGetEdgeInstanceDriverConfigsResponse.DriverConfigList["+ i +"].ConfigList["+ j +"].Key"));
 				config.setConfigId(_ctx.stringValue("BatchGetEdgeInstanceDriverConfigsResponse.DriverConfigList["+ i +"].ConfigList["+ j +"].ConfigId"));
 				config.setFormat(_ctx.stringValue("BatchGetEdgeInstanceDriverConfigsResponse.DriverConfigList["+ i +"].ConfigList["+ j +"].Format"));
 				config.setContent(_ctx.stringValue("BatchGetEdgeInstanceDriverConfigsResponse.DriverConfigList["+ i +"].ConfigList["+ j +"].Content"));
+				config.setKey(_ctx.stringValue("BatchGetEdgeInstanceDriverConfigsResponse.DriverConfigList["+ i +"].ConfigList["+ j +"].Key"));
 
 				configList.add(config);
 			}

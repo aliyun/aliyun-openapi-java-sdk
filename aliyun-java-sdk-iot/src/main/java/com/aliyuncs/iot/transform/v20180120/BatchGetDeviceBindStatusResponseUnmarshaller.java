@@ -27,16 +27,16 @@ public class BatchGetDeviceBindStatusResponseUnmarshaller {
 	public static BatchGetDeviceBindStatusResponse unmarshall(BatchGetDeviceBindStatusResponse batchGetDeviceBindStatusResponse, UnmarshallerContext _ctx) {
 		
 		batchGetDeviceBindStatusResponse.setRequestId(_ctx.stringValue("BatchGetDeviceBindStatusResponse.RequestId"));
+		batchGetDeviceBindStatusResponse.setSuccess(_ctx.booleanValue("BatchGetDeviceBindStatusResponse.Success"));
 		batchGetDeviceBindStatusResponse.setCode(_ctx.stringValue("BatchGetDeviceBindStatusResponse.Code"));
 		batchGetDeviceBindStatusResponse.setErrorMessage(_ctx.stringValue("BatchGetDeviceBindStatusResponse.ErrorMessage"));
-		batchGetDeviceBindStatusResponse.setSuccess(_ctx.booleanValue("BatchGetDeviceBindStatusResponse.Success"));
 
 		List<DeviceStatus> data = new ArrayList<DeviceStatus>();
 		for (int i = 0; i < _ctx.lengthValue("BatchGetDeviceBindStatusResponse.Data.Length"); i++) {
 			DeviceStatus deviceStatus = new DeviceStatus();
+			deviceStatus.setIotId(_ctx.stringValue("BatchGetDeviceBindStatusResponse.Data["+ i +"].IotId"));
 			deviceStatus.setBindStatus(_ctx.integerValue("BatchGetDeviceBindStatusResponse.Data["+ i +"].BindStatus"));
 			deviceStatus.setInstanceId(_ctx.stringValue("BatchGetDeviceBindStatusResponse.Data["+ i +"].InstanceId"));
-			deviceStatus.setIotId(_ctx.stringValue("BatchGetDeviceBindStatusResponse.Data["+ i +"].IotId"));
 
 			data.add(deviceStatus);
 		}

@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListOTAModuleByProductResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private List<OtaModuleDTO> data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,6 +51,22 @@ public class ListOTAModuleByProductResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public List<OtaModuleDTO> getData() {
 		return this.data;
 	}
@@ -77,25 +77,17 @@ public class ListOTAModuleByProductResponse extends AcsResponse {
 
 	public static class OtaModuleDTO {
 
-		private String moduleName;
-
 		private String productKey;
 
-		private String gmtCreate;
+		private String moduleName;
 
 		private String aliasName;
 
-		private String gmtModified;
-
 		private String desc;
 
-		public String getModuleName() {
-			return this.moduleName;
-		}
+		private String gmtCreate;
 
-		public void setModuleName(String moduleName) {
-			this.moduleName = moduleName;
-		}
+		private String gmtModified;
 
 		public String getProductKey() {
 			return this.productKey;
@@ -105,12 +97,12 @@ public class ListOTAModuleByProductResponse extends AcsResponse {
 			this.productKey = productKey;
 		}
 
-		public String getGmtCreate() {
-			return this.gmtCreate;
+		public String getModuleName() {
+			return this.moduleName;
 		}
 
-		public void setGmtCreate(String gmtCreate) {
-			this.gmtCreate = gmtCreate;
+		public void setModuleName(String moduleName) {
+			this.moduleName = moduleName;
 		}
 
 		public String getAliasName() {
@@ -121,20 +113,28 @@ public class ListOTAModuleByProductResponse extends AcsResponse {
 			this.aliasName = aliasName;
 		}
 
-		public String getGmtModified() {
-			return this.gmtModified;
-		}
-
-		public void setGmtModified(String gmtModified) {
-			this.gmtModified = gmtModified;
-		}
-
 		public String getDesc() {
 			return this.desc;
 		}
 
 		public void setDesc(String desc) {
 			this.desc = desc;
+		}
+
+		public String getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(String gmtCreate) {
+			this.gmtCreate = gmtCreate;
+		}
+
+		public String getGmtModified() {
+			return this.gmtModified;
+		}
+
+		public void setGmtModified(String gmtModified) {
+			this.gmtModified = gmtModified;
 		}
 	}
 

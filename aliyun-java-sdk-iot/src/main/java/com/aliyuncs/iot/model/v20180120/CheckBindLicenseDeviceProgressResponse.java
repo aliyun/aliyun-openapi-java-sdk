@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CheckBindLicenseDeviceProgressResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -66,6 +50,22 @@ public class CheckBindLicenseDeviceProgressResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -78,11 +78,11 @@ public class CheckBindLicenseDeviceProgressResponse extends AcsResponse {
 
 		private Long successSum;
 
-		private Integer progress;
+		private Long failSum;
 
 		private String resultCsvFile;
 
-		private Long failSum;
+		private Integer progress;
 
 		public Long getSuccessSum() {
 			return this.successSum;
@@ -92,12 +92,12 @@ public class CheckBindLicenseDeviceProgressResponse extends AcsResponse {
 			this.successSum = successSum;
 		}
 
-		public Integer getProgress() {
-			return this.progress;
+		public Long getFailSum() {
+			return this.failSum;
 		}
 
-		public void setProgress(Integer progress) {
-			this.progress = progress;
+		public void setFailSum(Long failSum) {
+			this.failSum = failSum;
 		}
 
 		public String getResultCsvFile() {
@@ -108,12 +108,12 @@ public class CheckBindLicenseDeviceProgressResponse extends AcsResponse {
 			this.resultCsvFile = resultCsvFile;
 		}
 
-		public Long getFailSum() {
-			return this.failSum;
+		public Integer getProgress() {
+			return this.progress;
 		}
 
-		public void setFailSum(Long failSum) {
-			this.failSum = failSum;
+		public void setProgress(Integer progress) {
+			this.progress = progress;
 		}
 	}
 

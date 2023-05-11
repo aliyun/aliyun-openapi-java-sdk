@@ -24,9 +24,9 @@ public class CreateOTAVerifyJobResponseUnmarshaller {
 	public static CreateOTAVerifyJobResponse unmarshall(CreateOTAVerifyJobResponse createOTAVerifyJobResponse, UnmarshallerContext _ctx) {
 		
 		createOTAVerifyJobResponse.setRequestId(_ctx.stringValue("CreateOTAVerifyJobResponse.RequestId"));
+		createOTAVerifyJobResponse.setSuccess(_ctx.booleanValue("CreateOTAVerifyJobResponse.Success"));
 		createOTAVerifyJobResponse.setCode(_ctx.stringValue("CreateOTAVerifyJobResponse.Code"));
 		createOTAVerifyJobResponse.setErrorMessage(_ctx.stringValue("CreateOTAVerifyJobResponse.ErrorMessage"));
-		createOTAVerifyJobResponse.setSuccess(_ctx.booleanValue("CreateOTAVerifyJobResponse.Success"));
 
 		Data data = new Data();
 		data.setJobId(_ctx.stringValue("CreateOTAVerifyJobResponse.Data.JobId"));

@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryDeviceDesiredPropertyResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -65,6 +49,22 @@ public class QueryDeviceDesiredPropertyResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
 	public Data getData() {
@@ -89,51 +89,19 @@ public class QueryDeviceDesiredPropertyResponse extends AcsResponse {
 
 		public static class DesiredPropertyInfo {
 
-			private String time;
-
-			private String value;
-
-			private String dataType;
-
-			private Long version;
-
 			private String unit;
 
 			private String identifier;
 
+			private String dataType;
+
+			private String time;
+
+			private String value;
+
 			private String name;
 
-			public String getTime() {
-				return this.time;
-			}
-
-			public void setTime(String time) {
-				this.time = time;
-			}
-
-			public String getValue() {
-				return this.value;
-			}
-
-			public void setValue(String value) {
-				this.value = value;
-			}
-
-			public String getDataType() {
-				return this.dataType;
-			}
-
-			public void setDataType(String dataType) {
-				this.dataType = dataType;
-			}
-
-			public Long getVersion() {
-				return this.version;
-			}
-
-			public void setVersion(Long version) {
-				this.version = version;
-			}
+			private Long version;
 
 			public String getUnit() {
 				return this.unit;
@@ -151,12 +119,44 @@ public class QueryDeviceDesiredPropertyResponse extends AcsResponse {
 				this.identifier = identifier;
 			}
 
+			public String getDataType() {
+				return this.dataType;
+			}
+
+			public void setDataType(String dataType) {
+				this.dataType = dataType;
+			}
+
+			public String getTime() {
+				return this.time;
+			}
+
+			public void setTime(String time) {
+				this.time = time;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
+
 			public String getName() {
 				return this.name;
 			}
 
 			public void setName(String name) {
 				this.name = name;
+			}
+
+			public Long getVersion() {
+				return this.version;
+			}
+
+			public void setVersion(Long version) {
+				this.version = version;
 			}
 		}
 	}

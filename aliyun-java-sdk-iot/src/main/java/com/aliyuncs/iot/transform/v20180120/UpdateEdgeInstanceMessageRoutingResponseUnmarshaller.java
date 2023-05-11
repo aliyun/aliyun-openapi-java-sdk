@@ -23,9 +23,9 @@ public class UpdateEdgeInstanceMessageRoutingResponseUnmarshaller {
 	public static UpdateEdgeInstanceMessageRoutingResponse unmarshall(UpdateEdgeInstanceMessageRoutingResponse updateEdgeInstanceMessageRoutingResponse, UnmarshallerContext _ctx) {
 		
 		updateEdgeInstanceMessageRoutingResponse.setRequestId(_ctx.stringValue("UpdateEdgeInstanceMessageRoutingResponse.RequestId"));
+		updateEdgeInstanceMessageRoutingResponse.setSuccess(_ctx.booleanValue("UpdateEdgeInstanceMessageRoutingResponse.Success"));
 		updateEdgeInstanceMessageRoutingResponse.setCode(_ctx.stringValue("UpdateEdgeInstanceMessageRoutingResponse.Code"));
 		updateEdgeInstanceMessageRoutingResponse.setErrorMessage(_ctx.stringValue("UpdateEdgeInstanceMessageRoutingResponse.ErrorMessage"));
-		updateEdgeInstanceMessageRoutingResponse.setSuccess(_ctx.booleanValue("UpdateEdgeInstanceMessageRoutingResponse.Success"));
 	 
 	 	return updateEdgeInstanceMessageRoutingResponse;
 	}

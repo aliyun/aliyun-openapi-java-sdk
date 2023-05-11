@@ -23,9 +23,9 @@ public class RetrySoundCodeLabelBatchResponseUnmarshaller {
 	public static RetrySoundCodeLabelBatchResponse unmarshall(RetrySoundCodeLabelBatchResponse retrySoundCodeLabelBatchResponse, UnmarshallerContext _ctx) {
 		
 		retrySoundCodeLabelBatchResponse.setRequestId(_ctx.stringValue("RetrySoundCodeLabelBatchResponse.RequestId"));
+		retrySoundCodeLabelBatchResponse.setSuccess(_ctx.booleanValue("RetrySoundCodeLabelBatchResponse.Success"));
 		retrySoundCodeLabelBatchResponse.setCode(_ctx.stringValue("RetrySoundCodeLabelBatchResponse.Code"));
 		retrySoundCodeLabelBatchResponse.setErrorMessage(_ctx.stringValue("RetrySoundCodeLabelBatchResponse.ErrorMessage"));
-		retrySoundCodeLabelBatchResponse.setSuccess(_ctx.booleanValue("RetrySoundCodeLabelBatchResponse.Success"));
 	 
 	 	return retrySoundCodeLabelBatchResponse;
 	}

@@ -23,13 +23,13 @@ public class BatchAddDeviceGroupRelationsResponseUnmarshaller {
 	public static BatchAddDeviceGroupRelationsResponse unmarshall(BatchAddDeviceGroupRelationsResponse batchAddDeviceGroupRelationsResponse, UnmarshallerContext _ctx) {
 		
 		batchAddDeviceGroupRelationsResponse.setRequestId(_ctx.stringValue("BatchAddDeviceGroupRelationsResponse.RequestId"));
-		batchAddDeviceGroupRelationsResponse.setErrorMessage(_ctx.stringValue("BatchAddDeviceGroupRelationsResponse.ErrorMessage"));
-		batchAddDeviceGroupRelationsResponse.setExceedTenGroupDeviceCount(_ctx.integerValue("BatchAddDeviceGroupRelationsResponse.ExceedTenGroupDeviceCount"));
-		batchAddDeviceGroupRelationsResponse.setAlreadyRelatedGroupDeviceCount(_ctx.integerValue("BatchAddDeviceGroupRelationsResponse.AlreadyRelatedGroupDeviceCount"));
 		batchAddDeviceGroupRelationsResponse.setSuccess(_ctx.booleanValue("BatchAddDeviceGroupRelationsResponse.Success"));
 		batchAddDeviceGroupRelationsResponse.setCode(_ctx.stringValue("BatchAddDeviceGroupRelationsResponse.Code"));
 		batchAddDeviceGroupRelationsResponse.setValidDeviceCount(_ctx.integerValue("BatchAddDeviceGroupRelationsResponse.ValidDeviceCount"));
+		batchAddDeviceGroupRelationsResponse.setExceedTenGroupDeviceCount(_ctx.integerValue("BatchAddDeviceGroupRelationsResponse.ExceedTenGroupDeviceCount"));
+		batchAddDeviceGroupRelationsResponse.setAlreadyRelatedGroupDeviceCount(_ctx.integerValue("BatchAddDeviceGroupRelationsResponse.AlreadyRelatedGroupDeviceCount"));
 		batchAddDeviceGroupRelationsResponse.setSuccessAddedDeviceCount(_ctx.integerValue("BatchAddDeviceGroupRelationsResponse.SuccessAddedDeviceCount"));
+		batchAddDeviceGroupRelationsResponse.setErrorMessage(_ctx.stringValue("BatchAddDeviceGroupRelationsResponse.ErrorMessage"));
 	 
 	 	return batchAddDeviceGroupRelationsResponse;
 	}

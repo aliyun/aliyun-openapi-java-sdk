@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryDeviceGroupInfoResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -66,6 +50,22 @@ public class QueryDeviceGroupInfoResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -78,19 +78,19 @@ public class QueryDeviceGroupInfoResponse extends AcsResponse {
 
 		private String groupId;
 
-		private String groupName;
-
-		private Integer deviceActive;
-
 		private String utcCreate;
 
-		private String dynamicGroupExpression;
-
-		private Integer deviceOnline;
+		private String groupName;
 
 		private String groupDesc;
 
 		private Integer deviceCount;
+
+		private Integer deviceActive;
+
+		private Integer deviceOnline;
+
+		private String dynamicGroupExpression;
 
 		public String getGroupId() {
 			return this.groupId;
@@ -98,22 +98,6 @@ public class QueryDeviceGroupInfoResponse extends AcsResponse {
 
 		public void setGroupId(String groupId) {
 			this.groupId = groupId;
-		}
-
-		public String getGroupName() {
-			return this.groupName;
-		}
-
-		public void setGroupName(String groupName) {
-			this.groupName = groupName;
-		}
-
-		public Integer getDeviceActive() {
-			return this.deviceActive;
-		}
-
-		public void setDeviceActive(Integer deviceActive) {
-			this.deviceActive = deviceActive;
 		}
 
 		public String getUtcCreate() {
@@ -124,20 +108,12 @@ public class QueryDeviceGroupInfoResponse extends AcsResponse {
 			this.utcCreate = utcCreate;
 		}
 
-		public String getDynamicGroupExpression() {
-			return this.dynamicGroupExpression;
+		public String getGroupName() {
+			return this.groupName;
 		}
 
-		public void setDynamicGroupExpression(String dynamicGroupExpression) {
-			this.dynamicGroupExpression = dynamicGroupExpression;
-		}
-
-		public Integer getDeviceOnline() {
-			return this.deviceOnline;
-		}
-
-		public void setDeviceOnline(Integer deviceOnline) {
-			this.deviceOnline = deviceOnline;
+		public void setGroupName(String groupName) {
+			this.groupName = groupName;
 		}
 
 		public String getGroupDesc() {
@@ -154,6 +130,30 @@ public class QueryDeviceGroupInfoResponse extends AcsResponse {
 
 		public void setDeviceCount(Integer deviceCount) {
 			this.deviceCount = deviceCount;
+		}
+
+		public Integer getDeviceActive() {
+			return this.deviceActive;
+		}
+
+		public void setDeviceActive(Integer deviceActive) {
+			this.deviceActive = deviceActive;
+		}
+
+		public Integer getDeviceOnline() {
+			return this.deviceOnline;
+		}
+
+		public void setDeviceOnline(Integer deviceOnline) {
+			this.deviceOnline = deviceOnline;
+		}
+
+		public String getDynamicGroupExpression() {
+			return this.dynamicGroupExpression;
+		}
+
+		public void setDynamicGroupExpression(String dynamicGroupExpression) {
+			this.dynamicGroupExpression = dynamicGroupExpression;
 		}
 	}
 

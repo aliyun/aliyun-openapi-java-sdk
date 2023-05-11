@@ -26,33 +26,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DeleteTopicRouteTableResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
-
-	private Boolean isAllSucceed;
 
 	private Boolean success;
 
+	private String code;
+
+	private Boolean isAllSucceed;
+
+	private String errorMessage;
+
 	private List<Map<Object,Object>> failureTopics;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -60,6 +44,22 @@ public class DeleteTopicRouteTableResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Boolean getIsAllSucceed() {
@@ -70,12 +70,12 @@ public class DeleteTopicRouteTableResponse extends AcsResponse {
 		this.isAllSucceed = isAllSucceed;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getErrorMessage() {
+		return this.errorMessage;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
 	public List<Map<Object,Object>> getFailureTopics() {

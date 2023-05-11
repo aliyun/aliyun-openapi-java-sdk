@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetRuleActionResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private RuleActionInfo ruleActionInfo;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -66,6 +50,22 @@ public class GetRuleActionResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public RuleActionInfo getRuleActionInfo() {
 		return this.ruleActionInfo;
 	}
@@ -76,22 +76,30 @@ public class GetRuleActionResponse extends AcsResponse {
 
 	public static class RuleActionInfo {
 
-		private Boolean errorActionFlag;
+		private Long id;
+
+		private Long ruleId;
 
 		private String type;
 
 		private String configuration;
 
-		private Long id;
+		private Boolean errorActionFlag;
 
-		private Long ruleId;
-
-		public Boolean getErrorActionFlag() {
-			return this.errorActionFlag;
+		public Long getId() {
+			return this.id;
 		}
 
-		public void setErrorActionFlag(Boolean errorActionFlag) {
-			this.errorActionFlag = errorActionFlag;
+		public void setId(Long id) {
+			this.id = id;
+		}
+
+		public Long getRuleId() {
+			return this.ruleId;
+		}
+
+		public void setRuleId(Long ruleId) {
+			this.ruleId = ruleId;
 		}
 
 		public String getType() {
@@ -110,20 +118,12 @@ public class GetRuleActionResponse extends AcsResponse {
 			this.configuration = configuration;
 		}
 
-		public Long getId() {
-			return this.id;
+		public Boolean getErrorActionFlag() {
+			return this.errorActionFlag;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
-		}
-
-		public Long getRuleId() {
-			return this.ruleId;
-		}
-
-		public void setRuleId(Long ruleId) {
-			this.ruleId = ruleId;
+		public void setErrorActionFlag(Boolean errorActionFlag) {
+			this.errorActionFlag = errorActionFlag;
 		}
 	}
 

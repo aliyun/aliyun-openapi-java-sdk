@@ -23,9 +23,9 @@ public class DeleteSoundCodeScheduleResponseUnmarshaller {
 	public static DeleteSoundCodeScheduleResponse unmarshall(DeleteSoundCodeScheduleResponse deleteSoundCodeScheduleResponse, UnmarshallerContext _ctx) {
 		
 		deleteSoundCodeScheduleResponse.setRequestId(_ctx.stringValue("DeleteSoundCodeScheduleResponse.RequestId"));
+		deleteSoundCodeScheduleResponse.setSuccess(_ctx.booleanValue("DeleteSoundCodeScheduleResponse.Success"));
 		deleteSoundCodeScheduleResponse.setCode(_ctx.stringValue("DeleteSoundCodeScheduleResponse.Code"));
 		deleteSoundCodeScheduleResponse.setErrorMessage(_ctx.stringValue("DeleteSoundCodeScheduleResponse.ErrorMessage"));
-		deleteSoundCodeScheduleResponse.setSuccess(_ctx.booleanValue("DeleteSoundCodeScheduleResponse.Success"));
 	 
 	 	return deleteSoundCodeScheduleResponse;
 	}

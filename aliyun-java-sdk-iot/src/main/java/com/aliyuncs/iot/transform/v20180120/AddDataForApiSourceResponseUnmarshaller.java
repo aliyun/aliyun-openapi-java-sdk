@@ -23,10 +23,10 @@ public class AddDataForApiSourceResponseUnmarshaller {
 	public static AddDataForApiSourceResponse unmarshall(AddDataForApiSourceResponse addDataForApiSourceResponse, UnmarshallerContext _ctx) {
 		
 		addDataForApiSourceResponse.setRequestId(_ctx.stringValue("AddDataForApiSourceResponse.RequestId"));
-		addDataForApiSourceResponse.setCode(_ctx.stringValue("AddDataForApiSourceResponse.Code"));
-		addDataForApiSourceResponse.setData(_ctx.longValue("AddDataForApiSourceResponse.Data"));
-		addDataForApiSourceResponse.setErrorMessage(_ctx.stringValue("AddDataForApiSourceResponse.ErrorMessage"));
 		addDataForApiSourceResponse.setSuccess(_ctx.booleanValue("AddDataForApiSourceResponse.Success"));
+		addDataForApiSourceResponse.setCode(_ctx.stringValue("AddDataForApiSourceResponse.Code"));
+		addDataForApiSourceResponse.setErrorMessage(_ctx.stringValue("AddDataForApiSourceResponse.ErrorMessage"));
+		addDataForApiSourceResponse.setData(_ctx.longValue("AddDataForApiSourceResponse.Data"));
 	 
 	 	return addDataForApiSourceResponse;
 	}

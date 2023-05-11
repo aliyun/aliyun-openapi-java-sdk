@@ -23,12 +23,12 @@ public class RRpcResponseUnmarshaller {
 	public static RRpcResponse unmarshall(RRpcResponse rRpcResponse, UnmarshallerContext _ctx) {
 		
 		rRpcResponse.setRequestId(_ctx.stringValue("RRpcResponse.RequestId"));
-		rRpcResponse.setMessageId(_ctx.longValue("RRpcResponse.MessageId"));
-		rRpcResponse.setErrorMessage(_ctx.stringValue("RRpcResponse.ErrorMessage"));
 		rRpcResponse.setSuccess(_ctx.booleanValue("RRpcResponse.Success"));
 		rRpcResponse.setCode(_ctx.stringValue("RRpcResponse.Code"));
-		rRpcResponse.setPayloadBase64Byte(_ctx.stringValue("RRpcResponse.PayloadBase64Byte"));
+		rRpcResponse.setErrorMessage(_ctx.stringValue("RRpcResponse.ErrorMessage"));
 		rRpcResponse.setRrpcCode(_ctx.stringValue("RRpcResponse.RrpcCode"));
+		rRpcResponse.setPayloadBase64Byte(_ctx.stringValue("RRpcResponse.PayloadBase64Byte"));
+		rRpcResponse.setMessageId(_ctx.longValue("RRpcResponse.MessageId"));
 	 
 	 	return rRpcResponse;
 	}

@@ -23,9 +23,9 @@ public class UpdateThingScriptResponseUnmarshaller {
 	public static UpdateThingScriptResponse unmarshall(UpdateThingScriptResponse updateThingScriptResponse, UnmarshallerContext _ctx) {
 		
 		updateThingScriptResponse.setRequestId(_ctx.stringValue("UpdateThingScriptResponse.RequestId"));
+		updateThingScriptResponse.setSuccess(_ctx.booleanValue("UpdateThingScriptResponse.Success"));
 		updateThingScriptResponse.setCode(_ctx.stringValue("UpdateThingScriptResponse.Code"));
 		updateThingScriptResponse.setErrorMessage(_ctx.stringValue("UpdateThingScriptResponse.ErrorMessage"));
-		updateThingScriptResponse.setSuccess(_ctx.booleanValue("UpdateThingScriptResponse.Success"));
 	 
 	 	return updateThingScriptResponse;
 	}

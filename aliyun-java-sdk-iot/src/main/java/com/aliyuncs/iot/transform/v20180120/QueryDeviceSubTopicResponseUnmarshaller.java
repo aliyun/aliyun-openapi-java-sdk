@@ -27,9 +27,9 @@ public class QueryDeviceSubTopicResponseUnmarshaller {
 	public static QueryDeviceSubTopicResponse unmarshall(QueryDeviceSubTopicResponse queryDeviceSubTopicResponse, UnmarshallerContext _ctx) {
 		
 		queryDeviceSubTopicResponse.setRequestId(_ctx.stringValue("QueryDeviceSubTopicResponse.RequestId"));
+		queryDeviceSubTopicResponse.setSuccess(_ctx.booleanValue("QueryDeviceSubTopicResponse.Success"));
 		queryDeviceSubTopicResponse.setCode(_ctx.stringValue("QueryDeviceSubTopicResponse.Code"));
 		queryDeviceSubTopicResponse.setErrorMessage(_ctx.stringValue("QueryDeviceSubTopicResponse.ErrorMessage"));
-		queryDeviceSubTopicResponse.setSuccess(_ctx.booleanValue("QueryDeviceSubTopicResponse.Success"));
 
 		List<Topic> topicList = new ArrayList<Topic>();
 		for (int i = 0; i < _ctx.lengthValue("QueryDeviceSubTopicResponse.TopicList.Length"); i++) {

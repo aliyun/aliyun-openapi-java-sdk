@@ -23,9 +23,9 @@ public class ReupgradeOTATaskResponseUnmarshaller {
 	public static ReupgradeOTATaskResponse unmarshall(ReupgradeOTATaskResponse reupgradeOTATaskResponse, UnmarshallerContext _ctx) {
 		
 		reupgradeOTATaskResponse.setRequestId(_ctx.stringValue("ReupgradeOTATaskResponse.RequestId"));
+		reupgradeOTATaskResponse.setSuccess(_ctx.booleanValue("ReupgradeOTATaskResponse.Success"));
 		reupgradeOTATaskResponse.setCode(_ctx.stringValue("ReupgradeOTATaskResponse.Code"));
 		reupgradeOTATaskResponse.setErrorMessage(_ctx.stringValue("ReupgradeOTATaskResponse.ErrorMessage"));
-		reupgradeOTATaskResponse.setSuccess(_ctx.booleanValue("ReupgradeOTATaskResponse.Success"));
 	 
 	 	return reupgradeOTATaskResponse;
 	}

@@ -23,9 +23,9 @@ public class BindDriverToEdgeInstanceResponseUnmarshaller {
 	public static BindDriverToEdgeInstanceResponse unmarshall(BindDriverToEdgeInstanceResponse bindDriverToEdgeInstanceResponse, UnmarshallerContext _ctx) {
 		
 		bindDriverToEdgeInstanceResponse.setRequestId(_ctx.stringValue("BindDriverToEdgeInstanceResponse.RequestId"));
+		bindDriverToEdgeInstanceResponse.setSuccess(_ctx.booleanValue("BindDriverToEdgeInstanceResponse.Success"));
 		bindDriverToEdgeInstanceResponse.setCode(_ctx.stringValue("BindDriverToEdgeInstanceResponse.Code"));
 		bindDriverToEdgeInstanceResponse.setErrorMessage(_ctx.stringValue("BindDriverToEdgeInstanceResponse.ErrorMessage"));
-		bindDriverToEdgeInstanceResponse.setSuccess(_ctx.booleanValue("BindDriverToEdgeInstanceResponse.Success"));
 	 
 	 	return bindDriverToEdgeInstanceResponse;
 	}

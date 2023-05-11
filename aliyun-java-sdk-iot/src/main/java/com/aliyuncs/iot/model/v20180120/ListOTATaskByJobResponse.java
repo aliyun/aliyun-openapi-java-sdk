@@ -25,31 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListOTATaskByJobResponse extends AcsResponse {
 
-	private Integer currentPage;
-
 	private String requestId;
-
-	private String errorMessage;
 
 	private Boolean success;
 
 	private String code;
 
+	private String errorMessage;
+
+	private Integer total;
+
 	private Integer pageSize;
 
 	private Integer pageCount;
 
-	private Integer total;
+	private Integer currentPage;
 
 	private List<SimpleOTATaskInfo> data;
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -57,14 +49,6 @@ public class ListOTATaskByJobResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
 	}
 
 	public Boolean getSuccess() {
@@ -83,6 +67,22 @@ public class ListOTATaskByJobResponse extends AcsResponse {
 		this.code = code;
 	}
 
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
+	public Integer getTotal() {
+		return this.total;
+	}
+
+	public void setTotal(Integer total) {
+		this.total = total;
+	}
+
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -99,12 +99,12 @@ public class ListOTATaskByJobResponse extends AcsResponse {
 		this.pageCount = pageCount;
 	}
 
-	public Integer getTotal() {
-		return this.total;
+	public Integer getCurrentPage() {
+		return this.currentPage;
 	}
 
-	public void setTotal(Integer total) {
-		this.total = total;
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
 	}
 
 	public List<SimpleOTATaskInfo> getData() {
@@ -117,90 +117,42 @@ public class ListOTATaskByJobResponse extends AcsResponse {
 
 	public static class SimpleOTATaskInfo {
 
-		private String timeout;
-
-		private String productName;
-
-		private String progress;
-
-		private String deviceName;
-
-		private String utcCreate;
-
-		private String productKey;
-
-		private String taskStatus;
+		private String taskId;
 
 		private String utcModified;
 
-		private String jobId;
-
-		private String srcVersion;
-
-		private String taskDesc;
-
-		private String taskId;
-
-		private String destVersion;
+		private String productKey;
 
 		private String firmwareId;
 
+		private String taskStatus;
+
+		private String jobId;
+
+		private String productName;
+
+		private String deviceName;
+
+		private String srcVersion;
+
+		private String destVersion;
+
+		private String taskDesc;
+
+		private String progress;
+
 		private String iotId;
 
-		public String getTimeout() {
-			return this.timeout;
+		private String utcCreate;
+
+		private String timeout;
+
+		public String getTaskId() {
+			return this.taskId;
 		}
 
-		public void setTimeout(String timeout) {
-			this.timeout = timeout;
-		}
-
-		public String getProductName() {
-			return this.productName;
-		}
-
-		public void setProductName(String productName) {
-			this.productName = productName;
-		}
-
-		public String getProgress() {
-			return this.progress;
-		}
-
-		public void setProgress(String progress) {
-			this.progress = progress;
-		}
-
-		public String getDeviceName() {
-			return this.deviceName;
-		}
-
-		public void setDeviceName(String deviceName) {
-			this.deviceName = deviceName;
-		}
-
-		public String getUtcCreate() {
-			return this.utcCreate;
-		}
-
-		public void setUtcCreate(String utcCreate) {
-			this.utcCreate = utcCreate;
-		}
-
-		public String getProductKey() {
-			return this.productKey;
-		}
-
-		public void setProductKey(String productKey) {
-			this.productKey = productKey;
-		}
-
-		public String getTaskStatus() {
-			return this.taskStatus;
-		}
-
-		public void setTaskStatus(String taskStatus) {
-			this.taskStatus = taskStatus;
+		public void setTaskId(String taskId) {
+			this.taskId = taskId;
 		}
 
 		public String getUtcModified() {
@@ -211,44 +163,12 @@ public class ListOTATaskByJobResponse extends AcsResponse {
 			this.utcModified = utcModified;
 		}
 
-		public String getJobId() {
-			return this.jobId;
+		public String getProductKey() {
+			return this.productKey;
 		}
 
-		public void setJobId(String jobId) {
-			this.jobId = jobId;
-		}
-
-		public String getSrcVersion() {
-			return this.srcVersion;
-		}
-
-		public void setSrcVersion(String srcVersion) {
-			this.srcVersion = srcVersion;
-		}
-
-		public String getTaskDesc() {
-			return this.taskDesc;
-		}
-
-		public void setTaskDesc(String taskDesc) {
-			this.taskDesc = taskDesc;
-		}
-
-		public String getTaskId() {
-			return this.taskId;
-		}
-
-		public void setTaskId(String taskId) {
-			this.taskId = taskId;
-		}
-
-		public String getDestVersion() {
-			return this.destVersion;
-		}
-
-		public void setDestVersion(String destVersion) {
-			this.destVersion = destVersion;
+		public void setProductKey(String productKey) {
+			this.productKey = productKey;
 		}
 
 		public String getFirmwareId() {
@@ -259,12 +179,92 @@ public class ListOTATaskByJobResponse extends AcsResponse {
 			this.firmwareId = firmwareId;
 		}
 
+		public String getTaskStatus() {
+			return this.taskStatus;
+		}
+
+		public void setTaskStatus(String taskStatus) {
+			this.taskStatus = taskStatus;
+		}
+
+		public String getJobId() {
+			return this.jobId;
+		}
+
+		public void setJobId(String jobId) {
+			this.jobId = jobId;
+		}
+
+		public String getProductName() {
+			return this.productName;
+		}
+
+		public void setProductName(String productName) {
+			this.productName = productName;
+		}
+
+		public String getDeviceName() {
+			return this.deviceName;
+		}
+
+		public void setDeviceName(String deviceName) {
+			this.deviceName = deviceName;
+		}
+
+		public String getSrcVersion() {
+			return this.srcVersion;
+		}
+
+		public void setSrcVersion(String srcVersion) {
+			this.srcVersion = srcVersion;
+		}
+
+		public String getDestVersion() {
+			return this.destVersion;
+		}
+
+		public void setDestVersion(String destVersion) {
+			this.destVersion = destVersion;
+		}
+
+		public String getTaskDesc() {
+			return this.taskDesc;
+		}
+
+		public void setTaskDesc(String taskDesc) {
+			this.taskDesc = taskDesc;
+		}
+
+		public String getProgress() {
+			return this.progress;
+		}
+
+		public void setProgress(String progress) {
+			this.progress = progress;
+		}
+
 		public String getIotId() {
 			return this.iotId;
 		}
 
 		public void setIotId(String iotId) {
 			this.iotId = iotId;
+		}
+
+		public String getUtcCreate() {
+			return this.utcCreate;
+		}
+
+		public void setUtcCreate(String utcCreate) {
+			this.utcCreate = utcCreate;
+		}
+
+		public String getTimeout() {
+			return this.timeout;
+		}
+
+		public void setTimeout(String timeout) {
+			this.timeout = timeout;
 		}
 	}
 

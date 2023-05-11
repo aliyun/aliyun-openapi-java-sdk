@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QuerySpeechPushJobDeviceResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
+	private String code;
+
+	private String errorMessage;
+
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,6 +51,22 @@ public class QuerySpeechPushJobDeviceResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -77,21 +77,13 @@ public class QuerySpeechPushJobDeviceResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer pageSize;
-
 		private Integer total;
 
 		private Integer pageId;
 
+		private Integer pageSize;
+
 		private List<Items> list;
-
-		public Integer getPageSize() {
-			return this.pageSize;
-		}
-
-		public void setPageSize(Integer pageSize) {
-			this.pageSize = pageSize;
-		}
 
 		public Integer getTotal() {
 			return this.total;
@@ -109,6 +101,14 @@ public class QuerySpeechPushJobDeviceResponse extends AcsResponse {
 			this.pageId = pageId;
 		}
 
+		public Integer getPageSize() {
+			return this.pageSize;
+		}
+
+		public void setPageSize(Integer pageSize) {
+			this.pageSize = pageSize;
+		}
+
 		public List<Items> getList() {
 			return this.list;
 		}
@@ -119,15 +119,23 @@ public class QuerySpeechPushJobDeviceResponse extends AcsResponse {
 
 		public static class Items {
 
-			private String status;
+			private Long gmtModified;
 
-			private String errorMessage;
+			private String status;
 
 			private String deviceName;
 
-			private Long gmtModified;
-
 			private String errorCode;
+
+			private String errorMessage;
+
+			public Long getGmtModified() {
+				return this.gmtModified;
+			}
+
+			public void setGmtModified(Long gmtModified) {
+				this.gmtModified = gmtModified;
+			}
 
 			public String getStatus() {
 				return this.status;
@@ -135,14 +143,6 @@ public class QuerySpeechPushJobDeviceResponse extends AcsResponse {
 
 			public void setStatus(String status) {
 				this.status = status;
-			}
-
-			public String getErrorMessage() {
-				return this.errorMessage;
-			}
-
-			public void setErrorMessage(String errorMessage) {
-				this.errorMessage = errorMessage;
 			}
 
 			public String getDeviceName() {
@@ -153,20 +153,20 @@ public class QuerySpeechPushJobDeviceResponse extends AcsResponse {
 				this.deviceName = deviceName;
 			}
 
-			public Long getGmtModified() {
-				return this.gmtModified;
-			}
-
-			public void setGmtModified(Long gmtModified) {
-				this.gmtModified = gmtModified;
-			}
-
 			public String getErrorCode() {
 				return this.errorCode;
 			}
 
 			public void setErrorCode(String errorCode) {
 				this.errorCode = errorCode;
+			}
+
+			public String getErrorMessage() {
+				return this.errorMessage;
+			}
+
+			public void setErrorMessage(String errorMessage) {
+				this.errorMessage = errorMessage;
 			}
 		}
 	}

@@ -25,41 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryDeviceResponse extends AcsResponse {
 
-	private String nextToken;
-
-	private String errorMessage;
-
 	private String requestId;
 
 	private Boolean success;
 
 	private String code;
 
+	private String errorMessage;
+
+	private Integer total;
+
 	private Integer pageSize;
 
 	private Integer pageCount;
 
-	private Integer total;
-
 	private Integer page;
 
+	private String nextToken;
+
 	private List<DeviceInfo> data;
-
-	public String getNextToken() {
-		return this.nextToken;
-	}
-
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -85,6 +69,22 @@ public class QueryDeviceResponse extends AcsResponse {
 		this.code = code;
 	}
 
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
+	public Integer getTotal() {
+		return this.total;
+	}
+
+	public void setTotal(Integer total) {
+		this.total = total;
+	}
+
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -101,20 +101,20 @@ public class QueryDeviceResponse extends AcsResponse {
 		this.pageCount = pageCount;
 	}
 
-	public Integer getTotal() {
-		return this.total;
-	}
-
-	public void setTotal(Integer total) {
-		this.total = total;
-	}
-
 	public Integer getPage() {
 		return this.page;
 	}
 
 	public void setPage(Integer page) {
 		this.page = page;
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
 	}
 
 	public List<DeviceInfo> getData() {
@@ -127,37 +127,29 @@ public class QueryDeviceResponse extends AcsResponse {
 
 	public static class DeviceInfo {
 
-		private String deviceName;
-
 		private String deviceId;
-
-		private String deviceType;
-
-		private String utcCreate;
-
-		private String deviceStatus;
-
-		private String gmtModified;
-
-		private String productKey;
-
-		private String utcModified;
 
 		private String deviceSecret;
 
+		private String productKey;
+
+		private String deviceStatus;
+
+		private String deviceName;
+
+		private String deviceType;
+
 		private String gmtCreate;
 
-		private String nickname;
+		private String gmtModified;
+
+		private String utcCreate;
+
+		private String utcModified;
 
 		private String iotId;
 
-		public String getDeviceName() {
-			return this.deviceName;
-		}
-
-		public void setDeviceName(String deviceName) {
-			this.deviceName = deviceName;
-		}
+		private String nickname;
 
 		public String getDeviceId() {
 			return this.deviceId;
@@ -165,54 +157,6 @@ public class QueryDeviceResponse extends AcsResponse {
 
 		public void setDeviceId(String deviceId) {
 			this.deviceId = deviceId;
-		}
-
-		public String getDeviceType() {
-			return this.deviceType;
-		}
-
-		public void setDeviceType(String deviceType) {
-			this.deviceType = deviceType;
-		}
-
-		public String getUtcCreate() {
-			return this.utcCreate;
-		}
-
-		public void setUtcCreate(String utcCreate) {
-			this.utcCreate = utcCreate;
-		}
-
-		public String getDeviceStatus() {
-			return this.deviceStatus;
-		}
-
-		public void setDeviceStatus(String deviceStatus) {
-			this.deviceStatus = deviceStatus;
-		}
-
-		public String getGmtModified() {
-			return this.gmtModified;
-		}
-
-		public void setGmtModified(String gmtModified) {
-			this.gmtModified = gmtModified;
-		}
-
-		public String getProductKey() {
-			return this.productKey;
-		}
-
-		public void setProductKey(String productKey) {
-			this.productKey = productKey;
-		}
-
-		public String getUtcModified() {
-			return this.utcModified;
-		}
-
-		public void setUtcModified(String utcModified) {
-			this.utcModified = utcModified;
 		}
 
 		public String getDeviceSecret() {
@@ -223,6 +167,38 @@ public class QueryDeviceResponse extends AcsResponse {
 			this.deviceSecret = deviceSecret;
 		}
 
+		public String getProductKey() {
+			return this.productKey;
+		}
+
+		public void setProductKey(String productKey) {
+			this.productKey = productKey;
+		}
+
+		public String getDeviceStatus() {
+			return this.deviceStatus;
+		}
+
+		public void setDeviceStatus(String deviceStatus) {
+			this.deviceStatus = deviceStatus;
+		}
+
+		public String getDeviceName() {
+			return this.deviceName;
+		}
+
+		public void setDeviceName(String deviceName) {
+			this.deviceName = deviceName;
+		}
+
+		public String getDeviceType() {
+			return this.deviceType;
+		}
+
+		public void setDeviceType(String deviceType) {
+			this.deviceType = deviceType;
+		}
+
 		public String getGmtCreate() {
 			return this.gmtCreate;
 		}
@@ -231,12 +207,28 @@ public class QueryDeviceResponse extends AcsResponse {
 			this.gmtCreate = gmtCreate;
 		}
 
-		public String getNickname() {
-			return this.nickname;
+		public String getGmtModified() {
+			return this.gmtModified;
 		}
 
-		public void setNickname(String nickname) {
-			this.nickname = nickname;
+		public void setGmtModified(String gmtModified) {
+			this.gmtModified = gmtModified;
+		}
+
+		public String getUtcCreate() {
+			return this.utcCreate;
+		}
+
+		public void setUtcCreate(String utcCreate) {
+			this.utcCreate = utcCreate;
+		}
+
+		public String getUtcModified() {
+			return this.utcModified;
+		}
+
+		public void setUtcModified(String utcModified) {
+			this.utcModified = utcModified;
 		}
 
 		public String getIotId() {
@@ -245,6 +237,14 @@ public class QueryDeviceResponse extends AcsResponse {
 
 		public void setIotId(String iotId) {
 			this.iotId = iotId;
+		}
+
+		public String getNickname() {
+			return this.nickname;
+		}
+
+		public void setNickname(String nickname) {
+			this.nickname = nickname;
 		}
 	}
 

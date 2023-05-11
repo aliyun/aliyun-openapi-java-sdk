@@ -23,10 +23,10 @@ public class GetDeviceTunnelStatusResponseUnmarshaller {
 	public static GetDeviceTunnelStatusResponse unmarshall(GetDeviceTunnelStatusResponse getDeviceTunnelStatusResponse, UnmarshallerContext _ctx) {
 		
 		getDeviceTunnelStatusResponse.setRequestId(_ctx.stringValue("GetDeviceTunnelStatusResponse.RequestId"));
+		getDeviceTunnelStatusResponse.setSuccess(_ctx.booleanValue("GetDeviceTunnelStatusResponse.Success"));
+		getDeviceTunnelStatusResponse.setErrorMessage(_ctx.stringValue("GetDeviceTunnelStatusResponse.ErrorMessage"));
 		getDeviceTunnelStatusResponse.setCode(_ctx.stringValue("GetDeviceTunnelStatusResponse.Code"));
 		getDeviceTunnelStatusResponse.setData(_ctx.stringValue("GetDeviceTunnelStatusResponse.Data"));
-		getDeviceTunnelStatusResponse.setErrorMessage(_ctx.stringValue("GetDeviceTunnelStatusResponse.ErrorMessage"));
-		getDeviceTunnelStatusResponse.setSuccess(_ctx.booleanValue("GetDeviceTunnelStatusResponse.Success"));
 	 
 	 	return getDeviceTunnelStatusResponse;
 	}

@@ -24,19 +24,19 @@ public class QueryJobStatisticsResponseUnmarshaller {
 	public static QueryJobStatisticsResponse unmarshall(QueryJobStatisticsResponse queryJobStatisticsResponse, UnmarshallerContext _ctx) {
 		
 		queryJobStatisticsResponse.setRequestId(_ctx.stringValue("QueryJobStatisticsResponse.RequestId"));
+		queryJobStatisticsResponse.setSuccess(_ctx.booleanValue("QueryJobStatisticsResponse.Success"));
 		queryJobStatisticsResponse.setCode(_ctx.stringValue("QueryJobStatisticsResponse.Code"));
 		queryJobStatisticsResponse.setErrorMessage(_ctx.stringValue("QueryJobStatisticsResponse.ErrorMessage"));
-		queryJobStatisticsResponse.setSuccess(_ctx.booleanValue("QueryJobStatisticsResponse.Success"));
 
 		Data data = new Data();
+		data.setTotal(_ctx.integerValue("QueryJobStatisticsResponse.Data.Total"));
+		data.setQueued(_ctx.integerValue("QueryJobStatisticsResponse.Data.Queued"));
+		data.setSent(_ctx.integerValue("QueryJobStatisticsResponse.Data.Sent"));
+		data.setInProgress(_ctx.integerValue("QueryJobStatisticsResponse.Data.InProgress"));
+		data.setSucceeded(_ctx.integerValue("QueryJobStatisticsResponse.Data.Succeeded"));
+		data.setFailed(_ctx.integerValue("QueryJobStatisticsResponse.Data.Failed"));
 		data.setRejected(_ctx.integerValue("QueryJobStatisticsResponse.Data.Rejected"));
 		data.setTimeOut(_ctx.integerValue("QueryJobStatisticsResponse.Data.TimeOut"));
-		data.setFailed(_ctx.integerValue("QueryJobStatisticsResponse.Data.Failed"));
-		data.setQueued(_ctx.integerValue("QueryJobStatisticsResponse.Data.Queued"));
-		data.setSucceeded(_ctx.integerValue("QueryJobStatisticsResponse.Data.Succeeded"));
-		data.setSent(_ctx.integerValue("QueryJobStatisticsResponse.Data.Sent"));
-		data.setTotal(_ctx.integerValue("QueryJobStatisticsResponse.Data.Total"));
-		data.setInProgress(_ctx.integerValue("QueryJobStatisticsResponse.Data.InProgress"));
 		data.setCancelled(_ctx.integerValue("QueryJobStatisticsResponse.Data.Cancelled"));
 		queryJobStatisticsResponse.setData(data);
 	 
