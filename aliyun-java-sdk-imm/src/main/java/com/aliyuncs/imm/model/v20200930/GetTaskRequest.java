@@ -30,6 +30,8 @@ public class GetTaskRequest extends RpcAcsRequest<GetTaskResponse> {
 	private String projectName;
 
 	private String taskType;
+
+	private Boolean requestDefinition;
 	public GetTaskRequest() {
 		super("imm", "2020-09-30", "GetTask", "imm");
 		setMethod(MethodType.POST);
@@ -69,6 +71,17 @@ public class GetTaskRequest extends RpcAcsRequest<GetTaskResponse> {
 		this.taskType = taskType;
 		if(taskType != null){
 			putQueryParameter("TaskType", taskType);
+		}
+	}
+
+	public Boolean getRequestDefinition() {
+		return this.requestDefinition;
+	}
+
+	public void setRequestDefinition(Boolean requestDefinition) {
+		this.requestDefinition = requestDefinition;
+		if(requestDefinition != null){
+			putQueryParameter("RequestDefinition", requestDefinition.toString());
 		}
 	}
 

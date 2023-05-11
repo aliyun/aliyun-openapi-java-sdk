@@ -1,3 +1,8 @@
+2023-05-11 Version: 2.1.14
+- Add RequestDefinition.
+- Hide  endpoint.
+- Fix width and height.
+
 2023-05-09 Version: 2.1.13
 - Remove PresetReference struct.
 

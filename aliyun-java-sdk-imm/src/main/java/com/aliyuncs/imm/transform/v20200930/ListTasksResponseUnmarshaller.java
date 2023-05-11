@@ -44,6 +44,8 @@ public class ListTasksResponseUnmarshaller {
 			tasksItem.setTaskType(_ctx.stringValue("ListTasksResponse.Tasks["+ i +"].TaskType"));
 			tasksItem.setTaskId(_ctx.stringValue("ListTasksResponse.Tasks["+ i +"].TaskId"));
 			tasksItem.setTags(_ctx.mapValue("ListTasksResponse.Tasks["+ i +"].Tags"));
+			tasksItem.setTaskRequestDefinition(_ctx.stringValue("ListTasksResponse.Tasks["+ i +"].TaskRequestDefinition"));
+			tasksItem.setProgress(_ctx.integerValue("ListTasksResponse.Tasks["+ i +"].Progress"));
 
 			tasks.add(tasksItem);
 		}

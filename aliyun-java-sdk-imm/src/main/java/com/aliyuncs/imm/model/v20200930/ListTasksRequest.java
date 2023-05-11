@@ -45,6 +45,8 @@ public class ListTasksRequest extends RpcAcsRequest<ListTasksResponse> {
 
 	private String sort;
 
+	private Boolean requestDefinition;
+
 	private Long maxResults;
 
 	private String tagSelector;
@@ -133,6 +135,17 @@ public class ListTasksRequest extends RpcAcsRequest<ListTasksResponse> {
 		this.sort = sort;
 		if(sort != null){
 			putQueryParameter("Sort", sort);
+		}
+	}
+
+	public Boolean getRequestDefinition() {
+		return this.requestDefinition;
+	}
+
+	public void setRequestDefinition(Boolean requestDefinition) {
+		this.requestDefinition = requestDefinition;
+		if(requestDefinition != null){
+			putQueryParameter("RequestDefinition", requestDefinition.toString());
 		}
 	}
 

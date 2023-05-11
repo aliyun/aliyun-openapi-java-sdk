@@ -49,6 +49,10 @@ public class GetTaskResponse extends AcsResponse {
 
 	private Map<Object,Object> tags;
 
+	private String taskRequestDefinition;
+
+	private Integer progress;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -143,6 +147,22 @@ public class GetTaskResponse extends AcsResponse {
 
 	public void setTags(Map<Object,Object> tags) {
 		this.tags = tags;
+	}
+
+	public String getTaskRequestDefinition() {
+		return this.taskRequestDefinition;
+	}
+
+	public void setTaskRequestDefinition(String taskRequestDefinition) {
+		this.taskRequestDefinition = taskRequestDefinition;
+	}
+
+	public Integer getProgress() {
+		return this.progress;
+	}
+
+	public void setProgress(Integer progress) {
+		this.progress = progress;
 	}
 
 	@Override

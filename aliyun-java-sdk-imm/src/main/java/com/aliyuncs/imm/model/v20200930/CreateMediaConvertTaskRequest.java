@@ -396,7 +396,7 @@ public class CreateMediaConvertTaskRequest extends RpcAcsRequest<CreateMediaConv
 				private String format;
 
 				@SerializedName("Width")
-				private Integer width;
+				private Double width;
 
 				@SerializedName("Interval")
 				private Double interval;
@@ -411,7 +411,7 @@ public class CreateMediaConvertTaskRequest extends RpcAcsRequest<CreateMediaConv
 				private String uRI;
 
 				@SerializedName("Height")
-				private Integer height;
+				private Double height;
 
 				public Integer getNumber() {
 					return this.number;
@@ -429,11 +429,11 @@ public class CreateMediaConvertTaskRequest extends RpcAcsRequest<CreateMediaConv
 					this.format = format;
 				}
 
-				public Integer getWidth() {
+				public Double getWidth() {
 					return this.width;
 				}
 
-				public void setWidth(Integer width) {
+				public void setWidth(Double width) {
 					this.width = width;
 				}
 
@@ -469,11 +469,11 @@ public class CreateMediaConvertTaskRequest extends RpcAcsRequest<CreateMediaConv
 					this.uRI = uRI;
 				}
 
-				public Integer getHeight() {
+				public Double getHeight() {
 					return this.height;
 				}
 
-				public void setHeight(Integer height) {
+				public void setHeight(Double height) {
 					this.height = height;
 				}
 			}
@@ -490,7 +490,7 @@ public class CreateMediaConvertTaskRequest extends RpcAcsRequest<CreateMediaConv
 				private String format;
 
 				@SerializedName("Width")
-				private Integer width;
+				private Double width;
 
 				@SerializedName("Interval")
 				private Double interval;
@@ -505,7 +505,7 @@ public class CreateMediaConvertTaskRequest extends RpcAcsRequest<CreateMediaConv
 				private String uRI;
 
 				@SerializedName("Height")
-				private Integer height;
+				private Double height;
 
 				public Integer getNumber() {
 					return this.number;
@@ -531,11 +531,11 @@ public class CreateMediaConvertTaskRequest extends RpcAcsRequest<CreateMediaConv
 					this.format = format;
 				}
 
-				public Integer getWidth() {
+				public Double getWidth() {
 					return this.width;
 				}
 
-				public void setWidth(Integer width) {
+				public void setWidth(Double width) {
 					this.width = width;
 				}
 
@@ -571,11 +571,11 @@ public class CreateMediaConvertTaskRequest extends RpcAcsRequest<CreateMediaConv
 					this.uRI = uRI;
 				}
 
-				public Integer getHeight() {
+				public Double getHeight() {
 					return this.height;
 				}
 
-				public void setHeight(Integer height) {
+				public void setHeight(Double height) {
 					this.height = height;
 				}
 			}
