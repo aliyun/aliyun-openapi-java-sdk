@@ -41,6 +41,8 @@ public class QueryLiveStreamingRequest extends RpcAcsRequest<QueryLiveStreamingR
 
 	private Boolean shouldEncrypt;
 
+	private Boolean enableStun;
+
 	private Integer streamType;
 
 	private String productKey;
@@ -142,6 +144,17 @@ public class QueryLiveStreamingRequest extends RpcAcsRequest<QueryLiveStreamingR
 		this.shouldEncrypt = shouldEncrypt;
 		if(shouldEncrypt != null){
 			putQueryParameter("ShouldEncrypt", shouldEncrypt.toString());
+		}
+	}
+
+	public Boolean getEnableStun() {
+		return this.enableStun;
+	}
+
+	public void setEnableStun(Boolean enableStun) {
+		this.enableStun = enableStun;
+		if(enableStun != null){
+			putQueryParameter("EnableStun", enableStun.toString());
 		}
 	}
 

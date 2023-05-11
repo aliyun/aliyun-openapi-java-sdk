@@ -37,6 +37,8 @@ public class QueryDeviceVodUrlRequest extends RpcAcsRequest<QueryDeviceVodUrlRes
 
 	private Boolean shouldEncrypt;
 
+	private Boolean enableStun;
+
 	private String productKey;
 
 	private String fileName;
@@ -118,6 +120,17 @@ public class QueryDeviceVodUrlRequest extends RpcAcsRequest<QueryDeviceVodUrlRes
 		this.shouldEncrypt = shouldEncrypt;
 		if(shouldEncrypt != null){
 			putQueryParameter("ShouldEncrypt", shouldEncrypt.toString());
+		}
+	}
+
+	public Boolean getEnableStun() {
+		return this.enableStun;
+	}
+
+	public void setEnableStun(Boolean enableStun) {
+		this.enableStun = enableStun;
+		if(enableStun != null){
+			putQueryParameter("EnableStun", enableStun.toString());
 		}
 	}
 

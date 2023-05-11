@@ -30,6 +30,8 @@ public class QueryLiveStreamingResponseUnmarshaller {
 
 		Data data = new Data();
 		data.setPath(_ctx.stringValue("QueryLiveStreamingResponse.Data.Path"));
+		data.setRelayDecryptKey(_ctx.stringValue("QueryLiveStreamingResponse.Data.RelayDecryptKey"));
+		data.setStunInfo(_ctx.stringValue("QueryLiveStreamingResponse.Data.StunInfo"));
 		data.setDecryptKey(_ctx.stringValue("QueryLiveStreamingResponse.Data.DecryptKey"));
 		queryLiveStreamingResponse.setData(data);
 	 

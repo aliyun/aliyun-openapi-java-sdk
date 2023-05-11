@@ -26,9 +26,9 @@ public class QueryLiveStreamingResponse extends AcsResponse {
 
 	private String code;
 
-	private String requestId;
-
 	private String errorMessage;
+
+	private String requestId;
 
 	private Boolean success;
 
@@ -42,20 +42,20 @@ public class QueryLiveStreamingResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getErrorMessage() {
 		return this.errorMessage;
 	}
 
 	public void setErrorMessage(String errorMessage) {
 		this.errorMessage = errorMessage;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Boolean getSuccess() {
@@ -78,6 +78,10 @@ public class QueryLiveStreamingResponse extends AcsResponse {
 
 		private String path;
 
+		private String relayDecryptKey;
+
+		private String stunInfo;
+
 		private String decryptKey;
 
 		public String getPath() {
@@ -86,6 +90,22 @@ public class QueryLiveStreamingResponse extends AcsResponse {
 
 		public void setPath(String path) {
 			this.path = path;
+		}
+
+		public String getRelayDecryptKey() {
+			return this.relayDecryptKey;
+		}
+
+		public void setRelayDecryptKey(String relayDecryptKey) {
+			this.relayDecryptKey = relayDecryptKey;
+		}
+
+		public String getStunInfo() {
+			return this.stunInfo;
+		}
+
+		public void setStunInfo(String stunInfo) {
+			this.stunInfo = stunInfo;
 		}
 
 		public String getDecryptKey() {

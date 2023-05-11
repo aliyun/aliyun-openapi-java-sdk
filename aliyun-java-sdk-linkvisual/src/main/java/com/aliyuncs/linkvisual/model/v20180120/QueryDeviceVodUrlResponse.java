@@ -26,8 +26,6 @@ public class QueryDeviceVodUrlResponse extends AcsResponse {
 
 	private String code;
 
-	private String decryptKey;
-
 	private String errorMessage;
 
 	private String requestId;
@@ -42,14 +40,6 @@ public class QueryDeviceVodUrlResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
-	}
-
-	public String getDecryptKey() {
-		return this.decryptKey;
-	}
-
-	public void setDecryptKey(String decryptKey) {
-		this.decryptKey = decryptKey;
 	}
 
 	public String getErrorMessage() {
@@ -86,17 +76,11 @@ public class QueryDeviceVodUrlResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String vodUrl;
-
 		private String decryptKey;
 
-		public String getVodUrl() {
-			return this.vodUrl;
-		}
+		private String stunInfo;
 
-		public void setVodUrl(String vodUrl) {
-			this.vodUrl = vodUrl;
-		}
+		private String vodUrl;
 
 		public String getDecryptKey() {
 			return this.decryptKey;
@@ -104,6 +88,22 @@ public class QueryDeviceVodUrlResponse extends AcsResponse {
 
 		public void setDecryptKey(String decryptKey) {
 			this.decryptKey = decryptKey;
+		}
+
+		public String getStunInfo() {
+			return this.stunInfo;
+		}
+
+		public void setStunInfo(String stunInfo) {
+			this.stunInfo = stunInfo;
+		}
+
+		public String getVodUrl() {
+			return this.vodUrl;
+		}
+
+		public void setVodUrl(String vodUrl) {
+			this.vodUrl = vodUrl;
 		}
 	}
 

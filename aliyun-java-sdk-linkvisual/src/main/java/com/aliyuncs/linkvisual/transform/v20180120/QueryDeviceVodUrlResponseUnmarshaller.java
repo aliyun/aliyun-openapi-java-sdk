@@ -25,13 +25,13 @@ public class QueryDeviceVodUrlResponseUnmarshaller {
 		
 		queryDeviceVodUrlResponse.setRequestId(_ctx.stringValue("QueryDeviceVodUrlResponse.RequestId"));
 		queryDeviceVodUrlResponse.setCode(_ctx.stringValue("QueryDeviceVodUrlResponse.Code"));
-		queryDeviceVodUrlResponse.setDecryptKey(_ctx.stringValue("QueryDeviceVodUrlResponse.DecryptKey"));
 		queryDeviceVodUrlResponse.setErrorMessage(_ctx.stringValue("QueryDeviceVodUrlResponse.ErrorMessage"));
 		queryDeviceVodUrlResponse.setSuccess(_ctx.booleanValue("QueryDeviceVodUrlResponse.Success"));
 
 		Data data = new Data();
-		data.setVodUrl(_ctx.stringValue("QueryDeviceVodUrlResponse.Data.VodUrl"));
 		data.setDecryptKey(_ctx.stringValue("QueryDeviceVodUrlResponse.Data.DecryptKey"));
+		data.setStunInfo(_ctx.stringValue("QueryDeviceVodUrlResponse.Data.StunInfo"));
+		data.setVodUrl(_ctx.stringValue("QueryDeviceVodUrlResponse.Data.VodUrl"));
 		queryDeviceVodUrlResponse.setData(data);
 	 
 	 	return queryDeviceVodUrlResponse;
