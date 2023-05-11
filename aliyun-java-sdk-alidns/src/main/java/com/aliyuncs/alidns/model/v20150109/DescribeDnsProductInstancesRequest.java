@@ -25,6 +25,8 @@ import com.aliyuncs.alidns.Endpoint;
 public class DescribeDnsProductInstancesRequest extends RpcAcsRequest<DescribeDnsProductInstancesResponse> {
 	   
 
+	private String orderBy;
+
 	private Long pageNumber;
 
 	private String domainType;
@@ -36,6 +38,8 @@ public class DescribeDnsProductInstancesRequest extends RpcAcsRequest<DescribeDn
 	private String lang;
 
 	private String versionCode;
+
+	private String direction;
 	public DescribeDnsProductInstancesRequest() {
 		super("Alidns", "2015-01-09", "DescribeDnsProductInstances", "alidns");
 		setMethod(MethodType.POST);
@@ -43,6 +47,17 @@ public class DescribeDnsProductInstancesRequest extends RpcAcsRequest<DescribeDn
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getOrderBy() {
+		return this.orderBy;
+	}
+
+	public void setOrderBy(String orderBy) {
+		this.orderBy = orderBy;
+		if(orderBy != null){
+			putQueryParameter("OrderBy", orderBy);
+		}
 	}
 
 	public Long getPageNumber() {
@@ -108,6 +123,17 @@ public class DescribeDnsProductInstancesRequest extends RpcAcsRequest<DescribeDn
 		this.versionCode = versionCode;
 		if(versionCode != null){
 			putQueryParameter("VersionCode", versionCode);
+		}
+	}
+
+	public String getDirection() {
+		return this.direction;
+	}
+
+	public void setDirection(String direction) {
+		this.direction = direction;
+		if(direction != null){
+			putQueryParameter("Direction", direction);
 		}
 	}
 

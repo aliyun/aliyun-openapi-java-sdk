@@ -1,3 +1,6 @@
+2023-05-11 Version: 3.0.7
+- Supported sorting for DescribeDnsProduceInstances.
+
 2023-04-04 Version: 3.0.3
 - New Resolve Statistic Summary API.
 
