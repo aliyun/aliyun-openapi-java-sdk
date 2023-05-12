@@ -99,6 +99,8 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 	private String serverlessType;
 
+	private String strictConsistency;
+
 	private String proxyCpuCores;
 
 	private String proxyStandardCpuCores;
@@ -411,6 +413,14 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 	public void setServerlessType(String serverlessType) {
 		this.serverlessType = serverlessType;
+	}
+
+	public String getStrictConsistency() {
+		return this.strictConsistency;
+	}
+
+	public void setStrictConsistency(String strictConsistency) {
+		this.strictConsistency = strictConsistency;
 	}
 
 	public String getProxyCpuCores() {

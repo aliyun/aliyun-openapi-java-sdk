@@ -93,6 +93,8 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 		private String serverlessType;
 
+		private String strictConsistency;
+
 		private String dBNodeClass;
 
 		private String dBType;
@@ -191,6 +193,14 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 		public void setServerlessType(String serverlessType) {
 			this.serverlessType = serverlessType;
+		}
+
+		public String getStrictConsistency() {
+			return this.strictConsistency;
+		}
+
+		public void setStrictConsistency(String strictConsistency) {
+			this.strictConsistency = strictConsistency;
 		}
 
 		public String getDBNodeClass() {
@@ -372,6 +382,8 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 			private String regionId;
 
+			private String serverless;
+
 			public String getDBNodeClass() {
 				return this.dBNodeClass;
 			}
@@ -410,6 +422,14 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 			public void setRegionId(String regionId) {
 				this.regionId = regionId;
+			}
+
+			public String getServerless() {
+				return this.serverless;
+			}
+
+			public void setServerless(String serverless) {
+				this.serverless = serverless;
 			}
 		}
 	}

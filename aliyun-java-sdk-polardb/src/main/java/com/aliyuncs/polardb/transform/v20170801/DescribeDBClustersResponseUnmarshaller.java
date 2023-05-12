@@ -44,6 +44,7 @@ public class DescribeDBClustersResponseUnmarshaller {
 			dBCluster.setPayType(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].PayType"));
 			dBCluster.setStoragePayType(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].StoragePayType"));
 			dBCluster.setServerlessType(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].ServerlessType"));
+			dBCluster.setStrictConsistency(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].StrictConsistency"));
 			dBCluster.setDBNodeClass(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].DBNodeClass"));
 			dBCluster.setDBType(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].DBType"));
 			dBCluster.setLockMode(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].LockMode"));
@@ -79,6 +80,7 @@ public class DescribeDBClustersResponseUnmarshaller {
 				dBNode.setDBNodeRole(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].DBNodes["+ j +"].DBNodeRole"));
 				dBNode.setDBNodeId(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].DBNodes["+ j +"].DBNodeId"));
 				dBNode.setRegionId(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].DBNodes["+ j +"].RegionId"));
+				dBNode.setServerless(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].DBNodes["+ j +"].Serverless"));
 
 				dBNodes.add(dBNode);
 			}

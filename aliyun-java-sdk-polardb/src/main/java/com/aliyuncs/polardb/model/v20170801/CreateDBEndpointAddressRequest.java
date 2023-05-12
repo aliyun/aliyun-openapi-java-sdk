@@ -15,6 +15,7 @@
 package com.aliyuncs.polardb.model.v20170801;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.polardb.Endpoint;
 
@@ -29,6 +30,10 @@ public class CreateDBEndpointAddressRequest extends RpcAcsRequest<CreateDBEndpoi
 
 	private String connectionStringPrefix;
 
+	private List<ZoneInfo> zoneInfos;
+
+	private String securityGroupId;
+
 	private String dBEndpointId;
 
 	private String resourceOwnerAccount;
@@ -40,6 +45,8 @@ public class CreateDBEndpointAddressRequest extends RpcAcsRequest<CreateDBEndpoi
 	private Long ownerId;
 
 	private String netType;
+
+	private String vPCId;
 	public CreateDBEndpointAddressRequest() {
 		super("polardb", "2017-08-01", "CreateDBEndpointAddress", "polardb");
 		setMethod(MethodType.POST);
@@ -68,6 +75,31 @@ public class CreateDBEndpointAddressRequest extends RpcAcsRequest<CreateDBEndpoi
 		this.connectionStringPrefix = connectionStringPrefix;
 		if(connectionStringPrefix != null){
 			putQueryParameter("ConnectionStringPrefix", connectionStringPrefix);
+		}
+	}
+
+	public List<ZoneInfo> getZoneInfos() {
+		return this.zoneInfos;
+	}
+
+	public void setZoneInfos(List<ZoneInfo> zoneInfos) {
+		this.zoneInfos = zoneInfos;	
+		if (zoneInfos != null) {
+			for (int depth1 = 0; depth1 < zoneInfos.size(); depth1++) {
+				putQueryParameter("ZoneInfo." + (depth1 + 1) + ".VSwitchId" , zoneInfos.get(depth1).getVSwitchId());
+				putQueryParameter("ZoneInfo." + (depth1 + 1) + ".ZoneId" , zoneInfos.get(depth1).getZoneId());
+			}
+		}	
+	}
+
+	public String getSecurityGroupId() {
+		return this.securityGroupId;
+	}
+
+	public void setSecurityGroupId(String securityGroupId) {
+		this.securityGroupId = securityGroupId;
+		if(securityGroupId != null){
+			putQueryParameter("SecurityGroupId", securityGroupId);
 		}
 	}
 
@@ -134,6 +166,40 @@ public class CreateDBEndpointAddressRequest extends RpcAcsRequest<CreateDBEndpoi
 		this.netType = netType;
 		if(netType != null){
 			putQueryParameter("NetType", netType);
+		}
+	}
+
+	public String getVPCId() {
+		return this.vPCId;
+	}
+
+	public void setVPCId(String vPCId) {
+		this.vPCId = vPCId;
+		if(vPCId != null){
+			putQueryParameter("VPCId", vPCId);
+		}
+	}
+
+	public static class ZoneInfo {
+
+		private String vSwitchId;
+
+		private String zoneId;
+
+		public String getVSwitchId() {
+			return this.vSwitchId;
+		}
+
+		public void setVSwitchId(String vSwitchId) {
+			this.vSwitchId = vSwitchId;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
 		}
 	}
 

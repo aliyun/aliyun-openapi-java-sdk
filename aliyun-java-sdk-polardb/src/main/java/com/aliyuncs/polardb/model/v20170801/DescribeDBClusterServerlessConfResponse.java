@@ -44,6 +44,10 @@ public class DescribeDBClusterServerlessConfResponse extends AcsResponse {
 
 	private String scaleApRoNumMax;
 
+	private String switchs;
+
+	private String dBMaxscaleId;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -122,6 +126,22 @@ public class DescribeDBClusterServerlessConfResponse extends AcsResponse {
 
 	public void setScaleApRoNumMax(String scaleApRoNumMax) {
 		this.scaleApRoNumMax = scaleApRoNumMax;
+	}
+
+	public String getSwitchs() {
+		return this.switchs;
+	}
+
+	public void setSwitchs(String switchs) {
+		this.switchs = switchs;
+	}
+
+	public String getDBMaxscaleId() {
+		return this.dBMaxscaleId;
+	}
+
+	public void setDBMaxscaleId(String dBMaxscaleId) {
+		this.dBMaxscaleId = dBMaxscaleId;
 	}
 
 	@Override

@@ -78,6 +78,8 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 
 	private String scaleRoNumMax;
 
+	private String standbyAZ;
+
 	private String clientToken;
 
 	private String defaultTimeZone;
@@ -103,6 +105,8 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 	private String dBType;
 
 	private String dBVersion;
+
+	private String strictConsistency;
 
 	private String cloneDataPoint;
 
@@ -409,6 +413,17 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		}
 	}
 
+	public String getStandbyAZ() {
+		return this.standbyAZ;
+	}
+
+	public void setStandbyAZ(String standbyAZ) {
+		this.standbyAZ = standbyAZ;
+		if(standbyAZ != null){
+			putQueryParameter("StandbyAZ", standbyAZ);
+		}
+	}
+
 	public String getClientToken() {
 		return this.clientToken;
 	}
@@ -549,6 +564,17 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		this.dBVersion = dBVersion;
 		if(dBVersion != null){
 			putQueryParameter("DBVersion", dBVersion);
+		}
+	}
+
+	public String getStrictConsistency() {
+		return this.strictConsistency;
+	}
+
+	public void setStrictConsistency(String strictConsistency) {
+		this.strictConsistency = strictConsistency;
+		if(strictConsistency != null){
+			putQueryParameter("StrictConsistency", strictConsistency);
 		}
 	}
 

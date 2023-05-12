@@ -22,18 +22,14 @@ import com.aliyuncs.polardb.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyDBClusterServerlessConfRequest extends RpcAcsRequest<ModifyDBClusterServerlessConfResponse> {
+public class ResetGlobalDatabaseNetworkRequest extends RpcAcsRequest<ResetGlobalDatabaseNetworkResponse> {
 	   
-
-	private String scaleRoNumMax;
 
 	private Long resourceOwnerId;
 
-	private String scaleMax;
+	private String securityToken;
 
-	private String secondsUntilAutoPause;
-
-	private String scaleMin;
+	private String gDNId;
 
 	private String resourceOwnerAccount;
 
@@ -42,28 +38,13 @@ public class ModifyDBClusterServerlessConfRequest extends RpcAcsRequest<ModifyDB
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String scaleRoNumMin;
-
-	private String allowShutDown;
-	public ModifyDBClusterServerlessConfRequest() {
-		super("polardb", "2017-08-01", "ModifyDBClusterServerlessConf", "polardb");
+	public ResetGlobalDatabaseNetworkRequest() {
+		super("polardb", "2017-08-01", "ResetGlobalDatabaseNetwork", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getScaleRoNumMax() {
-		return this.scaleRoNumMax;
-	}
-
-	public void setScaleRoNumMax(String scaleRoNumMax) {
-		this.scaleRoNumMax = scaleRoNumMax;
-		if(scaleRoNumMax != null){
-			putQueryParameter("ScaleRoNumMax", scaleRoNumMax);
-		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -77,36 +58,25 @@ public class ModifyDBClusterServerlessConfRequest extends RpcAcsRequest<ModifyDB
 		}
 	}
 
-	public String getScaleMax() {
-		return this.scaleMax;
+	public String getSecurityToken() {
+		return this.securityToken;
 	}
 
-	public void setScaleMax(String scaleMax) {
-		this.scaleMax = scaleMax;
-		if(scaleMax != null){
-			putQueryParameter("ScaleMax", scaleMax);
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
-	public String getSecondsUntilAutoPause() {
-		return this.secondsUntilAutoPause;
+	public String getGDNId() {
+		return this.gDNId;
 	}
 
-	public void setSecondsUntilAutoPause(String secondsUntilAutoPause) {
-		this.secondsUntilAutoPause = secondsUntilAutoPause;
-		if(secondsUntilAutoPause != null){
-			putQueryParameter("SecondsUntilAutoPause", secondsUntilAutoPause);
-		}
-	}
-
-	public String getScaleMin() {
-		return this.scaleMin;
-	}
-
-	public void setScaleMin(String scaleMin) {
-		this.scaleMin = scaleMin;
-		if(scaleMin != null){
-			putQueryParameter("ScaleMin", scaleMin);
+	public void setGDNId(String gDNId) {
+		this.gDNId = gDNId;
+		if(gDNId != null){
+			putQueryParameter("GDNId", gDNId);
 		}
 	}
 
@@ -154,31 +124,9 @@ public class ModifyDBClusterServerlessConfRequest extends RpcAcsRequest<ModifyDB
 		}
 	}
 
-	public String getScaleRoNumMin() {
-		return this.scaleRoNumMin;
-	}
-
-	public void setScaleRoNumMin(String scaleRoNumMin) {
-		this.scaleRoNumMin = scaleRoNumMin;
-		if(scaleRoNumMin != null){
-			putQueryParameter("ScaleRoNumMin", scaleRoNumMin);
-		}
-	}
-
-	public String getAllowShutDown() {
-		return this.allowShutDown;
-	}
-
-	public void setAllowShutDown(String allowShutDown) {
-		this.allowShutDown = allowShutDown;
-		if(allowShutDown != null){
-			putQueryParameter("AllowShutDown", allowShutDown);
-		}
-	}
-
 	@Override
-	public Class<ModifyDBClusterServerlessConfResponse> getResponseClass() {
-		return ModifyDBClusterServerlessConfResponse.class;
+	public Class<ResetGlobalDatabaseNetworkResponse> getResponseClass() {
+		return ResetGlobalDatabaseNetworkResponse.class;
 	}
 
 }
