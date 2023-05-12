@@ -107,6 +107,10 @@ public class PageIncrementMembersResponse extends AcsResponse {
 
 		private String email;
 
+		private Integer status;
+
+		private String entryChannel;
+
 		private Integer levelNum;
 
 		private String levelPoints;
@@ -193,6 +197,22 @@ public class PageIncrementMembersResponse extends AcsResponse {
 
 		public void setEmail(String email) {
 			this.email = email;
+		}
+
+		public Integer getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(Integer status) {
+			this.status = status;
+		}
+
+		public String getEntryChannel() {
+			return this.entryChannel;
+		}
+
+		public void setEntryChannel(String entryChannel) {
+			this.entryChannel = entryChannel;
 		}
 
 		public Integer getLevelNum() {

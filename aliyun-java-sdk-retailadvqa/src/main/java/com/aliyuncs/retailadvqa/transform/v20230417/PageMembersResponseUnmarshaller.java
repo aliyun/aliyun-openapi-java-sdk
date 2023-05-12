@@ -45,6 +45,8 @@ public class PageMembersResponseUnmarshaller {
 			dataItem.setCity(_ctx.stringValue("PageMembersResponse.Data["+ i +"].City"));
 			dataItem.setSex(_ctx.stringValue("PageMembersResponse.Data["+ i +"].Sex"));
 			dataItem.setEmail(_ctx.stringValue("PageMembersResponse.Data["+ i +"].Email"));
+			dataItem.setStatus(_ctx.integerValue("PageMembersResponse.Data["+ i +"].Status"));
+			dataItem.setEntryChannel(_ctx.stringValue("PageMembersResponse.Data["+ i +"].EntryChannel"));
 			dataItem.setLevelNum(_ctx.integerValue("PageMembersResponse.Data["+ i +"].LevelNum"));
 			dataItem.setLevelPoints(_ctx.stringValue("PageMembersResponse.Data["+ i +"].LevelPoints"));
 			dataItem.setConsumePoints(_ctx.stringValue("PageMembersResponse.Data["+ i +"].ConsumePoints"));
