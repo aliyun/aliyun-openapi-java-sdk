@@ -23,43 +23,17 @@ import com.aliyuncs.ecd.Endpoint;
  * @author auto create
  * @version 
  */
-public class RebuildDesktopsRequest extends RpcAcsRequest<RebuildDesktopsResponse> {
+public class HibernateDesktopsRequest extends RpcAcsRequest<HibernateDesktopsResponse> {
 	   
 
-	private String imageId;
-
-	private String operateType;
-
 	private List<String> desktopIds;
-	public RebuildDesktopsRequest() {
-		super("ecd", "2020-09-30", "RebuildDesktops");
+	public HibernateDesktopsRequest() {
+		super("ecd", "2020-09-30", "HibernateDesktops");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getImageId() {
-		return this.imageId;
-	}
-
-	public void setImageId(String imageId) {
-		this.imageId = imageId;
-		if(imageId != null){
-			putQueryParameter("ImageId", imageId);
-		}
-	}
-
-	public String getOperateType() {
-		return this.operateType;
-	}
-
-	public void setOperateType(String operateType) {
-		this.operateType = operateType;
-		if(operateType != null){
-			putQueryParameter("OperateType", operateType);
-		}
 	}
 
 	public List<String> getDesktopIds() {
@@ -76,8 +50,8 @@ public class RebuildDesktopsRequest extends RpcAcsRequest<RebuildDesktopsRespons
 	}
 
 	@Override
-	public Class<RebuildDesktopsResponse> getResponseClass() {
-		return RebuildDesktopsResponse.class;
+	public Class<HibernateDesktopsResponse> getResponseClass() {
+		return HibernateDesktopsResponse.class;
 	}
 
 }

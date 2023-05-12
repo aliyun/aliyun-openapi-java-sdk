@@ -67,6 +67,9 @@ public class DescribeOfficeSitesResponseUnmarshaller {
 			officeSite.setSsoType(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].SsoType"));
 			officeSite.setProtocolType(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].ProtocolType"));
 			officeSite.setAdHostname(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].AdHostname"));
+			officeSite.setRdsLicenseStatus(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].RdsLicenseStatus"));
+			officeSite.setRdsLicenseAddress(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].RdsLicenseAddress"));
+			officeSite.setRdsLicenseDomainName(_ctx.stringValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].RdsLicenseDomainName"));
 
 			List<String> vSwitchIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeOfficeSitesResponse.OfficeSites["+ i +"].VSwitchIds.Length"); j++) {

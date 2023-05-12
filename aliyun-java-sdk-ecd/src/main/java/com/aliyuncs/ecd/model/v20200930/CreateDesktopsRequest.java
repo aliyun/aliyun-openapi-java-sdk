@@ -36,6 +36,8 @@ public class CreateDesktopsRequest extends RpcAcsRequest<CreateDesktopsResponse>
 
 	private String hostname;
 
+	private List<DesktopTimers> desktopTimerss;
+
 	private Boolean desktopNameSuffix;
 
 	private String directoryId;
@@ -135,6 +137,25 @@ public class CreateDesktopsRequest extends RpcAcsRequest<CreateDesktopsResponse>
 		if(hostname != null){
 			putQueryParameter("Hostname", hostname);
 		}
+	}
+
+	public List<DesktopTimers> getDesktopTimerss() {
+		return this.desktopTimerss;
+	}
+
+	public void setDesktopTimerss(List<DesktopTimers> desktopTimerss) {
+		this.desktopTimerss = desktopTimerss;	
+		if (desktopTimerss != null) {
+			for (int depth1 = 0; depth1 < desktopTimerss.size(); depth1++) {
+				putQueryParameter("DesktopTimers." + (depth1 + 1) + ".CronExpression" , desktopTimerss.get(depth1).getCronExpression());
+				putQueryParameter("DesktopTimers." + (depth1 + 1) + ".TimerType" , desktopTimerss.get(depth1).getTimerType());
+				putQueryParameter("DesktopTimers." + (depth1 + 1) + ".AllowClientSetting" , desktopTimerss.get(depth1).getAllowClientSetting());
+				putQueryParameter("DesktopTimers." + (depth1 + 1) + ".ResetType" , desktopTimerss.get(depth1).getResetType());
+				putQueryParameter("DesktopTimers." + (depth1 + 1) + ".Enforce" , desktopTimerss.get(depth1).getEnforce());
+				putQueryParameter("DesktopTimers." + (depth1 + 1) + ".Interval" , desktopTimerss.get(depth1).getInterval());
+				putQueryParameter("DesktopTimers." + (depth1 + 1) + ".OperationType" , desktopTimerss.get(depth1).getOperationType());
+			}
+		}	
 	}
 
 	public Boolean getDesktopNameSuffix() {
@@ -364,6 +385,79 @@ public class CreateDesktopsRequest extends RpcAcsRequest<CreateDesktopsResponse>
 		this.userName = userName;
 		if(userName != null){
 			putQueryParameter("UserName", userName);
+		}
+	}
+
+	public static class DesktopTimers {
+
+		private String cronExpression;
+
+		private String timerType;
+
+		private Boolean allowClientSetting;
+
+		private String resetType;
+
+		private Boolean enforce;
+
+		private Integer interval;
+
+		private String operationType;
+
+		public String getCronExpression() {
+			return this.cronExpression;
+		}
+
+		public void setCronExpression(String cronExpression) {
+			this.cronExpression = cronExpression;
+		}
+
+		public String getTimerType() {
+			return this.timerType;
+		}
+
+		public void setTimerType(String timerType) {
+			this.timerType = timerType;
+		}
+
+		public Boolean getAllowClientSetting() {
+			return this.allowClientSetting;
+		}
+
+		public void setAllowClientSetting(Boolean allowClientSetting) {
+			this.allowClientSetting = allowClientSetting;
+		}
+
+		public String getResetType() {
+			return this.resetType;
+		}
+
+		public void setResetType(String resetType) {
+			this.resetType = resetType;
+		}
+
+		public Boolean getEnforce() {
+			return this.enforce;
+		}
+
+		public void setEnforce(Boolean enforce) {
+			this.enforce = enforce;
+		}
+
+		public Integer getInterval() {
+			return this.interval;
+		}
+
+		public void setInterval(Integer interval) {
+			this.interval = interval;
+		}
+
+		public String getOperationType() {
+			return this.operationType;
+		}
+
+		public void setOperationType(String operationType) {
+			this.operationType = operationType;
 		}
 	}
 

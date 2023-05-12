@@ -145,6 +145,26 @@ public class DescribePolicyGroupsResponse extends AcsResponse {
 
 		private String endUserGroupCoordinate;
 
+		private String cpuProtectedMode;
+
+		private Integer cpuRateLimit;
+
+		private Integer cpuSampleDuration;
+
+		private Integer cpuSingleRateLimit;
+
+		private Integer cpuDownGradeDuration;
+
+		private String memoryProtectedMode;
+
+		private Integer memoryRateLimit;
+
+		private Integer memorySampleDuration;
+
+		private Integer memorySingleRateLimit;
+
+		private Integer memoryDownGradeDuration;
+
 		private List<AuthorizeSecurityPolicyRule> authorizeSecurityPolicyRules;
 
 		private List<AuthorizeAccessPolicyRule> authorizeAccessPolicyRules;
@@ -160,6 +180,10 @@ public class DescribePolicyGroupsResponse extends AcsResponse {
 		private List<String> preemptLoginUsers;
 
 		private List<String> scopeValue;
+
+		private List<String> cpuProcessors;
+
+		private List<String> memoryProcessors;
 
 		public String getPolicyStatus() {
 			return this.policyStatus;
@@ -513,6 +537,86 @@ public class DescribePolicyGroupsResponse extends AcsResponse {
 			this.endUserGroupCoordinate = endUserGroupCoordinate;
 		}
 
+		public String getCpuProtectedMode() {
+			return this.cpuProtectedMode;
+		}
+
+		public void setCpuProtectedMode(String cpuProtectedMode) {
+			this.cpuProtectedMode = cpuProtectedMode;
+		}
+
+		public Integer getCpuRateLimit() {
+			return this.cpuRateLimit;
+		}
+
+		public void setCpuRateLimit(Integer cpuRateLimit) {
+			this.cpuRateLimit = cpuRateLimit;
+		}
+
+		public Integer getCpuSampleDuration() {
+			return this.cpuSampleDuration;
+		}
+
+		public void setCpuSampleDuration(Integer cpuSampleDuration) {
+			this.cpuSampleDuration = cpuSampleDuration;
+		}
+
+		public Integer getCpuSingleRateLimit() {
+			return this.cpuSingleRateLimit;
+		}
+
+		public void setCpuSingleRateLimit(Integer cpuSingleRateLimit) {
+			this.cpuSingleRateLimit = cpuSingleRateLimit;
+		}
+
+		public Integer getCpuDownGradeDuration() {
+			return this.cpuDownGradeDuration;
+		}
+
+		public void setCpuDownGradeDuration(Integer cpuDownGradeDuration) {
+			this.cpuDownGradeDuration = cpuDownGradeDuration;
+		}
+
+		public String getMemoryProtectedMode() {
+			return this.memoryProtectedMode;
+		}
+
+		public void setMemoryProtectedMode(String memoryProtectedMode) {
+			this.memoryProtectedMode = memoryProtectedMode;
+		}
+
+		public Integer getMemoryRateLimit() {
+			return this.memoryRateLimit;
+		}
+
+		public void setMemoryRateLimit(Integer memoryRateLimit) {
+			this.memoryRateLimit = memoryRateLimit;
+		}
+
+		public Integer getMemorySampleDuration() {
+			return this.memorySampleDuration;
+		}
+
+		public void setMemorySampleDuration(Integer memorySampleDuration) {
+			this.memorySampleDuration = memorySampleDuration;
+		}
+
+		public Integer getMemorySingleRateLimit() {
+			return this.memorySingleRateLimit;
+		}
+
+		public void setMemorySingleRateLimit(Integer memorySingleRateLimit) {
+			this.memorySingleRateLimit = memorySingleRateLimit;
+		}
+
+		public Integer getMemoryDownGradeDuration() {
+			return this.memoryDownGradeDuration;
+		}
+
+		public void setMemoryDownGradeDuration(Integer memoryDownGradeDuration) {
+			this.memoryDownGradeDuration = memoryDownGradeDuration;
+		}
+
 		public List<AuthorizeSecurityPolicyRule> getAuthorizeSecurityPolicyRules() {
 			return this.authorizeSecurityPolicyRules;
 		}
@@ -575,6 +679,22 @@ public class DescribePolicyGroupsResponse extends AcsResponse {
 
 		public void setScopeValue(List<String> scopeValue) {
 			this.scopeValue = scopeValue;
+		}
+
+		public List<String> getCpuProcessors() {
+			return this.cpuProcessors;
+		}
+
+		public void setCpuProcessors(List<String> cpuProcessors) {
+			this.cpuProcessors = cpuProcessors;
+		}
+
+		public List<String> getMemoryProcessors() {
+			return this.memoryProcessors;
+		}
+
+		public void setMemoryProcessors(List<String> memoryProcessors) {
+			this.memoryProcessors = memoryProcessors;
 		}
 
 		public static class AuthorizeSecurityPolicyRule {
@@ -808,6 +928,8 @@ public class DescribePolicyGroupsResponse extends AcsResponse {
 
 			private String ruleType;
 
+			private String policy;
+
 			public String getDomain() {
 				return this.domain;
 			}
@@ -822,6 +944,14 @@ public class DescribePolicyGroupsResponse extends AcsResponse {
 
 			public void setRuleType(String ruleType) {
 				this.ruleType = ruleType;
+			}
+
+			public String getPolicy() {
+				return this.policy;
+			}
+
+			public void setPolicy(String policy) {
+				this.policy = policy;
 			}
 		}
 	}

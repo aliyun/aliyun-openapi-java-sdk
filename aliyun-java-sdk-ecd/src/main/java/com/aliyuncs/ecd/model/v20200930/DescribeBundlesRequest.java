@@ -50,6 +50,8 @@ public class DescribeBundlesRequest extends RpcAcsRequest<DescribeBundlesRespons
 
 	private String sessionType;
 
+	private String osType;
+
 	private Integer maxResults;
 
 	private Boolean checkStock;
@@ -201,6 +203,17 @@ public class DescribeBundlesRequest extends RpcAcsRequest<DescribeBundlesRespons
 		this.sessionType = sessionType;
 		if(sessionType != null){
 			putQueryParameter("SessionType", sessionType);
+		}
+	}
+
+	public String getOsType() {
+		return this.osType;
+	}
+
+	public void setOsType(String osType) {
+		this.osType = osType;
+		if(osType != null){
+			putQueryParameter("OsType", osType);
 		}
 	}
 

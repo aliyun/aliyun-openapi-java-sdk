@@ -123,6 +123,12 @@ public class DescribeOfficeSitesResponse extends AcsResponse {
 
 		private String adHostname;
 
+		private String rdsLicenseStatus;
+
+		private String rdsLicenseAddress;
+
+		private String rdsLicenseDomainName;
+
 		private List<ADConnector> aDConnectors;
 
 		private List<Log> logs;
@@ -397,6 +403,30 @@ public class DescribeOfficeSitesResponse extends AcsResponse {
 
 		public void setAdHostname(String adHostname) {
 			this.adHostname = adHostname;
+		}
+
+		public String getRdsLicenseStatus() {
+			return this.rdsLicenseStatus;
+		}
+
+		public void setRdsLicenseStatus(String rdsLicenseStatus) {
+			this.rdsLicenseStatus = rdsLicenseStatus;
+		}
+
+		public String getRdsLicenseAddress() {
+			return this.rdsLicenseAddress;
+		}
+
+		public void setRdsLicenseAddress(String rdsLicenseAddress) {
+			this.rdsLicenseAddress = rdsLicenseAddress;
+		}
+
+		public String getRdsLicenseDomainName() {
+			return this.rdsLicenseDomainName;
+		}
+
+		public void setRdsLicenseDomainName(String rdsLicenseDomainName) {
+			this.rdsLicenseDomainName = rdsLicenseDomainName;
 		}
 
 		public List<ADConnector> getADConnectors() {

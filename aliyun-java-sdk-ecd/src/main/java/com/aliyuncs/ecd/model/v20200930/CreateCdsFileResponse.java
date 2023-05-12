@@ -14,7 +14,6 @@
 
 package com.aliyuncs.ecd.model.v20200930;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ecd.transform.v20200930.CreateCdsFileResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -27,7 +26,7 @@ public class CreateCdsFileResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<FileModel> fileModels;
+	private FileModel fileModel;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,29 +36,21 @@ public class CreateCdsFileResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<FileModel> getFileModels() {
-		return this.fileModels;
+	public FileModel getFileModel() {
+		return this.fileModel;
 	}
 
-	public void setFileModels(List<FileModel> fileModels) {
-		this.fileModels = fileModels;
+	public void setFileModel(FileModel fileModel) {
+		this.fileModel = fileModel;
 	}
 
 	public static class FileModel {
-
-		private String uploadId;
 
 		private String uploadUrl;
 
 		private String fileId;
 
-		public String getUploadId() {
-			return this.uploadId;
-		}
-
-		public void setUploadId(String uploadId) {
-			this.uploadId = uploadId;
-		}
+		private String uploadId;
 
 		public String getUploadUrl() {
 			return this.uploadUrl;
@@ -75,6 +66,14 @@ public class CreateCdsFileResponse extends AcsResponse {
 
 		public void setFileId(String fileId) {
 			this.fileId = fileId;
+		}
+
+		public String getUploadId() {
+			return this.uploadId;
+		}
+
+		public void setUploadId(String uploadId) {
+			this.uploadId = uploadId;
 		}
 	}
 

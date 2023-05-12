@@ -23,43 +23,19 @@ import com.aliyuncs.ecd.Endpoint;
  * @author auto create
  * @version 
  */
-public class RebuildDesktopsRequest extends RpcAcsRequest<RebuildDesktopsResponse> {
+public class MigrateDesktopsRequest extends RpcAcsRequest<MigrateDesktopsResponse> {
 	   
 
-	private String imageId;
-
-	private String operateType;
-
 	private List<String> desktopIds;
-	public RebuildDesktopsRequest() {
-		super("ecd", "2020-09-30", "RebuildDesktops");
+
+	private String targetOfficeSiteId;
+	public MigrateDesktopsRequest() {
+		super("ecd", "2020-09-30", "MigrateDesktops");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getImageId() {
-		return this.imageId;
-	}
-
-	public void setImageId(String imageId) {
-		this.imageId = imageId;
-		if(imageId != null){
-			putQueryParameter("ImageId", imageId);
-		}
-	}
-
-	public String getOperateType() {
-		return this.operateType;
-	}
-
-	public void setOperateType(String operateType) {
-		this.operateType = operateType;
-		if(operateType != null){
-			putQueryParameter("OperateType", operateType);
-		}
 	}
 
 	public List<String> getDesktopIds() {
@@ -75,9 +51,20 @@ public class RebuildDesktopsRequest extends RpcAcsRequest<RebuildDesktopsRespons
 		}	
 	}
 
+	public String getTargetOfficeSiteId() {
+		return this.targetOfficeSiteId;
+	}
+
+	public void setTargetOfficeSiteId(String targetOfficeSiteId) {
+		this.targetOfficeSiteId = targetOfficeSiteId;
+		if(targetOfficeSiteId != null){
+			putQueryParameter("TargetOfficeSiteId", targetOfficeSiteId);
+		}
+	}
+
 	@Override
-	public Class<RebuildDesktopsResponse> getResponseClass() {
-		return RebuildDesktopsResponse.class;
+	public Class<MigrateDesktopsResponse> getResponseClass() {
+		return MigrateDesktopsResponse.class;
 	}
 
 }

@@ -14,9 +14,6 @@
 
 package com.aliyuncs.ecd.transform.v20200930;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.aliyuncs.ecd.model.v20200930.CreateCdsFileResponse;
 import com.aliyuncs.ecd.model.v20200930.CreateCdsFileResponse.FileModel;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -28,16 +25,11 @@ public class CreateCdsFileResponseUnmarshaller {
 		
 		createCdsFileResponse.setRequestId(_ctx.stringValue("CreateCdsFileResponse.RequestId"));
 
-		List<FileModel> fileModels = new ArrayList<FileModel>();
-		for (int i = 0; i < _ctx.lengthValue("CreateCdsFileResponse.FileModels.Length"); i++) {
-			FileModel fileModel = new FileModel();
-			fileModel.setUploadId(_ctx.stringValue("CreateCdsFileResponse.FileModels["+ i +"].UploadId"));
-			fileModel.setUploadUrl(_ctx.stringValue("CreateCdsFileResponse.FileModels["+ i +"].UploadUrl"));
-			fileModel.setFileId(_ctx.stringValue("CreateCdsFileResponse.FileModels["+ i +"].FileId"));
-
-			fileModels.add(fileModel);
-		}
-		createCdsFileResponse.setFileModels(fileModels);
+		FileModel fileModel = new FileModel();
+		fileModel.setUploadUrl(_ctx.stringValue("CreateCdsFileResponse.FileModel.UploadUrl"));
+		fileModel.setFileId(_ctx.stringValue("CreateCdsFileResponse.FileModel.FileId"));
+		fileModel.setUploadId(_ctx.stringValue("CreateCdsFileResponse.FileModel.UploadId"));
+		createCdsFileResponse.setFileModel(fileModel);
 	 
 	 	return createCdsFileResponse;
 	}

@@ -82,6 +82,16 @@ public class DescribePolicyGroupsResponseUnmarshaller {
 			describePolicyGroup.setWatermarkRowAmount(_ctx.integerValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].WatermarkRowAmount"));
 			describePolicyGroup.setEndUserApplyAdminCoordinate(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].EndUserApplyAdminCoordinate"));
 			describePolicyGroup.setEndUserGroupCoordinate(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].EndUserGroupCoordinate"));
+			describePolicyGroup.setCpuProtectedMode(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].CpuProtectedMode"));
+			describePolicyGroup.setCpuRateLimit(_ctx.integerValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].CpuRateLimit"));
+			describePolicyGroup.setCpuSampleDuration(_ctx.integerValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].CpuSampleDuration"));
+			describePolicyGroup.setCpuSingleRateLimit(_ctx.integerValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].CpuSingleRateLimit"));
+			describePolicyGroup.setCpuDownGradeDuration(_ctx.integerValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].CpuDownGradeDuration"));
+			describePolicyGroup.setMemoryProtectedMode(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].MemoryProtectedMode"));
+			describePolicyGroup.setMemoryRateLimit(_ctx.integerValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].MemoryRateLimit"));
+			describePolicyGroup.setMemorySampleDuration(_ctx.integerValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].MemorySampleDuration"));
+			describePolicyGroup.setMemorySingleRateLimit(_ctx.integerValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].MemorySingleRateLimit"));
+			describePolicyGroup.setMemoryDownGradeDuration(_ctx.integerValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].MemoryDownGradeDuration"));
 
 			List<String> preemptLoginUsers = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].PreemptLoginUsers.Length"); j++) {
@@ -94,6 +104,18 @@ public class DescribePolicyGroupsResponseUnmarshaller {
 				scopeValue.add(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].ScopeValue["+ j +"]"));
 			}
 			describePolicyGroup.setScopeValue(scopeValue);
+
+			List<String> cpuProcessors = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].CpuProcessors.Length"); j++) {
+				cpuProcessors.add(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].CpuProcessors["+ j +"]"));
+			}
+			describePolicyGroup.setCpuProcessors(cpuProcessors);
+
+			List<String> memoryProcessors = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].MemoryProcessors.Length"); j++) {
+				memoryProcessors.add(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].MemoryProcessors["+ j +"]"));
+			}
+			describePolicyGroup.setMemoryProcessors(memoryProcessors);
 
 			List<AuthorizeSecurityPolicyRule> authorizeSecurityPolicyRules = new ArrayList<AuthorizeSecurityPolicyRule>();
 			for (int j = 0; j < _ctx.lengthValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].AuthorizeSecurityPolicyRules.Length"); j++) {
@@ -161,6 +183,7 @@ public class DescribePolicyGroupsResponseUnmarshaller {
 				NetRedirectRuleItem netRedirectRuleItem = new NetRedirectRuleItem();
 				netRedirectRuleItem.setDomain(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].NetRedirectRule["+ j +"].Domain"));
 				netRedirectRuleItem.setRuleType(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].NetRedirectRule["+ j +"].RuleType"));
+				netRedirectRuleItem.setPolicy(_ctx.stringValue("DescribePolicyGroupsResponse.DescribePolicyGroups["+ i +"].NetRedirectRule["+ j +"].Policy"));
 
 				netRedirectRule.add(netRedirectRuleItem);
 			}

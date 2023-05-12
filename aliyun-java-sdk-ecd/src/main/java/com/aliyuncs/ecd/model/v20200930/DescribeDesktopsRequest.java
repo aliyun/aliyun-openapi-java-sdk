@@ -52,6 +52,8 @@ public class DescribeDesktopsRequest extends RpcAcsRequest<DescribeDesktopsRespo
 
 	private String desktopType;
 
+	private List<String> desktopStatusLists;
+
 	private String desktopName;
 
 	private String groupId;
@@ -236,6 +238,19 @@ public class DescribeDesktopsRequest extends RpcAcsRequest<DescribeDesktopsRespo
 		if(desktopType != null){
 			putQueryParameter("DesktopType", desktopType);
 		}
+	}
+
+	public List<String> getDesktopStatusLists() {
+		return this.desktopStatusLists;
+	}
+
+	public void setDesktopStatusLists(List<String> desktopStatusLists) {
+		this.desktopStatusLists = desktopStatusLists;	
+		if (desktopStatusLists != null) {
+			for (int i = 0; i < desktopStatusLists.size(); i++) {
+				putQueryParameter("DesktopStatusList." + (i + 1) , desktopStatusLists.get(i));
+			}
+		}	
 	}
 
 	public String getDesktopName() {
