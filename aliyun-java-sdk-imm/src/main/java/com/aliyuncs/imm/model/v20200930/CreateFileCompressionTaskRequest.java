@@ -38,8 +38,6 @@ public class CreateFileCompressionTaskRequest extends RpcAcsRequest<CreateFileCo
 	@SerializedName("notification")
 	private Notification notification;
 
-	private String password;
-
 	private String targetURI;
 
 	private String projectName;
@@ -99,17 +97,6 @@ public class CreateFileCompressionTaskRequest extends RpcAcsRequest<CreateFileCo
 		if (notification != null) {
 			putQueryParameter("Notification" , new Gson().toJson(notification));
 		}	
-	}
-
-	public String getPassword() {
-		return this.password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-		if(password != null){
-			putQueryParameter("Password", password);
-		}
 	}
 
 	public String getTargetURI() {

@@ -1,3 +1,6 @@
+2023-05-12 Version: 2.1.15
+- Remove password in CreateFileCompressionTask.
+
 2023-05-11 Version: 2.1.14
 - Add RequestDefinition.
 - Hide  endpoint.
