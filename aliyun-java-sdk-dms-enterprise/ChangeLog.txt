@@ -1,3 +1,6 @@
+2023-05-15 Version: 1.48.0
+- Support SkipDataCorrectRowCheck API.
+
 2023-04-27 Version: 1.47.0
 - Support GetDataExportPreCheckDetail API.
 - Modify GetOpLog API.
