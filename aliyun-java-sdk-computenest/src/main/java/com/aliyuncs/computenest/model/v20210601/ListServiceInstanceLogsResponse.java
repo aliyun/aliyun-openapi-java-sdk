@@ -73,9 +73,15 @@ public class ListServiceInstanceLogsResponse extends AcsResponse {
 
 		private String source;
 
-		private String phase;
-
 		private String content;
+
+		private String logType;
+
+		private String resourceType;
+
+		private String resourceId;
+
+		private String status;
 
 		public String getTimestamp() {
 			return this.timestamp;
@@ -101,20 +107,44 @@ public class ListServiceInstanceLogsResponse extends AcsResponse {
 			this.source = source;
 		}
 
-		public String getPhase() {
-			return this.phase;
-		}
-
-		public void setPhase(String phase) {
-			this.phase = phase;
-		}
-
 		public String getContent() {
 			return this.content;
 		}
 
 		public void setContent(String content) {
 			this.content = content;
+		}
+
+		public String getLogType() {
+			return this.logType;
+		}
+
+		public void setLogType(String logType) {
+			this.logType = logType;
+		}
+
+		public String getResourceType() {
+			return this.resourceType;
+		}
+
+		public void setResourceType(String resourceType) {
+			this.resourceType = resourceType;
+		}
+
+		public String getResourceId() {
+			return this.resourceId;
+		}
+
+		public void setResourceId(String resourceId) {
+			this.resourceId = resourceId;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
 		}
 	}
 

@@ -26,8 +26,10 @@ public class GetServiceInstanceRequest extends RpcAcsRequest<GetServiceInstanceR
 	   
 
 	private String serviceInstanceId;
+
+	private String marketInstanceId;
 	public GetServiceInstanceRequest() {
-		super("ComputeNest", "2021-06-01", "GetServiceInstance");
+		super("ComputeNest", "2021-06-01", "GetServiceInstance", "computenest");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -43,6 +45,17 @@ public class GetServiceInstanceRequest extends RpcAcsRequest<GetServiceInstanceR
 		this.serviceInstanceId = serviceInstanceId;
 		if(serviceInstanceId != null){
 			putQueryParameter("ServiceInstanceId", serviceInstanceId);
+		}
+	}
+
+	public String getMarketInstanceId() {
+		return this.marketInstanceId;
+	}
+
+	public void setMarketInstanceId(String marketInstanceId) {
+		this.marketInstanceId = marketInstanceId;
+		if(marketInstanceId != null){
+			putQueryParameter("MarketInstanceId", marketInstanceId);
 		}
 	}
 

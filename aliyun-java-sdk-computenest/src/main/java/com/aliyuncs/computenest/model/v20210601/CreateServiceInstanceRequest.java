@@ -26,30 +26,72 @@ import com.aliyuncs.computenest.Endpoint;
 public class CreateServiceInstanceRequest extends RpcAcsRequest<CreateServiceInstanceResponse> {
 	   
 
+	private Commodity commodity;
+
+	private String contactGroup;
+
 	private String clientToken;
+
+	private String specificationCode;
+
+	private String resourceGroupId;
 
 	private Boolean enableInstanceOps;
 
 	private String templateName;
 
-	private List<RequestTag> requestTags;
+	private List<Tag> tags;
+
+	private Boolean dryRun;
+
+	private Boolean enableUserPrometheus;
+
+	private String specificationName;
+
+	private String trialType;
+
+	private String name;
 
 	private String serviceVersion;
-
-	private Boolean enableAccountOps;
 
 	private String serviceId;
 
 	private String parameters;
 
+	private Long payType;
+
 	private OperationMetadata operationMetadata;
 	public CreateServiceInstanceRequest() {
-		super("ComputeNest", "2021-06-01", "CreateServiceInstance");
+		super("ComputeNest", "2021-06-01", "CreateServiceInstance", "computenest");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Commodity getCommodity() {
+		return this.commodity;
+	}
+
+	public void setCommodity(Commodity commodity) {
+		this.commodity = commodity;	
+		if (commodity != null) {
+			
+				putQueryParameter("Commodity.PayPeriod" , commodity.getPayPeriod());
+				putQueryParameter("Commodity.PayPeriodUnit" , commodity.getPayPeriodUnit());
+		}	
+	}
+
+	public String getContactGroup() {
+		return this.contactGroup;
+	}
+
+	public void setContactGroup(String contactGroup) {
+		this.contactGroup = contactGroup;
+		if(contactGroup != null){
+			putQueryParameter("ContactGroup", contactGroup);
+		}
 	}
 
 	public String getClientToken() {
@@ -60,6 +102,28 @@ public class CreateServiceInstanceRequest extends RpcAcsRequest<CreateServiceIns
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getSpecificationCode() {
+		return this.specificationCode;
+	}
+
+	public void setSpecificationCode(String specificationCode) {
+		this.specificationCode = specificationCode;
+		if(specificationCode != null){
+			putQueryParameter("SpecificationCode", specificationCode);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
@@ -85,18 +149,73 @@ public class CreateServiceInstanceRequest extends RpcAcsRequest<CreateServiceIns
 		}
 	}
 
-	public List<RequestTag> getRequestTags() {
-		return this.requestTags;
+	public List<Tag> getTags() {
+		return this.tags;
 	}
 
-	public void setRequestTags(List<RequestTag> requestTags) {
-		this.requestTags = requestTags;	
-		if (requestTags != null) {
-			for (int depth1 = 0; depth1 < requestTags.size(); depth1++) {
-				putQueryParameter("RequestTag." + (depth1 + 1) + ".Value" , requestTags.get(depth1).getValue());
-				putQueryParameter("RequestTag." + (depth1 + 1) + ".Key" , requestTags.get(depth1).getKey());
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
+		}
+	}
+
+	public Boolean getEnableUserPrometheus() {
+		return this.enableUserPrometheus;
+	}
+
+	public void setEnableUserPrometheus(Boolean enableUserPrometheus) {
+		this.enableUserPrometheus = enableUserPrometheus;
+		if(enableUserPrometheus != null){
+			putQueryParameter("EnableUserPrometheus", enableUserPrometheus.toString());
+		}
+	}
+
+	public String getSpecificationName() {
+		return this.specificationName;
+	}
+
+	public void setSpecificationName(String specificationName) {
+		this.specificationName = specificationName;
+		if(specificationName != null){
+			putQueryParameter("SpecificationName", specificationName);
+		}
+	}
+
+	public String getTrialType() {
+		return this.trialType;
+	}
+
+	public void setTrialType(String trialType) {
+		this.trialType = trialType;
+		if(trialType != null){
+			putQueryParameter("TrialType", trialType);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
 	}
 
 	public String getServiceVersion() {
@@ -107,17 +226,6 @@ public class CreateServiceInstanceRequest extends RpcAcsRequest<CreateServiceIns
 		this.serviceVersion = serviceVersion;
 		if(serviceVersion != null){
 			putQueryParameter("ServiceVersion", serviceVersion);
-		}
-	}
-
-	public Boolean getEnableAccountOps() {
-		return this.enableAccountOps;
-	}
-
-	public void setEnableAccountOps(Boolean enableAccountOps) {
-		this.enableAccountOps = enableAccountOps;
-		if(enableAccountOps != null){
-			putQueryParameter("EnableAccountOps", enableAccountOps.toString());
 		}
 	}
 
@@ -143,6 +251,17 @@ public class CreateServiceInstanceRequest extends RpcAcsRequest<CreateServiceIns
 		}
 	}
 
+	public Long getPayType() {
+		return this.payType;
+	}
+
+	public void setPayType(Long payType) {
+		this.payType = payType;
+		if(payType != null){
+			putQueryParameter("PayType", payType.toString());
+		}
+	}
+
 	public OperationMetadata getOperationMetadata() {
 		return this.operationMetadata;
 	}
@@ -154,11 +273,35 @@ public class CreateServiceInstanceRequest extends RpcAcsRequest<CreateServiceIns
 				putQueryParameter("OperationMetadata.EndTime" , operationMetadata.getEndTime());
 				putQueryParameter("OperationMetadata.Resources" , operationMetadata.getResources());
 				putQueryParameter("OperationMetadata.StartTime" , operationMetadata.getStartTime());
+				putQueryParameter("OperationMetadata.ExtraInfo" , operationMetadata.getExtraInfo());
 				putQueryParameter("OperationMetadata.ServiceInstanceId" , operationMetadata.getServiceInstanceId());
 		}	
 	}
 
-	public static class RequestTag {
+	public static class Commodity {
+
+		private Long payPeriod;
+
+		private String payPeriodUnit;
+
+		public Long getPayPeriod() {
+			return this.payPeriod;
+		}
+
+		public void setPayPeriod(Long payPeriod) {
+			this.payPeriod = payPeriod;
+		}
+
+		public String getPayPeriodUnit() {
+			return this.payPeriodUnit;
+		}
+
+		public void setPayPeriodUnit(String payPeriodUnit) {
+			this.payPeriodUnit = payPeriodUnit;
+		}
+	}
+
+	public static class Tag {
 
 		private String value;
 
@@ -189,6 +332,8 @@ public class CreateServiceInstanceRequest extends RpcAcsRequest<CreateServiceIns
 
 		private String startTime;
 
+		private String extraInfo;
+
 		private String serviceInstanceId;
 
 		public String getEndTime() {
@@ -213,6 +358,14 @@ public class CreateServiceInstanceRequest extends RpcAcsRequest<CreateServiceIns
 
 		public void setStartTime(String startTime) {
 			this.startTime = startTime;
+		}
+
+		public String getExtraInfo() {
+			return this.extraInfo;
+		}
+
+		public void setExtraInfo(String extraInfo) {
+			this.extraInfo = extraInfo;
 		}
 
 		public String getServiceInstanceId() {

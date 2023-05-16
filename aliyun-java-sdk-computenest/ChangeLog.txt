@@ -1,3 +1,6 @@
+2023-05-16 Version: 1.1.5
+- Generate SDK for service instance APIs.
+
 2021-09-22 Version: 1.1.4
 - ListServiceInstance support RequestTag parameter.
 - CreateServiceInstance support RequestTag parameter.

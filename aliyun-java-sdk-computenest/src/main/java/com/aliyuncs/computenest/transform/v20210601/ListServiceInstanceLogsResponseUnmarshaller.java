@@ -36,8 +36,11 @@ public class ListServiceInstanceLogsResponseUnmarshaller {
 			serviceInstanceLogs.setTimestamp(_ctx.stringValue("ListServiceInstanceLogsResponse.ServiceInstancesLogs["+ i +"].Timestamp"));
 			serviceInstanceLogs.setServiceInstanceId(_ctx.stringValue("ListServiceInstanceLogsResponse.ServiceInstancesLogs["+ i +"].ServiceInstanceId"));
 			serviceInstanceLogs.setSource(_ctx.stringValue("ListServiceInstanceLogsResponse.ServiceInstancesLogs["+ i +"].Source"));
-			serviceInstanceLogs.setPhase(_ctx.stringValue("ListServiceInstanceLogsResponse.ServiceInstancesLogs["+ i +"].Phase"));
 			serviceInstanceLogs.setContent(_ctx.stringValue("ListServiceInstanceLogsResponse.ServiceInstancesLogs["+ i +"].Content"));
+			serviceInstanceLogs.setLogType(_ctx.stringValue("ListServiceInstanceLogsResponse.ServiceInstancesLogs["+ i +"].LogType"));
+			serviceInstanceLogs.setResourceType(_ctx.stringValue("ListServiceInstanceLogsResponse.ServiceInstancesLogs["+ i +"].ResourceType"));
+			serviceInstanceLogs.setResourceId(_ctx.stringValue("ListServiceInstanceLogsResponse.ServiceInstancesLogs["+ i +"].ResourceId"));
+			serviceInstanceLogs.setStatus(_ctx.stringValue("ListServiceInstanceLogsResponse.ServiceInstancesLogs["+ i +"].Status"));
 
 			serviceInstancesLogs.add(serviceInstanceLogs);
 		}

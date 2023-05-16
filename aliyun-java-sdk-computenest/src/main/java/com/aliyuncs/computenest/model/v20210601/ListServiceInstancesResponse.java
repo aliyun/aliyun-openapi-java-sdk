@@ -77,6 +77,8 @@ public class ListServiceInstancesResponse extends AcsResponse {
 
 	public static class ServiceInstance {
 
+		private String name;
+
 		private String status;
 
 		private String outputs;
@@ -105,7 +107,29 @@ public class ListServiceInstancesResponse extends AcsResponse {
 
 		private Boolean enableInstanceOps;
 
+		private String source;
+
+		private String endTime;
+
+		private String serviceType;
+
+		private String payType;
+
+		private String marketInstanceId;
+
+		private String resourceGroupId;
+
+		private List<Tag> tags;
+
 		private Service service;
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
 
 		public String getStatus() {
 			return this.status;
@@ -219,12 +243,91 @@ public class ListServiceInstancesResponse extends AcsResponse {
 			this.enableInstanceOps = enableInstanceOps;
 		}
 
+		public String getSource() {
+			return this.source;
+		}
+
+		public void setSource(String source) {
+			this.source = source;
+		}
+
+		public String getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
+		}
+
+		public String getServiceType() {
+			return this.serviceType;
+		}
+
+		public void setServiceType(String serviceType) {
+			this.serviceType = serviceType;
+		}
+
+		public String getPayType() {
+			return this.payType;
+		}
+
+		public void setPayType(String payType) {
+			this.payType = payType;
+		}
+
+		public String getMarketInstanceId() {
+			return this.marketInstanceId;
+		}
+
+		public void setMarketInstanceId(String marketInstanceId) {
+			this.marketInstanceId = marketInstanceId;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
 		public Service getService() {
 			return this.service;
 		}
 
 		public void setService(Service service) {
 			this.service = service;
+		}
+
+		public static class Tag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 
 		public static class Service {
@@ -244,6 +347,8 @@ public class ListServiceInstancesResponse extends AcsResponse {
 			private String serviceType;
 
 			private String supplierName;
+
+			private String versionName;
 
 			private List<ServiceInfo> serviceInfos;
 
@@ -309,6 +414,14 @@ public class ListServiceInstancesResponse extends AcsResponse {
 
 			public void setSupplierName(String supplierName) {
 				this.supplierName = supplierName;
+			}
+
+			public String getVersionName() {
+				return this.versionName;
+			}
+
+			public void setVersionName(String versionName) {
+				this.versionName = versionName;
 			}
 
 			public List<ServiceInfo> getServiceInfos() {

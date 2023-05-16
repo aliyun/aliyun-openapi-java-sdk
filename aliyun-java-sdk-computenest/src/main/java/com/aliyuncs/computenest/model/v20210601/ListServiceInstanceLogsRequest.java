@@ -31,7 +31,7 @@ public class ListServiceInstanceLogsRequest extends RpcAcsRequest<ListServiceIns
 
 	private String maxResults;
 	public ListServiceInstanceLogsRequest() {
-		super("ComputeNest", "2021-06-01", "ListServiceInstanceLogs");
+		super("ComputeNest", "2021-06-01", "ListServiceInstanceLogs", "computenest");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

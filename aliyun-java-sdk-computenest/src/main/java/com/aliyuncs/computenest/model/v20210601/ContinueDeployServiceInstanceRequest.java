@@ -15,6 +15,7 @@
 package com.aliyuncs.computenest.model.v20210601;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.computenest.Endpoint;
 
@@ -29,9 +30,13 @@ public class ContinueDeployServiceInstanceRequest extends RpcAcsRequest<Continue
 
 	private String serviceInstanceId;
 
+	private Boolean dryRun;
+
 	private String parameters;
+
+	private List<String> options;
 	public ContinueDeployServiceInstanceRequest() {
-		super("ComputeNest", "2021-06-01", "ContinueDeployServiceInstance");
+		super("ComputeNest", "2021-06-01", "ContinueDeployServiceInstance", "computenest");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -61,6 +66,17 @@ public class ContinueDeployServiceInstanceRequest extends RpcAcsRequest<Continue
 		}
 	}
 
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
+		}
+	}
+
 	public String getParameters() {
 		return this.parameters;
 	}
@@ -70,6 +86,19 @@ public class ContinueDeployServiceInstanceRequest extends RpcAcsRequest<Continue
 		if(parameters != null){
 			putQueryParameter("Parameters", parameters);
 		}
+	}
+
+	public List<String> getOptions() {
+		return this.options;
+	}
+
+	public void setOptions(List<String> options) {
+		this.options = options;	
+		if (options != null) {
+			for (int i = 0; i < options.size(); i++) {
+				putQueryParameter("Option." + (i + 1) , options.get(i));
+			}
+		}	
 	}
 
 	@Override

@@ -23,20 +23,26 @@ import com.aliyuncs.computenest.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListServiceInstancesRequest extends RpcAcsRequest<ListServiceInstancesResponse> {
+public class ListServiceInstanceResourcesRequest extends RpcAcsRequest<ListServiceInstanceResourcesResponse> {
 	   
 
-	private String resourceGroupId;
+	private String expireTimeEnd;
 
 	private String nextToken;
 
+	private List<String> resourceARNs;
+
 	private List<Tag> tags;
 
-	private List<Filter> filters;
+	private String serviceInstanceId;
+
+	private String expireTimeStart;
 
 	private String maxResults;
-	public ListServiceInstancesRequest() {
-		super("ComputeNest", "2021-06-01", "ListServiceInstances", "computenest");
+
+	private String payType;
+	public ListServiceInstanceResourcesRequest() {
+		super("ComputeNest", "2021-06-01", "ListServiceInstanceResources", "computenest");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -44,14 +50,14 @@ public class ListServiceInstancesRequest extends RpcAcsRequest<ListServiceInstan
 		} catch (Exception e) {}
 	}
 
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
+	public String getExpireTimeEnd() {
+		return this.expireTimeEnd;
 	}
 
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
+	public void setExpireTimeEnd(String expireTimeEnd) {
+		this.expireTimeEnd = expireTimeEnd;
+		if(expireTimeEnd != null){
+			putQueryParameter("ExpireTimeEnd", expireTimeEnd);
 		}
 	}
 
@@ -64,6 +70,19 @@ public class ListServiceInstancesRequest extends RpcAcsRequest<ListServiceInstan
 		if(nextToken != null){
 			putQueryParameter("NextToken", nextToken);
 		}
+	}
+
+	public List<String> getResourceARNs() {
+		return this.resourceARNs;
+	}
+
+	public void setResourceARNs(List<String> resourceARNs) {
+		this.resourceARNs = resourceARNs;	
+		if (resourceARNs != null) {
+			for (int i = 0; i < resourceARNs.size(); i++) {
+				putQueryParameter("ResourceARN." + (i + 1) , resourceARNs.get(i));
+			}
+		}	
 	}
 
 	public List<Tag> getTags() {
@@ -80,22 +99,26 @@ public class ListServiceInstancesRequest extends RpcAcsRequest<ListServiceInstan
 		}	
 	}
 
-	public List<Filter> getFilters() {
-		return this.filters;
+	public String getServiceInstanceId() {
+		return this.serviceInstanceId;
 	}
 
-	public void setFilters(List<Filter> filters) {
-		this.filters = filters;	
-		if (filters != null) {
-			for (int depth1 = 0; depth1 < filters.size(); depth1++) {
-				putQueryParameter("Filter." + (depth1 + 1) + ".Name" , filters.get(depth1).getName());
-				if (filters.get(depth1).getValues() != null) {
-					for (int i = 0; i < filters.get(depth1).getValues().size(); i++) {
-						putQueryParameter("Filter." + (depth1 + 1) + ".Value." + (i + 1) , filters.get(depth1).getValues().get(i));
-					}
-				}
-			}
-		}	
+	public void setServiceInstanceId(String serviceInstanceId) {
+		this.serviceInstanceId = serviceInstanceId;
+		if(serviceInstanceId != null){
+			putQueryParameter("ServiceInstanceId", serviceInstanceId);
+		}
+	}
+
+	public String getExpireTimeStart() {
+		return this.expireTimeStart;
+	}
+
+	public void setExpireTimeStart(String expireTimeStart) {
+		this.expireTimeStart = expireTimeStart;
+		if(expireTimeStart != null){
+			putQueryParameter("ExpireTimeStart", expireTimeStart);
+		}
 	}
 
 	public String getMaxResults() {
@@ -106,6 +129,17 @@ public class ListServiceInstancesRequest extends RpcAcsRequest<ListServiceInstan
 		this.maxResults = maxResults;
 		if(maxResults != null){
 			putQueryParameter("MaxResults", maxResults);
+		}
+	}
+
+	public String getPayType() {
+		return this.payType;
+	}
+
+	public void setPayType(String payType) {
+		this.payType = payType;
+		if(payType != null){
+			putQueryParameter("PayType", payType);
 		}
 	}
 
@@ -132,32 +166,9 @@ public class ListServiceInstancesRequest extends RpcAcsRequest<ListServiceInstan
 		}
 	}
 
-	public static class Filter {
-
-		private String name;
-
-		private List<String> values;
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public List<String> getValues() {
-			return this.values;
-		}
-
-		public void setValues(List<String> values) {
-			this.values = values;
-		}
-	}
-
 	@Override
-	public Class<ListServiceInstancesResponse> getResponseClass() {
-		return ListServiceInstancesResponse.class;
+	public Class<ListServiceInstanceResourcesResponse> getResponseClass() {
+		return ListServiceInstanceResourcesResponse.class;
 	}
 
 }
