@@ -75,6 +75,8 @@ public class GetServiceInstanceResponse extends AcsResponse {
 
 	private String enableUserPrometheus;
 
+	private String rdAccountLoginUrl;
+
 	private List<Tag> tags;
 
 	private Service service;
@@ -279,6 +281,14 @@ public class GetServiceInstanceResponse extends AcsResponse {
 
 	public void setEnableUserPrometheus(String enableUserPrometheus) {
 		this.enableUserPrometheus = enableUserPrometheus;
+	}
+
+	public String getRdAccountLoginUrl() {
+		return this.rdAccountLoginUrl;
+	}
+
+	public void setRdAccountLoginUrl(String rdAccountLoginUrl) {
+		this.rdAccountLoginUrl = rdAccountLoginUrl;
 	}
 
 	public List<Tag> getTags() {
@@ -608,6 +618,8 @@ public class GetServiceInstanceResponse extends AcsResponse {
 
 				private String domainName;
 
+				private Integer connectBandwidth;
+
 				private List<String> securityGroups;
 
 				private List<String> vSwitches;
@@ -644,6 +656,14 @@ public class GetServiceInstanceResponse extends AcsResponse {
 
 				public void setDomainName(String domainName) {
 					this.domainName = domainName;
+				}
+
+				public Integer getConnectBandwidth() {
+					return this.connectBandwidth;
+				}
+
+				public void setConnectBandwidth(Integer connectBandwidth) {
+					this.connectBandwidth = connectBandwidth;
 				}
 
 				public List<String> getSecurityGroups() {

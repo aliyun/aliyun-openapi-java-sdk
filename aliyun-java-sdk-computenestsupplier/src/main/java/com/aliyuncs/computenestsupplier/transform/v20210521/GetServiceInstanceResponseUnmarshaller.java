@@ -57,6 +57,7 @@ public class GetServiceInstanceResponseUnmarshaller {
 		getServiceInstanceResponse.setLicenseMetadata(_ctx.stringValue("GetServiceInstanceResponse.LicenseMetadata"));
 		getServiceInstanceResponse.setName(_ctx.stringValue("GetServiceInstanceResponse.Name"));
 		getServiceInstanceResponse.setEnableUserPrometheus(_ctx.stringValue("GetServiceInstanceResponse.EnableUserPrometheus"));
+		getServiceInstanceResponse.setRdAccountLoginUrl(_ctx.stringValue("GetServiceInstanceResponse.RdAccountLoginUrl"));
 
 		Service service = new Service();
 		service.setStatus(_ctx.stringValue("GetServiceInstanceResponse.Service.Status"));
@@ -109,6 +110,7 @@ public class GetServiceInstanceResponseUnmarshaller {
 				connectionConfig.setIngressEndpointStatus(_ctx.stringValue("GetServiceInstanceResponse.NetworkConfig.PrivateVpcConnections["+ i +"].ConnectionConfigs["+ j +"].IngressEndpointStatus"));
 				connectionConfig.setNetworkServiceStatus(_ctx.stringValue("GetServiceInstanceResponse.NetworkConfig.PrivateVpcConnections["+ i +"].ConnectionConfigs["+ j +"].NetworkServiceStatus"));
 				connectionConfig.setDomainName(_ctx.stringValue("GetServiceInstanceResponse.NetworkConfig.PrivateVpcConnections["+ i +"].ConnectionConfigs["+ j +"].DomainName"));
+				connectionConfig.setConnectBandwidth(_ctx.integerValue("GetServiceInstanceResponse.NetworkConfig.PrivateVpcConnections["+ i +"].ConnectionConfigs["+ j +"].ConnectBandwidth"));
 
 				List<String> securityGroups = new ArrayList<String>();
 				for (int k = 0; k < _ctx.lengthValue("GetServiceInstanceResponse.NetworkConfig.PrivateVpcConnections["+ i +"].ConnectionConfigs["+ j +"].SecurityGroups.Length"); k++) {
