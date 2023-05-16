@@ -35,7 +35,7 @@ public class TransferUserToResellerRequest extends RpcAcsRequest<TransferUserToR
 
 	private String realName;
 	public TransferUserToResellerRequest() {
-		super("Agency", "2020-03-24", "TransferUserToReseller");
+		super("Agency", "2020-03-24", "TransferUserToReseller", "openApi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

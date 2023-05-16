@@ -29,7 +29,7 @@ public class CreateBpmsResultRequest extends RpcAcsRequest<CreateBpmsResultRespo
 
 	private String applyStatus;
 	public CreateBpmsResultRequest() {
-		super("Agency", "2020-03-24", "CreateBpmsResult");
+		super("Agency", "2020-03-24", "CreateBpmsResult", "openApi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

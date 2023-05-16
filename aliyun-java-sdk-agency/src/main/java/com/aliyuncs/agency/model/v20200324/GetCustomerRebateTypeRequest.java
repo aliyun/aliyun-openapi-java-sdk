@@ -29,7 +29,7 @@ public class GetCustomerRebateTypeRequest extends RpcAcsRequest<GetCustomerRebat
 
 	private String siteId;
 	public GetCustomerRebateTypeRequest() {
-		super("Agency", "2020-03-24", "GetCustomerRebateType");
+		super("Agency", "2020-03-24", "GetCustomerRebateType", "openApi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
