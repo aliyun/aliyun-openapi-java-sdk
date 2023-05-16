@@ -1,3 +1,6 @@
+2023-05-16 Version: 3.9.36
+- Live sdk update.
+
 2023-04-04 Version: 3.9.35
 - Live sdk update.
 
