@@ -22,15 +22,17 @@ import com.aliyuncs.cs.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateClusterNodePoolRequest extends RoaAcsRequest<CreateClusterNodePoolResponse> {
+public class AttachInstancesToNodePoolRequest extends RoaAcsRequest<AttachInstancesToNodePoolResponse> {
 	   
 
 	private String clusterId;
 
 	private String body;
-	public CreateClusterNodePoolRequest() {
-		super("CS", "2015-12-15", "CreateClusterNodePool");
-		setUriPattern("/clusters/[ClusterId]/nodepools");
+
+	private String nodepoolId;
+	public AttachInstancesToNodePoolRequest() {
+		super("CS", "2015-12-15", "AttachInstancesToNodePool");
+		setUriPattern("/clusters/[ClusterId]/nodepools/[NodepoolId]/attach");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -60,9 +62,20 @@ public class CreateClusterNodePoolRequest extends RoaAcsRequest<CreateClusterNod
 		}
 	}
 
+	public String getNodepoolId() {
+		return this.nodepoolId;
+	}
+
+	public void setNodepoolId(String nodepoolId) {
+		this.nodepoolId = nodepoolId;
+		if(nodepoolId != null){
+			putPathParameter("NodepoolId", nodepoolId);
+		}
+	}
+
 	@Override
-	public Class<CreateClusterNodePoolResponse> getResponseClass() {
-		return CreateClusterNodePoolResponse.class;
+	public Class<AttachInstancesToNodePoolResponse> getResponseClass() {
+		return AttachInstancesToNodePoolResponse.class;
 	}
 
 }

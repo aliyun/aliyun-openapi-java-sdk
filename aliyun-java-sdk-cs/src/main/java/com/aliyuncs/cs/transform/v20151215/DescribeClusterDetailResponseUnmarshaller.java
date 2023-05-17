@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.cs.model.v20151215.DescribeClusterDetailResponse;
 import com.aliyuncs.cs.model.v20151215.DescribeClusterDetailResponse.Maintenance_window;
 import com.aliyuncs.cs.model.v20151215.DescribeClusterDetailResponse.TagsItem;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -54,6 +55,7 @@ public class DescribeClusterDetailResponseUnmarshaller {
 		describeClusterDetailResponse.setProfile(_ctx.stringValue("DescribeClusterDetailResponse.profile"));
 		describeClusterDetailResponse.setCluster_spec(_ctx.stringValue("DescribeClusterDetailResponse.cluster_spec"));
 		describeClusterDetailResponse.setWorker_ram_role_name(_ctx.stringValue("DescribeClusterDetailResponse.worker_ram_role_name"));
+		describeClusterDetailResponse.setParameters(_ctx.mapValue("DescribeClusterDetailResponse.parameters"));
 
 		Maintenance_window maintenance_window = new Maintenance_window();
 		maintenance_window.setEnable(_ctx.booleanValue("DescribeClusterDetailResponse.maintenance_window.enable"));

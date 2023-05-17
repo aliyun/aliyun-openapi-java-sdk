@@ -28,6 +28,7 @@ import com.aliyuncs.cs.model.v20151215.DescribeClusterNodePoolDetailResponse.Man
 import com.aliyuncs.cs.model.v20151215.DescribeClusterNodePoolDetailResponse.Nodepool_info;
 import com.aliyuncs.cs.model.v20151215.DescribeClusterNodePoolDetailResponse.Scaling_group;
 import com.aliyuncs.cs.model.v20151215.DescribeClusterNodePoolDetailResponse.Scaling_group.Data_disksItem;
+import com.aliyuncs.cs.model.v20151215.DescribeClusterNodePoolDetailResponse.Scaling_group.Private_pool_options;
 import com.aliyuncs.cs.model.v20151215.DescribeClusterNodePoolDetailResponse.Scaling_group.Spot_price_limitItem;
 import com.aliyuncs.cs.model.v20151215.DescribeClusterNodePoolDetailResponse.Scaling_group.TagsItem;
 import com.aliyuncs.cs.model.v20151215.DescribeClusterNodePoolDetailResponse.Status;
@@ -145,6 +146,11 @@ public class DescribeClusterNodePoolDetailResponseUnmarshaller {
 			vswitch_ids.add(_ctx.stringValue("DescribeClusterNodePoolDetailResponse.scaling_group.vswitch_ids["+ i +"]"));
 		}
 		scaling_group.setVswitch_ids(vswitch_ids);
+
+		Private_pool_options private_pool_options = new Private_pool_options();
+		private_pool_options.setId(_ctx.stringValue("DescribeClusterNodePoolDetailResponse.scaling_group.private_pool_options.id"));
+		private_pool_options.setMatch_criteria(_ctx.stringValue("DescribeClusterNodePoolDetailResponse.scaling_group.private_pool_options.match_criteria"));
+		scaling_group.setPrivate_pool_options(private_pool_options);
 
 		List<Data_disksItem> data_disks = new ArrayList<Data_disksItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeClusterNodePoolDetailResponse.scaling_group.data_disks.Length"); i++) {

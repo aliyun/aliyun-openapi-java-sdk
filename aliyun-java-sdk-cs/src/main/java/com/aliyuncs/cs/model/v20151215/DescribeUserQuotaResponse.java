@@ -14,6 +14,7 @@
 
 package com.aliyuncs.cs.model.v20151215;
 
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.cs.transform.v20151215.DescribeUserQuotaResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -33,6 +34,8 @@ public class DescribeUserQuotaResponse extends AcsResponse {
 	private Long cluster_quota;
 
 	private Long node_quota;
+
+	private Map<Object,Object> quotas;
 
 	private Edge_improved_nodepool_quota edge_improved_nodepool_quota;
 
@@ -74,6 +77,14 @@ public class DescribeUserQuotaResponse extends AcsResponse {
 
 	public void setNode_quota(Long node_quota) {
 		this.node_quota = node_quota;
+	}
+
+	public Map<Object,Object> getQuotas() {
+		return this.quotas;
+	}
+
+	public void setQuotas(Map<Object,Object> quotas) {
+		this.quotas = quotas;
 	}
 
 	public Edge_improved_nodepool_quota getEdge_improved_nodepool_quota() {

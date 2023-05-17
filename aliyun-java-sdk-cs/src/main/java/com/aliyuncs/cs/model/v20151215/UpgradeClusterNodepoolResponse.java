@@ -26,12 +26,22 @@ public class UpgradeClusterNodepoolResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String task_id;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getTask_id() {
+		return this.task_id;
+	}
+
+	public void setTask_id(String task_id) {
+		this.task_id = task_id;
 	}
 
 	@Override

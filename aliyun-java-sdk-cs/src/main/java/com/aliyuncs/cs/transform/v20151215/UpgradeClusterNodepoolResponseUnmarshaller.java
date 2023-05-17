@@ -23,6 +23,7 @@ public class UpgradeClusterNodepoolResponseUnmarshaller {
 	public static UpgradeClusterNodepoolResponse unmarshall(UpgradeClusterNodepoolResponse upgradeClusterNodepoolResponse, UnmarshallerContext _ctx) {
 		
 		upgradeClusterNodepoolResponse.setRequestId(_ctx.stringValue("UpgradeClusterNodepoolResponse.RequestId"));
+		upgradeClusterNodepoolResponse.setTask_id(_ctx.stringValue("UpgradeClusterNodepoolResponse.task_id"));
 	 
 	 	return upgradeClusterNodepoolResponse;
 	}

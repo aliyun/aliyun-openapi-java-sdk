@@ -490,6 +490,8 @@ public class DescribeClusterNodePoolDetailResponse extends AcsResponse {
 
 		private List<String> vswitch_ids;
 
+		private Private_pool_options private_pool_options;
+
 		public Boolean getAuto_renew() {
 			return this.auto_renew;
 		}
@@ -762,6 +764,14 @@ public class DescribeClusterNodePoolDetailResponse extends AcsResponse {
 			this.vswitch_ids = vswitch_ids;
 		}
 
+		public Private_pool_options getPrivate_pool_options() {
+			return this.private_pool_options;
+		}
+
+		public void setPrivate_pool_options(Private_pool_options private_pool_options) {
+			this.private_pool_options = private_pool_options;
+		}
+
 		public static class Data_disksItem {
 
 			private String category;
@@ -858,6 +868,29 @@ public class DescribeClusterNodePoolDetailResponse extends AcsResponse {
 
 			public void setValue(String value) {
 				this.value = value;
+			}
+		}
+
+		public static class Private_pool_options {
+
+			private String id;
+
+			private String match_criteria;
+
+			public String getId() {
+				return this.id;
+			}
+
+			public void setId(String id) {
+				this.id = id;
+			}
+
+			public String getMatch_criteria() {
+				return this.match_criteria;
+			}
+
+			public void setMatch_criteria(String match_criteria) {
+				this.match_criteria = match_criteria;
 			}
 		}
 	}

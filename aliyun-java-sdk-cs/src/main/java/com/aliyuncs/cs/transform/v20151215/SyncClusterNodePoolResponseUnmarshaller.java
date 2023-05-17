@@ -14,17 +14,16 @@
 
 package com.aliyuncs.cs.transform.v20151215;
 
-import com.aliyuncs.cs.model.v20151215.StopAlertResponse;
+import com.aliyuncs.cs.model.v20151215.SyncClusterNodePoolResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class StopAlertResponseUnmarshaller {
+public class SyncClusterNodePoolResponseUnmarshaller {
 
-	public static StopAlertResponse unmarshall(StopAlertResponse stopAlertResponse, UnmarshallerContext _ctx) {
+	public static SyncClusterNodePoolResponse unmarshall(SyncClusterNodePoolResponse syncClusterNodePoolResponse, UnmarshallerContext _ctx) {
 		
-		stopAlertResponse.setStatus(_ctx.booleanValue("StopAlertResponse.status"));
-		stopAlertResponse.setMsg(_ctx.stringValue("StopAlertResponse.msg"));
+		syncClusterNodePoolResponse.setRequestId(_ctx.stringValue("SyncClusterNodePoolResponse.RequestId"));
 	 
-	 	return stopAlertResponse;
+	 	return syncClusterNodePoolResponse;
 	}
 }

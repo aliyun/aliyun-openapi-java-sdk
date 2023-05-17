@@ -22,47 +22,47 @@ import com.aliyuncs.cs.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateClusterNodePoolRequest extends RoaAcsRequest<CreateClusterNodePoolResponse> {
+public class DescribeClusterAddonInstanceRequest extends RoaAcsRequest<DescribeClusterAddonInstanceResponse> {
 	   
 
-	private String clusterId;
+	private String addonName;
 
-	private String body;
-	public CreateClusterNodePoolRequest() {
-		super("CS", "2015-12-15", "CreateClusterNodePool");
-		setUriPattern("/clusters/[ClusterId]/nodepools");
-		setMethod(MethodType.POST);
+	private String clusterID;
+	public DescribeClusterAddonInstanceRequest() {
+		super("CS", "2015-12-15", "DescribeClusterAddonInstance");
+		setUriPattern("/clusters/[ClusterID]/components/[AddonName]/instance");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getClusterId() {
-		return this.clusterId;
+	public String getAddonName() {
+		return this.addonName;
 	}
 
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putPathParameter("ClusterId", clusterId);
+	public void setAddonName(String addonName) {
+		this.addonName = addonName;
+		if(addonName != null){
+			putPathParameter("AddonName", addonName);
 		}
 	}
 
-	public String getBody() {
-		return this.body;
+	public String getClusterID() {
+		return this.clusterID;
 	}
 
-	public void setBody(String body) {
-		this.body = body;
-		if(body != null){
-			putBodyParameter("body", body);
+	public void setClusterID(String clusterID) {
+		this.clusterID = clusterID;
+		if(clusterID != null){
+			putPathParameter("ClusterID", clusterID);
 		}
 	}
 
 	@Override
-	public Class<CreateClusterNodePoolResponse> getResponseClass() {
-		return CreateClusterNodePoolResponse.class;
+	public Class<DescribeClusterAddonInstanceResponse> getResponseClass() {
+		return DescribeClusterAddonInstanceResponse.class;
 	}
 
 }

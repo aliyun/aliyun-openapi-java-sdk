@@ -28,6 +28,8 @@ public class DescribeNodePoolVulsRequest extends RoaAcsRequest<DescribeNodePoolV
 	private String cluster_id;
 
 	private String nodepool_id;
+
+	private String necessity;
 	public DescribeNodePoolVulsRequest() {
 		super("CS", "2015-12-15", "DescribeNodePoolVuls");
 		setUriPattern("/clusters/[cluster_id]/nodepools/[nodepool_id]/vuls");
@@ -57,6 +59,17 @@ public class DescribeNodePoolVulsRequest extends RoaAcsRequest<DescribeNodePoolV
 		this.nodepool_id = nodepool_id;
 		if(nodepool_id != null){
 			putPathParameter("nodepool_id", nodepool_id);
+		}
+	}
+
+	public String getNecessity() {
+		return this.necessity;
+	}
+
+	public void setNecessity(String necessity) {
+		this.necessity = necessity;
+		if(necessity != null){
+			putQueryParameter("necessity", necessity);
 		}
 	}
 

@@ -24,6 +24,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DeleteClusterResponse extends AcsResponse {
 
+	private String task_id;
+
+	public String getTask_id() {
+		return this.task_id;
+	}
+
+	public void setTask_id(String task_id) {
+		this.task_id = task_id;
+	}
+
 	@Override
 	public DeleteClusterResponse getInstance(UnmarshallerContext context) {
 		return	DeleteClusterResponseUnmarshaller.unmarshall(this, context);

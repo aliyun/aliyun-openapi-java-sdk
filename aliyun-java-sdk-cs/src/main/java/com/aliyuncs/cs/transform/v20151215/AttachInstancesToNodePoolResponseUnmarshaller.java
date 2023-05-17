@@ -14,17 +14,17 @@
 
 package com.aliyuncs.cs.transform.v20151215;
 
-import com.aliyuncs.cs.model.v20151215.StopAlertResponse;
+import com.aliyuncs.cs.model.v20151215.AttachInstancesToNodePoolResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class StopAlertResponseUnmarshaller {
+public class AttachInstancesToNodePoolResponseUnmarshaller {
 
-	public static StopAlertResponse unmarshall(StopAlertResponse stopAlertResponse, UnmarshallerContext _ctx) {
+	public static AttachInstancesToNodePoolResponse unmarshall(AttachInstancesToNodePoolResponse attachInstancesToNodePoolResponse, UnmarshallerContext _ctx) {
 		
-		stopAlertResponse.setStatus(_ctx.booleanValue("StopAlertResponse.status"));
-		stopAlertResponse.setMsg(_ctx.stringValue("StopAlertResponse.msg"));
+		attachInstancesToNodePoolResponse.setRequest_id(_ctx.stringValue("AttachInstancesToNodePoolResponse.request_id"));
+		attachInstancesToNodePoolResponse.setTask_id(_ctx.stringValue("AttachInstancesToNodePoolResponse.task_id"));
 	 
-	 	return stopAlertResponse;
+	 	return attachInstancesToNodePoolResponse;
 	}
 }

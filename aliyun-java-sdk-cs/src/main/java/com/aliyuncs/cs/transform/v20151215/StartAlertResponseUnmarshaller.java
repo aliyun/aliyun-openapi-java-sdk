@@ -22,6 +22,8 @@ public class StartAlertResponseUnmarshaller {
 
 	public static StartAlertResponse unmarshall(StartAlertResponse startAlertResponse, UnmarshallerContext _ctx) {
 		
+		startAlertResponse.setStatus(_ctx.booleanValue("StartAlertResponse.status"));
+		startAlertResponse.setMsg(_ctx.stringValue("StartAlertResponse.msg"));
 	 
 	 	return startAlertResponse;
 	}

@@ -27,7 +27,7 @@ public class DescribeClusterEventsRequest extends RoaAcsRequest<DescribeClusterE
 
 	private Long page_number;
 
-	private Long task_id;
+	private String task_id;
 
 	private String clusterId;
 
@@ -53,14 +53,14 @@ public class DescribeClusterEventsRequest extends RoaAcsRequest<DescribeClusterE
 		}
 	}
 
-	public Long getTask_id() {
+	public String getTask_id() {
 		return this.task_id;
 	}
 
-	public void setTask_id(Long task_id) {
+	public void setTask_id(String task_id) {
 		this.task_id = task_id;
 		if(task_id != null){
-			putQueryParameter("task_id", task_id.toString());
+			putQueryParameter("task_id", task_id);
 		}
 	}
 

@@ -22,15 +22,13 @@ import com.aliyuncs.cs.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateClusterNodePoolRequest extends RoaAcsRequest<CreateClusterNodePoolResponse> {
+public class SyncClusterNodePoolRequest extends RoaAcsRequest<SyncClusterNodePoolResponse> {
 	   
 
 	private String clusterId;
-
-	private String body;
-	public CreateClusterNodePoolRequest() {
-		super("CS", "2015-12-15", "CreateClusterNodePool");
-		setUriPattern("/clusters/[ClusterId]/nodepools");
+	public SyncClusterNodePoolRequest() {
+		super("CS", "2015-12-15", "SyncClusterNodePool");
+		setUriPattern("/clusters/[ClusterId]/sync_nodepools");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -49,20 +47,9 @@ public class CreateClusterNodePoolRequest extends RoaAcsRequest<CreateClusterNod
 		}
 	}
 
-	public String getBody() {
-		return this.body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
-		if(body != null){
-			putBodyParameter("body", body);
-		}
-	}
-
 	@Override
-	public Class<CreateClusterNodePoolResponse> getResponseClass() {
-		return CreateClusterNodePoolResponse.class;
+	public Class<SyncClusterNodePoolResponse> getResponseClass() {
+		return SyncClusterNodePoolResponse.class;
 	}
 
 }

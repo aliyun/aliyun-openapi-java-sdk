@@ -16,6 +16,7 @@ package com.aliyuncs.cs.transform.v20151215;
 
 import com.aliyuncs.cs.model.v20151215.DescribeUserQuotaResponse;
 import com.aliyuncs.cs.model.v20151215.DescribeUserQuotaResponse.Edge_improved_nodepool_quota;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -28,6 +29,7 @@ public class DescribeUserQuotaResponseUnmarshaller {
 		describeUserQuotaResponse.setCluster_nodepool_quota(_ctx.longValue("DescribeUserQuotaResponse.cluster_nodepool_quota"));
 		describeUserQuotaResponse.setCluster_quota(_ctx.longValue("DescribeUserQuotaResponse.cluster_quota"));
 		describeUserQuotaResponse.setNode_quota(_ctx.longValue("DescribeUserQuotaResponse.node_quota"));
+		describeUserQuotaResponse.setQuotas(_ctx.mapValue("DescribeUserQuotaResponse.quotas"));
 
 		Edge_improved_nodepool_quota edge_improved_nodepool_quota = new Edge_improved_nodepool_quota();
 		edge_improved_nodepool_quota.setBandwidth(_ctx.integerValue("DescribeUserQuotaResponse.edge_improved_nodepool_quota.bandwidth"));

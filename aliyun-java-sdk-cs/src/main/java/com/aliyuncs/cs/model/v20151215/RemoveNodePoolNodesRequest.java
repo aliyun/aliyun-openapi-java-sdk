@@ -27,6 +27,8 @@ public class RemoveNodePoolNodesRequest extends RoaAcsRequest<RemoveNodePoolNode
 
 	private Boolean release_node;
 
+	private String instance_ids;
+
 	private Boolean drain_node;
 
 	private String clusterId;
@@ -50,6 +52,17 @@ public class RemoveNodePoolNodesRequest extends RoaAcsRequest<RemoveNodePoolNode
 		this.release_node = release_node;
 		if(release_node != null){
 			putQueryParameter("release_node", release_node.toString());
+		}
+	}
+
+	public String getInstance_ids() {
+		return this.instance_ids;
+	}
+
+	public void setInstance_ids(String instance_ids) {
+		this.instance_ids = instance_ids;
+		if(instance_ids != null){
+			putQueryParameter("instance_ids", instance_ids);
 		}
 	}
 

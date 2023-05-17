@@ -15,6 +15,7 @@
 package com.aliyuncs.cs.model.v20151215;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.cs.transform.v20151215.DescribeClusterDetailResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -78,6 +79,8 @@ public class DescribeClusterDetailResponse extends AcsResponse {
 	private String cluster_spec;
 
 	private String worker_ram_role_name;
+
+	private Map<Object,Object> parameters;
 
 	private List<TagsItem> tags;
 
@@ -297,6 +300,14 @@ public class DescribeClusterDetailResponse extends AcsResponse {
 
 	public void setWorker_ram_role_name(String worker_ram_role_name) {
 		this.worker_ram_role_name = worker_ram_role_name;
+	}
+
+	public Map<Object,Object> getParameters() {
+		return this.parameters;
+	}
+
+	public void setParameters(Map<Object,Object> parameters) {
+		this.parameters = parameters;
 	}
 
 	public List<TagsItem> getTags() {

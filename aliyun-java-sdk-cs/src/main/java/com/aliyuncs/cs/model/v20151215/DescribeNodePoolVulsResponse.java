@@ -49,6 +49,8 @@ public class DescribeNodePoolVulsResponse extends AcsResponse {
 
 		private String instance_id;
 
+		private String node_name;
+
 		private List<Vul_listItem> vul_list;
 
 		public String getInstance_id() {
@@ -57,6 +59,14 @@ public class DescribeNodePoolVulsResponse extends AcsResponse {
 
 		public void setInstance_id(String instance_id) {
 			this.instance_id = instance_id;
+		}
+
+		public String getNode_name() {
+			return this.node_name;
+		}
+
+		public void setNode_name(String node_name) {
+			this.node_name = node_name;
 		}
 
 		public List<Vul_listItem> getVul_list() {

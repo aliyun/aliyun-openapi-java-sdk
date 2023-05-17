@@ -22,6 +22,7 @@ public class DeleteClusterResponseUnmarshaller {
 
 	public static DeleteClusterResponse unmarshall(DeleteClusterResponse deleteClusterResponse, UnmarshallerContext _ctx) {
 		
+		deleteClusterResponse.setTask_id(_ctx.stringValue("DeleteClusterResponse.task_id"));
 	 
 	 	return deleteClusterResponse;
 	}

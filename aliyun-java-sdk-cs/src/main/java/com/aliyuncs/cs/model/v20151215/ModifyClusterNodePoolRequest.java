@@ -27,6 +27,8 @@ public class ModifyClusterNodePoolRequest extends RoaAcsRequest<ModifyClusterNod
 
 	private String clusterId;
 
+	private String body;
+
 	private String nodepoolId;
 	public ModifyClusterNodePoolRequest() {
 		super("CS", "2015-12-15", "ModifyClusterNodePool");
@@ -46,6 +48,17 @@ public class ModifyClusterNodePoolRequest extends RoaAcsRequest<ModifyClusterNod
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putPathParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("body", body);
 		}
 	}
 

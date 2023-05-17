@@ -15,38 +15,28 @@
 package com.aliyuncs.cs.model.v20151215;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cs.transform.v20151215.StopAlertResponseUnmarshaller;
+import com.aliyuncs.cs.transform.v20151215.SyncClusterNodePoolResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class StopAlertResponse extends AcsResponse {
+public class SyncClusterNodePoolResponse extends AcsResponse {
 
-	private Boolean status;
+	private String requestId;
 
-	private String msg;
-
-	public Boolean getStatus() {
-		return this.status;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setStatus(Boolean status) {
-		this.status = status;
-	}
-
-	public String getMsg() {
-		return this.msg;
-	}
-
-	public void setMsg(String msg) {
-		this.msg = msg;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override
-	public StopAlertResponse getInstance(UnmarshallerContext context) {
-		return	StopAlertResponseUnmarshaller.unmarshall(this, context);
+	public SyncClusterNodePoolResponse getInstance(UnmarshallerContext context) {
+		return	SyncClusterNodePoolResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

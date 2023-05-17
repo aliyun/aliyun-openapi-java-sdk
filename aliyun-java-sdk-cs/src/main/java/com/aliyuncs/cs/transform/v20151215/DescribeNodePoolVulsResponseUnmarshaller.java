@@ -33,6 +33,7 @@ public class DescribeNodePoolVulsResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeNodePoolVulsResponse.vul_records.Length"); i++) {
 			Vul_recordsItem vul_recordsItem = new Vul_recordsItem();
 			vul_recordsItem.setInstance_id(_ctx.stringValue("DescribeNodePoolVulsResponse.vul_records["+ i +"].instance_id"));
+			vul_recordsItem.setNode_name(_ctx.stringValue("DescribeNodePoolVulsResponse.vul_records["+ i +"].node_name"));
 
 			List<Vul_listItem> vul_list = new ArrayList<Vul_listItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeNodePoolVulsResponse.vul_records["+ i +"].vul_list.Length"); j++) {

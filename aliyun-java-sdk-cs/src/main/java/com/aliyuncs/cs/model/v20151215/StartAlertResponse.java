@@ -24,6 +24,26 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class StartAlertResponse extends AcsResponse {
 
+	private Boolean status;
+
+	private String msg;
+
+	public Boolean getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(Boolean status) {
+		this.status = status;
+	}
+
+	public String getMsg() {
+		return this.msg;
+	}
+
+	public void setMsg(String msg) {
+		this.msg = msg;
+	}
+
 	@Override
 	public StartAlertResponse getInstance(UnmarshallerContext context) {
 		return	StartAlertResponseUnmarshaller.unmarshall(this, context);

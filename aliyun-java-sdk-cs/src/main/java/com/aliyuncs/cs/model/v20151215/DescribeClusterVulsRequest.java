@@ -22,47 +22,34 @@ import com.aliyuncs.cs.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateClusterNodePoolRequest extends RoaAcsRequest<CreateClusterNodePoolResponse> {
+public class DescribeClusterVulsRequest extends RoaAcsRequest<DescribeClusterVulsResponse> {
 	   
 
-	private String clusterId;
-
-	private String body;
-	public CreateClusterNodePoolRequest() {
-		super("CS", "2015-12-15", "CreateClusterNodePool");
-		setUriPattern("/clusters/[ClusterId]/nodepools");
-		setMethod(MethodType.POST);
+	private String cluster_id;
+	public DescribeClusterVulsRequest() {
+		super("CS", "2015-12-15", "DescribeClusterVuls");
+		setUriPattern("/clusters/[cluster_id]/vuls");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getClusterId() {
-		return this.clusterId;
+	public String getCluster_id() {
+		return this.cluster_id;
 	}
 
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putPathParameter("ClusterId", clusterId);
-		}
-	}
-
-	public String getBody() {
-		return this.body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
-		if(body != null){
-			putBodyParameter("body", body);
+	public void setCluster_id(String cluster_id) {
+		this.cluster_id = cluster_id;
+		if(cluster_id != null){
+			putPathParameter("cluster_id", cluster_id);
 		}
 	}
 
 	@Override
-	public Class<CreateClusterNodePoolResponse> getResponseClass() {
-		return CreateClusterNodePoolResponse.class;
+	public Class<DescribeClusterVulsResponse> getResponseClass() {
+		return DescribeClusterVulsResponse.class;
 	}
 
 }
