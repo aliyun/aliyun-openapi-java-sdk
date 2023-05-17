@@ -25,6 +25,12 @@ import com.aliyuncs.eas.Endpoint;
 public class DescribeServiceLogRequest extends RoaAcsRequest<DescribeServiceLogResponse> {
 	   
 
+	private String instanceName;
+
+	private String containerName;
+
+	private Boolean previous;
+
 	private String ip;
 
 	private Long pageSize;
@@ -48,6 +54,39 @@ public class DescribeServiceLogRequest extends RoaAcsRequest<DescribeServiceLogR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getInstanceName() {
+		return this.instanceName;
+	}
+
+	public void setInstanceName(String instanceName) {
+		this.instanceName = instanceName;
+		if(instanceName != null){
+			putQueryParameter("InstanceName", instanceName);
+		}
+	}
+
+	public String getContainerName() {
+		return this.containerName;
+	}
+
+	public void setContainerName(String containerName) {
+		this.containerName = containerName;
+		if(containerName != null){
+			putQueryParameter("ContainerName", containerName);
+		}
+	}
+
+	public Boolean getPrevious() {
+		return this.previous;
+	}
+
+	public void setPrevious(Boolean previous) {
+		this.previous = previous;
+		if(previous != null){
+			putQueryParameter("Previous", previous.toString());
+		}
 	}
 
 	public String getIp() {

@@ -110,6 +110,12 @@ public class ListServiceInstancesResponse extends AcsResponse {
 
 		private String tenantHostIP;
 
+		private Boolean isSpot;
+
+		private Float currentAmount;
+
+		private Float originalAmount;
+
 		private List<Map<Object,Object>> lastState;
 
 		public String getHostIP() {
@@ -238,6 +244,30 @@ public class ListServiceInstancesResponse extends AcsResponse {
 
 		public void setTenantHostIP(String tenantHostIP) {
 			this.tenantHostIP = tenantHostIP;
+		}
+
+		public Boolean getIsSpot() {
+			return this.isSpot;
+		}
+
+		public void setIsSpot(Boolean isSpot) {
+			this.isSpot = isSpot;
+		}
+
+		public Float getCurrentAmount() {
+			return this.currentAmount;
+		}
+
+		public void setCurrentAmount(Float currentAmount) {
+			this.currentAmount = currentAmount;
+		}
+
+		public Float getOriginalAmount() {
+			return this.originalAmount;
+		}
+
+		public void setOriginalAmount(Float originalAmount) {
+			this.originalAmount = originalAmount;
 		}
 
 		public List<Map<Object,Object>> getLastState() {

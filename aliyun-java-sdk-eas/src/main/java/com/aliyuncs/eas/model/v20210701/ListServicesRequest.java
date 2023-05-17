@@ -25,6 +25,18 @@ import com.aliyuncs.eas.Endpoint;
 public class ListServicesRequest extends RoaAcsRequest<ListServicesResponse> {
 	   
 
+	private String serviceUid;
+
+	private String sort;
+
+	private String label;
+
+	private String serviceStatus;
+
+	private String groupName;
+
+	private Integer pageNumber;
+
 	private String filter;
 
 	private String serviceType;
@@ -33,13 +45,9 @@ public class ListServicesRequest extends RoaAcsRequest<ListServicesResponse> {
 
 	private Integer pageSize;
 
-	private String sort;
+	private String serviceName;
 
-	private String label;
-
-	private String groupName;
-
-	private Integer pageNumber;
+	private String resourceName;
 
 	private String order;
 	public ListServicesRequest() {
@@ -50,6 +58,72 @@ public class ListServicesRequest extends RoaAcsRequest<ListServicesResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getServiceUid() {
+		return this.serviceUid;
+	}
+
+	public void setServiceUid(String serviceUid) {
+		this.serviceUid = serviceUid;
+		if(serviceUid != null){
+			putQueryParameter("ServiceUid", serviceUid);
+		}
+	}
+
+	public String getSort() {
+		return this.sort;
+	}
+
+	public void setSort(String sort) {
+		this.sort = sort;
+		if(sort != null){
+			putQueryParameter("Sort", sort);
+		}
+	}
+
+	public String getLabel() {
+		return this.label;
+	}
+
+	public void setLabel(String label) {
+		this.label = label;
+		if(label != null){
+			putQueryParameter("Label", label);
+		}
+	}
+
+	public String getServiceStatus() {
+		return this.serviceStatus;
+	}
+
+	public void setServiceStatus(String serviceStatus) {
+		this.serviceStatus = serviceStatus;
+		if(serviceStatus != null){
+			putQueryParameter("ServiceStatus", serviceStatus);
+		}
+	}
+
+	public String getGroupName() {
+		return this.groupName;
+	}
+
+	public void setGroupName(String groupName) {
+		this.groupName = groupName;
+		if(groupName != null){
+			putQueryParameter("GroupName", groupName);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
 	}
 
 	public String getFilter() {
@@ -96,47 +170,25 @@ public class ListServicesRequest extends RoaAcsRequest<ListServicesResponse> {
 		}
 	}
 
-	public String getSort() {
-		return this.sort;
+	public String getServiceName() {
+		return this.serviceName;
 	}
 
-	public void setSort(String sort) {
-		this.sort = sort;
-		if(sort != null){
-			putQueryParameter("Sort", sort);
+	public void setServiceName(String serviceName) {
+		this.serviceName = serviceName;
+		if(serviceName != null){
+			putQueryParameter("ServiceName", serviceName);
 		}
 	}
 
-	public String getLabel() {
-		return this.label;
+	public String getResourceName() {
+		return this.resourceName;
 	}
 
-	public void setLabel(String label) {
-		this.label = label;
-		if(label != null){
-			putQueryParameter("Label", label);
-		}
-	}
-
-	public String getGroupName() {
-		return this.groupName;
-	}
-
-	public void setGroupName(String groupName) {
-		this.groupName = groupName;
-		if(groupName != null){
-			putQueryParameter("GroupName", groupName);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setResourceName(String resourceName) {
+		this.resourceName = resourceName;
+		if(resourceName != null){
+			putQueryParameter("ResourceName", resourceName);
 		}
 	}
 

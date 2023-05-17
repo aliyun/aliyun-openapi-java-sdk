@@ -14,6 +14,7 @@
 
 package com.aliyuncs.eas.model.v20210701;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.eas.transform.v20210701.CreateResourceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -33,6 +34,8 @@ public class CreateResourceResponse extends AcsResponse {
 	private String clusterId;
 
 	private String ownerUid;
+
+	private List<String> instanceIds;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -72,6 +75,14 @@ public class CreateResourceResponse extends AcsResponse {
 
 	public void setOwnerUid(String ownerUid) {
 		this.ownerUid = ownerUid;
+	}
+
+	public List<String> getInstanceIds() {
+		return this.instanceIds;
+	}
+
+	public void setInstanceIds(List<String> instanceIds) {
+		this.instanceIds = instanceIds;
 	}
 
 	@Override

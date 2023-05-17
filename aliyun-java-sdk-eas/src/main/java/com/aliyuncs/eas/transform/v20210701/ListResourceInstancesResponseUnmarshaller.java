@@ -41,6 +41,7 @@ public class ListResourceInstancesResponseUnmarshaller {
 			instancesItem.setInstanceCpuCount(_ctx.integerValue("ListResourceInstancesResponse.Instances["+ i +"].InstanceCpuCount"));
 			instancesItem.setInstanceGpuCount(_ctx.integerValue("ListResourceInstancesResponse.Instances["+ i +"].InstanceGpuCount"));
 			instancesItem.setInstanceMemory(_ctx.stringValue("ListResourceInstancesResponse.Instances["+ i +"].InstanceMemory"));
+			instancesItem.setInstanceSystemDiskSize(_ctx.integerValue("ListResourceInstancesResponse.Instances["+ i +"].InstanceSystemDiskSize"));
 			instancesItem.setInstanceGpuMemory(_ctx.stringValue("ListResourceInstancesResponse.Instances["+ i +"].InstanceGpuMemory"));
 			instancesItem.setInstanceUsedCpu(_ctx.floatValue("ListResourceInstancesResponse.Instances["+ i +"].InstanceUsedCpu"));
 			instancesItem.setInstanceUsedGpu(_ctx.floatValue("ListResourceInstancesResponse.Instances["+ i +"].InstanceUsedGpu"));
@@ -53,6 +54,7 @@ public class ListResourceInstancesResponseUnmarshaller {
 			instancesItem.setArch(_ctx.stringValue("ListResourceInstancesResponse.Instances["+ i +"].Arch"));
 			instancesItem.setRegion(_ctx.stringValue("ListResourceInstancesResponse.Instances["+ i +"].Region"));
 			instancesItem.setZone(_ctx.stringValue("ListResourceInstancesResponse.Instances["+ i +"].Zone"));
+			instancesItem.setResourceId(_ctx.stringValue("ListResourceInstancesResponse.Instances["+ i +"].ResourceId"));
 			instancesItem.setInstanceTenantIp(_ctx.stringValue("ListResourceInstancesResponse.Instances["+ i +"].InstanceTenantIp"));
 			instancesItem.setInstanceUsedGpuMemory(_ctx.stringValue("ListResourceInstancesResponse.Instances["+ i +"].InstanceUsedGpuMemory"));
 

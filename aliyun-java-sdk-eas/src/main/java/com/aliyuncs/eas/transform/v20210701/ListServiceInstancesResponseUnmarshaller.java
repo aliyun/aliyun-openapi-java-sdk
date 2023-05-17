@@ -51,6 +51,9 @@ public class ListServiceInstancesResponseUnmarshaller {
 			instancesItem.setResourceType(_ctx.stringValue("ListServiceInstancesResponse.Instances["+ i +"].ResourceType"));
 			instancesItem.setTenantInstanceIP(_ctx.stringValue("ListServiceInstancesResponse.Instances["+ i +"].TenantInstanceIP"));
 			instancesItem.setTenantHostIP(_ctx.stringValue("ListServiceInstancesResponse.Instances["+ i +"].TenantHostIP"));
+			instancesItem.setIsSpot(_ctx.booleanValue("ListServiceInstancesResponse.Instances["+ i +"].IsSpot"));
+			instancesItem.setCurrentAmount(_ctx.floatValue("ListServiceInstancesResponse.Instances["+ i +"].CurrentAmount"));
+			instancesItem.setOriginalAmount(_ctx.floatValue("ListServiceInstancesResponse.Instances["+ i +"].OriginalAmount"));
 
 			List<Map<Object, Object>> lastState = _ctx.listMapValue("ListServiceInstancesResponse.Instances["+ i +"].LastState");
 			instancesItem.setLastState(lastState);

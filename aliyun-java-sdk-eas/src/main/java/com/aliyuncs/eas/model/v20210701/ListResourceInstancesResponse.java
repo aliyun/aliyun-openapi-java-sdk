@@ -91,6 +91,8 @@ public class ListResourceInstancesResponse extends AcsResponse {
 
 		private String instanceMemory;
 
+		private Integer instanceSystemDiskSize;
+
 		private String instanceGpuMemory;
 
 		private Float instanceUsedCpu;
@@ -114,6 +116,8 @@ public class ListResourceInstancesResponse extends AcsResponse {
 		private String region;
 
 		private String zone;
+
+		private String resourceId;
 
 		private String instanceTenantIp;
 
@@ -173,6 +177,14 @@ public class ListResourceInstancesResponse extends AcsResponse {
 
 		public void setInstanceMemory(String instanceMemory) {
 			this.instanceMemory = instanceMemory;
+		}
+
+		public Integer getInstanceSystemDiskSize() {
+			return this.instanceSystemDiskSize;
+		}
+
+		public void setInstanceSystemDiskSize(Integer instanceSystemDiskSize) {
+			this.instanceSystemDiskSize = instanceSystemDiskSize;
 		}
 
 		public String getInstanceGpuMemory() {
@@ -269,6 +281,14 @@ public class ListResourceInstancesResponse extends AcsResponse {
 
 		public void setZone(String zone) {
 			this.zone = zone;
+		}
+
+		public String getResourceId() {
+			return this.resourceId;
+		}
+
+		public void setResourceId(String resourceId) {
+			this.resourceId = resourceId;
 		}
 
 		public String getInstanceTenantIp() {

@@ -27,17 +27,27 @@ public class ListResourceInstancesRequest extends RoaAcsRequest<ListResourceInst
 
 	private String resourceId;
 
+	private String instanceStatus;
+
+	private String clusterId;
+
+	private String sort;
+
+	private Integer pageNumber;
+
+	private String filter;
+
 	private String instanceName;
 
 	private String instanceId;
 
 	private Integer pageSize;
 
-	private String clusterId;
-
 	private String chargeType;
 
-	private Integer pageNumber;
+	private String instanceIP;
+
+	private String order;
 	public ListResourceInstancesRequest() {
 		super("eas", "2021-07-01", "ListResourceInstances", "eas");
 		setUriPattern("/api/v2/resources/[ClusterId]/[ResourceId]/instances");
@@ -56,6 +66,61 @@ public class ListResourceInstancesRequest extends RoaAcsRequest<ListResourceInst
 		this.resourceId = resourceId;
 		if(resourceId != null){
 			putPathParameter("ResourceId", resourceId);
+		}
+	}
+
+	public String getInstanceStatus() {
+		return this.instanceStatus;
+	}
+
+	public void setInstanceStatus(String instanceStatus) {
+		this.instanceStatus = instanceStatus;
+		if(instanceStatus != null){
+			putQueryParameter("InstanceStatus", instanceStatus);
+		}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putPathParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getSort() {
+		return this.sort;
+	}
+
+	public void setSort(String sort) {
+		this.sort = sort;
+		if(sort != null){
+			putQueryParameter("Sort", sort);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getFilter() {
+		return this.filter;
+	}
+
+	public void setFilter(String filter) {
+		this.filter = filter;
+		if(filter != null){
+			putQueryParameter("Filter", filter);
 		}
 	}
 
@@ -92,17 +157,6 @@ public class ListResourceInstancesRequest extends RoaAcsRequest<ListResourceInst
 		}
 	}
 
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putPathParameter("ClusterId", clusterId);
-		}
-	}
-
 	public String getChargeType() {
 		return this.chargeType;
 	}
@@ -114,14 +168,25 @@ public class ListResourceInstancesRequest extends RoaAcsRequest<ListResourceInst
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getInstanceIP() {
+		return this.instanceIP;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setInstanceIP(String instanceIP) {
+		this.instanceIP = instanceIP;
+		if(instanceIP != null){
+			putQueryParameter("InstanceIP", instanceIP);
+		}
+	}
+
+	public String getOrder() {
+		return this.order;
+	}
+
+	public void setOrder(String order) {
+		this.order = order;
+		if(order != null){
+			putQueryParameter("Order", order);
 		}
 	}
 

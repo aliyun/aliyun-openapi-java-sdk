@@ -14,6 +14,7 @@
 
 package com.aliyuncs.eas.model.v20210701;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.eas.transform.v20210701.CreateResourceInstancesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -27,6 +28,8 @@ public class CreateResourceInstancesResponse extends AcsResponse {
 	private String requestId;
 
 	private String message;
+
+	private List<String> instanceIds;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,6 +45,14 @@ public class CreateResourceInstancesResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public List<String> getInstanceIds() {
+		return this.instanceIds;
+	}
+
+	public void setInstanceIds(List<String> instanceIds) {
+		this.instanceIds = instanceIds;
 	}
 
 	@Override

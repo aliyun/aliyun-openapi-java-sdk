@@ -25,11 +25,15 @@ import com.aliyuncs.eas.Endpoint;
 public class DescribeServiceEventRequest extends RoaAcsRequest<DescribeServiceEventResponse> {
 	   
 
+	private String instanceName;
+
 	private String pageSize;
 
 	private String endTime;
 
 	private String serviceName;
+
+	private String eventType;
 
 	private String clusterId;
 
@@ -44,6 +48,17 @@ public class DescribeServiceEventRequest extends RoaAcsRequest<DescribeServiceEv
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getInstanceName() {
+		return this.instanceName;
+	}
+
+	public void setInstanceName(String instanceName) {
+		this.instanceName = instanceName;
+		if(instanceName != null){
+			putQueryParameter("InstanceName", instanceName);
+		}
 	}
 
 	public String getPageSize() {
@@ -76,6 +91,17 @@ public class DescribeServiceEventRequest extends RoaAcsRequest<DescribeServiceEv
 		this.serviceName = serviceName;
 		if(serviceName != null){
 			putPathParameter("ServiceName", serviceName);
+		}
+	}
+
+	public String getEventType() {
+		return this.eventType;
+	}
+
+	public void setEventType(String eventType) {
+		this.eventType = eventType;
+		if(eventType != null){
+			putQueryParameter("EventType", eventType);
 		}
 	}
 
