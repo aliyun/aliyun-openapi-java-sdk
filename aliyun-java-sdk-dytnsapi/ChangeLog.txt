@@ -1,3 +1,6 @@
+2023-05-17 Version: 1.1.7
+- Account Halt Check by Default.
+
 2023-05-10 Version: 1.1.6
 - Supported insufficient balance check.
 - Other improvements.

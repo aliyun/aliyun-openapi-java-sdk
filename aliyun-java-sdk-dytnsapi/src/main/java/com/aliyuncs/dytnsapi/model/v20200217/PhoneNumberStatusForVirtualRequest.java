@@ -27,8 +27,6 @@ public class PhoneNumberStatusForVirtualRequest extends RpcAcsRequest<PhoneNumbe
 
 	private Long resourceOwnerId;
 
-	private String extendFunction;
-
 	private String mask;
 
 	private String resourceOwnerAccount;
@@ -55,17 +53,6 @@ public class PhoneNumberStatusForVirtualRequest extends RpcAcsRequest<PhoneNumbe
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getExtendFunction() {
-		return this.extendFunction;
-	}
-
-	public void setExtendFunction(String extendFunction) {
-		this.extendFunction = extendFunction;
-		if(extendFunction != null){
-			putQueryParameter("ExtendFunction", extendFunction);
 		}
 	}
 
