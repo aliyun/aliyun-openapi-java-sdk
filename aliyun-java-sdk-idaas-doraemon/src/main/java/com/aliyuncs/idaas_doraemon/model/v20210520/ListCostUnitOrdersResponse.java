@@ -93,6 +93,8 @@ public class ListCostUnitOrdersResponse extends AcsResponse {
 
 		private Long refundTime;
 
+		private Boolean exhausted;
+
 		public String getAliOrderCode() {
 			return this.aliOrderCode;
 		}
@@ -155,6 +157,14 @@ public class ListCostUnitOrdersResponse extends AcsResponse {
 
 		public void setRefundTime(Long refundTime) {
 			this.refundTime = refundTime;
+		}
+
+		public Boolean getExhausted() {
+			return this.exhausted;
+		}
+
+		public void setExhausted(Boolean exhausted) {
+			this.exhausted = exhausted;
 		}
 	}
 

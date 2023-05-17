@@ -75,6 +75,8 @@ public class QuerySmsReportsResponse extends AcsResponse {
 
 		private String time;
 
+		private Integer chargedCount;
+
 		public String getTid() {
 			return this.tid;
 		}
@@ -145,6 +147,14 @@ public class QuerySmsReportsResponse extends AcsResponse {
 
 		public void setTime(String time) {
 			this.time = time;
+		}
+
+		public Integer getChargedCount() {
+			return this.chargedCount;
+		}
+
+		public void setChargedCount(Integer chargedCount) {
+			this.chargedCount = chargedCount;
 		}
 	}
 

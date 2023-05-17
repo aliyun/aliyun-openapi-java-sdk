@@ -41,6 +41,7 @@ public class QuerySmsReportsResponseUnmarshaller {
 			smsReportsItem.setAppId(_ctx.stringValue("QuerySmsReportsResponse.SmsReports["+ i +"].AppId"));
 			smsReportsItem.setEventId(_ctx.stringValue("QuerySmsReportsResponse.SmsReports["+ i +"].EventId"));
 			smsReportsItem.setTime(_ctx.stringValue("QuerySmsReportsResponse.SmsReports["+ i +"].Time"));
+			smsReportsItem.setChargedCount(_ctx.integerValue("QuerySmsReportsResponse.SmsReports["+ i +"].ChargedCount"));
 
 			smsReports.add(smsReportsItem);
 		}

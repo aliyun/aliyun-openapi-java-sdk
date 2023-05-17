@@ -42,6 +42,7 @@ public class ListCostUnitOrdersResponseUnmarshaller {
 			item.setCreateTime(_ctx.longValue("ListCostUnitOrdersResponse.Items["+ i +"].CreateTime"));
 			item.setExpiredTime(_ctx.longValue("ListCostUnitOrdersResponse.Items["+ i +"].ExpiredTime"));
 			item.setRefundTime(_ctx.longValue("ListCostUnitOrdersResponse.Items["+ i +"].RefundTime"));
+			item.setExhausted(_ctx.booleanValue("ListCostUnitOrdersResponse.Items["+ i +"].Exhausted"));
 
 			items.add(item);
 		}
