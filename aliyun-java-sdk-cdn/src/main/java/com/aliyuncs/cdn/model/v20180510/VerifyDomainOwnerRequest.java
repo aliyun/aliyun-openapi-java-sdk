@@ -25,6 +25,8 @@ import com.aliyuncs.cdn.Endpoint;
 public class VerifyDomainOwnerRequest extends RpcAcsRequest<VerifyDomainOwnerResponse> {
 	   
 
+	private String globalResourcePlan;
+
 	private String domainName;
 
 	private String verifyType;
@@ -35,6 +37,17 @@ public class VerifyDomainOwnerRequest extends RpcAcsRequest<VerifyDomainOwnerRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getGlobalResourcePlan() {
+		return this.globalResourcePlan;
+	}
+
+	public void setGlobalResourcePlan(String globalResourcePlan) {
+		this.globalResourcePlan = globalResourcePlan;
+		if(globalResourcePlan != null){
+			putQueryParameter("GlobalResourcePlan", globalResourcePlan);
+		}
 	}
 
 	public String getDomainName() {
