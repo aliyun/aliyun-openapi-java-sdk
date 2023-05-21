@@ -67,6 +67,12 @@ public class DescribeVpnGatewayResponse extends AcsResponse {
 
 	private String networkType;
 
+	private String disasterRecoveryInternetIp;
+
+	private String disasterRecoveryVSwitchId;
+
+	private String sslVpnInternetIp;
+
 	private List<Tag> tags;
 
 	private ReservationData reservationData;
@@ -237,6 +243,30 @@ public class DescribeVpnGatewayResponse extends AcsResponse {
 
 	public void setNetworkType(String networkType) {
 		this.networkType = networkType;
+	}
+
+	public String getDisasterRecoveryInternetIp() {
+		return this.disasterRecoveryInternetIp;
+	}
+
+	public void setDisasterRecoveryInternetIp(String disasterRecoveryInternetIp) {
+		this.disasterRecoveryInternetIp = disasterRecoveryInternetIp;
+	}
+
+	public String getDisasterRecoveryVSwitchId() {
+		return this.disasterRecoveryVSwitchId;
+	}
+
+	public void setDisasterRecoveryVSwitchId(String disasterRecoveryVSwitchId) {
+		this.disasterRecoveryVSwitchId = disasterRecoveryVSwitchId;
+	}
+
+	public String getSslVpnInternetIp() {
+		return this.sslVpnInternetIp;
+	}
+
+	public void setSslVpnInternetIp(String sslVpnInternetIp) {
+		this.sslVpnInternetIp = sslVpnInternetIp;
 	}
 
 	public List<Tag> getTags() {

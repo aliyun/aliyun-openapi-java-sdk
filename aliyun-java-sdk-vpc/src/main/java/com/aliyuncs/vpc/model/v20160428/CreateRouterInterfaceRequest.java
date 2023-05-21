@@ -65,6 +65,8 @@ public class CreateRouterInterfaceRequest extends RpcAcsRequest<CreateRouterInte
 
 	private String routerType;
 
+	private Boolean autoRenew;
+
 	private String healthCheckSourceIp;
 
 	private String routerId;
@@ -300,6 +302,17 @@ public class CreateRouterInterfaceRequest extends RpcAcsRequest<CreateRouterInte
 		this.routerType = routerType;
 		if(routerType != null){
 			putQueryParameter("RouterType", routerType);
+		}
+	}
+
+	public Boolean getAutoRenew() {
+		return this.autoRenew;
+	}
+
+	public void setAutoRenew(Boolean autoRenew) {
+		this.autoRenew = autoRenew;
+		if(autoRenew != null){
+			putQueryParameter("AutoRenew", autoRenew.toString());
 		}
 	}
 

@@ -69,6 +69,8 @@ public class DescribeVpcAttributeResponse extends AcsResponse {
 
 	private List<Ipv6CidrBlock> ipv6CidrBlocks;
 
+	private List<Tag> tags;
+
 	private List<String> vSwitchIds;
 
 	private List<String> userCidrs;
@@ -251,6 +253,14 @@ public class DescribeVpcAttributeResponse extends AcsResponse {
 		this.ipv6CidrBlocks = ipv6CidrBlocks;
 	}
 
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;
+	}
+
 	public List<String> getVSwitchIds() {
 		return this.vSwitchIds;
 	}
@@ -351,6 +361,29 @@ public class DescribeVpcAttributeResponse extends AcsResponse {
 
 		public void setIpv6CidrBlock(String ipv6CidrBlock) {
 			this.ipv6CidrBlock = ipv6CidrBlock;
+		}
+	}
+
+	public static class Tag {
+
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
 		}
 	}
 

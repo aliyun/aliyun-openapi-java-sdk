@@ -121,6 +121,8 @@ public class DescribeCommonBandwidthPackagesResponse extends AcsResponse {
 
 		private List<PublicIpAddresse> publicIpAddresses;
 
+		private List<Tag> tags;
+
 		private List<String> securityProtectionTypes;
 
 		public String getReservationActiveTime() {
@@ -299,6 +301,14 @@ public class DescribeCommonBandwidthPackagesResponse extends AcsResponse {
 			this.publicIpAddresses = publicIpAddresses;
 		}
 
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
 		public List<String> getSecurityProtectionTypes() {
 			return this.securityProtectionTypes;
 		}
@@ -337,6 +347,29 @@ public class DescribeCommonBandwidthPackagesResponse extends AcsResponse {
 
 			public void setBandwidthPackageIpRelationStatus(String bandwidthPackageIpRelationStatus) {
 				this.bandwidthPackageIpRelationStatus = bandwidthPackageIpRelationStatus;
+			}
+		}
+
+		public static class Tag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
 			}
 		}
 	}

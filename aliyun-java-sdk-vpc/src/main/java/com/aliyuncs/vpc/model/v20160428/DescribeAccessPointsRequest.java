@@ -34,6 +34,8 @@ public class DescribeAccessPointsRequest extends RpcAcsRequest<DescribeAccessPoi
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
+
+	private String acceptLanguage;
 	public DescribeAccessPointsRequest() {
 		super("Vpc", "2016-04-28", "DescribeAccessPoints", "vpc");
 		setMethod(MethodType.POST);
@@ -95,6 +97,17 @@ public class DescribeAccessPointsRequest extends RpcAcsRequest<DescribeAccessPoi
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

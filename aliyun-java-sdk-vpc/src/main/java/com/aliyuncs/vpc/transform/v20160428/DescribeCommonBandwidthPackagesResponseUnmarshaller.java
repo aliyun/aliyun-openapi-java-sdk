@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.vpc.model.v20160428.DescribeCommonBandwidthPackagesResponse;
 import com.aliyuncs.vpc.model.v20160428.DescribeCommonBandwidthPackagesResponse.CommonBandwidthPackage;
 import com.aliyuncs.vpc.model.v20160428.DescribeCommonBandwidthPackagesResponse.CommonBandwidthPackage.PublicIpAddresse;
+import com.aliyuncs.vpc.model.v20160428.DescribeCommonBandwidthPackagesResponse.CommonBandwidthPackage.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -73,6 +74,16 @@ public class DescribeCommonBandwidthPackagesResponseUnmarshaller {
 				publicIpAddresses.add(publicIpAddresse);
 			}
 			commonBandwidthPackage.setPublicIpAddresses(publicIpAddresses);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeCommonBandwidthPackagesResponse.CommonBandwidthPackages["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("DescribeCommonBandwidthPackagesResponse.CommonBandwidthPackages["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("DescribeCommonBandwidthPackagesResponse.CommonBandwidthPackages["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			commonBandwidthPackage.setTags(tags);
 
 			commonBandwidthPackages.add(commonBandwidthPackage);
 		}

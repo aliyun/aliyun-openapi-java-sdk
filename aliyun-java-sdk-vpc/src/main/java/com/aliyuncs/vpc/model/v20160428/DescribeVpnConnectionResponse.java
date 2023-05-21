@@ -71,7 +71,15 @@ public class DescribeVpnConnectionResponse extends AcsResponse {
 
 	private Boolean crossAccountAuthorized;
 
+	private String disasterRecoveryZoneNo;
+
+	private String disasterRecoveryInternetIp;
+
+	private Boolean enableTunnelsBgp;
+
 	private List<Tag> tags;
+
+	private List<TunnelOptions> tunnelOptionsSpecification;
 
 	private IkeConfig ikeConfig;
 
@@ -265,12 +273,44 @@ public class DescribeVpnConnectionResponse extends AcsResponse {
 		this.crossAccountAuthorized = crossAccountAuthorized;
 	}
 
+	public String getDisasterRecoveryZoneNo() {
+		return this.disasterRecoveryZoneNo;
+	}
+
+	public void setDisasterRecoveryZoneNo(String disasterRecoveryZoneNo) {
+		this.disasterRecoveryZoneNo = disasterRecoveryZoneNo;
+	}
+
+	public String getDisasterRecoveryInternetIp() {
+		return this.disasterRecoveryInternetIp;
+	}
+
+	public void setDisasterRecoveryInternetIp(String disasterRecoveryInternetIp) {
+		this.disasterRecoveryInternetIp = disasterRecoveryInternetIp;
+	}
+
+	public Boolean getEnableTunnelsBgp() {
+		return this.enableTunnelsBgp;
+	}
+
+	public void setEnableTunnelsBgp(Boolean enableTunnelsBgp) {
+		this.enableTunnelsBgp = enableTunnelsBgp;
+	}
+
 	public List<Tag> getTags() {
 		return this.tags;
 	}
 
 	public void setTags(List<Tag> tags) {
 		this.tags = tags;
+	}
+
+	public List<TunnelOptions> getTunnelOptionsSpecification() {
+		return this.tunnelOptionsSpecification;
+	}
+
+	public void setTunnelOptionsSpecification(List<TunnelOptions> tunnelOptionsSpecification) {
+		this.tunnelOptionsSpecification = tunnelOptionsSpecification;
 	}
 
 	public IkeConfig getIkeConfig() {
@@ -325,6 +365,348 @@ public class DescribeVpnConnectionResponse extends AcsResponse {
 
 		public void setValue(String value) {
 			this.value = value;
+		}
+	}
+
+	public static class TunnelOptions {
+
+		private String customerGatewayId;
+
+		private String enableDpd;
+
+		private String enableNatTraversal;
+
+		private String internetIp;
+
+		private String remoteCaCertificate;
+
+		private String role;
+
+		private String state;
+
+		private String status;
+
+		private String tunnelId;
+
+		private String zoneNo;
+
+		private TunnelBgpConfig tunnelBgpConfig;
+
+		private TunnelIkeConfig tunnelIkeConfig;
+
+		private TunnelIpsecConfig tunnelIpsecConfig;
+
+		public String getCustomerGatewayId() {
+			return this.customerGatewayId;
+		}
+
+		public void setCustomerGatewayId(String customerGatewayId) {
+			this.customerGatewayId = customerGatewayId;
+		}
+
+		public String getEnableDpd() {
+			return this.enableDpd;
+		}
+
+		public void setEnableDpd(String enableDpd) {
+			this.enableDpd = enableDpd;
+		}
+
+		public String getEnableNatTraversal() {
+			return this.enableNatTraversal;
+		}
+
+		public void setEnableNatTraversal(String enableNatTraversal) {
+			this.enableNatTraversal = enableNatTraversal;
+		}
+
+		public String getInternetIp() {
+			return this.internetIp;
+		}
+
+		public void setInternetIp(String internetIp) {
+			this.internetIp = internetIp;
+		}
+
+		public String getRemoteCaCertificate() {
+			return this.remoteCaCertificate;
+		}
+
+		public void setRemoteCaCertificate(String remoteCaCertificate) {
+			this.remoteCaCertificate = remoteCaCertificate;
+		}
+
+		public String getRole() {
+			return this.role;
+		}
+
+		public void setRole(String role) {
+			this.role = role;
+		}
+
+		public String getState() {
+			return this.state;
+		}
+
+		public void setState(String state) {
+			this.state = state;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getTunnelId() {
+			return this.tunnelId;
+		}
+
+		public void setTunnelId(String tunnelId) {
+			this.tunnelId = tunnelId;
+		}
+
+		public String getZoneNo() {
+			return this.zoneNo;
+		}
+
+		public void setZoneNo(String zoneNo) {
+			this.zoneNo = zoneNo;
+		}
+
+		public TunnelBgpConfig getTunnelBgpConfig() {
+			return this.tunnelBgpConfig;
+		}
+
+		public void setTunnelBgpConfig(TunnelBgpConfig tunnelBgpConfig) {
+			this.tunnelBgpConfig = tunnelBgpConfig;
+		}
+
+		public TunnelIkeConfig getTunnelIkeConfig() {
+			return this.tunnelIkeConfig;
+		}
+
+		public void setTunnelIkeConfig(TunnelIkeConfig tunnelIkeConfig) {
+			this.tunnelIkeConfig = tunnelIkeConfig;
+		}
+
+		public TunnelIpsecConfig getTunnelIpsecConfig() {
+			return this.tunnelIpsecConfig;
+		}
+
+		public void setTunnelIpsecConfig(TunnelIpsecConfig tunnelIpsecConfig) {
+			this.tunnelIpsecConfig = tunnelIpsecConfig;
+		}
+
+		public static class TunnelBgpConfig {
+
+			private String bgpStatus;
+
+			private String enableBgp;
+
+			private String localAsn;
+
+			private String localBgpIp;
+
+			private String peerAsn;
+
+			private String peerBgpIp;
+
+			private String tunnelCidr;
+
+			public String getBgpStatus() {
+				return this.bgpStatus;
+			}
+
+			public void setBgpStatus(String bgpStatus) {
+				this.bgpStatus = bgpStatus;
+			}
+
+			public String getEnableBgp() {
+				return this.enableBgp;
+			}
+
+			public void setEnableBgp(String enableBgp) {
+				this.enableBgp = enableBgp;
+			}
+
+			public String getLocalAsn() {
+				return this.localAsn;
+			}
+
+			public void setLocalAsn(String localAsn) {
+				this.localAsn = localAsn;
+			}
+
+			public String getLocalBgpIp() {
+				return this.localBgpIp;
+			}
+
+			public void setLocalBgpIp(String localBgpIp) {
+				this.localBgpIp = localBgpIp;
+			}
+
+			public String getPeerAsn() {
+				return this.peerAsn;
+			}
+
+			public void setPeerAsn(String peerAsn) {
+				this.peerAsn = peerAsn;
+			}
+
+			public String getPeerBgpIp() {
+				return this.peerBgpIp;
+			}
+
+			public void setPeerBgpIp(String peerBgpIp) {
+				this.peerBgpIp = peerBgpIp;
+			}
+
+			public String getTunnelCidr() {
+				return this.tunnelCidr;
+			}
+
+			public void setTunnelCidr(String tunnelCidr) {
+				this.tunnelCidr = tunnelCidr;
+			}
+		}
+
+		public static class TunnelIkeConfig {
+
+			private String ikeAuthAlg;
+
+			private String ikeEncAlg;
+
+			private String ikeLifetime;
+
+			private String ikeMode;
+
+			private String ikePfs;
+
+			private String ikeVersion;
+
+			private String localId;
+
+			private String psk;
+
+			private String remoteId;
+
+			public String getIkeAuthAlg() {
+				return this.ikeAuthAlg;
+			}
+
+			public void setIkeAuthAlg(String ikeAuthAlg) {
+				this.ikeAuthAlg = ikeAuthAlg;
+			}
+
+			public String getIkeEncAlg() {
+				return this.ikeEncAlg;
+			}
+
+			public void setIkeEncAlg(String ikeEncAlg) {
+				this.ikeEncAlg = ikeEncAlg;
+			}
+
+			public String getIkeLifetime() {
+				return this.ikeLifetime;
+			}
+
+			public void setIkeLifetime(String ikeLifetime) {
+				this.ikeLifetime = ikeLifetime;
+			}
+
+			public String getIkeMode() {
+				return this.ikeMode;
+			}
+
+			public void setIkeMode(String ikeMode) {
+				this.ikeMode = ikeMode;
+			}
+
+			public String getIkePfs() {
+				return this.ikePfs;
+			}
+
+			public void setIkePfs(String ikePfs) {
+				this.ikePfs = ikePfs;
+			}
+
+			public String getIkeVersion() {
+				return this.ikeVersion;
+			}
+
+			public void setIkeVersion(String ikeVersion) {
+				this.ikeVersion = ikeVersion;
+			}
+
+			public String getLocalId() {
+				return this.localId;
+			}
+
+			public void setLocalId(String localId) {
+				this.localId = localId;
+			}
+
+			public String getPsk() {
+				return this.psk;
+			}
+
+			public void setPsk(String psk) {
+				this.psk = psk;
+			}
+
+			public String getRemoteId() {
+				return this.remoteId;
+			}
+
+			public void setRemoteId(String remoteId) {
+				this.remoteId = remoteId;
+			}
+		}
+
+		public static class TunnelIpsecConfig {
+
+			private String ipsecAuthAlg;
+
+			private String ipsecEncAlg;
+
+			private String ipsecLifetime;
+
+			private String ipsecPfs;
+
+			public String getIpsecAuthAlg() {
+				return this.ipsecAuthAlg;
+			}
+
+			public void setIpsecAuthAlg(String ipsecAuthAlg) {
+				this.ipsecAuthAlg = ipsecAuthAlg;
+			}
+
+			public String getIpsecEncAlg() {
+				return this.ipsecEncAlg;
+			}
+
+			public void setIpsecEncAlg(String ipsecEncAlg) {
+				this.ipsecEncAlg = ipsecEncAlg;
+			}
+
+			public String getIpsecLifetime() {
+				return this.ipsecLifetime;
+			}
+
+			public void setIpsecLifetime(String ipsecLifetime) {
+				this.ipsecLifetime = ipsecLifetime;
+			}
+
+			public String getIpsecPfs() {
+				return this.ipsecPfs;
+			}
+
+			public void setIpsecPfs(String ipsecPfs) {
+				this.ipsecPfs = ipsecPfs;
+			}
 		}
 	}
 

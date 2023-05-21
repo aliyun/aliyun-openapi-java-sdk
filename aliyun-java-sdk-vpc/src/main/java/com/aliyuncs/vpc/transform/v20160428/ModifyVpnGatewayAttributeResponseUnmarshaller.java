@@ -37,6 +37,9 @@ public class ModifyVpnGatewayAttributeResponseUnmarshaller {
 		modifyVpnGatewayAttributeResponse.setEnableBgp(_ctx.booleanValue("ModifyVpnGatewayAttributeResponse.EnableBgp"));
 		modifyVpnGatewayAttributeResponse.setBusinessStatus(_ctx.stringValue("ModifyVpnGatewayAttributeResponse.BusinessStatus"));
 		modifyVpnGatewayAttributeResponse.setName(_ctx.stringValue("ModifyVpnGatewayAttributeResponse.Name"));
+		modifyVpnGatewayAttributeResponse.setDisasterRecoveryInternetIp(_ctx.stringValue("ModifyVpnGatewayAttributeResponse.DisasterRecoveryInternetIp"));
+		modifyVpnGatewayAttributeResponse.setDisasterRecoveryVSwitchId(_ctx.stringValue("ModifyVpnGatewayAttributeResponse.DisasterRecoveryVSwitchId"));
+		modifyVpnGatewayAttributeResponse.setSslVpnInternetIp(_ctx.stringValue("ModifyVpnGatewayAttributeResponse.SslVpnInternetIp"));
 	 
 	 	return modifyVpnGatewayAttributeResponse;
 	}

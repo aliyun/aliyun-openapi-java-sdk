@@ -21,6 +21,7 @@ import com.aliyuncs.vpc.model.v20160428.DescribeVpcAttributeResponse;
 import com.aliyuncs.vpc.model.v20160428.DescribeVpcAttributeResponse.AssociatedCen;
 import com.aliyuncs.vpc.model.v20160428.DescribeVpcAttributeResponse.CloudResourceSetType;
 import com.aliyuncs.vpc.model.v20160428.DescribeVpcAttributeResponse.Ipv6CidrBlock;
+import com.aliyuncs.vpc.model.v20160428.DescribeVpcAttributeResponse.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -96,6 +97,16 @@ public class DescribeVpcAttributeResponseUnmarshaller {
 			ipv6CidrBlocks.add(ipv6CidrBlock);
 		}
 		describeVpcAttributeResponse.setIpv6CidrBlocks(ipv6CidrBlocks);
+
+		List<Tag> tags = new ArrayList<Tag>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeVpcAttributeResponse.Tags.Length"); i++) {
+			Tag tag = new Tag();
+			tag.setKey(_ctx.stringValue("DescribeVpcAttributeResponse.Tags["+ i +"].Key"));
+			tag.setValue(_ctx.stringValue("DescribeVpcAttributeResponse.Tags["+ i +"].Value"));
+
+			tags.add(tag);
+		}
+		describeVpcAttributeResponse.setTags(tags);
 	 
 	 	return describeVpcAttributeResponse;
 	}
