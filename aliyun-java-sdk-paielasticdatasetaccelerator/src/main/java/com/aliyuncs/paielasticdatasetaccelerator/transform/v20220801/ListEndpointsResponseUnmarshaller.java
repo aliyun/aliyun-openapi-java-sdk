@@ -44,6 +44,7 @@ public class ListEndpointsResponseUnmarshaller {
 			endpointsItem.setType(_ctx.stringValue("ListEndpointsResponse.Endpoints["+ i +"].Type"));
 			endpointsItem.setVpcId(_ctx.stringValue("ListEndpointsResponse.Endpoints["+ i +"].VpcId"));
 			endpointsItem.setVswitchId(_ctx.stringValue("ListEndpointsResponse.Endpoints["+ i +"].VswitchId"));
+			endpointsItem.setInstanceId(_ctx.stringValue("ListEndpointsResponse.Endpoints["+ i +"].InstanceId"));
 
 			Status status = new Status();
 			status.setPhase(_ctx.stringValue("ListEndpointsResponse.Endpoints["+ i +"].Status.Phase"));

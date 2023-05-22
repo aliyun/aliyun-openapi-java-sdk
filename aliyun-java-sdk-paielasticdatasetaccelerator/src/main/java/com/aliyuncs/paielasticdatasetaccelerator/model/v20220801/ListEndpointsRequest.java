@@ -26,6 +26,8 @@ public class ListEndpointsRequest extends RoaAcsRequest<ListEndpointsResponse> {
 
 	private String slotIds;
 
+	private String instanceIds;
+
 	private String name;
 
 	private Integer pageSize;
@@ -53,6 +55,17 @@ public class ListEndpointsRequest extends RoaAcsRequest<ListEndpointsResponse> {
 		this.slotIds = slotIds;
 		if(slotIds != null){
 			putQueryParameter("SlotIds", slotIds);
+		}
+	}
+
+	public String getInstanceIds() {
+		return this.instanceIds;
+	}
+
+	public void setInstanceIds(String instanceIds) {
+		this.instanceIds = instanceIds;
+		if(instanceIds != null){
+			putQueryParameter("InstanceIds", instanceIds);
 		}
 	}
 

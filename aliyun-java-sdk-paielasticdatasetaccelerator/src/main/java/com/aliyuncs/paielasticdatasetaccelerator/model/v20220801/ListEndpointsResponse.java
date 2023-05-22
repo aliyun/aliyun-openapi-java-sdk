@@ -76,6 +76,8 @@ public class ListEndpointsResponse extends AcsResponse {
 
 		private String vswitchId;
 
+		private String instanceId;
+
 		private Status status;
 
 		public String getUserId() {
@@ -148,6 +150,14 @@ public class ListEndpointsResponse extends AcsResponse {
 
 		public void setVswitchId(String vswitchId) {
 			this.vswitchId = vswitchId;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public Status getStatus() {

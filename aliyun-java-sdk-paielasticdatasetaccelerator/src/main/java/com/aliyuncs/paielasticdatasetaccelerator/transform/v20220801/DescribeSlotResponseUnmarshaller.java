@@ -41,6 +41,7 @@ public class DescribeSlotResponseUnmarshaller {
 		describeSlotResponse.setStorageType(_ctx.stringValue("DescribeSlotResponse.StorageType"));
 		describeSlotResponse.setStorageUri(_ctx.stringValue("DescribeSlotResponse.StorageUri"));
 		describeSlotResponse.setCapacity(_ctx.stringValue("DescribeSlotResponse.Capacity"));
+		describeSlotResponse.setIoType(_ctx.stringValue("DescribeSlotResponse.IoType"));
 
 		LifeCycle lifeCycle = new LifeCycle();
 		lifeCycle.setType(_ctx.stringValue("DescribeSlotResponse.LifeCycle.Type"));

@@ -51,6 +51,7 @@ public class ListSlotsResponseUnmarshaller {
 			slotsItem.setStorageType(_ctx.stringValue("ListSlotsResponse.Slots["+ i +"].StorageType"));
 			slotsItem.setStorageUri(_ctx.stringValue("ListSlotsResponse.Slots["+ i +"].StorageUri"));
 			slotsItem.setCapacity(_ctx.stringValue("ListSlotsResponse.Slots["+ i +"].Capacity"));
+			slotsItem.setIoType(_ctx.stringValue("ListSlotsResponse.Slots["+ i +"].IoType"));
 
 			LifeCycle lifeCycle = new LifeCycle();
 			lifeCycle.setType(_ctx.stringValue("ListSlotsResponse.Slots["+ i +"].LifeCycle.Type"));

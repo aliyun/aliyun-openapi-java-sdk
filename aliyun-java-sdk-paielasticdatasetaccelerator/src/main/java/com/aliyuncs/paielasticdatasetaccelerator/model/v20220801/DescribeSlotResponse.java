@@ -49,6 +49,8 @@ public class DescribeSlotResponse extends AcsResponse {
 
 	private String capacity;
 
+	private String ioType;
+
 	private List<TagsItem> tags;
 
 	private LifeCycle lifeCycle;
@@ -149,6 +151,14 @@ public class DescribeSlotResponse extends AcsResponse {
 
 	public void setCapacity(String capacity) {
 		this.capacity = capacity;
+	}
+
+	public String getIoType() {
+		return this.ioType;
+	}
+
+	public void setIoType(String ioType) {
+		this.ioType = ioType;
 	}
 
 	public List<TagsItem> getTags() {

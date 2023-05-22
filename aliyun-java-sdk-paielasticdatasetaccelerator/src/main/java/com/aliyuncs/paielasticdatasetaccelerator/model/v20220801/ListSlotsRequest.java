@@ -24,9 +24,15 @@ import com.aliyuncs.http.MethodType;
 public class ListSlotsRequest extends RoaAcsRequest<ListSlotsResponse> {
 	   
 
-	private String slotIds;
-
 	private String phase;
+
+	private String storageType;
+
+	private Integer pageNumber;
+
+	private String endpointIds;
+
+	private String slotIds;
 
 	private String instanceIds;
 
@@ -36,26 +42,13 @@ public class ListSlotsRequest extends RoaAcsRequest<ListSlotsResponse> {
 
 	private String sortBy;
 
-	private String storageType;
-
-	private Integer pageNumber;
+	private String storageUri;
 
 	private String order;
 	public ListSlotsRequest() {
 		super("PAIElasticDatasetAccelerator", "2022-08-01", "ListSlots", "datasetacc");
 		setUriPattern("/api/v1/slots");
 		setMethod(MethodType.GET);
-	}
-
-	public String getSlotIds() {
-		return this.slotIds;
-	}
-
-	public void setSlotIds(String slotIds) {
-		this.slotIds = slotIds;
-		if(slotIds != null){
-			putQueryParameter("SlotIds", slotIds);
-		}
 	}
 
 	public String getPhase() {
@@ -66,6 +59,50 @@ public class ListSlotsRequest extends RoaAcsRequest<ListSlotsResponse> {
 		this.phase = phase;
 		if(phase != null){
 			putQueryParameter("Phase", phase);
+		}
+	}
+
+	public String getStorageType() {
+		return this.storageType;
+	}
+
+	public void setStorageType(String storageType) {
+		this.storageType = storageType;
+		if(storageType != null){
+			putQueryParameter("StorageType", storageType);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getEndpointIds() {
+		return this.endpointIds;
+	}
+
+	public void setEndpointIds(String endpointIds) {
+		this.endpointIds = endpointIds;
+		if(endpointIds != null){
+			putQueryParameter("EndpointIds", endpointIds);
+		}
+	}
+
+	public String getSlotIds() {
+		return this.slotIds;
+	}
+
+	public void setSlotIds(String slotIds) {
+		this.slotIds = slotIds;
+		if(slotIds != null){
+			putQueryParameter("SlotIds", slotIds);
 		}
 	}
 
@@ -113,25 +150,14 @@ public class ListSlotsRequest extends RoaAcsRequest<ListSlotsResponse> {
 		}
 	}
 
-	public String getStorageType() {
-		return this.storageType;
+	public String getStorageUri() {
+		return this.storageUri;
 	}
 
-	public void setStorageType(String storageType) {
-		this.storageType = storageType;
-		if(storageType != null){
-			putQueryParameter("StorageType", storageType);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setStorageUri(String storageUri) {
+		this.storageUri = storageUri;
+		if(storageUri != null){
+			putQueryParameter("StorageUri", storageUri);
 		}
 	}
 
