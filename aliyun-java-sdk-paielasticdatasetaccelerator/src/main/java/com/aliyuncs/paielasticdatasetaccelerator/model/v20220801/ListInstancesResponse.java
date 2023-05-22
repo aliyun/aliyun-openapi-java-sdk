@@ -79,6 +79,12 @@ public class ListInstancesResponse extends AcsResponse {
 
 		private Integer maxSlot;
 
+		private Integer maxEndpoint;
+
+		private String storageType;
+
+		private String providerType;
+
 		private List<TagsItem> tags;
 
 		private Status status;
@@ -169,6 +175,30 @@ public class ListInstancesResponse extends AcsResponse {
 
 		public void setMaxSlot(Integer maxSlot) {
 			this.maxSlot = maxSlot;
+		}
+
+		public Integer getMaxEndpoint() {
+			return this.maxEndpoint;
+		}
+
+		public void setMaxEndpoint(Integer maxEndpoint) {
+			this.maxEndpoint = maxEndpoint;
+		}
+
+		public String getStorageType() {
+			return this.storageType;
+		}
+
+		public void setStorageType(String storageType) {
+			this.storageType = storageType;
+		}
+
+		public String getProviderType() {
+			return this.providerType;
+		}
+
+		public void setProviderType(String providerType) {
+			this.providerType = providerType;
 		}
 
 		public List<TagsItem> getTags() {

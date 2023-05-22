@@ -1,3 +1,6 @@
+2023-05-22 Version: 1.0.2
+- Add provider type for instance.
+
 2023-05-22 Version: 1.0.1
 - Add iotype for slot api.
 

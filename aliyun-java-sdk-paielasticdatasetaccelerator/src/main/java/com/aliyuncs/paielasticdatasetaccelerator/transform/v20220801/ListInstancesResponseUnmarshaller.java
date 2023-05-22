@@ -45,6 +45,9 @@ public class ListInstancesResponseUnmarshaller {
 			instancesItem.setPaymentType(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].PaymentType"));
 			instancesItem.setCapacity(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].Capacity"));
 			instancesItem.setMaxSlot(_ctx.integerValue("ListInstancesResponse.Instances["+ i +"].MaxSlot"));
+			instancesItem.setMaxEndpoint(_ctx.integerValue("ListInstancesResponse.Instances["+ i +"].MaxEndpoint"));
+			instancesItem.setStorageType(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].StorageType"));
+			instancesItem.setProviderType(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].ProviderType"));
 
 			Status status = new Status();
 			status.setPhase(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].Status.Phase"));

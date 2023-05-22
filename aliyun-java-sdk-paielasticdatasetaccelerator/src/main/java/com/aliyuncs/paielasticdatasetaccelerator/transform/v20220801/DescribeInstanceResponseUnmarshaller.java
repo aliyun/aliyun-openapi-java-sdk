@@ -39,6 +39,9 @@ public class DescribeInstanceResponseUnmarshaller {
 		describeInstanceResponse.setPaymentType(_ctx.stringValue("DescribeInstanceResponse.PaymentType"));
 		describeInstanceResponse.setCapacity(_ctx.stringValue("DescribeInstanceResponse.Capacity"));
 		describeInstanceResponse.setMaxSlot(_ctx.integerValue("DescribeInstanceResponse.MaxSlot"));
+		describeInstanceResponse.setMaxEndpoint(_ctx.integerValue("DescribeInstanceResponse.MaxEndpoint"));
+		describeInstanceResponse.setStorageType(_ctx.stringValue("DescribeInstanceResponse.StorageType"));
+		describeInstanceResponse.setProviderType(_ctx.stringValue("DescribeInstanceResponse.ProviderType"));
 
 		Status status = new Status();
 		status.setPhase(_ctx.stringValue("DescribeInstanceResponse.Status.Phase"));
