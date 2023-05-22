@@ -28,8 +28,6 @@ public class CreateRouteTableResponse extends AcsResponse {
 
 	private String routeTableId;
 
-	private String associateType;
-
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -44,14 +42,6 @@ public class CreateRouteTableResponse extends AcsResponse {
 
 	public void setRouteTableId(String routeTableId) {
 		this.routeTableId = routeTableId;
-	}
-
-	public String getAssociateType() {
-		return this.associateType;
-	}
-
-	public void setAssociateType(String associateType) {
-		this.associateType = associateType;
 	}
 
 	@Override

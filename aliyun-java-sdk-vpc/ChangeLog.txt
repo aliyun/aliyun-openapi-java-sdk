@@ -1,3 +1,18 @@
+2023-05-22 Version: 3.2.23
+- Add ErrorCode.
+- AssociateRouteTable and UnassociateRouteTable Supported Idempotence.
+- Fix bugs for network acl region when query data.
+- Fixed the field regionId of CreateNetworkAcl response.
+- Supported new errorCode for AssociateEipAddressBatch.
+- Update httpStatusCode for  Forbidden.
+- Supported clientIP for PublicIpAddressPool.
+- VPC and CommomBandwidth return tag info.
+- Support coupon query price.
+- Support auto renew router interface.
+- Support accept-language.
+- Add error code illegal resourceGroupId.
+- Change the partial output reference visibility.
+
 2023-05-21 Version: 3.2.22
 - Add ErrorCode.
 - AssociateRouteTable and UnassociateRouteTable Supported Idempotence.
