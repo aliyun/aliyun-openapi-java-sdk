@@ -23,6 +23,7 @@ import com.aliyuncs.ccc.model.v20200701.ListHistoricalAgentReportResponse.Data.I
 import com.aliyuncs.ccc.model.v20200701.ListHistoricalAgentReportResponse.Data.Items.Inbound;
 import com.aliyuncs.ccc.model.v20200701.ListHistoricalAgentReportResponse.Data.Items.Outbound;
 import com.aliyuncs.ccc.model.v20200701.ListHistoricalAgentReportResponse.Data.Items.Overall;
+import com.aliyuncs.ccc.model.v20200701.ListHistoricalAgentReportResponse.Data.Items.Overall.BreakCodeDetail;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -131,6 +132,24 @@ public class ListHistoricalAgentReportResponseUnmarshaller {
 			overall.setTotalBreakTime(_ctx.longValue("ListHistoricalAgentReportResponse.Data.List["+ i +"].Overall.TotalBreakTime"));
 			overall.setMaxTalkTime(_ctx.longValue("ListHistoricalAgentReportResponse.Data.List["+ i +"].Overall.MaxTalkTime"));
 			overall.setTotalCalls(_ctx.longValue("ListHistoricalAgentReportResponse.Data.List["+ i +"].Overall.TotalCalls"));
+			overall.setTotalOnSiteOnlineTime(_ctx.longValue("ListHistoricalAgentReportResponse.Data.List["+ i +"].Overall.TotalOnSiteOnlineTime"));
+			overall.setTotalOffSiteOnlineTime(_ctx.longValue("ListHistoricalAgentReportResponse.Data.List["+ i +"].Overall.TotalOffSiteOnlineTime"));
+			overall.setTotalOfficePhoneOnlineTime(_ctx.longValue("ListHistoricalAgentReportResponse.Data.List["+ i +"].Overall.TotalOfficePhoneOnlineTime"));
+			overall.setFirstCheckInTime(_ctx.longValue("ListHistoricalAgentReportResponse.Data.List["+ i +"].Overall.FirstCheckInTime"));
+			overall.setLastCheckOutTime(_ctx.longValue("ListHistoricalAgentReportResponse.Data.List["+ i +"].Overall.LastCheckOutTime"));
+			overall.setTotalOutboundScenarioTime(_ctx.longValue("ListHistoricalAgentReportResponse.Data.List["+ i +"].Overall.TotalOutboundScenarioTime"));
+			overall.setTotalOutboundScenarioReadyTime(_ctx.longValue("ListHistoricalAgentReportResponse.Data.List["+ i +"].Overall.TotalOutboundScenarioReadyTime"));
+
+			List<BreakCodeDetail> breakCodeDetailList = new ArrayList<BreakCodeDetail>();
+			for (int j = 0; j < _ctx.lengthValue("ListHistoricalAgentReportResponse.Data.List["+ i +"].Overall.BreakCodeDetailList.Length"); j++) {
+				BreakCodeDetail breakCodeDetail = new BreakCodeDetail();
+				breakCodeDetail.setBreakCode(_ctx.stringValue("ListHistoricalAgentReportResponse.Data.List["+ i +"].Overall.BreakCodeDetailList["+ j +"].BreakCode"));
+				breakCodeDetail.setCount(_ctx.longValue("ListHistoricalAgentReportResponse.Data.List["+ i +"].Overall.BreakCodeDetailList["+ j +"].Count"));
+				breakCodeDetail.setDuration(_ctx.longValue("ListHistoricalAgentReportResponse.Data.List["+ i +"].Overall.BreakCodeDetailList["+ j +"].Duration"));
+
+				breakCodeDetailList.add(breakCodeDetail);
+			}
+			overall.setBreakCodeDetailList(breakCodeDetailList);
 			items.setOverall(overall);
 
 			list.add(items);

@@ -693,8 +693,6 @@ public class ListIntervalAgentReportResponse extends AcsResponse {
 
 			private Long satisfactionSurveysOffered;
 
-			private Long firstCheckInTime;
-
 			private Long satisfactionSurveysResponded;
 
 			private Float averageHoldTime;
@@ -702,6 +700,20 @@ public class ListIntervalAgentReportResponse extends AcsResponse {
 			private Float averageReadyTime;
 
 			private Long totalBreakTime;
+
+			private Long totalOnSiteOnlineTime;
+
+			private Long totalOffSiteOnlineTime;
+
+			private Long totalOfficePhoneOnlineTime;
+
+			private Long totalOutboundScenarioTime;
+
+			private Long totalOutboundScenarioReadyTime;
+
+			private Long firstCheckInTime;
+
+			private List<BreakCodeDetail> breakCodeDetailList;
 
 			public Float getOccupancyRate() {
 				return this.occupancyRate;
@@ -855,14 +867,6 @@ public class ListIntervalAgentReportResponse extends AcsResponse {
 				this.satisfactionSurveysOffered = satisfactionSurveysOffered;
 			}
 
-			public Long getFirstCheckInTime() {
-				return this.firstCheckInTime;
-			}
-
-			public void setFirstCheckInTime(Long firstCheckInTime) {
-				this.firstCheckInTime = firstCheckInTime;
-			}
-
 			public Long getSatisfactionSurveysResponded() {
 				return this.satisfactionSurveysResponded;
 			}
@@ -893,6 +897,95 @@ public class ListIntervalAgentReportResponse extends AcsResponse {
 
 			public void setTotalBreakTime(Long totalBreakTime) {
 				this.totalBreakTime = totalBreakTime;
+			}
+
+			public Long getTotalOnSiteOnlineTime() {
+				return this.totalOnSiteOnlineTime;
+			}
+
+			public void setTotalOnSiteOnlineTime(Long totalOnSiteOnlineTime) {
+				this.totalOnSiteOnlineTime = totalOnSiteOnlineTime;
+			}
+
+			public Long getTotalOffSiteOnlineTime() {
+				return this.totalOffSiteOnlineTime;
+			}
+
+			public void setTotalOffSiteOnlineTime(Long totalOffSiteOnlineTime) {
+				this.totalOffSiteOnlineTime = totalOffSiteOnlineTime;
+			}
+
+			public Long getTotalOfficePhoneOnlineTime() {
+				return this.totalOfficePhoneOnlineTime;
+			}
+
+			public void setTotalOfficePhoneOnlineTime(Long totalOfficePhoneOnlineTime) {
+				this.totalOfficePhoneOnlineTime = totalOfficePhoneOnlineTime;
+			}
+
+			public Long getTotalOutboundScenarioTime() {
+				return this.totalOutboundScenarioTime;
+			}
+
+			public void setTotalOutboundScenarioTime(Long totalOutboundScenarioTime) {
+				this.totalOutboundScenarioTime = totalOutboundScenarioTime;
+			}
+
+			public Long getTotalOutboundScenarioReadyTime() {
+				return this.totalOutboundScenarioReadyTime;
+			}
+
+			public void setTotalOutboundScenarioReadyTime(Long totalOutboundScenarioReadyTime) {
+				this.totalOutboundScenarioReadyTime = totalOutboundScenarioReadyTime;
+			}
+
+			public Long getFirstCheckInTime() {
+				return this.firstCheckInTime;
+			}
+
+			public void setFirstCheckInTime(Long firstCheckInTime) {
+				this.firstCheckInTime = firstCheckInTime;
+			}
+
+			public List<BreakCodeDetail> getBreakCodeDetailList() {
+				return this.breakCodeDetailList;
+			}
+
+			public void setBreakCodeDetailList(List<BreakCodeDetail> breakCodeDetailList) {
+				this.breakCodeDetailList = breakCodeDetailList;
+			}
+
+			public static class BreakCodeDetail {
+
+				private String breakCode;
+
+				private Long count;
+
+				private Long duration;
+
+				public String getBreakCode() {
+					return this.breakCode;
+				}
+
+				public void setBreakCode(String breakCode) {
+					this.breakCode = breakCode;
+				}
+
+				public Long getCount() {
+					return this.count;
+				}
+
+				public void setCount(Long count) {
+					this.count = count;
+				}
+
+				public Long getDuration() {
+					return this.duration;
+				}
+
+				public void setDuration(Long duration) {
+					this.duration = duration;
+				}
 			}
 		}
 	}

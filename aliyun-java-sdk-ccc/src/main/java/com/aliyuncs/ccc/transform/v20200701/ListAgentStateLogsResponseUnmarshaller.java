@@ -39,6 +39,8 @@ public class ListAgentStateLogsResponseUnmarshaller {
 			dataItem.setDuration(_ctx.longValue("ListAgentStateLogsResponse.Data["+ i +"].Duration"));
 			dataItem.setState(_ctx.stringValue("ListAgentStateLogsResponse.Data["+ i +"].State"));
 			dataItem.setOutboundScenario(_ctx.booleanValue("ListAgentStateLogsResponse.Data["+ i +"].OutboundScenario"));
+			dataItem.setBreakCode(_ctx.stringValue("ListAgentStateLogsResponse.Data["+ i +"].BreakCode"));
+			dataItem.setWorkMode(_ctx.stringValue("ListAgentStateLogsResponse.Data["+ i +"].WorkMode"));
 
 			data.add(dataItem);
 		}

@@ -22,6 +22,7 @@ import com.aliyuncs.ccc.model.v20200701.ListIntervalAgentReportResponse.DataItem
 import com.aliyuncs.ccc.model.v20200701.ListIntervalAgentReportResponse.DataItem.Inbound;
 import com.aliyuncs.ccc.model.v20200701.ListIntervalAgentReportResponse.DataItem.Outbound;
 import com.aliyuncs.ccc.model.v20200701.ListIntervalAgentReportResponse.DataItem.Overall;
+import com.aliyuncs.ccc.model.v20200701.ListIntervalAgentReportResponse.DataItem.Overall.BreakCodeDetail;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -118,11 +119,27 @@ public class ListIntervalAgentReportResponseUnmarshaller {
 			overall.setAverageTalkTime(_ctx.floatValue("ListIntervalAgentReportResponse.Data["+ i +"].Overall.AverageTalkTime"));
 			overall.setSatisfactionRate(_ctx.floatValue("ListIntervalAgentReportResponse.Data["+ i +"].Overall.SatisfactionRate"));
 			overall.setSatisfactionSurveysOffered(_ctx.longValue("ListIntervalAgentReportResponse.Data["+ i +"].Overall.SatisfactionSurveysOffered"));
-			overall.setFirstCheckInTime(_ctx.longValue("ListIntervalAgentReportResponse.Data["+ i +"].Overall.FirstCheckInTime"));
 			overall.setSatisfactionSurveysResponded(_ctx.longValue("ListIntervalAgentReportResponse.Data["+ i +"].Overall.SatisfactionSurveysResponded"));
 			overall.setAverageHoldTime(_ctx.floatValue("ListIntervalAgentReportResponse.Data["+ i +"].Overall.AverageHoldTime"));
 			overall.setAverageReadyTime(_ctx.floatValue("ListIntervalAgentReportResponse.Data["+ i +"].Overall.AverageReadyTime"));
 			overall.setTotalBreakTime(_ctx.longValue("ListIntervalAgentReportResponse.Data["+ i +"].Overall.TotalBreakTime"));
+			overall.setTotalOnSiteOnlineTime(_ctx.longValue("ListIntervalAgentReportResponse.Data["+ i +"].Overall.TotalOnSiteOnlineTime"));
+			overall.setTotalOffSiteOnlineTime(_ctx.longValue("ListIntervalAgentReportResponse.Data["+ i +"].Overall.TotalOffSiteOnlineTime"));
+			overall.setTotalOfficePhoneOnlineTime(_ctx.longValue("ListIntervalAgentReportResponse.Data["+ i +"].Overall.TotalOfficePhoneOnlineTime"));
+			overall.setTotalOutboundScenarioTime(_ctx.longValue("ListIntervalAgentReportResponse.Data["+ i +"].Overall.TotalOutboundScenarioTime"));
+			overall.setTotalOutboundScenarioReadyTime(_ctx.longValue("ListIntervalAgentReportResponse.Data["+ i +"].Overall.TotalOutboundScenarioReadyTime"));
+			overall.setFirstCheckInTime(_ctx.longValue("ListIntervalAgentReportResponse.Data["+ i +"].Overall.FirstCheckInTime"));
+
+			List<BreakCodeDetail> breakCodeDetailList = new ArrayList<BreakCodeDetail>();
+			for (int j = 0; j < _ctx.lengthValue("ListIntervalAgentReportResponse.Data["+ i +"].Overall.BreakCodeDetailList.Length"); j++) {
+				BreakCodeDetail breakCodeDetail = new BreakCodeDetail();
+				breakCodeDetail.setBreakCode(_ctx.stringValue("ListIntervalAgentReportResponse.Data["+ i +"].Overall.BreakCodeDetailList["+ j +"].BreakCode"));
+				breakCodeDetail.setCount(_ctx.longValue("ListIntervalAgentReportResponse.Data["+ i +"].Overall.BreakCodeDetailList["+ j +"].Count"));
+				breakCodeDetail.setDuration(_ctx.longValue("ListIntervalAgentReportResponse.Data["+ i +"].Overall.BreakCodeDetailList["+ j +"].Duration"));
+
+				breakCodeDetailList.add(breakCodeDetail);
+			}
+			overall.setBreakCodeDetailList(breakCodeDetailList);
 			dataItem.setOverall(overall);
 
 			data.add(dataItem);

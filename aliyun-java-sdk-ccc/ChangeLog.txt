@@ -1,3 +1,6 @@
+2023-05-23 Version: 2.10.3
+- Supported BreakCodeDetails,FirstCheckInTime, LastCheckoutTime .
+
 2023-05-09 Version: 2.10.2
 - Supported GetVideo Api.
 
