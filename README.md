@@ -24,13 +24,13 @@ If you have any problem while using Alibaba Cloud SDK for Java, please [submit a
 
 - To use Alibaba Cloud SDK for Java, you must have an Alibaba Cloud account as well as an `AccessKey ID` and an `AccessKey Secret`. Create and view your AccessKey on the [RAM console](https://ram.console.aliyun.com "RAM console") or contact your system administrator.
 
-- To use the Alibaba Cloud SDK for Java to access the APIs of a product, you must first activate the product on the [Alibaba Cloud console](https://home.console.aliyun.com/?spm=5176.doc52740.2.4.QKZk8w) if required.
+- To use the Alibaba Cloud SDK for Java to access the APIs of a product, you must first activate the product on the [Alibaba Cloud console](https://home.console.aliyun.com) if required.
 
 - The Alibaba Cloud Java SDK requires JDK 1.6 or later.
 
 ## Installation
 
-If you use Apache Maven to manage Java projects, you only need to add corresponding dependencies to the pom.xml files of the projects. You can download the Maven dependencies of different cloud products in [Alibaba Cloud developer resources](https://help.aliyun.com/learn/developer.html).
+If you use Apache Maven to manage Java projects, you only need to add corresponding dependencies to the pom.xml files of the projects. You can view the Maven dependencies of different cloud products in [Alibaba Cloud SDK Center](https://api.aliyun.com/api-tools/sdklang?language=java&sdkStyle=old).
 
 You must install `aliyun-java-sdk-core` library no matter which product development kit you want to use. For example, to call the ECS SDK, you need to install `aliyun-java-sdk-core` library  and `aliyun-java-sdk-ecs` library .
 
@@ -40,7 +40,7 @@ To use the Ecs SDK as an example, you only need to declare the following two dep
 <dependency>
     <groupId>com.aliyun</groupId>
     <artifactId>aliyun-java-sdk-core</artifactId>
-    <version>[4.4.9,5.0.0)</version>
+    <version>[4.6.3,5.0.0)</version>
 </dependency>
 <dependency>
     <groupId>com.aliyun</groupId>
@@ -54,7 +54,7 @@ If maven is not downloading jar packages from a central repository, you need to 
 <dependency>
     <groupId>com.google.code.gson</groupId>
     <artifactId>gson</artifactId>
-    <version>2.8.5</version>
+    <version>2.10.1</version>
 </dependency>
 <dependency>
     <groupId>io.opentracing</groupId>
@@ -142,7 +142,7 @@ Please make sure to read the [Contributing Guide](CONTRIBUTING.md) before making
 
 ## References
 * [Alibaba Cloud Regions & Endpoints](https://developer.aliyun.com/endpoints)
-* [Alibab Cloud OpenAPI Portal](https://next.api.aliyun.com/)
+* [Alibab Cloud OpenAPI Portal](https://api.aliyun.com/)
 * [Latest Release](https://github.com/aliyun/aliyun-openapi-java-sdk)
 
 ## License

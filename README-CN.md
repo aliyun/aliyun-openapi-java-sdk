@@ -19,20 +19,20 @@
 如果您在使用 Alibaba Cloud SDK for Java 的过程中遇到任何问题，欢迎在当前 GitHub [提交 Issues](https://github.com/aliyun/aliyun-openapi-java-sdk/issues/new)。
 
 ## 环境要求
-1. 要使用 Alibaba Cloud SDK for Java ，您需要一个云账号以及一对`Access Key ID`和`Access Key Secret`。 请在阿里云控制台中的[AccessKey管理页面](https://usercenter.console.aliyun.com/?spm=5176.doc52740.2.3.QKZk8w#/manage/ak)上创建和查看您的Access Key，或者联系您的系统管理员。
-2. 要使用 Alibaba Cloud SDK for Java 访问某个产品的API，您需要事先在[阿里云控制台](https://home.console.aliyun.com/?spm=5176.doc52740.2.4.QKZk8w)中开通这个产品。
+1. 要使用 Alibaba Cloud SDK for Java ，您需要一个云账号以及一对`Access Key ID`和`Access Key Secret`。 请在阿里云控制台中的[RAM管理页面](https://ram.console.aliyun.com)上创建和查看您的Access Key，或者联系您的系统管理员。
+2. 要使用 Alibaba Cloud SDK for Java 访问某个产品的API，您需要事先在[阿里云控制台](https://home.console.aliyun.com)中开通这个产品。
 3.  Alibaba Cloud SDK for Java 需要1.6以上的JDK。
 
 ## 安装依赖
 无论您要使用哪个产品的开发工具包，都必须安装`aliyun-java-sdk-core`。比如，对云服务器SDK的调用，您需要安装`aliyun-java-sdk-core`和`aliyun-java-sdk-ecs`。
 #### 通过Maven来管理项目依赖(推荐)
-如果您使用Apache Maven来管理Java项目，只需在项目的`pom.xml`文件加入相应的依赖项即可。您可以在[阿里云开发者资源](https://help.aliyun.com/learn/developer.html)中下载各云产品的Maven依赖。
+如果您使用Apache Maven来管理Java项目，只需在项目的`pom.xml`文件加入相应的依赖项即可。您可以在[阿里云SDK中心](https://api.aliyun.com/api-tools/sdklang?language=java&sdkStyle=old)中查看各云产品的Maven依赖。
 以使用Ecs SDK为例，您只需在`pom.xml`中声明以下两个依赖：
 ```xml
 <dependency>
     <groupId>com.aliyun</groupId>
     <artifactId>aliyun-java-sdk-core</artifactId>
-    <version>[4.4.9,5.0.0)</version>
+    <version>[4.6.3,5.0.0)</version>
 </dependency>
 <dependency>
     <groupId>com.aliyun</groupId>
@@ -46,7 +46,7 @@
 <dependency>
     <groupId>com.google.code.gson</groupId>
     <artifactId>gson</artifactId>
-    <version>2.8.5</version>
+    <version>2.10.1</version>
 </dependency>
 <dependency>
     <groupId>io.opentracing</groupId>
@@ -130,7 +130,7 @@ public class Main {
 
 ## 相关
 * [阿里云服务 Regions & Endpoints](https://developer.aliyun.com/endpoints)
-* [OpenAPI 开发者门户](https://next.api.aliyun.com/)
+* [OpenAPI 开发者门户](https://api.aliyun.com/)
 * [最新源码](https://github.com/aliyun/aliyun-openapi-java-sdk)
 
 ## 许可证
