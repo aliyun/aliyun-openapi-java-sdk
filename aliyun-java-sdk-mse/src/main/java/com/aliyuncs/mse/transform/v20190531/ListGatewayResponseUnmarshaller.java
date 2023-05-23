@@ -20,6 +20,8 @@ import java.util.List;
 import com.aliyuncs.mse.model.v20190531.ListGatewayResponse;
 import com.aliyuncs.mse.model.v20190531.ListGatewayResponse.Data;
 import com.aliyuncs.mse.model.v20190531.ListGatewayResponse.Data.Gateways;
+import com.aliyuncs.mse.model.v20190531.ListGatewayResponse.Data.Gateways.ElasticPolicy;
+import com.aliyuncs.mse.model.v20190531.ListGatewayResponse.Data.Gateways.ElasticPolicy.TimePolicyListItem;
 import com.aliyuncs.mse.model.v20190531.ListGatewayResponse.Data.Gateways.InitConfig;
 import com.aliyuncs.mse.model.v20190531.ListGatewayResponse.Data.Gateways.InternetSlbItem;
 import com.aliyuncs.mse.model.v20190531.ListGatewayResponse.Data.Gateways.SlbItem;
@@ -73,11 +75,33 @@ public class ListGatewayResponseUnmarshaller {
 			gateways.setRollBack(_ctx.booleanValue("ListGatewayResponse.Data.Result["+ i +"].RollBack"));
 			gateways.setMseTag(_ctx.stringValue("ListGatewayResponse.Data.Result["+ i +"].MseTag"));
 			gateways.setResourceGroupId(_ctx.stringValue("ListGatewayResponse.Data.Result["+ i +"].ResourceGroupId"));
+			gateways.setTotalReplica(_ctx.integerValue("ListGatewayResponse.Data.Result["+ i +"].TotalReplica"));
+			gateways.setElastic(_ctx.booleanValue("ListGatewayResponse.Data.Result["+ i +"].Elastic"));
+			gateways.setElasticReplica(_ctx.integerValue("ListGatewayResponse.Data.Result["+ i +"].ElasticReplica"));
+			gateways.setElasticType(_ctx.stringValue("ListGatewayResponse.Data.Result["+ i +"].ElasticType"));
+			gateways.setElasticInstanceId(_ctx.stringValue("ListGatewayResponse.Data.Result["+ i +"].ElasticInstanceId"));
 
 			InitConfig initConfig = new InitConfig();
 			initConfig.setEnableWaf(_ctx.booleanValue("ListGatewayResponse.Data.Result["+ i +"].InitConfig.EnableWaf"));
 			initConfig.setSupportWaf(_ctx.booleanValue("ListGatewayResponse.Data.Result["+ i +"].InitConfig.SupportWaf"));
 			gateways.setInitConfig(initConfig);
+
+			ElasticPolicy elasticPolicy = new ElasticPolicy();
+			elasticPolicy.setElastic(_ctx.booleanValue("ListGatewayResponse.Data.Result["+ i +"].ElasticPolicy.Elastic"));
+			elasticPolicy.setMaxReplica(_ctx.integerValue("ListGatewayResponse.Data.Result["+ i +"].ElasticPolicy.MaxReplica"));
+			elasticPolicy.setElasticType(_ctx.stringValue("ListGatewayResponse.Data.Result["+ i +"].ElasticPolicy.ElasticType"));
+
+			List<TimePolicyListItem> timePolicyList = new ArrayList<TimePolicyListItem>();
+			for (int j = 0; j < _ctx.lengthValue("ListGatewayResponse.Data.Result["+ i +"].ElasticPolicy.TimePolicyList.Length"); j++) {
+				TimePolicyListItem timePolicyListItem = new TimePolicyListItem();
+				timePolicyListItem.setDesiredReplica(_ctx.integerValue("ListGatewayResponse.Data.Result["+ i +"].ElasticPolicy.TimePolicyList["+ j +"].DesiredReplica"));
+				timePolicyListItem.setStartTime(_ctx.stringValue("ListGatewayResponse.Data.Result["+ i +"].ElasticPolicy.TimePolicyList["+ j +"].StartTime"));
+				timePolicyListItem.setEndTime(_ctx.stringValue("ListGatewayResponse.Data.Result["+ i +"].ElasticPolicy.TimePolicyList["+ j +"].EndTime"));
+
+				timePolicyList.add(timePolicyListItem);
+			}
+			elasticPolicy.setTimePolicyList(timePolicyList);
+			gateways.setElasticPolicy(elasticPolicy);
 
 			List<SlbItem> slb = new ArrayList<SlbItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListGatewayResponse.Data.Result["+ i +"].Slb.Length"); j++) {

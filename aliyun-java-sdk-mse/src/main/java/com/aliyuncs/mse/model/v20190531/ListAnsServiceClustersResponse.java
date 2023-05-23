@@ -90,7 +90,11 @@ public class ListAnsServiceClustersResponse extends AcsResponse {
 
 		private Boolean ephemeral;
 
+		private String source;
+
 		private List<NacosAnsCluster> clusters;
+
+		private AppDetail appDetail;
 
 		public Float getProtectThreshold() {
 			return this.protectThreshold;
@@ -140,12 +144,28 @@ public class ListAnsServiceClustersResponse extends AcsResponse {
 			this.ephemeral = ephemeral;
 		}
 
+		public String getSource() {
+			return this.source;
+		}
+
+		public void setSource(String source) {
+			this.source = source;
+		}
+
 		public List<NacosAnsCluster> getClusters() {
 			return this.clusters;
 		}
 
 		public void setClusters(List<NacosAnsCluster> clusters) {
 			this.clusters = clusters;
+		}
+
+		public AppDetail getAppDetail() {
+			return this.appDetail;
+		}
+
+		public void setAppDetail(AppDetail appDetail) {
+			this.appDetail = appDetail;
 		}
 
 		public static class NacosAnsCluster {
@@ -218,6 +238,99 @@ public class ListAnsServiceClustersResponse extends AcsResponse {
 
 			public void setMetadata(Map<Object,Object> metadata) {
 				this.metadata = metadata;
+			}
+		}
+
+		public static class AppDetail {
+
+			private String appId;
+
+			private String appName;
+
+			private Integer port;
+
+			private String checkType;
+
+			private String checkPath;
+
+			private Integer checkTimeout;
+
+			private Integer checkInternal;
+
+			private Integer healthyCheckTimes;
+
+			private Integer unhealthyCheckTimes;
+
+			public String getAppId() {
+				return this.appId;
+			}
+
+			public void setAppId(String appId) {
+				this.appId = appId;
+			}
+
+			public String getAppName() {
+				return this.appName;
+			}
+
+			public void setAppName(String appName) {
+				this.appName = appName;
+			}
+
+			public Integer getPort() {
+				return this.port;
+			}
+
+			public void setPort(Integer port) {
+				this.port = port;
+			}
+
+			public String getCheckType() {
+				return this.checkType;
+			}
+
+			public void setCheckType(String checkType) {
+				this.checkType = checkType;
+			}
+
+			public String getCheckPath() {
+				return this.checkPath;
+			}
+
+			public void setCheckPath(String checkPath) {
+				this.checkPath = checkPath;
+			}
+
+			public Integer getCheckTimeout() {
+				return this.checkTimeout;
+			}
+
+			public void setCheckTimeout(Integer checkTimeout) {
+				this.checkTimeout = checkTimeout;
+			}
+
+			public Integer getCheckInternal() {
+				return this.checkInternal;
+			}
+
+			public void setCheckInternal(Integer checkInternal) {
+				this.checkInternal = checkInternal;
+			}
+
+			public Integer getHealthyCheckTimes() {
+				return this.healthyCheckTimes;
+			}
+
+			public void setHealthyCheckTimes(Integer healthyCheckTimes) {
+				this.healthyCheckTimes = healthyCheckTimes;
+			}
+
+			public Integer getUnhealthyCheckTimes() {
+				return this.unhealthyCheckTimes;
+			}
+
+			public void setUnhealthyCheckTimes(Integer unhealthyCheckTimes) {
+				this.unhealthyCheckTimes = unhealthyCheckTimes;
 			}
 		}
 	}

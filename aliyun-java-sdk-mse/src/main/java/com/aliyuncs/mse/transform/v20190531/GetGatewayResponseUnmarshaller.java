@@ -14,8 +14,13 @@
 
 package com.aliyuncs.mse.transform.v20190531;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.mse.model.v20190531.GetGatewayResponse;
 import com.aliyuncs.mse.model.v20190531.GetGatewayResponse.Data;
+import com.aliyuncs.mse.model.v20190531.GetGatewayResponse.Data.ElasticPolicy;
+import com.aliyuncs.mse.model.v20190531.GetGatewayResponse.Data.ElasticPolicy.TimePolicyListItem;
 import com.aliyuncs.mse.model.v20190531.GetGatewayResponse.Data.LogConfigDetails;
 import com.aliyuncs.mse.model.v20190531.GetGatewayResponse.Data.XtraceDetails;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -52,6 +57,10 @@ public class GetGatewayResponseUnmarshaller {
 		data.setStatusDesc(_ctx.stringValue("GetGatewayResponse.Data.StatusDesc"));
 		data.setMseTag(_ctx.stringValue("GetGatewayResponse.Data.MseTag"));
 		data.setResourceGroupId(_ctx.stringValue("GetGatewayResponse.Data.ResourceGroupId"));
+		data.setTotalReplica(_ctx.integerValue("GetGatewayResponse.Data.TotalReplica"));
+		data.setElastic(_ctx.booleanValue("GetGatewayResponse.Data.Elastic"));
+		data.setElasticReplica(_ctx.integerValue("GetGatewayResponse.Data.ElasticReplica"));
+		data.setElasticType(_ctx.stringValue("GetGatewayResponse.Data.ElasticType"));
 
 		XtraceDetails xtraceDetails = new XtraceDetails();
 		xtraceDetails.setSample(_ctx.integerValue("GetGatewayResponse.Data.XtraceDetails.Sample"));
@@ -63,6 +72,22 @@ public class GetGatewayResponseUnmarshaller {
 		logConfigDetails.setProjectName(_ctx.stringValue("GetGatewayResponse.Data.LogConfigDetails.ProjectName"));
 		logConfigDetails.setLogStoreName(_ctx.stringValue("GetGatewayResponse.Data.LogConfigDetails.LogStoreName"));
 		data.setLogConfigDetails(logConfigDetails);
+
+		ElasticPolicy elasticPolicy = new ElasticPolicy();
+		elasticPolicy.setMaxReplica(_ctx.integerValue("GetGatewayResponse.Data.ElasticPolicy.MaxReplica"));
+		elasticPolicy.setElasticType(_ctx.stringValue("GetGatewayResponse.Data.ElasticPolicy.ElasticType"));
+
+		List<TimePolicyListItem> timePolicyList = new ArrayList<TimePolicyListItem>();
+		for (int i = 0; i < _ctx.lengthValue("GetGatewayResponse.Data.ElasticPolicy.TimePolicyList.Length"); i++) {
+			TimePolicyListItem timePolicyListItem = new TimePolicyListItem();
+			timePolicyListItem.setDesiredReplica(_ctx.integerValue("GetGatewayResponse.Data.ElasticPolicy.TimePolicyList["+ i +"].DesiredReplica"));
+			timePolicyListItem.setStartTime(_ctx.stringValue("GetGatewayResponse.Data.ElasticPolicy.TimePolicyList["+ i +"].StartTime"));
+			timePolicyListItem.setEndTime(_ctx.stringValue("GetGatewayResponse.Data.ElasticPolicy.TimePolicyList["+ i +"].EndTime"));
+
+			timePolicyList.add(timePolicyListItem);
+		}
+		elasticPolicy.setTimePolicyList(timePolicyList);
+		data.setElasticPolicy(elasticPolicy);
 		getGatewayResponse.setData(data);
 	 
 	 	return getGatewayResponse;

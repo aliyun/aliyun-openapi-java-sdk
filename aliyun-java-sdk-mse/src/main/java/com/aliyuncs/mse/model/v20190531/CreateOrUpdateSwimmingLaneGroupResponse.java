@@ -37,8 +37,6 @@ public class CreateOrUpdateSwimmingLaneGroupResponse extends AcsResponse {
 
 	private String message;
 
-	private String dynamicMessage;
-
 	private Data data;
 
 	public String getRequestId() {
@@ -87,14 +85,6 @@ public class CreateOrUpdateSwimmingLaneGroupResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
-	}
-
-	public String getDynamicMessage() {
-		return this.dynamicMessage;
-	}
-
-	public void setDynamicMessage(String dynamicMessage) {
-		this.dynamicMessage = dynamicMessage;
 	}
 
 	public Data getData() {

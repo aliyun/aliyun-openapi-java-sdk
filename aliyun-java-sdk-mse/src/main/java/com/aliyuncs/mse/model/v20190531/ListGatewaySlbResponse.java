@@ -119,6 +119,10 @@ public class ListGatewaySlbResponse extends AcsResponse {
 
 		private String httpsVServerGroupId;
 
+		private String vsMetaInfo;
+
+		private List<Service> vServiceList;
+
 		public String getId() {
 			return this.id;
 		}
@@ -245,6 +249,65 @@ public class ListGatewaySlbResponse extends AcsResponse {
 
 		public void setHttpsVServerGroupId(String httpsVServerGroupId) {
 			this.httpsVServerGroupId = httpsVServerGroupId;
+		}
+
+		public String getVsMetaInfo() {
+			return this.vsMetaInfo;
+		}
+
+		public void setVsMetaInfo(String vsMetaInfo) {
+			this.vsMetaInfo = vsMetaInfo;
+		}
+
+		public List<Service> getVServiceList() {
+			return this.vServiceList;
+		}
+
+		public void setVServiceList(List<Service> vServiceList) {
+			this.vServiceList = vServiceList;
+		}
+
+		public static class Service {
+
+			private String port;
+
+			private String protocol;
+
+			private String vServerGroupId;
+
+			private String vServerGroupName;
+
+			public String getPort() {
+				return this.port;
+			}
+
+			public void setPort(String port) {
+				this.port = port;
+			}
+
+			public String getBizProtocol() {
+				return this.protocol;
+			}
+
+			public void setBizProtocol(String protocol) {
+				this.protocol = protocol;
+			}
+
+			public String getVServerGroupId() {
+				return this.vServerGroupId;
+			}
+
+			public void setVServerGroupId(String vServerGroupId) {
+				this.vServerGroupId = vServerGroupId;
+			}
+
+			public String getVServerGroupName() {
+				return this.vServerGroupName;
+			}
+
+			public void setVServerGroupName(String vServerGroupName) {
+				this.vServerGroupName = vServerGroupName;
+			}
 		}
 	}
 

@@ -32,7 +32,6 @@ public class CreateOrUpdateSwimmingLaneGroupResponseUnmarshaller {
 		createOrUpdateSwimmingLaneGroupResponse.setErrorCode(_ctx.stringValue("CreateOrUpdateSwimmingLaneGroupResponse.ErrorCode"));
 		createOrUpdateSwimmingLaneGroupResponse.setHttpStatusCode(_ctx.integerValue("CreateOrUpdateSwimmingLaneGroupResponse.HttpStatusCode"));
 		createOrUpdateSwimmingLaneGroupResponse.setMessage(_ctx.stringValue("CreateOrUpdateSwimmingLaneGroupResponse.Message"));
-		createOrUpdateSwimmingLaneGroupResponse.setDynamicMessage(_ctx.stringValue("CreateOrUpdateSwimmingLaneGroupResponse.DynamicMessage"));
 
 		Data data = new Data();
 		data.setName(_ctx.stringValue("CreateOrUpdateSwimmingLaneGroupResponse.Data.Name"));

@@ -15,6 +15,9 @@
 package com.aliyuncs.mse.model.v20190531;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.mse.Endpoint;
 
@@ -36,6 +39,9 @@ public class AddGatewaySlbRequest extends RpcAcsRequest<AddGatewaySlbResponse> {
 	private Integer serviceWeight;
 
 	private String vServerGroupId;
+
+	@SerializedName("vServiceList")
+	private List<VServiceList> vServiceList;
 
 	private String httpsVServerGroupId;
 
@@ -117,6 +123,17 @@ public class AddGatewaySlbRequest extends RpcAcsRequest<AddGatewaySlbResponse> {
 		}
 	}
 
+	public List<VServiceList> getVServiceList() {
+		return this.vServiceList;
+	}
+
+	public void setVServiceList(List<VServiceList> vServiceList) {
+		this.vServiceList = vServiceList;	
+		if (vServiceList != null) {
+			putQueryParameter("VServiceList" , new Gson().toJson(vServiceList));
+		}	
+	}
+
 	public String getHttpsVServerGroupId() {
 		return this.httpsVServerGroupId;
 	}
@@ -147,6 +164,53 @@ public class AddGatewaySlbRequest extends RpcAcsRequest<AddGatewaySlbResponse> {
 		this.httpsPort = httpsPort;
 		if(httpsPort != null){
 			putQueryParameter("HttpsPort", httpsPort.toString());
+		}
+	}
+
+	public static class VServiceList {
+
+		@SerializedName("VServerGroupId")
+		private String vServerGroupId;
+
+		@SerializedName("Protocol")
+		private String protocol;
+
+		@SerializedName("Port")
+		private Integer port;
+
+		@SerializedName("VServerGroupName")
+		private String vServerGroupName;
+
+		public String getVServerGroupId() {
+			return this.vServerGroupId;
+		}
+
+		public void setVServerGroupId(String vServerGroupId) {
+			this.vServerGroupId = vServerGroupId;
+		}
+
+		public String getBizProtocol() {
+			return this.protocol;
+		}
+
+		public void setBizProtocol(String protocol) {
+			this.protocol = protocol;
+		}
+
+		public Integer getPort() {
+			return this.port;
+		}
+
+		public void setPort(Integer port) {
+			this.port = port;
+		}
+
+		public String getVServerGroupName() {
+			return this.vServerGroupName;
+		}
+
+		public void setVServerGroupName(String vServerGroupName) {
+			this.vServerGroupName = vServerGroupName;
 		}
 	}
 

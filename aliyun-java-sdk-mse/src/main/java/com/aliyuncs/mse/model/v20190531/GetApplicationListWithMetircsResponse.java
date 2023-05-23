@@ -151,6 +151,8 @@ public class GetApplicationListWithMetircsResponse extends AcsResponse {
 
 			private String namespace;
 
+			private Integer appType;
+
 			private List<CurMetricsItem> curMetrics;
 
 			private List<String> tags;
@@ -243,6 +245,14 @@ public class GetApplicationListWithMetircsResponse extends AcsResponse {
 
 			public void setNamespace(String namespace) {
 				this.namespace = namespace;
+			}
+
+			public Integer getAppType() {
+				return this.appType;
+			}
+
+			public void setAppType(Integer appType) {
+				this.appType = appType;
 			}
 
 			public List<CurMetricsItem> getCurMetrics() {

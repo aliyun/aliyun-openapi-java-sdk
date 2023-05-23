@@ -54,6 +54,7 @@ public class GetApplicationListWithMetircsResponseUnmarshaller {
 			applicationList.setLanguage(_ctx.stringValue("GetApplicationListWithMetircsResponse.Data.Result["+ i +"].Language"));
 			applicationList.setRegionId(_ctx.stringValue("GetApplicationListWithMetircsResponse.Data.Result["+ i +"].RegionId"));
 			applicationList.setNamespace(_ctx.stringValue("GetApplicationListWithMetircsResponse.Data.Result["+ i +"].Namespace"));
+			applicationList.setAppType(_ctx.integerValue("GetApplicationListWithMetircsResponse.Data.Result["+ i +"].AppType"));
 
 			List<String> tags = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("GetApplicationListWithMetircsResponse.Data.Result["+ i +"].Tags.Length"); j++) {

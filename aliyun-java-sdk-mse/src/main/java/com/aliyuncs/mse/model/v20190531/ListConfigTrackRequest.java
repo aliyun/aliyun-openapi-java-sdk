@@ -50,7 +50,7 @@ public class ListConfigTrackRequest extends RpcAcsRequest<ListConfigTrackRespons
 	private String acceptLanguage;
 	public ListConfigTrackRequest() {
 		super("mse", "2019-05-31", "ListConfigTrack", "mse");
-		setMethod(MethodType.GET);
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);

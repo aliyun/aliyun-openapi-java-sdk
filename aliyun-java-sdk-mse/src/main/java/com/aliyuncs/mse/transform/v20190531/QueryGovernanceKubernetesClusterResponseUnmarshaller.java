@@ -28,9 +28,7 @@ public class QueryGovernanceKubernetesClusterResponseUnmarshaller {
 	public static QueryGovernanceKubernetesClusterResponse unmarshall(QueryGovernanceKubernetesClusterResponse queryGovernanceKubernetesClusterResponse, UnmarshallerContext _ctx) {
 		
 		queryGovernanceKubernetesClusterResponse.setRequestId(_ctx.stringValue("QueryGovernanceKubernetesClusterResponse.RequestId"));
-		queryGovernanceKubernetesClusterResponse.setHttpStatusCode(_ctx.integerValue("QueryGovernanceKubernetesClusterResponse.HttpStatusCode"));
 		queryGovernanceKubernetesClusterResponse.setMessage(_ctx.stringValue("QueryGovernanceKubernetesClusterResponse.Message"));
-		queryGovernanceKubernetesClusterResponse.setCode(_ctx.integerValue("QueryGovernanceKubernetesClusterResponse.Code"));
 		queryGovernanceKubernetesClusterResponse.setSuccess(_ctx.booleanValue("QueryGovernanceKubernetesClusterResponse.Success"));
 
 		Data data = new Data();

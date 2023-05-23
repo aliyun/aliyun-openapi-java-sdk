@@ -16,6 +16,8 @@ package com.aliyuncs.mse.model.v20190531;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.mse.Endpoint;
 
@@ -54,6 +56,9 @@ public class AddGatewayRequest extends RpcAcsRequest<AddGatewayResponse> {
 
 	private String region;
 
+	@SerializedName("zoneInfo")
+	private List<ZoneInfo> zoneInfo;
+
 	private String xtraceRatio;
 
 	private String vSwitchId2;
@@ -61,6 +66,8 @@ public class AddGatewayRequest extends RpcAcsRequest<AddGatewayResponse> {
 	private String vpc;
 
 	private String acceptLanguage;
+
+	private String chargeType;
 	public AddGatewayRequest() {
 		super("mse", "2019-05-31", "AddGateway", "mse");
 		setMethod(MethodType.POST);
@@ -227,6 +234,17 @@ public class AddGatewayRequest extends RpcAcsRequest<AddGatewayResponse> {
 		}
 	}
 
+	public List<ZoneInfo> getZoneInfo() {
+		return this.zoneInfo;
+	}
+
+	public void setZoneInfo(List<ZoneInfo> zoneInfo) {
+		this.zoneInfo = zoneInfo;	
+		if (zoneInfo != null) {
+			putQueryParameter("ZoneInfo" , new Gson().toJson(zoneInfo));
+		}	
+	}
+
 	public String getXtraceRatio() {
 		return this.xtraceRatio;
 	}
@@ -271,6 +289,17 @@ public class AddGatewayRequest extends RpcAcsRequest<AddGatewayResponse> {
 		}
 	}
 
+	public String getChargeType() {
+		return this.chargeType;
+	}
+
+	public void setChargeType(String chargeType) {
+		this.chargeType = chargeType;
+		if(chargeType != null){
+			putQueryParameter("ChargeType", chargeType);
+		}
+	}
+
 	public static class Tag {
 
 		private String value;
@@ -291,6 +320,31 @@ public class AddGatewayRequest extends RpcAcsRequest<AddGatewayResponse> {
 
 		public void setKey(String key) {
 			this.key = key;
+		}
+	}
+
+	public static class ZoneInfo {
+
+		@SerializedName("VSwitchId")
+		private String vSwitchId;
+
+		@SerializedName("ZoneId")
+		private String zoneId;
+
+		public String getVSwitchId() {
+			return this.vSwitchId;
+		}
+
+		public void setVSwitchId(String vSwitchId) {
+			this.vSwitchId = vSwitchId;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
 		}
 	}
 

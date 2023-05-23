@@ -31,6 +31,8 @@ public class QueryNamespaceResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String errorCode;
+
 	private Boolean success;
 
 	private List<NamespaceList> data;
@@ -57,6 +59,14 @@ public class QueryNamespaceResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public Boolean getSuccess() {

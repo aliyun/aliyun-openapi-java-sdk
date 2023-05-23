@@ -32,7 +32,7 @@ public class ListZnodeChildrenRequest extends RpcAcsRequest<ListZnodeChildrenRes
 	private String acceptLanguage;
 	public ListZnodeChildrenRequest() {
 		super("mse", "2019-05-31", "ListZnodeChildren", "mse");
-		setMethod(MethodType.GET);
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);

@@ -59,6 +59,7 @@ public class QueryConfigResponseUnmarshaller {
 		data.setConfigContentLimit(_ctx.longValue("QueryConfigResponse.Data.ConfigContentLimit"));
 		data.setExtendedTypesEnable(_ctx.booleanValue("QueryConfigResponse.Data.ExtendedTypesEnable"));
 		data.setEurekaSupported(_ctx.booleanValue("QueryConfigResponse.Data.EurekaSupported"));
+		data.setTLSEnabled(_ctx.booleanValue("QueryConfigResponse.Data.TLSEnabled"));
 
 		NacosRunningEnv nacosRunningEnv = new NacosRunningEnv();
 		nacosRunningEnv.setEmptyProtect(_ctx.booleanValue("QueryConfigResponse.Data.NacosRunningEnv.emptyProtect"));

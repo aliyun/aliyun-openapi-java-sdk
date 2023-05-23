@@ -28,12 +28,6 @@ import com.aliyuncs.mse.Endpoint;
 public class CreateOrUpdateSwimmingLaneRequest extends RpcAcsRequest<CreateOrUpdateSwimmingLaneResponse> {
 	   
 
-	private String source;
-
-	private String gmtModified;
-
-	private String userId;
-
 	private String entryRule;
 
 	private Boolean enable;
@@ -50,14 +44,8 @@ public class CreateOrUpdateSwimmingLaneRequest extends RpcAcsRequest<CreateOrUpd
 
 	private String name;
 
-	private Integer status;
-
-	private String licenseKey;
-
 	@SerializedName("gatewaySwimmingLaneRouteJson")
 	private GatewaySwimmingLaneRouteJson gatewaySwimmingLaneRouteJson;
-
-	private String gmtCreate;
 
 	private String namespace;
 
@@ -69,39 +57,6 @@ public class CreateOrUpdateSwimmingLaneRequest extends RpcAcsRequest<CreateOrUpd
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getSource() {
-		return this.source;
-	}
-
-	public void setSource(String source) {
-		this.source = source;
-		if(source != null){
-			putQueryParameter("Source", source);
-		}
-	}
-
-	public String getGmtModified() {
-		return this.gmtModified;
-	}
-
-	public void setGmtModified(String gmtModified) {
-		this.gmtModified = gmtModified;
-		if(gmtModified != null){
-			putQueryParameter("GmtModified", gmtModified);
-		}
-	}
-
-	public String getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId);
-		}
 	}
 
 	public String getEntryRule() {
@@ -158,31 +113,29 @@ public class CreateOrUpdateSwimmingLaneRequest extends RpcAcsRequest<CreateOrUpd
 			for (int depth1 = 0; depth1 < entryRuless.size(); depth1++) {
 				if (entryRuless.get(depth1).getRestItemss() != null) {
 					for (int depth2 = 0; depth2 < entryRuless.get(depth1).getRestItemss().size(); depth2++) {
-						putQueryParameter("EntryRules." + (depth1 + 1) + ".RestItems." + (depth2 + 1) + ".Datum" , entryRuless.get(depth1).getRestItemss().get(depth2).getDatum());
-						putQueryParameter("EntryRules." + (depth1 + 1) + ".RestItems." + (depth2 + 1) + ".Divisor" , entryRuless.get(depth1).getRestItemss().get(depth2).getDivisor());
-						putQueryParameter("EntryRules." + (depth1 + 1) + ".RestItems." + (depth2 + 1) + ".Rate" , entryRuless.get(depth1).getRestItemss().get(depth2).getRate());
+						putBodyParameter("EntryRules." + (depth1 + 1) + ".RestItems." + (depth2 + 1) + ".Datum" , entryRuless.get(depth1).getRestItemss().get(depth2).getDatum());
+						putBodyParameter("EntryRules." + (depth1 + 1) + ".RestItems." + (depth2 + 1) + ".Divisor" , entryRuless.get(depth1).getRestItemss().get(depth2).getDivisor());
+						putBodyParameter("EntryRules." + (depth1 + 1) + ".RestItems." + (depth2 + 1) + ".Rate" , entryRuless.get(depth1).getRestItemss().get(depth2).getRate());
 						if (entryRuless.get(depth1).getRestItemss().get(depth2).getNameLists() != null) {
 							for (int i = 0; i < entryRuless.get(depth1).getRestItemss().get(depth2).getNameLists().size(); i++) {
-								putQueryParameter("EntryRules." + (depth1 + 1) + ".RestItems." + (depth2 + 1) + ".NameList." + (i + 1) , entryRuless.get(depth1).getRestItemss().get(depth2).getNameLists().get(i));
+								putBodyParameter("EntryRules." + (depth1 + 1) + ".RestItems." + (depth2 + 1) + ".NameList." + (i + 1) , entryRuless.get(depth1).getRestItemss().get(depth2).getNameLists().get(i));
 							}
 						}
-						putQueryParameter("EntryRules." + (depth1 + 1) + ".RestItems." + (depth2 + 1) + ".Name" , entryRuless.get(depth1).getRestItemss().get(depth2).getName());
-						putQueryParameter("EntryRules." + (depth1 + 1) + ".RestItems." + (depth2 + 1) + ".Type" , entryRuless.get(depth1).getRestItemss().get(depth2).getType());
-						putQueryParameter("EntryRules." + (depth1 + 1) + ".RestItems." + (depth2 + 1) + ".Cond" , entryRuless.get(depth1).getRestItemss().get(depth2).getCond());
-						putQueryParameter("EntryRules." + (depth1 + 1) + ".RestItems." + (depth2 + 1) + ".Remainder" , entryRuless.get(depth1).getRestItemss().get(depth2).getRemainder());
-						putQueryParameter("EntryRules." + (depth1 + 1) + ".RestItems." + (depth2 + 1) + ".Value" , entryRuless.get(depth1).getRestItemss().get(depth2).getValue());
-						putQueryParameter("EntryRules." + (depth1 + 1) + ".RestItems." + (depth2 + 1) + ".Operator" , entryRuless.get(depth1).getRestItemss().get(depth2).getOperator());
+						putBodyParameter("EntryRules." + (depth1 + 1) + ".RestItems." + (depth2 + 1) + ".Name" , entryRuless.get(depth1).getRestItemss().get(depth2).getName());
+						putBodyParameter("EntryRules." + (depth1 + 1) + ".RestItems." + (depth2 + 1) + ".Type" , entryRuless.get(depth1).getRestItemss().get(depth2).getType());
+						putBodyParameter("EntryRules." + (depth1 + 1) + ".RestItems." + (depth2 + 1) + ".Cond" , entryRuless.get(depth1).getRestItemss().get(depth2).getCond());
+						putBodyParameter("EntryRules." + (depth1 + 1) + ".RestItems." + (depth2 + 1) + ".Remainder" , entryRuless.get(depth1).getRestItemss().get(depth2).getRemainder());
+						putBodyParameter("EntryRules." + (depth1 + 1) + ".RestItems." + (depth2 + 1) + ".Value" , entryRuless.get(depth1).getRestItemss().get(depth2).getValue());
+						putBodyParameter("EntryRules." + (depth1 + 1) + ".RestItems." + (depth2 + 1) + ".Operator" , entryRuless.get(depth1).getRestItemss().get(depth2).getOperator());
 					}
 				}
-				putQueryParameter("EntryRules." + (depth1 + 1) + ".Path" , entryRuless.get(depth1).getPath());
-				putQueryParameter("EntryRules." + (depth1 + 1) + ".Condition" , entryRuless.get(depth1).getCondition());
-				putQueryParameter("EntryRules." + (depth1 + 1) + ".Enable" , entryRuless.get(depth1).getEnable());
+				putBodyParameter("EntryRules." + (depth1 + 1) + ".Condition" , entryRuless.get(depth1).getCondition());
 				if (entryRuless.get(depth1).getPathss() != null) {
 					for (int i = 0; i < entryRuless.get(depth1).getPathss().size(); i++) {
-						putQueryParameter("EntryRules." + (depth1 + 1) + ".Paths." + (i + 1) , entryRuless.get(depth1).getPathss().get(i));
+						putBodyParameter("EntryRules." + (depth1 + 1) + ".Paths." + (i + 1) , entryRuless.get(depth1).getPathss().get(i));
 					}
 				}
-				putQueryParameter("EntryRules." + (depth1 + 1) + ".Priority" , entryRuless.get(depth1).getPriority());
+				putBodyParameter("EntryRules." + (depth1 + 1) + ".Priority" , entryRuless.get(depth1).getPriority());
 			}
 		}	
 	}
@@ -220,28 +173,6 @@ public class CreateOrUpdateSwimmingLaneRequest extends RpcAcsRequest<CreateOrUpd
 		}
 	}
 
-	public Integer getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(Integer status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status.toString());
-		}
-	}
-
-	public String getLicenseKey() {
-		return this.licenseKey;
-	}
-
-	public void setLicenseKey(String licenseKey) {
-		this.licenseKey = licenseKey;
-		if(licenseKey != null){
-			putQueryParameter("LicenseKey", licenseKey);
-		}
-	}
-
 	public GatewaySwimmingLaneRouteJson getGatewaySwimmingLaneRouteJson() {
 		return this.gatewaySwimmingLaneRouteJson;
 	}
@@ -251,17 +182,6 @@ public class CreateOrUpdateSwimmingLaneRequest extends RpcAcsRequest<CreateOrUpd
 		if (gatewaySwimmingLaneRouteJson != null) {
 			putQueryParameter("GatewaySwimmingLaneRouteJson" , new Gson().toJson(gatewaySwimmingLaneRouteJson));
 		}	
-	}
-
-	public String getGmtCreate() {
-		return this.gmtCreate;
-	}
-
-	public void setGmtCreate(String gmtCreate) {
-		this.gmtCreate = gmtCreate;
-		if(gmtCreate != null){
-			putQueryParameter("GmtCreate", gmtCreate);
-		}
 	}
 
 	public String getNamespace() {
@@ -290,11 +210,7 @@ public class CreateOrUpdateSwimmingLaneRequest extends RpcAcsRequest<CreateOrUpd
 
 		private List<RestItems> restItemss;
 
-		private String path;
-
 		private String condition;
-
-		private Boolean enable;
 
 		private List<String> pathss;
 
@@ -308,28 +224,12 @@ public class CreateOrUpdateSwimmingLaneRequest extends RpcAcsRequest<CreateOrUpd
 			this.restItemss = restItemss;
 		}
 
-		public String getPath() {
-			return this.path;
-		}
-
-		public void setPath(String path) {
-			this.path = path;
-		}
-
 		public String getCondition() {
 			return this.condition;
 		}
 
 		public void setCondition(String condition) {
 			this.condition = condition;
-		}
-
-		public Boolean getEnable() {
-			return this.enable;
-		}
-
-		public void setEnable(Boolean enable) {
-			this.enable = enable;
 		}
 
 		public List<String> getPathss() {

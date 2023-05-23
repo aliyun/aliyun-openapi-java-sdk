@@ -27,6 +27,8 @@ public class GetKubernetesSourceRequest extends RpcAcsRequest<GetKubernetesSourc
 
 	private String gatewayUniqueId;
 
+	private Boolean isAll;
+
 	private String vpcId;
 
 	private String acceptLanguage;
@@ -47,6 +49,17 @@ public class GetKubernetesSourceRequest extends RpcAcsRequest<GetKubernetesSourc
 		this.gatewayUniqueId = gatewayUniqueId;
 		if(gatewayUniqueId != null){
 			putQueryParameter("GatewayUniqueId", gatewayUniqueId);
+		}
+	}
+
+	public Boolean getIsAll() {
+		return this.isAll;
+	}
+
+	public void setIsAll(Boolean isAll) {
+		this.isAll = isAll;
+		if(isAll != null){
+			putQueryParameter("IsAll", isAll.toString());
 		}
 	}
 

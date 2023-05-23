@@ -30,9 +30,11 @@ public class DeleteNamespaceResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Long data;
-
 	private Boolean success;
+
+	private String errorCode;
+
+	private Long data;
 
 	public Integer getHttpStatusCode() {
 		return this.httpStatusCode;
@@ -58,20 +60,28 @@ public class DeleteNamespaceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Long getData() {
-		return this.data;
-	}
-
-	public void setData(Long data) {
-		this.data = data;
-	}
-
 	public Boolean getSuccess() {
 		return this.success;
 	}
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public Long getData() {
+		return this.data;
+	}
+
+	public void setData(Long data) {
+		this.data = data;
 	}
 
 	@Override

@@ -25,8 +25,9 @@ public class DeleteNamespaceResponseUnmarshaller {
 		deleteNamespaceResponse.setRequestId(_ctx.stringValue("DeleteNamespaceResponse.RequestId"));
 		deleteNamespaceResponse.setHttpStatusCode(_ctx.integerValue("DeleteNamespaceResponse.HttpStatusCode"));
 		deleteNamespaceResponse.setMessage(_ctx.stringValue("DeleteNamespaceResponse.Message"));
-		deleteNamespaceResponse.setData(_ctx.longValue("DeleteNamespaceResponse.Data"));
 		deleteNamespaceResponse.setSuccess(_ctx.booleanValue("DeleteNamespaceResponse.Success"));
+		deleteNamespaceResponse.setErrorCode(_ctx.stringValue("DeleteNamespaceResponse.ErrorCode"));
+		deleteNamespaceResponse.setData(_ctx.longValue("DeleteNamespaceResponse.Data"));
 	 
 	 	return deleteNamespaceResponse;
 	}

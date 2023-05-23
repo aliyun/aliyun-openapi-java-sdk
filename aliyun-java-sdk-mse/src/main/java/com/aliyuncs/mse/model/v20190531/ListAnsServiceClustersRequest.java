@@ -31,8 +31,6 @@ public class ListAnsServiceClustersRequest extends RpcAcsRequest<ListAnsServiceC
 
 	private String namespaceId;
 
-	private String requestPars;
-
 	private Integer pageSize;
 
 	private String serviceName;
@@ -46,7 +44,7 @@ public class ListAnsServiceClustersRequest extends RpcAcsRequest<ListAnsServiceC
 	private String acceptLanguage;
 	public ListAnsServiceClustersRequest() {
 		super("mse", "2019-05-31", "ListAnsServiceClusters", "mse");
-		setMethod(MethodType.GET);
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -83,17 +81,6 @@ public class ListAnsServiceClustersRequest extends RpcAcsRequest<ListAnsServiceC
 		this.namespaceId = namespaceId;
 		if(namespaceId != null){
 			putQueryParameter("NamespaceId", namespaceId);
-		}
-	}
-
-	public String getRequestPars() {
-		return this.requestPars;
-	}
-
-	public void setRequestPars(String requestPars) {
-		this.requestPars = requestPars;
-		if(requestPars != null){
-			putQueryParameter("RequestPars", requestPars);
 		}
 	}
 

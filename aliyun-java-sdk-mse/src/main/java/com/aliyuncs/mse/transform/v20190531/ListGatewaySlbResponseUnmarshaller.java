@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.mse.model.v20190531.ListGatewaySlbResponse;
 import com.aliyuncs.mse.model.v20190531.ListGatewaySlbResponse.Sources;
+import com.aliyuncs.mse.model.v20190531.ListGatewaySlbResponse.Sources.Service;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -51,6 +52,19 @@ public class ListGatewaySlbResponseUnmarshaller {
 			sources.setServiceWeight(_ctx.integerValue("ListGatewaySlbResponse.Data["+ i +"].ServiceWeight"));
 			sources.setEditEnable(_ctx.booleanValue("ListGatewaySlbResponse.Data["+ i +"].EditEnable"));
 			sources.setHttpsVServerGroupId(_ctx.stringValue("ListGatewaySlbResponse.Data["+ i +"].HttpsVServerGroupId"));
+			sources.setVsMetaInfo(_ctx.stringValue("ListGatewaySlbResponse.Data["+ i +"].VsMetaInfo"));
+
+			List<Service> vServiceList = new ArrayList<Service>();
+			for (int j = 0; j < _ctx.lengthValue("ListGatewaySlbResponse.Data["+ i +"].VServiceList.Length"); j++) {
+				Service service = new Service();
+				service.setPort(_ctx.stringValue("ListGatewaySlbResponse.Data["+ i +"].VServiceList["+ j +"].Port"));
+				service.setBizProtocol(_ctx.stringValue("ListGatewaySlbResponse.Data["+ i +"].VServiceList["+ j +"].Protocol"));
+				service.setVServerGroupId(_ctx.stringValue("ListGatewaySlbResponse.Data["+ i +"].VServiceList["+ j +"].VServerGroupId"));
+				service.setVServerGroupName(_ctx.stringValue("ListGatewaySlbResponse.Data["+ i +"].VServiceList["+ j +"].VServerGroupName"));
+
+				vServiceList.add(service);
+			}
+			sources.setVServiceList(vServiceList);
 
 			data.add(sources);
 		}

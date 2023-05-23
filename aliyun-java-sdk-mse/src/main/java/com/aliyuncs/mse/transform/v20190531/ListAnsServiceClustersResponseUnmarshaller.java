@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.mse.model.v20190531.ListAnsServiceClustersResponse;
 import com.aliyuncs.mse.model.v20190531.ListAnsServiceClustersResponse.Data;
+import com.aliyuncs.mse.model.v20190531.ListAnsServiceClustersResponse.Data.AppDetail;
 import com.aliyuncs.mse.model.v20190531.ListAnsServiceClustersResponse.Data.NacosAnsCluster;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -40,6 +41,19 @@ public class ListAnsServiceClustersResponseUnmarshaller {
 		data.setSelectorType(_ctx.stringValue("ListAnsServiceClustersResponse.Data.SelectorType"));
 		data.setMetadata(_ctx.mapValue("ListAnsServiceClustersResponse.Data.Metadata"));
 		data.setEphemeral(_ctx.booleanValue("ListAnsServiceClustersResponse.Data.Ephemeral"));
+		data.setSource(_ctx.stringValue("ListAnsServiceClustersResponse.Data.Source"));
+
+		AppDetail appDetail = new AppDetail();
+		appDetail.setAppId(_ctx.stringValue("ListAnsServiceClustersResponse.Data.AppDetail.AppId"));
+		appDetail.setAppName(_ctx.stringValue("ListAnsServiceClustersResponse.Data.AppDetail.AppName"));
+		appDetail.setPort(_ctx.integerValue("ListAnsServiceClustersResponse.Data.AppDetail.Port"));
+		appDetail.setCheckType(_ctx.stringValue("ListAnsServiceClustersResponse.Data.AppDetail.CheckType"));
+		appDetail.setCheckPath(_ctx.stringValue("ListAnsServiceClustersResponse.Data.AppDetail.CheckPath"));
+		appDetail.setCheckTimeout(_ctx.integerValue("ListAnsServiceClustersResponse.Data.AppDetail.CheckTimeout"));
+		appDetail.setCheckInternal(_ctx.integerValue("ListAnsServiceClustersResponse.Data.AppDetail.CheckInternal"));
+		appDetail.setHealthyCheckTimes(_ctx.integerValue("ListAnsServiceClustersResponse.Data.AppDetail.HealthyCheckTimes"));
+		appDetail.setUnhealthyCheckTimes(_ctx.integerValue("ListAnsServiceClustersResponse.Data.AppDetail.UnhealthyCheckTimes"));
+		data.setAppDetail(appDetail);
 
 		List<NacosAnsCluster> clusters = new ArrayList<NacosAnsCluster>();
 		for (int i = 0; i < _ctx.lengthValue("ListAnsServiceClustersResponse.Data.Clusters.Length"); i++) {

@@ -25,12 +25,6 @@ import com.aliyuncs.mse.Endpoint;
 public class CreateOrUpdateSwimmingLaneGroupRequest extends RpcAcsRequest<CreateOrUpdateSwimmingLaneGroupResponse> {
 	   
 
-	private String source;
-
-	private String gmtModified;
-
-	private String userId;
-
 	private String appIds;
 
 	private Boolean dbGrayEnable;
@@ -47,15 +41,11 @@ public class CreateOrUpdateSwimmingLaneGroupRequest extends RpcAcsRequest<Create
 
 	private Integer status;
 
-	private String licenseKey;
-
 	private Boolean messageQueueGrayEnable;
 
 	private String entryApp;
 
 	private Boolean recordCanaryDetail;
-
-	private String gmtCreate;
 
 	private String namespace;
 
@@ -67,39 +57,6 @@ public class CreateOrUpdateSwimmingLaneGroupRequest extends RpcAcsRequest<Create
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getSource() {
-		return this.source;
-	}
-
-	public void setSource(String source) {
-		this.source = source;
-		if(source != null){
-			putQueryParameter("Source", source);
-		}
-	}
-
-	public String getGmtModified() {
-		return this.gmtModified;
-	}
-
-	public void setGmtModified(String gmtModified) {
-		this.gmtModified = gmtModified;
-		if(gmtModified != null){
-			putQueryParameter("GmtModified", gmtModified);
-		}
-	}
-
-	public String getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId);
-		}
 	}
 
 	public String getAppIds() {
@@ -190,17 +147,6 @@ public class CreateOrUpdateSwimmingLaneGroupRequest extends RpcAcsRequest<Create
 		}
 	}
 
-	public String getLicenseKey() {
-		return this.licenseKey;
-	}
-
-	public void setLicenseKey(String licenseKey) {
-		this.licenseKey = licenseKey;
-		if(licenseKey != null){
-			putQueryParameter("LicenseKey", licenseKey);
-		}
-	}
-
 	public Boolean getMessageQueueGrayEnable() {
 		return this.messageQueueGrayEnable;
 	}
@@ -231,17 +177,6 @@ public class CreateOrUpdateSwimmingLaneGroupRequest extends RpcAcsRequest<Create
 		this.recordCanaryDetail = recordCanaryDetail;
 		if(recordCanaryDetail != null){
 			putQueryParameter("RecordCanaryDetail", recordCanaryDetail.toString());
-		}
-	}
-
-	public String getGmtCreate() {
-		return this.gmtCreate;
-	}
-
-	public void setGmtCreate(String gmtCreate) {
-		this.gmtCreate = gmtCreate;
-		if(gmtCreate != null){
-			putQueryParameter("GmtCreate", gmtCreate);
 		}
 	}
 

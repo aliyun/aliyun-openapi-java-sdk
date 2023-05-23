@@ -30,7 +30,7 @@ public class ListEngineNamespacesRequest extends RpcAcsRequest<ListEngineNamespa
 	private String acceptLanguage;
 	public ListEngineNamespacesRequest() {
 		super("mse", "2019-05-31", "ListEngineNamespaces", "mse");
-		setMethod(MethodType.GET);
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);

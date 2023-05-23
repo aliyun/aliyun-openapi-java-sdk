@@ -187,11 +187,23 @@ public class ListGatewayResponse extends AcsResponse {
 
 			private String resourceGroupId;
 
+			private Integer totalReplica;
+
+			private Boolean elastic;
+
+			private Integer elasticReplica;
+
+			private String elasticType;
+
+			private String elasticInstanceId;
+
 			private List<SlbItem> slb;
 
 			private List<InternetSlbItem> internetSlb;
 
 			private InitConfig initConfig;
+
+			private ElasticPolicy elasticPolicy;
 
 			public Long getId() {
 				return this.id;
@@ -425,6 +437,46 @@ public class ListGatewayResponse extends AcsResponse {
 				this.resourceGroupId = resourceGroupId;
 			}
 
+			public Integer getTotalReplica() {
+				return this.totalReplica;
+			}
+
+			public void setTotalReplica(Integer totalReplica) {
+				this.totalReplica = totalReplica;
+			}
+
+			public Boolean getElastic() {
+				return this.elastic;
+			}
+
+			public void setElastic(Boolean elastic) {
+				this.elastic = elastic;
+			}
+
+			public Integer getElasticReplica() {
+				return this.elasticReplica;
+			}
+
+			public void setElasticReplica(Integer elasticReplica) {
+				this.elasticReplica = elasticReplica;
+			}
+
+			public String getElasticType() {
+				return this.elasticType;
+			}
+
+			public void setElasticType(String elasticType) {
+				this.elasticType = elasticType;
+			}
+
+			public String getElasticInstanceId() {
+				return this.elasticInstanceId;
+			}
+
+			public void setElasticInstanceId(String elasticInstanceId) {
+				this.elasticInstanceId = elasticInstanceId;
+			}
+
 			public List<SlbItem> getSlb() {
 				return this.slb;
 			}
@@ -447,6 +499,14 @@ public class ListGatewayResponse extends AcsResponse {
 
 			public void setInitConfig(InitConfig initConfig) {
 				this.initConfig = initConfig;
+			}
+
+			public ElasticPolicy getElasticPolicy() {
+				return this.elasticPolicy;
+			}
+
+			public void setElasticPolicy(ElasticPolicy elasticPolicy) {
+				this.elasticPolicy = elasticPolicy;
 			}
 
 			public static class SlbItem {
@@ -645,6 +705,82 @@ public class ListGatewayResponse extends AcsResponse {
 
 				public void setSupportWaf(Boolean supportWaf) {
 					this.supportWaf = supportWaf;
+				}
+			}
+
+			public static class ElasticPolicy {
+
+				private Boolean elastic;
+
+				private Integer maxReplica;
+
+				private String elasticType;
+
+				private List<TimePolicyListItem> timePolicyList;
+
+				public Boolean getElastic() {
+					return this.elastic;
+				}
+
+				public void setElastic(Boolean elastic) {
+					this.elastic = elastic;
+				}
+
+				public Integer getMaxReplica() {
+					return this.maxReplica;
+				}
+
+				public void setMaxReplica(Integer maxReplica) {
+					this.maxReplica = maxReplica;
+				}
+
+				public String getElasticType() {
+					return this.elasticType;
+				}
+
+				public void setElasticType(String elasticType) {
+					this.elasticType = elasticType;
+				}
+
+				public List<TimePolicyListItem> getTimePolicyList() {
+					return this.timePolicyList;
+				}
+
+				public void setTimePolicyList(List<TimePolicyListItem> timePolicyList) {
+					this.timePolicyList = timePolicyList;
+				}
+
+				public static class TimePolicyListItem {
+
+					private Integer desiredReplica;
+
+					private String startTime;
+
+					private String endTime;
+
+					public Integer getDesiredReplica() {
+						return this.desiredReplica;
+					}
+
+					public void setDesiredReplica(Integer desiredReplica) {
+						this.desiredReplica = desiredReplica;
+					}
+
+					public String getStartTime() {
+						return this.startTime;
+					}
+
+					public void setStartTime(String startTime) {
+						this.startTime = startTime;
+					}
+
+					public String getEndTime() {
+						return this.endTime;
+					}
+
+					public void setEndTime(String endTime) {
+						this.endTime = endTime;
+					}
 				}
 			}
 		}

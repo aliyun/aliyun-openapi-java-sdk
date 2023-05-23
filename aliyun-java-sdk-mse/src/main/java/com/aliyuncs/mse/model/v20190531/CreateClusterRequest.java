@@ -63,6 +63,8 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 	private String vpcId;
 
 	private String acceptLanguage;
+
+	private String chargeType;
 	public CreateClusterRequest() {
 		super("mse", "2019-05-31", "CreateCluster", "mse");
 		setMethod(MethodType.POST);
@@ -281,6 +283,17 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		this.acceptLanguage = acceptLanguage;
 		if(acceptLanguage != null){
 			putQueryParameter("AcceptLanguage", acceptLanguage);
+		}
+	}
+
+	public String getChargeType() {
+		return this.chargeType;
+	}
+
+	public void setChargeType(String chargeType) {
+		this.chargeType = chargeType;
+		if(chargeType != null){
+			putQueryParameter("ChargeType", chargeType);
 		}
 	}
 

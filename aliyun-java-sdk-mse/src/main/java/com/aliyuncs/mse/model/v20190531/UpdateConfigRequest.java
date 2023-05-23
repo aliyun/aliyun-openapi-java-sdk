@@ -47,6 +47,8 @@ public class UpdateConfigRequest extends RpcAcsRequest<UpdateConfigResponse> {
 
 	private String instanceId;
 
+	private Boolean tLSEnabled;
+
 	private String openSuperAcl;
 
 	private Boolean eurekaSupported;
@@ -199,6 +201,17 @@ public class UpdateConfigRequest extends RpcAcsRequest<UpdateConfigResponse> {
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public Boolean getTLSEnabled() {
+		return this.tLSEnabled;
+	}
+
+	public void setTLSEnabled(Boolean tLSEnabled) {
+		this.tLSEnabled = tLSEnabled;
+		if(tLSEnabled != null){
+			putQueryParameter("TLSEnabled", tLSEnabled.toString());
 		}
 	}
 

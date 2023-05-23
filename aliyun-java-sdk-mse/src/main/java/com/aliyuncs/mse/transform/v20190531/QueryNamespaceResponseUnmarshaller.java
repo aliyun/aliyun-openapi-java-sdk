@@ -29,6 +29,7 @@ public class QueryNamespaceResponseUnmarshaller {
 		queryNamespaceResponse.setRequestId(_ctx.stringValue("QueryNamespaceResponse.RequestId"));
 		queryNamespaceResponse.setHttpStatusCode(_ctx.integerValue("QueryNamespaceResponse.HttpStatusCode"));
 		queryNamespaceResponse.setMessage(_ctx.stringValue("QueryNamespaceResponse.Message"));
+		queryNamespaceResponse.setErrorCode(_ctx.stringValue("QueryNamespaceResponse.ErrorCode"));
 		queryNamespaceResponse.setSuccess(_ctx.booleanValue("QueryNamespaceResponse.Success"));
 
 		List<NamespaceList> data = new ArrayList<NamespaceList>();

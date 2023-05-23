@@ -142,6 +142,8 @@ public class QueryConfigResponse extends AcsResponse {
 
 		private Boolean eurekaSupported;
 
+		private Boolean tLSEnabled;
+
 		private NacosRunningEnv nacosRunningEnv;
 
 		public String getMaxClientCnxns() {
@@ -366,6 +368,14 @@ public class QueryConfigResponse extends AcsResponse {
 
 		public void setEurekaSupported(Boolean eurekaSupported) {
 			this.eurekaSupported = eurekaSupported;
+		}
+
+		public Boolean getTLSEnabled() {
+			return this.tLSEnabled;
+		}
+
+		public void setTLSEnabled(Boolean tLSEnabled) {
+			this.tLSEnabled = tLSEnabled;
 		}
 
 		public NacosRunningEnv getNacosRunningEnv() {
