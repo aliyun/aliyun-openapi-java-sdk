@@ -22,16 +22,12 @@ import com.aliyuncs.computenestsupplier.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetArtifactRequest extends RpcAcsRequest<GetArtifactResponse> {
+public class GetUploadCredentialsRequest extends RpcAcsRequest<GetUploadCredentialsResponse> {
 	   
 
-	private String artifactVersion;
-
-	private String artifactName;
-
-	private String artifactId;
-	public GetArtifactRequest() {
-		super("ComputeNestSupplier", "2021-05-21", "GetArtifact");
+	private String fileName;
+	public GetUploadCredentialsRequest() {
+		super("ComputeNestSupplier", "2021-05-21", "GetUploadCredentials");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,42 +35,20 @@ public class GetArtifactRequest extends RpcAcsRequest<GetArtifactResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getArtifactVersion() {
-		return this.artifactVersion;
+	public String getFileName() {
+		return this.fileName;
 	}
 
-	public void setArtifactVersion(String artifactVersion) {
-		this.artifactVersion = artifactVersion;
-		if(artifactVersion != null){
-			putQueryParameter("ArtifactVersion", artifactVersion);
-		}
-	}
-
-	public String getArtifactName() {
-		return this.artifactName;
-	}
-
-	public void setArtifactName(String artifactName) {
-		this.artifactName = artifactName;
-		if(artifactName != null){
-			putQueryParameter("ArtifactName", artifactName);
-		}
-	}
-
-	public String getArtifactId() {
-		return this.artifactId;
-	}
-
-	public void setArtifactId(String artifactId) {
-		this.artifactId = artifactId;
-		if(artifactId != null){
-			putQueryParameter("ArtifactId", artifactId);
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+		if(fileName != null){
+			putQueryParameter("FileName", fileName);
 		}
 	}
 
 	@Override
-	public Class<GetArtifactResponse> getResponseClass() {
-		return GetArtifactResponse.class;
+	public Class<GetUploadCredentialsResponse> getResponseClass() {
+		return GetUploadCredentialsResponse.class;
 	}
 
 }
