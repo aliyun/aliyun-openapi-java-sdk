@@ -34,6 +34,8 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private String resourceGroupId;
 
+	private String encryptionType;
+
 	private String dBInstanceDescription;
 
 	private String serverlessMode;
@@ -42,7 +44,13 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private String period;
 
+	private String vectorConfigurationStatus;
+
+	private String encryptionKey;
+
 	private Long ownerId;
+
+	private String segDiskPerformanceLevel;
 
 	private String dBInstanceClass;
 
@@ -138,6 +146,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		}
 	}
 
+	public String getEncryptionType() {
+		return this.encryptionType;
+	}
+
+	public void setEncryptionType(String encryptionType) {
+		this.encryptionType = encryptionType;
+		if(encryptionType != null){
+			putQueryParameter("EncryptionType", encryptionType);
+		}
+	}
+
 	public String getDBInstanceDescription() {
 		return this.dBInstanceDescription;
 	}
@@ -185,6 +204,28 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		}
 	}
 
+	public String getVectorConfigurationStatus() {
+		return this.vectorConfigurationStatus;
+	}
+
+	public void setVectorConfigurationStatus(String vectorConfigurationStatus) {
+		this.vectorConfigurationStatus = vectorConfigurationStatus;
+		if(vectorConfigurationStatus != null){
+			putQueryParameter("VectorConfigurationStatus", vectorConfigurationStatus);
+		}
+	}
+
+	public String getEncryptionKey() {
+		return this.encryptionKey;
+	}
+
+	public void setEncryptionKey(String encryptionKey) {
+		this.encryptionKey = encryptionKey;
+		if(encryptionKey != null){
+			putQueryParameter("EncryptionKey", encryptionKey);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -193,6 +234,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getSegDiskPerformanceLevel() {
+		return this.segDiskPerformanceLevel;
+	}
+
+	public void setSegDiskPerformanceLevel(String segDiskPerformanceLevel) {
+		this.segDiskPerformanceLevel = segDiskPerformanceLevel;
+		if(segDiskPerformanceLevel != null){
+			putQueryParameter("SegDiskPerformanceLevel", segDiskPerformanceLevel);
 		}
 	}
 

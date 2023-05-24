@@ -91,6 +91,7 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 			dBInstanceAttribute.setIdleTime(_ctx.integerValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].IdleTime"));
 			dBInstanceAttribute.setServerlessMode(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ServerlessMode"));
 			dBInstanceAttribute.setSegDiskPerformanceLevel(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].SegDiskPerformanceLevel"));
+			dBInstanceAttribute.setVectorConfigurationStatus(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].VectorConfigurationStatus"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].Tags.Length"); j++) {

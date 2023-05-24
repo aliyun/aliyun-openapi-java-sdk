@@ -165,6 +165,8 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		private String segDiskPerformanceLevel;
 
+		private String vectorConfigurationStatus;
+
 		private List<Tag> tags;
 
 		public String getVpcId() {
@@ -637,6 +639,14 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		public void setSegDiskPerformanceLevel(String segDiskPerformanceLevel) {
 			this.segDiskPerformanceLevel = segDiskPerformanceLevel;
+		}
+
+		public String getVectorConfigurationStatus() {
+			return this.vectorConfigurationStatus;
+		}
+
+		public void setVectorConfigurationStatus(String vectorConfigurationStatus) {
+			this.vectorConfigurationStatus = vectorConfigurationStatus;
 		}
 
 		public List<Tag> getTags() {
