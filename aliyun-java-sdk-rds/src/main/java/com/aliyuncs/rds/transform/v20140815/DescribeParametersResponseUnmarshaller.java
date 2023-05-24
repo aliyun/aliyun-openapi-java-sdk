@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.rds.model.v20140815.DescribeParametersResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeParametersResponse.DBInstanceParameter;
+import com.aliyuncs.rds.model.v20140815.DescribeParametersResponse.ParamGroupInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -29,6 +30,13 @@ public class DescribeParametersResponseUnmarshaller {
 		describeParametersResponse.setRequestId(_ctx.stringValue("DescribeParametersResponse.RequestId"));
 		describeParametersResponse.setEngine(_ctx.stringValue("DescribeParametersResponse.Engine"));
 		describeParametersResponse.setEngineVersion(_ctx.stringValue("DescribeParametersResponse.EngineVersion"));
+
+		ParamGroupInfo paramGroupInfo = new ParamGroupInfo();
+		paramGroupInfo.setParameterGroupName(_ctx.stringValue("DescribeParametersResponse.ParamGroupInfo.ParameterGroupName"));
+		paramGroupInfo.setParameterGroupDesc(_ctx.stringValue("DescribeParametersResponse.ParamGroupInfo.ParameterGroupDesc"));
+		paramGroupInfo.setParameterGroupType(_ctx.stringValue("DescribeParametersResponse.ParamGroupInfo.ParameterGroupType"));
+		paramGroupInfo.setParamGroupId(_ctx.stringValue("DescribeParametersResponse.ParamGroupInfo.ParamGroupId"));
+		describeParametersResponse.setParamGroupInfo(paramGroupInfo);
 
 		List<DBInstanceParameter> configParameters = new ArrayList<DBInstanceParameter>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeParametersResponse.ConfigParameters.Length"); i++) {

@@ -155,6 +155,8 @@ public class DescribeSlowLogsResponse extends AcsResponse {
 
 		private Long maxLockTime;
 
+		private Long maxLockTimeMS;
+
 		private String dBName;
 
 		private Long minRowsAffectedCounts;
@@ -180,6 +182,8 @@ public class DescribeSlowLogsResponse extends AcsResponse {
 		private Long slowLogId;
 
 		private Long maxExecutionTime;
+
+		private Long maxExecutionTimeMS;
 
 		private Long avgExecutionTime;
 
@@ -359,6 +363,14 @@ public class DescribeSlowLogsResponse extends AcsResponse {
 			this.maxLockTime = maxLockTime;
 		}
 
+		public Long getMaxLockTimeMS() {
+			return this.maxLockTimeMS;
+		}
+
+		public void setMaxLockTimeMS(Long maxLockTimeMS) {
+			this.maxLockTimeMS = maxLockTimeMS;
+		}
+
 		public String getDBName() {
 			return this.dBName;
 		}
@@ -461,6 +473,14 @@ public class DescribeSlowLogsResponse extends AcsResponse {
 
 		public void setMaxExecutionTime(Long maxExecutionTime) {
 			this.maxExecutionTime = maxExecutionTime;
+		}
+
+		public Long getMaxExecutionTimeMS() {
+			return this.maxExecutionTimeMS;
+		}
+
+		public void setMaxExecutionTimeMS(Long maxExecutionTimeMS) {
+			this.maxExecutionTimeMS = maxExecutionTimeMS;
 		}
 
 		public Long getAvgExecutionTime() {

@@ -46,6 +46,7 @@ public class DescribeVSwitchesResponseUnmarshaller {
 			vSwitch.setStatus(_ctx.stringValue("DescribeVSwitchesResponse.VSwitchs["+ i +"].Status"));
 			vSwitch.setVSwitchId(_ctx.stringValue("DescribeVSwitchesResponse.VSwitchs["+ i +"].VSwitchId"));
 			vSwitch.setVSwitchName(_ctx.stringValue("DescribeVSwitchesResponse.VSwitchs["+ i +"].VSwitchName"));
+			vSwitch.setAvailableIpAddressCount(_ctx.stringValue("DescribeVSwitchesResponse.VSwitchs["+ i +"].AvailableIpAddressCount"));
 
 			vSwitchs.add(vSwitch);
 		}

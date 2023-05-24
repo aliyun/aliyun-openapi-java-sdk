@@ -81,6 +81,8 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 
 	private String dedicatedHostId;
 
+	private String filter;
+
 	private String vpcId;
 
 	private String payType;
@@ -398,6 +400,17 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		this.dedicatedHostId = dedicatedHostId;
 		if(dedicatedHostId != null){
 			putQueryParameter("DedicatedHostId", dedicatedHostId);
+		}
+	}
+
+	public String getFilter() {
+		return this.filter;
+	}
+
+	public void setFilter(String filter) {
+		this.filter = filter;
+		if(filter != null){
+			putQueryParameter("Filter", filter);
 		}
 	}
 

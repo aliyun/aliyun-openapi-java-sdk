@@ -35,6 +35,8 @@ public class DescribeParametersResponse extends AcsResponse {
 
 	private List<DBInstanceParameter> runningParameters;
 
+	private ParamGroupInfo paramGroupInfo;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -75,6 +77,14 @@ public class DescribeParametersResponse extends AcsResponse {
 		this.runningParameters = runningParameters;
 	}
 
+	public ParamGroupInfo getParamGroupInfo() {
+		return this.paramGroupInfo;
+	}
+
+	public void setParamGroupInfo(ParamGroupInfo paramGroupInfo) {
+		this.paramGroupInfo = paramGroupInfo;
+	}
+
 	public static class DBInstanceParameter {
 
 		private String parameterDescription;
@@ -105,6 +115,49 @@ public class DescribeParametersResponse extends AcsResponse {
 
 		public void setParameterValue(String parameterValue) {
 			this.parameterValue = parameterValue;
+		}
+	}
+
+	public static class ParamGroupInfo {
+
+		private String parameterGroupName;
+
+		private String parameterGroupDesc;
+
+		private String parameterGroupType;
+
+		private String paramGroupId;
+
+		public String getParameterGroupName() {
+			return this.parameterGroupName;
+		}
+
+		public void setParameterGroupName(String parameterGroupName) {
+			this.parameterGroupName = parameterGroupName;
+		}
+
+		public String getParameterGroupDesc() {
+			return this.parameterGroupDesc;
+		}
+
+		public void setParameterGroupDesc(String parameterGroupDesc) {
+			this.parameterGroupDesc = parameterGroupDesc;
+		}
+
+		public String getParameterGroupType() {
+			return this.parameterGroupType;
+		}
+
+		public void setParameterGroupType(String parameterGroupType) {
+			this.parameterGroupType = parameterGroupType;
+		}
+
+		public String getParamGroupId() {
+			return this.paramGroupId;
+		}
+
+		public void setParamGroupId(String paramGroupId) {
+			this.paramGroupId = paramGroupId;
 		}
 	}
 

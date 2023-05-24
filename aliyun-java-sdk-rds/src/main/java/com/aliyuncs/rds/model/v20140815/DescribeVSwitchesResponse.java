@@ -101,6 +101,8 @@ public class DescribeVSwitchesResponse extends AcsResponse {
 
 		private String vSwitchName;
 
+		private String availableIpAddressCount;
+
 		public String getAliUid() {
 			return this.aliUid;
 		}
@@ -195,6 +197,14 @@ public class DescribeVSwitchesResponse extends AcsResponse {
 
 		public void setVSwitchName(String vSwitchName) {
 			this.vSwitchName = vSwitchName;
+		}
+
+		public String getAvailableIpAddressCount() {
+			return this.availableIpAddressCount;
+		}
+
+		public void setAvailableIpAddressCount(String availableIpAddressCount) {
+			this.availableIpAddressCount = availableIpAddressCount;
 		}
 	}
 

@@ -57,6 +57,7 @@ public class DescribeSlowLogsResponseUnmarshaller {
 			sQLSlowLog.setSQLServerTotalExecutionCounts(_ctx.longValue("DescribeSlowLogsResponse.Items["+ i +"].SQLServerTotalExecutionCounts"));
 			sQLSlowLog.setReturnTotalRowCounts(_ctx.longValue("DescribeSlowLogsResponse.Items["+ i +"].ReturnTotalRowCounts"));
 			sQLSlowLog.setMaxLockTime(_ctx.longValue("DescribeSlowLogsResponse.Items["+ i +"].MaxLockTime"));
+			sQLSlowLog.setMaxLockTimeMS(_ctx.longValue("DescribeSlowLogsResponse.Items["+ i +"].MaxLockTimeMS"));
 			sQLSlowLog.setDBName(_ctx.stringValue("DescribeSlowLogsResponse.Items["+ i +"].DBName"));
 			sQLSlowLog.setMinRowsAffectedCounts(_ctx.longValue("DescribeSlowLogsResponse.Items["+ i +"].MinRowsAffectedCounts"));
 			sQLSlowLog.setTotalLogicalReadCounts(_ctx.longValue("DescribeSlowLogsResponse.Items["+ i +"].TotalLogicalReadCounts"));
@@ -70,6 +71,7 @@ public class DescribeSlowLogsResponseUnmarshaller {
 			sQLSlowLog.setMinPhysicalReadCounts(_ctx.longValue("DescribeSlowLogsResponse.Items["+ i +"].MinPhysicalReadCounts"));
 			sQLSlowLog.setSlowLogId(_ctx.longValue("DescribeSlowLogsResponse.Items["+ i +"].SlowLogId"));
 			sQLSlowLog.setMaxExecutionTime(_ctx.longValue("DescribeSlowLogsResponse.Items["+ i +"].MaxExecutionTime"));
+			sQLSlowLog.setMaxExecutionTimeMS(_ctx.longValue("DescribeSlowLogsResponse.Items["+ i +"].MaxExecutionTimeMS"));
 			sQLSlowLog.setAvgExecutionTime(_ctx.longValue("DescribeSlowLogsResponse.Items["+ i +"].AvgExecutionTime"));
 			sQLSlowLog.setSQLServerAvgExecutionTime(_ctx.longValue("DescribeSlowLogsResponse.Items["+ i +"].SQLServerAvgExecutionTime"));
 			sQLSlowLog.setMaxIOWriteCounts(_ctx.longValue("DescribeSlowLogsResponse.Items["+ i +"].MaxIOWriteCounts"));
