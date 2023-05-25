@@ -91,6 +91,10 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 		private String nodeNum;
 
+		private Boolean isolationOptimization;
+
+		private Boolean enableIsolationOptimization;
+
 		private List<String> availableZones;
 
 		private List<String> zones;
@@ -271,6 +275,22 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 		public void setNodeNum(String nodeNum) {
 			this.nodeNum = nodeNum;
+		}
+
+		public Boolean getIsolationOptimization() {
+			return this.isolationOptimization;
+		}
+
+		public void setIsolationOptimization(Boolean isolationOptimization) {
+			this.isolationOptimization = isolationOptimization;
+		}
+
+		public Boolean getEnableIsolationOptimization() {
+			return this.enableIsolationOptimization;
+		}
+
+		public void setEnableIsolationOptimization(Boolean enableIsolationOptimization) {
+			this.enableIsolationOptimization = enableIsolationOptimization;
 		}
 
 		public List<String> getAvailableZones() {

@@ -22,16 +22,16 @@ import com.aliyuncs.oceanbasepro.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecResponse> {
+public class SwitchoverInstanceRequest extends RpcAcsRequest<SwitchoverInstanceResponse> {
 	   
 
-	private String instanceClass;
-
-	private Long diskSize;
+	private Boolean forced;
 
 	private String instanceId;
-	public ModifyInstanceSpecRequest() {
-		super("OceanBasePro", "2019-09-01", "ModifyInstanceSpec", "oceanbase");
+
+	private String targetInstanceId;
+	public SwitchoverInstanceRequest() {
+		super("OceanBasePro", "2019-09-01", "SwitchoverInstance", "oceanbase");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,25 +39,14 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 		} catch (Exception e) {}
 	}
 
-	public String getInstanceClass() {
-		return this.instanceClass;
+	public Boolean getForced() {
+		return this.forced;
 	}
 
-	public void setInstanceClass(String instanceClass) {
-		this.instanceClass = instanceClass;
-		if(instanceClass != null){
-			putBodyParameter("InstanceClass", instanceClass);
-		}
-	}
-
-	public Long getDiskSize() {
-		return this.diskSize;
-	}
-
-	public void setDiskSize(Long diskSize) {
-		this.diskSize = diskSize;
-		if(diskSize != null){
-			putBodyParameter("DiskSize", diskSize.toString());
+	public void setForced(Boolean forced) {
+		this.forced = forced;
+		if(forced != null){
+			putBodyParameter("Forced", forced.toString());
 		}
 	}
 
@@ -72,9 +61,20 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 		}
 	}
 
+	public String getTargetInstanceId() {
+		return this.targetInstanceId;
+	}
+
+	public void setTargetInstanceId(String targetInstanceId) {
+		this.targetInstanceId = targetInstanceId;
+		if(targetInstanceId != null){
+			putBodyParameter("TargetInstanceId", targetInstanceId);
+		}
+	}
+
 	@Override
-	public Class<ModifyInstanceSpecResponse> getResponseClass() {
-		return ModifyInstanceSpecResponse.class;
+	public Class<SwitchoverInstanceResponse> getResponseClass() {
+		return SwitchoverInstanceResponse.class;
 	}
 
 }

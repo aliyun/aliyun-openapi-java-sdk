@@ -37,6 +37,7 @@ public class DescribeParametersResponseUnmarshaller {
 			data.setNeedReboot(_ctx.booleanValue("DescribeParametersResponse.Parameters["+ i +"].NeedReboot"));
 			data.setName(_ctx.stringValue("DescribeParametersResponse.Parameters["+ i +"].Name"));
 			data.setDefaultValue(_ctx.stringValue("DescribeParametersResponse.Parameters["+ i +"].DefaultValue"));
+			data.setReadonly(_ctx.booleanValue("DescribeParametersResponse.Parameters["+ i +"].Readonly"));
 
 			List<String> rejectedValue = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeParametersResponse.Parameters["+ i +"].RejectedValue.Length"); j++) {

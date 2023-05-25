@@ -59,6 +59,8 @@ public class DescribeParametersResponse extends AcsResponse {
 
 		private String defaultValue;
 
+		private Boolean readonly;
+
 		private List<String> rejectedValue;
 
 		private List<String> acceptableValue;
@@ -109,6 +111,14 @@ public class DescribeParametersResponse extends AcsResponse {
 
 		public void setDefaultValue(String defaultValue) {
 			this.defaultValue = defaultValue;
+		}
+
+		public Boolean getReadonly() {
+			return this.readonly;
+		}
+
+		public void setReadonly(Boolean readonly) {
+			this.readonly = readonly;
 		}
 
 		public List<String> getRejectedValue() {

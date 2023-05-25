@@ -91,6 +91,8 @@ public class DescribeTenantResponse extends AcsResponse {
 
 		private Boolean enableReadWriteSplit;
 
+		private Boolean enableBinlogService;
+
 		private List<TenantConnectionsItem> tenantConnections;
 
 		private List<TenantZonesItem> tenantZones;
@@ -273,6 +275,14 @@ public class DescribeTenantResponse extends AcsResponse {
 
 		public void setEnableReadWriteSplit(Boolean enableReadWriteSplit) {
 			this.enableReadWriteSplit = enableReadWriteSplit;
+		}
+
+		public Boolean getEnableBinlogService() {
+			return this.enableBinlogService;
+		}
+
+		public void setEnableBinlogService(Boolean enableBinlogService) {
+			this.enableBinlogService = enableBinlogService;
 		}
 
 		public List<TenantConnectionsItem> getTenantConnections() {

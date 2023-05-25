@@ -31,6 +31,8 @@ public class ModifyTenantUserPasswordRequest extends RpcAcsRequest<ModifyTenantU
 
 	private String tenantId;
 
+	private String encryptionType;
+
 	private String userName;
 	public ModifyTenantUserPasswordRequest() {
 		super("OceanBasePro", "2019-09-01", "ModifyTenantUserPassword", "oceanbase");
@@ -71,6 +73,17 @@ public class ModifyTenantUserPasswordRequest extends RpcAcsRequest<ModifyTenantU
 		this.tenantId = tenantId;
 		if(tenantId != null){
 			putBodyParameter("TenantId", tenantId);
+		}
+	}
+
+	public String getEncryptionType() {
+		return this.encryptionType;
+	}
+
+	public void setEncryptionType(String encryptionType) {
+		this.encryptionType = encryptionType;
+		if(encryptionType != null){
+			putBodyParameter("EncryptionType", encryptionType);
 		}
 	}
 

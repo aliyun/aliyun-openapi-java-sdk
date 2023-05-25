@@ -54,6 +54,8 @@ public class DescribeOutlineBindingResponse extends AcsResponse {
 
 		private Integer maxConcurrent;
 
+		private String tableName;
+
 		public String getBindPlan() {
 			return this.bindPlan;
 		}
@@ -84,6 +86,14 @@ public class DescribeOutlineBindingResponse extends AcsResponse {
 
 		public void setMaxConcurrent(Integer maxConcurrent) {
 			this.maxConcurrent = maxConcurrent;
+		}
+
+		public String getTableName() {
+			return this.tableName;
+		}
+
+		public void setTableName(String tableName) {
+			this.tableName = tableName;
 		}
 	}
 

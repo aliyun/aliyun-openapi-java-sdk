@@ -57,6 +57,7 @@ public class DescribeTenantResponseUnmarshaller {
 		tenant.setSeries(_ctx.stringValue("DescribeTenantResponse.Tenant.Series"));
 		tenant.setDiskType(_ctx.stringValue("DescribeTenantResponse.Tenant.DiskType"));
 		tenant.setEnableReadWriteSplit(_ctx.booleanValue("DescribeTenantResponse.Tenant.EnableReadWriteSplit"));
+		tenant.setEnableBinlogService(_ctx.booleanValue("DescribeTenantResponse.Tenant.EnableBinlogService"));
 
 		List<String> availableZones = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeTenantResponse.Tenant.AvailableZones.Length"); i++) {

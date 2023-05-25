@@ -26,6 +26,8 @@ public class DescribeCharsetRequest extends RpcAcsRequest<DescribeCharsetRespons
 	   
 
 	private String tenantMode;
+
+	private String series;
 	public DescribeCharsetRequest() {
 		super("OceanBasePro", "2019-09-01", "DescribeCharset", "oceanbase");
 		setMethod(MethodType.POST);
@@ -43,6 +45,17 @@ public class DescribeCharsetRequest extends RpcAcsRequest<DescribeCharsetRespons
 		this.tenantMode = tenantMode;
 		if(tenantMode != null){
 			putBodyParameter("TenantMode", tenantMode);
+		}
+	}
+
+	public String getSeries() {
+		return this.series;
+	}
+
+	public void setSeries(String series) {
+		this.series = series;
+		if(series != null){
+			putBodyParameter("Series", series);
 		}
 	}
 

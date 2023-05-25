@@ -22,16 +22,16 @@ import com.aliyuncs.oceanbasepro.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecResponse> {
+public class KillProcessListRequest extends RpcAcsRequest<KillProcessListResponse> {
 	   
 
-	private String instanceClass;
-
-	private Long diskSize;
+	private String sessionList;
 
 	private String instanceId;
-	public ModifyInstanceSpecRequest() {
-		super("OceanBasePro", "2019-09-01", "ModifyInstanceSpec", "oceanbase");
+
+	private String tenantId;
+	public KillProcessListRequest() {
+		super("OceanBasePro", "2019-09-01", "KillProcessList", "oceanbase");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,25 +39,14 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 		} catch (Exception e) {}
 	}
 
-	public String getInstanceClass() {
-		return this.instanceClass;
+	public String getSessionList() {
+		return this.sessionList;
 	}
 
-	public void setInstanceClass(String instanceClass) {
-		this.instanceClass = instanceClass;
-		if(instanceClass != null){
-			putBodyParameter("InstanceClass", instanceClass);
-		}
-	}
-
-	public Long getDiskSize() {
-		return this.diskSize;
-	}
-
-	public void setDiskSize(Long diskSize) {
-		this.diskSize = diskSize;
-		if(diskSize != null){
-			putBodyParameter("DiskSize", diskSize.toString());
+	public void setSessionList(String sessionList) {
+		this.sessionList = sessionList;
+		if(sessionList != null){
+			putBodyParameter("SessionList", sessionList);
 		}
 	}
 
@@ -72,9 +61,20 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 		}
 	}
 
+	public String getTenantId() {
+		return this.tenantId;
+	}
+
+	public void setTenantId(String tenantId) {
+		this.tenantId = tenantId;
+		if(tenantId != null){
+			putBodyParameter("TenantId", tenantId);
+		}
+	}
+
 	@Override
-	public Class<ModifyInstanceSpecResponse> getResponseClass() {
-		return ModifyInstanceSpecResponse.class;
+	public Class<KillProcessListResponse> getResponseClass() {
+		return KillProcessListResponse.class;
 	}
 
 }

@@ -30,6 +30,7 @@ public class DescribeOutlineBindingResponseUnmarshaller {
 		outlineBinding.setOutlineId(_ctx.longValue("DescribeOutlineBindingResponse.OutlineBinding.OutlineId"));
 		outlineBinding.setBindIndex(_ctx.stringValue("DescribeOutlineBindingResponse.OutlineBinding.BindIndex"));
 		outlineBinding.setMaxConcurrent(_ctx.integerValue("DescribeOutlineBindingResponse.OutlineBinding.MaxConcurrent"));
+		outlineBinding.setTableName(_ctx.stringValue("DescribeOutlineBindingResponse.OutlineBinding.TableName"));
 		describeOutlineBindingResponse.setOutlineBinding(outlineBinding);
 	 
 	 	return describeOutlineBindingResponse;

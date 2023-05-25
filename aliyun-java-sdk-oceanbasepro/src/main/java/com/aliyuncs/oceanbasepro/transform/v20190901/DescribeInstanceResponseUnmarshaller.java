@@ -56,6 +56,8 @@ public class DescribeInstanceResponseUnmarshaller {
 		instance.setEnableUpgradeLogDisk(_ctx.booleanValue("DescribeInstanceResponse.Instance.EnableUpgradeLogDisk"));
 		instance.setInstanceRole(_ctx.stringValue("DescribeInstanceResponse.Instance.InstanceRole"));
 		instance.setNodeNum(_ctx.stringValue("DescribeInstanceResponse.Instance.NodeNum"));
+		instance.setIsolationOptimization(_ctx.booleanValue("DescribeInstanceResponse.Instance.IsolationOptimization"));
+		instance.setEnableIsolationOptimization(_ctx.booleanValue("DescribeInstanceResponse.Instance.EnableIsolationOptimization"));
 
 		List<String> availableZones = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceResponse.Instance.AvailableZones.Length"); i++) {
