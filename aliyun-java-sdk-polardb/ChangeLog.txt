@@ -1,3 +1,6 @@
+2023-05-25 Version: 1.8.29
+- CreateDBCluster support xengine and binlog feature.
+
 2023-05-12 Version: 1.8.28
 - Update some parameters.
 

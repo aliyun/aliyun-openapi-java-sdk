@@ -90,9 +90,15 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 
 	private String gDNId;
 
+	private String looseXEngine;
+
+	private String loosePolarLogBin;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
+
+	private String looseXEngineUseMemoryPct;
 
 	private String usedTime;
 
@@ -479,6 +485,28 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		}
 	}
 
+	public String getLooseXEngine() {
+		return this.looseXEngine;
+	}
+
+	public void setLooseXEngine(String looseXEngine) {
+		this.looseXEngine = looseXEngine;
+		if(looseXEngine != null){
+			putQueryParameter("LooseXEngine", looseXEngine);
+		}
+	}
+
+	public String getLoosePolarLogBin() {
+		return this.loosePolarLogBin;
+	}
+
+	public void setLoosePolarLogBin(String loosePolarLogBin) {
+		this.loosePolarLogBin = loosePolarLogBin;
+		if(loosePolarLogBin != null){
+			putQueryParameter("LoosePolarLogBin", loosePolarLogBin);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -498,6 +526,17 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getLooseXEngineUseMemoryPct() {
+		return this.looseXEngineUseMemoryPct;
+	}
+
+	public void setLooseXEngineUseMemoryPct(String looseXEngineUseMemoryPct) {
+		this.looseXEngineUseMemoryPct = looseXEngineUseMemoryPct;
+		if(looseXEngineUseMemoryPct != null){
+			putQueryParameter("LooseXEngineUseMemoryPct", looseXEngineUseMemoryPct);
 		}
 	}
 
