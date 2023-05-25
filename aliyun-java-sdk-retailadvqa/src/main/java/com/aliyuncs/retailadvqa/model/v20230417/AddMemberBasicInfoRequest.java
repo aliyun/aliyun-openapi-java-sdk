@@ -65,6 +65,9 @@ public class AddMemberBasicInfoRequest extends RpcAcsRequest<AddMemberBasicInfoR
 		@SerializedName("Mobile")
 		private String mobile;
 
+		@SerializedName("FirstEntryChannel")
+		private String firstEntryChannel;
+
 		@SerializedName("Point")
 		private String point;
 
@@ -135,6 +138,14 @@ public class AddMemberBasicInfoRequest extends RpcAcsRequest<AddMemberBasicInfoR
 
 		public void setMobile(String mobile) {
 			this.mobile = mobile;
+		}
+
+		public String getFirstEntryChannel() {
+			return this.firstEntryChannel;
+		}
+
+		public void setFirstEntryChannel(String firstEntryChannel) {
+			this.firstEntryChannel = firstEntryChannel;
 		}
 
 		public String getPoint() {
