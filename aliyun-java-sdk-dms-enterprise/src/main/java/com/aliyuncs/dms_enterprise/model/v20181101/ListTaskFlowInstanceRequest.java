@@ -25,6 +25,8 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class ListTaskFlowInstanceRequest extends RpcAcsRequest<ListTaskFlowInstanceResponse> {
 	   
 
+	private Boolean useBizDate;
+
 	private Integer triggerType;
 
 	private Long dagId;
@@ -38,6 +40,8 @@ public class ListTaskFlowInstanceRequest extends RpcAcsRequest<ListTaskFlowInsta
 	private String startTimeBegin;
 
 	private String startTimeEnd;
+
+	private Integer status;
 	public ListTaskFlowInstanceRequest() {
 		super("dms-enterprise", "2018-11-01", "ListTaskFlowInstance", "dms-enterprise");
 		setMethod(MethodType.POST);
@@ -45,6 +49,17 @@ public class ListTaskFlowInstanceRequest extends RpcAcsRequest<ListTaskFlowInsta
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Boolean getUseBizDate() {
+		return this.useBizDate;
+	}
+
+	public void setUseBizDate(Boolean useBizDate) {
+		this.useBizDate = useBizDate;
+		if(useBizDate != null){
+			putQueryParameter("UseBizDate", useBizDate.toString());
+		}
 	}
 
 	public Integer getTriggerType() {
@@ -121,6 +136,17 @@ public class ListTaskFlowInstanceRequest extends RpcAcsRequest<ListTaskFlowInsta
 		this.startTimeEnd = startTimeEnd;
 		if(startTimeEnd != null){
 			putQueryParameter("StartTimeEnd", startTimeEnd);
+		}
+	}
+
+	public Integer getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(Integer status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status.toString());
 		}
 	}
 

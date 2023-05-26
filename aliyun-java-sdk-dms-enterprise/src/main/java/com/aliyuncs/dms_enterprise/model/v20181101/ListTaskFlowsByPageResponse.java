@@ -107,6 +107,24 @@ public class ListTaskFlowsByPageResponse extends AcsResponse {
 
 		private String latestInstanceTime;
 
+		private String scenarioId;
+
+		private Boolean cronSwitch;
+
+		private String cronStr;
+
+		private String scheduleParam;
+
+		private Integer triggerType;
+
+		private Integer cronType;
+
+		private String cronBeginDate;
+
+		private String cronEndDate;
+
+		private String timeZoneId;
+
 		public Long getId() {
 			return this.id;
 		}
@@ -185,6 +203,78 @@ public class ListTaskFlowsByPageResponse extends AcsResponse {
 
 		public void setLatestInstanceTime(String latestInstanceTime) {
 			this.latestInstanceTime = latestInstanceTime;
+		}
+
+		public String getScenarioId() {
+			return this.scenarioId;
+		}
+
+		public void setScenarioId(String scenarioId) {
+			this.scenarioId = scenarioId;
+		}
+
+		public Boolean getCronSwitch() {
+			return this.cronSwitch;
+		}
+
+		public void setCronSwitch(Boolean cronSwitch) {
+			this.cronSwitch = cronSwitch;
+		}
+
+		public String getCronStr() {
+			return this.cronStr;
+		}
+
+		public void setCronStr(String cronStr) {
+			this.cronStr = cronStr;
+		}
+
+		public String getScheduleParam() {
+			return this.scheduleParam;
+		}
+
+		public void setScheduleParam(String scheduleParam) {
+			this.scheduleParam = scheduleParam;
+		}
+
+		public Integer getTriggerType() {
+			return this.triggerType;
+		}
+
+		public void setTriggerType(Integer triggerType) {
+			this.triggerType = triggerType;
+		}
+
+		public Integer getCronType() {
+			return this.cronType;
+		}
+
+		public void setCronType(Integer cronType) {
+			this.cronType = cronType;
+		}
+
+		public String getCronBeginDate() {
+			return this.cronBeginDate;
+		}
+
+		public void setCronBeginDate(String cronBeginDate) {
+			this.cronBeginDate = cronBeginDate;
+		}
+
+		public String getCronEndDate() {
+			return this.cronEndDate;
+		}
+
+		public void setCronEndDate(String cronEndDate) {
+			this.cronEndDate = cronEndDate;
+		}
+
+		public String getTimeZoneId() {
+			return this.timeZoneId;
+		}
+
+		public void setTimeZoneId(String timeZoneId) {
+			this.timeZoneId = timeZoneId;
 		}
 	}
 

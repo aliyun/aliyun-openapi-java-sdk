@@ -105,6 +105,8 @@ public class GetPhysicalDatabaseResponse extends AcsResponse {
 
 		private String searchName;
 
+		private String instanceAlias;
+
 		private List<String> ownerIdList;
 
 		private List<String> ownerNameList;
@@ -219,6 +221,14 @@ public class GetPhysicalDatabaseResponse extends AcsResponse {
 
 		public void setSearchName(String searchName) {
 			this.searchName = searchName;
+		}
+
+		public String getInstanceAlias() {
+			return this.instanceAlias;
+		}
+
+		public void setInstanceAlias(String instanceAlias) {
+			this.instanceAlias = instanceAlias;
 		}
 
 		public List<String> getOwnerIdList() {

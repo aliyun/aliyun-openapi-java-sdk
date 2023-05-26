@@ -45,6 +45,15 @@ public class ListTaskFlowsByPageResponseUnmarshaller {
 			taskFlow.setStatus(_ctx.integerValue("ListTaskFlowsByPageResponse.TaskFlowList["+ i +"].Status"));
 			taskFlow.setLatestInstanceStatus(_ctx.integerValue("ListTaskFlowsByPageResponse.TaskFlowList["+ i +"].LatestInstanceStatus"));
 			taskFlow.setLatestInstanceTime(_ctx.stringValue("ListTaskFlowsByPageResponse.TaskFlowList["+ i +"].LatestInstanceTime"));
+			taskFlow.setScenarioId(_ctx.stringValue("ListTaskFlowsByPageResponse.TaskFlowList["+ i +"].ScenarioId"));
+			taskFlow.setCronSwitch(_ctx.booleanValue("ListTaskFlowsByPageResponse.TaskFlowList["+ i +"].CronSwitch"));
+			taskFlow.setCronStr(_ctx.stringValue("ListTaskFlowsByPageResponse.TaskFlowList["+ i +"].CronStr"));
+			taskFlow.setScheduleParam(_ctx.stringValue("ListTaskFlowsByPageResponse.TaskFlowList["+ i +"].ScheduleParam"));
+			taskFlow.setTriggerType(_ctx.integerValue("ListTaskFlowsByPageResponse.TaskFlowList["+ i +"].TriggerType"));
+			taskFlow.setCronType(_ctx.integerValue("ListTaskFlowsByPageResponse.TaskFlowList["+ i +"].CronType"));
+			taskFlow.setCronBeginDate(_ctx.stringValue("ListTaskFlowsByPageResponse.TaskFlowList["+ i +"].CronBeginDate"));
+			taskFlow.setCronEndDate(_ctx.stringValue("ListTaskFlowsByPageResponse.TaskFlowList["+ i +"].CronEndDate"));
+			taskFlow.setTimeZoneId(_ctx.stringValue("ListTaskFlowsByPageResponse.TaskFlowList["+ i +"].TimeZoneId"));
 
 			taskFlowList.add(taskFlow);
 		}

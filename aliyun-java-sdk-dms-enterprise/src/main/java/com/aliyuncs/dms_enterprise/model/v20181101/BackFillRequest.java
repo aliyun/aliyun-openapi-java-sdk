@@ -41,6 +41,9 @@ public class BackFillRequest extends RpcAcsRequest<BackFillResponse> {
 	@SerializedName("startNodeIds")
 	private List<Long> startNodeIds;
 
+	@SerializedName("filterNodeIds")
+	private List<Long> filterNodeIds;
+
 	private String backFillDateBegin;
 
 	private String backFillDate;
@@ -120,6 +123,17 @@ public class BackFillRequest extends RpcAcsRequest<BackFillResponse> {
 		this.startNodeIds = startNodeIds;	
 		if (startNodeIds != null) {
 			putQueryParameter("StartNodeIds" , new Gson().toJson(startNodeIds));
+		}	
+	}
+
+	public List<Long> getFilterNodeIds() {
+		return this.filterNodeIds;
+	}
+
+	public void setFilterNodeIds(List<Long> filterNodeIds) {
+		this.filterNodeIds = filterNodeIds;	
+		if (filterNodeIds != null) {
+			putQueryParameter("FilterNodeIds" , new Gson().toJson(filterNodeIds));
 		}	
 	}
 

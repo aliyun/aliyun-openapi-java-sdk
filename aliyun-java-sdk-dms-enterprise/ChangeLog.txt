@@ -1,3 +1,6 @@
+2023-05-26 Version: 1.49.0
+- Modify ListTaskFlowsByPage API. Add output parameters: CronBeginDate, CronEndDate. Modified input parameter CronParam as ScheduleParam.
+
 2023-05-15 Version: 1.48.0
 - Support SkipDataCorrectRowCheck API.
 

@@ -37,6 +37,7 @@ public class ListTaskFlowInstanceResponseUnmarshaller {
 			DAGInstance dAGInstance = new DAGInstance();
 			dAGInstance.setId(_ctx.longValue("ListTaskFlowInstanceResponse.DAGInstanceList["+ i +"].Id"));
 			dAGInstance.setBusinessTime(_ctx.stringValue("ListTaskFlowInstanceResponse.DAGInstanceList["+ i +"].BusinessTime"));
+			dAGInstance.setStartTime(_ctx.stringValue("ListTaskFlowInstanceResponse.DAGInstanceList["+ i +"].startTime"));
 			dAGInstance.setEndTime(_ctx.stringValue("ListTaskFlowInstanceResponse.DAGInstanceList["+ i +"].EndTime"));
 			dAGInstance.setDagId(_ctx.stringValue("ListTaskFlowInstanceResponse.DAGInstanceList["+ i +"].DagId"));
 			dAGInstance.setTriggerType(_ctx.integerValue("ListTaskFlowInstanceResponse.DAGInstanceList["+ i +"].TriggerType"));

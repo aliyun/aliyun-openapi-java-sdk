@@ -32,6 +32,8 @@ public class BackFillResponse extends AcsResponse {
 
 	private Boolean success;
 
+	private Long dagInstanceId;
+
 	private Long nodeId;
 
 	public String getRequestId() {
@@ -64,6 +66,14 @@ public class BackFillResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public Long getDagInstanceId() {
+		return this.dagInstanceId;
+	}
+
+	public void setDagInstanceId(Long dagInstanceId) {
+		this.dagInstanceId = dagInstanceId;
 	}
 
 	public Long getNodeId() {

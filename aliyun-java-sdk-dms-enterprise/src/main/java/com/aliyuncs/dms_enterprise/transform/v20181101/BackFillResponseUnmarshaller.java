@@ -26,6 +26,7 @@ public class BackFillResponseUnmarshaller {
 		backFillResponse.setErrorCode(_ctx.stringValue("BackFillResponse.ErrorCode"));
 		backFillResponse.setErrorMessage(_ctx.stringValue("BackFillResponse.ErrorMessage"));
 		backFillResponse.setSuccess(_ctx.booleanValue("BackFillResponse.Success"));
+		backFillResponse.setDagInstanceId(_ctx.longValue("BackFillResponse.DagInstanceId"));
 		backFillResponse.setNodeId(_ctx.longValue("BackFillResponse.NodeId"));
 	 
 	 	return backFillResponse;
