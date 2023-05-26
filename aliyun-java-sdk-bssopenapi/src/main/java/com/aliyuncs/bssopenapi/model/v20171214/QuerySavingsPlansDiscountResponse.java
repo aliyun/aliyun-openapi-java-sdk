@@ -111,6 +111,8 @@ public class QuerySavingsPlansDiscountResponse extends AcsResponse {
 
 			private String region;
 
+			private String regionCode;
+
 			private String spec;
 
 			private String discountRate;
@@ -163,6 +165,14 @@ public class QuerySavingsPlansDiscountResponse extends AcsResponse {
 
 			public void setRegion(String region) {
 				this.region = region;
+			}
+
+			public String getRegionCode() {
+				return this.regionCode;
+			}
+
+			public void setRegionCode(String regionCode) {
+				this.regionCode = regionCode;
 			}
 
 			public String getSpec() {

@@ -62,6 +62,7 @@ public class QuerySavingsPlansInstanceResponseUnmarshaller {
 			savingsPlansDetailResponse.setPayMode(_ctx.stringValue("QuerySavingsPlansInstanceResponse.Data.Items["+ i +"].PayMode"));
 			savingsPlansDetailResponse.setDeductCycleType(_ctx.stringValue("QuerySavingsPlansInstanceResponse.Data.Items["+ i +"].DeductCycleType"));
 			savingsPlansDetailResponse.setRestPoolValue(_ctx.stringValue("QuerySavingsPlansInstanceResponse.Data.Items["+ i +"].RestPoolValue"));
+			savingsPlansDetailResponse.setCommodityCode(_ctx.stringValue("QuerySavingsPlansInstanceResponse.Data.Items["+ i +"].CommodityCode"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("QuerySavingsPlansInstanceResponse.Data.Items["+ i +"].Tags.Length"); j++) {

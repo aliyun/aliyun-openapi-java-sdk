@@ -44,6 +44,7 @@ public class QuerySavingsPlansDiscountResponseUnmarshaller {
 			savingsPlansDiscountResponse.setPayMode(_ctx.stringValue("QuerySavingsPlansDiscountResponse.Data.Items["+ i +"].PayMode"));
 			savingsPlansDiscountResponse.setCycle(_ctx.stringValue("QuerySavingsPlansDiscountResponse.Data.Items["+ i +"].Cycle"));
 			savingsPlansDiscountResponse.setRegion(_ctx.stringValue("QuerySavingsPlansDiscountResponse.Data.Items["+ i +"].Region"));
+			savingsPlansDiscountResponse.setRegionCode(_ctx.stringValue("QuerySavingsPlansDiscountResponse.Data.Items["+ i +"].RegionCode"));
 			savingsPlansDiscountResponse.setSpec(_ctx.stringValue("QuerySavingsPlansDiscountResponse.Data.Items["+ i +"].Spec"));
 			savingsPlansDiscountResponse.setDiscountRate(_ctx.stringValue("QuerySavingsPlansDiscountResponse.Data.Items["+ i +"].DiscountRate"));
 			savingsPlansDiscountResponse.setContractDiscountRate(_ctx.stringValue("QuerySavingsPlansDiscountResponse.Data.Items["+ i +"].ContractDiscountRate"));

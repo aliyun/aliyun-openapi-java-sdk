@@ -1,3 +1,7 @@
+2023-05-26 Version: 1.8.10
+- QuerySavingsPlansInstance add CommodityCode.
+- QuerySavingsPlansDiscount add RegionCode.
+
 2023-05-19 Version: 1.8.9
 - DescribeInstanceAmortizedCostByAmortizationPeriodDate
 
