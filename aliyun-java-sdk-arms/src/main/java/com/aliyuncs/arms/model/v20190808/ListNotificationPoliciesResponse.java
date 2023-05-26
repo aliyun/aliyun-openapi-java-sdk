@@ -328,6 +328,8 @@ public class ListNotificationPoliciesResponse extends AcsResponse {
 
 					private String notifyObjectName;
 
+					private List<String> notifyChannels1;
+
 					public String getNotifyObjectType() {
 						return this.notifyObjectType;
 					}
@@ -350,6 +352,14 @@ public class ListNotificationPoliciesResponse extends AcsResponse {
 
 					public void setNotifyObjectName(String notifyObjectName) {
 						this.notifyObjectName = notifyObjectName;
+					}
+
+					public List<String> getNotifyChannels1() {
+						return this.notifyChannels1;
+					}
+
+					public void setNotifyChannels1(List<String> notifyChannels1) {
+						this.notifyChannels1 = notifyChannels1;
 					}
 				}
 			}

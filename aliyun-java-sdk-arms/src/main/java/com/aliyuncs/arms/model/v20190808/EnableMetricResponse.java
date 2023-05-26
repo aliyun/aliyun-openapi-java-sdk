@@ -15,18 +15,24 @@
 package com.aliyuncs.arms.model.v20190808;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.arms.transform.v20190808.UntagResourcesResponseUnmarshaller;
+import com.aliyuncs.arms.transform.v20190808.EnableMetricResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UntagResourcesResponse extends AcsResponse {
+public class EnableMetricResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Boolean success;
+
 	private String data;
+
+	private Long code;
+
+	private String message;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -34,6 +40,14 @@ public class UntagResourcesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public String getData() {
@@ -44,9 +58,25 @@ public class UntagResourcesResponse extends AcsResponse {
 		this.data = data;
 	}
 
+	public Long getCode() {
+		return this.code;
+	}
+
+	public void setCode(Long code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
 	@Override
-	public UntagResourcesResponse getInstance(UnmarshallerContext context) {
-		return	UntagResourcesResponseUnmarshaller.unmarshall(this, context);
+	public EnableMetricResponse getInstance(UnmarshallerContext context) {
+		return	EnableMetricResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

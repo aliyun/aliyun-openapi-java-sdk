@@ -15,18 +15,22 @@
 package com.aliyuncs.arms.model.v20190808;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.arms.transform.v20190808.UntagResourcesResponseUnmarshaller;
+import com.aliyuncs.arms.transform.v20190808.UpdatePrometheusMonitoringResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UntagResourcesResponse extends AcsResponse {
+public class UpdatePrometheusMonitoringResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Integer code;
+
 	private String data;
+
+	private String message;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -34,6 +38,14 @@ public class UntagResourcesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getCode() {
+		return this.code;
+	}
+
+	public void setCode(Integer code) {
+		this.code = code;
 	}
 
 	public String getData() {
@@ -44,9 +56,17 @@ public class UntagResourcesResponse extends AcsResponse {
 		this.data = data;
 	}
 
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
 	@Override
-	public UntagResourcesResponse getInstance(UnmarshallerContext context) {
-		return	UntagResourcesResponseUnmarshaller.unmarshall(this, context);
+	public UpdatePrometheusMonitoringResponse getInstance(UnmarshallerContext context) {
+		return	UpdatePrometheusMonitoringResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

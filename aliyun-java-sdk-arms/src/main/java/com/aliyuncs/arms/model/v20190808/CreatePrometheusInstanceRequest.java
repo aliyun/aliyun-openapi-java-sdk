@@ -28,6 +28,8 @@ public class CreatePrometheusInstanceRequest extends RpcAcsRequest<CreatePrometh
 
 	private String grafanaInstanceId;
 
+	private Boolean allSubClustersSuccess;
+
 	private String clusterName;
 
 	private String securityGroupId;
@@ -62,6 +64,17 @@ public class CreatePrometheusInstanceRequest extends RpcAcsRequest<CreatePrometh
 		this.grafanaInstanceId = grafanaInstanceId;
 		if(grafanaInstanceId != null){
 			putQueryParameter("GrafanaInstanceId", grafanaInstanceId);
+		}
+	}
+
+	public Boolean getAllSubClustersSuccess() {
+		return this.allSubClustersSuccess;
+	}
+
+	public void setAllSubClustersSuccess(Boolean allSubClustersSuccess) {
+		this.allSubClustersSuccess = allSubClustersSuccess;
+		if(allSubClustersSuccess != null){
+			putQueryParameter("AllSubClustersSuccess", allSubClustersSuccess.toString());
 		}
 	}
 

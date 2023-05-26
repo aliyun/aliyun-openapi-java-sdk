@@ -89,6 +89,8 @@ public class CreateOrUpdateAlertRuleResponse extends AcsResponse {
 
 		private List<AnnotationsItem> annotations;
 
+		private List<Tag> tags;
+
 		private List<String> pids;
 
 		private AlertRuleContent alertRuleContent;
@@ -263,6 +265,14 @@ public class CreateOrUpdateAlertRuleResponse extends AcsResponse {
 			this.annotations = annotations;
 		}
 
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
 		public List<String> getPids() {
 			return this.pids;
 		}
@@ -322,6 +332,29 @@ public class CreateOrUpdateAlertRuleResponse extends AcsResponse {
 
 			public void setName(String name) {
 				this.name = name;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
+		}
+
+		public static class Tag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
 			}
 
 			public String getValue() {

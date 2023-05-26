@@ -21,6 +21,7 @@ import com.aliyuncs.arms.model.v20190808.ListPrometheusAlertRulesResponse;
 import com.aliyuncs.arms.model.v20190808.ListPrometheusAlertRulesResponse.PrometheusAlertRule;
 import com.aliyuncs.arms.model.v20190808.ListPrometheusAlertRulesResponse.PrometheusAlertRule.Annotation;
 import com.aliyuncs.arms.model.v20190808.ListPrometheusAlertRulesResponse.PrometheusAlertRule.Label;
+import com.aliyuncs.arms.model.v20190808.ListPrometheusAlertRulesResponse.PrometheusAlertRule.TagsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -63,6 +64,16 @@ public class ListPrometheusAlertRulesResponseUnmarshaller {
 				annotations.add(annotation);
 			}
 			prometheusAlertRule.setAnnotations(annotations);
+
+			List<TagsItem> tags = new ArrayList<TagsItem>();
+			for (int j = 0; j < _ctx.lengthValue("ListPrometheusAlertRulesResponse.PrometheusAlertRules["+ i +"].Tags.Length"); j++) {
+				TagsItem tagsItem = new TagsItem();
+				tagsItem.setKey(_ctx.stringValue("ListPrometheusAlertRulesResponse.PrometheusAlertRules["+ i +"].Tags["+ j +"].Key"));
+				tagsItem.setValue(_ctx.stringValue("ListPrometheusAlertRulesResponse.PrometheusAlertRules["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tagsItem);
+			}
+			prometheusAlertRule.setTags(tags);
 
 			prometheusAlertRules.add(prometheusAlertRule);
 		}

@@ -25,15 +25,15 @@ import com.aliyuncs.arms.Endpoint;
 public class DescribeContactGroupsRequest extends RpcAcsRequest<DescribeContactGroupsResponse> {
 	   
 
+	private Boolean isDetail;
+
+	private String contactGroupName;
+
 	private Long size;
 
 	private String groupIds;
 
-	private Boolean isDetail;
-
 	private Long page;
-
-	private String contactGroupName;
 	public DescribeContactGroupsRequest() {
 		super("ARMS", "2019-08-08", "DescribeContactGroups", "arms");
 		setMethod(MethodType.POST);
@@ -41,6 +41,28 @@ public class DescribeContactGroupsRequest extends RpcAcsRequest<DescribeContactG
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Boolean getIsDetail() {
+		return this.isDetail;
+	}
+
+	public void setIsDetail(Boolean isDetail) {
+		this.isDetail = isDetail;
+		if(isDetail != null){
+			putQueryParameter("IsDetail", isDetail.toString());
+		}
+	}
+
+	public String getContactGroupName() {
+		return this.contactGroupName;
+	}
+
+	public void setContactGroupName(String contactGroupName) {
+		this.contactGroupName = contactGroupName;
+		if(contactGroupName != null){
+			putQueryParameter("ContactGroupName", contactGroupName);
+		}
 	}
 
 	public Long getSize() {
@@ -65,17 +87,6 @@ public class DescribeContactGroupsRequest extends RpcAcsRequest<DescribeContactG
 		}
 	}
 
-	public Boolean getIsDetail() {
-		return this.isDetail;
-	}
-
-	public void setIsDetail(Boolean isDetail) {
-		this.isDetail = isDetail;
-		if(isDetail != null){
-			putQueryParameter("IsDetail", isDetail.toString());
-		}
-	}
-
 	public Long getPage() {
 		return this.page;
 	}
@@ -84,17 +95,6 @@ public class DescribeContactGroupsRequest extends RpcAcsRequest<DescribeContactG
 		this.page = page;
 		if(page != null){
 			putQueryParameter("Page", page.toString());
-		}
-	}
-
-	public String getContactGroupName() {
-		return this.contactGroupName;
-	}
-
-	public void setContactGroupName(String contactGroupName) {
-		this.contactGroupName = contactGroupName;
-		if(contactGroupName != null){
-			putQueryParameter("ContactGroupName", contactGroupName);
 		}
 	}
 

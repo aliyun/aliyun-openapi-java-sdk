@@ -28,6 +28,8 @@ public class ListPrometheusInstanceByTagAndResourceGroupIdRequest extends RpcAcs
 
 	private String resourceGroupId;
 
+	private Boolean listAsConsole;
+
 	private List<Tag> tags;
 	public ListPrometheusInstanceByTagAndResourceGroupIdRequest() {
 		super("ARMS", "2019-08-08", "ListPrometheusInstanceByTagAndResourceGroupId", "arms");
@@ -46,6 +48,17 @@ public class ListPrometheusInstanceByTagAndResourceGroupIdRequest extends RpcAcs
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public Boolean getListAsConsole() {
+		return this.listAsConsole;
+	}
+
+	public void setListAsConsole(Boolean listAsConsole) {
+		this.listAsConsole = listAsConsole;
+		if(listAsConsole != null){
+			putQueryParameter("ListAsConsole", listAsConsole.toString());
 		}
 	}
 

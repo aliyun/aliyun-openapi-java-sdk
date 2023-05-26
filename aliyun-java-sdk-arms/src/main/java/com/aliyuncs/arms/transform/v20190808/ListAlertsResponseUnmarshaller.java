@@ -46,6 +46,7 @@ public class ListAlertsResponseUnmarshaller {
 			listAlertsItem.setDispatchRuleName(_ctx.stringValue("ListAlertsResponse.PageBean.ListAlerts["+ i +"].DispatchRuleName"));
 			listAlertsItem.setCreateTime(_ctx.stringValue("ListAlertsResponse.PageBean.ListAlerts["+ i +"].CreateTime"));
 			listAlertsItem.setAlertId(_ctx.longValue("ListAlertsResponse.PageBean.ListAlerts["+ i +"].AlertId"));
+			listAlertsItem.setSolution(_ctx.stringValue("ListAlertsResponse.PageBean.ListAlerts["+ i +"].Solution"));
 
 			List<ActivitiesItem> activities = new ArrayList<ActivitiesItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListAlertsResponse.PageBean.ListAlerts["+ i +"].Activities.Length"); j++) {

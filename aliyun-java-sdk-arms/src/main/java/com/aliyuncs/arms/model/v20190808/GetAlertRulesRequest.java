@@ -15,6 +15,7 @@
 package com.aliyuncs.arms.model.v20190808;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.arms.Endpoint;
 
@@ -30,6 +31,8 @@ public class GetAlertRulesRequest extends RpcAcsRequest<GetAlertRulesResponse> {
 	private String alertStatus;
 
 	private String clusterId;
+
+	private List<Tags> tagss;
 
 	private String alertNames;
 
@@ -80,6 +83,20 @@ public class GetAlertRulesRequest extends RpcAcsRequest<GetAlertRulesResponse> {
 		if(clusterId != null){
 			putQueryParameter("ClusterId", clusterId);
 		}
+	}
+
+	public List<Tags> getTagss() {
+		return this.tagss;
+	}
+
+	public void setTagss(List<Tags> tagss) {
+		this.tagss = tagss;	
+		if (tagss != null) {
+			for (int depth1 = 0; depth1 < tagss.size(); depth1++) {
+				putQueryParameter("Tags." + (depth1 + 1) + ".Value" , tagss.get(depth1).getValue());
+				putQueryParameter("Tags." + (depth1 + 1) + ".Key" , tagss.get(depth1).getKey());
+			}
+		}	
 	}
 
 	public String getAlertNames() {
@@ -134,6 +151,29 @@ public class GetAlertRulesRequest extends RpcAcsRequest<GetAlertRulesResponse> {
 		this.page = page;
 		if(page != null){
 			putQueryParameter("Page", page.toString());
+		}
+	}
+
+	public static class Tags {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

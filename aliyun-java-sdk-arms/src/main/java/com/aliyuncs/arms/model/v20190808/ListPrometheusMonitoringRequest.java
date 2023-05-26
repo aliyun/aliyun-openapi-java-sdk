@@ -22,14 +22,14 @@ import com.aliyuncs.arms.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListPrometheusInstancesRequest extends RpcAcsRequest<ListPrometheusInstancesResponse> {
+public class ListPrometheusMonitoringRequest extends RpcAcsRequest<ListPrometheusMonitoringResponse> {
 	   
 
-	private String clusterType;
+	private String clusterId;
 
-	private Boolean showGlobalView;
-	public ListPrometheusInstancesRequest() {
-		super("ARMS", "2019-08-08", "ListPrometheusInstances", "arms");
+	private String type;
+	public ListPrometheusMonitoringRequest() {
+		super("ARMS", "2019-08-08", "ListPrometheusMonitoring", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +37,31 @@ public class ListPrometheusInstancesRequest extends RpcAcsRequest<ListPrometheus
 		} catch (Exception e) {}
 	}
 
-	public String getClusterType() {
-		return this.clusterType;
+	public String getClusterId() {
+		return this.clusterId;
 	}
 
-	public void setClusterType(String clusterType) {
-		this.clusterType = clusterType;
-		if(clusterType != null){
-			putQueryParameter("ClusterType", clusterType);
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 
-	public Boolean getShowGlobalView() {
-		return this.showGlobalView;
+	public String getType() {
+		return this.type;
 	}
 
-	public void setShowGlobalView(Boolean showGlobalView) {
-		this.showGlobalView = showGlobalView;
-		if(showGlobalView != null){
-			putQueryParameter("ShowGlobalView", showGlobalView.toString());
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
 		}
 	}
 
 	@Override
-	public Class<ListPrometheusInstancesResponse> getResponseClass() {
-		return ListPrometheusInstancesResponse.class;
+	public Class<ListPrometheusMonitoringResponse> getResponseClass() {
+		return ListPrometheusMonitoringResponse.class;
 	}
 
 }

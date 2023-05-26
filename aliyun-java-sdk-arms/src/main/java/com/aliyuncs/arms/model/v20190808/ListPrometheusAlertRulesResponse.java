@@ -71,6 +71,8 @@ public class ListPrometheusAlertRulesResponse extends AcsResponse {
 
 		private List<Annotation> annotations;
 
+		private List<TagsItem> tags;
+
 		public Integer getStatus() {
 			return this.status;
 		}
@@ -167,6 +169,14 @@ public class ListPrometheusAlertRulesResponse extends AcsResponse {
 			this.annotations = annotations;
 		}
 
+		public List<TagsItem> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<TagsItem> tags) {
+			this.tags = tags;
+		}
+
 		public static class Label {
 
 			private String name;
@@ -202,6 +212,29 @@ public class ListPrometheusAlertRulesResponse extends AcsResponse {
 
 			public void setName(String name) {
 				this.name = name;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
+		}
+
+		public static class TagsItem {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
 			}
 
 			public String getValue() {

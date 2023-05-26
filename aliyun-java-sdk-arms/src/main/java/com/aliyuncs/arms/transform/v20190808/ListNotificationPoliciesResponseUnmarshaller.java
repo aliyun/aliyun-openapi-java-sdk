@@ -79,6 +79,12 @@ public class ListNotificationPoliciesResponseUnmarshaller {
 				notifyObjectsItem.setNotifyObjectId(_ctx.longValue("ListNotificationPoliciesResponse.PageBean.NotificationPolicies["+ i +"].NotifyRule.NotifyObjects["+ j +"].NotifyObjectId"));
 				notifyObjectsItem.setNotifyObjectName(_ctx.stringValue("ListNotificationPoliciesResponse.PageBean.NotificationPolicies["+ i +"].NotifyRule.NotifyObjects["+ j +"].NotifyObjectName"));
 
+				List<String> notifyChannels1 = new ArrayList<String>();
+				for (int k = 0; k < _ctx.lengthValue("ListNotificationPoliciesResponse.PageBean.NotificationPolicies["+ i +"].NotifyRule.NotifyObjects["+ j +"].NotifyChannels.Length"); k++) {
+					notifyChannels1.add(_ctx.stringValue("ListNotificationPoliciesResponse.PageBean.NotificationPolicies["+ i +"].NotifyRule.NotifyObjects["+ j +"].NotifyChannels["+ k +"]"));
+				}
+				notifyObjectsItem.setNotifyChannels1(notifyChannels1);
+
 				notifyObjects.add(notifyObjectsItem);
 			}
 			notifyRule.setNotifyObjects(notifyObjects);

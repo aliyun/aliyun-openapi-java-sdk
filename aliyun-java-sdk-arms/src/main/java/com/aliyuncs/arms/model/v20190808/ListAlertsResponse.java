@@ -103,6 +103,8 @@ public class ListAlertsResponse extends AcsResponse {
 
 			private Long alertId;
 
+			private String solution;
+
 			private List<ActivitiesItem> activities;
 
 			private List<AlertEventsItem> alertEvents;
@@ -161,6 +163,14 @@ public class ListAlertsResponse extends AcsResponse {
 
 			public void setAlertId(Long alertId) {
 				this.alertId = alertId;
+			}
+
+			public String getSolution() {
+				return this.solution;
+			}
+
+			public void setSolution(String solution) {
+				this.solution = solution;
 			}
 
 			public List<ActivitiesItem> getActivities() {

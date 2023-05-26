@@ -103,6 +103,8 @@ public class ListPrometheusInstanceByTagAndResourceGroupIdResponse extends AcsRe
 
 			private String resourceGroupId;
 
+			private String resourceType;
+
 			private List<TagsItem> tags;
 
 			public String getClusterId() {
@@ -199,6 +201,14 @@ public class ListPrometheusInstanceByTagAndResourceGroupIdResponse extends AcsRe
 
 			public void setResourceGroupId(String resourceGroupId) {
 				this.resourceGroupId = resourceGroupId;
+			}
+
+			public String getResourceType() {
+				return this.resourceType;
+			}
+
+			public void setResourceType(String resourceType) {
+				this.resourceType = resourceType;
 			}
 
 			public List<TagsItem> getTags() {

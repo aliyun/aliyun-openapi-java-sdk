@@ -127,9 +127,13 @@ public class GetAlertRulesResponse extends AcsResponse {
 
 			private String message;
 
+			private String durationCompareType;
+
 			private List<LabelsItem> labels;
 
 			private List<AnnotationsItem> annotations;
+
+			private List<TagsItem> tags;
 
 			private List<String> pids;
 
@@ -289,6 +293,14 @@ public class GetAlertRulesResponse extends AcsResponse {
 				this.message = message;
 			}
 
+			public String getDurationCompareType() {
+				return this.durationCompareType;
+			}
+
+			public void setDurationCompareType(String durationCompareType) {
+				this.durationCompareType = durationCompareType;
+			}
+
 			public List<LabelsItem> getLabels() {
 				return this.labels;
 			}
@@ -303,6 +315,14 @@ public class GetAlertRulesResponse extends AcsResponse {
 
 			public void setAnnotations(List<AnnotationsItem> annotations) {
 				this.annotations = annotations;
+			}
+
+			public List<TagsItem> getTags() {
+				return this.tags;
+			}
+
+			public void setTags(List<TagsItem> tags) {
+				this.tags = tags;
 			}
 
 			public List<String> getPids() {
@@ -364,6 +384,29 @@ public class GetAlertRulesResponse extends AcsResponse {
 
 				public void setName(String name) {
 					this.name = name;
+				}
+
+				public String getValue() {
+					return this.value;
+				}
+
+				public void setValue(String value) {
+					this.value = value;
+				}
+			}
+
+			public static class TagsItem {
+
+				private String key;
+
+				private String value;
+
+				public String getKey() {
+					return this.key;
+				}
+
+				public void setKey(String key) {
+					this.key = key;
 				}
 
 				public String getValue() {

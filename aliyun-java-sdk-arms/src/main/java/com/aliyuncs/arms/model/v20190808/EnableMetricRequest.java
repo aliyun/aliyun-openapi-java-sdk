@@ -22,14 +22,14 @@ import com.aliyuncs.arms.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListPrometheusInstancesRequest extends RpcAcsRequest<ListPrometheusInstancesResponse> {
+public class EnableMetricRequest extends RpcAcsRequest<EnableMetricResponse> {
 	   
 
-	private String clusterType;
+	private String dropMetric;
 
-	private Boolean showGlobalView;
-	public ListPrometheusInstancesRequest() {
-		super("ARMS", "2019-08-08", "ListPrometheusInstances", "arms");
+	private String clusterId;
+	public EnableMetricRequest() {
+		super("ARMS", "2019-08-08", "EnableMetric", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +37,31 @@ public class ListPrometheusInstancesRequest extends RpcAcsRequest<ListPrometheus
 		} catch (Exception e) {}
 	}
 
-	public String getClusterType() {
-		return this.clusterType;
+	public String getDropMetric() {
+		return this.dropMetric;
 	}
 
-	public void setClusterType(String clusterType) {
-		this.clusterType = clusterType;
-		if(clusterType != null){
-			putQueryParameter("ClusterType", clusterType);
+	public void setDropMetric(String dropMetric) {
+		this.dropMetric = dropMetric;
+		if(dropMetric != null){
+			putQueryParameter("DropMetric", dropMetric);
 		}
 	}
 
-	public Boolean getShowGlobalView() {
-		return this.showGlobalView;
+	public String getClusterId() {
+		return this.clusterId;
 	}
 
-	public void setShowGlobalView(Boolean showGlobalView) {
-		this.showGlobalView = showGlobalView;
-		if(showGlobalView != null){
-			putQueryParameter("ShowGlobalView", showGlobalView.toString());
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 
 	@Override
-	public Class<ListPrometheusInstancesResponse> getResponseClass() {
-		return ListPrometheusInstancesResponse.class;
+	public Class<EnableMetricResponse> getResponseClass() {
+		return EnableMetricResponse.class;
 	}
 
 }

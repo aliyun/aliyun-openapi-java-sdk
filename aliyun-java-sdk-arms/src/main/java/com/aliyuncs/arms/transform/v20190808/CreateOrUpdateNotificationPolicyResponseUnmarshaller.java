@@ -71,6 +71,12 @@ public class CreateOrUpdateNotificationPolicyResponseUnmarshaller {
 			notifyObjectsItem.setNotifyObjectId(_ctx.longValue("CreateOrUpdateNotificationPolicyResponse.NotificationPolicy.NotifyRule.NotifyObjects["+ i +"].NotifyObjectId"));
 			notifyObjectsItem.setNotifyObjectName(_ctx.stringValue("CreateOrUpdateNotificationPolicyResponse.NotificationPolicy.NotifyRule.NotifyObjects["+ i +"].NotifyObjectName"));
 
+			List<String> notifyChannels1 = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("CreateOrUpdateNotificationPolicyResponse.NotificationPolicy.NotifyRule.NotifyObjects["+ i +"].NotifyChannels.Length"); j++) {
+				notifyChannels1.add(_ctx.stringValue("CreateOrUpdateNotificationPolicyResponse.NotificationPolicy.NotifyRule.NotifyObjects["+ i +"].NotifyChannels["+ j +"]"));
+			}
+			notifyObjectsItem.setNotifyChannels1(notifyChannels1);
+
 			notifyObjects.add(notifyObjectsItem);
 		}
 		notifyRule.setNotifyObjects(notifyObjects);

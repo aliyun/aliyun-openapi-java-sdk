@@ -49,6 +49,7 @@ public class ListPrometheusInstanceByTagAndResourceGroupIdResponseUnmarshaller {
 			prometheusInstancesItem.setPaymentType(_ctx.stringValue("ListPrometheusInstanceByTagAndResourceGroupIdResponse.Data.PrometheusInstances["+ i +"].PaymentType"));
 			prometheusInstancesItem.setGrafanaInstanceId(_ctx.stringValue("ListPrometheusInstanceByTagAndResourceGroupIdResponse.Data.PrometheusInstances["+ i +"].GrafanaInstanceId"));
 			prometheusInstancesItem.setResourceGroupId(_ctx.stringValue("ListPrometheusInstanceByTagAndResourceGroupIdResponse.Data.PrometheusInstances["+ i +"].ResourceGroupId"));
+			prometheusInstancesItem.setResourceType(_ctx.stringValue("ListPrometheusInstanceByTagAndResourceGroupIdResponse.Data.PrometheusInstances["+ i +"].ResourceType"));
 
 			List<TagsItem> tags = new ArrayList<TagsItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListPrometheusInstanceByTagAndResourceGroupIdResponse.Data.PrometheusInstances["+ i +"].Tags.Length"); j++) {

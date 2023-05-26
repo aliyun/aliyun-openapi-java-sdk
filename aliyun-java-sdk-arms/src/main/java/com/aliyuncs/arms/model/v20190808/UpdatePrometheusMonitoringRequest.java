@@ -22,18 +22,18 @@ import com.aliyuncs.arms.Endpoint;
  * @author auto create
  * @version 
  */
-public class UpdatePrometheusGlobalViewRequest extends RpcAcsRequest<UpdatePrometheusGlobalViewResponse> {
+public class UpdatePrometheusMonitoringRequest extends RpcAcsRequest<UpdatePrometheusMonitoringResponse> {
 	   
 
-	private Boolean allSubClustersSuccess;
+	private String configYaml;
 
 	private String clusterId;
 
-	private String resourceGroupId;
+	private String type;
 
-	private String subClustersJson;
-	public UpdatePrometheusGlobalViewRequest() {
-		super("ARMS", "2019-08-08", "UpdatePrometheusGlobalView", "arms");
+	private String monitoringName;
+	public UpdatePrometheusMonitoringRequest() {
+		super("ARMS", "2019-08-08", "UpdatePrometheusMonitoring", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,14 +41,14 @@ public class UpdatePrometheusGlobalViewRequest extends RpcAcsRequest<UpdateProme
 		} catch (Exception e) {}
 	}
 
-	public Boolean getAllSubClustersSuccess() {
-		return this.allSubClustersSuccess;
+	public String getConfigYaml() {
+		return this.configYaml;
 	}
 
-	public void setAllSubClustersSuccess(Boolean allSubClustersSuccess) {
-		this.allSubClustersSuccess = allSubClustersSuccess;
-		if(allSubClustersSuccess != null){
-			putQueryParameter("AllSubClustersSuccess", allSubClustersSuccess.toString());
+	public void setConfigYaml(String configYaml) {
+		this.configYaml = configYaml;
+		if(configYaml != null){
+			putBodyParameter("ConfigYaml", configYaml);
 		}
 	}
 
@@ -63,31 +63,31 @@ public class UpdatePrometheusGlobalViewRequest extends RpcAcsRequest<UpdateProme
 		}
 	}
 
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
+	public String getType() {
+		return this.type;
 	}
 
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
 		}
 	}
 
-	public String getSubClustersJson() {
-		return this.subClustersJson;
+	public String getMonitoringName() {
+		return this.monitoringName;
 	}
 
-	public void setSubClustersJson(String subClustersJson) {
-		this.subClustersJson = subClustersJson;
-		if(subClustersJson != null){
-			putQueryParameter("SubClustersJson", subClustersJson);
+	public void setMonitoringName(String monitoringName) {
+		this.monitoringName = monitoringName;
+		if(monitoringName != null){
+			putQueryParameter("MonitoringName", monitoringName);
 		}
 	}
 
 	@Override
-	public Class<UpdatePrometheusGlobalViewResponse> getResponseClass() {
-		return UpdatePrometheusGlobalViewResponse.class;
+	public Class<UpdatePrometheusMonitoringResponse> getResponseClass() {
+		return UpdatePrometheusMonitoringResponse.class;
 	}
 
 }
