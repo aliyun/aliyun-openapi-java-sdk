@@ -1,3 +1,6 @@
+2023-05-29 Version: 2.0.39
+- Add DistributionProducts API.
+
 2023-02-22 Version: 2.0.38
 - Add CrossAccountVerifyToken API.
 
