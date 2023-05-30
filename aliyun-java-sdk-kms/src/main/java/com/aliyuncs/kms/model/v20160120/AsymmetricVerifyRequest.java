@@ -28,9 +28,9 @@ public class AsymmetricVerifyRequest extends RpcAcsRequest<AsymmetricVerifyRespo
 
 	private String keyVersionId;
 
-	private String digest;
-
 	private String keyId;
+
+	private String digest;
 
 	private String value;
 
@@ -56,17 +56,6 @@ public class AsymmetricVerifyRequest extends RpcAcsRequest<AsymmetricVerifyRespo
 		}
 	}
 
-	public String getDigest() {
-		return this.digest;
-	}
-
-	public void setDigest(String digest) {
-		this.digest = digest;
-		if(digest != null){
-			putQueryParameter("Digest", digest);
-		}
-	}
-
 	public String getKeyId() {
 		return this.keyId;
 	}
@@ -75,6 +64,17 @@ public class AsymmetricVerifyRequest extends RpcAcsRequest<AsymmetricVerifyRespo
 		this.keyId = keyId;
 		if(keyId != null){
 			putQueryParameter("KeyId", keyId);
+		}
+	}
+
+	public String getDigest() {
+		return this.digest;
+	}
+
+	public void setDigest(String digest) {
+		this.digest = digest;
+		if(digest != null){
+			putQueryParameter("Digest", digest);
 		}
 	}
 

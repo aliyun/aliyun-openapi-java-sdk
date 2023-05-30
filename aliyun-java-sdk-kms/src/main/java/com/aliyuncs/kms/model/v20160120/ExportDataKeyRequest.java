@@ -26,13 +26,13 @@ import com.aliyuncs.kms.Endpoint;
 public class ExportDataKeyRequest extends RpcAcsRequest<ExportDataKeyResponse> {
 	   
 
+	private String publicKeyBlob;
+
 	private String encryptionContext;
 
 	private String wrappingAlgorithm;
 
 	private String ciphertextBlob;
-
-	private String publicKeyBlob;
 
 	private String wrappingKeySpec;
 	public ExportDataKeyRequest() {
@@ -43,6 +43,17 @@ public class ExportDataKeyRequest extends RpcAcsRequest<ExportDataKeyResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getPublicKeyBlob() {
+		return this.publicKeyBlob;
+	}
+
+	public void setPublicKeyBlob(String publicKeyBlob) {
+		this.publicKeyBlob = publicKeyBlob;
+		if(publicKeyBlob != null){
+			putQueryParameter("PublicKeyBlob", publicKeyBlob);
+		}
 	}
 
 	public String getEncryptionContext() {
@@ -75,17 +86,6 @@ public class ExportDataKeyRequest extends RpcAcsRequest<ExportDataKeyResponse> {
 		this.ciphertextBlob = ciphertextBlob;
 		if(ciphertextBlob != null){
 			putQueryParameter("CiphertextBlob", ciphertextBlob);
-		}
-	}
-
-	public String getPublicKeyBlob() {
-		return this.publicKeyBlob;
-	}
-
-	public void setPublicKeyBlob(String publicKeyBlob) {
-		this.publicKeyBlob = publicKeyBlob;
-		if(publicKeyBlob != null){
-			putQueryParameter("PublicKeyBlob", publicKeyBlob);
 		}
 	}
 

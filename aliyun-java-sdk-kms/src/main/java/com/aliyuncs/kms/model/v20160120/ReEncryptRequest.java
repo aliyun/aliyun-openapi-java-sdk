@@ -28,13 +28,13 @@ public class ReEncryptRequest extends RpcAcsRequest<ReEncryptResponse> {
 
 	private String destinationEncryptionContext;
 
+	private String sourceKeyId;
+
 	private String sourceEncryptionAlgorithm;
 
 	private String sourceKeyVersionId;
 
 	private String destinationKeyId;
-
-	private String sourceKeyId;
 
 	private String sourceEncryptionContext;
 
@@ -57,6 +57,17 @@ public class ReEncryptRequest extends RpcAcsRequest<ReEncryptResponse> {
 		this.destinationEncryptionContext = destinationEncryptionContext;
 		if(destinationEncryptionContext != null){
 			putQueryParameter("DestinationEncryptionContext", destinationEncryptionContext);
+		}
+	}
+
+	public String getSourceKeyId() {
+		return this.sourceKeyId;
+	}
+
+	public void setSourceKeyId(String sourceKeyId) {
+		this.sourceKeyId = sourceKeyId;
+		if(sourceKeyId != null){
+			putQueryParameter("SourceKeyId", sourceKeyId);
 		}
 	}
 
@@ -90,17 +101,6 @@ public class ReEncryptRequest extends RpcAcsRequest<ReEncryptResponse> {
 		this.destinationKeyId = destinationKeyId;
 		if(destinationKeyId != null){
 			putQueryParameter("DestinationKeyId", destinationKeyId);
-		}
-	}
-
-	public String getSourceKeyId() {
-		return this.sourceKeyId;
-	}
-
-	public void setSourceKeyId(String sourceKeyId) {
-		this.sourceKeyId = sourceKeyId;
-		if(sourceKeyId != null){
-			putQueryParameter("SourceKeyId", sourceKeyId);
 		}
 	}
 

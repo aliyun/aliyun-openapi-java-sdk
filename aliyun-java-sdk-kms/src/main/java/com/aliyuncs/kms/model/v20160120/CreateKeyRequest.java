@@ -26,13 +26,7 @@ import com.aliyuncs.kms.Endpoint;
 public class CreateKeyRequest extends RpcAcsRequest<CreateKeyResponse> {
 	   
 
-	private String protectionLevel;
-
-	private String keyUsage;
-
 	private String origin;
-
-	private String dKMSInstanceId;
 
 	private String description;
 
@@ -41,6 +35,14 @@ public class CreateKeyRequest extends RpcAcsRequest<CreateKeyResponse> {
 	private String rotationInterval;
 
 	private Boolean enableAutomaticRotation;
+
+	private String tags;
+
+	private String protectionLevel;
+
+	private String keyUsage;
+
+	private String dKMSInstanceId;
 	public CreateKeyRequest() {
 		super("Kms", "2016-01-20", "CreateKey", "kms");
 		setProtocol(ProtocolType.HTTPS);
@@ -51,28 +53,6 @@ public class CreateKeyRequest extends RpcAcsRequest<CreateKeyResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getProtectionLevel() {
-		return this.protectionLevel;
-	}
-
-	public void setProtectionLevel(String protectionLevel) {
-		this.protectionLevel = protectionLevel;
-		if(protectionLevel != null){
-			putQueryParameter("ProtectionLevel", protectionLevel);
-		}
-	}
-
-	public String getKeyUsage() {
-		return this.keyUsage;
-	}
-
-	public void setKeyUsage(String keyUsage) {
-		this.keyUsage = keyUsage;
-		if(keyUsage != null){
-			putQueryParameter("KeyUsage", keyUsage);
-		}
-	}
-
 	public String getOrigin() {
 		return this.origin;
 	}
@@ -81,17 +61,6 @@ public class CreateKeyRequest extends RpcAcsRequest<CreateKeyResponse> {
 		this.origin = origin;
 		if(origin != null){
 			putQueryParameter("Origin", origin);
-		}
-	}
-
-	public String getDKMSInstanceId() {
-		return this.dKMSInstanceId;
-	}
-
-	public void setDKMSInstanceId(String dKMSInstanceId) {
-		this.dKMSInstanceId = dKMSInstanceId;
-		if(dKMSInstanceId != null){
-			putQueryParameter("DKMSInstanceId", dKMSInstanceId);
 		}
 	}
 
@@ -136,6 +105,50 @@ public class CreateKeyRequest extends RpcAcsRequest<CreateKeyResponse> {
 		this.enableAutomaticRotation = enableAutomaticRotation;
 		if(enableAutomaticRotation != null){
 			putQueryParameter("EnableAutomaticRotation", enableAutomaticRotation.toString());
+		}
+	}
+
+	public String getTags() {
+		return this.tags;
+	}
+
+	public void setTags(String tags) {
+		this.tags = tags;
+		if(tags != null){
+			putQueryParameter("Tags", tags);
+		}
+	}
+
+	public String getProtectionLevel() {
+		return this.protectionLevel;
+	}
+
+	public void setProtectionLevel(String protectionLevel) {
+		this.protectionLevel = protectionLevel;
+		if(protectionLevel != null){
+			putQueryParameter("ProtectionLevel", protectionLevel);
+		}
+	}
+
+	public String getKeyUsage() {
+		return this.keyUsage;
+	}
+
+	public void setKeyUsage(String keyUsage) {
+		this.keyUsage = keyUsage;
+		if(keyUsage != null){
+			putQueryParameter("KeyUsage", keyUsage);
+		}
+	}
+
+	public String getDKMSInstanceId() {
+		return this.dKMSInstanceId;
+	}
+
+	public void setDKMSInstanceId(String dKMSInstanceId) {
+		this.dKMSInstanceId = dKMSInstanceId;
+		if(dKMSInstanceId != null){
+			putQueryParameter("DKMSInstanceId", dKMSInstanceId);
 		}
 	}
 

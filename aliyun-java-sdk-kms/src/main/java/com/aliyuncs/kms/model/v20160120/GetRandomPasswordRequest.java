@@ -26,19 +26,19 @@ import com.aliyuncs.kms.Endpoint;
 public class GetRandomPasswordRequest extends RpcAcsRequest<GetRandomPasswordResponse> {
 	   
 
-	private String excludeLowercase;
-
 	private String excludeCharacters;
 
 	private String passwordLength;
 
 	private String excludePunctuation;
 
-	private String excludeUppercase;
-
 	private String requireEachIncludedType;
 
 	private String excludeNumbers;
+
+	private String excludeLowercase;
+
+	private String excludeUppercase;
 	public GetRandomPasswordRequest() {
 		super("Kms", "2016-01-20", "GetRandomPassword", "kms");
 		setProtocol(ProtocolType.HTTPS);
@@ -47,17 +47,6 @@ public class GetRandomPasswordRequest extends RpcAcsRequest<GetRandomPasswordRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getExcludeLowercase() {
-		return this.excludeLowercase;
-	}
-
-	public void setExcludeLowercase(String excludeLowercase) {
-		this.excludeLowercase = excludeLowercase;
-		if(excludeLowercase != null){
-			putQueryParameter("ExcludeLowercase", excludeLowercase);
-		}
 	}
 
 	public String getExcludeCharacters() {
@@ -93,17 +82,6 @@ public class GetRandomPasswordRequest extends RpcAcsRequest<GetRandomPasswordRes
 		}
 	}
 
-	public String getExcludeUppercase() {
-		return this.excludeUppercase;
-	}
-
-	public void setExcludeUppercase(String excludeUppercase) {
-		this.excludeUppercase = excludeUppercase;
-		if(excludeUppercase != null){
-			putQueryParameter("ExcludeUppercase", excludeUppercase);
-		}
-	}
-
 	public String getRequireEachIncludedType() {
 		return this.requireEachIncludedType;
 	}
@@ -123,6 +101,28 @@ public class GetRandomPasswordRequest extends RpcAcsRequest<GetRandomPasswordRes
 		this.excludeNumbers = excludeNumbers;
 		if(excludeNumbers != null){
 			putQueryParameter("ExcludeNumbers", excludeNumbers);
+		}
+	}
+
+	public String getExcludeLowercase() {
+		return this.excludeLowercase;
+	}
+
+	public void setExcludeLowercase(String excludeLowercase) {
+		this.excludeLowercase = excludeLowercase;
+		if(excludeLowercase != null){
+			putQueryParameter("ExcludeLowercase", excludeLowercase);
+		}
+	}
+
+	public String getExcludeUppercase() {
+		return this.excludeUppercase;
+	}
+
+	public void setExcludeUppercase(String excludeUppercase) {
+		this.excludeUppercase = excludeUppercase;
+		if(excludeUppercase != null){
+			putQueryParameter("ExcludeUppercase", excludeUppercase);
 		}
 	}
 

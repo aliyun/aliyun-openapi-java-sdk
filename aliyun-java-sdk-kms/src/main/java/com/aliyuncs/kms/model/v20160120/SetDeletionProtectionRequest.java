@@ -26,11 +26,11 @@ import com.aliyuncs.kms.Endpoint;
 public class SetDeletionProtectionRequest extends RpcAcsRequest<SetDeletionProtectionResponse> {
 	   
 
+	private String deletionProtectionDescription;
+
 	private Boolean enableDeletionProtection;
 
 	private String protectedResourceArn;
-
-	private String deletionProtectionDescription;
 	public SetDeletionProtectionRequest() {
 		super("Kms", "2016-01-20", "SetDeletionProtection", "kms");
 		setProtocol(ProtocolType.HTTPS);
@@ -39,6 +39,17 @@ public class SetDeletionProtectionRequest extends RpcAcsRequest<SetDeletionProte
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDeletionProtectionDescription() {
+		return this.deletionProtectionDescription;
+	}
+
+	public void setDeletionProtectionDescription(String deletionProtectionDescription) {
+		this.deletionProtectionDescription = deletionProtectionDescription;
+		if(deletionProtectionDescription != null){
+			putQueryParameter("DeletionProtectionDescription", deletionProtectionDescription);
+		}
 	}
 
 	public Boolean getEnableDeletionProtection() {
@@ -60,17 +71,6 @@ public class SetDeletionProtectionRequest extends RpcAcsRequest<SetDeletionProte
 		this.protectedResourceArn = protectedResourceArn;
 		if(protectedResourceArn != null){
 			putQueryParameter("ProtectedResourceArn", protectedResourceArn);
-		}
-	}
-
-	public String getDeletionProtectionDescription() {
-		return this.deletionProtectionDescription;
-	}
-
-	public void setDeletionProtectionDescription(String deletionProtectionDescription) {
-		this.deletionProtectionDescription = deletionProtectionDescription;
-		if(deletionProtectionDescription != null){
-			putQueryParameter("DeletionProtectionDescription", deletionProtectionDescription);
 		}
 	}
 

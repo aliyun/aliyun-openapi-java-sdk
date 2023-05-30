@@ -26,11 +26,11 @@ import com.aliyuncs.kms.Endpoint;
 public class ListKeysRequest extends RpcAcsRequest<ListKeysResponse> {
 	   
 
-	private Integer pageSize;
-
 	private String filters;
 
 	private Integer pageNumber;
+
+	private Integer pageSize;
 	public ListKeysRequest() {
 		super("Kms", "2016-01-20", "ListKeys", "kms");
 		setProtocol(ProtocolType.HTTPS);
@@ -39,17 +39,6 @@ public class ListKeysRequest extends RpcAcsRequest<ListKeysResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
 	}
 
 	public String getFilters() {
@@ -71,6 +60,17 @@ public class ListKeysRequest extends RpcAcsRequest<ListKeysResponse> {
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

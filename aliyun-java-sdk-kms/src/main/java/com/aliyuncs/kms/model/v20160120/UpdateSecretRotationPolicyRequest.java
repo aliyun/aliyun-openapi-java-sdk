@@ -28,9 +28,9 @@ public class UpdateSecretRotationPolicyRequest extends RpcAcsRequest<UpdateSecre
 
 	private String rotationInterval;
 
-	private String secretName;
-
 	private Boolean enableAutomaticRotation;
+
+	private String secretName;
 	public UpdateSecretRotationPolicyRequest() {
 		super("Kms", "2016-01-20", "UpdateSecretRotationPolicy", "kms");
 		setProtocol(ProtocolType.HTTPS);
@@ -52,17 +52,6 @@ public class UpdateSecretRotationPolicyRequest extends RpcAcsRequest<UpdateSecre
 		}
 	}
 
-	public String getSecretName() {
-		return this.secretName;
-	}
-
-	public void setSecretName(String secretName) {
-		this.secretName = secretName;
-		if(secretName != null){
-			putQueryParameter("SecretName", secretName);
-		}
-	}
-
 	public Boolean getEnableAutomaticRotation() {
 		return this.enableAutomaticRotation;
 	}
@@ -71,6 +60,17 @@ public class UpdateSecretRotationPolicyRequest extends RpcAcsRequest<UpdateSecre
 		this.enableAutomaticRotation = enableAutomaticRotation;
 		if(enableAutomaticRotation != null){
 			putQueryParameter("EnableAutomaticRotation", enableAutomaticRotation.toString());
+		}
+	}
+
+	public String getSecretName() {
+		return this.secretName;
+	}
+
+	public void setSecretName(String secretName) {
+		this.secretName = secretName;
+		if(secretName != null){
+			putQueryParameter("SecretName", secretName);
 		}
 	}
 

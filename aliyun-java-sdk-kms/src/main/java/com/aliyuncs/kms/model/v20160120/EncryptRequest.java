@@ -26,11 +26,11 @@ import com.aliyuncs.kms.Endpoint;
 public class EncryptRequest extends RpcAcsRequest<EncryptResponse> {
 	   
 
-	private String encryptionContext;
-
 	private String keyId;
 
 	private String plaintext;
+
+	private String encryptionContext;
 	public EncryptRequest() {
 		super("Kms", "2016-01-20", "Encrypt", "kms");
 		setProtocol(ProtocolType.HTTPS);
@@ -39,17 +39,6 @@ public class EncryptRequest extends RpcAcsRequest<EncryptResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getEncryptionContext() {
-		return this.encryptionContext;
-	}
-
-	public void setEncryptionContext(String encryptionContext) {
-		this.encryptionContext = encryptionContext;
-		if(encryptionContext != null){
-			putQueryParameter("EncryptionContext", encryptionContext);
-		}
 	}
 
 	public String getKeyId() {
@@ -71,6 +60,17 @@ public class EncryptRequest extends RpcAcsRequest<EncryptResponse> {
 		this.plaintext = plaintext;
 		if(plaintext != null){
 			putQueryParameter("Plaintext", plaintext);
+		}
+	}
+
+	public String getEncryptionContext() {
+		return this.encryptionContext;
+	}
+
+	public void setEncryptionContext(String encryptionContext) {
+		this.encryptionContext = encryptionContext;
+		if(encryptionContext != null){
+			putQueryParameter("EncryptionContext", encryptionContext);
 		}
 	}
 

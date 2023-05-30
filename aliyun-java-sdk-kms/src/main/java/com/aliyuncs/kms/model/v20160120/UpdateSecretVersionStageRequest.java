@@ -26,9 +26,9 @@ import com.aliyuncs.kms.Endpoint;
 public class UpdateSecretVersionStageRequest extends RpcAcsRequest<UpdateSecretVersionStageResponse> {
 	   
 
-	private String removeFromVersion;
-
 	private String moveToVersion;
+
+	private String removeFromVersion;
 
 	private String versionStage;
 
@@ -43,17 +43,6 @@ public class UpdateSecretVersionStageRequest extends RpcAcsRequest<UpdateSecretV
 		} catch (Exception e) {}
 	}
 
-	public String getRemoveFromVersion() {
-		return this.removeFromVersion;
-	}
-
-	public void setRemoveFromVersion(String removeFromVersion) {
-		this.removeFromVersion = removeFromVersion;
-		if(removeFromVersion != null){
-			putQueryParameter("RemoveFromVersion", removeFromVersion);
-		}
-	}
-
 	public String getMoveToVersion() {
 		return this.moveToVersion;
 	}
@@ -62,6 +51,17 @@ public class UpdateSecretVersionStageRequest extends RpcAcsRequest<UpdateSecretV
 		this.moveToVersion = moveToVersion;
 		if(moveToVersion != null){
 			putQueryParameter("MoveToVersion", moveToVersion);
+		}
+	}
+
+	public String getRemoveFromVersion() {
+		return this.removeFromVersion;
+	}
+
+	public void setRemoveFromVersion(String removeFromVersion) {
+		this.removeFromVersion = removeFromVersion;
+		if(removeFromVersion != null){
+			putQueryParameter("RemoveFromVersion", removeFromVersion);
 		}
 	}
 

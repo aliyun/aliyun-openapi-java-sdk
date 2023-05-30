@@ -26,17 +26,17 @@ import com.aliyuncs.kms.Endpoint;
 public class GenerateAndExportDataKeyRequest extends RpcAcsRequest<GenerateAndExportDataKeyResponse> {
 	   
 
-	private String encryptionContext;
-
 	private String keyId;
 
 	private String keySpec;
 
 	private Integer numberOfBytes;
 
-	private String wrappingAlgorithm;
-
 	private String publicKeyBlob;
+
+	private String encryptionContext;
+
+	private String wrappingAlgorithm;
 
 	private String wrappingKeySpec;
 	public GenerateAndExportDataKeyRequest() {
@@ -47,17 +47,6 @@ public class GenerateAndExportDataKeyRequest extends RpcAcsRequest<GenerateAndEx
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getEncryptionContext() {
-		return this.encryptionContext;
-	}
-
-	public void setEncryptionContext(String encryptionContext) {
-		this.encryptionContext = encryptionContext;
-		if(encryptionContext != null){
-			putQueryParameter("EncryptionContext", encryptionContext);
-		}
 	}
 
 	public String getKeyId() {
@@ -93,17 +82,6 @@ public class GenerateAndExportDataKeyRequest extends RpcAcsRequest<GenerateAndEx
 		}
 	}
 
-	public String getWrappingAlgorithm() {
-		return this.wrappingAlgorithm;
-	}
-
-	public void setWrappingAlgorithm(String wrappingAlgorithm) {
-		this.wrappingAlgorithm = wrappingAlgorithm;
-		if(wrappingAlgorithm != null){
-			putQueryParameter("WrappingAlgorithm", wrappingAlgorithm);
-		}
-	}
-
 	public String getPublicKeyBlob() {
 		return this.publicKeyBlob;
 	}
@@ -112,6 +90,28 @@ public class GenerateAndExportDataKeyRequest extends RpcAcsRequest<GenerateAndEx
 		this.publicKeyBlob = publicKeyBlob;
 		if(publicKeyBlob != null){
 			putQueryParameter("PublicKeyBlob", publicKeyBlob);
+		}
+	}
+
+	public String getEncryptionContext() {
+		return this.encryptionContext;
+	}
+
+	public void setEncryptionContext(String encryptionContext) {
+		this.encryptionContext = encryptionContext;
+		if(encryptionContext != null){
+			putQueryParameter("EncryptionContext", encryptionContext);
+		}
+	}
+
+	public String getWrappingAlgorithm() {
+		return this.wrappingAlgorithm;
+	}
+
+	public void setWrappingAlgorithm(String wrappingAlgorithm) {
+		this.wrappingAlgorithm = wrappingAlgorithm;
+		if(wrappingAlgorithm != null){
+			putQueryParameter("WrappingAlgorithm", wrappingAlgorithm);
 		}
 	}
 

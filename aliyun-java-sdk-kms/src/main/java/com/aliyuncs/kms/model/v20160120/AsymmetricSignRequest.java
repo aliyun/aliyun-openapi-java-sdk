@@ -28,9 +28,9 @@ public class AsymmetricSignRequest extends RpcAcsRequest<AsymmetricSignResponse>
 
 	private String keyVersionId;
 
-	private String digest;
-
 	private String keyId;
+
+	private String digest;
 
 	private String algorithm;
 	public AsymmetricSignRequest() {
@@ -54,17 +54,6 @@ public class AsymmetricSignRequest extends RpcAcsRequest<AsymmetricSignResponse>
 		}
 	}
 
-	public String getDigest() {
-		return this.digest;
-	}
-
-	public void setDigest(String digest) {
-		this.digest = digest;
-		if(digest != null){
-			putQueryParameter("Digest", digest);
-		}
-	}
-
 	public String getKeyId() {
 		return this.keyId;
 	}
@@ -73,6 +62,17 @@ public class AsymmetricSignRequest extends RpcAcsRequest<AsymmetricSignResponse>
 		this.keyId = keyId;
 		if(keyId != null){
 			putQueryParameter("KeyId", keyId);
+		}
+	}
+
+	public String getDigest() {
+		return this.digest;
+	}
+
+	public void setDigest(String digest) {
+		this.digest = digest;
+		if(digest != null){
+			putQueryParameter("Digest", digest);
 		}
 	}
 

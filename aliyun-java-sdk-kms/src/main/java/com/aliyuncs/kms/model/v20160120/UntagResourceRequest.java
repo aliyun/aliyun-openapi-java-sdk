@@ -28,9 +28,9 @@ public class UntagResourceRequest extends RpcAcsRequest<UntagResourceResponse> {
 
 	private String certificateId;
 
-	private String tagKeys;
-
 	private String keyId;
+
+	private String tagKeys;
 
 	private String secretName;
 	public UntagResourceRequest() {
@@ -54,17 +54,6 @@ public class UntagResourceRequest extends RpcAcsRequest<UntagResourceResponse> {
 		}
 	}
 
-	public String getTagKeys() {
-		return this.tagKeys;
-	}
-
-	public void setTagKeys(String tagKeys) {
-		this.tagKeys = tagKeys;
-		if(tagKeys != null){
-			putQueryParameter("TagKeys", tagKeys);
-		}
-	}
-
 	public String getKeyId() {
 		return this.keyId;
 	}
@@ -73,6 +62,17 @@ public class UntagResourceRequest extends RpcAcsRequest<UntagResourceResponse> {
 		this.keyId = keyId;
 		if(keyId != null){
 			putQueryParameter("KeyId", keyId);
+		}
+	}
+
+	public String getTagKeys() {
+		return this.tagKeys;
+	}
+
+	public void setTagKeys(String tagKeys) {
+		this.tagKeys = tagKeys;
+		if(tagKeys != null){
+			putQueryParameter("TagKeys", tagKeys);
 		}
 	}
 

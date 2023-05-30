@@ -26,13 +26,13 @@ import com.aliyuncs.kms.Endpoint;
 public class GenerateDataKeyRequest extends RpcAcsRequest<GenerateDataKeyResponse> {
 	   
 
-	private String encryptionContext;
-
 	private String keyId;
 
 	private String keySpec;
 
 	private Integer numberOfBytes;
+
+	private String encryptionContext;
 	public GenerateDataKeyRequest() {
 		super("Kms", "2016-01-20", "GenerateDataKey", "kms");
 		setProtocol(ProtocolType.HTTPS);
@@ -41,17 +41,6 @@ public class GenerateDataKeyRequest extends RpcAcsRequest<GenerateDataKeyRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getEncryptionContext() {
-		return this.encryptionContext;
-	}
-
-	public void setEncryptionContext(String encryptionContext) {
-		this.encryptionContext = encryptionContext;
-		if(encryptionContext != null){
-			putQueryParameter("EncryptionContext", encryptionContext);
-		}
 	}
 
 	public String getKeyId() {
@@ -84,6 +73,17 @@ public class GenerateDataKeyRequest extends RpcAcsRequest<GenerateDataKeyRespons
 		this.numberOfBytes = numberOfBytes;
 		if(numberOfBytes != null){
 			putQueryParameter("NumberOfBytes", numberOfBytes.toString());
+		}
+	}
+
+	public String getEncryptionContext() {
+		return this.encryptionContext;
+	}
+
+	public void setEncryptionContext(String encryptionContext) {
+		this.encryptionContext = encryptionContext;
+		if(encryptionContext != null){
+			putQueryParameter("EncryptionContext", encryptionContext);
 		}
 	}
 

@@ -28,11 +28,11 @@ public class ListSecretVersionIdsRequest extends RpcAcsRequest<ListSecretVersion
 
 	private String includeDeprecated;
 
+	private Integer pageNumber;
+
 	private Integer pageSize;
 
 	private String secretName;
-
-	private Integer pageNumber;
 	public ListSecretVersionIdsRequest() {
 		super("Kms", "2016-01-20", "ListSecretVersionIds", "kms");
 		setProtocol(ProtocolType.HTTPS);
@@ -51,6 +51,17 @@ public class ListSecretVersionIdsRequest extends RpcAcsRequest<ListSecretVersion
 		this.includeDeprecated = includeDeprecated;
 		if(includeDeprecated != null){
 			putQueryParameter("IncludeDeprecated", includeDeprecated);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
@@ -73,17 +84,6 @@ public class ListSecretVersionIdsRequest extends RpcAcsRequest<ListSecretVersion
 		this.secretName = secretName;
 		if(secretName != null){
 			putQueryParameter("SecretName", secretName);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
