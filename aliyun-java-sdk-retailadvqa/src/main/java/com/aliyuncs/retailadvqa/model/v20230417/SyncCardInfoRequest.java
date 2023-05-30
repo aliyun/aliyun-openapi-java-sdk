@@ -15,6 +15,7 @@
 package com.aliyuncs.retailadvqa.model.v20230417;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
@@ -59,7 +60,7 @@ public class SyncCardInfoRequest extends RpcAcsRequest<SyncCardInfoResponse> {
 		private String orderId;
 
 		@SerializedName("PresentDetail")
-		private PresentDetail presentDetail;
+		private List<PresentDetailItem> presentDetail;
 
 		@SerializedName("TransferId")
 		private String transferId;
@@ -117,11 +118,11 @@ public class SyncCardInfoRequest extends RpcAcsRequest<SyncCardInfoResponse> {
 			this.orderId = orderId;
 		}
 
-		public PresentDetail getPresentDetail() {
+		public List<PresentDetailItem> getPresentDetail() {
 			return this.presentDetail;
 		}
 
-		public void setPresentDetail(PresentDetail presentDetail) {
+		public void setPresentDetail(List<PresentDetailItem> presentDetail) {
 			this.presentDetail = presentDetail;
 		}
 
@@ -189,7 +190,7 @@ public class SyncCardInfoRequest extends RpcAcsRequest<SyncCardInfoResponse> {
 			this.status = status;
 		}
 
-		public static class PresentDetail {
+		public static class PresentDetailItem {
 
 			@SerializedName("ItemId")
 			private String itemId;

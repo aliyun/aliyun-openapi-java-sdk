@@ -1,3 +1,6 @@
+2023-05-30 Version: 1.0.4
+Update syncCardInfo params.
+
 2023-05-25 Version: 1.0.3
 - Generated 2023-04-17 for `retailadvqa`.
 
