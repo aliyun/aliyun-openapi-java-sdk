@@ -31,6 +31,8 @@ public class CreateVpcPeerConnectionRequest extends RpcAcsRequest<CreateVpcPeerC
 
 	private Long acceptingAliUid;
 
+	private String resourceGroupId;
+
 	private String acceptingRegionId;
 
 	private Boolean dryRun;
@@ -79,6 +81,17 @@ public class CreateVpcPeerConnectionRequest extends RpcAcsRequest<CreateVpcPeerC
 		this.acceptingAliUid = acceptingAliUid;
 		if(acceptingAliUid != null){
 			putBodyParameter("AcceptingAliUid", acceptingAliUid.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putBodyParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

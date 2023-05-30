@@ -27,6 +27,8 @@ public class AcceptVpcPeerConnectionRequest extends RpcAcsRequest<AcceptVpcPeerC
 
 	private String clientToken;
 
+	private String resourceGroupId;
+
 	private Boolean dryRun;
 
 	private String resourceOwnerAccount;
@@ -49,6 +51,17 @@ public class AcceptVpcPeerConnectionRequest extends RpcAcsRequest<AcceptVpcPeerC
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putBodyParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putBodyParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
