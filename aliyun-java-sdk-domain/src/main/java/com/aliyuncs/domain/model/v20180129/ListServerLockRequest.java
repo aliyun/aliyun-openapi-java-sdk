@@ -33,6 +33,8 @@ public class ListServerLockRequest extends RpcAcsRequest<ListServerLockResponse>
 
 	private Long beginStartDate;
 
+	private String orderByType;
+
 	private Integer serverLockStatus;
 
 	private Long startExpireDate;
@@ -42,6 +44,8 @@ public class ListServerLockRequest extends RpcAcsRequest<ListServerLockResponse>
 	private String lang;
 
 	private String domainName;
+
+	private String orderBy;
 
 	private Long endStartDate;
 
@@ -99,6 +103,17 @@ public class ListServerLockRequest extends RpcAcsRequest<ListServerLockResponse>
 		}
 	}
 
+	public String getOrderByType() {
+		return this.orderByType;
+	}
+
+	public void setOrderByType(String orderByType) {
+		this.orderByType = orderByType;
+		if(orderByType != null){
+			putQueryParameter("OrderByType", orderByType);
+		}
+	}
+
 	public Integer getServerLockStatus() {
 		return this.serverLockStatus;
 	}
@@ -151,6 +166,17 @@ public class ListServerLockRequest extends RpcAcsRequest<ListServerLockResponse>
 		this.domainName = domainName;
 		if(domainName != null){
 			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public String getOrderBy() {
+		return this.orderBy;
+	}
+
+	public void setOrderBy(String orderBy) {
+		this.orderBy = orderBy;
+		if(orderBy != null){
+			putQueryParameter("OrderBy", orderBy);
 		}
 	}
 
