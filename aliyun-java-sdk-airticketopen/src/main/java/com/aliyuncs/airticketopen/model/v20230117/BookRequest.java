@@ -16,7 +16,6 @@ package com.aliyuncs.airticketopen.model.v20230117;
 
 import com.aliyuncs.RoaAcsRequest;
 import java.util.List;
-import java.util.Map;
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
@@ -199,19 +198,11 @@ public class BookRequest extends RoaAcsRequest<BookResponse> {
 
 	public static class Passenger_ancillary_purchase_map_list {
 
-		@SerializedName("ancillary_list")
-		private List<Ancillary_listItem> ancillary_list;
-
 		@SerializedName("passenger_list")
 		private List<Passenger_listItem> passenger_list;
 
-		public List<Ancillary_listItem> getAncillary_list() {
-			return this.ancillary_list;
-		}
-
-		public void setAncillary_list(List<Ancillary_listItem> ancillary_list) {
-			this.ancillary_list = ancillary_list;
-		}
+		@SerializedName("book_ancillary_req_item")
+		private Book_ancillary_req_item book_ancillary_req_item;
 
 		public List<Passenger_listItem> getPassenger_list() {
 			return this.passenger_list;
@@ -221,40 +212,12 @@ public class BookRequest extends RoaAcsRequest<BookResponse> {
 			this.passenger_list = passenger_list;
 		}
 
-		public static class Ancillary_listItem {
+		public Book_ancillary_req_item getBook_ancillary_req_item() {
+			return this.book_ancillary_req_item;
+		}
 
-			@SerializedName("ancillary_type")
-			private Integer ancillary_type;
-
-			@SerializedName("ancillary_id")
-			private String ancillary_id;
-
-			@SerializedName("ancillary_info")
-			private Map<String,String> ancillary_info;
-
-			public Integer getAncillary_type() {
-				return this.ancillary_type;
-			}
-
-			public void setAncillary_type(Integer ancillary_type) {
-				this.ancillary_type = ancillary_type;
-			}
-
-			public String getAncillary_id() {
-				return this.ancillary_id;
-			}
-
-			public void setAncillary_id(String ancillary_id) {
-				this.ancillary_id = ancillary_id;
-			}
-
-			public Map<String,String> getAncillary_info() {
-				return this.ancillary_info;
-			}
-
-			public void setAncillary_info(Map<String,String> ancillary_info) {
-				this.ancillary_info = ancillary_info;
-			}
+		public void setBook_ancillary_req_item(Book_ancillary_req_item book_ancillary_req_item) {
+			this.book_ancillary_req_item = book_ancillary_req_item;
 		}
 
 		public static class Passenger_listItem {
@@ -403,6 +366,31 @@ public class BookRequest extends RoaAcsRequest<BookResponse> {
 				public void setCert_issue_place(String cert_issue_place) {
 					this.cert_issue_place = cert_issue_place;
 				}
+			}
+		}
+
+		public static class Book_ancillary_req_item {
+
+			@SerializedName("ancillary_type")
+			private Integer ancillary_type;
+
+			@SerializedName("ancillary_id")
+			private String ancillary_id;
+
+			public Integer getAncillary_type() {
+				return this.ancillary_type;
+			}
+
+			public void setAncillary_type(Integer ancillary_type) {
+				this.ancillary_type = ancillary_type;
+			}
+
+			public String getAncillary_id() {
+				return this.ancillary_id;
+			}
+
+			public void setAncillary_id(String ancillary_id) {
+				this.ancillary_id = ancillary_id;
 			}
 		}
 	}
