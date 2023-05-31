@@ -1,3 +1,10 @@
+2023-05-31 Version: 2.0.5
+- Release ScreenGC.
+- Release ScreenLC.
+- Release PredictCVD.
+- Release ScreenCRC.
+- Update  ScreenChestCT.
+
 2023-04-03 Version: 2.0.4
 - Release CalcBMD.
 
