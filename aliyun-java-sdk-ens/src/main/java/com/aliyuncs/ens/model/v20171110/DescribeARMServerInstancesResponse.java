@@ -91,6 +91,14 @@ public class DescribeARMServerInstancesResponse extends AcsResponse {
 
 		private String status;
 
+		private String namespace;
+
+		private String name;
+
+		private String payType;
+
+		private String latestAction;
+
 		private List<AICInstancesItem> aICInstances;
 
 		public String getCreationTime() {
@@ -149,6 +157,38 @@ public class DescribeARMServerInstancesResponse extends AcsResponse {
 			this.status = status;
 		}
 
+		public String getNamespace() {
+			return this.namespace;
+		}
+
+		public void setNamespace(String namespace) {
+			this.namespace = namespace;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getPayType() {
+			return this.payType;
+		}
+
+		public void setPayType(String payType) {
+			this.payType = payType;
+		}
+
+		public String getLatestAction() {
+			return this.latestAction;
+		}
+
+		public void setLatestAction(String latestAction) {
+			this.latestAction = latestAction;
+		}
+
 		public List<AICInstancesItem> getAICInstances() {
 			return this.aICInstances;
 		}
@@ -172,6 +212,10 @@ public class DescribeARMServerInstancesResponse extends AcsResponse {
 			private String state;
 
 			private String status;
+
+			private String name;
+
+			private String latestAction;
 
 			private NetworkAttributes networkAttributes;
 
@@ -229,6 +273,22 @@ public class DescribeARMServerInstancesResponse extends AcsResponse {
 
 			public void setStatus(String status) {
 				this.status = status;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getLatestAction() {
+				return this.latestAction;
+			}
+
+			public void setLatestAction(String latestAction) {
+				this.latestAction = latestAction;
 			}
 
 			public NetworkAttributes getNetworkAttributes() {

@@ -27,6 +27,12 @@ public class DescribeAICImagesResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Integer pageNumber;
+
+	private Integer pageSize;
+
+	private Integer totalCount;
+
 	private List<ImagesItem> images;
 
 	public String getRequestId() {
@@ -35,6 +41,30 @@ public class DescribeAICImagesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<ImagesItem> getImages() {
@@ -56,6 +86,8 @@ public class DescribeAICImagesResponse extends AcsResponse {
 		private String status;
 
 		private String creationTime;
+
+		private String description;
 
 		public String getImageUrl() {
 			return this.imageUrl;
@@ -95,6 +127,14 @@ public class DescribeAICImagesResponse extends AcsResponse {
 
 		public void setCreationTime(String creationTime) {
 			this.creationTime = creationTime;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
 		}
 	}
 

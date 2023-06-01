@@ -15,6 +15,9 @@
 package com.aliyuncs.ens.model.v20171110;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 
 /**
@@ -27,6 +30,9 @@ public class ResetAICInstanceRequest extends RpcAcsRequest<ResetAICInstanceRespo
 	private String serverId;
 
 	private String instanceId;
+
+	@SerializedName("instanceIds")
+	private List<String> instanceIds;
 	public ResetAICInstanceRequest() {
 		super("Ens", "2017-11-10", "ResetAICInstance", "ens");
 		setMethod(MethodType.GET);
@@ -52,6 +58,17 @@ public class ResetAICInstanceRequest extends RpcAcsRequest<ResetAICInstanceRespo
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
 		}
+	}
+
+	public List<String> getInstanceIds() {
+		return this.instanceIds;
+	}
+
+	public void setInstanceIds(List<String> instanceIds) {
+		this.instanceIds = instanceIds;	
+		if (instanceIds != null) {
+			putQueryParameter("InstanceIds" , new Gson().toJson(instanceIds));
+		}	
 	}
 
 	@Override

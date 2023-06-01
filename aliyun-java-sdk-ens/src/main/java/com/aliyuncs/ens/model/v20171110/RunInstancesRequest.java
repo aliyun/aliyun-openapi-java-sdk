@@ -31,6 +31,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 	private Boolean uniqueSuffix;
 
+	private String instanceChargeStrategy;
+
 	private String securityId;
 
 	private String keyPairName;
@@ -110,6 +112,17 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		this.uniqueSuffix = uniqueSuffix;
 		if(uniqueSuffix != null){
 			putQueryParameter("UniqueSuffix", uniqueSuffix.toString());
+		}
+	}
+
+	public String getInstanceChargeStrategy() {
+		return this.instanceChargeStrategy;
+	}
+
+	public void setInstanceChargeStrategy(String instanceChargeStrategy) {
+		this.instanceChargeStrategy = instanceChargeStrategy;
+		if(instanceChargeStrategy != null){
+			putQueryParameter("InstanceChargeStrategy", instanceChargeStrategy);
 		}
 	}
 

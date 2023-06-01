@@ -15,6 +15,9 @@
 package com.aliyuncs.ens.model.v20171110;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 
 /**
@@ -25,6 +28,9 @@ public class RebootARMServerInstanceRequest extends RpcAcsRequest<RebootARMServe
 	   
 
 	private String serverId;
+
+	@SerializedName("serverIds")
+	private List<String> serverIds;
 	public RebootARMServerInstanceRequest() {
 		super("Ens", "2017-11-10", "RebootARMServerInstance", "ens");
 		setMethod(MethodType.GET);
@@ -39,6 +45,17 @@ public class RebootARMServerInstanceRequest extends RpcAcsRequest<RebootARMServe
 		if(serverId != null){
 			putQueryParameter("ServerId", serverId);
 		}
+	}
+
+	public List<String> getServerIds() {
+		return this.serverIds;
+	}
+
+	public void setServerIds(List<String> serverIds) {
+		this.serverIds = serverIds;	
+		if (serverIds != null) {
+			putQueryParameter("ServerIds" , new Gson().toJson(serverIds));
+		}	
 	}
 
 	@Override

@@ -27,6 +27,9 @@ public class DescribeAICImagesResponseUnmarshaller {
 	public static DescribeAICImagesResponse unmarshall(DescribeAICImagesResponse describeAICImagesResponse, UnmarshallerContext _ctx) {
 		
 		describeAICImagesResponse.setRequestId(_ctx.stringValue("DescribeAICImagesResponse.RequestId"));
+		describeAICImagesResponse.setPageNumber(_ctx.integerValue("DescribeAICImagesResponse.PageNumber"));
+		describeAICImagesResponse.setPageSize(_ctx.integerValue("DescribeAICImagesResponse.PageSize"));
+		describeAICImagesResponse.setTotalCount(_ctx.integerValue("DescribeAICImagesResponse.TotalCount"));
 
 		List<ImagesItem> images = new ArrayList<ImagesItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAICImagesResponse.Images.Length"); i++) {
@@ -36,6 +39,7 @@ public class DescribeAICImagesResponseUnmarshaller {
 			imagesItem.setUser(_ctx.stringValue("DescribeAICImagesResponse.Images["+ i +"].User"));
 			imagesItem.setStatus(_ctx.stringValue("DescribeAICImagesResponse.Images["+ i +"].Status"));
 			imagesItem.setCreationTime(_ctx.stringValue("DescribeAICImagesResponse.Images["+ i +"].CreationTime"));
+			imagesItem.setDescription(_ctx.stringValue("DescribeAICImagesResponse.Images["+ i +"].Description"));
 
 			images.add(imagesItem);
 		}

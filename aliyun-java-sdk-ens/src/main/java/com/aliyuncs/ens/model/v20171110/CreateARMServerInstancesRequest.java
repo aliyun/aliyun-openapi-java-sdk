@@ -46,6 +46,8 @@ public class CreateARMServerInstancesRequest extends RpcAcsRequest<CreateARMServ
 
 	private Integer amount;
 
+	private String nameSpace;
+
 	private String payType;
 	public CreateARMServerInstancesRequest() {
 		super("Ens", "2017-11-10", "CreateARMServerInstances", "ens");
@@ -170,6 +172,17 @@ public class CreateARMServerInstancesRequest extends RpcAcsRequest<CreateARMServ
 		this.amount = amount;
 		if(amount != null){
 			putQueryParameter("Amount", amount.toString());
+		}
+	}
+
+	public String getNameSpace() {
+		return this.nameSpace;
+	}
+
+	public void setNameSpace(String nameSpace) {
+		this.nameSpace = nameSpace;
+		if(nameSpace != null){
+			putQueryParameter("NameSpace", nameSpace);
 		}
 	}
 

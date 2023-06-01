@@ -43,6 +43,10 @@ public class DescribeARMServerInstancesResponseUnmarshaller {
 			serversItem.setSpecName(_ctx.stringValue("DescribeARMServerInstancesResponse.Servers["+ i +"].SpecName"));
 			serversItem.setState(_ctx.stringValue("DescribeARMServerInstancesResponse.Servers["+ i +"].State"));
 			serversItem.setStatus(_ctx.stringValue("DescribeARMServerInstancesResponse.Servers["+ i +"].Status"));
+			serversItem.setNamespace(_ctx.stringValue("DescribeARMServerInstancesResponse.Servers["+ i +"].Namespace"));
+			serversItem.setName(_ctx.stringValue("DescribeARMServerInstancesResponse.Servers["+ i +"].Name"));
+			serversItem.setPayType(_ctx.stringValue("DescribeARMServerInstancesResponse.Servers["+ i +"].PayType"));
+			serversItem.setLatestAction(_ctx.stringValue("DescribeARMServerInstancesResponse.Servers["+ i +"].LatestAction"));
 
 			List<AICInstancesItem> aICInstances = new ArrayList<AICInstancesItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeARMServerInstancesResponse.Servers["+ i +"].AICInstances.Length"); j++) {
@@ -54,6 +58,8 @@ public class DescribeARMServerInstancesResponseUnmarshaller {
 				aICInstancesItem.setSpec(_ctx.stringValue("DescribeARMServerInstancesResponse.Servers["+ i +"].AICInstances["+ j +"].Spec"));
 				aICInstancesItem.setState(_ctx.stringValue("DescribeARMServerInstancesResponse.Servers["+ i +"].AICInstances["+ j +"].State"));
 				aICInstancesItem.setStatus(_ctx.stringValue("DescribeARMServerInstancesResponse.Servers["+ i +"].AICInstances["+ j +"].Status"));
+				aICInstancesItem.setName(_ctx.stringValue("DescribeARMServerInstancesResponse.Servers["+ i +"].AICInstances["+ j +"].Name"));
+				aICInstancesItem.setLatestAction(_ctx.stringValue("DescribeARMServerInstancesResponse.Servers["+ i +"].AICInstances["+ j +"].LatestAction"));
 
 				NetworkAttributes networkAttributes = new NetworkAttributes();
 				networkAttributes.setIpAddress(_ctx.stringValue("DescribeARMServerInstancesResponse.Servers["+ i +"].AICInstances["+ j +"].NetworkAttributes.IpAddress"));

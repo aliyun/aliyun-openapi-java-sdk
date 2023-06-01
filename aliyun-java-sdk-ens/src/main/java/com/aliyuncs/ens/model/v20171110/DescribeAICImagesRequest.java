@@ -24,16 +24,48 @@ import com.aliyuncs.http.MethodType;
 public class DescribeAICImagesRequest extends RpcAcsRequest<DescribeAICImagesResponse> {
 	   
 
+	private String imageType;
+
+	private String status;
+
 	private String imageId;
+
+	private String maxDate;
+
+	private String description;
 
 	private String pageNumber;
 
 	private String pageSize;
 
+	private String minDate;
+
 	private String imageUrl;
 	public DescribeAICImagesRequest() {
 		super("Ens", "2017-11-10", "DescribeAICImages", "ens");
 		setMethod(MethodType.POST);
+	}
+
+	public String getImageType() {
+		return this.imageType;
+	}
+
+	public void setImageType(String imageType) {
+		this.imageType = imageType;
+		if(imageType != null){
+			putQueryParameter("ImageType", imageType);
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
+		}
 	}
 
 	public String getImageId() {
@@ -44,6 +76,28 @@ public class DescribeAICImagesRequest extends RpcAcsRequest<DescribeAICImagesRes
 		this.imageId = imageId;
 		if(imageId != null){
 			putQueryParameter("ImageId", imageId);
+		}
+	}
+
+	public String getMaxDate() {
+		return this.maxDate;
+	}
+
+	public void setMaxDate(String maxDate) {
+		this.maxDate = maxDate;
+		if(maxDate != null){
+			putQueryParameter("MaxDate", maxDate);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
 		}
 	}
 
@@ -66,6 +120,17 @@ public class DescribeAICImagesRequest extends RpcAcsRequest<DescribeAICImagesRes
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize);
+		}
+	}
+
+	public String getMinDate() {
+		return this.minDate;
+	}
+
+	public void setMinDate(String minDate) {
+		this.minDate = minDate;
+		if(minDate != null){
+			putQueryParameter("MinDate", minDate);
 		}
 	}
 
