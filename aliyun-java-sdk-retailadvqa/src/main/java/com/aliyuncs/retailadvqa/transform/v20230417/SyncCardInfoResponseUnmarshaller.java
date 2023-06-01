@@ -27,6 +27,7 @@ public class SyncCardInfoResponseUnmarshaller {
 		syncCardInfoResponse.setHttpStatusCode(_ctx.stringValue("SyncCardInfoResponse.HttpStatusCode"));
 		syncCardInfoResponse.setErrorCode(_ctx.stringValue("SyncCardInfoResponse.ErrorCode"));
 		syncCardInfoResponse.setErrorMessage(_ctx.stringValue("SyncCardInfoResponse.ErrorMessage"));
+		syncCardInfoResponse.setMessage(_ctx.stringValue("SyncCardInfoResponse.Message"));
 	 
 	 	return syncCardInfoResponse;
 	}

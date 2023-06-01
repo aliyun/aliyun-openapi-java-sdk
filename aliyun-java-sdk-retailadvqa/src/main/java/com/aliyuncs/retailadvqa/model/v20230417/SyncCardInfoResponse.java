@@ -34,6 +34,8 @@ public class SyncCardInfoResponse extends AcsResponse {
 
 	private String errorMessage;
 
+	private String message;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -72,6 +74,14 @@ public class SyncCardInfoResponse extends AcsResponse {
 
 	public void setErrorMessage(String errorMessage) {
 		this.errorMessage = errorMessage;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	@Override
