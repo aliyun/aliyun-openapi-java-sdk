@@ -269,6 +269,9 @@ public class ChangeApplyRequest extends RoaAcsRequest<ChangeApplyResponse> {
 			@SerializedName("departure_airport")
 			private String departure_airport;
 
+			@SerializedName("departure_date")
+			private String departure_date;
+
 			@SerializedName("arrival_airport")
 			private String arrival_airport;
 
@@ -315,6 +318,14 @@ public class ChangeApplyRequest extends RoaAcsRequest<ChangeApplyResponse> {
 
 			public void setDeparture_airport(String departure_airport) {
 				this.departure_airport = departure_airport;
+			}
+
+			public String getDeparture_date() {
+				return this.departure_date;
+			}
+
+			public void setDeparture_date(String departure_date) {
+				this.departure_date = departure_date;
 			}
 
 			public String getArrival_airport() {
