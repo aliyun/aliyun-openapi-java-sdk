@@ -109,6 +109,8 @@ public class DescribeLoadBalancerTCPListenerAttributeResponse extends AcsRespons
 
 	private List<PortRange> portRanges;
 
+	private List<Tag> tags;
+
 	private List<String> aclIds;
 
 	public String getVServerGroupId() {
@@ -447,6 +449,14 @@ public class DescribeLoadBalancerTCPListenerAttributeResponse extends AcsRespons
 		this.portRanges = portRanges;
 	}
 
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;
+	}
+
 	public List<String> getAclIds() {
 		return this.aclIds;
 	}
@@ -475,6 +485,29 @@ public class DescribeLoadBalancerTCPListenerAttributeResponse extends AcsRespons
 
 		public void setEndPort(Integer endPort) {
 			this.endPort = endPort;
+		}
+	}
+
+	public static class Tag {
+
+		private String tagKey;
+
+		private String tagValue;
+
+		public String getTagKey() {
+			return this.tagKey;
+		}
+
+		public void setTagKey(String tagKey) {
+			this.tagKey = tagKey;
+		}
+
+		public String getTagValue() {
+			return this.tagValue;
+		}
+
+		public void setTagValue(String tagValue) {
+			this.tagValue = tagValue;
 		}
 	}
 

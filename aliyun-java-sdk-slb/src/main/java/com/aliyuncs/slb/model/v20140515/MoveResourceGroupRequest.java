@@ -15,7 +15,6 @@
 package com.aliyuncs.slb.model.v20140515;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.slb.Endpoint;
 
@@ -23,14 +22,16 @@ import com.aliyuncs.slb.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeMasterSlaveServerGroupsRequest extends RpcAcsRequest<DescribeMasterSlaveServerGroupsResponse> {
+public class MoveResourceGroupRequest extends RpcAcsRequest<MoveResourceGroupResponse> {
 	   
+
+	private String access_key_id;
 
 	private Long resourceOwnerId;
 
-	private Boolean includeListener;
+	private String resourceGroupId;
 
-	private List<Tag> tags;
+	private String resourceId;
 
 	private String resourceOwnerAccount;
 
@@ -38,14 +39,27 @@ public class DescribeMasterSlaveServerGroupsRequest extends RpcAcsRequest<Descri
 
 	private Long ownerId;
 
-	private String loadBalancerId;
-	public DescribeMasterSlaveServerGroupsRequest() {
-		super("Slb", "2014-05-15", "DescribeMasterSlaveServerGroups", "slb");
+	private String resourceType;
+
+	private String newResourceGroupId;
+	public MoveResourceGroupRequest() {
+		super("Slb", "2014-05-15", "MoveResourceGroup", "slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getAccess_key_id() {
+		return this.access_key_id;
+	}
+
+	public void setAccess_key_id(String access_key_id) {
+		this.access_key_id = access_key_id;
+		if(access_key_id != null){
+			putQueryParameter("access_key_id", access_key_id);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -59,29 +73,26 @@ public class DescribeMasterSlaveServerGroupsRequest extends RpcAcsRequest<Descri
 		}
 	}
 
-	public Boolean getIncludeListener() {
-		return this.includeListener;
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
 	}
 
-	public void setIncludeListener(Boolean includeListener) {
-		this.includeListener = includeListener;
-		if(includeListener != null){
-			putQueryParameter("IncludeListener", includeListener.toString());
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
-	public List<Tag> getTags() {
-		return this.tags;
+	public String getResourceId() {
+		return this.resourceId;
 	}
 
-	public void setTags(List<Tag> tags) {
-		this.tags = tags;	
-		if (tags != null) {
-			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
-				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
-				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
-			}
-		}	
+	public void setResourceId(String resourceId) {
+		this.resourceId = resourceId;
+		if(resourceId != null){
+			putQueryParameter("ResourceId", resourceId);
+		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -117,43 +128,31 @@ public class DescribeMasterSlaveServerGroupsRequest extends RpcAcsRequest<Descri
 		}
 	}
 
-	public String getLoadBalancerId() {
-		return this.loadBalancerId;
+	public String getResourceType() {
+		return this.resourceType;
 	}
 
-	public void setLoadBalancerId(String loadBalancerId) {
-		this.loadBalancerId = loadBalancerId;
-		if(loadBalancerId != null){
-			putQueryParameter("LoadBalancerId", loadBalancerId);
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
 		}
 	}
 
-	public static class Tag {
+	public String getNewResourceGroupId() {
+		return this.newResourceGroupId;
+	}
 
-		private String value;
-
-		private String key;
-
-		public String getValue() {
-			return this.value;
-		}
-
-		public void setValue(String value) {
-			this.value = value;
-		}
-
-		public String getKey() {
-			return this.key;
-		}
-
-		public void setKey(String key) {
-			this.key = key;
+	public void setNewResourceGroupId(String newResourceGroupId) {
+		this.newResourceGroupId = newResourceGroupId;
+		if(newResourceGroupId != null){
+			putQueryParameter("NewResourceGroupId", newResourceGroupId);
 		}
 	}
 
 	@Override
-	public Class<DescribeMasterSlaveServerGroupsResponse> getResponseClass() {
-		return DescribeMasterSlaveServerGroupsResponse.class;
+	public Class<MoveResourceGroupResponse> getResponseClass() {
+		return MoveResourceGroupResponse.class;
 	}
 
 }

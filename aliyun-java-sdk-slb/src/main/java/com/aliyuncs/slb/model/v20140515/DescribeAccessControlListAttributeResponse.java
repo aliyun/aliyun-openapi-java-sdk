@@ -41,6 +41,8 @@ public class DescribeAccessControlListAttributeResponse extends AcsResponse {
 
 	private Integer totalAclEntry;
 
+	private List<Tag> tags;
+
 	private List<AclEntry> aclEntrys;
 
 	private List<RelatedListener> relatedListeners;
@@ -109,6 +111,14 @@ public class DescribeAccessControlListAttributeResponse extends AcsResponse {
 		this.totalAclEntry = totalAclEntry;
 	}
 
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;
+	}
+
 	public List<AclEntry> getAclEntrys() {
 		return this.aclEntrys;
 	}
@@ -123,6 +133,29 @@ public class DescribeAccessControlListAttributeResponse extends AcsResponse {
 
 	public void setRelatedListeners(List<RelatedListener> relatedListeners) {
 		this.relatedListeners = relatedListeners;
+	}
+
+	public static class Tag {
+
+		private String tagKey;
+
+		private String tagValue;
+
+		public String getTagKey() {
+			return this.tagKey;
+		}
+
+		public void setTagKey(String tagKey) {
+			this.tagKey = tagKey;
+		}
+
+		public String getTagValue() {
+			return this.tagValue;
+		}
+
+		public void setTagValue(String tagValue) {
+			this.tagValue = tagValue;
+		}
 	}
 
 	public static class AclEntry {

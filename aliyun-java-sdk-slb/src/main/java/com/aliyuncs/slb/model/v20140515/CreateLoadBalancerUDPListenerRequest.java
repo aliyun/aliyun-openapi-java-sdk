@@ -15,6 +15,7 @@
 package com.aliyuncs.slb.model.v20140515;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.slb.Endpoint;
 
@@ -30,6 +31,8 @@ public class CreateLoadBalancerUDPListenerRequest extends RpcAcsRequest<CreateLo
 	private String aclStatus;
 
 	private String aclType;
+
+	private List<Tag> tags;
 
 	private String vServerGroupId;
 
@@ -112,6 +115,20 @@ public class CreateLoadBalancerUDPListenerRequest extends RpcAcsRequest<CreateLo
 		if(aclType != null){
 			putQueryParameter("AclType", aclType);
 		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
 	}
 
 	public String getVServerGroupId() {
@@ -342,6 +359,29 @@ public class CreateLoadBalancerUDPListenerRequest extends RpcAcsRequest<CreateLo
 		this.healthCheckConnectPort = healthCheckConnectPort;
 		if(healthCheckConnectPort != null){
 			putQueryParameter("HealthCheckConnectPort", healthCheckConnectPort.toString());
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

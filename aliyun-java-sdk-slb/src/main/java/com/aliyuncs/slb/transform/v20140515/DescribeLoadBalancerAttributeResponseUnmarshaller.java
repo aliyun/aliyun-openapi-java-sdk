@@ -21,6 +21,7 @@ import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancerAttributeResponse;
 import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancerAttributeResponse.BackendServer;
 import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancerAttributeResponse.ListenerPortAndProtocal;
 import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancerAttributeResponse.ListenerPortAndProtocol;
+import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancerAttributeResponse.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -88,6 +89,16 @@ public class DescribeLoadBalancerAttributeResponseUnmarshaller {
 			listenerPorts.add(_ctx.integerValue("DescribeLoadBalancerAttributeResponse.ListenerPorts["+ i +"]"));
 		}
 		describeLoadBalancerAttributeResponse.setListenerPorts(listenerPorts);
+
+		List<Tag> tags = new ArrayList<Tag>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeLoadBalancerAttributeResponse.Tags.Length"); i++) {
+			Tag tag = new Tag();
+			tag.setTagKey(_ctx.stringValue("DescribeLoadBalancerAttributeResponse.Tags["+ i +"].TagKey"));
+			tag.setTagValue(_ctx.stringValue("DescribeLoadBalancerAttributeResponse.Tags["+ i +"].TagValue"));
+
+			tags.add(tag);
+		}
+		describeLoadBalancerAttributeResponse.setTags(tags);
 
 		List<ListenerPortAndProtocal> listenerPortsAndProtocal = new ArrayList<ListenerPortAndProtocal>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLoadBalancerAttributeResponse.ListenerPortsAndProtocal.Length"); i++) {

@@ -15,6 +15,7 @@
 package com.aliyuncs.slb.model.v20140515;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.slb.Endpoint;
 
@@ -30,6 +31,8 @@ public class DescribeVServerGroupsRequest extends RpcAcsRequest<DescribeVServerG
 	private Boolean includeListener;
 
 	private Boolean includeRule;
+
+	private List<Tag> tags;
 
 	private String resourceOwnerAccount;
 
@@ -80,6 +83,20 @@ public class DescribeVServerGroupsRequest extends RpcAcsRequest<DescribeVServerG
 		}
 	}
 
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -121,6 +138,29 @@ public class DescribeVServerGroupsRequest extends RpcAcsRequest<DescribeVServerG
 		this.loadBalancerId = loadBalancerId;
 		if(loadBalancerId != null){
 			putQueryParameter("LoadBalancerId", loadBalancerId);
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

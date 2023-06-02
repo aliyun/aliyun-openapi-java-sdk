@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.slb.model.v20140515.DescribeAccessControlListAttributeResponse;
 import com.aliyuncs.slb.model.v20140515.DescribeAccessControlListAttributeResponse.AclEntry;
 import com.aliyuncs.slb.model.v20140515.DescribeAccessControlListAttributeResponse.RelatedListener;
+import com.aliyuncs.slb.model.v20140515.DescribeAccessControlListAttributeResponse.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -35,6 +36,16 @@ public class DescribeAccessControlListAttributeResponseUnmarshaller {
 		describeAccessControlListAttributeResponse.setAclName(_ctx.stringValue("DescribeAccessControlListAttributeResponse.AclName"));
 		describeAccessControlListAttributeResponse.setCreateTime(_ctx.stringValue("DescribeAccessControlListAttributeResponse.CreateTime"));
 		describeAccessControlListAttributeResponse.setTotalAclEntry(_ctx.integerValue("DescribeAccessControlListAttributeResponse.TotalAclEntry"));
+
+		List<Tag> tags = new ArrayList<Tag>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeAccessControlListAttributeResponse.Tags.Length"); i++) {
+			Tag tag = new Tag();
+			tag.setTagKey(_ctx.stringValue("DescribeAccessControlListAttributeResponse.Tags["+ i +"].TagKey"));
+			tag.setTagValue(_ctx.stringValue("DescribeAccessControlListAttributeResponse.Tags["+ i +"].TagValue"));
+
+			tags.add(tag);
+		}
+		describeAccessControlListAttributeResponse.setTags(tags);
 
 		List<AclEntry> aclEntrys = new ArrayList<AclEntry>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAccessControlListAttributeResponse.AclEntrys.Length"); i++) {

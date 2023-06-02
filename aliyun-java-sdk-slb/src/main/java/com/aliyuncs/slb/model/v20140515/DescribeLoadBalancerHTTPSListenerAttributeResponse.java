@@ -139,6 +139,8 @@ public class DescribeLoadBalancerHTTPSListenerAttributeResponse extends AcsRespo
 
 	private List<ServerCertificate2> serverCertificates;
 
+	private List<Tag> tags;
+
 	private List<String> aclIds;
 
 	public String getAclType() {
@@ -597,6 +599,14 @@ public class DescribeLoadBalancerHTTPSListenerAttributeResponse extends AcsRespo
 		this.serverCertificates = serverCertificates;
 	}
 
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;
+	}
+
 	public List<String> getAclIds() {
 		return this.aclIds;
 	}
@@ -817,6 +827,29 @@ public class DescribeLoadBalancerHTTPSListenerAttributeResponse extends AcsRespo
 
 		public void setCertificateId(String certificateId) {
 			this.certificateId = certificateId;
+		}
+	}
+
+	public static class Tag {
+
+		private String tagKey;
+
+		private String tagValue;
+
+		public String getTagKey() {
+			return this.tagKey;
+		}
+
+		public void setTagKey(String tagKey) {
+			this.tagKey = tagKey;
+		}
+
+		public String getTagValue() {
+			return this.tagValue;
+		}
+
+		public void setTagValue(String tagValue) {
+			this.tagValue = tagValue;
 		}
 	}
 

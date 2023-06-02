@@ -39,6 +39,8 @@ public class DescribeVServerGroupAttributeResponse extends AcsResponse {
 
 	private List<BackendServer> backendServers;
 
+	private List<Tag> tags;
+
 	public String getServiceManagedMode() {
 		return this.serviceManagedMode;
 	}
@@ -93,6 +95,14 @@ public class DescribeVServerGroupAttributeResponse extends AcsResponse {
 
 	public void setBackendServers(List<BackendServer> backendServers) {
 		this.backendServers = backendServers;
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;
 	}
 
 	public static class BackendServer {
@@ -195,6 +205,29 @@ public class DescribeVServerGroupAttributeResponse extends AcsResponse {
 
 		public void setServerId(String serverId) {
 			this.serverId = serverId;
+		}
+	}
+
+	public static class Tag {
+
+		private String tagKey;
+
+		private String tagValue;
+
+		public String getTagKey() {
+			return this.tagKey;
+		}
+
+		public void setTagKey(String tagKey) {
+			this.tagKey = tagKey;
+		}
+
+		public String getTagValue() {
+			return this.tagValue;
+		}
+
+		public void setTagValue(String tagValue) {
+			this.tagValue = tagValue;
 		}
 	}
 

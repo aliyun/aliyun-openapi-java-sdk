@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.slb.model.v20140515.DescribeMasterSlaveServerGroupAttributeResponse;
 import com.aliyuncs.slb.model.v20140515.DescribeMasterSlaveServerGroupAttributeResponse.MasterSlaveBackendServer;
+import com.aliyuncs.slb.model.v20140515.DescribeMasterSlaveServerGroupAttributeResponse.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -32,6 +33,16 @@ public class DescribeMasterSlaveServerGroupAttributeResponseUnmarshaller {
 		describeMasterSlaveServerGroupAttributeResponse.setMasterSlaveServerGroupName(_ctx.stringValue("DescribeMasterSlaveServerGroupAttributeResponse.MasterSlaveServerGroupName"));
 		describeMasterSlaveServerGroupAttributeResponse.setMasterSlaveServerGroupId(_ctx.stringValue("DescribeMasterSlaveServerGroupAttributeResponse.MasterSlaveServerGroupId"));
 		describeMasterSlaveServerGroupAttributeResponse.setCreateTime(_ctx.stringValue("DescribeMasterSlaveServerGroupAttributeResponse.CreateTime"));
+
+		List<Tag> tags = new ArrayList<Tag>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeMasterSlaveServerGroupAttributeResponse.Tags.Length"); i++) {
+			Tag tag = new Tag();
+			tag.setTagKey(_ctx.stringValue("DescribeMasterSlaveServerGroupAttributeResponse.Tags["+ i +"].TagKey"));
+			tag.setTagValue(_ctx.stringValue("DescribeMasterSlaveServerGroupAttributeResponse.Tags["+ i +"].TagValue"));
+
+			tags.add(tag);
+		}
+		describeMasterSlaveServerGroupAttributeResponse.setTags(tags);
 
 		List<MasterSlaveBackendServer> masterSlaveBackendServers = new ArrayList<MasterSlaveBackendServer>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeMasterSlaveServerGroupAttributeResponse.MasterSlaveBackendServers.Length"); i++) {

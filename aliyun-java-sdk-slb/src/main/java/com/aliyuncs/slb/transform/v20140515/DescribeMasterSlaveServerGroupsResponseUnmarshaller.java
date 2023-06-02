@@ -21,6 +21,7 @@ import com.aliyuncs.slb.model.v20140515.DescribeMasterSlaveServerGroupsResponse;
 import com.aliyuncs.slb.model.v20140515.DescribeMasterSlaveServerGroupsResponse.MasterSlaveServerGroup;
 import com.aliyuncs.slb.model.v20140515.DescribeMasterSlaveServerGroupsResponse.MasterSlaveServerGroup.AssociatedObjects;
 import com.aliyuncs.slb.model.v20140515.DescribeMasterSlaveServerGroupsResponse.MasterSlaveServerGroup.AssociatedObjects.Listener;
+import com.aliyuncs.slb.model.v20140515.DescribeMasterSlaveServerGroupsResponse.MasterSlaveServerGroup.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -50,6 +51,16 @@ public class DescribeMasterSlaveServerGroupsResponseUnmarshaller {
 			}
 			associatedObjects.setListeners(listeners);
 			masterSlaveServerGroup.setAssociatedObjects(associatedObjects);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeMasterSlaveServerGroupsResponse.MasterSlaveServerGroups["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setTagKey(_ctx.stringValue("DescribeMasterSlaveServerGroupsResponse.MasterSlaveServerGroups["+ i +"].Tags["+ j +"].TagKey"));
+				tag.setTagValue(_ctx.stringValue("DescribeMasterSlaveServerGroupsResponse.MasterSlaveServerGroups["+ i +"].Tags["+ j +"].TagValue"));
+
+				tags.add(tag);
+			}
+			masterSlaveServerGroup.setTags(tags);
 
 			masterSlaveServerGroups.add(masterSlaveServerGroup);
 		}

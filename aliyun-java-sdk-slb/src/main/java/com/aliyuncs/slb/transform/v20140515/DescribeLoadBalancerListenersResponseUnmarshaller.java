@@ -24,6 +24,7 @@ import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancerListenersResponse.Li
 import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancerListenersResponse.Listener.TCPListenerConfig;
 import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancerListenersResponse.Listener.TCPListenerConfig.PortRange;
 import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancerListenersResponse.Listener.TCPSListenerConfig;
+import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancerListenersResponse.Listener.Tag;
 import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancerListenersResponse.Listener.UDPListenerConfig;
 import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancerListenersResponse.Listener.UDPListenerConfig.PortRange2;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -217,6 +218,16 @@ public class DescribeLoadBalancerListenersResponseUnmarshaller {
 			}
 			uDPListenerConfig.setPortRanges1(portRanges1);
 			listener.setUDPListenerConfig(uDPListenerConfig);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeLoadBalancerListenersResponse.Listeners["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setTagValue(_ctx.stringValue("DescribeLoadBalancerListenersResponse.Listeners["+ i +"].Tags["+ j +"].TagValue"));
+				tag.setTagKey(_ctx.stringValue("DescribeLoadBalancerListenersResponse.Listeners["+ i +"].Tags["+ j +"].TagKey"));
+
+				tags.add(tag);
+			}
+			listener.setTags(tags);
 
 			listeners.add(listener);
 		}

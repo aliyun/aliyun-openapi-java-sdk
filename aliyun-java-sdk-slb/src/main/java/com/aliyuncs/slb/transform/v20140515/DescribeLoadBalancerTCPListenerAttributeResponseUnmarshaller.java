@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancerTCPListenerAttributeResponse;
 import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancerTCPListenerAttributeResponse.PortRange;
+import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancerTCPListenerAttributeResponse.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -83,6 +84,16 @@ public class DescribeLoadBalancerTCPListenerAttributeResponseUnmarshaller {
 			portRanges.add(portRange);
 		}
 		describeLoadBalancerTCPListenerAttributeResponse.setPortRanges(portRanges);
+
+		List<Tag> tags = new ArrayList<Tag>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeLoadBalancerTCPListenerAttributeResponse.Tags.Length"); i++) {
+			Tag tag = new Tag();
+			tag.setTagKey(_ctx.stringValue("DescribeLoadBalancerTCPListenerAttributeResponse.Tags["+ i +"].TagKey"));
+			tag.setTagValue(_ctx.stringValue("DescribeLoadBalancerTCPListenerAttributeResponse.Tags["+ i +"].TagValue"));
+
+			tags.add(tag);
+		}
+		describeLoadBalancerTCPListenerAttributeResponse.setTags(tags);
 	 
 	 	return describeLoadBalancerTCPListenerAttributeResponse;
 	}

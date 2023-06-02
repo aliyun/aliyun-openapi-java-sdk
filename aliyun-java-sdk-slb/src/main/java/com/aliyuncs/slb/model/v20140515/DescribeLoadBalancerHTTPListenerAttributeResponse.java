@@ -115,6 +115,8 @@ public class DescribeLoadBalancerHTTPListenerAttributeResponse extends AcsRespon
 
 	private List<Rule> rules;
 
+	private List<Tag> tags;
+
 	private List<String> aclIds;
 
 	public String getAclType() {
@@ -477,6 +479,14 @@ public class DescribeLoadBalancerHTTPListenerAttributeResponse extends AcsRespon
 		this.rules = rules;
 	}
 
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;
+	}
+
 	public List<String> getAclIds() {
 		return this.aclIds;
 	}
@@ -535,6 +545,29 @@ public class DescribeLoadBalancerHTTPListenerAttributeResponse extends AcsRespon
 
 		public void setRuleId(String ruleId) {
 			this.ruleId = ruleId;
+		}
+	}
+
+	public static class Tag {
+
+		private String tagKey;
+
+		private String tagValue;
+
+		public String getTagKey() {
+			return this.tagKey;
+		}
+
+		public void setTagKey(String tagKey) {
+			this.tagKey = tagKey;
+		}
+
+		public String getTagValue() {
+			return this.tagValue;
+		}
+
+		public void setTagValue(String tagValue) {
+			this.tagValue = tagValue;
 		}
 	}
 

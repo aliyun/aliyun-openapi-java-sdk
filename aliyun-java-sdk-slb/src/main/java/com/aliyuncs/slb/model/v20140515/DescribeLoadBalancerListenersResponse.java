@@ -103,6 +103,8 @@ public class DescribeLoadBalancerListenersResponse extends AcsResponse {
 
 		private Integer backendServerPort;
 
+		private List<Tag> tags;
+
 		private List<String> aclIds;
 
 		private HTTPListenerConfig hTTPListenerConfig;
@@ -219,6 +221,14 @@ public class DescribeLoadBalancerListenersResponse extends AcsResponse {
 			this.backendServerPort = backendServerPort;
 		}
 
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
 		public List<String> getAclIds() {
 			return this.aclIds;
 		}
@@ -265,6 +275,29 @@ public class DescribeLoadBalancerListenersResponse extends AcsResponse {
 
 		public void setUDPListenerConfig(UDPListenerConfig uDPListenerConfig) {
 			this.uDPListenerConfig = uDPListenerConfig;
+		}
+
+		public static class Tag {
+
+			private String tagValue;
+
+			private String tagKey;
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
+			}
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
 		}
 
 		public static class HTTPListenerConfig {

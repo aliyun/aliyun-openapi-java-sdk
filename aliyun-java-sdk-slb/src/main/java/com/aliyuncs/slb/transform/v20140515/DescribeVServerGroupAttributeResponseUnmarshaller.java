@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.slb.model.v20140515.DescribeVServerGroupAttributeResponse;
 import com.aliyuncs.slb.model.v20140515.DescribeVServerGroupAttributeResponse.BackendServer;
+import com.aliyuncs.slb.model.v20140515.DescribeVServerGroupAttributeResponse.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -50,6 +51,16 @@ public class DescribeVServerGroupAttributeResponseUnmarshaller {
 			backendServers.add(backendServer);
 		}
 		describeVServerGroupAttributeResponse.setBackendServers(backendServers);
+
+		List<Tag> tags = new ArrayList<Tag>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeVServerGroupAttributeResponse.Tags.Length"); i++) {
+			Tag tag = new Tag();
+			tag.setTagKey(_ctx.stringValue("DescribeVServerGroupAttributeResponse.Tags["+ i +"].TagKey"));
+			tag.setTagValue(_ctx.stringValue("DescribeVServerGroupAttributeResponse.Tags["+ i +"].TagValue"));
+
+			tags.add(tag);
+		}
+		describeVServerGroupAttributeResponse.setTags(tags);
 	 
 	 	return describeVServerGroupAttributeResponse;
 	}

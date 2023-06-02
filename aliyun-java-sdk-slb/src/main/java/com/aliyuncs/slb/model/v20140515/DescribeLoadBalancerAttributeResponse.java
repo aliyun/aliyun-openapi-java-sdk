@@ -121,6 +121,8 @@ public class DescribeLoadBalancerAttributeResponse extends AcsResponse {
 
 	private String instanceChargeType;
 
+	private List<Tag> tags;
+
 	private List<ListenerPortAndProtocal> listenerPortsAndProtocal;
 
 	private List<ListenerPortAndProtocol> listenerPortsAndProtocol;
@@ -515,6 +517,14 @@ public class DescribeLoadBalancerAttributeResponse extends AcsResponse {
 		this.instanceChargeType = instanceChargeType;
 	}
 
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;
+	}
+
 	public List<ListenerPortAndProtocal> getListenerPortsAndProtocal() {
 		return this.listenerPortsAndProtocal;
 	}
@@ -553,6 +563,29 @@ public class DescribeLoadBalancerAttributeResponse extends AcsResponse {
 
 	public void setListenerPorts(List<Integer> listenerPorts) {
 		this.listenerPorts = listenerPorts;
+	}
+
+	public static class Tag {
+
+		private String tagKey;
+
+		private String tagValue;
+
+		public String getTagKey() {
+			return this.tagKey;
+		}
+
+		public void setTagKey(String tagKey) {
+			this.tagKey = tagKey;
+		}
+
+		public String getTagValue() {
+			return this.tagValue;
+		}
+
+		public void setTagValue(String tagValue) {
+			this.tagValue = tagValue;
+		}
 	}
 
 	public static class ListenerPortAndProtocal {

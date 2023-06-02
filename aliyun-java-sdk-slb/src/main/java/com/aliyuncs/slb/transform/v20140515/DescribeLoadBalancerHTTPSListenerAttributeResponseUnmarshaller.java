@@ -23,6 +23,7 @@ import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancerHTTPSListenerAttribu
 import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancerHTTPSListenerAttributeResponse.DomainExtension.ServerCertificate;
 import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancerHTTPSListenerAttributeResponse.Rule;
 import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancerHTTPSListenerAttributeResponse.ServerCertificate2;
+import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancerHTTPSListenerAttributeResponse.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -148,6 +149,16 @@ public class DescribeLoadBalancerHTTPSListenerAttributeResponseUnmarshaller {
 			serverCertificates.add(serverCertificate2);
 		}
 		describeLoadBalancerHTTPSListenerAttributeResponse.setServerCertificates(serverCertificates);
+
+		List<Tag> tags = new ArrayList<Tag>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.Tags.Length"); i++) {
+			Tag tag = new Tag();
+			tag.setTagKey(_ctx.stringValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.Tags["+ i +"].TagKey"));
+			tag.setTagValue(_ctx.stringValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.Tags["+ i +"].TagValue"));
+
+			tags.add(tag);
+		}
+		describeLoadBalancerHTTPSListenerAttributeResponse.setTags(tags);
 	 
 	 	return describeLoadBalancerHTTPSListenerAttributeResponse;
 	}

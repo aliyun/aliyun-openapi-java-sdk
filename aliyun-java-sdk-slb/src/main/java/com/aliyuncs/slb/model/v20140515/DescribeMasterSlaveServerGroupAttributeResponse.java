@@ -37,6 +37,8 @@ public class DescribeMasterSlaveServerGroupAttributeResponse extends AcsResponse
 
 	private String createTime;
 
+	private List<Tag> tags;
+
 	private List<MasterSlaveBackendServer> masterSlaveBackendServers;
 
 	public String getServiceManagedMode() {
@@ -87,12 +89,43 @@ public class DescribeMasterSlaveServerGroupAttributeResponse extends AcsResponse
 		this.createTime = createTime;
 	}
 
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;
+	}
+
 	public List<MasterSlaveBackendServer> getMasterSlaveBackendServers() {
 		return this.masterSlaveBackendServers;
 	}
 
 	public void setMasterSlaveBackendServers(List<MasterSlaveBackendServer> masterSlaveBackendServers) {
 		this.masterSlaveBackendServers = masterSlaveBackendServers;
+	}
+
+	public static class Tag {
+
+		private String tagKey;
+
+		private String tagValue;
+
+		public String getTagKey() {
+			return this.tagKey;
+		}
+
+		public void setTagKey(String tagKey) {
+			this.tagKey = tagKey;
+		}
+
+		public String getTagValue() {
+			return this.tagValue;
+		}
+
+		public void setTagValue(String tagValue) {
+			this.tagValue = tagValue;
+		}
 	}
 
 	public static class MasterSlaveBackendServer {

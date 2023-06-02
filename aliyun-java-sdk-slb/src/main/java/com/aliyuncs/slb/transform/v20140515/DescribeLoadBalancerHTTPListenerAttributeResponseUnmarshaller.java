@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancerHTTPListenerAttributeResponse;
 import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancerHTTPListenerAttributeResponse.Rule;
+import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancerHTTPListenerAttributeResponse.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -89,6 +90,16 @@ public class DescribeLoadBalancerHTTPListenerAttributeResponseUnmarshaller {
 			rules.add(rule);
 		}
 		describeLoadBalancerHTTPListenerAttributeResponse.setRules(rules);
+
+		List<Tag> tags = new ArrayList<Tag>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeLoadBalancerHTTPListenerAttributeResponse.Tags.Length"); i++) {
+			Tag tag = new Tag();
+			tag.setTagKey(_ctx.stringValue("DescribeLoadBalancerHTTPListenerAttributeResponse.Tags["+ i +"].TagKey"));
+			tag.setTagValue(_ctx.stringValue("DescribeLoadBalancerHTTPListenerAttributeResponse.Tags["+ i +"].TagValue"));
+
+			tags.add(tag);
+		}
+		describeLoadBalancerHTTPListenerAttributeResponse.setTags(tags);
 	 
 	 	return describeLoadBalancerHTTPListenerAttributeResponse;
 	}

@@ -22,6 +22,7 @@ import com.aliyuncs.slb.model.v20140515.DescribeVServerGroupsResponse.VServerGro
 import com.aliyuncs.slb.model.v20140515.DescribeVServerGroupsResponse.VServerGroup.AssociatedObjects;
 import com.aliyuncs.slb.model.v20140515.DescribeVServerGroupsResponse.VServerGroup.AssociatedObjects.Listener;
 import com.aliyuncs.slb.model.v20140515.DescribeVServerGroupsResponse.VServerGroup.AssociatedObjects.Rule;
+import com.aliyuncs.slb.model.v20140515.DescribeVServerGroupsResponse.VServerGroup.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -64,6 +65,16 @@ public class DescribeVServerGroupsResponseUnmarshaller {
 			}
 			associatedObjects.setRules(rules);
 			vServerGroup.setAssociatedObjects(associatedObjects);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeVServerGroupsResponse.VServerGroups["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setTagKey(_ctx.stringValue("DescribeVServerGroupsResponse.VServerGroups["+ i +"].Tags["+ j +"].TagKey"));
+				tag.setTagValue(_ctx.stringValue("DescribeVServerGroupsResponse.VServerGroups["+ i +"].Tags["+ j +"].TagValue"));
+
+				tags.add(tag);
+			}
+			vServerGroup.setTags(tags);
 
 			vServerGroups.add(vServerGroup);
 		}
