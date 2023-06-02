@@ -27,6 +27,8 @@ public class DescribePriceResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Boolean showDiscount;
+
 	private List<Rule> rules;
 
 	private PriceInfo priceInfo;
@@ -37,6 +39,14 @@ public class DescribePriceResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getShowDiscount() {
+		return this.showDiscount;
+	}
+
+	public void setShowDiscount(Boolean showDiscount) {
+		this.showDiscount = showDiscount;
 	}
 
 	public List<Rule> getRules() {

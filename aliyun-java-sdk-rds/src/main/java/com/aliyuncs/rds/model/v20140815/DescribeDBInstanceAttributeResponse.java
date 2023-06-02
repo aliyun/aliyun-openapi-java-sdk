@@ -209,6 +209,10 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		private String instructionSetArch;
 
+		private Boolean burstingEnabled;
+
+		private String bpeEnabled;
+
 		private List<SlaveZone> slaveZones;
 
 		private List<ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
@@ -867,6 +871,22 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		public void setInstructionSetArch(String instructionSetArch) {
 			this.instructionSetArch = instructionSetArch;
+		}
+
+		public Boolean getBurstingEnabled() {
+			return this.burstingEnabled;
+		}
+
+		public void setBurstingEnabled(Boolean burstingEnabled) {
+			this.burstingEnabled = burstingEnabled;
+		}
+
+		public String getBpeEnabled() {
+			return this.bpeEnabled;
+		}
+
+		public void setBpeEnabled(String bpeEnabled) {
+			this.bpeEnabled = bpeEnabled;
 		}
 
 		public List<SlaveZone> getSlaveZones() {

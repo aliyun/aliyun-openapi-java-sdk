@@ -63,12 +63,16 @@ public class CloneDBInstanceRequest extends RpcAcsRequest<CloneDBInstanceRespons
 
 	private String restoreTime;
 
+	private Boolean autoPay;
+
 	@SerializedName("serverlessConfig")
 	private ServerlessConfig serverlessConfig;
 
 	private String restoreTable;
 
 	private Integer usedTime;
+
+	private Boolean burstingEnabled;
 
 	private String dbNames;
 
@@ -77,6 +81,8 @@ public class CloneDBInstanceRequest extends RpcAcsRequest<CloneDBInstanceRespons
 	private String category;
 
 	private String payType;
+
+	private String bpeEnabled;
 	public CloneDBInstanceRequest() {
 		super("Rds", "2014-08-15", "CloneDBInstance", "rds");
 		setMethod(MethodType.POST);
@@ -284,6 +290,17 @@ public class CloneDBInstanceRequest extends RpcAcsRequest<CloneDBInstanceRespons
 		}
 	}
 
+	public Boolean getAutoPay() {
+		return this.autoPay;
+	}
+
+	public void setAutoPay(Boolean autoPay) {
+		this.autoPay = autoPay;
+		if(autoPay != null){
+			putQueryParameter("AutoPay", autoPay.toString());
+		}
+	}
+
 	public ServerlessConfig getServerlessConfig() {
 		return this.serverlessConfig;
 	}
@@ -314,6 +331,17 @@ public class CloneDBInstanceRequest extends RpcAcsRequest<CloneDBInstanceRespons
 		this.usedTime = usedTime;
 		if(usedTime != null){
 			putQueryParameter("UsedTime", usedTime.toString());
+		}
+	}
+
+	public Boolean getBurstingEnabled() {
+		return this.burstingEnabled;
+	}
+
+	public void setBurstingEnabled(Boolean burstingEnabled) {
+		this.burstingEnabled = burstingEnabled;
+		if(burstingEnabled != null){
+			putQueryParameter("BurstingEnabled", burstingEnabled.toString());
 		}
 	}
 
@@ -358,6 +386,17 @@ public class CloneDBInstanceRequest extends RpcAcsRequest<CloneDBInstanceRespons
 		this.payType = payType;
 		if(payType != null){
 			putQueryParameter("PayType", payType);
+		}
+	}
+
+	public String getBpeEnabled() {
+		return this.bpeEnabled;
+	}
+
+	public void setBpeEnabled(String bpeEnabled) {
+		this.bpeEnabled = bpeEnabled;
+		if(bpeEnabled != null){
+			putQueryParameter("BpeEnabled", bpeEnabled);
 		}
 	}
 

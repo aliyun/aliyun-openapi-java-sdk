@@ -30,6 +30,7 @@ public class DescribePriceResponseUnmarshaller {
 	public static DescribePriceResponse unmarshall(DescribePriceResponse describePriceResponse, UnmarshallerContext _ctx) {
 		
 		describePriceResponse.setRequestId(_ctx.stringValue("DescribePriceResponse.RequestId"));
+		describePriceResponse.setShowDiscount(_ctx.booleanValue("DescribePriceResponse.ShowDiscount"));
 
 		PriceInfo priceInfo = new PriceInfo();
 		priceInfo.setOriginalPrice(_ctx.floatValue("DescribePriceResponse.PriceInfo.OriginalPrice"));

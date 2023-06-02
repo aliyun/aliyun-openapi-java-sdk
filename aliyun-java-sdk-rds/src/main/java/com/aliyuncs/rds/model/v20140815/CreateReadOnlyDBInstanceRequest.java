@@ -29,41 +29,23 @@ public class CreateReadOnlyDBInstanceRequest extends RpcAcsRequest<CreateReadOnl
 
 	private Integer dBInstanceStorage;
 
-	private String clientToken;
-
-	private String instructionSetArch;
-
 	private String engineVersion;
 
 	private Boolean deletionProtection;
 
 	private String resourceGroupId;
 
-	private String tddlRegionConfig;
-
 	private String targetDedicatedHostIdForMaster;
-
-	private String dBInstanceId;
 
 	private String dBInstanceDescription;
 
 	private String gdnInstanceName;
 
-	private String dBInstanceStorageType;
-
-	private String dedicatedHostGroupId;
-
 	private String tddlBizType;
 
 	private String period;
 
-	private String resourceOwnerAccount;
-
-	private String ownerAccount;
-
 	private Long ownerId;
-
-	private String usedTime;
 
 	private String dBInstanceClass;
 
@@ -73,15 +55,39 @@ public class CreateReadOnlyDBInstanceRequest extends RpcAcsRequest<CreateReadOnl
 
 	private String autoRenew;
 
-	private String vPCId;
-
 	private String zoneId;
+
+	private String instanceNetworkType;
+
+	private String clientToken;
+
+	private String instructionSetArch;
+
+	private String tddlRegionConfig;
+
+	private String dBInstanceId;
+
+	private String dBInstanceStorageType;
+
+	private String dedicatedHostGroupId;
+
+	private Boolean autoPay;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
+	private String usedTime;
+
+	private Boolean burstingEnabled;
+
+	private String vPCId;
 
 	private String category;
 
 	private String payType;
 
-	private String instanceNetworkType;
+	private String bpeEnabled;
 	public CreateReadOnlyDBInstanceRequest() {
 		super("Rds", "2014-08-15", "CreateReadOnlyDBInstance", "rds");
 		setMethod(MethodType.POST);
@@ -110,28 +116,6 @@ public class CreateReadOnlyDBInstanceRequest extends RpcAcsRequest<CreateReadOnl
 		this.dBInstanceStorage = dBInstanceStorage;
 		if(dBInstanceStorage != null){
 			putQueryParameter("DBInstanceStorage", dBInstanceStorage.toString());
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public String getInstructionSetArch() {
-		return this.instructionSetArch;
-	}
-
-	public void setInstructionSetArch(String instructionSetArch) {
-		this.instructionSetArch = instructionSetArch;
-		if(instructionSetArch != null){
-			putQueryParameter("InstructionSetArch", instructionSetArch);
 		}
 	}
 
@@ -168,17 +152,6 @@ public class CreateReadOnlyDBInstanceRequest extends RpcAcsRequest<CreateReadOnl
 		}
 	}
 
-	public String getTddlRegionConfig() {
-		return this.tddlRegionConfig;
-	}
-
-	public void setTddlRegionConfig(String tddlRegionConfig) {
-		this.tddlRegionConfig = tddlRegionConfig;
-		if(tddlRegionConfig != null){
-			putQueryParameter("TddlRegionConfig", tddlRegionConfig);
-		}
-	}
-
 	public String getTargetDedicatedHostIdForMaster() {
 		return this.targetDedicatedHostIdForMaster;
 	}
@@ -187,17 +160,6 @@ public class CreateReadOnlyDBInstanceRequest extends RpcAcsRequest<CreateReadOnl
 		this.targetDedicatedHostIdForMaster = targetDedicatedHostIdForMaster;
 		if(targetDedicatedHostIdForMaster != null){
 			putQueryParameter("TargetDedicatedHostIdForMaster", targetDedicatedHostIdForMaster);
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 
@@ -223,28 +185,6 @@ public class CreateReadOnlyDBInstanceRequest extends RpcAcsRequest<CreateReadOnl
 		}
 	}
 
-	public String getDBInstanceStorageType() {
-		return this.dBInstanceStorageType;
-	}
-
-	public void setDBInstanceStorageType(String dBInstanceStorageType) {
-		this.dBInstanceStorageType = dBInstanceStorageType;
-		if(dBInstanceStorageType != null){
-			putQueryParameter("DBInstanceStorageType", dBInstanceStorageType);
-		}
-	}
-
-	public String getDedicatedHostGroupId() {
-		return this.dedicatedHostGroupId;
-	}
-
-	public void setDedicatedHostGroupId(String dedicatedHostGroupId) {
-		this.dedicatedHostGroupId = dedicatedHostGroupId;
-		if(dedicatedHostGroupId != null){
-			putQueryParameter("DedicatedHostGroupId", dedicatedHostGroupId);
-		}
-	}
-
 	public String getTddlBizType() {
 		return this.tddlBizType;
 	}
@@ -267,28 +207,6 @@ public class CreateReadOnlyDBInstanceRequest extends RpcAcsRequest<CreateReadOnl
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -297,17 +215,6 @@ public class CreateReadOnlyDBInstanceRequest extends RpcAcsRequest<CreateReadOnl
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getUsedTime() {
-		return this.usedTime;
-	}
-
-	public void setUsedTime(String usedTime) {
-		this.usedTime = usedTime;
-		if(usedTime != null){
-			putQueryParameter("UsedTime", usedTime);
 		}
 	}
 
@@ -355,17 +262,6 @@ public class CreateReadOnlyDBInstanceRequest extends RpcAcsRequest<CreateReadOnl
 		}
 	}
 
-	public String getVPCId() {
-		return this.vPCId;
-	}
-
-	public void setVPCId(String vPCId) {
-		this.vPCId = vPCId;
-		if(vPCId != null){
-			putQueryParameter("VPCId", vPCId);
-		}
-	}
-
 	public String getZoneId() {
 		return this.zoneId;
 	}
@@ -374,6 +270,149 @@ public class CreateReadOnlyDBInstanceRequest extends RpcAcsRequest<CreateReadOnl
 		this.zoneId = zoneId;
 		if(zoneId != null){
 			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public String getInstanceNetworkType() {
+		return this.instanceNetworkType;
+	}
+
+	public void setInstanceNetworkType(String instanceNetworkType) {
+		this.instanceNetworkType = instanceNetworkType;
+		if(instanceNetworkType != null){
+			putQueryParameter("InstanceNetworkType", instanceNetworkType);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getInstructionSetArch() {
+		return this.instructionSetArch;
+	}
+
+	public void setInstructionSetArch(String instructionSetArch) {
+		this.instructionSetArch = instructionSetArch;
+		if(instructionSetArch != null){
+			putQueryParameter("InstructionSetArch", instructionSetArch);
+		}
+	}
+
+	public String getTddlRegionConfig() {
+		return this.tddlRegionConfig;
+	}
+
+	public void setTddlRegionConfig(String tddlRegionConfig) {
+		this.tddlRegionConfig = tddlRegionConfig;
+		if(tddlRegionConfig != null){
+			putQueryParameter("TddlRegionConfig", tddlRegionConfig);
+		}
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getDBInstanceStorageType() {
+		return this.dBInstanceStorageType;
+	}
+
+	public void setDBInstanceStorageType(String dBInstanceStorageType) {
+		this.dBInstanceStorageType = dBInstanceStorageType;
+		if(dBInstanceStorageType != null){
+			putQueryParameter("DBInstanceStorageType", dBInstanceStorageType);
+		}
+	}
+
+	public String getDedicatedHostGroupId() {
+		return this.dedicatedHostGroupId;
+	}
+
+	public void setDedicatedHostGroupId(String dedicatedHostGroupId) {
+		this.dedicatedHostGroupId = dedicatedHostGroupId;
+		if(dedicatedHostGroupId != null){
+			putQueryParameter("DedicatedHostGroupId", dedicatedHostGroupId);
+		}
+	}
+
+	public Boolean getAutoPay() {
+		return this.autoPay;
+	}
+
+	public void setAutoPay(Boolean autoPay) {
+		this.autoPay = autoPay;
+		if(autoPay != null){
+			putQueryParameter("AutoPay", autoPay.toString());
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getUsedTime() {
+		return this.usedTime;
+	}
+
+	public void setUsedTime(String usedTime) {
+		this.usedTime = usedTime;
+		if(usedTime != null){
+			putQueryParameter("UsedTime", usedTime);
+		}
+	}
+
+	public Boolean getBurstingEnabled() {
+		return this.burstingEnabled;
+	}
+
+	public void setBurstingEnabled(Boolean burstingEnabled) {
+		this.burstingEnabled = burstingEnabled;
+		if(burstingEnabled != null){
+			putQueryParameter("BurstingEnabled", burstingEnabled.toString());
+		}
+	}
+
+	public String getVPCId() {
+		return this.vPCId;
+	}
+
+	public void setVPCId(String vPCId) {
+		this.vPCId = vPCId;
+		if(vPCId != null){
+			putQueryParameter("VPCId", vPCId);
 		}
 	}
 
@@ -399,14 +438,14 @@ public class CreateReadOnlyDBInstanceRequest extends RpcAcsRequest<CreateReadOnl
 		}
 	}
 
-	public String getInstanceNetworkType() {
-		return this.instanceNetworkType;
+	public String getBpeEnabled() {
+		return this.bpeEnabled;
 	}
 
-	public void setInstanceNetworkType(String instanceNetworkType) {
-		this.instanceNetworkType = instanceNetworkType;
-		if(instanceNetworkType != null){
-			putQueryParameter("InstanceNetworkType", instanceNetworkType);
+	public void setBpeEnabled(String bpeEnabled) {
+		this.bpeEnabled = bpeEnabled;
+		if(bpeEnabled != null){
+			putQueryParameter("BpeEnabled", bpeEnabled);
 		}
 	}
 

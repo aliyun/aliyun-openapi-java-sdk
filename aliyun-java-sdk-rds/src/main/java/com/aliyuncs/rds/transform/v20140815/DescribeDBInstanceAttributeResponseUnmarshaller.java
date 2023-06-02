@@ -118,6 +118,8 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 			dBInstanceAttribute.setDeletionProtection(_ctx.booleanValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DeletionProtection"));
 			dBInstanceAttribute.setKindCode(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].kindCode"));
 			dBInstanceAttribute.setInstructionSetArch(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].InstructionSetArch"));
+			dBInstanceAttribute.setBurstingEnabled(_ctx.booleanValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].BurstingEnabled"));
+			dBInstanceAttribute.setBpeEnabled(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].BpeEnabled"));
 
 			Extra extra = new Extra();
 			extra.setReplicaGroupStatus(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].Extra.ReplicaGroupStatus"));

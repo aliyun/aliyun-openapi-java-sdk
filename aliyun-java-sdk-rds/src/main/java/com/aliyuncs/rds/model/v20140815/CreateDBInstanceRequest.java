@@ -108,10 +108,14 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private Integer amount;
 
+	private Boolean autoPay;
+
 	@SerializedName("serverlessConfig")
 	private ServerlessConfig serverlessConfig;
 
 	private String usedTime;
+
+	private Boolean burstingEnabled;
 
 	private String targetMinorVersion;
 
@@ -126,6 +130,8 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 	private String category;
 
 	private String payType;
+
+	private String bpeEnabled;
 	public CreateDBInstanceRequest() {
 		super("Rds", "2014-08-15", "CreateDBInstance", "rds");
 		setMethod(MethodType.POST);
@@ -578,6 +584,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		}
 	}
 
+	public Boolean getAutoPay() {
+		return this.autoPay;
+	}
+
+	public void setAutoPay(Boolean autoPay) {
+		this.autoPay = autoPay;
+		if(autoPay != null){
+			putQueryParameter("AutoPay", autoPay.toString());
+		}
+	}
+
 	public ServerlessConfig getServerlessConfig() {
 		return this.serverlessConfig;
 	}
@@ -597,6 +614,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.usedTime = usedTime;
 		if(usedTime != null){
 			putQueryParameter("UsedTime", usedTime);
+		}
+	}
+
+	public Boolean getBurstingEnabled() {
+		return this.burstingEnabled;
+	}
+
+	public void setBurstingEnabled(Boolean burstingEnabled) {
+		this.burstingEnabled = burstingEnabled;
+		if(burstingEnabled != null){
+			putQueryParameter("BurstingEnabled", burstingEnabled.toString());
 		}
 	}
 
@@ -674,6 +702,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.payType = payType;
 		if(payType != null){
 			putQueryParameter("PayType", payType);
+		}
+	}
+
+	public String getBpeEnabled() {
+		return this.bpeEnabled;
+	}
+
+	public void setBpeEnabled(String bpeEnabled) {
+		this.bpeEnabled = bpeEnabled;
+		if(bpeEnabled != null){
+			putQueryParameter("BpeEnabled", bpeEnabled);
 		}
 	}
 

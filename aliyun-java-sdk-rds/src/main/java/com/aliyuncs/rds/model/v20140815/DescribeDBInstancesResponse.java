@@ -185,6 +185,10 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 		private Boolean deletionProtection;
 
+		private Boolean burstingEnabled;
+
+		private String bpeEnabled;
+
 		private List<ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
 
 		public String getVpcId() {
@@ -577,6 +581,22 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 		public void setDeletionProtection(Boolean deletionProtection) {
 			this.deletionProtection = deletionProtection;
+		}
+
+		public Boolean getBurstingEnabled() {
+			return this.burstingEnabled;
+		}
+
+		public void setBurstingEnabled(Boolean burstingEnabled) {
+			this.burstingEnabled = burstingEnabled;
+		}
+
+		public String getBpeEnabled() {
+			return this.bpeEnabled;
+		}
+
+		public void setBpeEnabled(String bpeEnabled) {
+			this.bpeEnabled = bpeEnabled;
 		}
 
 		public List<ReadOnlyDBInstanceId> getReadOnlyDBInstanceIds() {
