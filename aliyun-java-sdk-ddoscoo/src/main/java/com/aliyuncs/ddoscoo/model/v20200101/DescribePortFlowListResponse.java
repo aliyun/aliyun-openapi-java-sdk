@@ -65,9 +65,21 @@ public class DescribePortFlowListResponse extends AcsResponse {
 
 		private Long attackBps;
 
-		private Long slaBps;
+		private Long slaBpsDropBps;
 
-		private Long slaPps;
+		private Long slaPpsDropBps;
+
+		private Long slaCpsDropBps;
+
+		private Long slaConnDropBps;
+
+		private Long slaBpsDropPps;
+
+		private Long slaPpsDropPps;
+
+		private Long slaCpsDropPps;
+
+		private Long slaConnDropPps;
 
 		public Long getIndex() {
 			return this.index;
@@ -141,20 +153,68 @@ public class DescribePortFlowListResponse extends AcsResponse {
 			this.attackBps = attackBps;
 		}
 
-		public Long getSlaBps() {
-			return this.slaBps;
+		public Long getSlaBpsDropBps() {
+			return this.slaBpsDropBps;
 		}
 
-		public void setSlaBps(Long slaBps) {
-			this.slaBps = slaBps;
+		public void setSlaBpsDropBps(Long slaBpsDropBps) {
+			this.slaBpsDropBps = slaBpsDropBps;
 		}
 
-		public Long getSlaPps() {
-			return this.slaPps;
+		public Long getSlaPpsDropBps() {
+			return this.slaPpsDropBps;
 		}
 
-		public void setSlaPps(Long slaPps) {
-			this.slaPps = slaPps;
+		public void setSlaPpsDropBps(Long slaPpsDropBps) {
+			this.slaPpsDropBps = slaPpsDropBps;
+		}
+
+		public Long getSlaCpsDropBps() {
+			return this.slaCpsDropBps;
+		}
+
+		public void setSlaCpsDropBps(Long slaCpsDropBps) {
+			this.slaCpsDropBps = slaCpsDropBps;
+		}
+
+		public Long getSlaConnDropBps() {
+			return this.slaConnDropBps;
+		}
+
+		public void setSlaConnDropBps(Long slaConnDropBps) {
+			this.slaConnDropBps = slaConnDropBps;
+		}
+
+		public Long getSlaBpsDropPps() {
+			return this.slaBpsDropPps;
+		}
+
+		public void setSlaBpsDropPps(Long slaBpsDropPps) {
+			this.slaBpsDropPps = slaBpsDropPps;
+		}
+
+		public Long getSlaPpsDropPps() {
+			return this.slaPpsDropPps;
+		}
+
+		public void setSlaPpsDropPps(Long slaPpsDropPps) {
+			this.slaPpsDropPps = slaPpsDropPps;
+		}
+
+		public Long getSlaCpsDropPps() {
+			return this.slaCpsDropPps;
+		}
+
+		public void setSlaCpsDropPps(Long slaCpsDropPps) {
+			this.slaCpsDropPps = slaCpsDropPps;
+		}
+
+		public Long getSlaConnDropPps() {
+			return this.slaConnDropPps;
+		}
+
+		public void setSlaConnDropPps(Long slaConnDropPps) {
+			this.slaConnDropPps = slaConnDropPps;
 		}
 	}
 

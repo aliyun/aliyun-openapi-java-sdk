@@ -40,8 +40,14 @@ public class DescribePortFlowListResponseUnmarshaller {
 			portFlow.setAttackPps(_ctx.longValue("DescribePortFlowListResponse.PortFlowList["+ i +"].AttackPps"));
 			portFlow.setOutBps(_ctx.longValue("DescribePortFlowListResponse.PortFlowList["+ i +"].OutBps"));
 			portFlow.setAttackBps(_ctx.longValue("DescribePortFlowListResponse.PortFlowList["+ i +"].AttackBps"));
-			portFlow.setSlaBps(_ctx.longValue("DescribePortFlowListResponse.PortFlowList["+ i +"].SlaBps"));
-			portFlow.setSlaPps(_ctx.longValue("DescribePortFlowListResponse.PortFlowList["+ i +"].SlaPps"));
+			portFlow.setSlaBpsDropBps(_ctx.longValue("DescribePortFlowListResponse.PortFlowList["+ i +"].SlaBpsDropBps"));
+			portFlow.setSlaPpsDropBps(_ctx.longValue("DescribePortFlowListResponse.PortFlowList["+ i +"].SlaPpsDropBps"));
+			portFlow.setSlaCpsDropBps(_ctx.longValue("DescribePortFlowListResponse.PortFlowList["+ i +"].SlaCpsDropBps"));
+			portFlow.setSlaConnDropBps(_ctx.longValue("DescribePortFlowListResponse.PortFlowList["+ i +"].SlaConnDropBps"));
+			portFlow.setSlaBpsDropPps(_ctx.longValue("DescribePortFlowListResponse.PortFlowList["+ i +"].SlaBpsDropPps"));
+			portFlow.setSlaPpsDropPps(_ctx.longValue("DescribePortFlowListResponse.PortFlowList["+ i +"].SlaPpsDropPps"));
+			portFlow.setSlaCpsDropPps(_ctx.longValue("DescribePortFlowListResponse.PortFlowList["+ i +"].SlaCpsDropPps"));
+			portFlow.setSlaConnDropPps(_ctx.longValue("DescribePortFlowListResponse.PortFlowList["+ i +"].SlaConnDropPps"));
 
 			portFlowList.add(portFlow);
 		}

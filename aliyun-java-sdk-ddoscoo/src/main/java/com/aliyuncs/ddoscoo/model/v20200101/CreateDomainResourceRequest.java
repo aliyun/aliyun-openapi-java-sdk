@@ -34,7 +34,7 @@ public class CreateDomainResourceRequest extends RpcAcsRequest<CreateDomainResou
 
 	private List<String> instanceIdss;
 
-	private List<ProxyTypes> proxyTypess;
+	private List<ProxyTypes> proxyTypes;
 
 	private String domain;
 	public CreateDomainResourceRequest() {
@@ -94,20 +94,23 @@ public class CreateDomainResourceRequest extends RpcAcsRequest<CreateDomainResou
 		}	
 	}
 
-	public List<ProxyTypes> getProxyTypess() {
-		return this.proxyTypess;
+	public List<ProxyTypes> getProxyTypes() {
+		return this.proxyTypes;
 	}
 
-	public void setProxyTypess(List<ProxyTypes> proxyTypess) {
-		this.proxyTypess = proxyTypess;	
-		if (proxyTypess != null) {
-			for (int depth1 = 0; depth1 < proxyTypess.size(); depth1++) {
-				if (proxyTypess.get(depth1).getProxyPortss() != null) {
-					for (int i = 0; i < proxyTypess.get(depth1).getProxyPortss().size(); i++) {
-						putQueryParameter("ProxyTypes." + (depth1 + 1) + ".ProxyPorts." + (i + 1) , proxyTypess.get(depth1).getProxyPortss().get(i));
-					}
+	public void setProxyTypes(List<ProxyTypes> proxyTypes) {
+		this.proxyTypes = proxyTypes;	
+		if (proxyTypes != null) {
+			for (int depth1 = 0; depth1 < proxyTypes.size(); depth1++) {
+				if (proxyTypes.get(depth1) != null) {
+					
+						if (proxyTypes.get(depth1).getProxyPorts() != null) {
+							for (int depth2 = 0; depth2 < proxyTypes.get(depth1).getProxyPorts().size(); depth2++) {
+								putQueryParameter("ProxyTypes." + (depth1 + 1) + ".ProxyPorts." + (depth2 + 1) , proxyTypes.get(depth1).getProxyPorts().get(depth2));
+							}
+						}
+						putQueryParameter("ProxyTypes." + (depth1 + 1) + ".ProxyType" , proxyTypes.get(depth1).getProxyType());
 				}
-				putQueryParameter("ProxyTypes." + (depth1 + 1) + ".ProxyType" , proxyTypess.get(depth1).getProxyType());
 			}
 		}	
 	}
@@ -125,16 +128,16 @@ public class CreateDomainResourceRequest extends RpcAcsRequest<CreateDomainResou
 
 	public static class ProxyTypes {
 
-		private List<Integer> proxyPortss;
+		private List<Integer> proxyPorts;
 
 		private String proxyType;
 
-		public List<Integer> getProxyPortss() {
-			return this.proxyPortss;
+		public List<Integer> getProxyPorts() {
+			return this.proxyPorts;
 		}
 
-		public void setProxyPortss(List<Integer> proxyPortss) {
-			this.proxyPortss = proxyPortss;
+		public void setProxyPorts(List<Integer> proxyPorts) {
+			this.proxyPorts = proxyPorts;
 		}
 
 		public String getProxyType() {

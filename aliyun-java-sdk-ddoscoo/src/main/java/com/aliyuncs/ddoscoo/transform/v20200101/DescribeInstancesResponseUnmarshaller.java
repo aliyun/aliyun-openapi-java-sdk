@@ -44,6 +44,7 @@ public class DescribeInstancesResponseUnmarshaller {
 			instance.setInstanceId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].InstanceId"));
 			instance.setConnInstanceId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].ConnInstanceId"));
 			instance.setIsFirstOpenBw(_ctx.longValue("DescribeInstancesResponse.Instances["+ i +"].IsFirstOpenBw"));
+			instance.setIsFirstOpenQps(_ctx.longValue("DescribeInstancesResponse.Instances["+ i +"].IsFirstOpenQps"));
 
 			instances.add(instance);
 		}

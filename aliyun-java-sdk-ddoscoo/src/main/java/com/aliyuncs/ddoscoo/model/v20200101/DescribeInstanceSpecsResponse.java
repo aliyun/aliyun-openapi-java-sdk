@@ -77,6 +77,10 @@ public class DescribeInstanceSpecsResponse extends AcsResponse {
 
 		private Long realLimitBw;
 
+		private String elasticQpsMode;
+
+		private Long elasticQps;
+
 		public Integer getBaseBandwidth() {
 			return this.baseBandwidth;
 		}
@@ -195,6 +199,22 @@ public class DescribeInstanceSpecsResponse extends AcsResponse {
 
 		public void setRealLimitBw(Long realLimitBw) {
 			this.realLimitBw = realLimitBw;
+		}
+
+		public String getElasticQpsMode() {
+			return this.elasticQpsMode;
+		}
+
+		public void setElasticQpsMode(String elasticQpsMode) {
+			this.elasticQpsMode = elasticQpsMode;
+		}
+
+		public Long getElasticQps() {
+			return this.elasticQps;
+		}
+
+		public void setElasticQps(Long elasticQps) {
+			this.elasticQps = elasticQps;
 		}
 	}
 

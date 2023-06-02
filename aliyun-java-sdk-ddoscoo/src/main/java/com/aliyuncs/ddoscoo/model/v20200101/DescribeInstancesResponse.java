@@ -81,6 +81,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private Long isFirstOpenBw;
 
+		private Long isFirstOpenQps;
+
 		public Integer getStatus() {
 			return this.status;
 		}
@@ -175,6 +177,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setIsFirstOpenBw(Long isFirstOpenBw) {
 			this.isFirstOpenBw = isFirstOpenBw;
+		}
+
+		public Long getIsFirstOpenQps() {
+			return this.isFirstOpenQps;
+		}
+
+		public void setIsFirstOpenQps(Long isFirstOpenQps) {
+			this.isFirstOpenQps = isFirstOpenQps;
 		}
 	}
 
