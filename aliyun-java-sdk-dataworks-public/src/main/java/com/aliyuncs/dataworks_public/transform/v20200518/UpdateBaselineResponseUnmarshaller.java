@@ -28,8 +28,6 @@ public class UpdateBaselineResponseUnmarshaller {
 		updateBaselineResponse.setErrorMessage(_ctx.stringValue("UpdateBaselineResponse.ErrorMessage"));
 		updateBaselineResponse.setHttpStatusCode(_ctx.integerValue("UpdateBaselineResponse.HttpStatusCode"));
 		updateBaselineResponse.setData(_ctx.booleanValue("UpdateBaselineResponse.Data"));
-		updateBaselineResponse.setDynamicErrorCode(_ctx.stringValue("UpdateBaselineResponse.DynamicErrorCode"));
-		updateBaselineResponse.setDynamicErrorMessage(_ctx.stringValue("UpdateBaselineResponse.DynamicErrorMessage"));
 	 
 	 	return updateBaselineResponse;
 	}

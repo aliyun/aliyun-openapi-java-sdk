@@ -33,8 +33,6 @@ public class ListBaselinesResponseUnmarshaller {
 		listBaselinesResponse.setErrorCode(_ctx.stringValue("ListBaselinesResponse.ErrorCode"));
 		listBaselinesResponse.setErrorMessage(_ctx.stringValue("ListBaselinesResponse.ErrorMessage"));
 		listBaselinesResponse.setHttpStatusCode(_ctx.integerValue("ListBaselinesResponse.HttpStatusCode"));
-		listBaselinesResponse.setDynamicErrorCode(_ctx.stringValue("ListBaselinesResponse.DynamicErrorCode"));
-		listBaselinesResponse.setDynamicErrorMessage(_ctx.stringValue("ListBaselinesResponse.DynamicErrorMessage"));
 
 		Data data = new Data();
 		data.setPageNumber(_ctx.stringValue("ListBaselinesResponse.Data.PageNumber"));

@@ -36,10 +36,6 @@ public class DeleteBaselineResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String dynamicErrorCode;
-
-	private String dynamicErrorMessage;
-
 	public Boolean getSuccess() {
 		return this.success;
 	}
@@ -86,22 +82,6 @@ public class DeleteBaselineResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getDynamicErrorCode() {
-		return this.dynamicErrorCode;
-	}
-
-	public void setDynamicErrorCode(String dynamicErrorCode) {
-		this.dynamicErrorCode = dynamicErrorCode;
-	}
-
-	public String getDynamicErrorMessage() {
-		return this.dynamicErrorMessage;
-	}
-
-	public void setDynamicErrorMessage(String dynamicErrorMessage) {
-		this.dynamicErrorMessage = dynamicErrorMessage;
 	}
 
 	@Override

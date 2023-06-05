@@ -65,6 +65,8 @@ public class UpdateFileRequest extends RpcAcsRequest<UpdateFileResponse> {
 
 	private String cronExpress;
 
+	private Boolean ignoreParentSkipRunningProperty;
+
 	private Long endEffectDate;
 
 	private String fileName;
@@ -308,6 +310,17 @@ public class UpdateFileRequest extends RpcAcsRequest<UpdateFileResponse> {
 		this.cronExpress = cronExpress;
 		if(cronExpress != null){
 			putBodyParameter("CronExpress", cronExpress);
+		}
+	}
+
+	public Boolean getIgnoreParentSkipRunningProperty() {
+		return this.ignoreParentSkipRunningProperty;
+	}
+
+	public void setIgnoreParentSkipRunningProperty(Boolean ignoreParentSkipRunningProperty) {
+		this.ignoreParentSkipRunningProperty = ignoreParentSkipRunningProperty;
+		if(ignoreParentSkipRunningProperty != null){
+			putBodyParameter("IgnoreParentSkipRunningProperty", ignoreParentSkipRunningProperty.toString());
 		}
 	}
 

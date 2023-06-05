@@ -35,10 +35,6 @@ public class GetBaselineResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String dynamicErrorCode;
-
-	private String dynamicErrorMessage;
-
 	private Data data;
 
 	public Boolean getSuccess() {
@@ -81,22 +77,6 @@ public class GetBaselineResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getDynamicErrorCode() {
-		return this.dynamicErrorCode;
-	}
-
-	public void setDynamicErrorCode(String dynamicErrorCode) {
-		this.dynamicErrorCode = dynamicErrorCode;
-	}
-
-	public String getDynamicErrorMessage() {
-		return this.dynamicErrorMessage;
-	}
-
-	public void setDynamicErrorMessage(String dynamicErrorMessage) {
-		this.dynamicErrorMessage = dynamicErrorMessage;
-	}
-
 	public Data getData() {
 		return this.data;
 	}
@@ -129,7 +109,7 @@ public class GetBaselineResponse extends AcsResponse {
 
 		private List<AlertSetting> alertSettings;
 
-		private List<Long> taskIds;
+		private List<Long> nodeIds;
 
 		public Long getBaselineId() {
 			return this.baselineId;
@@ -219,12 +199,12 @@ public class GetBaselineResponse extends AcsResponse {
 			this.alertSettings = alertSettings;
 		}
 
-		public List<Long> getTaskIds() {
-			return this.taskIds;
+		public List<Long> getNodeIds() {
+			return this.nodeIds;
 		}
 
-		public void setTaskIds(List<Long> taskIds) {
-			this.taskIds = taskIds;
+		public void setNodeIds(List<Long> nodeIds) {
+			this.nodeIds = nodeIds;
 		}
 
 		public static class OverTimeSetting {

@@ -28,8 +28,6 @@ public class CreateBaselineResponseUnmarshaller {
 		createBaselineResponse.setErrorMessage(_ctx.stringValue("CreateBaselineResponse.ErrorMessage"));
 		createBaselineResponse.setHttpStatusCode(_ctx.integerValue("CreateBaselineResponse.HttpStatusCode"));
 		createBaselineResponse.setData(_ctx.longValue("CreateBaselineResponse.Data"));
-		createBaselineResponse.setDynamicErrorCode(_ctx.stringValue("CreateBaselineResponse.DynamicErrorCode"));
-		createBaselineResponse.setDynamicErrorMessage(_ctx.stringValue("CreateBaselineResponse.DynamicErrorMessage"));
 	 
 	 	return createBaselineResponse;
 	}

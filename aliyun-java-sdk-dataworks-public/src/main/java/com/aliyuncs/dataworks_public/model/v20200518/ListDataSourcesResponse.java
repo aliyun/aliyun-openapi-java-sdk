@@ -139,9 +139,9 @@ public class ListDataSourcesResponse extends AcsResponse {
 
 			private String content;
 
-			private Integer id;
+			private Long id;
 
-			private Integer bindingCalcEngineId;
+			private Long bindingCalcEngineId;
 
 			private Long tenantId;
 
@@ -265,19 +265,19 @@ public class ListDataSourcesResponse extends AcsResponse {
 				this.content = content;
 			}
 
-			public Integer getId() {
+			public Long getId() {
 				return this.id;
 			}
 
-			public void setId(Integer id) {
+			public void setId(Long id) {
 				this.id = id;
 			}
 
-			public Integer getBindingCalcEngineId() {
+			public Long getBindingCalcEngineId() {
 				return this.bindingCalcEngineId;
 			}
 
-			public void setBindingCalcEngineId(Integer bindingCalcEngineId) {
+			public void setBindingCalcEngineId(Long bindingCalcEngineId) {
 				this.bindingCalcEngineId = bindingCalcEngineId;
 			}
 

@@ -34,8 +34,6 @@ public class GetBaselineResponseUnmarshaller {
 		getBaselineResponse.setErrorCode(_ctx.stringValue("GetBaselineResponse.ErrorCode"));
 		getBaselineResponse.setErrorMessage(_ctx.stringValue("GetBaselineResponse.ErrorMessage"));
 		getBaselineResponse.setHttpStatusCode(_ctx.integerValue("GetBaselineResponse.HttpStatusCode"));
-		getBaselineResponse.setDynamicErrorCode(_ctx.stringValue("GetBaselineResponse.DynamicErrorCode"));
-		getBaselineResponse.setDynamicErrorMessage(_ctx.stringValue("GetBaselineResponse.DynamicErrorMessage"));
 
 		Data data = new Data();
 		data.setBaselineId(_ctx.longValue("GetBaselineResponse.Data.BaselineId"));
@@ -48,11 +46,11 @@ public class GetBaselineResponseUnmarshaller {
 		data.setAlertEnabled(_ctx.booleanValue("GetBaselineResponse.Data.AlertEnabled"));
 		data.setAlertMarginThreshold(_ctx.integerValue("GetBaselineResponse.Data.AlertMarginThreshold"));
 
-		List<Long> taskIds = new ArrayList<Long>();
-		for (int i = 0; i < _ctx.lengthValue("GetBaselineResponse.Data.TaskIds.Length"); i++) {
-			taskIds.add(_ctx.longValue("GetBaselineResponse.Data.TaskIds["+ i +"]"));
+		List<Long> nodeIds = new ArrayList<Long>();
+		for (int i = 0; i < _ctx.lengthValue("GetBaselineResponse.Data.NodeIds.Length"); i++) {
+			nodeIds.add(_ctx.longValue("GetBaselineResponse.Data.NodeIds["+ i +"]"));
 		}
-		data.setTaskIds(taskIds);
+		data.setNodeIds(nodeIds);
 
 		List<OverTimeSetting> overTimeSettings = new ArrayList<OverTimeSetting>();
 		for (int i = 0; i < _ctx.lengthValue("GetBaselineResponse.Data.OverTimeSettings.Length"); i++) {

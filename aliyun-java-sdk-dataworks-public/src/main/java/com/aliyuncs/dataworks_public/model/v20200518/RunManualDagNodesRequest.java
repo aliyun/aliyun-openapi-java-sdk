@@ -29,6 +29,10 @@ public class RunManualDagNodesRequest extends RpcAcsRequest<RunManualDagNodesRes
 
 	private String projectName;
 
+	private String startBizDate;
+
+	private String endBizDate;
+
 	private String dagParameters;
 
 	private String includeNodeIds;
@@ -70,6 +74,28 @@ public class RunManualDagNodesRequest extends RpcAcsRequest<RunManualDagNodesRes
 		this.projectName = projectName;
 		if(projectName != null){
 			putBodyParameter("ProjectName", projectName);
+		}
+	}
+
+	public String getStartBizDate() {
+		return this.startBizDate;
+	}
+
+	public void setStartBizDate(String startBizDate) {
+		this.startBizDate = startBizDate;
+		if(startBizDate != null){
+			putBodyParameter("StartBizDate", startBizDate);
+		}
+	}
+
+	public String getEndBizDate() {
+		return this.endBizDate;
+	}
+
+	public void setEndBizDate(String endBizDate) {
+		this.endBizDate = endBizDate;
+		if(endBizDate != null){
+			putBodyParameter("EndBizDate", endBizDate);
 		}
 	}
 

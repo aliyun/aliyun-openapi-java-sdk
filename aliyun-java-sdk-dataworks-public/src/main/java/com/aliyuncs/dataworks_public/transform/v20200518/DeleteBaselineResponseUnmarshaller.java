@@ -28,8 +28,6 @@ public class DeleteBaselineResponseUnmarshaller {
 		deleteBaselineResponse.setErrorMessage(_ctx.stringValue("DeleteBaselineResponse.ErrorMessage"));
 		deleteBaselineResponse.setHttpStatusCode(_ctx.integerValue("DeleteBaselineResponse.HttpStatusCode"));
 		deleteBaselineResponse.setData(_ctx.booleanValue("DeleteBaselineResponse.Data"));
-		deleteBaselineResponse.setDynamicErrorCode(_ctx.stringValue("DeleteBaselineResponse.DynamicErrorCode"));
-		deleteBaselineResponse.setDynamicErrorMessage(_ctx.stringValue("DeleteBaselineResponse.DynamicErrorMessage"));
 	 
 	 	return deleteBaselineResponse;
 	}
