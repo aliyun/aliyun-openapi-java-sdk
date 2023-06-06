@@ -1,3 +1,6 @@
+2023-06-06 Version: 2.10.4
+- Supported ListHistoricalAgentSkillGroupReport, ListIntervalAgentSkillGroupReport.
+
 2023-05-23 Version: 2.10.3
 - Supported BreakCodeDetails,FirstCheckInTime, LastCheckoutTime .
 

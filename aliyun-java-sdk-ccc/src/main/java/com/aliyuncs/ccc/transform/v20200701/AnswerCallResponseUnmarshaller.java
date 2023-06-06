@@ -63,6 +63,7 @@ public class AnswerCallResponseUnmarshaller {
 			channelContext.setChannelId(_ctx.stringValue("AnswerCallResponse.Data.CallContext.ChannelContexts["+ i +"].ChannelId"));
 			channelContext.setOriginator(_ctx.stringValue("AnswerCallResponse.Data.CallContext.ChannelContexts["+ i +"].Originator"));
 			channelContext.setUserExtension(_ctx.stringValue("AnswerCallResponse.Data.CallContext.ChannelContexts["+ i +"].UserExtension"));
+			channelContext.setChannelVariables(_ctx.stringValue("AnswerCallResponse.Data.CallContext.ChannelContexts["+ i +"].ChannelVariables"));
 
 			channelContexts.add(channelContext);
 		}

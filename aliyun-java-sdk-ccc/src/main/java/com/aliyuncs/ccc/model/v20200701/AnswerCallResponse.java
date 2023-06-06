@@ -185,6 +185,8 @@ public class AnswerCallResponse extends AcsResponse {
 
 				private String userExtension;
 
+				private String channelVariables;
+
 				public String getReleaseInitiator() {
 					return this.releaseInitiator;
 				}
@@ -279,6 +281,14 @@ public class AnswerCallResponse extends AcsResponse {
 
 				public void setUserExtension(String userExtension) {
 					this.userExtension = userExtension;
+				}
+
+				public String getChannelVariables() {
+					return this.channelVariables;
+				}
+
+				public void setChannelVariables(String channelVariables) {
+					this.channelVariables = channelVariables;
 				}
 			}
 		}

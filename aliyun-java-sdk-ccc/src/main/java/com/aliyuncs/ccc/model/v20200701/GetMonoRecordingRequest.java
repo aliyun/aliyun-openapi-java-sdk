@@ -25,6 +25,8 @@ import com.aliyuncs.ccc.Endpoint;
 public class GetMonoRecordingRequest extends RpcAcsRequest<GetMonoRecordingResponse> {
 	   
 
+	private Long expireSeconds;
+
 	private String contactId;
 
 	private String instanceId;
@@ -35,6 +37,17 @@ public class GetMonoRecordingRequest extends RpcAcsRequest<GetMonoRecordingRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getExpireSeconds() {
+		return this.expireSeconds;
+	}
+
+	public void setExpireSeconds(Long expireSeconds) {
+		this.expireSeconds = expireSeconds;
+		if(expireSeconds != null){
+			putQueryParameter("ExpireSeconds", expireSeconds.toString());
+		}
 	}
 
 	public String getContactId() {
