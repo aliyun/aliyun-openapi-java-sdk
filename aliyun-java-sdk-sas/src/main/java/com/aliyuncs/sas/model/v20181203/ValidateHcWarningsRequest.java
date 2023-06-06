@@ -25,9 +25,9 @@ import com.aliyuncs.sas.Endpoint;
 public class ValidateHcWarningsRequest extends RpcAcsRequest<ValidateHcWarningsResponse> {
 	   
 
-	private String riskIds;
+	private String checkIds;
 
-	private String sourceIp;
+	private String riskIds;
 
 	private String uuids;
 	public ValidateHcWarningsRequest() {
@@ -39,6 +39,17 @@ public class ValidateHcWarningsRequest extends RpcAcsRequest<ValidateHcWarningsR
 		} catch (Exception e) {}
 	}
 
+	public String getCheckIds() {
+		return this.checkIds;
+	}
+
+	public void setCheckIds(String checkIds) {
+		this.checkIds = checkIds;
+		if(checkIds != null){
+			putQueryParameter("CheckIds", checkIds);
+		}
+	}
+
 	public String getRiskIds() {
 		return this.riskIds;
 	}
@@ -47,17 +58,6 @@ public class ValidateHcWarningsRequest extends RpcAcsRequest<ValidateHcWarningsR
 		this.riskIds = riskIds;
 		if(riskIds != null){
 			putQueryParameter("RiskIds", riskIds);
-		}
-	}
-
-	public String getSourceIp() {
-		return this.sourceIp;
-	}
-
-	public void setSourceIp(String sourceIp) {
-		this.sourceIp = sourceIp;
-		if(sourceIp != null){
-			putQueryParameter("SourceIp", sourceIp);
 		}
 	}
 

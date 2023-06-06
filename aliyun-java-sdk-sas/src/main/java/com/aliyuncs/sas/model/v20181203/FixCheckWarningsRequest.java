@@ -25,13 +25,13 @@ import com.aliyuncs.sas.Endpoint;
 public class FixCheckWarningsRequest extends RpcAcsRequest<FixCheckWarningsResponse> {
 	   
 
-	private Long riskId;
-
 	private String checkParams;
 
 	private String sourceIp;
 
 	private String lang;
+
+	private Long riskId;
 
 	private String uuids;
 	public FixCheckWarningsRequest() {
@@ -41,17 +41,6 @@ public class FixCheckWarningsRequest extends RpcAcsRequest<FixCheckWarningsRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getRiskId() {
-		return this.riskId;
-	}
-
-	public void setRiskId(Long riskId) {
-		this.riskId = riskId;
-		if(riskId != null){
-			putQueryParameter("RiskId", riskId.toString());
-		}
 	}
 
 	public String getCheckParams() {
@@ -84,6 +73,17 @@ public class FixCheckWarningsRequest extends RpcAcsRequest<FixCheckWarningsRespo
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public Long getRiskId() {
+		return this.riskId;
+	}
+
+	public void setRiskId(Long riskId) {
+		this.riskId = riskId;
+		if(riskId != null){
+			putQueryParameter("RiskId", riskId.toString());
 		}
 	}
 

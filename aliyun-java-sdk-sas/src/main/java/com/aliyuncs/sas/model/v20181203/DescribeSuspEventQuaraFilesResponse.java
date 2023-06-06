@@ -115,6 +115,8 @@ public class DescribeSuspEventQuaraFilesResponse extends AcsResponse {
 
 		private String modifyTime;
 
+		private String intranetIp;
+
 		public String getLink() {
 			return this.link;
 		}
@@ -225,6 +227,14 @@ public class DescribeSuspEventQuaraFilesResponse extends AcsResponse {
 
 		public void setModifyTime(String modifyTime) {
 			this.modifyTime = modifyTime;
+		}
+
+		public String getIntranetIp() {
+			return this.intranetIp;
+		}
+
+		public void setIntranetIp(String intranetIp) {
+			this.intranetIp = intranetIp;
 		}
 	}
 

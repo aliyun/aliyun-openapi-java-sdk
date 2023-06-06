@@ -26,11 +26,11 @@ import com.aliyuncs.sas.Endpoint;
 public class InstallBackupClientRequest extends RpcAcsRequest<InstallBackupClientResponse> {
 	   
 
-	private String policyVersion;
-
 	private String uuid;
 
 	private List<String> uuidLists;
+
+	private String policyVersion;
 	public InstallBackupClientRequest() {
 		super("Sas", "2018-12-03", "InstallBackupClient");
 		setMethod(MethodType.POST);
@@ -38,17 +38,6 @@ public class InstallBackupClientRequest extends RpcAcsRequest<InstallBackupClien
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getPolicyVersion() {
-		return this.policyVersion;
-	}
-
-	public void setPolicyVersion(String policyVersion) {
-		this.policyVersion = policyVersion;
-		if(policyVersion != null){
-			putQueryParameter("PolicyVersion", policyVersion);
-		}
 	}
 
 	public String getUuid() {
@@ -73,6 +62,17 @@ public class InstallBackupClientRequest extends RpcAcsRequest<InstallBackupClien
 				putQueryParameter("UuidList." + (i + 1) , uuidLists.get(i));
 			}
 		}	
+	}
+
+	public String getPolicyVersion() {
+		return this.policyVersion;
+	}
+
+	public void setPolicyVersion(String policyVersion) {
+		this.policyVersion = policyVersion;
+		if(policyVersion != null){
+			putQueryParameter("PolicyVersion", policyVersion);
+		}
 	}
 
 	@Override

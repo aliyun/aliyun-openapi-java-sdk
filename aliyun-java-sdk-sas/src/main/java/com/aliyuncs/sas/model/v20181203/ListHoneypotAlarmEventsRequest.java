@@ -37,8 +37,6 @@ public class ListHoneypotAlarmEventsRequest extends RpcAcsRequest<ListHoneypotAl
 	private String dealed;
 
 	private Integer currentPage;
-
-	private String requestId;
 	public ListHoneypotAlarmEventsRequest() {
 		super("Sas", "2018-12-03", "ListHoneypotAlarmEvents");
 		setMethod(MethodType.GET);
@@ -113,17 +111,6 @@ public class ListHoneypotAlarmEventsRequest extends RpcAcsRequest<ListHoneypotAl
 		this.currentPage = currentPage;
 		if(currentPage != null){
 			putBodyParameter("CurrentPage", currentPage.toString());
-		}
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-		if(requestId != null){
-			putBodyParameter("RequestId", requestId);
 		}
 	}
 

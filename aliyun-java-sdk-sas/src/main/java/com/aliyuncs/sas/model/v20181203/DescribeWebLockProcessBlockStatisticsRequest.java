@@ -25,9 +25,9 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribeWebLockProcessBlockStatisticsRequest extends RpcAcsRequest<DescribeWebLockProcessBlockStatisticsResponse> {
 	   
 
-	private Integer currentPage;
-
 	private Integer pageSize;
+
+	private Integer currentPage;
 	public DescribeWebLockProcessBlockStatisticsRequest() {
 		super("Sas", "2018-12-03", "DescribeWebLockProcessBlockStatistics");
 		setMethod(MethodType.POST);
@@ -35,17 +35,6 @@ public class DescribeWebLockProcessBlockStatisticsRequest extends RpcAcsRequest<
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
-		}
 	}
 
 	public Integer getPageSize() {
@@ -56,6 +45,17 @@ public class DescribeWebLockProcessBlockStatisticsRequest extends RpcAcsRequest<
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
 		}
 	}
 

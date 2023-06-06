@@ -50,6 +50,7 @@ public class DescribeFieldStatisticsResponseUnmarshaller {
 		groupedFields.setAwsInstanceCount(_ctx.integerValue("DescribeFieldStatisticsResponse.GroupedFields.AwsInstanceCount"));
 		groupedFields.setOutMachineInstanceCount(_ctx.integerValue("DescribeFieldStatisticsResponse.GroupedFields.OutMachineInstanceCount"));
 		groupedFields.setTripartiteInstanceCount(_ctx.integerValue("DescribeFieldStatisticsResponse.GroupedFields.TripartiteInstanceCount"));
+		groupedFields.setAzureInstanceCount(_ctx.integerValue("DescribeFieldStatisticsResponse.GroupedFields.AzureInstanceCount"));
 		describeFieldStatisticsResponse.setGroupedFields(groupedFields);
 	 
 	 	return describeFieldStatisticsResponse;

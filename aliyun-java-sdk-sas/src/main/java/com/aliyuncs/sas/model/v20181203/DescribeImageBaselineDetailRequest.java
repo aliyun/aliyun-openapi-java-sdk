@@ -25,11 +25,11 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribeImageBaselineDetailRequest extends RpcAcsRequest<DescribeImageBaselineDetailResponse> {
 	   
 
+	private String lang;
+
 	private String imageUuid;
 
 	private String baselineItemKey;
-
-	private String lang;
 	public DescribeImageBaselineDetailRequest() {
 		super("Sas", "2018-12-03", "DescribeImageBaselineDetail");
 		setMethod(MethodType.POST);
@@ -37,6 +37,17 @@ public class DescribeImageBaselineDetailRequest extends RpcAcsRequest<DescribeIm
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
 	}
 
 	public String getImageUuid() {
@@ -58,17 +69,6 @@ public class DescribeImageBaselineDetailRequest extends RpcAcsRequest<DescribeIm
 		this.baselineItemKey = baselineItemKey;
 		if(baselineItemKey != null){
 			putQueryParameter("BaselineItemKey", baselineItemKey);
-		}
-	}
-
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
 		}
 	}
 

@@ -25,13 +25,13 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribeBackUpExportInfoRequest extends RpcAcsRequest<DescribeBackUpExportInfoResponse> {
 	   
 
-	private String exportType;
-
-	private Integer currentPage;
-
 	private Integer pageSize;
 
 	private String lang;
+
+	private String exportType;
+
+	private Integer currentPage;
 	public DescribeBackUpExportInfoRequest() {
 		super("Sas", "2018-12-03", "DescribeBackUpExportInfo");
 		setMethod(MethodType.POST);
@@ -39,28 +39,6 @@ public class DescribeBackUpExportInfoRequest extends RpcAcsRequest<DescribeBackU
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getExportType() {
-		return this.exportType;
-	}
-
-	public void setExportType(String exportType) {
-		this.exportType = exportType;
-		if(exportType != null){
-			putQueryParameter("ExportType", exportType);
-		}
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
-		}
 	}
 
 	public Integer getPageSize() {
@@ -82,6 +60,28 @@ public class DescribeBackUpExportInfoRequest extends RpcAcsRequest<DescribeBackU
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public String getExportType() {
+		return this.exportType;
+	}
+
+	public void setExportType(String exportType) {
+		this.exportType = exportType;
+		if(exportType != null){
+			putQueryParameter("ExportType", exportType);
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
 		}
 	}
 

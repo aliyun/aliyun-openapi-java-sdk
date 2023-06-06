@@ -25,11 +25,11 @@ import com.aliyuncs.sas.Endpoint;
 public class ConfirmVirusEventsRequest extends RpcAcsRequest<ConfirmVirusEventsResponse> {
 	   
 
+	private String operationCode;
+
 	private String operationRange;
 
 	private Integer operationAll;
-
-	private String operationCode;
 	public ConfirmVirusEventsRequest() {
 		super("Sas", "2018-12-03", "ConfirmVirusEvents");
 		setMethod(MethodType.POST);
@@ -37,6 +37,17 @@ public class ConfirmVirusEventsRequest extends RpcAcsRequest<ConfirmVirusEventsR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getOperationCode() {
+		return this.operationCode;
+	}
+
+	public void setOperationCode(String operationCode) {
+		this.operationCode = operationCode;
+		if(operationCode != null){
+			putQueryParameter("OperationCode", operationCode);
+		}
 	}
 
 	public String getOperationRange() {
@@ -58,17 +69,6 @@ public class ConfirmVirusEventsRequest extends RpcAcsRequest<ConfirmVirusEventsR
 		this.operationAll = operationAll;
 		if(operationAll != null){
 			putQueryParameter("OperationAll", operationAll.toString());
-		}
-	}
-
-	public String getOperationCode() {
-		return this.operationCode;
-	}
-
-	public void setOperationCode(String operationCode) {
-		this.operationCode = operationCode;
-		if(operationCode != null){
-			putQueryParameter("OperationCode", operationCode);
 		}
 	}
 

@@ -26,6 +26,8 @@ public class DeleteHoneypotProbeRequest extends RpcAcsRequest<DeleteHoneypotProb
 	   
 
 	private String probeId;
+
+	private String lang;
 	public DeleteHoneypotProbeRequest() {
 		super("Sas", "2018-12-03", "DeleteHoneypotProbe");
 		setMethod(MethodType.POST);
@@ -43,6 +45,17 @@ public class DeleteHoneypotProbeRequest extends RpcAcsRequest<DeleteHoneypotProb
 		this.probeId = probeId;
 		if(probeId != null){
 			putQueryParameter("ProbeId", probeId);
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
 		}
 	}
 

@@ -181,6 +181,8 @@ public class DescribeSuspEventsResponse extends AcsResponse {
 
 		private String clusterId;
 
+		private String imageUuid;
+
 		private Boolean displaySandboxResult;
 
 		private List<TacticItem> tacticItems;
@@ -563,6 +565,14 @@ public class DescribeSuspEventsResponse extends AcsResponse {
 
 		public void setClusterId(String clusterId) {
 			this.clusterId = clusterId;
+		}
+
+		public String getImageUuid() {
+			return this.imageUuid;
+		}
+
+		public void setImageUuid(String imageUuid) {
+			this.imageUuid = imageUuid;
 		}
 
 		public Boolean getDisplaySandboxResult() {

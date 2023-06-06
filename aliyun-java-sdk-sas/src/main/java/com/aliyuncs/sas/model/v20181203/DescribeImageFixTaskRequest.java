@@ -25,13 +25,13 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribeImageFixTaskRequest extends RpcAcsRequest<DescribeImageFixTaskResponse> {
 	   
 
-	private Long endTime;
-
-	private Integer currentPage;
-
 	private Long startTime;
 
 	private Integer pageSize;
+
+	private Long endTime;
+
+	private Integer currentPage;
 
 	private String status;
 	public DescribeImageFixTaskRequest() {
@@ -41,28 +41,6 @@ public class DescribeImageFixTaskRequest extends RpcAcsRequest<DescribeImageFixT
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(Long endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime.toString());
-		}
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
-		}
 	}
 
 	public Long getStartTime() {
@@ -84,6 +62,28 @@ public class DescribeImageFixTaskRequest extends RpcAcsRequest<DescribeImageFixT
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Long getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(Long endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime.toString());
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
 		}
 	}
 

@@ -25,11 +25,11 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribeRestoreJobsRequest extends RpcAcsRequest<DescribeRestoreJobsResponse> {
 	   
 
-	private Integer currentPage;
-
 	private String machineRemark;
 
 	private Integer pageSize;
+
+	private Integer currentPage;
 
 	private String status;
 	public DescribeRestoreJobsRequest() {
@@ -39,17 +39,6 @@ public class DescribeRestoreJobsRequest extends RpcAcsRequest<DescribeRestoreJob
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
-		}
 	}
 
 	public String getMachineRemark() {
@@ -71,6 +60,17 @@ public class DescribeRestoreJobsRequest extends RpcAcsRequest<DescribeRestoreJob
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
 		}
 	}
 

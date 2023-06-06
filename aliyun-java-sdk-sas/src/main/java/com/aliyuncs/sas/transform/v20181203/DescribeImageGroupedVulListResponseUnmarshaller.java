@@ -44,6 +44,7 @@ public class DescribeImageGroupedVulListResponseUnmarshaller {
 			groupedVulItem.setAliasName(_ctx.stringValue("DescribeImageGroupedVulListResponse.GroupedVulItems["+ i +"].AliasName"));
 			groupedVulItem.setName(_ctx.stringValue("DescribeImageGroupedVulListResponse.GroupedVulItems["+ i +"].Name"));
 			groupedVulItem.setAsapCount(_ctx.integerValue("DescribeImageGroupedVulListResponse.GroupedVulItems["+ i +"].AsapCount"));
+			groupedVulItem.setCanFix(_ctx.stringValue("DescribeImageGroupedVulListResponse.GroupedVulItems["+ i +"].CanFix"));
 
 			groupedVulItems.add(groupedVulItem);
 		}

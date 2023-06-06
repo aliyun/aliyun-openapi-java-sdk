@@ -83,6 +83,10 @@ public class DescribeBruteForceRecordsResponse extends AcsResponse {
 
 		private String successInfo;
 
+		private String blockType;
+
+		private Boolean aliNetOnline;
+
 		public Integer getStatus() {
 			return this.status;
 		}
@@ -185,6 +189,22 @@ public class DescribeBruteForceRecordsResponse extends AcsResponse {
 
 		public void setSuccessInfo(String successInfo) {
 			this.successInfo = successInfo;
+		}
+
+		public String getBlockType() {
+			return this.blockType;
+		}
+
+		public void setBlockType(String blockType) {
+			this.blockType = blockType;
+		}
+
+		public Boolean getAliNetOnline() {
+			return this.aliNetOnline;
+		}
+
+		public void setAliNetOnline(Boolean aliNetOnline) {
+			this.aliNetOnline = aliNetOnline;
 		}
 	}
 

@@ -25,13 +25,13 @@ import com.aliyuncs.sas.Endpoint;
 public class ModifyCustomBlockRecordRequest extends RpcAcsRequest<ModifyCustomBlockRecordResponse> {
 	   
 
-	private Long expireTime;
-
 	private Long resourceOwnerId;
 
-	private String bound;
-
 	private String blockIp;
+
+	private Long expireTime;
+
+	private String bound;
 
 	private String uuids;
 	public ModifyCustomBlockRecordRequest() {
@@ -41,17 +41,6 @@ public class ModifyCustomBlockRecordRequest extends RpcAcsRequest<ModifyCustomBl
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getExpireTime() {
-		return this.expireTime;
-	}
-
-	public void setExpireTime(Long expireTime) {
-		this.expireTime = expireTime;
-		if(expireTime != null){
-			putQueryParameter("ExpireTime", expireTime.toString());
-		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -65,17 +54,6 @@ public class ModifyCustomBlockRecordRequest extends RpcAcsRequest<ModifyCustomBl
 		}
 	}
 
-	public String getBound() {
-		return this.bound;
-	}
-
-	public void setBound(String bound) {
-		this.bound = bound;
-		if(bound != null){
-			putQueryParameter("Bound", bound);
-		}
-	}
-
 	public String getBlockIp() {
 		return this.blockIp;
 	}
@@ -84,6 +62,28 @@ public class ModifyCustomBlockRecordRequest extends RpcAcsRequest<ModifyCustomBl
 		this.blockIp = blockIp;
 		if(blockIp != null){
 			putQueryParameter("BlockIp", blockIp);
+		}
+	}
+
+	public Long getExpireTime() {
+		return this.expireTime;
+	}
+
+	public void setExpireTime(Long expireTime) {
+		this.expireTime = expireTime;
+		if(expireTime != null){
+			putQueryParameter("ExpireTime", expireTime.toString());
+		}
+	}
+
+	public String getBound() {
+		return this.bound;
+	}
+
+	public void setBound(String bound) {
+		this.bound = bound;
+		if(bound != null){
+			putQueryParameter("Bound", bound);
 		}
 	}
 

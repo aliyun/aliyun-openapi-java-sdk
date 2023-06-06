@@ -27,9 +27,9 @@ public class ModifyClientConfSetupRequest extends RpcAcsRequest<ModifyClientConf
 
 	private String strategyConfig;
 
-	private String strategyTagValue;
-
 	private String strategyTag;
+
+	private String strategyTagValue;
 	public ModifyClientConfSetupRequest() {
 		super("Sas", "2018-12-03", "ModifyClientConfSetup");
 		setMethod(MethodType.POST);
@@ -50,17 +50,6 @@ public class ModifyClientConfSetupRequest extends RpcAcsRequest<ModifyClientConf
 		}
 	}
 
-	public String getStrategyTagValue() {
-		return this.strategyTagValue;
-	}
-
-	public void setStrategyTagValue(String strategyTagValue) {
-		this.strategyTagValue = strategyTagValue;
-		if(strategyTagValue != null){
-			putQueryParameter("StrategyTagValue", strategyTagValue);
-		}
-	}
-
 	public String getStrategyTag() {
 		return this.strategyTag;
 	}
@@ -69,6 +58,17 @@ public class ModifyClientConfSetupRequest extends RpcAcsRequest<ModifyClientConf
 		this.strategyTag = strategyTag;
 		if(strategyTag != null){
 			putQueryParameter("StrategyTag", strategyTag);
+		}
+	}
+
+	public String getStrategyTagValue() {
+		return this.strategyTagValue;
+	}
+
+	public void setStrategyTagValue(String strategyTagValue) {
+		this.strategyTagValue = strategyTagValue;
+		if(strategyTagValue != null){
+			putQueryParameter("StrategyTagValue", strategyTagValue);
 		}
 	}
 

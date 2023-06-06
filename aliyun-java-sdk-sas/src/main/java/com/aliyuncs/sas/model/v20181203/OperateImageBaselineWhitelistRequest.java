@@ -26,13 +26,13 @@ import com.aliyuncs.sas.Endpoint;
 public class OperateImageBaselineWhitelistRequest extends RpcAcsRequest<OperateImageBaselineWhitelistResponse> {
 	   
 
-	private String imageUuid;
-
 	private String baselineItemKeyList;
 
 	private List<String> scanRanges;
 
 	private String lang;
+
+	private String imageUuid;
 
 	private String operation;
 	public OperateImageBaselineWhitelistRequest() {
@@ -42,17 +42,6 @@ public class OperateImageBaselineWhitelistRequest extends RpcAcsRequest<OperateI
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getImageUuid() {
-		return this.imageUuid;
-	}
-
-	public void setImageUuid(String imageUuid) {
-		this.imageUuid = imageUuid;
-		if(imageUuid != null){
-			putQueryParameter("ImageUuid", imageUuid);
-		}
 	}
 
 	public String getBaselineItemKeyList() {
@@ -87,6 +76,17 @@ public class OperateImageBaselineWhitelistRequest extends RpcAcsRequest<OperateI
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public String getImageUuid() {
+		return this.imageUuid;
+	}
+
+	public void setImageUuid(String imageUuid) {
+		this.imageUuid = imageUuid;
+		if(imageUuid != null){
+			putQueryParameter("ImageUuid", imageUuid);
 		}
 	}
 

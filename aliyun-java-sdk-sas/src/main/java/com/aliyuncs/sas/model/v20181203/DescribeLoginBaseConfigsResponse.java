@@ -91,6 +91,8 @@ public class DescribeLoginBaseConfigsResponse extends AcsResponse {
 
 		private String location;
 
+		private String remark;
+
 		private List<Target> targetList;
 
 		public String getEndTime() {
@@ -147,6 +149,14 @@ public class DescribeLoginBaseConfigsResponse extends AcsResponse {
 
 		public void setLocation(String location) {
 			this.location = location;
+		}
+
+		public String getRemark() {
+			return this.remark;
+		}
+
+		public void setRemark(String remark) {
+			this.remark = remark;
 		}
 
 		public List<Target> getTargetList() {

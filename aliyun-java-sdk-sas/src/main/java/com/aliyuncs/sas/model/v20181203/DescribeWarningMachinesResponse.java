@@ -115,6 +115,10 @@ public class DescribeWarningMachinesResponse extends AcsResponse {
 
 		private Integer authVersion;
 
+		private String containerId;
+
+		private String containerName;
+
 		public Integer getStatus() {
 			return this.status;
 		}
@@ -225,6 +229,22 @@ public class DescribeWarningMachinesResponse extends AcsResponse {
 
 		public void setAuthVersion(Integer authVersion) {
 			this.authVersion = authVersion;
+		}
+
+		public String getContainerId() {
+			return this.containerId;
+		}
+
+		public void setContainerId(String containerId) {
+			this.containerId = containerId;
+		}
+
+		public String getContainerName() {
+			return this.containerName;
+		}
+
+		public void setContainerName(String containerName) {
+			this.containerName = containerName;
 		}
 	}
 

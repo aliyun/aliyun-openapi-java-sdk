@@ -25,9 +25,9 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribeClientConfSetupRequest extends RpcAcsRequest<DescribeClientConfSetupResponse> {
 	   
 
-	private String strategyTagValue;
-
 	private String strategyTag;
+
+	private String strategyTagValue;
 	public DescribeClientConfSetupRequest() {
 		super("Sas", "2018-12-03", "DescribeClientConfSetup");
 		setMethod(MethodType.POST);
@@ -35,17 +35,6 @@ public class DescribeClientConfSetupRequest extends RpcAcsRequest<DescribeClient
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getStrategyTagValue() {
-		return this.strategyTagValue;
-	}
-
-	public void setStrategyTagValue(String strategyTagValue) {
-		this.strategyTagValue = strategyTagValue;
-		if(strategyTagValue != null){
-			putQueryParameter("StrategyTagValue", strategyTagValue);
-		}
 	}
 
 	public String getStrategyTag() {
@@ -56,6 +45,17 @@ public class DescribeClientConfSetupRequest extends RpcAcsRequest<DescribeClient
 		this.strategyTag = strategyTag;
 		if(strategyTag != null){
 			putQueryParameter("StrategyTag", strategyTag);
+		}
+	}
+
+	public String getStrategyTagValue() {
+		return this.strategyTagValue;
+	}
+
+	public void setStrategyTagValue(String strategyTagValue) {
+		this.strategyTagValue = strategyTagValue;
+		if(strategyTagValue != null){
+			putQueryParameter("StrategyTagValue", strategyTagValue);
 		}
 	}
 

@@ -25,13 +25,13 @@ import com.aliyuncs.sas.Endpoint;
 public class SaveImageBaselineStrategyRequest extends RpcAcsRequest<SaveImageBaselineStrategyResponse> {
 	   
 
+	private String lang;
+
 	private String baselineItemList;
 
 	private String strategyName;
 
 	private Long strategyId;
-
-	private String lang;
 	public SaveImageBaselineStrategyRequest() {
 		super("Sas", "2018-12-03", "SaveImageBaselineStrategy");
 		setMethod(MethodType.POST);
@@ -39,6 +39,17 @@ public class SaveImageBaselineStrategyRequest extends RpcAcsRequest<SaveImageBas
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
 	}
 
 	public String getBaselineItemList() {
@@ -71,17 +82,6 @@ public class SaveImageBaselineStrategyRequest extends RpcAcsRequest<SaveImageBas
 		this.strategyId = strategyId;
 		if(strategyId != null){
 			putQueryParameter("StrategyId", strategyId.toString());
-		}
-	}
-
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
 		}
 	}
 

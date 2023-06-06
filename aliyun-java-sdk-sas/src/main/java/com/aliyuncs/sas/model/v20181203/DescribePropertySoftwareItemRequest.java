@@ -25,13 +25,13 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribePropertySoftwareItemRequest extends RpcAcsRequest<DescribePropertySoftwareItemResponse> {
 	   
 
-	private Integer currentPage;
-
-	private String name;
-
 	private Integer pageSize;
 
 	private Boolean forceFlush;
+
+	private Integer currentPage;
+
+	private String name;
 	public DescribePropertySoftwareItemRequest() {
 		super("Sas", "2018-12-03", "DescribePropertySoftwareItem");
 		setMethod(MethodType.POST);
@@ -39,28 +39,6 @@ public class DescribePropertySoftwareItemRequest extends RpcAcsRequest<DescribeP
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
-		}
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
 	}
 
 	public Integer getPageSize() {
@@ -82,6 +60,28 @@ public class DescribePropertySoftwareItemRequest extends RpcAcsRequest<DescribeP
 		this.forceFlush = forceFlush;
 		if(forceFlush != null){
 			putQueryParameter("ForceFlush", forceFlush.toString());
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

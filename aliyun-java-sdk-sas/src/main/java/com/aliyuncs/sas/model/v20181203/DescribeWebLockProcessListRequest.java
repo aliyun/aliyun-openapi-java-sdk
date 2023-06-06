@@ -25,11 +25,11 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribeWebLockProcessListRequest extends RpcAcsRequest<DescribeWebLockProcessListResponse> {
 	   
 
+	private Integer pageSize;
+
 	private String processName;
 
 	private Integer currentPage;
-
-	private Integer pageSize;
 
 	private Integer status;
 	public DescribeWebLockProcessListRequest() {
@@ -39,6 +39,17 @@ public class DescribeWebLockProcessListRequest extends RpcAcsRequest<DescribeWeb
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
 	}
 
 	public String getProcessName() {
@@ -60,17 +71,6 @@ public class DescribeWebLockProcessListRequest extends RpcAcsRequest<DescribeWeb
 		this.currentPage = currentPage;
 		if(currentPage != null){
 			putQueryParameter("CurrentPage", currentPage.toString());
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

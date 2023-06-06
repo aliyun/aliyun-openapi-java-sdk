@@ -25,11 +25,11 @@ import com.aliyuncs.sas.Endpoint;
 public class CreateContainerScanTaskRequest extends RpcAcsRequest<CreateContainerScanTaskResponse> {
 	   
 
+	private String lang;
+
 	private String clusterId;
 
 	private String containerIds;
-
-	private String lang;
 	public CreateContainerScanTaskRequest() {
 		super("Sas", "2018-12-03", "CreateContainerScanTask");
 		setMethod(MethodType.POST);
@@ -37,6 +37,17 @@ public class CreateContainerScanTaskRequest extends RpcAcsRequest<CreateContaine
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
 	}
 
 	public String getClusterId() {
@@ -58,17 +69,6 @@ public class CreateContainerScanTaskRequest extends RpcAcsRequest<CreateContaine
 		this.containerIds = containerIds;
 		if(containerIds != null){
 			putQueryParameter("ContainerIds", containerIds);
-		}
-	}
-
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
 		}
 	}
 

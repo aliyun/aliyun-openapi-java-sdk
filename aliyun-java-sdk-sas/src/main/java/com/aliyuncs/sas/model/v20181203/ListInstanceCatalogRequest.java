@@ -26,13 +26,13 @@ import com.aliyuncs.sas.Endpoint;
 public class ListInstanceCatalogRequest extends RpcAcsRequest<ListInstanceCatalogResponse> {
 	   
 
-	private List<String> typess;
-
 	private List<Long> standardIdss;
 
-	private List<Long> requirementIdss;
-
 	private String lang;
+
+	private List<String> typess;
+
+	private List<Long> requirementIdss;
 	public ListInstanceCatalogRequest() {
 		super("Sas", "2018-12-03", "ListInstanceCatalog");
 		setMethod(MethodType.POST);
@@ -40,19 +40,6 @@ public class ListInstanceCatalogRequest extends RpcAcsRequest<ListInstanceCatalo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public List<String> getTypess() {
-		return this.typess;
-	}
-
-	public void setTypess(List<String> typess) {
-		this.typess = typess;	
-		if (typess != null) {
-			for (int i = 0; i < typess.size(); i++) {
-				putQueryParameter("Types." + (i + 1) , typess.get(i));
-			}
-		}	
 	}
 
 	public List<Long> getStandardIdss() {
@@ -68,6 +55,30 @@ public class ListInstanceCatalogRequest extends RpcAcsRequest<ListInstanceCatalo
 		}	
 	}
 
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public List<String> getTypess() {
+		return this.typess;
+	}
+
+	public void setTypess(List<String> typess) {
+		this.typess = typess;	
+		if (typess != null) {
+			for (int i = 0; i < typess.size(); i++) {
+				putQueryParameter("Types." + (i + 1) , typess.get(i));
+			}
+		}	
+	}
+
 	public List<Long> getRequirementIdss() {
 		return this.requirementIdss;
 	}
@@ -79,17 +90,6 @@ public class ListInstanceCatalogRequest extends RpcAcsRequest<ListInstanceCatalo
 				putQueryParameter("RequirementIds." + (i + 1) , requirementIdss.get(i));
 			}
 		}	
-	}
-
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
-		}
 	}
 
 	@Override

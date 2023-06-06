@@ -27,11 +27,11 @@ public class DescribeContainerInstancesRequest extends RpcAcsRequest<DescribeCon
 
 	private String criteria;
 
-	private Integer currentPage;
-
 	private Integer pageSize;
 
 	private String logicalExp;
+
+	private Integer currentPage;
 	public DescribeContainerInstancesRequest() {
 		super("Sas", "2018-12-03", "DescribeContainerInstances");
 		setMethod(MethodType.POST);
@@ -49,17 +49,6 @@ public class DescribeContainerInstancesRequest extends RpcAcsRequest<DescribeCon
 		this.criteria = criteria;
 		if(criteria != null){
 			putQueryParameter("Criteria", criteria);
-		}
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
 		}
 	}
 
@@ -82,6 +71,17 @@ public class DescribeContainerInstancesRequest extends RpcAcsRequest<DescribeCon
 		this.logicalExp = logicalExp;
 		if(logicalExp != null){
 			putQueryParameter("LogicalExp", logicalExp);
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
 		}
 	}
 

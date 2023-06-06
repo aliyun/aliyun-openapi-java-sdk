@@ -28,9 +28,9 @@ public class ChangeCheckConfigRequest extends RpcAcsRequest<ChangeCheckConfigRes
 
 	private List<Long> standardIdss;
 
-	private Integer endTime;
-
 	private Integer startTime;
+
+	private Integer endTime;
 	public ChangeCheckConfigRequest() {
 		super("Sas", "2018-12-03", "ChangeCheckConfig");
 		setMethod(MethodType.POST);
@@ -53,17 +53,6 @@ public class ChangeCheckConfigRequest extends RpcAcsRequest<ChangeCheckConfigRes
 		}	
 	}
 
-	public Integer getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(Integer endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime.toString());
-		}
-	}
-
 	public Integer getStartTime() {
 		return this.startTime;
 	}
@@ -72,6 +61,17 @@ public class ChangeCheckConfigRequest extends RpcAcsRequest<ChangeCheckConfigRes
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime.toString());
+		}
+	}
+
+	public Integer getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(Integer endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime.toString());
 		}
 	}
 

@@ -27,13 +27,13 @@ public class OperationSuspEventsRequest extends RpcAcsRequest<OperationSuspEvent
 
 	private String suspiciousEventIds;
 
-	private String subOperation;
-
 	private String sourceIp;
 
-	private String warnType;
-
 	private String from;
+
+	private String subOperation;
+
+	private String warnType;
 
 	private String operation;
 	public OperationSuspEventsRequest() {
@@ -56,17 +56,6 @@ public class OperationSuspEventsRequest extends RpcAcsRequest<OperationSuspEvent
 		}
 	}
 
-	public String getSubOperation() {
-		return this.subOperation;
-	}
-
-	public void setSubOperation(String subOperation) {
-		this.subOperation = subOperation;
-		if(subOperation != null){
-			putQueryParameter("SubOperation", subOperation);
-		}
-	}
-
 	public String getSourceIp() {
 		return this.sourceIp;
 	}
@@ -78,17 +67,6 @@ public class OperationSuspEventsRequest extends RpcAcsRequest<OperationSuspEvent
 		}
 	}
 
-	public String getWarnType() {
-		return this.warnType;
-	}
-
-	public void setWarnType(String warnType) {
-		this.warnType = warnType;
-		if(warnType != null){
-			putQueryParameter("WarnType", warnType);
-		}
-	}
-
 	public String getFrom() {
 		return this.from;
 	}
@@ -97,6 +75,28 @@ public class OperationSuspEventsRequest extends RpcAcsRequest<OperationSuspEvent
 		this.from = from;
 		if(from != null){
 			putQueryParameter("From", from);
+		}
+	}
+
+	public String getSubOperation() {
+		return this.subOperation;
+	}
+
+	public void setSubOperation(String subOperation) {
+		this.subOperation = subOperation;
+		if(subOperation != null){
+			putQueryParameter("SubOperation", subOperation);
+		}
+	}
+
+	public String getWarnType() {
+		return this.warnType;
+	}
+
+	public void setWarnType(String warnType) {
+		this.warnType = warnType;
+		if(warnType != null){
+			putQueryParameter("WarnType", warnType);
 		}
 	}
 

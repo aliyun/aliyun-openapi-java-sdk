@@ -25,11 +25,11 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribeBackupMachineStatusRequest extends RpcAcsRequest<DescribeBackupMachineStatusResponse> {
 	   
 
-	private String policyVersion;
-
 	private String uuid;
 
 	private Long policyId;
+
+	private String policyVersion;
 	public DescribeBackupMachineStatusRequest() {
 		super("Sas", "2018-12-03", "DescribeBackupMachineStatus");
 		setMethod(MethodType.POST);
@@ -37,17 +37,6 @@ public class DescribeBackupMachineStatusRequest extends RpcAcsRequest<DescribeBa
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getPolicyVersion() {
-		return this.policyVersion;
-	}
-
-	public void setPolicyVersion(String policyVersion) {
-		this.policyVersion = policyVersion;
-		if(policyVersion != null){
-			putQueryParameter("PolicyVersion", policyVersion);
-		}
 	}
 
 	public String getUuid() {
@@ -69,6 +58,17 @@ public class DescribeBackupMachineStatusRequest extends RpcAcsRequest<DescribeBa
 		this.policyId = policyId;
 		if(policyId != null){
 			putQueryParameter("PolicyId", policyId.toString());
+		}
+	}
+
+	public String getPolicyVersion() {
+		return this.policyVersion;
+	}
+
+	public void setPolicyVersion(String policyVersion) {
+		this.policyVersion = policyVersion;
+		if(policyVersion != null){
+			putQueryParameter("PolicyVersion", policyVersion);
 		}
 	}
 

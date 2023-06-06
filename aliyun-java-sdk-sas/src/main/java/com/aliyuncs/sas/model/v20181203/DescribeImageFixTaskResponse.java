@@ -81,6 +81,8 @@ public class DescribeImageFixTaskResponse extends AcsResponse {
 
 		private Integer status;
 
+		private String vulAlias;
+
 		public String getBuildTaskId() {
 			return this.buildTaskId;
 		}
@@ -175,6 +177,14 @@ public class DescribeImageFixTaskResponse extends AcsResponse {
 
 		public void setStatus(Integer status) {
 			this.status = status;
+		}
+
+		public String getVulAlias() {
+			return this.vulAlias;
+		}
+
+		public void setVulAlias(String vulAlias) {
+			this.vulAlias = vulAlias;
 		}
 	}
 

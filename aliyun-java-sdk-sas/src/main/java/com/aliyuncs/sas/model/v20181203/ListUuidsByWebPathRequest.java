@@ -27,11 +27,11 @@ public class ListUuidsByWebPathRequest extends RpcAcsRequest<ListUuidsByWebPathR
 
 	private String webPath;
 
-	private Integer currentPage;
-
 	private String type;
 
 	private Integer pageSize;
+
+	private Integer currentPage;
 	public ListUuidsByWebPathRequest() {
 		super("Sas", "2018-12-03", "ListUuidsByWebPath");
 		setMethod(MethodType.POST);
@@ -49,17 +49,6 @@ public class ListUuidsByWebPathRequest extends RpcAcsRequest<ListUuidsByWebPathR
 		this.webPath = webPath;
 		if(webPath != null){
 			putQueryParameter("WebPath", webPath);
-		}
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
 		}
 	}
 
@@ -82,6 +71,17 @@ public class ListUuidsByWebPathRequest extends RpcAcsRequest<ListUuidsByWebPathR
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
 		}
 	}
 

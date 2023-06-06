@@ -42,6 +42,8 @@ public class DescribeGroupedInstancesRequest extends RpcAcsRequest<DescribeGroup
 	private Integer currentPage;
 
 	private String machineTypes;
+
+	private String saleVersionCheckCode;
 	public DescribeGroupedInstancesRequest() {
 		super("Sas", "2018-12-03", "DescribeGroupedInstances");
 		setMethod(MethodType.POST);
@@ -147,6 +149,17 @@ public class DescribeGroupedInstancesRequest extends RpcAcsRequest<DescribeGroup
 		this.machineTypes = machineTypes;
 		if(machineTypes != null){
 			putQueryParameter("MachineTypes", machineTypes);
+		}
+	}
+
+	public String getSaleVersionCheckCode() {
+		return this.saleVersionCheckCode;
+	}
+
+	public void setSaleVersionCheckCode(String saleVersionCheckCode) {
+		this.saleVersionCheckCode = saleVersionCheckCode;
+		if(saleVersionCheckCode != null){
+			putQueryParameter("SaleVersionCheckCode", saleVersionCheckCode);
 		}
 	}
 

@@ -32,6 +32,8 @@ public class UpdateHoneypotProbeRequest extends RpcAcsRequest<UpdateHoneypotProb
 
 	private List<String> serviceIpLists;
 
+	private String lang;
+
 	private Boolean arp;
 
 	private String displayName;
@@ -77,6 +79,17 @@ public class UpdateHoneypotProbeRequest extends RpcAcsRequest<UpdateHoneypotProb
 				putQueryParameter("ServiceIpList." + (i + 1) , serviceIpLists.get(i));
 			}
 		}	
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
 	}
 
 	public Boolean getArp() {

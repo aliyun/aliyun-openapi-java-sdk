@@ -56,6 +56,7 @@ public class DescribeVersionConfigResponseUnmarshaller {
 		describeVersionConfigResponse.setUserDefinedAlarms(_ctx.integerValue("DescribeVersionConfigResponse.UserDefinedAlarms"));
 		describeVersionConfigResponse.setOpenTime(_ctx.longValue("DescribeVersionConfigResponse.OpenTime"));
 		describeVersionConfigResponse.setIsNewContainerVersion(_ctx.booleanValue("DescribeVersionConfigResponse.IsNewContainerVersion"));
+		describeVersionConfigResponse.setIsNewMultiVersion(_ctx.booleanValue("DescribeVersionConfigResponse.IsNewMultiVersion"));
 		describeVersionConfigResponse.setThreatAnalysisCapacity(_ctx.longValue("DescribeVersionConfigResponse.ThreatAnalysisCapacity"));
 	 
 	 	return describeVersionConfigResponse;

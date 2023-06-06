@@ -25,13 +25,13 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribePropertyCronItemRequest extends RpcAcsRequest<DescribePropertyCronItemResponse> {
 	   
 
-	private Integer currentPage;
-
 	private String source;
 
 	private Integer pageSize;
 
 	private Boolean forceFlush;
+
+	private Integer currentPage;
 	public DescribePropertyCronItemRequest() {
 		super("Sas", "2018-12-03", "DescribePropertyCronItem");
 		setMethod(MethodType.POST);
@@ -39,17 +39,6 @@ public class DescribePropertyCronItemRequest extends RpcAcsRequest<DescribePrope
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
-		}
 	}
 
 	public String getSource() {
@@ -82,6 +71,17 @@ public class DescribePropertyCronItemRequest extends RpcAcsRequest<DescribePrope
 		this.forceFlush = forceFlush;
 		if(forceFlush != null){
 			putQueryParameter("ForceFlush", forceFlush.toString());
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
 		}
 	}
 

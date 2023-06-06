@@ -14,6 +14,8 @@
 
 package com.aliyuncs.sas.model.v20181203;
 
+import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.sas.transform.v20181203.DescribeCheckWarningDetailResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -39,6 +41,10 @@ public class DescribeCheckWarningDetailResponse extends AcsResponse {
 	private String level;
 
 	private String prompt;
+
+	private List<CheckDetailColumn> checkDetailColumns;
+
+	private List<Map<Object,Object>> checkDetailAssetInfo;
 
 	public String getAdvice() {
 		return this.advice;
@@ -102,6 +108,98 @@ public class DescribeCheckWarningDetailResponse extends AcsResponse {
 
 	public void setPrompt(String prompt) {
 		this.prompt = prompt;
+	}
+
+	public List<CheckDetailColumn> getCheckDetailColumns() {
+		return this.checkDetailColumns;
+	}
+
+	public void setCheckDetailColumns(List<CheckDetailColumn> checkDetailColumns) {
+		this.checkDetailColumns = checkDetailColumns;
+	}
+
+	public List<Map<Object,Object>> getCheckDetailAssetInfo() {
+		return this.checkDetailAssetInfo;
+	}
+
+	public void setCheckDetailAssetInfo(List<Map<Object,Object>> checkDetailAssetInfo) {
+		this.checkDetailAssetInfo = checkDetailAssetInfo;
+	}
+
+	public static class CheckDetailColumn {
+
+		private String type;
+
+		private String key;
+
+		private String showName;
+
+		private List<Grid> grids;
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getShowName() {
+			return this.showName;
+		}
+
+		public void setShowName(String showName) {
+			this.showName = showName;
+		}
+
+		public List<Grid> getGrids() {
+			return this.grids;
+		}
+
+		public void setGrids(List<Grid> grids) {
+			this.grids = grids;
+		}
+
+		public static class Grid {
+
+			private String type;
+
+			private String key;
+
+			private String showName;
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getShowName() {
+				return this.showName;
+			}
+
+			public void setShowName(String showName) {
+				this.showName = showName;
+			}
+		}
 	}
 
 	@Override

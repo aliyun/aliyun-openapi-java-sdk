@@ -27,15 +27,15 @@ import com.aliyuncs.sas.Endpoint;
 public class PageImageRegistryRequest extends RpcAcsRequest<PageImageRegistryResponse> {
 	   
 
-	private String registryNameLike;
-
-	private Integer currentPage;
-
 	private List<String> registryTypeNotInLists;
 
 	private String sourceIp;
 
 	private Integer pageSize;
+
+	private String registryNameLike;
+
+	private Integer currentPage;
 
 	private List<String> registryTypeInLists;
 	public PageImageRegistryRequest() {
@@ -46,28 +46,6 @@ public class PageImageRegistryRequest extends RpcAcsRequest<PageImageRegistryRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getRegistryNameLike() {
-		return this.registryNameLike;
-	}
-
-	public void setRegistryNameLike(String registryNameLike) {
-		this.registryNameLike = registryNameLike;
-		if(registryNameLike != null){
-			putBodyParameter("RegistryNameLike", registryNameLike);
-		}
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putBodyParameter("CurrentPage", currentPage.toString());
-		}
 	}
 
 	public List<String> getRegistryTypeNotInLists() {
@@ -102,6 +80,28 @@ public class PageImageRegistryRequest extends RpcAcsRequest<PageImageRegistryRes
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putBodyParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getRegistryNameLike() {
+		return this.registryNameLike;
+	}
+
+	public void setRegistryNameLike(String registryNameLike) {
+		this.registryNameLike = registryNameLike;
+		if(registryNameLike != null){
+			putBodyParameter("RegistryNameLike", registryNameLike);
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putBodyParameter("CurrentPage", currentPage.toString());
 		}
 	}
 

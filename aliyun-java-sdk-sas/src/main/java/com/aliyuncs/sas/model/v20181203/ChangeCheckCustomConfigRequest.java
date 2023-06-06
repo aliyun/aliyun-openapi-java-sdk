@@ -26,9 +26,9 @@ import com.aliyuncs.sas.Endpoint;
 public class ChangeCheckCustomConfigRequest extends RpcAcsRequest<ChangeCheckCustomConfigResponse> {
 	   
 
-	private List<CustomConfigs> customConfigss;
-
 	private Long checkId;
+
+	private List<CustomConfigs> customConfigss;
 	public ChangeCheckCustomConfigRequest() {
 		super("Sas", "2018-12-03", "ChangeCheckCustomConfig");
 		setMethod(MethodType.POST);
@@ -36,6 +36,17 @@ public class ChangeCheckCustomConfigRequest extends RpcAcsRequest<ChangeCheckCus
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getCheckId() {
+		return this.checkId;
+	}
+
+	public void setCheckId(Long checkId) {
+		this.checkId = checkId;
+		if(checkId != null){
+			putQueryParameter("CheckId", checkId.toString());
+		}
 	}
 
 	public List<CustomConfigs> getCustomConfigss() {
@@ -51,17 +62,6 @@ public class ChangeCheckCustomConfigRequest extends RpcAcsRequest<ChangeCheckCus
 				putQueryParameter("CustomConfigs." + (depth1 + 1) + ".Operation" , customConfigss.get(depth1).getOperation());
 			}
 		}	
-	}
-
-	public Long getCheckId() {
-		return this.checkId;
-	}
-
-	public void setCheckId(Long checkId) {
-		this.checkId = checkId;
-		if(checkId != null){
-			putQueryParameter("CheckId", checkId.toString());
-		}
 	}
 
 	public static class CustomConfigs {

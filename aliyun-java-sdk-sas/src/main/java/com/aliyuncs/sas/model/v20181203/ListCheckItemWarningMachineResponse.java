@@ -79,6 +79,10 @@ public class ListCheckItemWarningMachineResponse extends AcsResponse {
 
 		private String prompt;
 
+		private String containerId;
+
+		private String containerName;
+
 		private List<WarningRiskListItem> warningRiskList;
 
 		private List<FixListItem> fixList;
@@ -169,6 +173,22 @@ public class ListCheckItemWarningMachineResponse extends AcsResponse {
 
 		public void setPrompt(String prompt) {
 			this.prompt = prompt;
+		}
+
+		public String getContainerId() {
+			return this.containerId;
+		}
+
+		public void setContainerId(String containerId) {
+			this.containerId = containerId;
+		}
+
+		public String getContainerName() {
+			return this.containerName;
+		}
+
+		public void setContainerName(String containerName) {
+			this.containerName = containerName;
 		}
 
 		public List<WarningRiskListItem> getWarningRiskList() {

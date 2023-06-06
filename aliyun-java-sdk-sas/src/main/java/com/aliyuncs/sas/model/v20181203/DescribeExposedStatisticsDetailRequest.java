@@ -25,15 +25,15 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribeExposedStatisticsDetailRequest extends RpcAcsRequest<DescribeExposedStatisticsDetailResponse> {
 	   
 
-	private String statisticsType;
-
 	private String statisticsTypeGatewayType;
-
-	private Integer currentPage;
 
 	private String statisticsTypeInstanceValue;
 
 	private Integer pageSize;
+
+	private String statisticsType;
+
+	private Integer currentPage;
 	public DescribeExposedStatisticsDetailRequest() {
 		super("Sas", "2018-12-03", "DescribeExposedStatisticsDetail");
 		setMethod(MethodType.POST);
@@ -41,17 +41,6 @@ public class DescribeExposedStatisticsDetailRequest extends RpcAcsRequest<Descri
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getStatisticsType() {
-		return this.statisticsType;
-	}
-
-	public void setStatisticsType(String statisticsType) {
-		this.statisticsType = statisticsType;
-		if(statisticsType != null){
-			putQueryParameter("StatisticsType", statisticsType);
-		}
 	}
 
 	public String getStatisticsTypeGatewayType() {
@@ -62,17 +51,6 @@ public class DescribeExposedStatisticsDetailRequest extends RpcAcsRequest<Descri
 		this.statisticsTypeGatewayType = statisticsTypeGatewayType;
 		if(statisticsTypeGatewayType != null){
 			putQueryParameter("StatisticsTypeGatewayType", statisticsTypeGatewayType);
-		}
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
 		}
 	}
 
@@ -95,6 +73,28 @@ public class DescribeExposedStatisticsDetailRequest extends RpcAcsRequest<Descri
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getStatisticsType() {
+		return this.statisticsType;
+	}
+
+	public void setStatisticsType(String statisticsType) {
+		this.statisticsType = statisticsType;
+		if(statisticsType != null){
+			putQueryParameter("StatisticsType", statisticsType);
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
 		}
 	}
 

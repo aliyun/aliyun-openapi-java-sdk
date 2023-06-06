@@ -27,11 +27,11 @@ public class DescribeVulListPageRequest extends RpcAcsRequest<DescribeVulListPag
 
 	private String cveId;
 
+	private Integer pageSize;
+
 	private Integer currentPage;
 
 	private String vulNameLike;
-
-	private Integer pageSize;
 	public DescribeVulListPageRequest() {
 		super("Sas", "2018-12-03", "DescribeVulListPage");
 		setMethod(MethodType.POST);
@@ -49,6 +49,17 @@ public class DescribeVulListPageRequest extends RpcAcsRequest<DescribeVulListPag
 		this.cveId = cveId;
 		if(cveId != null){
 			putQueryParameter("CveId", cveId);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -71,17 +82,6 @@ public class DescribeVulListPageRequest extends RpcAcsRequest<DescribeVulListPag
 		this.vulNameLike = vulNameLike;
 		if(vulNameLike != null){
 			putQueryParameter("VulNameLike", vulNameLike);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

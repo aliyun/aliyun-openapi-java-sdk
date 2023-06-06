@@ -25,11 +25,11 @@ import com.aliyuncs.sas.Endpoint;
 public class GetCheckRiskStatisticsRequest extends RpcAcsRequest<GetCheckRiskStatisticsResponse> {
 	   
 
-	private Integer currentPage;
-
 	private Integer pageSize;
 
 	private String lang;
+
+	private Integer currentPage;
 	public GetCheckRiskStatisticsRequest() {
 		super("Sas", "2018-12-03", "GetCheckRiskStatistics");
 		setMethod(MethodType.POST);
@@ -37,17 +37,6 @@ public class GetCheckRiskStatisticsRequest extends RpcAcsRequest<GetCheckRiskSta
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
-		}
 	}
 
 	public Integer getPageSize() {
@@ -69,6 +58,17 @@ public class GetCheckRiskStatisticsRequest extends RpcAcsRequest<GetCheckRiskSta
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
 		}
 	}
 

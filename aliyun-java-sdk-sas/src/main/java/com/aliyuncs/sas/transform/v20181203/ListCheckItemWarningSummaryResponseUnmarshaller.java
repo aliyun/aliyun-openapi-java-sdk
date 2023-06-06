@@ -50,6 +50,7 @@ public class ListCheckItemWarningSummaryResponseUnmarshaller {
 			listItem.setDescription(_ctx.stringValue("ListCheckItemWarningSummaryResponse.List["+ i +"].Description"));
 			listItem.setStatus(_ctx.integerValue("ListCheckItemWarningSummaryResponse.List["+ i +"].Status"));
 			listItem.setWarningMachineCount(_ctx.integerValue("ListCheckItemWarningSummaryResponse.List["+ i +"].WarningMachineCount"));
+			listItem.setContainerCheckItem(_ctx.booleanValue("ListCheckItemWarningSummaryResponse.List["+ i +"].ContainerCheckItem"));
 
 			list.add(listItem);
 		}

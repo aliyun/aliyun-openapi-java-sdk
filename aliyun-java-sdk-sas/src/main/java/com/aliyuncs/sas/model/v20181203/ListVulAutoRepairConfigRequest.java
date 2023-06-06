@@ -25,13 +25,13 @@ import com.aliyuncs.sas.Endpoint;
 public class ListVulAutoRepairConfigRequest extends RpcAcsRequest<ListVulAutoRepairConfigResponse> {
 	   
 
-	private Integer currentPage;
-
 	private String type;
 
-	private String aliasName;
-
 	private Integer pageSize;
+
+	private Integer currentPage;
+
+	private String aliasName;
 	public ListVulAutoRepairConfigRequest() {
 		super("Sas", "2018-12-03", "ListVulAutoRepairConfig");
 		setMethod(MethodType.POST);
@@ -39,17 +39,6 @@ public class ListVulAutoRepairConfigRequest extends RpcAcsRequest<ListVulAutoRep
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
-		}
 	}
 
 	public String getType() {
@@ -63,17 +52,6 @@ public class ListVulAutoRepairConfigRequest extends RpcAcsRequest<ListVulAutoRep
 		}
 	}
 
-	public String getAliasName() {
-		return this.aliasName;
-	}
-
-	public void setAliasName(String aliasName) {
-		this.aliasName = aliasName;
-		if(aliasName != null){
-			putQueryParameter("AliasName", aliasName);
-		}
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -82,6 +60,28 @@ public class ListVulAutoRepairConfigRequest extends RpcAcsRequest<ListVulAutoRep
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public String getAliasName() {
+		return this.aliasName;
+	}
+
+	public void setAliasName(String aliasName) {
+		this.aliasName = aliasName;
+		if(aliasName != null){
+			putQueryParameter("AliasName", aliasName);
 		}
 	}
 

@@ -25,11 +25,11 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribeCheckFixDetailsRequest extends RpcAcsRequest<DescribeCheckFixDetailsResponse> {
 	   
 
+	private String lang;
+
 	private String checkIds;
 
 	private Long riskId;
-
-	private String lang;
 	public DescribeCheckFixDetailsRequest() {
 		super("Sas", "2018-12-03", "DescribeCheckFixDetails");
 		setMethod(MethodType.POST);
@@ -37,6 +37,17 @@ public class DescribeCheckFixDetailsRequest extends RpcAcsRequest<DescribeCheckF
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
 	}
 
 	public String getCheckIds() {
@@ -58,17 +69,6 @@ public class DescribeCheckFixDetailsRequest extends RpcAcsRequest<DescribeCheckF
 		this.riskId = riskId;
 		if(riskId != null){
 			putQueryParameter("RiskId", riskId.toString());
-		}
-	}
-
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
 		}
 	}
 

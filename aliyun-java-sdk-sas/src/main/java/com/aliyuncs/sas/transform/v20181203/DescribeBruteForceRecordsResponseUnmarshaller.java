@@ -52,6 +52,8 @@ public class DescribeBruteForceRecordsResponseUnmarshaller {
 			bruteForceRecord.setRuleName(_ctx.stringValue("DescribeBruteForceRecordsResponse.MachineList["+ i +"].RuleName"));
 			bruteForceRecord.setErrorCode(_ctx.stringValue("DescribeBruteForceRecordsResponse.MachineList["+ i +"].ErrorCode"));
 			bruteForceRecord.setSuccessInfo(_ctx.stringValue("DescribeBruteForceRecordsResponse.MachineList["+ i +"].successInfo"));
+			bruteForceRecord.setBlockType(_ctx.stringValue("DescribeBruteForceRecordsResponse.MachineList["+ i +"].BlockType"));
+			bruteForceRecord.setAliNetOnline(_ctx.booleanValue("DescribeBruteForceRecordsResponse.MachineList["+ i +"].AliNetOnline"));
 
 			machineList.add(bruteForceRecord);
 		}

@@ -27,11 +27,11 @@ public class DescribeBruteForceRecordsRequest extends RpcAcsRequest<DescribeBrut
 
 	private Long resourceOwnerId;
 
-	private Integer currentPage;
-
 	private String blockIp;
 
 	private Integer pageSize;
+
+	private Integer currentPage;
 
 	private Integer status;
 	public DescribeBruteForceRecordsRequest() {
@@ -54,17 +54,6 @@ public class DescribeBruteForceRecordsRequest extends RpcAcsRequest<DescribeBrut
 		}
 	}
 
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
-		}
-	}
-
 	public String getBlockIp() {
 		return this.blockIp;
 	}
@@ -84,6 +73,17 @@ public class DescribeBruteForceRecordsRequest extends RpcAcsRequest<DescribeBrut
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
 		}
 	}
 

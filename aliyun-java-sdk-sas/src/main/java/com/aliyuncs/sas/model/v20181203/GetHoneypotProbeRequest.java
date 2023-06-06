@@ -26,6 +26,8 @@ public class GetHoneypotProbeRequest extends RpcAcsRequest<GetHoneypotProbeRespo
 	   
 
 	private String probeId;
+
+	private String lang;
 	public GetHoneypotProbeRequest() {
 		super("Sas", "2018-12-03", "GetHoneypotProbe");
 		setMethod(MethodType.POST);
@@ -43,6 +45,17 @@ public class GetHoneypotProbeRequest extends RpcAcsRequest<GetHoneypotProbeRespo
 		this.probeId = probeId;
 		if(probeId != null){
 			putQueryParameter("ProbeId", probeId);
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
 		}
 	}
 

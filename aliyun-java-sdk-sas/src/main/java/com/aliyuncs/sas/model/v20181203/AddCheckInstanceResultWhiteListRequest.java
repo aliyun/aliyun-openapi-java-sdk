@@ -26,11 +26,11 @@ import com.aliyuncs.sas.Endpoint;
 public class AddCheckInstanceResultWhiteListRequest extends RpcAcsRequest<AddCheckInstanceResultWhiteListResponse> {
 	   
 
+	private Long checkId;
+
 	private String checkGroupId;
 
 	private List<String> instanceIdss;
-
-	private Long checkId;
 	public AddCheckInstanceResultWhiteListRequest() {
 		super("Sas", "2018-12-03", "AddCheckInstanceResultWhiteList");
 		setMethod(MethodType.POST);
@@ -38,6 +38,17 @@ public class AddCheckInstanceResultWhiteListRequest extends RpcAcsRequest<AddChe
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getCheckId() {
+		return this.checkId;
+	}
+
+	public void setCheckId(Long checkId) {
+		this.checkId = checkId;
+		if(checkId != null){
+			putQueryParameter("CheckId", checkId.toString());
+		}
 	}
 
 	public String getCheckGroupId() {
@@ -62,17 +73,6 @@ public class AddCheckInstanceResultWhiteListRequest extends RpcAcsRequest<AddChe
 				putQueryParameter("InstanceIds." + (i + 1) , instanceIdss.get(i));
 			}
 		}	
-	}
-
-	public Long getCheckId() {
-		return this.checkId;
-	}
-
-	public void setCheckId(Long checkId) {
-		this.checkId = checkId;
-		if(checkId != null){
-			putQueryParameter("CheckId", checkId.toString());
-		}
 	}
 
 	@Override

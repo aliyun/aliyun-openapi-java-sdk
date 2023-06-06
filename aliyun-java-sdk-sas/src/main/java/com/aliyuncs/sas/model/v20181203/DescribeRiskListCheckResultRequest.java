@@ -28,15 +28,15 @@ public class DescribeRiskListCheckResultRequest extends RpcAcsRequest<DescribeRi
 
 	private Long resourceOwnerId;
 
-	private Integer currentPage;
-
 	private String sourceIp;
-
-	private List<String> instanceIdss;
 
 	private Integer pageSize;
 
 	private String lang;
+
+	private Integer currentPage;
+
+	private List<String> instanceIdss;
 	public DescribeRiskListCheckResultRequest() {
 		super("Sas", "2018-12-03", "DescribeRiskListCheckResult");
 		setMethod(MethodType.POST);
@@ -57,17 +57,6 @@ public class DescribeRiskListCheckResultRequest extends RpcAcsRequest<DescribeRi
 		}
 	}
 
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
-		}
-	}
-
 	public String getSourceIp() {
 		return this.sourceIp;
 	}
@@ -77,19 +66,6 @@ public class DescribeRiskListCheckResultRequest extends RpcAcsRequest<DescribeRi
 		if(sourceIp != null){
 			putQueryParameter("SourceIp", sourceIp);
 		}
-	}
-
-	public List<String> getInstanceIdss() {
-		return this.instanceIdss;
-	}
-
-	public void setInstanceIdss(List<String> instanceIdss) {
-		this.instanceIdss = instanceIdss;	
-		if (instanceIdss != null) {
-			for (int i = 0; i < instanceIdss.size(); i++) {
-				putQueryParameter("InstanceIds." + (i + 1) , instanceIdss.get(i));
-			}
-		}	
 	}
 
 	public Integer getPageSize() {
@@ -112,6 +88,30 @@ public class DescribeRiskListCheckResultRequest extends RpcAcsRequest<DescribeRi
 		if(lang != null){
 			putQueryParameter("Lang", lang);
 		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public List<String> getInstanceIdss() {
+		return this.instanceIdss;
+	}
+
+	public void setInstanceIdss(List<String> instanceIdss) {
+		this.instanceIdss = instanceIdss;	
+		if (instanceIdss != null) {
+			for (int i = 0; i < instanceIdss.size(); i++) {
+				putQueryParameter("InstanceIds." + (i + 1) , instanceIdss.get(i));
+			}
+		}	
 	}
 
 	@Override

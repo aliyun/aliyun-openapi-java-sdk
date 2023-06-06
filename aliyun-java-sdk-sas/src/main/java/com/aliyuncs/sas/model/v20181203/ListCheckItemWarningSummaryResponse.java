@@ -77,6 +77,8 @@ public class ListCheckItemWarningSummaryResponse extends AcsResponse {
 
 		private Integer warningMachineCount;
 
+		private Boolean containerCheckItem;
+
 		public String getRiskType() {
 			return this.riskType;
 		}
@@ -155,6 +157,14 @@ public class ListCheckItemWarningSummaryResponse extends AcsResponse {
 
 		public void setWarningMachineCount(Integer warningMachineCount) {
 			this.warningMachineCount = warningMachineCount;
+		}
+
+		public Boolean getContainerCheckItem() {
+			return this.containerCheckItem;
+		}
+
+		public void setContainerCheckItem(Boolean containerCheckItem) {
+			this.containerCheckItem = containerCheckItem;
 		}
 	}
 

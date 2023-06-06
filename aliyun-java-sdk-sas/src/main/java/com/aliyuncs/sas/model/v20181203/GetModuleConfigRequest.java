@@ -25,9 +25,9 @@ import com.aliyuncs.sas.Endpoint;
 public class GetModuleConfigRequest extends RpcAcsRequest<GetModuleConfigResponse> {
 	   
 
-	private String currentPage;
-
 	private String pageSize;
+
+	private String currentPage;
 	public GetModuleConfigRequest() {
 		super("Sas", "2018-12-03", "GetModuleConfig");
 		setMethod(MethodType.POST);
@@ -35,17 +35,6 @@ public class GetModuleConfigRequest extends RpcAcsRequest<GetModuleConfigRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(String currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage);
-		}
 	}
 
 	public String getPageSize() {
@@ -56,6 +45,17 @@ public class GetModuleConfigRequest extends RpcAcsRequest<GetModuleConfigRespons
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize);
+		}
+	}
+
+	public String getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(String currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage);
 		}
 	}
 

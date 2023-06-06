@@ -92,6 +92,8 @@ public class DescribeVersionConfigResponse extends AcsResponse {
 
 	private Boolean isNewContainerVersion;
 
+	private Boolean isNewMultiVersion;
+
 	private Long threatAnalysisCapacity;
 
 	public Integer getMVAuthCount() {
@@ -364,6 +366,14 @@ public class DescribeVersionConfigResponse extends AcsResponse {
 
 	public void setIsNewContainerVersion(Boolean isNewContainerVersion) {
 		this.isNewContainerVersion = isNewContainerVersion;
+	}
+
+	public Boolean getIsNewMultiVersion() {
+		return this.isNewMultiVersion;
+	}
+
+	public void setIsNewMultiVersion(Boolean isNewMultiVersion) {
+		this.isNewMultiVersion = isNewMultiVersion;
 	}
 
 	public Long getThreatAnalysisCapacity() {

@@ -27,13 +27,13 @@ public class DescribeAssetsSecurityEventSummaryRequest extends RpcAcsRequest<Des
 
 	private Long resourceOwnerId;
 
-	private String clusterId;
-
 	private String containerFieldName;
 
 	private String sourceIp;
 
 	private String containerFieldValue;
+
+	private String clusterId;
 	public DescribeAssetsSecurityEventSummaryRequest() {
 		super("Sas", "2018-12-03", "DescribeAssetsSecurityEventSummary");
 		setMethod(MethodType.POST);
@@ -51,17 +51,6 @@ public class DescribeAssetsSecurityEventSummaryRequest extends RpcAcsRequest<Des
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 
@@ -95,6 +84,17 @@ public class DescribeAssetsSecurityEventSummaryRequest extends RpcAcsRequest<Des
 		this.containerFieldValue = containerFieldValue;
 		if(containerFieldValue != null){
 			putQueryParameter("ContainerFieldValue", containerFieldValue);
+		}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 

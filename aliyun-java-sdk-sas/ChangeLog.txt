@@ -1,3 +1,6 @@
+2023-06-06 Version: 1.1.31
+- Change ListAssetSelectionTarget Request.
+
 2023-02-22 Version: 1.1.30
 - Change DescribeLogstoreStorage Response.
 

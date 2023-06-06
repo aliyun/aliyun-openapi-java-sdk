@@ -53,6 +53,8 @@ public class ListCheckItemWarningMachineResponseUnmarshaller {
 			listItem.setUuid(_ctx.stringValue("ListCheckItemWarningMachineResponse.List["+ i +"].Uuid"));
 			listItem.setRegionId(_ctx.stringValue("ListCheckItemWarningMachineResponse.List["+ i +"].RegionId"));
 			listItem.setPrompt(_ctx.stringValue("ListCheckItemWarningMachineResponse.List["+ i +"].Prompt"));
+			listItem.setContainerId(_ctx.stringValue("ListCheckItemWarningMachineResponse.List["+ i +"].ContainerId"));
+			listItem.setContainerName(_ctx.stringValue("ListCheckItemWarningMachineResponse.List["+ i +"].ContainerName"));
 
 			List<WarningRiskListItem> warningRiskList = new ArrayList<WarningRiskListItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListCheckItemWarningMachineResponse.List["+ i +"].WarningRiskList.Length"); j++) {

@@ -27,6 +27,8 @@ public class UpdateHoneypotRequest extends RpcAcsRequest<UpdateHoneypotResponse>
 
 	private String honeypotName;
 
+	private String lang;
+
 	private String honeypotId;
 
 	private String meta;
@@ -47,6 +49,17 @@ public class UpdateHoneypotRequest extends RpcAcsRequest<UpdateHoneypotResponse>
 		this.honeypotName = honeypotName;
 		if(honeypotName != null){
 			putQueryParameter("HoneypotName", honeypotName);
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
 		}
 	}
 

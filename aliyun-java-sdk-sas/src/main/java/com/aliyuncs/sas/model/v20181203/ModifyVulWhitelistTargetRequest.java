@@ -29,9 +29,9 @@ public class ModifyVulWhitelistTargetRequest extends RpcAcsRequest<ModifyVulWhit
 
 	private String sourceIp;
 
-	private String targetInfo;
-
 	private Long id;
+
+	private String targetInfo;
 	public ModifyVulWhitelistTargetRequest() {
 		super("Sas", "2018-12-03", "ModifyVulWhitelistTarget");
 		setMethod(MethodType.POST);
@@ -63,17 +63,6 @@ public class ModifyVulWhitelistTargetRequest extends RpcAcsRequest<ModifyVulWhit
 		}
 	}
 
-	public String getTargetInfo() {
-		return this.targetInfo;
-	}
-
-	public void setTargetInfo(String targetInfo) {
-		this.targetInfo = targetInfo;
-		if(targetInfo != null){
-			putQueryParameter("TargetInfo", targetInfo);
-		}
-	}
-
 	public Long getId() {
 		return this.id;
 	}
@@ -82,6 +71,17 @@ public class ModifyVulWhitelistTargetRequest extends RpcAcsRequest<ModifyVulWhit
 		this.id = id;
 		if(id != null){
 			putQueryParameter("Id", id.toString());
+		}
+	}
+
+	public String getTargetInfo() {
+		return this.targetInfo;
+	}
+
+	public void setTargetInfo(String targetInfo) {
+		this.targetInfo = targetInfo;
+		if(targetInfo != null){
+			putQueryParameter("TargetInfo", targetInfo);
 		}
 	}
 

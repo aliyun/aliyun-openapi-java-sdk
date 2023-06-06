@@ -25,13 +25,13 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribePropertyPortItemRequest extends RpcAcsRequest<DescribePropertyPortItemResponse> {
 	   
 
-	private Integer currentPage;
-
-	private String port;
-
 	private Integer pageSize;
 
 	private Boolean forceFlush;
+
+	private Integer currentPage;
+
+	private String port;
 	public DescribePropertyPortItemRequest() {
 		super("Sas", "2018-12-03", "DescribePropertyPortItem");
 		setMethod(MethodType.POST);
@@ -39,28 +39,6 @@ public class DescribePropertyPortItemRequest extends RpcAcsRequest<DescribePrope
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
-		}
-	}
-
-	public String getPort() {
-		return this.port;
-	}
-
-	public void setPort(String port) {
-		this.port = port;
-		if(port != null){
-			putQueryParameter("Port", port);
-		}
 	}
 
 	public Integer getPageSize() {
@@ -82,6 +60,28 @@ public class DescribePropertyPortItemRequest extends RpcAcsRequest<DescribePrope
 		this.forceFlush = forceFlush;
 		if(forceFlush != null){
 			putQueryParameter("ForceFlush", forceFlush.toString());
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public String getPort() {
+		return this.port;
+	}
+
+	public void setPort(String port) {
+		this.port = port;
+		if(port != null){
+			putQueryParameter("Port", port);
 		}
 	}
 

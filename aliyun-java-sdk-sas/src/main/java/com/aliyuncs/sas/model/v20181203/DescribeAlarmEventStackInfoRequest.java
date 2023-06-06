@@ -25,8 +25,6 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribeAlarmEventStackInfoRequest extends RpcAcsRequest<DescribeAlarmEventStackInfoResponse> {
 	   
 
-	private String uniqueInfo;
-
 	private String uuid;
 
 	private String eventName;
@@ -34,6 +32,8 @@ public class DescribeAlarmEventStackInfoRequest extends RpcAcsRequest<DescribeAl
 	private String sourceIp;
 
 	private String lang;
+
+	private String uniqueInfo;
 	public DescribeAlarmEventStackInfoRequest() {
 		super("Sas", "2018-12-03", "DescribeAlarmEventStackInfo");
 		setMethod(MethodType.POST);
@@ -41,17 +41,6 @@ public class DescribeAlarmEventStackInfoRequest extends RpcAcsRequest<DescribeAl
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getUniqueInfo() {
-		return this.uniqueInfo;
-	}
-
-	public void setUniqueInfo(String uniqueInfo) {
-		this.uniqueInfo = uniqueInfo;
-		if(uniqueInfo != null){
-			putQueryParameter("UniqueInfo", uniqueInfo);
-		}
 	}
 
 	public String getUuid() {
@@ -95,6 +84,17 @@ public class DescribeAlarmEventStackInfoRequest extends RpcAcsRequest<DescribeAl
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public String getUniqueInfo() {
+		return this.uniqueInfo;
+	}
+
+	public void setUniqueInfo(String uniqueInfo) {
+		this.uniqueInfo = uniqueInfo;
+		if(uniqueInfo != null){
+			putQueryParameter("UniqueInfo", uniqueInfo);
 		}
 	}
 

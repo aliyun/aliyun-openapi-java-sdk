@@ -27,8 +27,6 @@ public class ModifySecurityCheckScheduleConfigRequest extends RpcAcsRequest<Modi
 
 	private Long resourceOwnerId;
 
-	private Integer endTime;
-
 	private Integer startTime;
 
 	private String sourceIp;
@@ -36,6 +34,8 @@ public class ModifySecurityCheckScheduleConfigRequest extends RpcAcsRequest<Modi
 	private String daysOfWeek;
 
 	private String lang;
+
+	private Integer endTime;
 	public ModifySecurityCheckScheduleConfigRequest() {
 		super("Sas", "2018-12-03", "ModifySecurityCheckScheduleConfig");
 		setMethod(MethodType.POST);
@@ -53,17 +53,6 @@ public class ModifySecurityCheckScheduleConfigRequest extends RpcAcsRequest<Modi
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public Integer getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(Integer endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime.toString());
 		}
 	}
 
@@ -108,6 +97,17 @@ public class ModifySecurityCheckScheduleConfigRequest extends RpcAcsRequest<Modi
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public Integer getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(Integer endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime.toString());
 		}
 	}
 

@@ -25,11 +25,11 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribeRestorePlansRequest extends RpcAcsRequest<DescribeRestorePlansResponse> {
 	   
 
+	private Integer pageSize;
+
 	private Integer currentPage;
 
 	private String instanceName;
-
-	private Integer pageSize;
 
 	private String status;
 	public DescribeRestorePlansRequest() {
@@ -39,6 +39,17 @@ public class DescribeRestorePlansRequest extends RpcAcsRequest<DescribeRestorePl
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
 	}
 
 	public Integer getCurrentPage() {
@@ -60,17 +71,6 @@ public class DescribeRestorePlansRequest extends RpcAcsRequest<DescribeRestorePl
 		this.instanceName = instanceName;
 		if(instanceName != null){
 			putQueryParameter("InstanceName", instanceName);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

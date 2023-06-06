@@ -14,7 +14,13 @@
 
 package com.aliyuncs.sas.transform.v20181203;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.sas.model.v20181203.DescribeCheckWarningDetailResponse;
+import com.aliyuncs.sas.model.v20181203.DescribeCheckWarningDetailResponse.CheckDetailColumn;
+import com.aliyuncs.sas.model.v20181203.DescribeCheckWarningDetailResponse.CheckDetailColumn.Grid;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -30,6 +36,31 @@ public class DescribeCheckWarningDetailResponseUnmarshaller {
 		describeCheckWarningDetailResponse.setCheckId(_ctx.longValue("DescribeCheckWarningDetailResponse.CheckId"));
 		describeCheckWarningDetailResponse.setLevel(_ctx.stringValue("DescribeCheckWarningDetailResponse.Level"));
 		describeCheckWarningDetailResponse.setPrompt(_ctx.stringValue("DescribeCheckWarningDetailResponse.Prompt"));
+
+		List<Map<Object, Object>> checkDetailAssetInfo = _ctx.listMapValue("DescribeCheckWarningDetailResponse.CheckDetailAssetInfo");
+		describeCheckWarningDetailResponse.setCheckDetailAssetInfo(checkDetailAssetInfo);
+
+		List<CheckDetailColumn> checkDetailColumns = new ArrayList<CheckDetailColumn>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeCheckWarningDetailResponse.CheckDetailColumns.Length"); i++) {
+			CheckDetailColumn checkDetailColumn = new CheckDetailColumn();
+			checkDetailColumn.setType(_ctx.stringValue("DescribeCheckWarningDetailResponse.CheckDetailColumns["+ i +"].Type"));
+			checkDetailColumn.setKey(_ctx.stringValue("DescribeCheckWarningDetailResponse.CheckDetailColumns["+ i +"].Key"));
+			checkDetailColumn.setShowName(_ctx.stringValue("DescribeCheckWarningDetailResponse.CheckDetailColumns["+ i +"].ShowName"));
+
+			List<Grid> grids = new ArrayList<Grid>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeCheckWarningDetailResponse.CheckDetailColumns["+ i +"].Grids.Length"); j++) {
+				Grid grid = new Grid();
+				grid.setType(_ctx.stringValue("DescribeCheckWarningDetailResponse.CheckDetailColumns["+ i +"].Grids["+ j +"].Type"));
+				grid.setKey(_ctx.stringValue("DescribeCheckWarningDetailResponse.CheckDetailColumns["+ i +"].Grids["+ j +"].Key"));
+				grid.setShowName(_ctx.stringValue("DescribeCheckWarningDetailResponse.CheckDetailColumns["+ i +"].Grids["+ j +"].ShowName"));
+
+				grids.add(grid);
+			}
+			checkDetailColumn.setGrids(grids);
+
+			checkDetailColumns.add(checkDetailColumn);
+		}
+		describeCheckWarningDetailResponse.setCheckDetailColumns(checkDetailColumns);
 	 
 	 	return describeCheckWarningDetailResponse;
 	}

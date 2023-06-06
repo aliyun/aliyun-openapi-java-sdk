@@ -27,13 +27,13 @@ public class ListInterceptionRulePageRequest extends RpcAcsRequest<ListIntercept
 
 	private String criteria;
 
-	private Integer currentPage;
-
-	private String clusterId;
-
 	private Integer pageSize;
 
 	private String criteriaType;
+
+	private Integer currentPage;
+
+	private String clusterId;
 	public ListInterceptionRulePageRequest() {
 		super("Sas", "2018-12-03", "ListInterceptionRulePage");
 		setMethod(MethodType.POST);
@@ -51,28 +51,6 @@ public class ListInterceptionRulePageRequest extends RpcAcsRequest<ListIntercept
 		this.criteria = criteria;
 		if(criteria != null){
 			putQueryParameter("Criteria", criteria);
-		}
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
-		}
-	}
-
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 
@@ -95,6 +73,28 @@ public class ListInterceptionRulePageRequest extends RpcAcsRequest<ListIntercept
 		this.criteriaType = criteriaType;
 		if(criteriaType != null){
 			putQueryParameter("CriteriaType", criteriaType);
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 

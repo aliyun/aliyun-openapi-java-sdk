@@ -25,9 +25,9 @@ import com.aliyuncs.sas.Endpoint;
 public class GetAppNetworkRequest extends RpcAcsRequest<GetAppNetworkResponse> {
 	   
 
-	private Long endTime;
-
 	private Long startTime;
+
+	private Long endTime;
 
 	private String clusterId;
 	public GetAppNetworkRequest() {
@@ -39,17 +39,6 @@ public class GetAppNetworkRequest extends RpcAcsRequest<GetAppNetworkResponse> {
 		} catch (Exception e) {}
 	}
 
-	public Long getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(Long endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime.toString());
-		}
-	}
-
 	public Long getStartTime() {
 		return this.startTime;
 	}
@@ -58,6 +47,17 @@ public class GetAppNetworkRequest extends RpcAcsRequest<GetAppNetworkResponse> {
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime.toString());
+		}
+	}
+
+	public Long getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(Long endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime.toString());
 		}
 	}
 

@@ -29,11 +29,11 @@ public class ModifySecurityEventMarkMissIndividuallyRequest extends RpcAcsReques
 
 	private String sourceIp;
 
-	private String deleteMarkMissParam;
-
 	private String from;
 
 	private String lang;
+
+	private String deleteMarkMissParam;
 	public ModifySecurityEventMarkMissIndividuallyRequest() {
 		super("Sas", "2018-12-03", "ModifySecurityEventMarkMissIndividually");
 		setMethod(MethodType.POST);
@@ -65,17 +65,6 @@ public class ModifySecurityEventMarkMissIndividuallyRequest extends RpcAcsReques
 		}
 	}
 
-	public String getDeleteMarkMissParam() {
-		return this.deleteMarkMissParam;
-	}
-
-	public void setDeleteMarkMissParam(String deleteMarkMissParam) {
-		this.deleteMarkMissParam = deleteMarkMissParam;
-		if(deleteMarkMissParam != null){
-			putBodyParameter("DeleteMarkMissParam", deleteMarkMissParam);
-		}
-	}
-
 	public String getFrom() {
 		return this.from;
 	}
@@ -95,6 +84,17 @@ public class ModifySecurityEventMarkMissIndividuallyRequest extends RpcAcsReques
 		this.lang = lang;
 		if(lang != null){
 			putBodyParameter("Lang", lang);
+		}
+	}
+
+	public String getDeleteMarkMissParam() {
+		return this.deleteMarkMissParam;
+	}
+
+	public void setDeleteMarkMissParam(String deleteMarkMissParam) {
+		this.deleteMarkMissParam = deleteMarkMissParam;
+		if(deleteMarkMissParam != null){
+			putBodyParameter("DeleteMarkMissParam", deleteMarkMissParam);
 		}
 	}
 

@@ -25,13 +25,13 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribeLoginBaseConfigsRequest extends RpcAcsRequest<DescribeLoginBaseConfigsResponse> {
 	   
 
-	private Integer currentPage;
-
 	private String type;
 
-	private String target;
-
 	private Integer pageSize;
+
+	private Integer currentPage;
+
+	private String target;
 	public DescribeLoginBaseConfigsRequest() {
 		super("Sas", "2018-12-03", "DescribeLoginBaseConfigs");
 		setMethod(MethodType.POST);
@@ -39,17 +39,6 @@ public class DescribeLoginBaseConfigsRequest extends RpcAcsRequest<DescribeLogin
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
-		}
 	}
 
 	public String getType() {
@@ -63,17 +52,6 @@ public class DescribeLoginBaseConfigsRequest extends RpcAcsRequest<DescribeLogin
 		}
 	}
 
-	public String getTarget() {
-		return this.target;
-	}
-
-	public void setTarget(String target) {
-		this.target = target;
-		if(target != null){
-			putQueryParameter("Target", target);
-		}
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -82,6 +60,28 @@ public class DescribeLoginBaseConfigsRequest extends RpcAcsRequest<DescribeLogin
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public String getTarget() {
+		return this.target;
+	}
+
+	public void setTarget(String target) {
+		this.target = target;
+		if(target != null){
+			putQueryParameter("Target", target);
 		}
 	}
 

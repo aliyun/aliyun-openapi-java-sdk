@@ -25,6 +25,8 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribeCheckWarningsRequest extends RpcAcsRequest<DescribeCheckWarningsResponse> {
 	   
 
+	private String containerName;
+
 	private String uuid;
 
 	private String checkType;
@@ -49,6 +51,17 @@ public class DescribeCheckWarningsRequest extends RpcAcsRequest<DescribeCheckWar
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getContainerName() {
+		return this.containerName;
+	}
+
+	public void setContainerName(String containerName) {
+		this.containerName = containerName;
+		if(containerName != null){
+			putQueryParameter("ContainerName", containerName);
+		}
 	}
 
 	public String getUuid() {

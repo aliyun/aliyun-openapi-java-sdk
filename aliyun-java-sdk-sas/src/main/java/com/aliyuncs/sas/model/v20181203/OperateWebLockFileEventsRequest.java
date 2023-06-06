@@ -26,11 +26,11 @@ import com.aliyuncs.sas.Endpoint;
 public class OperateWebLockFileEventsRequest extends RpcAcsRequest<OperateWebLockFileEventsResponse> {
 	   
 
-	private Integer dealAll;
-
 	private List<Long> eventIdss;
 
 	private String operationCode;
+
+	private Integer dealAll;
 	public OperateWebLockFileEventsRequest() {
 		super("Sas", "2018-12-03", "OperateWebLockFileEvents");
 		setMethod(MethodType.POST);
@@ -38,17 +38,6 @@ public class OperateWebLockFileEventsRequest extends RpcAcsRequest<OperateWebLoc
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getDealAll() {
-		return this.dealAll;
-	}
-
-	public void setDealAll(Integer dealAll) {
-		this.dealAll = dealAll;
-		if(dealAll != null){
-			putQueryParameter("DealAll", dealAll.toString());
-		}
 	}
 
 	public List<Long> getEventIdss() {
@@ -72,6 +61,17 @@ public class OperateWebLockFileEventsRequest extends RpcAcsRequest<OperateWebLoc
 		this.operationCode = operationCode;
 		if(operationCode != null){
 			putQueryParameter("OperationCode", operationCode);
+		}
+	}
+
+	public Integer getDealAll() {
+		return this.dealAll;
+	}
+
+	public void setDealAll(Integer dealAll) {
+		this.dealAll = dealAll;
+		if(dealAll != null){
+			putQueryParameter("DealAll", dealAll.toString());
 		}
 	}
 

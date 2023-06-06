@@ -25,11 +25,11 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribeWebPathRequest extends RpcAcsRequest<DescribeWebPathResponse> {
 	   
 
-	private Integer currentPage;
-
 	private String type;
 
 	private Integer pageSize;
+
+	private Integer currentPage;
 	public DescribeWebPathRequest() {
 		super("Sas", "2018-12-03", "DescribeWebPath");
 		setMethod(MethodType.POST);
@@ -37,17 +37,6 @@ public class DescribeWebPathRequest extends RpcAcsRequest<DescribeWebPathRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
-		}
 	}
 
 	public String getType() {
@@ -69,6 +58,17 @@ public class DescribeWebPathRequest extends RpcAcsRequest<DescribeWebPathRespons
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
 		}
 	}
 

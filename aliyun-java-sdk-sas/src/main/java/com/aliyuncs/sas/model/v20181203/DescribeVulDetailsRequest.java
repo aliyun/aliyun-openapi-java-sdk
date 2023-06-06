@@ -27,11 +27,11 @@ public class DescribeVulDetailsRequest extends RpcAcsRequest<DescribeVulDetailsR
 
 	private String type;
 
+	private String lang;
+
 	private String aliasName;
 
 	private String name;
-
-	private String lang;
 	public DescribeVulDetailsRequest() {
 		super("Sas", "2018-12-03", "DescribeVulDetails");
 		setMethod(MethodType.POST);
@@ -49,6 +49,17 @@ public class DescribeVulDetailsRequest extends RpcAcsRequest<DescribeVulDetailsR
 		this.type = type;
 		if(type != null){
 			putQueryParameter("Type", type);
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
 		}
 	}
 
@@ -71,17 +82,6 @@ public class DescribeVulDetailsRequest extends RpcAcsRequest<DescribeVulDetailsR
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
-		}
-	}
-
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
 		}
 	}
 

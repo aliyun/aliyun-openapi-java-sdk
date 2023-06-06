@@ -25,6 +25,8 @@ import com.aliyuncs.sas.Endpoint;
 public class CreateHoneypotPresetRequest extends RpcAcsRequest<CreateHoneypotPresetResponse> {
 	   
 
+	private String lang;
+
 	private String nodeId;
 
 	private String presetName;
@@ -39,6 +41,17 @@ public class CreateHoneypotPresetRequest extends RpcAcsRequest<CreateHoneypotPre
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
 	}
 
 	public String getNodeId() {

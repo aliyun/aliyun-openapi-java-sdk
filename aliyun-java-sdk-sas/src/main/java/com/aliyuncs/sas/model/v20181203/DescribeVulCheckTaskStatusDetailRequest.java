@@ -26,11 +26,11 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribeVulCheckTaskStatusDetailRequest extends RpcAcsRequest<DescribeVulCheckTaskStatusDetailResponse> {
 	   
 
-	private List<String> typess;
-
 	private List<String> taskIdss;
 
 	private String uuid;
+
+	private List<String> typess;
 	public DescribeVulCheckTaskStatusDetailRequest() {
 		super("Sas", "2018-12-03", "DescribeVulCheckTaskStatusDetail");
 		setMethod(MethodType.POST);
@@ -38,19 +38,6 @@ public class DescribeVulCheckTaskStatusDetailRequest extends RpcAcsRequest<Descr
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public List<String> getTypess() {
-		return this.typess;
-	}
-
-	public void setTypess(List<String> typess) {
-		this.typess = typess;	
-		if (typess != null) {
-			for (int i = 0; i < typess.size(); i++) {
-				putQueryParameter("Types." + (i + 1) , typess.get(i));
-			}
-		}	
 	}
 
 	public List<String> getTaskIdss() {
@@ -75,6 +62,19 @@ public class DescribeVulCheckTaskStatusDetailRequest extends RpcAcsRequest<Descr
 		if(uuid != null){
 			putQueryParameter("Uuid", uuid);
 		}
+	}
+
+	public List<String> getTypess() {
+		return this.typess;
+	}
+
+	public void setTypess(List<String> typess) {
+		this.typess = typess;	
+		if (typess != null) {
+			for (int i = 0; i < typess.size(); i++) {
+				putQueryParameter("Types." + (i + 1) , typess.get(i));
+			}
+		}	
 	}
 
 	@Override

@@ -25,11 +25,11 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribeStrategyExecDetailRequest extends RpcAcsRequest<DescribeStrategyExecDetailResponse> {
 	   
 
-	private Integer currentPage;
-
 	private String sourceIp;
 
 	private Integer pageSize;
+
+	private Integer currentPage;
 
 	private Integer strategyId;
 	public DescribeStrategyExecDetailRequest() {
@@ -39,17 +39,6 @@ public class DescribeStrategyExecDetailRequest extends RpcAcsRequest<DescribeStr
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
-		}
 	}
 
 	public String getSourceIp() {
@@ -71,6 +60,17 @@ public class DescribeStrategyExecDetailRequest extends RpcAcsRequest<DescribeStr
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
 		}
 	}
 

@@ -94,6 +94,8 @@ public class DescribeFieldStatisticsResponse extends AcsResponse {
 
 		private Integer tripartiteInstanceCount;
 
+		private Integer azureInstanceCount;
+
 		public Integer getOfflineInstanceCount() {
 			return this.offlineInstanceCount;
 		}
@@ -284,6 +286,14 @@ public class DescribeFieldStatisticsResponse extends AcsResponse {
 
 		public void setTripartiteInstanceCount(Integer tripartiteInstanceCount) {
 			this.tripartiteInstanceCount = tripartiteInstanceCount;
+		}
+
+		public Integer getAzureInstanceCount() {
+			return this.azureInstanceCount;
+		}
+
+		public void setAzureInstanceCount(Integer azureInstanceCount) {
+			this.azureInstanceCount = azureInstanceCount;
 		}
 	}
 

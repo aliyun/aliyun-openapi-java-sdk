@@ -25,9 +25,13 @@ import com.aliyuncs.sas.Endpoint;
 public class OperateAgentClientInstallRequest extends RpcAcsRequest<OperateAgentClientInstallResponse> {
 	   
 
+	private String lang;
+
+	private String os;
+
 	private String instanceIds;
 
-	private String lang;
+	private String region;
 
 	private String uuids;
 	public OperateAgentClientInstallRequest() {
@@ -37,6 +41,28 @@ public class OperateAgentClientInstallRequest extends RpcAcsRequest<OperateAgent
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public String getOs() {
+		return this.os;
+	}
+
+	public void setOs(String os) {
+		this.os = os;
+		if(os != null){
+			putQueryParameter("Os", os);
+		}
 	}
 
 	public String getInstanceIds() {
@@ -50,14 +76,14 @@ public class OperateAgentClientInstallRequest extends RpcAcsRequest<OperateAgent
 		}
 	}
 
-	public String getLang() {
-		return this.lang;
+	public String getRegion() {
+		return this.region;
 	}
 
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
+	public void setRegion(String region) {
+		this.region = region;
+		if(region != null){
+			putQueryParameter("Region", region);
 		}
 	}
 

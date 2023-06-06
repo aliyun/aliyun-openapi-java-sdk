@@ -25,11 +25,11 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribePropertyTypeScaItemRequest extends RpcAcsRequest<DescribePropertyTypeScaItemResponse> {
 	   
 
-	private Integer currentPage;
-
 	private Integer pageSize;
 
 	private String lang;
+
+	private Integer currentPage;
 	public DescribePropertyTypeScaItemRequest() {
 		super("Sas", "2018-12-03", "DescribePropertyTypeScaItem");
 		setMethod(MethodType.POST);
@@ -37,17 +37,6 @@ public class DescribePropertyTypeScaItemRequest extends RpcAcsRequest<DescribePr
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
-		}
 	}
 
 	public Integer getPageSize() {
@@ -69,6 +58,17 @@ public class DescribePropertyTypeScaItemRequest extends RpcAcsRequest<DescribePr
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
 		}
 	}
 

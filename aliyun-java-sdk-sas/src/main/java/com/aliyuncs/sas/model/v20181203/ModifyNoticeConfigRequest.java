@@ -27,11 +27,11 @@ public class ModifyNoticeConfigRequest extends RpcAcsRequest<ModifyNoticeConfigR
 
 	private String project;
 
+	private String sourceIp;
+
 	private Integer timeLimit;
 
 	private Integer route;
-
-	private String sourceIp;
 	public ModifyNoticeConfigRequest() {
 		super("Sas", "2018-12-03", "ModifyNoticeConfig");
 		setMethod(MethodType.POST);
@@ -49,6 +49,17 @@ public class ModifyNoticeConfigRequest extends RpcAcsRequest<ModifyNoticeConfigR
 		this.project = project;
 		if(project != null){
 			putQueryParameter("Project", project);
+		}
+	}
+
+	public String getSourceIp() {
+		return this.sourceIp;
+	}
+
+	public void setSourceIp(String sourceIp) {
+		this.sourceIp = sourceIp;
+		if(sourceIp != null){
+			putQueryParameter("SourceIp", sourceIp);
 		}
 	}
 
@@ -71,17 +82,6 @@ public class ModifyNoticeConfigRequest extends RpcAcsRequest<ModifyNoticeConfigR
 		this.route = route;
 		if(route != null){
 			putQueryParameter("Route", route.toString());
-		}
-	}
-
-	public String getSourceIp() {
-		return this.sourceIp;
-	}
-
-	public void setSourceIp(String sourceIp) {
-		this.sourceIp = sourceIp;
-		if(sourceIp != null){
-			putQueryParameter("SourceIp", sourceIp);
 		}
 	}
 

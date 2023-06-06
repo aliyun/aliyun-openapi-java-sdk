@@ -28,13 +28,13 @@ public class IgnoreCheckItemsRequest extends RpcAcsRequest<IgnoreCheckItemsRespo
 
 	private String reason;
 
-	private List<CheckAndRiskTypeList> checkAndRiskTypeLists;
-
 	private Integer type;
 
 	private List<String> uuidLists;
 
 	private String lang;
+
+	private List<CheckAndRiskTypeList> checkAndRiskTypeLists;
 	public IgnoreCheckItemsRequest() {
 		super("Sas", "2018-12-03", "IgnoreCheckItems");
 		setMethod(MethodType.POST);
@@ -53,20 +53,6 @@ public class IgnoreCheckItemsRequest extends RpcAcsRequest<IgnoreCheckItemsRespo
 		if(reason != null){
 			putQueryParameter("Reason", reason);
 		}
-	}
-
-	public List<CheckAndRiskTypeList> getCheckAndRiskTypeLists() {
-		return this.checkAndRiskTypeLists;
-	}
-
-	public void setCheckAndRiskTypeLists(List<CheckAndRiskTypeList> checkAndRiskTypeLists) {
-		this.checkAndRiskTypeLists = checkAndRiskTypeLists;	
-		if (checkAndRiskTypeLists != null) {
-			for (int depth1 = 0; depth1 < checkAndRiskTypeLists.size(); depth1++) {
-				putQueryParameter("CheckAndRiskTypeList." + (depth1 + 1) + ".RiskType" , checkAndRiskTypeLists.get(depth1).getRiskType());
-				putQueryParameter("CheckAndRiskTypeList." + (depth1 + 1) + ".CheckId" , checkAndRiskTypeLists.get(depth1).getCheckId());
-			}
-		}	
 	}
 
 	public Integer getType() {
@@ -102,6 +88,20 @@ public class IgnoreCheckItemsRequest extends RpcAcsRequest<IgnoreCheckItemsRespo
 		if(lang != null){
 			putQueryParameter("Lang", lang);
 		}
+	}
+
+	public List<CheckAndRiskTypeList> getCheckAndRiskTypeLists() {
+		return this.checkAndRiskTypeLists;
+	}
+
+	public void setCheckAndRiskTypeLists(List<CheckAndRiskTypeList> checkAndRiskTypeLists) {
+		this.checkAndRiskTypeLists = checkAndRiskTypeLists;	
+		if (checkAndRiskTypeLists != null) {
+			for (int depth1 = 0; depth1 < checkAndRiskTypeLists.size(); depth1++) {
+				putQueryParameter("CheckAndRiskTypeList." + (depth1 + 1) + ".RiskType" , checkAndRiskTypeLists.get(depth1).getRiskType());
+				putQueryParameter("CheckAndRiskTypeList." + (depth1 + 1) + ".CheckId" , checkAndRiskTypeLists.get(depth1).getCheckId());
+			}
+		}	
 	}
 
 	public static class CheckAndRiskTypeList {

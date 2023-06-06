@@ -25,9 +25,9 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribeClientConfStrategyRequest extends RpcAcsRequest<DescribeClientConfStrategyResponse> {
 	   
 
-	private String tagValue;
-
 	private String tag;
+
+	private String tagValue;
 	public DescribeClientConfStrategyRequest() {
 		super("Sas", "2018-12-03", "DescribeClientConfStrategy");
 		setMethod(MethodType.POST);
@@ -35,17 +35,6 @@ public class DescribeClientConfStrategyRequest extends RpcAcsRequest<DescribeCli
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getTagValue() {
-		return this.tagValue;
-	}
-
-	public void setTagValue(String tagValue) {
-		this.tagValue = tagValue;
-		if(tagValue != null){
-			putQueryParameter("TagValue", tagValue);
-		}
 	}
 
 	public String getTag() {
@@ -56,6 +45,17 @@ public class DescribeClientConfStrategyRequest extends RpcAcsRequest<DescribeCli
 		this.tag = tag;
 		if(tag != null){
 			putQueryParameter("Tag", tag);
+		}
+	}
+
+	public String getTagValue() {
+		return this.tagValue;
+	}
+
+	public void setTagValue(String tagValue) {
+		this.tagValue = tagValue;
+		if(tagValue != null){
+			putQueryParameter("TagValue", tagValue);
 		}
 	}
 

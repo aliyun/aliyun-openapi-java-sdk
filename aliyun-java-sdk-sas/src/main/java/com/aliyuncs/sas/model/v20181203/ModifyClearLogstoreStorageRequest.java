@@ -25,13 +25,13 @@ import com.aliyuncs.sas.Endpoint;
 public class ModifyClearLogstoreStorageRequest extends RpcAcsRequest<ModifyClearLogstoreStorageResponse> {
 	   
 
-	private String userLogStore;
-
-	private String userProject;
-
 	private String from;
 
 	private String lang;
+
+	private String userLogStore;
+
+	private String userProject;
 	public ModifyClearLogstoreStorageRequest() {
 		super("Sas", "2018-12-03", "ModifyClearLogstoreStorage");
 		setMethod(MethodType.POST);
@@ -39,28 +39,6 @@ public class ModifyClearLogstoreStorageRequest extends RpcAcsRequest<ModifyClear
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getUserLogStore() {
-		return this.userLogStore;
-	}
-
-	public void setUserLogStore(String userLogStore) {
-		this.userLogStore = userLogStore;
-		if(userLogStore != null){
-			putQueryParameter("UserLogStore", userLogStore);
-		}
-	}
-
-	public String getUserProject() {
-		return this.userProject;
-	}
-
-	public void setUserProject(String userProject) {
-		this.userProject = userProject;
-		if(userProject != null){
-			putQueryParameter("UserProject", userProject);
-		}
 	}
 
 	public String getFrom() {
@@ -82,6 +60,28 @@ public class ModifyClearLogstoreStorageRequest extends RpcAcsRequest<ModifyClear
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public String getUserLogStore() {
+		return this.userLogStore;
+	}
+
+	public void setUserLogStore(String userLogStore) {
+		this.userLogStore = userLogStore;
+		if(userLogStore != null){
+			putQueryParameter("UserLogStore", userLogStore);
+		}
+	}
+
+	public String getUserProject() {
+		return this.userProject;
+	}
+
+	public void setUserProject(String userProject) {
+		this.userProject = userProject;
+		if(userProject != null){
+			putQueryParameter("UserProject", userProject);
 		}
 	}
 

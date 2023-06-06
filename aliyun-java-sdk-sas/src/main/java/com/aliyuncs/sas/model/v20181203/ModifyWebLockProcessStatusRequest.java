@@ -26,11 +26,11 @@ import com.aliyuncs.sas.Endpoint;
 public class ModifyWebLockProcessStatusRequest extends RpcAcsRequest<ModifyWebLockProcessStatusResponse> {
 	   
 
-	private Integer dealAll;
-
 	private List<String> processPaths;
 
 	private String uuid;
+
+	private Integer dealAll;
 
 	private String operateInfo;
 
@@ -42,17 +42,6 @@ public class ModifyWebLockProcessStatusRequest extends RpcAcsRequest<ModifyWebLo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getDealAll() {
-		return this.dealAll;
-	}
-
-	public void setDealAll(Integer dealAll) {
-		this.dealAll = dealAll;
-		if(dealAll != null){
-			putQueryParameter("DealAll", dealAll.toString());
-		}
 	}
 
 	public List<String> getProcessPaths() {
@@ -76,6 +65,17 @@ public class ModifyWebLockProcessStatusRequest extends RpcAcsRequest<ModifyWebLo
 		this.uuid = uuid;
 		if(uuid != null){
 			putQueryParameter("Uuid", uuid);
+		}
+	}
+
+	public Integer getDealAll() {
+		return this.dealAll;
+	}
+
+	public void setDealAll(Integer dealAll) {
+		this.dealAll = dealAll;
+		if(dealAll != null){
+			putQueryParameter("DealAll", dealAll.toString());
 		}
 	}
 

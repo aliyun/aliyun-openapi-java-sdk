@@ -27,9 +27,9 @@ public class EnableCustomBlockRecordRequest extends RpcAcsRequest<EnableCustomBl
 
 	private Long resourceOwnerId;
 
-	private String bound;
-
 	private String blockIp;
+
+	private String bound;
 	public EnableCustomBlockRecordRequest() {
 		super("Sas", "2018-12-03", "EnableCustomBlockRecord");
 		setMethod(MethodType.POST);
@@ -50,17 +50,6 @@ public class EnableCustomBlockRecordRequest extends RpcAcsRequest<EnableCustomBl
 		}
 	}
 
-	public String getBound() {
-		return this.bound;
-	}
-
-	public void setBound(String bound) {
-		this.bound = bound;
-		if(bound != null){
-			putQueryParameter("Bound", bound);
-		}
-	}
-
 	public String getBlockIp() {
 		return this.blockIp;
 	}
@@ -69,6 +58,17 @@ public class EnableCustomBlockRecordRequest extends RpcAcsRequest<EnableCustomBl
 		this.blockIp = blockIp;
 		if(blockIp != null){
 			putQueryParameter("BlockIp", blockIp);
+		}
+	}
+
+	public String getBound() {
+		return this.bound;
+	}
+
+	public void setBound(String bound) {
+		this.bound = bound;
+		if(bound != null){
+			putQueryParameter("Bound", bound);
 		}
 	}
 

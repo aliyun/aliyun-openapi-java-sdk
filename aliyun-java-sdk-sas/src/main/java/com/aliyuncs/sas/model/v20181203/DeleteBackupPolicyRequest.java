@@ -25,9 +25,9 @@ import com.aliyuncs.sas.Endpoint;
 public class DeleteBackupPolicyRequest extends RpcAcsRequest<DeleteBackupPolicyResponse> {
 	   
 
-	private String policyVersion;
-
 	private Long id;
+
+	private String policyVersion;
 	public DeleteBackupPolicyRequest() {
 		super("Sas", "2018-12-03", "DeleteBackupPolicy");
 		setMethod(MethodType.POST);
@@ -35,17 +35,6 @@ public class DeleteBackupPolicyRequest extends RpcAcsRequest<DeleteBackupPolicyR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getPolicyVersion() {
-		return this.policyVersion;
-	}
-
-	public void setPolicyVersion(String policyVersion) {
-		this.policyVersion = policyVersion;
-		if(policyVersion != null){
-			putQueryParameter("PolicyVersion", policyVersion);
-		}
 	}
 
 	public Long getId() {
@@ -56,6 +45,17 @@ public class DeleteBackupPolicyRequest extends RpcAcsRequest<DeleteBackupPolicyR
 		this.id = id;
 		if(id != null){
 			putQueryParameter("Id", id.toString());
+		}
+	}
+
+	public String getPolicyVersion() {
+		return this.policyVersion;
+	}
+
+	public void setPolicyVersion(String policyVersion) {
+		this.policyVersion = policyVersion;
+		if(policyVersion != null){
+			putQueryParameter("PolicyVersion", policyVersion);
 		}
 	}
 

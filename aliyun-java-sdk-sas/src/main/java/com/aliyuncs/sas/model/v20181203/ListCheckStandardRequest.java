@@ -30,11 +30,11 @@ public class ListCheckStandardRequest extends RpcAcsRequest<ListCheckStandardRes
 
 	private List<String> instanceTypess;
 
-	private List<String> instanceIdss;
-
 	private String lang;
 
 	private List<String> vendorss;
+
+	private List<String> instanceIdss;
 	public ListCheckStandardRequest() {
 		super("Sas", "2018-12-03", "ListCheckStandard");
 		setMethod(MethodType.POST);
@@ -70,19 +70,6 @@ public class ListCheckStandardRequest extends RpcAcsRequest<ListCheckStandardRes
 		}	
 	}
 
-	public List<String> getInstanceIdss() {
-		return this.instanceIdss;
-	}
-
-	public void setInstanceIdss(List<String> instanceIdss) {
-		this.instanceIdss = instanceIdss;	
-		if (instanceIdss != null) {
-			for (int i = 0; i < instanceIdss.size(); i++) {
-				putQueryParameter("InstanceIds." + (i + 1) , instanceIdss.get(i));
-			}
-		}	
-	}
-
 	public String getLang() {
 		return this.lang;
 	}
@@ -103,6 +90,19 @@ public class ListCheckStandardRequest extends RpcAcsRequest<ListCheckStandardRes
 		if (vendorss != null) {
 			for (int i = 0; i < vendorss.size(); i++) {
 				putQueryParameter("Vendors." + (i + 1) , vendorss.get(i));
+			}
+		}	
+	}
+
+	public List<String> getInstanceIdss() {
+		return this.instanceIdss;
+	}
+
+	public void setInstanceIdss(List<String> instanceIdss) {
+		this.instanceIdss = instanceIdss;	
+		if (instanceIdss != null) {
+			for (int i = 0; i < instanceIdss.size(); i++) {
+				putQueryParameter("InstanceIds." + (i + 1) , instanceIdss.get(i));
 			}
 		}	
 	}

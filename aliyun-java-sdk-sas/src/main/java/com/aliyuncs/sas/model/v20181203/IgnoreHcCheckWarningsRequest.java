@@ -27,13 +27,13 @@ public class IgnoreHcCheckWarningsRequest extends RpcAcsRequest<IgnoreHcCheckWar
 
 	private String reason;
 
-	private String checkIds;
-
-	private String riskId;
-
 	private Long type;
 
 	private String sourceIp;
+
+	private String checkIds;
+
+	private String riskId;
 
 	private String checkWarningIds;
 	public IgnoreHcCheckWarningsRequest() {
@@ -56,28 +56,6 @@ public class IgnoreHcCheckWarningsRequest extends RpcAcsRequest<IgnoreHcCheckWar
 		}
 	}
 
-	public String getCheckIds() {
-		return this.checkIds;
-	}
-
-	public void setCheckIds(String checkIds) {
-		this.checkIds = checkIds;
-		if(checkIds != null){
-			putQueryParameter("CheckIds", checkIds);
-		}
-	}
-
-	public String getRiskId() {
-		return this.riskId;
-	}
-
-	public void setRiskId(String riskId) {
-		this.riskId = riskId;
-		if(riskId != null){
-			putQueryParameter("RiskId", riskId);
-		}
-	}
-
 	public Long getType() {
 		return this.type;
 	}
@@ -97,6 +75,28 @@ public class IgnoreHcCheckWarningsRequest extends RpcAcsRequest<IgnoreHcCheckWar
 		this.sourceIp = sourceIp;
 		if(sourceIp != null){
 			putQueryParameter("SourceIp", sourceIp);
+		}
+	}
+
+	public String getCheckIds() {
+		return this.checkIds;
+	}
+
+	public void setCheckIds(String checkIds) {
+		this.checkIds = checkIds;
+		if(checkIds != null){
+			putQueryParameter("CheckIds", checkIds);
+		}
+	}
+
+	public String getRiskId() {
+		return this.riskId;
+	}
+
+	public void setRiskId(String riskId) {
+		this.riskId = riskId;
+		if(riskId != null){
+			putQueryParameter("RiskId", riskId);
 		}
 	}
 

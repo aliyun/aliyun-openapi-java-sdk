@@ -25,13 +25,13 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribeRisksRequest extends RpcAcsRequest<DescribeRisksResponse> {
 	   
 
-	private Long riskId;
-
 	private String riskName;
 
 	private Integer limit;
 
 	private String lang;
+
+	private Long riskId;
 	public DescribeRisksRequest() {
 		super("Sas", "2018-12-03", "DescribeRisks");
 		setMethod(MethodType.POST);
@@ -39,17 +39,6 @@ public class DescribeRisksRequest extends RpcAcsRequest<DescribeRisksResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getRiskId() {
-		return this.riskId;
-	}
-
-	public void setRiskId(Long riskId) {
-		this.riskId = riskId;
-		if(riskId != null){
-			putQueryParameter("RiskId", riskId.toString());
-		}
 	}
 
 	public String getRiskName() {
@@ -82,6 +71,17 @@ public class DescribeRisksRequest extends RpcAcsRequest<DescribeRisksResponse> {
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public Long getRiskId() {
+		return this.riskId;
+	}
+
+	public void setRiskId(Long riskId) {
+		this.riskId = riskId;
+		if(riskId != null){
+			putQueryParameter("RiskId", riskId.toString());
 		}
 	}
 

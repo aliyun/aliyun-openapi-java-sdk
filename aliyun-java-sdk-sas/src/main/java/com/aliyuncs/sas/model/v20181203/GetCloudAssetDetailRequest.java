@@ -26,13 +26,13 @@ import com.aliyuncs.sas.Endpoint;
 public class GetCloudAssetDetailRequest extends RpcAcsRequest<GetCloudAssetDetailResponse> {
 	   
 
-	private List<CloudAssetInstances> cloudAssetInstancess;
-
 	private Integer assetSubType;
 
 	private Integer vendor;
 
 	private Integer assetType;
+
+	private List<CloudAssetInstances> cloudAssetInstancess;
 	public GetCloudAssetDetailRequest() {
 		super("Sas", "2018-12-03", "GetCloudAssetDetail");
 		setMethod(MethodType.POST);
@@ -40,20 +40,6 @@ public class GetCloudAssetDetailRequest extends RpcAcsRequest<GetCloudAssetDetai
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public List<CloudAssetInstances> getCloudAssetInstancess() {
-		return this.cloudAssetInstancess;
-	}
-
-	public void setCloudAssetInstancess(List<CloudAssetInstances> cloudAssetInstancess) {
-		this.cloudAssetInstancess = cloudAssetInstancess;	
-		if (cloudAssetInstancess != null) {
-			for (int depth1 = 0; depth1 < cloudAssetInstancess.size(); depth1++) {
-				putQueryParameter("CloudAssetInstances." + (depth1 + 1) + ".InstanceId" , cloudAssetInstancess.get(depth1).getInstanceId());
-				putQueryParameter("CloudAssetInstances." + (depth1 + 1) + ".RegionId" , cloudAssetInstancess.get(depth1).getRegionId());
-			}
-		}	
 	}
 
 	public Integer getAssetSubType() {
@@ -87,6 +73,20 @@ public class GetCloudAssetDetailRequest extends RpcAcsRequest<GetCloudAssetDetai
 		if(assetType != null){
 			putQueryParameter("AssetType", assetType.toString());
 		}
+	}
+
+	public List<CloudAssetInstances> getCloudAssetInstancess() {
+		return this.cloudAssetInstancess;
+	}
+
+	public void setCloudAssetInstancess(List<CloudAssetInstances> cloudAssetInstancess) {
+		this.cloudAssetInstancess = cloudAssetInstancess;	
+		if (cloudAssetInstancess != null) {
+			for (int depth1 = 0; depth1 < cloudAssetInstancess.size(); depth1++) {
+				putQueryParameter("CloudAssetInstances." + (depth1 + 1) + ".InstanceId" , cloudAssetInstancess.get(depth1).getInstanceId());
+				putQueryParameter("CloudAssetInstances." + (depth1 + 1) + ".RegionId" , cloudAssetInstancess.get(depth1).getRegionId());
+			}
+		}	
 	}
 
 	public static class CloudAssetInstances {

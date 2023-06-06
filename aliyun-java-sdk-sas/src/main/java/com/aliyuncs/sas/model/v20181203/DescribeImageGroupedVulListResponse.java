@@ -97,6 +97,8 @@ public class DescribeImageGroupedVulListResponse extends AcsResponse {
 
 		private Integer asapCount;
 
+		private String canFix;
+
 		public Integer getStatus() {
 			return this.status;
 		}
@@ -175,6 +177,14 @@ public class DescribeImageGroupedVulListResponse extends AcsResponse {
 
 		public void setAsapCount(Integer asapCount) {
 			this.asapCount = asapCount;
+		}
+
+		public String getCanFix() {
+			return this.canFix;
+		}
+
+		public void setCanFix(String canFix) {
+			this.canFix = canFix;
 		}
 	}
 

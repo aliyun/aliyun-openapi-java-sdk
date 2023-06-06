@@ -27,9 +27,9 @@ public class DescribeClusterBasicInfoRequest extends RpcAcsRequest<DescribeClust
 
 	private String targetType;
 
-	private String clusterId;
-
 	private String type;
+
+	private String clusterId;
 	public DescribeClusterBasicInfoRequest() {
 		super("Sas", "2018-12-03", "DescribeClusterBasicInfo");
 		setMethod(MethodType.POST);
@@ -50,17 +50,6 @@ public class DescribeClusterBasicInfoRequest extends RpcAcsRequest<DescribeClust
 		}
 	}
 
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
-		}
-	}
-
 	public String getType() {
 		return this.type;
 	}
@@ -69,6 +58,17 @@ public class DescribeClusterBasicInfoRequest extends RpcAcsRequest<DescribeClust
 		this.type = type;
 		if(type != null){
 			putQueryParameter("Type", type);
+		}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 

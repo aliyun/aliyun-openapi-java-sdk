@@ -85,6 +85,7 @@ public class DescribeSuspEventsResponseUnmarshaller {
 			warningSummary.setLevel(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].Level"));
 			warningSummary.setId(_ctx.longValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].Id"));
 			warningSummary.setClusterId(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].clusterId"));
+			warningSummary.setImageUuid(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].ImageUuid"));
 			warningSummary.setDisplaySandboxResult(_ctx.booleanValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].DisplaySandboxResult"));
 
 			List<TacticItem> tacticItems = new ArrayList<TacticItem>();
