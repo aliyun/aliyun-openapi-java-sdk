@@ -26,6 +26,8 @@ public class ListSnapshotsRequest extends RpcAcsRequest<ListSnapshotsResponse> {
 
 	private String snapshotIds;
 
+	private String sourceDiskType;
+
 	private Integer pageNumber;
 
 	private String instanceId;
@@ -46,6 +48,17 @@ public class ListSnapshotsRequest extends RpcAcsRequest<ListSnapshotsResponse> {
 		this.snapshotIds = snapshotIds;
 		if(snapshotIds != null){
 			putQueryParameter("SnapshotIds", snapshotIds);
+		}
+	}
+
+	public String getSourceDiskType() {
+		return this.sourceDiskType;
+	}
+
+	public void setSourceDiskType(String sourceDiskType) {
+		this.sourceDiskType = sourceDiskType;
+		if(sourceDiskType != null){
+			putQueryParameter("SourceDiskType", sourceDiskType);
 		}
 	}
 

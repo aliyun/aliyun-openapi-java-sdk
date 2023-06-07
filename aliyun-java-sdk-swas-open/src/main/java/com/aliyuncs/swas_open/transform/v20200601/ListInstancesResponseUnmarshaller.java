@@ -19,6 +19,8 @@ import java.util.List;
 
 import com.aliyuncs.swas_open.model.v20200601.ListInstancesResponse;
 import com.aliyuncs.swas_open.model.v20200601.ListInstancesResponse.Instance;
+import com.aliyuncs.swas_open.model.v20200601.ListInstancesResponse.Instance.Image;
+import com.aliyuncs.swas_open.model.v20200601.ListInstancesResponse.Instance.ResourceSpec;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -47,6 +49,28 @@ public class ListInstancesResponseUnmarshaller {
 			instance.setBusinessStatus(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].BusinessStatus"));
 			instance.setDdosStatus(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].DdosStatus"));
 			instance.setImageId(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].ImageId"));
+			instance.setDisableReason(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].DisableReason"));
+			instance.setCombination(_ctx.booleanValue("ListInstancesResponse.Instances["+ i +"].Combination"));
+			instance.setCombinationInstanceId(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].CombinationInstanceId"));
+			instance.setUuid(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].Uuid"));
+
+			ResourceSpec resourceSpec = new ResourceSpec();
+			resourceSpec.setDiskCategory(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].ResourceSpec.DiskCategory"));
+			resourceSpec.setCpu(_ctx.integerValue("ListInstancesResponse.Instances["+ i +"].ResourceSpec.Cpu"));
+			resourceSpec.setBandwidth(_ctx.integerValue("ListInstancesResponse.Instances["+ i +"].ResourceSpec.Bandwidth"));
+			resourceSpec.setDiskSize(_ctx.integerValue("ListInstancesResponse.Instances["+ i +"].ResourceSpec.DiskSize"));
+			resourceSpec.setMemory(_ctx.doubleValue("ListInstancesResponse.Instances["+ i +"].ResourceSpec.Memory"));
+			resourceSpec.setFlow(_ctx.doubleValue("ListInstancesResponse.Instances["+ i +"].ResourceSpec.Flow"));
+			instance.setResourceSpec(resourceSpec);
+
+			Image image = new Image();
+			image.setOsType(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].Image.OsType"));
+			image.setImageName(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].Image.ImageName"));
+			image.setImageVersion(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].Image.ImageVersion"));
+			image.setImageType(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].Image.ImageType"));
+			image.setImageIconUrl(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].Image.ImageIconUrl"));
+			image.setImageContact(_ctx.stringValue("ListInstancesResponse.Instances["+ i +"].Image.ImageContact"));
+			instance.setImage(image);
 
 			instances.add(instance);
 		}

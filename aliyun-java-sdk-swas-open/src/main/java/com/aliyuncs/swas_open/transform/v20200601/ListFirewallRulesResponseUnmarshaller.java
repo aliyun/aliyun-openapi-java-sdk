@@ -38,6 +38,8 @@ public class ListFirewallRulesResponseUnmarshaller {
 			firewallRule.setPort(_ctx.stringValue("ListFirewallRulesResponse.FirewallRules["+ i +"].Port"));
 			firewallRule.setRuleId(_ctx.stringValue("ListFirewallRulesResponse.FirewallRules["+ i +"].RuleId"));
 			firewallRule.setRuleProtocol(_ctx.stringValue("ListFirewallRulesResponse.FirewallRules["+ i +"].RuleProtocol"));
+			firewallRule.setPolicy(_ctx.stringValue("ListFirewallRulesResponse.FirewallRules["+ i +"].Policy"));
+			firewallRule.setSourceCidrIp(_ctx.stringValue("ListFirewallRulesResponse.FirewallRules["+ i +"].SourceCidrIp"));
 
 			firewallRules.add(firewallRule);
 		}

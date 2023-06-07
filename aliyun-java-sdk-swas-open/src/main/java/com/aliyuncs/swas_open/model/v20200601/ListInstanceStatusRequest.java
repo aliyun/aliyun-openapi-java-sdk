@@ -21,32 +21,17 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class ListDisksRequest extends RpcAcsRequest<ListDisksResponse> {
+public class ListInstanceStatusRequest extends RpcAcsRequest<ListInstanceStatusResponse> {
 	   
-
-	private String diskType;
 
 	private Integer pageNumber;
 
-	private String instanceId;
+	private String instanceIds;
 
 	private Integer pageSize;
-
-	private String diskIds;
-	public ListDisksRequest() {
-		super("SWAS-OPEN", "2020-06-01", "ListDisks", "SWAS-OPEN");
+	public ListInstanceStatusRequest() {
+		super("SWAS-OPEN", "2020-06-01", "ListInstanceStatus", "SWAS-OPEN");
 		setMethod(MethodType.POST);
-	}
-
-	public String getDiskType() {
-		return this.diskType;
-	}
-
-	public void setDiskType(String diskType) {
-		this.diskType = diskType;
-		if(diskType != null){
-			putQueryParameter("DiskType", diskType);
-		}
 	}
 
 	public Integer getPageNumber() {
@@ -60,14 +45,14 @@ public class ListDisksRequest extends RpcAcsRequest<ListDisksResponse> {
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getInstanceIds() {
+		return this.instanceIds;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+	public void setInstanceIds(String instanceIds) {
+		this.instanceIds = instanceIds;
+		if(instanceIds != null){
+			putQueryParameter("InstanceIds", instanceIds);
 		}
 	}
 
@@ -82,20 +67,9 @@ public class ListDisksRequest extends RpcAcsRequest<ListDisksResponse> {
 		}
 	}
 
-	public String getDiskIds() {
-		return this.diskIds;
-	}
-
-	public void setDiskIds(String diskIds) {
-		this.diskIds = diskIds;
-		if(diskIds != null){
-			putQueryParameter("DiskIds", diskIds);
-		}
-	}
-
 	@Override
-	public Class<ListDisksResponse> getResponseClass() {
-		return ListDisksResponse.class;
+	public Class<ListInstanceStatusResponse> getResponseClass() {
+		return ListInstanceStatusResponse.class;
 	}
 
 }

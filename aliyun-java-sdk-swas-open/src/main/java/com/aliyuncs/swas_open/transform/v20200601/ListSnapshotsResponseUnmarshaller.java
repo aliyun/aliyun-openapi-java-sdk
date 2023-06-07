@@ -43,6 +43,8 @@ public class ListSnapshotsResponseUnmarshaller {
 			snapshot.setSnapshotId(_ctx.stringValue("ListSnapshotsResponse.Snapshots["+ i +"].SnapshotId"));
 			snapshot.setSourceDiskType(_ctx.stringValue("ListSnapshotsResponse.Snapshots["+ i +"].SourceDiskType"));
 			snapshot.setRegionId(_ctx.stringValue("ListSnapshotsResponse.Snapshots["+ i +"].RegionId"));
+			snapshot.setInstanceId(_ctx.stringValue("ListSnapshotsResponse.Snapshots["+ i +"].InstanceId"));
+			snapshot.setRollbackTime(_ctx.stringValue("ListSnapshotsResponse.Snapshots["+ i +"].RollbackTime"));
 
 			snapshots.add(snapshot);
 		}

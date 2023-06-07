@@ -95,6 +95,10 @@ public class ListSnapshotsResponse extends AcsResponse {
 
 		private String regionId;
 
+		private String instanceId;
+
+		private String rollbackTime;
+
 		public String getStatus() {
 			return this.status;
 		}
@@ -165,6 +169,22 @@ public class ListSnapshotsResponse extends AcsResponse {
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getRollbackTime() {
+			return this.rollbackTime;
+		}
+
+		public void setRollbackTime(String rollbackTime) {
+			this.rollbackTime = rollbackTime;
 		}
 	}
 

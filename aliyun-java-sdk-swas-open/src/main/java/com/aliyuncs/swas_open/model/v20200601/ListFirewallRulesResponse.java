@@ -85,6 +85,10 @@ public class ListFirewallRulesResponse extends AcsResponse {
 
 		private String ruleProtocol;
 
+		private String policy;
+
+		private String sourceCidrIp;
+
 		public String getRemark() {
 			return this.remark;
 		}
@@ -115,6 +119,22 @@ public class ListFirewallRulesResponse extends AcsResponse {
 
 		public void setRuleProtocol(String ruleProtocol) {
 			this.ruleProtocol = ruleProtocol;
+		}
+
+		public String getPolicy() {
+			return this.policy;
+		}
+
+		public void setPolicy(String policy) {
+			this.policy = policy;
+		}
+
+		public String getSourceCidrIp() {
+			return this.sourceCidrIp;
+		}
+
+		public void setSourceCidrIp(String sourceCidrIp) {
+			this.sourceCidrIp = sourceCidrIp;
 		}
 	}
 

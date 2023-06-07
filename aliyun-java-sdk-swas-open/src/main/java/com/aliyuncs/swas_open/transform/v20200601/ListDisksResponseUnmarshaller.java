@@ -45,6 +45,8 @@ public class ListDisksResponseUnmarshaller {
 			disk.setDiskId(_ctx.stringValue("ListDisksResponse.Disks["+ i +"].DiskId"));
 			disk.setInstanceId(_ctx.stringValue("ListDisksResponse.Disks["+ i +"].InstanceId"));
 			disk.setRegionId(_ctx.stringValue("ListDisksResponse.Disks["+ i +"].RegionId"));
+			disk.setRemark(_ctx.stringValue("ListDisksResponse.Disks["+ i +"].Remark"));
+			disk.setInstanceName(_ctx.stringValue("ListDisksResponse.Disks["+ i +"].InstanceName"));
 
 			disks.add(disk);
 		}

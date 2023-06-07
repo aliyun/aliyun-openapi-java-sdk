@@ -99,6 +99,10 @@ public class ListDisksResponse extends AcsResponse {
 
 		private String regionId;
 
+		private String remark;
+
+		private String instanceName;
+
 		public String getCreationTime() {
 			return this.creationTime;
 		}
@@ -185,6 +189,22 @@ public class ListDisksResponse extends AcsResponse {
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
+		}
+
+		public String getRemark() {
+			return this.remark;
+		}
+
+		public void setRemark(String remark) {
+			this.remark = remark;
+		}
+
+		public String getInstanceName() {
+			return this.instanceName;
+		}
+
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
 		}
 	}
 
