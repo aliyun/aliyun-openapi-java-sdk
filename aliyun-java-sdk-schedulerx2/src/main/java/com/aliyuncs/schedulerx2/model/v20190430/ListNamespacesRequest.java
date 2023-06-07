@@ -24,13 +24,39 @@ import com.aliyuncs.schedulerx2.Endpoint;
  */
 public class ListNamespacesRequest extends RpcAcsRequest<ListNamespacesResponse> {
 	   
+
+	private String namespaceName;
+
+	private String namespace;
 	public ListNamespacesRequest() {
 		super("schedulerx2", "2019-04-30", "ListNamespaces");
-		setMethod(MethodType.GET);
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getNamespaceName() {
+		return this.namespaceName;
+	}
+
+	public void setNamespaceName(String namespaceName) {
+		this.namespaceName = namespaceName;
+		if(namespaceName != null){
+			putQueryParameter("NamespaceName", namespaceName);
+		}
+	}
+
+	public String getNamespace() {
+		return this.namespace;
+	}
+
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+		if(namespace != null){
+			putQueryParameter("Namespace", namespace);
+		}
 	}
 
 	@Override

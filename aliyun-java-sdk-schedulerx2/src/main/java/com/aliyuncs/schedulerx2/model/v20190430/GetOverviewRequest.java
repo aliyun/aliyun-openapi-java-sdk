@@ -22,21 +22,40 @@ import com.aliyuncs.schedulerx2.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListGroupsRequest extends RpcAcsRequest<ListGroupsResponse> {
+public class GetOverviewRequest extends RpcAcsRequest<GetOverviewResponse> {
 	   
+
+	private Integer metricType;
 
 	private String namespaceSource;
 
-	private String appGroupName;
+	private String groupId;
+
+	private Long endTime;
+
+	private Long startTime;
+
+	private String operate;
 
 	private String namespace;
-	public ListGroupsRequest() {
-		super("schedulerx2", "2019-04-30", "ListGroups");
+	public GetOverviewRequest() {
+		super("schedulerx2", "2019-04-30", "GetOverview");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getMetricType() {
+		return this.metricType;
+	}
+
+	public void setMetricType(Integer metricType) {
+		this.metricType = metricType;
+		if(metricType != null){
+			putQueryParameter("MetricType", metricType.toString());
+		}
 	}
 
 	public String getNamespaceSource() {
@@ -50,14 +69,47 @@ public class ListGroupsRequest extends RpcAcsRequest<ListGroupsResponse> {
 		}
 	}
 
-	public String getAppGroupName() {
-		return this.appGroupName;
+	public String getGroupId() {
+		return this.groupId;
 	}
 
-	public void setAppGroupName(String appGroupName) {
-		this.appGroupName = appGroupName;
-		if(appGroupName != null){
-			putQueryParameter("AppGroupName", appGroupName);
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
+		}
+	}
+
+	public Long getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(Long endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime.toString());
+		}
+	}
+
+	public Long getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(Long startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime.toString());
+		}
+	}
+
+	public String getOperate() {
+		return this.operate;
+	}
+
+	public void setOperate(String operate) {
+		this.operate = operate;
+		if(operate != null){
+			putQueryParameter("Operate", operate);
 		}
 	}
 
@@ -73,8 +125,8 @@ public class ListGroupsRequest extends RpcAcsRequest<ListGroupsResponse> {
 	}
 
 	@Override
-	public Class<ListGroupsResponse> getResponseClass() {
-		return ListGroupsResponse.class;
+	public Class<GetOverviewResponse> getResponseClass() {
+		return GetOverviewResponse.class;
 	}
 
 }

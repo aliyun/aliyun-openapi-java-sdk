@@ -58,6 +58,8 @@ public class UpdateJobRequest extends RpcAcsRequest<UpdateJobResponse> {
 
 	private String parameters;
 
+	private String template;
+
 	private String namespaceSource;
 
 	private String timezone;
@@ -91,6 +93,8 @@ public class UpdateJobRequest extends RpcAcsRequest<UpdateJobResponse> {
 	private String className;
 
 	private String namespace;
+
+	private String xAttrs;
 
 	private Integer maxConcurrency;
 	public UpdateJobRequest() {
@@ -283,6 +287,17 @@ public class UpdateJobRequest extends RpcAcsRequest<UpdateJobResponse> {
 		}
 	}
 
+	public String getTemplate() {
+		return this.template;
+	}
+
+	public void setTemplate(String template) {
+		this.template = template;
+		if(template != null){
+			putBodyParameter("Template", template);
+		}
+	}
+
 	public String getNamespaceSource() {
 		return this.namespaceSource;
 	}
@@ -467,6 +482,17 @@ public class UpdateJobRequest extends RpcAcsRequest<UpdateJobResponse> {
 		this.namespace = namespace;
 		if(namespace != null){
 			putBodyParameter("Namespace", namespace);
+		}
+	}
+
+	public String getXAttrs() {
+		return this.xAttrs;
+	}
+
+	public void setXAttrs(String xAttrs) {
+		this.xAttrs = xAttrs;
+		if(xAttrs != null){
+			putBodyParameter("XAttrs", xAttrs);
 		}
 	}
 

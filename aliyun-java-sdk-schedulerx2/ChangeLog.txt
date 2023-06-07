@@ -1,3 +1,7 @@
+2023-06-07 Version: 1.1.10
+- Add Overview Query API.
+- Support Update Job With XAttrs.
+
 2023-02-27 Version: 1.1.9
 - Create Job Support Timezone.
 - Update Job Support Timezone.
